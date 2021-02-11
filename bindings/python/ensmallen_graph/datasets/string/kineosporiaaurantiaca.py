@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:41:15.243767
 
-The undirected graph Kineosporia aurantiaca has 7708 nodes and 969676 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03265 and
-has 43 connected components, where the component with most nodes has 7607 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 251.60, and the node degree mode is 2. The top 5 most central
-nodes are 1306174.JODP01000002_gene5835 (degree 2030), 1306174.JODP01000013_gene7354
-(degree 2004), 1306174.JODP01000013_gene7447 (degree 1939), 1306174.JODP01000027_gene112
-(degree 1907) and 1306174.JODP01000006_gene3186 (degree 1844).
+The undirected graph Kineosporia aurantiaca has 7708 nodes and 969676 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03265 and has 43 connected components, where the component with most
+nodes has 7607 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 251.60, and
+the node degree mode is 2. The top 5 most central nodes are 1306174.JODP01000002_gene5835
+(degree 2030), 1306174.JODP01000013_gene7354 (degree 2004), 1306174.JODP01000013_gene7447
+(degree 1939), 1306174.JODP01000027_gene112 (degree 1907) and 1306174.JODP01000006_gene3186
+(degree 1844).
 
 
 References
@@ -107,14 +108,15 @@ def KineosporiaAurantiaca(
 	
 	Datetime: 2021-02-03 21:41:15.243767
 	
-	The undirected graph Kineosporia aurantiaca has 7708 nodes and 969676 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03265 and
-	has 43 connected components, where the component with most nodes has 7607 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 251.60, and the node degree mode is 2. The top 5 most central
-	nodes are 1306174.JODP01000002_gene5835 (degree 2030), 1306174.JODP01000013_gene7354
-	(degree 2004), 1306174.JODP01000013_gene7447 (degree 1939), 1306174.JODP01000027_gene112
-	(degree 1907) and 1306174.JODP01000006_gene3186 (degree 1844).
+	The undirected graph Kineosporia aurantiaca has 7708 nodes and 969676 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03265 and has 43 connected components, where the component with most
+	nodes has 7607 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 251.60, and
+	the node degree mode is 2. The top 5 most central nodes are 1306174.JODP01000002_gene5835
+	(degree 2030), 1306174.JODP01000013_gene7354 (degree 2004), 1306174.JODP01000013_gene7447
+	(degree 1939), 1306174.JODP01000027_gene112 (degree 1907) and 1306174.JODP01000006_gene3186
+	(degree 1844).
 	
 
 

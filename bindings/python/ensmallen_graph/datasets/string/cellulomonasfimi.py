@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:28.002051
 
-The undirected graph Cellulomonas fimi has 3749 nodes and 390676 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05561 and
-has 4 connected components, where the component with most nodes has 3743 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 208.42, and the node degree mode is 2. The top 5 most central
-nodes are 590998.Celf_1839 (degree 1249), 590998.Celf_1811 (degree 1045), 590998.Celf_1652
-(degree 1034), 590998.Celf_0458 (degree 1026) and 590998.Celf_2133 (degree 1023).
+The undirected graph Cellulomonas fimi has 3749 nodes and 390676 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05561 and has 4 connected components, where the component with most
+nodes has 3743 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 208.42, and
+the node degree mode is 2. The top 5 most central nodes are 590998.Celf_1839
+(degree 1249), 590998.Celf_1811 (degree 1045), 590998.Celf_1652 (degree
+1034), 590998.Celf_0458 (degree 1026) and 590998.Celf_2133 (degree 1023).
 
 
 References
@@ -106,13 +107,14 @@ def CellulomonasFimi(
 	
 	Datetime: 2021-02-02 21:17:28.002051
 	
-	The undirected graph Cellulomonas fimi has 3749 nodes and 390676 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05561 and
-	has 4 connected components, where the component with most nodes has 3743 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 208.42, and the node degree mode is 2. The top 5 most central
-	nodes are 590998.Celf_1839 (degree 1249), 590998.Celf_1811 (degree 1045), 590998.Celf_1652
-	(degree 1034), 590998.Celf_0458 (degree 1026) and 590998.Celf_2133 (degree 1023).
+	The undirected graph Cellulomonas fimi has 3749 nodes and 390676 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05561 and has 4 connected components, where the component with most
+	nodes has 3743 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 208.42, and
+	the node degree mode is 2. The top 5 most central nodes are 590998.Celf_1839
+	(degree 1249), 590998.Celf_1811 (degree 1045), 590998.Celf_1652 (degree
+	1034), 590998.Celf_0458 (degree 1026) and 590998.Celf_2133 (degree 1023).
 	
 
 

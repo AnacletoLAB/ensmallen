@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:00.860231
 
-The undirected graph Desulfurobacterium sp. TC51 has 1676 nodes and 102844 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07327
-and has 6 connected components, where the component with most nodes has 1664 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 122.73, and the node degree mode is 11. The top 5
-most central nodes are 1158318.ATXC01000001_gene843 (degree 781), 1158318.ATXC01000001_gene1026
-(degree 778), 1158318.ATXC01000001_gene647 (degree 653), 1158318.ATXC01000001_gene1090
-(degree 606) and 1158318.ATXC01000002_gene1615 (degree 598).
+The undirected graph Desulfurobacterium sp. TC51 has 1676 nodes and 102844
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07327 and has 6 connected components, where the component
+with most nodes has 1664 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 122.73,
+and the node degree mode is 11. The top 5 most central nodes are 1158318.ATXC01000001_gene843
+(degree 781), 1158318.ATXC01000001_gene1026 (degree 778), 1158318.ATXC01000001_gene647
+(degree 653), 1158318.ATXC01000001_gene1090 (degree 606) and 1158318.ATXC01000002_gene1615
+(degree 598).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfurobacteriumSp.Tc51(
 	
 	Datetime: 2021-02-02 23:03:00.860231
 	
-	The undirected graph Desulfurobacterium sp. TC51 has 1676 nodes and 102844 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07327
-	and has 6 connected components, where the component with most nodes has 1664 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 122.73, and the node degree mode is 11. The top 5
-	most central nodes are 1158318.ATXC01000001_gene843 (degree 781), 1158318.ATXC01000001_gene1026
-	(degree 778), 1158318.ATXC01000001_gene647 (degree 653), 1158318.ATXC01000001_gene1090
-	(degree 606) and 1158318.ATXC01000002_gene1615 (degree 598).
+	The undirected graph Desulfurobacterium sp. TC51 has 1676 nodes and 102844
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07327 and has 6 connected components, where the component
+	with most nodes has 1664 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 122.73,
+	and the node degree mode is 11. The top 5 most central nodes are 1158318.ATXC01000001_gene843
+	(degree 781), 1158318.ATXC01000001_gene1026 (degree 778), 1158318.ATXC01000001_gene647
+	(degree 653), 1158318.ATXC01000001_gene1090 (degree 606) and 1158318.ATXC01000002_gene1615
+	(degree 598).
 	
 
 

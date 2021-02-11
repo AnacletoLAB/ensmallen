@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:12.963789
 
-The undirected graph Scytonema hofmanni has 6512 nodes and 703188 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03317 and
-has 39 connected components, where the component with most nodes has 6408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 215.97, and the node degree mode is 2. The top 5 most central
-nodes are 1469607.KK073768_gene598 (degree 2264), 1469607.KK073769_gene6216 (degree
-2033), 1469607.KK073768_gene766 (degree 1915), 1469607.KK073768_gene1541 (degree
-1909) and 1469607.KK073768_gene2202 (degree 1739).
+The undirected graph Scytonema hofmanni has 6512 nodes and 703188 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03317 and has 39 connected components, where the component with most
+nodes has 6408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 215.97, and
+the node degree mode is 2. The top 5 most central nodes are 1469607.KK073768_gene598
+(degree 2264), 1469607.KK073769_gene6216 (degree 2033), 1469607.KK073768_gene766
+(degree 1915), 1469607.KK073768_gene1541 (degree 1909) and 1469607.KK073768_gene2202
+(degree 1739).
 
 
 References
@@ -107,14 +108,15 @@ def ScytonemaHofmanni(
 	
 	Datetime: 2021-02-03 23:12:12.963789
 	
-	The undirected graph Scytonema hofmanni has 6512 nodes and 703188 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03317 and
-	has 39 connected components, where the component with most nodes has 6408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 215.97, and the node degree mode is 2. The top 5 most central
-	nodes are 1469607.KK073768_gene598 (degree 2264), 1469607.KK073769_gene6216 (degree
-	2033), 1469607.KK073768_gene766 (degree 1915), 1469607.KK073768_gene1541 (degree
-	1909) and 1469607.KK073768_gene2202 (degree 1739).
+	The undirected graph Scytonema hofmanni has 6512 nodes and 703188 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03317 and has 39 connected components, where the component with most
+	nodes has 6408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 215.97, and
+	the node degree mode is 2. The top 5 most central nodes are 1469607.KK073768_gene598
+	(degree 2264), 1469607.KK073769_gene6216 (degree 2033), 1469607.KK073768_gene766
+	(degree 1915), 1469607.KK073768_gene1541 (degree 1909) and 1469607.KK073768_gene2202
+	(degree 1739).
 	
 
 

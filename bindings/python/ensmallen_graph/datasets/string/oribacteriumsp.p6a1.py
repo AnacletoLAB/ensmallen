@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:40:38.594530
 
-The undirected graph Oribacterium sp. P6A1 has 3060 nodes and 216320 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04622 and
-has 12 connected components, where the component with most nodes has 3032 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 141.39, and the node degree mode is 2. The top 5 most central
-nodes are 1410612.JNKO01000007_gene2027 (degree 1198), 1410612.JNKO01000015_gene827
-(degree 1100), 1410612.JNKO01000016_gene3090 (degree 947), 1410612.JNKO01000010_gene460
-(degree 941) and 1410612.JNKO01000003_gene1585 (degree 927).
+The undirected graph Oribacterium sp. P6A1 has 3060 nodes and 216320 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04622 and has 12 connected components, where the component with most
+nodes has 3032 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 141.39, and
+the node degree mode is 2. The top 5 most central nodes are 1410612.JNKO01000007_gene2027
+(degree 1198), 1410612.JNKO01000015_gene827 (degree 1100), 1410612.JNKO01000016_gene3090
+(degree 947), 1410612.JNKO01000010_gene460 (degree 941) and 1410612.JNKO01000003_gene1585
+(degree 927).
 
 
 References
@@ -107,14 +108,15 @@ def OribacteriumSp.P6a1(
 	
 	Datetime: 2021-02-03 22:40:38.594530
 	
-	The undirected graph Oribacterium sp. P6A1 has 3060 nodes and 216320 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04622 and
-	has 12 connected components, where the component with most nodes has 3032 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 141.39, and the node degree mode is 2. The top 5 most central
-	nodes are 1410612.JNKO01000007_gene2027 (degree 1198), 1410612.JNKO01000015_gene827
-	(degree 1100), 1410612.JNKO01000016_gene3090 (degree 947), 1410612.JNKO01000010_gene460
-	(degree 941) and 1410612.JNKO01000003_gene1585 (degree 927).
+	The undirected graph Oribacterium sp. P6A1 has 3060 nodes and 216320 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04622 and has 12 connected components, where the component with most
+	nodes has 3032 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 141.39, and
+	the node degree mode is 2. The top 5 most central nodes are 1410612.JNKO01000007_gene2027
+	(degree 1198), 1410612.JNKO01000015_gene827 (degree 1100), 1410612.JNKO01000016_gene3090
+	(degree 947), 1410612.JNKO01000010_gene460 (degree 941) and 1410612.JNKO01000003_gene1585
+	(degree 927).
 	
 
 

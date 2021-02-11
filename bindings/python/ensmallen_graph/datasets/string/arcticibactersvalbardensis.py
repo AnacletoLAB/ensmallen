@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:50.424560
 
-The undirected graph Arcticibacter svalbardensis has 4217 nodes and 511667 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05756
-and has 27 connected components, where the component with most nodes has 4154 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 242.67, and the node degree mode is 2. The top 5
-most central nodes are 1150600.ADIARSV_3109 (degree 1467), 1150600.ADIARSV_3153 (degree
-1447), 1150600.ADIARSV_4013 (degree 1335), 1150600.ADIARSV_3761 (degree 1255) and
-1150600.ADIARSV_4069 (degree 1127).
+The undirected graph Arcticibacter svalbardensis has 4217 nodes and 511667
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05756 and has 27 connected components, where the component
+with most nodes has 4154 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 242.67,
+and the node degree mode is 2. The top 5 most central nodes are 1150600.ADIARSV_3109
+(degree 1467), 1150600.ADIARSV_3153 (degree 1447), 1150600.ADIARSV_4013
+(degree 1335), 1150600.ADIARSV_3761 (degree 1255) and 1150600.ADIARSV_4069
+(degree 1127).
 
 
 References
@@ -107,14 +108,15 @@ def ArcticibacterSvalbardensis(
 	
 	Datetime: 2021-02-02 22:59:50.424560
 	
-	The undirected graph Arcticibacter svalbardensis has 4217 nodes and 511667 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05756
-	and has 27 connected components, where the component with most nodes has 4154 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 242.67, and the node degree mode is 2. The top 5
-	most central nodes are 1150600.ADIARSV_3109 (degree 1467), 1150600.ADIARSV_3153 (degree
-	1447), 1150600.ADIARSV_4013 (degree 1335), 1150600.ADIARSV_3761 (degree 1255) and
-	1150600.ADIARSV_4069 (degree 1127).
+	The undirected graph Arcticibacter svalbardensis has 4217 nodes and 511667
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05756 and has 27 connected components, where the component
+	with most nodes has 4154 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 242.67,
+	and the node degree mode is 2. The top 5 most central nodes are 1150600.ADIARSV_3109
+	(degree 1467), 1150600.ADIARSV_3153 (degree 1447), 1150600.ADIARSV_4013
+	(degree 1335), 1150600.ADIARSV_3761 (degree 1255) and 1150600.ADIARSV_4069
+	(degree 1127).
 	
 
 

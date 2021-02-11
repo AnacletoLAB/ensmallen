@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:31.826403
 
-The undirected graph Brevibacterium mcbrellneri has 2406 nodes and 201862 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06977
-and has 8 connected components, where the component with most nodes has 2391 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 167.80, and the node degree mode is 2. The top 5
-most central nodes are 585530.HMPREF0183_2405 (degree 933), 585530.HMPREF0183_1020
-(degree 877), 585530.HMPREF0183_1602 (degree 847), 585530.HMPREF0183_0344 (degree
-723) and 585530.HMPREF0183_0842 (degree 712).
+The undirected graph Brevibacterium mcbrellneri has 2406 nodes and 201862
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06977 and has 8 connected components, where the component
+with most nodes has 2391 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 167.80,
+and the node degree mode is 2. The top 5 most central nodes are 585530.HMPREF0183_2405
+(degree 933), 585530.HMPREF0183_1020 (degree 877), 585530.HMPREF0183_1602
+(degree 847), 585530.HMPREF0183_0344 (degree 723) and 585530.HMPREF0183_0842
+(degree 712).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacteriumMcbrellneri(
 	
 	Datetime: 2021-02-02 21:16:31.826403
 	
-	The undirected graph Brevibacterium mcbrellneri has 2406 nodes and 201862 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06977
-	and has 8 connected components, where the component with most nodes has 2391 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 167.80, and the node degree mode is 2. The top 5
-	most central nodes are 585530.HMPREF0183_2405 (degree 933), 585530.HMPREF0183_1020
-	(degree 877), 585530.HMPREF0183_1602 (degree 847), 585530.HMPREF0183_0344 (degree
-	723) and 585530.HMPREF0183_0842 (degree 712).
+	The undirected graph Brevibacterium mcbrellneri has 2406 nodes and 201862
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06977 and has 8 connected components, where the component
+	with most nodes has 2391 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 167.80,
+	and the node degree mode is 2. The top 5 most central nodes are 585530.HMPREF0183_2405
+	(degree 933), 585530.HMPREF0183_1020 (degree 877), 585530.HMPREF0183_1602
+	(degree 847), 585530.HMPREF0183_0344 (degree 723) and 585530.HMPREF0183_0842
+	(degree 712).
 	
 
 

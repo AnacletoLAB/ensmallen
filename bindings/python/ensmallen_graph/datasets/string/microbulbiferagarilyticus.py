@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:52.622889
 
-The undirected graph Microbulbifer agarilyticus has 3009 nodes and 193857 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04284
-and has 7 connected components, where the component with most nodes has 2997 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 128.85, and the node degree mode is 1. The top 5
-most central nodes are 1042377.AFPJ01000012_gene1400 (degree 915), 1042377.AFPJ01000035_gene2603
-(degree 836), 1042377.AFPJ01000032_gene2819 (degree 832), 1042377.AFPJ01000037_gene2942
-(degree 738) and 1042377.AFPJ01000007_gene1753 (degree 717).
+The undirected graph Microbulbifer agarilyticus has 3009 nodes and 193857
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04284 and has 7 connected components, where the component
+with most nodes has 2997 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 128.85,
+and the node degree mode is 1. The top 5 most central nodes are 1042377.AFPJ01000012_gene1400
+(degree 915), 1042377.AFPJ01000035_gene2603 (degree 836), 1042377.AFPJ01000032_gene2819
+(degree 832), 1042377.AFPJ01000037_gene2942 (degree 738) and 1042377.AFPJ01000007_gene1753
+(degree 717).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobulbiferAgarilyticus(
 	
 	Datetime: 2021-02-02 22:15:52.622889
 	
-	The undirected graph Microbulbifer agarilyticus has 3009 nodes and 193857 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04284
-	and has 7 connected components, where the component with most nodes has 2997 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 128.85, and the node degree mode is 1. The top 5
-	most central nodes are 1042377.AFPJ01000012_gene1400 (degree 915), 1042377.AFPJ01000035_gene2603
-	(degree 836), 1042377.AFPJ01000032_gene2819 (degree 832), 1042377.AFPJ01000037_gene2942
-	(degree 738) and 1042377.AFPJ01000007_gene1753 (degree 717).
+	The undirected graph Microbulbifer agarilyticus has 3009 nodes and 193857
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04284 and has 7 connected components, where the component
+	with most nodes has 2997 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 128.85,
+	and the node degree mode is 1. The top 5 most central nodes are 1042377.AFPJ01000012_gene1400
+	(degree 915), 1042377.AFPJ01000035_gene2603 (degree 836), 1042377.AFPJ01000032_gene2819
+	(degree 832), 1042377.AFPJ01000037_gene2942 (degree 738) and 1042377.AFPJ01000007_gene1753
+	(degree 717).
 	
 
 

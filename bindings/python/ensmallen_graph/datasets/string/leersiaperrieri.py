@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:15.856061
 
-The undirected graph Leersia perrieri has 21123 nodes and 4231854 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01897 and
-has 4 connected components, where the component with most nodes has 21117 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 400.69, and the node degree mode is 1. The top 5 most central
-nodes are 77586.LPERR02G10400.1 (degree 6839), 77586.LPERR09G02310.1 (degree 5727),
-77586.LPERR12G15040.1 (degree 5162), 77586.LPERR12G16750.1 (degree 5158) and 77586.LPERR02G09680.1
+The undirected graph Leersia perrieri has 21123 nodes and 4231854 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01897 and has 4 connected components, where the component with most
+nodes has 21117 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 400.69, and
+the node degree mode is 1. The top 5 most central nodes are 77586.LPERR02G10400.1
+(degree 6839), 77586.LPERR09G02310.1 (degree 5727), 77586.LPERR12G15040.1
+(degree 5162), 77586.LPERR12G16750.1 (degree 5158) and 77586.LPERR02G09680.1
 (degree 5021).
 
 
@@ -107,13 +108,14 @@ def LeersiaPerrieri(
 	
 	Datetime: 2021-02-02 18:33:15.856061
 	
-	The undirected graph Leersia perrieri has 21123 nodes and 4231854 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01897 and
-	has 4 connected components, where the component with most nodes has 21117 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 400.69, and the node degree mode is 1. The top 5 most central
-	nodes are 77586.LPERR02G10400.1 (degree 6839), 77586.LPERR09G02310.1 (degree 5727),
-	77586.LPERR12G15040.1 (degree 5162), 77586.LPERR12G16750.1 (degree 5158) and 77586.LPERR02G09680.1
+	The undirected graph Leersia perrieri has 21123 nodes and 4231854 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01897 and has 4 connected components, where the component with most
+	nodes has 21117 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 400.69, and
+	the node degree mode is 1. The top 5 most central nodes are 77586.LPERR02G10400.1
+	(degree 6839), 77586.LPERR09G02310.1 (degree 5727), 77586.LPERR12G15040.1
+	(degree 5162), 77586.LPERR12G16750.1 (degree 5158) and 77586.LPERR02G09680.1
 	(degree 5021).
 	
 

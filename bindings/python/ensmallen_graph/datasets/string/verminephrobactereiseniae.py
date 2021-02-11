@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:30.099986
 
-The undirected graph Verminephrobacter eiseniae has 4935 nodes and 497336 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04085
-and has 7 connected components, where the component with most nodes has 4923 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 201.55, and the node degree mode is 1. The top 5
-most central nodes are 391735.Veis_2435 (degree 2027), 391735.Veis_1841 (degree 1566),
-391735.Veis_0632 (degree 1469), 391735.Veis_3017 (degree 1459) and 391735.Veis_1730
-(degree 1316).
+The undirected graph Verminephrobacter eiseniae has 4935 nodes and 497336
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04085 and has 7 connected components, where the component
+with most nodes has 4923 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 201.55,
+and the node degree mode is 1. The top 5 most central nodes are 391735.Veis_2435
+(degree 2027), 391735.Veis_1841 (degree 1566), 391735.Veis_0632 (degree
+1469), 391735.Veis_3017 (degree 1459) and 391735.Veis_1730 (degree 1316).
 
 
 References
@@ -107,14 +107,14 @@ def VerminephrobacterEiseniae(
 	
 	Datetime: 2021-02-02 20:40:30.099986
 	
-	The undirected graph Verminephrobacter eiseniae has 4935 nodes and 497336 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04085
-	and has 7 connected components, where the component with most nodes has 4923 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 201.55, and the node degree mode is 1. The top 5
-	most central nodes are 391735.Veis_2435 (degree 2027), 391735.Veis_1841 (degree 1566),
-	391735.Veis_0632 (degree 1469), 391735.Veis_3017 (degree 1459) and 391735.Veis_1730
-	(degree 1316).
+	The undirected graph Verminephrobacter eiseniae has 4935 nodes and 497336
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04085 and has 7 connected components, where the component
+	with most nodes has 4923 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 201.55,
+	and the node degree mode is 1. The top 5 most central nodes are 391735.Veis_2435
+	(degree 2027), 391735.Veis_1841 (degree 1566), 391735.Veis_0632 (degree
+	1469), 391735.Veis_3017 (degree 1459) and 391735.Veis_1730 (degree 1316).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:09.500984
 
-The undirected graph Enterobacter cloacae ATCC13047 has 5354 nodes and 625013 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04362
-and has 14 connected components, where the component with most nodes has 5325 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 233.48, and the node degree mode is 3. The top 5
-most central nodes are 716541.ECL_05119 (degree 1663), 716541.ECL_01839 (degree 1636),
-716541.ECL_00717 (degree 1514), 716541.ECL_04447 (degree 1513) and 716541.ECL_03844
-(degree 1418).
+The undirected graph Enterobacter cloacae ATCC13047 has 5354 nodes and
+625013 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04362 and has 14 connected components, where the
+component with most nodes has 5325 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+is 233.48, and the node degree mode is 3. The top 5 most central nodes
+are 716541.ECL_05119 (degree 1663), 716541.ECL_01839 (degree 1636), 716541.ECL_00717
+(degree 1514), 716541.ECL_04447 (degree 1513) and 716541.ECL_03844 (degree
+1418).
 
 
 References
@@ -107,14 +108,15 @@ def EnterobacterCloacaeAtcc13047(
 	
 	Datetime: 2021-02-02 21:36:09.500984
 	
-	The undirected graph Enterobacter cloacae ATCC13047 has 5354 nodes and 625013 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04362
-	and has 14 connected components, where the component with most nodes has 5325 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 233.48, and the node degree mode is 3. The top 5
-	most central nodes are 716541.ECL_05119 (degree 1663), 716541.ECL_01839 (degree 1636),
-	716541.ECL_00717 (degree 1514), 716541.ECL_04447 (degree 1513) and 716541.ECL_03844
-	(degree 1418).
+	The undirected graph Enterobacter cloacae ATCC13047 has 5354 nodes and
+	625013 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04362 and has 14 connected components, where the
+	component with most nodes has 5325 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+	is 233.48, and the node degree mode is 3. The top 5 most central nodes
+	are 716541.ECL_05119 (degree 1663), 716541.ECL_01839 (degree 1636), 716541.ECL_00717
+	(degree 1514), 716541.ECL_04447 (degree 1513) and 716541.ECL_03844 (degree
+	1418).
 	
 
 

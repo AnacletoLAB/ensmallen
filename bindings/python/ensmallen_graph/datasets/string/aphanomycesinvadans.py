@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:34.675676
 
-The undirected graph Aphanomyces invadans has 8101 nodes and 1676315 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05109 and
-has 33 connected components, where the component with most nodes has 8035 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 294,
-the mean node degree is 413.85, and the node degree mode is 1. The top 5 most central
-nodes are 157072.XP_008880907.1 (degree 3487), 157072.XP_008868095.1 (degree 3207),
-157072.XP_008861346.1 (degree 2865), 157072.XP_008869712.1 (degree 2832) and 157072.XP_008862022.1
+The undirected graph Aphanomyces invadans has 8101 nodes and 1676315 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05109 and has 33 connected components, where the component with most
+nodes has 8035 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 294, the mean node degree is 413.85, and
+the node degree mode is 1. The top 5 most central nodes are 157072.XP_008880907.1
+(degree 3487), 157072.XP_008868095.1 (degree 3207), 157072.XP_008861346.1
+(degree 2865), 157072.XP_008869712.1 (degree 2832) and 157072.XP_008862022.1
 (degree 2780).
 
 
@@ -107,13 +108,14 @@ def AphanomycesInvadans(
 	
 	Datetime: 2021-02-02 19:52:34.675676
 	
-	The undirected graph Aphanomyces invadans has 8101 nodes and 1676315 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05109 and
-	has 33 connected components, where the component with most nodes has 8035 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 294,
-	the mean node degree is 413.85, and the node degree mode is 1. The top 5 most central
-	nodes are 157072.XP_008880907.1 (degree 3487), 157072.XP_008868095.1 (degree 3207),
-	157072.XP_008861346.1 (degree 2865), 157072.XP_008869712.1 (degree 2832) and 157072.XP_008862022.1
+	The undirected graph Aphanomyces invadans has 8101 nodes and 1676315 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05109 and has 33 connected components, where the component with most
+	nodes has 8035 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 294, the mean node degree is 413.85, and
+	the node degree mode is 1. The top 5 most central nodes are 157072.XP_008880907.1
+	(degree 3487), 157072.XP_008868095.1 (degree 3207), 157072.XP_008861346.1
+	(degree 2865), 157072.XP_008869712.1 (degree 2832) and 157072.XP_008862022.1
 	(degree 2780).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:01.890073
 
-The undirected graph Thermodesulfobacterium hveragerdense has 1748 nodes and 133620
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08751 and has 8 connected components, where the component with most nodes has
-1733 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 124, the mean node degree is 152.88, and the node degree mode is 1. The
-top 5 most central nodes are 1123372.AUIT01000003_gene860 (degree 856), 1123372.AUIT01000015_gene1158
+The undirected graph Thermodesulfobacterium hveragerdense has 1748 nodes
+and 133620 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08751 and has 8 connected components, where the
+component with most nodes has 1733 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 152.88, and the node degree mode is 1. The top 5 most central nodes
+are 1123372.AUIT01000003_gene860 (degree 856), 1123372.AUIT01000015_gene1158
 (degree 741), 1123372.AUIT01000028_gene29 (degree 700), 1123372.AUIT01000007_gene451
 (degree 673) and 1123372.AUIT01000001_gene694 (degree 665).
 
@@ -107,12 +108,13 @@ def ThermodesulfobacteriumHveragerdense(
 	
 	Datetime: 2021-02-02 22:52:01.890073
 	
-	The undirected graph Thermodesulfobacterium hveragerdense has 1748 nodes and 133620
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08751 and has 8 connected components, where the component with most nodes has
-	1733 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 124, the mean node degree is 152.88, and the node degree mode is 1. The
-	top 5 most central nodes are 1123372.AUIT01000003_gene860 (degree 856), 1123372.AUIT01000015_gene1158
+	The undirected graph Thermodesulfobacterium hveragerdense has 1748 nodes
+	and 133620 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08751 and has 8 connected components, where the
+	component with most nodes has 1733 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 152.88, and the node degree mode is 1. The top 5 most central nodes
+	are 1123372.AUIT01000003_gene860 (degree 856), 1123372.AUIT01000015_gene1158
 	(degree 741), 1123372.AUIT01000028_gene29 (degree 700), 1123372.AUIT01000007_gene451
 	(degree 673) and 1123372.AUIT01000001_gene694 (degree 665).
 	

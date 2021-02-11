@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:41.894120
 
-The undirected graph Uliginosibacterium gangwonense has 4274 nodes and 513854 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05627
-and has 16 connected components, where the component with most nodes has 4237 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 240.46, and the node degree mode is 1. The top 5
-most central nodes are 1123487.KB892834_gene2732 (degree 1614), 1123487.KB892843_gene803
-(degree 1350), 1123487.KB892863_gene1953 (degree 1345), 1123487.KB892843_gene805
+The undirected graph Uliginosibacterium gangwonense has 4274 nodes and
+513854 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05627 and has 16 connected components, where the
+component with most nodes has 4237 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+is 240.46, and the node degree mode is 1. The top 5 most central nodes
+are 1123487.KB892834_gene2732 (degree 1614), 1123487.KB892843_gene803 (degree
+1350), 1123487.KB892863_gene1953 (degree 1345), 1123487.KB892843_gene805
 (degree 1301) and 1123487.KB892844_gene854 (degree 1252).
 
 
@@ -107,13 +108,14 @@ def UliginosibacteriumGangwonense(
 	
 	Datetime: 2021-02-02 22:52:41.894120
 	
-	The undirected graph Uliginosibacterium gangwonense has 4274 nodes and 513854 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05627
-	and has 16 connected components, where the component with most nodes has 4237 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 240.46, and the node degree mode is 1. The top 5
-	most central nodes are 1123487.KB892834_gene2732 (degree 1614), 1123487.KB892843_gene803
-	(degree 1350), 1123487.KB892863_gene1953 (degree 1345), 1123487.KB892843_gene805
+	The undirected graph Uliginosibacterium gangwonense has 4274 nodes and
+	513854 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05627 and has 16 connected components, where the
+	component with most nodes has 4237 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+	is 240.46, and the node degree mode is 1. The top 5 most central nodes
+	are 1123487.KB892834_gene2732 (degree 1614), 1123487.KB892843_gene803 (degree
+	1350), 1123487.KB892863_gene1953 (degree 1345), 1123487.KB892843_gene805
 	(degree 1301) and 1123487.KB892844_gene854 (degree 1252).
 	
 

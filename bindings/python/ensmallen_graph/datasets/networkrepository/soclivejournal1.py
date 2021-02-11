@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:45:51.038406
 
-The undirected graph soc-LiveJournal1 has 512165 nodes, of which 2086 are singletons
-(all have self-loops), and 608176 unweighted edges, of which 21734 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 141024 connected
-components, where the component with most nodes has 19029 nodes and the component
-with the least nodes has a single node. The graph median node degree is 1, the mean
-node degree is 2.33, and the node degree mode is 1. The top 5 most central nodes
-are 4650748 (degree 881), 4739623 (degree 815), 4697613 (degree 452), 4757888 (degree
+The undirected graph soc-LiveJournal1 has 512165 nodes, of which 2086 are
+singletons (all have self-loops), and 608176 unweighted edges, of which
+21734 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 141024 connected components, where the component with
+most nodes has 19029 nodes and the component with the least nodes has a
+single node. The graph median node degree is 1, the mean node degree is
+2.33, and the node degree mode is 1. The top 5 most central nodes are 4650748
+(degree 881), 4739623 (degree 815), 4697613 (degree 452), 4757888 (degree
 416) and 4622243 (degree 413).
 
 
@@ -104,13 +105,14 @@ def SocLivejournal1(
 	
 	Datetime: 2021-02-07 15:45:51.038406
 	
-	The undirected graph soc-LiveJournal1 has 512165 nodes, of which 2086 are singletons
-	(all have self-loops), and 608176 unweighted edges, of which 21734 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 141024 connected
-	components, where the component with most nodes has 19029 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 1, the mean
-	node degree is 2.33, and the node degree mode is 1. The top 5 most central nodes
-	are 4650748 (degree 881), 4739623 (degree 815), 4697613 (degree 452), 4757888 (degree
+	The undirected graph soc-LiveJournal1 has 512165 nodes, of which 2086 are
+	singletons (all have self-loops), and 608176 unweighted edges, of which
+	21734 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 141024 connected components, where the component with
+	most nodes has 19029 nodes and the component with the least nodes has a
+	single node. The graph median node degree is 1, the mean node degree is
+	2.33, and the node degree mode is 1. The top 5 most central nodes are 4650748
+	(degree 881), 4739623 (degree 815), 4697613 (degree 452), 4757888 (degree
 	416) and 4622243 (degree 413).
 	
 

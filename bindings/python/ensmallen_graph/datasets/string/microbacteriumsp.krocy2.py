@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:39:42.580902
 
-The undirected graph Microbacterium sp. KROCY2 has 2351 nodes and 185501 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06715
-and has 8 connected components, where the component with most nodes has 2337 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 157.81, and the node degree mode is 2. The top 5
-most central nodes are 1305732.JAGG01000001_gene1733 (degree 944), 1305732.JAGG01000001_gene2121
-(degree 818), 1305732.JAGG01000001_gene1135 (degree 805), 1305732.JAGG01000001_gene912
-(degree 770) and 1305732.JAGG01000001_gene1392 (degree 761).
+The undirected graph Microbacterium sp. KROCY2 has 2351 nodes and 185501
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06715 and has 8 connected components, where the component
+with most nodes has 2337 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 157.81,
+and the node degree mode is 2. The top 5 most central nodes are 1305732.JAGG01000001_gene1733
+(degree 944), 1305732.JAGG01000001_gene2121 (degree 818), 1305732.JAGG01000001_gene1135
+(degree 805), 1305732.JAGG01000001_gene912 (degree 770) and 1305732.JAGG01000001_gene1392
+(degree 761).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.Krocy2(
 	
 	Datetime: 2021-02-03 21:39:42.580902
 	
-	The undirected graph Microbacterium sp. KROCY2 has 2351 nodes and 185501 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06715
-	and has 8 connected components, where the component with most nodes has 2337 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 157.81, and the node degree mode is 2. The top 5
-	most central nodes are 1305732.JAGG01000001_gene1733 (degree 944), 1305732.JAGG01000001_gene2121
-	(degree 818), 1305732.JAGG01000001_gene1135 (degree 805), 1305732.JAGG01000001_gene912
-	(degree 770) and 1305732.JAGG01000001_gene1392 (degree 761).
+	The undirected graph Microbacterium sp. KROCY2 has 2351 nodes and 185501
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06715 and has 8 connected components, where the component
+	with most nodes has 2337 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 157.81,
+	and the node degree mode is 2. The top 5 most central nodes are 1305732.JAGG01000001_gene1733
+	(degree 944), 1305732.JAGG01000001_gene2121 (degree 818), 1305732.JAGG01000001_gene1135
+	(degree 805), 1305732.JAGG01000001_gene912 (degree 770) and 1305732.JAGG01000001_gene1392
+	(degree 761).
 	
 
 

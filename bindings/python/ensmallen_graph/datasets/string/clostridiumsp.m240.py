@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:47.776228
 
-The undirected graph Clostridium sp. M240 has 3271 nodes and 225561 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04218 and
-has 13 connected components, where the component with most nodes has 3244 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 137.92, and the node degree mode is 2. The top 5 most central
-nodes are 1216932.CM240_1527 (degree 1226), 1216932.CM240_0546 (degree 1063), 1216932.CM240_2931
-(degree 990), 1216932.CM240_1214 (degree 985) and 1216932.CM240_0868 (degree 889).
+The undirected graph Clostridium sp. M240 has 3271 nodes and 225561 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04218 and has 13 connected components, where the component with most
+nodes has 3244 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 137.92, and
+the node degree mode is 2. The top 5 most central nodes are 1216932.CM240_1527
+(degree 1226), 1216932.CM240_0546 (degree 1063), 1216932.CM240_2931 (degree
+990), 1216932.CM240_1214 (degree 985) and 1216932.CM240_0868 (degree 889).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSp.M240(
 	
 	Datetime: 2021-02-02 23:20:47.776228
 	
-	The undirected graph Clostridium sp. M240 has 3271 nodes and 225561 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04218 and
-	has 13 connected components, where the component with most nodes has 3244 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 137.92, and the node degree mode is 2. The top 5 most central
-	nodes are 1216932.CM240_1527 (degree 1226), 1216932.CM240_0546 (degree 1063), 1216932.CM240_2931
-	(degree 990), 1216932.CM240_1214 (degree 985) and 1216932.CM240_0868 (degree 889).
+	The undirected graph Clostridium sp. M240 has 3271 nodes and 225561 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04218 and has 13 connected components, where the component with most
+	nodes has 3244 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 137.92, and
+	the node degree mode is 2. The top 5 most central nodes are 1216932.CM240_1527
+	(degree 1226), 1216932.CM240_0546 (degree 1063), 1216932.CM240_2931 (degree
+	990), 1216932.CM240_1214 (degree 985) and 1216932.CM240_0868 (degree 889).
 	
 
 

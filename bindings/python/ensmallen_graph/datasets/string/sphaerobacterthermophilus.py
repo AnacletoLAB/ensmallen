@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:25.890603
 
-The undirected graph Sphaerobacter thermophilus has 3460 nodes and 301832 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05044
-and has 15 connected components, where the component with most nodes has 3425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 174.47, and the node degree mode is 3. The top 5
-most central nodes are 479434.Sthe_3406 (degree 1960), 479434.Sthe_3170 (degree 1627),
-479434.Sthe_1591 (degree 1526), 479434.Sthe_2434 (degree 1325) and 479434.Sthe_1364
-(degree 1190).
+The undirected graph Sphaerobacter thermophilus has 3460 nodes and 301832
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05044 and has 15 connected components, where the component
+with most nodes has 3425 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 174.47,
+and the node degree mode is 3. The top 5 most central nodes are 479434.Sthe_3406
+(degree 1960), 479434.Sthe_3170 (degree 1627), 479434.Sthe_1591 (degree
+1526), 479434.Sthe_2434 (degree 1325) and 479434.Sthe_1364 (degree 1190).
 
 
 References
@@ -107,14 +107,14 @@ def SphaerobacterThermophilus(
 	
 	Datetime: 2021-02-02 20:57:25.890603
 	
-	The undirected graph Sphaerobacter thermophilus has 3460 nodes and 301832 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05044
-	and has 15 connected components, where the component with most nodes has 3425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 174.47, and the node degree mode is 3. The top 5
-	most central nodes are 479434.Sthe_3406 (degree 1960), 479434.Sthe_3170 (degree 1627),
-	479434.Sthe_1591 (degree 1526), 479434.Sthe_2434 (degree 1325) and 479434.Sthe_1364
-	(degree 1190).
+	The undirected graph Sphaerobacter thermophilus has 3460 nodes and 301832
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05044 and has 15 connected components, where the component
+	with most nodes has 3425 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 174.47,
+	and the node degree mode is 3. The top 5 most central nodes are 479434.Sthe_3406
+	(degree 1960), 479434.Sthe_3170 (degree 1627), 479434.Sthe_1591 (degree
+	1526), 479434.Sthe_2434 (degree 1325) and 479434.Sthe_1364 (degree 1190).
 	
 
 

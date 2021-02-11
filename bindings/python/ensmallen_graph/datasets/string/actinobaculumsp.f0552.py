@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:19.599780
 
-The undirected graph Actinobaculum sp. F0552 has 2282 nodes and 129084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04960 and
-has 31 connected components, where the component with most nodes has 2194 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 113.13, and the node degree mode is 3. The top 5 most central
-nodes are 1227261.HMPREF0043_00395 (degree 847), 1227261.HMPREF0043_01378 (degree
-822), 1227261.HMPREF0043_01386 (degree 693), 1227261.HMPREF0043_01421 (degree 639)
-and 1227261.HMPREF0043_01974 (degree 634).
+The undirected graph Actinobaculum sp. F0552 has 2282 nodes and 129084
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04960 and has 31 connected components, where the component
+with most nodes has 2194 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 113.13,
+and the node degree mode is 3. The top 5 most central nodes are 1227261.HMPREF0043_00395
+(degree 847), 1227261.HMPREF0043_01378 (degree 822), 1227261.HMPREF0043_01386
+(degree 693), 1227261.HMPREF0043_01421 (degree 639) and 1227261.HMPREF0043_01974
+(degree 634).
 
 
 References
@@ -107,14 +108,15 @@ def ActinobaculumSp.F0552(
 	
 	Datetime: 2021-02-02 23:25:19.599780
 	
-	The undirected graph Actinobaculum sp. F0552 has 2282 nodes and 129084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04960 and
-	has 31 connected components, where the component with most nodes has 2194 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 113.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1227261.HMPREF0043_00395 (degree 847), 1227261.HMPREF0043_01378 (degree
-	822), 1227261.HMPREF0043_01386 (degree 693), 1227261.HMPREF0043_01421 (degree 639)
-	and 1227261.HMPREF0043_01974 (degree 634).
+	The undirected graph Actinobaculum sp. F0552 has 2282 nodes and 129084
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04960 and has 31 connected components, where the component
+	with most nodes has 2194 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 113.13,
+	and the node degree mode is 3. The top 5 most central nodes are 1227261.HMPREF0043_00395
+	(degree 847), 1227261.HMPREF0043_01378 (degree 822), 1227261.HMPREF0043_01386
+	(degree 693), 1227261.HMPREF0043_01421 (degree 639) and 1227261.HMPREF0043_01974
+	(degree 634).
 	
 
 

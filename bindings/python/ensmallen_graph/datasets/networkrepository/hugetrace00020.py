@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:49.746452
 
-The undirected graph hugetrace-00020 has 16002413 nodes and 23998813 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-central nodes are 15997515 (degree 3), 15998326 (degree 3), 16001059 (degree 3),
-15997986 (degree 3) and 15997987 (degree 3).
+The undirected graph hugetrace-00020 has 16002413 nodes and 23998813 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 3.00 and the
+node degree mode is 3. The top 5 most central nodes are 15997515 (degree
+3), 15998326 (degree 3), 16001059 (degree 3), 15997986 (degree 3) and 15997987
+(degree 3).
 
 
 References
@@ -102,12 +103,13 @@ def Hugetrace00020(
 	
 	Datetime: 2021-02-03 23:21:49.746452
 	
-	The undirected graph hugetrace-00020 has 16002413 nodes and 23998813 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-	central nodes are 15997515 (degree 3), 15998326 (degree 3), 16001059 (degree 3),
-	15997986 (degree 3) and 15997987 (degree 3).
+	The undirected graph hugetrace-00020 has 16002413 nodes and 23998813 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 3.00 and the
+	node degree mode is 3. The top 5 most central nodes are 15997515 (degree
+	3), 15998326 (degree 3), 16001059 (degree 3), 15997986 (degree 3) and 15997987
+	(degree 3).
 	
 
 

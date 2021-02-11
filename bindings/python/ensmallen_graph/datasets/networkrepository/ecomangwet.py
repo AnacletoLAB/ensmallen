@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:59:07.818789
 
-The undirected graph eco-mangwet has 97 nodes and 1446 weighted edges, of which none
-are self-loops. The graph is quite dense as it has a density of 0.31057 and is connected,
-as it has a single component. The graph median node degree is 31, the mean node degree
-is 29.81 and the node degree mode is 23. The top 5 most central nodes are 97 (degree
-90), 92 (degree 74), 93 (degree 74), 57 (degree 58) and 55 (degree 55).
+The undirected graph eco-mangwet has 97 nodes and 1446 weighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.31057 and is connected, as it has a single component. The graph median
+node degree is 31, the mean node degree is 29.81 and the node degree mode
+is 23. The top 5 most central nodes are 97 (degree 90), 92 (degree 74),
+93 (degree 74), 57 (degree 58) and 55 (degree 55).
 
 
 References
@@ -121,11 +122,12 @@ def EcoMangwet(
 	
 	Datetime: 2021-02-03 23:59:07.818789
 	
-	The undirected graph eco-mangwet has 97 nodes and 1446 weighted edges, of which none
-	are self-loops. The graph is quite dense as it has a density of 0.31057 and is connected,
-	as it has a single component. The graph median node degree is 31, the mean node degree
-	is 29.81 and the node degree mode is 23. The top 5 most central nodes are 97 (degree
-	90), 92 (degree 74), 93 (degree 74), 57 (degree 58) and 55 (degree 55).
+	The undirected graph eco-mangwet has 97 nodes and 1446 weighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.31057 and is connected, as it has a single component. The graph median
+	node degree is 31, the mean node degree is 29.81 and the node degree mode
+	is 23. The top 5 most central nodes are 97 (degree 90), 92 (degree 74),
+	93 (degree 74), 57 (degree 58) and 55 (degree 55).
 	
 
 

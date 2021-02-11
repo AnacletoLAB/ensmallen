@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:26.083417
 
-The undirected graph Gammaproteobacteria bacterium HTCC2207 has 2371 nodes and 189204
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06734 and has 6 connected components, where the component with most nodes has
-2358 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 131, the mean node degree is 159.60, and the node degree mode is 2. The
-top 5 most central nodes are 314287.GB2207_01857 (degree 902), 314287.GB2207_08956
-(degree 871), 314287.GB2207_07198 (degree 819), 314287.GB2207_09021 (degree 804)
-and 314287.GB2207_11168 (degree 801).
+The undirected graph Gammaproteobacteria bacterium HTCC2207 has 2371 nodes
+and 189204 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06734 and has 6 connected components, where the
+component with most nodes has 2358 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 159.60, and the node degree mode is 2. The top 5 most central nodes
+are 314287.GB2207_01857 (degree 902), 314287.GB2207_08956 (degree 871),
+314287.GB2207_07198 (degree 819), 314287.GB2207_09021 (degree 804) and
+314287.GB2207_11168 (degree 801).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumHtcc2207(
 	
 	Datetime: 2021-02-02 20:25:26.083417
 	
-	The undirected graph Gammaproteobacteria bacterium HTCC2207 has 2371 nodes and 189204
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06734 and has 6 connected components, where the component with most nodes has
-	2358 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 131, the mean node degree is 159.60, and the node degree mode is 2. The
-	top 5 most central nodes are 314287.GB2207_01857 (degree 902), 314287.GB2207_08956
-	(degree 871), 314287.GB2207_07198 (degree 819), 314287.GB2207_09021 (degree 804)
-	and 314287.GB2207_11168 (degree 801).
+	The undirected graph Gammaproteobacteria bacterium HTCC2207 has 2371 nodes
+	and 189204 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06734 and has 6 connected components, where the
+	component with most nodes has 2358 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 159.60, and the node degree mode is 2. The top 5 most central nodes
+	are 314287.GB2207_01857 (degree 902), 314287.GB2207_08956 (degree 871),
+	314287.GB2207_07198 (degree 819), 314287.GB2207_09021 (degree 804) and
+	314287.GB2207_11168 (degree 801).
 	
 
 

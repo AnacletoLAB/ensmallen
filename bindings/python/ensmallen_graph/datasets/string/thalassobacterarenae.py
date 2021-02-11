@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:47.525989
 
-The undirected graph Thalassobacter arenae has 3595 nodes and 362999 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05619 and
-has 8 connected components, where the component with most nodes has 3577 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 201.95, and the node degree mode is 4. The top 5 most central
-nodes are 1123360.thalar_00224 (degree 1450), 1123360.thalar_01732 (degree 1131),
-1123360.thalar_03333 (degree 1102), 1123360.thalar_02931 (degree 1088) and 1123360.thalar_01930
+The undirected graph Thalassobacter arenae has 3595 nodes and 362999 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05619 and has 8 connected components, where the component with most
+nodes has 3577 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 201.95, and
+the node degree mode is 4. The top 5 most central nodes are 1123360.thalar_00224
+(degree 1450), 1123360.thalar_01732 (degree 1131), 1123360.thalar_03333
+(degree 1102), 1123360.thalar_02931 (degree 1088) and 1123360.thalar_01930
 (degree 1075).
 
 
@@ -107,13 +108,14 @@ def ThalassobacterArenae(
 	
 	Datetime: 2021-02-02 22:51:47.525989
 	
-	The undirected graph Thalassobacter arenae has 3595 nodes and 362999 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05619 and
-	has 8 connected components, where the component with most nodes has 3577 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 201.95, and the node degree mode is 4. The top 5 most central
-	nodes are 1123360.thalar_00224 (degree 1450), 1123360.thalar_01732 (degree 1131),
-	1123360.thalar_03333 (degree 1102), 1123360.thalar_02931 (degree 1088) and 1123360.thalar_01930
+	The undirected graph Thalassobacter arenae has 3595 nodes and 362999 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05619 and has 8 connected components, where the component with most
+	nodes has 3577 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 201.95, and
+	the node degree mode is 4. The top 5 most central nodes are 1123360.thalar_00224
+	(degree 1450), 1123360.thalar_01732 (degree 1131), 1123360.thalar_03333
+	(degree 1102), 1123360.thalar_02931 (degree 1088) and 1123360.thalar_01930
 	(degree 1075).
 	
 

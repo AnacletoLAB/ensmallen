@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:27:34.734800
 
-The undirected graph Pseudomonas moraviensis has 5566 nodes and 658257 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04250 and
-has 33 connected components, where the component with most nodes has 5478 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 236.53, and the node degree mode is 2. The top 5 most central
-nodes are 1395516.PMO01_28190 (degree 1981), 1395516.PMO01_10650 (degree 1721), 1395516.PMO01_03240
-(degree 1630), 1395516.PMO01_21975 (degree 1607) and 1395516.PMO01_01380 (degree
+The undirected graph Pseudomonas moraviensis has 5566 nodes and 658257
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04250 and has 33 connected components, where the component
+with most nodes has 5478 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 236.53,
+and the node degree mode is 2. The top 5 most central nodes are 1395516.PMO01_28190
+(degree 1981), 1395516.PMO01_10650 (degree 1721), 1395516.PMO01_03240 (degree
+1630), 1395516.PMO01_21975 (degree 1607) and 1395516.PMO01_01380 (degree
 1586).
 
 
@@ -107,13 +108,14 @@ def PseudomonasMoraviensis(
 	
 	Datetime: 2021-02-03 22:27:34.734800
 	
-	The undirected graph Pseudomonas moraviensis has 5566 nodes and 658257 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04250 and
-	has 33 connected components, where the component with most nodes has 5478 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 236.53, and the node degree mode is 2. The top 5 most central
-	nodes are 1395516.PMO01_28190 (degree 1981), 1395516.PMO01_10650 (degree 1721), 1395516.PMO01_03240
-	(degree 1630), 1395516.PMO01_21975 (degree 1607) and 1395516.PMO01_01380 (degree
+	The undirected graph Pseudomonas moraviensis has 5566 nodes and 658257
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04250 and has 33 connected components, where the component
+	with most nodes has 5478 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 236.53,
+	and the node degree mode is 2. The top 5 most central nodes are 1395516.PMO01_28190
+	(degree 1981), 1395516.PMO01_10650 (degree 1721), 1395516.PMO01_03240 (degree
+	1630), 1395516.PMO01_21975 (degree 1607) and 1395516.PMO01_01380 (degree
 	1586).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:59.112278
 
-The undirected graph Burkholderia sp. JPY347 has 5413 nodes and 719858 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04915 and
-has 20 connected components, where the component with most nodes has 5363 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 265.97, and the node degree mode is 2. The top 5 most central
-nodes are 667632.KB890165_gene2655 (degree 2105), 667632.KB890175_gene4132 (degree
-2025), 667632.KB890166_gene1389 (degree 2016), 667632.KB890209_gene5436 (degree 1932)
-and 667632.KB890170_gene3730 (degree 1706).
+The undirected graph Burkholderia sp. JPY347 has 5413 nodes and 719858
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04915 and has 20 connected components, where the component
+with most nodes has 5363 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 218, the mean node degree is 265.97,
+and the node degree mode is 2. The top 5 most central nodes are 667632.KB890165_gene2655
+(degree 2105), 667632.KB890175_gene4132 (degree 2025), 667632.KB890166_gene1389
+(degree 2016), 667632.KB890209_gene5436 (degree 1932) and 667632.KB890170_gene3730
+(degree 1706).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaSp.Jpy347(
 	
 	Datetime: 2021-02-02 21:28:59.112278
 	
-	The undirected graph Burkholderia sp. JPY347 has 5413 nodes and 719858 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04915 and
-	has 20 connected components, where the component with most nodes has 5363 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 265.97, and the node degree mode is 2. The top 5 most central
-	nodes are 667632.KB890165_gene2655 (degree 2105), 667632.KB890175_gene4132 (degree
-	2025), 667632.KB890166_gene1389 (degree 2016), 667632.KB890209_gene5436 (degree 1932)
-	and 667632.KB890170_gene3730 (degree 1706).
+	The undirected graph Burkholderia sp. JPY347 has 5413 nodes and 719858
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04915 and has 20 connected components, where the component
+	with most nodes has 5363 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 218, the mean node degree is 265.97,
+	and the node degree mode is 2. The top 5 most central nodes are 667632.KB890165_gene2655
+	(degree 2105), 667632.KB890175_gene4132 (degree 2025), 667632.KB890166_gene1389
+	(degree 2016), 667632.KB890209_gene5436 (degree 1932) and 667632.KB890170_gene3730
+	(degree 1706).
 	
 
 

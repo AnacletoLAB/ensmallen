@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:41.963464
 
-The undirected graph Psychrobacter sp. TB15 has 2532 nodes and 190676 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05951 and
-has 6 connected components, where the component with most nodes has 2521 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 150.61, and the node degree mode is 2. The top 5 most central
-nodes are 494416.AYXN01000014_gene222 (degree 956), 494416.AYXN01000026_gene75 (degree
-863), 494416.AYXN01000043_gene1529 (degree 760), 494416.AYXN01000025_gene194 (degree
-746) and 494416.AYXN01000023_gene716 (degree 739).
+The undirected graph Psychrobacter sp. TB15 has 2532 nodes and 190676 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05951 and has 6 connected components, where the component with most
+nodes has 2521 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 150.61, and
+the node degree mode is 2. The top 5 most central nodes are 494416.AYXN01000014_gene222
+(degree 956), 494416.AYXN01000026_gene75 (degree 863), 494416.AYXN01000043_gene1529
+(degree 760), 494416.AYXN01000025_gene194 (degree 746) and 494416.AYXN01000023_gene716
+(degree 739).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterSp.Tb15(
 	
 	Datetime: 2021-02-02 21:00:41.963464
 	
-	The undirected graph Psychrobacter sp. TB15 has 2532 nodes and 190676 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05951 and
-	has 6 connected components, where the component with most nodes has 2521 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 150.61, and the node degree mode is 2. The top 5 most central
-	nodes are 494416.AYXN01000014_gene222 (degree 956), 494416.AYXN01000026_gene75 (degree
-	863), 494416.AYXN01000043_gene1529 (degree 760), 494416.AYXN01000025_gene194 (degree
-	746) and 494416.AYXN01000023_gene716 (degree 739).
+	The undirected graph Psychrobacter sp. TB15 has 2532 nodes and 190676 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05951 and has 6 connected components, where the component with most
+	nodes has 2521 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 150.61, and
+	the node degree mode is 2. The top 5 most central nodes are 494416.AYXN01000014_gene222
+	(degree 956), 494416.AYXN01000026_gene75 (degree 863), 494416.AYXN01000043_gene1529
+	(degree 760), 494416.AYXN01000025_gene194 (degree 746) and 494416.AYXN01000023_gene716
+	(degree 739).
 	
 
 

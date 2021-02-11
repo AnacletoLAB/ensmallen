@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:43.330901
 
-The undirected graph Serratia marcescens FGI94 has 4331 nodes and 341760 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03645
-and has 16 connected components, where the component with most nodes has 4297 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 157.82, and the node degree mode is 2. The top 5
-most central nodes are 1249634.D781_4552 (degree 1372), 1249634.D781_2145 (degree
-1335), 1249634.D781_3348 (degree 1119), 1249634.D781_4079 (degree 1117) and 1249634.D781_4077
-(degree 1087).
+The undirected graph Serratia marcescens FGI94 has 4331 nodes and 341760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03645 and has 16 connected components, where the component
+with most nodes has 4297 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 157.82,
+and the node degree mode is 2. The top 5 most central nodes are 1249634.D781_4552
+(degree 1372), 1249634.D781_2145 (degree 1335), 1249634.D781_3348 (degree
+1119), 1249634.D781_4079 (degree 1117) and 1249634.D781_4077 (degree 1087).
 
 
 References
@@ -107,14 +107,14 @@ def SerratiaMarcescensFgi94(
 	
 	Datetime: 2021-02-02 23:34:43.330901
 	
-	The undirected graph Serratia marcescens FGI94 has 4331 nodes and 341760 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03645
-	and has 16 connected components, where the component with most nodes has 4297 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 157.82, and the node degree mode is 2. The top 5
-	most central nodes are 1249634.D781_4552 (degree 1372), 1249634.D781_2145 (degree
-	1335), 1249634.D781_3348 (degree 1119), 1249634.D781_4079 (degree 1117) and 1249634.D781_4077
-	(degree 1087).
+	The undirected graph Serratia marcescens FGI94 has 4331 nodes and 341760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03645 and has 16 connected components, where the component
+	with most nodes has 4297 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 157.82,
+	and the node degree mode is 2. The top 5 most central nodes are 1249634.D781_4552
+	(degree 1372), 1249634.D781_2145 (degree 1335), 1249634.D781_3348 (degree
+	1119), 1249634.D781_4079 (degree 1117) and 1249634.D781_4077 (degree 1087).
 	
 
 

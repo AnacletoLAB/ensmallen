@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:47:03.633798
 
-The undirected graph Leifsonia aquatica has 4156 nodes and 318980 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03694 and
-has 22 connected components, where the component with most nodes has 4091 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 153.50, and the node degree mode is 1. The top 5 most central
-nodes are 1416759.AYMR01000002_gene1828 (degree 1072), 1416759.AYMR01000002_gene1804
-(degree 1070), 1416759.AYMR01000007_gene839 (degree 1014), 1416759.AYMR01000001_gene1556
-(degree 1011) and 1416759.AYMR01000011_gene298 (degree 975).
+The undirected graph Leifsonia aquatica has 4156 nodes and 318980 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03694 and has 22 connected components, where the component with most
+nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 153.50, and
+the node degree mode is 1. The top 5 most central nodes are 1416759.AYMR01000002_gene1828
+(degree 1072), 1416759.AYMR01000002_gene1804 (degree 1070), 1416759.AYMR01000007_gene839
+(degree 1014), 1416759.AYMR01000001_gene1556 (degree 1011) and 1416759.AYMR01000011_gene298
+(degree 975).
 
 
 References
@@ -107,14 +108,15 @@ def LeifsoniaAquatica(
 	
 	Datetime: 2021-02-03 22:47:03.633798
 	
-	The undirected graph Leifsonia aquatica has 4156 nodes and 318980 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03694 and
-	has 22 connected components, where the component with most nodes has 4091 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 153.50, and the node degree mode is 1. The top 5 most central
-	nodes are 1416759.AYMR01000002_gene1828 (degree 1072), 1416759.AYMR01000002_gene1804
-	(degree 1070), 1416759.AYMR01000007_gene839 (degree 1014), 1416759.AYMR01000001_gene1556
-	(degree 1011) and 1416759.AYMR01000011_gene298 (degree 975).
+	The undirected graph Leifsonia aquatica has 4156 nodes and 318980 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03694 and has 22 connected components, where the component with most
+	nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 153.50, and
+	the node degree mode is 1. The top 5 most central nodes are 1416759.AYMR01000002_gene1828
+	(degree 1072), 1416759.AYMR01000002_gene1804 (degree 1070), 1416759.AYMR01000007_gene839
+	(degree 1014), 1416759.AYMR01000001_gene1556 (degree 1011) and 1416759.AYMR01000011_gene298
+	(degree 975).
 	
 
 

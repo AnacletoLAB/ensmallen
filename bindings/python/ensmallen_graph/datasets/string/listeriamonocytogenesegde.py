@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:48.990375
 
-The undirected graph Listeria monocytogenes EGDe has 2860 nodes and 282517 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06910
-and is connected, as it has a single component. The graph median node degree is 178,
-the mean node degree is 197.56, and the node degree mode is 6. The top 5 most central
-nodes are 169963.lmo1565 (degree 1107), 169963.lmo0829 (degree 1078), 169963.lmo0219
-(degree 957), 169963.lmo1096 (degree 911) and 169963.lmo1473 (degree 858).
+The undirected graph Listeria monocytogenes EGDe has 2860 nodes and 282517
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06910 and is connected, as it has a single component.
+The graph median node degree is 178, the mean node degree is 197.56, and
+the node degree mode is 6. The top 5 most central nodes are 169963.lmo1565
+(degree 1107), 169963.lmo0829 (degree 1078), 169963.lmo0219 (degree 957),
+169963.lmo1096 (degree 911) and 169963.lmo1473 (degree 858).
 
 
 References
@@ -105,12 +106,13 @@ def ListeriaMonocytogenesEgde(
 	
 	Datetime: 2021-02-02 19:54:48.990375
 	
-	The undirected graph Listeria monocytogenes EGDe has 2860 nodes and 282517 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06910
-	and is connected, as it has a single component. The graph median node degree is 178,
-	the mean node degree is 197.56, and the node degree mode is 6. The top 5 most central
-	nodes are 169963.lmo1565 (degree 1107), 169963.lmo0829 (degree 1078), 169963.lmo0219
-	(degree 957), 169963.lmo1096 (degree 911) and 169963.lmo1473 (degree 858).
+	The undirected graph Listeria monocytogenes EGDe has 2860 nodes and 282517
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06910 and is connected, as it has a single component.
+	The graph median node degree is 178, the mean node degree is 197.56, and
+	the node degree mode is 6. The top 5 most central nodes are 169963.lmo1565
+	(degree 1107), 169963.lmo0829 (degree 1078), 169963.lmo0219 (degree 957),
+	169963.lmo1096 (degree 911) and 169963.lmo1473 (degree 858).
 	
 
 

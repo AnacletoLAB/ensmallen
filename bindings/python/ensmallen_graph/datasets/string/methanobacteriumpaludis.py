@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:36.598302
 
-The undirected graph Methanobacterium paludis has 2342 nodes and 300770 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10972 and has 28 connected components, where the component with most nodes has
-2260 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 267, the mean node degree is 256.85, and the node degree mode is 2. The
-top 5 most central nodes are 868131.MSWAN_1084 (degree 1101), 868131.MSWAN_2246 (degree
-983), 868131.MSWAN_0045 (degree 976), 868131.MSWAN_0266 (degree 966) and 868131.MSWAN_1774
-(degree 930).
+The undirected graph Methanobacterium paludis has 2342 nodes and 300770
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10972 and has 28 connected components, where the
+component with most nodes has 2260 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 267, the mean node degree
+is 256.85, and the node degree mode is 2. The top 5 most central nodes
+are 868131.MSWAN_1084 (degree 1101), 868131.MSWAN_2246 (degree 983), 868131.MSWAN_0045
+(degree 976), 868131.MSWAN_0266 (degree 966) and 868131.MSWAN_1774 (degree
+930).
 
 
 References
@@ -107,14 +108,15 @@ def MethanobacteriumPaludis(
 	
 	Datetime: 2021-02-02 21:48:36.598302
 	
-	The undirected graph Methanobacterium paludis has 2342 nodes and 300770 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10972 and has 28 connected components, where the component with most nodes has
-	2260 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 267, the mean node degree is 256.85, and the node degree mode is 2. The
-	top 5 most central nodes are 868131.MSWAN_1084 (degree 1101), 868131.MSWAN_2246 (degree
-	983), 868131.MSWAN_0045 (degree 976), 868131.MSWAN_0266 (degree 966) and 868131.MSWAN_1774
-	(degree 930).
+	The undirected graph Methanobacterium paludis has 2342 nodes and 300770
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10972 and has 28 connected components, where the
+	component with most nodes has 2260 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 267, the mean node degree
+	is 256.85, and the node degree mode is 2. The top 5 most central nodes
+	are 868131.MSWAN_1084 (degree 1101), 868131.MSWAN_2246 (degree 983), 868131.MSWAN_0045
+	(degree 976), 868131.MSWAN_0266 (degree 966) and 868131.MSWAN_1774 (degree
+	930).
 	
 
 

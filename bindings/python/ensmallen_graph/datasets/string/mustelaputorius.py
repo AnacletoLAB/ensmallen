@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:40:44.843566
 
-The undirected graph Mustela putorius has 18285 nodes and 3865728 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02313 and
-is connected, as it has a single component. The graph median node degree is 313,
-the mean node degree is 422.83, and the node degree mode is 5. The top 5 most central
-nodes are 9668.ENSMPUP00000011431 (degree 4260), 9668.ENSMPUP00000012007 (degree
-4256), 9668.ENSMPUP00000008858 (degree 4123), 9668.ENSMPUP00000006719 (degree 3710)
-and 9668.ENSMPUP00000001273 (degree 3566).
+The undirected graph Mustela putorius has 18285 nodes and 3865728 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02313 and is connected, as it has a single component. The graph median
+node degree is 313, the mean node degree is 422.83, and the node degree
+mode is 5. The top 5 most central nodes are 9668.ENSMPUP00000011431 (degree
+4260), 9668.ENSMPUP00000012007 (degree 4256), 9668.ENSMPUP00000008858 (degree
+4123), 9668.ENSMPUP00000006719 (degree 3710) and 9668.ENSMPUP00000001273
+(degree 3566).
 
 
 References
@@ -106,13 +107,14 @@ def MustelaPutorius(
 	
 	Datetime: 2021-02-02 17:40:44.843566
 	
-	The undirected graph Mustela putorius has 18285 nodes and 3865728 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02313 and
-	is connected, as it has a single component. The graph median node degree is 313,
-	the mean node degree is 422.83, and the node degree mode is 5. The top 5 most central
-	nodes are 9668.ENSMPUP00000011431 (degree 4260), 9668.ENSMPUP00000012007 (degree
-	4256), 9668.ENSMPUP00000008858 (degree 4123), 9668.ENSMPUP00000006719 (degree 3710)
-	and 9668.ENSMPUP00000001273 (degree 3566).
+	The undirected graph Mustela putorius has 18285 nodes and 3865728 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02313 and is connected, as it has a single component. The graph median
+	node degree is 313, the mean node degree is 422.83, and the node degree
+	mode is 5. The top 5 most central nodes are 9668.ENSMPUP00000011431 (degree
+	4260), 9668.ENSMPUP00000012007 (degree 4256), 9668.ENSMPUP00000008858 (degree
+	4123), 9668.ENSMPUP00000006719 (degree 3710) and 9668.ENSMPUP00000001273
+	(degree 3566).
 	
 
 

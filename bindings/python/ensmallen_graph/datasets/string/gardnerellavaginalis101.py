@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:47.063510
 
-The undirected graph Gardnerella vaginalis 101 has 1140 nodes and 74905 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11538 and has 3 connected components, where the component with most nodes has
-1136 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 115, the mean node degree is 131.41, and the node degree mode is 2. The
-top 5 most central nodes are 904144.AEJD01000007_gene1124 (degree 602), 904144.AEJD01000006_gene672
+The undirected graph Gardnerella vaginalis 101 has 1140 nodes and 74905
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11538 and has 3 connected components, where the
+component with most nodes has 1136 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 131.41, and the node degree mode is 2. The top 5 most central nodes
+are 904144.AEJD01000007_gene1124 (degree 602), 904144.AEJD01000006_gene672
 (degree 588), 904144.AEJD01000003_gene1072 (degree 573), 904144.AEJD01000006_gene679
 (degree 535) and 904144.AEJD01000006_gene715 (degree 525).
 
@@ -107,12 +108,13 @@ def GardnerellaVaginalis101(
 	
 	Datetime: 2021-02-02 21:53:47.063510
 	
-	The undirected graph Gardnerella vaginalis 101 has 1140 nodes and 74905 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11538 and has 3 connected components, where the component with most nodes has
-	1136 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 115, the mean node degree is 131.41, and the node degree mode is 2. The
-	top 5 most central nodes are 904144.AEJD01000007_gene1124 (degree 602), 904144.AEJD01000006_gene672
+	The undirected graph Gardnerella vaginalis 101 has 1140 nodes and 74905
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11538 and has 3 connected components, where the
+	component with most nodes has 1136 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 131.41, and the node degree mode is 2. The top 5 most central nodes
+	are 904144.AEJD01000007_gene1124 (degree 602), 904144.AEJD01000006_gene672
 	(degree 588), 904144.AEJD01000003_gene1072 (degree 573), 904144.AEJD01000006_gene679
 	(degree 535) and 904144.AEJD01000006_gene715 (degree 525).
 	

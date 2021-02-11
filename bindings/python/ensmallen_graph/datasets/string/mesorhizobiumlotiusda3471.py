@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:13:57.600579
 
-The undirected graph Mesorhizobium loti USDA3471 has 6242 nodes and 978349 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-and has 37 connected components, where the component with most nodes has 6159 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 313.47, and the node degree mode is 1. The top 5
-most central nodes are 1040983.AXAE01000035_gene2351 (degree 2408), 1040983.AXAE01000009_gene5202
-(degree 2230), 1040983.AXAE01000013_gene5635 (degree 2145), 1040983.AXAE01000018_gene5953
-(degree 2142) and 1040983.AXAE01000012_gene2159 (degree 1990).
+The undirected graph Mesorhizobium loti USDA3471 has 6242 nodes and 978349
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05023 and has 37 connected components, where the component
+with most nodes has 6159 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 313.47,
+and the node degree mode is 1. The top 5 most central nodes are 1040983.AXAE01000035_gene2351
+(degree 2408), 1040983.AXAE01000009_gene5202 (degree 2230), 1040983.AXAE01000013_gene5635
+(degree 2145), 1040983.AXAE01000018_gene5953 (degree 2142) and 1040983.AXAE01000012_gene2159
+(degree 1990).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumLotiUsda3471(
 	
 	Datetime: 2021-02-02 22:13:57.600579
 	
-	The undirected graph Mesorhizobium loti USDA3471 has 6242 nodes and 978349 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-	and has 37 connected components, where the component with most nodes has 6159 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 313.47, and the node degree mode is 1. The top 5
-	most central nodes are 1040983.AXAE01000035_gene2351 (degree 2408), 1040983.AXAE01000009_gene5202
-	(degree 2230), 1040983.AXAE01000013_gene5635 (degree 2145), 1040983.AXAE01000018_gene5953
-	(degree 2142) and 1040983.AXAE01000012_gene2159 (degree 1990).
+	The undirected graph Mesorhizobium loti USDA3471 has 6242 nodes and 978349
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05023 and has 37 connected components, where the component
+	with most nodes has 6159 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 313.47,
+	and the node degree mode is 1. The top 5 most central nodes are 1040983.AXAE01000035_gene2351
+	(degree 2408), 1040983.AXAE01000009_gene5202 (degree 2230), 1040983.AXAE01000013_gene5635
+	(degree 2145), 1040983.AXAE01000018_gene5953 (degree 2142) and 1040983.AXAE01000012_gene2159
+	(degree 1990).
 	
 
 

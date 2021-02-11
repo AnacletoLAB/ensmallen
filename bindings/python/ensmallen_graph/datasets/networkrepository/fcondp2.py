@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:09:38.628016
 
-The undirected graph fcondp2 has 201822 nodes and 5748069 unweighted edges, of which
-201822 are self-loops. The graph is quite sparse as it has a density of 0.00028 and
-is connected, as it has a single component. The graph median node degree is 54, the
-mean node degree is 55.96, and the node degree mode is 54. The top 5 most central
-nodes are 189039 (degree 96), 189038 (degree 96), 189037 (degree 96), 189036 (degree
-96) and 189035 (degree 96).
+The undirected graph fcondp2 has 201822 nodes and 5748069 unweighted edges,
+of which 201822 are self-loops. The graph is quite sparse as it has a density
+of 0.00028 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 55.96, and the node degree mode
+is 54. The top 5 most central nodes are 189039 (degree 96), 189038 (degree
+96), 189037 (degree 96), 189036 (degree 96) and 189035 (degree 96).
 
 
 References
@@ -102,12 +102,12 @@ def Fcondp2(
 	
 	Datetime: 2021-02-06 12:09:38.628016
 	
-	The undirected graph fcondp2 has 201822 nodes and 5748069 unweighted edges, of which
-	201822 are self-loops. The graph is quite sparse as it has a density of 0.00028 and
-	is connected, as it has a single component. The graph median node degree is 54, the
-	mean node degree is 55.96, and the node degree mode is 54. The top 5 most central
-	nodes are 189039 (degree 96), 189038 (degree 96), 189037 (degree 96), 189036 (degree
-	96) and 189035 (degree 96).
+	The undirected graph fcondp2 has 201822 nodes and 5748069 unweighted edges,
+	of which 201822 are self-loops. The graph is quite sparse as it has a density
+	of 0.00028 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 55.96, and the node degree mode
+	is 54. The top 5 most central nodes are 189039 (degree 96), 189038 (degree
+	96), 189037 (degree 96), 189036 (degree 96) and 189035 (degree 96).
 	
 
 

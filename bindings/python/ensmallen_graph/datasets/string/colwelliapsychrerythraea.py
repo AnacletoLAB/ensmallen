@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:48.165892
 
-The undirected graph Colwellia psychrerythraea has 4321 nodes and 474861 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-and has 19 connected components, where the component with most nodes has 4278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 219.79, and the node degree mode is 1. The top 5
-most central nodes are 28229.ND2E_1333 (degree 1848), 28229.ND2E_1873 (degree 1406),
-28229.ND2E_0757 (degree 1340), 28229.ND2E_3815 (degree 1308) and 28229.ND2E_3732
-(degree 1280).
+The undirected graph Colwellia psychrerythraea has 4321 nodes and 474861
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05088 and has 19 connected components, where the component
+with most nodes has 4278 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 219.79,
+and the node degree mode is 1. The top 5 most central nodes are 28229.ND2E_1333
+(degree 1848), 28229.ND2E_1873 (degree 1406), 28229.ND2E_0757 (degree 1340),
+28229.ND2E_3815 (degree 1308) and 28229.ND2E_3732 (degree 1280).
 
 
 References
@@ -107,14 +107,14 @@ def ColwelliaPsychrerythraea(
 	
 	Datetime: 2021-02-02 17:55:48.165892
 	
-	The undirected graph Colwellia psychrerythraea has 4321 nodes and 474861 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-	and has 19 connected components, where the component with most nodes has 4278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 219.79, and the node degree mode is 1. The top 5
-	most central nodes are 28229.ND2E_1333 (degree 1848), 28229.ND2E_1873 (degree 1406),
-	28229.ND2E_0757 (degree 1340), 28229.ND2E_3815 (degree 1308) and 28229.ND2E_3732
-	(degree 1280).
+	The undirected graph Colwellia psychrerythraea has 4321 nodes and 474861
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05088 and has 19 connected components, where the component
+	with most nodes has 4278 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 219.79,
+	and the node degree mode is 1. The top 5 most central nodes are 28229.ND2E_1333
+	(degree 1848), 28229.ND2E_1873 (degree 1406), 28229.ND2E_0757 (degree 1340),
+	28229.ND2E_3815 (degree 1308) and 28229.ND2E_3732 (degree 1280).
 	
 
 

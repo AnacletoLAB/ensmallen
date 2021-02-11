@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:46.261024
 
-The undirected graph Haliangium ochraceum has 6601 nodes and 887772 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04075 and
-has 40 connected components, where the component with most nodes has 6504 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 268.98, and the node degree mode is 3. The top 5 most central
-nodes are 502025.Hoch_2076 (degree 2813), 502025.Hoch_3141 (degree 2432), 502025.Hoch_3248
-(degree 2313), 502025.Hoch_3278 (degree 2242) and 502025.Hoch_4612 (degree 2107).
+The undirected graph Haliangium ochraceum has 6601 nodes and 887772 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04075 and has 40 connected components, where the component with most
+nodes has 6504 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 268.98, and
+the node degree mode is 3. The top 5 most central nodes are 502025.Hoch_2076
+(degree 2813), 502025.Hoch_3141 (degree 2432), 502025.Hoch_3248 (degree
+2313), 502025.Hoch_3278 (degree 2242) and 502025.Hoch_4612 (degree 2107).
 
 
 References
@@ -106,13 +107,14 @@ def HaliangiumOchraceum(
 	
 	Datetime: 2021-02-02 21:01:46.261024
 	
-	The undirected graph Haliangium ochraceum has 6601 nodes and 887772 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04075 and
-	has 40 connected components, where the component with most nodes has 6504 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 268.98, and the node degree mode is 3. The top 5 most central
-	nodes are 502025.Hoch_2076 (degree 2813), 502025.Hoch_3141 (degree 2432), 502025.Hoch_3248
-	(degree 2313), 502025.Hoch_3278 (degree 2242) and 502025.Hoch_4612 (degree 2107).
+	The undirected graph Haliangium ochraceum has 6601 nodes and 887772 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04075 and has 40 connected components, where the component with most
+	nodes has 6504 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 268.98, and
+	the node degree mode is 3. The top 5 most central nodes are 502025.Hoch_2076
+	(degree 2813), 502025.Hoch_3141 (degree 2432), 502025.Hoch_3248 (degree
+	2313), 502025.Hoch_3278 (degree 2242) and 502025.Hoch_4612 (degree 2107).
 	
 
 

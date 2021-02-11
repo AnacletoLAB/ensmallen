@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:17.736323
 
-The undirected graph Desulfuromonas sp. TF has 3855 nodes and 488304 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06573 and
-has 10 connected components, where the component with most nodes has 3835 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 253.34, and the node degree mode is 1. The top 5 most central
-nodes are 1232410.KI421418_gene2160 (degree 1665), 1232410.KI421414_gene2893 (degree
-1535), 1232410.KI421424_gene1679 (degree 1291), 1232410.KI421424_gene1678 (degree
-1290) and 1232410.KI421427_gene1281 (degree 1277).
+The undirected graph Desulfuromonas sp. TF has 3855 nodes and 488304 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06573 and has 10 connected components, where the component with most
+nodes has 3835 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 253.34, and
+the node degree mode is 1. The top 5 most central nodes are 1232410.KI421418_gene2160
+(degree 1665), 1232410.KI421414_gene2893 (degree 1535), 1232410.KI421424_gene1679
+(degree 1291), 1232410.KI421424_gene1678 (degree 1290) and 1232410.KI421427_gene1281
+(degree 1277).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfuromonasSp.Tf(
 	
 	Datetime: 2021-02-02 23:28:17.736323
 	
-	The undirected graph Desulfuromonas sp. TF has 3855 nodes and 488304 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06573 and
-	has 10 connected components, where the component with most nodes has 3835 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 253.34, and the node degree mode is 1. The top 5 most central
-	nodes are 1232410.KI421418_gene2160 (degree 1665), 1232410.KI421414_gene2893 (degree
-	1535), 1232410.KI421424_gene1679 (degree 1291), 1232410.KI421424_gene1678 (degree
-	1290) and 1232410.KI421427_gene1281 (degree 1277).
+	The undirected graph Desulfuromonas sp. TF has 3855 nodes and 488304 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06573 and has 10 connected components, where the component with most
+	nodes has 3835 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 253.34, and
+	the node degree mode is 1. The top 5 most central nodes are 1232410.KI421418_gene2160
+	(degree 1665), 1232410.KI421414_gene2893 (degree 1535), 1232410.KI421424_gene1679
+	(degree 1291), 1232410.KI421424_gene1678 (degree 1290) and 1232410.KI421427_gene1281
+	(degree 1277).
 	
 
 

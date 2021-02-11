@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:45.706448
 
-The undirected graph Monodelphis domestica has 20269 nodes and 4390259 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02137 and
-has 8 connected components, where the component with most nodes has 20252 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 299,
-the mean node degree is 433.20, and the node degree mode is 2. The top 5 most central
-nodes are 13616.ENSMODP00000005518 (degree 4676), 13616.ENSMODP00000008461 (degree
-4666), 13616.ENSMODP00000026216 (degree 4514), 13616.ENSMODP00000026365 (degree 4023)
-and 13616.ENSMODP00000013599 (degree 3871).
+The undirected graph Monodelphis domestica has 20269 nodes and 4390259
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02137 and has 8 connected components, where the component
+with most nodes has 20252 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 299, the mean node degree
+is 433.20, and the node degree mode is 2. The top 5 most central nodes
+are 13616.ENSMODP00000005518 (degree 4676), 13616.ENSMODP00000008461 (degree
+4666), 13616.ENSMODP00000026216 (degree 4514), 13616.ENSMODP00000026365
+(degree 4023) and 13616.ENSMODP00000013599 (degree 3871).
 
 
 References
@@ -107,14 +108,15 @@ def MonodelphisDomestica(
 	
 	Datetime: 2021-02-02 17:53:45.706448
 	
-	The undirected graph Monodelphis domestica has 20269 nodes and 4390259 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02137 and
-	has 8 connected components, where the component with most nodes has 20252 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 299,
-	the mean node degree is 433.20, and the node degree mode is 2. The top 5 most central
-	nodes are 13616.ENSMODP00000005518 (degree 4676), 13616.ENSMODP00000008461 (degree
-	4666), 13616.ENSMODP00000026216 (degree 4514), 13616.ENSMODP00000026365 (degree 4023)
-	and 13616.ENSMODP00000013599 (degree 3871).
+	The undirected graph Monodelphis domestica has 20269 nodes and 4390259
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02137 and has 8 connected components, where the component
+	with most nodes has 20252 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 299, the mean node degree
+	is 433.20, and the node degree mode is 2. The top 5 most central nodes
+	are 13616.ENSMODP00000005518 (degree 4676), 13616.ENSMODP00000008461 (degree
+	4666), 13616.ENSMODP00000026216 (degree 4514), 13616.ENSMODP00000026365
+	(degree 4023) and 13616.ENSMODP00000013599 (degree 3871).
 	
 
 

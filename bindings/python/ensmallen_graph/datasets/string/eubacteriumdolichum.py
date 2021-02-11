@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:17.755041
 
-The undirected graph Eubacterium dolichum has 2316 nodes and 210661 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07858 and
-has 8 connected components, where the component with most nodes has 2295 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 181.92, and the node degree mode is 5. The top 5 most central
-nodes are 428127.EUBDOL_02110 (degree 984), 428127.EUBDOL_01483 (degree 891), 428127.EUBDOL_01829
-(degree 843), 428127.EUBDOL_00774 (degree 826) and 428127.EUBDOL_01155 (degree 780).
+The undirected graph Eubacterium dolichum has 2316 nodes and 210661 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07858 and has 8 connected components, where the component with most
+nodes has 2295 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 181.92, and
+the node degree mode is 5. The top 5 most central nodes are 428127.EUBDOL_02110
+(degree 984), 428127.EUBDOL_01483 (degree 891), 428127.EUBDOL_01829 (degree
+843), 428127.EUBDOL_00774 (degree 826) and 428127.EUBDOL_01155 (degree
+780).
 
 
 References
@@ -106,13 +108,15 @@ def EubacteriumDolichum(
 	
 	Datetime: 2021-02-02 20:48:17.755041
 	
-	The undirected graph Eubacterium dolichum has 2316 nodes and 210661 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07858 and
-	has 8 connected components, where the component with most nodes has 2295 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 181.92, and the node degree mode is 5. The top 5 most central
-	nodes are 428127.EUBDOL_02110 (degree 984), 428127.EUBDOL_01483 (degree 891), 428127.EUBDOL_01829
-	(degree 843), 428127.EUBDOL_00774 (degree 826) and 428127.EUBDOL_01155 (degree 780).
+	The undirected graph Eubacterium dolichum has 2316 nodes and 210661 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07858 and has 8 connected components, where the component with most
+	nodes has 2295 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 181.92, and
+	the node degree mode is 5. The top 5 most central nodes are 428127.EUBDOL_02110
+	(degree 984), 428127.EUBDOL_01483 (degree 891), 428127.EUBDOL_01829 (degree
+	843), 428127.EUBDOL_00774 (degree 826) and 428127.EUBDOL_01155 (degree
+	780).
 	
 
 

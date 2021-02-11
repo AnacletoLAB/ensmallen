@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:54.540279
 
-The undirected graph Corynebacterium kroppenstedtii has 1993 nodes and 136178 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06860
-and has 12 connected components, where the component with most nodes has 1964 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 136.66, and the node degree mode is 4. The top 5
-most central nodes are 645127.ckrop_0815 (degree 895), 645127.ckrop_0835 (degree
-688), 645127.ckrop_0196 (degree 688), 645127.ckrop_0322 (degree 676) and 645127.ckrop_0278
-(degree 665).
+The undirected graph Corynebacterium kroppenstedtii has 1993 nodes and
+136178 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06860 and has 12 connected components, where the
+component with most nodes has 1964 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+is 136.66, and the node degree mode is 4. The top 5 most central nodes
+are 645127.ckrop_0815 (degree 895), 645127.ckrop_0835 (degree 688), 645127.ckrop_0196
+(degree 688), 645127.ckrop_0322 (degree 676) and 645127.ckrop_0278 (degree
+665).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumKroppenstedtii(
 	
 	Datetime: 2021-02-02 21:24:54.540279
 	
-	The undirected graph Corynebacterium kroppenstedtii has 1993 nodes and 136178 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06860
-	and has 12 connected components, where the component with most nodes has 1964 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 136.66, and the node degree mode is 4. The top 5
-	most central nodes are 645127.ckrop_0815 (degree 895), 645127.ckrop_0835 (degree
-	688), 645127.ckrop_0196 (degree 688), 645127.ckrop_0322 (degree 676) and 645127.ckrop_0278
-	(degree 665).
+	The undirected graph Corynebacterium kroppenstedtii has 1993 nodes and
+	136178 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06860 and has 12 connected components, where the
+	component with most nodes has 1964 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+	is 136.66, and the node degree mode is 4. The top 5 most central nodes
+	are 645127.ckrop_0815 (degree 895), 645127.ckrop_0835 (degree 688), 645127.ckrop_0196
+	(degree 688), 645127.ckrop_0322 (degree 676) and 645127.ckrop_0278 (degree
+	665).
 	
 
 

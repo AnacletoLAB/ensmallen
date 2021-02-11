@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:52.471581
 
-The undirected graph Microbacterium indicum has 2538 nodes and 180752 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05614 and
-has 2 connected components, where the component with most nodes has 2536 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 142.44, and the node degree mode is 2. The top 5 most central
-nodes are 1122238.AULR01000001_gene1914 (degree 960), 1122238.AULR01000002_gene603
-(degree 930), 1122238.AULR01000015_gene926 (degree 778), 1122238.AULR01000003_gene1399
-(degree 755) and 1122238.AULR01000012_gene1212 (degree 743).
+The undirected graph Microbacterium indicum has 2538 nodes and 180752 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05614 and has 2 connected components, where the component with most
+nodes has 2536 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 142.44, and
+the node degree mode is 2. The top 5 most central nodes are 1122238.AULR01000001_gene1914
+(degree 960), 1122238.AULR01000002_gene603 (degree 930), 1122238.AULR01000015_gene926
+(degree 778), 1122238.AULR01000003_gene1399 (degree 755) and 1122238.AULR01000012_gene1212
+(degree 743).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumIndicum(
 	
 	Datetime: 2021-02-02 22:42:52.471581
 	
-	The undirected graph Microbacterium indicum has 2538 nodes and 180752 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05614 and
-	has 2 connected components, where the component with most nodes has 2536 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 142.44, and the node degree mode is 2. The top 5 most central
-	nodes are 1122238.AULR01000001_gene1914 (degree 960), 1122238.AULR01000002_gene603
-	(degree 930), 1122238.AULR01000015_gene926 (degree 778), 1122238.AULR01000003_gene1399
-	(degree 755) and 1122238.AULR01000012_gene1212 (degree 743).
+	The undirected graph Microbacterium indicum has 2538 nodes and 180752 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05614 and has 2 connected components, where the component with most
+	nodes has 2536 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 142.44, and
+	the node degree mode is 2. The top 5 most central nodes are 1122238.AULR01000001_gene1914
+	(degree 960), 1122238.AULR01000002_gene603 (degree 930), 1122238.AULR01000015_gene926
+	(degree 778), 1122238.AULR01000003_gene1399 (degree 755) and 1122238.AULR01000012_gene1212
+	(degree 743).
 	
 
 

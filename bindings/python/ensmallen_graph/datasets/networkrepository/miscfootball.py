@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:17:33.939723
 
-The undirected graph misc-football has 115 nodes and 612 unweighted edges with 2
-different edge types: 1 and 2, of which none are self-loops. The graph is dense as
-it has a density of 0.09336 and is connected, as it has a single component. The graph
-median node degree is 11, the mean node degree is 10.64, and the node degree mode
-is 11. The top 5 most central nodes are 89 (degree 12), 54 (degree 12), 68 (degree
-12), 8 (degree 12) and 6 (degree 12).
+The undirected graph misc-football has 115 nodes and 612 unweighted edges
+with 2 different edge types: 1 and 2, of which none are self-loops. The
+graph is dense as it has a density of 0.09336 and is connected, as it has
+a single component. The graph median node degree is 11, the mean node degree
+is 10.64, and the node degree mode is 11. The top 5 most central nodes
+are 89 (degree 12), 54 (degree 12), 68 (degree 12), 8 (degree 12) and 6
+(degree 12).
 
 
 References
@@ -113,12 +114,13 @@ def MiscFootball(
 	
 	Datetime: 2021-02-06 08:17:33.939723
 	
-	The undirected graph misc-football has 115 nodes and 612 unweighted edges with 2
-	different edge types: 1 and 2, of which none are self-loops. The graph is dense as
-	it has a density of 0.09336 and is connected, as it has a single component. The graph
-	median node degree is 11, the mean node degree is 10.64, and the node degree mode
-	is 11. The top 5 most central nodes are 89 (degree 12), 54 (degree 12), 68 (degree
-	12), 8 (degree 12) and 6 (degree 12).
+	The undirected graph misc-football has 115 nodes and 612 unweighted edges
+	with 2 different edge types: 1 and 2, of which none are self-loops. The
+	graph is dense as it has a density of 0.09336 and is connected, as it has
+	a single component. The graph median node degree is 11, the mean node degree
+	is 10.64, and the node degree mode is 11. The top 5 most central nodes
+	are 89 (degree 12), 54 (degree 12), 68 (degree 12), 8 (degree 12) and 6
+	(degree 12).
 	
 
 

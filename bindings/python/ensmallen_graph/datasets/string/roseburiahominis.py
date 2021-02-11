@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:11.910912
 
-The undirected graph Roseburia hominis has 3337 nodes and 215497 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03872 and
-has 3 connected components, where the component with most nodes has 3333 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 129.16, and the node degree mode is 9. The top 5 most central
-nodes are 585394.RHOM_09955 (degree 1251), 585394.RHOM_13030 (degree 928), 585394.RHOM_05275
-(degree 895), 585394.RHOM_04835 (degree 856) and 585394.RHOM_00480 (degree 795).
+The undirected graph Roseburia hominis has 3337 nodes and 215497 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03872 and has 3 connected components, where the component with most
+nodes has 3333 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 129.16, and
+the node degree mode is 9. The top 5 most central nodes are 585394.RHOM_09955
+(degree 1251), 585394.RHOM_13030 (degree 928), 585394.RHOM_05275 (degree
+895), 585394.RHOM_04835 (degree 856) and 585394.RHOM_00480 (degree 795).
 
 
 References
@@ -106,13 +107,14 @@ def RoseburiaHominis(
 	
 	Datetime: 2021-02-02 21:16:11.910912
 	
-	The undirected graph Roseburia hominis has 3337 nodes and 215497 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03872 and
-	has 3 connected components, where the component with most nodes has 3333 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 129.16, and the node degree mode is 9. The top 5 most central
-	nodes are 585394.RHOM_09955 (degree 1251), 585394.RHOM_13030 (degree 928), 585394.RHOM_05275
-	(degree 895), 585394.RHOM_04835 (degree 856) and 585394.RHOM_00480 (degree 795).
+	The undirected graph Roseburia hominis has 3337 nodes and 215497 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03872 and has 3 connected components, where the component with most
+	nodes has 3333 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 129.16, and
+	the node degree mode is 9. The top 5 most central nodes are 585394.RHOM_09955
+	(degree 1251), 585394.RHOM_13030 (degree 928), 585394.RHOM_05275 (degree
+	895), 585394.RHOM_04835 (degree 856) and 585394.RHOM_00480 (degree 795).
 	
 
 

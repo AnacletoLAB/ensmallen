@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:47.222384
 
-The undirected graph Ruegeria sp. R11 has 3630 nodes and 392053 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05952 and
-has 6 connected components, where the component with most nodes has 3619 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 216.01, and the node degree mode is 5. The top 5 most central
-nodes are 439497.RR11_90 (degree 1420), 439497.RR11_355 (degree 1404), 439497.RR11_1095
-(degree 1335), 439497.RR11_607 (degree 1249) and 439497.RR11_3429 (degree 1187).
+The undirected graph Ruegeria sp. R11 has 3630 nodes and 392053 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05952 and has 6 connected components, where the component with most
+nodes has 3619 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 216.01, and
+the node degree mode is 5. The top 5 most central nodes are 439497.RR11_90
+(degree 1420), 439497.RR11_355 (degree 1404), 439497.RR11_1095 (degree
+1335), 439497.RR11_607 (degree 1249) and 439497.RR11_3429 (degree 1187).
 
 
 References
@@ -106,13 +107,14 @@ def RuegeriaSp.R11(
 	
 	Datetime: 2021-02-02 20:49:47.222384
 	
-	The undirected graph Ruegeria sp. R11 has 3630 nodes and 392053 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05952 and
-	has 6 connected components, where the component with most nodes has 3619 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 216.01, and the node degree mode is 5. The top 5 most central
-	nodes are 439497.RR11_90 (degree 1420), 439497.RR11_355 (degree 1404), 439497.RR11_1095
-	(degree 1335), 439497.RR11_607 (degree 1249) and 439497.RR11_3429 (degree 1187).
+	The undirected graph Ruegeria sp. R11 has 3630 nodes and 392053 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05952 and has 6 connected components, where the component with most
+	nodes has 3619 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 216.01, and
+	the node degree mode is 5. The top 5 most central nodes are 439497.RR11_90
+	(degree 1420), 439497.RR11_355 (degree 1404), 439497.RR11_1095 (degree
+	1335), 439497.RR11_607 (degree 1249) and 439497.RR11_3429 (degree 1187).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:38.184295
 
-The undirected graph Oceanicola granulosus has 3745 nodes and 426964 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-has 5 connected components, where the component with most nodes has 3733 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 228.02, and the node degree mode is 4. The top 5 most central
-nodes are 314256.OG2516_14456 (degree 1851), 314256.OG2516_16856 (degree 1584), 314256.OG2516_03513
-(degree 1292), 314256.OG2516_18905 (degree 1265) and 314256.OG2516_10401 (degree
+The undirected graph Oceanicola granulosus has 3745 nodes and 426964 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06090 and has 5 connected components, where the component with most
+nodes has 3733 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 228.02, and
+the node degree mode is 4. The top 5 most central nodes are 314256.OG2516_14456
+(degree 1851), 314256.OG2516_16856 (degree 1584), 314256.OG2516_03513 (degree
+1292), 314256.OG2516_18905 (degree 1265) and 314256.OG2516_10401 (degree
 1224).
 
 
@@ -107,13 +108,14 @@ def OceanicolaGranulosus(
 	
 	Datetime: 2021-02-02 20:24:38.184295
 	
-	The undirected graph Oceanicola granulosus has 3745 nodes and 426964 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-	has 5 connected components, where the component with most nodes has 3733 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 228.02, and the node degree mode is 4. The top 5 most central
-	nodes are 314256.OG2516_14456 (degree 1851), 314256.OG2516_16856 (degree 1584), 314256.OG2516_03513
-	(degree 1292), 314256.OG2516_18905 (degree 1265) and 314256.OG2516_10401 (degree
+	The undirected graph Oceanicola granulosus has 3745 nodes and 426964 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06090 and has 5 connected components, where the component with most
+	nodes has 3733 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 228.02, and
+	the node degree mode is 4. The top 5 most central nodes are 314256.OG2516_14456
+	(degree 1851), 314256.OG2516_16856 (degree 1584), 314256.OG2516_03513 (degree
+	1292), 314256.OG2516_18905 (degree 1265) and 314256.OG2516_10401 (degree
 	1224).
 	
 

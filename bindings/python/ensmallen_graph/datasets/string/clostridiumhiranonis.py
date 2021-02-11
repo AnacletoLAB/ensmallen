@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:21.468339
 
-The undirected graph Clostridium hiranonis has 2249 nodes and 136410 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05396 and
-has 10 connected components, where the component with most nodes has 2231 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 121.31, and the node degree mode is 7. The top 5 most central
-nodes are 500633.CLOHIR_01946 (degree 948), 500633.CLOHIR_00171 (degree 866), 500633.CLOHIR_01636
-(degree 748), 500633.CLOHIR_01020 (degree 748) and 500633.CLOHIR_01792 (degree 716).
+The undirected graph Clostridium hiranonis has 2249 nodes and 136410 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05396 and has 10 connected components, where the component with most
+nodes has 2231 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 88, the mean node degree is 121.31, and
+the node degree mode is 7. The top 5 most central nodes are 500633.CLOHIR_01946
+(degree 948), 500633.CLOHIR_00171 (degree 866), 500633.CLOHIR_01636 (degree
+748), 500633.CLOHIR_01020 (degree 748) and 500633.CLOHIR_01792 (degree
+716).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumHiranonis(
 	
 	Datetime: 2021-02-02 21:01:21.468339
 	
-	The undirected graph Clostridium hiranonis has 2249 nodes and 136410 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05396 and
-	has 10 connected components, where the component with most nodes has 2231 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 121.31, and the node degree mode is 7. The top 5 most central
-	nodes are 500633.CLOHIR_01946 (degree 948), 500633.CLOHIR_00171 (degree 866), 500633.CLOHIR_01636
-	(degree 748), 500633.CLOHIR_01020 (degree 748) and 500633.CLOHIR_01792 (degree 716).
+	The undirected graph Clostridium hiranonis has 2249 nodes and 136410 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05396 and has 10 connected components, where the component with most
+	nodes has 2231 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 88, the mean node degree is 121.31, and
+	the node degree mode is 7. The top 5 most central nodes are 500633.CLOHIR_01946
+	(degree 948), 500633.CLOHIR_00171 (degree 866), 500633.CLOHIR_01636 (degree
+	748), 500633.CLOHIR_01020 (degree 748) and 500633.CLOHIR_01792 (degree
+	716).
 	
 
 

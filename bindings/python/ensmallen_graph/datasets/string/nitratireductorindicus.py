@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:58.369431
 
-The undirected graph Nitratireductor indicus has 4802 nodes and 450397 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03907 and
-has 7 connected components, where the component with most nodes has 4783 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 187.59, and the node degree mode is 4. The top 5 most central
-nodes are 1231190.NA8A_14214 (degree 1600), 1231190.NA8A_10073 (degree 1403), 1231190.NA8A_06614
-(degree 1359), 1231190.NA8A_22606 (degree 1222) and 1231190.NA8A_16021 (degree 1149).
+The undirected graph Nitratireductor indicus has 4802 nodes and 450397
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03907 and has 7 connected components, where the component
+with most nodes has 4783 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 187.59,
+and the node degree mode is 4. The top 5 most central nodes are 1231190.NA8A_14214
+(degree 1600), 1231190.NA8A_10073 (degree 1403), 1231190.NA8A_06614 (degree
+1359), 1231190.NA8A_22606 (degree 1222) and 1231190.NA8A_16021 (degree
+1149).
 
 
 References
@@ -106,13 +108,15 @@ def NitratireductorIndicus(
 	
 	Datetime: 2021-02-02 23:27:58.369431
 	
-	The undirected graph Nitratireductor indicus has 4802 nodes and 450397 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03907 and
-	has 7 connected components, where the component with most nodes has 4783 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 187.59, and the node degree mode is 4. The top 5 most central
-	nodes are 1231190.NA8A_14214 (degree 1600), 1231190.NA8A_10073 (degree 1403), 1231190.NA8A_06614
-	(degree 1359), 1231190.NA8A_22606 (degree 1222) and 1231190.NA8A_16021 (degree 1149).
+	The undirected graph Nitratireductor indicus has 4802 nodes and 450397
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03907 and has 7 connected components, where the component
+	with most nodes has 4783 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 187.59,
+	and the node degree mode is 4. The top 5 most central nodes are 1231190.NA8A_14214
+	(degree 1600), 1231190.NA8A_10073 (degree 1403), 1231190.NA8A_06614 (degree
+	1359), 1231190.NA8A_22606 (degree 1222) and 1231190.NA8A_16021 (degree
+	1149).
 	
 
 

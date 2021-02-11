@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:31:51.558030
 
-The undirected graph SW-1000-4-0d2-trial2 has 1000 nodes and 2000 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00400
-and is connected, as it has a single component. The graph median node degree is 4,
-the mean node degree is 4.00, and the node degree mode is 4. The top 5 most central
-nodes are 875 (degree 7), 443 (degree 7), 499 (degree 7), 243 (degree 7) and 18 (degree
-7).
+The undirected graph SW-1000-4-0d2-trial2 has 1000 nodes and 2000 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00400 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.00, and the node degree mode
+is 4. The top 5 most central nodes are 875 (degree 7), 443 (degree 7),
+499 (degree 7), 243 (degree 7) and 18 (degree 7).
 
 
 References
@@ -102,12 +102,12 @@ def Sw100040d2Trial2(
 	
 	Datetime: 2021-02-06 09:31:51.558030
 	
-	The undirected graph SW-1000-4-0d2-trial2 has 1000 nodes and 2000 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00400
-	and is connected, as it has a single component. The graph median node degree is 4,
-	the mean node degree is 4.00, and the node degree mode is 4. The top 5 most central
-	nodes are 875 (degree 7), 443 (degree 7), 499 (degree 7), 243 (degree 7) and 18 (degree
-	7).
+	The undirected graph SW-1000-4-0d2-trial2 has 1000 nodes and 2000 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00400 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.00, and the node degree mode
+	is 4. The top 5 most central nodes are 875 (degree 7), 443 (degree 7),
+	499 (degree 7), 243 (degree 7) and 18 (degree 7).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:52.314757
 
-The undirected graph Thermus caliditerrae has 2231 nodes and 156084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06275 and
-has 4 connected components, where the component with most nodes has 2221 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 139.92, and the node degree mode is 6. The top 5 most central
-nodes are 1330700.JQNC01000003_gene486 (degree 951), 1330700.JQNC01000003_gene373
-(degree 843), 1330700.JQNC01000003_gene1167 (degree 809), 1330700.JQNC01000003_gene45
-(degree 756) and 1330700.JQNC01000003_gene1183 (degree 727).
+The undirected graph Thermus caliditerrae has 2231 nodes and 156084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06275 and has 4 connected components, where the component with most
+nodes has 2221 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 139.92, and
+the node degree mode is 6. The top 5 most central nodes are 1330700.JQNC01000003_gene486
+(degree 951), 1330700.JQNC01000003_gene373 (degree 843), 1330700.JQNC01000003_gene1167
+(degree 809), 1330700.JQNC01000003_gene45 (degree 756) and 1330700.JQNC01000003_gene1183
+(degree 727).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusCaliditerrae(
 	
 	Datetime: 2021-02-03 21:54:52.314757
 	
-	The undirected graph Thermus caliditerrae has 2231 nodes and 156084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06275 and
-	has 4 connected components, where the component with most nodes has 2221 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 139.92, and the node degree mode is 6. The top 5 most central
-	nodes are 1330700.JQNC01000003_gene486 (degree 951), 1330700.JQNC01000003_gene373
-	(degree 843), 1330700.JQNC01000003_gene1167 (degree 809), 1330700.JQNC01000003_gene45
-	(degree 756) and 1330700.JQNC01000003_gene1183 (degree 727).
+	The undirected graph Thermus caliditerrae has 2231 nodes and 156084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06275 and has 4 connected components, where the component with most
+	nodes has 2221 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 139.92, and
+	the node degree mode is 6. The top 5 most central nodes are 1330700.JQNC01000003_gene486
+	(degree 951), 1330700.JQNC01000003_gene373 (degree 843), 1330700.JQNC01000003_gene1167
+	(degree 809), 1330700.JQNC01000003_gene45 (degree 756) and 1330700.JQNC01000003_gene1183
+	(degree 727).
 	
 
 

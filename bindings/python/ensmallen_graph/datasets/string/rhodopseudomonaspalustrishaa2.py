@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:11.198543
 
-The undirected graph Rhodopseudomonas palustris HaA2 has 4650 nodes and 465558 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04307
-and has 16 connected components, where the component with most nodes has 4616 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 200.24, and the node degree mode is 4. The top 5
-most central nodes are 316058.RPB_3818 (degree 2070), 316058.RPB_0848 (degree 1902),
-316058.RPB_0851 (degree 1775), 316058.RPB_0183 (degree 1655) and 316058.RPB_1892
-(degree 1645).
+The undirected graph Rhodopseudomonas palustris HaA2 has 4650 nodes and
+465558 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04307 and has 16 connected components, where the
+component with most nodes has 4616 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 158, the mean node degree
+is 200.24, and the node degree mode is 4. The top 5 most central nodes
+are 316058.RPB_3818 (degree 2070), 316058.RPB_0848 (degree 1902), 316058.RPB_0851
+(degree 1775), 316058.RPB_0183 (degree 1655) and 316058.RPB_1892 (degree
+1645).
 
 
 References
@@ -107,14 +108,15 @@ def RhodopseudomonasPalustrisHaa2(
 	
 	Datetime: 2021-02-02 20:26:11.198543
 	
-	The undirected graph Rhodopseudomonas palustris HaA2 has 4650 nodes and 465558 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04307
-	and has 16 connected components, where the component with most nodes has 4616 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 200.24, and the node degree mode is 4. The top 5
-	most central nodes are 316058.RPB_3818 (degree 2070), 316058.RPB_0848 (degree 1902),
-	316058.RPB_0851 (degree 1775), 316058.RPB_0183 (degree 1655) and 316058.RPB_1892
-	(degree 1645).
+	The undirected graph Rhodopseudomonas palustris HaA2 has 4650 nodes and
+	465558 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04307 and has 16 connected components, where the
+	component with most nodes has 4616 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 158, the mean node degree
+	is 200.24, and the node degree mode is 4. The top 5 most central nodes
+	are 316058.RPB_3818 (degree 2070), 316058.RPB_0848 (degree 1902), 316058.RPB_0851
+	(degree 1775), 316058.RPB_0183 (degree 1655) and 316058.RPB_1892 (degree
+	1645).
 	
 
 

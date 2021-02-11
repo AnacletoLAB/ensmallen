@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:23.027181
 
-The undirected graph Saccoglossus kowalevskii has 16841 nodes and 2326034 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01640
-and has 11 connected components, where the component with most nodes has 16819 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 276.23, and the node degree mode is 22. The top 5
-most central nodes are 10224.XP_002736404.1 (degree 4244), 10224.XP_006821415.1 (degree
-3507), 10224.XP_006818386.1 (degree 3358), 10224.XP_002733494.1 (degree 3248) and
-10224.XP_006815331.1 (degree 3167).
+The undirected graph Saccoglossus kowalevskii has 16841 nodes and 2326034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01640 and has 11 connected components, where the component
+with most nodes has 16819 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 150, the mean node degree
+is 276.23, and the node degree mode is 22. The top 5 most central nodes
+are 10224.XP_002736404.1 (degree 4244), 10224.XP_006821415.1 (degree 3507),
+10224.XP_006818386.1 (degree 3358), 10224.XP_002733494.1 (degree 3248)
+and 10224.XP_006815331.1 (degree 3167).
 
 
 References
@@ -107,14 +108,15 @@ def SaccoglossusKowalevskii(
 	
 	Datetime: 2021-02-02 17:52:23.027181
 	
-	The undirected graph Saccoglossus kowalevskii has 16841 nodes and 2326034 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01640
-	and has 11 connected components, where the component with most nodes has 16819 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 276.23, and the node degree mode is 22. The top 5
-	most central nodes are 10224.XP_002736404.1 (degree 4244), 10224.XP_006821415.1 (degree
-	3507), 10224.XP_006818386.1 (degree 3358), 10224.XP_002733494.1 (degree 3248) and
-	10224.XP_006815331.1 (degree 3167).
+	The undirected graph Saccoglossus kowalevskii has 16841 nodes and 2326034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01640 and has 11 connected components, where the component
+	with most nodes has 16819 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 150, the mean node degree
+	is 276.23, and the node degree mode is 22. The top 5 most central nodes
+	are 10224.XP_002736404.1 (degree 4244), 10224.XP_006821415.1 (degree 3507),
+	10224.XP_006818386.1 (degree 3358), 10224.XP_002733494.1 (degree 3248)
+	and 10224.XP_006815331.1 (degree 3167).
 	
 
 

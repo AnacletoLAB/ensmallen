@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:43.724476
 
-The undirected graph Helicobacter rodentium has 1790 nodes and 111965 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06993 and
-has 10 connected components, where the component with most nodes has 1770 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 125.10, and the node degree mode is 1. The top 5 most central
-nodes are 1449345.JHWC01000010_gene1568 (degree 770), 1449345.JHWC01000007_gene1298
-(degree 713), 1449345.JHWC01000008_gene1739 (degree 690), 1449345.JHWC01000001_gene174
-(degree 583) and 1449345.JHWC01000004_gene495 (degree 580).
+The undirected graph Helicobacter rodentium has 1790 nodes and 111965 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06993 and has 10 connected components, where the component with most
+nodes has 1770 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 125.10, and
+the node degree mode is 1. The top 5 most central nodes are 1449345.JHWC01000010_gene1568
+(degree 770), 1449345.JHWC01000007_gene1298 (degree 713), 1449345.JHWC01000008_gene1739
+(degree 690), 1449345.JHWC01000001_gene174 (degree 583) and 1449345.JHWC01000004_gene495
+(degree 580).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterRodentium(
 	
 	Datetime: 2021-02-03 23:04:43.724476
 	
-	The undirected graph Helicobacter rodentium has 1790 nodes and 111965 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06993 and
-	has 10 connected components, where the component with most nodes has 1770 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 125.10, and the node degree mode is 1. The top 5 most central
-	nodes are 1449345.JHWC01000010_gene1568 (degree 770), 1449345.JHWC01000007_gene1298
-	(degree 713), 1449345.JHWC01000008_gene1739 (degree 690), 1449345.JHWC01000001_gene174
-	(degree 583) and 1449345.JHWC01000004_gene495 (degree 580).
+	The undirected graph Helicobacter rodentium has 1790 nodes and 111965 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06993 and has 10 connected components, where the component with most
+	nodes has 1770 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 125.10, and
+	the node degree mode is 1. The top 5 most central nodes are 1449345.JHWC01000010_gene1568
+	(degree 770), 1449345.JHWC01000007_gene1298 (degree 713), 1449345.JHWC01000008_gene1739
+	(degree 690), 1449345.JHWC01000001_gene174 (degree 583) and 1449345.JHWC01000004_gene495
+	(degree 580).
 	
 
 

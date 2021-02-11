@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:06.847689
 
-The undirected graph Selenomonas sp. F0473 has 1880 nodes and 143515 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08125 and
-is connected, as it has a single component. The graph median node degree is 131,
-the mean node degree is 152.68, and the node degree mode is 7. The top 5 most central
-nodes are 999423.HMPREF9161_00898 (degree 843), 999423.HMPREF9161_00685 (degree 735),
-999423.HMPREF9161_01882 (degree 718), 999423.HMPREF9161_00056 (degree 660) and 999423.HMPREF9161_00989
+The undirected graph Selenomonas sp. F0473 has 1880 nodes and 143515 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08125 and is connected, as it has a single component. The graph median
+node degree is 131, the mean node degree is 152.68, and the node degree
+mode is 7. The top 5 most central nodes are 999423.HMPREF9161_00898 (degree
+843), 999423.HMPREF9161_00685 (degree 735), 999423.HMPREF9161_01882 (degree
+718), 999423.HMPREF9161_00056 (degree 660) and 999423.HMPREF9161_00989
 (degree 649).
 
 
@@ -106,12 +107,13 @@ def SelenomonasSp.F0473(
 	
 	Datetime: 2021-02-02 22:06:06.847689
 	
-	The undirected graph Selenomonas sp. F0473 has 1880 nodes and 143515 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08125 and
-	is connected, as it has a single component. The graph median node degree is 131,
-	the mean node degree is 152.68, and the node degree mode is 7. The top 5 most central
-	nodes are 999423.HMPREF9161_00898 (degree 843), 999423.HMPREF9161_00685 (degree 735),
-	999423.HMPREF9161_01882 (degree 718), 999423.HMPREF9161_00056 (degree 660) and 999423.HMPREF9161_00989
+	The undirected graph Selenomonas sp. F0473 has 1880 nodes and 143515 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08125 and is connected, as it has a single component. The graph median
+	node degree is 131, the mean node degree is 152.68, and the node degree
+	mode is 7. The top 5 most central nodes are 999423.HMPREF9161_00898 (degree
+	843), 999423.HMPREF9161_00685 (degree 735), 999423.HMPREF9161_01882 (degree
+	718), 999423.HMPREF9161_00056 (degree 660) and 999423.HMPREF9161_00989
 	(degree 649).
 	
 

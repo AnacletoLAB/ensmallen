@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:02.054596
 
-The undirected graph Pteropus vampyrus has 16568 nodes and 2993200 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02181 and
-is connected, as it has a single component. The graph median node degree is 256,
-the mean node degree is 361.32, and the node degree mode is 140. The top 5 most central
-nodes are 132908.ENSPVAP00000009843 (degree 3745), 132908.ENSPVAP00000010360 (degree
-3737), 132908.ENSPVAP00000009536 (degree 3673), 132908.ENSPVAP00000008927 (degree
-3453) and 132908.ENSPVAP00000015543 (degree 3265).
+The undirected graph Pteropus vampyrus has 16568 nodes and 2993200 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02181 and is connected, as it has a single component. The graph median
+node degree is 256, the mean node degree is 361.32, and the node degree
+mode is 140. The top 5 most central nodes are 132908.ENSPVAP00000009843
+(degree 3745), 132908.ENSPVAP00000010360 (degree 3737), 132908.ENSPVAP00000009536
+(degree 3673), 132908.ENSPVAP00000008927 (degree 3453) and 132908.ENSPVAP00000015543
+(degree 3265).
 
 
 References
@@ -106,13 +107,14 @@ def PteropusVampyrus(
 	
 	Datetime: 2021-02-02 19:50:02.054596
 	
-	The undirected graph Pteropus vampyrus has 16568 nodes and 2993200 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02181 and
-	is connected, as it has a single component. The graph median node degree is 256,
-	the mean node degree is 361.32, and the node degree mode is 140. The top 5 most central
-	nodes are 132908.ENSPVAP00000009843 (degree 3745), 132908.ENSPVAP00000010360 (degree
-	3737), 132908.ENSPVAP00000009536 (degree 3673), 132908.ENSPVAP00000008927 (degree
-	3453) and 132908.ENSPVAP00000015543 (degree 3265).
+	The undirected graph Pteropus vampyrus has 16568 nodes and 2993200 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02181 and is connected, as it has a single component. The graph median
+	node degree is 256, the mean node degree is 361.32, and the node degree
+	mode is 140. The top 5 most central nodes are 132908.ENSPVAP00000009843
+	(degree 3745), 132908.ENSPVAP00000010360 (degree 3737), 132908.ENSPVAP00000009536
+	(degree 3673), 132908.ENSPVAP00000008927 (degree 3453) and 132908.ENSPVAP00000015543
+	(degree 3265).
 	
 
 

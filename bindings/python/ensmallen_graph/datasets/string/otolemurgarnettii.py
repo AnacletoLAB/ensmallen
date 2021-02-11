@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:01:36.903110
 
-The undirected graph Otolemur garnettii has 19265 nodes and 5256588 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02833 and
-is connected, as it has a single component. The graph median node degree is 408,
-the mean node degree is 545.71, and the node degree mode is 145. The top 5 most central
-nodes are 30611.ENSOGAP00000002339 (degree 5050), 30611.ENSOGAP00000013867 (degree
-4954), 30611.ENSOGAP00000003373 (degree 4946), 30611.ENSOGAP00000018709 (degree 4549)
-and 30611.ENSOGAP00000008157 (degree 4383).
+The undirected graph Otolemur garnettii has 19265 nodes and 5256588 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02833 and is connected, as it has a single component. The graph median
+node degree is 408, the mean node degree is 545.71, and the node degree
+mode is 145. The top 5 most central nodes are 30611.ENSOGAP00000002339
+(degree 5050), 30611.ENSOGAP00000013867 (degree 4954), 30611.ENSOGAP00000003373
+(degree 4946), 30611.ENSOGAP00000018709 (degree 4549) and 30611.ENSOGAP00000008157
+(degree 4383).
 
 
 References
@@ -106,13 +107,14 @@ def OtolemurGarnettii(
 	
 	Datetime: 2021-02-02 18:01:36.903110
 	
-	The undirected graph Otolemur garnettii has 19265 nodes and 5256588 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02833 and
-	is connected, as it has a single component. The graph median node degree is 408,
-	the mean node degree is 545.71, and the node degree mode is 145. The top 5 most central
-	nodes are 30611.ENSOGAP00000002339 (degree 5050), 30611.ENSOGAP00000013867 (degree
-	4954), 30611.ENSOGAP00000003373 (degree 4946), 30611.ENSOGAP00000018709 (degree 4549)
-	and 30611.ENSOGAP00000008157 (degree 4383).
+	The undirected graph Otolemur garnettii has 19265 nodes and 5256588 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02833 and is connected, as it has a single component. The graph median
+	node degree is 408, the mean node degree is 545.71, and the node degree
+	mode is 145. The top 5 most central nodes are 30611.ENSOGAP00000002339
+	(degree 5050), 30611.ENSOGAP00000013867 (degree 4954), 30611.ENSOGAP00000003373
+	(degree 4946), 30611.ENSOGAP00000018709 (degree 4549) and 30611.ENSOGAP00000008157
+	(degree 4383).
 	
 
 

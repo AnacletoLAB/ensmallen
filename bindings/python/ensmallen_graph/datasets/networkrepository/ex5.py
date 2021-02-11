@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:01:26.260486
 
-The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00690 and is connected,
-as it has a single component. The graph median node degree is 46, the mean node degree
-is 45.18, and the node degree mode is 44. The top 5 most central nodes are 6462 (degree
-48), 6496 (degree 48), 6475 (degree 48), 6464 (degree 48) and 6463 (degree 48).
+The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00690
+and is connected, as it has a single component. The graph median node degree
+is 46, the mean node degree is 45.18, and the node degree mode is 44. The
+top 5 most central nodes are 6462 (degree 48), 6496 (degree 48), 6475 (degree
+48), 6464 (degree 48) and 6463 (degree 48).
 
 
 References
@@ -101,11 +102,12 @@ def Ex5(
 	
 	Datetime: 2021-02-06 11:01:26.260486
 	
-	The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00690 and is connected,
-	as it has a single component. The graph median node degree is 46, the mean node degree
-	is 45.18, and the node degree mode is 44. The top 5 most central nodes are 6462 (degree
-	48), 6496 (degree 48), 6475 (degree 48), 6464 (degree 48) and 6463 (degree 48).
+	The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00690
+	and is connected, as it has a single component. The graph median node degree
+	is 46, the mean node degree is 45.18, and the node degree mode is 44. The
+	top 5 most central nodes are 6462 (degree 48), 6496 (degree 48), 6475 (degree
+	48), 6464 (degree 48) and 6463 (degree 48).
 	
 
 

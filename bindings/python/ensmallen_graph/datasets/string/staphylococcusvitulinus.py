@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:44.082853
 
-The undirected graph Staphylococcus vitulinus has 2576 nodes and 204322 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06161
-and has 4 connected components, where the component with most nodes has 2565 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 158.64, and the node degree mode is 3. The top 5
-most central nodes are 1167632.AJTR01000003_gene367 (degree 1002), 1167632.AJTR01000031_gene1910
-(degree 899), 1167632.AJTR01000019_gene1546 (degree 871), 1167632.AJTR01000031_gene1909
-(degree 855) and 1167632.AJTR01000171_gene2179 (degree 795).
+The undirected graph Staphylococcus vitulinus has 2576 nodes and 204322
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06161 and has 4 connected components, where the component
+with most nodes has 2565 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 158.64,
+and the node degree mode is 3. The top 5 most central nodes are 1167632.AJTR01000003_gene367
+(degree 1002), 1167632.AJTR01000031_gene1910 (degree 899), 1167632.AJTR01000019_gene1546
+(degree 871), 1167632.AJTR01000031_gene1909 (degree 855) and 1167632.AJTR01000171_gene2179
+(degree 795).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusVitulinus(
 	
 	Datetime: 2021-02-02 23:05:44.082853
 	
-	The undirected graph Staphylococcus vitulinus has 2576 nodes and 204322 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06161
-	and has 4 connected components, where the component with most nodes has 2565 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 158.64, and the node degree mode is 3. The top 5
-	most central nodes are 1167632.AJTR01000003_gene367 (degree 1002), 1167632.AJTR01000031_gene1910
-	(degree 899), 1167632.AJTR01000019_gene1546 (degree 871), 1167632.AJTR01000031_gene1909
-	(degree 855) and 1167632.AJTR01000171_gene2179 (degree 795).
+	The undirected graph Staphylococcus vitulinus has 2576 nodes and 204322
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06161 and has 4 connected components, where the component
+	with most nodes has 2565 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 158.64,
+	and the node degree mode is 3. The top 5 most central nodes are 1167632.AJTR01000003_gene367
+	(degree 1002), 1167632.AJTR01000031_gene1910 (degree 899), 1167632.AJTR01000019_gene1546
+	(degree 871), 1167632.AJTR01000031_gene1909 (degree 855) and 1167632.AJTR01000171_gene2179
+	(degree 795).
 	
 
 

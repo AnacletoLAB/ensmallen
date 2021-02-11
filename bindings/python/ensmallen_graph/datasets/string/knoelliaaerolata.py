@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:27.124253
 
-The undirected graph Knoellia aerolata has 3761 nodes and 351229 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04967 and
-has 23 connected components, where the component with most nodes has 3705 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 186.77, and the node degree mode is 3. The top 5 most central
-nodes are 1385519.N801_10420 (degree 1403), 1385519.N801_11185 (degree 1229), 1385519.N801_00655
-(degree 1188), 1385519.N801_17850 (degree 1125) and 1385519.N801_18370 (degree 1123).
+The undirected graph Knoellia aerolata has 3761 nodes and 351229 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04967 and has 23 connected components, where the component with most
+nodes has 3705 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 186.77, and
+the node degree mode is 3. The top 5 most central nodes are 1385519.N801_10420
+(degree 1403), 1385519.N801_11185 (degree 1229), 1385519.N801_00655 (degree
+1188), 1385519.N801_17850 (degree 1125) and 1385519.N801_18370 (degree
+1123).
 
 
 References
@@ -106,13 +108,15 @@ def KnoelliaAerolata(
 	
 	Datetime: 2021-02-03 22:20:27.124253
 	
-	The undirected graph Knoellia aerolata has 3761 nodes and 351229 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04967 and
-	has 23 connected components, where the component with most nodes has 3705 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 186.77, and the node degree mode is 3. The top 5 most central
-	nodes are 1385519.N801_10420 (degree 1403), 1385519.N801_11185 (degree 1229), 1385519.N801_00655
-	(degree 1188), 1385519.N801_17850 (degree 1125) and 1385519.N801_18370 (degree 1123).
+	The undirected graph Knoellia aerolata has 3761 nodes and 351229 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04967 and has 23 connected components, where the component with most
+	nodes has 3705 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 186.77, and
+	the node degree mode is 3. The top 5 most central nodes are 1385519.N801_10420
+	(degree 1403), 1385519.N801_11185 (degree 1229), 1385519.N801_00655 (degree
+	1188), 1385519.N801_17850 (degree 1125) and 1385519.N801_18370 (degree
+	1123).
 	
 
 

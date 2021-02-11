@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:12.271406
 
-The undirected graph Brevundimonas naejangsanensis has 2690 nodes and 256315 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07087
-and has 6 connected components, where the component with most nodes has 2678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 190.57, and the node degree mode is 3. The top 5
-most central nodes are 588932.JHOF01000017_gene2507 (degree 1199), 588932.JHOF01000027_gene1549
-(degree 934), 588932.JHOF01000011_gene2418 (degree 917), 588932.JHOF01000018_gene1373
-(degree 840) and 588932.JHOF01000011_gene2404 (degree 816).
+The undirected graph Brevundimonas naejangsanensis has 2690 nodes and 256315
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07087 and has 6 connected components, where the component
+with most nodes has 2678 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 190.57,
+and the node degree mode is 3. The top 5 most central nodes are 588932.JHOF01000017_gene2507
+(degree 1199), 588932.JHOF01000027_gene1549 (degree 934), 588932.JHOF01000011_gene2418
+(degree 917), 588932.JHOF01000018_gene1373 (degree 840) and 588932.JHOF01000011_gene2404
+(degree 816).
 
 
 References
@@ -107,14 +108,15 @@ def BrevundimonasNaejangsanensis(
 	
 	Datetime: 2021-02-02 21:17:12.271406
 	
-	The undirected graph Brevundimonas naejangsanensis has 2690 nodes and 256315 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07087
-	and has 6 connected components, where the component with most nodes has 2678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 190.57, and the node degree mode is 3. The top 5
-	most central nodes are 588932.JHOF01000017_gene2507 (degree 1199), 588932.JHOF01000027_gene1549
-	(degree 934), 588932.JHOF01000011_gene2418 (degree 917), 588932.JHOF01000018_gene1373
-	(degree 840) and 588932.JHOF01000011_gene2404 (degree 816).
+	The undirected graph Brevundimonas naejangsanensis has 2690 nodes and 256315
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07087 and has 6 connected components, where the component
+	with most nodes has 2678 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 190.57,
+	and the node degree mode is 3. The top 5 most central nodes are 588932.JHOF01000017_gene2507
+	(degree 1199), 588932.JHOF01000027_gene1549 (degree 934), 588932.JHOF01000011_gene2418
+	(degree 917), 588932.JHOF01000018_gene1373 (degree 840) and 588932.JHOF01000011_gene2404
+	(degree 816).
 	
 
 

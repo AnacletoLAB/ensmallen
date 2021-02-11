@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:55:06.171956
 
-The undirected graph Helicobacter pylori 26695 has 1574 nodes and 83469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-and has 3 connected components, where the component with most nodes has 1570 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 106.06, and the node degree mode is 7. The top 5 most
-central nodes are 85962.C694_07610 (degree 631), 85962.C694_06195 (degree 588), 85962.C694_02085
-(degree 537), 85962.C694_02025 (degree 506) and 85962.C694_02125 (degree 480).
+The undirected graph Helicobacter pylori 26695 has 1574 nodes and 83469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06743 and has 3 connected components, where the component
+with most nodes has 1570 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 106.06,
+and the node degree mode is 7. The top 5 most central nodes are 85962.C694_07610
+(degree 631), 85962.C694_06195 (degree 588), 85962.C694_02085 (degree 537),
+85962.C694_02025 (degree 506) and 85962.C694_02125 (degree 480).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterPylori26695(
 	
 	Datetime: 2021-02-02 18:55:06.171956
 	
-	The undirected graph Helicobacter pylori 26695 has 1574 nodes and 83469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-	and has 3 connected components, where the component with most nodes has 1570 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 106.06, and the node degree mode is 7. The top 5 most
-	central nodes are 85962.C694_07610 (degree 631), 85962.C694_06195 (degree 588), 85962.C694_02085
-	(degree 537), 85962.C694_02025 (degree 506) and 85962.C694_02125 (degree 480).
+	The undirected graph Helicobacter pylori 26695 has 1574 nodes and 83469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06743 and has 3 connected components, where the component
+	with most nodes has 1570 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 106.06,
+	and the node degree mode is 7. The top 5 most central nodes are 85962.C694_07610
+	(degree 631), 85962.C694_06195 (degree 588), 85962.C694_02085 (degree 537),
+	85962.C694_02025 (degree 506) and 85962.C694_02125 (degree 480).
 	
 
 

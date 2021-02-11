@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:27.238713
 
-The undirected graph Lactobacillus curieae has 1928 nodes and 103902 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05593 and
-has 14 connected components, where the component with most nodes has 1895 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 81,
-the mean node degree is 107.78, and the node degree mode is 2. The top 5 most central
-nodes are 1138822.PL11_05665 (degree 840), 1138822.PL11_05300 (degree 575), 1138822.PL11_06880
-(degree 569), 1138822.PL11_04630 (degree 561) and 1138822.PL11_04245 (degree 530).
+The undirected graph Lactobacillus curieae has 1928 nodes and 103902 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05593 and has 14 connected components, where the component with most
+nodes has 1895 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 81, the mean node degree is 107.78, and
+the node degree mode is 2. The top 5 most central nodes are 1138822.PL11_05665
+(degree 840), 1138822.PL11_05300 (degree 575), 1138822.PL11_06880 (degree
+569), 1138822.PL11_04630 (degree 561) and 1138822.PL11_04245 (degree 530).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusCurieae(
 	
 	Datetime: 2021-02-02 22:57:27.238713
 	
-	The undirected graph Lactobacillus curieae has 1928 nodes and 103902 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05593 and
-	has 14 connected components, where the component with most nodes has 1895 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 81,
-	the mean node degree is 107.78, and the node degree mode is 2. The top 5 most central
-	nodes are 1138822.PL11_05665 (degree 840), 1138822.PL11_05300 (degree 575), 1138822.PL11_06880
-	(degree 569), 1138822.PL11_04630 (degree 561) and 1138822.PL11_04245 (degree 530).
+	The undirected graph Lactobacillus curieae has 1928 nodes and 103902 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05593 and has 14 connected components, where the component with most
+	nodes has 1895 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 81, the mean node degree is 107.78, and
+	the node degree mode is 2. The top 5 most central nodes are 1138822.PL11_05665
+	(degree 840), 1138822.PL11_05300 (degree 575), 1138822.PL11_06880 (degree
+	569), 1138822.PL11_04630 (degree 561) and 1138822.PL11_04245 (degree 530).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:22.127444
 
-The undirected graph Pseudomonas fulva has 4452 nodes and 432285 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04363 and
-has 11 connected components, where the component with most nodes has 4431 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 194.20, and the node degree mode is 3. The top 5 most central
-nodes are 743720.Psefu_4313 (degree 1796), 743720.Psefu_0430 (degree 1489), 743720.Psefu_1380
-(degree 1323), 743720.Psefu_1379 (degree 1173) and 743720.Psefu_1395 (degree 1165).
+The undirected graph Pseudomonas fulva has 4452 nodes and 432285 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04363 and has 11 connected components, where the component with most
+nodes has 4431 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 194.20, and
+the node degree mode is 3. The top 5 most central nodes are 743720.Psefu_4313
+(degree 1796), 743720.Psefu_0430 (degree 1489), 743720.Psefu_1380 (degree
+1323), 743720.Psefu_1379 (degree 1173) and 743720.Psefu_1395 (degree 1165).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasFulva(
 	
 	Datetime: 2021-02-02 21:38:22.127444
 	
-	The undirected graph Pseudomonas fulva has 4452 nodes and 432285 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04363 and
-	has 11 connected components, where the component with most nodes has 4431 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 194.20, and the node degree mode is 3. The top 5 most central
-	nodes are 743720.Psefu_4313 (degree 1796), 743720.Psefu_0430 (degree 1489), 743720.Psefu_1380
-	(degree 1323), 743720.Psefu_1379 (degree 1173) and 743720.Psefu_1395 (degree 1165).
+	The undirected graph Pseudomonas fulva has 4452 nodes and 432285 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04363 and has 11 connected components, where the component with most
+	nodes has 4431 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 194.20, and
+	the node degree mode is 3. The top 5 most central nodes are 743720.Psefu_4313
+	(degree 1796), 743720.Psefu_0430 (degree 1489), 743720.Psefu_1380 (degree
+	1323), 743720.Psefu_1379 (degree 1173) and 743720.Psefu_1395 (degree 1165).
 	
 
 

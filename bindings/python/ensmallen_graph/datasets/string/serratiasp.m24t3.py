@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:28.241132
 
-The undirected graph Serratia sp. M24T3 has 4754 nodes and 506641 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04484 and
-has 17 connected components, where the component with most nodes has 4715 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 213.14, and the node degree mode is 2. The top 5 most central
-nodes are 932213.SPM24T3_01185 (degree 1376), 932213.SPM24T3_20764 (degree 1373),
-932213.SPM24T3_01190 (degree 1309), 932213.SPM24T3_17390 (degree 1264) and 932213.SPM24T3_17395
+The undirected graph Serratia sp. M24T3 has 4754 nodes and 506641 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04484 and has 17 connected components, where the component with most
+nodes has 4715 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 213.14, and
+the node degree mode is 2. The top 5 most central nodes are 932213.SPM24T3_01185
+(degree 1376), 932213.SPM24T3_20764 (degree 1373), 932213.SPM24T3_01190
+(degree 1309), 932213.SPM24T3_17390 (degree 1264) and 932213.SPM24T3_17395
 (degree 1222).
 
 
@@ -107,13 +108,14 @@ def SerratiaSp.M24t3(
 	
 	Datetime: 2021-02-02 21:58:28.241132
 	
-	The undirected graph Serratia sp. M24T3 has 4754 nodes and 506641 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04484 and
-	has 17 connected components, where the component with most nodes has 4715 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 213.14, and the node degree mode is 2. The top 5 most central
-	nodes are 932213.SPM24T3_01185 (degree 1376), 932213.SPM24T3_20764 (degree 1373),
-	932213.SPM24T3_01190 (degree 1309), 932213.SPM24T3_17390 (degree 1264) and 932213.SPM24T3_17395
+	The undirected graph Serratia sp. M24T3 has 4754 nodes and 506641 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04484 and has 17 connected components, where the component with most
+	nodes has 4715 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 213.14, and
+	the node degree mode is 2. The top 5 most central nodes are 932213.SPM24T3_01185
+	(degree 1376), 932213.SPM24T3_20764 (degree 1373), 932213.SPM24T3_01190
+	(degree 1309), 932213.SPM24T3_17390 (degree 1264) and 932213.SPM24T3_17395
 	(degree 1222).
 	
 

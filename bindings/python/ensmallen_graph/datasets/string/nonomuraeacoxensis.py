@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:44.495269
 
-The undirected graph Nonomuraea coxensis has 8094 nodes and 1764721 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05388 and
-has 30 connected components, where the component with most nodes has 8028 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 349,
-the mean node degree is 436.06, and the node degree mode is 2. The top 5 most central
-nodes are 1122611.KB903946_gene851 (degree 2903), 1122611.KB903962_gene4492 (degree
-2469), 1122611.KB903962_gene4476 (degree 2447), 1122611.KB903985_gene3770 (degree
-2419) and 1122611.KB903961_gene4376 (degree 2395).
+The undirected graph Nonomuraea coxensis has 8094 nodes and 1764721 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05388 and has 30 connected components, where the component with most
+nodes has 8028 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 349, the mean node degree is 436.06, and
+the node degree mode is 2. The top 5 most central nodes are 1122611.KB903946_gene851
+(degree 2903), 1122611.KB903962_gene4492 (degree 2469), 1122611.KB903962_gene4476
+(degree 2447), 1122611.KB903985_gene3770 (degree 2419) and 1122611.KB903961_gene4376
+(degree 2395).
 
 
 References
@@ -107,14 +108,15 @@ def NonomuraeaCoxensis(
 	
 	Datetime: 2021-02-02 22:43:44.495269
 	
-	The undirected graph Nonomuraea coxensis has 8094 nodes and 1764721 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05388 and
-	has 30 connected components, where the component with most nodes has 8028 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 349,
-	the mean node degree is 436.06, and the node degree mode is 2. The top 5 most central
-	nodes are 1122611.KB903946_gene851 (degree 2903), 1122611.KB903962_gene4492 (degree
-	2469), 1122611.KB903962_gene4476 (degree 2447), 1122611.KB903985_gene3770 (degree
-	2419) and 1122611.KB903961_gene4376 (degree 2395).
+	The undirected graph Nonomuraea coxensis has 8094 nodes and 1764721 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05388 and has 30 connected components, where the component with most
+	nodes has 8028 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 349, the mean node degree is 436.06, and
+	the node degree mode is 2. The top 5 most central nodes are 1122611.KB903946_gene851
+	(degree 2903), 1122611.KB903962_gene4492 (degree 2469), 1122611.KB903962_gene4476
+	(degree 2447), 1122611.KB903985_gene3770 (degree 2419) and 1122611.KB903961_gene4376
+	(degree 2395).
 	
 
 

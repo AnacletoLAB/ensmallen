@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:30.737056
 
-The undirected graph Hepatoplasma crinochetorum has 579 nodes and 24241 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.14487 and has 6 connected components, where the component with most nodes has
-564 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 62, the mean node degree is 83.73, and the node degree mode is 5. The top
-5 most central nodes are 1427984.X271_00199 (degree 287), 1427984.X271_00352 (degree
-244), 1427984.X271_00155 (degree 238), 1427984.X271_00365 (degree 236) and 1427984.X271_00198
-(degree 224).
+The undirected graph Hepatoplasma crinochetorum has 579 nodes and 24241
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.14487 and has 6 connected components, where the
+component with most nodes has 564 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 62, the mean node degree
+is 83.73, and the node degree mode is 5. The top 5 most central nodes are
+1427984.X271_00199 (degree 287), 1427984.X271_00352 (degree 244), 1427984.X271_00155
+(degree 238), 1427984.X271_00365 (degree 236) and 1427984.X271_00198 (degree
+224).
 
 
 References
@@ -107,14 +108,15 @@ def HepatoplasmaCrinochetorum(
 	
 	Datetime: 2021-02-03 22:52:30.737056
 	
-	The undirected graph Hepatoplasma crinochetorum has 579 nodes and 24241 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.14487 and has 6 connected components, where the component with most nodes has
-	564 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 62, the mean node degree is 83.73, and the node degree mode is 5. The top
-	5 most central nodes are 1427984.X271_00199 (degree 287), 1427984.X271_00352 (degree
-	244), 1427984.X271_00155 (degree 238), 1427984.X271_00365 (degree 236) and 1427984.X271_00198
-	(degree 224).
+	The undirected graph Hepatoplasma crinochetorum has 579 nodes and 24241
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.14487 and has 6 connected components, where the
+	component with most nodes has 564 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 62, the mean node degree
+	is 83.73, and the node degree mode is 5. The top 5 most central nodes are
+	1427984.X271_00199 (degree 287), 1427984.X271_00352 (degree 244), 1427984.X271_00155
+	(degree 238), 1427984.X271_00365 (degree 236) and 1427984.X271_00198 (degree
+	224).
 	
 
 

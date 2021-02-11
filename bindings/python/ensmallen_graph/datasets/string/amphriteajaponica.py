@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:01:23.991771
 
-The undirected graph Amphritea japonica has 3371 nodes and 372592 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06560 and
-has 7 connected components, where the component with most nodes has 3354 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 221.06, and the node degree mode is 3. The top 5 most central
-nodes are 1278309.KB907099_gene2641 (degree 1437), 1278309.KB907107_gene1730 (degree
-1386), 1278309.KB907100_gene2353 (degree 1348), 1278309.KB907101_gene309 (degree
-1194) and 1278309.KB907101_gene306 (degree 1047).
+The undirected graph Amphritea japonica has 3371 nodes and 372592 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06560 and has 7 connected components, where the component with most
+nodes has 3354 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 221.06, and
+the node degree mode is 3. The top 5 most central nodes are 1278309.KB907099_gene2641
+(degree 1437), 1278309.KB907107_gene1730 (degree 1386), 1278309.KB907100_gene2353
+(degree 1348), 1278309.KB907101_gene309 (degree 1194) and 1278309.KB907101_gene306
+(degree 1047).
 
 
 References
@@ -107,14 +108,15 @@ def AmphriteaJaponica(
 	
 	Datetime: 2021-02-03 21:01:23.991771
 	
-	The undirected graph Amphritea japonica has 3371 nodes and 372592 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06560 and
-	has 7 connected components, where the component with most nodes has 3354 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 221.06, and the node degree mode is 3. The top 5 most central
-	nodes are 1278309.KB907099_gene2641 (degree 1437), 1278309.KB907107_gene1730 (degree
-	1386), 1278309.KB907100_gene2353 (degree 1348), 1278309.KB907101_gene309 (degree
-	1194) and 1278309.KB907101_gene306 (degree 1047).
+	The undirected graph Amphritea japonica has 3371 nodes and 372592 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06560 and has 7 connected components, where the component with most
+	nodes has 3354 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 221.06, and
+	the node degree mode is 3. The top 5 most central nodes are 1278309.KB907099_gene2641
+	(degree 1437), 1278309.KB907107_gene1730 (degree 1386), 1278309.KB907100_gene2353
+	(degree 1348), 1278309.KB907101_gene309 (degree 1194) and 1278309.KB907101_gene306
+	(degree 1047).
 	
 
 

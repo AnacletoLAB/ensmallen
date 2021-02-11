@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:01.258955
 
-The undirected graph Ramlibacter tataouinensis has 3862 nodes and 386664 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05186
-and has 7 connected components, where the component with most nodes has 3850 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 175, the mean node degree is 200.24, and the node degree mode is 2. The top 5
-most central nodes are 365046.Rta_19460 (degree 1891), 365046.Rta_12360 (degree 1708),
-365046.Rta_04410 (degree 1442), 365046.Rta_12840 (degree 1413) and 365046.Rta_30410
-(degree 1219).
+The undirected graph Ramlibacter tataouinensis has 3862 nodes and 386664
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05186 and has 7 connected components, where the component
+with most nodes has 3850 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 175, the mean node degree is 200.24,
+and the node degree mode is 2. The top 5 most central nodes are 365046.Rta_19460
+(degree 1891), 365046.Rta_12360 (degree 1708), 365046.Rta_04410 (degree
+1442), 365046.Rta_12840 (degree 1413) and 365046.Rta_30410 (degree 1219).
 
 
 References
@@ -107,14 +107,14 @@ def RamlibacterTataouinensis(
 	
 	Datetime: 2021-02-02 20:35:01.258955
 	
-	The undirected graph Ramlibacter tataouinensis has 3862 nodes and 386664 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05186
-	and has 7 connected components, where the component with most nodes has 3850 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 175, the mean node degree is 200.24, and the node degree mode is 2. The top 5
-	most central nodes are 365046.Rta_19460 (degree 1891), 365046.Rta_12360 (degree 1708),
-	365046.Rta_04410 (degree 1442), 365046.Rta_12840 (degree 1413) and 365046.Rta_30410
-	(degree 1219).
+	The undirected graph Ramlibacter tataouinensis has 3862 nodes and 386664
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05186 and has 7 connected components, where the component
+	with most nodes has 3850 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 175, the mean node degree is 200.24,
+	and the node degree mode is 2. The top 5 most central nodes are 365046.Rta_19460
+	(degree 1891), 365046.Rta_12360 (degree 1708), 365046.Rta_04410 (degree
+	1442), 365046.Rta_12840 (degree 1413) and 365046.Rta_30410 (degree 1219).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:19.585638
 
-The undirected graph Glaciecola psychrophila has 5505 nodes and 385585 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02545 and
-has 48 connected components, where the component with most nodes has 5382 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 140.09, and the node degree mode is 1. The top 5 most central
-nodes are 1129794.C427_0013 (degree 1537), 1129794.C427_5104 (degree 1246), 1129794.C427_3783
-(degree 1081), 1129794.C427_0419 (degree 1060) and 1129794.C427_1992 (degree 1038).
+The undirected graph Glaciecola psychrophila has 5505 nodes and 385585
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02545 and has 48 connected components, where the component
+with most nodes has 5382 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 140.09,
+and the node degree mode is 1. The top 5 most central nodes are 1129794.C427_0013
+(degree 1537), 1129794.C427_5104 (degree 1246), 1129794.C427_3783 (degree
+1081), 1129794.C427_0419 (degree 1060) and 1129794.C427_1992 (degree 1038).
 
 
 References
@@ -106,13 +107,14 @@ def GlaciecolaPsychrophila(
 	
 	Datetime: 2021-02-02 22:55:19.585638
 	
-	The undirected graph Glaciecola psychrophila has 5505 nodes and 385585 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02545 and
-	has 48 connected components, where the component with most nodes has 5382 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 140.09, and the node degree mode is 1. The top 5 most central
-	nodes are 1129794.C427_0013 (degree 1537), 1129794.C427_5104 (degree 1246), 1129794.C427_3783
-	(degree 1081), 1129794.C427_0419 (degree 1060) and 1129794.C427_1992 (degree 1038).
+	The undirected graph Glaciecola psychrophila has 5505 nodes and 385585
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02545 and has 48 connected components, where the component
+	with most nodes has 5382 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 140.09,
+	and the node degree mode is 1. The top 5 most central nodes are 1129794.C427_0013
+	(degree 1537), 1129794.C427_5104 (degree 1246), 1129794.C427_3783 (degree
+	1081), 1129794.C427_0419 (degree 1060) and 1129794.C427_1992 (degree 1038).
 	
 
 

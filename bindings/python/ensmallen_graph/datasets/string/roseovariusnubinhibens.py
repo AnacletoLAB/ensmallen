@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:14:23.058907
 
-The undirected graph Roseovarius nubinhibens has 3513 nodes and 389273 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06310 and
-has 14 connected components, where the component with most nodes has 3483 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 221.62, and the node degree mode is 1. The top 5 most central
-nodes are 89187.ISM_09075 (degree 1458), 89187.ISM_16730 (degree 1328), 89187.ISM_14860
-(degree 1269), 89187.ISM_02210 (degree 1089) and 89187.ISM_06100 (degree 1050).
+The undirected graph Roseovarius nubinhibens has 3513 nodes and 389273
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06310 and has 14 connected components, where the component
+with most nodes has 3483 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 176, the mean node degree is 221.62,
+and the node degree mode is 1. The top 5 most central nodes are 89187.ISM_09075
+(degree 1458), 89187.ISM_16730 (degree 1328), 89187.ISM_14860 (degree 1269),
+89187.ISM_02210 (degree 1089) and 89187.ISM_06100 (degree 1050).
 
 
 References
@@ -106,13 +107,14 @@ def RoseovariusNubinhibens(
 	
 	Datetime: 2021-02-02 19:14:23.058907
 	
-	The undirected graph Roseovarius nubinhibens has 3513 nodes and 389273 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06310 and
-	has 14 connected components, where the component with most nodes has 3483 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 221.62, and the node degree mode is 1. The top 5 most central
-	nodes are 89187.ISM_09075 (degree 1458), 89187.ISM_16730 (degree 1328), 89187.ISM_14860
-	(degree 1269), 89187.ISM_02210 (degree 1089) and 89187.ISM_06100 (degree 1050).
+	The undirected graph Roseovarius nubinhibens has 3513 nodes and 389273
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06310 and has 14 connected components, where the component
+	with most nodes has 3483 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 176, the mean node degree is 221.62,
+	and the node degree mode is 1. The top 5 most central nodes are 89187.ISM_09075
+	(degree 1458), 89187.ISM_16730 (degree 1328), 89187.ISM_14860 (degree 1269),
+	89187.ISM_02210 (degree 1089) and 89187.ISM_06100 (degree 1050).
 	
 
 

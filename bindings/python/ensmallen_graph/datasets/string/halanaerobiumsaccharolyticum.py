@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:24:15.244362
 
-The undirected graph Halanaerobium saccharolyticum has 2658 nodes and 234254 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06634
-and has 6 connected components, where the component with most nodes has 2643 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 176.26, and the node degree mode is 50. The top 5
-most central nodes are 1293054.HSACCH_00329 (degree 1184), 1293054.HSACCH_00970 (degree
-1109), 1293054.HSACCH_01729 (degree 1049), 1293054.HSACCH_01738 (degree 1006) and
-1293054.HSACCH_00138 (degree 981).
+The undirected graph Halanaerobium saccharolyticum has 2658 nodes and 234254
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06634 and has 6 connected components, where the component
+with most nodes has 2643 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 176.26,
+and the node degree mode is 50. The top 5 most central nodes are 1293054.HSACCH_00329
+(degree 1184), 1293054.HSACCH_00970 (degree 1109), 1293054.HSACCH_01729
+(degree 1049), 1293054.HSACCH_01738 (degree 1006) and 1293054.HSACCH_00138
+(degree 981).
 
 
 References
@@ -107,14 +108,15 @@ def HalanaerobiumSaccharolyticum(
 	
 	Datetime: 2021-02-03 21:24:15.244362
 	
-	The undirected graph Halanaerobium saccharolyticum has 2658 nodes and 234254 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06634
-	and has 6 connected components, where the component with most nodes has 2643 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 176.26, and the node degree mode is 50. The top 5
-	most central nodes are 1293054.HSACCH_00329 (degree 1184), 1293054.HSACCH_00970 (degree
-	1109), 1293054.HSACCH_01729 (degree 1049), 1293054.HSACCH_01738 (degree 1006) and
-	1293054.HSACCH_00138 (degree 981).
+	The undirected graph Halanaerobium saccharolyticum has 2658 nodes and 234254
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06634 and has 6 connected components, where the component
+	with most nodes has 2643 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 176.26,
+	and the node degree mode is 50. The top 5 most central nodes are 1293054.HSACCH_00329
+	(degree 1184), 1293054.HSACCH_00970 (degree 1109), 1293054.HSACCH_01729
+	(degree 1049), 1293054.HSACCH_01738 (degree 1006) and 1293054.HSACCH_00138
+	(degree 981).
 	
 
 

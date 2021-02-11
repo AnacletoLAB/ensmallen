@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:12.700294
 
-The undirected graph TF17 has 48630 nodes and 586020 weighted edges, of which 69
-are self-loops. The graph is quite sparse as it has a density of 0.00050 and is connected,
-as it has a single component. The graph median node degree is 24, the mean node degree
-is 24.10, and the node degree mode is 25. The top 5 most central nodes are 37221
-(degree 86), 37202 (degree 86), 33897 (degree 86), 37298 (degree 85) and 36939 (degree
-85).
+The undirected graph TF17 has 48630 nodes and 586020 weighted edges, of
+which 69 are self-loops. The graph is quite sparse as it has a density
+of 0.00050 and is connected, as it has a single component. The graph median
+node degree is 24, the mean node degree is 24.10, and the node degree mode
+is 25. The top 5 most central nodes are 37221 (degree 86), 37202 (degree
+86), 33897 (degree 86), 37298 (degree 85) and 36939 (degree 85).
 
 
 References
@@ -102,12 +102,12 @@ def Tf17(
 	
 	Datetime: 2021-02-06 11:02:12.700294
 	
-	The undirected graph TF17 has 48630 nodes and 586020 weighted edges, of which 69
-	are self-loops. The graph is quite sparse as it has a density of 0.00050 and is connected,
-	as it has a single component. The graph median node degree is 24, the mean node degree
-	is 24.10, and the node degree mode is 25. The top 5 most central nodes are 37221
-	(degree 86), 37202 (degree 86), 33897 (degree 86), 37298 (degree 85) and 36939 (degree
-	85).
+	The undirected graph TF17 has 48630 nodes and 586020 weighted edges, of
+	which 69 are self-loops. The graph is quite sparse as it has a density
+	of 0.00050 and is connected, as it has a single component. The graph median
+	node degree is 24, the mean node degree is 24.10, and the node degree mode
+	is 25. The top 5 most central nodes are 37221 (degree 86), 37202 (degree
+	86), 33897 (degree 86), 37298 (degree 85) and 36939 (degree 85).
 	
 
 

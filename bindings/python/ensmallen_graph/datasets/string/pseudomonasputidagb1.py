@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:49.118318
 
-The undirected graph Pseudomonas putida GB1 has 5382 nodes and 506101 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03495 and
-has 19 connected components, where the component with most nodes has 5338 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 188.07, and the node degree mode is 1. The top 5 most central
-nodes are 76869.PputGB1_0138 (degree 2028), 76869.PputGB1_5126 (degree 1553), 76869.PputGB1_0845
-(degree 1459), 76869.PputGB1_1030 (degree 1431) and 76869.PputGB1_4738 (degree 1403).
+The undirected graph Pseudomonas putida GB1 has 5382 nodes and 506101 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03495 and has 19 connected components, where the component with most
+nodes has 5338 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 188.07, and
+the node degree mode is 1. The top 5 most central nodes are 76869.PputGB1_0138
+(degree 2028), 76869.PputGB1_5126 (degree 1553), 76869.PputGB1_0845 (degree
+1459), 76869.PputGB1_1030 (degree 1431) and 76869.PputGB1_4738 (degree
+1403).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasPutidaGb1(
 	
 	Datetime: 2021-02-02 18:32:49.118318
 	
-	The undirected graph Pseudomonas putida GB1 has 5382 nodes and 506101 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03495 and
-	has 19 connected components, where the component with most nodes has 5338 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 188.07, and the node degree mode is 1. The top 5 most central
-	nodes are 76869.PputGB1_0138 (degree 2028), 76869.PputGB1_5126 (degree 1553), 76869.PputGB1_0845
-	(degree 1459), 76869.PputGB1_1030 (degree 1431) and 76869.PputGB1_4738 (degree 1403).
+	The undirected graph Pseudomonas putida GB1 has 5382 nodes and 506101 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03495 and has 19 connected components, where the component with most
+	nodes has 5338 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 188.07, and
+	the node degree mode is 1. The top 5 most central nodes are 76869.PputGB1_0138
+	(degree 2028), 76869.PputGB1_5126 (degree 1553), 76869.PputGB1_0845 (degree
+	1459), 76869.PputGB1_1030 (degree 1431) and 76869.PputGB1_4738 (degree
+	1403).
 	
 
 

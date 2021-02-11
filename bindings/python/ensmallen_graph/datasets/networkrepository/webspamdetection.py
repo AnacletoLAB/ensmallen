@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:53:32.398248
 
-The undirected graph web-spam-detection has 9072 nodes with 3 different node types:
-2 (nodes number 6365), 3 (nodes number 2113) and 1 (nodes number 594) and 473854
-unweighted edges, of which 8895 are self-loops. The graph is dense as it has a density
-of 0.01141 and is connected, as it has a single component. The graph median node
-degree is 35, the mean node degree is 103.48, and the node degree mode is 3. The
-top 5 most central nodes are 3287 (degree 3891), 4532 (degree 3761), 1935 (degree
-3434), 7710 (degree 2725) and 1377 (degree 2663).
+The undirected graph web-spam-detection has 9072 nodes with 3 different
+node types: 2 (nodes number 6365), 3 (nodes number 2113) and 1 (nodes number
+594) and 473854 unweighted edges, of which 8895 are self-loops. The graph
+is dense as it has a density of 0.01141 and is connected, as it has a single
+component. The graph median node degree is 35, the mean node degree is
+103.48, and the node degree mode is 3. The top 5 most central nodes are
+3287 (degree 3891), 4532 (degree 3761), 1935 (degree 3434), 7710 (degree
+2725) and 1377 (degree 2663).
 
 
 References
@@ -103,13 +104,14 @@ def WebSpamDetection(
 	
 	Datetime: 2021-02-04 08:53:32.398248
 	
-	The undirected graph web-spam-detection has 9072 nodes with 3 different node types:
-	2 (nodes number 6365), 3 (nodes number 2113) and 1 (nodes number 594) and 473854
-	unweighted edges, of which 8895 are self-loops. The graph is dense as it has a density
-	of 0.01141 and is connected, as it has a single component. The graph median node
-	degree is 35, the mean node degree is 103.48, and the node degree mode is 3. The
-	top 5 most central nodes are 3287 (degree 3891), 4532 (degree 3761), 1935 (degree
-	3434), 7710 (degree 2725) and 1377 (degree 2663).
+	The undirected graph web-spam-detection has 9072 nodes with 3 different
+	node types: 2 (nodes number 6365), 3 (nodes number 2113) and 1 (nodes number
+	594) and 473854 unweighted edges, of which 8895 are self-loops. The graph
+	is dense as it has a density of 0.01141 and is connected, as it has a single
+	component. The graph median node degree is 35, the mean node degree is
+	103.48, and the node degree mode is 3. The top 5 most central nodes are
+	3287 (degree 3891), 4532 (degree 3761), 1935 (degree 3434), 7710 (degree
+	2725) and 1377 (degree 2663).
 	
 
 

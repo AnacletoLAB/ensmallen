@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:35.110104
 
-The undirected graph Veillonella ratti has 2107 nodes and 137311 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06189 and
-has 13 connected components, where the component with most nodes has 2073 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 130.34, and the node degree mode is 26. The top 5 most central
-nodes are 883156.HMPREF9282_02003 (degree 815), 883156.HMPREF9282_01103 (degree 726),
-883156.HMPREF9282_02062 (degree 722), 883156.HMPREF9282_01743 (degree 712) and 883156.HMPREF9282_01937
+The undirected graph Veillonella ratti has 2107 nodes and 137311 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06189 and has 13 connected components, where the component with most
+nodes has 2073 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 130.34, and
+the node degree mode is 26. The top 5 most central nodes are 883156.HMPREF9282_02003
+(degree 815), 883156.HMPREF9282_01103 (degree 726), 883156.HMPREF9282_02062
+(degree 722), 883156.HMPREF9282_01743 (degree 712) and 883156.HMPREF9282_01937
 (degree 711).
 
 
@@ -107,13 +108,14 @@ def VeillonellaRatti(
 	
 	Datetime: 2021-02-02 21:51:35.110104
 	
-	The undirected graph Veillonella ratti has 2107 nodes and 137311 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06189 and
-	has 13 connected components, where the component with most nodes has 2073 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 130.34, and the node degree mode is 26. The top 5 most central
-	nodes are 883156.HMPREF9282_02003 (degree 815), 883156.HMPREF9282_01103 (degree 726),
-	883156.HMPREF9282_02062 (degree 722), 883156.HMPREF9282_01743 (degree 712) and 883156.HMPREF9282_01937
+	The undirected graph Veillonella ratti has 2107 nodes and 137311 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06189 and has 13 connected components, where the component with most
+	nodes has 2073 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 130.34, and
+	the node degree mode is 26. The top 5 most central nodes are 883156.HMPREF9282_02003
+	(degree 815), 883156.HMPREF9282_01103 (degree 726), 883156.HMPREF9282_02062
+	(degree 722), 883156.HMPREF9282_01743 (degree 712) and 883156.HMPREF9282_01937
 	(degree 711).
 	
 

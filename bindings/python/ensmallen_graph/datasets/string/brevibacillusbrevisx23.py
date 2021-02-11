@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:07.797439
 
-The undirected graph Brevibacillus brevis X23 has 5952 nodes and 851484 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04808
-and has 42 connected components, where the component with most nodes has 5837 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 286.12, and the node degree mode is 1. The top 5
-most central nodes are 1200792.AKYF01000017_gene5564 (degree 2728), 1200792.AKYF01000017_gene5565
-(degree 2195), 1200792.AKYF01000001_gene3874 (degree 2141), 1200792.AKYF01000022_gene5509
-(degree 2132) and 1200792.AKYF01000019_gene4403 (degree 2115).
+The undirected graph Brevibacillus brevis X23 has 5952 nodes and 851484
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04808 and has 42 connected components, where the component
+with most nodes has 5837 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 230, the mean node degree is 286.12,
+and the node degree mode is 1. The top 5 most central nodes are 1200792.AKYF01000017_gene5564
+(degree 2728), 1200792.AKYF01000017_gene5565 (degree 2195), 1200792.AKYF01000001_gene3874
+(degree 2141), 1200792.AKYF01000022_gene5509 (degree 2132) and 1200792.AKYF01000019_gene4403
+(degree 2115).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacillusBrevisX23(
 	
 	Datetime: 2021-02-02 23:14:07.797439
 	
-	The undirected graph Brevibacillus brevis X23 has 5952 nodes and 851484 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04808
-	and has 42 connected components, where the component with most nodes has 5837 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 286.12, and the node degree mode is 1. The top 5
-	most central nodes are 1200792.AKYF01000017_gene5564 (degree 2728), 1200792.AKYF01000017_gene5565
-	(degree 2195), 1200792.AKYF01000001_gene3874 (degree 2141), 1200792.AKYF01000022_gene5509
-	(degree 2132) and 1200792.AKYF01000019_gene4403 (degree 2115).
+	The undirected graph Brevibacillus brevis X23 has 5952 nodes and 851484
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04808 and has 42 connected components, where the component
+	with most nodes has 5837 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 230, the mean node degree is 286.12,
+	and the node degree mode is 1. The top 5 most central nodes are 1200792.AKYF01000017_gene5564
+	(degree 2728), 1200792.AKYF01000017_gene5565 (degree 2195), 1200792.AKYF01000001_gene3874
+	(degree 2141), 1200792.AKYF01000022_gene5509 (degree 2132) and 1200792.AKYF01000019_gene4403
+	(degree 2115).
 	
 
 

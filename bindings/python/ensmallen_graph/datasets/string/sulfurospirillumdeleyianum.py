@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:42.484796
 
-The undirected graph Sulfurospirillum deleyianum has 2253 nodes and 131145 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05170
-and has 6 connected components, where the component with most nodes has 2241 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 116.42, and the node degree mode is 6. The top 5 most
-central nodes are 525898.Sdel_0558 (degree 913), 525898.Sdel_0595 (degree 718), 525898.Sdel_1898
-(degree 698), 525898.Sdel_0486 (degree 674) and 525898.Sdel_1546 (degree 645).
+The undirected graph Sulfurospirillum deleyianum has 2253 nodes and 131145
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05170 and has 6 connected components, where the component
+with most nodes has 2241 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 116.42,
+and the node degree mode is 6. The top 5 most central nodes are 525898.Sdel_0558
+(degree 913), 525898.Sdel_0595 (degree 718), 525898.Sdel_1898 (degree 698),
+525898.Sdel_0486 (degree 674) and 525898.Sdel_1546 (degree 645).
 
 
 References
@@ -106,13 +107,14 @@ def SulfurospirillumDeleyianum(
 	
 	Datetime: 2021-02-02 21:05:42.484796
 	
-	The undirected graph Sulfurospirillum deleyianum has 2253 nodes and 131145 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05170
-	and has 6 connected components, where the component with most nodes has 2241 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 116.42, and the node degree mode is 6. The top 5 most
-	central nodes are 525898.Sdel_0558 (degree 913), 525898.Sdel_0595 (degree 718), 525898.Sdel_1898
-	(degree 698), 525898.Sdel_0486 (degree 674) and 525898.Sdel_1546 (degree 645).
+	The undirected graph Sulfurospirillum deleyianum has 2253 nodes and 131145
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05170 and has 6 connected components, where the component
+	with most nodes has 2241 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 116.42,
+	and the node degree mode is 6. The top 5 most central nodes are 525898.Sdel_0558
+	(degree 913), 525898.Sdel_0595 (degree 718), 525898.Sdel_1898 (degree 698),
+	525898.Sdel_0486 (degree 674) and 525898.Sdel_1546 (degree 645).
 	
 
 

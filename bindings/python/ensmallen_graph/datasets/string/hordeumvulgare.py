@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:42:51.512187
 
-The undirected graph Hordeum vulgare has 19861 nodes and 3569242 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01810 and
-has 16 connected components, where the component with most nodes has 19829 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 359.42, and the node degree mode is 2. The top 5
-most central nodes are 4513.MLOC_69499.1 (degree 5588), 4513.MLOC_37374.3 (degree
-4127), 4513.MLOC_80410.1 (degree 4127), 4513.MLOC_57153.2 (degree 4127) and 4513.MLOC_62785.1
-(degree 4126).
+The undirected graph Hordeum vulgare has 19861 nodes and 3569242 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01810 and has 16 connected components, where the component with most
+nodes has 19829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 359.42, and
+the node degree mode is 2. The top 5 most central nodes are 4513.MLOC_69499.1
+(degree 5588), 4513.MLOC_37374.3 (degree 4127), 4513.MLOC_80410.1 (degree
+4127), 4513.MLOC_57153.2 (degree 4127) and 4513.MLOC_62785.1 (degree 4126).
 
 
 References
@@ -107,14 +107,14 @@ def HordeumVulgare(
 	
 	Datetime: 2021-02-02 16:42:51.512187
 	
-	The undirected graph Hordeum vulgare has 19861 nodes and 3569242 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01810 and
-	has 16 connected components, where the component with most nodes has 19829 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 359.42, and the node degree mode is 2. The top 5
-	most central nodes are 4513.MLOC_69499.1 (degree 5588), 4513.MLOC_37374.3 (degree
-	4127), 4513.MLOC_80410.1 (degree 4127), 4513.MLOC_57153.2 (degree 4127) and 4513.MLOC_62785.1
-	(degree 4126).
+	The undirected graph Hordeum vulgare has 19861 nodes and 3569242 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01810 and has 16 connected components, where the component with most
+	nodes has 19829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 359.42, and
+	the node degree mode is 2. The top 5 most central nodes are 4513.MLOC_69499.1
+	(degree 5588), 4513.MLOC_37374.3 (degree 4127), 4513.MLOC_80410.1 (degree
+	4127), 4513.MLOC_57153.2 (degree 4127) and 4513.MLOC_62785.1 (degree 4126).
 	
 
 

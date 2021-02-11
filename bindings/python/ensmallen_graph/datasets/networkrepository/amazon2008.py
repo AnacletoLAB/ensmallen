@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:02:35.515140
 
-The undirected graph amazon-2008 has 735323 nodes and 3523472 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 10,
-the mean node degree is 9.58, and the node degree mode is 10. The top 5 most central
-nodes are 263821 (degree 1077), 58872 (degree 519), 263828 (degree 518), 56843 (degree
-476) and 684380 (degree 452).
+The undirected graph amazon-2008 has 735323 nodes and 3523472 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 10, the mean node degree is 9.58, and the
+node degree mode is 10. The top 5 most central nodes are 263821 (degree
+1077), 58872 (degree 519), 263828 (degree 518), 56843 (degree 476) and
+684380 (degree 452).
 
 
 References
@@ -102,12 +103,13 @@ def Amazon2008(
 	
 	Datetime: 2021-02-06 12:02:35.515140
 	
-	The undirected graph amazon-2008 has 735323 nodes and 3523472 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 10,
-	the mean node degree is 9.58, and the node degree mode is 10. The top 5 most central
-	nodes are 263821 (degree 1077), 58872 (degree 519), 263828 (degree 518), 56843 (degree
-	476) and 684380 (degree 452).
+	The undirected graph amazon-2008 has 735323 nodes and 3523472 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 10, the mean node degree is 9.58, and the
+	node degree mode is 10. The top 5 most central nodes are 263821 (degree
+	1077), 58872 (degree 519), 263828 (degree 518), 56843 (degree 476) and
+	684380 (degree 452).
 	
 
 

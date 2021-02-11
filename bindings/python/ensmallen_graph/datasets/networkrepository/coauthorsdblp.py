@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:39.435353
 
-The undirected graph coAuthorsDBLP has 299067 nodes and 977676 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 4, the mean node degree is 6.54, and the node degree mode is 2. The top 5 most
-central nodes are 4345 (degree 336), 4312 (degree 286), 2741 (degree 266), 493 (degree
-265) and 2911 (degree 240).
+The undirected graph coAuthorsDBLP has 299067 nodes and 977676 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 6.54, and the
+node degree mode is 2. The top 5 most central nodes are 4345 (degree 336),
+4312 (degree 286), 2741 (degree 266), 493 (degree 265) and 2911 (degree
+240).
 
 
 References
@@ -102,12 +103,13 @@ def Coauthorsdblp(
 	
 	Datetime: 2021-02-06 11:07:39.435353
 	
-	The undirected graph coAuthorsDBLP has 299067 nodes and 977676 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 4, the mean node degree is 6.54, and the node degree mode is 2. The top 5 most
-	central nodes are 4345 (degree 336), 4312 (degree 286), 2741 (degree 266), 493 (degree
-	265) and 2911 (degree 240).
+	The undirected graph coAuthorsDBLP has 299067 nodes and 977676 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 6.54, and the
+	node degree mode is 2. The top 5 most central nodes are 4345 (degree 336),
+	4312 (degree 286), 2741 (degree 266), 493 (degree 265) and 2911 (degree
+	240).
 	
 
 

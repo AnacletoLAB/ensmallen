@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:05.207834
 
-The undirected graph citationCiteseer has 268495 nodes and 1156646 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00003 and is connected, as it has a single component. The graph median node degree
-is 5, the mean node degree is 8.62 and the node degree mode is 1. The top 5 most
-central nodes are 146223 (degree 1318), 154496 (degree 1192), 243566 (degree 1147),
-224020 (degree 943) and 254545 (degree 893).
+The undirected graph citationCiteseer has 268495 nodes and 1156646 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 5, the mean node degree is 8.62 and the
+node degree mode is 1. The top 5 most central nodes are 146223 (degree
+1318), 154496 (degree 1192), 243566 (degree 1147), 224020 (degree 943)
+and 254545 (degree 893).
 
 
 References
@@ -102,12 +103,13 @@ def Citationciteseer(
 	
 	Datetime: 2021-02-03 23:07:05.207834
 	
-	The undirected graph citationCiteseer has 268495 nodes and 1156646 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00003 and is connected, as it has a single component. The graph median node degree
-	is 5, the mean node degree is 8.62 and the node degree mode is 1. The top 5 most
-	central nodes are 146223 (degree 1318), 154496 (degree 1192), 243566 (degree 1147),
-	224020 (degree 943) and 254545 (degree 893).
+	The undirected graph citationCiteseer has 268495 nodes and 1156646 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 5, the mean node degree is 8.62 and the
+	node degree mode is 1. The top 5 most central nodes are 146223 (degree
+	1318), 154496 (degree 1192), 243566 (degree 1147), 224020 (degree 943)
+	and 254545 (degree 893).
 	
 
 

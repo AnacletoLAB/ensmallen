@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:03.287455
 
-The undirected graph Pythium irregulare has 8273 nodes and 1330447 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03888 and
-has 132 connected components, where the component with most nodes has 7984 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 321.64, and the node degree mode is 1. The top 5
-most central nodes are 36331.EPrPI00000016933 (degree 4122), 36331.EPrPI00000021840
-(degree 2974), 36331.EPrPI00000014071 (degree 2812), 36331.EPrPI00000021511 (degree
-2739) and 36331.EPrPI00000015214 (degree 2726).
+The undirected graph Pythium irregulare has 8273 nodes and 1330447 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03888 and has 132 connected components, where the component with most
+nodes has 7984 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 321.64, and
+the node degree mode is 1. The top 5 most central nodes are 36331.EPrPI00000016933
+(degree 4122), 36331.EPrPI00000021840 (degree 2974), 36331.EPrPI00000014071
+(degree 2812), 36331.EPrPI00000021511 (degree 2739) and 36331.EPrPI00000015214
+(degree 2726).
 
 
 References
@@ -107,14 +108,15 @@ def PythiumIrregulare(
 	
 	Datetime: 2021-02-02 18:06:03.287455
 	
-	The undirected graph Pythium irregulare has 8273 nodes and 1330447 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03888 and
-	has 132 connected components, where the component with most nodes has 7984 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 321.64, and the node degree mode is 1. The top 5
-	most central nodes are 36331.EPrPI00000016933 (degree 4122), 36331.EPrPI00000021840
-	(degree 2974), 36331.EPrPI00000014071 (degree 2812), 36331.EPrPI00000021511 (degree
-	2739) and 36331.EPrPI00000015214 (degree 2726).
+	The undirected graph Pythium irregulare has 8273 nodes and 1330447 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03888 and has 132 connected components, where the component with most
+	nodes has 7984 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 321.64, and
+	the node degree mode is 1. The top 5 most central nodes are 36331.EPrPI00000016933
+	(degree 4122), 36331.EPrPI00000021840 (degree 2974), 36331.EPrPI00000014071
+	(degree 2812), 36331.EPrPI00000021511 (degree 2739) and 36331.EPrPI00000015214
+	(degree 2726).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:07.047824
 
-The undirected graph Desulfococcus multivorans has 3803 nodes and 324053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04482
-and has 15 connected components, where the component with most nodes has 3769 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 170.42, and the node degree mode is 1. The top 5
-most central nodes are 1121405.dsmv_2312 (degree 1576), 1121405.dsmv_1703 (degree
-1575), 1121405.dsmv_0737 (degree 1567), 1121405.dsmv_2602 (degree 1194) and 1121405.dsmv_3225
-(degree 1161).
+The undirected graph Desulfococcus multivorans has 3803 nodes and 324053
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04482 and has 15 connected components, where the component
+with most nodes has 3769 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 170.42,
+and the node degree mode is 1. The top 5 most central nodes are 1121405.dsmv_2312
+(degree 1576), 1121405.dsmv_1703 (degree 1575), 1121405.dsmv_0737 (degree
+1567), 1121405.dsmv_2602 (degree 1194) and 1121405.dsmv_3225 (degree 1161).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfococcusMultivorans(
 	
 	Datetime: 2021-02-02 22:36:07.047824
 	
-	The undirected graph Desulfococcus multivorans has 3803 nodes and 324053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04482
-	and has 15 connected components, where the component with most nodes has 3769 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 170.42, and the node degree mode is 1. The top 5
-	most central nodes are 1121405.dsmv_2312 (degree 1576), 1121405.dsmv_1703 (degree
-	1575), 1121405.dsmv_0737 (degree 1567), 1121405.dsmv_2602 (degree 1194) and 1121405.dsmv_3225
-	(degree 1161).
+	The undirected graph Desulfococcus multivorans has 3803 nodes and 324053
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04482 and has 15 connected components, where the component
+	with most nodes has 3769 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 170.42,
+	and the node degree mode is 1. The top 5 most central nodes are 1121405.dsmv_2312
+	(degree 1576), 1121405.dsmv_1703 (degree 1575), 1121405.dsmv_0737 (degree
+	1567), 1121405.dsmv_2602 (degree 1194) and 1121405.dsmv_3225 (degree 1161).
 	
 
 

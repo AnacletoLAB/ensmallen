@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:04.361566
 
-The undirected graph Plasmodium chabaudi has 3969 nodes and 416230 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-has 8 connected components, where the component with most nodes has 3954 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 209.74, and the node degree mode is 1. The top 5 most central
-nodes are 5825.PCHAS_051760 (degree 1280), 5825.PCHAS_103070 (degree 1251), 5825.PCHAS_071160
-(degree 1243), 5825.PCHAS_123090 (degree 1223) and 5825.PCHAS_072100 (degree 1190).
+The undirected graph Plasmodium chabaudi has 3969 nodes and 416230 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05286 and has 8 connected components, where the component with most
+nodes has 3954 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 209.74, and
+the node degree mode is 1. The top 5 most central nodes are 5825.PCHAS_051760
+(degree 1280), 5825.PCHAS_103070 (degree 1251), 5825.PCHAS_071160 (degree
+1243), 5825.PCHAS_123090 (degree 1223) and 5825.PCHAS_072100 (degree 1190).
 
 
 References
@@ -106,13 +107,14 @@ def PlasmodiumChabaudi(
 	
 	Datetime: 2021-02-02 17:16:04.361566
 	
-	The undirected graph Plasmodium chabaudi has 3969 nodes and 416230 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-	has 8 connected components, where the component with most nodes has 3954 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 209.74, and the node degree mode is 1. The top 5 most central
-	nodes are 5825.PCHAS_051760 (degree 1280), 5825.PCHAS_103070 (degree 1251), 5825.PCHAS_071160
-	(degree 1243), 5825.PCHAS_123090 (degree 1223) and 5825.PCHAS_072100 (degree 1190).
+	The undirected graph Plasmodium chabaudi has 3969 nodes and 416230 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05286 and has 8 connected components, where the component with most
+	nodes has 3954 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 209.74, and
+	the node degree mode is 1. The top 5 most central nodes are 5825.PCHAS_051760
+	(degree 1280), 5825.PCHAS_103070 (degree 1251), 5825.PCHAS_071160 (degree
+	1243), 5825.PCHAS_123090 (degree 1223) and 5825.PCHAS_072100 (degree 1190).
 	
 
 

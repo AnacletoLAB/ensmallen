@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:22:00.158481
 
-The undirected graph ford1 has 18728 nodes and 60152 unweighted edges, of which 18728
-are self-loops. The graph is quite sparse as it has a density of 0.00029 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 5.42, and the node degree mode is 5. The top 5 most central nodes are 17729 (degree
-20), 17723 (degree 20), 17721 (degree 20), 17710 (degree 20) and 17708 (degree 20).
+The undirected graph ford1 has 18728 nodes and 60152 unweighted edges,
+of which 18728 are self-loops. The graph is quite sparse as it has a density
+of 0.00029 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 5.42, and the node degree mode
+is 5. The top 5 most central nodes are 17729 (degree 20), 17723 (degree
+20), 17721 (degree 20), 17710 (degree 20) and 17708 (degree 20).
 
 
 References
@@ -101,11 +102,12 @@ def Ford1(
 	
 	Datetime: 2021-02-06 10:22:00.158481
 	
-	The undirected graph ford1 has 18728 nodes and 60152 unweighted edges, of which 18728
-	are self-loops. The graph is quite sparse as it has a density of 0.00029 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.42, and the node degree mode is 5. The top 5 most central nodes are 17729 (degree
-	20), 17723 (degree 20), 17721 (degree 20), 17710 (degree 20) and 17708 (degree 20).
+	The undirected graph ford1 has 18728 nodes and 60152 unweighted edges,
+	of which 18728 are self-loops. The graph is quite sparse as it has a density
+	of 0.00029 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 5.42, and the node degree mode
+	is 5. The top 5 most central nodes are 17729 (degree 20), 17723 (degree
+	20), 17721 (degree 20), 17710 (degree 20) and 17708 (degree 20).
 	
 
 

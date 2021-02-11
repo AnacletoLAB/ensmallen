@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:03.463466
 
-The undirected graph Lactobacillus gallinarum has 2076 nodes and 129309 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06004
-and has 12 connected components, where the component with most nodes has 2043 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 124.58, and the node degree mode is 2. The top 5 most
-central nodes are 1423748.BALB01000003_gene384 (degree 910), 1423748.BALB01000011_gene1149
-(degree 750), 1423748.BALB01000008_gene953 (degree 680), 1423748.BALB01000004_gene637
-(degree 593) and 1423748.BALB01000003_gene416 (degree 591).
+The undirected graph Lactobacillus gallinarum has 2076 nodes and 129309
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06004 and has 12 connected components, where the component
+with most nodes has 2043 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 124.58,
+and the node degree mode is 2. The top 5 most central nodes are 1423748.BALB01000003_gene384
+(degree 910), 1423748.BALB01000011_gene1149 (degree 750), 1423748.BALB01000008_gene953
+(degree 680), 1423748.BALB01000004_gene637 (degree 593) and 1423748.BALB01000003_gene416
+(degree 591).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusGallinarum(
 	
 	Datetime: 2021-02-03 22:51:03.463466
 	
-	The undirected graph Lactobacillus gallinarum has 2076 nodes and 129309 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06004
-	and has 12 connected components, where the component with most nodes has 2043 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 124.58, and the node degree mode is 2. The top 5 most
-	central nodes are 1423748.BALB01000003_gene384 (degree 910), 1423748.BALB01000011_gene1149
-	(degree 750), 1423748.BALB01000008_gene953 (degree 680), 1423748.BALB01000004_gene637
-	(degree 593) and 1423748.BALB01000003_gene416 (degree 591).
+	The undirected graph Lactobacillus gallinarum has 2076 nodes and 129309
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06004 and has 12 connected components, where the component
+	with most nodes has 2043 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 124.58,
+	and the node degree mode is 2. The top 5 most central nodes are 1423748.BALB01000003_gene384
+	(degree 910), 1423748.BALB01000011_gene1149 (degree 750), 1423748.BALB01000008_gene953
+	(degree 680), 1423748.BALB01000004_gene637 (degree 593) and 1423748.BALB01000003_gene416
+	(degree 591).
 	
 
 

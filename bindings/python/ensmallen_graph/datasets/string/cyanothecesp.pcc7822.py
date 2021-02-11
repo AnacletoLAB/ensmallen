@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:00.149116
 
-The undirected graph Cyanothece sp. PCC7822 has 5386 nodes and 493712 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03404 and
-has 25 connected components, where the component with most nodes has 5322 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 183.33, and the node degree mode is 4. The top 5 most central
-nodes are 497965.Cyan7822_1847 (degree 2156), 497965.Cyan7822_3067 (degree 1953),
-497965.Cyan7822_0705 (degree 1687), 497965.Cyan7822_4053 (degree 1646) and 497965.Cyan7822_3350
+The undirected graph Cyanothece sp. PCC7822 has 5386 nodes and 493712 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03404 and has 25 connected components, where the component with most
+nodes has 5322 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 183.33, and
+the node degree mode is 4. The top 5 most central nodes are 497965.Cyan7822_1847
+(degree 2156), 497965.Cyan7822_3067 (degree 1953), 497965.Cyan7822_0705
+(degree 1687), 497965.Cyan7822_4053 (degree 1646) and 497965.Cyan7822_3350
 (degree 1623).
 
 
@@ -107,13 +108,14 @@ def CyanotheceSp.Pcc7822(
 	
 	Datetime: 2021-02-02 21:01:00.149116
 	
-	The undirected graph Cyanothece sp. PCC7822 has 5386 nodes and 493712 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03404 and
-	has 25 connected components, where the component with most nodes has 5322 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 183.33, and the node degree mode is 4. The top 5 most central
-	nodes are 497965.Cyan7822_1847 (degree 2156), 497965.Cyan7822_3067 (degree 1953),
-	497965.Cyan7822_0705 (degree 1687), 497965.Cyan7822_4053 (degree 1646) and 497965.Cyan7822_3350
+	The undirected graph Cyanothece sp. PCC7822 has 5386 nodes and 493712 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03404 and has 25 connected components, where the component with most
+	nodes has 5322 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 183.33, and
+	the node degree mode is 4. The top 5 most central nodes are 497965.Cyan7822_1847
+	(degree 2156), 497965.Cyan7822_3067 (degree 1953), 497965.Cyan7822_0705
+	(degree 1687), 497965.Cyan7822_4053 (degree 1646) and 497965.Cyan7822_3350
 	(degree 1623).
 	
 

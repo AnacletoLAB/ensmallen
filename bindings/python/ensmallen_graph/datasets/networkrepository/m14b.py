@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:28:02.821010
 
-The undirected graph m14b has 214765 nodes and 1679018 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00007
-and is connected, as it has a single component. The graph median node degree is 16,
-the mean node degree is 15.64 and the node degree mode is 16. The top 5 most central
-nodes are 33481 (degree 40), 33390 (degree 40), 32748 (degree 36), 33281 (degree
-35) and 32796 (degree 35).
+The undirected graph m14b has 214765 nodes and 1679018 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00007 and is connected, as it has a single component. The
+graph median node degree is 16, the mean node degree is 15.64 and the node
+degree mode is 16. The top 5 most central nodes are 33481 (degree 40),
+33390 (degree 40), 32748 (degree 36), 33281 (degree 35) and 32796 (degree
+35).
 
 
 References
@@ -102,12 +103,13 @@ def M14b(
 	
 	Datetime: 2021-02-03 23:28:02.821010
 	
-	The undirected graph m14b has 214765 nodes and 1679018 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00007
-	and is connected, as it has a single component. The graph median node degree is 16,
-	the mean node degree is 15.64 and the node degree mode is 16. The top 5 most central
-	nodes are 33481 (degree 40), 33390 (degree 40), 32748 (degree 36), 33281 (degree
-	35) and 32796 (degree 35).
+	The undirected graph m14b has 214765 nodes and 1679018 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00007 and is connected, as it has a single component. The
+	graph median node degree is 16, the mean node degree is 15.64 and the node
+	degree mode is 16. The top 5 most central nodes are 33481 (degree 40),
+	33390 (degree 40), 32748 (degree 36), 33281 (degree 35) and 32796 (degree
+	35).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:12.363863
 
-The undirected graph Streptococcus suis EA183292 has 1805 nodes and 124850 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07668
-and has 9 connected components, where the component with most nodes has 1784 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 138.34, and the node degree mode is 2. The top 5
-most central nodes are 1321372.AQQB01000007_gene1091 (degree 812), 1321372.AQQB01000002_gene489
-(degree 714), 1321372.AQQB01000045_gene1011 (degree 696), 1321372.AQQB01000052_gene1528
-(degree 686) and 1321372.AQQB01000065_gene299 (degree 641).
+The undirected graph Streptococcus suis EA183292 has 1805 nodes and 124850
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07668 and has 9 connected components, where the component
+with most nodes has 1784 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 138.34,
+and the node degree mode is 2. The top 5 most central nodes are 1321372.AQQB01000007_gene1091
+(degree 812), 1321372.AQQB01000002_gene489 (degree 714), 1321372.AQQB01000045_gene1011
+(degree 696), 1321372.AQQB01000052_gene1528 (degree 686) and 1321372.AQQB01000065_gene299
+(degree 641).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSuisEa183292(
 	
 	Datetime: 2021-02-03 21:52:12.363863
 	
-	The undirected graph Streptococcus suis EA183292 has 1805 nodes and 124850 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07668
-	and has 9 connected components, where the component with most nodes has 1784 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 138.34, and the node degree mode is 2. The top 5
-	most central nodes are 1321372.AQQB01000007_gene1091 (degree 812), 1321372.AQQB01000002_gene489
-	(degree 714), 1321372.AQQB01000045_gene1011 (degree 696), 1321372.AQQB01000052_gene1528
-	(degree 686) and 1321372.AQQB01000065_gene299 (degree 641).
+	The undirected graph Streptococcus suis EA183292 has 1805 nodes and 124850
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07668 and has 9 connected components, where the component
+	with most nodes has 1784 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 138.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1321372.AQQB01000007_gene1091
+	(degree 812), 1321372.AQQB01000002_gene489 (degree 714), 1321372.AQQB01000045_gene1011
+	(degree 696), 1321372.AQQB01000052_gene1528 (degree 686) and 1321372.AQQB01000065_gene299
+	(degree 641).
 	
 
 

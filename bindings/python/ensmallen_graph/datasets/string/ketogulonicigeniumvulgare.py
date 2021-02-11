@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:21.322036
 
-The undirected graph Ketogulonicigenium vulgare has 2573 nodes and 186464 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05635
-and has 4 connected components, where the component with most nodes has 2566 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 144.94, and the node degree mode is 2. The top 5
-most central nodes are 759362.KVU_1509 (degree 979), 759362.KVU_0794 (degree 709),
-759362.KVU_1173 (degree 697), 759362.KVU_1957 (degree 687) and 759362.KVU_1481 (degree
-666).
+The undirected graph Ketogulonicigenium vulgare has 2573 nodes and 186464
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05635 and has 4 connected components, where the component
+with most nodes has 2566 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 144.94,
+and the node degree mode is 2. The top 5 most central nodes are 759362.KVU_1509
+(degree 979), 759362.KVU_0794 (degree 709), 759362.KVU_1173 (degree 697),
+759362.KVU_1957 (degree 687) and 759362.KVU_1481 (degree 666).
 
 
 References
@@ -107,14 +107,14 @@ def KetogulonicigeniumVulgare(
 	
 	Datetime: 2021-02-02 21:41:21.322036
 	
-	The undirected graph Ketogulonicigenium vulgare has 2573 nodes and 186464 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05635
-	and has 4 connected components, where the component with most nodes has 2566 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 144.94, and the node degree mode is 2. The top 5
-	most central nodes are 759362.KVU_1509 (degree 979), 759362.KVU_0794 (degree 709),
-	759362.KVU_1173 (degree 697), 759362.KVU_1957 (degree 687) and 759362.KVU_1481 (degree
-	666).
+	The undirected graph Ketogulonicigenium vulgare has 2573 nodes and 186464
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05635 and has 4 connected components, where the component
+	with most nodes has 2566 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 144.94,
+	and the node degree mode is 2. The top 5 most central nodes are 759362.KVU_1509
+	(degree 979), 759362.KVU_0794 (degree 709), 759362.KVU_1173 (degree 697),
+	759362.KVU_1957 (degree 687) and 759362.KVU_1481 (degree 666).
 	
 
 

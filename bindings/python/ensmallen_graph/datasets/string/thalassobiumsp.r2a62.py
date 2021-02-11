@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:39.755959
 
-The undirected graph Thalassobium sp. R2A62 has 3636 nodes and 437267 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06617 and
-has 17 connected components, where the component with most nodes has 3596 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 240.52, and the node degree mode is 3. The top 5 most central
-nodes are 633131.TR2A62_2092 (degree 1392), 633131.TR2A62_0528 (degree 1233), 633131.TR2A62_1687
-(degree 1154), 633131.TR2A62_2537 (degree 1100) and 633131.TR2A62_0027 (degree 1047).
+The undirected graph Thalassobium sp. R2A62 has 3636 nodes and 437267 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06617 and has 17 connected components, where the component with most
+nodes has 3596 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 240.52, and
+the node degree mode is 3. The top 5 most central nodes are 633131.TR2A62_2092
+(degree 1392), 633131.TR2A62_0528 (degree 1233), 633131.TR2A62_1687 (degree
+1154), 633131.TR2A62_2537 (degree 1100) and 633131.TR2A62_0027 (degree
+1047).
 
 
 References
@@ -106,13 +108,15 @@ def ThalassobiumSp.R2a62(
 	
 	Datetime: 2021-02-02 21:21:39.755959
 	
-	The undirected graph Thalassobium sp. R2A62 has 3636 nodes and 437267 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06617 and
-	has 17 connected components, where the component with most nodes has 3596 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 240.52, and the node degree mode is 3. The top 5 most central
-	nodes are 633131.TR2A62_2092 (degree 1392), 633131.TR2A62_0528 (degree 1233), 633131.TR2A62_1687
-	(degree 1154), 633131.TR2A62_2537 (degree 1100) and 633131.TR2A62_0027 (degree 1047).
+	The undirected graph Thalassobium sp. R2A62 has 3636 nodes and 437267 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06617 and has 17 connected components, where the component with most
+	nodes has 3596 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 240.52, and
+	the node degree mode is 3. The top 5 most central nodes are 633131.TR2A62_2092
+	(degree 1392), 633131.TR2A62_0528 (degree 1233), 633131.TR2A62_1687 (degree
+	1154), 633131.TR2A62_2537 (degree 1100) and 633131.TR2A62_0027 (degree
+	1047).
 	
 
 

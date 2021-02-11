@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:48.879931
 
-The undirected graph Xenorhabdus bovienii has 4212 nodes and 313556 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03536 and
-has 41 connected components, where the component with most nodes has 4115 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 148.89, and the node degree mode is 1. The top 5 most central
-nodes are 406818.XBJ1_4096 (degree 1121), 406818.XBJ1_1089 (degree 1003), 406818.XBJ1_2583
-(degree 963), 406818.XBJ1_2584 (degree 879) and 406818.XBJ1_0935 (degree 877).
+The undirected graph Xenorhabdus bovienii has 4212 nodes and 313556 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03536 and has 41 connected components, where the component with most
+nodes has 4115 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 148.89, and
+the node degree mode is 1. The top 5 most central nodes are 406818.XBJ1_4096
+(degree 1121), 406818.XBJ1_1089 (degree 1003), 406818.XBJ1_2583 (degree
+963), 406818.XBJ1_2584 (degree 879) and 406818.XBJ1_0935 (degree 877).
 
 
 References
@@ -106,13 +107,14 @@ def XenorhabdusBovienii(
 	
 	Datetime: 2021-02-02 20:44:48.879931
 	
-	The undirected graph Xenorhabdus bovienii has 4212 nodes and 313556 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03536 and
-	has 41 connected components, where the component with most nodes has 4115 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 148.89, and the node degree mode is 1. The top 5 most central
-	nodes are 406818.XBJ1_4096 (degree 1121), 406818.XBJ1_1089 (degree 1003), 406818.XBJ1_2583
-	(degree 963), 406818.XBJ1_2584 (degree 879) and 406818.XBJ1_0935 (degree 877).
+	The undirected graph Xenorhabdus bovienii has 4212 nodes and 313556 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03536 and has 41 connected components, where the component with most
+	nodes has 4115 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 148.89, and
+	the node degree mode is 1. The top 5 most central nodes are 406818.XBJ1_4096
+	(degree 1121), 406818.XBJ1_1089 (degree 1003), 406818.XBJ1_2583 (degree
+	963), 406818.XBJ1_2584 (degree 879) and 406818.XBJ1_0935 (degree 877).
 	
 
 

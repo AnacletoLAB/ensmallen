@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:07.698659
 
-The undirected graph cs4 has 22499 nodes and 43858 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00017 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 3.90 and the node degree mode is 4. The top 5 most central nodes are 22291 (degree
-4), 22400 (degree 4), 22399 (degree 4), 22290 (degree 4) and 22009 (degree 4).
+The undirected graph cs4 has 22499 nodes and 43858 unweighted edges, of
+which none are self-loops. The graph is quite sparse as it has a density
+of 0.00017 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 3.90 and the node degree mode
+is 4. The top 5 most central nodes are 22291 (degree 4), 22400 (degree
+4), 22399 (degree 4), 22290 (degree 4) and 22009 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def Cs4(
 	
 	Datetime: 2021-02-03 23:12:07.698659
 	
-	The undirected graph cs4 has 22499 nodes and 43858 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00017 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 3.90 and the node degree mode is 4. The top 5 most central nodes are 22291 (degree
-	4), 22400 (degree 4), 22399 (degree 4), 22290 (degree 4) and 22009 (degree 4).
+	The undirected graph cs4 has 22499 nodes and 43858 unweighted edges, of
+	which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00017 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 3.90 and the node degree mode
+	is 4. The top 5 most central nodes are 22291 (degree 4), 22400 (degree
+	4), 22399 (degree 4), 22290 (degree 4) and 22009 (degree 4).
 	
 
 

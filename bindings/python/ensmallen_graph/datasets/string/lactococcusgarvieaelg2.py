@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:28.014373
 
-The undirected graph Lactococcus garvieae Lg2 has 1951 nodes and 114603 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06025
-and has 11 connected components, where the component with most nodes has 1921 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 117.48, and the node degree mode is 2. The top 5 most
-central nodes are 420890.LCGL_1869 (degree 864), 420890.LCGL_0303 (degree 727), 420890.LCGL_1883
-(degree 692), 420890.LCGL_1183 (degree 687) and 420890.LCGL_0134 (degree 624).
+The undirected graph Lactococcus garvieae Lg2 has 1951 nodes and 114603
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06025 and has 11 connected components, where the component
+with most nodes has 1921 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 117.48,
+and the node degree mode is 2. The top 5 most central nodes are 420890.LCGL_1869
+(degree 864), 420890.LCGL_0303 (degree 727), 420890.LCGL_1883 (degree 692),
+420890.LCGL_1183 (degree 687) and 420890.LCGL_0134 (degree 624).
 
 
 References
@@ -106,13 +107,14 @@ def LactococcusGarvieaeLg2(
 	
 	Datetime: 2021-02-02 20:47:28.014373
 	
-	The undirected graph Lactococcus garvieae Lg2 has 1951 nodes and 114603 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06025
-	and has 11 connected components, where the component with most nodes has 1921 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 117.48, and the node degree mode is 2. The top 5 most
-	central nodes are 420890.LCGL_1869 (degree 864), 420890.LCGL_0303 (degree 727), 420890.LCGL_1883
-	(degree 692), 420890.LCGL_1183 (degree 687) and 420890.LCGL_0134 (degree 624).
+	The undirected graph Lactococcus garvieae Lg2 has 1951 nodes and 114603
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06025 and has 11 connected components, where the component
+	with most nodes has 1921 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 117.48,
+	and the node degree mode is 2. The top 5 most central nodes are 420890.LCGL_1869
+	(degree 864), 420890.LCGL_0303 (degree 727), 420890.LCGL_1883 (degree 692),
+	420890.LCGL_1183 (degree 687) and 420890.LCGL_0134 (degree 624).
 	
 
 

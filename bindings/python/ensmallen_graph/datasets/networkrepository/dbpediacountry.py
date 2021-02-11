@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:31.740984
 
-The undirected graph dbpedia-country has 590112 nodes and 624402 unweighted edges,
-of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 2.12, and the node degree mode is 1. The top 5 most central
-nodes are 1 (degree 110602), 81 (degree 56328), 17 (degree 39979), 7 (degree 39936)
-and 22 (degree 29567).
+The undirected graph dbpedia-country has 590112 nodes and 624402 unweighted
+edges, of which 1 are self-loops. The graph is extremely sparse as it has
+a density of 0.00000 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 2.12, and the node
+degree mode is 1. The top 5 most central nodes are 1 (degree 110602), 81
+(degree 56328), 17 (degree 39979), 7 (degree 39936) and 22 (degree 29567).
 
 
 References
@@ -102,12 +102,12 @@ def DbpediaCountry(
 	
 	Datetime: 2021-02-06 11:08:31.740984
 	
-	The undirected graph dbpedia-country has 590112 nodes and 624402 unweighted edges,
-	of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 2.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1 (degree 110602), 81 (degree 56328), 17 (degree 39979), 7 (degree 39936)
-	and 22 (degree 29567).
+	The undirected graph dbpedia-country has 590112 nodes and 624402 unweighted
+	edges, of which 1 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00000 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 2.12, and the node
+	degree mode is 1. The top 5 most central nodes are 1 (degree 110602), 81
+	(degree 56328), 17 (degree 39979), 7 (degree 39936) and 22 (degree 29567).
 	
 
 

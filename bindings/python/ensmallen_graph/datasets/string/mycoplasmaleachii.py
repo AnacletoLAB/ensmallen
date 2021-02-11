@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:31.431866
 
-The undirected graph Mycoplasma leachii has 876 nodes and 50965 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.13298
-and has 6 connected components, where the component with most nodes has 864 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 116.36, and the node degree mode is 6. The top 5 most
-central nodes are 880447.MSB_A0652 (degree 418), 880447.MSB_A0398 (degree 406), 880447.MSB_A0383
-(degree 388), 880447.MSB_A0251 (degree 382) and 880447.MSB_A0750 (degree 351).
+The undirected graph Mycoplasma leachii has 876 nodes and 50965 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13298 and has 6 connected components, where the component
+with most nodes has 864 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 116.36,
+and the node degree mode is 6. The top 5 most central nodes are 880447.MSB_A0652
+(degree 418), 880447.MSB_A0398 (degree 406), 880447.MSB_A0383 (degree 388),
+880447.MSB_A0251 (degree 382) and 880447.MSB_A0750 (degree 351).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaLeachii(
 	
 	Datetime: 2021-02-02 21:50:31.431866
 	
-	The undirected graph Mycoplasma leachii has 876 nodes and 50965 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.13298
-	and has 6 connected components, where the component with most nodes has 864 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 116.36, and the node degree mode is 6. The top 5 most
-	central nodes are 880447.MSB_A0652 (degree 418), 880447.MSB_A0398 (degree 406), 880447.MSB_A0383
-	(degree 388), 880447.MSB_A0251 (degree 382) and 880447.MSB_A0750 (degree 351).
+	The undirected graph Mycoplasma leachii has 876 nodes and 50965 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13298 and has 6 connected components, where the component
+	with most nodes has 864 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 116.36,
+	and the node degree mode is 6. The top 5 most central nodes are 880447.MSB_A0652
+	(degree 418), 880447.MSB_A0398 (degree 406), 880447.MSB_A0383 (degree 388),
+	880447.MSB_A0251 (degree 382) and 880447.MSB_A0750 (degree 351).
 	
 
 

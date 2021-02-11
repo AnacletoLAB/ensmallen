@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:42.691668
 
-The undirected graph brock200-1 has 200 nodes and 14834 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.74543
-and is connected, as it has a single component. The graph median node degree is 148,
-the mean node degree is 148.34 and the node degree mode is 151. The top 5 most central
-nodes are 103 (degree 165), 108 (degree 162), 27 (degree 162), 115 (degree 161) and
-160 (degree 160).
+The undirected graph brock200-1 has 200 nodes and 14834 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.74543 and is connected, as it has a single component. The
+graph median node degree is 148, the mean node degree is 148.34 and the
+node degree mode is 151. The top 5 most central nodes are 103 (degree 165),
+108 (degree 162), 27 (degree 162), 115 (degree 161) and 160 (degree 160).
 
 
 References
@@ -107,12 +107,12 @@ def Brock2001(
 	
 	Datetime: 2021-02-03 22:53:42.691668
 	
-	The undirected graph brock200-1 has 200 nodes and 14834 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.74543
-	and is connected, as it has a single component. The graph median node degree is 148,
-	the mean node degree is 148.34 and the node degree mode is 151. The top 5 most central
-	nodes are 103 (degree 165), 108 (degree 162), 27 (degree 162), 115 (degree 161) and
-	160 (degree 160).
+	The undirected graph brock200-1 has 200 nodes and 14834 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.74543 and is connected, as it has a single component. The
+	graph median node degree is 148, the mean node degree is 148.34 and the
+	node degree mode is 151. The top 5 most central nodes are 103 (degree 165),
+	108 (degree 162), 27 (degree 162), 115 (degree 161) and 160 (degree 160).
 	
 
 

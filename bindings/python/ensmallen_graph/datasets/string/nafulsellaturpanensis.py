@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:38.776454
 
-The undirected graph Nafulsella turpanensis has 3857 nodes and 410304 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05518 and
-has 26 connected components, where the component with most nodes has 3800 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 212.76, and the node degree mode is 1. The top 5 most central
-nodes are 1124780.ANNU01000016_gene1858 (degree 1317), 1124780.ANNU01000005_gene2526
-(degree 1230), 1124780.ANNU01000010_gene3604 (degree 1154), 1124780.ANNU01000061_gene919
-(degree 1099) and 1124780.ANNU01000005_gene2438 (degree 1045).
+The undirected graph Nafulsella turpanensis has 3857 nodes and 410304 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05518 and has 26 connected components, where the component with most
+nodes has 3800 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 212.76, and
+the node degree mode is 1. The top 5 most central nodes are 1124780.ANNU01000016_gene1858
+(degree 1317), 1124780.ANNU01000005_gene2526 (degree 1230), 1124780.ANNU01000010_gene3604
+(degree 1154), 1124780.ANNU01000061_gene919 (degree 1099) and 1124780.ANNU01000005_gene2438
+(degree 1045).
 
 
 References
@@ -107,14 +108,15 @@ def NafulsellaTurpanensis(
 	
 	Datetime: 2021-02-02 22:53:38.776454
 	
-	The undirected graph Nafulsella turpanensis has 3857 nodes and 410304 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05518 and
-	has 26 connected components, where the component with most nodes has 3800 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 212.76, and the node degree mode is 1. The top 5 most central
-	nodes are 1124780.ANNU01000016_gene1858 (degree 1317), 1124780.ANNU01000005_gene2526
-	(degree 1230), 1124780.ANNU01000010_gene3604 (degree 1154), 1124780.ANNU01000061_gene919
-	(degree 1099) and 1124780.ANNU01000005_gene2438 (degree 1045).
+	The undirected graph Nafulsella turpanensis has 3857 nodes and 410304 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05518 and has 26 connected components, where the component with most
+	nodes has 3800 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 212.76, and
+	the node degree mode is 1. The top 5 most central nodes are 1124780.ANNU01000016_gene1858
+	(degree 1317), 1124780.ANNU01000005_gene2526 (degree 1230), 1124780.ANNU01000010_gene3604
+	(degree 1154), 1124780.ANNU01000061_gene919 (degree 1099) and 1124780.ANNU01000005_gene2438
+	(degree 1045).
 	
 
 

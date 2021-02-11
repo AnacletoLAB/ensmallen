@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:14.642307
 
-The undirected graph Rhodococcus sp. UNC363MFTsu51 has 5131 nodes and 613958 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04665
-and has 30 connected components, where the component with most nodes has 5055 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 239.31, and the node degree mode is 1. The top 5
-most central nodes are 1449069.JMLO01000002_gene4558 (degree 1926), 1449069.JMLO01000039_gene170
-(degree 1339), 1449069.JMLO01000018_gene567 (degree 1326), 1449069.JMLO01000014_gene4338
-(degree 1326) and 1449069.JMLO01000001_gene2101 (degree 1271).
+The undirected graph Rhodococcus sp. UNC363MFTsu51 has 5131 nodes and 613958
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04665 and has 30 connected components, where the component
+with most nodes has 5055 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 239.31,
+and the node degree mode is 1. The top 5 most central nodes are 1449069.JMLO01000002_gene4558
+(degree 1926), 1449069.JMLO01000039_gene170 (degree 1339), 1449069.JMLO01000018_gene567
+(degree 1326), 1449069.JMLO01000014_gene4338 (degree 1326) and 1449069.JMLO01000001_gene2101
+(degree 1271).
 
 
 References
@@ -107,14 +108,15 @@ def RhodococcusSp.Unc363mftsu51(
 	
 	Datetime: 2021-02-03 23:04:14.642307
 	
-	The undirected graph Rhodococcus sp. UNC363MFTsu51 has 5131 nodes and 613958 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04665
-	and has 30 connected components, where the component with most nodes has 5055 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 239.31, and the node degree mode is 1. The top 5
-	most central nodes are 1449069.JMLO01000002_gene4558 (degree 1926), 1449069.JMLO01000039_gene170
-	(degree 1339), 1449069.JMLO01000018_gene567 (degree 1326), 1449069.JMLO01000014_gene4338
-	(degree 1326) and 1449069.JMLO01000001_gene2101 (degree 1271).
+	The undirected graph Rhodococcus sp. UNC363MFTsu51 has 5131 nodes and 613958
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04665 and has 30 connected components, where the component
+	with most nodes has 5055 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 239.31,
+	and the node degree mode is 1. The top 5 most central nodes are 1449069.JMLO01000002_gene4558
+	(degree 1926), 1449069.JMLO01000039_gene170 (degree 1339), 1449069.JMLO01000018_gene567
+	(degree 1326), 1449069.JMLO01000014_gene4338 (degree 1326) and 1449069.JMLO01000001_gene2101
+	(degree 1271).
 	
 
 

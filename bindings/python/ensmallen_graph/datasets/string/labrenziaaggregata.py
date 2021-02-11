@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:46.439934
 
-The undirected graph Labrenzia aggregata has 6221 nodes and 747030 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03861 and
-has 29 connected components, where the component with most nodes has 6153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 240.16, and the node degree mode is 3. The top 5 most central
-nodes are 384765.SIAM614_27812 (degree 2381), 384765.SIAM614_07493 (degree 1813),
-384765.SIAM614_16812 (degree 1638), 384765.SIAM614_24032 (degree 1556) and 384765.SIAM614_15330
+The undirected graph Labrenzia aggregata has 6221 nodes and 747030 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03861 and has 29 connected components, where the component with most
+nodes has 6153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 240.16, and
+the node degree mode is 3. The top 5 most central nodes are 384765.SIAM614_27812
+(degree 2381), 384765.SIAM614_07493 (degree 1813), 384765.SIAM614_16812
+(degree 1638), 384765.SIAM614_24032 (degree 1556) and 384765.SIAM614_15330
 (degree 1450).
 
 
@@ -107,13 +108,14 @@ def LabrenziaAggregata(
 	
 	Datetime: 2021-02-02 20:37:46.439934
 	
-	The undirected graph Labrenzia aggregata has 6221 nodes and 747030 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03861 and
-	has 29 connected components, where the component with most nodes has 6153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 240.16, and the node degree mode is 3. The top 5 most central
-	nodes are 384765.SIAM614_27812 (degree 2381), 384765.SIAM614_07493 (degree 1813),
-	384765.SIAM614_16812 (degree 1638), 384765.SIAM614_24032 (degree 1556) and 384765.SIAM614_15330
+	The undirected graph Labrenzia aggregata has 6221 nodes and 747030 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03861 and has 29 connected components, where the component with most
+	nodes has 6153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 240.16, and
+	the node degree mode is 3. The top 5 most central nodes are 384765.SIAM614_27812
+	(degree 2381), 384765.SIAM614_07493 (degree 1813), 384765.SIAM614_16812
+	(degree 1638), 384765.SIAM614_24032 (degree 1556) and 384765.SIAM614_15330
 	(degree 1450).
 	
 

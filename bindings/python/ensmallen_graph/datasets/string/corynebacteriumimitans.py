@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:23.564320
 
-The undirected graph Corynebacterium imitans has 1977 nodes and 103549 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-has 15 connected components, where the component with most nodes has 1932 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 104.75, and the node degree mode is 1. The top 5 most central
-nodes are 156978.CIMIT_02655 (degree 832), 156978.CIMIT_05805 (degree 817), 156978.CIMIT_05925
-(degree 638), 156978.CIMIT_02250 (degree 604) and 156978.CIMIT_06740 (degree 544).
+The undirected graph Corynebacterium imitans has 1977 nodes and 103549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05301 and has 15 connected components, where the component
+with most nodes has 1932 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 104.75,
+and the node degree mode is 1. The top 5 most central nodes are 156978.CIMIT_02655
+(degree 832), 156978.CIMIT_05805 (degree 817), 156978.CIMIT_05925 (degree
+638), 156978.CIMIT_02250 (degree 604) and 156978.CIMIT_06740 (degree 544).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumImitans(
 	
 	Datetime: 2021-02-02 19:52:23.564320
 	
-	The undirected graph Corynebacterium imitans has 1977 nodes and 103549 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-	has 15 connected components, where the component with most nodes has 1932 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 104.75, and the node degree mode is 1. The top 5 most central
-	nodes are 156978.CIMIT_02655 (degree 832), 156978.CIMIT_05805 (degree 817), 156978.CIMIT_05925
-	(degree 638), 156978.CIMIT_02250 (degree 604) and 156978.CIMIT_06740 (degree 544).
+	The undirected graph Corynebacterium imitans has 1977 nodes and 103549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05301 and has 15 connected components, where the component
+	with most nodes has 1932 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 104.75,
+	and the node degree mode is 1. The top 5 most central nodes are 156978.CIMIT_02655
+	(degree 832), 156978.CIMIT_05805 (degree 817), 156978.CIMIT_05925 (degree
+	638), 156978.CIMIT_02250 (degree 604) and 156978.CIMIT_06740 (degree 544).
 	
 
 

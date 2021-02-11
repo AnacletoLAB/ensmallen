@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:08.637583
 
-The undirected graph Desulfotomaculum gibsoniae has 4279 nodes and 455842 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04980
-and has 19 connected components, where the component with most nodes has 4238 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 213.06, and the node degree mode is 3. The top 5
-most central nodes are 767817.Desgi_2859 (degree 2478), 767817.Desgi_1639 (degree
-1799), 767817.Desgi_2505 (degree 1582), 767817.Desgi_2561 (degree 1581) and 767817.Desgi_0898
-(degree 1490).
+The undirected graph Desulfotomaculum gibsoniae has 4279 nodes and 455842
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04980 and has 19 connected components, where the component
+with most nodes has 4238 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 213.06,
+and the node degree mode is 3. The top 5 most central nodes are 767817.Desgi_2859
+(degree 2478), 767817.Desgi_1639 (degree 1799), 767817.Desgi_2505 (degree
+1582), 767817.Desgi_2561 (degree 1581) and 767817.Desgi_0898 (degree 1490).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotomaculumGibsoniae(
 	
 	Datetime: 2021-02-02 21:44:08.637583
 	
-	The undirected graph Desulfotomaculum gibsoniae has 4279 nodes and 455842 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04980
-	and has 19 connected components, where the component with most nodes has 4238 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 213.06, and the node degree mode is 3. The top 5
-	most central nodes are 767817.Desgi_2859 (degree 2478), 767817.Desgi_1639 (degree
-	1799), 767817.Desgi_2505 (degree 1582), 767817.Desgi_2561 (degree 1581) and 767817.Desgi_0898
-	(degree 1490).
+	The undirected graph Desulfotomaculum gibsoniae has 4279 nodes and 455842
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04980 and has 19 connected components, where the component
+	with most nodes has 4238 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 213.06,
+	and the node degree mode is 3. The top 5 most central nodes are 767817.Desgi_2859
+	(degree 2478), 767817.Desgi_1639 (degree 1799), 767817.Desgi_2505 (degree
+	1582), 767817.Desgi_2561 (degree 1581) and 767817.Desgi_0898 (degree 1490).
 	
 
 

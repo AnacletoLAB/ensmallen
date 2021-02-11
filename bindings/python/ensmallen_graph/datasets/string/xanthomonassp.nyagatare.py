@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:02.473245
 
-The undirected graph Xanthomonas sp. Nyagatare has 3882 nodes and 469664 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-and has 17 connected components, where the component with most nodes has 3838 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 241.97, and the node degree mode is 2. The top 5
-most central nodes are 1552758.NC00_14055 (degree 1555), 1552758.NC00_20235 (degree
-1390), 1552758.NC00_08180 (degree 1348), 1552758.NC00_20000 (degree 1335) and 1552758.NC00_08350
-(degree 1279).
+The undirected graph Xanthomonas sp. Nyagatare has 3882 nodes and 469664
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06235 and has 17 connected components, where the component
+with most nodes has 3838 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 241.97,
+and the node degree mode is 2. The top 5 most central nodes are 1552758.NC00_14055
+(degree 1555), 1552758.NC00_20235 (degree 1390), 1552758.NC00_08180 (degree
+1348), 1552758.NC00_20000 (degree 1335) and 1552758.NC00_08350 (degree
+1279).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasSp.Nyagatare(
 	
 	Datetime: 2021-02-03 23:21:02.473245
 	
-	The undirected graph Xanthomonas sp. Nyagatare has 3882 nodes and 469664 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-	and has 17 connected components, where the component with most nodes has 3838 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 241.97, and the node degree mode is 2. The top 5
-	most central nodes are 1552758.NC00_14055 (degree 1555), 1552758.NC00_20235 (degree
-	1390), 1552758.NC00_08180 (degree 1348), 1552758.NC00_20000 (degree 1335) and 1552758.NC00_08350
-	(degree 1279).
+	The undirected graph Xanthomonas sp. Nyagatare has 3882 nodes and 469664
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06235 and has 17 connected components, where the component
+	with most nodes has 3838 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 241.97,
+	and the node degree mode is 2. The top 5 most central nodes are 1552758.NC00_14055
+	(degree 1555), 1552758.NC00_20235 (degree 1390), 1552758.NC00_08180 (degree
+	1348), 1552758.NC00_20000 (degree 1335) and 1552758.NC00_08350 (degree
+	1279).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:12.994899
 
-The undirected graph Bacteroides caccae has 3785 nodes and 308892 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04313 and
-has 16 connected components, where the component with most nodes has 3723 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 163.22, and the node degree mode is 3. The top 5 most central
-nodes are 411901.BACCAC_01460 (degree 1280), 411901.BACCAC_00048 (degree 1242), 411901.BACCAC_02735
-(degree 1039), 411901.BACCAC_03337 (degree 1028) and 411901.BACCAC_02527 (degree
+The undirected graph Bacteroides caccae has 3785 nodes and 308892 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04313 and has 16 connected components, where the component with most
+nodes has 3723 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 163.22, and
+the node degree mode is 3. The top 5 most central nodes are 411901.BACCAC_01460
+(degree 1280), 411901.BACCAC_00048 (degree 1242), 411901.BACCAC_02735 (degree
+1039), 411901.BACCAC_03337 (degree 1028) and 411901.BACCAC_02527 (degree
 994).
 
 
@@ -107,13 +108,14 @@ def BacteroidesCaccae(
 	
 	Datetime: 2021-02-02 20:46:12.994899
 	
-	The undirected graph Bacteroides caccae has 3785 nodes and 308892 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04313 and
-	has 16 connected components, where the component with most nodes has 3723 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 163.22, and the node degree mode is 3. The top 5 most central
-	nodes are 411901.BACCAC_01460 (degree 1280), 411901.BACCAC_00048 (degree 1242), 411901.BACCAC_02735
-	(degree 1039), 411901.BACCAC_03337 (degree 1028) and 411901.BACCAC_02527 (degree
+	The undirected graph Bacteroides caccae has 3785 nodes and 308892 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04313 and has 16 connected components, where the component with most
+	nodes has 3723 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 163.22, and
+	the node degree mode is 3. The top 5 most central nodes are 411901.BACCAC_01460
+	(degree 1280), 411901.BACCAC_00048 (degree 1242), 411901.BACCAC_02735 (degree
+	1039), 411901.BACCAC_03337 (degree 1028) and 411901.BACCAC_02527 (degree
 	994).
 	
 

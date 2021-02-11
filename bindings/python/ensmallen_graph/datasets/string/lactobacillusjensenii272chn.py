@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:12.567953
 
-The undirected graph Lactobacillus jensenii 272CHN has 1497 nodes and 107884 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09635
-and has 3 connected components, where the component with most nodes has 1486 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 144.13, and the node degree mode is 8. The top 5
-most central nodes are 575606.HMPREF0525_00062 (degree 790), 575606.HMPREF0525_00008
-(degree 755), 575606.HMPREF0525_00434 (degree 592), 575606.HMPREF0525_00662 (degree
-559) and 575606.HMPREF0525_00500 (degree 551).
+The undirected graph Lactobacillus jensenii 272CHN has 1497 nodes and 107884
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09635 and has 3 connected components, where the component
+with most nodes has 1486 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 144.13,
+and the node degree mode is 8. The top 5 most central nodes are 575606.HMPREF0525_00062
+(degree 790), 575606.HMPREF0525_00008 (degree 755), 575606.HMPREF0525_00434
+(degree 592), 575606.HMPREF0525_00662 (degree 559) and 575606.HMPREF0525_00500
+(degree 551).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusJensenii272chn(
 	
 	Datetime: 2021-02-02 21:15:12.567953
 	
-	The undirected graph Lactobacillus jensenii 272CHN has 1497 nodes and 107884 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09635
-	and has 3 connected components, where the component with most nodes has 1486 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 144.13, and the node degree mode is 8. The top 5
-	most central nodes are 575606.HMPREF0525_00062 (degree 790), 575606.HMPREF0525_00008
-	(degree 755), 575606.HMPREF0525_00434 (degree 592), 575606.HMPREF0525_00662 (degree
-	559) and 575606.HMPREF0525_00500 (degree 551).
+	The undirected graph Lactobacillus jensenii 272CHN has 1497 nodes and 107884
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09635 and has 3 connected components, where the component
+	with most nodes has 1486 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 144.13,
+	and the node degree mode is 8. The top 5 most central nodes are 575606.HMPREF0525_00062
+	(degree 790), 575606.HMPREF0525_00008 (degree 755), 575606.HMPREF0525_00434
+	(degree 592), 575606.HMPREF0525_00662 (degree 559) and 575606.HMPREF0525_00500
+	(degree 551).
 	
 
 

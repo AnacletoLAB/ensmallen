@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:09.594441
 
-The undirected graph Caldicellulosiruptor bescii has 2637 nodes and 181650 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05226
-and has 22 connected components, where the component with most nodes has 2574 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 137.77, and the node degree mode is 2. The top 5
-most central nodes are 521460.Athe_1405 (degree 951), 521460.Athe_1441 (degree 922),
-521460.Athe_1327 (degree 776), 521460.Athe_0307 (degree 774) and 521460.Athe_1432
-(degree 750).
+The undirected graph Caldicellulosiruptor bescii has 2637 nodes and 181650
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05226 and has 22 connected components, where the component
+with most nodes has 2574 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 137.77,
+and the node degree mode is 2. The top 5 most central nodes are 521460.Athe_1405
+(degree 951), 521460.Athe_1441 (degree 922), 521460.Athe_1327 (degree 776),
+521460.Athe_0307 (degree 774) and 521460.Athe_1432 (degree 750).
 
 
 References
@@ -107,14 +107,14 @@ def CaldicellulosiruptorBescii(
 	
 	Datetime: 2021-02-02 21:04:09.594441
 	
-	The undirected graph Caldicellulosiruptor bescii has 2637 nodes and 181650 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05226
-	and has 22 connected components, where the component with most nodes has 2574 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 137.77, and the node degree mode is 2. The top 5
-	most central nodes are 521460.Athe_1405 (degree 951), 521460.Athe_1441 (degree 922),
-	521460.Athe_1327 (degree 776), 521460.Athe_0307 (degree 774) and 521460.Athe_1432
-	(degree 750).
+	The undirected graph Caldicellulosiruptor bescii has 2637 nodes and 181650
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05226 and has 22 connected components, where the component
+	with most nodes has 2574 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 137.77,
+	and the node degree mode is 2. The top 5 most central nodes are 521460.Athe_1405
+	(degree 951), 521460.Athe_1441 (degree 922), 521460.Athe_1327 (degree 776),
+	521460.Athe_0307 (degree 774) and 521460.Athe_1432 (degree 750).
 	
 
 

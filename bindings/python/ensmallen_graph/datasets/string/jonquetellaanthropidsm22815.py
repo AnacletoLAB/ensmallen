@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:43.780561
 
-The undirected graph Jonquetella anthropi DSM22815 has 1506 nodes and 101204 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08930
-and has 2 connected components, where the component with most nodes has 1504 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 134.40, and the node degree mode is 15. The top 5
-most central nodes are 885272.JonanDRAFT_0593 (degree 722), 885272.JonanDRAFT_0372
-(degree 684), 885272.JonanDRAFT_0512 (degree 575), 885272.JonanDRAFT_0554 (degree
-552) and 885272.JonanDRAFT_0052 (degree 551).
+The undirected graph Jonquetella anthropi DSM22815 has 1506 nodes and 101204
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08930 and has 2 connected components, where the component
+with most nodes has 1504 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 134.40,
+and the node degree mode is 15. The top 5 most central nodes are 885272.JonanDRAFT_0593
+(degree 722), 885272.JonanDRAFT_0372 (degree 684), 885272.JonanDRAFT_0512
+(degree 575), 885272.JonanDRAFT_0554 (degree 552) and 885272.JonanDRAFT_0052
+(degree 551).
 
 
 References
@@ -107,14 +108,15 @@ def JonquetellaAnthropiDsm22815(
 	
 	Datetime: 2021-02-02 21:51:43.780561
 	
-	The undirected graph Jonquetella anthropi DSM22815 has 1506 nodes and 101204 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08930
-	and has 2 connected components, where the component with most nodes has 1504 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 134.40, and the node degree mode is 15. The top 5
-	most central nodes are 885272.JonanDRAFT_0593 (degree 722), 885272.JonanDRAFT_0372
-	(degree 684), 885272.JonanDRAFT_0512 (degree 575), 885272.JonanDRAFT_0554 (degree
-	552) and 885272.JonanDRAFT_0052 (degree 551).
+	The undirected graph Jonquetella anthropi DSM22815 has 1506 nodes and 101204
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08930 and has 2 connected components, where the component
+	with most nodes has 1504 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 134.40,
+	and the node degree mode is 15. The top 5 most central nodes are 885272.JonanDRAFT_0593
+	(degree 722), 885272.JonanDRAFT_0372 (degree 684), 885272.JonanDRAFT_0512
+	(degree 575), 885272.JonanDRAFT_0554 (degree 552) and 885272.JonanDRAFT_0052
+	(degree 551).
 	
 
 

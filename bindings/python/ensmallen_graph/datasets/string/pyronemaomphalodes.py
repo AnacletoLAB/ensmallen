@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:42.005066
 
-The undirected graph Pyronema omphalodes has 6094 nodes and 637724 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03435 and
-has 10 connected components, where the component with most nodes has 6073 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 209.30, and the node degree mode is 1. The top 5 most central
-nodes are 337075.U4KXC7 (degree 1565), 337075.U4KUJ9 (degree 1531), 337075.U4LET3
-(degree 1345), 337075.U4LQG2 (degree 1274) and 337075.U4LUL9 (degree 1274).
+The undirected graph Pyronema omphalodes has 6094 nodes and 637724 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03435 and has 10 connected components, where the component with most
+nodes has 6073 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 209.30, and
+the node degree mode is 1. The top 5 most central nodes are 337075.U4KXC7
+(degree 1565), 337075.U4KUJ9 (degree 1531), 337075.U4LET3 (degree 1345),
+337075.U4LQG2 (degree 1274) and 337075.U4LUL9 (degree 1274).
 
 
 References
@@ -106,13 +107,14 @@ def PyronemaOmphalodes(
 	
 	Datetime: 2021-02-02 20:30:42.005066
 	
-	The undirected graph Pyronema omphalodes has 6094 nodes and 637724 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03435 and
-	has 10 connected components, where the component with most nodes has 6073 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 209.30, and the node degree mode is 1. The top 5 most central
-	nodes are 337075.U4KXC7 (degree 1565), 337075.U4KUJ9 (degree 1531), 337075.U4LET3
-	(degree 1345), 337075.U4LQG2 (degree 1274) and 337075.U4LUL9 (degree 1274).
+	The undirected graph Pyronema omphalodes has 6094 nodes and 637724 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03435 and has 10 connected components, where the component with most
+	nodes has 6073 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 209.30, and
+	the node degree mode is 1. The top 5 most central nodes are 337075.U4KXC7
+	(degree 1565), 337075.U4KUJ9 (degree 1531), 337075.U4LET3 (degree 1345),
+	337075.U4LQG2 (degree 1274) and 337075.U4LUL9 (degree 1274).
 	
 
 

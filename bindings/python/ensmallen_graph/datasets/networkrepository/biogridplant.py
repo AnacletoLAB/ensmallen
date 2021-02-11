@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:49.565103
 
-The undirected graph bio-grid-plant has 1717 nodes and 3098 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00210 and
-has 131 connected components, where the component with most nodes has 1272 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 3.61 and the node degree mode is 1. The top 5 most
-central nodes are 179 (degree 71), 100 (degree 59), 75 (degree 40), 69 (degree 40)
-and 679 (degree 39).
+The undirected graph bio-grid-plant has 1717 nodes and 3098 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00210 and has 131 connected components, where the component with most
+nodes has 1272 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 3.61 and the
+node degree mode is 1. The top 5 most central nodes are 179 (degree 71),
+100 (degree 59), 75 (degree 40), 69 (degree 40) and 679 (degree 39).
 
 
 References
@@ -103,13 +103,13 @@ def BioGridPlant(
 	
 	Datetime: 2021-02-03 22:30:49.565103
 	
-	The undirected graph bio-grid-plant has 1717 nodes and 3098 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00210 and
-	has 131 connected components, where the component with most nodes has 1272 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 3.61 and the node degree mode is 1. The top 5 most
-	central nodes are 179 (degree 71), 100 (degree 59), 75 (degree 40), 69 (degree 40)
-	and 679 (degree 39).
+	The undirected graph bio-grid-plant has 1717 nodes and 3098 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00210 and has 131 connected components, where the component with most
+	nodes has 1272 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 3.61 and the
+	node degree mode is 1. The top 5 most central nodes are 179 (degree 71),
+	100 (degree 59), 75 (degree 40), 69 (degree 40) and 679 (degree 39).
 	
 
 

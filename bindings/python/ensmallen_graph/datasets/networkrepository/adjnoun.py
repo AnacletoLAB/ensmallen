@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:29.955646
 
-The undirected graph adjnoun has 112 nodes and 425 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.06837 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 7.59, and the node degree mode is 6. The top 5 most central nodes are 18 (degree
-49), 3 (degree 33), 44 (degree 28), 52 (degree 28) and 105 (degree 21).
+The undirected graph adjnoun has 112 nodes and 425 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.06837
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 7.59, and the node degree mode is 6. The
+top 5 most central nodes are 18 (degree 49), 3 (degree 33), 44 (degree
+28), 52 (degree 28) and 105 (degree 21).
 
 
 References
@@ -101,11 +102,12 @@ def Adjnoun(
 	
 	Datetime: 2021-02-06 08:02:29.955646
 	
-	The undirected graph adjnoun has 112 nodes and 425 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.06837 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 7.59, and the node degree mode is 6. The top 5 most central nodes are 18 (degree
-	49), 3 (degree 33), 44 (degree 28), 52 (degree 28) and 105 (degree 21).
+	The undirected graph adjnoun has 112 nodes and 425 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.06837
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 7.59, and the node degree mode is 6. The
+	top 5 most central nodes are 18 (degree 49), 3 (degree 33), 44 (degree
+	28), 52 (degree 28) and 105 (degree 21).
 	
 
 

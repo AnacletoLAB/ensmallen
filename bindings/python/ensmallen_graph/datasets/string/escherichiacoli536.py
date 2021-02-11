@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:44.376290
 
-The undirected graph Escherichia coli 536 has 4602 nodes and 404279 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03819 and
-has 6 connected components, where the component with most nodes has 4592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 175.70, and the node degree mode is 5. The top 5 most central
-nodes are 362663.ECP_1943 (degree 1626), 362663.ECP_2395 (degree 1589), 362663.ECP_1403
-(degree 1517), 362663.ECP_1979 (degree 1386) and 362663.ECP_4074 (degree 1381).
+The undirected graph Escherichia coli 536 has 4602 nodes and 404279 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03819 and has 6 connected components, where the component with most
+nodes has 4592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 175.70, and
+the node degree mode is 5. The top 5 most central nodes are 362663.ECP_1943
+(degree 1626), 362663.ECP_2395 (degree 1589), 362663.ECP_1403 (degree 1517),
+362663.ECP_1979 (degree 1386) and 362663.ECP_4074 (degree 1381).
 
 
 References
@@ -106,13 +107,14 @@ def EscherichiaColi536(
 	
 	Datetime: 2021-02-02 20:34:44.376290
 	
-	The undirected graph Escherichia coli 536 has 4602 nodes and 404279 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03819 and
-	has 6 connected components, where the component with most nodes has 4592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 175.70, and the node degree mode is 5. The top 5 most central
-	nodes are 362663.ECP_1943 (degree 1626), 362663.ECP_2395 (degree 1589), 362663.ECP_1403
-	(degree 1517), 362663.ECP_1979 (degree 1386) and 362663.ECP_4074 (degree 1381).
+	The undirected graph Escherichia coli 536 has 4602 nodes and 404279 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03819 and has 6 connected components, where the component with most
+	nodes has 4592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 175.70, and
+	the node degree mode is 5. The top 5 most central nodes are 362663.ECP_1943
+	(degree 1626), 362663.ECP_2395 (degree 1589), 362663.ECP_1403 (degree 1517),
+	362663.ECP_1979 (degree 1386) and 362663.ECP_4074 (degree 1381).
 	
 
 

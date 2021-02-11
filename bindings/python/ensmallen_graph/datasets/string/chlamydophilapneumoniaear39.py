@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:28.907067
 
-The undirected graph Chlamydophila pneumoniae AR39 has 1098 nodes and 44591 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07404
-and has 11 connected components, where the component with most nodes has 1058 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 81.22, and the node degree mode is 5. The top 5 most
-central nodes are 115711.CP_0135 (degree 465), 115711.CP_0442 (degree 403), 115711.CP_0154
-(degree 400), 115711.CP_0656 (degree 391) and 115711.CP_0599 (degree 369).
+The undirected graph Chlamydophila pneumoniae AR39 has 1098 nodes and 44591
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07404 and has 11 connected components, where the component
+with most nodes has 1058 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 81.22,
+and the node degree mode is 5. The top 5 most central nodes are 115711.CP_0135
+(degree 465), 115711.CP_0442 (degree 403), 115711.CP_0154 (degree 400),
+115711.CP_0656 (degree 391) and 115711.CP_0599 (degree 369).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydophilaPneumoniaeAr39(
 	
 	Datetime: 2021-02-02 19:47:28.907067
 	
-	The undirected graph Chlamydophila pneumoniae AR39 has 1098 nodes and 44591 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07404
-	and has 11 connected components, where the component with most nodes has 1058 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 81.22, and the node degree mode is 5. The top 5 most
-	central nodes are 115711.CP_0135 (degree 465), 115711.CP_0442 (degree 403), 115711.CP_0154
-	(degree 400), 115711.CP_0656 (degree 391) and 115711.CP_0599 (degree 369).
+	The undirected graph Chlamydophila pneumoniae AR39 has 1098 nodes and 44591
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07404 and has 11 connected components, where the component
+	with most nodes has 1058 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 81.22,
+	and the node degree mode is 5. The top 5 most central nodes are 115711.CP_0135
+	(degree 465), 115711.CP_0442 (degree 403), 115711.CP_0154 (degree 400),
+	115711.CP_0656 (degree 391) and 115711.CP_0599 (degree 369).
 	
 
 

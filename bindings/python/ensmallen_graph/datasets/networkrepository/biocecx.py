@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:29:42.703347
 
-The undirected graph bio-CE-CX has 15229 nodes and 245952 weighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00212 and has 78
-connected components, where the component with most nodes has 15063 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 13, the
-mean node degree is 32.30 and the node degree mode is 1. The top 5 most central nodes
-are 69 (degree 375), 2335 (degree 373), 829 (degree 352), 1401 (degree 347) and 407
-(degree 335).
+The undirected graph bio-CE-CX has 15229 nodes and 245952 weighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00212 and has 78 connected components, where the component with most
+nodes has 15063 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 13, the mean node degree is 32.30 and the
+node degree mode is 1. The top 5 most central nodes are 69 (degree 375),
+2335 (degree 373), 829 (degree 352), 1401 (degree 347) and 407 (degree
+335).
 
 
 References
@@ -114,13 +115,14 @@ def BioCeCx(
 	
 	Datetime: 2021-02-03 22:29:42.703347
 	
-	The undirected graph bio-CE-CX has 15229 nodes and 245952 weighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00212 and has 78
-	connected components, where the component with most nodes has 15063 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 13, the
-	mean node degree is 32.30 and the node degree mode is 1. The top 5 most central nodes
-	are 69 (degree 375), 2335 (degree 373), 829 (degree 352), 1401 (degree 347) and 407
-	(degree 335).
+	The undirected graph bio-CE-CX has 15229 nodes and 245952 weighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00212 and has 78 connected components, where the component with most
+	nodes has 15063 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 13, the mean node degree is 32.30 and the
+	node degree mode is 1. The top 5 most central nodes are 69 (degree 375),
+	2335 (degree 373), 829 (degree 352), 1401 (degree 347) and 407 (degree
+	335).
 	
 
 

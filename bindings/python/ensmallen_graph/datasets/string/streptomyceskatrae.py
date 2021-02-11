@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:44.278749
 
-The undirected graph Streptomyces katrae has 7409 nodes and 988261 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03601 and
-has 58 connected components, where the component with most nodes has 7266 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 266.77, and the node degree mode is 2. The top 5 most central
-nodes are 68223.JNZY01000036_gene7540 (degree 3426), 68223.JNZY01000001_gene5399
-(degree 1987), 68223.JNZY01000002_gene5299 (degree 1935), 68223.JNZY01000002_gene5248
-(degree 1916) and 68223.JNZY01000020_gene7144 (degree 1877).
+The undirected graph Streptomyces katrae has 7409 nodes and 988261 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03601 and has 58 connected components, where the component with most
+nodes has 7266 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 266.77, and
+the node degree mode is 2. The top 5 most central nodes are 68223.JNZY01000036_gene7540
+(degree 3426), 68223.JNZY01000001_gene5399 (degree 1987), 68223.JNZY01000002_gene5299
+(degree 1935), 68223.JNZY01000002_gene5248 (degree 1916) and 68223.JNZY01000020_gene7144
+(degree 1877).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesKatrae(
 	
 	Datetime: 2021-02-02 18:28:44.278749
 	
-	The undirected graph Streptomyces katrae has 7409 nodes and 988261 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03601 and
-	has 58 connected components, where the component with most nodes has 7266 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 266.77, and the node degree mode is 2. The top 5 most central
-	nodes are 68223.JNZY01000036_gene7540 (degree 3426), 68223.JNZY01000001_gene5399
-	(degree 1987), 68223.JNZY01000002_gene5299 (degree 1935), 68223.JNZY01000002_gene5248
-	(degree 1916) and 68223.JNZY01000020_gene7144 (degree 1877).
+	The undirected graph Streptomyces katrae has 7409 nodes and 988261 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03601 and has 58 connected components, where the component with most
+	nodes has 7266 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 266.77, and
+	the node degree mode is 2. The top 5 most central nodes are 68223.JNZY01000036_gene7540
+	(degree 3426), 68223.JNZY01000001_gene5399 (degree 1987), 68223.JNZY01000002_gene5299
+	(degree 1935), 68223.JNZY01000002_gene5248 (degree 1916) and 68223.JNZY01000020_gene7144
+	(degree 1877).
 	
 
 

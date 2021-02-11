@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:32:05.149584
 
-The undirected graph Microbacterium sp. URHA0036 has 3734 nodes and 275058 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03947
-and has 12 connected components, where the component with most nodes has 3702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 147.33, and the node degree mode is 3. The top 5
-most central nodes are 1298860.AUEM01000002_gene809 (degree 987), 1298860.AUEM01000002_gene801
-(degree 945), 1298860.AUEM01000003_gene3721 (degree 931), 1298860.AUEM01000005_gene2978
-(degree 916) and 1298860.AUEM01000003_gene3700 (degree 902).
+The undirected graph Microbacterium sp. URHA0036 has 3734 nodes and 275058
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03947 and has 12 connected components, where the component
+with most nodes has 3702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 147.33,
+and the node degree mode is 3. The top 5 most central nodes are 1298860.AUEM01000002_gene809
+(degree 987), 1298860.AUEM01000002_gene801 (degree 945), 1298860.AUEM01000003_gene3721
+(degree 931), 1298860.AUEM01000005_gene2978 (degree 916) and 1298860.AUEM01000003_gene3700
+(degree 902).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.Urha0036(
 	
 	Datetime: 2021-02-03 21:32:05.149584
 	
-	The undirected graph Microbacterium sp. URHA0036 has 3734 nodes and 275058 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03947
-	and has 12 connected components, where the component with most nodes has 3702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 147.33, and the node degree mode is 3. The top 5
-	most central nodes are 1298860.AUEM01000002_gene809 (degree 987), 1298860.AUEM01000002_gene801
-	(degree 945), 1298860.AUEM01000003_gene3721 (degree 931), 1298860.AUEM01000005_gene2978
-	(degree 916) and 1298860.AUEM01000003_gene3700 (degree 902).
+	The undirected graph Microbacterium sp. URHA0036 has 3734 nodes and 275058
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03947 and has 12 connected components, where the component
+	with most nodes has 3702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 147.33,
+	and the node degree mode is 3. The top 5 most central nodes are 1298860.AUEM01000002_gene809
+	(degree 987), 1298860.AUEM01000002_gene801 (degree 945), 1298860.AUEM01000003_gene3721
+	(degree 931), 1298860.AUEM01000005_gene2978 (degree 916) and 1298860.AUEM01000003_gene3700
+	(degree 902).
 	
 
 

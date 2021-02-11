@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:13.636058
 
-The undirected graph Oryza barthii has 22018 nodes and 4677536 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01930 and
-has 12 connected components, where the component with most nodes has 21993 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 200, the mean node degree is 424.88, and the node degree mode is 8. The top 5
-most central nodes are 65489.OBART02G12340.1 (degree 7360), 65489.OBART03G36230.1
-(degree 5846), 65489.OBART08G21910.1 (degree 5454), 65489.OBART02G11560.1 (degree
-5214) and 65489.OBART12G10980.1 (degree 5083).
+The undirected graph Oryza barthii has 22018 nodes and 4677536 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01930 and has 12 connected components, where the component with most
+nodes has 21993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 424.88, and
+the node degree mode is 8. The top 5 most central nodes are 65489.OBART02G12340.1
+(degree 7360), 65489.OBART03G36230.1 (degree 5846), 65489.OBART08G21910.1
+(degree 5454), 65489.OBART02G11560.1 (degree 5214) and 65489.OBART12G10980.1
+(degree 5083).
 
 
 References
@@ -107,14 +108,15 @@ def OryzaBarthii(
 	
 	Datetime: 2021-02-02 18:25:13.636058
 	
-	The undirected graph Oryza barthii has 22018 nodes and 4677536 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01930 and
-	has 12 connected components, where the component with most nodes has 21993 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 200, the mean node degree is 424.88, and the node degree mode is 8. The top 5
-	most central nodes are 65489.OBART02G12340.1 (degree 7360), 65489.OBART03G36230.1
-	(degree 5846), 65489.OBART08G21910.1 (degree 5454), 65489.OBART02G11560.1 (degree
-	5214) and 65489.OBART12G10980.1 (degree 5083).
+	The undirected graph Oryza barthii has 22018 nodes and 4677536 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01930 and has 12 connected components, where the component with most
+	nodes has 21993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 424.88, and
+	the node degree mode is 8. The top 5 most central nodes are 65489.OBART02G12340.1
+	(degree 7360), 65489.OBART03G36230.1 (degree 5846), 65489.OBART08G21910.1
+	(degree 5454), 65489.OBART02G11560.1 (degree 5214) and 65489.OBART12G10980.1
+	(degree 5083).
 	
 
 

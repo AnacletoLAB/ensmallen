@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:21.232922
 
-The undirected graph Corynebacterium diphtheriae has 2297 nodes and 137032 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05197
-and has 10 connected components, where the component with most nodes has 2279 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 119.31, and the node degree mode is 6. The top 5 most
-central nodes are 698964.CDPW8_1818 (degree 914), 698964.CDPW8_1123 (degree 857),
-698964.CDPW8_0578 (degree 709), 698964.CDPW8_1144 (degree 686) and 698964.CDPW8_0594
-(degree 656).
+The undirected graph Corynebacterium diphtheriae has 2297 nodes and 137032
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05197 and has 10 connected components, where the component
+with most nodes has 2279 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 119.31,
+and the node degree mode is 6. The top 5 most central nodes are 698964.CDPW8_1818
+(degree 914), 698964.CDPW8_1123 (degree 857), 698964.CDPW8_0578 (degree
+709), 698964.CDPW8_1144 (degree 686) and 698964.CDPW8_0594 (degree 656).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumDiphtheriae(
 	
 	Datetime: 2021-02-02 21:33:21.232922
 	
-	The undirected graph Corynebacterium diphtheriae has 2297 nodes and 137032 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05197
-	and has 10 connected components, where the component with most nodes has 2279 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 119.31, and the node degree mode is 6. The top 5 most
-	central nodes are 698964.CDPW8_1818 (degree 914), 698964.CDPW8_1123 (degree 857),
-	698964.CDPW8_0578 (degree 709), 698964.CDPW8_1144 (degree 686) and 698964.CDPW8_0594
-	(degree 656).
+	The undirected graph Corynebacterium diphtheriae has 2297 nodes and 137032
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05197 and has 10 connected components, where the component
+	with most nodes has 2279 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 119.31,
+	and the node degree mode is 6. The top 5 most central nodes are 698964.CDPW8_1818
+	(degree 914), 698964.CDPW8_1123 (degree 857), 698964.CDPW8_0578 (degree
+	709), 698964.CDPW8_1144 (degree 686) and 698964.CDPW8_0594 (degree 656).
 	
 
 

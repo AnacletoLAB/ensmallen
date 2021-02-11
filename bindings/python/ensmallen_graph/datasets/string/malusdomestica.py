@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:33:52.287871
 
-The undirected graph Malus domestica has 42449 nodes and 14808790 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01644 and
-has 18 connected components, where the component with most nodes has 42405 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 334, the mean node degree is 697.72, and the node degree mode is 17. The top 5
-most central nodes are 3750.XP_008383128.1 (degree 15876), 3750.XP_008379016.1 (degree
-15713), 3750.XP_008391644.1 (degree 15403), 3750.XP_008375768.1 (degree 15340) and
-3750.XP_008380050.1 (degree 15292).
+The undirected graph Malus domestica has 42449 nodes and 14808790 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01644 and has 18 connected components, where the component with most
+nodes has 42405 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 334, the mean node degree is 697.72, and
+the node degree mode is 17. The top 5 most central nodes are 3750.XP_008383128.1
+(degree 15876), 3750.XP_008379016.1 (degree 15713), 3750.XP_008391644.1
+(degree 15403), 3750.XP_008375768.1 (degree 15340) and 3750.XP_008380050.1
+(degree 15292).
 
 
 References
@@ -107,14 +108,15 @@ def MalusDomestica(
 	
 	Datetime: 2021-02-02 16:33:52.287871
 	
-	The undirected graph Malus domestica has 42449 nodes and 14808790 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01644 and
-	has 18 connected components, where the component with most nodes has 42405 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 334, the mean node degree is 697.72, and the node degree mode is 17. The top 5
-	most central nodes are 3750.XP_008383128.1 (degree 15876), 3750.XP_008379016.1 (degree
-	15713), 3750.XP_008391644.1 (degree 15403), 3750.XP_008375768.1 (degree 15340) and
-	3750.XP_008380050.1 (degree 15292).
+	The undirected graph Malus domestica has 42449 nodes and 14808790 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01644 and has 18 connected components, where the component with most
+	nodes has 42405 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 334, the mean node degree is 697.72, and
+	the node degree mode is 17. The top 5 most central nodes are 3750.XP_008383128.1
+	(degree 15876), 3750.XP_008379016.1 (degree 15713), 3750.XP_008391644.1
+	(degree 15403), 3750.XP_008375768.1 (degree 15340) and 3750.XP_008380050.1
+	(degree 15292).
 	
 
 

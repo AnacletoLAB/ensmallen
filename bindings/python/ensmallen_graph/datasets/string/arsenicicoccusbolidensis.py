@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:02.997067
 
-The undirected graph Arsenicicoccus bolidensis has 3622 nodes and 320795 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04892
-and has 10 connected components, where the component with most nodes has 3600 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 177.14, and the node degree mode is 2. The top 5
-most central nodes are 1121017.AUFG01000005_gene1076 (degree 1604), 1121017.AUFG01000004_gene3235
-(degree 1120), 1121017.AUFG01000001_gene3130 (degree 1051), 1121017.AUFG01000013_gene1951
-(degree 1036) and 1121017.AUFG01000002_gene2773 (degree 1021).
+The undirected graph Arsenicicoccus bolidensis has 3622 nodes and 320795
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04892 and has 10 connected components, where the component
+with most nodes has 3600 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 177.14,
+and the node degree mode is 2. The top 5 most central nodes are 1121017.AUFG01000005_gene1076
+(degree 1604), 1121017.AUFG01000004_gene3235 (degree 1120), 1121017.AUFG01000001_gene3130
+(degree 1051), 1121017.AUFG01000013_gene1951 (degree 1036) and 1121017.AUFG01000002_gene2773
+(degree 1021).
 
 
 References
@@ -107,14 +108,15 @@ def ArsenicicoccusBolidensis(
 	
 	Datetime: 2021-02-02 22:32:02.997067
 	
-	The undirected graph Arsenicicoccus bolidensis has 3622 nodes and 320795 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04892
-	and has 10 connected components, where the component with most nodes has 3600 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 177.14, and the node degree mode is 2. The top 5
-	most central nodes are 1121017.AUFG01000005_gene1076 (degree 1604), 1121017.AUFG01000004_gene3235
-	(degree 1120), 1121017.AUFG01000001_gene3130 (degree 1051), 1121017.AUFG01000013_gene1951
-	(degree 1036) and 1121017.AUFG01000002_gene2773 (degree 1021).
+	The undirected graph Arsenicicoccus bolidensis has 3622 nodes and 320795
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04892 and has 10 connected components, where the component
+	with most nodes has 3600 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 177.14,
+	and the node degree mode is 2. The top 5 most central nodes are 1121017.AUFG01000005_gene1076
+	(degree 1604), 1121017.AUFG01000004_gene3235 (degree 1120), 1121017.AUFG01000001_gene3130
+	(degree 1051), 1121017.AUFG01000013_gene1951 (degree 1036) and 1121017.AUFG01000002_gene2773
+	(degree 1021).
 	
 
 

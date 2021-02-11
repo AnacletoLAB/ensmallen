@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:55.453816
 
-The undirected graph Loa loa has 8209 nodes and 1110101 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03295 and has 7
-connected components, where the component with most nodes has 8197 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 270.46, and the node degree mode is 124. The top 5 most central
-nodes are 7209.EFO25986.1 (degree 3383), 7209.EJD76533.1 (degree 2269), 7209.EJD75340.1
-(degree 2222), 7209.EJD76735.1 (degree 1788) and 7209.EFO25319.1 (degree 1780).
+The undirected graph Loa loa has 8209 nodes and 1110101 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03295 and has 7 connected components, where the component with most nodes
+has 8197 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 188, the mean node degree is 270.46, and the
+node degree mode is 124. The top 5 most central nodes are 7209.EFO25986.1
+(degree 3383), 7209.EJD76533.1 (degree 2269), 7209.EJD75340.1 (degree 2222),
+7209.EJD76735.1 (degree 1788) and 7209.EFO25319.1 (degree 1780).
 
 
 References
@@ -106,13 +107,14 @@ def LoaLoa(
 	
 	Datetime: 2021-02-02 17:20:55.453816
 	
-	The undirected graph Loa loa has 8209 nodes and 1110101 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03295 and has 7
-	connected components, where the component with most nodes has 8197 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 270.46, and the node degree mode is 124. The top 5 most central
-	nodes are 7209.EFO25986.1 (degree 3383), 7209.EJD76533.1 (degree 2269), 7209.EJD75340.1
-	(degree 2222), 7209.EJD76735.1 (degree 1788) and 7209.EFO25319.1 (degree 1780).
+	The undirected graph Loa loa has 8209 nodes and 1110101 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03295 and has 7 connected components, where the component with most nodes
+	has 8197 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 188, the mean node degree is 270.46, and the
+	node degree mode is 124. The top 5 most central nodes are 7209.EFO25986.1
+	(degree 3383), 7209.EJD76533.1 (degree 2269), 7209.EJD75340.1 (degree 2222),
+	7209.EJD76735.1 (degree 1788) and 7209.EFO25319.1 (degree 1780).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:29.133253
 
-The undirected graph Aliihoeflea sp. 2WW has 3779 nodes and 354066 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04960 and
-has 10 connected components, where the component with most nodes has 3759 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 187.39, and the node degree mode is 1. The top 5 most central
-nodes are 1381123.AYOD01000034_gene3815 (degree 1409), 1381123.AYOD01000008_gene3220
-(degree 1186), 1381123.AYOD01000008_gene3186 (degree 1167), 1381123.AYOD01000030_gene481
-(degree 1154) and 1381123.AYOD01000008_gene3208 (degree 1072).
+The undirected graph Aliihoeflea sp. 2WW has 3779 nodes and 354066 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04960 and has 10 connected components, where the component with most
+nodes has 3759 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 187.39, and
+the node degree mode is 1. The top 5 most central nodes are 1381123.AYOD01000034_gene3815
+(degree 1409), 1381123.AYOD01000008_gene3220 (degree 1186), 1381123.AYOD01000008_gene3186
+(degree 1167), 1381123.AYOD01000030_gene481 (degree 1154) and 1381123.AYOD01000008_gene3208
+(degree 1072).
 
 
 References
@@ -107,14 +108,15 @@ def AliihoefleaSp.2ww(
 	
 	Datetime: 2021-02-03 22:17:29.133253
 	
-	The undirected graph Aliihoeflea sp. 2WW has 3779 nodes and 354066 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04960 and
-	has 10 connected components, where the component with most nodes has 3759 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 187.39, and the node degree mode is 1. The top 5 most central
-	nodes are 1381123.AYOD01000034_gene3815 (degree 1409), 1381123.AYOD01000008_gene3220
-	(degree 1186), 1381123.AYOD01000008_gene3186 (degree 1167), 1381123.AYOD01000030_gene481
-	(degree 1154) and 1381123.AYOD01000008_gene3208 (degree 1072).
+	The undirected graph Aliihoeflea sp. 2WW has 3779 nodes and 354066 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04960 and has 10 connected components, where the component with most
+	nodes has 3759 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 187.39, and
+	the node degree mode is 1. The top 5 most central nodes are 1381123.AYOD01000034_gene3815
+	(degree 1409), 1381123.AYOD01000008_gene3220 (degree 1186), 1381123.AYOD01000008_gene3186
+	(degree 1167), 1381123.AYOD01000030_gene481 (degree 1154) and 1381123.AYOD01000008_gene3208
+	(degree 1072).
 	
 
 

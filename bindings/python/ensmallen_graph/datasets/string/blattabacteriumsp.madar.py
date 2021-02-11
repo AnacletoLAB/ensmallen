@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:35.602212
 
-The undirected graph Blattabacterium sp. MADAR has 543 nodes and 30033 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.20409
-and is connected, as it has a single component. The graph median node degree is 102,
-the mean node degree is 110.62, and the node degree mode is 44. The top 5 most central
-nodes are 1074889.MADAR_304 (degree 337), 1074889.MADAR_233 (degree 319), 1074889.MADAR_389
-(degree 308), 1074889.MADAR_411 (degree 288) and 1074889.MADAR_036 (degree 259).
+The undirected graph Blattabacterium sp. MADAR has 543 nodes and 30033
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.20409 and is connected, as it has a single component.
+The graph median node degree is 102, the mean node degree is 110.62, and
+the node degree mode is 44. The top 5 most central nodes are 1074889.MADAR_304
+(degree 337), 1074889.MADAR_233 (degree 319), 1074889.MADAR_389 (degree
+308), 1074889.MADAR_411 (degree 288) and 1074889.MADAR_036 (degree 259).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Madar(
 	
 	Datetime: 2021-02-02 22:19:35.602212
 	
-	The undirected graph Blattabacterium sp. MADAR has 543 nodes and 30033 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.20409
-	and is connected, as it has a single component. The graph median node degree is 102,
-	the mean node degree is 110.62, and the node degree mode is 44. The top 5 most central
-	nodes are 1074889.MADAR_304 (degree 337), 1074889.MADAR_233 (degree 319), 1074889.MADAR_389
-	(degree 308), 1074889.MADAR_411 (degree 288) and 1074889.MADAR_036 (degree 259).
+	The undirected graph Blattabacterium sp. MADAR has 543 nodes and 30033
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.20409 and is connected, as it has a single component.
+	The graph median node degree is 102, the mean node degree is 110.62, and
+	the node degree mode is 44. The top 5 most central nodes are 1074889.MADAR_304
+	(degree 337), 1074889.MADAR_233 (degree 319), 1074889.MADAR_389 (degree
+	308), 1074889.MADAR_411 (degree 288) and 1074889.MADAR_036 (degree 259).
 	
 
 

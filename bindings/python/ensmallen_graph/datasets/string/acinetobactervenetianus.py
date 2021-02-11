@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:47.541544
 
-The undirected graph Acinetobacter venetianus has 3217 nodes and 253652 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-and has 11 connected components, where the component with most nodes has 3193 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 157.69, and the node degree mode is 2. The top 5
-most central nodes are 1191460.F959_03102 (degree 1123), 1191460.F959_00976 (degree
-941), 1191460.F959_03125 (degree 931), 1191460.F959_02862 (degree 931) and 1191460.F959_01438
-(degree 852).
+The undirected graph Acinetobacter venetianus has 3217 nodes and 253652
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04903 and has 11 connected components, where the component
+with most nodes has 3193 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 157.69,
+and the node degree mode is 2. The top 5 most central nodes are 1191460.F959_03102
+(degree 1123), 1191460.F959_00976 (degree 941), 1191460.F959_03125 (degree
+931), 1191460.F959_02862 (degree 931) and 1191460.F959_01438 (degree 852).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterVenetianus(
 	
 	Datetime: 2021-02-02 23:11:47.541544
 	
-	The undirected graph Acinetobacter venetianus has 3217 nodes and 253652 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-	and has 11 connected components, where the component with most nodes has 3193 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 157.69, and the node degree mode is 2. The top 5
-	most central nodes are 1191460.F959_03102 (degree 1123), 1191460.F959_00976 (degree
-	941), 1191460.F959_03125 (degree 931), 1191460.F959_02862 (degree 931) and 1191460.F959_01438
-	(degree 852).
+	The undirected graph Acinetobacter venetianus has 3217 nodes and 253652
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04903 and has 11 connected components, where the component
+	with most nodes has 3193 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 157.69,
+	and the node degree mode is 2. The top 5 most central nodes are 1191460.F959_03102
+	(degree 1123), 1191460.F959_00976 (degree 941), 1191460.F959_03125 (degree
+	931), 1191460.F959_02862 (degree 931) and 1191460.F959_01438 (degree 852).
 	
 
 

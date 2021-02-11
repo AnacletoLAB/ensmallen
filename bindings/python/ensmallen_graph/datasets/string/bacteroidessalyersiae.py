@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:10.215828
 
-The undirected graph Bacteroides salyersiae has 4109 nodes and 402779 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04772 and
-has 24 connected components, where the component with most nodes has 4047 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 196.05, and the node degree mode is 1. The top 5 most central
-nodes are 1121101.HMPREF1532_01801 (degree 1314), 1121101.HMPREF1532_02451 (degree
-1186), 1121101.HMPREF1532_02977 (degree 1162), 1121101.HMPREF1532_03750 (degree 1136)
-and 1121101.HMPREF1532_01495 (degree 1126).
+The undirected graph Bacteroides salyersiae has 4109 nodes and 402779 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04772 and has 24 connected components, where the component with most
+nodes has 4047 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 196.05, and
+the node degree mode is 1. The top 5 most central nodes are 1121101.HMPREF1532_01801
+(degree 1314), 1121101.HMPREF1532_02451 (degree 1186), 1121101.HMPREF1532_02977
+(degree 1162), 1121101.HMPREF1532_03750 (degree 1136) and 1121101.HMPREF1532_01495
+(degree 1126).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesSalyersiae(
 	
 	Datetime: 2021-02-02 22:33:10.215828
 	
-	The undirected graph Bacteroides salyersiae has 4109 nodes and 402779 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04772 and
-	has 24 connected components, where the component with most nodes has 4047 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 196.05, and the node degree mode is 1. The top 5 most central
-	nodes are 1121101.HMPREF1532_01801 (degree 1314), 1121101.HMPREF1532_02451 (degree
-	1186), 1121101.HMPREF1532_02977 (degree 1162), 1121101.HMPREF1532_03750 (degree 1136)
-	and 1121101.HMPREF1532_01495 (degree 1126).
+	The undirected graph Bacteroides salyersiae has 4109 nodes and 402779 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04772 and has 24 connected components, where the component with most
+	nodes has 4047 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 196.05, and
+	the node degree mode is 1. The top 5 most central nodes are 1121101.HMPREF1532_01801
+	(degree 1314), 1121101.HMPREF1532_02451 (degree 1186), 1121101.HMPREF1532_02977
+	(degree 1162), 1121101.HMPREF1532_03750 (degree 1136) and 1121101.HMPREF1532_01495
+	(degree 1126).
 	
 
 

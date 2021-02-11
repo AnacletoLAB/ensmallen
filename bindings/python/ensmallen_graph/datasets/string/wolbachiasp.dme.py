@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:08.251548
 
-The undirected graph Wolbachia sp. Dme has 1174 nodes and 66381 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.09641 and
-has 10 connected components, where the component with most nodes has 1153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 113.09, and the node degree mode is 2. The top 5 most central
-nodes are 163164.WD_1003 (degree 529), 163164.WD_0024 (degree 512), 163164.WD_0089
-(degree 458), 163164.WD_0425 (degree 456) and 163164.WD_0307 (degree 437).
+The undirected graph Wolbachia sp. Dme has 1174 nodes and 66381 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09641 and has 10 connected components, where the component with most
+nodes has 1153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 113.09, and
+the node degree mode is 2. The top 5 most central nodes are 163164.WD_1003
+(degree 529), 163164.WD_0024 (degree 512), 163164.WD_0089 (degree 458),
+163164.WD_0425 (degree 456) and 163164.WD_0307 (degree 437).
 
 
 References
@@ -106,13 +107,14 @@ def WolbachiaSp.Dme(
 	
 	Datetime: 2021-02-02 19:54:08.251548
 	
-	The undirected graph Wolbachia sp. Dme has 1174 nodes and 66381 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.09641 and
-	has 10 connected components, where the component with most nodes has 1153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 113.09, and the node degree mode is 2. The top 5 most central
-	nodes are 163164.WD_1003 (degree 529), 163164.WD_0024 (degree 512), 163164.WD_0089
-	(degree 458), 163164.WD_0425 (degree 456) and 163164.WD_0307 (degree 437).
+	The undirected graph Wolbachia sp. Dme has 1174 nodes and 66381 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09641 and has 10 connected components, where the component with most
+	nodes has 1153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 113.09, and
+	the node degree mode is 2. The top 5 most central nodes are 163164.WD_1003
+	(degree 529), 163164.WD_0024 (degree 512), 163164.WD_0089 (degree 458),
+	163164.WD_0425 (degree 456) and 163164.WD_0307 (degree 437).
 	
 
 

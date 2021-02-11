@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:07.618531
 
-The undirected graph Xenophilus azovorans has 5855 nodes and 922087 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05380 and
-has 19 connected components, where the component with most nodes has 5810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 264,
-the mean node degree is 314.97, and the node degree mode is 1. The top 5 most central
-nodes are 1123504.JQKD01000012_gene1315 (degree 1825), 1123504.JQKD01000033_gene5268
-(degree 1692), 1123504.JQKD01000023_gene227 (degree 1617), 1123504.JQKD01000039_gene1107
-(degree 1592) and 1123504.JQKD01000002_gene3689 (degree 1510).
+The undirected graph Xenophilus azovorans has 5855 nodes and 922087 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05380 and has 19 connected components, where the component with most
+nodes has 5810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 264, the mean node degree is 314.97, and
+the node degree mode is 1. The top 5 most central nodes are 1123504.JQKD01000012_gene1315
+(degree 1825), 1123504.JQKD01000033_gene5268 (degree 1692), 1123504.JQKD01000023_gene227
+(degree 1617), 1123504.JQKD01000039_gene1107 (degree 1592) and 1123504.JQKD01000002_gene3689
+(degree 1510).
 
 
 References
@@ -107,14 +108,15 @@ def XenophilusAzovorans(
 	
 	Datetime: 2021-02-02 22:53:07.618531
 	
-	The undirected graph Xenophilus azovorans has 5855 nodes and 922087 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05380 and
-	has 19 connected components, where the component with most nodes has 5810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 264,
-	the mean node degree is 314.97, and the node degree mode is 1. The top 5 most central
-	nodes are 1123504.JQKD01000012_gene1315 (degree 1825), 1123504.JQKD01000033_gene5268
-	(degree 1692), 1123504.JQKD01000023_gene227 (degree 1617), 1123504.JQKD01000039_gene1107
-	(degree 1592) and 1123504.JQKD01000002_gene3689 (degree 1510).
+	The undirected graph Xenophilus azovorans has 5855 nodes and 922087 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05380 and has 19 connected components, where the component with most
+	nodes has 5810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 264, the mean node degree is 314.97, and
+	the node degree mode is 1. The top 5 most central nodes are 1123504.JQKD01000012_gene1315
+	(degree 1825), 1123504.JQKD01000033_gene5268 (degree 1692), 1123504.JQKD01000023_gene227
+	(degree 1617), 1123504.JQKD01000039_gene1107 (degree 1592) and 1123504.JQKD01000002_gene3689
+	(degree 1510).
 	
 
 

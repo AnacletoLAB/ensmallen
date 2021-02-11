@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:27:59.138210
 
-The undirected graph Xiphophorus maculatus has 19540 nodes and 5023720 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02632 and
-has 4 connected components, where the component with most nodes has 19533 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 364,
-the mean node degree is 514.20, and the node degree mode is 389. The top 5 most central
-nodes are 8083.ENSXMAP00000013875 (degree 4857), 8083.ENSXMAP00000002975 (degree
-4775), 8083.ENSXMAP00000011758 (degree 4263), 8083.ENSXMAP00000002813 (degree 4189)
-and 8083.ENSXMAP00000001423 (degree 4034).
+The undirected graph Xiphophorus maculatus has 19540 nodes and 5023720
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02632 and has 4 connected components, where the component
+with most nodes has 19533 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 364, the mean node degree
+is 514.20, and the node degree mode is 389. The top 5 most central nodes
+are 8083.ENSXMAP00000013875 (degree 4857), 8083.ENSXMAP00000002975 (degree
+4775), 8083.ENSXMAP00000011758 (degree 4263), 8083.ENSXMAP00000002813 (degree
+4189) and 8083.ENSXMAP00000001423 (degree 4034).
 
 
 References
@@ -107,14 +108,15 @@ def XiphophorusMaculatus(
 	
 	Datetime: 2021-02-02 17:27:59.138210
 	
-	The undirected graph Xiphophorus maculatus has 19540 nodes and 5023720 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02632 and
-	has 4 connected components, where the component with most nodes has 19533 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 364,
-	the mean node degree is 514.20, and the node degree mode is 389. The top 5 most central
-	nodes are 8083.ENSXMAP00000013875 (degree 4857), 8083.ENSXMAP00000002975 (degree
-	4775), 8083.ENSXMAP00000011758 (degree 4263), 8083.ENSXMAP00000002813 (degree 4189)
-	and 8083.ENSXMAP00000001423 (degree 4034).
+	The undirected graph Xiphophorus maculatus has 19540 nodes and 5023720
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02632 and has 4 connected components, where the component
+	with most nodes has 19533 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 364, the mean node degree
+	is 514.20, and the node degree mode is 389. The top 5 most central nodes
+	are 8083.ENSXMAP00000013875 (degree 4857), 8083.ENSXMAP00000002975 (degree
+	4775), 8083.ENSXMAP00000011758 (degree 4263), 8083.ENSXMAP00000002813 (degree
+	4189) and 8083.ENSXMAP00000001423 (degree 4034).
 	
 
 

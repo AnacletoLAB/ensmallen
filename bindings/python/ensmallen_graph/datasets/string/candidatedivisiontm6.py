@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:41:49.262832
 
-The undirected graph candidate division TM6 has 1008 nodes and 34681 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06833 and
-has 26 connected components, where the component with most nodes has 933 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 26,
-the mean node degree is 68.81, and the node degree mode is 3. The top 5 most central
-nodes are 1306947.ARQD01000003_gene179 (degree 310), 1306947.ARQD01000003_gene196
-(degree 299), 1306947.ARQD01000002_gene460 (degree 280), 1306947.ARQD01000001_gene757
-(degree 276) and 1306947.ARQD01000001_gene618 (degree 275).
+The undirected graph candidate division TM6 has 1008 nodes and 34681 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06833 and has 26 connected components, where the component with most
+nodes has 933 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 26, the mean node degree is 68.81, and
+the node degree mode is 3. The top 5 most central nodes are 1306947.ARQD01000003_gene179
+(degree 310), 1306947.ARQD01000003_gene196 (degree 299), 1306947.ARQD01000002_gene460
+(degree 280), 1306947.ARQD01000001_gene757 (degree 276) and 1306947.ARQD01000001_gene618
+(degree 275).
 
 
 References
@@ -107,14 +108,15 @@ def CandidateDivisionTm6(
 	
 	Datetime: 2021-02-03 21:41:49.262832
 	
-	The undirected graph candidate division TM6 has 1008 nodes and 34681 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06833 and
-	has 26 connected components, where the component with most nodes has 933 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 26,
-	the mean node degree is 68.81, and the node degree mode is 3. The top 5 most central
-	nodes are 1306947.ARQD01000003_gene179 (degree 310), 1306947.ARQD01000003_gene196
-	(degree 299), 1306947.ARQD01000002_gene460 (degree 280), 1306947.ARQD01000001_gene757
-	(degree 276) and 1306947.ARQD01000001_gene618 (degree 275).
+	The undirected graph candidate division TM6 has 1008 nodes and 34681 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06833 and has 26 connected components, where the component with most
+	nodes has 933 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 26, the mean node degree is 68.81, and
+	the node degree mode is 3. The top 5 most central nodes are 1306947.ARQD01000003_gene179
+	(degree 310), 1306947.ARQD01000003_gene196 (degree 299), 1306947.ARQD01000002_gene460
+	(degree 280), 1306947.ARQD01000001_gene757 (degree 276) and 1306947.ARQD01000001_gene618
+	(degree 275).
 	
 
 

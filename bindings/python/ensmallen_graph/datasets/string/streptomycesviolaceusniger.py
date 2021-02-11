@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:11.794009
 
-The undirected graph Streptomyces violaceusniger has 8641 nodes and 1115768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02989
-and has 36 connected components, where the component with most nodes has 8520 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 258.25, and the node degree mode is 2. The top 5
-most central nodes are 653045.Strvi_2082 (degree 4072), 653045.Strvi_6928 (degree
-2955), 653045.Strvi_7075 (degree 2431), 653045.Strvi_8677 (degree 2083) and 653045.Strvi_1600
-(degree 2058).
+The undirected graph Streptomyces violaceusniger has 8641 nodes and 1115768
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02989 and has 36 connected components, where the component
+with most nodes has 8520 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 258.25,
+and the node degree mode is 2. The top 5 most central nodes are 653045.Strvi_2082
+(degree 4072), 653045.Strvi_6928 (degree 2955), 653045.Strvi_7075 (degree
+2431), 653045.Strvi_8677 (degree 2083) and 653045.Strvi_1600 (degree 2058).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesViolaceusniger(
 	
 	Datetime: 2021-02-02 21:26:11.794009
 	
-	The undirected graph Streptomyces violaceusniger has 8641 nodes and 1115768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02989
-	and has 36 connected components, where the component with most nodes has 8520 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 258.25, and the node degree mode is 2. The top 5
-	most central nodes are 653045.Strvi_2082 (degree 4072), 653045.Strvi_6928 (degree
-	2955), 653045.Strvi_7075 (degree 2431), 653045.Strvi_8677 (degree 2083) and 653045.Strvi_1600
-	(degree 2058).
+	The undirected graph Streptomyces violaceusniger has 8641 nodes and 1115768
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02989 and has 36 connected components, where the component
+	with most nodes has 8520 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 258.25,
+	and the node degree mode is 2. The top 5 most central nodes are 653045.Strvi_2082
+	(degree 4072), 653045.Strvi_6928 (degree 2955), 653045.Strvi_7075 (degree
+	2431), 653045.Strvi_8677 (degree 2083) and 653045.Strvi_1600 (degree 2058).
 	
 
 

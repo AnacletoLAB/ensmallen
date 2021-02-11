@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:50.296205
 
-The undirected graph brock400-1 has 400 nodes and 59723 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.74841
-and is connected, as it has a single component. The graph median node degree is 299,
-the mean node degree is 298.62 and the node degree mode is 298. The top 5 most central
-nodes are 380 (degree 320), 372 (degree 319), 248 (degree 318), 219 (degree 318)
-and 330 (degree 317).
+The undirected graph brock400-1 has 400 nodes and 59723 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.74841 and is connected, as it has a single component. The
+graph median node degree is 299, the mean node degree is 298.62 and the
+node degree mode is 298. The top 5 most central nodes are 380 (degree 320),
+372 (degree 319), 248 (degree 318), 219 (degree 318) and 330 (degree 317).
 
 
 References
@@ -115,12 +115,12 @@ def Brock4001(
 	
 	Datetime: 2021-02-03 22:53:50.296205
 	
-	The undirected graph brock400-1 has 400 nodes and 59723 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.74841
-	and is connected, as it has a single component. The graph median node degree is 299,
-	the mean node degree is 298.62 and the node degree mode is 298. The top 5 most central
-	nodes are 380 (degree 320), 372 (degree 319), 248 (degree 318), 219 (degree 318)
-	and 330 (degree 317).
+	The undirected graph brock400-1 has 400 nodes and 59723 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.74841 and is connected, as it has a single component. The
+	graph median node degree is 299, the mean node degree is 298.62 and the
+	node degree mode is 298. The top 5 most central nodes are 380 (degree 320),
+	372 (degree 319), 248 (degree 318), 219 (degree 318) and 330 (degree 317).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:06.476140
 
-The undirected graph Geobacillus thermodenitrificans has 3421 nodes and 366084 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06258
-and has 9 connected components, where the component with most nodes has 3397 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 214.02, and the node degree mode is 3. The top 5
-most central nodes are 420246.GTNG_2654 (degree 1435), 420246.GTNG_0231 (degree 1143),
-420246.GTNG_2440 (degree 967), 420246.GTNG_0009 (degree 961) and 420246.GTNG_1292
-(degree 941).
+The undirected graph Geobacillus thermodenitrificans has 3421 nodes and
+366084 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06258 and has 9 connected components, where the
+component with most nodes has 3397 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+is 214.02, and the node degree mode is 3. The top 5 most central nodes
+are 420246.GTNG_2654 (degree 1435), 420246.GTNG_0231 (degree 1143), 420246.GTNG_2440
+(degree 967), 420246.GTNG_0009 (degree 961) and 420246.GTNG_1292 (degree
+941).
 
 
 References
@@ -107,14 +108,15 @@ def GeobacillusThermodenitrificans(
 	
 	Datetime: 2021-02-02 20:47:06.476140
 	
-	The undirected graph Geobacillus thermodenitrificans has 3421 nodes and 366084 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06258
-	and has 9 connected components, where the component with most nodes has 3397 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 214.02, and the node degree mode is 3. The top 5
-	most central nodes are 420246.GTNG_2654 (degree 1435), 420246.GTNG_0231 (degree 1143),
-	420246.GTNG_2440 (degree 967), 420246.GTNG_0009 (degree 961) and 420246.GTNG_1292
-	(degree 941).
+	The undirected graph Geobacillus thermodenitrificans has 3421 nodes and
+	366084 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06258 and has 9 connected components, where the
+	component with most nodes has 3397 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+	is 214.02, and the node degree mode is 3. The top 5 most central nodes
+	are 420246.GTNG_2654 (degree 1435), 420246.GTNG_0231 (degree 1143), 420246.GTNG_2440
+	(degree 967), 420246.GTNG_0009 (degree 961) and 420246.GTNG_1292 (degree
+	941).
 	
 
 

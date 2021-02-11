@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:02.352911
 
-The undirected graph Fusobacterium necrophorum D12 has 1813 nodes and 119378 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07268
-and has 3 connected components, where the component with most nodes has 1809 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 131.69, and the node degree mode is 13. The top 5
-most central nodes are 556263.FSEG_01430 (degree 779), 556263.FSEG_00411 (degree
-645), 556263.FSEG_01311 (degree 643), 556263.FSEG_01638 (degree 625) and 556263.FSEG_01392
-(degree 604).
+The undirected graph Fusobacterium necrophorum D12 has 1813 nodes and 119378
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07268 and has 3 connected components, where the component
+with most nodes has 1809 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 131.69,
+and the node degree mode is 13. The top 5 most central nodes are 556263.FSEG_01430
+(degree 779), 556263.FSEG_00411 (degree 645), 556263.FSEG_01311 (degree
+643), 556263.FSEG_01638 (degree 625) and 556263.FSEG_01392 (degree 604).
 
 
 References
@@ -107,14 +107,14 @@ def FusobacteriumNecrophorumD12(
 	
 	Datetime: 2021-02-02 21:11:02.352911
 	
-	The undirected graph Fusobacterium necrophorum D12 has 1813 nodes and 119378 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07268
-	and has 3 connected components, where the component with most nodes has 1809 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 131.69, and the node degree mode is 13. The top 5
-	most central nodes are 556263.FSEG_01430 (degree 779), 556263.FSEG_00411 (degree
-	645), 556263.FSEG_01311 (degree 643), 556263.FSEG_01638 (degree 625) and 556263.FSEG_01392
-	(degree 604).
+	The undirected graph Fusobacterium necrophorum D12 has 1813 nodes and 119378
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07268 and has 3 connected components, where the component
+	with most nodes has 1809 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 131.69,
+	and the node degree mode is 13. The top 5 most central nodes are 556263.FSEG_01430
+	(degree 779), 556263.FSEG_00411 (degree 645), 556263.FSEG_01311 (degree
+	643), 556263.FSEG_01638 (degree 625) and 556263.FSEG_01392 (degree 604).
 	
 
 

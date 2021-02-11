@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:10.876800
 
-The undirected graph Flavobacterium frigidarium has 3126 nodes and 236305 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04838
-and has 9 connected components, where the component with most nodes has 3105 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 151.19, and the node degree mode is 4. The top 5
-most central nodes are 1121890.AUDO01000008_gene2656 (degree 1098), 1121890.AUDO01000011_gene416
-(degree 939), 1121890.AUDO01000001_gene626 (degree 907), 1121890.AUDO01000006_gene1277
-(degree 810) and 1121890.AUDO01000025_gene2409 (degree 793).
+The undirected graph Flavobacterium frigidarium has 3126 nodes and 236305
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04838 and has 9 connected components, where the component
+with most nodes has 3105 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 151.19,
+and the node degree mode is 4. The top 5 most central nodes are 1121890.AUDO01000008_gene2656
+(degree 1098), 1121890.AUDO01000011_gene416 (degree 939), 1121890.AUDO01000001_gene626
+(degree 907), 1121890.AUDO01000006_gene1277 (degree 810) and 1121890.AUDO01000025_gene2409
+(degree 793).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumFrigidarium(
 	
 	Datetime: 2021-02-02 22:38:10.876800
 	
-	The undirected graph Flavobacterium frigidarium has 3126 nodes and 236305 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04838
-	and has 9 connected components, where the component with most nodes has 3105 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 151.19, and the node degree mode is 4. The top 5
-	most central nodes are 1121890.AUDO01000008_gene2656 (degree 1098), 1121890.AUDO01000011_gene416
-	(degree 939), 1121890.AUDO01000001_gene626 (degree 907), 1121890.AUDO01000006_gene1277
-	(degree 810) and 1121890.AUDO01000025_gene2409 (degree 793).
+	The undirected graph Flavobacterium frigidarium has 3126 nodes and 236305
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04838 and has 9 connected components, where the component
+	with most nodes has 3105 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 151.19,
+	and the node degree mode is 4. The top 5 most central nodes are 1121890.AUDO01000008_gene2656
+	(degree 1098), 1121890.AUDO01000011_gene416 (degree 939), 1121890.AUDO01000001_gene626
+	(degree 907), 1121890.AUDO01000006_gene1277 (degree 810) and 1121890.AUDO01000025_gene2409
+	(degree 793).
 	
 
 

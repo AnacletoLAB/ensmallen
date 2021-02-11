@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:36.753558
 
-The undirected graph Agromyces subbeticus has 3837 nodes and 296893 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04034 and
-has 10 connected components, where the component with most nodes has 3810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 154.75, and the node degree mode is 2. The top 5 most central
-nodes are 1120960.ATXG01000007_gene437 (degree 1015), 1120960.ATXG01000012_gene3685
-(degree 1007), 1120960.ATXG01000002_gene3026 (degree 1002), 1120960.ATXG01000002_gene3031
-(degree 957) and 1120960.ATXG01000012_gene3674 (degree 945).
+The undirected graph Agromyces subbeticus has 3837 nodes and 296893 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04034 and has 10 connected components, where the component with most
+nodes has 3810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 154.75, and
+the node degree mode is 2. The top 5 most central nodes are 1120960.ATXG01000007_gene437
+(degree 1015), 1120960.ATXG01000012_gene3685 (degree 1007), 1120960.ATXG01000002_gene3026
+(degree 1002), 1120960.ATXG01000002_gene3031 (degree 957) and 1120960.ATXG01000012_gene3674
+(degree 945).
 
 
 References
@@ -107,14 +108,15 @@ def AgromycesSubbeticus(
 	
 	Datetime: 2021-02-02 22:30:36.753558
 	
-	The undirected graph Agromyces subbeticus has 3837 nodes and 296893 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04034 and
-	has 10 connected components, where the component with most nodes has 3810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 154.75, and the node degree mode is 2. The top 5 most central
-	nodes are 1120960.ATXG01000007_gene437 (degree 1015), 1120960.ATXG01000012_gene3685
-	(degree 1007), 1120960.ATXG01000002_gene3026 (degree 1002), 1120960.ATXG01000002_gene3031
-	(degree 957) and 1120960.ATXG01000012_gene3674 (degree 945).
+	The undirected graph Agromyces subbeticus has 3837 nodes and 296893 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04034 and has 10 connected components, where the component with most
+	nodes has 3810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 154.75, and
+	the node degree mode is 2. The top 5 most central nodes are 1120960.ATXG01000007_gene437
+	(degree 1015), 1120960.ATXG01000012_gene3685 (degree 1007), 1120960.ATXG01000002_gene3026
+	(degree 1002), 1120960.ATXG01000002_gene3031 (degree 957) and 1120960.ATXG01000012_gene3674
+	(degree 945).
 	
 
 

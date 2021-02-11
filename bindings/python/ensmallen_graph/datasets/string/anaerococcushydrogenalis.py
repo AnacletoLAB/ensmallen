@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:46.474270
 
-The undirected graph Anaerococcus hydrogenalis has 2041 nodes and 146340 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07029
-and has 10 connected components, where the component with most nodes has 2013 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 143.40, and the node degree mode is 5. The top 5
-most central nodes are 561177.ANHYDRO_02046 (degree 946), 561177.ANHYDRO_00238 (degree
-937), 561177.ANHYDRO_02045 (degree 912), 561177.ANHYDRO_01371 (degree 845) and 561177.ANHYDRO_00686
-(degree 808).
+The undirected graph Anaerococcus hydrogenalis has 2041 nodes and 146340
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07029 and has 10 connected components, where the component
+with most nodes has 2013 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 143.40,
+and the node degree mode is 5. The top 5 most central nodes are 561177.ANHYDRO_02046
+(degree 946), 561177.ANHYDRO_00238 (degree 937), 561177.ANHYDRO_02045 (degree
+912), 561177.ANHYDRO_01371 (degree 845) and 561177.ANHYDRO_00686 (degree
+808).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerococcusHydrogenalis(
 	
 	Datetime: 2021-02-02 21:11:46.474270
 	
-	The undirected graph Anaerococcus hydrogenalis has 2041 nodes and 146340 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07029
-	and has 10 connected components, where the component with most nodes has 2013 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 143.40, and the node degree mode is 5. The top 5
-	most central nodes are 561177.ANHYDRO_02046 (degree 946), 561177.ANHYDRO_00238 (degree
-	937), 561177.ANHYDRO_02045 (degree 912), 561177.ANHYDRO_01371 (degree 845) and 561177.ANHYDRO_00686
-	(degree 808).
+	The undirected graph Anaerococcus hydrogenalis has 2041 nodes and 146340
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07029 and has 10 connected components, where the component
+	with most nodes has 2013 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 143.40,
+	and the node degree mode is 5. The top 5 most central nodes are 561177.ANHYDRO_02046
+	(degree 946), 561177.ANHYDRO_00238 (degree 937), 561177.ANHYDRO_02045 (degree
+	912), 561177.ANHYDRO_01371 (degree 845) and 561177.ANHYDRO_00686 (degree
+	808).
 	
 
 

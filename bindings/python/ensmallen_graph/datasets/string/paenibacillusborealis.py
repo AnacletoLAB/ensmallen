@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:34.037971
 
-The undirected graph Paenibacillus borealis has 6140 nodes and 954228 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05063 and
-has 22 connected components, where the component with most nodes has 6088 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 287,
-the mean node degree is 310.82, and the node degree mode is 2. The top 5 most central
-nodes are 160799.PBOR_19430 (degree 2195), 160799.PBOR_22530 (degree 2128), 160799.PBOR_11760
-(degree 1938), 160799.PBOR_08770 (degree 1681) and 160799.PBOR_30800 (degree 1680).
+The undirected graph Paenibacillus borealis has 6140 nodes and 954228 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05063 and has 22 connected components, where the component with most
+nodes has 6088 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 287, the mean node degree is 310.82, and
+the node degree mode is 2. The top 5 most central nodes are 160799.PBOR_19430
+(degree 2195), 160799.PBOR_22530 (degree 2128), 160799.PBOR_11760 (degree
+1938), 160799.PBOR_08770 (degree 1681) and 160799.PBOR_30800 (degree 1680).
 
 
 References
@@ -106,13 +107,14 @@ def PaenibacillusBorealis(
 	
 	Datetime: 2021-02-02 19:53:34.037971
 	
-	The undirected graph Paenibacillus borealis has 6140 nodes and 954228 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05063 and
-	has 22 connected components, where the component with most nodes has 6088 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 287,
-	the mean node degree is 310.82, and the node degree mode is 2. The top 5 most central
-	nodes are 160799.PBOR_19430 (degree 2195), 160799.PBOR_22530 (degree 2128), 160799.PBOR_11760
-	(degree 1938), 160799.PBOR_08770 (degree 1681) and 160799.PBOR_30800 (degree 1680).
+	The undirected graph Paenibacillus borealis has 6140 nodes and 954228 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05063 and has 22 connected components, where the component with most
+	nodes has 6088 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 287, the mean node degree is 310.82, and
+	the node degree mode is 2. The top 5 most central nodes are 160799.PBOR_19430
+	(degree 2195), 160799.PBOR_22530 (degree 2128), 160799.PBOR_11760 (degree
+	1938), 160799.PBOR_08770 (degree 1681) and 160799.PBOR_30800 (degree 1680).
 	
 
 

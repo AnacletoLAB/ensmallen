@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:06:15.580766
 
-The undirected graph Bacillus megaterium MSP201 has 3455 nodes and 316939 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05312
-and has 22 connected components, where the component with most nodes has 3404 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 183.47, and the node degree mode is 1. The top 5
-most central nodes are 1348908.KI518590_gene2683 (degree 1259), 1348908.KI518646_gene114
-(degree 1160), 1348908.KI518578_gene544 (degree 1031), 1348908.KI518586_gene3194
-(degree 995) and 1348908.KI518651_gene17 (degree 946).
+The undirected graph Bacillus megaterium MSP201 has 3455 nodes and 316939
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05312 and has 22 connected components, where the component
+with most nodes has 3404 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 183.47,
+and the node degree mode is 1. The top 5 most central nodes are 1348908.KI518590_gene2683
+(degree 1259), 1348908.KI518646_gene114 (degree 1160), 1348908.KI518578_gene544
+(degree 1031), 1348908.KI518586_gene3194 (degree 995) and 1348908.KI518651_gene17
+(degree 946).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusMegateriumMsp201(
 	
 	Datetime: 2021-02-03 22:06:15.580766
 	
-	The undirected graph Bacillus megaterium MSP201 has 3455 nodes and 316939 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05312
-	and has 22 connected components, where the component with most nodes has 3404 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 183.47, and the node degree mode is 1. The top 5
-	most central nodes are 1348908.KI518590_gene2683 (degree 1259), 1348908.KI518646_gene114
-	(degree 1160), 1348908.KI518578_gene544 (degree 1031), 1348908.KI518586_gene3194
-	(degree 995) and 1348908.KI518651_gene17 (degree 946).
+	The undirected graph Bacillus megaterium MSP201 has 3455 nodes and 316939
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05312 and has 22 connected components, where the component
+	with most nodes has 3404 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 183.47,
+	and the node degree mode is 1. The top 5 most central nodes are 1348908.KI518590_gene2683
+	(degree 1259), 1348908.KI518646_gene114 (degree 1160), 1348908.KI518578_gene544
+	(degree 1031), 1348908.KI518586_gene3194 (degree 995) and 1348908.KI518651_gene17
+	(degree 946).
 	
 
 

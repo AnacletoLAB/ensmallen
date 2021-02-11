@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:38:49.150967
 
-The undirected graph Erdos971 has 433 nodes and 1314 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01405 and has 3 connected
-components, where the component with most nodes has 429 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-is 6.07, and the node degree mode is 1. The top 5 most central nodes are 175 (degree
-41), 153 (degree 40), 351 (degree 36), 9 (degree 35) and 405 (degree 34).
+The undirected graph Erdos971 has 433 nodes and 1314 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01405 and has 3 connected components, where the component with most nodes
+has 429 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 4, the mean node degree is 6.07, and the node degree
+mode is 1. The top 5 most central nodes are 175 (degree 41), 153 (degree
+40), 351 (degree 36), 9 (degree 35) and 405 (degree 34).
 
 
 References
@@ -102,12 +103,13 @@ def Erdos971(
 	
 	Datetime: 2021-02-06 06:38:49.150967
 	
-	The undirected graph Erdos971 has 433 nodes and 1314 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01405 and has 3 connected
-	components, where the component with most nodes has 429 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-	is 6.07, and the node degree mode is 1. The top 5 most central nodes are 175 (degree
-	41), 153 (degree 40), 351 (degree 36), 9 (degree 35) and 405 (degree 34).
+	The undirected graph Erdos971 has 433 nodes and 1314 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01405 and has 3 connected components, where the component with most nodes
+	has 429 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 4, the mean node degree is 6.07, and the node degree
+	mode is 1. The top 5 most central nodes are 175 (degree 41), 153 (degree
+	40), 351 (degree 36), 9 (degree 35) and 405 (degree 34).
 	
 
 

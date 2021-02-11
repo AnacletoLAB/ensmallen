@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:36.534007
 
-The undirected graph Formosa agariphila has 3554 nodes and 302871 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04797 and
-has 7 connected components, where the component with most nodes has 3537 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 170.44, and the node degree mode is 5. The top 5 most central
-nodes are 1347342.BN863_5130 (degree 1239), 1347342.BN863_2060 (degree 1154), 1347342.BN863_5380
-(degree 1118), 1347342.BN863_8180 (degree 964) and 1347342.BN863_8740 (degree 944).
+The undirected graph Formosa agariphila has 3554 nodes and 302871 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04797 and has 7 connected components, where the component with most
+nodes has 3537 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 170.44, and
+the node degree mode is 5. The top 5 most central nodes are 1347342.BN863_5130
+(degree 1239), 1347342.BN863_2060 (degree 1154), 1347342.BN863_5380 (degree
+1118), 1347342.BN863_8180 (degree 964) and 1347342.BN863_8740 (degree 944).
 
 
 References
@@ -106,13 +107,14 @@ def FormosaAgariphila(
 	
 	Datetime: 2021-02-03 22:03:36.534007
 	
-	The undirected graph Formosa agariphila has 3554 nodes and 302871 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04797 and
-	has 7 connected components, where the component with most nodes has 3537 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 170.44, and the node degree mode is 5. The top 5 most central
-	nodes are 1347342.BN863_5130 (degree 1239), 1347342.BN863_2060 (degree 1154), 1347342.BN863_5380
-	(degree 1118), 1347342.BN863_8180 (degree 964) and 1347342.BN863_8740 (degree 944).
+	The undirected graph Formosa agariphila has 3554 nodes and 302871 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04797 and has 7 connected components, where the component with most
+	nodes has 3537 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 170.44, and
+	the node degree mode is 5. The top 5 most central nodes are 1347342.BN863_5130
+	(degree 1239), 1347342.BN863_2060 (degree 1154), 1347342.BN863_5380 (degree
+	1118), 1347342.BN863_8180 (degree 964) and 1347342.BN863_8740 (degree 944).
 	
 
 

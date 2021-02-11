@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:39.615215
 
-The undirected graph Faecalibacterium prausnitzii L26 has 2695 nodes and 184968 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05095
-and has 18 connected components, where the component with most nodes has 2656 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 137.27, and the node degree mode is 1. The top 5
-most central nodes are 718252.FP2_26340 (degree 1076), 718252.FP2_27310 (degree 844),
-718252.FP2_21030 (degree 820), 718252.FP2_27160 (degree 820) and 718252.FP2_15700
-(degree 815).
+The undirected graph Faecalibacterium prausnitzii L26 has 2695 nodes and
+184968 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05095 and has 18 connected components, where the
+component with most nodes has 2656 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+is 137.27, and the node degree mode is 1. The top 5 most central nodes
+are 718252.FP2_26340 (degree 1076), 718252.FP2_27310 (degree 844), 718252.FP2_21030
+(degree 820), 718252.FP2_27160 (degree 820) and 718252.FP2_15700 (degree
+815).
 
 
 References
@@ -107,14 +108,15 @@ def FaecalibacteriumPrausnitziiL26(
 	
 	Datetime: 2021-02-02 21:36:39.615215
 	
-	The undirected graph Faecalibacterium prausnitzii L26 has 2695 nodes and 184968 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05095
-	and has 18 connected components, where the component with most nodes has 2656 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 137.27, and the node degree mode is 1. The top 5
-	most central nodes are 718252.FP2_26340 (degree 1076), 718252.FP2_27310 (degree 844),
-	718252.FP2_21030 (degree 820), 718252.FP2_27160 (degree 820) and 718252.FP2_15700
-	(degree 815).
+	The undirected graph Faecalibacterium prausnitzii L26 has 2695 nodes and
+	184968 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05095 and has 18 connected components, where the
+	component with most nodes has 2656 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+	is 137.27, and the node degree mode is 1. The top 5 most central nodes
+	are 718252.FP2_26340 (degree 1076), 718252.FP2_27310 (degree 844), 718252.FP2_21030
+	(degree 820), 718252.FP2_27160 (degree 820) and 718252.FP2_15700 (degree
+	815).
 	
 
 

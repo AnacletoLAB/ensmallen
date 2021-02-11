@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:47.422088
 
-The undirected graph Methylocapsa aurea has 3325 nodes and 346707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06274 and
-has 14 connected components, where the component with most nodes has 3295 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 208.55, and the node degree mode is 1. The top 5 most central
-nodes are 663610.JQKO01000009_gene375 (degree 1282), 663610.JQKO01000011_gene3400
-(degree 970), 663610.JQKO01000004_gene2800 (degree 916), 663610.JQKO01000001_gene589
-(degree 908) and 663610.JQKO01000001_gene1011 (degree 907).
+The undirected graph Methylocapsa aurea has 3325 nodes and 346707 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06274 and has 14 connected components, where the component with most
+nodes has 3295 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 189, the mean node degree is 208.55, and
+the node degree mode is 1. The top 5 most central nodes are 663610.JQKO01000009_gene375
+(degree 1282), 663610.JQKO01000011_gene3400 (degree 970), 663610.JQKO01000004_gene2800
+(degree 916), 663610.JQKO01000001_gene589 (degree 908) and 663610.JQKO01000001_gene1011
+(degree 907).
 
 
 References
@@ -107,14 +108,15 @@ def MethylocapsaAurea(
 	
 	Datetime: 2021-02-02 21:27:47.422088
 	
-	The undirected graph Methylocapsa aurea has 3325 nodes and 346707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06274 and
-	has 14 connected components, where the component with most nodes has 3295 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 208.55, and the node degree mode is 1. The top 5 most central
-	nodes are 663610.JQKO01000009_gene375 (degree 1282), 663610.JQKO01000011_gene3400
-	(degree 970), 663610.JQKO01000004_gene2800 (degree 916), 663610.JQKO01000001_gene589
-	(degree 908) and 663610.JQKO01000001_gene1011 (degree 907).
+	The undirected graph Methylocapsa aurea has 3325 nodes and 346707 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06274 and has 14 connected components, where the component with most
+	nodes has 3295 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 189, the mean node degree is 208.55, and
+	the node degree mode is 1. The top 5 most central nodes are 663610.JQKO01000009_gene375
+	(degree 1282), 663610.JQKO01000011_gene3400 (degree 970), 663610.JQKO01000004_gene2800
+	(degree 916), 663610.JQKO01000001_gene589 (degree 908) and 663610.JQKO01000001_gene1011
+	(degree 907).
 	
 
 

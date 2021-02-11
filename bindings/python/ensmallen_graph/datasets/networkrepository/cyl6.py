@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:18.610574
 
-The undirected graph cyl6 has 13681 nodes and 363961 weighted edges, of which 13681
-are self-loops. The graph is sparse as it has a density of 0.00382 and is connected,
-as it has a single component. The graph median node degree is 54, the mean node degree
-is 52.21, and the node degree mode is 54. The top 5 most central nodes are 13681
-(degree 721), 13560 (degree 54), 13559 (degree 54), 13558 (degree 54) and 13557 (degree
-54).
+The undirected graph cyl6 has 13681 nodes and 363961 weighted edges, of
+which 13681 are self-loops. The graph is sparse as it has a density of
+0.00382 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 52.21, and the node degree mode
+is 54. The top 5 most central nodes are 13681 (degree 721), 13560 (degree
+54), 13559 (degree 54), 13558 (degree 54) and 13557 (degree 54).
 
 
 References
@@ -102,12 +102,12 @@ def Cyl6(
 	
 	Datetime: 2021-02-06 11:08:18.610574
 	
-	The undirected graph cyl6 has 13681 nodes and 363961 weighted edges, of which 13681
-	are self-loops. The graph is sparse as it has a density of 0.00382 and is connected,
-	as it has a single component. The graph median node degree is 54, the mean node degree
-	is 52.21, and the node degree mode is 54. The top 5 most central nodes are 13681
-	(degree 721), 13560 (degree 54), 13559 (degree 54), 13558 (degree 54) and 13557 (degree
-	54).
+	The undirected graph cyl6 has 13681 nodes and 363961 weighted edges, of
+	which 13681 are self-loops. The graph is sparse as it has a density of
+	0.00382 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 52.21, and the node degree mode
+	is 54. The top 5 most central nodes are 13681 (degree 721), 13560 (degree
+	54), 13559 (degree 54), 13558 (degree 54) and 13557 (degree 54).
 	
 
 

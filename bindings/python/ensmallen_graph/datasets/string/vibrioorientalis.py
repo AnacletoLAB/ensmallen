@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:57.656773
 
-The undirected graph Vibrio orientalis has 4128 nodes and 491345 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05768 and
-has 19 connected components, where the component with most nodes has 4080 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 238.05, and the node degree mode is 2. The top 5 most central
-nodes are 675816.VIA_000110 (degree 1500), 675816.VIA_003867 (degree 1477), 675816.VIA_000754
-(degree 1447), 675816.VIA_000309 (degree 1413) and 675816.VIA_001049 (degree 1338).
+The undirected graph Vibrio orientalis has 4128 nodes and 491345 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05768 and has 19 connected components, where the component with most
+nodes has 4080 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 238.05, and
+the node degree mode is 2. The top 5 most central nodes are 675816.VIA_000110
+(degree 1500), 675816.VIA_003867 (degree 1477), 675816.VIA_000754 (degree
+1447), 675816.VIA_000309 (degree 1413) and 675816.VIA_001049 (degree 1338).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioOrientalis(
 	
 	Datetime: 2021-02-02 21:29:57.656773
 	
-	The undirected graph Vibrio orientalis has 4128 nodes and 491345 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05768 and
-	has 19 connected components, where the component with most nodes has 4080 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 238.05, and the node degree mode is 2. The top 5 most central
-	nodes are 675816.VIA_000110 (degree 1500), 675816.VIA_003867 (degree 1477), 675816.VIA_000754
-	(degree 1447), 675816.VIA_000309 (degree 1413) and 675816.VIA_001049 (degree 1338).
+	The undirected graph Vibrio orientalis has 4128 nodes and 491345 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05768 and has 19 connected components, where the component with most
+	nodes has 4080 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 238.05, and
+	the node degree mode is 2. The top 5 most central nodes are 675816.VIA_000110
+	(degree 1500), 675816.VIA_003867 (degree 1477), 675816.VIA_000754 (degree
+	1447), 675816.VIA_000309 (degree 1413) and 675816.VIA_001049 (degree 1338).
 	
 
 

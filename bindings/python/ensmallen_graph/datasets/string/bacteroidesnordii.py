@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:30.125789
 
-The undirected graph Bacteroides nordii has 4377 nodes and 417924 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04364 and
-has 18 connected components, where the component with most nodes has 4319 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 190.96, and the node degree mode is 3. The top 5 most central
-nodes are 997884.HMPREF1068_00394 (degree 1232), 997884.HMPREF1068_03540 (degree
-1217), 997884.HMPREF1068_00681 (degree 1148), 997884.HMPREF1068_03795 (degree 1132)
-and 997884.HMPREF1068_03006 (degree 1127).
+The undirected graph Bacteroides nordii has 4377 nodes and 417924 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04364 and has 18 connected components, where the component with most
+nodes has 4319 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 190.96, and
+the node degree mode is 3. The top 5 most central nodes are 997884.HMPREF1068_00394
+(degree 1232), 997884.HMPREF1068_03540 (degree 1217), 997884.HMPREF1068_00681
+(degree 1148), 997884.HMPREF1068_03795 (degree 1132) and 997884.HMPREF1068_03006
+(degree 1127).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesNordii(
 	
 	Datetime: 2021-02-02 22:05:30.125789
 	
-	The undirected graph Bacteroides nordii has 4377 nodes and 417924 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04364 and
-	has 18 connected components, where the component with most nodes has 4319 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 190.96, and the node degree mode is 3. The top 5 most central
-	nodes are 997884.HMPREF1068_00394 (degree 1232), 997884.HMPREF1068_03540 (degree
-	1217), 997884.HMPREF1068_00681 (degree 1148), 997884.HMPREF1068_03795 (degree 1132)
-	and 997884.HMPREF1068_03006 (degree 1127).
+	The undirected graph Bacteroides nordii has 4377 nodes and 417924 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04364 and has 18 connected components, where the component with most
+	nodes has 4319 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 190.96, and
+	the node degree mode is 3. The top 5 most central nodes are 997884.HMPREF1068_00394
+	(degree 1232), 997884.HMPREF1068_03540 (degree 1217), 997884.HMPREF1068_00681
+	(degree 1148), 997884.HMPREF1068_03795 (degree 1132) and 997884.HMPREF1068_03006
+	(degree 1127).
 	
 
 

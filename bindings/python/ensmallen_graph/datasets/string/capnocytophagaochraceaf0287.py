@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:16.798957
 
-The undirected graph Capnocytophaga ochracea F0287 has 2315 nodes and 152733 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05702
-and has 9 connected components, where the component with most nodes has 2288 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 131.95, and the node degree mode is 5. The top 5
-most central nodes are 873517.HMPREF1977_1968 (degree 828), 873517.HMPREF1977_1416
-(degree 711), 873517.HMPREF1977_0889 (degree 711), 873517.HMPREF1977_1113 (degree
-696) and 873517.HMPREF1977_0121 (degree 621).
+The undirected graph Capnocytophaga ochracea F0287 has 2315 nodes and 152733
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05702 and has 9 connected components, where the component
+with most nodes has 2288 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 131.95,
+and the node degree mode is 5. The top 5 most central nodes are 873517.HMPREF1977_1968
+(degree 828), 873517.HMPREF1977_1416 (degree 711), 873517.HMPREF1977_0889
+(degree 711), 873517.HMPREF1977_1113 (degree 696) and 873517.HMPREF1977_0121
+(degree 621).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaOchraceaF0287(
 	
 	Datetime: 2021-02-02 21:49:16.798957
 	
-	The undirected graph Capnocytophaga ochracea F0287 has 2315 nodes and 152733 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05702
-	and has 9 connected components, where the component with most nodes has 2288 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 131.95, and the node degree mode is 5. The top 5
-	most central nodes are 873517.HMPREF1977_1968 (degree 828), 873517.HMPREF1977_1416
-	(degree 711), 873517.HMPREF1977_0889 (degree 711), 873517.HMPREF1977_1113 (degree
-	696) and 873517.HMPREF1977_0121 (degree 621).
+	The undirected graph Capnocytophaga ochracea F0287 has 2315 nodes and 152733
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05702 and has 9 connected components, where the component
+	with most nodes has 2288 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 131.95,
+	and the node degree mode is 5. The top 5 most central nodes are 873517.HMPREF1977_1968
+	(degree 828), 873517.HMPREF1977_1416 (degree 711), 873517.HMPREF1977_0889
+	(degree 711), 873517.HMPREF1977_1113 (degree 696) and 873517.HMPREF1977_0121
+	(degree 621).
 	
 
 

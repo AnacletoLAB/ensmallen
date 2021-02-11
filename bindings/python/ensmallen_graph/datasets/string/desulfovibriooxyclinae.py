@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:08.321605
 
-The undirected graph Desulfovibrio oxyclinae has 2962 nodes and 330096 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07527 and
-has 12 connected components, where the component with most nodes has 2935 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 222.89, and the node degree mode is 5. The top 5 most central
-nodes are 1121459.AQXE01000007_gene720 (degree 1291), 1121459.AQXE01000002_gene1415
-(degree 1215), 1121459.AQXE01000007_gene733 (degree 1203), 1121459.AQXE01000003_gene1091
-(degree 1179) and 1121459.AQXE01000002_gene1405 (degree 1168).
+The undirected graph Desulfovibrio oxyclinae has 2962 nodes and 330096
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07527 and has 12 connected components, where the component
+with most nodes has 2935 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 222.89,
+and the node degree mode is 5. The top 5 most central nodes are 1121459.AQXE01000007_gene720
+(degree 1291), 1121459.AQXE01000002_gene1415 (degree 1215), 1121459.AQXE01000007_gene733
+(degree 1203), 1121459.AQXE01000003_gene1091 (degree 1179) and 1121459.AQXE01000002_gene1405
+(degree 1168).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioOxyclinae(
 	
 	Datetime: 2021-02-02 22:37:08.321605
 	
-	The undirected graph Desulfovibrio oxyclinae has 2962 nodes and 330096 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07527 and
-	has 12 connected components, where the component with most nodes has 2935 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 222.89, and the node degree mode is 5. The top 5 most central
-	nodes are 1121459.AQXE01000007_gene720 (degree 1291), 1121459.AQXE01000002_gene1415
-	(degree 1215), 1121459.AQXE01000007_gene733 (degree 1203), 1121459.AQXE01000003_gene1091
-	(degree 1179) and 1121459.AQXE01000002_gene1405 (degree 1168).
+	The undirected graph Desulfovibrio oxyclinae has 2962 nodes and 330096
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07527 and has 12 connected components, where the component
+	with most nodes has 2935 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 222.89,
+	and the node degree mode is 5. The top 5 most central nodes are 1121459.AQXE01000007_gene720
+	(degree 1291), 1121459.AQXE01000002_gene1415 (degree 1215), 1121459.AQXE01000007_gene733
+	(degree 1203), 1121459.AQXE01000003_gene1091 (degree 1179) and 1121459.AQXE01000002_gene1405
+	(degree 1168).
 	
 
 

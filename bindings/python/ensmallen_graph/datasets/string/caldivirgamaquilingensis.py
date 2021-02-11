@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:16.811037
 
-The undirected graph Caldivirga maquilingensis has 1941 nodes and 124924 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06635
-and has 11 connected components, where the component with most nodes has 1916 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 128.72, and the node degree mode is 2. The top 5
-most central nodes are 397948.Cmaq_1790 (degree 694), 397948.Cmaq_1118 (degree 619),
-397948.Cmaq_1789 (degree 605), 397948.Cmaq_0703 (degree 594) and 397948.Cmaq_1967
-(degree 561).
+The undirected graph Caldivirga maquilingensis has 1941 nodes and 124924
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06635 and has 11 connected components, where the component
+with most nodes has 1916 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 128.72,
+and the node degree mode is 2. The top 5 most central nodes are 397948.Cmaq_1790
+(degree 694), 397948.Cmaq_1118 (degree 619), 397948.Cmaq_1789 (degree 605),
+397948.Cmaq_0703 (degree 594) and 397948.Cmaq_1967 (degree 561).
 
 
 References
@@ -107,14 +107,14 @@ def CaldivirgaMaquilingensis(
 	
 	Datetime: 2021-02-02 20:42:16.811037
 	
-	The undirected graph Caldivirga maquilingensis has 1941 nodes and 124924 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06635
-	and has 11 connected components, where the component with most nodes has 1916 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 128.72, and the node degree mode is 2. The top 5
-	most central nodes are 397948.Cmaq_1790 (degree 694), 397948.Cmaq_1118 (degree 619),
-	397948.Cmaq_1789 (degree 605), 397948.Cmaq_0703 (degree 594) and 397948.Cmaq_1967
-	(degree 561).
+	The undirected graph Caldivirga maquilingensis has 1941 nodes and 124924
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06635 and has 11 connected components, where the component
+	with most nodes has 1916 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 128.72,
+	and the node degree mode is 2. The top 5 most central nodes are 397948.Cmaq_1790
+	(degree 694), 397948.Cmaq_1118 (degree 619), 397948.Cmaq_1789 (degree 605),
+	397948.Cmaq_0703 (degree 594) and 397948.Cmaq_1967 (degree 561).
 	
 
 

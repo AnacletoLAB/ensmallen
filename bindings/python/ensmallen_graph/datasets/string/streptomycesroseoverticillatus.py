@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:51.204135
 
-The undirected graph Streptomyces roseoverticillatus has 5967 nodes and 735235 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04131
-and has 27 connected components, where the component with most nodes has 5903 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 246.43, and the node degree mode is 2. The top 5
-most central nodes are 66429.JOFL01000006_gene1980 (degree 3066), 66429.JOFL01000006_gene1978
+The undirected graph Streptomyces roseoverticillatus has 5967 nodes and
+735235 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04131 and has 27 connected components, where the
+component with most nodes has 5903 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 207, the mean node degree
+is 246.43, and the node degree mode is 2. The top 5 most central nodes
+are 66429.JOFL01000006_gene1980 (degree 3066), 66429.JOFL01000006_gene1978
 (degree 3028), 66429.JOFL01000021_gene5712 (degree 2959), 66429.JOFL01000010_gene1069
 (degree 1888) and 66429.JOFL01000006_gene1981 (degree 1743).
 
@@ -107,12 +108,13 @@ def StreptomycesRoseoverticillatus(
 	
 	Datetime: 2021-02-02 18:25:51.204135
 	
-	The undirected graph Streptomyces roseoverticillatus has 5967 nodes and 735235 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04131
-	and has 27 connected components, where the component with most nodes has 5903 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 246.43, and the node degree mode is 2. The top 5
-	most central nodes are 66429.JOFL01000006_gene1980 (degree 3066), 66429.JOFL01000006_gene1978
+	The undirected graph Streptomyces roseoverticillatus has 5967 nodes and
+	735235 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04131 and has 27 connected components, where the
+	component with most nodes has 5903 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 207, the mean node degree
+	is 246.43, and the node degree mode is 2. The top 5 most central nodes
+	are 66429.JOFL01000006_gene1980 (degree 3066), 66429.JOFL01000006_gene1978
 	(degree 3028), 66429.JOFL01000021_gene5712 (degree 2959), 66429.JOFL01000010_gene1069
 	(degree 1888) and 66429.JOFL01000006_gene1981 (degree 1743).
 	

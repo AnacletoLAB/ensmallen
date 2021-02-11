@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:19.727786
 
-The undirected graph Psychromonas sp. CNPT3 has 2558 nodes and 186367 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05699 and
-has 8 connected components, where the component with most nodes has 2540 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 145.71, and the node degree mode is 4. The top 5 most central
-nodes are 314282.PCNPT3_01755 (degree 1017), 314282.PCNPT3_10940 (degree 987), 314282.PCNPT3_01300
-(degree 949), 314282.PCNPT3_10115 (degree 916) and 314282.PCNPT3_08820 (degree 829).
+The undirected graph Psychromonas sp. CNPT3 has 2558 nodes and 186367 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05699 and has 8 connected components, where the component with most
+nodes has 2540 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 145.71, and
+the node degree mode is 4. The top 5 most central nodes are 314282.PCNPT3_01755
+(degree 1017), 314282.PCNPT3_10940 (degree 987), 314282.PCNPT3_01300 (degree
+949), 314282.PCNPT3_10115 (degree 916) and 314282.PCNPT3_08820 (degree
+829).
 
 
 References
@@ -106,13 +108,15 @@ def PsychromonasSp.Cnpt3(
 	
 	Datetime: 2021-02-02 20:25:19.727786
 	
-	The undirected graph Psychromonas sp. CNPT3 has 2558 nodes and 186367 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05699 and
-	has 8 connected components, where the component with most nodes has 2540 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 145.71, and the node degree mode is 4. The top 5 most central
-	nodes are 314282.PCNPT3_01755 (degree 1017), 314282.PCNPT3_10940 (degree 987), 314282.PCNPT3_01300
-	(degree 949), 314282.PCNPT3_10115 (degree 916) and 314282.PCNPT3_08820 (degree 829).
+	The undirected graph Psychromonas sp. CNPT3 has 2558 nodes and 186367 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05699 and has 8 connected components, where the component with most
+	nodes has 2540 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 145.71, and
+	the node degree mode is 4. The top 5 most central nodes are 314282.PCNPT3_01755
+	(degree 1017), 314282.PCNPT3_10940 (degree 987), 314282.PCNPT3_01300 (degree
+	949), 314282.PCNPT3_10115 (degree 916) and 314282.PCNPT3_08820 (degree
+	829).
 	
 
 

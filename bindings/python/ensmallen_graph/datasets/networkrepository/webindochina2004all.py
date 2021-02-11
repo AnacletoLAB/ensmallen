@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 06:32:31.966361
 
-The undirected graph web-indochina-2004-all has 7414768 nodes, of which 10 are singletons
-(all have self-loops), and 153487303 unweighted edges, of which 2502484 are self-loops.
-The graph is extremely sparse as it has a density of 0.00001 and has 197 connected
-components, where the component with most nodes has 7320539 nodes and the component
-with the least nodes has a single node. The graph median node degree is 11, the mean
-node degree is 41.06, and the node degree mode is 1. The top 5 most central nodes
-are 7030320 (degree 256425), 7188998 (degree 179322), 7188997 (degree 178021), 7188996
-(degree 176801) and 6968455 (degree 154370).
+The undirected graph web-indochina-2004-all has 7414768 nodes, of which
+10 are singletons (all have self-loops), and 153487303 unweighted edges,
+of which 2502484 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and has 197 connected components, where the component
+with most nodes has 7320539 nodes and the component with the least nodes
+has a single node. The graph median node degree is 11, the mean node degree
+is 41.06, and the node degree mode is 1. The top 5 most central nodes are
+7030320 (degree 256425), 7188998 (degree 179322), 7188997 (degree 178021),
+7188996 (degree 176801) and 6968455 (degree 154370).
 
 
 References
@@ -121,14 +122,15 @@ def WebIndochina2004All(
 	
 	Datetime: 2021-02-05 06:32:31.966361
 	
-	The undirected graph web-indochina-2004-all has 7414768 nodes, of which 10 are singletons
-	(all have self-loops), and 153487303 unweighted edges, of which 2502484 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00001 and has 197 connected
-	components, where the component with most nodes has 7320539 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 11, the mean
-	node degree is 41.06, and the node degree mode is 1. The top 5 most central nodes
-	are 7030320 (degree 256425), 7188998 (degree 179322), 7188997 (degree 178021), 7188996
-	(degree 176801) and 6968455 (degree 154370).
+	The undirected graph web-indochina-2004-all has 7414768 nodes, of which
+	10 are singletons (all have self-loops), and 153487303 unweighted edges,
+	of which 2502484 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and has 197 connected components, where the component
+	with most nodes has 7320539 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 11, the mean node degree
+	is 41.06, and the node degree mode is 1. The top 5 most central nodes are
+	7030320 (degree 256425), 7188998 (degree 179322), 7188997 (degree 178021),
+	7188996 (degree 176801) and 6968455 (degree 154370).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:48.177130
 
-The undirected graph Schizosaccharomyces pombe has 5076 nodes and 779104 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06049
-and has 2 connected components, where the component with most nodes has 5074 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 306.98, and the node degree mode is 1. The top 5
-most central nodes are 4896.SPAC20G8.03.1 (degree 2021), 4896.SPBC32H8.12c.1 (degree
-1618), 4896.SPBC1539.09c.1 (degree 1559), 4896.SPAC15E1.04.1 (degree 1426) and 4896.SPBC1306.01c.1
-(degree 1403).
+The undirected graph Schizosaccharomyces pombe has 5076 nodes and 779104
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06049 and has 2 connected components, where the component
+with most nodes has 5074 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 306.98,
+and the node degree mode is 1. The top 5 most central nodes are 4896.SPAC20G8.03.1
+(degree 2021), 4896.SPBC32H8.12c.1 (degree 1618), 4896.SPBC1539.09c.1 (degree
+1559), 4896.SPAC15E1.04.1 (degree 1426) and 4896.SPBC1306.01c.1 (degree
+1403).
 
 
 References
@@ -107,14 +108,15 @@ def SchizosaccharomycesPombe(
 	
 	Datetime: 2021-02-02 17:10:48.177130
 	
-	The undirected graph Schizosaccharomyces pombe has 5076 nodes and 779104 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06049
-	and has 2 connected components, where the component with most nodes has 5074 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 306.98, and the node degree mode is 1. The top 5
-	most central nodes are 4896.SPAC20G8.03.1 (degree 2021), 4896.SPBC32H8.12c.1 (degree
-	1618), 4896.SPBC1539.09c.1 (degree 1559), 4896.SPAC15E1.04.1 (degree 1426) and 4896.SPBC1306.01c.1
-	(degree 1403).
+	The undirected graph Schizosaccharomyces pombe has 5076 nodes and 779104
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06049 and has 2 connected components, where the component
+	with most nodes has 5074 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 306.98,
+	and the node degree mode is 1. The top 5 most central nodes are 4896.SPAC20G8.03.1
+	(degree 2021), 4896.SPBC32H8.12c.1 (degree 1618), 4896.SPBC1539.09c.1 (degree
+	1559), 4896.SPAC15E1.04.1 (degree 1426) and 4896.SPBC1306.01c.1 (degree
+	1403).
 	
 
 

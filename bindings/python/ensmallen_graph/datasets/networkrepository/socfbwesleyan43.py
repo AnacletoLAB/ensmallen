@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:52.866948
 
-The undirected graph socfb-Wesleyan43 has 3593 nodes and 138035 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02139 and
-has 2 connected components, where the component with most nodes has 3591 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 64,
-the mean node degree is 76.84, and the node degree mode is 1. The top 5 most central
-nodes are 3092 (degree 549), 995 (degree 397), 2119 (degree 382), 3126 (degree 371)
-and 1342 (degree 364).
+The undirected graph socfb-Wesleyan43 has 3593 nodes and 138035 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02139 and has 2 connected components, where the component with most
+nodes has 3591 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 64, the mean node degree is 76.84, and
+the node degree mode is 1. The top 5 most central nodes are 3092 (degree
+549), 995 (degree 397), 2119 (degree 382), 3126 (degree 371) and 1342 (degree
+364).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbWesleyan43(
 	
 	Datetime: 2021-02-06 11:51:52.866948
 	
-	The undirected graph socfb-Wesleyan43 has 3593 nodes and 138035 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02139 and
-	has 2 connected components, where the component with most nodes has 3591 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 64,
-	the mean node degree is 76.84, and the node degree mode is 1. The top 5 most central
-	nodes are 3092 (degree 549), 995 (degree 397), 2119 (degree 382), 3126 (degree 371)
-	and 1342 (degree 364).
+	The undirected graph socfb-Wesleyan43 has 3593 nodes and 138035 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02139 and has 2 connected components, where the component with most
+	nodes has 3591 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 64, the mean node degree is 76.84, and
+	the node degree mode is 1. The top 5 most central nodes are 3092 (degree
+	549), 995 (degree 397), 2119 (degree 382), 3126 (degree 371) and 1342 (degree
+	364).
 	
 
 

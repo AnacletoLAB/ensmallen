@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:41.890995
 
-The undirected graph Olsenella uli has 1726 nodes and 125931 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.08459 and has 3
-connected components, where the component with most nodes has 1720 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 145.92, and the node degree mode is 3. The top 5 most central
-nodes are 633147.Olsu_0169 (degree 906), 633147.Olsu_1331 (degree 827), 633147.Olsu_1037
-(degree 801), 633147.Olsu_0201 (degree 702) and 633147.Olsu_0121 (degree 698).
+The undirected graph Olsenella uli has 1726 nodes and 125931 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.08459 and has 3 connected components, where the component with most nodes
+has 1720 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 118, the mean node degree is 145.92, and the
+node degree mode is 3. The top 5 most central nodes are 633147.Olsu_0169
+(degree 906), 633147.Olsu_1331 (degree 827), 633147.Olsu_1037 (degree 801),
+633147.Olsu_0201 (degree 702) and 633147.Olsu_0121 (degree 698).
 
 
 References
@@ -106,13 +107,14 @@ def OlsenellaUli(
 	
 	Datetime: 2021-02-02 21:21:41.890995
 	
-	The undirected graph Olsenella uli has 1726 nodes and 125931 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.08459 and has 3
-	connected components, where the component with most nodes has 1720 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 145.92, and the node degree mode is 3. The top 5 most central
-	nodes are 633147.Olsu_0169 (degree 906), 633147.Olsu_1331 (degree 827), 633147.Olsu_1037
-	(degree 801), 633147.Olsu_0201 (degree 702) and 633147.Olsu_0121 (degree 698).
+	The undirected graph Olsenella uli has 1726 nodes and 125931 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.08459 and has 3 connected components, where the component with most nodes
+	has 1720 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 118, the mean node degree is 145.92, and the
+	node degree mode is 3. The top 5 most central nodes are 633147.Olsu_0169
+	(degree 906), 633147.Olsu_1331 (degree 827), 633147.Olsu_1037 (degree 801),
+	633147.Olsu_0201 (degree 702) and 633147.Olsu_0121 (degree 698).
 	
 
 

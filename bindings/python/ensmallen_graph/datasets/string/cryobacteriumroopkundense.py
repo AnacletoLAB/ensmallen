@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:49.774259
 
-The undirected graph Cryobacterium roopkundense has 3154 nodes and 231118 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04648
-and has 25 connected components, where the component with most nodes has 3099 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 146.56, and the node degree mode is 1. The top 5
-most central nodes are 1001240.GY21_09455 (degree 960), 1001240.GY21_12150 (degree
-910), 1001240.GY21_13745 (degree 902), 1001240.GY21_09370 (degree 889) and 1001240.GY21_09325
-(degree 877).
+The undirected graph Cryobacterium roopkundense has 3154 nodes and 231118
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04648 and has 25 connected components, where the component
+with most nodes has 3099 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 146.56,
+and the node degree mode is 1. The top 5 most central nodes are 1001240.GY21_09455
+(degree 960), 1001240.GY21_12150 (degree 910), 1001240.GY21_13745 (degree
+902), 1001240.GY21_09370 (degree 889) and 1001240.GY21_09325 (degree 877).
 
 
 References
@@ -107,14 +107,14 @@ def CryobacteriumRoopkundense(
 	
 	Datetime: 2021-02-02 22:06:49.774259
 	
-	The undirected graph Cryobacterium roopkundense has 3154 nodes and 231118 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04648
-	and has 25 connected components, where the component with most nodes has 3099 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 146.56, and the node degree mode is 1. The top 5
-	most central nodes are 1001240.GY21_09455 (degree 960), 1001240.GY21_12150 (degree
-	910), 1001240.GY21_13745 (degree 902), 1001240.GY21_09370 (degree 889) and 1001240.GY21_09325
-	(degree 877).
+	The undirected graph Cryobacterium roopkundense has 3154 nodes and 231118
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04648 and has 25 connected components, where the component
+	with most nodes has 3099 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 146.56,
+	and the node degree mode is 1. The top 5 most central nodes are 1001240.GY21_09455
+	(degree 960), 1001240.GY21_12150 (degree 910), 1001240.GY21_13745 (degree
+	902), 1001240.GY21_09370 (degree 889) and 1001240.GY21_09325 (degree 877).
 	
 
 

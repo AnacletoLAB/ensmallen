@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:12.388845
 
-The undirected graph socfb-Reed98 has 962 nodes and 18812 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04070 and is connected,
-as it has a single component. The graph median node degree is 29, the mean node degree
-is 39.11, and the node degree mode is 1. The top 5 most central nodes are 679 (degree
-313), 873 (degree 213), 889 (degree 211), 646 (degree 183) and 147 (degree 182).
+The undirected graph socfb-Reed98 has 962 nodes and 18812 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04070 and is connected, as it has a single component. The graph median
+node degree is 29, the mean node degree is 39.11, and the node degree mode
+is 1. The top 5 most central nodes are 679 (degree 313), 873 (degree 213),
+889 (degree 211), 646 (degree 183) and 147 (degree 182).
 
 
 References
@@ -122,11 +123,12 @@ def SocfbReed98(
 	
 	Datetime: 2021-02-06 10:55:12.388845
 	
-	The undirected graph socfb-Reed98 has 962 nodes and 18812 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04070 and is connected,
-	as it has a single component. The graph median node degree is 29, the mean node degree
-	is 39.11, and the node degree mode is 1. The top 5 most central nodes are 679 (degree
-	313), 873 (degree 213), 889 (degree 211), 646 (degree 183) and 147 (degree 182).
+	The undirected graph socfb-Reed98 has 962 nodes and 18812 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04070 and is connected, as it has a single component. The graph median
+	node degree is 29, the mean node degree is 39.11, and the node degree mode
+	is 1. The top 5 most central nodes are 679 (degree 313), 873 (degree 213),
+	889 (degree 211), 646 (degree 183) and 147 (degree 182).
 	
 
 

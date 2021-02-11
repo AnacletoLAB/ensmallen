@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:40.220761
 
-The undirected graph Caenorhabditis japonica has 18570 nodes and 3643428 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02113
-and has 43 connected components, where the component with most nodes has 18479 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 224, the mean node degree is 392.40, and the node degree mode is 1. The top 5
-most central nodes are 281687.CJA01924 (degree 4372), 281687.CJA14814a (degree 3980),
-281687.CJA06065 (degree 3761), 281687.CJA08537 (degree 3593) and 281687.CJA22175.2
-(degree 3516).
+The undirected graph Caenorhabditis japonica has 18570 nodes and 3643428
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02113 and has 43 connected components, where the component
+with most nodes has 18479 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 224, the mean node degree
+is 392.40, and the node degree mode is 1. The top 5 most central nodes
+are 281687.CJA01924 (degree 4372), 281687.CJA14814a (degree 3980), 281687.CJA06065
+(degree 3761), 281687.CJA08537 (degree 3593) and 281687.CJA22175.2 (degree
+3516).
 
 
 References
@@ -107,14 +108,15 @@ def CaenorhabditisJaponica(
 	
 	Datetime: 2021-02-02 20:18:40.220761
 	
-	The undirected graph Caenorhabditis japonica has 18570 nodes and 3643428 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02113
-	and has 43 connected components, where the component with most nodes has 18479 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 224, the mean node degree is 392.40, and the node degree mode is 1. The top 5
-	most central nodes are 281687.CJA01924 (degree 4372), 281687.CJA14814a (degree 3980),
-	281687.CJA06065 (degree 3761), 281687.CJA08537 (degree 3593) and 281687.CJA22175.2
-	(degree 3516).
+	The undirected graph Caenorhabditis japonica has 18570 nodes and 3643428
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02113 and has 43 connected components, where the component
+	with most nodes has 18479 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 224, the mean node degree
+	is 392.40, and the node degree mode is 1. The top 5 most central nodes
+	are 281687.CJA01924 (degree 4372), 281687.CJA14814a (degree 3980), 281687.CJA06065
+	(degree 3761), 281687.CJA08537 (degree 3593) and 281687.CJA22175.2 (degree
+	3516).
 	
 
 

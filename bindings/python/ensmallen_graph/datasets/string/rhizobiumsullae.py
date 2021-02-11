@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:14:50.642225
 
-The undirected graph Rhizobium sullae has 6931 nodes and 852920 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03551 and
-has 31 connected components, where the component with most nodes has 6868 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 246.12, and the node degree mode is 1. The top 5 most central
-nodes are 1041146.ATZB01000011_gene803 (degree 2381), 1041146.ATZB01000042_gene1602
-(degree 2172), 1041146.ATZB01000002_gene5116 (degree 1921), 1041146.ATZB01000011_gene937
-(degree 1823) and 1041146.ATZB01000042_gene1617 (degree 1736).
+The undirected graph Rhizobium sullae has 6931 nodes and 852920 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03551 and has 31 connected components, where the component with most
+nodes has 6868 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 246.12, and
+the node degree mode is 1. The top 5 most central nodes are 1041146.ATZB01000011_gene803
+(degree 2381), 1041146.ATZB01000042_gene1602 (degree 2172), 1041146.ATZB01000002_gene5116
+(degree 1921), 1041146.ATZB01000011_gene937 (degree 1823) and 1041146.ATZB01000042_gene1617
+(degree 1736).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSullae(
 	
 	Datetime: 2021-02-02 22:14:50.642225
 	
-	The undirected graph Rhizobium sullae has 6931 nodes and 852920 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03551 and
-	has 31 connected components, where the component with most nodes has 6868 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 246.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1041146.ATZB01000011_gene803 (degree 2381), 1041146.ATZB01000042_gene1602
-	(degree 2172), 1041146.ATZB01000002_gene5116 (degree 1921), 1041146.ATZB01000011_gene937
-	(degree 1823) and 1041146.ATZB01000042_gene1617 (degree 1736).
+	The undirected graph Rhizobium sullae has 6931 nodes and 852920 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03551 and has 31 connected components, where the component with most
+	nodes has 6868 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 246.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1041146.ATZB01000011_gene803
+	(degree 2381), 1041146.ATZB01000042_gene1602 (degree 2172), 1041146.ATZB01000002_gene5116
+	(degree 1921), 1041146.ATZB01000011_gene937 (degree 1823) and 1041146.ATZB01000042_gene1617
+	(degree 1736).
 	
 
 

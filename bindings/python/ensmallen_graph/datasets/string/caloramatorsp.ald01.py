@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:32.306261
 
-The undirected graph Caloramator sp. ALD01 has 2442 nodes and 243287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08163 and
-has 6 connected components, where the component with most nodes has 2428 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 199.25, and the node degree mode is 2. The top 5 most central
-nodes are 1031288.AXAA01000007_gene808 (degree 1079), 1031288.AXAA01000014_gene397
-(degree 1010), 1031288.AXAA01000015_gene315 (degree 938), 1031288.AXAA01000007_gene835
-(degree 893) and 1031288.AXAA01000002_gene1496 (degree 880).
+The undirected graph Caloramator sp. ALD01 has 2442 nodes and 243287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08163 and has 6 connected components, where the component with most
+nodes has 2428 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 199.25, and
+the node degree mode is 2. The top 5 most central nodes are 1031288.AXAA01000007_gene808
+(degree 1079), 1031288.AXAA01000014_gene397 (degree 1010), 1031288.AXAA01000015_gene315
+(degree 938), 1031288.AXAA01000007_gene835 (degree 893) and 1031288.AXAA01000002_gene1496
+(degree 880).
 
 
 References
@@ -107,14 +108,15 @@ def CaloramatorSp.Ald01(
 	
 	Datetime: 2021-02-02 22:10:32.306261
 	
-	The undirected graph Caloramator sp. ALD01 has 2442 nodes and 243287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08163 and
-	has 6 connected components, where the component with most nodes has 2428 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 199.25, and the node degree mode is 2. The top 5 most central
-	nodes are 1031288.AXAA01000007_gene808 (degree 1079), 1031288.AXAA01000014_gene397
-	(degree 1010), 1031288.AXAA01000015_gene315 (degree 938), 1031288.AXAA01000007_gene835
-	(degree 893) and 1031288.AXAA01000002_gene1496 (degree 880).
+	The undirected graph Caloramator sp. ALD01 has 2442 nodes and 243287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08163 and has 6 connected components, where the component with most
+	nodes has 2428 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 199.25, and
+	the node degree mode is 2. The top 5 most central nodes are 1031288.AXAA01000007_gene808
+	(degree 1079), 1031288.AXAA01000014_gene397 (degree 1010), 1031288.AXAA01000015_gene315
+	(degree 938), 1031288.AXAA01000007_gene835 (degree 893) and 1031288.AXAA01000002_gene1496
+	(degree 880).
 	
 
 

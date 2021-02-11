@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:59.506147
 
-The undirected graph Theileria orientalis has 2395 nodes and 305172 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10645
-and has 6 connected components, where the component with most nodes has 2385 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 209, the mean node degree is 254.84, and the node degree mode is 1. The top 5
-most central nodes are 68886.XP_009689285.1 (degree 1310), 68886.XP_009689180.1 (degree
-1100), 68886.XP_009690166.1 (degree 1073), 68886.XP_009691351.1 (degree 1046) and
-68886.XP_009691367.1 (degree 1038).
+The undirected graph Theileria orientalis has 2395 nodes and 305172 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10645 and has 6 connected components, where the component
+with most nodes has 2385 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 209, the mean node degree is 254.84,
+and the node degree mode is 1. The top 5 most central nodes are 68886.XP_009689285.1
+(degree 1310), 68886.XP_009689180.1 (degree 1100), 68886.XP_009690166.1
+(degree 1073), 68886.XP_009691351.1 (degree 1046) and 68886.XP_009691367.1
+(degree 1038).
 
 
 References
@@ -107,14 +108,15 @@ def TheileriaOrientalis(
 	
 	Datetime: 2021-02-02 18:28:59.506147
 	
-	The undirected graph Theileria orientalis has 2395 nodes and 305172 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10645
-	and has 6 connected components, where the component with most nodes has 2385 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 209, the mean node degree is 254.84, and the node degree mode is 1. The top 5
-	most central nodes are 68886.XP_009689285.1 (degree 1310), 68886.XP_009689180.1 (degree
-	1100), 68886.XP_009690166.1 (degree 1073), 68886.XP_009691351.1 (degree 1046) and
-	68886.XP_009691367.1 (degree 1038).
+	The undirected graph Theileria orientalis has 2395 nodes and 305172 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10645 and has 6 connected components, where the component
+	with most nodes has 2385 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 209, the mean node degree is 254.84,
+	and the node degree mode is 1. The top 5 most central nodes are 68886.XP_009689285.1
+	(degree 1310), 68886.XP_009689180.1 (degree 1100), 68886.XP_009690166.1
+	(degree 1073), 68886.XP_009691351.1 (degree 1046) and 68886.XP_009691367.1
+	(degree 1038).
 	
 
 

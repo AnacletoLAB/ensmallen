@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:59.273025
 
-The undirected graph Streptomyces sp. SirexAAE has 6304 nodes and 705068 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03549
-and has 23 connected components, where the component with most nodes has 6253 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 223.69, and the node degree mode is 3. The top 5
-most central nodes are 862751.SACTE_4918 (degree 2994), 862751.SACTE_1423 (degree
-1988), 862751.SACTE_4052 (degree 1808), 862751.SACTE_3413 (degree 1757) and 862751.SACTE_1450
-(degree 1736).
+The undirected graph Streptomyces sp. SirexAAE has 6304 nodes and 705068
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03549 and has 23 connected components, where the component
+with most nodes has 6253 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 223.69,
+and the node degree mode is 3. The top 5 most central nodes are 862751.SACTE_4918
+(degree 2994), 862751.SACTE_1423 (degree 1988), 862751.SACTE_4052 (degree
+1808), 862751.SACTE_3413 (degree 1757) and 862751.SACTE_1450 (degree 1736).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesSp.Sirexaae(
 	
 	Datetime: 2021-02-02 21:46:59.273025
 	
-	The undirected graph Streptomyces sp. SirexAAE has 6304 nodes and 705068 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03549
-	and has 23 connected components, where the component with most nodes has 6253 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 223.69, and the node degree mode is 3. The top 5
-	most central nodes are 862751.SACTE_4918 (degree 2994), 862751.SACTE_1423 (degree
-	1988), 862751.SACTE_4052 (degree 1808), 862751.SACTE_3413 (degree 1757) and 862751.SACTE_1450
-	(degree 1736).
+	The undirected graph Streptomyces sp. SirexAAE has 6304 nodes and 705068
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03549 and has 23 connected components, where the component
+	with most nodes has 6253 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 223.69,
+	and the node degree mode is 3. The top 5 most central nodes are 862751.SACTE_4918
+	(degree 2994), 862751.SACTE_1423 (degree 1988), 862751.SACTE_4052 (degree
+	1808), 862751.SACTE_3413 (degree 1757) and 862751.SACTE_1450 (degree 1736).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:19.324041
 
-The undirected graph Endolissoclinum faulkneri L2 has 1329 nodes and 43867 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04971
-and has 75 connected components, where the component with most nodes has 1151 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 39, the mean node degree is 66.02, and the node degree mode is 1. The top 5 most
-central nodes are 1193729.A1OE_1484 (degree 663), 1193729.A1OE_1494 (degree 643),
-1193729.A1OE_1496 (degree 575), 1193729.A1OE_561 (degree 480) and 1193729.A1OE_1543
-(degree 437).
+The undirected graph Endolissoclinum faulkneri L2 has 1329 nodes and 43867
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04971 and has 75 connected components, where the component
+with most nodes has 1151 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 39, the mean node degree is 66.02,
+and the node degree mode is 1. The top 5 most central nodes are 1193729.A1OE_1484
+(degree 663), 1193729.A1OE_1494 (degree 643), 1193729.A1OE_1496 (degree
+575), 1193729.A1OE_561 (degree 480) and 1193729.A1OE_1543 (degree 437).
 
 
 References
@@ -107,14 +107,14 @@ def EndolissoclinumFaulkneriL2(
 	
 	Datetime: 2021-02-02 23:12:19.324041
 	
-	The undirected graph Endolissoclinum faulkneri L2 has 1329 nodes and 43867 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04971
-	and has 75 connected components, where the component with most nodes has 1151 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 39, the mean node degree is 66.02, and the node degree mode is 1. The top 5 most
-	central nodes are 1193729.A1OE_1484 (degree 663), 1193729.A1OE_1494 (degree 643),
-	1193729.A1OE_1496 (degree 575), 1193729.A1OE_561 (degree 480) and 1193729.A1OE_1543
-	(degree 437).
+	The undirected graph Endolissoclinum faulkneri L2 has 1329 nodes and 43867
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04971 and has 75 connected components, where the component
+	with most nodes has 1151 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 39, the mean node degree is 66.02,
+	and the node degree mode is 1. The top 5 most central nodes are 1193729.A1OE_1484
+	(degree 663), 1193729.A1OE_1494 (degree 643), 1193729.A1OE_1496 (degree
+	575), 1193729.A1OE_561 (degree 480) and 1193729.A1OE_1543 (degree 437).
 	
 
 

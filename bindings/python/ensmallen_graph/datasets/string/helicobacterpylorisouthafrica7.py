@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:32.497565
 
-The undirected graph Helicobacter pylori SouthAfrica7 has 1512 nodes and 70392 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06162
-and has 13 connected components, where the component with most nodes has 1481 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 69, the mean node degree is 93.11, and the node degree mode is 4. The top 5 most
-central nodes are 907239.HPSA_06975 (degree 577), 907239.HPSA_05890 (degree 567),
-907239.HPSA_05045 (degree 525), 907239.HPSA_05100 (degree 494) and 907239.HPSA_05010
-(degree 478).
+The undirected graph Helicobacter pylori SouthAfrica7 has 1512 nodes and
+70392 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06162 and has 13 connected components, where the
+component with most nodes has 1481 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+is 93.11, and the node degree mode is 4. The top 5 most central nodes are
+907239.HPSA_06975 (degree 577), 907239.HPSA_05890 (degree 567), 907239.HPSA_05045
+(degree 525), 907239.HPSA_05100 (degree 494) and 907239.HPSA_05010 (degree
+478).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterPyloriSouthafrica7(
 	
 	Datetime: 2021-02-02 21:54:32.497565
 	
-	The undirected graph Helicobacter pylori SouthAfrica7 has 1512 nodes and 70392 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06162
-	and has 13 connected components, where the component with most nodes has 1481 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 69, the mean node degree is 93.11, and the node degree mode is 4. The top 5 most
-	central nodes are 907239.HPSA_06975 (degree 577), 907239.HPSA_05890 (degree 567),
-	907239.HPSA_05045 (degree 525), 907239.HPSA_05100 (degree 494) and 907239.HPSA_05010
-	(degree 478).
+	The undirected graph Helicobacter pylori SouthAfrica7 has 1512 nodes and
+	70392 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06162 and has 13 connected components, where the
+	component with most nodes has 1481 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+	is 93.11, and the node degree mode is 4. The top 5 most central nodes are
+	907239.HPSA_06975 (degree 577), 907239.HPSA_05890 (degree 567), 907239.HPSA_05045
+	(degree 525), 907239.HPSA_05100 (degree 494) and 907239.HPSA_05010 (degree
+	478).
 	
 
 

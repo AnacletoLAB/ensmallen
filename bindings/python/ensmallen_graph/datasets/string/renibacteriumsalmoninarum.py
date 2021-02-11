@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:43.650743
 
-The undirected graph Renibacterium salmoninarum has 3483 nodes and 331872 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05473
-and has 2 connected components, where the component with most nodes has 3481 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 190.57, and the node degree mode is 5. The top 5
-most central nodes are 288705.RSal33209_2539 (degree 1640), 288705.RSal33209_2302
-(degree 1183), 288705.RSal33209_2540 (degree 1002), 288705.RSal33209_0845 (degree
-969) and 288705.RSal33209_1755 (degree 962).
+The undirected graph Renibacterium salmoninarum has 3483 nodes and 331872
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05473 and has 2 connected components, where the component
+with most nodes has 3481 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 190.57,
+and the node degree mode is 5. The top 5 most central nodes are 288705.RSal33209_2539
+(degree 1640), 288705.RSal33209_2302 (degree 1183), 288705.RSal33209_2540
+(degree 1002), 288705.RSal33209_0845 (degree 969) and 288705.RSal33209_1755
+(degree 962).
 
 
 References
@@ -107,14 +108,15 @@ def RenibacteriumSalmoninarum(
 	
 	Datetime: 2021-02-02 20:19:43.650743
 	
-	The undirected graph Renibacterium salmoninarum has 3483 nodes and 331872 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05473
-	and has 2 connected components, where the component with most nodes has 3481 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 190.57, and the node degree mode is 5. The top 5
-	most central nodes are 288705.RSal33209_2539 (degree 1640), 288705.RSal33209_2302
-	(degree 1183), 288705.RSal33209_2540 (degree 1002), 288705.RSal33209_0845 (degree
-	969) and 288705.RSal33209_1755 (degree 962).
+	The undirected graph Renibacterium salmoninarum has 3483 nodes and 331872
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05473 and has 2 connected components, where the component
+	with most nodes has 3481 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 190.57,
+	and the node degree mode is 5. The top 5 most central nodes are 288705.RSal33209_2539
+	(degree 1640), 288705.RSal33209_2302 (degree 1183), 288705.RSal33209_2540
+	(degree 1002), 288705.RSal33209_0845 (degree 969) and 288705.RSal33209_1755
+	(degree 962).
 	
 
 

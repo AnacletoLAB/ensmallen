@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:53.475293
 
-The undirected graph Providencia burhodogranariea has 3831 nodes and 459764 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06267
-and has 6 connected components, where the component with most nodes has 3821 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 240.02, and the node degree mode is 1. The top 5
-most central nodes are 1141662.OOA_04587 (degree 1303), 1141662.OOA_14555 (degree
-1296), 1141662.OOA_13287 (degree 1265), 1141662.OOA_15235 (degree 1251) and 1141662.OOA_04592
-(degree 1188).
+The undirected graph Providencia burhodogranariea has 3831 nodes and 459764
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06267 and has 6 connected components, where the component
+with most nodes has 3821 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 240.02,
+and the node degree mode is 1. The top 5 most central nodes are 1141662.OOA_04587
+(degree 1303), 1141662.OOA_14555 (degree 1296), 1141662.OOA_13287 (degree
+1265), 1141662.OOA_15235 (degree 1251) and 1141662.OOA_04592 (degree 1188).
 
 
 References
@@ -107,14 +107,14 @@ def ProvidenciaBurhodogranariea(
 	
 	Datetime: 2021-02-02 22:57:53.475293
 	
-	The undirected graph Providencia burhodogranariea has 3831 nodes and 459764 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06267
-	and has 6 connected components, where the component with most nodes has 3821 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 240.02, and the node degree mode is 1. The top 5
-	most central nodes are 1141662.OOA_04587 (degree 1303), 1141662.OOA_14555 (degree
-	1296), 1141662.OOA_13287 (degree 1265), 1141662.OOA_15235 (degree 1251) and 1141662.OOA_04592
-	(degree 1188).
+	The undirected graph Providencia burhodogranariea has 3831 nodes and 459764
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06267 and has 6 connected components, where the component
+	with most nodes has 3821 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 240.02,
+	and the node degree mode is 1. The top 5 most central nodes are 1141662.OOA_04587
+	(degree 1303), 1141662.OOA_14555 (degree 1296), 1141662.OOA_13287 (degree
+	1265), 1141662.OOA_15235 (degree 1251) and 1141662.OOA_04592 (degree 1188).
 	
 
 

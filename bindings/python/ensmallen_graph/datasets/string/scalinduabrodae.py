@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:36.993626
 
-The undirected graph Scalindua brodae has 3898 nodes and 365405 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04811 and
-has 53 connected components, where the component with most nodes has 3774 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 187.48, and the node degree mode is 1. The top 5 most central
-nodes are 237368.SCABRO_02775 (degree 1464), 237368.SCABRO_03544 (degree 1420), 237368.SCABRO_00476
-(degree 1292), 237368.SCABRO_01854 (degree 1277) and 237368.SCABRO_00207 (degree
+The undirected graph Scalindua brodae has 3898 nodes and 365405 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04811 and has 53 connected components, where the component with most
+nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 187.48, and
+the node degree mode is 1. The top 5 most central nodes are 237368.SCABRO_02775
+(degree 1464), 237368.SCABRO_03544 (degree 1420), 237368.SCABRO_00476 (degree
+1292), 237368.SCABRO_01854 (degree 1277) and 237368.SCABRO_00207 (degree
 1257).
 
 
@@ -107,13 +108,14 @@ def ScalinduaBrodae(
 	
 	Datetime: 2021-02-05 17:17:36.993626
 	
-	The undirected graph Scalindua brodae has 3898 nodes and 365405 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04811 and
-	has 53 connected components, where the component with most nodes has 3774 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 187.48, and the node degree mode is 1. The top 5 most central
-	nodes are 237368.SCABRO_02775 (degree 1464), 237368.SCABRO_03544 (degree 1420), 237368.SCABRO_00476
-	(degree 1292), 237368.SCABRO_01854 (degree 1277) and 237368.SCABRO_00207 (degree
+	The undirected graph Scalindua brodae has 3898 nodes and 365405 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04811 and has 53 connected components, where the component with most
+	nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 187.48, and
+	the node degree mode is 1. The top 5 most central nodes are 237368.SCABRO_02775
+	(degree 1464), 237368.SCABRO_03544 (degree 1420), 237368.SCABRO_00476 (degree
+	1292), 237368.SCABRO_01854 (degree 1277) and 237368.SCABRO_00207 (degree
 	1257).
 	
 

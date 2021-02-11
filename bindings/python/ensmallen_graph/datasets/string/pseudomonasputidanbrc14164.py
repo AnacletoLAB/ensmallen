@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:22.044809
 
-The undirected graph Pseudomonas putida NBRC14164 has 5425 nodes and 538171 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03658
-and has 23 connected components, where the component with most nodes has 5369 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 198.40, and the node degree mode is 2. The top 5
-most central nodes are 1211579.PP4_44720 (degree 2594), 1211579.PP4_01150 (degree
-1862), 1211579.PP4_47180 (degree 1510), 1211579.PP4_51410 (degree 1490) and 1211579.PP4_42850
-(degree 1392).
+The undirected graph Pseudomonas putida NBRC14164 has 5425 nodes and 538171
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03658 and has 23 connected components, where the component
+with most nodes has 5369 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 198.40,
+and the node degree mode is 2. The top 5 most central nodes are 1211579.PP4_44720
+(degree 2594), 1211579.PP4_01150 (degree 1862), 1211579.PP4_47180 (degree
+1510), 1211579.PP4_51410 (degree 1490) and 1211579.PP4_42850 (degree 1392).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasPutidaNbrc14164(
 	
 	Datetime: 2021-02-02 23:19:22.044809
 	
-	The undirected graph Pseudomonas putida NBRC14164 has 5425 nodes and 538171 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03658
-	and has 23 connected components, where the component with most nodes has 5369 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 198.40, and the node degree mode is 2. The top 5
-	most central nodes are 1211579.PP4_44720 (degree 2594), 1211579.PP4_01150 (degree
-	1862), 1211579.PP4_47180 (degree 1510), 1211579.PP4_51410 (degree 1490) and 1211579.PP4_42850
-	(degree 1392).
+	The undirected graph Pseudomonas putida NBRC14164 has 5425 nodes and 538171
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03658 and has 23 connected components, where the component
+	with most nodes has 5369 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 198.40,
+	and the node degree mode is 2. The top 5 most central nodes are 1211579.PP4_44720
+	(degree 2594), 1211579.PP4_01150 (degree 1862), 1211579.PP4_47180 (degree
+	1510), 1211579.PP4_51410 (degree 1490) and 1211579.PP4_42850 (degree 1392).
 	
 
 

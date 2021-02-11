@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:36.211186
 
-The undirected graph Brachyspira hyodysenteriae has 2629 nodes and 202101 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05850
-and has 10 connected components, where the component with most nodes has 2609 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 153.75, and the node degree mode is 5. The top 5
-most central nodes are 565034.BHWA1_01543 (degree 1015), 565034.BHWA1_02587 (degree
-989), 565034.BHWA1_02213 (degree 788), 565034.BHWA1_00219 (degree 778) and 565034.BHWA1_02605
-(degree 754).
+The undirected graph Brachyspira hyodysenteriae has 2629 nodes and 202101
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05850 and has 10 connected components, where the component
+with most nodes has 2609 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 153.75,
+and the node degree mode is 5. The top 5 most central nodes are 565034.BHWA1_01543
+(degree 1015), 565034.BHWA1_02587 (degree 989), 565034.BHWA1_02213 (degree
+788), 565034.BHWA1_00219 (degree 778) and 565034.BHWA1_02605 (degree 754).
 
 
 References
@@ -107,14 +107,14 @@ def BrachyspiraHyodysenteriae(
 	
 	Datetime: 2021-02-02 21:12:36.211186
 	
-	The undirected graph Brachyspira hyodysenteriae has 2629 nodes and 202101 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05850
-	and has 10 connected components, where the component with most nodes has 2609 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 153.75, and the node degree mode is 5. The top 5
-	most central nodes are 565034.BHWA1_01543 (degree 1015), 565034.BHWA1_02587 (degree
-	989), 565034.BHWA1_02213 (degree 788), 565034.BHWA1_00219 (degree 778) and 565034.BHWA1_02605
-	(degree 754).
+	The undirected graph Brachyspira hyodysenteriae has 2629 nodes and 202101
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05850 and has 10 connected components, where the component
+	with most nodes has 2609 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 153.75,
+	and the node degree mode is 5. The top 5 most central nodes are 565034.BHWA1_01543
+	(degree 1015), 565034.BHWA1_02587 (degree 989), 565034.BHWA1_02213 (degree
+	788), 565034.BHWA1_00219 (degree 778) and 565034.BHWA1_02605 (degree 754).
 	
 
 

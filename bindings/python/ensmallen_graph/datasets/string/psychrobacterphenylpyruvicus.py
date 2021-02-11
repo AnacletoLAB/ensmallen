@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:52.587099
 
-The undirected graph Psychrobacter phenylpyruvicus has 2555 nodes and 161968 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04964
-and has 19 connected components, where the component with most nodes has 2516 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 126.79, and the node degree mode is 1. The top 5
-most central nodes are 1123034.JMKP01000043_gene211 (degree 966), 1123034.JMKP01000003_gene1572
-(degree 887), 1123034.JMKP01000005_gene839 (degree 853), 1123034.JMKP01000014_gene579
-(degree 805) and 1123034.JMKP01000022_gene2339 (degree 790).
+The undirected graph Psychrobacter phenylpyruvicus has 2555 nodes and 161968
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04964 and has 19 connected components, where the component
+with most nodes has 2516 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 126.79,
+and the node degree mode is 1. The top 5 most central nodes are 1123034.JMKP01000043_gene211
+(degree 966), 1123034.JMKP01000003_gene1572 (degree 887), 1123034.JMKP01000005_gene839
+(degree 853), 1123034.JMKP01000014_gene579 (degree 805) and 1123034.JMKP01000022_gene2339
+(degree 790).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterPhenylpyruvicus(
 	
 	Datetime: 2021-02-02 22:46:52.587099
 	
-	The undirected graph Psychrobacter phenylpyruvicus has 2555 nodes and 161968 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04964
-	and has 19 connected components, where the component with most nodes has 2516 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 126.79, and the node degree mode is 1. The top 5
-	most central nodes are 1123034.JMKP01000043_gene211 (degree 966), 1123034.JMKP01000003_gene1572
-	(degree 887), 1123034.JMKP01000005_gene839 (degree 853), 1123034.JMKP01000014_gene579
-	(degree 805) and 1123034.JMKP01000022_gene2339 (degree 790).
+	The undirected graph Psychrobacter phenylpyruvicus has 2555 nodes and 161968
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04964 and has 19 connected components, where the component
+	with most nodes has 2516 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 126.79,
+	and the node degree mode is 1. The top 5 most central nodes are 1123034.JMKP01000043_gene211
+	(degree 966), 1123034.JMKP01000003_gene1572 (degree 887), 1123034.JMKP01000005_gene839
+	(degree 853), 1123034.JMKP01000014_gene579 (degree 805) and 1123034.JMKP01000022_gene2339
+	(degree 790).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:41.395814
 
-The undirected graph Methylophaga nitratireducenticrescens has 2983 nodes and 227005
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05104 and has 10 connected components, where the component with most nodes has
-2956 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 137, the mean node degree is 152.20, and the node degree mode is 5. The
-top 5 most central nodes are 754476.Q7A_2480 (degree 1171), 754476.Q7A_779 (degree
-817), 754476.Q7A_240 (degree 816), 754476.Q7A_1557 (degree 778) and 754476.Q7A_829
-(degree 773).
+The undirected graph Methylophaga nitratireducenticrescens has 2983 nodes
+and 227005 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05104 and has 10 connected components, where the
+component with most nodes has 2956 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 137, the mean node degree
+is 152.20, and the node degree mode is 5. The top 5 most central nodes
+are 754476.Q7A_2480 (degree 1171), 754476.Q7A_779 (degree 817), 754476.Q7A_240
+(degree 816), 754476.Q7A_1557 (degree 778) and 754476.Q7A_829 (degree 773).
 
 
 References
@@ -107,14 +107,14 @@ def MethylophagaNitratireducenticrescens(
 	
 	Datetime: 2021-02-02 21:40:41.395814
 	
-	The undirected graph Methylophaga nitratireducenticrescens has 2983 nodes and 227005
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05104 and has 10 connected components, where the component with most nodes has
-	2956 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 137, the mean node degree is 152.20, and the node degree mode is 5. The
-	top 5 most central nodes are 754476.Q7A_2480 (degree 1171), 754476.Q7A_779 (degree
-	817), 754476.Q7A_240 (degree 816), 754476.Q7A_1557 (degree 778) and 754476.Q7A_829
-	(degree 773).
+	The undirected graph Methylophaga nitratireducenticrescens has 2983 nodes
+	and 227005 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05104 and has 10 connected components, where the
+	component with most nodes has 2956 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 137, the mean node degree
+	is 152.20, and the node degree mode is 5. The top 5 most central nodes
+	are 754476.Q7A_2480 (degree 1171), 754476.Q7A_779 (degree 817), 754476.Q7A_240
+	(degree 816), 754476.Q7A_1557 (degree 778) and 754476.Q7A_829 (degree 773).
 	
 
 

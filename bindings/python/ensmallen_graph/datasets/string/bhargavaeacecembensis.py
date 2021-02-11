@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:43.604193
 
-The undirected graph Bhargavaea cecembensis has 3152 nodes and 314803 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06339 and
-has 5 connected components, where the component with most nodes has 3144 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 199.75, and the node degree mode is 8. The top 5 most central
-nodes are 1235279.C772_02049 (degree 1130), 1235279.C772_02750 (degree 997), 1235279.C772_03161
-(degree 994), 1235279.C772_00415 (degree 890) and 1235279.C772_02563 (degree 884).
+The undirected graph Bhargavaea cecembensis has 3152 nodes and 314803 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06339 and has 5 connected components, where the component with most
+nodes has 3144 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 199.75, and
+the node degree mode is 8. The top 5 most central nodes are 1235279.C772_02049
+(degree 1130), 1235279.C772_02750 (degree 997), 1235279.C772_03161 (degree
+994), 1235279.C772_00415 (degree 890) and 1235279.C772_02563 (degree 884).
 
 
 References
@@ -106,13 +107,14 @@ def BhargavaeaCecembensis(
 	
 	Datetime: 2021-02-02 23:29:43.604193
 	
-	The undirected graph Bhargavaea cecembensis has 3152 nodes and 314803 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06339 and
-	has 5 connected components, where the component with most nodes has 3144 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 199.75, and the node degree mode is 8. The top 5 most central
-	nodes are 1235279.C772_02049 (degree 1130), 1235279.C772_02750 (degree 997), 1235279.C772_03161
-	(degree 994), 1235279.C772_00415 (degree 890) and 1235279.C772_02563 (degree 884).
+	The undirected graph Bhargavaea cecembensis has 3152 nodes and 314803 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06339 and has 5 connected components, where the component with most
+	nodes has 3144 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 199.75, and
+	the node degree mode is 8. The top 5 most central nodes are 1235279.C772_02049
+	(degree 1130), 1235279.C772_02750 (degree 997), 1235279.C772_03161 (degree
+	994), 1235279.C772_00415 (degree 890) and 1235279.C772_02563 (degree 884).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:18.658904
 
-The undirected graph Caenorhabditis tropicalis has 14041 nodes and 2023668 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02053
-and has 48 connected components, where the component with most nodes has 13942 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 288.25, and the node degree mode is 1. The top 5
-most central nodes are 1561998.Csp11.Scaffold629.g8713.t1 (degree 4779), 1561998.Csp11.Scaffold629.g7749.t1
+The undirected graph Caenorhabditis tropicalis has 14041 nodes and 2023668
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02053 and has 48 connected components, where the component
+with most nodes has 13942 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 165, the mean node degree
+is 288.25, and the node degree mode is 1. The top 5 most central nodes
+are 1561998.Csp11.Scaffold629.g8713.t1 (degree 4779), 1561998.Csp11.Scaffold629.g7749.t1
 (degree 3103), 1561998.Csp11.Scaffold630.g20436.t1 (degree 3053), 1561998.Csp11.Scaffold629.g9961.t1
 (degree 2977) and 1561998.Csp11.Scaffold627.g6738.t1 (degree 2815).
 
@@ -107,12 +108,13 @@ def CaenorhabditisTropicalis(
 	
 	Datetime: 2021-02-03 23:21:18.658904
 	
-	The undirected graph Caenorhabditis tropicalis has 14041 nodes and 2023668 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02053
-	and has 48 connected components, where the component with most nodes has 13942 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 288.25, and the node degree mode is 1. The top 5
-	most central nodes are 1561998.Csp11.Scaffold629.g8713.t1 (degree 4779), 1561998.Csp11.Scaffold629.g7749.t1
+	The undirected graph Caenorhabditis tropicalis has 14041 nodes and 2023668
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02053 and has 48 connected components, where the component
+	with most nodes has 13942 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 165, the mean node degree
+	is 288.25, and the node degree mode is 1. The top 5 most central nodes
+	are 1561998.Csp11.Scaffold629.g8713.t1 (degree 4779), 1561998.Csp11.Scaffold629.g7749.t1
 	(degree 3103), 1561998.Csp11.Scaffold630.g20436.t1 (degree 3053), 1561998.Csp11.Scaffold629.g9961.t1
 	(degree 2977) and 1561998.Csp11.Scaffold627.g6738.t1 (degree 2815).
 	

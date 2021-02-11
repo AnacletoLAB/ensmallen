@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:11.860451
 
-The undirected graph Chloroflexus aggregans has 3706 nodes and 349634 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05093 and
-has 14 connected components, where the component with most nodes has 3672 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 188.69, and the node degree mode is 3. The top 5 most central
-nodes are 326427.Cagg_2054 (degree 1880), 326427.Cagg_3590 (degree 1706), 326427.Cagg_2008
-(degree 1593), 326427.Cagg_3753 (degree 1578) and 326427.Cagg_1830 (degree 1549).
+The undirected graph Chloroflexus aggregans has 3706 nodes and 349634 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05093 and has 14 connected components, where the component with most
+nodes has 3672 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 188.69, and
+the node degree mode is 3. The top 5 most central nodes are 326427.Cagg_2054
+(degree 1880), 326427.Cagg_3590 (degree 1706), 326427.Cagg_2008 (degree
+1593), 326427.Cagg_3753 (degree 1578) and 326427.Cagg_1830 (degree 1549).
 
 
 References
@@ -106,13 +107,14 @@ def ChloroflexusAggregans(
 	
 	Datetime: 2021-02-02 20:29:11.860451
 	
-	The undirected graph Chloroflexus aggregans has 3706 nodes and 349634 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05093 and
-	has 14 connected components, where the component with most nodes has 3672 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 188.69, and the node degree mode is 3. The top 5 most central
-	nodes are 326427.Cagg_2054 (degree 1880), 326427.Cagg_3590 (degree 1706), 326427.Cagg_2008
-	(degree 1593), 326427.Cagg_3753 (degree 1578) and 326427.Cagg_1830 (degree 1549).
+	The undirected graph Chloroflexus aggregans has 3706 nodes and 349634 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05093 and has 14 connected components, where the component with most
+	nodes has 3672 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 188.69, and
+	the node degree mode is 3. The top 5 most central nodes are 326427.Cagg_2054
+	(degree 1880), 326427.Cagg_3590 (degree 1706), 326427.Cagg_2008 (degree
+	1593), 326427.Cagg_3753 (degree 1578) and 326427.Cagg_1830 (degree 1549).
 	
 
 

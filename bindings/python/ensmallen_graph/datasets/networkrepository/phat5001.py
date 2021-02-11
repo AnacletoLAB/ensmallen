@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:11.138503
 
-The undirected graph p-hat500-1 has 500 nodes and 31569 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.25306 and
-is connected, as it has a single component. The graph median node degree is 127,
-the mean node degree is 126.28 and the node degree mode is 166. The top 5 most central
-nodes are 84 (degree 204), 231 (degree 200), 336 (degree 199), 266 (degree 199) and
-190 (degree 199).
+The undirected graph p-hat500-1 has 500 nodes and 31569 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.25306 and is connected, as it has a single component. The graph median
+node degree is 127, the mean node degree is 126.28 and the node degree
+mode is 166. The top 5 most central nodes are 84 (degree 204), 231 (degree
+200), 336 (degree 199), 266 (degree 199) and 190 (degree 199).
 
 
 References
@@ -115,12 +115,12 @@ def PHat5001(
 	
 	Datetime: 2021-02-03 22:56:11.138503
 	
-	The undirected graph p-hat500-1 has 500 nodes and 31569 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.25306 and
-	is connected, as it has a single component. The graph median node degree is 127,
-	the mean node degree is 126.28 and the node degree mode is 166. The top 5 most central
-	nodes are 84 (degree 204), 231 (degree 200), 336 (degree 199), 266 (degree 199) and
-	190 (degree 199).
+	The undirected graph p-hat500-1 has 500 nodes and 31569 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.25306 and is connected, as it has a single component. The graph median
+	node degree is 127, the mean node degree is 126.28 and the node degree
+	mode is 166. The top 5 most central nodes are 84 (degree 204), 231 (degree
+	200), 336 (degree 199), 266 (degree 199) and 190 (degree 199).
 	
 
 

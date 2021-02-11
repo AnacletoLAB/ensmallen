@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:15.320122
 
-The undirected graph Metallosphaera yellowstonensis has 3248 nodes and 200876 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03809
-and has 94 connected components, where the component with most nodes has 2973 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 58, the mean node degree is 123.69, and the node degree mode is 2. The top 5 most
-central nodes are 671065.MetMK1DRAFT_00027670 (degree 842), 671065.MetMK1DRAFT_00027680
+The undirected graph Metallosphaera yellowstonensis has 3248 nodes and
+200876 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03809 and has 94 connected components, where the
+component with most nodes has 2973 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 58, the mean node degree
+is 123.69, and the node degree mode is 2. The top 5 most central nodes
+are 671065.MetMK1DRAFT_00027670 (degree 842), 671065.MetMK1DRAFT_00027680
 (degree 740), 671065.MetMK1DRAFT_00015150 (degree 736), 671065.MetMK1DRAFT_00027650
 (degree 720) and 671065.MetMK1DRAFT_00025600 (degree 715).
 
@@ -107,12 +108,13 @@ def MetallosphaeraYellowstonensis(
 	
 	Datetime: 2021-02-02 21:29:15.320122
 	
-	The undirected graph Metallosphaera yellowstonensis has 3248 nodes and 200876 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03809
-	and has 94 connected components, where the component with most nodes has 2973 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 58, the mean node degree is 123.69, and the node degree mode is 2. The top 5 most
-	central nodes are 671065.MetMK1DRAFT_00027670 (degree 842), 671065.MetMK1DRAFT_00027680
+	The undirected graph Metallosphaera yellowstonensis has 3248 nodes and
+	200876 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03809 and has 94 connected components, where the
+	component with most nodes has 2973 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 58, the mean node degree
+	is 123.69, and the node degree mode is 2. The top 5 most central nodes
+	are 671065.MetMK1DRAFT_00027670 (degree 842), 671065.MetMK1DRAFT_00027680
 	(degree 740), 671065.MetMK1DRAFT_00015150 (degree 736), 671065.MetMK1DRAFT_00027650
 	(degree 720) and 671065.MetMK1DRAFT_00025600 (degree 715).
 	

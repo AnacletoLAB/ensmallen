@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:50.882425
 
-The undirected graph Streptococcus pseudopneumoniae has 2216 nodes and 118330 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04821
-and has 13 connected components, where the component with most nodes has 2183 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 106.80, and the node degree mode is 11. The top 5
-most central nodes are 1054460.SPPN_00560 (degree 837), 1054460.SPPN_07120 (degree
-656), 1054460.SPPN_10360 (degree 616), 1054460.SPPN_04035 (degree 612) and 1054460.SPPN_11335
-(degree 604).
+The undirected graph Streptococcus pseudopneumoniae has 2216 nodes and
+118330 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04821 and has 13 connected components, where the
+component with most nodes has 2183 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+is 106.80, and the node degree mode is 11. The top 5 most central nodes
+are 1054460.SPPN_00560 (degree 837), 1054460.SPPN_07120 (degree 656), 1054460.SPPN_10360
+(degree 616), 1054460.SPPN_04035 (degree 612) and 1054460.SPPN_11335 (degree
+604).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusPseudopneumoniae(
 	
 	Datetime: 2021-02-02 22:17:50.882425
 	
-	The undirected graph Streptococcus pseudopneumoniae has 2216 nodes and 118330 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04821
-	and has 13 connected components, where the component with most nodes has 2183 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 106.80, and the node degree mode is 11. The top 5
-	most central nodes are 1054460.SPPN_00560 (degree 837), 1054460.SPPN_07120 (degree
-	656), 1054460.SPPN_10360 (degree 616), 1054460.SPPN_04035 (degree 612) and 1054460.SPPN_11335
-	(degree 604).
+	The undirected graph Streptococcus pseudopneumoniae has 2216 nodes and
+	118330 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04821 and has 13 connected components, where the
+	component with most nodes has 2183 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+	is 106.80, and the node degree mode is 11. The top 5 most central nodes
+	are 1054460.SPPN_00560 (degree 837), 1054460.SPPN_07120 (degree 656), 1054460.SPPN_10360
+	(degree 616), 1054460.SPPN_04035 (degree 612) and 1054460.SPPN_11335 (degree
+	604).
 	
 
 

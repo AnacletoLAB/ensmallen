@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:42.946800
 
-The undirected graph Pseudoalteromonas ruthenica has 3594 nodes and 490419 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07596
-and has 14 connected components, where the component with most nodes has 3557 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 255, the mean node degree is 272.91, and the node degree mode is 3. The top 5
-most central nodes are 1216007.AOPM01000025_gene3259 (degree 1354), 1216007.AOPM01000105_gene11
-(degree 1304), 1216007.AOPM01000019_gene2894 (degree 1210), 1216007.AOPM01000098_gene573
-(degree 1203) and 1216007.AOPM01000042_gene2833 (degree 1200).
+The undirected graph Pseudoalteromonas ruthenica has 3594 nodes and 490419
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07596 and has 14 connected components, where the component
+with most nodes has 3557 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 255, the mean node degree is 272.91,
+and the node degree mode is 3. The top 5 most central nodes are 1216007.AOPM01000025_gene3259
+(degree 1354), 1216007.AOPM01000105_gene11 (degree 1304), 1216007.AOPM01000019_gene2894
+(degree 1210), 1216007.AOPM01000098_gene573 (degree 1203) and 1216007.AOPM01000042_gene2833
+(degree 1200).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasRuthenica(
 	
 	Datetime: 2021-02-02 23:20:42.946800
 	
-	The undirected graph Pseudoalteromonas ruthenica has 3594 nodes and 490419 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07596
-	and has 14 connected components, where the component with most nodes has 3557 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 255, the mean node degree is 272.91, and the node degree mode is 3. The top 5
-	most central nodes are 1216007.AOPM01000025_gene3259 (degree 1354), 1216007.AOPM01000105_gene11
-	(degree 1304), 1216007.AOPM01000019_gene2894 (degree 1210), 1216007.AOPM01000098_gene573
-	(degree 1203) and 1216007.AOPM01000042_gene2833 (degree 1200).
+	The undirected graph Pseudoalteromonas ruthenica has 3594 nodes and 490419
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07596 and has 14 connected components, where the component
+	with most nodes has 3557 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 255, the mean node degree is 272.91,
+	and the node degree mode is 3. The top 5 most central nodes are 1216007.AOPM01000025_gene3259
+	(degree 1354), 1216007.AOPM01000105_gene11 (degree 1304), 1216007.AOPM01000019_gene2894
+	(degree 1210), 1216007.AOPM01000098_gene573 (degree 1203) and 1216007.AOPM01000042_gene2833
+	(degree 1200).
 	
 
 

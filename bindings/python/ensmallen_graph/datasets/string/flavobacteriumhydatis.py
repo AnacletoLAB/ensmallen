@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:03.956985
 
-The undirected graph Flavobacterium hydatis has 4606 nodes and 568880 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05364 and
-has 24 connected components, where the component with most nodes has 4515 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 247.02, and the node degree mode is 4. The top 5 most central
-nodes are 991.IW20_22165 (degree 1553), 991.IW20_14795 (degree 1495), 991.IW20_22855
-(degree 1329), 991.IW20_07570 (degree 1326) and 991.IW20_03660 (degree 1320).
+The undirected graph Flavobacterium hydatis has 4606 nodes and 568880 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05364 and has 24 connected components, where the component with most
+nodes has 4515 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 233, the mean node degree is 247.02, and
+the node degree mode is 4. The top 5 most central nodes are 991.IW20_22165
+(degree 1553), 991.IW20_14795 (degree 1495), 991.IW20_22855 (degree 1329),
+991.IW20_07570 (degree 1326) and 991.IW20_03660 (degree 1320).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumHydatis(
 	
 	Datetime: 2021-02-02 16:22:03.956985
 	
-	The undirected graph Flavobacterium hydatis has 4606 nodes and 568880 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05364 and
-	has 24 connected components, where the component with most nodes has 4515 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 247.02, and the node degree mode is 4. The top 5 most central
-	nodes are 991.IW20_22165 (degree 1553), 991.IW20_14795 (degree 1495), 991.IW20_22855
-	(degree 1329), 991.IW20_07570 (degree 1326) and 991.IW20_03660 (degree 1320).
+	The undirected graph Flavobacterium hydatis has 4606 nodes and 568880 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05364 and has 24 connected components, where the component with most
+	nodes has 4515 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 233, the mean node degree is 247.02, and
+	the node degree mode is 4. The top 5 most central nodes are 991.IW20_22165
+	(degree 1553), 991.IW20_14795 (degree 1495), 991.IW20_22855 (degree 1329),
+	991.IW20_07570 (degree 1326) and 991.IW20_03660 (degree 1320).
 	
 
 

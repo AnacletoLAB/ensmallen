@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:08.272584
 
-The undirected graph Clostridium cellulovorans has 4180 nodes and 337028 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03859
-and has 29 connected components, where the component with most nodes has 4114 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 161.26, and the node degree mode is 1. The top 5
-most central nodes are 573061.Clocel_0020 (degree 1795), 573061.Clocel_2730 (degree
-1461), 573061.Clocel_2840 (degree 1302), 573061.Clocel_2962 (degree 1292) and 573061.Clocel_0022
-(degree 1221).
+The undirected graph Clostridium cellulovorans has 4180 nodes and 337028
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03859 and has 29 connected components, where the component
+with most nodes has 4114 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 161.26,
+and the node degree mode is 1. The top 5 most central nodes are 573061.Clocel_0020
+(degree 1795), 573061.Clocel_2730 (degree 1461), 573061.Clocel_2840 (degree
+1302), 573061.Clocel_2962 (degree 1292) and 573061.Clocel_0022 (degree
+1221).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumCellulovorans(
 	
 	Datetime: 2021-02-02 21:14:08.272584
 	
-	The undirected graph Clostridium cellulovorans has 4180 nodes and 337028 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03859
-	and has 29 connected components, where the component with most nodes has 4114 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 161.26, and the node degree mode is 1. The top 5
-	most central nodes are 573061.Clocel_0020 (degree 1795), 573061.Clocel_2730 (degree
-	1461), 573061.Clocel_2840 (degree 1302), 573061.Clocel_2962 (degree 1292) and 573061.Clocel_0022
-	(degree 1221).
+	The undirected graph Clostridium cellulovorans has 4180 nodes and 337028
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03859 and has 29 connected components, where the component
+	with most nodes has 4114 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 161.26,
+	and the node degree mode is 1. The top 5 most central nodes are 573061.Clocel_0020
+	(degree 1795), 573061.Clocel_2730 (degree 1461), 573061.Clocel_2840 (degree
+	1302), 573061.Clocel_2962 (degree 1292) and 573061.Clocel_0022 (degree
+	1221).
 	
 
 

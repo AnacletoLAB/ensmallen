@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:00.770957
 
-The undirected graph Streptococcus suis R61 has 2304 nodes and 142645 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05377 and
-has 9 connected components, where the component with most nodes has 2280 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 123.82, and the node degree mode is 9. The top 5 most central
-nodes are 996306.SSUR61_2131 (degree 939), 996306.SSUR61_1081 (degree 777), 996306.SSUR61_1527
-(degree 750), 996306.SSUR61_2236 (degree 709) and 996306.SSUR61_0895 (degree 679).
+The undirected graph Streptococcus suis R61 has 2304 nodes and 142645 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05377 and has 9 connected components, where the component with most
+nodes has 2280 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 123.82, and
+the node degree mode is 9. The top 5 most central nodes are 996306.SSUR61_2131
+(degree 939), 996306.SSUR61_1081 (degree 777), 996306.SSUR61_1527 (degree
+750), 996306.SSUR61_2236 (degree 709) and 996306.SSUR61_0895 (degree 679).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusSuisR61(
 	
 	Datetime: 2021-02-02 22:05:00.770957
 	
-	The undirected graph Streptococcus suis R61 has 2304 nodes and 142645 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05377 and
-	has 9 connected components, where the component with most nodes has 2280 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 123.82, and the node degree mode is 9. The top 5 most central
-	nodes are 996306.SSUR61_2131 (degree 939), 996306.SSUR61_1081 (degree 777), 996306.SSUR61_1527
-	(degree 750), 996306.SSUR61_2236 (degree 709) and 996306.SSUR61_0895 (degree 679).
+	The undirected graph Streptococcus suis R61 has 2304 nodes and 142645 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05377 and has 9 connected components, where the component with most
+	nodes has 2280 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 123.82, and
+	the node degree mode is 9. The top 5 most central nodes are 996306.SSUR61_2131
+	(degree 939), 996306.SSUR61_1081 (degree 777), 996306.SSUR61_1527 (degree
+	750), 996306.SSUR61_2236 (degree 709) and 996306.SSUR61_0895 (degree 679).
 	
 
 

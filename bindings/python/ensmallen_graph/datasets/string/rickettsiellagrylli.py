@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:23.829319
 
-The undirected graph Rickettsiella grylli has 1381 nodes and 77312 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08113 and
-has 14 connected components, where the component with most nodes has 1353 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 111.97, and the node degree mode is 1. The top 5 most central
-nodes are 59196.RICGR_0915 (degree 595), 59196.RICGR_1122 (degree 516), 59196.RICGR_1161
-(degree 514), 59196.RICGR_1277 (degree 452) and 59196.RICGR_1406 (degree 449).
+The undirected graph Rickettsiella grylli has 1381 nodes and 77312 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08113 and has 14 connected components, where the component with most
+nodes has 1353 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 111.97, and
+the node degree mode is 1. The top 5 most central nodes are 59196.RICGR_0915
+(degree 595), 59196.RICGR_1122 (degree 516), 59196.RICGR_1161 (degree 514),
+59196.RICGR_1277 (degree 452) and 59196.RICGR_1406 (degree 449).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiellaGrylli(
 	
 	Datetime: 2021-02-02 18:19:23.829319
 	
-	The undirected graph Rickettsiella grylli has 1381 nodes and 77312 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08113 and
-	has 14 connected components, where the component with most nodes has 1353 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 111.97, and the node degree mode is 1. The top 5 most central
-	nodes are 59196.RICGR_0915 (degree 595), 59196.RICGR_1122 (degree 516), 59196.RICGR_1161
-	(degree 514), 59196.RICGR_1277 (degree 452) and 59196.RICGR_1406 (degree 449).
+	The undirected graph Rickettsiella grylli has 1381 nodes and 77312 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08113 and has 14 connected components, where the component with most
+	nodes has 1353 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 111.97, and
+	the node degree mode is 1. The top 5 most central nodes are 59196.RICGR_0915
+	(degree 595), 59196.RICGR_1122 (degree 516), 59196.RICGR_1161 (degree 514),
+	59196.RICGR_1277 (degree 452) and 59196.RICGR_1406 (degree 449).
 	
 
 

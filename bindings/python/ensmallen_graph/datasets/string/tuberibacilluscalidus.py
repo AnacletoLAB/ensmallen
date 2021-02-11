@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:37.131843
 
-The undirected graph Tuberibacillus calidus has 3054 nodes and 293715 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06300 and
-has 17 connected components, where the component with most nodes has 3011 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 192.35, and the node degree mode is 2. The top 5 most central
-nodes are 1123405.AUMM01000005_gene832 (degree 1091), 1123405.AUMM01000031_gene1477
-(degree 867), 1123405.AUMM01000042_gene312 (degree 855), 1123405.AUMM01000023_gene1936
-(degree 783) and 1123405.AUMM01000021_gene3001 (degree 760).
+The undirected graph Tuberibacillus calidus has 3054 nodes and 293715 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06300 and has 17 connected components, where the component with most
+nodes has 3011 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 192.35, and
+the node degree mode is 2. The top 5 most central nodes are 1123405.AUMM01000005_gene832
+(degree 1091), 1123405.AUMM01000031_gene1477 (degree 867), 1123405.AUMM01000042_gene312
+(degree 855), 1123405.AUMM01000023_gene1936 (degree 783) and 1123405.AUMM01000021_gene3001
+(degree 760).
 
 
 References
@@ -107,14 +108,15 @@ def TuberibacillusCalidus(
 	
 	Datetime: 2021-02-02 22:52:37.131843
 	
-	The undirected graph Tuberibacillus calidus has 3054 nodes and 293715 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06300 and
-	has 17 connected components, where the component with most nodes has 3011 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 192.35, and the node degree mode is 2. The top 5 most central
-	nodes are 1123405.AUMM01000005_gene832 (degree 1091), 1123405.AUMM01000031_gene1477
-	(degree 867), 1123405.AUMM01000042_gene312 (degree 855), 1123405.AUMM01000023_gene1936
-	(degree 783) and 1123405.AUMM01000021_gene3001 (degree 760).
+	The undirected graph Tuberibacillus calidus has 3054 nodes and 293715 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06300 and has 17 connected components, where the component with most
+	nodes has 3011 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 192.35, and
+	the node degree mode is 2. The top 5 most central nodes are 1123405.AUMM01000005_gene832
+	(degree 1091), 1123405.AUMM01000031_gene1477 (degree 867), 1123405.AUMM01000042_gene312
+	(degree 855), 1123405.AUMM01000023_gene1936 (degree 783) and 1123405.AUMM01000021_gene3001
+	(degree 760).
 	
 
 

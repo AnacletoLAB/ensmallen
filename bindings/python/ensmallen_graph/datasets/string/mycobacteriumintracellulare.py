@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:59:58.921213
 
-The undirected graph Mycobacterium intracellulare has 5107 nodes and 852397 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06538
-and has 20 connected components, where the component with most nodes has 5056 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 264, the mean node degree is 333.82, and the node degree mode is 3. The top 5
-most central nodes are 487521.OCU_17370 (degree 2023), 487521.OCU_27330 (degree 1882),
-487521.OCU_02270 (degree 1741), 487521.OCU_39110 (degree 1735) and 487521.OCU_18170
-(degree 1701).
+The undirected graph Mycobacterium intracellulare has 5107 nodes and 852397
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06538 and has 20 connected components, where the component
+with most nodes has 5056 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 264, the mean node degree is 333.82,
+and the node degree mode is 3. The top 5 most central nodes are 487521.OCU_17370
+(degree 2023), 487521.OCU_27330 (degree 1882), 487521.OCU_02270 (degree
+1741), 487521.OCU_39110 (degree 1735) and 487521.OCU_18170 (degree 1701).
 
 
 References
@@ -107,14 +107,14 @@ def MycobacteriumIntracellulare(
 	
 	Datetime: 2021-02-02 20:59:58.921213
 	
-	The undirected graph Mycobacterium intracellulare has 5107 nodes and 852397 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06538
-	and has 20 connected components, where the component with most nodes has 5056 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 264, the mean node degree is 333.82, and the node degree mode is 3. The top 5
-	most central nodes are 487521.OCU_17370 (degree 2023), 487521.OCU_27330 (degree 1882),
-	487521.OCU_02270 (degree 1741), 487521.OCU_39110 (degree 1735) and 487521.OCU_18170
-	(degree 1701).
+	The undirected graph Mycobacterium intracellulare has 5107 nodes and 852397
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06538 and has 20 connected components, where the component
+	with most nodes has 5056 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 264, the mean node degree is 333.82,
+	and the node degree mode is 3. The top 5 most central nodes are 487521.OCU_17370
+	(degree 2023), 487521.OCU_27330 (degree 1882), 487521.OCU_02270 (degree
+	1741), 487521.OCU_39110 (degree 1735) and 487521.OCU_18170 (degree 1701).
 	
 
 

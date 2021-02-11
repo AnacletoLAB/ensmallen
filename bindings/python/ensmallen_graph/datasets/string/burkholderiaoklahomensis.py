@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:22.198096
 
-The undirected graph Burkholderia oklahomensis has 6158 nodes and 675750 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03565
-and has 29 connected components, where the component with most nodes has 6088 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 219.47, and the node degree mode is 1. The top 5
-most central nodes are 342113.DM82_6045 (degree 2079), 342113.DM82_2860 (degree 1880),
-342113.DM82_1711 (degree 1798), 342113.DM82_3989 (degree 1710) and 342113.DM82_3839
-(degree 1660).
+The undirected graph Burkholderia oklahomensis has 6158 nodes and 675750
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03565 and has 29 connected components, where the component
+with most nodes has 6088 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 219.47,
+and the node degree mode is 1. The top 5 most central nodes are 342113.DM82_6045
+(degree 2079), 342113.DM82_2860 (degree 1880), 342113.DM82_1711 (degree
+1798), 342113.DM82_3989 (degree 1710) and 342113.DM82_3839 (degree 1660).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaOklahomensis(
 	
 	Datetime: 2021-02-02 20:31:22.198096
 	
-	The undirected graph Burkholderia oklahomensis has 6158 nodes and 675750 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03565
-	and has 29 connected components, where the component with most nodes has 6088 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 219.47, and the node degree mode is 1. The top 5
-	most central nodes are 342113.DM82_6045 (degree 2079), 342113.DM82_2860 (degree 1880),
-	342113.DM82_1711 (degree 1798), 342113.DM82_3989 (degree 1710) and 342113.DM82_3839
-	(degree 1660).
+	The undirected graph Burkholderia oklahomensis has 6158 nodes and 675750
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03565 and has 29 connected components, where the component
+	with most nodes has 6088 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 219.47,
+	and the node degree mode is 1. The top 5 most central nodes are 342113.DM82_6045
+	(degree 2079), 342113.DM82_2860 (degree 1880), 342113.DM82_1711 (degree
+	1798), 342113.DM82_3989 (degree 1710) and 342113.DM82_3839 (degree 1660).
 	
 
 

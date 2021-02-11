@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:05:54.293953
 
-The undirected graph Prevotella sp. AGR2160 has 2204 nodes and 142640 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05876 and
-has 18 connected components, where the component with most nodes has 2165 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 129.44, and the node degree mode is 1. The top 5 most central
-nodes are 1280674.AUJK01000017_gene2163 (degree 856), 1280674.AUJK01000005_gene2024
-(degree 771), 1280674.AUJK01000008_gene381 (degree 681), 1280674.AUJK01000007_gene707
-(degree 624) and 1280674.AUJK01000018_gene1639 (degree 611).
+The undirected graph Prevotella sp. AGR2160 has 2204 nodes and 142640 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05876 and has 18 connected components, where the component with most
+nodes has 2165 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 129.44, and
+the node degree mode is 1. The top 5 most central nodes are 1280674.AUJK01000017_gene2163
+(degree 856), 1280674.AUJK01000005_gene2024 (degree 771), 1280674.AUJK01000008_gene381
+(degree 681), 1280674.AUJK01000007_gene707 (degree 624) and 1280674.AUJK01000018_gene1639
+(degree 611).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaSp.Agr2160(
 	
 	Datetime: 2021-02-03 21:05:54.293953
 	
-	The undirected graph Prevotella sp. AGR2160 has 2204 nodes and 142640 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05876 and
-	has 18 connected components, where the component with most nodes has 2165 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 129.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1280674.AUJK01000017_gene2163 (degree 856), 1280674.AUJK01000005_gene2024
-	(degree 771), 1280674.AUJK01000008_gene381 (degree 681), 1280674.AUJK01000007_gene707
-	(degree 624) and 1280674.AUJK01000018_gene1639 (degree 611).
+	The undirected graph Prevotella sp. AGR2160 has 2204 nodes and 142640 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05876 and has 18 connected components, where the component with most
+	nodes has 2165 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 129.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1280674.AUJK01000017_gene2163
+	(degree 856), 1280674.AUJK01000005_gene2024 (degree 771), 1280674.AUJK01000008_gene381
+	(degree 681), 1280674.AUJK01000007_gene707 (degree 624) and 1280674.AUJK01000018_gene1639
+	(degree 611).
 	
 
 

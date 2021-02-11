@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:25:54.676028
 
-The undirected graph Astyanax mexicanus has 21949 nodes and 5653436 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02347 and
-has 3 connected components, where the component with most nodes has 21945 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 353,
-the mean node degree is 515.14, and the node degree mode is 299. The top 5 most central
-nodes are 7994.ENSAMXP00000005546 (degree 5403), 7994.ENSAMXP00000017106 (degree
-5312), 7994.ENSAMXP00000016201 (degree 5145), 7994.ENSAMXP00000018257 (degree 4569)
-and 7994.ENSAMXP00000018355 (degree 4409).
+The undirected graph Astyanax mexicanus has 21949 nodes and 5653436 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02347 and has 3 connected components, where the component with most
+nodes has 21945 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 353, the mean node degree is 515.14, and
+the node degree mode is 299. The top 5 most central nodes are 7994.ENSAMXP00000005546
+(degree 5403), 7994.ENSAMXP00000017106 (degree 5312), 7994.ENSAMXP00000016201
+(degree 5145), 7994.ENSAMXP00000018257 (degree 4569) and 7994.ENSAMXP00000018355
+(degree 4409).
 
 
 References
@@ -107,14 +108,15 @@ def AstyanaxMexicanus(
 	
 	Datetime: 2021-02-02 17:25:54.676028
 	
-	The undirected graph Astyanax mexicanus has 21949 nodes and 5653436 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02347 and
-	has 3 connected components, where the component with most nodes has 21945 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 353,
-	the mean node degree is 515.14, and the node degree mode is 299. The top 5 most central
-	nodes are 7994.ENSAMXP00000005546 (degree 5403), 7994.ENSAMXP00000017106 (degree
-	5312), 7994.ENSAMXP00000016201 (degree 5145), 7994.ENSAMXP00000018257 (degree 4569)
-	and 7994.ENSAMXP00000018355 (degree 4409).
+	The undirected graph Astyanax mexicanus has 21949 nodes and 5653436 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02347 and has 3 connected components, where the component with most
+	nodes has 21945 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 353, the mean node degree is 515.14, and
+	the node degree mode is 299. The top 5 most central nodes are 7994.ENSAMXP00000005546
+	(degree 5403), 7994.ENSAMXP00000017106 (degree 5312), 7994.ENSAMXP00000016201
+	(degree 5145), 7994.ENSAMXP00000018257 (degree 4569) and 7994.ENSAMXP00000018355
+	(degree 4409).
 	
 
 

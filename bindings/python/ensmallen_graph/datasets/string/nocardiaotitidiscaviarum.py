@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:43.872453
 
-The undirected graph Nocardia otitidiscaviarum has 6625 nodes and 912659 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04159
-and has 39 connected components, where the component with most nodes has 6534 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 275.52, and the node degree mode is 1. The top 5
-most central nodes are 1206732.BAGD01000074_gene2928 (degree 2570), 1206732.BAGD01000044_gene1514
-(degree 2173), 1206732.BAGD01000034_gene1027 (degree 2125), 1206732.BAGD01000065_gene2433
-(degree 1951) and 1206732.BAGD01000019_gene189 (degree 1803).
+The undirected graph Nocardia otitidiscaviarum has 6625 nodes and 912659
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04159 and has 39 connected components, where the component
+with most nodes has 6534 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 275.52,
+and the node degree mode is 1. The top 5 most central nodes are 1206732.BAGD01000074_gene2928
+(degree 2570), 1206732.BAGD01000044_gene1514 (degree 2173), 1206732.BAGD01000034_gene1027
+(degree 2125), 1206732.BAGD01000065_gene2433 (degree 1951) and 1206732.BAGD01000019_gene189
+(degree 1803).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaOtitidiscaviarum(
 	
 	Datetime: 2021-02-02 23:16:43.872453
 	
-	The undirected graph Nocardia otitidiscaviarum has 6625 nodes and 912659 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04159
-	and has 39 connected components, where the component with most nodes has 6534 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 275.52, and the node degree mode is 1. The top 5
-	most central nodes are 1206732.BAGD01000074_gene2928 (degree 2570), 1206732.BAGD01000044_gene1514
-	(degree 2173), 1206732.BAGD01000034_gene1027 (degree 2125), 1206732.BAGD01000065_gene2433
-	(degree 1951) and 1206732.BAGD01000019_gene189 (degree 1803).
+	The undirected graph Nocardia otitidiscaviarum has 6625 nodes and 912659
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04159 and has 39 connected components, where the component
+	with most nodes has 6534 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 275.52,
+	and the node degree mode is 1. The top 5 most central nodes are 1206732.BAGD01000074_gene2928
+	(degree 2570), 1206732.BAGD01000044_gene1514 (degree 2173), 1206732.BAGD01000034_gene1027
+	(degree 2125), 1206732.BAGD01000065_gene2433 (degree 1951) and 1206732.BAGD01000019_gene189
+	(degree 1803).
 	
 
 

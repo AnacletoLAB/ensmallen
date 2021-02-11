@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:46:49.537987
 
-The undirected graph tech-arenas-jazz has 198 nodes and 2742 unweighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.14059
-and is connected, as it has a single component. The graph median node degree is 25,
-the mean node degree is 27.70, and the node degree mode is 31. The top 5 most central
-nodes are 67 (degree 100), 7 (degree 96), 20 (degree 75), 23 (degree 74) and 90 (degree
-62).
+The undirected graph tech-arenas-jazz has 198 nodes and 2742 unweighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14059 and is connected, as it has a single component. The
+graph median node degree is 25, the mean node degree is 27.70, and the
+node degree mode is 31. The top 5 most central nodes are 67 (degree 100),
+7 (degree 96), 20 (degree 75), 23 (degree 74) and 90 (degree 62).
 
 
 References
@@ -102,12 +102,12 @@ def TechArenasJazz(
 	
 	Datetime: 2021-02-06 08:46:49.537987
 	
-	The undirected graph tech-arenas-jazz has 198 nodes and 2742 unweighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.14059
-	and is connected, as it has a single component. The graph median node degree is 25,
-	the mean node degree is 27.70, and the node degree mode is 31. The top 5 most central
-	nodes are 67 (degree 100), 7 (degree 96), 20 (degree 75), 23 (degree 74) and 90 (degree
-	62).
+	The undirected graph tech-arenas-jazz has 198 nodes and 2742 unweighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14059 and is connected, as it has a single component. The
+	graph median node degree is 25, the mean node degree is 27.70, and the
+	node degree mode is 31. The top 5 most central nodes are 67 (degree 100),
+	7 (degree 96), 20 (degree 75), 23 (degree 74) and 90 (degree 62).
 	
 
 

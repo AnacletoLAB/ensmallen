@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:16.092071
 
-The undirected graph Asticcacaulis excentricus has 3598 nodes and 352803 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05452
-and has 5 connected components, where the component with most nodes has 3590 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 196.11, and the node degree mode is 3. The top 5
-most central nodes are 573065.Astex_0461 (degree 1342), 573065.Astex_0695 (degree
-1000), 573065.Astex_2092 (degree 981), 573065.Astex_2656 (degree 973) and 573065.Astex_1172
-(degree 958).
+The undirected graph Asticcacaulis excentricus has 3598 nodes and 352803
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05452 and has 5 connected components, where the component
+with most nodes has 3590 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 196.11,
+and the node degree mode is 3. The top 5 most central nodes are 573065.Astex_0461
+(degree 1342), 573065.Astex_0695 (degree 1000), 573065.Astex_2092 (degree
+981), 573065.Astex_2656 (degree 973) and 573065.Astex_1172 (degree 958).
 
 
 References
@@ -107,14 +107,14 @@ def AsticcacaulisExcentricus(
 	
 	Datetime: 2021-02-02 21:14:16.092071
 	
-	The undirected graph Asticcacaulis excentricus has 3598 nodes and 352803 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05452
-	and has 5 connected components, where the component with most nodes has 3590 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 196.11, and the node degree mode is 3. The top 5
-	most central nodes are 573065.Astex_0461 (degree 1342), 573065.Astex_0695 (degree
-	1000), 573065.Astex_2092 (degree 981), 573065.Astex_2656 (degree 973) and 573065.Astex_1172
-	(degree 958).
+	The undirected graph Asticcacaulis excentricus has 3598 nodes and 352803
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05452 and has 5 connected components, where the component
+	with most nodes has 3590 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 196.11,
+	and the node degree mode is 3. The top 5 most central nodes are 573065.Astex_0461
+	(degree 1342), 573065.Astex_0695 (degree 1000), 573065.Astex_2092 (degree
+	981), 573065.Astex_2656 (degree 973) and 573065.Astex_1172 (degree 958).
 	
 
 

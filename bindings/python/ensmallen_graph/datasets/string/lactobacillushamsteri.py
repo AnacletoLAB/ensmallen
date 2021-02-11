@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:16.053095
 
-The undirected graph Lactobacillus hamsteri has 1818 nodes and 119705 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-has 9 connected components, where the component with most nodes has 1801 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 131.69, and the node degree mode is 1. The top 5 most central
-nodes are 1423754.BALY01000008_gene1182 (degree 846), 1423754.BALY01000001_gene1578
-(degree 697), 1423754.BALY01000011_gene318 (degree 619), 1423754.BALY01000006_gene1321
-(degree 569) and 1423754.BALY01000007_gene1108 (degree 568).
+The undirected graph Lactobacillus hamsteri has 1818 nodes and 119705 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07248 and has 9 connected components, where the component with most
+nodes has 1801 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 131.69, and
+the node degree mode is 1. The top 5 most central nodes are 1423754.BALY01000008_gene1182
+(degree 846), 1423754.BALY01000001_gene1578 (degree 697), 1423754.BALY01000011_gene318
+(degree 619), 1423754.BALY01000006_gene1321 (degree 569) and 1423754.BALY01000007_gene1108
+(degree 568).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusHamsteri(
 	
 	Datetime: 2021-02-03 22:51:16.053095
 	
-	The undirected graph Lactobacillus hamsteri has 1818 nodes and 119705 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-	has 9 connected components, where the component with most nodes has 1801 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 131.69, and the node degree mode is 1. The top 5 most central
-	nodes are 1423754.BALY01000008_gene1182 (degree 846), 1423754.BALY01000001_gene1578
-	(degree 697), 1423754.BALY01000011_gene318 (degree 619), 1423754.BALY01000006_gene1321
-	(degree 569) and 1423754.BALY01000007_gene1108 (degree 568).
+	The undirected graph Lactobacillus hamsteri has 1818 nodes and 119705 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07248 and has 9 connected components, where the component with most
+	nodes has 1801 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 131.69, and
+	the node degree mode is 1. The top 5 most central nodes are 1423754.BALY01000008_gene1182
+	(degree 846), 1423754.BALY01000001_gene1578 (degree 697), 1423754.BALY01000011_gene318
+	(degree 619), 1423754.BALY01000006_gene1321 (degree 569) and 1423754.BALY01000007_gene1108
+	(degree 568).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:38.530129
 
-The undirected graph Acinetobacter sp. CIPA165 has 3319 nodes and 287167 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05215
-and has 15 connected components, where the component with most nodes has 3285 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 173.04, and the node degree mode is 6. The top 5
-most central nodes are 40373.F991_02803 (degree 1143), 40373.F991_03288 (degree 1017),
-40373.F991_01252 (degree 1012), 40373.F991_02764 (degree 996) and 40373.F991_00181
-(degree 987).
+The undirected graph Acinetobacter sp. CIPA165 has 3319 nodes and 287167
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05215 and has 15 connected components, where the component
+with most nodes has 3285 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 173.04,
+and the node degree mode is 6. The top 5 most central nodes are 40373.F991_02803
+(degree 1143), 40373.F991_03288 (degree 1017), 40373.F991_01252 (degree
+1012), 40373.F991_02764 (degree 996) and 40373.F991_00181 (degree 987).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterSp.Cipa165(
 	
 	Datetime: 2021-02-02 18:11:38.530129
 	
-	The undirected graph Acinetobacter sp. CIPA165 has 3319 nodes and 287167 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05215
-	and has 15 connected components, where the component with most nodes has 3285 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 173.04, and the node degree mode is 6. The top 5
-	most central nodes are 40373.F991_02803 (degree 1143), 40373.F991_03288 (degree 1017),
-	40373.F991_01252 (degree 1012), 40373.F991_02764 (degree 996) and 40373.F991_00181
-	(degree 987).
+	The undirected graph Acinetobacter sp. CIPA165 has 3319 nodes and 287167
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05215 and has 15 connected components, where the component
+	with most nodes has 3285 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 173.04,
+	and the node degree mode is 6. The top 5 most central nodes are 40373.F991_02803
+	(degree 1143), 40373.F991_03288 (degree 1017), 40373.F991_01252 (degree
+	1012), 40373.F991_02764 (degree 996) and 40373.F991_00181 (degree 987).
 	
 
 

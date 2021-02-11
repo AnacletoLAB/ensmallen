@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:21:00.525998
 
-The undirected graph dictionary28 has 39327 nodes and 89038 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00012
-and has 4578 connected components, where the component with most nodes has 24831
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 4.53, and the node degree mode is 1. The top 5 most
-central nodes are 404 (degree 38), 2222 (degree 36), 3109 (degree 35), 2500 (degree
-34) and 1485 (degree 33).
+The undirected graph dictionary28 has 39327 nodes and 89038 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00012 and has 4578 connected components, where the component
+with most nodes has 24831 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 3, the mean node degree is
+4.53, and the node degree mode is 1. The top 5 most central nodes are 404
+(degree 38), 2222 (degree 36), 3109 (degree 35), 2500 (degree 34) and 1485
+(degree 33).
 
 
 References
@@ -103,13 +104,14 @@ def Dictionary28(
 	
 	Datetime: 2021-02-06 10:21:00.525998
 	
-	The undirected graph dictionary28 has 39327 nodes and 89038 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00012
-	and has 4578 connected components, where the component with most nodes has 24831
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 4.53, and the node degree mode is 1. The top 5 most
-	central nodes are 404 (degree 38), 2222 (degree 36), 3109 (degree 35), 2500 (degree
-	34) and 1485 (degree 33).
+	The undirected graph dictionary28 has 39327 nodes and 89038 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00012 and has 4578 connected components, where the component
+	with most nodes has 24831 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 3, the mean node degree is
+	4.53, and the node degree mode is 1. The top 5 most central nodes are 404
+	(degree 38), 2222 (degree 36), 3109 (degree 35), 2500 (degree 34) and 1485
+	(degree 33).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:51.172086
 
-The undirected graph Thioalkalivibrio sp. ALE31 has 2502 nodes and 219526 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07016
-and has 3 connected components, where the component with most nodes has 2498 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 175.48, and the node degree mode is 7. The top 5
-most central nodes are 1158182.KB905021_gene512 (degree 1014), 1158182.KB905028_gene2513
-(degree 979), 1158182.KB905020_gene2167 (degree 938), 1158182.KB905028_gene2516 (degree
-897) and 1158182.KB905028_gene2515 (degree 880).
+The undirected graph Thioalkalivibrio sp. ALE31 has 2502 nodes and 219526
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07016 and has 3 connected components, where the component
+with most nodes has 2498 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 175.48,
+and the node degree mode is 7. The top 5 most central nodes are 1158182.KB905021_gene512
+(degree 1014), 1158182.KB905028_gene2513 (degree 979), 1158182.KB905020_gene2167
+(degree 938), 1158182.KB905028_gene2516 (degree 897) and 1158182.KB905028_gene2515
+(degree 880).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Ale31(
 	
 	Datetime: 2021-02-02 23:02:51.172086
 	
-	The undirected graph Thioalkalivibrio sp. ALE31 has 2502 nodes and 219526 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07016
-	and has 3 connected components, where the component with most nodes has 2498 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 175.48, and the node degree mode is 7. The top 5
-	most central nodes are 1158182.KB905021_gene512 (degree 1014), 1158182.KB905028_gene2513
-	(degree 979), 1158182.KB905020_gene2167 (degree 938), 1158182.KB905028_gene2516 (degree
-	897) and 1158182.KB905028_gene2515 (degree 880).
+	The undirected graph Thioalkalivibrio sp. ALE31 has 2502 nodes and 219526
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07016 and has 3 connected components, where the component
+	with most nodes has 2498 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 175.48,
+	and the node degree mode is 7. The top 5 most central nodes are 1158182.KB905021_gene512
+	(degree 1014), 1158182.KB905028_gene2513 (degree 979), 1158182.KB905020_gene2167
+	(degree 938), 1158182.KB905028_gene2516 (degree 897) and 1158182.KB905028_gene2515
+	(degree 880).
 	
 
 

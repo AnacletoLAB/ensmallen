@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:01:22.532812
 
-The undirected graph Clostridium botulinum CD BKT12695 has 2381 nodes and 181661
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06411 and has 10 connected components, where the component with most nodes has
-2361 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 120, the mean node degree is 152.59, and the node degree mode is 2. The
-top 5 most central nodes are 1443125.Z962_06510 (degree 1006), 1443125.Z962_07435
-(degree 975), 1443125.Z962_12010 (degree 902), 1443125.Z962_07395 (degree 799) and
-1443125.Z962_03570 (degree 764).
+The undirected graph Clostridium botulinum CD BKT12695 has 2381 nodes and
+181661 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06411 and has 10 connected components, where the
+component with most nodes has 2361 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+is 152.59, and the node degree mode is 2. The top 5 most central nodes
+are 1443125.Z962_06510 (degree 1006), 1443125.Z962_07435 (degree 975),
+1443125.Z962_12010 (degree 902), 1443125.Z962_07395 (degree 799) and 1443125.Z962_03570
+(degree 764).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumBotulinumCdBkt12695(
 	
 	Datetime: 2021-02-03 23:01:22.532812
 	
-	The undirected graph Clostridium botulinum CD BKT12695 has 2381 nodes and 181661
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06411 and has 10 connected components, where the component with most nodes has
-	2361 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 120, the mean node degree is 152.59, and the node degree mode is 2. The
-	top 5 most central nodes are 1443125.Z962_06510 (degree 1006), 1443125.Z962_07435
-	(degree 975), 1443125.Z962_12010 (degree 902), 1443125.Z962_07395 (degree 799) and
-	1443125.Z962_03570 (degree 764).
+	The undirected graph Clostridium botulinum CD BKT12695 has 2381 nodes and
+	181661 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06411 and has 10 connected components, where the
+	component with most nodes has 2361 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+	is 152.59, and the node degree mode is 2. The top 5 most central nodes
+	are 1443125.Z962_06510 (degree 1006), 1443125.Z962_07435 (degree 975),
+	1443125.Z962_12010 (degree 902), 1443125.Z962_07395 (degree 799) and 1443125.Z962_03570
+	(degree 764).
 	
 
 

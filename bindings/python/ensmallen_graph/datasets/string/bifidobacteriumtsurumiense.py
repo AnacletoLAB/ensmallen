@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:31.136095
 
-The undirected graph Bifidobacterium tsurumiense has 1614 nodes and 107337 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08246
-and has 7 connected components, where the component with most nodes has 1598 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 133.01, and the node degree mode is 4. The top 5
-most central nodes are 356829.BITS_0175 (degree 788), 356829.BITS_0859 (degree 716),
-356829.BITS_1045 (degree 696), 356829.BITS_0076 (degree 660) and 356829.BITS_1065
-(degree 618).
+The undirected graph Bifidobacterium tsurumiense has 1614 nodes and 107337
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08246 and has 7 connected components, where the component
+with most nodes has 1598 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 133.01,
+and the node degree mode is 4. The top 5 most central nodes are 356829.BITS_0175
+(degree 788), 356829.BITS_0859 (degree 716), 356829.BITS_1045 (degree 696),
+356829.BITS_0076 (degree 660) and 356829.BITS_1065 (degree 618).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumTsurumiense(
 	
 	Datetime: 2021-02-02 20:33:31.136095
 	
-	The undirected graph Bifidobacterium tsurumiense has 1614 nodes and 107337 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08246
-	and has 7 connected components, where the component with most nodes has 1598 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 133.01, and the node degree mode is 4. The top 5
-	most central nodes are 356829.BITS_0175 (degree 788), 356829.BITS_0859 (degree 716),
-	356829.BITS_1045 (degree 696), 356829.BITS_0076 (degree 660) and 356829.BITS_1065
-	(degree 618).
+	The undirected graph Bifidobacterium tsurumiense has 1614 nodes and 107337
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08246 and has 7 connected components, where the component
+	with most nodes has 1598 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 133.01,
+	and the node degree mode is 4. The top 5 most central nodes are 356829.BITS_0175
+	(degree 788), 356829.BITS_0859 (degree 716), 356829.BITS_1045 (degree 696),
+	356829.BITS_0076 (degree 660) and 356829.BITS_1065 (degree 618).
 	
 
 

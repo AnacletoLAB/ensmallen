@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:27.064567
 
-The undirected graph Xanthomonas translucens has 3772 nodes and 434658 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06112 and
-has 11 connected components, where the component with most nodes has 3752 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 230.47, and the node degree mode is 1. The top 5 most central
-nodes are 1205753.A989_12191 (degree 1720), 1205753.A989_04978 (degree 1359), 1205753.A989_17803
-(degree 1350), 1205753.A989_17808 (degree 1265) and 1205753.A989_04803 (degree 1235).
+The undirected graph Xanthomonas translucens has 3772 nodes and 434658
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06112 and has 11 connected components, where the component
+with most nodes has 3752 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 230.47,
+and the node degree mode is 1. The top 5 most central nodes are 1205753.A989_12191
+(degree 1720), 1205753.A989_04978 (degree 1359), 1205753.A989_17803 (degree
+1350), 1205753.A989_17808 (degree 1265) and 1205753.A989_04803 (degree
+1235).
 
 
 References
@@ -106,13 +108,15 @@ def XanthomonasTranslucens(
 	
 	Datetime: 2021-02-02 23:15:27.064567
 	
-	The undirected graph Xanthomonas translucens has 3772 nodes and 434658 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06112 and
-	has 11 connected components, where the component with most nodes has 3752 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 230.47, and the node degree mode is 1. The top 5 most central
-	nodes are 1205753.A989_12191 (degree 1720), 1205753.A989_04978 (degree 1359), 1205753.A989_17803
-	(degree 1350), 1205753.A989_17808 (degree 1265) and 1205753.A989_04803 (degree 1235).
+	The undirected graph Xanthomonas translucens has 3772 nodes and 434658
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06112 and has 11 connected components, where the component
+	with most nodes has 3752 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 230.47,
+	and the node degree mode is 1. The top 5 most central nodes are 1205753.A989_12191
+	(degree 1720), 1205753.A989_04978 (degree 1359), 1205753.A989_17803 (degree
+	1350), 1205753.A989_17808 (degree 1265) and 1205753.A989_04803 (degree
+	1235).
 	
 
 

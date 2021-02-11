@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:59.047571
 
-The undirected graph Propionibacterium propionicum has 2875 nodes and 174053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04213
-and has 32 connected components, where the component with most nodes has 2786 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 121.08, and the node degree mode is 2. The top 5 most
-central nodes are 767029.HMPREF9154_1906 (degree 1088), 767029.HMPREF9154_2565 (degree
-743), 767029.HMPREF9154_2175 (degree 731), 767029.HMPREF9154_2085 (degree 718) and
-767029.HMPREF9154_2145 (degree 715).
+The undirected graph Propionibacterium propionicum has 2875 nodes and 174053
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04213 and has 32 connected components, where the component
+with most nodes has 2786 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 121.08,
+and the node degree mode is 2. The top 5 most central nodes are 767029.HMPREF9154_1906
+(degree 1088), 767029.HMPREF9154_2565 (degree 743), 767029.HMPREF9154_2175
+(degree 731), 767029.HMPREF9154_2085 (degree 718) and 767029.HMPREF9154_2145
+(degree 715).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumPropionicum(
 	
 	Datetime: 2021-02-02 21:43:59.047571
 	
-	The undirected graph Propionibacterium propionicum has 2875 nodes and 174053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04213
-	and has 32 connected components, where the component with most nodes has 2786 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 121.08, and the node degree mode is 2. The top 5 most
-	central nodes are 767029.HMPREF9154_1906 (degree 1088), 767029.HMPREF9154_2565 (degree
-	743), 767029.HMPREF9154_2175 (degree 731), 767029.HMPREF9154_2085 (degree 718) and
-	767029.HMPREF9154_2145 (degree 715).
+	The undirected graph Propionibacterium propionicum has 2875 nodes and 174053
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04213 and has 32 connected components, where the component
+	with most nodes has 2786 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 121.08,
+	and the node degree mode is 2. The top 5 most central nodes are 767029.HMPREF9154_1906
+	(degree 1088), 767029.HMPREF9154_2565 (degree 743), 767029.HMPREF9154_2175
+	(degree 731), 767029.HMPREF9154_2085 (degree 718) and 767029.HMPREF9154_2145
+	(degree 715).
 	
 
 

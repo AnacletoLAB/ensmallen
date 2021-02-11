@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:05.087220
 
-The undirected graph Afipia broomeae has 4998 nodes and 529626 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04241 and
-has 29 connected components, where the component with most nodes has 4930 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 211.94, and the node degree mode is 2. The top 5 most central
-nodes are 883078.HMPREF9695_00588 (degree 2510), 883078.HMPREF9695_00862 (degree
-1616), 883078.HMPREF9695_03937 (degree 1556), 883078.HMPREF9695_03634 (degree 1530)
-and 883078.HMPREF9695_03353 (degree 1401).
+The undirected graph Afipia broomeae has 4998 nodes and 529626 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04241 and has 29 connected components, where the component with most
+nodes has 4930 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 211.94, and
+the node degree mode is 2. The top 5 most central nodes are 883078.HMPREF9695_00588
+(degree 2510), 883078.HMPREF9695_00862 (degree 1616), 883078.HMPREF9695_03937
+(degree 1556), 883078.HMPREF9695_03634 (degree 1530) and 883078.HMPREF9695_03353
+(degree 1401).
 
 
 References
@@ -107,14 +108,15 @@ def AfipiaBroomeae(
 	
 	Datetime: 2021-02-02 21:51:05.087220
 	
-	The undirected graph Afipia broomeae has 4998 nodes and 529626 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04241 and
-	has 29 connected components, where the component with most nodes has 4930 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 211.94, and the node degree mode is 2. The top 5 most central
-	nodes are 883078.HMPREF9695_00588 (degree 2510), 883078.HMPREF9695_00862 (degree
-	1616), 883078.HMPREF9695_03937 (degree 1556), 883078.HMPREF9695_03634 (degree 1530)
-	and 883078.HMPREF9695_03353 (degree 1401).
+	The undirected graph Afipia broomeae has 4998 nodes and 529626 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04241 and has 29 connected components, where the component with most
+	nodes has 4930 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 211.94, and
+	the node degree mode is 2. The top 5 most central nodes are 883078.HMPREF9695_00588
+	(degree 2510), 883078.HMPREF9695_00862 (degree 1616), 883078.HMPREF9695_03937
+	(degree 1556), 883078.HMPREF9695_03634 (degree 1530) and 883078.HMPREF9695_03353
+	(degree 1401).
 	
 
 

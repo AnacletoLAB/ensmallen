@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:24.464408
 
-The undirected graph Dickeya dadantii Ech586 has 4119 nodes and 321682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03793 and
-has 9 connected components, where the component with most nodes has 4097 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 156.19, and the node degree mode is 1. The top 5 most central
-nodes are 590409.Dd586_4133 (degree 1354), 590409.Dd586_0696 (degree 1153), 590409.Dd586_0309
-(degree 1139), 590409.Dd586_3046 (degree 1038) and 590409.Dd586_0311 (degree 1034).
+The undirected graph Dickeya dadantii Ech586 has 4119 nodes and 321682
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03793 and has 9 connected components, where the component
+with most nodes has 4097 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 156.19,
+and the node degree mode is 1. The top 5 most central nodes are 590409.Dd586_4133
+(degree 1354), 590409.Dd586_0696 (degree 1153), 590409.Dd586_0309 (degree
+1139), 590409.Dd586_3046 (degree 1038) and 590409.Dd586_0311 (degree 1034).
 
 
 References
@@ -106,13 +107,14 @@ def DickeyaDadantiiEch586(
 	
 	Datetime: 2021-02-02 21:17:24.464408
 	
-	The undirected graph Dickeya dadantii Ech586 has 4119 nodes and 321682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03793 and
-	has 9 connected components, where the component with most nodes has 4097 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 156.19, and the node degree mode is 1. The top 5 most central
-	nodes are 590409.Dd586_4133 (degree 1354), 590409.Dd586_0696 (degree 1153), 590409.Dd586_0309
-	(degree 1139), 590409.Dd586_3046 (degree 1038) and 590409.Dd586_0311 (degree 1034).
+	The undirected graph Dickeya dadantii Ech586 has 4119 nodes and 321682
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03793 and has 9 connected components, where the component
+	with most nodes has 4097 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 156.19,
+	and the node degree mode is 1. The top 5 most central nodes are 590409.Dd586_4133
+	(degree 1354), 590409.Dd586_0696 (degree 1153), 590409.Dd586_0309 (degree
+	1139), 590409.Dd586_3046 (degree 1038) and 590409.Dd586_0311 (degree 1034).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:01:39.345692
 
-The undirected graph Avibacterium paragallinarum 221 has 2793 nodes and 187477 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04808
-and has 10 connected components, where the component with most nodes has 2765 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 134.25, and the node degree mode is 5. The top 5
-most central nodes are 1278971.AOGF01000031_gene2416 (degree 914), 1278971.AOGF01000036_gene2082
+The undirected graph Avibacterium paragallinarum 221 has 2793 nodes and
+187477 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04808 and has 10 connected components, where the
+component with most nodes has 2765 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 134.25, and the node degree mode is 5. The top 5 most central nodes
+are 1278971.AOGF01000031_gene2416 (degree 914), 1278971.AOGF01000036_gene2082
 (degree 902), 1278971.AOGF01000014_gene1653 (degree 821), 1278971.AOGF01000036_gene2080
 (degree 748) and 1278971.AOGF01000032_gene2139 (degree 694).
 
@@ -107,12 +108,13 @@ def AvibacteriumParagallinarum221(
 	
 	Datetime: 2021-02-03 21:01:39.345692
 	
-	The undirected graph Avibacterium paragallinarum 221 has 2793 nodes and 187477 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04808
-	and has 10 connected components, where the component with most nodes has 2765 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 134.25, and the node degree mode is 5. The top 5
-	most central nodes are 1278971.AOGF01000031_gene2416 (degree 914), 1278971.AOGF01000036_gene2082
+	The undirected graph Avibacterium paragallinarum 221 has 2793 nodes and
+	187477 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04808 and has 10 connected components, where the
+	component with most nodes has 2765 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 134.25, and the node degree mode is 5. The top 5 most central nodes
+	are 1278971.AOGF01000031_gene2416 (degree 914), 1278971.AOGF01000036_gene2082
 	(degree 902), 1278971.AOGF01000014_gene1653 (degree 821), 1278971.AOGF01000036_gene2080
 	(degree 748) and 1278971.AOGF01000032_gene2139 (degree 694).
 	

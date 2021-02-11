@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:03:17.747602
 
-The undirected graph bcsstk32 has 44609 nodes and 1029655 unweighted edges, of which
-44609 are self-loops. The graph is sparse as it has a density of 0.00101 and is connected,
-as it has a single component. The graph median node degree is 48, the mean node degree
-is 45.16, and the node degree mode is 54. The top 5 most central nodes are 10690
-(degree 216), 10689 (degree 216), 10688 (degree 216), 10687 (degree 216) and 10686
-(degree 216).
+The undirected graph bcsstk32 has 44609 nodes and 1029655 unweighted edges,
+of which 44609 are self-loops. The graph is sparse as it has a density
+of 0.00101 and is connected, as it has a single component. The graph median
+node degree is 48, the mean node degree is 45.16, and the node degree mode
+is 54. The top 5 most central nodes are 10690 (degree 216), 10689 (degree
+216), 10688 (degree 216), 10687 (degree 216) and 10686 (degree 216).
 
 
 References
@@ -102,12 +102,12 @@ def Bcsstk32(
 	
 	Datetime: 2021-02-06 11:03:17.747602
 	
-	The undirected graph bcsstk32 has 44609 nodes and 1029655 unweighted edges, of which
-	44609 are self-loops. The graph is sparse as it has a density of 0.00101 and is connected,
-	as it has a single component. The graph median node degree is 48, the mean node degree
-	is 45.16, and the node degree mode is 54. The top 5 most central nodes are 10690
-	(degree 216), 10689 (degree 216), 10688 (degree 216), 10687 (degree 216) and 10686
-	(degree 216).
+	The undirected graph bcsstk32 has 44609 nodes and 1029655 unweighted edges,
+	of which 44609 are self-loops. The graph is sparse as it has a density
+	of 0.00101 and is connected, as it has a single component. The graph median
+	node degree is 48, the mean node degree is 45.16, and the node degree mode
+	is 54. The top 5 most central nodes are 10690 (degree 216), 10689 (degree
+	216), 10688 (degree 216), 10687 (degree 216) and 10686 (degree 216).
 	
 
 

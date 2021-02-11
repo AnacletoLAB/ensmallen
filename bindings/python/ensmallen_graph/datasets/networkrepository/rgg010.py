@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:45:31.965517
 
-The undirected graph rgg010 has 10 nodes and 55 unweighted edges, of which 10 are
-self-loops. The graph is complete as it has a density of 1.00000 and is connected,
-as it has a single component. The graph median node degree is 10, the mean node degree
-is 10.00, and the node degree mode is 10. The top 5 most central nodes are 10 (degree
-10), 9 (degree 10), 8 (degree 10), 7 (degree 10) and 6 (degree 10).
+The undirected graph rgg010 has 10 nodes and 55 unweighted edges, of which
+10 are self-loops. The graph is complete as it has a density of 1.00000
+and is connected, as it has a single component. The graph median node degree
+is 10, the mean node degree is 10.00, and the node degree mode is 10. The
+top 5 most central nodes are 10 (degree 10), 9 (degree 10), 8 (degree 10),
+7 (degree 10) and 6 (degree 10).
 
 
 References
@@ -101,11 +102,12 @@ def Rgg010(
 	
 	Datetime: 2021-02-06 08:45:31.965517
 	
-	The undirected graph rgg010 has 10 nodes and 55 unweighted edges, of which 10 are
-	self-loops. The graph is complete as it has a density of 1.00000 and is connected,
-	as it has a single component. The graph median node degree is 10, the mean node degree
-	is 10.00, and the node degree mode is 10. The top 5 most central nodes are 10 (degree
-	10), 9 (degree 10), 8 (degree 10), 7 (degree 10) and 6 (degree 10).
+	The undirected graph rgg010 has 10 nodes and 55 unweighted edges, of which
+	10 are self-loops. The graph is complete as it has a density of 1.00000
+	and is connected, as it has a single component. The graph median node degree
+	is 10, the mean node degree is 10.00, and the node degree mode is 10. The
+	top 5 most central nodes are 10 (degree 10), 9 (degree 10), 8 (degree 10),
+	7 (degree 10) and 6 (degree 10).
 	
 
 

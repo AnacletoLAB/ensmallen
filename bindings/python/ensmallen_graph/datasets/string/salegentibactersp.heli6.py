@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:04.779272
 
-The undirected graph Salegentibacter sp. HelI6 has 3723 nodes and 402179 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05805
-and has 11 connected components, where the component with most nodes has 3701 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 216.05, and the node degree mode is 2. The top 5
-most central nodes are 1250278.JQNQ01000001_gene2268 (degree 1386), 1250278.JQNQ01000001_gene2216
-(degree 1272), 1250278.JQNQ01000001_gene2302 (degree 1191), 1250278.JQNQ01000001_gene587
-(degree 1139) and 1250278.JQNQ01000001_gene1033 (degree 1104).
+The undirected graph Salegentibacter sp. HelI6 has 3723 nodes and 402179
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05805 and has 11 connected components, where the component
+with most nodes has 3701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 216.05,
+and the node degree mode is 2. The top 5 most central nodes are 1250278.JQNQ01000001_gene2268
+(degree 1386), 1250278.JQNQ01000001_gene2216 (degree 1272), 1250278.JQNQ01000001_gene2302
+(degree 1191), 1250278.JQNQ01000001_gene587 (degree 1139) and 1250278.JQNQ01000001_gene1033
+(degree 1104).
 
 
 References
@@ -107,14 +108,15 @@ def SalegentibacterSp.Heli6(
 	
 	Datetime: 2021-02-02 23:35:04.779272
 	
-	The undirected graph Salegentibacter sp. HelI6 has 3723 nodes and 402179 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05805
-	and has 11 connected components, where the component with most nodes has 3701 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 216.05, and the node degree mode is 2. The top 5
-	most central nodes are 1250278.JQNQ01000001_gene2268 (degree 1386), 1250278.JQNQ01000001_gene2216
-	(degree 1272), 1250278.JQNQ01000001_gene2302 (degree 1191), 1250278.JQNQ01000001_gene587
-	(degree 1139) and 1250278.JQNQ01000001_gene1033 (degree 1104).
+	The undirected graph Salegentibacter sp. HelI6 has 3723 nodes and 402179
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05805 and has 11 connected components, where the component
+	with most nodes has 3701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 216.05,
+	and the node degree mode is 2. The top 5 most central nodes are 1250278.JQNQ01000001_gene2268
+	(degree 1386), 1250278.JQNQ01000001_gene2216 (degree 1272), 1250278.JQNQ01000001_gene2302
+	(degree 1191), 1250278.JQNQ01000001_gene587 (degree 1139) and 1250278.JQNQ01000001_gene1033
+	(degree 1104).
 	
 
 

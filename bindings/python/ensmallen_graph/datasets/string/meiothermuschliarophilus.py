@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:27.791109
 
-The undirected graph Meiothermus chliarophilus has 4270 nodes and 447448 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-and has 23 connected components, where the component with most nodes has 4210 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 209.58, and the node degree mode is 4. The top 5
-most central nodes are 926560.KE387023_gene3782 (degree 1238), 926560.KE387023_gene3635
-(degree 1207), 926560.KE387023_gene2406 (degree 1198), 926560.KE387023_gene3210 (degree
-1169) and 926560.KE387023_gene3456 (degree 1144).
+The undirected graph Meiothermus chliarophilus has 4270 nodes and 447448
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04909 and has 23 connected components, where the component
+with most nodes has 4210 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 209.58,
+and the node degree mode is 4. The top 5 most central nodes are 926560.KE387023_gene3782
+(degree 1238), 926560.KE387023_gene3635 (degree 1207), 926560.KE387023_gene2406
+(degree 1198), 926560.KE387023_gene3210 (degree 1169) and 926560.KE387023_gene3456
+(degree 1144).
 
 
 References
@@ -107,14 +108,15 @@ def MeiothermusChliarophilus(
 	
 	Datetime: 2021-02-02 21:56:27.791109
 	
-	The undirected graph Meiothermus chliarophilus has 4270 nodes and 447448 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-	and has 23 connected components, where the component with most nodes has 4210 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 209.58, and the node degree mode is 4. The top 5
-	most central nodes are 926560.KE387023_gene3782 (degree 1238), 926560.KE387023_gene3635
-	(degree 1207), 926560.KE387023_gene2406 (degree 1198), 926560.KE387023_gene3210 (degree
-	1169) and 926560.KE387023_gene3456 (degree 1144).
+	The undirected graph Meiothermus chliarophilus has 4270 nodes and 447448
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04909 and has 23 connected components, where the component
+	with most nodes has 4210 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 209.58,
+	and the node degree mode is 4. The top 5 most central nodes are 926560.KE387023_gene3782
+	(degree 1238), 926560.KE387023_gene3635 (degree 1207), 926560.KE387023_gene2406
+	(degree 1198), 926560.KE387023_gene3210 (degree 1169) and 926560.KE387023_gene3456
+	(degree 1144).
 	
 
 

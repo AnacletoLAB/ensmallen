@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:41.700782
 
-The undirected graph Streptomyces alboflavus has 8023 nodes and 1165774 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03623
-and has 32 connected components, where the component with most nodes has 7945 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 244, the mean node degree is 290.61, and the node degree mode is 2. The top 5
-most central nodes are 67267.JNXT01000059_gene7604 (degree 3729), 67267.JNXT01000007_gene1979
-(degree 2536), 67267.JNXT01000056_gene6592 (degree 2527), 67267.JNXT01000002_gene6214
-(degree 2327) and 67267.JNXT01000039_gene3483 (degree 2184).
+The undirected graph Streptomyces alboflavus has 8023 nodes and 1165774
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03623 and has 32 connected components, where the component
+with most nodes has 7945 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 244, the mean node degree is 290.61,
+and the node degree mode is 2. The top 5 most central nodes are 67267.JNXT01000059_gene7604
+(degree 3729), 67267.JNXT01000007_gene1979 (degree 2536), 67267.JNXT01000056_gene6592
+(degree 2527), 67267.JNXT01000002_gene6214 (degree 2327) and 67267.JNXT01000039_gene3483
+(degree 2184).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAlboflavus(
 	
 	Datetime: 2021-02-02 18:26:41.700782
 	
-	The undirected graph Streptomyces alboflavus has 8023 nodes and 1165774 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03623
-	and has 32 connected components, where the component with most nodes has 7945 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 244, the mean node degree is 290.61, and the node degree mode is 2. The top 5
-	most central nodes are 67267.JNXT01000059_gene7604 (degree 3729), 67267.JNXT01000007_gene1979
-	(degree 2536), 67267.JNXT01000056_gene6592 (degree 2527), 67267.JNXT01000002_gene6214
-	(degree 2327) and 67267.JNXT01000039_gene3483 (degree 2184).
+	The undirected graph Streptomyces alboflavus has 8023 nodes and 1165774
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03623 and has 32 connected components, where the component
+	with most nodes has 7945 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 244, the mean node degree is 290.61,
+	and the node degree mode is 2. The top 5 most central nodes are 67267.JNXT01000059_gene7604
+	(degree 3729), 67267.JNXT01000007_gene1979 (degree 2536), 67267.JNXT01000056_gene6592
+	(degree 2527), 67267.JNXT01000002_gene6214 (degree 2327) and 67267.JNXT01000039_gene3483
+	(degree 2184).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:08.014459
 
-The undirected graph Prevotella copri has 3280 nodes and 161390 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03001 and
-has 32 connected components, where the component with most nodes has 3205 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 68,
-the mean node degree is 98.41, and the node degree mode is 4. The top 5 most central
-nodes are 537011.PREVCOP_06232 (degree 938), 537011.PREVCOP_05652 (degree 800), 537011.PREVCOP_03943
-(degree 786), 537011.PREVCOP_03742 (degree 745) and 537011.PREVCOP_03851 (degree
+The undirected graph Prevotella copri has 3280 nodes and 161390 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03001 and has 32 connected components, where the component with most
+nodes has 3205 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 68, the mean node degree is 98.41, and
+the node degree mode is 4. The top 5 most central nodes are 537011.PREVCOP_06232
+(degree 938), 537011.PREVCOP_05652 (degree 800), 537011.PREVCOP_03943 (degree
+786), 537011.PREVCOP_03742 (degree 745) and 537011.PREVCOP_03851 (degree
 654).
 
 
@@ -107,13 +108,14 @@ def PrevotellaCopri(
 	
 	Datetime: 2021-02-02 21:07:08.014459
 	
-	The undirected graph Prevotella copri has 3280 nodes and 161390 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03001 and
-	has 32 connected components, where the component with most nodes has 3205 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 68,
-	the mean node degree is 98.41, and the node degree mode is 4. The top 5 most central
-	nodes are 537011.PREVCOP_06232 (degree 938), 537011.PREVCOP_05652 (degree 800), 537011.PREVCOP_03943
-	(degree 786), 537011.PREVCOP_03742 (degree 745) and 537011.PREVCOP_03851 (degree
+	The undirected graph Prevotella copri has 3280 nodes and 161390 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03001 and has 32 connected components, where the component with most
+	nodes has 3205 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 68, the mean node degree is 98.41, and
+	the node degree mode is 4. The top 5 most central nodes are 537011.PREVCOP_06232
+	(degree 938), 537011.PREVCOP_05652 (degree 800), 537011.PREVCOP_03943 (degree
+	786), 537011.PREVCOP_03742 (degree 745) and 537011.PREVCOP_03851 (degree
 	654).
 	
 

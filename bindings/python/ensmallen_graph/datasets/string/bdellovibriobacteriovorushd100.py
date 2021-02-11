@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:04.963624
 
-The undirected graph Bdellovibrio bacteriovorus HD100 has 3561 nodes and 304501 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04804
-and has 18 connected components, where the component with most nodes has 3513 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 171.02, and the node degree mode is 3. The top 5
-most central nodes are 264462.Bd0802 (degree 1381), 264462.Bd3494 (degree 1169),
-264462.Bd2053 (degree 1165), 264462.Bd3836 (degree 1039) and 264462.Bd2080 (degree
-1003).
+The undirected graph Bdellovibrio bacteriovorus HD100 has 3561 nodes and
+304501 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04804 and has 18 connected components, where the
+component with most nodes has 3513 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 171.02, and the node degree mode is 3. The top 5 most central nodes
+are 264462.Bd0802 (degree 1381), 264462.Bd3494 (degree 1169), 264462.Bd2053
+(degree 1165), 264462.Bd3836 (degree 1039) and 264462.Bd2080 (degree 1003).
 
 
 References
@@ -107,14 +107,14 @@ def BdellovibrioBacteriovorusHd100(
 	
 	Datetime: 2021-02-02 20:14:04.963624
 	
-	The undirected graph Bdellovibrio bacteriovorus HD100 has 3561 nodes and 304501 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04804
-	and has 18 connected components, where the component with most nodes has 3513 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 171.02, and the node degree mode is 3. The top 5
-	most central nodes are 264462.Bd0802 (degree 1381), 264462.Bd3494 (degree 1169),
-	264462.Bd2053 (degree 1165), 264462.Bd3836 (degree 1039) and 264462.Bd2080 (degree
-	1003).
+	The undirected graph Bdellovibrio bacteriovorus HD100 has 3561 nodes and
+	304501 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04804 and has 18 connected components, where the
+	component with most nodes has 3513 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 171.02, and the node degree mode is 3. The top 5 most central nodes
+	are 264462.Bd0802 (degree 1381), 264462.Bd3494 (degree 1169), 264462.Bd2053
+	(degree 1165), 264462.Bd3836 (degree 1039) and 264462.Bd2080 (degree 1003).
 	
 
 

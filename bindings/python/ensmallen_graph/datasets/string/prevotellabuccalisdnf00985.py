@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:32:12.320567
 
-The undirected graph Prevotella buccalis DNF00985 has 2017 nodes and 176855 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08699
-and has 15 connected components, where the component with most nodes has 1984 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 175.36, and the node degree mode is 1. The top 5
-most central nodes are 1401078.HMPREF2140_10235 (degree 803), 1401078.HMPREF2140_03010
-(degree 791), 1401078.HMPREF2140_07915 (degree 732), 1401078.HMPREF2140_06005 (degree
-673) and 1401078.HMPREF2140_00835 (degree 656).
+The undirected graph Prevotella buccalis DNF00985 has 2017 nodes and 176855
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08699 and has 15 connected components, where the component
+with most nodes has 1984 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 175.36,
+and the node degree mode is 1. The top 5 most central nodes are 1401078.HMPREF2140_10235
+(degree 803), 1401078.HMPREF2140_03010 (degree 791), 1401078.HMPREF2140_07915
+(degree 732), 1401078.HMPREF2140_06005 (degree 673) and 1401078.HMPREF2140_00835
+(degree 656).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaBuccalisDnf00985(
 	
 	Datetime: 2021-02-03 22:32:12.320567
 	
-	The undirected graph Prevotella buccalis DNF00985 has 2017 nodes and 176855 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08699
-	and has 15 connected components, where the component with most nodes has 1984 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 175.36, and the node degree mode is 1. The top 5
-	most central nodes are 1401078.HMPREF2140_10235 (degree 803), 1401078.HMPREF2140_03010
-	(degree 791), 1401078.HMPREF2140_07915 (degree 732), 1401078.HMPREF2140_06005 (degree
-	673) and 1401078.HMPREF2140_00835 (degree 656).
+	The undirected graph Prevotella buccalis DNF00985 has 2017 nodes and 176855
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08699 and has 15 connected components, where the component
+	with most nodes has 1984 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 175.36,
+	and the node degree mode is 1. The top 5 most central nodes are 1401078.HMPREF2140_10235
+	(degree 803), 1401078.HMPREF2140_03010 (degree 791), 1401078.HMPREF2140_07915
+	(degree 732), 1401078.HMPREF2140_06005 (degree 673) and 1401078.HMPREF2140_00835
+	(degree 656).
 	
 
 

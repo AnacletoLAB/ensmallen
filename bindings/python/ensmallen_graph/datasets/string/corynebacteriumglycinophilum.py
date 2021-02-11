@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:31.647451
 
-The undirected graph Corynebacterium glycinophilum has 3245 nodes and 239752 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04555
-and has 16 connected components, where the component with most nodes has 3201 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 147.77, and the node degree mode is 2. The top 5
-most central nodes are 1404245.CGLY_02520 (degree 1390), 1404245.CGLY_09405 (degree
-1210), 1404245.CGLY_04060 (degree 989), 1404245.CGLY_09275 (degree 899) and 1404245.CGLY_02430
-(degree 894).
+The undirected graph Corynebacterium glycinophilum has 3245 nodes and 239752
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04555 and has 16 connected components, where the component
+with most nodes has 3201 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 147.77,
+and the node degree mode is 2. The top 5 most central nodes are 1404245.CGLY_02520
+(degree 1390), 1404245.CGLY_09405 (degree 1210), 1404245.CGLY_04060 (degree
+989), 1404245.CGLY_09275 (degree 899) and 1404245.CGLY_02430 (degree 894).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumGlycinophilum(
 	
 	Datetime: 2021-02-03 22:33:31.647451
 	
-	The undirected graph Corynebacterium glycinophilum has 3245 nodes and 239752 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04555
-	and has 16 connected components, where the component with most nodes has 3201 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 147.77, and the node degree mode is 2. The top 5
-	most central nodes are 1404245.CGLY_02520 (degree 1390), 1404245.CGLY_09405 (degree
-	1210), 1404245.CGLY_04060 (degree 989), 1404245.CGLY_09275 (degree 899) and 1404245.CGLY_02430
-	(degree 894).
+	The undirected graph Corynebacterium glycinophilum has 3245 nodes and 239752
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04555 and has 16 connected components, where the component
+	with most nodes has 3201 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 147.77,
+	and the node degree mode is 2. The top 5 most central nodes are 1404245.CGLY_02520
+	(degree 1390), 1404245.CGLY_09405 (degree 1210), 1404245.CGLY_04060 (degree
+	989), 1404245.CGLY_09275 (degree 899) and 1404245.CGLY_02430 (degree 894).
 	
 
 

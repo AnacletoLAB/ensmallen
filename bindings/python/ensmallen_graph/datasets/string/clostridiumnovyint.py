@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:55.402227
 
-The undirected graph Clostridium novyi NT has 2309 nodes and 187850 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07050 and
-has 6 connected components, where the component with most nodes has 2292 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 162.71, and the node degree mode is 5. The top 5 most central
-nodes are 386415.NT01CX_1677 (degree 989), 386415.NT01CX_2418 (degree 979), 386415.NT01CX_2096
-(degree 755), 386415.NT01CX_1455 (degree 753) and 386415.NT01CX_0460 (degree 745).
+The undirected graph Clostridium novyi NT has 2309 nodes and 187850 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07050 and has 6 connected components, where the component with most
+nodes has 2292 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 162.71, and
+the node degree mode is 5. The top 5 most central nodes are 386415.NT01CX_1677
+(degree 989), 386415.NT01CX_2418 (degree 979), 386415.NT01CX_2096 (degree
+755), 386415.NT01CX_1455 (degree 753) and 386415.NT01CX_0460 (degree 745).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumNovyiNt(
 	
 	Datetime: 2021-02-02 20:37:55.402227
 	
-	The undirected graph Clostridium novyi NT has 2309 nodes and 187850 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07050 and
-	has 6 connected components, where the component with most nodes has 2292 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 162.71, and the node degree mode is 5. The top 5 most central
-	nodes are 386415.NT01CX_1677 (degree 989), 386415.NT01CX_2418 (degree 979), 386415.NT01CX_2096
-	(degree 755), 386415.NT01CX_1455 (degree 753) and 386415.NT01CX_0460 (degree 745).
+	The undirected graph Clostridium novyi NT has 2309 nodes and 187850 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07050 and has 6 connected components, where the component with most
+	nodes has 2292 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 162.71, and
+	the node degree mode is 5. The top 5 most central nodes are 386415.NT01CX_1677
+	(degree 989), 386415.NT01CX_2418 (degree 979), 386415.NT01CX_2096 (degree
+	755), 386415.NT01CX_1455 (degree 753) and 386415.NT01CX_0460 (degree 745).
 	
 
 

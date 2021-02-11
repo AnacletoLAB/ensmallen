@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:06.044916
 
-The undirected graph Leuconostoc carnosum has 1562 nodes and 82413 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06760 and
-has 2 connected components, where the component with most nodes has 1559 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 81,
-the mean node degree is 105.52, and the node degree mode is 6. The top 5 most central
-nodes are 1229758.C270_03045 (degree 729), 1229758.C270_05050 (degree 616), 1229758.C270_06510
-(degree 582), 1229758.C270_03230 (degree 496) and 1229758.C270_05440 (degree 473).
+The undirected graph Leuconostoc carnosum has 1562 nodes and 82413 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06760 and has 2 connected components, where the component with most
+nodes has 1559 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 81, the mean node degree is 105.52, and
+the node degree mode is 6. The top 5 most central nodes are 1229758.C270_03045
+(degree 729), 1229758.C270_05050 (degree 616), 1229758.C270_06510 (degree
+582), 1229758.C270_03230 (degree 496) and 1229758.C270_05440 (degree 473).
 
 
 References
@@ -106,13 +107,14 @@ def LeuconostocCarnosum(
 	
 	Datetime: 2021-02-02 23:27:06.044916
 	
-	The undirected graph Leuconostoc carnosum has 1562 nodes and 82413 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06760 and
-	has 2 connected components, where the component with most nodes has 1559 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 81,
-	the mean node degree is 105.52, and the node degree mode is 6. The top 5 most central
-	nodes are 1229758.C270_03045 (degree 729), 1229758.C270_05050 (degree 616), 1229758.C270_06510
-	(degree 582), 1229758.C270_03230 (degree 496) and 1229758.C270_05440 (degree 473).
+	The undirected graph Leuconostoc carnosum has 1562 nodes and 82413 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06760 and has 2 connected components, where the component with most
+	nodes has 1559 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 81, the mean node degree is 105.52, and
+	the node degree mode is 6. The top 5 most central nodes are 1229758.C270_03045
+	(degree 729), 1229758.C270_05050 (degree 616), 1229758.C270_06510 (degree
+	582), 1229758.C270_03230 (degree 496) and 1229758.C270_05440 (degree 473).
 	
 
 

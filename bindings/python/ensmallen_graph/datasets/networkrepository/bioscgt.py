@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:17.144635
 
-The undirected graph bio-SC-GT has 1716 nodes and 33987 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02310 and has 4
-connected components, where the component with most nodes has 1708 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 21, the
-mean node degree is 39.61 and the node degree mode is 1. The top 5 most central nodes
-are 35 (degree 549), 29 (degree 413), 116 (degree 242), 521 (degree 237) and 519
-(degree 237).
+The undirected graph bio-SC-GT has 1716 nodes and 33987 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02310 and has 4 connected components, where the component with most nodes
+has 1708 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 21, the mean node degree is 39.61 and the node
+degree mode is 1. The top 5 most central nodes are 35 (degree 549), 29
+(degree 413), 116 (degree 242), 521 (degree 237) and 519 (degree 237).
 
 
 References
@@ -114,13 +114,13 @@ def BioScGt(
 	
 	Datetime: 2021-02-03 22:30:17.144635
 	
-	The undirected graph bio-SC-GT has 1716 nodes and 33987 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02310 and has 4
-	connected components, where the component with most nodes has 1708 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 21, the
-	mean node degree is 39.61 and the node degree mode is 1. The top 5 most central nodes
-	are 35 (degree 549), 29 (degree 413), 116 (degree 242), 521 (degree 237) and 519
-	(degree 237).
+	The undirected graph bio-SC-GT has 1716 nodes and 33987 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02310 and has 4 connected components, where the component with most nodes
+	has 1708 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 21, the mean node degree is 39.61 and the node
+	degree mode is 1. The top 5 most central nodes are 35 (degree 549), 29
+	(degree 413), 116 (degree 242), 521 (degree 237) and 519 (degree 237).
 	
 
 

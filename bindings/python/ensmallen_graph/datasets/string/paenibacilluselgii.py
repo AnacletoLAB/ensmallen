@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:37.828583
 
-The undirected graph Paenibacillus elgii has 6439 nodes and 1287073 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06210 and
-has 28 connected components, where the component with most nodes has 6371 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 356,
-the mean node degree is 399.77, and the node degree mode is 2. The top 5 most central
-nodes are 1007103.AFHW01000033_gene2177 (degree 2890), 1007103.AFHW01000026_gene422
-(degree 2449), 1007103.AFHW01000147_gene1383 (degree 2011), 1007103.AFHW01000023_gene259
-(degree 1856) and 1007103.AFHW01000156_gene987 (degree 1821).
+The undirected graph Paenibacillus elgii has 6439 nodes and 1287073 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06210 and has 28 connected components, where the component with most
+nodes has 6371 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 356, the mean node degree is 399.77, and
+the node degree mode is 2. The top 5 most central nodes are 1007103.AFHW01000033_gene2177
+(degree 2890), 1007103.AFHW01000026_gene422 (degree 2449), 1007103.AFHW01000147_gene1383
+(degree 2011), 1007103.AFHW01000023_gene259 (degree 1856) and 1007103.AFHW01000156_gene987
+(degree 1821).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusElgii(
 	
 	Datetime: 2021-02-02 22:08:37.828583
 	
-	The undirected graph Paenibacillus elgii has 6439 nodes and 1287073 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06210 and
-	has 28 connected components, where the component with most nodes has 6371 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 356,
-	the mean node degree is 399.77, and the node degree mode is 2. The top 5 most central
-	nodes are 1007103.AFHW01000033_gene2177 (degree 2890), 1007103.AFHW01000026_gene422
-	(degree 2449), 1007103.AFHW01000147_gene1383 (degree 2011), 1007103.AFHW01000023_gene259
-	(degree 1856) and 1007103.AFHW01000156_gene987 (degree 1821).
+	The undirected graph Paenibacillus elgii has 6439 nodes and 1287073 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06210 and has 28 connected components, where the component with most
+	nodes has 6371 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 356, the mean node degree is 399.77, and
+	the node degree mode is 2. The top 5 most central nodes are 1007103.AFHW01000033_gene2177
+	(degree 2890), 1007103.AFHW01000026_gene422 (degree 2449), 1007103.AFHW01000147_gene1383
+	(degree 2011), 1007103.AFHW01000023_gene259 (degree 1856) and 1007103.AFHW01000156_gene987
+	(degree 1821).
 	
 
 

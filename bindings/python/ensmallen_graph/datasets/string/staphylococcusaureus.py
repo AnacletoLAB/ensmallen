@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:23.247162
 
-The undirected graph Staphylococcus aureus has 2971 nodes and 268490 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06086 and
-has 4 connected components, where the component with most nodes has 2962 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 180.74, and the node degree mode is 3. The top 5 most central
-nodes are 1280.SAXN108_1716 (degree 1069), 1280.SAXN108_0440 (degree 888), 1280.SAXN108_1606
-(degree 876), 1280.SAXN108_1220 (degree 872) and 1280.SAXN108_1571 (degree 861).
+The undirected graph Staphylococcus aureus has 2971 nodes and 268490 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06086 and has 4 connected components, where the component with most
+nodes has 2962 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 180.74, and
+the node degree mode is 3. The top 5 most central nodes are 1280.SAXN108_1716
+(degree 1069), 1280.SAXN108_0440 (degree 888), 1280.SAXN108_1606 (degree
+876), 1280.SAXN108_1220 (degree 872) and 1280.SAXN108_1571 (degree 861).
 
 
 References
@@ -106,13 +107,14 @@ def StaphylococcusAureus(
 	
 	Datetime: 2021-02-02 16:22:23.247162
 	
-	The undirected graph Staphylococcus aureus has 2971 nodes and 268490 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06086 and
-	has 4 connected components, where the component with most nodes has 2962 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 180.74, and the node degree mode is 3. The top 5 most central
-	nodes are 1280.SAXN108_1716 (degree 1069), 1280.SAXN108_0440 (degree 888), 1280.SAXN108_1606
-	(degree 876), 1280.SAXN108_1220 (degree 872) and 1280.SAXN108_1571 (degree 861).
+	The undirected graph Staphylococcus aureus has 2971 nodes and 268490 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06086 and has 4 connected components, where the component with most
+	nodes has 2962 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 180.74, and
+	the node degree mode is 3. The top 5 most central nodes are 1280.SAXN108_1716
+	(degree 1069), 1280.SAXN108_0440 (degree 888), 1280.SAXN108_1606 (degree
+	876), 1280.SAXN108_1220 (degree 872) and 1280.SAXN108_1571 (degree 861).
 	
 
 

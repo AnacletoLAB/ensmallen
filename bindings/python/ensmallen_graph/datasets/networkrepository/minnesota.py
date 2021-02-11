@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:14:22.749055
 
-The undirected graph minnesota has 2642 nodes and 3303 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00095 and
-has 2 connected components, where the component with most nodes has 2640 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 2,
-the mean node degree is 2.50, and the node degree mode is 2. The top 5 most central
-nodes are 2418 (degree 5), 2597 (degree 4), 2591 (degree 4), 2579 (degree 4) and
-2572 (degree 4).
+The undirected graph minnesota has 2642 nodes and 3303 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00095 and has 2 connected components, where the component with most
+nodes has 2640 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 2.50, and the
+node degree mode is 2. The top 5 most central nodes are 2418 (degree 5),
+2597 (degree 4), 2591 (degree 4), 2579 (degree 4) and 2572 (degree 4).
 
 
 References
@@ -103,13 +103,13 @@ def Minnesota(
 	
 	Datetime: 2021-02-06 08:14:22.749055
 	
-	The undirected graph minnesota has 2642 nodes and 3303 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00095 and
-	has 2 connected components, where the component with most nodes has 2640 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 2,
-	the mean node degree is 2.50, and the node degree mode is 2. The top 5 most central
-	nodes are 2418 (degree 5), 2597 (degree 4), 2591 (degree 4), 2579 (degree 4) and
-	2572 (degree 4).
+	The undirected graph minnesota has 2642 nodes and 3303 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00095 and has 2 connected components, where the component with most
+	nodes has 2640 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 2.50, and the
+	node degree mode is 2. The top 5 most central nodes are 2418 (degree 5),
+	2597 (degree 4), 2591 (degree 4), 2579 (degree 4) and 2572 (degree 4).
 	
 
 

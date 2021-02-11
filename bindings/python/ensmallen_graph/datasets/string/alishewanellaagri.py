@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:39.494121
 
-The undirected graph Alishewanella agri has 3152 nodes and 391587 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07885 and
-has 2 connected components, where the component with most nodes has 3150 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 248.47, and the node degree mode is 2. The top 5 most central
-nodes are 1195246.AGRI_10381 (degree 1228), 1195246.AGRI_10646 (degree 1208), 1195246.AGRI_14470
-(degree 1089), 1195246.AGRI_12726 (degree 1072) and 1195246.AGRI_14465 (degree 1070).
+The undirected graph Alishewanella agri has 3152 nodes and 391587 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07885 and has 2 connected components, where the component with most
+nodes has 3150 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 233, the mean node degree is 248.47, and
+the node degree mode is 2. The top 5 most central nodes are 1195246.AGRI_10381
+(degree 1228), 1195246.AGRI_10646 (degree 1208), 1195246.AGRI_14470 (degree
+1089), 1195246.AGRI_12726 (degree 1072) and 1195246.AGRI_14465 (degree
+1070).
 
 
 References
@@ -106,13 +108,15 @@ def AlishewanellaAgri(
 	
 	Datetime: 2021-02-02 23:12:39.494121
 	
-	The undirected graph Alishewanella agri has 3152 nodes and 391587 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07885 and
-	has 2 connected components, where the component with most nodes has 3150 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 248.47, and the node degree mode is 2. The top 5 most central
-	nodes are 1195246.AGRI_10381 (degree 1228), 1195246.AGRI_10646 (degree 1208), 1195246.AGRI_14470
-	(degree 1089), 1195246.AGRI_12726 (degree 1072) and 1195246.AGRI_14465 (degree 1070).
+	The undirected graph Alishewanella agri has 3152 nodes and 391587 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07885 and has 2 connected components, where the component with most
+	nodes has 3150 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 233, the mean node degree is 248.47, and
+	the node degree mode is 2. The top 5 most central nodes are 1195246.AGRI_10381
+	(degree 1228), 1195246.AGRI_10646 (degree 1208), 1195246.AGRI_14470 (degree
+	1089), 1195246.AGRI_12726 (degree 1072) and 1195246.AGRI_14465 (degree
+	1070).
 	
 
 

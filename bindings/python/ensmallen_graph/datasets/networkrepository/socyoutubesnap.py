@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:30:58.663900
 
-The undirected graph soc-youtube-snap has 1134890 nodes and 2987624 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 5.27, and the node degree mode is 1. The top 5 most
-central nodes are 1072 (degree 28754), 363 (degree 14641), 35661 (degree 11281),
-106 (degree 10461) and 482709 (degree 9762).
+The undirected graph soc-youtube-snap has 1134890 nodes and 2987624 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 5.27, and the
+node degree mode is 1. The top 5 most central nodes are 1072 (degree 28754),
+363 (degree 14641), 35661 (degree 11281), 106 (degree 10461) and 482709
+(degree 9762).
 
 
 References
@@ -110,12 +111,13 @@ def SocYoutubeSnap(
 	
 	Datetime: 2021-02-06 12:30:58.663900
 	
-	The undirected graph soc-youtube-snap has 1134890 nodes and 2987624 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 5.27, and the node degree mode is 1. The top 5 most
-	central nodes are 1072 (degree 28754), 363 (degree 14641), 35661 (degree 11281),
-	106 (degree 10461) and 482709 (degree 9762).
+	The undirected graph soc-youtube-snap has 1134890 nodes and 2987624 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 5.27, and the
+	node degree mode is 1. The top 5 most central nodes are 1072 (degree 28754),
+	363 (degree 14641), 35661 (degree 11281), 106 (degree 10461) and 482709
+	(degree 9762).
 	
 
 

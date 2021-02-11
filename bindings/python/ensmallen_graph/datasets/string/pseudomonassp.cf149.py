@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:43.286064
 
-The undirected graph Pseudomonas sp. CF149 has 4687 nodes and 735220 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06695 and
-has 15 connected components, where the component with most nodes has 4647 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 262,
-the mean node degree is 313.73, and the node degree mode is 2. The top 5 most central
-nodes are 911239.CF149_18836 (degree 2103), 911239.CF149_11355 (degree 1880), 911239.CF149_05344
-(degree 1695), 911239.CF149_21338 (degree 1657) and 911239.CF149_09693 (degree 1656).
+The undirected graph Pseudomonas sp. CF149 has 4687 nodes and 735220 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06695 and has 15 connected components, where the component with most
+nodes has 4647 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 262, the mean node degree is 313.73, and
+the node degree mode is 2. The top 5 most central nodes are 911239.CF149_18836
+(degree 2103), 911239.CF149_11355 (degree 1880), 911239.CF149_05344 (degree
+1695), 911239.CF149_21338 (degree 1657) and 911239.CF149_09693 (degree
+1656).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasSp.Cf149(
 	
 	Datetime: 2021-02-02 21:55:43.286064
 	
-	The undirected graph Pseudomonas sp. CF149 has 4687 nodes and 735220 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06695 and
-	has 15 connected components, where the component with most nodes has 4647 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 262,
-	the mean node degree is 313.73, and the node degree mode is 2. The top 5 most central
-	nodes are 911239.CF149_18836 (degree 2103), 911239.CF149_11355 (degree 1880), 911239.CF149_05344
-	(degree 1695), 911239.CF149_21338 (degree 1657) and 911239.CF149_09693 (degree 1656).
+	The undirected graph Pseudomonas sp. CF149 has 4687 nodes and 735220 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06695 and has 15 connected components, where the component with most
+	nodes has 4647 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 262, the mean node degree is 313.73, and
+	the node degree mode is 2. The top 5 most central nodes are 911239.CF149_18836
+	(degree 2103), 911239.CF149_11355 (degree 1880), 911239.CF149_05344 (degree
+	1695), 911239.CF149_21338 (degree 1657) and 911239.CF149_09693 (degree
+	1656).
 	
 
 

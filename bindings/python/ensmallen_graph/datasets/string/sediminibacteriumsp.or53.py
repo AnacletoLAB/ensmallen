@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:56.814948
 
-The undirected graph Sediminibacterium sp. OR53 has 3019 nodes and 235293 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05165
-and has 2 connected components, where the component with most nodes has 3017 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 155.87, and the node degree mode is 2. The top 5
-most central nodes are 925409.KI911562_gene776 (degree 1086), 925409.KI911562_gene85
-(degree 915), 925409.KI911562_gene1804 (degree 869), 925409.KI911562_gene1991 (degree
-825) and 925409.KI911562_gene2340 (degree 812).
+The undirected graph Sediminibacterium sp. OR53 has 3019 nodes and 235293
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05165 and has 2 connected components, where the component
+with most nodes has 3017 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 155.87,
+and the node degree mode is 2. The top 5 most central nodes are 925409.KI911562_gene776
+(degree 1086), 925409.KI911562_gene85 (degree 915), 925409.KI911562_gene1804
+(degree 869), 925409.KI911562_gene1991 (degree 825) and 925409.KI911562_gene2340
+(degree 812).
 
 
 References
@@ -107,14 +108,15 @@ def SediminibacteriumSp.Or53(
 	
 	Datetime: 2021-02-02 21:55:56.814948
 	
-	The undirected graph Sediminibacterium sp. OR53 has 3019 nodes and 235293 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05165
-	and has 2 connected components, where the component with most nodes has 3017 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 155.87, and the node degree mode is 2. The top 5
-	most central nodes are 925409.KI911562_gene776 (degree 1086), 925409.KI911562_gene85
-	(degree 915), 925409.KI911562_gene1804 (degree 869), 925409.KI911562_gene1991 (degree
-	825) and 925409.KI911562_gene2340 (degree 812).
+	The undirected graph Sediminibacterium sp. OR53 has 3019 nodes and 235293
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05165 and has 2 connected components, where the component
+	with most nodes has 3017 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 155.87,
+	and the node degree mode is 2. The top 5 most central nodes are 925409.KI911562_gene776
+	(degree 1086), 925409.KI911562_gene85 (degree 915), 925409.KI911562_gene1804
+	(degree 869), 925409.KI911562_gene1991 (degree 825) and 925409.KI911562_gene2340
+	(degree 812).
 	
 
 

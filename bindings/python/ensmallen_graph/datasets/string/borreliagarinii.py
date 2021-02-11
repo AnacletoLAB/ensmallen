@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:23.504288
 
-The undirected graph Borrelia garinii has 888 nodes and 56661 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.14387
-and has 6 connected components, where the component with most nodes has 873 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 127.61, and the node degree mode is 8. The top 5
-most central nodes are 290434.BG0423 (degree 497), 290434.BG0558 (degree 496), 290434.BG0600
-(degree 444), 290434.BG0734 (degree 427) and 290434.BG0239 (degree 419).
+The undirected graph Borrelia garinii has 888 nodes and 56661 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14387 and has 6 connected components, where the component
+with most nodes has 873 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 127.61,
+and the node degree mode is 8. The top 5 most central nodes are 290434.BG0423
+(degree 497), 290434.BG0558 (degree 496), 290434.BG0600 (degree 444), 290434.BG0734
+(degree 427) and 290434.BG0239 (degree 419).
 
 
 References
@@ -106,13 +107,14 @@ def BorreliaGarinii(
 	
 	Datetime: 2021-02-02 20:20:23.504288
 	
-	The undirected graph Borrelia garinii has 888 nodes and 56661 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.14387
-	and has 6 connected components, where the component with most nodes has 873 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 127.61, and the node degree mode is 8. The top 5
-	most central nodes are 290434.BG0423 (degree 497), 290434.BG0558 (degree 496), 290434.BG0600
-	(degree 444), 290434.BG0734 (degree 427) and 290434.BG0239 (degree 419).
+	The undirected graph Borrelia garinii has 888 nodes and 56661 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14387 and has 6 connected components, where the component
+	with most nodes has 873 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 127.61,
+	and the node degree mode is 8. The top 5 most central nodes are 290434.BG0423
+	(degree 497), 290434.BG0558 (degree 496), 290434.BG0600 (degree 444), 290434.BG0734
+	(degree 427) and 290434.BG0239 (degree 419).
 	
 
 

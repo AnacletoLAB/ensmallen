@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:01.263228
 
-The undirected graph Alkaliphilus oremlandii has 2809 nodes and 196743 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04989 and
-has 14 connected components, where the component with most nodes has 2775 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 140.08, and the node degree mode is 2. The top 5 most central
-nodes are 350688.Clos_1206 (degree 1196), 350688.Clos_0533 (degree 895), 350688.Clos_0999
-(degree 877), 350688.Clos_1258 (degree 813) and 350688.Clos_1431 (degree 775).
+The undirected graph Alkaliphilus oremlandii has 2809 nodes and 196743
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04989 and has 14 connected components, where the component
+with most nodes has 2775 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 140.08,
+and the node degree mode is 2. The top 5 most central nodes are 350688.Clos_1206
+(degree 1196), 350688.Clos_0533 (degree 895), 350688.Clos_0999 (degree
+877), 350688.Clos_1258 (degree 813) and 350688.Clos_1431 (degree 775).
 
 
 References
@@ -106,13 +107,14 @@ def AlkaliphilusOremlandii(
 	
 	Datetime: 2021-02-02 20:33:01.263228
 	
-	The undirected graph Alkaliphilus oremlandii has 2809 nodes and 196743 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04989 and
-	has 14 connected components, where the component with most nodes has 2775 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 140.08, and the node degree mode is 2. The top 5 most central
-	nodes are 350688.Clos_1206 (degree 1196), 350688.Clos_0533 (degree 895), 350688.Clos_0999
-	(degree 877), 350688.Clos_1258 (degree 813) and 350688.Clos_1431 (degree 775).
+	The undirected graph Alkaliphilus oremlandii has 2809 nodes and 196743
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04989 and has 14 connected components, where the component
+	with most nodes has 2775 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 140.08,
+	and the node degree mode is 2. The top 5 most central nodes are 350688.Clos_1206
+	(degree 1196), 350688.Clos_0533 (degree 895), 350688.Clos_0999 (degree
+	877), 350688.Clos_1258 (degree 813) and 350688.Clos_1431 (degree 775).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:23.906571
 
-The undirected graph Eremothecium cymbalariae has 4143 nodes and 385857 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04497
-and is connected, as it has a single component. The graph median node degree is 139,
-the mean node degree is 186.27, and the node degree mode is 25. The top 5 most central
-nodes are 45285.XP_003647763.1 (degree 1101), 45285.XP_003646906.1 (degree 979),
-45285.XP_003644559.1 (degree 974), 45285.XP_003648178.1 (degree 958) and 45285.XP_003644717.1
+The undirected graph Eremothecium cymbalariae has 4143 nodes and 385857
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04497 and is connected, as it has a single component.
+The graph median node degree is 139, the mean node degree is 186.27, and
+the node degree mode is 25. The top 5 most central nodes are 45285.XP_003647763.1
+(degree 1101), 45285.XP_003646906.1 (degree 979), 45285.XP_003644559.1
+(degree 974), 45285.XP_003648178.1 (degree 958) and 45285.XP_003644717.1
 (degree 860).
 
 
@@ -106,12 +107,13 @@ def EremotheciumCymbalariae(
 	
 	Datetime: 2021-02-02 18:15:23.906571
 	
-	The undirected graph Eremothecium cymbalariae has 4143 nodes and 385857 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04497
-	and is connected, as it has a single component. The graph median node degree is 139,
-	the mean node degree is 186.27, and the node degree mode is 25. The top 5 most central
-	nodes are 45285.XP_003647763.1 (degree 1101), 45285.XP_003646906.1 (degree 979),
-	45285.XP_003644559.1 (degree 974), 45285.XP_003648178.1 (degree 958) and 45285.XP_003644717.1
+	The undirected graph Eremothecium cymbalariae has 4143 nodes and 385857
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04497 and is connected, as it has a single component.
+	The graph median node degree is 139, the mean node degree is 186.27, and
+	the node degree mode is 25. The top 5 most central nodes are 45285.XP_003647763.1
+	(degree 1101), 45285.XP_003646906.1 (degree 979), 45285.XP_003644559.1
+	(degree 974), 45285.XP_003648178.1 (degree 958) and 45285.XP_003644717.1
 	(degree 860).
 	
 

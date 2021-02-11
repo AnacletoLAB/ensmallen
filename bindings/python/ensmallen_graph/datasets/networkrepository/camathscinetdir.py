@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:01:02.848256
 
-The undirected graph ca-MathSciNet-dir has 391529 nodes and 873775 weighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00001 and has 20895 connected components, where the component with most nodes has
-332689 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 2, the mean node degree is 4.46, and the node degree mode is 1. The
-top 5 most central nodes are 189017 (degree 496), 189650 (degree 282), 81200 (degree
-276), 25060 (degree 267) and 192024 (degree 266).
+The undirected graph ca-MathSciNet-dir has 391529 nodes and 873775 weighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and has 20895 connected components, where the
+component with most nodes has 332689 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+is 4.46, and the node degree mode is 1. The top 5 most central nodes are
+189017 (degree 496), 189650 (degree 282), 81200 (degree 276), 25060 (degree
+267) and 192024 (degree 266).
 
 
 References
@@ -116,13 +117,14 @@ def CaMathscinetDir(
 	
 	Datetime: 2021-02-06 11:01:02.848256
 	
-	The undirected graph ca-MathSciNet-dir has 391529 nodes and 873775 weighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00001 and has 20895 connected components, where the component with most nodes has
-	332689 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 2, the mean node degree is 4.46, and the node degree mode is 1. The
-	top 5 most central nodes are 189017 (degree 496), 189650 (degree 282), 81200 (degree
-	276), 25060 (degree 267) and 192024 (degree 266).
+	The undirected graph ca-MathSciNet-dir has 391529 nodes and 873775 weighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and has 20895 connected components, where the
+	component with most nodes has 332689 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+	is 4.46, and the node degree mode is 1. The top 5 most central nodes are
+	189017 (degree 496), 189650 (degree 282), 81200 (degree 276), 25060 (degree
+	267) and 192024 (degree 266).
 	
 
 

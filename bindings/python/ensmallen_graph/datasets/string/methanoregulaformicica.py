@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:32.725119
 
-The undirected graph Methanoregula formicica has 2759 nodes and 301121 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07915 and
-has 29 connected components, where the component with most nodes has 2686 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 218.28, and the node degree mode is 2. The top 5 most central
-nodes are 593750.Metfor_1653 (degree 1036), 593750.Metfor_2557 (degree 1018), 593750.Metfor_2072
-(degree 1007), 593750.Metfor_1886 (degree 998) and 593750.Metfor_0186 (degree 992).
+The undirected graph Methanoregula formicica has 2759 nodes and 301121
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07915 and has 29 connected components, where the component
+with most nodes has 2686 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 218.28,
+and the node degree mode is 2. The top 5 most central nodes are 593750.Metfor_1653
+(degree 1036), 593750.Metfor_2557 (degree 1018), 593750.Metfor_2072 (degree
+1007), 593750.Metfor_1886 (degree 998) and 593750.Metfor_0186 (degree 992).
 
 
 References
@@ -106,13 +107,14 @@ def MethanoregulaFormicica(
 	
 	Datetime: 2021-02-02 21:18:32.725119
 	
-	The undirected graph Methanoregula formicica has 2759 nodes and 301121 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07915 and
-	has 29 connected components, where the component with most nodes has 2686 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 218.28, and the node degree mode is 2. The top 5 most central
-	nodes are 593750.Metfor_1653 (degree 1036), 593750.Metfor_2557 (degree 1018), 593750.Metfor_2072
-	(degree 1007), 593750.Metfor_1886 (degree 998) and 593750.Metfor_0186 (degree 992).
+	The undirected graph Methanoregula formicica has 2759 nodes and 301121
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07915 and has 29 connected components, where the component
+	with most nodes has 2686 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 218.28,
+	and the node degree mode is 2. The top 5 most central nodes are 593750.Metfor_1653
+	(degree 1036), 593750.Metfor_2557 (degree 1018), 593750.Metfor_2072 (degree
+	1007), 593750.Metfor_1886 (degree 998) and 593750.Metfor_0186 (degree 992).
 	
 
 

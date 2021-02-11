@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:21:03.427455
 
-The undirected graph Leptolyngbya sp. Heron has 7086 nodes and 779765 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03106 and
-has 66 connected components, where the component with most nodes has 6863 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 220.09, and the node degree mode is 2. The top 5 most central
-nodes are 1385935.N836_02015 (degree 2013), 1385935.N836_23445 (degree 1893), 1385935.N836_19800
-(degree 1883), 1385935.N836_27990 (degree 1881) and 1385935.N836_12050 (degree 1697).
+The undirected graph Leptolyngbya sp. Heron has 7086 nodes and 779765 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03106 and has 66 connected components, where the component with most
+nodes has 6863 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 220.09, and
+the node degree mode is 2. The top 5 most central nodes are 1385935.N836_02015
+(degree 2013), 1385935.N836_23445 (degree 1893), 1385935.N836_19800 (degree
+1883), 1385935.N836_27990 (degree 1881) and 1385935.N836_12050 (degree
+1697).
 
 
 References
@@ -106,13 +108,15 @@ def LeptolyngbyaSp.Heron(
 	
 	Datetime: 2021-02-03 22:21:03.427455
 	
-	The undirected graph Leptolyngbya sp. Heron has 7086 nodes and 779765 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03106 and
-	has 66 connected components, where the component with most nodes has 6863 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 220.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1385935.N836_02015 (degree 2013), 1385935.N836_23445 (degree 1893), 1385935.N836_19800
-	(degree 1883), 1385935.N836_27990 (degree 1881) and 1385935.N836_12050 (degree 1697).
+	The undirected graph Leptolyngbya sp. Heron has 7086 nodes and 779765 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03106 and has 66 connected components, where the component with most
+	nodes has 6863 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 220.09, and
+	the node degree mode is 2. The top 5 most central nodes are 1385935.N836_02015
+	(degree 2013), 1385935.N836_23445 (degree 1893), 1385935.N836_19800 (degree
+	1883), 1385935.N836_27990 (degree 1881) and 1385935.N836_12050 (degree
+	1697).
 	
 
 

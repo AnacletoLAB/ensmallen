@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:44.330348
 
-The undirected graph Enterococcus avium has 4477 nodes and 1477347 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14745
-and has 13 connected components, where the component with most nodes has 4443 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 545, the mean node degree is 659.97, and the node degree mode is 3. The top 5
-most central nodes are 1140002.I570_00326 (degree 2496), 1140002.I570_03124 (degree
-2465), 1140002.I570_00004 (degree 2430), 1140002.I570_00950 (degree 2392) and 1140002.I570_03695
-(degree 2366).
+The undirected graph Enterococcus avium has 4477 nodes and 1477347 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14745 and has 13 connected components, where the component
+with most nodes has 4443 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 545, the mean node degree is 659.97,
+and the node degree mode is 3. The top 5 most central nodes are 1140002.I570_00326
+(degree 2496), 1140002.I570_03124 (degree 2465), 1140002.I570_00004 (degree
+2430), 1140002.I570_00950 (degree 2392) and 1140002.I570_03695 (degree
+2366).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusAvium(
 	
 	Datetime: 2021-02-02 22:57:44.330348
 	
-	The undirected graph Enterococcus avium has 4477 nodes and 1477347 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14745
-	and has 13 connected components, where the component with most nodes has 4443 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 545, the mean node degree is 659.97, and the node degree mode is 3. The top 5
-	most central nodes are 1140002.I570_00326 (degree 2496), 1140002.I570_03124 (degree
-	2465), 1140002.I570_00004 (degree 2430), 1140002.I570_00950 (degree 2392) and 1140002.I570_03695
-	(degree 2366).
+	The undirected graph Enterococcus avium has 4477 nodes and 1477347 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14745 and has 13 connected components, where the component
+	with most nodes has 4443 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 545, the mean node degree is 659.97,
+	and the node degree mode is 3. The top 5 most central nodes are 1140002.I570_00326
+	(degree 2496), 1140002.I570_03124 (degree 2465), 1140002.I570_00004 (degree
+	2430), 1140002.I570_00950 (degree 2392) and 1140002.I570_03695 (degree
+	2366).
 	
 
 

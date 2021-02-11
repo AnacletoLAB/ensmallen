@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:57.933664
 
-The undirected graph Colletotrichum orbiculare has 8686 nodes and 759894 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02015
-and has 24 connected components, where the component with most nodes has 8636 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 174.97, and the node degree mode is 1. The top 5 most
-central nodes are 5465.ENH78615 (degree 2101), 5465.ENH80145 (degree 1704), 5465.ENH81500
-(degree 1699), 5465.ENH87845 (degree 1628) and 5465.ENH87749 (degree 1524).
+The undirected graph Colletotrichum orbiculare has 8686 nodes and 759894
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02015 and has 24 connected components, where the component
+with most nodes has 8636 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 174.97,
+and the node degree mode is 1. The top 5 most central nodes are 5465.ENH78615
+(degree 2101), 5465.ENH80145 (degree 1704), 5465.ENH81500 (degree 1699),
+5465.ENH87845 (degree 1628) and 5465.ENH87749 (degree 1524).
 
 
 References
@@ -106,13 +107,14 @@ def ColletotrichumOrbiculare(
 	
 	Datetime: 2021-02-02 17:13:57.933664
 	
-	The undirected graph Colletotrichum orbiculare has 8686 nodes and 759894 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02015
-	and has 24 connected components, where the component with most nodes has 8636 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 174.97, and the node degree mode is 1. The top 5 most
-	central nodes are 5465.ENH78615 (degree 2101), 5465.ENH80145 (degree 1704), 5465.ENH81500
-	(degree 1699), 5465.ENH87845 (degree 1628) and 5465.ENH87749 (degree 1524).
+	The undirected graph Colletotrichum orbiculare has 8686 nodes and 759894
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02015 and has 24 connected components, where the component
+	with most nodes has 8636 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 174.97,
+	and the node degree mode is 1. The top 5 most central nodes are 5465.ENH78615
+	(degree 2101), 5465.ENH80145 (degree 1704), 5465.ENH81500 (degree 1699),
+	5465.ENH87845 (degree 1628) and 5465.ENH87749 (degree 1524).
 	
 
 

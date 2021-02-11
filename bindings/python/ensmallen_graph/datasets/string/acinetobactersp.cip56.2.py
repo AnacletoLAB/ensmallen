@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:04.405027
 
-The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05785
-and has 11 connected components, where the component with most nodes has 3998 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 232.78, and the node degree mode is 3. The top 5
-most central nodes are 1144672.F966_00395 (degree 1201), 1144672.F966_01877 (degree
-1158), 1144672.F966_01834 (degree 1113), 1144672.F966_02151 (degree 1035) and 1144672.F966_01329
-(degree 996).
+The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05785 and has 11 connected components, where the component
+with most nodes has 3998 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 232.78,
+and the node degree mode is 3. The top 5 most central nodes are 1144672.F966_00395
+(degree 1201), 1144672.F966_01877 (degree 1158), 1144672.F966_01834 (degree
+1113), 1144672.F966_02151 (degree 1035) and 1144672.F966_01329 (degree
+996).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSp.Cip56.2(
 	
 	Datetime: 2021-02-02 22:59:04.405027
 	
-	The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05785
-	and has 11 connected components, where the component with most nodes has 3998 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 232.78, and the node degree mode is 3. The top 5
-	most central nodes are 1144672.F966_00395 (degree 1201), 1144672.F966_01877 (degree
-	1158), 1144672.F966_01834 (degree 1113), 1144672.F966_02151 (degree 1035) and 1144672.F966_01329
-	(degree 996).
+	The undirected graph Acinetobacter sp. CIP56.2 has 4025 nodes and 468466
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05785 and has 11 connected components, where the component
+	with most nodes has 3998 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 232.78,
+	and the node degree mode is 3. The top 5 most central nodes are 1144672.F966_00395
+	(degree 1201), 1144672.F966_01877 (degree 1158), 1144672.F966_01834 (degree
+	1113), 1144672.F966_02151 (degree 1035) and 1144672.F966_01329 (degree
+	996).
 	
 
 

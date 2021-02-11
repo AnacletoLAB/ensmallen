@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:45.600413
 
-The undirected graph Clavibacter michiganensis NCPPB382 has 2997 nodes and 247098
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05504 and has 6 connected components, where the component with most nodes has
-2985 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 145, the mean node degree is 164.90, and the node degree mode is 4. The
-top 5 most central nodes are 443906.CMM_1755 (degree 1006), 443906.CMM_2554 (degree
-840), 443906.CMM_0151 (degree 769), 443906.CMM_2002 (degree 764) and 443906.CMM_1760
-(degree 752).
+The undirected graph Clavibacter michiganensis NCPPB382 has 2997 nodes
+and 247098 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05504 and has 6 connected components, where the
+component with most nodes has 2985 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 164.90, and the node degree mode is 4. The top 5 most central nodes
+are 443906.CMM_1755 (degree 1006), 443906.CMM_2554 (degree 840), 443906.CMM_0151
+(degree 769), 443906.CMM_2002 (degree 764) and 443906.CMM_1760 (degree
+752).
 
 
 References
@@ -107,14 +108,15 @@ def ClavibacterMichiganensisNcppb382(
 	
 	Datetime: 2021-02-02 20:50:45.600413
 	
-	The undirected graph Clavibacter michiganensis NCPPB382 has 2997 nodes and 247098
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05504 and has 6 connected components, where the component with most nodes has
-	2985 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 145, the mean node degree is 164.90, and the node degree mode is 4. The
-	top 5 most central nodes are 443906.CMM_1755 (degree 1006), 443906.CMM_2554 (degree
-	840), 443906.CMM_0151 (degree 769), 443906.CMM_2002 (degree 764) and 443906.CMM_1760
-	(degree 752).
+	The undirected graph Clavibacter michiganensis NCPPB382 has 2997 nodes
+	and 247098 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05504 and has 6 connected components, where the
+	component with most nodes has 2985 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 164.90, and the node degree mode is 4. The top 5 most central nodes
+	are 443906.CMM_1755 (degree 1006), 443906.CMM_2554 (degree 840), 443906.CMM_0151
+	(degree 769), 443906.CMM_2002 (degree 764) and 443906.CMM_1760 (degree
+	752).
 	
 
 

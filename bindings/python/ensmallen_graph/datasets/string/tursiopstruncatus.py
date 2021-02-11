@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:43:27.956603
 
-The undirected graph Tursiops truncatus has 19346 nodes and 4050323 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02165 and
-has 3 connected components, where the component with most nodes has 19341 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 313,
-the mean node degree is 418.72, and the node degree mode is 162. The top 5 most central
-nodes are 9739.XP_004319825.1 (degree 4839), 9739.XP_004319045.1 (degree 4379), 9739.XP_004329242.1
-(degree 4218), 9739.XP_004313594.1 (degree 4034) and 9739.XP_004314709.1 (degree
+The undirected graph Tursiops truncatus has 19346 nodes and 4050323 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02165 and has 3 connected components, where the component with most
+nodes has 19341 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 313, the mean node degree is 418.72, and
+the node degree mode is 162. The top 5 most central nodes are 9739.XP_004319825.1
+(degree 4839), 9739.XP_004319045.1 (degree 4379), 9739.XP_004329242.1 (degree
+4218), 9739.XP_004313594.1 (degree 4034) and 9739.XP_004314709.1 (degree
 4012).
 
 
@@ -107,13 +108,14 @@ def TursiopsTruncatus(
 	
 	Datetime: 2021-02-02 17:43:27.956603
 	
-	The undirected graph Tursiops truncatus has 19346 nodes and 4050323 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02165 and
-	has 3 connected components, where the component with most nodes has 19341 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 313,
-	the mean node degree is 418.72, and the node degree mode is 162. The top 5 most central
-	nodes are 9739.XP_004319825.1 (degree 4839), 9739.XP_004319045.1 (degree 4379), 9739.XP_004329242.1
-	(degree 4218), 9739.XP_004313594.1 (degree 4034) and 9739.XP_004314709.1 (degree
+	The undirected graph Tursiops truncatus has 19346 nodes and 4050323 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02165 and has 3 connected components, where the component with most
+	nodes has 19341 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 313, the mean node degree is 418.72, and
+	the node degree mode is 162. The top 5 most central nodes are 9739.XP_004319825.1
+	(degree 4839), 9739.XP_004319045.1 (degree 4379), 9739.XP_004329242.1 (degree
+	4218), 9739.XP_004313594.1 (degree 4034) and 9739.XP_004314709.1 (degree
 	4012).
 	
 

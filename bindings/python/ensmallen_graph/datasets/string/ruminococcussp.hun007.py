@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:26.216712
 
-The undirected graph Ruminococcus sp. HUN007 has 3458 nodes and 207371 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03469 and
-has 25 connected components, where the component with most nodes has 3401 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 119.94, and the node degree mode is 2. The top 5 most central
-nodes are 1514668.JOOA01000002_gene2670 (degree 1156), 1514668.JOOA01000002_gene2260
-(degree 1151), 1514668.JOOA01000002_gene1537 (degree 839), 1514668.JOOA01000001_gene56
-(degree 829) and 1514668.JOOA01000001_gene149 (degree 791).
+The undirected graph Ruminococcus sp. HUN007 has 3458 nodes and 207371
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03469 and has 25 connected components, where the component
+with most nodes has 3401 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 119.94,
+and the node degree mode is 2. The top 5 most central nodes are 1514668.JOOA01000002_gene2670
+(degree 1156), 1514668.JOOA01000002_gene2260 (degree 1151), 1514668.JOOA01000002_gene1537
+(degree 839), 1514668.JOOA01000001_gene56 (degree 829) and 1514668.JOOA01000001_gene149
+(degree 791).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusSp.Hun007(
 	
 	Datetime: 2021-02-03 23:17:26.216712
 	
-	The undirected graph Ruminococcus sp. HUN007 has 3458 nodes and 207371 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03469 and
-	has 25 connected components, where the component with most nodes has 3401 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 119.94, and the node degree mode is 2. The top 5 most central
-	nodes are 1514668.JOOA01000002_gene2670 (degree 1156), 1514668.JOOA01000002_gene2260
-	(degree 1151), 1514668.JOOA01000002_gene1537 (degree 839), 1514668.JOOA01000001_gene56
-	(degree 829) and 1514668.JOOA01000001_gene149 (degree 791).
+	The undirected graph Ruminococcus sp. HUN007 has 3458 nodes and 207371
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03469 and has 25 connected components, where the component
+	with most nodes has 3401 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 119.94,
+	and the node degree mode is 2. The top 5 most central nodes are 1514668.JOOA01000002_gene2670
+	(degree 1156), 1514668.JOOA01000002_gene2260 (degree 1151), 1514668.JOOA01000002_gene1537
+	(degree 839), 1514668.JOOA01000001_gene56 (degree 829) and 1514668.JOOA01000001_gene149
+	(degree 791).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:11.692100
 
-The undirected graph Streptococcus anginosus C238 has 1964 nodes and 157754 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08184
-and has 2 connected components, where the component with most nodes has 1962 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 160.65, and the node degree mode is 108. The top
-5 most central nodes are 862971.SANR_1987 (degree 922), 862971.SANR_1018 (degree
-733), 862971.SANR_0083 (degree 724), 862971.SANR_0515 (degree 682) and 862971.SANR_1694
-(degree 667).
+The undirected graph Streptococcus anginosus C238 has 1964 nodes and 157754
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08184 and has 2 connected components, where the component
+with most nodes has 1962 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 160.65,
+and the node degree mode is 108. The top 5 most central nodes are 862971.SANR_1987
+(degree 922), 862971.SANR_1018 (degree 733), 862971.SANR_0083 (degree 724),
+862971.SANR_0515 (degree 682) and 862971.SANR_1694 (degree 667).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusAnginosusC238(
 	
 	Datetime: 2021-02-02 21:47:11.692100
 	
-	The undirected graph Streptococcus anginosus C238 has 1964 nodes and 157754 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08184
-	and has 2 connected components, where the component with most nodes has 1962 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 160.65, and the node degree mode is 108. The top
-	5 most central nodes are 862971.SANR_1987 (degree 922), 862971.SANR_1018 (degree
-	733), 862971.SANR_0083 (degree 724), 862971.SANR_0515 (degree 682) and 862971.SANR_1694
-	(degree 667).
+	The undirected graph Streptococcus anginosus C238 has 1964 nodes and 157754
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08184 and has 2 connected components, where the component
+	with most nodes has 1962 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 160.65,
+	and the node degree mode is 108. The top 5 most central nodes are 862971.SANR_1987
+	(degree 922), 862971.SANR_1018 (degree 733), 862971.SANR_0083 (degree 724),
+	862971.SANR_0515 (degree 682) and 862971.SANR_1694 (degree 667).
 	
 
 

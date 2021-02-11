@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:25.668249
 
-The undirected graph Lutibaculum baratangense has 4124 nodes and 371494 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04370
-and has 10 connected components, where the component with most nodes has 4104 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 180.16, and the node degree mode is 2. The top 5
-most central nodes are 631454.N177_1614 (degree 1548), 631454.N177_2700 (degree 1198),
-631454.N177_3485 (degree 1158), 631454.N177_0927 (degree 1119) and 631454.N177_1415
-(degree 1109).
+The undirected graph Lutibaculum baratangense has 4124 nodes and 371494
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04370 and has 10 connected components, where the component
+with most nodes has 4104 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 180.16,
+and the node degree mode is 2. The top 5 most central nodes are 631454.N177_1614
+(degree 1548), 631454.N177_2700 (degree 1198), 631454.N177_3485 (degree
+1158), 631454.N177_0927 (degree 1119) and 631454.N177_1415 (degree 1109).
 
 
 References
@@ -107,14 +107,14 @@ def LutibaculumBaratangense(
 	
 	Datetime: 2021-02-02 21:21:25.668249
 	
-	The undirected graph Lutibaculum baratangense has 4124 nodes and 371494 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04370
-	and has 10 connected components, where the component with most nodes has 4104 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 180.16, and the node degree mode is 2. The top 5
-	most central nodes are 631454.N177_1614 (degree 1548), 631454.N177_2700 (degree 1198),
-	631454.N177_3485 (degree 1158), 631454.N177_0927 (degree 1119) and 631454.N177_1415
-	(degree 1109).
+	The undirected graph Lutibaculum baratangense has 4124 nodes and 371494
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04370 and has 10 connected components, where the component
+	with most nodes has 4104 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 180.16,
+	and the node degree mode is 2. The top 5 most central nodes are 631454.N177_1614
+	(degree 1548), 631454.N177_2700 (degree 1198), 631454.N177_3485 (degree
+	1158), 631454.N177_0927 (degree 1119) and 631454.N177_1415 (degree 1109).
 	
 
 

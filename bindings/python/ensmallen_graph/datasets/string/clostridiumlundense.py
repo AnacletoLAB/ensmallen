@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:54.688965
 
-The undirected graph Clostridium lundense has 4552 nodes and 552438 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05333 and
-has 16 connected components, where the component with most nodes has 4513 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 242.72, and the node degree mode is 9. The top 5 most central
-nodes are 1410653.JHVC01000008_gene3159 (degree 2200), 1410653.JHVC01000004_gene3221
-(degree 1657), 1410653.JHVC01000009_gene2762 (degree 1628), 1410653.JHVC01000002_gene4419
-(degree 1512) and 1410653.JHVC01000001_gene1519 (degree 1438).
+The undirected graph Clostridium lundense has 4552 nodes and 552438 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05333 and has 16 connected components, where the component with most
+nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 242.72, and
+the node degree mode is 9. The top 5 most central nodes are 1410653.JHVC01000008_gene3159
+(degree 2200), 1410653.JHVC01000004_gene3221 (degree 1657), 1410653.JHVC01000009_gene2762
+(degree 1628), 1410653.JHVC01000002_gene4419 (degree 1512) and 1410653.JHVC01000001_gene1519
+(degree 1438).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumLundense(
 	
 	Datetime: 2021-02-03 22:43:54.688965
 	
-	The undirected graph Clostridium lundense has 4552 nodes and 552438 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05333 and
-	has 16 connected components, where the component with most nodes has 4513 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 242.72, and the node degree mode is 9. The top 5 most central
-	nodes are 1410653.JHVC01000008_gene3159 (degree 2200), 1410653.JHVC01000004_gene3221
-	(degree 1657), 1410653.JHVC01000009_gene2762 (degree 1628), 1410653.JHVC01000002_gene4419
-	(degree 1512) and 1410653.JHVC01000001_gene1519 (degree 1438).
+	The undirected graph Clostridium lundense has 4552 nodes and 552438 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05333 and has 16 connected components, where the component with most
+	nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 242.72, and
+	the node degree mode is 9. The top 5 most central nodes are 1410653.JHVC01000008_gene3159
+	(degree 2200), 1410653.JHVC01000004_gene3221 (degree 1657), 1410653.JHVC01000009_gene2762
+	(degree 1628), 1410653.JHVC01000002_gene4419 (degree 1512) and 1410653.JHVC01000001_gene1519
+	(degree 1438).
 	
 
 

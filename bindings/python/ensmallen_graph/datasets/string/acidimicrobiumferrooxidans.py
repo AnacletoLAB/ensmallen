@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:49.102702
 
-The undirected graph Acidimicrobium ferrooxidans has 1944 nodes and 133231 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07054
-and has 4 connected components, where the component with most nodes has 1938 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 137.07, and the node degree mode is 9. The top 5
-most central nodes are 525909.Afer_1080 (degree 831), 525909.Afer_0460 (degree 715),
-525909.Afer_1673 (degree 681), 525909.Afer_1988 (degree 625) and 525909.Afer_0246
-(degree 608).
+The undirected graph Acidimicrobium ferrooxidans has 1944 nodes and 133231
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07054 and has 4 connected components, where the component
+with most nodes has 1938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 137.07,
+and the node degree mode is 9. The top 5 most central nodes are 525909.Afer_1080
+(degree 831), 525909.Afer_0460 (degree 715), 525909.Afer_1673 (degree 681),
+525909.Afer_1988 (degree 625) and 525909.Afer_0246 (degree 608).
 
 
 References
@@ -107,14 +107,14 @@ def AcidimicrobiumFerrooxidans(
 	
 	Datetime: 2021-02-02 21:05:49.102702
 	
-	The undirected graph Acidimicrobium ferrooxidans has 1944 nodes and 133231 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07054
-	and has 4 connected components, where the component with most nodes has 1938 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 137.07, and the node degree mode is 9. The top 5
-	most central nodes are 525909.Afer_1080 (degree 831), 525909.Afer_0460 (degree 715),
-	525909.Afer_1673 (degree 681), 525909.Afer_1988 (degree 625) and 525909.Afer_0246
-	(degree 608).
+	The undirected graph Acidimicrobium ferrooxidans has 1944 nodes and 133231
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07054 and has 4 connected components, where the component
+	with most nodes has 1938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 137.07,
+	and the node degree mode is 9. The top 5 most central nodes are 525909.Afer_1080
+	(degree 831), 525909.Afer_0460 (degree 715), 525909.Afer_1673 (degree 681),
+	525909.Afer_1988 (degree 625) and 525909.Afer_0246 (degree 608).
 	
 
 

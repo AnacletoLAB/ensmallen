@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:44:41.823258
 
-The undirected graph Oryza nivara has 22472 nodes and 4764330 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01887 and
-has 9 connected components, where the component with most nodes has 22455 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 424.02, and the node degree mode is 7. The top 5 most central
-nodes are 4536.ONIVA02G13470.1 (degree 7431), 4536.ONIVA02G12890.1 (degree 5578),
-4536.ONIVA12G18410.1 (degree 5248), 4536.ONIVA01G11070.1 (degree 5071) and 4536.ONIVA11G04960.1
+The undirected graph Oryza nivara has 22472 nodes and 4764330 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01887 and has 9 connected components, where the component with most
+nodes has 22455 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 424.02, and
+the node degree mode is 7. The top 5 most central nodes are 4536.ONIVA02G13470.1
+(degree 7431), 4536.ONIVA02G12890.1 (degree 5578), 4536.ONIVA12G18410.1
+(degree 5248), 4536.ONIVA01G11070.1 (degree 5071) and 4536.ONIVA11G04960.1
 (degree 5045).
 
 
@@ -107,13 +108,14 @@ def OryzaNivara(
 	
 	Datetime: 2021-02-02 16:44:41.823258
 	
-	The undirected graph Oryza nivara has 22472 nodes and 4764330 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01887 and
-	has 9 connected components, where the component with most nodes has 22455 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 424.02, and the node degree mode is 7. The top 5 most central
-	nodes are 4536.ONIVA02G13470.1 (degree 7431), 4536.ONIVA02G12890.1 (degree 5578),
-	4536.ONIVA12G18410.1 (degree 5248), 4536.ONIVA01G11070.1 (degree 5071) and 4536.ONIVA11G04960.1
+	The undirected graph Oryza nivara has 22472 nodes and 4764330 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01887 and has 9 connected components, where the component with most
+	nodes has 22455 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 424.02, and
+	the node degree mode is 7. The top 5 most central nodes are 4536.ONIVA02G13470.1
+	(degree 7431), 4536.ONIVA02G12890.1 (degree 5578), 4536.ONIVA12G18410.1
+	(degree 5248), 4536.ONIVA01G11070.1 (degree 5071) and 4536.ONIVA11G04960.1
 	(degree 5045).
 	
 

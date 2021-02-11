@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:40:43.598606
 
-The undirected graph Mycobacterium tuberculosis H37Rv has 4020 nodes and 727379 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09004
-and is connected, as it has a single component. The graph median node degree is 346,
-the mean node degree is 361.88, and the node degree mode is 3. The top 5 most central
-nodes are 83332.Rv2524c (degree 1637), 83332.Rv2381c (degree 1593), 83332.Rv1937
-(degree 1571), 83332.Rv1798 (degree 1537) and 83332.Rv3446c (degree 1422).
+The undirected graph Mycobacterium tuberculosis H37Rv has 4020 nodes and
+727379 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09004 and is connected, as it has a single component.
+The graph median node degree is 346, the mean node degree is 361.88, and
+the node degree mode is 3. The top 5 most central nodes are 83332.Rv2524c
+(degree 1637), 83332.Rv2381c (degree 1593), 83332.Rv1937 (degree 1571),
+83332.Rv1798 (degree 1537) and 83332.Rv3446c (degree 1422).
 
 
 References
@@ -105,12 +106,13 @@ def MycobacteriumTuberculosisH37rv(
 	
 	Datetime: 2021-02-02 18:40:43.598606
 	
-	The undirected graph Mycobacterium tuberculosis H37Rv has 4020 nodes and 727379 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09004
-	and is connected, as it has a single component. The graph median node degree is 346,
-	the mean node degree is 361.88, and the node degree mode is 3. The top 5 most central
-	nodes are 83332.Rv2524c (degree 1637), 83332.Rv2381c (degree 1593), 83332.Rv1937
-	(degree 1571), 83332.Rv1798 (degree 1537) and 83332.Rv3446c (degree 1422).
+	The undirected graph Mycobacterium tuberculosis H37Rv has 4020 nodes and
+	727379 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09004 and is connected, as it has a single component.
+	The graph median node degree is 346, the mean node degree is 361.88, and
+	the node degree mode is 3. The top 5 most central nodes are 83332.Rv2524c
+	(degree 1637), 83332.Rv2381c (degree 1593), 83332.Rv1937 (degree 1571),
+	83332.Rv1798 (degree 1537) and 83332.Rv3446c (degree 1422).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:35.537927
 
-The undirected graph Sideroxydans lithotrophicus has 2969 nodes and 232384 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05274
-and has 3 connected components, where the component with most nodes has 2965 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 156.54, and the node degree mode is 4. The top 5
-most central nodes are 580332.Slit_2486 (degree 1231), 580332.Slit_2833 (degree 1160),
-580332.Slit_0866 (degree 1021), 580332.Slit_0253 (degree 933) and 580332.Slit_2544
-(degree 817).
+The undirected graph Sideroxydans lithotrophicus has 2969 nodes and 232384
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05274 and has 3 connected components, where the component
+with most nodes has 2965 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 156.54,
+and the node degree mode is 4. The top 5 most central nodes are 580332.Slit_2486
+(degree 1231), 580332.Slit_2833 (degree 1160), 580332.Slit_0866 (degree
+1021), 580332.Slit_0253 (degree 933) and 580332.Slit_2544 (degree 817).
 
 
 References
@@ -107,14 +107,14 @@ def SideroxydansLithotrophicus(
 	
 	Datetime: 2021-02-02 21:15:35.537927
 	
-	The undirected graph Sideroxydans lithotrophicus has 2969 nodes and 232384 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05274
-	and has 3 connected components, where the component with most nodes has 2965 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 156.54, and the node degree mode is 4. The top 5
-	most central nodes are 580332.Slit_2486 (degree 1231), 580332.Slit_2833 (degree 1160),
-	580332.Slit_0866 (degree 1021), 580332.Slit_0253 (degree 933) and 580332.Slit_2544
-	(degree 817).
+	The undirected graph Sideroxydans lithotrophicus has 2969 nodes and 232384
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05274 and has 3 connected components, where the component
+	with most nodes has 2965 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 156.54,
+	and the node degree mode is 4. The top 5 most central nodes are 580332.Slit_2486
+	(degree 1231), 580332.Slit_2833 (degree 1160), 580332.Slit_0866 (degree
+	1021), 580332.Slit_0253 (degree 933) and 580332.Slit_2544 (degree 817).
 	
 
 

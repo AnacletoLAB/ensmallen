@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:01:00.762716
 
-The undirected graph Sporothrix schenckii has 6570 nodes and 631281 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-has 10 connected components, where the component with most nodes has 6547 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 192.17, and the node degree mode is 1. The top 5 most central
-nodes are 29908.U7PRA4 (degree 1601), 29908.U7PVZ4 (degree 1473), 29908.U7PJS6 (degree
-1352), 29908.U7PX49 (degree 1311) and 29908.U7Q5K3 (degree 1286).
+The undirected graph Sporothrix schenckii has 6570 nodes and 631281 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02925 and has 10 connected components, where the component with most
+nodes has 6547 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 192.17, and
+the node degree mode is 1. The top 5 most central nodes are 29908.U7PRA4
+(degree 1601), 29908.U7PVZ4 (degree 1473), 29908.U7PJS6 (degree 1352),
+29908.U7PX49 (degree 1311) and 29908.U7Q5K3 (degree 1286).
 
 
 References
@@ -106,13 +107,14 @@ def SporothrixSchenckii(
 	
 	Datetime: 2021-02-02 18:01:00.762716
 	
-	The undirected graph Sporothrix schenckii has 6570 nodes and 631281 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-	has 10 connected components, where the component with most nodes has 6547 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 192.17, and the node degree mode is 1. The top 5 most central
-	nodes are 29908.U7PRA4 (degree 1601), 29908.U7PVZ4 (degree 1473), 29908.U7PJS6 (degree
-	1352), 29908.U7PX49 (degree 1311) and 29908.U7Q5K3 (degree 1286).
+	The undirected graph Sporothrix schenckii has 6570 nodes and 631281 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02925 and has 10 connected components, where the component with most
+	nodes has 6547 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 192.17, and
+	the node degree mode is 1. The top 5 most central nodes are 29908.U7PRA4
+	(degree 1601), 29908.U7PVZ4 (degree 1473), 29908.U7PJS6 (degree 1352),
+	29908.U7PX49 (degree 1311) and 29908.U7Q5K3 (degree 1286).
 	
 
 

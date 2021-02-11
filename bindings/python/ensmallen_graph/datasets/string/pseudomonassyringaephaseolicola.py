@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:09.558829
 
-The undirected graph Pseudomonas syringae phaseolicola has 5052 nodes and 620010
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04859 and has 14 connected components, where the component with most nodes has
-5021 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 219, the mean node degree is 245.45, and the node degree mode is 1. The
-top 5 most central nodes are 264730.PSPPH_0259 (degree 1572), 264730.PSPPH_1334 (degree
-1304), 264730.PSPPH_0398 (degree 1178), 264730.PSPPH_1333 (degree 1115) and 264730.PSPPH_2072
-(degree 1104).
+The undirected graph Pseudomonas syringae phaseolicola has 5052 nodes and
+620010 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04859 and has 14 connected components, where the
+component with most nodes has 5021 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+is 245.45, and the node degree mode is 1. The top 5 most central nodes
+are 264730.PSPPH_0259 (degree 1572), 264730.PSPPH_1334 (degree 1304), 264730.PSPPH_0398
+(degree 1178), 264730.PSPPH_1333 (degree 1115) and 264730.PSPPH_2072 (degree
+1104).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSyringaePhaseolicola(
 	
 	Datetime: 2021-02-02 20:14:09.558829
 	
-	The undirected graph Pseudomonas syringae phaseolicola has 5052 nodes and 620010
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04859 and has 14 connected components, where the component with most nodes has
-	5021 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 219, the mean node degree is 245.45, and the node degree mode is 1. The
-	top 5 most central nodes are 264730.PSPPH_0259 (degree 1572), 264730.PSPPH_1334 (degree
-	1304), 264730.PSPPH_0398 (degree 1178), 264730.PSPPH_1333 (degree 1115) and 264730.PSPPH_2072
-	(degree 1104).
+	The undirected graph Pseudomonas syringae phaseolicola has 5052 nodes and
+	620010 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04859 and has 14 connected components, where the
+	component with most nodes has 5021 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+	is 245.45, and the node degree mode is 1. The top 5 most central nodes
+	are 264730.PSPPH_0259 (degree 1572), 264730.PSPPH_1334 (degree 1304), 264730.PSPPH_0398
+	(degree 1178), 264730.PSPPH_1333 (degree 1115) and 264730.PSPPH_2072 (degree
+	1104).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:02.270102
 
-The undirected graph Dechloromonas aromatica has 4152 nodes and 501953 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05825 and
-has 13 connected components, where the component with most nodes has 4120 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 211,
-the mean node degree is 241.79, and the node degree mode is 3. The top 5 most central
-nodes are 159087.Daro_3006 (degree 2122), 159087.Daro_0163 (degree 1755), 159087.Daro_2890
-(degree 1593), 159087.Daro_3459 (degree 1553) and 159087.Daro_2840 (degree 1545).
+The undirected graph Dechloromonas aromatica has 4152 nodes and 501953
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05825 and has 13 connected components, where the component
+with most nodes has 4120 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 241.79,
+and the node degree mode is 3. The top 5 most central nodes are 159087.Daro_3006
+(degree 2122), 159087.Daro_0163 (degree 1755), 159087.Daro_2890 (degree
+1593), 159087.Daro_3459 (degree 1553) and 159087.Daro_2840 (degree 1545).
 
 
 References
@@ -106,13 +107,14 @@ def DechloromonasAromatica(
 	
 	Datetime: 2021-02-02 19:53:02.270102
 	
-	The undirected graph Dechloromonas aromatica has 4152 nodes and 501953 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05825 and
-	has 13 connected components, where the component with most nodes has 4120 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 211,
-	the mean node degree is 241.79, and the node degree mode is 3. The top 5 most central
-	nodes are 159087.Daro_3006 (degree 2122), 159087.Daro_0163 (degree 1755), 159087.Daro_2890
-	(degree 1593), 159087.Daro_3459 (degree 1553) and 159087.Daro_2840 (degree 1545).
+	The undirected graph Dechloromonas aromatica has 4152 nodes and 501953
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05825 and has 13 connected components, where the component
+	with most nodes has 4120 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 241.79,
+	and the node degree mode is 3. The top 5 most central nodes are 159087.Daro_3006
+	(degree 2122), 159087.Daro_0163 (degree 1755), 159087.Daro_2890 (degree
+	1593), 159087.Daro_3459 (degree 1553) and 159087.Daro_2840 (degree 1545).
 	
 
 

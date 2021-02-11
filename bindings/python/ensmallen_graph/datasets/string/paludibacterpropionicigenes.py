@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:18.218820
 
-The undirected graph Paludibacter propionicigenes has 2991 nodes and 274993 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06150
-and has 5 connected components, where the component with most nodes has 2983 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 183.88, and the node degree mode is 5. The top 5
-most central nodes are 694427.Palpr_2911 (degree 1313), 694427.Palpr_2170 (degree
-1138), 694427.Palpr_2197 (degree 1105), 694427.Palpr_2552 (degree 1004) and 694427.Palpr_0370
-(degree 922).
+The undirected graph Paludibacter propionicigenes has 2991 nodes and 274993
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06150 and has 5 connected components, where the component
+with most nodes has 2983 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 183.88,
+and the node degree mode is 5. The top 5 most central nodes are 694427.Palpr_2911
+(degree 1313), 694427.Palpr_2170 (degree 1138), 694427.Palpr_2197 (degree
+1105), 694427.Palpr_2552 (degree 1004) and 694427.Palpr_0370 (degree 922).
 
 
 References
@@ -107,14 +107,14 @@ def PaludibacterPropionicigenes(
 	
 	Datetime: 2021-02-02 21:32:18.218820
 	
-	The undirected graph Paludibacter propionicigenes has 2991 nodes and 274993 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06150
-	and has 5 connected components, where the component with most nodes has 2983 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 183.88, and the node degree mode is 5. The top 5
-	most central nodes are 694427.Palpr_2911 (degree 1313), 694427.Palpr_2170 (degree
-	1138), 694427.Palpr_2197 (degree 1105), 694427.Palpr_2552 (degree 1004) and 694427.Palpr_0370
-	(degree 922).
+	The undirected graph Paludibacter propionicigenes has 2991 nodes and 274993
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06150 and has 5 connected components, where the component
+	with most nodes has 2983 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 183.88,
+	and the node degree mode is 5. The top 5 most central nodes are 694427.Palpr_2911
+	(degree 1313), 694427.Palpr_2170 (degree 1138), 694427.Palpr_2197 (degree
+	1105), 694427.Palpr_2552 (degree 1004) and 694427.Palpr_0370 (degree 922).
 	
 
 

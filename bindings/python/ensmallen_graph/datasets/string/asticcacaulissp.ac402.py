@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:10:44.858112
 
-The undirected graph Asticcacaulis sp. AC402 has 3757 nodes and 293939 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04166 and
-has 18 connected components, where the component with most nodes has 3722 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 156.48, and the node degree mode is 6. The top 5 most central
-nodes are 1282361.ABAC402_15210 (degree 1225), 1282361.ABAC402_05070 (degree 1072),
-1282361.ABAC402_02135 (degree 1006), 1282361.ABAC402_13745 (degree 921) and 1282361.ABAC402_08105
+The undirected graph Asticcacaulis sp. AC402 has 3757 nodes and 293939
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04166 and has 18 connected components, where the component
+with most nodes has 3722 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 156.48,
+and the node degree mode is 6. The top 5 most central nodes are 1282361.ABAC402_15210
+(degree 1225), 1282361.ABAC402_05070 (degree 1072), 1282361.ABAC402_02135
+(degree 1006), 1282361.ABAC402_13745 (degree 921) and 1282361.ABAC402_08105
 (degree 884).
 
 
@@ -107,13 +108,14 @@ def AsticcacaulisSp.Ac402(
 	
 	Datetime: 2021-02-03 21:10:44.858112
 	
-	The undirected graph Asticcacaulis sp. AC402 has 3757 nodes and 293939 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04166 and
-	has 18 connected components, where the component with most nodes has 3722 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 156.48, and the node degree mode is 6. The top 5 most central
-	nodes are 1282361.ABAC402_15210 (degree 1225), 1282361.ABAC402_05070 (degree 1072),
-	1282361.ABAC402_02135 (degree 1006), 1282361.ABAC402_13745 (degree 921) and 1282361.ABAC402_08105
+	The undirected graph Asticcacaulis sp. AC402 has 3757 nodes and 293939
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04166 and has 18 connected components, where the component
+	with most nodes has 3722 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 156.48,
+	and the node degree mode is 6. The top 5 most central nodes are 1282361.ABAC402_15210
+	(degree 1225), 1282361.ABAC402_05070 (degree 1072), 1282361.ABAC402_02135
+	(degree 1006), 1282361.ABAC402_13745 (degree 921) and 1282361.ABAC402_08105
 	(degree 884).
 	
 

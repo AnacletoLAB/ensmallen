@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:06.267553
 
-The undirected graph Bacteroides intestinalis has 4876 nodes and 458038 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03854
-and has 10 connected components, where the component with most nodes has 4857 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 187.87, and the node degree mode is 4. The top 5
-most central nodes are 471870.BACINT_01234 (degree 1352), 471870.BACINT_00019 (degree
-1251), 471870.BACINT_01606 (degree 1218), 471870.BACINT_03177 (degree 1166) and 471870.BACINT_03180
-(degree 1109).
+The undirected graph Bacteroides intestinalis has 4876 nodes and 458038
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03854 and has 10 connected components, where the component
+with most nodes has 4857 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 187.87,
+and the node degree mode is 4. The top 5 most central nodes are 471870.BACINT_01234
+(degree 1352), 471870.BACINT_00019 (degree 1251), 471870.BACINT_01606 (degree
+1218), 471870.BACINT_03177 (degree 1166) and 471870.BACINT_03180 (degree
+1109).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesIntestinalis(
 	
 	Datetime: 2021-02-02 20:56:06.267553
 	
-	The undirected graph Bacteroides intestinalis has 4876 nodes and 458038 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03854
-	and has 10 connected components, where the component with most nodes has 4857 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 187.87, and the node degree mode is 4. The top 5
-	most central nodes are 471870.BACINT_01234 (degree 1352), 471870.BACINT_00019 (degree
-	1251), 471870.BACINT_01606 (degree 1218), 471870.BACINT_03177 (degree 1166) and 471870.BACINT_03180
-	(degree 1109).
+	The undirected graph Bacteroides intestinalis has 4876 nodes and 458038
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03854 and has 10 connected components, where the component
+	with most nodes has 4857 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 187.87,
+	and the node degree mode is 4. The top 5 most central nodes are 471870.BACINT_01234
+	(degree 1352), 471870.BACINT_00019 (degree 1251), 471870.BACINT_01606 (degree
+	1218), 471870.BACINT_03177 (degree 1166) and 471870.BACINT_03180 (degree
+	1109).
 	
 
 

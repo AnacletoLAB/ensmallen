@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:12.563473
 
-The undirected graph Micromonas sp. RCC299 has 6550 nodes and 750089 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03497 and
-has 7 connected components, where the component with most nodes has 6532 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 229.03, and the node degree mode is 1. The top 5 most central
-nodes are 296587.XP_002504727.1 (degree 2292), 296587.XP_002508260.1 (degree 2039),
-296587.XP_002502546.1 (degree 2014), 296587.XP_002499833.1 (degree 1621) and 296587.XP_002504092.1
+The undirected graph Micromonas sp. RCC299 has 6550 nodes and 750089 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03497 and has 7 connected components, where the component with most
+nodes has 6532 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 229.03, and
+the node degree mode is 1. The top 5 most central nodes are 296587.XP_002504727.1
+(degree 2292), 296587.XP_002508260.1 (degree 2039), 296587.XP_002502546.1
+(degree 2014), 296587.XP_002499833.1 (degree 1621) and 296587.XP_002504092.1
 (degree 1505).
 
 
@@ -107,13 +108,14 @@ def MicromonasSp.Rcc299(
 	
 	Datetime: 2021-02-02 20:21:12.563473
 	
-	The undirected graph Micromonas sp. RCC299 has 6550 nodes and 750089 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03497 and
-	has 7 connected components, where the component with most nodes has 6532 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 229.03, and the node degree mode is 1. The top 5 most central
-	nodes are 296587.XP_002504727.1 (degree 2292), 296587.XP_002508260.1 (degree 2039),
-	296587.XP_002502546.1 (degree 2014), 296587.XP_002499833.1 (degree 1621) and 296587.XP_002504092.1
+	The undirected graph Micromonas sp. RCC299 has 6550 nodes and 750089 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03497 and has 7 connected components, where the component with most
+	nodes has 6532 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 229.03, and
+	the node degree mode is 1. The top 5 most central nodes are 296587.XP_002504727.1
+	(degree 2292), 296587.XP_002508260.1 (degree 2039), 296587.XP_002502546.1
+	(degree 2014), 296587.XP_002499833.1 (degree 1621) and 296587.XP_002504092.1
 	(degree 1505).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:23.163344
 
-The undirected graph Nocardia asteroides has 6419 nodes and 872983 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04238 and
-has 33 connected components, where the component with most nodes has 6339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 272.00, and the node degree mode is 3. The top 5 most central
-nodes are 1110697.NCAST_34_01040 (degree 2051), 1110697.NCAST_10_00010 (degree 1962),
-1110697.NCAST_32_00130 (degree 1659), 1110697.NCAST_35_00380 (degree 1623) and 1110697.NCAST_10_00730
+The undirected graph Nocardia asteroides has 6419 nodes and 872983 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04238 and has 33 connected components, where the component with most
+nodes has 6339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 272.00, and
+the node degree mode is 3. The top 5 most central nodes are 1110697.NCAST_34_01040
+(degree 2051), 1110697.NCAST_10_00010 (degree 1962), 1110697.NCAST_32_00130
+(degree 1659), 1110697.NCAST_35_00380 (degree 1623) and 1110697.NCAST_10_00730
 (degree 1622).
 
 
@@ -107,13 +108,14 @@ def NocardiaAsteroides(
 	
 	Datetime: 2021-02-02 22:25:23.163344
 	
-	The undirected graph Nocardia asteroides has 6419 nodes and 872983 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04238 and
-	has 33 connected components, where the component with most nodes has 6339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 272.00, and the node degree mode is 3. The top 5 most central
-	nodes are 1110697.NCAST_34_01040 (degree 2051), 1110697.NCAST_10_00010 (degree 1962),
-	1110697.NCAST_32_00130 (degree 1659), 1110697.NCAST_35_00380 (degree 1623) and 1110697.NCAST_10_00730
+	The undirected graph Nocardia asteroides has 6419 nodes and 872983 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04238 and has 33 connected components, where the component with most
+	nodes has 6339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 272.00, and
+	the node degree mode is 3. The top 5 most central nodes are 1110697.NCAST_34_01040
+	(degree 2051), 1110697.NCAST_10_00010 (degree 1962), 1110697.NCAST_32_00130
+	(degree 1659), 1110697.NCAST_35_00380 (degree 1623) and 1110697.NCAST_10_00730
 	(degree 1622).
 	
 

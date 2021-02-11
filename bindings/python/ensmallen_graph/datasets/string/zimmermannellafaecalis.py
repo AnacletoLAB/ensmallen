@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:00:58.667287
 
-The undirected graph Zimmermannella faecalis has 2558 nodes and 153098 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04681 and
-has 3 connected components, where the component with most nodes has 2554 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 119.70, and the node degree mode is 4. The top 5 most central
-nodes are 1278308.KB907074_gene770 (degree 976), 1278308.KB907079_gene2244 (degree
-828), 1278308.KB907080_gene2281 (degree 744), 1278308.KB907084_gene109 (degree 676)
-and 1278308.KB907075_gene1114 (degree 669).
+The undirected graph Zimmermannella faecalis has 2558 nodes and 153098
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04681 and has 3 connected components, where the component
+with most nodes has 2554 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 119.70,
+and the node degree mode is 4. The top 5 most central nodes are 1278308.KB907074_gene770
+(degree 976), 1278308.KB907079_gene2244 (degree 828), 1278308.KB907080_gene2281
+(degree 744), 1278308.KB907084_gene109 (degree 676) and 1278308.KB907075_gene1114
+(degree 669).
 
 
 References
@@ -107,14 +108,15 @@ def ZimmermannellaFaecalis(
 	
 	Datetime: 2021-02-03 21:00:58.667287
 	
-	The undirected graph Zimmermannella faecalis has 2558 nodes and 153098 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04681 and
-	has 3 connected components, where the component with most nodes has 2554 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 119.70, and the node degree mode is 4. The top 5 most central
-	nodes are 1278308.KB907074_gene770 (degree 976), 1278308.KB907079_gene2244 (degree
-	828), 1278308.KB907080_gene2281 (degree 744), 1278308.KB907084_gene109 (degree 676)
-	and 1278308.KB907075_gene1114 (degree 669).
+	The undirected graph Zimmermannella faecalis has 2558 nodes and 153098
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04681 and has 3 connected components, where the component
+	with most nodes has 2554 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 119.70,
+	and the node degree mode is 4. The top 5 most central nodes are 1278308.KB907074_gene770
+	(degree 976), 1278308.KB907079_gene2244 (degree 828), 1278308.KB907080_gene2281
+	(degree 744), 1278308.KB907084_gene109 (degree 676) and 1278308.KB907075_gene1114
+	(degree 669).
 	
 
 

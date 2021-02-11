@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:19.383244
 
-The undirected graph Dialister microaerophilus has 1303 nodes and 87541 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10320 and has 5 connected components, where the component with most nodes has
-1289 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 119, the mean node degree is 134.37, and the node degree mode is 6. The
-top 5 most central nodes are 910314.HMPREF9220_0274 (degree 587), 910314.HMPREF9220_0286
-(degree 569), 910314.HMPREF9220_0949 (degree 485), 910314.HMPREF9220_0737 (degree
+The undirected graph Dialister microaerophilus has 1303 nodes and 87541
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10320 and has 5 connected components, where the
+component with most nodes has 1289 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+is 134.37, and the node degree mode is 6. The top 5 most central nodes
+are 910314.HMPREF9220_0274 (degree 587), 910314.HMPREF9220_0286 (degree
+569), 910314.HMPREF9220_0949 (degree 485), 910314.HMPREF9220_0737 (degree
 483) and 910314.HMPREF9220_0952 (degree 471).
 
 
@@ -107,13 +108,14 @@ def DialisterMicroaerophilus(
 	
 	Datetime: 2021-02-02 21:55:19.383244
 	
-	The undirected graph Dialister microaerophilus has 1303 nodes and 87541 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10320 and has 5 connected components, where the component with most nodes has
-	1289 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 119, the mean node degree is 134.37, and the node degree mode is 6. The
-	top 5 most central nodes are 910314.HMPREF9220_0274 (degree 587), 910314.HMPREF9220_0286
-	(degree 569), 910314.HMPREF9220_0949 (degree 485), 910314.HMPREF9220_0737 (degree
+	The undirected graph Dialister microaerophilus has 1303 nodes and 87541
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10320 and has 5 connected components, where the
+	component with most nodes has 1289 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+	is 134.37, and the node degree mode is 6. The top 5 most central nodes
+	are 910314.HMPREF9220_0274 (degree 587), 910314.HMPREF9220_0286 (degree
+	569), 910314.HMPREF9220_0949 (degree 485), 910314.HMPREF9220_0737 (degree
 	483) and 910314.HMPREF9220_0952 (degree 471).
 	
 

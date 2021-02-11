@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:00.208365
 
-The undirected graph Woodsholea maritima has 2740 nodes and 270182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07200 and
-has 8 connected components, where the component with most nodes has 2724 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 197.21, and the node degree mode is 3. The top 5 most central
-nodes are 1123503.KB908056_gene2184 (degree 1057), 1123503.KB908056_gene1539 (degree
-907), 1123503.KB908060_gene91 (degree 897), 1123503.KB908060_gene94 (degree 841)
-and 1123503.KB908057_gene2300 (degree 770).
+The undirected graph Woodsholea maritima has 2740 nodes and 270182 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07200 and has 8 connected components, where the component with most
+nodes has 2724 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 197.21, and
+the node degree mode is 3. The top 5 most central nodes are 1123503.KB908056_gene2184
+(degree 1057), 1123503.KB908056_gene1539 (degree 907), 1123503.KB908060_gene91
+(degree 897), 1123503.KB908060_gene94 (degree 841) and 1123503.KB908057_gene2300
+(degree 770).
 
 
 References
@@ -107,14 +108,15 @@ def WoodsholeaMaritima(
 	
 	Datetime: 2021-02-02 22:53:00.208365
 	
-	The undirected graph Woodsholea maritima has 2740 nodes and 270182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07200 and
-	has 8 connected components, where the component with most nodes has 2724 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 197.21, and the node degree mode is 3. The top 5 most central
-	nodes are 1123503.KB908056_gene2184 (degree 1057), 1123503.KB908056_gene1539 (degree
-	907), 1123503.KB908060_gene91 (degree 897), 1123503.KB908060_gene94 (degree 841)
-	and 1123503.KB908057_gene2300 (degree 770).
+	The undirected graph Woodsholea maritima has 2740 nodes and 270182 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07200 and has 8 connected components, where the component with most
+	nodes has 2724 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 197.21, and
+	the node degree mode is 3. The top 5 most central nodes are 1123503.KB908056_gene2184
+	(degree 1057), 1123503.KB908056_gene1539 (degree 907), 1123503.KB908060_gene91
+	(degree 897), 1123503.KB908060_gene94 (degree 841) and 1123503.KB908057_gene2300
+	(degree 770).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:03.496830
 
-The undirected graph Exiguobacterium sibiricum has 3003 nodes and 223747 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04964
-and has 8 connected components, where the component with most nodes has 2985 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 149.02, and the node degree mode is 4. The top 5
-most central nodes are 262543.Exig_2202 (degree 1227), 262543.Exig_0439 (degree 1013),
-262543.Exig_1926 (degree 891), 262543.Exig_0781 (degree 875) and 262543.Exig_1724
-(degree 846).
+The undirected graph Exiguobacterium sibiricum has 3003 nodes and 223747
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04964 and has 8 connected components, where the component
+with most nodes has 2985 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 149.02,
+and the node degree mode is 4. The top 5 most central nodes are 262543.Exig_2202
+(degree 1227), 262543.Exig_0439 (degree 1013), 262543.Exig_1926 (degree
+891), 262543.Exig_0781 (degree 875) and 262543.Exig_1724 (degree 846).
 
 
 References
@@ -107,14 +107,14 @@ def ExiguobacteriumSibiricum(
 	
 	Datetime: 2021-02-02 20:13:03.496830
 	
-	The undirected graph Exiguobacterium sibiricum has 3003 nodes and 223747 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04964
-	and has 8 connected components, where the component with most nodes has 2985 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 149.02, and the node degree mode is 4. The top 5
-	most central nodes are 262543.Exig_2202 (degree 1227), 262543.Exig_0439 (degree 1013),
-	262543.Exig_1926 (degree 891), 262543.Exig_0781 (degree 875) and 262543.Exig_1724
-	(degree 846).
+	The undirected graph Exiguobacterium sibiricum has 3003 nodes and 223747
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04964 and has 8 connected components, where the component
+	with most nodes has 2985 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 149.02,
+	and the node degree mode is 4. The top 5 most central nodes are 262543.Exig_2202
+	(degree 1227), 262543.Exig_0439 (degree 1013), 262543.Exig_1926 (degree
+	891), 262543.Exig_0781 (degree 875) and 262543.Exig_1724 (degree 846).
 	
 
 

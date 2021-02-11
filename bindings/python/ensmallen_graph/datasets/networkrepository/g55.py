@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:05:54.161265
 
-The undirected graph G55 has 4969 nodes and 12498 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00101 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 5.03, and the node degree mode is 4. The top 5 most central nodes are 2069 (degree
-15), 2269 (degree 15), 4135 (degree 14), 924 (degree 13) and 2421 (degree 13).
+The undirected graph G55 has 4969 nodes and 12498 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00101
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 5.03, and the node degree mode is 4. The
+top 5 most central nodes are 2069 (degree 15), 2269 (degree 15), 4135 (degree
+14), 924 (degree 13) and 2421 (degree 13).
 
 
 References
@@ -101,11 +102,12 @@ def G55(
 	
 	Datetime: 2021-02-06 10:05:54.161265
 	
-	The undirected graph G55 has 4969 nodes and 12498 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00101 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.03, and the node degree mode is 4. The top 5 most central nodes are 2069 (degree
-	15), 2269 (degree 15), 4135 (degree 14), 924 (degree 13) and 2421 (degree 13).
+	The undirected graph G55 has 4969 nodes and 12498 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00101
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 5.03, and the node degree mode is 4. The
+	top 5 most central nodes are 2069 (degree 15), 2269 (degree 15), 4135 (degree
+	14), 924 (degree 13) and 2421 (degree 13).
 	
 
 

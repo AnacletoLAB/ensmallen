@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:27.181366
 
-The undirected graph Actinokineospora enzanensis has 6938 nodes and 1044089 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-and has 41 connected components, where the component with most nodes has 6824 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 255, the mean node degree is 300.98, and the node degree mode is 2. The top 5
-most central nodes are 1120934.KB894461_gene953 (degree 2368), 1120934.KB894407_gene5103
-(degree 2259), 1120934.KB894443_gene4253 (degree 2201), 1120934.KB894405_gene5403
-(degree 2059) and 1120934.KB894426_gene3529 (degree 2051).
+The undirected graph Actinokineospora enzanensis has 6938 nodes and 1044089
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04339 and has 41 connected components, where the component
+with most nodes has 6824 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 255, the mean node degree is 300.98,
+and the node degree mode is 2. The top 5 most central nodes are 1120934.KB894461_gene953
+(degree 2368), 1120934.KB894407_gene5103 (degree 2259), 1120934.KB894443_gene4253
+(degree 2201), 1120934.KB894405_gene5403 (degree 2059) and 1120934.KB894426_gene3529
+(degree 2051).
 
 
 References
@@ -107,14 +108,15 @@ def ActinokineosporaEnzanensis(
 	
 	Datetime: 2021-02-02 22:29:27.181366
 	
-	The undirected graph Actinokineospora enzanensis has 6938 nodes and 1044089 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-	and has 41 connected components, where the component with most nodes has 6824 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 255, the mean node degree is 300.98, and the node degree mode is 2. The top 5
-	most central nodes are 1120934.KB894461_gene953 (degree 2368), 1120934.KB894407_gene5103
-	(degree 2259), 1120934.KB894443_gene4253 (degree 2201), 1120934.KB894405_gene5403
-	(degree 2059) and 1120934.KB894426_gene3529 (degree 2051).
+	The undirected graph Actinokineospora enzanensis has 6938 nodes and 1044089
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04339 and has 41 connected components, where the component
+	with most nodes has 6824 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 255, the mean node degree is 300.98,
+	and the node degree mode is 2. The top 5 most central nodes are 1120934.KB894461_gene953
+	(degree 2368), 1120934.KB894407_gene5103 (degree 2259), 1120934.KB894443_gene4253
+	(degree 2201), 1120934.KB894405_gene5403 (degree 2059) and 1120934.KB894426_gene3529
+	(degree 2051).
 	
 
 

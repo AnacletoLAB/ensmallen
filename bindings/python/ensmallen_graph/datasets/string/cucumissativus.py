@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:28:38.209969
 
-The undirected graph Cucumis sativus has 27002 nodes and 5593476 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01534 and
-has 11 connected components, where the component with most nodes has 26980 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 414.30, and the node degree mode is 1. The top 5
-most central nodes are 3659.XP_004170638.1 (degree 8704), 3659.XP_004163007.1 (degree
-6355), 3659.XP_004148833.1 (degree 6353), 3659.XP_004166167.1 (degree 5600) and 3659.XP_004153809.1
-(degree 4748).
+The undirected graph Cucumis sativus has 27002 nodes and 5593476 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01534 and has 11 connected components, where the component with most
+nodes has 26980 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 414.30, and
+the node degree mode is 1. The top 5 most central nodes are 3659.XP_004170638.1
+(degree 8704), 3659.XP_004163007.1 (degree 6355), 3659.XP_004148833.1 (degree
+6353), 3659.XP_004166167.1 (degree 5600) and 3659.XP_004153809.1 (degree
+4748).
 
 
 References
@@ -107,14 +108,15 @@ def CucumisSativus(
 	
 	Datetime: 2021-02-02 16:28:38.209969
 	
-	The undirected graph Cucumis sativus has 27002 nodes and 5593476 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01534 and
-	has 11 connected components, where the component with most nodes has 26980 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 414.30, and the node degree mode is 1. The top 5
-	most central nodes are 3659.XP_004170638.1 (degree 8704), 3659.XP_004163007.1 (degree
-	6355), 3659.XP_004148833.1 (degree 6353), 3659.XP_004166167.1 (degree 5600) and 3659.XP_004153809.1
-	(degree 4748).
+	The undirected graph Cucumis sativus has 27002 nodes and 5593476 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01534 and has 11 connected components, where the component with most
+	nodes has 26980 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 414.30, and
+	the node degree mode is 1. The top 5 most central nodes are 3659.XP_004170638.1
+	(degree 8704), 3659.XP_004163007.1 (degree 6355), 3659.XP_004148833.1 (degree
+	6353), 3659.XP_004166167.1 (degree 5600) and 3659.XP_004153809.1 (degree
+	4748).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:38:00.685079
 
-The undirected graph Bradyrhizobium japonicum in8p8 has 6738 nodes and 995644 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04387
-and has 45 connected components, where the component with most nodes has 6633 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 295.53, and the node degree mode is 2. The top 5
-most central nodes are 1304878.AUGD01000007_gene5437 (degree 3444), 1304878.AUGD01000001_gene682
+The undirected graph Bradyrhizobium japonicum in8p8 has 6738 nodes and
+995644 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04387 and has 45 connected components, where the
+component with most nodes has 6633 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 235, the mean node degree
+is 295.53, and the node degree mode is 2. The top 5 most central nodes
+are 1304878.AUGD01000007_gene5437 (degree 3444), 1304878.AUGD01000001_gene682
 (degree 2543), 1304878.AUGD01000005_gene3384 (degree 2452), 1304878.AUGD01000007_gene5656
 (degree 2100) and 1304878.AUGD01000001_gene392 (degree 2081).
 
@@ -107,12 +108,13 @@ def BradyrhizobiumJaponicumIn8p8(
 	
 	Datetime: 2021-02-03 21:38:00.685079
 	
-	The undirected graph Bradyrhizobium japonicum in8p8 has 6738 nodes and 995644 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04387
-	and has 45 connected components, where the component with most nodes has 6633 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 295.53, and the node degree mode is 2. The top 5
-	most central nodes are 1304878.AUGD01000007_gene5437 (degree 3444), 1304878.AUGD01000001_gene682
+	The undirected graph Bradyrhizobium japonicum in8p8 has 6738 nodes and
+	995644 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04387 and has 45 connected components, where the
+	component with most nodes has 6633 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 235, the mean node degree
+	is 295.53, and the node degree mode is 2. The top 5 most central nodes
+	are 1304878.AUGD01000007_gene5437 (degree 3444), 1304878.AUGD01000001_gene682
 	(degree 2543), 1304878.AUGD01000005_gene3384 (degree 2452), 1304878.AUGD01000007_gene5656
 	(degree 2100) and 1304878.AUGD01000001_gene392 (degree 2081).
 	

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:18.723322
 
-The undirected graph Enterococcus raffinosus has 4163 nodes and 818457 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09448 and
-has 19 connected components, where the component with most nodes has 4115 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 307,
-the mean node degree is 393.21, and the node degree mode is 3. The top 5 most central
-nodes are 1158602.I590_00717 (degree 1961), 1158602.I590_03888 (degree 1953), 1158602.I590_01029
-(degree 1915), 1158602.I590_01450 (degree 1880) and 1158602.I590_03311 (degree 1824).
+The undirected graph Enterococcus raffinosus has 4163 nodes and 818457
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09448 and has 19 connected components, where the component
+with most nodes has 4115 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 307, the mean node degree is 393.21,
+and the node degree mode is 3. The top 5 most central nodes are 1158602.I590_00717
+(degree 1961), 1158602.I590_03888 (degree 1953), 1158602.I590_01029 (degree
+1915), 1158602.I590_01450 (degree 1880) and 1158602.I590_03311 (degree
+1824).
 
 
 References
@@ -106,13 +108,15 @@ def EnterococcusRaffinosus(
 	
 	Datetime: 2021-02-02 23:03:18.723322
 	
-	The undirected graph Enterococcus raffinosus has 4163 nodes and 818457 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09448 and
-	has 19 connected components, where the component with most nodes has 4115 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 307,
-	the mean node degree is 393.21, and the node degree mode is 3. The top 5 most central
-	nodes are 1158602.I590_00717 (degree 1961), 1158602.I590_03888 (degree 1953), 1158602.I590_01029
-	(degree 1915), 1158602.I590_01450 (degree 1880) and 1158602.I590_03311 (degree 1824).
+	The undirected graph Enterococcus raffinosus has 4163 nodes and 818457
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09448 and has 19 connected components, where the component
+	with most nodes has 4115 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 307, the mean node degree is 393.21,
+	and the node degree mode is 3. The top 5 most central nodes are 1158602.I590_00717
+	(degree 1961), 1158602.I590_03888 (degree 1953), 1158602.I590_01029 (degree
+	1915), 1158602.I590_01450 (degree 1880) and 1158602.I590_03311 (degree
+	1824).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:57:41.801486
 
-The undirected graph zhishi-zhwiki-internallink has 1930275 nodes, of which 5 are
-singletons (all have self-loops), and 8961954 unweighted edges, of which 5052 are
-self-loops. The graph is extremely sparse as it has a density of 0.00000 and has
-328 connected components, where the component with most nodes has 1929387 nodes and
-the component with the least nodes has a single node. The graph median node degree
-is 1, the mean node degree is 9.28, and the node degree mode is 1. The top 5 most
-central nodes are 64 (degree 29005), 262 (degree 28263), 1464 (degree 27877), 33371
-(degree 27597) and 3680 (degree 24209).
+The undirected graph zhishi-zhwiki-internallink has 1930275 nodes, of which
+5 are singletons (all have self-loops), and 8961954 unweighted edges, of
+which 5052 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 328 connected components, where the component with most
+nodes has 1929387 nodes and the component with the least nodes has a single
+node. The graph median node degree is 1, the mean node degree is 9.28,
+and the node degree mode is 1. The top 5 most central nodes are 64 (degree
+29005), 262 (degree 28263), 1464 (degree 27877), 33371 (degree 27597) and
+3680 (degree 24209).
 
 
 References
@@ -104,14 +105,15 @@ def ZhishiZhwikiInternallink(
 	
 	Datetime: 2021-02-07 15:57:41.801486
 	
-	The undirected graph zhishi-zhwiki-internallink has 1930275 nodes, of which 5 are
-	singletons (all have self-loops), and 8961954 unweighted edges, of which 5052 are
-	self-loops. The graph is extremely sparse as it has a density of 0.00000 and has
-	328 connected components, where the component with most nodes has 1929387 nodes and
-	the component with the least nodes has a single node. The graph median node degree
-	is 1, the mean node degree is 9.28, and the node degree mode is 1. The top 5 most
-	central nodes are 64 (degree 29005), 262 (degree 28263), 1464 (degree 27877), 33371
-	(degree 27597) and 3680 (degree 24209).
+	The undirected graph zhishi-zhwiki-internallink has 1930275 nodes, of which
+	5 are singletons (all have self-loops), and 8961954 unweighted edges, of
+	which 5052 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 328 connected components, where the component with most
+	nodes has 1929387 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 1, the mean node degree is 9.28,
+	and the node degree mode is 1. The top 5 most central nodes are 64 (degree
+	29005), 262 (degree 28263), 1464 (degree 27877), 33371 (degree 27597) and
+	3680 (degree 24209).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:48.260203
 
-The undirected graph Frankia sp. CcI3 has 4451 nodes and 510809 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05158 and
-has 18 connected components, where the component with most nodes has 4411 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 211,
-the mean node degree is 229.53, and the node degree mode is 1. The top 5 most central
-nodes are 106370.Francci3_1621 (degree 1549), 106370.Francci3_3003 (degree 1280),
-106370.Francci3_2931 (degree 1270), 106370.Francci3_1396 (degree 1257) and 106370.Francci3_0645
+The undirected graph Frankia sp. CcI3 has 4451 nodes and 510809 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05158 and has 18 connected components, where the component with most
+nodes has 4411 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 211, the mean node degree is 229.53, and
+the node degree mode is 1. The top 5 most central nodes are 106370.Francci3_1621
+(degree 1549), 106370.Francci3_3003 (degree 1280), 106370.Francci3_2931
+(degree 1270), 106370.Francci3_1396 (degree 1257) and 106370.Francci3_0645
 (degree 1250).
 
 
@@ -107,13 +108,14 @@ def FrankiaSp.Cci3(
 	
 	Datetime: 2021-02-02 19:44:48.260203
 	
-	The undirected graph Frankia sp. CcI3 has 4451 nodes and 510809 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05158 and
-	has 18 connected components, where the component with most nodes has 4411 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 211,
-	the mean node degree is 229.53, and the node degree mode is 1. The top 5 most central
-	nodes are 106370.Francci3_1621 (degree 1549), 106370.Francci3_3003 (degree 1280),
-	106370.Francci3_2931 (degree 1270), 106370.Francci3_1396 (degree 1257) and 106370.Francci3_0645
+	The undirected graph Frankia sp. CcI3 has 4451 nodes and 510809 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05158 and has 18 connected components, where the component with most
+	nodes has 4411 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 211, the mean node degree is 229.53, and
+	the node degree mode is 1. The top 5 most central nodes are 106370.Francci3_1621
+	(degree 1549), 106370.Francci3_3003 (degree 1280), 106370.Francci3_2931
+	(degree 1270), 106370.Francci3_1396 (degree 1257) and 106370.Francci3_0645
 	(degree 1250).
 	
 

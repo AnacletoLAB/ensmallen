@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:42.774134
 
-The undirected graph Acidianus hospitalis has 2274 nodes and 174618 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06757 and
-has 44 connected components, where the component with most nodes has 2169 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 153.58, and the node degree mode is 3. The top 5 most central
-nodes are 933801.Ahos_1308 (degree 731), 933801.Ahos_0900 (degree 630), 933801.Ahos_1309
-(degree 627), 933801.Ahos_1306 (degree 596) and 933801.Ahos_0748 (degree 590).
+The undirected graph Acidianus hospitalis has 2274 nodes and 174618 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06757 and has 44 connected components, where the component with most
+nodes has 2169 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 153.58, and
+the node degree mode is 3. The top 5 most central nodes are 933801.Ahos_1308
+(degree 731), 933801.Ahos_0900 (degree 630), 933801.Ahos_1309 (degree 627),
+933801.Ahos_1306 (degree 596) and 933801.Ahos_0748 (degree 590).
 
 
 References
@@ -106,13 +107,14 @@ def AcidianusHospitalis(
 	
 	Datetime: 2021-02-02 21:58:42.774134
 	
-	The undirected graph Acidianus hospitalis has 2274 nodes and 174618 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06757 and
-	has 44 connected components, where the component with most nodes has 2169 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 153.58, and the node degree mode is 3. The top 5 most central
-	nodes are 933801.Ahos_1308 (degree 731), 933801.Ahos_0900 (degree 630), 933801.Ahos_1309
-	(degree 627), 933801.Ahos_1306 (degree 596) and 933801.Ahos_0748 (degree 590).
+	The undirected graph Acidianus hospitalis has 2274 nodes and 174618 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06757 and has 44 connected components, where the component with most
+	nodes has 2169 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 153.58, and
+	the node degree mode is 3. The top 5 most central nodes are 933801.Ahos_1308
+	(degree 731), 933801.Ahos_0900 (degree 630), 933801.Ahos_1309 (degree 627),
+	933801.Ahos_1306 (degree 596) and 933801.Ahos_0748 (degree 590).
 	
 
 

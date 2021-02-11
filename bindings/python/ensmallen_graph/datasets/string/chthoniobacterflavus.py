@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:55.708846
 
-The undirected graph Chthoniobacter flavus has 6594 nodes and 687845 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03164 and
-has 72 connected components, where the component with most nodes has 6390 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 208.63, and the node degree mode is 3. The top 5 most central
-nodes are 497964.CfE428DRAFT_1952 (degree 2216), 497964.CfE428DRAFT_6157 (degree
-1497), 497964.CfE428DRAFT_0727 (degree 1483), 497964.CfE428DRAFT_1777 (degree 1392)
-and 497964.CfE428DRAFT_3001 (degree 1345).
+The undirected graph Chthoniobacter flavus has 6594 nodes and 687845 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03164 and has 72 connected components, where the component with most
+nodes has 6390 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 208.63, and
+the node degree mode is 3. The top 5 most central nodes are 497964.CfE428DRAFT_1952
+(degree 2216), 497964.CfE428DRAFT_6157 (degree 1497), 497964.CfE428DRAFT_0727
+(degree 1483), 497964.CfE428DRAFT_1777 (degree 1392) and 497964.CfE428DRAFT_3001
+(degree 1345).
 
 
 References
@@ -107,14 +108,15 @@ def ChthoniobacterFlavus(
 	
 	Datetime: 2021-02-02 21:00:55.708846
 	
-	The undirected graph Chthoniobacter flavus has 6594 nodes and 687845 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03164 and
-	has 72 connected components, where the component with most nodes has 6390 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 208.63, and the node degree mode is 3. The top 5 most central
-	nodes are 497964.CfE428DRAFT_1952 (degree 2216), 497964.CfE428DRAFT_6157 (degree
-	1497), 497964.CfE428DRAFT_0727 (degree 1483), 497964.CfE428DRAFT_1777 (degree 1392)
-	and 497964.CfE428DRAFT_3001 (degree 1345).
+	The undirected graph Chthoniobacter flavus has 6594 nodes and 687845 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03164 and has 72 connected components, where the component with most
+	nodes has 6390 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 208.63, and
+	the node degree mode is 3. The top 5 most central nodes are 497964.CfE428DRAFT_1952
+	(degree 2216), 497964.CfE428DRAFT_6157 (degree 1497), 497964.CfE428DRAFT_0727
+	(degree 1483), 497964.CfE428DRAFT_1777 (degree 1392) and 497964.CfE428DRAFT_3001
+	(degree 1345).
 	
 
 

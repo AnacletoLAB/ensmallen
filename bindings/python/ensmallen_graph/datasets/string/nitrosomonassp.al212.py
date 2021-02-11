@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:07.214440
 
-The undirected graph Nitrosomonas sp. AL212 has 2869 nodes and 151655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03686 and
-has 15 connected components, where the component with most nodes has 2836 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 105.72, and the node degree mode is 2. The top 5 most central
-nodes are 153948.NAL212_1093 (degree 994), 153948.NAL212_0674 (degree 841), 153948.NAL212_2064
-(degree 764), 153948.NAL212_1084 (degree 745) and 153948.NAL212_2057 (degree 741).
+The undirected graph Nitrosomonas sp. AL212 has 2869 nodes and 151655 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03686 and has 15 connected components, where the component with most
+nodes has 2836 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 105.72, and
+the node degree mode is 2. The top 5 most central nodes are 153948.NAL212_1093
+(degree 994), 153948.NAL212_0674 (degree 841), 153948.NAL212_2064 (degree
+764), 153948.NAL212_1084 (degree 745) and 153948.NAL212_2057 (degree 741).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosomonasSp.Al212(
 	
 	Datetime: 2021-02-02 19:52:07.214440
 	
-	The undirected graph Nitrosomonas sp. AL212 has 2869 nodes and 151655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03686 and
-	has 15 connected components, where the component with most nodes has 2836 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 105.72, and the node degree mode is 2. The top 5 most central
-	nodes are 153948.NAL212_1093 (degree 994), 153948.NAL212_0674 (degree 841), 153948.NAL212_2064
-	(degree 764), 153948.NAL212_1084 (degree 745) and 153948.NAL212_2057 (degree 741).
+	The undirected graph Nitrosomonas sp. AL212 has 2869 nodes and 151655 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03686 and has 15 connected components, where the component with most
+	nodes has 2836 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 105.72, and
+	the node degree mode is 2. The top 5 most central nodes are 153948.NAL212_1093
+	(degree 994), 153948.NAL212_0674 (degree 841), 153948.NAL212_2064 (degree
+	764), 153948.NAL212_1084 (degree 745) and 153948.NAL212_2057 (degree 741).
 	
 
 

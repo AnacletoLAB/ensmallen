@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:45.508804
 
-The undirected graph Epilithonimonas tenax has 3284 nodes and 248098 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04602 and
-has 16 connected components, where the component with most nodes has 3249 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 151.10, and the node degree mode is 1. The top 5 most central
-nodes are 1121870.AUAA01000019_gene1421 (degree 1101), 1121870.AUAA01000011_gene563
-(degree 949), 1121870.AUAA01000029_gene3284 (degree 833), 1121870.AUAA01000034_gene3083
-(degree 822) and 1121870.AUAA01000038_gene2820 (degree 812).
+The undirected graph Epilithonimonas tenax has 3284 nodes and 248098 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04602 and has 16 connected components, where the component with most
+nodes has 3249 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 151.10, and
+the node degree mode is 1. The top 5 most central nodes are 1121870.AUAA01000019_gene1421
+(degree 1101), 1121870.AUAA01000011_gene563 (degree 949), 1121870.AUAA01000029_gene3284
+(degree 833), 1121870.AUAA01000034_gene3083 (degree 822) and 1121870.AUAA01000038_gene2820
+(degree 812).
 
 
 References
@@ -107,14 +108,15 @@ def EpilithonimonasTenax(
 	
 	Datetime: 2021-02-02 22:37:45.508804
 	
-	The undirected graph Epilithonimonas tenax has 3284 nodes and 248098 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04602 and
-	has 16 connected components, where the component with most nodes has 3249 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 151.10, and the node degree mode is 1. The top 5 most central
-	nodes are 1121870.AUAA01000019_gene1421 (degree 1101), 1121870.AUAA01000011_gene563
-	(degree 949), 1121870.AUAA01000029_gene3284 (degree 833), 1121870.AUAA01000034_gene3083
-	(degree 822) and 1121870.AUAA01000038_gene2820 (degree 812).
+	The undirected graph Epilithonimonas tenax has 3284 nodes and 248098 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04602 and has 16 connected components, where the component with most
+	nodes has 3249 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 151.10, and
+	the node degree mode is 1. The top 5 most central nodes are 1121870.AUAA01000019_gene1421
+	(degree 1101), 1121870.AUAA01000011_gene563 (degree 949), 1121870.AUAA01000029_gene3284
+	(degree 833), 1121870.AUAA01000034_gene3083 (degree 822) and 1121870.AUAA01000038_gene2820
+	(degree 812).
 	
 
 

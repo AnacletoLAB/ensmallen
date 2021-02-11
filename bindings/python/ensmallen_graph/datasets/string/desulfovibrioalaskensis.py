@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:37.016803
 
-The undirected graph Desulfovibrio alaskensis has 3232 nodes and 265166 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05079
-and has 6 connected components, where the component with most nodes has 3219 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 164.09, and the node degree mode is 2. The top 5
-most central nodes are 207559.Dde_3450 (degree 1425), 207559.Dde_1972 (degree 1196),
-207559.Dde_2091 (degree 1032), 207559.Dde_3237 (degree 1016) and 207559.Dde_2080
-(degree 1003).
+The undirected graph Desulfovibrio alaskensis has 3232 nodes and 265166
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05079 and has 6 connected components, where the component
+with most nodes has 3219 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 164.09,
+and the node degree mode is 2. The top 5 most central nodes are 207559.Dde_3450
+(degree 1425), 207559.Dde_1972 (degree 1196), 207559.Dde_2091 (degree 1032),
+207559.Dde_3237 (degree 1016) and 207559.Dde_2080 (degree 1003).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioAlaskensis(
 	
 	Datetime: 2021-02-02 20:00:37.016803
 	
-	The undirected graph Desulfovibrio alaskensis has 3232 nodes and 265166 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05079
-	and has 6 connected components, where the component with most nodes has 3219 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 164.09, and the node degree mode is 2. The top 5
-	most central nodes are 207559.Dde_3450 (degree 1425), 207559.Dde_1972 (degree 1196),
-	207559.Dde_2091 (degree 1032), 207559.Dde_3237 (degree 1016) and 207559.Dde_2080
-	(degree 1003).
+	The undirected graph Desulfovibrio alaskensis has 3232 nodes and 265166
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05079 and has 6 connected components, where the component
+	with most nodes has 3219 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 164.09,
+	and the node degree mode is 2. The top 5 most central nodes are 207559.Dde_3450
+	(degree 1425), 207559.Dde_1972 (degree 1196), 207559.Dde_2091 (degree 1032),
+	207559.Dde_3237 (degree 1016) and 207559.Dde_2080 (degree 1003).
 	
 
 

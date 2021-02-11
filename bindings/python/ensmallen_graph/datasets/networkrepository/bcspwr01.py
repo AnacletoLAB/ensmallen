@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:47.737770
 
-The undirected graph bcspwr01 has 39 nodes and 85 unweighted edges, of which 39 are
-self-loops. The graph is dense as it has a density of 0.08839 and is connected, as
-it has a single component. The graph median node degree is 3, the mean node degree
-is 3.36, and the node degree mode is 4. The top 5 most central nodes are 16 (degree
-6), 26 (degree 5), 6 (degree 5), 2 (degree 5) and 29 (degree 4).
+The undirected graph bcspwr01 has 39 nodes and 85 unweighted edges, of
+which 39 are self-loops. The graph is dense as it has a density of 0.08839
+and is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 3.36, and the node degree mode is 4. The
+top 5 most central nodes are 16 (degree 6), 26 (degree 5), 6 (degree 5),
+2 (degree 5) and 29 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def Bcspwr01(
 	
 	Datetime: 2021-02-06 08:02:47.737770
 	
-	The undirected graph bcspwr01 has 39 nodes and 85 unweighted edges, of which 39 are
-	self-loops. The graph is dense as it has a density of 0.08839 and is connected, as
-	it has a single component. The graph median node degree is 3, the mean node degree
-	is 3.36, and the node degree mode is 4. The top 5 most central nodes are 16 (degree
-	6), 26 (degree 5), 6 (degree 5), 2 (degree 5) and 29 (degree 4).
+	The undirected graph bcspwr01 has 39 nodes and 85 unweighted edges, of
+	which 39 are self-loops. The graph is dense as it has a density of 0.08839
+	and is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 3.36, and the node degree mode is 4. The
+	top 5 most central nodes are 16 (degree 6), 26 (degree 5), 6 (degree 5),
+	2 (degree 5) and 29 (degree 4).
 	
 
 

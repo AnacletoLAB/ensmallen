@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:40.646928
 
-The undirected graph Amycolatopsis benzoatilytica has 7818 nodes and 980111 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03208
-and has 22 connected components, where the component with most nodes has 7757 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 250.73, and the node degree mode is 3. The top 5
-most central nodes are 1089544.KB912942_gene3772 (degree 2604), 1089544.KB912942_gene3281
-(degree 2576), 1089544.KB912942_gene2308 (degree 2474), 1089544.KB912942_gene3136
-(degree 2345) and 1089544.KB912942_gene1540 (degree 2059).
+The undirected graph Amycolatopsis benzoatilytica has 7818 nodes and 980111
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03208 and has 22 connected components, where the component
+with most nodes has 7757 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 213, the mean node degree is 250.73,
+and the node degree mode is 3. The top 5 most central nodes are 1089544.KB912942_gene3772
+(degree 2604), 1089544.KB912942_gene3281 (degree 2576), 1089544.KB912942_gene2308
+(degree 2474), 1089544.KB912942_gene3136 (degree 2345) and 1089544.KB912942_gene1540
+(degree 2059).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisBenzoatilytica(
 	
 	Datetime: 2021-02-02 22:21:40.646928
 	
-	The undirected graph Amycolatopsis benzoatilytica has 7818 nodes and 980111 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03208
-	and has 22 connected components, where the component with most nodes has 7757 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 250.73, and the node degree mode is 3. The top 5
-	most central nodes are 1089544.KB912942_gene3772 (degree 2604), 1089544.KB912942_gene3281
-	(degree 2576), 1089544.KB912942_gene2308 (degree 2474), 1089544.KB912942_gene3136
-	(degree 2345) and 1089544.KB912942_gene1540 (degree 2059).
+	The undirected graph Amycolatopsis benzoatilytica has 7818 nodes and 980111
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03208 and has 22 connected components, where the component
+	with most nodes has 7757 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 213, the mean node degree is 250.73,
+	and the node degree mode is 3. The top 5 most central nodes are 1089544.KB912942_gene3772
+	(degree 2604), 1089544.KB912942_gene3281 (degree 2576), 1089544.KB912942_gene2308
+	(degree 2474), 1089544.KB912942_gene3136 (degree 2345) and 1089544.KB912942_gene1540
+	(degree 2059).
 	
 
 

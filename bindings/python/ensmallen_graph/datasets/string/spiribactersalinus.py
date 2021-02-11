@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:21.627812
 
-The undirected graph Spiribacter salinus has 1681 nodes and 115142 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08154 and
-is connected, as it has a single component. The graph median node degree is 122,
-the mean node degree is 136.99, and the node degree mode is 92. The top 5 most central
-nodes are 1260251.SPISAL_08280 (degree 805), 1260251.SPISAL_05450 (degree 627), 1260251.SPISAL_03535
-(degree 609), 1260251.SPISAL_00290 (degree 573) and 1260251.SPISAL_05455 (degree
-565).
+The undirected graph Spiribacter salinus has 1681 nodes and 115142 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08154 and is connected, as it has a single component. The graph median
+node degree is 122, the mean node degree is 136.99, and the node degree
+mode is 92. The top 5 most central nodes are 1260251.SPISAL_08280 (degree
+805), 1260251.SPISAL_05450 (degree 627), 1260251.SPISAL_03535 (degree 609),
+1260251.SPISAL_00290 (degree 573) and 1260251.SPISAL_05455 (degree 565).
 
 
 References
@@ -106,13 +106,13 @@ def SpiribacterSalinus(
 	
 	Datetime: 2021-02-02 23:35:21.627812
 	
-	The undirected graph Spiribacter salinus has 1681 nodes and 115142 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08154 and
-	is connected, as it has a single component. The graph median node degree is 122,
-	the mean node degree is 136.99, and the node degree mode is 92. The top 5 most central
-	nodes are 1260251.SPISAL_08280 (degree 805), 1260251.SPISAL_05450 (degree 627), 1260251.SPISAL_03535
-	(degree 609), 1260251.SPISAL_00290 (degree 573) and 1260251.SPISAL_05455 (degree
-	565).
+	The undirected graph Spiribacter salinus has 1681 nodes and 115142 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08154 and is connected, as it has a single component. The graph median
+	node degree is 122, the mean node degree is 136.99, and the node degree
+	mode is 92. The top 5 most central nodes are 1260251.SPISAL_08280 (degree
+	805), 1260251.SPISAL_05450 (degree 627), 1260251.SPISAL_03535 (degree 609),
+	1260251.SPISAL_00290 (degree 573) and 1260251.SPISAL_05455 (degree 565).
 	
 
 

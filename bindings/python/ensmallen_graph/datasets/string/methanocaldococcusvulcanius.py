@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:22.605400
 
-The undirected graph Methanocaldococcus vulcanius has 1732 nodes and 145312 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09694
-and has 9 connected components, where the component with most nodes has 1707 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 167.80, and the node degree mode is 4. The top 5
-most central nodes are 579137.Metvu_1003 (degree 657), 579137.Metvu_1299 (degree
-642), 579137.Metvu_0390 (degree 635), 579137.Metvu_1398 (degree 633) and 579137.Metvu_0699
-(degree 632).
+The undirected graph Methanocaldococcus vulcanius has 1732 nodes and 145312
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09694 and has 9 connected components, where the component
+with most nodes has 1707 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 167.80,
+and the node degree mode is 4. The top 5 most central nodes are 579137.Metvu_1003
+(degree 657), 579137.Metvu_1299 (degree 642), 579137.Metvu_0390 (degree
+635), 579137.Metvu_1398 (degree 633) and 579137.Metvu_0699 (degree 632).
 
 
 References
@@ -107,14 +107,14 @@ def MethanocaldococcusVulcanius(
 	
 	Datetime: 2021-02-02 21:15:22.605400
 	
-	The undirected graph Methanocaldococcus vulcanius has 1732 nodes and 145312 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09694
-	and has 9 connected components, where the component with most nodes has 1707 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 167.80, and the node degree mode is 4. The top 5
-	most central nodes are 579137.Metvu_1003 (degree 657), 579137.Metvu_1299 (degree
-	642), 579137.Metvu_0390 (degree 635), 579137.Metvu_1398 (degree 633) and 579137.Metvu_0699
-	(degree 632).
+	The undirected graph Methanocaldococcus vulcanius has 1732 nodes and 145312
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09694 and has 9 connected components, where the component
+	with most nodes has 1707 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 167.80,
+	and the node degree mode is 4. The top 5 most central nodes are 579137.Metvu_1003
+	(degree 657), 579137.Metvu_1299 (degree 642), 579137.Metvu_0390 (degree
+	635), 579137.Metvu_1398 (degree 633) and 579137.Metvu_0699 (degree 632).
 	
 
 

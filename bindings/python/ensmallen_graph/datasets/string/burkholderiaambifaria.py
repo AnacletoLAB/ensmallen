@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:04.445948
 
-The undirected graph Burkholderia ambifaria has 6557 nodes and 678360 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03156 and
-has 23 connected components, where the component with most nodes has 6503 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 206.91, and the node degree mode is 3. The top 5 most central
-nodes are 339670.Bamb_3243 (degree 2310), 339670.Bamb_0321 (degree 1949), 339670.Bamb_5743
-(degree 1737), 339670.Bamb_2022 (degree 1657) and 339670.Bamb_0821 (degree 1494).
+The undirected graph Burkholderia ambifaria has 6557 nodes and 678360 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03156 and has 23 connected components, where the component with most
+nodes has 6503 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 168, the mean node degree is 206.91, and
+the node degree mode is 3. The top 5 most central nodes are 339670.Bamb_3243
+(degree 2310), 339670.Bamb_0321 (degree 1949), 339670.Bamb_5743 (degree
+1737), 339670.Bamb_2022 (degree 1657) and 339670.Bamb_0821 (degree 1494).
 
 
 References
@@ -106,13 +107,14 @@ def BurkholderiaAmbifaria(
 	
 	Datetime: 2021-02-02 20:31:04.445948
 	
-	The undirected graph Burkholderia ambifaria has 6557 nodes and 678360 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03156 and
-	has 23 connected components, where the component with most nodes has 6503 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 206.91, and the node degree mode is 3. The top 5 most central
-	nodes are 339670.Bamb_3243 (degree 2310), 339670.Bamb_0321 (degree 1949), 339670.Bamb_5743
-	(degree 1737), 339670.Bamb_2022 (degree 1657) and 339670.Bamb_0821 (degree 1494).
+	The undirected graph Burkholderia ambifaria has 6557 nodes and 678360 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03156 and has 23 connected components, where the component with most
+	nodes has 6503 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 168, the mean node degree is 206.91, and
+	the node degree mode is 3. The top 5 most central nodes are 339670.Bamb_3243
+	(degree 2310), 339670.Bamb_0321 (degree 1949), 339670.Bamb_5743 (degree
+	1737), 339670.Bamb_2022 (degree 1657) and 339670.Bamb_0821 (degree 1494).
 	
 
 

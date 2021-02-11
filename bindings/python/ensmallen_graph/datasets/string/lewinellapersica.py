@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:39.992163
 
-The undirected graph Lewinella persica has 4963 nodes and 462037 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03752 and
-has 16 connected components, where the component with most nodes has 4919 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 186.19, and the node degree mode is 2. The top 5 most central
-nodes are 1122179.KB890420_gene2383 (degree 1352), 1122179.KB890425_gene3487 (degree
-1284), 1122179.KB890434_gene850 (degree 1160), 1122179.KB890444_gene5042 (degree
-1131) and 1122179.KB890458_gene803 (degree 1051).
+The undirected graph Lewinella persica has 4963 nodes and 462037 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03752 and has 16 connected components, where the component with most
+nodes has 4919 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 186.19, and
+the node degree mode is 2. The top 5 most central nodes are 1122179.KB890420_gene2383
+(degree 1352), 1122179.KB890425_gene3487 (degree 1284), 1122179.KB890434_gene850
+(degree 1160), 1122179.KB890444_gene5042 (degree 1131) and 1122179.KB890458_gene803
+(degree 1051).
 
 
 References
@@ -107,14 +108,15 @@ def LewinellaPersica(
 	
 	Datetime: 2021-02-02 22:41:39.992163
 	
-	The undirected graph Lewinella persica has 4963 nodes and 462037 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03752 and
-	has 16 connected components, where the component with most nodes has 4919 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 186.19, and the node degree mode is 2. The top 5 most central
-	nodes are 1122179.KB890420_gene2383 (degree 1352), 1122179.KB890425_gene3487 (degree
-	1284), 1122179.KB890434_gene850 (degree 1160), 1122179.KB890444_gene5042 (degree
-	1131) and 1122179.KB890458_gene803 (degree 1051).
+	The undirected graph Lewinella persica has 4963 nodes and 462037 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03752 and has 16 connected components, where the component with most
+	nodes has 4919 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 186.19, and
+	the node degree mode is 2. The top 5 most central nodes are 1122179.KB890420_gene2383
+	(degree 1352), 1122179.KB890425_gene3487 (degree 1284), 1122179.KB890434_gene850
+	(degree 1160), 1122179.KB890444_gene5042 (degree 1131) and 1122179.KB890458_gene803
+	(degree 1051).
 	
 
 

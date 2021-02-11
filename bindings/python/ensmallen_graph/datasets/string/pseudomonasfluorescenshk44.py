@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:35.012142
 
-The undirected graph Pseudomonas fluorescens HK44 has 5560 nodes and 721099 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04666
-and has 34 connected components, where the component with most nodes has 5480 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 259.39, and the node degree mode is 2. The top 5
-most central nodes are 1042209.HK44_001855 (degree 2138), 1042209.HK44_012530 (degree
-1985), 1042209.HK44_000200 (degree 1812), 1042209.HK44_024520 (degree 1705) and 1042209.HK44_025740
-(degree 1692).
+The undirected graph Pseudomonas fluorescens HK44 has 5560 nodes and 721099
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04666 and has 34 connected components, where the component
+with most nodes has 5480 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 259.39,
+and the node degree mode is 2. The top 5 most central nodes are 1042209.HK44_001855
+(degree 2138), 1042209.HK44_012530 (degree 1985), 1042209.HK44_000200 (degree
+1812), 1042209.HK44_024520 (degree 1705) and 1042209.HK44_025740 (degree
+1692).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFluorescensHk44(
 	
 	Datetime: 2021-02-02 22:15:35.012142
 	
-	The undirected graph Pseudomonas fluorescens HK44 has 5560 nodes and 721099 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04666
-	and has 34 connected components, where the component with most nodes has 5480 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 259.39, and the node degree mode is 2. The top 5
-	most central nodes are 1042209.HK44_001855 (degree 2138), 1042209.HK44_012530 (degree
-	1985), 1042209.HK44_000200 (degree 1812), 1042209.HK44_024520 (degree 1705) and 1042209.HK44_025740
-	(degree 1692).
+	The undirected graph Pseudomonas fluorescens HK44 has 5560 nodes and 721099
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04666 and has 34 connected components, where the component
+	with most nodes has 5480 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 259.39,
+	and the node degree mode is 2. The top 5 most central nodes are 1042209.HK44_001855
+	(degree 2138), 1042209.HK44_012530 (degree 1985), 1042209.HK44_000200 (degree
+	1812), 1042209.HK44_024520 (degree 1705) and 1042209.HK44_025740 (degree
+	1692).
 	
 
 

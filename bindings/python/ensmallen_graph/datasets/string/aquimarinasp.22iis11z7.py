@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:50:39.663832
 
-The undirected graph Aquimarina sp. 22IIS11z7 has 4747 nodes and 672982 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05974
-and has 16 connected components, where the component with most nodes has 4705 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 271, the mean node degree is 283.54, and the node degree mode is 2. The top 5
-most central nodes are 1317122.ATO12_11335 (degree 1518), 1317122.ATO12_13585 (degree
-1483), 1317122.ATO12_17455 (degree 1382), 1317122.ATO12_19860 (degree 1375) and 1317122.ATO12_19605
-(degree 1371).
+The undirected graph Aquimarina sp. 22IIS11z7 has 4747 nodes and 672982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05974 and has 16 connected components, where the component
+with most nodes has 4705 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 271, the mean node degree is 283.54,
+and the node degree mode is 2. The top 5 most central nodes are 1317122.ATO12_11335
+(degree 1518), 1317122.ATO12_13585 (degree 1483), 1317122.ATO12_17455 (degree
+1382), 1317122.ATO12_19860 (degree 1375) and 1317122.ATO12_19605 (degree
+1371).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaSp.22iis11z7(
 	
 	Datetime: 2021-02-03 21:50:39.663832
 	
-	The undirected graph Aquimarina sp. 22IIS11z7 has 4747 nodes and 672982 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05974
-	and has 16 connected components, where the component with most nodes has 4705 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 271, the mean node degree is 283.54, and the node degree mode is 2. The top 5
-	most central nodes are 1317122.ATO12_11335 (degree 1518), 1317122.ATO12_13585 (degree
-	1483), 1317122.ATO12_17455 (degree 1382), 1317122.ATO12_19860 (degree 1375) and 1317122.ATO12_19605
-	(degree 1371).
+	The undirected graph Aquimarina sp. 22IIS11z7 has 4747 nodes and 672982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05974 and has 16 connected components, where the component
+	with most nodes has 4705 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 271, the mean node degree is 283.54,
+	and the node degree mode is 2. The top 5 most central nodes are 1317122.ATO12_11335
+	(degree 1518), 1317122.ATO12_13585 (degree 1483), 1317122.ATO12_17455 (degree
+	1382), 1317122.ATO12_19860 (degree 1375) and 1317122.ATO12_19605 (degree
+	1371).
 	
 
 

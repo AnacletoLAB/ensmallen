@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:27.491431
 
-The undirected graph Syntrophobacter fumaroxidans has 3992 nodes and 471092 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05914
-and has 30 connected components, where the component with most nodes has 3927 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 195, the mean node degree is 236.02, and the node degree mode is 1. The top 5
-most central nodes are 335543.Sfum_1612 (degree 1841), 335543.Sfum_2208 (degree 1645),
-335543.Sfum_3740 (degree 1541), 335543.Sfum_1438 (degree 1445) and 335543.Sfum_0478
-(degree 1367).
+The undirected graph Syntrophobacter fumaroxidans has 3992 nodes and 471092
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05914 and has 30 connected components, where the component
+with most nodes has 3927 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 236.02,
+and the node degree mode is 1. The top 5 most central nodes are 335543.Sfum_1612
+(degree 1841), 335543.Sfum_2208 (degree 1645), 335543.Sfum_3740 (degree
+1541), 335543.Sfum_1438 (degree 1445) and 335543.Sfum_0478 (degree 1367).
 
 
 References
@@ -107,14 +107,14 @@ def SyntrophobacterFumaroxidans(
 	
 	Datetime: 2021-02-02 20:30:27.491431
 	
-	The undirected graph Syntrophobacter fumaroxidans has 3992 nodes and 471092 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05914
-	and has 30 connected components, where the component with most nodes has 3927 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 195, the mean node degree is 236.02, and the node degree mode is 1. The top 5
-	most central nodes are 335543.Sfum_1612 (degree 1841), 335543.Sfum_2208 (degree 1645),
-	335543.Sfum_3740 (degree 1541), 335543.Sfum_1438 (degree 1445) and 335543.Sfum_0478
-	(degree 1367).
+	The undirected graph Syntrophobacter fumaroxidans has 3992 nodes and 471092
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05914 and has 30 connected components, where the component
+	with most nodes has 3927 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 236.02,
+	and the node degree mode is 1. The top 5 most central nodes are 335543.Sfum_1612
+	(degree 1841), 335543.Sfum_2208 (degree 1645), 335543.Sfum_3740 (degree
+	1541), 335543.Sfum_1438 (degree 1445) and 335543.Sfum_0478 (degree 1367).
 	
 
 

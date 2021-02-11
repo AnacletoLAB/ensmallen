@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:45.741765
 
-The undirected graph Frankia symbiont has 4114 nodes and 341016 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04031 and
-has 26 connected components, where the component with most nodes has 4056 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 165.78, and the node degree mode is 2. The top 5 most central
-nodes are 656024.FsymDg_2708 (degree 1562), 656024.FsymDg_0527 (degree 1546), 656024.FsymDg_2896
-(degree 1252), 656024.FsymDg_2135 (degree 1238) and 656024.FsymDg_3235 (degree 1152).
+The undirected graph Frankia symbiont has 4114 nodes and 341016 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04031 and has 26 connected components, where the component with most
+nodes has 4056 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 165.78, and
+the node degree mode is 2. The top 5 most central nodes are 656024.FsymDg_2708
+(degree 1562), 656024.FsymDg_0527 (degree 1546), 656024.FsymDg_2896 (degree
+1252), 656024.FsymDg_2135 (degree 1238) and 656024.FsymDg_3235 (degree
+1152).
 
 
 References
@@ -106,13 +108,15 @@ def FrankiaSymbiont(
 	
 	Datetime: 2021-02-02 21:26:45.741765
 	
-	The undirected graph Frankia symbiont has 4114 nodes and 341016 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04031 and
-	has 26 connected components, where the component with most nodes has 4056 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 165.78, and the node degree mode is 2. The top 5 most central
-	nodes are 656024.FsymDg_2708 (degree 1562), 656024.FsymDg_0527 (degree 1546), 656024.FsymDg_2896
-	(degree 1252), 656024.FsymDg_2135 (degree 1238) and 656024.FsymDg_3235 (degree 1152).
+	The undirected graph Frankia symbiont has 4114 nodes and 341016 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04031 and has 26 connected components, where the component with most
+	nodes has 4056 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 165.78, and
+	the node degree mode is 2. The top 5 most central nodes are 656024.FsymDg_2708
+	(degree 1562), 656024.FsymDg_0527 (degree 1546), 656024.FsymDg_2896 (degree
+	1252), 656024.FsymDg_2135 (degree 1238) and 656024.FsymDg_3235 (degree
+	1152).
 	
 
 

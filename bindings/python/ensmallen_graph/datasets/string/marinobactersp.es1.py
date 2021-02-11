@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:28:55.386746
 
-The undirected graph Marinobacter sp. ES1 has 3297 nodes and 255022 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04694 and
-has 10 connected components, where the component with most nodes has 3278 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 154.70, and the node degree mode is 4. The top 5 most central
-nodes are 1396858.Q666_00425 (degree 1209), 1396858.Q666_01180 (degree 1026), 1396858.Q666_14570
-(degree 966), 1396858.Q666_01610 (degree 929) and 1396858.Q666_14320 (degree 920).
+The undirected graph Marinobacter sp. ES1 has 3297 nodes and 255022 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04694 and has 10 connected components, where the component with most
+nodes has 3278 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 154.70, and
+the node degree mode is 4. The top 5 most central nodes are 1396858.Q666_00425
+(degree 1209), 1396858.Q666_01180 (degree 1026), 1396858.Q666_14570 (degree
+966), 1396858.Q666_01610 (degree 929) and 1396858.Q666_14320 (degree 920).
 
 
 References
@@ -106,13 +107,14 @@ def MarinobacterSp.Es1(
 	
 	Datetime: 2021-02-03 22:28:55.386746
 	
-	The undirected graph Marinobacter sp. ES1 has 3297 nodes and 255022 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04694 and
-	has 10 connected components, where the component with most nodes has 3278 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 154.70, and the node degree mode is 4. The top 5 most central
-	nodes are 1396858.Q666_00425 (degree 1209), 1396858.Q666_01180 (degree 1026), 1396858.Q666_14570
-	(degree 966), 1396858.Q666_01610 (degree 929) and 1396858.Q666_14320 (degree 920).
+	The undirected graph Marinobacter sp. ES1 has 3297 nodes and 255022 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04694 and has 10 connected components, where the component with most
+	nodes has 3278 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 154.70, and
+	the node degree mode is 4. The top 5 most central nodes are 1396858.Q666_00425
+	(degree 1209), 1396858.Q666_01180 (degree 1026), 1396858.Q666_14570 (degree
+	966), 1396858.Q666_01610 (degree 929) and 1396858.Q666_14320 (degree 920).
 	
 
 

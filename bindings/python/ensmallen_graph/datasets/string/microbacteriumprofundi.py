@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:05.662151
 
-The undirected graph Microbacterium profundi has 3124 nodes and 224549 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04603 and
-has 14 connected components, where the component with most nodes has 3095 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 143.76, and the node degree mode is 1. The top 5 most central
-nodes are 450380.JPSY01000003_gene2528 (degree 945), 450380.JPSY01000003_gene2538
-(degree 924), 450380.JPSY01000001_gene221 (degree 875), 450380.JPSY01000001_gene583
-(degree 875) and 450380.JPSY01000001_gene576 (degree 867).
+The undirected graph Microbacterium profundi has 3124 nodes and 224549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04603 and has 14 connected components, where the component
+with most nodes has 3095 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 143.76,
+and the node degree mode is 1. The top 5 most central nodes are 450380.JPSY01000003_gene2528
+(degree 945), 450380.JPSY01000003_gene2538 (degree 924), 450380.JPSY01000001_gene221
+(degree 875), 450380.JPSY01000001_gene583 (degree 875) and 450380.JPSY01000001_gene576
+(degree 867).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumProfundi(
 	
 	Datetime: 2021-02-02 20:52:05.662151
 	
-	The undirected graph Microbacterium profundi has 3124 nodes and 224549 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04603 and
-	has 14 connected components, where the component with most nodes has 3095 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 143.76, and the node degree mode is 1. The top 5 most central
-	nodes are 450380.JPSY01000003_gene2528 (degree 945), 450380.JPSY01000003_gene2538
-	(degree 924), 450380.JPSY01000001_gene221 (degree 875), 450380.JPSY01000001_gene583
-	(degree 875) and 450380.JPSY01000001_gene576 (degree 867).
+	The undirected graph Microbacterium profundi has 3124 nodes and 224549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04603 and has 14 connected components, where the component
+	with most nodes has 3095 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 143.76,
+	and the node degree mode is 1. The top 5 most central nodes are 450380.JPSY01000003_gene2528
+	(degree 945), 450380.JPSY01000003_gene2538 (degree 924), 450380.JPSY01000001_gene221
+	(degree 875), 450380.JPSY01000001_gene583 (degree 875) and 450380.JPSY01000001_gene576
+	(degree 867).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:26.497162
 
-The undirected graph Weeksella sp. FF8 has 2320 nodes and 166383 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06185 and
-has 9 connected components, where the component with most nodes has 2292 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 143.43, and the node degree mode is 4. The top 5 most central
-nodes are 1461577.CCMH01000006_gene1986 (degree 924), 1461577.CCMH01000006_gene1971
-(degree 790), 1461577.CCMH01000037_gene109 (degree 760), 1461577.CCMH01000004_gene1164
-(degree 705) and 1461577.CCMH01000015_gene356 (degree 700).
+The undirected graph Weeksella sp. FF8 has 2320 nodes and 166383 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06185 and has 9 connected components, where the component with most
+nodes has 2292 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 143.43, and
+the node degree mode is 4. The top 5 most central nodes are 1461577.CCMH01000006_gene1986
+(degree 924), 1461577.CCMH01000006_gene1971 (degree 790), 1461577.CCMH01000037_gene109
+(degree 760), 1461577.CCMH01000004_gene1164 (degree 705) and 1461577.CCMH01000015_gene356
+(degree 700).
 
 
 References
@@ -107,14 +108,15 @@ def WeeksellaSp.Ff8(
 	
 	Datetime: 2021-02-03 23:07:26.497162
 	
-	The undirected graph Weeksella sp. FF8 has 2320 nodes and 166383 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06185 and
-	has 9 connected components, where the component with most nodes has 2292 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 143.43, and the node degree mode is 4. The top 5 most central
-	nodes are 1461577.CCMH01000006_gene1986 (degree 924), 1461577.CCMH01000006_gene1971
-	(degree 790), 1461577.CCMH01000037_gene109 (degree 760), 1461577.CCMH01000004_gene1164
-	(degree 705) and 1461577.CCMH01000015_gene356 (degree 700).
+	The undirected graph Weeksella sp. FF8 has 2320 nodes and 166383 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06185 and has 9 connected components, where the component with most
+	nodes has 2292 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 143.43, and
+	the node degree mode is 4. The top 5 most central nodes are 1461577.CCMH01000006_gene1986
+	(degree 924), 1461577.CCMH01000006_gene1971 (degree 790), 1461577.CCMH01000037_gene109
+	(degree 760), 1461577.CCMH01000004_gene1164 (degree 705) and 1461577.CCMH01000015_gene356
+	(degree 700).
 	
 
 

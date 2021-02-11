@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:49:39.080736
 
-The undirected graph Lactobacillus apodemi has 2164 nodes and 174109 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07439 and
-has 14 connected components, where the component with most nodes has 2136 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 160.91, and the node degree mode is 1. The top 5 most central
-nodes are 1423724.BAMM01000016_gene1612 (degree 1093), 1423724.BAMM01000006_gene871
-(degree 984), 1423724.BAMM01000002_gene296 (degree 885), 1423724.BAMM01000012_gene1401
-(degree 809) and 1423724.BAMM01000001_gene280 (degree 693).
+The undirected graph Lactobacillus apodemi has 2164 nodes and 174109 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07439 and has 14 connected components, where the component with most
+nodes has 2136 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 160.91, and
+the node degree mode is 1. The top 5 most central nodes are 1423724.BAMM01000016_gene1612
+(degree 1093), 1423724.BAMM01000006_gene871 (degree 984), 1423724.BAMM01000002_gene296
+(degree 885), 1423724.BAMM01000012_gene1401 (degree 809) and 1423724.BAMM01000001_gene280
+(degree 693).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusApodemi(
 	
 	Datetime: 2021-02-03 22:49:39.080736
 	
-	The undirected graph Lactobacillus apodemi has 2164 nodes and 174109 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07439 and
-	has 14 connected components, where the component with most nodes has 2136 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 160.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1423724.BAMM01000016_gene1612 (degree 1093), 1423724.BAMM01000006_gene871
-	(degree 984), 1423724.BAMM01000002_gene296 (degree 885), 1423724.BAMM01000012_gene1401
-	(degree 809) and 1423724.BAMM01000001_gene280 (degree 693).
+	The undirected graph Lactobacillus apodemi has 2164 nodes and 174109 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07439 and has 14 connected components, where the component with most
+	nodes has 2136 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 160.91, and
+	the node degree mode is 1. The top 5 most central nodes are 1423724.BAMM01000016_gene1612
+	(degree 1093), 1423724.BAMM01000006_gene871 (degree 984), 1423724.BAMM01000002_gene296
+	(degree 885), 1423724.BAMM01000012_gene1401 (degree 809) and 1423724.BAMM01000001_gene280
+	(degree 693).
 	
 
 

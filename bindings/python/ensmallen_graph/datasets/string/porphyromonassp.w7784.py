@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:25.892734
 
-The undirected graph Porphyromonas sp. W7784 has 1942 nodes and 106449 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05648 and
-has 21 connected components, where the component with most nodes has 1894 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 109.63, and the node degree mode is 4. The top 5 most central
-nodes are 1227272.HMPREF1556_00147 (degree 920), 1227272.HMPREF1556_01416 (degree
-712), 1227272.HMPREF1556_00111 (degree 649), 1227272.HMPREF1556_01005 (degree 565)
-and 1227272.HMPREF1556_00898 (degree 533).
+The undirected graph Porphyromonas sp. W7784 has 1942 nodes and 106449
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05648 and has 21 connected components, where the component
+with most nodes has 1894 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 109.63,
+and the node degree mode is 4. The top 5 most central nodes are 1227272.HMPREF1556_00147
+(degree 920), 1227272.HMPREF1556_01416 (degree 712), 1227272.HMPREF1556_00111
+(degree 649), 1227272.HMPREF1556_01005 (degree 565) and 1227272.HMPREF1556_00898
+(degree 533).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasSp.W7784(
 	
 	Datetime: 2021-02-02 23:25:25.892734
 	
-	The undirected graph Porphyromonas sp. W7784 has 1942 nodes and 106449 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05648 and
-	has 21 connected components, where the component with most nodes has 1894 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 109.63, and the node degree mode is 4. The top 5 most central
-	nodes are 1227272.HMPREF1556_00147 (degree 920), 1227272.HMPREF1556_01416 (degree
-	712), 1227272.HMPREF1556_00111 (degree 649), 1227272.HMPREF1556_01005 (degree 565)
-	and 1227272.HMPREF1556_00898 (degree 533).
+	The undirected graph Porphyromonas sp. W7784 has 1942 nodes and 106449
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05648 and has 21 connected components, where the component
+	with most nodes has 1894 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 109.63,
+	and the node degree mode is 4. The top 5 most central nodes are 1227272.HMPREF1556_00147
+	(degree 920), 1227272.HMPREF1556_01416 (degree 712), 1227272.HMPREF1556_00111
+	(degree 649), 1227272.HMPREF1556_01005 (degree 565) and 1227272.HMPREF1556_00898
+	(degree 533).
 	
 
 

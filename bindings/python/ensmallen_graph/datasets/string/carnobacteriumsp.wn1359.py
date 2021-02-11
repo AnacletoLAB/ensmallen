@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:19.609027
 
-The undirected graph Carnobacterium sp. WN1359 has 2156 nodes and 207041 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08912
-and has 6 connected components, where the component with most nodes has 2138 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 192.06, and the node degree mode is 4. The top 5
-most central nodes are 1266845.Q783_03235 (degree 1078), 1266845.Q783_05000 (degree
-841), 1266845.Q783_03015 (degree 829), 1266845.Q783_03080 (degree 815) and 1266845.Q783_11265
-(degree 803).
+The undirected graph Carnobacterium sp. WN1359 has 2156 nodes and 207041
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08912 and has 6 connected components, where the component
+with most nodes has 2138 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 192.06,
+and the node degree mode is 4. The top 5 most central nodes are 1266845.Q783_03235
+(degree 1078), 1266845.Q783_05000 (degree 841), 1266845.Q783_03015 (degree
+829), 1266845.Q783_03080 (degree 815) and 1266845.Q783_11265 (degree 803).
 
 
 References
@@ -107,14 +107,14 @@ def CarnobacteriumSp.Wn1359(
 	
 	Datetime: 2021-02-02 23:36:19.609027
 	
-	The undirected graph Carnobacterium sp. WN1359 has 2156 nodes and 207041 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08912
-	and has 6 connected components, where the component with most nodes has 2138 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 192.06, and the node degree mode is 4. The top 5
-	most central nodes are 1266845.Q783_03235 (degree 1078), 1266845.Q783_05000 (degree
-	841), 1266845.Q783_03015 (degree 829), 1266845.Q783_03080 (degree 815) and 1266845.Q783_11265
-	(degree 803).
+	The undirected graph Carnobacterium sp. WN1359 has 2156 nodes and 207041
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08912 and has 6 connected components, where the component
+	with most nodes has 2138 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 192.06,
+	and the node degree mode is 4. The top 5 most central nodes are 1266845.Q783_03235
+	(degree 1078), 1266845.Q783_05000 (degree 841), 1266845.Q783_03015 (degree
+	829), 1266845.Q783_03080 (degree 815) and 1266845.Q783_11265 (degree 803).
 	
 
 

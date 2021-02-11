@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:17.687548
 
-The undirected graph Proteiniclasticum ruminis has 2768 nodes and 285503 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07455
-and has 3 connected components, where the component with most nodes has 2764 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 206.29, and the node degree mode is 5. The top 5
-most central nodes are 1410668.JNKC01000006_gene684 (degree 1250), 1410668.JNKC01000008_gene2717
-(degree 1142), 1410668.JNKC01000005_gene2314 (degree 1105), 1410668.JNKC01000001_gene1452
-(degree 995) and 1410668.JNKC01000007_gene871 (degree 922).
+The undirected graph Proteiniclasticum ruminis has 2768 nodes and 285503
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07455 and has 3 connected components, where the component
+with most nodes has 2764 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 206.29,
+and the node degree mode is 5. The top 5 most central nodes are 1410668.JNKC01000006_gene684
+(degree 1250), 1410668.JNKC01000008_gene2717 (degree 1142), 1410668.JNKC01000005_gene2314
+(degree 1105), 1410668.JNKC01000001_gene1452 (degree 995) and 1410668.JNKC01000007_gene871
+(degree 922).
 
 
 References
@@ -107,14 +108,15 @@ def ProteiniclasticumRuminis(
 	
 	Datetime: 2021-02-03 22:44:17.687548
 	
-	The undirected graph Proteiniclasticum ruminis has 2768 nodes and 285503 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07455
-	and has 3 connected components, where the component with most nodes has 2764 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 206.29, and the node degree mode is 5. The top 5
-	most central nodes are 1410668.JNKC01000006_gene684 (degree 1250), 1410668.JNKC01000008_gene2717
-	(degree 1142), 1410668.JNKC01000005_gene2314 (degree 1105), 1410668.JNKC01000001_gene1452
-	(degree 995) and 1410668.JNKC01000007_gene871 (degree 922).
+	The undirected graph Proteiniclasticum ruminis has 2768 nodes and 285503
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07455 and has 3 connected components, where the component
+	with most nodes has 2764 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 206.29,
+	and the node degree mode is 5. The top 5 most central nodes are 1410668.JNKC01000006_gene684
+	(degree 1250), 1410668.JNKC01000008_gene2717 (degree 1142), 1410668.JNKC01000005_gene2314
+	(degree 1105), 1410668.JNKC01000001_gene1452 (degree 995) and 1410668.JNKC01000007_gene871
+	(degree 922).
 	
 
 

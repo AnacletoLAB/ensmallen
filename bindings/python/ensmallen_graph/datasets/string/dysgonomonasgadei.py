@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:52.217365
 
-The undirected graph Dysgonomonas gadei has 4108 nodes and 327708 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03885 and
-has 29 connected components, where the component with most nodes has 4048 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 159.55, and the node degree mode is 1. The top 5 most central
-nodes are 742766.HMPREF9455_02782 (degree 1251), 742766.HMPREF9455_01515 (degree
-1133), 742766.HMPREF9455_01014 (degree 1071), 742766.HMPREF9455_02610 (degree 1058)
-and 742766.HMPREF9455_02380 (degree 978).
+The undirected graph Dysgonomonas gadei has 4108 nodes and 327708 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03885 and has 29 connected components, where the component with most
+nodes has 4048 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 159.55, and
+the node degree mode is 1. The top 5 most central nodes are 742766.HMPREF9455_02782
+(degree 1251), 742766.HMPREF9455_01515 (degree 1133), 742766.HMPREF9455_01014
+(degree 1071), 742766.HMPREF9455_02610 (degree 1058) and 742766.HMPREF9455_02380
+(degree 978).
 
 
 References
@@ -107,14 +108,15 @@ def DysgonomonasGadei(
 	
 	Datetime: 2021-02-02 21:37:52.217365
 	
-	The undirected graph Dysgonomonas gadei has 4108 nodes and 327708 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03885 and
-	has 29 connected components, where the component with most nodes has 4048 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 159.55, and the node degree mode is 1. The top 5 most central
-	nodes are 742766.HMPREF9455_02782 (degree 1251), 742766.HMPREF9455_01515 (degree
-	1133), 742766.HMPREF9455_01014 (degree 1071), 742766.HMPREF9455_02610 (degree 1058)
-	and 742766.HMPREF9455_02380 (degree 978).
+	The undirected graph Dysgonomonas gadei has 4108 nodes and 327708 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03885 and has 29 connected components, where the component with most
+	nodes has 4048 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 159.55, and
+	the node degree mode is 1. The top 5 most central nodes are 742766.HMPREF9455_02782
+	(degree 1251), 742766.HMPREF9455_01515 (degree 1133), 742766.HMPREF9455_01014
+	(degree 1071), 742766.HMPREF9455_02610 (degree 1058) and 742766.HMPREF9455_02380
+	(degree 978).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:17.922622
 
-The undirected graph Vibrio caribbeanicus has 3955 nodes and 502481 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06426 and
-has 22 connected components, where the component with most nodes has 3904 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 254.10, and the node degree mode is 1. The top 5 most central
-nodes are 796620.VIBC2010_16649 (degree 2180), 796620.VIBC2010_02920 (degree 1730),
-796620.VIBC2010_01883 (degree 1543), 796620.VIBC2010_11076 (degree 1415) and 796620.VIBC2010_19625
+The undirected graph Vibrio caribbeanicus has 3955 nodes and 502481 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06426 and has 22 connected components, where the component with most
+nodes has 3904 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 254.10, and
+the node degree mode is 1. The top 5 most central nodes are 796620.VIBC2010_16649
+(degree 2180), 796620.VIBC2010_02920 (degree 1730), 796620.VIBC2010_01883
+(degree 1543), 796620.VIBC2010_11076 (degree 1415) and 796620.VIBC2010_19625
 (degree 1414).
 
 
@@ -107,13 +108,14 @@ def VibrioCaribbeanicus(
 	
 	Datetime: 2021-02-02 21:45:17.922622
 	
-	The undirected graph Vibrio caribbeanicus has 3955 nodes and 502481 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06426 and
-	has 22 connected components, where the component with most nodes has 3904 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 254.10, and the node degree mode is 1. The top 5 most central
-	nodes are 796620.VIBC2010_16649 (degree 2180), 796620.VIBC2010_02920 (degree 1730),
-	796620.VIBC2010_01883 (degree 1543), 796620.VIBC2010_11076 (degree 1415) and 796620.VIBC2010_19625
+	The undirected graph Vibrio caribbeanicus has 3955 nodes and 502481 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06426 and has 22 connected components, where the component with most
+	nodes has 3904 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 254.10, and
+	the node degree mode is 1. The top 5 most central nodes are 796620.VIBC2010_16649
+	(degree 2180), 796620.VIBC2010_02920 (degree 1730), 796620.VIBC2010_01883
+	(degree 1543), 796620.VIBC2010_11076 (degree 1415) and 796620.VIBC2010_19625
 	(degree 1414).
 	
 

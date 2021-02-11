@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:58.503677
 
-The undirected graph Kandleria vitulina has 2015 nodes and 162591 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08013 and
-has 6 connected components, where the component with most nodes has 2004 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 161.38, and the node degree mode is 3. The top 5 most central
-nodes are 1410658.JHWI01000027_gene1818 (degree 942), 1410658.JHWI01000005_gene908
-(degree 696), 1410658.JHWI01000008_gene614 (degree 672), 1410658.JHWI01000040_gene2018
-(degree 626) and 1410658.JHWI01000014_gene961 (degree 598).
+The undirected graph Kandleria vitulina has 2015 nodes and 162591 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08013 and has 6 connected components, where the component with most
+nodes has 2004 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 161.38, and
+the node degree mode is 3. The top 5 most central nodes are 1410658.JHWI01000027_gene1818
+(degree 942), 1410658.JHWI01000005_gene908 (degree 696), 1410658.JHWI01000008_gene614
+(degree 672), 1410658.JHWI01000040_gene2018 (degree 626) and 1410658.JHWI01000014_gene961
+(degree 598).
 
 
 References
@@ -107,14 +108,15 @@ def KandleriaVitulina(
 	
 	Datetime: 2021-02-03 22:43:58.503677
 	
-	The undirected graph Kandleria vitulina has 2015 nodes and 162591 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08013 and
-	has 6 connected components, where the component with most nodes has 2004 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 161.38, and the node degree mode is 3. The top 5 most central
-	nodes are 1410658.JHWI01000027_gene1818 (degree 942), 1410658.JHWI01000005_gene908
-	(degree 696), 1410658.JHWI01000008_gene614 (degree 672), 1410658.JHWI01000040_gene2018
-	(degree 626) and 1410658.JHWI01000014_gene961 (degree 598).
+	The undirected graph Kandleria vitulina has 2015 nodes and 162591 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08013 and has 6 connected components, where the component with most
+	nodes has 2004 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 161.38, and
+	the node degree mode is 3. The top 5 most central nodes are 1410658.JHWI01000027_gene1818
+	(degree 942), 1410658.JHWI01000005_gene908 (degree 696), 1410658.JHWI01000008_gene614
+	(degree 672), 1410658.JHWI01000040_gene2018 (degree 626) and 1410658.JHWI01000014_gene961
+	(degree 598).
 	
 
 

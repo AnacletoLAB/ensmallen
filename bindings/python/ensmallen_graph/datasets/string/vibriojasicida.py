@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:03:18.041706
 
-The undirected graph Vibrio jasicida has 5130 nodes and 833631 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06337 and
-has 24 connected components, where the component with most nodes has 5072 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 270,
-the mean node degree is 325.00, and the node degree mode is 2. The top 5 most central
-nodes are 1280001.BAOA01000051_gene1544 (degree 2187), 1280001.BAOA01000093_gene4495
-(degree 2079), 1280001.BAOA01000021_gene939 (degree 2021), 1280001.BAOA01000145_gene2566
-(degree 1981) and 1280001.BAOA01000059_gene2298 (degree 1925).
+The undirected graph Vibrio jasicida has 5130 nodes and 833631 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06337 and has 24 connected components, where the component with most
+nodes has 5072 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 270, the mean node degree is 325.00, and
+the node degree mode is 2. The top 5 most central nodes are 1280001.BAOA01000051_gene1544
+(degree 2187), 1280001.BAOA01000093_gene4495 (degree 2079), 1280001.BAOA01000021_gene939
+(degree 2021), 1280001.BAOA01000145_gene2566 (degree 1981) and 1280001.BAOA01000059_gene2298
+(degree 1925).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioJasicida(
 	
 	Datetime: 2021-02-03 21:03:18.041706
 	
-	The undirected graph Vibrio jasicida has 5130 nodes and 833631 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06337 and
-	has 24 connected components, where the component with most nodes has 5072 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 270,
-	the mean node degree is 325.00, and the node degree mode is 2. The top 5 most central
-	nodes are 1280001.BAOA01000051_gene1544 (degree 2187), 1280001.BAOA01000093_gene4495
-	(degree 2079), 1280001.BAOA01000021_gene939 (degree 2021), 1280001.BAOA01000145_gene2566
-	(degree 1981) and 1280001.BAOA01000059_gene2298 (degree 1925).
+	The undirected graph Vibrio jasicida has 5130 nodes and 833631 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06337 and has 24 connected components, where the component with most
+	nodes has 5072 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 270, the mean node degree is 325.00, and
+	the node degree mode is 2. The top 5 most central nodes are 1280001.BAOA01000051_gene1544
+	(degree 2187), 1280001.BAOA01000093_gene4495 (degree 2079), 1280001.BAOA01000021_gene939
+	(degree 2021), 1280001.BAOA01000145_gene2566 (degree 1981) and 1280001.BAOA01000059_gene2298
+	(degree 1925).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:33.549553
 
-The undirected graph Geoglobus acetivorans has 2199 nodes and 224002 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09269 and
-has 23 connected components, where the component with most nodes has 2128 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 203.73, and the node degree mode is 3. The top 5 most central
-nodes are 565033.GACE_0477 (degree 852), 565033.GACE_2159 (degree 754), 565033.GACE_0277
-(degree 727), 565033.GACE_0060 (degree 724) and 565033.GACE_0777 (degree 716).
+The undirected graph Geoglobus acetivorans has 2199 nodes and 224002 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09269 and has 23 connected components, where the component with most
+nodes has 2128 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 203.73, and
+the node degree mode is 3. The top 5 most central nodes are 565033.GACE_0477
+(degree 852), 565033.GACE_2159 (degree 754), 565033.GACE_0277 (degree 727),
+565033.GACE_0060 (degree 724) and 565033.GACE_0777 (degree 716).
 
 
 References
@@ -106,13 +107,14 @@ def GeoglobusAcetivorans(
 	
 	Datetime: 2021-02-02 21:12:33.549553
 	
-	The undirected graph Geoglobus acetivorans has 2199 nodes and 224002 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09269 and
-	has 23 connected components, where the component with most nodes has 2128 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 203.73, and the node degree mode is 3. The top 5 most central
-	nodes are 565033.GACE_0477 (degree 852), 565033.GACE_2159 (degree 754), 565033.GACE_0277
-	(degree 727), 565033.GACE_0060 (degree 724) and 565033.GACE_0777 (degree 716).
+	The undirected graph Geoglobus acetivorans has 2199 nodes and 224002 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09269 and has 23 connected components, where the component with most
+	nodes has 2128 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 203.73, and
+	the node degree mode is 3. The top 5 most central nodes are 565033.GACE_0477
+	(degree 852), 565033.GACE_2159 (degree 754), 565033.GACE_0277 (degree 727),
+	565033.GACE_0060 (degree 724) and 565033.GACE_0777 (degree 716).
 	
 
 

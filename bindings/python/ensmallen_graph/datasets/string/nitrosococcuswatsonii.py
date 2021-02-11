@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:43.885422
 
-The undirected graph Nitrosococcus watsonii has 2817 nodes and 232949 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05873 and
-has 15 connected components, where the component with most nodes has 2784 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 165.39, and the node degree mode is 1. The top 5 most central
-nodes are 105559.Nwat_0587 (degree 1189), 105559.Nwat_1120 (degree 1151), 105559.Nwat_1650
-(degree 1029), 105559.Nwat_0908 (degree 1005) and 105559.Nwat_1765 (degree 937).
+The undirected graph Nitrosococcus watsonii has 2817 nodes and 232949 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05873 and has 15 connected components, where the component with most
+nodes has 2784 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 165.39, and
+the node degree mode is 1. The top 5 most central nodes are 105559.Nwat_0587
+(degree 1189), 105559.Nwat_1120 (degree 1151), 105559.Nwat_1650 (degree
+1029), 105559.Nwat_0908 (degree 1005) and 105559.Nwat_1765 (degree 937).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosococcusWatsonii(
 	
 	Datetime: 2021-02-02 19:44:43.885422
 	
-	The undirected graph Nitrosococcus watsonii has 2817 nodes and 232949 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05873 and
-	has 15 connected components, where the component with most nodes has 2784 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 165.39, and the node degree mode is 1. The top 5 most central
-	nodes are 105559.Nwat_0587 (degree 1189), 105559.Nwat_1120 (degree 1151), 105559.Nwat_1650
-	(degree 1029), 105559.Nwat_0908 (degree 1005) and 105559.Nwat_1765 (degree 937).
+	The undirected graph Nitrosococcus watsonii has 2817 nodes and 232949 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05873 and has 15 connected components, where the component with most
+	nodes has 2784 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 165.39, and
+	the node degree mode is 1. The top 5 most central nodes are 105559.Nwat_0587
+	(degree 1189), 105559.Nwat_1120 (degree 1151), 105559.Nwat_1650 (degree
+	1029), 105559.Nwat_0908 (degree 1005) and 105559.Nwat_1765 (degree 937).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:13.872527
 
-The undirected graph c-fat200-2 has 200 nodes and 3235 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.16256 and
-is connected, as it has a single component. The graph median node degree is 32, the
-mean node degree is 32.35 and the node degree mode is 32. The top 5 most central
-nodes are 200 (degree 34), 199 (degree 34), 182 (degree 34), 181 (degree 34) and
-164 (degree 34).
+The undirected graph c-fat200-2 has 200 nodes and 3235 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.16256 and is connected, as it has a single component. The graph median
+node degree is 32, the mean node degree is 32.35 and the node degree mode
+is 32. The top 5 most central nodes are 200 (degree 34), 199 (degree 34),
+182 (degree 34), 181 (degree 34) and 164 (degree 34).
 
 
 References
@@ -115,12 +115,12 @@ def CFat2002(
 	
 	Datetime: 2021-02-03 22:54:13.872527
 	
-	The undirected graph c-fat200-2 has 200 nodes and 3235 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.16256 and
-	is connected, as it has a single component. The graph median node degree is 32, the
-	mean node degree is 32.35 and the node degree mode is 32. The top 5 most central
-	nodes are 200 (degree 34), 199 (degree 34), 182 (degree 34), 181 (degree 34) and
-	164 (degree 34).
+	The undirected graph c-fat200-2 has 200 nodes and 3235 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.16256 and is connected, as it has a single component. The graph median
+	node degree is 32, the mean node degree is 32.35 and the node degree mode
+	is 32. The top 5 most central nodes are 200 (degree 34), 199 (degree 34),
+	182 (degree 34), 181 (degree 34) and 164 (degree 34).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:27.916259
 
-The undirected graph Dickeya dadantii Ech703 has 3943 nodes and 309737 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03985 and
-has 8 connected components, where the component with most nodes has 3927 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 157.11, and the node degree mode is 1. The top 5 most central
-nodes are 579405.Dd703_3967 (degree 1293), 579405.Dd703_0490 (degree 1143), 579405.Dd703_3893
-(degree 1104), 579405.Dd703_3633 (degree 1097) and 579405.Dd703_2728 (degree 1067).
+The undirected graph Dickeya dadantii Ech703 has 3943 nodes and 309737
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03985 and has 8 connected components, where the component
+with most nodes has 3927 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 157.11,
+and the node degree mode is 1. The top 5 most central nodes are 579405.Dd703_3967
+(degree 1293), 579405.Dd703_0490 (degree 1143), 579405.Dd703_3893 (degree
+1104), 579405.Dd703_3633 (degree 1097) and 579405.Dd703_2728 (degree 1067).
 
 
 References
@@ -106,13 +107,14 @@ def DickeyaDadantiiEch703(
 	
 	Datetime: 2021-02-02 21:15:27.916259
 	
-	The undirected graph Dickeya dadantii Ech703 has 3943 nodes and 309737 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03985 and
-	has 8 connected components, where the component with most nodes has 3927 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 157.11, and the node degree mode is 1. The top 5 most central
-	nodes are 579405.Dd703_3967 (degree 1293), 579405.Dd703_0490 (degree 1143), 579405.Dd703_3893
-	(degree 1104), 579405.Dd703_3633 (degree 1097) and 579405.Dd703_2728 (degree 1067).
+	The undirected graph Dickeya dadantii Ech703 has 3943 nodes and 309737
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03985 and has 8 connected components, where the component
+	with most nodes has 3927 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 157.11,
+	and the node degree mode is 1. The top 5 most central nodes are 579405.Dd703_3967
+	(degree 1293), 579405.Dd703_0490 (degree 1143), 579405.Dd703_3893 (degree
+	1104), 579405.Dd703_3633 (degree 1097) and 579405.Dd703_2728 (degree 1067).
 	
 
 

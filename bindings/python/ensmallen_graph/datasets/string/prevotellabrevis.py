@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:12.025973
 
-The undirected graph Prevotella brevis has 2263 nodes and 149923 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05858 and
-has 12 connected components, where the component with most nodes has 2237 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 132.50, and the node degree mode is 5. The top 5 most central
-nodes are 1410666.JHXG01000002_gene304 (degree 864), 1410666.JHXG01000005_gene1807
-(degree 781), 1410666.JHXG01000005_gene1793 (degree 751), 1410666.JHXG01000009_gene406
-(degree 671) and 1410666.JHXG01000013_gene100 (degree 671).
+The undirected graph Prevotella brevis has 2263 nodes and 149923 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05858 and has 12 connected components, where the component with most
+nodes has 2237 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 132.50, and
+the node degree mode is 5. The top 5 most central nodes are 1410666.JHXG01000002_gene304
+(degree 864), 1410666.JHXG01000005_gene1807 (degree 781), 1410666.JHXG01000005_gene1793
+(degree 751), 1410666.JHXG01000009_gene406 (degree 671) and 1410666.JHXG01000013_gene100
+(degree 671).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaBrevis(
 	
 	Datetime: 2021-02-03 22:44:12.025973
 	
-	The undirected graph Prevotella brevis has 2263 nodes and 149923 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05858 and
-	has 12 connected components, where the component with most nodes has 2237 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 132.50, and the node degree mode is 5. The top 5 most central
-	nodes are 1410666.JHXG01000002_gene304 (degree 864), 1410666.JHXG01000005_gene1807
-	(degree 781), 1410666.JHXG01000005_gene1793 (degree 751), 1410666.JHXG01000009_gene406
-	(degree 671) and 1410666.JHXG01000013_gene100 (degree 671).
+	The undirected graph Prevotella brevis has 2263 nodes and 149923 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05858 and has 12 connected components, where the component with most
+	nodes has 2237 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 132.50, and
+	the node degree mode is 5. The top 5 most central nodes are 1410666.JHXG01000002_gene304
+	(degree 864), 1410666.JHXG01000005_gene1807 (degree 781), 1410666.JHXG01000005_gene1793
+	(degree 751), 1410666.JHXG01000009_gene406 (degree 671) and 1410666.JHXG01000013_gene100
+	(degree 671).
 	
 
 

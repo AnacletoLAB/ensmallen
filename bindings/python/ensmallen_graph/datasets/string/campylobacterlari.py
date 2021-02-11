@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:36.591532
 
-The undirected graph Campylobacter lari has 1541 nodes and 90007 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07585 and
-has 2 connected components, where the component with most nodes has 1539 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 116.82, and the node degree mode is 13. The top 5 most central
-nodes are 306263.Cla_1341 (degree 709), 306263.Cla_0921 (degree 695), 306263.Cla_0297
-(degree 641), 306263.Cla_0388 (degree 578) and 306263.Cla_1159 (degree 556).
+The undirected graph Campylobacter lari has 1541 nodes and 90007 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07585 and has 2 connected components, where the component with most
+nodes has 1539 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 116.82, and
+the node degree mode is 13. The top 5 most central nodes are 306263.Cla_1341
+(degree 709), 306263.Cla_0921 (degree 695), 306263.Cla_0297 (degree 641),
+306263.Cla_0388 (degree 578) and 306263.Cla_1159 (degree 556).
 
 
 References
@@ -106,13 +107,14 @@ def CampylobacterLari(
 	
 	Datetime: 2021-02-02 20:22:36.591532
 	
-	The undirected graph Campylobacter lari has 1541 nodes and 90007 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07585 and
-	has 2 connected components, where the component with most nodes has 1539 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 116.82, and the node degree mode is 13. The top 5 most central
-	nodes are 306263.Cla_1341 (degree 709), 306263.Cla_0921 (degree 695), 306263.Cla_0297
-	(degree 641), 306263.Cla_0388 (degree 578) and 306263.Cla_1159 (degree 556).
+	The undirected graph Campylobacter lari has 1541 nodes and 90007 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07585 and has 2 connected components, where the component with most
+	nodes has 1539 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 116.82, and
+	the node degree mode is 13. The top 5 most central nodes are 306263.Cla_1341
+	(degree 709), 306263.Cla_0921 (degree 695), 306263.Cla_0297 (degree 641),
+	306263.Cla_0388 (degree 578) and 306263.Cla_1159 (degree 556).
 	
 
 

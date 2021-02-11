@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:04.265562
 
-The undirected graph Stenotrophomonas maltophilia 5BAI2 has 4002 nodes and 472466
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05901 and has 14 connected components, where the component with most nodes has
-3968 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 199, the mean node degree is 236.11, and the node degree mode is 3. The
-top 5 most central nodes are 1429851.X548_07555 (degree 1545), 1429851.X548_19410
-(degree 1328), 1429851.X548_18555 (degree 1280), 1429851.X548_18760 (degree 1242)
-and 1429851.X548_19945 (degree 1222).
+The undirected graph Stenotrophomonas maltophilia 5BAI2 has 4002 nodes
+and 472466 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05901 and has 14 connected components, where the
+component with most nodes has 3968 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+is 236.11, and the node degree mode is 3. The top 5 most central nodes
+are 1429851.X548_07555 (degree 1545), 1429851.X548_19410 (degree 1328),
+1429851.X548_18555 (degree 1280), 1429851.X548_18760 (degree 1242) and
+1429851.X548_19945 (degree 1222).
 
 
 References
@@ -107,14 +108,15 @@ def StenotrophomonasMaltophilia5bai2(
 	
 	Datetime: 2021-02-03 22:53:04.265562
 	
-	The undirected graph Stenotrophomonas maltophilia 5BAI2 has 4002 nodes and 472466
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05901 and has 14 connected components, where the component with most nodes has
-	3968 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 199, the mean node degree is 236.11, and the node degree mode is 3. The
-	top 5 most central nodes are 1429851.X548_07555 (degree 1545), 1429851.X548_19410
-	(degree 1328), 1429851.X548_18555 (degree 1280), 1429851.X548_18760 (degree 1242)
-	and 1429851.X548_19945 (degree 1222).
+	The undirected graph Stenotrophomonas maltophilia 5BAI2 has 4002 nodes
+	and 472466 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05901 and has 14 connected components, where the
+	component with most nodes has 3968 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+	is 236.11, and the node degree mode is 3. The top 5 most central nodes
+	are 1429851.X548_07555 (degree 1545), 1429851.X548_19410 (degree 1328),
+	1429851.X548_18555 (degree 1280), 1429851.X548_18760 (degree 1242) and
+	1429851.X548_19945 (degree 1222).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:57.757936
 
-The undirected graph Pantoea sp. A4 has 4370 nodes and 552282 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05785 and
-has 11 connected components, where the component with most nodes has 4347 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 208,
-the mean node degree is 252.76, and the node degree mode is 3. The top 5 most central
-nodes are 1225184.ALXE01000029_gene1538 (degree 1953), 1225184.ALXE01000044_gene729
-(degree 1644), 1225184.ALXE01000046_gene916 (degree 1555), 1225184.ALXE01000053_gene3287
-(degree 1506) and 1225184.ALXE01000008_gene1029 (degree 1453).
+The undirected graph Pantoea sp. A4 has 4370 nodes and 552282 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05785 and has 11 connected components, where the component with most
+nodes has 4347 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 208, the mean node degree is 252.76, and
+the node degree mode is 3. The top 5 most central nodes are 1225184.ALXE01000029_gene1538
+(degree 1953), 1225184.ALXE01000044_gene729 (degree 1644), 1225184.ALXE01000046_gene916
+(degree 1555), 1225184.ALXE01000053_gene3287 (degree 1506) and 1225184.ALXE01000008_gene1029
+(degree 1453).
 
 
 References
@@ -107,14 +108,15 @@ def PantoeaSp.A4(
 	
 	Datetime: 2021-02-02 23:24:57.757936
 	
-	The undirected graph Pantoea sp. A4 has 4370 nodes and 552282 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05785 and
-	has 11 connected components, where the component with most nodes has 4347 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 208,
-	the mean node degree is 252.76, and the node degree mode is 3. The top 5 most central
-	nodes are 1225184.ALXE01000029_gene1538 (degree 1953), 1225184.ALXE01000044_gene729
-	(degree 1644), 1225184.ALXE01000046_gene916 (degree 1555), 1225184.ALXE01000053_gene3287
-	(degree 1506) and 1225184.ALXE01000008_gene1029 (degree 1453).
+	The undirected graph Pantoea sp. A4 has 4370 nodes and 552282 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05785 and has 11 connected components, where the component with most
+	nodes has 4347 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 208, the mean node degree is 252.76, and
+	the node degree mode is 3. The top 5 most central nodes are 1225184.ALXE01000029_gene1538
+	(degree 1953), 1225184.ALXE01000044_gene729 (degree 1644), 1225184.ALXE01000046_gene916
+	(degree 1555), 1225184.ALXE01000053_gene3287 (degree 1506) and 1225184.ALXE01000008_gene1029
+	(degree 1453).
 	
 
 

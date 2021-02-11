@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:58.115152
 
-The undirected graph Halorubrum saccharovorum has 3161 nodes and 223701 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04479
-and has 27 connected components, where the component with most nodes has 3092 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 141.54, and the node degree mode is 4. The top 5
-most central nodes are 1227484.C471_13266 (degree 880), 1227484.C471_00075 (degree
-770), 1227484.C471_02380 (degree 750), 1227484.C471_13271 (degree 749) and 1227484.C471_07295
-(degree 717).
+The undirected graph Halorubrum saccharovorum has 3161 nodes and 223701
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04479 and has 27 connected components, where the component
+with most nodes has 3092 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 141.54,
+and the node degree mode is 4. The top 5 most central nodes are 1227484.C471_13266
+(degree 880), 1227484.C471_00075 (degree 770), 1227484.C471_02380 (degree
+750), 1227484.C471_13271 (degree 749) and 1227484.C471_07295 (degree 717).
 
 
 References
@@ -107,14 +107,14 @@ def HalorubrumSaccharovorum(
 	
 	Datetime: 2021-02-02 23:25:58.115152
 	
-	The undirected graph Halorubrum saccharovorum has 3161 nodes and 223701 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04479
-	and has 27 connected components, where the component with most nodes has 3092 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 141.54, and the node degree mode is 4. The top 5
-	most central nodes are 1227484.C471_13266 (degree 880), 1227484.C471_00075 (degree
-	770), 1227484.C471_02380 (degree 750), 1227484.C471_13271 (degree 749) and 1227484.C471_07295
-	(degree 717).
+	The undirected graph Halorubrum saccharovorum has 3161 nodes and 223701
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04479 and has 27 connected components, where the component
+	with most nodes has 3092 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 141.54,
+	and the node degree mode is 4. The top 5 most central nodes are 1227484.C471_13266
+	(degree 880), 1227484.C471_00075 (degree 770), 1227484.C471_02380 (degree
+	750), 1227484.C471_13271 (degree 749) and 1227484.C471_07295 (degree 717).
 	
 
 

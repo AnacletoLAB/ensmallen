@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:29.806154
 
-The undirected graph Gordonia sihwensis has 3882 nodes and 405318 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05381 and
-has 10 connected components, where the component with most nodes has 3853 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 208.82, and the node degree mode is 3. The top 5 most central
-nodes are 1223544.GSI01S_28_00270 (degree 1604), 1223544.GSI01S_15_00050 (degree
-1363), 1223544.GSI01S_07_00250 (degree 1247), 1223544.GSI01S_47_00190 (degree 1094)
-and 1223544.GSI01S_01_02630 (degree 1089).
+The undirected graph Gordonia sihwensis has 3882 nodes and 405318 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05381 and has 10 connected components, where the component with most
+nodes has 3853 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 208.82, and
+the node degree mode is 3. The top 5 most central nodes are 1223544.GSI01S_28_00270
+(degree 1604), 1223544.GSI01S_15_00050 (degree 1363), 1223544.GSI01S_07_00250
+(degree 1247), 1223544.GSI01S_47_00190 (degree 1094) and 1223544.GSI01S_01_02630
+(degree 1089).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaSihwensis(
 	
 	Datetime: 2021-02-02 23:24:29.806154
 	
-	The undirected graph Gordonia sihwensis has 3882 nodes and 405318 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05381 and
-	has 10 connected components, where the component with most nodes has 3853 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 208.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1223544.GSI01S_28_00270 (degree 1604), 1223544.GSI01S_15_00050 (degree
-	1363), 1223544.GSI01S_07_00250 (degree 1247), 1223544.GSI01S_47_00190 (degree 1094)
-	and 1223544.GSI01S_01_02630 (degree 1089).
+	The undirected graph Gordonia sihwensis has 3882 nodes and 405318 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05381 and has 10 connected components, where the component with most
+	nodes has 3853 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 208.82, and
+	the node degree mode is 3. The top 5 most central nodes are 1223544.GSI01S_28_00270
+	(degree 1604), 1223544.GSI01S_15_00050 (degree 1363), 1223544.GSI01S_07_00250
+	(degree 1247), 1223544.GSI01S_47_00190 (degree 1094) and 1223544.GSI01S_01_02630
+	(degree 1089).
 	
 
 

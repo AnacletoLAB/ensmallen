@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:06.784034
 
-The undirected graph Patulibacter americanus has 4047 nodes and 366233 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04473 and
-has 9 connected components, where the component with most nodes has 4026 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 180.99, and the node degree mode is 3. The top 5 most central
-nodes are 1122939.ATUD01000002_gene1452 (degree 1354), 1122939.ATUD01000012_gene3124
-(degree 1341), 1122939.ATUD01000009_gene3022 (degree 1251), 1122939.ATUD01000001_gene424
-(degree 1072) and 1122939.ATUD01000004_gene3779 (degree 972).
+The undirected graph Patulibacter americanus has 4047 nodes and 366233
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04473 and has 9 connected components, where the component
+with most nodes has 4026 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 180.99,
+and the node degree mode is 3. The top 5 most central nodes are 1122939.ATUD01000002_gene1452
+(degree 1354), 1122939.ATUD01000012_gene3124 (degree 1341), 1122939.ATUD01000009_gene3022
+(degree 1251), 1122939.ATUD01000001_gene424 (degree 1072) and 1122939.ATUD01000004_gene3779
+(degree 972).
 
 
 References
@@ -107,14 +108,15 @@ def PatulibacterAmericanus(
 	
 	Datetime: 2021-02-02 22:45:06.784034
 	
-	The undirected graph Patulibacter americanus has 4047 nodes and 366233 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04473 and
-	has 9 connected components, where the component with most nodes has 4026 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 180.99, and the node degree mode is 3. The top 5 most central
-	nodes are 1122939.ATUD01000002_gene1452 (degree 1354), 1122939.ATUD01000012_gene3124
-	(degree 1341), 1122939.ATUD01000009_gene3022 (degree 1251), 1122939.ATUD01000001_gene424
-	(degree 1072) and 1122939.ATUD01000004_gene3779 (degree 972).
+	The undirected graph Patulibacter americanus has 4047 nodes and 366233
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04473 and has 9 connected components, where the component
+	with most nodes has 4026 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 180.99,
+	and the node degree mode is 3. The top 5 most central nodes are 1122939.ATUD01000002_gene1452
+	(degree 1354), 1122939.ATUD01000012_gene3124 (degree 1341), 1122939.ATUD01000009_gene3022
+	(degree 1251), 1122939.ATUD01000001_gene424 (degree 1072) and 1122939.ATUD01000004_gene3779
+	(degree 972).
 	
 
 

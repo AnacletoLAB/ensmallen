@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:08.359288
 
-The undirected graph Mycobacterium thermoresistibile has 4566 nodes and 715816 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06868
-and has 18 connected components, where the component with most nodes has 4519 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 252, the mean node degree is 313.54, and the node degree mode is 4. The top 5
-most central nodes are 1078020.KEK_17753 (degree 2068), 1078020.KEK_19476 (degree
-1847), 1078020.KEK_17133 (degree 1670), 1078020.KEK_00295 (degree 1659) and 1078020.KEK_07392
-(degree 1446).
+The undirected graph Mycobacterium thermoresistibile has 4566 nodes and
+715816 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06868 and has 18 connected components, where the
+component with most nodes has 4519 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+is 313.54, and the node degree mode is 4. The top 5 most central nodes
+are 1078020.KEK_17753 (degree 2068), 1078020.KEK_19476 (degree 1847), 1078020.KEK_17133
+(degree 1670), 1078020.KEK_00295 (degree 1659) and 1078020.KEK_07392 (degree
+1446).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumThermoresistibile(
 	
 	Datetime: 2021-02-02 22:20:08.359288
 	
-	The undirected graph Mycobacterium thermoresistibile has 4566 nodes and 715816 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06868
-	and has 18 connected components, where the component with most nodes has 4519 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 252, the mean node degree is 313.54, and the node degree mode is 4. The top 5
-	most central nodes are 1078020.KEK_17753 (degree 2068), 1078020.KEK_19476 (degree
-	1847), 1078020.KEK_17133 (degree 1670), 1078020.KEK_00295 (degree 1659) and 1078020.KEK_07392
-	(degree 1446).
+	The undirected graph Mycobacterium thermoresistibile has 4566 nodes and
+	715816 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06868 and has 18 connected components, where the
+	component with most nodes has 4519 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+	is 313.54, and the node degree mode is 4. The top 5 most central nodes
+	are 1078020.KEK_17753 (degree 2068), 1078020.KEK_19476 (degree 1847), 1078020.KEK_17133
+	(degree 1670), 1078020.KEK_00295 (degree 1659) and 1078020.KEK_07392 (degree
+	1446).
 	
 
 

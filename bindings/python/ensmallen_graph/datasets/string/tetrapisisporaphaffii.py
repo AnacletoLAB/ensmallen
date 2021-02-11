@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:11.135562
 
-The undirected graph Tetrapisispora phaffii has 4902 nodes and 551744 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04593 and
-has 2 connected components, where the component with most nodes has 4900 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 225.11, and the node degree mode is 23. The top 5 most central
-nodes are 113608.XP_003687098.1 (degree 1305), 113608.XP_003686747.1 (degree 1292),
-113608.XP_003683981.1 (degree 1245), 113608.XP_003685103.1 (degree 1223) and 113608.XP_003683819.1
+The undirected graph Tetrapisispora phaffii has 4902 nodes and 551744 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04593 and has 2 connected components, where the component with most
+nodes has 4900 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 225.11, and
+the node degree mode is 23. The top 5 most central nodes are 113608.XP_003687098.1
+(degree 1305), 113608.XP_003686747.1 (degree 1292), 113608.XP_003683981.1
+(degree 1245), 113608.XP_003685103.1 (degree 1223) and 113608.XP_003683819.1
 (degree 1116).
 
 
@@ -107,13 +108,14 @@ def TetrapisisporaPhaffii(
 	
 	Datetime: 2021-02-02 19:47:11.135562
 	
-	The undirected graph Tetrapisispora phaffii has 4902 nodes and 551744 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04593 and
-	has 2 connected components, where the component with most nodes has 4900 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 225.11, and the node degree mode is 23. The top 5 most central
-	nodes are 113608.XP_003687098.1 (degree 1305), 113608.XP_003686747.1 (degree 1292),
-	113608.XP_003683981.1 (degree 1245), 113608.XP_003685103.1 (degree 1223) and 113608.XP_003683819.1
+	The undirected graph Tetrapisispora phaffii has 4902 nodes and 551744 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04593 and has 2 connected components, where the component with most
+	nodes has 4900 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 225.11, and
+	the node degree mode is 23. The top 5 most central nodes are 113608.XP_003687098.1
+	(degree 1305), 113608.XP_003686747.1 (degree 1292), 113608.XP_003683981.1
+	(degree 1245), 113608.XP_003685103.1 (degree 1223) and 113608.XP_003683819.1
 	(degree 1116).
 	
 

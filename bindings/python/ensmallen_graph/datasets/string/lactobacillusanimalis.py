@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:46.695847
 
-The undirected graph Lactobacillus animalis has 1834 nodes and 150295 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08942 and
-has 9 connected components, where the component with most nodes has 1809 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 163.90, and the node degree mode is 32. The top 5 most central
-nodes are 1605.Lani381_0880 (degree 834), 1605.Lani381_1139 (degree 747), 1605.Lani381_1385
-(degree 741), 1605.Lani381_0931 (degree 667) and 1605.Lani381_0583 (degree 638).
+The undirected graph Lactobacillus animalis has 1834 nodes and 150295 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08942 and has 9 connected components, where the component with most
+nodes has 1809 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 163.90, and
+the node degree mode is 32. The top 5 most central nodes are 1605.Lani381_0880
+(degree 834), 1605.Lani381_1139 (degree 747), 1605.Lani381_1385 (degree
+741), 1605.Lani381_0931 (degree 667) and 1605.Lani381_0583 (degree 638).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusAnimalis(
 	
 	Datetime: 2021-02-02 16:22:46.695847
 	
-	The undirected graph Lactobacillus animalis has 1834 nodes and 150295 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08942 and
-	has 9 connected components, where the component with most nodes has 1809 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 163.90, and the node degree mode is 32. The top 5 most central
-	nodes are 1605.Lani381_0880 (degree 834), 1605.Lani381_1139 (degree 747), 1605.Lani381_1385
-	(degree 741), 1605.Lani381_0931 (degree 667) and 1605.Lani381_0583 (degree 638).
+	The undirected graph Lactobacillus animalis has 1834 nodes and 150295 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08942 and has 9 connected components, where the component with most
+	nodes has 1809 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 163.90, and
+	the node degree mode is 32. The top 5 most central nodes are 1605.Lani381_0880
+	(degree 834), 1605.Lani381_1139 (degree 747), 1605.Lani381_1385 (degree
+	741), 1605.Lani381_0931 (degree 667) and 1605.Lani381_0583 (degree 638).
 	
 
 

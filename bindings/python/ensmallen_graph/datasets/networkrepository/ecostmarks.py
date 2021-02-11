@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:59:09.156166
 
-The undirected graph eco-stmarks has 54 nodes and 353 weighted edges, of which 3
-are self-loops. The graph is quite dense as it has a density of 0.24563 and is connected,
-as it has a single component. The graph median node degree is 12, the mean node degree
-is 13.02 and the node degree mode is 7. The top 5 most central nodes are 54 (degree
-48), 51 (degree 39), 52 (degree 27), 27 (degree 21) and 19 (degree 20).
+The undirected graph eco-stmarks has 54 nodes and 353 weighted edges, of
+which 3 are self-loops. The graph is quite dense as it has a density of
+0.24563 and is connected, as it has a single component. The graph median
+node degree is 12, the mean node degree is 13.02 and the node degree mode
+is 7. The top 5 most central nodes are 54 (degree 48), 51 (degree 39),
+52 (degree 27), 27 (degree 21) and 19 (degree 20).
 
 
 References
@@ -121,11 +122,12 @@ def EcoStmarks(
 	
 	Datetime: 2021-02-03 23:59:09.156166
 	
-	The undirected graph eco-stmarks has 54 nodes and 353 weighted edges, of which 3
-	are self-loops. The graph is quite dense as it has a density of 0.24563 and is connected,
-	as it has a single component. The graph median node degree is 12, the mean node degree
-	is 13.02 and the node degree mode is 7. The top 5 most central nodes are 54 (degree
-	48), 51 (degree 39), 52 (degree 27), 27 (degree 21) and 19 (degree 20).
+	The undirected graph eco-stmarks has 54 nodes and 353 weighted edges, of
+	which 3 are self-loops. The graph is quite dense as it has a density of
+	0.24563 and is connected, as it has a single component. The graph median
+	node degree is 12, the mean node degree is 13.02 and the node degree mode
+	is 7. The top 5 most central nodes are 54 (degree 48), 51 (degree 39),
+	52 (degree 27), 27 (degree 21) and 19 (degree 20).
 	
 
 

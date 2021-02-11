@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:49.244294
 
-The undirected graph Actinomyces graevenitzii has 1832 nodes and 123338 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07354
-and has 7 connected components, where the component with most nodes has 1819 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 134.65, and the node degree mode is 2. The top 5
-most central nodes are 435830.HMPREF0045_01592 (degree 756), 435830.HMPREF0045_00453
-(degree 753), 435830.HMPREF0045_00569 (degree 722), 435830.HMPREF0045_01441 (degree
-656) and 435830.HMPREF0045_01364 (degree 643).
+The undirected graph Actinomyces graevenitzii has 1832 nodes and 123338
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07354 and has 7 connected components, where the component
+with most nodes has 1819 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 134.65,
+and the node degree mode is 2. The top 5 most central nodes are 435830.HMPREF0045_01592
+(degree 756), 435830.HMPREF0045_00453 (degree 753), 435830.HMPREF0045_00569
+(degree 722), 435830.HMPREF0045_01441 (degree 656) and 435830.HMPREF0045_01364
+(degree 643).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesGraevenitzii(
 	
 	Datetime: 2021-02-02 20:48:49.244294
 	
-	The undirected graph Actinomyces graevenitzii has 1832 nodes and 123338 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07354
-	and has 7 connected components, where the component with most nodes has 1819 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 134.65, and the node degree mode is 2. The top 5
-	most central nodes are 435830.HMPREF0045_01592 (degree 756), 435830.HMPREF0045_00453
-	(degree 753), 435830.HMPREF0045_00569 (degree 722), 435830.HMPREF0045_01441 (degree
-	656) and 435830.HMPREF0045_01364 (degree 643).
+	The undirected graph Actinomyces graevenitzii has 1832 nodes and 123338
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07354 and has 7 connected components, where the component
+	with most nodes has 1819 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 134.65,
+	and the node degree mode is 2. The top 5 most central nodes are 435830.HMPREF0045_01592
+	(degree 756), 435830.HMPREF0045_00453 (degree 753), 435830.HMPREF0045_00569
+	(degree 722), 435830.HMPREF0045_01441 (degree 656) and 435830.HMPREF0045_01364
+	(degree 643).
 	
 
 

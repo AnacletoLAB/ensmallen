@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:24.053025
 
-The undirected graph Clostridium sp. SY8519 has 2598 nodes and 154712 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04586 and
-has 6 connected components, where the component with most nodes has 2587 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 119.10, and the node degree mode is 7. The top 5 most central
-nodes are 1042156.CXIVA_20540 (degree 1062), 1042156.CXIVA_21200 (degree 900), 1042156.CXIVA_05570
-(degree 780), 1042156.CXIVA_10850 (degree 724) and 1042156.CXIVA_03760 (degree 697).
+The undirected graph Clostridium sp. SY8519 has 2598 nodes and 154712 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04586 and has 6 connected components, where the component with most
+nodes has 2587 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 119.10, and
+the node degree mode is 7. The top 5 most central nodes are 1042156.CXIVA_20540
+(degree 1062), 1042156.CXIVA_21200 (degree 900), 1042156.CXIVA_05570 (degree
+780), 1042156.CXIVA_10850 (degree 724) and 1042156.CXIVA_03760 (degree
+697).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumSp.Sy8519(
 	
 	Datetime: 2021-02-02 22:15:24.053025
 	
-	The undirected graph Clostridium sp. SY8519 has 2598 nodes and 154712 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04586 and
-	has 6 connected components, where the component with most nodes has 2587 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 119.10, and the node degree mode is 7. The top 5 most central
-	nodes are 1042156.CXIVA_20540 (degree 1062), 1042156.CXIVA_21200 (degree 900), 1042156.CXIVA_05570
-	(degree 780), 1042156.CXIVA_10850 (degree 724) and 1042156.CXIVA_03760 (degree 697).
+	The undirected graph Clostridium sp. SY8519 has 2598 nodes and 154712 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04586 and has 6 connected components, where the component with most
+	nodes has 2587 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 119.10, and
+	the node degree mode is 7. The top 5 most central nodes are 1042156.CXIVA_20540
+	(degree 1062), 1042156.CXIVA_21200 (degree 900), 1042156.CXIVA_05570 (degree
+	780), 1042156.CXIVA_10850 (degree 724) and 1042156.CXIVA_03760 (degree
+	697).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:17.559131
 
-The undirected graph Cryptococcus neoformans has 5305 nodes and 514104 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03654 and
-has 15 connected components, where the component with most nodes has 5267 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 193.82, and the node degree mode is 1. The top 5 most central
-nodes are 5207.AAW45193 (degree 1589), 5207.AAW45488 (degree 1305), 5207.AAW43412
-(degree 1283), 5207.AAW40768 (degree 1061) and 5207.AAW41026 (degree 1046).
+The undirected graph Cryptococcus neoformans has 5305 nodes and 514104
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03654 and has 15 connected components, where the component
+with most nodes has 5267 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 193.82,
+and the node degree mode is 1. The top 5 most central nodes are 5207.AAW45193
+(degree 1589), 5207.AAW45488 (degree 1305), 5207.AAW43412 (degree 1283),
+5207.AAW40768 (degree 1061) and 5207.AAW41026 (degree 1046).
 
 
 References
@@ -106,13 +107,14 @@ def CryptococcusNeoformans(
 	
 	Datetime: 2021-02-02 17:13:17.559131
 	
-	The undirected graph Cryptococcus neoformans has 5305 nodes and 514104 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03654 and
-	has 15 connected components, where the component with most nodes has 5267 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 193.82, and the node degree mode is 1. The top 5 most central
-	nodes are 5207.AAW45193 (degree 1589), 5207.AAW45488 (degree 1305), 5207.AAW43412
-	(degree 1283), 5207.AAW40768 (degree 1061) and 5207.AAW41026 (degree 1046).
+	The undirected graph Cryptococcus neoformans has 5305 nodes and 514104
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03654 and has 15 connected components, where the component
+	with most nodes has 5267 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 193.82,
+	and the node degree mode is 1. The top 5 most central nodes are 5207.AAW45193
+	(degree 1589), 5207.AAW45488 (degree 1305), 5207.AAW43412 (degree 1283),
+	5207.AAW40768 (degree 1061) and 5207.AAW41026 (degree 1046).
 	
 
 

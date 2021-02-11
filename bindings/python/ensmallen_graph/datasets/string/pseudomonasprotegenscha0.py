@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:46.834656
 
-The undirected graph Pseudomonas protegens CHA0 has 6071 nodes and 583018 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03164
-and has 14 connected components, where the component with most nodes has 6042 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 192.07, and the node degree mode is 3. The top 5
-most central nodes are 1124983.PFLCHA0_c00820 (degree 2086), 1124983.PFLCHA0_c04600
-(degree 1732), 1124983.PFLCHA0_c08280 (degree 1532), 1124983.PFLCHA0_c48250 (degree
-1457) and 1124983.PFLCHA0_c49240 (degree 1447).
+The undirected graph Pseudomonas protegens CHA0 has 6071 nodes and 583018
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03164 and has 14 connected components, where the component
+with most nodes has 6042 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 192.07,
+and the node degree mode is 3. The top 5 most central nodes are 1124983.PFLCHA0_c00820
+(degree 2086), 1124983.PFLCHA0_c04600 (degree 1732), 1124983.PFLCHA0_c08280
+(degree 1532), 1124983.PFLCHA0_c48250 (degree 1457) and 1124983.PFLCHA0_c49240
+(degree 1447).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasProtegensCha0(
 	
 	Datetime: 2021-02-02 22:53:46.834656
 	
-	The undirected graph Pseudomonas protegens CHA0 has 6071 nodes and 583018 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03164
-	and has 14 connected components, where the component with most nodes has 6042 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 192.07, and the node degree mode is 3. The top 5
-	most central nodes are 1124983.PFLCHA0_c00820 (degree 2086), 1124983.PFLCHA0_c04600
-	(degree 1732), 1124983.PFLCHA0_c08280 (degree 1532), 1124983.PFLCHA0_c48250 (degree
-	1457) and 1124983.PFLCHA0_c49240 (degree 1447).
+	The undirected graph Pseudomonas protegens CHA0 has 6071 nodes and 583018
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03164 and has 14 connected components, where the component
+	with most nodes has 6042 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 192.07,
+	and the node degree mode is 3. The top 5 most central nodes are 1124983.PFLCHA0_c00820
+	(degree 2086), 1124983.PFLCHA0_c04600 (degree 1732), 1124983.PFLCHA0_c08280
+	(degree 1532), 1124983.PFLCHA0_c48250 (degree 1457) and 1124983.PFLCHA0_c49240
+	(degree 1447).
 	
 
 

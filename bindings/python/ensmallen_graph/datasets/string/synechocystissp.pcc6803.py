@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:16.097307
 
-The undirected graph Synechocystis sp. PCC6803 has 3167 nodes and 397586 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07931
-and is connected, as it has a single component. The graph median node degree is 227,
-the mean node degree is 251.08, and the node degree mode is 6. The top 5 most central
-nodes are 1148.1006595 (degree 1255), 1148.1652299 (degree 1166), 1148.1652446 (degree
-1165), 1148.1653244 (degree 1133) and 1148.1001335 (degree 1123).
+The undirected graph Synechocystis sp. PCC6803 has 3167 nodes and 397586
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07931 and is connected, as it has a single component.
+The graph median node degree is 227, the mean node degree is 251.08, and
+the node degree mode is 6. The top 5 most central nodes are 1148.1006595
+(degree 1255), 1148.1652299 (degree 1166), 1148.1652446 (degree 1165),
+1148.1653244 (degree 1133) and 1148.1001335 (degree 1123).
 
 
 References
@@ -105,12 +106,13 @@ def SynechocystisSp.Pcc6803(
 	
 	Datetime: 2021-02-02 16:22:16.097307
 	
-	The undirected graph Synechocystis sp. PCC6803 has 3167 nodes and 397586 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07931
-	and is connected, as it has a single component. The graph median node degree is 227,
-	the mean node degree is 251.08, and the node degree mode is 6. The top 5 most central
-	nodes are 1148.1006595 (degree 1255), 1148.1652299 (degree 1166), 1148.1652446 (degree
-	1165), 1148.1653244 (degree 1133) and 1148.1001335 (degree 1123).
+	The undirected graph Synechocystis sp. PCC6803 has 3167 nodes and 397586
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07931 and is connected, as it has a single component.
+	The graph median node degree is 227, the mean node degree is 251.08, and
+	the node degree mode is 6. The top 5 most central nodes are 1148.1006595
+	(degree 1255), 1148.1652299 (degree 1166), 1148.1652446 (degree 1165),
+	1148.1653244 (degree 1133) and 1148.1001335 (degree 1123).
 	
 
 

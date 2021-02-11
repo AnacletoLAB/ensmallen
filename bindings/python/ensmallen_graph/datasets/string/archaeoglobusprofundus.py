@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:02.563920
 
-The undirected graph Archaeoglobus profundus has 1816 nodes and 106182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06443 and
-has 14 connected components, where the component with most nodes has 1750 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 116.94, and the node degree mode is 11. The top 5 most central
-nodes are 572546.Arcpr_1207 (degree 624), 572546.Arcpr_0732 (degree 552), 572546.Arcpr_1453
-(degree 532), 572546.Arcpr_0621 (degree 529) and 572546.Arcpr_1402 (degree 527).
+The undirected graph Archaeoglobus profundus has 1816 nodes and 106182
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06443 and has 14 connected components, where the component
+with most nodes has 1750 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 116.94,
+and the node degree mode is 11. The top 5 most central nodes are 572546.Arcpr_1207
+(degree 624), 572546.Arcpr_0732 (degree 552), 572546.Arcpr_1453 (degree
+532), 572546.Arcpr_0621 (degree 529) and 572546.Arcpr_1402 (degree 527).
 
 
 References
@@ -106,13 +107,14 @@ def ArchaeoglobusProfundus(
 	
 	Datetime: 2021-02-02 21:14:02.563920
 	
-	The undirected graph Archaeoglobus profundus has 1816 nodes and 106182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06443 and
-	has 14 connected components, where the component with most nodes has 1750 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 116.94, and the node degree mode is 11. The top 5 most central
-	nodes are 572546.Arcpr_1207 (degree 624), 572546.Arcpr_0732 (degree 552), 572546.Arcpr_1453
-	(degree 532), 572546.Arcpr_0621 (degree 529) and 572546.Arcpr_1402 (degree 527).
+	The undirected graph Archaeoglobus profundus has 1816 nodes and 106182
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06443 and has 14 connected components, where the component
+	with most nodes has 1750 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 116.94,
+	and the node degree mode is 11. The top 5 most central nodes are 572546.Arcpr_1207
+	(degree 624), 572546.Arcpr_0732 (degree 552), 572546.Arcpr_1453 (degree
+	532), 572546.Arcpr_0621 (degree 529) and 572546.Arcpr_1402 (degree 527).
 	
 
 

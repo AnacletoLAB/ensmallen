@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:04:50.457728
 
-The undirected graph Vibrio diazotrophicus has 4147 nodes and 624879 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07269 and
-has 14 connected components, where the component with most nodes has 4112 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 253,
-the mean node degree is 301.36, and the node degree mode is 2. The top 5 most central
-nodes are 1348635.BBJY01000016_gene3991 (degree 1837), 1348635.BBJY01000008_gene1782
-(degree 1706), 1348635.BBJY01000017_gene4102 (degree 1579), 1348635.BBJY01000023_gene2032
-(degree 1539) and 1348635.BBJY01000002_gene3559 (degree 1538).
+The undirected graph Vibrio diazotrophicus has 4147 nodes and 624879 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07269 and has 14 connected components, where the component with most
+nodes has 4112 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 253, the mean node degree is 301.36, and
+the node degree mode is 2. The top 5 most central nodes are 1348635.BBJY01000016_gene3991
+(degree 1837), 1348635.BBJY01000008_gene1782 (degree 1706), 1348635.BBJY01000017_gene4102
+(degree 1579), 1348635.BBJY01000023_gene2032 (degree 1539) and 1348635.BBJY01000002_gene3559
+(degree 1538).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioDiazotrophicus(
 	
 	Datetime: 2021-02-03 22:04:50.457728
 	
-	The undirected graph Vibrio diazotrophicus has 4147 nodes and 624879 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07269 and
-	has 14 connected components, where the component with most nodes has 4112 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 253,
-	the mean node degree is 301.36, and the node degree mode is 2. The top 5 most central
-	nodes are 1348635.BBJY01000016_gene3991 (degree 1837), 1348635.BBJY01000008_gene1782
-	(degree 1706), 1348635.BBJY01000017_gene4102 (degree 1579), 1348635.BBJY01000023_gene2032
-	(degree 1539) and 1348635.BBJY01000002_gene3559 (degree 1538).
+	The undirected graph Vibrio diazotrophicus has 4147 nodes and 624879 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07269 and has 14 connected components, where the component with most
+	nodes has 4112 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 253, the mean node degree is 301.36, and
+	the node degree mode is 2. The top 5 most central nodes are 1348635.BBJY01000016_gene3991
+	(degree 1837), 1348635.BBJY01000008_gene1782 (degree 1706), 1348635.BBJY01000017_gene4102
+	(degree 1579), 1348635.BBJY01000023_gene2032 (degree 1539) and 1348635.BBJY01000002_gene3559
+	(degree 1538).
 	
 
 

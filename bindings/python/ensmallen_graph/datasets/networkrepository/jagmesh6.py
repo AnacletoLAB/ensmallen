@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:49.018706
 
-The undirected graph jagmesh6 has 1377 nodes and 5185 unweighted edges, of which
-1377 are self-loops. The graph is sparse as it has a density of 0.00475 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.53, and the node degree mode is 7. The top 5 most central nodes are 1373 (degree
-7), 1370 (degree 7), 1369 (degree 7), 1366 (degree 7) and 1365 (degree 7).
+The undirected graph jagmesh6 has 1377 nodes and 5185 unweighted edges,
+of which 1377 are self-loops. The graph is sparse as it has a density of
+0.00475 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.53, and the node degree mode
+is 7. The top 5 most central nodes are 1373 (degree 7), 1370 (degree 7),
+1369 (degree 7), 1366 (degree 7) and 1365 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Jagmesh6(
 	
 	Datetime: 2021-02-06 08:12:49.018706
 	
-	The undirected graph jagmesh6 has 1377 nodes and 5185 unweighted edges, of which
-	1377 are self-loops. The graph is sparse as it has a density of 0.00475 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.53, and the node degree mode is 7. The top 5 most central nodes are 1373 (degree
-	7), 1370 (degree 7), 1369 (degree 7), 1366 (degree 7) and 1365 (degree 7).
+	The undirected graph jagmesh6 has 1377 nodes and 5185 unweighted edges,
+	of which 1377 are self-loops. The graph is sparse as it has a density of
+	0.00475 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.53, and the node degree mode
+	is 7. The top 5 most central nodes are 1373 (degree 7), 1370 (degree 7),
+	1369 (degree 7), 1366 (degree 7) and 1365 (degree 7).
 	
 
 

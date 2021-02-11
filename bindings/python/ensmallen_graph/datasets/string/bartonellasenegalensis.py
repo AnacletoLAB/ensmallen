@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:46.512868
 
-The undirected graph Bartonella senegalensis has 1604 nodes and 98788 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07684 and
-has 16 connected components, where the component with most nodes has 1573 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 123.18, and the node degree mode is 1. The top 5 most central
-nodes are 929794.CALV01000016_gene149 (degree 685), 929794.CALV01000007_gene513 (degree
-609), 929794.CALV01000002_gene350 (degree 553), 929794.CALV01000007_gene511 (degree
-533) and 929794.CALV01000014_gene43 (degree 528).
+The undirected graph Bartonella senegalensis has 1604 nodes and 98788 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07684 and has 16 connected components, where the component with most
+nodes has 1573 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 123.18, and
+the node degree mode is 1. The top 5 most central nodes are 929794.CALV01000016_gene149
+(degree 685), 929794.CALV01000007_gene513 (degree 609), 929794.CALV01000002_gene350
+(degree 553), 929794.CALV01000007_gene511 (degree 533) and 929794.CALV01000014_gene43
+(degree 528).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaSenegalensis(
 	
 	Datetime: 2021-02-02 21:57:46.512868
 	
-	The undirected graph Bartonella senegalensis has 1604 nodes and 98788 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07684 and
-	has 16 connected components, where the component with most nodes has 1573 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 123.18, and the node degree mode is 1. The top 5 most central
-	nodes are 929794.CALV01000016_gene149 (degree 685), 929794.CALV01000007_gene513 (degree
-	609), 929794.CALV01000002_gene350 (degree 553), 929794.CALV01000007_gene511 (degree
-	533) and 929794.CALV01000014_gene43 (degree 528).
+	The undirected graph Bartonella senegalensis has 1604 nodes and 98788 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07684 and has 16 connected components, where the component with most
+	nodes has 1573 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 123.18, and
+	the node degree mode is 1. The top 5 most central nodes are 929794.CALV01000016_gene149
+	(degree 685), 929794.CALV01000007_gene513 (degree 609), 929794.CALV01000002_gene350
+	(degree 553), 929794.CALV01000007_gene511 (degree 533) and 929794.CALV01000014_gene43
+	(degree 528).
 	
 
 

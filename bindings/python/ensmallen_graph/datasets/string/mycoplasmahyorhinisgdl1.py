@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:12.506794
 
-The undirected graph Mycoplasma hyorhinis GDL1 has 634 nodes and 31575 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.15735
-and has 9 connected components, where the component with most nodes has 607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 99.61, and the node degree mode is 4. The top 5 most
-central nodes are 1129369.MYM_0580 (degree 332), 1129369.MYM_0670 (degree 289), 1129369.MYM_0075
-(degree 286), 1129369.MYM_0380 (degree 284) and 1129369.MYM_0646 (degree 278).
+The undirected graph Mycoplasma hyorhinis GDL1 has 634 nodes and 31575
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.15735 and has 9 connected components, where the
+component with most nodes has 607 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 84, the mean node degree
+is 99.61, and the node degree mode is 4. The top 5 most central nodes are
+1129369.MYM_0580 (degree 332), 1129369.MYM_0670 (degree 289), 1129369.MYM_0075
+(degree 286), 1129369.MYM_0380 (degree 284) and 1129369.MYM_0646 (degree
+278).
 
 
 References
@@ -106,13 +108,15 @@ def MycoplasmaHyorhinisGdl1(
 	
 	Datetime: 2021-02-02 22:55:12.506794
 	
-	The undirected graph Mycoplasma hyorhinis GDL1 has 634 nodes and 31575 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.15735
-	and has 9 connected components, where the component with most nodes has 607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 99.61, and the node degree mode is 4. The top 5 most
-	central nodes are 1129369.MYM_0580 (degree 332), 1129369.MYM_0670 (degree 289), 1129369.MYM_0075
-	(degree 286), 1129369.MYM_0380 (degree 284) and 1129369.MYM_0646 (degree 278).
+	The undirected graph Mycoplasma hyorhinis GDL1 has 634 nodes and 31575
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.15735 and has 9 connected components, where the
+	component with most nodes has 607 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 84, the mean node degree
+	is 99.61, and the node degree mode is 4. The top 5 most central nodes are
+	1129369.MYM_0580 (degree 332), 1129369.MYM_0670 (degree 289), 1129369.MYM_0075
+	(degree 286), 1129369.MYM_0380 (degree 284) and 1129369.MYM_0646 (degree
+	278).
 	
 
 

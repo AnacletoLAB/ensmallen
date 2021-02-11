@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:37.230443
 
-The undirected graph Cladophialophora yegresii has 7235 nodes and 665675 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02544
-and has 23 connected components, where the component with most nodes has 7177 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 184.02, and the node degree mode is 1. The top 5
-most central nodes are 470704.XP_007757475.1 (degree 1795), 470704.XP_007759373.1
-(degree 1514), 470704.XP_007758533.1 (degree 1412), 470704.XP_007760354.1 (degree
-1411) and 470704.XP_007753002.1 (degree 1355).
+The undirected graph Cladophialophora yegresii has 7235 nodes and 665675
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02544 and has 23 connected components, where the component
+with most nodes has 7177 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 184.02,
+and the node degree mode is 1. The top 5 most central nodes are 470704.XP_007757475.1
+(degree 1795), 470704.XP_007759373.1 (degree 1514), 470704.XP_007758533.1
+(degree 1412), 470704.XP_007760354.1 (degree 1411) and 470704.XP_007753002.1
+(degree 1355).
 
 
 References
@@ -107,14 +108,15 @@ def CladophialophoraYegresii(
 	
 	Datetime: 2021-02-02 20:55:37.230443
 	
-	The undirected graph Cladophialophora yegresii has 7235 nodes and 665675 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02544
-	and has 23 connected components, where the component with most nodes has 7177 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 184.02, and the node degree mode is 1. The top 5
-	most central nodes are 470704.XP_007757475.1 (degree 1795), 470704.XP_007759373.1
-	(degree 1514), 470704.XP_007758533.1 (degree 1412), 470704.XP_007760354.1 (degree
-	1411) and 470704.XP_007753002.1 (degree 1355).
+	The undirected graph Cladophialophora yegresii has 7235 nodes and 665675
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02544 and has 23 connected components, where the component
+	with most nodes has 7177 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 184.02,
+	and the node degree mode is 1. The top 5 most central nodes are 470704.XP_007757475.1
+	(degree 1795), 470704.XP_007759373.1 (degree 1514), 470704.XP_007758533.1
+	(degree 1412), 470704.XP_007760354.1 (degree 1411) and 470704.XP_007753002.1
+	(degree 1355).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:07.338363
 
-The undirected graph Salinimicrobium terrae has 3154 nodes and 339456 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06827 and
-has 9 connected components, where the component with most nodes has 3132 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 215.25, and the node degree mode is 1. The top 5 most central
-nodes are 1123234.AUKI01000021_gene970 (degree 1159), 1123234.AUKI01000018_gene296
-(degree 1133), 1123234.AUKI01000020_gene827 (degree 1064), 1123234.AUKI01000019_gene411
-(degree 1006) and 1123234.AUKI01000005_gene107 (degree 988).
+The undirected graph Salinimicrobium terrae has 3154 nodes and 339456 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06827 and has 9 connected components, where the component with most
+nodes has 3132 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 196, the mean node degree is 215.25, and
+the node degree mode is 1. The top 5 most central nodes are 1123234.AUKI01000021_gene970
+(degree 1159), 1123234.AUKI01000018_gene296 (degree 1133), 1123234.AUKI01000020_gene827
+(degree 1064), 1123234.AUKI01000019_gene411 (degree 1006) and 1123234.AUKI01000005_gene107
+(degree 988).
 
 
 References
@@ -107,14 +108,15 @@ def SalinimicrobiumTerrae(
 	
 	Datetime: 2021-02-02 22:48:07.338363
 	
-	The undirected graph Salinimicrobium terrae has 3154 nodes and 339456 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06827 and
-	has 9 connected components, where the component with most nodes has 3132 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 215.25, and the node degree mode is 1. The top 5 most central
-	nodes are 1123234.AUKI01000021_gene970 (degree 1159), 1123234.AUKI01000018_gene296
-	(degree 1133), 1123234.AUKI01000020_gene827 (degree 1064), 1123234.AUKI01000019_gene411
-	(degree 1006) and 1123234.AUKI01000005_gene107 (degree 988).
+	The undirected graph Salinimicrobium terrae has 3154 nodes and 339456 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06827 and has 9 connected components, where the component with most
+	nodes has 3132 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 196, the mean node degree is 215.25, and
+	the node degree mode is 1. The top 5 most central nodes are 1123234.AUKI01000021_gene970
+	(degree 1159), 1123234.AUKI01000018_gene296 (degree 1133), 1123234.AUKI01000020_gene827
+	(degree 1064), 1123234.AUKI01000019_gene411 (degree 1006) and 1123234.AUKI01000005_gene107
+	(degree 988).
 	
 
 

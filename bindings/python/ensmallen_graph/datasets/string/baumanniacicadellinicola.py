@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:09.850110
 
-The undirected graph Baumannia cicadellinicola has 687 nodes and 88687 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.37636
-and is connected, as it has a single component. The graph median node degree is 275,
-the mean node degree is 258.19, and the node degree mode is 275. The top 5 most central
-nodes are 186490.IM45_935 (degree 521), 186490.IM45_1429 (degree 520), 186490.IM45_1291
-(degree 517), 186490.IM45_270 (degree 512) and 186490.IM45_1318 (degree 464).
+The undirected graph Baumannia cicadellinicola has 687 nodes and 88687
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.37636 and is connected, as it has a single component.
+The graph median node degree is 275, the mean node degree is 258.19, and
+the node degree mode is 275. The top 5 most central nodes are 186490.IM45_935
+(degree 521), 186490.IM45_1429 (degree 520), 186490.IM45_1291 (degree 517),
+186490.IM45_270 (degree 512) and 186490.IM45_1318 (degree 464).
 
 
 References
@@ -105,12 +106,13 @@ def BaumanniaCicadellinicola(
 	
 	Datetime: 2021-02-02 19:57:09.850110
 	
-	The undirected graph Baumannia cicadellinicola has 687 nodes and 88687 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.37636
-	and is connected, as it has a single component. The graph median node degree is 275,
-	the mean node degree is 258.19, and the node degree mode is 275. The top 5 most central
-	nodes are 186490.IM45_935 (degree 521), 186490.IM45_1429 (degree 520), 186490.IM45_1291
-	(degree 517), 186490.IM45_270 (degree 512) and 186490.IM45_1318 (degree 464).
+	The undirected graph Baumannia cicadellinicola has 687 nodes and 88687
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.37636 and is connected, as it has a single component.
+	The graph median node degree is 275, the mean node degree is 258.19, and
+	the node degree mode is 275. The top 5 most central nodes are 186490.IM45_935
+	(degree 521), 186490.IM45_1429 (degree 520), 186490.IM45_1291 (degree 517),
+	186490.IM45_270 (degree 512) and 186490.IM45_1318 (degree 464).
 	
 
 

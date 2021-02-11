@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:23.239483
 
-The undirected graph Joostella marina has 3833 nodes and 398148 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05421 and
-has 8 connected components, where the component with most nodes has 3817 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 207.75, and the node degree mode is 3. The top 5 most central
-nodes are 926559.JoomaDRAFT_1557 (degree 1283), 926559.JoomaDRAFT_0414 (degree 1105),
-926559.JoomaDRAFT_0127 (degree 974), 926559.JoomaDRAFT_3911 (degree 915) and 926559.JoomaDRAFT_1979
+The undirected graph Joostella marina has 3833 nodes and 398148 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05421 and has 8 connected components, where the component with most
+nodes has 3817 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 192, the mean node degree is 207.75, and
+the node degree mode is 3. The top 5 most central nodes are 926559.JoomaDRAFT_1557
+(degree 1283), 926559.JoomaDRAFT_0414 (degree 1105), 926559.JoomaDRAFT_0127
+(degree 974), 926559.JoomaDRAFT_3911 (degree 915) and 926559.JoomaDRAFT_1979
 (degree 899).
 
 
@@ -107,13 +108,14 @@ def JoostellaMarina(
 	
 	Datetime: 2021-02-02 21:56:23.239483
 	
-	The undirected graph Joostella marina has 3833 nodes and 398148 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05421 and
-	has 8 connected components, where the component with most nodes has 3817 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 207.75, and the node degree mode is 3. The top 5 most central
-	nodes are 926559.JoomaDRAFT_1557 (degree 1283), 926559.JoomaDRAFT_0414 (degree 1105),
-	926559.JoomaDRAFT_0127 (degree 974), 926559.JoomaDRAFT_3911 (degree 915) and 926559.JoomaDRAFT_1979
+	The undirected graph Joostella marina has 3833 nodes and 398148 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05421 and has 8 connected components, where the component with most
+	nodes has 3817 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 192, the mean node degree is 207.75, and
+	the node degree mode is 3. The top 5 most central nodes are 926559.JoomaDRAFT_1557
+	(degree 1283), 926559.JoomaDRAFT_0414 (degree 1105), 926559.JoomaDRAFT_0127
+	(degree 974), 926559.JoomaDRAFT_3911 (degree 915) and 926559.JoomaDRAFT_1979
 	(degree 899).
 	
 

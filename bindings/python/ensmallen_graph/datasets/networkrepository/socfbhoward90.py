@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:14.886393
 
-The undirected graph socfb-Howard90 has 4047 nodes and 204850 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02502 and
-is connected, as it has a single component. The graph median node degree is 79, the
-mean node degree is 101.24, and the node degree mode is 1. The top 5 most central
-nodes are 1439 (degree 1215), 87 (degree 717), 1494 (degree 680), 2610 (degree 672)
-and 3108 (degree 600).
+The undirected graph socfb-Howard90 has 4047 nodes and 204850 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02502 and is connected, as it has a single component. The graph median
+node degree is 79, the mean node degree is 101.24, and the node degree
+mode is 1. The top 5 most central nodes are 1439 (degree 1215), 87 (degree
+717), 1494 (degree 680), 2610 (degree 672) and 3108 (degree 600).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbHoward90(
 	
 	Datetime: 2021-02-06 11:49:14.886393
 	
-	The undirected graph socfb-Howard90 has 4047 nodes and 204850 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02502 and
-	is connected, as it has a single component. The graph median node degree is 79, the
-	mean node degree is 101.24, and the node degree mode is 1. The top 5 most central
-	nodes are 1439 (degree 1215), 87 (degree 717), 1494 (degree 680), 2610 (degree 672)
-	and 3108 (degree 600).
+	The undirected graph socfb-Howard90 has 4047 nodes and 204850 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02502 and is connected, as it has a single component. The graph median
+	node degree is 79, the mean node degree is 101.24, and the node degree
+	mode is 1. The top 5 most central nodes are 1439 (degree 1215), 87 (degree
+	717), 1494 (degree 680), 2610 (degree 672) and 3108 (degree 600).
 	
 
 

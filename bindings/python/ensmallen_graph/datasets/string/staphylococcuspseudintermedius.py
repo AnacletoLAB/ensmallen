@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:01.973079
 
-The undirected graph Staphylococcus pseudintermedius has 2338 nodes and 148155 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05423
-and has 8 connected components, where the component with most nodes has 2317 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 126.74, and the node degree mode is 4. The top 5
-most central nodes are 984892.SPSE_1110 (degree 939), 984892.SPSE_2438 (degree 786),
-984892.SPSE_2321 (degree 723), 984892.SPSE_1208 (degree 718) and 984892.SPSE_2439
-(degree 717).
+The undirected graph Staphylococcus pseudintermedius has 2338 nodes and
+148155 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05423 and has 8 connected components, where the
+component with most nodes has 2317 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+is 126.74, and the node degree mode is 4. The top 5 most central nodes
+are 984892.SPSE_1110 (degree 939), 984892.SPSE_2438 (degree 786), 984892.SPSE_2321
+(degree 723), 984892.SPSE_1208 (degree 718) and 984892.SPSE_2439 (degree
+717).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusPseudintermedius(
 	
 	Datetime: 2021-02-02 22:04:01.973079
 	
-	The undirected graph Staphylococcus pseudintermedius has 2338 nodes and 148155 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05423
-	and has 8 connected components, where the component with most nodes has 2317 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 126.74, and the node degree mode is 4. The top 5
-	most central nodes are 984892.SPSE_1110 (degree 939), 984892.SPSE_2438 (degree 786),
-	984892.SPSE_2321 (degree 723), 984892.SPSE_1208 (degree 718) and 984892.SPSE_2439
-	(degree 717).
+	The undirected graph Staphylococcus pseudintermedius has 2338 nodes and
+	148155 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05423 and has 8 connected components, where the
+	component with most nodes has 2317 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+	is 126.74, and the node degree mode is 4. The top 5 most central nodes
+	are 984892.SPSE_1110 (degree 939), 984892.SPSE_2438 (degree 786), 984892.SPSE_2321
+	(degree 723), 984892.SPSE_1208 (degree 718) and 984892.SPSE_2439 (degree
+	717).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:35.676988
 
-The undirected graph Erysipelotrichaceae bacterium 5254FAA has 2860 nodes and 323973
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07924 and has 14 connected components, where the component with most nodes has
-2827 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 168, the mean node degree is 226.55, and the node degree mode is 7. The
-top 5 most central nodes are 552396.HMPREF0863_00602 (degree 1371), 552396.HMPREF0863_00577
-(degree 1320), 552396.HMPREF0863_02576 (degree 1305), 552396.HMPREF0863_01451 (degree
+The undirected graph Erysipelotrichaceae bacterium 5254FAA has 2860 nodes
+and 323973 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07924 and has 14 connected components, where the
+component with most nodes has 2827 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+is 226.55, and the node degree mode is 7. The top 5 most central nodes
+are 552396.HMPREF0863_00602 (degree 1371), 552396.HMPREF0863_00577 (degree
+1320), 552396.HMPREF0863_02576 (degree 1305), 552396.HMPREF0863_01451 (degree
 1179) and 552396.HMPREF0863_04159 (degree 1138).
 
 
@@ -107,13 +108,14 @@ def ErysipelotrichaceaeBacterium5254faa(
 	
 	Datetime: 2021-02-02 21:09:35.676988
 	
-	The undirected graph Erysipelotrichaceae bacterium 5254FAA has 2860 nodes and 323973
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07924 and has 14 connected components, where the component with most nodes has
-	2827 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 168, the mean node degree is 226.55, and the node degree mode is 7. The
-	top 5 most central nodes are 552396.HMPREF0863_00602 (degree 1371), 552396.HMPREF0863_00577
-	(degree 1320), 552396.HMPREF0863_02576 (degree 1305), 552396.HMPREF0863_01451 (degree
+	The undirected graph Erysipelotrichaceae bacterium 5254FAA has 2860 nodes
+	and 323973 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07924 and has 14 connected components, where the
+	component with most nodes has 2827 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+	is 226.55, and the node degree mode is 7. The top 5 most central nodes
+	are 552396.HMPREF0863_00602 (degree 1371), 552396.HMPREF0863_00577 (degree
+	1320), 552396.HMPREF0863_02576 (degree 1305), 552396.HMPREF0863_01451 (degree
 	1179) and 552396.HMPREF0863_04159 (degree 1138).
 	
 

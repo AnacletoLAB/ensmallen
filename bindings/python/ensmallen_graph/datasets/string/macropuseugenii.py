@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:32:29.124716
 
-The undirected graph Macropus eugenii has 14980 nodes and 2659801 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02371 and
-is connected, as it has a single component. The graph median node degree is 254,
-the mean node degree is 355.11, and the node degree mode is 2. The top 5 most central
-nodes are 9315.ENSMEUP00000003273 (degree 3530), 9315.ENSMEUP00000004427 (degree
-3446), 9315.ENSMEUP00000007088 (degree 3187), 9315.ENSMEUP00000007452 (degree 3136)
-and 9315.ENSMEUP00000008141 (degree 2922).
+The undirected graph Macropus eugenii has 14980 nodes and 2659801 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02371 and is connected, as it has a single component. The graph median
+node degree is 254, the mean node degree is 355.11, and the node degree
+mode is 2. The top 5 most central nodes are 9315.ENSMEUP00000003273 (degree
+3530), 9315.ENSMEUP00000004427 (degree 3446), 9315.ENSMEUP00000007088 (degree
+3187), 9315.ENSMEUP00000007452 (degree 3136) and 9315.ENSMEUP00000008141
+(degree 2922).
 
 
 References
@@ -106,13 +107,14 @@ def MacropusEugenii(
 	
 	Datetime: 2021-02-02 17:32:29.124716
 	
-	The undirected graph Macropus eugenii has 14980 nodes and 2659801 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02371 and
-	is connected, as it has a single component. The graph median node degree is 254,
-	the mean node degree is 355.11, and the node degree mode is 2. The top 5 most central
-	nodes are 9315.ENSMEUP00000003273 (degree 3530), 9315.ENSMEUP00000004427 (degree
-	3446), 9315.ENSMEUP00000007088 (degree 3187), 9315.ENSMEUP00000007452 (degree 3136)
-	and 9315.ENSMEUP00000008141 (degree 2922).
+	The undirected graph Macropus eugenii has 14980 nodes and 2659801 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02371 and is connected, as it has a single component. The graph median
+	node degree is 254, the mean node degree is 355.11, and the node degree
+	mode is 2. The top 5 most central nodes are 9315.ENSMEUP00000003273 (degree
+	3530), 9315.ENSMEUP00000004427 (degree 3446), 9315.ENSMEUP00000007088 (degree
+	3187), 9315.ENSMEUP00000007452 (degree 3136) and 9315.ENSMEUP00000008141
+	(degree 2922).
 	
 
 

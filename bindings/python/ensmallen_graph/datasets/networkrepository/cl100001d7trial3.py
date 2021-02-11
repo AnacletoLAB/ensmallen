@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:39:56.458520
 
-The undirected graph CL-10000-1d7-trial3 has 9267 nodes and 52756 unweighted edges,
-of which 27 are self-loops. The graph is sparse as it has a density of 0.00123 and
-has 14 connected components, where the component with most nodes has 9241 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 4,
-the mean node degree is 11.38, and the node degree mode is 2. The top 5 most central
-nodes are 5097 (degree 208), 3003 (degree 197), 8543 (degree 197), 5638 (degree 194)
-and 5975 (degree 193).
+The undirected graph CL-10000-1d7-trial3 has 9267 nodes and 52756 unweighted
+edges, of which 27 are self-loops. The graph is sparse as it has a density
+of 0.00123 and has 14 connected components, where the component with most
+nodes has 9241 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 4, the mean node degree is 11.38, and the
+node degree mode is 2. The top 5 most central nodes are 5097 (degree 208),
+3003 (degree 197), 8543 (degree 197), 5638 (degree 194) and 5975 (degree
+193).
 
 
 References
@@ -103,13 +104,14 @@ def Cl100001d7Trial3(
 	
 	Datetime: 2021-02-06 10:39:56.458520
 	
-	The undirected graph CL-10000-1d7-trial3 has 9267 nodes and 52756 unweighted edges,
-	of which 27 are self-loops. The graph is sparse as it has a density of 0.00123 and
-	has 14 connected components, where the component with most nodes has 9241 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 4,
-	the mean node degree is 11.38, and the node degree mode is 2. The top 5 most central
-	nodes are 5097 (degree 208), 3003 (degree 197), 8543 (degree 197), 5638 (degree 194)
-	and 5975 (degree 193).
+	The undirected graph CL-10000-1d7-trial3 has 9267 nodes and 52756 unweighted
+	edges, of which 27 are self-loops. The graph is sparse as it has a density
+	of 0.00123 and has 14 connected components, where the component with most
+	nodes has 9241 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 4, the mean node degree is 11.38, and the
+	node degree mode is 2. The top 5 most central nodes are 5097 (degree 208),
+	3003 (degree 197), 8543 (degree 197), 5638 (degree 194) and 5975 (degree
+	193).
 	
 
 

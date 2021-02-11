@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:03.274536
 
-The undirected graph Sinorhizobium meliloti has 4908 nodes and 634431 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05269 and
-has 9 connected components, where the component with most nodes has 4887 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 258.53, and the node degree mode is 2. The top 5 most central
-nodes are 266834.SMc02850 (degree 1839), 266834.SM_b20356 (degree 1424), 266834.SMc02230
-(degree 1336), 266834.SMc04028 (degree 1333) and 266834.SMc02273 (degree 1268).
+The undirected graph Sinorhizobium meliloti has 4908 nodes and 634431 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05269 and has 9 connected components, where the component with most
+nodes has 4887 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 258.53, and
+the node degree mode is 2. The top 5 most central nodes are 266834.SMc02850
+(degree 1839), 266834.SM_b20356 (degree 1424), 266834.SMc02230 (degree
+1336), 266834.SMc04028 (degree 1333) and 266834.SMc02273 (degree 1268).
 
 
 References
@@ -106,13 +107,14 @@ def SinorhizobiumMeliloti(
 	
 	Datetime: 2021-02-02 20:15:03.274536
 	
-	The undirected graph Sinorhizobium meliloti has 4908 nodes and 634431 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05269 and
-	has 9 connected components, where the component with most nodes has 4887 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 258.53, and the node degree mode is 2. The top 5 most central
-	nodes are 266834.SMc02850 (degree 1839), 266834.SM_b20356 (degree 1424), 266834.SMc02230
-	(degree 1336), 266834.SMc04028 (degree 1333) and 266834.SMc02273 (degree 1268).
+	The undirected graph Sinorhizobium meliloti has 4908 nodes and 634431 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05269 and has 9 connected components, where the component with most
+	nodes has 4887 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 258.53, and
+	the node degree mode is 2. The top 5 most central nodes are 266834.SMc02850
+	(degree 1839), 266834.SM_b20356 (degree 1424), 266834.SMc02230 (degree
+	1336), 266834.SMc04028 (degree 1333) and 266834.SMc02273 (degree 1268).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:01.156298
 
-The undirected graph Alistipes sp. HGB5 has 2904 nodes and 241655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05733 and
-has 17 connected components, where the component with most nodes has 2861 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 166.43, and the node degree mode is 2. The top 5 most central
-nodes are 908612.HMPREF9720_1540 (degree 906), 908612.HMPREF9720_1878 (degree 901),
-908612.HMPREF9720_0581 (degree 852), 908612.HMPREF9720_0583 (degree 806) and 908612.HMPREF9720_1670
+The undirected graph Alistipes sp. HGB5 has 2904 nodes and 241655 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05733 and has 17 connected components, where the component with most
+nodes has 2861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 166.43, and
+the node degree mode is 2. The top 5 most central nodes are 908612.HMPREF9720_1540
+(degree 906), 908612.HMPREF9720_1878 (degree 901), 908612.HMPREF9720_0581
+(degree 852), 908612.HMPREF9720_0583 (degree 806) and 908612.HMPREF9720_1670
 (degree 763).
 
 
@@ -107,13 +108,14 @@ def AlistipesSp.Hgb5(
 	
 	Datetime: 2021-02-02 21:55:01.156298
 	
-	The undirected graph Alistipes sp. HGB5 has 2904 nodes and 241655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05733 and
-	has 17 connected components, where the component with most nodes has 2861 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 166.43, and the node degree mode is 2. The top 5 most central
-	nodes are 908612.HMPREF9720_1540 (degree 906), 908612.HMPREF9720_1878 (degree 901),
-	908612.HMPREF9720_0581 (degree 852), 908612.HMPREF9720_0583 (degree 806) and 908612.HMPREF9720_1670
+	The undirected graph Alistipes sp. HGB5 has 2904 nodes and 241655 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05733 and has 17 connected components, where the component with most
+	nodes has 2861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 166.43, and
+	the node degree mode is 2. The top 5 most central nodes are 908612.HMPREF9720_1540
+	(degree 906), 908612.HMPREF9720_1878 (degree 901), 908612.HMPREF9720_0581
+	(degree 852), 908612.HMPREF9720_0583 (degree 806) and 908612.HMPREF9720_1670
 	(degree 763).
 	
 

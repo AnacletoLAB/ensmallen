@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:02:57.468985
 
-The undirected graph Sciscionella sp. SE31 has 6872 nodes and 1064417 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04509 and
-has 26 connected components, where the component with most nodes has 6816 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 309.78, and the node degree mode is 1. The top 5 most central
-nodes are 1445613.JALM01000028_gene3655 (degree 1991), 1445613.JALM01000051_gene4067
-(degree 1948), 1445613.JALM01000019_gene5712 (degree 1858), 1445613.JALM01000051_gene4121
-(degree 1841) and 1445613.JALM01000018_gene5780 (degree 1774).
+The undirected graph Sciscionella sp. SE31 has 6872 nodes and 1064417 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04509 and has 26 connected components, where the component with most
+nodes has 6816 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 252, the mean node degree is 309.78, and
+the node degree mode is 1. The top 5 most central nodes are 1445613.JALM01000028_gene3655
+(degree 1991), 1445613.JALM01000051_gene4067 (degree 1948), 1445613.JALM01000019_gene5712
+(degree 1858), 1445613.JALM01000051_gene4121 (degree 1841) and 1445613.JALM01000018_gene5780
+(degree 1774).
 
 
 References
@@ -107,14 +108,15 @@ def SciscionellaSp.Se31(
 	
 	Datetime: 2021-02-03 23:02:57.468985
 	
-	The undirected graph Sciscionella sp. SE31 has 6872 nodes and 1064417 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04509 and
-	has 26 connected components, where the component with most nodes has 6816 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 309.78, and the node degree mode is 1. The top 5 most central
-	nodes are 1445613.JALM01000028_gene3655 (degree 1991), 1445613.JALM01000051_gene4067
-	(degree 1948), 1445613.JALM01000019_gene5712 (degree 1858), 1445613.JALM01000051_gene4121
-	(degree 1841) and 1445613.JALM01000018_gene5780 (degree 1774).
+	The undirected graph Sciscionella sp. SE31 has 6872 nodes and 1064417 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04509 and has 26 connected components, where the component with most
+	nodes has 6816 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 252, the mean node degree is 309.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1445613.JALM01000028_gene3655
+	(degree 1991), 1445613.JALM01000051_gene4067 (degree 1948), 1445613.JALM01000019_gene5712
+	(degree 1858), 1445613.JALM01000051_gene4121 (degree 1841) and 1445613.JALM01000018_gene5780
+	(degree 1774).
 	
 
 

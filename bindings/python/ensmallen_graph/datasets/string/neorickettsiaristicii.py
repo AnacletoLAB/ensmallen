@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:40.479699
 
-The undirected graph Neorickettsia risticii has 872 nodes and 44688 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11768
-and has 15 connected components, where the component with most nodes has 832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 102.50, and the node degree mode is 4. The top 5 most
-central nodes are 434131.NRI_0651 (degree 412), 434131.NRI_0403 (degree 381), 434131.NRI_0854
-(degree 372), 434131.NRI_0614 (degree 362) and 434131.NRI_0427 (degree 351).
+The undirected graph Neorickettsia risticii has 872 nodes and 44688 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11768 and has 15 connected components, where the component
+with most nodes has 832 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 102.50,
+and the node degree mode is 4. The top 5 most central nodes are 434131.NRI_0651
+(degree 412), 434131.NRI_0403 (degree 381), 434131.NRI_0854 (degree 372),
+434131.NRI_0614 (degree 362) and 434131.NRI_0427 (degree 351).
 
 
 References
@@ -106,13 +107,14 @@ def NeorickettsiaRisticii(
 	
 	Datetime: 2021-02-02 20:48:40.479699
 	
-	The undirected graph Neorickettsia risticii has 872 nodes and 44688 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11768
-	and has 15 connected components, where the component with most nodes has 832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 102.50, and the node degree mode is 4. The top 5 most
-	central nodes are 434131.NRI_0651 (degree 412), 434131.NRI_0403 (degree 381), 434131.NRI_0854
-	(degree 372), 434131.NRI_0614 (degree 362) and 434131.NRI_0427 (degree 351).
+	The undirected graph Neorickettsia risticii has 872 nodes and 44688 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11768 and has 15 connected components, where the component
+	with most nodes has 832 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 102.50,
+	and the node degree mode is 4. The top 5 most central nodes are 434131.NRI_0651
+	(degree 412), 434131.NRI_0403 (degree 381), 434131.NRI_0854 (degree 372),
+	434131.NRI_0614 (degree 362) and 434131.NRI_0427 (degree 351).
 	
 
 

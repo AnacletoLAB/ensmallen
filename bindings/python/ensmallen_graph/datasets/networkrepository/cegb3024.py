@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:19:56.516034
 
-The undirected graph cegb3024 has 2996 nodes and 41422 unweighted edges, of which
-2996 are self-loops. The graph is sparse as it has a density of 0.00890 and is connected,
-as it has a single component. The graph median node degree is 26, the mean node degree
-is 26.65, and the node degree mode is 26. The top 5 most central nodes are 2494 (degree
-68), 2493 (degree 68), 2484 (degree 60), 2483 (degree 60) and 2504 (degree 58).
+The undirected graph cegb3024 has 2996 nodes and 41422 unweighted edges,
+of which 2996 are self-loops. The graph is sparse as it has a density of
+0.00890 and is connected, as it has a single component. The graph median
+node degree is 26, the mean node degree is 26.65, and the node degree mode
+is 26. The top 5 most central nodes are 2494 (degree 68), 2493 (degree
+68), 2484 (degree 60), 2483 (degree 60) and 2504 (degree 58).
 
 
 References
@@ -101,11 +102,12 @@ def Cegb3024(
 	
 	Datetime: 2021-02-06 10:19:56.516034
 	
-	The undirected graph cegb3024 has 2996 nodes and 41422 unweighted edges, of which
-	2996 are self-loops. The graph is sparse as it has a density of 0.00890 and is connected,
-	as it has a single component. The graph median node degree is 26, the mean node degree
-	is 26.65, and the node degree mode is 26. The top 5 most central nodes are 2494 (degree
-	68), 2493 (degree 68), 2484 (degree 60), 2483 (degree 60) and 2504 (degree 58).
+	The undirected graph cegb3024 has 2996 nodes and 41422 unweighted edges,
+	of which 2996 are self-loops. The graph is sparse as it has a density of
+	0.00890 and is connected, as it has a single component. The graph median
+	node degree is 26, the mean node degree is 26.65, and the node degree mode
+	is 26. The top 5 most central nodes are 2494 (degree 68), 2493 (degree
+	68), 2484 (degree 60), 2483 (degree 60) and 2504 (degree 58).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:19.107350
 
-The undirected graph Prauserella rugosa has 4766 nodes and 507544 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04470 and
-has 19 connected components, where the component with most nodes has 4726 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 212.99, and the node degree mode is 2. The top 5 most central
-nodes are 43354.JOIJ01000004_gene3480 (degree 1983), 43354.JOIJ01000005_gene2275
-(degree 1458), 43354.JOIJ01000010_gene2486 (degree 1437), 43354.JOIJ01000015_gene1218
-(degree 1381) and 43354.JOIJ01000017_gene1294 (degree 1379).
+The undirected graph Prauserella rugosa has 4766 nodes and 507544 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04470 and has 19 connected components, where the component with most
+nodes has 4726 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 212.99, and
+the node degree mode is 2. The top 5 most central nodes are 43354.JOIJ01000004_gene3480
+(degree 1983), 43354.JOIJ01000005_gene2275 (degree 1458), 43354.JOIJ01000010_gene2486
+(degree 1437), 43354.JOIJ01000015_gene1218 (degree 1381) and 43354.JOIJ01000017_gene1294
+(degree 1379).
 
 
 References
@@ -107,14 +108,15 @@ def PrauserellaRugosa(
 	
 	Datetime: 2021-02-02 18:14:19.107350
 	
-	The undirected graph Prauserella rugosa has 4766 nodes and 507544 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04470 and
-	has 19 connected components, where the component with most nodes has 4726 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 212.99, and the node degree mode is 2. The top 5 most central
-	nodes are 43354.JOIJ01000004_gene3480 (degree 1983), 43354.JOIJ01000005_gene2275
-	(degree 1458), 43354.JOIJ01000010_gene2486 (degree 1437), 43354.JOIJ01000015_gene1218
-	(degree 1381) and 43354.JOIJ01000017_gene1294 (degree 1379).
+	The undirected graph Prauserella rugosa has 4766 nodes and 507544 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04470 and has 19 connected components, where the component with most
+	nodes has 4726 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 212.99, and
+	the node degree mode is 2. The top 5 most central nodes are 43354.JOIJ01000004_gene3480
+	(degree 1983), 43354.JOIJ01000005_gene2275 (degree 1458), 43354.JOIJ01000010_gene2486
+	(degree 1437), 43354.JOIJ01000015_gene1218 (degree 1381) and 43354.JOIJ01000017_gene1294
+	(degree 1379).
 	
 
 

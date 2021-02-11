@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:00.020990
 
-The undirected graph Alcanivorax borkumensis has 2740 nodes and 259710 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06921 and
-has 4 connected components, where the component with most nodes has 2734 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 189.57, and the node degree mode is 4. The top 5 most central
-nodes are 393595.ABO_2659 (degree 1081), 393595.ABO_1307 (degree 910), 393595.ABO_2018
-(degree 847), 393595.ABO_1084 (degree 797) and 393595.ABO_1599 (degree 790).
+The undirected graph Alcanivorax borkumensis has 2740 nodes and 259710
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06921 and has 4 connected components, where the component
+with most nodes has 2734 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 169, the mean node degree is 189.57,
+and the node degree mode is 4. The top 5 most central nodes are 393595.ABO_2659
+(degree 1081), 393595.ABO_1307 (degree 910), 393595.ABO_2018 (degree 847),
+393595.ABO_1084 (degree 797) and 393595.ABO_1599 (degree 790).
 
 
 References
@@ -106,13 +107,14 @@ def AlcanivoraxBorkumensis(
 	
 	Datetime: 2021-02-02 20:41:00.020990
 	
-	The undirected graph Alcanivorax borkumensis has 2740 nodes and 259710 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06921 and
-	has 4 connected components, where the component with most nodes has 2734 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 189.57, and the node degree mode is 4. The top 5 most central
-	nodes are 393595.ABO_2659 (degree 1081), 393595.ABO_1307 (degree 910), 393595.ABO_2018
-	(degree 847), 393595.ABO_1084 (degree 797) and 393595.ABO_1599 (degree 790).
+	The undirected graph Alcanivorax borkumensis has 2740 nodes and 259710
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06921 and has 4 connected components, where the component
+	with most nodes has 2734 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 169, the mean node degree is 189.57,
+	and the node degree mode is 4. The top 5 most central nodes are 393595.ABO_2659
+	(degree 1081), 393595.ABO_1307 (degree 910), 393595.ABO_2018 (degree 847),
+	393595.ABO_1084 (degree 797) and 393595.ABO_1599 (degree 790).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:18.934860
 
-The undirected graph Clostridium bolteae has 7110 nodes and 758817 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03003 and
-has 33 connected components, where the component with most nodes has 7013 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 213.45, and the node degree mode is 3. The top 5 most central
-nodes are 411902.CLOBOL_02939 (degree 2075), 411902.CLOBOL_00232 (degree 2003), 411902.CLOBOL_02531
-(degree 1986), 411902.CLOBOL_06625 (degree 1974) and 411902.CLOBOL_00717 (degree
+The undirected graph Clostridium bolteae has 7110 nodes and 758817 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03003 and has 33 connected components, where the component with most
+nodes has 7013 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 213.45, and
+the node degree mode is 3. The top 5 most central nodes are 411902.CLOBOL_02939
+(degree 2075), 411902.CLOBOL_00232 (degree 2003), 411902.CLOBOL_02531 (degree
+1986), 411902.CLOBOL_06625 (degree 1974) and 411902.CLOBOL_00717 (degree
 1925).
 
 
@@ -107,13 +108,14 @@ def ClostridiumBolteae(
 	
 	Datetime: 2021-02-02 20:46:18.934860
 	
-	The undirected graph Clostridium bolteae has 7110 nodes and 758817 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03003 and
-	has 33 connected components, where the component with most nodes has 7013 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 213.45, and the node degree mode is 3. The top 5 most central
-	nodes are 411902.CLOBOL_02939 (degree 2075), 411902.CLOBOL_00232 (degree 2003), 411902.CLOBOL_02531
-	(degree 1986), 411902.CLOBOL_06625 (degree 1974) and 411902.CLOBOL_00717 (degree
+	The undirected graph Clostridium bolteae has 7110 nodes and 758817 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03003 and has 33 connected components, where the component with most
+	nodes has 7013 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 213.45, and
+	the node degree mode is 3. The top 5 most central nodes are 411902.CLOBOL_02939
+	(degree 2075), 411902.CLOBOL_00232 (degree 2003), 411902.CLOBOL_02531 (degree
+	1986), 411902.CLOBOL_06625 (degree 1974) and 411902.CLOBOL_00717 (degree
 	1925).
 	
 

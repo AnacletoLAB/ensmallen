@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:27:00.092590
 
-The undirected graph Aquimarina megaterium has 5370 nodes and 772888 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05361 and
-has 23 connected components, where the component with most nodes has 5309 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 273,
-the mean node degree is 287.85, and the node degree mode is 2. The top 5 most central
-nodes are 1296416.JACB01000040_gene1938 (degree 1647), 1296416.JACB01000031_gene2592
-(degree 1620), 1296416.JACB01000035_gene2962 (degree 1554), 1296416.JACB01000031_gene2540
-(degree 1480) and 1296416.JACB01000036_gene2942 (degree 1369).
+The undirected graph Aquimarina megaterium has 5370 nodes and 772888 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05361 and has 23 connected components, where the component with most
+nodes has 5309 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 273, the mean node degree is 287.85, and
+the node degree mode is 2. The top 5 most central nodes are 1296416.JACB01000040_gene1938
+(degree 1647), 1296416.JACB01000031_gene2592 (degree 1620), 1296416.JACB01000035_gene2962
+(degree 1554), 1296416.JACB01000031_gene2540 (degree 1480) and 1296416.JACB01000036_gene2942
+(degree 1369).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaMegaterium(
 	
 	Datetime: 2021-02-03 21:27:00.092590
 	
-	The undirected graph Aquimarina megaterium has 5370 nodes and 772888 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05361 and
-	has 23 connected components, where the component with most nodes has 5309 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 273,
-	the mean node degree is 287.85, and the node degree mode is 2. The top 5 most central
-	nodes are 1296416.JACB01000040_gene1938 (degree 1647), 1296416.JACB01000031_gene2592
-	(degree 1620), 1296416.JACB01000035_gene2962 (degree 1554), 1296416.JACB01000031_gene2540
-	(degree 1480) and 1296416.JACB01000036_gene2942 (degree 1369).
+	The undirected graph Aquimarina megaterium has 5370 nodes and 772888 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05361 and has 23 connected components, where the component with most
+	nodes has 5309 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 273, the mean node degree is 287.85, and
+	the node degree mode is 2. The top 5 most central nodes are 1296416.JACB01000040_gene1938
+	(degree 1647), 1296416.JACB01000031_gene2592 (degree 1620), 1296416.JACB01000035_gene2962
+	(degree 1554), 1296416.JACB01000031_gene2540 (degree 1480) and 1296416.JACB01000036_gene2942
+	(degree 1369).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:01.038890
 
-The undirected graph Rickettsia akari has 1215 nodes and 55620 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07542 and
-has 23 connected components, where the component with most nodes has 1156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 66,
-the mean node degree is 91.56, and the node degree mode is 1. The top 5 most central
-nodes are 293614.A1C_06035 (degree 474), 293614.A1C_03145 (degree 416), 293614.A1C_04070
-(degree 394), 293614.A1C_04925 (degree 381) and 293614.A1C_01330 (degree 379).
+The undirected graph Rickettsia akari has 1215 nodes and 55620 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07542 and has 23 connected components, where the component with most
+nodes has 1156 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 66, the mean node degree is 91.56, and
+the node degree mode is 1. The top 5 most central nodes are 293614.A1C_06035
+(degree 474), 293614.A1C_03145 (degree 416), 293614.A1C_04070 (degree 394),
+293614.A1C_04925 (degree 381) and 293614.A1C_01330 (degree 379).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaAkari(
 	
 	Datetime: 2021-02-02 20:21:01.038890
 	
-	The undirected graph Rickettsia akari has 1215 nodes and 55620 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07542 and
-	has 23 connected components, where the component with most nodes has 1156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 66,
-	the mean node degree is 91.56, and the node degree mode is 1. The top 5 most central
-	nodes are 293614.A1C_06035 (degree 474), 293614.A1C_03145 (degree 416), 293614.A1C_04070
-	(degree 394), 293614.A1C_04925 (degree 381) and 293614.A1C_01330 (degree 379).
+	The undirected graph Rickettsia akari has 1215 nodes and 55620 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07542 and has 23 connected components, where the component with most
+	nodes has 1156 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 66, the mean node degree is 91.56, and
+	the node degree mode is 1. The top 5 most central nodes are 293614.A1C_06035
+	(degree 474), 293614.A1C_03145 (degree 416), 293614.A1C_04070 (degree 394),
+	293614.A1C_04925 (degree 381) and 293614.A1C_01330 (degree 379).
 	
 
 

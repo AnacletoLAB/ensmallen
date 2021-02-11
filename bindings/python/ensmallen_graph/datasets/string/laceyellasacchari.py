@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:59:17.325987
 
-The undirected graph Laceyella sacchari has 3018 nodes and 231302 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05081 and
-has 22 connected components, where the component with most nodes has 2961 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 153.28, and the node degree mode is 1. The top 5 most central
-nodes are 1341151.ASZU01000003_gene2328 (degree 1154), 1341151.ASZU01000008_gene1340
-(degree 935), 1341151.ASZU01000008_gene1357 (degree 830), 1341151.ASZU01000003_gene2709
-(degree 792) and 1341151.ASZU01000033_gene1640 (degree 694).
+The undirected graph Laceyella sacchari has 3018 nodes and 231302 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05081 and has 22 connected components, where the component with most
+nodes has 2961 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 153.28, and
+the node degree mode is 1. The top 5 most central nodes are 1341151.ASZU01000003_gene2328
+(degree 1154), 1341151.ASZU01000008_gene1340 (degree 935), 1341151.ASZU01000008_gene1357
+(degree 830), 1341151.ASZU01000003_gene2709 (degree 792) and 1341151.ASZU01000033_gene1640
+(degree 694).
 
 
 References
@@ -107,14 +108,15 @@ def LaceyellaSacchari(
 	
 	Datetime: 2021-02-03 21:59:17.325987
 	
-	The undirected graph Laceyella sacchari has 3018 nodes and 231302 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05081 and
-	has 22 connected components, where the component with most nodes has 2961 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 153.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1341151.ASZU01000003_gene2328 (degree 1154), 1341151.ASZU01000008_gene1340
-	(degree 935), 1341151.ASZU01000008_gene1357 (degree 830), 1341151.ASZU01000003_gene2709
-	(degree 792) and 1341151.ASZU01000033_gene1640 (degree 694).
+	The undirected graph Laceyella sacchari has 3018 nodes and 231302 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05081 and has 22 connected components, where the component with most
+	nodes has 2961 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 153.28, and
+	the node degree mode is 1. The top 5 most central nodes are 1341151.ASZU01000003_gene2328
+	(degree 1154), 1341151.ASZU01000008_gene1340 (degree 935), 1341151.ASZU01000008_gene1357
+	(degree 830), 1341151.ASZU01000003_gene2709 (degree 792) and 1341151.ASZU01000033_gene1640
+	(degree 694).
 	
 
 

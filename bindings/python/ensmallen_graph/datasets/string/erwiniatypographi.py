@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:49.468202
 
-The undirected graph Erwinia typographi has 4993 nodes and 621178 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04984 and
-has 19 connected components, where the component with most nodes has 4946 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 248.82, and the node degree mode is 1. The top 5 most central
-nodes are 371042.NG99_03290 (degree 1752), 371042.NG99_07545 (degree 1700), 371042.NG99_05360
-(degree 1632), 371042.NG99_13945 (degree 1533) and 371042.NG99_01095 (degree 1528).
+The undirected graph Erwinia typographi has 4993 nodes and 621178 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04984 and has 19 connected components, where the component with most
+nodes has 4946 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 248.82, and
+the node degree mode is 1. The top 5 most central nodes are 371042.NG99_03290
+(degree 1752), 371042.NG99_07545 (degree 1700), 371042.NG99_05360 (degree
+1632), 371042.NG99_13945 (degree 1533) and 371042.NG99_01095 (degree 1528).
 
 
 References
@@ -106,13 +107,14 @@ def ErwiniaTypographi(
 	
 	Datetime: 2021-02-02 20:35:49.468202
 	
-	The undirected graph Erwinia typographi has 4993 nodes and 621178 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04984 and
-	has 19 connected components, where the component with most nodes has 4946 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 248.82, and the node degree mode is 1. The top 5 most central
-	nodes are 371042.NG99_03290 (degree 1752), 371042.NG99_07545 (degree 1700), 371042.NG99_05360
-	(degree 1632), 371042.NG99_13945 (degree 1533) and 371042.NG99_01095 (degree 1528).
+	The undirected graph Erwinia typographi has 4993 nodes and 621178 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04984 and has 19 connected components, where the component with most
+	nodes has 4946 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 248.82, and
+	the node degree mode is 1. The top 5 most central nodes are 371042.NG99_03290
+	(degree 1752), 371042.NG99_07545 (degree 1700), 371042.NG99_05360 (degree
+	1632), 371042.NG99_13945 (degree 1533) and 371042.NG99_01095 (degree 1528).
 	
 
 

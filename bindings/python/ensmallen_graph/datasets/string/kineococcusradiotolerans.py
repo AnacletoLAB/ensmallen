@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:13.351793
 
-The undirected graph Kineococcus radiotolerans has 4471 nodes and 410718 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04110
-and has 16 connected components, where the component with most nodes has 4434 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 183.73, and the node degree mode is 4. The top 5
-most central nodes are 266940.Krad_2951 (degree 1331), 266940.Krad_0749 (degree 1173),
-266940.Krad_2961 (degree 1165), 266940.Krad_3163 (degree 1087) and 266940.Krad_1231
-(degree 1044).
+The undirected graph Kineococcus radiotolerans has 4471 nodes and 410718
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04110 and has 16 connected components, where the component
+with most nodes has 4434 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 183.73,
+and the node degree mode is 4. The top 5 most central nodes are 266940.Krad_2951
+(degree 1331), 266940.Krad_0749 (degree 1173), 266940.Krad_2961 (degree
+1165), 266940.Krad_3163 (degree 1087) and 266940.Krad_1231 (degree 1044).
 
 
 References
@@ -107,14 +107,14 @@ def KineococcusRadiotolerans(
 	
 	Datetime: 2021-02-02 20:15:13.351793
 	
-	The undirected graph Kineococcus radiotolerans has 4471 nodes and 410718 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04110
-	and has 16 connected components, where the component with most nodes has 4434 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 183.73, and the node degree mode is 4. The top 5
-	most central nodes are 266940.Krad_2951 (degree 1331), 266940.Krad_0749 (degree 1173),
-	266940.Krad_2961 (degree 1165), 266940.Krad_3163 (degree 1087) and 266940.Krad_1231
-	(degree 1044).
+	The undirected graph Kineococcus radiotolerans has 4471 nodes and 410718
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04110 and has 16 connected components, where the component
+	with most nodes has 4434 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 183.73,
+	and the node degree mode is 4. The top 5 most central nodes are 266940.Krad_2951
+	(degree 1331), 266940.Krad_0749 (degree 1173), 266940.Krad_2961 (degree
+	1165), 266940.Krad_3163 (degree 1087) and 266940.Krad_1231 (degree 1044).
 	
 
 

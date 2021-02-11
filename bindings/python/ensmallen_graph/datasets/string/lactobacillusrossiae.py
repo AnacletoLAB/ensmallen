@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:50.580130
 
-The undirected graph Lactobacillus rossiae has 2633 nodes and 163097 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04707 and
-has 13 connected components, where the component with most nodes has 2594 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 123.89, and the node degree mode is 3. The top 5 most central
-nodes are 1114972.AUAW01000001_gene1390 (degree 957), 1114972.AUAW01000001_gene1486
-(degree 868), 1114972.AUAW01000007_gene2560 (degree 737), 1114972.AUAW01000008_gene2248
-(degree 674) and 1114972.AUAW01000001_gene1669 (degree 671).
+The undirected graph Lactobacillus rossiae has 2633 nodes and 163097 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04707 and has 13 connected components, where the component with most
+nodes has 2594 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 123.89, and
+the node degree mode is 3. The top 5 most central nodes are 1114972.AUAW01000001_gene1390
+(degree 957), 1114972.AUAW01000001_gene1486 (degree 868), 1114972.AUAW01000007_gene2560
+(degree 737), 1114972.AUAW01000008_gene2248 (degree 674) and 1114972.AUAW01000001_gene1669
+(degree 671).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusRossiae(
 	
 	Datetime: 2021-02-02 22:26:50.580130
 	
-	The undirected graph Lactobacillus rossiae has 2633 nodes and 163097 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04707 and
-	has 13 connected components, where the component with most nodes has 2594 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 123.89, and the node degree mode is 3. The top 5 most central
-	nodes are 1114972.AUAW01000001_gene1390 (degree 957), 1114972.AUAW01000001_gene1486
-	(degree 868), 1114972.AUAW01000007_gene2560 (degree 737), 1114972.AUAW01000008_gene2248
-	(degree 674) and 1114972.AUAW01000001_gene1669 (degree 671).
+	The undirected graph Lactobacillus rossiae has 2633 nodes and 163097 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04707 and has 13 connected components, where the component with most
+	nodes has 2594 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 123.89, and
+	the node degree mode is 3. The top 5 most central nodes are 1114972.AUAW01000001_gene1390
+	(degree 957), 1114972.AUAW01000001_gene1486 (degree 868), 1114972.AUAW01000007_gene2560
+	(degree 737), 1114972.AUAW01000008_gene2248 (degree 674) and 1114972.AUAW01000001_gene1669
+	(degree 671).
 	
 
 

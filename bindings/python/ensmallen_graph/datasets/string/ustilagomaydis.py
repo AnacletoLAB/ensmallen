@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:25.466516
 
-The undirected graph Ustilago maydis has 4900 nodes and 406194 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03384 and
-has 16 connected components, where the component with most nodes has 4869 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 165.79, and the node degree mode is 1. The top 5 most central
-nodes are 5270.UM01822P0 (degree 1545), 5270.UM03490P0 (degree 1393), 5270.UM05126P0
-(degree 1343), 5270.UM02376P0 (degree 1292) and 5270.UM02860P0 (degree 1197).
+The undirected graph Ustilago maydis has 4900 nodes and 406194 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03384 and has 16 connected components, where the component with most
+nodes has 4869 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 165.79, and
+the node degree mode is 1. The top 5 most central nodes are 5270.UM01822P0
+(degree 1545), 5270.UM03490P0 (degree 1393), 5270.UM05126P0 (degree 1343),
+5270.UM02376P0 (degree 1292) and 5270.UM02860P0 (degree 1197).
 
 
 References
@@ -106,13 +107,14 @@ def UstilagoMaydis(
 	
 	Datetime: 2021-02-02 17:13:25.466516
 	
-	The undirected graph Ustilago maydis has 4900 nodes and 406194 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03384 and
-	has 16 connected components, where the component with most nodes has 4869 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 165.79, and the node degree mode is 1. The top 5 most central
-	nodes are 5270.UM01822P0 (degree 1545), 5270.UM03490P0 (degree 1393), 5270.UM05126P0
-	(degree 1343), 5270.UM02376P0 (degree 1292) and 5270.UM02860P0 (degree 1197).
+	The undirected graph Ustilago maydis has 4900 nodes and 406194 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03384 and has 16 connected components, where the component with most
+	nodes has 4869 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 165.79, and
+	the node degree mode is 1. The top 5 most central nodes are 5270.UM01822P0
+	(degree 1545), 5270.UM03490P0 (degree 1393), 5270.UM05126P0 (degree 1343),
+	5270.UM02376P0 (degree 1292) and 5270.UM02860P0 (degree 1197).
 	
 
 

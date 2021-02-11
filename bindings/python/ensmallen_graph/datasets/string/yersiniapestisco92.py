@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:41.210736
 
-The undirected graph Yersinia pestis CO92 has 3943 nodes and 448508 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05771 and
-has 9 connected components, where the component with most nodes has 3926 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 209,
-the mean node degree is 227.50, and the node degree mode is 1. The top 5 most central
-nodes are 214092.YPO1910 (degree 1531), 214092.YPO3381 (degree 1387), 214092.YPO0017
-(degree 1373), 214092.YPO2870 (degree 1260) and 214092.YPO0256 (degree 1122).
+The undirected graph Yersinia pestis CO92 has 3943 nodes and 448508 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05771 and has 9 connected components, where the component with most
+nodes has 3926 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 209, the mean node degree is 227.50, and
+the node degree mode is 1. The top 5 most central nodes are 214092.YPO1910
+(degree 1531), 214092.YPO3381 (degree 1387), 214092.YPO0017 (degree 1373),
+214092.YPO2870 (degree 1260) and 214092.YPO0256 (degree 1122).
 
 
 References
@@ -106,13 +107,14 @@ def YersiniaPestisCo92(
 	
 	Datetime: 2021-02-02 20:01:41.210736
 	
-	The undirected graph Yersinia pestis CO92 has 3943 nodes and 448508 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05771 and
-	has 9 connected components, where the component with most nodes has 3926 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 209,
-	the mean node degree is 227.50, and the node degree mode is 1. The top 5 most central
-	nodes are 214092.YPO1910 (degree 1531), 214092.YPO3381 (degree 1387), 214092.YPO0017
-	(degree 1373), 214092.YPO2870 (degree 1260) and 214092.YPO0256 (degree 1122).
+	The undirected graph Yersinia pestis CO92 has 3943 nodes and 448508 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05771 and has 9 connected components, where the component with most
+	nodes has 3926 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 209, the mean node degree is 227.50, and
+	the node degree mode is 1. The top 5 most central nodes are 214092.YPO1910
+	(degree 1531), 214092.YPO3381 (degree 1387), 214092.YPO0017 (degree 1373),
+	214092.YPO2870 (degree 1260) and 214092.YPO0256 (degree 1122).
 	
 
 

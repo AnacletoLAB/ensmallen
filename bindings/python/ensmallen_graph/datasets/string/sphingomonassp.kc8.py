@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:29.106674
 
-The undirected graph Sphingomonas sp. KC8 has 3801 nodes and 345485 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04784 and
-has 9 connected components, where the component with most nodes has 3776 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 181.79, and the node degree mode is 4. The top 5 most central
-nodes are 1030157.AFMP01000016_gene2511 (degree 1602), 1030157.AFMP01000041_gene1247
-(degree 1511), 1030157.AFMP01000008_gene3275 (degree 1302), 1030157.AFMP01000040_gene1469
-(degree 1125) and 1030157.AFMP01000016_gene2479 (degree 1114).
+The undirected graph Sphingomonas sp. KC8 has 3801 nodes and 345485 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04784 and has 9 connected components, where the component with most
+nodes has 3776 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 181.79, and
+the node degree mode is 4. The top 5 most central nodes are 1030157.AFMP01000016_gene2511
+(degree 1602), 1030157.AFMP01000041_gene1247 (degree 1511), 1030157.AFMP01000008_gene3275
+(degree 1302), 1030157.AFMP01000040_gene1469 (degree 1125) and 1030157.AFMP01000016_gene2479
+(degree 1114).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.Kc8(
 	
 	Datetime: 2021-02-02 22:10:29.106674
 	
-	The undirected graph Sphingomonas sp. KC8 has 3801 nodes and 345485 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04784 and
-	has 9 connected components, where the component with most nodes has 3776 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 181.79, and the node degree mode is 4. The top 5 most central
-	nodes are 1030157.AFMP01000016_gene2511 (degree 1602), 1030157.AFMP01000041_gene1247
-	(degree 1511), 1030157.AFMP01000008_gene3275 (degree 1302), 1030157.AFMP01000040_gene1469
-	(degree 1125) and 1030157.AFMP01000016_gene2479 (degree 1114).
+	The undirected graph Sphingomonas sp. KC8 has 3801 nodes and 345485 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04784 and has 9 connected components, where the component with most
+	nodes has 3776 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 181.79, and
+	the node degree mode is 4. The top 5 most central nodes are 1030157.AFMP01000016_gene2511
+	(degree 1602), 1030157.AFMP01000041_gene1247 (degree 1511), 1030157.AFMP01000008_gene3275
+	(degree 1302), 1030157.AFMP01000040_gene1469 (degree 1125) and 1030157.AFMP01000016_gene2479
+	(degree 1114).
 	
 
 

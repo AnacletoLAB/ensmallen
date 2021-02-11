@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:38:42.727062
 
-The undirected graph Pongo abelii has 18877 nodes and 4098083 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02300 and
-is connected, as it has a single component. The graph median node degree is 304,
-the mean node degree is 434.19, and the node degree mode is 166. The top 5 most central
-nodes are 9601.ENSPPYP00000000495 (degree 4412), 9601.ENSPPYP00000012771 (degree
-4245), 9601.ENSPPYP00000008184 (degree 3956), 9601.ENSPPYP00000004774 (degree 3835)
-and 9601.ENSPPYP00000022687 (degree 3761).
+The undirected graph Pongo abelii has 18877 nodes and 4098083 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02300 and is connected, as it has a single component. The graph median
+node degree is 304, the mean node degree is 434.19, and the node degree
+mode is 166. The top 5 most central nodes are 9601.ENSPPYP00000000495 (degree
+4412), 9601.ENSPPYP00000012771 (degree 4245), 9601.ENSPPYP00000008184 (degree
+3956), 9601.ENSPPYP00000004774 (degree 3835) and 9601.ENSPPYP00000022687
+(degree 3761).
 
 
 References
@@ -106,13 +107,14 @@ def PongoAbelii(
 	
 	Datetime: 2021-02-02 17:38:42.727062
 	
-	The undirected graph Pongo abelii has 18877 nodes and 4098083 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02300 and
-	is connected, as it has a single component. The graph median node degree is 304,
-	the mean node degree is 434.19, and the node degree mode is 166. The top 5 most central
-	nodes are 9601.ENSPPYP00000000495 (degree 4412), 9601.ENSPPYP00000012771 (degree
-	4245), 9601.ENSPPYP00000008184 (degree 3956), 9601.ENSPPYP00000004774 (degree 3835)
-	and 9601.ENSPPYP00000022687 (degree 3761).
+	The undirected graph Pongo abelii has 18877 nodes and 4098083 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02300 and is connected, as it has a single component. The graph median
+	node degree is 304, the mean node degree is 434.19, and the node degree
+	mode is 166. The top 5 most central nodes are 9601.ENSPPYP00000000495 (degree
+	4412), 9601.ENSPPYP00000012771 (degree 4245), 9601.ENSPPYP00000008184 (degree
+	3956), 9601.ENSPPYP00000004774 (degree 3835) and 9601.ENSPPYP00000022687
+	(degree 3761).
 	
 
 

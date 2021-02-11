@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:01:28.815359
 
-The undirected graph Acholeplasma axanthum has 1659 nodes and 95389 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06936 and
-has 10 connected components, where the component with most nodes has 1638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 115.00, and the node degree mode is 9. The top 5 most central
-nodes are 1278311.AUAL01000022_gene1003 (degree 744), 1278311.AUAL01000003_gene1271
-(degree 577), 1278311.AUAL01000031_gene1587 (degree 562), 1278311.AUAL01000003_gene1231
-(degree 561) and 1278311.AUAL01000004_gene327 (degree 537).
+The undirected graph Acholeplasma axanthum has 1659 nodes and 95389 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06936 and has 10 connected components, where the component with most
+nodes has 1638 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 115.00, and
+the node degree mode is 9. The top 5 most central nodes are 1278311.AUAL01000022_gene1003
+(degree 744), 1278311.AUAL01000003_gene1271 (degree 577), 1278311.AUAL01000031_gene1587
+(degree 562), 1278311.AUAL01000003_gene1231 (degree 561) and 1278311.AUAL01000004_gene327
+(degree 537).
 
 
 References
@@ -107,14 +108,15 @@ def AcholeplasmaAxanthum(
 	
 	Datetime: 2021-02-03 21:01:28.815359
 	
-	The undirected graph Acholeplasma axanthum has 1659 nodes and 95389 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06936 and
-	has 10 connected components, where the component with most nodes has 1638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 115.00, and the node degree mode is 9. The top 5 most central
-	nodes are 1278311.AUAL01000022_gene1003 (degree 744), 1278311.AUAL01000003_gene1271
-	(degree 577), 1278311.AUAL01000031_gene1587 (degree 562), 1278311.AUAL01000003_gene1231
-	(degree 561) and 1278311.AUAL01000004_gene327 (degree 537).
+	The undirected graph Acholeplasma axanthum has 1659 nodes and 95389 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06936 and has 10 connected components, where the component with most
+	nodes has 1638 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 115.00, and
+	the node degree mode is 9. The top 5 most central nodes are 1278311.AUAL01000022_gene1003
+	(degree 744), 1278311.AUAL01000003_gene1271 (degree 577), 1278311.AUAL01000031_gene1587
+	(degree 562), 1278311.AUAL01000003_gene1231 (degree 561) and 1278311.AUAL01000004_gene327
+	(degree 537).
 	
 
 

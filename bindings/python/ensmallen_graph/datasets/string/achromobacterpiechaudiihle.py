@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:27.448795
 
-The undirected graph Achromobacter piechaudii HLE has 6314 nodes and 1037418 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05205
-and has 30 connected components, where the component with most nodes has 6243 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 259, the mean node degree is 328.61, and the node degree mode is 1. The top 5
-most central nodes are 1156919.QWC_17432 (degree 2319), 1156919.QWC_15709 (degree
-2220), 1156919.QWC_13822 (degree 2087), 1156919.QWC_03668 (degree 1997) and 1156919.QWC_13043
-(degree 1849).
+The undirected graph Achromobacter piechaudii HLE has 6314 nodes and 1037418
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05205 and has 30 connected components, where the component
+with most nodes has 6243 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 259, the mean node degree is 328.61,
+and the node degree mode is 1. The top 5 most central nodes are 1156919.QWC_17432
+(degree 2319), 1156919.QWC_15709 (degree 2220), 1156919.QWC_13822 (degree
+2087), 1156919.QWC_03668 (degree 1997) and 1156919.QWC_13043 (degree 1849).
 
 
 References
@@ -107,14 +107,14 @@ def AchromobacterPiechaudiiHle(
 	
 	Datetime: 2021-02-02 23:01:27.448795
 	
-	The undirected graph Achromobacter piechaudii HLE has 6314 nodes and 1037418 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05205
-	and has 30 connected components, where the component with most nodes has 6243 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 259, the mean node degree is 328.61, and the node degree mode is 1. The top 5
-	most central nodes are 1156919.QWC_17432 (degree 2319), 1156919.QWC_15709 (degree
-	2220), 1156919.QWC_13822 (degree 2087), 1156919.QWC_03668 (degree 1997) and 1156919.QWC_13043
-	(degree 1849).
+	The undirected graph Achromobacter piechaudii HLE has 6314 nodes and 1037418
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05205 and has 30 connected components, where the component
+	with most nodes has 6243 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 259, the mean node degree is 328.61,
+	and the node degree mode is 1. The top 5 most central nodes are 1156919.QWC_17432
+	(degree 2319), 1156919.QWC_15709 (degree 2220), 1156919.QWC_13822 (degree
+	2087), 1156919.QWC_03668 (degree 1997) and 1156919.QWC_13043 (degree 1849).
 	
 
 

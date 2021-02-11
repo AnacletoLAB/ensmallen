@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:40.038973
 
-The undirected graph Arthrobacter sp. 135MFCol51 has 3902 nodes and 379933 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04992
-and has 10 connected components, where the component with most nodes has 3883 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 194.74, and the node degree mode is 1. The top 5
-most central nodes are 1158050.KB895452_gene393 (degree 1385), 1158050.KB895468_gene3218
-(degree 1359), 1158050.KB895453_gene1187 (degree 1191), 1158050.KB895454_gene1260
-(degree 1158) and 1158050.KB895452_gene382 (degree 1106).
+The undirected graph Arthrobacter sp. 135MFCol51 has 3902 nodes and 379933
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04992 and has 10 connected components, where the component
+with most nodes has 3883 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 194.74,
+and the node degree mode is 1. The top 5 most central nodes are 1158050.KB895452_gene393
+(degree 1385), 1158050.KB895468_gene3218 (degree 1359), 1158050.KB895453_gene1187
+(degree 1191), 1158050.KB895454_gene1260 (degree 1158) and 1158050.KB895452_gene382
+(degree 1106).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.135mfcol51(
 	
 	Datetime: 2021-02-02 23:02:40.038973
 	
-	The undirected graph Arthrobacter sp. 135MFCol51 has 3902 nodes and 379933 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04992
-	and has 10 connected components, where the component with most nodes has 3883 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 194.74, and the node degree mode is 1. The top 5
-	most central nodes are 1158050.KB895452_gene393 (degree 1385), 1158050.KB895468_gene3218
-	(degree 1359), 1158050.KB895453_gene1187 (degree 1191), 1158050.KB895454_gene1260
-	(degree 1158) and 1158050.KB895452_gene382 (degree 1106).
+	The undirected graph Arthrobacter sp. 135MFCol51 has 3902 nodes and 379933
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04992 and has 10 connected components, where the component
+	with most nodes has 3883 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 194.74,
+	and the node degree mode is 1. The top 5 most central nodes are 1158050.KB895452_gene393
+	(degree 1385), 1158050.KB895468_gene3218 (degree 1359), 1158050.KB895453_gene1187
+	(degree 1191), 1158050.KB895454_gene1260 (degree 1158) and 1158050.KB895452_gene382
+	(degree 1106).
 	
 
 

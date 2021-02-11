@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:13.800260
 
-The undirected graph Streptomyces sp. CNH099 has 6757 nodes and 930009 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04074 and
-has 58 connected components, where the component with most nodes has 6598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 275.27, and the node degree mode is 1. The top 5 most central
-nodes are 1137269.AZWL01000004_gene2070 (degree 3308), 1137269.AZWL01000007_gene4480
-(degree 2004), 1137269.AZWL01000008_gene4761 (degree 1898), 1137269.AZWL01000025_gene75
-(degree 1883) and 1137269.AZWL01000007_gene4474 (degree 1870).
+The undirected graph Streptomyces sp. CNH099 has 6757 nodes and 930009
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04074 and has 58 connected components, where the component
+with most nodes has 6598 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 226, the mean node degree is 275.27,
+and the node degree mode is 1. The top 5 most central nodes are 1137269.AZWL01000004_gene2070
+(degree 3308), 1137269.AZWL01000007_gene4480 (degree 2004), 1137269.AZWL01000008_gene4761
+(degree 1898), 1137269.AZWL01000025_gene75 (degree 1883) and 1137269.AZWL01000007_gene4474
+(degree 1870).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Cnh099(
 	
 	Datetime: 2021-02-02 22:57:13.800260
 	
-	The undirected graph Streptomyces sp. CNH099 has 6757 nodes and 930009 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04074 and
-	has 58 connected components, where the component with most nodes has 6598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 275.27, and the node degree mode is 1. The top 5 most central
-	nodes are 1137269.AZWL01000004_gene2070 (degree 3308), 1137269.AZWL01000007_gene4480
-	(degree 2004), 1137269.AZWL01000008_gene4761 (degree 1898), 1137269.AZWL01000025_gene75
-	(degree 1883) and 1137269.AZWL01000007_gene4474 (degree 1870).
+	The undirected graph Streptomyces sp. CNH099 has 6757 nodes and 930009
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04074 and has 58 connected components, where the component
+	with most nodes has 6598 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 226, the mean node degree is 275.27,
+	and the node degree mode is 1. The top 5 most central nodes are 1137269.AZWL01000004_gene2070
+	(degree 3308), 1137269.AZWL01000007_gene4480 (degree 2004), 1137269.AZWL01000008_gene4761
+	(degree 1898), 1137269.AZWL01000025_gene75 (degree 1883) and 1137269.AZWL01000007_gene4474
+	(degree 1870).
 	
 
 

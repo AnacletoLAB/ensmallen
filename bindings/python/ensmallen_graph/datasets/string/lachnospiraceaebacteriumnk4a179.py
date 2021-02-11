@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:55.957942
 
-The undirected graph Lachnospiraceae bacterium NK4A179 has 2812 nodes and 222513
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05630 and has 8 connected components, where the component with most nodes has
-2797 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 125, the mean node degree is 158.26, and the node degree mode is 5. The
-top 5 most central nodes are 877424.ATWC01000001_gene1899 (degree 1180), 877424.ATWC01000004_gene512
+The undirected graph Lachnospiraceae bacterium NK4A179 has 2812 nodes and
+222513 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05630 and has 8 connected components, where the
+component with most nodes has 2797 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 158.26, and the node degree mode is 5. The top 5 most central nodes
+are 877424.ATWC01000001_gene1899 (degree 1180), 877424.ATWC01000004_gene512
 (degree 1069), 877424.ATWC01000020_gene1289 (degree 858), 877424.ATWC01000001_gene2016
 (degree 848) and 877424.ATWC01000048_gene921 (degree 798).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumNk4a179(
 	
 	Datetime: 2021-02-02 21:49:55.957942
 	
-	The undirected graph Lachnospiraceae bacterium NK4A179 has 2812 nodes and 222513
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05630 and has 8 connected components, where the component with most nodes has
-	2797 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 125, the mean node degree is 158.26, and the node degree mode is 5. The
-	top 5 most central nodes are 877424.ATWC01000001_gene1899 (degree 1180), 877424.ATWC01000004_gene512
+	The undirected graph Lachnospiraceae bacterium NK4A179 has 2812 nodes and
+	222513 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05630 and has 8 connected components, where the
+	component with most nodes has 2797 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 158.26, and the node degree mode is 5. The top 5 most central nodes
+	are 877424.ATWC01000001_gene1899 (degree 1180), 877424.ATWC01000004_gene512
 	(degree 1069), 877424.ATWC01000020_gene1289 (degree 858), 877424.ATWC01000001_gene2016
 	(degree 848) and 877424.ATWC01000048_gene921 (degree 798).
 	

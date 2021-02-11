@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:21.604208
 
-The undirected graph socfb-Wellesley22 has 2970 nodes and 94899 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02152 and
-is connected, as it has a single component. The graph median node degree is 52, the
-mean node degree is 63.91, and the node degree mode is 2. The top 5 most central
-nodes are 157 (degree 746), 2958 (degree 403), 1136 (degree 394), 1731 (degree 385)
-and 2659 (degree 383).
+The undirected graph socfb-Wellesley22 has 2970 nodes and 94899 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02152 and is connected, as it has a single component. The graph median
+node degree is 52, the mean node degree is 63.91, and the node degree mode
+is 2. The top 5 most central nodes are 157 (degree 746), 2958 (degree 403),
+1136 (degree 394), 1731 (degree 385) and 2659 (degree 383).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbWellesley22(
 	
 	Datetime: 2021-02-06 10:55:21.604208
 	
-	The undirected graph socfb-Wellesley22 has 2970 nodes and 94899 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02152 and
-	is connected, as it has a single component. The graph median node degree is 52, the
-	mean node degree is 63.91, and the node degree mode is 2. The top 5 most central
-	nodes are 157 (degree 746), 2958 (degree 403), 1136 (degree 394), 1731 (degree 385)
-	and 2659 (degree 383).
+	The undirected graph socfb-Wellesley22 has 2970 nodes and 94899 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02152 and is connected, as it has a single component. The graph median
+	node degree is 52, the mean node degree is 63.91, and the node degree mode
+	is 2. The top 5 most central nodes are 157 (degree 746), 2958 (degree 403),
+	1136 (degree 394), 1731 (degree 385) and 2659 (degree 383).
 	
 
 

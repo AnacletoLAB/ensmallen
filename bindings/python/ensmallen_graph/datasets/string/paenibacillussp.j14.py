@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:35.061830
 
-The undirected graph Paenibacillus sp. J14 has 4239 nodes and 414671 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04616 and
-has 7 connected components, where the component with most nodes has 4227 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 195.65, and the node degree mode is 1. The top 5 most central
-nodes are 935845.JADQ01000029_gene1196 (degree 1314), 935845.JADQ01000043_gene3130
-(degree 1308), 935845.JADQ01000008_gene1836 (degree 1118), 935845.JADQ01000013_gene3311
-(degree 1106) and 935845.JADQ01000023_gene294 (degree 975).
+The undirected graph Paenibacillus sp. J14 has 4239 nodes and 414671 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04616 and has 7 connected components, where the component with most
+nodes has 4227 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 195.65, and
+the node degree mode is 1. The top 5 most central nodes are 935845.JADQ01000029_gene1196
+(degree 1314), 935845.JADQ01000043_gene3130 (degree 1308), 935845.JADQ01000008_gene1836
+(degree 1118), 935845.JADQ01000013_gene3311 (degree 1106) and 935845.JADQ01000023_gene294
+(degree 975).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.J14(
 	
 	Datetime: 2021-02-02 21:59:35.061830
 	
-	The undirected graph Paenibacillus sp. J14 has 4239 nodes and 414671 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04616 and
-	has 7 connected components, where the component with most nodes has 4227 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 195.65, and the node degree mode is 1. The top 5 most central
-	nodes are 935845.JADQ01000029_gene1196 (degree 1314), 935845.JADQ01000043_gene3130
-	(degree 1308), 935845.JADQ01000008_gene1836 (degree 1118), 935845.JADQ01000013_gene3311
-	(degree 1106) and 935845.JADQ01000023_gene294 (degree 975).
+	The undirected graph Paenibacillus sp. J14 has 4239 nodes and 414671 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04616 and has 7 connected components, where the component with most
+	nodes has 4227 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 195.65, and
+	the node degree mode is 1. The top 5 most central nodes are 935845.JADQ01000029_gene1196
+	(degree 1314), 935845.JADQ01000043_gene3130 (degree 1308), 935845.JADQ01000008_gene1836
+	(degree 1118), 935845.JADQ01000013_gene3311 (degree 1106) and 935845.JADQ01000023_gene294
+	(degree 975).
 	
 
 

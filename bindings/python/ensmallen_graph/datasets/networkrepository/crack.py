@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:30.924402
 
-The undirected graph crack has 10240 nodes and 30380 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00058 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 5.93, and the node degree mode is 4. The top 5 most central nodes are 6 (degree
-9), 5279 (degree 8), 3915 (degree 8), 3885 (degree 8) and 3869 (degree 8).
+The undirected graph crack has 10240 nodes and 30380 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00058 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 5.93, and the node degree mode
+is 4. The top 5 most central nodes are 6 (degree 9), 5279 (degree 8), 3915
+(degree 8), 3885 (degree 8) and 3869 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Crack(
 	
 	Datetime: 2021-02-06 10:20:30.924402
 	
-	The undirected graph crack has 10240 nodes and 30380 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00058 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.93, and the node degree mode is 4. The top 5 most central nodes are 6 (degree
-	9), 5279 (degree 8), 3915 (degree 8), 3885 (degree 8) and 3869 (degree 8).
+	The undirected graph crack has 10240 nodes and 30380 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00058 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 5.93, and the node degree mode
+	is 4. The top 5 most central nodes are 6 (degree 9), 5279 (degree 8), 3915
+	(degree 8), 3885 (degree 8) and 3869 (degree 8).
 	
 
 

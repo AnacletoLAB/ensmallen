@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:46.901596
 
-The undirected graph Pseudomonas fluorescens NZ007 has 5339 nodes and 906175 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06359
-and has 20 connected components, where the component with most nodes has 5294 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 274, the mean node degree is 339.45, and the node degree mode is 1. The top 5
-most central nodes are 690597.JH730984_gene339 (degree 2275), 690597.JH730983_gene137
-(degree 2238), 690597.JH730946_gene2344 (degree 1823), 690597.JH730978_gene5227 (degree
-1769) and 690597.JH730914_gene3843 (degree 1765).
+The undirected graph Pseudomonas fluorescens NZ007 has 5339 nodes and 906175
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06359 and has 20 connected components, where the component
+with most nodes has 5294 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 274, the mean node degree is 339.45,
+and the node degree mode is 1. The top 5 most central nodes are 690597.JH730984_gene339
+(degree 2275), 690597.JH730983_gene137 (degree 2238), 690597.JH730946_gene2344
+(degree 1823), 690597.JH730978_gene5227 (degree 1769) and 690597.JH730914_gene3843
+(degree 1765).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFluorescensNz007(
 	
 	Datetime: 2021-02-02 21:31:46.901596
 	
-	The undirected graph Pseudomonas fluorescens NZ007 has 5339 nodes and 906175 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06359
-	and has 20 connected components, where the component with most nodes has 5294 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 274, the mean node degree is 339.45, and the node degree mode is 1. The top 5
-	most central nodes are 690597.JH730984_gene339 (degree 2275), 690597.JH730983_gene137
-	(degree 2238), 690597.JH730946_gene2344 (degree 1823), 690597.JH730978_gene5227 (degree
-	1769) and 690597.JH730914_gene3843 (degree 1765).
+	The undirected graph Pseudomonas fluorescens NZ007 has 5339 nodes and 906175
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06359 and has 20 connected components, where the component
+	with most nodes has 5294 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 274, the mean node degree is 339.45,
+	and the node degree mode is 1. The top 5 most central nodes are 690597.JH730984_gene339
+	(degree 2275), 690597.JH730983_gene137 (degree 2238), 690597.JH730946_gene2344
+	(degree 1823), 690597.JH730978_gene5227 (degree 1769) and 690597.JH730914_gene3843
+	(degree 1765).
 	
 
 

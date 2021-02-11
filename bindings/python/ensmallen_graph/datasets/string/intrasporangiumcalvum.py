@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:23.600828
 
-The undirected graph Intrasporangium calvum has 3545 nodes and 374419 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05960 and
-has 8 connected components, where the component with most nodes has 3530 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 211.24, and the node degree mode is 5. The top 5 most central
-nodes are 710696.Intca_1656 (degree 1203), 710696.Intca_3070 (degree 1166), 710696.Intca_1035
-(degree 1126), 710696.Intca_0438 (degree 1070) and 710696.Intca_0545 (degree 1046).
+The undirected graph Intrasporangium calvum has 3545 nodes and 374419 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05960 and has 8 connected components, where the component with most
+nodes has 3530 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 211.24, and
+the node degree mode is 5. The top 5 most central nodes are 710696.Intca_1656
+(degree 1203), 710696.Intca_3070 (degree 1166), 710696.Intca_1035 (degree
+1126), 710696.Intca_0438 (degree 1070) and 710696.Intca_0545 (degree 1046).
 
 
 References
@@ -106,13 +107,14 @@ def IntrasporangiumCalvum(
 	
 	Datetime: 2021-02-02 21:35:23.600828
 	
-	The undirected graph Intrasporangium calvum has 3545 nodes and 374419 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05960 and
-	has 8 connected components, where the component with most nodes has 3530 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 211.24, and the node degree mode is 5. The top 5 most central
-	nodes are 710696.Intca_1656 (degree 1203), 710696.Intca_3070 (degree 1166), 710696.Intca_1035
-	(degree 1126), 710696.Intca_0438 (degree 1070) and 710696.Intca_0545 (degree 1046).
+	The undirected graph Intrasporangium calvum has 3545 nodes and 374419 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05960 and has 8 connected components, where the component with most
+	nodes has 3530 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 211.24, and
+	the node degree mode is 5. The top 5 most central nodes are 710696.Intca_1656
+	(degree 1203), 710696.Intca_3070 (degree 1166), 710696.Intca_1035 (degree
+	1126), 710696.Intca_0438 (degree 1070) and 710696.Intca_0545 (degree 1046).
 	
 
 

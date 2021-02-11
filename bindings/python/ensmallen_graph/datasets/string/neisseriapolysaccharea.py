@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:25.634324
 
-The undirected graph Neisseria polysaccharea has 2499 nodes and 120686 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03867 and
-has 30 connected components, where the component with most nodes has 2430 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 68,
-the mean node degree is 96.59, and the node degree mode is 3. The top 5 most central
-nodes are 546267.NEIPOLOT_01984 (degree 817), 546267.NEIPOLOT_01816 (degree 780),
-546267.NEIPOLOT_01411 (degree 691), 546267.NEIPOLOT_00821 (degree 661) and 546267.NEIPOLOT_01967
+The undirected graph Neisseria polysaccharea has 2499 nodes and 120686
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03867 and has 30 connected components, where the component
+with most nodes has 2430 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 68, the mean node degree is 96.59,
+and the node degree mode is 3. The top 5 most central nodes are 546267.NEIPOLOT_01984
+(degree 817), 546267.NEIPOLOT_01816 (degree 780), 546267.NEIPOLOT_01411
+(degree 691), 546267.NEIPOLOT_00821 (degree 661) and 546267.NEIPOLOT_01967
 (degree 633).
 
 
@@ -107,13 +108,14 @@ def NeisseriaPolysaccharea(
 	
 	Datetime: 2021-02-02 21:08:25.634324
 	
-	The undirected graph Neisseria polysaccharea has 2499 nodes and 120686 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03867 and
-	has 30 connected components, where the component with most nodes has 2430 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 68,
-	the mean node degree is 96.59, and the node degree mode is 3. The top 5 most central
-	nodes are 546267.NEIPOLOT_01984 (degree 817), 546267.NEIPOLOT_01816 (degree 780),
-	546267.NEIPOLOT_01411 (degree 691), 546267.NEIPOLOT_00821 (degree 661) and 546267.NEIPOLOT_01967
+	The undirected graph Neisseria polysaccharea has 2499 nodes and 120686
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03867 and has 30 connected components, where the component
+	with most nodes has 2430 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 68, the mean node degree is 96.59,
+	and the node degree mode is 3. The top 5 most central nodes are 546267.NEIPOLOT_01984
+	(degree 817), 546267.NEIPOLOT_01816 (degree 780), 546267.NEIPOLOT_01411
+	(degree 691), 546267.NEIPOLOT_00821 (degree 661) and 546267.NEIPOLOT_01967
 	(degree 633).
 	
 

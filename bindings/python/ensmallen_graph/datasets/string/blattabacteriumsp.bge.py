@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:46.904799
 
-The undirected graph Blattabacterium sp. Bge has 589 nodes and 34702 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.20040
-and is connected, as it has a single component. The graph median node degree is 108,
-the mean node degree is 117.83, and the node degree mode is 77. The top 5 most central
-nodes are 331104.BLBBGE_512 (degree 363), 331104.BLBBGE_478 (degree 357), 331104.BLBBGE_311
-(degree 347), 331104.BLBBGE_160 (degree 346) and 331104.BLBBGE_226 (degree 323).
+The undirected graph Blattabacterium sp. Bge has 589 nodes and 34702 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.20040 and is connected, as it has a single component. The
+graph median node degree is 108, the mean node degree is 117.83, and the
+node degree mode is 77. The top 5 most central nodes are 331104.BLBBGE_512
+(degree 363), 331104.BLBBGE_478 (degree 357), 331104.BLBBGE_311 (degree
+347), 331104.BLBBGE_160 (degree 346) and 331104.BLBBGE_226 (degree 323).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Bge(
 	
 	Datetime: 2021-02-02 20:29:46.904799
 	
-	The undirected graph Blattabacterium sp. Bge has 589 nodes and 34702 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.20040
-	and is connected, as it has a single component. The graph median node degree is 108,
-	the mean node degree is 117.83, and the node degree mode is 77. The top 5 most central
-	nodes are 331104.BLBBGE_512 (degree 363), 331104.BLBBGE_478 (degree 357), 331104.BLBBGE_311
-	(degree 347), 331104.BLBBGE_160 (degree 346) and 331104.BLBBGE_226 (degree 323).
+	The undirected graph Blattabacterium sp. Bge has 589 nodes and 34702 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.20040 and is connected, as it has a single component. The
+	graph median node degree is 108, the mean node degree is 117.83, and the
+	node degree mode is 77. The top 5 most central nodes are 331104.BLBBGE_512
+	(degree 363), 331104.BLBBGE_478 (degree 357), 331104.BLBBGE_311 (degree
+	347), 331104.BLBBGE_160 (degree 346) and 331104.BLBBGE_226 (degree 323).
 	
 
 

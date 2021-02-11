@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:14.481210
 
-The undirected graph Rhizobium tropici has 3650 nodes and 264081 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03966 and
-has 12 connected components, where the component with most nodes has 3623 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 144.70, and the node degree mode is 3. The top 5 most central
-nodes are 698761.RTCIAT899_CH00990 (degree 1316), 698761.RTCIAT899_CH18275 (degree
-1226), 698761.RTCIAT899_CH03045 (degree 1196), 698761.RTCIAT899_CH13570 (degree 1086)
-and 698761.RTCIAT899_CH15155 (degree 1020).
+The undirected graph Rhizobium tropici has 3650 nodes and 264081 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03966 and has 12 connected components, where the component with most
+nodes has 3623 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 144.70, and
+the node degree mode is 3. The top 5 most central nodes are 698761.RTCIAT899_CH00990
+(degree 1316), 698761.RTCIAT899_CH18275 (degree 1226), 698761.RTCIAT899_CH03045
+(degree 1196), 698761.RTCIAT899_CH13570 (degree 1086) and 698761.RTCIAT899_CH15155
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumTropici(
 	
 	Datetime: 2021-02-02 21:33:14.481210
 	
-	The undirected graph Rhizobium tropici has 3650 nodes and 264081 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03966 and
-	has 12 connected components, where the component with most nodes has 3623 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 144.70, and the node degree mode is 3. The top 5 most central
-	nodes are 698761.RTCIAT899_CH00990 (degree 1316), 698761.RTCIAT899_CH18275 (degree
-	1226), 698761.RTCIAT899_CH03045 (degree 1196), 698761.RTCIAT899_CH13570 (degree 1086)
-	and 698761.RTCIAT899_CH15155 (degree 1020).
+	The undirected graph Rhizobium tropici has 3650 nodes and 264081 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03966 and has 12 connected components, where the component with most
+	nodes has 3623 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 144.70, and
+	the node degree mode is 3. The top 5 most central nodes are 698761.RTCIAT899_CH00990
+	(degree 1316), 698761.RTCIAT899_CH18275 (degree 1226), 698761.RTCIAT899_CH03045
+	(degree 1196), 698761.RTCIAT899_CH13570 (degree 1086) and 698761.RTCIAT899_CH15155
+	(degree 1020).
 	
 
 

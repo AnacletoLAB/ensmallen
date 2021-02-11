@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:01.048073
 
-The undirected graph Phytoplasma wheat blue has 528 nodes and 50976 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.36640
-and has 10 connected components, where the component with most nodes has 507 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 225, the mean node degree is 193.09, and the node degree mode is 1. The top 5
-most central nodes are 321961.AVAO01000002_gene66 (degree 383), 321961.AVAO01000003_gene118
-(degree 379), 321961.AVAO01000002_gene70 (degree 370), 321961.AVAO01000001_gene556
-(degree 361) and 321961.AVAO01000003_gene215 (degree 358).
+The undirected graph Phytoplasma wheat blue has 528 nodes and 50976 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.36640 and has 10 connected components, where the component
+with most nodes has 507 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 225, the mean node degree is 193.09,
+and the node degree mode is 1. The top 5 most central nodes are 321961.AVAO01000002_gene66
+(degree 383), 321961.AVAO01000003_gene118 (degree 379), 321961.AVAO01000002_gene70
+(degree 370), 321961.AVAO01000001_gene556 (degree 361) and 321961.AVAO01000003_gene215
+(degree 358).
 
 
 References
@@ -107,14 +108,15 @@ def PhytoplasmaWheatBlue(
 	
 	Datetime: 2021-02-02 20:28:01.048073
 	
-	The undirected graph Phytoplasma wheat blue has 528 nodes and 50976 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.36640
-	and has 10 connected components, where the component with most nodes has 507 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 225, the mean node degree is 193.09, and the node degree mode is 1. The top 5
-	most central nodes are 321961.AVAO01000002_gene66 (degree 383), 321961.AVAO01000003_gene118
-	(degree 379), 321961.AVAO01000002_gene70 (degree 370), 321961.AVAO01000001_gene556
-	(degree 361) and 321961.AVAO01000003_gene215 (degree 358).
+	The undirected graph Phytoplasma wheat blue has 528 nodes and 50976 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.36640 and has 10 connected components, where the component
+	with most nodes has 507 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 225, the mean node degree is 193.09,
+	and the node degree mode is 1. The top 5 most central nodes are 321961.AVAO01000002_gene66
+	(degree 383), 321961.AVAO01000003_gene118 (degree 379), 321961.AVAO01000002_gene70
+	(degree 370), 321961.AVAO01000001_gene556 (degree 361) and 321961.AVAO01000003_gene215
+	(degree 358).
 	
 
 

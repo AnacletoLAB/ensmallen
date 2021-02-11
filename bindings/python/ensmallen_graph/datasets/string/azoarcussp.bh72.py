@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:47.515327
 
-The undirected graph Azoarcus sp. BH72 has 3979 nodes and 412219 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05209 and
-has 3 connected components, where the component with most nodes has 3974 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 207.20, and the node degree mode is 6. The top 5 most central
-nodes are 62928.azo3600 (degree 1639), 62928.azo2362 (degree 1378), 62928.azo2556
-(degree 1214), 62928.azo3642 (degree 1148) and 62928.azo1581 (degree 1119).
+The undirected graph Azoarcus sp. BH72 has 3979 nodes and 412219 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05209 and has 3 connected components, where the component with most
+nodes has 3974 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 207.20, and
+the node degree mode is 6. The top 5 most central nodes are 62928.azo3600
+(degree 1639), 62928.azo2362 (degree 1378), 62928.azo2556 (degree 1214),
+62928.azo3642 (degree 1148) and 62928.azo1581 (degree 1119).
 
 
 References
@@ -106,13 +107,14 @@ def AzoarcusSp.Bh72(
 	
 	Datetime: 2021-02-02 18:23:47.515327
 	
-	The undirected graph Azoarcus sp. BH72 has 3979 nodes and 412219 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05209 and
-	has 3 connected components, where the component with most nodes has 3974 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 207.20, and the node degree mode is 6. The top 5 most central
-	nodes are 62928.azo3600 (degree 1639), 62928.azo2362 (degree 1378), 62928.azo2556
-	(degree 1214), 62928.azo3642 (degree 1148) and 62928.azo1581 (degree 1119).
+	The undirected graph Azoarcus sp. BH72 has 3979 nodes and 412219 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05209 and has 3 connected components, where the component with most
+	nodes has 3974 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 207.20, and
+	the node degree mode is 6. The top 5 most central nodes are 62928.azo3600
+	(degree 1639), 62928.azo2362 (degree 1378), 62928.azo2556 (degree 1214),
+	62928.azo3642 (degree 1148) and 62928.azo1581 (degree 1119).
 	
 
 

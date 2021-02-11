@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:31.416519
 
-The undirected graph Ponticaulis koreensis has 3189 nodes and 317816 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06252 and
-has 15 connected components, where the component with most nodes has 3150 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 199.32, and the node degree mode is 2. The top 5 most central
-nodes are 551789.ATVJ01000001_gene1006 (degree 1354), 551789.ATVJ01000001_gene1363
-(degree 1117), 551789.ATVJ01000001_gene1175 (degree 1058), 551789.ATVJ01000001_gene1668
-(degree 1030) and 551789.ATVJ01000002_gene2767 (degree 997).
+The undirected graph Ponticaulis koreensis has 3189 nodes and 317816 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06252 and has 15 connected components, where the component with most
+nodes has 3150 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 199.32, and
+the node degree mode is 2. The top 5 most central nodes are 551789.ATVJ01000001_gene1006
+(degree 1354), 551789.ATVJ01000001_gene1363 (degree 1117), 551789.ATVJ01000001_gene1175
+(degree 1058), 551789.ATVJ01000001_gene1668 (degree 1030) and 551789.ATVJ01000002_gene2767
+(degree 997).
 
 
 References
@@ -107,14 +108,15 @@ def PonticaulisKoreensis(
 	
 	Datetime: 2021-02-02 21:09:31.416519
 	
-	The undirected graph Ponticaulis koreensis has 3189 nodes and 317816 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06252 and
-	has 15 connected components, where the component with most nodes has 3150 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 199.32, and the node degree mode is 2. The top 5 most central
-	nodes are 551789.ATVJ01000001_gene1006 (degree 1354), 551789.ATVJ01000001_gene1363
-	(degree 1117), 551789.ATVJ01000001_gene1175 (degree 1058), 551789.ATVJ01000001_gene1668
-	(degree 1030) and 551789.ATVJ01000002_gene2767 (degree 997).
+	The undirected graph Ponticaulis koreensis has 3189 nodes and 317816 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06252 and has 15 connected components, where the component with most
+	nodes has 3150 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 199.32, and
+	the node degree mode is 2. The top 5 most central nodes are 551789.ATVJ01000001_gene1006
+	(degree 1354), 551789.ATVJ01000001_gene1363 (degree 1117), 551789.ATVJ01000001_gene1175
+	(degree 1058), 551789.ATVJ01000001_gene1668 (degree 1030) and 551789.ATVJ01000002_gene2767
+	(degree 997).
 	
 
 

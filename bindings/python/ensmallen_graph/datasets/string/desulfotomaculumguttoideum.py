@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:34.529893
 
-The undirected graph Desulfotomaculum guttoideum has 5489 nodes and 1316042 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08738
-and has 14 connected components, where the component with most nodes has 5459 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 408, the mean node degree is 479.52, and the node degree mode is 1. The top 5
-most central nodes are 1298920.KI911353_gene4329 (degree 2698), 1298920.KI911353_gene776
-(degree 2469), 1298920.KI911353_gene1550 (degree 2445), 1298920.KI911353_gene5045
-(degree 2296) and 1298920.KI911353_gene1235 (degree 2184).
+The undirected graph Desulfotomaculum guttoideum has 5489 nodes and 1316042
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08738 and has 14 connected components, where the component
+with most nodes has 5459 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 408, the mean node degree is 479.52,
+and the node degree mode is 1. The top 5 most central nodes are 1298920.KI911353_gene4329
+(degree 2698), 1298920.KI911353_gene776 (degree 2469), 1298920.KI911353_gene1550
+(degree 2445), 1298920.KI911353_gene5045 (degree 2296) and 1298920.KI911353_gene1235
+(degree 2184).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfotomaculumGuttoideum(
 	
 	Datetime: 2021-02-03 21:34:34.529893
 	
-	The undirected graph Desulfotomaculum guttoideum has 5489 nodes and 1316042 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08738
-	and has 14 connected components, where the component with most nodes has 5459 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 408, the mean node degree is 479.52, and the node degree mode is 1. The top 5
-	most central nodes are 1298920.KI911353_gene4329 (degree 2698), 1298920.KI911353_gene776
-	(degree 2469), 1298920.KI911353_gene1550 (degree 2445), 1298920.KI911353_gene5045
-	(degree 2296) and 1298920.KI911353_gene1235 (degree 2184).
+	The undirected graph Desulfotomaculum guttoideum has 5489 nodes and 1316042
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08738 and has 14 connected components, where the component
+	with most nodes has 5459 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 408, the mean node degree is 479.52,
+	and the node degree mode is 1. The top 5 most central nodes are 1298920.KI911353_gene4329
+	(degree 2698), 1298920.KI911353_gene776 (degree 2469), 1298920.KI911353_gene1550
+	(degree 2445), 1298920.KI911353_gene5045 (degree 2296) and 1298920.KI911353_gene1235
+	(degree 2184).
 	
 
 

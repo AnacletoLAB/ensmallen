@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:59.612201
 
-The undirected graph Streptomyces ghanaensis has 7786 nodes and 1105582 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03648
-and has 55 connected components, where the component with most nodes has 7634 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 283.99, and the node degree mode is 3. The top 5
-most central nodes are 566461.SSFG_01998 (degree 3447), 566461.SSFG_00346 (degree
-2315), 566461.SSFG_04697 (degree 2176), 566461.SSFG_01735 (degree 2163) and 566461.SSFG_05355
-(degree 2130).
+The undirected graph Streptomyces ghanaensis has 7786 nodes and 1105582
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03648 and has 55 connected components, where the component
+with most nodes has 7634 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 283.99,
+and the node degree mode is 3. The top 5 most central nodes are 566461.SSFG_01998
+(degree 3447), 566461.SSFG_00346 (degree 2315), 566461.SSFG_04697 (degree
+2176), 566461.SSFG_01735 (degree 2163) and 566461.SSFG_05355 (degree 2130).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesGhanaensis(
 	
 	Datetime: 2021-02-02 21:12:59.612201
 	
-	The undirected graph Streptomyces ghanaensis has 7786 nodes and 1105582 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03648
-	and has 55 connected components, where the component with most nodes has 7634 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 283.99, and the node degree mode is 3. The top 5
-	most central nodes are 566461.SSFG_01998 (degree 3447), 566461.SSFG_00346 (degree
-	2315), 566461.SSFG_04697 (degree 2176), 566461.SSFG_01735 (degree 2163) and 566461.SSFG_05355
-	(degree 2130).
+	The undirected graph Streptomyces ghanaensis has 7786 nodes and 1105582
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03648 and has 55 connected components, where the component
+	with most nodes has 7634 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 283.99,
+	and the node degree mode is 3. The top 5 most central nodes are 566461.SSFG_01998
+	(degree 3447), 566461.SSFG_00346 (degree 2315), 566461.SSFG_04697 (degree
+	2176), 566461.SSFG_01735 (degree 2163) and 566461.SSFG_05355 (degree 2130).
 	
 
 

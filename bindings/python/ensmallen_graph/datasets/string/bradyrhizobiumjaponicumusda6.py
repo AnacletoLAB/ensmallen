@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:31.472183
 
-The undirected graph Bradyrhizobium japonicum USDA6 has 8654 nodes and 966081 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02580
-and has 103 connected components, where the component with most nodes has 8403 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 223.27, and the node degree mode is 1. The top 5
-most central nodes are 1037409.BJ6T_72070 (degree 2927), 1037409.BJ6T_26620 (degree
-2718), 1037409.BJ6T_11840 (degree 2561), 1037409.BJ6T_16350 (degree 2340) and 1037409.BJ6T_33260
-(degree 2295).
+The undirected graph Bradyrhizobium japonicum USDA6 has 8654 nodes and
+966081 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.02580 and has 103 connected components, where
+the component with most nodes has 8403 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 178, the mean
+node degree is 223.27, and the node degree mode is 1. The top 5 most central
+nodes are 1037409.BJ6T_72070 (degree 2927), 1037409.BJ6T_26620 (degree
+2718), 1037409.BJ6T_11840 (degree 2561), 1037409.BJ6T_16350 (degree 2340)
+and 1037409.BJ6T_33260 (degree 2295).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumJaponicumUsda6(
 	
 	Datetime: 2021-02-02 22:12:31.472183
 	
-	The undirected graph Bradyrhizobium japonicum USDA6 has 8654 nodes and 966081 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02580
-	and has 103 connected components, where the component with most nodes has 8403 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 223.27, and the node degree mode is 1. The top 5
-	most central nodes are 1037409.BJ6T_72070 (degree 2927), 1037409.BJ6T_26620 (degree
-	2718), 1037409.BJ6T_11840 (degree 2561), 1037409.BJ6T_16350 (degree 2340) and 1037409.BJ6T_33260
-	(degree 2295).
+	The undirected graph Bradyrhizobium japonicum USDA6 has 8654 nodes and
+	966081 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.02580 and has 103 connected components, where
+	the component with most nodes has 8403 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 178, the mean
+	node degree is 223.27, and the node degree mode is 1. The top 5 most central
+	nodes are 1037409.BJ6T_72070 (degree 2927), 1037409.BJ6T_26620 (degree
+	2718), 1037409.BJ6T_11840 (degree 2561), 1037409.BJ6T_16350 (degree 2340)
+	and 1037409.BJ6T_33260 (degree 2295).
 	
 
 

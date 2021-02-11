@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:21.430667
 
-The undirected graph Cyanobium sp. CACIAM14 has 2895 nodes and 227162 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05423 and
-has 16 connected components, where the component with most nodes has 2856 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 156.93, and the node degree mode is 2. The top 5 most central
-nodes are 1496688.ER33_05200 (degree 1044), 1496688.ER33_08250 (degree 873), 1496688.ER33_13715
-(degree 838), 1496688.ER33_00215 (degree 806) and 1496688.ER33_08200 (degree 755).
+The undirected graph Cyanobium sp. CACIAM14 has 2895 nodes and 227162 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05423 and has 16 connected components, where the component with most
+nodes has 2856 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 156.93, and
+the node degree mode is 2. The top 5 most central nodes are 1496688.ER33_05200
+(degree 1044), 1496688.ER33_08250 (degree 873), 1496688.ER33_13715 (degree
+838), 1496688.ER33_00215 (degree 806) and 1496688.ER33_08200 (degree 755).
 
 
 References
@@ -106,13 +107,14 @@ def CyanobiumSp.Caciam14(
 	
 	Datetime: 2021-02-03 23:14:21.430667
 	
-	The undirected graph Cyanobium sp. CACIAM14 has 2895 nodes and 227162 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05423 and
-	has 16 connected components, where the component with most nodes has 2856 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 156.93, and the node degree mode is 2. The top 5 most central
-	nodes are 1496688.ER33_05200 (degree 1044), 1496688.ER33_08250 (degree 873), 1496688.ER33_13715
-	(degree 838), 1496688.ER33_00215 (degree 806) and 1496688.ER33_08200 (degree 755).
+	The undirected graph Cyanobium sp. CACIAM14 has 2895 nodes and 227162 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05423 and has 16 connected components, where the component with most
+	nodes has 2856 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 156.93, and
+	the node degree mode is 2. The top 5 most central nodes are 1496688.ER33_05200
+	(degree 1044), 1496688.ER33_08250 (degree 873), 1496688.ER33_13715 (degree
+	838), 1496688.ER33_00215 (degree 806) and 1496688.ER33_08200 (degree 755).
 	
 
 

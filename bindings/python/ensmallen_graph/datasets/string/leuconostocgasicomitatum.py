@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:27.264861
 
-The undirected graph Leuconostoc gasicomitatum has 1900 nodes and 96547 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05352
-and has 6 connected components, where the component with most nodes has 1886 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 77, the mean node degree is 101.63, and the node degree mode is 9. The top 5 most
-central nodes are 762550.LEGAS_0771 (degree 795), 762550.LEGAS_1828 (degree 664),
-762550.LEGAS_1522 (degree 602), 762550.LEGAS_0220 (degree 548) and 762550.LEGAS_1445
-(degree 544).
+The undirected graph Leuconostoc gasicomitatum has 1900 nodes and 96547
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05352 and has 6 connected components, where the component
+with most nodes has 1886 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 77, the mean node degree is 101.63,
+and the node degree mode is 9. The top 5 most central nodes are 762550.LEGAS_0771
+(degree 795), 762550.LEGAS_1828 (degree 664), 762550.LEGAS_1522 (degree
+602), 762550.LEGAS_0220 (degree 548) and 762550.LEGAS_1445 (degree 544).
 
 
 References
@@ -107,14 +107,14 @@ def LeuconostocGasicomitatum(
 	
 	Datetime: 2021-02-02 21:42:27.264861
 	
-	The undirected graph Leuconostoc gasicomitatum has 1900 nodes and 96547 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05352
-	and has 6 connected components, where the component with most nodes has 1886 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 77, the mean node degree is 101.63, and the node degree mode is 9. The top 5 most
-	central nodes are 762550.LEGAS_0771 (degree 795), 762550.LEGAS_1828 (degree 664),
-	762550.LEGAS_1522 (degree 602), 762550.LEGAS_0220 (degree 548) and 762550.LEGAS_1445
-	(degree 544).
+	The undirected graph Leuconostoc gasicomitatum has 1900 nodes and 96547
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05352 and has 6 connected components, where the component
+	with most nodes has 1886 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 77, the mean node degree is 101.63,
+	and the node degree mode is 9. The top 5 most central nodes are 762550.LEGAS_0771
+	(degree 795), 762550.LEGAS_1828 (degree 664), 762550.LEGAS_1522 (degree
+	602), 762550.LEGAS_0220 (degree 548) and 762550.LEGAS_1445 (degree 544).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:00.239398
 
-The undirected graph Prevotella oulorum F0390 has 2437 nodes and 128886 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04342
-and has 42 connected components, where the component with most nodes has 2304 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 105.77, and the node degree mode is 5. The top 5 most
-central nodes are 702438.HMPREF9431_01470 (degree 753), 702438.HMPREF9431_02333 (degree
-701), 702438.HMPREF9431_01325 (degree 669), 702438.HMPREF9431_01868 (degree 657)
-and 702438.HMPREF9431_00575 (degree 601).
+The undirected graph Prevotella oulorum F0390 has 2437 nodes and 128886
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04342 and has 42 connected components, where the component
+with most nodes has 2304 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 105.77,
+and the node degree mode is 5. The top 5 most central nodes are 702438.HMPREF9431_01470
+(degree 753), 702438.HMPREF9431_02333 (degree 701), 702438.HMPREF9431_01325
+(degree 669), 702438.HMPREF9431_01868 (degree 657) and 702438.HMPREF9431_00575
+(degree 601).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaOulorumF0390(
 	
 	Datetime: 2021-02-02 21:34:00.239398
 	
-	The undirected graph Prevotella oulorum F0390 has 2437 nodes and 128886 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04342
-	and has 42 connected components, where the component with most nodes has 2304 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 105.77, and the node degree mode is 5. The top 5 most
-	central nodes are 702438.HMPREF9431_01470 (degree 753), 702438.HMPREF9431_02333 (degree
-	701), 702438.HMPREF9431_01325 (degree 669), 702438.HMPREF9431_01868 (degree 657)
-	and 702438.HMPREF9431_00575 (degree 601).
+	The undirected graph Prevotella oulorum F0390 has 2437 nodes and 128886
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04342 and has 42 connected components, where the component
+	with most nodes has 2304 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 105.77,
+	and the node degree mode is 5. The top 5 most central nodes are 702438.HMPREF9431_01470
+	(degree 753), 702438.HMPREF9431_02333 (degree 701), 702438.HMPREF9431_01325
+	(degree 669), 702438.HMPREF9431_01868 (degree 657) and 702438.HMPREF9431_00575
+	(degree 601).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:23.333611
 
-The undirected graph tech-WHOIS has 7476 nodes and 56943 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00204 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 15.23, and the node degree mode is 2. The top 5 most central nodes are 22 (degree
-1079), 974 (degree 817), 269 (degree 611), 456 (degree 569) and 2848 (degree 506).
+The undirected graph tech-WHOIS has 7476 nodes and 56943 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00204 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 15.23, and the node degree mode
+is 2. The top 5 most central nodes are 22 (degree 1079), 974 (degree 817),
+269 (degree 611), 456 (degree 569) and 2848 (degree 506).
 
 
 References
@@ -116,11 +117,12 @@ def TechWhois(
 	
 	Datetime: 2021-02-06 10:55:23.333611
 	
-	The undirected graph tech-WHOIS has 7476 nodes and 56943 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00204 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 15.23, and the node degree mode is 2. The top 5 most central nodes are 22 (degree
-	1079), 974 (degree 817), 269 (degree 611), 456 (degree 569) and 2848 (degree 506).
+	The undirected graph tech-WHOIS has 7476 nodes and 56943 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00204 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 15.23, and the node degree mode
+	is 2. The top 5 most central nodes are 22 (degree 1079), 974 (degree 817),
+	269 (degree 611), 456 (degree 569) and 2848 (degree 506).
 	
 
 

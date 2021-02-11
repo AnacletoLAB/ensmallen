@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:09.689981
 
-The undirected graph Mesorhizobium loti MAFF303099 has 6886 nodes and 923155 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03894
-and has 33 connected components, where the component with most nodes has 6805 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 268.13, and the node degree mode is 1. The top 5
-most central nodes are 266835.14022921 (degree 2755), 266835.14023615 (degree 2246),
-266835.14023602 (degree 1925), 266835.14021530 (degree 1807) and 266835.14025299
-(degree 1786).
+The undirected graph Mesorhizobium loti MAFF303099 has 6886 nodes and 923155
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03894 and has 33 connected components, where the component
+with most nodes has 6805 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 268.13,
+and the node degree mode is 1. The top 5 most central nodes are 266835.14022921
+(degree 2755), 266835.14023615 (degree 2246), 266835.14023602 (degree 1925),
+266835.14021530 (degree 1807) and 266835.14025299 (degree 1786).
 
 
 References
@@ -107,14 +107,14 @@ def MesorhizobiumLotiMaff303099(
 	
 	Datetime: 2021-02-02 20:15:09.689981
 	
-	The undirected graph Mesorhizobium loti MAFF303099 has 6886 nodes and 923155 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03894
-	and has 33 connected components, where the component with most nodes has 6805 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 268.13, and the node degree mode is 1. The top 5
-	most central nodes are 266835.14022921 (degree 2755), 266835.14023615 (degree 2246),
-	266835.14023602 (degree 1925), 266835.14021530 (degree 1807) and 266835.14025299
-	(degree 1786).
+	The undirected graph Mesorhizobium loti MAFF303099 has 6886 nodes and 923155
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03894 and has 33 connected components, where the component
+	with most nodes has 6805 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 268.13,
+	and the node degree mode is 1. The top 5 most central nodes are 266835.14022921
+	(degree 2755), 266835.14023615 (degree 2246), 266835.14023602 (degree 1925),
+	266835.14021530 (degree 1807) and 266835.14025299 (degree 1786).
 	
 
 

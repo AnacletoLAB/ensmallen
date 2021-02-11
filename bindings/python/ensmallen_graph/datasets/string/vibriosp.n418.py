@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:46.605646
 
-The undirected graph Vibrio sp. N418 has 3979 nodes and 463986 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05863 and
-has 17 connected components, where the component with most nodes has 3936 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 233.22, and the node degree mode is 2. The top 5 most central
-nodes are 701176.VIBRN418_03721 (degree 1476), 701176.VIBRN418_04992 (degree 1362),
-701176.VIBRN418_11923 (degree 1357), 701176.VIBRN418_10498 (degree 1268) and 701176.VIBRN418_10493
+The undirected graph Vibrio sp. N418 has 3979 nodes and 463986 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05863 and has 17 connected components, where the component with most
+nodes has 3936 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 233.22, and
+the node degree mode is 2. The top 5 most central nodes are 701176.VIBRN418_03721
+(degree 1476), 701176.VIBRN418_04992 (degree 1362), 701176.VIBRN418_11923
+(degree 1357), 701176.VIBRN418_10498 (degree 1268) and 701176.VIBRN418_10493
 (degree 1251).
 
 
@@ -107,13 +108,14 @@ def VibrioSp.N418(
 	
 	Datetime: 2021-02-02 21:33:46.605646
 	
-	The undirected graph Vibrio sp. N418 has 3979 nodes and 463986 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05863 and
-	has 17 connected components, where the component with most nodes has 3936 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 233.22, and the node degree mode is 2. The top 5 most central
-	nodes are 701176.VIBRN418_03721 (degree 1476), 701176.VIBRN418_04992 (degree 1362),
-	701176.VIBRN418_11923 (degree 1357), 701176.VIBRN418_10498 (degree 1268) and 701176.VIBRN418_10493
+	The undirected graph Vibrio sp. N418 has 3979 nodes and 463986 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05863 and has 17 connected components, where the component with most
+	nodes has 3936 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 233.22, and
+	the node degree mode is 2. The top 5 most central nodes are 701176.VIBRN418_03721
+	(degree 1476), 701176.VIBRN418_04992 (degree 1362), 701176.VIBRN418_11923
+	(degree 1357), 701176.VIBRN418_10498 (degree 1268) and 701176.VIBRN418_10493
 	(degree 1251).
 	
 

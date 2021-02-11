@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:39:16.709761
 
-The undirected graph ENZYMES296 has 126 nodes with 2 different node types: 2 (nodes
-number 102) and 1 (nodes number 24), of which 1 are singletons, and 141 unweighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01790
-and has 2 connected components, where the component with most nodes has 125 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 2, the mean node degree is 2.24 and the node degree mode is 2. The top 5 most
-central nodes are 126 (degree 5), 93 (degree 5), 75 (degree 5), 24 (degree 5) and
-100 (degree 4).
+The undirected graph ENZYMES296 has 126 nodes with 2 different node types:
+2 (nodes number 102) and 1 (nodes number 24), of which 1 are singletons,
+and 141 unweighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.01790 and has 2 connected components, where the
+component with most nodes has 125 nodes and the component with the least
+nodes has a single node. The graph median node degree is 2, the mean node
+degree is 2.24 and the node degree mode is 2. The top 5 most central nodes
+are 126 (degree 5), 93 (degree 5), 75 (degree 5), 24 (degree 5) and 100
+(degree 4).
 
 
 References
@@ -104,14 +105,15 @@ def Enzymes296(
 	
 	Datetime: 2021-02-04 08:39:16.709761
 	
-	The undirected graph ENZYMES296 has 126 nodes with 2 different node types: 2 (nodes
-	number 102) and 1 (nodes number 24), of which 1 are singletons, and 141 unweighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01790
-	and has 2 connected components, where the component with most nodes has 125 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 2, the mean node degree is 2.24 and the node degree mode is 2. The top 5 most
-	central nodes are 126 (degree 5), 93 (degree 5), 75 (degree 5), 24 (degree 5) and
-	100 (degree 4).
+	The undirected graph ENZYMES296 has 126 nodes with 2 different node types:
+	2 (nodes number 102) and 1 (nodes number 24), of which 1 are singletons,
+	and 141 unweighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.01790 and has 2 connected components, where the
+	component with most nodes has 125 nodes and the component with the least
+	nodes has a single node. The graph median node degree is 2, the mean node
+	degree is 2.24 and the node degree mode is 2. The top 5 most central nodes
+	are 126 (degree 5), 93 (degree 5), 75 (degree 5), 24 (degree 5) and 100
+	(degree 4).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:00.747715
 
-The undirected graph Ilyobacter polytropus has 1982 nodes and 126073 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06422 and
-has 8 connected components, where the component with most nodes has 1967 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 127.22, and the node degree mode is 1. The top 5 most central
-nodes are 572544.Ilyop_0863 (degree 881), 572544.Ilyop_1259 (degree 796), 572544.Ilyop_0543
-(degree 730), 572544.Ilyop_0655 (degree 663) and 572544.Ilyop_1230 (degree 640).
+The undirected graph Ilyobacter polytropus has 1982 nodes and 126073 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06422 and has 8 connected components, where the component with most
+nodes has 1967 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 127.22, and
+the node degree mode is 1. The top 5 most central nodes are 572544.Ilyop_0863
+(degree 881), 572544.Ilyop_1259 (degree 796), 572544.Ilyop_0543 (degree
+730), 572544.Ilyop_0655 (degree 663) and 572544.Ilyop_1230 (degree 640).
 
 
 References
@@ -106,13 +107,14 @@ def IlyobacterPolytropus(
 	
 	Datetime: 2021-02-02 21:14:00.747715
 	
-	The undirected graph Ilyobacter polytropus has 1982 nodes and 126073 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06422 and
-	has 8 connected components, where the component with most nodes has 1967 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 127.22, and the node degree mode is 1. The top 5 most central
-	nodes are 572544.Ilyop_0863 (degree 881), 572544.Ilyop_1259 (degree 796), 572544.Ilyop_0543
-	(degree 730), 572544.Ilyop_0655 (degree 663) and 572544.Ilyop_1230 (degree 640).
+	The undirected graph Ilyobacter polytropus has 1982 nodes and 126073 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06422 and has 8 connected components, where the component with most
+	nodes has 1967 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 127.22, and
+	the node degree mode is 1. The top 5 most central nodes are 572544.Ilyop_0863
+	(degree 881), 572544.Ilyop_1259 (degree 796), 572544.Ilyop_0543 (degree
+	730), 572544.Ilyop_0655 (degree 663) and 572544.Ilyop_1230 (degree 640).
 	
 
 

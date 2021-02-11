@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:31:22.462056
 
-The undirected graph Sporisorium reilianum has 4956 nodes and 528395 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-has 13 connected components, where the component with most nodes has 4929 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 213.23, and the node degree mode is 1. The top 5 most central
-nodes are 72558.CBQ73252 (degree 1490), 72558.CBQ72323 (degree 1432), 72558.CBQ71078
-(degree 1315), 72558.CBQ67761 (degree 1309) and 72558.CBQ70959 (degree 1267).
+The undirected graph Sporisorium reilianum has 4956 nodes and 528395 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04303 and has 13 connected components, where the component with most
+nodes has 4929 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 213.23, and
+the node degree mode is 1. The top 5 most central nodes are 72558.CBQ73252
+(degree 1490), 72558.CBQ72323 (degree 1432), 72558.CBQ71078 (degree 1315),
+72558.CBQ67761 (degree 1309) and 72558.CBQ70959 (degree 1267).
 
 
 References
@@ -106,13 +107,14 @@ def SporisoriumReilianum(
 	
 	Datetime: 2021-02-02 18:31:22.462056
 	
-	The undirected graph Sporisorium reilianum has 4956 nodes and 528395 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-	has 13 connected components, where the component with most nodes has 4929 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 213.23, and the node degree mode is 1. The top 5 most central
-	nodes are 72558.CBQ73252 (degree 1490), 72558.CBQ72323 (degree 1432), 72558.CBQ71078
-	(degree 1315), 72558.CBQ67761 (degree 1309) and 72558.CBQ70959 (degree 1267).
+	The undirected graph Sporisorium reilianum has 4956 nodes and 528395 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04303 and has 13 connected components, where the component with most
+	nodes has 4929 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 213.23, and
+	the node degree mode is 1. The top 5 most central nodes are 72558.CBQ73252
+	(degree 1490), 72558.CBQ72323 (degree 1432), 72558.CBQ71078 (degree 1315),
+	72558.CBQ67761 (degree 1309) and 72558.CBQ70959 (degree 1267).
 	
 
 

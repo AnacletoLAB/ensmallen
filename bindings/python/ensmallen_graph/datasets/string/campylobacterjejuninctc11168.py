@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:56.103398
 
-The undirected graph Campylobacter jejuni NCTC11168 has 1623 nodes and 151023 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11474 and is connected, as it has a single component. The graph median node
-degree is 168, the mean node degree is 186.10, and the node degree mode is 164. The
-top 5 most central nodes are 192222.Cj0338c (degree 748), 192222.Cj0938c (degree
-740), 192222.Cj1476c (degree 626), 192222.Cj0896c (degree 625) and 192222.Cj0893c
-(degree 602).
+The undirected graph Campylobacter jejuni NCTC11168 has 1623 nodes and
+151023 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.11474 and is connected, as it has a single
+component. The graph median node degree is 168, the mean node degree is
+186.10, and the node degree mode is 164. The top 5 most central nodes are
+192222.Cj0338c (degree 748), 192222.Cj0938c (degree 740), 192222.Cj1476c
+(degree 626), 192222.Cj0896c (degree 625) and 192222.Cj0893c (degree 602).
 
 
 References
@@ -106,13 +106,13 @@ def CampylobacterJejuniNctc11168(
 	
 	Datetime: 2021-02-02 19:57:56.103398
 	
-	The undirected graph Campylobacter jejuni NCTC11168 has 1623 nodes and 151023 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11474 and is connected, as it has a single component. The graph median node
-	degree is 168, the mean node degree is 186.10, and the node degree mode is 164. The
-	top 5 most central nodes are 192222.Cj0338c (degree 748), 192222.Cj0938c (degree
-	740), 192222.Cj1476c (degree 626), 192222.Cj0896c (degree 625) and 192222.Cj0893c
-	(degree 602).
+	The undirected graph Campylobacter jejuni NCTC11168 has 1623 nodes and
+	151023 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.11474 and is connected, as it has a single
+	component. The graph median node degree is 168, the mean node degree is
+	186.10, and the node degree mode is 164. The top 5 most central nodes are
+	192222.Cj0338c (degree 748), 192222.Cj0938c (degree 740), 192222.Cj1476c
+	(degree 626), 192222.Cj0896c (degree 625) and 192222.Cj0893c (degree 602).
 	
 
 

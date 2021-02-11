@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:33.913027
 
-The undirected graph Rhodobacteraceae bacterium KLH11 has 4213 nodes and 579442 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06531
-and has 23 connected components, where the component with most nodes has 4162 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 275.07, and the node degree mode is 1. The top 5
-most central nodes are 467661.RKLH11_775 (degree 1631), 467661.RKLH11_2270 (degree
-1630), 467661.RKLH11_2410 (degree 1314), 467661.RKLH11_1357 (degree 1269) and 467661.RKLH11_2421
-(degree 1264).
+The undirected graph Rhodobacteraceae bacterium KLH11 has 4213 nodes and
+579442 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06531 and has 23 connected components, where the
+component with most nodes has 4162 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 247, the mean node degree
+is 275.07, and the node degree mode is 1. The top 5 most central nodes
+are 467661.RKLH11_775 (degree 1631), 467661.RKLH11_2270 (degree 1630),
+467661.RKLH11_2410 (degree 1314), 467661.RKLH11_1357 (degree 1269) and
+467661.RKLH11_2421 (degree 1264).
 
 
 References
@@ -107,14 +108,15 @@ def RhodobacteraceaeBacteriumKlh11(
 	
 	Datetime: 2021-02-02 20:54:33.913027
 	
-	The undirected graph Rhodobacteraceae bacterium KLH11 has 4213 nodes and 579442 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06531
-	and has 23 connected components, where the component with most nodes has 4162 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 275.07, and the node degree mode is 1. The top 5
-	most central nodes are 467661.RKLH11_775 (degree 1631), 467661.RKLH11_2270 (degree
-	1630), 467661.RKLH11_2410 (degree 1314), 467661.RKLH11_1357 (degree 1269) and 467661.RKLH11_2421
-	(degree 1264).
+	The undirected graph Rhodobacteraceae bacterium KLH11 has 4213 nodes and
+	579442 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06531 and has 23 connected components, where the
+	component with most nodes has 4162 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 247, the mean node degree
+	is 275.07, and the node degree mode is 1. The top 5 most central nodes
+	are 467661.RKLH11_775 (degree 1631), 467661.RKLH11_2270 (degree 1630),
+	467661.RKLH11_2410 (degree 1314), 467661.RKLH11_1357 (degree 1269) and
+	467661.RKLH11_2421 (degree 1264).
 	
 
 

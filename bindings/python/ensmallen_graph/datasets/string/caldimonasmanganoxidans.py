@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:57.569712
 
-The undirected graph Caldimonas manganoxidans has 3325 nodes and 359921 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06513
-and has 6 connected components, where the component with most nodes has 3312 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 216.49, and the node degree mode is 2. The top 5
-most central nodes are 1265502.KB905975_gene600 (degree 1285), 1265502.KB905982_gene543
-(degree 1002), 1265502.KB905939_gene2375 (degree 964), 1265502.KB905982_gene544 (degree
-949) and 1265502.KB905981_gene571 (degree 939).
+The undirected graph Caldimonas manganoxidans has 3325 nodes and 359921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06513 and has 6 connected components, where the component
+with most nodes has 3312 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 216.49,
+and the node degree mode is 2. The top 5 most central nodes are 1265502.KB905975_gene600
+(degree 1285), 1265502.KB905982_gene543 (degree 1002), 1265502.KB905939_gene2375
+(degree 964), 1265502.KB905982_gene544 (degree 949) and 1265502.KB905981_gene571
+(degree 939).
 
 
 References
@@ -107,14 +108,15 @@ def CaldimonasManganoxidans(
 	
 	Datetime: 2021-02-02 23:35:57.569712
 	
-	The undirected graph Caldimonas manganoxidans has 3325 nodes and 359921 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06513
-	and has 6 connected components, where the component with most nodes has 3312 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 216.49, and the node degree mode is 2. The top 5
-	most central nodes are 1265502.KB905975_gene600 (degree 1285), 1265502.KB905982_gene543
-	(degree 1002), 1265502.KB905939_gene2375 (degree 964), 1265502.KB905982_gene544 (degree
-	949) and 1265502.KB905981_gene571 (degree 939).
+	The undirected graph Caldimonas manganoxidans has 3325 nodes and 359921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06513 and has 6 connected components, where the component
+	with most nodes has 3312 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 216.49,
+	and the node degree mode is 2. The top 5 most central nodes are 1265502.KB905975_gene600
+	(degree 1285), 1265502.KB905982_gene543 (degree 1002), 1265502.KB905939_gene2375
+	(degree 964), 1265502.KB905982_gene544 (degree 949) and 1265502.KB905981_gene571
+	(degree 939).
 	
 
 

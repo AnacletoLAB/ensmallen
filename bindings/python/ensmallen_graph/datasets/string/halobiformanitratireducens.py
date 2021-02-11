@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:52.253033
 
-The undirected graph Halobiforma nitratireducens has 3439 nodes and 250137 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04231
-and has 42 connected components, where the component with most nodes has 3341 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 145.47, and the node degree mode is 2. The top 5
-most central nodes are 1227454.C446_16817 (degree 897), 1227454.C446_15206 (degree
-866), 1227454.C446_17022 (degree 782), 1227454.C446_01333 (degree 774) and 1227454.C446_17389
-(degree 770).
+The undirected graph Halobiforma nitratireducens has 3439 nodes and 250137
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04231 and has 42 connected components, where the component
+with most nodes has 3341 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 145.47,
+and the node degree mode is 2. The top 5 most central nodes are 1227454.C446_16817
+(degree 897), 1227454.C446_15206 (degree 866), 1227454.C446_17022 (degree
+782), 1227454.C446_01333 (degree 774) and 1227454.C446_17389 (degree 770).
 
 
 References
@@ -107,14 +107,14 @@ def HalobiformaNitratireducens(
 	
 	Datetime: 2021-02-02 23:25:52.253033
 	
-	The undirected graph Halobiforma nitratireducens has 3439 nodes and 250137 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04231
-	and has 42 connected components, where the component with most nodes has 3341 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 145.47, and the node degree mode is 2. The top 5
-	most central nodes are 1227454.C446_16817 (degree 897), 1227454.C446_15206 (degree
-	866), 1227454.C446_17022 (degree 782), 1227454.C446_01333 (degree 774) and 1227454.C446_17389
-	(degree 770).
+	The undirected graph Halobiforma nitratireducens has 3439 nodes and 250137
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04231 and has 42 connected components, where the component
+	with most nodes has 3341 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 145.47,
+	and the node degree mode is 2. The top 5 most central nodes are 1227454.C446_16817
+	(degree 897), 1227454.C446_15206 (degree 866), 1227454.C446_17022 (degree
+	782), 1227454.C446_01333 (degree 774) and 1227454.C446_17389 (degree 770).
 	
 
 

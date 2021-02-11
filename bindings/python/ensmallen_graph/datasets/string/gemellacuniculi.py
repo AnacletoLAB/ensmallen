@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:38.749122
 
-The undirected graph Gemella cuniculi has 1694 nodes and 106054 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07396 and
-has 12 connected components, where the component with most nodes has 1667 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 125.21, and the node degree mode is 8. The top 5 most central
-nodes are 1121914.AUDW01000004_gene1694 (degree 750), 1121914.AUDW01000011_gene353
-(degree 726), 1121914.AUDW01000008_gene328 (degree 561), 1121914.AUDW01000002_gene714
-(degree 555) and 1121914.AUDW01000011_gene409 (degree 518).
+The undirected graph Gemella cuniculi has 1694 nodes and 106054 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07396 and has 12 connected components, where the component with most
+nodes has 1667 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 125.21, and
+the node degree mode is 8. The top 5 most central nodes are 1121914.AUDW01000004_gene1694
+(degree 750), 1121914.AUDW01000011_gene353 (degree 726), 1121914.AUDW01000008_gene328
+(degree 561), 1121914.AUDW01000002_gene714 (degree 555) and 1121914.AUDW01000011_gene409
+(degree 518).
 
 
 References
@@ -107,14 +108,15 @@ def GemellaCuniculi(
 	
 	Datetime: 2021-02-02 22:38:38.749122
 	
-	The undirected graph Gemella cuniculi has 1694 nodes and 106054 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07396 and
-	has 12 connected components, where the component with most nodes has 1667 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 125.21, and the node degree mode is 8. The top 5 most central
-	nodes are 1121914.AUDW01000004_gene1694 (degree 750), 1121914.AUDW01000011_gene353
-	(degree 726), 1121914.AUDW01000008_gene328 (degree 561), 1121914.AUDW01000002_gene714
-	(degree 555) and 1121914.AUDW01000011_gene409 (degree 518).
+	The undirected graph Gemella cuniculi has 1694 nodes and 106054 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07396 and has 12 connected components, where the component with most
+	nodes has 1667 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 125.21, and
+	the node degree mode is 8. The top 5 most central nodes are 1121914.AUDW01000004_gene1694
+	(degree 750), 1121914.AUDW01000011_gene353 (degree 726), 1121914.AUDW01000008_gene328
+	(degree 561), 1121914.AUDW01000002_gene714 (degree 555) and 1121914.AUDW01000011_gene409
+	(degree 518).
 	
 
 

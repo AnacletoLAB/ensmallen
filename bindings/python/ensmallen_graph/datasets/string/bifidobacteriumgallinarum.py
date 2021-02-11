@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:34.819068
 
-The undirected graph Bifidobacterium gallinarum has 1643 nodes and 113498 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08414
-and has 8 connected components, where the component with most nodes has 1624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 138.16, and the node degree mode is 2. The top 5
-most central nodes are 78344.BIGA_1044 (degree 775), 78344.BIGA_0482 (degree 768),
-78344.BIGA_1404 (degree 742), 78344.BIGA_0268 (degree 655) and 78344.BIGA_0467 (degree
-640).
+The undirected graph Bifidobacterium gallinarum has 1643 nodes and 113498
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08414 and has 8 connected components, where the component
+with most nodes has 1624 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 138.16,
+and the node degree mode is 2. The top 5 most central nodes are 78344.BIGA_1044
+(degree 775), 78344.BIGA_0482 (degree 768), 78344.BIGA_1404 (degree 742),
+78344.BIGA_0268 (degree 655) and 78344.BIGA_0467 (degree 640).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumGallinarum(
 	
 	Datetime: 2021-02-02 18:33:34.819068
 	
-	The undirected graph Bifidobacterium gallinarum has 1643 nodes and 113498 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08414
-	and has 8 connected components, where the component with most nodes has 1624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 138.16, and the node degree mode is 2. The top 5
-	most central nodes are 78344.BIGA_1044 (degree 775), 78344.BIGA_0482 (degree 768),
-	78344.BIGA_1404 (degree 742), 78344.BIGA_0268 (degree 655) and 78344.BIGA_0467 (degree
-	640).
+	The undirected graph Bifidobacterium gallinarum has 1643 nodes and 113498
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08414 and has 8 connected components, where the component
+	with most nodes has 1624 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 138.16,
+	and the node degree mode is 2. The top 5 most central nodes are 78344.BIGA_1044
+	(degree 775), 78344.BIGA_0482 (degree 768), 78344.BIGA_1404 (degree 742),
+	78344.BIGA_0268 (degree 655) and 78344.BIGA_0467 (degree 640).
 	
 
 

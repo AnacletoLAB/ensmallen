@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 07:47:11.574954
 
-The undirected graph inf-roadNet-PA has 1087562 nodes and 1541514 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 2.83 and the node degree mode is 3. The top 5 most
-central nodes are 856712 (degree 9), 845344 (degree 9), 757255 (degree 9), 672561
-(degree 9) and 1043320 (degree 8).
+The undirected graph inf-roadNet-PA has 1087562 nodes and 1541514 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 2.83 and the
+node degree mode is 3. The top 5 most central nodes are 856712 (degree
+9), 845344 (degree 9), 757255 (degree 9), 672561 (degree 9) and 1043320
+(degree 8).
 
 
 References
@@ -109,12 +110,13 @@ def InfRoadnetPa(
 	
 	Datetime: 2021-02-04 07:47:11.574954
 	
-	The undirected graph inf-roadNet-PA has 1087562 nodes and 1541514 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 2.83 and the node degree mode is 3. The top 5 most
-	central nodes are 856712 (degree 9), 845344 (degree 9), 757255 (degree 9), 672561
-	(degree 9) and 1043320 (degree 8).
+	The undirected graph inf-roadNet-PA has 1087562 nodes and 1541514 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 2.83 and the
+	node degree mode is 3. The top 5 most central nodes are 856712 (degree
+	9), 845344 (degree 9), 757255 (degree 9), 672561 (degree 9) and 1043320
+	(degree 8).
 	
 
 

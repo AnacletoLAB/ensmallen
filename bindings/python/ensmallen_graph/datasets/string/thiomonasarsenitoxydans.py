@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:47.880059
 
-The undirected graph Thiomonas arsenitoxydans has 3507 nodes and 249272 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04055
-and has 9 connected components, where the component with most nodes has 3486 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 142.16, and the node degree mode is 5. The top 5
-most central nodes are 426114.THI_2425 (degree 1322), 426114.THI_1572 (degree 1292),
-426114.THI_0884 (degree 1008), 426114.THI_2183 (degree 999) and 426114.THI_1245 (degree
-817).
+The undirected graph Thiomonas arsenitoxydans has 3507 nodes and 249272
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04055 and has 9 connected components, where the component
+with most nodes has 3486 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 142.16,
+and the node degree mode is 5. The top 5 most central nodes are 426114.THI_2425
+(degree 1322), 426114.THI_1572 (degree 1292), 426114.THI_0884 (degree 1008),
+426114.THI_2183 (degree 999) and 426114.THI_1245 (degree 817).
 
 
 References
@@ -107,14 +107,14 @@ def ThiomonasArsenitoxydans(
 	
 	Datetime: 2021-02-02 20:47:47.880059
 	
-	The undirected graph Thiomonas arsenitoxydans has 3507 nodes and 249272 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04055
-	and has 9 connected components, where the component with most nodes has 3486 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 142.16, and the node degree mode is 5. The top 5
-	most central nodes are 426114.THI_2425 (degree 1322), 426114.THI_1572 (degree 1292),
-	426114.THI_0884 (degree 1008), 426114.THI_2183 (degree 999) and 426114.THI_1245 (degree
-	817).
+	The undirected graph Thiomonas arsenitoxydans has 3507 nodes and 249272
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04055 and has 9 connected components, where the component
+	with most nodes has 3486 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 142.16,
+	and the node degree mode is 5. The top 5 most central nodes are 426114.THI_2425
+	(degree 1322), 426114.THI_1572 (degree 1292), 426114.THI_0884 (degree 1008),
+	426114.THI_2183 (degree 999) and 426114.THI_1245 (degree 817).
 	
 
 

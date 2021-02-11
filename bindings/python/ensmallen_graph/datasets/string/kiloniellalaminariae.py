@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:42.845251
 
-The undirected graph Kiloniella laminariae has 3945 nodes and 567446 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07294 and
-has 17 connected components, where the component with most nodes has 3905 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 253,
-the mean node degree is 287.68, and the node degree mode is 1. The top 5 most central
-nodes are 1122135.KB893134_gene3414 (degree 1646), 1122135.KB893169_gene2475 (degree
-1483), 1122135.KB893134_gene3580 (degree 1416), 1122135.KB893137_gene1208 (degree
-1272) and 1122135.KB893170_gene2740 (degree 1235).
+The undirected graph Kiloniella laminariae has 3945 nodes and 567446 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07294 and has 17 connected components, where the component with most
+nodes has 3905 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 253, the mean node degree is 287.68, and
+the node degree mode is 1. The top 5 most central nodes are 1122135.KB893134_gene3414
+(degree 1646), 1122135.KB893169_gene2475 (degree 1483), 1122135.KB893134_gene3580
+(degree 1416), 1122135.KB893137_gene1208 (degree 1272) and 1122135.KB893170_gene2740
+(degree 1235).
 
 
 References
@@ -107,14 +108,15 @@ def KiloniellaLaminariae(
 	
 	Datetime: 2021-02-02 22:40:42.845251
 	
-	The undirected graph Kiloniella laminariae has 3945 nodes and 567446 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07294 and
-	has 17 connected components, where the component with most nodes has 3905 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 253,
-	the mean node degree is 287.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1122135.KB893134_gene3414 (degree 1646), 1122135.KB893169_gene2475 (degree
-	1483), 1122135.KB893134_gene3580 (degree 1416), 1122135.KB893137_gene1208 (degree
-	1272) and 1122135.KB893170_gene2740 (degree 1235).
+	The undirected graph Kiloniella laminariae has 3945 nodes and 567446 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07294 and has 17 connected components, where the component with most
+	nodes has 3905 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 253, the mean node degree is 287.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1122135.KB893134_gene3414
+	(degree 1646), 1122135.KB893169_gene2475 (degree 1483), 1122135.KB893134_gene3580
+	(degree 1416), 1122135.KB893137_gene1208 (degree 1272) and 1122135.KB893170_gene2740
+	(degree 1235).
 	
 
 

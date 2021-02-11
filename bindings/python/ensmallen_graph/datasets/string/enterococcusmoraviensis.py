@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:41.726678
 
-The undirected graph Enterococcus moraviensis has 3314 nodes and 326328 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05944
-and has 13 connected components, where the component with most nodes has 3276 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 196.94, and the node degree mode is 5. The top 5
-most central nodes are 1158609.I586_01942 (degree 1295), 1158609.I586_02285 (degree
-1189), 1158609.I586_01862 (degree 1170), 1158609.I586_02727 (degree 1137) and 1158609.I586_03072
-(degree 1086).
+The undirected graph Enterococcus moraviensis has 3314 nodes and 326328
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05944 and has 13 connected components, where the component
+with most nodes has 3276 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 196.94,
+and the node degree mode is 5. The top 5 most central nodes are 1158609.I586_01942
+(degree 1295), 1158609.I586_02285 (degree 1189), 1158609.I586_01862 (degree
+1170), 1158609.I586_02727 (degree 1137) and 1158609.I586_03072 (degree
+1086).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusMoraviensis(
 	
 	Datetime: 2021-02-02 23:03:41.726678
 	
-	The undirected graph Enterococcus moraviensis has 3314 nodes and 326328 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05944
-	and has 13 connected components, where the component with most nodes has 3276 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 196.94, and the node degree mode is 5. The top 5
-	most central nodes are 1158609.I586_01942 (degree 1295), 1158609.I586_02285 (degree
-	1189), 1158609.I586_01862 (degree 1170), 1158609.I586_02727 (degree 1137) and 1158609.I586_03072
-	(degree 1086).
+	The undirected graph Enterococcus moraviensis has 3314 nodes and 326328
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05944 and has 13 connected components, where the component
+	with most nodes has 3276 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 196.94,
+	and the node degree mode is 5. The top 5 most central nodes are 1158609.I586_01942
+	(degree 1295), 1158609.I586_02285 (degree 1189), 1158609.I586_01862 (degree
+	1170), 1158609.I586_02727 (degree 1137) and 1158609.I586_03072 (degree
+	1086).
 	
 
 

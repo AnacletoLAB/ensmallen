@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:01.472736
 
-The undirected graph Bartonella taylorii has 1685 nodes and 100218 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07064 and
-has 21 connected components, where the component with most nodes has 1632 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 118.95, and the node degree mode is 1. The top 5 most central
-nodes are 1094560.ME9_00295 (degree 671), 1094560.ME9_00470 (degree 597), 1094560.ME9_01117
-(degree 553), 1094560.ME9_00473 (degree 537) and 1094560.ME9_00367 (degree 520).
+The undirected graph Bartonella taylorii has 1685 nodes and 100218 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07064 and has 21 connected components, where the component with most
+nodes has 1632 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 118.95, and
+the node degree mode is 1. The top 5 most central nodes are 1094560.ME9_00295
+(degree 671), 1094560.ME9_00470 (degree 597), 1094560.ME9_01117 (degree
+553), 1094560.ME9_00473 (degree 537) and 1094560.ME9_00367 (degree 520).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaTaylorii(
 	
 	Datetime: 2021-02-02 22:23:01.472736
 	
-	The undirected graph Bartonella taylorii has 1685 nodes and 100218 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07064 and
-	has 21 connected components, where the component with most nodes has 1632 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 118.95, and the node degree mode is 1. The top 5 most central
-	nodes are 1094560.ME9_00295 (degree 671), 1094560.ME9_00470 (degree 597), 1094560.ME9_01117
-	(degree 553), 1094560.ME9_00473 (degree 537) and 1094560.ME9_00367 (degree 520).
+	The undirected graph Bartonella taylorii has 1685 nodes and 100218 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07064 and has 21 connected components, where the component with most
+	nodes has 1632 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 118.95, and
+	the node degree mode is 1. The top 5 most central nodes are 1094560.ME9_00295
+	(degree 671), 1094560.ME9_00470 (degree 597), 1094560.ME9_01117 (degree
+	553), 1094560.ME9_00473 (degree 537) and 1094560.ME9_00367 (degree 520).
 	
 
 

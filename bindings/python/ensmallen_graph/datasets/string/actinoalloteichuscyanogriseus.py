@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:18.362947
 
-The undirected graph Actinoalloteichus cyanogriseus has 4718 nodes and 515075 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04629
-and has 32 connected components, where the component with most nodes has 4644 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 218.34, and the node degree mode is 1. The top 5
-most central nodes are 65497.JODV01000014_gene3366 (degree 1546), 65497.JODV01000005_gene1013
+The undirected graph Actinoalloteichus cyanogriseus has 4718 nodes and
+515075 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04629 and has 32 connected components, where the
+component with most nodes has 4644 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+is 218.34, and the node degree mode is 1. The top 5 most central nodes
+are 65497.JODV01000014_gene3366 (degree 1546), 65497.JODV01000005_gene1013
 (degree 1457), 65497.JODV01000001_gene3809 (degree 1297), 65497.JODV01000007_gene392
 (degree 1284) and 65497.JODV01000002_gene4476 (degree 1262).
 
@@ -107,12 +108,13 @@ def ActinoalloteichusCyanogriseus(
 	
 	Datetime: 2021-02-02 18:25:18.362947
 	
-	The undirected graph Actinoalloteichus cyanogriseus has 4718 nodes and 515075 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04629
-	and has 32 connected components, where the component with most nodes has 4644 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 218.34, and the node degree mode is 1. The top 5
-	most central nodes are 65497.JODV01000014_gene3366 (degree 1546), 65497.JODV01000005_gene1013
+	The undirected graph Actinoalloteichus cyanogriseus has 4718 nodes and
+	515075 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04629 and has 32 connected components, where the
+	component with most nodes has 4644 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+	is 218.34, and the node degree mode is 1. The top 5 most central nodes
+	are 65497.JODV01000014_gene3366 (degree 1546), 65497.JODV01000005_gene1013
 	(degree 1457), 65497.JODV01000001_gene3809 (degree 1297), 65497.JODV01000007_gene392
 	(degree 1284) and 65497.JODV01000002_gene4476 (degree 1262).
 	

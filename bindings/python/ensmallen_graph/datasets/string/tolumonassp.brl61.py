@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:47.310296
 
-The undirected graph Tolumonas sp. BRL61 has 3058 nodes and 357841 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07656 and
-has 10 connected components, where the component with most nodes has 3037 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 234.04, and the node degree mode is 1. The top 5 most central
-nodes are 1283284.AZUK01000002_gene2817 (degree 1278), 1283284.AZUK01000001_gene1529
-(degree 1272), 1283284.AZUK01000001_gene1836 (degree 1226), 1283284.AZUK01000001_gene541
-(degree 1164) and 1283284.AZUK01000001_gene105 (degree 1103).
+The undirected graph Tolumonas sp. BRL61 has 3058 nodes and 357841 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07656 and has 10 connected components, where the component with most
+nodes has 3037 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 234.04, and
+the node degree mode is 1. The top 5 most central nodes are 1283284.AZUK01000002_gene2817
+(degree 1278), 1283284.AZUK01000001_gene1529 (degree 1272), 1283284.AZUK01000001_gene1836
+(degree 1226), 1283284.AZUK01000001_gene541 (degree 1164) and 1283284.AZUK01000001_gene105
+(degree 1103).
 
 
 References
@@ -107,14 +108,15 @@ def TolumonasSp.Brl61(
 	
 	Datetime: 2021-02-03 21:12:47.310296
 	
-	The undirected graph Tolumonas sp. BRL61 has 3058 nodes and 357841 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07656 and
-	has 10 connected components, where the component with most nodes has 3037 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 234.04, and the node degree mode is 1. The top 5 most central
-	nodes are 1283284.AZUK01000002_gene2817 (degree 1278), 1283284.AZUK01000001_gene1529
-	(degree 1272), 1283284.AZUK01000001_gene1836 (degree 1226), 1283284.AZUK01000001_gene541
-	(degree 1164) and 1283284.AZUK01000001_gene105 (degree 1103).
+	The undirected graph Tolumonas sp. BRL61 has 3058 nodes and 357841 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07656 and has 10 connected components, where the component with most
+	nodes has 3037 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 234.04, and
+	the node degree mode is 1. The top 5 most central nodes are 1283284.AZUK01000002_gene2817
+	(degree 1278), 1283284.AZUK01000001_gene1529 (degree 1272), 1283284.AZUK01000001_gene1836
+	(degree 1226), 1283284.AZUK01000001_gene541 (degree 1164) and 1283284.AZUK01000001_gene105
+	(degree 1103).
 	
 
 

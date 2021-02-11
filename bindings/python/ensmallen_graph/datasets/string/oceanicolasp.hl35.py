@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:40:01.088651
 
-The undirected graph Oceanicola sp. HL35 has 3932 nodes and 394506 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05105 and
-has 6 connected components, where the component with most nodes has 3920 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 200.66, and the node degree mode is 4. The top 5 most central
-nodes are 1305735.JAFT01000005_gene1956 (degree 1522), 1305735.JAFT01000005_gene3081
-(degree 1235), 1305735.JAFT01000005_gene505 (degree 1180), 1305735.JAFT01000005_gene663
-(degree 1133) and 1305735.JAFT01000005_gene1714 (degree 1120).
+The undirected graph Oceanicola sp. HL35 has 3932 nodes and 394506 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05105 and has 6 connected components, where the component with most
+nodes has 3920 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 200.66, and
+the node degree mode is 4. The top 5 most central nodes are 1305735.JAFT01000005_gene1956
+(degree 1522), 1305735.JAFT01000005_gene3081 (degree 1235), 1305735.JAFT01000005_gene505
+(degree 1180), 1305735.JAFT01000005_gene663 (degree 1133) and 1305735.JAFT01000005_gene1714
+(degree 1120).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicolaSp.Hl35(
 	
 	Datetime: 2021-02-03 21:40:01.088651
 	
-	The undirected graph Oceanicola sp. HL35 has 3932 nodes and 394506 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05105 and
-	has 6 connected components, where the component with most nodes has 3920 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 200.66, and the node degree mode is 4. The top 5 most central
-	nodes are 1305735.JAFT01000005_gene1956 (degree 1522), 1305735.JAFT01000005_gene3081
-	(degree 1235), 1305735.JAFT01000005_gene505 (degree 1180), 1305735.JAFT01000005_gene663
-	(degree 1133) and 1305735.JAFT01000005_gene1714 (degree 1120).
+	The undirected graph Oceanicola sp. HL35 has 3932 nodes and 394506 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05105 and has 6 connected components, where the component with most
+	nodes has 3920 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 200.66, and
+	the node degree mode is 4. The top 5 most central nodes are 1305735.JAFT01000005_gene1956
+	(degree 1522), 1305735.JAFT01000005_gene3081 (degree 1235), 1305735.JAFT01000005_gene505
+	(degree 1180), 1305735.JAFT01000005_gene663 (degree 1133) and 1305735.JAFT01000005_gene1714
+	(degree 1120).
 	
 
 

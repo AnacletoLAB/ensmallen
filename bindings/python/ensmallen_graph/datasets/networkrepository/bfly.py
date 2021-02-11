@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:16:43.012263
 
-The undirected graph bfly has 49152 nodes and 98304 unweighted edges, of which none
-are self-loops. The graph is extremely sparse as it has a density of 0.00008 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
-are 49142 (degree 4), 49130 (degree 4), 49118 (degree 4), 49106 (degree 4) and 49143
-(degree 4).
+The undirected graph bfly has 49152 nodes and 98304 unweighted edges, of
+which none are self-loops. The graph is extremely sparse as it has a density
+of 0.00008 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.00, and the node degree mode
+is 4. The top 5 most central nodes are 49142 (degree 4), 49130 (degree
+4), 49118 (degree 4), 49106 (degree 4) and 49143 (degree 4).
 
 
 References
@@ -102,12 +102,12 @@ def Bfly(
 	
 	Datetime: 2021-02-06 10:16:43.012263
 	
-	The undirected graph bfly has 49152 nodes and 98304 unweighted edges, of which none
-	are self-loops. The graph is extremely sparse as it has a density of 0.00008 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
-	are 49142 (degree 4), 49130 (degree 4), 49118 (degree 4), 49106 (degree 4) and 49143
-	(degree 4).
+	The undirected graph bfly has 49152 nodes and 98304 unweighted edges, of
+	which none are self-loops. The graph is extremely sparse as it has a density
+	of 0.00008 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.00, and the node degree mode
+	is 4. The top 5 most central nodes are 49142 (degree 4), 49130 (degree
+	4), 49118 (degree 4), 49106 (degree 4) and 49143 (degree 4).
 	
 
 

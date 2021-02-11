@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:51.724909
 
-The undirected graph Parachlamydia acanthamoebae has 2721 nodes and 117358 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03171
-and has 39 connected components, where the component with most nodes has 2622 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 52, the mean node degree is 86.26, and the node degree mode is 3. The top 5 most
-central nodes are 765952.PUV_17050 (degree 1038), 765952.PUV_06670 (degree 771),
-765952.PUV_04500 (degree 639), 765952.PUV_03260 (degree 629) and 765952.PUV_18630
-(degree 618).
+The undirected graph Parachlamydia acanthamoebae has 2721 nodes and 117358
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03171 and has 39 connected components, where the component
+with most nodes has 2622 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 52, the mean node degree is 86.26,
+and the node degree mode is 3. The top 5 most central nodes are 765952.PUV_17050
+(degree 1038), 765952.PUV_06670 (degree 771), 765952.PUV_04500 (degree
+639), 765952.PUV_03260 (degree 629) and 765952.PUV_18630 (degree 618).
 
 
 References
@@ -107,14 +107,14 @@ def ParachlamydiaAcanthamoebae(
 	
 	Datetime: 2021-02-02 21:43:51.724909
 	
-	The undirected graph Parachlamydia acanthamoebae has 2721 nodes and 117358 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03171
-	and has 39 connected components, where the component with most nodes has 2622 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 52, the mean node degree is 86.26, and the node degree mode is 3. The top 5 most
-	central nodes are 765952.PUV_17050 (degree 1038), 765952.PUV_06670 (degree 771),
-	765952.PUV_04500 (degree 639), 765952.PUV_03260 (degree 629) and 765952.PUV_18630
-	(degree 618).
+	The undirected graph Parachlamydia acanthamoebae has 2721 nodes and 117358
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03171 and has 39 connected components, where the component
+	with most nodes has 2622 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 52, the mean node degree is 86.26,
+	and the node degree mode is 3. The top 5 most central nodes are 765952.PUV_17050
+	(degree 1038), 765952.PUV_06670 (degree 771), 765952.PUV_04500 (degree
+	639), 765952.PUV_03260 (degree 629) and 765952.PUV_18630 (degree 618).
 	
 
 

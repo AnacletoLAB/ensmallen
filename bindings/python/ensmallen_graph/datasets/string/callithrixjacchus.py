@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:35:24.586099
 
-The undirected graph Callithrix jacchus has 20196 nodes and 5640860 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02766 and
-has 2 connected components, where the component with most nodes has 20193 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 398,
-the mean node degree is 558.61, and the node degree mode is 111. The top 5 most central
-nodes are 9483.ENSCJAP00000012577 (degree 4932), 9483.ENSCJAP00000047869 (degree
-4806), 9483.ENSCJAP00000017043 (degree 4773), 9483.ENSCJAP00000027663 (degree 4727)
-and 9483.ENSCJAP00000028997 (degree 4554).
+The undirected graph Callithrix jacchus has 20196 nodes and 5640860 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02766 and has 2 connected components, where the component with most
+nodes has 20193 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 398, the mean node degree is 558.61, and
+the node degree mode is 111. The top 5 most central nodes are 9483.ENSCJAP00000012577
+(degree 4932), 9483.ENSCJAP00000047869 (degree 4806), 9483.ENSCJAP00000017043
+(degree 4773), 9483.ENSCJAP00000027663 (degree 4727) and 9483.ENSCJAP00000028997
+(degree 4554).
 
 
 References
@@ -107,14 +108,15 @@ def CallithrixJacchus(
 	
 	Datetime: 2021-02-02 17:35:24.586099
 	
-	The undirected graph Callithrix jacchus has 20196 nodes and 5640860 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02766 and
-	has 2 connected components, where the component with most nodes has 20193 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 398,
-	the mean node degree is 558.61, and the node degree mode is 111. The top 5 most central
-	nodes are 9483.ENSCJAP00000012577 (degree 4932), 9483.ENSCJAP00000047869 (degree
-	4806), 9483.ENSCJAP00000017043 (degree 4773), 9483.ENSCJAP00000027663 (degree 4727)
-	and 9483.ENSCJAP00000028997 (degree 4554).
+	The undirected graph Callithrix jacchus has 20196 nodes and 5640860 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02766 and has 2 connected components, where the component with most
+	nodes has 20193 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 398, the mean node degree is 558.61, and
+	the node degree mode is 111. The top 5 most central nodes are 9483.ENSCJAP00000012577
+	(degree 4932), 9483.ENSCJAP00000047869 (degree 4806), 9483.ENSCJAP00000017043
+	(degree 4773), 9483.ENSCJAP00000027663 (degree 4727) and 9483.ENSCJAP00000028997
+	(degree 4554).
 	
 
 

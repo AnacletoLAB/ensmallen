@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:11.438665
 
-The undirected graph Acinetobacter sp. NCTC 7422 has 3716 nodes and 318622 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04616
-and has 17 connected components, where the component with most nodes has 3682 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 171.49, and the node degree mode is 2. The top 5
-most central nodes are 981223.AIED01000071_gene710 (degree 1258), 981223.AIED01000030_gene2452
-(degree 1235), 981223.AIED01000007_gene171 (degree 1174), 981223.AIED01000032_gene3640
-(degree 1086) and 981223.AIED01000034_gene2994 (degree 1036).
+The undirected graph Acinetobacter sp. NCTC 7422 has 3716 nodes and 318622
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04616 and has 17 connected components, where the component
+with most nodes has 3682 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 171.49,
+and the node degree mode is 2. The top 5 most central nodes are 981223.AIED01000071_gene710
+(degree 1258), 981223.AIED01000030_gene2452 (degree 1235), 981223.AIED01000007_gene171
+(degree 1174), 981223.AIED01000032_gene3640 (degree 1086) and 981223.AIED01000034_gene2994
+(degree 1036).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSp.Nctc7422(
 	
 	Datetime: 2021-02-02 22:03:11.438665
 	
-	The undirected graph Acinetobacter sp. NCTC 7422 has 3716 nodes and 318622 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04616
-	and has 17 connected components, where the component with most nodes has 3682 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 171.49, and the node degree mode is 2. The top 5
-	most central nodes are 981223.AIED01000071_gene710 (degree 1258), 981223.AIED01000030_gene2452
-	(degree 1235), 981223.AIED01000007_gene171 (degree 1174), 981223.AIED01000032_gene3640
-	(degree 1086) and 981223.AIED01000034_gene2994 (degree 1036).
+	The undirected graph Acinetobacter sp. NCTC 7422 has 3716 nodes and 318622
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04616 and has 17 connected components, where the component
+	with most nodes has 3682 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 171.49,
+	and the node degree mode is 2. The top 5 most central nodes are 981223.AIED01000071_gene710
+	(degree 1258), 981223.AIED01000030_gene2452 (degree 1235), 981223.AIED01000007_gene171
+	(degree 1174), 981223.AIED01000032_gene3640 (degree 1086) and 981223.AIED01000034_gene2994
+	(degree 1036).
 	
 
 

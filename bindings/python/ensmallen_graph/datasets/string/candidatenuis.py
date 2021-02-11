@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:41.652160
 
-The undirected graph Candida tenuis has 4720 nodes and 380179 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03414 and
-has 4 connected components, where the component with most nodes has 4714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 161.09, and the node degree mode is 1. The top 5 most central
-nodes are 45596.XP_006690140.1 (degree 1023), 45596.XP_006689957.1 (degree 995),
-45596.XP_006687079.1 (degree 906), 45596.XP_006686858.1 (degree 888) and 45596.XP_006688478.1
+The undirected graph Candida tenuis has 4720 nodes and 380179 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03414 and has 4 connected components, where the component with most
+nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 161.09, and
+the node degree mode is 1. The top 5 most central nodes are 45596.XP_006690140.1
+(degree 1023), 45596.XP_006689957.1 (degree 995), 45596.XP_006687079.1
+(degree 906), 45596.XP_006686858.1 (degree 888) and 45596.XP_006688478.1
 (degree 875).
 
 
@@ -107,13 +108,14 @@ def CandidaTenuis(
 	
 	Datetime: 2021-02-02 18:15:41.652160
 	
-	The undirected graph Candida tenuis has 4720 nodes and 380179 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03414 and
-	has 4 connected components, where the component with most nodes has 4714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 161.09, and the node degree mode is 1. The top 5 most central
-	nodes are 45596.XP_006690140.1 (degree 1023), 45596.XP_006689957.1 (degree 995),
-	45596.XP_006687079.1 (degree 906), 45596.XP_006686858.1 (degree 888) and 45596.XP_006688478.1
+	The undirected graph Candida tenuis has 4720 nodes and 380179 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03414 and has 4 connected components, where the component with most
+	nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 161.09, and
+	the node degree mode is 1. The top 5 most central nodes are 45596.XP_006690140.1
+	(degree 1023), 45596.XP_006689957.1 (degree 995), 45596.XP_006687079.1
+	(degree 906), 45596.XP_006686858.1 (degree 888) and 45596.XP_006688478.1
 	(degree 875).
 	
 

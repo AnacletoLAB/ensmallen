@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:33.724298
 
-The undirected graph Rhizobium sp. CF097 has 6195 nodes and 992570 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05173 and
-has 29 connected components, where the component with most nodes has 6134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 253,
-the mean node degree is 320.44, and the node degree mode is 1. The top 5 most central
-nodes are 1500301.JQMF01000023_gene5554 (degree 2316), 1500301.JQMF01000025_gene6093
-(degree 2315), 1500301.JQMF01000002_gene616 (degree 1973), 1500301.JQMF01000029_gene6187
-(degree 1938) and 1500301.JQMF01000001_gene294 (degree 1877).
+The undirected graph Rhizobium sp. CF097 has 6195 nodes and 992570 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05173 and has 29 connected components, where the component with most
+nodes has 6134 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 253, the mean node degree is 320.44, and
+the node degree mode is 1. The top 5 most central nodes are 1500301.JQMF01000023_gene5554
+(degree 2316), 1500301.JQMF01000025_gene6093 (degree 2315), 1500301.JQMF01000002_gene616
+(degree 1973), 1500301.JQMF01000029_gene6187 (degree 1938) and 1500301.JQMF01000001_gene294
+(degree 1877).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.Cf097(
 	
 	Datetime: 2021-02-03 23:15:33.724298
 	
-	The undirected graph Rhizobium sp. CF097 has 6195 nodes and 992570 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05173 and
-	has 29 connected components, where the component with most nodes has 6134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 253,
-	the mean node degree is 320.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1500301.JQMF01000023_gene5554 (degree 2316), 1500301.JQMF01000025_gene6093
-	(degree 2315), 1500301.JQMF01000002_gene616 (degree 1973), 1500301.JQMF01000029_gene6187
-	(degree 1938) and 1500301.JQMF01000001_gene294 (degree 1877).
+	The undirected graph Rhizobium sp. CF097 has 6195 nodes and 992570 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05173 and has 29 connected components, where the component with most
+	nodes has 6134 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 253, the mean node degree is 320.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1500301.JQMF01000023_gene5554
+	(degree 2316), 1500301.JQMF01000025_gene6093 (degree 2315), 1500301.JQMF01000002_gene616
+	(degree 1973), 1500301.JQMF01000029_gene6187 (degree 1938) and 1500301.JQMF01000001_gene294
+	(degree 1877).
 	
 
 

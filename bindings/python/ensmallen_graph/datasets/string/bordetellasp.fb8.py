@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:09.175188
 
-The undirected graph Bordetella sp. FB8 has 3612 nodes and 420383 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06446 and
-has 8 connected components, where the component with most nodes has 3598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 232.77, and the node degree mode is 2. The top 5 most central
-nodes are 1159870.KB907784_gene2419 (degree 1437), 1159870.KB907784_gene1384 (degree
-1157), 1159870.KB907784_gene3266 (degree 1146), 1159870.KB907784_gene3267 (degree
-1110) and 1159870.KB907784_gene597 (degree 1078).
+The undirected graph Bordetella sp. FB8 has 3612 nodes and 420383 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06446 and has 8 connected components, where the component with most
+nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 192, the mean node degree is 232.77, and
+the node degree mode is 2. The top 5 most central nodes are 1159870.KB907784_gene2419
+(degree 1437), 1159870.KB907784_gene1384 (degree 1157), 1159870.KB907784_gene3266
+(degree 1146), 1159870.KB907784_gene3267 (degree 1110) and 1159870.KB907784_gene597
+(degree 1078).
 
 
 References
@@ -107,14 +108,15 @@ def BordetellaSp.Fb8(
 	
 	Datetime: 2021-02-02 23:04:09.175188
 	
-	The undirected graph Bordetella sp. FB8 has 3612 nodes and 420383 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06446 and
-	has 8 connected components, where the component with most nodes has 3598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 232.77, and the node degree mode is 2. The top 5 most central
-	nodes are 1159870.KB907784_gene2419 (degree 1437), 1159870.KB907784_gene1384 (degree
-	1157), 1159870.KB907784_gene3266 (degree 1146), 1159870.KB907784_gene3267 (degree
-	1110) and 1159870.KB907784_gene597 (degree 1078).
+	The undirected graph Bordetella sp. FB8 has 3612 nodes and 420383 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06446 and has 8 connected components, where the component with most
+	nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 192, the mean node degree is 232.77, and
+	the node degree mode is 2. The top 5 most central nodes are 1159870.KB907784_gene2419
+	(degree 1437), 1159870.KB907784_gene1384 (degree 1157), 1159870.KB907784_gene3266
+	(degree 1146), 1159870.KB907784_gene3267 (degree 1110) and 1159870.KB907784_gene597
+	(degree 1078).
 	
 
 

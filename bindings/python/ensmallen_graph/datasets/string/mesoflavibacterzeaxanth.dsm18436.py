@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:39.183144
 
-The undirected graph Mesoflavibacter zeaxanth. DSM18436 has 2673 nodes and 275665
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07719 and has 6 connected components, where the component with most nodes has
-2657 nodes and the component with the least nodes has 3 nodes. The graph median node
-degree is 197, the mean node degree is 206.26, and the node degree mode is 2. The
-top 5 most central nodes are 1122225.AULQ01000008_gene1284 (degree 999), 1122225.AULQ01000005_gene2459
+The undirected graph Mesoflavibacter zeaxanth. DSM18436 has 2673 nodes
+and 275665 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07719 and has 6 connected components, where the
+component with most nodes has 2657 nodes and the component with the least
+nodes has 3 nodes. The graph median node degree is 197, the mean node degree
+is 206.26, and the node degree mode is 2. The top 5 most central nodes
+are 1122225.AULQ01000008_gene1284 (degree 999), 1122225.AULQ01000005_gene2459
 (degree 988), 1122225.AULQ01000008_gene1312 (degree 910), 1122225.AULQ01000007_gene2319
 (degree 821) and 1122225.AULQ01000001_gene1681 (degree 784).
 
@@ -107,12 +108,13 @@ def MesoflavibacterZeaxanth.Dsm18436(
 	
 	Datetime: 2021-02-02 22:42:39.183144
 	
-	The undirected graph Mesoflavibacter zeaxanth. DSM18436 has 2673 nodes and 275665
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07719 and has 6 connected components, where the component with most nodes has
-	2657 nodes and the component with the least nodes has 3 nodes. The graph median node
-	degree is 197, the mean node degree is 206.26, and the node degree mode is 2. The
-	top 5 most central nodes are 1122225.AULQ01000008_gene1284 (degree 999), 1122225.AULQ01000005_gene2459
+	The undirected graph Mesoflavibacter zeaxanth. DSM18436 has 2673 nodes
+	and 275665 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07719 and has 6 connected components, where the
+	component with most nodes has 2657 nodes and the component with the least
+	nodes has 3 nodes. The graph median node degree is 197, the mean node degree
+	is 206.26, and the node degree mode is 2. The top 5 most central nodes
+	are 1122225.AULQ01000008_gene1284 (degree 999), 1122225.AULQ01000005_gene2459
 	(degree 988), 1122225.AULQ01000008_gene1312 (degree 910), 1122225.AULQ01000007_gene2319
 	(degree 821) and 1122225.AULQ01000001_gene1681 (degree 784).
 	

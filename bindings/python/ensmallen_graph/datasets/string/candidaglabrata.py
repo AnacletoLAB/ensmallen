@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:07.127962
 
-The undirected graph Candida glabrata has 4883 nodes and 508307 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04265 and
-is connected, as it has a single component. The graph median node degree is 156,
-the mean node degree is 208.19, and the node degree mode is 28. The top 5 most central
-nodes are 5478.XP_448768.2 (degree 1206), 5478.XP_448012.1 (degree 1205), 5478.XP_449064.1
-(degree 1192), 5478.XP_448795.1 (degree 1017) and 5478.XP_449113.1 (degree 990).
+The undirected graph Candida glabrata has 4883 nodes and 508307 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04265 and is connected, as it has a single component. The graph median
+node degree is 156, the mean node degree is 208.19, and the node degree
+mode is 28. The top 5 most central nodes are 5478.XP_448768.2 (degree 1206),
+5478.XP_448012.1 (degree 1205), 5478.XP_449064.1 (degree 1192), 5478.XP_448795.1
+(degree 1017) and 5478.XP_449113.1 (degree 990).
 
 
 References
@@ -105,12 +106,13 @@ def CandidaGlabrata(
 	
 	Datetime: 2021-02-02 17:14:07.127962
 	
-	The undirected graph Candida glabrata has 4883 nodes and 508307 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04265 and
-	is connected, as it has a single component. The graph median node degree is 156,
-	the mean node degree is 208.19, and the node degree mode is 28. The top 5 most central
-	nodes are 5478.XP_448768.2 (degree 1206), 5478.XP_448012.1 (degree 1205), 5478.XP_449064.1
-	(degree 1192), 5478.XP_448795.1 (degree 1017) and 5478.XP_449113.1 (degree 990).
+	The undirected graph Candida glabrata has 4883 nodes and 508307 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04265 and is connected, as it has a single component. The graph median
+	node degree is 156, the mean node degree is 208.19, and the node degree
+	mode is 28. The top 5 most central nodes are 5478.XP_448768.2 (degree 1206),
+	5478.XP_448012.1 (degree 1205), 5478.XP_449064.1 (degree 1192), 5478.XP_448795.1
+	(degree 1017) and 5478.XP_449113.1 (degree 990).
 	
 
 

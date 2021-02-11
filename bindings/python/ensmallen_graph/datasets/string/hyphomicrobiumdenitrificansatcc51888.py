@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:50.676519
 
-The undirected graph Hyphomicrobium denitrificans ATCC51888 has 3480 nodes and 297674
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04917 and has 28 connected components, where the component with most nodes has
-3405 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 148, the mean node degree is 171.08, and the node degree mode is 2. The
-top 5 most central nodes are 582899.Hden_1421 (degree 1356), 582899.Hden_1365 (degree
-1339), 582899.Hden_0360 (degree 1238), 582899.Hden_3384 (degree 850) and 582899.Hden_0831
-(degree 849).
+The undirected graph Hyphomicrobium denitrificans ATCC51888 has 3480 nodes
+and 297674 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04917 and has 28 connected components, where the
+component with most nodes has 3405 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+is 171.08, and the node degree mode is 2. The top 5 most central nodes
+are 582899.Hden_1421 (degree 1356), 582899.Hden_1365 (degree 1339), 582899.Hden_0360
+(degree 1238), 582899.Hden_3384 (degree 850) and 582899.Hden_0831 (degree
+849).
 
 
 References
@@ -107,14 +108,15 @@ def HyphomicrobiumDenitrificansAtcc51888(
 	
 	Datetime: 2021-02-02 21:15:50.676519
 	
-	The undirected graph Hyphomicrobium denitrificans ATCC51888 has 3480 nodes and 297674
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04917 and has 28 connected components, where the component with most nodes has
-	3405 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 148, the mean node degree is 171.08, and the node degree mode is 2. The
-	top 5 most central nodes are 582899.Hden_1421 (degree 1356), 582899.Hden_1365 (degree
-	1339), 582899.Hden_0360 (degree 1238), 582899.Hden_3384 (degree 850) and 582899.Hden_0831
-	(degree 849).
+	The undirected graph Hyphomicrobium denitrificans ATCC51888 has 3480 nodes
+	and 297674 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04917 and has 28 connected components, where the
+	component with most nodes has 3405 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+	is 171.08, and the node degree mode is 2. The top 5 most central nodes
+	are 582899.Hden_1421 (degree 1356), 582899.Hden_1365 (degree 1339), 582899.Hden_0360
+	(degree 1238), 582899.Hden_3384 (degree 850) and 582899.Hden_0831 (degree
+	849).
 	
 
 

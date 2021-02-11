@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:41.117597
 
-The undirected graph Enterococcus faecium NRRLB2354 has 2409 nodes and 200418 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06910
-and has 12 connected components, where the component with most nodes has 2385 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 166.39, and the node degree mode is 2. The top 5
-most central nodes are 1104325.M7W_1304 (degree 1015), 1104325.M7W_427 (degree 867),
-1104325.M7W_1240 (degree 842), 1104325.M7W_2575 (degree 785) and 1104325.M7W_2703
-(degree 779).
+The undirected graph Enterococcus faecium NRRLB2354 has 2409 nodes and
+200418 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06910 and has 12 connected components, where the
+component with most nodes has 2385 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+is 166.39, and the node degree mode is 2. The top 5 most central nodes
+are 1104325.M7W_1304 (degree 1015), 1104325.M7W_427 (degree 867), 1104325.M7W_1240
+(degree 842), 1104325.M7W_2575 (degree 785) and 1104325.M7W_2703 (degree
+779).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusFaeciumNrrlb2354(
 	
 	Datetime: 2021-02-02 22:24:41.117597
 	
-	The undirected graph Enterococcus faecium NRRLB2354 has 2409 nodes and 200418 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06910
-	and has 12 connected components, where the component with most nodes has 2385 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 166.39, and the node degree mode is 2. The top 5
-	most central nodes are 1104325.M7W_1304 (degree 1015), 1104325.M7W_427 (degree 867),
-	1104325.M7W_1240 (degree 842), 1104325.M7W_2575 (degree 785) and 1104325.M7W_2703
-	(degree 779).
+	The undirected graph Enterococcus faecium NRRLB2354 has 2409 nodes and
+	200418 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06910 and has 12 connected components, where the
+	component with most nodes has 2385 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+	is 166.39, and the node degree mode is 2. The top 5 most central nodes
+	are 1104325.M7W_1304 (degree 1015), 1104325.M7W_427 (degree 867), 1104325.M7W_1240
+	(degree 842), 1104325.M7W_2575 (degree 785) and 1104325.M7W_2703 (degree
+	779).
 	
 
 

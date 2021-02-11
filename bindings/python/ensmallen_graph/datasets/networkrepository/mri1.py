@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:17:47.178889
 
-The undirected graph mri1 has 131178 nodes and 589822 weighted edges, of which 6
-are self-loops. The graph is extremely sparse as it has a density of 0.00007 and
-is connected, as it has a single component. The graph median node degree is 9, the
-mean node degree is 8.99, and the node degree mode is 5. The top 5 most central nodes
-are 73920 (degree 240), 74304 (degree 222), 73921 (degree 222), 73919 (degree 222)
-and 73536 (degree 222).
+The undirected graph mri1 has 131178 nodes and 589822 weighted edges, of
+which 6 are self-loops. The graph is extremely sparse as it has a density
+of 0.00007 and is connected, as it has a single component. The graph median
+node degree is 9, the mean node degree is 8.99, and the node degree mode
+is 5. The top 5 most central nodes are 73920 (degree 240), 74304 (degree
+222), 73921 (degree 222), 73919 (degree 222) and 73536 (degree 222).
 
 
 References
@@ -102,12 +102,12 @@ def Mri1(
 	
 	Datetime: 2021-02-06 11:17:47.178889
 	
-	The undirected graph mri1 has 131178 nodes and 589822 weighted edges, of which 6
-	are self-loops. The graph is extremely sparse as it has a density of 0.00007 and
-	is connected, as it has a single component. The graph median node degree is 9, the
-	mean node degree is 8.99, and the node degree mode is 5. The top 5 most central nodes
-	are 73920 (degree 240), 74304 (degree 222), 73921 (degree 222), 73919 (degree 222)
-	and 73536 (degree 222).
+	The undirected graph mri1 has 131178 nodes and 589822 weighted edges, of
+	which 6 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00007 and is connected, as it has a single component. The graph median
+	node degree is 9, the mean node degree is 8.99, and the node degree mode
+	is 5. The top 5 most central nodes are 73920 (degree 240), 74304 (degree
+	222), 73921 (degree 222), 73919 (degree 222) and 73536 (degree 222).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:57.437919
 
-The undirected graph Bacteroides fluxus has 3889 nodes and 298933 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03954 and
-has 20 connected components, where the component with most nodes has 3848 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 153.73, and the node degree mode is 2. The top 5 most central
-nodes are 763034.HMPREF9446_00532 (degree 1217), 763034.HMPREF9446_02160 (degree
-1108), 763034.HMPREF9446_00127 (degree 995), 763034.HMPREF9446_00956 (degree 956)
-and 763034.HMPREF9446_03279 (degree 955).
+The undirected graph Bacteroides fluxus has 3889 nodes and 298933 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03954 and has 20 connected components, where the component with most
+nodes has 3848 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 153.73, and
+the node degree mode is 2. The top 5 most central nodes are 763034.HMPREF9446_00532
+(degree 1217), 763034.HMPREF9446_02160 (degree 1108), 763034.HMPREF9446_00127
+(degree 995), 763034.HMPREF9446_00956 (degree 956) and 763034.HMPREF9446_03279
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesFluxus(
 	
 	Datetime: 2021-02-02 21:42:57.437919
 	
-	The undirected graph Bacteroides fluxus has 3889 nodes and 298933 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03954 and
-	has 20 connected components, where the component with most nodes has 3848 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 153.73, and the node degree mode is 2. The top 5 most central
-	nodes are 763034.HMPREF9446_00532 (degree 1217), 763034.HMPREF9446_02160 (degree
-	1108), 763034.HMPREF9446_00127 (degree 995), 763034.HMPREF9446_00956 (degree 956)
-	and 763034.HMPREF9446_03279 (degree 955).
+	The undirected graph Bacteroides fluxus has 3889 nodes and 298933 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03954 and has 20 connected components, where the component with most
+	nodes has 3848 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 153.73, and
+	the node degree mode is 2. The top 5 most central nodes are 763034.HMPREF9446_00532
+	(degree 1217), 763034.HMPREF9446_02160 (degree 1108), 763034.HMPREF9446_00127
+	(degree 995), 763034.HMPREF9446_00956 (degree 956) and 763034.HMPREF9446_03279
+	(degree 955).
 	
 
 

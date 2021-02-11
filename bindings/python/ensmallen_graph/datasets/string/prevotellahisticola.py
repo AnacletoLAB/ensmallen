@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:07.048960
 
-The undirected graph Prevotella histicola has 2295 nodes and 150126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05703 and
-has 32 connected components, where the component with most nodes has 2201 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 130.83, and the node degree mode is 4. The top 5 most central
-nodes are 1236504.HMPREF2132_07500 (degree 867), 1236504.HMPREF2132_03565 (degree
-821), 1236504.HMPREF2132_03805 (degree 766), 1236504.HMPREF2132_11585 (degree 701)
-and 1236504.HMPREF2132_00010 (degree 697).
+The undirected graph Prevotella histicola has 2295 nodes and 150126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05703 and has 32 connected components, where the component with most
+nodes has 2201 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 130.83, and
+the node degree mode is 4. The top 5 most central nodes are 1236504.HMPREF2132_07500
+(degree 867), 1236504.HMPREF2132_03565 (degree 821), 1236504.HMPREF2132_03805
+(degree 766), 1236504.HMPREF2132_11585 (degree 701) and 1236504.HMPREF2132_00010
+(degree 697).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaHisticola(
 	
 	Datetime: 2021-02-02 23:31:07.048960
 	
-	The undirected graph Prevotella histicola has 2295 nodes and 150126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05703 and
-	has 32 connected components, where the component with most nodes has 2201 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 130.83, and the node degree mode is 4. The top 5 most central
-	nodes are 1236504.HMPREF2132_07500 (degree 867), 1236504.HMPREF2132_03565 (degree
-	821), 1236504.HMPREF2132_03805 (degree 766), 1236504.HMPREF2132_11585 (degree 701)
-	and 1236504.HMPREF2132_00010 (degree 697).
+	The undirected graph Prevotella histicola has 2295 nodes and 150126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05703 and has 32 connected components, where the component with most
+	nodes has 2201 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 130.83, and
+	the node degree mode is 4. The top 5 most central nodes are 1236504.HMPREF2132_07500
+	(degree 867), 1236504.HMPREF2132_03565 (degree 821), 1236504.HMPREF2132_03805
+	(degree 766), 1236504.HMPREF2132_11585 (degree 701) and 1236504.HMPREF2132_00010
+	(degree 697).
 	
 
 

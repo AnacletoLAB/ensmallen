@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:12.427669
 
-The undirected graph Sinorhizobium fredii NGR234 has 4011 nodes and 452376 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05625
-and has 15 connected components, where the component with most nodes has 3969 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 199, the mean node degree is 225.57, and the node degree mode is 1. The top 5
-most central nodes are 394.NGR_c35150 (degree 1638), 394.NGR_c01700 (degree 1596),
-394.NGR_c34460 (degree 1188), 394.NGR_c36520 (degree 1180) and 394.NGR_c02090 (degree
-1179).
+The undirected graph Sinorhizobium fredii NGR234 has 4011 nodes and 452376
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05625 and has 15 connected components, where the component
+with most nodes has 3969 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 225.57,
+and the node degree mode is 1. The top 5 most central nodes are 394.NGR_c35150
+(degree 1638), 394.NGR_c01700 (degree 1596), 394.NGR_c34460 (degree 1188),
+394.NGR_c36520 (degree 1180) and 394.NGR_c02090 (degree 1179).
 
 
 References
@@ -107,14 +107,14 @@ def SinorhizobiumFrediiNgr234(
 	
 	Datetime: 2021-02-02 16:21:12.427669
 	
-	The undirected graph Sinorhizobium fredii NGR234 has 4011 nodes and 452376 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05625
-	and has 15 connected components, where the component with most nodes has 3969 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 199, the mean node degree is 225.57, and the node degree mode is 1. The top 5
-	most central nodes are 394.NGR_c35150 (degree 1638), 394.NGR_c01700 (degree 1596),
-	394.NGR_c34460 (degree 1188), 394.NGR_c36520 (degree 1180) and 394.NGR_c02090 (degree
-	1179).
+	The undirected graph Sinorhizobium fredii NGR234 has 4011 nodes and 452376
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05625 and has 15 connected components, where the component
+	with most nodes has 3969 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 225.57,
+	and the node degree mode is 1. The top 5 most central nodes are 394.NGR_c35150
+	(degree 1638), 394.NGR_c01700 (degree 1596), 394.NGR_c34460 (degree 1188),
+	394.NGR_c36520 (degree 1180) and 394.NGR_c02090 (degree 1179).
 	
 
 

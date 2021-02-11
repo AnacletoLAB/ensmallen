@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:25.472522
 
-The undirected graph Cellulosimicrobium cellulans has 3644 nodes and 348989 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05258
-and has 4 connected components, where the component with most nodes has 3638 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 191.54, and the node degree mode is 3. The top 5
-most central nodes are 935839.JAGJ01000005_gene2735 (degree 1310), 935839.JAGJ01000001_gene1295
-(degree 1245), 935839.JAGJ01000003_gene1393 (degree 1158), 935839.JAGJ01000006_gene3370
-(degree 1142) and 935839.JAGJ01000005_gene2726 (degree 1131).
+The undirected graph Cellulosimicrobium cellulans has 3644 nodes and 348989
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05258 and has 4 connected components, where the component
+with most nodes has 3638 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 191.54,
+and the node degree mode is 3. The top 5 most central nodes are 935839.JAGJ01000005_gene2735
+(degree 1310), 935839.JAGJ01000001_gene1295 (degree 1245), 935839.JAGJ01000003_gene1393
+(degree 1158), 935839.JAGJ01000006_gene3370 (degree 1142) and 935839.JAGJ01000005_gene2726
+(degree 1131).
 
 
 References
@@ -107,14 +108,15 @@ def CellulosimicrobiumCellulans(
 	
 	Datetime: 2021-02-02 21:59:25.472522
 	
-	The undirected graph Cellulosimicrobium cellulans has 3644 nodes and 348989 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05258
-	and has 4 connected components, where the component with most nodes has 3638 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 191.54, and the node degree mode is 3. The top 5
-	most central nodes are 935839.JAGJ01000005_gene2735 (degree 1310), 935839.JAGJ01000001_gene1295
-	(degree 1245), 935839.JAGJ01000003_gene1393 (degree 1158), 935839.JAGJ01000006_gene3370
-	(degree 1142) and 935839.JAGJ01000005_gene2726 (degree 1131).
+	The undirected graph Cellulosimicrobium cellulans has 3644 nodes and 348989
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05258 and has 4 connected components, where the component
+	with most nodes has 3638 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 191.54,
+	and the node degree mode is 3. The top 5 most central nodes are 935839.JAGJ01000005_gene2735
+	(degree 1310), 935839.JAGJ01000001_gene1295 (degree 1245), 935839.JAGJ01000003_gene1393
+	(degree 1158), 935839.JAGJ01000006_gene3370 (degree 1142) and 935839.JAGJ01000005_gene2726
+	(degree 1131).
 	
 
 

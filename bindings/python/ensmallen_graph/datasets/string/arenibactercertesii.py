@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:49.949531
 
-The undirected graph Arenibacter certesii has 4036 nodes and 394368 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04843 and
-has 16 connected components, where the component with most nodes has 4000 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 195.43, and the node degree mode is 2. The top 5 most central
-nodes are 1121011.AUCB01000007_gene1322 (degree 1446), 1121011.AUCB01000005_gene2445
-(degree 1409), 1121011.AUCB01000004_gene2828 (degree 1271), 1121011.AUCB01000016_gene4019
-(degree 1199) and 1121011.AUCB01000007_gene1359 (degree 1139).
+The undirected graph Arenibacter certesii has 4036 nodes and 394368 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04843 and has 16 connected components, where the component with most
+nodes has 4000 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 195.43, and
+the node degree mode is 2. The top 5 most central nodes are 1121011.AUCB01000007_gene1322
+(degree 1446), 1121011.AUCB01000005_gene2445 (degree 1409), 1121011.AUCB01000004_gene2828
+(degree 1271), 1121011.AUCB01000016_gene4019 (degree 1199) and 1121011.AUCB01000007_gene1359
+(degree 1139).
 
 
 References
@@ -107,14 +108,15 @@ def ArenibacterCertesii(
 	
 	Datetime: 2021-02-02 22:31:49.949531
 	
-	The undirected graph Arenibacter certesii has 4036 nodes and 394368 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04843 and
-	has 16 connected components, where the component with most nodes has 4000 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 195.43, and the node degree mode is 2. The top 5 most central
-	nodes are 1121011.AUCB01000007_gene1322 (degree 1446), 1121011.AUCB01000005_gene2445
-	(degree 1409), 1121011.AUCB01000004_gene2828 (degree 1271), 1121011.AUCB01000016_gene4019
-	(degree 1199) and 1121011.AUCB01000007_gene1359 (degree 1139).
+	The undirected graph Arenibacter certesii has 4036 nodes and 394368 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04843 and has 16 connected components, where the component with most
+	nodes has 4000 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 195.43, and
+	the node degree mode is 2. The top 5 most central nodes are 1121011.AUCB01000007_gene1322
+	(degree 1446), 1121011.AUCB01000005_gene2445 (degree 1409), 1121011.AUCB01000004_gene2828
+	(degree 1271), 1121011.AUCB01000016_gene4019 (degree 1199) and 1121011.AUCB01000007_gene1359
+	(degree 1139).
 	
 
 

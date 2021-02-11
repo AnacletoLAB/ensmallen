@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:17.357200
 
-The undirected graph Polaromonas sp. JS666 has 5102 nodes and 566934 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04357 and
-has 19 connected components, where the component with most nodes has 5056 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 222.24, and the node degree mode is 2. The top 5 most central
-nodes are 296591.Bpro_2468 (degree 2082), 296591.Bpro_1729 (degree 1812), 296591.Bpro_0151
-(degree 1635), 296591.Bpro_3393 (degree 1607) and 296591.Bpro_4825 (degree 1567).
+The undirected graph Polaromonas sp. JS666 has 5102 nodes and 566934 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04357 and has 19 connected components, where the component with most
+nodes has 5056 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 222.24, and
+the node degree mode is 2. The top 5 most central nodes are 296591.Bpro_2468
+(degree 2082), 296591.Bpro_1729 (degree 1812), 296591.Bpro_0151 (degree
+1635), 296591.Bpro_3393 (degree 1607) and 296591.Bpro_4825 (degree 1567).
 
 
 References
@@ -106,13 +107,14 @@ def PolaromonasSp.Js666(
 	
 	Datetime: 2021-02-02 20:21:17.357200
 	
-	The undirected graph Polaromonas sp. JS666 has 5102 nodes and 566934 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04357 and
-	has 19 connected components, where the component with most nodes has 5056 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 222.24, and the node degree mode is 2. The top 5 most central
-	nodes are 296591.Bpro_2468 (degree 2082), 296591.Bpro_1729 (degree 1812), 296591.Bpro_0151
-	(degree 1635), 296591.Bpro_3393 (degree 1607) and 296591.Bpro_4825 (degree 1567).
+	The undirected graph Polaromonas sp. JS666 has 5102 nodes and 566934 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04357 and has 19 connected components, where the component with most
+	nodes has 5056 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 222.24, and
+	the node degree mode is 2. The top 5 most central nodes are 296591.Bpro_2468
+	(degree 2082), 296591.Bpro_1729 (degree 1812), 296591.Bpro_0151 (degree
+	1635), 296591.Bpro_3393 (degree 1607) and 296591.Bpro_4825 (degree 1567).
 	
 
 

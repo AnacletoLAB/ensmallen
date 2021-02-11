@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:40.928175
 
-The undirected graph Porphyromonas somerae has 1818 nodes and 112117 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06788 and
-has 7 connected components, where the component with most nodes has 1804 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 123.34, and the node degree mode is 2. The top 5 most central
-nodes are 1122975.AQVC01000036_gene188 (degree 676), 1122975.AQVC01000004_gene1261
-(degree 660), 1122975.AQVC01000023_gene932 (degree 600), 1122975.AQVC01000009_gene1497
-(degree 583) and 1122975.AQVC01000035_gene1831 (degree 557).
+The undirected graph Porphyromonas somerae has 1818 nodes and 112117 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06788 and has 7 connected components, where the component with most
+nodes has 1804 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 123.34, and
+the node degree mode is 2. The top 5 most central nodes are 1122975.AQVC01000036_gene188
+(degree 676), 1122975.AQVC01000004_gene1261 (degree 660), 1122975.AQVC01000023_gene932
+(degree 600), 1122975.AQVC01000009_gene1497 (degree 583) and 1122975.AQVC01000035_gene1831
+(degree 557).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasSomerae(
 	
 	Datetime: 2021-02-02 22:45:40.928175
 	
-	The undirected graph Porphyromonas somerae has 1818 nodes and 112117 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06788 and
-	has 7 connected components, where the component with most nodes has 1804 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 123.34, and the node degree mode is 2. The top 5 most central
-	nodes are 1122975.AQVC01000036_gene188 (degree 676), 1122975.AQVC01000004_gene1261
-	(degree 660), 1122975.AQVC01000023_gene932 (degree 600), 1122975.AQVC01000009_gene1497
-	(degree 583) and 1122975.AQVC01000035_gene1831 (degree 557).
+	The undirected graph Porphyromonas somerae has 1818 nodes and 112117 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06788 and has 7 connected components, where the component with most
+	nodes has 1804 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 123.34, and
+	the node degree mode is 2. The top 5 most central nodes are 1122975.AQVC01000036_gene188
+	(degree 676), 1122975.AQVC01000004_gene1261 (degree 660), 1122975.AQVC01000023_gene932
+	(degree 600), 1122975.AQVC01000009_gene1497 (degree 583) and 1122975.AQVC01000035_gene1831
+	(degree 557).
 	
 
 

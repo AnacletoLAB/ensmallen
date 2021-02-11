@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:06:06.177952
 
-The undirected graph email-enron-only has 143 nodes and 623 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06136 and
-is connected, as it has a single component. The graph median node degree is 8, the
-mean node degree is 8.71 and the node degree mode is 9. The top 5 most central nodes
-are 105 (degree 42), 17 (degree 30), 95 (degree 23), 48 (degree 20) and 43 (degree
-19).
+The undirected graph email-enron-only has 143 nodes and 623 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06136 and is connected, as it has a single component. The graph median
+node degree is 8, the mean node degree is 8.71 and the node degree mode
+is 9. The top 5 most central nodes are 105 (degree 42), 17 (degree 30),
+95 (degree 23), 48 (degree 20) and 43 (degree 19).
 
 
 References
@@ -102,12 +102,12 @@ def EmailEnronOnly(
 	
 	Datetime: 2021-02-04 00:06:06.177952
 	
-	The undirected graph email-enron-only has 143 nodes and 623 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06136 and
-	is connected, as it has a single component. The graph median node degree is 8, the
-	mean node degree is 8.71 and the node degree mode is 9. The top 5 most central nodes
-	are 105 (degree 42), 17 (degree 30), 95 (degree 23), 48 (degree 20) and 43 (degree
-	19).
+	The undirected graph email-enron-only has 143 nodes and 623 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06136 and is connected, as it has a single component. The graph median
+	node degree is 8, the mean node degree is 8.71 and the node degree mode
+	is 9. The top 5 most central nodes are 105 (degree 42), 17 (degree 30),
+	95 (degree 23), 48 (degree 20) and 43 (degree 19).
 	
 
 

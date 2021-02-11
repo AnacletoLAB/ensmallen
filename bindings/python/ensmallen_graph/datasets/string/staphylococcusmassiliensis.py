@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:15.204750
 
-The undirected graph Staphylococcus massiliensis has 2293 nodes and 145089 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05521
-and has 12 connected components, where the component with most nodes has 2267 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 126.55, and the node degree mode is 2. The top 5
-most central nodes are 1229783.C273_01095 (degree 869), 1229783.C273_05887 (degree
-769), 1229783.C273_05882 (degree 761), 1229783.C273_01690 (degree 721) and 1229783.C273_09924
-(degree 690).
+The undirected graph Staphylococcus massiliensis has 2293 nodes and 145089
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05521 and has 12 connected components, where the component
+with most nodes has 2267 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 126.55,
+and the node degree mode is 2. The top 5 most central nodes are 1229783.C273_01095
+(degree 869), 1229783.C273_05887 (degree 769), 1229783.C273_05882 (degree
+761), 1229783.C273_01690 (degree 721) and 1229783.C273_09924 (degree 690).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylococcusMassiliensis(
 	
 	Datetime: 2021-02-02 23:27:15.204750
 	
-	The undirected graph Staphylococcus massiliensis has 2293 nodes and 145089 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05521
-	and has 12 connected components, where the component with most nodes has 2267 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 126.55, and the node degree mode is 2. The top 5
-	most central nodes are 1229783.C273_01095 (degree 869), 1229783.C273_05887 (degree
-	769), 1229783.C273_05882 (degree 761), 1229783.C273_01690 (degree 721) and 1229783.C273_09924
-	(degree 690).
+	The undirected graph Staphylococcus massiliensis has 2293 nodes and 145089
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05521 and has 12 connected components, where the component
+	with most nodes has 2267 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 126.55,
+	and the node degree mode is 2. The top 5 most central nodes are 1229783.C273_01095
+	(degree 869), 1229783.C273_05887 (degree 769), 1229783.C273_05882 (degree
+	761), 1229783.C273_01690 (degree 721) and 1229783.C273_09924 (degree 690).
 	
 
 

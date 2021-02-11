@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:40.956630
 
-The undirected graph Sphingomonas elodea has 3708 nodes and 411598 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05989 and
-has 11 connected components, where the component with most nodes has 3683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 222.01, and the node degree mode is 5. The top 5 most central
-nodes are 1081640.AGFU01000046_gene611 (degree 1427), 1081640.AGFU01000050_gene757
-(degree 1373), 1081640.AGFU01000051_gene860 (degree 1373), 1081640.AGFU01000061_gene212
-(degree 1224) and 1081640.AGFU01000011_gene1247 (degree 1159).
+The undirected graph Sphingomonas elodea has 3708 nodes and 411598 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05989 and has 11 connected components, where the component with most
+nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 222.01, and
+the node degree mode is 5. The top 5 most central nodes are 1081640.AGFU01000046_gene611
+(degree 1427), 1081640.AGFU01000050_gene757 (degree 1373), 1081640.AGFU01000051_gene860
+(degree 1373), 1081640.AGFU01000061_gene212 (degree 1224) and 1081640.AGFU01000011_gene1247
+(degree 1159).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasElodea(
 	
 	Datetime: 2021-02-02 22:20:40.956630
 	
-	The undirected graph Sphingomonas elodea has 3708 nodes and 411598 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05989 and
-	has 11 connected components, where the component with most nodes has 3683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 222.01, and the node degree mode is 5. The top 5 most central
-	nodes are 1081640.AGFU01000046_gene611 (degree 1427), 1081640.AGFU01000050_gene757
-	(degree 1373), 1081640.AGFU01000051_gene860 (degree 1373), 1081640.AGFU01000061_gene212
-	(degree 1224) and 1081640.AGFU01000011_gene1247 (degree 1159).
+	The undirected graph Sphingomonas elodea has 3708 nodes and 411598 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05989 and has 11 connected components, where the component with most
+	nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 222.01, and
+	the node degree mode is 5. The top 5 most central nodes are 1081640.AGFU01000046_gene611
+	(degree 1427), 1081640.AGFU01000050_gene757 (degree 1373), 1081640.AGFU01000051_gene860
+	(degree 1373), 1081640.AGFU01000061_gene212 (degree 1224) and 1081640.AGFU01000011_gene1247
+	(degree 1159).
 	
 
 

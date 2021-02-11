@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:07.890363
 
-The undirected graph Pelagibacter ubique HIMB058 has 1213 nodes and 62839 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08549
-and has 3 connected components, where the component with most nodes has 1209 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 103.61, and the node degree mode is 2. The top 5 most
-central nodes are 1144932.ATTF01000003_gene693 (degree 570), 1144932.ATTF01000013_gene581
-(degree 461), 1144932.ATTF01000002_gene352 (degree 448), 1144932.ATTF01000021_gene20
-(degree 436) and 1144932.ATTF01000018_gene667 (degree 424).
+The undirected graph Pelagibacter ubique HIMB058 has 1213 nodes and 62839
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08549 and has 3 connected components, where the component
+with most nodes has 1209 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 103.61,
+and the node degree mode is 2. The top 5 most central nodes are 1144932.ATTF01000003_gene693
+(degree 570), 1144932.ATTF01000013_gene581 (degree 461), 1144932.ATTF01000002_gene352
+(degree 448), 1144932.ATTF01000021_gene20 (degree 436) and 1144932.ATTF01000018_gene667
+(degree 424).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterUbiqueHimb058(
 	
 	Datetime: 2021-02-02 22:59:07.890363
 	
-	The undirected graph Pelagibacter ubique HIMB058 has 1213 nodes and 62839 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08549
-	and has 3 connected components, where the component with most nodes has 1209 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 103.61, and the node degree mode is 2. The top 5 most
-	central nodes are 1144932.ATTF01000003_gene693 (degree 570), 1144932.ATTF01000013_gene581
-	(degree 461), 1144932.ATTF01000002_gene352 (degree 448), 1144932.ATTF01000021_gene20
-	(degree 436) and 1144932.ATTF01000018_gene667 (degree 424).
+	The undirected graph Pelagibacter ubique HIMB058 has 1213 nodes and 62839
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08549 and has 3 connected components, where the component
+	with most nodes has 1209 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 103.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1144932.ATTF01000003_gene693
+	(degree 570), 1144932.ATTF01000013_gene581 (degree 461), 1144932.ATTF01000002_gene352
+	(degree 448), 1144932.ATTF01000021_gene20 (degree 436) and 1144932.ATTF01000018_gene667
+	(degree 424).
 	
 
 

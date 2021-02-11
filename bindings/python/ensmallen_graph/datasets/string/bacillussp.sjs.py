@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:49:33.710192
 
-The undirected graph Bacillus sp. SJS has 3730 nodes and 359618 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05171 and
-has 19 connected components, where the component with most nodes has 3691 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 192.82, and the node degree mode is 2. The top 5 most central
-nodes are 1423321.AS29_16305 (degree 1241), 1423321.AS29_19400 (degree 1135), 1423321.AS29_19720
-(degree 1079), 1423321.AS29_03790 (degree 1044) and 1423321.AS29_06420 (degree 1042).
+The undirected graph Bacillus sp. SJS has 3730 nodes and 359618 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05171 and has 19 connected components, where the component with most
+nodes has 3691 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 192.82, and
+the node degree mode is 2. The top 5 most central nodes are 1423321.AS29_16305
+(degree 1241), 1423321.AS29_19400 (degree 1135), 1423321.AS29_19720 (degree
+1079), 1423321.AS29_03790 (degree 1044) and 1423321.AS29_06420 (degree
+1042).
 
 
 References
@@ -106,13 +108,15 @@ def BacillusSp.Sjs(
 	
 	Datetime: 2021-02-03 22:49:33.710192
 	
-	The undirected graph Bacillus sp. SJS has 3730 nodes and 359618 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05171 and
-	has 19 connected components, where the component with most nodes has 3691 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 192.82, and the node degree mode is 2. The top 5 most central
-	nodes are 1423321.AS29_16305 (degree 1241), 1423321.AS29_19400 (degree 1135), 1423321.AS29_19720
-	(degree 1079), 1423321.AS29_03790 (degree 1044) and 1423321.AS29_06420 (degree 1042).
+	The undirected graph Bacillus sp. SJS has 3730 nodes and 359618 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05171 and has 19 connected components, where the component with most
+	nodes has 3691 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 192.82, and
+	the node degree mode is 2. The top 5 most central nodes are 1423321.AS29_16305
+	(degree 1241), 1423321.AS29_19400 (degree 1135), 1423321.AS29_19720 (degree
+	1079), 1423321.AS29_03790 (degree 1044) and 1423321.AS29_06420 (degree
+	1042).
 	
 
 

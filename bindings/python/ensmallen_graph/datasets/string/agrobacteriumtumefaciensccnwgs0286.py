@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:53.783408
 
-The undirected graph Agrobacterium tumefaciens CCNWGS0286 has 4945 nodes and 424556
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03473 and has 19 connected components, where the component with most nodes has
-4894 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 134, the mean node degree is 171.71, and the node degree mode is 2. The
-top 5 most central nodes are 1082932.ATCR1_16363 (degree 1517), 1082932.ATCR1_04104
-(degree 1216), 1082932.ATCR1_22504 (degree 1187), 1082932.ATCR1_05224 (degree 1149)
-and 1082932.ATCR1_21380 (degree 1128).
+The undirected graph Agrobacterium tumefaciens CCNWGS0286 has 4945 nodes
+and 424556 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03473 and has 19 connected components, where the
+component with most nodes has 4894 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+is 171.71, and the node degree mode is 2. The top 5 most central nodes
+are 1082932.ATCR1_16363 (degree 1517), 1082932.ATCR1_04104 (degree 1216),
+1082932.ATCR1_22504 (degree 1187), 1082932.ATCR1_05224 (degree 1149) and
+1082932.ATCR1_21380 (degree 1128).
 
 
 References
@@ -107,14 +108,15 @@ def AgrobacteriumTumefaciensCcnwgs0286(
 	
 	Datetime: 2021-02-02 22:20:53.783408
 	
-	The undirected graph Agrobacterium tumefaciens CCNWGS0286 has 4945 nodes and 424556
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03473 and has 19 connected components, where the component with most nodes has
-	4894 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 134, the mean node degree is 171.71, and the node degree mode is 2. The
-	top 5 most central nodes are 1082932.ATCR1_16363 (degree 1517), 1082932.ATCR1_04104
-	(degree 1216), 1082932.ATCR1_22504 (degree 1187), 1082932.ATCR1_05224 (degree 1149)
-	and 1082932.ATCR1_21380 (degree 1128).
+	The undirected graph Agrobacterium tumefaciens CCNWGS0286 has 4945 nodes
+	and 424556 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03473 and has 19 connected components, where the
+	component with most nodes has 4894 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+	is 171.71, and the node degree mode is 2. The top 5 most central nodes
+	are 1082932.ATCR1_16363 (degree 1517), 1082932.ATCR1_04104 (degree 1216),
+	1082932.ATCR1_22504 (degree 1187), 1082932.ATCR1_05224 (degree 1149) and
+	1082932.ATCR1_21380 (degree 1128).
 	
 
 

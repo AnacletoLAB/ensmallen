@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:11.274094
 
-The undirected graph Lactobacillus vaginalis has 1842 nodes and 126437 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07457 and
-has 9 connected components, where the component with most nodes has 1826 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 137.28, and the node degree mode is 26. The top 5 most central
-nodes are 1423814.HMPREF0549_1645 (degree 796), 1423814.HMPREF0549_0689 (degree 748),
-1423814.HMPREF0549_0295 (degree 650), 1423814.HMPREF0549_1298 (degree 601) and 1423814.HMPREF0549_0314
+The undirected graph Lactobacillus vaginalis has 1842 nodes and 126437
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07457 and has 9 connected components, where the component
+with most nodes has 1826 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 137.28,
+and the node degree mode is 26. The top 5 most central nodes are 1423814.HMPREF0549_1645
+(degree 796), 1423814.HMPREF0549_0689 (degree 748), 1423814.HMPREF0549_0295
+(degree 650), 1423814.HMPREF0549_1298 (degree 601) and 1423814.HMPREF0549_0314
 (degree 569).
 
 
@@ -107,13 +108,14 @@ def LactobacillusVaginalis(
 	
 	Datetime: 2021-02-03 22:52:11.274094
 	
-	The undirected graph Lactobacillus vaginalis has 1842 nodes and 126437 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07457 and
-	has 9 connected components, where the component with most nodes has 1826 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 137.28, and the node degree mode is 26. The top 5 most central
-	nodes are 1423814.HMPREF0549_1645 (degree 796), 1423814.HMPREF0549_0689 (degree 748),
-	1423814.HMPREF0549_0295 (degree 650), 1423814.HMPREF0549_1298 (degree 601) and 1423814.HMPREF0549_0314
+	The undirected graph Lactobacillus vaginalis has 1842 nodes and 126437
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07457 and has 9 connected components, where the component
+	with most nodes has 1826 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 137.28,
+	and the node degree mode is 26. The top 5 most central nodes are 1423814.HMPREF0549_1645
+	(degree 796), 1423814.HMPREF0549_0689 (degree 748), 1423814.HMPREF0549_0295
+	(degree 650), 1423814.HMPREF0549_1298 (degree 601) and 1423814.HMPREF0549_0314
 	(degree 569).
 	
 

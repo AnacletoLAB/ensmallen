@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:33.456120
 
-The undirected graph Rikenella microfusus has 1874 nodes and 124010 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07066 and
-has 13 connected components, where the component with most nodes has 1844 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 132.35, and the node degree mode is 1. The top 5 most central
-nodes are 880526.KE386488_gene1665 (degree 666), 880526.KE386488_gene837 (degree
-601), 880526.KE386488_gene522 (degree 544), 880526.KE386488_gene1475 (degree 510)
-and 880526.KE386488_gene1510 (degree 504).
+The undirected graph Rikenella microfusus has 1874 nodes and 124010 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07066 and has 13 connected components, where the component with most
+nodes has 1844 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 132.35, and
+the node degree mode is 1. The top 5 most central nodes are 880526.KE386488_gene1665
+(degree 666), 880526.KE386488_gene837 (degree 601), 880526.KE386488_gene522
+(degree 544), 880526.KE386488_gene1475 (degree 510) and 880526.KE386488_gene1510
+(degree 504).
 
 
 References
@@ -107,14 +108,15 @@ def RikenellaMicrofusus(
 	
 	Datetime: 2021-02-02 21:50:33.456120
 	
-	The undirected graph Rikenella microfusus has 1874 nodes and 124010 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07066 and
-	has 13 connected components, where the component with most nodes has 1844 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 132.35, and the node degree mode is 1. The top 5 most central
-	nodes are 880526.KE386488_gene1665 (degree 666), 880526.KE386488_gene837 (degree
-	601), 880526.KE386488_gene522 (degree 544), 880526.KE386488_gene1475 (degree 510)
-	and 880526.KE386488_gene1510 (degree 504).
+	The undirected graph Rikenella microfusus has 1874 nodes and 124010 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07066 and has 13 connected components, where the component with most
+	nodes has 1844 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 132.35, and
+	the node degree mode is 1. The top 5 most central nodes are 880526.KE386488_gene1665
+	(degree 666), 880526.KE386488_gene837 (degree 601), 880526.KE386488_gene522
+	(degree 544), 880526.KE386488_gene1475 (degree 510) and 880526.KE386488_gene1510
+	(degree 504).
 	
 
 

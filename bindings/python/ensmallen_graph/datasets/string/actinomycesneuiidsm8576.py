@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:45.247943
 
-The undirected graph Actinomyces neuii DSM8576 has 1962 nodes and 139553 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07254
-and has 9 connected components, where the component with most nodes has 1941 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 142.26, and the node degree mode is 3. The top 5
-most central nodes are 1120945.ATUW01000002_gene1824 (degree 895), 1120945.ATUW01000003_gene75
-(degree 871), 1120945.ATUW01000005_gene498 (degree 782), 1120945.ATUW01000002_gene1953
-(degree 719) and 1120945.ATUW01000008_gene937 (degree 688).
+The undirected graph Actinomyces neuii DSM8576 has 1962 nodes and 139553
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07254 and has 9 connected components, where the component
+with most nodes has 1941 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 142.26,
+and the node degree mode is 3. The top 5 most central nodes are 1120945.ATUW01000002_gene1824
+(degree 895), 1120945.ATUW01000003_gene75 (degree 871), 1120945.ATUW01000005_gene498
+(degree 782), 1120945.ATUW01000002_gene1953 (degree 719) and 1120945.ATUW01000008_gene937
+(degree 688).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesNeuiiDsm8576(
 	
 	Datetime: 2021-02-02 22:29:45.247943
 	
-	The undirected graph Actinomyces neuii DSM8576 has 1962 nodes and 139553 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07254
-	and has 9 connected components, where the component with most nodes has 1941 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 142.26, and the node degree mode is 3. The top 5
-	most central nodes are 1120945.ATUW01000002_gene1824 (degree 895), 1120945.ATUW01000003_gene75
-	(degree 871), 1120945.ATUW01000005_gene498 (degree 782), 1120945.ATUW01000002_gene1953
-	(degree 719) and 1120945.ATUW01000008_gene937 (degree 688).
+	The undirected graph Actinomyces neuii DSM8576 has 1962 nodes and 139553
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07254 and has 9 connected components, where the component
+	with most nodes has 1941 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 142.26,
+	and the node degree mode is 3. The top 5 most central nodes are 1120945.ATUW01000002_gene1824
+	(degree 895), 1120945.ATUW01000003_gene75 (degree 871), 1120945.ATUW01000005_gene498
+	(degree 782), 1120945.ATUW01000002_gene1953 (degree 719) and 1120945.ATUW01000008_gene937
+	(degree 688).
 	
 
 

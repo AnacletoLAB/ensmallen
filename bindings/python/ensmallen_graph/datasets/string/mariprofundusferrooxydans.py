@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:36.366740
 
-The undirected graph Mariprofundus ferrooxydans has 2823 nodes and 223373 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05608
-and has 12 connected components, where the component with most nodes has 2793 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 158.25, and the node degree mode is 5. The top 5
-most central nodes are 314345.SPV1_11756 (degree 1019), 314345.SPV1_03503 (degree
-850), 314345.SPV1_00912 (degree 811), 314345.SPV1_07796 (degree 808) and 314345.SPV1_08366
-(degree 807).
+The undirected graph Mariprofundus ferrooxydans has 2823 nodes and 223373
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05608 and has 12 connected components, where the component
+with most nodes has 2793 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 158.25,
+and the node degree mode is 5. The top 5 most central nodes are 314345.SPV1_11756
+(degree 1019), 314345.SPV1_03503 (degree 850), 314345.SPV1_00912 (degree
+811), 314345.SPV1_07796 (degree 808) and 314345.SPV1_08366 (degree 807).
 
 
 References
@@ -107,14 +107,14 @@ def MariprofundusFerrooxydans(
 	
 	Datetime: 2021-02-02 20:25:36.366740
 	
-	The undirected graph Mariprofundus ferrooxydans has 2823 nodes and 223373 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05608
-	and has 12 connected components, where the component with most nodes has 2793 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 158.25, and the node degree mode is 5. The top 5
-	most central nodes are 314345.SPV1_11756 (degree 1019), 314345.SPV1_03503 (degree
-	850), 314345.SPV1_00912 (degree 811), 314345.SPV1_07796 (degree 808) and 314345.SPV1_08366
-	(degree 807).
+	The undirected graph Mariprofundus ferrooxydans has 2823 nodes and 223373
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05608 and has 12 connected components, where the component
+	with most nodes has 2793 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 158.25,
+	and the node degree mode is 5. The top 5 most central nodes are 314345.SPV1_11756
+	(degree 1019), 314345.SPV1_03503 (degree 850), 314345.SPV1_00912 (degree
+	811), 314345.SPV1_07796 (degree 808) and 314345.SPV1_08366 (degree 807).
 	
 
 

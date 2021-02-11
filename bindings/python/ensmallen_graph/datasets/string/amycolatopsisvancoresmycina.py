@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:58.989656
 
-The undirected graph Amycolatopsis vancoresmycina has 8748 nodes and 1492523 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03901
-and has 18 connected components, where the component with most nodes has 8702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 289, the mean node degree is 341.23, and the node degree mode is 3. The top 5
-most central nodes are 208444.JNYY01000013_gene7597 (degree 3351), 208444.JNYY01000002_gene1383
-(degree 2827), 208444.JNYY01000003_gene1766 (degree 2738), 208444.JNYY01000005_gene6610
-(degree 2534) and 208444.JNYY01000028_gene2456 (degree 2469).
+The undirected graph Amycolatopsis vancoresmycina has 8748 nodes and 1492523
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03901 and has 18 connected components, where the component
+with most nodes has 8702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 289, the mean node degree is 341.23,
+and the node degree mode is 3. The top 5 most central nodes are 208444.JNYY01000013_gene7597
+(degree 3351), 208444.JNYY01000002_gene1383 (degree 2827), 208444.JNYY01000003_gene1766
+(degree 2738), 208444.JNYY01000005_gene6610 (degree 2534) and 208444.JNYY01000028_gene2456
+(degree 2469).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisVancoresmycina(
 	
 	Datetime: 2021-02-02 20:00:58.989656
 	
-	The undirected graph Amycolatopsis vancoresmycina has 8748 nodes and 1492523 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03901
-	and has 18 connected components, where the component with most nodes has 8702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 289, the mean node degree is 341.23, and the node degree mode is 3. The top 5
-	most central nodes are 208444.JNYY01000013_gene7597 (degree 3351), 208444.JNYY01000002_gene1383
-	(degree 2827), 208444.JNYY01000003_gene1766 (degree 2738), 208444.JNYY01000005_gene6610
-	(degree 2534) and 208444.JNYY01000028_gene2456 (degree 2469).
+	The undirected graph Amycolatopsis vancoresmycina has 8748 nodes and 1492523
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03901 and has 18 connected components, where the component
+	with most nodes has 8702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 289, the mean node degree is 341.23,
+	and the node degree mode is 3. The top 5 most central nodes are 208444.JNYY01000013_gene7597
+	(degree 3351), 208444.JNYY01000002_gene1383 (degree 2827), 208444.JNYY01000003_gene1766
+	(degree 2738), 208444.JNYY01000005_gene6610 (degree 2534) and 208444.JNYY01000028_gene2456
+	(degree 2469).
 	
 
 

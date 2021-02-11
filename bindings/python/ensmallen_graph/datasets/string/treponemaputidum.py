@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:58.896454
 
-The undirected graph Treponema putidum has 2184 nodes and 123041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05161 and
-has 14 connected components, where the component with most nodes has 2152 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 112.67, and the node degree mode is 4. The top 5 most central
-nodes are 221027.JO40_03465 (degree 777), 221027.JO40_02595 (degree 695), 221027.JO40_07730
-(degree 669), 221027.JO40_00310 (degree 656) and 221027.JO40_09635 (degree 650).
+The undirected graph Treponema putidum has 2184 nodes and 123041 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05161 and has 14 connected components, where the component with most
+nodes has 2152 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 112.67, and
+the node degree mode is 4. The top 5 most central nodes are 221027.JO40_03465
+(degree 777), 221027.JO40_02595 (degree 695), 221027.JO40_07730 (degree
+669), 221027.JO40_00310 (degree 656) and 221027.JO40_09635 (degree 650).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaPutidum(
 	
 	Datetime: 2021-02-02 20:03:58.896454
 	
-	The undirected graph Treponema putidum has 2184 nodes and 123041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05161 and
-	has 14 connected components, where the component with most nodes has 2152 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 112.67, and the node degree mode is 4. The top 5 most central
-	nodes are 221027.JO40_03465 (degree 777), 221027.JO40_02595 (degree 695), 221027.JO40_07730
-	(degree 669), 221027.JO40_00310 (degree 656) and 221027.JO40_09635 (degree 650).
+	The undirected graph Treponema putidum has 2184 nodes and 123041 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05161 and has 14 connected components, where the component with most
+	nodes has 2152 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 112.67, and
+	the node degree mode is 4. The top 5 most central nodes are 221027.JO40_03465
+	(degree 777), 221027.JO40_02595 (degree 695), 221027.JO40_07730 (degree
+	669), 221027.JO40_00310 (degree 656) and 221027.JO40_09635 (degree 650).
 	
 
 

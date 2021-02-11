@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:38.784117
 
-The undirected graph Thiomicrospira crunogena has 2186 nodes and 191415 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08015
-and has 4 connected components, where the component with most nodes has 2179 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 175.13, and the node degree mode is 10. The top 5
-most central nodes are 317025.Tcr_0044 (degree 1039), 317025.Tcr_0783 (degree 1038),
-317025.Tcr_1615 (degree 835), 317025.Tcr_1372 (degree 825) and 317025.Tcr_0106 (degree
-785).
+The undirected graph Thiomicrospira crunogena has 2186 nodes and 191415
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08015 and has 4 connected components, where the component
+with most nodes has 2179 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 175.13,
+and the node degree mode is 10. The top 5 most central nodes are 317025.Tcr_0044
+(degree 1039), 317025.Tcr_0783 (degree 1038), 317025.Tcr_1615 (degree 835),
+317025.Tcr_1372 (degree 825) and 317025.Tcr_0106 (degree 785).
 
 
 References
@@ -107,14 +107,14 @@ def ThiomicrospiraCrunogena(
 	
 	Datetime: 2021-02-02 20:26:38.784117
 	
-	The undirected graph Thiomicrospira crunogena has 2186 nodes and 191415 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08015
-	and has 4 connected components, where the component with most nodes has 2179 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 175.13, and the node degree mode is 10. The top 5
-	most central nodes are 317025.Tcr_0044 (degree 1039), 317025.Tcr_0783 (degree 1038),
-	317025.Tcr_1615 (degree 835), 317025.Tcr_1372 (degree 825) and 317025.Tcr_0106 (degree
-	785).
+	The undirected graph Thiomicrospira crunogena has 2186 nodes and 191415
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08015 and has 4 connected components, where the component
+	with most nodes has 2179 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 175.13,
+	and the node degree mode is 10. The top 5 most central nodes are 317025.Tcr_0044
+	(degree 1039), 317025.Tcr_0783 (degree 1038), 317025.Tcr_1615 (degree 835),
+	317025.Tcr_1372 (degree 825) and 317025.Tcr_0106 (degree 785).
 	
 
 

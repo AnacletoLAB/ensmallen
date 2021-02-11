@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:38:12.184220
 
-The undirected graph Ricinus communis has 21560 nodes and 2968275 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01277 and
-has 26 connected components, where the component with most nodes has 21502 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 275.35, and the node degree mode is 1. The top 5
-most central nodes are 3988.XP_002514253.1 (degree 5458), 3988.XP_002512938.1 (degree
-4159), 3988.XP_002510427.1 (degree 4159), 3988.XP_002519506.1 (degree 3956) and 3988.XP_002513830.1
-(degree 3868).
+The undirected graph Ricinus communis has 21560 nodes and 2968275 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01277 and has 26 connected components, where the component with most
+nodes has 21502 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 275.35, and
+the node degree mode is 1. The top 5 most central nodes are 3988.XP_002514253.1
+(degree 5458), 3988.XP_002512938.1 (degree 4159), 3988.XP_002510427.1 (degree
+4159), 3988.XP_002519506.1 (degree 3956) and 3988.XP_002513830.1 (degree
+3868).
 
 
 References
@@ -107,14 +108,15 @@ def RicinusCommunis(
 	
 	Datetime: 2021-02-02 16:38:12.184220
 	
-	The undirected graph Ricinus communis has 21560 nodes and 2968275 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01277 and
-	has 26 connected components, where the component with most nodes has 21502 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 275.35, and the node degree mode is 1. The top 5
-	most central nodes are 3988.XP_002514253.1 (degree 5458), 3988.XP_002512938.1 (degree
-	4159), 3988.XP_002510427.1 (degree 4159), 3988.XP_002519506.1 (degree 3956) and 3988.XP_002513830.1
-	(degree 3868).
+	The undirected graph Ricinus communis has 21560 nodes and 2968275 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01277 and has 26 connected components, where the component with most
+	nodes has 21502 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 275.35, and
+	the node degree mode is 1. The top 5 most central nodes are 3988.XP_002514253.1
+	(degree 5458), 3988.XP_002512938.1 (degree 4159), 3988.XP_002510427.1 (degree
+	4159), 3988.XP_002519506.1 (degree 3956) and 3988.XP_002513830.1 (degree
+	3868).
 	
 
 

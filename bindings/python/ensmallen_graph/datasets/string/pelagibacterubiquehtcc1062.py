@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:35.185243
 
-The undirected graph Pelagibacter ubique HTCC1062 has 1350 nodes and 71231 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07823
-and has 2 connected components, where the component with most nodes has 1348 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 105.53, and the node degree mode is 14. The top 5
-most central nodes are 335992.SAR11_0200 (degree 622), 335992.SAR11_0932 (degree
-544), 335992.SAR11_0368 (degree 478), 335992.SAR11_1046 (degree 466) and 335992.SAR11_0618
-(degree 464).
+The undirected graph Pelagibacter ubique HTCC1062 has 1350 nodes and 71231
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07823 and has 2 connected components, where the component
+with most nodes has 1348 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 105.53,
+and the node degree mode is 14. The top 5 most central nodes are 335992.SAR11_0200
+(degree 622), 335992.SAR11_0932 (degree 544), 335992.SAR11_0368 (degree
+478), 335992.SAR11_1046 (degree 466) and 335992.SAR11_0618 (degree 464).
 
 
 References
@@ -107,14 +107,14 @@ def PelagibacterUbiqueHtcc1062(
 	
 	Datetime: 2021-02-02 20:30:35.185243
 	
-	The undirected graph Pelagibacter ubique HTCC1062 has 1350 nodes and 71231 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07823
-	and has 2 connected components, where the component with most nodes has 1348 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 105.53, and the node degree mode is 14. The top 5
-	most central nodes are 335992.SAR11_0200 (degree 622), 335992.SAR11_0932 (degree
-	544), 335992.SAR11_0368 (degree 478), 335992.SAR11_1046 (degree 466) and 335992.SAR11_0618
-	(degree 464).
+	The undirected graph Pelagibacter ubique HTCC1062 has 1350 nodes and 71231
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07823 and has 2 connected components, where the component
+	with most nodes has 1348 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 105.53,
+	and the node degree mode is 14. The top 5 most central nodes are 335992.SAR11_0200
+	(degree 622), 335992.SAR11_0932 (degree 544), 335992.SAR11_0368 (degree
+	478), 335992.SAR11_1046 (degree 466) and 335992.SAR11_0618 (degree 464).
 	
 
 

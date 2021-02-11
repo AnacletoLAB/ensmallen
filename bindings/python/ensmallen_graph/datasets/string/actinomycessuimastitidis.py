@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:47.564980
 
-The undirected graph Actinomyces suimastitidis has 1878 nodes and 134332 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07622
-and has 5 connected components, where the component with most nodes has 1870 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 143.06, and the node degree mode is 5. The top 5
-most central nodes are 1120946.AUBF01000006_gene301 (degree 831), 1120946.AUBF01000004_gene1728
-(degree 822), 1120946.AUBF01000011_gene1823 (degree 803), 1120946.AUBF01000009_gene1024
-(degree 748) and 1120946.AUBF01000011_gene1841 (degree 685).
+The undirected graph Actinomyces suimastitidis has 1878 nodes and 134332
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07622 and has 5 connected components, where the component
+with most nodes has 1870 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 143.06,
+and the node degree mode is 5. The top 5 most central nodes are 1120946.AUBF01000006_gene301
+(degree 831), 1120946.AUBF01000004_gene1728 (degree 822), 1120946.AUBF01000011_gene1823
+(degree 803), 1120946.AUBF01000009_gene1024 (degree 748) and 1120946.AUBF01000011_gene1841
+(degree 685).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesSuimastitidis(
 	
 	Datetime: 2021-02-02 22:29:47.564980
 	
-	The undirected graph Actinomyces suimastitidis has 1878 nodes and 134332 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07622
-	and has 5 connected components, where the component with most nodes has 1870 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 143.06, and the node degree mode is 5. The top 5
-	most central nodes are 1120946.AUBF01000006_gene301 (degree 831), 1120946.AUBF01000004_gene1728
-	(degree 822), 1120946.AUBF01000011_gene1823 (degree 803), 1120946.AUBF01000009_gene1024
-	(degree 748) and 1120946.AUBF01000011_gene1841 (degree 685).
+	The undirected graph Actinomyces suimastitidis has 1878 nodes and 134332
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07622 and has 5 connected components, where the component
+	with most nodes has 1870 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 143.06,
+	and the node degree mode is 5. The top 5 most central nodes are 1120946.AUBF01000006_gene301
+	(degree 831), 1120946.AUBF01000004_gene1728 (degree 822), 1120946.AUBF01000011_gene1823
+	(degree 803), 1120946.AUBF01000009_gene1024 (degree 748) and 1120946.AUBF01000011_gene1841
+	(degree 685).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:07.276770
 
-The undirected graph Sphingomonas echinoides has 3813 nodes and 369148 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05079 and
-has 17 connected components, where the component with most nodes has 3776 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 193.63, and the node degree mode is 5. The top 5 most central
-nodes are 1112212.JH584235_gene2466 (degree 1585), 1112212.JH584235_gene522 (degree
-1338), 1112212.JH584235_gene2851 (degree 1225), 1112212.JH584235_gene2270 (degree
-1179) and 1112212.JH584235_gene1292 (degree 1094).
+The undirected graph Sphingomonas echinoides has 3813 nodes and 369148
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05079 and has 17 connected components, where the component
+with most nodes has 3776 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 193.63,
+and the node degree mode is 5. The top 5 most central nodes are 1112212.JH584235_gene2466
+(degree 1585), 1112212.JH584235_gene522 (degree 1338), 1112212.JH584235_gene2851
+(degree 1225), 1112212.JH584235_gene2270 (degree 1179) and 1112212.JH584235_gene1292
+(degree 1094).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasEchinoides(
 	
 	Datetime: 2021-02-02 22:26:07.276770
 	
-	The undirected graph Sphingomonas echinoides has 3813 nodes and 369148 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05079 and
-	has 17 connected components, where the component with most nodes has 3776 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 193.63, and the node degree mode is 5. The top 5 most central
-	nodes are 1112212.JH584235_gene2466 (degree 1585), 1112212.JH584235_gene522 (degree
-	1338), 1112212.JH584235_gene2851 (degree 1225), 1112212.JH584235_gene2270 (degree
-	1179) and 1112212.JH584235_gene1292 (degree 1094).
+	The undirected graph Sphingomonas echinoides has 3813 nodes and 369148
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05079 and has 17 connected components, where the component
+	with most nodes has 3776 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 193.63,
+	and the node degree mode is 5. The top 5 most central nodes are 1112212.JH584235_gene2466
+	(degree 1585), 1112212.JH584235_gene522 (degree 1338), 1112212.JH584235_gene2851
+	(degree 1225), 1112212.JH584235_gene2270 (degree 1179) and 1112212.JH584235_gene1292
+	(degree 1094).
 	
 
 

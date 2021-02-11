@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:09.136326
 
-The undirected graph Streptomyces griseoaurantiacus has 6778 nodes and 1332161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05800
-and has 6 connected components, where the component with most nodes has 6767 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 357, the mean node degree is 393.08, and the node degree mode is 3. The top 5
-most central nodes are 996637.SGM_5217 (degree 2253), 996637.SGM_0268 (degree 2232),
-996637.SGM_2572 (degree 2140), 996637.SGM_5633 (degree 2045) and 996637.SGM_0866
-(degree 2026).
+The undirected graph Streptomyces griseoaurantiacus has 6778 nodes and
+1332161 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05800 and has 6 connected components, where the
+component with most nodes has 6767 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 357, the mean node degree
+is 393.08, and the node degree mode is 3. The top 5 most central nodes
+are 996637.SGM_5217 (degree 2253), 996637.SGM_0268 (degree 2232), 996637.SGM_2572
+(degree 2140), 996637.SGM_5633 (degree 2045) and 996637.SGM_0866 (degree
+2026).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesGriseoaurantiacus(
 	
 	Datetime: 2021-02-02 22:05:09.136326
 	
-	The undirected graph Streptomyces griseoaurantiacus has 6778 nodes and 1332161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05800
-	and has 6 connected components, where the component with most nodes has 6767 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 357, the mean node degree is 393.08, and the node degree mode is 3. The top 5
-	most central nodes are 996637.SGM_5217 (degree 2253), 996637.SGM_0268 (degree 2232),
-	996637.SGM_2572 (degree 2140), 996637.SGM_5633 (degree 2045) and 996637.SGM_0866
-	(degree 2026).
+	The undirected graph Streptomyces griseoaurantiacus has 6778 nodes and
+	1332161 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05800 and has 6 connected components, where the
+	component with most nodes has 6767 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 357, the mean node degree
+	is 393.08, and the node degree mode is 3. The top 5 most central nodes
+	are 996637.SGM_5217 (degree 2253), 996637.SGM_0268 (degree 2232), 996637.SGM_2572
+	(degree 2140), 996637.SGM_5633 (degree 2045) and 996637.SGM_0866 (degree
+	2026).
 	
 
 

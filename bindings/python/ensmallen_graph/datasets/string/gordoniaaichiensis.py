@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:51.293780
 
-The undirected graph Gordonia aichiensis has 4586 nodes and 525741 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05001 and
-has 13 connected components, where the component with most nodes has 4556 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 229.28, and the node degree mode is 3. The top 5 most central
-nodes are 1220583.GOACH_07_01220 (degree 1953), 1220583.GOACH_22_00360 (degree 1691),
-1220583.GOACH_27_00090 (degree 1386), 1220583.GOACH_18_00590 (degree 1363) and 1220583.GOACH_06_01850
+The undirected graph Gordonia aichiensis has 4586 nodes and 525741 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05001 and has 13 connected components, where the component with most
+nodes has 4556 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 229.28, and
+the node degree mode is 3. The top 5 most central nodes are 1220583.GOACH_07_01220
+(degree 1953), 1220583.GOACH_22_00360 (degree 1691), 1220583.GOACH_27_00090
+(degree 1386), 1220583.GOACH_18_00590 (degree 1363) and 1220583.GOACH_06_01850
 (degree 1341).
 
 
@@ -107,13 +108,14 @@ def GordoniaAichiensis(
 	
 	Datetime: 2021-02-02 23:23:51.293780
 	
-	The undirected graph Gordonia aichiensis has 4586 nodes and 525741 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05001 and
-	has 13 connected components, where the component with most nodes has 4556 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 229.28, and the node degree mode is 3. The top 5 most central
-	nodes are 1220583.GOACH_07_01220 (degree 1953), 1220583.GOACH_22_00360 (degree 1691),
-	1220583.GOACH_27_00090 (degree 1386), 1220583.GOACH_18_00590 (degree 1363) and 1220583.GOACH_06_01850
+	The undirected graph Gordonia aichiensis has 4586 nodes and 525741 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05001 and has 13 connected components, where the component with most
+	nodes has 4556 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 229.28, and
+	the node degree mode is 3. The top 5 most central nodes are 1220583.GOACH_07_01220
+	(degree 1953), 1220583.GOACH_22_00360 (degree 1691), 1220583.GOACH_27_00090
+	(degree 1386), 1220583.GOACH_18_00590 (degree 1363) and 1220583.GOACH_06_01850
 	(degree 1341).
 	
 

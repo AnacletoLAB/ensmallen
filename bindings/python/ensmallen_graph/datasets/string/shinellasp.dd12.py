@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:42:27.293069
 
-The undirected graph Shinella sp. DD12 has 7273 nodes and 982738 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03716 and
-has 31 connected components, where the component with most nodes has 7202 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 270.24, and the node degree mode is 1. The top 5 most central
-nodes are 1410620.SHLA_3c000030 (degree 2198), 1410620.SHLA_56c000090 (degree 2034),
-1410620.SHLA_37c000540 (degree 2018), 1410620.SHLA_11c000020 (degree 2010) and 1410620.SHLA_40c000570
+The undirected graph Shinella sp. DD12 has 7273 nodes and 982738 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03716 and has 31 connected components, where the component with most
+nodes has 7202 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 270.24, and
+the node degree mode is 1. The top 5 most central nodes are 1410620.SHLA_3c000030
+(degree 2198), 1410620.SHLA_56c000090 (degree 2034), 1410620.SHLA_37c000540
+(degree 2018), 1410620.SHLA_11c000020 (degree 2010) and 1410620.SHLA_40c000570
 (degree 2007).
 
 
@@ -107,13 +108,14 @@ def ShinellaSp.Dd12(
 	
 	Datetime: 2021-02-03 22:42:27.293069
 	
-	The undirected graph Shinella sp. DD12 has 7273 nodes and 982738 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03716 and
-	has 31 connected components, where the component with most nodes has 7202 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 270.24, and the node degree mode is 1. The top 5 most central
-	nodes are 1410620.SHLA_3c000030 (degree 2198), 1410620.SHLA_56c000090 (degree 2034),
-	1410620.SHLA_37c000540 (degree 2018), 1410620.SHLA_11c000020 (degree 2010) and 1410620.SHLA_40c000570
+	The undirected graph Shinella sp. DD12 has 7273 nodes and 982738 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03716 and has 31 connected components, where the component with most
+	nodes has 7202 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 270.24, and
+	the node degree mode is 1. The top 5 most central nodes are 1410620.SHLA_3c000030
+	(degree 2198), 1410620.SHLA_56c000090 (degree 2034), 1410620.SHLA_37c000540
+	(degree 2018), 1410620.SHLA_11c000020 (degree 2010) and 1410620.SHLA_40c000570
 	(degree 2007).
 	
 

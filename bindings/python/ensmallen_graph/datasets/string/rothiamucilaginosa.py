@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:40.397390
 
-The undirected graph Rothia mucilaginosa has 1833 nodes and 114355 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06811 and
-has 17 connected components, where the component with most nodes has 1796 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 124.77, and the node degree mode is 1. The top 5 most central
-nodes are 680646.RMDY18_11520 (degree 715), 680646.RMDY18_19230 (degree 643), 680646.RMDY18_05420
-(degree 601), 680646.RMDY18_14210 (degree 594) and 680646.RMDY18_07750 (degree 572).
+The undirected graph Rothia mucilaginosa has 1833 nodes and 114355 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06811 and has 17 connected components, where the component with most
+nodes has 1796 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 124.77, and
+the node degree mode is 1. The top 5 most central nodes are 680646.RMDY18_11520
+(degree 715), 680646.RMDY18_19230 (degree 643), 680646.RMDY18_05420 (degree
+601), 680646.RMDY18_14210 (degree 594) and 680646.RMDY18_07750 (degree
+572).
 
 
 References
@@ -106,13 +108,15 @@ def RothiaMucilaginosa(
 	
 	Datetime: 2021-02-02 21:30:40.397390
 	
-	The undirected graph Rothia mucilaginosa has 1833 nodes and 114355 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06811 and
-	has 17 connected components, where the component with most nodes has 1796 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 124.77, and the node degree mode is 1. The top 5 most central
-	nodes are 680646.RMDY18_11520 (degree 715), 680646.RMDY18_19230 (degree 643), 680646.RMDY18_05420
-	(degree 601), 680646.RMDY18_14210 (degree 594) and 680646.RMDY18_07750 (degree 572).
+	The undirected graph Rothia mucilaginosa has 1833 nodes and 114355 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06811 and has 17 connected components, where the component with most
+	nodes has 1796 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 124.77, and
+	the node degree mode is 1. The top 5 most central nodes are 680646.RMDY18_11520
+	(degree 715), 680646.RMDY18_19230 (degree 643), 680646.RMDY18_05420 (degree
+	601), 680646.RMDY18_14210 (degree 594) and 680646.RMDY18_07750 (degree
+	572).
 	
 
 

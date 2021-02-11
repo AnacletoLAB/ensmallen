@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:57.563654
 
-The undirected graph Nectria haematococca has 10564 nodes and 1043127 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01870 and
-has 22 connected components, where the component with most nodes has 10500 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 197.49, and the node degree mode is 1. The top 5
-most central nodes are 140110.NechaP95521 (degree 2901), 140110.NechaP59877 (degree
-2243), 140110.NechaP65446 (degree 2052), 140110.NechaP89788 (degree 2035) and 140110.NechaP72493
-(degree 1986).
+The undirected graph Nectria haematococca has 10564 nodes and 1043127 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01870 and has 22 connected components, where the component with most
+nodes has 10500 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 197.49, and
+the node degree mode is 1. The top 5 most central nodes are 140110.NechaP95521
+(degree 2901), 140110.NechaP59877 (degree 2243), 140110.NechaP65446 (degree
+2052), 140110.NechaP89788 (degree 2035) and 140110.NechaP72493 (degree
+1986).
 
 
 References
@@ -107,14 +108,15 @@ def NectriaHaematococca(
 	
 	Datetime: 2021-02-02 19:50:57.563654
 	
-	The undirected graph Nectria haematococca has 10564 nodes and 1043127 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01870 and
-	has 22 connected components, where the component with most nodes has 10500 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 197.49, and the node degree mode is 1. The top 5
-	most central nodes are 140110.NechaP95521 (degree 2901), 140110.NechaP59877 (degree
-	2243), 140110.NechaP65446 (degree 2052), 140110.NechaP89788 (degree 2035) and 140110.NechaP72493
-	(degree 1986).
+	The undirected graph Nectria haematococca has 10564 nodes and 1043127 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01870 and has 22 connected components, where the component with most
+	nodes has 10500 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 197.49, and
+	the node degree mode is 1. The top 5 most central nodes are 140110.NechaP95521
+	(degree 2901), 140110.NechaP59877 (degree 2243), 140110.NechaP65446 (degree
+	2052), 140110.NechaP89788 (degree 2035) and 140110.NechaP72493 (degree
+	1986).
 	
 
 

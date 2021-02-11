@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:03.684380
 
-The undirected graph Tetranychus urticae has 9588 nodes and 1169357 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-has 6 connected components, where the component with most nodes has 9567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 243.92, and the node degree mode is 3. The top 5 most central
-nodes are 32264.tetur07g04100.1 (degree 3141), 32264.tetur25g00250.1 (degree 1965),
-32264.tetur09g00030.1 (degree 1818), 32264.tetur02g13440.1 (degree 1795) and 32264.tetur18g02920.1
+The undirected graph Tetranychus urticae has 9588 nodes and 1169357 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02544 and has 6 connected components, where the component with most
+nodes has 9567 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 243.92, and
+the node degree mode is 3. The top 5 most central nodes are 32264.tetur07g04100.1
+(degree 3141), 32264.tetur25g00250.1 (degree 1965), 32264.tetur09g00030.1
+(degree 1818), 32264.tetur02g13440.1 (degree 1795) and 32264.tetur18g02920.1
 (degree 1793).
 
 
@@ -107,13 +108,14 @@ def TetranychusUrticae(
 	
 	Datetime: 2021-02-02 18:03:03.684380
 	
-	The undirected graph Tetranychus urticae has 9588 nodes and 1169357 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-	has 6 connected components, where the component with most nodes has 9567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 243.92, and the node degree mode is 3. The top 5 most central
-	nodes are 32264.tetur07g04100.1 (degree 3141), 32264.tetur25g00250.1 (degree 1965),
-	32264.tetur09g00030.1 (degree 1818), 32264.tetur02g13440.1 (degree 1795) and 32264.tetur18g02920.1
+	The undirected graph Tetranychus urticae has 9588 nodes and 1169357 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02544 and has 6 connected components, where the component with most
+	nodes has 9567 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 243.92, and
+	the node degree mode is 3. The top 5 most central nodes are 32264.tetur07g04100.1
+	(degree 3141), 32264.tetur25g00250.1 (degree 1965), 32264.tetur09g00030.1
+	(degree 1818), 32264.tetur02g13440.1 (degree 1795) and 32264.tetur18g02920.1
 	(degree 1793).
 	
 

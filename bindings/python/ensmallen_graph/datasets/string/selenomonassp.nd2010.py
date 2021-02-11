@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:41:16.265722
 
-The undirected graph Selenomonas sp. ND2010 has 2527 nodes and 254540 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07975 and
-has 12 connected components, where the component with most nodes has 2494 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 201.46, and the node degree mode is 4. The top 5 most central
-nodes are 1410618.JNKI01000023_gene1686 (degree 1098), 1410618.JNKI01000001_gene1318
-(degree 1030), 1410618.JNKI01000015_gene1570 (degree 1013), 1410618.JNKI01000019_gene238
-(degree 967) and 1410618.JNKI01000022_gene1632 (degree 949).
+The undirected graph Selenomonas sp. ND2010 has 2527 nodes and 254540 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07975 and has 12 connected components, where the component with most
+nodes has 2494 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 201.46, and
+the node degree mode is 4. The top 5 most central nodes are 1410618.JNKI01000023_gene1686
+(degree 1098), 1410618.JNKI01000001_gene1318 (degree 1030), 1410618.JNKI01000015_gene1570
+(degree 1013), 1410618.JNKI01000019_gene238 (degree 967) and 1410618.JNKI01000022_gene1632
+(degree 949).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasSp.Nd2010(
 	
 	Datetime: 2021-02-03 22:41:16.265722
 	
-	The undirected graph Selenomonas sp. ND2010 has 2527 nodes and 254540 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07975 and
-	has 12 connected components, where the component with most nodes has 2494 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 201.46, and the node degree mode is 4. The top 5 most central
-	nodes are 1410618.JNKI01000023_gene1686 (degree 1098), 1410618.JNKI01000001_gene1318
-	(degree 1030), 1410618.JNKI01000015_gene1570 (degree 1013), 1410618.JNKI01000019_gene238
-	(degree 967) and 1410618.JNKI01000022_gene1632 (degree 949).
+	The undirected graph Selenomonas sp. ND2010 has 2527 nodes and 254540 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07975 and has 12 connected components, where the component with most
+	nodes has 2494 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 201.46, and
+	the node degree mode is 4. The top 5 most central nodes are 1410618.JNKI01000023_gene1686
+	(degree 1098), 1410618.JNKI01000001_gene1318 (degree 1030), 1410618.JNKI01000015_gene1570
+	(degree 1013), 1410618.JNKI01000019_gene238 (degree 967) and 1410618.JNKI01000022_gene1632
+	(degree 949).
 	
 
 

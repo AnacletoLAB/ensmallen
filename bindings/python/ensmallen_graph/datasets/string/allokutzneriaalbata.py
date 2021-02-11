@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:22.620381
 
-The undirected graph Allokutzneria albata has 7743 nodes and 994254 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03317 and
-has 33 connected components, where the component with most nodes has 7671 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 256.81, and the node degree mode is 2. The top 5 most central
-nodes are 211114.JOEF01000004_gene6412 (degree 2340), 211114.JOEF01000019_gene594
-(degree 1874), 211114.JOEF01000003_gene2906 (degree 1848), 211114.JOEF01000016_gene3687
-(degree 1758) and 211114.JOEF01000002_gene4331 (degree 1741).
+The undirected graph Allokutzneria albata has 7743 nodes and 994254 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03317 and has 33 connected components, where the component with most
+nodes has 7671 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 221, the mean node degree is 256.81, and
+the node degree mode is 2. The top 5 most central nodes are 211114.JOEF01000004_gene6412
+(degree 2340), 211114.JOEF01000019_gene594 (degree 1874), 211114.JOEF01000003_gene2906
+(degree 1848), 211114.JOEF01000016_gene3687 (degree 1758) and 211114.JOEF01000002_gene4331
+(degree 1741).
 
 
 References
@@ -107,14 +108,15 @@ def AllokutzneriaAlbata(
 	
 	Datetime: 2021-02-02 20:01:22.620381
 	
-	The undirected graph Allokutzneria albata has 7743 nodes and 994254 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03317 and
-	has 33 connected components, where the component with most nodes has 7671 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 256.81, and the node degree mode is 2. The top 5 most central
-	nodes are 211114.JOEF01000004_gene6412 (degree 2340), 211114.JOEF01000019_gene594
-	(degree 1874), 211114.JOEF01000003_gene2906 (degree 1848), 211114.JOEF01000016_gene3687
-	(degree 1758) and 211114.JOEF01000002_gene4331 (degree 1741).
+	The undirected graph Allokutzneria albata has 7743 nodes and 994254 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03317 and has 33 connected components, where the component with most
+	nodes has 7671 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 221, the mean node degree is 256.81, and
+	the node degree mode is 2. The top 5 most central nodes are 211114.JOEF01000004_gene6412
+	(degree 2340), 211114.JOEF01000019_gene594 (degree 1874), 211114.JOEF01000003_gene2906
+	(degree 1848), 211114.JOEF01000016_gene3687 (degree 1758) and 211114.JOEF01000002_gene4331
+	(degree 1741).
 	
 
 

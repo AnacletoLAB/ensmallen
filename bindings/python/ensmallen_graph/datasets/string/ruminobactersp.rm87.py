@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:00.858218
 
-The undirected graph Ruminobacter sp. RM87 has 2188 nodes and 161802 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06763 and
-has 25 connected components, where the component with most nodes has 2129 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 147.90, and the node degree mode is 1. The top 5 most central
-nodes are 1200567.JNKD01000005_gene71 (degree 771), 1200567.JNKD01000017_gene1112
-(degree 769), 1200567.JNKD01000001_gene1782 (degree 691), 1200567.JNKD01000007_gene303
-(degree 679) and 1200567.JNKD01000008_gene412 (degree 591).
+The undirected graph Ruminobacter sp. RM87 has 2188 nodes and 161802 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06763 and has 25 connected components, where the component with most
+nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 147.90, and
+the node degree mode is 1. The top 5 most central nodes are 1200567.JNKD01000005_gene71
+(degree 771), 1200567.JNKD01000017_gene1112 (degree 769), 1200567.JNKD01000001_gene1782
+(degree 691), 1200567.JNKD01000007_gene303 (degree 679) and 1200567.JNKD01000008_gene412
+(degree 591).
 
 
 References
@@ -107,14 +108,15 @@ def RuminobacterSp.Rm87(
 	
 	Datetime: 2021-02-02 23:14:00.858218
 	
-	The undirected graph Ruminobacter sp. RM87 has 2188 nodes and 161802 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06763 and
-	has 25 connected components, where the component with most nodes has 2129 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 147.90, and the node degree mode is 1. The top 5 most central
-	nodes are 1200567.JNKD01000005_gene71 (degree 771), 1200567.JNKD01000017_gene1112
-	(degree 769), 1200567.JNKD01000001_gene1782 (degree 691), 1200567.JNKD01000007_gene303
-	(degree 679) and 1200567.JNKD01000008_gene412 (degree 591).
+	The undirected graph Ruminobacter sp. RM87 has 2188 nodes and 161802 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06763 and has 25 connected components, where the component with most
+	nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 147.90, and
+	the node degree mode is 1. The top 5 most central nodes are 1200567.JNKD01000005_gene71
+	(degree 771), 1200567.JNKD01000017_gene1112 (degree 769), 1200567.JNKD01000001_gene1782
+	(degree 691), 1200567.JNKD01000007_gene303 (degree 679) and 1200567.JNKD01000008_gene412
+	(degree 591).
 	
 
 

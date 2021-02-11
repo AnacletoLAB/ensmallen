@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:22.412362
 
-The undirected graph web-polblogs has 643 nodes and 2280 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01105 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 7.09, and the node degree mode is 1. The top 5 most central nodes are 318 (degree
-165), 391 (degree 87), 22 (degree 72), 415 (degree 56) and 32 (degree 49).
+The undirected graph web-polblogs has 643 nodes and 2280 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01105 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 7.09, and the node degree mode
+is 1. The top 5 most central nodes are 318 (degree 165), 391 (degree 87),
+22 (degree 72), 415 (degree 56) and 32 (degree 49).
 
 
 References
@@ -110,11 +111,12 @@ def WebPolblogs(
 	
 	Datetime: 2021-02-06 09:52:22.412362
 	
-	The undirected graph web-polblogs has 643 nodes and 2280 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01105 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 7.09, and the node degree mode is 1. The top 5 most central nodes are 318 (degree
-	165), 391 (degree 87), 22 (degree 72), 415 (degree 56) and 32 (degree 49).
+	The undirected graph web-polblogs has 643 nodes and 2280 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01105 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 7.09, and the node degree mode
+	is 1. The top 5 most central nodes are 318 (degree 165), 391 (degree 87),
+	22 (degree 72), 415 (degree 56) and 32 (degree 49).
 	
 
 

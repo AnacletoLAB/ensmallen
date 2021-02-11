@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:22.546342
 
-The undirected graph Musa acuminata has 28609 nodes and 7116293 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01739 and
-has 4 connected components, where the component with most nodes has 28603 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 256,
-the mean node degree is 497.49, and the node degree mode is 5. The top 5 most central
-nodes are 4641.GSMUA_Achr10P14990_001 (degree 9781), 4641.GSMUA_Achr2P14300_001 (degree
-7328), 4641.GSMUA_Achr10P03980_001 (degree 5932), 4641.GSMUA_Achr5P10770_001 (degree
-5155) and 4641.GSMUA_Achr11P06090_001 (degree 5043).
+The undirected graph Musa acuminata has 28609 nodes and 7116293 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01739 and has 4 connected components, where the component with most
+nodes has 28603 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 256, the mean node degree is 497.49, and
+the node degree mode is 5. The top 5 most central nodes are 4641.GSMUA_Achr10P14990_001
+(degree 9781), 4641.GSMUA_Achr2P14300_001 (degree 7328), 4641.GSMUA_Achr10P03980_001
+(degree 5932), 4641.GSMUA_Achr5P10770_001 (degree 5155) and 4641.GSMUA_Achr11P06090_001
+(degree 5043).
 
 
 References
@@ -107,14 +108,15 @@ def MusaAcuminata(
 	
 	Datetime: 2021-02-02 17:10:22.546342
 	
-	The undirected graph Musa acuminata has 28609 nodes and 7116293 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01739 and
-	has 4 connected components, where the component with most nodes has 28603 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 256,
-	the mean node degree is 497.49, and the node degree mode is 5. The top 5 most central
-	nodes are 4641.GSMUA_Achr10P14990_001 (degree 9781), 4641.GSMUA_Achr2P14300_001 (degree
-	7328), 4641.GSMUA_Achr10P03980_001 (degree 5932), 4641.GSMUA_Achr5P10770_001 (degree
-	5155) and 4641.GSMUA_Achr11P06090_001 (degree 5043).
+	The undirected graph Musa acuminata has 28609 nodes and 7116293 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01739 and has 4 connected components, where the component with most
+	nodes has 28603 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 256, the mean node degree is 497.49, and
+	the node degree mode is 5. The top 5 most central nodes are 4641.GSMUA_Achr10P14990_001
+	(degree 9781), 4641.GSMUA_Achr2P14300_001 (degree 7328), 4641.GSMUA_Achr10P03980_001
+	(degree 5932), 4641.GSMUA_Achr5P10770_001 (degree 5155) and 4641.GSMUA_Achr11P06090_001
+	(degree 5043).
 	
 
 

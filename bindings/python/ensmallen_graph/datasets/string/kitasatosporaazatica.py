@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:51.620466
 
-The undirected graph Kitasatospora azatica has 6980 nodes and 993720 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04080 and
-has 48 connected components, where the component with most nodes has 6863 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 245,
-the mean node degree is 284.73, and the node degree mode is 2. The top 5 most central
-nodes are 1449346.JQMO01000003_gene3572 (degree 2361), 1449346.JQMO01000002_gene2062
-(degree 2077), 1449346.JQMO01000003_gene6245 (degree 1931), 1449346.JQMO01000003_gene5196
-(degree 1907) and 1449346.JQMO01000003_gene6221 (degree 1895).
+The undirected graph Kitasatospora azatica has 6980 nodes and 993720 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04080 and has 48 connected components, where the component with most
+nodes has 6863 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 245, the mean node degree is 284.73, and
+the node degree mode is 2. The top 5 most central nodes are 1449346.JQMO01000003_gene3572
+(degree 2361), 1449346.JQMO01000002_gene2062 (degree 2077), 1449346.JQMO01000003_gene6245
+(degree 1931), 1449346.JQMO01000003_gene5196 (degree 1907) and 1449346.JQMO01000003_gene6221
+(degree 1895).
 
 
 References
@@ -107,14 +108,15 @@ def KitasatosporaAzatica(
 	
 	Datetime: 2021-02-03 23:04:51.620466
 	
-	The undirected graph Kitasatospora azatica has 6980 nodes and 993720 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04080 and
-	has 48 connected components, where the component with most nodes has 6863 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 245,
-	the mean node degree is 284.73, and the node degree mode is 2. The top 5 most central
-	nodes are 1449346.JQMO01000003_gene3572 (degree 2361), 1449346.JQMO01000002_gene2062
-	(degree 2077), 1449346.JQMO01000003_gene6245 (degree 1931), 1449346.JQMO01000003_gene5196
-	(degree 1907) and 1449346.JQMO01000003_gene6221 (degree 1895).
+	The undirected graph Kitasatospora azatica has 6980 nodes and 993720 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04080 and has 48 connected components, where the component with most
+	nodes has 6863 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 245, the mean node degree is 284.73, and
+	the node degree mode is 2. The top 5 most central nodes are 1449346.JQMO01000003_gene3572
+	(degree 2361), 1449346.JQMO01000002_gene2062 (degree 2077), 1449346.JQMO01000003_gene6245
+	(degree 1931), 1449346.JQMO01000003_gene5196 (degree 1907) and 1449346.JQMO01000003_gene6221
+	(degree 1895).
 	
 
 

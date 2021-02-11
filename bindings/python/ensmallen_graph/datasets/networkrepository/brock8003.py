@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:07.634014
 
-The undirected graph brock800-3 has 800 nodes and 207333 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.64873
-and is connected, as it has a single component. The graph median node degree is 518,
-the mean node degree is 518.33 and the node degree mode is 518. The top 5 most central
-nodes are 477 (degree 558), 682 (degree 557), 677 (degree 555), 750 (degree 553)
-and 493 (degree 553).
+The undirected graph brock800-3 has 800 nodes and 207333 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.64873 and is connected, as it has a single component. The
+graph median node degree is 518, the mean node degree is 518.33 and the
+node degree mode is 518. The top 5 most central nodes are 477 (degree 558),
+682 (degree 557), 677 (degree 555), 750 (degree 553) and 493 (degree 553).
 
 
 References
@@ -115,12 +115,12 @@ def Brock8003(
 	
 	Datetime: 2021-02-03 22:54:07.634014
 	
-	The undirected graph brock800-3 has 800 nodes and 207333 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.64873
-	and is connected, as it has a single component. The graph median node degree is 518,
-	the mean node degree is 518.33 and the node degree mode is 518. The top 5 most central
-	nodes are 477 (degree 558), 682 (degree 557), 677 (degree 555), 750 (degree 553)
-	and 493 (degree 553).
+	The undirected graph brock800-3 has 800 nodes and 207333 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.64873 and is connected, as it has a single component. The
+	graph median node degree is 518, the mean node degree is 518.33 and the
+	node degree mode is 518. The top 5 most central nodes are 477 (degree 558),
+	682 (degree 557), 677 (degree 555), 750 (degree 553) and 493 (degree 553).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:58.291328
 
-The undirected graph Halothermothrix orenii has 2332 nodes and 167084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06147 and
-has 3 connected components, where the component with most nodes has 2324 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 143.30, and the node degree mode is 12. The top 5 most central
-nodes are 373903.Hore_04860 (degree 919), 373903.Hore_07150 (degree 867), 373903.Hore_10450
-(degree 820), 373903.Hore_02020 (degree 805) and 373903.Hore_02400 (degree 745).
+The undirected graph Halothermothrix orenii has 2332 nodes and 167084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06147 and has 3 connected components, where the component with most
+nodes has 2324 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 143.30, and
+the node degree mode is 12. The top 5 most central nodes are 373903.Hore_04860
+(degree 919), 373903.Hore_07150 (degree 867), 373903.Hore_10450 (degree
+820), 373903.Hore_02020 (degree 805) and 373903.Hore_02400 (degree 745).
 
 
 References
@@ -106,13 +107,14 @@ def HalothermothrixOrenii(
 	
 	Datetime: 2021-02-02 20:35:58.291328
 	
-	The undirected graph Halothermothrix orenii has 2332 nodes and 167084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06147 and
-	has 3 connected components, where the component with most nodes has 2324 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 143.30, and the node degree mode is 12. The top 5 most central
-	nodes are 373903.Hore_04860 (degree 919), 373903.Hore_07150 (degree 867), 373903.Hore_10450
-	(degree 820), 373903.Hore_02020 (degree 805) and 373903.Hore_02400 (degree 745).
+	The undirected graph Halothermothrix orenii has 2332 nodes and 167084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06147 and has 3 connected components, where the component with most
+	nodes has 2324 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 143.30, and
+	the node degree mode is 12. The top 5 most central nodes are 373903.Hore_04860
+	(degree 919), 373903.Hore_07150 (degree 867), 373903.Hore_10450 (degree
+	820), 373903.Hore_02020 (degree 805) and 373903.Hore_02400 (degree 745).
 	
 
 

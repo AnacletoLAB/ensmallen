@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:24:18.084432
 
-The undirected graph Latimeria chalumnae has 18067 nodes and 3743542 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02294 and
-has 3 connected components, where the component with most nodes has 18063 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 295,
-the mean node degree is 414.41, and the node degree mode is 2. The top 5 most central
-nodes are 7897.ENSLACP00000000961 (degree 4066), 7897.ENSLACP00000018007 (degree
-4003), 7897.ENSLACP00000000894 (degree 3936), 7897.ENSLACP00000012705 (degree 3783)
-and 7897.ENSLACP00000006801 (degree 3389).
+The undirected graph Latimeria chalumnae has 18067 nodes and 3743542 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02294 and has 3 connected components, where the component with most
+nodes has 18063 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 295, the mean node degree is 414.41, and
+the node degree mode is 2. The top 5 most central nodes are 7897.ENSLACP00000000961
+(degree 4066), 7897.ENSLACP00000018007 (degree 4003), 7897.ENSLACP00000000894
+(degree 3936), 7897.ENSLACP00000012705 (degree 3783) and 7897.ENSLACP00000006801
+(degree 3389).
 
 
 References
@@ -107,14 +108,15 @@ def LatimeriaChalumnae(
 	
 	Datetime: 2021-02-02 17:24:18.084432
 	
-	The undirected graph Latimeria chalumnae has 18067 nodes and 3743542 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02294 and
-	has 3 connected components, where the component with most nodes has 18063 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 295,
-	the mean node degree is 414.41, and the node degree mode is 2. The top 5 most central
-	nodes are 7897.ENSLACP00000000961 (degree 4066), 7897.ENSLACP00000018007 (degree
-	4003), 7897.ENSLACP00000000894 (degree 3936), 7897.ENSLACP00000012705 (degree 3783)
-	and 7897.ENSLACP00000006801 (degree 3389).
+	The undirected graph Latimeria chalumnae has 18067 nodes and 3743542 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02294 and has 3 connected components, where the component with most
+	nodes has 18063 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 295, the mean node degree is 414.41, and
+	the node degree mode is 2. The top 5 most central nodes are 7897.ENSLACP00000000961
+	(degree 4066), 7897.ENSLACP00000018007 (degree 4003), 7897.ENSLACP00000000894
+	(degree 3936), 7897.ENSLACP00000012705 (degree 3783) and 7897.ENSLACP00000006801
+	(degree 3389).
 	
 
 

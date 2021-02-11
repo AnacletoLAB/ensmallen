@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:04.819844
 
-The undirected graph Liberibacter solanacearum has 1160 nodes and 63925 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09510
-and has 23 connected components, where the component with most nodes has 1095 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 110.22, and the node degree mode is 2. The top 5 most
-central nodes are 658172.CKC_01960 (degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105
-(degree 435), 658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
+The undirected graph Liberibacter solanacearum has 1160 nodes and 63925
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09510 and has 23 connected components, where the component
+with most nodes has 1095 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 110.22,
+and the node degree mode is 2. The top 5 most central nodes are 658172.CKC_01960
+(degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105 (degree 435),
+658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
 
 
 References
@@ -106,13 +107,14 @@ def LiberibacterSolanacearum(
 	
 	Datetime: 2021-02-02 21:27:04.819844
 	
-	The undirected graph Liberibacter solanacearum has 1160 nodes and 63925 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09510
-	and has 23 connected components, where the component with most nodes has 1095 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 110.22, and the node degree mode is 2. The top 5 most
-	central nodes are 658172.CKC_01960 (degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105
-	(degree 435), 658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
+	The undirected graph Liberibacter solanacearum has 1160 nodes and 63925
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09510 and has 23 connected components, where the component
+	with most nodes has 1095 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 110.22,
+	and the node degree mode is 2. The top 5 most central nodes are 658172.CKC_01960
+	(degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105 (degree 435),
+	658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
 	
 
 

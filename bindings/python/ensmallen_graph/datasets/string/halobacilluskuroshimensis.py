@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:45.010791
 
-The undirected graph Halobacillus kuroshimensis has 3781 nodes and 368401 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05155
-and has 14 connected components, where the component with most nodes has 3752 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 194.87, and the node degree mode is 2. The top 5
-most central nodes are 1121938.AUDY01000010_gene2592 (degree 1337), 1121938.AUDY01000011_gene721
-(degree 1261), 1121938.AUDY01000016_gene3061 (degree 1136), 1121938.AUDY01000012_gene3615
-(degree 1135) and 1121938.AUDY01000010_gene2778 (degree 1084).
+The undirected graph Halobacillus kuroshimensis has 3781 nodes and 368401
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05155 and has 14 connected components, where the component
+with most nodes has 3752 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 194.87,
+and the node degree mode is 2. The top 5 most central nodes are 1121938.AUDY01000010_gene2592
+(degree 1337), 1121938.AUDY01000011_gene721 (degree 1261), 1121938.AUDY01000016_gene3061
+(degree 1136), 1121938.AUDY01000012_gene3615 (degree 1135) and 1121938.AUDY01000010_gene2778
+(degree 1084).
 
 
 References
@@ -107,14 +108,15 @@ def HalobacillusKuroshimensis(
 	
 	Datetime: 2021-02-02 22:39:45.010791
 	
-	The undirected graph Halobacillus kuroshimensis has 3781 nodes and 368401 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05155
-	and has 14 connected components, where the component with most nodes has 3752 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 194.87, and the node degree mode is 2. The top 5
-	most central nodes are 1121938.AUDY01000010_gene2592 (degree 1337), 1121938.AUDY01000011_gene721
-	(degree 1261), 1121938.AUDY01000016_gene3061 (degree 1136), 1121938.AUDY01000012_gene3615
-	(degree 1135) and 1121938.AUDY01000010_gene2778 (degree 1084).
+	The undirected graph Halobacillus kuroshimensis has 3781 nodes and 368401
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05155 and has 14 connected components, where the component
+	with most nodes has 3752 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 194.87,
+	and the node degree mode is 2. The top 5 most central nodes are 1121938.AUDY01000010_gene2592
+	(degree 1337), 1121938.AUDY01000011_gene721 (degree 1261), 1121938.AUDY01000016_gene3061
+	(degree 1136), 1121938.AUDY01000012_gene3615 (degree 1135) and 1121938.AUDY01000010_gene2778
+	(degree 1084).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:04:04.422740
 
-The undirected graph Pseudoalteromonas sp. OCN003 has 3966 nodes and 429746 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05466
-and has 15 connected components, where the component with most nodes has 3935 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 195, the mean node degree is 216.72, and the node degree mode is 1. The top 5
-most central nodes are 1348114.OM33_01665 (degree 1330), 1348114.OM33_03980 (degree
-1309), 1348114.OM33_14690 (degree 1103), 1348114.OM33_09625 (degree 1036) and 1348114.OM33_14695
-(degree 943).
+The undirected graph Pseudoalteromonas sp. OCN003 has 3966 nodes and 429746
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05466 and has 15 connected components, where the component
+with most nodes has 3935 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 216.72,
+and the node degree mode is 1. The top 5 most central nodes are 1348114.OM33_01665
+(degree 1330), 1348114.OM33_03980 (degree 1309), 1348114.OM33_14690 (degree
+1103), 1348114.OM33_09625 (degree 1036) and 1348114.OM33_14695 (degree
+943).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasSp.Ocn003(
 	
 	Datetime: 2021-02-03 22:04:04.422740
 	
-	The undirected graph Pseudoalteromonas sp. OCN003 has 3966 nodes and 429746 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05466
-	and has 15 connected components, where the component with most nodes has 3935 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 195, the mean node degree is 216.72, and the node degree mode is 1. The top 5
-	most central nodes are 1348114.OM33_01665 (degree 1330), 1348114.OM33_03980 (degree
-	1309), 1348114.OM33_14690 (degree 1103), 1348114.OM33_09625 (degree 1036) and 1348114.OM33_14695
-	(degree 943).
+	The undirected graph Pseudoalteromonas sp. OCN003 has 3966 nodes and 429746
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05466 and has 15 connected components, where the component
+	with most nodes has 3935 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 216.72,
+	and the node degree mode is 1. The top 5 most central nodes are 1348114.OM33_01665
+	(degree 1330), 1348114.OM33_03980 (degree 1309), 1348114.OM33_14690 (degree
+	1103), 1348114.OM33_09625 (degree 1036) and 1348114.OM33_14695 (degree
+	943).
 	
 
 

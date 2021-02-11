@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:54:08.731514
 
-The undirected graph EX4 has 2600 nodes and 35880 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01062 and is connected,
-as it has a single component. The graph median node degree is 28, the mean node degree
-is 27.60, and the node degree mode is 28. The top 5 most central nodes are 2588 (degree
-30), 2542 (degree 30), 2593 (degree 30), 2562 (degree 30) and 2592 (degree 30).
+The undirected graph EX4 has 2600 nodes and 35880 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.01062
+and is connected, as it has a single component. The graph median node degree
+is 28, the mean node degree is 27.60, and the node degree mode is 28. The
+top 5 most central nodes are 2588 (degree 30), 2542 (degree 30), 2593 (degree
+30), 2562 (degree 30) and 2592 (degree 30).
 
 
 References
@@ -101,11 +102,12 @@ def Ex4(
 	
 	Datetime: 2021-02-06 09:54:08.731514
 	
-	The undirected graph EX4 has 2600 nodes and 35880 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01062 and is connected,
-	as it has a single component. The graph median node degree is 28, the mean node degree
-	is 27.60, and the node degree mode is 28. The top 5 most central nodes are 2588 (degree
-	30), 2542 (degree 30), 2593 (degree 30), 2562 (degree 30) and 2592 (degree 30).
+	The undirected graph EX4 has 2600 nodes and 35880 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.01062
+	and is connected, as it has a single component. The graph median node degree
+	is 28, the mean node degree is 27.60, and the node degree mode is 28. The
+	top 5 most central nodes are 2588 (degree 30), 2542 (degree 30), 2593 (degree
+	30), 2562 (degree 30) and 2592 (degree 30).
 	
 
 

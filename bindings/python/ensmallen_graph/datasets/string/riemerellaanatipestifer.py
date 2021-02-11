@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:47.546854
 
-The undirected graph Riemerella anatipestifer has 1978 nodes and 148890 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07615
-and has 4 connected components, where the component with most nodes has 1969 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 150.55, and the node degree mode is 3. The top 5
-most central nodes are 992406.RIA_2082 (degree 790), 992406.RIA_2105 (degree 727),
-992406.RIA_2149 (degree 644), 992406.RIA_2130 (degree 629) and 992406.RIA_1883 (degree
-582).
+The undirected graph Riemerella anatipestifer has 1978 nodes and 148890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07615 and has 4 connected components, where the component
+with most nodes has 1969 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 150.55,
+and the node degree mode is 3. The top 5 most central nodes are 992406.RIA_2082
+(degree 790), 992406.RIA_2105 (degree 727), 992406.RIA_2149 (degree 644),
+992406.RIA_2130 (degree 629) and 992406.RIA_1883 (degree 582).
 
 
 References
@@ -107,14 +107,14 @@ def RiemerellaAnatipestifer(
 	
 	Datetime: 2021-02-02 22:04:47.546854
 	
-	The undirected graph Riemerella anatipestifer has 1978 nodes and 148890 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07615
-	and has 4 connected components, where the component with most nodes has 1969 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 150.55, and the node degree mode is 3. The top 5
-	most central nodes are 992406.RIA_2082 (degree 790), 992406.RIA_2105 (degree 727),
-	992406.RIA_2149 (degree 644), 992406.RIA_2130 (degree 629) and 992406.RIA_1883 (degree
-	582).
+	The undirected graph Riemerella anatipestifer has 1978 nodes and 148890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07615 and has 4 connected components, where the component
+	with most nodes has 1969 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 150.55,
+	and the node degree mode is 3. The top 5 most central nodes are 992406.RIA_2082
+	(degree 790), 992406.RIA_2105 (degree 727), 992406.RIA_2149 (degree 644),
+	992406.RIA_2130 (degree 629) and 992406.RIA_1883 (degree 582).
 	
 
 

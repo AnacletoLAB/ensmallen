@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:12.112639
 
-The undirected graph Synechococcus sp. BL107 has 2424 nodes and 159649 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05436 and
-has 41 connected components, where the component with most nodes has 2329 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 131.72, and the node degree mode is 2. The top 5 most central
-nodes are 313625.BL107_15605 (degree 871), 313625.BL107_06434 (degree 727), 313625.BL107_08174
-(degree 658), 313625.BL107_16855 (degree 652) and 313625.BL107_08289 (degree 650).
+The undirected graph Synechococcus sp. BL107 has 2424 nodes and 159649
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05436 and has 41 connected components, where the component
+with most nodes has 2329 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 131.72,
+and the node degree mode is 2. The top 5 most central nodes are 313625.BL107_15605
+(degree 871), 313625.BL107_06434 (degree 727), 313625.BL107_08174 (degree
+658), 313625.BL107_16855 (degree 652) and 313625.BL107_08289 (degree 650).
 
 
 References
@@ -106,13 +107,14 @@ def SynechococcusSp.Bl107(
 	
 	Datetime: 2021-02-02 20:24:12.112639
 	
-	The undirected graph Synechococcus sp. BL107 has 2424 nodes and 159649 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05436 and
-	has 41 connected components, where the component with most nodes has 2329 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 131.72, and the node degree mode is 2. The top 5 most central
-	nodes are 313625.BL107_15605 (degree 871), 313625.BL107_06434 (degree 727), 313625.BL107_08174
-	(degree 658), 313625.BL107_16855 (degree 652) and 313625.BL107_08289 (degree 650).
+	The undirected graph Synechococcus sp. BL107 has 2424 nodes and 159649
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05436 and has 41 connected components, where the component
+	with most nodes has 2329 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 131.72,
+	and the node degree mode is 2. The top 5 most central nodes are 313625.BL107_15605
+	(degree 871), 313625.BL107_06434 (degree 727), 313625.BL107_08174 (degree
+	658), 313625.BL107_16855 (degree 652) and 313625.BL107_08289 (degree 650).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:28.050535
 
-The undirected graph Oscillatoria sp. PCC10802 has 6035 nodes and 945944 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05195
-and has 53 connected components, where the component with most nodes has 5910 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 246, the mean node degree is 313.49, and the node degree mode is 1. The top 5
-most central nodes are 1173028.ANKO01000037_gene3769 (degree 2238), 1173028.ANKO01000116_gene5665
-(degree 2179), 1173028.ANKO01000017_gene225 (degree 2104), 1173028.ANKO01000159_gene5229
-(degree 2028) and 1173028.ANKO01000168_gene4334 (degree 1971).
+The undirected graph Oscillatoria sp. PCC10802 has 6035 nodes and 945944
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05195 and has 53 connected components, where the component
+with most nodes has 5910 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 246, the mean node degree is 313.49,
+and the node degree mode is 1. The top 5 most central nodes are 1173028.ANKO01000037_gene3769
+(degree 2238), 1173028.ANKO01000116_gene5665 (degree 2179), 1173028.ANKO01000017_gene225
+(degree 2104), 1173028.ANKO01000159_gene5229 (degree 2028) and 1173028.ANKO01000168_gene4334
+(degree 1971).
 
 
 References
@@ -107,14 +108,15 @@ def OscillatoriaSp.Pcc10802(
 	
 	Datetime: 2021-02-02 23:08:28.050535
 	
-	The undirected graph Oscillatoria sp. PCC10802 has 6035 nodes and 945944 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05195
-	and has 53 connected components, where the component with most nodes has 5910 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 246, the mean node degree is 313.49, and the node degree mode is 1. The top 5
-	most central nodes are 1173028.ANKO01000037_gene3769 (degree 2238), 1173028.ANKO01000116_gene5665
-	(degree 2179), 1173028.ANKO01000017_gene225 (degree 2104), 1173028.ANKO01000159_gene5229
-	(degree 2028) and 1173028.ANKO01000168_gene4334 (degree 1971).
+	The undirected graph Oscillatoria sp. PCC10802 has 6035 nodes and 945944
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05195 and has 53 connected components, where the component
+	with most nodes has 5910 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 246, the mean node degree is 313.49,
+	and the node degree mode is 1. The top 5 most central nodes are 1173028.ANKO01000037_gene3769
+	(degree 2238), 1173028.ANKO01000116_gene5665 (degree 2179), 1173028.ANKO01000017_gene225
+	(degree 2104), 1173028.ANKO01000159_gene5229 (degree 2028) and 1173028.ANKO01000168_gene4334
+	(degree 1971).
 	
 
 

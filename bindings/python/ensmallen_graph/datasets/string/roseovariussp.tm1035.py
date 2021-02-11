@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:59.629983
 
-The undirected graph Roseovarius sp. TM1035 has 4060 nodes and 638643 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07751 and
-has 5 connected components, where the component with most nodes has 4047 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 286,
-the mean node degree is 314.60, and the node degree mode is 3. The top 5 most central
-nodes are 391613.RTM1035_18000 (degree 1844), 391613.RTM1035_15527 (degree 1800),
-391613.RTM1035_08934 (degree 1716), 391613.RTM1035_08779 (degree 1586) and 391613.RTM1035_05455
+The undirected graph Roseovarius sp. TM1035 has 4060 nodes and 638643 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07751 and has 5 connected components, where the component with most
+nodes has 4047 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 286, the mean node degree is 314.60, and
+the node degree mode is 3. The top 5 most central nodes are 391613.RTM1035_18000
+(degree 1844), 391613.RTM1035_15527 (degree 1800), 391613.RTM1035_08934
+(degree 1716), 391613.RTM1035_08779 (degree 1586) and 391613.RTM1035_05455
 (degree 1504).
 
 
@@ -107,13 +108,14 @@ def RoseovariusSp.Tm1035(
 	
 	Datetime: 2021-02-02 20:39:59.629983
 	
-	The undirected graph Roseovarius sp. TM1035 has 4060 nodes and 638643 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07751 and
-	has 5 connected components, where the component with most nodes has 4047 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 286,
-	the mean node degree is 314.60, and the node degree mode is 3. The top 5 most central
-	nodes are 391613.RTM1035_18000 (degree 1844), 391613.RTM1035_15527 (degree 1800),
-	391613.RTM1035_08934 (degree 1716), 391613.RTM1035_08779 (degree 1586) and 391613.RTM1035_05455
+	The undirected graph Roseovarius sp. TM1035 has 4060 nodes and 638643 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07751 and has 5 connected components, where the component with most
+	nodes has 4047 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 286, the mean node degree is 314.60, and
+	the node degree mode is 3. The top 5 most central nodes are 391613.RTM1035_18000
+	(degree 1844), 391613.RTM1035_15527 (degree 1800), 391613.RTM1035_08934
+	(degree 1716), 391613.RTM1035_08779 (degree 1586) and 391613.RTM1035_05455
 	(degree 1504).
 	
 

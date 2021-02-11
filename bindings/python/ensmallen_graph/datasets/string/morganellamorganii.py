@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:50.220893
 
-The undirected graph Morganella morganii has 3501 nodes and 327898 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05352 and
-has 10 connected components, where the component with most nodes has 3483 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 187.32, and the node degree mode is 1. The top 5 most central
-nodes are 1124991.MU9_655 (degree 1159), 1124991.MU9_1616 (degree 1082), 1124991.MU9_1921
-(degree 918), 1124991.MU9_3327 (degree 912) and 1124991.MU9_1920 (degree 903).
+The undirected graph Morganella morganii has 3501 nodes and 327898 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05352 and has 10 connected components, where the component with most
+nodes has 3483 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 168, the mean node degree is 187.32, and
+the node degree mode is 1. The top 5 most central nodes are 1124991.MU9_655
+(degree 1159), 1124991.MU9_1616 (degree 1082), 1124991.MU9_1921 (degree
+918), 1124991.MU9_3327 (degree 912) and 1124991.MU9_1920 (degree 903).
 
 
 References
@@ -106,13 +107,14 @@ def MorganellaMorganii(
 	
 	Datetime: 2021-02-02 22:53:50.220893
 	
-	The undirected graph Morganella morganii has 3501 nodes and 327898 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05352 and
-	has 10 connected components, where the component with most nodes has 3483 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 187.32, and the node degree mode is 1. The top 5 most central
-	nodes are 1124991.MU9_655 (degree 1159), 1124991.MU9_1616 (degree 1082), 1124991.MU9_1921
-	(degree 918), 1124991.MU9_3327 (degree 912) and 1124991.MU9_1920 (degree 903).
+	The undirected graph Morganella morganii has 3501 nodes and 327898 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05352 and has 10 connected components, where the component with most
+	nodes has 3483 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 168, the mean node degree is 187.32, and
+	the node degree mode is 1. The top 5 most central nodes are 1124991.MU9_655
+	(degree 1159), 1124991.MU9_1616 (degree 1082), 1124991.MU9_1921 (degree
+	918), 1124991.MU9_3327 (degree 912) and 1124991.MU9_1920 (degree 903).
 	
 
 

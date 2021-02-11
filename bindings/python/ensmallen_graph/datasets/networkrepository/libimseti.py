@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:54:25.989108
 
-The undirected multigraph libimseti has 220970 nodes and 17270693 unweighted edges
-with 10 different edge types:  the 5 most common are 10, 1, 5, 7 and 8, of which
-none are self-loops and 75098 are parallel. The graph is quite sparse as it has a
-density of 0.00071 and is connected, as it has a single component. The graph median
-node degree is 57, the mean node degree is 156.32, and the node degree mode is 1.
-The top 5 most central nodes are 156148 (degree 33389), 31116 (degree 28429), 90280
-(degree 25232), 121859 (degree 23679) and 193687 (degree 23649).
+The undirected multigraph libimseti has 220970 nodes and 17270693 unweighted
+edges with 10 different edge types:  the 5 most common are 10, 1, 5, 7
+and 8, of which none are self-loops and 75098 are parallel. The graph is
+quite sparse as it has a density of 0.00071 and is connected, as it has
+a single component. The graph median node degree is 57, the mean node degree
+is 156.32, and the node degree mode is 1. The top 5 most central nodes
+are 156148 (degree 33389), 31116 (degree 28429), 90280 (degree 25232),
+121859 (degree 23679) and 193687 (degree 23649).
 
 
 References
@@ -103,13 +104,14 @@ def Libimseti(
 	
 	Datetime: 2021-02-06 20:54:25.989108
 	
-	The undirected multigraph libimseti has 220970 nodes and 17270693 unweighted edges
-	with 10 different edge types:  the 5 most common are 10, 1, 5, 7 and 8, of which
-	none are self-loops and 75098 are parallel. The graph is quite sparse as it has a
-	density of 0.00071 and is connected, as it has a single component. The graph median
-	node degree is 57, the mean node degree is 156.32, and the node degree mode is 1.
-	The top 5 most central nodes are 156148 (degree 33389), 31116 (degree 28429), 90280
-	(degree 25232), 121859 (degree 23679) and 193687 (degree 23649).
+	The undirected multigraph libimseti has 220970 nodes and 17270693 unweighted
+	edges with 10 different edge types:  the 5 most common are 10, 1, 5, 7
+	and 8, of which none are self-loops and 75098 are parallel. The graph is
+	quite sparse as it has a density of 0.00071 and is connected, as it has
+	a single component. The graph median node degree is 57, the mean node degree
+	is 156.32, and the node degree mode is 1. The top 5 most central nodes
+	are 156148 (degree 33389), 31116 (degree 28429), 90280 (degree 25232),
+	121859 (degree 23679) and 193687 (degree 23649).
 	
 
 

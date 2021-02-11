@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:59.324796
 
-The undirected graph maayan-Stelzl has 1706 nodes, of which 4 are singletons (all
-have self-loops), and 3191 unweighted edges, of which 36 are self-loops. The graph
-is sparse as it has a density of 0.00218 and has 43 connected components, where the
-component with most nodes has 1615 nodes and the component with the least nodes has
-a single node. The graph median node degree is 2, the mean node degree is 3.72, and
-the node degree mode is 1. The top 5 most central nodes are 67 (degree 95), 31 (degree
-72), 13 (degree 72), 196 (degree 66) and 54 (degree 65).
+The undirected graph maayan-Stelzl has 1706 nodes, of which 4 are singletons
+(all have self-loops), and 3191 unweighted edges, of which 36 are self-loops.
+The graph is sparse as it has a density of 0.00218 and has 43 connected
+components, where the component with most nodes has 1615 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 2, the mean node degree is 3.72, and the node degree mode is
+1. The top 5 most central nodes are 67 (degree 95), 31 (degree 72), 13
+(degree 72), 196 (degree 66) and 54 (degree 65).
 
 
 References
@@ -103,13 +104,14 @@ def MaayanStelzl(
 	
 	Datetime: 2021-02-06 08:13:59.324796
 	
-	The undirected graph maayan-Stelzl has 1706 nodes, of which 4 are singletons (all
-	have self-loops), and 3191 unweighted edges, of which 36 are self-loops. The graph
-	is sparse as it has a density of 0.00218 and has 43 connected components, where the
-	component with most nodes has 1615 nodes and the component with the least nodes has
-	a single node. The graph median node degree is 2, the mean node degree is 3.72, and
-	the node degree mode is 1. The top 5 most central nodes are 67 (degree 95), 31 (degree
-	72), 13 (degree 72), 196 (degree 66) and 54 (degree 65).
+	The undirected graph maayan-Stelzl has 1706 nodes, of which 4 are singletons
+	(all have self-loops), and 3191 unweighted edges, of which 36 are self-loops.
+	The graph is sparse as it has a density of 0.00218 and has 43 connected
+	components, where the component with most nodes has 1615 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 2, the mean node degree is 3.72, and the node degree mode is
+	1. The top 5 most central nodes are 67 (degree 95), 31 (degree 72), 13
+	(degree 72), 196 (degree 66) and 54 (degree 65).
 	
 
 

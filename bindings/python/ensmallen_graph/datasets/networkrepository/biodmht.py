@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:29:58.730176
 
-The undirected graph bio-DM-HT has 2989 nodes and 4660 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00104 and has 62 connected
-components, where the component with most nodes has 2831 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 2, the mean node
-degree is 3.12 and the node degree mode is 1. The top 5 most central nodes are 552
-(degree 37), 615 (degree 29), 412 (degree 26), 409 (degree 26) and 719 (degree 25).
+The undirected graph bio-DM-HT has 2989 nodes and 4660 weighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00104 and has 62 connected components, where the component with most
+nodes has 2831 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 3.12 and the
+node degree mode is 1. The top 5 most central nodes are 552 (degree 37),
+615 (degree 29), 412 (degree 26), 409 (degree 26) and 719 (degree 25).
 
 
 References
@@ -113,12 +114,13 @@ def BioDmHt(
 	
 	Datetime: 2021-02-03 22:29:58.730176
 	
-	The undirected graph bio-DM-HT has 2989 nodes and 4660 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00104 and has 62 connected
-	components, where the component with most nodes has 2831 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 2, the mean node
-	degree is 3.12 and the node degree mode is 1. The top 5 most central nodes are 552
-	(degree 37), 615 (degree 29), 412 (degree 26), 409 (degree 26) and 719 (degree 25).
+	The undirected graph bio-DM-HT has 2989 nodes and 4660 weighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00104 and has 62 connected components, where the component with most
+	nodes has 2831 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 3.12 and the
+	node degree mode is 1. The top 5 most central nodes are 552 (degree 37),
+	615 (degree 29), 412 (degree 26), 409 (degree 26) and 719 (degree 25).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:44.913046
 
-The undirected graph Shewanella woodyi has 4831 nodes and 405247 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-has 23 connected components, where the component with most nodes has 4771 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 167.77, and the node degree mode is 3. The top 5 most central
-nodes are 392500.Swoo_0491 (degree 1493), 392500.Swoo_0060 (degree 1460), 392500.Swoo_4123
-(degree 1247), 392500.Swoo_1560 (degree 1159) and 392500.Swoo_1512 (degree 1151).
+The undirected graph Shewanella woodyi has 4831 nodes and 405247 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03473 and has 23 connected components, where the component with most
+nodes has 4771 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 167.77, and
+the node degree mode is 3. The top 5 most central nodes are 392500.Swoo_0491
+(degree 1493), 392500.Swoo_0060 (degree 1460), 392500.Swoo_4123 (degree
+1247), 392500.Swoo_1560 (degree 1159) and 392500.Swoo_1512 (degree 1151).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaWoodyi(
 	
 	Datetime: 2021-02-02 20:40:44.913046
 	
-	The undirected graph Shewanella woodyi has 4831 nodes and 405247 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-	has 23 connected components, where the component with most nodes has 4771 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 167.77, and the node degree mode is 3. The top 5 most central
-	nodes are 392500.Swoo_0491 (degree 1493), 392500.Swoo_0060 (degree 1460), 392500.Swoo_4123
-	(degree 1247), 392500.Swoo_1560 (degree 1159) and 392500.Swoo_1512 (degree 1151).
+	The undirected graph Shewanella woodyi has 4831 nodes and 405247 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03473 and has 23 connected components, where the component with most
+	nodes has 4771 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 167.77, and
+	the node degree mode is 3. The top 5 most central nodes are 392500.Swoo_0491
+	(degree 1493), 392500.Swoo_0060 (degree 1460), 392500.Swoo_4123 (degree
+	1247), 392500.Swoo_1560 (degree 1159) and 392500.Swoo_1512 (degree 1151).
 	
 
 

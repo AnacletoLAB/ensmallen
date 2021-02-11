@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:43.743047
 
-The undirected graph Paenibacillus sanguinis has 4152 nodes and 429690 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04986 and
-has 9 connected components, where the component with most nodes has 4134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 206.98, and the node degree mode is 1. The top 5 most central
-nodes are 1122925.KB895396_gene1829 (degree 1313), 1122925.KB895377_gene1000 (degree
-1306), 1122925.KB895384_gene3279 (degree 1183), 1122925.KB895379_gene2330 (degree
-1080) and 1122925.KB895379_gene2315 (degree 1061).
+The undirected graph Paenibacillus sanguinis has 4152 nodes and 429690
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04986 and has 9 connected components, where the component
+with most nodes has 4134 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 206.98,
+and the node degree mode is 1. The top 5 most central nodes are 1122925.KB895396_gene1829
+(degree 1313), 1122925.KB895377_gene1000 (degree 1306), 1122925.KB895384_gene3279
+(degree 1183), 1122925.KB895379_gene2330 (degree 1080) and 1122925.KB895379_gene2315
+(degree 1061).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSanguinis(
 	
 	Datetime: 2021-02-02 22:44:43.743047
 	
-	The undirected graph Paenibacillus sanguinis has 4152 nodes and 429690 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04986 and
-	has 9 connected components, where the component with most nodes has 4134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 206.98, and the node degree mode is 1. The top 5 most central
-	nodes are 1122925.KB895396_gene1829 (degree 1313), 1122925.KB895377_gene1000 (degree
-	1306), 1122925.KB895384_gene3279 (degree 1183), 1122925.KB895379_gene2330 (degree
-	1080) and 1122925.KB895379_gene2315 (degree 1061).
+	The undirected graph Paenibacillus sanguinis has 4152 nodes and 429690
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04986 and has 9 connected components, where the component
+	with most nodes has 4134 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 206.98,
+	and the node degree mode is 1. The top 5 most central nodes are 1122925.KB895396_gene1829
+	(degree 1313), 1122925.KB895377_gene1000 (degree 1306), 1122925.KB895384_gene3279
+	(degree 1183), 1122925.KB895379_gene2330 (degree 1080) and 1122925.KB895379_gene2315
+	(degree 1061).
 	
 
 

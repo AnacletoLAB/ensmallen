@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:52.825115
 
-The undirected graph Bacillus oceanisediminis has 5679 nodes and 554770 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03441
-and has 32 connected components, where the component with most nodes has 5600 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 195.38, and the node degree mode is 1. The top 5
-most central nodes are 1196031.ALEG01000064_gene3623 (degree 2264), 1196031.ALEG01000061_gene2118
-(degree 1568), 1196031.ALEG01000005_gene5626 (degree 1543), 1196031.ALEG01000072_gene965
-(degree 1521) and 1196031.ALEG01000040_gene2911 (degree 1518).
+The undirected graph Bacillus oceanisediminis has 5679 nodes and 554770
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03441 and has 32 connected components, where the component
+with most nodes has 5600 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 195.38,
+and the node degree mode is 1. The top 5 most central nodes are 1196031.ALEG01000064_gene3623
+(degree 2264), 1196031.ALEG01000061_gene2118 (degree 1568), 1196031.ALEG01000005_gene5626
+(degree 1543), 1196031.ALEG01000072_gene965 (degree 1521) and 1196031.ALEG01000040_gene2911
+(degree 1518).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusOceanisediminis(
 	
 	Datetime: 2021-02-02 23:12:52.825115
 	
-	The undirected graph Bacillus oceanisediminis has 5679 nodes and 554770 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03441
-	and has 32 connected components, where the component with most nodes has 5600 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 195.38, and the node degree mode is 1. The top 5
-	most central nodes are 1196031.ALEG01000064_gene3623 (degree 2264), 1196031.ALEG01000061_gene2118
-	(degree 1568), 1196031.ALEG01000005_gene5626 (degree 1543), 1196031.ALEG01000072_gene965
-	(degree 1521) and 1196031.ALEG01000040_gene2911 (degree 1518).
+	The undirected graph Bacillus oceanisediminis has 5679 nodes and 554770
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03441 and has 32 connected components, where the component
+	with most nodes has 5600 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 195.38,
+	and the node degree mode is 1. The top 5 most central nodes are 1196031.ALEG01000064_gene3623
+	(degree 2264), 1196031.ALEG01000061_gene2118 (degree 1568), 1196031.ALEG01000005_gene5626
+	(degree 1543), 1196031.ALEG01000072_gene965 (degree 1521) and 1196031.ALEG01000040_gene2911
+	(degree 1518).
 	
 
 

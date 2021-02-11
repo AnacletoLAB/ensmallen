@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:18.873662
 
-The undirected graph Rhodococcus defluvii has 4733 nodes and 569664 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05087 and
-has 19 connected components, where the component with most nodes has 4690 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 240.72, and the node degree mode is 2. The top 5 most central
-nodes are 1323361.JPOC01000005_gene338 (degree 1886), 1323361.JPOC01000046_gene756
-(degree 1701), 1323361.JPOC01000022_gene2969 (degree 1469), 1323361.JPOC01000039_gene4430
-(degree 1354) and 1323361.JPOC01000029_gene2363 (degree 1353).
+The undirected graph Rhodococcus defluvii has 4733 nodes and 569664 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05087 and has 19 connected components, where the component with most
+nodes has 4690 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 240.72, and
+the node degree mode is 2. The top 5 most central nodes are 1323361.JPOC01000005_gene338
+(degree 1886), 1323361.JPOC01000046_gene756 (degree 1701), 1323361.JPOC01000022_gene2969
+(degree 1469), 1323361.JPOC01000039_gene4430 (degree 1354) and 1323361.JPOC01000029_gene2363
+(degree 1353).
 
 
 References
@@ -107,14 +108,15 @@ def RhodococcusDefluvii(
 	
 	Datetime: 2021-02-03 21:54:18.873662
 	
-	The undirected graph Rhodococcus defluvii has 4733 nodes and 569664 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05087 and
-	has 19 connected components, where the component with most nodes has 4690 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 240.72, and the node degree mode is 2. The top 5 most central
-	nodes are 1323361.JPOC01000005_gene338 (degree 1886), 1323361.JPOC01000046_gene756
-	(degree 1701), 1323361.JPOC01000022_gene2969 (degree 1469), 1323361.JPOC01000039_gene4430
-	(degree 1354) and 1323361.JPOC01000029_gene2363 (degree 1353).
+	The undirected graph Rhodococcus defluvii has 4733 nodes and 569664 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05087 and has 19 connected components, where the component with most
+	nodes has 4690 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 240.72, and
+	the node degree mode is 2. The top 5 most central nodes are 1323361.JPOC01000005_gene338
+	(degree 1886), 1323361.JPOC01000046_gene756 (degree 1701), 1323361.JPOC01000022_gene2969
+	(degree 1469), 1323361.JPOC01000039_gene4430 (degree 1354) and 1323361.JPOC01000029_gene2363
+	(degree 1353).
 	
 
 

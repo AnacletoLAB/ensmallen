@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:49:04.141960
 
-The undirected graph Streptococcus sp. VT 162 has 1924 nodes and 107376 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05804
-and has 15 connected components, where the component with most nodes has 1880 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 111.62, and the node degree mode is 2. The top 5 most
-central nodes are 1419814.V470_09620 (degree 777), 1419814.V470_07540 (degree 581),
-1419814.V470_05285 (degree 579), 1419814.V470_03700 (degree 572) and 1419814.V470_09760
-(degree 571).
+The undirected graph Streptococcus sp. VT 162 has 1924 nodes and 107376
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05804 and has 15 connected components, where the component
+with most nodes has 1880 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 111.62,
+and the node degree mode is 2. The top 5 most central nodes are 1419814.V470_09620
+(degree 777), 1419814.V470_07540 (degree 581), 1419814.V470_05285 (degree
+579), 1419814.V470_03700 (degree 572) and 1419814.V470_09760 (degree 571).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusSp.Vt162(
 	
 	Datetime: 2021-02-03 22:49:04.141960
 	
-	The undirected graph Streptococcus sp. VT 162 has 1924 nodes and 107376 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05804
-	and has 15 connected components, where the component with most nodes has 1880 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 111.62, and the node degree mode is 2. The top 5 most
-	central nodes are 1419814.V470_09620 (degree 777), 1419814.V470_07540 (degree 581),
-	1419814.V470_05285 (degree 579), 1419814.V470_03700 (degree 572) and 1419814.V470_09760
-	(degree 571).
+	The undirected graph Streptococcus sp. VT 162 has 1924 nodes and 107376
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05804 and has 15 connected components, where the component
+	with most nodes has 1880 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 111.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1419814.V470_09620
+	(degree 777), 1419814.V470_07540 (degree 581), 1419814.V470_05285 (degree
+	579), 1419814.V470_03700 (degree 572) and 1419814.V470_09760 (degree 571).
 	
 
 

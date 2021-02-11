@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:54.053022
 
-The undirected graph Komagataeibacter medellinensis has 3126 nodes and 180421 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03694
-and has 15 connected components, where the component with most nodes has 3090 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 115.43, and the node degree mode is 2. The top 5 most
-central nodes are 634177.GLX_16440 (degree 1073), 634177.GLX_20710 (degree 980),
-634177.GLX_07900 (degree 875), 634177.GLX_07020 (degree 825) and 634177.GLX_26120
-(degree 783).
+The undirected graph Komagataeibacter medellinensis has 3126 nodes and
+180421 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03694 and has 15 connected components, where the
+component with most nodes has 3090 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 87, the mean node degree
+is 115.43, and the node degree mode is 2. The top 5 most central nodes
+are 634177.GLX_16440 (degree 1073), 634177.GLX_20710 (degree 980), 634177.GLX_07900
+(degree 875), 634177.GLX_07020 (degree 825) and 634177.GLX_26120 (degree
+783).
 
 
 References
@@ -107,14 +108,15 @@ def KomagataeibacterMedellinensis(
 	
 	Datetime: 2021-02-02 21:21:54.053022
 	
-	The undirected graph Komagataeibacter medellinensis has 3126 nodes and 180421 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03694
-	and has 15 connected components, where the component with most nodes has 3090 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 115.43, and the node degree mode is 2. The top 5 most
-	central nodes are 634177.GLX_16440 (degree 1073), 634177.GLX_20710 (degree 980),
-	634177.GLX_07900 (degree 875), 634177.GLX_07020 (degree 825) and 634177.GLX_26120
-	(degree 783).
+	The undirected graph Komagataeibacter medellinensis has 3126 nodes and
+	180421 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03694 and has 15 connected components, where the
+	component with most nodes has 3090 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 87, the mean node degree
+	is 115.43, and the node degree mode is 2. The top 5 most central nodes
+	are 634177.GLX_16440 (degree 1073), 634177.GLX_20710 (degree 980), 634177.GLX_07900
+	(degree 875), 634177.GLX_07020 (degree 825) and 634177.GLX_26120 (degree
+	783).
 	
 
 

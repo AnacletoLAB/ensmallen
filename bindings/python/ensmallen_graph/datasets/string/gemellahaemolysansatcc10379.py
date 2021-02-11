@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:31.444682
 
-The undirected graph Gemella haemolysans ATCC10379 has 1695 nodes and 110792 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07717
-and has 7 connected components, where the component with most nodes has 1680 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 130.73, and the node degree mode is 6. The top 5
-most central nodes are 546270.GEMHA0001_0142 (degree 773), 546270.GEMHA0001_0760
-(degree 739), 546270.GEMHA0001_1345 (degree 587), 546270.GEMHA0001_0570 (degree 566)
-and 546270.GEMHA0001_1754 (degree 535).
+The undirected graph Gemella haemolysans ATCC10379 has 1695 nodes and 110792
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07717 and has 7 connected components, where the component
+with most nodes has 1680 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 130.73,
+and the node degree mode is 6. The top 5 most central nodes are 546270.GEMHA0001_0142
+(degree 773), 546270.GEMHA0001_0760 (degree 739), 546270.GEMHA0001_1345
+(degree 587), 546270.GEMHA0001_0570 (degree 566) and 546270.GEMHA0001_1754
+(degree 535).
 
 
 References
@@ -107,14 +108,15 @@ def GemellaHaemolysansAtcc10379(
 	
 	Datetime: 2021-02-02 21:08:31.444682
 	
-	The undirected graph Gemella haemolysans ATCC10379 has 1695 nodes and 110792 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07717
-	and has 7 connected components, where the component with most nodes has 1680 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 130.73, and the node degree mode is 6. The top 5
-	most central nodes are 546270.GEMHA0001_0142 (degree 773), 546270.GEMHA0001_0760
-	(degree 739), 546270.GEMHA0001_1345 (degree 587), 546270.GEMHA0001_0570 (degree 566)
-	and 546270.GEMHA0001_1754 (degree 535).
+	The undirected graph Gemella haemolysans ATCC10379 has 1695 nodes and 110792
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07717 and has 7 connected components, where the component
+	with most nodes has 1680 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 130.73,
+	and the node degree mode is 6. The top 5 most central nodes are 546270.GEMHA0001_0142
+	(degree 773), 546270.GEMHA0001_0760 (degree 739), 546270.GEMHA0001_1345
+	(degree 587), 546270.GEMHA0001_0570 (degree 566) and 546270.GEMHA0001_1754
+	(degree 535).
 	
 
 

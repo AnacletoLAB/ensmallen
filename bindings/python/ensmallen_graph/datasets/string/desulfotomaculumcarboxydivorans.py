@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:38.948265
 
-The undirected graph Desulfotomaculum carboxydivorans has 2632 nodes and 173296 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05005
-and has 18 connected components, where the component with most nodes has 2591 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 131.68, and the node degree mode is 1. The top 5
-most central nodes are 868595.Desca_1026 (degree 1040), 868595.Desca_2040 (degree
-879), 868595.Desca_0878 (degree 852), 868595.Desca_2014 (degree 822) and 868595.Desca_1881
-(degree 778).
+The undirected graph Desulfotomaculum carboxydivorans has 2632 nodes and
+173296 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05005 and has 18 connected components, where the
+component with most nodes has 2591 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 131.68, and the node degree mode is 1. The top 5 most central nodes
+are 868595.Desca_1026 (degree 1040), 868595.Desca_2040 (degree 879), 868595.Desca_0878
+(degree 852), 868595.Desca_2014 (degree 822) and 868595.Desca_1881 (degree
+778).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfotomaculumCarboxydivorans(
 	
 	Datetime: 2021-02-02 21:48:38.948265
 	
-	The undirected graph Desulfotomaculum carboxydivorans has 2632 nodes and 173296 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05005
-	and has 18 connected components, where the component with most nodes has 2591 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 131.68, and the node degree mode is 1. The top 5
-	most central nodes are 868595.Desca_1026 (degree 1040), 868595.Desca_2040 (degree
-	879), 868595.Desca_0878 (degree 852), 868595.Desca_2014 (degree 822) and 868595.Desca_1881
-	(degree 778).
+	The undirected graph Desulfotomaculum carboxydivorans has 2632 nodes and
+	173296 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05005 and has 18 connected components, where the
+	component with most nodes has 2591 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 131.68, and the node degree mode is 1. The top 5 most central nodes
+	are 868595.Desca_1026 (degree 1040), 868595.Desca_2040 (degree 879), 868595.Desca_0878
+	(degree 852), 868595.Desca_2014 (degree 822) and 868595.Desca_1881 (degree
+	778).
 	
 
 

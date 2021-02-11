@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:41.434329
 
-The undirected graph Patulibacter minatonensis has 4973 nodes and 415848 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03364
-and has 30 connected components, where the component with most nodes has 4891 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 167.24, and the node degree mode is 4. The top 5
-most central nodes are 929712.KI912613_gene3217 (degree 1465), 929712.KI912613_gene4372
-(degree 1408), 929712.KI912613_gene2682 (degree 1196), 929712.KI912613_gene1824 (degree
-1157) and 929712.KI912613_gene4224 (degree 997).
+The undirected graph Patulibacter minatonensis has 4973 nodes and 415848
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03364 and has 30 connected components, where the component
+with most nodes has 4891 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 167.24,
+and the node degree mode is 4. The top 5 most central nodes are 929712.KI912613_gene3217
+(degree 1465), 929712.KI912613_gene4372 (degree 1408), 929712.KI912613_gene2682
+(degree 1196), 929712.KI912613_gene1824 (degree 1157) and 929712.KI912613_gene4224
+(degree 997).
 
 
 References
@@ -107,14 +108,15 @@ def PatulibacterMinatonensis(
 	
 	Datetime: 2021-02-02 21:57:41.434329
 	
-	The undirected graph Patulibacter minatonensis has 4973 nodes and 415848 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03364
-	and has 30 connected components, where the component with most nodes has 4891 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 167.24, and the node degree mode is 4. The top 5
-	most central nodes are 929712.KI912613_gene3217 (degree 1465), 929712.KI912613_gene4372
-	(degree 1408), 929712.KI912613_gene2682 (degree 1196), 929712.KI912613_gene1824 (degree
-	1157) and 929712.KI912613_gene4224 (degree 997).
+	The undirected graph Patulibacter minatonensis has 4973 nodes and 415848
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03364 and has 30 connected components, where the component
+	with most nodes has 4891 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 167.24,
+	and the node degree mode is 4. The top 5 most central nodes are 929712.KI912613_gene3217
+	(degree 1465), 929712.KI912613_gene4372 (degree 1408), 929712.KI912613_gene2682
+	(degree 1196), 929712.KI912613_gene1824 (degree 1157) and 929712.KI912613_gene4224
+	(degree 997).
 	
 
 

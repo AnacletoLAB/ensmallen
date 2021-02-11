@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:02:56.027364
 
-The undirected graph amazon0505 has 410236 nodes and 2439437 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 10,
-the mean node degree is 11.89, and the node degree mode is 10. The top 5 most central
-nodes are 594 (degree 2760), 978 (degree 2583), 90 (degree 2452), 2613 (degree 1667)
-and 11000 (degree 1301).
+The undirected graph amazon0505 has 410236 nodes and 2439437 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 10, the mean node degree is 11.89, and
+the node degree mode is 10. The top 5 most central nodes are 594 (degree
+2760), 978 (degree 2583), 90 (degree 2452), 2613 (degree 1667) and 11000
+(degree 1301).
 
 
 References
@@ -102,12 +103,13 @@ def Amazon0505(
 	
 	Datetime: 2021-02-06 12:02:56.027364
 	
-	The undirected graph amazon0505 has 410236 nodes and 2439437 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 10,
-	the mean node degree is 11.89, and the node degree mode is 10. The top 5 most central
-	nodes are 594 (degree 2760), 978 (degree 2583), 90 (degree 2452), 2613 (degree 1667)
-	and 11000 (degree 1301).
+	The undirected graph amazon0505 has 410236 nodes and 2439437 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 10, the mean node degree is 11.89, and
+	the node degree mode is 10. The top 5 most central nodes are 594 (degree
+	2760), 978 (degree 2583), 90 (degree 2452), 2613 (degree 1667) and 11000
+	(degree 1301).
 	
 
 

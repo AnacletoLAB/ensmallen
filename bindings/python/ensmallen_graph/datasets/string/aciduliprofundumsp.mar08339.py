@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:19.565044
 
-The undirected graph Aciduliprofundum sp. MAR08339 has 1517 nodes and 102614 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08924
-and has 6 connected components, where the component with most nodes has 1506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 135.29, and the node degree mode is 4. The top 5
-most central nodes are 673860.AciM339_0551 (degree 599), 673860.AciM339_0749 (degree
-566), 673860.AciM339_1290 (degree 564), 673860.AciM339_0619 (degree 537) and 673860.AciM339_0535
-(degree 528).
+The undirected graph Aciduliprofundum sp. MAR08339 has 1517 nodes and 102614
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08924 and has 6 connected components, where the component
+with most nodes has 1506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 135.29,
+and the node degree mode is 4. The top 5 most central nodes are 673860.AciM339_0551
+(degree 599), 673860.AciM339_0749 (degree 566), 673860.AciM339_1290 (degree
+564), 673860.AciM339_0619 (degree 537) and 673860.AciM339_0535 (degree
+528).
 
 
 References
@@ -107,14 +108,15 @@ def AciduliprofundumSp.Mar08339(
 	
 	Datetime: 2021-02-02 21:29:19.565044
 	
-	The undirected graph Aciduliprofundum sp. MAR08339 has 1517 nodes and 102614 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08924
-	and has 6 connected components, where the component with most nodes has 1506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 135.29, and the node degree mode is 4. The top 5
-	most central nodes are 673860.AciM339_0551 (degree 599), 673860.AciM339_0749 (degree
-	566), 673860.AciM339_1290 (degree 564), 673860.AciM339_0619 (degree 537) and 673860.AciM339_0535
-	(degree 528).
+	The undirected graph Aciduliprofundum sp. MAR08339 has 1517 nodes and 102614
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08924 and has 6 connected components, where the component
+	with most nodes has 1506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 135.29,
+	and the node degree mode is 4. The top 5 most central nodes are 673860.AciM339_0551
+	(degree 599), 673860.AciM339_0749 (degree 566), 673860.AciM339_1290 (degree
+	564), 673860.AciM339_0619 (degree 537) and 673860.AciM339_0535 (degree
+	528).
 	
 
 

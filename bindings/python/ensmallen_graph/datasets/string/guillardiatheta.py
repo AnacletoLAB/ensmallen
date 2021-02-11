@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:21.955293
 
-The undirected graph Guillardia theta has 10503 nodes and 1938659 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03515 and
-has 13 connected components, where the component with most nodes has 10472 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 369.16, and the node degree mode is 2. The top 5
-most central nodes are 55529.EKX47364 (degree 3126), 55529.EKX52046 (degree 3007),
-55529.EKX43523 (degree 2847), 55529.EKX33460 (degree 2292) and 55529.EKX43726 (degree
-2265).
+The undirected graph Guillardia theta has 10503 nodes and 1938659 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03515 and has 13 connected components, where the component with most
+nodes has 10472 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 369.16, and
+the node degree mode is 2. The top 5 most central nodes are 55529.EKX47364
+(degree 3126), 55529.EKX52046 (degree 3007), 55529.EKX43523 (degree 2847),
+55529.EKX33460 (degree 2292) and 55529.EKX43726 (degree 2265).
 
 
 References
@@ -107,14 +107,14 @@ def GuillardiaTheta(
 	
 	Datetime: 2021-02-02 18:18:21.955293
 	
-	The undirected graph Guillardia theta has 10503 nodes and 1938659 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03515 and
-	has 13 connected components, where the component with most nodes has 10472 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 369.16, and the node degree mode is 2. The top 5
-	most central nodes are 55529.EKX47364 (degree 3126), 55529.EKX52046 (degree 3007),
-	55529.EKX43523 (degree 2847), 55529.EKX33460 (degree 2292) and 55529.EKX43726 (degree
-	2265).
+	The undirected graph Guillardia theta has 10503 nodes and 1938659 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03515 and has 13 connected components, where the component with most
+	nodes has 10472 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 369.16, and
+	the node degree mode is 2. The top 5 most central nodes are 55529.EKX47364
+	(degree 3126), 55529.EKX52046 (degree 3007), 55529.EKX43523 (degree 2847),
+	55529.EKX33460 (degree 2292) and 55529.EKX43726 (degree 2265).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:18.577634
 
-The undirected graph Kinetoplastibacterium crithidii has 728 nodes and 40748 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.15398 and is connected, as it has a single component. The graph median node
-degree is 102, the mean node degree is 111.95, and the node degree mode is 67. The
-top 5 most central nodes are 1208918.CDEE_0305 (degree 447), 1208918.CDEE_0687 (degree
-430), 1208918.CDEE_0611 (degree 413), 1208918.CDEE_0559 (degree 330) and 1208918.CDEE_0029
-(degree 325).
+The undirected graph Kinetoplastibacterium crithidii has 728 nodes and
+40748 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.15398 and is connected, as it has a single
+component. The graph median node degree is 102, the mean node degree is
+111.95, and the node degree mode is 67. The top 5 most central nodes are
+1208918.CDEE_0305 (degree 447), 1208918.CDEE_0687 (degree 430), 1208918.CDEE_0611
+(degree 413), 1208918.CDEE_0559 (degree 330) and 1208918.CDEE_0029 (degree
+325).
 
 
 References
@@ -106,13 +107,14 @@ def KinetoplastibacteriumCrithidii(
 	
 	Datetime: 2021-02-02 23:18:18.577634
 	
-	The undirected graph Kinetoplastibacterium crithidii has 728 nodes and 40748 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.15398 and is connected, as it has a single component. The graph median node
-	degree is 102, the mean node degree is 111.95, and the node degree mode is 67. The
-	top 5 most central nodes are 1208918.CDEE_0305 (degree 447), 1208918.CDEE_0687 (degree
-	430), 1208918.CDEE_0611 (degree 413), 1208918.CDEE_0559 (degree 330) and 1208918.CDEE_0029
-	(degree 325).
+	The undirected graph Kinetoplastibacterium crithidii has 728 nodes and
+	40748 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.15398 and is connected, as it has a single
+	component. The graph median node degree is 102, the mean node degree is
+	111.95, and the node degree mode is 67. The top 5 most central nodes are
+	1208918.CDEE_0305 (degree 447), 1208918.CDEE_0687 (degree 430), 1208918.CDEE_0611
+	(degree 413), 1208918.CDEE_0559 (degree 330) and 1208918.CDEE_0029 (degree
+	325).
 	
 
 

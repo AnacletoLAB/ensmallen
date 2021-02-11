@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:32.360581
 
-The undirected graph Carnobacterium funditum has 2125 nodes and 170843 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07570 and
-has 5 connected components, where the component with most nodes has 2113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 160.79, and the node degree mode is 3. The top 5 most central
-nodes are 1449337.JQLL01000001_gene822 (degree 974), 1449337.JQLL01000001_gene1467
-(degree 831), 1449337.JQLL01000001_gene588 (degree 826), 1449337.JQLL01000001_gene448
-(degree 780) and 1449337.JQLL01000001_gene1842 (degree 722).
+The undirected graph Carnobacterium funditum has 2125 nodes and 170843
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07570 and has 5 connected components, where the component
+with most nodes has 2113 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 160.79,
+and the node degree mode is 3. The top 5 most central nodes are 1449337.JQLL01000001_gene822
+(degree 974), 1449337.JQLL01000001_gene1467 (degree 831), 1449337.JQLL01000001_gene588
+(degree 826), 1449337.JQLL01000001_gene448 (degree 780) and 1449337.JQLL01000001_gene1842
+(degree 722).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumFunditum(
 	
 	Datetime: 2021-02-03 23:04:32.360581
 	
-	The undirected graph Carnobacterium funditum has 2125 nodes and 170843 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07570 and
-	has 5 connected components, where the component with most nodes has 2113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 160.79, and the node degree mode is 3. The top 5 most central
-	nodes are 1449337.JQLL01000001_gene822 (degree 974), 1449337.JQLL01000001_gene1467
-	(degree 831), 1449337.JQLL01000001_gene588 (degree 826), 1449337.JQLL01000001_gene448
-	(degree 780) and 1449337.JQLL01000001_gene1842 (degree 722).
+	The undirected graph Carnobacterium funditum has 2125 nodes and 170843
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07570 and has 5 connected components, where the component
+	with most nodes has 2113 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 160.79,
+	and the node degree mode is 3. The top 5 most central nodes are 1449337.JQLL01000001_gene822
+	(degree 974), 1449337.JQLL01000001_gene1467 (degree 831), 1449337.JQLL01000001_gene588
+	(degree 826), 1449337.JQLL01000001_gene448 (degree 780) and 1449337.JQLL01000001_gene1842
+	(degree 722).
 	
 
 

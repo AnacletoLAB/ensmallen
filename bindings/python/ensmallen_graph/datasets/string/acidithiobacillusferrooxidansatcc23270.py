@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:03.639382
 
-The undirected graph Acidithiobacillus ferrooxidans ATCC23270 has 3092 nodes and
-227850 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04768 and has 24 connected components, where the component with most
-nodes has 3030 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 131, the mean node degree is 147.38, and the node degree mode
-is 4. The top 5 most central nodes are 243159.AFE_3094 (degree 1079), 243159.AFE_2672
-(degree 783), 243159.AFE_1777 (degree 777), 243159.AFE_1778 (degree 743) and 243159.AFE_0730
+The undirected graph Acidithiobacillus ferrooxidans ATCC23270 has 3092
+nodes and 227850 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04768 and has 24 connected components,
+where the component with most nodes has 3030 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 131, the mean
+node degree is 147.38, and the node degree mode is 4. The top 5 most central
+nodes are 243159.AFE_3094 (degree 1079), 243159.AFE_2672 (degree 783),
+243159.AFE_1777 (degree 777), 243159.AFE_1778 (degree 743) and 243159.AFE_0730
 (degree 735).
 
 
@@ -107,13 +108,14 @@ def AcidithiobacillusFerrooxidansAtcc23270(
 	
 	Datetime: 2021-02-02 20:09:03.639382
 	
-	The undirected graph Acidithiobacillus ferrooxidans ATCC23270 has 3092 nodes and
-	227850 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04768 and has 24 connected components, where the component with most
-	nodes has 3030 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 131, the mean node degree is 147.38, and the node degree mode
-	is 4. The top 5 most central nodes are 243159.AFE_3094 (degree 1079), 243159.AFE_2672
-	(degree 783), 243159.AFE_1777 (degree 777), 243159.AFE_1778 (degree 743) and 243159.AFE_0730
+	The undirected graph Acidithiobacillus ferrooxidans ATCC23270 has 3092
+	nodes and 227850 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04768 and has 24 connected components,
+	where the component with most nodes has 3030 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 131, the mean
+	node degree is 147.38, and the node degree mode is 4. The top 5 most central
+	nodes are 243159.AFE_3094 (degree 1079), 243159.AFE_2672 (degree 783),
+	243159.AFE_1777 (degree 777), 243159.AFE_1778 (degree 743) and 243159.AFE_0730
 	(degree 735).
 	
 

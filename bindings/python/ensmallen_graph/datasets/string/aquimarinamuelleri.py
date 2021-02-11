@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:45.799917
 
-The undirected graph Aquimarina muelleri has 4037 nodes and 368941 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04529 and
-has 32 connected components, where the component with most nodes has 3944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 182.78, and the node degree mode is 4. The top 5 most central
-nodes are 1121007.AUML01000004_gene2366 (degree 1467), 1121007.AUML01000004_gene2399
-(degree 1386), 1121007.AUML01000022_gene802 (degree 1270), 1121007.AUML01000017_gene414
-(degree 1264) and 1121007.AUML01000010_gene3332 (degree 1230).
+The undirected graph Aquimarina muelleri has 4037 nodes and 368941 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04529 and has 32 connected components, where the component with most
+nodes has 3944 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 182.78, and
+the node degree mode is 4. The top 5 most central nodes are 1121007.AUML01000004_gene2366
+(degree 1467), 1121007.AUML01000004_gene2399 (degree 1386), 1121007.AUML01000022_gene802
+(degree 1270), 1121007.AUML01000017_gene414 (degree 1264) and 1121007.AUML01000010_gene3332
+(degree 1230).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaMuelleri(
 	
 	Datetime: 2021-02-02 22:31:45.799917
 	
-	The undirected graph Aquimarina muelleri has 4037 nodes and 368941 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04529 and
-	has 32 connected components, where the component with most nodes has 3944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 182.78, and the node degree mode is 4. The top 5 most central
-	nodes are 1121007.AUML01000004_gene2366 (degree 1467), 1121007.AUML01000004_gene2399
-	(degree 1386), 1121007.AUML01000022_gene802 (degree 1270), 1121007.AUML01000017_gene414
-	(degree 1264) and 1121007.AUML01000010_gene3332 (degree 1230).
+	The undirected graph Aquimarina muelleri has 4037 nodes and 368941 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04529 and has 32 connected components, where the component with most
+	nodes has 3944 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 182.78, and
+	the node degree mode is 4. The top 5 most central nodes are 1121007.AUML01000004_gene2366
+	(degree 1467), 1121007.AUML01000004_gene2399 (degree 1386), 1121007.AUML01000022_gene802
+	(degree 1270), 1121007.AUML01000017_gene414 (degree 1264) and 1121007.AUML01000010_gene3332
+	(degree 1230).
 	
 
 

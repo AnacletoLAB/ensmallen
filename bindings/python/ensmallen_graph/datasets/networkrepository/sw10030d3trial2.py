@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:40.842849
 
-The undirected graph SW-100-3-0d3-trial2 has 100 nodes and 100 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02020 and
-has 3 connected components, where the component with most nodes has 44 nodes and
-the component with the least nodes has 24 nodes. The graph median node degree is
-2, the mean node degree is 2.00, and the node degree mode is 2. The top 5 most central
-nodes are 71 (degree 3), 89 (degree 3), 98 (degree 3), 92 (degree 3) and 53 (degree
-3).
+The undirected graph SW-100-3-0d3-trial2 has 100 nodes and 100 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02020 and has 3 connected components, where the component with most
+nodes has 44 nodes and the component with the least nodes has 24 nodes.
+The graph median node degree is 2, the mean node degree is 2.00, and the
+node degree mode is 2. The top 5 most central nodes are 71 (degree 3),
+89 (degree 3), 98 (degree 3), 92 (degree 3) and 53 (degree 3).
 
 
 References
@@ -103,13 +103,13 @@ def Sw10030d3Trial2(
 	
 	Datetime: 2021-02-06 09:27:40.842849
 	
-	The undirected graph SW-100-3-0d3-trial2 has 100 nodes and 100 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02020 and
-	has 3 connected components, where the component with most nodes has 44 nodes and
-	the component with the least nodes has 24 nodes. The graph median node degree is
-	2, the mean node degree is 2.00, and the node degree mode is 2. The top 5 most central
-	nodes are 71 (degree 3), 89 (degree 3), 98 (degree 3), 92 (degree 3) and 53 (degree
-	3).
+	The undirected graph SW-100-3-0d3-trial2 has 100 nodes and 100 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02020 and has 3 connected components, where the component with most
+	nodes has 44 nodes and the component with the least nodes has 24 nodes.
+	The graph median node degree is 2, the mean node degree is 2.00, and the
+	node degree mode is 2. The top 5 most central nodes are 71 (degree 3),
+	89 (degree 3), 98 (degree 3), 92 (degree 3) and 53 (degree 3).
 	
 
 

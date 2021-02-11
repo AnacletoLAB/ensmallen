@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:59.940478
 
-The undirected graph Psychromonas ossibalaenae has 4372 nodes and 668263 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06994
-and has 16 connected components, where the component with most nodes has 4334 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 260, the mean node degree is 305.70, and the node degree mode is 1. The top 5
-most central nodes are 1278307.KB906973_gene1333 (degree 1821), 1278307.KB907031_gene521
-(degree 1793), 1278307.KB907009_gene3392 (degree 1763), 1278307.KB907009_gene3384
-(degree 1691) and 1278307.KB907025_gene726 (degree 1620).
+The undirected graph Psychromonas ossibalaenae has 4372 nodes and 668263
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06994 and has 16 connected components, where the component
+with most nodes has 4334 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 260, the mean node degree is 305.70,
+and the node degree mode is 1. The top 5 most central nodes are 1278307.KB906973_gene1333
+(degree 1821), 1278307.KB907031_gene521 (degree 1793), 1278307.KB907009_gene3392
+(degree 1763), 1278307.KB907009_gene3384 (degree 1691) and 1278307.KB907025_gene726
+(degree 1620).
 
 
 References
@@ -107,14 +108,15 @@ def PsychromonasOssibalaenae(
 	
 	Datetime: 2021-02-02 23:38:59.940478
 	
-	The undirected graph Psychromonas ossibalaenae has 4372 nodes and 668263 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06994
-	and has 16 connected components, where the component with most nodes has 4334 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 260, the mean node degree is 305.70, and the node degree mode is 1. The top 5
-	most central nodes are 1278307.KB906973_gene1333 (degree 1821), 1278307.KB907031_gene521
-	(degree 1793), 1278307.KB907009_gene3392 (degree 1763), 1278307.KB907009_gene3384
-	(degree 1691) and 1278307.KB907025_gene726 (degree 1620).
+	The undirected graph Psychromonas ossibalaenae has 4372 nodes and 668263
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06994 and has 16 connected components, where the component
+	with most nodes has 4334 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 260, the mean node degree is 305.70,
+	and the node degree mode is 1. The top 5 most central nodes are 1278307.KB906973_gene1333
+	(degree 1821), 1278307.KB907031_gene521 (degree 1793), 1278307.KB907009_gene3392
+	(degree 1763), 1278307.KB907009_gene3384 (degree 1691) and 1278307.KB907025_gene726
+	(degree 1620).
 	
 
 

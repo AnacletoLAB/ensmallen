@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:44.022568
 
-The undirected graph Sediminibacterium sp. C3 has 2886 nodes and 209890 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05042
-and has 8 connected components, where the component with most nodes has 2872 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 145.45, and the node degree mode is 5. The top 5
-most central nodes are 1267211.KI669560_gene520 (degree 1091), 1267211.KI669560_gene2672
-(degree 850), 1267211.KI669560_gene984 (degree 809), 1267211.KI669560_gene483 (degree
-795) and 1267211.KI669560_gene2528 (degree 743).
+The undirected graph Sediminibacterium sp. C3 has 2886 nodes and 209890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05042 and has 8 connected components, where the component
+with most nodes has 2872 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 145.45,
+and the node degree mode is 5. The top 5 most central nodes are 1267211.KI669560_gene520
+(degree 1091), 1267211.KI669560_gene2672 (degree 850), 1267211.KI669560_gene984
+(degree 809), 1267211.KI669560_gene483 (degree 795) and 1267211.KI669560_gene2528
+(degree 743).
 
 
 References
@@ -107,14 +108,15 @@ def SediminibacteriumSp.C3(
 	
 	Datetime: 2021-02-02 23:36:44.022568
 	
-	The undirected graph Sediminibacterium sp. C3 has 2886 nodes and 209890 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05042
-	and has 8 connected components, where the component with most nodes has 2872 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 145.45, and the node degree mode is 5. The top 5
-	most central nodes are 1267211.KI669560_gene520 (degree 1091), 1267211.KI669560_gene2672
-	(degree 850), 1267211.KI669560_gene984 (degree 809), 1267211.KI669560_gene483 (degree
-	795) and 1267211.KI669560_gene2528 (degree 743).
+	The undirected graph Sediminibacterium sp. C3 has 2886 nodes and 209890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05042 and has 8 connected components, where the component
+	with most nodes has 2872 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 145.45,
+	and the node degree mode is 5. The top 5 most central nodes are 1267211.KI669560_gene520
+	(degree 1091), 1267211.KI669560_gene2672 (degree 850), 1267211.KI669560_gene984
+	(degree 809), 1267211.KI669560_gene483 (degree 795) and 1267211.KI669560_gene2528
+	(degree 743).
 	
 
 

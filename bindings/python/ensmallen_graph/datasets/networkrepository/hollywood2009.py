@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:48:22.615802
 
-The undirected graph hollywood-2009 has 83832 nodes, of which 32692 are singletons
-(all have self-loops), and 549037 unweighted edges, of which 83831 are self-loops.
-The graph is quite sparse as it has a density of 0.00014 and has 44834 connected
-components, where the component with most nodes has 11122 nodes and the component
-with the least nodes has a single node. The graph median node degree is 2, the mean
-node degree is 12.10, and the node degree mode is 1. The top 5 most central nodes
-are 1060694 (degree 1077), 1060699 (degree 1049), 1060702 (degree 979), 1060962 (degree
+The undirected graph hollywood-2009 has 83832 nodes, of which 32692 are
+singletons (all have self-loops), and 549037 unweighted edges, of which
+83831 are self-loops. The graph is quite sparse as it has a density of
+0.00014 and has 44834 connected components, where the component with most
+nodes has 11122 nodes and the component with the least nodes has a single
+node. The graph median node degree is 2, the mean node degree is 12.10,
+and the node degree mode is 1. The top 5 most central nodes are 1060694
+(degree 1077), 1060699 (degree 1049), 1060702 (degree 979), 1060962 (degree
 955) and 1060499 (degree 937).
 
 
@@ -104,13 +105,14 @@ def Hollywood2009(
 	
 	Datetime: 2021-02-06 20:48:22.615802
 	
-	The undirected graph hollywood-2009 has 83832 nodes, of which 32692 are singletons
-	(all have self-loops), and 549037 unweighted edges, of which 83831 are self-loops.
-	The graph is quite sparse as it has a density of 0.00014 and has 44834 connected
-	components, where the component with most nodes has 11122 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 2, the mean
-	node degree is 12.10, and the node degree mode is 1. The top 5 most central nodes
-	are 1060694 (degree 1077), 1060699 (degree 1049), 1060702 (degree 979), 1060962 (degree
+	The undirected graph hollywood-2009 has 83832 nodes, of which 32692 are
+	singletons (all have self-loops), and 549037 unweighted edges, of which
+	83831 are self-loops. The graph is quite sparse as it has a density of
+	0.00014 and has 44834 connected components, where the component with most
+	nodes has 11122 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 2, the mean node degree is 12.10,
+	and the node degree mode is 1. The top 5 most central nodes are 1060694
+	(degree 1077), 1060699 (degree 1049), 1060702 (degree 979), 1060962 (degree
 	955) and 1060499 (degree 937).
 	
 

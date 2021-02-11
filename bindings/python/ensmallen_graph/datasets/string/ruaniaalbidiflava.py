@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:29.342950
 
-The undirected graph Ruania albidiflava has 3699 nodes and 441946 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06462 and
-has 8 connected components, where the component with most nodes has 3683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 238.95, and the node degree mode is 2. The top 5 most central
-nodes are 1123065.ATWL01000017_gene2022 (degree 1477), 1123065.ATWL01000001_gene178
-(degree 1228), 1123065.ATWL01000001_gene442 (degree 1175), 1123065.ATWL01000005_gene1357
-(degree 1166) and 1123065.ATWL01000006_gene2181 (degree 1151).
+The undirected graph Ruania albidiflava has 3699 nodes and 441946 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06462 and has 8 connected components, where the component with most
+nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 238.95, and
+the node degree mode is 2. The top 5 most central nodes are 1123065.ATWL01000017_gene2022
+(degree 1477), 1123065.ATWL01000001_gene178 (degree 1228), 1123065.ATWL01000001_gene442
+(degree 1175), 1123065.ATWL01000005_gene1357 (degree 1166) and 1123065.ATWL01000006_gene2181
+(degree 1151).
 
 
 References
@@ -107,14 +108,15 @@ def RuaniaAlbidiflava(
 	
 	Datetime: 2021-02-02 22:47:29.342950
 	
-	The undirected graph Ruania albidiflava has 3699 nodes and 441946 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06462 and
-	has 8 connected components, where the component with most nodes has 3683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 238.95, and the node degree mode is 2. The top 5 most central
-	nodes are 1123065.ATWL01000017_gene2022 (degree 1477), 1123065.ATWL01000001_gene178
-	(degree 1228), 1123065.ATWL01000001_gene442 (degree 1175), 1123065.ATWL01000005_gene1357
-	(degree 1166) and 1123065.ATWL01000006_gene2181 (degree 1151).
+	The undirected graph Ruania albidiflava has 3699 nodes and 441946 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06462 and has 8 connected components, where the component with most
+	nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 238.95, and
+	the node degree mode is 2. The top 5 most central nodes are 1123065.ATWL01000017_gene2022
+	(degree 1477), 1123065.ATWL01000001_gene178 (degree 1228), 1123065.ATWL01000001_gene442
+	(degree 1175), 1123065.ATWL01000005_gene1357 (degree 1166) and 1123065.ATWL01000006_gene2181
+	(degree 1151).
 	
 
 

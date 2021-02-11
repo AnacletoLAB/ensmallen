@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:33.589125
 
-The undirected graph Streptococcus henryi has 2259 nodes and 173179 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06790 and
-has 6 connected components, where the component with most nodes has 2249 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 153.32, and the node degree mode is 6. The top 5 most central
-nodes are 1123304.AQYA01000025_gene1088 (degree 894), 1123304.AQYA01000032_gene795
-(degree 879), 1123304.AQYA01000018_gene1243 (degree 831), 1123304.AQYA01000033_gene1962
-(degree 799) and 1123304.AQYA01000030_gene1145 (degree 734).
+The undirected graph Streptococcus henryi has 2259 nodes and 173179 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06790 and has 6 connected components, where the component with most
+nodes has 2249 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 153.32, and
+the node degree mode is 6. The top 5 most central nodes are 1123304.AQYA01000025_gene1088
+(degree 894), 1123304.AQYA01000032_gene795 (degree 879), 1123304.AQYA01000018_gene1243
+(degree 831), 1123304.AQYA01000033_gene1962 (degree 799) and 1123304.AQYA01000030_gene1145
+(degree 734).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusHenryi(
 	
 	Datetime: 2021-02-02 22:50:33.589125
 	
-	The undirected graph Streptococcus henryi has 2259 nodes and 173179 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06790 and
-	has 6 connected components, where the component with most nodes has 2249 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 153.32, and the node degree mode is 6. The top 5 most central
-	nodes are 1123304.AQYA01000025_gene1088 (degree 894), 1123304.AQYA01000032_gene795
-	(degree 879), 1123304.AQYA01000018_gene1243 (degree 831), 1123304.AQYA01000033_gene1962
-	(degree 799) and 1123304.AQYA01000030_gene1145 (degree 734).
+	The undirected graph Streptococcus henryi has 2259 nodes and 173179 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06790 and has 6 connected components, where the component with most
+	nodes has 2249 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 153.32, and
+	the node degree mode is 6. The top 5 most central nodes are 1123304.AQYA01000025_gene1088
+	(degree 894), 1123304.AQYA01000032_gene795 (degree 879), 1123304.AQYA01000018_gene1243
+	(degree 831), 1123304.AQYA01000033_gene1962 (degree 799) and 1123304.AQYA01000030_gene1145
+	(degree 734).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:14:01.327453
 
-The undirected graph Actinomyces sp. S6Spd3 has 1744 nodes and 151118 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09943 and
-has 4 connected components, where the component with most nodes has 1736 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 173.30, and the node degree mode is 2. The top 5 most central
-nodes are 1284680.HMPREF1627_02415 (degree 936), 1284680.HMPREF1627_09965 (degree
-912), 1284680.HMPREF1627_04495 (degree 802), 1284680.HMPREF1627_00065 (degree 798)
-and 1284680.HMPREF1627_04565 (degree 768).
+The undirected graph Actinomyces sp. S6Spd3 has 1744 nodes and 151118 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09943 and has 4 connected components, where the component with most
+nodes has 1736 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 173.30, and
+the node degree mode is 2. The top 5 most central nodes are 1284680.HMPREF1627_02415
+(degree 936), 1284680.HMPREF1627_09965 (degree 912), 1284680.HMPREF1627_04495
+(degree 802), 1284680.HMPREF1627_00065 (degree 798) and 1284680.HMPREF1627_04565
+(degree 768).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesSp.S6spd3(
 	
 	Datetime: 2021-02-03 21:14:01.327453
 	
-	The undirected graph Actinomyces sp. S6Spd3 has 1744 nodes and 151118 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09943 and
-	has 4 connected components, where the component with most nodes has 1736 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 173.30, and the node degree mode is 2. The top 5 most central
-	nodes are 1284680.HMPREF1627_02415 (degree 936), 1284680.HMPREF1627_09965 (degree
-	912), 1284680.HMPREF1627_04495 (degree 802), 1284680.HMPREF1627_00065 (degree 798)
-	and 1284680.HMPREF1627_04565 (degree 768).
+	The undirected graph Actinomyces sp. S6Spd3 has 1744 nodes and 151118 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09943 and has 4 connected components, where the component with most
+	nodes has 1736 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 173.30, and
+	the node degree mode is 2. The top 5 most central nodes are 1284680.HMPREF1627_02415
+	(degree 936), 1284680.HMPREF1627_09965 (degree 912), 1284680.HMPREF1627_04495
+	(degree 802), 1284680.HMPREF1627_00065 (degree 798) and 1284680.HMPREF1627_04565
+	(degree 768).
 	
 
 

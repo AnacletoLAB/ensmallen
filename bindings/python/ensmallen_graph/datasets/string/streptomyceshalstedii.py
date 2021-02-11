@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:56.816467
 
-The undirected graph Streptomyces halstedii has 6426 nodes and 962814 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04664 and
-has 42 connected components, where the component with most nodes has 6331 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 246,
-the mean node degree is 299.66, and the node degree mode is 1. The top 5 most central
-nodes are 1944.JOAZ01000001_gene3956 (degree 3040), 1944.JOAZ01000024_gene6502 (degree
-2206), 1944.JOAZ01000040_gene6456 (degree 2181), 1944.JOAZ01000005_gene1919 (degree
-2024) and 1944.JOAZ01000010_gene1224 (degree 2017).
+The undirected graph Streptomyces halstedii has 6426 nodes and 962814 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04664 and has 42 connected components, where the component with most
+nodes has 6331 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 246, the mean node degree is 299.66, and
+the node degree mode is 1. The top 5 most central nodes are 1944.JOAZ01000001_gene3956
+(degree 3040), 1944.JOAZ01000024_gene6502 (degree 2206), 1944.JOAZ01000040_gene6456
+(degree 2181), 1944.JOAZ01000005_gene1919 (degree 2024) and 1944.JOAZ01000010_gene1224
+(degree 2017).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesHalstedii(
 	
 	Datetime: 2021-02-02 16:23:56.816467
 	
-	The undirected graph Streptomyces halstedii has 6426 nodes and 962814 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04664 and
-	has 42 connected components, where the component with most nodes has 6331 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 246,
-	the mean node degree is 299.66, and the node degree mode is 1. The top 5 most central
-	nodes are 1944.JOAZ01000001_gene3956 (degree 3040), 1944.JOAZ01000024_gene6502 (degree
-	2206), 1944.JOAZ01000040_gene6456 (degree 2181), 1944.JOAZ01000005_gene1919 (degree
-	2024) and 1944.JOAZ01000010_gene1224 (degree 2017).
+	The undirected graph Streptomyces halstedii has 6426 nodes and 962814 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04664 and has 42 connected components, where the component with most
+	nodes has 6331 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 246, the mean node degree is 299.66, and
+	the node degree mode is 1. The top 5 most central nodes are 1944.JOAZ01000001_gene3956
+	(degree 3040), 1944.JOAZ01000024_gene6502 (degree 2206), 1944.JOAZ01000040_gene6456
+	(degree 2181), 1944.JOAZ01000005_gene1919 (degree 2024) and 1944.JOAZ01000010_gene1224
+	(degree 2017).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:39.170121
 
-The undirected graph Leuconostoc fallax has 1843 nodes and 155241 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09146 and
-has 6 connected components, where the component with most nodes has 1833 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 168.47, and the node degree mode is 1. The top 5 most central
-nodes are 907931.AEIZ01000015_gene1144 (degree 885), 907931.AEIZ01000020_gene206
-(degree 673), 907931.AEIZ01000006_gene636 (degree 653), 907931.AEIZ01000026_gene1691
-(degree 646) and 907931.AEIZ01000009_gene1381 (degree 645).
+The undirected graph Leuconostoc fallax has 1843 nodes and 155241 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09146 and has 6 connected components, where the component with most
+nodes has 1833 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 168.47, and
+the node degree mode is 1. The top 5 most central nodes are 907931.AEIZ01000015_gene1144
+(degree 885), 907931.AEIZ01000020_gene206 (degree 673), 907931.AEIZ01000006_gene636
+(degree 653), 907931.AEIZ01000026_gene1691 (degree 646) and 907931.AEIZ01000009_gene1381
+(degree 645).
 
 
 References
@@ -107,14 +108,15 @@ def LeuconostocFallax(
 	
 	Datetime: 2021-02-02 21:54:39.170121
 	
-	The undirected graph Leuconostoc fallax has 1843 nodes and 155241 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09146 and
-	has 6 connected components, where the component with most nodes has 1833 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 168.47, and the node degree mode is 1. The top 5 most central
-	nodes are 907931.AEIZ01000015_gene1144 (degree 885), 907931.AEIZ01000020_gene206
-	(degree 673), 907931.AEIZ01000006_gene636 (degree 653), 907931.AEIZ01000026_gene1691
-	(degree 646) and 907931.AEIZ01000009_gene1381 (degree 645).
+	The undirected graph Leuconostoc fallax has 1843 nodes and 155241 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09146 and has 6 connected components, where the component with most
+	nodes has 1833 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 168.47, and
+	the node degree mode is 1. The top 5 most central nodes are 907931.AEIZ01000015_gene1144
+	(degree 885), 907931.AEIZ01000020_gene206 (degree 673), 907931.AEIZ01000006_gene636
+	(degree 653), 907931.AEIZ01000026_gene1691 (degree 646) and 907931.AEIZ01000009_gene1381
+	(degree 645).
 	
 
 

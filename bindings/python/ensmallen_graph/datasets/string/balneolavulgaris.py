@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:12.960409
 
-The undirected graph Balneola vulgaris has 2431 nodes and 195854 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-has 5 connected components, where the component with most nodes has 2422 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 161.13, and the node degree mode is 3. The top 5 most central
-nodes are 1121104.AQXH01000001_gene1673 (degree 1509), 1121104.AQXH01000001_gene1672
-(degree 966), 1121104.AQXH01000005_gene233 (degree 850), 1121104.AQXH01000005_gene230
-(degree 782) and 1121104.AQXH01000003_gene356 (degree 756).
+The undirected graph Balneola vulgaris has 2431 nodes and 195854 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06631 and has 5 connected components, where the component with most
+nodes has 2422 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 161.13, and
+the node degree mode is 3. The top 5 most central nodes are 1121104.AQXH01000001_gene1673
+(degree 1509), 1121104.AQXH01000001_gene1672 (degree 966), 1121104.AQXH01000005_gene233
+(degree 850), 1121104.AQXH01000005_gene230 (degree 782) and 1121104.AQXH01000003_gene356
+(degree 756).
 
 
 References
@@ -107,14 +108,15 @@ def BalneolaVulgaris(
 	
 	Datetime: 2021-02-02 22:33:12.960409
 	
-	The undirected graph Balneola vulgaris has 2431 nodes and 195854 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-	has 5 connected components, where the component with most nodes has 2422 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 161.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1121104.AQXH01000001_gene1673 (degree 1509), 1121104.AQXH01000001_gene1672
-	(degree 966), 1121104.AQXH01000005_gene233 (degree 850), 1121104.AQXH01000005_gene230
-	(degree 782) and 1121104.AQXH01000003_gene356 (degree 756).
+	The undirected graph Balneola vulgaris has 2431 nodes and 195854 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06631 and has 5 connected components, where the component with most
+	nodes has 2422 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 161.13, and
+	the node degree mode is 3. The top 5 most central nodes are 1121104.AQXH01000001_gene1673
+	(degree 1509), 1121104.AQXH01000001_gene1672 (degree 966), 1121104.AQXH01000005_gene233
+	(degree 850), 1121104.AQXH01000005_gene230 (degree 782) and 1121104.AQXH01000003_gene356
+	(degree 756).
 	
 
 

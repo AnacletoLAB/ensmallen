@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:08.911478
 
-The undirected graph Pusillimonas noertemannii has 3451 nodes and 365012 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06132
-and has 4 connected components, where the component with most nodes has 3443 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 211.54, and the node degree mode is 1. The top 5
-most central nodes are 1231391.AMZF01000025_gene1413 (degree 1194), 1231391.AMZF01000010_gene1682
-(degree 1118), 1231391.AMZF01000040_gene457 (degree 1078), 1231391.AMZF01000013_gene2508
-(degree 1015) and 1231391.AMZF01000014_gene2290 (degree 958).
+The undirected graph Pusillimonas noertemannii has 3451 nodes and 365012
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06132 and has 4 connected components, where the component
+with most nodes has 3443 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 211.54,
+and the node degree mode is 1. The top 5 most central nodes are 1231391.AMZF01000025_gene1413
+(degree 1194), 1231391.AMZF01000010_gene1682 (degree 1118), 1231391.AMZF01000040_gene457
+(degree 1078), 1231391.AMZF01000013_gene2508 (degree 1015) and 1231391.AMZF01000014_gene2290
+(degree 958).
 
 
 References
@@ -107,14 +108,15 @@ def PusillimonasNoertemannii(
 	
 	Datetime: 2021-02-02 23:28:08.911478
 	
-	The undirected graph Pusillimonas noertemannii has 3451 nodes and 365012 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06132
-	and has 4 connected components, where the component with most nodes has 3443 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 211.54, and the node degree mode is 1. The top 5
-	most central nodes are 1231391.AMZF01000025_gene1413 (degree 1194), 1231391.AMZF01000010_gene1682
-	(degree 1118), 1231391.AMZF01000040_gene457 (degree 1078), 1231391.AMZF01000013_gene2508
-	(degree 1015) and 1231391.AMZF01000014_gene2290 (degree 958).
+	The undirected graph Pusillimonas noertemannii has 3451 nodes and 365012
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06132 and has 4 connected components, where the component
+	with most nodes has 3443 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 211.54,
+	and the node degree mode is 1. The top 5 most central nodes are 1231391.AMZF01000025_gene1413
+	(degree 1194), 1231391.AMZF01000010_gene1682 (degree 1118), 1231391.AMZF01000040_gene457
+	(degree 1078), 1231391.AMZF01000013_gene2508 (degree 1015) and 1231391.AMZF01000014_gene2290
+	(degree 958).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:58.641305
 
-The undirected graph Leeuwenhoekiella blandensis has 3709 nodes and 403260 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05864
-and has 6 connected components, where the component with most nodes has 3692 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 217.45, and the node degree mode is 5. The top 5
-most central nodes are 398720.MED217_14030 (degree 1678), 398720.MED217_03820 (degree
-1141), 398720.MED217_16690 (degree 1132), 398720.MED217_10517 (degree 990) and 398720.MED217_10472
-(degree 957).
+The undirected graph Leeuwenhoekiella blandensis has 3709 nodes and 403260
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05864 and has 6 connected components, where the component
+with most nodes has 3692 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 217.45,
+and the node degree mode is 5. The top 5 most central nodes are 398720.MED217_14030
+(degree 1678), 398720.MED217_03820 (degree 1141), 398720.MED217_16690 (degree
+1132), 398720.MED217_10517 (degree 990) and 398720.MED217_10472 (degree
+957).
 
 
 References
@@ -107,14 +108,15 @@ def LeeuwenhoekiellaBlandensis(
 	
 	Datetime: 2021-02-02 20:42:58.641305
 	
-	The undirected graph Leeuwenhoekiella blandensis has 3709 nodes and 403260 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05864
-	and has 6 connected components, where the component with most nodes has 3692 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 217.45, and the node degree mode is 5. The top 5
-	most central nodes are 398720.MED217_14030 (degree 1678), 398720.MED217_03820 (degree
-	1141), 398720.MED217_16690 (degree 1132), 398720.MED217_10517 (degree 990) and 398720.MED217_10472
-	(degree 957).
+	The undirected graph Leeuwenhoekiella blandensis has 3709 nodes and 403260
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05864 and has 6 connected components, where the component
+	with most nodes has 3692 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 217.45,
+	and the node degree mode is 5. The top 5 most central nodes are 398720.MED217_14030
+	(degree 1678), 398720.MED217_03820 (degree 1141), 398720.MED217_16690 (degree
+	1132), 398720.MED217_10517 (degree 990) and 398720.MED217_10472 (degree
+	957).
 	
 
 

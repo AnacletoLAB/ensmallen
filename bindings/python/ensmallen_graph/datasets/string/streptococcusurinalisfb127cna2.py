@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:39.600659
 
-The undirected graph Streptococcus urinalis FB127CNA2 has 2193 nodes and 168301 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07002
-and has 7 connected components, where the component with most nodes has 2174 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 153.49, and the node degree mode is 5. The top 5
-most central nodes are 883168.HMPREF9318_00997 (degree 919), 883168.HMPREF9318_00866
-(degree 823), 883168.HMPREF9318_01334 (degree 811), 883168.HMPREF9318_00381 (degree
+The undirected graph Streptococcus urinalis FB127CNA2 has 2193 nodes and
+168301 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07002 and has 7 connected components, where the
+component with most nodes has 2174 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+is 153.49, and the node degree mode is 5. The top 5 most central nodes
+are 883168.HMPREF9318_00997 (degree 919), 883168.HMPREF9318_00866 (degree
+823), 883168.HMPREF9318_01334 (degree 811), 883168.HMPREF9318_00381 (degree
 808) and 883168.HMPREF9318_01602 (degree 766).
 
 
@@ -107,13 +108,14 @@ def StreptococcusUrinalisFb127cna2(
 	
 	Datetime: 2021-02-02 21:51:39.600659
 	
-	The undirected graph Streptococcus urinalis FB127CNA2 has 2193 nodes and 168301 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07002
-	and has 7 connected components, where the component with most nodes has 2174 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 153.49, and the node degree mode is 5. The top 5
-	most central nodes are 883168.HMPREF9318_00997 (degree 919), 883168.HMPREF9318_00866
-	(degree 823), 883168.HMPREF9318_01334 (degree 811), 883168.HMPREF9318_00381 (degree
+	The undirected graph Streptococcus urinalis FB127CNA2 has 2193 nodes and
+	168301 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07002 and has 7 connected components, where the
+	component with most nodes has 2174 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+	is 153.49, and the node degree mode is 5. The top 5 most central nodes
+	are 883168.HMPREF9318_00997 (degree 919), 883168.HMPREF9318_00866 (degree
+	823), 883168.HMPREF9318_01334 (degree 811), 883168.HMPREF9318_00381 (degree
 	808) and 883168.HMPREF9318_01602 (degree 766).
 	
 

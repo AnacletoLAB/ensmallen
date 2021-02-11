@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:42.441162
 
-The undirected graph Rickettsia felis has 1384 nodes and 70380 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07354 and
-has 11 connected components, where the component with most nodes has 1359 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 77,
-the mean node degree is 101.71, and the node degree mode is 2. The top 5 most central
-nodes are 315456.RF_1239 (degree 559), 315456.RF_0648 (degree 446), 315456.RF_0409
-(degree 426), 315456.RF_1084 (degree 421) and 315456.RF_1221 (degree 412).
+The undirected graph Rickettsia felis has 1384 nodes and 70380 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07354 and has 11 connected components, where the component with most
+nodes has 1359 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 77, the mean node degree is 101.71, and
+the node degree mode is 2. The top 5 most central nodes are 315456.RF_1239
+(degree 559), 315456.RF_0648 (degree 446), 315456.RF_0409 (degree 426),
+315456.RF_1084 (degree 421) and 315456.RF_1221 (degree 412).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaFelis(
 	
 	Datetime: 2021-02-02 20:25:42.441162
 	
-	The undirected graph Rickettsia felis has 1384 nodes and 70380 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07354 and
-	has 11 connected components, where the component with most nodes has 1359 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 77,
-	the mean node degree is 101.71, and the node degree mode is 2. The top 5 most central
-	nodes are 315456.RF_1239 (degree 559), 315456.RF_0648 (degree 446), 315456.RF_0409
-	(degree 426), 315456.RF_1084 (degree 421) and 315456.RF_1221 (degree 412).
+	The undirected graph Rickettsia felis has 1384 nodes and 70380 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07354 and has 11 connected components, where the component with most
+	nodes has 1359 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 77, the mean node degree is 101.71, and
+	the node degree mode is 2. The top 5 most central nodes are 315456.RF_1239
+	(degree 559), 315456.RF_0648 (degree 446), 315456.RF_0409 (degree 426),
+	315456.RF_1084 (degree 421) and 315456.RF_1221 (degree 412).
 	
 
 

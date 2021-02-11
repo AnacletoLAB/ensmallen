@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:39.424101
 
-The undirected graph socfb-Texas84 has 36364 nodes and 1590651 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00241
-and is connected, as it has a single component. The graph median node degree is 61,
-the mean node degree is 87.48, and the node degree mode is 1. The top 5 most central
-nodes are 15323 (degree 6312), 16950 (degree 5522), 17256 (degree 4786), 16526 (degree
-3209) and 31304 (degree 2466).
+The undirected graph socfb-Texas84 has 36364 nodes and 1590651 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00241 and is connected, as it has a single component. The graph median
+node degree is 61, the mean node degree is 87.48, and the node degree mode
+is 1. The top 5 most central nodes are 15323 (degree 6312), 16950 (degree
+5522), 17256 (degree 4786), 16526 (degree 3209) and 31304 (degree 2466).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbTexas84(
 	
 	Datetime: 2021-02-06 12:31:39.424101
 	
-	The undirected graph socfb-Texas84 has 36364 nodes and 1590651 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00241
-	and is connected, as it has a single component. The graph median node degree is 61,
-	the mean node degree is 87.48, and the node degree mode is 1. The top 5 most central
-	nodes are 15323 (degree 6312), 16950 (degree 5522), 17256 (degree 4786), 16526 (degree
-	3209) and 31304 (degree 2466).
+	The undirected graph socfb-Texas84 has 36364 nodes and 1590651 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00241 and is connected, as it has a single component. The graph median
+	node degree is 61, the mean node degree is 87.48, and the node degree mode
+	is 1. The top 5 most central nodes are 15323 (degree 6312), 16950 (degree
+	5522), 17256 (degree 4786), 16526 (degree 3209) and 31304 (degree 2466).
 	
 
 

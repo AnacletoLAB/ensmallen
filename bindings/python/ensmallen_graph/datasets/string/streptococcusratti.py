@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:26.763622
 
-The undirected graph Streptococcus ratti has 2021 nodes and 156616 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07673 and
-has 5 connected components, where the component with most nodes has 2012 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 154.99, and the node degree mode is 7. The top 5 most central
-nodes are 699248.SRA_08396 (degree 906), 699248.SRA_09511 (degree 844), 699248.SRA_00673
-(degree 758), 699248.SRA_04911 (degree 732) and 699248.SRA_09983 (degree 688).
+The undirected graph Streptococcus ratti has 2021 nodes and 156616 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07673 and has 5 connected components, where the component with most
+nodes has 2012 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 154.99, and
+the node degree mode is 7. The top 5 most central nodes are 699248.SRA_08396
+(degree 906), 699248.SRA_09511 (degree 844), 699248.SRA_00673 (degree 758),
+699248.SRA_04911 (degree 732) and 699248.SRA_09983 (degree 688).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusRatti(
 	
 	Datetime: 2021-02-02 21:33:26.763622
 	
-	The undirected graph Streptococcus ratti has 2021 nodes and 156616 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07673 and
-	has 5 connected components, where the component with most nodes has 2012 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 154.99, and the node degree mode is 7. The top 5 most central
-	nodes are 699248.SRA_08396 (degree 906), 699248.SRA_09511 (degree 844), 699248.SRA_00673
-	(degree 758), 699248.SRA_04911 (degree 732) and 699248.SRA_09983 (degree 688).
+	The undirected graph Streptococcus ratti has 2021 nodes and 156616 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07673 and has 5 connected components, where the component with most
+	nodes has 2012 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 154.99, and
+	the node degree mode is 7. The top 5 most central nodes are 699248.SRA_08396
+	(degree 906), 699248.SRA_09511 (degree 844), 699248.SRA_00673 (degree 758),
+	699248.SRA_04911 (degree 732) and 699248.SRA_09983 (degree 688).
 	
 
 

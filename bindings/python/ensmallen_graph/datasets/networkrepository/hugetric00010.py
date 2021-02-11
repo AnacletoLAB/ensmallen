@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:25:30.399921
 
-The undirected graph hugetric-00010 has 6592765 nodes and 9885854 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-central nodes are 6588189 (degree 3), 6586727 (degree 3), 6581993 (degree 3), 6592258
-(degree 3) and 6590435 (degree 3).
+The undirected graph hugetric-00010 has 6592765 nodes and 9885854 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 3.00 and the
+node degree mode is 3. The top 5 most central nodes are 6588189 (degree
+3), 6586727 (degree 3), 6581993 (degree 3), 6592258 (degree 3) and 6590435
+(degree 3).
 
 
 References
@@ -102,12 +103,13 @@ def Hugetric00010(
 	
 	Datetime: 2021-02-03 23:25:30.399921
 	
-	The undirected graph hugetric-00010 has 6592765 nodes and 9885854 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-	central nodes are 6588189 (degree 3), 6586727 (degree 3), 6581993 (degree 3), 6592258
-	(degree 3) and 6590435 (degree 3).
+	The undirected graph hugetric-00010 has 6592765 nodes and 9885854 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 3.00 and the
+	node degree mode is 3. The top 5 most central nodes are 6588189 (degree
+	3), 6586727 (degree 3), 6581993 (degree 3), 6592258 (degree 3) and 6590435
+	(degree 3).
 	
 
 

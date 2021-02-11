@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:36.977129
 
-The undirected graph Prochlorococcus marinus AS9601 has 1891 nodes and 129953 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07272
-and has 23 connected components, where the component with most nodes has 1820 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 137.44, and the node degree mode is 3. The top 5
-most central nodes are 146891.A9601_13151 (degree 702), 146891.A9601_14791 (degree
-538), 146891.A9601_17991 (degree 526), 146891.A9601_16341 (degree 500) and 146891.A9601_04811
-(degree 495).
+The undirected graph Prochlorococcus marinus AS9601 has 1891 nodes and
+129953 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07272 and has 23 connected components, where the
+component with most nodes has 1820 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 126, the mean node degree
+is 137.44, and the node degree mode is 3. The top 5 most central nodes
+are 146891.A9601_13151 (degree 702), 146891.A9601_14791 (degree 538), 146891.A9601_17991
+(degree 526), 146891.A9601_16341 (degree 500) and 146891.A9601_04811 (degree
+495).
 
 
 References
@@ -107,14 +108,15 @@ def ProchlorococcusMarinusAs9601(
 	
 	Datetime: 2021-02-02 19:51:36.977129
 	
-	The undirected graph Prochlorococcus marinus AS9601 has 1891 nodes and 129953 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07272
-	and has 23 connected components, where the component with most nodes has 1820 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 137.44, and the node degree mode is 3. The top 5
-	most central nodes are 146891.A9601_13151 (degree 702), 146891.A9601_14791 (degree
-	538), 146891.A9601_17991 (degree 526), 146891.A9601_16341 (degree 500) and 146891.A9601_04811
-	(degree 495).
+	The undirected graph Prochlorococcus marinus AS9601 has 1891 nodes and
+	129953 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07272 and has 23 connected components, where the
+	component with most nodes has 1820 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 126, the mean node degree
+	is 137.44, and the node degree mode is 3. The top 5 most central nodes
+	are 146891.A9601_13151 (degree 702), 146891.A9601_14791 (degree 538), 146891.A9601_17991
+	(degree 526), 146891.A9601_16341 (degree 500) and 146891.A9601_04811 (degree
+	495).
 	
 
 

@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:44:13.482009
 
-The undirected graph Trichechus manatus has 17945 nodes and 3859626 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02397 and
-is connected, as it has a single component. The graph median node degree is 306,
-the mean node degree is 430.16, and the node degree mode is 255. The top 5 most central
-nodes are 9778.XP_004372948.1 (degree 4230), 9778.XP_004384931.1 (degree 4083), 9778.XP_004376967.1
-(degree 3524), 9778.XP_004386681.1 (degree 3454) and 9778.XP_004387263.1 (degree
-3416).
+The undirected graph Trichechus manatus has 17945 nodes and 3859626 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02397 and is connected, as it has a single component. The graph median
+node degree is 306, the mean node degree is 430.16, and the node degree
+mode is 255. The top 5 most central nodes are 9778.XP_004372948.1 (degree
+4230), 9778.XP_004384931.1 (degree 4083), 9778.XP_004376967.1 (degree 3524),
+9778.XP_004386681.1 (degree 3454) and 9778.XP_004387263.1 (degree 3416).
 
 
 References
@@ -106,13 +106,13 @@ def TrichechusManatus(
 	
 	Datetime: 2021-02-02 17:44:13.482009
 	
-	The undirected graph Trichechus manatus has 17945 nodes and 3859626 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02397 and
-	is connected, as it has a single component. The graph median node degree is 306,
-	the mean node degree is 430.16, and the node degree mode is 255. The top 5 most central
-	nodes are 9778.XP_004372948.1 (degree 4230), 9778.XP_004384931.1 (degree 4083), 9778.XP_004376967.1
-	(degree 3524), 9778.XP_004386681.1 (degree 3454) and 9778.XP_004387263.1 (degree
-	3416).
+	The undirected graph Trichechus manatus has 17945 nodes and 3859626 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02397 and is connected, as it has a single component. The graph median
+	node degree is 306, the mean node degree is 430.16, and the node degree
+	mode is 255. The top 5 most central nodes are 9778.XP_004372948.1 (degree
+	4230), 9778.XP_004384931.1 (degree 4083), 9778.XP_004376967.1 (degree 3524),
+	9778.XP_004386681.1 (degree 3454) and 9778.XP_004387263.1 (degree 3416).
 	
 
 

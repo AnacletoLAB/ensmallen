@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:58.170160
 
-The undirected graph Centipeda periodontii has 2610 nodes and 233552 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06860 and
-has 6 connected components, where the component with most nodes has 2589 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 178.97, and the node degree mode is 10. The top 5 most central
-nodes are 888060.HMPREF9081_0761 (degree 937), 888060.HMPREF9081_1481 (degree 882),
-888060.HMPREF9081_0957 (degree 844), 888060.HMPREF9081_0145 (degree 829) and 888060.HMPREF9081_1388
+The undirected graph Centipeda periodontii has 2610 nodes and 233552 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06860 and has 6 connected components, where the component with most
+nodes has 2589 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 178.97, and
+the node degree mode is 10. The top 5 most central nodes are 888060.HMPREF9081_0761
+(degree 937), 888060.HMPREF9081_1481 (degree 882), 888060.HMPREF9081_0957
+(degree 844), 888060.HMPREF9081_0145 (degree 829) and 888060.HMPREF9081_1388
 (degree 802).
 
 
@@ -107,13 +108,14 @@ def CentipedaPeriodontii(
 	
 	Datetime: 2021-02-02 21:52:58.170160
 	
-	The undirected graph Centipeda periodontii has 2610 nodes and 233552 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06860 and
-	has 6 connected components, where the component with most nodes has 2589 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 178.97, and the node degree mode is 10. The top 5 most central
-	nodes are 888060.HMPREF9081_0761 (degree 937), 888060.HMPREF9081_1481 (degree 882),
-	888060.HMPREF9081_0957 (degree 844), 888060.HMPREF9081_0145 (degree 829) and 888060.HMPREF9081_1388
+	The undirected graph Centipeda periodontii has 2610 nodes and 233552 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06860 and has 6 connected components, where the component with most
+	nodes has 2589 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 178.97, and
+	the node degree mode is 10. The top 5 most central nodes are 888060.HMPREF9081_0761
+	(degree 937), 888060.HMPREF9081_1481 (degree 882), 888060.HMPREF9081_0957
+	(degree 844), 888060.HMPREF9081_0145 (degree 829) and 888060.HMPREF9081_1388
 	(degree 802).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:07.951954
 
-The undirected graph Acinetobacter guillouiae has 4459 nodes and 377282 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03796
-and has 29 connected components, where the component with most nodes has 4387 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 169.22, and the node degree mode is 2. The top 5
-most central nodes are 1217656.F964_01648 (degree 1364), 1217656.F964_00006 (degree
-1330), 1217656.F964_01066 (degree 1164), 1217656.F964_00368 (degree 1111) and 1217656.F964_03631
-(degree 1033).
+The undirected graph Acinetobacter guillouiae has 4459 nodes and 377282
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03796 and has 29 connected components, where the component
+with most nodes has 4387 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 169.22,
+and the node degree mode is 2. The top 5 most central nodes are 1217656.F964_01648
+(degree 1364), 1217656.F964_00006 (degree 1330), 1217656.F964_01066 (degree
+1164), 1217656.F964_00368 (degree 1111) and 1217656.F964_03631 (degree
+1033).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterGuillouiae(
 	
 	Datetime: 2021-02-02 23:21:07.951954
 	
-	The undirected graph Acinetobacter guillouiae has 4459 nodes and 377282 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03796
-	and has 29 connected components, where the component with most nodes has 4387 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 169.22, and the node degree mode is 2. The top 5
-	most central nodes are 1217656.F964_01648 (degree 1364), 1217656.F964_00006 (degree
-	1330), 1217656.F964_01066 (degree 1164), 1217656.F964_00368 (degree 1111) and 1217656.F964_03631
-	(degree 1033).
+	The undirected graph Acinetobacter guillouiae has 4459 nodes and 377282
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03796 and has 29 connected components, where the component
+	with most nodes has 4387 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 169.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1217656.F964_01648
+	(degree 1364), 1217656.F964_00006 (degree 1330), 1217656.F964_01066 (degree
+	1164), 1217656.F964_00368 (degree 1111) and 1217656.F964_03631 (degree
+	1033).
 	
 
 

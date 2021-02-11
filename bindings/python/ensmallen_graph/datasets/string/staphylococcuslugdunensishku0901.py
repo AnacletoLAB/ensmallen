@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:06.831503
 
-The undirected graph Staphylococcus lugdunensis HKU0901 has 2469 nodes and 169445
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05562 and has 9 connected components, where the component with most nodes has
-2452 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 108, the mean node degree is 137.26, and the node degree mode is 3. The
-top 5 most central nodes are 698737.SLGD_01238 (degree 987), 698737.SLGD_02472 (degree
-797), 698737.SLGD_02471 (degree 782), 698737.SLGD_01686 (degree 744) and 698737.SLGD_02418
-(degree 744).
+The undirected graph Staphylococcus lugdunensis HKU0901 has 2469 nodes
+and 169445 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05562 and has 9 connected components, where the
+component with most nodes has 2452 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+is 137.26, and the node degree mode is 3. The top 5 most central nodes
+are 698737.SLGD_01238 (degree 987), 698737.SLGD_02472 (degree 797), 698737.SLGD_02471
+(degree 782), 698737.SLGD_01686 (degree 744) and 698737.SLGD_02418 (degree
+744).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusLugdunensisHku0901(
 	
 	Datetime: 2021-02-02 21:33:06.831503
 	
-	The undirected graph Staphylococcus lugdunensis HKU0901 has 2469 nodes and 169445
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05562 and has 9 connected components, where the component with most nodes has
-	2452 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 108, the mean node degree is 137.26, and the node degree mode is 3. The
-	top 5 most central nodes are 698737.SLGD_01238 (degree 987), 698737.SLGD_02472 (degree
-	797), 698737.SLGD_02471 (degree 782), 698737.SLGD_01686 (degree 744) and 698737.SLGD_02418
-	(degree 744).
+	The undirected graph Staphylococcus lugdunensis HKU0901 has 2469 nodes
+	and 169445 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05562 and has 9 connected components, where the
+	component with most nodes has 2452 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+	is 137.26, and the node degree mode is 3. The top 5 most central nodes
+	are 698737.SLGD_01238 (degree 987), 698737.SLGD_02472 (degree 797), 698737.SLGD_02471
+	(degree 782), 698737.SLGD_01686 (degree 744) and 698737.SLGD_02418 (degree
+	744).
 	
 
 

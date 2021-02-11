@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:23.641144
 
-The undirected graph Mesoplasma florum has 680 nodes and 52284 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.22647
-and has 3 connected components, where the component with most nodes has 676 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 153.78, and the node degree mode is 8. The top 5
-most central nodes are 265311.Mfl582 (degree 414), 265311.Mfl415 (degree 406), 265311.Mfl196
-(degree 404), 265311.Mfl342 (degree 403) and 265311.Mfl398 (degree 402).
+The undirected graph Mesoplasma florum has 680 nodes and 52284 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.22647 and has 3 connected components, where the component
+with most nodes has 676 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 153.78,
+and the node degree mode is 8. The top 5 most central nodes are 265311.Mfl582
+(degree 414), 265311.Mfl415 (degree 406), 265311.Mfl196 (degree 404), 265311.Mfl342
+(degree 403) and 265311.Mfl398 (degree 402).
 
 
 References
@@ -106,13 +107,14 @@ def MesoplasmaFlorum(
 	
 	Datetime: 2021-02-02 20:14:23.641144
 	
-	The undirected graph Mesoplasma florum has 680 nodes and 52284 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.22647
-	and has 3 connected components, where the component with most nodes has 676 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 153.78, and the node degree mode is 8. The top 5
-	most central nodes are 265311.Mfl582 (degree 414), 265311.Mfl415 (degree 406), 265311.Mfl196
-	(degree 404), 265311.Mfl342 (degree 403) and 265311.Mfl398 (degree 402).
+	The undirected graph Mesoplasma florum has 680 nodes and 52284 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.22647 and has 3 connected components, where the component
+	with most nodes has 676 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 153.78,
+	and the node degree mode is 8. The top 5 most central nodes are 265311.Mfl582
+	(degree 414), 265311.Mfl415 (degree 406), 265311.Mfl196 (degree 404), 265311.Mfl342
+	(degree 403) and 265311.Mfl398 (degree 402).
 	
 
 

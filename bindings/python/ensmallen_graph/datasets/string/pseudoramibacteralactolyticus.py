@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:40.179931
 
-The undirected graph Pseudoramibacter alactolyticus has 2485 nodes and 165863 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05374
-and has 11 connected components, where the component with most nodes has 2459 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 133.49, and the node degree mode is 6. The top 5
-most central nodes are 887929.HMP0721_0482 (degree 864), 887929.HMP0721_0243 (degree
-851), 887929.HMP0721_2015 (degree 789), 887929.HMP0721_0532 (degree 780) and 887929.HMP0721_1837
-(degree 765).
+The undirected graph Pseudoramibacter alactolyticus has 2485 nodes and
+165863 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05374 and has 11 connected components, where the
+component with most nodes has 2459 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+is 133.49, and the node degree mode is 6. The top 5 most central nodes
+are 887929.HMP0721_0482 (degree 864), 887929.HMP0721_0243 (degree 851),
+887929.HMP0721_2015 (degree 789), 887929.HMP0721_0532 (degree 780) and
+887929.HMP0721_1837 (degree 765).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoramibacterAlactolyticus(
 	
 	Datetime: 2021-02-02 21:52:40.179931
 	
-	The undirected graph Pseudoramibacter alactolyticus has 2485 nodes and 165863 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05374
-	and has 11 connected components, where the component with most nodes has 2459 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 133.49, and the node degree mode is 6. The top 5
-	most central nodes are 887929.HMP0721_0482 (degree 864), 887929.HMP0721_0243 (degree
-	851), 887929.HMP0721_2015 (degree 789), 887929.HMP0721_0532 (degree 780) and 887929.HMP0721_1837
-	(degree 765).
+	The undirected graph Pseudoramibacter alactolyticus has 2485 nodes and
+	165863 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05374 and has 11 connected components, where the
+	component with most nodes has 2459 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+	is 133.49, and the node degree mode is 6. The top 5 most central nodes
+	are 887929.HMP0721_0482 (degree 864), 887929.HMP0721_0243 (degree 851),
+	887929.HMP0721_2015 (degree 789), 887929.HMP0721_0532 (degree 780) and
+	887929.HMP0721_1837 (degree 765).
 	
 
 

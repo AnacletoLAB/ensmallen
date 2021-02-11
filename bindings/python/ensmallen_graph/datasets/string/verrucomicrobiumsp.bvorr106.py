@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:11.522795
 
-The undirected graph Verrucomicrobium sp. BvORR106 has 6401 nodes and 579077 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02827
-and has 87 connected components, where the component with most nodes has 6152 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 180.93, and the node degree mode is 2. The top 5
-most central nodes are 1403819.BATR01000171_gene5874 (degree 2096), 1403819.BATR01000095_gene3030
-(degree 1743), 1403819.BATR01000104_gene3531 (degree 1689), 1403819.BATR01000010_gene356
-(degree 1673) and 1403819.BATR01000112_gene3748 (degree 1329).
+The undirected graph Verrucomicrobium sp. BvORR106 has 6401 nodes and 579077
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02827 and has 87 connected components, where the component
+with most nodes has 6152 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 180.93,
+and the node degree mode is 2. The top 5 most central nodes are 1403819.BATR01000171_gene5874
+(degree 2096), 1403819.BATR01000095_gene3030 (degree 1743), 1403819.BATR01000104_gene3531
+(degree 1689), 1403819.BATR01000010_gene356 (degree 1673) and 1403819.BATR01000112_gene3748
+(degree 1329).
 
 
 References
@@ -107,14 +108,15 @@ def VerrucomicrobiumSp.Bvorr106(
 	
 	Datetime: 2021-02-03 22:33:11.522795
 	
-	The undirected graph Verrucomicrobium sp. BvORR106 has 6401 nodes and 579077 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02827
-	and has 87 connected components, where the component with most nodes has 6152 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 180.93, and the node degree mode is 2. The top 5
-	most central nodes are 1403819.BATR01000171_gene5874 (degree 2096), 1403819.BATR01000095_gene3030
-	(degree 1743), 1403819.BATR01000104_gene3531 (degree 1689), 1403819.BATR01000010_gene356
-	(degree 1673) and 1403819.BATR01000112_gene3748 (degree 1329).
+	The undirected graph Verrucomicrobium sp. BvORR106 has 6401 nodes and 579077
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02827 and has 87 connected components, where the component
+	with most nodes has 6152 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 180.93,
+	and the node degree mode is 2. The top 5 most central nodes are 1403819.BATR01000171_gene5874
+	(degree 2096), 1403819.BATR01000095_gene3030 (degree 1743), 1403819.BATR01000104_gene3531
+	(degree 1689), 1403819.BATR01000010_gene356 (degree 1673) and 1403819.BATR01000112_gene3748
+	(degree 1329).
 	
 
 

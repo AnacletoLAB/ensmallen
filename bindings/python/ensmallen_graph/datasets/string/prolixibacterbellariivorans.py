@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:39:07.279194
 
-The undirected graph Prolixibacter bellariivorans has 4011 nodes and 501393 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-and has 25 connected components, where the component with most nodes has 3953 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 250.01, and the node degree mode is 1. The top 5
-most central nodes are 1408473.JHXO01000001_gene2077 (degree 1365), 1408473.JHXO01000006_gene1392
-(degree 1173), 1408473.JHXO01000005_gene1441 (degree 1130), 1408473.JHXO01000005_gene1650
-(degree 1117) and 1408473.JHXO01000006_gene1133 (degree 1110).
+The undirected graph Prolixibacter bellariivorans has 4011 nodes and 501393
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06235 and has 25 connected components, where the component
+with most nodes has 3953 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 250.01,
+and the node degree mode is 1. The top 5 most central nodes are 1408473.JHXO01000001_gene2077
+(degree 1365), 1408473.JHXO01000006_gene1392 (degree 1173), 1408473.JHXO01000005_gene1441
+(degree 1130), 1408473.JHXO01000005_gene1650 (degree 1117) and 1408473.JHXO01000006_gene1133
+(degree 1110).
 
 
 References
@@ -107,14 +108,15 @@ def ProlixibacterBellariivorans(
 	
 	Datetime: 2021-02-03 22:39:07.279194
 	
-	The undirected graph Prolixibacter bellariivorans has 4011 nodes and 501393 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-	and has 25 connected components, where the component with most nodes has 3953 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 250.01, and the node degree mode is 1. The top 5
-	most central nodes are 1408473.JHXO01000001_gene2077 (degree 1365), 1408473.JHXO01000006_gene1392
-	(degree 1173), 1408473.JHXO01000005_gene1441 (degree 1130), 1408473.JHXO01000005_gene1650
-	(degree 1117) and 1408473.JHXO01000006_gene1133 (degree 1110).
+	The undirected graph Prolixibacter bellariivorans has 4011 nodes and 501393
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06235 and has 25 connected components, where the component
+	with most nodes has 3953 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 250.01,
+	and the node degree mode is 1. The top 5 most central nodes are 1408473.JHXO01000001_gene2077
+	(degree 1365), 1408473.JHXO01000006_gene1392 (degree 1173), 1408473.JHXO01000005_gene1441
+	(degree 1130), 1408473.JHXO01000005_gene1650 (degree 1117) and 1408473.JHXO01000006_gene1133
+	(degree 1110).
 	
 
 

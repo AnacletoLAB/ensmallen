@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:03.848386
 
-The undirected graph Campylobacter fetus testudinum has 1687 nodes and 95012 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06681
-and has 6 connected components, where the component with most nodes has 1671 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 112.64, and the node degree mode is 17. The top 5
-most central nodes are 1244528.CFT03427_0236 (degree 733), 1244528.CFT03427_0615
-(degree 678), 1244528.CFT03427_0401 (degree 633), 1244528.CFT03427_1230 (degree 587)
+The undirected graph Campylobacter fetus testudinum has 1687 nodes and
+95012 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06681 and has 6 connected components, where the
+component with most nodes has 1671 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 89, the mean node degree
+is 112.64, and the node degree mode is 17. The top 5 most central nodes
+are 1244528.CFT03427_0236 (degree 733), 1244528.CFT03427_0615 (degree 678),
+1244528.CFT03427_0401 (degree 633), 1244528.CFT03427_1230 (degree 587)
 and 1244528.CFT03427_1068 (degree 529).
 
 
@@ -107,13 +108,14 @@ def CampylobacterFetusTestudinum(
 	
 	Datetime: 2021-02-02 23:33:03.848386
 	
-	The undirected graph Campylobacter fetus testudinum has 1687 nodes and 95012 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06681
-	and has 6 connected components, where the component with most nodes has 1671 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 112.64, and the node degree mode is 17. The top 5
-	most central nodes are 1244528.CFT03427_0236 (degree 733), 1244528.CFT03427_0615
-	(degree 678), 1244528.CFT03427_0401 (degree 633), 1244528.CFT03427_1230 (degree 587)
+	The undirected graph Campylobacter fetus testudinum has 1687 nodes and
+	95012 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06681 and has 6 connected components, where the
+	component with most nodes has 1671 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 89, the mean node degree
+	is 112.64, and the node degree mode is 17. The top 5 most central nodes
+	are 1244528.CFT03427_0236 (degree 733), 1244528.CFT03427_0615 (degree 678),
+	1244528.CFT03427_0401 (degree 633), 1244528.CFT03427_1230 (degree 587)
 	and 1244528.CFT03427_1068 (degree 529).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:09:55.803101
 
-The undirected graph Agrobacterium tumefaciens Cherry has 5007 nodes and 648125 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05172
-and has 16 connected components, where the component with most nodes has 4968 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 258.89, and the node degree mode is 2. The top 5
-most central nodes are 1281779.H009_22678 (degree 1878), 1281779.H009_22443 (degree
-1601), 1281779.H009_16334 (degree 1510), 1281779.H009_22843 (degree 1402) and 1281779.H009_00954
-(degree 1389).
+The undirected graph Agrobacterium tumefaciens Cherry has 5007 nodes and
+648125 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05172 and has 16 connected components, where the
+component with most nodes has 4968 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 215, the mean node degree
+is 258.89, and the node degree mode is 2. The top 5 most central nodes
+are 1281779.H009_22678 (degree 1878), 1281779.H009_22443 (degree 1601),
+1281779.H009_16334 (degree 1510), 1281779.H009_22843 (degree 1402) and
+1281779.H009_00954 (degree 1389).
 
 
 References
@@ -107,14 +108,15 @@ def AgrobacteriumTumefaciensCherry(
 	
 	Datetime: 2021-02-03 21:09:55.803101
 	
-	The undirected graph Agrobacterium tumefaciens Cherry has 5007 nodes and 648125 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05172
-	and has 16 connected components, where the component with most nodes has 4968 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 258.89, and the node degree mode is 2. The top 5
-	most central nodes are 1281779.H009_22678 (degree 1878), 1281779.H009_22443 (degree
-	1601), 1281779.H009_16334 (degree 1510), 1281779.H009_22843 (degree 1402) and 1281779.H009_00954
-	(degree 1389).
+	The undirected graph Agrobacterium tumefaciens Cherry has 5007 nodes and
+	648125 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05172 and has 16 connected components, where the
+	component with most nodes has 4968 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 215, the mean node degree
+	is 258.89, and the node degree mode is 2. The top 5 most central nodes
+	are 1281779.H009_22678 (degree 1878), 1281779.H009_22443 (degree 1601),
+	1281779.H009_16334 (degree 1510), 1281779.H009_22843 (degree 1402) and
+	1281779.H009_00954 (degree 1389).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:09.031973
 
-The undirected graph Flavobacterium sp. CF136 has 4294 nodes and 368268 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03995
-and has 14 connected components, where the component with most nodes has 4261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 171.53, and the node degree mode is 2. The top 5
-most central nodes are 1144313.PMI10_00376 (degree 1246), 1144313.PMI10_03080 (degree
-1175), 1144313.PMI10_03493 (degree 1153), 1144313.PMI10_02278 (degree 1083) and 1144313.PMI10_03266
-(degree 1059).
+The undirected graph Flavobacterium sp. CF136 has 4294 nodes and 368268
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03995 and has 14 connected components, where the component
+with most nodes has 4261 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 171.53,
+and the node degree mode is 2. The top 5 most central nodes are 1144313.PMI10_00376
+(degree 1246), 1144313.PMI10_03080 (degree 1175), 1144313.PMI10_03493 (degree
+1153), 1144313.PMI10_02278 (degree 1083) and 1144313.PMI10_03266 (degree
+1059).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Cf136(
 	
 	Datetime: 2021-02-05 17:18:09.031973
 	
-	The undirected graph Flavobacterium sp. CF136 has 4294 nodes and 368268 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03995
-	and has 14 connected components, where the component with most nodes has 4261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 171.53, and the node degree mode is 2. The top 5
-	most central nodes are 1144313.PMI10_00376 (degree 1246), 1144313.PMI10_03080 (degree
-	1175), 1144313.PMI10_03493 (degree 1153), 1144313.PMI10_02278 (degree 1083) and 1144313.PMI10_03266
-	(degree 1059).
+	The undirected graph Flavobacterium sp. CF136 has 4294 nodes and 368268
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03995 and has 14 connected components, where the component
+	with most nodes has 4261 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 171.53,
+	and the node degree mode is 2. The top 5 most central nodes are 1144313.PMI10_00376
+	(degree 1246), 1144313.PMI10_03080 (degree 1175), 1144313.PMI10_03493 (degree
+	1153), 1144313.PMI10_02278 (degree 1083) and 1144313.PMI10_03266 (degree
+	1059).
 	
 
 

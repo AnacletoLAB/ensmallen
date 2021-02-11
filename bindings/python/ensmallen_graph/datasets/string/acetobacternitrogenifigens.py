@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:11.688084
 
-The undirected graph Acetobacter nitrogenifigens has 3560 nodes and 320564 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05060
-and has 26 connected components, where the component with most nodes has 3495 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 180.09, and the node degree mode is 2. The top 5
-most central nodes are 1120919.AUBI01000001_gene3085 (degree 1272), 1120919.AUBI01000015_gene2777
-(degree 1215), 1120919.AUBI01000034_gene2823 (degree 999), 1120919.AUBI01000016_gene3577
-(degree 987) and 1120919.AUBI01000005_gene875 (degree 957).
+The undirected graph Acetobacter nitrogenifigens has 3560 nodes and 320564
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05060 and has 26 connected components, where the component
+with most nodes has 3495 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 180.09,
+and the node degree mode is 2. The top 5 most central nodes are 1120919.AUBI01000001_gene3085
+(degree 1272), 1120919.AUBI01000015_gene2777 (degree 1215), 1120919.AUBI01000034_gene2823
+(degree 999), 1120919.AUBI01000016_gene3577 (degree 987) and 1120919.AUBI01000005_gene875
+(degree 957).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterNitrogenifigens(
 	
 	Datetime: 2021-02-02 22:29:11.688084
 	
-	The undirected graph Acetobacter nitrogenifigens has 3560 nodes and 320564 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05060
-	and has 26 connected components, where the component with most nodes has 3495 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 180.09, and the node degree mode is 2. The top 5
-	most central nodes are 1120919.AUBI01000001_gene3085 (degree 1272), 1120919.AUBI01000015_gene2777
-	(degree 1215), 1120919.AUBI01000034_gene2823 (degree 999), 1120919.AUBI01000016_gene3577
-	(degree 987) and 1120919.AUBI01000005_gene875 (degree 957).
+	The undirected graph Acetobacter nitrogenifigens has 3560 nodes and 320564
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05060 and has 26 connected components, where the component
+	with most nodes has 3495 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 180.09,
+	and the node degree mode is 2. The top 5 most central nodes are 1120919.AUBI01000001_gene3085
+	(degree 1272), 1120919.AUBI01000015_gene2777 (degree 1215), 1120919.AUBI01000034_gene2823
+	(degree 999), 1120919.AUBI01000016_gene3577 (degree 987) and 1120919.AUBI01000005_gene875
+	(degree 957).
 	
 
 

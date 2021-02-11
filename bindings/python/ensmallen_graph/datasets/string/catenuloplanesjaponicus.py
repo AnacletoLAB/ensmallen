@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:57.465380
 
-The undirected graph Catenuloplanes japonicus has 9359 nodes and 1108856 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02532
-and has 49 connected components, where the component with most nodes has 9228 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 201, the mean node degree is 236.96, and the node degree mode is 3. The top 5
-most central nodes are 33876.JNXY01000038_gene8102 (degree 2164), 33876.JNXY01000009_gene8852
-(degree 2163), 33876.JNXY01000050_gene5512 (degree 2151), 33876.JNXY01000044_gene1833
-(degree 2115) and 33876.JNXY01000050_gene5504 (degree 1998).
+The undirected graph Catenuloplanes japonicus has 9359 nodes and 1108856
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02532 and has 49 connected components, where the component
+with most nodes has 9228 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 236.96,
+and the node degree mode is 3. The top 5 most central nodes are 33876.JNXY01000038_gene8102
+(degree 2164), 33876.JNXY01000009_gene8852 (degree 2163), 33876.JNXY01000050_gene5512
+(degree 2151), 33876.JNXY01000044_gene1833 (degree 2115) and 33876.JNXY01000050_gene5504
+(degree 1998).
 
 
 References
@@ -107,14 +108,15 @@ def CatenuloplanesJaponicus(
 	
 	Datetime: 2021-02-02 18:03:57.465380
 	
-	The undirected graph Catenuloplanes japonicus has 9359 nodes and 1108856 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02532
-	and has 49 connected components, where the component with most nodes has 9228 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 201, the mean node degree is 236.96, and the node degree mode is 3. The top 5
-	most central nodes are 33876.JNXY01000038_gene8102 (degree 2164), 33876.JNXY01000009_gene8852
-	(degree 2163), 33876.JNXY01000050_gene5512 (degree 2151), 33876.JNXY01000044_gene1833
-	(degree 2115) and 33876.JNXY01000050_gene5504 (degree 1998).
+	The undirected graph Catenuloplanes japonicus has 9359 nodes and 1108856
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02532 and has 49 connected components, where the component
+	with most nodes has 9228 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 236.96,
+	and the node degree mode is 3. The top 5 most central nodes are 33876.JNXY01000038_gene8102
+	(degree 2164), 33876.JNXY01000009_gene8852 (degree 2163), 33876.JNXY01000050_gene5512
+	(degree 2151), 33876.JNXY01000044_gene1833 (degree 2115) and 33876.JNXY01000050_gene5504
+	(degree 1998).
 	
 
 

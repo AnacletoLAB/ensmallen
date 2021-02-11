@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:53.529541
 
-The undirected graph Pseudomonas sp. Chol1 has 4478 nodes and 763877 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07620 and
-has 12 connected components, where the component with most nodes has 4452 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 288,
-the mean node degree is 341.17, and the node degree mode is 1. The top 5 most central
-nodes are 440512.C211_20173 (degree 1977), 440512.C211_06275 (degree 1935), 440512.C211_13426
-(degree 1935), 440512.C211_19414 (degree 1820) and 440512.C211_13106 (degree 1820).
+The undirected graph Pseudomonas sp. Chol1 has 4478 nodes and 763877 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07620 and has 12 connected components, where the component with most
+nodes has 4452 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 288, the mean node degree is 341.17, and
+the node degree mode is 1. The top 5 most central nodes are 440512.C211_20173
+(degree 1977), 440512.C211_06275 (degree 1935), 440512.C211_13426 (degree
+1935), 440512.C211_19414 (degree 1820) and 440512.C211_13106 (degree 1820).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasSp.Chol1(
 	
 	Datetime: 2021-02-02 20:49:53.529541
 	
-	The undirected graph Pseudomonas sp. Chol1 has 4478 nodes and 763877 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07620 and
-	has 12 connected components, where the component with most nodes has 4452 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 288,
-	the mean node degree is 341.17, and the node degree mode is 1. The top 5 most central
-	nodes are 440512.C211_20173 (degree 1977), 440512.C211_06275 (degree 1935), 440512.C211_13426
-	(degree 1935), 440512.C211_19414 (degree 1820) and 440512.C211_13106 (degree 1820).
+	The undirected graph Pseudomonas sp. Chol1 has 4478 nodes and 763877 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07620 and has 12 connected components, where the component with most
+	nodes has 4452 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 288, the mean node degree is 341.17, and
+	the node degree mode is 1. The top 5 most central nodes are 440512.C211_20173
+	(degree 1977), 440512.C211_06275 (degree 1935), 440512.C211_13426 (degree
+	1935), 440512.C211_19414 (degree 1820) and 440512.C211_13106 (degree 1820).
 	
 
 

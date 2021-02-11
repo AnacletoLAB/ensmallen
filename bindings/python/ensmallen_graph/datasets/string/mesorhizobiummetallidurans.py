@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:27:55.618849
 
-The undirected graph Mesorhizobium metallidurans has 6560 nodes and 761300 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03539
-and has 76 connected components, where the component with most nodes has 6368 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 232.10, and the node degree mode is 2. The top 5
-most central nodes are 1297569.MESS2_1530030 (degree 2047), 1297569.MESS2_30060 (degree
-2029), 1297569.MESS2_30013 (degree 1854), 1297569.MESS2_1540019 (degree 1816) and
-1297569.MESS2_1590006 (degree 1703).
+The undirected graph Mesorhizobium metallidurans has 6560 nodes and 761300
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03539 and has 76 connected components, where the component
+with most nodes has 6368 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 232.10,
+and the node degree mode is 2. The top 5 most central nodes are 1297569.MESS2_1530030
+(degree 2047), 1297569.MESS2_30060 (degree 2029), 1297569.MESS2_30013 (degree
+1854), 1297569.MESS2_1540019 (degree 1816) and 1297569.MESS2_1590006 (degree
+1703).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumMetallidurans(
 	
 	Datetime: 2021-02-03 21:27:55.618849
 	
-	The undirected graph Mesorhizobium metallidurans has 6560 nodes and 761300 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03539
-	and has 76 connected components, where the component with most nodes has 6368 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 232.10, and the node degree mode is 2. The top 5
-	most central nodes are 1297569.MESS2_1530030 (degree 2047), 1297569.MESS2_30060 (degree
-	2029), 1297569.MESS2_30013 (degree 1854), 1297569.MESS2_1540019 (degree 1816) and
-	1297569.MESS2_1590006 (degree 1703).
+	The undirected graph Mesorhizobium metallidurans has 6560 nodes and 761300
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03539 and has 76 connected components, where the component
+	with most nodes has 6368 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 232.10,
+	and the node degree mode is 2. The top 5 most central nodes are 1297569.MESS2_1530030
+	(degree 2047), 1297569.MESS2_30060 (degree 2029), 1297569.MESS2_30013 (degree
+	1854), 1297569.MESS2_1540019 (degree 1816) and 1297569.MESS2_1590006 (degree
+	1703).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:49.071580
 
-The undirected graph Desulfovibrio desulfuricans DSM642 has 2649 nodes and 211630
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06034 and has 7 connected components, where the component with most nodes has
-2634 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 127, the mean node degree is 159.78, and the node degree mode is 1. The
-top 5 most central nodes are 1121445.ATUZ01000013_gene1155 (degree 1182), 1121445.ATUZ01000011_gene793
+The undirected graph Desulfovibrio desulfuricans DSM642 has 2649 nodes
+and 211630 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06034 and has 7 connected components, where the
+component with most nodes has 2634 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+is 159.78, and the node degree mode is 1. The top 5 most central nodes
+are 1121445.ATUZ01000013_gene1155 (degree 1182), 1121445.ATUZ01000011_gene793
 (degree 1085), 1121445.ATUZ01000013_gene1271 (degree 1042), 1121445.ATUZ01000016_gene2568
 (degree 989) and 1121445.ATUZ01000011_gene514 (degree 932).
 
@@ -107,12 +108,13 @@ def DesulfovibrioDesulfuricansDsm642(
 	
 	Datetime: 2021-02-02 22:36:49.071580
 	
-	The undirected graph Desulfovibrio desulfuricans DSM642 has 2649 nodes and 211630
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06034 and has 7 connected components, where the component with most nodes has
-	2634 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 127, the mean node degree is 159.78, and the node degree mode is 1. The
-	top 5 most central nodes are 1121445.ATUZ01000013_gene1155 (degree 1182), 1121445.ATUZ01000011_gene793
+	The undirected graph Desulfovibrio desulfuricans DSM642 has 2649 nodes
+	and 211630 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06034 and has 7 connected components, where the
+	component with most nodes has 2634 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 159.78, and the node degree mode is 1. The top 5 most central nodes
+	are 1121445.ATUZ01000013_gene1155 (degree 1182), 1121445.ATUZ01000011_gene793
 	(degree 1085), 1121445.ATUZ01000013_gene1271 (degree 1042), 1121445.ATUZ01000016_gene2568
 	(degree 989) and 1121445.ATUZ01000011_gene514 (degree 932).
 	

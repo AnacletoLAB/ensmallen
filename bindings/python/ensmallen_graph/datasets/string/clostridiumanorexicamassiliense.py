@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:43.142067
 
-The undirected graph Clostridium anorexicamassiliense has 4064 nodes and 428677 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05192
-and has 21 connected components, where the component with most nodes has 4012 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 210.96, and the node degree mode is 1. The top 5
-most central nodes are 1211817.CCAT010000052_gene2144 (degree 1654), 1211817.CCAT010000064_gene742
+The undirected graph Clostridium anorexicamassiliense has 4064 nodes and
+428677 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05192 and has 21 connected components, where the
+component with most nodes has 4012 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 149, the mean node degree
+is 210.96, and the node degree mode is 1. The top 5 most central nodes
+are 1211817.CCAT010000052_gene2144 (degree 1654), 1211817.CCAT010000064_gene742
 (degree 1640), 1211817.CCAT010000073_gene1009 (degree 1513), 1211817.CCAT010000062_gene3886
 (degree 1283) and 1211817.CCAT010000048_gene2562 (degree 1238).
 
@@ -107,12 +108,13 @@ def ClostridiumAnorexicamassiliense(
 	
 	Datetime: 2021-02-02 23:19:43.142067
 	
-	The undirected graph Clostridium anorexicamassiliense has 4064 nodes and 428677 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05192
-	and has 21 connected components, where the component with most nodes has 4012 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 210.96, and the node degree mode is 1. The top 5
-	most central nodes are 1211817.CCAT010000052_gene2144 (degree 1654), 1211817.CCAT010000064_gene742
+	The undirected graph Clostridium anorexicamassiliense has 4064 nodes and
+	428677 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05192 and has 21 connected components, where the
+	component with most nodes has 4012 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 149, the mean node degree
+	is 210.96, and the node degree mode is 1. The top 5 most central nodes
+	are 1211817.CCAT010000052_gene2144 (degree 1654), 1211817.CCAT010000064_gene742
 	(degree 1640), 1211817.CCAT010000073_gene1009 (degree 1513), 1211817.CCAT010000062_gene3886
 	(degree 1283) and 1211817.CCAT010000048_gene2562 (degree 1238).
 	

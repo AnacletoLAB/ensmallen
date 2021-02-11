@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:38.239032
 
-The undirected graph Peptoclostridium difficile 630 has 3787 nodes and 445493 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06214
-and has 7 connected components, where the component with most nodes has 3772 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 201, the mean node degree is 235.27, and the node degree mode is 5. The top 5
-most central nodes are 272563.CD630_11280 (degree 1647), 272563.CD630_01980 (degree
-1379), 272563.CD630_01320 (degree 1333), 272563.CD630_23350 (degree 1317) and 272563.CD630_21660
-(degree 1247).
+The undirected graph Peptoclostridium difficile 630 has 3787 nodes and
+445493 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06214 and has 7 connected components, where the
+component with most nodes has 3772 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 201, the mean node degree
+is 235.27, and the node degree mode is 5. The top 5 most central nodes
+are 272563.CD630_11280 (degree 1647), 272563.CD630_01980 (degree 1379),
+272563.CD630_01320 (degree 1333), 272563.CD630_23350 (degree 1317) and
+272563.CD630_21660 (degree 1247).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoclostridiumDifficile630(
 	
 	Datetime: 2021-02-02 20:16:38.239032
 	
-	The undirected graph Peptoclostridium difficile 630 has 3787 nodes and 445493 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06214
-	and has 7 connected components, where the component with most nodes has 3772 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 201, the mean node degree is 235.27, and the node degree mode is 5. The top 5
-	most central nodes are 272563.CD630_11280 (degree 1647), 272563.CD630_01980 (degree
-	1379), 272563.CD630_01320 (degree 1333), 272563.CD630_23350 (degree 1317) and 272563.CD630_21660
-	(degree 1247).
+	The undirected graph Peptoclostridium difficile 630 has 3787 nodes and
+	445493 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06214 and has 7 connected components, where the
+	component with most nodes has 3772 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 201, the mean node degree
+	is 235.27, and the node degree mode is 5. The top 5 most central nodes
+	are 272563.CD630_11280 (degree 1647), 272563.CD630_01980 (degree 1379),
+	272563.CD630_01320 (degree 1333), 272563.CD630_23350 (degree 1317) and
+	272563.CD630_21660 (degree 1247).
 	
 
 

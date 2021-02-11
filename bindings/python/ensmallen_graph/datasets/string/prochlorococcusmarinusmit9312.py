@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:33.424422
 
-The undirected graph Prochlorococcus marinus MIT9312 has 1936 nodes and 91926 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04908
-and has 39 connected components, where the component with most nodes has 1813 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 77, the mean node degree is 94.96, and the node degree mode is 3. The top 5 most
-central nodes are 74546.PMT9312_1236 (degree 703), 74546.PMT9312_0425 (degree 488),
-74546.PMT9312_1682 (degree 482), 74546.PMT9312_1604 (degree 475) and 74546.PMT9312_1359
-(degree 451).
+The undirected graph Prochlorococcus marinus MIT9312 has 1936 nodes and
+91926 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04908 and has 39 connected components, where the
+component with most nodes has 1813 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 77, the mean node degree
+is 94.96, and the node degree mode is 3. The top 5 most central nodes are
+74546.PMT9312_1236 (degree 703), 74546.PMT9312_0425 (degree 488), 74546.PMT9312_1682
+(degree 482), 74546.PMT9312_1604 (degree 475) and 74546.PMT9312_1359 (degree
+451).
 
 
 References
@@ -107,14 +108,15 @@ def ProchlorococcusMarinusMit9312(
 	
 	Datetime: 2021-02-02 18:32:33.424422
 	
-	The undirected graph Prochlorococcus marinus MIT9312 has 1936 nodes and 91926 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04908
-	and has 39 connected components, where the component with most nodes has 1813 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 77, the mean node degree is 94.96, and the node degree mode is 3. The top 5 most
-	central nodes are 74546.PMT9312_1236 (degree 703), 74546.PMT9312_0425 (degree 488),
-	74546.PMT9312_1682 (degree 482), 74546.PMT9312_1604 (degree 475) and 74546.PMT9312_1359
-	(degree 451).
+	The undirected graph Prochlorococcus marinus MIT9312 has 1936 nodes and
+	91926 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04908 and has 39 connected components, where the
+	component with most nodes has 1813 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 77, the mean node degree
+	is 94.96, and the node degree mode is 3. The top 5 most central nodes are
+	74546.PMT9312_1236 (degree 703), 74546.PMT9312_0425 (degree 488), 74546.PMT9312_1682
+	(degree 482), 74546.PMT9312_1604 (degree 475) and 74546.PMT9312_1359 (degree
+	451).
 	
 
 

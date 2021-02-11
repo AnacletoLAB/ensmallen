@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:45.034195
 
-The undirected graph Sutterella wadsworthensis HGA0223 has 2374 nodes and 161159
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05721 and has 9 connected components, where the component with most nodes has
-2350 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 115, the mean node degree is 135.77, and the node degree mode is 4. The
-top 5 most central nodes are 1203554.HMPREF1476_02124 (degree 716), 1203554.HMPREF1476_02113
-(degree 657), 1203554.HMPREF1476_02083 (degree 657), 1203554.HMPREF1476_00415 (degree
+The undirected graph Sutterella wadsworthensis HGA0223 has 2374 nodes and
+161159 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05721 and has 9 connected components, where the
+component with most nodes has 2350 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 135.77, and the node degree mode is 4. The top 5 most central nodes
+are 1203554.HMPREF1476_02124 (degree 716), 1203554.HMPREF1476_02113 (degree
+657), 1203554.HMPREF1476_02083 (degree 657), 1203554.HMPREF1476_00415 (degree
 633) and 1203554.HMPREF1476_01417 (degree 629).
 
 
@@ -107,13 +108,14 @@ def SutterellaWadsworthensisHga0223(
 	
 	Datetime: 2021-02-02 23:14:45.034195
 	
-	The undirected graph Sutterella wadsworthensis HGA0223 has 2374 nodes and 161159
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05721 and has 9 connected components, where the component with most nodes has
-	2350 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 115, the mean node degree is 135.77, and the node degree mode is 4. The
-	top 5 most central nodes are 1203554.HMPREF1476_02124 (degree 716), 1203554.HMPREF1476_02113
-	(degree 657), 1203554.HMPREF1476_02083 (degree 657), 1203554.HMPREF1476_00415 (degree
+	The undirected graph Sutterella wadsworthensis HGA0223 has 2374 nodes and
+	161159 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05721 and has 9 connected components, where the
+	component with most nodes has 2350 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 135.77, and the node degree mode is 4. The top 5 most central nodes
+	are 1203554.HMPREF1476_02124 (degree 716), 1203554.HMPREF1476_02113 (degree
+	657), 1203554.HMPREF1476_02083 (degree 657), 1203554.HMPREF1476_00415 (degree
 	633) and 1203554.HMPREF1476_01417 (degree 629).
 	
 

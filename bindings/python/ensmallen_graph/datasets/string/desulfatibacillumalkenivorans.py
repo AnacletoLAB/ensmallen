@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:27.671528
 
-The undirected graph Desulfatibacillum alkenivorans has 5194 nodes and 715047 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05302
-and has 22 connected components, where the component with most nodes has 5128 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 275.34, and the node degree mode is 3. The top 5
-most central nodes are 439235.Dalk_1056 (degree 2105), 439235.Dalk_2747 (degree 1930),
-439235.Dalk_0544 (degree 1922), 439235.Dalk_2018 (degree 1911) and 439235.Dalk_1747
-(degree 1736).
+The undirected graph Desulfatibacillum alkenivorans has 5194 nodes and
+715047 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05302 and has 22 connected components, where the
+component with most nodes has 5128 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 231, the mean node degree
+is 275.34, and the node degree mode is 3. The top 5 most central nodes
+are 439235.Dalk_1056 (degree 2105), 439235.Dalk_2747 (degree 1930), 439235.Dalk_0544
+(degree 1922), 439235.Dalk_2018 (degree 1911) and 439235.Dalk_1747 (degree
+1736).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfatibacillumAlkenivorans(
 	
 	Datetime: 2021-02-02 20:49:27.671528
 	
-	The undirected graph Desulfatibacillum alkenivorans has 5194 nodes and 715047 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05302
-	and has 22 connected components, where the component with most nodes has 5128 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 275.34, and the node degree mode is 3. The top 5
-	most central nodes are 439235.Dalk_1056 (degree 2105), 439235.Dalk_2747 (degree 1930),
-	439235.Dalk_0544 (degree 1922), 439235.Dalk_2018 (degree 1911) and 439235.Dalk_1747
-	(degree 1736).
+	The undirected graph Desulfatibacillum alkenivorans has 5194 nodes and
+	715047 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05302 and has 22 connected components, where the
+	component with most nodes has 5128 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 231, the mean node degree
+	is 275.34, and the node degree mode is 3. The top 5 most central nodes
+	are 439235.Dalk_1056 (degree 2105), 439235.Dalk_2747 (degree 1930), 439235.Dalk_0544
+	(degree 1922), 439235.Dalk_2018 (degree 1911) and 439235.Dalk_1747 (degree
+	1736).
 	
 
 

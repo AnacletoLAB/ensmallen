@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:50.139655
 
-The undirected graph Xanthomonas axonopodis vasculorum has 3437 nodes and 379202
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06422 and has 31 connected components, where the component with most nodes has
-3353 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 187, the mean node degree is 220.66, and the node degree mode is 1. The
-top 5 most central nodes are 325777.GW15_0219195 (degree 1257), 325777.GW15_0209565
-(degree 1203), 325777.GW15_0220240 (degree 1199), 325777.GW15_0209890 (degree 1182)
-and 325777.GW15_0211105 (degree 1171).
+The undirected graph Xanthomonas axonopodis vasculorum has 3437 nodes and
+379202 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06422 and has 31 connected components, where the
+component with most nodes has 3353 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+is 220.66, and the node degree mode is 1. The top 5 most central nodes
+are 325777.GW15_0219195 (degree 1257), 325777.GW15_0209565 (degree 1203),
+325777.GW15_0220240 (degree 1199), 325777.GW15_0209890 (degree 1182) and
+325777.GW15_0211105 (degree 1171).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasAxonopodisVasculorum(
 	
 	Datetime: 2021-02-02 20:28:50.139655
 	
-	The undirected graph Xanthomonas axonopodis vasculorum has 3437 nodes and 379202
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06422 and has 31 connected components, where the component with most nodes has
-	3353 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 187, the mean node degree is 220.66, and the node degree mode is 1. The
-	top 5 most central nodes are 325777.GW15_0219195 (degree 1257), 325777.GW15_0209565
-	(degree 1203), 325777.GW15_0220240 (degree 1199), 325777.GW15_0209890 (degree 1182)
-	and 325777.GW15_0211105 (degree 1171).
+	The undirected graph Xanthomonas axonopodis vasculorum has 3437 nodes and
+	379202 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06422 and has 31 connected components, where the
+	component with most nodes has 3353 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+	is 220.66, and the node degree mode is 1. The top 5 most central nodes
+	are 325777.GW15_0219195 (degree 1257), 325777.GW15_0209565 (degree 1203),
+	325777.GW15_0220240 (degree 1199), 325777.GW15_0209890 (degree 1182) and
+	325777.GW15_0211105 (degree 1171).
 	
 
 

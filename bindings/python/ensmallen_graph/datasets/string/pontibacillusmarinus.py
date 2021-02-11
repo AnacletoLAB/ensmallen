@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:50.785139
 
-The undirected graph Pontibacillus marinus has 4221 nodes and 531060 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05963 and
-has 26 connected components, where the component with most nodes has 4153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 251.63, and the node degree mode is 2. The top 5 most central
-nodes are 1385511.N783_02635 (degree 1457), 1385511.N783_19135 (degree 1270), 1385511.N783_10730
-(degree 1218), 1385511.N783_13965 (degree 1191) and 1385511.N783_21495 (degree 1179).
+The undirected graph Pontibacillus marinus has 4221 nodes and 531060 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05963 and has 26 connected components, where the component with most
+nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 251.63, and
+the node degree mode is 2. The top 5 most central nodes are 1385511.N783_02635
+(degree 1457), 1385511.N783_19135 (degree 1270), 1385511.N783_10730 (degree
+1218), 1385511.N783_13965 (degree 1191) and 1385511.N783_21495 (degree
+1179).
 
 
 References
@@ -106,13 +108,15 @@ def PontibacillusMarinus(
 	
 	Datetime: 2021-02-03 22:19:50.785139
 	
-	The undirected graph Pontibacillus marinus has 4221 nodes and 531060 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05963 and
-	has 26 connected components, where the component with most nodes has 4153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 251.63, and the node degree mode is 2. The top 5 most central
-	nodes are 1385511.N783_02635 (degree 1457), 1385511.N783_19135 (degree 1270), 1385511.N783_10730
-	(degree 1218), 1385511.N783_13965 (degree 1191) and 1385511.N783_21495 (degree 1179).
+	The undirected graph Pontibacillus marinus has 4221 nodes and 531060 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05963 and has 26 connected components, where the component with most
+	nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 251.63, and
+	the node degree mode is 2. The top 5 most central nodes are 1385511.N783_02635
+	(degree 1457), 1385511.N783_19135 (degree 1270), 1385511.N783_10730 (degree
+	1218), 1385511.N783_13965 (degree 1191) and 1385511.N783_21495 (degree
+	1179).
 	
 
 

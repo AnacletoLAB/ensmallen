@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:41:11.986261
 
-The undirected graph Felis catus has 19173 nodes and 4437578 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02414 and has 2
-connected components, where the component with most nodes has 19171 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 331,
-the mean node degree is 462.90, and the node degree mode is 9. The top 5 most central
-nodes are 9685.ENSFCAP00000001684 (degree 4985), 9685.ENSFCAP00000025413 (degree
-4521), 9685.ENSFCAP00000011770 (degree 4329), 9685.ENSFCAP00000013148 (degree 4015)
-and 9685.ENSFCAP00000025541 (degree 3843).
+The undirected graph Felis catus has 19173 nodes and 4437578 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02414 and has 2 connected components, where the component with most nodes
+has 19171 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 331, the mean node degree is 462.90, and the
+node degree mode is 9. The top 5 most central nodes are 9685.ENSFCAP00000001684
+(degree 4985), 9685.ENSFCAP00000025413 (degree 4521), 9685.ENSFCAP00000011770
+(degree 4329), 9685.ENSFCAP00000013148 (degree 4015) and 9685.ENSFCAP00000025541
+(degree 3843).
 
 
 References
@@ -107,14 +108,15 @@ def FelisCatus(
 	
 	Datetime: 2021-02-02 17:41:11.986261
 	
-	The undirected graph Felis catus has 19173 nodes and 4437578 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02414 and has 2
-	connected components, where the component with most nodes has 19171 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 331,
-	the mean node degree is 462.90, and the node degree mode is 9. The top 5 most central
-	nodes are 9685.ENSFCAP00000001684 (degree 4985), 9685.ENSFCAP00000025413 (degree
-	4521), 9685.ENSFCAP00000011770 (degree 4329), 9685.ENSFCAP00000013148 (degree 4015)
-	and 9685.ENSFCAP00000025541 (degree 3843).
+	The undirected graph Felis catus has 19173 nodes and 4437578 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02414 and has 2 connected components, where the component with most nodes
+	has 19171 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 331, the mean node degree is 462.90, and the
+	node degree mode is 9. The top 5 most central nodes are 9685.ENSFCAP00000001684
+	(degree 4985), 9685.ENSFCAP00000025413 (degree 4521), 9685.ENSFCAP00000011770
+	(degree 4329), 9685.ENSFCAP00000013148 (degree 4015) and 9685.ENSFCAP00000025541
+	(degree 3843).
 	
 
 

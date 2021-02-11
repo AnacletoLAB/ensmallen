@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:46:07.038250
 
-The undirected graph Bos taurus has 19845 nodes and 5629683 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02859 and has 3
-connected components, where the component with most nodes has 19841 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 435,
-the mean node degree is 567.37, and the node degree mode is 10. The top 5 most central
-nodes are 9913.ENSBTAP00000037577 (degree 6050), 9913.ENSBTAP00000022763 (degree
-4999), 9913.ENSBTAP00000023461 (degree 4755), 9913.ENSBTAP00000021507 (degree 4721)
-and 9913.ENSBTAP00000041757 (degree 4452).
+The undirected graph Bos taurus has 19845 nodes and 5629683 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02859 and has 3 connected components, where the component with most nodes
+has 19841 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 435, the mean node degree is 567.37, and the
+node degree mode is 10. The top 5 most central nodes are 9913.ENSBTAP00000037577
+(degree 6050), 9913.ENSBTAP00000022763 (degree 4999), 9913.ENSBTAP00000023461
+(degree 4755), 9913.ENSBTAP00000021507 (degree 4721) and 9913.ENSBTAP00000041757
+(degree 4452).
 
 
 References
@@ -107,14 +108,15 @@ def BosTaurus(
 	
 	Datetime: 2021-02-02 17:46:07.038250
 	
-	The undirected graph Bos taurus has 19845 nodes and 5629683 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02859 and has 3
-	connected components, where the component with most nodes has 19841 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 435,
-	the mean node degree is 567.37, and the node degree mode is 10. The top 5 most central
-	nodes are 9913.ENSBTAP00000037577 (degree 6050), 9913.ENSBTAP00000022763 (degree
-	4999), 9913.ENSBTAP00000023461 (degree 4755), 9913.ENSBTAP00000021507 (degree 4721)
-	and 9913.ENSBTAP00000041757 (degree 4452).
+	The undirected graph Bos taurus has 19845 nodes and 5629683 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02859 and has 3 connected components, where the component with most nodes
+	has 19841 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 435, the mean node degree is 567.37, and the
+	node degree mode is 10. The top 5 most central nodes are 9913.ENSBTAP00000037577
+	(degree 6050), 9913.ENSBTAP00000022763 (degree 4999), 9913.ENSBTAP00000023461
+	(degree 4755), 9913.ENSBTAP00000021507 (degree 4721) and 9913.ENSBTAP00000041757
+	(degree 4452).
 	
 
 

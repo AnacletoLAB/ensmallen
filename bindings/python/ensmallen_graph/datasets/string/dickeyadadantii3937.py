@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:16.661188
 
-The undirected graph Dickeya dadantii 3937 has 4525 nodes and 458862 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04483 and
-has 12 connected components, where the component with most nodes has 4500 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 202.81, and the node degree mode is 2. The top 5 most central
-nodes are 198628.Dda3937_01112 (degree 1413), 198628.Dda3937_02153 (degree 1148),
-198628.Dda3937_00709 (degree 1131), 198628.Dda3937_00193 (degree 1109) and 198628.Dda3937_00005
+The undirected graph Dickeya dadantii 3937 has 4525 nodes and 458862 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04483 and has 12 connected components, where the component with most
+nodes has 4500 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 202.81, and
+the node degree mode is 2. The top 5 most central nodes are 198628.Dda3937_01112
+(degree 1413), 198628.Dda3937_02153 (degree 1148), 198628.Dda3937_00709
+(degree 1131), 198628.Dda3937_00193 (degree 1109) and 198628.Dda3937_00005
 (degree 1048).
 
 
@@ -107,13 +108,14 @@ def DickeyaDadantii3937(
 	
 	Datetime: 2021-02-02 19:59:16.661188
 	
-	The undirected graph Dickeya dadantii 3937 has 4525 nodes and 458862 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04483 and
-	has 12 connected components, where the component with most nodes has 4500 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 202.81, and the node degree mode is 2. The top 5 most central
-	nodes are 198628.Dda3937_01112 (degree 1413), 198628.Dda3937_02153 (degree 1148),
-	198628.Dda3937_00709 (degree 1131), 198628.Dda3937_00193 (degree 1109) and 198628.Dda3937_00005
+	The undirected graph Dickeya dadantii 3937 has 4525 nodes and 458862 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04483 and has 12 connected components, where the component with most
+	nodes has 4500 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 202.81, and
+	the node degree mode is 2. The top 5 most central nodes are 198628.Dda3937_01112
+	(degree 1413), 198628.Dda3937_02153 (degree 1148), 198628.Dda3937_00709
+	(degree 1131), 198628.Dda3937_00193 (degree 1109) and 198628.Dda3937_00005
 	(degree 1048).
 	
 

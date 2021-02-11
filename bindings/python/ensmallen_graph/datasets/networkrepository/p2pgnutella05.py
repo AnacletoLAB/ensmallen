@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:28:47.749184
 
-The undirected graph p2p-Gnutella05 has 8846 nodes and 31839 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00081
-and has 3 connected components, where the component with most nodes has 8842 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 5, the mean node degree is 7.20, and the node degree mode is 1. The top 5 most
-central nodes are 843 (degree 88), 387 (degree 87), 1677 (degree 86), 1021 (degree
-85) and 227 (degree 84).
+The undirected graph p2p-Gnutella05 has 8846 nodes and 31839 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00081 and has 3 connected components, where the component
+with most nodes has 8842 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 5, the mean node degree is 7.20,
+and the node degree mode is 1. The top 5 most central nodes are 843 (degree
+88), 387 (degree 87), 1677 (degree 86), 1021 (degree 85) and 227 (degree
+84).
 
 
 References
@@ -103,13 +104,14 @@ def P2pGnutella05(
 	
 	Datetime: 2021-02-06 10:28:47.749184
 	
-	The undirected graph p2p-Gnutella05 has 8846 nodes and 31839 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00081
-	and has 3 connected components, where the component with most nodes has 8842 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 5, the mean node degree is 7.20, and the node degree mode is 1. The top 5 most
-	central nodes are 843 (degree 88), 387 (degree 87), 1677 (degree 86), 1021 (degree
-	85) and 227 (degree 84).
+	The undirected graph p2p-Gnutella05 has 8846 nodes and 31839 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00081 and has 3 connected components, where the component
+	with most nodes has 8842 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 5, the mean node degree is 7.20,
+	and the node degree mode is 1. The top 5 most central nodes are 843 (degree
+	88), 387 (degree 87), 1677 (degree 86), 1021 (degree 85) and 227 (degree
+	84).
 	
 
 

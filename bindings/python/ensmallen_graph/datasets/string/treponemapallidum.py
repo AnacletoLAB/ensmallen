@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:34.414577
 
-The undirected graph Treponema pallidum has 977 nodes and 77226 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.16198
-and is connected, as it has a single component. The graph median node degree is 149,
-the mean node degree is 158.09, and the node degree mode is 6. The top 5 most central
-nodes are 243276.TPANIC_0105 (degree 592), 243276.TPANIC_0279 (degree 536), 243276.TPANIC_0798
-(degree 495), 243276.TPANIC_0667 (degree 489) and 243276.TPANIC_0521 (degree 484).
+The undirected graph Treponema pallidum has 977 nodes and 77226 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.16198 and is connected, as it has a single component. The
+graph median node degree is 149, the mean node degree is 158.09, and the
+node degree mode is 6. The top 5 most central nodes are 243276.TPANIC_0105
+(degree 592), 243276.TPANIC_0279 (degree 536), 243276.TPANIC_0798 (degree
+495), 243276.TPANIC_0667 (degree 489) and 243276.TPANIC_0521 (degree 484).
 
 
 References
@@ -105,12 +106,13 @@ def TreponemaPallidum(
 	
 	Datetime: 2021-02-02 20:09:34.414577
 	
-	The undirected graph Treponema pallidum has 977 nodes and 77226 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.16198
-	and is connected, as it has a single component. The graph median node degree is 149,
-	the mean node degree is 158.09, and the node degree mode is 6. The top 5 most central
-	nodes are 243276.TPANIC_0105 (degree 592), 243276.TPANIC_0279 (degree 536), 243276.TPANIC_0798
-	(degree 495), 243276.TPANIC_0667 (degree 489) and 243276.TPANIC_0521 (degree 484).
+	The undirected graph Treponema pallidum has 977 nodes and 77226 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.16198 and is connected, as it has a single component. The
+	graph median node degree is 149, the mean node degree is 158.09, and the
+	node degree mode is 6. The top 5 most central nodes are 243276.TPANIC_0105
+	(degree 592), 243276.TPANIC_0279 (degree 536), 243276.TPANIC_0798 (degree
+	495), 243276.TPANIC_0667 (degree 489) and 243276.TPANIC_0521 (degree 484).
 	
 
 

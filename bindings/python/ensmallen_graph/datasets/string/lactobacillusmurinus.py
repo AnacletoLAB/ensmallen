@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:32.937361
 
-The undirected graph Lactobacillus murinus has 2082 nodes and 140887 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06504 and
-has 14 connected components, where the component with most nodes has 2045 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 135.34, and the node degree mode is 3. The top 5 most central
-nodes are 1235801.C822_00490 (degree 887), 1235801.C822_02007 (degree 836), 1235801.C822_01393
-(degree 779), 1235801.C822_00765 (degree 696) and 1235801.C822_00425 (degree 685).
+The undirected graph Lactobacillus murinus has 2082 nodes and 140887 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06504 and has 14 connected components, where the component with most
+nodes has 2045 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 135.34, and
+the node degree mode is 3. The top 5 most central nodes are 1235801.C822_00490
+(degree 887), 1235801.C822_02007 (degree 836), 1235801.C822_01393 (degree
+779), 1235801.C822_00765 (degree 696) and 1235801.C822_00425 (degree 685).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusMurinus(
 	
 	Datetime: 2021-02-02 23:30:32.937361
 	
-	The undirected graph Lactobacillus murinus has 2082 nodes and 140887 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06504 and
-	has 14 connected components, where the component with most nodes has 2045 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 135.34, and the node degree mode is 3. The top 5 most central
-	nodes are 1235801.C822_00490 (degree 887), 1235801.C822_02007 (degree 836), 1235801.C822_01393
-	(degree 779), 1235801.C822_00765 (degree 696) and 1235801.C822_00425 (degree 685).
+	The undirected graph Lactobacillus murinus has 2082 nodes and 140887 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06504 and has 14 connected components, where the component with most
+	nodes has 2045 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 135.34, and
+	the node degree mode is 3. The top 5 most central nodes are 1235801.C822_00490
+	(degree 887), 1235801.C822_02007 (degree 836), 1235801.C822_01393 (degree
+	779), 1235801.C822_00765 (degree 696) and 1235801.C822_00425 (degree 685).
 	
 
 

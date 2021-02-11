@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:01:55.662128
 
-The undirected graph Oceanimonas smirnovii has 2954 nodes and 354271 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08123 and
-has 5 connected components, where the component with most nodes has 2945 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 239.86, and the node degree mode is 1. The top 5 most central
-nodes are 1279015.KB908459_gene2661 (degree 1367), 1279015.KB908455_gene1470 (degree
-1258), 1279015.KB908467_gene476 (degree 1193), 1279015.KB908455_gene1350 (degree
-1171) and 1279015.KB908454_gene1189 (degree 1167).
+The undirected graph Oceanimonas smirnovii has 2954 nodes and 354271 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08123 and has 5 connected components, where the component with most
+nodes has 2945 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 239.86, and
+the node degree mode is 1. The top 5 most central nodes are 1279015.KB908459_gene2661
+(degree 1367), 1279015.KB908455_gene1470 (degree 1258), 1279015.KB908467_gene476
+(degree 1193), 1279015.KB908455_gene1350 (degree 1171) and 1279015.KB908454_gene1189
+(degree 1167).
 
 
 References
@@ -107,14 +108,15 @@ def OceanimonasSmirnovii(
 	
 	Datetime: 2021-02-03 21:01:55.662128
 	
-	The undirected graph Oceanimonas smirnovii has 2954 nodes and 354271 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08123 and
-	has 5 connected components, where the component with most nodes has 2945 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 239.86, and the node degree mode is 1. The top 5 most central
-	nodes are 1279015.KB908459_gene2661 (degree 1367), 1279015.KB908455_gene1470 (degree
-	1258), 1279015.KB908467_gene476 (degree 1193), 1279015.KB908455_gene1350 (degree
-	1171) and 1279015.KB908454_gene1189 (degree 1167).
+	The undirected graph Oceanimonas smirnovii has 2954 nodes and 354271 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08123 and has 5 connected components, where the component with most
+	nodes has 2945 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 239.86, and
+	the node degree mode is 1. The top 5 most central nodes are 1279015.KB908459_gene2661
+	(degree 1367), 1279015.KB908455_gene1470 (degree 1258), 1279015.KB908467_gene476
+	(degree 1193), 1279015.KB908455_gene1350 (degree 1171) and 1279015.KB908454_gene1189
+	(degree 1167).
 	
 
 

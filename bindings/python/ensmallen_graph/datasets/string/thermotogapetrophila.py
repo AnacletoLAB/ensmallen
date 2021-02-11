@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:51.709283
 
-The undirected graph Thermotoga petrophila has 1781 nodes and 117818 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07433 and
-has 2 connected components, where the component with most nodes has 1779 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 132.31, and the node degree mode is 18. The top 5 most central
-nodes are 390874.Tpet_0172 (degree 1011), 390874.Tpet_1172 (degree 832), 390874.Tpet_0215
-(degree 808), 390874.Tpet_1659 (degree 702) and 390874.Tpet_1105 (degree 649).
+The undirected graph Thermotoga petrophila has 1781 nodes and 117818 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07433 and has 2 connected components, where the component with most
+nodes has 1779 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 132.31, and
+the node degree mode is 18. The top 5 most central nodes are 390874.Tpet_0172
+(degree 1011), 390874.Tpet_1172 (degree 832), 390874.Tpet_0215 (degree
+808), 390874.Tpet_1659 (degree 702) and 390874.Tpet_1105 (degree 649).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaPetrophila(
 	
 	Datetime: 2021-02-02 20:38:51.709283
 	
-	The undirected graph Thermotoga petrophila has 1781 nodes and 117818 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07433 and
-	has 2 connected components, where the component with most nodes has 1779 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 132.31, and the node degree mode is 18. The top 5 most central
-	nodes are 390874.Tpet_0172 (degree 1011), 390874.Tpet_1172 (degree 832), 390874.Tpet_0215
-	(degree 808), 390874.Tpet_1659 (degree 702) and 390874.Tpet_1105 (degree 649).
+	The undirected graph Thermotoga petrophila has 1781 nodes and 117818 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07433 and has 2 connected components, where the component with most
+	nodes has 1779 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 132.31, and
+	the node degree mode is 18. The top 5 most central nodes are 390874.Tpet_0172
+	(degree 1011), 390874.Tpet_1172 (degree 832), 390874.Tpet_0215 (degree
+	808), 390874.Tpet_1659 (degree 702) and 390874.Tpet_1105 (degree 649).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:39.845055
 
-The undirected graph Enterovibrio calviensis has 4751 nodes and 662174 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05868 and
-has 13 connected components, where the component with most nodes has 4723 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 278.75, and the node degree mode is 1. The top 5 most central
-nodes are 1190606.AJYG01000047_gene1084 (degree 1826), 1190606.AJYG01000069_gene699
-(degree 1557), 1190606.AJYG01000103_gene1180 (degree 1535), 1190606.AJYG01000077_gene4048
-(degree 1507) and 1190606.AJYG01000004_gene851 (degree 1497).
+The undirected graph Enterovibrio calviensis has 4751 nodes and 662174
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05868 and has 13 connected components, where the component
+with most nodes has 4723 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 278.75,
+and the node degree mode is 1. The top 5 most central nodes are 1190606.AJYG01000047_gene1084
+(degree 1826), 1190606.AJYG01000069_gene699 (degree 1557), 1190606.AJYG01000103_gene1180
+(degree 1535), 1190606.AJYG01000077_gene4048 (degree 1507) and 1190606.AJYG01000004_gene851
+(degree 1497).
 
 
 References
@@ -107,14 +108,15 @@ def EnterovibrioCalviensis(
 	
 	Datetime: 2021-02-02 23:11:39.845055
 	
-	The undirected graph Enterovibrio calviensis has 4751 nodes and 662174 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05868 and
-	has 13 connected components, where the component with most nodes has 4723 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 278.75, and the node degree mode is 1. The top 5 most central
-	nodes are 1190606.AJYG01000047_gene1084 (degree 1826), 1190606.AJYG01000069_gene699
-	(degree 1557), 1190606.AJYG01000103_gene1180 (degree 1535), 1190606.AJYG01000077_gene4048
-	(degree 1507) and 1190606.AJYG01000004_gene851 (degree 1497).
+	The undirected graph Enterovibrio calviensis has 4751 nodes and 662174
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05868 and has 13 connected components, where the component
+	with most nodes has 4723 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 278.75,
+	and the node degree mode is 1. The top 5 most central nodes are 1190606.AJYG01000047_gene1084
+	(degree 1826), 1190606.AJYG01000069_gene699 (degree 1557), 1190606.AJYG01000103_gene1180
+	(degree 1535), 1190606.AJYG01000077_gene4048 (degree 1507) and 1190606.AJYG01000004_gene851
+	(degree 1497).
 	
 
 

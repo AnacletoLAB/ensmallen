@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:48.743696
 
-The undirected graph Methylosinus trichosporium has 4192 nodes and 407996 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04645
-and has 14 connected components, where the component with most nodes has 4160 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 194.65, and the node degree mode is 2. The top 5
-most central nodes are 595536.ADVE02000001_gene3970 (degree 1368), 595536.ADVE02000001_gene459
-(degree 1123), 595536.ADVE02000001_gene967 (degree 1073), 595536.ADVE02000001_gene685
-(degree 1060) and 595536.ADVE02000001_gene366 (degree 996).
+The undirected graph Methylosinus trichosporium has 4192 nodes and 407996
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04645 and has 14 connected components, where the component
+with most nodes has 4160 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 194.65,
+and the node degree mode is 2. The top 5 most central nodes are 595536.ADVE02000001_gene3970
+(degree 1368), 595536.ADVE02000001_gene459 (degree 1123), 595536.ADVE02000001_gene967
+(degree 1073), 595536.ADVE02000001_gene685 (degree 1060) and 595536.ADVE02000001_gene366
+(degree 996).
 
 
 References
@@ -107,14 +108,15 @@ def MethylosinusTrichosporium(
 	
 	Datetime: 2021-02-02 21:18:48.743696
 	
-	The undirected graph Methylosinus trichosporium has 4192 nodes and 407996 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04645
-	and has 14 connected components, where the component with most nodes has 4160 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 194.65, and the node degree mode is 2. The top 5
-	most central nodes are 595536.ADVE02000001_gene3970 (degree 1368), 595536.ADVE02000001_gene459
-	(degree 1123), 595536.ADVE02000001_gene967 (degree 1073), 595536.ADVE02000001_gene685
-	(degree 1060) and 595536.ADVE02000001_gene366 (degree 996).
+	The undirected graph Methylosinus trichosporium has 4192 nodes and 407996
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04645 and has 14 connected components, where the component
+	with most nodes has 4160 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 194.65,
+	and the node degree mode is 2. The top 5 most central nodes are 595536.ADVE02000001_gene3970
+	(degree 1368), 595536.ADVE02000001_gene459 (degree 1123), 595536.ADVE02000001_gene967
+	(degree 1073), 595536.ADVE02000001_gene685 (degree 1060) and 595536.ADVE02000001_gene366
+	(degree 996).
 	
 
 

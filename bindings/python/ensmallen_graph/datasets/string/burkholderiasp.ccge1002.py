@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:12.365862
 
-The undirected graph Burkholderia sp. CCGE1002 has 6768 nodes and 681569 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02976
-and has 36 connected components, where the component with most nodes has 6686 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 201.41, and the node degree mode is 1. The top 5
-most central nodes are 640511.BC1002_5265 (degree 2239), 640511.BC1002_3974 (degree
-2032), 640511.BC1002_2846 (degree 1911), 640511.BC1002_5951 (degree 1676) and 640511.BC1002_1747
-(degree 1631).
+The undirected graph Burkholderia sp. CCGE1002 has 6768 nodes and 681569
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02976 and has 36 connected components, where the component
+with most nodes has 6686 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 201.41,
+and the node degree mode is 1. The top 5 most central nodes are 640511.BC1002_5265
+(degree 2239), 640511.BC1002_3974 (degree 2032), 640511.BC1002_2846 (degree
+1911), 640511.BC1002_5951 (degree 1676) and 640511.BC1002_1747 (degree
+1631).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaSp.Ccge1002(
 	
 	Datetime: 2021-02-02 21:23:12.365862
 	
-	The undirected graph Burkholderia sp. CCGE1002 has 6768 nodes and 681569 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02976
-	and has 36 connected components, where the component with most nodes has 6686 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 201.41, and the node degree mode is 1. The top 5
-	most central nodes are 640511.BC1002_5265 (degree 2239), 640511.BC1002_3974 (degree
-	2032), 640511.BC1002_2846 (degree 1911), 640511.BC1002_5951 (degree 1676) and 640511.BC1002_1747
-	(degree 1631).
+	The undirected graph Burkholderia sp. CCGE1002 has 6768 nodes and 681569
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02976 and has 36 connected components, where the component
+	with most nodes has 6686 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 201.41,
+	and the node degree mode is 1. The top 5 most central nodes are 640511.BC1002_5265
+	(degree 2239), 640511.BC1002_3974 (degree 2032), 640511.BC1002_2846 (degree
+	1911), 640511.BC1002_5951 (degree 1676) and 640511.BC1002_1747 (degree
+	1631).
 	
 
 

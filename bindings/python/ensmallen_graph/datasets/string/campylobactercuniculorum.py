@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:56.381734
 
-The undirected graph Campylobacter cuniculorum has 1878 nodes and 93971 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05332
-and has 24 connected components, where the component with most nodes has 1821 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 73, the mean node degree is 100.08, and the node degree mode is 1. The top 5 most
-central nodes are 1121267.JHZL01000008_gene1336 (degree 734), 1121267.JHZL01000002_gene1071
-(degree 711), 1121267.JHZL01000005_gene1764 (degree 615), 1121267.JHZL01000014_gene74
-(degree 584) and 1121267.JHZL01000012_gene264 (degree 579).
+The undirected graph Campylobacter cuniculorum has 1878 nodes and 93971
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05332 and has 24 connected components, where the component
+with most nodes has 1821 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 73, the mean node degree is 100.08,
+and the node degree mode is 1. The top 5 most central nodes are 1121267.JHZL01000008_gene1336
+(degree 734), 1121267.JHZL01000002_gene1071 (degree 711), 1121267.JHZL01000005_gene1764
+(degree 615), 1121267.JHZL01000014_gene74 (degree 584) and 1121267.JHZL01000012_gene264
+(degree 579).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterCuniculorum(
 	
 	Datetime: 2021-02-02 22:33:56.381734
 	
-	The undirected graph Campylobacter cuniculorum has 1878 nodes and 93971 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05332
-	and has 24 connected components, where the component with most nodes has 1821 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 73, the mean node degree is 100.08, and the node degree mode is 1. The top 5 most
-	central nodes are 1121267.JHZL01000008_gene1336 (degree 734), 1121267.JHZL01000002_gene1071
-	(degree 711), 1121267.JHZL01000005_gene1764 (degree 615), 1121267.JHZL01000014_gene74
-	(degree 584) and 1121267.JHZL01000012_gene264 (degree 579).
+	The undirected graph Campylobacter cuniculorum has 1878 nodes and 93971
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05332 and has 24 connected components, where the component
+	with most nodes has 1821 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 73, the mean node degree is 100.08,
+	and the node degree mode is 1. The top 5 most central nodes are 1121267.JHZL01000008_gene1336
+	(degree 734), 1121267.JHZL01000002_gene1071 (degree 711), 1121267.JHZL01000005_gene1764
+	(degree 615), 1121267.JHZL01000014_gene74 (degree 584) and 1121267.JHZL01000012_gene264
+	(degree 579).
 	
 
 

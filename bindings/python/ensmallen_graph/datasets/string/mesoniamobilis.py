@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:42.657439
 
-The undirected graph Mesonia mobilis has 2891 nodes and 293003 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07014 and
-has 12 connected components, where the component with most nodes has 2864 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 202.70, and the node degree mode is 3. The top 5 most central
-nodes are 1122226.AUHX01000006_gene2255 (degree 1072), 1122226.AUHX01000004_gene1735
-(degree 948), 1122226.AUHX01000005_gene2539 (degree 870), 1122226.AUHX01000001_gene684
-(degree 782) and 1122226.AUHX01000002_gene1056 (degree 776).
+The undirected graph Mesonia mobilis has 2891 nodes and 293003 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07014 and has 12 connected components, where the component with most
+nodes has 2864 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 202.70, and
+the node degree mode is 3. The top 5 most central nodes are 1122226.AUHX01000006_gene2255
+(degree 1072), 1122226.AUHX01000004_gene1735 (degree 948), 1122226.AUHX01000005_gene2539
+(degree 870), 1122226.AUHX01000001_gene684 (degree 782) and 1122226.AUHX01000002_gene1056
+(degree 776).
 
 
 References
@@ -107,14 +108,15 @@ def MesoniaMobilis(
 	
 	Datetime: 2021-02-02 22:42:42.657439
 	
-	The undirected graph Mesonia mobilis has 2891 nodes and 293003 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07014 and
-	has 12 connected components, where the component with most nodes has 2864 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 202.70, and the node degree mode is 3. The top 5 most central
-	nodes are 1122226.AUHX01000006_gene2255 (degree 1072), 1122226.AUHX01000004_gene1735
-	(degree 948), 1122226.AUHX01000005_gene2539 (degree 870), 1122226.AUHX01000001_gene684
-	(degree 782) and 1122226.AUHX01000002_gene1056 (degree 776).
+	The undirected graph Mesonia mobilis has 2891 nodes and 293003 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07014 and has 12 connected components, where the component with most
+	nodes has 2864 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 202.70, and
+	the node degree mode is 3. The top 5 most central nodes are 1122226.AUHX01000006_gene2255
+	(degree 1072), 1122226.AUHX01000004_gene1735 (degree 948), 1122226.AUHX01000005_gene2539
+	(degree 870), 1122226.AUHX01000001_gene684 (degree 782) and 1122226.AUHX01000002_gene1056
+	(degree 776).
 	
 
 

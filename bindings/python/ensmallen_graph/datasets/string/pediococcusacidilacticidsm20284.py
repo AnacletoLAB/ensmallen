@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:49.254634
 
-The undirected graph Pediococcus acidilactici DSM20284 has 1876 nodes and 160333
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.09116 and has 5 connected components, where the component with most nodes has
-1866 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 148, the mean node degree is 170.93, and the node degree mode is 2. The
-top 5 most central nodes are 862514.HMPREF0623_0135 (degree 872), 862514.HMPREF0623_0296
-(degree 832), 862514.HMPREF0623_1712 (degree 743), 862514.HMPREF0623_0342 (degree
+The undirected graph Pediococcus acidilactici DSM20284 has 1876 nodes and
+160333 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09116 and has 5 connected components, where the
+component with most nodes has 1866 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+is 170.93, and the node degree mode is 2. The top 5 most central nodes
+are 862514.HMPREF0623_0135 (degree 872), 862514.HMPREF0623_0296 (degree
+832), 862514.HMPREF0623_1712 (degree 743), 862514.HMPREF0623_0342 (degree
 721) and 862514.HMPREF0623_0218 (degree 697).
 
 
@@ -107,13 +108,14 @@ def PediococcusAcidilacticiDsm20284(
 	
 	Datetime: 2021-02-02 21:46:49.254634
 	
-	The undirected graph Pediococcus acidilactici DSM20284 has 1876 nodes and 160333
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.09116 and has 5 connected components, where the component with most nodes has
-	1866 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 148, the mean node degree is 170.93, and the node degree mode is 2. The
-	top 5 most central nodes are 862514.HMPREF0623_0135 (degree 872), 862514.HMPREF0623_0296
-	(degree 832), 862514.HMPREF0623_1712 (degree 743), 862514.HMPREF0623_0342 (degree
+	The undirected graph Pediococcus acidilactici DSM20284 has 1876 nodes and
+	160333 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09116 and has 5 connected components, where the
+	component with most nodes has 1866 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+	is 170.93, and the node degree mode is 2. The top 5 most central nodes
+	are 862514.HMPREF0623_0135 (degree 872), 862514.HMPREF0623_0296 (degree
+	832), 862514.HMPREF0623_1712 (degree 743), 862514.HMPREF0623_0342 (degree
 	721) and 862514.HMPREF0623_0218 (degree 697).
 	
 

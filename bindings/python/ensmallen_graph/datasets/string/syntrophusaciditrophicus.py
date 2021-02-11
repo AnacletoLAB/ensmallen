@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:44.559602
 
-The undirected graph Syntrophus aciditrophicus has 3119 nodes and 180861 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03719
-and has 22 connected components, where the component with most nodes has 3063 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 115.97, and the node degree mode is 3. The top 5 most
-central nodes are 56780.SYN_02261 (degree 1181), 56780.SYN_00533 (degree 1096), 56780.SYN_01626
-(degree 981), 56780.SYN_00558 (degree 943) and 56780.SYN_00897 (degree 892).
+The undirected graph Syntrophus aciditrophicus has 3119 nodes and 180861
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03719 and has 22 connected components, where the component
+with most nodes has 3063 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 115.97,
+and the node degree mode is 3. The top 5 most central nodes are 56780.SYN_02261
+(degree 1181), 56780.SYN_00533 (degree 1096), 56780.SYN_01626 (degree 981),
+56780.SYN_00558 (degree 943) and 56780.SYN_00897 (degree 892).
 
 
 References
@@ -106,13 +107,14 @@ def SyntrophusAciditrophicus(
 	
 	Datetime: 2021-02-02 18:18:44.559602
 	
-	The undirected graph Syntrophus aciditrophicus has 3119 nodes and 180861 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03719
-	and has 22 connected components, where the component with most nodes has 3063 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 115.97, and the node degree mode is 3. The top 5 most
-	central nodes are 56780.SYN_02261 (degree 1181), 56780.SYN_00533 (degree 1096), 56780.SYN_01626
-	(degree 981), 56780.SYN_00558 (degree 943) and 56780.SYN_00897 (degree 892).
+	The undirected graph Syntrophus aciditrophicus has 3119 nodes and 180861
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03719 and has 22 connected components, where the component
+	with most nodes has 3063 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 115.97,
+	and the node degree mode is 3. The top 5 most central nodes are 56780.SYN_02261
+	(degree 1181), 56780.SYN_00533 (degree 1096), 56780.SYN_01626 (degree 981),
+	56780.SYN_00558 (degree 943) and 56780.SYN_00897 (degree 892).
 	
 
 

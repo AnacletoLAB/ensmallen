@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:54.842805
 
-The undirected graph Halonatronum saccharophilum has 2720 nodes and 231043 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06248
-and has 11 connected components, where the component with most nodes has 2688 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 169.88, and the node degree mode is 3. The top 5
-most central nodes are 926692.AZYG01000059_gene137 (degree 1196), 926692.AZYG01000038_gene1081
-(degree 1092), 926692.AZYG01000051_gene1861 (degree 977), 926692.AZYG01000085_gene857
-(degree 963) and 926692.AZYG01000049_gene12 (degree 950).
+The undirected graph Halonatronum saccharophilum has 2720 nodes and 231043
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06248 and has 11 connected components, where the component
+with most nodes has 2688 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 169.88,
+and the node degree mode is 3. The top 5 most central nodes are 926692.AZYG01000059_gene137
+(degree 1196), 926692.AZYG01000038_gene1081 (degree 1092), 926692.AZYG01000051_gene1861
+(degree 977), 926692.AZYG01000085_gene857 (degree 963) and 926692.AZYG01000049_gene12
+(degree 950).
 
 
 References
@@ -107,14 +108,15 @@ def HalonatronumSaccharophilum(
 	
 	Datetime: 2021-02-02 21:56:54.842805
 	
-	The undirected graph Halonatronum saccharophilum has 2720 nodes and 231043 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06248
-	and has 11 connected components, where the component with most nodes has 2688 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 169.88, and the node degree mode is 3. The top 5
-	most central nodes are 926692.AZYG01000059_gene137 (degree 1196), 926692.AZYG01000038_gene1081
-	(degree 1092), 926692.AZYG01000051_gene1861 (degree 977), 926692.AZYG01000085_gene857
-	(degree 963) and 926692.AZYG01000049_gene12 (degree 950).
+	The undirected graph Halonatronum saccharophilum has 2720 nodes and 231043
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06248 and has 11 connected components, where the component
+	with most nodes has 2688 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 169.88,
+	and the node degree mode is 3. The top 5 most central nodes are 926692.AZYG01000059_gene137
+	(degree 1196), 926692.AZYG01000038_gene1081 (degree 1092), 926692.AZYG01000051_gene1861
+	(degree 977), 926692.AZYG01000085_gene857 (degree 963) and 926692.AZYG01000049_gene12
+	(degree 950).
 	
 
 

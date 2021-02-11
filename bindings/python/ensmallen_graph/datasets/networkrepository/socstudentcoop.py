@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:51:27.912695
 
-The undirected multigraph soc-student-coop has 185 nodes and 360 unweighted edges
-with 3 different edge types: 1, 2 and 3, of which none are self-loops and 98 are
-parallel. The graph is dense as it has a density of 0.01827 and has 12 connected
-components, where the component with most nodes has 141 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-is 3.89, and the node degree mode is 3. The top 5 most central nodes are 117 (degree
-10), 102 (degree 10), 15 (degree 9), 159 (degree 9) and 27 (degree 9).
+The undirected multigraph soc-student-coop has 185 nodes and 360 unweighted
+edges with 3 different edge types: 1, 2 and 3, of which none are self-loops
+and 98 are parallel. The graph is dense as it has a density of 0.01827
+and has 12 connected components, where the component with most nodes has
+141 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 4, the mean node degree is 3.89, and the node degree
+mode is 3. The top 5 most central nodes are 117 (degree 10), 102 (degree
+10), 15 (degree 9), 159 (degree 9) and 27 (degree 9).
 
 
 References
@@ -111,13 +112,14 @@ def SocStudentCoop(
 	
 	Datetime: 2021-02-06 09:51:27.912695
 	
-	The undirected multigraph soc-student-coop has 185 nodes and 360 unweighted edges
-	with 3 different edge types: 1, 2 and 3, of which none are self-loops and 98 are
-	parallel. The graph is dense as it has a density of 0.01827 and has 12 connected
-	components, where the component with most nodes has 141 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-	is 3.89, and the node degree mode is 3. The top 5 most central nodes are 117 (degree
-	10), 102 (degree 10), 15 (degree 9), 159 (degree 9) and 27 (degree 9).
+	The undirected multigraph soc-student-coop has 185 nodes and 360 unweighted
+	edges with 3 different edge types: 1, 2 and 3, of which none are self-loops
+	and 98 are parallel. The graph is dense as it has a density of 0.01827
+	and has 12 connected components, where the component with most nodes has
+	141 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 4, the mean node degree is 3.89, and the node degree
+	mode is 3. The top 5 most central nodes are 117 (degree 10), 102 (degree
+	10), 15 (degree 9), 159 (degree 9) and 27 (degree 9).
 	
 
 

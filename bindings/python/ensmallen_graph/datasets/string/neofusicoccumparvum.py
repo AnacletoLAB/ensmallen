@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:10.179806
 
-The undirected graph Neofusicoccum parvum has 7904 nodes and 580525 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01859 and
-has 31 connected components, where the component with most nodes has 7838 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 72,
-the mean node degree is 146.89, and the node degree mode is 1. The top 5 most central
-nodes are 310453.XP_007581043.1 (degree 1978), 310453.XP_007581512.1 (degree 1530),
-310453.XP_007582586.1 (degree 1302), 310453.XP_007581240.1 (degree 1277) and 310453.XP_007582420.1
+The undirected graph Neofusicoccum parvum has 7904 nodes and 580525 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01859 and has 31 connected components, where the component with most
+nodes has 7838 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 72, the mean node degree is 146.89, and
+the node degree mode is 1. The top 5 most central nodes are 310453.XP_007581043.1
+(degree 1978), 310453.XP_007581512.1 (degree 1530), 310453.XP_007582586.1
+(degree 1302), 310453.XP_007581240.1 (degree 1277) and 310453.XP_007582420.1
 (degree 1266).
 
 
@@ -107,13 +108,14 @@ def NeofusicoccumParvum(
 	
 	Datetime: 2021-02-02 20:23:10.179806
 	
-	The undirected graph Neofusicoccum parvum has 7904 nodes and 580525 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01859 and
-	has 31 connected components, where the component with most nodes has 7838 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 72,
-	the mean node degree is 146.89, and the node degree mode is 1. The top 5 most central
-	nodes are 310453.XP_007581043.1 (degree 1978), 310453.XP_007581512.1 (degree 1530),
-	310453.XP_007582586.1 (degree 1302), 310453.XP_007581240.1 (degree 1277) and 310453.XP_007582420.1
+	The undirected graph Neofusicoccum parvum has 7904 nodes and 580525 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01859 and has 31 connected components, where the component with most
+	nodes has 7838 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 72, the mean node degree is 146.89, and
+	the node degree mode is 1. The top 5 most central nodes are 310453.XP_007581043.1
+	(degree 1978), 310453.XP_007581512.1 (degree 1530), 310453.XP_007582586.1
+	(degree 1302), 310453.XP_007581240.1 (degree 1277) and 310453.XP_007582420.1
 	(degree 1266).
 	
 

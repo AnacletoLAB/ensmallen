@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:07.054979
 
-The undirected graph Methylotenera mobilis 13 has 2628 nodes and 213948 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06198
-and has 3 connected components, where the component with most nodes has 2624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 162.82, and the node degree mode is 3. The top 5
-most central nodes are 1132855.KB913035_gene885 (degree 1195), 1132855.KB913035_gene2425
-(degree 1073), 1132855.KB913035_gene1640 (degree 927), 1132855.KB913035_gene1734
-(degree 913) and 1132855.KB913035_gene1103 (degree 846).
+The undirected graph Methylotenera mobilis 13 has 2628 nodes and 213948
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06198 and has 3 connected components, where the component
+with most nodes has 2624 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 162.82,
+and the node degree mode is 3. The top 5 most central nodes are 1132855.KB913035_gene885
+(degree 1195), 1132855.KB913035_gene2425 (degree 1073), 1132855.KB913035_gene1640
+(degree 927), 1132855.KB913035_gene1734 (degree 913) and 1132855.KB913035_gene1103
+(degree 846).
 
 
 References
@@ -107,14 +108,15 @@ def MethyloteneraMobilis13(
 	
 	Datetime: 2021-02-02 22:56:07.054979
 	
-	The undirected graph Methylotenera mobilis 13 has 2628 nodes and 213948 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06198
-	and has 3 connected components, where the component with most nodes has 2624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 162.82, and the node degree mode is 3. The top 5
-	most central nodes are 1132855.KB913035_gene885 (degree 1195), 1132855.KB913035_gene2425
-	(degree 1073), 1132855.KB913035_gene1640 (degree 927), 1132855.KB913035_gene1734
-	(degree 913) and 1132855.KB913035_gene1103 (degree 846).
+	The undirected graph Methylotenera mobilis 13 has 2628 nodes and 213948
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06198 and has 3 connected components, where the component
+	with most nodes has 2624 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 162.82,
+	and the node degree mode is 3. The top 5 most central nodes are 1132855.KB913035_gene885
+	(degree 1195), 1132855.KB913035_gene2425 (degree 1073), 1132855.KB913035_gene1640
+	(degree 927), 1132855.KB913035_gene1734 (degree 913) and 1132855.KB913035_gene1103
+	(degree 846).
 	
 
 

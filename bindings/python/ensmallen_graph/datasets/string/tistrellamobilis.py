@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:16.345380
 
-The undirected graph Tistrella mobilis has 3547 nodes and 322721 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05132 and
-has 7 connected components, where the component with most nodes has 3531 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 181.97, and the node degree mode is 3. The top 5 most central
-nodes are 1110502.TMO_0487 (degree 1565), 1110502.TMO_3211 (degree 1380), 1110502.TMO_0158
-(degree 1116), 1110502.TMO_1445 (degree 1064) and 1110502.TMO_0185 (degree 1024).
+The undirected graph Tistrella mobilis has 3547 nodes and 322721 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05132 and has 7 connected components, where the component with most
+nodes has 3531 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 181.97, and
+the node degree mode is 3. The top 5 most central nodes are 1110502.TMO_0487
+(degree 1565), 1110502.TMO_3211 (degree 1380), 1110502.TMO_0158 (degree
+1116), 1110502.TMO_1445 (degree 1064) and 1110502.TMO_0185 (degree 1024).
 
 
 References
@@ -106,13 +107,14 @@ def TistrellaMobilis(
 	
 	Datetime: 2021-02-02 22:25:16.345380
 	
-	The undirected graph Tistrella mobilis has 3547 nodes and 322721 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05132 and
-	has 7 connected components, where the component with most nodes has 3531 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 181.97, and the node degree mode is 3. The top 5 most central
-	nodes are 1110502.TMO_0487 (degree 1565), 1110502.TMO_3211 (degree 1380), 1110502.TMO_0158
-	(degree 1116), 1110502.TMO_1445 (degree 1064) and 1110502.TMO_0185 (degree 1024).
+	The undirected graph Tistrella mobilis has 3547 nodes and 322721 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05132 and has 7 connected components, where the component with most
+	nodes has 3531 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 181.97, and
+	the node degree mode is 3. The top 5 most central nodes are 1110502.TMO_0487
+	(degree 1565), 1110502.TMO_3211 (degree 1380), 1110502.TMO_0158 (degree
+	1116), 1110502.TMO_1445 (degree 1064) and 1110502.TMO_0185 (degree 1024).
 	
 
 

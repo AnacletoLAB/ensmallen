@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:43.477907
 
-The undirected graph Actinomyces sp. ICM39 has 1937 nodes and 166655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08888 and
-has 19 connected components, where the component with most nodes has 1882 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 172.08, and the node degree mode is 1. The top 5 most central
-nodes are 1105029.HMPREF1137_1937 (degree 820), 1105029.HMPREF1137_0953 (degree 810),
-1105029.HMPREF1137_0608 (degree 748), 1105029.HMPREF1137_1371 (degree 676) and 1105029.HMPREF1137_0814
+The undirected graph Actinomyces sp. ICM39 has 1937 nodes and 166655 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08888 and has 19 connected components, where the component with most
+nodes has 1882 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 172.08, and
+the node degree mode is 1. The top 5 most central nodes are 1105029.HMPREF1137_1937
+(degree 820), 1105029.HMPREF1137_0953 (degree 810), 1105029.HMPREF1137_0608
+(degree 748), 1105029.HMPREF1137_1371 (degree 676) and 1105029.HMPREF1137_0814
 (degree 648).
 
 
@@ -107,13 +108,14 @@ def ActinomycesSp.Icm39(
 	
 	Datetime: 2021-02-02 22:24:43.477907
 	
-	The undirected graph Actinomyces sp. ICM39 has 1937 nodes and 166655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08888 and
-	has 19 connected components, where the component with most nodes has 1882 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 172.08, and the node degree mode is 1. The top 5 most central
-	nodes are 1105029.HMPREF1137_1937 (degree 820), 1105029.HMPREF1137_0953 (degree 810),
-	1105029.HMPREF1137_0608 (degree 748), 1105029.HMPREF1137_1371 (degree 676) and 1105029.HMPREF1137_0814
+	The undirected graph Actinomyces sp. ICM39 has 1937 nodes and 166655 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08888 and has 19 connected components, where the component with most
+	nodes has 1882 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 172.08, and
+	the node degree mode is 1. The top 5 most central nodes are 1105029.HMPREF1137_1937
+	(degree 820), 1105029.HMPREF1137_0953 (degree 810), 1105029.HMPREF1137_0608
+	(degree 748), 1105029.HMPREF1137_1371 (degree 676) and 1105029.HMPREF1137_0814
 	(degree 648).
 	
 

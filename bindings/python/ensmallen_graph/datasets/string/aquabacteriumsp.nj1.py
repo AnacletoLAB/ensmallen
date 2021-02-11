@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:52.981758
 
-The undirected graph Aquabacterium sp. NJ1 has 3562 nodes and 373317 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05886 and
-has 25 connected components, where the component with most nodes has 3507 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 209.61, and the node degree mode is 1. The top 5 most central
-nodes are 1538295.JY96_05180 (degree 1339), 1538295.JY96_00065 (degree 1153), 1538295.JY96_00810
-(degree 1077), 1538295.JY96_11420 (degree 1075) and 1538295.JY96_00075 (degree 1049).
+The undirected graph Aquabacterium sp. NJ1 has 3562 nodes and 373317 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05886 and has 25 connected components, where the component with most
+nodes has 3507 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 209.61, and
+the node degree mode is 1. The top 5 most central nodes are 1538295.JY96_05180
+(degree 1339), 1538295.JY96_00065 (degree 1153), 1538295.JY96_00810 (degree
+1077), 1538295.JY96_11420 (degree 1075) and 1538295.JY96_00075 (degree
+1049).
 
 
 References
@@ -106,13 +108,15 @@ def AquabacteriumSp.Nj1(
 	
 	Datetime: 2021-02-03 23:19:52.981758
 	
-	The undirected graph Aquabacterium sp. NJ1 has 3562 nodes and 373317 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05886 and
-	has 25 connected components, where the component with most nodes has 3507 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 209.61, and the node degree mode is 1. The top 5 most central
-	nodes are 1538295.JY96_05180 (degree 1339), 1538295.JY96_00065 (degree 1153), 1538295.JY96_00810
-	(degree 1077), 1538295.JY96_11420 (degree 1075) and 1538295.JY96_00075 (degree 1049).
+	The undirected graph Aquabacterium sp. NJ1 has 3562 nodes and 373317 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05886 and has 25 connected components, where the component with most
+	nodes has 3507 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 209.61, and
+	the node degree mode is 1. The top 5 most central nodes are 1538295.JY96_05180
+	(degree 1339), 1538295.JY96_00065 (degree 1153), 1538295.JY96_00810 (degree
+	1077), 1538295.JY96_11420 (degree 1075) and 1538295.JY96_00075 (degree
+	1049).
 	
 
 

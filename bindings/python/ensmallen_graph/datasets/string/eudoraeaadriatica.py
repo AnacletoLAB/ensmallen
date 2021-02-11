@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:54.471540
 
-The undirected graph Eudoraea adriatica has 3477 nodes and 392128 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06489 and
-has 11 connected components, where the component with most nodes has 3456 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 225.56, and the node degree mode is 2. The top 5 most central
-nodes are 1121875.KB907554_gene445 (degree 1336), 1121875.KB907546_gene2280 (degree
-1214), 1121875.KB907550_gene886 (degree 1134), 1121875.KB907554_gene471 (degree 1039)
-and 1121875.KB907549_gene1768 (degree 1018).
+The undirected graph Eudoraea adriatica has 3477 nodes and 392128 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06489 and has 11 connected components, where the component with most
+nodes has 3456 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 225.56, and
+the node degree mode is 2. The top 5 most central nodes are 1121875.KB907554_gene445
+(degree 1336), 1121875.KB907546_gene2280 (degree 1214), 1121875.KB907550_gene886
+(degree 1134), 1121875.KB907554_gene471 (degree 1039) and 1121875.KB907549_gene1768
+(degree 1018).
 
 
 References
@@ -107,14 +108,15 @@ def EudoraeaAdriatica(
 	
 	Datetime: 2021-02-02 22:37:54.471540
 	
-	The undirected graph Eudoraea adriatica has 3477 nodes and 392128 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06489 and
-	has 11 connected components, where the component with most nodes has 3456 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 225.56, and the node degree mode is 2. The top 5 most central
-	nodes are 1121875.KB907554_gene445 (degree 1336), 1121875.KB907546_gene2280 (degree
-	1214), 1121875.KB907550_gene886 (degree 1134), 1121875.KB907554_gene471 (degree 1039)
-	and 1121875.KB907549_gene1768 (degree 1018).
+	The undirected graph Eudoraea adriatica has 3477 nodes and 392128 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06489 and has 11 connected components, where the component with most
+	nodes has 3456 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 225.56, and
+	the node degree mode is 2. The top 5 most central nodes are 1121875.KB907554_gene445
+	(degree 1336), 1121875.KB907546_gene2280 (degree 1214), 1121875.KB907550_gene886
+	(degree 1134), 1121875.KB907554_gene471 (degree 1039) and 1121875.KB907549_gene1768
+	(degree 1018).
 	
 
 

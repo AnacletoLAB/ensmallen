@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:14:05.406899
 
-The undirected graph maayan-foodweb has 183 nodes and 2452 unweighted edges, of which
-18 are self-loops. The graph is quite dense as it has a density of 0.14670 and is
-connected, as it has a single component. The graph median node degree is 25, the
-mean node degree is 26.70, and the node degree mode is 4. The top 5 most central
-nodes are 70 (degree 106), 65 (degree 99), 74 (degree 89), 76 (degree 85) and 75
-(degree 82).
+The undirected graph maayan-foodweb has 183 nodes and 2452 unweighted edges,
+of which 18 are self-loops. The graph is quite dense as it has a density
+of 0.14670 and is connected, as it has a single component. The graph median
+node degree is 25, the mean node degree is 26.70, and the node degree mode
+is 4. The top 5 most central nodes are 70 (degree 106), 65 (degree 99),
+74 (degree 89), 76 (degree 85) and 75 (degree 82).
 
 
 References
@@ -102,12 +102,12 @@ def MaayanFoodweb(
 	
 	Datetime: 2021-02-06 08:14:05.406899
 	
-	The undirected graph maayan-foodweb has 183 nodes and 2452 unweighted edges, of which
-	18 are self-loops. The graph is quite dense as it has a density of 0.14670 and is
-	connected, as it has a single component. The graph median node degree is 25, the
-	mean node degree is 26.70, and the node degree mode is 4. The top 5 most central
-	nodes are 70 (degree 106), 65 (degree 99), 74 (degree 89), 76 (degree 85) and 75
-	(degree 82).
+	The undirected graph maayan-foodweb has 183 nodes and 2452 unweighted edges,
+	of which 18 are self-loops. The graph is quite dense as it has a density
+	of 0.14670 and is connected, as it has a single component. The graph median
+	node degree is 25, the mean node degree is 26.70, and the node degree mode
+	is 4. The top 5 most central nodes are 70 (degree 106), 65 (degree 99),
+	74 (degree 89), 76 (degree 85) and 75 (degree 82).
 	
 
 

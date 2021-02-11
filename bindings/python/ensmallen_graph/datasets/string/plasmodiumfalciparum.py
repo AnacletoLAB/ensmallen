@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:25.679963
 
-The undirected graph Plasmodium falciparum has 5201 nodes and 2662277 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19688
-and has 2 connected components, where the component with most nodes has 5199 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 1050, the mean node degree is 1023.76, and the node degree mode is 946. The top
-5 most central nodes are 5833.PFD0830w (degree 2195), 5833.PF11_0395 (degree 2161),
-5833.PF11_0083 (degree 2135), 5833.PF08_0054 (degree 2132) and 5833.PFE0215w (degree
-2122).
+The undirected graph Plasmodium falciparum has 5201 nodes and 2662277 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19688 and has 2 connected components, where the component
+with most nodes has 5199 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 1050, the mean node degree is
+1023.76, and the node degree mode is 946. The top 5 most central nodes
+are 5833.PFD0830w (degree 2195), 5833.PF11_0395 (degree 2161), 5833.PF11_0083
+(degree 2135), 5833.PF08_0054 (degree 2132) and 5833.PFE0215w (degree 2122).
 
 
 References
@@ -107,14 +107,14 @@ def PlasmodiumFalciparum(
 	
 	Datetime: 2021-02-02 17:16:25.679963
 	
-	The undirected graph Plasmodium falciparum has 5201 nodes and 2662277 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19688
-	and has 2 connected components, where the component with most nodes has 5199 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1050, the mean node degree is 1023.76, and the node degree mode is 946. The top
-	5 most central nodes are 5833.PFD0830w (degree 2195), 5833.PF11_0395 (degree 2161),
-	5833.PF11_0083 (degree 2135), 5833.PF08_0054 (degree 2132) and 5833.PFE0215w (degree
-	2122).
+	The undirected graph Plasmodium falciparum has 5201 nodes and 2662277 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19688 and has 2 connected components, where the component
+	with most nodes has 5199 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 1050, the mean node degree is
+	1023.76, and the node degree mode is 946. The top 5 most central nodes
+	are 5833.PFD0830w (degree 2195), 5833.PF11_0395 (degree 2161), 5833.PF11_0083
+	(degree 2135), 5833.PF08_0054 (degree 2132) and 5833.PFE0215w (degree 2122).
 	
 
 

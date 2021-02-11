@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:10.070563
 
-The undirected graph Prevotella stercorea has 2962 nodes and 149720 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03414 and
-has 38 connected components, where the component with most nodes has 2857 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 75,
-the mean node degree is 101.09, and the node degree mode is 3. The top 5 most central
-nodes are 1002367.HMPREF0673_00915 (degree 885), 1002367.HMPREF0673_02100 (degree
-834), 1002367.HMPREF0673_02060 (degree 696), 1002367.HMPREF0673_00648 (degree 695)
-and 1002367.HMPREF0673_02386 (degree 648).
+The undirected graph Prevotella stercorea has 2962 nodes and 149720 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03414 and has 38 connected components, where the component with most
+nodes has 2857 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 75, the mean node degree is 101.09, and
+the node degree mode is 3. The top 5 most central nodes are 1002367.HMPREF0673_00915
+(degree 885), 1002367.HMPREF0673_02100 (degree 834), 1002367.HMPREF0673_02060
+(degree 696), 1002367.HMPREF0673_00648 (degree 695) and 1002367.HMPREF0673_02386
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaStercorea(
 	
 	Datetime: 2021-02-02 22:07:10.070563
 	
-	The undirected graph Prevotella stercorea has 2962 nodes and 149720 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03414 and
-	has 38 connected components, where the component with most nodes has 2857 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 75,
-	the mean node degree is 101.09, and the node degree mode is 3. The top 5 most central
-	nodes are 1002367.HMPREF0673_00915 (degree 885), 1002367.HMPREF0673_02100 (degree
-	834), 1002367.HMPREF0673_02060 (degree 696), 1002367.HMPREF0673_00648 (degree 695)
-	and 1002367.HMPREF0673_02386 (degree 648).
+	The undirected graph Prevotella stercorea has 2962 nodes and 149720 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03414 and has 38 connected components, where the component with most
+	nodes has 2857 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 75, the mean node degree is 101.09, and
+	the node degree mode is 3. The top 5 most central nodes are 1002367.HMPREF0673_00915
+	(degree 885), 1002367.HMPREF0673_02100 (degree 834), 1002367.HMPREF0673_02060
+	(degree 696), 1002367.HMPREF0673_00648 (degree 695) and 1002367.HMPREF0673_02386
+	(degree 648).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:25.101724
 
-The undirected graph Bacteroides fragilis NCTC 9343 has 4211 nodes and 498127 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05620
-and has 20 connected components, where the component with most nodes has 4153 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 218, the mean node degree is 236.58, and the node degree mode is 4. The top 5
-most central nodes are 272559.BF9343_0103 (degree 1421), 272559.BF9343_3088 (degree
-1337), 272559.BF9343_3345 (degree 1244), 272559.BF9343_2765 (degree 1233) and 272559.BF9343_0771
-(degree 1228).
+The undirected graph Bacteroides fragilis NCTC 9343 has 4211 nodes and
+498127 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05620 and has 20 connected components, where the
+component with most nodes has 4153 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 218, the mean node degree
+is 236.58, and the node degree mode is 4. The top 5 most central nodes
+are 272559.BF9343_0103 (degree 1421), 272559.BF9343_3088 (degree 1337),
+272559.BF9343_3345 (degree 1244), 272559.BF9343_2765 (degree 1233) and
+272559.BF9343_0771 (degree 1228).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesFragilisNctc9343(
 	
 	Datetime: 2021-02-02 20:16:25.101724
 	
-	The undirected graph Bacteroides fragilis NCTC 9343 has 4211 nodes and 498127 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05620
-	and has 20 connected components, where the component with most nodes has 4153 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 218, the mean node degree is 236.58, and the node degree mode is 4. The top 5
-	most central nodes are 272559.BF9343_0103 (degree 1421), 272559.BF9343_3088 (degree
-	1337), 272559.BF9343_3345 (degree 1244), 272559.BF9343_2765 (degree 1233) and 272559.BF9343_0771
-	(degree 1228).
+	The undirected graph Bacteroides fragilis NCTC 9343 has 4211 nodes and
+	498127 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05620 and has 20 connected components, where the
+	component with most nodes has 4153 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 218, the mean node degree
+	is 236.58, and the node degree mode is 4. The top 5 most central nodes
+	are 272559.BF9343_0103 (degree 1421), 272559.BF9343_3088 (degree 1337),
+	272559.BF9343_3345 (degree 1244), 272559.BF9343_2765 (degree 1233) and
+	272559.BF9343_0771 (degree 1228).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:31:48.879617
 
-The undirected graph Mesorhizobium sp. URHA0056 has 5740 nodes and 806674 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04898
-and has 24 connected components, where the component with most nodes has 5678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 226, the mean node degree is 281.07, and the node degree mode is 1. The top 5
-most central nodes are 1298858.AUEL01000019_gene3218 (degree 2198), 1298858.AUEL01000002_gene1912
-(degree 1946), 1298858.AUEL01000002_gene1935 (degree 1849), 1298858.AUEL01000013_gene5088
-(degree 1787) and 1298858.AUEL01000008_gene3557 (degree 1780).
+The undirected graph Mesorhizobium sp. URHA0056 has 5740 nodes and 806674
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04898 and has 24 connected components, where the component
+with most nodes has 5678 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 226, the mean node degree is 281.07,
+and the node degree mode is 1. The top 5 most central nodes are 1298858.AUEL01000019_gene3218
+(degree 2198), 1298858.AUEL01000002_gene1912 (degree 1946), 1298858.AUEL01000002_gene1935
+(degree 1849), 1298858.AUEL01000013_gene5088 (degree 1787) and 1298858.AUEL01000008_gene3557
+(degree 1780).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumSp.Urha0056(
 	
 	Datetime: 2021-02-03 21:31:48.879617
 	
-	The undirected graph Mesorhizobium sp. URHA0056 has 5740 nodes and 806674 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04898
-	and has 24 connected components, where the component with most nodes has 5678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 226, the mean node degree is 281.07, and the node degree mode is 1. The top 5
-	most central nodes are 1298858.AUEL01000019_gene3218 (degree 2198), 1298858.AUEL01000002_gene1912
-	(degree 1946), 1298858.AUEL01000002_gene1935 (degree 1849), 1298858.AUEL01000013_gene5088
-	(degree 1787) and 1298858.AUEL01000008_gene3557 (degree 1780).
+	The undirected graph Mesorhizobium sp. URHA0056 has 5740 nodes and 806674
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04898 and has 24 connected components, where the component
+	with most nodes has 5678 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 226, the mean node degree is 281.07,
+	and the node degree mode is 1. The top 5 most central nodes are 1298858.AUEL01000019_gene3218
+	(degree 2198), 1298858.AUEL01000002_gene1912 (degree 1946), 1298858.AUEL01000002_gene1935
+	(degree 1849), 1298858.AUEL01000013_gene5088 (degree 1787) and 1298858.AUEL01000008_gene3557
+	(degree 1780).
 	
 
 

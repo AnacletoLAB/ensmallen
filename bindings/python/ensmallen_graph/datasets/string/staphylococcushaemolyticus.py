@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:14.974436
 
-The undirected graph Staphylococcus haemolyticus has 2661 nodes and 162280 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04585
-and has 12 connected components, where the component with most nodes has 2635 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 121.97, and the node degree mode is 5. The top 5 most
-central nodes are 279808.SH1234 (degree 968), 279808.SH2582 (degree 813), 279808.SH2583
-(degree 715), 279808.SH1336 (degree 707) and 279808.SH2521 (degree 702).
+The undirected graph Staphylococcus haemolyticus has 2661 nodes and 162280
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04585 and has 12 connected components, where the component
+with most nodes has 2635 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 121.97,
+and the node degree mode is 5. The top 5 most central nodes are 279808.SH1234
+(degree 968), 279808.SH2582 (degree 813), 279808.SH2583 (degree 715), 279808.SH1336
+(degree 707) and 279808.SH2521 (degree 702).
 
 
 References
@@ -106,13 +107,14 @@ def StaphylococcusHaemolyticus(
 	
 	Datetime: 2021-02-02 20:18:14.974436
 	
-	The undirected graph Staphylococcus haemolyticus has 2661 nodes and 162280 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04585
-	and has 12 connected components, where the component with most nodes has 2635 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 121.97, and the node degree mode is 5. The top 5 most
-	central nodes are 279808.SH1234 (degree 968), 279808.SH2582 (degree 813), 279808.SH2583
-	(degree 715), 279808.SH1336 (degree 707) and 279808.SH2521 (degree 702).
+	The undirected graph Staphylococcus haemolyticus has 2661 nodes and 162280
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04585 and has 12 connected components, where the component
+	with most nodes has 2635 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 121.97,
+	and the node degree mode is 5. The top 5 most central nodes are 279808.SH1234
+	(degree 968), 279808.SH2582 (degree 813), 279808.SH2583 (degree 715), 279808.SH1336
+	(degree 707) and 279808.SH2521 (degree 702).
 	
 
 

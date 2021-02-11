@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:43:42.864956
 
-The undirected graph Lysobacter antibioticus has 4236 nodes and 381069 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04248 and
-has 24 connected components, where the component with most nodes has 4184 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 179.92, and the node degree mode is 1. The top 5 most central
-nodes are 84531.JMTZ01000016_gene1098 (degree 1139), 84531.JMTZ01000066_gene1912
-(degree 964), 84531.JMTZ01000010_gene3156 (degree 909), 84531.JMTZ01000011_gene3011
-(degree 891) and 84531.JMTZ01000034_gene373 (degree 872).
+The undirected graph Lysobacter antibioticus has 4236 nodes and 381069
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04248 and has 24 connected components, where the component
+with most nodes has 4184 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 179.92,
+and the node degree mode is 1. The top 5 most central nodes are 84531.JMTZ01000016_gene1098
+(degree 1139), 84531.JMTZ01000066_gene1912 (degree 964), 84531.JMTZ01000010_gene3156
+(degree 909), 84531.JMTZ01000011_gene3011 (degree 891) and 84531.JMTZ01000034_gene373
+(degree 872).
 
 
 References
@@ -107,14 +108,15 @@ def LysobacterAntibioticus(
 	
 	Datetime: 2021-02-02 18:43:42.864956
 	
-	The undirected graph Lysobacter antibioticus has 4236 nodes and 381069 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04248 and
-	has 24 connected components, where the component with most nodes has 4184 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 179.92, and the node degree mode is 1. The top 5 most central
-	nodes are 84531.JMTZ01000016_gene1098 (degree 1139), 84531.JMTZ01000066_gene1912
-	(degree 964), 84531.JMTZ01000010_gene3156 (degree 909), 84531.JMTZ01000011_gene3011
-	(degree 891) and 84531.JMTZ01000034_gene373 (degree 872).
+	The undirected graph Lysobacter antibioticus has 4236 nodes and 381069
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04248 and has 24 connected components, where the component
+	with most nodes has 4184 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 179.92,
+	and the node degree mode is 1. The top 5 most central nodes are 84531.JMTZ01000016_gene1098
+	(degree 1139), 84531.JMTZ01000066_gene1912 (degree 964), 84531.JMTZ01000010_gene3156
+	(degree 909), 84531.JMTZ01000011_gene3011 (degree 891) and 84531.JMTZ01000034_gene373
+	(degree 872).
 	
 
 

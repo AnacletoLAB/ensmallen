@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:21.811904
 
-The undirected graph Ruminococcus flavefaciens MA2007 has 2729 nodes and 188109 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-and has 10 connected components, where the component with most nodes has 2709 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 137.86, and the node degree mode is 5. The top 5
-most central nodes are 1410670.JHXF01000001_gene2674 (degree 1090), 1410670.JHXF01000006_gene1064
+The undirected graph Ruminococcus flavefaciens MA2007 has 2729 nodes and
+188109 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05053 and has 10 connected components, where the
+component with most nodes has 2709 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+is 137.86, and the node degree mode is 5. The top 5 most central nodes
+are 1410670.JHXF01000001_gene2674 (degree 1090), 1410670.JHXF01000006_gene1064
 (degree 1067), 1410670.JHXF01000013_gene2017 (degree 865), 1410670.JHXF01000007_gene735
 (degree 792) and 1410670.JHXF01000001_gene2725 (degree 749).
 
@@ -107,12 +108,13 @@ def RuminococcusFlavefaciensMa2007(
 	
 	Datetime: 2021-02-03 22:44:21.811904
 	
-	The undirected graph Ruminococcus flavefaciens MA2007 has 2729 nodes and 188109 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-	and has 10 connected components, where the component with most nodes has 2709 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 137.86, and the node degree mode is 5. The top 5
-	most central nodes are 1410670.JHXF01000001_gene2674 (degree 1090), 1410670.JHXF01000006_gene1064
+	The undirected graph Ruminococcus flavefaciens MA2007 has 2729 nodes and
+	188109 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05053 and has 10 connected components, where the
+	component with most nodes has 2709 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+	is 137.86, and the node degree mode is 5. The top 5 most central nodes
+	are 1410670.JHXF01000001_gene2674 (degree 1090), 1410670.JHXF01000006_gene1064
 	(degree 1067), 1410670.JHXF01000013_gene2017 (degree 865), 1410670.JHXF01000007_gene735
 	(degree 792) and 1410670.JHXF01000001_gene2725 (degree 749).
 	

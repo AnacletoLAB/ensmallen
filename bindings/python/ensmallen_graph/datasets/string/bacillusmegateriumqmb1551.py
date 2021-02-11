@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:58.640194
 
-The undirected graph Bacillus megaterium QM B1551 has 5070 nodes and 602091 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04686
-and has 21 connected components, where the component with most nodes has 5026 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 220, the mean node degree is 237.51, and the node degree mode is 1. The top 5
-most central nodes are 545693.BMQ_4764 (degree 1826), 545693.BMQ_2098 (degree 1378),
-545693.BMQ_0057 (degree 1301), 545693.BMQ_4508 (degree 1287) and 545693.BMQ_2179
-(degree 1284).
+The undirected graph Bacillus megaterium QM B1551 has 5070 nodes and 602091
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04686 and has 21 connected components, where the component
+with most nodes has 5026 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 220, the mean node degree is 237.51,
+and the node degree mode is 1. The top 5 most central nodes are 545693.BMQ_4764
+(degree 1826), 545693.BMQ_2098 (degree 1378), 545693.BMQ_0057 (degree 1301),
+545693.BMQ_4508 (degree 1287) and 545693.BMQ_2179 (degree 1284).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusMegateriumQmB1551(
 	
 	Datetime: 2021-02-02 21:07:58.640194
 	
-	The undirected graph Bacillus megaterium QM B1551 has 5070 nodes and 602091 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04686
-	and has 21 connected components, where the component with most nodes has 5026 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 220, the mean node degree is 237.51, and the node degree mode is 1. The top 5
-	most central nodes are 545693.BMQ_4764 (degree 1826), 545693.BMQ_2098 (degree 1378),
-	545693.BMQ_0057 (degree 1301), 545693.BMQ_4508 (degree 1287) and 545693.BMQ_2179
-	(degree 1284).
+	The undirected graph Bacillus megaterium QM B1551 has 5070 nodes and 602091
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04686 and has 21 connected components, where the component
+	with most nodes has 5026 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 220, the mean node degree is 237.51,
+	and the node degree mode is 1. The top 5 most central nodes are 545693.BMQ_4764
+	(degree 1826), 545693.BMQ_2098 (degree 1378), 545693.BMQ_0057 (degree 1301),
+	545693.BMQ_4508 (degree 1287) and 545693.BMQ_2179 (degree 1284).
 	
 
 

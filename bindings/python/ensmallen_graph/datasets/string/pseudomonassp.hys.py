@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:48.966637
 
-The undirected graph Pseudomonas sp. HYS has 4989 nodes and 796232 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06399 and
-has 15 connected components, where the component with most nodes has 4959 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 260,
-the mean node degree is 319.20, and the node degree mode is 1. The top 5 most central
-nodes are 1163398.AJJP01000169_gene1151 (degree 2598), 1163398.AJJP01000070_gene2630
-(degree 2007), 1163398.AJJP01000129_gene4040 (degree 1716), 1163398.AJJP01000185_gene69
-(degree 1654) and 1163398.AJJP01000125_gene4667 (degree 1612).
+The undirected graph Pseudomonas sp. HYS has 4989 nodes and 796232 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06399 and has 15 connected components, where the component with most
+nodes has 4959 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 260, the mean node degree is 319.20, and
+the node degree mode is 1. The top 5 most central nodes are 1163398.AJJP01000169_gene1151
+(degree 2598), 1163398.AJJP01000070_gene2630 (degree 2007), 1163398.AJJP01000129_gene4040
+(degree 1716), 1163398.AJJP01000185_gene69 (degree 1654) and 1163398.AJJP01000125_gene4667
+(degree 1612).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.Hys(
 	
 	Datetime: 2021-02-02 23:04:48.966637
 	
-	The undirected graph Pseudomonas sp. HYS has 4989 nodes and 796232 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06399 and
-	has 15 connected components, where the component with most nodes has 4959 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 260,
-	the mean node degree is 319.20, and the node degree mode is 1. The top 5 most central
-	nodes are 1163398.AJJP01000169_gene1151 (degree 2598), 1163398.AJJP01000070_gene2630
-	(degree 2007), 1163398.AJJP01000129_gene4040 (degree 1716), 1163398.AJJP01000185_gene69
-	(degree 1654) and 1163398.AJJP01000125_gene4667 (degree 1612).
+	The undirected graph Pseudomonas sp. HYS has 4989 nodes and 796232 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06399 and has 15 connected components, where the component with most
+	nodes has 4959 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 260, the mean node degree is 319.20, and
+	the node degree mode is 1. The top 5 most central nodes are 1163398.AJJP01000169_gene1151
+	(degree 2598), 1163398.AJJP01000070_gene2630 (degree 2007), 1163398.AJJP01000129_gene4040
+	(degree 1716), 1163398.AJJP01000185_gene69 (degree 1654) and 1163398.AJJP01000125_gene4667
+	(degree 1612).
 	
 
 

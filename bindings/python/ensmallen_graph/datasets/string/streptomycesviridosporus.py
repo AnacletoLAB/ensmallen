@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:07.567703
 
-The undirected graph Streptomyces viridosporus has 7135 nodes and 1338423 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05259
-and has 37 connected components, where the component with most nodes has 7054 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 309, the mean node degree is 375.17, and the node degree mode is 1. The top 5
-most central nodes are 665577.JH993790_gene680 (degree 3471), 665577.JH993791_gene118
-(degree 2565), 665577.JH993790_gene3173 (degree 2535), 665577.JH993790_gene4859 (degree
-2494) and 665577.JH993790_gene440 (degree 2359).
+The undirected graph Streptomyces viridosporus has 7135 nodes and 1338423
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05259 and has 37 connected components, where the component
+with most nodes has 7054 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 309, the mean node degree is 375.17,
+and the node degree mode is 1. The top 5 most central nodes are 665577.JH993790_gene680
+(degree 3471), 665577.JH993791_gene118 (degree 2565), 665577.JH993790_gene3173
+(degree 2535), 665577.JH993790_gene4859 (degree 2494) and 665577.JH993790_gene440
+(degree 2359).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesViridosporus(
 	
 	Datetime: 2021-02-02 21:28:07.567703
 	
-	The undirected graph Streptomyces viridosporus has 7135 nodes and 1338423 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05259
-	and has 37 connected components, where the component with most nodes has 7054 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 309, the mean node degree is 375.17, and the node degree mode is 1. The top 5
-	most central nodes are 665577.JH993790_gene680 (degree 3471), 665577.JH993791_gene118
-	(degree 2565), 665577.JH993790_gene3173 (degree 2535), 665577.JH993790_gene4859 (degree
-	2494) and 665577.JH993790_gene440 (degree 2359).
+	The undirected graph Streptomyces viridosporus has 7135 nodes and 1338423
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05259 and has 37 connected components, where the component
+	with most nodes has 7054 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 309, the mean node degree is 375.17,
+	and the node degree mode is 1. The top 5 most central nodes are 665577.JH993790_gene680
+	(degree 3471), 665577.JH993791_gene118 (degree 2565), 665577.JH993790_gene3173
+	(degree 2535), 665577.JH993790_gene4859 (degree 2494) and 665577.JH993790_gene440
+	(degree 2359).
 	
 
 

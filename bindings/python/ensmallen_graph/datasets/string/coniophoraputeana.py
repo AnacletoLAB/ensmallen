@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:34:50.336810
 
-The undirected graph Coniophora puteana has 6840 nodes and 602498 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02576 and
-has 11 connected components, where the component with most nodes has 6810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 176.17, and the node degree mode is 3. The top 5 most central
-nodes are 80637.XP_007769672.1 (degree 1787), 80637.XP_007768137.1 (degree 1677),
-80637.XP_007772938.1 (degree 1430), 80637.XP_007764667.1 (degree 1240) and 80637.XP_007764250.1
+The undirected graph Coniophora puteana has 6840 nodes and 602498 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02576 and has 11 connected components, where the component with most
+nodes has 6810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 176.17, and
+the node degree mode is 3. The top 5 most central nodes are 80637.XP_007769672.1
+(degree 1787), 80637.XP_007768137.1 (degree 1677), 80637.XP_007772938.1
+(degree 1430), 80637.XP_007764667.1 (degree 1240) and 80637.XP_007764250.1
 (degree 1201).
 
 
@@ -107,13 +108,14 @@ def ConiophoraPuteana(
 	
 	Datetime: 2021-02-02 18:34:50.336810
 	
-	The undirected graph Coniophora puteana has 6840 nodes and 602498 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02576 and
-	has 11 connected components, where the component with most nodes has 6810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 176.17, and the node degree mode is 3. The top 5 most central
-	nodes are 80637.XP_007769672.1 (degree 1787), 80637.XP_007768137.1 (degree 1677),
-	80637.XP_007772938.1 (degree 1430), 80637.XP_007764667.1 (degree 1240) and 80637.XP_007764250.1
+	The undirected graph Coniophora puteana has 6840 nodes and 602498 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02576 and has 11 connected components, where the component with most
+	nodes has 6810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 176.17, and
+	the node degree mode is 3. The top 5 most central nodes are 80637.XP_007769672.1
+	(degree 1787), 80637.XP_007768137.1 (degree 1677), 80637.XP_007772938.1
+	(degree 1430), 80637.XP_007764667.1 (degree 1240) and 80637.XP_007764250.1
 	(degree 1201).
 	
 

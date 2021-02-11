@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:50.308101
 
-The undirected graph Sphingobium sp. C100 has 4466 nodes and 502210 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05037 and
-has 15 connected components, where the component with most nodes has 4428 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 224.90, and the node degree mode is 3. The top 5 most central
-nodes are 1207055.C100_17380 (degree 1579), 1207055.C100_08050 (degree 1275), 1207055.C100_08170
-(degree 1250), 1207055.C100_15780 (degree 1248) and 1207055.C100_05360 (degree 1239).
+The undirected graph Sphingobium sp. C100 has 4466 nodes and 502210 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05037 and has 15 connected components, where the component with most
+nodes has 4428 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 224.90, and
+the node degree mode is 3. The top 5 most central nodes are 1207055.C100_17380
+(degree 1579), 1207055.C100_08050 (degree 1275), 1207055.C100_08170 (degree
+1250), 1207055.C100_15780 (degree 1248) and 1207055.C100_05360 (degree
+1239).
 
 
 References
@@ -106,13 +108,15 @@ def SphingobiumSp.C100(
 	
 	Datetime: 2021-02-02 23:17:50.308101
 	
-	The undirected graph Sphingobium sp. C100 has 4466 nodes and 502210 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05037 and
-	has 15 connected components, where the component with most nodes has 4428 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 224.90, and the node degree mode is 3. The top 5 most central
-	nodes are 1207055.C100_17380 (degree 1579), 1207055.C100_08050 (degree 1275), 1207055.C100_08170
-	(degree 1250), 1207055.C100_15780 (degree 1248) and 1207055.C100_05360 (degree 1239).
+	The undirected graph Sphingobium sp. C100 has 4466 nodes and 502210 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05037 and has 15 connected components, where the component with most
+	nodes has 4428 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 224.90, and
+	the node degree mode is 3. The top 5 most central nodes are 1207055.C100_17380
+	(degree 1579), 1207055.C100_08050 (degree 1275), 1207055.C100_08170 (degree
+	1250), 1207055.C100_15780 (degree 1248) and 1207055.C100_05360 (degree
+	1239).
 	
 
 

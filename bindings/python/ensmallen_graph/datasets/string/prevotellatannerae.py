@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:48.477778
 
-The undirected graph Prevotella tannerae has 2749 nodes and 157752 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04177 and
-has 39 connected components, where the component with most nodes has 2661 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 114.77, and the node degree mode is 4. The top 5 most central
-nodes are 626522.GCWU000325_00825 (degree 992), 626522.GCWU000325_02340 (degree 831),
-626522.GCWU000325_01827 (degree 720), 626522.GCWU000325_02792 (degree 697) and 626522.GCWU000325_01969
+The undirected graph Prevotella tannerae has 2749 nodes and 157752 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04177 and has 39 connected components, where the component with most
+nodes has 2661 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 114.77, and
+the node degree mode is 4. The top 5 most central nodes are 626522.GCWU000325_00825
+(degree 992), 626522.GCWU000325_02340 (degree 831), 626522.GCWU000325_01827
+(degree 720), 626522.GCWU000325_02792 (degree 697) and 626522.GCWU000325_01969
 (degree 670).
 
 
@@ -107,13 +108,14 @@ def PrevotellaTannerae(
 	
 	Datetime: 2021-02-02 21:20:48.477778
 	
-	The undirected graph Prevotella tannerae has 2749 nodes and 157752 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04177 and
-	has 39 connected components, where the component with most nodes has 2661 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 114.77, and the node degree mode is 4. The top 5 most central
-	nodes are 626522.GCWU000325_00825 (degree 992), 626522.GCWU000325_02340 (degree 831),
-	626522.GCWU000325_01827 (degree 720), 626522.GCWU000325_02792 (degree 697) and 626522.GCWU000325_01969
+	The undirected graph Prevotella tannerae has 2749 nodes and 157752 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04177 and has 39 connected components, where the component with most
+	nodes has 2661 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 114.77, and
+	the node degree mode is 4. The top 5 most central nodes are 626522.GCWU000325_00825
+	(degree 992), 626522.GCWU000325_02340 (degree 831), 626522.GCWU000325_01827
+	(degree 720), 626522.GCWU000325_02792 (degree 697) and 626522.GCWU000325_01969
 	(degree 670).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:26.809432
 
-The undirected graph Mycoplasma arthritidis has 624 nodes and 25022 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12873
-and has 9 connected components, where the component with most nodes has 603 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 51, the mean node degree is 80.20, and the node degree mode is 12. The top 5 most
-central nodes are 243272.MARTH_orf177 (degree 322), 243272.MARTH_orf781 (degree 260),
-243272.MARTH_orf179 (degree 252), 243272.MARTH_orf026 (degree 244) and 243272.MARTH_orf701
-(degree 239).
+The undirected graph Mycoplasma arthritidis has 624 nodes and 25022 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12873 and has 9 connected components, where the component
+with most nodes has 603 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 51, the mean node degree is 80.20,
+and the node degree mode is 12. The top 5 most central nodes are 243272.MARTH_orf177
+(degree 322), 243272.MARTH_orf781 (degree 260), 243272.MARTH_orf179 (degree
+252), 243272.MARTH_orf026 (degree 244) and 243272.MARTH_orf701 (degree
+239).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaArthritidis(
 	
 	Datetime: 2021-02-02 20:09:26.809432
 	
-	The undirected graph Mycoplasma arthritidis has 624 nodes and 25022 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12873
-	and has 9 connected components, where the component with most nodes has 603 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 51, the mean node degree is 80.20, and the node degree mode is 12. The top 5 most
-	central nodes are 243272.MARTH_orf177 (degree 322), 243272.MARTH_orf781 (degree 260),
-	243272.MARTH_orf179 (degree 252), 243272.MARTH_orf026 (degree 244) and 243272.MARTH_orf701
-	(degree 239).
+	The undirected graph Mycoplasma arthritidis has 624 nodes and 25022 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12873 and has 9 connected components, where the component
+	with most nodes has 603 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 51, the mean node degree is 80.20,
+	and the node degree mode is 12. The top 5 most central nodes are 243272.MARTH_orf177
+	(degree 322), 243272.MARTH_orf781 (degree 260), 243272.MARTH_orf179 (degree
+	252), 243272.MARTH_orf026 (degree 244) and 243272.MARTH_orf701 (degree
+	239).
 	
 
 

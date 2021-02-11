@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:14.897137
 
-The undirected graph Dehalococcoides mccartyi CBDB1 has 1442 nodes and 74783 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07198
-and has 4 connected components, where the component with most nodes has 1423 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 74, the mean node degree is 103.72, and the node degree mode is 5. The top 5 most
-central nodes are 255470.cbdbA1348 (degree 687), 255470.cbdbA308 (degree 568), 255470.cbdbA817
-(degree 563), 255470.cbdbA344 (degree 539) and 255470.cbdbA529 (degree 527).
+The undirected graph Dehalococcoides mccartyi CBDB1 has 1442 nodes and
+74783 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07198 and has 4 connected components, where the
+component with most nodes has 1423 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 74, the mean node degree
+is 103.72, and the node degree mode is 5. The top 5 most central nodes
+are 255470.cbdbA1348 (degree 687), 255470.cbdbA308 (degree 568), 255470.cbdbA817
+(degree 563), 255470.cbdbA344 (degree 539) and 255470.cbdbA529 (degree
+527).
 
 
 References
@@ -106,13 +108,15 @@ def DehalococcoidesMccartyiCbdb1(
 	
 	Datetime: 2021-02-02 20:12:14.897137
 	
-	The undirected graph Dehalococcoides mccartyi CBDB1 has 1442 nodes and 74783 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07198
-	and has 4 connected components, where the component with most nodes has 1423 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 74, the mean node degree is 103.72, and the node degree mode is 5. The top 5 most
-	central nodes are 255470.cbdbA1348 (degree 687), 255470.cbdbA308 (degree 568), 255470.cbdbA817
-	(degree 563), 255470.cbdbA344 (degree 539) and 255470.cbdbA529 (degree 527).
+	The undirected graph Dehalococcoides mccartyi CBDB1 has 1442 nodes and
+	74783 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07198 and has 4 connected components, where the
+	component with most nodes has 1423 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 74, the mean node degree
+	is 103.72, and the node degree mode is 5. The top 5 most central nodes
+	are 255470.cbdbA1348 (degree 687), 255470.cbdbA308 (degree 568), 255470.cbdbA817
+	(degree 563), 255470.cbdbA344 (degree 539) and 255470.cbdbA529 (degree
+	527).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:34.767407
 
-The undirected graph Rhizobium alamii has 6705 nodes and 1078116 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04797 and
-has 25 connected components, where the component with most nodes has 6645 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 269,
-the mean node degree is 321.59, and the node degree mode is 2. The top 5 most central
-nodes are 492774.JQMB01000005_gene5497 (degree 2536), 492774.JQMB01000002_gene796
-(degree 2477), 492774.JQMB01000005_gene5099 (degree 2428), 492774.JQMB01000008_gene194
-(degree 2072) and 492774.JQMB01000005_gene5511 (degree 1903).
+The undirected graph Rhizobium alamii has 6705 nodes and 1078116 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04797 and has 25 connected components, where the component with most
+nodes has 6645 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 269, the mean node degree is 321.59, and
+the node degree mode is 2. The top 5 most central nodes are 492774.JQMB01000005_gene5497
+(degree 2536), 492774.JQMB01000002_gene796 (degree 2477), 492774.JQMB01000005_gene5099
+(degree 2428), 492774.JQMB01000008_gene194 (degree 2072) and 492774.JQMB01000005_gene5511
+(degree 1903).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumAlamii(
 	
 	Datetime: 2021-02-02 21:00:34.767407
 	
-	The undirected graph Rhizobium alamii has 6705 nodes and 1078116 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04797 and
-	has 25 connected components, where the component with most nodes has 6645 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 269,
-	the mean node degree is 321.59, and the node degree mode is 2. The top 5 most central
-	nodes are 492774.JQMB01000005_gene5497 (degree 2536), 492774.JQMB01000002_gene796
-	(degree 2477), 492774.JQMB01000005_gene5099 (degree 2428), 492774.JQMB01000008_gene194
-	(degree 2072) and 492774.JQMB01000005_gene5511 (degree 1903).
+	The undirected graph Rhizobium alamii has 6705 nodes and 1078116 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04797 and has 25 connected components, where the component with most
+	nodes has 6645 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 269, the mean node degree is 321.59, and
+	the node degree mode is 2. The top 5 most central nodes are 492774.JQMB01000005_gene5497
+	(degree 2536), 492774.JQMB01000002_gene796 (degree 2477), 492774.JQMB01000005_gene5099
+	(degree 2428), 492774.JQMB01000008_gene194 (degree 2072) and 492774.JQMB01000005_gene5511
+	(degree 1903).
 	
 
 

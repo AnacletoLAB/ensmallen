@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:13.368990
 
-The undirected graph Nitrosopumilus maritimus has 1773 nodes and 125073 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07962
-and has 26 connected components, where the component with most nodes has 1713 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 141.09, and the node degree mode is 2. The top 5
-most central nodes are 436308.Nmar_0831 (degree 602), 436308.Nmar_1008 (degree 577),
-436308.Nmar_0950 (degree 576), 436308.Nmar_0096 (degree 544) and 436308.Nmar_0546
-(degree 514).
+The undirected graph Nitrosopumilus maritimus has 1773 nodes and 125073
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07962 and has 26 connected components, where the component
+with most nodes has 1713 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 141.09,
+and the node degree mode is 2. The top 5 most central nodes are 436308.Nmar_0831
+(degree 602), 436308.Nmar_1008 (degree 577), 436308.Nmar_0950 (degree 576),
+436308.Nmar_0096 (degree 544) and 436308.Nmar_0546 (degree 514).
 
 
 References
@@ -107,14 +107,14 @@ def NitrosopumilusMaritimus(
 	
 	Datetime: 2021-02-02 20:49:13.368990
 	
-	The undirected graph Nitrosopumilus maritimus has 1773 nodes and 125073 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07962
-	and has 26 connected components, where the component with most nodes has 1713 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 141.09, and the node degree mode is 2. The top 5
-	most central nodes are 436308.Nmar_0831 (degree 602), 436308.Nmar_1008 (degree 577),
-	436308.Nmar_0950 (degree 576), 436308.Nmar_0096 (degree 544) and 436308.Nmar_0546
-	(degree 514).
+	The undirected graph Nitrosopumilus maritimus has 1773 nodes and 125073
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07962 and has 26 connected components, where the component
+	with most nodes has 1713 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 141.09,
+	and the node degree mode is 2. The top 5 most central nodes are 436308.Nmar_0831
+	(degree 602), 436308.Nmar_1008 (degree 577), 436308.Nmar_0950 (degree 576),
+	436308.Nmar_0096 (degree 544) and 436308.Nmar_0546 (degree 514).
 	
 
 

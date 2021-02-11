@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:04.678841
 
-The undirected graph Planctomyces brasiliensis has 4686 nodes and 320220 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02917
-and has 26 connected components, where the component with most nodes has 4624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 136.67, and the node degree mode is 3. The top 5 most
-central nodes are 756272.Plabr_2375 (degree 1879), 756272.Plabr_2882 (degree 1547),
-756272.Plabr_3280 (degree 1468), 756272.Plabr_0133 (degree 1438) and 756272.Plabr_1439
-(degree 1369).
+The undirected graph Planctomyces brasiliensis has 4686 nodes and 320220
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02917 and has 26 connected components, where the component
+with most nodes has 4624 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 136.67,
+and the node degree mode is 3. The top 5 most central nodes are 756272.Plabr_2375
+(degree 1879), 756272.Plabr_2882 (degree 1547), 756272.Plabr_3280 (degree
+1468), 756272.Plabr_0133 (degree 1438) and 756272.Plabr_1439 (degree 1369).
 
 
 References
@@ -107,14 +107,14 @@ def PlanctomycesBrasiliensis(
 	
 	Datetime: 2021-02-02 21:41:04.678841
 	
-	The undirected graph Planctomyces brasiliensis has 4686 nodes and 320220 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02917
-	and has 26 connected components, where the component with most nodes has 4624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 136.67, and the node degree mode is 3. The top 5 most
-	central nodes are 756272.Plabr_2375 (degree 1879), 756272.Plabr_2882 (degree 1547),
-	756272.Plabr_3280 (degree 1468), 756272.Plabr_0133 (degree 1438) and 756272.Plabr_1439
-	(degree 1369).
+	The undirected graph Planctomyces brasiliensis has 4686 nodes and 320220
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02917 and has 26 connected components, where the component
+	with most nodes has 4624 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 136.67,
+	and the node degree mode is 3. The top 5 most central nodes are 756272.Plabr_2375
+	(degree 1879), 756272.Plabr_2882 (degree 1547), 756272.Plabr_3280 (degree
+	1468), 756272.Plabr_0133 (degree 1438) and 756272.Plabr_1439 (degree 1369).
 	
 
 

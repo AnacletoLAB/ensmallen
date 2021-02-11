@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:03.195949
 
-The undirected graph Streptococcus infantis SK970 has 2131 nodes and 164725 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-and has 7 connected components, where the component with most nodes has 2119 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 154.60, and the node degree mode is 9. The top 5
-most central nodes are 1035189.HMPREF9954_0162 (degree 933), 1035189.HMPREF9954_0123
-(degree 885), 1035189.HMPREF9954_0251 (degree 793), 1035189.HMPREF9954_0726 (degree
-765) and 1035189.HMPREF9954_0644 (degree 761).
+The undirected graph Streptococcus infantis SK970 has 2131 nodes and 164725
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07258 and has 7 connected components, where the component
+with most nodes has 2119 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 154.60,
+and the node degree mode is 9. The top 5 most central nodes are 1035189.HMPREF9954_0162
+(degree 933), 1035189.HMPREF9954_0123 (degree 885), 1035189.HMPREF9954_0251
+(degree 793), 1035189.HMPREF9954_0726 (degree 765) and 1035189.HMPREF9954_0644
+(degree 761).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusInfantisSk970(
 	
 	Datetime: 2021-02-02 22:12:03.195949
 	
-	The undirected graph Streptococcus infantis SK970 has 2131 nodes and 164725 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-	and has 7 connected components, where the component with most nodes has 2119 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 154.60, and the node degree mode is 9. The top 5
-	most central nodes are 1035189.HMPREF9954_0162 (degree 933), 1035189.HMPREF9954_0123
-	(degree 885), 1035189.HMPREF9954_0251 (degree 793), 1035189.HMPREF9954_0726 (degree
-	765) and 1035189.HMPREF9954_0644 (degree 761).
+	The undirected graph Streptococcus infantis SK970 has 2131 nodes and 164725
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07258 and has 7 connected components, where the component
+	with most nodes has 2119 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 154.60,
+	and the node degree mode is 9. The top 5 most central nodes are 1035189.HMPREF9954_0162
+	(degree 933), 1035189.HMPREF9954_0123 (degree 885), 1035189.HMPREF9954_0251
+	(degree 793), 1035189.HMPREF9954_0726 (degree 765) and 1035189.HMPREF9954_0644
+	(degree 761).
 	
 
 

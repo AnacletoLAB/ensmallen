@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:48.591642
 
-The undirected graph Staphylococcus lentus has 2876 nodes and 268894 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06504 and
-has 8 connected components, where the component with most nodes has 2857 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 186.99, and the node degree mode is 3. The top 5 most central
-nodes are 1179226.AJXO01000017_gene1477 (degree 1176), 1179226.AJXO01000015_gene444
-(degree 1035), 1179226.AJXO01000003_gene1645 (degree 948), 1179226.AJXO01000015_gene443
-(degree 933) and 1179226.AJXO01000033_gene1174 (degree 882).
+The undirected graph Staphylococcus lentus has 2876 nodes and 268894 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06504 and has 8 connected components, where the component with most
+nodes has 2857 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 186.99, and
+the node degree mode is 3. The top 5 most central nodes are 1179226.AJXO01000017_gene1477
+(degree 1176), 1179226.AJXO01000015_gene444 (degree 1035), 1179226.AJXO01000003_gene1645
+(degree 948), 1179226.AJXO01000015_gene443 (degree 933) and 1179226.AJXO01000033_gene1174
+(degree 882).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusLentus(
 	
 	Datetime: 2021-02-02 23:09:48.591642
 	
-	The undirected graph Staphylococcus lentus has 2876 nodes and 268894 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06504 and
-	has 8 connected components, where the component with most nodes has 2857 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 186.99, and the node degree mode is 3. The top 5 most central
-	nodes are 1179226.AJXO01000017_gene1477 (degree 1176), 1179226.AJXO01000015_gene444
-	(degree 1035), 1179226.AJXO01000003_gene1645 (degree 948), 1179226.AJXO01000015_gene443
-	(degree 933) and 1179226.AJXO01000033_gene1174 (degree 882).
+	The undirected graph Staphylococcus lentus has 2876 nodes and 268894 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06504 and has 8 connected components, where the component with most
+	nodes has 2857 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 186.99, and
+	the node degree mode is 3. The top 5 most central nodes are 1179226.AJXO01000017_gene1477
+	(degree 1176), 1179226.AJXO01000015_gene444 (degree 1035), 1179226.AJXO01000003_gene1645
+	(degree 948), 1179226.AJXO01000015_gene443 (degree 933) and 1179226.AJXO01000033_gene1174
+	(degree 882).
 	
 
 

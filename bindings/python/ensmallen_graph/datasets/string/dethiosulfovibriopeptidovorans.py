@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:52.847509
 
-The undirected graph Dethiosulfovibrio peptidovorans has 2452 nodes and 214809 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07149
-and has 3 connected components, where the component with most nodes has 2436 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 175.21, and the node degree mode is 13. The top 5
-most central nodes are 469381.Dpep_2423 (degree 1016), 469381.Dpep_2211 (degree 915),
-469381.Dpep_2326 (degree 841), 469381.Dpep_1765 (degree 837) and 469381.Dpep_1015
-(degree 812).
+The undirected graph Dethiosulfovibrio peptidovorans has 2452 nodes and
+214809 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07149 and has 3 connected components, where the
+component with most nodes has 2436 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+is 175.21, and the node degree mode is 13. The top 5 most central nodes
+are 469381.Dpep_2423 (degree 1016), 469381.Dpep_2211 (degree 915), 469381.Dpep_2326
+(degree 841), 469381.Dpep_1765 (degree 837) and 469381.Dpep_1015 (degree
+812).
 
 
 References
@@ -107,14 +108,15 @@ def DethiosulfovibrioPeptidovorans(
 	
 	Datetime: 2021-02-02 20:54:52.847509
 	
-	The undirected graph Dethiosulfovibrio peptidovorans has 2452 nodes and 214809 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07149
-	and has 3 connected components, where the component with most nodes has 2436 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 175.21, and the node degree mode is 13. The top 5
-	most central nodes are 469381.Dpep_2423 (degree 1016), 469381.Dpep_2211 (degree 915),
-	469381.Dpep_2326 (degree 841), 469381.Dpep_1765 (degree 837) and 469381.Dpep_1015
-	(degree 812).
+	The undirected graph Dethiosulfovibrio peptidovorans has 2452 nodes and
+	214809 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07149 and has 3 connected components, where the
+	component with most nodes has 2436 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+	is 175.21, and the node degree mode is 13. The top 5 most central nodes
+	are 469381.Dpep_2423 (degree 1016), 469381.Dpep_2211 (degree 915), 469381.Dpep_2326
+	(degree 841), 469381.Dpep_1765 (degree 837) and 469381.Dpep_1015 (degree
+	812).
 	
 
 

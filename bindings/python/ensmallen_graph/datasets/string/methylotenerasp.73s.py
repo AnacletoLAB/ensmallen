@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:15.276835
 
-The undirected graph Methylotenera sp. 73s has 2384 nodes and 176415 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06211 and
-has 7 connected components, where the component with most nodes has 2372 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 148.00, and the node degree mode is 1. The top 5 most central
-nodes are 1165096.ARWF01000001_gene1170 (degree 982), 1165096.ARWF01000001_gene74
-(degree 853), 1165096.ARWF01000001_gene73 (degree 755), 1165096.ARWF01000001_gene1629
-(degree 715) and 1165096.ARWF01000001_gene1113 (degree 699).
+The undirected graph Methylotenera sp. 73s has 2384 nodes and 176415 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06211 and has 7 connected components, where the component with most
+nodes has 2372 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 148.00, and
+the node degree mode is 1. The top 5 most central nodes are 1165096.ARWF01000001_gene1170
+(degree 982), 1165096.ARWF01000001_gene74 (degree 853), 1165096.ARWF01000001_gene73
+(degree 755), 1165096.ARWF01000001_gene1629 (degree 715) and 1165096.ARWF01000001_gene1113
+(degree 699).
 
 
 References
@@ -107,14 +108,15 @@ def MethyloteneraSp.73s(
 	
 	Datetime: 2021-02-02 23:05:15.276835
 	
-	The undirected graph Methylotenera sp. 73s has 2384 nodes and 176415 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06211 and
-	has 7 connected components, where the component with most nodes has 2372 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 148.00, and the node degree mode is 1. The top 5 most central
-	nodes are 1165096.ARWF01000001_gene1170 (degree 982), 1165096.ARWF01000001_gene74
-	(degree 853), 1165096.ARWF01000001_gene73 (degree 755), 1165096.ARWF01000001_gene1629
-	(degree 715) and 1165096.ARWF01000001_gene1113 (degree 699).
+	The undirected graph Methylotenera sp. 73s has 2384 nodes and 176415 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06211 and has 7 connected components, where the component with most
+	nodes has 2372 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 148.00, and
+	the node degree mode is 1. The top 5 most central nodes are 1165096.ARWF01000001_gene1170
+	(degree 982), 1165096.ARWF01000001_gene74 (degree 853), 1165096.ARWF01000001_gene73
+	(degree 755), 1165096.ARWF01000001_gene1629 (degree 715) and 1165096.ARWF01000001_gene1113
+	(degree 699).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:52.249947
 
-The undirected graph Luteibacter sp. 9143 has 3874 nodes and 448465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05978 and
-has 20 connected components, where the component with most nodes has 3826 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 231.53, and the node degree mode is 2. The top 5 most central
-nodes are 1500890.JQNL01000001_gene1469 (degree 1296), 1500890.JQNL01000001_gene1930
-(degree 1221), 1500890.JQNL01000001_gene122 (degree 1217), 1500890.JQNL01000001_gene1539
-(degree 1209) and 1500890.JQNL01000001_gene208 (degree 1174).
+The undirected graph Luteibacter sp. 9143 has 3874 nodes and 448465 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05978 and has 20 connected components, where the component with most
+nodes has 3826 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 231.53, and
+the node degree mode is 2. The top 5 most central nodes are 1500890.JQNL01000001_gene1469
+(degree 1296), 1500890.JQNL01000001_gene1930 (degree 1221), 1500890.JQNL01000001_gene122
+(degree 1217), 1500890.JQNL01000001_gene1539 (degree 1209) and 1500890.JQNL01000001_gene208
+(degree 1174).
 
 
 References
@@ -107,14 +108,15 @@ def LuteibacterSp.9143(
 	
 	Datetime: 2021-02-03 23:15:52.249947
 	
-	The undirected graph Luteibacter sp. 9143 has 3874 nodes and 448465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05978 and
-	has 20 connected components, where the component with most nodes has 3826 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 231.53, and the node degree mode is 2. The top 5 most central
-	nodes are 1500890.JQNL01000001_gene1469 (degree 1296), 1500890.JQNL01000001_gene1930
-	(degree 1221), 1500890.JQNL01000001_gene122 (degree 1217), 1500890.JQNL01000001_gene1539
-	(degree 1209) and 1500890.JQNL01000001_gene208 (degree 1174).
+	The undirected graph Luteibacter sp. 9143 has 3874 nodes and 448465 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05978 and has 20 connected components, where the component with most
+	nodes has 3826 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 231.53, and
+	the node degree mode is 2. The top 5 most central nodes are 1500890.JQNL01000001_gene1469
+	(degree 1296), 1500890.JQNL01000001_gene1930 (degree 1221), 1500890.JQNL01000001_gene122
+	(degree 1217), 1500890.JQNL01000001_gene1539 (degree 1209) and 1500890.JQNL01000001_gene208
+	(degree 1174).
 	
 
 

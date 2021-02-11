@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:22.031651
 
-The undirected graph Microvirga lupini has 9088 nodes and 2056144 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04980 and
-has 111 connected components, where the component with most nodes has 8831 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 402, the mean node degree is 452.50, and the node degree mode is 1. The top 5
-most central nodes are 420324.KI912020_gene7492 (degree 2868), 420324.KI912026_gene4904
-(degree 2846), 420324.KI912045_gene4161 (degree 2764), 420324.KI912045_gene4432 (degree
-2706) and 420324.KI912067_gene6499 (degree 2522).
+The undirected graph Microvirga lupini has 9088 nodes and 2056144 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04980 and has 111 connected components, where the component with most
+nodes has 8831 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 402, the mean node degree is 452.50, and
+the node degree mode is 1. The top 5 most central nodes are 420324.KI912020_gene7492
+(degree 2868), 420324.KI912026_gene4904 (degree 2846), 420324.KI912045_gene4161
+(degree 2764), 420324.KI912045_gene4432 (degree 2706) and 420324.KI912067_gene6499
+(degree 2522).
 
 
 References
@@ -107,14 +108,15 @@ def MicrovirgaLupini(
 	
 	Datetime: 2021-02-02 20:47:22.031651
 	
-	The undirected graph Microvirga lupini has 9088 nodes and 2056144 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04980 and
-	has 111 connected components, where the component with most nodes has 8831 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 402, the mean node degree is 452.50, and the node degree mode is 1. The top 5
-	most central nodes are 420324.KI912020_gene7492 (degree 2868), 420324.KI912026_gene4904
-	(degree 2846), 420324.KI912045_gene4161 (degree 2764), 420324.KI912045_gene4432 (degree
-	2706) and 420324.KI912067_gene6499 (degree 2522).
+	The undirected graph Microvirga lupini has 9088 nodes and 2056144 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04980 and has 111 connected components, where the component with most
+	nodes has 8831 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 402, the mean node degree is 452.50, and
+	the node degree mode is 1. The top 5 most central nodes are 420324.KI912020_gene7492
+	(degree 2868), 420324.KI912026_gene4904 (degree 2846), 420324.KI912045_gene4161
+	(degree 2764), 420324.KI912045_gene4432 (degree 2706) and 420324.KI912067_gene6499
+	(degree 2522).
 	
 
 

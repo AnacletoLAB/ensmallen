@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:35.427935
 
-The undirected graph Senegalimassilia anaerobia has 1795 nodes and 104602 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06497
-and has 11 connected components, where the component with most nodes has 1773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 116.55, and the node degree mode is 1. The top 5 most
-central nodes are 1034345.CAEM01000018_gene347 (degree 774), 1034345.CAEM01000057_gene541
-(degree 674), 1034345.CAEM01000007_gene1354 (degree 594), 1034345.CAEM01000023_gene778
-(degree 588) and 1034345.CAEM01000019_gene1687 (degree 575).
+The undirected graph Senegalimassilia anaerobia has 1795 nodes and 104602
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06497 and has 11 connected components, where the component
+with most nodes has 1773 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 116.55,
+and the node degree mode is 1. The top 5 most central nodes are 1034345.CAEM01000018_gene347
+(degree 774), 1034345.CAEM01000057_gene541 (degree 674), 1034345.CAEM01000007_gene1354
+(degree 594), 1034345.CAEM01000023_gene778 (degree 588) and 1034345.CAEM01000019_gene1687
+(degree 575).
 
 
 References
@@ -107,14 +108,15 @@ def SenegalimassiliaAnaerobia(
 	
 	Datetime: 2021-02-02 22:11:35.427935
 	
-	The undirected graph Senegalimassilia anaerobia has 1795 nodes and 104602 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06497
-	and has 11 connected components, where the component with most nodes has 1773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 116.55, and the node degree mode is 1. The top 5 most
-	central nodes are 1034345.CAEM01000018_gene347 (degree 774), 1034345.CAEM01000057_gene541
-	(degree 674), 1034345.CAEM01000007_gene1354 (degree 594), 1034345.CAEM01000023_gene778
-	(degree 588) and 1034345.CAEM01000019_gene1687 (degree 575).
+	The undirected graph Senegalimassilia anaerobia has 1795 nodes and 104602
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06497 and has 11 connected components, where the component
+	with most nodes has 1773 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 116.55,
+	and the node degree mode is 1. The top 5 most central nodes are 1034345.CAEM01000018_gene347
+	(degree 774), 1034345.CAEM01000057_gene541 (degree 674), 1034345.CAEM01000007_gene1354
+	(degree 594), 1034345.CAEM01000023_gene778 (degree 588) and 1034345.CAEM01000019_gene1687
+	(degree 575).
 	
 
 

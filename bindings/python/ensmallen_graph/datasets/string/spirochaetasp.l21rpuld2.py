@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:44:34.934895
 
-The undirected graph Spirochaeta sp. L21RPulD2 has 3327 nodes and 337777 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06105
-and has 14 connected components, where the component with most nodes has 3295 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 203.05, and the node degree mode is 4. The top 5
-most central nodes are 1307761.L21SP2_2920 (degree 1140), 1307761.L21SP2_1356 (degree
-1123), 1307761.L21SP2_1602 (degree 1049), 1307761.L21SP2_1393 (degree 1045) and 1307761.L21SP2_1792
-(degree 1034).
+The undirected graph Spirochaeta sp. L21RPulD2 has 3327 nodes and 337777
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06105 and has 14 connected components, where the component
+with most nodes has 3295 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 203.05,
+and the node degree mode is 4. The top 5 most central nodes are 1307761.L21SP2_2920
+(degree 1140), 1307761.L21SP2_1356 (degree 1123), 1307761.L21SP2_1602 (degree
+1049), 1307761.L21SP2_1393 (degree 1045) and 1307761.L21SP2_1792 (degree
+1034).
 
 
 References
@@ -107,14 +108,15 @@ def SpirochaetaSp.L21rpuld2(
 	
 	Datetime: 2021-02-03 21:44:34.934895
 	
-	The undirected graph Spirochaeta sp. L21RPulD2 has 3327 nodes and 337777 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06105
-	and has 14 connected components, where the component with most nodes has 3295 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 203.05, and the node degree mode is 4. The top 5
-	most central nodes are 1307761.L21SP2_2920 (degree 1140), 1307761.L21SP2_1356 (degree
-	1123), 1307761.L21SP2_1602 (degree 1049), 1307761.L21SP2_1393 (degree 1045) and 1307761.L21SP2_1792
-	(degree 1034).
+	The undirected graph Spirochaeta sp. L21RPulD2 has 3327 nodes and 337777
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06105 and has 14 connected components, where the component
+	with most nodes has 3295 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 203.05,
+	and the node degree mode is 4. The top 5 most central nodes are 1307761.L21SP2_2920
+	(degree 1140), 1307761.L21SP2_1356 (degree 1123), 1307761.L21SP2_1602 (degree
+	1049), 1307761.L21SP2_1393 (degree 1045) and 1307761.L21SP2_1792 (degree
+	1034).
 	
 
 

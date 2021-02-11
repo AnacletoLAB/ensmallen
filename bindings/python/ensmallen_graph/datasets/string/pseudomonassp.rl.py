@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:55.002668
 
-The undirected graph Pseudomonas sp. RL has 3491 nodes and 515243 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08458 and
-has 3 connected components, where the component with most nodes has 3487 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 249,
-the mean node degree is 295.18, and the node degree mode is 5. The top 5 most central
-nodes are 1452718.JBOY01000001_gene555 (degree 1621), 1452718.JBOY01000053_gene2225
-(degree 1587), 1452718.JBOY01000063_gene2606 (degree 1486), 1452718.JBOY01000063_gene2605
-(degree 1479) and 1452718.JBOY01000042_gene1845 (degree 1473).
+The undirected graph Pseudomonas sp. RL has 3491 nodes and 515243 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08458 and has 3 connected components, where the component with most
+nodes has 3487 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 249, the mean node degree is 295.18, and
+the node degree mode is 5. The top 5 most central nodes are 1452718.JBOY01000001_gene555
+(degree 1621), 1452718.JBOY01000053_gene2225 (degree 1587), 1452718.JBOY01000063_gene2606
+(degree 1486), 1452718.JBOY01000063_gene2605 (degree 1479) and 1452718.JBOY01000042_gene1845
+(degree 1473).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.Rl(
 	
 	Datetime: 2021-02-03 23:05:55.002668
 	
-	The undirected graph Pseudomonas sp. RL has 3491 nodes and 515243 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08458 and
-	has 3 connected components, where the component with most nodes has 3487 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 249,
-	the mean node degree is 295.18, and the node degree mode is 5. The top 5 most central
-	nodes are 1452718.JBOY01000001_gene555 (degree 1621), 1452718.JBOY01000053_gene2225
-	(degree 1587), 1452718.JBOY01000063_gene2606 (degree 1486), 1452718.JBOY01000063_gene2605
-	(degree 1479) and 1452718.JBOY01000042_gene1845 (degree 1473).
+	The undirected graph Pseudomonas sp. RL has 3491 nodes and 515243 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08458 and has 3 connected components, where the component with most
+	nodes has 3487 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 249, the mean node degree is 295.18, and
+	the node degree mode is 5. The top 5 most central nodes are 1452718.JBOY01000001_gene555
+	(degree 1621), 1452718.JBOY01000053_gene2225 (degree 1587), 1452718.JBOY01000063_gene2606
+	(degree 1486), 1452718.JBOY01000063_gene2605 (degree 1479) and 1452718.JBOY01000042_gene1845
+	(degree 1473).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:21.091652
 
-The undirected graph Burkholderiaceae sp. Mortierella has 2201 nodes and 167563 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06921
-and has 11 connected components, where the component with most nodes has 2178 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 152.26, and the node degree mode is 1. The top 5
-most central nodes are 1562701.BBOF01000028_gene822 (degree 824), 1562701.BBOF01000032_gene1112
+The undirected graph Burkholderiaceae sp. Mortierella has 2201 nodes and
+167563 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06921 and has 11 connected components, where the
+component with most nodes has 2178 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 152.26, and the node degree mode is 1. The top 5 most central nodes
+are 1562701.BBOF01000028_gene822 (degree 824), 1562701.BBOF01000032_gene1112
 (degree 771), 1562701.BBOF01000043_gene1413 (degree 673), 1562701.BBOF01000053_gene1490
 (degree 669) and 1562701.BBOF01000044_gene1190 (degree 662).
 
@@ -107,12 +108,13 @@ def BurkholderiaceaeSp.Mortierella(
 	
 	Datetime: 2021-02-03 23:21:21.091652
 	
-	The undirected graph Burkholderiaceae sp. Mortierella has 2201 nodes and 167563 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06921
-	and has 11 connected components, where the component with most nodes has 2178 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 152.26, and the node degree mode is 1. The top 5
-	most central nodes are 1562701.BBOF01000028_gene822 (degree 824), 1562701.BBOF01000032_gene1112
+	The undirected graph Burkholderiaceae sp. Mortierella has 2201 nodes and
+	167563 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06921 and has 11 connected components, where the
+	component with most nodes has 2178 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 152.26, and the node degree mode is 1. The top 5 most central nodes
+	are 1562701.BBOF01000028_gene822 (degree 824), 1562701.BBOF01000032_gene1112
 	(degree 771), 1562701.BBOF01000043_gene1413 (degree 673), 1562701.BBOF01000053_gene1490
 	(degree 669) and 1562701.BBOF01000044_gene1190 (degree 662).
 	

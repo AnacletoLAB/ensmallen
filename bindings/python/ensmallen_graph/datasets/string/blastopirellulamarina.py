@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:23.815123
 
-The undirected graph Blastopirellula marina has 5507 nodes and 596463 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03934 and
-has 110 connected components, where the component with most nodes has 5213 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 216.62, and the node degree mode is 1. The top 5
-most central nodes are 314230.DSM3645_27578 (degree 2275), 314230.DSM3645_21639 (degree
-1859), 314230.DSM3645_02453 (degree 1810), 314230.DSM3645_15445 (degree 1599) and
-314230.DSM3645_22711 (degree 1552).
+The undirected graph Blastopirellula marina has 5507 nodes and 596463 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03934 and has 110 connected components, where the component with most
+nodes has 5213 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 216.62, and
+the node degree mode is 1. The top 5 most central nodes are 314230.DSM3645_27578
+(degree 2275), 314230.DSM3645_21639 (degree 1859), 314230.DSM3645_02453
+(degree 1810), 314230.DSM3645_15445 (degree 1599) and 314230.DSM3645_22711
+(degree 1552).
 
 
 References
@@ -107,14 +108,15 @@ def BlastopirellulaMarina(
 	
 	Datetime: 2021-02-02 20:24:23.815123
 	
-	The undirected graph Blastopirellula marina has 5507 nodes and 596463 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03934 and
-	has 110 connected components, where the component with most nodes has 5213 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 216.62, and the node degree mode is 1. The top 5
-	most central nodes are 314230.DSM3645_27578 (degree 2275), 314230.DSM3645_21639 (degree
-	1859), 314230.DSM3645_02453 (degree 1810), 314230.DSM3645_15445 (degree 1599) and
-	314230.DSM3645_22711 (degree 1552).
+	The undirected graph Blastopirellula marina has 5507 nodes and 596463 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03934 and has 110 connected components, where the component with most
+	nodes has 5213 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 216.62, and
+	the node degree mode is 1. The top 5 most central nodes are 314230.DSM3645_27578
+	(degree 2275), 314230.DSM3645_21639 (degree 1859), 314230.DSM3645_02453
+	(degree 1810), 314230.DSM3645_15445 (degree 1599) and 314230.DSM3645_22711
+	(degree 1552).
 	
 
 

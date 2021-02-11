@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:44:31.158929
 
-The undirected graph soc-douban has 154908 nodes and 327162 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 4.22, and the node degree mode is 1. The top 5 most central
-nodes are 885 (degree 287), 3796 (degree 278), 6647 (degree 265), 3793 (degree 259)
-and 285 (degree 248).
+The undirected graph soc-douban has 154908 nodes and 327162 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 4.22, and the
+node degree mode is 1. The top 5 most central nodes are 885 (degree 287),
+3796 (degree 278), 6647 (degree 265), 3793 (degree 259) and 285 (degree
+248).
 
 
 References
@@ -109,12 +110,13 @@ def SocDouban(
 	
 	Datetime: 2021-02-06 11:44:31.158929
 	
-	The undirected graph soc-douban has 154908 nodes and 327162 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 4.22, and the node degree mode is 1. The top 5 most central
-	nodes are 885 (degree 287), 3796 (degree 278), 6647 (degree 265), 3793 (degree 259)
-	and 285 (degree 248).
+	The undirected graph soc-douban has 154908 nodes and 327162 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 4.22, and the
+	node degree mode is 1. The top 5 most central nodes are 885 (degree 287),
+	3796 (degree 278), 6647 (degree 265), 3793 (degree 259) and 285 (degree
+	248).
 	
 
 

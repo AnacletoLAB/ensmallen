@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:02.019761
 
-The undirected graph Trichodesmium erythraeum has 4228 nodes and 529441 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05925
-and has 30 connected components, where the component with most nodes has 4164 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 250.45, and the node degree mode is 1. The top 5
-most central nodes are 203124.Tery_4447 (degree 2268), 203124.Tery_3753 (degree 2173),
-203124.Tery_0943 (degree 1720), 203124.Tery_3155 (degree 1537) and 203124.Tery_0546
-(degree 1476).
+The undirected graph Trichodesmium erythraeum has 4228 nodes and 529441
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05925 and has 30 connected components, where the component
+with most nodes has 4164 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 250.45,
+and the node degree mode is 1. The top 5 most central nodes are 203124.Tery_4447
+(degree 2268), 203124.Tery_3753 (degree 2173), 203124.Tery_0943 (degree
+1720), 203124.Tery_3155 (degree 1537) and 203124.Tery_0546 (degree 1476).
 
 
 References
@@ -107,14 +107,14 @@ def TrichodesmiumErythraeum(
 	
 	Datetime: 2021-02-02 20:00:02.019761
 	
-	The undirected graph Trichodesmium erythraeum has 4228 nodes and 529441 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05925
-	and has 30 connected components, where the component with most nodes has 4164 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 250.45, and the node degree mode is 1. The top 5
-	most central nodes are 203124.Tery_4447 (degree 2268), 203124.Tery_3753 (degree 2173),
-	203124.Tery_0943 (degree 1720), 203124.Tery_3155 (degree 1537) and 203124.Tery_0546
-	(degree 1476).
+	The undirected graph Trichodesmium erythraeum has 4228 nodes and 529441
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05925 and has 30 connected components, where the component
+	with most nodes has 4164 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 250.45,
+	and the node degree mode is 1. The top 5 most central nodes are 203124.Tery_4447
+	(degree 2268), 203124.Tery_3753 (degree 2173), 203124.Tery_0943 (degree
+	1720), 203124.Tery_3155 (degree 1537) and 203124.Tery_0546 (degree 1476).
 	
 
 

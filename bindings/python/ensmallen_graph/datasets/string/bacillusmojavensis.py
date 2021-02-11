@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:23.180950
 
-The undirected graph Bacillus mojavensis has 3829 nodes and 395988 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05403 and
-has 10 connected components, where the component with most nodes has 3803 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 206.84, and the node degree mode is 2. The top 5 most central
-nodes are 1051501.AYTL01000030_gene2986 (degree 1305), 1051501.AYTL01000011_gene38
-(degree 1187), 1051501.AYTL01000028_gene2143 (degree 1154), 1051501.AYTL01000027_gene1164
-(degree 1130) and 1051501.AYTL01000007_gene397 (degree 1067).
+The undirected graph Bacillus mojavensis has 3829 nodes and 395988 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05403 and has 10 connected components, where the component with most
+nodes has 3803 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 206.84, and
+the node degree mode is 2. The top 5 most central nodes are 1051501.AYTL01000030_gene2986
+(degree 1305), 1051501.AYTL01000011_gene38 (degree 1187), 1051501.AYTL01000028_gene2143
+(degree 1154), 1051501.AYTL01000027_gene1164 (degree 1130) and 1051501.AYTL01000007_gene397
+(degree 1067).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusMojavensis(
 	
 	Datetime: 2021-02-02 22:17:23.180950
 	
-	The undirected graph Bacillus mojavensis has 3829 nodes and 395988 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05403 and
-	has 10 connected components, where the component with most nodes has 3803 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 206.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1051501.AYTL01000030_gene2986 (degree 1305), 1051501.AYTL01000011_gene38
-	(degree 1187), 1051501.AYTL01000028_gene2143 (degree 1154), 1051501.AYTL01000027_gene1164
-	(degree 1130) and 1051501.AYTL01000007_gene397 (degree 1067).
+	The undirected graph Bacillus mojavensis has 3829 nodes and 395988 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05403 and has 10 connected components, where the component with most
+	nodes has 3803 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 206.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1051501.AYTL01000030_gene2986
+	(degree 1305), 1051501.AYTL01000011_gene38 (degree 1187), 1051501.AYTL01000028_gene2143
+	(degree 1154), 1051501.AYTL01000027_gene1164 (degree 1130) and 1051501.AYTL01000007_gene397
+	(degree 1067).
 	
 
 

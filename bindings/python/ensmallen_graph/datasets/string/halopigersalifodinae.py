@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:30.890355
 
-The undirected graph Halopiger salifodinae has 3856 nodes and 349102 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-has 30 connected components, where the component with most nodes has 3787 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 181.07, and the node degree mode is 2. The top 5 most central
-nodes are 1202768.JROF01000020_gene3463 (degree 1182), 1202768.JROF01000053_gene3932
-(degree 1111), 1202768.JROF01000020_gene3474 (degree 1056), 1202768.JROF01000015_gene1065
-(degree 1011) and 1202768.JROF01000049_gene3855 (degree 998).
+The undirected graph Halopiger salifodinae has 3856 nodes and 349102 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04697 and has 30 connected components, where the component with most
+nodes has 3787 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 181.07, and
+the node degree mode is 2. The top 5 most central nodes are 1202768.JROF01000020_gene3463
+(degree 1182), 1202768.JROF01000053_gene3932 (degree 1111), 1202768.JROF01000020_gene3474
+(degree 1056), 1202768.JROF01000015_gene1065 (degree 1011) and 1202768.JROF01000049_gene3855
+(degree 998).
 
 
 References
@@ -107,14 +108,15 @@ def HalopigerSalifodinae(
 	
 	Datetime: 2021-02-02 23:14:30.890355
 	
-	The undirected graph Halopiger salifodinae has 3856 nodes and 349102 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-	has 30 connected components, where the component with most nodes has 3787 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 181.07, and the node degree mode is 2. The top 5 most central
-	nodes are 1202768.JROF01000020_gene3463 (degree 1182), 1202768.JROF01000053_gene3932
-	(degree 1111), 1202768.JROF01000020_gene3474 (degree 1056), 1202768.JROF01000015_gene1065
-	(degree 1011) and 1202768.JROF01000049_gene3855 (degree 998).
+	The undirected graph Halopiger salifodinae has 3856 nodes and 349102 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04697 and has 30 connected components, where the component with most
+	nodes has 3787 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 181.07, and
+	the node degree mode is 2. The top 5 most central nodes are 1202768.JROF01000020_gene3463
+	(degree 1182), 1202768.JROF01000053_gene3932 (degree 1111), 1202768.JROF01000020_gene3474
+	(degree 1056), 1202768.JROF01000015_gene1065 (degree 1011) and 1202768.JROF01000049_gene3855
+	(degree 998).
 	
 
 

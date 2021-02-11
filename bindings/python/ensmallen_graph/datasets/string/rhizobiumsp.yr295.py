@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:16.933866
 
-The undirected graph Rhizobium sp. YR295 has 5765 nodes and 802096 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04828 and
-has 20 connected components, where the component with most nodes has 5726 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 278.26, and the node degree mode is 1. The top 5 most central
-nodes are 1500257.JQNM01000001_gene3424 (degree 2092), 1500257.JQNM01000002_gene4288
-(degree 1744), 1500257.JQNM01000003_gene5031 (degree 1727), 1500257.JQNM01000004_gene143
-(degree 1726) and 1500257.JQNM01000001_gene4094 (degree 1646).
+The undirected graph Rhizobium sp. YR295 has 5765 nodes and 802096 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04828 and has 20 connected components, where the component with most
+nodes has 5726 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 278.26, and
+the node degree mode is 1. The top 5 most central nodes are 1500257.JQNM01000001_gene3424
+(degree 2092), 1500257.JQNM01000002_gene4288 (degree 1744), 1500257.JQNM01000003_gene5031
+(degree 1727), 1500257.JQNM01000004_gene143 (degree 1726) and 1500257.JQNM01000001_gene4094
+(degree 1646).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.Yr295(
 	
 	Datetime: 2021-02-03 23:15:16.933866
 	
-	The undirected graph Rhizobium sp. YR295 has 5765 nodes and 802096 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04828 and
-	has 20 connected components, where the component with most nodes has 5726 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 278.26, and the node degree mode is 1. The top 5 most central
-	nodes are 1500257.JQNM01000001_gene3424 (degree 2092), 1500257.JQNM01000002_gene4288
-	(degree 1744), 1500257.JQNM01000003_gene5031 (degree 1727), 1500257.JQNM01000004_gene143
-	(degree 1726) and 1500257.JQNM01000001_gene4094 (degree 1646).
+	The undirected graph Rhizobium sp. YR295 has 5765 nodes and 802096 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04828 and has 20 connected components, where the component with most
+	nodes has 5726 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 278.26, and
+	the node degree mode is 1. The top 5 most central nodes are 1500257.JQNM01000001_gene3424
+	(degree 2092), 1500257.JQNM01000002_gene4288 (degree 1744), 1500257.JQNM01000003_gene5031
+	(degree 1727), 1500257.JQNM01000004_gene143 (degree 1726) and 1500257.JQNM01000001_gene4094
+	(degree 1646).
 	
 
 

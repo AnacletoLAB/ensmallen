@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:33.494361
 
-The undirected graph Flectobacillus major has 4411 nodes and 532588 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05476 and
-has 22 connected components, where the component with most nodes has 4358 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 241.48, and the node degree mode is 2. The top 5 most central
-nodes are 929703.KE386491_gene472 (degree 1387), 929703.KE386491_gene3477 (degree
-1299), 929703.KE386491_gene971 (degree 1270), 929703.KE386491_gene1487 (degree 1116)
-and 929703.KE386491_gene2902 (degree 1095).
+The undirected graph Flectobacillus major has 4411 nodes and 532588 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05476 and has 22 connected components, where the component with most
+nodes has 4358 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 241.48, and
+the node degree mode is 2. The top 5 most central nodes are 929703.KE386491_gene472
+(degree 1387), 929703.KE386491_gene3477 (degree 1299), 929703.KE386491_gene971
+(degree 1270), 929703.KE386491_gene1487 (degree 1116) and 929703.KE386491_gene2902
+(degree 1095).
 
 
 References
@@ -107,14 +108,15 @@ def FlectobacillusMajor(
 	
 	Datetime: 2021-02-02 21:57:33.494361
 	
-	The undirected graph Flectobacillus major has 4411 nodes and 532588 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05476 and
-	has 22 connected components, where the component with most nodes has 4358 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 241.48, and the node degree mode is 2. The top 5 most central
-	nodes are 929703.KE386491_gene472 (degree 1387), 929703.KE386491_gene3477 (degree
-	1299), 929703.KE386491_gene971 (degree 1270), 929703.KE386491_gene1487 (degree 1116)
-	and 929703.KE386491_gene2902 (degree 1095).
+	The undirected graph Flectobacillus major has 4411 nodes and 532588 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05476 and has 22 connected components, where the component with most
+	nodes has 4358 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 241.48, and
+	the node degree mode is 2. The top 5 most central nodes are 929703.KE386491_gene472
+	(degree 1387), 929703.KE386491_gene3477 (degree 1299), 929703.KE386491_gene971
+	(degree 1270), 929703.KE386491_gene1487 (degree 1116) and 929703.KE386491_gene2902
+	(degree 1095).
 	
 
 

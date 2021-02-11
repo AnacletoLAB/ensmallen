@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:43.850677
 
-The undirected graph Legionella pneumophila Paris has 3119 nodes and 261069 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05369
-and has 23 connected components, where the component with most nodes has 3062 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 167.41, and the node degree mode is 2. The top 5
-most central nodes are 297246.lpp1887 (degree 1255), 297246.lpp0113 (degree 1227),
-297246.lpp2084 (degree 1216), 297246.lpp2136 (degree 1120) and 297246.lpp1774 (degree
-1021).
+The undirected graph Legionella pneumophila Paris has 3119 nodes and 261069
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05369 and has 23 connected components, where the component
+with most nodes has 3062 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 167.41,
+and the node degree mode is 2. The top 5 most central nodes are 297246.lpp1887
+(degree 1255), 297246.lpp0113 (degree 1227), 297246.lpp2084 (degree 1216),
+297246.lpp2136 (degree 1120) and 297246.lpp1774 (degree 1021).
 
 
 References
@@ -107,14 +107,14 @@ def LegionellaPneumophilaParis(
 	
 	Datetime: 2021-02-05 17:17:43.850677
 	
-	The undirected graph Legionella pneumophila Paris has 3119 nodes and 261069 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05369
-	and has 23 connected components, where the component with most nodes has 3062 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 167.41, and the node degree mode is 2. The top 5
-	most central nodes are 297246.lpp1887 (degree 1255), 297246.lpp0113 (degree 1227),
-	297246.lpp2084 (degree 1216), 297246.lpp2136 (degree 1120) and 297246.lpp1774 (degree
-	1021).
+	The undirected graph Legionella pneumophila Paris has 3119 nodes and 261069
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05369 and has 23 connected components, where the component
+	with most nodes has 3062 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 167.41,
+	and the node degree mode is 2. The top 5 most central nodes are 297246.lpp1887
+	(degree 1255), 297246.lpp0113 (degree 1227), 297246.lpp2084 (degree 1216),
+	297246.lpp2136 (degree 1120) and 297246.lpp1774 (degree 1021).
 	
 
 

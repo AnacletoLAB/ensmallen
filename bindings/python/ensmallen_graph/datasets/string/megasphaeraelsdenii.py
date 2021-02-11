@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:31.031162
 
-The undirected graph Megasphaera elsdenii has 2216 nodes and 146396 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05965 and
-has 4 connected components, where the component with most nodes has 2209 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 132.13, and the node degree mode is 3. The top 5 most central
-nodes are 1064535.MELS_1385 (degree 900), 1064535.MELS_0946 (degree 720), 1064535.MELS_1281
-(degree 717), 1064535.MELS_2044 (degree 664) and 1064535.MELS_0387 (degree 651).
+The undirected graph Megasphaera elsdenii has 2216 nodes and 146396 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05965 and has 4 connected components, where the component with most
+nodes has 2209 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 132.13, and
+the node degree mode is 3. The top 5 most central nodes are 1064535.MELS_1385
+(degree 900), 1064535.MELS_0946 (degree 720), 1064535.MELS_1281 (degree
+717), 1064535.MELS_2044 (degree 664) and 1064535.MELS_0387 (degree 651).
 
 
 References
@@ -106,13 +107,14 @@ def MegasphaeraElsdenii(
 	
 	Datetime: 2021-02-02 22:18:31.031162
 	
-	The undirected graph Megasphaera elsdenii has 2216 nodes and 146396 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05965 and
-	has 4 connected components, where the component with most nodes has 2209 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 132.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1064535.MELS_1385 (degree 900), 1064535.MELS_0946 (degree 720), 1064535.MELS_1281
-	(degree 717), 1064535.MELS_2044 (degree 664) and 1064535.MELS_0387 (degree 651).
+	The undirected graph Megasphaera elsdenii has 2216 nodes and 146396 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05965 and has 4 connected components, where the component with most
+	nodes has 2209 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 132.13, and
+	the node degree mode is 3. The top 5 most central nodes are 1064535.MELS_1385
+	(degree 900), 1064535.MELS_0946 (degree 720), 1064535.MELS_1281 (degree
+	717), 1064535.MELS_2044 (degree 664) and 1064535.MELS_0387 (degree 651).
 	
 
 

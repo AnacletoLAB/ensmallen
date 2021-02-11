@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:51.283445
 
-The undirected graph Pestalotiopsis fici has 10484 nodes and 817563 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01488 and
-has 22 connected components, where the component with most nodes has 10425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 74, the mean node degree is 155.96, and the node degree mode is 1. The top 5 most
-central nodes are 393283.XP_007839242.1 (degree 2559), 393283.XP_007830406.1 (degree
-2434), 393283.XP_007839963.1 (degree 1870), 393283.XP_007835169.1 (degree 1631) and
-393283.XP_007828730.1 (degree 1514).
+The undirected graph Pestalotiopsis fici has 10484 nodes and 817563 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01488 and has 22 connected components, where the component with most
+nodes has 10425 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 155.96, and
+the node degree mode is 1. The top 5 most central nodes are 393283.XP_007839242.1
+(degree 2559), 393283.XP_007830406.1 (degree 2434), 393283.XP_007839963.1
+(degree 1870), 393283.XP_007835169.1 (degree 1631) and 393283.XP_007828730.1
+(degree 1514).
 
 
 References
@@ -107,14 +108,15 @@ def PestalotiopsisFici(
 	
 	Datetime: 2021-02-02 20:40:51.283445
 	
-	The undirected graph Pestalotiopsis fici has 10484 nodes and 817563 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01488 and
-	has 22 connected components, where the component with most nodes has 10425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 74, the mean node degree is 155.96, and the node degree mode is 1. The top 5 most
-	central nodes are 393283.XP_007839242.1 (degree 2559), 393283.XP_007830406.1 (degree
-	2434), 393283.XP_007839963.1 (degree 1870), 393283.XP_007835169.1 (degree 1631) and
-	393283.XP_007828730.1 (degree 1514).
+	The undirected graph Pestalotiopsis fici has 10484 nodes and 817563 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01488 and has 22 connected components, where the component with most
+	nodes has 10425 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 155.96, and
+	the node degree mode is 1. The top 5 most central nodes are 393283.XP_007839242.1
+	(degree 2559), 393283.XP_007830406.1 (degree 2434), 393283.XP_007839963.1
+	(degree 1870), 393283.XP_007835169.1 (degree 1631) and 393283.XP_007828730.1
+	(degree 1514).
 	
 
 

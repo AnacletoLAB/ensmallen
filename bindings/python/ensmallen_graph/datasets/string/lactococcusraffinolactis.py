@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:38.122135
 
-The undirected graph Lactococcus raffinolactis has 2319 nodes and 117091 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04357
-and has 22 connected components, where the component with most nodes has 2269 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 72, the mean node degree is 100.98, and the node degree mode is 1. The top 5 most
-central nodes are 1215915.BN193_11300 (degree 891), 1215915.BN193_02405 (degree 653),
-1215915.BN193_00715 (degree 593), 1215915.BN193_09640 (degree 592) and 1215915.BN193_07890
-(degree 581).
+The undirected graph Lactococcus raffinolactis has 2319 nodes and 117091
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04357 and has 22 connected components, where the component
+with most nodes has 2269 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 72, the mean node degree is 100.98,
+and the node degree mode is 1. The top 5 most central nodes are 1215915.BN193_11300
+(degree 891), 1215915.BN193_02405 (degree 653), 1215915.BN193_00715 (degree
+593), 1215915.BN193_09640 (degree 592) and 1215915.BN193_07890 (degree
+581).
 
 
 References
@@ -107,14 +108,15 @@ def LactococcusRaffinolactis(
 	
 	Datetime: 2021-02-02 23:20:38.122135
 	
-	The undirected graph Lactococcus raffinolactis has 2319 nodes and 117091 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04357
-	and has 22 connected components, where the component with most nodes has 2269 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 72, the mean node degree is 100.98, and the node degree mode is 1. The top 5 most
-	central nodes are 1215915.BN193_11300 (degree 891), 1215915.BN193_02405 (degree 653),
-	1215915.BN193_00715 (degree 593), 1215915.BN193_09640 (degree 592) and 1215915.BN193_07890
-	(degree 581).
+	The undirected graph Lactococcus raffinolactis has 2319 nodes and 117091
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04357 and has 22 connected components, where the component
+	with most nodes has 2269 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 72, the mean node degree is 100.98,
+	and the node degree mode is 1. The top 5 most central nodes are 1215915.BN193_11300
+	(degree 891), 1215915.BN193_02405 (degree 653), 1215915.BN193_00715 (degree
+	593), 1215915.BN193_09640 (degree 592) and 1215915.BN193_07890 (degree
+	581).
 	
 
 

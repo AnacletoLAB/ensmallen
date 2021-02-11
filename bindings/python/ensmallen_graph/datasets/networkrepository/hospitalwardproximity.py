@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:39:50.665663
 
-The undirected multigraph hospital-ward-proximity has 75 nodes and 32424 unweighted
-edges with 9453 different edge types:  the 5 most common are 176400, 166000, 168860,
-163700 and 339460, of which none are self-loops and 62570 are parallel. The graph
-is quite dense as it has a density of 0.41045 and is connected, as it has a single
-component. The graph median node degree is 445, the mean node degree is 864.64, and
-the node degree mode is 367. The top 5 most central nodes are 1115 (degree 4286),
-1210 (degree 4077), 1295 (degree 3695), 1207 (degree 3130) and 1157 (degree 2849).
+The undirected multigraph hospital-ward-proximity has 75 nodes and 32424
+unweighted edges with 9453 different edge types:  the 5 most common are
+176400, 166000, 168860, 163700 and 339460, of which none are self-loops
+and 62570 are parallel. The graph is quite dense as it has a density of
+0.41045 and is connected, as it has a single component. The graph median
+node degree is 445, the mean node degree is 864.64, and the node degree
+mode is 367. The top 5 most central nodes are 1115 (degree 4286), 1210
+(degree 4077), 1295 (degree 3695), 1207 (degree 3130) and 1157 (degree
+2849).
 
 
 References
@@ -108,13 +110,15 @@ def HospitalWardProximity(
 	
 	Datetime: 2021-02-06 10:39:50.665663
 	
-	The undirected multigraph hospital-ward-proximity has 75 nodes and 32424 unweighted
-	edges with 9453 different edge types:  the 5 most common are 176400, 166000, 168860,
-	163700 and 339460, of which none are self-loops and 62570 are parallel. The graph
-	is quite dense as it has a density of 0.41045 and is connected, as it has a single
-	component. The graph median node degree is 445, the mean node degree is 864.64, and
-	the node degree mode is 367. The top 5 most central nodes are 1115 (degree 4286),
-	1210 (degree 4077), 1295 (degree 3695), 1207 (degree 3130) and 1157 (degree 2849).
+	The undirected multigraph hospital-ward-proximity has 75 nodes and 32424
+	unweighted edges with 9453 different edge types:  the 5 most common are
+	176400, 166000, 168860, 163700 and 339460, of which none are self-loops
+	and 62570 are parallel. The graph is quite dense as it has a density of
+	0.41045 and is connected, as it has a single component. The graph median
+	node degree is 445, the mean node degree is 864.64, and the node degree
+	mode is 367. The top 5 most central nodes are 1115 (degree 4286), 1210
+	(degree 4077), 1295 (degree 3695), 1207 (degree 3130) and 1157 (degree
+	2849).
 	
 
 

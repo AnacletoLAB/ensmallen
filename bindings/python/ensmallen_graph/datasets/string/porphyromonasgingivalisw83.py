@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:55.851021
 
-The undirected graph Porphyromonas gingivalis W83 has 1883 nodes and 129852 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07328
-and has 14 connected components, where the component with most nodes has 1853 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 137.92, and the node degree mode is 3. The top 5
-most central nodes are 242619.PG_1797 (degree 952), 242619.PG_1794 (degree 761),
-242619.PG_0523 (degree 653), 242619.PG_0589 (degree 588) and 242619.PG_1651 (degree
-578).
+The undirected graph Porphyromonas gingivalis W83 has 1883 nodes and 129852
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07328 and has 14 connected components, where the component
+with most nodes has 1853 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 137.92,
+and the node degree mode is 3. The top 5 most central nodes are 242619.PG_1797
+(degree 952), 242619.PG_1794 (degree 761), 242619.PG_0523 (degree 653),
+242619.PG_0589 (degree 588) and 242619.PG_1651 (degree 578).
 
 
 References
@@ -107,14 +107,14 @@ def PorphyromonasGingivalisW83(
 	
 	Datetime: 2021-02-02 20:08:55.851021
 	
-	The undirected graph Porphyromonas gingivalis W83 has 1883 nodes and 129852 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07328
-	and has 14 connected components, where the component with most nodes has 1853 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 137.92, and the node degree mode is 3. The top 5
-	most central nodes are 242619.PG_1797 (degree 952), 242619.PG_1794 (degree 761),
-	242619.PG_0523 (degree 653), 242619.PG_0589 (degree 588) and 242619.PG_1651 (degree
-	578).
+	The undirected graph Porphyromonas gingivalis W83 has 1883 nodes and 129852
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07328 and has 14 connected components, where the component
+	with most nodes has 1853 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 137.92,
+	and the node degree mode is 3. The top 5 most central nodes are 242619.PG_1797
+	(degree 952), 242619.PG_1794 (degree 761), 242619.PG_0523 (degree 653),
+	242619.PG_0589 (degree 588) and 242619.PG_1651 (degree 578).
 	
 
 

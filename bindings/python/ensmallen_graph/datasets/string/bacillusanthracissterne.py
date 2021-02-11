@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:52.167833
 
-The undirected graph Bacillus anthracis Sterne has 5238 nodes and 508576 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-and has 20 connected components, where the component with most nodes has 5189 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 194.19, and the node degree mode is 3. The top 5
-most central nodes are 260799.BAS3321 (degree 1799), 260799.BAS4482 (degree 1766),
-260799.BAS0254 (degree 1469), 260799.BAS4169 (degree 1298) and 260799.BAS0498 (degree
-1281).
+The undirected graph Bacillus anthracis Sterne has 5238 nodes and 508576
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03708 and has 20 connected components, where the component
+with most nodes has 5189 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 194.19,
+and the node degree mode is 3. The top 5 most central nodes are 260799.BAS3321
+(degree 1799), 260799.BAS4482 (degree 1766), 260799.BAS0254 (degree 1469),
+260799.BAS4169 (degree 1298) and 260799.BAS0498 (degree 1281).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusAnthracisSterne(
 	
 	Datetime: 2021-02-02 20:12:52.167833
 	
-	The undirected graph Bacillus anthracis Sterne has 5238 nodes and 508576 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-	and has 20 connected components, where the component with most nodes has 5189 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 194.19, and the node degree mode is 3. The top 5
-	most central nodes are 260799.BAS3321 (degree 1799), 260799.BAS4482 (degree 1766),
-	260799.BAS0254 (degree 1469), 260799.BAS4169 (degree 1298) and 260799.BAS0498 (degree
-	1281).
+	The undirected graph Bacillus anthracis Sterne has 5238 nodes and 508576
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03708 and has 20 connected components, where the component
+	with most nodes has 5189 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 194.19,
+	and the node degree mode is 3. The top 5 most central nodes are 260799.BAS3321
+	(degree 1799), 260799.BAS4482 (degree 1766), 260799.BAS0254 (degree 1469),
+	260799.BAS4169 (degree 1298) and 260799.BAS0498 (degree 1281).
 	
 
 

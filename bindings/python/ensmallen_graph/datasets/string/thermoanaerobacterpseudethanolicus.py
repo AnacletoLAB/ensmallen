@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:10.672713
 
-The undirected graph Thermoanaerobacter pseudethanolicus has 2240 nodes and 148908
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05938 and has 2 connected components, where the component with most nodes has
-2238 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 107, the mean node degree is 132.95, and the node degree mode is 50. The
-top 5 most central nodes are 340099.Teth39_1474 (degree 911), 340099.Teth39_1720
-(degree 755), 340099.Teth39_1719 (degree 714), 340099.Teth39_1646 (degree 713) and
-340099.Teth39_0715 (degree 713).
+The undirected graph Thermoanaerobacter pseudethanolicus has 2240 nodes
+and 148908 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05938 and has 2 connected components, where the
+component with most nodes has 2238 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+is 132.95, and the node degree mode is 50. The top 5 most central nodes
+are 340099.Teth39_1474 (degree 911), 340099.Teth39_1720 (degree 755), 340099.Teth39_1719
+(degree 714), 340099.Teth39_1646 (degree 713) and 340099.Teth39_0715 (degree
+713).
 
 
 References
@@ -107,14 +108,15 @@ def ThermoanaerobacterPseudethanolicus(
 	
 	Datetime: 2021-02-02 20:31:10.672713
 	
-	The undirected graph Thermoanaerobacter pseudethanolicus has 2240 nodes and 148908
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05938 and has 2 connected components, where the component with most nodes has
-	2238 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 107, the mean node degree is 132.95, and the node degree mode is 50. The
-	top 5 most central nodes are 340099.Teth39_1474 (degree 911), 340099.Teth39_1720
-	(degree 755), 340099.Teth39_1719 (degree 714), 340099.Teth39_1646 (degree 713) and
-	340099.Teth39_0715 (degree 713).
+	The undirected graph Thermoanaerobacter pseudethanolicus has 2240 nodes
+	and 148908 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05938 and has 2 connected components, where the
+	component with most nodes has 2238 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+	is 132.95, and the node degree mode is 50. The top 5 most central nodes
+	are 340099.Teth39_1474 (degree 911), 340099.Teth39_1720 (degree 755), 340099.Teth39_1719
+	(degree 714), 340099.Teth39_1646 (degree 713) and 340099.Teth39_0715 (degree
+	713).
 	
 
 

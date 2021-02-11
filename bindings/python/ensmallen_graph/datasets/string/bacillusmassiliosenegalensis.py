@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:40.793166
 
-The undirected graph Bacillus massiliosenegalensis has 4821 nodes and 559911 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04819
-and has 25 connected components, where the component with most nodes has 4763 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 232.28, and the node degree mode is 2. The top 5
-most central nodes are 1034347.CAHJ01000040_gene4493 (degree 1757), 1034347.CAHJ01000055_gene1149
-(degree 1561), 1034347.CAHJ01000090_gene1637 (degree 1471), 1034347.CAHJ01000044_gene4846
-(degree 1379) and 1034347.CAHJ01000039_gene4680 (degree 1346).
+The undirected graph Bacillus massiliosenegalensis has 4821 nodes and 559911
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04819 and has 25 connected components, where the component
+with most nodes has 4763 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 232.28,
+and the node degree mode is 2. The top 5 most central nodes are 1034347.CAHJ01000040_gene4493
+(degree 1757), 1034347.CAHJ01000055_gene1149 (degree 1561), 1034347.CAHJ01000090_gene1637
+(degree 1471), 1034347.CAHJ01000044_gene4846 (degree 1379) and 1034347.CAHJ01000039_gene4680
+(degree 1346).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusMassiliosenegalensis(
 	
 	Datetime: 2021-02-02 22:11:40.793166
 	
-	The undirected graph Bacillus massiliosenegalensis has 4821 nodes and 559911 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04819
-	and has 25 connected components, where the component with most nodes has 4763 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 232.28, and the node degree mode is 2. The top 5
-	most central nodes are 1034347.CAHJ01000040_gene4493 (degree 1757), 1034347.CAHJ01000055_gene1149
-	(degree 1561), 1034347.CAHJ01000090_gene1637 (degree 1471), 1034347.CAHJ01000044_gene4846
-	(degree 1379) and 1034347.CAHJ01000039_gene4680 (degree 1346).
+	The undirected graph Bacillus massiliosenegalensis has 4821 nodes and 559911
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04819 and has 25 connected components, where the component
+	with most nodes has 4763 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 232.28,
+	and the node degree mode is 2. The top 5 most central nodes are 1034347.CAHJ01000040_gene4493
+	(degree 1757), 1034347.CAHJ01000055_gene1149 (degree 1561), 1034347.CAHJ01000090_gene1637
+	(degree 1471), 1034347.CAHJ01000044_gene4846 (degree 1379) and 1034347.CAHJ01000039_gene4680
+	(degree 1346).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:12.871357
 
-The undirected graph Geobacter sp. M21 has 4023 nodes and 403089 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04982 and
-has 13 connected components, where the component with most nodes has 3997 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 200.39, and the node degree mode is 1. The top 5 most central
-nodes are 443144.GM21_3823 (degree 1718), 443144.GM21_0346 (degree 1618), 443144.GM21_3821
-(degree 1599), 443144.GM21_2113 (degree 1540) and 443144.GM21_0285 (degree 1516).
+The undirected graph Geobacter sp. M21 has 4023 nodes and 403089 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04982 and has 13 connected components, where the component with most
+nodes has 3997 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 200.39, and
+the node degree mode is 1. The top 5 most central nodes are 443144.GM21_3823
+(degree 1718), 443144.GM21_0346 (degree 1618), 443144.GM21_3821 (degree
+1599), 443144.GM21_2113 (degree 1540) and 443144.GM21_0285 (degree 1516).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacterSp.M21(
 	
 	Datetime: 2021-02-02 20:50:12.871357
 	
-	The undirected graph Geobacter sp. M21 has 4023 nodes and 403089 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04982 and
-	has 13 connected components, where the component with most nodes has 3997 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 200.39, and the node degree mode is 1. The top 5 most central
-	nodes are 443144.GM21_3823 (degree 1718), 443144.GM21_0346 (degree 1618), 443144.GM21_3821
-	(degree 1599), 443144.GM21_2113 (degree 1540) and 443144.GM21_0285 (degree 1516).
+	The undirected graph Geobacter sp. M21 has 4023 nodes and 403089 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04982 and has 13 connected components, where the component with most
+	nodes has 3997 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 200.39, and
+	the node degree mode is 1. The top 5 most central nodes are 443144.GM21_3823
+	(degree 1718), 443144.GM21_0346 (degree 1618), 443144.GM21_3821 (degree
+	1599), 443144.GM21_2113 (degree 1540) and 443144.GM21_0285 (degree 1516).
 	
 
 

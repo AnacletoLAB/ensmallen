@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:47.704643
 
-The undirected graph Comamonas aquatica has 3197 nodes and 364326 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07131 and
-has 5 connected components, where the component with most nodes has 3181 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 227.92, and the node degree mode is 5. The top 5 most central
-nodes are 1219031.BBJR01000069_gene1085 (degree 1347), 1219031.BBJR01000052_gene1535
-(degree 1147), 1219031.BBJR01000036_gene3013 (degree 1129), 1219031.BBJR01000058_gene1943
-(degree 1090) and 1219031.BBJR01000031_gene298 (degree 1067).
+The undirected graph Comamonas aquatica has 3197 nodes and 364326 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07131 and has 5 connected components, where the component with most
+nodes has 3181 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 227.92, and
+the node degree mode is 5. The top 5 most central nodes are 1219031.BBJR01000069_gene1085
+(degree 1347), 1219031.BBJR01000052_gene1535 (degree 1147), 1219031.BBJR01000036_gene3013
+(degree 1129), 1219031.BBJR01000058_gene1943 (degree 1090) and 1219031.BBJR01000031_gene298
+(degree 1067).
 
 
 References
@@ -107,14 +108,15 @@ def ComamonasAquatica(
 	
 	Datetime: 2021-02-02 23:22:47.704643
 	
-	The undirected graph Comamonas aquatica has 3197 nodes and 364326 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07131 and
-	has 5 connected components, where the component with most nodes has 3181 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 227.92, and the node degree mode is 5. The top 5 most central
-	nodes are 1219031.BBJR01000069_gene1085 (degree 1347), 1219031.BBJR01000052_gene1535
-	(degree 1147), 1219031.BBJR01000036_gene3013 (degree 1129), 1219031.BBJR01000058_gene1943
-	(degree 1090) and 1219031.BBJR01000031_gene298 (degree 1067).
+	The undirected graph Comamonas aquatica has 3197 nodes and 364326 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07131 and has 5 connected components, where the component with most
+	nodes has 3181 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 227.92, and
+	the node degree mode is 5. The top 5 most central nodes are 1219031.BBJR01000069_gene1085
+	(degree 1347), 1219031.BBJR01000052_gene1535 (degree 1147), 1219031.BBJR01000036_gene3013
+	(degree 1129), 1219031.BBJR01000058_gene1943 (degree 1090) and 1219031.BBJR01000031_gene298
+	(degree 1067).
 	
 
 

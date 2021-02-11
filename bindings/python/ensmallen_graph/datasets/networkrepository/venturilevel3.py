@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:34:07.056664
 
-The undirected graph venturiLevel3 has 4026819 nodes and 8054237 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 4, the mean node degree is 4.00 and the node degree mode is 4. The top 5 most
-central nodes are 4023486 (degree 6), 4018998 (degree 6), 4018238 (degree 6), 4017710
-(degree 6) and 4017698 (degree 6).
+The undirected graph venturiLevel3 has 4026819 nodes and 8054237 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 4.00 and the
+node degree mode is 4. The top 5 most central nodes are 4023486 (degree
+6), 4018998 (degree 6), 4018238 (degree 6), 4017710 (degree 6) and 4017698
+(degree 6).
 
 
 References
@@ -102,12 +103,13 @@ def Venturilevel3(
 	
 	Datetime: 2021-02-03 23:34:07.056664
 	
-	The undirected graph venturiLevel3 has 4026819 nodes and 8054237 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 4, the mean node degree is 4.00 and the node degree mode is 4. The top 5 most
-	central nodes are 4023486 (degree 6), 4018998 (degree 6), 4018238 (degree 6), 4017710
-	(degree 6) and 4017698 (degree 6).
+	The undirected graph venturiLevel3 has 4026819 nodes and 8054237 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 4.00 and the
+	node degree mode is 4. The top 5 most central nodes are 4023486 (degree
+	6), 4018998 (degree 6), 4018238 (degree 6), 4017710 (degree 6) and 4017698
+	(degree 6).
 	
 
 

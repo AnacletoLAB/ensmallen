@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 21:19:31.310305
 
-The undirected graph sk-2005 has 99217 nodes and 758317 unweighted edges, of which
-8 are self-loops. The graph is quite sparse as it has a density of 0.00015 and is
-connected, as it has a single component. The graph median node degree is 8, the mean
-node degree is 15.29, and the node degree mode is 8. The top 5 most central nodes
-are 31531937 (degree 99217), 31531936 (degree 99213), 31531935 (degree 99213), 31531934
-(degree 99213) and 31531933 (degree 99213).
+The undirected graph sk-2005 has 99217 nodes and 758317 unweighted edges,
+of which 8 are self-loops. The graph is quite sparse as it has a density
+of 0.00015 and is connected, as it has a single component. The graph median
+node degree is 8, the mean node degree is 15.29, and the node degree mode
+is 8. The top 5 most central nodes are 31531937 (degree 99217), 31531936
+(degree 99213), 31531935 (degree 99213), 31531934 (degree 99213) and 31531933
+(degree 99213).
 
 
 References
@@ -102,12 +103,13 @@ def Sk2005(
 	
 	Datetime: 2021-02-06 21:19:31.310305
 	
-	The undirected graph sk-2005 has 99217 nodes and 758317 unweighted edges, of which
-	8 are self-loops. The graph is quite sparse as it has a density of 0.00015 and is
-	connected, as it has a single component. The graph median node degree is 8, the mean
-	node degree is 15.29, and the node degree mode is 8. The top 5 most central nodes
-	are 31531937 (degree 99217), 31531936 (degree 99213), 31531935 (degree 99213), 31531934
-	(degree 99213) and 31531933 (degree 99213).
+	The undirected graph sk-2005 has 99217 nodes and 758317 unweighted edges,
+	of which 8 are self-loops. The graph is quite sparse as it has a density
+	of 0.00015 and is connected, as it has a single component. The graph median
+	node degree is 8, the mean node degree is 15.29, and the node degree mode
+	is 8. The top 5 most central nodes are 31531937 (degree 99217), 31531936
+	(degree 99213), 31531935 (degree 99213), 31531934 (degree 99213) and 31531933
+	(degree 99213).
 	
 
 

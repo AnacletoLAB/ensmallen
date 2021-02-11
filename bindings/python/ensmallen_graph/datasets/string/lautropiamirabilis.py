@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:37.869971
 
-The undirected graph Lautropia mirabilis has 2626 nodes and 235651 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06837 and
-has 12 connected components, where the component with most nodes has 2602 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 179.48, and the node degree mode is 3. The top 5 most central
-nodes are 887898.HMPREF0551_0383 (degree 1111), 887898.HMPREF0551_0923 (degree 903),
-887898.HMPREF0551_0924 (degree 885), 887898.HMPREF0551_0043 (degree 800) and 887898.HMPREF0551_1008
+The undirected graph Lautropia mirabilis has 2626 nodes and 235651 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06837 and has 12 connected components, where the component with most
+nodes has 2602 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 179.48, and
+the node degree mode is 3. The top 5 most central nodes are 887898.HMPREF0551_0383
+(degree 1111), 887898.HMPREF0551_0923 (degree 903), 887898.HMPREF0551_0924
+(degree 885), 887898.HMPREF0551_0043 (degree 800) and 887898.HMPREF0551_1008
 (degree 765).
 
 
@@ -107,13 +108,14 @@ def LautropiaMirabilis(
 	
 	Datetime: 2021-02-02 21:52:37.869971
 	
-	The undirected graph Lautropia mirabilis has 2626 nodes and 235651 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06837 and
-	has 12 connected components, where the component with most nodes has 2602 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 179.48, and the node degree mode is 3. The top 5 most central
-	nodes are 887898.HMPREF0551_0383 (degree 1111), 887898.HMPREF0551_0923 (degree 903),
-	887898.HMPREF0551_0924 (degree 885), 887898.HMPREF0551_0043 (degree 800) and 887898.HMPREF0551_1008
+	The undirected graph Lautropia mirabilis has 2626 nodes and 235651 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06837 and has 12 connected components, where the component with most
+	nodes has 2602 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 179.48, and
+	the node degree mode is 3. The top 5 most central nodes are 887898.HMPREF0551_0383
+	(degree 1111), 887898.HMPREF0551_0923 (degree 903), 887898.HMPREF0551_0924
+	(degree 885), 887898.HMPREF0551_0043 (degree 800) and 887898.HMPREF0551_1008
 	(degree 765).
 	
 

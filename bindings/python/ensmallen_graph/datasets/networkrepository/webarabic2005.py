@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:32:38.702352
 
-The undirected graph web-arabic-2005 has 163598 nodes and 1747269 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-and is connected, as it has a single component. The graph median node degree is 15,
-the mean node degree is 21.36, and the node degree mode is 1. The top 5 most central
-nodes are 73084 (degree 1102), 71059 (degree 1091), 163190 (degree 420), 4933 (degree
-411) and 19161 (degree 268).
+The undirected graph web-arabic-2005 has 163598 nodes and 1747269 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00013 and is connected, as it has a single component. The
+graph median node degree is 15, the mean node degree is 21.36, and the
+node degree mode is 1. The top 5 most central nodes are 73084 (degree 1102),
+71059 (degree 1091), 163190 (degree 420), 4933 (degree 411) and 19161 (degree
+268).
 
 
 References
@@ -119,12 +120,13 @@ def WebArabic2005(
 	
 	Datetime: 2021-02-06 12:32:38.702352
 	
-	The undirected graph web-arabic-2005 has 163598 nodes and 1747269 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-	and is connected, as it has a single component. The graph median node degree is 15,
-	the mean node degree is 21.36, and the node degree mode is 1. The top 5 most central
-	nodes are 73084 (degree 1102), 71059 (degree 1091), 163190 (degree 420), 4933 (degree
-	411) and 19161 (degree 268).
+	The undirected graph web-arabic-2005 has 163598 nodes and 1747269 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00013 and is connected, as it has a single component. The
+	graph median node degree is 15, the mean node degree is 21.36, and the
+	node degree mode is 1. The top 5 most central nodes are 73084 (degree 1102),
+	71059 (degree 1091), 163190 (degree 420), 4933 (degree 411) and 19161 (degree
+	268).
 	
 
 

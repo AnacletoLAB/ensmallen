@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:17.423602
 
-The undirected graph Pseudomonas stutzeri CCUG 29243 has 4280 nodes and 341844 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03733
-and has 4 connected components, where the component with most nodes has 4274 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 159.74, and the node degree mode is 4. The top 5
-most central nodes are 1196835.A458_20760 (degree 1605), 1196835.A458_18575 (degree
-1196), 1196835.A458_05600 (degree 1172), 1196835.A458_07020 (degree 1116) and 1196835.A458_03995
-(degree 1083).
+The undirected graph Pseudomonas stutzeri CCUG 29243 has 4280 nodes and
+341844 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03733 and has 4 connected components, where the
+component with most nodes has 4274 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 159.74, and the node degree mode is 4. The top 5 most central nodes
+are 1196835.A458_20760 (degree 1605), 1196835.A458_18575 (degree 1196),
+1196835.A458_05600 (degree 1172), 1196835.A458_07020 (degree 1116) and
+1196835.A458_03995 (degree 1083).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriCcug29243(
 	
 	Datetime: 2021-02-02 23:13:17.423602
 	
-	The undirected graph Pseudomonas stutzeri CCUG 29243 has 4280 nodes and 341844 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03733
-	and has 4 connected components, where the component with most nodes has 4274 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 159.74, and the node degree mode is 4. The top 5
-	most central nodes are 1196835.A458_20760 (degree 1605), 1196835.A458_18575 (degree
-	1196), 1196835.A458_05600 (degree 1172), 1196835.A458_07020 (degree 1116) and 1196835.A458_03995
-	(degree 1083).
+	The undirected graph Pseudomonas stutzeri CCUG 29243 has 4280 nodes and
+	341844 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03733 and has 4 connected components, where the
+	component with most nodes has 4274 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 159.74, and the node degree mode is 4. The top 5 most central nodes
+	are 1196835.A458_20760 (degree 1605), 1196835.A458_18575 (degree 1196),
+	1196835.A458_05600 (degree 1172), 1196835.A458_07020 (degree 1116) and
+	1196835.A458_03995 (degree 1083).
 	
 
 

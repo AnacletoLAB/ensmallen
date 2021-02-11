@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:15.216011
 
-The undirected graph Bacteriovorax sp. BAL6X has 3037 nodes and 216631 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04699 and
-has 36 connected components, where the component with most nodes has 2944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 142.66, and the node degree mode is 4. The top 5 most central
-nodes are 1201290.M902_0282 (degree 1086), 1201290.M902_1145 (degree 880), 1201290.M902_3233
-(degree 825), 1201290.M902_2618 (degree 819) and 1201290.M902_1696 (degree 776).
+The undirected graph Bacteriovorax sp. BAL6X has 3037 nodes and 216631
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04699 and has 36 connected components, where the component
+with most nodes has 2944 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 142.66,
+and the node degree mode is 4. The top 5 most central nodes are 1201290.M902_0282
+(degree 1086), 1201290.M902_1145 (degree 880), 1201290.M902_3233 (degree
+825), 1201290.M902_2618 (degree 819) and 1201290.M902_1696 (degree 776).
 
 
 References
@@ -106,13 +107,14 @@ def BacteriovoraxSp.Bal6x(
 	
 	Datetime: 2021-02-02 23:14:15.216011
 	
-	The undirected graph Bacteriovorax sp. BAL6X has 3037 nodes and 216631 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04699 and
-	has 36 connected components, where the component with most nodes has 2944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 142.66, and the node degree mode is 4. The top 5 most central
-	nodes are 1201290.M902_0282 (degree 1086), 1201290.M902_1145 (degree 880), 1201290.M902_3233
-	(degree 825), 1201290.M902_2618 (degree 819) and 1201290.M902_1696 (degree 776).
+	The undirected graph Bacteriovorax sp. BAL6X has 3037 nodes and 216631
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04699 and has 36 connected components, where the component
+	with most nodes has 2944 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 142.66,
+	and the node degree mode is 4. The top 5 most central nodes are 1201290.M902_0282
+	(degree 1086), 1201290.M902_1145 (degree 880), 1201290.M902_3233 (degree
+	825), 1201290.M902_2618 (degree 819) and 1201290.M902_1696 (degree 776).
 	
 
 

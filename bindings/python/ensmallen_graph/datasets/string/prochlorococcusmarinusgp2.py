@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:21:58.579128
 
-The undirected graph Prochlorococcus marinus GP2 has 1834 nodes and 103079 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06133
-and has 40 connected components, where the component with most nodes has 1701 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 112.41, and the node degree mode is 4. The top 5 most
-central nodes are 59925.EU91_1330 (degree 691), 59925.EU91_1611 (degree 533), 59925.EU91_1755
-(degree 520), 59925.EU91_0599 (degree 493) and 59925.EU91_1679 (degree 493).
+The undirected graph Prochlorococcus marinus GP2 has 1834 nodes and 103079
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06133 and has 40 connected components, where the component
+with most nodes has 1701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 112.41,
+and the node degree mode is 4. The top 5 most central nodes are 59925.EU91_1330
+(degree 691), 59925.EU91_1611 (degree 533), 59925.EU91_1755 (degree 520),
+59925.EU91_0599 (degree 493) and 59925.EU91_1679 (degree 493).
 
 
 References
@@ -106,13 +107,14 @@ def ProchlorococcusMarinusGp2(
 	
 	Datetime: 2021-02-02 18:21:58.579128
 	
-	The undirected graph Prochlorococcus marinus GP2 has 1834 nodes and 103079 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06133
-	and has 40 connected components, where the component with most nodes has 1701 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 112.41, and the node degree mode is 4. The top 5 most
-	central nodes are 59925.EU91_1330 (degree 691), 59925.EU91_1611 (degree 533), 59925.EU91_1755
-	(degree 520), 59925.EU91_0599 (degree 493) and 59925.EU91_1679 (degree 493).
+	The undirected graph Prochlorococcus marinus GP2 has 1834 nodes and 103079
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06133 and has 40 connected components, where the component
+	with most nodes has 1701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 112.41,
+	and the node degree mode is 4. The top 5 most central nodes are 59925.EU91_1330
+	(degree 691), 59925.EU91_1611 (degree 533), 59925.EU91_1755 (degree 520),
+	59925.EU91_0599 (degree 493) and 59925.EU91_1679 (degree 493).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:39.731897
 
-The undirected graph Bacillus sp. DW54 has 3605 nodes and 364152 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05606 and
-has 14 connected components, where the component with most nodes has 3576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 202.03, and the node degree mode is 5. The top 5 most central
-nodes are 1178540.BA70_18945 (degree 1187), 1178540.BA70_14505 (degree 1148), 1178540.BA70_17360
-(degree 1110), 1178540.BA70_07420 (degree 1078) and 1178540.BA70_19480 (degree 1033).
+The undirected graph Bacillus sp. DW54 has 3605 nodes and 364152 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05606 and has 14 connected components, where the component with most
+nodes has 3576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 202.03, and
+the node degree mode is 5. The top 5 most central nodes are 1178540.BA70_18945
+(degree 1187), 1178540.BA70_14505 (degree 1148), 1178540.BA70_17360 (degree
+1110), 1178540.BA70_07420 (degree 1078) and 1178540.BA70_19480 (degree
+1033).
 
 
 References
@@ -106,13 +108,15 @@ def BacillusSp.Dw54(
 	
 	Datetime: 2021-02-02 23:09:39.731897
 	
-	The undirected graph Bacillus sp. DW54 has 3605 nodes and 364152 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05606 and
-	has 14 connected components, where the component with most nodes has 3576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 202.03, and the node degree mode is 5. The top 5 most central
-	nodes are 1178540.BA70_18945 (degree 1187), 1178540.BA70_14505 (degree 1148), 1178540.BA70_17360
-	(degree 1110), 1178540.BA70_07420 (degree 1078) and 1178540.BA70_19480 (degree 1033).
+	The undirected graph Bacillus sp. DW54 has 3605 nodes and 364152 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05606 and has 14 connected components, where the component with most
+	nodes has 3576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 202.03, and
+	the node degree mode is 5. The top 5 most central nodes are 1178540.BA70_18945
+	(degree 1187), 1178540.BA70_14505 (degree 1148), 1178540.BA70_17360 (degree
+	1110), 1178540.BA70_07420 (degree 1078) and 1178540.BA70_19480 (degree
+	1033).
 	
 
 

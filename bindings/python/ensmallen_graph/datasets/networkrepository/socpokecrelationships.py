@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:46:49.414002
 
-The undirected graph soc-pokec-relationships has 1632803 nodes and 22301964 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00002 and is connected, as it has a single component. The graph median node
-degree is 13, the mean node degree is 27.32, and the node degree mode is 1. The top
-5 most central nodes are 2855 (degree 14854), 3913 (degree 9712), 5484 (degree 8881),
-3908 (degree 6699) and 5440 (degree 5824).
+The undirected graph soc-pokec-relationships has 1632803 nodes and 22301964
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00002 and is connected, as it has a single
+component. The graph median node degree is 13, the mean node degree is
+27.32, and the node degree mode is 1. The top 5 most central nodes are
+2855 (degree 14854), 3913 (degree 9712), 5484 (degree 8881), 3908 (degree
+6699) and 5440 (degree 5824).
 
 
 References
@@ -102,12 +103,13 @@ def SocPokecRelationships(
 	
 	Datetime: 2021-02-07 15:46:49.414002
 	
-	The undirected graph soc-pokec-relationships has 1632803 nodes and 22301964 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00002 and is connected, as it has a single component. The graph median node
-	degree is 13, the mean node degree is 27.32, and the node degree mode is 1. The top
-	5 most central nodes are 2855 (degree 14854), 3913 (degree 9712), 5484 (degree 8881),
-	3908 (degree 6699) and 5440 (degree 5824).
+	The undirected graph soc-pokec-relationships has 1632803 nodes and 22301964
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00002 and is connected, as it has a single
+	component. The graph median node degree is 13, the mean node degree is
+	27.32, and the node degree mode is 1. The top 5 most central nodes are
+	2855 (degree 14854), 3913 (degree 9712), 5484 (degree 8881), 3908 (degree
+	6699) and 5440 (degree 5824).
 	
 
 

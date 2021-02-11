@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:29.745563
 
-The undirected graph Porphyromonas sp. COT290OH860 has 1580 nodes and 86188 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06909
-and has 7 connected components, where the component with most nodes has 1568 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 109.10, and the node degree mode is 1. The top 5 most
-central nodes are 1515615.HQ41_01590 (degree 674), 1515615.HQ41_02355 (degree 633),
-1515615.HQ41_01120 (degree 584), 1515615.HQ41_03525 (degree 575) and 1515615.HQ41_09565
-(degree 502).
+The undirected graph Porphyromonas sp. COT290OH860 has 1580 nodes and 86188
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06909 and has 7 connected components, where the component
+with most nodes has 1568 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 109.10,
+and the node degree mode is 1. The top 5 most central nodes are 1515615.HQ41_01590
+(degree 674), 1515615.HQ41_02355 (degree 633), 1515615.HQ41_01120 (degree
+584), 1515615.HQ41_03525 (degree 575) and 1515615.HQ41_09565 (degree 502).
 
 
 References
@@ -107,14 +107,14 @@ def PorphyromonasSp.Cot290oh860(
 	
 	Datetime: 2021-02-03 23:17:29.745563
 	
-	The undirected graph Porphyromonas sp. COT290OH860 has 1580 nodes and 86188 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06909
-	and has 7 connected components, where the component with most nodes has 1568 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 109.10, and the node degree mode is 1. The top 5 most
-	central nodes are 1515615.HQ41_01590 (degree 674), 1515615.HQ41_02355 (degree 633),
-	1515615.HQ41_01120 (degree 584), 1515615.HQ41_03525 (degree 575) and 1515615.HQ41_09565
-	(degree 502).
+	The undirected graph Porphyromonas sp. COT290OH860 has 1580 nodes and 86188
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06909 and has 7 connected components, where the component
+	with most nodes has 1568 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 109.10,
+	and the node degree mode is 1. The top 5 most central nodes are 1515615.HQ41_01590
+	(degree 674), 1515615.HQ41_02355 (degree 633), 1515615.HQ41_01120 (degree
+	584), 1515615.HQ41_03525 (degree 575) and 1515615.HQ41_09565 (degree 502).
 	
 
 

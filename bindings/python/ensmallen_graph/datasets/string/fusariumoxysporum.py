@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:32.263696
 
-The undirected graph Fusarium oxysporum has 11337 nodes and 1074865 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01673 and
-has 57 connected components, where the component with most nodes has 11212 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 189.62, and the node degree mode is 1. The top 5 most
-central nodes are 5507.FOXG_09352P0 (degree 2991), 5507.FOXG_08006P0 (degree 2306),
-5507.FOXG_04346P0 (degree 2006), 5507.FOXG_00887P0 (degree 1803) and 5507.FOXG_11669P0
-(degree 1799).
+The undirected graph Fusarium oxysporum has 11337 nodes and 1074865 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01673 and has 57 connected components, where the component with most
+nodes has 11212 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 90, the mean node degree is 189.62, and
+the node degree mode is 1. The top 5 most central nodes are 5507.FOXG_09352P0
+(degree 2991), 5507.FOXG_08006P0 (degree 2306), 5507.FOXG_04346P0 (degree
+2006), 5507.FOXG_00887P0 (degree 1803) and 5507.FOXG_11669P0 (degree 1799).
 
 
 References
@@ -107,14 +107,14 @@ def FusariumOxysporum(
 	
 	Datetime: 2021-02-02 17:14:32.263696
 	
-	The undirected graph Fusarium oxysporum has 11337 nodes and 1074865 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01673 and
-	has 57 connected components, where the component with most nodes has 11212 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 189.62, and the node degree mode is 1. The top 5 most
-	central nodes are 5507.FOXG_09352P0 (degree 2991), 5507.FOXG_08006P0 (degree 2306),
-	5507.FOXG_04346P0 (degree 2006), 5507.FOXG_00887P0 (degree 1803) and 5507.FOXG_11669P0
-	(degree 1799).
+	The undirected graph Fusarium oxysporum has 11337 nodes and 1074865 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01673 and has 57 connected components, where the component with most
+	nodes has 11212 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 90, the mean node degree is 189.62, and
+	the node degree mode is 1. The top 5 most central nodes are 5507.FOXG_09352P0
+	(degree 2991), 5507.FOXG_08006P0 (degree 2306), 5507.FOXG_04346P0 (degree
+	2006), 5507.FOXG_00887P0 (degree 1803) and 5507.FOXG_11669P0 (degree 1799).
 	
 
 

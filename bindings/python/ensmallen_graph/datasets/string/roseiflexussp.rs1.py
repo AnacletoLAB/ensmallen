@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:52.249549
 
-The undirected graph Roseiflexus sp. RS1 has 4449 nodes and 629031 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06357 and
-has 15 connected components, where the component with most nodes has 4419 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 282.77, and the node degree mode is 2. The top 5 most central
-nodes are 357808.RoseRS_2905 (degree 2359), 357808.RoseRS_3415 (degree 1874), 357808.RoseRS_3876
-(degree 1787), 357808.RoseRS_3202 (degree 1705) and 357808.RoseRS_2847 (degree 1566).
+The undirected graph Roseiflexus sp. RS1 has 4449 nodes and 629031 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06357 and has 15 connected components, where the component with most
+nodes has 4419 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 282.77, and
+the node degree mode is 2. The top 5 most central nodes are 357808.RoseRS_2905
+(degree 2359), 357808.RoseRS_3415 (degree 1874), 357808.RoseRS_3876 (degree
+1787), 357808.RoseRS_3202 (degree 1705) and 357808.RoseRS_2847 (degree
+1566).
 
 
 References
@@ -106,13 +108,15 @@ def RoseiflexusSp.Rs1(
 	
 	Datetime: 2021-02-02 20:33:52.249549
 	
-	The undirected graph Roseiflexus sp. RS1 has 4449 nodes and 629031 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06357 and
-	has 15 connected components, where the component with most nodes has 4419 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 282.77, and the node degree mode is 2. The top 5 most central
-	nodes are 357808.RoseRS_2905 (degree 2359), 357808.RoseRS_3415 (degree 1874), 357808.RoseRS_3876
-	(degree 1787), 357808.RoseRS_3202 (degree 1705) and 357808.RoseRS_2847 (degree 1566).
+	The undirected graph Roseiflexus sp. RS1 has 4449 nodes and 629031 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06357 and has 15 connected components, where the component with most
+	nodes has 4419 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 282.77, and
+	the node degree mode is 2. The top 5 most central nodes are 357808.RoseRS_2905
+	(degree 2359), 357808.RoseRS_3415 (degree 1874), 357808.RoseRS_3876 (degree
+	1787), 357808.RoseRS_3202 (degree 1705) and 357808.RoseRS_2847 (degree
+	1566).
 	
 
 

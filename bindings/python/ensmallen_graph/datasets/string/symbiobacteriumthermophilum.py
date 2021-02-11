@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:45.267151
 
-The undirected graph Symbiobacterium thermophilum has 3322 nodes and 321202 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05823
-and has 11 connected components, where the component with most nodes has 3297 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 193.38, and the node degree mode is 3. The top 5
-most central nodes are 292459.STH848 (degree 1500), 292459.STH1805 (degree 1284),
-292459.STH501 (degree 1187), 292459.STH504 (degree 1106) and 292459.STH230 (degree
-1097).
+The undirected graph Symbiobacterium thermophilum has 3322 nodes and 321202
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05823 and has 11 connected components, where the component
+with most nodes has 3297 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 193.38,
+and the node degree mode is 3. The top 5 most central nodes are 292459.STH848
+(degree 1500), 292459.STH1805 (degree 1284), 292459.STH501 (degree 1187),
+292459.STH504 (degree 1106) and 292459.STH230 (degree 1097).
 
 
 References
@@ -107,14 +107,14 @@ def SymbiobacteriumThermophilum(
 	
 	Datetime: 2021-02-02 20:20:45.267151
 	
-	The undirected graph Symbiobacterium thermophilum has 3322 nodes and 321202 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05823
-	and has 11 connected components, where the component with most nodes has 3297 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 193.38, and the node degree mode is 3. The top 5
-	most central nodes are 292459.STH848 (degree 1500), 292459.STH1805 (degree 1284),
-	292459.STH501 (degree 1187), 292459.STH504 (degree 1106) and 292459.STH230 (degree
-	1097).
+	The undirected graph Symbiobacterium thermophilum has 3322 nodes and 321202
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05823 and has 11 connected components, where the component
+	with most nodes has 3297 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 193.38,
+	and the node degree mode is 3. The top 5 most central nodes are 292459.STH848
+	(degree 1500), 292459.STH1805 (degree 1284), 292459.STH501 (degree 1187),
+	292459.STH504 (degree 1106) and 292459.STH230 (degree 1097).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:22:52.272656
 
-The undirected graph lock1074 has 1038 nodes and 26313 unweighted edges, of which
-1038 are self-loops. The graph is dense as it has a density of 0.04788 and is connected,
-as it has a single component. The graph median node degree is 54, the mean node degree
-is 49.70, and the node degree mode is 54. The top 5 most central nodes are 810 (degree
-96), 809 (degree 96), 808 (degree 96), 807 (degree 96) and 806 (degree 96).
+The undirected graph lock1074 has 1038 nodes and 26313 unweighted edges,
+of which 1038 are self-loops. The graph is dense as it has a density of
+0.04788 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 49.70, and the node degree mode
+is 54. The top 5 most central nodes are 810 (degree 96), 809 (degree 96),
+808 (degree 96), 807 (degree 96) and 806 (degree 96).
 
 
 References
@@ -101,11 +102,12 @@ def Lock1074(
 	
 	Datetime: 2021-02-06 10:22:52.272656
 	
-	The undirected graph lock1074 has 1038 nodes and 26313 unweighted edges, of which
-	1038 are self-loops. The graph is dense as it has a density of 0.04788 and is connected,
-	as it has a single component. The graph median node degree is 54, the mean node degree
-	is 49.70, and the node degree mode is 54. The top 5 most central nodes are 810 (degree
-	96), 809 (degree 96), 808 (degree 96), 807 (degree 96) and 806 (degree 96).
+	The undirected graph lock1074 has 1038 nodes and 26313 unweighted edges,
+	of which 1038 are self-loops. The graph is dense as it has a density of
+	0.04788 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 49.70, and the node degree mode
+	is 54. The top 5 most central nodes are 810 (degree 96), 809 (degree 96),
+	808 (degree 96), 807 (degree 96) and 806 (degree 96).
 	
 
 

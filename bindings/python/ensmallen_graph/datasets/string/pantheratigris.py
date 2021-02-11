@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:41:36.011204
 
-The undirected graph Panthera tigris has 17993 nodes and 3582373 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02213 and
-has 2 connected components, where the component with most nodes has 17991 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 278,
-the mean node degree is 398.20, and the node degree mode is 10. The top 5 most central
-nodes are 9694.XP_007090859.1 (degree 4523), 9694.XP_007089000.1 (degree 4235), 9694.XP_007096269.1
-(degree 4060), 9694.XP_007093554.1 (degree 3350) and 9694.XP_007091155.1 (degree
+The undirected graph Panthera tigris has 17993 nodes and 3582373 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02213 and has 2 connected components, where the component with most
+nodes has 17991 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 278, the mean node degree is 398.20, and
+the node degree mode is 10. The top 5 most central nodes are 9694.XP_007090859.1
+(degree 4523), 9694.XP_007089000.1 (degree 4235), 9694.XP_007096269.1 (degree
+4060), 9694.XP_007093554.1 (degree 3350) and 9694.XP_007091155.1 (degree
 3329).
 
 
@@ -107,13 +108,14 @@ def PantheraTigris(
 	
 	Datetime: 2021-02-02 17:41:36.011204
 	
-	The undirected graph Panthera tigris has 17993 nodes and 3582373 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02213 and
-	has 2 connected components, where the component with most nodes has 17991 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 278,
-	the mean node degree is 398.20, and the node degree mode is 10. The top 5 most central
-	nodes are 9694.XP_007090859.1 (degree 4523), 9694.XP_007089000.1 (degree 4235), 9694.XP_007096269.1
-	(degree 4060), 9694.XP_007093554.1 (degree 3350) and 9694.XP_007091155.1 (degree
+	The undirected graph Panthera tigris has 17993 nodes and 3582373 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02213 and has 2 connected components, where the component with most
+	nodes has 17991 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 278, the mean node degree is 398.20, and
+	the node degree mode is 10. The top 5 most central nodes are 9694.XP_007090859.1
+	(degree 4523), 9694.XP_007089000.1 (degree 4235), 9694.XP_007096269.1 (degree
+	4060), 9694.XP_007093554.1 (degree 3350) and 9694.XP_007091155.1 (degree
 	3329).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:24.700527
 
-The undirected graph Haemophilus paraphrohaemolyticus has 2008 nodes and 132796 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06590
-and has 6 connected components, where the component with most nodes has 1995 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 132.27, and the node degree mode is 2. The top 5
-most central nodes are 1095743.HMPREF1054_0923 (degree 819), 1095743.HMPREF1054_1418
-(degree 725), 1095743.HMPREF1054_0612 (degree 713), 1095743.HMPREF1054_1330 (degree
+The undirected graph Haemophilus paraphrohaemolyticus has 2008 nodes and
+132796 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06590 and has 6 connected components, where the
+component with most nodes has 1995 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 132.27, and the node degree mode is 2. The top 5 most central nodes
+are 1095743.HMPREF1054_0923 (degree 819), 1095743.HMPREF1054_1418 (degree
+725), 1095743.HMPREF1054_0612 (degree 713), 1095743.HMPREF1054_1330 (degree
 698) and 1095743.HMPREF1054_0608 (degree 652).
 
 
@@ -107,13 +108,14 @@ def HaemophilusParaphrohaemolyticus(
 	
 	Datetime: 2021-02-02 22:23:24.700527
 	
-	The undirected graph Haemophilus paraphrohaemolyticus has 2008 nodes and 132796 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06590
-	and has 6 connected components, where the component with most nodes has 1995 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 132.27, and the node degree mode is 2. The top 5
-	most central nodes are 1095743.HMPREF1054_0923 (degree 819), 1095743.HMPREF1054_1418
-	(degree 725), 1095743.HMPREF1054_0612 (degree 713), 1095743.HMPREF1054_1330 (degree
+	The undirected graph Haemophilus paraphrohaemolyticus has 2008 nodes and
+	132796 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06590 and has 6 connected components, where the
+	component with most nodes has 1995 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 132.27, and the node degree mode is 2. The top 5 most central nodes
+	are 1095743.HMPREF1054_0923 (degree 819), 1095743.HMPREF1054_1418 (degree
+	725), 1095743.HMPREF1054_0612 (degree 713), 1095743.HMPREF1054_1330 (degree
 	698) and 1095743.HMPREF1054_0608 (degree 652).
 	
 

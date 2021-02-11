@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:00.236734
 
-The undirected graph Pseudomonas mendocina NK01 has 4940 nodes and 725685 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05949
-and has 4 connected components, where the component with most nodes has 4932 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 264, the mean node degree is 293.80, and the node degree mode is 4. The top 5
-most central nodes are 1001585.MDS_0170 (degree 2048), 1001585.MDS_0587 (degree 1560),
-1001585.MDS_2298 (degree 1479), 1001585.MDS_3657 (degree 1440) and 1001585.MDS_3132
-(degree 1434).
+The undirected graph Pseudomonas mendocina NK01 has 4940 nodes and 725685
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05949 and has 4 connected components, where the component
+with most nodes has 4932 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 264, the mean node degree is 293.80,
+and the node degree mode is 4. The top 5 most central nodes are 1001585.MDS_0170
+(degree 2048), 1001585.MDS_0587 (degree 1560), 1001585.MDS_2298 (degree
+1479), 1001585.MDS_3657 (degree 1440) and 1001585.MDS_3132 (degree 1434).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasMendocinaNk01(
 	
 	Datetime: 2021-02-02 22:07:00.236734
 	
-	The undirected graph Pseudomonas mendocina NK01 has 4940 nodes and 725685 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05949
-	and has 4 connected components, where the component with most nodes has 4932 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 264, the mean node degree is 293.80, and the node degree mode is 4. The top 5
-	most central nodes are 1001585.MDS_0170 (degree 2048), 1001585.MDS_0587 (degree 1560),
-	1001585.MDS_2298 (degree 1479), 1001585.MDS_3657 (degree 1440) and 1001585.MDS_3132
-	(degree 1434).
+	The undirected graph Pseudomonas mendocina NK01 has 4940 nodes and 725685
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05949 and has 4 connected components, where the component
+	with most nodes has 4932 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 264, the mean node degree is 293.80,
+	and the node degree mode is 4. The top 5 most central nodes are 1001585.MDS_0170
+	(degree 2048), 1001585.MDS_0587 (degree 1560), 1001585.MDS_2298 (degree
+	1479), 1001585.MDS_3657 (degree 1440) and 1001585.MDS_3132 (degree 1434).
 	
 
 

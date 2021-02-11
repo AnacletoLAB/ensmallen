@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:46.549581
 
-The undirected graph Lonsdalea quercina has 3120 nodes and 375404 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07715 and
-has 3 connected components, where the component with most nodes has 3116 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 240.64, and the node degree mode is 188. The top 5 most central
-nodes are 1082705.JIBP01000002_gene2079 (degree 1224), 1082705.JIBP01000021_gene2950
-(degree 1221), 1082705.JIBP01000017_gene644 (degree 1159), 1082705.JIBP01000007_gene1288
-(degree 1050) and 1082705.JIBP01000007_gene1287 (degree 1020).
+The undirected graph Lonsdalea quercina has 3120 nodes and 375404 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07715 and has 3 connected components, where the component with most
+nodes has 3116 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 240.64, and
+the node degree mode is 188. The top 5 most central nodes are 1082705.JIBP01000002_gene2079
+(degree 1224), 1082705.JIBP01000021_gene2950 (degree 1221), 1082705.JIBP01000017_gene644
+(degree 1159), 1082705.JIBP01000007_gene1288 (degree 1050) and 1082705.JIBP01000007_gene1287
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def LonsdaleaQuercina(
 	
 	Datetime: 2021-02-02 22:20:46.549581
 	
-	The undirected graph Lonsdalea quercina has 3120 nodes and 375404 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07715 and
-	has 3 connected components, where the component with most nodes has 3116 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 240.64, and the node degree mode is 188. The top 5 most central
-	nodes are 1082705.JIBP01000002_gene2079 (degree 1224), 1082705.JIBP01000021_gene2950
-	(degree 1221), 1082705.JIBP01000017_gene644 (degree 1159), 1082705.JIBP01000007_gene1288
-	(degree 1050) and 1082705.JIBP01000007_gene1287 (degree 1020).
+	The undirected graph Lonsdalea quercina has 3120 nodes and 375404 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07715 and has 3 connected components, where the component with most
+	nodes has 3116 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 240.64, and
+	the node degree mode is 188. The top 5 most central nodes are 1082705.JIBP01000002_gene2079
+	(degree 1224), 1082705.JIBP01000021_gene2950 (degree 1221), 1082705.JIBP01000017_gene644
+	(degree 1159), 1082705.JIBP01000007_gene1288 (degree 1050) and 1082705.JIBP01000007_gene1287
+	(degree 1020).
 	
 
 

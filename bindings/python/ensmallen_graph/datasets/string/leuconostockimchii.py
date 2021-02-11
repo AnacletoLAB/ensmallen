@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:09.458992
 
-The undirected graph Leuconostoc kimchii has 2047 nodes and 103145 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04926 and
-has 4 connected components, where the component with most nodes has 2031 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 77,
-the mean node degree is 100.78, and the node degree mode is 3. The top 5 most central
-nodes are 762051.LKI_08995 (degree 813), 762051.LKI_02000 (degree 623), 762051.LKI_04135
-(degree 612), 762051.LKI_05215 (degree 592) and 762051.LKI_05500 (degree 536).
+The undirected graph Leuconostoc kimchii has 2047 nodes and 103145 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04926 and has 4 connected components, where the component with most
+nodes has 2031 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 77, the mean node degree is 100.78, and
+the node degree mode is 3. The top 5 most central nodes are 762051.LKI_08995
+(degree 813), 762051.LKI_02000 (degree 623), 762051.LKI_04135 (degree 612),
+762051.LKI_05215 (degree 592) and 762051.LKI_05500 (degree 536).
 
 
 References
@@ -106,13 +107,14 @@ def LeuconostocKimchii(
 	
 	Datetime: 2021-02-02 21:42:09.458992
 	
-	The undirected graph Leuconostoc kimchii has 2047 nodes and 103145 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04926 and
-	has 4 connected components, where the component with most nodes has 2031 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 77,
-	the mean node degree is 100.78, and the node degree mode is 3. The top 5 most central
-	nodes are 762051.LKI_08995 (degree 813), 762051.LKI_02000 (degree 623), 762051.LKI_04135
-	(degree 612), 762051.LKI_05215 (degree 592) and 762051.LKI_05500 (degree 536).
+	The undirected graph Leuconostoc kimchii has 2047 nodes and 103145 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04926 and has 4 connected components, where the component with most
+	nodes has 2031 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 77, the mean node degree is 100.78, and
+	the node degree mode is 3. The top 5 most central nodes are 762051.LKI_08995
+	(degree 813), 762051.LKI_02000 (degree 623), 762051.LKI_04135 (degree 612),
+	762051.LKI_05215 (degree 592) and 762051.LKI_05500 (degree 536).
 	
 
 

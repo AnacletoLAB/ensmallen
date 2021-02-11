@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:51.752744
 
-The undirected graph Taylorella asinigenitalis has 1518 nodes and 69407 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06028
-and has 8 connected components, where the component with most nodes has 1497 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 68, the mean node degree is 91.45, and the node degree mode is 27. The top 5 most
-central nodes are 1008459.TASI_1128 (degree 668), 1008459.TASI_1464 (degree 650),
-1008459.TASI_0315 (degree 593), 1008459.TASI_0720 (degree 544) and 1008459.TASI_0718
-(degree 493).
+The undirected graph Taylorella asinigenitalis has 1518 nodes and 69407
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06028 and has 8 connected components, where the component
+with most nodes has 1497 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 68, the mean node degree is 91.45,
+and the node degree mode is 27. The top 5 most central nodes are 1008459.TASI_1128
+(degree 668), 1008459.TASI_1464 (degree 650), 1008459.TASI_0315 (degree
+593), 1008459.TASI_0720 (degree 544) and 1008459.TASI_0718 (degree 493).
 
 
 References
@@ -107,14 +107,14 @@ def TaylorellaAsinigenitalis(
 	
 	Datetime: 2021-02-02 22:08:51.752744
 	
-	The undirected graph Taylorella asinigenitalis has 1518 nodes and 69407 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06028
-	and has 8 connected components, where the component with most nodes has 1497 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 68, the mean node degree is 91.45, and the node degree mode is 27. The top 5 most
-	central nodes are 1008459.TASI_1128 (degree 668), 1008459.TASI_1464 (degree 650),
-	1008459.TASI_0315 (degree 593), 1008459.TASI_0720 (degree 544) and 1008459.TASI_0718
-	(degree 493).
+	The undirected graph Taylorella asinigenitalis has 1518 nodes and 69407
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06028 and has 8 connected components, where the component
+	with most nodes has 1497 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 68, the mean node degree is 91.45,
+	and the node degree mode is 27. The top 5 most central nodes are 1008459.TASI_1128
+	(degree 668), 1008459.TASI_1464 (degree 650), 1008459.TASI_0315 (degree
+	593), 1008459.TASI_0720 (degree 544) and 1008459.TASI_0718 (degree 493).
 	
 
 

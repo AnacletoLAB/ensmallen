@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:07.984673
 
-The undirected graph Ornithinimicrobium pekingense has 3388 nodes and 339185 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05912
-and has 3 connected components, where the component with most nodes has 3384 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 200.23, and the node degree mode is 3. The top 5
-most central nodes are 1122622.ATWJ01000010_gene1378 (degree 1252), 1122622.ATWJ01000007_gene2010
-(degree 1079), 1122622.ATWJ01000015_gene659 (degree 1077), 1122622.ATWJ01000007_gene1563
-(degree 1075) and 1122622.ATWJ01000002_gene746 (degree 1058).
+The undirected graph Ornithinimicrobium pekingense has 3388 nodes and 339185
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05912 and has 3 connected components, where the component
+with most nodes has 3384 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 200.23,
+and the node degree mode is 3. The top 5 most central nodes are 1122622.ATWJ01000010_gene1378
+(degree 1252), 1122622.ATWJ01000007_gene2010 (degree 1079), 1122622.ATWJ01000015_gene659
+(degree 1077), 1122622.ATWJ01000007_gene1563 (degree 1075) and 1122622.ATWJ01000002_gene746
+(degree 1058).
 
 
 References
@@ -107,14 +108,15 @@ def OrnithinimicrobiumPekingense(
 	
 	Datetime: 2021-02-02 22:44:07.984673
 	
-	The undirected graph Ornithinimicrobium pekingense has 3388 nodes and 339185 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05912
-	and has 3 connected components, where the component with most nodes has 3384 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 200.23, and the node degree mode is 3. The top 5
-	most central nodes are 1122622.ATWJ01000010_gene1378 (degree 1252), 1122622.ATWJ01000007_gene2010
-	(degree 1079), 1122622.ATWJ01000015_gene659 (degree 1077), 1122622.ATWJ01000007_gene1563
-	(degree 1075) and 1122622.ATWJ01000002_gene746 (degree 1058).
+	The undirected graph Ornithinimicrobium pekingense has 3388 nodes and 339185
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05912 and has 3 connected components, where the component
+	with most nodes has 3384 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 200.23,
+	and the node degree mode is 3. The top 5 most central nodes are 1122622.ATWJ01000010_gene1378
+	(degree 1252), 1122622.ATWJ01000007_gene2010 (degree 1079), 1122622.ATWJ01000015_gene659
+	(degree 1077), 1122622.ATWJ01000007_gene1563 (degree 1075) and 1122622.ATWJ01000002_gene746
+	(degree 1058).
 	
 
 

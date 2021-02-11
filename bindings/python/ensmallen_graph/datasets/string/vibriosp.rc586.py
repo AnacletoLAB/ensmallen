@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:53.295209
 
-The undirected graph Vibrio sp. RC586 has 3491 nodes and 399420 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06557 and
-has 16 connected components, where the component with most nodes has 3450 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 228.83, and the node degree mode is 1. The top 5 most central
-nodes are 675815.VOA_002011 (degree 1373), 675815.VOA_003230 (degree 1305), 675815.VOA_002845
-(degree 1287), 675815.VOA_001560 (degree 1243) and 675815.VOA_000829 (degree 1206).
+The undirected graph Vibrio sp. RC586 has 3491 nodes and 399420 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06557 and has 16 connected components, where the component with most
+nodes has 3450 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 228.83, and
+the node degree mode is 1. The top 5 most central nodes are 675815.VOA_002011
+(degree 1373), 675815.VOA_003230 (degree 1305), 675815.VOA_002845 (degree
+1287), 675815.VOA_001560 (degree 1243) and 675815.VOA_000829 (degree 1206).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioSp.Rc586(
 	
 	Datetime: 2021-02-02 21:29:53.295209
 	
-	The undirected graph Vibrio sp. RC586 has 3491 nodes and 399420 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06557 and
-	has 16 connected components, where the component with most nodes has 3450 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 228.83, and the node degree mode is 1. The top 5 most central
-	nodes are 675815.VOA_002011 (degree 1373), 675815.VOA_003230 (degree 1305), 675815.VOA_002845
-	(degree 1287), 675815.VOA_001560 (degree 1243) and 675815.VOA_000829 (degree 1206).
+	The undirected graph Vibrio sp. RC586 has 3491 nodes and 399420 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06557 and has 16 connected components, where the component with most
+	nodes has 3450 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 228.83, and
+	the node degree mode is 1. The top 5 most central nodes are 675815.VOA_002011
+	(degree 1373), 675815.VOA_003230 (degree 1305), 675815.VOA_002845 (degree
+	1287), 675815.VOA_001560 (degree 1243) and 675815.VOA_000829 (degree 1206).
 	
 
 

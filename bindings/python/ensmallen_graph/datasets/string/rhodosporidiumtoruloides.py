@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:30.497686
 
-The undirected graph Rhodosporidium toruloides has 5278 nodes and 576625 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04141
-and has 4 connected components, where the component with most nodes has 5272 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 218.50, and the node degree mode is 1. The top 5
-most central nodes are 5286.M7XYB4 (degree 1588), 5286.M7WRD1 (degree 1529), 5286.M7XN78
-(degree 1236), 5286.M7XBX1 (degree 1132) and 5286.M7X9F4 (degree 1130).
+The undirected graph Rhodosporidium toruloides has 5278 nodes and 576625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04141 and has 4 connected components, where the component
+with most nodes has 5272 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 218.50,
+and the node degree mode is 1. The top 5 most central nodes are 5286.M7XYB4
+(degree 1588), 5286.M7WRD1 (degree 1529), 5286.M7XN78 (degree 1236), 5286.M7XBX1
+(degree 1132) and 5286.M7X9F4 (degree 1130).
 
 
 References
@@ -106,13 +107,14 @@ def RhodosporidiumToruloides(
 	
 	Datetime: 2021-02-02 17:13:30.497686
 	
-	The undirected graph Rhodosporidium toruloides has 5278 nodes and 576625 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04141
-	and has 4 connected components, where the component with most nodes has 5272 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 218.50, and the node degree mode is 1. The top 5
-	most central nodes are 5286.M7XYB4 (degree 1588), 5286.M7WRD1 (degree 1529), 5286.M7XN78
-	(degree 1236), 5286.M7XBX1 (degree 1132) and 5286.M7X9F4 (degree 1130).
+	The undirected graph Rhodosporidium toruloides has 5278 nodes and 576625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04141 and has 4 connected components, where the component
+	with most nodes has 5272 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 218.50,
+	and the node degree mode is 1. The top 5 most central nodes are 5286.M7XYB4
+	(degree 1588), 5286.M7WRD1 (degree 1529), 5286.M7XN78 (degree 1236), 5286.M7XBX1
+	(degree 1132) and 5286.M7X9F4 (degree 1130).
 	
 
 

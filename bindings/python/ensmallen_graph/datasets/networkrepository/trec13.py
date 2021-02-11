@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:19.877541
 
-The undirected graph Trec13 has 6561 nodes and 653875 weighted edges, of which 72
-are self-loops. The graph is dense as it has a density of 0.03038 and is connected,
-as it has a single component. The graph median node degree is 67, the mean node degree
-is 199.31, and the node degree mode is 12. The top 5 most central nodes are 1012
-(degree 1757), 1296 (degree 1511), 1013 (degree 1479), 1011 (degree 1455) and 1293
-(degree 1413).
+The undirected graph Trec13 has 6561 nodes and 653875 weighted edges, of
+which 72 are self-loops. The graph is dense as it has a density of 0.03038
+and is connected, as it has a single component. The graph median node degree
+is 67, the mean node degree is 199.31, and the node degree mode is 12.
+The top 5 most central nodes are 1012 (degree 1757), 1296 (degree 1511),
+1013 (degree 1479), 1011 (degree 1455) and 1293 (degree 1413).
 
 
 References
@@ -102,12 +102,12 @@ def Trec13(
 	
 	Datetime: 2021-02-06 11:02:19.877541
 	
-	The undirected graph Trec13 has 6561 nodes and 653875 weighted edges, of which 72
-	are self-loops. The graph is dense as it has a density of 0.03038 and is connected,
-	as it has a single component. The graph median node degree is 67, the mean node degree
-	is 199.31, and the node degree mode is 12. The top 5 most central nodes are 1012
-	(degree 1757), 1296 (degree 1511), 1013 (degree 1479), 1011 (degree 1455) and 1293
-	(degree 1413).
+	The undirected graph Trec13 has 6561 nodes and 653875 weighted edges, of
+	which 72 are self-loops. The graph is dense as it has a density of 0.03038
+	and is connected, as it has a single component. The graph median node degree
+	is 67, the mean node degree is 199.31, and the node degree mode is 12.
+	The top 5 most central nodes are 1012 (degree 1757), 1296 (degree 1511),
+	1013 (degree 1479), 1011 (degree 1455) and 1293 (degree 1413).
 	
 
 

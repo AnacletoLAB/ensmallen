@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:01.919612
 
-The undirected graph Maribacter forsetii has 3841 nodes and 312755 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04241 and
-has 12 connected components, where the component with most nodes has 3815 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 162.85, and the node degree mode is 2. The top 5 most central
-nodes are 1392498.JQLH01000001_gene432 (degree 1234), 1392498.JQLH01000001_gene691
-(degree 1217), 1392498.JQLH01000001_gene798 (degree 1144), 1392498.JQLH01000001_gene3026
-(degree 1076) and 1392498.JQLH01000001_gene1180 (degree 1046).
+The undirected graph Maribacter forsetii has 3841 nodes and 312755 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04241 and has 12 connected components, where the component with most
+nodes has 3815 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 162.85, and
+the node degree mode is 2. The top 5 most central nodes are 1392498.JQLH01000001_gene432
+(degree 1234), 1392498.JQLH01000001_gene691 (degree 1217), 1392498.JQLH01000001_gene798
+(degree 1144), 1392498.JQLH01000001_gene3026 (degree 1076) and 1392498.JQLH01000001_gene1180
+(degree 1046).
 
 
 References
@@ -107,14 +108,15 @@ def MaribacterForsetii(
 	
 	Datetime: 2021-02-03 22:25:01.919612
 	
-	The undirected graph Maribacter forsetii has 3841 nodes and 312755 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04241 and
-	has 12 connected components, where the component with most nodes has 3815 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 162.85, and the node degree mode is 2. The top 5 most central
-	nodes are 1392498.JQLH01000001_gene432 (degree 1234), 1392498.JQLH01000001_gene691
-	(degree 1217), 1392498.JQLH01000001_gene798 (degree 1144), 1392498.JQLH01000001_gene3026
-	(degree 1076) and 1392498.JQLH01000001_gene1180 (degree 1046).
+	The undirected graph Maribacter forsetii has 3841 nodes and 312755 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04241 and has 12 connected components, where the component with most
+	nodes has 3815 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 162.85, and
+	the node degree mode is 2. The top 5 most central nodes are 1392498.JQLH01000001_gene432
+	(degree 1234), 1392498.JQLH01000001_gene691 (degree 1217), 1392498.JQLH01000001_gene798
+	(degree 1144), 1392498.JQLH01000001_gene3026 (degree 1076) and 1392498.JQLH01000001_gene1180
+	(degree 1046).
 	
 
 

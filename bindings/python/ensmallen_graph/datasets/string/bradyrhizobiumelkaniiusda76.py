@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:36.328364
 
-The undirected graph Bradyrhizobium elkanii USDA76 has 7620 nodes and 1077350 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03711
-and has 42 connected components, where the component with most nodes has 7521 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 224, the mean node degree is 282.77, and the node degree mode is 1. The top 5
-most central nodes are 398525.KB900701_gene4953 (degree 3803), 398525.KB900701_gene6828
-(degree 2658), 398525.KB900701_gene2207 (degree 2423), 398525.KB900701_gene2534 (degree
-2118) and 398525.KB900701_gene7605 (degree 1997).
+The undirected graph Bradyrhizobium elkanii USDA76 has 7620 nodes and 1077350
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03711 and has 42 connected components, where the component
+with most nodes has 7521 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 224, the mean node degree is 282.77,
+and the node degree mode is 1. The top 5 most central nodes are 398525.KB900701_gene4953
+(degree 3803), 398525.KB900701_gene6828 (degree 2658), 398525.KB900701_gene2207
+(degree 2423), 398525.KB900701_gene2534 (degree 2118) and 398525.KB900701_gene7605
+(degree 1997).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumElkaniiUsda76(
 	
 	Datetime: 2021-02-02 20:42:36.328364
 	
-	The undirected graph Bradyrhizobium elkanii USDA76 has 7620 nodes and 1077350 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03711
-	and has 42 connected components, where the component with most nodes has 7521 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 224, the mean node degree is 282.77, and the node degree mode is 1. The top 5
-	most central nodes are 398525.KB900701_gene4953 (degree 3803), 398525.KB900701_gene6828
-	(degree 2658), 398525.KB900701_gene2207 (degree 2423), 398525.KB900701_gene2534 (degree
-	2118) and 398525.KB900701_gene7605 (degree 1997).
+	The undirected graph Bradyrhizobium elkanii USDA76 has 7620 nodes and 1077350
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03711 and has 42 connected components, where the component
+	with most nodes has 7521 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 224, the mean node degree is 282.77,
+	and the node degree mode is 1. The top 5 most central nodes are 398525.KB900701_gene4953
+	(degree 3803), 398525.KB900701_gene6828 (degree 2658), 398525.KB900701_gene2207
+	(degree 2423), 398525.KB900701_gene2534 (degree 2118) and 398525.KB900701_gene7605
+	(degree 1997).
 	
 
 

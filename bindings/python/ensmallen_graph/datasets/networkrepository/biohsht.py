@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:09.505668
 
-The undirected graph bio-HS-HT has 2570 nodes and 13691 weighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00415 and has 32
-connected components, where the component with most nodes has 2499 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 5, the
-mean node degree is 10.65 and the node degree mode is 1. The top 5 most central nodes
-are 95 (degree 149), 134 (degree 146), 63 (degree 132), 314 (degree 112) and 89 (degree
-109).
+The undirected graph bio-HS-HT has 2570 nodes and 13691 weighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00415 and has 32 connected components, where the component with most
+nodes has 2499 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 5, the mean node degree is 10.65 and the
+node degree mode is 1. The top 5 most central nodes are 95 (degree 149),
+134 (degree 146), 63 (degree 132), 314 (degree 112) and 89 (degree 109).
 
 
 References
@@ -114,13 +114,13 @@ def BioHsHt(
 	
 	Datetime: 2021-02-03 22:30:09.505668
 	
-	The undirected graph bio-HS-HT has 2570 nodes and 13691 weighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00415 and has 32
-	connected components, where the component with most nodes has 2499 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 5, the
-	mean node degree is 10.65 and the node degree mode is 1. The top 5 most central nodes
-	are 95 (degree 149), 134 (degree 146), 63 (degree 132), 314 (degree 112) and 89 (degree
-	109).
+	The undirected graph bio-HS-HT has 2570 nodes and 13691 weighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00415 and has 32 connected components, where the component with most
+	nodes has 2499 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 5, the mean node degree is 10.65 and the
+	node degree mode is 1. The top 5 most central nodes are 95 (degree 149),
+	134 (degree 146), 63 (degree 132), 314 (degree 112) and 89 (degree 109).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:49.799300
 
-The undirected graph Cyclobacterium qasimii has 5822 nodes and 549404 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03242 and
-has 58 connected components, where the component with most nodes has 5681 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 188.73, and the node degree mode is 1. The top 5 most central
-nodes are 641524.ADICYQ_4498 (degree 1285), 641524.ADICYQ_3949 (degree 1233), 641524.ADICYQ_0721
-(degree 1203), 641524.ADICYQ_4841 (degree 1199) and 641524.ADICYQ_4240 (degree 1193).
+The undirected graph Cyclobacterium qasimii has 5822 nodes and 549404 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03242 and has 58 connected components, where the component with most
+nodes has 5681 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 188.73, and
+the node degree mode is 1. The top 5 most central nodes are 641524.ADICYQ_4498
+(degree 1285), 641524.ADICYQ_3949 (degree 1233), 641524.ADICYQ_0721 (degree
+1203), 641524.ADICYQ_4841 (degree 1199) and 641524.ADICYQ_4240 (degree
+1193).
 
 
 References
@@ -106,13 +108,15 @@ def CyclobacteriumQasimii(
 	
 	Datetime: 2021-02-02 21:23:49.799300
 	
-	The undirected graph Cyclobacterium qasimii has 5822 nodes and 549404 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03242 and
-	has 58 connected components, where the component with most nodes has 5681 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 188.73, and the node degree mode is 1. The top 5 most central
-	nodes are 641524.ADICYQ_4498 (degree 1285), 641524.ADICYQ_3949 (degree 1233), 641524.ADICYQ_0721
-	(degree 1203), 641524.ADICYQ_4841 (degree 1199) and 641524.ADICYQ_4240 (degree 1193).
+	The undirected graph Cyclobacterium qasimii has 5822 nodes and 549404 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03242 and has 58 connected components, where the component with most
+	nodes has 5681 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 188.73, and
+	the node degree mode is 1. The top 5 most central nodes are 641524.ADICYQ_4498
+	(degree 1285), 641524.ADICYQ_3949 (degree 1233), 641524.ADICYQ_0721 (degree
+	1203), 641524.ADICYQ_4841 (degree 1199) and 641524.ADICYQ_4240 (degree
+	1193).
 	
 
 

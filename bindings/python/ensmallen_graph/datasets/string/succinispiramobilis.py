@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:54.948483
 
-The undirected graph Succinispira mobilis has 1914 nodes and 123795 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06762 and
-has 4 connected components, where the component with most nodes has 1904 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 129.36, and the node degree mode is 3. The top 5 most central
-nodes are 1069080.KB913028_gene876 (degree 711), 1069080.KB913028_gene1252 (degree
-624), 1069080.KB913028_gene1863 (degree 613), 1069080.KB913028_gene1164 (degree 604)
-and 1069080.KB913028_gene1449 (degree 595).
+The undirected graph Succinispira mobilis has 1914 nodes and 123795 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06762 and has 4 connected components, where the component with most
+nodes has 1904 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 129.36, and
+the node degree mode is 3. The top 5 most central nodes are 1069080.KB913028_gene876
+(degree 711), 1069080.KB913028_gene1252 (degree 624), 1069080.KB913028_gene1863
+(degree 613), 1069080.KB913028_gene1164 (degree 604) and 1069080.KB913028_gene1449
+(degree 595).
 
 
 References
@@ -107,14 +108,15 @@ def SuccinispiraMobilis(
 	
 	Datetime: 2021-02-02 22:18:54.948483
 	
-	The undirected graph Succinispira mobilis has 1914 nodes and 123795 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06762 and
-	has 4 connected components, where the component with most nodes has 1904 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 129.36, and the node degree mode is 3. The top 5 most central
-	nodes are 1069080.KB913028_gene876 (degree 711), 1069080.KB913028_gene1252 (degree
-	624), 1069080.KB913028_gene1863 (degree 613), 1069080.KB913028_gene1164 (degree 604)
-	and 1069080.KB913028_gene1449 (degree 595).
+	The undirected graph Succinispira mobilis has 1914 nodes and 123795 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06762 and has 4 connected components, where the component with most
+	nodes has 1904 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 129.36, and
+	the node degree mode is 3. The top 5 most central nodes are 1069080.KB913028_gene876
+	(degree 711), 1069080.KB913028_gene1252 (degree 624), 1069080.KB913028_gene1863
+	(degree 613), 1069080.KB913028_gene1164 (degree 604) and 1069080.KB913028_gene1449
+	(degree 595).
 	
 
 

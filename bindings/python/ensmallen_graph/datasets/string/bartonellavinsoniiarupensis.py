@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:03.380177
 
-The undirected graph Bartonella vinsonii arupensis has 1496 nodes and 109493 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09791
-and has 9 connected components, where the component with most nodes has 1478 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 146.38, and the node degree mode is 1. The top 5
-most central nodes are 1094561.MEI_00709 (degree 645), 1094561.MEI_00548 (degree
-591), 1094561.MEI_00250 (degree 542), 1094561.MEI_00545 (degree 531) and 1094561.MEI_01270
-(degree 524).
+The undirected graph Bartonella vinsonii arupensis has 1496 nodes and 109493
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09791 and has 9 connected components, where the component
+with most nodes has 1478 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 146.38,
+and the node degree mode is 1. The top 5 most central nodes are 1094561.MEI_00709
+(degree 645), 1094561.MEI_00548 (degree 591), 1094561.MEI_00250 (degree
+542), 1094561.MEI_00545 (degree 531) and 1094561.MEI_01270 (degree 524).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaVinsoniiArupensis(
 	
 	Datetime: 2021-02-02 22:23:03.380177
 	
-	The undirected graph Bartonella vinsonii arupensis has 1496 nodes and 109493 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09791
-	and has 9 connected components, where the component with most nodes has 1478 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 146.38, and the node degree mode is 1. The top 5
-	most central nodes are 1094561.MEI_00709 (degree 645), 1094561.MEI_00548 (degree
-	591), 1094561.MEI_00250 (degree 542), 1094561.MEI_00545 (degree 531) and 1094561.MEI_01270
-	(degree 524).
+	The undirected graph Bartonella vinsonii arupensis has 1496 nodes and 109493
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09791 and has 9 connected components, where the component
+	with most nodes has 1478 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 146.38,
+	and the node degree mode is 1. The top 5 most central nodes are 1094561.MEI_00709
+	(degree 645), 1094561.MEI_00548 (degree 591), 1094561.MEI_00250 (degree
+	542), 1094561.MEI_00545 (degree 531) and 1094561.MEI_01270 (degree 524).
 	
 
 

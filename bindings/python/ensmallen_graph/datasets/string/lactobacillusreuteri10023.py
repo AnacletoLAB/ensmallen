@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:17.530296
 
-The undirected graph Lactobacillus reuteri 10023 has 2165 nodes and 135283 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-and has 10 connected components, where the component with most nodes has 2142 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 124.97, and the node degree mode is 3. The top 5
-most central nodes are 349123.Lreu23DRAFT_4102 (degree 873), 349123.Lreu23DRAFT_3017
-(degree 653), 349123.Lreu23DRAFT_3367 (degree 648), 349123.Lreu23DRAFT_3515 (degree
-585) and 349123.Lreu23DRAFT_3954 (degree 543).
+The undirected graph Lactobacillus reuteri 10023 has 2165 nodes and 135283
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05775 and has 10 connected components, where the component
+with most nodes has 2142 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 124.97,
+and the node degree mode is 3. The top 5 most central nodes are 349123.Lreu23DRAFT_4102
+(degree 873), 349123.Lreu23DRAFT_3017 (degree 653), 349123.Lreu23DRAFT_3367
+(degree 648), 349123.Lreu23DRAFT_3515 (degree 585) and 349123.Lreu23DRAFT_3954
+(degree 543).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusReuteri10023(
 	
 	Datetime: 2021-02-02 20:32:17.530296
 	
-	The undirected graph Lactobacillus reuteri 10023 has 2165 nodes and 135283 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-	and has 10 connected components, where the component with most nodes has 2142 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 124.97, and the node degree mode is 3. The top 5
-	most central nodes are 349123.Lreu23DRAFT_4102 (degree 873), 349123.Lreu23DRAFT_3017
-	(degree 653), 349123.Lreu23DRAFT_3367 (degree 648), 349123.Lreu23DRAFT_3515 (degree
-	585) and 349123.Lreu23DRAFT_3954 (degree 543).
+	The undirected graph Lactobacillus reuteri 10023 has 2165 nodes and 135283
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05775 and has 10 connected components, where the component
+	with most nodes has 2142 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 124.97,
+	and the node degree mode is 3. The top 5 most central nodes are 349123.Lreu23DRAFT_4102
+	(degree 873), 349123.Lreu23DRAFT_3017 (degree 653), 349123.Lreu23DRAFT_3367
+	(degree 648), 349123.Lreu23DRAFT_3515 (degree 585) and 349123.Lreu23DRAFT_3954
+	(degree 543).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:33.035627
 
-The undirected graph fe-sphere has 16386 nodes and 49152 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00037 and
-is connected, as it has a single component. The graph median node degree is 6, the
-mean node degree is 6.00 and the node degree mode is 6. The top 5 most central nodes
-are 16385 (degree 6), 16384 (degree 6), 16383 (degree 6), 16382 (degree 6) and 16381
-(degree 6).
+The undirected graph fe-sphere has 16386 nodes and 49152 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00037 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 6.00 and the node degree mode
+is 6. The top 5 most central nodes are 16385 (degree 6), 16384 (degree
+6), 16383 (degree 6), 16382 (degree 6) and 16381 (degree 6).
 
 
 References
@@ -109,12 +109,12 @@ def FeSphere(
 	
 	Datetime: 2021-02-03 23:12:33.035627
 	
-	The undirected graph fe-sphere has 16386 nodes and 49152 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00037 and
-	is connected, as it has a single component. The graph median node degree is 6, the
-	mean node degree is 6.00 and the node degree mode is 6. The top 5 most central nodes
-	are 16385 (degree 6), 16384 (degree 6), 16383 (degree 6), 16382 (degree 6) and 16381
-	(degree 6).
+	The undirected graph fe-sphere has 16386 nodes and 49152 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00037 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 6.00 and the node degree mode
+	is 6. The top 5 most central nodes are 16385 (degree 6), 16384 (degree
+	6), 16383 (degree 6), 16382 (degree 6) and 16381 (degree 6).
 	
 
 

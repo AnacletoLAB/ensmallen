@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:46.749300
 
-The undirected graph Vibrio parahaemolyticus has 4761 nodes and 469058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04140 and
-has 17 connected components, where the component with most nodes has 4718 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 197.04, and the node degree mode is 2. The top 5 most central
-nodes are 223926.28805089 (degree 1792), 223926.28805603 (degree 1504), 223926.28807476
-(degree 1463), 223926.28805470 (degree 1450) and 223926.28807942 (degree 1329).
+The undirected graph Vibrio parahaemolyticus has 4761 nodes and 469058
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04140 and has 17 connected components, where the component
+with most nodes has 4718 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 197.04,
+and the node degree mode is 2. The top 5 most central nodes are 223926.28805089
+(degree 1792), 223926.28805603 (degree 1504), 223926.28807476 (degree 1463),
+223926.28805470 (degree 1450) and 223926.28807942 (degree 1329).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioParahaemolyticus(
 	
 	Datetime: 2021-02-02 20:04:46.749300
 	
-	The undirected graph Vibrio parahaemolyticus has 4761 nodes and 469058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04140 and
-	has 17 connected components, where the component with most nodes has 4718 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 197.04, and the node degree mode is 2. The top 5 most central
-	nodes are 223926.28805089 (degree 1792), 223926.28805603 (degree 1504), 223926.28807476
-	(degree 1463), 223926.28805470 (degree 1450) and 223926.28807942 (degree 1329).
+	The undirected graph Vibrio parahaemolyticus has 4761 nodes and 469058
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04140 and has 17 connected components, where the component
+	with most nodes has 4718 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 197.04,
+	and the node degree mode is 2. The top 5 most central nodes are 223926.28805089
+	(degree 1792), 223926.28805603 (degree 1504), 223926.28807476 (degree 1463),
+	223926.28805470 (degree 1450) and 223926.28807942 (degree 1329).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:06.391795
 
-The undirected graph Desulfovibrio sp. X2 has 3421 nodes and 405898 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06939 and
-has 4 connected components, where the component with most nodes has 3414 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 237.30, and the node degree mode is 4. The top 5 most central
-nodes are 941449.dsx2_2149 (degree 1635), 941449.dsx2_2098 (degree 1401), 941449.dsx2_2727
-(degree 1348), 941449.dsx2_2874 (degree 1335) and 941449.dsx2_2294 (degree 1309).
+The undirected graph Desulfovibrio sp. X2 has 3421 nodes and 405898 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06939 and has 4 connected components, where the component with most
+nodes has 3414 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 237.30, and
+the node degree mode is 4. The top 5 most central nodes are 941449.dsx2_2149
+(degree 1635), 941449.dsx2_2098 (degree 1401), 941449.dsx2_2727 (degree
+1348), 941449.dsx2_2874 (degree 1335) and 941449.dsx2_2294 (degree 1309).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfovibrioSp.X2(
 	
 	Datetime: 2021-02-02 22:01:06.391795
 	
-	The undirected graph Desulfovibrio sp. X2 has 3421 nodes and 405898 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06939 and
-	has 4 connected components, where the component with most nodes has 3414 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 237.30, and the node degree mode is 4. The top 5 most central
-	nodes are 941449.dsx2_2149 (degree 1635), 941449.dsx2_2098 (degree 1401), 941449.dsx2_2727
-	(degree 1348), 941449.dsx2_2874 (degree 1335) and 941449.dsx2_2294 (degree 1309).
+	The undirected graph Desulfovibrio sp. X2 has 3421 nodes and 405898 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06939 and has 4 connected components, where the component with most
+	nodes has 3414 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 237.30, and
+	the node degree mode is 4. The top 5 most central nodes are 941449.dsx2_2149
+	(degree 1635), 941449.dsx2_2098 (degree 1401), 941449.dsx2_2727 (degree
+	1348), 941449.dsx2_2874 (degree 1335) and 941449.dsx2_2294 (degree 1309).
 	
 
 

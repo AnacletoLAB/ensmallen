@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:25.281989
 
-The undirected graph Pleomorphomonas oryzae has 4622 nodes and 653679 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06121 and
-has 15 connected components, where the component with most nodes has 4588 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 282.86, and the node degree mode is 2. The top 5 most central
-nodes are 1122963.AUHB01000019_gene23 (degree 2128), 1122963.AUHB01000002_gene867
-(degree 1999), 1122963.AUHB01000006_gene2481 (degree 1796), 1122963.AUHB01000003_gene3809
-(degree 1745) and 1122963.AUHB01000003_gene3732 (degree 1592).
+The undirected graph Pleomorphomonas oryzae has 4622 nodes and 653679 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06121 and has 15 connected components, where the component with most
+nodes has 4588 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 282.86, and
+the node degree mode is 2. The top 5 most central nodes are 1122963.AUHB01000019_gene23
+(degree 2128), 1122963.AUHB01000002_gene867 (degree 1999), 1122963.AUHB01000006_gene2481
+(degree 1796), 1122963.AUHB01000003_gene3809 (degree 1745) and 1122963.AUHB01000003_gene3732
+(degree 1592).
 
 
 References
@@ -107,14 +108,15 @@ def PleomorphomonasOryzae(
 	
 	Datetime: 2021-02-02 22:45:25.281989
 	
-	The undirected graph Pleomorphomonas oryzae has 4622 nodes and 653679 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06121 and
-	has 15 connected components, where the component with most nodes has 4588 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 282.86, and the node degree mode is 2. The top 5 most central
-	nodes are 1122963.AUHB01000019_gene23 (degree 2128), 1122963.AUHB01000002_gene867
-	(degree 1999), 1122963.AUHB01000006_gene2481 (degree 1796), 1122963.AUHB01000003_gene3809
-	(degree 1745) and 1122963.AUHB01000003_gene3732 (degree 1592).
+	The undirected graph Pleomorphomonas oryzae has 4622 nodes and 653679 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06121 and has 15 connected components, where the component with most
+	nodes has 4588 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 282.86, and
+	the node degree mode is 2. The top 5 most central nodes are 1122963.AUHB01000019_gene23
+	(degree 2128), 1122963.AUHB01000002_gene867 (degree 1999), 1122963.AUHB01000006_gene2481
+	(degree 1796), 1122963.AUHB01000003_gene3809 (degree 1745) and 1122963.AUHB01000003_gene3732
+	(degree 1592).
 	
 
 

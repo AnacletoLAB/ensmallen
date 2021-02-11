@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:16.805666
 
-The undirected graph Streptococcus sp. 2136FAA has 2109 nodes and 141398 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06361
-and has 4 connected components, where the component with most nodes has 2102 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 134.09, and the node degree mode is 8. The top 5
-most central nodes are 469609.HMPREF0847_00148 (degree 854), 469609.HMPREF0847_00023
-(degree 805), 469609.HMPREF0847_00123 (degree 787), 469609.HMPREF0847_00589 (degree
-711) and 469609.HMPREF0847_01982 (degree 684).
+The undirected graph Streptococcus sp. 2136FAA has 2109 nodes and 141398
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06361 and has 4 connected components, where the component
+with most nodes has 2102 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 134.09,
+and the node degree mode is 8. The top 5 most central nodes are 469609.HMPREF0847_00148
+(degree 854), 469609.HMPREF0847_00023 (degree 805), 469609.HMPREF0847_00123
+(degree 787), 469609.HMPREF0847_00589 (degree 711) and 469609.HMPREF0847_01982
+(degree 684).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSp.2136faa(
 	
 	Datetime: 2021-02-02 20:55:16.805666
 	
-	The undirected graph Streptococcus sp. 2136FAA has 2109 nodes and 141398 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06361
-	and has 4 connected components, where the component with most nodes has 2102 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 134.09, and the node degree mode is 8. The top 5
-	most central nodes are 469609.HMPREF0847_00148 (degree 854), 469609.HMPREF0847_00023
-	(degree 805), 469609.HMPREF0847_00123 (degree 787), 469609.HMPREF0847_00589 (degree
-	711) and 469609.HMPREF0847_01982 (degree 684).
+	The undirected graph Streptococcus sp. 2136FAA has 2109 nodes and 141398
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06361 and has 4 connected components, where the component
+	with most nodes has 2102 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 134.09,
+	and the node degree mode is 8. The top 5 most central nodes are 469609.HMPREF0847_00148
+	(degree 854), 469609.HMPREF0847_00023 (degree 805), 469609.HMPREF0847_00123
+	(degree 787), 469609.HMPREF0847_00589 (degree 711) and 469609.HMPREF0847_01982
+	(degree 684).
 	
 
 

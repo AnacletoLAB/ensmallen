@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:49.948001
 
-The undirected graph Idiomarina loihiensis has 2623 nodes and 208534 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06064 and
-has 3 connected components, where the component with most nodes has 2619 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 159.00, and the node degree mode is 4. The top 5 most central
-nodes are 283942.IL0025 (degree 1071), 283942.IL0579 (degree 853), 283942.IL0578
-(degree 724), 283942.IL0711 (degree 719) and 283942.IL0016 (degree 677).
+The undirected graph Idiomarina loihiensis has 2623 nodes and 208534 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06064 and has 3 connected components, where the component with most
+nodes has 2619 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 159.00, and
+the node degree mode is 4. The top 5 most central nodes are 283942.IL0025
+(degree 1071), 283942.IL0579 (degree 853), 283942.IL0578 (degree 724),
+283942.IL0711 (degree 719) and 283942.IL0016 (degree 677).
 
 
 References
@@ -106,13 +107,14 @@ def IdiomarinaLoihiensis(
 	
 	Datetime: 2021-02-02 20:18:49.948001
 	
-	The undirected graph Idiomarina loihiensis has 2623 nodes and 208534 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06064 and
-	has 3 connected components, where the component with most nodes has 2619 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 159.00, and the node degree mode is 4. The top 5 most central
-	nodes are 283942.IL0025 (degree 1071), 283942.IL0579 (degree 853), 283942.IL0578
-	(degree 724), 283942.IL0711 (degree 719) and 283942.IL0016 (degree 677).
+	The undirected graph Idiomarina loihiensis has 2623 nodes and 208534 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06064 and has 3 connected components, where the component with most
+	nodes has 2619 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 159.00, and
+	the node degree mode is 4. The top 5 most central nodes are 283942.IL0025
+	(degree 1071), 283942.IL0579 (degree 853), 283942.IL0578 (degree 724),
+	283942.IL0711 (degree 719) and 283942.IL0016 (degree 677).
 	
 
 

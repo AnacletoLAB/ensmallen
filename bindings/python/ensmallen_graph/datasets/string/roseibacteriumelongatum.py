@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:25:56.673761
 
-The undirected graph Roseibacterium elongatum has 3407 nodes and 348294 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06003
-and has 10 connected components, where the component with most nodes has 3381 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 204.46, and the node degree mode is 2. The top 5
-most central nodes are 1294273.roselon_02467 (degree 1439), 1294273.roselon_03411
-(degree 1090), 1294273.roselon_00628 (degree 1058), 1294273.roselon_01044 (degree
-1055) and 1294273.roselon_02872 (degree 1031).
+The undirected graph Roseibacterium elongatum has 3407 nodes and 348294
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06003 and has 10 connected components, where the component
+with most nodes has 3381 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 204.46,
+and the node degree mode is 2. The top 5 most central nodes are 1294273.roselon_02467
+(degree 1439), 1294273.roselon_03411 (degree 1090), 1294273.roselon_00628
+(degree 1058), 1294273.roselon_01044 (degree 1055) and 1294273.roselon_02872
+(degree 1031).
 
 
 References
@@ -107,14 +108,15 @@ def RoseibacteriumElongatum(
 	
 	Datetime: 2021-02-03 21:25:56.673761
 	
-	The undirected graph Roseibacterium elongatum has 3407 nodes and 348294 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06003
-	and has 10 connected components, where the component with most nodes has 3381 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 204.46, and the node degree mode is 2. The top 5
-	most central nodes are 1294273.roselon_02467 (degree 1439), 1294273.roselon_03411
-	(degree 1090), 1294273.roselon_00628 (degree 1058), 1294273.roselon_01044 (degree
-	1055) and 1294273.roselon_02872 (degree 1031).
+	The undirected graph Roseibacterium elongatum has 3407 nodes and 348294
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06003 and has 10 connected components, where the component
+	with most nodes has 3381 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 204.46,
+	and the node degree mode is 2. The top 5 most central nodes are 1294273.roselon_02467
+	(degree 1439), 1294273.roselon_03411 (degree 1090), 1294273.roselon_00628
+	(degree 1058), 1294273.roselon_01044 (degree 1055) and 1294273.roselon_02872
+	(degree 1031).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:18.003363
 
-The undirected graph Streptomyces sp. PsTaAH124 has 7298 nodes and 1055510 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03964
-and has 37 connected components, where the component with most nodes has 7212 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 289.26, and the node degree mode is 2. The top 5
-most central nodes are 1157638.KB892157_gene1637 (degree 3527), 1157638.KB892198_gene1640
-(degree 2315), 1157638.KB892169_gene6338 (degree 2115), 1157638.KB892163_gene2641
-(degree 2010) and 1157638.KB892202_gene1721 (degree 1909).
+The undirected graph Streptomyces sp. PsTaAH124 has 7298 nodes and 1055510
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03964 and has 37 connected components, where the component
+with most nodes has 7212 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 247, the mean node degree is 289.26,
+and the node degree mode is 2. The top 5 most central nodes are 1157638.KB892157_gene1637
+(degree 3527), 1157638.KB892198_gene1640 (degree 2315), 1157638.KB892169_gene6338
+(degree 2115), 1157638.KB892163_gene2641 (degree 2010) and 1157638.KB892202_gene1721
+(degree 1909).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Pstaah124(
 	
 	Datetime: 2021-02-02 23:02:18.003363
 	
-	The undirected graph Streptomyces sp. PsTaAH124 has 7298 nodes and 1055510 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03964
-	and has 37 connected components, where the component with most nodes has 7212 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 289.26, and the node degree mode is 2. The top 5
-	most central nodes are 1157638.KB892157_gene1637 (degree 3527), 1157638.KB892198_gene1640
-	(degree 2315), 1157638.KB892169_gene6338 (degree 2115), 1157638.KB892163_gene2641
-	(degree 2010) and 1157638.KB892202_gene1721 (degree 1909).
+	The undirected graph Streptomyces sp. PsTaAH124 has 7298 nodes and 1055510
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03964 and has 37 connected components, where the component
+	with most nodes has 7212 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 247, the mean node degree is 289.26,
+	and the node degree mode is 2. The top 5 most central nodes are 1157638.KB892157_gene1637
+	(degree 3527), 1157638.KB892198_gene1640 (degree 2315), 1157638.KB892169_gene6338
+	(degree 2115), 1157638.KB892163_gene2641 (degree 2010) and 1157638.KB892202_gene1721
+	(degree 1909).
 	
 
 

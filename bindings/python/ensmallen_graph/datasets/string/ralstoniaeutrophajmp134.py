@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:29.913063
 
-The undirected graph Ralstonia eutropha JMP134 has 6313 nodes and 1048049 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05260
-and has 20 connected components, where the component with most nodes has 6267 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 259, the mean node degree is 332.03, and the node degree mode is 1. The top 5
-most central nodes are 264198.Reut_A0873 (degree 2721), 264198.Reut_A0718 (degree
-2376), 264198.Reut_A3126 (degree 2226), 264198.Reut_A2610 (degree 2214) and 264198.Reut_B4883
-(degree 2208).
+The undirected graph Ralstonia eutropha JMP134 has 6313 nodes and 1048049
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05260 and has 20 connected components, where the component
+with most nodes has 6267 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 259, the mean node degree is 332.03,
+and the node degree mode is 1. The top 5 most central nodes are 264198.Reut_A0873
+(degree 2721), 264198.Reut_A0718 (degree 2376), 264198.Reut_A3126 (degree
+2226), 264198.Reut_A2610 (degree 2214) and 264198.Reut_B4883 (degree 2208).
 
 
 References
@@ -107,14 +107,14 @@ def RalstoniaEutrophaJmp134(
 	
 	Datetime: 2021-02-02 20:13:29.913063
 	
-	The undirected graph Ralstonia eutropha JMP134 has 6313 nodes and 1048049 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05260
-	and has 20 connected components, where the component with most nodes has 6267 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 259, the mean node degree is 332.03, and the node degree mode is 1. The top 5
-	most central nodes are 264198.Reut_A0873 (degree 2721), 264198.Reut_A0718 (degree
-	2376), 264198.Reut_A3126 (degree 2226), 264198.Reut_A2610 (degree 2214) and 264198.Reut_B4883
-	(degree 2208).
+	The undirected graph Ralstonia eutropha JMP134 has 6313 nodes and 1048049
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05260 and has 20 connected components, where the component
+	with most nodes has 6267 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 259, the mean node degree is 332.03,
+	and the node degree mode is 1. The top 5 most central nodes are 264198.Reut_A0873
+	(degree 2721), 264198.Reut_A0718 (degree 2376), 264198.Reut_A3126 (degree
+	2226), 264198.Reut_A2610 (degree 2214) and 264198.Reut_B4883 (degree 2208).
 	
 
 

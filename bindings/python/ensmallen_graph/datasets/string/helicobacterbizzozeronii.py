@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:13.515391
 
-The undirected graph Helicobacter bizzozeronii has 1940 nodes and 94761 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05038
-and has 29 connected components, where the component with most nodes has 1857 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 60, the mean node degree is 97.69, and the node degree mode is 3. The top 5 most
-central nodes are 1002804.HBZC1_08710 (degree 667), 1002804.HBZC1_10360 (degree 519),
-1002804.HBZC1_04590 (degree 516), 1002804.HBZC1_11720 (degree 502) and 1002804.HBZC1_14350
-(degree 485).
+The undirected graph Helicobacter bizzozeronii has 1940 nodes and 94761
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05038 and has 29 connected components, where the component
+with most nodes has 1857 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 60, the mean node degree is 97.69,
+and the node degree mode is 3. The top 5 most central nodes are 1002804.HBZC1_08710
+(degree 667), 1002804.HBZC1_10360 (degree 519), 1002804.HBZC1_04590 (degree
+516), 1002804.HBZC1_11720 (degree 502) and 1002804.HBZC1_14350 (degree
+485).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterBizzozeronii(
 	
 	Datetime: 2021-02-02 22:07:13.515391
 	
-	The undirected graph Helicobacter bizzozeronii has 1940 nodes and 94761 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05038
-	and has 29 connected components, where the component with most nodes has 1857 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 60, the mean node degree is 97.69, and the node degree mode is 3. The top 5 most
-	central nodes are 1002804.HBZC1_08710 (degree 667), 1002804.HBZC1_10360 (degree 519),
-	1002804.HBZC1_04590 (degree 516), 1002804.HBZC1_11720 (degree 502) and 1002804.HBZC1_14350
-	(degree 485).
+	The undirected graph Helicobacter bizzozeronii has 1940 nodes and 94761
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05038 and has 29 connected components, where the component
+	with most nodes has 1857 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 60, the mean node degree is 97.69,
+	and the node degree mode is 3. The top 5 most central nodes are 1002804.HBZC1_08710
+	(degree 667), 1002804.HBZC1_10360 (degree 519), 1002804.HBZC1_04590 (degree
+	516), 1002804.HBZC1_11720 (degree 502) and 1002804.HBZC1_14350 (degree
+	485).
 	
 
 

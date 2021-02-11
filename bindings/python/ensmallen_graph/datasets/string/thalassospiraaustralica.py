@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:21.030001
 
-The undirected graph Thalassospira australica has 3732 nodes and 549629 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07895
-and has 2 connected components, where the component with most nodes has 3730 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 262, the mean node degree is 294.55, and the node degree mode is 3. The top 5
-most central nodes are 1528106.JRJE01000032_gene2935 (degree 1623), 1528106.JRJE01000004_gene467
-(degree 1483), 1528106.JRJE01000030_gene234 (degree 1418), 1528106.JRJE01000020_gene2468
-(degree 1342) and 1528106.JRJE01000005_gene1414 (degree 1278).
+The undirected graph Thalassospira australica has 3732 nodes and 549629
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07895 and has 2 connected components, where the component
+with most nodes has 3730 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 262, the mean node degree is 294.55,
+and the node degree mode is 3. The top 5 most central nodes are 1528106.JRJE01000032_gene2935
+(degree 1623), 1528106.JRJE01000004_gene467 (degree 1483), 1528106.JRJE01000030_gene234
+(degree 1418), 1528106.JRJE01000020_gene2468 (degree 1342) and 1528106.JRJE01000005_gene1414
+(degree 1278).
 
 
 References
@@ -107,14 +108,15 @@ def ThalassospiraAustralica(
 	
 	Datetime: 2021-02-03 23:18:21.030001
 	
-	The undirected graph Thalassospira australica has 3732 nodes and 549629 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07895
-	and has 2 connected components, where the component with most nodes has 3730 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 262, the mean node degree is 294.55, and the node degree mode is 3. The top 5
-	most central nodes are 1528106.JRJE01000032_gene2935 (degree 1623), 1528106.JRJE01000004_gene467
-	(degree 1483), 1528106.JRJE01000030_gene234 (degree 1418), 1528106.JRJE01000020_gene2468
-	(degree 1342) and 1528106.JRJE01000005_gene1414 (degree 1278).
+	The undirected graph Thalassospira australica has 3732 nodes and 549629
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07895 and has 2 connected components, where the component
+	with most nodes has 3730 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 262, the mean node degree is 294.55,
+	and the node degree mode is 3. The top 5 most central nodes are 1528106.JRJE01000032_gene2935
+	(degree 1623), 1528106.JRJE01000004_gene467 (degree 1483), 1528106.JRJE01000030_gene234
+	(degree 1418), 1528106.JRJE01000020_gene2468 (degree 1342) and 1528106.JRJE01000005_gene1414
+	(degree 1278).
 	
 
 

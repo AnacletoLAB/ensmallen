@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:53.443259
 
-The undirected graph Arenibacter latericius has 3702 nodes and 298785 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04361 and
-has 7 connected components, where the component with most nodes has 3690 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 161.42, and the node degree mode is 1. The top 5 most central
-nodes are 1121012.AUKX01000032_gene669 (degree 1226), 1121012.AUKX01000021_gene1698
-(degree 1097), 1121012.AUKX01000009_gene2876 (degree 1004), 1121012.AUKX01000011_gene2339
-(degree 994) and 1121012.AUKX01000059_gene1386 (degree 901).
+The undirected graph Arenibacter latericius has 3702 nodes and 298785 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04361 and has 7 connected components, where the component with most
+nodes has 3690 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 161.42, and
+the node degree mode is 1. The top 5 most central nodes are 1121012.AUKX01000032_gene669
+(degree 1226), 1121012.AUKX01000021_gene1698 (degree 1097), 1121012.AUKX01000009_gene2876
+(degree 1004), 1121012.AUKX01000011_gene2339 (degree 994) and 1121012.AUKX01000059_gene1386
+(degree 901).
 
 
 References
@@ -107,14 +108,15 @@ def ArenibacterLatericius(
 	
 	Datetime: 2021-02-02 22:31:53.443259
 	
-	The undirected graph Arenibacter latericius has 3702 nodes and 298785 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04361 and
-	has 7 connected components, where the component with most nodes has 3690 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 161.42, and the node degree mode is 1. The top 5 most central
-	nodes are 1121012.AUKX01000032_gene669 (degree 1226), 1121012.AUKX01000021_gene1698
-	(degree 1097), 1121012.AUKX01000009_gene2876 (degree 1004), 1121012.AUKX01000011_gene2339
-	(degree 994) and 1121012.AUKX01000059_gene1386 (degree 901).
+	The undirected graph Arenibacter latericius has 3702 nodes and 298785 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04361 and has 7 connected components, where the component with most
+	nodes has 3690 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 161.42, and
+	the node degree mode is 1. The top 5 most central nodes are 1121012.AUKX01000032_gene669
+	(degree 1226), 1121012.AUKX01000021_gene1698 (degree 1097), 1121012.AUKX01000009_gene2876
+	(degree 1004), 1121012.AUKX01000011_gene2339 (degree 994) and 1121012.AUKX01000059_gene1386
+	(degree 901).
 	
 
 

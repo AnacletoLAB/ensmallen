@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:10.731658
 
-The undirected graph Staphylococcus sp. HGB0015 has 2258 nodes and 164390 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06451
-and has 5 connected components, where the component with most nodes has 2248 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 145.61, and the node degree mode is 4. The top 5
-most central nodes are 1078083.HMPREF1208_01058 (degree 919), 1078083.HMPREF1208_01455
-(degree 825), 1078083.HMPREF1208_01454 (degree 811), 1078083.HMPREF1208_00608 (degree
-767) and 1078083.HMPREF1208_02344 (degree 726).
+The undirected graph Staphylococcus sp. HGB0015 has 2258 nodes and 164390
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06451 and has 5 connected components, where the component
+with most nodes has 2248 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 145.61,
+and the node degree mode is 4. The top 5 most central nodes are 1078083.HMPREF1208_01058
+(degree 919), 1078083.HMPREF1208_01455 (degree 825), 1078083.HMPREF1208_01454
+(degree 811), 1078083.HMPREF1208_00608 (degree 767) and 1078083.HMPREF1208_02344
+(degree 726).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusSp.Hgb0015(
 	
 	Datetime: 2021-02-02 22:20:10.731658
 	
-	The undirected graph Staphylococcus sp. HGB0015 has 2258 nodes and 164390 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06451
-	and has 5 connected components, where the component with most nodes has 2248 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 145.61, and the node degree mode is 4. The top 5
-	most central nodes are 1078083.HMPREF1208_01058 (degree 919), 1078083.HMPREF1208_01455
-	(degree 825), 1078083.HMPREF1208_01454 (degree 811), 1078083.HMPREF1208_00608 (degree
-	767) and 1078083.HMPREF1208_02344 (degree 726).
+	The undirected graph Staphylococcus sp. HGB0015 has 2258 nodes and 164390
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06451 and has 5 connected components, where the component
+	with most nodes has 2248 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 145.61,
+	and the node degree mode is 4. The top 5 most central nodes are 1078083.HMPREF1208_01058
+	(degree 919), 1078083.HMPREF1208_01455 (degree 825), 1078083.HMPREF1208_01454
+	(degree 811), 1078083.HMPREF1208_00608 (degree 767) and 1078083.HMPREF1208_02344
+	(degree 726).
 	
 
 

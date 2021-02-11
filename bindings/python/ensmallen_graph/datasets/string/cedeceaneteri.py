@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:57.984503
 
-The undirected graph Cedecea neteri has 4124 nodes and 886389 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10426
-and has 5 connected components, where the component with most nodes has 4116 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 363, the mean node degree is 429.87, and the node degree mode is 1. The top 5
-most central nodes are 158822.LH89_12745 (degree 2260), 158822.LH89_15140 (degree
-2095), 158822.LH89_03620 (degree 2065), 158822.LH89_18655 (degree 2045) and 158822.LH89_10550
-(degree 2016).
+The undirected graph Cedecea neteri has 4124 nodes and 886389 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10426 and has 5 connected components, where the component
+with most nodes has 4116 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 363, the mean node degree is 429.87,
+and the node degree mode is 1. The top 5 most central nodes are 158822.LH89_12745
+(degree 2260), 158822.LH89_15140 (degree 2095), 158822.LH89_03620 (degree
+2065), 158822.LH89_18655 (degree 2045) and 158822.LH89_10550 (degree 2016).
 
 
 References
@@ -107,14 +107,14 @@ def CedeceaNeteri(
 	
 	Datetime: 2021-02-02 19:52:57.984503
 	
-	The undirected graph Cedecea neteri has 4124 nodes and 886389 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10426
-	and has 5 connected components, where the component with most nodes has 4116 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 363, the mean node degree is 429.87, and the node degree mode is 1. The top 5
-	most central nodes are 158822.LH89_12745 (degree 2260), 158822.LH89_15140 (degree
-	2095), 158822.LH89_03620 (degree 2065), 158822.LH89_18655 (degree 2045) and 158822.LH89_10550
-	(degree 2016).
+	The undirected graph Cedecea neteri has 4124 nodes and 886389 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10426 and has 5 connected components, where the component
+	with most nodes has 4116 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 363, the mean node degree is 429.87,
+	and the node degree mode is 1. The top 5 most central nodes are 158822.LH89_12745
+	(degree 2260), 158822.LH89_15140 (degree 2095), 158822.LH89_03620 (degree
+	2065), 158822.LH89_18655 (degree 2045) and 158822.LH89_10550 (degree 2016).
 	
 
 

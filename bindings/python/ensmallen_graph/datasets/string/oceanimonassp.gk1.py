@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:37.384852
 
-The undirected graph Oceanimonas sp. GK1 has 3208 nodes and 366250 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07120 and
-has 2 connected components, where the component with most nodes has 3206 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 228.34, and the node degree mode is 132. The top 5 most central
-nodes are 511062.GU3_02505 (degree 1384), 511062.GU3_09350 (degree 1196), 511062.GU3_14760
-(degree 1168), 511062.GU3_03910 (degree 1119) and 511062.GU3_14265 (degree 1074).
+The undirected graph Oceanimonas sp. GK1 has 3208 nodes and 366250 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07120 and has 2 connected components, where the component with most
+nodes has 3206 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 228.34, and
+the node degree mode is 132. The top 5 most central nodes are 511062.GU3_02505
+(degree 1384), 511062.GU3_09350 (degree 1196), 511062.GU3_14760 (degree
+1168), 511062.GU3_03910 (degree 1119) and 511062.GU3_14265 (degree 1074).
 
 
 References
@@ -106,13 +107,14 @@ def OceanimonasSp.Gk1(
 	
 	Datetime: 2021-02-02 21:02:37.384852
 	
-	The undirected graph Oceanimonas sp. GK1 has 3208 nodes and 366250 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07120 and
-	has 2 connected components, where the component with most nodes has 3206 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 228.34, and the node degree mode is 132. The top 5 most central
-	nodes are 511062.GU3_02505 (degree 1384), 511062.GU3_09350 (degree 1196), 511062.GU3_14760
-	(degree 1168), 511062.GU3_03910 (degree 1119) and 511062.GU3_14265 (degree 1074).
+	The undirected graph Oceanimonas sp. GK1 has 3208 nodes and 366250 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07120 and has 2 connected components, where the component with most
+	nodes has 3206 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 228.34, and
+	the node degree mode is 132. The top 5 most central nodes are 511062.GU3_02505
+	(degree 1384), 511062.GU3_09350 (degree 1196), 511062.GU3_14760 (degree
+	1168), 511062.GU3_03910 (degree 1119) and 511062.GU3_14265 (degree 1074).
 	
 
 

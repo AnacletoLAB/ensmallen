@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:45.796184
 
-The undirected graph Roseobacter sp. MED193 has 3963 nodes and 552724 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07040 and
-has 10 connected components, where the component with most nodes has 3942 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 256,
-the mean node degree is 278.94, and the node degree mode is 2. The top 5 most central
-nodes are 314262.MED193_15232 (degree 1545), 314262.MED193_09475 (degree 1416), 314262.MED193_17754
-(degree 1369), 314262.MED193_04386 (degree 1358) and 314262.MED193_11644 (degree
+The undirected graph Roseobacter sp. MED193 has 3963 nodes and 552724 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07040 and has 10 connected components, where the component with most
+nodes has 3942 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 256, the mean node degree is 278.94, and
+the node degree mode is 2. The top 5 most central nodes are 314262.MED193_15232
+(degree 1545), 314262.MED193_09475 (degree 1416), 314262.MED193_17754 (degree
+1369), 314262.MED193_04386 (degree 1358) and 314262.MED193_11644 (degree
 1260).
 
 
@@ -107,13 +108,14 @@ def RoseobacterSp.Med193(
 	
 	Datetime: 2021-02-02 20:24:45.796184
 	
-	The undirected graph Roseobacter sp. MED193 has 3963 nodes and 552724 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07040 and
-	has 10 connected components, where the component with most nodes has 3942 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 256,
-	the mean node degree is 278.94, and the node degree mode is 2. The top 5 most central
-	nodes are 314262.MED193_15232 (degree 1545), 314262.MED193_09475 (degree 1416), 314262.MED193_17754
-	(degree 1369), 314262.MED193_04386 (degree 1358) and 314262.MED193_11644 (degree
+	The undirected graph Roseobacter sp. MED193 has 3963 nodes and 552724 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07040 and has 10 connected components, where the component with most
+	nodes has 3942 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 256, the mean node degree is 278.94, and
+	the node degree mode is 2. The top 5 most central nodes are 314262.MED193_15232
+	(degree 1545), 314262.MED193_09475 (degree 1416), 314262.MED193_17754 (degree
+	1369), 314262.MED193_04386 (degree 1358) and 314262.MED193_11644 (degree
 	1260).
 	
 

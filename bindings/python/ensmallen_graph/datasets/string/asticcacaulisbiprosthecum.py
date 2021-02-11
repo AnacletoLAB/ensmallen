@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:01.241378
 
-The undirected graph Asticcacaulis biprosthecum has 4604 nodes and 385226 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03636
-and has 37 connected components, where the component with most nodes has 4514 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 167.34, and the node degree mode is 2. The top 5
-most central nodes are 715226.ABI_03020 (degree 1355), 715226.ABI_08240 (degree 1158),
-715226.ABI_37330 (degree 1154), 715226.ABI_25420 (degree 1063) and 715226.ABI_37770
-(degree 1031).
+The undirected graph Asticcacaulis biprosthecum has 4604 nodes and 385226
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03636 and has 37 connected components, where the component
+with most nodes has 4514 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 167.34,
+and the node degree mode is 2. The top 5 most central nodes are 715226.ABI_03020
+(degree 1355), 715226.ABI_08240 (degree 1158), 715226.ABI_37330 (degree
+1154), 715226.ABI_25420 (degree 1063) and 715226.ABI_37770 (degree 1031).
 
 
 References
@@ -107,14 +107,14 @@ def AsticcacaulisBiprosthecum(
 	
 	Datetime: 2021-02-02 21:36:01.241378
 	
-	The undirected graph Asticcacaulis biprosthecum has 4604 nodes and 385226 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03636
-	and has 37 connected components, where the component with most nodes has 4514 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 167.34, and the node degree mode is 2. The top 5
-	most central nodes are 715226.ABI_03020 (degree 1355), 715226.ABI_08240 (degree 1158),
-	715226.ABI_37330 (degree 1154), 715226.ABI_25420 (degree 1063) and 715226.ABI_37770
-	(degree 1031).
+	The undirected graph Asticcacaulis biprosthecum has 4604 nodes and 385226
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03636 and has 37 connected components, where the component
+	with most nodes has 4514 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 167.34,
+	and the node degree mode is 2. The top 5 most central nodes are 715226.ABI_03020
+	(degree 1355), 715226.ABI_08240 (degree 1158), 715226.ABI_37330 (degree
+	1154), 715226.ABI_25420 (degree 1063) and 715226.ABI_37770 (degree 1031).
 	
 
 

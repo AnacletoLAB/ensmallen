@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:38.867856
 
-The undirected graph Bifidobacterium sp. 7101 has 1488 nodes and 96601 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08732 and
-has 3 connected components, where the component with most nodes has 1484 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 129.84, and the node degree mode is 36. The top 5 most central
-nodes are 1394175.AWUN01000002_gene785 (degree 720), 1394175.AWUN01000003_gene605
-(degree 689), 1394175.AWUN01000003_gene523 (degree 683), 1394175.AWUN01000004_gene358
-(degree 654) and 1394175.AWUN01000003_gene509 (degree 567).
+The undirected graph Bifidobacterium sp. 7101 has 1488 nodes and 96601
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08732 and has 3 connected components, where the component
+with most nodes has 1484 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 129.84,
+and the node degree mode is 36. The top 5 most central nodes are 1394175.AWUN01000002_gene785
+(degree 720), 1394175.AWUN01000003_gene605 (degree 689), 1394175.AWUN01000003_gene523
+(degree 683), 1394175.AWUN01000004_gene358 (degree 654) and 1394175.AWUN01000003_gene509
+(degree 567).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumSp.7101(
 	
 	Datetime: 2021-02-03 22:25:38.867856
 	
-	The undirected graph Bifidobacterium sp. 7101 has 1488 nodes and 96601 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08732 and
-	has 3 connected components, where the component with most nodes has 1484 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 129.84, and the node degree mode is 36. The top 5 most central
-	nodes are 1394175.AWUN01000002_gene785 (degree 720), 1394175.AWUN01000003_gene605
-	(degree 689), 1394175.AWUN01000003_gene523 (degree 683), 1394175.AWUN01000004_gene358
-	(degree 654) and 1394175.AWUN01000003_gene509 (degree 567).
+	The undirected graph Bifidobacterium sp. 7101 has 1488 nodes and 96601
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08732 and has 3 connected components, where the component
+	with most nodes has 1484 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 129.84,
+	and the node degree mode is 36. The top 5 most central nodes are 1394175.AWUN01000002_gene785
+	(degree 720), 1394175.AWUN01000003_gene605 (degree 689), 1394175.AWUN01000003_gene523
+	(degree 683), 1394175.AWUN01000004_gene358 (degree 654) and 1394175.AWUN01000003_gene509
+	(degree 567).
 	
 
 

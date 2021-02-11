@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:30:22.831337
 
-The undirected graph soc-lastfm has 1191805 nodes and 4519330 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 7.58, and the node degree mode is 1. The top 5 most central
-nodes are 106938 (degree 5150), 108034 (degree 4492), 107095 (degree 3011), 107974
-(degree 2593) and 108129 (degree 2216).
+The undirected graph soc-lastfm has 1191805 nodes and 4519330 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 7.58, and the
+node degree mode is 1. The top 5 most central nodes are 106938 (degree
+5150), 108034 (degree 4492), 107095 (degree 3011), 107974 (degree 2593)
+and 108129 (degree 2216).
 
 
 References
@@ -111,12 +112,13 @@ def SocLastfm(
 	
 	Datetime: 2021-02-06 12:30:22.831337
 	
-	The undirected graph soc-lastfm has 1191805 nodes and 4519330 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 7.58, and the node degree mode is 1. The top 5 most central
-	nodes are 106938 (degree 5150), 108034 (degree 4492), 107095 (degree 3011), 107974
-	(degree 2593) and 108129 (degree 2216).
+	The undirected graph soc-lastfm has 1191805 nodes and 4519330 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 7.58, and the
+	node degree mode is 1. The top 5 most central nodes are 106938 (degree
+	5150), 108034 (degree 4492), 107095 (degree 3011), 107974 (degree 2593)
+	and 108129 (degree 2216).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:22.841755
 
-The undirected graph Acidaminococcus intestini has 2378 nodes and 143266 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05069
-and has 7 connected components, where the component with most nodes has 2360 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 120.49, and the node degree mode is 5. The top 5 most
-central nodes are 568816.Acin_1482 (degree 843), 568816.Acin_2091 (degree 698), 568816.Acin_1168
-(degree 692), 568816.Acin_1449 (degree 681) and 568816.Acin_0413 (degree 650).
+The undirected graph Acidaminococcus intestini has 2378 nodes and 143266
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05069 and has 7 connected components, where the component
+with most nodes has 2360 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 120.49,
+and the node degree mode is 5. The top 5 most central nodes are 568816.Acin_1482
+(degree 843), 568816.Acin_2091 (degree 698), 568816.Acin_1168 (degree 692),
+568816.Acin_1449 (degree 681) and 568816.Acin_0413 (degree 650).
 
 
 References
@@ -106,13 +107,14 @@ def AcidaminococcusIntestini(
 	
 	Datetime: 2021-02-02 21:13:22.841755
 	
-	The undirected graph Acidaminococcus intestini has 2378 nodes and 143266 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05069
-	and has 7 connected components, where the component with most nodes has 2360 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 120.49, and the node degree mode is 5. The top 5 most
-	central nodes are 568816.Acin_1482 (degree 843), 568816.Acin_2091 (degree 698), 568816.Acin_1168
-	(degree 692), 568816.Acin_1449 (degree 681) and 568816.Acin_0413 (degree 650).
+	The undirected graph Acidaminococcus intestini has 2378 nodes and 143266
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05069 and has 7 connected components, where the component
+	with most nodes has 2360 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 120.49,
+	and the node degree mode is 5. The top 5 most central nodes are 568816.Acin_1482
+	(degree 843), 568816.Acin_2091 (degree 698), 568816.Acin_1168 (degree 692),
+	568816.Acin_1449 (degree 681) and 568816.Acin_0413 (degree 650).
 	
 
 

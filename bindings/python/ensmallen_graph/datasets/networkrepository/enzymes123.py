@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:25:29.795732
 
-The undirected graph ENZYMES123 has 90 nodes with 2 different node types: 2 (nodes
-number 64) and 1 (nodes number 26) and 127 unweighted edges, of which none are self-loops.
-The graph is dense as it has a density of 0.03171 and is connected, as it has a single
-component. The graph median node degree is 2, the mean node degree is 2.82 and the
-node degree mode is 2. The top 5 most central nodes are 40 (degree 9), 32 (degree
-8), 34 (degree 7), 48 (degree 6) and 26 (degree 5).
+The undirected graph ENZYMES123 has 90 nodes with 2 different node types:
+2 (nodes number 64) and 1 (nodes number 26) and 127 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.03171
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 2.82 and the node degree mode is 2. The top
+5 most central nodes are 40 (degree 9), 32 (degree 8), 34 (degree 7), 48
+(degree 6) and 26 (degree 5).
 
 
 References
@@ -102,12 +103,13 @@ def Enzymes123(
 	
 	Datetime: 2021-02-04 08:25:29.795732
 	
-	The undirected graph ENZYMES123 has 90 nodes with 2 different node types: 2 (nodes
-	number 64) and 1 (nodes number 26) and 127 unweighted edges, of which none are self-loops.
-	The graph is dense as it has a density of 0.03171 and is connected, as it has a single
-	component. The graph median node degree is 2, the mean node degree is 2.82 and the
-	node degree mode is 2. The top 5 most central nodes are 40 (degree 9), 32 (degree
-	8), 34 (degree 7), 48 (degree 6) and 26 (degree 5).
+	The undirected graph ENZYMES123 has 90 nodes with 2 different node types:
+	2 (nodes number 64) and 1 (nodes number 26) and 127 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.03171
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 2.82 and the node degree mode is 2. The top
+	5 most central nodes are 40 (degree 9), 32 (degree 8), 34 (degree 7), 48
+	(degree 6) and 26 (degree 5).
 	
 
 

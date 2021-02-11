@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:30.251715
 
-The undirected graph Selenomonas sp. F0426 has 2284 nodes and 160927 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06172 and
-has 4 connected components, where the component with most nodes has 2278 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 140.92, and the node degree mode is 6. The top 5 most central
-nodes are 1321786.HMPREF1992_00407 (degree 821), 1321786.HMPREF1992_00622 (degree
-757), 1321786.HMPREF1992_02358 (degree 755), 1321786.HMPREF1992_01151 (degree 713)
-and 1321786.HMPREF1992_00145 (degree 687).
+The undirected graph Selenomonas sp. F0426 has 2284 nodes and 160927 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06172 and has 4 connected components, where the component with most
+nodes has 2278 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 140.92, and
+the node degree mode is 6. The top 5 most central nodes are 1321786.HMPREF1992_00407
+(degree 821), 1321786.HMPREF1992_00622 (degree 757), 1321786.HMPREF1992_02358
+(degree 755), 1321786.HMPREF1992_01151 (degree 713) and 1321786.HMPREF1992_00145
+(degree 687).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasSp.F0426(
 	
 	Datetime: 2021-02-03 21:53:30.251715
 	
-	The undirected graph Selenomonas sp. F0426 has 2284 nodes and 160927 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06172 and
-	has 4 connected components, where the component with most nodes has 2278 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 140.92, and the node degree mode is 6. The top 5 most central
-	nodes are 1321786.HMPREF1992_00407 (degree 821), 1321786.HMPREF1992_00622 (degree
-	757), 1321786.HMPREF1992_02358 (degree 755), 1321786.HMPREF1992_01151 (degree 713)
-	and 1321786.HMPREF1992_00145 (degree 687).
+	The undirected graph Selenomonas sp. F0426 has 2284 nodes and 160927 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06172 and has 4 connected components, where the component with most
+	nodes has 2278 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 140.92, and
+	the node degree mode is 6. The top 5 most central nodes are 1321786.HMPREF1992_00407
+	(degree 821), 1321786.HMPREF1992_00622 (degree 757), 1321786.HMPREF1992_02358
+	(degree 755), 1321786.HMPREF1992_01151 (degree 713) and 1321786.HMPREF1992_00145
+	(degree 687).
 	
 
 

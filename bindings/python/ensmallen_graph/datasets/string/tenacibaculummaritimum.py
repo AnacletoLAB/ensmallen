@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:06:34.666499
 
-The undirected graph Tenacibaculum maritimum has 2864 nodes and 169000 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04122 and
-has 51 connected components, where the component with most nodes has 2725 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 118.02, and the node degree mode is 2. The top 5 most central
-nodes are 1349785.BAUG01000013_gene1026 (degree 993), 1349785.BAUG01000030_gene1736
-(degree 857), 1349785.BAUG01000032_gene1846 (degree 777), 1349785.BAUG01000008_gene631
-(degree 716) and 1349785.BAUG01000026_gene1586 (degree 707).
+The undirected graph Tenacibaculum maritimum has 2864 nodes and 169000
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04122 and has 51 connected components, where the component
+with most nodes has 2725 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 118.02,
+and the node degree mode is 2. The top 5 most central nodes are 1349785.BAUG01000013_gene1026
+(degree 993), 1349785.BAUG01000030_gene1736 (degree 857), 1349785.BAUG01000032_gene1846
+(degree 777), 1349785.BAUG01000008_gene631 (degree 716) and 1349785.BAUG01000026_gene1586
+(degree 707).
 
 
 References
@@ -107,14 +108,15 @@ def TenacibaculumMaritimum(
 	
 	Datetime: 2021-02-03 22:06:34.666499
 	
-	The undirected graph Tenacibaculum maritimum has 2864 nodes and 169000 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04122 and
-	has 51 connected components, where the component with most nodes has 2725 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 118.02, and the node degree mode is 2. The top 5 most central
-	nodes are 1349785.BAUG01000013_gene1026 (degree 993), 1349785.BAUG01000030_gene1736
-	(degree 857), 1349785.BAUG01000032_gene1846 (degree 777), 1349785.BAUG01000008_gene631
-	(degree 716) and 1349785.BAUG01000026_gene1586 (degree 707).
+	The undirected graph Tenacibaculum maritimum has 2864 nodes and 169000
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04122 and has 51 connected components, where the component
+	with most nodes has 2725 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 118.02,
+	and the node degree mode is 2. The top 5 most central nodes are 1349785.BAUG01000013_gene1026
+	(degree 993), 1349785.BAUG01000030_gene1736 (degree 857), 1349785.BAUG01000032_gene1846
+	(degree 777), 1349785.BAUG01000008_gene631 (degree 716) and 1349785.BAUG01000026_gene1586
+	(degree 707).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:06.726710
 
-The undirected graph Halalkalicoccus jeotgali has 3678 nodes and 285440 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04221
-and has 51 connected components, where the component with most nodes has 3557 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 155.21, and the node degree mode is 3. The top 5
-most central nodes are 795797.C497_07699 (degree 1056), 795797.C497_09793 (degree
-1053), 795797.C497_04997 (degree 956), 795797.C497_05812 (degree 916) and 795797.C497_18857
-(degree 884).
+The undirected graph Halalkalicoccus jeotgali has 3678 nodes and 285440
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04221 and has 51 connected components, where the component
+with most nodes has 3557 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 155.21,
+and the node degree mode is 3. The top 5 most central nodes are 795797.C497_07699
+(degree 1056), 795797.C497_09793 (degree 1053), 795797.C497_04997 (degree
+956), 795797.C497_05812 (degree 916) and 795797.C497_18857 (degree 884).
 
 
 References
@@ -107,14 +107,14 @@ def HalalkalicoccusJeotgali(
 	
 	Datetime: 2021-02-02 21:45:06.726710
 	
-	The undirected graph Halalkalicoccus jeotgali has 3678 nodes and 285440 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04221
-	and has 51 connected components, where the component with most nodes has 3557 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 155.21, and the node degree mode is 3. The top 5
-	most central nodes are 795797.C497_07699 (degree 1056), 795797.C497_09793 (degree
-	1053), 795797.C497_04997 (degree 956), 795797.C497_05812 (degree 916) and 795797.C497_18857
-	(degree 884).
+	The undirected graph Halalkalicoccus jeotgali has 3678 nodes and 285440
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04221 and has 51 connected components, where the component
+	with most nodes has 3557 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 155.21,
+	and the node degree mode is 3. The top 5 most central nodes are 795797.C497_07699
+	(degree 1056), 795797.C497_09793 (degree 1053), 795797.C497_04997 (degree
+	956), 795797.C497_05812 (degree 916) and 795797.C497_18857 (degree 884).
 	
 
 

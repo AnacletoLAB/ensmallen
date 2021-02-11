@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:03.027667
 
-The undirected graph Lactobacillus florum has 1171 nodes and 66717 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09739 and
-has 9 connected components, where the component with most nodes has 1152 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 113.95, and the node degree mode is 1. The top 5 most central
-nodes are 1221537.B807_512 (degree 568), 1221537.B807_1022 (degree 448), 1221537.B807_570
-(degree 395), 1221537.B807_456 (degree 388) and 1221537.B807_277 (degree 385).
+The undirected graph Lactobacillus florum has 1171 nodes and 66717 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09739 and has 9 connected components, where the component with most
+nodes has 1152 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 113.95, and
+the node degree mode is 1. The top 5 most central nodes are 1221537.B807_512
+(degree 568), 1221537.B807_1022 (degree 448), 1221537.B807_570 (degree
+395), 1221537.B807_456 (degree 388) and 1221537.B807_277 (degree 385).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusFlorum(
 	
 	Datetime: 2021-02-02 23:24:03.027667
 	
-	The undirected graph Lactobacillus florum has 1171 nodes and 66717 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09739 and
-	has 9 connected components, where the component with most nodes has 1152 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 113.95, and the node degree mode is 1. The top 5 most central
-	nodes are 1221537.B807_512 (degree 568), 1221537.B807_1022 (degree 448), 1221537.B807_570
-	(degree 395), 1221537.B807_456 (degree 388) and 1221537.B807_277 (degree 385).
+	The undirected graph Lactobacillus florum has 1171 nodes and 66717 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09739 and has 9 connected components, where the component with most
+	nodes has 1152 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 113.95, and
+	the node degree mode is 1. The top 5 most central nodes are 1221537.B807_512
+	(degree 568), 1221537.B807_1022 (degree 448), 1221537.B807_570 (degree
+	395), 1221537.B807_456 (degree 388) and 1221537.B807_277 (degree 385).
 	
 
 

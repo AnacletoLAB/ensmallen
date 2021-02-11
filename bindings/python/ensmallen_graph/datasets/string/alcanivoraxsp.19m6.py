@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:15.969634
 
-The undirected graph Alcanivorax sp. 19m6 has 3761 nodes and 304311 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04304 and
-has 11 connected components, where the component with most nodes has 3736 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 161.82, and the node degree mode is 5. The top 5 most central
-nodes are 1177154.Y5S_02077 (degree 1198), 1177154.Y5S_03671 (degree 1171), 1177154.Y5S_01089
-(degree 1127), 1177154.Y5S_02474 (degree 972) and 1177154.Y5S_02914 (degree 968).
+The undirected graph Alcanivorax sp. 19m6 has 3761 nodes and 304311 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04304 and has 11 connected components, where the component with most
+nodes has 3736 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 161.82, and
+the node degree mode is 5. The top 5 most central nodes are 1177154.Y5S_02077
+(degree 1198), 1177154.Y5S_03671 (degree 1171), 1177154.Y5S_01089 (degree
+1127), 1177154.Y5S_02474 (degree 972) and 1177154.Y5S_02914 (degree 968).
 
 
 References
@@ -106,13 +107,14 @@ def AlcanivoraxSp.19m6(
 	
 	Datetime: 2021-02-02 23:09:15.969634
 	
-	The undirected graph Alcanivorax sp. 19m6 has 3761 nodes and 304311 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04304 and
-	has 11 connected components, where the component with most nodes has 3736 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 161.82, and the node degree mode is 5. The top 5 most central
-	nodes are 1177154.Y5S_02077 (degree 1198), 1177154.Y5S_03671 (degree 1171), 1177154.Y5S_01089
-	(degree 1127), 1177154.Y5S_02474 (degree 972) and 1177154.Y5S_02914 (degree 968).
+	The undirected graph Alcanivorax sp. 19m6 has 3761 nodes and 304311 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04304 and has 11 connected components, where the component with most
+	nodes has 3736 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 161.82, and
+	the node degree mode is 5. The top 5 most central nodes are 1177154.Y5S_02077
+	(degree 1198), 1177154.Y5S_03671 (degree 1171), 1177154.Y5S_01089 (degree
+	1127), 1177154.Y5S_02474 (degree 972) and 1177154.Y5S_02914 (degree 968).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:30.092387
 
-The undirected graph TF14 has 3160 nodes and 29714 weighted edges, of which 46 are
-self-loops. The graph is sparse as it has a density of 0.00595 and is connected,
-as it has a single component. The graph median node degree is 19, the mean node degree
-is 18.79, and the node degree mode is 20. The top 5 most central nodes are 2235 (degree
-54), 2233 (degree 53), 2215 (degree 52), 2342 (degree 48) and 2266 (degree 48).
+The undirected graph TF14 has 3160 nodes and 29714 weighted edges, of which
+46 are self-loops. The graph is sparse as it has a density of 0.00595 and
+is connected, as it has a single component. The graph median node degree
+is 19, the mean node degree is 18.79, and the node degree mode is 20. The
+top 5 most central nodes are 2235 (degree 54), 2233 (degree 53), 2215 (degree
+52), 2342 (degree 48) and 2266 (degree 48).
 
 
 References
@@ -101,11 +102,12 @@ def Tf14(
 	
 	Datetime: 2021-02-06 10:14:30.092387
 	
-	The undirected graph TF14 has 3160 nodes and 29714 weighted edges, of which 46 are
-	self-loops. The graph is sparse as it has a density of 0.00595 and is connected,
-	as it has a single component. The graph median node degree is 19, the mean node degree
-	is 18.79, and the node degree mode is 20. The top 5 most central nodes are 2235 (degree
-	54), 2233 (degree 53), 2215 (degree 52), 2342 (degree 48) and 2266 (degree 48).
+	The undirected graph TF14 has 3160 nodes and 29714 weighted edges, of which
+	46 are self-loops. The graph is sparse as it has a density of 0.00595 and
+	is connected, as it has a single component. The graph median node degree
+	is 19, the mean node degree is 18.79, and the node degree mode is 20. The
+	top 5 most central nodes are 2235 (degree 54), 2233 (degree 53), 2215 (degree
+	52), 2342 (degree 48) and 2266 (degree 48).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:42.668556
 
-The undirected graph Ruminococcus gauvreauii has 3641 nodes and 305426 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04609 and
-has 7 connected components, where the component with most nodes has 3626 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 167.77, and the node degree mode is 2. The top 5 most central
-nodes are 1123075.AUDP01000007_gene2730 (degree 1769), 1123075.AUDP01000008_gene1762
-(degree 1338), 1123075.AUDP01000001_gene2292 (degree 1280), 1123075.AUDP01000008_gene1649
-(degree 1136) and 1123075.AUDP01000007_gene2729 (degree 1135).
+The undirected graph Ruminococcus gauvreauii has 3641 nodes and 305426
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04609 and has 7 connected components, where the component
+with most nodes has 3626 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 167.77,
+and the node degree mode is 2. The top 5 most central nodes are 1123075.AUDP01000007_gene2730
+(degree 1769), 1123075.AUDP01000008_gene1762 (degree 1338), 1123075.AUDP01000001_gene2292
+(degree 1280), 1123075.AUDP01000008_gene1649 (degree 1136) and 1123075.AUDP01000007_gene2729
+(degree 1135).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusGauvreauii(
 	
 	Datetime: 2021-02-02 22:47:42.668556
 	
-	The undirected graph Ruminococcus gauvreauii has 3641 nodes and 305426 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04609 and
-	has 7 connected components, where the component with most nodes has 3626 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 167.77, and the node degree mode is 2. The top 5 most central
-	nodes are 1123075.AUDP01000007_gene2730 (degree 1769), 1123075.AUDP01000008_gene1762
-	(degree 1338), 1123075.AUDP01000001_gene2292 (degree 1280), 1123075.AUDP01000008_gene1649
-	(degree 1136) and 1123075.AUDP01000007_gene2729 (degree 1135).
+	The undirected graph Ruminococcus gauvreauii has 3641 nodes and 305426
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04609 and has 7 connected components, where the component
+	with most nodes has 3626 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 167.77,
+	and the node degree mode is 2. The top 5 most central nodes are 1123075.AUDP01000007_gene2730
+	(degree 1769), 1123075.AUDP01000008_gene1762 (degree 1338), 1123075.AUDP01000001_gene2292
+	(degree 1280), 1123075.AUDP01000008_gene1649 (degree 1136) and 1123075.AUDP01000007_gene2729
+	(degree 1135).
 	
 
 

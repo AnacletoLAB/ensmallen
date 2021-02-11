@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:00.325888
 
-The undirected graph Microsporum gypseum has 6076 nodes and 595926 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03229 and
-has 16 connected components, where the component with most nodes has 6042 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 196.16, and the node degree mode is 1. The top 5 most central
-nodes are 63402.XP_003174234.1 (degree 1465), 63402.XP_003170928.1 (degree 1416),
-63402.XP_003171777.1 (degree 1345), 63402.XP_003177212.1 (degree 1311) and 63402.XP_003171937.1
+The undirected graph Microsporum gypseum has 6076 nodes and 595926 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03229 and has 16 connected components, where the component with most
+nodes has 6042 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 196.16, and
+the node degree mode is 1. The top 5 most central nodes are 63402.XP_003174234.1
+(degree 1465), 63402.XP_003170928.1 (degree 1416), 63402.XP_003171777.1
+(degree 1345), 63402.XP_003177212.1 (degree 1311) and 63402.XP_003171937.1
 (degree 1294).
 
 
@@ -107,13 +108,14 @@ def MicrosporumGypseum(
 	
 	Datetime: 2021-02-02 18:24:00.325888
 	
-	The undirected graph Microsporum gypseum has 6076 nodes and 595926 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03229 and
-	has 16 connected components, where the component with most nodes has 6042 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 196.16, and the node degree mode is 1. The top 5 most central
-	nodes are 63402.XP_003174234.1 (degree 1465), 63402.XP_003170928.1 (degree 1416),
-	63402.XP_003171777.1 (degree 1345), 63402.XP_003177212.1 (degree 1311) and 63402.XP_003171937.1
+	The undirected graph Microsporum gypseum has 6076 nodes and 595926 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03229 and has 16 connected components, where the component with most
+	nodes has 6042 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 196.16, and
+	the node degree mode is 1. The top 5 most central nodes are 63402.XP_003174234.1
+	(degree 1465), 63402.XP_003170928.1 (degree 1416), 63402.XP_003171777.1
+	(degree 1345), 63402.XP_003177212.1 (degree 1311) and 63402.XP_003171937.1
 	(degree 1294).
 	
 

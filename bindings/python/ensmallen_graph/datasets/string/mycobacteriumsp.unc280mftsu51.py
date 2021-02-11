@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:36.990805
 
-The undirected graph Mycobacterium sp. UNC280MFTsu51 has 5316 nodes and 757609 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05363
-and has 23 connected components, where the component with most nodes has 5262 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 285.03, and the node degree mode is 3. The top 5
-most central nodes are 1449048.JQKU01000008_gene1071 (degree 2243), 1449048.JQKU01000035_gene2801
+The undirected graph Mycobacterium sp. UNC280MFTsu51 has 5316 nodes and
+757609 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05363 and has 23 connected components, where the
+component with most nodes has 5262 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 234, the mean node degree
+is 285.03, and the node degree mode is 3. The top 5 most central nodes
+are 1449048.JQKU01000008_gene1071 (degree 2243), 1449048.JQKU01000035_gene2801
 (degree 1717), 1449048.JQKU01000012_gene3566 (degree 1519), 1449048.JQKU01000028_gene4815
 (degree 1509) and 1449048.JQKU01000025_gene3983 (degree 1485).
 
@@ -107,12 +108,13 @@ def MycobacteriumSp.Unc280mftsu51(
 	
 	Datetime: 2021-02-03 23:03:36.990805
 	
-	The undirected graph Mycobacterium sp. UNC280MFTsu51 has 5316 nodes and 757609 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05363
-	and has 23 connected components, where the component with most nodes has 5262 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 285.03, and the node degree mode is 3. The top 5
-	most central nodes are 1449048.JQKU01000008_gene1071 (degree 2243), 1449048.JQKU01000035_gene2801
+	The undirected graph Mycobacterium sp. UNC280MFTsu51 has 5316 nodes and
+	757609 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05363 and has 23 connected components, where the
+	component with most nodes has 5262 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 234, the mean node degree
+	is 285.03, and the node degree mode is 3. The top 5 most central nodes
+	are 1449048.JQKU01000008_gene1071 (degree 2243), 1449048.JQKU01000035_gene2801
 	(degree 1717), 1449048.JQKU01000012_gene3566 (degree 1519), 1449048.JQKU01000028_gene4815
 	(degree 1509) and 1449048.JQKU01000025_gene3983 (degree 1485).
 	

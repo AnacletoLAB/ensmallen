@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:48:41.174255
 
-The undirected graph cit-DBLP has 12591 nodes and 49635 weighted edges, of which
-15 are self-loops. The graph is quite sparse as it has a density of 0.00063 and has
-40 connected components, where the component with most nodes has 12495 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 2,
-the mean node degree is 7.88 and the node degree mode is 1. The top 5 most central
-nodes are 62 (degree 709), 203 (degree 651), 439 (degree 432), 1477 (degree 361)
-and 10700 (degree 313).
+The undirected graph cit-DBLP has 12591 nodes and 49635 weighted edges,
+of which 15 are self-loops. The graph is quite sparse as it has a density
+of 0.00063 and has 40 connected components, where the component with most
+nodes has 12495 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 7.88 and the
+node degree mode is 1. The top 5 most central nodes are 62 (degree 709),
+203 (degree 651), 439 (degree 432), 1477 (degree 361) and 10700 (degree
+313).
 
 
 References
@@ -103,13 +104,14 @@ def CitDblp(
 	
 	Datetime: 2021-02-03 22:48:41.174255
 	
-	The undirected graph cit-DBLP has 12591 nodes and 49635 weighted edges, of which
-	15 are self-loops. The graph is quite sparse as it has a density of 0.00063 and has
-	40 connected components, where the component with most nodes has 12495 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 2,
-	the mean node degree is 7.88 and the node degree mode is 1. The top 5 most central
-	nodes are 62 (degree 709), 203 (degree 651), 439 (degree 432), 1477 (degree 361)
-	and 10700 (degree 313).
+	The undirected graph cit-DBLP has 12591 nodes and 49635 weighted edges,
+	of which 15 are self-loops. The graph is quite sparse as it has a density
+	of 0.00063 and has 40 connected components, where the component with most
+	nodes has 12495 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 7.88 and the
+	node degree mode is 1. The top 5 most central nodes are 62 (degree 709),
+	203 (degree 651), 439 (degree 432), 1477 (degree 361) and 10700 (degree
+	313).
 	
 
 

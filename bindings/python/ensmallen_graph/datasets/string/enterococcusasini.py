@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:23.787312
 
-The undirected graph Enterococcus asini has 2417 nodes and 176004 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06028 and
-has 7 connected components, where the component with most nodes has 2399 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 145.64, and the node degree mode is 6. The top 5 most central
-nodes are 1158606.I579_02271 (degree 958), 1158606.I579_00777 (degree 941), 1158606.I579_00134
-(degree 869), 1158606.I579_00621 (degree 830) and 1158606.I579_00482 (degree 781).
+The undirected graph Enterococcus asini has 2417 nodes and 176004 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06028 and has 7 connected components, where the component with most
+nodes has 2399 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 145.64, and
+the node degree mode is 6. The top 5 most central nodes are 1158606.I579_02271
+(degree 958), 1158606.I579_00777 (degree 941), 1158606.I579_00134 (degree
+869), 1158606.I579_00621 (degree 830) and 1158606.I579_00482 (degree 781).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusAsini(
 	
 	Datetime: 2021-02-02 23:03:23.787312
 	
-	The undirected graph Enterococcus asini has 2417 nodes and 176004 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06028 and
-	has 7 connected components, where the component with most nodes has 2399 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 145.64, and the node degree mode is 6. The top 5 most central
-	nodes are 1158606.I579_02271 (degree 958), 1158606.I579_00777 (degree 941), 1158606.I579_00134
-	(degree 869), 1158606.I579_00621 (degree 830) and 1158606.I579_00482 (degree 781).
+	The undirected graph Enterococcus asini has 2417 nodes and 176004 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06028 and has 7 connected components, where the component with most
+	nodes has 2399 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 145.64, and
+	the node degree mode is 6. The top 5 most central nodes are 1158606.I579_02271
+	(degree 958), 1158606.I579_00777 (degree 941), 1158606.I579_00134 (degree
+	869), 1158606.I579_00621 (degree 830) and 1158606.I579_00482 (degree 781).
 	
 
 

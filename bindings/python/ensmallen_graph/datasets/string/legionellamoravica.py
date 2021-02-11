@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:19.164803
 
-The undirected graph Legionella moravica has 3106 nodes and 339604 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07043 and
-has 27 connected components, where the component with most nodes has 3048 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 218.68, and the node degree mode is 1. The top 5 most central
-nodes are 1122165.AUHS01000006_gene603 (degree 1294), 1122165.AUHS01000017_gene1843
-(degree 1271), 1122165.AUHS01000021_gene429 (degree 1182), 1122165.AUHS01000027_gene3089
-(degree 1179) and 1122165.AUHS01000034_gene202 (degree 1146).
+The undirected graph Legionella moravica has 3106 nodes and 339604 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07043 and has 27 connected components, where the component with most
+nodes has 3048 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 218.68, and
+the node degree mode is 1. The top 5 most central nodes are 1122165.AUHS01000006_gene603
+(degree 1294), 1122165.AUHS01000017_gene1843 (degree 1271), 1122165.AUHS01000021_gene429
+(degree 1182), 1122165.AUHS01000027_gene3089 (degree 1179) and 1122165.AUHS01000034_gene202
+(degree 1146).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaMoravica(
 	
 	Datetime: 2021-02-02 22:41:19.164803
 	
-	The undirected graph Legionella moravica has 3106 nodes and 339604 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07043 and
-	has 27 connected components, where the component with most nodes has 3048 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 218.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1122165.AUHS01000006_gene603 (degree 1294), 1122165.AUHS01000017_gene1843
-	(degree 1271), 1122165.AUHS01000021_gene429 (degree 1182), 1122165.AUHS01000027_gene3089
-	(degree 1179) and 1122165.AUHS01000034_gene202 (degree 1146).
+	The undirected graph Legionella moravica has 3106 nodes and 339604 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07043 and has 27 connected components, where the component with most
+	nodes has 3048 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 218.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1122165.AUHS01000006_gene603
+	(degree 1294), 1122165.AUHS01000017_gene1843 (degree 1271), 1122165.AUHS01000021_gene429
+	(degree 1182), 1122165.AUHS01000027_gene3089 (degree 1179) and 1122165.AUHS01000034_gene202
+	(degree 1146).
 	
 
 

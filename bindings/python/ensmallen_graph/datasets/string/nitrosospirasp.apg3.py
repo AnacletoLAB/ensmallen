@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:20:52.688601
 
-The undirected graph Nitrosospira sp. APG3 has 3014 nodes and 180427 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03974 and
-has 46 connected components, where the component with most nodes has 2910 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 119.73, and the node degree mode is 1. The top 5 most central
-nodes are 1288494.EBAPG3_2720 (degree 1106), 1288494.EBAPG3_30780 (degree 1009),
-1288494.EBAPG3_31290 (degree 990), 1288494.EBAPG3_17430 (degree 924) and 1288494.EBAPG3_25000
+The undirected graph Nitrosospira sp. APG3 has 3014 nodes and 180427 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03974 and has 46 connected components, where the component with most
+nodes has 2910 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 119.73, and
+the node degree mode is 1. The top 5 most central nodes are 1288494.EBAPG3_2720
+(degree 1106), 1288494.EBAPG3_30780 (degree 1009), 1288494.EBAPG3_31290
+(degree 990), 1288494.EBAPG3_17430 (degree 924) and 1288494.EBAPG3_25000
 (degree 899).
 
 
@@ -107,13 +108,14 @@ def NitrosospiraSp.Apg3(
 	
 	Datetime: 2021-02-03 21:20:52.688601
 	
-	The undirected graph Nitrosospira sp. APG3 has 3014 nodes and 180427 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03974 and
-	has 46 connected components, where the component with most nodes has 2910 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 119.73, and the node degree mode is 1. The top 5 most central
-	nodes are 1288494.EBAPG3_2720 (degree 1106), 1288494.EBAPG3_30780 (degree 1009),
-	1288494.EBAPG3_31290 (degree 990), 1288494.EBAPG3_17430 (degree 924) and 1288494.EBAPG3_25000
+	The undirected graph Nitrosospira sp. APG3 has 3014 nodes and 180427 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03974 and has 46 connected components, where the component with most
+	nodes has 2910 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 119.73, and
+	the node degree mode is 1. The top 5 most central nodes are 1288494.EBAPG3_2720
+	(degree 1106), 1288494.EBAPG3_30780 (degree 1009), 1288494.EBAPG3_31290
+	(degree 990), 1288494.EBAPG3_17430 (degree 924) and 1288494.EBAPG3_25000
 	(degree 899).
 	
 

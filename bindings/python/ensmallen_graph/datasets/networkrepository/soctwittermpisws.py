@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 12:23:08.257147
 
-The undirected graph soc-twitter-mpi-sws has 41652230 nodes and 1202513344 unweighted
-edges, of which 298 are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 12, the mean node degree is 57.74, and the node degree mode is 4. The top
-5 most central nodes are 1037948 (degree 2997487), 1803885 (degree 2696902), 5925043
-(degree 2679644), 5874844 (degree 2450753) and 1829999 (degree 1994926).
+The undirected graph soc-twitter-mpi-sws has 41652230 nodes and 1202513344
+unweighted edges, of which 298 are self-loops. The graph is extremely sparse
+as it has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 12, the mean node degree is 57.74, and
+the node degree mode is 4. The top 5 most central nodes are 1037948 (degree
+2997487), 1803885 (degree 2696902), 5925043 (degree 2679644), 5874844 (degree
+2450753) and 1829999 (degree 1994926).
 
 
 References
@@ -111,12 +112,13 @@ def SocTwitterMpiSws(
 	
 	Datetime: 2021-02-04 12:23:08.257147
 	
-	The undirected graph soc-twitter-mpi-sws has 41652230 nodes and 1202513344 unweighted
-	edges, of which 298 are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 12, the mean node degree is 57.74, and the node degree mode is 4. The top
-	5 most central nodes are 1037948 (degree 2997487), 1803885 (degree 2696902), 5925043
-	(degree 2679644), 5874844 (degree 2450753) and 1829999 (degree 1994926).
+	The undirected graph soc-twitter-mpi-sws has 41652230 nodes and 1202513344
+	unweighted edges, of which 298 are self-loops. The graph is extremely sparse
+	as it has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 12, the mean node degree is 57.74, and
+	the node degree mode is 4. The top 5 most central nodes are 1037948 (degree
+	2997487), 1803885 (degree 2696902), 5925043 (degree 2679644), 5874844 (degree
+	2450753) and 1829999 (degree 1994926).
 	
 
 

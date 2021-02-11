@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:22:55.546386
 
-The undirected graph lock3491 has 3416 nodes and 81930 unweighted edges, of which
-3416 are self-loops. The graph is dense as it has a density of 0.01375 and is connected,
-as it has a single component. The graph median node degree is 49, the mean node degree
-is 46.97, and the node degree mode is 54. The top 5 most central nodes are 3491 (degree
-113), 3490 (degree 113), 3489 (degree 113), 3488 (degree 113) and 3487 (degree 113).
+The undirected graph lock3491 has 3416 nodes and 81930 unweighted edges,
+of which 3416 are self-loops. The graph is dense as it has a density of
+0.01375 and is connected, as it has a single component. The graph median
+node degree is 49, the mean node degree is 46.97, and the node degree mode
+is 54. The top 5 most central nodes are 3491 (degree 113), 3490 (degree
+113), 3489 (degree 113), 3488 (degree 113) and 3487 (degree 113).
 
 
 References
@@ -101,11 +102,12 @@ def Lock3491(
 	
 	Datetime: 2021-02-06 10:22:55.546386
 	
-	The undirected graph lock3491 has 3416 nodes and 81930 unweighted edges, of which
-	3416 are self-loops. The graph is dense as it has a density of 0.01375 and is connected,
-	as it has a single component. The graph median node degree is 49, the mean node degree
-	is 46.97, and the node degree mode is 54. The top 5 most central nodes are 3491 (degree
-	113), 3490 (degree 113), 3489 (degree 113), 3488 (degree 113) and 3487 (degree 113).
+	The undirected graph lock3491 has 3416 nodes and 81930 unweighted edges,
+	of which 3416 are self-loops. The graph is dense as it has a density of
+	0.01375 and is connected, as it has a single component. The graph median
+	node degree is 49, the mean node degree is 46.97, and the node degree mode
+	is 54. The top 5 most central nodes are 3491 (degree 113), 3490 (degree
+	113), 3489 (degree 113), 3488 (degree 113) and 3487 (degree 113).
 	
 
 

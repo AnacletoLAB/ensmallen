@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:39.214296
 
-The undirected graph Halopiger xanaduensis has 3727 nodes and 282764 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04072 and
-has 32 connected components, where the component with most nodes has 3639 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 151.74, and the node degree mode is 3. The top 5 most central
-nodes are 797210.Halxa_2978 (degree 1061), 797210.Halxa_4209 (degree 1039), 797210.Halxa_1641
-(degree 1022), 797210.Halxa_2509 (degree 931) and 797210.Halxa_1290 (degree 894).
+The undirected graph Halopiger xanaduensis has 3727 nodes and 282764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04072 and has 32 connected components, where the component with most
+nodes has 3639 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 151.74, and
+the node degree mode is 3. The top 5 most central nodes are 797210.Halxa_2978
+(degree 1061), 797210.Halxa_4209 (degree 1039), 797210.Halxa_1641 (degree
+1022), 797210.Halxa_2509 (degree 931) and 797210.Halxa_1290 (degree 894).
 
 
 References
@@ -106,13 +107,14 @@ def HalopigerXanaduensis(
 	
 	Datetime: 2021-02-02 21:45:39.214296
 	
-	The undirected graph Halopiger xanaduensis has 3727 nodes and 282764 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04072 and
-	has 32 connected components, where the component with most nodes has 3639 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 151.74, and the node degree mode is 3. The top 5 most central
-	nodes are 797210.Halxa_2978 (degree 1061), 797210.Halxa_4209 (degree 1039), 797210.Halxa_1641
-	(degree 1022), 797210.Halxa_2509 (degree 931) and 797210.Halxa_1290 (degree 894).
+	The undirected graph Halopiger xanaduensis has 3727 nodes and 282764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04072 and has 32 connected components, where the component with most
+	nodes has 3639 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 151.74, and
+	the node degree mode is 3. The top 5 most central nodes are 797210.Halxa_2978
+	(degree 1061), 797210.Halxa_4209 (degree 1039), 797210.Halxa_1641 (degree
+	1022), 797210.Halxa_2509 (degree 931) and 797210.Halxa_1290 (degree 894).
 	
 
 

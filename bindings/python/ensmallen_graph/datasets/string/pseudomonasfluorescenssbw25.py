@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:48.617910
 
-The undirected graph Pseudomonas fluorescens SBW25 has 5881 nodes and 840587 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04862
-and has 19 connected components, where the component with most nodes has 5835 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 285.87, and the node degree mode is 2. The top 5
-most central nodes are 216595.PFLU_0079 (degree 2335), 216595.PFLU_5279 (degree 2327),
-216595.PFLU_5044 (degree 2011), 216595.PFLU_0414 (degree 1921) and 216595.PFLU_5043
-(degree 1840).
+The undirected graph Pseudomonas fluorescens SBW25 has 5881 nodes and 840587
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04862 and has 19 connected components, where the component
+with most nodes has 5835 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 285.87,
+and the node degree mode is 2. The top 5 most central nodes are 216595.PFLU_0079
+(degree 2335), 216595.PFLU_5279 (degree 2327), 216595.PFLU_5044 (degree
+2011), 216595.PFLU_0414 (degree 1921) and 216595.PFLU_5043 (degree 1840).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasFluorescensSbw25(
 	
 	Datetime: 2021-02-02 20:02:48.617910
 	
-	The undirected graph Pseudomonas fluorescens SBW25 has 5881 nodes and 840587 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04862
-	and has 19 connected components, where the component with most nodes has 5835 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 285.87, and the node degree mode is 2. The top 5
-	most central nodes are 216595.PFLU_0079 (degree 2335), 216595.PFLU_5279 (degree 2327),
-	216595.PFLU_5044 (degree 2011), 216595.PFLU_0414 (degree 1921) and 216595.PFLU_5043
-	(degree 1840).
+	The undirected graph Pseudomonas fluorescens SBW25 has 5881 nodes and 840587
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04862 and has 19 connected components, where the component
+	with most nodes has 5835 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 285.87,
+	and the node degree mode is 2. The top 5 most central nodes are 216595.PFLU_0079
+	(degree 2335), 216595.PFLU_5279 (degree 2327), 216595.PFLU_5044 (degree
+	2011), 216595.PFLU_0414 (degree 1921) and 216595.PFLU_5043 (degree 1840).
 	
 
 

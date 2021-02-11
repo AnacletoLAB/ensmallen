@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:14.882882
 
-The undirected graph bio-SC-CC has 2223 nodes and 34879 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01412 and is connected,
-as it has a single component. The graph median node degree is 18, the mean node degree
-is 31.38 and the node degree mode is 4. The top 5 most central nodes are 1 (degree
-571), 4 (degree 549), 15 (degree 466), 36 (degree 408) and 248 (degree 370).
+The undirected graph bio-SC-CC has 2223 nodes and 34879 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01412 and is connected, as it has a single component. The graph median
+node degree is 18, the mean node degree is 31.38 and the node degree mode
+is 4. The top 5 most central nodes are 1 (degree 571), 4 (degree 549),
+15 (degree 466), 36 (degree 408) and 248 (degree 370).
 
 
 References
@@ -112,11 +113,12 @@ def BioScCc(
 	
 	Datetime: 2021-02-03 22:30:14.882882
 	
-	The undirected graph bio-SC-CC has 2223 nodes and 34879 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01412 and is connected,
-	as it has a single component. The graph median node degree is 18, the mean node degree
-	is 31.38 and the node degree mode is 4. The top 5 most central nodes are 1 (degree
-	571), 4 (degree 549), 15 (degree 466), 36 (degree 408) and 248 (degree 370).
+	The undirected graph bio-SC-CC has 2223 nodes and 34879 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01412 and is connected, as it has a single component. The graph median
+	node degree is 18, the mean node degree is 31.38 and the node degree mode
+	is 4. The top 5 most central nodes are 1 (degree 571), 4 (degree 549),
+	15 (degree 466), 36 (degree 408) and 248 (degree 370).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:15.536676
 
-The undirected graph Henriciella marina has 3069 nodes and 272221 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05782 and
-has 6 connected components, where the component with most nodes has 3059 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 177.40, and the node degree mode is 2. The top 5 most central
-nodes are 1121949.AQXT01000002_gene97 (degree 1136), 1121949.AQXT01000002_gene655
-(degree 921), 1121949.AQXT01000002_gene443 (degree 920), 1121949.AQXT01000002_gene1481
-(degree 877) and 1121949.AQXT01000002_gene172 (degree 855).
+The undirected graph Henriciella marina has 3069 nodes and 272221 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05782 and has 6 connected components, where the component with most
+nodes has 3059 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 177.40, and
+the node degree mode is 2. The top 5 most central nodes are 1121949.AQXT01000002_gene97
+(degree 1136), 1121949.AQXT01000002_gene655 (degree 921), 1121949.AQXT01000002_gene443
+(degree 920), 1121949.AQXT01000002_gene1481 (degree 877) and 1121949.AQXT01000002_gene172
+(degree 855).
 
 
 References
@@ -107,14 +108,15 @@ def HenriciellaMarina(
 	
 	Datetime: 2021-02-02 22:40:15.536676
 	
-	The undirected graph Henriciella marina has 3069 nodes and 272221 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05782 and
-	has 6 connected components, where the component with most nodes has 3059 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 177.40, and the node degree mode is 2. The top 5 most central
-	nodes are 1121949.AQXT01000002_gene97 (degree 1136), 1121949.AQXT01000002_gene655
-	(degree 921), 1121949.AQXT01000002_gene443 (degree 920), 1121949.AQXT01000002_gene1481
-	(degree 877) and 1121949.AQXT01000002_gene172 (degree 855).
+	The undirected graph Henriciella marina has 3069 nodes and 272221 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05782 and has 6 connected components, where the component with most
+	nodes has 3059 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 177.40, and
+	the node degree mode is 2. The top 5 most central nodes are 1121949.AQXT01000002_gene97
+	(degree 1136), 1121949.AQXT01000002_gene655 (degree 921), 1121949.AQXT01000002_gene443
+	(degree 920), 1121949.AQXT01000002_gene1481 (degree 877) and 1121949.AQXT01000002_gene172
+	(degree 855).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:14.876831
 
-The undirected graph Collinsella stercoris has 2490 nodes and 260710 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08413 and
-has 24 connected components, where the component with most nodes has 2434 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 209.41, and the node degree mode is 1. The top 5 most central
-nodes are 445975.COLSTE_00860 (degree 1163), 445975.COLSTE_01869 (degree 1139), 445975.COLSTE_00737
-(degree 1102), 445975.COLSTE_01649 (degree 1071) and 445975.COLSTE_01070 (degree
+The undirected graph Collinsella stercoris has 2490 nodes and 260710 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08413 and has 24 connected components, where the component with most
+nodes has 2434 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 209.41, and
+the node degree mode is 1. The top 5 most central nodes are 445975.COLSTE_00860
+(degree 1163), 445975.COLSTE_01869 (degree 1139), 445975.COLSTE_00737 (degree
+1102), 445975.COLSTE_01649 (degree 1071) and 445975.COLSTE_01070 (degree
 1029).
 
 
@@ -107,13 +108,14 @@ def CollinsellaStercoris(
 	
 	Datetime: 2021-02-02 20:51:14.876831
 	
-	The undirected graph Collinsella stercoris has 2490 nodes and 260710 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08413 and
-	has 24 connected components, where the component with most nodes has 2434 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 209.41, and the node degree mode is 1. The top 5 most central
-	nodes are 445975.COLSTE_00860 (degree 1163), 445975.COLSTE_01869 (degree 1139), 445975.COLSTE_00737
-	(degree 1102), 445975.COLSTE_01649 (degree 1071) and 445975.COLSTE_01070 (degree
+	The undirected graph Collinsella stercoris has 2490 nodes and 260710 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08413 and has 24 connected components, where the component with most
+	nodes has 2434 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 209.41, and
+	the node degree mode is 1. The top 5 most central nodes are 445975.COLSTE_00860
+	(degree 1163), 445975.COLSTE_01869 (degree 1139), 445975.COLSTE_00737 (degree
+	1102), 445975.COLSTE_01649 (degree 1071) and 445975.COLSTE_01070 (degree
 	1029).
 	
 

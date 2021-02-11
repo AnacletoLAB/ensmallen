@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:16:57.094459
 
-The undirected graph Pseudomonas aeruginosa has 6267 nodes and 1030329 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05248 and
-has 13 connected components, where the component with most nodes has 6233 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 300,
-the mean node degree is 328.81, and the node degree mode is 2. The top 5 most central
-nodes are 287.DR97_3920 (degree 2394), 287.DR97_2871 (degree 2383), 287.DR97_3759
-(degree 2292), 287.DR97_1011 (degree 2191) and 287.DR97_2391 (degree 1761).
+The undirected graph Pseudomonas aeruginosa has 6267 nodes and 1030329
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05248 and has 13 connected components, where the component
+with most nodes has 6233 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 300, the mean node degree is 328.81,
+and the node degree mode is 2. The top 5 most central nodes are 287.DR97_3920
+(degree 2394), 287.DR97_2871 (degree 2383), 287.DR97_3759 (degree 2292),
+287.DR97_1011 (degree 2191) and 287.DR97_2391 (degree 1761).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasAeruginosa(
 	
 	Datetime: 2021-02-02 16:16:57.094459
 	
-	The undirected graph Pseudomonas aeruginosa has 6267 nodes and 1030329 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05248 and
-	has 13 connected components, where the component with most nodes has 6233 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 300,
-	the mean node degree is 328.81, and the node degree mode is 2. The top 5 most central
-	nodes are 287.DR97_3920 (degree 2394), 287.DR97_2871 (degree 2383), 287.DR97_3759
-	(degree 2292), 287.DR97_1011 (degree 2191) and 287.DR97_2391 (degree 1761).
+	The undirected graph Pseudomonas aeruginosa has 6267 nodes and 1030329
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05248 and has 13 connected components, where the component
+	with most nodes has 6233 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 300, the mean node degree is 328.81,
+	and the node degree mode is 2. The top 5 most central nodes are 287.DR97_3920
+	(degree 2394), 287.DR97_2871 (degree 2383), 287.DR97_3759 (degree 2292),
+	287.DR97_1011 (degree 2191) and 287.DR97_2391 (degree 1761).
 	
 
 

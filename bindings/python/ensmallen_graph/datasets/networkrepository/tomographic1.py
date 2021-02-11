@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:27.779307
 
-The undirected graph tomographic1 has 69037 nodes and 647470 weighted edges, of which
-12 are self-loops. The graph is quite sparse as it has a density of 0.00027 and has
-9 connected components, where the component with most nodes has 69016 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 13, the
-mean node degree is 18.76, and the node degree mode is 12. The top 5 most central
-nodes are 63560 (degree 155), 63628 (degree 149), 55201 (degree 148), 55259 (degree
-143) and 63559 (degree 143).
+The undirected graph tomographic1 has 69037 nodes and 647470 weighted edges,
+of which 12 are self-loops. The graph is quite sparse as it has a density
+of 0.00027 and has 9 connected components, where the component with most
+nodes has 69016 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 13, the mean node degree is 18.76, and
+the node degree mode is 12. The top 5 most central nodes are 63560 (degree
+155), 63628 (degree 149), 55201 (degree 148), 55259 (degree 143) and 63559
+(degree 143).
 
 
 References
@@ -103,13 +104,14 @@ def Tomographic1(
 	
 	Datetime: 2021-02-06 11:35:27.779307
 	
-	The undirected graph tomographic1 has 69037 nodes and 647470 weighted edges, of which
-	12 are self-loops. The graph is quite sparse as it has a density of 0.00027 and has
-	9 connected components, where the component with most nodes has 69016 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 13, the
-	mean node degree is 18.76, and the node degree mode is 12. The top 5 most central
-	nodes are 63560 (degree 155), 63628 (degree 149), 55201 (degree 148), 55259 (degree
-	143) and 63559 (degree 143).
+	The undirected graph tomographic1 has 69037 nodes and 647470 weighted edges,
+	of which 12 are self-loops. The graph is quite sparse as it has a density
+	of 0.00027 and has 9 connected components, where the component with most
+	nodes has 69016 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 13, the mean node degree is 18.76, and
+	the node degree mode is 12. The top 5 most central nodes are 63560 (degree
+	155), 63628 (degree 149), 55201 (degree 148), 55259 (degree 143) and 63559
+	(degree 143).
 	
 
 

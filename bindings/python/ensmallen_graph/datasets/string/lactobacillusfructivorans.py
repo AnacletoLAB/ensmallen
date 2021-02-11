@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:10.692228
 
-The undirected graph Lactobacillus fructivorans has 1335 nodes and 94239 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10583 and has 7 connected components, where the component with most nodes has
-1323 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 123, the mean node degree is 141.18, and the node degree mode is 25. The
-top 5 most central nodes are 941770.GL622178_gene348 (degree 699), 941770.GL622178_gene312
-(degree 649), 941770.GL622178_gene120 (degree 504), 941770.GL622182_gene1308 (degree
+The undirected graph Lactobacillus fructivorans has 1335 nodes and 94239
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10583 and has 7 connected components, where the
+component with most nodes has 1323 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 123, the mean node degree
+is 141.18, and the node degree mode is 25. The top 5 most central nodes
+are 941770.GL622178_gene348 (degree 699), 941770.GL622178_gene312 (degree
+649), 941770.GL622178_gene120 (degree 504), 941770.GL622182_gene1308 (degree
 500) and 941770.GL622178_gene137 (degree 470).
 
 
@@ -107,13 +108,14 @@ def LactobacillusFructivorans(
 	
 	Datetime: 2021-02-02 22:01:10.692228
 	
-	The undirected graph Lactobacillus fructivorans has 1335 nodes and 94239 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10583 and has 7 connected components, where the component with most nodes has
-	1323 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 123, the mean node degree is 141.18, and the node degree mode is 25. The
-	top 5 most central nodes are 941770.GL622178_gene348 (degree 699), 941770.GL622178_gene312
-	(degree 649), 941770.GL622178_gene120 (degree 504), 941770.GL622182_gene1308 (degree
+	The undirected graph Lactobacillus fructivorans has 1335 nodes and 94239
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10583 and has 7 connected components, where the
+	component with most nodes has 1323 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 123, the mean node degree
+	is 141.18, and the node degree mode is 25. The top 5 most central nodes
+	are 941770.GL622178_gene348 (degree 699), 941770.GL622178_gene312 (degree
+	649), 941770.GL622178_gene120 (degree 504), 941770.GL622182_gene1308 (degree
 	500) and 941770.GL622178_gene137 (degree 470).
 	
 

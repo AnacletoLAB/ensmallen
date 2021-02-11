@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:48.141218
 
-The undirected graph Pseudomonas fluorescens F113 has 5809 nodes and 1071366 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06351
-and has 14 connected components, where the component with most nodes has 5777 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 299, the mean node degree is 368.86, and the node degree mode is 1. The top 5
-most central nodes are 1114970.PSF113_0036 (degree 2797), 1114970.PSF113_0839 (degree
-2482), 1114970.PSF113_3014 (degree 2390), 1114970.PSF113_1037 (degree 2301) and 1114970.PSF113_1036
-(degree 2288).
+The undirected graph Pseudomonas fluorescens F113 has 5809 nodes and 1071366
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06351 and has 14 connected components, where the component
+with most nodes has 5777 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 299, the mean node degree is 368.86,
+and the node degree mode is 1. The top 5 most central nodes are 1114970.PSF113_0036
+(degree 2797), 1114970.PSF113_0839 (degree 2482), 1114970.PSF113_3014 (degree
+2390), 1114970.PSF113_1037 (degree 2301) and 1114970.PSF113_1036 (degree
+2288).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFluorescensF113(
 	
 	Datetime: 2021-02-02 22:26:48.141218
 	
-	The undirected graph Pseudomonas fluorescens F113 has 5809 nodes and 1071366 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06351
-	and has 14 connected components, where the component with most nodes has 5777 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 299, the mean node degree is 368.86, and the node degree mode is 1. The top 5
-	most central nodes are 1114970.PSF113_0036 (degree 2797), 1114970.PSF113_0839 (degree
-	2482), 1114970.PSF113_3014 (degree 2390), 1114970.PSF113_1037 (degree 2301) and 1114970.PSF113_1036
-	(degree 2288).
+	The undirected graph Pseudomonas fluorescens F113 has 5809 nodes and 1071366
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06351 and has 14 connected components, where the component
+	with most nodes has 5777 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 299, the mean node degree is 368.86,
+	and the node degree mode is 1. The top 5 most central nodes are 1114970.PSF113_0036
+	(degree 2797), 1114970.PSF113_0839 (degree 2482), 1114970.PSF113_3014 (degree
+	2390), 1114970.PSF113_1037 (degree 2301) and 1114970.PSF113_1036 (degree
+	2288).
 	
 
 

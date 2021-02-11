@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:55.250175
 
-The undirected graph Dictyoglomus thermophilum has 1903 nodes and 131460 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07264
-and has 2 connected components, where the component with most nodes has 1901 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 138.16, and the node degree mode is 5. The top 5
-most central nodes are 309799.DICTH_0729 (degree 853), 309799.DICTH_1388 (degree
-843), 309799.DICTH_1979 (degree 697), 309799.DICTH_1088 (degree 676) and 309799.DICTH_1433
-(degree 671).
+The undirected graph Dictyoglomus thermophilum has 1903 nodes and 131460
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07264 and has 2 connected components, where the component
+with most nodes has 1901 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 138.16,
+and the node degree mode is 5. The top 5 most central nodes are 309799.DICTH_0729
+(degree 853), 309799.DICTH_1388 (degree 843), 309799.DICTH_1979 (degree
+697), 309799.DICTH_1088 (degree 676) and 309799.DICTH_1433 (degree 671).
 
 
 References
@@ -107,14 +107,14 @@ def DictyoglomusThermophilum(
 	
 	Datetime: 2021-02-02 20:22:55.250175
 	
-	The undirected graph Dictyoglomus thermophilum has 1903 nodes and 131460 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07264
-	and has 2 connected components, where the component with most nodes has 1901 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 138.16, and the node degree mode is 5. The top 5
-	most central nodes are 309799.DICTH_0729 (degree 853), 309799.DICTH_1388 (degree
-	843), 309799.DICTH_1979 (degree 697), 309799.DICTH_1088 (degree 676) and 309799.DICTH_1433
-	(degree 671).
+	The undirected graph Dictyoglomus thermophilum has 1903 nodes and 131460
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07264 and has 2 connected components, where the component
+	with most nodes has 1901 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 138.16,
+	and the node degree mode is 5. The top 5 most central nodes are 309799.DICTH_0729
+	(degree 853), 309799.DICTH_1388 (degree 843), 309799.DICTH_1979 (degree
+	697), 309799.DICTH_1088 (degree 676) and 309799.DICTH_1433 (degree 671).
 	
 
 

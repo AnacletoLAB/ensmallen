@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:33:11.188191
 
-The undirected graph Dasypus novemcinctus has 21536 nodes and 7117157 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03069 and
-has 2 connected components, where the component with most nodes has 21534 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 491,
-the mean node degree is 660.95, and the node degree mode is 1. The top 5 most central
-nodes are 9361.ENSDNOP00000007737 (degree 7610), 9361.ENSDNOP00000008421 (degree
-7048), 9361.ENSDNOP00000022283 (degree 6973), 9361.ENSDNOP00000013515 (degree 6643)
-and 9361.ENSDNOP00000007994 (degree 6505).
+The undirected graph Dasypus novemcinctus has 21536 nodes and 7117157 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03069 and has 2 connected components, where the component with most
+nodes has 21534 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 491, the mean node degree is 660.95, and
+the node degree mode is 1. The top 5 most central nodes are 9361.ENSDNOP00000007737
+(degree 7610), 9361.ENSDNOP00000008421 (degree 7048), 9361.ENSDNOP00000022283
+(degree 6973), 9361.ENSDNOP00000013515 (degree 6643) and 9361.ENSDNOP00000007994
+(degree 6505).
 
 
 References
@@ -107,14 +108,15 @@ def DasypusNovemcinctus(
 	
 	Datetime: 2021-02-02 17:33:11.188191
 	
-	The undirected graph Dasypus novemcinctus has 21536 nodes and 7117157 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03069 and
-	has 2 connected components, where the component with most nodes has 21534 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 491,
-	the mean node degree is 660.95, and the node degree mode is 1. The top 5 most central
-	nodes are 9361.ENSDNOP00000007737 (degree 7610), 9361.ENSDNOP00000008421 (degree
-	7048), 9361.ENSDNOP00000022283 (degree 6973), 9361.ENSDNOP00000013515 (degree 6643)
-	and 9361.ENSDNOP00000007994 (degree 6505).
+	The undirected graph Dasypus novemcinctus has 21536 nodes and 7117157 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03069 and has 2 connected components, where the component with most
+	nodes has 21534 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 491, the mean node degree is 660.95, and
+	the node degree mode is 1. The top 5 most central nodes are 9361.ENSDNOP00000007737
+	(degree 7610), 9361.ENSDNOP00000008421 (degree 7048), 9361.ENSDNOP00000022283
+	(degree 6973), 9361.ENSDNOP00000013515 (degree 6643) and 9361.ENSDNOP00000007994
+	(degree 6505).
 	
 
 

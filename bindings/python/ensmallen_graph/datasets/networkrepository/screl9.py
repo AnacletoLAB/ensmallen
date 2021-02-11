@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:03:46.049445
 
-The undirected multigraph sc-rel9 has 5921786 nodes and 23667182 unweighted edges
-with 3 different edge types: 1, -1 and -2, of which 14 are self-loops and 12 are
-parallel. The graph is extremely sparse as it has a density of 0.00000 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 7.99, and the node degree mode is 4. The top 5 most central nodes are 274153 (degree
-167), 271215 (degree 162), 274149 (degree 158), 224781 (degree 151) and 274652 (degree
-148).
+The undirected multigraph sc-rel9 has 5921786 nodes and 23667182 unweighted
+edges with 3 different edge types: 1, -1 and -2, of which 14 are self-loops
+and 12 are parallel. The graph is extremely sparse as it has a density
+of 0.00000 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 7.99, and the node degree mode
+is 4. The top 5 most central nodes are 274153 (degree 167), 271215 (degree
+162), 274149 (degree 158), 224781 (degree 151) and 274652 (degree 148).
 
 
 References
@@ -110,13 +110,13 @@ def ScRel9(
 	
 	Datetime: 2021-02-07 16:03:46.049445
 	
-	The undirected multigraph sc-rel9 has 5921786 nodes and 23667182 unweighted edges
-	with 3 different edge types: 1, -1 and -2, of which 14 are self-loops and 12 are
-	parallel. The graph is extremely sparse as it has a density of 0.00000 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 7.99, and the node degree mode is 4. The top 5 most central nodes are 274153 (degree
-	167), 271215 (degree 162), 274149 (degree 158), 224781 (degree 151) and 274652 (degree
-	148).
+	The undirected multigraph sc-rel9 has 5921786 nodes and 23667182 unweighted
+	edges with 3 different edge types: 1, -1 and -2, of which 14 are self-loops
+	and 12 are parallel. The graph is extremely sparse as it has a density
+	of 0.00000 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 7.99, and the node degree mode
+	is 4. The top 5 most central nodes are 274153 (degree 167), 271215 (degree
+	162), 274149 (degree 158), 224781 (degree 151) and 274652 (degree 148).
 	
 
 

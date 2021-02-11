@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:53.556286
 
-The undirected graph Sinorhizobium sp. CCBAU05631 has 5565 nodes and 613748 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03964
-and has 27 connected components, where the component with most nodes has 5507 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 220.57, and the node degree mode is 1. The top 5
-most central nodes are 794846.AJQU01000077_gene3180 (degree 2271), 794846.AJQU01000064_gene2807
-(degree 2179), 794846.AJQU01000090_gene675 (degree 2033), 794846.AJQU01000063_gene2730
-(degree 1809) and 794846.AJQU01000079_gene5631 (degree 1689).
+The undirected graph Sinorhizobium sp. CCBAU05631 has 5565 nodes and 613748
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03964 and has 27 connected components, where the component
+with most nodes has 5507 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 220.57,
+and the node degree mode is 1. The top 5 most central nodes are 794846.AJQU01000077_gene3180
+(degree 2271), 794846.AJQU01000064_gene2807 (degree 2179), 794846.AJQU01000090_gene675
+(degree 2033), 794846.AJQU01000063_gene2730 (degree 1809) and 794846.AJQU01000079_gene5631
+(degree 1689).
 
 
 References
@@ -107,14 +108,15 @@ def SinorhizobiumSp.Ccbau05631(
 	
 	Datetime: 2021-02-02 21:44:53.556286
 	
-	The undirected graph Sinorhizobium sp. CCBAU05631 has 5565 nodes and 613748 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03964
-	and has 27 connected components, where the component with most nodes has 5507 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 220.57, and the node degree mode is 1. The top 5
-	most central nodes are 794846.AJQU01000077_gene3180 (degree 2271), 794846.AJQU01000064_gene2807
-	(degree 2179), 794846.AJQU01000090_gene675 (degree 2033), 794846.AJQU01000063_gene2730
-	(degree 1809) and 794846.AJQU01000079_gene5631 (degree 1689).
+	The undirected graph Sinorhizobium sp. CCBAU05631 has 5565 nodes and 613748
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03964 and has 27 connected components, where the component
+	with most nodes has 5507 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 220.57,
+	and the node degree mode is 1. The top 5 most central nodes are 794846.AJQU01000077_gene3180
+	(degree 2271), 794846.AJQU01000064_gene2807 (degree 2179), 794846.AJQU01000090_gene675
+	(degree 2033), 794846.AJQU01000063_gene2730 (degree 1809) and 794846.AJQU01000079_gene5631
+	(degree 1689).
 	
 
 

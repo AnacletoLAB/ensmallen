@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:52.509854
 
-The undirected graph usroads-48 has 126146 nodes and 161950 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 2.57, and the node degree mode is 2. The top 5 most central
-nodes are 58080 (degree 7), 120961 (degree 6), 120878 (degree 6), 119519 (degree
-6) and 111360 (degree 6).
+The undirected graph usroads-48 has 126146 nodes and 161950 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.57, and the
+node degree mode is 2. The top 5 most central nodes are 58080 (degree 7),
+120961 (degree 6), 120878 (degree 6), 119519 (degree 6) and 111360 (degree
+6).
 
 
 References
@@ -102,12 +103,13 @@ def Usroads48(
 	
 	Datetime: 2021-02-06 11:35:52.509854
 	
-	The undirected graph usroads-48 has 126146 nodes and 161950 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 2.57, and the node degree mode is 2. The top 5 most central
-	nodes are 58080 (degree 7), 120961 (degree 6), 120878 (degree 6), 119519 (degree
-	6) and 111360 (degree 6).
+	The undirected graph usroads-48 has 126146 nodes and 161950 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.57, and the
+	node degree mode is 2. The top 5 most central nodes are 58080 (degree 7),
+	120961 (degree 6), 120878 (degree 6), 119519 (degree 6) and 111360 (degree
+	6).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:21.186357
 
-The undirected graph Ferroglobus placidus has 2456 nodes and 277709 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09212 and
-has 16 connected components, where the component with most nodes has 2408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 229,
-the mean node degree is 226.15, and the node degree mode is 6. The top 5 most central
-nodes are 589924.Ferp_1302 (degree 956), 589924.Ferp_2128 (degree 853), 589924.Ferp_1469
-(degree 851), 589924.Ferp_2318 (degree 809) and 589924.Ferp_1233 (degree 808).
+The undirected graph Ferroglobus placidus has 2456 nodes and 277709 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09212 and has 16 connected components, where the component with most
+nodes has 2408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 226.15, and
+the node degree mode is 6. The top 5 most central nodes are 589924.Ferp_1302
+(degree 956), 589924.Ferp_2128 (degree 853), 589924.Ferp_1469 (degree 851),
+589924.Ferp_2318 (degree 809) and 589924.Ferp_1233 (degree 808).
 
 
 References
@@ -106,13 +107,14 @@ def FerroglobusPlacidus(
 	
 	Datetime: 2021-02-02 21:17:21.186357
 	
-	The undirected graph Ferroglobus placidus has 2456 nodes and 277709 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09212 and
-	has 16 connected components, where the component with most nodes has 2408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 229,
-	the mean node degree is 226.15, and the node degree mode is 6. The top 5 most central
-	nodes are 589924.Ferp_1302 (degree 956), 589924.Ferp_2128 (degree 853), 589924.Ferp_1469
-	(degree 851), 589924.Ferp_2318 (degree 809) and 589924.Ferp_1233 (degree 808).
+	The undirected graph Ferroglobus placidus has 2456 nodes and 277709 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09212 and has 16 connected components, where the component with most
+	nodes has 2408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 226.15, and
+	the node degree mode is 6. The top 5 most central nodes are 589924.Ferp_1302
+	(degree 956), 589924.Ferp_2128 (degree 853), 589924.Ferp_1469 (degree 851),
+	589924.Ferp_2318 (degree 809) and 589924.Ferp_1233 (degree 808).
 	
 
 

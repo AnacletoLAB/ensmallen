@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:15.353475
 
-The undirected graph Lactobacillus versmoldensis has 2358 nodes and 137578 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04951
-and has 10 connected components, where the component with most nodes has 2331 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 116.69, and the node degree mode is 3. The top 5 most
-central nodes are 1423815.BACR01000006_gene354 (degree 938), 1423815.BACR01000043_gene2155
-(degree 772), 1423815.BACR01000006_gene233 (degree 685), 1423815.BACR01000006_gene128
-(degree 656) and 1423815.BACR01000043_gene2076 (degree 651).
+The undirected graph Lactobacillus versmoldensis has 2358 nodes and 137578
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04951 and has 10 connected components, where the component
+with most nodes has 2331 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 116.69,
+and the node degree mode is 3. The top 5 most central nodes are 1423815.BACR01000006_gene354
+(degree 938), 1423815.BACR01000043_gene2155 (degree 772), 1423815.BACR01000006_gene233
+(degree 685), 1423815.BACR01000006_gene128 (degree 656) and 1423815.BACR01000043_gene2076
+(degree 651).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusVersmoldensis(
 	
 	Datetime: 2021-02-03 22:52:15.353475
 	
-	The undirected graph Lactobacillus versmoldensis has 2358 nodes and 137578 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04951
-	and has 10 connected components, where the component with most nodes has 2331 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 116.69, and the node degree mode is 3. The top 5 most
-	central nodes are 1423815.BACR01000006_gene354 (degree 938), 1423815.BACR01000043_gene2155
-	(degree 772), 1423815.BACR01000006_gene233 (degree 685), 1423815.BACR01000006_gene128
-	(degree 656) and 1423815.BACR01000043_gene2076 (degree 651).
+	The undirected graph Lactobacillus versmoldensis has 2358 nodes and 137578
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04951 and has 10 connected components, where the component
+	with most nodes has 2331 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 116.69,
+	and the node degree mode is 3. The top 5 most central nodes are 1423815.BACR01000006_gene354
+	(degree 938), 1423815.BACR01000043_gene2155 (degree 772), 1423815.BACR01000006_gene233
+	(degree 685), 1423815.BACR01000006_gene128 (degree 656) and 1423815.BACR01000043_gene2076
+	(degree 651).
 	
 
 

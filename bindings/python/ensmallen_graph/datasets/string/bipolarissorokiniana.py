@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:10.733684
 
-The undirected graph Bipolaris sorokiniana has 7554 nodes and 593182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02079 and
-has 32 connected components, where the component with most nodes has 7489 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 157.05, and the node degree mode is 1. The top 5 most central
-nodes are 45130.XP_007694456.1 (degree 2005), 45130.XP_007705362.1 (degree 1861),
-45130.XP_007695294.1 (degree 1591), 45130.XP_007704861.1 (degree 1450) and 45130.XP_007703324.1
+The undirected graph Bipolaris sorokiniana has 7554 nodes and 593182 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02079 and has 32 connected components, where the component with most
+nodes has 7489 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 157.05, and
+the node degree mode is 1. The top 5 most central nodes are 45130.XP_007694456.1
+(degree 2005), 45130.XP_007705362.1 (degree 1861), 45130.XP_007695294.1
+(degree 1591), 45130.XP_007704861.1 (degree 1450) and 45130.XP_007703324.1
 (degree 1434).
 
 
@@ -107,13 +108,14 @@ def BipolarisSorokiniana(
 	
 	Datetime: 2021-02-02 18:15:10.733684
 	
-	The undirected graph Bipolaris sorokiniana has 7554 nodes and 593182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02079 and
-	has 32 connected components, where the component with most nodes has 7489 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 157.05, and the node degree mode is 1. The top 5 most central
-	nodes are 45130.XP_007694456.1 (degree 2005), 45130.XP_007705362.1 (degree 1861),
-	45130.XP_007695294.1 (degree 1591), 45130.XP_007704861.1 (degree 1450) and 45130.XP_007703324.1
+	The undirected graph Bipolaris sorokiniana has 7554 nodes and 593182 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02079 and has 32 connected components, where the component with most
+	nodes has 7489 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 157.05, and
+	the node degree mode is 1. The top 5 most central nodes are 45130.XP_007694456.1
+	(degree 2005), 45130.XP_007705362.1 (degree 1861), 45130.XP_007695294.1
+	(degree 1591), 45130.XP_007704861.1 (degree 1450) and 45130.XP_007703324.1
 	(degree 1434).
 	
 

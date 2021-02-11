@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:31:14.521069
 
-The undirected graph Sphaeroforma arctica has 6771 nodes and 1578758 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06888 and
-has 9 connected components, where the component with most nodes has 6753 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 387,
-the mean node degree is 466.33, and the node degree mode is 1. The top 5 most central
-nodes are 72019.SARC_12087T0 (degree 2877), 72019.SARC_05259T0 (degree 2560), 72019.SARC_07251T0
-(degree 2478), 72019.SARC_02207T0 (degree 2379) and 72019.SARC_10886T0 (degree 2309).
+The undirected graph Sphaeroforma arctica has 6771 nodes and 1578758 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06888 and has 9 connected components, where the component with most
+nodes has 6753 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 387, the mean node degree is 466.33, and
+the node degree mode is 1. The top 5 most central nodes are 72019.SARC_12087T0
+(degree 2877), 72019.SARC_05259T0 (degree 2560), 72019.SARC_07251T0 (degree
+2478), 72019.SARC_02207T0 (degree 2379) and 72019.SARC_10886T0 (degree
+2309).
 
 
 References
@@ -106,13 +108,15 @@ def SphaeroformaArctica(
 	
 	Datetime: 2021-02-02 18:31:14.521069
 	
-	The undirected graph Sphaeroforma arctica has 6771 nodes and 1578758 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06888 and
-	has 9 connected components, where the component with most nodes has 6753 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 387,
-	the mean node degree is 466.33, and the node degree mode is 1. The top 5 most central
-	nodes are 72019.SARC_12087T0 (degree 2877), 72019.SARC_05259T0 (degree 2560), 72019.SARC_07251T0
-	(degree 2478), 72019.SARC_02207T0 (degree 2379) and 72019.SARC_10886T0 (degree 2309).
+	The undirected graph Sphaeroforma arctica has 6771 nodes and 1578758 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06888 and has 9 connected components, where the component with most
+	nodes has 6753 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 387, the mean node degree is 466.33, and
+	the node degree mode is 1. The top 5 most central nodes are 72019.SARC_12087T0
+	(degree 2877), 72019.SARC_05259T0 (degree 2560), 72019.SARC_07251T0 (degree
+	2478), 72019.SARC_02207T0 (degree 2379) and 72019.SARC_10886T0 (degree
+	2309).
 	
 
 

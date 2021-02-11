@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:56.835070
 
-The undirected graph Actinoplanes missouriensis has 8084 nodes and 999592 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03060
-and has 22 connected components, where the component with most nodes has 8033 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 247.30, and the node degree mode is 2. The top 5
-most central nodes are 512565.AMIS_60120 (degree 2464), 512565.AMIS_30890 (degree
-2414), 512565.AMIS_15820 (degree 2297), 512565.AMIS_18730 (degree 2245) and 512565.AMIS_40200
-(degree 2097).
+The undirected graph Actinoplanes missouriensis has 8084 nodes and 999592
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03060 and has 22 connected components, where the component
+with most nodes has 8033 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 247.30,
+and the node degree mode is 2. The top 5 most central nodes are 512565.AMIS_60120
+(degree 2464), 512565.AMIS_30890 (degree 2414), 512565.AMIS_15820 (degree
+2297), 512565.AMIS_18730 (degree 2245) and 512565.AMIS_40200 (degree 2097).
 
 
 References
@@ -107,14 +107,14 @@ def ActinoplanesMissouriensis(
 	
 	Datetime: 2021-02-02 21:02:56.835070
 	
-	The undirected graph Actinoplanes missouriensis has 8084 nodes and 999592 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03060
-	and has 22 connected components, where the component with most nodes has 8033 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 247.30, and the node degree mode is 2. The top 5
-	most central nodes are 512565.AMIS_60120 (degree 2464), 512565.AMIS_30890 (degree
-	2414), 512565.AMIS_15820 (degree 2297), 512565.AMIS_18730 (degree 2245) and 512565.AMIS_40200
-	(degree 2097).
+	The undirected graph Actinoplanes missouriensis has 8084 nodes and 999592
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03060 and has 22 connected components, where the component
+	with most nodes has 8033 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 247.30,
+	and the node degree mode is 2. The top 5 most central nodes are 512565.AMIS_60120
+	(degree 2464), 512565.AMIS_30890 (degree 2414), 512565.AMIS_15820 (degree
+	2297), 512565.AMIS_18730 (degree 2245) and 512565.AMIS_40200 (degree 2097).
 	
 
 

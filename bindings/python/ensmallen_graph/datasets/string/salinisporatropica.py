@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:42.108316
 
-The undirected graph Salinispora tropica has 4500 nodes and 565706 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05588 and
-has 14 connected components, where the component with most nodes has 4463 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 251.42, and the node degree mode is 2. The top 5 most central
-nodes are 369723.Strop_3145 (degree 1455), 369723.Strop_2654 (degree 1375), 369723.Strop_1651
-(degree 1314), 369723.Strop_3833 (degree 1231) and 369723.Strop_3429 (degree 1202).
+The undirected graph Salinispora tropica has 4500 nodes and 565706 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05588 and has 14 connected components, where the component with most
+nodes has 4463 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 251.42, and
+the node degree mode is 2. The top 5 most central nodes are 369723.Strop_3145
+(degree 1455), 369723.Strop_2654 (degree 1375), 369723.Strop_1651 (degree
+1314), 369723.Strop_3833 (degree 1231) and 369723.Strop_3429 (degree 1202).
 
 
 References
@@ -106,13 +107,14 @@ def SalinisporaTropica(
 	
 	Datetime: 2021-02-02 20:35:42.108316
 	
-	The undirected graph Salinispora tropica has 4500 nodes and 565706 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05588 and
-	has 14 connected components, where the component with most nodes has 4463 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 251.42, and the node degree mode is 2. The top 5 most central
-	nodes are 369723.Strop_3145 (degree 1455), 369723.Strop_2654 (degree 1375), 369723.Strop_1651
-	(degree 1314), 369723.Strop_3833 (degree 1231) and 369723.Strop_3429 (degree 1202).
+	The undirected graph Salinispora tropica has 4500 nodes and 565706 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05588 and has 14 connected components, where the component with most
+	nodes has 4463 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 251.42, and
+	the node degree mode is 2. The top 5 most central nodes are 369723.Strop_3145
+	(degree 1455), 369723.Strop_2654 (degree 1375), 369723.Strop_1651 (degree
+	1314), 369723.Strop_3833 (degree 1231) and 369723.Strop_3429 (degree 1202).
 	
 
 

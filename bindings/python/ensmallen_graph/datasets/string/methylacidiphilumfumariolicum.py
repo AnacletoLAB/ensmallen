@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:34.532231
 
-The undirected graph Methylacidiphilum fumariolicum has 2129 nodes and 130413 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05757
-and has 53 connected components, where the component with most nodes has 2006 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 122.51, and the node degree mode is 1. The top 5 most
-central nodes are 1156937.MFUM_940083 (degree 832), 1156937.MFUM_260033 (degree 697),
-1156937.MFUM_210011 (degree 683), 1156937.MFUM_790012 (degree 658) and 1156937.MFUM_930015
-(degree 630).
+The undirected graph Methylacidiphilum fumariolicum has 2129 nodes and
+130413 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05757 and has 53 connected components, where the
+component with most nodes has 2006 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+is 122.51, and the node degree mode is 1. The top 5 most central nodes
+are 1156937.MFUM_940083 (degree 832), 1156937.MFUM_260033 (degree 697),
+1156937.MFUM_210011 (degree 683), 1156937.MFUM_790012 (degree 658) and
+1156937.MFUM_930015 (degree 630).
 
 
 References
@@ -107,14 +108,15 @@ def MethylacidiphilumFumariolicum(
 	
 	Datetime: 2021-02-02 23:01:34.532231
 	
-	The undirected graph Methylacidiphilum fumariolicum has 2129 nodes and 130413 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05757
-	and has 53 connected components, where the component with most nodes has 2006 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 122.51, and the node degree mode is 1. The top 5 most
-	central nodes are 1156937.MFUM_940083 (degree 832), 1156937.MFUM_260033 (degree 697),
-	1156937.MFUM_210011 (degree 683), 1156937.MFUM_790012 (degree 658) and 1156937.MFUM_930015
-	(degree 630).
+	The undirected graph Methylacidiphilum fumariolicum has 2129 nodes and
+	130413 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05757 and has 53 connected components, where the
+	component with most nodes has 2006 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+	is 122.51, and the node degree mode is 1. The top 5 most central nodes
+	are 1156937.MFUM_940083 (degree 832), 1156937.MFUM_260033 (degree 697),
+	1156937.MFUM_210011 (degree 683), 1156937.MFUM_790012 (degree 658) and
+	1156937.MFUM_930015 (degree 630).
 	
 
 

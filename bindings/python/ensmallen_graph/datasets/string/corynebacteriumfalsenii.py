@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:41.299214
 
-The undirected graph Corynebacterium falsenii has 2284 nodes and 141009 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05408
-and has 9 connected components, where the component with most nodes has 2265 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 123.48, and the node degree mode is 3. The top 5
-most central nodes are 1451189.CFAL_07210 (degree 944), 1451189.CFAL_04715 (degree
-799), 1451189.CFAL_09450 (degree 741), 1451189.CFAL_04820 (degree 670) and 1451189.CFAL_01110
-(degree 659).
+The undirected graph Corynebacterium falsenii has 2284 nodes and 141009
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05408 and has 9 connected components, where the component
+with most nodes has 2265 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 123.48,
+and the node degree mode is 3. The top 5 most central nodes are 1451189.CFAL_07210
+(degree 944), 1451189.CFAL_04715 (degree 799), 1451189.CFAL_09450 (degree
+741), 1451189.CFAL_04820 (degree 670) and 1451189.CFAL_01110 (degree 659).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumFalsenii(
 	
 	Datetime: 2021-02-03 23:05:41.299214
 	
-	The undirected graph Corynebacterium falsenii has 2284 nodes and 141009 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05408
-	and has 9 connected components, where the component with most nodes has 2265 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 123.48, and the node degree mode is 3. The top 5
-	most central nodes are 1451189.CFAL_07210 (degree 944), 1451189.CFAL_04715 (degree
-	799), 1451189.CFAL_09450 (degree 741), 1451189.CFAL_04820 (degree 670) and 1451189.CFAL_01110
-	(degree 659).
+	The undirected graph Corynebacterium falsenii has 2284 nodes and 141009
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05408 and has 9 connected components, where the component
+	with most nodes has 2265 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 123.48,
+	and the node degree mode is 3. The top 5 most central nodes are 1451189.CFAL_07210
+	(degree 944), 1451189.CFAL_04715 (degree 799), 1451189.CFAL_09450 (degree
+	741), 1451189.CFAL_04820 (degree 670) and 1451189.CFAL_01110 (degree 659).
 	
 
 

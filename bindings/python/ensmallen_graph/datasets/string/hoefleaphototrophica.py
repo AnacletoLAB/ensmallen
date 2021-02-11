@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:09.686125
 
-The undirected graph Hoeflea phototrophica has 4191 nodes and 479470 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05461 and
-has 7 connected components, where the component with most nodes has 4173 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 228.81, and the node degree mode is 3. The top 5 most central
-nodes are 411684.HPDFL43_19062 (degree 1646), 411684.HPDFL43_15667 (degree 1282),
-411684.HPDFL43_02050 (degree 1282), 411684.HPDFL43_19207 (degree 1261) and 411684.HPDFL43_10277
+The undirected graph Hoeflea phototrophica has 4191 nodes and 479470 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05461 and has 7 connected components, where the component with most
+nodes has 4173 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 228.81, and
+the node degree mode is 3. The top 5 most central nodes are 411684.HPDFL43_19062
+(degree 1646), 411684.HPDFL43_15667 (degree 1282), 411684.HPDFL43_02050
+(degree 1282), 411684.HPDFL43_19207 (degree 1261) and 411684.HPDFL43_10277
 (degree 1239).
 
 
@@ -107,13 +108,14 @@ def HoefleaPhototrophica(
 	
 	Datetime: 2021-02-02 20:46:09.686125
 	
-	The undirected graph Hoeflea phototrophica has 4191 nodes and 479470 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05461 and
-	has 7 connected components, where the component with most nodes has 4173 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 228.81, and the node degree mode is 3. The top 5 most central
-	nodes are 411684.HPDFL43_19062 (degree 1646), 411684.HPDFL43_15667 (degree 1282),
-	411684.HPDFL43_02050 (degree 1282), 411684.HPDFL43_19207 (degree 1261) and 411684.HPDFL43_10277
+	The undirected graph Hoeflea phototrophica has 4191 nodes and 479470 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05461 and has 7 connected components, where the component with most
+	nodes has 4173 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 228.81, and
+	the node degree mode is 3. The top 5 most central nodes are 411684.HPDFL43_19062
+	(degree 1646), 411684.HPDFL43_15667 (degree 1282), 411684.HPDFL43_02050
+	(degree 1282), 411684.HPDFL43_19207 (degree 1261) and 411684.HPDFL43_10277
 	(degree 1239).
 	
 

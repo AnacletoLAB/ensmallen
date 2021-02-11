@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:37:58.113390
 
-The undirected graph PLC-60-30-L2 has 117572 nodes with 2 different node types: 2
-(nodes number 58786) and 1 (nodes number 58786) and 7045181 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00102 and
-is connected, as it has a single component. The graph median node degree is 80, the
-mean node degree is 119.84, and the node degree mode is 60. The top 5 most central
-nodes are 65 (degree 9572), 66 (degree 9418), 67 (degree 7591), 71 (degree 7583)
-and 70 (degree 6970).
+The undirected graph PLC-60-30-L2 has 117572 nodes with 2 different node
+types: 2 (nodes number 58786) and 1 (nodes number 58786) and 7045181 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00102 and is connected, as it has a single component. The graph median
+node degree is 80, the mean node degree is 119.84, and the node degree
+mode is 60. The top 5 most central nodes are 65 (degree 9572), 66 (degree
+9418), 67 (degree 7591), 71 (degree 7583) and 70 (degree 6970).
 
 
 References
@@ -103,13 +103,13 @@ def Plc6030L2(
 	
 	Datetime: 2021-02-04 08:37:58.113390
 	
-	The undirected graph PLC-60-30-L2 has 117572 nodes with 2 different node types: 2
-	(nodes number 58786) and 1 (nodes number 58786) and 7045181 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00102 and
-	is connected, as it has a single component. The graph median node degree is 80, the
-	mean node degree is 119.84, and the node degree mode is 60. The top 5 most central
-	nodes are 65 (degree 9572), 66 (degree 9418), 67 (degree 7591), 71 (degree 7583)
-	and 70 (degree 6970).
+	The undirected graph PLC-60-30-L2 has 117572 nodes with 2 different node
+	types: 2 (nodes number 58786) and 1 (nodes number 58786) and 7045181 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00102 and is connected, as it has a single component. The graph median
+	node degree is 80, the mean node degree is 119.84, and the node degree
+	mode is 60. The top 5 most central nodes are 65 (degree 9572), 66 (degree
+	9418), 67 (degree 7591), 71 (degree 7583) and 70 (degree 6970).
 	
 
 

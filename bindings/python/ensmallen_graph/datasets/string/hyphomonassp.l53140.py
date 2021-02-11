@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:53.203920
 
-The undirected graph Hyphomonas sp. L53140 has 3234 nodes and 260297 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04979 and
-has 9 connected components, where the component with most nodes has 3216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 160.98, and the node degree mode is 4. The top 5 most central
-nodes are 1207058.L53_05635 (degree 1151), 1207058.L53_09920 (degree 967), 1207058.L53_09890
-(degree 891), 1207058.L53_06590 (degree 851) and 1207058.L53_12480 (degree 837).
+The undirected graph Hyphomonas sp. L53140 has 3234 nodes and 260297 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04979 and has 9 connected components, where the component with most
+nodes has 3216 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 160.98, and
+the node degree mode is 4. The top 5 most central nodes are 1207058.L53_05635
+(degree 1151), 1207058.L53_09920 (degree 967), 1207058.L53_09890 (degree
+891), 1207058.L53_06590 (degree 851) and 1207058.L53_12480 (degree 837).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasSp.L53140(
 	
 	Datetime: 2021-02-02 23:17:53.203920
 	
-	The undirected graph Hyphomonas sp. L53140 has 3234 nodes and 260297 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04979 and
-	has 9 connected components, where the component with most nodes has 3216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 160.98, and the node degree mode is 4. The top 5 most central
-	nodes are 1207058.L53_05635 (degree 1151), 1207058.L53_09920 (degree 967), 1207058.L53_09890
-	(degree 891), 1207058.L53_06590 (degree 851) and 1207058.L53_12480 (degree 837).
+	The undirected graph Hyphomonas sp. L53140 has 3234 nodes and 260297 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04979 and has 9 connected components, where the component with most
+	nodes has 3216 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 160.98, and
+	the node degree mode is 4. The top 5 most central nodes are 1207058.L53_05635
+	(degree 1151), 1207058.L53_09920 (degree 967), 1207058.L53_09890 (degree
+	891), 1207058.L53_06590 (degree 851) and 1207058.L53_12480 (degree 837).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:50.370959
 
-The undirected graph Erysipelothrix tonsillarum has 1774 nodes and 188016 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11955 and has 5 connected components, where the component with most nodes has
-1764 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 181, the mean node degree is 211.97, and the node degree mode is 16. The
-top 5 most central nodes are 1121874.KB892380_gene1750 (degree 946), 1121874.KB892377_gene1412
-(degree 924), 1121874.KB892378_gene696 (degree 900), 1121874.KB892379_gene19 (degree
+The undirected graph Erysipelothrix tonsillarum has 1774 nodes and 188016
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11955 and has 5 connected components, where the
+component with most nodes has 1764 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+is 211.97, and the node degree mode is 16. The top 5 most central nodes
+are 1121874.KB892380_gene1750 (degree 946), 1121874.KB892377_gene1412 (degree
+924), 1121874.KB892378_gene696 (degree 900), 1121874.KB892379_gene19 (degree
 899) and 1121874.KB892379_gene228 (degree 882).
 
 
@@ -107,13 +108,14 @@ def ErysipelothrixTonsillarum(
 	
 	Datetime: 2021-02-02 22:37:50.370959
 	
-	The undirected graph Erysipelothrix tonsillarum has 1774 nodes and 188016 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11955 and has 5 connected components, where the component with most nodes has
-	1764 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 181, the mean node degree is 211.97, and the node degree mode is 16. The
-	top 5 most central nodes are 1121874.KB892380_gene1750 (degree 946), 1121874.KB892377_gene1412
-	(degree 924), 1121874.KB892378_gene696 (degree 900), 1121874.KB892379_gene19 (degree
+	The undirected graph Erysipelothrix tonsillarum has 1774 nodes and 188016
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11955 and has 5 connected components, where the
+	component with most nodes has 1764 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+	is 211.97, and the node degree mode is 16. The top 5 most central nodes
+	are 1121874.KB892380_gene1750 (degree 946), 1121874.KB892377_gene1412 (degree
+	924), 1121874.KB892378_gene696 (degree 900), 1121874.KB892379_gene19 (degree
 	899) and 1121874.KB892379_gene228 (degree 882).
 	
 

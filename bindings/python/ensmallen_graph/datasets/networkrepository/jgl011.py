@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:59.948601
 
-The undirected graph jgl011 has 11 nodes and 59 unweighted edges, of which 10 are
-self-loops. The graph is extremely dense as it has a density of 0.98182 and is connected,
-as it has a single component. The graph median node degree is 10, the mean node degree
-is 9.82, and the node degree mode is 10. The top 5 most central nodes are 11 (degree
-11), 10 (degree 11), 9 (degree 11), 8 (degree 10) and 7 (degree 10).
+The undirected graph jgl011 has 11 nodes and 59 unweighted edges, of which
+10 are self-loops. The graph is extremely dense as it has a density of
+0.98182 and is connected, as it has a single component. The graph median
+node degree is 10, the mean node degree is 9.82, and the node degree mode
+is 10. The top 5 most central nodes are 11 (degree 11), 10 (degree 11),
+9 (degree 11), 8 (degree 10) and 7 (degree 10).
 
 
 References
@@ -101,11 +102,12 @@ def Jgl011(
 	
 	Datetime: 2021-02-06 08:12:59.948601
 	
-	The undirected graph jgl011 has 11 nodes and 59 unweighted edges, of which 10 are
-	self-loops. The graph is extremely dense as it has a density of 0.98182 and is connected,
-	as it has a single component. The graph median node degree is 10, the mean node degree
-	is 9.82, and the node degree mode is 10. The top 5 most central nodes are 11 (degree
-	11), 10 (degree 11), 9 (degree 11), 8 (degree 10) and 7 (degree 10).
+	The undirected graph jgl011 has 11 nodes and 59 unweighted edges, of which
+	10 are self-loops. The graph is extremely dense as it has a density of
+	0.98182 and is connected, as it has a single component. The graph median
+	node degree is 10, the mean node degree is 9.82, and the node degree mode
+	is 10. The top 5 most central nodes are 11 (degree 11), 10 (degree 11),
+	9 (degree 11), 8 (degree 10) and 7 (degree 10).
 	
 
 

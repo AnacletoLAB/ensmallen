@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:48:38.056439
 
-The undirected graph ca-netscience has 379 nodes and 913 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01275 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 4.82 and the node degree mode is 2. The top 5 most central nodes are 4 (degree
-34), 26 (degree 27), 5 (degree 27), 16 (degree 21) and 67 (degree 19).
+The undirected graph ca-netscience has 379 nodes and 913 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01275 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.82 and the node degree mode
+is 2. The top 5 most central nodes are 4 (degree 34), 26 (degree 27), 5
+(degree 27), 16 (degree 21) and 67 (degree 19).
 
 
 References
@@ -112,11 +113,12 @@ def CaNetscience(
 	
 	Datetime: 2021-02-03 22:48:38.056439
 	
-	The undirected graph ca-netscience has 379 nodes and 913 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01275 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 4.82 and the node degree mode is 2. The top 5 most central nodes are 4 (degree
-	34), 26 (degree 27), 5 (degree 27), 16 (degree 21) and 67 (degree 19).
+	The undirected graph ca-netscience has 379 nodes and 913 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01275 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.82 and the node degree mode
+	is 2. The top 5 most central nodes are 4 (degree 34), 26 (degree 27), 5
+	(degree 27), 16 (degree 21) and 67 (degree 19).
 	
 
 

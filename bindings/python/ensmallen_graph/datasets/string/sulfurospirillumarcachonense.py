@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:33.891875
 
-The undirected graph Sulfurospirillum arcachonense has 2666 nodes and 280126 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07885
-and has 5 connected components, where the component with most nodes has 2657 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 176, the mean node degree is 210.15, and the node degree mode is 10. The top 5
-most central nodes are 1123326.JFBL01000002_gene1658 (degree 1181), 1123326.JFBL01000001_gene1364
-(degree 1113), 1123326.JFBL01000003_gene1920 (degree 1094), 1123326.JFBL01000003_gene1835
-(degree 1087) and 1123326.JFBL01000002_gene1551 (degree 1070).
+The undirected graph Sulfurospirillum arcachonense has 2666 nodes and 280126
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07885 and has 5 connected components, where the component
+with most nodes has 2657 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 176, the mean node degree is 210.15,
+and the node degree mode is 10. The top 5 most central nodes are 1123326.JFBL01000002_gene1658
+(degree 1181), 1123326.JFBL01000001_gene1364 (degree 1113), 1123326.JFBL01000003_gene1920
+(degree 1094), 1123326.JFBL01000003_gene1835 (degree 1087) and 1123326.JFBL01000002_gene1551
+(degree 1070).
 
 
 References
@@ -107,14 +108,15 @@ def SulfurospirillumArcachonense(
 	
 	Datetime: 2021-02-02 22:51:33.891875
 	
-	The undirected graph Sulfurospirillum arcachonense has 2666 nodes and 280126 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07885
-	and has 5 connected components, where the component with most nodes has 2657 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 176, the mean node degree is 210.15, and the node degree mode is 10. The top 5
-	most central nodes are 1123326.JFBL01000002_gene1658 (degree 1181), 1123326.JFBL01000001_gene1364
-	(degree 1113), 1123326.JFBL01000003_gene1920 (degree 1094), 1123326.JFBL01000003_gene1835
-	(degree 1087) and 1123326.JFBL01000002_gene1551 (degree 1070).
+	The undirected graph Sulfurospirillum arcachonense has 2666 nodes and 280126
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07885 and has 5 connected components, where the component
+	with most nodes has 2657 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 176, the mean node degree is 210.15,
+	and the node degree mode is 10. The top 5 most central nodes are 1123326.JFBL01000002_gene1658
+	(degree 1181), 1123326.JFBL01000001_gene1364 (degree 1113), 1123326.JFBL01000003_gene1920
+	(degree 1094), 1123326.JFBL01000003_gene1835 (degree 1087) and 1123326.JFBL01000002_gene1551
+	(degree 1070).
 	
 
 

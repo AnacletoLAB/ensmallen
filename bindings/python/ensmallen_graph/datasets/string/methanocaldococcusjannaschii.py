@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:19.508538
 
-The undirected graph Methanocaldococcus jannaschii has 1758 nodes and 178285 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11544 and has 4 connected components, where the component with most nodes has
-1746 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 209, the mean node degree is 202.83, and the node degree mode is 3. The
-top 5 most central nodes are 243232.MJ_0254 (degree 697), 243232.MJ_1146 (degree
-687), 243232.MJ_0999 (degree 647), 243232.MJ_0869 (degree 647) and 243232.MJ_1528
-(degree 641).
+The undirected graph Methanocaldococcus jannaschii has 1758 nodes and 178285
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11544 and has 4 connected components, where the
+component with most nodes has 1746 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 209, the mean node degree
+is 202.83, and the node degree mode is 3. The top 5 most central nodes
+are 243232.MJ_0254 (degree 697), 243232.MJ_1146 (degree 687), 243232.MJ_0999
+(degree 647), 243232.MJ_0869 (degree 647) and 243232.MJ_1528 (degree 641).
 
 
 References
@@ -107,14 +107,14 @@ def MethanocaldococcusJannaschii(
 	
 	Datetime: 2021-02-02 20:09:19.508538
 	
-	The undirected graph Methanocaldococcus jannaschii has 1758 nodes and 178285 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11544 and has 4 connected components, where the component with most nodes has
-	1746 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 209, the mean node degree is 202.83, and the node degree mode is 3. The
-	top 5 most central nodes are 243232.MJ_0254 (degree 697), 243232.MJ_1146 (degree
-	687), 243232.MJ_0999 (degree 647), 243232.MJ_0869 (degree 647) and 243232.MJ_1528
-	(degree 641).
+	The undirected graph Methanocaldococcus jannaschii has 1758 nodes and 178285
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11544 and has 4 connected components, where the
+	component with most nodes has 1746 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 209, the mean node degree
+	is 202.83, and the node degree mode is 3. The top 5 most central nodes
+	are 243232.MJ_0254 (degree 697), 243232.MJ_1146 (degree 687), 243232.MJ_0999
+	(degree 647), 243232.MJ_0869 (degree 647) and 243232.MJ_1528 (degree 641).
 	
 
 

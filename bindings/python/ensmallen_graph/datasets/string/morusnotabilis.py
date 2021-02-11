@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:07.763558
 
-The undirected graph Morus notabilis has 18799 nodes and 3139015 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01777 and
-has 13 connected components, where the component with most nodes has 18773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 333.96, and the node degree mode is 2. The top 5
-most central nodes are 981085.XP_010107386.1 (degree 6141), 981085.XP_010110038.1
-(degree 4511), 981085.XP_010105356.1 (degree 4511), 981085.XP_010103972.1 (degree
-4187) and 981085.XP_010099588.1 (degree 4061).
+The undirected graph Morus notabilis has 18799 nodes and 3139015 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01777 and has 13 connected components, where the component with most
+nodes has 18773 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 333.96, and
+the node degree mode is 2. The top 5 most central nodes are 981085.XP_010107386.1
+(degree 6141), 981085.XP_010110038.1 (degree 4511), 981085.XP_010105356.1
+(degree 4511), 981085.XP_010103972.1 (degree 4187) and 981085.XP_010099588.1
+(degree 4061).
 
 
 References
@@ -107,14 +108,15 @@ def MorusNotabilis(
 	
 	Datetime: 2021-02-02 22:03:07.763558
 	
-	The undirected graph Morus notabilis has 18799 nodes and 3139015 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01777 and
-	has 13 connected components, where the component with most nodes has 18773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 333.96, and the node degree mode is 2. The top 5
-	most central nodes are 981085.XP_010107386.1 (degree 6141), 981085.XP_010110038.1
-	(degree 4511), 981085.XP_010105356.1 (degree 4511), 981085.XP_010103972.1 (degree
-	4187) and 981085.XP_010099588.1 (degree 4061).
+	The undirected graph Morus notabilis has 18799 nodes and 3139015 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01777 and has 13 connected components, where the component with most
+	nodes has 18773 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 333.96, and
+	the node degree mode is 2. The top 5 most central nodes are 981085.XP_010107386.1
+	(degree 6141), 981085.XP_010110038.1 (degree 4511), 981085.XP_010105356.1
+	(degree 4511), 981085.XP_010103972.1 (degree 4187) and 981085.XP_010099588.1
+	(degree 4061).
 	
 
 

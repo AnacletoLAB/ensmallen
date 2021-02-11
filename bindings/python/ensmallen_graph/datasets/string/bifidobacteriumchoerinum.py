@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:38.663489
 
-The undirected graph Bifidobacterium choerinum has 1658 nodes and 108995 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07935
-and has 8 connected components, where the component with most nodes has 1633 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 131.48, and the node degree mode is 5. The top 5
-most central nodes are 35760.BCHO_0947 (degree 773), 35760.BCHO_1148 (degree 741),
-35760.BCHO_0552 (degree 735), 35760.BCHO_1464 (degree 632) and 35760.BCHO_0778 (degree
-631).
+The undirected graph Bifidobacterium choerinum has 1658 nodes and 108995
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07935 and has 8 connected components, where the component
+with most nodes has 1633 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 131.48,
+and the node degree mode is 5. The top 5 most central nodes are 35760.BCHO_0947
+(degree 773), 35760.BCHO_1148 (degree 741), 35760.BCHO_0552 (degree 735),
+35760.BCHO_1464 (degree 632) and 35760.BCHO_0778 (degree 631).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumChoerinum(
 	
 	Datetime: 2021-02-02 18:05:38.663489
 	
-	The undirected graph Bifidobacterium choerinum has 1658 nodes and 108995 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07935
-	and has 8 connected components, where the component with most nodes has 1633 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 131.48, and the node degree mode is 5. The top 5
-	most central nodes are 35760.BCHO_0947 (degree 773), 35760.BCHO_1148 (degree 741),
-	35760.BCHO_0552 (degree 735), 35760.BCHO_1464 (degree 632) and 35760.BCHO_0778 (degree
-	631).
+	The undirected graph Bifidobacterium choerinum has 1658 nodes and 108995
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07935 and has 8 connected components, where the component
+	with most nodes has 1633 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 131.48,
+	and the node degree mode is 5. The top 5 most central nodes are 35760.BCHO_0947
+	(degree 773), 35760.BCHO_1148 (degree 741), 35760.BCHO_0552 (degree 735),
+	35760.BCHO_1464 (degree 632) and 35760.BCHO_0778 (degree 631).
 	
 
 

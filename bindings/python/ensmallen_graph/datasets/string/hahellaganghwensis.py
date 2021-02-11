@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:33.532249
 
-The undirected graph Hahella ganghwensis has 5799 nodes and 943984 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05615 and
-has 39 connected components, where the component with most nodes has 5685 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 264,
-the mean node degree is 325.57, and the node degree mode is 1. The top 5 most central
-nodes are 1121935.AQXX01000083_gene42 (degree 2291), 1121935.AQXX01000121_gene5591
-(degree 1960), 1121935.AQXX01000081_gene1089 (degree 1811), 1121935.AQXX01000117_gene5081
-(degree 1805) and 1121935.AQXX01000141_gene2021 (degree 1792).
+The undirected graph Hahella ganghwensis has 5799 nodes and 943984 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05615 and has 39 connected components, where the component with most
+nodes has 5685 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 264, the mean node degree is 325.57, and
+the node degree mode is 1. The top 5 most central nodes are 1121935.AQXX01000083_gene42
+(degree 2291), 1121935.AQXX01000121_gene5591 (degree 1960), 1121935.AQXX01000081_gene1089
+(degree 1811), 1121935.AQXX01000117_gene5081 (degree 1805) and 1121935.AQXX01000141_gene2021
+(degree 1792).
 
 
 References
@@ -107,14 +108,15 @@ def HahellaGanghwensis(
 	
 	Datetime: 2021-02-02 22:39:33.532249
 	
-	The undirected graph Hahella ganghwensis has 5799 nodes and 943984 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05615 and
-	has 39 connected components, where the component with most nodes has 5685 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 264,
-	the mean node degree is 325.57, and the node degree mode is 1. The top 5 most central
-	nodes are 1121935.AQXX01000083_gene42 (degree 2291), 1121935.AQXX01000121_gene5591
-	(degree 1960), 1121935.AQXX01000081_gene1089 (degree 1811), 1121935.AQXX01000117_gene5081
-	(degree 1805) and 1121935.AQXX01000141_gene2021 (degree 1792).
+	The undirected graph Hahella ganghwensis has 5799 nodes and 943984 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05615 and has 39 connected components, where the component with most
+	nodes has 5685 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 264, the mean node degree is 325.57, and
+	the node degree mode is 1. The top 5 most central nodes are 1121935.AQXX01000083_gene42
+	(degree 2291), 1121935.AQXX01000121_gene5591 (degree 1960), 1121935.AQXX01000081_gene1089
+	(degree 1811), 1121935.AQXX01000117_gene5081 (degree 1805) and 1121935.AQXX01000141_gene2021
+	(degree 1792).
 	
 
 

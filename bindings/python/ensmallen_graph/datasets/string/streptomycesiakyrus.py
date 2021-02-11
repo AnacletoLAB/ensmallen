@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:36.321939
 
-The undirected graph Streptomyces iakyrus has 8174 nodes and 1171887 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03508 and
-has 40 connected components, where the component with most nodes has 8083 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 238,
-the mean node degree is 286.74, and the node degree mode is 1. The top 5 most central
-nodes are 68219.JNXI01000046_gene2191 (degree 3575), 68219.JNXI01000027_gene2475
-(degree 2621), 68219.JNXI01000001_gene6060 (degree 2572), 68219.JNXI01000016_gene6944
-(degree 2281) and 68219.JNXI01000015_gene601 (degree 2258).
+The undirected graph Streptomyces iakyrus has 8174 nodes and 1171887 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03508 and has 40 connected components, where the component with most
+nodes has 8083 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 238, the mean node degree is 286.74, and
+the node degree mode is 1. The top 5 most central nodes are 68219.JNXI01000046_gene2191
+(degree 3575), 68219.JNXI01000027_gene2475 (degree 2621), 68219.JNXI01000001_gene6060
+(degree 2572), 68219.JNXI01000016_gene6944 (degree 2281) and 68219.JNXI01000015_gene601
+(degree 2258).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesIakyrus(
 	
 	Datetime: 2021-02-02 18:28:36.321939
 	
-	The undirected graph Streptomyces iakyrus has 8174 nodes and 1171887 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03508 and
-	has 40 connected components, where the component with most nodes has 8083 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 238,
-	the mean node degree is 286.74, and the node degree mode is 1. The top 5 most central
-	nodes are 68219.JNXI01000046_gene2191 (degree 3575), 68219.JNXI01000027_gene2475
-	(degree 2621), 68219.JNXI01000001_gene6060 (degree 2572), 68219.JNXI01000016_gene6944
-	(degree 2281) and 68219.JNXI01000015_gene601 (degree 2258).
+	The undirected graph Streptomyces iakyrus has 8174 nodes and 1171887 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03508 and has 40 connected components, where the component with most
+	nodes has 8083 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 238, the mean node degree is 286.74, and
+	the node degree mode is 1. The top 5 most central nodes are 68219.JNXI01000046_gene2191
+	(degree 3575), 68219.JNXI01000027_gene2475 (degree 2621), 68219.JNXI01000001_gene6060
+	(degree 2572), 68219.JNXI01000016_gene6944 (degree 2281) and 68219.JNXI01000015_gene601
+	(degree 2258).
 	
 
 

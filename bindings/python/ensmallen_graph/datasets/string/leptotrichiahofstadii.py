@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:18.140657
 
-The undirected graph Leptotrichia hofstadii has 2817 nodes and 196084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04944 and
-has 11 connected components, where the component with most nodes has 2791 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 139.21, and the node degree mode is 8. The top 5 most central
-nodes are 634994.GCWU000323_01409 (degree 994), 634994.GCWU000323_00443 (degree 839),
-634994.GCWU000323_00176 (degree 824), 634994.GCWU000323_02481 (degree 808) and 634994.GCWU000323_02054
+The undirected graph Leptotrichia hofstadii has 2817 nodes and 196084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04944 and has 11 connected components, where the component with most
+nodes has 2791 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 139.21, and
+the node degree mode is 8. The top 5 most central nodes are 634994.GCWU000323_01409
+(degree 994), 634994.GCWU000323_00443 (degree 839), 634994.GCWU000323_00176
+(degree 824), 634994.GCWU000323_02481 (degree 808) and 634994.GCWU000323_02054
 (degree 756).
 
 
@@ -107,13 +108,14 @@ def LeptotrichiaHofstadii(
 	
 	Datetime: 2021-02-02 21:22:18.140657
 	
-	The undirected graph Leptotrichia hofstadii has 2817 nodes and 196084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04944 and
-	has 11 connected components, where the component with most nodes has 2791 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 139.21, and the node degree mode is 8. The top 5 most central
-	nodes are 634994.GCWU000323_01409 (degree 994), 634994.GCWU000323_00443 (degree 839),
-	634994.GCWU000323_00176 (degree 824), 634994.GCWU000323_02481 (degree 808) and 634994.GCWU000323_02054
+	The undirected graph Leptotrichia hofstadii has 2817 nodes and 196084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04944 and has 11 connected components, where the component with most
+	nodes has 2791 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 139.21, and
+	the node degree mode is 8. The top 5 most central nodes are 634994.GCWU000323_01409
+	(degree 994), 634994.GCWU000323_00443 (degree 839), 634994.GCWU000323_00176
+	(degree 824), 634994.GCWU000323_02481 (degree 808) and 634994.GCWU000323_02054
 	(degree 756).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:07.088469
 
-The undirected graph Blochmannia floridanus has 583 nodes and 33720 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19876
-and is connected, as it has a single component. The graph median node degree is 104,
-the mean node degree is 115.68, and the node degree mode is 80. The top 5 most central
-nodes are 203907.Bfl619 (degree 364), 203907.Bfl114 (degree 332), 203907.Bfl528 (degree
-314), 203907.Bfl111 (degree 298) and 203907.Bfl071 (degree 294).
+The undirected graph Blochmannia floridanus has 583 nodes and 33720 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19876 and is connected, as it has a single component. The
+graph median node degree is 104, the mean node degree is 115.68, and the
+node degree mode is 80. The top 5 most central nodes are 203907.Bfl619
+(degree 364), 203907.Bfl114 (degree 332), 203907.Bfl528 (degree 314), 203907.Bfl111
+(degree 298) and 203907.Bfl071 (degree 294).
 
 
 References
@@ -105,12 +106,13 @@ def BlochmanniaFloridanus(
 	
 	Datetime: 2021-02-02 20:00:07.088469
 	
-	The undirected graph Blochmannia floridanus has 583 nodes and 33720 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19876
-	and is connected, as it has a single component. The graph median node degree is 104,
-	the mean node degree is 115.68, and the node degree mode is 80. The top 5 most central
-	nodes are 203907.Bfl619 (degree 364), 203907.Bfl114 (degree 332), 203907.Bfl528 (degree
-	314), 203907.Bfl111 (degree 298) and 203907.Bfl071 (degree 294).
+	The undirected graph Blochmannia floridanus has 583 nodes and 33720 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19876 and is connected, as it has a single component. The
+	graph median node degree is 104, the mean node degree is 115.68, and the
+	node degree mode is 80. The top 5 most central nodes are 203907.Bfl619
+	(degree 364), 203907.Bfl114 (degree 332), 203907.Bfl528 (degree 314), 203907.Bfl111
+	(degree 298) and 203907.Bfl071 (degree 294).
 	
 
 

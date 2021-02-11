@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:40.062741
 
-The undirected graph Fodinicurvata fenggangensis has 3414 nodes and 379405 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06512
-and has 8 connected components, where the component with most nodes has 3397 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 182, the mean node degree is 222.26, and the node degree mode is 1. The top 5
-most central nodes are 570967.JMLV01000018_gene489 (degree 1451), 570967.JMLV01000003_gene2211
-(degree 1305), 570967.JMLV01000004_gene737 (degree 1129), 570967.JMLV01000002_gene1827
-(degree 1094) and 570967.JMLV01000001_gene2921 (degree 1040).
+The undirected graph Fodinicurvata fenggangensis has 3414 nodes and 379405
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06512 and has 8 connected components, where the component
+with most nodes has 3397 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 222.26,
+and the node degree mode is 1. The top 5 most central nodes are 570967.JMLV01000018_gene489
+(degree 1451), 570967.JMLV01000003_gene2211 (degree 1305), 570967.JMLV01000004_gene737
+(degree 1129), 570967.JMLV01000002_gene1827 (degree 1094) and 570967.JMLV01000001_gene2921
+(degree 1040).
 
 
 References
@@ -107,14 +108,15 @@ def FodinicurvataFenggangensis(
 	
 	Datetime: 2021-02-02 21:13:40.062741
 	
-	The undirected graph Fodinicurvata fenggangensis has 3414 nodes and 379405 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06512
-	and has 8 connected components, where the component with most nodes has 3397 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 182, the mean node degree is 222.26, and the node degree mode is 1. The top 5
-	most central nodes are 570967.JMLV01000018_gene489 (degree 1451), 570967.JMLV01000003_gene2211
-	(degree 1305), 570967.JMLV01000004_gene737 (degree 1129), 570967.JMLV01000002_gene1827
-	(degree 1094) and 570967.JMLV01000001_gene2921 (degree 1040).
+	The undirected graph Fodinicurvata fenggangensis has 3414 nodes and 379405
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06512 and has 8 connected components, where the component
+	with most nodes has 3397 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 222.26,
+	and the node degree mode is 1. The top 5 most central nodes are 570967.JMLV01000018_gene489
+	(degree 1451), 570967.JMLV01000003_gene2211 (degree 1305), 570967.JMLV01000004_gene737
+	(degree 1129), 570967.JMLV01000002_gene1827 (degree 1094) and 570967.JMLV01000001_gene2921
+	(degree 1040).
 	
 
 

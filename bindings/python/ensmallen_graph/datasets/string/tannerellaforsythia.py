@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:05.856064
 
-The undirected graph Tannerella forsythia has 2900 nodes and 203758 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-has 28 connected components, where the component with most nodes has 2833 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 140.52, and the node degree mode is 5. The top 5 most central
-nodes are 203275.BFO_1922 (degree 1117), 203275.BFO_2853 (degree 1107), 203275.BFO_1001
-(degree 932), 203275.BFO_1304 (degree 901) and 203275.BFO_1302 (degree 783).
+The undirected graph Tannerella forsythia has 2900 nodes and 203758 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04847 and has 28 connected components, where the component with most
+nodes has 2833 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 140.52, and
+the node degree mode is 5. The top 5 most central nodes are 203275.BFO_1922
+(degree 1117), 203275.BFO_2853 (degree 1107), 203275.BFO_1001 (degree 932),
+203275.BFO_1304 (degree 901) and 203275.BFO_1302 (degree 783).
 
 
 References
@@ -106,13 +107,14 @@ def TannerellaForsythia(
 	
 	Datetime: 2021-02-02 20:00:05.856064
 	
-	The undirected graph Tannerella forsythia has 2900 nodes and 203758 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-	has 28 connected components, where the component with most nodes has 2833 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 140.52, and the node degree mode is 5. The top 5 most central
-	nodes are 203275.BFO_1922 (degree 1117), 203275.BFO_2853 (degree 1107), 203275.BFO_1001
-	(degree 932), 203275.BFO_1304 (degree 901) and 203275.BFO_1302 (degree 783).
+	The undirected graph Tannerella forsythia has 2900 nodes and 203758 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04847 and has 28 connected components, where the component with most
+	nodes has 2833 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 140.52, and
+	the node degree mode is 5. The top 5 most central nodes are 203275.BFO_1922
+	(degree 1117), 203275.BFO_2853 (degree 1107), 203275.BFO_1001 (degree 932),
+	203275.BFO_1304 (degree 901) and 203275.BFO_1302 (degree 783).
 	
 
 

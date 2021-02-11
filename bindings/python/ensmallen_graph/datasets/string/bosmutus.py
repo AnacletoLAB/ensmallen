@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:31:04.581948
 
-The undirected graph Bos mutus has 19611 nodes and 4542198 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02362 and is connected,
-as it has a single component. The graph median node degree is 333, the mean node
-degree is 463.23, and the node degree mode is 10. The top 5 most central nodes are
-72004.XP_005910190.1 (degree 4441), 72004.XP_005893092.1 (degree 4258), 72004.XP_005911957.1
-(degree 4248), 72004.XP_005894646.1 (degree 4241) and 72004.XP_005891412.1 (degree
+The undirected graph Bos mutus has 19611 nodes and 4542198 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02362 and is connected, as it has a single component. The graph median
+node degree is 333, the mean node degree is 463.23, and the node degree
+mode is 10. The top 5 most central nodes are 72004.XP_005910190.1 (degree
+4441), 72004.XP_005893092.1 (degree 4258), 72004.XP_005911957.1 (degree
+4248), 72004.XP_005894646.1 (degree 4241) and 72004.XP_005891412.1 (degree
 3855).
 
 
@@ -106,12 +107,13 @@ def BosMutus(
 	
 	Datetime: 2021-02-02 18:31:04.581948
 	
-	The undirected graph Bos mutus has 19611 nodes and 4542198 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02362 and is connected,
-	as it has a single component. The graph median node degree is 333, the mean node
-	degree is 463.23, and the node degree mode is 10. The top 5 most central nodes are
-	72004.XP_005910190.1 (degree 4441), 72004.XP_005893092.1 (degree 4258), 72004.XP_005911957.1
-	(degree 4248), 72004.XP_005894646.1 (degree 4241) and 72004.XP_005891412.1 (degree
+	The undirected graph Bos mutus has 19611 nodes and 4542198 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02362 and is connected, as it has a single component. The graph median
+	node degree is 333, the mean node degree is 463.23, and the node degree
+	mode is 10. The top 5 most central nodes are 72004.XP_005910190.1 (degree
+	4441), 72004.XP_005893092.1 (degree 4258), 72004.XP_005911957.1 (degree
+	4248), 72004.XP_005894646.1 (degree 4241) and 72004.XP_005891412.1 (degree
 	3855).
 	
 

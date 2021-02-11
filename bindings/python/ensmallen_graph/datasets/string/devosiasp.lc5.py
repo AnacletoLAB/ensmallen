@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:26.945692
 
-The undirected graph Devosia sp. LC5 has 4076 nodes and 383493 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04618 and
-has 11 connected components, where the component with most nodes has 4053 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 188.17, and the node degree mode is 4. The top 5 most central
-nodes are 1502724.FF80_03053 (degree 1447), 1502724.FF80_03812 (degree 1165), 1502724.FF80_02141
-(degree 1072), 1502724.FF80_00794 (degree 979) and 1502724.FF80_02665 (degree 974).
+The undirected graph Devosia sp. LC5 has 4076 nodes and 383493 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04618 and has 11 connected components, where the component with most
+nodes has 4053 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 188.17, and
+the node degree mode is 4. The top 5 most central nodes are 1502724.FF80_03053
+(degree 1447), 1502724.FF80_03812 (degree 1165), 1502724.FF80_02141 (degree
+1072), 1502724.FF80_00794 (degree 979) and 1502724.FF80_02665 (degree 974).
 
 
 References
@@ -106,13 +107,14 @@ def DevosiaSp.Lc5(
 	
 	Datetime: 2021-02-03 23:16:26.945692
 	
-	The undirected graph Devosia sp. LC5 has 4076 nodes and 383493 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04618 and
-	has 11 connected components, where the component with most nodes has 4053 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 188.17, and the node degree mode is 4. The top 5 most central
-	nodes are 1502724.FF80_03053 (degree 1447), 1502724.FF80_03812 (degree 1165), 1502724.FF80_02141
-	(degree 1072), 1502724.FF80_00794 (degree 979) and 1502724.FF80_02665 (degree 974).
+	The undirected graph Devosia sp. LC5 has 4076 nodes and 383493 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04618 and has 11 connected components, where the component with most
+	nodes has 4053 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 188.17, and
+	the node degree mode is 4. The top 5 most central nodes are 1502724.FF80_03053
+	(degree 1447), 1502724.FF80_03812 (degree 1165), 1502724.FF80_02141 (degree
+	1072), 1502724.FF80_00794 (degree 979) and 1502724.FF80_02665 (degree 974).
 	
 
 

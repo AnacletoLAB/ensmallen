@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:40.930620
 
-The undirected graph Heliconius melpomene has 10054 nodes and 1250796 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02475 and
-has 28 connected components, where the component with most nodes has 9998 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 248.82, and the node degree mode is 1. The top 5 most central
-nodes are 34740.HMEL010148-PA (degree 3901), 34740.HMEL014132-PA (degree 2733), 34740.HMEL009331-PA
-(degree 2450), 34740.HMEL002991-PA (degree 2253) and 34740.HMEL009730-PA (degree
+The undirected graph Heliconius melpomene has 10054 nodes and 1250796 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02475 and has 28 connected components, where the component with most
+nodes has 9998 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 248.82, and
+the node degree mode is 1. The top 5 most central nodes are 34740.HMEL010148-PA
+(degree 3901), 34740.HMEL014132-PA (degree 2733), 34740.HMEL009331-PA (degree
+2450), 34740.HMEL002991-PA (degree 2253) and 34740.HMEL009730-PA (degree
 2198).
 
 
@@ -107,13 +108,14 @@ def HeliconiusMelpomene(
 	
 	Datetime: 2021-02-02 18:04:40.930620
 	
-	The undirected graph Heliconius melpomene has 10054 nodes and 1250796 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02475 and
-	has 28 connected components, where the component with most nodes has 9998 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 248.82, and the node degree mode is 1. The top 5 most central
-	nodes are 34740.HMEL010148-PA (degree 3901), 34740.HMEL014132-PA (degree 2733), 34740.HMEL009331-PA
-	(degree 2450), 34740.HMEL002991-PA (degree 2253) and 34740.HMEL009730-PA (degree
+	The undirected graph Heliconius melpomene has 10054 nodes and 1250796 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02475 and has 28 connected components, where the component with most
+	nodes has 9998 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 248.82, and
+	the node degree mode is 1. The top 5 most central nodes are 34740.HMEL010148-PA
+	(degree 3901), 34740.HMEL014132-PA (degree 2733), 34740.HMEL009331-PA (degree
+	2450), 34740.HMEL002991-PA (degree 2253) and 34740.HMEL009730-PA (degree
 	2198).
 	
 

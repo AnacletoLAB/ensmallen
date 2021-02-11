@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:58:39.654532
 
-The undirected graph Clostridium pasteurianum BC1 has 4379 nodes and 347307 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03623
-and has 26 connected components, where the component with most nodes has 4307 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 158.62, and the node degree mode is 1. The top 5
-most central nodes are 86416.Clopa_2063 (degree 1614), 86416.Clopa_4079 (degree 1226),
-86416.Clopa_2193 (degree 1198), 86416.Clopa_2212 (degree 1191) and 86416.Clopa_3227
-(degree 1172).
+The undirected graph Clostridium pasteurianum BC1 has 4379 nodes and 347307
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03623 and has 26 connected components, where the component
+with most nodes has 4307 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 158.62,
+and the node degree mode is 1. The top 5 most central nodes are 86416.Clopa_2063
+(degree 1614), 86416.Clopa_4079 (degree 1226), 86416.Clopa_2193 (degree
+1198), 86416.Clopa_2212 (degree 1191) and 86416.Clopa_3227 (degree 1172).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumPasteurianumBc1(
 	
 	Datetime: 2021-02-02 18:58:39.654532
 	
-	The undirected graph Clostridium pasteurianum BC1 has 4379 nodes and 347307 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03623
-	and has 26 connected components, where the component with most nodes has 4307 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 158.62, and the node degree mode is 1. The top 5
-	most central nodes are 86416.Clopa_2063 (degree 1614), 86416.Clopa_4079 (degree 1226),
-	86416.Clopa_2193 (degree 1198), 86416.Clopa_2212 (degree 1191) and 86416.Clopa_3227
-	(degree 1172).
+	The undirected graph Clostridium pasteurianum BC1 has 4379 nodes and 347307
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03623 and has 26 connected components, where the component
+	with most nodes has 4307 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 158.62,
+	and the node degree mode is 1. The top 5 most central nodes are 86416.Clopa_2063
+	(degree 1614), 86416.Clopa_4079 (degree 1226), 86416.Clopa_2193 (degree
+	1198), 86416.Clopa_2212 (degree 1191) and 86416.Clopa_3227 (degree 1172).
 	
 
 

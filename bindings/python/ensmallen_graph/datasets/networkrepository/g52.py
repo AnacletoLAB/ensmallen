@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:58:19.167679
 
-The undirected graph G52 has 1000 nodes and 5916 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01184 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 11.83, and the node degree mode is 6. The top 5 most central nodes are 4 (degree
-171), 1 (degree 130), 2 (degree 126), 3 (degree 120) and 5 (degree 96).
+The undirected graph G52 has 1000 nodes and 5916 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.01184
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 11.83, and the node degree mode is 6. The
+top 5 most central nodes are 4 (degree 171), 1 (degree 130), 2 (degree
+126), 3 (degree 120) and 5 (degree 96).
 
 
 References
@@ -101,11 +102,12 @@ def G52(
 	
 	Datetime: 2021-02-06 07:58:19.167679
 	
-	The undirected graph G52 has 1000 nodes and 5916 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01184 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 11.83, and the node degree mode is 6. The top 5 most central nodes are 4 (degree
-	171), 1 (degree 130), 2 (degree 126), 3 (degree 120) and 5 (degree 96).
+	The undirected graph G52 has 1000 nodes and 5916 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.01184
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 11.83, and the node degree mode is 6. The
+	top 5 most central nodes are 4 (degree 171), 1 (degree 130), 2 (degree
+	126), 3 (degree 120) and 5 (degree 96).
 	
 
 

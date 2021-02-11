@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:47.800467
 
-The undirected graph Pseudomonas sp. VLB120 has 5427 nodes and 484076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03288 and
-has 40 connected components, where the component with most nodes has 5296 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 178.40, and the node degree mode is 1. The top 5 most central
-nodes are 69328.PVLB_00710 (degree 1889), 69328.PVLB_01690 (degree 1446), 69328.PVLB_03390
-(degree 1380), 69328.PVLB_20015 (degree 1368) and 69328.PVLB_05960 (degree 1298).
+The undirected graph Pseudomonas sp. VLB120 has 5427 nodes and 484076 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03288 and has 40 connected components, where the component with most
+nodes has 5296 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 178.40, and
+the node degree mode is 1. The top 5 most central nodes are 69328.PVLB_00710
+(degree 1889), 69328.PVLB_01690 (degree 1446), 69328.PVLB_03390 (degree
+1380), 69328.PVLB_20015 (degree 1368) and 69328.PVLB_05960 (degree 1298).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasSp.Vlb120(
 	
 	Datetime: 2021-02-02 18:29:47.800467
 	
-	The undirected graph Pseudomonas sp. VLB120 has 5427 nodes and 484076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03288 and
-	has 40 connected components, where the component with most nodes has 5296 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 178.40, and the node degree mode is 1. The top 5 most central
-	nodes are 69328.PVLB_00710 (degree 1889), 69328.PVLB_01690 (degree 1446), 69328.PVLB_03390
-	(degree 1380), 69328.PVLB_20015 (degree 1368) and 69328.PVLB_05960 (degree 1298).
+	The undirected graph Pseudomonas sp. VLB120 has 5427 nodes and 484076 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03288 and has 40 connected components, where the component with most
+	nodes has 5296 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 178.40, and
+	the node degree mode is 1. The top 5 most central nodes are 69328.PVLB_00710
+	(degree 1889), 69328.PVLB_01690 (degree 1446), 69328.PVLB_03390 (degree
+	1380), 69328.PVLB_20015 (degree 1368) and 69328.PVLB_05960 (degree 1298).
 	
 
 

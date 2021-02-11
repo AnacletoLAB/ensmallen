@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:53.664287
 
-The undirected graph Rubrobacter radiotolerans has 3150 nodes and 202880 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04091
-and has 13 connected components, where the component with most nodes has 3121 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 128.81, and the node degree mode is 5. The top 5 most
-central nodes are 42256.RradSPS_0947 (degree 1400), 42256.RradSPS_1804 (degree 1160),
-42256.RradSPS_2554 (degree 955), 42256.RradSPS_2945 (degree 952) and 42256.RradSPS_2983
-(degree 862).
+The undirected graph Rubrobacter radiotolerans has 3150 nodes and 202880
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04091 and has 13 connected components, where the component
+with most nodes has 3121 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 128.81,
+and the node degree mode is 5. The top 5 most central nodes are 42256.RradSPS_0947
+(degree 1400), 42256.RradSPS_1804 (degree 1160), 42256.RradSPS_2554 (degree
+955), 42256.RradSPS_2945 (degree 952) and 42256.RradSPS_2983 (degree 862).
 
 
 References
@@ -107,14 +107,14 @@ def RubrobacterRadiotolerans(
 	
 	Datetime: 2021-02-02 18:12:53.664287
 	
-	The undirected graph Rubrobacter radiotolerans has 3150 nodes and 202880 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04091
-	and has 13 connected components, where the component with most nodes has 3121 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 128.81, and the node degree mode is 5. The top 5 most
-	central nodes are 42256.RradSPS_0947 (degree 1400), 42256.RradSPS_1804 (degree 1160),
-	42256.RradSPS_2554 (degree 955), 42256.RradSPS_2945 (degree 952) and 42256.RradSPS_2983
-	(degree 862).
+	The undirected graph Rubrobacter radiotolerans has 3150 nodes and 202880
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04091 and has 13 connected components, where the component
+	with most nodes has 3121 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 128.81,
+	and the node degree mode is 5. The top 5 most central nodes are 42256.RradSPS_0947
+	(degree 1400), 42256.RradSPS_1804 (degree 1160), 42256.RradSPS_2554 (degree
+	955), 42256.RradSPS_2945 (degree 952) and 42256.RradSPS_2983 (degree 862).
 	
 
 

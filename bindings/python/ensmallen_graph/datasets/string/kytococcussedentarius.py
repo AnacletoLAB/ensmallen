@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:59.072300
 
-The undirected graph Kytococcus sedentarius has 2532 nodes and 215385 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06722 and
-has 7 connected components, where the component with most nodes has 2517 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 170.13, and the node degree mode is 3. The top 5 most central
-nodes are 478801.Ksed_12970 (degree 947), 478801.Ksed_23140 (degree 940), 478801.Ksed_15080
-(degree 929), 478801.Ksed_07600 (degree 884) and 478801.Ksed_20090 (degree 871).
+The undirected graph Kytococcus sedentarius has 2532 nodes and 215385 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06722 and has 7 connected components, where the component with most
+nodes has 2517 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 170.13, and
+the node degree mode is 3. The top 5 most central nodes are 478801.Ksed_12970
+(degree 947), 478801.Ksed_23140 (degree 940), 478801.Ksed_15080 (degree
+929), 478801.Ksed_07600 (degree 884) and 478801.Ksed_20090 (degree 871).
 
 
 References
@@ -106,13 +107,14 @@ def KytococcusSedentarius(
 	
 	Datetime: 2021-02-02 20:56:59.072300
 	
-	The undirected graph Kytococcus sedentarius has 2532 nodes and 215385 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06722 and
-	has 7 connected components, where the component with most nodes has 2517 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 170.13, and the node degree mode is 3. The top 5 most central
-	nodes are 478801.Ksed_12970 (degree 947), 478801.Ksed_23140 (degree 940), 478801.Ksed_15080
-	(degree 929), 478801.Ksed_07600 (degree 884) and 478801.Ksed_20090 (degree 871).
+	The undirected graph Kytococcus sedentarius has 2532 nodes and 215385 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06722 and has 7 connected components, where the component with most
+	nodes has 2517 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 170.13, and
+	the node degree mode is 3. The top 5 most central nodes are 478801.Ksed_12970
+	(degree 947), 478801.Ksed_23140 (degree 940), 478801.Ksed_15080 (degree
+	929), 478801.Ksed_07600 (degree 884) and 478801.Ksed_20090 (degree 871).
 	
 
 

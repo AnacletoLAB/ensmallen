@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:41.722363
 
-The undirected graph Granulicatella elegans has 1559 nodes and 89025 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07330 and
-is connected, as it has a single component. The graph median node degree is 95, the
-mean node degree is 114.21, and the node degree mode is 5. The top 5 most central
-nodes are 626369.HMPREF0446_00742 (degree 711), 626369.HMPREF0446_01634 (degree 613),
-626369.HMPREF0446_00237 (degree 555), 626369.HMPREF0446_01349 (degree 531) and 626369.HMPREF0446_00331
+The undirected graph Granulicatella elegans has 1559 nodes and 89025 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07330 and is connected, as it has a single component. The graph median
+node degree is 95, the mean node degree is 114.21, and the node degree
+mode is 5. The top 5 most central nodes are 626369.HMPREF0446_00742 (degree
+711), 626369.HMPREF0446_01634 (degree 613), 626369.HMPREF0446_00237 (degree
+555), 626369.HMPREF0446_01349 (degree 531) and 626369.HMPREF0446_00331
 (degree 521).
 
 
@@ -106,12 +107,13 @@ def GranulicatellaElegans(
 	
 	Datetime: 2021-02-02 21:20:41.722363
 	
-	The undirected graph Granulicatella elegans has 1559 nodes and 89025 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07330 and
-	is connected, as it has a single component. The graph median node degree is 95, the
-	mean node degree is 114.21, and the node degree mode is 5. The top 5 most central
-	nodes are 626369.HMPREF0446_00742 (degree 711), 626369.HMPREF0446_01634 (degree 613),
-	626369.HMPREF0446_00237 (degree 555), 626369.HMPREF0446_01349 (degree 531) and 626369.HMPREF0446_00331
+	The undirected graph Granulicatella elegans has 1559 nodes and 89025 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07330 and is connected, as it has a single component. The graph median
+	node degree is 95, the mean node degree is 114.21, and the node degree
+	mode is 5. The top 5 most central nodes are 626369.HMPREF0446_00742 (degree
+	711), 626369.HMPREF0446_01634 (degree 613), 626369.HMPREF0446_00237 (degree
+	555), 626369.HMPREF0446_01349 (degree 531) and 626369.HMPREF0446_00331
 	(degree 521).
 	
 

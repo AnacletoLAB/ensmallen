@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:50.159993
 
-The undirected graph us04 has 28016 nodes and 297495 unweighted edges, of which 8
-are self-loops. The graph is quite sparse as it has a density of 0.00076 and is connected,
-as it has a single component. The graph median node degree is 11, the mean node degree
-is 21.24, and the node degree mode is 11. The top 5 most central nodes are 57 (degree
-11632), 85 (degree 10804), 28 (degree 9154), 101 (degree 8984) and 92 (degree 8966).
+The undirected graph us04 has 28016 nodes and 297495 unweighted edges,
+of which 8 are self-loops. The graph is quite sparse as it has a density
+of 0.00076 and is connected, as it has a single component. The graph median
+node degree is 11, the mean node degree is 21.24, and the node degree mode
+is 11. The top 5 most central nodes are 57 (degree 11632), 85 (degree 10804),
+28 (degree 9154), 101 (degree 8984) and 92 (degree 8966).
 
 
 References
@@ -101,11 +102,12 @@ def Us04(
 	
 	Datetime: 2021-02-06 11:35:50.159993
 	
-	The undirected graph us04 has 28016 nodes and 297495 unweighted edges, of which 8
-	are self-loops. The graph is quite sparse as it has a density of 0.00076 and is connected,
-	as it has a single component. The graph median node degree is 11, the mean node degree
-	is 21.24, and the node degree mode is 11. The top 5 most central nodes are 57 (degree
-	11632), 85 (degree 10804), 28 (degree 9154), 101 (degree 8984) and 92 (degree 8966).
+	The undirected graph us04 has 28016 nodes and 297495 unweighted edges,
+	of which 8 are self-loops. The graph is quite sparse as it has a density
+	of 0.00076 and is connected, as it has a single component. The graph median
+	node degree is 11, the mean node degree is 21.24, and the node degree mode
+	is 11. The top 5 most central nodes are 57 (degree 11632), 85 (degree 10804),
+	28 (degree 9154), 101 (degree 8984) and 92 (degree 8966).
 	
 
 

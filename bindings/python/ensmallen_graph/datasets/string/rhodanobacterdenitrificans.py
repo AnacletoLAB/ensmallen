@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:39.591935
 
-The undirected graph Rhodanobacter denitrificans has 3806 nodes and 263162 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03634
-and has 11 connected components, where the component with most nodes has 3779 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 138.29, and the node degree mode is 4. The top 5
-most central nodes are 666685.R2APBS1_0332 (degree 1255), 666685.R2APBS1_1768 (degree
-1014), 666685.R2APBS1_3041 (degree 995), 666685.R2APBS1_0618 (degree 943) and 666685.R2APBS1_0012
-(degree 929).
+The undirected graph Rhodanobacter denitrificans has 3806 nodes and 263162
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03634 and has 11 connected components, where the component
+with most nodes has 3779 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 138.29,
+and the node degree mode is 4. The top 5 most central nodes are 666685.R2APBS1_0332
+(degree 1255), 666685.R2APBS1_1768 (degree 1014), 666685.R2APBS1_3041 (degree
+995), 666685.R2APBS1_0618 (degree 943) and 666685.R2APBS1_0012 (degree
+929).
 
 
 References
@@ -107,14 +108,15 @@ def RhodanobacterDenitrificans(
 	
 	Datetime: 2021-02-02 21:28:39.591935
 	
-	The undirected graph Rhodanobacter denitrificans has 3806 nodes and 263162 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03634
-	and has 11 connected components, where the component with most nodes has 3779 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 138.29, and the node degree mode is 4. The top 5
-	most central nodes are 666685.R2APBS1_0332 (degree 1255), 666685.R2APBS1_1768 (degree
-	1014), 666685.R2APBS1_3041 (degree 995), 666685.R2APBS1_0618 (degree 943) and 666685.R2APBS1_0012
-	(degree 929).
+	The undirected graph Rhodanobacter denitrificans has 3806 nodes and 263162
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03634 and has 11 connected components, where the component
+	with most nodes has 3779 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 138.29,
+	and the node degree mode is 4. The top 5 most central nodes are 666685.R2APBS1_0332
+	(degree 1255), 666685.R2APBS1_1768 (degree 1014), 666685.R2APBS1_3041 (degree
+	995), 666685.R2APBS1_0618 (degree 943) and 666685.R2APBS1_0012 (degree
+	929).
 	
 
 

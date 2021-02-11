@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:02.934533
 
-The undirected graph Serinicoccus profundi has 3093 nodes and 350118 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07322 and
-has 6 connected components, where the component with most nodes has 3080 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 226.39, and the node degree mode is 4. The top 5 most central
-nodes are 1043205.AFYF01000075_gene2079 (degree 1245), 1043205.AFYF01000025_gene521
-(degree 1086), 1043205.AFYF01000034_gene166 (degree 1082), 1043205.AFYF01000026_gene320
-(degree 1049) and 1043205.AFYF01000020_gene791 (degree 999).
+The undirected graph Serinicoccus profundi has 3093 nodes and 350118 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07322 and has 6 connected components, where the component with most
+nodes has 3080 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 226.39, and
+the node degree mode is 4. The top 5 most central nodes are 1043205.AFYF01000075_gene2079
+(degree 1245), 1043205.AFYF01000025_gene521 (degree 1086), 1043205.AFYF01000034_gene166
+(degree 1082), 1043205.AFYF01000026_gene320 (degree 1049) and 1043205.AFYF01000020_gene791
+(degree 999).
 
 
 References
@@ -107,14 +108,15 @@ def SerinicoccusProfundi(
 	
 	Datetime: 2021-02-02 22:16:02.934533
 	
-	The undirected graph Serinicoccus profundi has 3093 nodes and 350118 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07322 and
-	has 6 connected components, where the component with most nodes has 3080 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 226.39, and the node degree mode is 4. The top 5 most central
-	nodes are 1043205.AFYF01000075_gene2079 (degree 1245), 1043205.AFYF01000025_gene521
-	(degree 1086), 1043205.AFYF01000034_gene166 (degree 1082), 1043205.AFYF01000026_gene320
-	(degree 1049) and 1043205.AFYF01000020_gene791 (degree 999).
+	The undirected graph Serinicoccus profundi has 3093 nodes and 350118 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07322 and has 6 connected components, where the component with most
+	nodes has 3080 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 226.39, and
+	the node degree mode is 4. The top 5 most central nodes are 1043205.AFYF01000075_gene2079
+	(degree 1245), 1043205.AFYF01000025_gene521 (degree 1086), 1043205.AFYF01000034_gene166
+	(degree 1082), 1043205.AFYF01000026_gene320 (degree 1049) and 1043205.AFYF01000020_gene791
+	(degree 999).
 	
 
 

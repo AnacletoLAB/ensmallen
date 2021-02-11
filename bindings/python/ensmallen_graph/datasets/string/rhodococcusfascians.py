@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:12.232097
 
-The undirected graph Rhodococcus fascians has 5463 nodes and 1168416 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07831 and
-has 21 connected components, where the component with most nodes has 5408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 340,
-the mean node degree is 427.76, and the node degree mode is 3. The top 5 most central
-nodes are 1828.JOKB01000065_gene4323 (degree 3359), 1828.JOKB01000012_gene5421 (degree
-2984), 1828.JOKB01000018_gene2945 (degree 2697), 1828.JOKB01000020_gene686 (degree
-2645) and 1828.JOKB01000067_gene3583 (degree 2643).
+The undirected graph Rhodococcus fascians has 5463 nodes and 1168416 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07831 and has 21 connected components, where the component with most
+nodes has 5408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 340, the mean node degree is 427.76, and
+the node degree mode is 3. The top 5 most central nodes are 1828.JOKB01000065_gene4323
+(degree 3359), 1828.JOKB01000012_gene5421 (degree 2984), 1828.JOKB01000018_gene2945
+(degree 2697), 1828.JOKB01000020_gene686 (degree 2645) and 1828.JOKB01000067_gene3583
+(degree 2643).
 
 
 References
@@ -107,14 +108,15 @@ def RhodococcusFascians(
 	
 	Datetime: 2021-02-02 16:23:12.232097
 	
-	The undirected graph Rhodococcus fascians has 5463 nodes and 1168416 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07831 and
-	has 21 connected components, where the component with most nodes has 5408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 340,
-	the mean node degree is 427.76, and the node degree mode is 3. The top 5 most central
-	nodes are 1828.JOKB01000065_gene4323 (degree 3359), 1828.JOKB01000012_gene5421 (degree
-	2984), 1828.JOKB01000018_gene2945 (degree 2697), 1828.JOKB01000020_gene686 (degree
-	2645) and 1828.JOKB01000067_gene3583 (degree 2643).
+	The undirected graph Rhodococcus fascians has 5463 nodes and 1168416 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07831 and has 21 connected components, where the component with most
+	nodes has 5408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 340, the mean node degree is 427.76, and
+	the node degree mode is 3. The top 5 most central nodes are 1828.JOKB01000065_gene4323
+	(degree 3359), 1828.JOKB01000012_gene5421 (degree 2984), 1828.JOKB01000018_gene2945
+	(degree 2697), 1828.JOKB01000020_gene686 (degree 2645) and 1828.JOKB01000067_gene3583
+	(degree 2643).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:07.490976
 
-The undirected graph Corynebacterium matruchotii has 2562 nodes and 159530 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04863
-and has 37 connected components, where the component with most nodes has 2463 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 124.54, and the node degree mode is 2. The top 5
-most central nodes are 553207.HMPREF0299_5224 (degree 877), 553207.HMPREF0299_6269
-(degree 776), 553207.HMPREF0299_7102 (degree 775), 553207.HMPREF0299_6165 (degree
-741) and 553207.HMPREF0299_6561 (degree 666).
+The undirected graph Corynebacterium matruchotii has 2562 nodes and 159530
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04863 and has 37 connected components, where the component
+with most nodes has 2463 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 124.54,
+and the node degree mode is 2. The top 5 most central nodes are 553207.HMPREF0299_5224
+(degree 877), 553207.HMPREF0299_6269 (degree 776), 553207.HMPREF0299_7102
+(degree 775), 553207.HMPREF0299_6165 (degree 741) and 553207.HMPREF0299_6561
+(degree 666).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumMatruchotii(
 	
 	Datetime: 2021-02-02 21:10:07.490976
 	
-	The undirected graph Corynebacterium matruchotii has 2562 nodes and 159530 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04863
-	and has 37 connected components, where the component with most nodes has 2463 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 124.54, and the node degree mode is 2. The top 5
-	most central nodes are 553207.HMPREF0299_5224 (degree 877), 553207.HMPREF0299_6269
-	(degree 776), 553207.HMPREF0299_7102 (degree 775), 553207.HMPREF0299_6165 (degree
-	741) and 553207.HMPREF0299_6561 (degree 666).
+	The undirected graph Corynebacterium matruchotii has 2562 nodes and 159530
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04863 and has 37 connected components, where the component
+	with most nodes has 2463 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 124.54,
+	and the node degree mode is 2. The top 5 most central nodes are 553207.HMPREF0299_5224
+	(degree 877), 553207.HMPREF0299_6269 (degree 776), 553207.HMPREF0299_7102
+	(degree 775), 553207.HMPREF0299_6165 (degree 741) and 553207.HMPREF0299_6561
+	(degree 666).
 	
 
 

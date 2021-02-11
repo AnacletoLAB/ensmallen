@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:11.561477
 
-The undirected graph Corynebacterium massiliense has 1899 nodes and 132478 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07351
-and has 5 connected components, where the component with most nodes has 1890 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 139.52, and the node degree mode is 2. The top 5
-most central nodes are 1121364.ATVG01000016_gene65 (degree 801), 1121364.ATVG01000014_gene197
-(degree 762), 1121364.ATVG01000003_gene1496 (degree 744), 1121364.ATVG01000001_gene854
-(degree 733) and 1121364.ATVG01000014_gene179 (degree 633).
+The undirected graph Corynebacterium massiliense has 1899 nodes and 132478
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07351 and has 5 connected components, where the component
+with most nodes has 1890 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 139.52,
+and the node degree mode is 2. The top 5 most central nodes are 1121364.ATVG01000016_gene65
+(degree 801), 1121364.ATVG01000014_gene197 (degree 762), 1121364.ATVG01000003_gene1496
+(degree 744), 1121364.ATVG01000001_gene854 (degree 733) and 1121364.ATVG01000014_gene179
+(degree 633).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumMassiliense(
 	
 	Datetime: 2021-02-02 22:35:11.561477
 	
-	The undirected graph Corynebacterium massiliense has 1899 nodes and 132478 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07351
-	and has 5 connected components, where the component with most nodes has 1890 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 139.52, and the node degree mode is 2. The top 5
-	most central nodes are 1121364.ATVG01000016_gene65 (degree 801), 1121364.ATVG01000014_gene197
-	(degree 762), 1121364.ATVG01000003_gene1496 (degree 744), 1121364.ATVG01000001_gene854
-	(degree 733) and 1121364.ATVG01000014_gene179 (degree 633).
+	The undirected graph Corynebacterium massiliense has 1899 nodes and 132478
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07351 and has 5 connected components, where the component
+	with most nodes has 1890 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 139.52,
+	and the node degree mode is 2. The top 5 most central nodes are 1121364.ATVG01000016_gene65
+	(degree 801), 1121364.ATVG01000014_gene197 (degree 762), 1121364.ATVG01000003_gene1496
+	(degree 744), 1121364.ATVG01000001_gene854 (degree 733) and 1121364.ATVG01000014_gene179
+	(degree 633).
 	
 
 

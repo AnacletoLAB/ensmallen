@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:12.675675
 
-The undirected graph Clostridium leptum has 3852 nodes and 252647 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03406 and
-has 38 connected components, where the component with most nodes has 3752 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 131.18, and the node degree mode is 2. The top 5 most central
-nodes are 428125.CLOLEP_03726 (degree 1124), 428125.CLOLEP_01281 (degree 1112), 428125.CLOLEP_02946
-(degree 942), 428125.CLOLEP_00303 (degree 906) and 428125.CLOLEP_00033 (degree 897).
+The undirected graph Clostridium leptum has 3852 nodes and 252647 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03406 and has 38 connected components, where the component with most
+nodes has 3752 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 131.18, and
+the node degree mode is 2. The top 5 most central nodes are 428125.CLOLEP_03726
+(degree 1124), 428125.CLOLEP_01281 (degree 1112), 428125.CLOLEP_02946 (degree
+942), 428125.CLOLEP_00303 (degree 906) and 428125.CLOLEP_00033 (degree
+897).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumLeptum(
 	
 	Datetime: 2021-02-02 20:48:12.675675
 	
-	The undirected graph Clostridium leptum has 3852 nodes and 252647 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03406 and
-	has 38 connected components, where the component with most nodes has 3752 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 131.18, and the node degree mode is 2. The top 5 most central
-	nodes are 428125.CLOLEP_03726 (degree 1124), 428125.CLOLEP_01281 (degree 1112), 428125.CLOLEP_02946
-	(degree 942), 428125.CLOLEP_00303 (degree 906) and 428125.CLOLEP_00033 (degree 897).
+	The undirected graph Clostridium leptum has 3852 nodes and 252647 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03406 and has 38 connected components, where the component with most
+	nodes has 3752 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 131.18, and
+	the node degree mode is 2. The top 5 most central nodes are 428125.CLOLEP_03726
+	(degree 1124), 428125.CLOLEP_01281 (degree 1112), 428125.CLOLEP_02946 (degree
+	942), 428125.CLOLEP_00303 (degree 906) and 428125.CLOLEP_00033 (degree
+	897).
 	
 
 

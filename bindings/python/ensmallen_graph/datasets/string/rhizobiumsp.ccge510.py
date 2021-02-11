@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:04.307189
 
-The undirected graph Rhizobium sp. CCGE510 has 4855 nodes and 610358 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05180 and
-has 25 connected components, where the component with most nodes has 4796 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 251.43, and the node degree mode is 3. The top 5 most central
-nodes are 1132836.RCCGE510_03428 (degree 1899), 1132836.RCCGE510_21869 (degree 1864),
-1132836.RCCGE510_23824 (degree 1860), 1132836.RCCGE510_14240 (degree 1478) and 1132836.RCCGE510_20679
+The undirected graph Rhizobium sp. CCGE510 has 4855 nodes and 610358 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05180 and has 25 connected components, where the component with most
+nodes has 4796 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 251.43, and
+the node degree mode is 3. The top 5 most central nodes are 1132836.RCCGE510_03428
+(degree 1899), 1132836.RCCGE510_21869 (degree 1864), 1132836.RCCGE510_23824
+(degree 1860), 1132836.RCCGE510_14240 (degree 1478) and 1132836.RCCGE510_20679
 (degree 1463).
 
 
@@ -107,13 +108,14 @@ def RhizobiumSp.Ccge510(
 	
 	Datetime: 2021-02-02 22:56:04.307189
 	
-	The undirected graph Rhizobium sp. CCGE510 has 4855 nodes and 610358 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05180 and
-	has 25 connected components, where the component with most nodes has 4796 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 251.43, and the node degree mode is 3. The top 5 most central
-	nodes are 1132836.RCCGE510_03428 (degree 1899), 1132836.RCCGE510_21869 (degree 1864),
-	1132836.RCCGE510_23824 (degree 1860), 1132836.RCCGE510_14240 (degree 1478) and 1132836.RCCGE510_20679
+	The undirected graph Rhizobium sp. CCGE510 has 4855 nodes and 610358 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05180 and has 25 connected components, where the component with most
+	nodes has 4796 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 251.43, and
+	the node degree mode is 3. The top 5 most central nodes are 1132836.RCCGE510_03428
+	(degree 1899), 1132836.RCCGE510_21869 (degree 1864), 1132836.RCCGE510_23824
+	(degree 1860), 1132836.RCCGE510_14240 (degree 1478) and 1132836.RCCGE510_20679
 	(degree 1463).
 	
 

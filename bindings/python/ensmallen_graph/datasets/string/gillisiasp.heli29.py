@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:47.245564
 
-The undirected graph Gillisia sp. HelI29 has 3542 nodes and 380584 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06069 and
-has 9 connected components, where the component with most nodes has 3525 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 214.90, and the node degree mode is 7. The top 5 most central
-nodes are 1249975.JQLP01000005_gene1270 (degree 1234), 1249975.JQLP01000005_gene489
-(degree 1232), 1249975.JQLP01000005_gene965 (degree 1215), 1249975.JQLP01000005_gene900
-(degree 1119) and 1249975.JQLP01000005_gene2506 (degree 1118).
+The undirected graph Gillisia sp. HelI29 has 3542 nodes and 380584 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06069 and has 9 connected components, where the component with most
+nodes has 3525 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 214.90, and
+the node degree mode is 7. The top 5 most central nodes are 1249975.JQLP01000005_gene1270
+(degree 1234), 1249975.JQLP01000005_gene489 (degree 1232), 1249975.JQLP01000005_gene965
+(degree 1215), 1249975.JQLP01000005_gene900 (degree 1119) and 1249975.JQLP01000005_gene2506
+(degree 1118).
 
 
 References
@@ -107,14 +108,15 @@ def GillisiaSp.Heli29(
 	
 	Datetime: 2021-02-02 23:34:47.245564
 	
-	The undirected graph Gillisia sp. HelI29 has 3542 nodes and 380584 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06069 and
-	has 9 connected components, where the component with most nodes has 3525 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 214.90, and the node degree mode is 7. The top 5 most central
-	nodes are 1249975.JQLP01000005_gene1270 (degree 1234), 1249975.JQLP01000005_gene489
-	(degree 1232), 1249975.JQLP01000005_gene965 (degree 1215), 1249975.JQLP01000005_gene900
-	(degree 1119) and 1249975.JQLP01000005_gene2506 (degree 1118).
+	The undirected graph Gillisia sp. HelI29 has 3542 nodes and 380584 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06069 and has 9 connected components, where the component with most
+	nodes has 3525 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 214.90, and
+	the node degree mode is 7. The top 5 most central nodes are 1249975.JQLP01000005_gene1270
+	(degree 1234), 1249975.JQLP01000005_gene489 (degree 1232), 1249975.JQLP01000005_gene965
+	(degree 1215), 1249975.JQLP01000005_gene900 (degree 1119) and 1249975.JQLP01000005_gene2506
+	(degree 1118).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:24:41.793361
 
-The undirected graph CL-1000000-2d1-trial2 has 910098 nodes and 2757723 unweighted
-edges, of which 18 are self-loops. The graph is extremely sparse as it has a density
-of 0.00001 and has 3342 connected components, where the component with most nodes
-has 903124 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 3, the mean node degree is 6.06, and the node degree mode is 2. The
-top 5 most central nodes are 742288 (degree 229), 719062 (degree 226), 637962 (degree
-225), 724390 (degree 224) and 634093 (degree 224).
+The undirected graph CL-1000000-2d1-trial2 has 910098 nodes and 2757723
+unweighted edges, of which 18 are self-loops. The graph is extremely sparse
+as it has a density of 0.00001 and has 3342 connected components, where
+the component with most nodes has 903124 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 3, the mean node
+degree is 6.06, and the node degree mode is 2. The top 5 most central nodes
+are 742288 (degree 229), 719062 (degree 226), 637962 (degree 225), 724390
+(degree 224) and 634093 (degree 224).
 
 
 References
@@ -103,13 +104,14 @@ def Cl10000002d1Trial2(
 	
 	Datetime: 2021-02-06 12:24:41.793361
 	
-	The undirected graph CL-1000000-2d1-trial2 has 910098 nodes and 2757723 unweighted
-	edges, of which 18 are self-loops. The graph is extremely sparse as it has a density
-	of 0.00001 and has 3342 connected components, where the component with most nodes
-	has 903124 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 3, the mean node degree is 6.06, and the node degree mode is 2. The
-	top 5 most central nodes are 742288 (degree 229), 719062 (degree 226), 637962 (degree
-	225), 724390 (degree 224) and 634093 (degree 224).
+	The undirected graph CL-1000000-2d1-trial2 has 910098 nodes and 2757723
+	unweighted edges, of which 18 are self-loops. The graph is extremely sparse
+	as it has a density of 0.00001 and has 3342 connected components, where
+	the component with most nodes has 903124 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 3, the mean node
+	degree is 6.06, and the node degree mode is 2. The top 5 most central nodes
+	are 742288 (degree 229), 719062 (degree 226), 637962 (degree 225), 724390
+	(degree 224) and 634093 (degree 224).
 	
 
 

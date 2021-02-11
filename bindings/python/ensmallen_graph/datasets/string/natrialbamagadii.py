@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:06.437964
 
-The undirected graph Natrialba magadii has 3722 nodes and 661414 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09551 and
-has 29 connected components, where the component with most nodes has 3657 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 378,
-the mean node degree is 355.41, and the node degree mode is 2. The top 5 most central
-nodes are 547559.Nmag_2755 (degree 1388), 547559.Nmag_1508 (degree 1297), 547559.Nmag_1826
-(degree 1250), 547559.Nmag_0842 (degree 1209) and 547559.Nmag_2141 (degree 1146).
+The undirected graph Natrialba magadii has 3722 nodes and 661414 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09551 and has 29 connected components, where the component with most
+nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 378, the mean node degree is 355.41, and
+the node degree mode is 2. The top 5 most central nodes are 547559.Nmag_2755
+(degree 1388), 547559.Nmag_1508 (degree 1297), 547559.Nmag_1826 (degree
+1250), 547559.Nmag_0842 (degree 1209) and 547559.Nmag_2141 (degree 1146).
 
 
 References
@@ -106,13 +107,14 @@ def NatrialbaMagadii(
 	
 	Datetime: 2021-02-02 21:09:06.437964
 	
-	The undirected graph Natrialba magadii has 3722 nodes and 661414 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09551 and
-	has 29 connected components, where the component with most nodes has 3657 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 378,
-	the mean node degree is 355.41, and the node degree mode is 2. The top 5 most central
-	nodes are 547559.Nmag_2755 (degree 1388), 547559.Nmag_1508 (degree 1297), 547559.Nmag_1826
-	(degree 1250), 547559.Nmag_0842 (degree 1209) and 547559.Nmag_2141 (degree 1146).
+	The undirected graph Natrialba magadii has 3722 nodes and 661414 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09551 and has 29 connected components, where the component with most
+	nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 378, the mean node degree is 355.41, and
+	the node degree mode is 2. The top 5 most central nodes are 547559.Nmag_2755
+	(degree 1388), 547559.Nmag_1508 (degree 1297), 547559.Nmag_1826 (degree
+	1250), 547559.Nmag_0842 (degree 1209) and 547559.Nmag_2141 (degree 1146).
 	
 
 

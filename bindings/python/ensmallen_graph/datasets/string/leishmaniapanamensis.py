@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:55.570970
 
-The undirected graph Leishmania panamensis has 4061 nodes and 554170 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06722 and
-has 17 connected components, where the component with most nodes has 4023 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 272.92, and the node degree mode is 1. The top 5 most central
-nodes are 5679.XP_010699355.1 (degree 1771), 5679.XP_010700736.1 (degree 1766), 5679.XP_010703963.1
-(degree 1501), 5679.XP_010702809.1 (degree 1414) and 5679.XP_010700557.1 (degree
+The undirected graph Leishmania panamensis has 4061 nodes and 554170 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06722 and has 17 connected components, where the component with most
+nodes has 4023 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 272.92, and
+the node degree mode is 1. The top 5 most central nodes are 5679.XP_010699355.1
+(degree 1771), 5679.XP_010700736.1 (degree 1766), 5679.XP_010703963.1 (degree
+1501), 5679.XP_010702809.1 (degree 1414) and 5679.XP_010700557.1 (degree
 1371).
 
 
@@ -107,13 +108,14 @@ def LeishmaniaPanamensis(
 	
 	Datetime: 2021-02-02 17:14:55.570970
 	
-	The undirected graph Leishmania panamensis has 4061 nodes and 554170 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06722 and
-	has 17 connected components, where the component with most nodes has 4023 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 272.92, and the node degree mode is 1. The top 5 most central
-	nodes are 5679.XP_010699355.1 (degree 1771), 5679.XP_010700736.1 (degree 1766), 5679.XP_010703963.1
-	(degree 1501), 5679.XP_010702809.1 (degree 1414) and 5679.XP_010700557.1 (degree
+	The undirected graph Leishmania panamensis has 4061 nodes and 554170 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06722 and has 17 connected components, where the component with most
+	nodes has 4023 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 272.92, and
+	the node degree mode is 1. The top 5 most central nodes are 5679.XP_010699355.1
+	(degree 1771), 5679.XP_010700736.1 (degree 1766), 5679.XP_010703963.1 (degree
+	1501), 5679.XP_010702809.1 (degree 1414) and 5679.XP_010700557.1 (degree
 	1371).
 	
 

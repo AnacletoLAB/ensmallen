@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:21.238614
 
-The undirected graph Solimonas soli has 3622 nodes and 467052 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07122 and
-has 5 connected components, where the component with most nodes has 3613 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 257.90, and the node degree mode is 4. The top 5 most central
-nodes are 1123261.AXDW01000001_gene996 (degree 1854), 1123261.AXDW01000009_gene148
-(degree 1508), 1123261.AXDW01000004_gene2769 (degree 1493), 1123261.AXDW01000004_gene2968
-(degree 1471) and 1123261.AXDW01000007_gene2141 (degree 1437).
+The undirected graph Solimonas soli has 3622 nodes and 467052 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07122 and has 5 connected components, where the component with most
+nodes has 3613 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 257.90, and
+the node degree mode is 4. The top 5 most central nodes are 1123261.AXDW01000001_gene996
+(degree 1854), 1123261.AXDW01000009_gene148 (degree 1508), 1123261.AXDW01000004_gene2769
+(degree 1493), 1123261.AXDW01000004_gene2968 (degree 1471) and 1123261.AXDW01000007_gene2141
+(degree 1437).
 
 
 References
@@ -107,14 +108,15 @@ def SolimonasSoli(
 	
 	Datetime: 2021-02-02 22:49:21.238614
 	
-	The undirected graph Solimonas soli has 3622 nodes and 467052 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07122 and
-	has 5 connected components, where the component with most nodes has 3613 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 257.90, and the node degree mode is 4. The top 5 most central
-	nodes are 1123261.AXDW01000001_gene996 (degree 1854), 1123261.AXDW01000009_gene148
-	(degree 1508), 1123261.AXDW01000004_gene2769 (degree 1493), 1123261.AXDW01000004_gene2968
-	(degree 1471) and 1123261.AXDW01000007_gene2141 (degree 1437).
+	The undirected graph Solimonas soli has 3622 nodes and 467052 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07122 and has 5 connected components, where the component with most
+	nodes has 3613 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 257.90, and
+	the node degree mode is 4. The top 5 most central nodes are 1123261.AXDW01000001_gene996
+	(degree 1854), 1123261.AXDW01000009_gene148 (degree 1508), 1123261.AXDW01000004_gene2769
+	(degree 1493), 1123261.AXDW01000004_gene2968 (degree 1471) and 1123261.AXDW01000007_gene2141
+	(degree 1437).
 	
 
 

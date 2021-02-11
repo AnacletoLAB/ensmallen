@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:39.462956
 
-The undirected graph Peptoniphilus lacrimalis has 1575 nodes and 92698 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-has 4 connected components, where the component with most nodes has 1568 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 117.71, and the node degree mode is 2. The top 5 most central
-nodes are 596330.HMPREF0628_0760 (degree 663), 596330.HMPREF0628_0764 (degree 595),
-596330.HMPREF0628_1347 (degree 546), 596330.HMPREF0628_1397 (degree 533) and 596330.HMPREF0628_0891
+The undirected graph Peptoniphilus lacrimalis has 1575 nodes and 92698
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07479 and has 4 connected components, where the component
+with most nodes has 1568 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 117.71,
+and the node degree mode is 2. The top 5 most central nodes are 596330.HMPREF0628_0760
+(degree 663), 596330.HMPREF0628_0764 (degree 595), 596330.HMPREF0628_1347
+(degree 546), 596330.HMPREF0628_1397 (degree 533) and 596330.HMPREF0628_0891
 (degree 479).
 
 
@@ -107,13 +108,14 @@ def PeptoniphilusLacrimalis(
 	
 	Datetime: 2021-02-02 21:19:39.462956
 	
-	The undirected graph Peptoniphilus lacrimalis has 1575 nodes and 92698 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-	has 4 connected components, where the component with most nodes has 1568 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 117.71, and the node degree mode is 2. The top 5 most central
-	nodes are 596330.HMPREF0628_0760 (degree 663), 596330.HMPREF0628_0764 (degree 595),
-	596330.HMPREF0628_1347 (degree 546), 596330.HMPREF0628_1397 (degree 533) and 596330.HMPREF0628_0891
+	The undirected graph Peptoniphilus lacrimalis has 1575 nodes and 92698
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07479 and has 4 connected components, where the component
+	with most nodes has 1568 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 117.71,
+	and the node degree mode is 2. The top 5 most central nodes are 596330.HMPREF0628_0760
+	(degree 663), 596330.HMPREF0628_0764 (degree 595), 596330.HMPREF0628_1347
+	(degree 546), 596330.HMPREF0628_1397 (degree 533) and 596330.HMPREF0628_0891
 	(degree 479).
 	
 

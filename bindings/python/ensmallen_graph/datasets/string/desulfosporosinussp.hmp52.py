@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:53.139432
 
-The undirected graph Desulfosporosinus sp. HMP52 has 3959 nodes and 477416 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06093
-and has 23 connected components, where the component with most nodes has 3912 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 241.18, and the node degree mode is 1. The top 5
-most central nodes are 1487923.DP73_13385 (degree 1686), 1487923.DP73_12160 (degree
-1682), 1487923.DP73_02020 (degree 1564), 1487923.DP73_10805 (degree 1554) and 1487923.DP73_10340
-(degree 1459).
+The undirected graph Desulfosporosinus sp. HMP52 has 3959 nodes and 477416
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06093 and has 23 connected components, where the component
+with most nodes has 3912 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 241.18,
+and the node degree mode is 1. The top 5 most central nodes are 1487923.DP73_13385
+(degree 1686), 1487923.DP73_12160 (degree 1682), 1487923.DP73_02020 (degree
+1564), 1487923.DP73_10805 (degree 1554) and 1487923.DP73_10340 (degree
+1459).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfosporosinusSp.Hmp52(
 	
 	Datetime: 2021-02-03 23:13:53.139432
 	
-	The undirected graph Desulfosporosinus sp. HMP52 has 3959 nodes and 477416 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06093
-	and has 23 connected components, where the component with most nodes has 3912 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 241.18, and the node degree mode is 1. The top 5
-	most central nodes are 1487923.DP73_13385 (degree 1686), 1487923.DP73_12160 (degree
-	1682), 1487923.DP73_02020 (degree 1564), 1487923.DP73_10805 (degree 1554) and 1487923.DP73_10340
-	(degree 1459).
+	The undirected graph Desulfosporosinus sp. HMP52 has 3959 nodes and 477416
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06093 and has 23 connected components, where the component
+	with most nodes has 3912 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 241.18,
+	and the node degree mode is 1. The top 5 most central nodes are 1487923.DP73_13385
+	(degree 1686), 1487923.DP73_12160 (degree 1682), 1487923.DP73_02020 (degree
+	1564), 1487923.DP73_10805 (degree 1554) and 1487923.DP73_10340 (degree
+	1459).
 	
 
 

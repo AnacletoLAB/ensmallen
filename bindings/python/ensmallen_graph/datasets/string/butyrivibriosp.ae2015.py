@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:04:05.951599
 
-The undirected graph Butyrivibrio sp. AE2015 has 3144 nodes and 352669 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07138 and
-has 8 connected components, where the component with most nodes has 3129 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 224.34, and the node degree mode is 5. The top 5 most central
-nodes are 1280663.ATVR01000030_gene2302 (degree 1358), 1280663.ATVR01000009_gene2177
-(degree 1307), 1280663.ATVR01000009_gene2182 (degree 1158), 1280663.ATVR01000001_gene610
-(degree 1098) and 1280663.ATVR01000043_gene3095 (degree 1079).
+The undirected graph Butyrivibrio sp. AE2015 has 3144 nodes and 352669
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07138 and has 8 connected components, where the component
+with most nodes has 3129 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 224.34,
+and the node degree mode is 5. The top 5 most central nodes are 1280663.ATVR01000030_gene2302
+(degree 1358), 1280663.ATVR01000009_gene2177 (degree 1307), 1280663.ATVR01000009_gene2182
+(degree 1158), 1280663.ATVR01000001_gene610 (degree 1098) and 1280663.ATVR01000043_gene3095
+(degree 1079).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Ae2015(
 	
 	Datetime: 2021-02-03 21:04:05.951599
 	
-	The undirected graph Butyrivibrio sp. AE2015 has 3144 nodes and 352669 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07138 and
-	has 8 connected components, where the component with most nodes has 3129 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 224.34, and the node degree mode is 5. The top 5 most central
-	nodes are 1280663.ATVR01000030_gene2302 (degree 1358), 1280663.ATVR01000009_gene2177
-	(degree 1307), 1280663.ATVR01000009_gene2182 (degree 1158), 1280663.ATVR01000001_gene610
-	(degree 1098) and 1280663.ATVR01000043_gene3095 (degree 1079).
+	The undirected graph Butyrivibrio sp. AE2015 has 3144 nodes and 352669
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07138 and has 8 connected components, where the component
+	with most nodes has 3129 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 224.34,
+	and the node degree mode is 5. The top 5 most central nodes are 1280663.ATVR01000030_gene2302
+	(degree 1358), 1280663.ATVR01000009_gene2177 (degree 1307), 1280663.ATVR01000009_gene2182
+	(degree 1158), 1280663.ATVR01000001_gene610 (degree 1098) and 1280663.ATVR01000043_gene3095
+	(degree 1079).
 	
 
 

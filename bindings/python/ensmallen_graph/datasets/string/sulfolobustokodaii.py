@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:30.714548
 
-The undirected graph Sulfolobus tokodaii has 2736 nodes and 219546 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05868 and
-has 62 connected components, where the component with most nodes has 2579 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 160.49, and the node degree mode is 3. The top 5 most central
-nodes are 273063.STK_13560 (degree 959), 273063.STK_19960 (degree 928), 273063.STK_18110
-(degree 840), 273063.STK_13570 (degree 823) and 273063.STK_20300 (degree 818).
+The undirected graph Sulfolobus tokodaii has 2736 nodes and 219546 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05868 and has 62 connected components, where the component with most
+nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 160.49, and
+the node degree mode is 3. The top 5 most central nodes are 273063.STK_13560
+(degree 959), 273063.STK_19960 (degree 928), 273063.STK_18110 (degree 840),
+273063.STK_13570 (degree 823) and 273063.STK_20300 (degree 818).
 
 
 References
@@ -106,13 +107,14 @@ def SulfolobusTokodaii(
 	
 	Datetime: 2021-02-02 20:17:30.714548
 	
-	The undirected graph Sulfolobus tokodaii has 2736 nodes and 219546 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05868 and
-	has 62 connected components, where the component with most nodes has 2579 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 160.49, and the node degree mode is 3. The top 5 most central
-	nodes are 273063.STK_13560 (degree 959), 273063.STK_19960 (degree 928), 273063.STK_18110
-	(degree 840), 273063.STK_13570 (degree 823) and 273063.STK_20300 (degree 818).
+	The undirected graph Sulfolobus tokodaii has 2736 nodes and 219546 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05868 and has 62 connected components, where the component with most
+	nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 160.49, and
+	the node degree mode is 3. The top 5 most central nodes are 273063.STK_13560
+	(degree 959), 273063.STK_19960 (degree 928), 273063.STK_18110 (degree 840),
+	273063.STK_13570 (degree 823) and 273063.STK_20300 (degree 818).
 	
 
 

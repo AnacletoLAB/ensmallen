@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:35.157453
 
-The undirected graph Ruminococcaceae bacterium AB4001 has 2667 nodes and 156094 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04391
-and has 5 connected components, where the component with most nodes has 2657 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 117.06, and the node degree mode is 6. The top 5 most
-central nodes are 1410638.JHXJ01000040_gene502 (degree 985), 1410638.JHXJ01000011_gene682
+The undirected graph Ruminococcaceae bacterium AB4001 has 2667 nodes and
+156094 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04391 and has 5 connected components, where the
+component with most nodes has 2657 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+is 117.06, and the node degree mode is 6. The top 5 most central nodes
+are 1410638.JHXJ01000040_gene502 (degree 985), 1410638.JHXJ01000011_gene682
 (degree 961), 1410638.JHXJ01000007_gene1046 (degree 782), 1410638.JHXJ01000004_gene2021
 (degree 750) and 1410638.JHXJ01000002_gene1386 (degree 718).
 
@@ -107,12 +108,13 @@ def RuminococcaceaeBacteriumAb4001(
 	
 	Datetime: 2021-02-03 22:43:35.157453
 	
-	The undirected graph Ruminococcaceae bacterium AB4001 has 2667 nodes and 156094 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04391
-	and has 5 connected components, where the component with most nodes has 2657 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 117.06, and the node degree mode is 6. The top 5 most
-	central nodes are 1410638.JHXJ01000040_gene502 (degree 985), 1410638.JHXJ01000011_gene682
+	The undirected graph Ruminococcaceae bacterium AB4001 has 2667 nodes and
+	156094 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04391 and has 5 connected components, where the
+	component with most nodes has 2657 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+	is 117.06, and the node degree mode is 6. The top 5 most central nodes
+	are 1410638.JHXJ01000040_gene502 (degree 985), 1410638.JHXJ01000011_gene682
 	(degree 961), 1410638.JHXJ01000007_gene1046 (degree 782), 1410638.JHXJ01000004_gene2021
 	(degree 750) and 1410638.JHXJ01000002_gene1386 (degree 718).
 	

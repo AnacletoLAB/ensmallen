@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:31.710148
 
-The undirected graph Pyrococcus sp. NA2 has 1974 nodes and 181185 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09304 and
-has 7 connected components, where the component with most nodes has 1958 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 183.57, and the node degree mode is 4. The top 5 most central
-nodes are 342949.PNA2_0429 (degree 707), 342949.PNA2_0538 (degree 653), 342949.PNA2_0471
-(degree 640), 342949.PNA2_1232 (degree 626) and 342949.PNA2_1280 (degree 574).
+The undirected graph Pyrococcus sp. NA2 has 1974 nodes and 181185 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09304 and has 7 connected components, where the component with most
+nodes has 1958 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 183.57, and
+the node degree mode is 4. The top 5 most central nodes are 342949.PNA2_0429
+(degree 707), 342949.PNA2_0538 (degree 653), 342949.PNA2_0471 (degree 640),
+342949.PNA2_1232 (degree 626) and 342949.PNA2_1280 (degree 574).
 
 
 References
@@ -106,13 +107,14 @@ def PyrococcusSp.Na2(
 	
 	Datetime: 2021-02-02 20:31:31.710148
 	
-	The undirected graph Pyrococcus sp. NA2 has 1974 nodes and 181185 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09304 and
-	has 7 connected components, where the component with most nodes has 1958 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 183.57, and the node degree mode is 4. The top 5 most central
-	nodes are 342949.PNA2_0429 (degree 707), 342949.PNA2_0538 (degree 653), 342949.PNA2_0471
-	(degree 640), 342949.PNA2_1232 (degree 626) and 342949.PNA2_1280 (degree 574).
+	The undirected graph Pyrococcus sp. NA2 has 1974 nodes and 181185 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09304 and has 7 connected components, where the component with most
+	nodes has 1958 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 183.57, and
+	the node degree mode is 4. The top 5 most central nodes are 342949.PNA2_0429
+	(degree 707), 342949.PNA2_0538 (degree 653), 342949.PNA2_0471 (degree 640),
+	342949.PNA2_1232 (degree 626) and 342949.PNA2_1280 (degree 574).
 	
 
 

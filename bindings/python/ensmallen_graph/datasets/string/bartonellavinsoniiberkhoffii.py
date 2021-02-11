@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:47.607315
 
-The undirected graph Bartonella vinsonii berkhoffii has 1412 nodes and 85460 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08579
-and has 6 connected components, where the component with most nodes has 1400 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 121.05, and the node degree mode is 1. The top 5
-most central nodes are 1094497.BVwin_00060 (degree 641), 1094497.BVwin_01600 (degree
-548), 1094497.BVwin_03980 (degree 505), 1094497.BVwin_00770 (degree 504) and 1094497.BVwin_00590
-(degree 494).
+The undirected graph Bartonella vinsonii berkhoffii has 1412 nodes and
+85460 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08579 and has 6 connected components, where the
+component with most nodes has 1400 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+is 121.05, and the node degree mode is 1. The top 5 most central nodes
+are 1094497.BVwin_00060 (degree 641), 1094497.BVwin_01600 (degree 548),
+1094497.BVwin_03980 (degree 505), 1094497.BVwin_00770 (degree 504) and
+1094497.BVwin_00590 (degree 494).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaVinsoniiBerkhoffii(
 	
 	Datetime: 2021-02-02 22:22:47.607315
 	
-	The undirected graph Bartonella vinsonii berkhoffii has 1412 nodes and 85460 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08579
-	and has 6 connected components, where the component with most nodes has 1400 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 121.05, and the node degree mode is 1. The top 5
-	most central nodes are 1094497.BVwin_00060 (degree 641), 1094497.BVwin_01600 (degree
-	548), 1094497.BVwin_03980 (degree 505), 1094497.BVwin_00770 (degree 504) and 1094497.BVwin_00590
-	(degree 494).
+	The undirected graph Bartonella vinsonii berkhoffii has 1412 nodes and
+	85460 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08579 and has 6 connected components, where the
+	component with most nodes has 1400 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+	is 121.05, and the node degree mode is 1. The top 5 most central nodes
+	are 1094497.BVwin_00060 (degree 641), 1094497.BVwin_01600 (degree 548),
+	1094497.BVwin_03980 (degree 505), 1094497.BVwin_00770 (degree 504) and
+	1094497.BVwin_00590 (degree 494).
 	
 
 

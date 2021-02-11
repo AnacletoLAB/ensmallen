@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:19.488047
 
-The undirected graph socfb-Temple83 has 13686 nodes and 360795 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00385
-and has 15 connected components, where the component with most nodes has 13653 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 35, the mean node degree is 52.72, and the node degree mode is 1. The top 5 most
-central nodes are 3266 (degree 1394), 10508 (degree 1360), 618 (degree 949), 9961
-(degree 927) and 13427 (degree 869).
+The undirected graph socfb-Temple83 has 13686 nodes and 360795 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00385 and has 15 connected components, where the component with most
+nodes has 13653 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 35, the mean node degree is 52.72, and
+the node degree mode is 1. The top 5 most central nodes are 3266 (degree
+1394), 10508 (degree 1360), 618 (degree 949), 9961 (degree 927) and 13427
+(degree 869).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbTemple83(
 	
 	Datetime: 2021-02-06 11:50:19.488047
 	
-	The undirected graph socfb-Temple83 has 13686 nodes and 360795 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00385
-	and has 15 connected components, where the component with most nodes has 13653 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 35, the mean node degree is 52.72, and the node degree mode is 1. The top 5 most
-	central nodes are 3266 (degree 1394), 10508 (degree 1360), 618 (degree 949), 9961
-	(degree 927) and 13427 (degree 869).
+	The undirected graph socfb-Temple83 has 13686 nodes and 360795 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00385 and has 15 connected components, where the component with most
+	nodes has 13653 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 35, the mean node degree is 52.72, and
+	the node degree mode is 1. The top 5 most central nodes are 3266 (degree
+	1394), 10508 (degree 1360), 618 (degree 949), 9961 (degree 927) and 13427
+	(degree 869).
 	
 
 

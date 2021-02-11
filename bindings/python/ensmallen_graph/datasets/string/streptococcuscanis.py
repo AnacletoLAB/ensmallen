@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:44.577597
 
-The undirected graph Streptococcus canis has 2186 nodes and 170143 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07124 and
-has 5 connected components, where the component with most nodes has 2175 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 155.67, and the node degree mode is 8. The top 5 most central
-nodes are 482234.SCAZ3_10675 (degree 905), 482234.SCAZ3_06245 (degree 815), 482234.SCAZ3_11485
-(degree 807), 482234.SCAZ3_00495 (degree 778) and 482234.SCAZ3_08815 (degree 743).
+The undirected graph Streptococcus canis has 2186 nodes and 170143 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07124 and has 5 connected components, where the component with most
+nodes has 2175 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 155.67, and
+the node degree mode is 8. The top 5 most central nodes are 482234.SCAZ3_10675
+(degree 905), 482234.SCAZ3_06245 (degree 815), 482234.SCAZ3_11485 (degree
+807), 482234.SCAZ3_00495 (degree 778) and 482234.SCAZ3_08815 (degree 743).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusCanis(
 	
 	Datetime: 2021-02-02 20:57:44.577597
 	
-	The undirected graph Streptococcus canis has 2186 nodes and 170143 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07124 and
-	has 5 connected components, where the component with most nodes has 2175 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 155.67, and the node degree mode is 8. The top 5 most central
-	nodes are 482234.SCAZ3_10675 (degree 905), 482234.SCAZ3_06245 (degree 815), 482234.SCAZ3_11485
-	(degree 807), 482234.SCAZ3_00495 (degree 778) and 482234.SCAZ3_08815 (degree 743).
+	The undirected graph Streptococcus canis has 2186 nodes and 170143 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07124 and has 5 connected components, where the component with most
+	nodes has 2175 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 155.67, and
+	the node degree mode is 8. The top 5 most central nodes are 482234.SCAZ3_10675
+	(degree 905), 482234.SCAZ3_06245 (degree 815), 482234.SCAZ3_11485 (degree
+	807), 482234.SCAZ3_00495 (degree 778) and 482234.SCAZ3_08815 (degree 743).
 	
 
 

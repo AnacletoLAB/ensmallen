@@ -10,11 +10,11 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:01:51.533166
 
-The undirected graph Trec4 has 3 nodes and 3 weighted edges, of which 1 are self-loops.
-The graph is extremely dense as it has a density of 0.83333 and is connected, as
-it has a single component. The graph median node degree is 1, the mean node degree
-is 1.67, and the node degree mode is 1. The top 3 most central nodes are 2 (degree
-3), 3 (degree 1) and 1 (degree 1).
+The undirected graph Trec4 has 3 nodes and 3 weighted edges, of which 1
+are self-loops. The graph is extremely dense as it has a density of 0.83333
+and is connected, as it has a single component. The graph median node degree
+is 1, the mean node degree is 1.67, and the node degree mode is 1. The
+top 3 most central nodes are 2 (degree 3), 3 (degree 1) and 1 (degree 1).
 
 
 References
@@ -101,11 +101,11 @@ def Trec4(
 	
 	Datetime: 2021-02-06 08:01:51.533166
 	
-	The undirected graph Trec4 has 3 nodes and 3 weighted edges, of which 1 are self-loops.
-	The graph is extremely dense as it has a density of 0.83333 and is connected, as
-	it has a single component. The graph median node degree is 1, the mean node degree
-	is 1.67, and the node degree mode is 1. The top 3 most central nodes are 2 (degree
-	3), 3 (degree 1) and 1 (degree 1).
+	The undirected graph Trec4 has 3 nodes and 3 weighted edges, of which 1
+	are self-loops. The graph is extremely dense as it has a density of 0.83333
+	and is connected, as it has a single component. The graph median node degree
+	is 1, the mean node degree is 1.67, and the node degree mode is 1. The
+	top 3 most central nodes are 2 (degree 3), 3 (degree 1) and 1 (degree 1).
 	
 
 

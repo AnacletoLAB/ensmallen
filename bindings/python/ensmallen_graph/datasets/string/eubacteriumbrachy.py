@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:37.038256
 
-The undirected graph Eubacterium brachy has 1467 nodes and 85064 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07911 and
-has 3 connected components, where the component with most nodes has 1462 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 115.97, and the node degree mode is 4. The top 5 most central
-nodes are 1321814.HMPREF9089_00154 (degree 638), 1321814.HMPREF9089_01012 (degree
-559), 1321814.HMPREF9089_00707 (degree 550), 1321814.HMPREF9089_00785 (degree 508)
-and 1321814.HMPREF9089_00381 (degree 495).
+The undirected graph Eubacterium brachy has 1467 nodes and 85064 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07911 and has 3 connected components, where the component with most
+nodes has 1462 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 115.97, and
+the node degree mode is 4. The top 5 most central nodes are 1321814.HMPREF9089_00154
+(degree 638), 1321814.HMPREF9089_01012 (degree 559), 1321814.HMPREF9089_00707
+(degree 550), 1321814.HMPREF9089_00785 (degree 508) and 1321814.HMPREF9089_00381
+(degree 495).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumBrachy(
 	
 	Datetime: 2021-02-03 21:53:37.038256
 	
-	The undirected graph Eubacterium brachy has 1467 nodes and 85064 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07911 and
-	has 3 connected components, where the component with most nodes has 1462 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 115.97, and the node degree mode is 4. The top 5 most central
-	nodes are 1321814.HMPREF9089_00154 (degree 638), 1321814.HMPREF9089_01012 (degree
-	559), 1321814.HMPREF9089_00707 (degree 550), 1321814.HMPREF9089_00785 (degree 508)
-	and 1321814.HMPREF9089_00381 (degree 495).
+	The undirected graph Eubacterium brachy has 1467 nodes and 85064 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07911 and has 3 connected components, where the component with most
+	nodes has 1462 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 115.97, and
+	the node degree mode is 4. The top 5 most central nodes are 1321814.HMPREF9089_00154
+	(degree 638), 1321814.HMPREF9089_01012 (degree 559), 1321814.HMPREF9089_00707
+	(degree 550), 1321814.HMPREF9089_00785 (degree 508) and 1321814.HMPREF9089_00381
+	(degree 495).
 	
 
 

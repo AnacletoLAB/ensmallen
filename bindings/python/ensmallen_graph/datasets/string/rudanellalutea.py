@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:01.327277
 
-The undirected graph Rudanella lutea has 4885 nodes and 749650 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06284 and
-has 12 connected components, where the component with most nodes has 4860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 283,
-the mean node degree is 306.92, and the node degree mode is 4. The top 5 most central
-nodes are 1089547.KB913013_gene3997 (degree 1991), 1089547.KB913013_gene1345 (degree
-1716), 1089547.KB913013_gene4109 (degree 1584), 1089547.KB913013_gene2347 (degree
-1448) and 1089547.KB913013_gene3875 (degree 1430).
+The undirected graph Rudanella lutea has 4885 nodes and 749650 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06284 and has 12 connected components, where the component with most
+nodes has 4860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 283, the mean node degree is 306.92, and
+the node degree mode is 4. The top 5 most central nodes are 1089547.KB913013_gene3997
+(degree 1991), 1089547.KB913013_gene1345 (degree 1716), 1089547.KB913013_gene4109
+(degree 1584), 1089547.KB913013_gene2347 (degree 1448) and 1089547.KB913013_gene3875
+(degree 1430).
 
 
 References
@@ -107,14 +108,15 @@ def RudanellaLutea(
 	
 	Datetime: 2021-02-02 22:22:01.327277
 	
-	The undirected graph Rudanella lutea has 4885 nodes and 749650 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06284 and
-	has 12 connected components, where the component with most nodes has 4860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 283,
-	the mean node degree is 306.92, and the node degree mode is 4. The top 5 most central
-	nodes are 1089547.KB913013_gene3997 (degree 1991), 1089547.KB913013_gene1345 (degree
-	1716), 1089547.KB913013_gene4109 (degree 1584), 1089547.KB913013_gene2347 (degree
-	1448) and 1089547.KB913013_gene3875 (degree 1430).
+	The undirected graph Rudanella lutea has 4885 nodes and 749650 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06284 and has 12 connected components, where the component with most
+	nodes has 4860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 283, the mean node degree is 306.92, and
+	the node degree mode is 4. The top 5 most central nodes are 1089547.KB913013_gene3997
+	(degree 1991), 1089547.KB913013_gene1345 (degree 1716), 1089547.KB913013_gene4109
+	(degree 1584), 1089547.KB913013_gene2347 (degree 1448) and 1089547.KB913013_gene3875
+	(degree 1430).
 	
 
 

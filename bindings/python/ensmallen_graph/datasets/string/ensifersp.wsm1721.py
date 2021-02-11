@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:04.348857
 
-The undirected graph Ensifer sp. WSM1721 has 5505 nodes and 781461 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05158 and
-has 23 connected components, where the component with most nodes has 5454 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 283.91, and the node degree mode is 1. The top 5 most central
-nodes are 1041159.AZUW01000034_gene2814 (degree 2005), 1041159.AZUW01000028_gene2598
-(degree 2002), 1041159.AZUW01000011_gene4144 (degree 1701), 1041159.AZUW01000008_gene4331
-(degree 1599) and 1041159.AZUW01000017_gene2187 (degree 1585).
+The undirected graph Ensifer sp. WSM1721 has 5505 nodes and 781461 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05158 and has 23 connected components, where the component with most
+nodes has 5454 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 283.91, and
+the node degree mode is 1. The top 5 most central nodes are 1041159.AZUW01000034_gene2814
+(degree 2005), 1041159.AZUW01000028_gene2598 (degree 2002), 1041159.AZUW01000011_gene4144
+(degree 1701), 1041159.AZUW01000008_gene4331 (degree 1599) and 1041159.AZUW01000017_gene2187
+(degree 1585).
 
 
 References
@@ -107,14 +108,15 @@ def EnsiferSp.Wsm1721(
 	
 	Datetime: 2021-02-02 22:15:04.348857
 	
-	The undirected graph Ensifer sp. WSM1721 has 5505 nodes and 781461 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05158 and
-	has 23 connected components, where the component with most nodes has 5454 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 283.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1041159.AZUW01000034_gene2814 (degree 2005), 1041159.AZUW01000028_gene2598
-	(degree 2002), 1041159.AZUW01000011_gene4144 (degree 1701), 1041159.AZUW01000008_gene4331
-	(degree 1599) and 1041159.AZUW01000017_gene2187 (degree 1585).
+	The undirected graph Ensifer sp. WSM1721 has 5505 nodes and 781461 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05158 and has 23 connected components, where the component with most
+	nodes has 5454 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 283.91, and
+	the node degree mode is 1. The top 5 most central nodes are 1041159.AZUW01000034_gene2814
+	(degree 2005), 1041159.AZUW01000028_gene2598 (degree 2002), 1041159.AZUW01000011_gene4144
+	(degree 1701), 1041159.AZUW01000008_gene4331 (degree 1599) and 1041159.AZUW01000017_gene2187
+	(degree 1585).
 	
 
 

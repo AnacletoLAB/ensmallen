@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:38.330965
 
-The undirected graph Prochlorococcus marinus MIT9515 has 1861 nodes and 90569 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05233
-and has 43 connected components, where the component with most nodes has 1722 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 81, the mean node degree is 97.33, and the node degree mode is 3. The top 5 most
-central nodes are 167542.P9515_13041 (degree 690), 167542.P9515_14411 (degree 498),
-167542.P9515_04881 (degree 489), 167542.P9515_17771 (degree 478) and 167542.P9515_14261
-(degree 462).
+The undirected graph Prochlorococcus marinus MIT9515 has 1861 nodes and
+90569 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05233 and has 43 connected components, where the
+component with most nodes has 1722 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+is 97.33, and the node degree mode is 3. The top 5 most central nodes are
+167542.P9515_13041 (degree 690), 167542.P9515_14411 (degree 498), 167542.P9515_04881
+(degree 489), 167542.P9515_17771 (degree 478) and 167542.P9515_14261 (degree
+462).
 
 
 References
@@ -107,14 +108,15 @@ def ProchlorococcusMarinusMit9515(
 	
 	Datetime: 2021-02-02 19:54:38.330965
 	
-	The undirected graph Prochlorococcus marinus MIT9515 has 1861 nodes and 90569 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05233
-	and has 43 connected components, where the component with most nodes has 1722 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 81, the mean node degree is 97.33, and the node degree mode is 3. The top 5 most
-	central nodes are 167542.P9515_13041 (degree 690), 167542.P9515_14411 (degree 498),
-	167542.P9515_04881 (degree 489), 167542.P9515_17771 (degree 478) and 167542.P9515_14261
-	(degree 462).
+	The undirected graph Prochlorococcus marinus MIT9515 has 1861 nodes and
+	90569 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05233 and has 43 connected components, where the
+	component with most nodes has 1722 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+	is 97.33, and the node degree mode is 3. The top 5 most central nodes are
+	167542.P9515_13041 (degree 690), 167542.P9515_14411 (degree 498), 167542.P9515_04881
+	(degree 489), 167542.P9515_17771 (degree 478) and 167542.P9515_14261 (degree
+	462).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:23:56.208248
 
-The undirected graph Halopiger sp. IIH3 has 3672 nodes and 305193 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04528 and
-has 21 connected components, where the component with most nodes has 3617 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 166.23, and the node degree mode is 4. The top 5 most central
-nodes are 1293048.CBMB010000004_gene1865 (degree 1080), 1293048.CBMB010000007_gene3074
-(degree 1018), 1293048.CBMB010000004_gene1547 (degree 975), 1293048.CBMB010000010_gene3447
-(degree 914) and 1293048.CBMB010000004_gene1884 (degree 897).
+The undirected graph Halopiger sp. IIH3 has 3672 nodes and 305193 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04528 and has 21 connected components, where the component with most
+nodes has 3617 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 166.23, and
+the node degree mode is 4. The top 5 most central nodes are 1293048.CBMB010000004_gene1865
+(degree 1080), 1293048.CBMB010000007_gene3074 (degree 1018), 1293048.CBMB010000004_gene1547
+(degree 975), 1293048.CBMB010000010_gene3447 (degree 914) and 1293048.CBMB010000004_gene1884
+(degree 897).
 
 
 References
@@ -107,14 +108,15 @@ def HalopigerSp.Iih3(
 	
 	Datetime: 2021-02-03 21:23:56.208248
 	
-	The undirected graph Halopiger sp. IIH3 has 3672 nodes and 305193 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04528 and
-	has 21 connected components, where the component with most nodes has 3617 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 166.23, and the node degree mode is 4. The top 5 most central
-	nodes are 1293048.CBMB010000004_gene1865 (degree 1080), 1293048.CBMB010000007_gene3074
-	(degree 1018), 1293048.CBMB010000004_gene1547 (degree 975), 1293048.CBMB010000010_gene3447
-	(degree 914) and 1293048.CBMB010000004_gene1884 (degree 897).
+	The undirected graph Halopiger sp. IIH3 has 3672 nodes and 305193 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04528 and has 21 connected components, where the component with most
+	nodes has 3617 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 166.23, and
+	the node degree mode is 4. The top 5 most central nodes are 1293048.CBMB010000004_gene1865
+	(degree 1080), 1293048.CBMB010000007_gene3074 (degree 1018), 1293048.CBMB010000004_gene1547
+	(degree 975), 1293048.CBMB010000010_gene3447 (degree 914) and 1293048.CBMB010000004_gene1884
+	(degree 897).
 	
 
 

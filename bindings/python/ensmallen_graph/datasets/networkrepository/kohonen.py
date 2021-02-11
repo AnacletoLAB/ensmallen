@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:13:50.920204
 
-The undirected graph Kohonen has 3772 nodes and 12720 unweighted edges, of which
-2 are self-loops. The graph is sparse as it has a density of 0.00179 and has 27 connected
-components, where the component with most nodes has 3704 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 4, the mean node
-degree is 6.74, and the node degree mode is 1. The top 5 most central nodes are 122
-(degree 740), 108 (degree 540), 842 (degree 478), 450 (degree 203) and 312 (degree
-188).
+The undirected graph Kohonen has 3772 nodes and 12720 unweighted edges,
+of which 2 are self-loops. The graph is sparse as it has a density of 0.00179
+and has 27 connected components, where the component with most nodes has
+3704 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 4, the mean node degree is 6.74, and the node degree
+mode is 1. The top 5 most central nodes are 122 (degree 740), 108 (degree
+540), 842 (degree 478), 450 (degree 203) and 312 (degree 188).
 
 
 References
@@ -103,13 +103,13 @@ def Kohonen(
 	
 	Datetime: 2021-02-06 10:13:50.920204
 	
-	The undirected graph Kohonen has 3772 nodes and 12720 unweighted edges, of which
-	2 are self-loops. The graph is sparse as it has a density of 0.00179 and has 27 connected
-	components, where the component with most nodes has 3704 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 4, the mean node
-	degree is 6.74, and the node degree mode is 1. The top 5 most central nodes are 122
-	(degree 740), 108 (degree 540), 842 (degree 478), 450 (degree 203) and 312 (degree
-	188).
+	The undirected graph Kohonen has 3772 nodes and 12720 unweighted edges,
+	of which 2 are self-loops. The graph is sparse as it has a density of 0.00179
+	and has 27 connected components, where the component with most nodes has
+	3704 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 4, the mean node degree is 6.74, and the node degree
+	mode is 1. The top 5 most central nodes are 122 (degree 740), 108 (degree
+	540), 842 (degree 478), 450 (degree 203) and 312 (degree 188).
 	
 
 

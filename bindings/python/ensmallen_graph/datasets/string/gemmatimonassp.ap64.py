@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:11:04.110286
 
-The undirected graph Gemmatimonas sp. AP64 has 3872 nodes and 310623 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04145 and
-has 13 connected components, where the component with most nodes has 3847 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 160.45, and the node degree mode is 3. The top 5 most central
-nodes are 1379270.AUXF01000001_gene2161 (degree 1638), 1379270.AUXF01000002_gene1198
-(degree 1401), 1379270.AUXF01000001_gene2454 (degree 1183), 1379270.AUXF01000003_gene3474
-(degree 1117) and 1379270.AUXF01000001_gene2325 (degree 1088).
+The undirected graph Gemmatimonas sp. AP64 has 3872 nodes and 310623 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04145 and has 13 connected components, where the component with most
+nodes has 3847 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 160.45, and
+the node degree mode is 3. The top 5 most central nodes are 1379270.AUXF01000001_gene2161
+(degree 1638), 1379270.AUXF01000002_gene1198 (degree 1401), 1379270.AUXF01000001_gene2454
+(degree 1183), 1379270.AUXF01000003_gene3474 (degree 1117) and 1379270.AUXF01000001_gene2325
+(degree 1088).
 
 
 References
@@ -107,14 +108,15 @@ def GemmatimonasSp.Ap64(
 	
 	Datetime: 2021-02-03 22:11:04.110286
 	
-	The undirected graph Gemmatimonas sp. AP64 has 3872 nodes and 310623 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04145 and
-	has 13 connected components, where the component with most nodes has 3847 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 160.45, and the node degree mode is 3. The top 5 most central
-	nodes are 1379270.AUXF01000001_gene2161 (degree 1638), 1379270.AUXF01000002_gene1198
-	(degree 1401), 1379270.AUXF01000001_gene2454 (degree 1183), 1379270.AUXF01000003_gene3474
-	(degree 1117) and 1379270.AUXF01000001_gene2325 (degree 1088).
+	The undirected graph Gemmatimonas sp. AP64 has 3872 nodes and 310623 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04145 and has 13 connected components, where the component with most
+	nodes has 3847 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 160.45, and
+	the node degree mode is 3. The top 5 most central nodes are 1379270.AUXF01000001_gene2161
+	(degree 1638), 1379270.AUXF01000002_gene1198 (degree 1401), 1379270.AUXF01000001_gene2454
+	(degree 1183), 1379270.AUXF01000003_gene3474 (degree 1117) and 1379270.AUXF01000001_gene2325
+	(degree 1088).
 	
 
 

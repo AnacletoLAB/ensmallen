@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:19.719095
 
-The undirected graph Byssochlamys spectabilis has 6841 nodes and 654770 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02799
-and has 13 connected components, where the component with most nodes has 6814 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 191.43, and the node degree mode is 1. The top 5
-most central nodes are 264951.V5I109 (degree 1902), 264951.V5G8S1 (degree 1834),
-264951.V5FXX6 (degree 1684), 264951.V5FLA6 (degree 1651) and 264951.V5HXB8 (degree
-1618).
+The undirected graph Byssochlamys spectabilis has 6841 nodes and 654770
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02799 and has 13 connected components, where the component
+with most nodes has 6814 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 191.43,
+and the node degree mode is 1. The top 5 most central nodes are 264951.V5I109
+(degree 1902), 264951.V5G8S1 (degree 1834), 264951.V5FXX6 (degree 1684),
+264951.V5FLA6 (degree 1651) and 264951.V5HXB8 (degree 1618).
 
 
 References
@@ -107,14 +107,14 @@ def ByssochlamysSpectabilis(
 	
 	Datetime: 2021-02-02 20:14:19.719095
 	
-	The undirected graph Byssochlamys spectabilis has 6841 nodes and 654770 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02799
-	and has 13 connected components, where the component with most nodes has 6814 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 191.43, and the node degree mode is 1. The top 5
-	most central nodes are 264951.V5I109 (degree 1902), 264951.V5G8S1 (degree 1834),
-	264951.V5FXX6 (degree 1684), 264951.V5FLA6 (degree 1651) and 264951.V5HXB8 (degree
-	1618).
+	The undirected graph Byssochlamys spectabilis has 6841 nodes and 654770
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02799 and has 13 connected components, where the component
+	with most nodes has 6814 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 191.43,
+	and the node degree mode is 1. The top 5 most central nodes are 264951.V5I109
+	(degree 1902), 264951.V5G8S1 (degree 1834), 264951.V5FXX6 (degree 1684),
+	264951.V5FLA6 (degree 1651) and 264951.V5HXB8 (degree 1618).
 	
 
 

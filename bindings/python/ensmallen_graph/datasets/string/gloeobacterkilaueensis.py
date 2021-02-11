@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:19.635545
 
-The undirected graph Gloeobacter kilaueensis has 4467 nodes and 342603 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03435 and
-has 11 connected components, where the component with most nodes has 4441 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 153.39, and the node degree mode is 3. The top 5 most central
-nodes are 1183438.GKIL_3649 (degree 1659), 1183438.GKIL_0158 (degree 1459), 1183438.GKIL_4121
-(degree 1394), 1183438.GKIL_1462 (degree 1196) and 1183438.GKIL_1830 (degree 1180).
+The undirected graph Gloeobacter kilaueensis has 4467 nodes and 342603
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03435 and has 11 connected components, where the component
+with most nodes has 4441 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 153.39,
+and the node degree mode is 3. The top 5 most central nodes are 1183438.GKIL_3649
+(degree 1659), 1183438.GKIL_0158 (degree 1459), 1183438.GKIL_4121 (degree
+1394), 1183438.GKIL_1462 (degree 1196) and 1183438.GKIL_1830 (degree 1180).
 
 
 References
@@ -106,13 +107,14 @@ def GloeobacterKilaueensis(
 	
 	Datetime: 2021-02-02 23:10:19.635545
 	
-	The undirected graph Gloeobacter kilaueensis has 4467 nodes and 342603 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03435 and
-	has 11 connected components, where the component with most nodes has 4441 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 153.39, and the node degree mode is 3. The top 5 most central
-	nodes are 1183438.GKIL_3649 (degree 1659), 1183438.GKIL_0158 (degree 1459), 1183438.GKIL_4121
-	(degree 1394), 1183438.GKIL_1462 (degree 1196) and 1183438.GKIL_1830 (degree 1180).
+	The undirected graph Gloeobacter kilaueensis has 4467 nodes and 342603
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03435 and has 11 connected components, where the component
+	with most nodes has 4441 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 153.39,
+	and the node degree mode is 3. The top 5 most central nodes are 1183438.GKIL_3649
+	(degree 1659), 1183438.GKIL_0158 (degree 1459), 1183438.GKIL_4121 (degree
+	1394), 1183438.GKIL_1462 (degree 1196) and 1183438.GKIL_1830 (degree 1180).
 	
 
 

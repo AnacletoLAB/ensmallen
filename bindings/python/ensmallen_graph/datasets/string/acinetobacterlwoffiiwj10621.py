@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:27.264055
 
-The undirected graph Acinetobacter lwoffii WJ10621 has 2929 nodes and 230181 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05368
-and has 7 connected components, where the component with most nodes has 2917 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 157.17, and the node degree mode is 3. The top 5
-most central nodes are 1046625.AFQY01000002_gene1640 (degree 995), 1046625.AFQY01000002_gene1599
-(degree 869), 1046625.AFQY01000005_gene1901 (degree 840), 1046625.AFQY01000003_gene2422
-(degree 820) and 1046625.AFQY01000001_gene640 (degree 820).
+The undirected graph Acinetobacter lwoffii WJ10621 has 2929 nodes and 230181
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05368 and has 7 connected components, where the component
+with most nodes has 2917 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 157.17,
+and the node degree mode is 3. The top 5 most central nodes are 1046625.AFQY01000002_gene1640
+(degree 995), 1046625.AFQY01000002_gene1599 (degree 869), 1046625.AFQY01000005_gene1901
+(degree 840), 1046625.AFQY01000003_gene2422 (degree 820) and 1046625.AFQY01000001_gene640
+(degree 820).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterLwoffiiWj10621(
 	
 	Datetime: 2021-02-02 22:16:27.264055
 	
-	The undirected graph Acinetobacter lwoffii WJ10621 has 2929 nodes and 230181 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05368
-	and has 7 connected components, where the component with most nodes has 2917 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 157.17, and the node degree mode is 3. The top 5
-	most central nodes are 1046625.AFQY01000002_gene1640 (degree 995), 1046625.AFQY01000002_gene1599
-	(degree 869), 1046625.AFQY01000005_gene1901 (degree 840), 1046625.AFQY01000003_gene2422
-	(degree 820) and 1046625.AFQY01000001_gene640 (degree 820).
+	The undirected graph Acinetobacter lwoffii WJ10621 has 2929 nodes and 230181
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05368 and has 7 connected components, where the component
+	with most nodes has 2917 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 157.17,
+	and the node degree mode is 3. The top 5 most central nodes are 1046625.AFQY01000002_gene1640
+	(degree 995), 1046625.AFQY01000002_gene1599 (degree 869), 1046625.AFQY01000005_gene1901
+	(degree 840), 1046625.AFQY01000003_gene2422 (degree 820) and 1046625.AFQY01000001_gene640
+	(degree 820).
 	
 
 

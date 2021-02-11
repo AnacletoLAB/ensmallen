@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:01.385283
 
-The undirected graph Gemmobacter nectariphilus has 4192 nodes and 494485 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05629
-and has 12 connected components, where the component with most nodes has 4162 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 201, the mean node degree is 235.92, and the node degree mode is 3. The top 5
-most central nodes are 1121271.AUCM01000006_gene282 (degree 1575), 1121271.AUCM01000003_gene1576
-(degree 1224), 1121271.AUCM01000014_gene2761 (degree 1128), 1121271.AUCM01000011_gene2033
-(degree 1100) and 1121271.AUCM01000004_gene1213 (degree 1083).
+The undirected graph Gemmobacter nectariphilus has 4192 nodes and 494485
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05629 and has 12 connected components, where the component
+with most nodes has 4162 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 235.92,
+and the node degree mode is 3. The top 5 most central nodes are 1121271.AUCM01000006_gene282
+(degree 1575), 1121271.AUCM01000003_gene1576 (degree 1224), 1121271.AUCM01000014_gene2761
+(degree 1128), 1121271.AUCM01000011_gene2033 (degree 1100) and 1121271.AUCM01000004_gene1213
+(degree 1083).
 
 
 References
@@ -107,14 +108,15 @@ def GemmobacterNectariphilus(
 	
 	Datetime: 2021-02-02 22:34:01.385283
 	
-	The undirected graph Gemmobacter nectariphilus has 4192 nodes and 494485 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05629
-	and has 12 connected components, where the component with most nodes has 4162 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 201, the mean node degree is 235.92, and the node degree mode is 3. The top 5
-	most central nodes are 1121271.AUCM01000006_gene282 (degree 1575), 1121271.AUCM01000003_gene1576
-	(degree 1224), 1121271.AUCM01000014_gene2761 (degree 1128), 1121271.AUCM01000011_gene2033
-	(degree 1100) and 1121271.AUCM01000004_gene1213 (degree 1083).
+	The undirected graph Gemmobacter nectariphilus has 4192 nodes and 494485
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05629 and has 12 connected components, where the component
+	with most nodes has 4162 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 235.92,
+	and the node degree mode is 3. The top 5 most central nodes are 1121271.AUCM01000006_gene282
+	(degree 1575), 1121271.AUCM01000003_gene1576 (degree 1224), 1121271.AUCM01000014_gene2761
+	(degree 1128), 1121271.AUCM01000011_gene2033 (degree 1100) and 1121271.AUCM01000004_gene1213
+	(degree 1083).
 	
 
 

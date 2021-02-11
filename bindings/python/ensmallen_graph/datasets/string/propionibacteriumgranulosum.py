@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:23:14.190788
 
-The undirected graph Propionibacterium granulosum has 1780 nodes and 141017 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08906
-and has 11 connected components, where the component with most nodes has 1757 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 158.45, and the node degree mode is 1. The top 5
-most central nodes are 1292373.H640_05103 (degree 845), 1292373.H640_01938 (degree
-750), 1292373.H640_07329 (degree 742), 1292373.H640_05433 (degree 736) and 1292373.H640_05448
-(degree 731).
+The undirected graph Propionibacterium granulosum has 1780 nodes and 141017
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08906 and has 11 connected components, where the component
+with most nodes has 1757 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 158.45,
+and the node degree mode is 1. The top 5 most central nodes are 1292373.H640_05103
+(degree 845), 1292373.H640_01938 (degree 750), 1292373.H640_07329 (degree
+742), 1292373.H640_05433 (degree 736) and 1292373.H640_05448 (degree 731).
 
 
 References
@@ -107,14 +107,14 @@ def PropionibacteriumGranulosum(
 	
 	Datetime: 2021-02-03 21:23:14.190788
 	
-	The undirected graph Propionibacterium granulosum has 1780 nodes and 141017 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08906
-	and has 11 connected components, where the component with most nodes has 1757 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 158.45, and the node degree mode is 1. The top 5
-	most central nodes are 1292373.H640_05103 (degree 845), 1292373.H640_01938 (degree
-	750), 1292373.H640_07329 (degree 742), 1292373.H640_05433 (degree 736) and 1292373.H640_05448
-	(degree 731).
+	The undirected graph Propionibacterium granulosum has 1780 nodes and 141017
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08906 and has 11 connected components, where the component
+	with most nodes has 1757 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 158.45,
+	and the node degree mode is 1. The top 5 most central nodes are 1292373.H640_05103
+	(degree 845), 1292373.H640_01938 (degree 750), 1292373.H640_07329 (degree
+	742), 1292373.H640_05433 (degree 736) and 1292373.H640_05448 (degree 731).
 	
 
 

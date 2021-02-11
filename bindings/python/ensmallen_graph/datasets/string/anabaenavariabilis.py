@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:44.583559
 
-The undirected graph Anabaena variabilis has 5269 nodes and 754077 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05433 and
-has 23 connected components, where the component with most nodes has 5207 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 286.23, and the node degree mode is 2. The top 5 most central
-nodes are 240292.Ava_0238 (degree 2260), 240292.Ava_0581 (degree 1894), 240292.Ava_0647
-(degree 1763), 240292.Ava_3043 (degree 1654) and 240292.Ava_2239 (degree 1589).
+The undirected graph Anabaena variabilis has 5269 nodes and 754077 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05433 and has 23 connected components, where the component with most
+nodes has 5207 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 286.23, and
+the node degree mode is 2. The top 5 most central nodes are 240292.Ava_0238
+(degree 2260), 240292.Ava_0581 (degree 1894), 240292.Ava_0647 (degree 1763),
+240292.Ava_3043 (degree 1654) and 240292.Ava_2239 (degree 1589).
 
 
 References
@@ -106,13 +107,14 @@ def AnabaenaVariabilis(
 	
 	Datetime: 2021-02-02 20:08:44.583559
 	
-	The undirected graph Anabaena variabilis has 5269 nodes and 754077 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05433 and
-	has 23 connected components, where the component with most nodes has 5207 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 286.23, and the node degree mode is 2. The top 5 most central
-	nodes are 240292.Ava_0238 (degree 2260), 240292.Ava_0581 (degree 1894), 240292.Ava_0647
-	(degree 1763), 240292.Ava_3043 (degree 1654) and 240292.Ava_2239 (degree 1589).
+	The undirected graph Anabaena variabilis has 5269 nodes and 754077 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05433 and has 23 connected components, where the component with most
+	nodes has 5207 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 286.23, and
+	the node degree mode is 2. The top 5 most central nodes are 240292.Ava_0238
+	(degree 2260), 240292.Ava_0581 (degree 1894), 240292.Ava_0647 (degree 1763),
+	240292.Ava_3043 (degree 1654) and 240292.Ava_2239 (degree 1589).
 	
 
 

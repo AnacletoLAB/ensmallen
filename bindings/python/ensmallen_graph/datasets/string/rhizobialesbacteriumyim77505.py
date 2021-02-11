@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:36.317311
 
-The undirected graph Rhizobiales bacterium YIM77505 has 3889 nodes and 426851 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05646
-and has 10 connected components, where the component with most nodes has 3866 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 219.52, and the node degree mode is 4. The top 5
-most central nodes are 1411123.JQNH01000001_gene3258 (degree 1490), 1411123.JQNH01000001_gene1555
+The undirected graph Rhizobiales bacterium YIM77505 has 3889 nodes and
+426851 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05646 and has 10 connected components, where the
+component with most nodes has 3866 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 191, the mean node degree
+is 219.52, and the node degree mode is 4. The top 5 most central nodes
+are 1411123.JQNH01000001_gene3258 (degree 1490), 1411123.JQNH01000001_gene1555
 (degree 1184), 1411123.JQNH01000001_gene497 (degree 1153), 1411123.JQNH01000001_gene2363
 (degree 1110) and 1411123.JQNH01000001_gene171 (degree 1098).
 
@@ -107,12 +108,13 @@ def RhizobialesBacteriumYim77505(
 	
 	Datetime: 2021-02-03 22:44:36.317311
 	
-	The undirected graph Rhizobiales bacterium YIM77505 has 3889 nodes and 426851 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05646
-	and has 10 connected components, where the component with most nodes has 3866 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 219.52, and the node degree mode is 4. The top 5
-	most central nodes are 1411123.JQNH01000001_gene3258 (degree 1490), 1411123.JQNH01000001_gene1555
+	The undirected graph Rhizobiales bacterium YIM77505 has 3889 nodes and
+	426851 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05646 and has 10 connected components, where the
+	component with most nodes has 3866 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 191, the mean node degree
+	is 219.52, and the node degree mode is 4. The top 5 most central nodes
+	are 1411123.JQNH01000001_gene3258 (degree 1490), 1411123.JQNH01000001_gene1555
 	(degree 1184), 1411123.JQNH01000001_gene497 (degree 1153), 1411123.JQNH01000001_gene2363
 	(degree 1110) and 1411123.JQNH01000001_gene171 (degree 1098).
 	

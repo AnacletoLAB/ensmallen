@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:28.540926
 
-The undirected graph Emticicia oligotrophica has 3936 nodes and 452112 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05838 and
-has 6 connected components, where the component with most nodes has 3926 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 229.73, and the node degree mode is 4. The top 5 most central
-nodes are 929562.Emtol_0876 (degree 1906), 929562.Emtol_3276 (degree 1596), 929562.Emtol_4100
-(degree 1400), 929562.Emtol_1700 (degree 1054) and 929562.Emtol_1183 (degree 1018).
+The undirected graph Emticicia oligotrophica has 3936 nodes and 452112
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05838 and has 6 connected components, where the component
+with most nodes has 3926 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 229.73,
+and the node degree mode is 4. The top 5 most central nodes are 929562.Emtol_0876
+(degree 1906), 929562.Emtol_3276 (degree 1596), 929562.Emtol_4100 (degree
+1400), 929562.Emtol_1700 (degree 1054) and 929562.Emtol_1183 (degree 1018).
 
 
 References
@@ -106,13 +107,14 @@ def EmticiciaOligotrophica(
 	
 	Datetime: 2021-02-02 21:57:28.540926
 	
-	The undirected graph Emticicia oligotrophica has 3936 nodes and 452112 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05838 and
-	has 6 connected components, where the component with most nodes has 3926 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 229.73, and the node degree mode is 4. The top 5 most central
-	nodes are 929562.Emtol_0876 (degree 1906), 929562.Emtol_3276 (degree 1596), 929562.Emtol_4100
-	(degree 1400), 929562.Emtol_1700 (degree 1054) and 929562.Emtol_1183 (degree 1018).
+	The undirected graph Emticicia oligotrophica has 3936 nodes and 452112
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05838 and has 6 connected components, where the component
+	with most nodes has 3926 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 229.73,
+	and the node degree mode is 4. The top 5 most central nodes are 929562.Emtol_0876
+	(degree 1906), 929562.Emtol_3276 (degree 1596), 929562.Emtol_4100 (degree
+	1400), 929562.Emtol_1700 (degree 1054) and 929562.Emtol_1183 (degree 1018).
 	
 
 

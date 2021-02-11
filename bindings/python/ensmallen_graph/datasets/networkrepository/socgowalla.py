@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:47:47.266621
 
-The undirected graph soc-gowalla has 196591 nodes and 950327 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and is connected, as it has a single component. The graph median node degree is 3,
-the mean node degree is 9.67, and the node degree mode is 1. The top 5 most central
-nodes are 308 (degree 14730), 221 (degree 10185), 506 (degree 5420), 1150 (degree
-3986) and 460 (degree 3880).
+The undirected graph soc-gowalla has 196591 nodes and 950327 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00005 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 9.67, and the
+node degree mode is 1. The top 5 most central nodes are 308 (degree 14730),
+221 (degree 10185), 506 (degree 5420), 1150 (degree 3986) and 460 (degree
+3880).
 
 
 References
@@ -111,12 +112,13 @@ def SocGowalla(
 	
 	Datetime: 2021-02-06 11:47:47.266621
 	
-	The undirected graph soc-gowalla has 196591 nodes and 950327 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and is connected, as it has a single component. The graph median node degree is 3,
-	the mean node degree is 9.67, and the node degree mode is 1. The top 5 most central
-	nodes are 308 (degree 14730), 221 (degree 10185), 506 (degree 5420), 1150 (degree
-	3986) and 460 (degree 3880).
+	The undirected graph soc-gowalla has 196591 nodes and 950327 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00005 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 9.67, and the
+	node degree mode is 1. The top 5 most central nodes are 308 (degree 14730),
+	221 (degree 10185), 506 (degree 5420), 1150 (degree 3986) and 460 (degree
+	3880).
 	
 
 

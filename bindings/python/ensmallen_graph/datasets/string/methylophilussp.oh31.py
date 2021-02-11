@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:21:48.146386
 
-The undirected graph Methylophilus sp. OH31 has 2590 nodes and 217442 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06485 and
-has 8 connected components, where the component with most nodes has 2576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 167.91, and the node degree mode is 1. The top 5 most central
-nodes are 1387312.BAUS01000002_gene222 (degree 1024), 1387312.BAUS01000012_gene1989
-(degree 904), 1387312.BAUS01000002_gene855 (degree 821), 1387312.BAUS01000002_gene854
-(degree 779) and 1387312.BAUS01000010_gene105 (degree 764).
+The undirected graph Methylophilus sp. OH31 has 2590 nodes and 217442 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06485 and has 8 connected components, where the component with most
+nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 167.91, and
+the node degree mode is 1. The top 5 most central nodes are 1387312.BAUS01000002_gene222
+(degree 1024), 1387312.BAUS01000012_gene1989 (degree 904), 1387312.BAUS01000002_gene855
+(degree 821), 1387312.BAUS01000002_gene854 (degree 779) and 1387312.BAUS01000010_gene105
+(degree 764).
 
 
 References
@@ -107,14 +108,15 @@ def MethylophilusSp.Oh31(
 	
 	Datetime: 2021-02-03 22:21:48.146386
 	
-	The undirected graph Methylophilus sp. OH31 has 2590 nodes and 217442 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06485 and
-	has 8 connected components, where the component with most nodes has 2576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 167.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1387312.BAUS01000002_gene222 (degree 1024), 1387312.BAUS01000012_gene1989
-	(degree 904), 1387312.BAUS01000002_gene855 (degree 821), 1387312.BAUS01000002_gene854
-	(degree 779) and 1387312.BAUS01000010_gene105 (degree 764).
+	The undirected graph Methylophilus sp. OH31 has 2590 nodes and 217442 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06485 and has 8 connected components, where the component with most
+	nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 167.91, and
+	the node degree mode is 1. The top 5 most central nodes are 1387312.BAUS01000002_gene222
+	(degree 1024), 1387312.BAUS01000012_gene1989 (degree 904), 1387312.BAUS01000002_gene855
+	(degree 821), 1387312.BAUS01000002_gene854 (degree 779) and 1387312.BAUS01000010_gene105
+	(degree 764).
 	
 
 

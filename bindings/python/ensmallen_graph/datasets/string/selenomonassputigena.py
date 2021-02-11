@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:33.354359
 
-The undirected graph Selenomonas sputigena has 2243 nodes and 129782 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05162 and
-has 8 connected components, where the component with most nodes has 2228 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 115.72, and the node degree mode is 35. The top 5 most central
-nodes are 546271.Selsp_1095 (degree 912), 546271.Selsp_1601 (degree 758), 546271.Selsp_0814
-(degree 680), 546271.Selsp_0725 (degree 653) and 546271.Selsp_0988 (degree 616).
+The undirected graph Selenomonas sputigena has 2243 nodes and 129782 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05162 and has 8 connected components, where the component with most
+nodes has 2228 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 115.72, and
+the node degree mode is 35. The top 5 most central nodes are 546271.Selsp_1095
+(degree 912), 546271.Selsp_1601 (degree 758), 546271.Selsp_0814 (degree
+680), 546271.Selsp_0725 (degree 653) and 546271.Selsp_0988 (degree 616).
 
 
 References
@@ -106,13 +107,14 @@ def SelenomonasSputigena(
 	
 	Datetime: 2021-02-02 21:08:33.354359
 	
-	The undirected graph Selenomonas sputigena has 2243 nodes and 129782 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05162 and
-	has 8 connected components, where the component with most nodes has 2228 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 115.72, and the node degree mode is 35. The top 5 most central
-	nodes are 546271.Selsp_1095 (degree 912), 546271.Selsp_1601 (degree 758), 546271.Selsp_0814
-	(degree 680), 546271.Selsp_0725 (degree 653) and 546271.Selsp_0988 (degree 616).
+	The undirected graph Selenomonas sputigena has 2243 nodes and 129782 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05162 and has 8 connected components, where the component with most
+	nodes has 2228 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 115.72, and
+	the node degree mode is 35. The top 5 most central nodes are 546271.Selsp_1095
+	(degree 912), 546271.Selsp_1601 (degree 758), 546271.Selsp_0814 (degree
+	680), 546271.Selsp_0725 (degree 653) and 546271.Selsp_0988 (degree 616).
 	
 
 

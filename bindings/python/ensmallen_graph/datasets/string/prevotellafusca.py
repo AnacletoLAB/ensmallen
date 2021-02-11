@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:18.544445
 
-The undirected graph Prevotella fusca has 2700 nodes and 198333 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05443 and
-has 41 connected components, where the component with most nodes has 2598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 146.91, and the node degree mode is 2. The top 5 most central
-nodes are 1236517.BAKO01000008_gene128 (degree 1266), 1236517.BAKO01000004_gene748
-(degree 1124), 1236517.BAKO01000003_gene2256 (degree 1108), 1236517.BAKO01000022_gene2131
-(degree 919) and 1236517.BAKO01000012_gene1416 (degree 882).
+The undirected graph Prevotella fusca has 2700 nodes and 198333 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05443 and has 41 connected components, where the component with most
+nodes has 2598 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 146.91, and
+the node degree mode is 2. The top 5 most central nodes are 1236517.BAKO01000008_gene128
+(degree 1266), 1236517.BAKO01000004_gene748 (degree 1124), 1236517.BAKO01000003_gene2256
+(degree 1108), 1236517.BAKO01000022_gene2131 (degree 919) and 1236517.BAKO01000012_gene1416
+(degree 882).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaFusca(
 	
 	Datetime: 2021-02-02 23:31:18.544445
 	
-	The undirected graph Prevotella fusca has 2700 nodes and 198333 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05443 and
-	has 41 connected components, where the component with most nodes has 2598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 146.91, and the node degree mode is 2. The top 5 most central
-	nodes are 1236517.BAKO01000008_gene128 (degree 1266), 1236517.BAKO01000004_gene748
-	(degree 1124), 1236517.BAKO01000003_gene2256 (degree 1108), 1236517.BAKO01000022_gene2131
-	(degree 919) and 1236517.BAKO01000012_gene1416 (degree 882).
+	The undirected graph Prevotella fusca has 2700 nodes and 198333 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05443 and has 41 connected components, where the component with most
+	nodes has 2598 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 146.91, and
+	the node degree mode is 2. The top 5 most central nodes are 1236517.BAKO01000008_gene128
+	(degree 1266), 1236517.BAKO01000004_gene748 (degree 1124), 1236517.BAKO01000003_gene2256
+	(degree 1108), 1236517.BAKO01000022_gene2131 (degree 919) and 1236517.BAKO01000012_gene1416
+	(degree 882).
 	
 
 

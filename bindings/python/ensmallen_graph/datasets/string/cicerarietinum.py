@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:34:33.726713
 
-The undirected graph Cicer arietinum has 20871 nodes and 3300076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01515 and
-has 6 connected components, where the component with most nodes has 20860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 316.24, and the node degree mode is 2. The top 5 most central
-nodes are 3827.XP_004513027.1 (degree 6284), 3827.XP_004500795.1 (degree 4371), 3827.XP_004507472.1
-(degree 4371), 3827.XP_004516663.1 (degree 4073) and 3827.XP_004499769.1 (degree
+The undirected graph Cicer arietinum has 20871 nodes and 3300076 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01515 and has 6 connected components, where the component with most
+nodes has 20860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 316.24, and
+the node degree mode is 2. The top 5 most central nodes are 3827.XP_004513027.1
+(degree 6284), 3827.XP_004500795.1 (degree 4371), 3827.XP_004507472.1 (degree
+4371), 3827.XP_004516663.1 (degree 4073) and 3827.XP_004499769.1 (degree
 3888).
 
 
@@ -107,13 +108,14 @@ def CicerArietinum(
 	
 	Datetime: 2021-02-02 16:34:33.726713
 	
-	The undirected graph Cicer arietinum has 20871 nodes and 3300076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01515 and
-	has 6 connected components, where the component with most nodes has 20860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 316.24, and the node degree mode is 2. The top 5 most central
-	nodes are 3827.XP_004513027.1 (degree 6284), 3827.XP_004500795.1 (degree 4371), 3827.XP_004507472.1
-	(degree 4371), 3827.XP_004516663.1 (degree 4073) and 3827.XP_004499769.1 (degree
+	The undirected graph Cicer arietinum has 20871 nodes and 3300076 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01515 and has 6 connected components, where the component with most
+	nodes has 20860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 316.24, and
+	the node degree mode is 2. The top 5 most central nodes are 3827.XP_004513027.1
+	(degree 6284), 3827.XP_004500795.1 (degree 4371), 3827.XP_004507472.1 (degree
+	4371), 3827.XP_004516663.1 (degree 4073) and 3827.XP_004499769.1 (degree
 	3888).
 	
 

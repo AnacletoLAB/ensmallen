@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:51.029453
 
-The undirected graph Escherichia albertii TW07627 has 4299 nodes and 533768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05778
-and has 23 connected components, where the component with most nodes has 4250 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 248.32, and the node degree mode is 1. The top 5
-most central nodes are 502347.ESCAB7627_3989 (degree 1297), 502347.ESCAB7627_4528
-(degree 1274), 502347.ESCAB7627_4132 (degree 1272), 502347.ESCAB7627_1664 (degree
-1144) and 502347.ESCAB7627_1387 (degree 1138).
+The undirected graph Escherichia albertii TW07627 has 4299 nodes and 533768
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05778 and has 23 connected components, where the component
+with most nodes has 4250 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 234, the mean node degree is 248.32,
+and the node degree mode is 1. The top 5 most central nodes are 502347.ESCAB7627_3989
+(degree 1297), 502347.ESCAB7627_4528 (degree 1274), 502347.ESCAB7627_4132
+(degree 1272), 502347.ESCAB7627_1664 (degree 1144) and 502347.ESCAB7627_1387
+(degree 1138).
 
 
 References
@@ -107,14 +108,15 @@ def EscherichiaAlbertiiTw07627(
 	
 	Datetime: 2021-02-02 21:01:51.029453
 	
-	The undirected graph Escherichia albertii TW07627 has 4299 nodes and 533768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05778
-	and has 23 connected components, where the component with most nodes has 4250 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 248.32, and the node degree mode is 1. The top 5
-	most central nodes are 502347.ESCAB7627_3989 (degree 1297), 502347.ESCAB7627_4528
-	(degree 1274), 502347.ESCAB7627_4132 (degree 1272), 502347.ESCAB7627_1664 (degree
-	1144) and 502347.ESCAB7627_1387 (degree 1138).
+	The undirected graph Escherichia albertii TW07627 has 4299 nodes and 533768
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05778 and has 23 connected components, where the component
+	with most nodes has 4250 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 234, the mean node degree is 248.32,
+	and the node degree mode is 1. The top 5 most central nodes are 502347.ESCAB7627_3989
+	(degree 1297), 502347.ESCAB7627_4528 (degree 1274), 502347.ESCAB7627_4132
+	(degree 1272), 502347.ESCAB7627_1664 (degree 1144) and 502347.ESCAB7627_1387
+	(degree 1138).
 	
 
 

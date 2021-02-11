@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:07:09.892990
 
-The undirected graph cage4 has 9 nodes and 29 weighted edges, of which 9 are self-loops.
-The graph is extremely dense as it has a density of 0.68056 and is connected, as
-it has a single component. The graph median node degree is 5, the mean node degree
-is 5.44, and the node degree mode is 5. The top 5 most central nodes are 7 (degree
-6), 6 (degree 6), 8 (degree 6), 5 (degree 6) and 9 (degree 5).
+The undirected graph cage4 has 9 nodes and 29 weighted edges, of which
+9 are self-loops. The graph is extremely dense as it has a density of 0.68056
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 5.44, and the node degree mode is 5. The
+top 5 most central nodes are 7 (degree 6), 6 (degree 6), 8 (degree 6),
+5 (degree 6) and 9 (degree 5).
 
 
 References
@@ -101,11 +102,12 @@ def Cage4(
 	
 	Datetime: 2021-02-06 08:07:09.892990
 	
-	The undirected graph cage4 has 9 nodes and 29 weighted edges, of which 9 are self-loops.
-	The graph is extremely dense as it has a density of 0.68056 and is connected, as
-	it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.44, and the node degree mode is 5. The top 5 most central nodes are 7 (degree
-	6), 6 (degree 6), 8 (degree 6), 5 (degree 6) and 9 (degree 5).
+	The undirected graph cage4 has 9 nodes and 29 weighted edges, of which
+	9 are self-loops. The graph is extremely dense as it has a density of 0.68056
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 5.44, and the node degree mode is 5. The
+	top 5 most central nodes are 7 (degree 6), 6 (degree 6), 8 (degree 6),
+	5 (degree 6) and 9 (degree 5).
 	
 
 

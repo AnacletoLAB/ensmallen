@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:13.014470
 
-The undirected graph Brevibacterium casei has 3197 nodes and 283623 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05552 and
-has 8 connected components, where the component with most nodes has 3179 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 177.43, and the node degree mode is 4. The top 5 most central
-nodes are 1229781.C272_13069 (degree 1190), 1229781.C272_01995 (degree 1030), 1229781.C272_07015
-(degree 1012), 1229781.C272_04140 (degree 1010) and 1229781.C272_04830 (degree 973).
+The undirected graph Brevibacterium casei has 3197 nodes and 283623 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05552 and has 8 connected components, where the component with most
+nodes has 3179 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 177.43, and
+the node degree mode is 4. The top 5 most central nodes are 1229781.C272_13069
+(degree 1190), 1229781.C272_01995 (degree 1030), 1229781.C272_07015 (degree
+1012), 1229781.C272_04140 (degree 1010) and 1229781.C272_04830 (degree
+973).
 
 
 References
@@ -106,13 +108,15 @@ def BrevibacteriumCasei(
 	
 	Datetime: 2021-02-02 23:27:13.014470
 	
-	The undirected graph Brevibacterium casei has 3197 nodes and 283623 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05552 and
-	has 8 connected components, where the component with most nodes has 3179 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 177.43, and the node degree mode is 4. The top 5 most central
-	nodes are 1229781.C272_13069 (degree 1190), 1229781.C272_01995 (degree 1030), 1229781.C272_07015
-	(degree 1012), 1229781.C272_04140 (degree 1010) and 1229781.C272_04830 (degree 973).
+	The undirected graph Brevibacterium casei has 3197 nodes and 283623 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05552 and has 8 connected components, where the component with most
+	nodes has 3179 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 177.43, and
+	the node degree mode is 4. The top 5 most central nodes are 1229781.C272_13069
+	(degree 1190), 1229781.C272_01995 (degree 1030), 1229781.C272_07015 (degree
+	1012), 1229781.C272_04140 (degree 1010) and 1229781.C272_04830 (degree
+	973).
 	
 
 

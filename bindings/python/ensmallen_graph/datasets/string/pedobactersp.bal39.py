@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:39.157015
 
-The undirected graph Pedobacter sp. BAL39 has 5033 nodes and 676196 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05340 and
-has 14 connected components, where the component with most nodes has 5000 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 254,
-the mean node degree is 268.70, and the node degree mode is 2. The top 5 most central
-nodes are 391596.PBAL39_25275 (degree 1598), 391596.PBAL39_12007 (degree 1537), 391596.PBAL39_11312
-(degree 1499), 391596.PBAL39_00325 (degree 1333) and 391596.PBAL39_21020 (degree
+The undirected graph Pedobacter sp. BAL39 has 5033 nodes and 676196 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05340 and has 14 connected components, where the component with most
+nodes has 5000 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 254, the mean node degree is 268.70, and
+the node degree mode is 2. The top 5 most central nodes are 391596.PBAL39_25275
+(degree 1598), 391596.PBAL39_12007 (degree 1537), 391596.PBAL39_11312 (degree
+1499), 391596.PBAL39_00325 (degree 1333) and 391596.PBAL39_21020 (degree
 1314).
 
 
@@ -107,13 +108,14 @@ def PedobacterSp.Bal39(
 	
 	Datetime: 2021-02-02 20:39:39.157015
 	
-	The undirected graph Pedobacter sp. BAL39 has 5033 nodes and 676196 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05340 and
-	has 14 connected components, where the component with most nodes has 5000 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 254,
-	the mean node degree is 268.70, and the node degree mode is 2. The top 5 most central
-	nodes are 391596.PBAL39_25275 (degree 1598), 391596.PBAL39_12007 (degree 1537), 391596.PBAL39_11312
-	(degree 1499), 391596.PBAL39_00325 (degree 1333) and 391596.PBAL39_21020 (degree
+	The undirected graph Pedobacter sp. BAL39 has 5033 nodes and 676196 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05340 and has 14 connected components, where the component with most
+	nodes has 5000 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 254, the mean node degree is 268.70, and
+	the node degree mode is 2. The top 5 most central nodes are 391596.PBAL39_25275
+	(degree 1598), 391596.PBAL39_12007 (degree 1537), 391596.PBAL39_11312 (degree
+	1499), 391596.PBAL39_00325 (degree 1333) and 391596.PBAL39_21020 (degree
 	1314).
 	
 

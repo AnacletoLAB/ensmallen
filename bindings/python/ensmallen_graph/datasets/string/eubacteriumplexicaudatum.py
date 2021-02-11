@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:38.952036
 
-The undirected graph Eubacterium plexicaudatum has 6118 nodes and 784048 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-and has 45 connected components, where the component with most nodes has 6001 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 223, the mean node degree is 256.31, and the node degree mode is 2. The top 5
-most central nodes are 1235802.C823_01430 (degree 2096), 1235802.C823_02881 (degree
-1708), 1235802.C823_04128 (degree 1685), 1235802.C823_03166 (degree 1605) and 1235802.C823_01175
-(degree 1561).
+The undirected graph Eubacterium plexicaudatum has 6118 nodes and 784048
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04190 and has 45 connected components, where the component
+with most nodes has 6001 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 223, the mean node degree is 256.31,
+and the node degree mode is 2. The top 5 most central nodes are 1235802.C823_01430
+(degree 2096), 1235802.C823_02881 (degree 1708), 1235802.C823_04128 (degree
+1685), 1235802.C823_03166 (degree 1605) and 1235802.C823_01175 (degree
+1561).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumPlexicaudatum(
 	
 	Datetime: 2021-02-02 23:30:38.952036
 	
-	The undirected graph Eubacterium plexicaudatum has 6118 nodes and 784048 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-	and has 45 connected components, where the component with most nodes has 6001 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 223, the mean node degree is 256.31, and the node degree mode is 2. The top 5
-	most central nodes are 1235802.C823_01430 (degree 2096), 1235802.C823_02881 (degree
-	1708), 1235802.C823_04128 (degree 1685), 1235802.C823_03166 (degree 1605) and 1235802.C823_01175
-	(degree 1561).
+	The undirected graph Eubacterium plexicaudatum has 6118 nodes and 784048
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04190 and has 45 connected components, where the component
+	with most nodes has 6001 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 223, the mean node degree is 256.31,
+	and the node degree mode is 2. The top 5 most central nodes are 1235802.C823_01430
+	(degree 2096), 1235802.C823_02881 (degree 1708), 1235802.C823_04128 (degree
+	1685), 1235802.C823_03166 (degree 1605) and 1235802.C823_01175 (degree
+	1561).
 	
 
 

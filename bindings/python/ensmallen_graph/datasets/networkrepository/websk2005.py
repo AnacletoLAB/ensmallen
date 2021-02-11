@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:52:15.633422
 
-The undirected graph web-sk-2005 has 121422 nodes and 334419 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 5.51, and the node degree mode is 1. The top 5 most central
-nodes are 69848 (degree 590), 50504 (degree 526), 50502 (degree 420), 69826 (degree
-365) and 89321 (degree 309).
+The undirected graph web-sk-2005 has 121422 nodes and 334419 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00005 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 5.51, and the
+node degree mode is 1. The top 5 most central nodes are 69848 (degree 590),
+50504 (degree 526), 50502 (degree 420), 69826 (degree 365) and 89321 (degree
+309).
 
 
 References
@@ -119,12 +120,13 @@ def WebSk2005(
 	
 	Datetime: 2021-02-06 11:52:15.633422
 	
-	The undirected graph web-sk-2005 has 121422 nodes and 334419 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 5.51, and the node degree mode is 1. The top 5 most central
-	nodes are 69848 (degree 590), 50504 (degree 526), 50502 (degree 420), 69826 (degree
-	365) and 89321 (degree 309).
+	The undirected graph web-sk-2005 has 121422 nodes and 334419 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00005 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 5.51, and the
+	node degree mode is 1. The top 5 most central nodes are 69848 (degree 590),
+	50504 (degree 526), 50502 (degree 420), 69826 (degree 365) and 89321 (degree
+	309).
 	
 
 

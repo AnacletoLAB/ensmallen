@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:58:14.265084
 
-The undirected graph Rhizobium larrymoorei has 4544 nodes and 521151 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05049 and
-has 12 connected components, where the component with most nodes has 4519 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 229.38, and the node degree mode is 2. The top 5 most central
-nodes are 1336249.JADW01000006_gene4095 (degree 1847), 1336249.JADW01000003_gene3827
-(degree 1508), 1336249.JADW01000013_gene3385 (degree 1485), 1336249.JADW01000003_gene3717
-(degree 1402) and 1336249.JADW01000004_gene3454 (degree 1392).
+The undirected graph Rhizobium larrymoorei has 4544 nodes and 521151 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05049 and has 12 connected components, where the component with most
+nodes has 4519 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 229.38, and
+the node degree mode is 2. The top 5 most central nodes are 1336249.JADW01000006_gene4095
+(degree 1847), 1336249.JADW01000003_gene3827 (degree 1508), 1336249.JADW01000013_gene3385
+(degree 1485), 1336249.JADW01000003_gene3717 (degree 1402) and 1336249.JADW01000004_gene3454
+(degree 1392).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumLarrymoorei(
 	
 	Datetime: 2021-02-03 21:58:14.265084
 	
-	The undirected graph Rhizobium larrymoorei has 4544 nodes and 521151 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05049 and
-	has 12 connected components, where the component with most nodes has 4519 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 229.38, and the node degree mode is 2. The top 5 most central
-	nodes are 1336249.JADW01000006_gene4095 (degree 1847), 1336249.JADW01000003_gene3827
-	(degree 1508), 1336249.JADW01000013_gene3385 (degree 1485), 1336249.JADW01000003_gene3717
-	(degree 1402) and 1336249.JADW01000004_gene3454 (degree 1392).
+	The undirected graph Rhizobium larrymoorei has 4544 nodes and 521151 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05049 and has 12 connected components, where the component with most
+	nodes has 4519 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 229.38, and
+	the node degree mode is 2. The top 5 most central nodes are 1336249.JADW01000006_gene4095
+	(degree 1847), 1336249.JADW01000003_gene3827 (degree 1508), 1336249.JADW01000013_gene3385
+	(degree 1485), 1336249.JADW01000003_gene3717 (degree 1402) and 1336249.JADW01000004_gene3454
+	(degree 1392).
 	
 
 

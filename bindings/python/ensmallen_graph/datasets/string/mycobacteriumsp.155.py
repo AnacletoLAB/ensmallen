@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:35.923385
 
-The undirected graph Mycobacterium sp. 155 has 4172 nodes and 425802 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04894 and
-has 25 connected components, where the component with most nodes has 4097 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 204.12, and the node degree mode is 1. The top 5 most central
-nodes are 1157943.KB892705_gene474 (degree 1414), 1157943.KB892705_gene662 (degree
-1390), 1157943.KB892705_gene968 (degree 1379), 1157943.KB892705_gene2131 (degree
-1177) and 1157943.KB892705_gene593 (degree 1152).
+The undirected graph Mycobacterium sp. 155 has 4172 nodes and 425802 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04894 and has 25 connected components, where the component with most
+nodes has 4097 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 204.12, and
+the node degree mode is 1. The top 5 most central nodes are 1157943.KB892705_gene474
+(degree 1414), 1157943.KB892705_gene662 (degree 1390), 1157943.KB892705_gene968
+(degree 1379), 1157943.KB892705_gene2131 (degree 1177) and 1157943.KB892705_gene593
+(degree 1152).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.155(
 	
 	Datetime: 2021-02-02 23:02:35.923385
 	
-	The undirected graph Mycobacterium sp. 155 has 4172 nodes and 425802 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04894 and
-	has 25 connected components, where the component with most nodes has 4097 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 204.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1157943.KB892705_gene474 (degree 1414), 1157943.KB892705_gene662 (degree
-	1390), 1157943.KB892705_gene968 (degree 1379), 1157943.KB892705_gene2131 (degree
-	1177) and 1157943.KB892705_gene593 (degree 1152).
+	The undirected graph Mycobacterium sp. 155 has 4172 nodes and 425802 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04894 and has 25 connected components, where the component with most
+	nodes has 4097 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 204.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1157943.KB892705_gene474
+	(degree 1414), 1157943.KB892705_gene662 (degree 1390), 1157943.KB892705_gene968
+	(degree 1379), 1157943.KB892705_gene2131 (degree 1177) and 1157943.KB892705_gene593
+	(degree 1152).
 	
 
 

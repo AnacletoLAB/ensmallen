@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:37.753622
 
-The undirected graph Pseudomonas cremoricolorata has 3997 nodes and 306543 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03839
-and has 18 connected components, where the component with most nodes has 3958 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 153.39, and the node degree mode is 1. The top 5
-most central nodes are 157783.LK03_09660 (degree 2057), 157783.LK03_06585 (degree
-1489), 157783.LK03_04575 (degree 1149), 157783.LK03_10455 (degree 1086) and 157783.LK03_10450
-(degree 1030).
+The undirected graph Pseudomonas cremoricolorata has 3997 nodes and 306543
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03839 and has 18 connected components, where the component
+with most nodes has 3958 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 153.39,
+and the node degree mode is 1. The top 5 most central nodes are 157783.LK03_09660
+(degree 2057), 157783.LK03_06585 (degree 1489), 157783.LK03_04575 (degree
+1149), 157783.LK03_10455 (degree 1086) and 157783.LK03_10450 (degree 1030).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasCremoricolorata(
 	
 	Datetime: 2021-02-02 19:52:37.753622
 	
-	The undirected graph Pseudomonas cremoricolorata has 3997 nodes and 306543 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03839
-	and has 18 connected components, where the component with most nodes has 3958 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 153.39, and the node degree mode is 1. The top 5
-	most central nodes are 157783.LK03_09660 (degree 2057), 157783.LK03_06585 (degree
-	1489), 157783.LK03_04575 (degree 1149), 157783.LK03_10455 (degree 1086) and 157783.LK03_10450
-	(degree 1030).
+	The undirected graph Pseudomonas cremoricolorata has 3997 nodes and 306543
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03839 and has 18 connected components, where the component
+	with most nodes has 3958 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 153.39,
+	and the node degree mode is 1. The top 5 most central nodes are 157783.LK03_09660
+	(degree 2057), 157783.LK03_06585 (degree 1489), 157783.LK03_04575 (degree
+	1149), 157783.LK03_10455 (degree 1086) and 157783.LK03_10450 (degree 1030).
 	
 
 

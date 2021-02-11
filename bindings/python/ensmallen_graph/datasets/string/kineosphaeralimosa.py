@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:31.514590
 
-The undirected graph Kineosphaera limosa has 4379 nodes and 448893 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04683 and
-has 10 connected components, where the component with most nodes has 4358 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 205.02, and the node degree mode is 4. The top 5 most central
-nodes are 1184609.KILIM_042_00100 (degree 1539), 1184609.KILIM_005_00200 (degree
-1445), 1184609.KILIM_016_00290 (degree 1315), 1184609.KILIM_039_00090 (degree 1297)
-and 1184609.KILIM_015_00780 (degree 1243).
+The undirected graph Kineosphaera limosa has 4379 nodes and 448893 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04683 and has 10 connected components, where the component with most
+nodes has 4358 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 205.02, and
+the node degree mode is 4. The top 5 most central nodes are 1184609.KILIM_042_00100
+(degree 1539), 1184609.KILIM_005_00200 (degree 1445), 1184609.KILIM_016_00290
+(degree 1315), 1184609.KILIM_039_00090 (degree 1297) and 1184609.KILIM_015_00780
+(degree 1243).
 
 
 References
@@ -107,14 +108,15 @@ def KineosphaeraLimosa(
 	
 	Datetime: 2021-02-02 23:10:31.514590
 	
-	The undirected graph Kineosphaera limosa has 4379 nodes and 448893 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04683 and
-	has 10 connected components, where the component with most nodes has 4358 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 205.02, and the node degree mode is 4. The top 5 most central
-	nodes are 1184609.KILIM_042_00100 (degree 1539), 1184609.KILIM_005_00200 (degree
-	1445), 1184609.KILIM_016_00290 (degree 1315), 1184609.KILIM_039_00090 (degree 1297)
-	and 1184609.KILIM_015_00780 (degree 1243).
+	The undirected graph Kineosphaera limosa has 4379 nodes and 448893 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04683 and has 10 connected components, where the component with most
+	nodes has 4358 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 205.02, and
+	the node degree mode is 4. The top 5 most central nodes are 1184609.KILIM_042_00100
+	(degree 1539), 1184609.KILIM_005_00200 (degree 1445), 1184609.KILIM_016_00290
+	(degree 1315), 1184609.KILIM_039_00090 (degree 1297) and 1184609.KILIM_015_00780
+	(degree 1243).
 	
 
 

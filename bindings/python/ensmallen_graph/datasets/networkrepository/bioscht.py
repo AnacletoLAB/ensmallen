@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:19.783952
 
-The undirected graph bio-SC-HT has 2084 nodes and 63027 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02904 and has 4
-connected components, where the component with most nodes has 2077 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 26, the
-mean node degree is 60.49 and the node degree mode is 1. The top 5 most central nodes
-are 288 (degree 472), 148 (degree 472), 233 (degree 419), 231 (degree 419) and 230
-(degree 419).
+The undirected graph bio-SC-HT has 2084 nodes and 63027 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02904 and has 4 connected components, where the component with most nodes
+has 2077 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 26, the mean node degree is 60.49 and the node
+degree mode is 1. The top 5 most central nodes are 288 (degree 472), 148
+(degree 472), 233 (degree 419), 231 (degree 419) and 230 (degree 419).
 
 
 References
@@ -114,13 +114,13 @@ def BioScHt(
 	
 	Datetime: 2021-02-03 22:30:19.783952
 	
-	The undirected graph bio-SC-HT has 2084 nodes and 63027 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02904 and has 4
-	connected components, where the component with most nodes has 2077 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 26, the
-	mean node degree is 60.49 and the node degree mode is 1. The top 5 most central nodes
-	are 288 (degree 472), 148 (degree 472), 233 (degree 419), 231 (degree 419) and 230
-	(degree 419).
+	The undirected graph bio-SC-HT has 2084 nodes and 63027 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02904 and has 4 connected components, where the component with most nodes
+	has 2077 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 26, the mean node degree is 60.49 and the node
+	degree mode is 1. The top 5 most central nodes are 288 (degree 472), 148
+	(degree 472), 233 (degree 419), 231 (degree 419) and 230 (degree 419).
 	
 
 

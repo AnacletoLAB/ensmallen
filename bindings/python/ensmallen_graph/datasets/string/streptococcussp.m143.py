@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:22.646104
 
-The undirected graph Streptococcus sp. M143 has 1793 nodes and 122948 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07653 and
-has 5 connected components, where the component with most nodes has 1778 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 137.14, and the node degree mode is 12. The top 5 most central
-nodes are 563037.HMPREF0850_01031 (degree 816), 563037.HMPREF0850_01005 (degree 704),
-563037.HMPREF0850_00544 (degree 686), 563037.HMPREF0850_00969 (degree 638) and 563037.HMPREF0850_01345
+The undirected graph Streptococcus sp. M143 has 1793 nodes and 122948 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07653 and has 5 connected components, where the component with most
+nodes has 1778 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 137.14, and
+the node degree mode is 12. The top 5 most central nodes are 563037.HMPREF0850_01031
+(degree 816), 563037.HMPREF0850_01005 (degree 704), 563037.HMPREF0850_00544
+(degree 686), 563037.HMPREF0850_00969 (degree 638) and 563037.HMPREF0850_01345
 (degree 617).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.M143(
 	
 	Datetime: 2021-02-02 21:12:22.646104
 	
-	The undirected graph Streptococcus sp. M143 has 1793 nodes and 122948 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07653 and
-	has 5 connected components, where the component with most nodes has 1778 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 137.14, and the node degree mode is 12. The top 5 most central
-	nodes are 563037.HMPREF0850_01031 (degree 816), 563037.HMPREF0850_01005 (degree 704),
-	563037.HMPREF0850_00544 (degree 686), 563037.HMPREF0850_00969 (degree 638) and 563037.HMPREF0850_01345
+	The undirected graph Streptococcus sp. M143 has 1793 nodes and 122948 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07653 and has 5 connected components, where the component with most
+	nodes has 1778 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 137.14, and
+	the node degree mode is 12. The top 5 most central nodes are 563037.HMPREF0850_01031
+	(degree 816), 563037.HMPREF0850_01005 (degree 704), 563037.HMPREF0850_00544
+	(degree 686), 563037.HMPREF0850_00969 (degree 638) and 563037.HMPREF0850_01345
 	(degree 617).
 	
 

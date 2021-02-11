@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:50.358036
 
-The undirected graph Cryptobacterium curtum has 1351 nodes and 75929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08326 and
-is connected, as it has a single component. The graph median node degree is 88, the
-mean node degree is 112.40, and the node degree mode is 3. The top 5 most central
-nodes are 469378.Ccur_11790 (degree 797), 469378.Ccur_04460 (degree 769), 469378.Ccur_08230
-(degree 648), 469378.Ccur_10270 (degree 525) and 469378.Ccur_01810 (degree 511).
+The undirected graph Cryptobacterium curtum has 1351 nodes and 75929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08326 and is connected, as it has a single component. The graph median
+node degree is 88, the mean node degree is 112.40, and the node degree
+mode is 3. The top 5 most central nodes are 469378.Ccur_11790 (degree 797),
+469378.Ccur_04460 (degree 769), 469378.Ccur_08230 (degree 648), 469378.Ccur_10270
+(degree 525) and 469378.Ccur_01810 (degree 511).
 
 
 References
@@ -105,12 +106,13 @@ def CryptobacteriumCurtum(
 	
 	Datetime: 2021-02-02 20:54:50.358036
 	
-	The undirected graph Cryptobacterium curtum has 1351 nodes and 75929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08326 and
-	is connected, as it has a single component. The graph median node degree is 88, the
-	mean node degree is 112.40, and the node degree mode is 3. The top 5 most central
-	nodes are 469378.Ccur_11790 (degree 797), 469378.Ccur_04460 (degree 769), 469378.Ccur_08230
-	(degree 648), 469378.Ccur_10270 (degree 525) and 469378.Ccur_01810 (degree 511).
+	The undirected graph Cryptobacterium curtum has 1351 nodes and 75929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08326 and is connected, as it has a single component. The graph median
+	node degree is 88, the mean node degree is 112.40, and the node degree
+	mode is 3. The top 5 most central nodes are 469378.Ccur_11790 (degree 797),
+	469378.Ccur_04460 (degree 769), 469378.Ccur_08230 (degree 648), 469378.Ccur_10270
+	(degree 525) and 469378.Ccur_01810 (degree 511).
 	
 
 

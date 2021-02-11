@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:25.867006
 
-The undirected graph Rhodothermus marinus has 2852 nodes and 258495 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06358 and
-has 8 connected components, where the component with most nodes has 2835 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 181.27, and the node degree mode is 2. The top 5 most central
-nodes are 518766.Rmar_1349 (degree 1145), 518766.Rmar_0835 (degree 1046), 518766.Rmar_2247
-(degree 1010), 518766.Rmar_1568 (degree 880) and 518766.Rmar_2230 (degree 877).
+The undirected graph Rhodothermus marinus has 2852 nodes and 258495 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06358 and has 8 connected components, where the component with most
+nodes has 2835 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 181.27, and
+the node degree mode is 2. The top 5 most central nodes are 518766.Rmar_1349
+(degree 1145), 518766.Rmar_0835 (degree 1046), 518766.Rmar_2247 (degree
+1010), 518766.Rmar_1568 (degree 880) and 518766.Rmar_2230 (degree 877).
 
 
 References
@@ -106,13 +107,14 @@ def RhodothermusMarinus(
 	
 	Datetime: 2021-02-02 21:03:25.867006
 	
-	The undirected graph Rhodothermus marinus has 2852 nodes and 258495 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06358 and
-	has 8 connected components, where the component with most nodes has 2835 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 181.27, and the node degree mode is 2. The top 5 most central
-	nodes are 518766.Rmar_1349 (degree 1145), 518766.Rmar_0835 (degree 1046), 518766.Rmar_2247
-	(degree 1010), 518766.Rmar_1568 (degree 880) and 518766.Rmar_2230 (degree 877).
+	The undirected graph Rhodothermus marinus has 2852 nodes and 258495 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06358 and has 8 connected components, where the component with most
+	nodes has 2835 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 181.27, and
+	the node degree mode is 2. The top 5 most central nodes are 518766.Rmar_1349
+	(degree 1145), 518766.Rmar_0835 (degree 1046), 518766.Rmar_2247 (degree
+	1010), 518766.Rmar_1568 (degree 880) and 518766.Rmar_2230 (degree 877).
 	
 
 

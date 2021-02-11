@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:58.772063
 
-The undirected graph Desulfobacter curvatus has 4405 nodes and 625990 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06454 and
-has 22 connected components, where the component with most nodes has 4352 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 248,
-the mean node degree is 284.22, and the node degree mode is 1. The top 5 most central
-nodes are 1121396.KB892913_gene170 (degree 1968), 1121396.KB892903_gene4242 (degree
-1852), 1121396.KB893131_gene3665 (degree 1694), 1121396.KB892900_gene2129 (degree
-1692) and 1121396.KB893107_gene1849 (degree 1674).
+The undirected graph Desulfobacter curvatus has 4405 nodes and 625990 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06454 and has 22 connected components, where the component with most
+nodes has 4352 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 248, the mean node degree is 284.22, and
+the node degree mode is 1. The top 5 most central nodes are 1121396.KB892913_gene170
+(degree 1968), 1121396.KB892903_gene4242 (degree 1852), 1121396.KB893131_gene3665
+(degree 1694), 1121396.KB892900_gene2129 (degree 1692) and 1121396.KB893107_gene1849
+(degree 1674).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfobacterCurvatus(
 	
 	Datetime: 2021-02-02 22:35:58.772063
 	
-	The undirected graph Desulfobacter curvatus has 4405 nodes and 625990 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06454 and
-	has 22 connected components, where the component with most nodes has 4352 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 248,
-	the mean node degree is 284.22, and the node degree mode is 1. The top 5 most central
-	nodes are 1121396.KB892913_gene170 (degree 1968), 1121396.KB892903_gene4242 (degree
-	1852), 1121396.KB893131_gene3665 (degree 1694), 1121396.KB892900_gene2129 (degree
-	1692) and 1121396.KB893107_gene1849 (degree 1674).
+	The undirected graph Desulfobacter curvatus has 4405 nodes and 625990 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06454 and has 22 connected components, where the component with most
+	nodes has 4352 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 248, the mean node degree is 284.22, and
+	the node degree mode is 1. The top 5 most central nodes are 1121396.KB892913_gene170
+	(degree 1968), 1121396.KB892903_gene4242 (degree 1852), 1121396.KB893131_gene3665
+	(degree 1694), 1121396.KB892900_gene2129 (degree 1692) and 1121396.KB893107_gene1849
+	(degree 1674).
 	
 
 

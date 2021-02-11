@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:25.350394
 
-The undirected graph Halomonas sp. PBN3 has 3389 nodes and 315186 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05490 and
-has 8 connected components, where the component with most nodes has 3373 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 186.01, and the node degree mode is 1. The top 5 most central
-nodes are 1397528.Q671_03820 (degree 1443), 1397528.Q671_14645 (degree 1383), 1397528.Q671_16175
-(degree 1075), 1397528.Q671_14535 (degree 1046) and 1397528.Q671_11940 (degree 1043).
+The undirected graph Halomonas sp. PBN3 has 3389 nodes and 315186 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05490 and has 8 connected components, where the component with most
+nodes has 3373 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 186.01, and
+the node degree mode is 1. The top 5 most central nodes are 1397528.Q671_03820
+(degree 1443), 1397528.Q671_14645 (degree 1383), 1397528.Q671_16175 (degree
+1075), 1397528.Q671_14535 (degree 1046) and 1397528.Q671_11940 (degree
+1043).
 
 
 References
@@ -106,13 +108,15 @@ def HalomonasSp.Pbn3(
 	
 	Datetime: 2021-02-03 22:30:25.350394
 	
-	The undirected graph Halomonas sp. PBN3 has 3389 nodes and 315186 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05490 and
-	has 8 connected components, where the component with most nodes has 3373 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 186.01, and the node degree mode is 1. The top 5 most central
-	nodes are 1397528.Q671_03820 (degree 1443), 1397528.Q671_14645 (degree 1383), 1397528.Q671_16175
-	(degree 1075), 1397528.Q671_14535 (degree 1046) and 1397528.Q671_11940 (degree 1043).
+	The undirected graph Halomonas sp. PBN3 has 3389 nodes and 315186 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05490 and has 8 connected components, where the component with most
+	nodes has 3373 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 186.01, and
+	the node degree mode is 1. The top 5 most central nodes are 1397528.Q671_03820
+	(degree 1443), 1397528.Q671_14645 (degree 1383), 1397528.Q671_16175 (degree
+	1075), 1397528.Q671_14535 (degree 1046) and 1397528.Q671_11940 (degree
+	1043).
 	
 
 

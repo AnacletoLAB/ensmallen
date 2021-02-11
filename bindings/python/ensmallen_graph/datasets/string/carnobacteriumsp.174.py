@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:01.648052
 
-The undirected graph Carnobacterium sp. 174 has 2456 nodes and 249334 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08270 and
-has 16 connected components, where the component with most nodes has 2418 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 203.04, and the node degree mode is 1. The top 5 most central
-nodes are 208596.CAR_c07290 (degree 1203), 208596.CAR_c06980 (degree 935), 208596.CAR_c10980
-(degree 931), 208596.CAR_c01730 (degree 893) and 208596.CAR_c24930 (degree 889).
+The undirected graph Carnobacterium sp. 174 has 2456 nodes and 249334 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08270 and has 16 connected components, where the component with most
+nodes has 2418 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 203.04, and
+the node degree mode is 1. The top 5 most central nodes are 208596.CAR_c07290
+(degree 1203), 208596.CAR_c06980 (degree 935), 208596.CAR_c10980 (degree
+931), 208596.CAR_c01730 (degree 893) and 208596.CAR_c24930 (degree 889).
 
 
 References
@@ -106,13 +107,14 @@ def CarnobacteriumSp.174(
 	
 	Datetime: 2021-02-02 20:01:01.648052
 	
-	The undirected graph Carnobacterium sp. 174 has 2456 nodes and 249334 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08270 and
-	has 16 connected components, where the component with most nodes has 2418 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 203.04, and the node degree mode is 1. The top 5 most central
-	nodes are 208596.CAR_c07290 (degree 1203), 208596.CAR_c06980 (degree 935), 208596.CAR_c10980
-	(degree 931), 208596.CAR_c01730 (degree 893) and 208596.CAR_c24930 (degree 889).
+	The undirected graph Carnobacterium sp. 174 has 2456 nodes and 249334 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08270 and has 16 connected components, where the component with most
+	nodes has 2418 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 203.04, and
+	the node degree mode is 1. The top 5 most central nodes are 208596.CAR_c07290
+	(degree 1203), 208596.CAR_c06980 (degree 935), 208596.CAR_c10980 (degree
+	931), 208596.CAR_c01730 (degree 893) and 208596.CAR_c24930 (degree 889).
 	
 
 

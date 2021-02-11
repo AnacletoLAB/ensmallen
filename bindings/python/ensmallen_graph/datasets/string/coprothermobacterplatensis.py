@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:19.719862
 
-The undirected graph Coprothermobacter platensis has 1411 nodes and 97276 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09779
-and has 3 connected components, where the component with most nodes has 1407 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 137.88, and the node degree mode is 49. The top 5
-most central nodes are 1259795.ARJK01000005_gene1310 (degree 652), 1259795.ARJK01000005_gene1311
-(degree 626), 1259795.ARJK01000002_gene220 (degree 580), 1259795.ARJK01000003_gene877
-(degree 573) and 1259795.ARJK01000002_gene358 (degree 553).
+The undirected graph Coprothermobacter platensis has 1411 nodes and 97276
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09779 and has 3 connected components, where the component
+with most nodes has 1407 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 137.88,
+and the node degree mode is 49. The top 5 most central nodes are 1259795.ARJK01000005_gene1310
+(degree 652), 1259795.ARJK01000005_gene1311 (degree 626), 1259795.ARJK01000002_gene220
+(degree 580), 1259795.ARJK01000003_gene877 (degree 573) and 1259795.ARJK01000002_gene358
+(degree 553).
 
 
 References
@@ -107,14 +108,15 @@ def CoprothermobacterPlatensis(
 	
 	Datetime: 2021-02-02 23:35:19.719862
 	
-	The undirected graph Coprothermobacter platensis has 1411 nodes and 97276 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09779
-	and has 3 connected components, where the component with most nodes has 1407 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 137.88, and the node degree mode is 49. The top 5
-	most central nodes are 1259795.ARJK01000005_gene1310 (degree 652), 1259795.ARJK01000005_gene1311
-	(degree 626), 1259795.ARJK01000002_gene220 (degree 580), 1259795.ARJK01000003_gene877
-	(degree 573) and 1259795.ARJK01000002_gene358 (degree 553).
+	The undirected graph Coprothermobacter platensis has 1411 nodes and 97276
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09779 and has 3 connected components, where the component
+	with most nodes has 1407 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 137.88,
+	and the node degree mode is 49. The top 5 most central nodes are 1259795.ARJK01000005_gene1310
+	(degree 652), 1259795.ARJK01000005_gene1311 (degree 626), 1259795.ARJK01000002_gene220
+	(degree 580), 1259795.ARJK01000003_gene877 (degree 573) and 1259795.ARJK01000002_gene358
+	(degree 553).
 	
 
 

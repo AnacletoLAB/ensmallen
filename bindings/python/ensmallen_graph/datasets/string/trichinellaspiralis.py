@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:19:06.812384
 
-The undirected graph Trichinella spiralis has 6719 nodes and 777483 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03445 and
-has 4 connected components, where the component with most nodes has 6712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 231.43, and the node degree mode is 21. The top 5 most central
-nodes are 6334.EFV54288 (degree 2909), 6334.EFV56367 (degree 2655), 6334.EFV59029
-(degree 1869), 6334.EFV50344 (degree 1846) and 6334.EFV55828 (degree 1746).
+The undirected graph Trichinella spiralis has 6719 nodes and 777483 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03445 and has 4 connected components, where the component with most
+nodes has 6712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 231.43, and
+the node degree mode is 21. The top 5 most central nodes are 6334.EFV54288
+(degree 2909), 6334.EFV56367 (degree 2655), 6334.EFV59029 (degree 1869),
+6334.EFV50344 (degree 1846) and 6334.EFV55828 (degree 1746).
 
 
 References
@@ -106,13 +107,14 @@ def TrichinellaSpiralis(
 	
 	Datetime: 2021-02-02 17:19:06.812384
 	
-	The undirected graph Trichinella spiralis has 6719 nodes and 777483 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03445 and
-	has 4 connected components, where the component with most nodes has 6712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 231.43, and the node degree mode is 21. The top 5 most central
-	nodes are 6334.EFV54288 (degree 2909), 6334.EFV56367 (degree 2655), 6334.EFV59029
-	(degree 1869), 6334.EFV50344 (degree 1846) and 6334.EFV55828 (degree 1746).
+	The undirected graph Trichinella spiralis has 6719 nodes and 777483 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03445 and has 4 connected components, where the component with most
+	nodes has 6712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 231.43, and
+	the node degree mode is 21. The top 5 most central nodes are 6334.EFV54288
+	(degree 2909), 6334.EFV56367 (degree 2655), 6334.EFV59029 (degree 1869),
+	6334.EFV50344 (degree 1846) and 6334.EFV55828 (degree 1746).
 	
 
 

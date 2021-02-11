@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:50:55.081851
 
-The undirected graph Lactobacillus fuchuensis has 2157 nodes and 200963 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08643
-and has 5 connected components, where the component with most nodes has 2145 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 186.34, and the node degree mode is 5. The top 5
-most central nodes are 1423747.BAMJ01000013_gene1062 (degree 1004), 1423747.BAMJ01000004_gene388
-(degree 940), 1423747.BAMJ01000007_gene616 (degree 849), 1423747.BAMJ01000008_gene702
-(degree 807) and 1423747.BAMJ01000014_gene1098 (degree 803).
+The undirected graph Lactobacillus fuchuensis has 2157 nodes and 200963
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08643 and has 5 connected components, where the component
+with most nodes has 2145 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 186.34,
+and the node degree mode is 5. The top 5 most central nodes are 1423747.BAMJ01000013_gene1062
+(degree 1004), 1423747.BAMJ01000004_gene388 (degree 940), 1423747.BAMJ01000007_gene616
+(degree 849), 1423747.BAMJ01000008_gene702 (degree 807) and 1423747.BAMJ01000014_gene1098
+(degree 803).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusFuchuensis(
 	
 	Datetime: 2021-02-03 22:50:55.081851
 	
-	The undirected graph Lactobacillus fuchuensis has 2157 nodes and 200963 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08643
-	and has 5 connected components, where the component with most nodes has 2145 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 186.34, and the node degree mode is 5. The top 5
-	most central nodes are 1423747.BAMJ01000013_gene1062 (degree 1004), 1423747.BAMJ01000004_gene388
-	(degree 940), 1423747.BAMJ01000007_gene616 (degree 849), 1423747.BAMJ01000008_gene702
-	(degree 807) and 1423747.BAMJ01000014_gene1098 (degree 803).
+	The undirected graph Lactobacillus fuchuensis has 2157 nodes and 200963
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08643 and has 5 connected components, where the component
+	with most nodes has 2145 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 186.34,
+	and the node degree mode is 5. The top 5 most central nodes are 1423747.BAMJ01000013_gene1062
+	(degree 1004), 1423747.BAMJ01000004_gene388 (degree 940), 1423747.BAMJ01000007_gene616
+	(degree 849), 1423747.BAMJ01000008_gene702 (degree 807) and 1423747.BAMJ01000014_gene1098
+	(degree 803).
 	
 
 

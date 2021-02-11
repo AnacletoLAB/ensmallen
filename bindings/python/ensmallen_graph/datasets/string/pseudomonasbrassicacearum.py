@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:51.284840
 
-The undirected graph Pseudomonas brassicacearum has 5511 nodes and 526304 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03466
-and has 21 connected components, where the component with most nodes has 5461 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 191.00, and the node degree mode is 1. The top 5
-most central nodes are 930166.CD58_00190 (degree 2049), 930166.CD58_02135 (degree
-1625), 930166.CD58_04065 (degree 1526), 930166.CD58_05545 (degree 1471) and 930166.CD58_23160
-(degree 1412).
+The undirected graph Pseudomonas brassicacearum has 5511 nodes and 526304
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03466 and has 21 connected components, where the component
+with most nodes has 5461 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 191.00,
+and the node degree mode is 1. The top 5 most central nodes are 930166.CD58_00190
+(degree 2049), 930166.CD58_02135 (degree 1625), 930166.CD58_04065 (degree
+1526), 930166.CD58_05545 (degree 1471) and 930166.CD58_23160 (degree 1412).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasBrassicacearum(
 	
 	Datetime: 2021-02-02 21:57:51.284840
 	
-	The undirected graph Pseudomonas brassicacearum has 5511 nodes and 526304 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03466
-	and has 21 connected components, where the component with most nodes has 5461 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 191.00, and the node degree mode is 1. The top 5
-	most central nodes are 930166.CD58_00190 (degree 2049), 930166.CD58_02135 (degree
-	1625), 930166.CD58_04065 (degree 1526), 930166.CD58_05545 (degree 1471) and 930166.CD58_23160
-	(degree 1412).
+	The undirected graph Pseudomonas brassicacearum has 5511 nodes and 526304
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03466 and has 21 connected components, where the component
+	with most nodes has 5461 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 191.00,
+	and the node degree mode is 1. The top 5 most central nodes are 930166.CD58_00190
+	(degree 2049), 930166.CD58_02135 (degree 1625), 930166.CD58_04065 (degree
+	1526), 930166.CD58_05545 (degree 1471) and 930166.CD58_23160 (degree 1412).
 	
 
 

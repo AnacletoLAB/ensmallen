@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:06.711374
 
-The undirected graph Sphingomonas sp. PR090111T3T6A has 3569 nodes and 379881 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05966
-and has 9 connected components, where the component with most nodes has 3552 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 212.88, and the node degree mode is 2. The top 5
-most central nodes are 685778.AORL01000022_gene1655 (degree 1642), 685778.AORL01000010_gene2673
+The undirected graph Sphingomonas sp. PR090111T3T6A has 3569 nodes and
+379881 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05966 and has 9 connected components, where the
+component with most nodes has 3552 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+is 212.88, and the node degree mode is 2. The top 5 most central nodes
+are 685778.AORL01000022_gene1655 (degree 1642), 685778.AORL01000010_gene2673
 (degree 1467), 685778.AORL01000021_gene1283 (degree 1344), 685778.AORL01000021_gene764
 (degree 1229) and 685778.AORL01000004_gene3557 (degree 1209).
 
@@ -107,12 +108,13 @@ def SphingomonasSp.Pr090111t3t6a(
 	
 	Datetime: 2021-02-02 21:31:06.711374
 	
-	The undirected graph Sphingomonas sp. PR090111T3T6A has 3569 nodes and 379881 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05966
-	and has 9 connected components, where the component with most nodes has 3552 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 212.88, and the node degree mode is 2. The top 5
-	most central nodes are 685778.AORL01000022_gene1655 (degree 1642), 685778.AORL01000010_gene2673
+	The undirected graph Sphingomonas sp. PR090111T3T6A has 3569 nodes and
+	379881 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05966 and has 9 connected components, where the
+	component with most nodes has 3552 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+	is 212.88, and the node degree mode is 2. The top 5 most central nodes
+	are 685778.AORL01000022_gene1655 (degree 1642), 685778.AORL01000010_gene2673
 	(degree 1467), 685778.AORL01000021_gene1283 (degree 1344), 685778.AORL01000021_gene764
 	(degree 1229) and 685778.AORL01000004_gene3557 (degree 1209).
 	

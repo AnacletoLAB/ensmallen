@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:40.080307
 
-The undirected graph Roseobacter sp. SK20926 has 4479 nodes and 566095 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05645 and
-has 17 connected components, where the component with most nodes has 4436 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 252.78, and the node degree mode is 2. The top 5 most central
-nodes are 388739.RSK20926_07477 (degree 1799), 388739.RSK20926_01402 (degree 1768),
-388739.RSK20926_05127 (degree 1700), 388739.RSK20926_10834 (degree 1667) and 388739.RSK20926_19247
+The undirected graph Roseobacter sp. SK20926 has 4479 nodes and 566095
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05645 and has 17 connected components, where the component
+with most nodes has 4436 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 200, the mean node degree is 252.78,
+and the node degree mode is 2. The top 5 most central nodes are 388739.RSK20926_07477
+(degree 1799), 388739.RSK20926_01402 (degree 1768), 388739.RSK20926_05127
+(degree 1700), 388739.RSK20926_10834 (degree 1667) and 388739.RSK20926_19247
 (degree 1569).
 
 
@@ -107,13 +108,14 @@ def RoseobacterSp.Sk20926(
 	
 	Datetime: 2021-02-02 20:38:40.080307
 	
-	The undirected graph Roseobacter sp. SK20926 has 4479 nodes and 566095 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05645 and
-	has 17 connected components, where the component with most nodes has 4436 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 252.78, and the node degree mode is 2. The top 5 most central
-	nodes are 388739.RSK20926_07477 (degree 1799), 388739.RSK20926_01402 (degree 1768),
-	388739.RSK20926_05127 (degree 1700), 388739.RSK20926_10834 (degree 1667) and 388739.RSK20926_19247
+	The undirected graph Roseobacter sp. SK20926 has 4479 nodes and 566095
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05645 and has 17 connected components, where the component
+	with most nodes has 4436 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 200, the mean node degree is 252.78,
+	and the node degree mode is 2. The top 5 most central nodes are 388739.RSK20926_07477
+	(degree 1799), 388739.RSK20926_01402 (degree 1768), 388739.RSK20926_05127
+	(degree 1700), 388739.RSK20926_10834 (degree 1667) and 388739.RSK20926_19247
 	(degree 1569).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:58.067633
 
-The undirected graph Methanobrevibacter sp. AbM4 has 1639 nodes and 117985 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08789
-and has 14 connected components, where the component with most nodes has 1599 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 143.97, and the node degree mode is 1. The top 5
-most central nodes are 224719.Abm4_1617 (degree 647), 224719.Abm4_1478 (degree 584),
-224719.Abm4_0805 (degree 575), 224719.Abm4_0334 (degree 575) and 224719.Abm4_0461
-(degree 573).
+The undirected graph Methanobrevibacter sp. AbM4 has 1639 nodes and 117985
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08789 and has 14 connected components, where the component
+with most nodes has 1599 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 143.97,
+and the node degree mode is 1. The top 5 most central nodes are 224719.Abm4_1617
+(degree 647), 224719.Abm4_1478 (degree 584), 224719.Abm4_0805 (degree 575),
+224719.Abm4_0334 (degree 575) and 224719.Abm4_0461 (degree 573).
 
 
 References
@@ -107,14 +107,14 @@ def MethanobrevibacterSp.Abm4(
 	
 	Datetime: 2021-02-02 20:04:58.067633
 	
-	The undirected graph Methanobrevibacter sp. AbM4 has 1639 nodes and 117985 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08789
-	and has 14 connected components, where the component with most nodes has 1599 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 143.97, and the node degree mode is 1. The top 5
-	most central nodes are 224719.Abm4_1617 (degree 647), 224719.Abm4_1478 (degree 584),
-	224719.Abm4_0805 (degree 575), 224719.Abm4_0334 (degree 575) and 224719.Abm4_0461
-	(degree 573).
+	The undirected graph Methanobrevibacter sp. AbM4 has 1639 nodes and 117985
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08789 and has 14 connected components, where the component
+	with most nodes has 1599 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 143.97,
+	and the node degree mode is 1. The top 5 most central nodes are 224719.Abm4_1617
+	(degree 647), 224719.Abm4_1478 (degree 584), 224719.Abm4_0805 (degree 575),
+	224719.Abm4_0334 (degree 575) and 224719.Abm4_0461 (degree 573).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:08.811834
 
-The undirected graph Pectobacterium betavasculorum has 3985 nodes and 507661 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06395
-and has 9 connected components, where the component with most nodes has 3964 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 254.79, and the node degree mode is 1. The top 5
-most central nodes are 55207.KP22_09090 (degree 1404), 55207.KP22_14770 (degree 1358),
-55207.KP22_17975 (degree 1199), 55207.KP22_17970 (degree 1193) and 55207.KP22_15510
-(degree 1181).
+The undirected graph Pectobacterium betavasculorum has 3985 nodes and 507661
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06395 and has 9 connected components, where the component
+with most nodes has 3964 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 254.79,
+and the node degree mode is 1. The top 5 most central nodes are 55207.KP22_09090
+(degree 1404), 55207.KP22_14770 (degree 1358), 55207.KP22_17975 (degree
+1199), 55207.KP22_17970 (degree 1193) and 55207.KP22_15510 (degree 1181).
 
 
 References
@@ -107,14 +107,14 @@ def PectobacteriumBetavasculorum(
 	
 	Datetime: 2021-02-02 18:18:08.811834
 	
-	The undirected graph Pectobacterium betavasculorum has 3985 nodes and 507661 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06395
-	and has 9 connected components, where the component with most nodes has 3964 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 254.79, and the node degree mode is 1. The top 5
-	most central nodes are 55207.KP22_09090 (degree 1404), 55207.KP22_14770 (degree 1358),
-	55207.KP22_17975 (degree 1199), 55207.KP22_17970 (degree 1193) and 55207.KP22_15510
-	(degree 1181).
+	The undirected graph Pectobacterium betavasculorum has 3985 nodes and 507661
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06395 and has 9 connected components, where the component
+	with most nodes has 3964 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 254.79,
+	and the node degree mode is 1. The top 5 most central nodes are 55207.KP22_09090
+	(degree 1404), 55207.KP22_14770 (degree 1358), 55207.KP22_17975 (degree
+	1199), 55207.KP22_17970 (degree 1193) and 55207.KP22_15510 (degree 1181).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:05.091786
 
-The undirected graph Mycobacterium hassiacum has 4913 nodes and 673760 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05584 and
-has 19 connected components, where the component with most nodes has 4873 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 274.28, and the node degree mode is 1. The top 5 most central
-nodes are 1122247.C731_3072 (degree 2074), 1122247.C731_1123 (degree 2038), 1122247.C731_2910
-(degree 1906), 1122247.C731_2906 (degree 1665) and 1122247.C731_3610 (degree 1605).
+The undirected graph Mycobacterium hassiacum has 4913 nodes and 673760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05584 and has 19 connected components, where the component
+with most nodes has 4873 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 274.28,
+and the node degree mode is 1. The top 5 most central nodes are 1122247.C731_3072
+(degree 2074), 1122247.C731_1123 (degree 2038), 1122247.C731_2910 (degree
+1906), 1122247.C731_2906 (degree 1665) and 1122247.C731_3610 (degree 1605).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumHassiacum(
 	
 	Datetime: 2021-02-02 22:43:05.091786
 	
-	The undirected graph Mycobacterium hassiacum has 4913 nodes and 673760 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05584 and
-	has 19 connected components, where the component with most nodes has 4873 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 274.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1122247.C731_3072 (degree 2074), 1122247.C731_1123 (degree 2038), 1122247.C731_2910
-	(degree 1906), 1122247.C731_2906 (degree 1665) and 1122247.C731_3610 (degree 1605).
+	The undirected graph Mycobacterium hassiacum has 4913 nodes and 673760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05584 and has 19 connected components, where the component
+	with most nodes has 4873 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 274.28,
+	and the node degree mode is 1. The top 5 most central nodes are 1122247.C731_3072
+	(degree 2074), 1122247.C731_1123 (degree 2038), 1122247.C731_2910 (degree
+	1906), 1122247.C731_2906 (degree 1665) and 1122247.C731_3610 (degree 1605).
 	
 
 

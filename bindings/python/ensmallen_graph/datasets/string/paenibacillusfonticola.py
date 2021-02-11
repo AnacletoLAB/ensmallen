@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:28.085550
 
-The undirected graph Paenibacillus fonticola has 5207 nodes and 567292 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04185 and
-has 25 connected components, where the component with most nodes has 5149 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 217.90, and the node degree mode is 2. The top 5 most central
-nodes are 1122918.KB907276_gene4159 (degree 1612), 1122918.KB907266_gene2108 (degree
-1609), 1122918.KB907251_gene1716 (degree 1403), 1122918.KB907283_gene1164 (degree
-1370) and 1122918.KB907259_gene791 (degree 1317).
+The undirected graph Paenibacillus fonticola has 5207 nodes and 567292
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04185 and has 25 connected components, where the component
+with most nodes has 5149 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 217.90,
+and the node degree mode is 2. The top 5 most central nodes are 1122918.KB907276_gene4159
+(degree 1612), 1122918.KB907266_gene2108 (degree 1609), 1122918.KB907251_gene1716
+(degree 1403), 1122918.KB907283_gene1164 (degree 1370) and 1122918.KB907259_gene791
+(degree 1317).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusFonticola(
 	
 	Datetime: 2021-02-02 22:44:28.085550
 	
-	The undirected graph Paenibacillus fonticola has 5207 nodes and 567292 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04185 and
-	has 25 connected components, where the component with most nodes has 5149 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 217.90, and the node degree mode is 2. The top 5 most central
-	nodes are 1122918.KB907276_gene4159 (degree 1612), 1122918.KB907266_gene2108 (degree
-	1609), 1122918.KB907251_gene1716 (degree 1403), 1122918.KB907283_gene1164 (degree
-	1370) and 1122918.KB907259_gene791 (degree 1317).
+	The undirected graph Paenibacillus fonticola has 5207 nodes and 567292
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04185 and has 25 connected components, where the component
+	with most nodes has 5149 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 217.90,
+	and the node degree mode is 2. The top 5 most central nodes are 1122918.KB907276_gene4159
+	(degree 1612), 1122918.KB907266_gene2108 (degree 1609), 1122918.KB907251_gene1716
+	(degree 1403), 1122918.KB907283_gene1164 (degree 1370) and 1122918.KB907259_gene791
+	(degree 1317).
 	
 
 

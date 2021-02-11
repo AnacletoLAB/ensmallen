@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:59.246849
 
-The undirected graph Arenimonas oryziterrae has 2878 nodes and 262644 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06344 and
-has 10 connected components, where the component with most nodes has 2854 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 182.52, and the node degree mode is 3. The top 5 most central
-nodes are 1121015.N789_07090 (degree 996), 1121015.N789_06840 (degree 961), 1121015.N789_12410
-(degree 938), 1121015.N789_04525 (degree 884) and 1121015.N789_11455 (degree 837).
+The undirected graph Arenimonas oryziterrae has 2878 nodes and 262644 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06344 and has 10 connected components, where the component with most
+nodes has 2854 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 182.52, and
+the node degree mode is 3. The top 5 most central nodes are 1121015.N789_07090
+(degree 996), 1121015.N789_06840 (degree 961), 1121015.N789_12410 (degree
+938), 1121015.N789_04525 (degree 884) and 1121015.N789_11455 (degree 837).
 
 
 References
@@ -106,13 +107,14 @@ def ArenimonasOryziterrae(
 	
 	Datetime: 2021-02-02 22:31:59.246849
 	
-	The undirected graph Arenimonas oryziterrae has 2878 nodes and 262644 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06344 and
-	has 10 connected components, where the component with most nodes has 2854 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 182.52, and the node degree mode is 3. The top 5 most central
-	nodes are 1121015.N789_07090 (degree 996), 1121015.N789_06840 (degree 961), 1121015.N789_12410
-	(degree 938), 1121015.N789_04525 (degree 884) and 1121015.N789_11455 (degree 837).
+	The undirected graph Arenimonas oryziterrae has 2878 nodes and 262644 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06344 and has 10 connected components, where the component with most
+	nodes has 2854 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 182.52, and
+	the node degree mode is 3. The top 5 most central nodes are 1121015.N789_07090
+	(degree 996), 1121015.N789_06840 (degree 961), 1121015.N789_12410 (degree
+	938), 1121015.N789_04525 (degree 884) and 1121015.N789_11455 (degree 837).
 	
 
 

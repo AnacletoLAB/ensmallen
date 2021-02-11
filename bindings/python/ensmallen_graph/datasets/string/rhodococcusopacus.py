@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:07:13.558835
 
-The undirected graph Rhodococcus opacus has 7143 nodes and 2456366 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09630 and
-has 11 connected components, where the component with most nodes has 7120 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 599,
-the mean node degree is 687.77, and the node degree mode is 2. The top 5 most central
-nodes are 37919.EP51_35765 (degree 3762), 37919.EP51_27850 (degree 3395), 37919.EP51_01150
-(degree 3302), 37919.EP51_20345 (degree 3201) and 37919.EP51_29615 (degree 3162).
+The undirected graph Rhodococcus opacus has 7143 nodes and 2456366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09630 and has 11 connected components, where the component with most
+nodes has 7120 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 599, the mean node degree is 687.77, and
+the node degree mode is 2. The top 5 most central nodes are 37919.EP51_35765
+(degree 3762), 37919.EP51_27850 (degree 3395), 37919.EP51_01150 (degree
+3302), 37919.EP51_20345 (degree 3201) and 37919.EP51_29615 (degree 3162).
 
 
 References
@@ -106,13 +107,14 @@ def RhodococcusOpacus(
 	
 	Datetime: 2021-02-02 18:07:13.558835
 	
-	The undirected graph Rhodococcus opacus has 7143 nodes and 2456366 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09630 and
-	has 11 connected components, where the component with most nodes has 7120 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 599,
-	the mean node degree is 687.77, and the node degree mode is 2. The top 5 most central
-	nodes are 37919.EP51_35765 (degree 3762), 37919.EP51_27850 (degree 3395), 37919.EP51_01150
-	(degree 3302), 37919.EP51_20345 (degree 3201) and 37919.EP51_29615 (degree 3162).
+	The undirected graph Rhodococcus opacus has 7143 nodes and 2456366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09630 and has 11 connected components, where the component with most
+	nodes has 7120 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 599, the mean node degree is 687.77, and
+	the node degree mode is 2. The top 5 most central nodes are 37919.EP51_35765
+	(degree 3762), 37919.EP51_27850 (degree 3395), 37919.EP51_01150 (degree
+	3302), 37919.EP51_20345 (degree 3201) and 37919.EP51_29615 (degree 3162).
 	
 
 

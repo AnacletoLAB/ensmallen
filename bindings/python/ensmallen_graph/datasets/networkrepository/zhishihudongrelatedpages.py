@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:57:17.708286
 
-The undirected graph zhishi-hudong-relatedpages has 2452715 nodes, of which 42 are
-singletons (all have self-loops), and 18691012 unweighted edges, of which 253 are
-self-loops. The graph is extremely sparse as it has a density of 0.00001 and has
-11973 connected components, where the component with most nodes has 2415542 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 10, the mean node degree is 15.24, and the node degree mode is 10. The top 5 most
-central nodes are 1517 (degree 204277), 214 (degree 21444), 171 (degree 21305), 1050
+The undirected graph zhishi-hudong-relatedpages has 2452715 nodes, of which
+42 are singletons (all have self-loops), and 18691012 unweighted edges,
+of which 253 are self-loops. The graph is extremely sparse as it has a
+density of 0.00001 and has 11973 connected components, where the component
+with most nodes has 2415542 nodes and the component with the least nodes
+has a single node. The graph median node degree is 10, the mean node degree
+is 15.24, and the node degree mode is 10. The top 5 most central nodes
+are 1517 (degree 204277), 214 (degree 21444), 171 (degree 21305), 1050
 (degree 16396) and 2287 (degree 14825).
 
 
@@ -104,13 +105,14 @@ def ZhishiHudongRelatedpages(
 	
 	Datetime: 2021-02-07 15:57:17.708286
 	
-	The undirected graph zhishi-hudong-relatedpages has 2452715 nodes, of which 42 are
-	singletons (all have self-loops), and 18691012 unweighted edges, of which 253 are
-	self-loops. The graph is extremely sparse as it has a density of 0.00001 and has
-	11973 connected components, where the component with most nodes has 2415542 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 10, the mean node degree is 15.24, and the node degree mode is 10. The top 5 most
-	central nodes are 1517 (degree 204277), 214 (degree 21444), 171 (degree 21305), 1050
+	The undirected graph zhishi-hudong-relatedpages has 2452715 nodes, of which
+	42 are singletons (all have self-loops), and 18691012 unweighted edges,
+	of which 253 are self-loops. The graph is extremely sparse as it has a
+	density of 0.00001 and has 11973 connected components, where the component
+	with most nodes has 2415542 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 10, the mean node degree
+	is 15.24, and the node degree mode is 10. The top 5 most central nodes
+	are 1517 (degree 204277), 214 (degree 21444), 171 (degree 21305), 1050
 	(degree 16396) and 2287 (degree 14825).
 	
 

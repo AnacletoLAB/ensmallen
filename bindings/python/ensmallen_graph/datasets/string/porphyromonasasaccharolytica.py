@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:04.082408
 
-The undirected graph Porphyromonas asaccharolytica has 1682 nodes and 106144 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07508
-and has 7 connected components, where the component with most nodes has 1668 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 126.21, and the node degree mode is 2. The top 5
-most central nodes are 879243.Poras_1046 (degree 686), 879243.Poras_0851 (degree
-607), 879243.Poras_1322 (degree 600), 879243.Poras_1679 (degree 533) and 879243.Poras_0104
-(degree 510).
+The undirected graph Porphyromonas asaccharolytica has 1682 nodes and 106144
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07508 and has 7 connected components, where the component
+with most nodes has 1668 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 126.21,
+and the node degree mode is 2. The top 5 most central nodes are 879243.Poras_1046
+(degree 686), 879243.Poras_0851 (degree 607), 879243.Poras_1322 (degree
+600), 879243.Poras_1679 (degree 533) and 879243.Poras_0104 (degree 510).
 
 
 References
@@ -107,14 +107,14 @@ def PorphyromonasAsaccharolytica(
 	
 	Datetime: 2021-02-02 21:50:04.082408
 	
-	The undirected graph Porphyromonas asaccharolytica has 1682 nodes and 106144 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07508
-	and has 7 connected components, where the component with most nodes has 1668 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 126.21, and the node degree mode is 2. The top 5
-	most central nodes are 879243.Poras_1046 (degree 686), 879243.Poras_0851 (degree
-	607), 879243.Poras_1322 (degree 600), 879243.Poras_1679 (degree 533) and 879243.Poras_0104
-	(degree 510).
+	The undirected graph Porphyromonas asaccharolytica has 1682 nodes and 106144
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07508 and has 7 connected components, where the component
+	with most nodes has 1668 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 126.21,
+	and the node degree mode is 2. The top 5 most central nodes are 879243.Poras_1046
+	(degree 686), 879243.Poras_0851 (degree 607), 879243.Poras_1322 (degree
+	600), 879243.Poras_1679 (degree 533) and 879243.Poras_0104 (degree 510).
 	
 
 

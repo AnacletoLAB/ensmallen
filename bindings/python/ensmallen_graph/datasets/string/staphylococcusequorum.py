@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:05.084408
 
-The undirected graph Staphylococcus equorum has 2730 nodes and 178595 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-has 19 connected components, where the component with most nodes has 2686 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 130.84, and the node degree mode is 2. The top 5 most central
-nodes are 1159488.SEQMU2_06585 (degree 1023), 1159488.SEQMU2_13755 (degree 870),
-1159488.SEQMU2_13750 (degree 784), 1159488.SEQMU2_14315 (degree 779) and 1159488.SEQMU2_06080
+The undirected graph Staphylococcus equorum has 2730 nodes and 178595 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04794 and has 19 connected components, where the component with most
+nodes has 2686 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 130.84, and
+the node degree mode is 2. The top 5 most central nodes are 1159488.SEQMU2_06585
+(degree 1023), 1159488.SEQMU2_13755 (degree 870), 1159488.SEQMU2_13750
+(degree 784), 1159488.SEQMU2_14315 (degree 779) and 1159488.SEQMU2_06080
 (degree 760).
 
 
@@ -107,13 +108,14 @@ def StaphylococcusEquorum(
 	
 	Datetime: 2021-02-02 23:04:05.084408
 	
-	The undirected graph Staphylococcus equorum has 2730 nodes and 178595 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-	has 19 connected components, where the component with most nodes has 2686 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 130.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1159488.SEQMU2_06585 (degree 1023), 1159488.SEQMU2_13755 (degree 870),
-	1159488.SEQMU2_13750 (degree 784), 1159488.SEQMU2_14315 (degree 779) and 1159488.SEQMU2_06080
+	The undirected graph Staphylococcus equorum has 2730 nodes and 178595 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04794 and has 19 connected components, where the component with most
+	nodes has 2686 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 130.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1159488.SEQMU2_06585
+	(degree 1023), 1159488.SEQMU2_13755 (degree 870), 1159488.SEQMU2_13750
+	(degree 784), 1159488.SEQMU2_14315 (degree 779) and 1159488.SEQMU2_06080
 	(degree 760).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:02.565428
 
-The undirected graph Psychrobacter sp. 1501 has 2620 nodes and 167203 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04873 and
-has 16 connected components, where the component with most nodes has 2589 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 127.64, and the node degree mode is 1. The top 5 most central
-nodes are 1002339.HMPREF9373_0232 (degree 955), 1002339.HMPREF9373_2378 (degree 927),
-1002339.HMPREF9373_0927 (degree 844), 1002339.HMPREF9373_1983 (degree 811) and 1002339.HMPREF9373_0053
+The undirected graph Psychrobacter sp. 1501 has 2620 nodes and 167203 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04873 and has 16 connected components, where the component with most
+nodes has 2589 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 127.64, and
+the node degree mode is 1. The top 5 most central nodes are 1002339.HMPREF9373_0232
+(degree 955), 1002339.HMPREF9373_2378 (degree 927), 1002339.HMPREF9373_0927
+(degree 844), 1002339.HMPREF9373_1983 (degree 811) and 1002339.HMPREF9373_0053
 (degree 797).
 
 
@@ -107,13 +108,14 @@ def PsychrobacterSp.1501(
 	
 	Datetime: 2021-02-02 22:07:02.565428
 	
-	The undirected graph Psychrobacter sp. 1501 has 2620 nodes and 167203 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04873 and
-	has 16 connected components, where the component with most nodes has 2589 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 127.64, and the node degree mode is 1. The top 5 most central
-	nodes are 1002339.HMPREF9373_0232 (degree 955), 1002339.HMPREF9373_2378 (degree 927),
-	1002339.HMPREF9373_0927 (degree 844), 1002339.HMPREF9373_1983 (degree 811) and 1002339.HMPREF9373_0053
+	The undirected graph Psychrobacter sp. 1501 has 2620 nodes and 167203 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04873 and has 16 connected components, where the component with most
+	nodes has 2589 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 127.64, and
+	the node degree mode is 1. The top 5 most central nodes are 1002339.HMPREF9373_0232
+	(degree 955), 1002339.HMPREF9373_2378 (degree 927), 1002339.HMPREF9373_0927
+	(degree 844), 1002339.HMPREF9373_1983 (degree 811) and 1002339.HMPREF9373_0053
 	(degree 797).
 	
 

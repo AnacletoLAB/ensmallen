@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:18.469649
 
-The undirected graph Clostridiaceae bacterium L21THD2 has 2631 nodes and 271674 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07852
-and has 19 connected components, where the component with most nodes has 2581 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 206.52, and the node degree mode is 2. The top 5
-most central nodes are 1304284.L21TH_0719 (degree 1148), 1304284.L21TH_1818 (degree
-1066), 1304284.L21TH_0287 (degree 996), 1304284.L21TH_2714 (degree 989) and 1304284.L21TH_0362
+The undirected graph Clostridiaceae bacterium L21THD2 has 2631 nodes and
+271674 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07852 and has 19 connected components, where the
+component with most nodes has 2581 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 172, the mean node degree
+is 206.52, and the node degree mode is 2. The top 5 most central nodes
+are 1304284.L21TH_0719 (degree 1148), 1304284.L21TH_1818 (degree 1066),
+1304284.L21TH_0287 (degree 996), 1304284.L21TH_2714 (degree 989) and 1304284.L21TH_0362
 (degree 936).
 
 
@@ -107,13 +108,14 @@ def ClostridiaceaeBacteriumL21thd2(
 	
 	Datetime: 2021-02-03 21:36:18.469649
 	
-	The undirected graph Clostridiaceae bacterium L21THD2 has 2631 nodes and 271674 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07852
-	and has 19 connected components, where the component with most nodes has 2581 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 206.52, and the node degree mode is 2. The top 5
-	most central nodes are 1304284.L21TH_0719 (degree 1148), 1304284.L21TH_1818 (degree
-	1066), 1304284.L21TH_0287 (degree 996), 1304284.L21TH_2714 (degree 989) and 1304284.L21TH_0362
+	The undirected graph Clostridiaceae bacterium L21THD2 has 2631 nodes and
+	271674 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07852 and has 19 connected components, where the
+	component with most nodes has 2581 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 172, the mean node degree
+	is 206.52, and the node degree mode is 2. The top 5 most central nodes
+	are 1304284.L21TH_0719 (degree 1148), 1304284.L21TH_1818 (degree 1066),
+	1304284.L21TH_0287 (degree 996), 1304284.L21TH_2714 (degree 989) and 1304284.L21TH_0362
 	(degree 936).
 	
 

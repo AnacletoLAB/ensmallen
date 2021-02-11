@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:36.012948
 
-The undirected graph Fodinicurvata sediminis has 3331 nodes and 435707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07856 and
-has 7 connected components, where the component with most nodes has 3317 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 261.61, and the node degree mode is 1. The top 5 most central
-nodes are 570952.ATVH01000015_gene1296 (degree 1431), 570952.ATVH01000011_gene647
-(degree 1288), 570952.ATVH01000020_gene1086 (degree 1120), 570952.ATVH01000011_gene321
-(degree 1092) and 570952.ATVH01000013_gene2957 (degree 1088).
+The undirected graph Fodinicurvata sediminis has 3331 nodes and 435707
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07856 and has 7 connected components, where the component
+with most nodes has 3317 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 261.61,
+and the node degree mode is 1. The top 5 most central nodes are 570952.ATVH01000015_gene1296
+(degree 1431), 570952.ATVH01000011_gene647 (degree 1288), 570952.ATVH01000020_gene1086
+(degree 1120), 570952.ATVH01000011_gene321 (degree 1092) and 570952.ATVH01000013_gene2957
+(degree 1088).
 
 
 References
@@ -107,14 +108,15 @@ def FodinicurvataSediminis(
 	
 	Datetime: 2021-02-02 21:13:36.012948
 	
-	The undirected graph Fodinicurvata sediminis has 3331 nodes and 435707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07856 and
-	has 7 connected components, where the component with most nodes has 3317 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 261.61, and the node degree mode is 1. The top 5 most central
-	nodes are 570952.ATVH01000015_gene1296 (degree 1431), 570952.ATVH01000011_gene647
-	(degree 1288), 570952.ATVH01000020_gene1086 (degree 1120), 570952.ATVH01000011_gene321
-	(degree 1092) and 570952.ATVH01000013_gene2957 (degree 1088).
+	The undirected graph Fodinicurvata sediminis has 3331 nodes and 435707
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07856 and has 7 connected components, where the component
+	with most nodes has 3317 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 261.61,
+	and the node degree mode is 1. The top 5 most central nodes are 570952.ATVH01000015_gene1296
+	(degree 1431), 570952.ATVH01000011_gene647 (degree 1288), 570952.ATVH01000020_gene1086
+	(degree 1120), 570952.ATVH01000011_gene321 (degree 1092) and 570952.ATVH01000013_gene2957
+	(degree 1088).
 	
 
 

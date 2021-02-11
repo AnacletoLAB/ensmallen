@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:59.259300
 
-The undirected graph Treponema sp. OMZ838 has 2215 nodes and 134415 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05482 and
-has 20 connected components, where the component with most nodes has 2156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 121.37, and the node degree mode is 4. The top 5 most central
-nodes are 1539298.JO41_05695 (degree 810), 1539298.JO41_02685 (degree 712), 1539298.JO41_07970
-(degree 703), 1539298.JO41_10225 (degree 702) and 1539298.JO41_11755 (degree 664).
+The undirected graph Treponema sp. OMZ838 has 2215 nodes and 134415 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05482 and has 20 connected components, where the component with most
+nodes has 2156 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 121.37, and
+the node degree mode is 4. The top 5 most central nodes are 1539298.JO41_05695
+(degree 810), 1539298.JO41_02685 (degree 712), 1539298.JO41_07970 (degree
+703), 1539298.JO41_10225 (degree 702) and 1539298.JO41_11755 (degree 664).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaSp.Omz838(
 	
 	Datetime: 2021-02-03 23:19:59.259300
 	
-	The undirected graph Treponema sp. OMZ838 has 2215 nodes and 134415 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05482 and
-	has 20 connected components, where the component with most nodes has 2156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 121.37, and the node degree mode is 4. The top 5 most central
-	nodes are 1539298.JO41_05695 (degree 810), 1539298.JO41_02685 (degree 712), 1539298.JO41_07970
-	(degree 703), 1539298.JO41_10225 (degree 702) and 1539298.JO41_11755 (degree 664).
+	The undirected graph Treponema sp. OMZ838 has 2215 nodes and 134415 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05482 and has 20 connected components, where the component with most
+	nodes has 2156 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 121.37, and
+	the node degree mode is 4. The top 5 most central nodes are 1539298.JO41_05695
+	(degree 810), 1539298.JO41_02685 (degree 712), 1539298.JO41_07970 (degree
+	703), 1539298.JO41_10225 (degree 702) and 1539298.JO41_11755 (degree 664).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:57.297749
 
-The undirected graph Moraxella boevrei has 2305 nodes and 125271 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04718 and
-has 12 connected components, where the component with most nodes has 2268 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 108.70, and the node degree mode is 5. The top 5 most central
-nodes are 1122243.KB903776_gene1980 (degree 827), 1122243.KB903771_gene1672 (degree
-767), 1122243.KB903770_gene525 (degree 705), 1122243.KB903774_gene1247 (degree 690)
-and 1122243.KB903804_gene2077 (degree 677).
+The undirected graph Moraxella boevrei has 2305 nodes and 125271 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04718 and has 12 connected components, where the component with most
+nodes has 2268 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 108.70, and
+the node degree mode is 5. The top 5 most central nodes are 1122243.KB903776_gene1980
+(degree 827), 1122243.KB903771_gene1672 (degree 767), 1122243.KB903770_gene525
+(degree 705), 1122243.KB903774_gene1247 (degree 690) and 1122243.KB903804_gene2077
+(degree 677).
 
 
 References
@@ -107,14 +108,15 @@ def MoraxellaBoevrei(
 	
 	Datetime: 2021-02-02 22:42:57.297749
 	
-	The undirected graph Moraxella boevrei has 2305 nodes and 125271 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04718 and
-	has 12 connected components, where the component with most nodes has 2268 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 108.70, and the node degree mode is 5. The top 5 most central
-	nodes are 1122243.KB903776_gene1980 (degree 827), 1122243.KB903771_gene1672 (degree
-	767), 1122243.KB903770_gene525 (degree 705), 1122243.KB903774_gene1247 (degree 690)
-	and 1122243.KB903804_gene2077 (degree 677).
+	The undirected graph Moraxella boevrei has 2305 nodes and 125271 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04718 and has 12 connected components, where the component with most
+	nodes has 2268 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 108.70, and
+	the node degree mode is 5. The top 5 most central nodes are 1122243.KB903776_gene1980
+	(degree 827), 1122243.KB903771_gene1672 (degree 767), 1122243.KB903770_gene525
+	(degree 705), 1122243.KB903774_gene1247 (degree 690) and 1122243.KB903804_gene2077
+	(degree 677).
 	
 
 

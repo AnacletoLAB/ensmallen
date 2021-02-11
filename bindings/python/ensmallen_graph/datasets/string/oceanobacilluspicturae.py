@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:57.127041
 
-The undirected graph Oceanobacillus picturae has 3636 nodes and 401328 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06073 and
-has 7 connected components, where the component with most nodes has 3618 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 220.75, and the node degree mode is 4. The top 5 most central
-nodes are 171693.BN988_00094 (degree 1321), 171693.BN988_01593 (degree 1041), 171693.BN988_03430
-(degree 1041), 171693.BN988_00291 (degree 986) and 171693.BN988_00739 (degree 964).
+The undirected graph Oceanobacillus picturae has 3636 nodes and 401328
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06073 and has 7 connected components, where the component
+with most nodes has 3618 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 220.75,
+and the node degree mode is 4. The top 5 most central nodes are 171693.BN988_00094
+(degree 1321), 171693.BN988_01593 (degree 1041), 171693.BN988_03430 (degree
+1041), 171693.BN988_00291 (degree 986) and 171693.BN988_00739 (degree 964).
 
 
 References
@@ -106,13 +107,14 @@ def OceanobacillusPicturae(
 	
 	Datetime: 2021-02-02 19:54:57.127041
 	
-	The undirected graph Oceanobacillus picturae has 3636 nodes and 401328 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06073 and
-	has 7 connected components, where the component with most nodes has 3618 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 220.75, and the node degree mode is 4. The top 5 most central
-	nodes are 171693.BN988_00094 (degree 1321), 171693.BN988_01593 (degree 1041), 171693.BN988_03430
-	(degree 1041), 171693.BN988_00291 (degree 986) and 171693.BN988_00739 (degree 964).
+	The undirected graph Oceanobacillus picturae has 3636 nodes and 401328
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06073 and has 7 connected components, where the component
+	with most nodes has 3618 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 220.75,
+	and the node degree mode is 4. The top 5 most central nodes are 171693.BN988_00094
+	(degree 1321), 171693.BN988_01593 (degree 1041), 171693.BN988_03430 (degree
+	1041), 171693.BN988_00291 (degree 986) and 171693.BN988_00739 (degree 964).
 	
 
 

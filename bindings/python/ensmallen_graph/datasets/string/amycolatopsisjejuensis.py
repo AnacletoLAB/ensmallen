@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:40.047792
 
-The undirected graph Amycolatopsis jejuensis has 9022 nodes and 1864758 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04582
-and has 30 connected components, where the component with most nodes has 8938 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 333, the mean node degree is 413.38, and the node degree mode is 2. The top 5
-most central nodes are 330084.JNYZ01000034_gene2861 (degree 3806), 330084.JNYZ01000002_gene1891
-(degree 3109), 330084.JNYZ01000004_gene672 (degree 2771), 330084.JNYZ01000002_gene1809
-(degree 2724) and 330084.JNYZ01000022_gene3699 (degree 2621).
+The undirected graph Amycolatopsis jejuensis has 9022 nodes and 1864758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04582 and has 30 connected components, where the component
+with most nodes has 8938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 333, the mean node degree is 413.38,
+and the node degree mode is 2. The top 5 most central nodes are 330084.JNYZ01000034_gene2861
+(degree 3806), 330084.JNYZ01000002_gene1891 (degree 3109), 330084.JNYZ01000004_gene672
+(degree 2771), 330084.JNYZ01000002_gene1809 (degree 2724) and 330084.JNYZ01000022_gene3699
+(degree 2621).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisJejuensis(
 	
 	Datetime: 2021-02-02 20:29:40.047792
 	
-	The undirected graph Amycolatopsis jejuensis has 9022 nodes and 1864758 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04582
-	and has 30 connected components, where the component with most nodes has 8938 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 333, the mean node degree is 413.38, and the node degree mode is 2. The top 5
-	most central nodes are 330084.JNYZ01000034_gene2861 (degree 3806), 330084.JNYZ01000002_gene1891
-	(degree 3109), 330084.JNYZ01000004_gene672 (degree 2771), 330084.JNYZ01000002_gene1809
-	(degree 2724) and 330084.JNYZ01000022_gene3699 (degree 2621).
+	The undirected graph Amycolatopsis jejuensis has 9022 nodes and 1864758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04582 and has 30 connected components, where the component
+	with most nodes has 8938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 333, the mean node degree is 413.38,
+	and the node degree mode is 2. The top 5 most central nodes are 330084.JNYZ01000034_gene2861
+	(degree 3806), 330084.JNYZ01000002_gene1891 (degree 3109), 330084.JNYZ01000004_gene672
+	(degree 2771), 330084.JNYZ01000002_gene1809 (degree 2724) and 330084.JNYZ01000022_gene3699
+	(degree 2621).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:23.722568
 
-The undirected graph Halobellus rufus has 3259 nodes and 281601 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05304 and
-has 27 connected components, where the component with most nodes has 3187 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 172.81, and the node degree mode is 2. The top 5 most central
-nodes are 1448860.BBJO01000037_gene3301 (degree 984), 1448860.BBJO01000009_gene732
-(degree 971), 1448860.BBJO01000002_gene2235 (degree 910), 1448860.BBJO01000024_gene3126
-(degree 879) and 1448860.BBJO01000024_gene3129 (degree 853).
+The undirected graph Halobellus rufus has 3259 nodes and 281601 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05304 and has 27 connected components, where the component with most
+nodes has 3187 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 172.81, and
+the node degree mode is 2. The top 5 most central nodes are 1448860.BBJO01000037_gene3301
+(degree 984), 1448860.BBJO01000009_gene732 (degree 971), 1448860.BBJO01000002_gene2235
+(degree 910), 1448860.BBJO01000024_gene3126 (degree 879) and 1448860.BBJO01000024_gene3129
+(degree 853).
 
 
 References
@@ -107,14 +108,15 @@ def HalobellusRufus(
 	
 	Datetime: 2021-02-03 23:03:23.722568
 	
-	The undirected graph Halobellus rufus has 3259 nodes and 281601 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05304 and
-	has 27 connected components, where the component with most nodes has 3187 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 172.81, and the node degree mode is 2. The top 5 most central
-	nodes are 1448860.BBJO01000037_gene3301 (degree 984), 1448860.BBJO01000009_gene732
-	(degree 971), 1448860.BBJO01000002_gene2235 (degree 910), 1448860.BBJO01000024_gene3126
-	(degree 879) and 1448860.BBJO01000024_gene3129 (degree 853).
+	The undirected graph Halobellus rufus has 3259 nodes and 281601 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05304 and has 27 connected components, where the component with most
+	nodes has 3187 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 172.81, and
+	the node degree mode is 2. The top 5 most central nodes are 1448860.BBJO01000037_gene3301
+	(degree 984), 1448860.BBJO01000009_gene732 (degree 971), 1448860.BBJO01000002_gene2235
+	(degree 910), 1448860.BBJO01000024_gene3126 (degree 879) and 1448860.BBJO01000024_gene3129
+	(degree 853).
 	
 
 

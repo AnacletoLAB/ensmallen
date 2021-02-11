@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:51.776984
 
-The undirected graph Porphyromonas catoniae has 1829 nodes and 97430 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05828 and
-has 9 connected components, where the component with most nodes has 1806 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 106.54, and the node degree mode is 4. The top 5 most central
-nodes are 1127696.HMPREF9134_00072 (degree 714), 1127696.HMPREF9134_00555 (degree
-633), 1127696.HMPREF9134_00858 (degree 553), 1127696.HMPREF9134_00786 (degree 544)
-and 1127696.HMPREF9134_01533 (degree 504).
+The undirected graph Porphyromonas catoniae has 1829 nodes and 97430 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05828 and has 9 connected components, where the component with most
+nodes has 1806 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 88, the mean node degree is 106.54, and
+the node degree mode is 4. The top 5 most central nodes are 1127696.HMPREF9134_00072
+(degree 714), 1127696.HMPREF9134_00555 (degree 633), 1127696.HMPREF9134_00858
+(degree 553), 1127696.HMPREF9134_00786 (degree 544) and 1127696.HMPREF9134_01533
+(degree 504).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasCatoniae(
 	
 	Datetime: 2021-02-02 22:54:51.776984
 	
-	The undirected graph Porphyromonas catoniae has 1829 nodes and 97430 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05828 and
-	has 9 connected components, where the component with most nodes has 1806 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 106.54, and the node degree mode is 4. The top 5 most central
-	nodes are 1127696.HMPREF9134_00072 (degree 714), 1127696.HMPREF9134_00555 (degree
-	633), 1127696.HMPREF9134_00858 (degree 553), 1127696.HMPREF9134_00786 (degree 544)
-	and 1127696.HMPREF9134_01533 (degree 504).
+	The undirected graph Porphyromonas catoniae has 1829 nodes and 97430 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05828 and has 9 connected components, where the component with most
+	nodes has 1806 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 88, the mean node degree is 106.54, and
+	the node degree mode is 4. The top 5 most central nodes are 1127696.HMPREF9134_00072
+	(degree 714), 1127696.HMPREF9134_00555 (degree 633), 1127696.HMPREF9134_00858
+	(degree 553), 1127696.HMPREF9134_00786 (degree 544) and 1127696.HMPREF9134_01533
+	(degree 504).
 	
 
 

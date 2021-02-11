@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:30.660937
 
-The undirected graph socfb-Penn94 has 41536 nodes and 1362220 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00158 and
-is connected, as it has a single component. The graph median node degree is 48, the
-mean node degree is 65.59, and the node degree mode is 1. The top 5 most central
-nodes are 10564 (degree 4410), 38640 (degree 3777), 7109 (degree 3240), 22556 (degree
-2613) and 7732 (degree 2582).
+The undirected graph socfb-Penn94 has 41536 nodes and 1362220 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00158 and is connected, as it has a single component. The graph median
+node degree is 48, the mean node degree is 65.59, and the node degree mode
+is 1. The top 5 most central nodes are 10564 (degree 4410), 38640 (degree
+3777), 7109 (degree 3240), 22556 (degree 2613) and 7732 (degree 2582).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbPenn94(
 	
 	Datetime: 2021-02-06 12:31:30.660937
 	
-	The undirected graph socfb-Penn94 has 41536 nodes and 1362220 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00158 and
-	is connected, as it has a single component. The graph median node degree is 48, the
-	mean node degree is 65.59, and the node degree mode is 1. The top 5 most central
-	nodes are 10564 (degree 4410), 38640 (degree 3777), 7109 (degree 3240), 22556 (degree
-	2613) and 7732 (degree 2582).
+	The undirected graph socfb-Penn94 has 41536 nodes and 1362220 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00158 and is connected, as it has a single component. The graph median
+	node degree is 48, the mean node degree is 65.59, and the node degree mode
+	is 1. The top 5 most central nodes are 10564 (degree 4410), 38640 (degree
+	3777), 7109 (degree 3240), 22556 (degree 2613) and 7732 (degree 2582).
 	
 
 

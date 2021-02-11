@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:48:02.736242
 
-The undirected graph Defluviimonas sp. 20V17 has 4075 nodes and 689465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08306 and
-has 11 connected components, where the component with most nodes has 4051 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 290,
-the mean node degree is 338.39, and the node degree mode is 2. The top 5 most central
-nodes are 1417296.U879_00235 (degree 2077), 1417296.U879_06350 (degree 1705), 1417296.U879_18550
-(degree 1705), 1417296.U879_19290 (degree 1639) and 1417296.U879_02365 (degree 1618).
+The undirected graph Defluviimonas sp. 20V17 has 4075 nodes and 689465
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08306 and has 11 connected components, where the component
+with most nodes has 4051 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 290, the mean node degree is 338.39,
+and the node degree mode is 2. The top 5 most central nodes are 1417296.U879_00235
+(degree 2077), 1417296.U879_06350 (degree 1705), 1417296.U879_18550 (degree
+1705), 1417296.U879_19290 (degree 1639) and 1417296.U879_02365 (degree
+1618).
 
 
 References
@@ -106,13 +108,15 @@ def DefluviimonasSp.20v17(
 	
 	Datetime: 2021-02-03 22:48:02.736242
 	
-	The undirected graph Defluviimonas sp. 20V17 has 4075 nodes and 689465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08306 and
-	has 11 connected components, where the component with most nodes has 4051 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 290,
-	the mean node degree is 338.39, and the node degree mode is 2. The top 5 most central
-	nodes are 1417296.U879_00235 (degree 2077), 1417296.U879_06350 (degree 1705), 1417296.U879_18550
-	(degree 1705), 1417296.U879_19290 (degree 1639) and 1417296.U879_02365 (degree 1618).
+	The undirected graph Defluviimonas sp. 20V17 has 4075 nodes and 689465
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08306 and has 11 connected components, where the component
+	with most nodes has 4051 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 290, the mean node degree is 338.39,
+	and the node degree mode is 2. The top 5 most central nodes are 1417296.U879_00235
+	(degree 2077), 1417296.U879_06350 (degree 1705), 1417296.U879_18550 (degree
+	1705), 1417296.U879_19290 (degree 1639) and 1417296.U879_02365 (degree
+	1618).
 	
 
 

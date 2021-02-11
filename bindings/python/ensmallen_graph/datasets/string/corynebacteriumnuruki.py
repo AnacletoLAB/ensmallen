@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:14.505596
 
-The undirected graph Corynebacterium nuruki has 2726 nodes and 207251 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05580 and
-has 15 connected components, where the component with most nodes has 2693 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 152.06, and the node degree mode is 2. The top 5 most central
-nodes are 863239.AFIZ01000032_gene1854 (degree 1116), 863239.AFIZ01000047_gene457
-(degree 1021), 863239.AFIZ01000020_gene2441 (degree 926), 863239.AFIZ01000032_gene1865
-(degree 828) and 863239.AFIZ01000024_gene2667 (degree 801).
+The undirected graph Corynebacterium nuruki has 2726 nodes and 207251 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05580 and has 15 connected components, where the component with most
+nodes has 2693 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 152.06, and
+the node degree mode is 2. The top 5 most central nodes are 863239.AFIZ01000032_gene1854
+(degree 1116), 863239.AFIZ01000047_gene457 (degree 1021), 863239.AFIZ01000020_gene2441
+(degree 926), 863239.AFIZ01000032_gene1865 (degree 828) and 863239.AFIZ01000024_gene2667
+(degree 801).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumNuruki(
 	
 	Datetime: 2021-02-02 21:47:14.505596
 	
-	The undirected graph Corynebacterium nuruki has 2726 nodes and 207251 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05580 and
-	has 15 connected components, where the component with most nodes has 2693 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 152.06, and the node degree mode is 2. The top 5 most central
-	nodes are 863239.AFIZ01000032_gene1854 (degree 1116), 863239.AFIZ01000047_gene457
-	(degree 1021), 863239.AFIZ01000020_gene2441 (degree 926), 863239.AFIZ01000032_gene1865
-	(degree 828) and 863239.AFIZ01000024_gene2667 (degree 801).
+	The undirected graph Corynebacterium nuruki has 2726 nodes and 207251 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05580 and has 15 connected components, where the component with most
+	nodes has 2693 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 152.06, and
+	the node degree mode is 2. The top 5 most central nodes are 863239.AFIZ01000032_gene1854
+	(degree 1116), 863239.AFIZ01000047_gene457 (degree 1021), 863239.AFIZ01000020_gene2441
+	(degree 926), 863239.AFIZ01000032_gene1865 (degree 828) and 863239.AFIZ01000024_gene2667
+	(degree 801).
 	
 
 

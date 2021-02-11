@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:40.271793
 
-The undirected graph Aureococcus anophagefferens has 7490 nodes and 1033620 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03685
-and has 7 connected components, where the component with most nodes has 7477 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 276.00, and the node degree mode is 1. The top 5
-most central nodes are 44056.XP_009039113.1 (degree 2922), 44056.XP_009042343.1 (degree
-2635), 44056.XP_009035589.1 (degree 2416), 44056.XP_009040691.1 (degree 2355) and
-44056.XP_009033467.1 (degree 2112).
+The undirected graph Aureococcus anophagefferens has 7490 nodes and 1033620
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03685 and has 7 connected components, where the component
+with most nodes has 7477 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 276.00,
+and the node degree mode is 1. The top 5 most central nodes are 44056.XP_009039113.1
+(degree 2922), 44056.XP_009042343.1 (degree 2635), 44056.XP_009035589.1
+(degree 2416), 44056.XP_009040691.1 (degree 2355) and 44056.XP_009033467.1
+(degree 2112).
 
 
 References
@@ -107,14 +108,15 @@ def AureococcusAnophagefferens(
 	
 	Datetime: 2021-02-02 18:14:40.271793
 	
-	The undirected graph Aureococcus anophagefferens has 7490 nodes and 1033620 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03685
-	and has 7 connected components, where the component with most nodes has 7477 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 276.00, and the node degree mode is 1. The top 5
-	most central nodes are 44056.XP_009039113.1 (degree 2922), 44056.XP_009042343.1 (degree
-	2635), 44056.XP_009035589.1 (degree 2416), 44056.XP_009040691.1 (degree 2355) and
-	44056.XP_009033467.1 (degree 2112).
+	The undirected graph Aureococcus anophagefferens has 7490 nodes and 1033620
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03685 and has 7 connected components, where the component
+	with most nodes has 7477 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 276.00,
+	and the node degree mode is 1. The top 5 most central nodes are 44056.XP_009039113.1
+	(degree 2922), 44056.XP_009042343.1 (degree 2635), 44056.XP_009035589.1
+	(degree 2416), 44056.XP_009040691.1 (degree 2355) and 44056.XP_009033467.1
+	(degree 2112).
 	
 
 

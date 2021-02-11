@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:14.595823
 
-The undirected graph Moorella thermoacetica has 2452 nodes and 187752 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06248 and
-has 6 connected components, where the component with most nodes has 2440 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 153.14, and the node degree mode is 72. The top 5 most central
-nodes are 264732.Moth_0675 (degree 1046), 264732.Moth_1841 (degree 982), 264732.Moth_2105
-(degree 861), 264732.Moth_1329 (degree 795) and 264732.Moth_0048 (degree 780).
+The undirected graph Moorella thermoacetica has 2452 nodes and 187752 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06248 and has 6 connected components, where the component with most
+nodes has 2440 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 153.14, and
+the node degree mode is 72. The top 5 most central nodes are 264732.Moth_0675
+(degree 1046), 264732.Moth_1841 (degree 982), 264732.Moth_2105 (degree
+861), 264732.Moth_1329 (degree 795) and 264732.Moth_0048 (degree 780).
 
 
 References
@@ -106,13 +107,14 @@ def MoorellaThermoacetica(
 	
 	Datetime: 2021-02-02 20:14:14.595823
 	
-	The undirected graph Moorella thermoacetica has 2452 nodes and 187752 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06248 and
-	has 6 connected components, where the component with most nodes has 2440 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 153.14, and the node degree mode is 72. The top 5 most central
-	nodes are 264732.Moth_0675 (degree 1046), 264732.Moth_1841 (degree 982), 264732.Moth_2105
-	(degree 861), 264732.Moth_1329 (degree 795) and 264732.Moth_0048 (degree 780).
+	The undirected graph Moorella thermoacetica has 2452 nodes and 187752 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06248 and has 6 connected components, where the component with most
+	nodes has 2440 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 153.14, and
+	the node degree mode is 72. The top 5 most central nodes are 264732.Moth_0675
+	(degree 1046), 264732.Moth_1841 (degree 982), 264732.Moth_2105 (degree
+	861), 264732.Moth_1329 (degree 795) and 264732.Moth_0048 (degree 780).
 	
 
 

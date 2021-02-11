@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:15.995144
 
-The undirected graph Kluyvera ascorbata has 4609 nodes and 736722 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06938 and
-has 5 connected components, where the component with most nodes has 4601 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 292,
-the mean node degree is 319.69, and the node degree mode is 2. The top 5 most central
-nodes are 1006000.GKAS_03037 (degree 1713), 1006000.GKAS_00924 (degree 1692), 1006000.GKAS_00088
-(degree 1654), 1006000.GKAS_01994 (degree 1527) and 1006000.GKAS_04013 (degree 1440).
+The undirected graph Kluyvera ascorbata has 4609 nodes and 736722 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06938 and has 5 connected components, where the component with most
+nodes has 4601 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 292, the mean node degree is 319.69, and
+the node degree mode is 2. The top 5 most central nodes are 1006000.GKAS_03037
+(degree 1713), 1006000.GKAS_00924 (degree 1692), 1006000.GKAS_00088 (degree
+1654), 1006000.GKAS_01994 (degree 1527) and 1006000.GKAS_04013 (degree
+1440).
 
 
 References
@@ -106,13 +108,15 @@ def KluyveraAscorbata(
 	
 	Datetime: 2021-02-02 22:08:15.995144
 	
-	The undirected graph Kluyvera ascorbata has 4609 nodes and 736722 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06938 and
-	has 5 connected components, where the component with most nodes has 4601 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 292,
-	the mean node degree is 319.69, and the node degree mode is 2. The top 5 most central
-	nodes are 1006000.GKAS_03037 (degree 1713), 1006000.GKAS_00924 (degree 1692), 1006000.GKAS_00088
-	(degree 1654), 1006000.GKAS_01994 (degree 1527) and 1006000.GKAS_04013 (degree 1440).
+	The undirected graph Kluyvera ascorbata has 4609 nodes and 736722 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06938 and has 5 connected components, where the component with most
+	nodes has 4601 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 292, the mean node degree is 319.69, and
+	the node degree mode is 2. The top 5 most central nodes are 1006000.GKAS_03037
+	(degree 1713), 1006000.GKAS_00924 (degree 1692), 1006000.GKAS_00088 (degree
+	1654), 1006000.GKAS_01994 (degree 1527) and 1006000.GKAS_04013 (degree
+	1440).
 	
 
 

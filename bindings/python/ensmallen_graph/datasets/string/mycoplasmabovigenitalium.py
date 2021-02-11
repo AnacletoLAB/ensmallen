@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:05.678676
 
-The undirected graph Mycoplasma bovigenitalium has 666 nodes and 26334 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11892
-and has 4 connected components, where the component with most nodes has 655 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 53, the mean node degree is 79.08, and the node degree mode is 9. The top 5 most
-central nodes are 1188235.MBVG_1490 (degree 273), 1188235.MBVG_0350 (degree 250),
-1188235.MBVG_0930 (degree 247), 1188235.MBVG_6620 (degree 244) and 1188235.MBVG_0950
-(degree 243).
+The undirected graph Mycoplasma bovigenitalium has 666 nodes and 26334
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11892 and has 4 connected components, where the
+component with most nodes has 655 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 53, the mean node degree
+is 79.08, and the node degree mode is 9. The top 5 most central nodes are
+1188235.MBVG_1490 (degree 273), 1188235.MBVG_0350 (degree 250), 1188235.MBVG_0930
+(degree 247), 1188235.MBVG_6620 (degree 244) and 1188235.MBVG_0950 (degree
+243).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaBovigenitalium(
 	
 	Datetime: 2021-02-02 23:11:05.678676
 	
-	The undirected graph Mycoplasma bovigenitalium has 666 nodes and 26334 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11892
-	and has 4 connected components, where the component with most nodes has 655 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 53, the mean node degree is 79.08, and the node degree mode is 9. The top 5 most
-	central nodes are 1188235.MBVG_1490 (degree 273), 1188235.MBVG_0350 (degree 250),
-	1188235.MBVG_0930 (degree 247), 1188235.MBVG_6620 (degree 244) and 1188235.MBVG_0950
-	(degree 243).
+	The undirected graph Mycoplasma bovigenitalium has 666 nodes and 26334
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11892 and has 4 connected components, where the
+	component with most nodes has 655 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 53, the mean node degree
+	is 79.08, and the node degree mode is 9. The top 5 most central nodes are
+	1188235.MBVG_1490 (degree 273), 1188235.MBVG_0350 (degree 250), 1188235.MBVG_0930
+	(degree 247), 1188235.MBVG_6620 (degree 244) and 1188235.MBVG_0950 (degree
+	243).
 	
 
 

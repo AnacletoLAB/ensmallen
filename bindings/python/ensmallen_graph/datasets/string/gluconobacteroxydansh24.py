@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:52.543375
 
-The undirected graph Gluconobacter oxydans H24 has 3667 nodes and 200928 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02989
-and has 24 connected components, where the component with most nodes has 3602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 81, the mean node degree is 109.59, and the node degree mode is 3. The top 5 most
-central nodes are 1224746.B932_0200 (degree 1063), 1224746.B932_0326 (degree 990),
-1224746.B932_0030 (degree 864), 1224746.B932_0212 (degree 773) and 1224746.B932_2131
-(degree 720).
+The undirected graph Gluconobacter oxydans H24 has 3667 nodes and 200928
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02989 and has 24 connected components, where the component
+with most nodes has 3602 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 81, the mean node degree is 109.59,
+and the node degree mode is 3. The top 5 most central nodes are 1224746.B932_0200
+(degree 1063), 1224746.B932_0326 (degree 990), 1224746.B932_0030 (degree
+864), 1224746.B932_0212 (degree 773) and 1224746.B932_2131 (degree 720).
 
 
 References
@@ -107,14 +107,14 @@ def GluconobacterOxydansH24(
 	
 	Datetime: 2021-02-02 23:24:52.543375
 	
-	The undirected graph Gluconobacter oxydans H24 has 3667 nodes and 200928 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02989
-	and has 24 connected components, where the component with most nodes has 3602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 81, the mean node degree is 109.59, and the node degree mode is 3. The top 5 most
-	central nodes are 1224746.B932_0200 (degree 1063), 1224746.B932_0326 (degree 990),
-	1224746.B932_0030 (degree 864), 1224746.B932_0212 (degree 773) and 1224746.B932_2131
-	(degree 720).
+	The undirected graph Gluconobacter oxydans H24 has 3667 nodes and 200928
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02989 and has 24 connected components, where the component
+	with most nodes has 3602 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 81, the mean node degree is 109.59,
+	and the node degree mode is 3. The top 5 most central nodes are 1224746.B932_0200
+	(degree 1063), 1224746.B932_0326 (degree 990), 1224746.B932_0030 (degree
+	864), 1224746.B932_0212 (degree 773) and 1224746.B932_2131 (degree 720).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:04.024472
 
-The undirected graph kleemin has 16 nodes and 44 weighted edges, of which 8 are self-loops.
-The graph is quite dense as it has a density of 0.33333 and is connected, as it has
-a single component. The graph median node degree is 5, the mean node degree is 5.00,
-and the node degree mode is 5. The top 5 most central nodes are 8 (degree 9), 9 (degree
-8), 7 (degree 8), 10 (degree 7) and 6 (degree 7).
+The undirected graph kleemin has 16 nodes and 44 weighted edges, of which
+8 are self-loops. The graph is quite dense as it has a density of 0.33333
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 5.00, and the node degree mode is 5. The
+top 5 most central nodes are 8 (degree 9), 9 (degree 8), 7 (degree 8),
+10 (degree 7) and 6 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Kleemin(
 	
 	Datetime: 2021-02-06 08:13:04.024472
 	
-	The undirected graph kleemin has 16 nodes and 44 weighted edges, of which 8 are self-loops.
-	The graph is quite dense as it has a density of 0.33333 and is connected, as it has
-	a single component. The graph median node degree is 5, the mean node degree is 5.00,
-	and the node degree mode is 5. The top 5 most central nodes are 8 (degree 9), 9 (degree
-	8), 7 (degree 8), 10 (degree 7) and 6 (degree 7).
+	The undirected graph kleemin has 16 nodes and 44 weighted edges, of which
+	8 are self-loops. The graph is quite dense as it has a density of 0.33333
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 5.00, and the node degree mode is 5. The
+	top 5 most central nodes are 8 (degree 9), 9 (degree 8), 7 (degree 8),
+	10 (degree 7) and 6 (degree 7).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:34:04.689482
 
-The undirected graph web-wikipedia2009 has 1864433 nodes and 4507315 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 4.84, and the node degree mode is 1. The top 5 most
-central nodes are 1670463 (degree 2624), 1850825 (degree 898), 166232 (degree 878),
-190328 (degree 867) and 16734 (degree 860).
+The undirected graph web-wikipedia2009 has 1864433 nodes and 4507315 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 4.84, and the
+node degree mode is 1. The top 5 most central nodes are 1670463 (degree
+2624), 1850825 (degree 898), 166232 (degree 878), 190328 (degree 867) and
+16734 (degree 860).
 
 
 References
@@ -117,12 +118,13 @@ def WebWikipedia2009(
 	
 	Datetime: 2021-02-06 12:34:04.689482
 	
-	The undirected graph web-wikipedia2009 has 1864433 nodes and 4507315 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 4.84, and the node degree mode is 1. The top 5 most
-	central nodes are 1670463 (degree 2624), 1850825 (degree 898), 166232 (degree 878),
-	190328 (degree 867) and 16734 (degree 860).
+	The undirected graph web-wikipedia2009 has 1864433 nodes and 4507315 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 4.84, and the
+	node degree mode is 1. The top 5 most central nodes are 1670463 (degree
+	2624), 1850825 (degree 898), 166232 (degree 878), 190328 (degree 867) and
+	16734 (degree 860).
 	
 
 

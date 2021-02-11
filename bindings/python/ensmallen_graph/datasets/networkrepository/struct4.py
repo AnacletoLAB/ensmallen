@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:29:52.792160
 
-The undirected graph struct4 has 4350 nodes and 121074 unweighted edges, of which
-4350 are self-loops. The graph is dense as it has a density of 0.01257 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 54.67, and the node degree mode is 42. The top 5 most central nodes are 3812 (degree
-90), 3806 (degree 90), 3800 (degree 90), 3794 (degree 90) and 3788 (degree 90).
+The undirected graph struct4 has 4350 nodes and 121074 unweighted edges,
+of which 4350 are self-loops. The graph is dense as it has a density of
+0.01257 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 54.67, and the node degree mode
+is 42. The top 5 most central nodes are 3812 (degree 90), 3806 (degree
+90), 3800 (degree 90), 3794 (degree 90) and 3788 (degree 90).
 
 
 References
@@ -101,11 +102,12 @@ def Struct4(
 	
 	Datetime: 2021-02-06 11:29:52.792160
 	
-	The undirected graph struct4 has 4350 nodes and 121074 unweighted edges, of which
-	4350 are self-loops. The graph is dense as it has a density of 0.01257 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 54.67, and the node degree mode is 42. The top 5 most central nodes are 3812 (degree
-	90), 3806 (degree 90), 3800 (degree 90), 3794 (degree 90) and 3788 (degree 90).
+	The undirected graph struct4 has 4350 nodes and 121074 unweighted edges,
+	of which 4350 are self-loops. The graph is dense as it has a density of
+	0.01257 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 54.67, and the node degree mode
+	is 42. The top 5 most central nodes are 3812 (degree 90), 3806 (degree
+	90), 3800 (degree 90), 3794 (degree 90) and 3788 (degree 90).
 	
 
 

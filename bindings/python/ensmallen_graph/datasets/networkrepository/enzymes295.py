@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:39:15.150498
 
-The undirected graph ENZYMES295 has 124 nodes with 2 different node types: 2 (nodes
-number 104) and 1 (nodes number 20), of which 1 are singletons, and 139 unweighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01823
-and has 2 connected components, where the component with most nodes has 123 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 2, the mean node degree is 2.24 and the node degree mode is 2. The top 5 most
-central nodes are 124 (degree 5), 92 (degree 5), 20 (degree 5), 12 (degree 5) and
-7 (degree 5).
+The undirected graph ENZYMES295 has 124 nodes with 2 different node types:
+2 (nodes number 104) and 1 (nodes number 20), of which 1 are singletons,
+and 139 unweighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.01823 and has 2 connected components, where the
+component with most nodes has 123 nodes and the component with the least
+nodes has a single node. The graph median node degree is 2, the mean node
+degree is 2.24 and the node degree mode is 2. The top 5 most central nodes
+are 124 (degree 5), 92 (degree 5), 20 (degree 5), 12 (degree 5) and 7 (degree
+5).
 
 
 References
@@ -104,14 +105,15 @@ def Enzymes295(
 	
 	Datetime: 2021-02-04 08:39:15.150498
 	
-	The undirected graph ENZYMES295 has 124 nodes with 2 different node types: 2 (nodes
-	number 104) and 1 (nodes number 20), of which 1 are singletons, and 139 unweighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01823
-	and has 2 connected components, where the component with most nodes has 123 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 2, the mean node degree is 2.24 and the node degree mode is 2. The top 5 most
-	central nodes are 124 (degree 5), 92 (degree 5), 20 (degree 5), 12 (degree 5) and
-	7 (degree 5).
+	The undirected graph ENZYMES295 has 124 nodes with 2 different node types:
+	2 (nodes number 104) and 1 (nodes number 20), of which 1 are singletons,
+	and 139 unweighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.01823 and has 2 connected components, where the
+	component with most nodes has 123 nodes and the component with the least
+	nodes has a single node. The graph median node degree is 2, the mean node
+	degree is 2.24 and the node degree mode is 2. The top 5 most central nodes
+	are 124 (degree 5), 92 (degree 5), 20 (degree 5), 12 (degree 5) and 7 (degree
+	5).
 	
 
 

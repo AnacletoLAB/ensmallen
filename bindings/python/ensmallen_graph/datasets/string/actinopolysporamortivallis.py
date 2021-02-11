@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:16.222781
 
-The undirected graph Actinopolyspora mortivallis has 3681 nodes and 342919 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05063
-and has 39 connected components, where the component with most nodes has 3588 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 186.32, and the node degree mode is 1. The top 5
-most central nodes are 1050202.KB913024_gene3387 (degree 1410), 1050202.KB913024_gene1899
-(degree 1236), 1050202.KB913024_gene1566 (degree 1094), 1050202.KB913024_gene3001
-(degree 1040) and 1050202.KB913024_gene312 (degree 1005).
+The undirected graph Actinopolyspora mortivallis has 3681 nodes and 342919
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05063 and has 39 connected components, where the component
+with most nodes has 3588 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 186.32,
+and the node degree mode is 1. The top 5 most central nodes are 1050202.KB913024_gene3387
+(degree 1410), 1050202.KB913024_gene1899 (degree 1236), 1050202.KB913024_gene1566
+(degree 1094), 1050202.KB913024_gene3001 (degree 1040) and 1050202.KB913024_gene312
+(degree 1005).
 
 
 References
@@ -107,14 +108,15 @@ def ActinopolysporaMortivallis(
 	
 	Datetime: 2021-02-02 22:17:16.222781
 	
-	The undirected graph Actinopolyspora mortivallis has 3681 nodes and 342919 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05063
-	and has 39 connected components, where the component with most nodes has 3588 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 186.32, and the node degree mode is 1. The top 5
-	most central nodes are 1050202.KB913024_gene3387 (degree 1410), 1050202.KB913024_gene1899
-	(degree 1236), 1050202.KB913024_gene1566 (degree 1094), 1050202.KB913024_gene3001
-	(degree 1040) and 1050202.KB913024_gene312 (degree 1005).
+	The undirected graph Actinopolyspora mortivallis has 3681 nodes and 342919
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05063 and has 39 connected components, where the component
+	with most nodes has 3588 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 186.32,
+	and the node degree mode is 1. The top 5 most central nodes are 1050202.KB913024_gene3387
+	(degree 1410), 1050202.KB913024_gene1899 (degree 1236), 1050202.KB913024_gene1566
+	(degree 1094), 1050202.KB913024_gene3001 (degree 1040) and 1050202.KB913024_gene312
+	(degree 1005).
 	
 
 

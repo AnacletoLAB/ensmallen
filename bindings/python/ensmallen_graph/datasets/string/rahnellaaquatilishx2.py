@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:12.529810
 
-The undirected graph Rahnella aquatilis HX2 has 4421 nodes and 356298 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03647 and
-has 9 connected components, where the component with most nodes has 4403 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 161.18, and the node degree mode is 2. The top 5 most central
-nodes are 1151116.Q7S_22300 (degree 1366), 1151116.Q7S_10545 (degree 1323), 1151116.Q7S_20120
-(degree 1223), 1151116.Q7S_05055 (degree 1079) and 1151116.Q7S_08490 (degree 979).
+The undirected graph Rahnella aquatilis HX2 has 4421 nodes and 356298 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03647 and has 9 connected components, where the component with most
+nodes has 4403 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 161.18, and
+the node degree mode is 2. The top 5 most central nodes are 1151116.Q7S_22300
+(degree 1366), 1151116.Q7S_10545 (degree 1323), 1151116.Q7S_20120 (degree
+1223), 1151116.Q7S_05055 (degree 1079) and 1151116.Q7S_08490 (degree 979).
 
 
 References
@@ -106,13 +107,14 @@ def RahnellaAquatilisHx2(
 	
 	Datetime: 2021-02-02 23:00:12.529810
 	
-	The undirected graph Rahnella aquatilis HX2 has 4421 nodes and 356298 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03647 and
-	has 9 connected components, where the component with most nodes has 4403 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 161.18, and the node degree mode is 2. The top 5 most central
-	nodes are 1151116.Q7S_22300 (degree 1366), 1151116.Q7S_10545 (degree 1323), 1151116.Q7S_20120
-	(degree 1223), 1151116.Q7S_05055 (degree 1079) and 1151116.Q7S_08490 (degree 979).
+	The undirected graph Rahnella aquatilis HX2 has 4421 nodes and 356298 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03647 and has 9 connected components, where the component with most
+	nodes has 4403 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 161.18, and
+	the node degree mode is 2. The top 5 most central nodes are 1151116.Q7S_22300
+	(degree 1366), 1151116.Q7S_10545 (degree 1323), 1151116.Q7S_20120 (degree
+	1223), 1151116.Q7S_05055 (degree 1079) and 1151116.Q7S_08490 (degree 979).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:59.349863
 
-The undirected graph Paenibacillus sp. UNC451MF has 6548 nodes and 970053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04526
-and has 19 connected components, where the component with most nodes has 6506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 251, the mean node degree is 296.29, and the node degree mode is 2. The top 5
-most central nodes are 1449063.JMLS01000005_gene3223 (degree 2355), 1449063.JMLS01000002_gene1367
-(degree 2103), 1449063.JMLS01000001_gene4134 (degree 2057), 1449063.JMLS01000003_gene1816
-(degree 2036) and 1449063.JMLS01000016_gene902 (degree 1914).
+The undirected graph Paenibacillus sp. UNC451MF has 6548 nodes and 970053
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04526 and has 19 connected components, where the component
+with most nodes has 6506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 251, the mean node degree is 296.29,
+and the node degree mode is 2. The top 5 most central nodes are 1449063.JMLS01000005_gene3223
+(degree 2355), 1449063.JMLS01000002_gene1367 (degree 2103), 1449063.JMLS01000001_gene4134
+(degree 2057), 1449063.JMLS01000003_gene1816 (degree 2036) and 1449063.JMLS01000016_gene902
+(degree 1914).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Unc451mf(
 	
 	Datetime: 2021-02-03 23:03:59.349863
 	
-	The undirected graph Paenibacillus sp. UNC451MF has 6548 nodes and 970053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04526
-	and has 19 connected components, where the component with most nodes has 6506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 251, the mean node degree is 296.29, and the node degree mode is 2. The top 5
-	most central nodes are 1449063.JMLS01000005_gene3223 (degree 2355), 1449063.JMLS01000002_gene1367
-	(degree 2103), 1449063.JMLS01000001_gene4134 (degree 2057), 1449063.JMLS01000003_gene1816
-	(degree 2036) and 1449063.JMLS01000016_gene902 (degree 1914).
+	The undirected graph Paenibacillus sp. UNC451MF has 6548 nodes and 970053
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04526 and has 19 connected components, where the component
+	with most nodes has 6506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 251, the mean node degree is 296.29,
+	and the node degree mode is 2. The top 5 most central nodes are 1449063.JMLS01000005_gene3223
+	(degree 2355), 1449063.JMLS01000002_gene1367 (degree 2103), 1449063.JMLS01000001_gene4134
+	(degree 2057), 1449063.JMLS01000003_gene1816 (degree 2036) and 1449063.JMLS01000016_gene902
+	(degree 1914).
 	
 
 

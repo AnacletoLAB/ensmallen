@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:58.097604
 
-The undirected graph Selenomonas noxia F0398 has 1976 nodes and 149056 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07639 and
-has 3 connected components, where the component with most nodes has 1972 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 150.87, and the node degree mode is 21. The top 5 most central
-nodes are 702437.HMPREF9432_00350 (degree 797), 702437.HMPREF9432_01868 (degree 732),
-702437.HMPREF9432_00477 (degree 725), 702437.HMPREF9432_00139 (degree 701) and 702437.HMPREF9432_01106
+The undirected graph Selenomonas noxia F0398 has 1976 nodes and 149056
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07639 and has 3 connected components, where the component
+with most nodes has 1972 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 150.87,
+and the node degree mode is 21. The top 5 most central nodes are 702437.HMPREF9432_00350
+(degree 797), 702437.HMPREF9432_01868 (degree 732), 702437.HMPREF9432_00477
+(degree 725), 702437.HMPREF9432_00139 (degree 701) and 702437.HMPREF9432_01106
 (degree 672).
 
 
@@ -107,13 +108,14 @@ def SelenomonasNoxiaF0398(
 	
 	Datetime: 2021-02-02 21:33:58.097604
 	
-	The undirected graph Selenomonas noxia F0398 has 1976 nodes and 149056 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07639 and
-	has 3 connected components, where the component with most nodes has 1972 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 150.87, and the node degree mode is 21. The top 5 most central
-	nodes are 702437.HMPREF9432_00350 (degree 797), 702437.HMPREF9432_01868 (degree 732),
-	702437.HMPREF9432_00477 (degree 725), 702437.HMPREF9432_00139 (degree 701) and 702437.HMPREF9432_01106
+	The undirected graph Selenomonas noxia F0398 has 1976 nodes and 149056
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07639 and has 3 connected components, where the component
+	with most nodes has 1972 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 150.87,
+	and the node degree mode is 21. The top 5 most central nodes are 702437.HMPREF9432_00350
+	(degree 797), 702437.HMPREF9432_01868 (degree 732), 702437.HMPREF9432_00477
+	(degree 725), 702437.HMPREF9432_00139 (degree 701) and 702437.HMPREF9432_01106
 	(degree 672).
 	
 

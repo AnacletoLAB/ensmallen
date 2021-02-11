@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:03.027798
 
-The undirected graph Mycobacterium tuberculosis H37Ra has 4034 nodes and 606165 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07452
-and has 2 connected components, where the component with most nodes has 4032 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 260, the mean node degree is 300.53, and the node degree mode is 14. The top 5
-most central nodes are 419947.MRA_2551 (degree 1617), 419947.MRA_1947 (degree 1532),
-419947.MRA_1639 (degree 1426), 419947.MRA_3436 (degree 1425) and 419947.MRA_1811
-(degree 1405).
+The undirected graph Mycobacterium tuberculosis H37Ra has 4034 nodes and
+606165 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07452 and has 2 connected components, where the
+component with most nodes has 4032 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 260, the mean node degree
+is 300.53, and the node degree mode is 14. The top 5 most central nodes
+are 419947.MRA_2551 (degree 1617), 419947.MRA_1947 (degree 1532), 419947.MRA_1639
+(degree 1426), 419947.MRA_3436 (degree 1425) and 419947.MRA_1811 (degree
+1405).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumTuberculosisH37ra(
 	
 	Datetime: 2021-02-02 20:47:03.027798
 	
-	The undirected graph Mycobacterium tuberculosis H37Ra has 4034 nodes and 606165 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07452
-	and has 2 connected components, where the component with most nodes has 4032 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 260, the mean node degree is 300.53, and the node degree mode is 14. The top 5
-	most central nodes are 419947.MRA_2551 (degree 1617), 419947.MRA_1947 (degree 1532),
-	419947.MRA_1639 (degree 1426), 419947.MRA_3436 (degree 1425) and 419947.MRA_1811
-	(degree 1405).
+	The undirected graph Mycobacterium tuberculosis H37Ra has 4034 nodes and
+	606165 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07452 and has 2 connected components, where the
+	component with most nodes has 4032 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 260, the mean node degree
+	is 300.53, and the node degree mode is 14. The top 5 most central nodes
+	are 419947.MRA_2551 (degree 1617), 419947.MRA_1947 (degree 1532), 419947.MRA_1639
+	(degree 1426), 419947.MRA_3436 (degree 1425) and 419947.MRA_1811 (degree
+	1405).
 	
 
 

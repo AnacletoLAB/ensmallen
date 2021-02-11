@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:23.077875
 
-The undirected graph Bacillus sp. EB01 has 4921 nodes and 526144 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04346 and
-has 42 connected components, where the component with most nodes has 4812 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 213.84, and the node degree mode is 2. The top 5 most central
-nodes are 1347086.CCBA010000039_gene4869 (degree 1744), 1347086.CCBA010000034_gene2676
-(degree 1393), 1347086.CCBA010000004_gene4161 (degree 1380), 1347086.CCBA010000001_gene1969
-(degree 1380) and 1347086.CCBA010000009_gene1452 (degree 1352).
+The undirected graph Bacillus sp. EB01 has 4921 nodes and 526144 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04346 and has 42 connected components, where the component with most
+nodes has 4812 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 213.84, and
+the node degree mode is 2. The top 5 most central nodes are 1347086.CCBA010000039_gene4869
+(degree 1744), 1347086.CCBA010000034_gene2676 (degree 1393), 1347086.CCBA010000004_gene4161
+(degree 1380), 1347086.CCBA010000001_gene1969 (degree 1380) and 1347086.CCBA010000009_gene1452
+(degree 1352).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Eb01(
 	
 	Datetime: 2021-02-03 22:03:23.077875
 	
-	The undirected graph Bacillus sp. EB01 has 4921 nodes and 526144 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04346 and
-	has 42 connected components, where the component with most nodes has 4812 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 213.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1347086.CCBA010000039_gene4869 (degree 1744), 1347086.CCBA010000034_gene2676
-	(degree 1393), 1347086.CCBA010000004_gene4161 (degree 1380), 1347086.CCBA010000001_gene1969
-	(degree 1380) and 1347086.CCBA010000009_gene1452 (degree 1352).
+	The undirected graph Bacillus sp. EB01 has 4921 nodes and 526144 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04346 and has 42 connected components, where the component with most
+	nodes has 4812 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 213.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1347086.CCBA010000039_gene4869
+	(degree 1744), 1347086.CCBA010000034_gene2676 (degree 1393), 1347086.CCBA010000004_gene4161
+	(degree 1380), 1347086.CCBA010000001_gene1969 (degree 1380) and 1347086.CCBA010000009_gene1452
+	(degree 1352).
 	
 
 

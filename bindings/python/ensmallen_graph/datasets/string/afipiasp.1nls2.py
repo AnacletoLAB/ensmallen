@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:36.527091
 
-The undirected graph Afipia sp. 1NLS2 has 3798 nodes and 336038 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04660 and
-has 17 connected components, where the component with most nodes has 3763 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 176.96, and the node degree mode is 5. The top 5 most central
-nodes are 666684.AfiDRAFT_0945 (degree 1317), 666684.AfiDRAFT_0403 (degree 1244),
-666684.AfiDRAFT_2242 (degree 1070), 666684.AfiDRAFT_1542 (degree 1023) and 666684.AfiDRAFT_0478
+The undirected graph Afipia sp. 1NLS2 has 3798 nodes and 336038 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04660 and has 17 connected components, where the component with most
+nodes has 3763 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 176.96, and
+the node degree mode is 5. The top 5 most central nodes are 666684.AfiDRAFT_0945
+(degree 1317), 666684.AfiDRAFT_0403 (degree 1244), 666684.AfiDRAFT_2242
+(degree 1070), 666684.AfiDRAFT_1542 (degree 1023) and 666684.AfiDRAFT_0478
 (degree 1011).
 
 
@@ -107,13 +108,14 @@ def AfipiaSp.1nls2(
 	
 	Datetime: 2021-02-02 21:28:36.527091
 	
-	The undirected graph Afipia sp. 1NLS2 has 3798 nodes and 336038 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04660 and
-	has 17 connected components, where the component with most nodes has 3763 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 176.96, and the node degree mode is 5. The top 5 most central
-	nodes are 666684.AfiDRAFT_0945 (degree 1317), 666684.AfiDRAFT_0403 (degree 1244),
-	666684.AfiDRAFT_2242 (degree 1070), 666684.AfiDRAFT_1542 (degree 1023) and 666684.AfiDRAFT_0478
+	The undirected graph Afipia sp. 1NLS2 has 3798 nodes and 336038 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04660 and has 17 connected components, where the component with most
+	nodes has 3763 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 176.96, and
+	the node degree mode is 5. The top 5 most central nodes are 666684.AfiDRAFT_0945
+	(degree 1317), 666684.AfiDRAFT_0403 (degree 1244), 666684.AfiDRAFT_2242
+	(degree 1070), 666684.AfiDRAFT_1542 (degree 1023) and 666684.AfiDRAFT_0478
 	(degree 1011).
 	
 

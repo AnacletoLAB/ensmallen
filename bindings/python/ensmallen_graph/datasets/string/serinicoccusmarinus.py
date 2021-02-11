@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:48.484278
 
-The undirected graph Serinicoccus marinus has 3042 nodes and 277342 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05996 and
-has 8 connected components, where the component with most nodes has 3026 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 182.34, and the node degree mode is 3. The top 5 most central
-nodes are 1123251.ATWM01000002_gene415 (degree 1199), 1123251.ATWM01000004_gene1766
-(degree 1040), 1123251.ATWM01000008_gene2475 (degree 1020), 1123251.ATWM01000004_gene1840
-(degree 1018) and 1123251.ATWM01000005_gene1627 (degree 1004).
+The undirected graph Serinicoccus marinus has 3042 nodes and 277342 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05996 and has 8 connected components, where the component with most
+nodes has 3026 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 182.34, and
+the node degree mode is 3. The top 5 most central nodes are 1123251.ATWM01000002_gene415
+(degree 1199), 1123251.ATWM01000004_gene1766 (degree 1040), 1123251.ATWM01000008_gene2475
+(degree 1020), 1123251.ATWM01000004_gene1840 (degree 1018) and 1123251.ATWM01000005_gene1627
+(degree 1004).
 
 
 References
@@ -107,14 +108,15 @@ def SerinicoccusMarinus(
 	
 	Datetime: 2021-02-02 22:48:48.484278
 	
-	The undirected graph Serinicoccus marinus has 3042 nodes and 277342 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05996 and
-	has 8 connected components, where the component with most nodes has 3026 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 182.34, and the node degree mode is 3. The top 5 most central
-	nodes are 1123251.ATWM01000002_gene415 (degree 1199), 1123251.ATWM01000004_gene1766
-	(degree 1040), 1123251.ATWM01000008_gene2475 (degree 1020), 1123251.ATWM01000004_gene1840
-	(degree 1018) and 1123251.ATWM01000005_gene1627 (degree 1004).
+	The undirected graph Serinicoccus marinus has 3042 nodes and 277342 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05996 and has 8 connected components, where the component with most
+	nodes has 3026 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 182.34, and
+	the node degree mode is 3. The top 5 most central nodes are 1123251.ATWM01000002_gene415
+	(degree 1199), 1123251.ATWM01000004_gene1766 (degree 1040), 1123251.ATWM01000008_gene2475
+	(degree 1020), 1123251.ATWM01000004_gene1840 (degree 1018) and 1123251.ATWM01000005_gene1627
+	(degree 1004).
 	
 
 

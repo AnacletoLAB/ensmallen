@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:03.365272
 
-The undirected graph Alicyclobacillus herbarius has 3052 nodes and 269003 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05778
-and has 9 connected components, where the component with most nodes has 3034 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 176.28, and the node degree mode is 1. The top 5
-most central nodes are 1120972.AUMH01000004_gene1395 (degree 1209), 1120972.AUMH01000037_gene785
-(degree 1019), 1120972.AUMH01000001_gene1248 (degree 929), 1120972.AUMH01000026_gene2829
-(degree 905) and 1120972.AUMH01000025_gene2513 (degree 882).
+The undirected graph Alicyclobacillus herbarius has 3052 nodes and 269003
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05778 and has 9 connected components, where the component
+with most nodes has 3034 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 176.28,
+and the node degree mode is 1. The top 5 most central nodes are 1120972.AUMH01000004_gene1395
+(degree 1209), 1120972.AUMH01000037_gene785 (degree 1019), 1120972.AUMH01000001_gene1248
+(degree 929), 1120972.AUMH01000026_gene2829 (degree 905) and 1120972.AUMH01000025_gene2513
+(degree 882).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusHerbarius(
 	
 	Datetime: 2021-02-02 22:31:03.365272
 	
-	The undirected graph Alicyclobacillus herbarius has 3052 nodes and 269003 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05778
-	and has 9 connected components, where the component with most nodes has 3034 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 176.28, and the node degree mode is 1. The top 5
-	most central nodes are 1120972.AUMH01000004_gene1395 (degree 1209), 1120972.AUMH01000037_gene785
-	(degree 1019), 1120972.AUMH01000001_gene1248 (degree 929), 1120972.AUMH01000026_gene2829
-	(degree 905) and 1120972.AUMH01000025_gene2513 (degree 882).
+	The undirected graph Alicyclobacillus herbarius has 3052 nodes and 269003
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05778 and has 9 connected components, where the component
+	with most nodes has 3034 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 176.28,
+	and the node degree mode is 1. The top 5 most central nodes are 1120972.AUMH01000004_gene1395
+	(degree 1209), 1120972.AUMH01000037_gene785 (degree 1019), 1120972.AUMH01000001_gene1248
+	(degree 929), 1120972.AUMH01000026_gene2829 (degree 905) and 1120972.AUMH01000025_gene2513
+	(degree 882).
 	
 
 

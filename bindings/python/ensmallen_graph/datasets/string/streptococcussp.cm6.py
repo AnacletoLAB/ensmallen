@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:39.460273
 
-The undirected graph Streptococcus sp. CM6 has 1864 nodes and 124174 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07152 and
-has 3 connected components, where the component with most nodes has 1860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 133.23, and the node degree mode is 29. The top 5 most central
-nodes are 936580.HMPREF1516_1739 (degree 811), 936580.HMPREF1516_1775 (degree 710),
-936580.HMPREF1516_1403 (degree 654), 936580.HMPREF1516_1887 (degree 617) and 936580.HMPREF1516_0511
+The undirected graph Streptococcus sp. CM6 has 1864 nodes and 124174 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07152 and has 3 connected components, where the component with most
+nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 133.23, and
+the node degree mode is 29. The top 5 most central nodes are 936580.HMPREF1516_1739
+(degree 811), 936580.HMPREF1516_1775 (degree 710), 936580.HMPREF1516_1403
+(degree 654), 936580.HMPREF1516_1887 (degree 617) and 936580.HMPREF1516_0511
 (degree 605).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.Cm6(
 	
 	Datetime: 2021-02-02 22:00:39.460273
 	
-	The undirected graph Streptococcus sp. CM6 has 1864 nodes and 124174 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07152 and
-	has 3 connected components, where the component with most nodes has 1860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 133.23, and the node degree mode is 29. The top 5 most central
-	nodes are 936580.HMPREF1516_1739 (degree 811), 936580.HMPREF1516_1775 (degree 710),
-	936580.HMPREF1516_1403 (degree 654), 936580.HMPREF1516_1887 (degree 617) and 936580.HMPREF1516_0511
+	The undirected graph Streptococcus sp. CM6 has 1864 nodes and 124174 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07152 and has 3 connected components, where the component with most
+	nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 133.23, and
+	the node degree mode is 29. The top 5 most central nodes are 936580.HMPREF1516_1739
+	(degree 811), 936580.HMPREF1516_1775 (degree 710), 936580.HMPREF1516_1403
+	(degree 654), 936580.HMPREF1516_1887 (degree 617) and 936580.HMPREF1516_0511
 	(degree 605).
 	
 

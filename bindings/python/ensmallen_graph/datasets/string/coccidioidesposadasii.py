@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:22.197919
 
-The undirected graph Coccidioides posadasii has 6014 nodes and 473614 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02619 and
-has 19 connected components, where the component with most nodes has 5974 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 157.50, and the node degree mode is 1. The top 5 most central
-nodes are 199306.XP_003070044.1 (degree 1416), 199306.XP_003069715.1 (degree 1139),
-199306.XP_003070117.1 (degree 1028), 199306.XP_003068877.1 (degree 1003) and 199306.XP_003069787.1
+The undirected graph Coccidioides posadasii has 6014 nodes and 473614 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02619 and has 19 connected components, where the component with most
+nodes has 5974 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 157.50, and
+the node degree mode is 1. The top 5 most central nodes are 199306.XP_003070044.1
+(degree 1416), 199306.XP_003069715.1 (degree 1139), 199306.XP_003070117.1
+(degree 1028), 199306.XP_003068877.1 (degree 1003) and 199306.XP_003069787.1
 (degree 1003).
 
 
@@ -107,13 +108,14 @@ def CoccidioidesPosadasii(
 	
 	Datetime: 2021-02-02 19:59:22.197919
 	
-	The undirected graph Coccidioides posadasii has 6014 nodes and 473614 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02619 and
-	has 19 connected components, where the component with most nodes has 5974 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 157.50, and the node degree mode is 1. The top 5 most central
-	nodes are 199306.XP_003070044.1 (degree 1416), 199306.XP_003069715.1 (degree 1139),
-	199306.XP_003070117.1 (degree 1028), 199306.XP_003068877.1 (degree 1003) and 199306.XP_003069787.1
+	The undirected graph Coccidioides posadasii has 6014 nodes and 473614 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02619 and has 19 connected components, where the component with most
+	nodes has 5974 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 157.50, and
+	the node degree mode is 1. The top 5 most central nodes are 199306.XP_003070044.1
+	(degree 1416), 199306.XP_003069715.1 (degree 1139), 199306.XP_003070117.1
+	(degree 1028), 199306.XP_003068877.1 (degree 1003) and 199306.XP_003069787.1
 	(degree 1003).
 	
 

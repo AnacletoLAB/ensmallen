@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:58.790047
 
-The undirected graph Oligella ureolytica has 2575 nodes and 192227 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05800 and
-has 10 connected components, where the component with most nodes has 2553 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 149.30, and the node degree mode is 5. The top 5 most central
-nodes are 1122619.KB892328_gene1273 (degree 1054), 1122619.KB892280_gene1503 (degree
-1027), 1122619.KB892324_gene87 (degree 969), 1122619.KB892291_gene463 (degree 870)
-and 1122619.KB892280_gene1483 (degree 842).
+The undirected graph Oligella ureolytica has 2575 nodes and 192227 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05800 and has 10 connected components, where the component with most
+nodes has 2553 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 149.30, and
+the node degree mode is 5. The top 5 most central nodes are 1122619.KB892328_gene1273
+(degree 1054), 1122619.KB892280_gene1503 (degree 1027), 1122619.KB892324_gene87
+(degree 969), 1122619.KB892291_gene463 (degree 870) and 1122619.KB892280_gene1483
+(degree 842).
 
 
 References
@@ -107,14 +108,15 @@ def OligellaUreolytica(
 	
 	Datetime: 2021-02-02 22:43:58.790047
 	
-	The undirected graph Oligella ureolytica has 2575 nodes and 192227 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05800 and
-	has 10 connected components, where the component with most nodes has 2553 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 149.30, and the node degree mode is 5. The top 5 most central
-	nodes are 1122619.KB892328_gene1273 (degree 1054), 1122619.KB892280_gene1503 (degree
-	1027), 1122619.KB892324_gene87 (degree 969), 1122619.KB892291_gene463 (degree 870)
-	and 1122619.KB892280_gene1483 (degree 842).
+	The undirected graph Oligella ureolytica has 2575 nodes and 192227 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05800 and has 10 connected components, where the component with most
+	nodes has 2553 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 149.30, and
+	the node degree mode is 5. The top 5 most central nodes are 1122619.KB892328_gene1273
+	(degree 1054), 1122619.KB892280_gene1503 (degree 1027), 1122619.KB892324_gene87
+	(degree 969), 1122619.KB892291_gene463 (degree 870) and 1122619.KB892280_gene1483
+	(degree 842).
 	
 
 

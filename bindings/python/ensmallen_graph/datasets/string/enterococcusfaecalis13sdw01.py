@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:24.803792
 
-The undirected graph Enterococcus faecalis 13SDW01 has 3060 nodes and 292206 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06243
-and has 33 connected components, where the component with most nodes has 2988 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 144, the mean node degree is 190.98, and the node degree mode is 1. The top 5
-most central nodes are 1260356.D920_00901 (degree 1226), 1260356.D920_02019 (degree
-1198), 1260356.D920_00337 (degree 1166), 1260356.D920_01967 (degree 1063) and 1260356.D920_01520
-(degree 987).
+The undirected graph Enterococcus faecalis 13SDW01 has 3060 nodes and 292206
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06243 and has 33 connected components, where the component
+with most nodes has 2988 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 190.98,
+and the node degree mode is 1. The top 5 most central nodes are 1260356.D920_00901
+(degree 1226), 1260356.D920_02019 (degree 1198), 1260356.D920_00337 (degree
+1166), 1260356.D920_01967 (degree 1063) and 1260356.D920_01520 (degree
+987).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusFaecalis13sdw01(
 	
 	Datetime: 2021-02-02 23:35:24.803792
 	
-	The undirected graph Enterococcus faecalis 13SDW01 has 3060 nodes and 292206 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06243
-	and has 33 connected components, where the component with most nodes has 2988 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 144, the mean node degree is 190.98, and the node degree mode is 1. The top 5
-	most central nodes are 1260356.D920_00901 (degree 1226), 1260356.D920_02019 (degree
-	1198), 1260356.D920_00337 (degree 1166), 1260356.D920_01967 (degree 1063) and 1260356.D920_01520
-	(degree 987).
+	The undirected graph Enterococcus faecalis 13SDW01 has 3060 nodes and 292206
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06243 and has 33 connected components, where the component
+	with most nodes has 2988 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 190.98,
+	and the node degree mode is 1. The top 5 most central nodes are 1260356.D920_00901
+	(degree 1226), 1260356.D920_02019 (degree 1198), 1260356.D920_00337 (degree
+	1166), 1260356.D920_01967 (degree 1063) and 1260356.D920_01520 (degree
+	987).
 	
 
 

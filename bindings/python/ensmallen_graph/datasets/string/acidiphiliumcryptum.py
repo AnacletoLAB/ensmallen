@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:25.755845
 
-The undirected graph Acidiphilium cryptum has 3080 nodes and 282783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05964 and
-has 5 connected components, where the component with most nodes has 3067 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 183.63, and the node degree mode is 3. The top 5 most central
-nodes are 349163.Acry_1277 (degree 1248), 349163.Acry_1504 (degree 1226), 349163.Acry_0899
-(degree 1053), 349163.Acry_1666 (degree 939) and 349163.Acry_2727 (degree 885).
+The undirected graph Acidiphilium cryptum has 3080 nodes and 282783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05964 and has 5 connected components, where the component with most
+nodes has 3067 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 183.63, and
+the node degree mode is 3. The top 5 most central nodes are 349163.Acry_1277
+(degree 1248), 349163.Acry_1504 (degree 1226), 349163.Acry_0899 (degree
+1053), 349163.Acry_1666 (degree 939) and 349163.Acry_2727 (degree 885).
 
 
 References
@@ -106,13 +107,14 @@ def AcidiphiliumCryptum(
 	
 	Datetime: 2021-02-02 20:32:25.755845
 	
-	The undirected graph Acidiphilium cryptum has 3080 nodes and 282783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05964 and
-	has 5 connected components, where the component with most nodes has 3067 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 183.63, and the node degree mode is 3. The top 5 most central
-	nodes are 349163.Acry_1277 (degree 1248), 349163.Acry_1504 (degree 1226), 349163.Acry_0899
-	(degree 1053), 349163.Acry_1666 (degree 939) and 349163.Acry_2727 (degree 885).
+	The undirected graph Acidiphilium cryptum has 3080 nodes and 282783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05964 and has 5 connected components, where the component with most
+	nodes has 3067 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 183.63, and
+	the node degree mode is 3. The top 5 most central nodes are 349163.Acry_1277
+	(degree 1248), 349163.Acry_1504 (degree 1226), 349163.Acry_0899 (degree
+	1053), 349163.Acry_1666 (degree 939) and 349163.Acry_2727 (degree 885).
 	
 
 

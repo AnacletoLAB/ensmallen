@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:17.262524
 
-The undirected graph Haemophilus haemolyticus M21639 has 2204 nodes and 134950 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05559
-and has 12 connected components, where the component with most nodes has 2165 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 122.46, and the node degree mode is 5. The top 5
-most central nodes are 1028806.GGE_0147 (degree 799), 1028806.GGE_0050 (degree 735),
-1028806.GGE_2154 (degree 660), 1028806.GGE_1472 (degree 657) and 1028806.GGE_1471
-(degree 620).
+The undirected graph Haemophilus haemolyticus M21639 has 2204 nodes and
+134950 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05559 and has 12 connected components, where the
+component with most nodes has 2165 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 122.46, and the node degree mode is 5. The top 5 most central nodes
+are 1028806.GGE_0147 (degree 799), 1028806.GGE_0050 (degree 735), 1028806.GGE_2154
+(degree 660), 1028806.GGE_1472 (degree 657) and 1028806.GGE_1471 (degree
+620).
 
 
 References
@@ -107,14 +108,15 @@ def HaemophilusHaemolyticusM21639(
 	
 	Datetime: 2021-02-02 22:10:17.262524
 	
-	The undirected graph Haemophilus haemolyticus M21639 has 2204 nodes and 134950 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05559
-	and has 12 connected components, where the component with most nodes has 2165 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 122.46, and the node degree mode is 5. The top 5
-	most central nodes are 1028806.GGE_0147 (degree 799), 1028806.GGE_0050 (degree 735),
-	1028806.GGE_2154 (degree 660), 1028806.GGE_1472 (degree 657) and 1028806.GGE_1471
-	(degree 620).
+	The undirected graph Haemophilus haemolyticus M21639 has 2204 nodes and
+	134950 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05559 and has 12 connected components, where the
+	component with most nodes has 2165 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 122.46, and the node degree mode is 5. The top 5 most central nodes
+	are 1028806.GGE_0147 (degree 799), 1028806.GGE_0050 (degree 735), 1028806.GGE_2154
+	(degree 660), 1028806.GGE_1472 (degree 657) and 1028806.GGE_1471 (degree
+	620).
 	
 
 

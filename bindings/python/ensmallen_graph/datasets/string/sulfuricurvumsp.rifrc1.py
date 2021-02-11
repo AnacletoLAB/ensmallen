@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:34.074908
 
-The undirected graph Sulfuricurvum sp. RIFRC1 has 2354 nodes and 148051 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05346
-and has 4 connected components, where the component with most nodes has 2347 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 125.79, and the node degree mode is 7. The top 5 most
-central nodes are 1249480.B649_04795 (degree 992), 1249480.B649_01495 (degree 780),
-1249480.B649_04705 (degree 713), 1249480.B649_05660 (degree 712) and 1249480.B649_01735
-(degree 704).
+The undirected graph Sulfuricurvum sp. RIFRC1 has 2354 nodes and 148051
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05346 and has 4 connected components, where the component
+with most nodes has 2347 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 125.79,
+and the node degree mode is 7. The top 5 most central nodes are 1249480.B649_04795
+(degree 992), 1249480.B649_01495 (degree 780), 1249480.B649_04705 (degree
+713), 1249480.B649_05660 (degree 712) and 1249480.B649_01735 (degree 704).
 
 
 References
@@ -107,14 +107,14 @@ def SulfuricurvumSp.Rifrc1(
 	
 	Datetime: 2021-02-02 23:34:34.074908
 	
-	The undirected graph Sulfuricurvum sp. RIFRC1 has 2354 nodes and 148051 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05346
-	and has 4 connected components, where the component with most nodes has 2347 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 125.79, and the node degree mode is 7. The top 5 most
-	central nodes are 1249480.B649_04795 (degree 992), 1249480.B649_01495 (degree 780),
-	1249480.B649_04705 (degree 713), 1249480.B649_05660 (degree 712) and 1249480.B649_01735
-	(degree 704).
+	The undirected graph Sulfuricurvum sp. RIFRC1 has 2354 nodes and 148051
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05346 and has 4 connected components, where the component
+	with most nodes has 2347 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 125.79,
+	and the node degree mode is 7. The top 5 most central nodes are 1249480.B649_04795
+	(degree 992), 1249480.B649_01495 (degree 780), 1249480.B649_04705 (degree
+	713), 1249480.B649_05660 (degree 712) and 1249480.B649_01735 (degree 704).
 	
 
 

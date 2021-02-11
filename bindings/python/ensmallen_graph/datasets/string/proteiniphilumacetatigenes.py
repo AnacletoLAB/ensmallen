@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:18.319212
 
-The undirected graph Proteiniphilum acetatigenes has 3610 nodes and 396802 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06091
-and has 19 connected components, where the component with most nodes has 3567 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 219.83, and the node degree mode is 1. The top 5
-most central nodes are 1123008.KB905693_gene1161 (degree 1089), 1123008.KB905693_gene1421
-(degree 1067), 1123008.KB905696_gene2812 (degree 1060), 1123008.KB905699_gene2006
-(degree 1048) and 1123008.KB905694_gene1882 (degree 928).
+The undirected graph Proteiniphilum acetatigenes has 3610 nodes and 396802
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06091 and has 19 connected components, where the component
+with most nodes has 3567 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 219.83,
+and the node degree mode is 1. The top 5 most central nodes are 1123008.KB905693_gene1161
+(degree 1089), 1123008.KB905693_gene1421 (degree 1067), 1123008.KB905696_gene2812
+(degree 1060), 1123008.KB905699_gene2006 (degree 1048) and 1123008.KB905694_gene1882
+(degree 928).
 
 
 References
@@ -107,14 +108,15 @@ def ProteiniphilumAcetatigenes(
 	
 	Datetime: 2021-02-02 22:46:18.319212
 	
-	The undirected graph Proteiniphilum acetatigenes has 3610 nodes and 396802 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06091
-	and has 19 connected components, where the component with most nodes has 3567 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 219.83, and the node degree mode is 1. The top 5
-	most central nodes are 1123008.KB905693_gene1161 (degree 1089), 1123008.KB905693_gene1421
-	(degree 1067), 1123008.KB905696_gene2812 (degree 1060), 1123008.KB905699_gene2006
-	(degree 1048) and 1123008.KB905694_gene1882 (degree 928).
+	The undirected graph Proteiniphilum acetatigenes has 3610 nodes and 396802
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06091 and has 19 connected components, where the component
+	with most nodes has 3567 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 219.83,
+	and the node degree mode is 1. The top 5 most central nodes are 1123008.KB905693_gene1161
+	(degree 1089), 1123008.KB905693_gene1421 (degree 1067), 1123008.KB905696_gene2812
+	(degree 1060), 1123008.KB905699_gene2006 (degree 1048) and 1123008.KB905694_gene1882
+	(degree 928).
 	
 
 

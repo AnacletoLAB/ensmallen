@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:28.267960
 
-The undirected graph Streptomyces sp. CNT372 has 5411 nodes and 635581 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04342 and
-has 26 connected components, where the component with most nodes has 5350 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 234.92, and the node degree mode is 2. The top 5 most central
-nodes are 1169154.KB897792_gene1014 (degree 2593), 1169154.KB897777_gene4016 (degree
-1720), 1169154.KB897783_gene4462 (degree 1686), 1169154.KB897780_gene2299 (degree
-1590) and 1169154.KB897783_gene4486 (degree 1564).
+The undirected graph Streptomyces sp. CNT372 has 5411 nodes and 635581
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04342 and has 26 connected components, where the component
+with most nodes has 5350 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 234.92,
+and the node degree mode is 2. The top 5 most central nodes are 1169154.KB897792_gene1014
+(degree 2593), 1169154.KB897777_gene4016 (degree 1720), 1169154.KB897783_gene4462
+(degree 1686), 1169154.KB897780_gene2299 (degree 1590) and 1169154.KB897783_gene4486
+(degree 1564).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Cnt372(
 	
 	Datetime: 2021-02-02 23:06:28.267960
 	
-	The undirected graph Streptomyces sp. CNT372 has 5411 nodes and 635581 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04342 and
-	has 26 connected components, where the component with most nodes has 5350 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 234.92, and the node degree mode is 2. The top 5 most central
-	nodes are 1169154.KB897792_gene1014 (degree 2593), 1169154.KB897777_gene4016 (degree
-	1720), 1169154.KB897783_gene4462 (degree 1686), 1169154.KB897780_gene2299 (degree
-	1590) and 1169154.KB897783_gene4486 (degree 1564).
+	The undirected graph Streptomyces sp. CNT372 has 5411 nodes and 635581
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04342 and has 26 connected components, where the component
+	with most nodes has 5350 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 234.92,
+	and the node degree mode is 2. The top 5 most central nodes are 1169154.KB897792_gene1014
+	(degree 2593), 1169154.KB897777_gene4016 (degree 1720), 1169154.KB897783_gene4462
+	(degree 1686), 1169154.KB897780_gene2299 (degree 1590) and 1169154.KB897783_gene4486
+	(degree 1564).
 	
 
 

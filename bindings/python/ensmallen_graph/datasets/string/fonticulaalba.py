@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:55.157683
 
-The undirected graph Fonticula alba has 3424 nodes and 537339 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.09169 and
-has 3 connected components, where the component with most nodes has 3419 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 272,
-the mean node degree is 313.87, and the node degree mode is 33. The top 5 most central
-nodes are 691883.XP_009495687.1 (degree 1456), 691883.XP_009494408.1 (degree 1402),
-691883.XP_009492320.1 (degree 1383), 691883.XP_009492368.1 (degree 1293) and 691883.XP_009498194.1
+The undirected graph Fonticula alba has 3424 nodes and 537339 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09169 and has 3 connected components, where the component with most
+nodes has 3419 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 272, the mean node degree is 313.87, and
+the node degree mode is 33. The top 5 most central nodes are 691883.XP_009495687.1
+(degree 1456), 691883.XP_009494408.1 (degree 1402), 691883.XP_009492320.1
+(degree 1383), 691883.XP_009492368.1 (degree 1293) and 691883.XP_009498194.1
 (degree 1265).
 
 
@@ -107,13 +108,14 @@ def FonticulaAlba(
 	
 	Datetime: 2021-02-02 21:31:55.157683
 	
-	The undirected graph Fonticula alba has 3424 nodes and 537339 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.09169 and
-	has 3 connected components, where the component with most nodes has 3419 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 272,
-	the mean node degree is 313.87, and the node degree mode is 33. The top 5 most central
-	nodes are 691883.XP_009495687.1 (degree 1456), 691883.XP_009494408.1 (degree 1402),
-	691883.XP_009492320.1 (degree 1383), 691883.XP_009492368.1 (degree 1293) and 691883.XP_009498194.1
+	The undirected graph Fonticula alba has 3424 nodes and 537339 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09169 and has 3 connected components, where the component with most
+	nodes has 3419 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 272, the mean node degree is 313.87, and
+	the node degree mode is 33. The top 5 most central nodes are 691883.XP_009495687.1
+	(degree 1456), 691883.XP_009494408.1 (degree 1402), 691883.XP_009492320.1
+	(degree 1383), 691883.XP_009492368.1 (degree 1293) and 691883.XP_009498194.1
 	(degree 1265).
 	
 

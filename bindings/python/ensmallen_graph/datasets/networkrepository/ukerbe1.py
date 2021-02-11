@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:22:42.613237
 
-The undirected graph ukerbe1 has 5981 nodes and 7852 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00044 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 2.63, and the node degree mode is 2. The top 5 most central nodes are 3834 (degree
-8), 3830 (degree 8), 858 (degree 8), 854 (degree 8) and 5598 (degree 6).
+The undirected graph ukerbe1 has 5981 nodes and 7852 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00044 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 2.63, and the node degree mode
+is 2. The top 5 most central nodes are 3834 (degree 8), 3830 (degree 8),
+858 (degree 8), 854 (degree 8) and 5598 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def Ukerbe1(
 	
 	Datetime: 2021-02-06 09:22:42.613237
 	
-	The undirected graph ukerbe1 has 5981 nodes and 7852 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00044 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 2.63, and the node degree mode is 2. The top 5 most central nodes are 3834 (degree
-	8), 3830 (degree 8), 858 (degree 8), 854 (degree 8) and 5598 (degree 6).
+	The undirected graph ukerbe1 has 5981 nodes and 7852 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00044 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 2.63, and the node degree mode
+	is 2. The top 5 most central nodes are 3834 (degree 8), 3830 (degree 8),
+	858 (degree 8), 854 (degree 8) and 5598 (degree 6).
 	
 
 

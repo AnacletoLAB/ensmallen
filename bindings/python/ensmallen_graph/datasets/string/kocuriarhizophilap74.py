@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:25.222208
 
-The undirected graph Kocuria rhizophila P74 has 2341 nodes and 196772 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07184 and
-has 2 connected components, where the component with most nodes has 2339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 168.11, and the node degree mode is 3. The top 5 most central
-nodes are 1029824.AFID01000001_gene1995 (degree 938), 1029824.AFID01000001_gene1904
-(degree 922), 1029824.AFID01000002_gene1436 (degree 817), 1029824.AFID01000002_gene1653
-(degree 811) and 1029824.AFID01000002_gene1649 (degree 781).
+The undirected graph Kocuria rhizophila P74 has 2341 nodes and 196772 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07184 and has 2 connected components, where the component with most
+nodes has 2339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 168.11, and
+the node degree mode is 3. The top 5 most central nodes are 1029824.AFID01000001_gene1995
+(degree 938), 1029824.AFID01000001_gene1904 (degree 922), 1029824.AFID01000002_gene1436
+(degree 817), 1029824.AFID01000002_gene1653 (degree 811) and 1029824.AFID01000002_gene1649
+(degree 781).
 
 
 References
@@ -107,14 +108,15 @@ def KocuriaRhizophilaP74(
 	
 	Datetime: 2021-02-02 22:10:25.222208
 	
-	The undirected graph Kocuria rhizophila P74 has 2341 nodes and 196772 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07184 and
-	has 2 connected components, where the component with most nodes has 2339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 168.11, and the node degree mode is 3. The top 5 most central
-	nodes are 1029824.AFID01000001_gene1995 (degree 938), 1029824.AFID01000001_gene1904
-	(degree 922), 1029824.AFID01000002_gene1436 (degree 817), 1029824.AFID01000002_gene1653
-	(degree 811) and 1029824.AFID01000002_gene1649 (degree 781).
+	The undirected graph Kocuria rhizophila P74 has 2341 nodes and 196772 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07184 and has 2 connected components, where the component with most
+	nodes has 2339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 168.11, and
+	the node degree mode is 3. The top 5 most central nodes are 1029824.AFID01000001_gene1995
+	(degree 938), 1029824.AFID01000001_gene1904 (degree 922), 1029824.AFID01000002_gene1436
+	(degree 817), 1029824.AFID01000002_gene1653 (degree 811) and 1029824.AFID01000002_gene1649
+	(degree 781).
 	
 
 

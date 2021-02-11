@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:53.113455
 
-The undirected graph Aquifex aeolicus has 1541 nodes and 103122 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08691 and
-is connected, as it has a single component. The graph median node degree is 111,
-the mean node degree is 133.84, and the node degree mode is 8. The top 5 most central
-nodes are 224324.aq_411 (degree 754), 224324.aq_236 (degree 670), 224324.aq_2011
-(degree 655), 224324.aq_920 (degree 629) and 224324.aq_996 (degree 607).
+The undirected graph Aquifex aeolicus has 1541 nodes and 103122 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08691 and is connected, as it has a single component. The graph median
+node degree is 111, the mean node degree is 133.84, and the node degree
+mode is 8. The top 5 most central nodes are 224324.aq_411 (degree 754),
+224324.aq_236 (degree 670), 224324.aq_2011 (degree 655), 224324.aq_920
+(degree 629) and 224324.aq_996 (degree 607).
 
 
 References
@@ -105,12 +106,13 @@ def AquifexAeolicus(
 	
 	Datetime: 2021-02-02 20:04:53.113455
 	
-	The undirected graph Aquifex aeolicus has 1541 nodes and 103122 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08691 and
-	is connected, as it has a single component. The graph median node degree is 111,
-	the mean node degree is 133.84, and the node degree mode is 8. The top 5 most central
-	nodes are 224324.aq_411 (degree 754), 224324.aq_236 (degree 670), 224324.aq_2011
-	(degree 655), 224324.aq_920 (degree 629) and 224324.aq_996 (degree 607).
+	The undirected graph Aquifex aeolicus has 1541 nodes and 103122 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08691 and is connected, as it has a single component. The graph median
+	node degree is 111, the mean node degree is 133.84, and the node degree
+	mode is 8. The top 5 most central nodes are 224324.aq_411 (degree 754),
+	224324.aq_236 (degree 670), 224324.aq_2011 (degree 655), 224324.aq_920
+	(degree 629) and 224324.aq_996 (degree 607).
 	
 
 

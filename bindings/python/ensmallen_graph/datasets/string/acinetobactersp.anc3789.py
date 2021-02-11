@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:35.004104
 
-The undirected graph Acinetobacter sp. ANC3789 has 2997 nodes and 267148 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05950
-and has 13 connected components, where the component with most nodes has 2967 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 178.28, and the node degree mode is 2. The top 5
-most central nodes are 1217714.F975_00605 (degree 1173), 1217714.F975_00388 (degree
-1001), 1217714.F975_00400 (degree 970), 1217714.F975_00704 (degree 951) and 1217714.F975_02317
-(degree 925).
+The undirected graph Acinetobacter sp. ANC3789 has 2997 nodes and 267148
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05950 and has 13 connected components, where the component
+with most nodes has 2967 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 178.28,
+and the node degree mode is 2. The top 5 most central nodes are 1217714.F975_00605
+(degree 1173), 1217714.F975_00388 (degree 1001), 1217714.F975_00400 (degree
+970), 1217714.F975_00704 (degree 951) and 1217714.F975_02317 (degree 925).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterSp.Anc3789(
 	
 	Datetime: 2021-02-02 23:21:35.004104
 	
-	The undirected graph Acinetobacter sp. ANC3789 has 2997 nodes and 267148 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05950
-	and has 13 connected components, where the component with most nodes has 2967 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 178.28, and the node degree mode is 2. The top 5
-	most central nodes are 1217714.F975_00605 (degree 1173), 1217714.F975_00388 (degree
-	1001), 1217714.F975_00400 (degree 970), 1217714.F975_00704 (degree 951) and 1217714.F975_02317
-	(degree 925).
+	The undirected graph Acinetobacter sp. ANC3789 has 2997 nodes and 267148
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05950 and has 13 connected components, where the component
+	with most nodes has 2967 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 178.28,
+	and the node degree mode is 2. The top 5 most central nodes are 1217714.F975_00605
+	(degree 1173), 1217714.F975_00388 (degree 1001), 1217714.F975_00400 (degree
+	970), 1217714.F975_00704 (degree 951) and 1217714.F975_02317 (degree 925).
 	
 
 

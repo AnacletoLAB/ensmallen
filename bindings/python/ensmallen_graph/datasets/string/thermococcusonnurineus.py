@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:39.619457
 
-The undirected graph Thermococcus onnurineus has 1966 nodes and 176652 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09145 and
-has 3 connected components, where the component with most nodes has 1961 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 179.71, and the node degree mode is 2. The top 5 most central
-nodes are 523850.TON_0639 (degree 744), 523850.TON_1407 (degree 631), 523850.TON_1640
-(degree 597), 523850.TON_1647 (degree 574) and 523850.TON_0826 (degree 568).
+The undirected graph Thermococcus onnurineus has 1966 nodes and 176652
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09145 and has 3 connected components, where the component
+with most nodes has 1961 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 178, the mean node degree is 179.71,
+and the node degree mode is 2. The top 5 most central nodes are 523850.TON_0639
+(degree 744), 523850.TON_1407 (degree 631), 523850.TON_1640 (degree 597),
+523850.TON_1647 (degree 574) and 523850.TON_0826 (degree 568).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusOnnurineus(
 	
 	Datetime: 2021-02-02 21:04:39.619457
 	
-	The undirected graph Thermococcus onnurineus has 1966 nodes and 176652 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09145 and
-	has 3 connected components, where the component with most nodes has 1961 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 179.71, and the node degree mode is 2. The top 5 most central
-	nodes are 523850.TON_0639 (degree 744), 523850.TON_1407 (degree 631), 523850.TON_1640
-	(degree 597), 523850.TON_1647 (degree 574) and 523850.TON_0826 (degree 568).
+	The undirected graph Thermococcus onnurineus has 1966 nodes and 176652
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09145 and has 3 connected components, where the component
+	with most nodes has 1961 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 178, the mean node degree is 179.71,
+	and the node degree mode is 2. The top 5 most central nodes are 523850.TON_0639
+	(degree 744), 523850.TON_1407 (degree 631), 523850.TON_1640 (degree 597),
+	523850.TON_1647 (degree 574) and 523850.TON_0826 (degree 568).
 	
 
 

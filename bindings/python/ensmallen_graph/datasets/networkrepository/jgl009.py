@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:58.465148
 
-The undirected graph jgl009 has 9 nodes and 40 unweighted edges, of which 8 are self-loops.
-The graph is complete as it has a density of 1.00000 and is connected, as it has
-a single component. The graph median node degree is 8, the mean node degree is 8.00,
-and the node degree mode is 8. The top 5 most central nodes are 9 (degree 9), 8 (degree
-9), 3 (degree 8), 7 (degree 8) and 6 (degree 8).
+The undirected graph jgl009 has 9 nodes and 40 unweighted edges, of which
+8 are self-loops. The graph is complete as it has a density of 1.00000
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 8.00, and the node degree mode is 8. The
+top 5 most central nodes are 9 (degree 9), 8 (degree 9), 3 (degree 8),
+7 (degree 8) and 6 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Jgl009(
 	
 	Datetime: 2021-02-06 08:12:58.465148
 	
-	The undirected graph jgl009 has 9 nodes and 40 unweighted edges, of which 8 are self-loops.
-	The graph is complete as it has a density of 1.00000 and is connected, as it has
-	a single component. The graph median node degree is 8, the mean node degree is 8.00,
-	and the node degree mode is 8. The top 5 most central nodes are 9 (degree 9), 8 (degree
-	9), 3 (degree 8), 7 (degree 8) and 6 (degree 8).
+	The undirected graph jgl009 has 9 nodes and 40 unweighted edges, of which
+	8 are self-loops. The graph is complete as it has a density of 1.00000
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 8.00, and the node degree mode is 8. The
+	top 5 most central nodes are 9 (degree 9), 8 (degree 9), 3 (degree 8),
+	7 (degree 8) and 6 (degree 8).
 	
 
 

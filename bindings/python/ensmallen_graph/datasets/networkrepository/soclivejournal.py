@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:11:54.327073
 
-The undirected graph soc-livejournal has 4033137 nodes and 27933062 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 5, the mean node degree is 13.85, and the node degree mode is 1. The top 5 most
-central nodes are 7929 (degree 2651), 434686 (degree 1527), 222412 (degree 1242),
-43471 (degree 833) and 576327 (degree 796).
+The undirected graph soc-livejournal has 4033137 nodes and 27933062 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 5, the mean node degree is 13.85, and the
+node degree mode is 1. The top 5 most central nodes are 7929 (degree 2651),
+434686 (degree 1527), 222412 (degree 1242), 43471 (degree 833) and 576327
+(degree 796).
 
 
 References
@@ -110,12 +111,13 @@ def SocLivejournal(
 	
 	Datetime: 2021-02-07 16:11:54.327073
 	
-	The undirected graph soc-livejournal has 4033137 nodes and 27933062 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 5, the mean node degree is 13.85, and the node degree mode is 1. The top 5 most
-	central nodes are 7929 (degree 2651), 434686 (degree 1527), 222412 (degree 1242),
-	43471 (degree 833) and 576327 (degree 796).
+	The undirected graph soc-livejournal has 4033137 nodes and 27933062 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 5, the mean node degree is 13.85, and the
+	node degree mode is 1. The top 5 most central nodes are 7929 (degree 2651),
+	434686 (degree 1527), 222412 (degree 1242), 43471 (degree 833) and 576327
+	(degree 796).
 	
 
 

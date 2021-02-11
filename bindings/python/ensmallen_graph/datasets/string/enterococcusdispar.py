@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:29.894414
 
-The undirected graph Enterococcus dispar has 2623 nodes and 213310 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06203 and
-has 10 connected components, where the component with most nodes has 2600 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 162.65, and the node degree mode is 23. The top 5 most central
-nodes are 1139219.I569_00622 (degree 1103), 1139219.I569_00284 (degree 962), 1139219.I569_01276
-(degree 943), 1139219.I569_01733 (degree 939) and 1139219.I569_01973 (degree 887).
+The undirected graph Enterococcus dispar has 2623 nodes and 213310 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06203 and has 10 connected components, where the component with most
+nodes has 2600 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 162.65, and
+the node degree mode is 23. The top 5 most central nodes are 1139219.I569_00622
+(degree 1103), 1139219.I569_00284 (degree 962), 1139219.I569_01276 (degree
+943), 1139219.I569_01733 (degree 939) and 1139219.I569_01973 (degree 887).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusDispar(
 	
 	Datetime: 2021-02-02 22:57:29.894414
 	
-	The undirected graph Enterococcus dispar has 2623 nodes and 213310 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06203 and
-	has 10 connected components, where the component with most nodes has 2600 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 162.65, and the node degree mode is 23. The top 5 most central
-	nodes are 1139219.I569_00622 (degree 1103), 1139219.I569_00284 (degree 962), 1139219.I569_01276
-	(degree 943), 1139219.I569_01733 (degree 939) and 1139219.I569_01973 (degree 887).
+	The undirected graph Enterococcus dispar has 2623 nodes and 213310 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06203 and has 10 connected components, where the component with most
+	nodes has 2600 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 162.65, and
+	the node degree mode is 23. The top 5 most central nodes are 1139219.I569_00622
+	(degree 1103), 1139219.I569_00284 (degree 962), 1139219.I569_01276 (degree
+	943), 1139219.I569_01733 (degree 939) and 1139219.I569_01973 (degree 887).
 	
 
 

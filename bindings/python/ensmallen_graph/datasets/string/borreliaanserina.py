@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:34.721890
 
-The undirected graph Borrelia anserina has 844 nodes and 62528 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.17577
-and has 5 connected components, where the component with most nodes has 835 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 148.17, and the node degree mode is 51. The top 5
-most central nodes are 1313293.BAN_0060400 (degree 516), 1313293.BAN_0073400 (degree
-516), 1313293.BAN_0091900 (degree 455), 1313293.BAN_0056200 (degree 452) and 1313293.BAN_0101900
-(degree 418).
+The undirected graph Borrelia anserina has 844 nodes and 62528 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17577 and has 5 connected components, where the component
+with most nodes has 835 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 148.17,
+and the node degree mode is 51. The top 5 most central nodes are 1313293.BAN_0060400
+(degree 516), 1313293.BAN_0073400 (degree 516), 1313293.BAN_0091900 (degree
+455), 1313293.BAN_0056200 (degree 452) and 1313293.BAN_0101900 (degree
+418).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaAnserina(
 	
 	Datetime: 2021-02-03 21:46:34.721890
 	
-	The undirected graph Borrelia anserina has 844 nodes and 62528 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.17577
-	and has 5 connected components, where the component with most nodes has 835 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 148.17, and the node degree mode is 51. The top 5
-	most central nodes are 1313293.BAN_0060400 (degree 516), 1313293.BAN_0073400 (degree
-	516), 1313293.BAN_0091900 (degree 455), 1313293.BAN_0056200 (degree 452) and 1313293.BAN_0101900
-	(degree 418).
+	The undirected graph Borrelia anserina has 844 nodes and 62528 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17577 and has 5 connected components, where the component
+	with most nodes has 835 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 148.17,
+	and the node degree mode is 51. The top 5 most central nodes are 1313293.BAN_0060400
+	(degree 516), 1313293.BAN_0073400 (degree 516), 1313293.BAN_0091900 (degree
+	455), 1313293.BAN_0056200 (degree 452) and 1313293.BAN_0101900 (degree
+	418).
 	
 
 

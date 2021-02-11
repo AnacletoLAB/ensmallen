@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:56:19.117753
 
-The undirected graph IG5-17 has 30162 nodes and 1034626 weighted edges, of which
-26 are self-loops. The graph is sparse as it has a density of 0.00227 and is connected,
-as it has a single component. The graph median node degree is 38, the mean node degree
-is 68.60, and the node degree mode is 10. The top 5 most central nodes are 27925
-(degree 1243), 27935 (degree 1181), 27893 (degree 1142), 27942 (degree 1124) and
-27932 (degree 1114).
+The undirected graph IG5-17 has 30162 nodes and 1034626 weighted edges,
+of which 26 are self-loops. The graph is sparse as it has a density of
+0.00227 and is connected, as it has a single component. The graph median
+node degree is 38, the mean node degree is 68.60, and the node degree mode
+is 10. The top 5 most central nodes are 27925 (degree 1243), 27935 (degree
+1181), 27893 (degree 1142), 27942 (degree 1124) and 27932 (degree 1114).
 
 
 References
@@ -102,12 +102,12 @@ def Ig517(
 	
 	Datetime: 2021-02-06 11:56:19.117753
 	
-	The undirected graph IG5-17 has 30162 nodes and 1034626 weighted edges, of which
-	26 are self-loops. The graph is sparse as it has a density of 0.00227 and is connected,
-	as it has a single component. The graph median node degree is 38, the mean node degree
-	is 68.60, and the node degree mode is 10. The top 5 most central nodes are 27925
-	(degree 1243), 27935 (degree 1181), 27893 (degree 1142), 27942 (degree 1124) and
-	27932 (degree 1114).
+	The undirected graph IG5-17 has 30162 nodes and 1034626 weighted edges,
+	of which 26 are self-loops. The graph is sparse as it has a density of
+	0.00227 and is connected, as it has a single component. The graph median
+	node degree is 38, the mean node degree is 68.60, and the node degree mode
+	is 10. The top 5 most central nodes are 27925 (degree 1243), 27935 (degree
+	1181), 27893 (degree 1142), 27942 (degree 1124) and 27932 (degree 1114).
 	
 
 

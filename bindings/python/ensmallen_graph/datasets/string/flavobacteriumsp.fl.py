@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:05.204084
 
-The undirected graph Flavobacterium sp. Fl has 4480 nodes and 531095 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05294 and
-has 14 connected components, where the component with most nodes has 4442 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 237.10, and the node degree mode is 6. The top 5 most central
-nodes are 1506583.JQJY01000001_gene524 (degree 1688), 1506583.JQJY01000001_gene668
-(degree 1309), 1506583.JQJY01000002_gene1270 (degree 1305), 1506583.JQJY01000003_gene3318
-(degree 1238) and 1506583.JQJY01000004_gene2839 (degree 1092).
+The undirected graph Flavobacterium sp. Fl has 4480 nodes and 531095 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05294 and has 14 connected components, where the component with most
+nodes has 4442 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 237.10, and
+the node degree mode is 6. The top 5 most central nodes are 1506583.JQJY01000001_gene524
+(degree 1688), 1506583.JQJY01000001_gene668 (degree 1309), 1506583.JQJY01000002_gene1270
+(degree 1305), 1506583.JQJY01000003_gene3318 (degree 1238) and 1506583.JQJY01000004_gene2839
+(degree 1092).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Fl(
 	
 	Datetime: 2021-02-03 23:17:05.204084
 	
-	The undirected graph Flavobacterium sp. Fl has 4480 nodes and 531095 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05294 and
-	has 14 connected components, where the component with most nodes has 4442 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 237.10, and the node degree mode is 6. The top 5 most central
-	nodes are 1506583.JQJY01000001_gene524 (degree 1688), 1506583.JQJY01000001_gene668
-	(degree 1309), 1506583.JQJY01000002_gene1270 (degree 1305), 1506583.JQJY01000003_gene3318
-	(degree 1238) and 1506583.JQJY01000004_gene2839 (degree 1092).
+	The undirected graph Flavobacterium sp. Fl has 4480 nodes and 531095 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05294 and has 14 connected components, where the component with most
+	nodes has 4442 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 237.10, and
+	the node degree mode is 6. The top 5 most central nodes are 1506583.JQJY01000001_gene524
+	(degree 1688), 1506583.JQJY01000001_gene668 (degree 1309), 1506583.JQJY01000002_gene1270
+	(degree 1305), 1506583.JQJY01000003_gene3318 (degree 1238) and 1506583.JQJY01000004_gene2839
+	(degree 1092).
 	
 
 

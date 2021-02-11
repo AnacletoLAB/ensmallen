@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:12.385547
 
-The undirected graph Streptomyces virginiae has 7281 nodes and 932472 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03518 and
-has 34 connected components, where the component with most nodes has 7205 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 256.14, and the node degree mode is 2. The top 5 most central
-nodes are 1961.JOAK01000010_gene6560 (degree 2964), 1961.JOAK01000026_gene2283 (degree
-1936), 1961.JOAK01000004_gene2133 (degree 1881), 1961.JOAK01000001_gene3381 (degree
-1815) and 1961.JOAK01000026_gene2443 (degree 1813).
+The undirected graph Streptomyces virginiae has 7281 nodes and 932472 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03518 and has 34 connected components, where the component with most
+nodes has 7205 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 256.14, and
+the node degree mode is 2. The top 5 most central nodes are 1961.JOAK01000010_gene6560
+(degree 2964), 1961.JOAK01000026_gene2283 (degree 1936), 1961.JOAK01000004_gene2133
+(degree 1881), 1961.JOAK01000001_gene3381 (degree 1815) and 1961.JOAK01000026_gene2443
+(degree 1813).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesVirginiae(
 	
 	Datetime: 2021-02-02 16:24:12.385547
 	
-	The undirected graph Streptomyces virginiae has 7281 nodes and 932472 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03518 and
-	has 34 connected components, where the component with most nodes has 7205 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 256.14, and the node degree mode is 2. The top 5 most central
-	nodes are 1961.JOAK01000010_gene6560 (degree 2964), 1961.JOAK01000026_gene2283 (degree
-	1936), 1961.JOAK01000004_gene2133 (degree 1881), 1961.JOAK01000001_gene3381 (degree
-	1815) and 1961.JOAK01000026_gene2443 (degree 1813).
+	The undirected graph Streptomyces virginiae has 7281 nodes and 932472 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03518 and has 34 connected components, where the component with most
+	nodes has 7205 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 256.14, and
+	the node degree mode is 2. The top 5 most central nodes are 1961.JOAK01000010_gene6560
+	(degree 2964), 1961.JOAK01000026_gene2283 (degree 1936), 1961.JOAK01000004_gene2133
+	(degree 1881), 1961.JOAK01000001_gene3381 (degree 1815) and 1961.JOAK01000026_gene2443
+	(degree 1813).
 	
 
 

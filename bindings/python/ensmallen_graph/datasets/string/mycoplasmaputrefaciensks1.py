@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:35.308907
 
-The undirected graph Mycoplasma putrefaciens KS1 has 641 nodes and 35876 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.17490 and has 6 connected components, where the component with most nodes has
-630 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 103, the mean node degree is 111.94, and the node degree mode is 1. The
-top 5 most central nodes are 743965.MPUT_0282 (degree 358), 743965.MPUT_0200 (degree
-348), 743965.MPUT_0213 (degree 337), 743965.MPUT_0306 (degree 321) and 743965.MPUT_0328
-(degree 288).
+The undirected graph Mycoplasma putrefaciens KS1 has 641 nodes and 35876
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.17490 and has 6 connected components, where the
+component with most nodes has 630 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+is 111.94, and the node degree mode is 1. The top 5 most central nodes
+are 743965.MPUT_0282 (degree 358), 743965.MPUT_0200 (degree 348), 743965.MPUT_0213
+(degree 337), 743965.MPUT_0306 (degree 321) and 743965.MPUT_0328 (degree
+288).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaPutrefaciensKs1(
 	
 	Datetime: 2021-02-02 21:38:35.308907
 	
-	The undirected graph Mycoplasma putrefaciens KS1 has 641 nodes and 35876 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.17490 and has 6 connected components, where the component with most nodes has
-	630 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 103, the mean node degree is 111.94, and the node degree mode is 1. The
-	top 5 most central nodes are 743965.MPUT_0282 (degree 358), 743965.MPUT_0200 (degree
-	348), 743965.MPUT_0213 (degree 337), 743965.MPUT_0306 (degree 321) and 743965.MPUT_0328
-	(degree 288).
+	The undirected graph Mycoplasma putrefaciens KS1 has 641 nodes and 35876
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.17490 and has 6 connected components, where the
+	component with most nodes has 630 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+	is 111.94, and the node degree mode is 1. The top 5 most central nodes
+	are 743965.MPUT_0282 (degree 358), 743965.MPUT_0200 (degree 348), 743965.MPUT_0213
+	(degree 337), 743965.MPUT_0306 (degree 321) and 743965.MPUT_0328 (degree
+	288).
 	
 
 

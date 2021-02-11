@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:25.298741
 
-The undirected graph Pyramidobacter piscolens has 2695 nodes and 159620 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04397
-and has 13 connected components, where the component with most nodes has 2661 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 118.46, and the node degree mode is 2. The top 5 most
-central nodes are 352165.HMPREF7215_0583 (degree 755), 352165.HMPREF7215_2043 (degree
-733), 352165.HMPREF7215_0101 (degree 668), 352165.HMPREF7215_2276 (degree 640) and
-352165.HMPREF7215_0385 (degree 616).
+The undirected graph Pyramidobacter piscolens has 2695 nodes and 159620
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04397 and has 13 connected components, where the component
+with most nodes has 2661 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 118.46,
+and the node degree mode is 2. The top 5 most central nodes are 352165.HMPREF7215_0583
+(degree 755), 352165.HMPREF7215_2043 (degree 733), 352165.HMPREF7215_0101
+(degree 668), 352165.HMPREF7215_2276 (degree 640) and 352165.HMPREF7215_0385
+(degree 616).
 
 
 References
@@ -107,14 +108,15 @@ def PyramidobacterPiscolens(
 	
 	Datetime: 2021-02-02 20:33:25.298741
 	
-	The undirected graph Pyramidobacter piscolens has 2695 nodes and 159620 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04397
-	and has 13 connected components, where the component with most nodes has 2661 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 118.46, and the node degree mode is 2. The top 5 most
-	central nodes are 352165.HMPREF7215_0583 (degree 755), 352165.HMPREF7215_2043 (degree
-	733), 352165.HMPREF7215_0101 (degree 668), 352165.HMPREF7215_2276 (degree 640) and
-	352165.HMPREF7215_0385 (degree 616).
+	The undirected graph Pyramidobacter piscolens has 2695 nodes and 159620
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04397 and has 13 connected components, where the component
+	with most nodes has 2661 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 118.46,
+	and the node degree mode is 2. The top 5 most central nodes are 352165.HMPREF7215_0583
+	(degree 755), 352165.HMPREF7215_2043 (degree 733), 352165.HMPREF7215_0101
+	(degree 668), 352165.HMPREF7215_2276 (degree 640) and 352165.HMPREF7215_0385
+	(degree 616).
 	
 
 

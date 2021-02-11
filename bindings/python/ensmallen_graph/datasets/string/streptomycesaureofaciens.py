@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:29.398983
 
-The undirected graph Streptomyces aureofaciens has 7982 nodes and 1425042 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04474
-and has 38 connected components, where the component with most nodes has 7897 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 332, the mean node degree is 357.06, and the node degree mode is 2. The top 5
-most central nodes are 1894.JOER01000090_gene1892 (degree 2399), 1894.JOER01000006_gene953
-(degree 2278), 1894.JOER01000018_gene4917 (degree 1969), 1894.JOER01000015_gene7967
-(degree 1829) and 1894.JOER01000003_gene2766 (degree 1789).
+The undirected graph Streptomyces aureofaciens has 7982 nodes and 1425042
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04474 and has 38 connected components, where the component
+with most nodes has 7897 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 332, the mean node degree is 357.06,
+and the node degree mode is 2. The top 5 most central nodes are 1894.JOER01000090_gene1892
+(degree 2399), 1894.JOER01000006_gene953 (degree 2278), 1894.JOER01000018_gene4917
+(degree 1969), 1894.JOER01000015_gene7967 (degree 1829) and 1894.JOER01000003_gene2766
+(degree 1789).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAureofaciens(
 	
 	Datetime: 2021-02-02 16:23:29.398983
 	
-	The undirected graph Streptomyces aureofaciens has 7982 nodes and 1425042 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04474
-	and has 38 connected components, where the component with most nodes has 7897 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 332, the mean node degree is 357.06, and the node degree mode is 2. The top 5
-	most central nodes are 1894.JOER01000090_gene1892 (degree 2399), 1894.JOER01000006_gene953
-	(degree 2278), 1894.JOER01000018_gene4917 (degree 1969), 1894.JOER01000015_gene7967
-	(degree 1829) and 1894.JOER01000003_gene2766 (degree 1789).
+	The undirected graph Streptomyces aureofaciens has 7982 nodes and 1425042
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04474 and has 38 connected components, where the component
+	with most nodes has 7897 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 332, the mean node degree is 357.06,
+	and the node degree mode is 2. The top 5 most central nodes are 1894.JOER01000090_gene1892
+	(degree 2399), 1894.JOER01000006_gene953 (degree 2278), 1894.JOER01000018_gene4917
+	(degree 1969), 1894.JOER01000015_gene7967 (degree 1829) and 1894.JOER01000003_gene2766
+	(degree 1789).
 	
 
 

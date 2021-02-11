@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:17.137518
 
-The undirected graph Alysiella crassa has 2602 nodes and 182315 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05388 and
-has 11 connected components, where the component with most nodes has 2572 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 140.13, and the node degree mode is 2. The top 5 most central
-nodes are 1120980.JQKH01000029_gene481 (degree 902), 1120980.JQKH01000034_gene1094
-(degree 760), 1120980.JQKH01000017_gene1866 (degree 755), 1120980.JQKH01000071_gene89
-(degree 727) and 1120980.JQKH01000001_gene633 (degree 677).
+The undirected graph Alysiella crassa has 2602 nodes and 182315 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05388 and has 11 connected components, where the component with most
+nodes has 2572 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 140.13, and
+the node degree mode is 2. The top 5 most central nodes are 1120980.JQKH01000029_gene481
+(degree 902), 1120980.JQKH01000034_gene1094 (degree 760), 1120980.JQKH01000017_gene1866
+(degree 755), 1120980.JQKH01000071_gene89 (degree 727) and 1120980.JQKH01000001_gene633
+(degree 677).
 
 
 References
@@ -107,14 +108,15 @@ def AlysiellaCrassa(
 	
 	Datetime: 2021-02-02 22:31:17.137518
 	
-	The undirected graph Alysiella crassa has 2602 nodes and 182315 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05388 and
-	has 11 connected components, where the component with most nodes has 2572 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 140.13, and the node degree mode is 2. The top 5 most central
-	nodes are 1120980.JQKH01000029_gene481 (degree 902), 1120980.JQKH01000034_gene1094
-	(degree 760), 1120980.JQKH01000017_gene1866 (degree 755), 1120980.JQKH01000071_gene89
-	(degree 727) and 1120980.JQKH01000001_gene633 (degree 677).
+	The undirected graph Alysiella crassa has 2602 nodes and 182315 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05388 and has 11 connected components, where the component with most
+	nodes has 2572 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 140.13, and
+	the node degree mode is 2. The top 5 most central nodes are 1120980.JQKH01000029_gene481
+	(degree 902), 1120980.JQKH01000034_gene1094 (degree 760), 1120980.JQKH01000017_gene1866
+	(degree 755), 1120980.JQKH01000071_gene89 (degree 727) and 1120980.JQKH01000001_gene633
+	(degree 677).
 	
 
 

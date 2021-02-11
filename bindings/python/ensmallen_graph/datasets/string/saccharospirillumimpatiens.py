@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:55.320536
 
-The undirected graph Saccharospirillum impatiens has 3983 nodes and 539098 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06798
-and has 6 connected components, where the component with most nodes has 3972 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 270.70, and the node degree mode is 2. The top 5
-most central nodes are 1123228.AUIH01000033_gene2675 (degree 1659), 1123228.AUIH01000012_gene63
-(degree 1419), 1123228.AUIH01000002_gene1444 (degree 1401), 1123228.AUIH01000036_gene2802
-(degree 1316) and 1123228.AUIH01000065_gene3064 (degree 1305).
+The undirected graph Saccharospirillum impatiens has 3983 nodes and 539098
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06798 and has 6 connected components, where the component
+with most nodes has 3972 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 270.70,
+and the node degree mode is 2. The top 5 most central nodes are 1123228.AUIH01000033_gene2675
+(degree 1659), 1123228.AUIH01000012_gene63 (degree 1419), 1123228.AUIH01000002_gene1444
+(degree 1401), 1123228.AUIH01000036_gene2802 (degree 1316) and 1123228.AUIH01000065_gene3064
+(degree 1305).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharospirillumImpatiens(
 	
 	Datetime: 2021-02-02 22:47:55.320536
 	
-	The undirected graph Saccharospirillum impatiens has 3983 nodes and 539098 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06798
-	and has 6 connected components, where the component with most nodes has 3972 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 270.70, and the node degree mode is 2. The top 5
-	most central nodes are 1123228.AUIH01000033_gene2675 (degree 1659), 1123228.AUIH01000012_gene63
-	(degree 1419), 1123228.AUIH01000002_gene1444 (degree 1401), 1123228.AUIH01000036_gene2802
-	(degree 1316) and 1123228.AUIH01000065_gene3064 (degree 1305).
+	The undirected graph Saccharospirillum impatiens has 3983 nodes and 539098
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06798 and has 6 connected components, where the component
+	with most nodes has 3972 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 270.70,
+	and the node degree mode is 2. The top 5 most central nodes are 1123228.AUIH01000033_gene2675
+	(degree 1659), 1123228.AUIH01000012_gene63 (degree 1419), 1123228.AUIH01000002_gene1444
+	(degree 1401), 1123228.AUIH01000036_gene2802 (degree 1316) and 1123228.AUIH01000065_gene3064
+	(degree 1305).
 	
 
 

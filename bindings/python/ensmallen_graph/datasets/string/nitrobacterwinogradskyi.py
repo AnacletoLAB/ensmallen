@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:15.057404
 
-The undirected graph Nitrobacter winogradskyi has 3081 nodes and 199697 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04209
-and has 20 connected components, where the component with most nodes has 3039 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 129.63, and the node degree mode is 1. The top 5
-most central nodes are 323098.Nwi_0357 (degree 1095), 323098.Nwi_2641 (degree 923),
-323098.Nwi_0119 (degree 840), 323098.Nwi_2143 (degree 823) and 323098.Nwi_0197 (degree
-754).
+The undirected graph Nitrobacter winogradskyi has 3081 nodes and 199697
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04209 and has 20 connected components, where the component
+with most nodes has 3039 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 129.63,
+and the node degree mode is 1. The top 5 most central nodes are 323098.Nwi_0357
+(degree 1095), 323098.Nwi_2641 (degree 923), 323098.Nwi_0119 (degree 840),
+323098.Nwi_2143 (degree 823) and 323098.Nwi_0197 (degree 754).
 
 
 References
@@ -107,14 +107,14 @@ def NitrobacterWinogradskyi(
 	
 	Datetime: 2021-02-02 20:28:15.057404
 	
-	The undirected graph Nitrobacter winogradskyi has 3081 nodes and 199697 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04209
-	and has 20 connected components, where the component with most nodes has 3039 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 129.63, and the node degree mode is 1. The top 5
-	most central nodes are 323098.Nwi_0357 (degree 1095), 323098.Nwi_2641 (degree 923),
-	323098.Nwi_0119 (degree 840), 323098.Nwi_2143 (degree 823) and 323098.Nwi_0197 (degree
-	754).
+	The undirected graph Nitrobacter winogradskyi has 3081 nodes and 199697
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04209 and has 20 connected components, where the component
+	with most nodes has 3039 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 129.63,
+	and the node degree mode is 1. The top 5 most central nodes are 323098.Nwi_0357
+	(degree 1095), 323098.Nwi_2641 (degree 923), 323098.Nwi_0119 (degree 840),
+	323098.Nwi_2143 (degree 823) and 323098.Nwi_0197 (degree 754).
 	
 
 

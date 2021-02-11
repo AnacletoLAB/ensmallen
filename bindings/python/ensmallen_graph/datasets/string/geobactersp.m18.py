@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:09.102517
 
-The undirected graph Geobacter sp. M18 has 4380 nodes and 448965 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04682 and
-has 24 connected components, where the component with most nodes has 4324 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 205.01, and the node degree mode is 1. The top 5 most central
-nodes are 443143.GM18_0443 (degree 1869), 443143.GM18_4174 (degree 1836), 443143.GM18_0349
-(degree 1598), 443143.GM18_2128 (degree 1592) and 443143.GM18_0172 (degree 1430).
+The undirected graph Geobacter sp. M18 has 4380 nodes and 448965 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04682 and has 24 connected components, where the component with most
+nodes has 4324 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 205.01, and
+the node degree mode is 1. The top 5 most central nodes are 443143.GM18_0443
+(degree 1869), 443143.GM18_4174 (degree 1836), 443143.GM18_0349 (degree
+1598), 443143.GM18_2128 (degree 1592) and 443143.GM18_0172 (degree 1430).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacterSp.M18(
 	
 	Datetime: 2021-02-02 20:50:09.102517
 	
-	The undirected graph Geobacter sp. M18 has 4380 nodes and 448965 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04682 and
-	has 24 connected components, where the component with most nodes has 4324 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 205.01, and the node degree mode is 1. The top 5 most central
-	nodes are 443143.GM18_0443 (degree 1869), 443143.GM18_4174 (degree 1836), 443143.GM18_0349
-	(degree 1598), 443143.GM18_2128 (degree 1592) and 443143.GM18_0172 (degree 1430).
+	The undirected graph Geobacter sp. M18 has 4380 nodes and 448965 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04682 and has 24 connected components, where the component with most
+	nodes has 4324 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 205.01, and
+	the node degree mode is 1. The top 5 most central nodes are 443143.GM18_0443
+	(degree 1869), 443143.GM18_4174 (degree 1836), 443143.GM18_0349 (degree
+	1598), 443143.GM18_2128 (degree 1592) and 443143.GM18_0172 (degree 1430).
 	
 
 

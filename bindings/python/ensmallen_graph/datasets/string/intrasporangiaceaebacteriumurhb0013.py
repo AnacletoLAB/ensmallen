@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:51.428960
 
-The undirected graph Intrasporangiaceae bacterium URHB0013 has 3938 nodes and 437902
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05649 and has 11 connected components, where the component with most nodes has
-3916 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 193, the mean node degree is 222.40, and the node degree mode is 2. The
-top 5 most central nodes are 1380370.JIBA01000013_gene1579 (degree 1291), 1380370.JIBA01000016_gene764
+The undirected graph Intrasporangiaceae bacterium URHB0013 has 3938 nodes
+and 437902 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05649 and has 11 connected components, where the
+component with most nodes has 3916 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+is 222.40, and the node degree mode is 2. The top 5 most central nodes
+are 1380370.JIBA01000013_gene1579 (degree 1291), 1380370.JIBA01000016_gene764
 (degree 1260), 1380370.JIBA01000013_gene1590 (degree 1196), 1380370.JIBA01000015_gene184
 (degree 1132) and 1380370.JIBA01000012_gene3690 (degree 1097).
 
@@ -107,12 +108,13 @@ def IntrasporangiaceaeBacteriumUrhb0013(
 	
 	Datetime: 2021-02-03 22:13:51.428960
 	
-	The undirected graph Intrasporangiaceae bacterium URHB0013 has 3938 nodes and 437902
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05649 and has 11 connected components, where the component with most nodes has
-	3916 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 193, the mean node degree is 222.40, and the node degree mode is 2. The
-	top 5 most central nodes are 1380370.JIBA01000013_gene1579 (degree 1291), 1380370.JIBA01000016_gene764
+	The undirected graph Intrasporangiaceae bacterium URHB0013 has 3938 nodes
+	and 437902 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05649 and has 11 connected components, where the
+	component with most nodes has 3916 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+	is 222.40, and the node degree mode is 2. The top 5 most central nodes
+	are 1380370.JIBA01000013_gene1579 (degree 1291), 1380370.JIBA01000016_gene764
 	(degree 1260), 1380370.JIBA01000013_gene1590 (degree 1196), 1380370.JIBA01000015_gene184
 	(degree 1132) and 1380370.JIBA01000012_gene3690 (degree 1097).
 	

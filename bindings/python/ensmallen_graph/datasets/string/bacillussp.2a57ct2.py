@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:25.228584
 
-The undirected graph Bacillus sp. 2A57CT2 has 5720 nodes and 741878 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04536 and
-has 25 connected components, where the component with most nodes has 5660 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 208,
-the mean node degree is 259.40, and the node degree mode is 3. The top 5 most central
-nodes are 665959.HMPREF1013_02546 (degree 2236), 665959.HMPREF1013_05729 (degree
-1748), 665959.HMPREF1013_00377 (degree 1740), 665959.HMPREF1013_04949 (degree 1668)
-and 665959.HMPREF1013_02353 (degree 1597).
+The undirected graph Bacillus sp. 2A57CT2 has 5720 nodes and 741878 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04536 and has 25 connected components, where the component with most
+nodes has 5660 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 208, the mean node degree is 259.40, and
+the node degree mode is 3. The top 5 most central nodes are 665959.HMPREF1013_02546
+(degree 2236), 665959.HMPREF1013_05729 (degree 1748), 665959.HMPREF1013_00377
+(degree 1740), 665959.HMPREF1013_04949 (degree 1668) and 665959.HMPREF1013_02353
+(degree 1597).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.2a57ct2(
 	
 	Datetime: 2021-02-02 21:28:25.228584
 	
-	The undirected graph Bacillus sp. 2A57CT2 has 5720 nodes and 741878 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04536 and
-	has 25 connected components, where the component with most nodes has 5660 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 208,
-	the mean node degree is 259.40, and the node degree mode is 3. The top 5 most central
-	nodes are 665959.HMPREF1013_02546 (degree 2236), 665959.HMPREF1013_05729 (degree
-	1748), 665959.HMPREF1013_00377 (degree 1740), 665959.HMPREF1013_04949 (degree 1668)
-	and 665959.HMPREF1013_02353 (degree 1597).
+	The undirected graph Bacillus sp. 2A57CT2 has 5720 nodes and 741878 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04536 and has 25 connected components, where the component with most
+	nodes has 5660 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 208, the mean node degree is 259.40, and
+	the node degree mode is 3. The top 5 most central nodes are 665959.HMPREF1013_02546
+	(degree 2236), 665959.HMPREF1013_05729 (degree 1748), 665959.HMPREF1013_00377
+	(degree 1740), 665959.HMPREF1013_04949 (degree 1668) and 665959.HMPREF1013_02353
+	(degree 1597).
 	
 
 

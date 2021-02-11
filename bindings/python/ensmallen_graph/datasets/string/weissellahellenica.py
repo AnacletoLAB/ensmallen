@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:47.228413
 
-The undirected graph Weissella hellenica has 1864 nodes and 114627 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06602 and
-has 8 connected components, where the component with most nodes has 1839 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 122.99, and the node degree mode is 28. The top 5 most central
-nodes are 46256.BBIK01000010_gene1604 (degree 818), 46256.BBIK01000001_gene311 (degree
-620), 46256.BBIK01000019_gene1758 (degree 612), 46256.BBIK01000010_gene1407 (degree
-571) and 46256.BBIK01000006_gene1143 (degree 560).
+The undirected graph Weissella hellenica has 1864 nodes and 114627 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06602 and has 8 connected components, where the component with most
+nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 122.99, and
+the node degree mode is 28. The top 5 most central nodes are 46256.BBIK01000010_gene1604
+(degree 818), 46256.BBIK01000001_gene311 (degree 620), 46256.BBIK01000019_gene1758
+(degree 612), 46256.BBIK01000010_gene1407 (degree 571) and 46256.BBIK01000006_gene1143
+(degree 560).
 
 
 References
@@ -107,14 +108,15 @@ def WeissellaHellenica(
 	
 	Datetime: 2021-02-02 18:15:47.228413
 	
-	The undirected graph Weissella hellenica has 1864 nodes and 114627 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06602 and
-	has 8 connected components, where the component with most nodes has 1839 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 122.99, and the node degree mode is 28. The top 5 most central
-	nodes are 46256.BBIK01000010_gene1604 (degree 818), 46256.BBIK01000001_gene311 (degree
-	620), 46256.BBIK01000019_gene1758 (degree 612), 46256.BBIK01000010_gene1407 (degree
-	571) and 46256.BBIK01000006_gene1143 (degree 560).
+	The undirected graph Weissella hellenica has 1864 nodes and 114627 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06602 and has 8 connected components, where the component with most
+	nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 122.99, and
+	the node degree mode is 28. The top 5 most central nodes are 46256.BBIK01000010_gene1604
+	(degree 818), 46256.BBIK01000001_gene311 (degree 620), 46256.BBIK01000019_gene1758
+	(degree 612), 46256.BBIK01000010_gene1407 (degree 571) and 46256.BBIK01000006_gene1143
+	(degree 560).
 	
 
 

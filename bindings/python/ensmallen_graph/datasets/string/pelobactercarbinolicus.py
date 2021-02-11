@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:50.775486
 
-The undirected graph Pelobacter carbinolicus has 3288 nodes and 274378 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05077 and
-has 9 connected components, where the component with most nodes has 3266 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 166.90, and the node degree mode is 2. The top 5 most central
-nodes are 338963.Pcar_2776 (degree 1224), 338963.Pcar_1297 (degree 1120), 338963.Pcar_2864
-(degree 1104), 338963.Pcar_1218 (degree 1004) and 338963.Pcar_1217 (degree 954).
+The undirected graph Pelobacter carbinolicus has 3288 nodes and 274378
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05077 and has 9 connected components, where the component
+with most nodes has 3266 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 166.90,
+and the node degree mode is 2. The top 5 most central nodes are 338963.Pcar_2776
+(degree 1224), 338963.Pcar_1297 (degree 1120), 338963.Pcar_2864 (degree
+1104), 338963.Pcar_1218 (degree 1004) and 338963.Pcar_1217 (degree 954).
 
 
 References
@@ -106,13 +107,14 @@ def PelobacterCarbinolicus(
 	
 	Datetime: 2021-02-02 20:30:50.775486
 	
-	The undirected graph Pelobacter carbinolicus has 3288 nodes and 274378 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05077 and
-	has 9 connected components, where the component with most nodes has 3266 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 166.90, and the node degree mode is 2. The top 5 most central
-	nodes are 338963.Pcar_2776 (degree 1224), 338963.Pcar_1297 (degree 1120), 338963.Pcar_2864
-	(degree 1104), 338963.Pcar_1218 (degree 1004) and 338963.Pcar_1217 (degree 954).
+	The undirected graph Pelobacter carbinolicus has 3288 nodes and 274378
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05077 and has 9 connected components, where the component
+	with most nodes has 3266 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 166.90,
+	and the node degree mode is 2. The top 5 most central nodes are 338963.Pcar_2776
+	(degree 1224), 338963.Pcar_1297 (degree 1120), 338963.Pcar_2864 (degree
+	1104), 338963.Pcar_1218 (degree 1004) and 338963.Pcar_1217 (degree 954).
 	
 
 

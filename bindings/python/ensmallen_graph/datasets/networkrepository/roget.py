@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:13.514884
 
-The undirected graph Roget has 1010 nodes and 3649 unweighted edges, of which 1 are
-self-loops. The graph is sparse as it has a density of 0.00716 and has 9 connected
-components, where the component with most nodes has 994 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 6, the mean node degree
-is 7.22, and the node degree mode is 4. The top 5 most central nodes are 562 (degree
-28), 470 (degree 27), 674 (degree 27), 698 (degree 26) and 539 (degree 25).
+The undirected graph Roget has 1010 nodes and 3649 unweighted edges, of
+which 1 are self-loops. The graph is sparse as it has a density of 0.00716
+and has 9 connected components, where the component with most nodes has
+994 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 6, the mean node degree is 7.22, and the node degree
+mode is 4. The top 5 most central nodes are 562 (degree 28), 470 (degree
+27), 674 (degree 27), 698 (degree 26) and 539 (degree 25).
 
 
 References
@@ -102,12 +103,13 @@ def Roget(
 	
 	Datetime: 2021-02-06 08:00:13.514884
 	
-	The undirected graph Roget has 1010 nodes and 3649 unweighted edges, of which 1 are
-	self-loops. The graph is sparse as it has a density of 0.00716 and has 9 connected
-	components, where the component with most nodes has 994 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 6, the mean node degree
-	is 7.22, and the node degree mode is 4. The top 5 most central nodes are 562 (degree
-	28), 470 (degree 27), 674 (degree 27), 698 (degree 26) and 539 (degree 25).
+	The undirected graph Roget has 1010 nodes and 3649 unweighted edges, of
+	which 1 are self-loops. The graph is sparse as it has a density of 0.00716
+	and has 9 connected components, where the component with most nodes has
+	994 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 6, the mean node degree is 7.22, and the node degree
+	mode is 4. The top 5 most central nodes are 562 (degree 28), 470 (degree
+	27), 674 (degree 27), 698 (degree 26) and 539 (degree 25).
 	
 
 

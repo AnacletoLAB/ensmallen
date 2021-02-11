@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:23.896570
 
-The undirected graph Pseudomonas resinovorans NBRC106553 has 5849 nodes and 749422
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04382 and has 15 connected components, where the component with most nodes has
-5786 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 208, the mean node degree is 256.26, and the node degree mode is 2. The
-top 5 most central nodes are 1245471.PCA10_00730 (degree 2402), 1245471.PCA10_49380
-(degree 2023), 1245471.PCA10_30730 (degree 1956), 1245471.PCA10_04220 (degree 1940)
-and 1245471.PCA10_21930 (degree 1876).
+The undirected graph Pseudomonas resinovorans NBRC106553 has 5849 nodes
+and 749422 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04382 and has 15 connected components, where the
+component with most nodes has 5786 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+is 256.26, and the node degree mode is 2. The top 5 most central nodes
+are 1245471.PCA10_00730 (degree 2402), 1245471.PCA10_49380 (degree 2023),
+1245471.PCA10_30730 (degree 1956), 1245471.PCA10_04220 (degree 1940) and
+1245471.PCA10_21930 (degree 1876).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasResinovoransNbrc106553(
 	
 	Datetime: 2021-02-02 23:33:23.896570
 	
-	The undirected graph Pseudomonas resinovorans NBRC106553 has 5849 nodes and 749422
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04382 and has 15 connected components, where the component with most nodes has
-	5786 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 208, the mean node degree is 256.26, and the node degree mode is 2. The
-	top 5 most central nodes are 1245471.PCA10_00730 (degree 2402), 1245471.PCA10_49380
-	(degree 2023), 1245471.PCA10_30730 (degree 1956), 1245471.PCA10_04220 (degree 1940)
-	and 1245471.PCA10_21930 (degree 1876).
+	The undirected graph Pseudomonas resinovorans NBRC106553 has 5849 nodes
+	and 749422 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04382 and has 15 connected components, where the
+	component with most nodes has 5786 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+	is 256.26, and the node degree mode is 2. The top 5 most central nodes
+	are 1245471.PCA10_00730 (degree 2402), 1245471.PCA10_49380 (degree 2023),
+	1245471.PCA10_30730 (degree 1956), 1245471.PCA10_04220 (degree 1940) and
+	1245471.PCA10_21930 (degree 1876).
 	
 
 

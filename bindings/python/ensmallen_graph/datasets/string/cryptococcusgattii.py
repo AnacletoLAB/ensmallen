@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:43.731206
 
-The undirected graph Cryptococcus gattii has 4809 nodes and 431158 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03729 and
-has 8 connected components, where the component with most nodes has 4794 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 179.31, and the node degree mode is 1. The top 5 most central
-nodes are 552467.XP_003195590.1 (degree 1273), 552467.XP_003194048.1 (degree 1156),
-552467.XP_003191946.1 (degree 1057), 552467.XP_003194546.1 (degree 960) and 552467.XP_003197203.1
+The undirected graph Cryptococcus gattii has 4809 nodes and 431158 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03729 and has 8 connected components, where the component with most
+nodes has 4794 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 179.31, and
+the node degree mode is 1. The top 5 most central nodes are 552467.XP_003195590.1
+(degree 1273), 552467.XP_003194048.1 (degree 1156), 552467.XP_003191946.1
+(degree 1057), 552467.XP_003194546.1 (degree 960) and 552467.XP_003197203.1
 (degree 930).
 
 
@@ -107,13 +108,14 @@ def CryptococcusGattii(
 	
 	Datetime: 2021-02-02 21:09:43.731206
 	
-	The undirected graph Cryptococcus gattii has 4809 nodes and 431158 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03729 and
-	has 8 connected components, where the component with most nodes has 4794 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 179.31, and the node degree mode is 1. The top 5 most central
-	nodes are 552467.XP_003195590.1 (degree 1273), 552467.XP_003194048.1 (degree 1156),
-	552467.XP_003191946.1 (degree 1057), 552467.XP_003194546.1 (degree 960) and 552467.XP_003197203.1
+	The undirected graph Cryptococcus gattii has 4809 nodes and 431158 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03729 and has 8 connected components, where the component with most
+	nodes has 4794 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 179.31, and
+	the node degree mode is 1. The top 5 most central nodes are 552467.XP_003195590.1
+	(degree 1273), 552467.XP_003194048.1 (degree 1156), 552467.XP_003191946.1
+	(degree 1057), 552467.XP_003194546.1 (degree 960) and 552467.XP_003197203.1
 	(degree 930).
 	
 

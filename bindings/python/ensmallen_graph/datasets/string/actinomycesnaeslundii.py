@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:06.967348
 
-The undirected graph Actinomyces naeslundii has 2889 nodes and 205899 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04936 and
-has 17 connected components, where the component with most nodes has 2846 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 142.54, and the node degree mode is 3. The top 5 most central
-nodes are 1115803.HMPREF1129_0734 (degree 1163), 1115803.HMPREF1129_1327 (degree
-1086), 1115803.HMPREF1129_0629 (degree 1015), 1115803.HMPREF1129_0272 (degree 955)
-and 1115803.HMPREF1129_1647 (degree 795).
+The undirected graph Actinomyces naeslundii has 2889 nodes and 205899 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04936 and has 17 connected components, where the component with most
+nodes has 2846 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 142.54, and
+the node degree mode is 3. The top 5 most central nodes are 1115803.HMPREF1129_0734
+(degree 1163), 1115803.HMPREF1129_1327 (degree 1086), 1115803.HMPREF1129_0629
+(degree 1015), 1115803.HMPREF1129_0272 (degree 955) and 1115803.HMPREF1129_1647
+(degree 795).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesNaeslundii(
 	
 	Datetime: 2021-02-02 22:27:06.967348
 	
-	The undirected graph Actinomyces naeslundii has 2889 nodes and 205899 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04936 and
-	has 17 connected components, where the component with most nodes has 2846 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 142.54, and the node degree mode is 3. The top 5 most central
-	nodes are 1115803.HMPREF1129_0734 (degree 1163), 1115803.HMPREF1129_1327 (degree
-	1086), 1115803.HMPREF1129_0629 (degree 1015), 1115803.HMPREF1129_0272 (degree 955)
-	and 1115803.HMPREF1129_1647 (degree 795).
+	The undirected graph Actinomyces naeslundii has 2889 nodes and 205899 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04936 and has 17 connected components, where the component with most
+	nodes has 2846 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 142.54, and
+	the node degree mode is 3. The top 5 most central nodes are 1115803.HMPREF1129_0734
+	(degree 1163), 1115803.HMPREF1129_1327 (degree 1086), 1115803.HMPREF1129_0629
+	(degree 1015), 1115803.HMPREF1129_0272 (degree 955) and 1115803.HMPREF1129_1647
+	(degree 795).
 	
 
 

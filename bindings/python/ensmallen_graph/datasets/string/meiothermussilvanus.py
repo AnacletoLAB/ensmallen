@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:12.074034
 
-The undirected graph Meiothermus silvanus has 3360 nodes and 232774 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04125 and
-has 7 connected components, where the component with most nodes has 3343 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 138.56, and the node degree mode is 5. The top 5 most central
-nodes are 526227.Mesil_2224 (degree 1187), 526227.Mesil_2030 (degree 1099), 526227.Mesil_2184
-(degree 1084), 526227.Mesil_3363 (degree 1046) and 526227.Mesil_1618 (degree 997).
+The undirected graph Meiothermus silvanus has 3360 nodes and 232774 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04125 and has 7 connected components, where the component with most
+nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 138.56, and
+the node degree mode is 5. The top 5 most central nodes are 526227.Mesil_2224
+(degree 1187), 526227.Mesil_2030 (degree 1099), 526227.Mesil_2184 (degree
+1084), 526227.Mesil_3363 (degree 1046) and 526227.Mesil_1618 (degree 997).
 
 
 References
@@ -106,13 +107,14 @@ def MeiothermusSilvanus(
 	
 	Datetime: 2021-02-02 21:06:12.074034
 	
-	The undirected graph Meiothermus silvanus has 3360 nodes and 232774 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04125 and
-	has 7 connected components, where the component with most nodes has 3343 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 138.56, and the node degree mode is 5. The top 5 most central
-	nodes are 526227.Mesil_2224 (degree 1187), 526227.Mesil_2030 (degree 1099), 526227.Mesil_2184
-	(degree 1084), 526227.Mesil_3363 (degree 1046) and 526227.Mesil_1618 (degree 997).
+	The undirected graph Meiothermus silvanus has 3360 nodes and 232774 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04125 and has 7 connected components, where the component with most
+	nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 138.56, and
+	the node degree mode is 5. The top 5 most central nodes are 526227.Mesil_2224
+	(degree 1187), 526227.Mesil_2030 (degree 1099), 526227.Mesil_2184 (degree
+	1084), 526227.Mesil_3363 (degree 1046) and 526227.Mesil_1618 (degree 997).
 	
 
 

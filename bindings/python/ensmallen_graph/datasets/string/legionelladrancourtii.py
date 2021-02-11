@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:07.971556
 
-The undirected graph Legionella drancourtii has 3840 nodes and 321523 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04362 and
-has 53 connected components, where the component with most nodes has 3709 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 167.46, and the node degree mode is 3. The top 5 most central
-nodes are 658187.LDG_6103 (degree 1438), 658187.LDG_7644 (degree 1343), 658187.LDG_8633
-(degree 1286), 658187.LDG_7847 (degree 1205) and 658187.LDG_7848 (degree 1173).
+The undirected graph Legionella drancourtii has 3840 nodes and 321523 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04362 and has 53 connected components, where the component with most
+nodes has 3709 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 167.46, and
+the node degree mode is 3. The top 5 most central nodes are 658187.LDG_6103
+(degree 1438), 658187.LDG_7644 (degree 1343), 658187.LDG_8633 (degree 1286),
+658187.LDG_7847 (degree 1205) and 658187.LDG_7848 (degree 1173).
 
 
 References
@@ -106,13 +107,14 @@ def LegionellaDrancourtii(
 	
 	Datetime: 2021-02-02 21:27:07.971556
 	
-	The undirected graph Legionella drancourtii has 3840 nodes and 321523 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04362 and
-	has 53 connected components, where the component with most nodes has 3709 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 167.46, and the node degree mode is 3. The top 5 most central
-	nodes are 658187.LDG_6103 (degree 1438), 658187.LDG_7644 (degree 1343), 658187.LDG_8633
-	(degree 1286), 658187.LDG_7847 (degree 1205) and 658187.LDG_7848 (degree 1173).
+	The undirected graph Legionella drancourtii has 3840 nodes and 321523 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04362 and has 53 connected components, where the component with most
+	nodes has 3709 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 167.46, and
+	the node degree mode is 3. The top 5 most central nodes are 658187.LDG_6103
+	(degree 1438), 658187.LDG_7644 (degree 1343), 658187.LDG_8633 (degree 1286),
+	658187.LDG_7847 (degree 1205) and 658187.LDG_7848 (degree 1173).
 	
 
 

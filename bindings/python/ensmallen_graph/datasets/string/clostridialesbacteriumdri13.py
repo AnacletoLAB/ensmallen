@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:24.426534
 
-The undirected graph Clostridiales bacterium DRI13 has 3603 nodes and 310723 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04788
-and has 18 connected components, where the component with most nodes has 3555 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 172.48, and the node degree mode is 2. The top 5
-most central nodes are 1449126.JQKL01000019_gene3190 (degree 1209), 1449126.JQKL01000001_gene1447
-(degree 1193), 1449126.JQKL01000017_gene2763 (degree 1130), 1449126.JQKL01000004_gene564
-(degree 1112) and 1449126.JQKL01000010_gene398 (degree 1037).
+The undirected graph Clostridiales bacterium DRI13 has 3603 nodes and 310723
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04788 and has 18 connected components, where the component
+with most nodes has 3555 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 172.48,
+and the node degree mode is 2. The top 5 most central nodes are 1449126.JQKL01000019_gene3190
+(degree 1209), 1449126.JQKL01000001_gene1447 (degree 1193), 1449126.JQKL01000017_gene2763
+(degree 1130), 1449126.JQKL01000004_gene564 (degree 1112) and 1449126.JQKL01000010_gene398
+(degree 1037).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridialesBacteriumDri13(
 	
 	Datetime: 2021-02-03 23:04:24.426534
 	
-	The undirected graph Clostridiales bacterium DRI13 has 3603 nodes and 310723 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04788
-	and has 18 connected components, where the component with most nodes has 3555 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 172.48, and the node degree mode is 2. The top 5
-	most central nodes are 1449126.JQKL01000019_gene3190 (degree 1209), 1449126.JQKL01000001_gene1447
-	(degree 1193), 1449126.JQKL01000017_gene2763 (degree 1130), 1449126.JQKL01000004_gene564
-	(degree 1112) and 1449126.JQKL01000010_gene398 (degree 1037).
+	The undirected graph Clostridiales bacterium DRI13 has 3603 nodes and 310723
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04788 and has 18 connected components, where the component
+	with most nodes has 3555 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 172.48,
+	and the node degree mode is 2. The top 5 most central nodes are 1449126.JQKL01000019_gene3190
+	(degree 1209), 1449126.JQKL01000001_gene1447 (degree 1193), 1449126.JQKL01000017_gene2763
+	(degree 1130), 1449126.JQKL01000004_gene564 (degree 1112) and 1449126.JQKL01000010_gene398
+	(degree 1037).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:11:45.367220
 
-The undirected graph farm has 17 nodes and 41 weighted edges, of which 3 are self-loops.
-The graph is quite dense as it has a density of 0.29044 and is connected, as it has
-a single component. The graph median node degree is 4, the mean node degree is 4.65,
-and the node degree mode is 4. The top 5 most central nodes are 2 (degree 11), 1
-(degree 11), 7 (degree 7), 4 (degree 7) and 6 (degree 6).
+The undirected graph farm has 17 nodes and 41 weighted edges, of which
+3 are self-loops. The graph is quite dense as it has a density of 0.29044
+and is connected, as it has a single component. The graph median node degree
+is 4, the mean node degree is 4.65, and the node degree mode is 4. The
+top 5 most central nodes are 2 (degree 11), 1 (degree 11), 7 (degree 7),
+4 (degree 7) and 6 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def Farm(
 	
 	Datetime: 2021-02-06 08:11:45.367220
 	
-	The undirected graph farm has 17 nodes and 41 weighted edges, of which 3 are self-loops.
-	The graph is quite dense as it has a density of 0.29044 and is connected, as it has
-	a single component. The graph median node degree is 4, the mean node degree is 4.65,
-	and the node degree mode is 4. The top 5 most central nodes are 2 (degree 11), 1
-	(degree 11), 7 (degree 7), 4 (degree 7) and 6 (degree 6).
+	The undirected graph farm has 17 nodes and 41 weighted edges, of which
+	3 are self-loops. The graph is quite dense as it has a density of 0.29044
+	and is connected, as it has a single component. The graph median node degree
+	is 4, the mean node degree is 4.65, and the node degree mode is 4. The
+	top 5 most central nodes are 2 (degree 11), 1 (degree 11), 7 (degree 7),
+	4 (degree 7) and 6 (degree 6).
 	
 
 

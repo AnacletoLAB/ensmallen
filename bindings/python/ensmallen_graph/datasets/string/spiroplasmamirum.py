@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:56.556841
 
-The undirected graph Spiroplasma mirum has 1353 nodes and 46907 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05129 and
-has 37 connected components, where the component with most nodes has 1227 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 19,
-the mean node degree is 69.34, and the node degree mode is 7. The top 5 most central
-nodes are 838561.P344_07145 (degree 459), 838561.P344_06690 (degree 456), 838561.P344_07010
-(degree 441), 838561.P344_04320 (degree 395) and 838561.P344_01355 (degree 390).
+The undirected graph Spiroplasma mirum has 1353 nodes and 46907 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05129 and has 37 connected components, where the component with most
+nodes has 1227 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 19, the mean node degree is 69.34, and
+the node degree mode is 7. The top 5 most central nodes are 838561.P344_07145
+(degree 459), 838561.P344_06690 (degree 456), 838561.P344_07010 (degree
+441), 838561.P344_04320 (degree 395) and 838561.P344_01355 (degree 390).
 
 
 References
@@ -106,13 +107,14 @@ def SpiroplasmaMirum(
 	
 	Datetime: 2021-02-02 21:45:56.556841
 	
-	The undirected graph Spiroplasma mirum has 1353 nodes and 46907 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05129 and
-	has 37 connected components, where the component with most nodes has 1227 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 19,
-	the mean node degree is 69.34, and the node degree mode is 7. The top 5 most central
-	nodes are 838561.P344_07145 (degree 459), 838561.P344_06690 (degree 456), 838561.P344_07010
-	(degree 441), 838561.P344_04320 (degree 395) and 838561.P344_01355 (degree 390).
+	The undirected graph Spiroplasma mirum has 1353 nodes and 46907 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05129 and has 37 connected components, where the component with most
+	nodes has 1227 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 19, the mean node degree is 69.34, and
+	the node degree mode is 7. The top 5 most central nodes are 838561.P344_07145
+	(degree 459), 838561.P344_06690 (degree 456), 838561.P344_07010 (degree
+	441), 838561.P344_04320 (degree 395) and 838561.P344_01355 (degree 390).
 	
 
 

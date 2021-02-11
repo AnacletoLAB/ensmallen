@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:27.590262
 
-The undirected graph Streptacidiphilus carbonis has 7346 nodes and 1362284 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05050
-and has 34 connected components, where the component with most nodes has 7270 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 337, the mean node degree is 370.89, and the node degree mode is 3. The top 5
-most central nodes are 105422.BBPM01000007_gene6464 (degree 2086), 105422.BBPM01000046_gene1545
-(degree 2021), 105422.BBPM01000103_gene4357 (degree 1994), 105422.BBPM01000018_gene2467
-(degree 1981) and 105422.BBPM01000014_gene3177 (degree 1967).
+The undirected graph Streptacidiphilus carbonis has 7346 nodes and 1362284
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05050 and has 34 connected components, where the component
+with most nodes has 7270 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 337, the mean node degree is 370.89,
+and the node degree mode is 3. The top 5 most central nodes are 105422.BBPM01000007_gene6464
+(degree 2086), 105422.BBPM01000046_gene1545 (degree 2021), 105422.BBPM01000103_gene4357
+(degree 1994), 105422.BBPM01000018_gene2467 (degree 1981) and 105422.BBPM01000014_gene3177
+(degree 1967).
 
 
 References
@@ -107,14 +108,15 @@ def StreptacidiphilusCarbonis(
 	
 	Datetime: 2021-02-02 19:44:27.590262
 	
-	The undirected graph Streptacidiphilus carbonis has 7346 nodes and 1362284 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05050
-	and has 34 connected components, where the component with most nodes has 7270 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 337, the mean node degree is 370.89, and the node degree mode is 3. The top 5
-	most central nodes are 105422.BBPM01000007_gene6464 (degree 2086), 105422.BBPM01000046_gene1545
-	(degree 2021), 105422.BBPM01000103_gene4357 (degree 1994), 105422.BBPM01000018_gene2467
-	(degree 1981) and 105422.BBPM01000014_gene3177 (degree 1967).
+	The undirected graph Streptacidiphilus carbonis has 7346 nodes and 1362284
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05050 and has 34 connected components, where the component
+	with most nodes has 7270 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 337, the mean node degree is 370.89,
+	and the node degree mode is 3. The top 5 most central nodes are 105422.BBPM01000007_gene6464
+	(degree 2086), 105422.BBPM01000046_gene1545 (degree 2021), 105422.BBPM01000103_gene4357
+	(degree 1994), 105422.BBPM01000018_gene2467 (degree 1981) and 105422.BBPM01000014_gene3177
+	(degree 1967).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:54.804505
 
-The undirected graph Idiomarina xiamenensis has 2653 nodes and 215612 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06129 and
-has 16 connected components, where the component with most nodes has 2615 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 162.54, and the node degree mode is 2. The top 5 most central
-nodes are 740709.A10D4_08222 (degree 1044), 740709.A10D4_02640 (degree 900), 740709.A10D4_02645
-(degree 892), 740709.A10D4_12101 (degree 769) and 740709.A10D4_02017 (degree 757).
+The undirected graph Idiomarina xiamenensis has 2653 nodes and 215612 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06129 and has 16 connected components, where the component with most
+nodes has 2615 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 162.54, and
+the node degree mode is 2. The top 5 most central nodes are 740709.A10D4_08222
+(degree 1044), 740709.A10D4_02640 (degree 900), 740709.A10D4_02645 (degree
+892), 740709.A10D4_12101 (degree 769) and 740709.A10D4_02017 (degree 757).
 
 
 References
@@ -106,13 +107,14 @@ def IdiomarinaXiamenensis(
 	
 	Datetime: 2021-02-02 21:36:54.804505
 	
-	The undirected graph Idiomarina xiamenensis has 2653 nodes and 215612 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06129 and
-	has 16 connected components, where the component with most nodes has 2615 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 162.54, and the node degree mode is 2. The top 5 most central
-	nodes are 740709.A10D4_08222 (degree 1044), 740709.A10D4_02640 (degree 900), 740709.A10D4_02645
-	(degree 892), 740709.A10D4_12101 (degree 769) and 740709.A10D4_02017 (degree 757).
+	The undirected graph Idiomarina xiamenensis has 2653 nodes and 215612 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06129 and has 16 connected components, where the component with most
+	nodes has 2615 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 162.54, and
+	the node degree mode is 2. The top 5 most central nodes are 740709.A10D4_08222
+	(degree 1044), 740709.A10D4_02640 (degree 900), 740709.A10D4_02645 (degree
+	892), 740709.A10D4_12101 (degree 769) and 740709.A10D4_02017 (degree 757).
 	
 
 

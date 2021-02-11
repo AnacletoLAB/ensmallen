@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:14.240804
 
-The undirected graph Methanolobus psychrophilus has 3101 nodes and 359407 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07477
-and has 41 connected components, where the component with most nodes has 2998 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 222, the mean node degree is 231.80, and the node degree mode is 2. The top 5
-most central nodes are 1094980.Mpsy_0407 (degree 1076), 1094980.Mpsy_2550 (degree
-928), 1094980.Mpsy_2902 (degree 898), 1094980.Mpsy_0422 (degree 881) and 1094980.Mpsy_1424
-(degree 873).
+The undirected graph Methanolobus psychrophilus has 3101 nodes and 359407
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07477 and has 41 connected components, where the component
+with most nodes has 2998 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 222, the mean node degree is 231.80,
+and the node degree mode is 2. The top 5 most central nodes are 1094980.Mpsy_0407
+(degree 1076), 1094980.Mpsy_2550 (degree 928), 1094980.Mpsy_2902 (degree
+898), 1094980.Mpsy_0422 (degree 881) and 1094980.Mpsy_1424 (degree 873).
 
 
 References
@@ -107,14 +107,14 @@ def MethanolobusPsychrophilus(
 	
 	Datetime: 2021-02-02 22:23:14.240804
 	
-	The undirected graph Methanolobus psychrophilus has 3101 nodes and 359407 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07477
-	and has 41 connected components, where the component with most nodes has 2998 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 222, the mean node degree is 231.80, and the node degree mode is 2. The top 5
-	most central nodes are 1094980.Mpsy_0407 (degree 1076), 1094980.Mpsy_2550 (degree
-	928), 1094980.Mpsy_2902 (degree 898), 1094980.Mpsy_0422 (degree 881) and 1094980.Mpsy_1424
-	(degree 873).
+	The undirected graph Methanolobus psychrophilus has 3101 nodes and 359407
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07477 and has 41 connected components, where the component
+	with most nodes has 2998 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 222, the mean node degree is 231.80,
+	and the node degree mode is 2. The top 5 most central nodes are 1094980.Mpsy_0407
+	(degree 1076), 1094980.Mpsy_2550 (degree 928), 1094980.Mpsy_2902 (degree
+	898), 1094980.Mpsy_0422 (degree 881) and 1094980.Mpsy_1424 (degree 873).
 	
 
 

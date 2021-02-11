@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:47.733960
 
-The undirected graph Sphingomonas sp. 37zxx has 3312 nodes and 338169 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06168 and
-has 7 connected components, where the component with most nodes has 3298 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 204.21, and the node degree mode is 2. The top 5 most central
-nodes are 1550073.JROH01000001_gene538 (degree 1380), 1550073.JROH01000008_gene1796
-(degree 1068), 1550073.JROH01000004_gene2151 (degree 1058), 1550073.JROH01000032_gene1993
-(degree 1044) and 1550073.JROH01000009_gene1295 (degree 1040).
+The undirected graph Sphingomonas sp. 37zxx has 3312 nodes and 338169 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06168 and has 7 connected components, where the component with most
+nodes has 3298 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 204.21, and
+the node degree mode is 2. The top 5 most central nodes are 1550073.JROH01000001_gene538
+(degree 1380), 1550073.JROH01000008_gene1796 (degree 1068), 1550073.JROH01000004_gene2151
+(degree 1058), 1550073.JROH01000032_gene1993 (degree 1044) and 1550073.JROH01000009_gene1295
+(degree 1040).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.37zxx(
 	
 	Datetime: 2021-02-03 23:20:47.733960
 	
-	The undirected graph Sphingomonas sp. 37zxx has 3312 nodes and 338169 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06168 and
-	has 7 connected components, where the component with most nodes has 3298 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 204.21, and the node degree mode is 2. The top 5 most central
-	nodes are 1550073.JROH01000001_gene538 (degree 1380), 1550073.JROH01000008_gene1796
-	(degree 1068), 1550073.JROH01000004_gene2151 (degree 1058), 1550073.JROH01000032_gene1993
-	(degree 1044) and 1550073.JROH01000009_gene1295 (degree 1040).
+	The undirected graph Sphingomonas sp. 37zxx has 3312 nodes and 338169 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06168 and has 7 connected components, where the component with most
+	nodes has 3298 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 204.21, and
+	the node degree mode is 2. The top 5 most central nodes are 1550073.JROH01000001_gene538
+	(degree 1380), 1550073.JROH01000008_gene1796 (degree 1068), 1550073.JROH01000004_gene2151
+	(degree 1058), 1550073.JROH01000032_gene1993 (degree 1044) and 1550073.JROH01000009_gene1295
+	(degree 1040).
 	
 
 

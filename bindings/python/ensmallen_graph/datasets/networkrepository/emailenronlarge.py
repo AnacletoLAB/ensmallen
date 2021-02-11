@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:06:04.722933
 
-The undirected graph email-enron-large has 33696 nodes and 180811 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00032
-and is connected, as it has a single component. The graph median node degree is 3,
-the mean node degree is 10.73 and the node degree mode is 1. The top 5 most central
-nodes are 5025 (degree 1383), 274 (degree 1367), 459 (degree 1261), 141 (degree 1245)
-and 1029 (degree 1244).
+The undirected graph email-enron-large has 33696 nodes and 180811 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00032 and is connected, as it has a single component. The
+graph median node degree is 3, the mean node degree is 10.73 and the node
+degree mode is 1. The top 5 most central nodes are 5025 (degree 1383),
+274 (degree 1367), 459 (degree 1261), 141 (degree 1245) and 1029 (degree
+1244).
 
 
 References
@@ -102,12 +103,13 @@ def EmailEnronLarge(
 	
 	Datetime: 2021-02-04 00:06:04.722933
 	
-	The undirected graph email-enron-large has 33696 nodes and 180811 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00032
-	and is connected, as it has a single component. The graph median node degree is 3,
-	the mean node degree is 10.73 and the node degree mode is 1. The top 5 most central
-	nodes are 5025 (degree 1383), 274 (degree 1367), 459 (degree 1261), 141 (degree 1245)
-	and 1029 (degree 1244).
+	The undirected graph email-enron-large has 33696 nodes and 180811 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00032 and is connected, as it has a single component. The
+	graph median node degree is 3, the mean node degree is 10.73 and the node
+	degree mode is 1. The top 5 most central nodes are 5025 (degree 1383),
+	274 (degree 1367), 459 (degree 1261), 141 (degree 1245) and 1029 (degree
+	1244).
 	
 
 

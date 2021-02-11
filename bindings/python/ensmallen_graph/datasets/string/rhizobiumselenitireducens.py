@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:57:03.216352
 
-The undirected graph Rhizobium selenitireducens has 4489 nodes and 463758 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04604
-and has 5 connected components, where the component with most nodes has 4480 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 206.62, and the node degree mode is 2. The top 5
-most central nodes are 1336235.JAEG01000009_gene2709 (degree 1729), 1336235.JAEG01000007_gene1420
-(degree 1425), 1336235.JAEG01000006_gene883 (degree 1374), 1336235.JAEG01000007_gene1516
-(degree 1301) and 1336235.JAEG01000004_gene3927 (degree 1283).
+The undirected graph Rhizobium selenitireducens has 4489 nodes and 463758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04604 and has 5 connected components, where the component
+with most nodes has 4480 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 206.62,
+and the node degree mode is 2. The top 5 most central nodes are 1336235.JAEG01000009_gene2709
+(degree 1729), 1336235.JAEG01000007_gene1420 (degree 1425), 1336235.JAEG01000006_gene883
+(degree 1374), 1336235.JAEG01000007_gene1516 (degree 1301) and 1336235.JAEG01000004_gene3927
+(degree 1283).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSelenitireducens(
 	
 	Datetime: 2021-02-03 21:57:03.216352
 	
-	The undirected graph Rhizobium selenitireducens has 4489 nodes and 463758 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04604
-	and has 5 connected components, where the component with most nodes has 4480 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 206.62, and the node degree mode is 2. The top 5
-	most central nodes are 1336235.JAEG01000009_gene2709 (degree 1729), 1336235.JAEG01000007_gene1420
-	(degree 1425), 1336235.JAEG01000006_gene883 (degree 1374), 1336235.JAEG01000007_gene1516
-	(degree 1301) and 1336235.JAEG01000004_gene3927 (degree 1283).
+	The undirected graph Rhizobium selenitireducens has 4489 nodes and 463758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04604 and has 5 connected components, where the component
+	with most nodes has 4480 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 206.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1336235.JAEG01000009_gene2709
+	(degree 1729), 1336235.JAEG01000007_gene1420 (degree 1425), 1336235.JAEG01000006_gene883
+	(degree 1374), 1336235.JAEG01000007_gene1516 (degree 1301) and 1336235.JAEG01000004_gene3927
+	(degree 1283).
 	
 
 

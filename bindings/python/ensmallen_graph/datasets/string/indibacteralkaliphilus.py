@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:21.594652
 
-The undirected graph Indibacter alkaliphilus has 4572 nodes and 482958 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04622 and
-has 35 connected components, where the component with most nodes has 4491 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 211.27, and the node degree mode is 2. The top 5 most central
-nodes are 1189612.A33Q_2533 (degree 1322), 1189612.A33Q_2686 (degree 1190), 1189612.A33Q_0629
-(degree 1128), 1189612.A33Q_4226 (degree 1070) and 1189612.A33Q_2061 (degree 1035).
+The undirected graph Indibacter alkaliphilus has 4572 nodes and 482958
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04622 and has 35 connected components, where the component
+with most nodes has 4491 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 211.27,
+and the node degree mode is 2. The top 5 most central nodes are 1189612.A33Q_2533
+(degree 1322), 1189612.A33Q_2686 (degree 1190), 1189612.A33Q_0629 (degree
+1128), 1189612.A33Q_4226 (degree 1070) and 1189612.A33Q_2061 (degree 1035).
 
 
 References
@@ -106,13 +107,14 @@ def IndibacterAlkaliphilus(
 	
 	Datetime: 2021-02-02 23:11:21.594652
 	
-	The undirected graph Indibacter alkaliphilus has 4572 nodes and 482958 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04622 and
-	has 35 connected components, where the component with most nodes has 4491 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 211.27, and the node degree mode is 2. The top 5 most central
-	nodes are 1189612.A33Q_2533 (degree 1322), 1189612.A33Q_2686 (degree 1190), 1189612.A33Q_0629
-	(degree 1128), 1189612.A33Q_4226 (degree 1070) and 1189612.A33Q_2061 (degree 1035).
+	The undirected graph Indibacter alkaliphilus has 4572 nodes and 482958
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04622 and has 35 connected components, where the component
+	with most nodes has 4491 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 211.27,
+	and the node degree mode is 2. The top 5 most central nodes are 1189612.A33Q_2533
+	(degree 1322), 1189612.A33Q_2686 (degree 1190), 1189612.A33Q_0629 (degree
+	1128), 1189612.A33Q_4226 (degree 1070) and 1189612.A33Q_2061 (degree 1035).
 	
 
 

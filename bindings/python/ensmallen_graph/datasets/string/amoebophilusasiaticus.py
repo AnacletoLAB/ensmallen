@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:11.357361
 
-The undirected graph Amoebophilus asiaticus has 1299 nodes and 72126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08555 and
-has 24 connected components, where the component with most nodes has 1242 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 111.05, and the node degree mode is 2. The top 5 most central
-nodes are 452471.Aasi_1160 (degree 661), 452471.Aasi_1629 (degree 661), 452471.Aasi_0999
-(degree 647), 452471.Aasi_1325 (degree 595) and 452471.Aasi_0323 (degree 569).
+The undirected graph Amoebophilus asiaticus has 1299 nodes and 72126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08555 and has 24 connected components, where the component with most
+nodes has 1242 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 111.05, and
+the node degree mode is 2. The top 5 most central nodes are 452471.Aasi_1160
+(degree 661), 452471.Aasi_1629 (degree 661), 452471.Aasi_0999 (degree 647),
+452471.Aasi_1325 (degree 595) and 452471.Aasi_0323 (degree 569).
 
 
 References
@@ -106,13 +107,14 @@ def AmoebophilusAsiaticus(
 	
 	Datetime: 2021-02-02 20:52:11.357361
 	
-	The undirected graph Amoebophilus asiaticus has 1299 nodes and 72126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08555 and
-	has 24 connected components, where the component with most nodes has 1242 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 111.05, and the node degree mode is 2. The top 5 most central
-	nodes are 452471.Aasi_1160 (degree 661), 452471.Aasi_1629 (degree 661), 452471.Aasi_0999
-	(degree 647), 452471.Aasi_1325 (degree 595) and 452471.Aasi_0323 (degree 569).
+	The undirected graph Amoebophilus asiaticus has 1299 nodes and 72126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08555 and has 24 connected components, where the component with most
+	nodes has 1242 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 111.05, and
+	the node degree mode is 2. The top 5 most central nodes are 452471.Aasi_1160
+	(degree 661), 452471.Aasi_1629 (degree 661), 452471.Aasi_0999 (degree 647),
+	452471.Aasi_1325 (degree 595) and 452471.Aasi_0323 (degree 569).
 	
 
 

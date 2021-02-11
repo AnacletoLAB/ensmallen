@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:54.366331
 
-The undirected graph Cyanothece sp. CCY0110 has 6131 nodes and 549577 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-has 136 connected components, where the component with most nodes has 5733 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 179.28, and the node degree mode is 2. The top 5
-most central nodes are 391612.CY0110_00085 (degree 1524), 391612.CY0110_04518 (degree
-1471), 391612.CY0110_04748 (degree 1396), 391612.CY0110_23526 (degree 1339) and 391612.CY0110_27248
-(degree 1337).
+The undirected graph Cyanothece sp. CCY0110 has 6131 nodes and 549577 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02925 and has 136 connected components, where the component with most
+nodes has 5733 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 179.28, and
+the node degree mode is 2. The top 5 most central nodes are 391612.CY0110_00085
+(degree 1524), 391612.CY0110_04518 (degree 1471), 391612.CY0110_04748 (degree
+1396), 391612.CY0110_23526 (degree 1339) and 391612.CY0110_27248 (degree
+1337).
 
 
 References
@@ -107,14 +108,15 @@ def CyanotheceSp.Ccy0110(
 	
 	Datetime: 2021-02-02 20:39:54.366331
 	
-	The undirected graph Cyanothece sp. CCY0110 has 6131 nodes and 549577 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-	has 136 connected components, where the component with most nodes has 5733 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 179.28, and the node degree mode is 2. The top 5
-	most central nodes are 391612.CY0110_00085 (degree 1524), 391612.CY0110_04518 (degree
-	1471), 391612.CY0110_04748 (degree 1396), 391612.CY0110_23526 (degree 1339) and 391612.CY0110_27248
-	(degree 1337).
+	The undirected graph Cyanothece sp. CCY0110 has 6131 nodes and 549577 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02925 and has 136 connected components, where the component with most
+	nodes has 5733 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 179.28, and
+	the node degree mode is 2. The top 5 most central nodes are 391612.CY0110_00085
+	(degree 1524), 391612.CY0110_04518 (degree 1471), 391612.CY0110_04748 (degree
+	1396), 391612.CY0110_23526 (degree 1339) and 391612.CY0110_27248 (degree
+	1337).
 	
 
 

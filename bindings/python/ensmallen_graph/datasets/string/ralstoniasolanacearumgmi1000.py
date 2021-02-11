@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:20.255390
 
-The undirected graph Ralstonia solanacearum GMI1000 has 5068 nodes and 602030 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04689
-and has 20 connected components, where the component with most nodes has 5024 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 237.58, and the node degree mode is 4. The top 5
-most central nodes are 267608.RSc1810 (degree 2095), 267608.RSc2230 (degree 1813),
-267608.RSc1806 (degree 1746), 267608.RSp0641 (degree 1490) and 267608.RSp1622 (degree
+The undirected graph Ralstonia solanacearum GMI1000 has 5068 nodes and
+602030 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04689 and has 20 connected components, where the
+component with most nodes has 5024 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+is 237.58, and the node degree mode is 4. The top 5 most central nodes
+are 267608.RSc1810 (degree 2095), 267608.RSc2230 (degree 1813), 267608.RSc1806
+(degree 1746), 267608.RSp0641 (degree 1490) and 267608.RSp1622 (degree
 1404).
 
 
@@ -107,13 +108,14 @@ def RalstoniaSolanacearumGmi1000(
 	
 	Datetime: 2021-02-02 20:15:20.255390
 	
-	The undirected graph Ralstonia solanacearum GMI1000 has 5068 nodes and 602030 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04689
-	and has 20 connected components, where the component with most nodes has 5024 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 237.58, and the node degree mode is 4. The top 5
-	most central nodes are 267608.RSc1810 (degree 2095), 267608.RSc2230 (degree 1813),
-	267608.RSc1806 (degree 1746), 267608.RSp0641 (degree 1490) and 267608.RSp1622 (degree
+	The undirected graph Ralstonia solanacearum GMI1000 has 5068 nodes and
+	602030 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04689 and has 20 connected components, where the
+	component with most nodes has 5024 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+	is 237.58, and the node degree mode is 4. The top 5 most central nodes
+	are 267608.RSc1810 (degree 2095), 267608.RSc2230 (degree 1813), 267608.RSc1806
+	(degree 1746), 267608.RSp0641 (degree 1490) and 267608.RSp1622 (degree
 	1404).
 	
 

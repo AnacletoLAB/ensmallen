@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:43:01.274669
 
-The undirected multigraph copresence-LyonSchool has 242 nodes and 6594492 unweighted
-edges with 3124 different edge types:  the 5 most common are 46560, 46640, 46580,
-46600 and 46680, of which none are self-loops and 13135796 are parallel. The graph
-is extremely dense as it has a density of 0.91197 and is connected, as it has a single
-component. The graph median node degree is 55504, the mean node degree is 54499.93
-and the node degree mode is 28366. The top 5 most central nodes are 1695 (degree
-97198), 1912 (degree 97035), 1675 (degree 96113), 1684 (degree 95074) and 1697 (degree
+The undirected multigraph copresence-LyonSchool has 242 nodes and 6594492
+unweighted edges with 3124 different edge types:  the 5 most common are
+46560, 46640, 46580, 46600 and 46680, of which none are self-loops and
+13135796 are parallel. The graph is extremely dense as it has a density
+of 0.91197 and is connected, as it has a single component. The graph median
+node degree is 55504, the mean node degree is 54499.93 and the node degree
+mode is 28366. The top 5 most central nodes are 1695 (degree 97198), 1912
+(degree 97035), 1675 (degree 96113), 1684 (degree 95074) and 1697 (degree
 94706).
 
 
@@ -109,13 +110,14 @@ def CopresenceLyonschool(
 	
 	Datetime: 2021-02-03 23:43:01.274669
 	
-	The undirected multigraph copresence-LyonSchool has 242 nodes and 6594492 unweighted
-	edges with 3124 different edge types:  the 5 most common are 46560, 46640, 46580,
-	46600 and 46680, of which none are self-loops and 13135796 are parallel. The graph
-	is extremely dense as it has a density of 0.91197 and is connected, as it has a single
-	component. The graph median node degree is 55504, the mean node degree is 54499.93
-	and the node degree mode is 28366. The top 5 most central nodes are 1695 (degree
-	97198), 1912 (degree 97035), 1675 (degree 96113), 1684 (degree 95074) and 1697 (degree
+	The undirected multigraph copresence-LyonSchool has 242 nodes and 6594492
+	unweighted edges with 3124 different edge types:  the 5 most common are
+	46560, 46640, 46580, 46600 and 46680, of which none are self-loops and
+	13135796 are parallel. The graph is extremely dense as it has a density
+	of 0.91197 and is connected, as it has a single component. The graph median
+	node degree is 55504, the mean node degree is 54499.93 and the node degree
+	mode is 28366. The top 5 most central nodes are 1695 (degree 97198), 1912
+	(degree 97035), 1675 (degree 96113), 1684 (degree 95074) and 1697 (degree
 	94706).
 	
 

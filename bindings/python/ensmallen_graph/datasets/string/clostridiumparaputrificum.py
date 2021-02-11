@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:29.039117
 
-The undirected graph Clostridium paraputrificum has 3480 nodes and 376175 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06214
-and has 25 connected components, where the component with most nodes has 3425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 216.19, and the node degree mode is 1. The top 5
-most central nodes are 1280689.AUJC01000007_gene3283 (degree 1495), 1280689.AUJC01000005_gene705
-(degree 1344), 1280689.AUJC01000011_gene1622 (degree 1335), 1280689.AUJC01000004_gene188
-(degree 1327) and 1280689.AUJC01000005_gene793 (degree 1282).
+The undirected graph Clostridium paraputrificum has 3480 nodes and 376175
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06214 and has 25 connected components, where the component
+with most nodes has 3425 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 216.19,
+and the node degree mode is 1. The top 5 most central nodes are 1280689.AUJC01000007_gene3283
+(degree 1495), 1280689.AUJC01000005_gene705 (degree 1344), 1280689.AUJC01000011_gene1622
+(degree 1335), 1280689.AUJC01000004_gene188 (degree 1327) and 1280689.AUJC01000005_gene793
+(degree 1282).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumParaputrificum(
 	
 	Datetime: 2021-02-03 21:07:29.039117
 	
-	The undirected graph Clostridium paraputrificum has 3480 nodes and 376175 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06214
-	and has 25 connected components, where the component with most nodes has 3425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 216.19, and the node degree mode is 1. The top 5
-	most central nodes are 1280689.AUJC01000007_gene3283 (degree 1495), 1280689.AUJC01000005_gene705
-	(degree 1344), 1280689.AUJC01000011_gene1622 (degree 1335), 1280689.AUJC01000004_gene188
-	(degree 1327) and 1280689.AUJC01000005_gene793 (degree 1282).
+	The undirected graph Clostridium paraputrificum has 3480 nodes and 376175
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06214 and has 25 connected components, where the component
+	with most nodes has 3425 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 216.19,
+	and the node degree mode is 1. The top 5 most central nodes are 1280689.AUJC01000007_gene3283
+	(degree 1495), 1280689.AUJC01000005_gene705 (degree 1344), 1280689.AUJC01000011_gene1622
+	(degree 1335), 1280689.AUJC01000004_gene188 (degree 1327) and 1280689.AUJC01000005_gene793
+	(degree 1282).
 	
 
 

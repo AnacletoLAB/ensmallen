@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:55.079451
 
-The undirected graph Microbacterium luticocti has 2681 nodes and 176343 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-and has 8 connected components, where the component with most nodes has 2663 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 131.55, and the node degree mode is 3. The top 5
-most central nodes are 1122239.AULS01000001_gene1703 (degree 782), 1122239.AULS01000009_gene1609
-(degree 758), 1122239.AULS01000011_gene31 (degree 734), 1122239.AULS01000001_gene1696
-(degree 732) and 1122239.AULS01000009_gene1604 (degree 726).
+The undirected graph Microbacterium luticocti has 2681 nodes and 176343
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04909 and has 8 connected components, where the component
+with most nodes has 2663 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 131.55,
+and the node degree mode is 3. The top 5 most central nodes are 1122239.AULS01000001_gene1703
+(degree 782), 1122239.AULS01000009_gene1609 (degree 758), 1122239.AULS01000011_gene31
+(degree 734), 1122239.AULS01000001_gene1696 (degree 732) and 1122239.AULS01000009_gene1604
+(degree 726).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumLuticocti(
 	
 	Datetime: 2021-02-02 22:42:55.079451
 	
-	The undirected graph Microbacterium luticocti has 2681 nodes and 176343 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-	and has 8 connected components, where the component with most nodes has 2663 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 131.55, and the node degree mode is 3. The top 5
-	most central nodes are 1122239.AULS01000001_gene1703 (degree 782), 1122239.AULS01000009_gene1609
-	(degree 758), 1122239.AULS01000011_gene31 (degree 734), 1122239.AULS01000001_gene1696
-	(degree 732) and 1122239.AULS01000009_gene1604 (degree 726).
+	The undirected graph Microbacterium luticocti has 2681 nodes and 176343
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04909 and has 8 connected components, where the component
+	with most nodes has 2663 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 131.55,
+	and the node degree mode is 3. The top 5 most central nodes are 1122239.AULS01000001_gene1703
+	(degree 782), 1122239.AULS01000009_gene1609 (degree 758), 1122239.AULS01000011_gene31
+	(degree 734), 1122239.AULS01000001_gene1696 (degree 732) and 1122239.AULS01000009_gene1604
+	(degree 726).
 	
 
 

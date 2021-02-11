@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:08:05.925052
 
-The undirected graph Glycomyces sp. NRRLB16210 has 4189 nodes and 395369 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04507
-and has 30 connected components, where the component with most nodes has 4118 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 188.77, and the node degree mode is 1. The top 5
-most central nodes are 1463821.JOGR01000003_gene1119 (degree 1298), 1463821.JOGR01000020_gene1168
-(degree 1268), 1463821.JOGR01000004_gene2431 (degree 1252), 1463821.JOGR01000010_gene3892
-(degree 1218) and 1463821.JOGR01000015_gene3529 (degree 1174).
+The undirected graph Glycomyces sp. NRRLB16210 has 4189 nodes and 395369
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04507 and has 30 connected components, where the component
+with most nodes has 4118 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 188.77,
+and the node degree mode is 1. The top 5 most central nodes are 1463821.JOGR01000003_gene1119
+(degree 1298), 1463821.JOGR01000020_gene1168 (degree 1268), 1463821.JOGR01000004_gene2431
+(degree 1252), 1463821.JOGR01000010_gene3892 (degree 1218) and 1463821.JOGR01000015_gene3529
+(degree 1174).
 
 
 References
@@ -107,14 +108,15 @@ def GlycomycesSp.Nrrlb16210(
 	
 	Datetime: 2021-02-03 23:08:05.925052
 	
-	The undirected graph Glycomyces sp. NRRLB16210 has 4189 nodes and 395369 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04507
-	and has 30 connected components, where the component with most nodes has 4118 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 188.77, and the node degree mode is 1. The top 5
-	most central nodes are 1463821.JOGR01000003_gene1119 (degree 1298), 1463821.JOGR01000020_gene1168
-	(degree 1268), 1463821.JOGR01000004_gene2431 (degree 1252), 1463821.JOGR01000010_gene3892
-	(degree 1218) and 1463821.JOGR01000015_gene3529 (degree 1174).
+	The undirected graph Glycomyces sp. NRRLB16210 has 4189 nodes and 395369
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04507 and has 30 connected components, where the component
+	with most nodes has 4118 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 188.77,
+	and the node degree mode is 1. The top 5 most central nodes are 1463821.JOGR01000003_gene1119
+	(degree 1298), 1463821.JOGR01000020_gene1168 (degree 1268), 1463821.JOGR01000004_gene2431
+	(degree 1252), 1463821.JOGR01000010_gene3892 (degree 1218) and 1463821.JOGR01000015_gene3529
+	(degree 1174).
 	
 
 

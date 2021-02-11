@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 09:06:53.999659
 
-The undirected graph ER-MD has 9512 nodes with 10 different node types:  the 5 most
-common are 1 (nodes number 8013), 2 (nodes number 1075), 4 (nodes number 175), 3
-(nodes number 171) and 6 (nodes number 31) and 104741 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00232 and has 446
-connected components, where the component with most nodes has 43 nodes and the component
-with the least nodes has 4 nodes. The graph median node degree is 21, the mean node
-degree is 22.02 and the node degree mode is 22. The top 5 most central nodes are
-5588 (degree 42), 5587 (degree 42), 5586 (degree 42), 5585 (degree 42) and 5584 (degree
-42).
+The undirected graph ER-MD has 9512 nodes with 10 different node types:
+ the 5 most common are 1 (nodes number 8013), 2 (nodes number 1075), 4
+(nodes number 175), 3 (nodes number 171) and 6 (nodes number 31) and 104741
+unweighted edges, of which none are self-loops. The graph is sparse as
+it has a density of 0.00232 and has 446 connected components, where the
+component with most nodes has 43 nodes and the component with the least
+nodes has 4 nodes. The graph median node degree is 21, the mean node degree
+is 22.02 and the node degree mode is 22. The top 5 most central nodes are
+5588 (degree 42), 5587 (degree 42), 5586 (degree 42), 5585 (degree 42)
+and 5584 (degree 42).
 
 
 References
@@ -105,15 +106,16 @@ def ErMd(
 	
 	Datetime: 2021-02-04 09:06:53.999659
 	
-	The undirected graph ER-MD has 9512 nodes with 10 different node types:  the 5 most
-	common are 1 (nodes number 8013), 2 (nodes number 1075), 4 (nodes number 175), 3
-	(nodes number 171) and 6 (nodes number 31) and 104741 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00232 and has 446
-	connected components, where the component with most nodes has 43 nodes and the component
-	with the least nodes has 4 nodes. The graph median node degree is 21, the mean node
-	degree is 22.02 and the node degree mode is 22. The top 5 most central nodes are
-	5588 (degree 42), 5587 (degree 42), 5586 (degree 42), 5585 (degree 42) and 5584 (degree
-	42).
+	The undirected graph ER-MD has 9512 nodes with 10 different node types:
+	 the 5 most common are 1 (nodes number 8013), 2 (nodes number 1075), 4
+	(nodes number 175), 3 (nodes number 171) and 6 (nodes number 31) and 104741
+	unweighted edges, of which none are self-loops. The graph is sparse as
+	it has a density of 0.00232 and has 446 connected components, where the
+	component with most nodes has 43 nodes and the component with the least
+	nodes has 4 nodes. The graph median node degree is 21, the mean node degree
+	is 22.02 and the node degree mode is 22. The top 5 most central nodes are
+	5588 (degree 42), 5587 (degree 42), 5586 (degree 42), 5585 (degree 42)
+	and 5584 (degree 42).
 	
 
 

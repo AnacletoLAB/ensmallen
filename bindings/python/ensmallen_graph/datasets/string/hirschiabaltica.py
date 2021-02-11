@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:40.792260
 
-The undirected graph Hirschia baltica has 3172 nodes and 285477 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05676 and
-has 7 connected components, where the component with most nodes has 3160 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 180.00, and the node degree mode is 2. The top 5 most central
-nodes are 582402.Hbal_0176 (degree 1210), 582402.Hbal_2647 (degree 987), 582402.Hbal_1816
-(degree 905), 582402.Hbal_1810 (degree 855) and 582402.Hbal_0927 (degree 847).
+The undirected graph Hirschia baltica has 3172 nodes and 285477 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05676 and has 7 connected components, where the component with most
+nodes has 3160 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 180.00, and
+the node degree mode is 2. The top 5 most central nodes are 582402.Hbal_0176
+(degree 1210), 582402.Hbal_2647 (degree 987), 582402.Hbal_1816 (degree
+905), 582402.Hbal_1810 (degree 855) and 582402.Hbal_0927 (degree 847).
 
 
 References
@@ -106,13 +107,14 @@ def HirschiaBaltica(
 	
 	Datetime: 2021-02-02 21:15:40.792260
 	
-	The undirected graph Hirschia baltica has 3172 nodes and 285477 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05676 and
-	has 7 connected components, where the component with most nodes has 3160 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 180.00, and the node degree mode is 2. The top 5 most central
-	nodes are 582402.Hbal_0176 (degree 1210), 582402.Hbal_2647 (degree 987), 582402.Hbal_1816
-	(degree 905), 582402.Hbal_1810 (degree 855) and 582402.Hbal_0927 (degree 847).
+	The undirected graph Hirschia baltica has 3172 nodes and 285477 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05676 and has 7 connected components, where the component with most
+	nodes has 3160 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 180.00, and
+	the node degree mode is 2. The top 5 most central nodes are 582402.Hbal_0176
+	(degree 1210), 582402.Hbal_2647 (degree 987), 582402.Hbal_1816 (degree
+	905), 582402.Hbal_1810 (degree 855) and 582402.Hbal_0927 (degree 847).
 	
 
 

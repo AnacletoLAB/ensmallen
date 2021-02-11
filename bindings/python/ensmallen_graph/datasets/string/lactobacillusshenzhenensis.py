@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:02.925267
 
-The undirected graph Lactobacillus shenzhenensis has 3097 nodes and 222237 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-and has 23 connected components, where the component with most nodes has 3041 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 143.52, and the node degree mode is 2. The top 5
-most central nodes are 1231336.L248_0037 (degree 1205), 1231336.L248_0798 (degree
-1039), 1231336.L248_2562 (degree 1001), 1231336.L248_2653 (degree 864) and 1231336.L248_1275
-(degree 788).
+The undirected graph Lactobacillus shenzhenensis has 3097 nodes and 222237
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04636 and has 23 connected components, where the component
+with most nodes has 3041 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 143.52,
+and the node degree mode is 2. The top 5 most central nodes are 1231336.L248_0037
+(degree 1205), 1231336.L248_0798 (degree 1039), 1231336.L248_2562 (degree
+1001), 1231336.L248_2653 (degree 864) and 1231336.L248_1275 (degree 788).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusShenzhenensis(
 	
 	Datetime: 2021-02-02 23:28:02.925267
 	
-	The undirected graph Lactobacillus shenzhenensis has 3097 nodes and 222237 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-	and has 23 connected components, where the component with most nodes has 3041 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 143.52, and the node degree mode is 2. The top 5
-	most central nodes are 1231336.L248_0037 (degree 1205), 1231336.L248_0798 (degree
-	1039), 1231336.L248_2562 (degree 1001), 1231336.L248_2653 (degree 864) and 1231336.L248_1275
-	(degree 788).
+	The undirected graph Lactobacillus shenzhenensis has 3097 nodes and 222237
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04636 and has 23 connected components, where the component
+	with most nodes has 3041 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 143.52,
+	and the node degree mode is 2. The top 5 most central nodes are 1231336.L248_0037
+	(degree 1205), 1231336.L248_0798 (degree 1039), 1231336.L248_2562 (degree
+	1001), 1231336.L248_2653 (degree 864) and 1231336.L248_1275 (degree 788).
 	
 
 

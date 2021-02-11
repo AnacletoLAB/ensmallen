@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:35.074631
 
-The undirected graph Kaistia granuli has 4280 nodes and 415538 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04538 and
-has 13 connected components, where the component with most nodes has 4252 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 194.18, and the node degree mode is 4. The top 5 most central
-nodes are 1122132.AQYH01000005_gene635 (degree 1467), 1122132.AQYH01000002_gene1379
-(degree 1194), 1122132.AQYH01000018_gene1171 (degree 1183), 1122132.AQYH01000018_gene1167
-(degree 1112) and 1122132.AQYH01000003_gene3205 (degree 1057).
+The undirected graph Kaistia granuli has 4280 nodes and 415538 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04538 and has 13 connected components, where the component with most
+nodes has 4252 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 194.18, and
+the node degree mode is 4. The top 5 most central nodes are 1122132.AQYH01000005_gene635
+(degree 1467), 1122132.AQYH01000002_gene1379 (degree 1194), 1122132.AQYH01000018_gene1171
+(degree 1183), 1122132.AQYH01000018_gene1167 (degree 1112) and 1122132.AQYH01000003_gene3205
+(degree 1057).
 
 
 References
@@ -107,14 +108,15 @@ def KaistiaGranuli(
 	
 	Datetime: 2021-02-02 22:40:35.074631
 	
-	The undirected graph Kaistia granuli has 4280 nodes and 415538 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04538 and
-	has 13 connected components, where the component with most nodes has 4252 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 194.18, and the node degree mode is 4. The top 5 most central
-	nodes are 1122132.AQYH01000005_gene635 (degree 1467), 1122132.AQYH01000002_gene1379
-	(degree 1194), 1122132.AQYH01000018_gene1171 (degree 1183), 1122132.AQYH01000018_gene1167
-	(degree 1112) and 1122132.AQYH01000003_gene3205 (degree 1057).
+	The undirected graph Kaistia granuli has 4280 nodes and 415538 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04538 and has 13 connected components, where the component with most
+	nodes has 4252 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 194.18, and
+	the node degree mode is 4. The top 5 most central nodes are 1122132.AQYH01000005_gene635
+	(degree 1467), 1122132.AQYH01000002_gene1379 (degree 1194), 1122132.AQYH01000018_gene1171
+	(degree 1183), 1122132.AQYH01000018_gene1167 (degree 1112) and 1122132.AQYH01000003_gene3205
+	(degree 1057).
 	
 
 

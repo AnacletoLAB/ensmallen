@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:54.049887
 
-The undirected graph Paenibacillus pini has 4828 nodes and 586075 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05030 and
-has 28 connected components, where the component with most nodes has 4733 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 242.78, and the node degree mode is 5. The top 5 most central
-nodes are 1236976.JCM16418_1775 (degree 2164), 1236976.JCM16418_290 (degree 1801),
-1236976.JCM16418_4630 (degree 1692), 1236976.JCM16418_993 (degree 1433) and 1236976.JCM16418_3440
+The undirected graph Paenibacillus pini has 4828 nodes and 586075 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05030 and has 28 connected components, where the component with most
+nodes has 4733 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 242.78, and
+the node degree mode is 5. The top 5 most central nodes are 1236976.JCM16418_1775
+(degree 2164), 1236976.JCM16418_290 (degree 1801), 1236976.JCM16418_4630
+(degree 1692), 1236976.JCM16418_993 (degree 1433) and 1236976.JCM16418_3440
 (degree 1430).
 
 
@@ -107,13 +108,14 @@ def PaenibacillusPini(
 	
 	Datetime: 2021-02-02 23:31:54.049887
 	
-	The undirected graph Paenibacillus pini has 4828 nodes and 586075 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05030 and
-	has 28 connected components, where the component with most nodes has 4733 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 242.78, and the node degree mode is 5. The top 5 most central
-	nodes are 1236976.JCM16418_1775 (degree 2164), 1236976.JCM16418_290 (degree 1801),
-	1236976.JCM16418_4630 (degree 1692), 1236976.JCM16418_993 (degree 1433) and 1236976.JCM16418_3440
+	The undirected graph Paenibacillus pini has 4828 nodes and 586075 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05030 and has 28 connected components, where the component with most
+	nodes has 4733 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 242.78, and
+	the node degree mode is 5. The top 5 most central nodes are 1236976.JCM16418_1775
+	(degree 2164), 1236976.JCM16418_290 (degree 1801), 1236976.JCM16418_4630
+	(degree 1692), 1236976.JCM16418_993 (degree 1433) and 1236976.JCM16418_3440
 	(degree 1430).
 	
 

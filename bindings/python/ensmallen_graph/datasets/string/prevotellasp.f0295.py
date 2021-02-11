@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:22.466560
 
-The undirected graph Prevotella sp. F0295 has 2973 nodes and 175227 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03966 and
-has 63 connected components, where the component with most nodes has 2829 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 117.88, and the node degree mode is 1. The top 5 most central
-nodes are 619693.HMPREF6745_0295 (degree 1113), 619693.HMPREF6745_1367 (degree 925),
-619693.HMPREF6745_0987 (degree 852), 619693.HMPREF6745_0127 (degree 819) and 619693.HMPREF6745_1907
+The undirected graph Prevotella sp. F0295 has 2973 nodes and 175227 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03966 and has 63 connected components, where the component with most
+nodes has 2829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 117.88, and
+the node degree mode is 1. The top 5 most central nodes are 619693.HMPREF6745_0295
+(degree 1113), 619693.HMPREF6745_1367 (degree 925), 619693.HMPREF6745_0987
+(degree 852), 619693.HMPREF6745_0127 (degree 819) and 619693.HMPREF6745_1907
 (degree 727).
 
 
@@ -107,13 +108,14 @@ def PrevotellaSp.F0295(
 	
 	Datetime: 2021-02-02 21:20:22.466560
 	
-	The undirected graph Prevotella sp. F0295 has 2973 nodes and 175227 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03966 and
-	has 63 connected components, where the component with most nodes has 2829 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 117.88, and the node degree mode is 1. The top 5 most central
-	nodes are 619693.HMPREF6745_0295 (degree 1113), 619693.HMPREF6745_1367 (degree 925),
-	619693.HMPREF6745_0987 (degree 852), 619693.HMPREF6745_0127 (degree 819) and 619693.HMPREF6745_1907
+	The undirected graph Prevotella sp. F0295 has 2973 nodes and 175227 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03966 and has 63 connected components, where the component with most
+	nodes has 2829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 117.88, and
+	the node degree mode is 1. The top 5 most central nodes are 619693.HMPREF6745_0295
+	(degree 1113), 619693.HMPREF6745_1367 (degree 925), 619693.HMPREF6745_0987
+	(degree 852), 619693.HMPREF6745_0127 (degree 819) and 619693.HMPREF6745_1907
 	(degree 727).
 	
 

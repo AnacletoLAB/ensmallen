@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:20.801807
 
-The undirected graph Thermincola potens has 2920 nodes and 216580 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05082 and
-has 9 connected components, where the component with most nodes has 2902 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 148.34, and the node degree mode is 4. The top 5 most central
-nodes are 635013.TherJR_0963 (degree 1124), 635013.TherJR_1640 (degree 1033), 635013.TherJR_1590
-(degree 889), 635013.TherJR_0787 (degree 829) and 635013.TherJR_1153 (degree 790).
+The undirected graph Thermincola potens has 2920 nodes and 216580 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05082 and has 9 connected components, where the component with most
+nodes has 2902 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 148.34, and
+the node degree mode is 4. The top 5 most central nodes are 635013.TherJR_0963
+(degree 1124), 635013.TherJR_1640 (degree 1033), 635013.TherJR_1590 (degree
+889), 635013.TherJR_0787 (degree 829) and 635013.TherJR_1153 (degree 790).
 
 
 References
@@ -106,13 +107,14 @@ def ThermincolaPotens(
 	
 	Datetime: 2021-02-02 21:22:20.801807
 	
-	The undirected graph Thermincola potens has 2920 nodes and 216580 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05082 and
-	has 9 connected components, where the component with most nodes has 2902 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 148.34, and the node degree mode is 4. The top 5 most central
-	nodes are 635013.TherJR_0963 (degree 1124), 635013.TherJR_1640 (degree 1033), 635013.TherJR_1590
-	(degree 889), 635013.TherJR_0787 (degree 829) and 635013.TherJR_1153 (degree 790).
+	The undirected graph Thermincola potens has 2920 nodes and 216580 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05082 and has 9 connected components, where the component with most
+	nodes has 2902 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 148.34, and
+	the node degree mode is 4. The top 5 most central nodes are 635013.TherJR_0963
+	(degree 1124), 635013.TherJR_1640 (degree 1033), 635013.TherJR_1590 (degree
+	889), 635013.TherJR_0787 (degree 829) and 635013.TherJR_1153 (degree 790).
 	
 
 

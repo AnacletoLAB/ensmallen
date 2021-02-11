@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:42.857860
 
-The undirected graph Bradyrhizobium sp. Cp53 has 7424 nodes and 1150287 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04175
-and has 51 connected components, where the component with most nodes has 7310 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 309.88, and the node degree mode is 1. The top 5
-most central nodes are 443598.AUFA01000018_gene7506 (degree 3841), 443598.AUFA01000053_gene739
-(degree 2992), 443598.AUFA01000007_gene4448 (degree 2902), 443598.AUFA01000009_gene5571
-(degree 2808) and 443598.AUFA01000024_gene1606 (degree 2664).
+The undirected graph Bradyrhizobium sp. Cp53 has 7424 nodes and 1150287
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04175 and has 51 connected components, where the component
+with most nodes has 7310 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 309.88,
+and the node degree mode is 1. The top 5 most central nodes are 443598.AUFA01000018_gene7506
+(degree 3841), 443598.AUFA01000053_gene739 (degree 2992), 443598.AUFA01000007_gene4448
+(degree 2902), 443598.AUFA01000009_gene5571 (degree 2808) and 443598.AUFA01000024_gene1606
+(degree 2664).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Cp53(
 	
 	Datetime: 2021-02-02 20:50:42.857860
 	
-	The undirected graph Bradyrhizobium sp. Cp53 has 7424 nodes and 1150287 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04175
-	and has 51 connected components, where the component with most nodes has 7310 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 309.88, and the node degree mode is 1. The top 5
-	most central nodes are 443598.AUFA01000018_gene7506 (degree 3841), 443598.AUFA01000053_gene739
-	(degree 2992), 443598.AUFA01000007_gene4448 (degree 2902), 443598.AUFA01000009_gene5571
-	(degree 2808) and 443598.AUFA01000024_gene1606 (degree 2664).
+	The undirected graph Bradyrhizobium sp. Cp53 has 7424 nodes and 1150287
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04175 and has 51 connected components, where the component
+	with most nodes has 7310 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 309.88,
+	and the node degree mode is 1. The top 5 most central nodes are 443598.AUFA01000018_gene7506
+	(degree 3841), 443598.AUFA01000053_gene739 (degree 2992), 443598.AUFA01000007_gene4448
+	(degree 2902), 443598.AUFA01000009_gene5571 (degree 2808) and 443598.AUFA01000024_gene1606
+	(degree 2664).
 	
 
 

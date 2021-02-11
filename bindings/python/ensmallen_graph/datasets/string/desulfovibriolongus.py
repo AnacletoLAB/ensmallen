@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:04.656350
 
-The undirected graph Desulfovibrio longus has 3205 nodes and 391300 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07621 and
-has 10 connected components, where the component with most nodes has 3186 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 244.18, and the node degree mode is 1. The top 5 most central
-nodes are 1121456.ATVA01000011_gene1497 (degree 1556), 1121456.ATVA01000011_gene1546
-(degree 1375), 1121456.ATVA01000013_gene1022 (degree 1370), 1121456.ATVA01000014_gene514
-(degree 1302) and 1121456.ATVA01000014_gene559 (degree 1295).
+The undirected graph Desulfovibrio longus has 3205 nodes and 391300 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07621 and has 10 connected components, where the component with most
+nodes has 3186 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 244.18, and
+the node degree mode is 1. The top 5 most central nodes are 1121456.ATVA01000011_gene1497
+(degree 1556), 1121456.ATVA01000011_gene1546 (degree 1375), 1121456.ATVA01000013_gene1022
+(degree 1370), 1121456.ATVA01000014_gene514 (degree 1302) and 1121456.ATVA01000014_gene559
+(degree 1295).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioLongus(
 	
 	Datetime: 2021-02-02 22:37:04.656350
 	
-	The undirected graph Desulfovibrio longus has 3205 nodes and 391300 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07621 and
-	has 10 connected components, where the component with most nodes has 3186 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 244.18, and the node degree mode is 1. The top 5 most central
-	nodes are 1121456.ATVA01000011_gene1497 (degree 1556), 1121456.ATVA01000011_gene1546
-	(degree 1375), 1121456.ATVA01000013_gene1022 (degree 1370), 1121456.ATVA01000014_gene514
-	(degree 1302) and 1121456.ATVA01000014_gene559 (degree 1295).
+	The undirected graph Desulfovibrio longus has 3205 nodes and 391300 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07621 and has 10 connected components, where the component with most
+	nodes has 3186 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 244.18, and
+	the node degree mode is 1. The top 5 most central nodes are 1121456.ATVA01000011_gene1497
+	(degree 1556), 1121456.ATVA01000011_gene1546 (degree 1375), 1121456.ATVA01000013_gene1022
+	(degree 1370), 1121456.ATVA01000014_gene514 (degree 1302) and 1121456.ATVA01000014_gene559
+	(degree 1295).
 	
 
 

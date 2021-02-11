@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:40.091706
 
-The undirected graph Citreicella sp. SE45 has 4963 nodes and 811100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06587 and
-has 14 connected components, where the component with most nodes has 4933 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 287,
-the mean node degree is 326.86, and the node degree mode is 2. The top 5 most central
-nodes are 501479.ACNW01000103_gene611 (degree 2034), 501479.ACNW01000081_gene4697
-(degree 1591), 501479.ACNW01000050_gene3477 (degree 1516), 501479.ACNW01000101_gene76
-(degree 1429) and 501479.ACNW01000097_gene1073 (degree 1416).
+The undirected graph Citreicella sp. SE45 has 4963 nodes and 811100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06587 and has 14 connected components, where the component with most
+nodes has 4933 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 287, the mean node degree is 326.86, and
+the node degree mode is 2. The top 5 most central nodes are 501479.ACNW01000103_gene611
+(degree 2034), 501479.ACNW01000081_gene4697 (degree 1591), 501479.ACNW01000050_gene3477
+(degree 1516), 501479.ACNW01000101_gene76 (degree 1429) and 501479.ACNW01000097_gene1073
+(degree 1416).
 
 
 References
@@ -107,14 +108,15 @@ def CitreicellaSp.Se45(
 	
 	Datetime: 2021-02-02 21:01:40.091706
 	
-	The undirected graph Citreicella sp. SE45 has 4963 nodes and 811100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06587 and
-	has 14 connected components, where the component with most nodes has 4933 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 287,
-	the mean node degree is 326.86, and the node degree mode is 2. The top 5 most central
-	nodes are 501479.ACNW01000103_gene611 (degree 2034), 501479.ACNW01000081_gene4697
-	(degree 1591), 501479.ACNW01000050_gene3477 (degree 1516), 501479.ACNW01000101_gene76
-	(degree 1429) and 501479.ACNW01000097_gene1073 (degree 1416).
+	The undirected graph Citreicella sp. SE45 has 4963 nodes and 811100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06587 and has 14 connected components, where the component with most
+	nodes has 4933 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 287, the mean node degree is 326.86, and
+	the node degree mode is 2. The top 5 most central nodes are 501479.ACNW01000103_gene611
+	(degree 2034), 501479.ACNW01000081_gene4697 (degree 1591), 501479.ACNW01000050_gene3477
+	(degree 1516), 501479.ACNW01000101_gene76 (degree 1429) and 501479.ACNW01000097_gene1073
+	(degree 1416).
 	
 
 

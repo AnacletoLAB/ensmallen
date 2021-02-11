@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:02.030440
 
-The undirected graph Stenotrophomonas maltophilia R5513 has 4023 nodes and 467324
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05776 and has 10 connected components, where the component with most nodes has
-4002 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 209, the mean node degree is 232.33, and the node degree mode is 3. The
-top 5 most central nodes are 391008.Smal_0156 (degree 1325), 391008.Smal_3941 (degree
-1288), 391008.Smal_1737 (degree 1101), 391008.Smal_1011 (degree 1075) and 391008.Smal_0064
-(degree 1009).
+The undirected graph Stenotrophomonas maltophilia R5513 has 4023 nodes
+and 467324 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05776 and has 10 connected components, where the
+component with most nodes has 4002 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 209, the mean node degree
+is 232.33, and the node degree mode is 3. The top 5 most central nodes
+are 391008.Smal_0156 (degree 1325), 391008.Smal_3941 (degree 1288), 391008.Smal_1737
+(degree 1101), 391008.Smal_1011 (degree 1075) and 391008.Smal_0064 (degree
+1009).
 
 
 References
@@ -107,14 +108,15 @@ def StenotrophomonasMaltophiliaR5513(
 	
 	Datetime: 2021-02-02 20:39:02.030440
 	
-	The undirected graph Stenotrophomonas maltophilia R5513 has 4023 nodes and 467324
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05776 and has 10 connected components, where the component with most nodes has
-	4002 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 209, the mean node degree is 232.33, and the node degree mode is 3. The
-	top 5 most central nodes are 391008.Smal_0156 (degree 1325), 391008.Smal_3941 (degree
-	1288), 391008.Smal_1737 (degree 1101), 391008.Smal_1011 (degree 1075) and 391008.Smal_0064
-	(degree 1009).
+	The undirected graph Stenotrophomonas maltophilia R5513 has 4023 nodes
+	and 467324 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05776 and has 10 connected components, where the
+	component with most nodes has 4002 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 209, the mean node degree
+	is 232.33, and the node degree mode is 3. The top 5 most central nodes
+	are 391008.Smal_0156 (degree 1325), 391008.Smal_3941 (degree 1288), 391008.Smal_1737
+	(degree 1101), 391008.Smal_1011 (degree 1075) and 391008.Smal_0064 (degree
+	1009).
 	
 
 

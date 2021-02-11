@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:13.177088
 
-The undirected graph Sulfitobacter sp. NB77 has 3892 nodes and 405558 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05356 and
-has 5 connected components, where the component with most nodes has 3884 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 208.41, and the node degree mode is 3. The top 5 most central
-nodes are 1342301.JASD01000008_gene1530 (degree 1563), 1342301.JASD01000008_gene2880
-(degree 1438), 1342301.JASD01000008_gene1091 (degree 1289), 1342301.JASD01000008_gene3464
-(degree 1274) and 1342301.JASD01000008_gene1753 (degree 1190).
+The undirected graph Sulfitobacter sp. NB77 has 3892 nodes and 405558 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05356 and has 5 connected components, where the component with most
+nodes has 3884 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 208.41, and
+the node degree mode is 3. The top 5 most central nodes are 1342301.JASD01000008_gene1530
+(degree 1563), 1342301.JASD01000008_gene2880 (degree 1438), 1342301.JASD01000008_gene1091
+(degree 1289), 1342301.JASD01000008_gene3464 (degree 1274) and 1342301.JASD01000008_gene1753
+(degree 1190).
 
 
 References
@@ -107,14 +108,15 @@ def SulfitobacterSp.Nb77(
 	
 	Datetime: 2021-02-03 22:01:13.177088
 	
-	The undirected graph Sulfitobacter sp. NB77 has 3892 nodes and 405558 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05356 and
-	has 5 connected components, where the component with most nodes has 3884 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 208.41, and the node degree mode is 3. The top 5 most central
-	nodes are 1342301.JASD01000008_gene1530 (degree 1563), 1342301.JASD01000008_gene2880
-	(degree 1438), 1342301.JASD01000008_gene1091 (degree 1289), 1342301.JASD01000008_gene3464
-	(degree 1274) and 1342301.JASD01000008_gene1753 (degree 1190).
+	The undirected graph Sulfitobacter sp. NB77 has 3892 nodes and 405558 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05356 and has 5 connected components, where the component with most
+	nodes has 3884 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 208.41, and
+	the node degree mode is 3. The top 5 most central nodes are 1342301.JASD01000008_gene1530
+	(degree 1563), 1342301.JASD01000008_gene2880 (degree 1438), 1342301.JASD01000008_gene1091
+	(degree 1289), 1342301.JASD01000008_gene3464 (degree 1274) and 1342301.JASD01000008_gene1753
+	(degree 1190).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:31.399962
 
-The undirected graph Microtetraspora glauca has 6782 nodes and 1007091 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04380 and
-has 27 connected components, where the component with most nodes has 6705 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 296.99, and the node degree mode is 2. The top 5 most central
-nodes are 1996.JOFO01000015_gene962 (degree 2418), 1996.JOFO01000008_gene3115 (degree
-2060), 1996.JOFO01000007_gene4607 (degree 2052), 1996.JOFO01000003_gene6230 (degree
-2032) and 1996.JOFO01000014_gene6781 (degree 1965).
+The undirected graph Microtetraspora glauca has 6782 nodes and 1007091
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04380 and has 27 connected components, where the component
+with most nodes has 6705 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 252, the mean node degree is 296.99,
+and the node degree mode is 2. The top 5 most central nodes are 1996.JOFO01000015_gene962
+(degree 2418), 1996.JOFO01000008_gene3115 (degree 2060), 1996.JOFO01000007_gene4607
+(degree 2052), 1996.JOFO01000003_gene6230 (degree 2032) and 1996.JOFO01000014_gene6781
+(degree 1965).
 
 
 References
@@ -107,14 +108,15 @@ def MicrotetrasporaGlauca(
 	
 	Datetime: 2021-02-02 16:24:31.399962
 	
-	The undirected graph Microtetraspora glauca has 6782 nodes and 1007091 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04380 and
-	has 27 connected components, where the component with most nodes has 6705 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 296.99, and the node degree mode is 2. The top 5 most central
-	nodes are 1996.JOFO01000015_gene962 (degree 2418), 1996.JOFO01000008_gene3115 (degree
-	2060), 1996.JOFO01000007_gene4607 (degree 2052), 1996.JOFO01000003_gene6230 (degree
-	2032) and 1996.JOFO01000014_gene6781 (degree 1965).
+	The undirected graph Microtetraspora glauca has 6782 nodes and 1007091
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04380 and has 27 connected components, where the component
+	with most nodes has 6705 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 252, the mean node degree is 296.99,
+	and the node degree mode is 2. The top 5 most central nodes are 1996.JOFO01000015_gene962
+	(degree 2418), 1996.JOFO01000008_gene3115 (degree 2060), 1996.JOFO01000007_gene4607
+	(degree 2052), 1996.JOFO01000003_gene6230 (degree 2032) and 1996.JOFO01000014_gene6781
+	(degree 1965).
 	
 
 

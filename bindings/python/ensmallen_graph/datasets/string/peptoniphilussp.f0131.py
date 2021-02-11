@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:14.395460
 
-The undirected graph Peptoniphilus sp. F0131 has 1399 nodes and 94678 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09682 and
-is connected, as it has a single component. The graph median node degree is 111,
-the mean node degree is 135.35, and the node degree mode is 9. The top 5 most central
-nodes are 575609.HMPREF0629_00479 (degree 713), 575609.HMPREF0629_00853 (degree 696),
-575609.HMPREF0629_01241 (degree 608), 575609.HMPREF0629_00101 (degree 549) and 575609.HMPREF0629_01042
+The undirected graph Peptoniphilus sp. F0131 has 1399 nodes and 94678 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09682 and is connected, as it has a single component. The graph median
+node degree is 111, the mean node degree is 135.35, and the node degree
+mode is 9. The top 5 most central nodes are 575609.HMPREF0629_00479 (degree
+713), 575609.HMPREF0629_00853 (degree 696), 575609.HMPREF0629_01241 (degree
+608), 575609.HMPREF0629_00101 (degree 549) and 575609.HMPREF0629_01042
 (degree 537).
 
 
@@ -106,12 +107,13 @@ def PeptoniphilusSp.F0131(
 	
 	Datetime: 2021-02-02 21:15:14.395460
 	
-	The undirected graph Peptoniphilus sp. F0131 has 1399 nodes and 94678 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09682 and
-	is connected, as it has a single component. The graph median node degree is 111,
-	the mean node degree is 135.35, and the node degree mode is 9. The top 5 most central
-	nodes are 575609.HMPREF0629_00479 (degree 713), 575609.HMPREF0629_00853 (degree 696),
-	575609.HMPREF0629_01241 (degree 608), 575609.HMPREF0629_00101 (degree 549) and 575609.HMPREF0629_01042
+	The undirected graph Peptoniphilus sp. F0131 has 1399 nodes and 94678 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09682 and is connected, as it has a single component. The graph median
+	node degree is 111, the mean node degree is 135.35, and the node degree
+	mode is 9. The top 5 most central nodes are 575609.HMPREF0629_00479 (degree
+	713), 575609.HMPREF0629_00853 (degree 696), 575609.HMPREF0629_01241 (degree
+	608), 575609.HMPREF0629_00101 (degree 549) and 575609.HMPREF0629_01042
 	(degree 537).
 	
 

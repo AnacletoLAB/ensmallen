@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:40.097860
 
-The undirected graph Rhizobium sp. CF394 has 5984 nodes and 790754 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-has 25 connected components, where the component with most nodes has 5932 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 264.29, and the node degree mode is 1. The top 5 most central
-nodes are 1500304.JQKY01000023_gene4195 (degree 2446), 1500304.JQKY01000028_gene1241
-(degree 2208), 1500304.JQKY01000011_gene5999 (degree 2194), 1500304.JQKY01000004_gene1515
-(degree 2097) and 1500304.JQKY01000007_gene3401 (degree 1856).
+The undirected graph Rhizobium sp. CF394 has 5984 nodes and 790754 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04417 and has 25 connected components, where the component with most
+nodes has 5932 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 264.29, and
+the node degree mode is 1. The top 5 most central nodes are 1500304.JQKY01000023_gene4195
+(degree 2446), 1500304.JQKY01000028_gene1241 (degree 2208), 1500304.JQKY01000011_gene5999
+(degree 2194), 1500304.JQKY01000004_gene1515 (degree 2097) and 1500304.JQKY01000007_gene3401
+(degree 1856).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.Cf394(
 	
 	Datetime: 2021-02-03 23:15:40.097860
 	
-	The undirected graph Rhizobium sp. CF394 has 5984 nodes and 790754 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-	has 25 connected components, where the component with most nodes has 5932 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 264.29, and the node degree mode is 1. The top 5 most central
-	nodes are 1500304.JQKY01000023_gene4195 (degree 2446), 1500304.JQKY01000028_gene1241
-	(degree 2208), 1500304.JQKY01000011_gene5999 (degree 2194), 1500304.JQKY01000004_gene1515
-	(degree 2097) and 1500304.JQKY01000007_gene3401 (degree 1856).
+	The undirected graph Rhizobium sp. CF394 has 5984 nodes and 790754 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04417 and has 25 connected components, where the component with most
+	nodes has 5932 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 264.29, and
+	the node degree mode is 1. The top 5 most central nodes are 1500304.JQKY01000023_gene4195
+	(degree 2446), 1500304.JQKY01000028_gene1241 (degree 2208), 1500304.JQKY01000011_gene5999
+	(degree 2194), 1500304.JQKY01000004_gene1515 (degree 2097) and 1500304.JQKY01000007_gene3401
+	(degree 1856).
 	
 
 

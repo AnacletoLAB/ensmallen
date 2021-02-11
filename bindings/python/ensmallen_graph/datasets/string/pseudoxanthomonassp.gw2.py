@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:11.454604
 
-The undirected graph Pseudoxanthomonas sp. GW2 has 3033 nodes and 334597 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07277
-and has 10 connected components, where the component with most nodes has 3012 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 220.64, and the node degree mode is 2. The top 5
-most central nodes are 1211114.ALIP01000094_gene1205 (degree 1244), 1211114.ALIP01000143_gene2273
-(degree 1205), 1211114.ALIP01000094_gene1247 (degree 1161), 1211114.ALIP01000128_gene1101
-(degree 1086) and 1211114.ALIP01000128_gene1100 (degree 1038).
+The undirected graph Pseudoxanthomonas sp. GW2 has 3033 nodes and 334597
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07277 and has 10 connected components, where the component
+with most nodes has 3012 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 220.64,
+and the node degree mode is 2. The top 5 most central nodes are 1211114.ALIP01000094_gene1205
+(degree 1244), 1211114.ALIP01000143_gene2273 (degree 1205), 1211114.ALIP01000094_gene1247
+(degree 1161), 1211114.ALIP01000128_gene1101 (degree 1086) and 1211114.ALIP01000128_gene1100
+(degree 1038).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoxanthomonasSp.Gw2(
 	
 	Datetime: 2021-02-02 23:19:11.454604
 	
-	The undirected graph Pseudoxanthomonas sp. GW2 has 3033 nodes and 334597 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07277
-	and has 10 connected components, where the component with most nodes has 3012 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 220.64, and the node degree mode is 2. The top 5
-	most central nodes are 1211114.ALIP01000094_gene1205 (degree 1244), 1211114.ALIP01000143_gene2273
-	(degree 1205), 1211114.ALIP01000094_gene1247 (degree 1161), 1211114.ALIP01000128_gene1101
-	(degree 1086) and 1211114.ALIP01000128_gene1100 (degree 1038).
+	The undirected graph Pseudoxanthomonas sp. GW2 has 3033 nodes and 334597
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07277 and has 10 connected components, where the component
+	with most nodes has 3012 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 220.64,
+	and the node degree mode is 2. The top 5 most central nodes are 1211114.ALIP01000094_gene1205
+	(degree 1244), 1211114.ALIP01000143_gene2273 (degree 1205), 1211114.ALIP01000094_gene1247
+	(degree 1161), 1211114.ALIP01000128_gene1101 (degree 1086) and 1211114.ALIP01000128_gene1100
+	(degree 1038).
 	
 
 

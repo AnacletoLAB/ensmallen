@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:07.413027
 
-The undirected graph Corynebacterium pyruviciproducens has 2418 nodes and 165033
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05648 and has 11 connected components, where the component with most nodes has
-2392 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 112, the mean node degree is 136.50, and the node degree mode is 3. The
-top 5 most central nodes are 1125779.HMPREF1219_00453 (degree 966), 1125779.HMPREF1219_00815
-(degree 741), 1125779.HMPREF1219_02155 (degree 739), 1125779.HMPREF1219_00476 (degree
+The undirected graph Corynebacterium pyruviciproducens has 2418 nodes and
+165033 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05648 and has 11 connected components, where the
+component with most nodes has 2392 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 136.50, and the node degree mode is 3. The top 5 most central nodes
+are 1125779.HMPREF1219_00453 (degree 966), 1125779.HMPREF1219_00815 (degree
+741), 1125779.HMPREF1219_02155 (degree 739), 1125779.HMPREF1219_00476 (degree
 677) and 1125779.HMPREF1219_00919 (degree 640).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumPyruviciproducens(
 	
 	Datetime: 2021-02-02 22:54:07.413027
 	
-	The undirected graph Corynebacterium pyruviciproducens has 2418 nodes and 165033
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05648 and has 11 connected components, where the component with most nodes has
-	2392 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 112, the mean node degree is 136.50, and the node degree mode is 3. The
-	top 5 most central nodes are 1125779.HMPREF1219_00453 (degree 966), 1125779.HMPREF1219_00815
-	(degree 741), 1125779.HMPREF1219_02155 (degree 739), 1125779.HMPREF1219_00476 (degree
+	The undirected graph Corynebacterium pyruviciproducens has 2418 nodes and
+	165033 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05648 and has 11 connected components, where the
+	component with most nodes has 2392 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 136.50, and the node degree mode is 3. The top 5 most central nodes
+	are 1125779.HMPREF1219_00453 (degree 966), 1125779.HMPREF1219_00815 (degree
+	741), 1125779.HMPREF1219_02155 (degree 739), 1125779.HMPREF1219_00476 (degree
 	677) and 1125779.HMPREF1219_00919 (degree 640).
 	
 

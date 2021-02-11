@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:41.875318
 
-The undirected graph Bacillus thermoamylovorans has 3381 nodes and 326192 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05709
-and has 16 connected components, where the component with most nodes has 3342 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 192.96, and the node degree mode is 1. The top 5
-most central nodes are 35841.BT1A1_2454 (degree 1235), 35841.BT1A1_1518 (degree 1007),
-35841.BT1A1_2262 (degree 1005), 35841.BT1A1_0012 (degree 991) and 35841.BT1A1_0628
-(degree 929).
+The undirected graph Bacillus thermoamylovorans has 3381 nodes and 326192
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05709 and has 16 connected components, where the component
+with most nodes has 3342 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 192.96,
+and the node degree mode is 1. The top 5 most central nodes are 35841.BT1A1_2454
+(degree 1235), 35841.BT1A1_1518 (degree 1007), 35841.BT1A1_2262 (degree
+1005), 35841.BT1A1_0012 (degree 991) and 35841.BT1A1_0628 (degree 929).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusThermoamylovorans(
 	
 	Datetime: 2021-02-02 18:05:41.875318
 	
-	The undirected graph Bacillus thermoamylovorans has 3381 nodes and 326192 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05709
-	and has 16 connected components, where the component with most nodes has 3342 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 192.96, and the node degree mode is 1. The top 5
-	most central nodes are 35841.BT1A1_2454 (degree 1235), 35841.BT1A1_1518 (degree 1007),
-	35841.BT1A1_2262 (degree 1005), 35841.BT1A1_0012 (degree 991) and 35841.BT1A1_0628
-	(degree 929).
+	The undirected graph Bacillus thermoamylovorans has 3381 nodes and 326192
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05709 and has 16 connected components, where the component
+	with most nodes has 3342 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 192.96,
+	and the node degree mode is 1. The top 5 most central nodes are 35841.BT1A1_2454
+	(degree 1235), 35841.BT1A1_1518 (degree 1007), 35841.BT1A1_2262 (degree
+	1005), 35841.BT1A1_0012 (degree 991) and 35841.BT1A1_0628 (degree 929).
 	
 
 

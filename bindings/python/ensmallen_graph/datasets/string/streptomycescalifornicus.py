@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:58.538846
 
-The undirected graph Streptomyces californicus has 6550 nodes and 982293 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04580
-and has 27 connected components, where the component with most nodes has 6493 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 299.94, and the node degree mode is 1. The top 5
-most central nodes are 67281.JNZZ01000022_gene3848 (degree 3092), 67281.JNZZ01000029_gene3072
-(degree 2056), 67281.JNZZ01000012_gene1560 (degree 1974), 67281.JNZZ01000005_gene3198
-(degree 1962) and 67281.JNZZ01000035_gene694 (degree 1938).
+The undirected graph Streptomyces californicus has 6550 nodes and 982293
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04580 and has 27 connected components, where the component
+with most nodes has 6493 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 299.94,
+and the node degree mode is 1. The top 5 most central nodes are 67281.JNZZ01000022_gene3848
+(degree 3092), 67281.JNZZ01000029_gene3072 (degree 2056), 67281.JNZZ01000012_gene1560
+(degree 1974), 67281.JNZZ01000005_gene3198 (degree 1962) and 67281.JNZZ01000035_gene694
+(degree 1938).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesCalifornicus(
 	
 	Datetime: 2021-02-02 18:26:58.538846
 	
-	The undirected graph Streptomyces californicus has 6550 nodes and 982293 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04580
-	and has 27 connected components, where the component with most nodes has 6493 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 299.94, and the node degree mode is 1. The top 5
-	most central nodes are 67281.JNZZ01000022_gene3848 (degree 3092), 67281.JNZZ01000029_gene3072
-	(degree 2056), 67281.JNZZ01000012_gene1560 (degree 1974), 67281.JNZZ01000005_gene3198
-	(degree 1962) and 67281.JNZZ01000035_gene694 (degree 1938).
+	The undirected graph Streptomyces californicus has 6550 nodes and 982293
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04580 and has 27 connected components, where the component
+	with most nodes has 6493 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 299.94,
+	and the node degree mode is 1. The top 5 most central nodes are 67281.JNZZ01000022_gene3848
+	(degree 3092), 67281.JNZZ01000029_gene3072 (degree 2056), 67281.JNZZ01000012_gene1560
+	(degree 1974), 67281.JNZZ01000005_gene3198 (degree 1962) and 67281.JNZZ01000035_gene694
+	(degree 1938).
 	
 
 

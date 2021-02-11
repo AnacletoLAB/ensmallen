@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:44.925902
 
-The undirected graph IG5-8 has 288 nodes and 1711 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.04140 and is connected, as
-it has a single component. The graph median node degree is 10, the mean node degree
-is 11.88, and the node degree mode is 10. The top 5 most central nodes are 16 (degree
-57), 280 (degree 49), 291 (degree 41), 278 (degree 40) and 276 (degree 40).
+The undirected graph IG5-8 has 288 nodes and 1711 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.04140
+and is connected, as it has a single component. The graph median node degree
+is 10, the mean node degree is 11.88, and the node degree mode is 10. The
+top 5 most central nodes are 16 (degree 57), 280 (degree 49), 291 (degree
+41), 278 (degree 40) and 276 (degree 40).
 
 
 References
@@ -101,11 +102,12 @@ def Ig58(
 	
 	Datetime: 2021-02-06 07:59:44.925902
 	
-	The undirected graph IG5-8 has 288 nodes and 1711 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.04140 and is connected, as
-	it has a single component. The graph median node degree is 10, the mean node degree
-	is 11.88, and the node degree mode is 10. The top 5 most central nodes are 16 (degree
-	57), 280 (degree 49), 291 (degree 41), 278 (degree 40) and 276 (degree 40).
+	The undirected graph IG5-8 has 288 nodes and 1711 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.04140
+	and is connected, as it has a single component. The graph median node degree
+	is 10, the mean node degree is 11.88, and the node degree mode is 10. The
+	top 5 most central nodes are 16 (degree 57), 280 (degree 49), 291 (degree
+	41), 278 (degree 40) and 276 (degree 40).
 	
 
 

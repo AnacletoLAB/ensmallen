@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:09.496466
 
-The undirected graph Actinokineospora sp. EG49 has 6505 nodes and 762988 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03607
-and has 23 connected components, where the component with most nodes has 6452 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 202, the mean node degree is 234.59, and the node degree mode is 2. The top 5
-most central nodes are 909613.UO65_5154 (degree 1843), 909613.UO65_1524 (degree 1826),
-909613.UO65_4771 (degree 1761), 909613.UO65_6645 (degree 1651) and 909613.UO65_4709
-(degree 1646).
+The undirected graph Actinokineospora sp. EG49 has 6505 nodes and 762988
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03607 and has 23 connected components, where the component
+with most nodes has 6452 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 234.59,
+and the node degree mode is 2. The top 5 most central nodes are 909613.UO65_5154
+(degree 1843), 909613.UO65_1524 (degree 1826), 909613.UO65_4771 (degree
+1761), 909613.UO65_6645 (degree 1651) and 909613.UO65_4709 (degree 1646).
 
 
 References
@@ -107,14 +107,14 @@ def ActinokineosporaSp.Eg49(
 	
 	Datetime: 2021-02-02 21:55:09.496466
 	
-	The undirected graph Actinokineospora sp. EG49 has 6505 nodes and 762988 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03607
-	and has 23 connected components, where the component with most nodes has 6452 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 202, the mean node degree is 234.59, and the node degree mode is 2. The top 5
-	most central nodes are 909613.UO65_5154 (degree 1843), 909613.UO65_1524 (degree 1826),
-	909613.UO65_4771 (degree 1761), 909613.UO65_6645 (degree 1651) and 909613.UO65_4709
-	(degree 1646).
+	The undirected graph Actinokineospora sp. EG49 has 6505 nodes and 762988
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03607 and has 23 connected components, where the component
+	with most nodes has 6452 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 234.59,
+	and the node degree mode is 2. The top 5 most central nodes are 909613.UO65_5154
+	(degree 1843), 909613.UO65_1524 (degree 1826), 909613.UO65_4771 (degree
+	1761), 909613.UO65_6645 (degree 1651) and 909613.UO65_4709 (degree 1646).
 	
 
 

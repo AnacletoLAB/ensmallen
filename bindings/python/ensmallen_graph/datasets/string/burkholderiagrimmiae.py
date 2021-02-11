@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:23.813654
 
-The undirected graph Burkholderia grimmiae has 5850 nodes and 905173 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05291 and
-has 36 connected components, where the component with most nodes has 5766 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 309.46, and the node degree mode is 1. The top 5 most central
-nodes are 1071679.BG57_26170 (degree 2289), 1071679.BG57_32545 (degree 2149), 1071679.BG57_31525
-(degree 1967), 1071679.BG57_13360 (degree 1899) and 1071679.BG57_21825 (degree 1869).
+The undirected graph Burkholderia grimmiae has 5850 nodes and 905173 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05291 and has 36 connected components, where the component with most
+nodes has 5766 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 309.46, and
+the node degree mode is 1. The top 5 most central nodes are 1071679.BG57_26170
+(degree 2289), 1071679.BG57_32545 (degree 2149), 1071679.BG57_31525 (degree
+1967), 1071679.BG57_13360 (degree 1899) and 1071679.BG57_21825 (degree
+1869).
 
 
 References
@@ -106,13 +108,15 @@ def BurkholderiaGrimmiae(
 	
 	Datetime: 2021-02-02 22:19:23.813654
 	
-	The undirected graph Burkholderia grimmiae has 5850 nodes and 905173 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05291 and
-	has 36 connected components, where the component with most nodes has 5766 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 309.46, and the node degree mode is 1. The top 5 most central
-	nodes are 1071679.BG57_26170 (degree 2289), 1071679.BG57_32545 (degree 2149), 1071679.BG57_31525
-	(degree 1967), 1071679.BG57_13360 (degree 1899) and 1071679.BG57_21825 (degree 1869).
+	The undirected graph Burkholderia grimmiae has 5850 nodes and 905173 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05291 and has 36 connected components, where the component with most
+	nodes has 5766 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 309.46, and
+	the node degree mode is 1. The top 5 most central nodes are 1071679.BG57_26170
+	(degree 2289), 1071679.BG57_32545 (degree 2149), 1071679.BG57_31525 (degree
+	1967), 1071679.BG57_13360 (degree 1899) and 1071679.BG57_21825 (degree
+	1869).
 	
 
 

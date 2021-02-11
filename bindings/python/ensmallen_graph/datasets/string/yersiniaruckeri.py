@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:59:03.319508
 
-The undirected graph Yersinia ruckeri has 3273 nodes and 252165 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04709 and
-has 15 connected components, where the component with most nodes has 3240 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 154.09, and the node degree mode is 2. The top 5 most central
-nodes are 29486.NJ56_00030 (degree 1153), 29486.NJ56_16385 (degree 1000), 29486.NJ56_06235
-(degree 920), 29486.NJ56_11830 (degree 900) and 29486.NJ56_08750 (degree 892).
+The undirected graph Yersinia ruckeri has 3273 nodes and 252165 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04709 and has 15 connected components, where the component with most
+nodes has 3240 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 154.09, and
+the node degree mode is 2. The top 5 most central nodes are 29486.NJ56_00030
+(degree 1153), 29486.NJ56_16385 (degree 1000), 29486.NJ56_06235 (degree
+920), 29486.NJ56_11830 (degree 900) and 29486.NJ56_08750 (degree 892).
 
 
 References
@@ -106,13 +107,14 @@ def YersiniaRuckeri(
 	
 	Datetime: 2021-02-02 17:59:03.319508
 	
-	The undirected graph Yersinia ruckeri has 3273 nodes and 252165 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04709 and
-	has 15 connected components, where the component with most nodes has 3240 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 154.09, and the node degree mode is 2. The top 5 most central
-	nodes are 29486.NJ56_00030 (degree 1153), 29486.NJ56_16385 (degree 1000), 29486.NJ56_06235
-	(degree 920), 29486.NJ56_11830 (degree 900) and 29486.NJ56_08750 (degree 892).
+	The undirected graph Yersinia ruckeri has 3273 nodes and 252165 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04709 and has 15 connected components, where the component with most
+	nodes has 3240 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 154.09, and
+	the node degree mode is 2. The top 5 most central nodes are 29486.NJ56_00030
+	(degree 1153), 29486.NJ56_16385 (degree 1000), 29486.NJ56_06235 (degree
+	920), 29486.NJ56_11830 (degree 900) and 29486.NJ56_08750 (degree 892).
 	
 
 

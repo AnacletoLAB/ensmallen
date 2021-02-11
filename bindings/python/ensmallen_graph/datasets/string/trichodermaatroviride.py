@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:15.729445
 
-The undirected graph Trichoderma atroviride has 7975 nodes and 744627 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02342 and
-has 32 connected components, where the component with most nodes has 7906 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 186.74, and the node degree mode is 1. The top 5 most central
-nodes are 63577.G9NUH8 (degree 1945), 63577.G9NY23 (degree 1739), 63577.G9P0A9 (degree
-1572), 63577.G9NJD1 (degree 1510) and 63577.G9NX56 (degree 1467).
+The undirected graph Trichoderma atroviride has 7975 nodes and 744627 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02342 and has 32 connected components, where the component with most
+nodes has 7906 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 186.74, and
+the node degree mode is 1. The top 5 most central nodes are 63577.G9NUH8
+(degree 1945), 63577.G9NY23 (degree 1739), 63577.G9P0A9 (degree 1572),
+63577.G9NJD1 (degree 1510) and 63577.G9NX56 (degree 1467).
 
 
 References
@@ -106,13 +107,14 @@ def TrichodermaAtroviride(
 	
 	Datetime: 2021-02-02 18:24:15.729445
 	
-	The undirected graph Trichoderma atroviride has 7975 nodes and 744627 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02342 and
-	has 32 connected components, where the component with most nodes has 7906 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 186.74, and the node degree mode is 1. The top 5 most central
-	nodes are 63577.G9NUH8 (degree 1945), 63577.G9NY23 (degree 1739), 63577.G9P0A9 (degree
-	1572), 63577.G9NJD1 (degree 1510) and 63577.G9NX56 (degree 1467).
+	The undirected graph Trichoderma atroviride has 7975 nodes and 744627 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02342 and has 32 connected components, where the component with most
+	nodes has 7906 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 186.74, and
+	the node degree mode is 1. The top 5 most central nodes are 63577.G9NUH8
+	(degree 1945), 63577.G9NY23 (degree 1739), 63577.G9P0A9 (degree 1572),
+	63577.G9NJD1 (degree 1510) and 63577.G9NX56 (degree 1467).
 	
 
 

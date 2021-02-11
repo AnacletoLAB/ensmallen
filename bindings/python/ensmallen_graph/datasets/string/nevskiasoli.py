@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:23.397581
 
-The undirected graph Nevskia soli has 4585 nodes and 695716 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.06620 and has 19
-connected components, where the component with most nodes has 4539 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 266,
-the mean node degree is 303.47, and the node degree mode is 3. The top 5 most central
-nodes are 1122604.JONR01000003_gene1496 (degree 1785), 1122604.JONR01000011_gene3721
-(degree 1729), 1122604.JONR01000045_gene2477 (degree 1723), 1122604.JONR01000018_gene1025
-(degree 1711) and 1122604.JONR01000021_gene611 (degree 1675).
+The undirected graph Nevskia soli has 4585 nodes and 695716 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.06620 and has 19 connected components, where the component with most
+nodes has 4539 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 266, the mean node degree is 303.47, and
+the node degree mode is 3. The top 5 most central nodes are 1122604.JONR01000003_gene1496
+(degree 1785), 1122604.JONR01000011_gene3721 (degree 1729), 1122604.JONR01000045_gene2477
+(degree 1723), 1122604.JONR01000018_gene1025 (degree 1711) and 1122604.JONR01000021_gene611
+(degree 1675).
 
 
 References
@@ -107,14 +108,15 @@ def NevskiaSoli(
 	
 	Datetime: 2021-02-02 22:43:23.397581
 	
-	The undirected graph Nevskia soli has 4585 nodes and 695716 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.06620 and has 19
-	connected components, where the component with most nodes has 4539 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 266,
-	the mean node degree is 303.47, and the node degree mode is 3. The top 5 most central
-	nodes are 1122604.JONR01000003_gene1496 (degree 1785), 1122604.JONR01000011_gene3721
-	(degree 1729), 1122604.JONR01000045_gene2477 (degree 1723), 1122604.JONR01000018_gene1025
-	(degree 1711) and 1122604.JONR01000021_gene611 (degree 1675).
+	The undirected graph Nevskia soli has 4585 nodes and 695716 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.06620 and has 19 connected components, where the component with most
+	nodes has 4539 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 266, the mean node degree is 303.47, and
+	the node degree mode is 3. The top 5 most central nodes are 1122604.JONR01000003_gene1496
+	(degree 1785), 1122604.JONR01000011_gene3721 (degree 1729), 1122604.JONR01000045_gene2477
+	(degree 1723), 1122604.JONR01000018_gene1025 (degree 1711) and 1122604.JONR01000021_gene611
+	(degree 1675).
 	
 
 

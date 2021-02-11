@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:15.290805
 
-The undirected graph Methylobacterium oryzae has 6169 nodes and 564566 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02967 and
-has 89 connected components, where the component with most nodes has 5939 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 183.03, and the node degree mode is 2. The top 5 most central
-nodes are 693986.MOC_4057 (degree 2168), 693986.MOC_2731 (degree 1785), 693986.MOC_0035
-(degree 1757), 693986.MOC_0298 (degree 1714) and 693986.MOC_0607 (degree 1614).
+The undirected graph Methylobacterium oryzae has 6169 nodes and 564566
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02967 and has 89 connected components, where the component
+with most nodes has 5939 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 183.03,
+and the node degree mode is 2. The top 5 most central nodes are 693986.MOC_4057
+(degree 2168), 693986.MOC_2731 (degree 1785), 693986.MOC_0035 (degree 1757),
+693986.MOC_0298 (degree 1714) and 693986.MOC_0607 (degree 1614).
 
 
 References
@@ -106,13 +107,14 @@ def MethylobacteriumOryzae(
 	
 	Datetime: 2021-02-02 21:32:15.290805
 	
-	The undirected graph Methylobacterium oryzae has 6169 nodes and 564566 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02967 and
-	has 89 connected components, where the component with most nodes has 5939 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 183.03, and the node degree mode is 2. The top 5 most central
-	nodes are 693986.MOC_4057 (degree 2168), 693986.MOC_2731 (degree 1785), 693986.MOC_0035
-	(degree 1757), 693986.MOC_0298 (degree 1714) and 693986.MOC_0607 (degree 1614).
+	The undirected graph Methylobacterium oryzae has 6169 nodes and 564566
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02967 and has 89 connected components, where the component
+	with most nodes has 5939 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 183.03,
+	and the node degree mode is 2. The top 5 most central nodes are 693986.MOC_4057
+	(degree 2168), 693986.MOC_2731 (degree 1785), 693986.MOC_0035 (degree 1757),
+	693986.MOC_0298 (degree 1714) and 693986.MOC_0607 (degree 1614).
 	
 
 

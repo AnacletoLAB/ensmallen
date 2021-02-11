@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:54:01.601684
 
-The undirected graph webkb-wisc has 265 nodes with 5 different node types: 5 (nodes
-number 122), 1 (nodes number 76), 2 (nodes number 35), 3 (nodes number 22) and 4
-(nodes number 10), of which 3 are singletons (all have self-loops), and 479 unweighted
-edges with a single edge type: 1, of which 20 are self-loops. The graph is dense
-as it has a density of 0.01341 and has 8 connected components, where the component
-with most nodes has 251 nodes and the component with the least nodes has a single
-node. The graph median node degree is 2, the mean node degree is 3.54, and the node
-degree mode is 1. The top 5 most central nodes are 4 (degree 122), 54 (degree 20),
-48 (degree 15), 148 (degree 13) and 256 (degree 11).
+The undirected graph webkb-wisc has 265 nodes with 5 different node types:
+5 (nodes number 122), 1 (nodes number 76), 2 (nodes number 35), 3 (nodes
+number 22) and 4 (nodes number 10), of which 3 are singletons (all have
+self-loops), and 479 unweighted edges with a single edge type: 1, of which
+20 are self-loops. The graph is dense as it has a density of 0.01341 and
+has 8 connected components, where the component with most nodes has 251
+nodes and the component with the least nodes has a single node. The graph
+median node degree is 2, the mean node degree is 3.54, and the node degree
+mode is 1. The top 5 most central nodes are 4 (degree 122), 54 (degree
+20), 48 (degree 15), 148 (degree 13) and 256 (degree 11).
 
 
 References
@@ -105,15 +106,16 @@ def WebkbWisc(
 	
 	Datetime: 2021-02-04 08:54:01.601684
 	
-	The undirected graph webkb-wisc has 265 nodes with 5 different node types: 5 (nodes
-	number 122), 1 (nodes number 76), 2 (nodes number 35), 3 (nodes number 22) and 4
-	(nodes number 10), of which 3 are singletons (all have self-loops), and 479 unweighted
-	edges with a single edge type: 1, of which 20 are self-loops. The graph is dense
-	as it has a density of 0.01341 and has 8 connected components, where the component
-	with most nodes has 251 nodes and the component with the least nodes has a single
-	node. The graph median node degree is 2, the mean node degree is 3.54, and the node
-	degree mode is 1. The top 5 most central nodes are 4 (degree 122), 54 (degree 20),
-	48 (degree 15), 148 (degree 13) and 256 (degree 11).
+	The undirected graph webkb-wisc has 265 nodes with 5 different node types:
+	5 (nodes number 122), 1 (nodes number 76), 2 (nodes number 35), 3 (nodes
+	number 22) and 4 (nodes number 10), of which 3 are singletons (all have
+	self-loops), and 479 unweighted edges with a single edge type: 1, of which
+	20 are self-loops. The graph is dense as it has a density of 0.01341 and
+	has 8 connected components, where the component with most nodes has 251
+	nodes and the component with the least nodes has a single node. The graph
+	median node degree is 2, the mean node degree is 3.54, and the node degree
+	mode is 1. The top 5 most central nodes are 4 (degree 122), 54 (degree
+	20), 48 (degree 15), 148 (degree 13) and 256 (degree 11).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:08.171724
 
-The undirected graph Kurthia massiliensis has 3161 nodes and 296530 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05937 and
-has 17 connected components, where the component with most nodes has 3126 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 187.62, and the node degree mode is 1. The top 5 most central
-nodes are 1033739.CAEU01000018_gene2322 (degree 1186), 1033739.CAEU01000067_gene128
-(degree 1001), 1033739.CAEU01000003_gene1386 (degree 981), 1033739.CAEU01000005_gene1102
-(degree 973) and 1033739.CAEU01000002_gene1440 (degree 918).
+The undirected graph Kurthia massiliensis has 3161 nodes and 296530 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05937 and has 17 connected components, where the component with most
+nodes has 3126 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 187.62, and
+the node degree mode is 1. The top 5 most central nodes are 1033739.CAEU01000018_gene2322
+(degree 1186), 1033739.CAEU01000067_gene128 (degree 1001), 1033739.CAEU01000003_gene1386
+(degree 981), 1033739.CAEU01000005_gene1102 (degree 973) and 1033739.CAEU01000002_gene1440
+(degree 918).
 
 
 References
@@ -107,14 +108,15 @@ def KurthiaMassiliensis(
 	
 	Datetime: 2021-02-02 22:11:08.171724
 	
-	The undirected graph Kurthia massiliensis has 3161 nodes and 296530 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05937 and
-	has 17 connected components, where the component with most nodes has 3126 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 187.62, and the node degree mode is 1. The top 5 most central
-	nodes are 1033739.CAEU01000018_gene2322 (degree 1186), 1033739.CAEU01000067_gene128
-	(degree 1001), 1033739.CAEU01000003_gene1386 (degree 981), 1033739.CAEU01000005_gene1102
-	(degree 973) and 1033739.CAEU01000002_gene1440 (degree 918).
+	The undirected graph Kurthia massiliensis has 3161 nodes and 296530 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05937 and has 17 connected components, where the component with most
+	nodes has 3126 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 187.62, and
+	the node degree mode is 1. The top 5 most central nodes are 1033739.CAEU01000018_gene2322
+	(degree 1186), 1033739.CAEU01000067_gene128 (degree 1001), 1033739.CAEU01000003_gene1386
+	(degree 981), 1033739.CAEU01000005_gene1102 (degree 973) and 1033739.CAEU01000002_gene1440
+	(degree 918).
 	
 
 

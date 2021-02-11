@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:54.980977
 
-The undirected graph Silanimonas lenta has 2344 nodes and 192118 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06996 and
-is connected, as it has a single component. The graph median node degree is 139,
-the mean node degree is 163.92, and the node degree mode is 5. The top 5 most central
-nodes are 1123253.AUBD01000002_gene1229 (degree 928), 1123253.AUBD01000008_gene553
-(degree 855), 1123253.AUBD01000001_gene1612 (degree 845), 1123253.AUBD01000007_gene729
-(degree 841) and 1123253.AUBD01000008_gene395 (degree 814).
+The undirected graph Silanimonas lenta has 2344 nodes and 192118 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06996 and is connected, as it has a single component. The graph median
+node degree is 139, the mean node degree is 163.92, and the node degree
+mode is 5. The top 5 most central nodes are 1123253.AUBD01000002_gene1229
+(degree 928), 1123253.AUBD01000008_gene553 (degree 855), 1123253.AUBD01000001_gene1612
+(degree 845), 1123253.AUBD01000007_gene729 (degree 841) and 1123253.AUBD01000008_gene395
+(degree 814).
 
 
 References
@@ -106,13 +107,14 @@ def SilanimonasLenta(
 	
 	Datetime: 2021-02-02 22:48:54.980977
 	
-	The undirected graph Silanimonas lenta has 2344 nodes and 192118 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06996 and
-	is connected, as it has a single component. The graph median node degree is 139,
-	the mean node degree is 163.92, and the node degree mode is 5. The top 5 most central
-	nodes are 1123253.AUBD01000002_gene1229 (degree 928), 1123253.AUBD01000008_gene553
-	(degree 855), 1123253.AUBD01000001_gene1612 (degree 845), 1123253.AUBD01000007_gene729
-	(degree 841) and 1123253.AUBD01000008_gene395 (degree 814).
+	The undirected graph Silanimonas lenta has 2344 nodes and 192118 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06996 and is connected, as it has a single component. The graph median
+	node degree is 139, the mean node degree is 163.92, and the node degree
+	mode is 5. The top 5 most central nodes are 1123253.AUBD01000002_gene1229
+	(degree 928), 1123253.AUBD01000008_gene553 (degree 855), 1123253.AUBD01000001_gene1612
+	(degree 845), 1123253.AUBD01000007_gene729 (degree 841) and 1123253.AUBD01000008_gene395
+	(degree 814).
 	
 
 

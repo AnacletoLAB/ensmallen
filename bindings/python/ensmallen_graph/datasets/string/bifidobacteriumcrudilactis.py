@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:21.310275
 
-The undirected graph Bifidobacterium crudilactis has 1822 nodes and 122180 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07365
-and has 8 connected components, where the component with most nodes has 1805 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 134.12, and the node degree mode is 2. The top 5
-most central nodes are 327277.JHAL01000002_gene54 (degree 849), 327277.JHAL01000002_gene773
-(degree 830), 327277.JHAL01000002_gene263 (degree 818), 327277.JHAL01000002_gene485
-(degree 697) and 327277.JHAL01000002_gene755 (degree 686).
+The undirected graph Bifidobacterium crudilactis has 1822 nodes and 122180
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07365 and has 8 connected components, where the component
+with most nodes has 1805 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 134.12,
+and the node degree mode is 2. The top 5 most central nodes are 327277.JHAL01000002_gene54
+(degree 849), 327277.JHAL01000002_gene773 (degree 830), 327277.JHAL01000002_gene263
+(degree 818), 327277.JHAL01000002_gene485 (degree 697) and 327277.JHAL01000002_gene755
+(degree 686).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumCrudilactis(
 	
 	Datetime: 2021-02-02 20:29:21.310275
 	
-	The undirected graph Bifidobacterium crudilactis has 1822 nodes and 122180 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07365
-	and has 8 connected components, where the component with most nodes has 1805 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 134.12, and the node degree mode is 2. The top 5
-	most central nodes are 327277.JHAL01000002_gene54 (degree 849), 327277.JHAL01000002_gene773
-	(degree 830), 327277.JHAL01000002_gene263 (degree 818), 327277.JHAL01000002_gene485
-	(degree 697) and 327277.JHAL01000002_gene755 (degree 686).
+	The undirected graph Bifidobacterium crudilactis has 1822 nodes and 122180
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07365 and has 8 connected components, where the component
+	with most nodes has 1805 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 134.12,
+	and the node degree mode is 2. The top 5 most central nodes are 327277.JHAL01000002_gene54
+	(degree 849), 327277.JHAL01000002_gene773 (degree 830), 327277.JHAL01000002_gene263
+	(degree 818), 327277.JHAL01000002_gene485 (degree 697) and 327277.JHAL01000002_gene755
+	(degree 686).
 	
 
 

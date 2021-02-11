@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:50.143702
 
-The undirected graph Streptococcus agalactiae LMG14747 has 2164 nodes and 972084
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.41536 and has 7 connected components, where the component with most
-nodes has 2149 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 1102, the mean node degree is 898.41, and the node degree mode
-is 5. The top 5 most central nodes are 1154860.SAG0136_11615 (degree 1675), 1154860.SAG0136_10220
-(degree 1673), 1154860.SAG0136_11110 (degree 1631), 1154860.SAG0136_05745 (degree
+The undirected graph Streptococcus agalactiae LMG14747 has 2164 nodes and
+972084 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.41536 and has 7 connected components, where
+the component with most nodes has 2149 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 1102, the mean
+node degree is 898.41, and the node degree mode is 5. The top 5 most central
+nodes are 1154860.SAG0136_11615 (degree 1675), 1154860.SAG0136_10220 (degree
+1673), 1154860.SAG0136_11110 (degree 1631), 1154860.SAG0136_05745 (degree
 1620) and 1154860.SAG0136_11510 (degree 1618).
 
 
@@ -107,13 +108,14 @@ def StreptococcusAgalactiaeLmg14747(
 	
 	Datetime: 2021-02-02 23:00:50.143702
 	
-	The undirected graph Streptococcus agalactiae LMG14747 has 2164 nodes and 972084
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.41536 and has 7 connected components, where the component with most
-	nodes has 2149 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 1102, the mean node degree is 898.41, and the node degree mode
-	is 5. The top 5 most central nodes are 1154860.SAG0136_11615 (degree 1675), 1154860.SAG0136_10220
-	(degree 1673), 1154860.SAG0136_11110 (degree 1631), 1154860.SAG0136_05745 (degree
+	The undirected graph Streptococcus agalactiae LMG14747 has 2164 nodes and
+	972084 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.41536 and has 7 connected components, where
+	the component with most nodes has 2149 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 1102, the mean
+	node degree is 898.41, and the node degree mode is 5. The top 5 most central
+	nodes are 1154860.SAG0136_11615 (degree 1675), 1154860.SAG0136_10220 (degree
+	1673), 1154860.SAG0136_11110 (degree 1631), 1154860.SAG0136_05745 (degree
 	1620) and 1154860.SAG0136_11510 (degree 1618).
 	
 

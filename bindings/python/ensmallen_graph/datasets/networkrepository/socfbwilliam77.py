@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:55.220490
 
-The undirected graph socfb-William77 has 6472 nodes and 266378 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01272 and
-is connected, as it has a single component. The graph median node degree is 66, the
-mean node degree is 82.32, and the node degree mode is 1. The top 5 most central
-nodes are 6464 (degree 1124), 1668 (degree 1033), 4486 (degree 973), 675 (degree
-866) and 5348 (degree 785).
+The undirected graph socfb-William77 has 6472 nodes and 266378 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01272 and is connected, as it has a single component. The graph median
+node degree is 66, the mean node degree is 82.32, and the node degree mode
+is 1. The top 5 most central nodes are 6464 (degree 1124), 1668 (degree
+1033), 4486 (degree 973), 675 (degree 866) and 5348 (degree 785).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbWilliam77(
 	
 	Datetime: 2021-02-06 11:51:55.220490
 	
-	The undirected graph socfb-William77 has 6472 nodes and 266378 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01272 and
-	is connected, as it has a single component. The graph median node degree is 66, the
-	mean node degree is 82.32, and the node degree mode is 1. The top 5 most central
-	nodes are 6464 (degree 1124), 1668 (degree 1033), 4486 (degree 973), 675 (degree
-	866) and 5348 (degree 785).
+	The undirected graph socfb-William77 has 6472 nodes and 266378 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01272 and is connected, as it has a single component. The graph median
+	node degree is 66, the mean node degree is 82.32, and the node degree mode
+	is 1. The top 5 most central nodes are 6464 (degree 1124), 1668 (degree
+	1033), 4486 (degree 973), 675 (degree 866) and 5348 (degree 785).
 	
 
 

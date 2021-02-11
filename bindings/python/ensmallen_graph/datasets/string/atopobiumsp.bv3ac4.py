@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:27.562012
 
-The undirected graph Atopobium sp. BV3Ac4 has 1574 nodes and 127100 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10267
-and has 7 connected components, where the component with most nodes has 1557 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 161.50, and the node degree mode is 3. The top 5
-most central nodes are 1111121.HMPREF1247_0443 (degree 907), 1111121.HMPREF1247_1371
-(degree 810), 1111121.HMPREF1247_0170 (degree 759), 1111121.HMPREF1247_1278 (degree
-706) and 1111121.HMPREF1247_1433 (degree 705).
+The undirected graph Atopobium sp. BV3Ac4 has 1574 nodes and 127100 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10267 and has 7 connected components, where the component
+with most nodes has 1557 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 161.50,
+and the node degree mode is 3. The top 5 most central nodes are 1111121.HMPREF1247_0443
+(degree 907), 1111121.HMPREF1247_1371 (degree 810), 1111121.HMPREF1247_0170
+(degree 759), 1111121.HMPREF1247_1278 (degree 706) and 1111121.HMPREF1247_1433
+(degree 705).
 
 
 References
@@ -107,14 +108,15 @@ def AtopobiumSp.Bv3ac4(
 	
 	Datetime: 2021-02-02 22:25:27.562012
 	
-	The undirected graph Atopobium sp. BV3Ac4 has 1574 nodes and 127100 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10267
-	and has 7 connected components, where the component with most nodes has 1557 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 161.50, and the node degree mode is 3. The top 5
-	most central nodes are 1111121.HMPREF1247_0443 (degree 907), 1111121.HMPREF1247_1371
-	(degree 810), 1111121.HMPREF1247_0170 (degree 759), 1111121.HMPREF1247_1278 (degree
-	706) and 1111121.HMPREF1247_1433 (degree 705).
+	The undirected graph Atopobium sp. BV3Ac4 has 1574 nodes and 127100 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10267 and has 7 connected components, where the component
+	with most nodes has 1557 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 161.50,
+	and the node degree mode is 3. The top 5 most central nodes are 1111121.HMPREF1247_0443
+	(degree 907), 1111121.HMPREF1247_1371 (degree 810), 1111121.HMPREF1247_0170
+	(degree 759), 1111121.HMPREF1247_1278 (degree 706) and 1111121.HMPREF1247_1433
+	(degree 705).
 	
 
 

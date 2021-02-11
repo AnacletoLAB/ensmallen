@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:21.595763
 
-The undirected graph Tremella mesenterica has 4677 nodes and 416935 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03813 and
-has 11 connected components, where the component with most nodes has 4653 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 178.29, and the node degree mode is 1. The top 5 most central
-nodes are 5217.XP_007000892.1 (degree 1232), 5217.XP_007003328.1 (degree 1213), 5217.XP_007002133.1
-(degree 1168), 5217.XP_007008285.1 (degree 1039) and 5217.XP_007003370.1 (degree
+The undirected graph Tremella mesenterica has 4677 nodes and 416935 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03813 and has 11 connected components, where the component with most
+nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 178.29, and
+the node degree mode is 1. The top 5 most central nodes are 5217.XP_007000892.1
+(degree 1232), 5217.XP_007003328.1 (degree 1213), 5217.XP_007002133.1 (degree
+1168), 5217.XP_007008285.1 (degree 1039) and 5217.XP_007003370.1 (degree
 1019).
 
 
@@ -107,13 +108,14 @@ def TremellaMesenterica(
 	
 	Datetime: 2021-02-02 17:13:21.595763
 	
-	The undirected graph Tremella mesenterica has 4677 nodes and 416935 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03813 and
-	has 11 connected components, where the component with most nodes has 4653 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 178.29, and the node degree mode is 1. The top 5 most central
-	nodes are 5217.XP_007000892.1 (degree 1232), 5217.XP_007003328.1 (degree 1213), 5217.XP_007002133.1
-	(degree 1168), 5217.XP_007008285.1 (degree 1039) and 5217.XP_007003370.1 (degree
+	The undirected graph Tremella mesenterica has 4677 nodes and 416935 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03813 and has 11 connected components, where the component with most
+	nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 178.29, and
+	the node degree mode is 1. The top 5 most central nodes are 5217.XP_007000892.1
+	(degree 1232), 5217.XP_007003328.1 (degree 1213), 5217.XP_007002133.1 (degree
+	1168), 5217.XP_007008285.1 (degree 1039) and 5217.XP_007003370.1 (degree
 	1019).
 	
 

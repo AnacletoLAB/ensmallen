@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:48:36.005883
 
-The undirected graph Mesocricetus auratus has 18832 nodes and 3995892 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02254 and
-has 2 connected components, where the component with most nodes has 18830 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 304,
-the mean node degree is 424.37, and the node degree mode is 3. The top 5 most central
-nodes are 10036.XP_005079873.1 (degree 6252), 10036.XP_005071503.1 (degree 4215),
-10036.XP_005073838.1 (degree 4107), 10036.XP_005064470.1 (degree 3972) and 10036.XP_005070468.1
+The undirected graph Mesocricetus auratus has 18832 nodes and 3995892 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02254 and has 2 connected components, where the component with most
+nodes has 18830 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 304, the mean node degree is 424.37, and
+the node degree mode is 3. The top 5 most central nodes are 10036.XP_005079873.1
+(degree 6252), 10036.XP_005071503.1 (degree 4215), 10036.XP_005073838.1
+(degree 4107), 10036.XP_005064470.1 (degree 3972) and 10036.XP_005070468.1
 (degree 3870).
 
 
@@ -107,13 +108,14 @@ def MesocricetusAuratus(
 	
 	Datetime: 2021-02-02 17:48:36.005883
 	
-	The undirected graph Mesocricetus auratus has 18832 nodes and 3995892 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02254 and
-	has 2 connected components, where the component with most nodes has 18830 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 304,
-	the mean node degree is 424.37, and the node degree mode is 3. The top 5 most central
-	nodes are 10036.XP_005079873.1 (degree 6252), 10036.XP_005071503.1 (degree 4215),
-	10036.XP_005073838.1 (degree 4107), 10036.XP_005064470.1 (degree 3972) and 10036.XP_005070468.1
+	The undirected graph Mesocricetus auratus has 18832 nodes and 3995892 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02254 and has 2 connected components, where the component with most
+	nodes has 18830 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 304, the mean node degree is 424.37, and
+	the node degree mode is 3. The top 5 most central nodes are 10036.XP_005079873.1
+	(degree 6252), 10036.XP_005071503.1 (degree 4215), 10036.XP_005073838.1
+	(degree 4107), 10036.XP_005064470.1 (degree 3972) and 10036.XP_005070468.1
 	(degree 3870).
 	
 

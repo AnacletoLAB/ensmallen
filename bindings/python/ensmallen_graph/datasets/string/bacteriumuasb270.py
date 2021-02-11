@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:06.450002
 
-The undirected graph Bacterium UASB270 has 6643 nodes and 1226588 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05560 and
-has 40 connected components, where the component with most nodes has 6548 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 308,
-the mean node degree is 369.29, and the node degree mode is 2. The top 5 most central
-nodes are 1499967.BAYZ01000152_gene1389 (degree 2261), 1499967.BAYZ01000149_gene6773
-(degree 2131), 1499967.BAYZ01000185_gene4551 (degree 2121), 1499967.BAYZ01000086_gene5160
-(degree 2091) and 1499967.BAYZ01000180_gene4412 (degree 2057).
+The undirected graph Bacterium UASB270 has 6643 nodes and 1226588 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05560 and has 40 connected components, where the component with most
+nodes has 6548 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 308, the mean node degree is 369.29, and
+the node degree mode is 2. The top 5 most central nodes are 1499967.BAYZ01000152_gene1389
+(degree 2261), 1499967.BAYZ01000149_gene6773 (degree 2131), 1499967.BAYZ01000185_gene4551
+(degree 2121), 1499967.BAYZ01000086_gene5160 (degree 2091) and 1499967.BAYZ01000180_gene4412
+(degree 2057).
 
 
 References
@@ -107,14 +108,15 @@ def BacteriumUasb270(
 	
 	Datetime: 2021-02-03 23:15:06.450002
 	
-	The undirected graph Bacterium UASB270 has 6643 nodes and 1226588 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05560 and
-	has 40 connected components, where the component with most nodes has 6548 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 308,
-	the mean node degree is 369.29, and the node degree mode is 2. The top 5 most central
-	nodes are 1499967.BAYZ01000152_gene1389 (degree 2261), 1499967.BAYZ01000149_gene6773
-	(degree 2131), 1499967.BAYZ01000185_gene4551 (degree 2121), 1499967.BAYZ01000086_gene5160
-	(degree 2091) and 1499967.BAYZ01000180_gene4412 (degree 2057).
+	The undirected graph Bacterium UASB270 has 6643 nodes and 1226588 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05560 and has 40 connected components, where the component with most
+	nodes has 6548 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 308, the mean node degree is 369.29, and
+	the node degree mode is 2. The top 5 most central nodes are 1499967.BAYZ01000152_gene1389
+	(degree 2261), 1499967.BAYZ01000149_gene6773 (degree 2131), 1499967.BAYZ01000185_gene4551
+	(degree 2121), 1499967.BAYZ01000086_gene5160 (degree 2091) and 1499967.BAYZ01000180_gene4412
+	(degree 2057).
 	
 
 

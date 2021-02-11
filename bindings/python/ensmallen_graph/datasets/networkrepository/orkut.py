@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 01:49:39.921874
 
-The undirected graph orkut has 11803298 nodes with 2 different node types: 2 (nodes
-number 8730857) and 1 (nodes number 3072441) and 444222386 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 7,
-the mean node degree is 75.27 and the node degree mode is 1. The top 5 most central
-nodes are 3079078 (degree 318240), 3079778 (degree 284401), 3079189 (degree 221523),
-3080210 (degree 213394) and 3080202 (degree 208310).
+The undirected graph orkut has 11803298 nodes with 2 different node types:
+2 (nodes number 8730857) and 1 (nodes number 3072441) and 444222386 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 7, the mean node degree is 75.27 and the
+node degree mode is 1. The top 5 most central nodes are 3079078 (degree
+318240), 3079778 (degree 284401), 3079189 (degree 221523), 3080210 (degree
+213394) and 3080202 (degree 208310).
 
 
 References
@@ -103,13 +104,14 @@ def Orkut(
 	
 	Datetime: 2021-02-04 01:49:39.921874
 	
-	The undirected graph orkut has 11803298 nodes with 2 different node types: 2 (nodes
-	number 8730857) and 1 (nodes number 3072441) and 444222386 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 7,
-	the mean node degree is 75.27 and the node degree mode is 1. The top 5 most central
-	nodes are 3079078 (degree 318240), 3079778 (degree 284401), 3079189 (degree 221523),
-	3080210 (degree 213394) and 3080202 (degree 208310).
+	The undirected graph orkut has 11803298 nodes with 2 different node types:
+	2 (nodes number 8730857) and 1 (nodes number 3072441) and 444222386 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 7, the mean node degree is 75.27 and the
+	node degree mode is 1. The top 5 most central nodes are 3079078 (degree
+	318240), 3079778 (degree 284401), 3079189 (degree 221523), 3080210 (degree
+	213394) and 3080202 (degree 208310).
 	
 
 

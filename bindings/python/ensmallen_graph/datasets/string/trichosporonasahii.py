@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:35:53.500828
 
-The undirected graph Trichosporon asahii has 5092 nodes and 547802 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04226 and
-has 14 connected components, where the component with most nodes has 5060 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 215.16, and the node degree mode is 1. The top 5 most central
-nodes are 82508.K1VYW4 (degree 1528), 82508.K1VMX7 (degree 1454), 82508.K1WLG1 (degree
-1399), 82508.K1VK41 (degree 1396) and 82508.K1VAJ1 (degree 1371).
+The undirected graph Trichosporon asahii has 5092 nodes and 547802 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04226 and has 14 connected components, where the component with most
+nodes has 5060 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 215.16, and
+the node degree mode is 1. The top 5 most central nodes are 82508.K1VYW4
+(degree 1528), 82508.K1VMX7 (degree 1454), 82508.K1WLG1 (degree 1399),
+82508.K1VK41 (degree 1396) and 82508.K1VAJ1 (degree 1371).
 
 
 References
@@ -106,13 +107,14 @@ def TrichosporonAsahii(
 	
 	Datetime: 2021-02-02 18:35:53.500828
 	
-	The undirected graph Trichosporon asahii has 5092 nodes and 547802 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04226 and
-	has 14 connected components, where the component with most nodes has 5060 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 215.16, and the node degree mode is 1. The top 5 most central
-	nodes are 82508.K1VYW4 (degree 1528), 82508.K1VMX7 (degree 1454), 82508.K1WLG1 (degree
-	1399), 82508.K1VK41 (degree 1396) and 82508.K1VAJ1 (degree 1371).
+	The undirected graph Trichosporon asahii has 5092 nodes and 547802 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04226 and has 14 connected components, where the component with most
+	nodes has 5060 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 215.16, and
+	the node degree mode is 1. The top 5 most central nodes are 82508.K1VYW4
+	(degree 1528), 82508.K1VMX7 (degree 1454), 82508.K1WLG1 (degree 1399),
+	82508.K1VK41 (degree 1396) and 82508.K1VAJ1 (degree 1371).
 	
 
 

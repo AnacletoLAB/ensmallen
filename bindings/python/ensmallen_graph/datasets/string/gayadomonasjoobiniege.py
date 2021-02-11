@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:36.565771
 
-The undirected graph Gayadomonas joobiniege has 3348 nodes and 387541 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06917 and
-has 8 connected components, where the component with most nodes has 3332 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 231.51, and the node degree mode is 4. The top 5 most central
-nodes are 1046714.AMRX01000002_gene551 (degree 1218), 1046714.AMRX01000006_gene2409
-(degree 997), 1046714.AMRX01000003_gene296 (degree 990), 1046714.AMRX01000006_gene2408
-(degree 979) and 1046714.AMRX01000003_gene366 (degree 977).
+The undirected graph Gayadomonas joobiniege has 3348 nodes and 387541 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06917 and has 8 connected components, where the component with most
+nodes has 3332 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 214, the mean node degree is 231.51, and
+the node degree mode is 4. The top 5 most central nodes are 1046714.AMRX01000002_gene551
+(degree 1218), 1046714.AMRX01000006_gene2409 (degree 997), 1046714.AMRX01000003_gene296
+(degree 990), 1046714.AMRX01000006_gene2408 (degree 979) and 1046714.AMRX01000003_gene366
+(degree 977).
 
 
 References
@@ -107,14 +108,15 @@ def GayadomonasJoobiniege(
 	
 	Datetime: 2021-02-02 22:16:36.565771
 	
-	The undirected graph Gayadomonas joobiniege has 3348 nodes and 387541 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06917 and
-	has 8 connected components, where the component with most nodes has 3332 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 231.51, and the node degree mode is 4. The top 5 most central
-	nodes are 1046714.AMRX01000002_gene551 (degree 1218), 1046714.AMRX01000006_gene2409
-	(degree 997), 1046714.AMRX01000003_gene296 (degree 990), 1046714.AMRX01000006_gene2408
-	(degree 979) and 1046714.AMRX01000003_gene366 (degree 977).
+	The undirected graph Gayadomonas joobiniege has 3348 nodes and 387541 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06917 and has 8 connected components, where the component with most
+	nodes has 3332 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 214, the mean node degree is 231.51, and
+	the node degree mode is 4. The top 5 most central nodes are 1046714.AMRX01000002_gene551
+	(degree 1218), 1046714.AMRX01000006_gene2409 (degree 997), 1046714.AMRX01000003_gene296
+	(degree 990), 1046714.AMRX01000006_gene2408 (degree 979) and 1046714.AMRX01000003_gene366
+	(degree 977).
 	
 
 

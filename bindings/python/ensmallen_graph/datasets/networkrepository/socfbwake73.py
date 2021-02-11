@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:48.232810
 
-The undirected graph socfb-Wake73 has 5372 nodes and 279191 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01935 and
-has 3 connected components, where the component with most nodes has 5366 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 85,
-the mean node degree is 103.94, and the node degree mode is 1. The top 5 most central
-nodes are 283 (degree 1341), 1024 (degree 1275), 1226 (degree 884), 1253 (degree
-745) and 59 (degree 721).
+The undirected graph socfb-Wake73 has 5372 nodes and 279191 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01935 and has 3 connected components, where the component with most
+nodes has 5366 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 85, the mean node degree is 103.94, and
+the node degree mode is 1. The top 5 most central nodes are 283 (degree
+1341), 1024 (degree 1275), 1226 (degree 884), 1253 (degree 745) and 59
+(degree 721).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbWake73(
 	
 	Datetime: 2021-02-06 11:51:48.232810
 	
-	The undirected graph socfb-Wake73 has 5372 nodes and 279191 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01935 and
-	has 3 connected components, where the component with most nodes has 5366 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 85,
-	the mean node degree is 103.94, and the node degree mode is 1. The top 5 most central
-	nodes are 283 (degree 1341), 1024 (degree 1275), 1226 (degree 884), 1253 (degree
-	745) and 59 (degree 721).
+	The undirected graph socfb-Wake73 has 5372 nodes and 279191 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01935 and has 3 connected components, where the component with most
+	nodes has 5366 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 85, the mean node degree is 103.94, and
+	the node degree mode is 1. The top 5 most central nodes are 283 (degree
+	1341), 1024 (degree 1275), 1226 (degree 884), 1253 (degree 745) and 59
+	(degree 721).
 	
 
 

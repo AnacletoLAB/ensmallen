@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:37.346749
 
-The undirected graph Kallipyga massiliensis has 1285 nodes and 82886 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10047
-and has 7 connected components, where the component with most nodes has 1271 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 129.01, and the node degree mode is 2. The top 5
-most central nodes are 1118059.CAHC01000010_gene108 (degree 654), 1118059.CAHC01000012_gene412
-(degree 561), 1118059.CAHC01000012_gene259 (degree 531), 1118059.CAHC01000009_gene1181
-(degree 528) and 1118059.CAHC01000020_gene1116 (degree 521).
+The undirected graph Kallipyga massiliensis has 1285 nodes and 82886 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10047 and has 7 connected components, where the component
+with most nodes has 1271 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 129.01,
+and the node degree mode is 2. The top 5 most central nodes are 1118059.CAHC01000010_gene108
+(degree 654), 1118059.CAHC01000012_gene412 (degree 561), 1118059.CAHC01000012_gene259
+(degree 531), 1118059.CAHC01000009_gene1181 (degree 528) and 1118059.CAHC01000020_gene1116
+(degree 521).
 
 
 References
@@ -107,14 +108,15 @@ def KallipygaMassiliensis(
 	
 	Datetime: 2021-02-02 22:28:37.346749
 	
-	The undirected graph Kallipyga massiliensis has 1285 nodes and 82886 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10047
-	and has 7 connected components, where the component with most nodes has 1271 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 129.01, and the node degree mode is 2. The top 5
-	most central nodes are 1118059.CAHC01000010_gene108 (degree 654), 1118059.CAHC01000012_gene412
-	(degree 561), 1118059.CAHC01000012_gene259 (degree 531), 1118059.CAHC01000009_gene1181
-	(degree 528) and 1118059.CAHC01000020_gene1116 (degree 521).
+	The undirected graph Kallipyga massiliensis has 1285 nodes and 82886 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10047 and has 7 connected components, where the component
+	with most nodes has 1271 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 129.01,
+	and the node degree mode is 2. The top 5 most central nodes are 1118059.CAHC01000010_gene108
+	(degree 654), 1118059.CAHC01000012_gene412 (degree 561), 1118059.CAHC01000012_gene259
+	(degree 531), 1118059.CAHC01000009_gene1181 (degree 528) and 1118059.CAHC01000020_gene1116
+	(degree 521).
 	
 
 

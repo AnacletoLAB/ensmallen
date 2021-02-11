@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:22.748029
 
-The undirected graph Bartonella tribocorum has 2097 nodes and 132501 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06029 and
-has 19 connected components, where the component with most nodes has 2053 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 126.37, and the node degree mode is 21. The top 5 most central
-nodes are 382640.BT_0007 (degree 760), 382640.BT_0199 (degree 632), 382640.BT_1540
-(degree 584), 382640.BT_0096 (degree 566) and 382640.BT_0937 (degree 563).
+The undirected graph Bartonella tribocorum has 2097 nodes and 132501 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06029 and has 19 connected components, where the component with most
+nodes has 2053 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 126.37, and
+the node degree mode is 21. The top 5 most central nodes are 382640.BT_0007
+(degree 760), 382640.BT_0199 (degree 632), 382640.BT_1540 (degree 584),
+382640.BT_0096 (degree 566) and 382640.BT_0937 (degree 563).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaTribocorum(
 	
 	Datetime: 2021-02-02 20:37:22.748029
 	
-	The undirected graph Bartonella tribocorum has 2097 nodes and 132501 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06029 and
-	has 19 connected components, where the component with most nodes has 2053 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 126.37, and the node degree mode is 21. The top 5 most central
-	nodes are 382640.BT_0007 (degree 760), 382640.BT_0199 (degree 632), 382640.BT_1540
-	(degree 584), 382640.BT_0096 (degree 566) and 382640.BT_0937 (degree 563).
+	The undirected graph Bartonella tribocorum has 2097 nodes and 132501 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06029 and has 19 connected components, where the component with most
+	nodes has 2053 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 126.37, and
+	the node degree mode is 21. The top 5 most central nodes are 382640.BT_0007
+	(degree 760), 382640.BT_0199 (degree 632), 382640.BT_1540 (degree 584),
+	382640.BT_0096 (degree 566) and 382640.BT_0937 (degree 563).
 	
 
 

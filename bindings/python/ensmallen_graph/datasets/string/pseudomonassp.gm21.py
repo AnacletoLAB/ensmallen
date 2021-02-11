@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:47.049511
 
-The undirected graph Pseudomonas sp. GM21 has 5947 nodes and 836032 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04729 and
-has 27 connected components, where the component with most nodes has 5882 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 232,
-the mean node degree is 281.16, and the node degree mode is 1. The top 5 most central
-nodes are 1144325.PMI22_04790 (degree 2213), 1144325.PMI22_00535 (degree 1944), 1144325.PMI22_01222
-(degree 1929), 1144325.PMI22_01637 (degree 1764) and 1144325.PMI22_04003 (degree
+The undirected graph Pseudomonas sp. GM21 has 5947 nodes and 836032 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04729 and has 27 connected components, where the component with most
+nodes has 5882 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 232, the mean node degree is 281.16, and
+the node degree mode is 1. The top 5 most central nodes are 1144325.PMI22_04790
+(degree 2213), 1144325.PMI22_00535 (degree 1944), 1144325.PMI22_01222 (degree
+1929), 1144325.PMI22_01637 (degree 1764) and 1144325.PMI22_04003 (degree
 1711).
 
 
@@ -107,13 +108,14 @@ def PseudomonasSp.Gm21(
 	
 	Datetime: 2021-02-02 22:58:47.049511
 	
-	The undirected graph Pseudomonas sp. GM21 has 5947 nodes and 836032 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04729 and
-	has 27 connected components, where the component with most nodes has 5882 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 232,
-	the mean node degree is 281.16, and the node degree mode is 1. The top 5 most central
-	nodes are 1144325.PMI22_04790 (degree 2213), 1144325.PMI22_00535 (degree 1944), 1144325.PMI22_01222
-	(degree 1929), 1144325.PMI22_01637 (degree 1764) and 1144325.PMI22_04003 (degree
+	The undirected graph Pseudomonas sp. GM21 has 5947 nodes and 836032 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04729 and has 27 connected components, where the component with most
+	nodes has 5882 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 232, the mean node degree is 281.16, and
+	the node degree mode is 1. The top 5 most central nodes are 1144325.PMI22_04790
+	(degree 2213), 1144325.PMI22_00535 (degree 1944), 1144325.PMI22_01222 (degree
+	1929), 1144325.PMI22_01637 (degree 1764) and 1144325.PMI22_04003 (degree
 	1711).
 	
 

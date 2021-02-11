@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:27.686887
 
-The undirected graph Flavobacterium sp. ACAM123 has 3550 nodes and 277723 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04409
-and has 27 connected components, where the component with most nodes has 3490 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 156.46, and the node degree mode is 1. The top 5
-most central nodes are 1189620.AJXL01000011_gene1112 (degree 1120), 1189620.AJXL01000026_gene3415
-(degree 1084), 1189620.AJXL01000036_gene409 (degree 952), 1189620.AJXL01000106_gene3278
-(degree 951) and 1189620.AJXL01000044_gene1097 (degree 860).
+The undirected graph Flavobacterium sp. ACAM123 has 3550 nodes and 277723
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04409 and has 27 connected components, where the component
+with most nodes has 3490 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 156.46,
+and the node degree mode is 1. The top 5 most central nodes are 1189620.AJXL01000011_gene1112
+(degree 1120), 1189620.AJXL01000026_gene3415 (degree 1084), 1189620.AJXL01000036_gene409
+(degree 952), 1189620.AJXL01000106_gene3278 (degree 951) and 1189620.AJXL01000044_gene1097
+(degree 860).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Acam123(
 	
 	Datetime: 2021-02-02 23:11:27.686887
 	
-	The undirected graph Flavobacterium sp. ACAM123 has 3550 nodes and 277723 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04409
-	and has 27 connected components, where the component with most nodes has 3490 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 156.46, and the node degree mode is 1. The top 5
-	most central nodes are 1189620.AJXL01000011_gene1112 (degree 1120), 1189620.AJXL01000026_gene3415
-	(degree 1084), 1189620.AJXL01000036_gene409 (degree 952), 1189620.AJXL01000106_gene3278
-	(degree 951) and 1189620.AJXL01000044_gene1097 (degree 860).
+	The undirected graph Flavobacterium sp. ACAM123 has 3550 nodes and 277723
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04409 and has 27 connected components, where the component
+	with most nodes has 3490 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 156.46,
+	and the node degree mode is 1. The top 5 most central nodes are 1189620.AJXL01000011_gene1112
+	(degree 1120), 1189620.AJXL01000026_gene3415 (degree 1084), 1189620.AJXL01000036_gene409
+	(degree 952), 1189620.AJXL01000106_gene3278 (degree 951) and 1189620.AJXL01000044_gene1097
+	(degree 860).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:57.002641
 
-The undirected graph Lactobacillus plantarum has 3085 nodes and 212215 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04461 and
-has 12 connected components, where the component with most nodes has 3060 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 137.58, and the node degree mode is 3. The top 5 most central
-nodes are 220668.lp_1508 (degree 1277), 220668.lp_0914 (degree 903), 220668.lp_2027
-(degree 878), 220668.lp_3662 (degree 851) and 220668.lp_1912 (degree 835).
+The undirected graph Lactobacillus plantarum has 3085 nodes and 212215
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04461 and has 12 connected components, where the component
+with most nodes has 3060 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 137.58,
+and the node degree mode is 3. The top 5 most central nodes are 220668.lp_1508
+(degree 1277), 220668.lp_0914 (degree 903), 220668.lp_2027 (degree 878),
+220668.lp_3662 (degree 851) and 220668.lp_1912 (degree 835).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusPlantarum(
 	
 	Datetime: 2021-02-02 20:03:57.002641
 	
-	The undirected graph Lactobacillus plantarum has 3085 nodes and 212215 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04461 and
-	has 12 connected components, where the component with most nodes has 3060 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 137.58, and the node degree mode is 3. The top 5 most central
-	nodes are 220668.lp_1508 (degree 1277), 220668.lp_0914 (degree 903), 220668.lp_2027
-	(degree 878), 220668.lp_3662 (degree 851) and 220668.lp_1912 (degree 835).
+	The undirected graph Lactobacillus plantarum has 3085 nodes and 212215
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04461 and has 12 connected components, where the component
+	with most nodes has 3060 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 137.58,
+	and the node degree mode is 3. The top 5 most central nodes are 220668.lp_1508
+	(degree 1277), 220668.lp_0914 (degree 903), 220668.lp_2027 (degree 878),
+	220668.lp_3662 (degree 851) and 220668.lp_1912 (degree 835).
 	
 
 

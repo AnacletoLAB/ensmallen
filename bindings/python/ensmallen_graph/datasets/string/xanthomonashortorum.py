@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:17.907825
 
-The undirected graph Xanthomonas hortorum has 4285 nodes and 333682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03635 and
-has 22 connected components, where the component with most nodes has 4235 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 155.74, and the node degree mode is 1. The top 5 most central
-nodes are 863365.XHC_4169 (degree 1325), 863365.XHC_2690 (degree 1284), 863365.XHC_1392
-(degree 1195), 863365.XHC_0639 (degree 1111) and 863365.XHC_0038 (degree 1093).
+The undirected graph Xanthomonas hortorum has 4285 nodes and 333682 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03635 and has 22 connected components, where the component with most
+nodes has 4235 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 155.74, and
+the node degree mode is 1. The top 5 most central nodes are 863365.XHC_4169
+(degree 1325), 863365.XHC_2690 (degree 1284), 863365.XHC_1392 (degree 1195),
+863365.XHC_0639 (degree 1111) and 863365.XHC_0038 (degree 1093).
 
 
 References
@@ -106,13 +107,14 @@ def XanthomonasHortorum(
 	
 	Datetime: 2021-02-02 21:47:17.907825
 	
-	The undirected graph Xanthomonas hortorum has 4285 nodes and 333682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03635 and
-	has 22 connected components, where the component with most nodes has 4235 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 155.74, and the node degree mode is 1. The top 5 most central
-	nodes are 863365.XHC_4169 (degree 1325), 863365.XHC_2690 (degree 1284), 863365.XHC_1392
-	(degree 1195), 863365.XHC_0639 (degree 1111) and 863365.XHC_0038 (degree 1093).
+	The undirected graph Xanthomonas hortorum has 4285 nodes and 333682 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03635 and has 22 connected components, where the component with most
+	nodes has 4235 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 155.74, and
+	the node degree mode is 1. The top 5 most central nodes are 863365.XHC_4169
+	(degree 1325), 863365.XHC_2690 (degree 1284), 863365.XHC_1392 (degree 1195),
+	863365.XHC_0639 (degree 1111) and 863365.XHC_0038 (degree 1093).
 	
 
 

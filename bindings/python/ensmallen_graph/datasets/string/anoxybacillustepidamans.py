@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:51.499684
 
-The undirected graph Anoxybacillus tepidamans has 3358 nodes and 391634 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06948
-and has 10 connected components, where the component with most nodes has 3340 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 233.25, and the node degree mode is 3. The top 5
-most central nodes are 1382358.JHVN01000020_gene1394 (degree 1248), 1382358.JHVN01000038_gene3217
-(degree 1090), 1382358.JHVN01000032_gene2137 (degree 1059), 1382358.JHVN01000002_gene2181
-(degree 1000) and 1382358.JHVN01000001_gene963 (degree 991).
+The undirected graph Anoxybacillus tepidamans has 3358 nodes and 391634
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06948 and has 10 connected components, where the component
+with most nodes has 3340 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 233.25,
+and the node degree mode is 3. The top 5 most central nodes are 1382358.JHVN01000020_gene1394
+(degree 1248), 1382358.JHVN01000038_gene3217 (degree 1090), 1382358.JHVN01000032_gene2137
+(degree 1059), 1382358.JHVN01000002_gene2181 (degree 1000) and 1382358.JHVN01000001_gene963
+(degree 991).
 
 
 References
@@ -107,14 +108,15 @@ def AnoxybacillusTepidamans(
 	
 	Datetime: 2021-02-03 22:18:51.499684
 	
-	The undirected graph Anoxybacillus tepidamans has 3358 nodes and 391634 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06948
-	and has 10 connected components, where the component with most nodes has 3340 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 233.25, and the node degree mode is 3. The top 5
-	most central nodes are 1382358.JHVN01000020_gene1394 (degree 1248), 1382358.JHVN01000038_gene3217
-	(degree 1090), 1382358.JHVN01000032_gene2137 (degree 1059), 1382358.JHVN01000002_gene2181
-	(degree 1000) and 1382358.JHVN01000001_gene963 (degree 991).
+	The undirected graph Anoxybacillus tepidamans has 3358 nodes and 391634
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06948 and has 10 connected components, where the component
+	with most nodes has 3340 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 233.25,
+	and the node degree mode is 3. The top 5 most central nodes are 1382358.JHVN01000020_gene1394
+	(degree 1248), 1382358.JHVN01000038_gene3217 (degree 1090), 1382358.JHVN01000032_gene2137
+	(degree 1059), 1382358.JHVN01000002_gene2181 (degree 1000) and 1382358.JHVN01000001_gene963
+	(degree 991).
 	
 
 

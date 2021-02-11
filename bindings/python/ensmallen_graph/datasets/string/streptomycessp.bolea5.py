@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:10.188904
 
-The undirected graph Streptomyces sp. BoleA5 has 7596 nodes and 1145182 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03970
-and has 34 connected components, where the component with most nodes has 7512 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 252, the mean node degree is 301.52, and the node degree mode is 2. The top 5
-most central nodes are 1157637.KB892116_gene77 (degree 3643), 1157637.KB892100_gene2364
-(degree 2898), 1157637.KB892090_gene6597 (degree 2267), 1157637.KB892090_gene5927
-(degree 2182) and 1157637.KB892090_gene6571 (degree 2172).
+The undirected graph Streptomyces sp. BoleA5 has 7596 nodes and 1145182
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03970 and has 34 connected components, where the component
+with most nodes has 7512 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 252, the mean node degree is 301.52,
+and the node degree mode is 2. The top 5 most central nodes are 1157637.KB892116_gene77
+(degree 3643), 1157637.KB892100_gene2364 (degree 2898), 1157637.KB892090_gene6597
+(degree 2267), 1157637.KB892090_gene5927 (degree 2182) and 1157637.KB892090_gene6571
+(degree 2172).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Bolea5(
 	
 	Datetime: 2021-02-02 23:02:10.188904
 	
-	The undirected graph Streptomyces sp. BoleA5 has 7596 nodes and 1145182 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03970
-	and has 34 connected components, where the component with most nodes has 7512 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 252, the mean node degree is 301.52, and the node degree mode is 2. The top 5
-	most central nodes are 1157637.KB892116_gene77 (degree 3643), 1157637.KB892100_gene2364
-	(degree 2898), 1157637.KB892090_gene6597 (degree 2267), 1157637.KB892090_gene5927
-	(degree 2182) and 1157637.KB892090_gene6571 (degree 2172).
+	The undirected graph Streptomyces sp. BoleA5 has 7596 nodes and 1145182
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03970 and has 34 connected components, where the component
+	with most nodes has 7512 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 252, the mean node degree is 301.52,
+	and the node degree mode is 2. The top 5 most central nodes are 1157637.KB892116_gene77
+	(degree 3643), 1157637.KB892100_gene2364 (degree 2898), 1157637.KB892090_gene6597
+	(degree 2267), 1157637.KB892090_gene5927 (degree 2182) and 1157637.KB892090_gene6571
+	(degree 2172).
 	
 
 

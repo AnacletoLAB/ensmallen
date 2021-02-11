@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:50.193540
 
-The undirected graph Psychrobacter lutiphocae has 2535 nodes and 168683 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05252
-and has 15 connected components, where the component with most nodes has 2505 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 133.08, and the node degree mode is 1. The top 5
-most central nodes are 1123033.ARNF01000028_gene765 (degree 959), 1123033.ARNF01000087_gene1464
-(degree 930), 1123033.ARNF01000069_gene756 (degree 807), 1123033.ARNF01000062_gene462
-(degree 800) and 1123033.ARNF01000077_gene2152 (degree 798).
+The undirected graph Psychrobacter lutiphocae has 2535 nodes and 168683
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05252 and has 15 connected components, where the component
+with most nodes has 2505 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 133.08,
+and the node degree mode is 1. The top 5 most central nodes are 1123033.ARNF01000028_gene765
+(degree 959), 1123033.ARNF01000087_gene1464 (degree 930), 1123033.ARNF01000069_gene756
+(degree 807), 1123033.ARNF01000062_gene462 (degree 800) and 1123033.ARNF01000077_gene2152
+(degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterLutiphocae(
 	
 	Datetime: 2021-02-02 22:46:50.193540
 	
-	The undirected graph Psychrobacter lutiphocae has 2535 nodes and 168683 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05252
-	and has 15 connected components, where the component with most nodes has 2505 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 133.08, and the node degree mode is 1. The top 5
-	most central nodes are 1123033.ARNF01000028_gene765 (degree 959), 1123033.ARNF01000087_gene1464
-	(degree 930), 1123033.ARNF01000069_gene756 (degree 807), 1123033.ARNF01000062_gene462
-	(degree 800) and 1123033.ARNF01000077_gene2152 (degree 798).
+	The undirected graph Psychrobacter lutiphocae has 2535 nodes and 168683
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05252 and has 15 connected components, where the component
+	with most nodes has 2505 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 133.08,
+	and the node degree mode is 1. The top 5 most central nodes are 1123033.ARNF01000028_gene765
+	(degree 959), 1123033.ARNF01000087_gene1464 (degree 930), 1123033.ARNF01000069_gene756
+	(degree 807), 1123033.ARNF01000062_gene462 (degree 800) and 1123033.ARNF01000077_gene2152
+	(degree 798).
 	
 
 

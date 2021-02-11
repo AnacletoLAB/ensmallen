@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:04.193304
 
-The undirected graph Frateuria aurantia has 3069 nodes and 205573 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04367 and
-has 11 connected components, where the component with most nodes has 3038 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 133.97, and the node degree mode is 2. The top 5 most central
-nodes are 767434.Fraau_2421 (degree 1267), 767434.Fraau_1932 (degree 1063), 767434.Fraau_2947
-(degree 1052), 767434.Fraau_1584 (degree 925) and 767434.Fraau_2760 (degree 895).
+The undirected graph Frateuria aurantia has 3069 nodes and 205573 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04367 and has 11 connected components, where the component with most
+nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 133.97, and
+the node degree mode is 2. The top 5 most central nodes are 767434.Fraau_2421
+(degree 1267), 767434.Fraau_1932 (degree 1063), 767434.Fraau_2947 (degree
+1052), 767434.Fraau_1584 (degree 925) and 767434.Fraau_2760 (degree 895).
 
 
 References
@@ -106,13 +107,14 @@ def FrateuriaAurantia(
 	
 	Datetime: 2021-02-02 21:44:04.193304
 	
-	The undirected graph Frateuria aurantia has 3069 nodes and 205573 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04367 and
-	has 11 connected components, where the component with most nodes has 3038 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 133.97, and the node degree mode is 2. The top 5 most central
-	nodes are 767434.Fraau_2421 (degree 1267), 767434.Fraau_1932 (degree 1063), 767434.Fraau_2947
-	(degree 1052), 767434.Fraau_1584 (degree 925) and 767434.Fraau_2760 (degree 895).
+	The undirected graph Frateuria aurantia has 3069 nodes and 205573 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04367 and has 11 connected components, where the component with most
+	nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 133.97, and
+	the node degree mode is 2. The top 5 most central nodes are 767434.Fraau_2421
+	(degree 1267), 767434.Fraau_1932 (degree 1063), 767434.Fraau_2947 (degree
+	1052), 767434.Fraau_1584 (degree 925) and 767434.Fraau_2760 (degree 895).
 	
 
 

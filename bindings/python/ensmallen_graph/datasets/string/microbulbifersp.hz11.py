@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:08.316981
 
-The undirected graph Microbulbifer sp. HZ11 has 3251 nodes and 390252 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07387 and
-has 8 connected components, where the component with most nodes has 3235 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 240.08, and the node degree mode is 1. The top 5 most central
-nodes are 1453501.JELR01000002_gene1060 (degree 1082), 1453501.JELR01000001_gene2374
-(degree 1058), 1453501.JELR01000005_gene1542 (degree 1038), 1453501.JELR01000002_gene1330
-(degree 988) and 1453501.JELR01000001_gene3211 (degree 974).
+The undirected graph Microbulbifer sp. HZ11 has 3251 nodes and 390252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07387 and has 8 connected components, where the component with most
+nodes has 3235 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 240.08, and
+the node degree mode is 1. The top 5 most central nodes are 1453501.JELR01000002_gene1060
+(degree 1082), 1453501.JELR01000001_gene2374 (degree 1058), 1453501.JELR01000005_gene1542
+(degree 1038), 1453501.JELR01000002_gene1330 (degree 988) and 1453501.JELR01000001_gene3211
+(degree 974).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobulbiferSp.Hz11(
 	
 	Datetime: 2021-02-03 23:06:08.316981
 	
-	The undirected graph Microbulbifer sp. HZ11 has 3251 nodes and 390252 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07387 and
-	has 8 connected components, where the component with most nodes has 3235 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 240.08, and the node degree mode is 1. The top 5 most central
-	nodes are 1453501.JELR01000002_gene1060 (degree 1082), 1453501.JELR01000001_gene2374
-	(degree 1058), 1453501.JELR01000005_gene1542 (degree 1038), 1453501.JELR01000002_gene1330
-	(degree 988) and 1453501.JELR01000001_gene3211 (degree 974).
+	The undirected graph Microbulbifer sp. HZ11 has 3251 nodes and 390252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07387 and has 8 connected components, where the component with most
+	nodes has 3235 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 240.08, and
+	the node degree mode is 1. The top 5 most central nodes are 1453501.JELR01000002_gene1060
+	(degree 1082), 1453501.JELR01000001_gene2374 (degree 1058), 1453501.JELR01000005_gene1542
+	(degree 1038), 1453501.JELR01000002_gene1330 (degree 988) and 1453501.JELR01000001_gene3211
+	(degree 974).
 	
 
 

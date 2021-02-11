@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:21.647326
 
-The undirected graph Staphylococcus epidermidis ATCC12228 has 2376 nodes and 151768
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05379 and has 12 connected components, where the component with most nodes has
-2353 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 101, the mean node degree is 127.75, and the node degree mode is 1. The
-top 5 most central nodes are 176280.SE_1367 (degree 912), 176280.SE_2347 (degree
-780), 176280.SE_1267 (degree 712), 176280.SE_2348 (degree 712) and 176280.SE_0895
-(degree 701).
+The undirected graph Staphylococcus epidermidis ATCC12228 has 2376 nodes
+and 151768 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05379 and has 12 connected components, where the
+component with most nodes has 2353 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+is 127.75, and the node degree mode is 1. The top 5 most central nodes
+are 176280.SE_1367 (degree 912), 176280.SE_2347 (degree 780), 176280.SE_1267
+(degree 712), 176280.SE_2348 (degree 712) and 176280.SE_0895 (degree 701).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylococcusEpidermidisAtcc12228(
 	
 	Datetime: 2021-02-02 19:55:21.647326
 	
-	The undirected graph Staphylococcus epidermidis ATCC12228 has 2376 nodes and 151768
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05379 and has 12 connected components, where the component with most nodes has
-	2353 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 101, the mean node degree is 127.75, and the node degree mode is 1. The
-	top 5 most central nodes are 176280.SE_1367 (degree 912), 176280.SE_2347 (degree
-	780), 176280.SE_1267 (degree 712), 176280.SE_2348 (degree 712) and 176280.SE_0895
-	(degree 701).
+	The undirected graph Staphylococcus epidermidis ATCC12228 has 2376 nodes
+	and 151768 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05379 and has 12 connected components, where the
+	component with most nodes has 2353 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+	is 127.75, and the node degree mode is 1. The top 5 most central nodes
+	are 176280.SE_1367 (degree 912), 176280.SE_2347 (degree 780), 176280.SE_1267
+	(degree 712), 176280.SE_2348 (degree 712) and 176280.SE_0895 (degree 701).
 	
 
 

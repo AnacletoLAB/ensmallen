@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:08.557252
 
-The undirected graph Marinomonas ushuaiensis has 3050 nodes and 322907 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06945 and
-has 3 connected components, where the component with most nodes has 3045 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 211.74, and the node degree mode is 3. The top 5 most central
-nodes are 1122207.MUS1_10055 (degree 1457), 1122207.MUS1_01445 (degree 1263), 1122207.MUS1_13975
-(degree 1076), 1122207.MUS1_06360 (degree 1051) and 1122207.MUS1_11125 (degree 1045).
+The undirected graph Marinomonas ushuaiensis has 3050 nodes and 322907
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06945 and has 3 connected components, where the component
+with most nodes has 3045 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 211.74,
+and the node degree mode is 3. The top 5 most central nodes are 1122207.MUS1_10055
+(degree 1457), 1122207.MUS1_01445 (degree 1263), 1122207.MUS1_13975 (degree
+1076), 1122207.MUS1_06360 (degree 1051) and 1122207.MUS1_11125 (degree
+1045).
 
 
 References
@@ -106,13 +108,15 @@ def MarinomonasUshuaiensis(
 	
 	Datetime: 2021-02-02 22:42:08.557252
 	
-	The undirected graph Marinomonas ushuaiensis has 3050 nodes and 322907 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06945 and
-	has 3 connected components, where the component with most nodes has 3045 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 211.74, and the node degree mode is 3. The top 5 most central
-	nodes are 1122207.MUS1_10055 (degree 1457), 1122207.MUS1_01445 (degree 1263), 1122207.MUS1_13975
-	(degree 1076), 1122207.MUS1_06360 (degree 1051) and 1122207.MUS1_11125 (degree 1045).
+	The undirected graph Marinomonas ushuaiensis has 3050 nodes and 322907
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06945 and has 3 connected components, where the component
+	with most nodes has 3045 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 211.74,
+	and the node degree mode is 3. The top 5 most central nodes are 1122207.MUS1_10055
+	(degree 1457), 1122207.MUS1_01445 (degree 1263), 1122207.MUS1_13975 (degree
+	1076), 1122207.MUS1_06360 (degree 1051) and 1122207.MUS1_11125 (degree
+	1045).
 	
 
 

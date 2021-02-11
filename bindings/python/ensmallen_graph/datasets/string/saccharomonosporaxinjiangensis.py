@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:50.426318
 
-The undirected graph Saccharomonospora xinjiangensis has 4285 nodes and 427766 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04661
-and has 13 connected components, where the component with most nodes has 4254 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 199.66, and the node degree mode is 3. The top 5
-most central nodes are 882086.SacxiDRAFT_2360 (degree 1292), 882086.SacxiDRAFT_3578
-(degree 1226), 882086.SacxiDRAFT_1255 (degree 1157), 882086.SacxiDRAFT_2991 (degree
+The undirected graph Saccharomonospora xinjiangensis has 4285 nodes and
+427766 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04661 and has 13 connected components, where the
+component with most nodes has 4254 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+is 199.66, and the node degree mode is 3. The top 5 most central nodes
+are 882086.SacxiDRAFT_2360 (degree 1292), 882086.SacxiDRAFT_3578 (degree
+1226), 882086.SacxiDRAFT_1255 (degree 1157), 882086.SacxiDRAFT_2991 (degree
 1131) and 882086.SacxiDRAFT_1536 (degree 1131).
 
 
@@ -107,13 +108,14 @@ def SaccharomonosporaXinjiangensis(
 	
 	Datetime: 2021-02-02 21:50:50.426318
 	
-	The undirected graph Saccharomonospora xinjiangensis has 4285 nodes and 427766 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04661
-	and has 13 connected components, where the component with most nodes has 4254 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 199.66, and the node degree mode is 3. The top 5
-	most central nodes are 882086.SacxiDRAFT_2360 (degree 1292), 882086.SacxiDRAFT_3578
-	(degree 1226), 882086.SacxiDRAFT_1255 (degree 1157), 882086.SacxiDRAFT_2991 (degree
+	The undirected graph Saccharomonospora xinjiangensis has 4285 nodes and
+	427766 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04661 and has 13 connected components, where the
+	component with most nodes has 4254 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+	is 199.66, and the node degree mode is 3. The top 5 most central nodes
+	are 882086.SacxiDRAFT_2360 (degree 1292), 882086.SacxiDRAFT_3578 (degree
+	1226), 882086.SacxiDRAFT_1255 (degree 1157), 882086.SacxiDRAFT_2991 (degree
 	1131) and 882086.SacxiDRAFT_1536 (degree 1131).
 	
 

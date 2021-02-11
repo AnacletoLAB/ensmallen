@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:56.601925
 
-The undirected graph Acetonema longum has 4208 nodes and 571888 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06461 and
-has 39 connected components, where the component with most nodes has 4125 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 271.81, and the node degree mode is 1. The top 5 most central
-nodes are 1009370.ALO_19832 (degree 1594), 1009370.ALO_09614 (degree 1555), 1009370.ALO_02656
-(degree 1407), 1009370.ALO_05533 (degree 1382) and 1009370.ALO_04051 (degree 1333).
+The undirected graph Acetonema longum has 4208 nodes and 571888 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06461 and has 39 connected components, where the component with most
+nodes has 4125 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 271.81, and
+the node degree mode is 1. The top 5 most central nodes are 1009370.ALO_19832
+(degree 1594), 1009370.ALO_09614 (degree 1555), 1009370.ALO_02656 (degree
+1407), 1009370.ALO_05533 (degree 1382) and 1009370.ALO_04051 (degree 1333).
 
 
 References
@@ -106,13 +107,14 @@ def AcetonemaLongum(
 	
 	Datetime: 2021-02-02 22:08:56.601925
 	
-	The undirected graph Acetonema longum has 4208 nodes and 571888 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06461 and
-	has 39 connected components, where the component with most nodes has 4125 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 271.81, and the node degree mode is 1. The top 5 most central
-	nodes are 1009370.ALO_19832 (degree 1594), 1009370.ALO_09614 (degree 1555), 1009370.ALO_02656
-	(degree 1407), 1009370.ALO_05533 (degree 1382) and 1009370.ALO_04051 (degree 1333).
+	The undirected graph Acetonema longum has 4208 nodes and 571888 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06461 and has 39 connected components, where the component with most
+	nodes has 4125 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 271.81, and
+	the node degree mode is 1. The top 5 most central nodes are 1009370.ALO_19832
+	(degree 1594), 1009370.ALO_09614 (degree 1555), 1009370.ALO_02656 (degree
+	1407), 1009370.ALO_05533 (degree 1382) and 1009370.ALO_04051 (degree 1333).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:49.909741
 
-The undirected graph Succinatimonas hippei has 2132 nodes and 139074 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06122 and
-has 12 connected components, where the component with most nodes has 2105 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 130.46, and the node degree mode is 1. The top 5 most central
-nodes are 762983.HMPREF9444_02212 (degree 823), 762983.HMPREF9444_01008 (degree 721),
-762983.HMPREF9444_01970 (degree 685), 762983.HMPREF9444_02164 (degree 621) and 762983.HMPREF9444_00553
+The undirected graph Succinatimonas hippei has 2132 nodes and 139074 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06122 and has 12 connected components, where the component with most
+nodes has 2105 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 130.46, and
+the node degree mode is 1. The top 5 most central nodes are 762983.HMPREF9444_02212
+(degree 823), 762983.HMPREF9444_01008 (degree 721), 762983.HMPREF9444_01970
+(degree 685), 762983.HMPREF9444_02164 (degree 621) and 762983.HMPREF9444_00553
 (degree 536).
 
 
@@ -107,13 +108,14 @@ def SuccinatimonasHippei(
 	
 	Datetime: 2021-02-02 21:42:49.909741
 	
-	The undirected graph Succinatimonas hippei has 2132 nodes and 139074 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06122 and
-	has 12 connected components, where the component with most nodes has 2105 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 130.46, and the node degree mode is 1. The top 5 most central
-	nodes are 762983.HMPREF9444_02212 (degree 823), 762983.HMPREF9444_01008 (degree 721),
-	762983.HMPREF9444_01970 (degree 685), 762983.HMPREF9444_02164 (degree 621) and 762983.HMPREF9444_00553
+	The undirected graph Succinatimonas hippei has 2132 nodes and 139074 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06122 and has 12 connected components, where the component with most
+	nodes has 2105 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 130.46, and
+	the node degree mode is 1. The top 5 most central nodes are 762983.HMPREF9444_02212
+	(degree 823), 762983.HMPREF9444_01008 (degree 721), 762983.HMPREF9444_01970
+	(degree 685), 762983.HMPREF9444_02164 (degree 621) and 762983.HMPREF9444_00553
 	(degree 536).
 	
 

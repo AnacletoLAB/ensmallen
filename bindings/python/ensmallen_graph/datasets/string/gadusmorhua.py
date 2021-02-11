@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:26:55.176632
 
-The undirected graph Gadus morhua has 18790 nodes and 3587737 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02032 and
-has 8 connected components, where the component with most nodes has 18776 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 270,
-the mean node degree is 381.88, and the node degree mode is 1. The top 5 most central
-nodes are 8049.ENSGMOP00000012718 (degree 4098), 8049.ENSGMOP00000012733 (degree
-3905), 8049.ENSGMOP00000007083 (degree 3874), 8049.ENSGMOP00000009338 (degree 3584)
-and 8049.ENSGMOP00000006005 (degree 3565).
+The undirected graph Gadus morhua has 18790 nodes and 3587737 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02032 and has 8 connected components, where the component with most
+nodes has 18776 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 270, the mean node degree is 381.88, and
+the node degree mode is 1. The top 5 most central nodes are 8049.ENSGMOP00000012718
+(degree 4098), 8049.ENSGMOP00000012733 (degree 3905), 8049.ENSGMOP00000007083
+(degree 3874), 8049.ENSGMOP00000009338 (degree 3584) and 8049.ENSGMOP00000006005
+(degree 3565).
 
 
 References
@@ -107,14 +108,15 @@ def GadusMorhua(
 	
 	Datetime: 2021-02-02 17:26:55.176632
 	
-	The undirected graph Gadus morhua has 18790 nodes and 3587737 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02032 and
-	has 8 connected components, where the component with most nodes has 18776 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 270,
-	the mean node degree is 381.88, and the node degree mode is 1. The top 5 most central
-	nodes are 8049.ENSGMOP00000012718 (degree 4098), 8049.ENSGMOP00000012733 (degree
-	3905), 8049.ENSGMOP00000007083 (degree 3874), 8049.ENSGMOP00000009338 (degree 3584)
-	and 8049.ENSGMOP00000006005 (degree 3565).
+	The undirected graph Gadus morhua has 18790 nodes and 3587737 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02032 and has 8 connected components, where the component with most
+	nodes has 18776 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 270, the mean node degree is 381.88, and
+	the node degree mode is 1. The top 5 most central nodes are 8049.ENSGMOP00000012718
+	(degree 4098), 8049.ENSGMOP00000012733 (degree 3905), 8049.ENSGMOP00000007083
+	(degree 3874), 8049.ENSGMOP00000009338 (degree 3584) and 8049.ENSGMOP00000006005
+	(degree 3565).
 	
 
 

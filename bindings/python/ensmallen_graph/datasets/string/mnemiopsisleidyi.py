@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:29.045250
 
-The undirected graph Mnemiopsis leidyi has 8496 nodes and 1364391 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03781 and
-has 7 connected components, where the component with most nodes has 8480 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 321.18, and the node degree mode is 2. The top 5 most central
-nodes are 27923.ML08024a-PA (degree 3861), 27923.ML030219a-PA (degree 3316), 27923.ML14272a-PA
-(degree 2844), 27923.ML15997a-PA (degree 2527) and 27923.ML17402a-PA (degree 2518).
+The undirected graph Mnemiopsis leidyi has 8496 nodes and 1364391 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03781 and has 7 connected components, where the component with most
+nodes has 8480 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 321.18, and
+the node degree mode is 2. The top 5 most central nodes are 27923.ML08024a-PA
+(degree 3861), 27923.ML030219a-PA (degree 3316), 27923.ML14272a-PA (degree
+2844), 27923.ML15997a-PA (degree 2527) and 27923.ML17402a-PA (degree 2518).
 
 
 References
@@ -106,13 +107,14 @@ def MnemiopsisLeidyi(
 	
 	Datetime: 2021-02-02 17:55:29.045250
 	
-	The undirected graph Mnemiopsis leidyi has 8496 nodes and 1364391 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03781 and
-	has 7 connected components, where the component with most nodes has 8480 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 321.18, and the node degree mode is 2. The top 5 most central
-	nodes are 27923.ML08024a-PA (degree 3861), 27923.ML030219a-PA (degree 3316), 27923.ML14272a-PA
-	(degree 2844), 27923.ML15997a-PA (degree 2527) and 27923.ML17402a-PA (degree 2518).
+	The undirected graph Mnemiopsis leidyi has 8496 nodes and 1364391 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03781 and has 7 connected components, where the component with most
+	nodes has 8480 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 321.18, and
+	the node degree mode is 2. The top 5 most central nodes are 27923.ML08024a-PA
+	(degree 3861), 27923.ML030219a-PA (degree 3316), 27923.ML14272a-PA (degree
+	2844), 27923.ML15997a-PA (degree 2527) and 27923.ML17402a-PA (degree 2518).
 	
 
 

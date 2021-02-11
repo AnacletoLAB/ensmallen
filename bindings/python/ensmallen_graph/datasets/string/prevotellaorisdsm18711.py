@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:55.232907
 
-The undirected graph Prevotella oris DSM18711 has 2382 nodes and 160766 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05669
-and has 12 connected components, where the component with most nodes has 2356 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 134.98, and the node degree mode is 2. The top 5
-most central nodes are 1122989.KB898580_gene1512 (degree 870), 1122989.KB898592_gene567
-(degree 779), 1122989.KB898577_gene186 (degree 702), 1122989.KB898583_gene1776 (degree
-672) and 1122989.KB898586_gene2319 (degree 661).
+The undirected graph Prevotella oris DSM18711 has 2382 nodes and 160766
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05669 and has 12 connected components, where the component
+with most nodes has 2356 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 134.98,
+and the node degree mode is 2. The top 5 most central nodes are 1122989.KB898580_gene1512
+(degree 870), 1122989.KB898592_gene567 (degree 779), 1122989.KB898577_gene186
+(degree 702), 1122989.KB898583_gene1776 (degree 672) and 1122989.KB898586_gene2319
+(degree 661).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaOrisDsm18711(
 	
 	Datetime: 2021-02-02 22:45:55.232907
 	
-	The undirected graph Prevotella oris DSM18711 has 2382 nodes and 160766 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05669
-	and has 12 connected components, where the component with most nodes has 2356 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 134.98, and the node degree mode is 2. The top 5
-	most central nodes are 1122989.KB898580_gene1512 (degree 870), 1122989.KB898592_gene567
-	(degree 779), 1122989.KB898577_gene186 (degree 702), 1122989.KB898583_gene1776 (degree
-	672) and 1122989.KB898586_gene2319 (degree 661).
+	The undirected graph Prevotella oris DSM18711 has 2382 nodes and 160766
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05669 and has 12 connected components, where the component
+	with most nodes has 2356 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 134.98,
+	and the node degree mode is 2. The top 5 most central nodes are 1122989.KB898580_gene1512
+	(degree 870), 1122989.KB898592_gene567 (degree 779), 1122989.KB898577_gene186
+	(degree 702), 1122989.KB898583_gene1776 (degree 672) and 1122989.KB898586_gene2319
+	(degree 661).
 	
 
 

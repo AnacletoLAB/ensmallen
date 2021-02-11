@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:21.283598
 
-The undirected graph Haloquadratum walsbyi J07HQW2 has 3639 nodes and 194151 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02933
-and has 137 connected components, where the component with most nodes has 3281 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 45, the mean node degree is 106.71, and the node degree mode is 1. The top 5 most
-central nodes are 1238425.J07HQW2_03721 (degree 1167), 1238425.J07HQW2_02564 (degree
-839), 1238425.J07HQW2_01270 (degree 776), 1238425.J07HQW2_02650 (degree 750) and
-1238425.J07HQW2_02031 (degree 680).
+The undirected graph Haloquadratum walsbyi J07HQW2 has 3639 nodes and 194151
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02933 and has 137 connected components, where the component
+with most nodes has 3281 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 45, the mean node degree is 106.71,
+and the node degree mode is 1. The top 5 most central nodes are 1238425.J07HQW2_03721
+(degree 1167), 1238425.J07HQW2_02564 (degree 839), 1238425.J07HQW2_01270
+(degree 776), 1238425.J07HQW2_02650 (degree 750) and 1238425.J07HQW2_02031
+(degree 680).
 
 
 References
@@ -107,14 +108,15 @@ def HaloquadratumWalsbyiJ07hqw2(
 	
 	Datetime: 2021-02-02 23:32:21.283598
 	
-	The undirected graph Haloquadratum walsbyi J07HQW2 has 3639 nodes and 194151 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02933
-	and has 137 connected components, where the component with most nodes has 3281 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 45, the mean node degree is 106.71, and the node degree mode is 1. The top 5 most
-	central nodes are 1238425.J07HQW2_03721 (degree 1167), 1238425.J07HQW2_02564 (degree
-	839), 1238425.J07HQW2_01270 (degree 776), 1238425.J07HQW2_02650 (degree 750) and
-	1238425.J07HQW2_02031 (degree 680).
+	The undirected graph Haloquadratum walsbyi J07HQW2 has 3639 nodes and 194151
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02933 and has 137 connected components, where the component
+	with most nodes has 3281 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 45, the mean node degree is 106.71,
+	and the node degree mode is 1. The top 5 most central nodes are 1238425.J07HQW2_03721
+	(degree 1167), 1238425.J07HQW2_02564 (degree 839), 1238425.J07HQW2_01270
+	(degree 776), 1238425.J07HQW2_02650 (degree 750) and 1238425.J07HQW2_02031
+	(degree 680).
 	
 
 

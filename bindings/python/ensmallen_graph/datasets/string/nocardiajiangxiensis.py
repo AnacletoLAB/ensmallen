@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:36.526640
 
-The undirected graph Nocardia jiangxiensis has 9167 nodes and 1976290 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04704 and
-has 68 connected components, where the component with most nodes has 8968 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 340,
-the mean node degree is 431.17, and the node degree mode is 2. The top 5 most central
-nodes are 1206731.BAGB01000068_gene7212 (degree 5149), 1206731.BAGB01000171_gene4635
-(degree 5008), 1206731.BAGB01000025_gene3182 (degree 3825), 1206731.BAGB01000049_gene4934
-(degree 3820) and 1206731.BAGB01000174_gene1974 (degree 3161).
+The undirected graph Nocardia jiangxiensis has 9167 nodes and 1976290 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04704 and has 68 connected components, where the component with most
+nodes has 8968 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 340, the mean node degree is 431.17, and
+the node degree mode is 2. The top 5 most central nodes are 1206731.BAGB01000068_gene7212
+(degree 5149), 1206731.BAGB01000171_gene4635 (degree 5008), 1206731.BAGB01000025_gene3182
+(degree 3825), 1206731.BAGB01000049_gene4934 (degree 3820) and 1206731.BAGB01000174_gene1974
+(degree 3161).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaJiangxiensis(
 	
 	Datetime: 2021-02-02 23:16:36.526640
 	
-	The undirected graph Nocardia jiangxiensis has 9167 nodes and 1976290 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04704 and
-	has 68 connected components, where the component with most nodes has 8968 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 340,
-	the mean node degree is 431.17, and the node degree mode is 2. The top 5 most central
-	nodes are 1206731.BAGB01000068_gene7212 (degree 5149), 1206731.BAGB01000171_gene4635
-	(degree 5008), 1206731.BAGB01000025_gene3182 (degree 3825), 1206731.BAGB01000049_gene4934
-	(degree 3820) and 1206731.BAGB01000174_gene1974 (degree 3161).
+	The undirected graph Nocardia jiangxiensis has 9167 nodes and 1976290 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04704 and has 68 connected components, where the component with most
+	nodes has 8968 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 340, the mean node degree is 431.17, and
+	the node degree mode is 2. The top 5 most central nodes are 1206731.BAGB01000068_gene7212
+	(degree 5149), 1206731.BAGB01000171_gene4635 (degree 5008), 1206731.BAGB01000025_gene3182
+	(degree 3825), 1206731.BAGB01000049_gene4934 (degree 3820) and 1206731.BAGB01000174_gene1974
+	(degree 3161).
 	
 
 

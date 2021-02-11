@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 09:09:19.609577
 
-The undirected graph web-webbase-2001-all has 115657290 nodes, of which 102849 are
-singletons (all have self-loops), and 881868060 unweighted edges, of which 27058299
-are self-loops. The graph is extremely sparse as it has a density of 0.00000 and
-has 236186 connected components, where the component with most nodes has 113180987
-nodes and the component with the least nodes has a single node. The graph median
-node degree is 5, the mean node degree is 15.02, and the node degree mode is 1. The
-top 5 most central nodes are 111342910 (degree 816127), 111342909 (degree 815909),
-64163722 (degree 263176), 112916493 (degree 242564) and 38758144 (degree 239556).
+The undirected graph web-webbase-2001-all has 115657290 nodes, of which
+102849 are singletons (all have self-loops), and 881868060 unweighted edges,
+of which 27058299 are self-loops. The graph is extremely sparse as it has
+a density of 0.00000 and has 236186 connected components, where the component
+with most nodes has 113180987 nodes and the component with the least nodes
+has a single node. The graph median node degree is 5, the mean node degree
+is 15.02, and the node degree mode is 1. The top 5 most central nodes are
+111342910 (degree 816127), 111342909 (degree 815909), 64163722 (degree
+263176), 112916493 (degree 242564) and 38758144 (degree 239556).
 
 
 References
@@ -121,14 +122,15 @@ def WebWebbase2001All(
 	
 	Datetime: 2021-02-05 09:09:19.609577
 	
-	The undirected graph web-webbase-2001-all has 115657290 nodes, of which 102849 are
-	singletons (all have self-loops), and 881868060 unweighted edges, of which 27058299
-	are self-loops. The graph is extremely sparse as it has a density of 0.00000 and
-	has 236186 connected components, where the component with most nodes has 113180987
-	nodes and the component with the least nodes has a single node. The graph median
-	node degree is 5, the mean node degree is 15.02, and the node degree mode is 1. The
-	top 5 most central nodes are 111342910 (degree 816127), 111342909 (degree 815909),
-	64163722 (degree 263176), 112916493 (degree 242564) and 38758144 (degree 239556).
+	The undirected graph web-webbase-2001-all has 115657290 nodes, of which
+	102849 are singletons (all have self-loops), and 881868060 unweighted edges,
+	of which 27058299 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00000 and has 236186 connected components, where the component
+	with most nodes has 113180987 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 5, the mean node degree
+	is 15.02, and the node degree mode is 1. The top 5 most central nodes are
+	111342910 (degree 816127), 111342909 (degree 815909), 64163722 (degree
+	263176), 112916493 (degree 242564) and 38758144 (degree 239556).
 	
 
 

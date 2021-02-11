@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:03.127254
 
-The undirected graph Desulfotalea psychrophila has 3192 nodes and 260608 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05117
-and has 20 connected components, where the component with most nodes has 3145 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 163.29, and the node degree mode is 4. The top 5
-most central nodes are 177439.DP1087 (degree 1333), 177439.DP3059 (degree 1081),
-177439.DP0061 (degree 1067), 177439.DP0740 (degree 1050) and 177439.DP0903 (degree
-1049).
+The undirected graph Desulfotalea psychrophila has 3192 nodes and 260608
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05117 and has 20 connected components, where the component
+with most nodes has 3145 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 163.29,
+and the node degree mode is 4. The top 5 most central nodes are 177439.DP1087
+(degree 1333), 177439.DP3059 (degree 1081), 177439.DP0061 (degree 1067),
+177439.DP0740 (degree 1050) and 177439.DP0903 (degree 1049).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotaleaPsychrophila(
 	
 	Datetime: 2021-02-02 19:56:03.127254
 	
-	The undirected graph Desulfotalea psychrophila has 3192 nodes and 260608 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05117
-	and has 20 connected components, where the component with most nodes has 3145 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 163.29, and the node degree mode is 4. The top 5
-	most central nodes are 177439.DP1087 (degree 1333), 177439.DP3059 (degree 1081),
-	177439.DP0061 (degree 1067), 177439.DP0740 (degree 1050) and 177439.DP0903 (degree
-	1049).
+	The undirected graph Desulfotalea psychrophila has 3192 nodes and 260608
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05117 and has 20 connected components, where the component
+	with most nodes has 3145 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 163.29,
+	and the node degree mode is 4. The top 5 most central nodes are 177439.DP1087
+	(degree 1333), 177439.DP3059 (degree 1081), 177439.DP0061 (degree 1067),
+	177439.DP0740 (degree 1050) and 177439.DP0903 (degree 1049).
 	
 
 

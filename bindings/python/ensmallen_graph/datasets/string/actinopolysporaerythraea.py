@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:37.863162
 
-The undirected graph Actinopolyspora erythraea has 3848 nodes and 405987 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05485
-and has 42 connected components, where the component with most nodes has 3748 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 211.01, and the node degree mode is 1. The top 5
-most central nodes are 414996.IL38_01245 (degree 1616), 414996.IL38_08015 (degree
-1303), 414996.IL38_05460 (degree 1082), 414996.IL38_13535 (degree 1057) and 414996.IL38_10115
-(degree 1019).
+The undirected graph Actinopolyspora erythraea has 3848 nodes and 405987
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05485 and has 42 connected components, where the component
+with most nodes has 3748 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 211.01,
+and the node degree mode is 1. The top 5 most central nodes are 414996.IL38_01245
+(degree 1616), 414996.IL38_08015 (degree 1303), 414996.IL38_05460 (degree
+1082), 414996.IL38_13535 (degree 1057) and 414996.IL38_10115 (degree 1019).
 
 
 References
@@ -107,14 +107,14 @@ def ActinopolysporaErythraea(
 	
 	Datetime: 2021-02-02 20:46:37.863162
 	
-	The undirected graph Actinopolyspora erythraea has 3848 nodes and 405987 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05485
-	and has 42 connected components, where the component with most nodes has 3748 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 211.01, and the node degree mode is 1. The top 5
-	most central nodes are 414996.IL38_01245 (degree 1616), 414996.IL38_08015 (degree
-	1303), 414996.IL38_05460 (degree 1082), 414996.IL38_13535 (degree 1057) and 414996.IL38_10115
-	(degree 1019).
+	The undirected graph Actinopolyspora erythraea has 3848 nodes and 405987
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05485 and has 42 connected components, where the component
+	with most nodes has 3748 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 211.01,
+	and the node degree mode is 1. The top 5 most central nodes are 414996.IL38_01245
+	(degree 1616), 414996.IL38_08015 (degree 1303), 414996.IL38_05460 (degree
+	1082), 414996.IL38_13535 (degree 1057) and 414996.IL38_10115 (degree 1019).
 	
 
 

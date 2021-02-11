@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:18.405844
 
-The undirected graph Veillonella atypica ACS049VSch6 has 1826 nodes and 125435 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07528
-and has 11 connected components, where the component with most nodes has 1801 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 137.39, and the node degree mode is 1. The top 5
-most central nodes are 866776.HMPREF9321_0211 (degree 800), 866776.HMPREF9321_0152
-(degree 670), 866776.HMPREF9321_0978 (degree 627), 866776.HMPREF9321_1562 (degree
+The undirected graph Veillonella atypica ACS049VSch6 has 1826 nodes and
+125435 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07528 and has 11 connected components, where the
+component with most nodes has 1801 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 137.39, and the node degree mode is 1. The top 5 most central nodes
+are 866776.HMPREF9321_0211 (degree 800), 866776.HMPREF9321_0152 (degree
+670), 866776.HMPREF9321_0978 (degree 627), 866776.HMPREF9321_1562 (degree
 624) and 866776.HMPREF9321_0409 (degree 607).
 
 
@@ -107,13 +108,14 @@ def VeillonellaAtypicaAcs049vsch6(
 	
 	Datetime: 2021-02-02 21:48:18.405844
 	
-	The undirected graph Veillonella atypica ACS049VSch6 has 1826 nodes and 125435 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07528
-	and has 11 connected components, where the component with most nodes has 1801 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 137.39, and the node degree mode is 1. The top 5
-	most central nodes are 866776.HMPREF9321_0211 (degree 800), 866776.HMPREF9321_0152
-	(degree 670), 866776.HMPREF9321_0978 (degree 627), 866776.HMPREF9321_1562 (degree
+	The undirected graph Veillonella atypica ACS049VSch6 has 1826 nodes and
+	125435 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07528 and has 11 connected components, where the
+	component with most nodes has 1801 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 137.39, and the node degree mode is 1. The top 5 most central nodes
+	are 866776.HMPREF9321_0211 (degree 800), 866776.HMPREF9321_0152 (degree
+	670), 866776.HMPREF9321_0978 (degree 627), 866776.HMPREF9321_1562 (degree
 	624) and 866776.HMPREF9321_0409 (degree 607).
 	
 

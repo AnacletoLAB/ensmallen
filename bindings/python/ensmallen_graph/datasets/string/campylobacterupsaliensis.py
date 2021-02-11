@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:38.393875
 
-The undirected graph Campylobacter upsaliensis has 1775 nodes and 109547 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06958
-and has 13 connected components, where the component with most nodes has 1732 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 123.43, and the node degree mode is 2. The top 5
-most central nodes are 306264.CUP0022 (degree 729), 306264.CUP1820 (degree 627),
-306264.CUP0897 (degree 608), 306264.CUP0408 (degree 568) and 306264.CUP0823 (degree
-559).
+The undirected graph Campylobacter upsaliensis has 1775 nodes and 109547
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06958 and has 13 connected components, where the component
+with most nodes has 1732 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 123.43,
+and the node degree mode is 2. The top 5 most central nodes are 306264.CUP0022
+(degree 729), 306264.CUP1820 (degree 627), 306264.CUP0897 (degree 608),
+306264.CUP0408 (degree 568) and 306264.CUP0823 (degree 559).
 
 
 References
@@ -107,14 +107,14 @@ def CampylobacterUpsaliensis(
 	
 	Datetime: 2021-02-02 20:22:38.393875
 	
-	The undirected graph Campylobacter upsaliensis has 1775 nodes and 109547 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06958
-	and has 13 connected components, where the component with most nodes has 1732 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 123.43, and the node degree mode is 2. The top 5
-	most central nodes are 306264.CUP0022 (degree 729), 306264.CUP1820 (degree 627),
-	306264.CUP0897 (degree 608), 306264.CUP0408 (degree 568) and 306264.CUP0823 (degree
-	559).
+	The undirected graph Campylobacter upsaliensis has 1775 nodes and 109547
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06958 and has 13 connected components, where the component
+	with most nodes has 1732 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 123.43,
+	and the node degree mode is 2. The top 5 most central nodes are 306264.CUP0022
+	(degree 729), 306264.CUP1820 (degree 627), 306264.CUP0897 (degree 608),
+	306264.CUP0408 (degree 568) and 306264.CUP0823 (degree 559).
 	
 
 

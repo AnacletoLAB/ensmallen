@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:43.646691
 
-The undirected graph Bifidobacterium sp. A11 has 1626 nodes and 99794 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07554 and
-has 7 connected components, where the component with most nodes has 1614 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 122.75, and the node degree mode is 3. The top 5 most central
-nodes are 1394176.AWUO01000001_gene1376 (degree 716), 1394176.AWUO01000004_gene943
-(degree 685), 1394176.AWUO01000001_gene1212 (degree 666), 1394176.AWUO01000009_gene111
-(degree 573) and 1394176.AWUO01000004_gene955 (degree 569).
+The undirected graph Bifidobacterium sp. A11 has 1626 nodes and 99794 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07554 and has 7 connected components, where the component with most
+nodes has 1614 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 122.75, and
+the node degree mode is 3. The top 5 most central nodes are 1394176.AWUO01000001_gene1376
+(degree 716), 1394176.AWUO01000004_gene943 (degree 685), 1394176.AWUO01000001_gene1212
+(degree 666), 1394176.AWUO01000009_gene111 (degree 573) and 1394176.AWUO01000004_gene955
+(degree 569).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumSp.A11(
 	
 	Datetime: 2021-02-03 22:25:43.646691
 	
-	The undirected graph Bifidobacterium sp. A11 has 1626 nodes and 99794 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07554 and
-	has 7 connected components, where the component with most nodes has 1614 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 122.75, and the node degree mode is 3. The top 5 most central
-	nodes are 1394176.AWUO01000001_gene1376 (degree 716), 1394176.AWUO01000004_gene943
-	(degree 685), 1394176.AWUO01000001_gene1212 (degree 666), 1394176.AWUO01000009_gene111
-	(degree 573) and 1394176.AWUO01000004_gene955 (degree 569).
+	The undirected graph Bifidobacterium sp. A11 has 1626 nodes and 99794 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07554 and has 7 connected components, where the component with most
+	nodes has 1614 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 122.75, and
+	the node degree mode is 3. The top 5 most central nodes are 1394176.AWUO01000001_gene1376
+	(degree 716), 1394176.AWUO01000004_gene943 (degree 685), 1394176.AWUO01000001_gene1212
+	(degree 666), 1394176.AWUO01000009_gene111 (degree 573) and 1394176.AWUO01000004_gene955
+	(degree 569).
 	
 
 

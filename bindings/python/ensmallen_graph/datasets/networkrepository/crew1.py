@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:32.653212
 
-The undirected graph crew1 has 6469 nodes and 46926 unweighted edges, of which 5
-are self-loops. The graph is sparse as it has a density of 0.00224 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 14.51, and the node degree mode is 5. The top 5 most central nodes are 59 (degree
-779), 61 (degree 770), 78 (degree 765), 70 (degree 762) and 88 (degree 744).
+The undirected graph crew1 has 6469 nodes and 46926 unweighted edges, of
+which 5 are self-loops. The graph is sparse as it has a density of 0.00224
+and is connected, as it has a single component. The graph median node degree
+is 7, the mean node degree is 14.51, and the node degree mode is 5. The
+top 5 most central nodes are 59 (degree 779), 61 (degree 770), 78 (degree
+765), 70 (degree 762) and 88 (degree 744).
 
 
 References
@@ -101,11 +102,12 @@ def Crew1(
 	
 	Datetime: 2021-02-06 10:20:32.653212
 	
-	The undirected graph crew1 has 6469 nodes and 46926 unweighted edges, of which 5
-	are self-loops. The graph is sparse as it has a density of 0.00224 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 14.51, and the node degree mode is 5. The top 5 most central nodes are 59 (degree
-	779), 61 (degree 770), 78 (degree 765), 70 (degree 762) and 88 (degree 744).
+	The undirected graph crew1 has 6469 nodes and 46926 unweighted edges, of
+	which 5 are self-loops. The graph is sparse as it has a density of 0.00224
+	and is connected, as it has a single component. The graph median node degree
+	is 7, the mean node degree is 14.51, and the node degree mode is 5. The
+	top 5 most central nodes are 59 (degree 779), 61 (degree 770), 78 (degree
+	765), 70 (degree 762) and 88 (degree 744).
 	
 
 

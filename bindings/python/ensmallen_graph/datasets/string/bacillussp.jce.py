@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:33.966101
 
-The undirected graph Bacillus sp. JCE has 4560 nodes and 505471 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04863 and
-has 18 connected components, where the component with most nodes has 4522 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 221.70, and the node degree mode is 1. The top 5 most central
-nodes are 1461580.CCAS010000039_gene3183 (degree 1637), 1461580.CCAS010000021_gene2334
-(degree 1468), 1461580.CCAS010000019_gene2168 (degree 1356), 1461580.CCAS010000082_gene4275
-(degree 1350) and 1461580.CCAS010000005_gene749 (degree 1275).
+The undirected graph Bacillus sp. JCE has 4560 nodes and 505471 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04863 and has 18 connected components, where the component with most
+nodes has 4522 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 221.70, and
+the node degree mode is 1. The top 5 most central nodes are 1461580.CCAS010000039_gene3183
+(degree 1637), 1461580.CCAS010000021_gene2334 (degree 1468), 1461580.CCAS010000019_gene2168
+(degree 1356), 1461580.CCAS010000082_gene4275 (degree 1350) and 1461580.CCAS010000005_gene749
+(degree 1275).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Jce(
 	
 	Datetime: 2021-02-03 23:07:33.966101
 	
-	The undirected graph Bacillus sp. JCE has 4560 nodes and 505471 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04863 and
-	has 18 connected components, where the component with most nodes has 4522 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 221.70, and the node degree mode is 1. The top 5 most central
-	nodes are 1461580.CCAS010000039_gene3183 (degree 1637), 1461580.CCAS010000021_gene2334
-	(degree 1468), 1461580.CCAS010000019_gene2168 (degree 1356), 1461580.CCAS010000082_gene4275
-	(degree 1350) and 1461580.CCAS010000005_gene749 (degree 1275).
+	The undirected graph Bacillus sp. JCE has 4560 nodes and 505471 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04863 and has 18 connected components, where the component with most
+	nodes has 4522 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 221.70, and
+	the node degree mode is 1. The top 5 most central nodes are 1461580.CCAS010000039_gene3183
+	(degree 1637), 1461580.CCAS010000021_gene2334 (degree 1468), 1461580.CCAS010000019_gene2168
+	(degree 1356), 1461580.CCAS010000082_gene4275 (degree 1350) and 1461580.CCAS010000005_gene749
+	(degree 1275).
 	
 
 

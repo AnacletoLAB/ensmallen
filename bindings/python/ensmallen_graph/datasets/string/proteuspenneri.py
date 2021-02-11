@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:17.509306
 
-The undirected graph Proteus penneri has 4873 nodes and 691952 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05829 and
-has 21 connected components, where the component with most nodes has 4816 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 283.99, and the node degree mode is 5. The top 5 most central
-nodes are 471881.PROPEN_01529 (degree 2022), 471881.PROPEN_00180 (degree 1832), 471881.PROPEN_03957
-(degree 1545), 471881.PROPEN_03237 (degree 1509) and 471881.PROPEN_04995 (degree
+The undirected graph Proteus penneri has 4873 nodes and 691952 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05829 and has 21 connected components, where the component with most
+nodes has 4816 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 283.99, and
+the node degree mode is 5. The top 5 most central nodes are 471881.PROPEN_01529
+(degree 2022), 471881.PROPEN_00180 (degree 1832), 471881.PROPEN_03957 (degree
+1545), 471881.PROPEN_03237 (degree 1509) and 471881.PROPEN_04995 (degree
 1445).
 
 
@@ -107,13 +108,14 @@ def ProteusPenneri(
 	
 	Datetime: 2021-02-02 20:56:17.509306
 	
-	The undirected graph Proteus penneri has 4873 nodes and 691952 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05829 and
-	has 21 connected components, where the component with most nodes has 4816 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 283.99, and the node degree mode is 5. The top 5 most central
-	nodes are 471881.PROPEN_01529 (degree 2022), 471881.PROPEN_00180 (degree 1832), 471881.PROPEN_03957
-	(degree 1545), 471881.PROPEN_03237 (degree 1509) and 471881.PROPEN_04995 (degree
+	The undirected graph Proteus penneri has 4873 nodes and 691952 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05829 and has 21 connected components, where the component with most
+	nodes has 4816 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 283.99, and
+	the node degree mode is 5. The top 5 most central nodes are 471881.PROPEN_01529
+	(degree 2022), 471881.PROPEN_00180 (degree 1832), 471881.PROPEN_03957 (degree
+	1545), 471881.PROPEN_03237 (degree 1509) and 471881.PROPEN_04995 (degree
 	1445).
 	
 

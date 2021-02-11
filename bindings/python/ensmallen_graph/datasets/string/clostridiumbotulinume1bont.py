@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:03.056093
 
-The undirected graph Clostridium botulinum E1 BoNT has 3660 nodes and 317935 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04748
-and has 26 connected components, where the component with most nodes has 3588 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 173.73, and the node degree mode is 3. The top 5
-most central nodes are 536233.CLO_1060 (degree 1361), 536233.CLO_3396 (degree 1191),
-536233.CLO_1988 (degree 1030), 536233.CLO_2737 (degree 1029) and 536233.CLO_2188
-(degree 1018).
+The undirected graph Clostridium botulinum E1 BoNT has 3660 nodes and 317935
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04748 and has 26 connected components, where the component
+with most nodes has 3588 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 173.73,
+and the node degree mode is 3. The top 5 most central nodes are 536233.CLO_1060
+(degree 1361), 536233.CLO_3396 (degree 1191), 536233.CLO_1988 (degree 1030),
+536233.CLO_2737 (degree 1029) and 536233.CLO_2188 (degree 1018).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumBotulinumE1Bont(
 	
 	Datetime: 2021-02-02 21:07:03.056093
 	
-	The undirected graph Clostridium botulinum E1 BoNT has 3660 nodes and 317935 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04748
-	and has 26 connected components, where the component with most nodes has 3588 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 173.73, and the node degree mode is 3. The top 5
-	most central nodes are 536233.CLO_1060 (degree 1361), 536233.CLO_3396 (degree 1191),
-	536233.CLO_1988 (degree 1030), 536233.CLO_2737 (degree 1029) and 536233.CLO_2188
-	(degree 1018).
+	The undirected graph Clostridium botulinum E1 BoNT has 3660 nodes and 317935
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04748 and has 26 connected components, where the component
+	with most nodes has 3588 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 173.73,
+	and the node degree mode is 3. The top 5 most central nodes are 536233.CLO_1060
+	(degree 1361), 536233.CLO_3396 (degree 1191), 536233.CLO_1988 (degree 1030),
+	536233.CLO_2737 (degree 1029) and 536233.CLO_2188 (degree 1018).
 	
 
 

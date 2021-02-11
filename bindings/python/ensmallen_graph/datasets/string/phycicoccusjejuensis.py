@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:27.867735
 
-The undirected graph Phycicoccus jejuensis has 3602 nodes and 362087 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05583 and
-has 14 connected components, where the component with most nodes has 3567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 201.05, and the node degree mode is 4. The top 5 most central
-nodes are 367299.JOEE01000001_gene1606 (degree 1233), 367299.JOEE01000002_gene2239
-(degree 1179), 367299.JOEE01000007_gene110 (degree 1155), 367299.JOEE01000001_gene2160
-(degree 1118) and 367299.JOEE01000006_gene870 (degree 1110).
+The undirected graph Phycicoccus jejuensis has 3602 nodes and 362087 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05583 and has 14 connected components, where the component with most
+nodes has 3567 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 201.05, and
+the node degree mode is 4. The top 5 most central nodes are 367299.JOEE01000001_gene1606
+(degree 1233), 367299.JOEE01000002_gene2239 (degree 1179), 367299.JOEE01000007_gene110
+(degree 1155), 367299.JOEE01000001_gene2160 (degree 1118) and 367299.JOEE01000006_gene870
+(degree 1110).
 
 
 References
@@ -107,14 +108,15 @@ def PhycicoccusJejuensis(
 	
 	Datetime: 2021-02-02 20:35:27.867735
 	
-	The undirected graph Phycicoccus jejuensis has 3602 nodes and 362087 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05583 and
-	has 14 connected components, where the component with most nodes has 3567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 201.05, and the node degree mode is 4. The top 5 most central
-	nodes are 367299.JOEE01000001_gene1606 (degree 1233), 367299.JOEE01000002_gene2239
-	(degree 1179), 367299.JOEE01000007_gene110 (degree 1155), 367299.JOEE01000001_gene2160
-	(degree 1118) and 367299.JOEE01000006_gene870 (degree 1110).
+	The undirected graph Phycicoccus jejuensis has 3602 nodes and 362087 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05583 and has 14 connected components, where the component with most
+	nodes has 3567 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 201.05, and
+	the node degree mode is 4. The top 5 most central nodes are 367299.JOEE01000001_gene1606
+	(degree 1233), 367299.JOEE01000002_gene2239 (degree 1179), 367299.JOEE01000007_gene110
+	(degree 1155), 367299.JOEE01000001_gene2160 (degree 1118) and 367299.JOEE01000006_gene870
+	(degree 1110).
 	
 
 

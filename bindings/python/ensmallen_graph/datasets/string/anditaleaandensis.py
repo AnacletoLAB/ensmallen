@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:06.604193
 
-The undirected graph Anditalea andensis has 4281 nodes and 475973 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05195 and
-has 28 connected components, where the component with most nodes has 4219 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 222.37, and the node degree mode is 1. The top 5 most central
-nodes are 1048983.EL17_12160 (degree 1312), 1048983.EL17_13600 (degree 1101), 1048983.EL17_04075
-(degree 1080), 1048983.EL17_03980 (degree 1035) and 1048983.EL17_11380 (degree 1019).
+The undirected graph Anditalea andensis has 4281 nodes and 475973 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05195 and has 28 connected components, where the component with most
+nodes has 4219 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 222.37, and
+the node degree mode is 1. The top 5 most central nodes are 1048983.EL17_12160
+(degree 1312), 1048983.EL17_13600 (degree 1101), 1048983.EL17_04075 (degree
+1080), 1048983.EL17_03980 (degree 1035) and 1048983.EL17_11380 (degree
+1019).
 
 
 References
@@ -106,13 +108,15 @@ def AnditaleaAndensis(
 	
 	Datetime: 2021-02-02 22:17:06.604193
 	
-	The undirected graph Anditalea andensis has 4281 nodes and 475973 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05195 and
-	has 28 connected components, where the component with most nodes has 4219 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 222.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1048983.EL17_12160 (degree 1312), 1048983.EL17_13600 (degree 1101), 1048983.EL17_04075
-	(degree 1080), 1048983.EL17_03980 (degree 1035) and 1048983.EL17_11380 (degree 1019).
+	The undirected graph Anditalea andensis has 4281 nodes and 475973 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05195 and has 28 connected components, where the component with most
+	nodes has 4219 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 222.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1048983.EL17_12160
+	(degree 1312), 1048983.EL17_13600 (degree 1101), 1048983.EL17_04075 (degree
+	1080), 1048983.EL17_03980 (degree 1035) and 1048983.EL17_11380 (degree
+	1019).
 	
 
 

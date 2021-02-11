@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:22.358387
 
-The undirected graph Capnocytophaga canimorsus has 2376 nodes and 141782 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-and has 16 connected components, where the component with most nodes has 2328 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 119.35, and the node degree mode is 8. The top 5 most
-central nodes are 860228.Ccan_21340 (degree 1085), 860228.Ccan_17220 (degree 839),
-860228.Ccan_21790 (degree 693), 860228.Ccan_15300 (degree 655) and 860228.Ccan_06780
-(degree 647).
+The undirected graph Capnocytophaga canimorsus has 2376 nodes and 141782
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05025 and has 16 connected components, where the component
+with most nodes has 2328 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 119.35,
+and the node degree mode is 8. The top 5 most central nodes are 860228.Ccan_21340
+(degree 1085), 860228.Ccan_17220 (degree 839), 860228.Ccan_21790 (degree
+693), 860228.Ccan_15300 (degree 655) and 860228.Ccan_06780 (degree 647).
 
 
 References
@@ -107,14 +107,14 @@ def CapnocytophagaCanimorsus(
 	
 	Datetime: 2021-02-02 21:46:22.358387
 	
-	The undirected graph Capnocytophaga canimorsus has 2376 nodes and 141782 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-	and has 16 connected components, where the component with most nodes has 2328 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 119.35, and the node degree mode is 8. The top 5 most
-	central nodes are 860228.Ccan_21340 (degree 1085), 860228.Ccan_17220 (degree 839),
-	860228.Ccan_21790 (degree 693), 860228.Ccan_15300 (degree 655) and 860228.Ccan_06780
-	(degree 647).
+	The undirected graph Capnocytophaga canimorsus has 2376 nodes and 141782
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05025 and has 16 connected components, where the component
+	with most nodes has 2328 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 119.35,
+	and the node degree mode is 8. The top 5 most central nodes are 860228.Ccan_21340
+	(degree 1085), 860228.Ccan_17220 (degree 839), 860228.Ccan_21790 (degree
+	693), 860228.Ccan_15300 (degree 655) and 860228.Ccan_06780 (degree 647).
 	
 
 

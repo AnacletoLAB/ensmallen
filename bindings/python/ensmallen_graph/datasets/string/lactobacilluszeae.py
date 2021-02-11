@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:20.405674
 
-The undirected graph Lactobacillus zeae has 2774 nodes and 215427 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05601 and
-has 17 connected components, where the component with most nodes has 2728 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 155.32, and the node degree mode is 1. The top 5 most central
-nodes are 1423816.BACQ01000006_gene117 (degree 1188), 1423816.BACQ01000078_gene2733
-(degree 998), 1423816.BACQ01000029_gene1020 (degree 990), 1423816.BACQ01000055_gene2143
-(degree 877) and 1423816.BACQ01000079_gene2757 (degree 830).
+The undirected graph Lactobacillus zeae has 2774 nodes and 215427 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05601 and has 17 connected components, where the component with most
+nodes has 2728 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 155.32, and
+the node degree mode is 1. The top 5 most central nodes are 1423816.BACQ01000006_gene117
+(degree 1188), 1423816.BACQ01000078_gene2733 (degree 998), 1423816.BACQ01000029_gene1020
+(degree 990), 1423816.BACQ01000055_gene2143 (degree 877) and 1423816.BACQ01000079_gene2757
+(degree 830).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusZeae(
 	
 	Datetime: 2021-02-03 22:52:20.405674
 	
-	The undirected graph Lactobacillus zeae has 2774 nodes and 215427 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05601 and
-	has 17 connected components, where the component with most nodes has 2728 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 155.32, and the node degree mode is 1. The top 5 most central
-	nodes are 1423816.BACQ01000006_gene117 (degree 1188), 1423816.BACQ01000078_gene2733
-	(degree 998), 1423816.BACQ01000029_gene1020 (degree 990), 1423816.BACQ01000055_gene2143
-	(degree 877) and 1423816.BACQ01000079_gene2757 (degree 830).
+	The undirected graph Lactobacillus zeae has 2774 nodes and 215427 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05601 and has 17 connected components, where the component with most
+	nodes has 2728 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 155.32, and
+	the node degree mode is 1. The top 5 most central nodes are 1423816.BACQ01000006_gene117
+	(degree 1188), 1423816.BACQ01000078_gene2733 (degree 998), 1423816.BACQ01000029_gene1020
+	(degree 990), 1423816.BACQ01000055_gene2143 (degree 877) and 1423816.BACQ01000079_gene2757
+	(degree 830).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:14:01.515484
 
-The undirected graph foldoc has 13356 nodes and 91471 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00103 and is connected,
-as it has a single component. The graph median node degree is 11, the mean node degree
-is 13.70, and the node degree mode is 8. The top 5 most central nodes are 12404 (degree
-728), 1645 (degree 410), 12460 (degree 397), 5605 (degree 392) and 8575 (degree 384).
+The undirected graph foldoc has 13356 nodes and 91471 weighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00103
+and is connected, as it has a single component. The graph median node degree
+is 11, the mean node degree is 13.70, and the node degree mode is 8. The
+top 5 most central nodes are 12404 (degree 728), 1645 (degree 410), 12460
+(degree 397), 5605 (degree 392) and 8575 (degree 384).
 
 
 References
@@ -101,11 +102,12 @@ def Foldoc(
 	
 	Datetime: 2021-02-06 11:14:01.515484
 	
-	The undirected graph foldoc has 13356 nodes and 91471 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00103 and is connected,
-	as it has a single component. The graph median node degree is 11, the mean node degree
-	is 13.70, and the node degree mode is 8. The top 5 most central nodes are 12404 (degree
-	728), 1645 (degree 410), 12460 (degree 397), 5605 (degree 392) and 8575 (degree 384).
+	The undirected graph foldoc has 13356 nodes and 91471 weighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00103
+	and is connected, as it has a single component. The graph median node degree
+	is 11, the mean node degree is 13.70, and the node degree mode is 8. The
+	top 5 most central nodes are 12404 (degree 728), 1645 (degree 410), 12460
+	(degree 397), 5605 (degree 392) and 8575 (degree 384).
 	
 
 

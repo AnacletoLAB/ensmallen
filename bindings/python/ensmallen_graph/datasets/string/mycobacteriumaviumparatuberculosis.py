@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:00.917692
 
-The undirected graph Mycobacterium avium paratuberculosis has 4339 nodes and 661666
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07031 and has 3 connected components, where the component with most nodes has
-4334 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 252, the mean node degree is 304.99, and the node degree mode is 6. The
-top 5 most central nodes are 262316.MAP_2332c (degree 1766), 262316.MAP_1513 (degree
-1556), 262316.MAP_2258c (degree 1515), 262316.MAP_1322 (degree 1474) and 262316.MAP_0220
-(degree 1453).
+The undirected graph Mycobacterium avium paratuberculosis has 4339 nodes
+and 661666 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07031 and has 3 connected components, where the
+component with most nodes has 4334 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+is 304.99, and the node degree mode is 6. The top 5 most central nodes
+are 262316.MAP_2332c (degree 1766), 262316.MAP_1513 (degree 1556), 262316.MAP_2258c
+(degree 1515), 262316.MAP_1322 (degree 1474) and 262316.MAP_0220 (degree
+1453).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumAviumParatuberculosis(
 	
 	Datetime: 2021-02-02 20:13:00.917692
 	
-	The undirected graph Mycobacterium avium paratuberculosis has 4339 nodes and 661666
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07031 and has 3 connected components, where the component with most nodes has
-	4334 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 252, the mean node degree is 304.99, and the node degree mode is 6. The
-	top 5 most central nodes are 262316.MAP_2332c (degree 1766), 262316.MAP_1513 (degree
-	1556), 262316.MAP_2258c (degree 1515), 262316.MAP_1322 (degree 1474) and 262316.MAP_0220
-	(degree 1453).
+	The undirected graph Mycobacterium avium paratuberculosis has 4339 nodes
+	and 661666 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07031 and has 3 connected components, where the
+	component with most nodes has 4334 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+	is 304.99, and the node degree mode is 6. The top 5 most central nodes
+	are 262316.MAP_2332c (degree 1766), 262316.MAP_1513 (degree 1556), 262316.MAP_2258c
+	(degree 1515), 262316.MAP_1322 (degree 1474) and 262316.MAP_0220 (degree
+	1453).
 	
 
 

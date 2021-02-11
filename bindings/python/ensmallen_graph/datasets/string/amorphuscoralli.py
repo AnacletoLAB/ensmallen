@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:21.830383
 
-The undirected graph Amorphus coralli has 3827 nodes and 467574 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06387 and
-has 7 connected components, where the component with most nodes has 3813 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 211,
-the mean node degree is 244.36, and the node degree mode is 1. The top 5 most central
-nodes are 1120983.KB894572_gene2782 (degree 1348), 1120983.KB894572_gene2995 (degree
-1091), 1120983.KB894573_gene114 (degree 1065), 1120983.KB894573_gene396 (degree 1054)
-and 1120983.KB894570_gene1610 (degree 1041).
+The undirected graph Amorphus coralli has 3827 nodes and 467574 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06387 and has 7 connected components, where the component with most
+nodes has 3813 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 211, the mean node degree is 244.36, and
+the node degree mode is 1. The top 5 most central nodes are 1120983.KB894572_gene2782
+(degree 1348), 1120983.KB894572_gene2995 (degree 1091), 1120983.KB894573_gene114
+(degree 1065), 1120983.KB894573_gene396 (degree 1054) and 1120983.KB894570_gene1610
+(degree 1041).
 
 
 References
@@ -107,14 +108,15 @@ def AmorphusCoralli(
 	
 	Datetime: 2021-02-02 22:31:21.830383
 	
-	The undirected graph Amorphus coralli has 3827 nodes and 467574 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06387 and
-	has 7 connected components, where the component with most nodes has 3813 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 211,
-	the mean node degree is 244.36, and the node degree mode is 1. The top 5 most central
-	nodes are 1120983.KB894572_gene2782 (degree 1348), 1120983.KB894572_gene2995 (degree
-	1091), 1120983.KB894573_gene114 (degree 1065), 1120983.KB894573_gene396 (degree 1054)
-	and 1120983.KB894570_gene1610 (degree 1041).
+	The undirected graph Amorphus coralli has 3827 nodes and 467574 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06387 and has 7 connected components, where the component with most
+	nodes has 3813 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 211, the mean node degree is 244.36, and
+	the node degree mode is 1. The top 5 most central nodes are 1120983.KB894572_gene2782
+	(degree 1348), 1120983.KB894572_gene2995 (degree 1091), 1120983.KB894573_gene114
+	(degree 1065), 1120983.KB894573_gene396 (degree 1054) and 1120983.KB894570_gene1610
+	(degree 1041).
 	
 
 

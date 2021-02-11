@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:27.207034
 
-The undirected graph Neorickettsia sennetsu has 904 nodes and 44033 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10788
-and has 15 connected components, where the component with most nodes has 860 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 97.42, and the node degree mode is 4. The top 5 most
-central nodes are 222891.NSE_0675 (degree 404), 222891.NSE_0426 (degree 373), 222891.NSE_0887
-(degree 359), 222891.NSE_0642 (degree 355) and 222891.NSE_0019 (degree 329).
+The undirected graph Neorickettsia sennetsu has 904 nodes and 44033 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10788 and has 15 connected components, where the component
+with most nodes has 860 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 97.42,
+and the node degree mode is 4. The top 5 most central nodes are 222891.NSE_0675
+(degree 404), 222891.NSE_0426 (degree 373), 222891.NSE_0887 (degree 359),
+222891.NSE_0642 (degree 355) and 222891.NSE_0019 (degree 329).
 
 
 References
@@ -106,13 +107,14 @@ def NeorickettsiaSennetsu(
 	
 	Datetime: 2021-02-02 20:04:27.207034
 	
-	The undirected graph Neorickettsia sennetsu has 904 nodes and 44033 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10788
-	and has 15 connected components, where the component with most nodes has 860 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 97.42, and the node degree mode is 4. The top 5 most
-	central nodes are 222891.NSE_0675 (degree 404), 222891.NSE_0426 (degree 373), 222891.NSE_0887
-	(degree 359), 222891.NSE_0642 (degree 355) and 222891.NSE_0019 (degree 329).
+	The undirected graph Neorickettsia sennetsu has 904 nodes and 44033 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10788 and has 15 connected components, where the component
+	with most nodes has 860 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 97.42,
+	and the node degree mode is 4. The top 5 most central nodes are 222891.NSE_0675
+	(degree 404), 222891.NSE_0426 (degree 373), 222891.NSE_0887 (degree 359),
+	222891.NSE_0642 (degree 355) and 222891.NSE_0019 (degree 329).
 	
 
 

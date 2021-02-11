@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:37.201639
 
-The undirected graph Eubacterium nodatum has 1672 nodes and 97167 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06956 and
-has 3 connected components, where the component with most nodes has 1667 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 116.23, and the node degree mode is 2. The top 5 most central
-nodes are 1161902.HMPREF0378_1375 (degree 726), 1161902.HMPREF0378_0884 (degree 685),
-1161902.HMPREF0378_1396 (degree 600), 1161902.HMPREF0378_0322 (degree 552) and 1161902.HMPREF0378_0235
+The undirected graph Eubacterium nodatum has 1672 nodes and 97167 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06956 and has 3 connected components, where the component with most
+nodes has 1667 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 116.23, and
+the node degree mode is 2. The top 5 most central nodes are 1161902.HMPREF0378_1375
+(degree 726), 1161902.HMPREF0378_0884 (degree 685), 1161902.HMPREF0378_1396
+(degree 600), 1161902.HMPREF0378_0322 (degree 552) and 1161902.HMPREF0378_0235
 (degree 546).
 
 
@@ -107,13 +108,14 @@ def EubacteriumNodatum(
 	
 	Datetime: 2021-02-02 23:04:37.201639
 	
-	The undirected graph Eubacterium nodatum has 1672 nodes and 97167 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06956 and
-	has 3 connected components, where the component with most nodes has 1667 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 116.23, and the node degree mode is 2. The top 5 most central
-	nodes are 1161902.HMPREF0378_1375 (degree 726), 1161902.HMPREF0378_0884 (degree 685),
-	1161902.HMPREF0378_1396 (degree 600), 1161902.HMPREF0378_0322 (degree 552) and 1161902.HMPREF0378_0235
+	The undirected graph Eubacterium nodatum has 1672 nodes and 97167 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06956 and has 3 connected components, where the component with most
+	nodes has 1667 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 116.23, and
+	the node degree mode is 2. The top 5 most central nodes are 1161902.HMPREF0378_1375
+	(degree 726), 1161902.HMPREF0378_0884 (degree 685), 1161902.HMPREF0378_1396
+	(degree 600), 1161902.HMPREF0378_0322 (degree 552) and 1161902.HMPREF0378_0235
 	(degree 546).
 	
 

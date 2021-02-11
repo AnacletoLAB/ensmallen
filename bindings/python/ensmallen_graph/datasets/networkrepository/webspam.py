@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:33.153986
 
-The undirected graph web-spam has 4767 nodes and 37375 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00329 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 15.68, and the node degree mode is 1. The top 5 most central nodes are 4045 (degree
-477), 2562 (degree 395), 3071 (degree 355), 136 (degree 352) and 982 (degree 351).
+The undirected graph web-spam has 4767 nodes and 37375 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00329 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 15.68, and the node degree mode
+is 1. The top 5 most central nodes are 4045 (degree 477), 2562 (degree
+395), 3071 (degree 355), 136 (degree 352) and 982 (degree 351).
 
 
 References
@@ -108,11 +109,12 @@ def WebSpam(
 	
 	Datetime: 2021-02-06 10:55:33.153986
 	
-	The undirected graph web-spam has 4767 nodes and 37375 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00329 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 15.68, and the node degree mode is 1. The top 5 most central nodes are 4045 (degree
-	477), 2562 (degree 395), 3071 (degree 355), 136 (degree 352) and 982 (degree 351).
+	The undirected graph web-spam has 4767 nodes and 37375 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00329 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 15.68, and the node degree mode
+	is 1. The top 5 most central nodes are 4045 (degree 477), 2562 (degree
+	395), 3071 (degree 355), 136 (degree 352) and 982 (degree 351).
 	
 
 

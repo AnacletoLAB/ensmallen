@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:53.306467
 
-The undirected graph Nocardia niigatensis has 7294 nodes and 1281964 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04820 and
-has 50 connected components, where the component with most nodes has 7177 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 283,
-the mean node degree is 351.51, and the node degree mode is 1. The top 5 most central
-nodes are 1206733.BAGC01000043_gene618 (degree 2654), 1206733.BAGC01000009_gene5012
-(degree 2210), 1206733.BAGC01000035_gene3735 (degree 2170), 1206733.BAGC01000113_gene7362
-(degree 2166) and 1206733.BAGC01000004_gene5886 (degree 2005).
+The undirected graph Nocardia niigatensis has 7294 nodes and 1281964 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04820 and has 50 connected components, where the component with most
+nodes has 7177 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 283, the mean node degree is 351.51, and
+the node degree mode is 1. The top 5 most central nodes are 1206733.BAGC01000043_gene618
+(degree 2654), 1206733.BAGC01000009_gene5012 (degree 2210), 1206733.BAGC01000035_gene3735
+(degree 2170), 1206733.BAGC01000113_gene7362 (degree 2166) and 1206733.BAGC01000004_gene5886
+(degree 2005).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaNiigatensis(
 	
 	Datetime: 2021-02-02 23:16:53.306467
 	
-	The undirected graph Nocardia niigatensis has 7294 nodes and 1281964 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04820 and
-	has 50 connected components, where the component with most nodes has 7177 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 283,
-	the mean node degree is 351.51, and the node degree mode is 1. The top 5 most central
-	nodes are 1206733.BAGC01000043_gene618 (degree 2654), 1206733.BAGC01000009_gene5012
-	(degree 2210), 1206733.BAGC01000035_gene3735 (degree 2170), 1206733.BAGC01000113_gene7362
-	(degree 2166) and 1206733.BAGC01000004_gene5886 (degree 2005).
+	The undirected graph Nocardia niigatensis has 7294 nodes and 1281964 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04820 and has 50 connected components, where the component with most
+	nodes has 7177 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 283, the mean node degree is 351.51, and
+	the node degree mode is 1. The top 5 most central nodes are 1206733.BAGC01000043_gene618
+	(degree 2654), 1206733.BAGC01000009_gene5012 (degree 2210), 1206733.BAGC01000035_gene3735
+	(degree 2170), 1206733.BAGC01000113_gene7362 (degree 2166) and 1206733.BAGC01000004_gene5886
+	(degree 2005).
 	
 
 

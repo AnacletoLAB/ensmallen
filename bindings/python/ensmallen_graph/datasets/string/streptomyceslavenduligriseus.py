@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:07.283694
 
-The undirected graph Streptomyces lavenduligriseus has 7586 nodes and 1170015 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04067
-and has 32 connected components, where the component with most nodes has 7505 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 256, the mean node degree is 308.47, and the node degree mode is 2. The top 5
-most central nodes are 67315.JOBD01000017_gene6311 (degree 3814), 67315.JOBD01000003_gene5955
-(degree 2616), 67315.JOBD01000019_gene7589 (degree 2609), 67315.JOBD01000054_gene4556
-(degree 2326) and 67315.JOBD01000013_gene7156 (degree 2283).
+The undirected graph Streptomyces lavenduligriseus has 7586 nodes and 1170015
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04067 and has 32 connected components, where the component
+with most nodes has 7505 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 256, the mean node degree is 308.47,
+and the node degree mode is 2. The top 5 most central nodes are 67315.JOBD01000017_gene6311
+(degree 3814), 67315.JOBD01000003_gene5955 (degree 2616), 67315.JOBD01000019_gene7589
+(degree 2609), 67315.JOBD01000054_gene4556 (degree 2326) and 67315.JOBD01000013_gene7156
+(degree 2283).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesLavenduligriseus(
 	
 	Datetime: 2021-02-02 18:27:07.283694
 	
-	The undirected graph Streptomyces lavenduligriseus has 7586 nodes and 1170015 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04067
-	and has 32 connected components, where the component with most nodes has 7505 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 256, the mean node degree is 308.47, and the node degree mode is 2. The top 5
-	most central nodes are 67315.JOBD01000017_gene6311 (degree 3814), 67315.JOBD01000003_gene5955
-	(degree 2616), 67315.JOBD01000019_gene7589 (degree 2609), 67315.JOBD01000054_gene4556
-	(degree 2326) and 67315.JOBD01000013_gene7156 (degree 2283).
+	The undirected graph Streptomyces lavenduligriseus has 7586 nodes and 1170015
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04067 and has 32 connected components, where the component
+	with most nodes has 7505 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 256, the mean node degree is 308.47,
+	and the node degree mode is 2. The top 5 most central nodes are 67315.JOBD01000017_gene6311
+	(degree 3814), 67315.JOBD01000003_gene5955 (degree 2616), 67315.JOBD01000019_gene7589
+	(degree 2609), 67315.JOBD01000054_gene4556 (degree 2326) and 67315.JOBD01000013_gene7156
+	(degree 2283).
 	
 
 

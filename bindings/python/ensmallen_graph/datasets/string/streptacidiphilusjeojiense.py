@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:11.445456
 
-The undirected graph Streptacidiphilus jeojiense has 7794 nodes and 1184627 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03901
-and has 46 connected components, where the component with most nodes has 7687 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 255, the mean node degree is 303.98, and the node degree mode is 3. The top 5
-most central nodes are 436229.JOEH01000019_gene6716 (degree 2584), 436229.JOEH01000004_gene330
-(degree 2323), 436229.JOEH01000006_gene2950 (degree 2223), 436229.JOEH01000004_gene220
-(degree 2047) and 436229.JOEH01000002_gene3247 (degree 2032).
+The undirected graph Streptacidiphilus jeojiense has 7794 nodes and 1184627
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03901 and has 46 connected components, where the component
+with most nodes has 7687 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 255, the mean node degree is 303.98,
+and the node degree mode is 3. The top 5 most central nodes are 436229.JOEH01000019_gene6716
+(degree 2584), 436229.JOEH01000004_gene330 (degree 2323), 436229.JOEH01000006_gene2950
+(degree 2223), 436229.JOEH01000004_gene220 (degree 2047) and 436229.JOEH01000002_gene3247
+(degree 2032).
 
 
 References
@@ -107,14 +108,15 @@ def StreptacidiphilusJeojiense(
 	
 	Datetime: 2021-02-02 20:49:11.445456
 	
-	The undirected graph Streptacidiphilus jeojiense has 7794 nodes and 1184627 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03901
-	and has 46 connected components, where the component with most nodes has 7687 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 255, the mean node degree is 303.98, and the node degree mode is 3. The top 5
-	most central nodes are 436229.JOEH01000019_gene6716 (degree 2584), 436229.JOEH01000004_gene330
-	(degree 2323), 436229.JOEH01000006_gene2950 (degree 2223), 436229.JOEH01000004_gene220
-	(degree 2047) and 436229.JOEH01000002_gene3247 (degree 2032).
+	The undirected graph Streptacidiphilus jeojiense has 7794 nodes and 1184627
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03901 and has 46 connected components, where the component
+	with most nodes has 7687 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 255, the mean node degree is 303.98,
+	and the node degree mode is 3. The top 5 most central nodes are 436229.JOEH01000019_gene6716
+	(degree 2584), 436229.JOEH01000004_gene330 (degree 2323), 436229.JOEH01000006_gene2950
+	(degree 2223), 436229.JOEH01000004_gene220 (degree 2047) and 436229.JOEH01000002_gene3247
+	(degree 2032).
 	
 
 

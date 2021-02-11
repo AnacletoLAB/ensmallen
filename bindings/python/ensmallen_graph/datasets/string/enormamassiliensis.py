@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:39.716918
 
-The undirected graph Enorma massiliensis has 1784 nodes and 160190 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10072
-and has 9 connected components, where the component with most nodes has 1756 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 179.59, and the node degree mode is 2. The top 5
-most central nodes are 1118060.CAGZ01000027_gene1013 (degree 1048), 1118060.CAGZ01000024_gene509
-(degree 966), 1118060.CAGZ01000021_gene401 (degree 888), 1118060.CAGZ01000030_gene1249
-(degree 850) and 1118060.CAGZ01000025_gene822 (degree 817).
+The undirected graph Enorma massiliensis has 1784 nodes and 160190 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10072 and has 9 connected components, where the component
+with most nodes has 1756 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 179.59,
+and the node degree mode is 2. The top 5 most central nodes are 1118060.CAGZ01000027_gene1013
+(degree 1048), 1118060.CAGZ01000024_gene509 (degree 966), 1118060.CAGZ01000021_gene401
+(degree 888), 1118060.CAGZ01000030_gene1249 (degree 850) and 1118060.CAGZ01000025_gene822
+(degree 817).
 
 
 References
@@ -107,14 +108,15 @@ def EnormaMassiliensis(
 	
 	Datetime: 2021-02-02 22:28:39.716918
 	
-	The undirected graph Enorma massiliensis has 1784 nodes and 160190 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10072
-	and has 9 connected components, where the component with most nodes has 1756 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 179.59, and the node degree mode is 2. The top 5
-	most central nodes are 1118060.CAGZ01000027_gene1013 (degree 1048), 1118060.CAGZ01000024_gene509
-	(degree 966), 1118060.CAGZ01000021_gene401 (degree 888), 1118060.CAGZ01000030_gene1249
-	(degree 850) and 1118060.CAGZ01000025_gene822 (degree 817).
+	The undirected graph Enorma massiliensis has 1784 nodes and 160190 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10072 and has 9 connected components, where the component
+	with most nodes has 1756 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 179.59,
+	and the node degree mode is 2. The top 5 most central nodes are 1118060.CAGZ01000027_gene1013
+	(degree 1048), 1118060.CAGZ01000024_gene509 (degree 966), 1118060.CAGZ01000021_gene401
+	(degree 888), 1118060.CAGZ01000030_gene1249 (degree 850) and 1118060.CAGZ01000025_gene822
+	(degree 817).
 	
 
 

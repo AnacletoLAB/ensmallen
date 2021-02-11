@@ -10,14 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:49:32.298032
 
-The undirected graph proteins-all has 43471 nodes with 3 different node types: 1
-(nodes number 21151), 2 (nodes number 20931) and 3 (nodes number 1389), of which
-5 are singletons, and 81044 unweighted edges, of which none are self-loops. The graph
-is extremely sparse as it has a density of 0.00009 and has 1200 connected components,
-where the component with most nodes has 620 nodes and the component with the least
-nodes has a single node. The graph median node degree is 4, the mean node degree
-is 3.73, and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
-25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086 (degree 15).
+The undirected graph proteins-all has 43471 nodes with 3 different node
+types: 1 (nodes number 21151), 2 (nodes number 20931) and 3 (nodes number
+1389), of which 5 are singletons, and 81044 unweighted edges, of which
+none are self-loops. The graph is extremely sparse as it has a density
+of 0.00009 and has 1200 connected components, where the component with
+most nodes has 620 nodes and the component with the least nodes has a single
+node. The graph median node degree is 4, the mean node degree is 3.73,
+and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
+25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086
+(degree 15).
 
 
 References
@@ -104,14 +106,16 @@ def ProteinsAll(
 	
 	Datetime: 2021-02-04 08:49:32.298032
 	
-	The undirected graph proteins-all has 43471 nodes with 3 different node types: 1
-	(nodes number 21151), 2 (nodes number 20931) and 3 (nodes number 1389), of which
-	5 are singletons, and 81044 unweighted edges, of which none are self-loops. The graph
-	is extremely sparse as it has a density of 0.00009 and has 1200 connected components,
-	where the component with most nodes has 620 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 4, the mean node degree
-	is 3.73, and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
-	25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086 (degree 15).
+	The undirected graph proteins-all has 43471 nodes with 3 different node
+	types: 1 (nodes number 21151), 2 (nodes number 20931) and 3 (nodes number
+	1389), of which 5 are singletons, and 81044 unweighted edges, of which
+	none are self-loops. The graph is extremely sparse as it has a density
+	of 0.00009 and has 1200 connected components, where the component with
+	most nodes has 620 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 4, the mean node degree is 3.73,
+	and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
+	25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086
+	(degree 15).
 	
 
 

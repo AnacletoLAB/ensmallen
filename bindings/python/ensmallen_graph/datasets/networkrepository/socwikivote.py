@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:09.046570
 
-The undirected graph soc-wiki-Vote has 889 nodes and 2914 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00738 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 6.56, and the node degree mode is 1. The top 5 most central nodes are 431 (degree
-102), 273 (degree 92), 170 (degree 66), 536 (degree 60) and 399 (degree 56).
+The undirected graph soc-wiki-Vote has 889 nodes and 2914 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00738 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 6.56, and the node degree mode
+is 1. The top 5 most central nodes are 431 (degree 102), 273 (degree 92),
+170 (degree 66), 536 (degree 60) and 399 (degree 56).
 
 
 References
@@ -110,11 +111,12 @@ def SocWikiVote(
 	
 	Datetime: 2021-02-06 09:52:09.046570
 	
-	The undirected graph soc-wiki-Vote has 889 nodes and 2914 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00738 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 6.56, and the node degree mode is 1. The top 5 most central nodes are 431 (degree
-	102), 273 (degree 92), 170 (degree 66), 536 (degree 60) and 399 (degree 56).
+	The undirected graph soc-wiki-Vote has 889 nodes and 2914 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00738 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 6.56, and the node degree mode
+	is 1. The top 5 most central nodes are 431 (degree 102), 273 (degree 92),
+	170 (degree 66), 536 (degree 60) and 399 (degree 56).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:44.647407
 
-The undirected graph Rubidibacter lacunae has 3332 nodes and 359417 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06477 and
-has 32 connected components, where the component with most nodes has 3262 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 215.74, and the node degree mode is 1. The top 5 most central
-nodes are 582515.KR51_00027640 (degree 1177), 582515.KR51_00009690 (degree 1151),
-582515.KR51_00020840 (degree 1091), 582515.KR51_00008560 (degree 1065) and 582515.KR51_00007740
+The undirected graph Rubidibacter lacunae has 3332 nodes and 359417 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06477 and has 32 connected components, where the component with most
+nodes has 3262 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 215.74, and
+the node degree mode is 1. The top 5 most central nodes are 582515.KR51_00027640
+(degree 1177), 582515.KR51_00009690 (degree 1151), 582515.KR51_00020840
+(degree 1091), 582515.KR51_00008560 (degree 1065) and 582515.KR51_00007740
 (degree 1002).
 
 
@@ -107,13 +108,14 @@ def RubidibacterLacunae(
 	
 	Datetime: 2021-02-02 21:15:44.647407
 	
-	The undirected graph Rubidibacter lacunae has 3332 nodes and 359417 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06477 and
-	has 32 connected components, where the component with most nodes has 3262 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 215.74, and the node degree mode is 1. The top 5 most central
-	nodes are 582515.KR51_00027640 (degree 1177), 582515.KR51_00009690 (degree 1151),
-	582515.KR51_00020840 (degree 1091), 582515.KR51_00008560 (degree 1065) and 582515.KR51_00007740
+	The undirected graph Rubidibacter lacunae has 3332 nodes and 359417 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06477 and has 32 connected components, where the component with most
+	nodes has 3262 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 215.74, and
+	the node degree mode is 1. The top 5 most central nodes are 582515.KR51_00027640
+	(degree 1177), 582515.KR51_00009690 (degree 1151), 582515.KR51_00020840
+	(degree 1091), 582515.KR51_00008560 (degree 1065) and 582515.KR51_00007740
 	(degree 1002).
 	
 

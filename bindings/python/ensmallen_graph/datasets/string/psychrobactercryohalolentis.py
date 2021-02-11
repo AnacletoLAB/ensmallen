@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:21.087195
 
-The undirected graph Psychrobacter cryohalolentis has 2497 nodes and 222562 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07142
-and has 4 connected components, where the component with most nodes has 2490 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 178.26, and the node degree mode is 4. The top 5
-most central nodes are 335284.Pcryo_0419 (degree 1034), 335284.Pcryo_1088 (degree
-841), 335284.Pcryo_0381 (degree 805), 335284.Pcryo_0016 (degree 802) and 335284.Pcryo_1596
-(degree 763).
+The undirected graph Psychrobacter cryohalolentis has 2497 nodes and 222562
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07142 and has 4 connected components, where the component
+with most nodes has 2490 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 178.26,
+and the node degree mode is 4. The top 5 most central nodes are 335284.Pcryo_0419
+(degree 1034), 335284.Pcryo_1088 (degree 841), 335284.Pcryo_0381 (degree
+805), 335284.Pcryo_0016 (degree 802) and 335284.Pcryo_1596 (degree 763).
 
 
 References
@@ -107,14 +107,14 @@ def PsychrobacterCryohalolentis(
 	
 	Datetime: 2021-02-02 20:30:21.087195
 	
-	The undirected graph Psychrobacter cryohalolentis has 2497 nodes and 222562 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07142
-	and has 4 connected components, where the component with most nodes has 2490 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 178.26, and the node degree mode is 4. The top 5
-	most central nodes are 335284.Pcryo_0419 (degree 1034), 335284.Pcryo_1088 (degree
-	841), 335284.Pcryo_0381 (degree 805), 335284.Pcryo_0016 (degree 802) and 335284.Pcryo_1596
-	(degree 763).
+	The undirected graph Psychrobacter cryohalolentis has 2497 nodes and 222562
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07142 and has 4 connected components, where the component
+	with most nodes has 2490 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 178.26,
+	and the node degree mode is 4. The top 5 most central nodes are 335284.Pcryo_0419
+	(degree 1034), 335284.Pcryo_1088 (degree 841), 335284.Pcryo_0381 (degree
+	805), 335284.Pcryo_0016 (degree 802) and 335284.Pcryo_1596 (degree 763).
 	
 
 

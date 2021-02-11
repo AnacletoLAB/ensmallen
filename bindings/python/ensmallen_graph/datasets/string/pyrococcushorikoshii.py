@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:30:04.238878
 
-The undirected graph Pyrococcus horikoshii has 1799 nodes and 106758 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06601 and
-has 13 connected components, where the component with most nodes has 1760 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 118.69, and the node degree mode is 2. The top 5 most central
-nodes are 70601.3258267 (degree 560), 70601.3256402 (degree 545), 70601.3258323 (degree
-509), 70601.3256652 (degree 507) and 70601.3257974 (degree 494).
+The undirected graph Pyrococcus horikoshii has 1799 nodes and 106758 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06601 and has 13 connected components, where the component with most
+nodes has 1760 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 118.69, and
+the node degree mode is 2. The top 5 most central nodes are 70601.3258267
+(degree 560), 70601.3256402 (degree 545), 70601.3258323 (degree 509), 70601.3256652
+(degree 507) and 70601.3257974 (degree 494).
 
 
 References
@@ -106,13 +107,14 @@ def PyrococcusHorikoshii(
 	
 	Datetime: 2021-02-02 18:30:04.238878
 	
-	The undirected graph Pyrococcus horikoshii has 1799 nodes and 106758 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06601 and
-	has 13 connected components, where the component with most nodes has 1760 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 118.69, and the node degree mode is 2. The top 5 most central
-	nodes are 70601.3258267 (degree 560), 70601.3256402 (degree 545), 70601.3258323 (degree
-	509), 70601.3256652 (degree 507) and 70601.3257974 (degree 494).
+	The undirected graph Pyrococcus horikoshii has 1799 nodes and 106758 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06601 and has 13 connected components, where the component with most
+	nodes has 1760 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 118.69, and
+	the node degree mode is 2. The top 5 most central nodes are 70601.3258267
+	(degree 560), 70601.3256402 (degree 545), 70601.3258323 (degree 509), 70601.3256652
+	(degree 507) and 70601.3257974 (degree 494).
 	
 
 

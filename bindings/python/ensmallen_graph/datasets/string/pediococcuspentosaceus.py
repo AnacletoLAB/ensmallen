@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:52.885881
 
-The undirected graph Pediococcus pentosaceus has 1741 nodes and 123557 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08157 and
-has 4 connected components, where the component with most nodes has 1732 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 141.94, and the node degree mode is 2. The top 5 most central
-nodes are 278197.PEPE_0688 (degree 852), 278197.PEPE_0412 (degree 726), 278197.PEPE_0266
-(degree 654), 278197.PEPE_0832 (degree 632) and 278197.PEPE_0896 (degree 629).
+The undirected graph Pediococcus pentosaceus has 1741 nodes and 123557
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08157 and has 4 connected components, where the component
+with most nodes has 1732 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 141.94,
+and the node degree mode is 2. The top 5 most central nodes are 278197.PEPE_0688
+(degree 852), 278197.PEPE_0412 (degree 726), 278197.PEPE_0266 (degree 654),
+278197.PEPE_0832 (degree 632) and 278197.PEPE_0896 (degree 629).
 
 
 References
@@ -106,13 +107,14 @@ def PediococcusPentosaceus(
 	
 	Datetime: 2021-02-02 20:17:52.885881
 	
-	The undirected graph Pediococcus pentosaceus has 1741 nodes and 123557 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08157 and
-	has 4 connected components, where the component with most nodes has 1732 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 141.94, and the node degree mode is 2. The top 5 most central
-	nodes are 278197.PEPE_0688 (degree 852), 278197.PEPE_0412 (degree 726), 278197.PEPE_0266
-	(degree 654), 278197.PEPE_0832 (degree 632) and 278197.PEPE_0896 (degree 629).
+	The undirected graph Pediococcus pentosaceus has 1741 nodes and 123557
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08157 and has 4 connected components, where the component
+	with most nodes has 1732 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 141.94,
+	and the node degree mode is 2. The top 5 most central nodes are 278197.PEPE_0688
+	(degree 852), 278197.PEPE_0412 (degree 726), 278197.PEPE_0266 (degree 654),
+	278197.PEPE_0832 (degree 632) and 278197.PEPE_0896 (degree 629).
 	
 
 

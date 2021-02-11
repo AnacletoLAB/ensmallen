@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:05.434916
 
-The undirected graph Fusobacterium nucleatum animalis has 2409 nodes and 119244 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04111
-and has 11 connected components, where the component with most nodes has 2385 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 69, the mean node degree is 99.00, and the node degree mode is 21. The top 5 most
-central nodes are 457405.FSDG_01438 (degree 891), 457405.FSDG_00288 (degree 869),
-457405.FSDG_02513 (degree 712), 457405.FSDG_01305 (degree 669) and 457405.FSDG_00805
-(degree 657).
+The undirected graph Fusobacterium nucleatum animalis has 2409 nodes and
+119244 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04111 and has 11 connected components, where the
+component with most nodes has 2385 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+is 99.00, and the node degree mode is 21. The top 5 most central nodes
+are 457405.FSDG_01438 (degree 891), 457405.FSDG_00288 (degree 869), 457405.FSDG_02513
+(degree 712), 457405.FSDG_01305 (degree 669) and 457405.FSDG_00805 (degree
+657).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumNucleatumAnimalis(
 	
 	Datetime: 2021-02-02 20:53:05.434916
 	
-	The undirected graph Fusobacterium nucleatum animalis has 2409 nodes and 119244 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04111
-	and has 11 connected components, where the component with most nodes has 2385 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 69, the mean node degree is 99.00, and the node degree mode is 21. The top 5 most
-	central nodes are 457405.FSDG_01438 (degree 891), 457405.FSDG_00288 (degree 869),
-	457405.FSDG_02513 (degree 712), 457405.FSDG_01305 (degree 669) and 457405.FSDG_00805
-	(degree 657).
+	The undirected graph Fusobacterium nucleatum animalis has 2409 nodes and
+	119244 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04111 and has 11 connected components, where the
+	component with most nodes has 2385 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+	is 99.00, and the node degree mode is 21. The top 5 most central nodes
+	are 457405.FSDG_01438 (degree 891), 457405.FSDG_00288 (degree 869), 457405.FSDG_02513
+	(degree 712), 457405.FSDG_01305 (degree 669) and 457405.FSDG_00805 (degree
+	657).
 	
 
 

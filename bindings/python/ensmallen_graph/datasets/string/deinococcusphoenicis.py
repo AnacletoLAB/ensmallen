@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:51.271121
 
-The undirected graph Deinococcus phoenicis has 3510 nodes and 219738 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03568 and
-has 33 connected components, where the component with most nodes has 3406 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 125.21, and the node degree mode is 4. The top 5 most central
-nodes are 1476583.DEIPH_ctg002orf0055 (degree 1241), 1476583.DEIPH_ctg070orf0014
-(degree 1005), 1476583.DEIPH_ctg040orf0072 (degree 976), 1476583.DEIPH_ctg059orf0008
-(degree 907) and 1476583.DEIPH_ctg046orf0043 (degree 830).
+The undirected graph Deinococcus phoenicis has 3510 nodes and 219738 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03568 and has 33 connected components, where the component with most
+nodes has 3406 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 125.21, and
+the node degree mode is 4. The top 5 most central nodes are 1476583.DEIPH_ctg002orf0055
+(degree 1241), 1476583.DEIPH_ctg070orf0014 (degree 1005), 1476583.DEIPH_ctg040orf0072
+(degree 976), 1476583.DEIPH_ctg059orf0008 (degree 907) and 1476583.DEIPH_ctg046orf0043
+(degree 830).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusPhoenicis(
 	
 	Datetime: 2021-02-03 23:12:51.271121
 	
-	The undirected graph Deinococcus phoenicis has 3510 nodes and 219738 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03568 and
-	has 33 connected components, where the component with most nodes has 3406 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 125.21, and the node degree mode is 4. The top 5 most central
-	nodes are 1476583.DEIPH_ctg002orf0055 (degree 1241), 1476583.DEIPH_ctg070orf0014
-	(degree 1005), 1476583.DEIPH_ctg040orf0072 (degree 976), 1476583.DEIPH_ctg059orf0008
-	(degree 907) and 1476583.DEIPH_ctg046orf0043 (degree 830).
+	The undirected graph Deinococcus phoenicis has 3510 nodes and 219738 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03568 and has 33 connected components, where the component with most
+	nodes has 3406 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 125.21, and
+	the node degree mode is 4. The top 5 most central nodes are 1476583.DEIPH_ctg002orf0055
+	(degree 1241), 1476583.DEIPH_ctg070orf0014 (degree 1005), 1476583.DEIPH_ctg040orf0072
+	(degree 976), 1476583.DEIPH_ctg059orf0008 (degree 907) and 1476583.DEIPH_ctg046orf0043
+	(degree 830).
 	
 
 

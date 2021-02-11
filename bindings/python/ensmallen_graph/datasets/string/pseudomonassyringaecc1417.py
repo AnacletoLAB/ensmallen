@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:08:42.977279
 
-The undirected graph Pseudomonas syringae CC1417 has 4809 nodes and 712985 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06167
-and has 15 connected components, where the component with most nodes has 4775 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 296.52, and the node degree mode is 2. The top 5
-most central nodes are 1357272.AVEO02000024_gene3137 (degree 1900), 1357272.AVEO02000174_gene2912
-(degree 1803), 1357272.AVEO02000002_gene3120 (degree 1779), 1357272.AVEO02000110_gene3697
-(degree 1747) and 1357272.AVEO02000002_gene3119 (degree 1598).
+The undirected graph Pseudomonas syringae CC1417 has 4809 nodes and 712985
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06167 and has 15 connected components, where the component
+with most nodes has 4775 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 248, the mean node degree is 296.52,
+and the node degree mode is 2. The top 5 most central nodes are 1357272.AVEO02000024_gene3137
+(degree 1900), 1357272.AVEO02000174_gene2912 (degree 1803), 1357272.AVEO02000002_gene3120
+(degree 1779), 1357272.AVEO02000110_gene3697 (degree 1747) and 1357272.AVEO02000002_gene3119
+(degree 1598).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSyringaeCc1417(
 	
 	Datetime: 2021-02-03 22:08:42.977279
 	
-	The undirected graph Pseudomonas syringae CC1417 has 4809 nodes and 712985 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06167
-	and has 15 connected components, where the component with most nodes has 4775 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 296.52, and the node degree mode is 2. The top 5
-	most central nodes are 1357272.AVEO02000024_gene3137 (degree 1900), 1357272.AVEO02000174_gene2912
-	(degree 1803), 1357272.AVEO02000002_gene3120 (degree 1779), 1357272.AVEO02000110_gene3697
-	(degree 1747) and 1357272.AVEO02000002_gene3119 (degree 1598).
+	The undirected graph Pseudomonas syringae CC1417 has 4809 nodes and 712985
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06167 and has 15 connected components, where the component
+	with most nodes has 4775 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 248, the mean node degree is 296.52,
+	and the node degree mode is 2. The top 5 most central nodes are 1357272.AVEO02000024_gene3137
+	(degree 1900), 1357272.AVEO02000174_gene2912 (degree 1803), 1357272.AVEO02000002_gene3120
+	(degree 1779), 1357272.AVEO02000110_gene3697 (degree 1747) and 1357272.AVEO02000002_gene3119
+	(degree 1598).
 	
 
 

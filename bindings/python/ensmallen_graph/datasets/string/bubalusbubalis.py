@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:26:15.973124
 
-The undirected graph Bubalus bubalis has 20909 nodes and 4943407 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02262 and
-is connected, as it has a single component. The graph median node degree is 348,
-the mean node degree is 472.85, and the node degree mode is 1. The top 5 most central
-nodes are 89462.XP_006048677.1 (degree 4708), 89462.XP_006071589.1 (degree 4494),
-89462.XP_006048299.1 (degree 4060), 89462.XP_006070560.1 (degree 4000) and 89462.XP_006065662.1
-(degree 4000).
+The undirected graph Bubalus bubalis has 20909 nodes and 4943407 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02262 and is connected, as it has a single component. The graph median
+node degree is 348, the mean node degree is 472.85, and the node degree
+mode is 1. The top 5 most central nodes are 89462.XP_006048677.1 (degree
+4708), 89462.XP_006071589.1 (degree 4494), 89462.XP_006048299.1 (degree
+4060), 89462.XP_006070560.1 (degree 4000) and 89462.XP_006065662.1 (degree
+4000).
 
 
 References
@@ -106,13 +107,14 @@ def BubalusBubalis(
 	
 	Datetime: 2021-02-02 19:26:15.973124
 	
-	The undirected graph Bubalus bubalis has 20909 nodes and 4943407 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02262 and
-	is connected, as it has a single component. The graph median node degree is 348,
-	the mean node degree is 472.85, and the node degree mode is 1. The top 5 most central
-	nodes are 89462.XP_006048677.1 (degree 4708), 89462.XP_006071589.1 (degree 4494),
-	89462.XP_006048299.1 (degree 4060), 89462.XP_006070560.1 (degree 4000) and 89462.XP_006065662.1
-	(degree 4000).
+	The undirected graph Bubalus bubalis has 20909 nodes and 4943407 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02262 and is connected, as it has a single component. The graph median
+	node degree is 348, the mean node degree is 472.85, and the node degree
+	mode is 1. The top 5 most central nodes are 89462.XP_006048677.1 (degree
+	4708), 89462.XP_006071589.1 (degree 4494), 89462.XP_006048299.1 (degree
+	4060), 89462.XP_006070560.1 (degree 4000) and 89462.XP_006065662.1 (degree
+	4000).
 	
 
 

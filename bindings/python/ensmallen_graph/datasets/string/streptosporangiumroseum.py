@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:13.481277
 
-The undirected graph Streptosporangium roseum has 8859 nodes and 1570636 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04003
-and has 33 connected components, where the component with most nodes has 8786 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 328, the mean node degree is 354.59, and the node degree mode is 3. The top 5
-most central nodes are 479432.Sros_1943 (degree 3935), 479432.Sros_0401 (degree 3131),
-479432.Sros_2966 (degree 2474), 479432.Sros_2949 (degree 2123) and 479432.Sros_1128
-(degree 2054).
+The undirected graph Streptosporangium roseum has 8859 nodes and 1570636
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04003 and has 33 connected components, where the component
+with most nodes has 8786 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 328, the mean node degree is 354.59,
+and the node degree mode is 3. The top 5 most central nodes are 479432.Sros_1943
+(degree 3935), 479432.Sros_0401 (degree 3131), 479432.Sros_2966 (degree
+2474), 479432.Sros_2949 (degree 2123) and 479432.Sros_1128 (degree 2054).
 
 
 References
@@ -107,14 +107,14 @@ def StreptosporangiumRoseum(
 	
 	Datetime: 2021-02-02 20:57:13.481277
 	
-	The undirected graph Streptosporangium roseum has 8859 nodes and 1570636 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04003
-	and has 33 connected components, where the component with most nodes has 8786 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 328, the mean node degree is 354.59, and the node degree mode is 3. The top 5
-	most central nodes are 479432.Sros_1943 (degree 3935), 479432.Sros_0401 (degree 3131),
-	479432.Sros_2966 (degree 2474), 479432.Sros_2949 (degree 2123) and 479432.Sros_1128
-	(degree 2054).
+	The undirected graph Streptosporangium roseum has 8859 nodes and 1570636
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04003 and has 33 connected components, where the component
+	with most nodes has 8786 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 328, the mean node degree is 354.59,
+	and the node degree mode is 3. The top 5 most central nodes are 479432.Sros_1943
+	(degree 3935), 479432.Sros_0401 (degree 3131), 479432.Sros_2966 (degree
+	2474), 479432.Sros_2949 (degree 2123) and 479432.Sros_1128 (degree 2054).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:02:21.148828
 
-The undirected graph Thioalkalivibrio thiocyanoxidans ARh2 has 2532 nodes and 227713
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07107 and has 8 connected components, where the component with most nodes has
-2516 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 152, the mean node degree is 179.87, and the node degree mode is 3. The
-top 5 most central nodes are 1279019.ARQK01000022_gene155 (degree 1015), 1279019.ARQK01000059_gene905
+The undirected graph Thioalkalivibrio thiocyanoxidans ARh2 has 2532 nodes
+and 227713 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07107 and has 8 connected components, where the
+component with most nodes has 2516 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+is 179.87, and the node degree mode is 3. The top 5 most central nodes
+are 1279019.ARQK01000022_gene155 (degree 1015), 1279019.ARQK01000059_gene905
 (degree 965), 1279019.ARQK01000052_gene1502 (degree 931), 1279019.ARQK01000046_gene638
 (degree 899) and 1279019.ARQK01000037_gene1687 (degree 862).
 
@@ -107,12 +108,13 @@ def ThioalkalivibrioThiocyanoxidansArh2(
 	
 	Datetime: 2021-02-03 21:02:21.148828
 	
-	The undirected graph Thioalkalivibrio thiocyanoxidans ARh2 has 2532 nodes and 227713
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07107 and has 8 connected components, where the component with most nodes has
-	2516 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 152, the mean node degree is 179.87, and the node degree mode is 3. The
-	top 5 most central nodes are 1279019.ARQK01000022_gene155 (degree 1015), 1279019.ARQK01000059_gene905
+	The undirected graph Thioalkalivibrio thiocyanoxidans ARh2 has 2532 nodes
+	and 227713 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07107 and has 8 connected components, where the
+	component with most nodes has 2516 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+	is 179.87, and the node degree mode is 3. The top 5 most central nodes
+	are 1279019.ARQK01000022_gene155 (degree 1015), 1279019.ARQK01000059_gene905
 	(degree 965), 1279019.ARQK01000052_gene1502 (degree 931), 1279019.ARQK01000046_gene638
 	(degree 899) and 1279019.ARQK01000037_gene1687 (degree 862).
 	

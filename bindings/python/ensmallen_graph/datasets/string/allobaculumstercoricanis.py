@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:12.541178
 
-The undirected graph Allobaculum stercoricanis has 1678 nodes and 137376 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09764
-and has 12 connected components, where the component with most nodes has 1652 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 163.74, and the node degree mode is 1. The top 5
-most central nodes are 1050201.KB913034_gene670 (degree 780), 1050201.KB913034_gene992
-(degree 698), 1050201.KB913034_gene22 (degree 660), 1050201.KB913034_gene829 (degree
-597) and 1050201.KB913034_gene146 (degree 592).
+The undirected graph Allobaculum stercoricanis has 1678 nodes and 137376
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09764 and has 12 connected components, where the component
+with most nodes has 1652 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 163.74,
+and the node degree mode is 1. The top 5 most central nodes are 1050201.KB913034_gene670
+(degree 780), 1050201.KB913034_gene992 (degree 698), 1050201.KB913034_gene22
+(degree 660), 1050201.KB913034_gene829 (degree 597) and 1050201.KB913034_gene146
+(degree 592).
 
 
 References
@@ -107,14 +108,15 @@ def AllobaculumStercoricanis(
 	
 	Datetime: 2021-02-02 22:17:12.541178
 	
-	The undirected graph Allobaculum stercoricanis has 1678 nodes and 137376 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09764
-	and has 12 connected components, where the component with most nodes has 1652 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 163.74, and the node degree mode is 1. The top 5
-	most central nodes are 1050201.KB913034_gene670 (degree 780), 1050201.KB913034_gene992
-	(degree 698), 1050201.KB913034_gene22 (degree 660), 1050201.KB913034_gene829 (degree
-	597) and 1050201.KB913034_gene146 (degree 592).
+	The undirected graph Allobaculum stercoricanis has 1678 nodes and 137376
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09764 and has 12 connected components, where the component
+	with most nodes has 1652 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 163.74,
+	and the node degree mode is 1. The top 5 most central nodes are 1050201.KB913034_gene670
+	(degree 780), 1050201.KB913034_gene992 (degree 698), 1050201.KB913034_gene22
+	(degree 660), 1050201.KB913034_gene829 (degree 597) and 1050201.KB913034_gene146
+	(degree 592).
 	
 
 

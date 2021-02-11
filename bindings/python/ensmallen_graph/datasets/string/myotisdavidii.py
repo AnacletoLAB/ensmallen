@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:16.545880
 
-The undirected graph Myotis davidii has 18223 nodes and 3787550 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02281 and
-has 4 connected components, where the component with most nodes has 18216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 298,
-the mean node degree is 415.69, and the node degree mode is 10. The top 5 most central
-nodes are 225400.XP_006778285.1 (degree 4516), 225400.XP_006762002.1 (degree 4300),
-225400.XP_006754544.1 (degree 3986), 225400.XP_006754422.1 (degree 3693) and 225400.XP_006755253.1
+The undirected graph Myotis davidii has 18223 nodes and 3787550 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02281 and has 4 connected components, where the component with most
+nodes has 18216 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 298, the mean node degree is 415.69, and
+the node degree mode is 10. The top 5 most central nodes are 225400.XP_006778285.1
+(degree 4516), 225400.XP_006762002.1 (degree 4300), 225400.XP_006754544.1
+(degree 3986), 225400.XP_006754422.1 (degree 3693) and 225400.XP_006755253.1
 (degree 3420).
 
 
@@ -107,13 +108,14 @@ def MyotisDavidii(
 	
 	Datetime: 2021-02-02 20:06:16.545880
 	
-	The undirected graph Myotis davidii has 18223 nodes and 3787550 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02281 and
-	has 4 connected components, where the component with most nodes has 18216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 298,
-	the mean node degree is 415.69, and the node degree mode is 10. The top 5 most central
-	nodes are 225400.XP_006778285.1 (degree 4516), 225400.XP_006762002.1 (degree 4300),
-	225400.XP_006754544.1 (degree 3986), 225400.XP_006754422.1 (degree 3693) and 225400.XP_006755253.1
+	The undirected graph Myotis davidii has 18223 nodes and 3787550 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02281 and has 4 connected components, where the component with most
+	nodes has 18216 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 298, the mean node degree is 415.69, and
+	the node degree mode is 10. The top 5 most central nodes are 225400.XP_006778285.1
+	(degree 4516), 225400.XP_006762002.1 (degree 4300), 225400.XP_006754544.1
+	(degree 3986), 225400.XP_006754422.1 (degree 3693) and 225400.XP_006755253.1
 	(degree 3420).
 	
 

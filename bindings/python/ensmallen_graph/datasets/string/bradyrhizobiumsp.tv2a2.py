@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:06.375014
 
-The undirected graph Bradyrhizobium sp. Tv2a2 has 7005 nodes and 901839 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03676
-and has 64 connected components, where the component with most nodes has 6830 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 202, the mean node degree is 257.48, and the node degree mode is 1. The top 5
-most central nodes are 113395.AXAI01000005_gene4100 (degree 3279), 113395.AXAI01000021_gene3454
-(degree 2295), 113395.AXAI01000049_gene3600 (degree 2295), 113395.AXAI01000012_gene7096
-(degree 2169) and 113395.AXAI01000005_gene3922 (degree 2061).
+The undirected graph Bradyrhizobium sp. Tv2a2 has 7005 nodes and 901839
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03676 and has 64 connected components, where the component
+with most nodes has 6830 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 257.48,
+and the node degree mode is 1. The top 5 most central nodes are 113395.AXAI01000005_gene4100
+(degree 3279), 113395.AXAI01000021_gene3454 (degree 2295), 113395.AXAI01000049_gene3600
+(degree 2295), 113395.AXAI01000012_gene7096 (degree 2169) and 113395.AXAI01000005_gene3922
+(degree 2061).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Tv2a2(
 	
 	Datetime: 2021-02-02 19:47:06.375014
 	
-	The undirected graph Bradyrhizobium sp. Tv2a2 has 7005 nodes and 901839 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03676
-	and has 64 connected components, where the component with most nodes has 6830 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 202, the mean node degree is 257.48, and the node degree mode is 1. The top 5
-	most central nodes are 113395.AXAI01000005_gene4100 (degree 3279), 113395.AXAI01000021_gene3454
-	(degree 2295), 113395.AXAI01000049_gene3600 (degree 2295), 113395.AXAI01000012_gene7096
-	(degree 2169) and 113395.AXAI01000005_gene3922 (degree 2061).
+	The undirected graph Bradyrhizobium sp. Tv2a2 has 7005 nodes and 901839
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03676 and has 64 connected components, where the component
+	with most nodes has 6830 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 257.48,
+	and the node degree mode is 1. The top 5 most central nodes are 113395.AXAI01000005_gene4100
+	(degree 3279), 113395.AXAI01000021_gene3454 (degree 2295), 113395.AXAI01000049_gene3600
+	(degree 2295), 113395.AXAI01000012_gene7096 (degree 2169) and 113395.AXAI01000005_gene3922
+	(degree 2061).
 	
 
 

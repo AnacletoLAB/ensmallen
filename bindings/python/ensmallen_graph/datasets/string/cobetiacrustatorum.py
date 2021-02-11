@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:21.637856
 
-The undirected graph Cobetia crustatorum has 3548 nodes and 363274 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05773 and
-has 7 connected components, where the component with most nodes has 3534 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 204.78, and the node degree mode is 2. The top 5 most central
-nodes are 553385.JEMF01000075_gene1485 (degree 1323), 553385.JEMF01000108_gene1440
-(degree 1301), 553385.JEMF01000013_gene2457 (degree 1252), 553385.JEMF01000010_gene2319
-(degree 1185) and 553385.JEMF01000030_gene2534 (degree 1122).
+The undirected graph Cobetia crustatorum has 3548 nodes and 363274 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05773 and has 7 connected components, where the component with most
+nodes has 3534 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 204.78, and
+the node degree mode is 2. The top 5 most central nodes are 553385.JEMF01000075_gene1485
+(degree 1323), 553385.JEMF01000108_gene1440 (degree 1301), 553385.JEMF01000013_gene2457
+(degree 1252), 553385.JEMF01000010_gene2319 (degree 1185) and 553385.JEMF01000030_gene2534
+(degree 1122).
 
 
 References
@@ -107,14 +108,15 @@ def CobetiaCrustatorum(
 	
 	Datetime: 2021-02-02 21:10:21.637856
 	
-	The undirected graph Cobetia crustatorum has 3548 nodes and 363274 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05773 and
-	has 7 connected components, where the component with most nodes has 3534 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 204.78, and the node degree mode is 2. The top 5 most central
-	nodes are 553385.JEMF01000075_gene1485 (degree 1323), 553385.JEMF01000108_gene1440
-	(degree 1301), 553385.JEMF01000013_gene2457 (degree 1252), 553385.JEMF01000010_gene2319
-	(degree 1185) and 553385.JEMF01000030_gene2534 (degree 1122).
+	The undirected graph Cobetia crustatorum has 3548 nodes and 363274 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05773 and has 7 connected components, where the component with most
+	nodes has 3534 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 204.78, and
+	the node degree mode is 2. The top 5 most central nodes are 553385.JEMF01000075_gene1485
+	(degree 1323), 553385.JEMF01000108_gene1440 (degree 1301), 553385.JEMF01000013_gene2457
+	(degree 1252), 553385.JEMF01000010_gene2319 (degree 1185) and 553385.JEMF01000030_gene2534
+	(degree 1122).
 	
 
 

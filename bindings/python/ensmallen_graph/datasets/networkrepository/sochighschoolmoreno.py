@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:04:52.469660
 
-The undirected multigraph soc-highschool-moreno has 70 nodes and 312 unweighted edges
-with 2 different edge types: 1 and 2, of which none are self-loops and 76 are parallel.
-The graph is quite dense as it has a density of 0.11346 and is connected, as it has
-a single component. The graph median node degree is 8, the mean node degree is 8.91,
-and the node degree mode is 8. The top 5 most central nodes are 28 (degree 20), 46
-(degree 19), 37 (degree 16), 4 (degree 16) and 63 (degree 14).
+The undirected multigraph soc-highschool-moreno has 70 nodes and 312 unweighted
+edges with 2 different edge types: 1 and 2, of which none are self-loops
+and 76 are parallel. The graph is quite dense as it has a density of 0.11346
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 8.91, and the node degree mode is 8. The
+top 5 most central nodes are 28 (degree 20), 46 (degree 19), 37 (degree
+16), 4 (degree 16) and 63 (degree 14).
 
 
 References
@@ -102,12 +103,13 @@ def SocHighschoolMoreno(
 	
 	Datetime: 2021-02-07 16:04:52.469660
 	
-	The undirected multigraph soc-highschool-moreno has 70 nodes and 312 unweighted edges
-	with 2 different edge types: 1 and 2, of which none are self-loops and 76 are parallel.
-	The graph is quite dense as it has a density of 0.11346 and is connected, as it has
-	a single component. The graph median node degree is 8, the mean node degree is 8.91,
-	and the node degree mode is 8. The top 5 most central nodes are 28 (degree 20), 46
-	(degree 19), 37 (degree 16), 4 (degree 16) and 63 (degree 14).
+	The undirected multigraph soc-highschool-moreno has 70 nodes and 312 unweighted
+	edges with 2 different edge types: 1 and 2, of which none are self-loops
+	and 76 are parallel. The graph is quite dense as it has a density of 0.11346
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 8.91, and the node degree mode is 8. The
+	top 5 most central nodes are 28 (degree 20), 46 (degree 19), 37 (degree
+	16), 4 (degree 16) and 63 (degree 14).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:47.096354
 
-The undirected graph Amphimedon queenslandica has 17360 nodes and 3391421 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02251
-and has 7 connected components, where the component with most nodes has 17335 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 390.72, and the node degree mode is 4. The top 5
-most central nodes are 400682.PAC_15705402 (degree 5705), 400682.PAC_15720589 (degree
-5312), 400682.PAC_15719684 (degree 5199), 400682.PAC_15711487 (degree 4945) and 400682.PAC_15704335
-(degree 4944).
+The undirected graph Amphimedon queenslandica has 17360 nodes and 3391421
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02251 and has 7 connected components, where the component
+with most nodes has 17335 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 234, the mean node degree
+is 390.72, and the node degree mode is 4. The top 5 most central nodes
+are 400682.PAC_15705402 (degree 5705), 400682.PAC_15720589 (degree 5312),
+400682.PAC_15719684 (degree 5199), 400682.PAC_15711487 (degree 4945) and
+400682.PAC_15704335 (degree 4944).
 
 
 References
@@ -107,14 +108,15 @@ def AmphimedonQueenslandica(
 	
 	Datetime: 2021-02-02 20:43:47.096354
 	
-	The undirected graph Amphimedon queenslandica has 17360 nodes and 3391421 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02251
-	and has 7 connected components, where the component with most nodes has 17335 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 390.72, and the node degree mode is 4. The top 5
-	most central nodes are 400682.PAC_15705402 (degree 5705), 400682.PAC_15720589 (degree
-	5312), 400682.PAC_15719684 (degree 5199), 400682.PAC_15711487 (degree 4945) and 400682.PAC_15704335
-	(degree 4944).
+	The undirected graph Amphimedon queenslandica has 17360 nodes and 3391421
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02251 and has 7 connected components, where the component
+	with most nodes has 17335 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 234, the mean node degree
+	is 390.72, and the node degree mode is 4. The top 5 most central nodes
+	are 400682.PAC_15705402 (degree 5705), 400682.PAC_15720589 (degree 5312),
+	400682.PAC_15719684 (degree 5199), 400682.PAC_15711487 (degree 4945) and
+	400682.PAC_15704335 (degree 4944).
 	
 
 

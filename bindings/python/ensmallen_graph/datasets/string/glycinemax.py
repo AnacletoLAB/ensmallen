@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:36:28.092865
 
-The undirected graph Glycine max has 44994 nodes and 19399937 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01917 and
-has 6 connected components, where the component with most nodes has 44981 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 441,
-the mean node degree is 862.33, and the node degree mode is 13. The top 5 most central
-nodes are 3847.GLYMA14G01100.1 (degree 17067), 3847.GLYMA13G17820.1 (degree 16993),
-3847.GLYMA15G27600.2 (degree 16975), 3847.GLYMA17G11410.1 (degree 16684) and 3847.GLYMA15G18790.1
+The undirected graph Glycine max has 44994 nodes and 19399937 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01917 and has 6 connected components, where the component with most
+nodes has 44981 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 441, the mean node degree is 862.33, and
+the node degree mode is 13. The top 5 most central nodes are 3847.GLYMA14G01100.1
+(degree 17067), 3847.GLYMA13G17820.1 (degree 16993), 3847.GLYMA15G27600.2
+(degree 16975), 3847.GLYMA17G11410.1 (degree 16684) and 3847.GLYMA15G18790.1
 (degree 16372).
 
 
@@ -107,13 +108,14 @@ def GlycineMax(
 	
 	Datetime: 2021-02-02 16:36:28.092865
 	
-	The undirected graph Glycine max has 44994 nodes and 19399937 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01917 and
-	has 6 connected components, where the component with most nodes has 44981 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 441,
-	the mean node degree is 862.33, and the node degree mode is 13. The top 5 most central
-	nodes are 3847.GLYMA14G01100.1 (degree 17067), 3847.GLYMA13G17820.1 (degree 16993),
-	3847.GLYMA15G27600.2 (degree 16975), 3847.GLYMA17G11410.1 (degree 16684) and 3847.GLYMA15G18790.1
+	The undirected graph Glycine max has 44994 nodes and 19399937 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01917 and has 6 connected components, where the component with most
+	nodes has 44981 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 441, the mean node degree is 862.33, and
+	the node degree mode is 13. The top 5 most central nodes are 3847.GLYMA14G01100.1
+	(degree 17067), 3847.GLYMA13G17820.1 (degree 16993), 3847.GLYMA15G27600.2
+	(degree 16975), 3847.GLYMA17G11410.1 (degree 16684) and 3847.GLYMA15G18790.1
 	(degree 16372).
 	
 

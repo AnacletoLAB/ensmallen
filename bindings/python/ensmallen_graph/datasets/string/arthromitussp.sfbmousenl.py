@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:10.950795
 
-The undirected graph Arthromitus sp. SFBmouseNL has 1590 nodes and 87472 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06924
-and has 2 connected components, where the component with most nodes has 1588 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 80, the mean node degree is 110.03, and the node degree mode is 8. The top 5 most
-central nodes are 1508644.SFBmNL_00676 (degree 699), 1508644.SFBmNL_00278 (degree
-650), 1508644.SFBmNL_01317 (degree 535), 1508644.SFBmNL_00680 (degree 531) and 1508644.SFBmNL_00595
-(degree 525).
+The undirected graph Arthromitus sp. SFBmouseNL has 1590 nodes and 87472
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06924 and has 2 connected components, where the component
+with most nodes has 1588 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 80, the mean node degree is 110.03,
+and the node degree mode is 8. The top 5 most central nodes are 1508644.SFBmNL_00676
+(degree 699), 1508644.SFBmNL_00278 (degree 650), 1508644.SFBmNL_01317 (degree
+535), 1508644.SFBmNL_00680 (degree 531) and 1508644.SFBmNL_00595 (degree
+525).
 
 
 References
@@ -107,14 +108,15 @@ def ArthromitusSp.Sfbmousenl(
 	
 	Datetime: 2021-02-03 23:17:10.950795
 	
-	The undirected graph Arthromitus sp. SFBmouseNL has 1590 nodes and 87472 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06924
-	and has 2 connected components, where the component with most nodes has 1588 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 80, the mean node degree is 110.03, and the node degree mode is 8. The top 5 most
-	central nodes are 1508644.SFBmNL_00676 (degree 699), 1508644.SFBmNL_00278 (degree
-	650), 1508644.SFBmNL_01317 (degree 535), 1508644.SFBmNL_00680 (degree 531) and 1508644.SFBmNL_00595
-	(degree 525).
+	The undirected graph Arthromitus sp. SFBmouseNL has 1590 nodes and 87472
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06924 and has 2 connected components, where the component
+	with most nodes has 1588 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 80, the mean node degree is 110.03,
+	and the node degree mode is 8. The top 5 most central nodes are 1508644.SFBmNL_00676
+	(degree 699), 1508644.SFBmNL_00278 (degree 650), 1508644.SFBmNL_01317 (degree
+	535), 1508644.SFBmNL_00680 (degree 531) and 1508644.SFBmNL_00595 (degree
+	525).
 	
 
 

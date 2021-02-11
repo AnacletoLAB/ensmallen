@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:10.494039
 
-The undirected graph Eubacterium desmolans has 2362 nodes and 163522 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05864 and
-has 15 connected components, where the component with most nodes has 2317 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 138.46, and the node degree mode is 2. The top 5 most central
-nodes are 1408437.JNJN01000046_gene608 (degree 859), 1408437.JNJN01000015_gene470
-(degree 850), 1408437.JNJN01000004_gene2037 (degree 750), 1408437.JNJN01000007_gene904
-(degree 722) and 1408437.JNJN01000019_gene41 (degree 708).
+The undirected graph Eubacterium desmolans has 2362 nodes and 163522 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05864 and has 15 connected components, where the component with most
+nodes has 2317 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 138.46, and
+the node degree mode is 2. The top 5 most central nodes are 1408437.JNJN01000046_gene608
+(degree 859), 1408437.JNJN01000015_gene470 (degree 850), 1408437.JNJN01000004_gene2037
+(degree 750), 1408437.JNJN01000007_gene904 (degree 722) and 1408437.JNJN01000019_gene41
+(degree 708).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumDesmolans(
 	
 	Datetime: 2021-02-03 22:37:10.494039
 	
-	The undirected graph Eubacterium desmolans has 2362 nodes and 163522 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05864 and
-	has 15 connected components, where the component with most nodes has 2317 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 138.46, and the node degree mode is 2. The top 5 most central
-	nodes are 1408437.JNJN01000046_gene608 (degree 859), 1408437.JNJN01000015_gene470
-	(degree 850), 1408437.JNJN01000004_gene2037 (degree 750), 1408437.JNJN01000007_gene904
-	(degree 722) and 1408437.JNJN01000019_gene41 (degree 708).
+	The undirected graph Eubacterium desmolans has 2362 nodes and 163522 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05864 and has 15 connected components, where the component with most
+	nodes has 2317 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 138.46, and
+	the node degree mode is 2. The top 5 most central nodes are 1408437.JNJN01000046_gene608
+	(degree 859), 1408437.JNJN01000015_gene470 (degree 850), 1408437.JNJN01000004_gene2037
+	(degree 750), 1408437.JNJN01000007_gene904 (degree 722) and 1408437.JNJN01000019_gene41
+	(degree 708).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:12.258460
 
-The undirected graph Oceanobacillus kimchii has 3755 nodes and 334390 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04744 and
-has 8 connected components, where the component with most nodes has 3735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 178.10, and the node degree mode is 3. The top 5 most central
-nodes are 1238184.CM001792_gene2220 (degree 1260), 1238184.CM001792_gene764 (degree
-1179), 1238184.CM001792_gene3715 (degree 1050), 1238184.CM001792_gene1550 (degree
-944) and 1238184.CM001792_gene2021 (degree 937).
+The undirected graph Oceanobacillus kimchii has 3755 nodes and 334390 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04744 and has 8 connected components, where the component with most
+nodes has 3735 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 178.10, and
+the node degree mode is 3. The top 5 most central nodes are 1238184.CM001792_gene2220
+(degree 1260), 1238184.CM001792_gene764 (degree 1179), 1238184.CM001792_gene3715
+(degree 1050), 1238184.CM001792_gene1550 (degree 944) and 1238184.CM001792_gene2021
+(degree 937).
 
 
 References
@@ -107,14 +108,15 @@ def OceanobacillusKimchii(
 	
 	Datetime: 2021-02-02 23:32:12.258460
 	
-	The undirected graph Oceanobacillus kimchii has 3755 nodes and 334390 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04744 and
-	has 8 connected components, where the component with most nodes has 3735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 178.10, and the node degree mode is 3. The top 5 most central
-	nodes are 1238184.CM001792_gene2220 (degree 1260), 1238184.CM001792_gene764 (degree
-	1179), 1238184.CM001792_gene3715 (degree 1050), 1238184.CM001792_gene1550 (degree
-	944) and 1238184.CM001792_gene2021 (degree 937).
+	The undirected graph Oceanobacillus kimchii has 3755 nodes and 334390 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04744 and has 8 connected components, where the component with most
+	nodes has 3735 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 178.10, and
+	the node degree mode is 3. The top 5 most central nodes are 1238184.CM001792_gene2220
+	(degree 1260), 1238184.CM001792_gene764 (degree 1179), 1238184.CM001792_gene3715
+	(degree 1050), 1238184.CM001792_gene1550 (degree 944) and 1238184.CM001792_gene2021
+	(degree 937).
 	
 
 

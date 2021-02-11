@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:17.390300
 
-The undirected graph Actinobacillus capsulatus has 2475 nodes and 186985 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06107
-and has 7 connected components, where the component with most nodes has 2459 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 151.10, and the node degree mode is 4. The top 5
-most central nodes are 1120931.KB893931_gene1216 (degree 954), 1120931.KB893936_gene121
-(degree 918), 1120931.KB893930_gene1568 (degree 863), 1120931.KB893931_gene1230 (degree
-835) and 1120931.KB893931_gene1132 (degree 771).
+The undirected graph Actinobacillus capsulatus has 2475 nodes and 186985
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06107 and has 7 connected components, where the component
+with most nodes has 2459 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 151.10,
+and the node degree mode is 4. The top 5 most central nodes are 1120931.KB893931_gene1216
+(degree 954), 1120931.KB893936_gene121 (degree 918), 1120931.KB893930_gene1568
+(degree 863), 1120931.KB893931_gene1230 (degree 835) and 1120931.KB893931_gene1132
+(degree 771).
 
 
 References
@@ -107,14 +108,15 @@ def ActinobacillusCapsulatus(
 	
 	Datetime: 2021-02-02 22:29:17.390300
 	
-	The undirected graph Actinobacillus capsulatus has 2475 nodes and 186985 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06107
-	and has 7 connected components, where the component with most nodes has 2459 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 151.10, and the node degree mode is 4. The top 5
-	most central nodes are 1120931.KB893931_gene1216 (degree 954), 1120931.KB893936_gene121
-	(degree 918), 1120931.KB893930_gene1568 (degree 863), 1120931.KB893931_gene1230 (degree
-	835) and 1120931.KB893931_gene1132 (degree 771).
+	The undirected graph Actinobacillus capsulatus has 2475 nodes and 186985
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06107 and has 7 connected components, where the component
+	with most nodes has 2459 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 151.10,
+	and the node degree mode is 4. The top 5 most central nodes are 1120931.KB893931_gene1216
+	(degree 954), 1120931.KB893936_gene121 (degree 918), 1120931.KB893930_gene1568
+	(degree 863), 1120931.KB893931_gene1230 (degree 835) and 1120931.KB893931_gene1132
+	(degree 771).
 	
 
 

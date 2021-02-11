@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:33.339281
 
-The undirected graph Selenomonas sp. FOBRC6 has 2292 nodes and 223409 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08509 and
-has 6 connected components, where the component with most nodes has 2282 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 194.95, and the node degree mode is 6. The top 5 most central
-nodes are 936572.HMPREF1148_1558 (degree 885), 936572.HMPREF1148_1851 (degree 866),
-936572.HMPREF1148_0345 (degree 859), 936572.HMPREF1148_0191 (degree 853) and 936572.HMPREF1148_1140
+The undirected graph Selenomonas sp. FOBRC6 has 2292 nodes and 223409 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08509 and has 6 connected components, where the component with most
+nodes has 2282 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 194.95, and
+the node degree mode is 6. The top 5 most central nodes are 936572.HMPREF1148_1558
+(degree 885), 936572.HMPREF1148_1851 (degree 866), 936572.HMPREF1148_0345
+(degree 859), 936572.HMPREF1148_0191 (degree 853) and 936572.HMPREF1148_1140
 (degree 829).
 
 
@@ -107,13 +108,14 @@ def SelenomonasSp.Fobrc6(
 	
 	Datetime: 2021-02-02 22:00:33.339281
 	
-	The undirected graph Selenomonas sp. FOBRC6 has 2292 nodes and 223409 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08509 and
-	has 6 connected components, where the component with most nodes has 2282 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 194.95, and the node degree mode is 6. The top 5 most central
-	nodes are 936572.HMPREF1148_1558 (degree 885), 936572.HMPREF1148_1851 (degree 866),
-	936572.HMPREF1148_0345 (degree 859), 936572.HMPREF1148_0191 (degree 853) and 936572.HMPREF1148_1140
+	The undirected graph Selenomonas sp. FOBRC6 has 2292 nodes and 223409 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08509 and has 6 connected components, where the component with most
+	nodes has 2282 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 194.95, and
+	the node degree mode is 6. The top 5 most central nodes are 936572.HMPREF1148_1558
+	(degree 885), 936572.HMPREF1148_1851 (degree 866), 936572.HMPREF1148_0345
+	(degree 859), 936572.HMPREF1148_0191 (degree 853) and 936572.HMPREF1148_1140
 	(degree 829).
 	
 

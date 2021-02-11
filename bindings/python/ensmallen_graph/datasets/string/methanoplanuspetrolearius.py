@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:26.459464
 
-The undirected graph Methanoplanus petrolearius has 2769 nodes and 380430 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09927
-and has 29 connected components, where the component with most nodes has 2693 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 277, the mean node degree is 274.78, and the node degree mode is 2. The top 5
-most central nodes are 679926.Mpet_0672 (degree 1084), 679926.Mpet_2558 (degree 1083),
-679926.Mpet_2648 (degree 1057), 679926.Mpet_2779 (degree 1003) and 679926.Mpet_0202
-(degree 969).
+The undirected graph Methanoplanus petrolearius has 2769 nodes and 380430
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09927 and has 29 connected components, where the component
+with most nodes has 2693 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 277, the mean node degree is 274.78,
+and the node degree mode is 2. The top 5 most central nodes are 679926.Mpet_0672
+(degree 1084), 679926.Mpet_2558 (degree 1083), 679926.Mpet_2648 (degree
+1057), 679926.Mpet_2779 (degree 1003) and 679926.Mpet_0202 (degree 969).
 
 
 References
@@ -107,14 +107,14 @@ def MethanoplanusPetrolearius(
 	
 	Datetime: 2021-02-02 21:30:26.459464
 	
-	The undirected graph Methanoplanus petrolearius has 2769 nodes and 380430 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09927
-	and has 29 connected components, where the component with most nodes has 2693 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 277, the mean node degree is 274.78, and the node degree mode is 2. The top 5
-	most central nodes are 679926.Mpet_0672 (degree 1084), 679926.Mpet_2558 (degree 1083),
-	679926.Mpet_2648 (degree 1057), 679926.Mpet_2779 (degree 1003) and 679926.Mpet_0202
-	(degree 969).
+	The undirected graph Methanoplanus petrolearius has 2769 nodes and 380430
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09927 and has 29 connected components, where the component
+	with most nodes has 2693 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 277, the mean node degree is 274.78,
+	and the node degree mode is 2. The top 5 most central nodes are 679926.Mpet_0672
+	(degree 1084), 679926.Mpet_2558 (degree 1083), 679926.Mpet_2648 (degree
+	1057), 679926.Mpet_2779 (degree 1003) and 679926.Mpet_0202 (degree 969).
 	
 
 

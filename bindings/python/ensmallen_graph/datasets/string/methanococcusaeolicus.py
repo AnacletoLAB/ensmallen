@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:57.956445
 
-The undirected graph Methanococcus aeolicus has 1487 nodes and 193758 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.17537
-and has 4 connected components, where the component with most nodes has 1474 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 263, the mean node degree is 260.60, and the node degree mode is 8. The top 5
-most central nodes are 419665.Maeo_0627 (degree 728), 419665.Maeo_0315 (degree 718),
-419665.Maeo_1088 (degree 714), 419665.Maeo_0717 (degree 702) and 419665.Maeo_0982
-(degree 702).
+The undirected graph Methanococcus aeolicus has 1487 nodes and 193758 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17537 and has 4 connected components, where the component
+with most nodes has 1474 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 263, the mean node degree is 260.60,
+and the node degree mode is 8. The top 5 most central nodes are 419665.Maeo_0627
+(degree 728), 419665.Maeo_0315 (degree 718), 419665.Maeo_1088 (degree 714),
+419665.Maeo_0717 (degree 702) and 419665.Maeo_0982 (degree 702).
 
 
 References
@@ -107,14 +107,14 @@ def MethanococcusAeolicus(
 	
 	Datetime: 2021-02-02 20:46:57.956445
 	
-	The undirected graph Methanococcus aeolicus has 1487 nodes and 193758 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.17537
-	and has 4 connected components, where the component with most nodes has 1474 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 263, the mean node degree is 260.60, and the node degree mode is 8. The top 5
-	most central nodes are 419665.Maeo_0627 (degree 728), 419665.Maeo_0315 (degree 718),
-	419665.Maeo_1088 (degree 714), 419665.Maeo_0717 (degree 702) and 419665.Maeo_0982
-	(degree 702).
+	The undirected graph Methanococcus aeolicus has 1487 nodes and 193758 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17537 and has 4 connected components, where the component
+	with most nodes has 1474 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 263, the mean node degree is 260.60,
+	and the node degree mode is 8. The top 5 most central nodes are 419665.Maeo_0627
+	(degree 728), 419665.Maeo_0315 (degree 718), 419665.Maeo_1088 (degree 714),
+	419665.Maeo_0717 (degree 702) and 419665.Maeo_0982 (degree 702).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:09.391505
 
-The undirected graph socfb-Georgetown15 has 9414 nodes and 425638 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00961
-and has 12 connected components, where the component with most nodes has 9388 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 74, the mean node degree is 90.43, and the node degree mode is 1. The top 5 most
-central nodes are 5284 (degree 1235), 2516 (degree 1106), 7438 (degree 842), 2926
-(degree 772) and 7915 (degree 764).
+The undirected graph socfb-Georgetown15 has 9414 nodes and 425638 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00961 and has 12 connected components, where the component with most
+nodes has 9388 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 90.43, and
+the node degree mode is 1. The top 5 most central nodes are 5284 (degree
+1235), 2516 (degree 1106), 7438 (degree 842), 2926 (degree 772) and 7915
+(degree 764).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbGeorgetown15(
 	
 	Datetime: 2021-02-06 11:49:09.391505
 	
-	The undirected graph socfb-Georgetown15 has 9414 nodes and 425638 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00961
-	and has 12 connected components, where the component with most nodes has 9388 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 74, the mean node degree is 90.43, and the node degree mode is 1. The top 5 most
-	central nodes are 5284 (degree 1235), 2516 (degree 1106), 7438 (degree 842), 2926
-	(degree 772) and 7915 (degree 764).
+	The undirected graph socfb-Georgetown15 has 9414 nodes and 425638 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00961 and has 12 connected components, where the component with most
+	nodes has 9388 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 90.43, and
+	the node degree mode is 1. The top 5 most central nodes are 5284 (degree
+	1235), 2516 (degree 1106), 7438 (degree 842), 2926 (degree 772) and 7915
+	(degree 764).
 	
 
 

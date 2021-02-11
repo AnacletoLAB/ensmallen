@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:45:56.470902
 
-The undirected graph rw136 has 136 nodes and 373 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.04063 and is connected, as
-it has a single component. The graph median node degree is 6, the mean node degree
-is 5.49, and the node degree mode is 6. The top 5 most central nodes are 129 (degree
-7), 125 (degree 7), 120 (degree 7), 114 (degree 7) and 107 (degree 7).
+The undirected graph rw136 has 136 nodes and 373 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.04063
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 5.49, and the node degree mode is 6. The
+top 5 most central nodes are 129 (degree 7), 125 (degree 7), 120 (degree
+7), 114 (degree 7) and 107 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Rw136(
 	
 	Datetime: 2021-02-06 08:45:56.470902
 	
-	The undirected graph rw136 has 136 nodes and 373 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.04063 and is connected, as
-	it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.49, and the node degree mode is 6. The top 5 most central nodes are 129 (degree
-	7), 125 (degree 7), 120 (degree 7), 114 (degree 7) and 107 (degree 7).
+	The undirected graph rw136 has 136 nodes and 373 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.04063
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 5.49, and the node degree mode is 6. The
+	top 5 most central nodes are 129 (degree 7), 125 (degree 7), 120 (degree
+	7), 114 (degree 7) and 107 (degree 7).
 	
 
 

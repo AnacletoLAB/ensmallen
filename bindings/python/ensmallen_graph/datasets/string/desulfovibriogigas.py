@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:57.289342
 
-The undirected graph Desulfovibrio gigas has 3313 nodes and 403335 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07352 and
-has 12 connected components, where the component with most nodes has 3287 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 243.49, and the node degree mode is 5. The top 5 most central
-nodes are 1121448.DGI_0672 (degree 1586), 1121448.DGI_3417 (degree 1470), 1121448.DGI_1542
-(degree 1433), 1121448.DGI_2603 (degree 1402) and 1121448.DGI_0996 (degree 1388).
+The undirected graph Desulfovibrio gigas has 3313 nodes and 403335 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07352 and has 12 connected components, where the component with most
+nodes has 3287 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 243.49, and
+the node degree mode is 5. The top 5 most central nodes are 1121448.DGI_0672
+(degree 1586), 1121448.DGI_3417 (degree 1470), 1121448.DGI_1542 (degree
+1433), 1121448.DGI_2603 (degree 1402) and 1121448.DGI_0996 (degree 1388).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfovibrioGigas(
 	
 	Datetime: 2021-02-02 22:36:57.289342
 	
-	The undirected graph Desulfovibrio gigas has 3313 nodes and 403335 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07352 and
-	has 12 connected components, where the component with most nodes has 3287 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 243.49, and the node degree mode is 5. The top 5 most central
-	nodes are 1121448.DGI_0672 (degree 1586), 1121448.DGI_3417 (degree 1470), 1121448.DGI_1542
-	(degree 1433), 1121448.DGI_2603 (degree 1402) and 1121448.DGI_0996 (degree 1388).
+	The undirected graph Desulfovibrio gigas has 3313 nodes and 403335 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07352 and has 12 connected components, where the component with most
+	nodes has 3287 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 243.49, and
+	the node degree mode is 5. The top 5 most central nodes are 1121448.DGI_0672
+	(degree 1586), 1121448.DGI_3417 (degree 1470), 1121448.DGI_1542 (degree
+	1433), 1121448.DGI_2603 (degree 1402) and 1121448.DGI_0996 (degree 1388).
 	
 
 

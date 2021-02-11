@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:17.084849
 
-The undirected graph Geobacter sulfurreducens has 3422 nodes and 362003 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06185
-and has 5 connected components, where the component with most nodes has 3413 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 211.57, and the node degree mode is 4. The top 5
-most central nodes are 243231.GSU0541 (degree 1509), 243231.GSU3029 (degree 1379),
-243231.GSU3016 (degree 1269), 243231.GSU0754 (degree 1141) and 243231.GSU2195 (degree
-1109).
+The undirected graph Geobacter sulfurreducens has 3422 nodes and 362003
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06185 and has 5 connected components, where the component
+with most nodes has 3413 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 211.57,
+and the node degree mode is 4. The top 5 most central nodes are 243231.GSU0541
+(degree 1509), 243231.GSU3029 (degree 1379), 243231.GSU3016 (degree 1269),
+243231.GSU0754 (degree 1141) and 243231.GSU2195 (degree 1109).
 
 
 References
@@ -107,14 +107,14 @@ def GeobacterSulfurreducens(
 	
 	Datetime: 2021-02-02 20:09:17.084849
 	
-	The undirected graph Geobacter sulfurreducens has 3422 nodes and 362003 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06185
-	and has 5 connected components, where the component with most nodes has 3413 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 211.57, and the node degree mode is 4. The top 5
-	most central nodes are 243231.GSU0541 (degree 1509), 243231.GSU3029 (degree 1379),
-	243231.GSU3016 (degree 1269), 243231.GSU0754 (degree 1141) and 243231.GSU2195 (degree
-	1109).
+	The undirected graph Geobacter sulfurreducens has 3422 nodes and 362003
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06185 and has 5 connected components, where the component
+	with most nodes has 3413 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 211.57,
+	and the node degree mode is 4. The top 5 most central nodes are 243231.GSU0541
+	(degree 1509), 243231.GSU3029 (degree 1379), 243231.GSU3016 (degree 1269),
+	243231.GSU0754 (degree 1141) and 243231.GSU2195 (degree 1109).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:10.277352
 
-The undirected graph endosymbiont of Tevnia has 3194 nodes and 338142 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-has 8 connected components, where the component with most nodes has 3179 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 211.74, and the node degree mode is 4. The top 5 most central
-nodes are 1049564.TevJSym_at00700 (degree 1340), 1049564.TevJSym_br00020 (degree
-1258), 1049564.TevJSym_af00210 (degree 1180), 1049564.TevJSym_cd00020 (degree 1146)
-and 1049564.TevJSym_aa00960 (degree 1121).
+The undirected graph endosymbiont of Tevnia has 3194 nodes and 338142 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06631 and has 8 connected components, where the component with most
+nodes has 3179 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 211.74, and
+the node degree mode is 4. The top 5 most central nodes are 1049564.TevJSym_at00700
+(degree 1340), 1049564.TevJSym_br00020 (degree 1258), 1049564.TevJSym_af00210
+(degree 1180), 1049564.TevJSym_cd00020 (degree 1146) and 1049564.TevJSym_aa00960
+(degree 1121).
 
 
 References
@@ -107,14 +108,15 @@ def EndosymbiontOfTevnia(
 	
 	Datetime: 2021-02-02 22:17:10.277352
 	
-	The undirected graph endosymbiont of Tevnia has 3194 nodes and 338142 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-	has 8 connected components, where the component with most nodes has 3179 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 211.74, and the node degree mode is 4. The top 5 most central
-	nodes are 1049564.TevJSym_at00700 (degree 1340), 1049564.TevJSym_br00020 (degree
-	1258), 1049564.TevJSym_af00210 (degree 1180), 1049564.TevJSym_cd00020 (degree 1146)
-	and 1049564.TevJSym_aa00960 (degree 1121).
+	The undirected graph endosymbiont of Tevnia has 3194 nodes and 338142 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06631 and has 8 connected components, where the component with most
+	nodes has 3179 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 211.74, and
+	the node degree mode is 4. The top 5 most central nodes are 1049564.TevJSym_at00700
+	(degree 1340), 1049564.TevJSym_br00020 (degree 1258), 1049564.TevJSym_af00210
+	(degree 1180), 1049564.TevJSym_cd00020 (degree 1146) and 1049564.TevJSym_aa00960
+	(degree 1121).
 	
 
 

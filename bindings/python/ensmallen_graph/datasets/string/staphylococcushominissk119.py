@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:09.936456
 
-The undirected graph Staphylococcus hominis SK119 has 2166 nodes and 163136 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06958
-and has 7 connected components, where the component with most nodes has 2152 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 150.63, and the node degree mode is 2. The top 5
-most central nodes are 629742.STAHO0001_1817 (degree 905), 629742.STAHO0001_2115
-(degree 821), 629742.STAHO0001_1007 (degree 765), 629742.STAHO0001_2114 (degree 747)
-and 629742.STAHO0001_0875 (degree 745).
+The undirected graph Staphylococcus hominis SK119 has 2166 nodes and 163136
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06958 and has 7 connected components, where the component
+with most nodes has 2152 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 150.63,
+and the node degree mode is 2. The top 5 most central nodes are 629742.STAHO0001_1817
+(degree 905), 629742.STAHO0001_2115 (degree 821), 629742.STAHO0001_1007
+(degree 765), 629742.STAHO0001_2114 (degree 747) and 629742.STAHO0001_0875
+(degree 745).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusHominisSk119(
 	
 	Datetime: 2021-02-02 21:21:09.936456
 	
-	The undirected graph Staphylococcus hominis SK119 has 2166 nodes and 163136 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06958
-	and has 7 connected components, where the component with most nodes has 2152 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 150.63, and the node degree mode is 2. The top 5
-	most central nodes are 629742.STAHO0001_1817 (degree 905), 629742.STAHO0001_2115
-	(degree 821), 629742.STAHO0001_1007 (degree 765), 629742.STAHO0001_2114 (degree 747)
-	and 629742.STAHO0001_0875 (degree 745).
+	The undirected graph Staphylococcus hominis SK119 has 2166 nodes and 163136
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06958 and has 7 connected components, where the component
+	with most nodes has 2152 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 150.63,
+	and the node degree mode is 2. The top 5 most central nodes are 629742.STAHO0001_1817
+	(degree 905), 629742.STAHO0001_2115 (degree 821), 629742.STAHO0001_1007
+	(degree 765), 629742.STAHO0001_2114 (degree 747) and 629742.STAHO0001_0875
+	(degree 745).
 	
 
 

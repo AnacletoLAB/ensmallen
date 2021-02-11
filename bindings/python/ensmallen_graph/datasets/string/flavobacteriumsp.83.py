@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:40.051451
 
-The undirected graph Flavobacterium sp. 83 has 3239 nodes and 238043 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04539 and
-has 6 connected components, where the component with most nodes has 3229 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 146.99, and the node degree mode is 2. The top 5 most central
-nodes are 1131812.JQMS01000001_gene1320 (degree 1116), 1131812.JQMS01000001_gene148
-(degree 1066), 1131812.JQMS01000001_gene3213 (degree 941), 1131812.JQMS01000001_gene1841
-(degree 912) and 1131812.JQMS01000001_gene2758 (degree 903).
+The undirected graph Flavobacterium sp. 83 has 3239 nodes and 238043 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04539 and has 6 connected components, where the component with most
+nodes has 3229 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 146.99, and
+the node degree mode is 2. The top 5 most central nodes are 1131812.JQMS01000001_gene1320
+(degree 1116), 1131812.JQMS01000001_gene148 (degree 1066), 1131812.JQMS01000001_gene3213
+(degree 941), 1131812.JQMS01000001_gene1841 (degree 912) and 1131812.JQMS01000001_gene2758
+(degree 903).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.83(
 	
 	Datetime: 2021-02-02 22:55:40.051451
 	
-	The undirected graph Flavobacterium sp. 83 has 3239 nodes and 238043 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04539 and
-	has 6 connected components, where the component with most nodes has 3229 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 146.99, and the node degree mode is 2. The top 5 most central
-	nodes are 1131812.JQMS01000001_gene1320 (degree 1116), 1131812.JQMS01000001_gene148
-	(degree 1066), 1131812.JQMS01000001_gene3213 (degree 941), 1131812.JQMS01000001_gene1841
-	(degree 912) and 1131812.JQMS01000001_gene2758 (degree 903).
+	The undirected graph Flavobacterium sp. 83 has 3239 nodes and 238043 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04539 and has 6 connected components, where the component with most
+	nodes has 3229 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 146.99, and
+	the node degree mode is 2. The top 5 most central nodes are 1131812.JQMS01000001_gene1320
+	(degree 1116), 1131812.JQMS01000001_gene148 (degree 1066), 1131812.JQMS01000001_gene3213
+	(degree 941), 1131812.JQMS01000001_gene1841 (degree 912) and 1131812.JQMS01000001_gene2758
+	(degree 903).
 	
 
 

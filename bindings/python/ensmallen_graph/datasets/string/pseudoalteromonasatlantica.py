@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:29.291045
 
-The undirected graph Pseudoalteromonas atlantica has 4252 nodes and 501782 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05552
-and has 9 connected components, where the component with most nodes has 4234 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 236.02, and the node degree mode is 2. The top 5
-most central nodes are 342610.Patl_0015 (degree 1512), 342610.Patl_4152 (degree 1314),
-342610.Patl_1295 (degree 1260), 342610.Patl_3119 (degree 1185) and 342610.Patl_3748
-(degree 1029).
+The undirected graph Pseudoalteromonas atlantica has 4252 nodes and 501782
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05552 and has 9 connected components, where the component
+with most nodes has 4234 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 236.02,
+and the node degree mode is 2. The top 5 most central nodes are 342610.Patl_0015
+(degree 1512), 342610.Patl_4152 (degree 1314), 342610.Patl_1295 (degree
+1260), 342610.Patl_3119 (degree 1185) and 342610.Patl_3748 (degree 1029).
 
 
 References
@@ -107,14 +107,14 @@ def PseudoalteromonasAtlantica(
 	
 	Datetime: 2021-02-02 20:31:29.291045
 	
-	The undirected graph Pseudoalteromonas atlantica has 4252 nodes and 501782 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05552
-	and has 9 connected components, where the component with most nodes has 4234 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 236.02, and the node degree mode is 2. The top 5
-	most central nodes are 342610.Patl_0015 (degree 1512), 342610.Patl_4152 (degree 1314),
-	342610.Patl_1295 (degree 1260), 342610.Patl_3119 (degree 1185) and 342610.Patl_3748
-	(degree 1029).
+	The undirected graph Pseudoalteromonas atlantica has 4252 nodes and 501782
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05552 and has 9 connected components, where the component
+	with most nodes has 4234 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 236.02,
+	and the node degree mode is 2. The top 5 most central nodes are 342610.Patl_0015
+	(degree 1512), 342610.Patl_4152 (degree 1314), 342610.Patl_1295 (degree
+	1260), 342610.Patl_3119 (degree 1185) and 342610.Patl_3748 (degree 1029).
 	
 
 

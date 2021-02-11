@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:08.445618
 
-The undirected graph Thermus thermophilus HB27 has 2204 nodes and 194745 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08022
-and has 6 connected components, where the component with most nodes has 2193 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 176.72, and the node degree mode is 6. The top 5
-most central nodes are 262724.TT_C0690 (degree 1012), 262724.TT_C0479 (degree 934),
-262724.TT_C1187 (degree 851), 262724.TT_C1176 (degree 810) and 262724.TT_C1104 (degree
-751).
+The undirected graph Thermus thermophilus HB27 has 2204 nodes and 194745
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08022 and has 6 connected components, where the component
+with most nodes has 2193 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 176.72,
+and the node degree mode is 6. The top 5 most central nodes are 262724.TT_C0690
+(degree 1012), 262724.TT_C0479 (degree 934), 262724.TT_C1187 (degree 851),
+262724.TT_C1176 (degree 810) and 262724.TT_C1104 (degree 751).
 
 
 References
@@ -107,14 +107,14 @@ def ThermusThermophilusHb27(
 	
 	Datetime: 2021-02-02 20:13:08.445618
 	
-	The undirected graph Thermus thermophilus HB27 has 2204 nodes and 194745 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08022
-	and has 6 connected components, where the component with most nodes has 2193 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 176.72, and the node degree mode is 6. The top 5
-	most central nodes are 262724.TT_C0690 (degree 1012), 262724.TT_C0479 (degree 934),
-	262724.TT_C1187 (degree 851), 262724.TT_C1176 (degree 810) and 262724.TT_C1104 (degree
-	751).
+	The undirected graph Thermus thermophilus HB27 has 2204 nodes and 194745
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08022 and has 6 connected components, where the component
+	with most nodes has 2193 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 176.72,
+	and the node degree mode is 6. The top 5 most central nodes are 262724.TT_C0690
+	(degree 1012), 262724.TT_C0479 (degree 934), 262724.TT_C1187 (degree 851),
+	262724.TT_C1176 (degree 810) and 262724.TT_C1104 (degree 751).
 	
 
 

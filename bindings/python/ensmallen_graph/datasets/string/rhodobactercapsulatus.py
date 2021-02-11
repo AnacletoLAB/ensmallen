@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:10.250251
 
-The undirected graph Rhodobacter capsulatus has 3481 nodes and 279489 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04614 and
-has 6 connected components, where the component with most nodes has 3468 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 160.58, and the node degree mode is 9. The top 5 most central
-nodes are 272942.RCAP_rcc02480 (degree 1452), 272942.RCAP_rcc01728 (degree 1262),
-272942.RCAP_rcc01915 (degree 1071), 272942.RCAP_rcc01858 (degree 972) and 272942.RCAP_rcc00161
+The undirected graph Rhodobacter capsulatus has 3481 nodes and 279489 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04614 and has 6 connected components, where the component with most
+nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 160.58, and
+the node degree mode is 9. The top 5 most central nodes are 272942.RCAP_rcc02480
+(degree 1452), 272942.RCAP_rcc01728 (degree 1262), 272942.RCAP_rcc01915
+(degree 1071), 272942.RCAP_rcc01858 (degree 972) and 272942.RCAP_rcc00161
 (degree 966).
 
 
@@ -107,13 +108,14 @@ def RhodobacterCapsulatus(
 	
 	Datetime: 2021-02-02 20:17:10.250251
 	
-	The undirected graph Rhodobacter capsulatus has 3481 nodes and 279489 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04614 and
-	has 6 connected components, where the component with most nodes has 3468 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 160.58, and the node degree mode is 9. The top 5 most central
-	nodes are 272942.RCAP_rcc02480 (degree 1452), 272942.RCAP_rcc01728 (degree 1262),
-	272942.RCAP_rcc01915 (degree 1071), 272942.RCAP_rcc01858 (degree 972) and 272942.RCAP_rcc00161
+	The undirected graph Rhodobacter capsulatus has 3481 nodes and 279489 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04614 and has 6 connected components, where the component with most
+	nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 160.58, and
+	the node degree mode is 9. The top 5 most central nodes are 272942.RCAP_rcc02480
+	(degree 1452), 272942.RCAP_rcc01728 (degree 1262), 272942.RCAP_rcc01915
+	(degree 1071), 272942.RCAP_rcc01858 (degree 972) and 272942.RCAP_rcc00161
 	(degree 966).
 	
 

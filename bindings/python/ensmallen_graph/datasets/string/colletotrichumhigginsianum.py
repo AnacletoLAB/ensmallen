@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:34:58.902384
 
-The undirected graph Colletotrichum higginsianum has 10586 nodes and 1224671 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02186
-and has 61 connected components, where the component with most nodes has 10456 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 231.38, and the node degree mode is 1. The top 5
-most central nodes are 80884.CCF39969 (degree 2650), 80884.CCF36436 (degree 2198),
-80884.CCF36198 (degree 2171), 80884.CCF33072 (degree 1951) and 80884.CCF45248 (degree
+The undirected graph Colletotrichum higginsianum has 10586 nodes and 1224671
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02186 and has 61 connected components, where the component
+with most nodes has 10456 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 121, the mean node degree
+is 231.38, and the node degree mode is 1. The top 5 most central nodes
+are 80884.CCF39969 (degree 2650), 80884.CCF36436 (degree 2198), 80884.CCF36198
+(degree 2171), 80884.CCF33072 (degree 1951) and 80884.CCF45248 (degree
 1932).
 
 
@@ -107,13 +108,14 @@ def ColletotrichumHigginsianum(
 	
 	Datetime: 2021-02-02 18:34:58.902384
 	
-	The undirected graph Colletotrichum higginsianum has 10586 nodes and 1224671 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02186
-	and has 61 connected components, where the component with most nodes has 10456 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 231.38, and the node degree mode is 1. The top 5
-	most central nodes are 80884.CCF39969 (degree 2650), 80884.CCF36436 (degree 2198),
-	80884.CCF36198 (degree 2171), 80884.CCF33072 (degree 1951) and 80884.CCF45248 (degree
+	The undirected graph Colletotrichum higginsianum has 10586 nodes and 1224671
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02186 and has 61 connected components, where the component
+	with most nodes has 10456 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 121, the mean node degree
+	is 231.38, and the node degree mode is 1. The top 5 most central nodes
+	are 80884.CCF39969 (degree 2650), 80884.CCF36436 (degree 2198), 80884.CCF36198
+	(degree 2171), 80884.CCF33072 (degree 1951) and 80884.CCF45248 (degree
 	1932).
 	
 

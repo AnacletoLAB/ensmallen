@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:00.113648
 
-The undirected graph Acinetobacter sp. CIP102129 has 2803 nodes and 220639 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05619
-and has 11 connected components, where the component with most nodes has 2772 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 157.43, and the node degree mode is 4. The top 5
-most central nodes are 1144664.F973_02271 (degree 1027), 1144664.F973_02718 (degree
-1003), 1144664.F973_00009 (degree 928), 1144664.F973_00887 (degree 862) and 1144664.F973_02192
-(degree 860).
+The undirected graph Acinetobacter sp. CIP102129 has 2803 nodes and 220639
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05619 and has 11 connected components, where the component
+with most nodes has 2772 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 157.43,
+and the node degree mode is 4. The top 5 most central nodes are 1144664.F973_02271
+(degree 1027), 1144664.F973_02718 (degree 1003), 1144664.F973_00009 (degree
+928), 1144664.F973_00887 (degree 862) and 1144664.F973_02192 (degree 860).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterSp.Cip102129(
 	
 	Datetime: 2021-02-02 22:59:00.113648
 	
-	The undirected graph Acinetobacter sp. CIP102129 has 2803 nodes and 220639 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05619
-	and has 11 connected components, where the component with most nodes has 2772 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 157.43, and the node degree mode is 4. The top 5
-	most central nodes are 1144664.F973_02271 (degree 1027), 1144664.F973_02718 (degree
-	1003), 1144664.F973_00009 (degree 928), 1144664.F973_00887 (degree 862) and 1144664.F973_02192
-	(degree 860).
+	The undirected graph Acinetobacter sp. CIP102129 has 2803 nodes and 220639
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05619 and has 11 connected components, where the component
+	with most nodes has 2772 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 157.43,
+	and the node degree mode is 4. The top 5 most central nodes are 1144664.F973_02271
+	(degree 1027), 1144664.F973_02718 (degree 1003), 1144664.F973_00009 (degree
+	928), 1144664.F973_00887 (degree 862) and 1144664.F973_02192 (degree 860).
 	
 
 

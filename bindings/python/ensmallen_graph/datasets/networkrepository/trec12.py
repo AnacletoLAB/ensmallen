@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:16.659518
 
-The undirected graph Trec12 has 2726 nodes and 151048 weighted edges, of which 40
-are self-loops. The graph is dense as it has a density of 0.04065 and is connected,
-as it has a single component. The graph median node degree is 45, the mean node degree
-is 110.81, and the node degree mode is 8. The top 5 most central nodes are 421 (degree
-649), 420 (degree 640), 393 (degree 624), 408 (degree 619) and 392 (degree 612).
+The undirected graph Trec12 has 2726 nodes and 151048 weighted edges, of
+which 40 are self-loops. The graph is dense as it has a density of 0.04065
+and is connected, as it has a single component. The graph median node degree
+is 45, the mean node degree is 110.81, and the node degree mode is 8. The
+top 5 most central nodes are 421 (degree 649), 420 (degree 640), 393 (degree
+624), 408 (degree 619) and 392 (degree 612).
 
 
 References
@@ -101,11 +102,12 @@ def Trec12(
 	
 	Datetime: 2021-02-06 11:02:16.659518
 	
-	The undirected graph Trec12 has 2726 nodes and 151048 weighted edges, of which 40
-	are self-loops. The graph is dense as it has a density of 0.04065 and is connected,
-	as it has a single component. The graph median node degree is 45, the mean node degree
-	is 110.81, and the node degree mode is 8. The top 5 most central nodes are 421 (degree
-	649), 420 (degree 640), 393 (degree 624), 408 (degree 619) and 392 (degree 612).
+	The undirected graph Trec12 has 2726 nodes and 151048 weighted edges, of
+	which 40 are self-loops. The graph is dense as it has a density of 0.04065
+	and is connected, as it has a single component. The graph median node degree
+	is 45, the mean node degree is 110.81, and the node degree mode is 8. The
+	top 5 most central nodes are 421 (degree 649), 420 (degree 640), 393 (degree
+	624), 408 (degree 619) and 392 (degree 612).
 	
 
 

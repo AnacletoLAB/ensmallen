@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:23.829046
 
-The undirected graph Salinarchaeum sp. HarchtBsk1 has 2969 nodes and 222823 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05057
-and has 16 connected components, where the component with most nodes has 2917 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 150.10, and the node degree mode is 3. The top 5
-most central nodes are 1333523.L593_02145 (degree 879), 1333523.L593_10830 (degree
-866), 1333523.L593_11190 (degree 819), 1333523.L593_01930 (degree 790) and 1333523.L593_02155
-(degree 731).
+The undirected graph Salinarchaeum sp. HarchtBsk1 has 2969 nodes and 222823
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05057 and has 16 connected components, where the component
+with most nodes has 2917 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 150.10,
+and the node degree mode is 3. The top 5 most central nodes are 1333523.L593_02145
+(degree 879), 1333523.L593_10830 (degree 866), 1333523.L593_11190 (degree
+819), 1333523.L593_01930 (degree 790) and 1333523.L593_02155 (degree 731).
 
 
 References
@@ -107,14 +107,14 @@ def SalinarchaeumSp.Harchtbsk1(
 	
 	Datetime: 2021-02-03 21:55:23.829046
 	
-	The undirected graph Salinarchaeum sp. HarchtBsk1 has 2969 nodes and 222823 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05057
-	and has 16 connected components, where the component with most nodes has 2917 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 150.10, and the node degree mode is 3. The top 5
-	most central nodes are 1333523.L593_02145 (degree 879), 1333523.L593_10830 (degree
-	866), 1333523.L593_11190 (degree 819), 1333523.L593_01930 (degree 790) and 1333523.L593_02155
-	(degree 731).
+	The undirected graph Salinarchaeum sp. HarchtBsk1 has 2969 nodes and 222823
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05057 and has 16 connected components, where the component
+	with most nodes has 2917 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 150.10,
+	and the node degree mode is 3. The top 5 most central nodes are 1333523.L593_02145
+	(degree 879), 1333523.L593_10830 (degree 866), 1333523.L593_11190 (degree
+	819), 1333523.L593_01930 (degree 790) and 1333523.L593_02155 (degree 731).
 	
 
 

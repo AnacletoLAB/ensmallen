@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:00.260080
 
-The undirected graph Halomonas sp. KO116 has 4783 nodes and 348066 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03044 and
-has 21 connected components, where the component with most nodes has 4722 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 145.54, and the node degree mode is 3. The top 5 most central
-nodes are 1504981.KO116_3807 (degree 1660), 1504981.KO116_3709 (degree 1632), 1504981.KO116_0268
-(degree 1260), 1504981.KO116_2611 (degree 1167) and 1504981.KO116_4387 (degree 1137).
+The undirected graph Halomonas sp. KO116 has 4783 nodes and 348066 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03044 and has 21 connected components, where the component with most
+nodes has 4722 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 145.54, and
+the node degree mode is 3. The top 5 most central nodes are 1504981.KO116_3807
+(degree 1660), 1504981.KO116_3709 (degree 1632), 1504981.KO116_0268 (degree
+1260), 1504981.KO116_2611 (degree 1167) and 1504981.KO116_4387 (degree
+1137).
 
 
 References
@@ -106,13 +108,15 @@ def HalomonasSp.Ko116(
 	
 	Datetime: 2021-02-03 23:17:00.260080
 	
-	The undirected graph Halomonas sp. KO116 has 4783 nodes and 348066 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03044 and
-	has 21 connected components, where the component with most nodes has 4722 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 145.54, and the node degree mode is 3. The top 5 most central
-	nodes are 1504981.KO116_3807 (degree 1660), 1504981.KO116_3709 (degree 1632), 1504981.KO116_0268
-	(degree 1260), 1504981.KO116_2611 (degree 1167) and 1504981.KO116_4387 (degree 1137).
+	The undirected graph Halomonas sp. KO116 has 4783 nodes and 348066 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03044 and has 21 connected components, where the component with most
+	nodes has 4722 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 145.54, and
+	the node degree mode is 3. The top 5 most central nodes are 1504981.KO116_3807
+	(degree 1660), 1504981.KO116_3709 (degree 1632), 1504981.KO116_0268 (degree
+	1260), 1504981.KO116_2611 (degree 1167) and 1504981.KO116_4387 (degree
+	1137).
 	
 
 

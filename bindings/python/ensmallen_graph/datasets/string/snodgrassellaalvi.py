@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:55.108095
 
-The undirected graph Snodgrassella alvi has 2179 nodes and 149937 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06319 and
-has 41 connected components, where the component with most nodes has 2088 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 137.62, and the node degree mode is 1. The top 5 most central
-nodes are 1196083.SALWKB12_0634 (degree 873), 1196083.SALWKB12_0108 (degree 776),
-1196083.SALWKB12_0734 (degree 725), 1196083.SALWKB12_1181 (degree 722) and 1196083.SALWKB12_1688
+The undirected graph Snodgrassella alvi has 2179 nodes and 149937 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06319 and has 41 connected components, where the component with most
+nodes has 2088 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 137.62, and
+the node degree mode is 1. The top 5 most central nodes are 1196083.SALWKB12_0634
+(degree 873), 1196083.SALWKB12_0108 (degree 776), 1196083.SALWKB12_0734
+(degree 725), 1196083.SALWKB12_1181 (degree 722) and 1196083.SALWKB12_1688
 (degree 685).
 
 
@@ -107,13 +108,14 @@ def SnodgrassellaAlvi(
 	
 	Datetime: 2021-02-02 23:12:55.108095
 	
-	The undirected graph Snodgrassella alvi has 2179 nodes and 149937 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06319 and
-	has 41 connected components, where the component with most nodes has 2088 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 137.62, and the node degree mode is 1. The top 5 most central
-	nodes are 1196083.SALWKB12_0634 (degree 873), 1196083.SALWKB12_0108 (degree 776),
-	1196083.SALWKB12_0734 (degree 725), 1196083.SALWKB12_1181 (degree 722) and 1196083.SALWKB12_1688
+	The undirected graph Snodgrassella alvi has 2179 nodes and 149937 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06319 and has 41 connected components, where the component with most
+	nodes has 2088 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 137.62, and
+	the node degree mode is 1. The top 5 most central nodes are 1196083.SALWKB12_0634
+	(degree 873), 1196083.SALWKB12_0108 (degree 776), 1196083.SALWKB12_0734
+	(degree 725), 1196083.SALWKB12_1181 (degree 722) and 1196083.SALWKB12_1688
 	(degree 685).
 	
 

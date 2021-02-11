@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:58.690830
 
-The undirected graph Micavibrio aeruginosavorus ARL13 has 2396 nodes and 143850 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05014
-and has 14 connected components, where the component with most nodes has 2364 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 120.08, and the node degree mode is 3. The top 5 most
-central nodes are 856793.MICA_2230 (degree 957), 856793.MICA_1929 (degree 924), 856793.MICA_900
-(degree 733), 856793.MICA_2282 (degree 698) and 856793.MICA_1757 (degree 687).
+The undirected graph Micavibrio aeruginosavorus ARL13 has 2396 nodes and
+143850 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05014 and has 14 connected components, where the
+component with most nodes has 2364 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+is 120.08, and the node degree mode is 3. The top 5 most central nodes
+are 856793.MICA_2230 (degree 957), 856793.MICA_1929 (degree 924), 856793.MICA_900
+(degree 733), 856793.MICA_2282 (degree 698) and 856793.MICA_1757 (degree
+687).
 
 
 References
@@ -106,13 +108,15 @@ def MicavibrioAeruginosavorusArl13(
 	
 	Datetime: 2021-02-02 21:45:58.690830
 	
-	The undirected graph Micavibrio aeruginosavorus ARL13 has 2396 nodes and 143850 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05014
-	and has 14 connected components, where the component with most nodes has 2364 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 120.08, and the node degree mode is 3. The top 5 most
-	central nodes are 856793.MICA_2230 (degree 957), 856793.MICA_1929 (degree 924), 856793.MICA_900
-	(degree 733), 856793.MICA_2282 (degree 698) and 856793.MICA_1757 (degree 687).
+	The undirected graph Micavibrio aeruginosavorus ARL13 has 2396 nodes and
+	143850 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05014 and has 14 connected components, where the
+	component with most nodes has 2364 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+	is 120.08, and the node degree mode is 3. The top 5 most central nodes
+	are 856793.MICA_2230 (degree 957), 856793.MICA_1929 (degree 924), 856793.MICA_900
+	(degree 733), 856793.MICA_2282 (degree 698) and 856793.MICA_1757 (degree
+	687).
 	
 
 

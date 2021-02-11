@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:02.594499
 
-The undirected graph Thermotoga neapolitana has 1918 nodes and 116187 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06320 and
-has 3 connected components, where the component with most nodes has 1913 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 121.15, and the node degree mode is 37. The top 5 most central
-nodes are 309803.CTN_0839 (degree 845), 309803.CTN_1870 (degree 803), 309803.CTN_1824
-(degree 787), 309803.CTN_1484 (degree 728) and 309803.CTN_0752 (degree 637).
+The undirected graph Thermotoga neapolitana has 1918 nodes and 116187 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06320 and has 3 connected components, where the component with most
+nodes has 1913 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 121.15, and
+the node degree mode is 37. The top 5 most central nodes are 309803.CTN_0839
+(degree 845), 309803.CTN_1870 (degree 803), 309803.CTN_1824 (degree 787),
+309803.CTN_1484 (degree 728) and 309803.CTN_0752 (degree 637).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaNeapolitana(
 	
 	Datetime: 2021-02-02 20:23:02.594499
 	
-	The undirected graph Thermotoga neapolitana has 1918 nodes and 116187 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06320 and
-	has 3 connected components, where the component with most nodes has 1913 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 121.15, and the node degree mode is 37. The top 5 most central
-	nodes are 309803.CTN_0839 (degree 845), 309803.CTN_1870 (degree 803), 309803.CTN_1824
-	(degree 787), 309803.CTN_1484 (degree 728) and 309803.CTN_0752 (degree 637).
+	The undirected graph Thermotoga neapolitana has 1918 nodes and 116187 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06320 and has 3 connected components, where the component with most
+	nodes has 1913 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 121.15, and
+	the node degree mode is 37. The top 5 most central nodes are 309803.CTN_0839
+	(degree 845), 309803.CTN_1870 (degree 803), 309803.CTN_1824 (degree 787),
+	309803.CTN_1484 (degree 728) and 309803.CTN_0752 (degree 637).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:38.627962
 
-The undirected graph alpha proteobacterium IMCC14465 has 1874 nodes and 143947 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08202
-and has 10 connected components, where the component with most nodes has 1854 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 153.63, and the node degree mode is 6. The top 5
-most central nodes are 1220535.IMCC14465_07590 (degree 767), 1220535.IMCC14465_02940
-(degree 618), 1220535.IMCC14465_03050 (degree 602), 1220535.IMCC14465_08360 (degree
+The undirected graph alpha proteobacterium IMCC14465 has 1874 nodes and
+143947 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08202 and has 10 connected components, where the
+component with most nodes has 1854 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 153.63, and the node degree mode is 6. The top 5 most central nodes
+are 1220535.IMCC14465_07590 (degree 767), 1220535.IMCC14465_02940 (degree
+618), 1220535.IMCC14465_03050 (degree 602), 1220535.IMCC14465_08360 (degree
 591) and 1220535.IMCC14465_12130 (degree 586).
 
 
@@ -107,13 +108,14 @@ def AlphaProteobacteriumImcc14465(
 	
 	Datetime: 2021-02-02 23:23:38.627962
 	
-	The undirected graph alpha proteobacterium IMCC14465 has 1874 nodes and 143947 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08202
-	and has 10 connected components, where the component with most nodes has 1854 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 153.63, and the node degree mode is 6. The top 5
-	most central nodes are 1220535.IMCC14465_07590 (degree 767), 1220535.IMCC14465_02940
-	(degree 618), 1220535.IMCC14465_03050 (degree 602), 1220535.IMCC14465_08360 (degree
+	The undirected graph alpha proteobacterium IMCC14465 has 1874 nodes and
+	143947 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08202 and has 10 connected components, where the
+	component with most nodes has 1854 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 153.63, and the node degree mode is 6. The top 5 most central nodes
+	are 1220535.IMCC14465_07590 (degree 767), 1220535.IMCC14465_02940 (degree
+	618), 1220535.IMCC14465_03050 (degree 602), 1220535.IMCC14465_08360 (degree
 	591) and 1220535.IMCC14465_12130 (degree 586).
 	
 

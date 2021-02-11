@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:25.317806
 
-The undirected graph Endozoicomonas numazuensis has 4279 nodes and 397422 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04342
-and has 59 connected components, where the component with most nodes has 4144 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 185.75, and the node degree mode is 1. The top 5
-most central nodes are 1137799.GZ78_08895 (degree 1688), 1137799.GZ78_22735 (degree
-1218), 1137799.GZ78_06600 (degree 1017), 1137799.GZ78_10750 (degree 995) and 1137799.GZ78_17180
-(degree 969).
+The undirected graph Endozoicomonas numazuensis has 4279 nodes and 397422
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04342 and has 59 connected components, where the component
+with most nodes has 4144 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 185.75,
+and the node degree mode is 1. The top 5 most central nodes are 1137799.GZ78_08895
+(degree 1688), 1137799.GZ78_22735 (degree 1218), 1137799.GZ78_06600 (degree
+1017), 1137799.GZ78_10750 (degree 995) and 1137799.GZ78_17180 (degree 969).
 
 
 References
@@ -107,14 +107,14 @@ def EndozoicomonasNumazuensis(
 	
 	Datetime: 2021-02-02 22:57:25.317806
 	
-	The undirected graph Endozoicomonas numazuensis has 4279 nodes and 397422 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04342
-	and has 59 connected components, where the component with most nodes has 4144 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 185.75, and the node degree mode is 1. The top 5
-	most central nodes are 1137799.GZ78_08895 (degree 1688), 1137799.GZ78_22735 (degree
-	1218), 1137799.GZ78_06600 (degree 1017), 1137799.GZ78_10750 (degree 995) and 1137799.GZ78_17180
-	(degree 969).
+	The undirected graph Endozoicomonas numazuensis has 4279 nodes and 397422
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04342 and has 59 connected components, where the component
+	with most nodes has 4144 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 185.75,
+	and the node degree mode is 1. The top 5 most central nodes are 1137799.GZ78_08895
+	(degree 1688), 1137799.GZ78_22735 (degree 1218), 1137799.GZ78_06600 (degree
+	1017), 1137799.GZ78_10750 (degree 995) and 1137799.GZ78_17180 (degree 969).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:46.957307
 
-The undirected graph Streptomyces sp. AA4 has 8346 nodes and 1139221 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03271 and
-has 36 connected components, where the component with most nodes has 8249 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 273.00, and the node degree mode is 4. The top 5 most central
-nodes are 591158.SSMG_04754 (degree 3207), 591158.SSMG_04504 (degree 2081), 591158.SSMG_00481
-(degree 1919), 591158.SSMG_06483 (degree 1848) and 591158.SSMG_05367 (degree 1822).
+The undirected graph Streptomyces sp. AA4 has 8346 nodes and 1139221 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03271 and has 36 connected components, where the component with most
+nodes has 8249 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 273.00, and
+the node degree mode is 4. The top 5 most central nodes are 591158.SSMG_04754
+(degree 3207), 591158.SSMG_04504 (degree 2081), 591158.SSMG_00481 (degree
+1919), 591158.SSMG_06483 (degree 1848) and 591158.SSMG_05367 (degree 1822).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesSp.Aa4(
 	
 	Datetime: 2021-02-02 21:17:46.957307
 	
-	The undirected graph Streptomyces sp. AA4 has 8346 nodes and 1139221 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03271 and
-	has 36 connected components, where the component with most nodes has 8249 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 273.00, and the node degree mode is 4. The top 5 most central
-	nodes are 591158.SSMG_04754 (degree 3207), 591158.SSMG_04504 (degree 2081), 591158.SSMG_00481
-	(degree 1919), 591158.SSMG_06483 (degree 1848) and 591158.SSMG_05367 (degree 1822).
+	The undirected graph Streptomyces sp. AA4 has 8346 nodes and 1139221 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03271 and has 36 connected components, where the component with most
+	nodes has 8249 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 273.00, and
+	the node degree mode is 4. The top 5 most central nodes are 591158.SSMG_04754
+	(degree 3207), 591158.SSMG_04504 (degree 2081), 591158.SSMG_00481 (degree
+	1919), 591158.SSMG_06483 (degree 1848) and 591158.SSMG_05367 (degree 1822).
 	
 
 

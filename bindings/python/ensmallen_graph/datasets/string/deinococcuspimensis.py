@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:15.665833
 
-The undirected graph Deinococcus pimensis has 5072 nodes and 337553 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02625 and
-has 79 connected components, where the component with most nodes has 4846 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 133.10, and the node degree mode is 2. The top 5 most central
-nodes are 926554.KI912660_gene2424 (degree 1448), 926554.KI912619_gene945 (degree
-1355), 926554.KI912656_gene4233 (degree 1313), 926554.KI912636_gene3108 (degree 1222)
-and 926554.KI912656_gene4267 (degree 1132).
+The undirected graph Deinococcus pimensis has 5072 nodes and 337553 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02625 and has 79 connected components, where the component with most
+nodes has 4846 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 133.10, and
+the node degree mode is 2. The top 5 most central nodes are 926554.KI912660_gene2424
+(degree 1448), 926554.KI912619_gene945 (degree 1355), 926554.KI912656_gene4233
+(degree 1313), 926554.KI912636_gene3108 (degree 1222) and 926554.KI912656_gene4267
+(degree 1132).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusPimensis(
 	
 	Datetime: 2021-02-02 21:56:15.665833
 	
-	The undirected graph Deinococcus pimensis has 5072 nodes and 337553 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02625 and
-	has 79 connected components, where the component with most nodes has 4846 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 133.10, and the node degree mode is 2. The top 5 most central
-	nodes are 926554.KI912660_gene2424 (degree 1448), 926554.KI912619_gene945 (degree
-	1355), 926554.KI912656_gene4233 (degree 1313), 926554.KI912636_gene3108 (degree 1222)
-	and 926554.KI912656_gene4267 (degree 1132).
+	The undirected graph Deinococcus pimensis has 5072 nodes and 337553 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02625 and has 79 connected components, where the component with most
+	nodes has 4846 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 133.10, and
+	the node degree mode is 2. The top 5 most central nodes are 926554.KI912660_gene2424
+	(degree 1448), 926554.KI912619_gene945 (degree 1355), 926554.KI912656_gene4233
+	(degree 1313), 926554.KI912636_gene3108 (degree 1222) and 926554.KI912656_gene4267
+	(degree 1132).
 	
 
 

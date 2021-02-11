@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:16.631939
 
-The undirected graph Gammaproteobacteria bacterium HIMB30 has 2181 nodes and 138761
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05837 and has 9 connected components, where the component with most nodes has
-2162 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 97, the mean node degree is 127.25, and the node degree mode is 1. The
-top 5 most central nodes are 751994.AGIG01000028_gene1881 (degree 867), 751994.AGIG01000006_gene935
+The undirected graph Gammaproteobacteria bacterium HIMB30 has 2181 nodes
+and 138761 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05837 and has 9 connected components, where the
+component with most nodes has 2162 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+is 127.25, and the node degree mode is 1. The top 5 most central nodes
+are 751994.AGIG01000028_gene1881 (degree 867), 751994.AGIG01000006_gene935
 (degree 747), 751994.AGIG01000010_gene1027 (degree 728), 751994.AGIG01000008_gene1135
 (degree 684) and 751994.AGIG01000028_gene1631 (degree 675).
 
@@ -107,12 +108,13 @@ def GammaproteobacteriaBacteriumHimb30(
 	
 	Datetime: 2021-02-02 21:40:16.631939
 	
-	The undirected graph Gammaproteobacteria bacterium HIMB30 has 2181 nodes and 138761
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05837 and has 9 connected components, where the component with most nodes has
-	2162 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 97, the mean node degree is 127.25, and the node degree mode is 1. The
-	top 5 most central nodes are 751994.AGIG01000028_gene1881 (degree 867), 751994.AGIG01000006_gene935
+	The undirected graph Gammaproteobacteria bacterium HIMB30 has 2181 nodes
+	and 138761 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05837 and has 9 connected components, where the
+	component with most nodes has 2162 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+	is 127.25, and the node degree mode is 1. The top 5 most central nodes
+	are 751994.AGIG01000028_gene1881 (degree 867), 751994.AGIG01000006_gene935
 	(degree 747), 751994.AGIG01000010_gene1027 (degree 728), 751994.AGIG01000008_gene1135
 	(degree 684) and 751994.AGIG01000028_gene1631 (degree 675).
 	

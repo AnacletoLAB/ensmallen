@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:22.846928
 
-The undirected graph Lactobacillus sp. wkB10 has 1928 nodes and 411543 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.22154
-and has 12 connected components, where the component with most nodes has 1905 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 436, the mean node degree is 426.91, and the node degree mode is 1. The top 5
-most central nodes are 1545701.LACWKB10_1264 (degree 1204), 1545701.LACWKB10_0276
-(degree 1151), 1545701.LACWKB10_0448 (degree 1122), 1545701.LACWKB10_0209 (degree
+The undirected graph Lactobacillus sp. wkB10 has 1928 nodes and 411543
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.22154 and has 12 connected components, where the
+component with most nodes has 1905 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 436, the mean node degree
+is 426.91, and the node degree mode is 1. The top 5 most central nodes
+are 1545701.LACWKB10_1264 (degree 1204), 1545701.LACWKB10_0276 (degree
+1151), 1545701.LACWKB10_0448 (degree 1122), 1545701.LACWKB10_0209 (degree
 1119) and 1545701.LACWKB10_0175 (degree 1115).
 
 
@@ -107,13 +108,14 @@ def LactobacillusSp.Wkb10(
 	
 	Datetime: 2021-02-03 23:20:22.846928
 	
-	The undirected graph Lactobacillus sp. wkB10 has 1928 nodes and 411543 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.22154
-	and has 12 connected components, where the component with most nodes has 1905 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 436, the mean node degree is 426.91, and the node degree mode is 1. The top 5
-	most central nodes are 1545701.LACWKB10_1264 (degree 1204), 1545701.LACWKB10_0276
-	(degree 1151), 1545701.LACWKB10_0448 (degree 1122), 1545701.LACWKB10_0209 (degree
+	The undirected graph Lactobacillus sp. wkB10 has 1928 nodes and 411543
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.22154 and has 12 connected components, where the
+	component with most nodes has 1905 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 436, the mean node degree
+	is 426.91, and the node degree mode is 1. The top 5 most central nodes
+	are 1545701.LACWKB10_1264 (degree 1204), 1545701.LACWKB10_0276 (degree
+	1151), 1545701.LACWKB10_0448 (degree 1122), 1545701.LACWKB10_0209 (degree
 	1119) and 1545701.LACWKB10_0175 (degree 1115).
 	
 

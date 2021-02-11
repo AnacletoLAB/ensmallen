@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:31:34.197368
 
-The undirected graph SW-1000-3-0d1-trial1 has 1000 nodes and 1000 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00200
-and has 2 connected components, where the component with most nodes has 969 nodes
-and the component with the least nodes has 31 nodes. The graph median node degree
-is 2, the mean node degree is 2.00, and the node degree mode is 2. The top 5 most
-central nodes are 616 (degree 4), 531 (degree 4), 40 (degree 4), 944 (degree 3) and
-863 (degree 3).
+The undirected graph SW-1000-3-0d1-trial1 has 1000 nodes and 1000 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00200 and has 2 connected components, where the component with most
+nodes has 969 nodes and the component with the least nodes has 31 nodes.
+The graph median node degree is 2, the mean node degree is 2.00, and the
+node degree mode is 2. The top 5 most central nodes are 616 (degree 4),
+531 (degree 4), 40 (degree 4), 944 (degree 3) and 863 (degree 3).
 
 
 References
@@ -103,13 +103,13 @@ def Sw100030d1Trial1(
 	
 	Datetime: 2021-02-06 09:31:34.197368
 	
-	The undirected graph SW-1000-3-0d1-trial1 has 1000 nodes and 1000 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00200
-	and has 2 connected components, where the component with most nodes has 969 nodes
-	and the component with the least nodes has 31 nodes. The graph median node degree
-	is 2, the mean node degree is 2.00, and the node degree mode is 2. The top 5 most
-	central nodes are 616 (degree 4), 531 (degree 4), 40 (degree 4), 944 (degree 3) and
-	863 (degree 3).
+	The undirected graph SW-1000-3-0d1-trial1 has 1000 nodes and 1000 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00200 and has 2 connected components, where the component with most
+	nodes has 969 nodes and the component with the least nodes has 31 nodes.
+	The graph median node degree is 2, the mean node degree is 2.00, and the
+	node degree mode is 2. The top 5 most central nodes are 616 (degree 4),
+	531 (degree 4), 40 (degree 4), 944 (degree 3) and 863 (degree 3).
 	
 
 

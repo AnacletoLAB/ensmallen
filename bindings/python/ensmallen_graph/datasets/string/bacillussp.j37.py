@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:21.366084
 
-The undirected graph Bacillus sp. J37 has 5131 nodes and 526861 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04003 and
-has 25 connected components, where the component with most nodes has 5072 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 205.36, and the node degree mode is 2. The top 5 most central
-nodes are 935837.JAEK01000018_gene841 (degree 1511), 935837.JAEK01000068_gene3059
-(degree 1418), 935837.JAEK01000017_gene1402 (degree 1389), 935837.JAEK01000001_gene2174
-(degree 1259) and 935837.JAEK01000017_gene1324 (degree 1252).
+The undirected graph Bacillus sp. J37 has 5131 nodes and 526861 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04003 and has 25 connected components, where the component with most
+nodes has 5072 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 205.36, and
+the node degree mode is 2. The top 5 most central nodes are 935837.JAEK01000018_gene841
+(degree 1511), 935837.JAEK01000068_gene3059 (degree 1418), 935837.JAEK01000017_gene1402
+(degree 1389), 935837.JAEK01000001_gene2174 (degree 1259) and 935837.JAEK01000017_gene1324
+(degree 1252).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.J37(
 	
 	Datetime: 2021-02-02 21:59:21.366084
 	
-	The undirected graph Bacillus sp. J37 has 5131 nodes and 526861 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04003 and
-	has 25 connected components, where the component with most nodes has 5072 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 205.36, and the node degree mode is 2. The top 5 most central
-	nodes are 935837.JAEK01000018_gene841 (degree 1511), 935837.JAEK01000068_gene3059
-	(degree 1418), 935837.JAEK01000017_gene1402 (degree 1389), 935837.JAEK01000001_gene2174
-	(degree 1259) and 935837.JAEK01000017_gene1324 (degree 1252).
+	The undirected graph Bacillus sp. J37 has 5131 nodes and 526861 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04003 and has 25 connected components, where the component with most
+	nodes has 5072 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 205.36, and
+	the node degree mode is 2. The top 5 most central nodes are 935837.JAEK01000018_gene841
+	(degree 1511), 935837.JAEK01000068_gene3059 (degree 1418), 935837.JAEK01000017_gene1402
+	(degree 1389), 935837.JAEK01000001_gene2174 (degree 1259) and 935837.JAEK01000017_gene1324
+	(degree 1252).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:47.425140
 
-The undirected graph Fervidobacterium pennivorans has 1941 nodes and 166729 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08856
-and is connected, as it has a single component. The graph median node degree is 132,
-the mean node degree is 171.80, and the node degree mode is 6. The top 5 most central
-nodes are 771875.Ferpe_1664 (degree 988), 771875.Ferpe_1431 (degree 977), 771875.Ferpe_0428
-(degree 962), 771875.Ferpe_1885 (degree 844) and 771875.Ferpe_1000 (degree 807).
+The undirected graph Fervidobacterium pennivorans has 1941 nodes and 166729
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08856 and is connected, as it has a single component.
+The graph median node degree is 132, the mean node degree is 171.80, and
+the node degree mode is 6. The top 5 most central nodes are 771875.Ferpe_1664
+(degree 988), 771875.Ferpe_1431 (degree 977), 771875.Ferpe_0428 (degree
+962), 771875.Ferpe_1885 (degree 844) and 771875.Ferpe_1000 (degree 807).
 
 
 References
@@ -105,12 +106,13 @@ def FervidobacteriumPennivorans(
 	
 	Datetime: 2021-02-02 21:44:47.425140
 	
-	The undirected graph Fervidobacterium pennivorans has 1941 nodes and 166729 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08856
-	and is connected, as it has a single component. The graph median node degree is 132,
-	the mean node degree is 171.80, and the node degree mode is 6. The top 5 most central
-	nodes are 771875.Ferpe_1664 (degree 988), 771875.Ferpe_1431 (degree 977), 771875.Ferpe_0428
-	(degree 962), 771875.Ferpe_1885 (degree 844) and 771875.Ferpe_1000 (degree 807).
+	The undirected graph Fervidobacterium pennivorans has 1941 nodes and 166729
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08856 and is connected, as it has a single component.
+	The graph median node degree is 132, the mean node degree is 171.80, and
+	the node degree mode is 6. The top 5 most central nodes are 771875.Ferpe_1664
+	(degree 988), 771875.Ferpe_1431 (degree 977), 771875.Ferpe_0428 (degree
+	962), 771875.Ferpe_1885 (degree 844) and 771875.Ferpe_1000 (degree 807).
 	
 
 

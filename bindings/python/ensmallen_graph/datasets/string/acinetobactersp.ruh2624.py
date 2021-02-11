@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:52.561228
 
-The undirected graph Acinetobacter sp. RUH2624 has 3661 nodes and 247970 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03701
-and has 15 connected components, where the component with most nodes has 3629 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 135.47, and the node degree mode is 1. The top 5
-most central nodes are 575564.HMPREF0014_02797 (degree 1145), 575564.HMPREF0014_01449
-(degree 1072), 575564.HMPREF0014_02835 (degree 945), 575564.HMPREF0014_02525 (degree
-916) and 575564.HMPREF0014_02222 (degree 838).
+The undirected graph Acinetobacter sp. RUH2624 has 3661 nodes and 247970
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03701 and has 15 connected components, where the component
+with most nodes has 3629 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 135.47,
+and the node degree mode is 1. The top 5 most central nodes are 575564.HMPREF0014_02797
+(degree 1145), 575564.HMPREF0014_01449 (degree 1072), 575564.HMPREF0014_02835
+(degree 945), 575564.HMPREF0014_02525 (degree 916) and 575564.HMPREF0014_02222
+(degree 838).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSp.Ruh2624(
 	
 	Datetime: 2021-02-02 21:14:52.561228
 	
-	The undirected graph Acinetobacter sp. RUH2624 has 3661 nodes and 247970 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03701
-	and has 15 connected components, where the component with most nodes has 3629 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 135.47, and the node degree mode is 1. The top 5
-	most central nodes are 575564.HMPREF0014_02797 (degree 1145), 575564.HMPREF0014_01449
-	(degree 1072), 575564.HMPREF0014_02835 (degree 945), 575564.HMPREF0014_02525 (degree
-	916) and 575564.HMPREF0014_02222 (degree 838).
+	The undirected graph Acinetobacter sp. RUH2624 has 3661 nodes and 247970
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03701 and has 15 connected components, where the component
+	with most nodes has 3629 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 135.47,
+	and the node degree mode is 1. The top 5 most central nodes are 575564.HMPREF0014_02797
+	(degree 1145), 575564.HMPREF0014_01449 (degree 1072), 575564.HMPREF0014_02835
+	(degree 945), 575564.HMPREF0014_02525 (degree 916) and 575564.HMPREF0014_02222
+	(degree 838).
 	
 
 

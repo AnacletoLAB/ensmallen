@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:13.996481
 
-The undirected graph Bacillus macauensis has 3798 nodes and 343257 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04761 and
-has 30 connected components, where the component with most nodes has 3733 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 180.76, and the node degree mode is 1. The top 5 most central
-nodes are 1196324.A374_09338 (degree 1256), 1196324.A374_18684 (degree 1128), 1196324.A374_16643
-(degree 1007), 1196324.A374_14425 (degree 960) and 1196324.A374_12095 (degree 944).
+The undirected graph Bacillus macauensis has 3798 nodes and 343257 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04761 and has 30 connected components, where the component with most
+nodes has 3733 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 180.76, and
+the node degree mode is 1. The top 5 most central nodes are 1196324.A374_09338
+(degree 1256), 1196324.A374_18684 (degree 1128), 1196324.A374_16643 (degree
+1007), 1196324.A374_14425 (degree 960) and 1196324.A374_12095 (degree 944).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusMacauensis(
 	
 	Datetime: 2021-02-02 23:13:13.996481
 	
-	The undirected graph Bacillus macauensis has 3798 nodes and 343257 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04761 and
-	has 30 connected components, where the component with most nodes has 3733 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 180.76, and the node degree mode is 1. The top 5 most central
-	nodes are 1196324.A374_09338 (degree 1256), 1196324.A374_18684 (degree 1128), 1196324.A374_16643
-	(degree 1007), 1196324.A374_14425 (degree 960) and 1196324.A374_12095 (degree 944).
+	The undirected graph Bacillus macauensis has 3798 nodes and 343257 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04761 and has 30 connected components, where the component with most
+	nodes has 3733 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 180.76, and
+	the node degree mode is 1. The top 5 most central nodes are 1196324.A374_09338
+	(degree 1256), 1196324.A374_18684 (degree 1128), 1196324.A374_16643 (degree
+	1007), 1196324.A374_14425 (degree 960) and 1196324.A374_12095 (degree 944).
 	
 
 

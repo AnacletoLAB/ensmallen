@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:27.626924
 
-The undirected graph Campylobacter hominis has 1649 nodes and 74277 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05466 and
-has 19 connected components, where the component with most nodes has 1599 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 64,
-the mean node degree is 90.09, and the node degree mode is 1. The top 5 most central
-nodes are 360107.CHAB381_1725 (degree 635), 360107.CHAB381_1726 (degree 631), 360107.CHAB381_0908
-(degree 588), 360107.CHAB381_1601 (degree 548) and 360107.CHAB381_0485 (degree 522).
+The undirected graph Campylobacter hominis has 1649 nodes and 74277 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05466 and has 19 connected components, where the component with most
+nodes has 1599 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 64, the mean node degree is 90.09, and
+the node degree mode is 1. The top 5 most central nodes are 360107.CHAB381_1725
+(degree 635), 360107.CHAB381_1726 (degree 631), 360107.CHAB381_0908 (degree
+588), 360107.CHAB381_1601 (degree 548) and 360107.CHAB381_0485 (degree
+522).
 
 
 References
@@ -106,13 +108,15 @@ def CampylobacterHominis(
 	
 	Datetime: 2021-02-02 20:34:27.626924
 	
-	The undirected graph Campylobacter hominis has 1649 nodes and 74277 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05466 and
-	has 19 connected components, where the component with most nodes has 1599 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 64,
-	the mean node degree is 90.09, and the node degree mode is 1. The top 5 most central
-	nodes are 360107.CHAB381_1725 (degree 635), 360107.CHAB381_1726 (degree 631), 360107.CHAB381_0908
-	(degree 588), 360107.CHAB381_1601 (degree 548) and 360107.CHAB381_0485 (degree 522).
+	The undirected graph Campylobacter hominis has 1649 nodes and 74277 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05466 and has 19 connected components, where the component with most
+	nodes has 1599 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 64, the mean node degree is 90.09, and
+	the node degree mode is 1. The top 5 most central nodes are 360107.CHAB381_1725
+	(degree 635), 360107.CHAB381_1726 (degree 631), 360107.CHAB381_0908 (degree
+	588), 360107.CHAB381_1601 (degree 548) and 360107.CHAB381_0485 (degree
+	522).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:24.770139
 
-The undirected graph Rhizobium sp. CF080 has 6627 nodes and 1073401 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04889 and
-has 30 connected components, where the component with most nodes has 6551 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 262,
-the mean node degree is 323.95, and the node degree mode is 4. The top 5 most central
-nodes are 1144310.PMI07_004881 (degree 2658), 1144310.PMI07_003988 (degree 2565),
-1144310.PMI07_000684 (degree 2169), 1144310.PMI07_001098 (degree 2037) and 1144310.PMI07_004973
+The undirected graph Rhizobium sp. CF080 has 6627 nodes and 1073401 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04889 and has 30 connected components, where the component with most
+nodes has 6551 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 262, the mean node degree is 323.95, and
+the node degree mode is 4. The top 5 most central nodes are 1144310.PMI07_004881
+(degree 2658), 1144310.PMI07_003988 (degree 2565), 1144310.PMI07_000684
+(degree 2169), 1144310.PMI07_001098 (degree 2037) and 1144310.PMI07_004973
 (degree 2034).
 
 
@@ -107,13 +108,14 @@ def RhizobiumSp.Cf080(
 	
 	Datetime: 2021-02-02 22:58:24.770139
 	
-	The undirected graph Rhizobium sp. CF080 has 6627 nodes and 1073401 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04889 and
-	has 30 connected components, where the component with most nodes has 6551 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 262,
-	the mean node degree is 323.95, and the node degree mode is 4. The top 5 most central
-	nodes are 1144310.PMI07_004881 (degree 2658), 1144310.PMI07_003988 (degree 2565),
-	1144310.PMI07_000684 (degree 2169), 1144310.PMI07_001098 (degree 2037) and 1144310.PMI07_004973
+	The undirected graph Rhizobium sp. CF080 has 6627 nodes and 1073401 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04889 and has 30 connected components, where the component with most
+	nodes has 6551 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 262, the mean node degree is 323.95, and
+	the node degree mode is 4. The top 5 most central nodes are 1144310.PMI07_004881
+	(degree 2658), 1144310.PMI07_003988 (degree 2565), 1144310.PMI07_000684
+	(degree 2169), 1144310.PMI07_001098 (degree 2037) and 1144310.PMI07_004973
 	(degree 2034).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:46.956095
 
-The undirected graph Corynebacterium jeikeium has 2106 nodes and 130723 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05898
-and has 6 connected components, where the component with most nodes has 2092 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 124.14, and the node degree mode is 3. The top 5
-most central nodes are 306537.jk0818 (degree 866), 306537.jk0840 (degree 716), 306537.jk1723
-(degree 677), 306537.jk1720 (degree 654) and 306537.jk0878 (degree 598).
+The undirected graph Corynebacterium jeikeium has 2106 nodes and 130723
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05898 and has 6 connected components, where the component
+with most nodes has 2092 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 124.14,
+and the node degree mode is 3. The top 5 most central nodes are 306537.jk0818
+(degree 866), 306537.jk0840 (degree 716), 306537.jk1723 (degree 677), 306537.jk1720
+(degree 654) and 306537.jk0878 (degree 598).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumJeikeium(
 	
 	Datetime: 2021-02-02 20:22:46.956095
 	
-	The undirected graph Corynebacterium jeikeium has 2106 nodes and 130723 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05898
-	and has 6 connected components, where the component with most nodes has 2092 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 124.14, and the node degree mode is 3. The top 5
-	most central nodes are 306537.jk0818 (degree 866), 306537.jk0840 (degree 716), 306537.jk1723
-	(degree 677), 306537.jk1720 (degree 654) and 306537.jk0878 (degree 598).
+	The undirected graph Corynebacterium jeikeium has 2106 nodes and 130723
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05898 and has 6 connected components, where the component
+	with most nodes has 2092 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 124.14,
+	and the node degree mode is 3. The top 5 most central nodes are 306537.jk0818
+	(degree 866), 306537.jk0840 (degree 716), 306537.jk1723 (degree 677), 306537.jk1720
+	(degree 654) and 306537.jk0878 (degree 598).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:55.815749
 
-The undirected graph Saccharophagus degradans has 3956 nodes and 373176 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04770
-and has 27 connected components, where the component with most nodes has 3894 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 188.66, and the node degree mode is 1. The top 5
-most central nodes are 203122.Sde_0798 (degree 1581), 203122.Sde_3323 (degree 1093),
-203122.Sde_0073 (degree 1074), 203122.Sde_1460 (degree 974) and 203122.Sde_3531 (degree
-922).
+The undirected graph Saccharophagus degradans has 3956 nodes and 373176
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04770 and has 27 connected components, where the component
+with most nodes has 3894 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 188.66,
+and the node degree mode is 1. The top 5 most central nodes are 203122.Sde_0798
+(degree 1581), 203122.Sde_3323 (degree 1093), 203122.Sde_0073 (degree 1074),
+203122.Sde_1460 (degree 974) and 203122.Sde_3531 (degree 922).
 
 
 References
@@ -107,14 +107,14 @@ def SaccharophagusDegradans(
 	
 	Datetime: 2021-02-02 19:59:55.815749
 	
-	The undirected graph Saccharophagus degradans has 3956 nodes and 373176 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04770
-	and has 27 connected components, where the component with most nodes has 3894 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 188.66, and the node degree mode is 1. The top 5
-	most central nodes are 203122.Sde_0798 (degree 1581), 203122.Sde_3323 (degree 1093),
-	203122.Sde_0073 (degree 1074), 203122.Sde_1460 (degree 974) and 203122.Sde_3531 (degree
-	922).
+	The undirected graph Saccharophagus degradans has 3956 nodes and 373176
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04770 and has 27 connected components, where the component
+	with most nodes has 3894 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 188.66,
+	and the node degree mode is 1. The top 5 most central nodes are 203122.Sde_0798
+	(degree 1581), 203122.Sde_3323 (degree 1093), 203122.Sde_0073 (degree 1074),
+	203122.Sde_1460 (degree 974) and 203122.Sde_3531 (degree 922).
 	
 
 

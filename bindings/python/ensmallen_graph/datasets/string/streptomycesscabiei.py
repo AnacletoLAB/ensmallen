@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:38.469606
 
-The undirected graph Streptomyces scabiei has 8670 nodes and 1014419 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02699 and
-has 35 connected components, where the component with most nodes has 8594 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 234.01, and the node degree mode is 2. The top 5 most central
-nodes are 680198.SCAB_25151 (degree 3775), 680198.SCAB_68981 (degree 2467), 680198.SCAB_73641
-(degree 2255), 680198.SCAB_17231 (degree 2185) and 680198.SCAB_36051 (degree 2184).
+The undirected graph Streptomyces scabiei has 8670 nodes and 1014419 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02699 and has 35 connected components, where the component with most
+nodes has 8594 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 234.01, and
+the node degree mode is 2. The top 5 most central nodes are 680198.SCAB_25151
+(degree 3775), 680198.SCAB_68981 (degree 2467), 680198.SCAB_73641 (degree
+2255), 680198.SCAB_17231 (degree 2185) and 680198.SCAB_36051 (degree 2184).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesScabiei(
 	
 	Datetime: 2021-02-02 21:30:38.469606
 	
-	The undirected graph Streptomyces scabiei has 8670 nodes and 1014419 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02699 and
-	has 35 connected components, where the component with most nodes has 8594 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 234.01, and the node degree mode is 2. The top 5 most central
-	nodes are 680198.SCAB_25151 (degree 3775), 680198.SCAB_68981 (degree 2467), 680198.SCAB_73641
-	(degree 2255), 680198.SCAB_17231 (degree 2185) and 680198.SCAB_36051 (degree 2184).
+	The undirected graph Streptomyces scabiei has 8670 nodes and 1014419 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02699 and has 35 connected components, where the component with most
+	nodes has 8594 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 234.01, and
+	the node degree mode is 2. The top 5 most central nodes are 680198.SCAB_25151
+	(degree 3775), 680198.SCAB_68981 (degree 2467), 680198.SCAB_73641 (degree
+	2255), 680198.SCAB_17231 (degree 2185) and 680198.SCAB_36051 (degree 2184).
 	
 
 

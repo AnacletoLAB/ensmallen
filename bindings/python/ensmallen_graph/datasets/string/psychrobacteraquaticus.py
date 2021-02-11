@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:46.508829
 
-The undirected graph Psychrobacter aquaticus has 2770 nodes and 173071 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04513 and
-has 17 connected components, where the component with most nodes has 2734 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 124.96, and the node degree mode is 2. The top 5 most central
-nodes are 1354303.M917_1616 (degree 952), 1354303.M917_2136 (degree 845), 1354303.M917_2252
-(degree 814), 1354303.M917_2568 (degree 814) and 1354303.M917_0577 (degree 806).
+The undirected graph Psychrobacter aquaticus has 2770 nodes and 173071
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04513 and has 17 connected components, where the component
+with most nodes has 2734 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 124.96,
+and the node degree mode is 2. The top 5 most central nodes are 1354303.M917_1616
+(degree 952), 1354303.M917_2136 (degree 845), 1354303.M917_2252 (degree
+814), 1354303.M917_2568 (degree 814) and 1354303.M917_0577 (degree 806).
 
 
 References
@@ -106,13 +107,14 @@ def PsychrobacterAquaticus(
 	
 	Datetime: 2021-02-03 22:07:46.508829
 	
-	The undirected graph Psychrobacter aquaticus has 2770 nodes and 173071 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04513 and
-	has 17 connected components, where the component with most nodes has 2734 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 124.96, and the node degree mode is 2. The top 5 most central
-	nodes are 1354303.M917_1616 (degree 952), 1354303.M917_2136 (degree 845), 1354303.M917_2252
-	(degree 814), 1354303.M917_2568 (degree 814) and 1354303.M917_0577 (degree 806).
+	The undirected graph Psychrobacter aquaticus has 2770 nodes and 173071
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04513 and has 17 connected components, where the component
+	with most nodes has 2734 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 124.96,
+	and the node degree mode is 2. The top 5 most central nodes are 1354303.M917_1616
+	(degree 952), 1354303.M917_2136 (degree 845), 1354303.M917_2252 (degree
+	814), 1354303.M917_2568 (degree 814) and 1354303.M917_0577 (degree 806).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:25.713770
 
-The undirected graph Gulosibacter molinativorax has 2984 nodes and 196027 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04404
-and has 19 connected components, where the component with most nodes has 2936 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 131.39, and the node degree mode is 2. The top 5
-most central nodes are 1121934.AUDX01000010_gene585 (degree 1154), 1121934.AUDX01000016_gene2715
-(degree 826), 1121934.AUDX01000001_gene2239 (degree 771), 1121934.AUDX01000014_gene1588
-(degree 766) and 1121934.AUDX01000003_gene901 (degree 754).
+The undirected graph Gulosibacter molinativorax has 2984 nodes and 196027
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04404 and has 19 connected components, where the component
+with most nodes has 2936 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 131.39,
+and the node degree mode is 2. The top 5 most central nodes are 1121934.AUDX01000010_gene585
+(degree 1154), 1121934.AUDX01000016_gene2715 (degree 826), 1121934.AUDX01000001_gene2239
+(degree 771), 1121934.AUDX01000014_gene1588 (degree 766) and 1121934.AUDX01000003_gene901
+(degree 754).
 
 
 References
@@ -107,14 +108,15 @@ def GulosibacterMolinativorax(
 	
 	Datetime: 2021-02-02 22:39:25.713770
 	
-	The undirected graph Gulosibacter molinativorax has 2984 nodes and 196027 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04404
-	and has 19 connected components, where the component with most nodes has 2936 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 131.39, and the node degree mode is 2. The top 5
-	most central nodes are 1121934.AUDX01000010_gene585 (degree 1154), 1121934.AUDX01000016_gene2715
-	(degree 826), 1121934.AUDX01000001_gene2239 (degree 771), 1121934.AUDX01000014_gene1588
-	(degree 766) and 1121934.AUDX01000003_gene901 (degree 754).
+	The undirected graph Gulosibacter molinativorax has 2984 nodes and 196027
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04404 and has 19 connected components, where the component
+	with most nodes has 2936 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 131.39,
+	and the node degree mode is 2. The top 5 most central nodes are 1121934.AUDX01000010_gene585
+	(degree 1154), 1121934.AUDX01000016_gene2715 (degree 826), 1121934.AUDX01000001_gene2239
+	(degree 771), 1121934.AUDX01000014_gene1588 (degree 766) and 1121934.AUDX01000003_gene901
+	(degree 754).
 	
 
 

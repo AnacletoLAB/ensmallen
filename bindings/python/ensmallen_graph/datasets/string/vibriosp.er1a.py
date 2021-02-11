@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:41.904070
 
-The undirected graph Vibrio sp. ER1A has 5126 nodes and 788883 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06006 and
-has 41 connected components, where the component with most nodes has 5021 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 243,
-the mean node degree is 307.80, and the node degree mode is 1. The top 5 most central
-nodes are 1517681.HW45_23100 (degree 2344), 1517681.HW45_18685 (degree 2219), 1517681.HW45_24160
-(degree 2156), 1517681.HW45_00955 (degree 2074) and 1517681.HW45_02690 (degree 2039).
+The undirected graph Vibrio sp. ER1A has 5126 nodes and 788883 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06006 and has 41 connected components, where the component with most
+nodes has 5021 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 243, the mean node degree is 307.80, and
+the node degree mode is 1. The top 5 most central nodes are 1517681.HW45_23100
+(degree 2344), 1517681.HW45_18685 (degree 2219), 1517681.HW45_24160 (degree
+2156), 1517681.HW45_00955 (degree 2074) and 1517681.HW45_02690 (degree
+2039).
 
 
 References
@@ -106,13 +108,15 @@ def VibrioSp.Er1a(
 	
 	Datetime: 2021-02-03 23:17:41.904070
 	
-	The undirected graph Vibrio sp. ER1A has 5126 nodes and 788883 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06006 and
-	has 41 connected components, where the component with most nodes has 5021 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 243,
-	the mean node degree is 307.80, and the node degree mode is 1. The top 5 most central
-	nodes are 1517681.HW45_23100 (degree 2344), 1517681.HW45_18685 (degree 2219), 1517681.HW45_24160
-	(degree 2156), 1517681.HW45_00955 (degree 2074) and 1517681.HW45_02690 (degree 2039).
+	The undirected graph Vibrio sp. ER1A has 5126 nodes and 788883 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06006 and has 41 connected components, where the component with most
+	nodes has 5021 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 243, the mean node degree is 307.80, and
+	the node degree mode is 1. The top 5 most central nodes are 1517681.HW45_23100
+	(degree 2344), 1517681.HW45_18685 (degree 2219), 1517681.HW45_24160 (degree
+	2156), 1517681.HW45_00955 (degree 2074) and 1517681.HW45_02690 (degree
+	2039).
 	
 
 

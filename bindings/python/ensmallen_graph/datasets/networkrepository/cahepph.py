@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:40.257527
 
-The undirected graph ca-HepPh has 11203 nodes and 117618 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00187 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 21.00 and the node degree mode is 2. The top 5 most central nodes are 8999 (degree
-491), 1076 (degree 486), 4221 (degree 482), 2254 (degree 444) and 5116 (degree 443).
+The undirected graph ca-HepPh has 11203 nodes and 117618 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00187 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 21.00 and the node degree mode
+is 2. The top 5 most central nodes are 8999 (degree 491), 1076 (degree
+486), 4221 (degree 482), 2254 (degree 444) and 5116 (degree 443).
 
 
 References
@@ -101,11 +102,12 @@ def CaHepph(
 	
 	Datetime: 2021-02-03 22:37:40.257527
 	
-	The undirected graph ca-HepPh has 11203 nodes and 117618 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00187 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 21.00 and the node degree mode is 2. The top 5 most central nodes are 8999 (degree
-	491), 1076 (degree 486), 4221 (degree 482), 2254 (degree 444) and 5116 (degree 443).
+	The undirected graph ca-HepPh has 11203 nodes and 117618 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00187 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 21.00 and the node degree mode
+	is 2. The top 5 most central nodes are 8999 (degree 491), 1076 (degree
+	486), 4221 (degree 482), 2254 (degree 444) and 5116 (degree 443).
 	
 
 

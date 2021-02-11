@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:44.579691
 
-The undirected graph Algoriphagus mannitolivorans has 3551 nodes and 286723 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04549
-and has 11 connected components, where the component with most nodes has 3529 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 161.49, and the node degree mode is 2. The top 5
-most central nodes are 1120965.AUBV01000017_gene132 (degree 1259), 1120965.AUBV01000014_gene1221
-(degree 1122), 1120965.AUBV01000003_gene446 (degree 1000), 1120965.AUBV01000004_gene665
-(degree 941) and 1120965.AUBV01000001_gene3489 (degree 891).
+The undirected graph Algoriphagus mannitolivorans has 3551 nodes and 286723
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04549 and has 11 connected components, where the component
+with most nodes has 3529 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 161.49,
+and the node degree mode is 2. The top 5 most central nodes are 1120965.AUBV01000017_gene132
+(degree 1259), 1120965.AUBV01000014_gene1221 (degree 1122), 1120965.AUBV01000003_gene446
+(degree 1000), 1120965.AUBV01000004_gene665 (degree 941) and 1120965.AUBV01000001_gene3489
+(degree 891).
 
 
 References
@@ -107,14 +108,15 @@ def AlgoriphagusMannitolivorans(
 	
 	Datetime: 2021-02-02 22:30:44.579691
 	
-	The undirected graph Algoriphagus mannitolivorans has 3551 nodes and 286723 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04549
-	and has 11 connected components, where the component with most nodes has 3529 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 161.49, and the node degree mode is 2. The top 5
-	most central nodes are 1120965.AUBV01000017_gene132 (degree 1259), 1120965.AUBV01000014_gene1221
-	(degree 1122), 1120965.AUBV01000003_gene446 (degree 1000), 1120965.AUBV01000004_gene665
-	(degree 941) and 1120965.AUBV01000001_gene3489 (degree 891).
+	The undirected graph Algoriphagus mannitolivorans has 3551 nodes and 286723
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04549 and has 11 connected components, where the component
+	with most nodes has 3529 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 161.49,
+	and the node degree mode is 2. The top 5 most central nodes are 1120965.AUBV01000017_gene132
+	(degree 1259), 1120965.AUBV01000014_gene1221 (degree 1122), 1120965.AUBV01000003_gene446
+	(degree 1000), 1120965.AUBV01000004_gene665 (degree 941) and 1120965.AUBV01000001_gene3489
+	(degree 891).
 	
 
 

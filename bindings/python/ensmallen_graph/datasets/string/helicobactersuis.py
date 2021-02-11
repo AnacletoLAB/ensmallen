@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:54.407926
 
-The undirected graph Helicobacter suis has 1144 nodes and 71376 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10917
-and has 8 connected components, where the component with most nodes has 1127 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 124.78, and the node degree mode is 1. The top 5
-most central nodes are 710393.HSUHS1_1024 (degree 544), 710393.HSUHS1_0261 (degree
-536), 710393.HSUHS1_1095 (degree 479), 710393.HSUHS1_0977 (degree 441) and 710393.HSUHS1_0715
-(degree 432).
+The undirected graph Helicobacter suis has 1144 nodes and 71376 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10917 and has 8 connected components, where the component
+with most nodes has 1127 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 124.78,
+and the node degree mode is 1. The top 5 most central nodes are 710393.HSUHS1_1024
+(degree 544), 710393.HSUHS1_0261 (degree 536), 710393.HSUHS1_1095 (degree
+479), 710393.HSUHS1_0977 (degree 441) and 710393.HSUHS1_0715 (degree 432).
 
 
 References
@@ -107,14 +107,14 @@ def HelicobacterSuis(
 	
 	Datetime: 2021-02-02 21:34:54.407926
 	
-	The undirected graph Helicobacter suis has 1144 nodes and 71376 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10917
-	and has 8 connected components, where the component with most nodes has 1127 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 124.78, and the node degree mode is 1. The top 5
-	most central nodes are 710393.HSUHS1_1024 (degree 544), 710393.HSUHS1_0261 (degree
-	536), 710393.HSUHS1_1095 (degree 479), 710393.HSUHS1_0977 (degree 441) and 710393.HSUHS1_0715
-	(degree 432).
+	The undirected graph Helicobacter suis has 1144 nodes and 71376 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10917 and has 8 connected components, where the component
+	with most nodes has 1127 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 124.78,
+	and the node degree mode is 1. The top 5 most central nodes are 710393.HSUHS1_1024
+	(degree 544), 710393.HSUHS1_0261 (degree 536), 710393.HSUHS1_1095 (degree
+	479), 710393.HSUHS1_0977 (degree 441) and 710393.HSUHS1_0715 (degree 432).
 	
 
 

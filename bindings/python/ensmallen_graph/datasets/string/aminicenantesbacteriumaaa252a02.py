@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:42.676589
 
-The undirected graph Aminicenantes bacterium AAA252A02 has 2684 nodes and 191475
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05318 and has 13 connected components, where the component with most nodes has
-2654 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 118, the mean node degree is 142.68, and the node degree mode is 1. The
-top 5 most central nodes are 1047013.AQSP01000133_gene2162 (degree 929), 1047013.AQSP01000126_gene2731
+The undirected graph Aminicenantes bacterium AAA252A02 has 2684 nodes and
+191475 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05318 and has 13 connected components, where the
+component with most nodes has 2654 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+is 142.68, and the node degree mode is 1. The top 5 most central nodes
+are 1047013.AQSP01000133_gene2162 (degree 929), 1047013.AQSP01000126_gene2731
 (degree 764), 1047013.AQSP01000120_gene964 (degree 726), 1047013.AQSP01000135_gene1596
 (degree 725) and 1047013.AQSP01000139_gene2383 (degree 716).
 
@@ -107,12 +108,13 @@ def AminicenantesBacteriumAaa252a02(
 	
 	Datetime: 2021-02-02 22:16:42.676589
 	
-	The undirected graph Aminicenantes bacterium AAA252A02 has 2684 nodes and 191475
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05318 and has 13 connected components, where the component with most nodes has
-	2654 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 118, the mean node degree is 142.68, and the node degree mode is 1. The
-	top 5 most central nodes are 1047013.AQSP01000133_gene2162 (degree 929), 1047013.AQSP01000126_gene2731
+	The undirected graph Aminicenantes bacterium AAA252A02 has 2684 nodes and
+	191475 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05318 and has 13 connected components, where the
+	component with most nodes has 2654 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+	is 142.68, and the node degree mode is 1. The top 5 most central nodes
+	are 1047013.AQSP01000133_gene2162 (degree 929), 1047013.AQSP01000126_gene2731
 	(degree 764), 1047013.AQSP01000120_gene964 (degree 726), 1047013.AQSP01000135_gene1596
 	(degree 725) and 1047013.AQSP01000139_gene2383 (degree 716).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 10:55:53.742142
 
-The undirected graph soc-sinaweibo has 58655849 nodes and 261321071 unweighted edges,
-of which 38 are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and has 15 connected components, where the component with most nodes has
-58655820 nodes and the component with the least nodes has a single node. The graph
-median node degree is 2, the mean node degree is 8.91, and the node degree mode is
-1. The top 5 most central nodes are 1029 (degree 278490), 243011 (degree 104633),
-179813 (degree 94577), 107829 (degree 94118) and 243610 (degree 93796).
+The undirected graph soc-sinaweibo has 58655849 nodes and 261321071 unweighted
+edges, of which 38 are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and has 15 connected components, where the component
+with most nodes has 58655820 nodes and the component with the least nodes
+has a single node. The graph median node degree is 2, the mean node degree
+is 8.91, and the node degree mode is 1. The top 5 most central nodes are
+1029 (degree 278490), 243011 (degree 104633), 179813 (degree 94577), 107829
+(degree 94118) and 243610 (degree 93796).
 
 
 References
@@ -112,13 +113,14 @@ def SocSinaweibo(
 	
 	Datetime: 2021-02-04 10:55:53.742142
 	
-	The undirected graph soc-sinaweibo has 58655849 nodes and 261321071 unweighted edges,
-	of which 38 are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and has 15 connected components, where the component with most nodes has
-	58655820 nodes and the component with the least nodes has a single node. The graph
-	median node degree is 2, the mean node degree is 8.91, and the node degree mode is
-	1. The top 5 most central nodes are 1029 (degree 278490), 243011 (degree 104633),
-	179813 (degree 94577), 107829 (degree 94118) and 243610 (degree 93796).
+	The undirected graph soc-sinaweibo has 58655849 nodes and 261321071 unweighted
+	edges, of which 38 are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and has 15 connected components, where the component
+	with most nodes has 58655820 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 2, the mean node degree
+	is 8.91, and the node degree mode is 1. The top 5 most central nodes are
+	1029 (degree 278490), 243011 (degree 104633), 179813 (degree 94577), 107829
+	(degree 94118) and 243610 (degree 93796).
 	
 
 

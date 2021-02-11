@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:08.868215
 
-The undirected graph Chlamydia muridarum has 899 nodes and 42739 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10588
-and has 7 connected components, where the component with most nodes has 886 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 79, the mean node degree is 95.08, and the node degree mode is 10. The top 5 most
-central nodes are 243161.TC_0780 (degree 449), 243161.TC_0760 (degree 389), 243161.TC_0296
-(degree 382), 243161.TC_0675 (degree 381) and 243161.TC_0143 (degree 356).
+The undirected graph Chlamydia muridarum has 899 nodes and 42739 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10588 and has 7 connected components, where the component
+with most nodes has 886 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 95.08,
+and the node degree mode is 10. The top 5 most central nodes are 243161.TC_0780
+(degree 449), 243161.TC_0760 (degree 389), 243161.TC_0296 (degree 382),
+243161.TC_0675 (degree 381) and 243161.TC_0143 (degree 356).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydiaMuridarum(
 	
 	Datetime: 2021-02-02 20:09:08.868215
 	
-	The undirected graph Chlamydia muridarum has 899 nodes and 42739 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10588
-	and has 7 connected components, where the component with most nodes has 886 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 79, the mean node degree is 95.08, and the node degree mode is 10. The top 5 most
-	central nodes are 243161.TC_0780 (degree 449), 243161.TC_0760 (degree 389), 243161.TC_0296
-	(degree 382), 243161.TC_0675 (degree 381) and 243161.TC_0143 (degree 356).
+	The undirected graph Chlamydia muridarum has 899 nodes and 42739 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10588 and has 7 connected components, where the component
+	with most nodes has 886 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 95.08,
+	and the node degree mode is 10. The top 5 most central nodes are 243161.TC_0780
+	(degree 449), 243161.TC_0760 (degree 389), 243161.TC_0296 (degree 382),
+	243161.TC_0675 (degree 381) and 243161.TC_0143 (degree 356).
 	
 
 

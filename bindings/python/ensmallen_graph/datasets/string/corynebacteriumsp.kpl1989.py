@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:08.201641
 
-The undirected graph Corynebacterium sp. KPL1989 has 2055 nodes and 137505 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06515
-and has 11 connected components, where the component with most nodes has 2032 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 133.82, and the node degree mode is 3. The top 5
-most central nodes are 1203622.HMPREF1290_02097 (degree 855), 1203622.HMPREF1290_00888
-(degree 832), 1203622.HMPREF1290_01057 (degree 770), 1203622.HMPREF1290_01639 (degree
-684) and 1203622.HMPREF1290_01060 (degree 638).
+The undirected graph Corynebacterium sp. KPL1989 has 2055 nodes and 137505
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06515 and has 11 connected components, where the component
+with most nodes has 2032 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 133.82,
+and the node degree mode is 3. The top 5 most central nodes are 1203622.HMPREF1290_02097
+(degree 855), 1203622.HMPREF1290_00888 (degree 832), 1203622.HMPREF1290_01057
+(degree 770), 1203622.HMPREF1290_01639 (degree 684) and 1203622.HMPREF1290_01060
+(degree 638).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumSp.Kpl1989(
 	
 	Datetime: 2021-02-02 23:15:08.201641
 	
-	The undirected graph Corynebacterium sp. KPL1989 has 2055 nodes and 137505 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06515
-	and has 11 connected components, where the component with most nodes has 2032 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 133.82, and the node degree mode is 3. The top 5
-	most central nodes are 1203622.HMPREF1290_02097 (degree 855), 1203622.HMPREF1290_00888
-	(degree 832), 1203622.HMPREF1290_01057 (degree 770), 1203622.HMPREF1290_01639 (degree
-	684) and 1203622.HMPREF1290_01060 (degree 638).
+	The undirected graph Corynebacterium sp. KPL1989 has 2055 nodes and 137505
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06515 and has 11 connected components, where the component
+	with most nodes has 2032 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 133.82,
+	and the node degree mode is 3. The top 5 most central nodes are 1203622.HMPREF1290_02097
+	(degree 855), 1203622.HMPREF1290_00888 (degree 832), 1203622.HMPREF1290_01057
+	(degree 770), 1203622.HMPREF1290_01639 (degree 684) and 1203622.HMPREF1290_01060
+	(degree 638).
 	
 
 

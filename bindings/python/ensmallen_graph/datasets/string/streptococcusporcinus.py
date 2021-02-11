@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:10.142802
 
-The undirected graph Streptococcus porcinus has 1940 nodes and 136028 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07232 and
-has 4 connected components, where the component with most nodes has 1932 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 140.24, and the node degree mode is 50. The top 5 most central
-nodes are 873448.STRPO_1262 (degree 830), 873448.STRPO_1446 (degree 721), 873448.STRPO_1378
-(degree 714), 873448.STRPO_0956 (degree 709) and 873448.STRPO_0417 (degree 708).
+The undirected graph Streptococcus porcinus has 1940 nodes and 136028 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07232 and has 4 connected components, where the component with most
+nodes has 1932 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 140.24, and
+the node degree mode is 50. The top 5 most central nodes are 873448.STRPO_1262
+(degree 830), 873448.STRPO_1446 (degree 721), 873448.STRPO_1378 (degree
+714), 873448.STRPO_0956 (degree 709) and 873448.STRPO_0417 (degree 708).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusPorcinus(
 	
 	Datetime: 2021-02-02 21:49:10.142802
 	
-	The undirected graph Streptococcus porcinus has 1940 nodes and 136028 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07232 and
-	has 4 connected components, where the component with most nodes has 1932 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 140.24, and the node degree mode is 50. The top 5 most central
-	nodes are 873448.STRPO_1262 (degree 830), 873448.STRPO_1446 (degree 721), 873448.STRPO_1378
-	(degree 714), 873448.STRPO_0956 (degree 709) and 873448.STRPO_0417 (degree 708).
+	The undirected graph Streptococcus porcinus has 1940 nodes and 136028 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07232 and has 4 connected components, where the component with most
+	nodes has 1932 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 140.24, and
+	the node degree mode is 50. The top 5 most central nodes are 873448.STRPO_1262
+	(degree 830), 873448.STRPO_1446 (degree 721), 873448.STRPO_1378 (degree
+	714), 873448.STRPO_0956 (degree 709) and 873448.STRPO_0417 (degree 708).
 	
 
 

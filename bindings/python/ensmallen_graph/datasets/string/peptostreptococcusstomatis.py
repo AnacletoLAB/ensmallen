@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:21.143307
 
-The undirected graph Peptostreptococcus stomatis has 1587 nodes and 89984 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07150
-and has 2 connected components, where the component with most nodes has 1585 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 113.40, and the node degree mode is 1. The top 5 most
-central nodes are 596315.HMPREF0634_0794 (degree 731), 596315.HMPREF0634_0123 (degree
-678), 596315.HMPREF0634_0012 (degree 614), 596315.HMPREF0634_1525 (degree 598) and
-596315.HMPREF0634_1089 (degree 564).
+The undirected graph Peptostreptococcus stomatis has 1587 nodes and 89984
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07150 and has 2 connected components, where the component
+with most nodes has 1585 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 113.40,
+and the node degree mode is 1. The top 5 most central nodes are 596315.HMPREF0634_0794
+(degree 731), 596315.HMPREF0634_0123 (degree 678), 596315.HMPREF0634_0012
+(degree 614), 596315.HMPREF0634_1525 (degree 598) and 596315.HMPREF0634_1089
+(degree 564).
 
 
 References
@@ -107,14 +108,15 @@ def PeptostreptococcusStomatis(
 	
 	Datetime: 2021-02-02 21:19:21.143307
 	
-	The undirected graph Peptostreptococcus stomatis has 1587 nodes and 89984 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07150
-	and has 2 connected components, where the component with most nodes has 1585 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 113.40, and the node degree mode is 1. The top 5 most
-	central nodes are 596315.HMPREF0634_0794 (degree 731), 596315.HMPREF0634_0123 (degree
-	678), 596315.HMPREF0634_0012 (degree 614), 596315.HMPREF0634_1525 (degree 598) and
-	596315.HMPREF0634_1089 (degree 564).
+	The undirected graph Peptostreptococcus stomatis has 1587 nodes and 89984
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07150 and has 2 connected components, where the component
+	with most nodes has 1585 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 113.40,
+	and the node degree mode is 1. The top 5 most central nodes are 596315.HMPREF0634_0794
+	(degree 731), 596315.HMPREF0634_0123 (degree 678), 596315.HMPREF0634_0012
+	(degree 614), 596315.HMPREF0634_1525 (degree 598) and 596315.HMPREF0634_1089
+	(degree 564).
 	
 
 

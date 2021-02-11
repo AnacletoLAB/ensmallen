@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:16.296072
 
-The undirected graph Verrucosispora maris has 5935 nodes and 750937 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04264 and
-has 22 connected components, where the component with most nodes has 5891 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 253.05, and the node degree mode is 4. The top 5 most central
-nodes are 263358.VAB18032_18385 (degree 2651), 263358.VAB18032_26230 (degree 1753),
-263358.VAB18032_11890 (degree 1658), 263358.VAB18032_28166 (degree 1509) and 263358.VAB18032_00670
+The undirected graph Verrucosispora maris has 5935 nodes and 750937 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04264 and has 22 connected components, where the component with most
+nodes has 5891 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 235, the mean node degree is 253.05, and
+the node degree mode is 4. The top 5 most central nodes are 263358.VAB18032_18385
+(degree 2651), 263358.VAB18032_26230 (degree 1753), 263358.VAB18032_11890
+(degree 1658), 263358.VAB18032_28166 (degree 1509) and 263358.VAB18032_00670
 (degree 1367).
 
 
@@ -107,13 +108,14 @@ def VerrucosisporaMaris(
 	
 	Datetime: 2021-02-02 20:13:16.296072
 	
-	The undirected graph Verrucosispora maris has 5935 nodes and 750937 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04264 and
-	has 22 connected components, where the component with most nodes has 5891 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 253.05, and the node degree mode is 4. The top 5 most central
-	nodes are 263358.VAB18032_18385 (degree 2651), 263358.VAB18032_26230 (degree 1753),
-	263358.VAB18032_11890 (degree 1658), 263358.VAB18032_28166 (degree 1509) and 263358.VAB18032_00670
+	The undirected graph Verrucosispora maris has 5935 nodes and 750937 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04264 and has 22 connected components, where the component with most
+	nodes has 5891 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 235, the mean node degree is 253.05, and
+	the node degree mode is 4. The top 5 most central nodes are 263358.VAB18032_18385
+	(degree 2651), 263358.VAB18032_26230 (degree 1753), 263358.VAB18032_11890
+	(degree 1658), 263358.VAB18032_28166 (degree 1509) and 263358.VAB18032_00670
 	(degree 1367).
 	
 

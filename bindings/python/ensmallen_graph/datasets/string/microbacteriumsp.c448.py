@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:24.642105
 
-The undirected graph Microbacterium sp. C448 has 3113 nodes and 214888 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04436 and
-has 16 connected components, where the component with most nodes has 3071 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 138.06, and the node degree mode is 3. The top 5 most central
-nodes are 1177594.MIC448_390035 (degree 1009), 1177594.MIC448_2540006 (degree 904),
-1177594.MIC448_2360013 (degree 900), 1177594.MIC448_1510015 (degree 891) and 1177594.MIC448_390040
+The undirected graph Microbacterium sp. C448 has 3113 nodes and 214888
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04436 and has 16 connected components, where the component
+with most nodes has 3071 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 138.06,
+and the node degree mode is 3. The top 5 most central nodes are 1177594.MIC448_390035
+(degree 1009), 1177594.MIC448_2540006 (degree 904), 1177594.MIC448_2360013
+(degree 900), 1177594.MIC448_1510015 (degree 891) and 1177594.MIC448_390040
 (degree 868).
 
 
@@ -107,13 +108,14 @@ def MicrobacteriumSp.C448(
 	
 	Datetime: 2021-02-02 23:09:24.642105
 	
-	The undirected graph Microbacterium sp. C448 has 3113 nodes and 214888 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04436 and
-	has 16 connected components, where the component with most nodes has 3071 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 138.06, and the node degree mode is 3. The top 5 most central
-	nodes are 1177594.MIC448_390035 (degree 1009), 1177594.MIC448_2540006 (degree 904),
-	1177594.MIC448_2360013 (degree 900), 1177594.MIC448_1510015 (degree 891) and 1177594.MIC448_390040
+	The undirected graph Microbacterium sp. C448 has 3113 nodes and 214888
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04436 and has 16 connected components, where the component
+	with most nodes has 3071 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 138.06,
+	and the node degree mode is 3. The top 5 most central nodes are 1177594.MIC448_390035
+	(degree 1009), 1177594.MIC448_2540006 (degree 904), 1177594.MIC448_2360013
+	(degree 900), 1177594.MIC448_1510015 (degree 891) and 1177594.MIC448_390040
 	(degree 868).
 	
 

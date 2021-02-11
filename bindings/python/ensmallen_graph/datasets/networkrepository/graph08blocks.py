@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-05 12:50:58.486287
 
-The undirected graph 08blocks has 300 nodes and 584 weighted edges, of which 8 are
-self-loops. The graph is dense as it has a density of 0.01293 and has 8 connected
-components, where the component with most nodes has 38 nodes and the component with
-the least nodes has 37 nodes. The graph median node degree is 3, the mean node degree
-is 3.87, and the node degree mode is 3. The top 5 most central nodes are 300 (degree
-38), 262 (degree 38), 224 (degree 38), 186 (degree 38) and 148 (degree 37).
+The undirected graph 08blocks has 300 nodes and 584 weighted edges, of
+which 8 are self-loops. The graph is dense as it has a density of 0.01293
+and has 8 connected components, where the component with most nodes has
+38 nodes and the component with the least nodes has 37 nodes. The graph
+median node degree is 3, the mean node degree is 3.87, and the node degree
+mode is 3. The top 5 most central nodes are 300 (degree 38), 262 (degree
+38), 224 (degree 38), 186 (degree 38) and 148 (degree 37).
 
 
 References
@@ -102,12 +103,13 @@ def Graph08blocks(
 	
 	Datetime: 2021-02-05 12:50:58.486287
 	
-	The undirected graph 08blocks has 300 nodes and 584 weighted edges, of which 8 are
-	self-loops. The graph is dense as it has a density of 0.01293 and has 8 connected
-	components, where the component with most nodes has 38 nodes and the component with
-	the least nodes has 37 nodes. The graph median node degree is 3, the mean node degree
-	is 3.87, and the node degree mode is 3. The top 5 most central nodes are 300 (degree
-	38), 262 (degree 38), 224 (degree 38), 186 (degree 38) and 148 (degree 37).
+	The undirected graph 08blocks has 300 nodes and 584 weighted edges, of
+	which 8 are self-loops. The graph is dense as it has a density of 0.01293
+	and has 8 connected components, where the component with most nodes has
+	38 nodes and the component with the least nodes has 37 nodes. The graph
+	median node degree is 3, the mean node degree is 3.87, and the node degree
+	mode is 3. The top 5 most central nodes are 300 (degree 38), 262 (degree
+	38), 224 (degree 38), 186 (degree 38) and 148 (degree 37).
 	
 
 

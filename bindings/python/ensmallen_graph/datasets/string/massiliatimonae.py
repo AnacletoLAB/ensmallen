@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:32.898435
 
-The undirected graph Massilia timonae has 5192 nodes and 790851 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05869 and
-has 12 connected components, where the component with most nodes has 5164 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 304.64, and the node degree mode is 2. The top 5 most central
-nodes are 883126.HMPREF9710_03167 (degree 1981), 883126.HMPREF9710_02774 (degree
-1823), 883126.HMPREF9710_01920 (degree 1818), 883126.HMPREF9710_00101 (degree 1816)
-and 883126.HMPREF9710_02990 (degree 1786).
+The undirected graph Massilia timonae has 5192 nodes and 790851 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05869 and has 12 connected components, where the component with most
+nodes has 5164 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 304.64, and
+the node degree mode is 2. The top 5 most central nodes are 883126.HMPREF9710_03167
+(degree 1981), 883126.HMPREF9710_02774 (degree 1823), 883126.HMPREF9710_01920
+(degree 1818), 883126.HMPREF9710_00101 (degree 1816) and 883126.HMPREF9710_02990
+(degree 1786).
 
 
 References
@@ -107,14 +108,15 @@ def MassiliaTimonae(
 	
 	Datetime: 2021-02-02 21:51:32.898435
 	
-	The undirected graph Massilia timonae has 5192 nodes and 790851 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05869 and
-	has 12 connected components, where the component with most nodes has 5164 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 304.64, and the node degree mode is 2. The top 5 most central
-	nodes are 883126.HMPREF9710_03167 (degree 1981), 883126.HMPREF9710_02774 (degree
-	1823), 883126.HMPREF9710_01920 (degree 1818), 883126.HMPREF9710_00101 (degree 1816)
-	and 883126.HMPREF9710_02990 (degree 1786).
+	The undirected graph Massilia timonae has 5192 nodes and 790851 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05869 and has 12 connected components, where the component with most
+	nodes has 5164 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 304.64, and
+	the node degree mode is 2. The top 5 most central nodes are 883126.HMPREF9710_03167
+	(degree 1981), 883126.HMPREF9710_02774 (degree 1823), 883126.HMPREF9710_01920
+	(degree 1818), 883126.HMPREF9710_00101 (degree 1816) and 883126.HMPREF9710_02990
+	(degree 1786).
 	
 
 

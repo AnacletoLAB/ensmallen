@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:08.939140
 
-The undirected graph Streptococcus macedonicus has 1999 nodes and 117637 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05891
-and has 6 connected components, where the component with most nodes has 1985 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 117.70, and the node degree mode is 5. The top 5 most
-central nodes are 1116231.SMA_2077 (degree 875), 1116231.SMA_0977 (degree 658), 1116231.SMA_0283
-(degree 639), 1116231.SMA_1640 (degree 632) and 1116231.SMA_2183 (degree 629).
+The undirected graph Streptococcus macedonicus has 1999 nodes and 117637
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05891 and has 6 connected components, where the component
+with most nodes has 1985 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 117.70,
+and the node degree mode is 5. The top 5 most central nodes are 1116231.SMA_2077
+(degree 875), 1116231.SMA_0977 (degree 658), 1116231.SMA_0283 (degree 639),
+1116231.SMA_1640 (degree 632) and 1116231.SMA_2183 (degree 629).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMacedonicus(
 	
 	Datetime: 2021-02-02 22:27:08.939140
 	
-	The undirected graph Streptococcus macedonicus has 1999 nodes and 117637 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05891
-	and has 6 connected components, where the component with most nodes has 1985 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 117.70, and the node degree mode is 5. The top 5 most
-	central nodes are 1116231.SMA_2077 (degree 875), 1116231.SMA_0977 (degree 658), 1116231.SMA_0283
-	(degree 639), 1116231.SMA_1640 (degree 632) and 1116231.SMA_2183 (degree 629).
+	The undirected graph Streptococcus macedonicus has 1999 nodes and 117637
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05891 and has 6 connected components, where the component
+	with most nodes has 1985 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 117.70,
+	and the node degree mode is 5. The top 5 most central nodes are 1116231.SMA_2077
+	(degree 875), 1116231.SMA_0977 (degree 658), 1116231.SMA_0283 (degree 639),
+	1116231.SMA_1640 (degree 632) and 1116231.SMA_2183 (degree 629).
 	
 
 

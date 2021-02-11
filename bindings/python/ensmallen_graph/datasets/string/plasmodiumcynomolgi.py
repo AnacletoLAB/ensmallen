@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:08.294795
 
-The undirected graph Plasmodium cynomolgi has 3929 nodes and 405050 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05249 and
-has 10 connected components, where the component with most nodes has 3911 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 206.18, and the node degree mode is 1. The top 5 most central
-nodes are 5827.XP_004221151.1 (degree 1182), 5827.XP_004222606.1 (degree 1156), 5827.XP_004221244.1
-(degree 1122), 5827.XP_004223716.1 (degree 1092) and 5827.XP_004222302.1 (degree
+The undirected graph Plasmodium cynomolgi has 3929 nodes and 405050 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05249 and has 10 connected components, where the component with most
+nodes has 3911 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 206.18, and
+the node degree mode is 1. The top 5 most central nodes are 5827.XP_004221151.1
+(degree 1182), 5827.XP_004222606.1 (degree 1156), 5827.XP_004221244.1 (degree
+1122), 5827.XP_004223716.1 (degree 1092) and 5827.XP_004222302.1 (degree
 1091).
 
 
@@ -107,13 +108,14 @@ def PlasmodiumCynomolgi(
 	
 	Datetime: 2021-02-02 17:16:08.294795
 	
-	The undirected graph Plasmodium cynomolgi has 3929 nodes and 405050 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05249 and
-	has 10 connected components, where the component with most nodes has 3911 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 206.18, and the node degree mode is 1. The top 5 most central
-	nodes are 5827.XP_004221151.1 (degree 1182), 5827.XP_004222606.1 (degree 1156), 5827.XP_004221244.1
-	(degree 1122), 5827.XP_004223716.1 (degree 1092) and 5827.XP_004222302.1 (degree
+	The undirected graph Plasmodium cynomolgi has 3929 nodes and 405050 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05249 and has 10 connected components, where the component with most
+	nodes has 3911 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 206.18, and
+	the node degree mode is 1. The top 5 most central nodes are 5827.XP_004221151.1
+	(degree 1182), 5827.XP_004222606.1 (degree 1156), 5827.XP_004221244.1 (degree
+	1122), 5827.XP_004223716.1 (degree 1092) and 5827.XP_004222302.1 (degree
 	1091).
 	
 

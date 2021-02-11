@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:05.984926
 
-The undirected graph Lactobacillus ceti has 1237 nodes and 81040 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10601
-and has 4 connected components, where the component with most nodes has 1231 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 131.03, and the node degree mode is 3. The top 5
-most central nodes are 1122146.AUHP01000009_gene841 (degree 606), 1122146.AUHP01000012_gene585
-(degree 552), 1122146.AUHP01000010_gene970 (degree 527), 1122146.AUHP01000009_gene906
-(degree 525) and 1122146.AUHP01000011_gene448 (degree 484).
+The undirected graph Lactobacillus ceti has 1237 nodes and 81040 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10601 and has 4 connected components, where the component
+with most nodes has 1231 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 131.03,
+and the node degree mode is 3. The top 5 most central nodes are 1122146.AUHP01000009_gene841
+(degree 606), 1122146.AUHP01000012_gene585 (degree 552), 1122146.AUHP01000010_gene970
+(degree 527), 1122146.AUHP01000009_gene906 (degree 525) and 1122146.AUHP01000011_gene448
+(degree 484).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusCeti(
 	
 	Datetime: 2021-02-02 22:41:05.984926
 	
-	The undirected graph Lactobacillus ceti has 1237 nodes and 81040 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10601
-	and has 4 connected components, where the component with most nodes has 1231 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 131.03, and the node degree mode is 3. The top 5
-	most central nodes are 1122146.AUHP01000009_gene841 (degree 606), 1122146.AUHP01000012_gene585
-	(degree 552), 1122146.AUHP01000010_gene970 (degree 527), 1122146.AUHP01000009_gene906
-	(degree 525) and 1122146.AUHP01000011_gene448 (degree 484).
+	The undirected graph Lactobacillus ceti has 1237 nodes and 81040 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10601 and has 4 connected components, where the component
+	with most nodes has 1231 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 131.03,
+	and the node degree mode is 3. The top 5 most central nodes are 1122146.AUHP01000009_gene841
+	(degree 606), 1122146.AUHP01000012_gene585 (degree 552), 1122146.AUHP01000010_gene970
+	(degree 527), 1122146.AUHP01000009_gene906 (degree 525) and 1122146.AUHP01000011_gene448
+	(degree 484).
 	
 
 

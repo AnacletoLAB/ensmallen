@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:01.280109
 
-The undirected graph Bacillus bataviensis has 5163 nodes and 604140 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04534 and
-has 22 connected components, where the component with most nodes has 5115 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 234.03, and the node degree mode is 1. The top 5 most central
-nodes are 1117379.BABA_21931 (degree 1952), 1117379.BABA_01265 (degree 1665), 1117379.BABA_13235
-(degree 1517), 1117379.BABA_24535 (degree 1466) and 1117379.BABA_23108 (degree 1410).
+The undirected graph Bacillus bataviensis has 5163 nodes and 604140 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04534 and has 22 connected components, where the component with most
+nodes has 5115 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 234.03, and
+the node degree mode is 1. The top 5 most central nodes are 1117379.BABA_21931
+(degree 1952), 1117379.BABA_01265 (degree 1665), 1117379.BABA_13235 (degree
+1517), 1117379.BABA_24535 (degree 1466) and 1117379.BABA_23108 (degree
+1410).
 
 
 References
@@ -106,13 +108,15 @@ def BacillusBataviensis(
 	
 	Datetime: 2021-02-05 17:18:01.280109
 	
-	The undirected graph Bacillus bataviensis has 5163 nodes and 604140 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04534 and
-	has 22 connected components, where the component with most nodes has 5115 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 234.03, and the node degree mode is 1. The top 5 most central
-	nodes are 1117379.BABA_21931 (degree 1952), 1117379.BABA_01265 (degree 1665), 1117379.BABA_13235
-	(degree 1517), 1117379.BABA_24535 (degree 1466) and 1117379.BABA_23108 (degree 1410).
+	The undirected graph Bacillus bataviensis has 5163 nodes and 604140 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04534 and has 22 connected components, where the component with most
+	nodes has 5115 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 234.03, and
+	the node degree mode is 1. The top 5 most central nodes are 1117379.BABA_21931
+	(degree 1952), 1117379.BABA_01265 (degree 1665), 1117379.BABA_13235 (degree
+	1517), 1117379.BABA_24535 (degree 1466) and 1117379.BABA_23108 (degree
+	1410).
 	
 
 

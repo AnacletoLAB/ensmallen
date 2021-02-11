@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:41.364066
 
-The undirected graph Acinetobacter tandoii has 3745 nodes and 334029 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04765 and
-has 14 connected components, where the component with most nodes has 3715 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 178.39, and the node degree mode is 1. The top 5 most central
-nodes are 202954.BBNK01000006_gene2232 (degree 1275), 202954.BBNK01000027_gene3662
-(degree 1244), 202954.BBNK01000001_gene750 (degree 1180), 202954.BBNK01000001_gene769
-(degree 1065) and 202954.BBNK01000006_gene2271 (degree 1061).
+The undirected graph Acinetobacter tandoii has 3745 nodes and 334029 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04765 and has 14 connected components, where the component with most
+nodes has 3715 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 178.39, and
+the node degree mode is 1. The top 5 most central nodes are 202954.BBNK01000006_gene2232
+(degree 1275), 202954.BBNK01000027_gene3662 (degree 1244), 202954.BBNK01000001_gene750
+(degree 1180), 202954.BBNK01000001_gene769 (degree 1065) and 202954.BBNK01000006_gene2271
+(degree 1061).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterTandoii(
 	
 	Datetime: 2021-02-02 19:59:41.364066
 	
-	The undirected graph Acinetobacter tandoii has 3745 nodes and 334029 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04765 and
-	has 14 connected components, where the component with most nodes has 3715 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 178.39, and the node degree mode is 1. The top 5 most central
-	nodes are 202954.BBNK01000006_gene2232 (degree 1275), 202954.BBNK01000027_gene3662
-	(degree 1244), 202954.BBNK01000001_gene750 (degree 1180), 202954.BBNK01000001_gene769
-	(degree 1065) and 202954.BBNK01000006_gene2271 (degree 1061).
+	The undirected graph Acinetobacter tandoii has 3745 nodes and 334029 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04765 and has 14 connected components, where the component with most
+	nodes has 3715 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 178.39, and
+	the node degree mode is 1. The top 5 most central nodes are 202954.BBNK01000006_gene2232
+	(degree 1275), 202954.BBNK01000027_gene3662 (degree 1244), 202954.BBNK01000001_gene750
+	(degree 1180), 202954.BBNK01000001_gene769 (degree 1065) and 202954.BBNK01000006_gene2271
+	(degree 1061).
 	
 
 

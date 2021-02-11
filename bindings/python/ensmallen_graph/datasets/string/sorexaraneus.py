@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:50.955449
 
-The undirected graph Sorex araneus has 18542 nodes and 3326989 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01935 and
-is connected, as it has a single component. The graph median node degree is 258,
-the mean node degree is 358.86, and the node degree mode is 1. The top 5 most central
-nodes are 42254.XP_004613853.1 (degree 3841), 42254.XP_004601295.1 (degree 3817),
-42254.XP_004602569.1 (degree 3783), 42254.XP_004605752.1 (degree 3588) and 42254.XP_004606175.1
-(degree 3532).
+The undirected graph Sorex araneus has 18542 nodes and 3326989 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01935 and is connected, as it has a single component. The graph median
+node degree is 258, the mean node degree is 358.86, and the node degree
+mode is 1. The top 5 most central nodes are 42254.XP_004613853.1 (degree
+3841), 42254.XP_004601295.1 (degree 3817), 42254.XP_004602569.1 (degree
+3783), 42254.XP_004605752.1 (degree 3588) and 42254.XP_004606175.1 (degree
+3532).
 
 
 References
@@ -106,13 +107,14 @@ def SorexAraneus(
 	
 	Datetime: 2021-02-02 18:12:50.955449
 	
-	The undirected graph Sorex araneus has 18542 nodes and 3326989 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01935 and
-	is connected, as it has a single component. The graph median node degree is 258,
-	the mean node degree is 358.86, and the node degree mode is 1. The top 5 most central
-	nodes are 42254.XP_004613853.1 (degree 3841), 42254.XP_004601295.1 (degree 3817),
-	42254.XP_004602569.1 (degree 3783), 42254.XP_004605752.1 (degree 3588) and 42254.XP_004606175.1
-	(degree 3532).
+	The undirected graph Sorex araneus has 18542 nodes and 3326989 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01935 and is connected, as it has a single component. The graph median
+	node degree is 258, the mean node degree is 358.86, and the node degree
+	mode is 1. The top 5 most central nodes are 42254.XP_004613853.1 (degree
+	3841), 42254.XP_004601295.1 (degree 3817), 42254.XP_004602569.1 (degree
+	3783), 42254.XP_004605752.1 (degree 3588) and 42254.XP_004606175.1 (degree
+	3532).
 	
 
 

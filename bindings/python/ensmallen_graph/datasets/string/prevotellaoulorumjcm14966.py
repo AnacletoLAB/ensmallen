@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:01.129742
 
-The undirected graph Prevotella oulorum JCM14966 has 2463 nodes and 176089 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-and has 46 connected components, where the component with most nodes has 2338 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 142.99, and the node degree mode is 1. The top 5
-most central nodes are 1236497.BAJQ01000050_gene341 (degree 946), 1236497.BAJQ01000003_gene942
-(degree 905), 1236497.BAJQ01000008_gene1278 (degree 845), 1236497.BAJQ01000055_gene436
-(degree 817) and 1236497.BAJQ01000013_gene1491 (degree 752).
+The undirected graph Prevotella oulorum JCM14966 has 2463 nodes and 176089
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05808 and has 46 connected components, where the component
+with most nodes has 2338 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 142.99,
+and the node degree mode is 1. The top 5 most central nodes are 1236497.BAJQ01000050_gene341
+(degree 946), 1236497.BAJQ01000003_gene942 (degree 905), 1236497.BAJQ01000008_gene1278
+(degree 845), 1236497.BAJQ01000055_gene436 (degree 817) and 1236497.BAJQ01000013_gene1491
+(degree 752).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaOulorumJcm14966(
 	
 	Datetime: 2021-02-02 23:31:01.129742
 	
-	The undirected graph Prevotella oulorum JCM14966 has 2463 nodes and 176089 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-	and has 46 connected components, where the component with most nodes has 2338 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 142.99, and the node degree mode is 1. The top 5
-	most central nodes are 1236497.BAJQ01000050_gene341 (degree 946), 1236497.BAJQ01000003_gene942
-	(degree 905), 1236497.BAJQ01000008_gene1278 (degree 845), 1236497.BAJQ01000055_gene436
-	(degree 817) and 1236497.BAJQ01000013_gene1491 (degree 752).
+	The undirected graph Prevotella oulorum JCM14966 has 2463 nodes and 176089
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05808 and has 46 connected components, where the component
+	with most nodes has 2338 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 142.99,
+	and the node degree mode is 1. The top 5 most central nodes are 1236497.BAJQ01000050_gene341
+	(degree 946), 1236497.BAJQ01000003_gene942 (degree 905), 1236497.BAJQ01000008_gene1278
+	(degree 845), 1236497.BAJQ01000055_gene436 (degree 817) and 1236497.BAJQ01000013_gene1491
+	(degree 752).
 	
 
 

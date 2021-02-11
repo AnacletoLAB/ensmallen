@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:56.572043
 
-The undirected graph Acetobacter pasteurianus IFO328301 has 2620 nodes and 201502
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05873 and has 10 connected components, where the component with most nodes has
-2598 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 134, the mean node degree is 153.82, and the node degree mode is 3. The
-top 5 most central nodes are 634452.APA01_21430 (degree 951), 634452.APA01_23120
-(degree 868), 634452.APA01_14730 (degree 802), 634452.APA01_22710 (degree 752) and
-634452.APA01_15080 (degree 731).
+The undirected graph Acetobacter pasteurianus IFO328301 has 2620 nodes
+and 201502 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05873 and has 10 connected components, where the
+component with most nodes has 2598 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+is 153.82, and the node degree mode is 3. The top 5 most central nodes
+are 634452.APA01_21430 (degree 951), 634452.APA01_23120 (degree 868), 634452.APA01_14730
+(degree 802), 634452.APA01_22710 (degree 752) and 634452.APA01_15080 (degree
+731).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterPasteurianusIfo328301(
 	
 	Datetime: 2021-02-02 21:21:56.572043
 	
-	The undirected graph Acetobacter pasteurianus IFO328301 has 2620 nodes and 201502
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05873 and has 10 connected components, where the component with most nodes has
-	2598 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 134, the mean node degree is 153.82, and the node degree mode is 3. The
-	top 5 most central nodes are 634452.APA01_21430 (degree 951), 634452.APA01_23120
-	(degree 868), 634452.APA01_14730 (degree 802), 634452.APA01_22710 (degree 752) and
-	634452.APA01_15080 (degree 731).
+	The undirected graph Acetobacter pasteurianus IFO328301 has 2620 nodes
+	and 201502 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05873 and has 10 connected components, where the
+	component with most nodes has 2598 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+	is 153.82, and the node degree mode is 3. The top 5 most central nodes
+	are 634452.APA01_21430 (degree 951), 634452.APA01_23120 (degree 868), 634452.APA01_14730
+	(degree 802), 634452.APA01_22710 (degree 752) and 634452.APA01_15080 (degree
+	731).
 	
 
 

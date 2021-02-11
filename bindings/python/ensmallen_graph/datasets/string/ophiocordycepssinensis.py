@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:31:17.962275
 
-The undirected graph Ophiocordyceps sinensis has 4936 nodes and 411094 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03375 and
-has 25 connected components, where the component with most nodes has 4885 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 166.57, and the node degree mode is 1. The top 5 most central
-nodes are 72228.T5AKA9 (degree 1425), 72228.T5AC16 (degree 1193), 72228.T5AFJ8 (degree
-1168), 72228.T5AFC4 (degree 1093) and 72228.T5AFQ7 (degree 1027).
+The undirected graph Ophiocordyceps sinensis has 4936 nodes and 411094
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03375 and has 25 connected components, where the component
+with most nodes has 4885 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 166.57,
+and the node degree mode is 1. The top 5 most central nodes are 72228.T5AKA9
+(degree 1425), 72228.T5AC16 (degree 1193), 72228.T5AFJ8 (degree 1168),
+72228.T5AFC4 (degree 1093) and 72228.T5AFQ7 (degree 1027).
 
 
 References
@@ -106,13 +107,14 @@ def OphiocordycepsSinensis(
 	
 	Datetime: 2021-02-02 18:31:17.962275
 	
-	The undirected graph Ophiocordyceps sinensis has 4936 nodes and 411094 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03375 and
-	has 25 connected components, where the component with most nodes has 4885 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 166.57, and the node degree mode is 1. The top 5 most central
-	nodes are 72228.T5AKA9 (degree 1425), 72228.T5AC16 (degree 1193), 72228.T5AFJ8 (degree
-	1168), 72228.T5AFC4 (degree 1093) and 72228.T5AFQ7 (degree 1027).
+	The undirected graph Ophiocordyceps sinensis has 4936 nodes and 411094
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03375 and has 25 connected components, where the component
+	with most nodes has 4885 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 166.57,
+	and the node degree mode is 1. The top 5 most central nodes are 72228.T5AKA9
+	(degree 1425), 72228.T5AC16 (degree 1193), 72228.T5AFJ8 (degree 1168),
+	72228.T5AFC4 (degree 1093) and 72228.T5AFQ7 (degree 1027).
 	
 
 

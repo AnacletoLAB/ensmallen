@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:59:04.733361
 
-The undirected graph eco-foodweb-baydry has 128 nodes and 2106 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.25910
-and is connected, as it has a single component. The graph median node degree is 32,
-the mean node degree is 32.91 and the node degree mode is 31. The top 5 most central
-nodes are 57 (degree 110), 18 (degree 89), 85 (degree 76), 21 (degree 72) and 84
-(degree 64).
+The undirected graph eco-foodweb-baydry has 128 nodes and 2106 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.25910 and is connected, as it has a single component. The
+graph median node degree is 32, the mean node degree is 32.91 and the node
+degree mode is 31. The top 5 most central nodes are 57 (degree 110), 18
+(degree 89), 85 (degree 76), 21 (degree 72) and 84 (degree 64).
 
 
 References
@@ -122,12 +122,12 @@ def EcoFoodwebBaydry(
 	
 	Datetime: 2021-02-03 23:59:04.733361
 	
-	The undirected graph eco-foodweb-baydry has 128 nodes and 2106 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.25910
-	and is connected, as it has a single component. The graph median node degree is 32,
-	the mean node degree is 32.91 and the node degree mode is 31. The top 5 most central
-	nodes are 57 (degree 110), 18 (degree 89), 85 (degree 76), 21 (degree 72) and 84
-	(degree 64).
+	The undirected graph eco-foodweb-baydry has 128 nodes and 2106 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.25910 and is connected, as it has a single component. The
+	graph median node degree is 32, the mean node degree is 32.91 and the node
+	degree mode is 31. The top 5 most central nodes are 57 (degree 110), 18
+	(degree 89), 85 (degree 76), 21 (degree 72) and 84 (degree 64).
 	
 
 

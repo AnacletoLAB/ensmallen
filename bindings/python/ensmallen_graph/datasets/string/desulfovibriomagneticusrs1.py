@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:21.678112
 
-The undirected graph Desulfovibrio magneticus RS1 has 4656 nodes and 649756 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05996
-and has 27 connected components, where the component with most nodes has 4591 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 279.10, and the node degree mode is 2. The top 5
-most central nodes are 573370.DMR_03660 (degree 1753), 573370.DMR_40320 (degree 1751),
-573370.DMR_01570 (degree 1465), 573370.DMR_41710 (degree 1404) and 573370.DMR_13630
-(degree 1369).
+The undirected graph Desulfovibrio magneticus RS1 has 4656 nodes and 649756
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05996 and has 27 connected components, where the component
+with most nodes has 4591 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 279.10,
+and the node degree mode is 2. The top 5 most central nodes are 573370.DMR_03660
+(degree 1753), 573370.DMR_40320 (degree 1751), 573370.DMR_01570 (degree
+1465), 573370.DMR_41710 (degree 1404) and 573370.DMR_13630 (degree 1369).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioMagneticusRs1(
 	
 	Datetime: 2021-02-02 21:14:21.678112
 	
-	The undirected graph Desulfovibrio magneticus RS1 has 4656 nodes and 649756 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05996
-	and has 27 connected components, where the component with most nodes has 4591 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 279.10, and the node degree mode is 2. The top 5
-	most central nodes are 573370.DMR_03660 (degree 1753), 573370.DMR_40320 (degree 1751),
-	573370.DMR_01570 (degree 1465), 573370.DMR_41710 (degree 1404) and 573370.DMR_13630
-	(degree 1369).
+	The undirected graph Desulfovibrio magneticus RS1 has 4656 nodes and 649756
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05996 and has 27 connected components, where the component
+	with most nodes has 4591 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 279.10,
+	and the node degree mode is 2. The top 5 most central nodes are 573370.DMR_03660
+	(degree 1753), 573370.DMR_40320 (degree 1751), 573370.DMR_01570 (degree
+	1465), 573370.DMR_41710 (degree 1404) and 573370.DMR_13630 (degree 1369).
 	
 
 

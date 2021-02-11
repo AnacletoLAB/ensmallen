@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:29.464371
 
-The undirected graph Sulfuricurvum kujiense has 2639 nodes and 224285 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06443 and
-has 9 connected components, where the component with most nodes has 2619 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 169.98, and the node degree mode is 3. The top 5 most central
-nodes are 709032.Sulku_1394 (degree 1171), 709032.Sulku_0710 (degree 1063), 709032.Sulku_2022
-(degree 984), 709032.Sulku_1960 (degree 963) and 709032.Sulku_0331 (degree 932).
+The undirected graph Sulfuricurvum kujiense has 2639 nodes and 224285 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06443 and has 9 connected components, where the component with most
+nodes has 2619 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 169.98, and
+the node degree mode is 3. The top 5 most central nodes are 709032.Sulku_1394
+(degree 1171), 709032.Sulku_0710 (degree 1063), 709032.Sulku_2022 (degree
+984), 709032.Sulku_1960 (degree 963) and 709032.Sulku_0331 (degree 932).
 
 
 References
@@ -106,13 +107,14 @@ def SulfuricurvumKujiense(
 	
 	Datetime: 2021-02-02 21:34:29.464371
 	
-	The undirected graph Sulfuricurvum kujiense has 2639 nodes and 224285 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06443 and
-	has 9 connected components, where the component with most nodes has 2619 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 169.98, and the node degree mode is 3. The top 5 most central
-	nodes are 709032.Sulku_1394 (degree 1171), 709032.Sulku_0710 (degree 1063), 709032.Sulku_2022
-	(degree 984), 709032.Sulku_1960 (degree 963) and 709032.Sulku_0331 (degree 932).
+	The undirected graph Sulfuricurvum kujiense has 2639 nodes and 224285 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06443 and has 9 connected components, where the component with most
+	nodes has 2619 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 169.98, and
+	the node degree mode is 3. The top 5 most central nodes are 709032.Sulku_1394
+	(degree 1171), 709032.Sulku_0710 (degree 1063), 709032.Sulku_2022 (degree
+	984), 709032.Sulku_1960 (degree 963) and 709032.Sulku_0331 (degree 932).
 	
 
 

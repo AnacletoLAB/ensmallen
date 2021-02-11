@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:44.536473
 
-The undirected graph Streptococcus oralis ATCC49296 has 2003 nodes and 137861 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06876
-and has 5 connected components, where the component with most nodes has 1995 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 137.65, and the node degree mode is 9. The top 5
-most central nodes are 888049.HMPREF8578_0494 (degree 871), 888049.HMPREF8578_0466
-(degree 739), 888049.HMPREF8578_0057 (degree 710), 888049.HMPREF8578_0947 (degree
+The undirected graph Streptococcus oralis ATCC49296 has 2003 nodes and
+137861 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06876 and has 5 connected components, where the
+component with most nodes has 1995 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 137.65, and the node degree mode is 9. The top 5 most central nodes
+are 888049.HMPREF8578_0494 (degree 871), 888049.HMPREF8578_0466 (degree
+739), 888049.HMPREF8578_0057 (degree 710), 888049.HMPREF8578_0947 (degree
 687) and 888049.HMPREF8578_1340 (degree 676).
 
 
@@ -107,13 +108,14 @@ def StreptococcusOralisAtcc49296(
 	
 	Datetime: 2021-02-02 21:52:44.536473
 	
-	The undirected graph Streptococcus oralis ATCC49296 has 2003 nodes and 137861 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06876
-	and has 5 connected components, where the component with most nodes has 1995 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 137.65, and the node degree mode is 9. The top 5
-	most central nodes are 888049.HMPREF8578_0494 (degree 871), 888049.HMPREF8578_0466
-	(degree 739), 888049.HMPREF8578_0057 (degree 710), 888049.HMPREF8578_0947 (degree
+	The undirected graph Streptococcus oralis ATCC49296 has 2003 nodes and
+	137861 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06876 and has 5 connected components, where the
+	component with most nodes has 1995 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 137.65, and the node degree mode is 9. The top 5 most central nodes
+	are 888049.HMPREF8578_0494 (degree 871), 888049.HMPREF8578_0466 (degree
+	739), 888049.HMPREF8578_0057 (degree 710), 888049.HMPREF8578_0947 (degree
 	687) and 888049.HMPREF8578_1340 (degree 676).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:45.679197
 
-The undirected graph Myxococcus xanthus has 7179 nodes and 764719 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02968 and
-has 51 connected components, where the component with most nodes has 7052 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 213.04, and the node degree mode is 2. The top 5 most central
-nodes are 246197.MXAN_3932 (degree 3085), 246197.MXAN_6735 (degree 2730), 246197.MXAN_0712
-(degree 2573), 246197.MXAN_4445 (degree 2270) and 246197.MXAN_1528 (degree 2143).
+The undirected graph Myxococcus xanthus has 7179 nodes and 764719 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02968 and has 51 connected components, where the component with most
+nodes has 7052 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 213.04, and
+the node degree mode is 2. The top 5 most central nodes are 246197.MXAN_3932
+(degree 3085), 246197.MXAN_6735 (degree 2730), 246197.MXAN_0712 (degree
+2573), 246197.MXAN_4445 (degree 2270) and 246197.MXAN_1528 (degree 2143).
 
 
 References
@@ -106,13 +107,14 @@ def MyxococcusXanthus(
 	
 	Datetime: 2021-02-02 20:10:45.679197
 	
-	The undirected graph Myxococcus xanthus has 7179 nodes and 764719 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02968 and
-	has 51 connected components, where the component with most nodes has 7052 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 213.04, and the node degree mode is 2. The top 5 most central
-	nodes are 246197.MXAN_3932 (degree 3085), 246197.MXAN_6735 (degree 2730), 246197.MXAN_0712
-	(degree 2573), 246197.MXAN_4445 (degree 2270) and 246197.MXAN_1528 (degree 2143).
+	The undirected graph Myxococcus xanthus has 7179 nodes and 764719 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02968 and has 51 connected components, where the component with most
+	nodes has 7052 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 213.04, and
+	the node degree mode is 2. The top 5 most central nodes are 246197.MXAN_3932
+	(degree 3085), 246197.MXAN_6735 (degree 2730), 246197.MXAN_0712 (degree
+	2573), 246197.MXAN_4445 (degree 2270) and 246197.MXAN_1528 (degree 2143).
 	
 
 

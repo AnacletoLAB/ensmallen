@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:37.261804
 
-The undirected graph Anaplasma phagocytophilum has 1236 nodes and 60076 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07871
-and has 47 connected components, where the component with most nodes has 1121 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 70, the mean node degree is 97.21, and the node degree mode is 1. The top 5 most
-central nodes are 212042.APH_0001 (degree 472), 212042.APH_0088 (degree 446), 212042.APH_0305
-(degree 435), 212042.APH_0273 (degree 433) and 212042.APH_1233 (degree 417).
+The undirected graph Anaplasma phagocytophilum has 1236 nodes and 60076
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07871 and has 47 connected components, where the component
+with most nodes has 1121 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 70, the mean node degree is 97.21,
+and the node degree mode is 1. The top 5 most central nodes are 212042.APH_0001
+(degree 472), 212042.APH_0088 (degree 446), 212042.APH_0305 (degree 435),
+212042.APH_0273 (degree 433) and 212042.APH_1233 (degree 417).
 
 
 References
@@ -106,13 +107,14 @@ def AnaplasmaPhagocytophilum(
 	
 	Datetime: 2021-02-02 20:01:37.261804
 	
-	The undirected graph Anaplasma phagocytophilum has 1236 nodes and 60076 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07871
-	and has 47 connected components, where the component with most nodes has 1121 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 70, the mean node degree is 97.21, and the node degree mode is 1. The top 5 most
-	central nodes are 212042.APH_0001 (degree 472), 212042.APH_0088 (degree 446), 212042.APH_0305
-	(degree 435), 212042.APH_0273 (degree 433) and 212042.APH_1233 (degree 417).
+	The undirected graph Anaplasma phagocytophilum has 1236 nodes and 60076
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07871 and has 47 connected components, where the component
+	with most nodes has 1121 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 70, the mean node degree is 97.21,
+	and the node degree mode is 1. The top 5 most central nodes are 212042.APH_0001
+	(degree 472), 212042.APH_0088 (degree 446), 212042.APH_0305 (degree 435),
+	212042.APH_0273 (degree 433) and 212042.APH_1233 (degree 417).
 	
 
 

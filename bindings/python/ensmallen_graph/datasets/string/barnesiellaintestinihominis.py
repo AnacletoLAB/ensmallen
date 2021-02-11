@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:13.728519
 
-The undirected graph Barnesiella intestinihominis has 2782 nodes and 240928 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06228
-and has 10 connected components, where the component with most nodes has 2759 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 173.20, and the node degree mode is 2. The top 5
-most central nodes are 742726.HMPREF9448_02685 (degree 924), 742726.HMPREF9448_01329
-(degree 875), 742726.HMPREF9448_00500 (degree 806), 742726.HMPREF9448_02544 (degree
-790) and 742726.HMPREF9448_00807 (degree 750).
+The undirected graph Barnesiella intestinihominis has 2782 nodes and 240928
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06228 and has 10 connected components, where the component
+with most nodes has 2759 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 173.20,
+and the node degree mode is 2. The top 5 most central nodes are 742726.HMPREF9448_02685
+(degree 924), 742726.HMPREF9448_01329 (degree 875), 742726.HMPREF9448_00500
+(degree 806), 742726.HMPREF9448_02544 (degree 790) and 742726.HMPREF9448_00807
+(degree 750).
 
 
 References
@@ -107,14 +108,15 @@ def BarnesiellaIntestinihominis(
 	
 	Datetime: 2021-02-02 21:37:13.728519
 	
-	The undirected graph Barnesiella intestinihominis has 2782 nodes and 240928 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06228
-	and has 10 connected components, where the component with most nodes has 2759 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 173.20, and the node degree mode is 2. The top 5
-	most central nodes are 742726.HMPREF9448_02685 (degree 924), 742726.HMPREF9448_01329
-	(degree 875), 742726.HMPREF9448_00500 (degree 806), 742726.HMPREF9448_02544 (degree
-	790) and 742726.HMPREF9448_00807 (degree 750).
+	The undirected graph Barnesiella intestinihominis has 2782 nodes and 240928
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06228 and has 10 connected components, where the component
+	with most nodes has 2759 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 173.20,
+	and the node degree mode is 2. The top 5 most central nodes are 742726.HMPREF9448_02685
+	(degree 924), 742726.HMPREF9448_01329 (degree 875), 742726.HMPREF9448_00500
+	(degree 806), 742726.HMPREF9448_02544 (degree 790) and 742726.HMPREF9448_00807
+	(degree 750).
 	
 
 

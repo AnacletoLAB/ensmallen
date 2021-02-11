@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:25.624611
 
-The undirected graph socfb-MIT8 has 6440 nodes and 251252 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01212 and has 18
-connected components, where the component with most nodes has 6402 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 56, the
-mean node degree is 78.03, and the node degree mode is 1. The top 5 most central
-nodes are 3001 (degree 708), 3613 (degree 694), 5245 (degree 665), 1779 (degree 623)
-and 2739 (degree 617).
+The undirected graph socfb-MIT8 has 6440 nodes and 251252 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01212 and has 18 connected components, where the component with most
+nodes has 6402 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 78.03, and
+the node degree mode is 1. The top 5 most central nodes are 3001 (degree
+708), 3613 (degree 694), 5245 (degree 665), 1779 (degree 623) and 2739
+(degree 617).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbMit8(
 	
 	Datetime: 2021-02-06 11:49:25.624611
 	
-	The undirected graph socfb-MIT8 has 6440 nodes and 251252 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01212 and has 18
-	connected components, where the component with most nodes has 6402 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 56, the
-	mean node degree is 78.03, and the node degree mode is 1. The top 5 most central
-	nodes are 3001 (degree 708), 3613 (degree 694), 5245 (degree 665), 1779 (degree 623)
-	and 2739 (degree 617).
+	The undirected graph socfb-MIT8 has 6440 nodes and 251252 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01212 and has 18 connected components, where the component with most
+	nodes has 6402 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 78.03, and
+	the node degree mode is 1. The top 5 most central nodes are 3001 (degree
+	708), 3613 (degree 694), 5245 (degree 665), 1779 (degree 623) and 2739
+	(degree 617).
 	
 
 

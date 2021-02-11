@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:53.555853
 
-The undirected graph Bacterium sp. OL1 has 2080 nodes and 214986 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09943 and
-has 11 connected components, where the component with most nodes has 2044 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 206.72, and the node degree mode is 3. The top 5 most central
-nodes are 1504822.CCNO01000014_gene1631 (degree 1205), 1504822.CCNO01000015_gene735
-(degree 1084), 1504822.CCNO01000014_gene1163 (degree 1031), 1504822.CCNO01000015_gene1040
-(degree 984) and 1504822.CCNO01000014_gene1620 (degree 955).
+The undirected graph Bacterium sp. OL1 has 2080 nodes and 214986 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09943 and has 11 connected components, where the component with most
+nodes has 2044 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 206.72, and
+the node degree mode is 3. The top 5 most central nodes are 1504822.CCNO01000014_gene1631
+(degree 1205), 1504822.CCNO01000015_gene735 (degree 1084), 1504822.CCNO01000014_gene1163
+(degree 1031), 1504822.CCNO01000015_gene1040 (degree 984) and 1504822.CCNO01000014_gene1620
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def BacteriumSp.Ol1(
 	
 	Datetime: 2021-02-03 23:16:53.555853
 	
-	The undirected graph Bacterium sp. OL1 has 2080 nodes and 214986 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09943 and
-	has 11 connected components, where the component with most nodes has 2044 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 206.72, and the node degree mode is 3. The top 5 most central
-	nodes are 1504822.CCNO01000014_gene1631 (degree 1205), 1504822.CCNO01000015_gene735
-	(degree 1084), 1504822.CCNO01000014_gene1163 (degree 1031), 1504822.CCNO01000015_gene1040
-	(degree 984) and 1504822.CCNO01000014_gene1620 (degree 955).
+	The undirected graph Bacterium sp. OL1 has 2080 nodes and 214986 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09943 and has 11 connected components, where the component with most
+	nodes has 2044 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 206.72, and
+	the node degree mode is 3. The top 5 most central nodes are 1504822.CCNO01000014_gene1631
+	(degree 1205), 1504822.CCNO01000015_gene735 (degree 1084), 1504822.CCNO01000014_gene1163
+	(degree 1031), 1504822.CCNO01000015_gene1040 (degree 984) and 1504822.CCNO01000014_gene1620
+	(degree 955).
 	
 
 

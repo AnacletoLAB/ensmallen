@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:18.322532
 
-The undirected graph Streptococcus sp. SK643 has 1774 nodes and 115833 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07365 and
-has 12 connected components, where the component with most nodes has 1729 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 130.59, and the node degree mode is 6. The top 5 most central
-nodes are 1095727.HMPREF1117_1210 (degree 785), 1095727.HMPREF1117_0337 (degree 692),
-1095727.HMPREF1117_0173 (degree 646), 1095727.HMPREF1117_1655 (degree 644) and 1095727.HMPREF1117_0897
+The undirected graph Streptococcus sp. SK643 has 1774 nodes and 115833
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07365 and has 12 connected components, where the component
+with most nodes has 1729 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 130.59,
+and the node degree mode is 6. The top 5 most central nodes are 1095727.HMPREF1117_1210
+(degree 785), 1095727.HMPREF1117_0337 (degree 692), 1095727.HMPREF1117_0173
+(degree 646), 1095727.HMPREF1117_1655 (degree 644) and 1095727.HMPREF1117_0897
 (degree 633).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.Sk643(
 	
 	Datetime: 2021-02-02 22:23:18.322532
 	
-	The undirected graph Streptococcus sp. SK643 has 1774 nodes and 115833 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07365 and
-	has 12 connected components, where the component with most nodes has 1729 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 130.59, and the node degree mode is 6. The top 5 most central
-	nodes are 1095727.HMPREF1117_1210 (degree 785), 1095727.HMPREF1117_0337 (degree 692),
-	1095727.HMPREF1117_0173 (degree 646), 1095727.HMPREF1117_1655 (degree 644) and 1095727.HMPREF1117_0897
+	The undirected graph Streptococcus sp. SK643 has 1774 nodes and 115833
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07365 and has 12 connected components, where the component
+	with most nodes has 1729 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 130.59,
+	and the node degree mode is 6. The top 5 most central nodes are 1095727.HMPREF1117_1210
+	(degree 785), 1095727.HMPREF1117_0337 (degree 692), 1095727.HMPREF1117_0173
+	(degree 646), 1095727.HMPREF1117_1655 (degree 644) and 1095727.HMPREF1117_0897
 	(degree 633).
 	
 

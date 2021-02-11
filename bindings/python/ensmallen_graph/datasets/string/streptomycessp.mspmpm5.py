@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:08.595829
 
-The undirected graph Streptomyces sp. MspMPM5 has 7154 nodes and 1346492 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05263
-and has 32 connected components, where the component with most nodes has 7076 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 312, the mean node degree is 376.43, and the node degree mode is 2. The top 5
-most central nodes are 1155718.KB891882_gene5763 (degree 3613), 1155718.KB891886_gene6151
-(degree 2582), 1155718.KB891929_gene2481 (degree 2175), 1155718.KB891854_gene2975
-(degree 2170) and 1155718.KB891896_gene2108 (degree 2092).
+The undirected graph Streptomyces sp. MspMPM5 has 7154 nodes and 1346492
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05263 and has 32 connected components, where the component
+with most nodes has 7076 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 312, the mean node degree is 376.43,
+and the node degree mode is 2. The top 5 most central nodes are 1155718.KB891882_gene5763
+(degree 3613), 1155718.KB891886_gene6151 (degree 2582), 1155718.KB891929_gene2481
+(degree 2175), 1155718.KB891854_gene2975 (degree 2170) and 1155718.KB891896_gene2108
+(degree 2092).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Mspmpm5(
 	
 	Datetime: 2021-02-02 23:01:08.595829
 	
-	The undirected graph Streptomyces sp. MspMPM5 has 7154 nodes and 1346492 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05263
-	and has 32 connected components, where the component with most nodes has 7076 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 312, the mean node degree is 376.43, and the node degree mode is 2. The top 5
-	most central nodes are 1155718.KB891882_gene5763 (degree 3613), 1155718.KB891886_gene6151
-	(degree 2582), 1155718.KB891929_gene2481 (degree 2175), 1155718.KB891854_gene2975
-	(degree 2170) and 1155718.KB891896_gene2108 (degree 2092).
+	The undirected graph Streptomyces sp. MspMPM5 has 7154 nodes and 1346492
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05263 and has 32 connected components, where the component
+	with most nodes has 7076 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 312, the mean node degree is 376.43,
+	and the node degree mode is 2. The top 5 most central nodes are 1155718.KB891882_gene5763
+	(degree 3613), 1155718.KB891886_gene6151 (degree 2582), 1155718.KB891929_gene2481
+	(degree 2175), 1155718.KB891854_gene2975 (degree 2170) and 1155718.KB891896_gene2108
+	(degree 2092).
 	
 
 

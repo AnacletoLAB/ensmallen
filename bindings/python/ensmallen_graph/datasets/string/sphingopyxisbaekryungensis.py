@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:33.476940
 
-The undirected graph Sphingopyxis baekryungensis has 2710 nodes and 243926 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06645
-and has 6 connected components, where the component with most nodes has 2700 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 180.02, and the node degree mode is 3. The top 5
-most central nodes are 1123270.ATUR01000008_gene376 (degree 1092), 1123270.ATUR01000002_gene2525
-(degree 971), 1123270.ATUR01000003_gene916 (degree 964), 1123270.ATUR01000002_gene2596
-(degree 900) and 1123270.ATUR01000004_gene1817 (degree 874).
+The undirected graph Sphingopyxis baekryungensis has 2710 nodes and 243926
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06645 and has 6 connected components, where the component
+with most nodes has 2700 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 180.02,
+and the node degree mode is 3. The top 5 most central nodes are 1123270.ATUR01000008_gene376
+(degree 1092), 1123270.ATUR01000002_gene2525 (degree 971), 1123270.ATUR01000003_gene916
+(degree 964), 1123270.ATUR01000002_gene2596 (degree 900) and 1123270.ATUR01000004_gene1817
+(degree 874).
 
 
 References
@@ -107,14 +108,15 @@ def SphingopyxisBaekryungensis(
 	
 	Datetime: 2021-02-02 22:49:33.476940
 	
-	The undirected graph Sphingopyxis baekryungensis has 2710 nodes and 243926 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06645
-	and has 6 connected components, where the component with most nodes has 2700 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 180.02, and the node degree mode is 3. The top 5
-	most central nodes are 1123270.ATUR01000008_gene376 (degree 1092), 1123270.ATUR01000002_gene2525
-	(degree 971), 1123270.ATUR01000003_gene916 (degree 964), 1123270.ATUR01000002_gene2596
-	(degree 900) and 1123270.ATUR01000004_gene1817 (degree 874).
+	The undirected graph Sphingopyxis baekryungensis has 2710 nodes and 243926
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06645 and has 6 connected components, where the component
+	with most nodes has 2700 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 180.02,
+	and the node degree mode is 3. The top 5 most central nodes are 1123270.ATUR01000008_gene376
+	(degree 1092), 1123270.ATUR01000002_gene2525 (degree 971), 1123270.ATUR01000003_gene916
+	(degree 964), 1123270.ATUR01000002_gene2596 (degree 900) and 1123270.ATUR01000004_gene1817
+	(degree 874).
 	
 
 

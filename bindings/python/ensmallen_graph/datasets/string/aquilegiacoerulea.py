@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:39.005043
 
-The undirected graph Aquilegia coerulea has 19718 nodes and 3867573 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01990 and
-has 3 connected components, where the component with most nodes has 19714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 392.29, and the node degree mode is 6. The top 5 most central
-nodes are 218851.Aquca_001_00346.1 (degree 6277), 218851.Aquca_007_00274.1 (degree
-4777), 218851.Aquca_010_00552.1 (degree 4777), 218851.Aquca_007_00444.1 (degree 4777)
-and 218851.Aquca_001_00465.1 (degree 4273).
+The undirected graph Aquilegia coerulea has 19718 nodes and 3867573 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01990 and has 3 connected components, where the component with most
+nodes has 19714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 392.29, and
+the node degree mode is 6. The top 5 most central nodes are 218851.Aquca_001_00346.1
+(degree 6277), 218851.Aquca_007_00274.1 (degree 4777), 218851.Aquca_010_00552.1
+(degree 4777), 218851.Aquca_007_00444.1 (degree 4777) and 218851.Aquca_001_00465.1
+(degree 4273).
 
 
 References
@@ -107,14 +108,15 @@ def AquilegiaCoerulea(
 	
 	Datetime: 2021-02-02 20:03:39.005043
 	
-	The undirected graph Aquilegia coerulea has 19718 nodes and 3867573 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01990 and
-	has 3 connected components, where the component with most nodes has 19714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 392.29, and the node degree mode is 6. The top 5 most central
-	nodes are 218851.Aquca_001_00346.1 (degree 6277), 218851.Aquca_007_00274.1 (degree
-	4777), 218851.Aquca_010_00552.1 (degree 4777), 218851.Aquca_007_00444.1 (degree 4777)
-	and 218851.Aquca_001_00465.1 (degree 4273).
+	The undirected graph Aquilegia coerulea has 19718 nodes and 3867573 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01990 and has 3 connected components, where the component with most
+	nodes has 19714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 392.29, and
+	the node degree mode is 6. The top 5 most central nodes are 218851.Aquca_001_00346.1
+	(degree 6277), 218851.Aquca_007_00274.1 (degree 4777), 218851.Aquca_010_00552.1
+	(degree 4777), 218851.Aquca_007_00444.1 (degree 4777) and 218851.Aquca_001_00465.1
+	(degree 4273).
 	
 
 

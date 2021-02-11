@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:41.596276
 
-The undirected graph Devosia sp. 172E8 has 3904 nodes and 455495 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05979 and
-has 22 connected components, where the component with most nodes has 3857 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 233.35, and the node degree mode is 1. The top 5 most central
-nodes are 1535287.JP74_10870 (degree 1161), 1535287.JP74_15360 (degree 1156), 1535287.JP74_07800
-(degree 1037), 1535287.JP74_05450 (degree 1016) and 1535287.JP74_01115 (degree 995).
+The undirected graph Devosia sp. 172E8 has 3904 nodes and 455495 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05979 and has 22 connected components, where the component with most
+nodes has 3857 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 233.35, and
+the node degree mode is 1. The top 5 most central nodes are 1535287.JP74_10870
+(degree 1161), 1535287.JP74_15360 (degree 1156), 1535287.JP74_07800 (degree
+1037), 1535287.JP74_05450 (degree 1016) and 1535287.JP74_01115 (degree
+995).
 
 
 References
@@ -106,13 +108,15 @@ def DevosiaSp.172e8(
 	
 	Datetime: 2021-02-03 23:18:41.596276
 	
-	The undirected graph Devosia sp. 172E8 has 3904 nodes and 455495 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05979 and
-	has 22 connected components, where the component with most nodes has 3857 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 233.35, and the node degree mode is 1. The top 5 most central
-	nodes are 1535287.JP74_10870 (degree 1161), 1535287.JP74_15360 (degree 1156), 1535287.JP74_07800
-	(degree 1037), 1535287.JP74_05450 (degree 1016) and 1535287.JP74_01115 (degree 995).
+	The undirected graph Devosia sp. 172E8 has 3904 nodes and 455495 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05979 and has 22 connected components, where the component with most
+	nodes has 3857 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 233.35, and
+	the node degree mode is 1. The top 5 most central nodes are 1535287.JP74_10870
+	(degree 1161), 1535287.JP74_15360 (degree 1156), 1535287.JP74_07800 (degree
+	1037), 1535287.JP74_05450 (degree 1016) and 1535287.JP74_01115 (degree
+	995).
 	
 
 

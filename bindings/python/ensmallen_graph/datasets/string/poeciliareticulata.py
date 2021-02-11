@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:27:29.930805
 
-The undirected graph Poecilia reticulata has 21273 nodes and 5431435 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02401 and
-has 3 connected components, where the component with most nodes has 21269 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 348,
-the mean node degree is 510.64, and the node degree mode is 251. The top 5 most central
-nodes are 8081.XP_008426447.1 (degree 5303), 8081.XP_008409082.1 (degree 4506), 8081.XP_008417574.1
-(degree 4367), 8081.XP_008414843.1 (degree 4326) and 8081.XP_008403226.1 (degree
+The undirected graph Poecilia reticulata has 21273 nodes and 5431435 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02401 and has 3 connected components, where the component with most
+nodes has 21269 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 348, the mean node degree is 510.64, and
+the node degree mode is 251. The top 5 most central nodes are 8081.XP_008426447.1
+(degree 5303), 8081.XP_008409082.1 (degree 4506), 8081.XP_008417574.1 (degree
+4367), 8081.XP_008414843.1 (degree 4326) and 8081.XP_008403226.1 (degree
 4320).
 
 
@@ -107,13 +108,14 @@ def PoeciliaReticulata(
 	
 	Datetime: 2021-02-02 17:27:29.930805
 	
-	The undirected graph Poecilia reticulata has 21273 nodes and 5431435 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02401 and
-	has 3 connected components, where the component with most nodes has 21269 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 348,
-	the mean node degree is 510.64, and the node degree mode is 251. The top 5 most central
-	nodes are 8081.XP_008426447.1 (degree 5303), 8081.XP_008409082.1 (degree 4506), 8081.XP_008417574.1
-	(degree 4367), 8081.XP_008414843.1 (degree 4326) and 8081.XP_008403226.1 (degree
+	The undirected graph Poecilia reticulata has 21273 nodes and 5431435 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02401 and has 3 connected components, where the component with most
+	nodes has 21269 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 348, the mean node degree is 510.64, and
+	the node degree mode is 251. The top 5 most central nodes are 8081.XP_008426447.1
+	(degree 5303), 8081.XP_008409082.1 (degree 4506), 8081.XP_008417574.1 (degree
+	4367), 8081.XP_008414843.1 (degree 4326) and 8081.XP_008403226.1 (degree
 	4320).
 	
 

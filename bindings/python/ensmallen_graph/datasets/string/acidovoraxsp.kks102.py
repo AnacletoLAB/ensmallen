@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:59.074957
 
-The undirected graph Acidovorax sp. KKS102 has 4722 nodes and 394543 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03540 and
-has 5 connected components, where the component with most nodes has 4714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 167.11, and the node degree mode is 3. The top 5 most central
-nodes are 358220.C380_06880 (degree 1760), 358220.C380_17640 (degree 1487), 358220.C380_14650
-(degree 1340), 358220.C380_04330 (degree 1326) and 358220.C380_21970 (degree 1305).
+The undirected graph Acidovorax sp. KKS102 has 4722 nodes and 394543 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03540 and has 5 connected components, where the component with most
+nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 167.11, and
+the node degree mode is 3. The top 5 most central nodes are 358220.C380_06880
+(degree 1760), 358220.C380_17640 (degree 1487), 358220.C380_14650 (degree
+1340), 358220.C380_04330 (degree 1326) and 358220.C380_21970 (degree 1305).
 
 
 References
@@ -106,13 +107,14 @@ def AcidovoraxSp.Kks102(
 	
 	Datetime: 2021-02-02 20:33:59.074957
 	
-	The undirected graph Acidovorax sp. KKS102 has 4722 nodes and 394543 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03540 and
-	has 5 connected components, where the component with most nodes has 4714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 167.11, and the node degree mode is 3. The top 5 most central
-	nodes are 358220.C380_06880 (degree 1760), 358220.C380_17640 (degree 1487), 358220.C380_14650
-	(degree 1340), 358220.C380_04330 (degree 1326) and 358220.C380_21970 (degree 1305).
+	The undirected graph Acidovorax sp. KKS102 has 4722 nodes and 394543 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03540 and has 5 connected components, where the component with most
+	nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 167.11, and
+	the node degree mode is 3. The top 5 most central nodes are 358220.C380_06880
+	(degree 1760), 358220.C380_17640 (degree 1487), 358220.C380_14650 (degree
+	1340), 358220.C380_04330 (degree 1326) and 358220.C380_21970 (degree 1305).
 	
 
 

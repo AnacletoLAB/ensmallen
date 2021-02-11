@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:06.387498
 
-The undirected graph Caloramator australicus has 2680 nodes and 213050 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05935 and
-has 11 connected components, where the component with most nodes has 2658 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 158.99, and the node degree mode is 1. The top 5 most central
-nodes are 857293.CAAU_1091 (degree 1018), 857293.CAAU_1241 (degree 863), 857293.CAAU_0562
-(degree 847), 857293.CAAU_1884 (degree 836) and 857293.CAAU_1710 (degree 828).
+The undirected graph Caloramator australicus has 2680 nodes and 213050
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05935 and has 11 connected components, where the component
+with most nodes has 2658 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 158.99,
+and the node degree mode is 1. The top 5 most central nodes are 857293.CAAU_1091
+(degree 1018), 857293.CAAU_1241 (degree 863), 857293.CAAU_0562 (degree
+847), 857293.CAAU_1884 (degree 836) and 857293.CAAU_1710 (degree 828).
 
 
 References
@@ -106,13 +107,14 @@ def CaloramatorAustralicus(
 	
 	Datetime: 2021-02-02 21:46:06.387498
 	
-	The undirected graph Caloramator australicus has 2680 nodes and 213050 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05935 and
-	has 11 connected components, where the component with most nodes has 2658 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 158.99, and the node degree mode is 1. The top 5 most central
-	nodes are 857293.CAAU_1091 (degree 1018), 857293.CAAU_1241 (degree 863), 857293.CAAU_0562
-	(degree 847), 857293.CAAU_1884 (degree 836) and 857293.CAAU_1710 (degree 828).
+	The undirected graph Caloramator australicus has 2680 nodes and 213050
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05935 and has 11 connected components, where the component
+	with most nodes has 2658 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 158.99,
+	and the node degree mode is 1. The top 5 most central nodes are 857293.CAAU_1091
+	(degree 1018), 857293.CAAU_1241 (degree 863), 857293.CAAU_0562 (degree
+	847), 857293.CAAU_1884 (degree 836) and 857293.CAAU_1710 (degree 828).
 	
 
 

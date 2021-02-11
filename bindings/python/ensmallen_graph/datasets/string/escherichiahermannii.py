@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:55.250762
 
-The undirected graph Escherichia hermannii has 4133 nodes and 521064 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06102 and
-has 10 connected components, where the component with most nodes has 4113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 252.15, and the node degree mode is 1. The top 5 most central
-nodes are 1115512.EH105704_12_00670 (degree 1502), 1115512.EH105704_08_00080 (degree
-1445), 1115512.EH105704_02_01610 (degree 1417), 1115512.EH105704_01_08950 (degree
-1231) and 1115512.EH105704_01_06680 (degree 1220).
+The undirected graph Escherichia hermannii has 4133 nodes and 521064 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06102 and has 10 connected components, where the component with most
+nodes has 4113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 252.15, and
+the node degree mode is 1. The top 5 most central nodes are 1115512.EH105704_12_00670
+(degree 1502), 1115512.EH105704_08_00080 (degree 1445), 1115512.EH105704_02_01610
+(degree 1417), 1115512.EH105704_01_08950 (degree 1231) and 1115512.EH105704_01_06680
+(degree 1220).
 
 
 References
@@ -107,14 +108,15 @@ def EscherichiaHermannii(
 	
 	Datetime: 2021-02-02 22:26:55.250762
 	
-	The undirected graph Escherichia hermannii has 4133 nodes and 521064 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06102 and
-	has 10 connected components, where the component with most nodes has 4113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 252.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1115512.EH105704_12_00670 (degree 1502), 1115512.EH105704_08_00080 (degree
-	1445), 1115512.EH105704_02_01610 (degree 1417), 1115512.EH105704_01_08950 (degree
-	1231) and 1115512.EH105704_01_06680 (degree 1220).
+	The undirected graph Escherichia hermannii has 4133 nodes and 521064 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06102 and has 10 connected components, where the component with most
+	nodes has 4113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 252.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1115512.EH105704_12_00670
+	(degree 1502), 1115512.EH105704_08_00080 (degree 1445), 1115512.EH105704_02_01610
+	(degree 1417), 1115512.EH105704_01_08950 (degree 1231) and 1115512.EH105704_01_06680
+	(degree 1220).
 	
 
 

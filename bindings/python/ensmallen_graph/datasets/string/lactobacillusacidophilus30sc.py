@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:29.770907
 
-The undirected graph Lactobacillus acidophilus 30SC has 2027 nodes and 148455 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07230
-and has 2 connected components, where the component with most nodes has 2025 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 146.48, and the node degree mode is 7. The top 5
-most central nodes are 891391.LAC30SC_08380 (degree 899), 891391.LAC30SC_07365 (degree
-709), 891391.LAC30SC_02385 (degree 682), 891391.LAC30SC_06990 (degree 670) and 891391.LAC30SC_03330
-(degree 612).
+The undirected graph Lactobacillus acidophilus 30SC has 2027 nodes and
+148455 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07230 and has 2 connected components, where the
+component with most nodes has 2025 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 146.48, and the node degree mode is 7. The top 5 most central nodes
+are 891391.LAC30SC_08380 (degree 899), 891391.LAC30SC_07365 (degree 709),
+891391.LAC30SC_02385 (degree 682), 891391.LAC30SC_06990 (degree 670) and
+891391.LAC30SC_03330 (degree 612).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusAcidophilus30sc(
 	
 	Datetime: 2021-02-02 21:53:29.770907
 	
-	The undirected graph Lactobacillus acidophilus 30SC has 2027 nodes and 148455 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07230
-	and has 2 connected components, where the component with most nodes has 2025 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 146.48, and the node degree mode is 7. The top 5
-	most central nodes are 891391.LAC30SC_08380 (degree 899), 891391.LAC30SC_07365 (degree
-	709), 891391.LAC30SC_02385 (degree 682), 891391.LAC30SC_06990 (degree 670) and 891391.LAC30SC_03330
-	(degree 612).
+	The undirected graph Lactobacillus acidophilus 30SC has 2027 nodes and
+	148455 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07230 and has 2 connected components, where the
+	component with most nodes has 2025 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 146.48, and the node degree mode is 7. The top 5 most central nodes
+	are 891391.LAC30SC_08380 (degree 899), 891391.LAC30SC_07365 (degree 709),
+	891391.LAC30SC_02385 (degree 682), 891391.LAC30SC_06990 (degree 670) and
+	891391.LAC30SC_03330 (degree 612).
 	
 
 

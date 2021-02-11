@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:16.744426
 
-The undirected graph Aspergillus fumigatus has 7762 nodes and 573607 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01904 and
-has 47 connected components, where the component with most nodes has 7659 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 147.80, and the node degree mode is 1. The top 5 most central
-nodes are 746128.CADAFUBP00001236 (degree 1890), 746128.CADAFUBP00009237 (degree
-1381), 746128.CADAFUBP00005158 (degree 1215), 746128.CADAFUBP00000958 (degree 1209)
-and 746128.CADAFUBP00001006 (degree 1198).
+The undirected graph Aspergillus fumigatus has 7762 nodes and 573607 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01904 and has 47 connected components, where the component with most
+nodes has 7659 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 147.80, and
+the node degree mode is 1. The top 5 most central nodes are 746128.CADAFUBP00001236
+(degree 1890), 746128.CADAFUBP00009237 (degree 1381), 746128.CADAFUBP00005158
+(degree 1215), 746128.CADAFUBP00000958 (degree 1209) and 746128.CADAFUBP00001006
+(degree 1198).
 
 
 References
@@ -107,14 +108,15 @@ def AspergillusFumigatus(
 	
 	Datetime: 2021-02-02 21:39:16.744426
 	
-	The undirected graph Aspergillus fumigatus has 7762 nodes and 573607 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01904 and
-	has 47 connected components, where the component with most nodes has 7659 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 147.80, and the node degree mode is 1. The top 5 most central
-	nodes are 746128.CADAFUBP00001236 (degree 1890), 746128.CADAFUBP00009237 (degree
-	1381), 746128.CADAFUBP00005158 (degree 1215), 746128.CADAFUBP00000958 (degree 1209)
-	and 746128.CADAFUBP00001006 (degree 1198).
+	The undirected graph Aspergillus fumigatus has 7762 nodes and 573607 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01904 and has 47 connected components, where the component with most
+	nodes has 7659 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 147.80, and
+	the node degree mode is 1. The top 5 most central nodes are 746128.CADAFUBP00001236
+	(degree 1890), 746128.CADAFUBP00009237 (degree 1381), 746128.CADAFUBP00005158
+	(degree 1215), 746128.CADAFUBP00000958 (degree 1209) and 746128.CADAFUBP00001006
+	(degree 1198).
 	
 
 

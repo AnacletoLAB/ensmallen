@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:59.838737
 
-The undirected graph Chroococcidiopsis thermalis has 5349 nodes and 489602 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03423
-and has 19 connected components, where the component with most nodes has 5304 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 183.06, and the node degree mode is 2. The top 5
-most central nodes are 251229.Chro_2617 (degree 1921), 251229.Chro_0490 (degree 1801),
-251229.Chro_4405 (degree 1579), 251229.Chro_4894 (degree 1330) and 251229.Chro_4133
-(degree 1325).
+The undirected graph Chroococcidiopsis thermalis has 5349 nodes and 489602
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03423 and has 19 connected components, where the component
+with most nodes has 5304 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 183.06,
+and the node degree mode is 2. The top 5 most central nodes are 251229.Chro_2617
+(degree 1921), 251229.Chro_0490 (degree 1801), 251229.Chro_4405 (degree
+1579), 251229.Chro_4894 (degree 1330) and 251229.Chro_4133 (degree 1325).
 
 
 References
@@ -107,14 +107,14 @@ def ChroococcidiopsisThermalis(
 	
 	Datetime: 2021-02-02 20:11:59.838737
 	
-	The undirected graph Chroococcidiopsis thermalis has 5349 nodes and 489602 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03423
-	and has 19 connected components, where the component with most nodes has 5304 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 183.06, and the node degree mode is 2. The top 5
-	most central nodes are 251229.Chro_2617 (degree 1921), 251229.Chro_0490 (degree 1801),
-	251229.Chro_4405 (degree 1579), 251229.Chro_4894 (degree 1330) and 251229.Chro_4133
-	(degree 1325).
+	The undirected graph Chroococcidiopsis thermalis has 5349 nodes and 489602
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03423 and has 19 connected components, where the component
+	with most nodes has 5304 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 183.06,
+	and the node degree mode is 2. The top 5 most central nodes are 251229.Chro_2617
+	(degree 1921), 251229.Chro_0490 (degree 1801), 251229.Chro_4405 (degree
+	1579), 251229.Chro_4894 (degree 1330) and 251229.Chro_4133 (degree 1325).
 	
 
 

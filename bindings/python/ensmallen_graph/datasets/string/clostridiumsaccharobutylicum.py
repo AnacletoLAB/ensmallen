@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:02:39.774248
 
-The undirected graph Clostridium saccharobutylicum has 4324 nodes and 382267 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04090
-and has 27 connected components, where the component with most nodes has 4254 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 176.81, and the node degree mode is 2. The top 5
-most central nodes are 1345695.CLSA_c11750 (degree 1823), 1345695.CLSA_c03680 (degree
-1362), 1345695.CLSA_c21950 (degree 1241), 1345695.CLSA_c12880 (degree 1187) and 1345695.CLSA_c22330
-(degree 1141).
+The undirected graph Clostridium saccharobutylicum has 4324 nodes and 382267
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04090 and has 27 connected components, where the component
+with most nodes has 4254 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 176.81,
+and the node degree mode is 2. The top 5 most central nodes are 1345695.CLSA_c11750
+(degree 1823), 1345695.CLSA_c03680 (degree 1362), 1345695.CLSA_c21950 (degree
+1241), 1345695.CLSA_c12880 (degree 1187) and 1345695.CLSA_c22330 (degree
+1141).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSaccharobutylicum(
 	
 	Datetime: 2021-02-03 22:02:39.774248
 	
-	The undirected graph Clostridium saccharobutylicum has 4324 nodes and 382267 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04090
-	and has 27 connected components, where the component with most nodes has 4254 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 176.81, and the node degree mode is 2. The top 5
-	most central nodes are 1345695.CLSA_c11750 (degree 1823), 1345695.CLSA_c03680 (degree
-	1362), 1345695.CLSA_c21950 (degree 1241), 1345695.CLSA_c12880 (degree 1187) and 1345695.CLSA_c22330
-	(degree 1141).
+	The undirected graph Clostridium saccharobutylicum has 4324 nodes and 382267
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04090 and has 27 connected components, where the component
+	with most nodes has 4254 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 176.81,
+	and the node degree mode is 2. The top 5 most central nodes are 1345695.CLSA_c11750
+	(degree 1823), 1345695.CLSA_c03680 (degree 1362), 1345695.CLSA_c21950 (degree
+	1241), 1345695.CLSA_c12880 (degree 1187) and 1345695.CLSA_c22330 (degree
+	1141).
 	
 
 

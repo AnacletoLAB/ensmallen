@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:37.314643
 
-The undirected graph Pseudomonas mandelii 36MFCvi11 has 5434 nodes and 907636 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06149
-and has 18 connected components, where the component with most nodes has 5394 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 272, the mean node degree is 334.06, and the node degree mode is 1. The top 5
-most central nodes are 1151127.KB906327_gene1325 (degree 2154), 1151127.KB906334_gene4234
+The undirected graph Pseudomonas mandelii 36MFCvi11 has 5434 nodes and
+907636 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06149 and has 18 connected components, where the
+component with most nodes has 5394 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 272, the mean node degree
+is 334.06, and the node degree mode is 1. The top 5 most central nodes
+are 1151127.KB906327_gene1325 (degree 2154), 1151127.KB906334_gene4234
 (degree 1836), 1151127.KB906329_gene2592 (degree 1797), 1151127.KB906329_gene2604
 (degree 1758) and 1151127.KB906331_gene3490 (degree 1747).
 
@@ -107,12 +108,13 @@ def PseudomonasMandelii36mfcvi11(
 	
 	Datetime: 2021-02-02 23:00:37.314643
 	
-	The undirected graph Pseudomonas mandelii 36MFCvi11 has 5434 nodes and 907636 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06149
-	and has 18 connected components, where the component with most nodes has 5394 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 272, the mean node degree is 334.06, and the node degree mode is 1. The top 5
-	most central nodes are 1151127.KB906327_gene1325 (degree 2154), 1151127.KB906334_gene4234
+	The undirected graph Pseudomonas mandelii 36MFCvi11 has 5434 nodes and
+	907636 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06149 and has 18 connected components, where the
+	component with most nodes has 5394 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 272, the mean node degree
+	is 334.06, and the node degree mode is 1. The top 5 most central nodes
+	are 1151127.KB906327_gene1325 (degree 2154), 1151127.KB906334_gene4234
 	(degree 1836), 1151127.KB906329_gene2592 (degree 1797), 1151127.KB906329_gene2604
 	(degree 1758) and 1151127.KB906331_gene3490 (degree 1747).
 	

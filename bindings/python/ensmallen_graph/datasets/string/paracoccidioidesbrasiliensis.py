@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:55.249484
 
-The undirected graph Paracoccidioides brasiliensis has 5472 nodes and 474113 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03167
-and has 16 connected components, where the component with most nodes has 5441 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 173.29, and the node degree mode is 1. The top 5
-most central nodes are 121759.XP_010762799.1 (degree 1407), 121759.XP_010758444.1
-(degree 1155), 121759.XP_010761787.1 (degree 1034), 121759.XP_010758188.1 (degree
-1021) and 121759.XP_010761375.1 (degree 1006).
+The undirected graph Paracoccidioides brasiliensis has 5472 nodes and 474113
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03167 and has 16 connected components, where the component
+with most nodes has 5441 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 173.29,
+and the node degree mode is 1. The top 5 most central nodes are 121759.XP_010762799.1
+(degree 1407), 121759.XP_010758444.1 (degree 1155), 121759.XP_010761787.1
+(degree 1034), 121759.XP_010758188.1 (degree 1021) and 121759.XP_010761375.1
+(degree 1006).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccidioidesBrasiliensis(
 	
 	Datetime: 2021-02-02 19:48:55.249484
 	
-	The undirected graph Paracoccidioides brasiliensis has 5472 nodes and 474113 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03167
-	and has 16 connected components, where the component with most nodes has 5441 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 173.29, and the node degree mode is 1. The top 5
-	most central nodes are 121759.XP_010762799.1 (degree 1407), 121759.XP_010758444.1
-	(degree 1155), 121759.XP_010761787.1 (degree 1034), 121759.XP_010758188.1 (degree
-	1021) and 121759.XP_010761375.1 (degree 1006).
+	The undirected graph Paracoccidioides brasiliensis has 5472 nodes and 474113
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03167 and has 16 connected components, where the component
+	with most nodes has 5441 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 173.29,
+	and the node degree mode is 1. The top 5 most central nodes are 121759.XP_010762799.1
+	(degree 1407), 121759.XP_010758444.1 (degree 1155), 121759.XP_010761787.1
+	(degree 1034), 121759.XP_010758188.1 (degree 1021) and 121759.XP_010761375.1
+	(degree 1006).
 	
 
 

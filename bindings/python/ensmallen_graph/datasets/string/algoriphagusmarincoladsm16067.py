@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:48.085782
 
-The undirected graph Algoriphagus marincola DSM16067 has 3843 nodes and 296474 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04016
-and has 18 connected components, where the component with most nodes has 3799 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 154.29, and the node degree mode is 3. The top 5
-most central nodes are 1120966.AUBU01000006_gene3119 (degree 1116), 1120966.AUBU01000006_gene3384
+The undirected graph Algoriphagus marincola DSM16067 has 3843 nodes and
+296474 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04016 and has 18 connected components, where the
+component with most nodes has 3799 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 154.29, and the node degree mode is 3. The top 5 most central nodes
+are 1120966.AUBU01000006_gene3119 (degree 1116), 1120966.AUBU01000006_gene3384
 (degree 961), 1120966.AUBU01000008_gene2636 (degree 944), 1120966.AUBU01000006_gene3376
 (degree 873) and 1120966.AUBU01000006_gene3293 (degree 825).
 
@@ -107,12 +108,13 @@ def AlgoriphagusMarincolaDsm16067(
 	
 	Datetime: 2021-02-02 22:30:48.085782
 	
-	The undirected graph Algoriphagus marincola DSM16067 has 3843 nodes and 296474 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04016
-	and has 18 connected components, where the component with most nodes has 3799 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 154.29, and the node degree mode is 3. The top 5
-	most central nodes are 1120966.AUBU01000006_gene3119 (degree 1116), 1120966.AUBU01000006_gene3384
+	The undirected graph Algoriphagus marincola DSM16067 has 3843 nodes and
+	296474 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04016 and has 18 connected components, where the
+	component with most nodes has 3799 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 154.29, and the node degree mode is 3. The top 5 most central nodes
+	are 1120966.AUBU01000006_gene3119 (degree 1116), 1120966.AUBU01000006_gene3384
 	(degree 961), 1120966.AUBU01000008_gene2636 (degree 944), 1120966.AUBU01000006_gene3376
 	(degree 873) and 1120966.AUBU01000006_gene3293 (degree 825).
 	

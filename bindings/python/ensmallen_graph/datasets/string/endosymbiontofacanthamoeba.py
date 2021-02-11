@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:58:04.966706
 
-The undirected graph endosymbiont of Acanthamoeba has 1505 nodes and 76803 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06786
-and has 8 connected components, where the component with most nodes has 1491 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 81, the mean node degree is 102.06, and the node degree mode is 3. The top 5 most
-central nodes are 86106.I862_02115 (degree 626), 86106.I862_06460 (degree 458), 86106.I862_05050
-(degree 442), 86106.I862_04915 (degree 432) and 86106.I862_02210 (degree 426).
+The undirected graph endosymbiont of Acanthamoeba has 1505 nodes and 76803
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06786 and has 8 connected components, where the component
+with most nodes has 1491 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 81, the mean node degree is 102.06,
+and the node degree mode is 3. The top 5 most central nodes are 86106.I862_02115
+(degree 626), 86106.I862_06460 (degree 458), 86106.I862_05050 (degree 442),
+86106.I862_04915 (degree 432) and 86106.I862_02210 (degree 426).
 
 
 References
@@ -106,13 +107,14 @@ def EndosymbiontOfAcanthamoeba(
 	
 	Datetime: 2021-02-02 18:58:04.966706
 	
-	The undirected graph endosymbiont of Acanthamoeba has 1505 nodes and 76803 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06786
-	and has 8 connected components, where the component with most nodes has 1491 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 81, the mean node degree is 102.06, and the node degree mode is 3. The top 5 most
-	central nodes are 86106.I862_02115 (degree 626), 86106.I862_06460 (degree 458), 86106.I862_05050
-	(degree 442), 86106.I862_04915 (degree 432) and 86106.I862_02210 (degree 426).
+	The undirected graph endosymbiont of Acanthamoeba has 1505 nodes and 76803
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06786 and has 8 connected components, where the component
+	with most nodes has 1491 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 81, the mean node degree is 102.06,
+	and the node degree mode is 3. The top 5 most central nodes are 86106.I862_02115
+	(degree 626), 86106.I862_06460 (degree 458), 86106.I862_05050 (degree 442),
+	86106.I862_04915 (degree 432) and 86106.I862_02210 (degree 426).
 	
 
 

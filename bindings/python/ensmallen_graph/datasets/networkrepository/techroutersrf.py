@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:11.778709
 
-The undirected graph tech-routers-rf has 2113 nodes and 6632 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00297 and
-is connected, as it has a single component. The graph median node degree is 3, the
-mean node degree is 6.28, and the node degree mode is 1. The top 5 most central nodes
-are 619 (degree 109), 1808 (degree 96), 50 (degree 79), 1356 (degree 75) and 18 (degree
-74).
+The undirected graph tech-routers-rf has 2113 nodes and 6632 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00297 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 6.28, and the node degree mode
+is 1. The top 5 most central nodes are 619 (degree 109), 1808 (degree 96),
+50 (degree 79), 1356 (degree 75) and 18 (degree 74).
 
 
 References
@@ -112,12 +112,12 @@ def TechRoutersRf(
 	
 	Datetime: 2021-02-06 09:52:11.778709
 	
-	The undirected graph tech-routers-rf has 2113 nodes and 6632 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00297 and
-	is connected, as it has a single component. The graph median node degree is 3, the
-	mean node degree is 6.28, and the node degree mode is 1. The top 5 most central nodes
-	are 619 (degree 109), 1808 (degree 96), 50 (degree 79), 1356 (degree 75) and 18 (degree
-	74).
+	The undirected graph tech-routers-rf has 2113 nodes and 6632 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00297 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 6.28, and the node degree mode
+	is 1. The top 5 most central nodes are 619 (degree 109), 1808 (degree 96),
+	50 (degree 79), 1356 (degree 75) and 18 (degree 74).
 	
 
 

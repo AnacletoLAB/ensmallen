@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 07:05:12.975586
 
-The undirected graph web-it-2004-all has 41290682 nodes, of which 34 are singletons
-(all have self-loops), and 1042481474 unweighted edges, of which 15006527 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 67 connected
-components, where the component with most nodes has 41290577 nodes and the component
-with the least nodes has a single node. The graph median node degree is 16, the mean
-node degree is 50.13, and the node degree mode is 1. The top 5 most central nodes
-are 26424113 (degree 1326745), 26424111 (degree 1321720), 26424107 (degree 1320756),
+The undirected graph web-it-2004-all has 41290682 nodes, of which 34 are
+singletons (all have self-loops), and 1042481474 unweighted edges, of which
+15006527 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 67 connected components, where the component with most
+nodes has 41290577 nodes and the component with the least nodes has a single
+node. The graph median node degree is 16, the mean node degree is 50.13,
+and the node degree mode is 1. The top 5 most central nodes are 26424113
+(degree 1326745), 26424111 (degree 1321720), 26424107 (degree 1320756),
 26424108 (degree 1320753) and 26424106 (degree 1320753).
 
 
@@ -121,13 +122,14 @@ def WebIt2004All(
 	
 	Datetime: 2021-02-05 07:05:12.975586
 	
-	The undirected graph web-it-2004-all has 41290682 nodes, of which 34 are singletons
-	(all have self-loops), and 1042481474 unweighted edges, of which 15006527 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 67 connected
-	components, where the component with most nodes has 41290577 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 16, the mean
-	node degree is 50.13, and the node degree mode is 1. The top 5 most central nodes
-	are 26424113 (degree 1326745), 26424111 (degree 1321720), 26424107 (degree 1320756),
+	The undirected graph web-it-2004-all has 41290682 nodes, of which 34 are
+	singletons (all have self-loops), and 1042481474 unweighted edges, of which
+	15006527 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 67 connected components, where the component with most
+	nodes has 41290577 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 16, the mean node degree is 50.13,
+	and the node degree mode is 1. The top 5 most central nodes are 26424113
+	(degree 1326745), 26424111 (degree 1321720), 26424107 (degree 1320756),
 	26424108 (degree 1320753) and 26424106 (degree 1320753).
 	
 

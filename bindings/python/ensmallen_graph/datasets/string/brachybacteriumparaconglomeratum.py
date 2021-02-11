@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:34.333551
 
-The undirected graph Brachybacterium paraconglomeratum has 3311 nodes and 262893
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04798 and has 17 connected components, where the component with most nodes has
-3271 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 131, the mean node degree is 158.80, and the node degree mode is 1. The
-top 5 most central nodes are 1064537.AGSO01000005_gene92 (degree 1135), 1064537.AGSO01000009_gene2130
+The undirected graph Brachybacterium paraconglomeratum has 3311 nodes and
+262893 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04798 and has 17 connected components, where the
+component with most nodes has 3271 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 158.80, and the node degree mode is 1. The top 5 most central nodes
+are 1064537.AGSO01000005_gene92 (degree 1135), 1064537.AGSO01000009_gene2130
 (degree 972), 1064537.AGSO01000009_gene2074 (degree 963), 1064537.AGSO01000009_gene2086
 (degree 953) and 1064537.AGSO01000011_gene2938 (degree 946).
 
@@ -107,12 +108,13 @@ def BrachybacteriumParaconglomeratum(
 	
 	Datetime: 2021-02-02 22:18:34.333551
 	
-	The undirected graph Brachybacterium paraconglomeratum has 3311 nodes and 262893
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04798 and has 17 connected components, where the component with most nodes has
-	3271 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 131, the mean node degree is 158.80, and the node degree mode is 1. The
-	top 5 most central nodes are 1064537.AGSO01000005_gene92 (degree 1135), 1064537.AGSO01000009_gene2130
+	The undirected graph Brachybacterium paraconglomeratum has 3311 nodes and
+	262893 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04798 and has 17 connected components, where the
+	component with most nodes has 3271 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 158.80, and the node degree mode is 1. The top 5 most central nodes
+	are 1064537.AGSO01000005_gene92 (degree 1135), 1064537.AGSO01000009_gene2130
 	(degree 972), 1064537.AGSO01000009_gene2074 (degree 963), 1064537.AGSO01000009_gene2086
 	(degree 953) and 1064537.AGSO01000011_gene2938 (degree 946).
 	

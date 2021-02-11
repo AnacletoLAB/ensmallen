@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:20.042301
 
-The undirected graph Halorhodospira halophila has 2400 nodes and 188584 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-and has 3 connected components, where the component with most nodes has 2395 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 157.15, and the node degree mode is 5. The top 5
-most central nodes are 349124.Hhal_2150 (degree 1336), 349124.Hhal_2421 (degree 1121),
-349124.Hhal_0066 (degree 1085), 349124.Hhal_0366 (degree 951) and 349124.Hhal_1681
-(degree 815).
+The undirected graph Halorhodospira halophila has 2400 nodes and 188584
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06551 and has 3 connected components, where the component
+with most nodes has 2395 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 157.15,
+and the node degree mode is 5. The top 5 most central nodes are 349124.Hhal_2150
+(degree 1336), 349124.Hhal_2421 (degree 1121), 349124.Hhal_0066 (degree
+1085), 349124.Hhal_0366 (degree 951) and 349124.Hhal_1681 (degree 815).
 
 
 References
@@ -107,14 +107,14 @@ def HalorhodospiraHalophila(
 	
 	Datetime: 2021-02-02 20:32:20.042301
 	
-	The undirected graph Halorhodospira halophila has 2400 nodes and 188584 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-	and has 3 connected components, where the component with most nodes has 2395 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 157.15, and the node degree mode is 5. The top 5
-	most central nodes are 349124.Hhal_2150 (degree 1336), 349124.Hhal_2421 (degree 1121),
-	349124.Hhal_0066 (degree 1085), 349124.Hhal_0366 (degree 951) and 349124.Hhal_1681
-	(degree 815).
+	The undirected graph Halorhodospira halophila has 2400 nodes and 188584
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06551 and has 3 connected components, where the component
+	with most nodes has 2395 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 157.15,
+	and the node degree mode is 5. The top 5 most central nodes are 349124.Hhal_2150
+	(degree 1336), 349124.Hhal_2421 (degree 1121), 349124.Hhal_0066 (degree
+	1085), 349124.Hhal_0366 (degree 951) and 349124.Hhal_1681 (degree 815).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:17:33.081758
 
-The undirected graph Zhouia amylolytica has 3330 nodes and 360575 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06505 and
-has 6 connected components, where the component with most nodes has 3313 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 216.56, and the node degree mode is 6. The top 5 most central
-nodes are 1286632.P278_27950 (degree 1257), 1286632.P278_01340 (degree 1188), 1286632.P278_23600
-(degree 1167), 1286632.P278_04530 (degree 964) and 1286632.P278_06220 (degree 900).
+The undirected graph Zhouia amylolytica has 3330 nodes and 360575 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06505 and has 6 connected components, where the component with most
+nodes has 3313 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 216.56, and
+the node degree mode is 6. The top 5 most central nodes are 1286632.P278_27950
+(degree 1257), 1286632.P278_01340 (degree 1188), 1286632.P278_23600 (degree
+1167), 1286632.P278_04530 (degree 964) and 1286632.P278_06220 (degree 900).
 
 
 References
@@ -106,13 +107,14 @@ def ZhouiaAmylolytica(
 	
 	Datetime: 2021-02-03 21:17:33.081758
 	
-	The undirected graph Zhouia amylolytica has 3330 nodes and 360575 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06505 and
-	has 6 connected components, where the component with most nodes has 3313 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 216.56, and the node degree mode is 6. The top 5 most central
-	nodes are 1286632.P278_27950 (degree 1257), 1286632.P278_01340 (degree 1188), 1286632.P278_23600
-	(degree 1167), 1286632.P278_04530 (degree 964) and 1286632.P278_06220 (degree 900).
+	The undirected graph Zhouia amylolytica has 3330 nodes and 360575 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06505 and has 6 connected components, where the component with most
+	nodes has 3313 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 216.56, and
+	the node degree mode is 6. The top 5 most central nodes are 1286632.P278_27950
+	(degree 1257), 1286632.P278_01340 (degree 1188), 1286632.P278_23600 (degree
+	1167), 1286632.P278_04530 (degree 964) and 1286632.P278_06220 (degree 900).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:26.117205
 
-The undirected graph Helcococcus kunzii has 1866 nodes and 248826 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14300
-and has 10 connected components, where the component with most nodes has 1842 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 246, the mean node degree is 266.69, and the node degree mode is 3. The top 5
-most central nodes are 883114.HMPREF9709_01605 (degree 1035), 883114.HMPREF9709_01258
-(degree 1002), 883114.HMPREF9709_00679 (degree 1000), 883114.HMPREF9709_01281 (degree
-948) and 883114.HMPREF9709_00895 (degree 944).
+The undirected graph Helcococcus kunzii has 1866 nodes and 248826 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14300 and has 10 connected components, where the component
+with most nodes has 1842 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 246, the mean node degree is 266.69,
+and the node degree mode is 3. The top 5 most central nodes are 883114.HMPREF9709_01605
+(degree 1035), 883114.HMPREF9709_01258 (degree 1002), 883114.HMPREF9709_00679
+(degree 1000), 883114.HMPREF9709_01281 (degree 948) and 883114.HMPREF9709_00895
+(degree 944).
 
 
 References
@@ -107,14 +108,15 @@ def HelcococcusKunzii(
 	
 	Datetime: 2021-02-02 21:51:26.117205
 	
-	The undirected graph Helcococcus kunzii has 1866 nodes and 248826 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14300
-	and has 10 connected components, where the component with most nodes has 1842 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 246, the mean node degree is 266.69, and the node degree mode is 3. The top 5
-	most central nodes are 883114.HMPREF9709_01605 (degree 1035), 883114.HMPREF9709_01258
-	(degree 1002), 883114.HMPREF9709_00679 (degree 1000), 883114.HMPREF9709_01281 (degree
-	948) and 883114.HMPREF9709_00895 (degree 944).
+	The undirected graph Helcococcus kunzii has 1866 nodes and 248826 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14300 and has 10 connected components, where the component
+	with most nodes has 1842 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 246, the mean node degree is 266.69,
+	and the node degree mode is 3. The top 5 most central nodes are 883114.HMPREF9709_01605
+	(degree 1035), 883114.HMPREF9709_01258 (degree 1002), 883114.HMPREF9709_00679
+	(degree 1000), 883114.HMPREF9709_01281 (degree 948) and 883114.HMPREF9709_00895
+	(degree 944).
 	
 
 

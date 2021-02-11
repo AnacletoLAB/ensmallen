@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:35.053395
 
-The undirected graph Kingella kingae has 2076 nodes and 127205 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05906 and
-has 2 connected components, where the component with most nodes has 2074 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 122.55, and the node degree mode is 5. The top 5 most central
-nodes are 887327.HMPREF0476_1309 (degree 801), 887327.HMPREF0476_1911 (degree 781),
-887327.HMPREF0476_0466 (degree 700), 887327.HMPREF0476_0168 (degree 665) and 887327.HMPREF0476_0086
+The undirected graph Kingella kingae has 2076 nodes and 127205 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05906 and has 2 connected components, where the component with most
+nodes has 2074 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 122.55, and
+the node degree mode is 5. The top 5 most central nodes are 887327.HMPREF0476_1309
+(degree 801), 887327.HMPREF0476_1911 (degree 781), 887327.HMPREF0476_0466
+(degree 700), 887327.HMPREF0476_0168 (degree 665) and 887327.HMPREF0476_0086
 (degree 646).
 
 
@@ -107,13 +108,14 @@ def KingellaKingae(
 	
 	Datetime: 2021-02-02 21:52:35.053395
 	
-	The undirected graph Kingella kingae has 2076 nodes and 127205 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05906 and
-	has 2 connected components, where the component with most nodes has 2074 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 122.55, and the node degree mode is 5. The top 5 most central
-	nodes are 887327.HMPREF0476_1309 (degree 801), 887327.HMPREF0476_1911 (degree 781),
-	887327.HMPREF0476_0466 (degree 700), 887327.HMPREF0476_0168 (degree 665) and 887327.HMPREF0476_0086
+	The undirected graph Kingella kingae has 2076 nodes and 127205 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05906 and has 2 connected components, where the component with most
+	nodes has 2074 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 122.55, and
+	the node degree mode is 5. The top 5 most central nodes are 887327.HMPREF0476_1309
+	(degree 801), 887327.HMPREF0476_1911 (degree 781), 887327.HMPREF0476_0466
+	(degree 700), 887327.HMPREF0476_0168 (degree 665) and 887327.HMPREF0476_0086
 	(degree 646).
 	
 

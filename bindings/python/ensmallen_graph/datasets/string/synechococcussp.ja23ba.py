@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:50.115974
 
-The undirected graph Synechococcus sp. JA23Ba has 2826 nodes and 195625 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04901
-and has 8 connected components, where the component with most nodes has 2811 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 138.45, and the node degree mode is 2. The top 5
-most central nodes are 321332.CYB_2898 (degree 993), 321332.CYB_0126 (degree 992),
-321332.CYB_2756 (degree 711), 321332.CYB_1115 (degree 688) and 321332.CYB_1253 (degree
-687).
+The undirected graph Synechococcus sp. JA23Ba has 2826 nodes and 195625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04901 and has 8 connected components, where the component
+with most nodes has 2811 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 138.45,
+and the node degree mode is 2. The top 5 most central nodes are 321332.CYB_2898
+(degree 993), 321332.CYB_0126 (degree 992), 321332.CYB_2756 (degree 711),
+321332.CYB_1115 (degree 688) and 321332.CYB_1253 (degree 687).
 
 
 References
@@ -107,14 +107,14 @@ def SynechococcusSp.Ja23ba(
 	
 	Datetime: 2021-02-02 20:27:50.115974
 	
-	The undirected graph Synechococcus sp. JA23Ba has 2826 nodes and 195625 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04901
-	and has 8 connected components, where the component with most nodes has 2811 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 138.45, and the node degree mode is 2. The top 5
-	most central nodes are 321332.CYB_2898 (degree 993), 321332.CYB_0126 (degree 992),
-	321332.CYB_2756 (degree 711), 321332.CYB_1115 (degree 688) and 321332.CYB_1253 (degree
-	687).
+	The undirected graph Synechococcus sp. JA23Ba has 2826 nodes and 195625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04901 and has 8 connected components, where the component
+	with most nodes has 2811 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 138.45,
+	and the node degree mode is 2. The top 5 most central nodes are 321332.CYB_2898
+	(degree 993), 321332.CYB_0126 (degree 992), 321332.CYB_2756 (degree 711),
+	321332.CYB_1115 (degree 688) and 321332.CYB_1253 (degree 687).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:15.843720
 
-The undirected graph Alishewanella jeotgali has 3478 nodes and 335755 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05553 and
-has 11 connected components, where the component with most nodes has 3449 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 193.07, and the node degree mode is 2. The top 5 most central
-nodes are 1129374.AJE_08315 (degree 1236), 1129374.AJE_10734 (degree 1185), 1129374.AJE_05441
-(degree 1099), 1129374.AJE_05446 (degree 1077) and 1129374.AJE_04836 (degree 1006).
+The undirected graph Alishewanella jeotgali has 3478 nodes and 335755 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05553 and has 11 connected components, where the component with most
+nodes has 3449 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 193.07, and
+the node degree mode is 2. The top 5 most central nodes are 1129374.AJE_08315
+(degree 1236), 1129374.AJE_10734 (degree 1185), 1129374.AJE_05441 (degree
+1099), 1129374.AJE_05446 (degree 1077) and 1129374.AJE_04836 (degree 1006).
 
 
 References
@@ -106,13 +107,14 @@ def AlishewanellaJeotgali(
 	
 	Datetime: 2021-02-02 22:55:15.843720
 	
-	The undirected graph Alishewanella jeotgali has 3478 nodes and 335755 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05553 and
-	has 11 connected components, where the component with most nodes has 3449 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 193.07, and the node degree mode is 2. The top 5 most central
-	nodes are 1129374.AJE_08315 (degree 1236), 1129374.AJE_10734 (degree 1185), 1129374.AJE_05441
-	(degree 1099), 1129374.AJE_05446 (degree 1077) and 1129374.AJE_04836 (degree 1006).
+	The undirected graph Alishewanella jeotgali has 3478 nodes and 335755 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05553 and has 11 connected components, where the component with most
+	nodes has 3449 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 193.07, and
+	the node degree mode is 2. The top 5 most central nodes are 1129374.AJE_08315
+	(degree 1236), 1129374.AJE_10734 (degree 1185), 1129374.AJE_05441 (degree
+	1099), 1129374.AJE_05446 (degree 1077) and 1129374.AJE_04836 (degree 1006).
 	
 
 

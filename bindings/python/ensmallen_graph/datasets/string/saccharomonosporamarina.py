@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:46.423876
 
-The undirected graph Saccharomonospora marina has 5549 nodes and 687497 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04466
-and has 15 connected components, where the component with most nodes has 5518 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 247.79, and the node degree mode is 5. The top 5
-most central nodes are 882083.SacmaDRAFT_1822 (degree 1849), 882083.SacmaDRAFT_3533
-(degree 1632), 882083.SacmaDRAFT_2440 (degree 1631), 882083.SacmaDRAFT_1043 (degree
-1586) and 882083.SacmaDRAFT_5205 (degree 1542).
+The undirected graph Saccharomonospora marina has 5549 nodes and 687497
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04466 and has 15 connected components, where the component
+with most nodes has 5518 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 247.79,
+and the node degree mode is 5. The top 5 most central nodes are 882083.SacmaDRAFT_1822
+(degree 1849), 882083.SacmaDRAFT_3533 (degree 1632), 882083.SacmaDRAFT_2440
+(degree 1631), 882083.SacmaDRAFT_1043 (degree 1586) and 882083.SacmaDRAFT_5205
+(degree 1542).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharomonosporaMarina(
 	
 	Datetime: 2021-02-02 21:50:46.423876
 	
-	The undirected graph Saccharomonospora marina has 5549 nodes and 687497 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04466
-	and has 15 connected components, where the component with most nodes has 5518 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 247.79, and the node degree mode is 5. The top 5
-	most central nodes are 882083.SacmaDRAFT_1822 (degree 1849), 882083.SacmaDRAFT_3533
-	(degree 1632), 882083.SacmaDRAFT_2440 (degree 1631), 882083.SacmaDRAFT_1043 (degree
-	1586) and 882083.SacmaDRAFT_5205 (degree 1542).
+	The undirected graph Saccharomonospora marina has 5549 nodes and 687497
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04466 and has 15 connected components, where the component
+	with most nodes has 5518 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 247.79,
+	and the node degree mode is 5. The top 5 most central nodes are 882083.SacmaDRAFT_1822
+	(degree 1849), 882083.SacmaDRAFT_3533 (degree 1632), 882083.SacmaDRAFT_2440
+	(degree 1631), 882083.SacmaDRAFT_1043 (degree 1586) and 882083.SacmaDRAFT_5205
+	(degree 1542).
 	
 
 

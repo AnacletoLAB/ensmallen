@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:57.453563
 
-The undirected graph Persephonella marina has 2037 nodes and 146357 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07058 and
-has 8 connected components, where the component with most nodes has 2012 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 143.70, and the node degree mode is 6. The top 5 most central
-nodes are 123214.PERMA_0954 (degree 865), 123214.PERMA_0959 (degree 699), 123214.PERMA_0029
-(degree 698), 123214.PERMA_0224 (degree 656) and 123214.PERMA_0605 (degree 651).
+The undirected graph Persephonella marina has 2037 nodes and 146357 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07058 and has 8 connected components, where the component with most
+nodes has 2012 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 143.70, and
+the node degree mode is 6. The top 5 most central nodes are 123214.PERMA_0954
+(degree 865), 123214.PERMA_0959 (degree 699), 123214.PERMA_0029 (degree
+698), 123214.PERMA_0224 (degree 656) and 123214.PERMA_0605 (degree 651).
 
 
 References
@@ -106,13 +107,14 @@ def PersephonellaMarina(
 	
 	Datetime: 2021-02-02 19:48:57.453563
 	
-	The undirected graph Persephonella marina has 2037 nodes and 146357 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07058 and
-	has 8 connected components, where the component with most nodes has 2012 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 143.70, and the node degree mode is 6. The top 5 most central
-	nodes are 123214.PERMA_0954 (degree 865), 123214.PERMA_0959 (degree 699), 123214.PERMA_0029
-	(degree 698), 123214.PERMA_0224 (degree 656) and 123214.PERMA_0605 (degree 651).
+	The undirected graph Persephonella marina has 2037 nodes and 146357 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07058 and has 8 connected components, where the component with most
+	nodes has 2012 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 143.70, and
+	the node degree mode is 6. The top 5 most central nodes are 123214.PERMA_0954
+	(degree 865), 123214.PERMA_0959 (degree 699), 123214.PERMA_0029 (degree
+	698), 123214.PERMA_0224 (degree 656) and 123214.PERMA_0605 (degree 651).
 	
 
 

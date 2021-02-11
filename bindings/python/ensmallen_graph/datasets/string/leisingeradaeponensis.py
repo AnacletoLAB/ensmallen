@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:20.439356
 
-The undirected graph Leisingera daeponensis has 4052 nodes and 649716 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07916 and
-has 6 connected components, where the component with most nodes has 4042 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 291,
-the mean node degree is 320.69, and the node degree mode is 3. The top 5 most central
-nodes are 999547.KI421502_gene3915 (degree 1787), 999547.KI421500_gene3119 (degree
-1740), 999547.KI421500_gene174 (degree 1452), 999547.KI421500_gene172 (degree 1428)
-and 999547.KI421500_gene3421 (degree 1371).
+The undirected graph Leisingera daeponensis has 4052 nodes and 649716 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07916 and has 6 connected components, where the component with most
+nodes has 4042 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 291, the mean node degree is 320.69, and
+the node degree mode is 3. The top 5 most central nodes are 999547.KI421502_gene3915
+(degree 1787), 999547.KI421500_gene3119 (degree 1740), 999547.KI421500_gene174
+(degree 1452), 999547.KI421500_gene172 (degree 1428) and 999547.KI421500_gene3421
+(degree 1371).
 
 
 References
@@ -107,14 +108,15 @@ def LeisingeraDaeponensis(
 	
 	Datetime: 2021-02-02 22:06:20.439356
 	
-	The undirected graph Leisingera daeponensis has 4052 nodes and 649716 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07916 and
-	has 6 connected components, where the component with most nodes has 4042 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 291,
-	the mean node degree is 320.69, and the node degree mode is 3. The top 5 most central
-	nodes are 999547.KI421502_gene3915 (degree 1787), 999547.KI421500_gene3119 (degree
-	1740), 999547.KI421500_gene174 (degree 1452), 999547.KI421500_gene172 (degree 1428)
-	and 999547.KI421500_gene3421 (degree 1371).
+	The undirected graph Leisingera daeponensis has 4052 nodes and 649716 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07916 and has 6 connected components, where the component with most
+	nodes has 4042 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 291, the mean node degree is 320.69, and
+	the node degree mode is 3. The top 5 most central nodes are 999547.KI421502_gene3915
+	(degree 1787), 999547.KI421500_gene3119 (degree 1740), 999547.KI421500_gene174
+	(degree 1452), 999547.KI421500_gene172 (degree 1428) and 999547.KI421500_gene3421
+	(degree 1371).
 	
 
 

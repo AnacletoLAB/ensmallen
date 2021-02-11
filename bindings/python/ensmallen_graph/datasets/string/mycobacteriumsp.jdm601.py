@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:25.202278
 
-The undirected graph Mycobacterium sp. JDM601 has 4307 nodes and 774961 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08357
-and has 13 connected components, where the component with most nodes has 4279 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 331, the mean node degree is 359.86, and the node degree mode is 2. The top 5
-most central nodes are 875328.JDM601_1383 (degree 1762), 875328.JDM601_1901 (degree
-1659), 875328.JDM601_1848 (degree 1632), 875328.JDM601_1960 (degree 1563) and 875328.JDM601_0610
-(degree 1544).
+The undirected graph Mycobacterium sp. JDM601 has 4307 nodes and 774961
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08357 and has 13 connected components, where the component
+with most nodes has 4279 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 331, the mean node degree is 359.86,
+and the node degree mode is 2. The top 5 most central nodes are 875328.JDM601_1383
+(degree 1762), 875328.JDM601_1901 (degree 1659), 875328.JDM601_1848 (degree
+1632), 875328.JDM601_1960 (degree 1563) and 875328.JDM601_0610 (degree
+1544).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.Jdm601(
 	
 	Datetime: 2021-02-02 21:49:25.202278
 	
-	The undirected graph Mycobacterium sp. JDM601 has 4307 nodes and 774961 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08357
-	and has 13 connected components, where the component with most nodes has 4279 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 331, the mean node degree is 359.86, and the node degree mode is 2. The top 5
-	most central nodes are 875328.JDM601_1383 (degree 1762), 875328.JDM601_1901 (degree
-	1659), 875328.JDM601_1848 (degree 1632), 875328.JDM601_1960 (degree 1563) and 875328.JDM601_0610
-	(degree 1544).
+	The undirected graph Mycobacterium sp. JDM601 has 4307 nodes and 774961
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08357 and has 13 connected components, where the component
+	with most nodes has 4279 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 331, the mean node degree is 359.86,
+	and the node degree mode is 2. The top 5 most central nodes are 875328.JDM601_1383
+	(degree 1762), 875328.JDM601_1901 (degree 1659), 875328.JDM601_1848 (degree
+	1632), 875328.JDM601_1960 (degree 1563) and 875328.JDM601_0610 (degree
+	1544).
 	
 
 

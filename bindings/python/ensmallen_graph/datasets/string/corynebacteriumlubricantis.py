@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:09.303240
 
-The undirected graph Corynebacterium lubricantis has 2713 nodes and 196398 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05339
-and has 14 connected components, where the component with most nodes has 2679 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 144.78, and the node degree mode is 1. The top 5
-most central nodes are 1121363.KB902188_gene554 (degree 1000), 1121363.KB902236_gene2098
-(degree 955), 1121363.KB902186_gene405 (degree 951), 1121363.KB902215_gene1934 (degree
-797) and 1121363.KB902235_gene1388 (degree 788).
+The undirected graph Corynebacterium lubricantis has 2713 nodes and 196398
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05339 and has 14 connected components, where the component
+with most nodes has 2679 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 144.78,
+and the node degree mode is 1. The top 5 most central nodes are 1121363.KB902188_gene554
+(degree 1000), 1121363.KB902236_gene2098 (degree 955), 1121363.KB902186_gene405
+(degree 951), 1121363.KB902215_gene1934 (degree 797) and 1121363.KB902235_gene1388
+(degree 788).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumLubricantis(
 	
 	Datetime: 2021-02-02 22:35:09.303240
 	
-	The undirected graph Corynebacterium lubricantis has 2713 nodes and 196398 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05339
-	and has 14 connected components, where the component with most nodes has 2679 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 144.78, and the node degree mode is 1. The top 5
-	most central nodes are 1121363.KB902188_gene554 (degree 1000), 1121363.KB902236_gene2098
-	(degree 955), 1121363.KB902186_gene405 (degree 951), 1121363.KB902215_gene1934 (degree
-	797) and 1121363.KB902235_gene1388 (degree 788).
+	The undirected graph Corynebacterium lubricantis has 2713 nodes and 196398
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05339 and has 14 connected components, where the component
+	with most nodes has 2679 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 144.78,
+	and the node degree mode is 1. The top 5 most central nodes are 1121363.KB902188_gene554
+	(degree 1000), 1121363.KB902236_gene2098 (degree 955), 1121363.KB902186_gene405
+	(degree 951), 1121363.KB902215_gene1934 (degree 797) and 1121363.KB902235_gene1388
+	(degree 788).
 	
 
 

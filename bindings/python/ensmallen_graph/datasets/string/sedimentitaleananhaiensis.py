@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:45.890769
 
-The undirected graph Sedimentitalea nanhaiensis has 4364 nodes and 706022 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07416
-and has 12 connected components, where the component with most nodes has 4339 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 277, the mean node degree is 323.57, and the node degree mode is 1. The top 5
-most central nodes are 571166.KI421509_gene4075 (degree 1971), 571166.KI421509_gene2460
-(degree 1927), 571166.KI421509_gene3138 (degree 1912), 571166.KI421509_gene652 (degree
-1544) and 571166.KI421509_gene3297 (degree 1533).
+The undirected graph Sedimentitalea nanhaiensis has 4364 nodes and 706022
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07416 and has 12 connected components, where the component
+with most nodes has 4339 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 277, the mean node degree is 323.57,
+and the node degree mode is 1. The top 5 most central nodes are 571166.KI421509_gene4075
+(degree 1971), 571166.KI421509_gene2460 (degree 1927), 571166.KI421509_gene3138
+(degree 1912), 571166.KI421509_gene652 (degree 1544) and 571166.KI421509_gene3297
+(degree 1533).
 
 
 References
@@ -107,14 +108,15 @@ def SedimentitaleaNanhaiensis(
 	
 	Datetime: 2021-02-02 21:13:45.890769
 	
-	The undirected graph Sedimentitalea nanhaiensis has 4364 nodes and 706022 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07416
-	and has 12 connected components, where the component with most nodes has 4339 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 277, the mean node degree is 323.57, and the node degree mode is 1. The top 5
-	most central nodes are 571166.KI421509_gene4075 (degree 1971), 571166.KI421509_gene2460
-	(degree 1927), 571166.KI421509_gene3138 (degree 1912), 571166.KI421509_gene652 (degree
-	1544) and 571166.KI421509_gene3297 (degree 1533).
+	The undirected graph Sedimentitalea nanhaiensis has 4364 nodes and 706022
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07416 and has 12 connected components, where the component
+	with most nodes has 4339 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 277, the mean node degree is 323.57,
+	and the node degree mode is 1. The top 5 most central nodes are 571166.KI421509_gene4075
+	(degree 1971), 571166.KI421509_gene2460 (degree 1927), 571166.KI421509_gene3138
+	(degree 1912), 571166.KI421509_gene652 (degree 1544) and 571166.KI421509_gene3297
+	(degree 1533).
 	
 
 

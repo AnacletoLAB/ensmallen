@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:38.725077
 
-The undirected graph Stanieria cyanosphaera has 4290 nodes and 524011 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05696 and
-has 9 connected components, where the component with most nodes has 4273 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 244.29, and the node degree mode is 3. The top 5 most central
-nodes are 111780.Sta7437_0512 (degree 1996), 111780.Sta7437_0304 (degree 1506), 111780.Sta7437_4121
-(degree 1487), 111780.Sta7437_3065 (degree 1475) and 111780.Sta7437_1275 (degree
+The undirected graph Stanieria cyanosphaera has 4290 nodes and 524011 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05696 and has 9 connected components, where the component with most
+nodes has 4273 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 244.29, and
+the node degree mode is 3. The top 5 most central nodes are 111780.Sta7437_0512
+(degree 1996), 111780.Sta7437_0304 (degree 1506), 111780.Sta7437_4121 (degree
+1487), 111780.Sta7437_3065 (degree 1475) and 111780.Sta7437_1275 (degree
 1263).
 
 
@@ -107,13 +108,14 @@ def StanieriaCyanosphaera(
 	
 	Datetime: 2021-02-02 19:46:38.725077
 	
-	The undirected graph Stanieria cyanosphaera has 4290 nodes and 524011 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05696 and
-	has 9 connected components, where the component with most nodes has 4273 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 244.29, and the node degree mode is 3. The top 5 most central
-	nodes are 111780.Sta7437_0512 (degree 1996), 111780.Sta7437_0304 (degree 1506), 111780.Sta7437_4121
-	(degree 1487), 111780.Sta7437_3065 (degree 1475) and 111780.Sta7437_1275 (degree
+	The undirected graph Stanieria cyanosphaera has 4290 nodes and 524011 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05696 and has 9 connected components, where the component with most
+	nodes has 4273 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 244.29, and
+	the node degree mode is 3. The top 5 most central nodes are 111780.Sta7437_0512
+	(degree 1996), 111780.Sta7437_0304 (degree 1506), 111780.Sta7437_4121 (degree
+	1487), 111780.Sta7437_3065 (degree 1475) and 111780.Sta7437_1275 (degree
 	1263).
 	
 

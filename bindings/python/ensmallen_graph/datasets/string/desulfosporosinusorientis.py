@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:37.273231
 
-The undirected graph Desulfosporosinus orientis has 5180 nodes and 872315 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06503
-and has 9 connected components, where the component with most nodes has 5164 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 290, the mean node degree is 336.80, and the node degree mode is 3. The top 5
-most central nodes are 768706.Desor_4540 (degree 2796), 768706.Desor_4541 (degree
-2782), 768706.Desor_3735 (degree 2752), 768706.Desor_4513 (degree 2436) and 768706.Desor_3737
-(degree 2346).
+The undirected graph Desulfosporosinus orientis has 5180 nodes and 872315
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06503 and has 9 connected components, where the component
+with most nodes has 5164 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 290, the mean node degree is 336.80,
+and the node degree mode is 3. The top 5 most central nodes are 768706.Desor_4540
+(degree 2796), 768706.Desor_4541 (degree 2782), 768706.Desor_3735 (degree
+2752), 768706.Desor_4513 (degree 2436) and 768706.Desor_3737 (degree 2346).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfosporosinusOrientis(
 	
 	Datetime: 2021-02-02 21:44:37.273231
 	
-	The undirected graph Desulfosporosinus orientis has 5180 nodes and 872315 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06503
-	and has 9 connected components, where the component with most nodes has 5164 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 290, the mean node degree is 336.80, and the node degree mode is 3. The top 5
-	most central nodes are 768706.Desor_4540 (degree 2796), 768706.Desor_4541 (degree
-	2782), 768706.Desor_3735 (degree 2752), 768706.Desor_4513 (degree 2436) and 768706.Desor_3737
-	(degree 2346).
+	The undirected graph Desulfosporosinus orientis has 5180 nodes and 872315
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06503 and has 9 connected components, where the component
+	with most nodes has 5164 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 290, the mean node degree is 336.80,
+	and the node degree mode is 3. The top 5 most central nodes are 768706.Desor_4540
+	(degree 2796), 768706.Desor_4541 (degree 2782), 768706.Desor_3735 (degree
+	2752), 768706.Desor_4513 (degree 2436) and 768706.Desor_3737 (degree 2346).
 	
 
 

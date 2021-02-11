@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:44.868933
 
-The undirected graph Mycobacterium asiaticum has 5543 nodes and 748904 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04876 and
-has 20 connected components, where the component with most nodes has 5497 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 270.22, and the node degree mode is 2. The top 5 most central
-nodes are 1265310.CCBD010000044_gene792 (degree 2207), 1265310.CCBD010000075_gene5568
-(degree 1988), 1265310.CCBD010000059_gene1314 (degree 1826), 1265310.CCBD010000064_gene1020
-(degree 1701) and 1265310.CCBD010000065_gene978 (degree 1655).
+The undirected graph Mycobacterium asiaticum has 5543 nodes and 748904
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04876 and has 20 connected components, where the component
+with most nodes has 5497 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 270.22,
+and the node degree mode is 2. The top 5 most central nodes are 1265310.CCBD010000044_gene792
+(degree 2207), 1265310.CCBD010000075_gene5568 (degree 1988), 1265310.CCBD010000059_gene1314
+(degree 1826), 1265310.CCBD010000064_gene1020 (degree 1701) and 1265310.CCBD010000065_gene978
+(degree 1655).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumAsiaticum(
 	
 	Datetime: 2021-02-02 23:35:44.868933
 	
-	The undirected graph Mycobacterium asiaticum has 5543 nodes and 748904 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04876 and
-	has 20 connected components, where the component with most nodes has 5497 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 270.22, and the node degree mode is 2. The top 5 most central
-	nodes are 1265310.CCBD010000044_gene792 (degree 2207), 1265310.CCBD010000075_gene5568
-	(degree 1988), 1265310.CCBD010000059_gene1314 (degree 1826), 1265310.CCBD010000064_gene1020
-	(degree 1701) and 1265310.CCBD010000065_gene978 (degree 1655).
+	The undirected graph Mycobacterium asiaticum has 5543 nodes and 748904
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04876 and has 20 connected components, where the component
+	with most nodes has 5497 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 270.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1265310.CCBD010000044_gene792
+	(degree 2207), 1265310.CCBD010000075_gene5568 (degree 1988), 1265310.CCBD010000059_gene1314
+	(degree 1826), 1265310.CCBD010000064_gene1020 (degree 1701) and 1265310.CCBD010000065_gene978
+	(degree 1655).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:14.241498
 
-The undirected graph Paenisporosarcina sp. HGH0030 has 3417 nodes and 325207 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05572
-and has 16 connected components, where the component with most nodes has 3376 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 182, the mean node degree is 190.35, and the node degree mode is 3. The top 5
-most central nodes are 1078085.HMPREF1210_00181 (degree 1120), 1078085.HMPREF1210_01405
-(degree 1080), 1078085.HMPREF1210_01221 (degree 963), 1078085.HMPREF1210_00898 (degree
-884) and 1078085.HMPREF1210_02444 (degree 883).
+The undirected graph Paenisporosarcina sp. HGH0030 has 3417 nodes and 325207
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05572 and has 16 connected components, where the component
+with most nodes has 3376 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 190.35,
+and the node degree mode is 3. The top 5 most central nodes are 1078085.HMPREF1210_00181
+(degree 1120), 1078085.HMPREF1210_01405 (degree 1080), 1078085.HMPREF1210_01221
+(degree 963), 1078085.HMPREF1210_00898 (degree 884) and 1078085.HMPREF1210_02444
+(degree 883).
 
 
 References
@@ -107,14 +108,15 @@ def PaenisporosarcinaSp.Hgh0030(
 	
 	Datetime: 2021-02-02 22:20:14.241498
 	
-	The undirected graph Paenisporosarcina sp. HGH0030 has 3417 nodes and 325207 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05572
-	and has 16 connected components, where the component with most nodes has 3376 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 182, the mean node degree is 190.35, and the node degree mode is 3. The top 5
-	most central nodes are 1078085.HMPREF1210_00181 (degree 1120), 1078085.HMPREF1210_01405
-	(degree 1080), 1078085.HMPREF1210_01221 (degree 963), 1078085.HMPREF1210_00898 (degree
-	884) and 1078085.HMPREF1210_02444 (degree 883).
+	The undirected graph Paenisporosarcina sp. HGH0030 has 3417 nodes and 325207
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05572 and has 16 connected components, where the component
+	with most nodes has 3376 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 190.35,
+	and the node degree mode is 3. The top 5 most central nodes are 1078085.HMPREF1210_00181
+	(degree 1120), 1078085.HMPREF1210_01405 (degree 1080), 1078085.HMPREF1210_01221
+	(degree 963), 1078085.HMPREF1210_00898 (degree 884) and 1078085.HMPREF1210_02444
+	(degree 883).
 	
 
 

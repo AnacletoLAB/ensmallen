@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:41.852046
 
-The undirected graph Paenibacillus polymyxa M1 has 5010 nodes and 420752 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03353
-and has 29 connected components, where the component with most nodes has 4938 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 167.96, and the node degree mode is 1. The top 5
-most central nodes are 1052684.PPM_1584 (degree 1662), 1052684.PPM_3216 (degree 1619),
-1052684.PPM_4234 (degree 1463), 1052684.PPM_2387 (degree 1436) and 1052684.PPM_0914
-(degree 1417).
+The undirected graph Paenibacillus polymyxa M1 has 5010 nodes and 420752
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03353 and has 29 connected components, where the component
+with most nodes has 4938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 167.96,
+and the node degree mode is 1. The top 5 most central nodes are 1052684.PPM_1584
+(degree 1662), 1052684.PPM_3216 (degree 1619), 1052684.PPM_4234 (degree
+1463), 1052684.PPM_2387 (degree 1436) and 1052684.PPM_0914 (degree 1417).
 
 
 References
@@ -107,14 +107,14 @@ def PaenibacillusPolymyxaM1(
 	
 	Datetime: 2021-02-02 22:17:41.852046
 	
-	The undirected graph Paenibacillus polymyxa M1 has 5010 nodes and 420752 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03353
-	and has 29 connected components, where the component with most nodes has 4938 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 167.96, and the node degree mode is 1. The top 5
-	most central nodes are 1052684.PPM_1584 (degree 1662), 1052684.PPM_3216 (degree 1619),
-	1052684.PPM_4234 (degree 1463), 1052684.PPM_2387 (degree 1436) and 1052684.PPM_0914
-	(degree 1417).
+	The undirected graph Paenibacillus polymyxa M1 has 5010 nodes and 420752
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03353 and has 29 connected components, where the component
+	with most nodes has 4938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 167.96,
+	and the node degree mode is 1. The top 5 most central nodes are 1052684.PPM_1584
+	(degree 1662), 1052684.PPM_3216 (degree 1619), 1052684.PPM_4234 (degree
+	1463), 1052684.PPM_2387 (degree 1436) and 1052684.PPM_0914 (degree 1417).
 	
 
 

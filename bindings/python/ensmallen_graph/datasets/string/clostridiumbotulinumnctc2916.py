@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:53.143644
 
-The undirected graph Clostridium botulinum NCTC2916 has 3600 nodes and 354869 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05478
-and has 18 connected components, where the component with most nodes has 3557 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 144, the mean node degree is 197.15, and the node degree mode is 1. The top 5
-most central nodes are 445335.CBN_3056 (degree 1363), 445335.CBN_3339 (degree 1343),
-445335.CBN_3338 (degree 1262), 445335.CBN_0577 (degree 1176) and 445335.CBN_1265
-(degree 1135).
+The undirected graph Clostridium botulinum NCTC2916 has 3600 nodes and
+354869 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05478 and has 18 connected components, where the
+component with most nodes has 3557 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 144, the mean node degree
+is 197.15, and the node degree mode is 1. The top 5 most central nodes
+are 445335.CBN_3056 (degree 1363), 445335.CBN_3339 (degree 1343), 445335.CBN_3338
+(degree 1262), 445335.CBN_0577 (degree 1176) and 445335.CBN_1265 (degree
+1135).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumBotulinumNctc2916(
 	
 	Datetime: 2021-02-02 20:50:53.143644
 	
-	The undirected graph Clostridium botulinum NCTC2916 has 3600 nodes and 354869 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05478
-	and has 18 connected components, where the component with most nodes has 3557 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 144, the mean node degree is 197.15, and the node degree mode is 1. The top 5
-	most central nodes are 445335.CBN_3056 (degree 1363), 445335.CBN_3339 (degree 1343),
-	445335.CBN_3338 (degree 1262), 445335.CBN_0577 (degree 1176) and 445335.CBN_1265
-	(degree 1135).
+	The undirected graph Clostridium botulinum NCTC2916 has 3600 nodes and
+	354869 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05478 and has 18 connected components, where the
+	component with most nodes has 3557 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 144, the mean node degree
+	is 197.15, and the node degree mode is 1. The top 5 most central nodes
+	are 445335.CBN_3056 (degree 1363), 445335.CBN_3339 (degree 1343), 445335.CBN_3338
+	(degree 1262), 445335.CBN_0577 (degree 1176) and 445335.CBN_1265 (degree
+	1135).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:13.768181
 
-The undirected graph Acinetobacter sp. HR7 has 2884 nodes and 247233 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05947 and
-has 12 connected components, where the component with most nodes has 2859 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 171.45, and the node degree mode is 3. The top 5 most central
-nodes are 1509403.GW12_04440 (degree 1052), 1509403.GW12_27070 (degree 1022), 1509403.GW12_06340
-(degree 938), 1509403.GW12_28490 (degree 922) and 1509403.GW12_26850 (degree 908).
+The undirected graph Acinetobacter sp. HR7 has 2884 nodes and 247233 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05947 and has 12 connected components, where the component with most
+nodes has 2859 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 171.45, and
+the node degree mode is 3. The top 5 most central nodes are 1509403.GW12_04440
+(degree 1052), 1509403.GW12_27070 (degree 1022), 1509403.GW12_06340 (degree
+938), 1509403.GW12_28490 (degree 922) and 1509403.GW12_26850 (degree 908).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterSp.Hr7(
 	
 	Datetime: 2021-02-03 23:17:13.768181
 	
-	The undirected graph Acinetobacter sp. HR7 has 2884 nodes and 247233 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05947 and
-	has 12 connected components, where the component with most nodes has 2859 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 171.45, and the node degree mode is 3. The top 5 most central
-	nodes are 1509403.GW12_04440 (degree 1052), 1509403.GW12_27070 (degree 1022), 1509403.GW12_06340
-	(degree 938), 1509403.GW12_28490 (degree 922) and 1509403.GW12_26850 (degree 908).
+	The undirected graph Acinetobacter sp. HR7 has 2884 nodes and 247233 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05947 and has 12 connected components, where the component with most
+	nodes has 2859 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 171.45, and
+	the node degree mode is 3. The top 5 most central nodes are 1509403.GW12_04440
+	(degree 1052), 1509403.GW12_27070 (degree 1022), 1509403.GW12_06340 (degree
+	938), 1509403.GW12_28490 (degree 922) and 1509403.GW12_26850 (degree 908).
 	
 
 

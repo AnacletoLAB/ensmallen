@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:59.614396
 
-The undirected graph Bartonella tamiae has 1956 nodes and 143536 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07507 and
-has 10 connected components, where the component with most nodes has 1936 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 146.76, and the node degree mode is 1. The top 5 most central
-nodes are 1094558.ME5_00319 (degree 866), 1094558.ME5_00827 (degree 750), 1094558.ME5_01210
-(degree 713), 1094558.ME5_00347 (degree 674) and 1094558.ME5_01353 (degree 631).
+The undirected graph Bartonella tamiae has 1956 nodes and 143536 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07507 and has 10 connected components, where the component with most
+nodes has 1936 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 146.76, and
+the node degree mode is 1. The top 5 most central nodes are 1094558.ME5_00319
+(degree 866), 1094558.ME5_00827 (degree 750), 1094558.ME5_01210 (degree
+713), 1094558.ME5_00347 (degree 674) and 1094558.ME5_01353 (degree 631).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaTamiae(
 	
 	Datetime: 2021-02-02 22:22:59.614396
 	
-	The undirected graph Bartonella tamiae has 1956 nodes and 143536 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07507 and
-	has 10 connected components, where the component with most nodes has 1936 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 146.76, and the node degree mode is 1. The top 5 most central
-	nodes are 1094558.ME5_00319 (degree 866), 1094558.ME5_00827 (degree 750), 1094558.ME5_01210
-	(degree 713), 1094558.ME5_00347 (degree 674) and 1094558.ME5_01353 (degree 631).
+	The undirected graph Bartonella tamiae has 1956 nodes and 143536 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07507 and has 10 connected components, where the component with most
+	nodes has 1936 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 146.76, and
+	the node degree mode is 1. The top 5 most central nodes are 1094558.ME5_00319
+	(degree 866), 1094558.ME5_00827 (degree 750), 1094558.ME5_01210 (degree
+	713), 1094558.ME5_00347 (degree 674) and 1094558.ME5_01353 (degree 631).
 	
 
 

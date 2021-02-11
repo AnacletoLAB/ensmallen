@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:17.954581
 
-The undirected graph Bifidobacterium asteroides has 1640 nodes and 97469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07252
-and has 5 connected components, where the component with most nodes has 1629 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 118.86, and the node degree mode is 1. The top 5 most
-central nodes are 1147128.BAST_1439 (degree 743), 1147128.BAST_0933 (degree 722),
-1147128.BAST_1228 (degree 610), 1147128.BAST_1054 (degree 609) and 1147128.BAST_0671
-(degree 572).
+The undirected graph Bifidobacterium asteroides has 1640 nodes and 97469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07252 and has 5 connected components, where the component
+with most nodes has 1629 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 118.86,
+and the node degree mode is 1. The top 5 most central nodes are 1147128.BAST_1439
+(degree 743), 1147128.BAST_0933 (degree 722), 1147128.BAST_1228 (degree
+610), 1147128.BAST_1054 (degree 609) and 1147128.BAST_0671 (degree 572).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumAsteroides(
 	
 	Datetime: 2021-02-02 22:59:17.954581
 	
-	The undirected graph Bifidobacterium asteroides has 1640 nodes and 97469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07252
-	and has 5 connected components, where the component with most nodes has 1629 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 118.86, and the node degree mode is 1. The top 5 most
-	central nodes are 1147128.BAST_1439 (degree 743), 1147128.BAST_0933 (degree 722),
-	1147128.BAST_1228 (degree 610), 1147128.BAST_1054 (degree 609) and 1147128.BAST_0671
-	(degree 572).
+	The undirected graph Bifidobacterium asteroides has 1640 nodes and 97469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07252 and has 5 connected components, where the component
+	with most nodes has 1629 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 118.86,
+	and the node degree mode is 1. The top 5 most central nodes are 1147128.BAST_1439
+	(degree 743), 1147128.BAST_0933 (degree 722), 1147128.BAST_1228 (degree
+	610), 1147128.BAST_1054 (degree 609) and 1147128.BAST_0671 (degree 572).
 	
 
 

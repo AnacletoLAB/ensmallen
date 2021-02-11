@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:05.953641
 
-The undirected graph Anaerococcus prevotii ACS065VCol13 has 1629 nodes and 113746
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08578 and has 5 connected components, where the component with most nodes has
-1620 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 107, the mean node degree is 139.65, and the node degree mode is 4. The
-top 5 most central nodes are 879305.HMPREF9290_0525 (degree 780), 879305.HMPREF9290_1113
-(degree 775), 879305.HMPREF9290_1527 (degree 764), 879305.HMPREF9290_1528 (degree
+The undirected graph Anaerococcus prevotii ACS065VCol13 has 1629 nodes
+and 113746 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08578 and has 5 connected components, where the
+component with most nodes has 1620 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+is 139.65, and the node degree mode is 4. The top 5 most central nodes
+are 879305.HMPREF9290_0525 (degree 780), 879305.HMPREF9290_1113 (degree
+775), 879305.HMPREF9290_1527 (degree 764), 879305.HMPREF9290_1528 (degree
 759) and 879305.HMPREF9290_1667 (degree 695).
 
 
@@ -107,13 +108,14 @@ def AnaerococcusPrevotiiAcs065vcol13(
 	
 	Datetime: 2021-02-02 21:50:05.953641
 	
-	The undirected graph Anaerococcus prevotii ACS065VCol13 has 1629 nodes and 113746
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08578 and has 5 connected components, where the component with most nodes has
-	1620 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 107, the mean node degree is 139.65, and the node degree mode is 4. The
-	top 5 most central nodes are 879305.HMPREF9290_0525 (degree 780), 879305.HMPREF9290_1113
-	(degree 775), 879305.HMPREF9290_1527 (degree 764), 879305.HMPREF9290_1528 (degree
+	The undirected graph Anaerococcus prevotii ACS065VCol13 has 1629 nodes
+	and 113746 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08578 and has 5 connected components, where the
+	component with most nodes has 1620 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 107, the mean node degree
+	is 139.65, and the node degree mode is 4. The top 5 most central nodes
+	are 879305.HMPREF9290_0525 (degree 780), 879305.HMPREF9290_1113 (degree
+	775), 879305.HMPREF9290_1527 (degree 764), 879305.HMPREF9290_1528 (degree
 	759) and 879305.HMPREF9290_1667 (degree 695).
 	
 

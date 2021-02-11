@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:26.049365
 
-The undirected graph Thermoproteus tenax has 2035 nodes and 205839 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09946 and
-has 8 connected components, where the component with most nodes has 2016 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 202.30, and the node degree mode is 2. The top 5 most central
-nodes are 768679.TTX_1534 (degree 853), 768679.TTX_0494 (degree 818), 768679.TTX_1160
-(degree 767), 768679.TTX_0980 (degree 745) and 768679.TTX_0627 (degree 733).
+The undirected graph Thermoproteus tenax has 2035 nodes and 205839 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09946 and has 8 connected components, where the component with most
+nodes has 2016 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 202.30, and
+the node degree mode is 2. The top 5 most central nodes are 768679.TTX_1534
+(degree 853), 768679.TTX_0494 (degree 818), 768679.TTX_1160 (degree 767),
+768679.TTX_0980 (degree 745) and 768679.TTX_0627 (degree 733).
 
 
 References
@@ -106,13 +107,14 @@ def ThermoproteusTenax(
 	
 	Datetime: 2021-02-02 21:44:26.049365
 	
-	The undirected graph Thermoproteus tenax has 2035 nodes and 205839 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09946 and
-	has 8 connected components, where the component with most nodes has 2016 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 202.30, and the node degree mode is 2. The top 5 most central
-	nodes are 768679.TTX_1534 (degree 853), 768679.TTX_0494 (degree 818), 768679.TTX_1160
-	(degree 767), 768679.TTX_0980 (degree 745) and 768679.TTX_0627 (degree 733).
+	The undirected graph Thermoproteus tenax has 2035 nodes and 205839 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09946 and has 8 connected components, where the component with most
+	nodes has 2016 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 202.30, and
+	the node degree mode is 2. The top 5 most central nodes are 768679.TTX_1534
+	(degree 853), 768679.TTX_0494 (degree 818), 768679.TTX_1160 (degree 767),
+	768679.TTX_0980 (degree 745) and 768679.TTX_0627 (degree 733).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:54.879909
 
-The undirected graph Saprolegnia diclina has 9074 nodes and 1973542 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-has 24 connected components, where the component with most nodes has 9025 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 293,
-the mean node degree is 434.99, and the node degree mode is 1. The top 5 most central
-nodes are 112098.XP_008609735.1 (degree 4272), 112098.XP_008609734.1 (degree 3742),
-112098.XP_008605316.1 (degree 3348), 112098.XP_008610308.1 (degree 3321) and 112098.XP_008616419.1
+The undirected graph Saprolegnia diclina has 9074 nodes and 1973542 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04794 and has 24 connected components, where the component with most
+nodes has 9025 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 293, the mean node degree is 434.99, and
+the node degree mode is 1. The top 5 most central nodes are 112098.XP_008609735.1
+(degree 4272), 112098.XP_008609734.1 (degree 3742), 112098.XP_008605316.1
+(degree 3348), 112098.XP_008610308.1 (degree 3321) and 112098.XP_008616419.1
 (degree 3282).
 
 
@@ -107,13 +108,14 @@ def SaprolegniaDiclina(
 	
 	Datetime: 2021-02-02 19:46:54.879909
 	
-	The undirected graph Saprolegnia diclina has 9074 nodes and 1973542 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-	has 24 connected components, where the component with most nodes has 9025 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 293,
-	the mean node degree is 434.99, and the node degree mode is 1. The top 5 most central
-	nodes are 112098.XP_008609735.1 (degree 4272), 112098.XP_008609734.1 (degree 3742),
-	112098.XP_008605316.1 (degree 3348), 112098.XP_008610308.1 (degree 3321) and 112098.XP_008616419.1
+	The undirected graph Saprolegnia diclina has 9074 nodes and 1973542 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04794 and has 24 connected components, where the component with most
+	nodes has 9025 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 293, the mean node degree is 434.99, and
+	the node degree mode is 1. The top 5 most central nodes are 112098.XP_008609735.1
+	(degree 4272), 112098.XP_008609734.1 (degree 3742), 112098.XP_008605316.1
+	(degree 3348), 112098.XP_008610308.1 (degree 3321) and 112098.XP_008616419.1
 	(degree 3282).
 	
 

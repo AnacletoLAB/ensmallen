@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:26.174331
 
-The undirected graph Thermotoga thermarum has 1936 nodes and 122950 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06564 and
-has 8 connected components, where the component with most nodes has 1919 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 127.01, and the node degree mode is 45. The top 5 most central
-nodes are 688269.Theth_0274 (degree 911), 688269.Theth_0316 (degree 850), 688269.Theth_0850
-(degree 670), 688269.Theth_1930 (degree 668) and 688269.Theth_0895 (degree 628).
+The undirected graph Thermotoga thermarum has 1936 nodes and 122950 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06564 and has 8 connected components, where the component with most
+nodes has 1919 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 127.01, and
+the node degree mode is 45. The top 5 most central nodes are 688269.Theth_0274
+(degree 911), 688269.Theth_0316 (degree 850), 688269.Theth_0850 (degree
+670), 688269.Theth_1930 (degree 668) and 688269.Theth_0895 (degree 628).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaThermarum(
 	
 	Datetime: 2021-02-02 21:31:26.174331
 	
-	The undirected graph Thermotoga thermarum has 1936 nodes and 122950 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06564 and
-	has 8 connected components, where the component with most nodes has 1919 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 127.01, and the node degree mode is 45. The top 5 most central
-	nodes are 688269.Theth_0274 (degree 911), 688269.Theth_0316 (degree 850), 688269.Theth_0850
-	(degree 670), 688269.Theth_1930 (degree 668) and 688269.Theth_0895 (degree 628).
+	The undirected graph Thermotoga thermarum has 1936 nodes and 122950 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06564 and has 8 connected components, where the component with most
+	nodes has 1919 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 127.01, and
+	the node degree mode is 45. The top 5 most central nodes are 688269.Theth_0274
+	(degree 911), 688269.Theth_0316 (degree 850), 688269.Theth_0850 (degree
+	670), 688269.Theth_1930 (degree 668) and 688269.Theth_0895 (degree 628).
 	
 
 

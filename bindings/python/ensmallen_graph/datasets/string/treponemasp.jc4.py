@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:41.628458
 
-The undirected graph Treponema sp. JC4 has 2541 nodes and 241939 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07497 and
-has 7 connected components, where the component with most nodes has 2526 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 190.43, and the node degree mode is 4. The top 5 most central
-nodes are 1124982.MSI_05940 (degree 1275), 1124982.MSI_11110 (degree 1011), 1124982.MSI_04250
-(degree 986), 1124982.MSI_12460 (degree 886) and 1124982.MSI_15840 (degree 835).
+The undirected graph Treponema sp. JC4 has 2541 nodes and 241939 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07497 and has 7 connected components, where the component with most
+nodes has 2526 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 190.43, and
+the node degree mode is 4. The top 5 most central nodes are 1124982.MSI_05940
+(degree 1275), 1124982.MSI_11110 (degree 1011), 1124982.MSI_04250 (degree
+986), 1124982.MSI_12460 (degree 886) and 1124982.MSI_15840 (degree 835).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaSp.Jc4(
 	
 	Datetime: 2021-02-02 22:53:41.628458
 	
-	The undirected graph Treponema sp. JC4 has 2541 nodes and 241939 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07497 and
-	has 7 connected components, where the component with most nodes has 2526 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 190.43, and the node degree mode is 4. The top 5 most central
-	nodes are 1124982.MSI_05940 (degree 1275), 1124982.MSI_11110 (degree 1011), 1124982.MSI_04250
-	(degree 986), 1124982.MSI_12460 (degree 886) and 1124982.MSI_15840 (degree 835).
+	The undirected graph Treponema sp. JC4 has 2541 nodes and 241939 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07497 and has 7 connected components, where the component with most
+	nodes has 2526 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 190.43, and
+	the node degree mode is 4. The top 5 most central nodes are 1124982.MSI_05940
+	(degree 1275), 1124982.MSI_11110 (degree 1011), 1124982.MSI_04250 (degree
+	986), 1124982.MSI_12460 (degree 886) and 1124982.MSI_15840 (degree 835).
 	
 
 

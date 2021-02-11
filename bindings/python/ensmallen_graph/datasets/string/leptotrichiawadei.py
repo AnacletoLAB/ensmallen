@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:50.601147
 
-The undirected graph Leptotrichia wadei has 2252 nodes and 126588 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04994 and
-has 9 connected components, where the component with most nodes has 2235 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 81,
-the mean node degree is 112.42, and the node degree mode is 8. The top 5 most central
-nodes are 888055.HMPREF9015_00142 (degree 1031), 888055.HMPREF9015_01162 (degree
-767), 888055.HMPREF9015_01535 (degree 635), 888055.HMPREF9015_01175 (degree 629)
-and 888055.HMPREF9015_00320 (degree 622).
+The undirected graph Leptotrichia wadei has 2252 nodes and 126588 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04994 and has 9 connected components, where the component with most
+nodes has 2235 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 81, the mean node degree is 112.42, and
+the node degree mode is 8. The top 5 most central nodes are 888055.HMPREF9015_00142
+(degree 1031), 888055.HMPREF9015_01162 (degree 767), 888055.HMPREF9015_01535
+(degree 635), 888055.HMPREF9015_01175 (degree 629) and 888055.HMPREF9015_00320
+(degree 622).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaWadei(
 	
 	Datetime: 2021-02-02 21:52:50.601147
 	
-	The undirected graph Leptotrichia wadei has 2252 nodes and 126588 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04994 and
-	has 9 connected components, where the component with most nodes has 2235 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 81,
-	the mean node degree is 112.42, and the node degree mode is 8. The top 5 most central
-	nodes are 888055.HMPREF9015_00142 (degree 1031), 888055.HMPREF9015_01162 (degree
-	767), 888055.HMPREF9015_01535 (degree 635), 888055.HMPREF9015_01175 (degree 629)
-	and 888055.HMPREF9015_00320 (degree 622).
+	The undirected graph Leptotrichia wadei has 2252 nodes and 126588 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04994 and has 9 connected components, where the component with most
+	nodes has 2235 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 81, the mean node degree is 112.42, and
+	the node degree mode is 8. The top 5 most central nodes are 888055.HMPREF9015_00142
+	(degree 1031), 888055.HMPREF9015_01162 (degree 767), 888055.HMPREF9015_01535
+	(degree 635), 888055.HMPREF9015_01175 (degree 629) and 888055.HMPREF9015_00320
+	(degree 622).
 	
 
 

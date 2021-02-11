@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:40:00.770334
 
-The undirected graph Solanum lycopersicum has 25316 nodes and 4831987 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01508 and
-has 16 connected components, where the component with most nodes has 25283 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 381.73, and the node degree mode is 2. The top 5
-most central nodes are 4081.Solyc05g018300.2.1 (degree 8202), 4081.Solyc01g109830.2.1
-(degree 6511), 4081.Solyc09g008130.2.1 (degree 5521), 4081.Solyc11g013810.1.1 (degree
-4874) and 4081.Solyc07g023990.1.1 (degree 4423).
+The undirected graph Solanum lycopersicum has 25316 nodes and 4831987 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01508 and has 16 connected components, where the component with most
+nodes has 25283 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 381.73, and
+the node degree mode is 2. The top 5 most central nodes are 4081.Solyc05g018300.2.1
+(degree 8202), 4081.Solyc01g109830.2.1 (degree 6511), 4081.Solyc09g008130.2.1
+(degree 5521), 4081.Solyc11g013810.1.1 (degree 4874) and 4081.Solyc07g023990.1.1
+(degree 4423).
 
 
 References
@@ -107,14 +108,15 @@ def SolanumLycopersicum(
 	
 	Datetime: 2021-02-02 16:40:00.770334
 	
-	The undirected graph Solanum lycopersicum has 25316 nodes and 4831987 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01508 and
-	has 16 connected components, where the component with most nodes has 25283 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 381.73, and the node degree mode is 2. The top 5
-	most central nodes are 4081.Solyc05g018300.2.1 (degree 8202), 4081.Solyc01g109830.2.1
-	(degree 6511), 4081.Solyc09g008130.2.1 (degree 5521), 4081.Solyc11g013810.1.1 (degree
-	4874) and 4081.Solyc07g023990.1.1 (degree 4423).
+	The undirected graph Solanum lycopersicum has 25316 nodes and 4831987 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01508 and has 16 connected components, where the component with most
+	nodes has 25283 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 381.73, and
+	the node degree mode is 2. The top 5 most central nodes are 4081.Solyc05g018300.2.1
+	(degree 8202), 4081.Solyc01g109830.2.1 (degree 6511), 4081.Solyc09g008130.2.1
+	(degree 5521), 4081.Solyc11g013810.1.1 (degree 4874) and 4081.Solyc07g023990.1.1
+	(degree 4423).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:11.863425
 
-The undirected graph Oceaniovalibus guishaninsula has 2824 nodes and 267685 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06716
-and is connected, as it has a single component. The graph median node degree is 168,
-the mean node degree is 189.58, and the node degree mode is 4. The top 5 most central
-nodes are 1231392.OCGS_1115 (degree 1119), 1231392.OCGS_0752 (degree 944), 1231392.OCGS_1135
-(degree 886), 1231392.OCGS_1886 (degree 808) and 1231392.OCGS_1435 (degree 793).
+The undirected graph Oceaniovalibus guishaninsula has 2824 nodes and 267685
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06716 and is connected, as it has a single component.
+The graph median node degree is 168, the mean node degree is 189.58, and
+the node degree mode is 4. The top 5 most central nodes are 1231392.OCGS_1115
+(degree 1119), 1231392.OCGS_0752 (degree 944), 1231392.OCGS_1135 (degree
+886), 1231392.OCGS_1886 (degree 808) and 1231392.OCGS_1435 (degree 793).
 
 
 References
@@ -105,12 +106,13 @@ def OceaniovalibusGuishaninsula(
 	
 	Datetime: 2021-02-02 23:28:11.863425
 	
-	The undirected graph Oceaniovalibus guishaninsula has 2824 nodes and 267685 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06716
-	and is connected, as it has a single component. The graph median node degree is 168,
-	the mean node degree is 189.58, and the node degree mode is 4. The top 5 most central
-	nodes are 1231392.OCGS_1115 (degree 1119), 1231392.OCGS_0752 (degree 944), 1231392.OCGS_1135
-	(degree 886), 1231392.OCGS_1886 (degree 808) and 1231392.OCGS_1435 (degree 793).
+	The undirected graph Oceaniovalibus guishaninsula has 2824 nodes and 267685
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06716 and is connected, as it has a single component.
+	The graph median node degree is 168, the mean node degree is 189.58, and
+	the node degree mode is 4. The top 5 most central nodes are 1231392.OCGS_1115
+	(degree 1119), 1231392.OCGS_0752 (degree 944), 1231392.OCGS_1135 (degree
+	886), 1231392.OCGS_1886 (degree 808) and 1231392.OCGS_1435 (degree 793).
 	
 
 

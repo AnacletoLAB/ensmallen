@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:09.024485
 
-The undirected graph Azotobacter vinelandii has 4955 nodes and 578640 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04715 and
-has 18 connected components, where the component with most nodes has 4918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 233.56, and the node degree mode is 1. The top 5 most central
-nodes are 322710.Avin_29560 (degree 2047), 322710.Avin_00630 (degree 1761), 322710.Avin_51910
-(degree 1573), 322710.Avin_51880 (degree 1360) and 322710.Avin_35230 (degree 1351).
+The undirected graph Azotobacter vinelandii has 4955 nodes and 578640 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04715 and has 18 connected components, where the component with most
+nodes has 4918 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 233.56, and
+the node degree mode is 1. The top 5 most central nodes are 322710.Avin_29560
+(degree 2047), 322710.Avin_00630 (degree 1761), 322710.Avin_51910 (degree
+1573), 322710.Avin_51880 (degree 1360) and 322710.Avin_35230 (degree 1351).
 
 
 References
@@ -106,13 +107,14 @@ def AzotobacterVinelandii(
 	
 	Datetime: 2021-02-02 20:28:09.024485
 	
-	The undirected graph Azotobacter vinelandii has 4955 nodes and 578640 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04715 and
-	has 18 connected components, where the component with most nodes has 4918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 233.56, and the node degree mode is 1. The top 5 most central
-	nodes are 322710.Avin_29560 (degree 2047), 322710.Avin_00630 (degree 1761), 322710.Avin_51910
-	(degree 1573), 322710.Avin_51880 (degree 1360) and 322710.Avin_35230 (degree 1351).
+	The undirected graph Azotobacter vinelandii has 4955 nodes and 578640 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04715 and has 18 connected components, where the component with most
+	nodes has 4918 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 233.56, and
+	the node degree mode is 1. The top 5 most central nodes are 322710.Avin_29560
+	(degree 2047), 322710.Avin_00630 (degree 1761), 322710.Avin_51910 (degree
+	1573), 322710.Avin_51880 (degree 1360) and 322710.Avin_35230 (degree 1351).
 	
 
 

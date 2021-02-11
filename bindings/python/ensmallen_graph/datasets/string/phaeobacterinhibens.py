@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:09.869029
 
-The undirected graph Phaeobacter inhibens has 3747 nodes and 412690 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05880 and
-has 7 connected components, where the component with most nodes has 3730 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 220.28, and the node degree mode is 3. The top 5 most central
-nodes are 391619.PGA1_c31780 (degree 1592), 391619.PGA1_262p02280 (degree 1387),
-391619.PGA1_c05370 (degree 1186), 391619.PGA1_c04520 (degree 1129) and 391619.PGA1_c05350
+The undirected graph Phaeobacter inhibens has 3747 nodes and 412690 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05880 and has 7 connected components, where the component with most
+nodes has 3730 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 220.28, and
+the node degree mode is 3. The top 5 most central nodes are 391619.PGA1_c31780
+(degree 1592), 391619.PGA1_262p02280 (degree 1387), 391619.PGA1_c05370
+(degree 1186), 391619.PGA1_c04520 (degree 1129) and 391619.PGA1_c05350
 (degree 1088).
 
 
@@ -107,13 +108,14 @@ def PhaeobacterInhibens(
 	
 	Datetime: 2021-02-02 20:40:09.869029
 	
-	The undirected graph Phaeobacter inhibens has 3747 nodes and 412690 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05880 and
-	has 7 connected components, where the component with most nodes has 3730 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 220.28, and the node degree mode is 3. The top 5 most central
-	nodes are 391619.PGA1_c31780 (degree 1592), 391619.PGA1_262p02280 (degree 1387),
-	391619.PGA1_c05370 (degree 1186), 391619.PGA1_c04520 (degree 1129) and 391619.PGA1_c05350
+	The undirected graph Phaeobacter inhibens has 3747 nodes and 412690 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05880 and has 7 connected components, where the component with most
+	nodes has 3730 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 220.28, and
+	the node degree mode is 3. The top 5 most central nodes are 391619.PGA1_c31780
+	(degree 1592), 391619.PGA1_262p02280 (degree 1387), 391619.PGA1_c05370
+	(degree 1186), 391619.PGA1_c04520 (degree 1129) and 391619.PGA1_c05350
 	(degree 1088).
 	
 

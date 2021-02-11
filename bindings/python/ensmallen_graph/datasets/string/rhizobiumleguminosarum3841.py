@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:53.845533
 
-The undirected graph Rhizobium leguminosarum 3841 has 5577 nodes and 740327 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04761
-and has 15 connected components, where the component with most nodes has 5540 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 265.49, and the node degree mode is 2. The top 5
-most central nodes are 216596.pRL120718 (degree 2120), 216596.RL0160 (degree 1926),
-216596.RL0588 (degree 1902), 216596.RL3674 (degree 1726) and 216596.RL3630 (degree
-1575).
+The undirected graph Rhizobium leguminosarum 3841 has 5577 nodes and 740327
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04761 and has 15 connected components, where the component
+with most nodes has 5540 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 265.49,
+and the node degree mode is 2. The top 5 most central nodes are 216596.pRL120718
+(degree 2120), 216596.RL0160 (degree 1926), 216596.RL0588 (degree 1902),
+216596.RL3674 (degree 1726) and 216596.RL3630 (degree 1575).
 
 
 References
@@ -107,14 +107,14 @@ def RhizobiumLeguminosarum3841(
 	
 	Datetime: 2021-02-02 20:02:53.845533
 	
-	The undirected graph Rhizobium leguminosarum 3841 has 5577 nodes and 740327 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04761
-	and has 15 connected components, where the component with most nodes has 5540 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 265.49, and the node degree mode is 2. The top 5
-	most central nodes are 216596.pRL120718 (degree 2120), 216596.RL0160 (degree 1926),
-	216596.RL0588 (degree 1902), 216596.RL3674 (degree 1726) and 216596.RL3630 (degree
-	1575).
+	The undirected graph Rhizobium leguminosarum 3841 has 5577 nodes and 740327
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04761 and has 15 connected components, where the component
+	with most nodes has 5540 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 265.49,
+	and the node degree mode is 2. The top 5 most central nodes are 216596.pRL120718
+	(degree 2120), 216596.RL0160 (degree 1926), 216596.RL0588 (degree 1902),
+	216596.RL3674 (degree 1726) and 216596.RL3630 (degree 1575).
 	
 
 

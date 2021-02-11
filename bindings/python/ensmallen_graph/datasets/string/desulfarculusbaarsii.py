@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:30.546793
 
-The undirected graph Desulfarculus baarsii has 3266 nodes and 350135 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06567 and
-has 4 connected components, where the component with most nodes has 3259 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 214.41, and the node degree mode is 4. The top 5 most central
-nodes are 644282.Deba_2722 (degree 1464), 644282.Deba_1290 (degree 1458), 644282.Deba_1258
-(degree 1126), 644282.Deba_0503 (degree 1123) and 644282.Deba_2372 (degree 1112).
+The undirected graph Desulfarculus baarsii has 3266 nodes and 350135 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06567 and has 4 connected components, where the component with most
+nodes has 3259 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 214.41, and
+the node degree mode is 4. The top 5 most central nodes are 644282.Deba_2722
+(degree 1464), 644282.Deba_1290 (degree 1458), 644282.Deba_1258 (degree
+1126), 644282.Deba_0503 (degree 1123) and 644282.Deba_2372 (degree 1112).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfarculusBaarsii(
 	
 	Datetime: 2021-02-02 21:24:30.546793
 	
-	The undirected graph Desulfarculus baarsii has 3266 nodes and 350135 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06567 and
-	has 4 connected components, where the component with most nodes has 3259 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 214.41, and the node degree mode is 4. The top 5 most central
-	nodes are 644282.Deba_2722 (degree 1464), 644282.Deba_1290 (degree 1458), 644282.Deba_1258
-	(degree 1126), 644282.Deba_0503 (degree 1123) and 644282.Deba_2372 (degree 1112).
+	The undirected graph Desulfarculus baarsii has 3266 nodes and 350135 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06567 and has 4 connected components, where the component with most
+	nodes has 3259 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 214.41, and
+	the node degree mode is 4. The top 5 most central nodes are 644282.Deba_2722
+	(degree 1464), 644282.Deba_1290 (degree 1458), 644282.Deba_1258 (degree
+	1126), 644282.Deba_0503 (degree 1123) and 644282.Deba_2372 (degree 1112).
 	
 
 

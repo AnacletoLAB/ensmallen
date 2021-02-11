@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:31.435966
 
-The undirected graph Dichelobacter nodosus has 1274 nodes and 72887 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08988 and
-has 4 connected components, where the component with most nodes has 1267 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 114.42, and the node degree mode is 11. The top 5 most central
-nodes are 246195.DNO_0206 (degree 619), 246195.DNO_0934 (degree 522), 246195.DNO_0380
-(degree 490), 246195.DNO_0376 (degree 485) and 246195.DNO_0158 (degree 461).
+The undirected graph Dichelobacter nodosus has 1274 nodes and 72887 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08988 and has 4 connected components, where the component with most
+nodes has 1267 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 114.42, and
+the node degree mode is 11. The top 5 most central nodes are 246195.DNO_0206
+(degree 619), 246195.DNO_0934 (degree 522), 246195.DNO_0380 (degree 490),
+246195.DNO_0376 (degree 485) and 246195.DNO_0158 (degree 461).
 
 
 References
@@ -106,13 +107,14 @@ def DichelobacterNodosus(
 	
 	Datetime: 2021-02-02 20:10:31.435966
 	
-	The undirected graph Dichelobacter nodosus has 1274 nodes and 72887 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08988 and
-	has 4 connected components, where the component with most nodes has 1267 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 114.42, and the node degree mode is 11. The top 5 most central
-	nodes are 246195.DNO_0206 (degree 619), 246195.DNO_0934 (degree 522), 246195.DNO_0380
-	(degree 490), 246195.DNO_0376 (degree 485) and 246195.DNO_0158 (degree 461).
+	The undirected graph Dichelobacter nodosus has 1274 nodes and 72887 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08988 and has 4 connected components, where the component with most
+	nodes has 1267 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 114.42, and
+	the node degree mode is 11. The top 5 most central nodes are 246195.DNO_0206
+	(degree 619), 246195.DNO_0934 (degree 522), 246195.DNO_0380 (degree 490),
+	246195.DNO_0376 (degree 485) and 246195.DNO_0158 (degree 461).
 	
 
 

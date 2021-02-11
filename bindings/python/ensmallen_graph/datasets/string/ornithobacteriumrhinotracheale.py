@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:30.940423
 
-The undirected graph Ornithobacterium rhinotracheale has 2254 nodes and 146018 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05751
-and has 6 connected components, where the component with most nodes has 2242 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 129.56, and the node degree mode is 19. The top 5
-most central nodes are 867902.Ornrh_0645 (degree 808), 867902.Ornrh_0687 (degree
-758), 867902.Ornrh_1132 (degree 644), 867902.Ornrh_1330 (degree 625) and 867902.Ornrh_2200
-(degree 580).
+The undirected graph Ornithobacterium rhinotracheale has 2254 nodes and
+146018 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05751 and has 6 connected components, where the
+component with most nodes has 2242 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 129.56, and the node degree mode is 19. The top 5 most central nodes
+are 867902.Ornrh_0645 (degree 808), 867902.Ornrh_0687 (degree 758), 867902.Ornrh_1132
+(degree 644), 867902.Ornrh_1330 (degree 625) and 867902.Ornrh_2200 (degree
+580).
 
 
 References
@@ -107,14 +108,15 @@ def OrnithobacteriumRhinotracheale(
 	
 	Datetime: 2021-02-02 21:48:30.940423
 	
-	The undirected graph Ornithobacterium rhinotracheale has 2254 nodes and 146018 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05751
-	and has 6 connected components, where the component with most nodes has 2242 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 129.56, and the node degree mode is 19. The top 5
-	most central nodes are 867902.Ornrh_0645 (degree 808), 867902.Ornrh_0687 (degree
-	758), 867902.Ornrh_1132 (degree 644), 867902.Ornrh_1330 (degree 625) and 867902.Ornrh_2200
-	(degree 580).
+	The undirected graph Ornithobacterium rhinotracheale has 2254 nodes and
+	146018 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05751 and has 6 connected components, where the
+	component with most nodes has 2242 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 129.56, and the node degree mode is 19. The top 5 most central nodes
+	are 867902.Ornrh_0645 (degree 808), 867902.Ornrh_0687 (degree 758), 867902.Ornrh_1132
+	(degree 644), 867902.Ornrh_1330 (degree 625) and 867902.Ornrh_2200 (degree
+	580).
 	
 
 

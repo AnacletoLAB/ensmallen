@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:23.508075
 
-The undirected graph Thermotoga hypogea has 2075 nodes and 155971 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-has 5 connected components, where the component with most nodes has 2065 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 150.33, and the node degree mode is 9. The top 5 most central
-nodes are 1219084.AP014508_gene308 (degree 957), 1219084.AP014508_gene488 (degree
-916), 1219084.AP014508_gene1704 (degree 794), 1219084.AP014508_gene889 (degree 772)
-and 1219084.AP014508_gene78 (degree 728).
+The undirected graph Thermotoga hypogea has 2075 nodes and 155971 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07248 and has 5 connected components, where the component with most
+nodes has 2065 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 150.33, and
+the node degree mode is 9. The top 5 most central nodes are 1219084.AP014508_gene308
+(degree 957), 1219084.AP014508_gene488 (degree 916), 1219084.AP014508_gene1704
+(degree 794), 1219084.AP014508_gene889 (degree 772) and 1219084.AP014508_gene78
+(degree 728).
 
 
 References
@@ -107,14 +108,15 @@ def ThermotogaHypogea(
 	
 	Datetime: 2021-02-02 23:23:23.508075
 	
-	The undirected graph Thermotoga hypogea has 2075 nodes and 155971 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-	has 5 connected components, where the component with most nodes has 2065 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 150.33, and the node degree mode is 9. The top 5 most central
-	nodes are 1219084.AP014508_gene308 (degree 957), 1219084.AP014508_gene488 (degree
-	916), 1219084.AP014508_gene1704 (degree 794), 1219084.AP014508_gene889 (degree 772)
-	and 1219084.AP014508_gene78 (degree 728).
+	The undirected graph Thermotoga hypogea has 2075 nodes and 155971 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07248 and has 5 connected components, where the component with most
+	nodes has 2065 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 150.33, and
+	the node degree mode is 9. The top 5 most central nodes are 1219084.AP014508_gene308
+	(degree 957), 1219084.AP014508_gene488 (degree 916), 1219084.AP014508_gene1704
+	(degree 794), 1219084.AP014508_gene889 (degree 772) and 1219084.AP014508_gene78
+	(degree 728).
 	
 
 

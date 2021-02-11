@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:51.462523
 
-The undirected graph Paenirhodobacter enshiensis has 2748 nodes and 280476 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07431
-and has 11 connected components, where the component with most nodes has 2727 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 204.13, and the node degree mode is 1. The top 5
-most central nodes are 1105367.CG50_08585 (degree 1204), 1105367.CG50_01430 (degree
-1013), 1105367.CG50_03610 (degree 867), 1105367.CG50_15980 (degree 828) and 1105367.CG50_02600
-(degree 824).
+The undirected graph Paenirhodobacter enshiensis has 2748 nodes and 280476
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07431 and has 11 connected components, where the component
+with most nodes has 2727 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 204.13,
+and the node degree mode is 1. The top 5 most central nodes are 1105367.CG50_08585
+(degree 1204), 1105367.CG50_01430 (degree 1013), 1105367.CG50_03610 (degree
+867), 1105367.CG50_15980 (degree 828) and 1105367.CG50_02600 (degree 824).
 
 
 References
@@ -107,14 +107,14 @@ def PaenirhodobacterEnshiensis(
 	
 	Datetime: 2021-02-02 22:24:51.462523
 	
-	The undirected graph Paenirhodobacter enshiensis has 2748 nodes and 280476 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07431
-	and has 11 connected components, where the component with most nodes has 2727 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 204.13, and the node degree mode is 1. The top 5
-	most central nodes are 1105367.CG50_08585 (degree 1204), 1105367.CG50_01430 (degree
-	1013), 1105367.CG50_03610 (degree 867), 1105367.CG50_15980 (degree 828) and 1105367.CG50_02600
-	(degree 824).
+	The undirected graph Paenirhodobacter enshiensis has 2748 nodes and 280476
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07431 and has 11 connected components, where the component
+	with most nodes has 2727 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 204.13,
+	and the node degree mode is 1. The top 5 most central nodes are 1105367.CG50_08585
+	(degree 1204), 1105367.CG50_01430 (degree 1013), 1105367.CG50_03610 (degree
+	867), 1105367.CG50_15980 (degree 828) and 1105367.CG50_02600 (degree 824).
 	
 
 

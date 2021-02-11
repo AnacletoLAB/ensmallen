@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:01:59.161609
 
-The undirected graph Trec8 has 84 nodes and 542 weighted edges, of which 9 are self-loops.
-The graph is quite dense as it has a density of 0.15419 and is connected, as it has
-a single component. The graph median node degree is 8, the mean node degree is 12.80,
-and the node degree mode is 4. The top 5 most central nodes are 20 (degree 50), 21
-(degree 45), 22 (degree 41), 19 (degree 41) and 10 (degree 40).
+The undirected graph Trec8 has 84 nodes and 542 weighted edges, of which
+9 are self-loops. The graph is quite dense as it has a density of 0.15419
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 12.80, and the node degree mode is 4. The
+top 5 most central nodes are 20 (degree 50), 21 (degree 45), 22 (degree
+41), 19 (degree 41) and 10 (degree 40).
 
 
 References
@@ -101,11 +102,12 @@ def Trec8(
 	
 	Datetime: 2021-02-06 08:01:59.161609
 	
-	The undirected graph Trec8 has 84 nodes and 542 weighted edges, of which 9 are self-loops.
-	The graph is quite dense as it has a density of 0.15419 and is connected, as it has
-	a single component. The graph median node degree is 8, the mean node degree is 12.80,
-	and the node degree mode is 4. The top 5 most central nodes are 20 (degree 50), 21
-	(degree 45), 22 (degree 41), 19 (degree 41) and 10 (degree 40).
+	The undirected graph Trec8 has 84 nodes and 542 weighted edges, of which
+	9 are self-loops. The graph is quite dense as it has a density of 0.15419
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 12.80, and the node degree mode is 4. The
+	top 5 most central nodes are 20 (degree 50), 21 (degree 45), 22 (degree
+	41), 19 (degree 41) and 10 (degree 40).
 	
 
 

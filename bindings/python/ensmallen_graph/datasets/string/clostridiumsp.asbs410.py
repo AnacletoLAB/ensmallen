@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:29.040113
 
-The undirected graph Clostridium sp. ASBs410 has 5163 nodes and 704250 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05285 and
-has 24 connected components, where the component with most nodes has 5090 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 272.81, and the node degree mode is 3. The top 5 most central
-nodes are 1304866.K413DRAFT_2126 (degree 2027), 1304866.K413DRAFT_4383 (degree 2010),
-1304866.K413DRAFT_0306 (degree 1952), 1304866.K413DRAFT_4235 (degree 1740) and 1304866.K413DRAFT_4885
+The undirected graph Clostridium sp. ASBs410 has 5163 nodes and 704250
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05285 and has 24 connected components, where the component
+with most nodes has 5090 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 221, the mean node degree is 272.81,
+and the node degree mode is 3. The top 5 most central nodes are 1304866.K413DRAFT_2126
+(degree 2027), 1304866.K413DRAFT_4383 (degree 2010), 1304866.K413DRAFT_0306
+(degree 1952), 1304866.K413DRAFT_4235 (degree 1740) and 1304866.K413DRAFT_4885
 (degree 1603).
 
 
@@ -107,13 +108,14 @@ def ClostridiumSp.Asbs410(
 	
 	Datetime: 2021-02-03 21:36:29.040113
 	
-	The undirected graph Clostridium sp. ASBs410 has 5163 nodes and 704250 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05285 and
-	has 24 connected components, where the component with most nodes has 5090 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 272.81, and the node degree mode is 3. The top 5 most central
-	nodes are 1304866.K413DRAFT_2126 (degree 2027), 1304866.K413DRAFT_4383 (degree 2010),
-	1304866.K413DRAFT_0306 (degree 1952), 1304866.K413DRAFT_4235 (degree 1740) and 1304866.K413DRAFT_4885
+	The undirected graph Clostridium sp. ASBs410 has 5163 nodes and 704250
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05285 and has 24 connected components, where the component
+	with most nodes has 5090 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 221, the mean node degree is 272.81,
+	and the node degree mode is 3. The top 5 most central nodes are 1304866.K413DRAFT_2126
+	(degree 2027), 1304866.K413DRAFT_4383 (degree 2010), 1304866.K413DRAFT_0306
+	(degree 1952), 1304866.K413DRAFT_4235 (degree 1740) and 1304866.K413DRAFT_4885
 	(degree 1603).
 	
 

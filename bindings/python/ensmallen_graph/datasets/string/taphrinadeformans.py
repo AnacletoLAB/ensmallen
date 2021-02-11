@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:54.196986
 
-The undirected graph Taphrina deformans has 3620 nodes and 304415 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04647 and
-is connected, as it has a single component. The graph median node degree is 124,
-the mean node degree is 168.19, and the node degree mode is 1. The top 5 most central
-nodes are 5011.R4XHU7 (degree 1002), 5011.R4XEW2 (degree 921), 5011.R4XIG6 (degree
-882), 5011.R4XFX9 (degree 860) and 5011.R4X788 (degree 839).
+The undirected graph Taphrina deformans has 3620 nodes and 304415 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04647 and is connected, as it has a single component. The graph median
+node degree is 124, the mean node degree is 168.19, and the node degree
+mode is 1. The top 5 most central nodes are 5011.R4XHU7 (degree 1002),
+5011.R4XEW2 (degree 921), 5011.R4XIG6 (degree 882), 5011.R4XFX9 (degree
+860) and 5011.R4X788 (degree 839).
 
 
 References
@@ -105,12 +106,13 @@ def TaphrinaDeformans(
 	
 	Datetime: 2021-02-02 17:11:54.196986
 	
-	The undirected graph Taphrina deformans has 3620 nodes and 304415 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04647 and
-	is connected, as it has a single component. The graph median node degree is 124,
-	the mean node degree is 168.19, and the node degree mode is 1. The top 5 most central
-	nodes are 5011.R4XHU7 (degree 1002), 5011.R4XEW2 (degree 921), 5011.R4XIG6 (degree
-	882), 5011.R4XFX9 (degree 860) and 5011.R4X788 (degree 839).
+	The undirected graph Taphrina deformans has 3620 nodes and 304415 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04647 and is connected, as it has a single component. The graph median
+	node degree is 124, the mean node degree is 168.19, and the node degree
+	mode is 1. The top 5 most central nodes are 5011.R4XHU7 (degree 1002),
+	5011.R4XEW2 (degree 921), 5011.R4XIG6 (degree 882), 5011.R4XFX9 (degree
+	860) and 5011.R4X788 (degree 839).
 	
 
 

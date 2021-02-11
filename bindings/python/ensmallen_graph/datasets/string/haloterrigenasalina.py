@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:05.768083
 
-The undirected graph Haloterrigena salina has 4468 nodes and 374159 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03749 and
-has 39 connected components, where the component with most nodes has 4371 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 167.48, and the node degree mode is 2. The top 5 most central
-nodes are 1227488.C477_15650 (degree 1215), 1227488.C477_03005 (degree 1132), 1227488.C477_14633
-(degree 1044), 1227488.C477_04969 (degree 1031) and 1227488.C477_14068 (degree 1027).
+The undirected graph Haloterrigena salina has 4468 nodes and 374159 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03749 and has 39 connected components, where the component with most
+nodes has 4371 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 167.48, and
+the node degree mode is 2. The top 5 most central nodes are 1227488.C477_15650
+(degree 1215), 1227488.C477_03005 (degree 1132), 1227488.C477_14633 (degree
+1044), 1227488.C477_04969 (degree 1031) and 1227488.C477_14068 (degree
+1027).
 
 
 References
@@ -106,13 +108,15 @@ def HaloterrigenaSalina(
 	
 	Datetime: 2021-02-02 23:26:05.768083
 	
-	The undirected graph Haloterrigena salina has 4468 nodes and 374159 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03749 and
-	has 39 connected components, where the component with most nodes has 4371 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 167.48, and the node degree mode is 2. The top 5 most central
-	nodes are 1227488.C477_15650 (degree 1215), 1227488.C477_03005 (degree 1132), 1227488.C477_14633
-	(degree 1044), 1227488.C477_04969 (degree 1031) and 1227488.C477_14068 (degree 1027).
+	The undirected graph Haloterrigena salina has 4468 nodes and 374159 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03749 and has 39 connected components, where the component with most
+	nodes has 4371 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 167.48, and
+	the node degree mode is 2. The top 5 most central nodes are 1227488.C477_15650
+	(degree 1215), 1227488.C477_03005 (degree 1132), 1227488.C477_14633 (degree
+	1044), 1227488.C477_04969 (degree 1031) and 1227488.C477_14068 (degree
+	1027).
 	
 
 

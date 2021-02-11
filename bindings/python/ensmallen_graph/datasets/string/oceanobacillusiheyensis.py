@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:08.138526
 
-The undirected graph Oceanobacillus iheyensis has 3478 nodes and 382743 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06330
-and has 9 connected components, where the component with most nodes has 3455 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 220.09, and the node degree mode is 3. The top 5
-most central nodes are 221109.22777848 (degree 1330), 221109.22776396 (degree 1123),
-221109.22777629 (degree 1028), 221109.22777652 (degree 974) and 221109.22776300 (degree
-938).
+The undirected graph Oceanobacillus iheyensis has 3478 nodes and 382743
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06330 and has 9 connected components, where the component
+with most nodes has 3455 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 220.09,
+and the node degree mode is 3. The top 5 most central nodes are 221109.22777848
+(degree 1330), 221109.22776396 (degree 1123), 221109.22777629 (degree 1028),
+221109.22777652 (degree 974) and 221109.22776300 (degree 938).
 
 
 References
@@ -107,14 +107,14 @@ def OceanobacillusIheyensis(
 	
 	Datetime: 2021-02-02 20:04:08.138526
 	
-	The undirected graph Oceanobacillus iheyensis has 3478 nodes and 382743 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06330
-	and has 9 connected components, where the component with most nodes has 3455 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 220.09, and the node degree mode is 3. The top 5
-	most central nodes are 221109.22777848 (degree 1330), 221109.22776396 (degree 1123),
-	221109.22777629 (degree 1028), 221109.22777652 (degree 974) and 221109.22776300 (degree
-	938).
+	The undirected graph Oceanobacillus iheyensis has 3478 nodes and 382743
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06330 and has 9 connected components, where the component
+	with most nodes has 3455 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 220.09,
+	and the node degree mode is 3. The top 5 most central nodes are 221109.22777848
+	(degree 1330), 221109.22776396 (degree 1123), 221109.22777629 (degree 1028),
+	221109.22777652 (degree 974) and 221109.22776300 (degree 938).
 	
 
 

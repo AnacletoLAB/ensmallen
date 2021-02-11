@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:40.888309
 
-The undirected graph Gordonia amarae has 4675 nodes and 615111 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05630 and
-has 12 connected components, where the component with most nodes has 4648 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 263.15, and the node degree mode is 3. The top 5 most central
-nodes are 1075090.GOAMR_24_00080 (degree 1914), 1075090.GOAMR_33_00040 (degree 1604),
-1075090.GOAMR_14_00010 (degree 1554), 1075090.GOAMR_19_00015 (degree 1480) and 1075090.GOAMR_56_00430
+The undirected graph Gordonia amarae has 4675 nodes and 615111 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05630 and has 12 connected components, where the component with most
+nodes has 4648 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 263.15, and
+the node degree mode is 3. The top 5 most central nodes are 1075090.GOAMR_24_00080
+(degree 1914), 1075090.GOAMR_33_00040 (degree 1604), 1075090.GOAMR_14_00010
+(degree 1554), 1075090.GOAMR_19_00015 (degree 1480) and 1075090.GOAMR_56_00430
 (degree 1415).
 
 
@@ -107,13 +108,14 @@ def GordoniaAmarae(
 	
 	Datetime: 2021-02-02 22:19:40.888309
 	
-	The undirected graph Gordonia amarae has 4675 nodes and 615111 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05630 and
-	has 12 connected components, where the component with most nodes has 4648 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 263.15, and the node degree mode is 3. The top 5 most central
-	nodes are 1075090.GOAMR_24_00080 (degree 1914), 1075090.GOAMR_33_00040 (degree 1604),
-	1075090.GOAMR_14_00010 (degree 1554), 1075090.GOAMR_19_00015 (degree 1480) and 1075090.GOAMR_56_00430
+	The undirected graph Gordonia amarae has 4675 nodes and 615111 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05630 and has 12 connected components, where the component with most
+	nodes has 4648 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 263.15, and
+	the node degree mode is 3. The top 5 most central nodes are 1075090.GOAMR_24_00080
+	(degree 1914), 1075090.GOAMR_33_00040 (degree 1604), 1075090.GOAMR_14_00010
+	(degree 1554), 1075090.GOAMR_19_00015 (degree 1480) and 1075090.GOAMR_56_00430
 	(degree 1415).
 	
 

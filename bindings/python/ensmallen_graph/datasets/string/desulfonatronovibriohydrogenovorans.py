@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:13.760552
 
-The undirected graph Desulfonatronovibrio hydrogenovorans has 2640 nodes and 224935
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06457 and has 5 connected components, where the component with most nodes has
-2632 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 134, the mean node degree is 170.41, and the node degree mode is 3. The
-top 5 most central nodes are 1121413.JMKT01000008_gene1031 (degree 1191), 1121413.JMKT01000001_gene1711
+The undirected graph Desulfonatronovibrio hydrogenovorans has 2640 nodes
+and 224935 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06457 and has 5 connected components, where the
+component with most nodes has 2632 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+is 170.41, and the node degree mode is 3. The top 5 most central nodes
+are 1121413.JMKT01000008_gene1031 (degree 1191), 1121413.JMKT01000001_gene1711
 (degree 1162), 1121413.JMKT01000009_gene2137 (degree 944), 1121413.JMKT01000015_gene339
 (degree 899) and 1121413.JMKT01000009_gene2014 (degree 849).
 
@@ -107,12 +108,13 @@ def DesulfonatronovibrioHydrogenovorans(
 	
 	Datetime: 2021-02-02 22:36:13.760552
 	
-	The undirected graph Desulfonatronovibrio hydrogenovorans has 2640 nodes and 224935
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06457 and has 5 connected components, where the component with most nodes has
-	2632 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 134, the mean node degree is 170.41, and the node degree mode is 3. The
-	top 5 most central nodes are 1121413.JMKT01000008_gene1031 (degree 1191), 1121413.JMKT01000001_gene1711
+	The undirected graph Desulfonatronovibrio hydrogenovorans has 2640 nodes
+	and 224935 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06457 and has 5 connected components, where the
+	component with most nodes has 2632 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+	is 170.41, and the node degree mode is 3. The top 5 most central nodes
+	are 1121413.JMKT01000008_gene1031 (degree 1191), 1121413.JMKT01000001_gene1711
 	(degree 1162), 1121413.JMKT01000009_gene2137 (degree 944), 1121413.JMKT01000015_gene339
 	(degree 899) and 1121413.JMKT01000009_gene2014 (degree 849).
 	

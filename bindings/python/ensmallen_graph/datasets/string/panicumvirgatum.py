@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:10:24.982416
 
-The undirected graph Panicum virgatum has 57795 nodes and 30051846 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01799 and
-has 4 connected components, where the component with most nodes has 57784 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 495,
-the mean node degree is 1039.95, and the node degree mode is 4. The top 5 most central
-nodes are 38727.Pavir.Aa02237.1.p (degree 17307), 38727.Pavir.J34942.1.p (degree
-14530), 38727.Pavir.Hb00840.1.p (degree 14530), 38727.Pavir.J29120.1.p (degree 14523)
-and 38727.Pavir.Aa02697.1.p (degree 13354).
+The undirected graph Panicum virgatum has 57795 nodes and 30051846 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01799 and has 4 connected components, where the component with most
+nodes has 57784 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 495, the mean node degree is 1039.95, and
+the node degree mode is 4. The top 5 most central nodes are 38727.Pavir.Aa02237.1.p
+(degree 17307), 38727.Pavir.J34942.1.p (degree 14530), 38727.Pavir.Hb00840.1.p
+(degree 14530), 38727.Pavir.J29120.1.p (degree 14523) and 38727.Pavir.Aa02697.1.p
+(degree 13354).
 
 
 References
@@ -107,14 +108,15 @@ def PanicumVirgatum(
 	
 	Datetime: 2021-02-02 18:10:24.982416
 	
-	The undirected graph Panicum virgatum has 57795 nodes and 30051846 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01799 and
-	has 4 connected components, where the component with most nodes has 57784 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 495,
-	the mean node degree is 1039.95, and the node degree mode is 4. The top 5 most central
-	nodes are 38727.Pavir.Aa02237.1.p (degree 17307), 38727.Pavir.J34942.1.p (degree
-	14530), 38727.Pavir.Hb00840.1.p (degree 14530), 38727.Pavir.J29120.1.p (degree 14523)
-	and 38727.Pavir.Aa02697.1.p (degree 13354).
+	The undirected graph Panicum virgatum has 57795 nodes and 30051846 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01799 and has 4 connected components, where the component with most
+	nodes has 57784 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 495, the mean node degree is 1039.95, and
+	the node degree mode is 4. The top 5 most central nodes are 38727.Pavir.Aa02237.1.p
+	(degree 17307), 38727.Pavir.J34942.1.p (degree 14530), 38727.Pavir.Hb00840.1.p
+	(degree 14530), 38727.Pavir.J29120.1.p (degree 14523) and 38727.Pavir.Aa02697.1.p
+	(degree 13354).
 	
 
 

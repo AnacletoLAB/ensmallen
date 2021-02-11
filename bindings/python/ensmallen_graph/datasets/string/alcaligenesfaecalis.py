@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:19.632966
 
-The undirected graph Alcaligenes faecalis has 3822 nodes and 354837 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-has 16 connected components, where the component with most nodes has 3754 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 185.68, and the node degree mode is 2. The top 5 most central
-nodes are 511.JT27_17010 (degree 1257), 511.JT27_09235 (degree 1216), 511.JT27_11960
-(degree 1062), 511.JT27_01410 (degree 996) and 511.JT27_14740 (degree 993).
+The undirected graph Alcaligenes faecalis has 3822 nodes and 354837 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04859 and has 16 connected components, where the component with most
+nodes has 3754 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 185.68, and
+the node degree mode is 2. The top 5 most central nodes are 511.JT27_17010
+(degree 1257), 511.JT27_09235 (degree 1216), 511.JT27_11960 (degree 1062),
+511.JT27_01410 (degree 996) and 511.JT27_14740 (degree 993).
 
 
 References
@@ -106,13 +107,14 @@ def AlcaligenesFaecalis(
 	
 	Datetime: 2021-02-02 16:21:19.632966
 	
-	The undirected graph Alcaligenes faecalis has 3822 nodes and 354837 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-	has 16 connected components, where the component with most nodes has 3754 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 185.68, and the node degree mode is 2. The top 5 most central
-	nodes are 511.JT27_17010 (degree 1257), 511.JT27_09235 (degree 1216), 511.JT27_11960
-	(degree 1062), 511.JT27_01410 (degree 996) and 511.JT27_14740 (degree 993).
+	The undirected graph Alcaligenes faecalis has 3822 nodes and 354837 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04859 and has 16 connected components, where the component with most
+	nodes has 3754 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 185.68, and
+	the node degree mode is 2. The top 5 most central nodes are 511.JT27_17010
+	(degree 1257), 511.JT27_09235 (degree 1216), 511.JT27_11960 (degree 1062),
+	511.JT27_01410 (degree 996) and 511.JT27_14740 (degree 993).
 	
 
 

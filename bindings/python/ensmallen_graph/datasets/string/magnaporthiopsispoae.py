@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:51.838372
 
-The undirected graph Magnaporthiopsis poae has 6288 nodes and 540344 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02734 and
-has 16 connected components, where the component with most nodes has 6256 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 171.87, and the node degree mode is 1. The top 5 most central
-nodes are 148304.MAPG_08059T0 (degree 1435), 148304.MAPG_09423T0 (degree 1286), 148304.MAPG_05400T0
-(degree 1239), 148304.MAPG_10888T0 (degree 1223) and 148304.MAPG_10265T0 (degree
+The undirected graph Magnaporthiopsis poae has 6288 nodes and 540344 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02734 and has 16 connected components, where the component with most
+nodes has 6256 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 171.87, and
+the node degree mode is 1. The top 5 most central nodes are 148304.MAPG_08059T0
+(degree 1435), 148304.MAPG_09423T0 (degree 1286), 148304.MAPG_05400T0 (degree
+1239), 148304.MAPG_10888T0 (degree 1223) and 148304.MAPG_10265T0 (degree
 1222).
 
 
@@ -107,13 +108,14 @@ def MagnaporthiopsisPoae(
 	
 	Datetime: 2021-02-02 19:51:51.838372
 	
-	The undirected graph Magnaporthiopsis poae has 6288 nodes and 540344 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02734 and
-	has 16 connected components, where the component with most nodes has 6256 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 171.87, and the node degree mode is 1. The top 5 most central
-	nodes are 148304.MAPG_08059T0 (degree 1435), 148304.MAPG_09423T0 (degree 1286), 148304.MAPG_05400T0
-	(degree 1239), 148304.MAPG_10888T0 (degree 1223) and 148304.MAPG_10265T0 (degree
+	The undirected graph Magnaporthiopsis poae has 6288 nodes and 540344 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02734 and has 16 connected components, where the component with most
+	nodes has 6256 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 171.87, and
+	the node degree mode is 1. The top 5 most central nodes are 148304.MAPG_08059T0
+	(degree 1435), 148304.MAPG_09423T0 (degree 1286), 148304.MAPG_05400T0 (degree
+	1239), 148304.MAPG_10888T0 (degree 1223) and 148304.MAPG_10265T0 (degree
 	1222).
 	
 

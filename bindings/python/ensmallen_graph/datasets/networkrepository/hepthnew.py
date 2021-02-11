@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:01:41.166145
 
-The undirected graph HEP-th-new has 27770 nodes, of which 1 are singletons (all have
-self-loops), and 352324 unweighted edges, of which 39 are self-loops. The graph is
-quite sparse as it has a density of 0.00091 and has 143 connected components, where
-the component with most nodes has 27400 nodes and the component with the least nodes
-has a single node. The graph median node degree is 14, the mean node degree is 25.37,
-and the node degree mode is 1. The top 5 most central nodes are 22154 (degree 2468),
-22744 (degree 1797), 22710 (degree 1653), 25992 (degree 1368) and 14160 (degree 1308).
+The undirected graph HEP-th-new has 27770 nodes, of which 1 are singletons
+(all have self-loops), and 352324 unweighted edges, of which 39 are self-loops.
+The graph is quite sparse as it has a density of 0.00091 and has 143 connected
+components, where the component with most nodes has 27400 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 14, the mean node degree is 25.37, and the node degree mode is
+1. The top 5 most central nodes are 22154 (degree 2468), 22744 (degree
+1797), 22710 (degree 1653), 25992 (degree 1368) and 14160 (degree 1308).
 
 
 References
@@ -103,13 +104,14 @@ def HepThNew(
 	
 	Datetime: 2021-02-06 11:01:41.166145
 	
-	The undirected graph HEP-th-new has 27770 nodes, of which 1 are singletons (all have
-	self-loops), and 352324 unweighted edges, of which 39 are self-loops. The graph is
-	quite sparse as it has a density of 0.00091 and has 143 connected components, where
-	the component with most nodes has 27400 nodes and the component with the least nodes
-	has a single node. The graph median node degree is 14, the mean node degree is 25.37,
-	and the node degree mode is 1. The top 5 most central nodes are 22154 (degree 2468),
-	22744 (degree 1797), 22710 (degree 1653), 25992 (degree 1368) and 14160 (degree 1308).
+	The undirected graph HEP-th-new has 27770 nodes, of which 1 are singletons
+	(all have self-loops), and 352324 unweighted edges, of which 39 are self-loops.
+	The graph is quite sparse as it has a density of 0.00091 and has 143 connected
+	components, where the component with most nodes has 27400 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 14, the mean node degree is 25.37, and the node degree mode is
+	1. The top 5 most central nodes are 22154 (degree 2468), 22744 (degree
+	1797), 22710 (degree 1653), 25992 (degree 1368) and 14160 (degree 1308).
 	
 
 

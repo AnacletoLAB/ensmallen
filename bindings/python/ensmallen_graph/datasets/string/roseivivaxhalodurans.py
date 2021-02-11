@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:03.988913
 
-The undirected graph Roseivivax halodurans has 4233 nodes and 392386 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-has 32 connected components, where the component with most nodes has 4154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 185.39, and the node degree mode is 1. The top 5 most central
-nodes are 1449350.OCH239_02575 (degree 1692), 1449350.OCH239_21870 (degree 1227),
-1449350.OCH239_02145 (degree 1206), 1449350.OCH239_16140 (degree 1187) and 1449350.OCH239_05000
+The undirected graph Roseivivax halodurans has 4233 nodes and 392386 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04381 and has 32 connected components, where the component with most
+nodes has 4154 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 185.39, and
+the node degree mode is 1. The top 5 most central nodes are 1449350.OCH239_02575
+(degree 1692), 1449350.OCH239_21870 (degree 1227), 1449350.OCH239_02145
+(degree 1206), 1449350.OCH239_16140 (degree 1187) and 1449350.OCH239_05000
 (degree 1098).
 
 
@@ -107,13 +108,14 @@ def RoseivivaxHalodurans(
 	
 	Datetime: 2021-02-03 23:05:03.988913
 	
-	The undirected graph Roseivivax halodurans has 4233 nodes and 392386 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-	has 32 connected components, where the component with most nodes has 4154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 185.39, and the node degree mode is 1. The top 5 most central
-	nodes are 1449350.OCH239_02575 (degree 1692), 1449350.OCH239_21870 (degree 1227),
-	1449350.OCH239_02145 (degree 1206), 1449350.OCH239_16140 (degree 1187) and 1449350.OCH239_05000
+	The undirected graph Roseivivax halodurans has 4233 nodes and 392386 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04381 and has 32 connected components, where the component with most
+	nodes has 4154 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 185.39, and
+	the node degree mode is 1. The top 5 most central nodes are 1449350.OCH239_02575
+	(degree 1692), 1449350.OCH239_21870 (degree 1227), 1449350.OCH239_02145
+	(degree 1206), 1449350.OCH239_16140 (degree 1187) and 1449350.OCH239_05000
 	(degree 1098).
 	
 

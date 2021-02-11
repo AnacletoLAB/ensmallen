@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:45.860523
 
-The undirected graph Escherichia coli BL21 has 4169 nodes and 356128 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04099 and
-has 4 connected components, where the component with most nodes has 4162 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 170.85, and the node degree mode is 30. The top 5 most central
-nodes are 469008.B21_01361 (degree 1440), 469008.B21_02241 (degree 1372), 469008.B21_03698
-(degree 1341), 469008.B21_02361 (degree 1185) and 469008.B21_03028 (degree 1123).
+The undirected graph Escherichia coli BL21 has 4169 nodes and 356128 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04099 and has 4 connected components, where the component with most
+nodes has 4162 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 170.85, and
+the node degree mode is 30. The top 5 most central nodes are 469008.B21_01361
+(degree 1440), 469008.B21_02241 (degree 1372), 469008.B21_03698 (degree
+1341), 469008.B21_02361 (degree 1185) and 469008.B21_03028 (degree 1123).
 
 
 References
@@ -106,13 +107,14 @@ def EscherichiaColiBl21(
 	
 	Datetime: 2021-02-02 20:54:45.860523
 	
-	The undirected graph Escherichia coli BL21 has 4169 nodes and 356128 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04099 and
-	has 4 connected components, where the component with most nodes has 4162 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 170.85, and the node degree mode is 30. The top 5 most central
-	nodes are 469008.B21_01361 (degree 1440), 469008.B21_02241 (degree 1372), 469008.B21_03698
-	(degree 1341), 469008.B21_02361 (degree 1185) and 469008.B21_03028 (degree 1123).
+	The undirected graph Escherichia coli BL21 has 4169 nodes and 356128 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04099 and has 4 connected components, where the component with most
+	nodes has 4162 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 170.85, and
+	the node degree mode is 30. The top 5 most central nodes are 469008.B21_01361
+	(degree 1440), 469008.B21_02241 (degree 1372), 469008.B21_03698 (degree
+	1341), 469008.B21_02361 (degree 1185) and 469008.B21_03028 (degree 1123).
 	
 
 

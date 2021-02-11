@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:14.953494
 
-The undirected graph Streptococcus parauberis KCTC11537 has 1849 nodes and 145569
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08520 and has 4 connected components, where the component with most nodes has
-1842 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 121, the mean node degree is 157.46, and the node degree mode is 7. The
-top 5 most central nodes are 936154.STP_1734 (degree 912), 936154.STP_0712 (degree
-800), 936154.STP_1861 (degree 791), 936154.STP_0200 (degree 715) and 936154.STP_0284
-(degree 705).
+The undirected graph Streptococcus parauberis KCTC11537 has 1849 nodes
+and 145569 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08520 and has 4 connected components, where the
+component with most nodes has 1842 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 121, the mean node degree
+is 157.46, and the node degree mode is 7. The top 5 most central nodes
+are 936154.STP_1734 (degree 912), 936154.STP_0712 (degree 800), 936154.STP_1861
+(degree 791), 936154.STP_0200 (degree 715) and 936154.STP_0284 (degree
+705).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusParauberisKctc11537(
 	
 	Datetime: 2021-02-02 22:00:14.953494
 	
-	The undirected graph Streptococcus parauberis KCTC11537 has 1849 nodes and 145569
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08520 and has 4 connected components, where the component with most nodes has
-	1842 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 121, the mean node degree is 157.46, and the node degree mode is 7. The
-	top 5 most central nodes are 936154.STP_1734 (degree 912), 936154.STP_0712 (degree
-	800), 936154.STP_1861 (degree 791), 936154.STP_0200 (degree 715) and 936154.STP_0284
-	(degree 705).
+	The undirected graph Streptococcus parauberis KCTC11537 has 1849 nodes
+	and 145569 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08520 and has 4 connected components, where the
+	component with most nodes has 1842 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 121, the mean node degree
+	is 157.46, and the node degree mode is 7. The top 5 most central nodes
+	are 936154.STP_1734 (degree 912), 936154.STP_0712 (degree 800), 936154.STP_1861
+	(degree 791), 936154.STP_0200 (degree 715) and 936154.STP_0284 (degree
+	705).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:53.929528
 
-The undirected graph Pelobacter propionicus has 3749 nodes and 290311 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04132 and
-has 11 connected components, where the component with most nodes has 3719 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 154.87, and the node degree mode is 1. The top 5 most central
-nodes are 338966.Ppro_2835 (degree 1507), 338966.Ppro_0903 (degree 1333), 338966.Ppro_3365
-(degree 1315), 338966.Ppro_3101 (degree 1240) and 338966.Ppro_3306 (degree 1186).
+The undirected graph Pelobacter propionicus has 3749 nodes and 290311 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04132 and has 11 connected components, where the component with most
+nodes has 3719 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 154.87, and
+the node degree mode is 1. The top 5 most central nodes are 338966.Ppro_2835
+(degree 1507), 338966.Ppro_0903 (degree 1333), 338966.Ppro_3365 (degree
+1315), 338966.Ppro_3101 (degree 1240) and 338966.Ppro_3306 (degree 1186).
 
 
 References
@@ -106,13 +107,14 @@ def PelobacterPropionicus(
 	
 	Datetime: 2021-02-02 20:30:53.929528
 	
-	The undirected graph Pelobacter propionicus has 3749 nodes and 290311 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04132 and
-	has 11 connected components, where the component with most nodes has 3719 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 154.87, and the node degree mode is 1. The top 5 most central
-	nodes are 338966.Ppro_2835 (degree 1507), 338966.Ppro_0903 (degree 1333), 338966.Ppro_3365
-	(degree 1315), 338966.Ppro_3101 (degree 1240) and 338966.Ppro_3306 (degree 1186).
+	The undirected graph Pelobacter propionicus has 3749 nodes and 290311 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04132 and has 11 connected components, where the component with most
+	nodes has 3719 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 154.87, and
+	the node degree mode is 1. The top 5 most central nodes are 338966.Ppro_2835
+	(degree 1507), 338966.Ppro_0903 (degree 1333), 338966.Ppro_3365 (degree
+	1315), 338966.Ppro_3101 (degree 1240) and 338966.Ppro_3306 (degree 1186).
 	
 
 

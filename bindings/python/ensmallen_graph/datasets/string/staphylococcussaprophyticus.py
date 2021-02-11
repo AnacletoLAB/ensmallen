@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:24.899069
 
-The undirected graph Staphylococcus saprophyticus has 2478 nodes and 222472 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07249
-and has 5 connected components, where the component with most nodes has 2462 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 179.56, and the node degree mode is 3. The top 5
-most central nodes are 342451.SSP1075 (degree 1007), 342451.SSP2322 (degree 861),
-342451.SSP1552 (degree 796), 342451.SSP2323 (degree 777) and 342451.SSP2266 (degree
-769).
+The undirected graph Staphylococcus saprophyticus has 2478 nodes and 222472
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07249 and has 5 connected components, where the component
+with most nodes has 2462 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 179.56,
+and the node degree mode is 3. The top 5 most central nodes are 342451.SSP1075
+(degree 1007), 342451.SSP2322 (degree 861), 342451.SSP1552 (degree 796),
+342451.SSP2323 (degree 777) and 342451.SSP2266 (degree 769).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylococcusSaprophyticus(
 	
 	Datetime: 2021-02-02 20:31:24.899069
 	
-	The undirected graph Staphylococcus saprophyticus has 2478 nodes and 222472 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07249
-	and has 5 connected components, where the component with most nodes has 2462 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 179.56, and the node degree mode is 3. The top 5
-	most central nodes are 342451.SSP1075 (degree 1007), 342451.SSP2322 (degree 861),
-	342451.SSP1552 (degree 796), 342451.SSP2323 (degree 777) and 342451.SSP2266 (degree
-	769).
+	The undirected graph Staphylococcus saprophyticus has 2478 nodes and 222472
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07249 and has 5 connected components, where the component
+	with most nodes has 2462 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 179.56,
+	and the node degree mode is 3. The top 5 most central nodes are 342451.SSP1075
+	(degree 1007), 342451.SSP2322 (degree 861), 342451.SSP1552 (degree 796),
+	342451.SSP2323 (degree 777) and 342451.SSP2266 (degree 769).
 	
 
 

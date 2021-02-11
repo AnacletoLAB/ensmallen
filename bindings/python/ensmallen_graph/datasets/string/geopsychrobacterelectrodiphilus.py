@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:42.590961
 
-The undirected graph Geopsychrobacter electrodiphilus has 3623 nodes and 353155 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05382
-and has 17 connected components, where the component with most nodes has 3583 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 194.95, and the node degree mode is 1. The top 5
-most central nodes are 1121918.ARWE01000001_gene748 (degree 1458), 1121918.ARWE01000001_gene1191
+The undirected graph Geopsychrobacter electrodiphilus has 3623 nodes and
+353155 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05382 and has 17 connected components, where the
+component with most nodes has 3583 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+is 194.95, and the node degree mode is 1. The top 5 most central nodes
+are 1121918.ARWE01000001_gene748 (degree 1458), 1121918.ARWE01000001_gene1191
 (degree 1331), 1121918.ARWE01000001_gene573 (degree 1203), 1121918.ARWE01000001_gene546
 (degree 1201) and 1121918.ARWE01000001_gene1992 (degree 1187).
 
@@ -107,12 +108,13 @@ def GeopsychrobacterElectrodiphilus(
 	
 	Datetime: 2021-02-02 22:38:42.590961
 	
-	The undirected graph Geopsychrobacter electrodiphilus has 3623 nodes and 353155 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05382
-	and has 17 connected components, where the component with most nodes has 3583 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 194.95, and the node degree mode is 1. The top 5
-	most central nodes are 1121918.ARWE01000001_gene748 (degree 1458), 1121918.ARWE01000001_gene1191
+	The undirected graph Geopsychrobacter electrodiphilus has 3623 nodes and
+	353155 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05382 and has 17 connected components, where the
+	component with most nodes has 3583 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+	is 194.95, and the node degree mode is 1. The top 5 most central nodes
+	are 1121918.ARWE01000001_gene748 (degree 1458), 1121918.ARWE01000001_gene1191
 	(degree 1331), 1121918.ARWE01000001_gene573 (degree 1203), 1121918.ARWE01000001_gene546
 	(degree 1201) and 1121918.ARWE01000001_gene1992 (degree 1187).
 	

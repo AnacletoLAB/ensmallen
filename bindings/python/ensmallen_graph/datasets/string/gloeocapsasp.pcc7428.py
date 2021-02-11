@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:15.312989
 
-The undirected graph Gloeocapsa sp. PCC7428 has 4745 nodes and 585506 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05202 and
-has 6 connected components, where the component with most nodes has 4735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 246.79, and the node degree mode is 2. The top 5 most central
-nodes are 1173026.Glo7428_0315 (degree 1599), 1173026.Glo7428_2556 (degree 1535),
-1173026.Glo7428_4174 (degree 1401), 1173026.Glo7428_0040 (degree 1254) and 1173026.Glo7428_5008
+The undirected graph Gloeocapsa sp. PCC7428 has 4745 nodes and 585506 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05202 and has 6 connected components, where the component with most
+nodes has 4735 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 246.79, and
+the node degree mode is 2. The top 5 most central nodes are 1173026.Glo7428_0315
+(degree 1599), 1173026.Glo7428_2556 (degree 1535), 1173026.Glo7428_4174
+(degree 1401), 1173026.Glo7428_0040 (degree 1254) and 1173026.Glo7428_5008
 (degree 1246).
 
 
@@ -107,13 +108,14 @@ def GloeocapsaSp.Pcc7428(
 	
 	Datetime: 2021-02-02 23:08:15.312989
 	
-	The undirected graph Gloeocapsa sp. PCC7428 has 4745 nodes and 585506 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05202 and
-	has 6 connected components, where the component with most nodes has 4735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 246.79, and the node degree mode is 2. The top 5 most central
-	nodes are 1173026.Glo7428_0315 (degree 1599), 1173026.Glo7428_2556 (degree 1535),
-	1173026.Glo7428_4174 (degree 1401), 1173026.Glo7428_0040 (degree 1254) and 1173026.Glo7428_5008
+	The undirected graph Gloeocapsa sp. PCC7428 has 4745 nodes and 585506 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05202 and has 6 connected components, where the component with most
+	nodes has 4735 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 246.79, and
+	the node degree mode is 2. The top 5 most central nodes are 1173026.Glo7428_0315
+	(degree 1599), 1173026.Glo7428_2556 (degree 1535), 1173026.Glo7428_4174
+	(degree 1401), 1173026.Glo7428_0040 (degree 1254) and 1173026.Glo7428_5008
 	(degree 1246).
 	
 

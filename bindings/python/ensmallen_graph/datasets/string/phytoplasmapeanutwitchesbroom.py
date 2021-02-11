@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:40.627722
 
-The undirected graph Phytoplasma peanut witchesbroom has 394 nodes and 34881 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.45054 and has 8 connected components, where the component with most nodes has
-379 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 223, the mean node degree is 177.06, and the node degree mode is 1. The
-top 5 most central nodes are 1163385.PNWB_v1c1980 (degree 288), 1163385.PNWB_v1c0090
-(degree 284), 1163385.PNWB_v1c4270 (degree 284), 1163385.PNWB_v1c4370 (degree 284)
+The undirected graph Phytoplasma peanut witchesbroom has 394 nodes and
+34881 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.45054 and has 8 connected components, where
+the component with most nodes has 379 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 223, the mean
+node degree is 177.06, and the node degree mode is 1. The top 5 most central
+nodes are 1163385.PNWB_v1c1980 (degree 288), 1163385.PNWB_v1c0090 (degree
+284), 1163385.PNWB_v1c4270 (degree 284), 1163385.PNWB_v1c4370 (degree 284)
 and 1163385.PNWB_v1c1970 (degree 283).
 
 
@@ -107,13 +108,14 @@ def PhytoplasmaPeanutWitchesbroom(
 	
 	Datetime: 2021-02-02 23:04:40.627722
 	
-	The undirected graph Phytoplasma peanut witchesbroom has 394 nodes and 34881 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.45054 and has 8 connected components, where the component with most nodes has
-	379 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 223, the mean node degree is 177.06, and the node degree mode is 1. The
-	top 5 most central nodes are 1163385.PNWB_v1c1980 (degree 288), 1163385.PNWB_v1c0090
-	(degree 284), 1163385.PNWB_v1c4270 (degree 284), 1163385.PNWB_v1c4370 (degree 284)
+	The undirected graph Phytoplasma peanut witchesbroom has 394 nodes and
+	34881 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.45054 and has 8 connected components, where
+	the component with most nodes has 379 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 223, the mean
+	node degree is 177.06, and the node degree mode is 1. The top 5 most central
+	nodes are 1163385.PNWB_v1c1980 (degree 288), 1163385.PNWB_v1c0090 (degree
+	284), 1163385.PNWB_v1c4270 (degree 284), 1163385.PNWB_v1c4370 (degree 284)
 	and 1163385.PNWB_v1c1970 (degree 283).
 	
 

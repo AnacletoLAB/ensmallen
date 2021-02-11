@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:15.381854
 
-The undirected graph Legionella lansingensis has 2628 nodes and 195858 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05674 and
-has 26 connected components, where the component with most nodes has 2572 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 149.05, and the node degree mode is 3. The top 5 most central
-nodes are 1122164.JHWF01000002_gene846 (degree 954), 1122164.JHWF01000001_gene2016
-(degree 813), 1122164.JHWF01000033_gene2259 (degree 755), 1122164.JHWF01000012_gene2624
-(degree 746) and 1122164.JHWF01000002_gene875 (degree 722).
+The undirected graph Legionella lansingensis has 2628 nodes and 195858
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05674 and has 26 connected components, where the component
+with most nodes has 2572 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 149.05,
+and the node degree mode is 3. The top 5 most central nodes are 1122164.JHWF01000002_gene846
+(degree 954), 1122164.JHWF01000001_gene2016 (degree 813), 1122164.JHWF01000033_gene2259
+(degree 755), 1122164.JHWF01000012_gene2624 (degree 746) and 1122164.JHWF01000002_gene875
+(degree 722).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaLansingensis(
 	
 	Datetime: 2021-02-02 22:41:15.381854
 	
-	The undirected graph Legionella lansingensis has 2628 nodes and 195858 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05674 and
-	has 26 connected components, where the component with most nodes has 2572 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 149.05, and the node degree mode is 3. The top 5 most central
-	nodes are 1122164.JHWF01000002_gene846 (degree 954), 1122164.JHWF01000001_gene2016
-	(degree 813), 1122164.JHWF01000033_gene2259 (degree 755), 1122164.JHWF01000012_gene2624
-	(degree 746) and 1122164.JHWF01000002_gene875 (degree 722).
+	The undirected graph Legionella lansingensis has 2628 nodes and 195858
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05674 and has 26 connected components, where the component
+	with most nodes has 2572 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 149.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1122164.JHWF01000002_gene846
+	(degree 954), 1122164.JHWF01000001_gene2016 (degree 813), 1122164.JHWF01000033_gene2259
+	(degree 755), 1122164.JHWF01000012_gene2624 (degree 746) and 1122164.JHWF01000002_gene875
+	(degree 722).
 	
 
 

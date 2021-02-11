@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:19.948303
 
-The undirected graph Streptomyces sp. TAA486 has 5958 nodes and 825827 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04654 and
-has 24 connected components, where the component with most nodes has 5904 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 277.22, and the node degree mode is 1. The top 5 most central
-nodes are 1298880.AUEV01000017_gene1151 (degree 2846), 1298880.AUEV01000002_gene1499
-(degree 2153), 1298880.AUEV01000011_gene2670 (degree 1744), 1298880.AUEV01000001_gene6021
-(degree 1716) and 1298880.AUEV01000007_gene4653 (degree 1707).
+The undirected graph Streptomyces sp. TAA486 has 5958 nodes and 825827
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04654 and has 24 connected components, where the component
+with most nodes has 5904 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 277.22,
+and the node degree mode is 1. The top 5 most central nodes are 1298880.AUEV01000017_gene1151
+(degree 2846), 1298880.AUEV01000002_gene1499 (degree 2153), 1298880.AUEV01000011_gene2670
+(degree 1744), 1298880.AUEV01000001_gene6021 (degree 1716) and 1298880.AUEV01000007_gene4653
+(degree 1707).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Taa486(
 	
 	Datetime: 2021-02-03 21:34:19.948303
 	
-	The undirected graph Streptomyces sp. TAA486 has 5958 nodes and 825827 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04654 and
-	has 24 connected components, where the component with most nodes has 5904 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 277.22, and the node degree mode is 1. The top 5 most central
-	nodes are 1298880.AUEV01000017_gene1151 (degree 2846), 1298880.AUEV01000002_gene1499
-	(degree 2153), 1298880.AUEV01000011_gene2670 (degree 1744), 1298880.AUEV01000001_gene6021
-	(degree 1716) and 1298880.AUEV01000007_gene4653 (degree 1707).
+	The undirected graph Streptomyces sp. TAA486 has 5958 nodes and 825827
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04654 and has 24 connected components, where the component
+	with most nodes has 5904 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 277.22,
+	and the node degree mode is 1. The top 5 most central nodes are 1298880.AUEV01000017_gene1151
+	(degree 2846), 1298880.AUEV01000002_gene1499 (degree 2153), 1298880.AUEV01000011_gene2670
+	(degree 1744), 1298880.AUEV01000001_gene6021 (degree 1716) and 1298880.AUEV01000007_gene4653
+	(degree 1707).
 	
 
 

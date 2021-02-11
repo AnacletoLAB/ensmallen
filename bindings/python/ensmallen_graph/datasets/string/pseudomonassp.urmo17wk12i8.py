@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:53.625325
 
-The undirected graph Pseudomonas sp. URMO17WK12I8 has 4994 nodes and 670262 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05376
-and has 18 connected components, where the component with most nodes has 4955 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 224, the mean node degree is 268.43, and the node degree mode is 1. The top 5
-most central nodes are 1265490.JHVY01000005_gene1644 (degree 2292), 1265490.JHVY01000009_gene4372
-(degree 1977), 1265490.JHVY01000015_gene65 (degree 1818), 1265490.JHVY01000004_gene2483
-(degree 1743) and 1265490.JHVY01000018_gene304 (degree 1578).
+The undirected graph Pseudomonas sp. URMO17WK12I8 has 4994 nodes and 670262
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05376 and has 18 connected components, where the component
+with most nodes has 4955 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 224, the mean node degree is 268.43,
+and the node degree mode is 1. The top 5 most central nodes are 1265490.JHVY01000005_gene1644
+(degree 2292), 1265490.JHVY01000009_gene4372 (degree 1977), 1265490.JHVY01000015_gene65
+(degree 1818), 1265490.JHVY01000004_gene2483 (degree 1743) and 1265490.JHVY01000018_gene304
+(degree 1578).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.Urmo17wk12i8(
 	
 	Datetime: 2021-02-02 23:35:53.625325
 	
-	The undirected graph Pseudomonas sp. URMO17WK12I8 has 4994 nodes and 670262 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05376
-	and has 18 connected components, where the component with most nodes has 4955 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 224, the mean node degree is 268.43, and the node degree mode is 1. The top 5
-	most central nodes are 1265490.JHVY01000005_gene1644 (degree 2292), 1265490.JHVY01000009_gene4372
-	(degree 1977), 1265490.JHVY01000015_gene65 (degree 1818), 1265490.JHVY01000004_gene2483
-	(degree 1743) and 1265490.JHVY01000018_gene304 (degree 1578).
+	The undirected graph Pseudomonas sp. URMO17WK12I8 has 4994 nodes and 670262
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05376 and has 18 connected components, where the component
+	with most nodes has 4955 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 224, the mean node degree is 268.43,
+	and the node degree mode is 1. The top 5 most central nodes are 1265490.JHVY01000005_gene1644
+	(degree 2292), 1265490.JHVY01000009_gene4372 (degree 1977), 1265490.JHVY01000015_gene65
+	(degree 1818), 1265490.JHVY01000004_gene2483 (degree 1743) and 1265490.JHVY01000018_gene304
+	(degree 1578).
 	
 
 

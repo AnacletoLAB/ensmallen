@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:14.596668
 
-The undirected graph Prevotella buccae ATCC33574 has 2837 nodes and 166689 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04144
-and has 22 connected components, where the component with most nodes has 2779 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 117.51, and the node degree mode is 3. The top 5 most
-central nodes are 873513.HMPREF6485_0578 (degree 929), 873513.HMPREF6485_0665 (degree
-903), 873513.HMPREF6485_1178 (degree 802), 873513.HMPREF6485_0619 (degree 716) and
-873513.HMPREF6485_1741 (degree 704).
+The undirected graph Prevotella buccae ATCC33574 has 2837 nodes and 166689
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04144 and has 22 connected components, where the component
+with most nodes has 2779 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 117.51,
+and the node degree mode is 3. The top 5 most central nodes are 873513.HMPREF6485_0578
+(degree 929), 873513.HMPREF6485_0665 (degree 903), 873513.HMPREF6485_1178
+(degree 802), 873513.HMPREF6485_0619 (degree 716) and 873513.HMPREF6485_1741
+(degree 704).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaBuccaeAtcc33574(
 	
 	Datetime: 2021-02-02 21:49:14.596668
 	
-	The undirected graph Prevotella buccae ATCC33574 has 2837 nodes and 166689 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04144
-	and has 22 connected components, where the component with most nodes has 2779 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 117.51, and the node degree mode is 3. The top 5 most
-	central nodes are 873513.HMPREF6485_0578 (degree 929), 873513.HMPREF6485_0665 (degree
-	903), 873513.HMPREF6485_1178 (degree 802), 873513.HMPREF6485_0619 (degree 716) and
-	873513.HMPREF6485_1741 (degree 704).
+	The undirected graph Prevotella buccae ATCC33574 has 2837 nodes and 166689
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04144 and has 22 connected components, where the component
+	with most nodes has 2779 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 117.51,
+	and the node degree mode is 3. The top 5 most central nodes are 873513.HMPREF6485_0578
+	(degree 929), 873513.HMPREF6485_0665 (degree 903), 873513.HMPREF6485_1178
+	(degree 802), 873513.HMPREF6485_0619 (degree 716) and 873513.HMPREF6485_1741
+	(degree 704).
 	
 
 

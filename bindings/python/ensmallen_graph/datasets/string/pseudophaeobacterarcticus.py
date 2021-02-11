@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:29.505802
 
-The undirected graph Pseudophaeobacter arcticus has 3788 nodes and 530758 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07400
-and has 7 connected components, where the component with most nodes has 3773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 256, the mean node degree is 280.23, and the node degree mode is 4. The top 5
-most central nodes are 999550.KI421507_gene3632 (degree 1562), 999550.KI421507_gene398
-(degree 1343), 999550.KI421507_gene2560 (degree 1252), 999550.KI421507_gene1369 (degree
-1237) and 999550.KI421507_gene216 (degree 1205).
+The undirected graph Pseudophaeobacter arcticus has 3788 nodes and 530758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07400 and has 7 connected components, where the component
+with most nodes has 3773 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 256, the mean node degree is 280.23,
+and the node degree mode is 4. The top 5 most central nodes are 999550.KI421507_gene3632
+(degree 1562), 999550.KI421507_gene398 (degree 1343), 999550.KI421507_gene2560
+(degree 1252), 999550.KI421507_gene1369 (degree 1237) and 999550.KI421507_gene216
+(degree 1205).
 
 
 References
@@ -107,14 +108,15 @@ def PseudophaeobacterArcticus(
 	
 	Datetime: 2021-02-02 22:06:29.505802
 	
-	The undirected graph Pseudophaeobacter arcticus has 3788 nodes and 530758 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07400
-	and has 7 connected components, where the component with most nodes has 3773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 256, the mean node degree is 280.23, and the node degree mode is 4. The top 5
-	most central nodes are 999550.KI421507_gene3632 (degree 1562), 999550.KI421507_gene398
-	(degree 1343), 999550.KI421507_gene2560 (degree 1252), 999550.KI421507_gene1369 (degree
-	1237) and 999550.KI421507_gene216 (degree 1205).
+	The undirected graph Pseudophaeobacter arcticus has 3788 nodes and 530758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07400 and has 7 connected components, where the component
+	with most nodes has 3773 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 256, the mean node degree is 280.23,
+	and the node degree mode is 4. The top 5 most central nodes are 999550.KI421507_gene3632
+	(degree 1562), 999550.KI421507_gene398 (degree 1343), 999550.KI421507_gene2560
+	(degree 1252), 999550.KI421507_gene1369 (degree 1237) and 999550.KI421507_gene216
+	(degree 1205).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:14:28.356286
 
-The undirected graph Mycobacterium sp. URHB0044 has 7075 nodes and 1044072 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04172
-and has 19 connected components, where the component with most nodes has 7035 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 295.14, and the node degree mode is 5. The top 5
-most central nodes are 1380386.JIAW01000003_gene536 (degree 3030), 1380386.JIAW01000007_gene3868
-(degree 2770), 1380386.JIAW01000011_gene3253 (degree 2100), 1380386.JIAW01000011_gene3363
-(degree 2041) and 1380386.JIAW01000010_gene4135 (degree 2029).
+The undirected graph Mycobacterium sp. URHB0044 has 7075 nodes and 1044072
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04172 and has 19 connected components, where the component
+with most nodes has 7035 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 248, the mean node degree is 295.14,
+and the node degree mode is 5. The top 5 most central nodes are 1380386.JIAW01000003_gene536
+(degree 3030), 1380386.JIAW01000007_gene3868 (degree 2770), 1380386.JIAW01000011_gene3253
+(degree 2100), 1380386.JIAW01000011_gene3363 (degree 2041) and 1380386.JIAW01000010_gene4135
+(degree 2029).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.Urhb0044(
 	
 	Datetime: 2021-02-03 22:14:28.356286
 	
-	The undirected graph Mycobacterium sp. URHB0044 has 7075 nodes and 1044072 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04172
-	and has 19 connected components, where the component with most nodes has 7035 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 295.14, and the node degree mode is 5. The top 5
-	most central nodes are 1380386.JIAW01000003_gene536 (degree 3030), 1380386.JIAW01000007_gene3868
-	(degree 2770), 1380386.JIAW01000011_gene3253 (degree 2100), 1380386.JIAW01000011_gene3363
-	(degree 2041) and 1380386.JIAW01000010_gene4135 (degree 2029).
+	The undirected graph Mycobacterium sp. URHB0044 has 7075 nodes and 1044072
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04172 and has 19 connected components, where the component
+	with most nodes has 7035 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 248, the mean node degree is 295.14,
+	and the node degree mode is 5. The top 5 most central nodes are 1380386.JIAW01000003_gene536
+	(degree 3030), 1380386.JIAW01000007_gene3868 (degree 2770), 1380386.JIAW01000011_gene3253
+	(degree 2100), 1380386.JIAW01000011_gene3363 (degree 2041) and 1380386.JIAW01000010_gene4135
+	(degree 2029).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:36.032714
 
-The undirected graph Haladaptatus paucihalophilus has 4350 nodes and 975250 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10310 and has 23 connected components, where the component with most nodes has
-4286 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 478, the mean node degree is 448.39, and the node degree mode is 3. The
-top 5 most central nodes are 797209.ZOD2009_10130 (degree 1549), 797209.ZOD2009_01580
-(degree 1450), 797209.ZOD2009_11025 (degree 1404), 797209.ZOD2009_02170 (degree 1323)
+The undirected graph Haladaptatus paucihalophilus has 4350 nodes and 975250
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10310 and has 23 connected components, where the
+component with most nodes has 4286 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 478, the mean node degree
+is 448.39, and the node degree mode is 3. The top 5 most central nodes
+are 797209.ZOD2009_10130 (degree 1549), 797209.ZOD2009_01580 (degree 1450),
+797209.ZOD2009_11025 (degree 1404), 797209.ZOD2009_02170 (degree 1323)
 and 797209.ZOD2009_07024 (degree 1268).
 
 
@@ -107,13 +108,14 @@ def HaladaptatusPaucihalophilus(
 	
 	Datetime: 2021-02-02 21:45:36.032714
 	
-	The undirected graph Haladaptatus paucihalophilus has 4350 nodes and 975250 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10310 and has 23 connected components, where the component with most nodes has
-	4286 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 478, the mean node degree is 448.39, and the node degree mode is 3. The
-	top 5 most central nodes are 797209.ZOD2009_10130 (degree 1549), 797209.ZOD2009_01580
-	(degree 1450), 797209.ZOD2009_11025 (degree 1404), 797209.ZOD2009_02170 (degree 1323)
+	The undirected graph Haladaptatus paucihalophilus has 4350 nodes and 975250
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10310 and has 23 connected components, where the
+	component with most nodes has 4286 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 478, the mean node degree
+	is 448.39, and the node degree mode is 3. The top 5 most central nodes
+	are 797209.ZOD2009_10130 (degree 1549), 797209.ZOD2009_01580 (degree 1450),
+	797209.ZOD2009_11025 (degree 1404), 797209.ZOD2009_02170 (degree 1323)
 	and 797209.ZOD2009_07024 (degree 1268).
 	
 

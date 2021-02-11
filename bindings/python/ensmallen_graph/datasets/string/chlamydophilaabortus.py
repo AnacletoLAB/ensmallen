@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:12.401853
 
-The undirected graph Chlamydophila abortus has 923 nodes and 41572 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09770 and
-has 6 connected components, where the component with most nodes has 909 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 73,
-the mean node degree is 90.08, and the node degree mode is 4. The top 5 most central
-nodes are 218497.CAB127 (degree 451), 218497.CAB145 (degree 404), 218497.CAB237 (degree
-373), 218497.CAB175 (degree 356) and 218497.CAB829 (degree 353).
+The undirected graph Chlamydophila abortus has 923 nodes and 41572 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09770 and has 6 connected components, where the component with most
+nodes has 909 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 73, the mean node degree is 90.08, and
+the node degree mode is 4. The top 5 most central nodes are 218497.CAB127
+(degree 451), 218497.CAB145 (degree 404), 218497.CAB237 (degree 373), 218497.CAB175
+(degree 356) and 218497.CAB829 (degree 353).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydophilaAbortus(
 	
 	Datetime: 2021-02-02 20:03:12.401853
 	
-	The undirected graph Chlamydophila abortus has 923 nodes and 41572 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09770 and
-	has 6 connected components, where the component with most nodes has 909 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 73,
-	the mean node degree is 90.08, and the node degree mode is 4. The top 5 most central
-	nodes are 218497.CAB127 (degree 451), 218497.CAB145 (degree 404), 218497.CAB237 (degree
-	373), 218497.CAB175 (degree 356) and 218497.CAB829 (degree 353).
+	The undirected graph Chlamydophila abortus has 923 nodes and 41572 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09770 and has 6 connected components, where the component with most
+	nodes has 909 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 73, the mean node degree is 90.08, and
+	the node degree mode is 4. The top 5 most central nodes are 218497.CAB127
+	(degree 451), 218497.CAB145 (degree 404), 218497.CAB237 (degree 373), 218497.CAB175
+	(degree 356) and 218497.CAB829 (degree 353).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:14.477487
 
-The undirected graph Streptococcus sanguinis SK355 has 2301 nodes and 132863 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05021
-and has 5 connected components, where the component with most nodes has 2292 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 115.48, and the node degree mode is 11. The top 5
-most central nodes are 888816.HMPREF9389_0655 (degree 862), 888816.HMPREF9389_1414
-(degree 860), 888816.HMPREF9389_0553 (degree 779), 888816.HMPREF9389_1699 (degree
-722) and 888816.HMPREF9389_0011 (degree 652).
+The undirected graph Streptococcus sanguinis SK355 has 2301 nodes and 132863
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05021 and has 5 connected components, where the component
+with most nodes has 2292 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 115.48,
+and the node degree mode is 11. The top 5 most central nodes are 888816.HMPREF9389_0655
+(degree 862), 888816.HMPREF9389_1414 (degree 860), 888816.HMPREF9389_0553
+(degree 779), 888816.HMPREF9389_1699 (degree 722) and 888816.HMPREF9389_0011
+(degree 652).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSanguinisSk355(
 	
 	Datetime: 2021-02-02 21:53:14.477487
 	
-	The undirected graph Streptococcus sanguinis SK355 has 2301 nodes and 132863 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05021
-	and has 5 connected components, where the component with most nodes has 2292 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 115.48, and the node degree mode is 11. The top 5
-	most central nodes are 888816.HMPREF9389_0655 (degree 862), 888816.HMPREF9389_1414
-	(degree 860), 888816.HMPREF9389_0553 (degree 779), 888816.HMPREF9389_1699 (degree
-	722) and 888816.HMPREF9389_0011 (degree 652).
+	The undirected graph Streptococcus sanguinis SK355 has 2301 nodes and 132863
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05021 and has 5 connected components, where the component
+	with most nodes has 2292 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 115.48,
+	and the node degree mode is 11. The top 5 most central nodes are 888816.HMPREF9389_0655
+	(degree 862), 888816.HMPREF9389_1414 (degree 860), 888816.HMPREF9389_0553
+	(degree 779), 888816.HMPREF9389_1699 (degree 722) and 888816.HMPREF9389_0011
+	(degree 652).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:27.139489
 
-The undirected graph Xanthomonas fragariae has 3688 nodes and 227398 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03345 and
-has 27 connected components, where the component with most nodes has 3629 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 123.32, and the node degree mode is 1. The top 5 most central
-nodes are 1131451.O1K_12205 (degree 1093), 1131451.O1K_13091 (degree 921), 1131451.O1K_07227
-(degree 892), 1131451.O1K_19051 (degree 881) and 1131451.O1K_07232 (degree 851).
+The undirected graph Xanthomonas fragariae has 3688 nodes and 227398 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03345 and has 27 connected components, where the component with most
+nodes has 3629 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 123.32, and
+the node degree mode is 1. The top 5 most central nodes are 1131451.O1K_12205
+(degree 1093), 1131451.O1K_13091 (degree 921), 1131451.O1K_07227 (degree
+892), 1131451.O1K_19051 (degree 881) and 1131451.O1K_07232 (degree 851).
 
 
 References
@@ -106,13 +107,14 @@ def XanthomonasFragariae(
 	
 	Datetime: 2021-02-02 22:55:27.139489
 	
-	The undirected graph Xanthomonas fragariae has 3688 nodes and 227398 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03345 and
-	has 27 connected components, where the component with most nodes has 3629 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 123.32, and the node degree mode is 1. The top 5 most central
-	nodes are 1131451.O1K_12205 (degree 1093), 1131451.O1K_13091 (degree 921), 1131451.O1K_07227
-	(degree 892), 1131451.O1K_19051 (degree 881) and 1131451.O1K_07232 (degree 851).
+	The undirected graph Xanthomonas fragariae has 3688 nodes and 227398 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03345 and has 27 connected components, where the component with most
+	nodes has 3629 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 123.32, and
+	the node degree mode is 1. The top 5 most central nodes are 1131451.O1K_12205
+	(degree 1093), 1131451.O1K_13091 (degree 921), 1131451.O1K_07227 (degree
+	892), 1131451.O1K_19051 (degree 881) and 1131451.O1K_07232 (degree 851).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:26.017370
 
-The undirected graph Brachybacterium faecium has 3050 nodes and 283251 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06092 and
-has 7 connected components, where the component with most nodes has 3035 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 185.74, and the node degree mode is 1. The top 5 most central
-nodes are 446465.Bfae_14980 (degree 1115), 446465.Bfae_08800 (degree 878), 446465.Bfae_07900
-(degree 852), 446465.Bfae_12160 (degree 827) and 446465.Bfae_21840 (degree 827).
+The undirected graph Brachybacterium faecium has 3050 nodes and 283251
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06092 and has 7 connected components, where the component
+with most nodes has 3035 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 185.74,
+and the node degree mode is 1. The top 5 most central nodes are 446465.Bfae_14980
+(degree 1115), 446465.Bfae_08800 (degree 878), 446465.Bfae_07900 (degree
+852), 446465.Bfae_12160 (degree 827) and 446465.Bfae_21840 (degree 827).
 
 
 References
@@ -106,13 +107,14 @@ def BrachybacteriumFaecium(
 	
 	Datetime: 2021-02-02 20:51:26.017370
 	
-	The undirected graph Brachybacterium faecium has 3050 nodes and 283251 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06092 and
-	has 7 connected components, where the component with most nodes has 3035 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 185.74, and the node degree mode is 1. The top 5 most central
-	nodes are 446465.Bfae_14980 (degree 1115), 446465.Bfae_08800 (degree 878), 446465.Bfae_07900
-	(degree 852), 446465.Bfae_12160 (degree 827) and 446465.Bfae_21840 (degree 827).
+	The undirected graph Brachybacterium faecium has 3050 nodes and 283251
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06092 and has 7 connected components, where the component
+	with most nodes has 3035 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 185.74,
+	and the node degree mode is 1. The top 5 most central nodes are 446465.Bfae_14980
+	(degree 1115), 446465.Bfae_08800 (degree 878), 446465.Bfae_07900 (degree
+	852), 446465.Bfae_12160 (degree 827) and 446465.Bfae_21840 (degree 827).
 	
 
 

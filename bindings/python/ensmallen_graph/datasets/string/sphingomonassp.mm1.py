@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:02.109794
 
-The undirected graph Sphingomonas sp. MM1 has 3829 nodes and 315376 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-has 7 connected components, where the component with most nodes has 3812 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 164.73, and the node degree mode is 5. The top 5 most central
-nodes are 745310.G432_11300 (degree 1510), 745310.G432_03490 (degree 1336), 745310.G432_08965
-(degree 1127), 745310.G432_02905 (degree 1062) and 745310.G432_11165 (degree 1036).
+The undirected graph Sphingomonas sp. MM1 has 3829 nodes and 315376 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04303 and has 7 connected components, where the component with most
+nodes has 3812 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 164.73, and
+the node degree mode is 5. The top 5 most central nodes are 745310.G432_11300
+(degree 1510), 745310.G432_03490 (degree 1336), 745310.G432_08965 (degree
+1127), 745310.G432_02905 (degree 1062) and 745310.G432_11165 (degree 1036).
 
 
 References
@@ -106,13 +107,14 @@ def SphingomonasSp.Mm1(
 	
 	Datetime: 2021-02-02 21:39:02.109794
 	
-	The undirected graph Sphingomonas sp. MM1 has 3829 nodes and 315376 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-	has 7 connected components, where the component with most nodes has 3812 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 164.73, and the node degree mode is 5. The top 5 most central
-	nodes are 745310.G432_11300 (degree 1510), 745310.G432_03490 (degree 1336), 745310.G432_08965
-	(degree 1127), 745310.G432_02905 (degree 1062) and 745310.G432_11165 (degree 1036).
+	The undirected graph Sphingomonas sp. MM1 has 3829 nodes and 315376 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04303 and has 7 connected components, where the component with most
+	nodes has 3812 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 164.73, and
+	the node degree mode is 5. The top 5 most central nodes are 745310.G432_11300
+	(degree 1510), 745310.G432_03490 (degree 1336), 745310.G432_08965 (degree
+	1127), 745310.G432_02905 (degree 1062) and 745310.G432_11165 (degree 1036).
 	
 
 

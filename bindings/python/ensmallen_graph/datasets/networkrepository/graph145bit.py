@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-05 12:51:15.104541
 
-The undirected graph 145bit has 1002 nodes and 11255 unweighted edges, of which 4
-are self-loops. The graph is dense as it has a density of 0.02244 and is connected,
-as it has a single component. The graph median node degree is 16, the mean node degree
-is 22.46, and the node degree mode is 14. The top 5 most central nodes are 1 (degree
-510), 2 (degree 449), 3 (degree 432), 4 (degree 374) and 5 (degree 299).
+The undirected graph 145bit has 1002 nodes and 11255 unweighted edges,
+of which 4 are self-loops. The graph is dense as it has a density of 0.02244
+and is connected, as it has a single component. The graph median node degree
+is 16, the mean node degree is 22.46, and the node degree mode is 14. The
+top 5 most central nodes are 1 (degree 510), 2 (degree 449), 3 (degree
+432), 4 (degree 374) and 5 (degree 299).
 
 
 References
@@ -101,11 +102,12 @@ def Graph145bit(
 	
 	Datetime: 2021-02-05 12:51:15.104541
 	
-	The undirected graph 145bit has 1002 nodes and 11255 unweighted edges, of which 4
-	are self-loops. The graph is dense as it has a density of 0.02244 and is connected,
-	as it has a single component. The graph median node degree is 16, the mean node degree
-	is 22.46, and the node degree mode is 14. The top 5 most central nodes are 1 (degree
-	510), 2 (degree 449), 3 (degree 432), 4 (degree 374) and 5 (degree 299).
+	The undirected graph 145bit has 1002 nodes and 11255 unweighted edges,
+	of which 4 are self-loops. The graph is dense as it has a density of 0.02244
+	and is connected, as it has a single component. The graph median node degree
+	is 16, the mean node degree is 22.46, and the node degree mode is 14. The
+	top 5 most central nodes are 1 (degree 510), 2 (degree 449), 3 (degree
+	432), 4 (degree 374) and 5 (degree 299).
 	
 
 

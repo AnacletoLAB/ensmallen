@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:32.483190
 
-The undirected graph Hyphomonas sp. CY54118 has 3799 nodes and 358398 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04968 and
-has 10 connected components, where the component with most nodes has 3774 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 188.68, and the node degree mode is 3. The top 5 most central
-nodes are 1280944.HY17_09770 (degree 1354), 1280944.HY17_18545 (degree 1284), 1280944.HY17_09055
-(degree 1186), 1280944.HY17_09305 (degree 1162) and 1280944.HY17_15185 (degree 1062).
+The undirected graph Hyphomonas sp. CY54118 has 3799 nodes and 358398 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04968 and has 10 connected components, where the component with most
+nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 188.68, and
+the node degree mode is 3. The top 5 most central nodes are 1280944.HY17_09770
+(degree 1354), 1280944.HY17_18545 (degree 1284), 1280944.HY17_09055 (degree
+1186), 1280944.HY17_09305 (degree 1162) and 1280944.HY17_15185 (degree
+1062).
 
 
 References
@@ -106,13 +108,15 @@ def HyphomonasSp.Cy54118(
 	
 	Datetime: 2021-02-03 21:08:32.483190
 	
-	The undirected graph Hyphomonas sp. CY54118 has 3799 nodes and 358398 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04968 and
-	has 10 connected components, where the component with most nodes has 3774 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 188.68, and the node degree mode is 3. The top 5 most central
-	nodes are 1280944.HY17_09770 (degree 1354), 1280944.HY17_18545 (degree 1284), 1280944.HY17_09055
-	(degree 1186), 1280944.HY17_09305 (degree 1162) and 1280944.HY17_15185 (degree 1062).
+	The undirected graph Hyphomonas sp. CY54118 has 3799 nodes and 358398 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04968 and has 10 connected components, where the component with most
+	nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 188.68, and
+	the node degree mode is 3. The top 5 most central nodes are 1280944.HY17_09770
+	(degree 1354), 1280944.HY17_18545 (degree 1284), 1280944.HY17_09055 (degree
+	1186), 1280944.HY17_09305 (degree 1162) and 1280944.HY17_15185 (degree
+	1062).
 	
 
 

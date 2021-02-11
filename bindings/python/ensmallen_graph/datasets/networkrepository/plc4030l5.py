@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:37:38.548306
 
-The undirected graph PLC-40-30-L5 has 11025 nodes with 5 different node types: 4
-(nodes number 2205), 2 (nodes number 2205), 3 (nodes number 2205), 1 (nodes number
-2205) and 5 (nodes number 2205) and 437979 unweighted edges, of which none are self-loops.
-The graph is sparse as it has a density of 0.00721 and is connected, as it has a
-single component. The graph median node degree is 53, the mean node degree is 79.45,
-and the node degree mode is 40. The top 5 most central nodes are 45 (degree 1968),
-46 (degree 1961), 44 (degree 1875), 52 (degree 1649) and 42 (degree 1628).
+The undirected graph PLC-40-30-L5 has 11025 nodes with 5 different node
+types: 4 (nodes number 2205), 2 (nodes number 2205), 3 (nodes number 2205),
+1 (nodes number 2205) and 5 (nodes number 2205) and 437979 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00721 and is connected, as it has a single component. The graph median
+node degree is 53, the mean node degree is 79.45, and the node degree mode
+is 40. The top 5 most central nodes are 45 (degree 1968), 46 (degree 1961),
+44 (degree 1875), 52 (degree 1649) and 42 (degree 1628).
 
 
 References
@@ -103,13 +104,14 @@ def Plc4030L5(
 	
 	Datetime: 2021-02-04 08:37:38.548306
 	
-	The undirected graph PLC-40-30-L5 has 11025 nodes with 5 different node types: 4
-	(nodes number 2205), 2 (nodes number 2205), 3 (nodes number 2205), 1 (nodes number
-	2205) and 5 (nodes number 2205) and 437979 unweighted edges, of which none are self-loops.
-	The graph is sparse as it has a density of 0.00721 and is connected, as it has a
-	single component. The graph median node degree is 53, the mean node degree is 79.45,
-	and the node degree mode is 40. The top 5 most central nodes are 45 (degree 1968),
-	46 (degree 1961), 44 (degree 1875), 52 (degree 1649) and 42 (degree 1628).
+	The undirected graph PLC-40-30-L5 has 11025 nodes with 5 different node
+	types: 4 (nodes number 2205), 2 (nodes number 2205), 3 (nodes number 2205),
+	1 (nodes number 2205) and 5 (nodes number 2205) and 437979 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00721 and is connected, as it has a single component. The graph median
+	node degree is 53, the mean node degree is 79.45, and the node degree mode
+	is 40. The top 5 most central nodes are 45 (degree 1968), 46 (degree 1961),
+	44 (degree 1875), 52 (degree 1649) and 42 (degree 1628).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:01.338642
 
-The undirected graph Trec9 has 201 nodes and 2137 weighted edges, of which 12 are
-self-loops. The graph is quite dense as it has a density of 0.10602 and is connected,
-as it has a single component. The graph median node degree is 12, the mean node degree
-is 21.20, and the node degree mode is 6. The top 5 most central nodes are 42 (degree
-94), 45 (degree 85), 40 (degree 82), 30 (degree 81) and 46 (degree 80).
+The undirected graph Trec9 has 201 nodes and 2137 weighted edges, of which
+12 are self-loops. The graph is quite dense as it has a density of 0.10602
+and is connected, as it has a single component. The graph median node degree
+is 12, the mean node degree is 21.20, and the node degree mode is 6. The
+top 5 most central nodes are 42 (degree 94), 45 (degree 85), 40 (degree
+82), 30 (degree 81) and 46 (degree 80).
 
 
 References
@@ -101,11 +102,12 @@ def Trec9(
 	
 	Datetime: 2021-02-06 08:02:01.338642
 	
-	The undirected graph Trec9 has 201 nodes and 2137 weighted edges, of which 12 are
-	self-loops. The graph is quite dense as it has a density of 0.10602 and is connected,
-	as it has a single component. The graph median node degree is 12, the mean node degree
-	is 21.20, and the node degree mode is 6. The top 5 most central nodes are 42 (degree
-	94), 45 (degree 85), 40 (degree 82), 30 (degree 81) and 46 (degree 80).
+	The undirected graph Trec9 has 201 nodes and 2137 weighted edges, of which
+	12 are self-loops. The graph is quite dense as it has a density of 0.10602
+	and is connected, as it has a single component. The graph median node degree
+	is 12, the mean node degree is 21.20, and the node degree mode is 6. The
+	top 5 most central nodes are 42 (degree 94), 45 (degree 85), 40 (degree
+	82), 30 (degree 81) and 46 (degree 80).
 	
 
 

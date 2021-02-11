@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:11:43.080269
 
-The undirected graph ins2 has 309412 nodes and 1530448 unweighted edges, of which
-309412 are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 6,
-the mean node degree is 8.89, and the node degree mode is 6. The top 5 most central
-nodes are 303876 (degree 309412), 303887 (degree 33152), 303886 (degree 33152), 303885
-(degree 33152) and 303884 (degree 33152).
+The undirected graph ins2 has 309412 nodes and 1530448 unweighted edges,
+of which 309412 are self-loops. The graph is extremely sparse as it has
+a density of 0.00003 and is connected, as it has a single component. The
+graph median node degree is 6, the mean node degree is 8.89, and the node
+degree mode is 6. The top 5 most central nodes are 303876 (degree 309412),
+303887 (degree 33152), 303886 (degree 33152), 303885 (degree 33152) and
+303884 (degree 33152).
 
 
 References
@@ -102,12 +103,13 @@ def Ins2(
 	
 	Datetime: 2021-02-06 12:11:43.080269
 	
-	The undirected graph ins2 has 309412 nodes and 1530448 unweighted edges, of which
-	309412 are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 6,
-	the mean node degree is 8.89, and the node degree mode is 6. The top 5 most central
-	nodes are 303876 (degree 309412), 303887 (degree 33152), 303886 (degree 33152), 303885
-	(degree 33152) and 303884 (degree 33152).
+	The undirected graph ins2 has 309412 nodes and 1530448 unweighted edges,
+	of which 309412 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00003 and is connected, as it has a single component. The
+	graph median node degree is 6, the mean node degree is 8.89, and the node
+	degree mode is 6. The top 5 most central nodes are 303876 (degree 309412),
+	303887 (degree 33152), 303886 (degree 33152), 303885 (degree 33152) and
+	303884 (degree 33152).
 	
 
 

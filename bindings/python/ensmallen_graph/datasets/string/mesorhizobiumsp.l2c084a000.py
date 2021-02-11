@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:18:24.220285
 
-The undirected graph Mesorhizobium sp. L2C084A000 has 6319 nodes and 873973 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04378
-and has 46 connected components, where the component with most nodes has 6188 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 218, the mean node degree is 276.62, and the node degree mode is 2. The top 5
-most central nodes are 1287116.X734_05875 (degree 2196), 1287116.X734_22195 (degree
-2104), 1287116.X734_22330 (degree 1949), 1287116.X734_03540 (degree 1912) and 1287116.X734_08670
-(degree 1762).
+The undirected graph Mesorhizobium sp. L2C084A000 has 6319 nodes and 873973
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04378 and has 46 connected components, where the component
+with most nodes has 6188 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 218, the mean node degree is 276.62,
+and the node degree mode is 2. The top 5 most central nodes are 1287116.X734_05875
+(degree 2196), 1287116.X734_22195 (degree 2104), 1287116.X734_22330 (degree
+1949), 1287116.X734_03540 (degree 1912) and 1287116.X734_08670 (degree
+1762).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumSp.L2c084a000(
 	
 	Datetime: 2021-02-03 21:18:24.220285
 	
-	The undirected graph Mesorhizobium sp. L2C084A000 has 6319 nodes and 873973 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04378
-	and has 46 connected components, where the component with most nodes has 6188 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 218, the mean node degree is 276.62, and the node degree mode is 2. The top 5
-	most central nodes are 1287116.X734_05875 (degree 2196), 1287116.X734_22195 (degree
-	2104), 1287116.X734_22330 (degree 1949), 1287116.X734_03540 (degree 1912) and 1287116.X734_08670
-	(degree 1762).
+	The undirected graph Mesorhizobium sp. L2C084A000 has 6319 nodes and 873973
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04378 and has 46 connected components, where the component
+	with most nodes has 6188 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 218, the mean node degree is 276.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1287116.X734_05875
+	(degree 2196), 1287116.X734_22195 (degree 2104), 1287116.X734_22330 (degree
+	1949), 1287116.X734_03540 (degree 1912) and 1287116.X734_08670 (degree
+	1762).
 	
 
 

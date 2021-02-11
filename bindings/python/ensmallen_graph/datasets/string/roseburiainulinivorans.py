@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:35.732354
 
-The undirected graph Roseburia inulinivorans has 4371 nodes and 464048 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-has 10 connected components, where the component with most nodes has 4351 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 212.33, and the node degree mode is 8. The top 5 most central
-nodes are 622312.ROSEINA2194_00034 (degree 1562), 622312.ROSEINA2194_00306 (degree
-1278), 622312.ROSEINA2194_00211 (degree 1263), 622312.ROSEINA2194_04145 (degree 1223)
-and 622312.ROSEINA2194_03524 (degree 1209).
+The undirected graph Roseburia inulinivorans has 4371 nodes and 464048
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04859 and has 10 connected components, where the component
+with most nodes has 4351 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 212.33,
+and the node degree mode is 8. The top 5 most central nodes are 622312.ROSEINA2194_00034
+(degree 1562), 622312.ROSEINA2194_00306 (degree 1278), 622312.ROSEINA2194_00211
+(degree 1263), 622312.ROSEINA2194_04145 (degree 1223) and 622312.ROSEINA2194_03524
+(degree 1209).
 
 
 References
@@ -107,14 +108,15 @@ def RoseburiaInulinivorans(
 	
 	Datetime: 2021-02-02 21:20:35.732354
 	
-	The undirected graph Roseburia inulinivorans has 4371 nodes and 464048 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-	has 10 connected components, where the component with most nodes has 4351 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 212.33, and the node degree mode is 8. The top 5 most central
-	nodes are 622312.ROSEINA2194_00034 (degree 1562), 622312.ROSEINA2194_00306 (degree
-	1278), 622312.ROSEINA2194_00211 (degree 1263), 622312.ROSEINA2194_04145 (degree 1223)
-	and 622312.ROSEINA2194_03524 (degree 1209).
+	The undirected graph Roseburia inulinivorans has 4371 nodes and 464048
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04859 and has 10 connected components, where the component
+	with most nodes has 4351 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 212.33,
+	and the node degree mode is 8. The top 5 most central nodes are 622312.ROSEINA2194_00034
+	(degree 1562), 622312.ROSEINA2194_00306 (degree 1278), 622312.ROSEINA2194_00211
+	(degree 1263), 622312.ROSEINA2194_04145 (degree 1223) and 622312.ROSEINA2194_03524
+	(degree 1209).
 	
 
 

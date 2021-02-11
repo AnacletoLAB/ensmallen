@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:37.022157
 
-The undirected graph Natranaerobius thermophilus has 2871 nodes and 198708 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04823
-and has 8 connected components, where the component with most nodes has 2854 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 138.42, and the node degree mode is 2. The top 5
-most central nodes are 457570.Nther_1892 (degree 1086), 457570.Nther_1654 (degree
-950), 457570.Nther_0452 (degree 860), 457570.Nther_1638 (degree 848) and 457570.Nther_0834
-(degree 783).
+The undirected graph Natranaerobius thermophilus has 2871 nodes and 198708
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04823 and has 8 connected components, where the component
+with most nodes has 2854 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 138.42,
+and the node degree mode is 2. The top 5 most central nodes are 457570.Nther_1892
+(degree 1086), 457570.Nther_1654 (degree 950), 457570.Nther_0452 (degree
+860), 457570.Nther_1638 (degree 848) and 457570.Nther_0834 (degree 783).
 
 
 References
@@ -107,14 +107,14 @@ def NatranaerobiusThermophilus(
 	
 	Datetime: 2021-02-02 20:53:37.022157
 	
-	The undirected graph Natranaerobius thermophilus has 2871 nodes and 198708 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04823
-	and has 8 connected components, where the component with most nodes has 2854 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 138.42, and the node degree mode is 2. The top 5
-	most central nodes are 457570.Nther_1892 (degree 1086), 457570.Nther_1654 (degree
-	950), 457570.Nther_0452 (degree 860), 457570.Nther_1638 (degree 848) and 457570.Nther_0834
-	(degree 783).
+	The undirected graph Natranaerobius thermophilus has 2871 nodes and 198708
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04823 and has 8 connected components, where the component
+	with most nodes has 2854 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 138.42,
+	and the node degree mode is 2. The top 5 most central nodes are 457570.Nther_1892
+	(degree 1086), 457570.Nther_1654 (degree 950), 457570.Nther_0452 (degree
+	860), 457570.Nther_1638 (degree 848) and 457570.Nther_0834 (degree 783).
 	
 
 

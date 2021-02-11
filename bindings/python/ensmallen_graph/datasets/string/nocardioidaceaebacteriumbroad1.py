@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:53.379876
 
-The undirected graph Nocardioidaceae bacterium Broad1 has 5599 nodes and 552401 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03525
-and has 12 connected components, where the component with most nodes has 5572 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 197.32, and the node degree mode is 3. The top 5
-most central nodes are 408672.NBCG_04220 (degree 1960), 408672.NBCG_03735 (degree
-1750), 408672.NBCG_04559 (degree 1642), 408672.NBCG_03872 (degree 1517) and 408672.NBCG_04867
-(degree 1511).
+The undirected graph Nocardioidaceae bacterium Broad1 has 5599 nodes and
+552401 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03525 and has 12 connected components, where the
+component with most nodes has 5572 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+is 197.32, and the node degree mode is 3. The top 5 most central nodes
+are 408672.NBCG_04220 (degree 1960), 408672.NBCG_03735 (degree 1750), 408672.NBCG_04559
+(degree 1642), 408672.NBCG_03872 (degree 1517) and 408672.NBCG_04867 (degree
+1511).
 
 
 References
@@ -107,14 +108,15 @@ def NocardioidaceaeBacteriumBroad1(
 	
 	Datetime: 2021-02-02 20:44:53.379876
 	
-	The undirected graph Nocardioidaceae bacterium Broad1 has 5599 nodes and 552401 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03525
-	and has 12 connected components, where the component with most nodes has 5572 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 197.32, and the node degree mode is 3. The top 5
-	most central nodes are 408672.NBCG_04220 (degree 1960), 408672.NBCG_03735 (degree
-	1750), 408672.NBCG_04559 (degree 1642), 408672.NBCG_03872 (degree 1517) and 408672.NBCG_04867
-	(degree 1511).
+	The undirected graph Nocardioidaceae bacterium Broad1 has 5599 nodes and
+	552401 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03525 and has 12 connected components, where the
+	component with most nodes has 5572 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+	is 197.32, and the node degree mode is 3. The top 5 most central nodes
+	are 408672.NBCG_04220 (degree 1960), 408672.NBCG_03735 (degree 1750), 408672.NBCG_04559
+	(degree 1642), 408672.NBCG_03872 (degree 1517) and 408672.NBCG_04867 (degree
+	1511).
 	
 
 

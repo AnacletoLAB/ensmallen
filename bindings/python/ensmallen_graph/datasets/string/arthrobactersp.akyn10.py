@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:06:51.335337
 
-The undirected graph Arthrobacter sp. AKYN10 has 4534 nodes and 369514 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03596 and
-has 35 connected components, where the component with most nodes has 4440 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 163.00, and the node degree mode is 2. The top 5 most central
-nodes are 1349820.M707_10875 (degree 1354), 1349820.M707_13785 (degree 1270), 1349820.M707_00120
-(degree 1252), 1349820.M707_02020 (degree 1207) and 1349820.M707_10925 (degree 1092).
+The undirected graph Arthrobacter sp. AKYN10 has 4534 nodes and 369514
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03596 and has 35 connected components, where the component
+with most nodes has 4440 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 163.00,
+and the node degree mode is 2. The top 5 most central nodes are 1349820.M707_10875
+(degree 1354), 1349820.M707_13785 (degree 1270), 1349820.M707_00120 (degree
+1252), 1349820.M707_02020 (degree 1207) and 1349820.M707_10925 (degree
+1092).
 
 
 References
@@ -106,13 +108,15 @@ def ArthrobacterSp.Akyn10(
 	
 	Datetime: 2021-02-03 22:06:51.335337
 	
-	The undirected graph Arthrobacter sp. AKYN10 has 4534 nodes and 369514 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03596 and
-	has 35 connected components, where the component with most nodes has 4440 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 163.00, and the node degree mode is 2. The top 5 most central
-	nodes are 1349820.M707_10875 (degree 1354), 1349820.M707_13785 (degree 1270), 1349820.M707_00120
-	(degree 1252), 1349820.M707_02020 (degree 1207) and 1349820.M707_10925 (degree 1092).
+	The undirected graph Arthrobacter sp. AKYN10 has 4534 nodes and 369514
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03596 and has 35 connected components, where the component
+	with most nodes has 4440 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 163.00,
+	and the node degree mode is 2. The top 5 most central nodes are 1349820.M707_10875
+	(degree 1354), 1349820.M707_13785 (degree 1270), 1349820.M707_00120 (degree
+	1252), 1349820.M707_02020 (degree 1207) and 1349820.M707_10925 (degree
+	1092).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:38.999689
 
-The undirected graph Bosea sp. LC85 has 6121 nodes and 830717 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04435 and
-has 31 connected components, where the component with most nodes has 6039 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 271.43, and the node degree mode is 2. The top 5 most central
-nodes are 1502851.FG93_02660 (degree 2258), 1502851.FG93_01725 (degree 1918), 1502851.FG93_00182
-(degree 1797), 1502851.FG93_01009 (degree 1773) and 1502851.FG93_01768 (degree 1515).
+The undirected graph Bosea sp. LC85 has 6121 nodes and 830717 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04435 and has 31 connected components, where the component with most
+nodes has 6039 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 271.43, and
+the node degree mode is 2. The top 5 most central nodes are 1502851.FG93_02660
+(degree 2258), 1502851.FG93_01725 (degree 1918), 1502851.FG93_00182 (degree
+1797), 1502851.FG93_01009 (degree 1773) and 1502851.FG93_01768 (degree
+1515).
 
 
 References
@@ -106,13 +108,15 @@ def BoseaSp.Lc85(
 	
 	Datetime: 2021-02-03 23:16:38.999689
 	
-	The undirected graph Bosea sp. LC85 has 6121 nodes and 830717 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04435 and
-	has 31 connected components, where the component with most nodes has 6039 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 271.43, and the node degree mode is 2. The top 5 most central
-	nodes are 1502851.FG93_02660 (degree 2258), 1502851.FG93_01725 (degree 1918), 1502851.FG93_00182
-	(degree 1797), 1502851.FG93_01009 (degree 1773) and 1502851.FG93_01768 (degree 1515).
+	The undirected graph Bosea sp. LC85 has 6121 nodes and 830717 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04435 and has 31 connected components, where the component with most
+	nodes has 6039 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 271.43, and
+	the node degree mode is 2. The top 5 most central nodes are 1502851.FG93_02660
+	(degree 2258), 1502851.FG93_01725 (degree 1918), 1502851.FG93_00182 (degree
+	1797), 1502851.FG93_01009 (degree 1773) and 1502851.FG93_01768 (degree
+	1515).
 	
 
 

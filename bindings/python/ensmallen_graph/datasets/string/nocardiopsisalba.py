@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:34.307187
 
-The undirected graph Nocardiopsis alba has 5432 nodes and 420114 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02848 and
-has 37 connected components, where the component with most nodes has 5337 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 154.68, and the node degree mode is 2. The top 5 most central
-nodes are 1205910.B005_2044 (degree 1788), 1205910.B005_3885 (degree 1660), 1205910.B005_3801
-(degree 1258), 1205910.B005_1176 (degree 1252) and 1205910.B005_2797 (degree 1219).
+The undirected graph Nocardiopsis alba has 5432 nodes and 420114 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02848 and has 37 connected components, where the component with most
+nodes has 5337 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 154.68, and
+the node degree mode is 2. The top 5 most central nodes are 1205910.B005_2044
+(degree 1788), 1205910.B005_3885 (degree 1660), 1205910.B005_3801 (degree
+1258), 1205910.B005_1176 (degree 1252) and 1205910.B005_2797 (degree 1219).
 
 
 References
@@ -106,13 +107,14 @@ def NocardiopsisAlba(
 	
 	Datetime: 2021-02-02 23:15:34.307187
 	
-	The undirected graph Nocardiopsis alba has 5432 nodes and 420114 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02848 and
-	has 37 connected components, where the component with most nodes has 5337 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 154.68, and the node degree mode is 2. The top 5 most central
-	nodes are 1205910.B005_2044 (degree 1788), 1205910.B005_3885 (degree 1660), 1205910.B005_3801
-	(degree 1258), 1205910.B005_1176 (degree 1252) and 1205910.B005_2797 (degree 1219).
+	The undirected graph Nocardiopsis alba has 5432 nodes and 420114 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02848 and has 37 connected components, where the component with most
+	nodes has 5337 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 154.68, and
+	the node degree mode is 2. The top 5 most central nodes are 1205910.B005_2044
+	(degree 1788), 1205910.B005_3885 (degree 1660), 1205910.B005_3801 (degree
+	1258), 1205910.B005_1176 (degree 1252) and 1205910.B005_2797 (degree 1219).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:38:42.229026
 
-The undirected graph socfb-uci-uni has 58790782 nodes and 92208195 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 3.14, and the node degree mode is 1. The top 5 most
-central nodes are 12165254 (degree 4960), 2809220 (degree 4928), 546759 (degree 4857),
-6557835 (degree 4799) and 3510992 (degree 4740).
+The undirected graph socfb-uci-uni has 58790782 nodes and 92208195 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 3.14, and the
+node degree mode is 1. The top 5 most central nodes are 12165254 (degree
+4960), 2809220 (degree 4928), 546759 (degree 4857), 6557835 (degree 4799)
+and 3510992 (degree 4740).
 
 
 References
@@ -123,12 +124,13 @@ def SocfbUciUni(
 	
 	Datetime: 2021-02-07 16:38:42.229026
 	
-	The undirected graph socfb-uci-uni has 58790782 nodes and 92208195 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 3.14, and the node degree mode is 1. The top 5 most
-	central nodes are 12165254 (degree 4960), 2809220 (degree 4928), 546759 (degree 4857),
-	6557835 (degree 4799) and 3510992 (degree 4740).
+	The undirected graph socfb-uci-uni has 58790782 nodes and 92208195 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 3.14, and the
+	node degree mode is 1. The top 5 most central nodes are 12165254 (degree
+	4960), 2809220 (degree 4928), 546759 (degree 4857), 6557835 (degree 4799)
+	and 3510992 (degree 4740).
 	
 
 

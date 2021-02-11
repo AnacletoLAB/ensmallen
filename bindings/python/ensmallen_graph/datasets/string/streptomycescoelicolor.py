@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:20.211072
 
-The undirected graph Streptomyces coelicolor has 7741 nodes and 1382317 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-and has 12 connected components, where the component with most nodes has 7715 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 329, the mean node degree is 357.14, and the node degree mode is 3. The top 5
-most central nodes are 100226.SCO5748 (degree 3576), 100226.SCO2003 (degree 2317),
-100226.SCO2026 (degree 2025), 100226.SCO4009 (degree 1985) and 100226.SCO3671 (degree
-1979).
+The undirected graph Streptomyces coelicolor has 7741 nodes and 1382317
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04614 and has 12 connected components, where the component
+with most nodes has 7715 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 329, the mean node degree is 357.14,
+and the node degree mode is 3. The top 5 most central nodes are 100226.SCO5748
+(degree 3576), 100226.SCO2003 (degree 2317), 100226.SCO2026 (degree 2025),
+100226.SCO4009 (degree 1985) and 100226.SCO3671 (degree 1979).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesCoelicolor(
 	
 	Datetime: 2021-02-02 19:42:20.211072
 	
-	The undirected graph Streptomyces coelicolor has 7741 nodes and 1382317 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-	and has 12 connected components, where the component with most nodes has 7715 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 329, the mean node degree is 357.14, and the node degree mode is 3. The top 5
-	most central nodes are 100226.SCO5748 (degree 3576), 100226.SCO2003 (degree 2317),
-	100226.SCO2026 (degree 2025), 100226.SCO4009 (degree 1985) and 100226.SCO3671 (degree
-	1979).
+	The undirected graph Streptomyces coelicolor has 7741 nodes and 1382317
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04614 and has 12 connected components, where the component
+	with most nodes has 7715 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 329, the mean node degree is 357.14,
+	and the node degree mode is 3. The top 5 most central nodes are 100226.SCO5748
+	(degree 3576), 100226.SCO2003 (degree 2317), 100226.SCO2026 (degree 2025),
+	100226.SCO4009 (degree 1985) and 100226.SCO3671 (degree 1979).
 	
 
 

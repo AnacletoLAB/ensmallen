@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:54.900899
 
-The undirected graph Methylobacterium nodulans has 7149 nodes and 679495 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02659
-and has 96 connected components, where the component with most nodes has 6915 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 190.10, and the node degree mode is 1. The top 5
-most central nodes are 460265.Mnod_6353 (degree 2535), 460265.Mnod_1501 (degree 2330),
-460265.Mnod_2540 (degree 2110), 460265.Mnod_7445 (degree 2103) and 460265.Mnod_5851
-(degree 2001).
+The undirected graph Methylobacterium nodulans has 7149 nodes and 679495
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02659 and has 96 connected components, where the component
+with most nodes has 6915 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 190.10,
+and the node degree mode is 1. The top 5 most central nodes are 460265.Mnod_6353
+(degree 2535), 460265.Mnod_1501 (degree 2330), 460265.Mnod_2540 (degree
+2110), 460265.Mnod_7445 (degree 2103) and 460265.Mnod_5851 (degree 2001).
 
 
 References
@@ -107,14 +107,14 @@ def MethylobacteriumNodulans(
 	
 	Datetime: 2021-02-02 20:53:54.900899
 	
-	The undirected graph Methylobacterium nodulans has 7149 nodes and 679495 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02659
-	and has 96 connected components, where the component with most nodes has 6915 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 190.10, and the node degree mode is 1. The top 5
-	most central nodes are 460265.Mnod_6353 (degree 2535), 460265.Mnod_1501 (degree 2330),
-	460265.Mnod_2540 (degree 2110), 460265.Mnod_7445 (degree 2103) and 460265.Mnod_5851
-	(degree 2001).
+	The undirected graph Methylobacterium nodulans has 7149 nodes and 679495
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02659 and has 96 connected components, where the component
+	with most nodes has 6915 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 190.10,
+	and the node degree mode is 1. The top 5 most central nodes are 460265.Mnod_6353
+	(degree 2535), 460265.Mnod_1501 (degree 2330), 460265.Mnod_2540 (degree
+	2110), 460265.Mnod_7445 (degree 2103) and 460265.Mnod_5851 (degree 2001).
 	
 
 

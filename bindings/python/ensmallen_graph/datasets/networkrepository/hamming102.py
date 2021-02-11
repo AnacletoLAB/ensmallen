@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:38.200937
 
-The undirected graph hamming10-2 has 1024 nodes and 518656 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.99022
-and is connected, as it has a single component. The graph median node degree is 1013,
-the mean node degree is 1013.00 and the node degree mode is 1013. The top 5 most
-central nodes are 1024 (degree 1013), 1023 (degree 1013), 1022 (degree 1013), 1021
-(degree 1013) and 1020 (degree 1013).
+The undirected graph hamming10-2 has 1024 nodes and 518656 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.99022 and is connected, as it has a single component. The
+graph median node degree is 1013, the mean node degree is 1013.00 and the
+node degree mode is 1013. The top 5 most central nodes are 1024 (degree
+1013), 1023 (degree 1013), 1022 (degree 1013), 1021 (degree 1013) and 1020
+(degree 1013).
 
 
 References
@@ -115,12 +116,13 @@ def Hamming102(
 	
 	Datetime: 2021-02-03 22:54:38.200937
 	
-	The undirected graph hamming10-2 has 1024 nodes and 518656 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.99022
-	and is connected, as it has a single component. The graph median node degree is 1013,
-	the mean node degree is 1013.00 and the node degree mode is 1013. The top 5 most
-	central nodes are 1024 (degree 1013), 1023 (degree 1013), 1022 (degree 1013), 1021
-	(degree 1013) and 1020 (degree 1013).
+	The undirected graph hamming10-2 has 1024 nodes and 518656 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.99022 and is connected, as it has a single component. The
+	graph median node degree is 1013, the mean node degree is 1013.00 and the
+	node degree mode is 1013. The top 5 most central nodes are 1024 (degree
+	1013), 1023 (degree 1013), 1022 (degree 1013), 1021 (degree 1013) and 1020
+	(degree 1013).
 	
 
 

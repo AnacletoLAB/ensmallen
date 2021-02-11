@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:52.869553
 
-The undirected graph Halomonas halocynthiae has 2580 nodes and 208466 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06266 and
-is connected, as it has a single component. The graph median node degree is 132,
-the mean node degree is 161.60, and the node degree mode is 8. The top 5 most central
-nodes are 1121940.AUDZ01000012_gene921 (degree 1053), 1121940.AUDZ01000013_gene703
-(degree 1050), 1121940.AUDZ01000005_gene1622 (degree 892), 1121940.AUDZ01000012_gene837
-(degree 833) and 1121940.AUDZ01000007_gene2232 (degree 828).
+The undirected graph Halomonas halocynthiae has 2580 nodes and 208466 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06266 and is connected, as it has a single component. The graph median
+node degree is 132, the mean node degree is 161.60, and the node degree
+mode is 8. The top 5 most central nodes are 1121940.AUDZ01000012_gene921
+(degree 1053), 1121940.AUDZ01000013_gene703 (degree 1050), 1121940.AUDZ01000005_gene1622
+(degree 892), 1121940.AUDZ01000012_gene837 (degree 833) and 1121940.AUDZ01000007_gene2232
+(degree 828).
 
 
 References
@@ -106,13 +107,14 @@ def HalomonasHalocynthiae(
 	
 	Datetime: 2021-02-02 22:39:52.869553
 	
-	The undirected graph Halomonas halocynthiae has 2580 nodes and 208466 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06266 and
-	is connected, as it has a single component. The graph median node degree is 132,
-	the mean node degree is 161.60, and the node degree mode is 8. The top 5 most central
-	nodes are 1121940.AUDZ01000012_gene921 (degree 1053), 1121940.AUDZ01000013_gene703
-	(degree 1050), 1121940.AUDZ01000005_gene1622 (degree 892), 1121940.AUDZ01000012_gene837
-	(degree 833) and 1121940.AUDZ01000007_gene2232 (degree 828).
+	The undirected graph Halomonas halocynthiae has 2580 nodes and 208466 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06266 and is connected, as it has a single component. The graph median
+	node degree is 132, the mean node degree is 161.60, and the node degree
+	mode is 8. The top 5 most central nodes are 1121940.AUDZ01000012_gene921
+	(degree 1053), 1121940.AUDZ01000013_gene703 (degree 1050), 1121940.AUDZ01000005_gene1622
+	(degree 892), 1121940.AUDZ01000012_gene837 (degree 833) and 1121940.AUDZ01000007_gene2232
+	(degree 828).
 	
 
 

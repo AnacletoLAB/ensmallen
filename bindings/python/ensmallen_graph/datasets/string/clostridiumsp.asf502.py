@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:53.875409
 
-The undirected graph Clostridium sp. ASF502 has 5981 nodes and 477661 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02671 and
-has 32 connected components, where the component with most nodes has 5891 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 159.73, and the node degree mode is 4. The top 5 most central
-nodes are 97139.C824_00328 (degree 1416), 97139.C824_04503 (degree 1311), 97139.C824_02135
-(degree 1255), 97139.C824_05753 (degree 1203) and 97139.C824_03178 (degree 1173).
+The undirected graph Clostridium sp. ASF502 has 5981 nodes and 477661 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02671 and has 32 connected components, where the component with most
+nodes has 5891 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 159.73, and
+the node degree mode is 4. The top 5 most central nodes are 97139.C824_00328
+(degree 1416), 97139.C824_04503 (degree 1311), 97139.C824_02135 (degree
+1255), 97139.C824_05753 (degree 1203) and 97139.C824_03178 (degree 1173).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSp.Asf502(
 	
 	Datetime: 2021-02-02 19:41:53.875409
 	
-	The undirected graph Clostridium sp. ASF502 has 5981 nodes and 477661 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02671 and
-	has 32 connected components, where the component with most nodes has 5891 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 159.73, and the node degree mode is 4. The top 5 most central
-	nodes are 97139.C824_00328 (degree 1416), 97139.C824_04503 (degree 1311), 97139.C824_02135
-	(degree 1255), 97139.C824_05753 (degree 1203) and 97139.C824_03178 (degree 1173).
+	The undirected graph Clostridium sp. ASF502 has 5981 nodes and 477661 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02671 and has 32 connected components, where the component with most
+	nodes has 5891 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 159.73, and
+	the node degree mode is 4. The top 5 most central nodes are 97139.C824_00328
+	(degree 1416), 97139.C824_04503 (degree 1311), 97139.C824_02135 (degree
+	1255), 97139.C824_05753 (degree 1203) and 97139.C824_03178 (degree 1173).
 	
 
 

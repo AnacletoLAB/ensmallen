@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:45.888207
 
-The undirected graph Prochlorococcus marinus NATL1A has 2143 nodes and 92806 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04044
-and has 81 connected components, where the component with most nodes has 1882 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 70, the mean node degree is 86.61, and the node degree mode is 2. The top 5 most
-central nodes are 167555.NATL1_15881 (degree 687), 167555.NATL1_04801 (degree 511),
-167555.NATL1_17001 (degree 482), 167555.NATL1_20401 (degree 480) and 167555.NATL1_19531
-(degree 461).
+The undirected graph Prochlorococcus marinus NATL1A has 2143 nodes and
+92806 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04044 and has 81 connected components, where the
+component with most nodes has 1882 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 70, the mean node degree
+is 86.61, and the node degree mode is 2. The top 5 most central nodes are
+167555.NATL1_15881 (degree 687), 167555.NATL1_04801 (degree 511), 167555.NATL1_17001
+(degree 482), 167555.NATL1_20401 (degree 480) and 167555.NATL1_19531 (degree
+461).
 
 
 References
@@ -107,14 +108,15 @@ def ProchlorococcusMarinusNatl1a(
 	
 	Datetime: 2021-02-02 19:54:45.888207
 	
-	The undirected graph Prochlorococcus marinus NATL1A has 2143 nodes and 92806 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04044
-	and has 81 connected components, where the component with most nodes has 1882 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 70, the mean node degree is 86.61, and the node degree mode is 2. The top 5 most
-	central nodes are 167555.NATL1_15881 (degree 687), 167555.NATL1_04801 (degree 511),
-	167555.NATL1_17001 (degree 482), 167555.NATL1_20401 (degree 480) and 167555.NATL1_19531
-	(degree 461).
+	The undirected graph Prochlorococcus marinus NATL1A has 2143 nodes and
+	92806 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04044 and has 81 connected components, where the
+	component with most nodes has 1882 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 70, the mean node degree
+	is 86.61, and the node degree mode is 2. The top 5 most central nodes are
+	167555.NATL1_15881 (degree 687), 167555.NATL1_04801 (degree 511), 167555.NATL1_17001
+	(degree 482), 167555.NATL1_20401 (degree 480) and 167555.NATL1_19531 (degree
+	461).
 	
 
 

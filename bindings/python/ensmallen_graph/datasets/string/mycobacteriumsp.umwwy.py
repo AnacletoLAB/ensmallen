@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:52.145433
 
-The undirected graph Mycobacterium sp. UMWWY has 7123 nodes and 967973 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03816 and
-has 53 connected components, where the component with most nodes has 6982 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 271.79, and the node degree mode is 3. The top 5 most central
-nodes are 1370121.AUWS01000049_gene1400 (degree 2626), 1370121.AUWS01000073_gene965
-(degree 2595), 1370121.AUWS01000062_gene3943 (degree 2159), 1370121.AUWS01000004_gene3344
-(degree 2031) and 1370121.AUWS01000011_gene6133 (degree 2004).
+The undirected graph Mycobacterium sp. UMWWY has 7123 nodes and 967973
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03816 and has 53 connected components, where the component
+with most nodes has 6982 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 223, the mean node degree is 271.79,
+and the node degree mode is 3. The top 5 most central nodes are 1370121.AUWS01000049_gene1400
+(degree 2626), 1370121.AUWS01000073_gene965 (degree 2595), 1370121.AUWS01000062_gene3943
+(degree 2159), 1370121.AUWS01000004_gene3344 (degree 2031) and 1370121.AUWS01000011_gene6133
+(degree 2004).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.Umwwy(
 	
 	Datetime: 2021-02-03 22:09:52.145433
 	
-	The undirected graph Mycobacterium sp. UMWWY has 7123 nodes and 967973 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03816 and
-	has 53 connected components, where the component with most nodes has 6982 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 271.79, and the node degree mode is 3. The top 5 most central
-	nodes are 1370121.AUWS01000049_gene1400 (degree 2626), 1370121.AUWS01000073_gene965
-	(degree 2595), 1370121.AUWS01000062_gene3943 (degree 2159), 1370121.AUWS01000004_gene3344
-	(degree 2031) and 1370121.AUWS01000011_gene6133 (degree 2004).
+	The undirected graph Mycobacterium sp. UMWWY has 7123 nodes and 967973
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03816 and has 53 connected components, where the component
+	with most nodes has 6982 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 223, the mean node degree is 271.79,
+	and the node degree mode is 3. The top 5 most central nodes are 1370121.AUWS01000049_gene1400
+	(degree 2626), 1370121.AUWS01000073_gene965 (degree 2595), 1370121.AUWS01000062_gene3943
+	(degree 2159), 1370121.AUWS01000004_gene3344 (degree 2031) and 1370121.AUWS01000011_gene6133
+	(degree 2004).
 	
 
 

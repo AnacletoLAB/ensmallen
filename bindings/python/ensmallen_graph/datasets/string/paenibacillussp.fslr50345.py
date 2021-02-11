@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:56.136390
 
-The undirected graph Paenibacillus sp. FSLR50345 has 5371 nodes and 509437 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03533
-and has 11 connected components, where the component with most nodes has 5344 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 189.70, and the node degree mode is 3. The top 5
-most central nodes are 1536770.R50345_09700 (degree 1876), 1536770.R50345_29930 (degree
-1392), 1536770.R50345_21980 (degree 1384), 1536770.R50345_21705 (degree 1245) and
-1536770.R50345_23560 (degree 1205).
+The undirected graph Paenibacillus sp. FSLR50345 has 5371 nodes and 509437
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03533 and has 11 connected components, where the component
+with most nodes has 5344 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 189.70,
+and the node degree mode is 3. The top 5 most central nodes are 1536770.R50345_09700
+(degree 1876), 1536770.R50345_29930 (degree 1392), 1536770.R50345_21980
+(degree 1384), 1536770.R50345_21705 (degree 1245) and 1536770.R50345_23560
+(degree 1205).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Fslr50345(
 	
 	Datetime: 2021-02-03 23:18:56.136390
 	
-	The undirected graph Paenibacillus sp. FSLR50345 has 5371 nodes and 509437 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03533
-	and has 11 connected components, where the component with most nodes has 5344 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 189.70, and the node degree mode is 3. The top 5
-	most central nodes are 1536770.R50345_09700 (degree 1876), 1536770.R50345_29930 (degree
-	1392), 1536770.R50345_21980 (degree 1384), 1536770.R50345_21705 (degree 1245) and
-	1536770.R50345_23560 (degree 1205).
+	The undirected graph Paenibacillus sp. FSLR50345 has 5371 nodes and 509437
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03533 and has 11 connected components, where the component
+	with most nodes has 5344 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 189.70,
+	and the node degree mode is 3. The top 5 most central nodes are 1536770.R50345_09700
+	(degree 1876), 1536770.R50345_29930 (degree 1392), 1536770.R50345_21980
+	(degree 1384), 1536770.R50345_21705 (degree 1245) and 1536770.R50345_23560
+	(degree 1205).
 	
 
 

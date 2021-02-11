@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:36.250853
 
-The undirected graph Phascolarctobacterium sp. CAG266 has 1752 nodes and 104800 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06832
-and has 7 connected components, where the component with most nodes has 1735 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 119.63, and the node degree mode is 6. The top 5 most
-central nodes are 1262915.BN574_01027 (degree 819), 1262915.BN574_01580 (degree 691),
-1262915.BN574_00668 (degree 680), 1262915.BN574_01017 (degree 679) and 1262915.BN574_01333
-(degree 616).
+The undirected graph Phascolarctobacterium sp. CAG266 has 1752 nodes and
+104800 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06832 and has 7 connected components, where the
+component with most nodes has 1735 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+is 119.63, and the node degree mode is 6. The top 5 most central nodes
+are 1262915.BN574_01027 (degree 819), 1262915.BN574_01580 (degree 691),
+1262915.BN574_00668 (degree 680), 1262915.BN574_01017 (degree 679) and
+1262915.BN574_01333 (degree 616).
 
 
 References
@@ -107,14 +108,15 @@ def PhascolarctobacteriumSp.Cag266(
 	
 	Datetime: 2021-02-02 23:35:36.250853
 	
-	The undirected graph Phascolarctobacterium sp. CAG266 has 1752 nodes and 104800 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06832
-	and has 7 connected components, where the component with most nodes has 1735 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 119.63, and the node degree mode is 6. The top 5 most
-	central nodes are 1262915.BN574_01027 (degree 819), 1262915.BN574_01580 (degree 691),
-	1262915.BN574_00668 (degree 680), 1262915.BN574_01017 (degree 679) and 1262915.BN574_01333
-	(degree 616).
+	The undirected graph Phascolarctobacterium sp. CAG266 has 1752 nodes and
+	104800 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06832 and has 7 connected components, where the
+	component with most nodes has 1735 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+	is 119.63, and the node degree mode is 6. The top 5 most central nodes
+	are 1262915.BN574_01027 (degree 819), 1262915.BN574_01580 (degree 691),
+	1262915.BN574_00668 (degree 680), 1262915.BN574_01017 (degree 679) and
+	1262915.BN574_01333 (degree 616).
 	
 
 

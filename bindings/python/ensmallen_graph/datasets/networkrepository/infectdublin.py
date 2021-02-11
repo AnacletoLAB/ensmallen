@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:07.328939
 
-The undirected graph infect-dublin has 410 nodes and 2765 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03298 and is connected,
-as it has a single component. The graph median node degree is 13, the mean node degree
-is 13.49, and the node degree mode is 8. The top 5 most central nodes are 157 (degree
-50), 304 (degree 47), 372 (degree 43), 148 (degree 43) and 314 (degree 34).
+The undirected graph infect-dublin has 410 nodes and 2765 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03298 and is connected, as it has a single component. The graph median
+node degree is 13, the mean node degree is 13.49, and the node degree mode
+is 8. The top 5 most central nodes are 157 (degree 50), 304 (degree 47),
+372 (degree 43), 148 (degree 43) and 314 (degree 34).
 
 
 References
@@ -106,11 +107,12 @@ def InfectDublin(
 	
 	Datetime: 2021-02-06 09:27:07.328939
 	
-	The undirected graph infect-dublin has 410 nodes and 2765 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03298 and is connected,
-	as it has a single component. The graph median node degree is 13, the mean node degree
-	is 13.49, and the node degree mode is 8. The top 5 most central nodes are 157 (degree
-	50), 304 (degree 47), 372 (degree 43), 148 (degree 43) and 314 (degree 34).
+	The undirected graph infect-dublin has 410 nodes and 2765 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03298 and is connected, as it has a single component. The graph median
+	node degree is 13, the mean node degree is 13.49, and the node degree mode
+	is 8. The top 5 most central nodes are 157 (degree 50), 304 (degree 47),
+	372 (degree 43), 148 (degree 43) and 314 (degree 34).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:17:47.647868
 
-The undirected graph ca-HepTh has 9877 nodes, of which 2 are singletons (all have
-self-loops), and 25998 unweighted edges, of which 25 are self-loops. The graph is
-quite sparse as it has a density of 0.00053 and has 429 connected components, where
-the component with most nodes has 8638 nodes and the component with the least nodes
-has a single node. The graph median node degree is 3, the mean node degree is 5.26,
-and the node degree mode is 1. The top 5 most central nodes are 223 (degree 65),
-2787 (degree 60), 9077 (degree 59), 4342 (degree 56) and 2353 (degree 54).
+The undirected graph ca-HepTh has 9877 nodes, of which 2 are singletons
+(all have self-loops), and 25998 unweighted edges, of which 25 are self-loops.
+The graph is quite sparse as it has a density of 0.00053 and has 429 connected
+components, where the component with most nodes has 8638 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 3, the mean node degree is 5.26, and the node degree mode is
+1. The top 5 most central nodes are 223 (degree 65), 2787 (degree 60),
+9077 (degree 59), 4342 (degree 56) and 2353 (degree 54).
 
 
 References
@@ -103,13 +104,14 @@ def CaHepth(
 	
 	Datetime: 2021-02-06 10:17:47.647868
 	
-	The undirected graph ca-HepTh has 9877 nodes, of which 2 are singletons (all have
-	self-loops), and 25998 unweighted edges, of which 25 are self-loops. The graph is
-	quite sparse as it has a density of 0.00053 and has 429 connected components, where
-	the component with most nodes has 8638 nodes and the component with the least nodes
-	has a single node. The graph median node degree is 3, the mean node degree is 5.26,
-	and the node degree mode is 1. The top 5 most central nodes are 223 (degree 65),
-	2787 (degree 60), 9077 (degree 59), 4342 (degree 56) and 2353 (degree 54).
+	The undirected graph ca-HepTh has 9877 nodes, of which 2 are singletons
+	(all have self-loops), and 25998 unweighted edges, of which 25 are self-loops.
+	The graph is quite sparse as it has a density of 0.00053 and has 429 connected
+	components, where the component with most nodes has 8638 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 3, the mean node degree is 5.26, and the node degree mode is
+	1. The top 5 most central nodes are 223 (degree 65), 2787 (degree 60),
+	9077 (degree 59), 4342 (degree 56) and 2353 (degree 54).
 	
 
 

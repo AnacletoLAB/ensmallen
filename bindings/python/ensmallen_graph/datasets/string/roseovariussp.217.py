@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:51.551163
 
-The undirected graph Roseovarius sp. 217 has 4717 nodes and 720783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06480 and
-has 8 connected components, where the component with most nodes has 4701 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 272,
-the mean node degree is 305.61, and the node degree mode is 2. The top 5 most central
-nodes are 314264.ROS217_10002 (degree 1823), 314264.ROS217_05064 (degree 1665), 314264.ROS217_07784
-(degree 1521), 314264.ROS217_20907 (degree 1445) and 314264.ROS217_23007 (degree
+The undirected graph Roseovarius sp. 217 has 4717 nodes and 720783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06480 and has 8 connected components, where the component with most
+nodes has 4701 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 272, the mean node degree is 305.61, and
+the node degree mode is 2. The top 5 most central nodes are 314264.ROS217_10002
+(degree 1823), 314264.ROS217_05064 (degree 1665), 314264.ROS217_07784 (degree
+1521), 314264.ROS217_20907 (degree 1445) and 314264.ROS217_23007 (degree
 1397).
 
 
@@ -107,13 +108,14 @@ def RoseovariusSp.217(
 	
 	Datetime: 2021-02-02 20:24:51.551163
 	
-	The undirected graph Roseovarius sp. 217 has 4717 nodes and 720783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06480 and
-	has 8 connected components, where the component with most nodes has 4701 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 272,
-	the mean node degree is 305.61, and the node degree mode is 2. The top 5 most central
-	nodes are 314264.ROS217_10002 (degree 1823), 314264.ROS217_05064 (degree 1665), 314264.ROS217_07784
-	(degree 1521), 314264.ROS217_20907 (degree 1445) and 314264.ROS217_23007 (degree
+	The undirected graph Roseovarius sp. 217 has 4717 nodes and 720783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06480 and has 8 connected components, where the component with most
+	nodes has 4701 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 272, the mean node degree is 305.61, and
+	the node degree mode is 2. The top 5 most central nodes are 314264.ROS217_10002
+	(degree 1823), 314264.ROS217_05064 (degree 1665), 314264.ROS217_07784 (degree
+	1521), 314264.ROS217_20907 (degree 1445) and 314264.ROS217_23007 (degree
 	1397).
 	
 

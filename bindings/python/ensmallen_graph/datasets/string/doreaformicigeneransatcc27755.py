@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:08.977446
 
-The undirected graph Dorea formicigenerans ATCC27755 has 3248 nodes and 266768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05059
-and has 9 connected components, where the component with most nodes has 3222 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 164.27, and the node degree mode is 7. The top 5
-most central nodes are 411461.DORFOR_01450 (degree 1246), 411461.DORFOR_02826 (degree
-1202), 411461.DORFOR_00900 (degree 1170), 411461.DORFOR_01859 (degree 951) and 411461.DORFOR_00816
-(degree 885).
+The undirected graph Dorea formicigenerans ATCC27755 has 3248 nodes and
+266768 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05059 and has 9 connected components, where the
+component with most nodes has 3222 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 139, the mean node degree
+is 164.27, and the node degree mode is 7. The top 5 most central nodes
+are 411461.DORFOR_01450 (degree 1246), 411461.DORFOR_02826 (degree 1202),
+411461.DORFOR_00900 (degree 1170), 411461.DORFOR_01859 (degree 951) and
+411461.DORFOR_00816 (degree 885).
 
 
 References
@@ -107,14 +108,15 @@ def DoreaFormicigeneransAtcc27755(
 	
 	Datetime: 2021-02-02 20:45:08.977446
 	
-	The undirected graph Dorea formicigenerans ATCC27755 has 3248 nodes and 266768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05059
-	and has 9 connected components, where the component with most nodes has 3222 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 164.27, and the node degree mode is 7. The top 5
-	most central nodes are 411461.DORFOR_01450 (degree 1246), 411461.DORFOR_02826 (degree
-	1202), 411461.DORFOR_00900 (degree 1170), 411461.DORFOR_01859 (degree 951) and 411461.DORFOR_00816
-	(degree 885).
+	The undirected graph Dorea formicigenerans ATCC27755 has 3248 nodes and
+	266768 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05059 and has 9 connected components, where the
+	component with most nodes has 3222 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 139, the mean node degree
+	is 164.27, and the node degree mode is 7. The top 5 most central nodes
+	are 411461.DORFOR_01450 (degree 1246), 411461.DORFOR_02826 (degree 1202),
+	411461.DORFOR_00900 (degree 1170), 411461.DORFOR_01859 (degree 951) and
+	411461.DORFOR_00816 (degree 885).
 	
 
 

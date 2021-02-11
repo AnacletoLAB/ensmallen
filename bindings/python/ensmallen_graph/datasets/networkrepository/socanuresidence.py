@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:04:12.768281
 
-The undirected multigraph soc-ANU-residence has 217 nodes and 2247 unweighted edges
-with 5 different edge types: 3, 4, 5, 2 and 1, of which none are self-loops and 816
-are parallel. The graph is dense as it has a density of 0.07847 and is connected,
-as it has a single component. The graph median node degree is 20, the mean node degree
-is 20.71, and the node degree mode is 21. The top 5 most central nodes are 70 (degree
-69), 184 (degree 65), 169 (degree 51), 144 (degree 42) and 113 (degree 42).
+The undirected multigraph soc-ANU-residence has 217 nodes and 2247 unweighted
+edges with 5 different edge types: 3, 4, 5, 2 and 1, of which none are
+self-loops and 816 are parallel. The graph is dense as it has a density
+of 0.07847 and is connected, as it has a single component. The graph median
+node degree is 20, the mean node degree is 20.71, and the node degree mode
+is 21. The top 5 most central nodes are 70 (degree 69), 184 (degree 65),
+169 (degree 51), 144 (degree 42) and 113 (degree 42).
 
 
 References
@@ -102,12 +103,13 @@ def SocAnuResidence(
 	
 	Datetime: 2021-02-07 16:04:12.768281
 	
-	The undirected multigraph soc-ANU-residence has 217 nodes and 2247 unweighted edges
-	with 5 different edge types: 3, 4, 5, 2 and 1, of which none are self-loops and 816
-	are parallel. The graph is dense as it has a density of 0.07847 and is connected,
-	as it has a single component. The graph median node degree is 20, the mean node degree
-	is 20.71, and the node degree mode is 21. The top 5 most central nodes are 70 (degree
-	69), 184 (degree 65), 169 (degree 51), 144 (degree 42) and 113 (degree 42).
+	The undirected multigraph soc-ANU-residence has 217 nodes and 2247 unweighted
+	edges with 5 different edge types: 3, 4, 5, 2 and 1, of which none are
+	self-loops and 816 are parallel. The graph is dense as it has a density
+	of 0.07847 and is connected, as it has a single component. The graph median
+	node degree is 20, the mean node degree is 20.71, and the node degree mode
+	is 21. The top 5 most central nodes are 70 (degree 69), 184 (degree 65),
+	169 (degree 51), 144 (degree 42) and 113 (degree 42).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:31.380661
 
-The undirected graph Paenibacillus sp. D14 has 4325 nodes and 571435 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06111 and
-has 7 connected components, where the component with most nodes has 4306 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 264.25, and the node degree mode is 1. The top 5 most central
-nodes are 621372.ACIH01000236_gene1900 (degree 1354), 621372.ACIH01000238_gene2050
-(degree 1337), 621372.ACIH01000147_gene25 (degree 1138), 621372.ACIH01000072_gene1927
-(degree 1122) and 621372.ACIH01000155_gene2509 (degree 1119).
+The undirected graph Paenibacillus sp. D14 has 4325 nodes and 571435 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06111 and has 7 connected components, where the component with most
+nodes has 4306 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 264.25, and
+the node degree mode is 1. The top 5 most central nodes are 621372.ACIH01000236_gene1900
+(degree 1354), 621372.ACIH01000238_gene2050 (degree 1337), 621372.ACIH01000147_gene25
+(degree 1138), 621372.ACIH01000072_gene1927 (degree 1122) and 621372.ACIH01000155_gene2509
+(degree 1119).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.D14(
 	
 	Datetime: 2021-02-02 21:20:31.380661
 	
-	The undirected graph Paenibacillus sp. D14 has 4325 nodes and 571435 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06111 and
-	has 7 connected components, where the component with most nodes has 4306 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 264.25, and the node degree mode is 1. The top 5 most central
-	nodes are 621372.ACIH01000236_gene1900 (degree 1354), 621372.ACIH01000238_gene2050
-	(degree 1337), 621372.ACIH01000147_gene25 (degree 1138), 621372.ACIH01000072_gene1927
-	(degree 1122) and 621372.ACIH01000155_gene2509 (degree 1119).
+	The undirected graph Paenibacillus sp. D14 has 4325 nodes and 571435 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06111 and has 7 connected components, where the component with most
+	nodes has 4306 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 264.25, and
+	the node degree mode is 1. The top 5 most central nodes are 621372.ACIH01000236_gene1900
+	(degree 1354), 621372.ACIH01000238_gene2050 (degree 1337), 621372.ACIH01000147_gene25
+	(degree 1138), 621372.ACIH01000072_gene1927 (degree 1122) and 621372.ACIH01000155_gene2509
+	(degree 1119).
 	
 
 

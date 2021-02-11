@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:52.160700
 
-The undirected graph Pediococcus claussenii has 1754 nodes and 100349 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06527 and
-has 6 connected components, where the component with most nodes has 1743 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 114.42, and the node degree mode is 2. The top 5 most central
-nodes are 701521.PECL_1142 (degree 760), 701521.PECL_1355 (degree 655), 701521.PECL_2021
-(degree 585), 701521.PECL_973 (degree 547) and 701521.PECL_1111 (degree 535).
+The undirected graph Pediococcus claussenii has 1754 nodes and 100349 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06527 and has 6 connected components, where the component with most
+nodes has 1743 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 114.42, and
+the node degree mode is 2. The top 5 most central nodes are 701521.PECL_1142
+(degree 760), 701521.PECL_1355 (degree 655), 701521.PECL_2021 (degree 585),
+701521.PECL_973 (degree 547) and 701521.PECL_1111 (degree 535).
 
 
 References
@@ -106,13 +107,14 @@ def PediococcusClaussenii(
 	
 	Datetime: 2021-02-02 21:33:52.160700
 	
-	The undirected graph Pediococcus claussenii has 1754 nodes and 100349 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06527 and
-	has 6 connected components, where the component with most nodes has 1743 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 114.42, and the node degree mode is 2. The top 5 most central
-	nodes are 701521.PECL_1142 (degree 760), 701521.PECL_1355 (degree 655), 701521.PECL_2021
-	(degree 585), 701521.PECL_973 (degree 547) and 701521.PECL_1111 (degree 535).
+	The undirected graph Pediococcus claussenii has 1754 nodes and 100349 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06527 and has 6 connected components, where the component with most
+	nodes has 1743 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 114.42, and
+	the node degree mode is 2. The top 5 most central nodes are 701521.PECL_1142
+	(degree 760), 701521.PECL_1355 (degree 655), 701521.PECL_2021 (degree 585),
+	701521.PECL_973 (degree 547) and 701521.PECL_1111 (degree 535).
 	
 
 

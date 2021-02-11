@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:02.395506
 
-The undirected graph Deinococcus sp. YIM77859 has 3039 nodes and 209976 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04549
-and has 15 connected components, where the component with most nodes has 2995 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 138.19, and the node degree mode is 4. The top 5
-most central nodes are 1540221.JQNI01000002_gene1702 (degree 1118), 1540221.JQNI01000002_gene2960
-(degree 1047), 1540221.JQNI01000002_gene1560 (degree 893), 1540221.JQNI01000002_gene2003
-(degree 839) and 1540221.JQNI01000002_gene999 (degree 797).
+The undirected graph Deinococcus sp. YIM77859 has 3039 nodes and 209976
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04549 and has 15 connected components, where the component
+with most nodes has 2995 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 138.19,
+and the node degree mode is 4. The top 5 most central nodes are 1540221.JQNI01000002_gene1702
+(degree 1118), 1540221.JQNI01000002_gene2960 (degree 1047), 1540221.JQNI01000002_gene1560
+(degree 893), 1540221.JQNI01000002_gene2003 (degree 839) and 1540221.JQNI01000002_gene999
+(degree 797).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusSp.Yim77859(
 	
 	Datetime: 2021-02-03 23:20:02.395506
 	
-	The undirected graph Deinococcus sp. YIM77859 has 3039 nodes and 209976 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04549
-	and has 15 connected components, where the component with most nodes has 2995 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 138.19, and the node degree mode is 4. The top 5
-	most central nodes are 1540221.JQNI01000002_gene1702 (degree 1118), 1540221.JQNI01000002_gene2960
-	(degree 1047), 1540221.JQNI01000002_gene1560 (degree 893), 1540221.JQNI01000002_gene2003
-	(degree 839) and 1540221.JQNI01000002_gene999 (degree 797).
+	The undirected graph Deinococcus sp. YIM77859 has 3039 nodes and 209976
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04549 and has 15 connected components, where the component
+	with most nodes has 2995 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 138.19,
+	and the node degree mode is 4. The top 5 most central nodes are 1540221.JQNI01000002_gene1702
+	(degree 1118), 1540221.JQNI01000002_gene2960 (degree 1047), 1540221.JQNI01000002_gene1560
+	(degree 893), 1540221.JQNI01000002_gene2003 (degree 839) and 1540221.JQNI01000002_gene999
+	(degree 797).
 	
 
 

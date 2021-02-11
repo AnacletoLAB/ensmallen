@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:41.079674
 
-The undirected graph trdheim has 22098 nodes and 978711 unweighted edges, of which
-22098 are self-loops. The graph is sparse as it has a density of 0.00396 and is connected,
-as it has a single component. The graph median node degree is 90, the mean node degree
-is 87.58, and the node degree mode is 90. The top 5 most central nodes are 21954
-(degree 150), 21953 (degree 150), 21952 (degree 150), 21951 (degree 150) and 21950
-(degree 150).
+The undirected graph trdheim has 22098 nodes and 978711 unweighted edges,
+of which 22098 are self-loops. The graph is sparse as it has a density
+of 0.00396 and is connected, as it has a single component. The graph median
+node degree is 90, the mean node degree is 87.58, and the node degree mode
+is 90. The top 5 most central nodes are 21954 (degree 150), 21953 (degree
+150), 21952 (degree 150), 21951 (degree 150) and 21950 (degree 150).
 
 
 References
@@ -102,12 +102,12 @@ def Trdheim(
 	
 	Datetime: 2021-02-06 11:35:41.079674
 	
-	The undirected graph trdheim has 22098 nodes and 978711 unweighted edges, of which
-	22098 are self-loops. The graph is sparse as it has a density of 0.00396 and is connected,
-	as it has a single component. The graph median node degree is 90, the mean node degree
-	is 87.58, and the node degree mode is 90. The top 5 most central nodes are 21954
-	(degree 150), 21953 (degree 150), 21952 (degree 150), 21951 (degree 150) and 21950
-	(degree 150).
+	The undirected graph trdheim has 22098 nodes and 978711 unweighted edges,
+	of which 22098 are self-loops. The graph is sparse as it has a density
+	of 0.00396 and is connected, as it has a single component. The graph median
+	node degree is 90, the mean node degree is 87.58, and the node degree mode
+	is 90. The top 5 most central nodes are 21954 (degree 150), 21953 (degree
+	150), 21952 (degree 150), 21951 (degree 150) and 21950 (degree 150).
 	
 
 

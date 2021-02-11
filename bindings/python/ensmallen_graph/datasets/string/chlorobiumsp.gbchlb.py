@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:48.241869
 
-The undirected graph Chlorobium sp. GBChlB has 2146 nodes and 119096 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05175 and
-has 7 connected components, where the component with most nodes has 2133 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 90,
-the mean node degree is 110.99, and the node degree mode is 1. The top 5 most central
-nodes are 1519464.HY22_04270 (degree 805), 1519464.HY22_08240 (degree 686), 1519464.HY22_08170
-(degree 678), 1519464.HY22_11925 (degree 663) and 1519464.HY22_04340 (degree 576).
+The undirected graph Chlorobium sp. GBChlB has 2146 nodes and 119096 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05175 and has 7 connected components, where the component with most
+nodes has 2133 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 90, the mean node degree is 110.99, and
+the node degree mode is 1. The top 5 most central nodes are 1519464.HY22_04270
+(degree 805), 1519464.HY22_08240 (degree 686), 1519464.HY22_08170 (degree
+678), 1519464.HY22_11925 (degree 663) and 1519464.HY22_04340 (degree 576).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorobiumSp.Gbchlb(
 	
 	Datetime: 2021-02-03 23:17:48.241869
 	
-	The undirected graph Chlorobium sp. GBChlB has 2146 nodes and 119096 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05175 and
-	has 7 connected components, where the component with most nodes has 2133 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 90,
-	the mean node degree is 110.99, and the node degree mode is 1. The top 5 most central
-	nodes are 1519464.HY22_04270 (degree 805), 1519464.HY22_08240 (degree 686), 1519464.HY22_08170
-	(degree 678), 1519464.HY22_11925 (degree 663) and 1519464.HY22_04340 (degree 576).
+	The undirected graph Chlorobium sp. GBChlB has 2146 nodes and 119096 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05175 and has 7 connected components, where the component with most
+	nodes has 2133 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 90, the mean node degree is 110.99, and
+	the node degree mode is 1. The top 5 most central nodes are 1519464.HY22_04270
+	(degree 805), 1519464.HY22_08240 (degree 686), 1519464.HY22_08170 (degree
+	678), 1519464.HY22_11925 (degree 663) and 1519464.HY22_04340 (degree 576).
 	
 
 

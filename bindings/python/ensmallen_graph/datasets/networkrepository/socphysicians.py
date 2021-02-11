@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:22:49.208322
 
-The undirected graph soc-physicians has 241 nodes and 923 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03192 and has 4
-connected components, where the component with most nodes has 117 nodes and the component
-with the least nodes has 35 nodes. The graph median node degree is 7, the mean node
-degree is 7.66, and the node degree mode is 8. The top 5 most central nodes are 127
-(degree 28), 15 (degree 26), 121 (degree 22), 128 (degree 18) and 74 (degree 18).
+The undirected graph soc-physicians has 241 nodes and 923 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03192 and has 4 connected components, where the component with most nodes
+has 117 nodes and the component with the least nodes has 35 nodes. The
+graph median node degree is 7, the mean node degree is 7.66, and the node
+degree mode is 8. The top 5 most central nodes are 127 (degree 28), 15
+(degree 26), 121 (degree 22), 128 (degree 18) and 74 (degree 18).
 
 
 References
@@ -102,12 +103,13 @@ def SocPhysicians(
 	
 	Datetime: 2021-02-07 16:22:49.208322
 	
-	The undirected graph soc-physicians has 241 nodes and 923 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03192 and has 4
-	connected components, where the component with most nodes has 117 nodes and the component
-	with the least nodes has 35 nodes. The graph median node degree is 7, the mean node
-	degree is 7.66, and the node degree mode is 8. The top 5 most central nodes are 127
-	(degree 28), 15 (degree 26), 121 (degree 22), 128 (degree 18) and 74 (degree 18).
+	The undirected graph soc-physicians has 241 nodes and 923 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03192 and has 4 connected components, where the component with most nodes
+	has 117 nodes and the component with the least nodes has 35 nodes. The
+	graph median node degree is 7, the mean node degree is 7.66, and the node
+	degree mode is 8. The top 5 most central nodes are 127 (degree 28), 15
+	(degree 26), 121 (degree 22), 128 (degree 18) and 74 (degree 18).
 	
 
 

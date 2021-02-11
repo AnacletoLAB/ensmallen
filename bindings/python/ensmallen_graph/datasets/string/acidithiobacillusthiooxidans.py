@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:26.733078
 
-The undirected graph Acidithiobacillus thiooxidans has 2919 nodes and 235347 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-and has 11 connected components, where the component with most nodes has 2893 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 161.25, and the node degree mode is 2. The top 5
-most central nodes are 637390.AFOH01000107_gene151 (degree 1139), 637390.AFOH01000042_gene2245
-(degree 1106), 637390.AFOH01000082_gene2513 (degree 943), 637390.AFOH01000106_gene107
-(degree 880) and 637390.AFOH01000120_gene569 (degree 824).
+The undirected graph Acidithiobacillus thiooxidans has 2919 nodes and 235347
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05526 and has 11 connected components, where the component
+with most nodes has 2893 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 161.25,
+and the node degree mode is 2. The top 5 most central nodes are 637390.AFOH01000107_gene151
+(degree 1139), 637390.AFOH01000042_gene2245 (degree 1106), 637390.AFOH01000082_gene2513
+(degree 943), 637390.AFOH01000106_gene107 (degree 880) and 637390.AFOH01000120_gene569
+(degree 824).
 
 
 References
@@ -107,14 +108,15 @@ def AcidithiobacillusThiooxidans(
 	
 	Datetime: 2021-02-02 21:22:26.733078
 	
-	The undirected graph Acidithiobacillus thiooxidans has 2919 nodes and 235347 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-	and has 11 connected components, where the component with most nodes has 2893 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 161.25, and the node degree mode is 2. The top 5
-	most central nodes are 637390.AFOH01000107_gene151 (degree 1139), 637390.AFOH01000042_gene2245
-	(degree 1106), 637390.AFOH01000082_gene2513 (degree 943), 637390.AFOH01000106_gene107
-	(degree 880) and 637390.AFOH01000120_gene569 (degree 824).
+	The undirected graph Acidithiobacillus thiooxidans has 2919 nodes and 235347
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05526 and has 11 connected components, where the component
+	with most nodes has 2893 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 161.25,
+	and the node degree mode is 2. The top 5 most central nodes are 637390.AFOH01000107_gene151
+	(degree 1139), 637390.AFOH01000042_gene2245 (degree 1106), 637390.AFOH01000082_gene2513
+	(degree 943), 637390.AFOH01000106_gene107 (degree 880) and 637390.AFOH01000120_gene569
+	(degree 824).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:37.188261
 
-The undirected graph Prevotella micans has 2007 nodes and 112836 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05605 and
-has 35 connected components, where the component with most nodes has 1921 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 112.44, and the node degree mode is 3. The top 5 most central
-nodes are 883158.HMPREF9140_01578 (degree 880), 883158.HMPREF9140_01566 (degree 871),
-883158.HMPREF9140_00282 (degree 869), 883158.HMPREF9140_01884 (degree 754) and 883158.HMPREF9140_01692
+The undirected graph Prevotella micans has 2007 nodes and 112836 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05605 and has 35 connected components, where the component with most
+nodes has 1921 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 112.44, and
+the node degree mode is 3. The top 5 most central nodes are 883158.HMPREF9140_01578
+(degree 880), 883158.HMPREF9140_01566 (degree 871), 883158.HMPREF9140_00282
+(degree 869), 883158.HMPREF9140_01884 (degree 754) and 883158.HMPREF9140_01692
 (degree 671).
 
 
@@ -107,13 +108,14 @@ def PrevotellaMicans(
 	
 	Datetime: 2021-02-02 21:51:37.188261
 	
-	The undirected graph Prevotella micans has 2007 nodes and 112836 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05605 and
-	has 35 connected components, where the component with most nodes has 1921 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 112.44, and the node degree mode is 3. The top 5 most central
-	nodes are 883158.HMPREF9140_01578 (degree 880), 883158.HMPREF9140_01566 (degree 871),
-	883158.HMPREF9140_00282 (degree 869), 883158.HMPREF9140_01884 (degree 754) and 883158.HMPREF9140_01692
+	The undirected graph Prevotella micans has 2007 nodes and 112836 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05605 and has 35 connected components, where the component with most
+	nodes has 1921 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 112.44, and
+	the node degree mode is 3. The top 5 most central nodes are 883158.HMPREF9140_01578
+	(degree 880), 883158.HMPREF9140_01566 (degree 871), 883158.HMPREF9140_00282
+	(degree 869), 883158.HMPREF9140_01884 (degree 754) and 883158.HMPREF9140_01692
 	(degree 671).
 	
 

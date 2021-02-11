@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:46.043750
 
-The undirected graph Desulfovibrio bastinii has 3422 nodes and 403506 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06894 and
-has 20 connected components, where the component with most nodes has 3370 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 235.83, and the node degree mode is 1. The top 5 most central
-nodes are 1121441.AUCX01000007_gene1212 (degree 1593), 1121441.AUCX01000002_gene2801
-(degree 1419), 1121441.AUCX01000012_gene3306 (degree 1320), 1121441.AUCX01000021_gene698
-(degree 1285) and 1121441.AUCX01000001_gene2622 (degree 1269).
+The undirected graph Desulfovibrio bastinii has 3422 nodes and 403506 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06894 and has 20 connected components, where the component with most
+nodes has 3370 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 235.83, and
+the node degree mode is 1. The top 5 most central nodes are 1121441.AUCX01000007_gene1212
+(degree 1593), 1121441.AUCX01000002_gene2801 (degree 1419), 1121441.AUCX01000012_gene3306
+(degree 1320), 1121441.AUCX01000021_gene698 (degree 1285) and 1121441.AUCX01000001_gene2622
+(degree 1269).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioBastinii(
 	
 	Datetime: 2021-02-02 22:36:46.043750
 	
-	The undirected graph Desulfovibrio bastinii has 3422 nodes and 403506 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06894 and
-	has 20 connected components, where the component with most nodes has 3370 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 235.83, and the node degree mode is 1. The top 5 most central
-	nodes are 1121441.AUCX01000007_gene1212 (degree 1593), 1121441.AUCX01000002_gene2801
-	(degree 1419), 1121441.AUCX01000012_gene3306 (degree 1320), 1121441.AUCX01000021_gene698
-	(degree 1285) and 1121441.AUCX01000001_gene2622 (degree 1269).
+	The undirected graph Desulfovibrio bastinii has 3422 nodes and 403506 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06894 and has 20 connected components, where the component with most
+	nodes has 3370 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 235.83, and
+	the node degree mode is 1. The top 5 most central nodes are 1121441.AUCX01000007_gene1212
+	(degree 1593), 1121441.AUCX01000002_gene2801 (degree 1419), 1121441.AUCX01000012_gene3306
+	(degree 1320), 1121441.AUCX01000021_gene698 (degree 1285) and 1121441.AUCX01000001_gene2622
+	(degree 1269).
 	
 
 

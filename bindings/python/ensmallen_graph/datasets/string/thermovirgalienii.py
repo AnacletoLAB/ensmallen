@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:37.612380
 
-The undirected graph Thermovirga lienii has 1865 nodes and 139558 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08029 and
-has 2 connected components, where the component with most nodes has 1862 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 117,
-the mean node degree is 149.66, and the node degree mode is 2. The top 5 most central
-nodes are 580340.Tlie_1172 (degree 842), 580340.Tlie_1197 (degree 836), 580340.Tlie_0602
-(degree 769), 580340.Tlie_0920 (degree 700) and 580340.Tlie_1554 (degree 694).
+The undirected graph Thermovirga lienii has 1865 nodes and 139558 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08029 and has 2 connected components, where the component with most
+nodes has 1862 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 117, the mean node degree is 149.66, and
+the node degree mode is 2. The top 5 most central nodes are 580340.Tlie_1172
+(degree 842), 580340.Tlie_1197 (degree 836), 580340.Tlie_0602 (degree 769),
+580340.Tlie_0920 (degree 700) and 580340.Tlie_1554 (degree 694).
 
 
 References
@@ -106,13 +107,14 @@ def ThermovirgaLienii(
 	
 	Datetime: 2021-02-02 21:15:37.612380
 	
-	The undirected graph Thermovirga lienii has 1865 nodes and 139558 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08029 and
-	has 2 connected components, where the component with most nodes has 1862 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 117,
-	the mean node degree is 149.66, and the node degree mode is 2. The top 5 most central
-	nodes are 580340.Tlie_1172 (degree 842), 580340.Tlie_1197 (degree 836), 580340.Tlie_0602
-	(degree 769), 580340.Tlie_0920 (degree 700) and 580340.Tlie_1554 (degree 694).
+	The undirected graph Thermovirga lienii has 1865 nodes and 139558 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08029 and has 2 connected components, where the component with most
+	nodes has 1862 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 117, the mean node degree is 149.66, and
+	the node degree mode is 2. The top 5 most central nodes are 580340.Tlie_1172
+	(degree 842), 580340.Tlie_1197 (degree 836), 580340.Tlie_0602 (degree 769),
+	580340.Tlie_0920 (degree 700) and 580340.Tlie_1554 (degree 694).
 	
 
 

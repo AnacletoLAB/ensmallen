@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:48.490941
 
-The undirected graph Virgibacillus sp. Vm5 has 4363 nodes and 396168 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04163 and
-has 13 connected components, where the component with most nodes has 4321 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 181.60, and the node degree mode is 3. The top 5 most central
-nodes are 1462526.BN990_01637 (degree 1483), 1462526.BN990_02481 (degree 1166), 1462526.BN990_00420
-(degree 1143), 1462526.BN990_00108 (degree 1112) and 1462526.BN990_03541 (degree
+The undirected graph Virgibacillus sp. Vm5 has 4363 nodes and 396168 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04163 and has 13 connected components, where the component with most
+nodes has 4321 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 181.60, and
+the node degree mode is 3. The top 5 most central nodes are 1462526.BN990_01637
+(degree 1483), 1462526.BN990_02481 (degree 1166), 1462526.BN990_00420 (degree
+1143), 1462526.BN990_00108 (degree 1112) and 1462526.BN990_03541 (degree
 1053).
 
 
@@ -107,13 +108,14 @@ def VirgibacillusSp.Vm5(
 	
 	Datetime: 2021-02-03 23:07:48.490941
 	
-	The undirected graph Virgibacillus sp. Vm5 has 4363 nodes and 396168 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04163 and
-	has 13 connected components, where the component with most nodes has 4321 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 181.60, and the node degree mode is 3. The top 5 most central
-	nodes are 1462526.BN990_01637 (degree 1483), 1462526.BN990_02481 (degree 1166), 1462526.BN990_00420
-	(degree 1143), 1462526.BN990_00108 (degree 1112) and 1462526.BN990_03541 (degree
+	The undirected graph Virgibacillus sp. Vm5 has 4363 nodes and 396168 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04163 and has 13 connected components, where the component with most
+	nodes has 4321 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 181.60, and
+	the node degree mode is 3. The top 5 most central nodes are 1462526.BN990_01637
+	(degree 1483), 1462526.BN990_02481 (degree 1166), 1462526.BN990_00420 (degree
+	1143), 1462526.BN990_00108 (degree 1112) and 1462526.BN990_03541 (degree
 	1053).
 	
 

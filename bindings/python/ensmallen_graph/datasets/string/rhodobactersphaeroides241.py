@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:13.913852
 
-The undirected graph Rhodobacter sphaeroides 241 has 3968 nodes and 384950 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04891
-and has 6 connected components, where the component with most nodes has 3956 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 194.03, and the node degree mode is 1. The top 5
-most central nodes are 272943.RSP_1028 (degree 1799), 272943.RSP_1146 (degree 1405),
-272943.RSP_0005 (degree 1399), 272943.RSP_2868 (degree 1337) and 272943.RSP_1859
-(degree 1255).
+The undirected graph Rhodobacter sphaeroides 241 has 3968 nodes and 384950
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04891 and has 6 connected components, where the component
+with most nodes has 3956 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 194.03,
+and the node degree mode is 1. The top 5 most central nodes are 272943.RSP_1028
+(degree 1799), 272943.RSP_1146 (degree 1405), 272943.RSP_0005 (degree 1399),
+272943.RSP_2868 (degree 1337) and 272943.RSP_1859 (degree 1255).
 
 
 References
@@ -107,14 +107,14 @@ def RhodobacterSphaeroides241(
 	
 	Datetime: 2021-02-02 20:17:13.913852
 	
-	The undirected graph Rhodobacter sphaeroides 241 has 3968 nodes and 384950 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04891
-	and has 6 connected components, where the component with most nodes has 3956 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 194.03, and the node degree mode is 1. The top 5
-	most central nodes are 272943.RSP_1028 (degree 1799), 272943.RSP_1146 (degree 1405),
-	272943.RSP_0005 (degree 1399), 272943.RSP_2868 (degree 1337) and 272943.RSP_1859
-	(degree 1255).
+	The undirected graph Rhodobacter sphaeroides 241 has 3968 nodes and 384950
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04891 and has 6 connected components, where the component
+	with most nodes has 3956 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 194.03,
+	and the node degree mode is 1. The top 5 most central nodes are 272943.RSP_1028
+	(degree 1799), 272943.RSP_1146 (degree 1405), 272943.RSP_0005 (degree 1399),
+	272943.RSP_2868 (degree 1337) and 272943.RSP_1859 (degree 1255).
 	
 
 

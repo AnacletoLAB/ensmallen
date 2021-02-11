@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:02.937689
 
-The undirected graph Anoxybacillus flavithermus TNO09006 has 2576 nodes and 286863
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08649 and has 4 connected components, where the component with most nodes has
-2569 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 208, the mean node degree is 222.72, and the node degree mode is 2. The
-top 5 most central nodes are 1267580.AF6_0549 (degree 1068), 1267580.AF6_1904 (degree
-965), 1267580.AF6_0198 (degree 945), 1267580.AF6_0009 (degree 911) and 1267580.AF6_0879
-(degree 870).
+The undirected graph Anoxybacillus flavithermus TNO09006 has 2576 nodes
+and 286863 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08649 and has 4 connected components, where the
+component with most nodes has 2569 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+is 222.72, and the node degree mode is 2. The top 5 most central nodes
+are 1267580.AF6_0549 (degree 1068), 1267580.AF6_1904 (degree 965), 1267580.AF6_0198
+(degree 945), 1267580.AF6_0009 (degree 911) and 1267580.AF6_0879 (degree
+870).
 
 
 References
@@ -107,14 +108,15 @@ def AnoxybacillusFlavithermusTno09006(
 	
 	Datetime: 2021-02-02 23:37:02.937689
 	
-	The undirected graph Anoxybacillus flavithermus TNO09006 has 2576 nodes and 286863
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08649 and has 4 connected components, where the component with most nodes has
-	2569 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 208, the mean node degree is 222.72, and the node degree mode is 2. The
-	top 5 most central nodes are 1267580.AF6_0549 (degree 1068), 1267580.AF6_1904 (degree
-	965), 1267580.AF6_0198 (degree 945), 1267580.AF6_0009 (degree 911) and 1267580.AF6_0879
-	(degree 870).
+	The undirected graph Anoxybacillus flavithermus TNO09006 has 2576 nodes
+	and 286863 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08649 and has 4 connected components, where the
+	component with most nodes has 2569 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+	is 222.72, and the node degree mode is 2. The top 5 most central nodes
+	are 1267580.AF6_0549 (degree 1068), 1267580.AF6_1904 (degree 965), 1267580.AF6_0198
+	(degree 945), 1267580.AF6_0009 (degree 911) and 1267580.AF6_0879 (degree
+	870).
 	
 
 

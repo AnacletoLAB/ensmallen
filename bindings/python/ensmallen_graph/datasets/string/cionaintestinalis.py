@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:23:38.248111
 
-The undirected graph Ciona intestinalis has 10752 nodes and 1280580 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02216 and
-has 6 connected components, where the component with most nodes has 10730 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 238.20, and the node degree mode is 1. The top 5 most central
-nodes are 7719.XP_002128252.1 (degree 2403), 7719.XP_009861476.1 (degree 2078), 7719.XP_002129329.1
-(degree 2044), 7719.XP_009860477.1 (degree 1926) and 7719.XP_002121858.2 (degree
+The undirected graph Ciona intestinalis has 10752 nodes and 1280580 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02216 and has 6 connected components, where the component with most
+nodes has 10730 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 238.20, and
+the node degree mode is 1. The top 5 most central nodes are 7719.XP_002128252.1
+(degree 2403), 7719.XP_009861476.1 (degree 2078), 7719.XP_002129329.1 (degree
+2044), 7719.XP_009860477.1 (degree 1926) and 7719.XP_002121858.2 (degree
 1889).
 
 
@@ -107,13 +108,14 @@ def CionaIntestinalis(
 	
 	Datetime: 2021-02-02 17:23:38.248111
 	
-	The undirected graph Ciona intestinalis has 10752 nodes and 1280580 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02216 and
-	has 6 connected components, where the component with most nodes has 10730 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 238.20, and the node degree mode is 1. The top 5 most central
-	nodes are 7719.XP_002128252.1 (degree 2403), 7719.XP_009861476.1 (degree 2078), 7719.XP_002129329.1
-	(degree 2044), 7719.XP_009860477.1 (degree 1926) and 7719.XP_002121858.2 (degree
+	The undirected graph Ciona intestinalis has 10752 nodes and 1280580 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02216 and has 6 connected components, where the component with most
+	nodes has 10730 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 238.20, and
+	the node degree mode is 1. The top 5 most central nodes are 7719.XP_002128252.1
+	(degree 2403), 7719.XP_009861476.1 (degree 2078), 7719.XP_002129329.1 (degree
+	2044), 7719.XP_009860477.1 (degree 1926) and 7719.XP_002121858.2 (degree
 	1889).
 	
 

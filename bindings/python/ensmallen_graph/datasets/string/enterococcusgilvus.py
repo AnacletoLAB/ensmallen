@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:53.914406
 
-The undirected graph Enterococcus gilvus has 4084 nodes and 590289 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07080 and
-has 24 connected components, where the component with most nodes has 4008 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 289.07, and the node degree mode is 3. The top 5 most central
-nodes are 1158614.I592_01691 (degree 1752), 1158614.I592_00004 (degree 1647), 1158614.I592_02362
-(degree 1625), 1158614.I592_03841 (degree 1593) and 1158614.I592_02911 (degree 1573).
+The undirected graph Enterococcus gilvus has 4084 nodes and 590289 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07080 and has 24 connected components, where the component with most
+nodes has 4008 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 289.07, and
+the node degree mode is 3. The top 5 most central nodes are 1158614.I592_01691
+(degree 1752), 1158614.I592_00004 (degree 1647), 1158614.I592_02362 (degree
+1625), 1158614.I592_03841 (degree 1593) and 1158614.I592_02911 (degree
+1573).
 
 
 References
@@ -106,13 +108,15 @@ def EnterococcusGilvus(
 	
 	Datetime: 2021-02-02 23:03:53.914406
 	
-	The undirected graph Enterococcus gilvus has 4084 nodes and 590289 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07080 and
-	has 24 connected components, where the component with most nodes has 4008 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 289.07, and the node degree mode is 3. The top 5 most central
-	nodes are 1158614.I592_01691 (degree 1752), 1158614.I592_00004 (degree 1647), 1158614.I592_02362
-	(degree 1625), 1158614.I592_03841 (degree 1593) and 1158614.I592_02911 (degree 1573).
+	The undirected graph Enterococcus gilvus has 4084 nodes and 590289 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07080 and has 24 connected components, where the component with most
+	nodes has 4008 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 289.07, and
+	the node degree mode is 3. The top 5 most central nodes are 1158614.I592_01691
+	(degree 1752), 1158614.I592_00004 (degree 1647), 1158614.I592_02362 (degree
+	1625), 1158614.I592_03841 (degree 1593) and 1158614.I592_02911 (degree
+	1573).
 	
 
 

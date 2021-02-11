@@ -11,12 +11,12 @@ had the following characteristics:
 Datetime: 2021-02-07 16:24:09.403364
 
 The undirected multigraph soc-slashdot-zoo has 79120 nodes and 469768 unweighted
-edges with 2 different edge types: +1 and -1, of which none are self-loops and 3798
-are parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 11.87, and the node degree mode is 1. The top 5 most central nodes are 12660 (degree
-2537), 12956 (degree 2377), 9449 (degree 2223), 35731 (degree 1709) and 279 (degree
-1684).
+edges with 2 different edge types: +1 and -1, of which none are self-loops
+and 3798 are parallel. The graph is quite sparse as it has a density of
+0.00015 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 11.87, and the node degree mode
+is 1. The top 5 most central nodes are 12660 (degree 2537), 12956 (degree
+2377), 9449 (degree 2223), 35731 (degree 1709) and 279 (degree 1684).
 
 
 References
@@ -104,12 +104,12 @@ def SocSlashdotZoo(
 	Datetime: 2021-02-07 16:24:09.403364
 	
 	The undirected multigraph soc-slashdot-zoo has 79120 nodes and 469768 unweighted
-	edges with 2 different edge types: +1 and -1, of which none are self-loops and 3798
-	are parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 11.87, and the node degree mode is 1. The top 5 most central nodes are 12660 (degree
-	2537), 12956 (degree 2377), 9449 (degree 2223), 35731 (degree 1709) and 279 (degree
-	1684).
+	edges with 2 different edge types: +1 and -1, of which none are self-loops
+	and 3798 are parallel. The graph is quite sparse as it has a density of
+	0.00015 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 11.87, and the node degree mode
+	is 1. The top 5 most central nodes are 12660 (degree 2537), 12956 (degree
+	2377), 9449 (degree 2223), 35731 (degree 1709) and 279 (degree 1684).
 	
 
 

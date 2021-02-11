@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:18.429102
 
-The undirected graph Methanospirillum hungatei has 3098 nodes and 385058 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08027
-and has 20 connected components, where the component with most nodes has 3052 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 248.58, and the node degree mode is 4. The top 5
-most central nodes are 323259.Mhun_2462 (degree 1174), 323259.Mhun_1415 (degree 1133),
-323259.Mhun_2224 (degree 1117), 323259.Mhun_2940 (degree 1114) and 323259.Mhun_0128
-(degree 1099).
+The undirected graph Methanospirillum hungatei has 3098 nodes and 385058
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08027 and has 20 connected components, where the component
+with most nodes has 3052 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 248.58,
+and the node degree mode is 4. The top 5 most central nodes are 323259.Mhun_2462
+(degree 1174), 323259.Mhun_1415 (degree 1133), 323259.Mhun_2224 (degree
+1117), 323259.Mhun_2940 (degree 1114) and 323259.Mhun_0128 (degree 1099).
 
 
 References
@@ -107,14 +107,14 @@ def MethanospirillumHungatei(
 	
 	Datetime: 2021-02-02 20:28:18.429102
 	
-	The undirected graph Methanospirillum hungatei has 3098 nodes and 385058 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08027
-	and has 20 connected components, where the component with most nodes has 3052 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 248.58, and the node degree mode is 4. The top 5
-	most central nodes are 323259.Mhun_2462 (degree 1174), 323259.Mhun_1415 (degree 1133),
-	323259.Mhun_2224 (degree 1117), 323259.Mhun_2940 (degree 1114) and 323259.Mhun_0128
-	(degree 1099).
+	The undirected graph Methanospirillum hungatei has 3098 nodes and 385058
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08027 and has 20 connected components, where the component
+	with most nodes has 3052 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 248.58,
+	and the node degree mode is 4. The top 5 most central nodes are 323259.Mhun_2462
+	(degree 1174), 323259.Mhun_1415 (degree 1133), 323259.Mhun_2224 (degree
+	1117), 323259.Mhun_2940 (degree 1114) and 323259.Mhun_0128 (degree 1099).
 	
 
 

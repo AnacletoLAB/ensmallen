@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:46.473417
 
-The undirected graph Brevundimonas subvibrioides has 3310 nodes and 215967 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03944
-and has 11 connected components, where the component with most nodes has 3286 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 130.49, and the node degree mode is 3. The top 5
-most central nodes are 633149.Bresu_0252 (degree 1142), 633149.Bresu_2148 (degree
-910), 633149.Bresu_1639 (degree 872), 633149.Bresu_2769 (degree 798) and 633149.Bresu_2770
-(degree 793).
+The undirected graph Brevundimonas subvibrioides has 3310 nodes and 215967
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03944 and has 11 connected components, where the component
+with most nodes has 3286 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 130.49,
+and the node degree mode is 3. The top 5 most central nodes are 633149.Bresu_0252
+(degree 1142), 633149.Bresu_2148 (degree 910), 633149.Bresu_1639 (degree
+872), 633149.Bresu_2769 (degree 798) and 633149.Bresu_2770 (degree 793).
 
 
 References
@@ -107,14 +107,14 @@ def BrevundimonasSubvibrioides(
 	
 	Datetime: 2021-02-02 21:21:46.473417
 	
-	The undirected graph Brevundimonas subvibrioides has 3310 nodes and 215967 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03944
-	and has 11 connected components, where the component with most nodes has 3286 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 130.49, and the node degree mode is 3. The top 5
-	most central nodes are 633149.Bresu_0252 (degree 1142), 633149.Bresu_2148 (degree
-	910), 633149.Bresu_1639 (degree 872), 633149.Bresu_2769 (degree 798) and 633149.Bresu_2770
-	(degree 793).
+	The undirected graph Brevundimonas subvibrioides has 3310 nodes and 215967
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03944 and has 11 connected components, where the component
+	with most nodes has 3286 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 130.49,
+	and the node degree mode is 3. The top 5 most central nodes are 633149.Bresu_0252
+	(degree 1142), 633149.Bresu_2148 (degree 910), 633149.Bresu_1639 (degree
+	872), 633149.Bresu_2769 (degree 798) and 633149.Bresu_2770 (degree 793).
 	
 
 

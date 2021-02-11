@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:35.052999
 
-The undirected graph Paracoccus zeaxanthinifaciens has 2848 nodes and 276892 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06830
-and has 4 connected components, where the component with most nodes has 2841 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 194.45, and the node degree mode is 90. The top 5
-most central nodes are 1266998.ATUJ01000006_gene138 (degree 1263), 1266998.ATUJ01000004_gene1337
-(degree 1013), 1266998.ATUJ01000001_gene2702 (degree 960), 1266998.ATUJ01000004_gene1278
-(degree 937) and 1266998.ATUJ01000005_gene1090 (degree 915).
+The undirected graph Paracoccus zeaxanthinifaciens has 2848 nodes and 276892
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06830 and has 4 connected components, where the component
+with most nodes has 2841 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 194.45,
+and the node degree mode is 90. The top 5 most central nodes are 1266998.ATUJ01000006_gene138
+(degree 1263), 1266998.ATUJ01000004_gene1337 (degree 1013), 1266998.ATUJ01000001_gene2702
+(degree 960), 1266998.ATUJ01000004_gene1278 (degree 937) and 1266998.ATUJ01000005_gene1090
+(degree 915).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusZeaxanthinifaciens(
 	
 	Datetime: 2021-02-02 23:36:35.052999
 	
-	The undirected graph Paracoccus zeaxanthinifaciens has 2848 nodes and 276892 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06830
-	and has 4 connected components, where the component with most nodes has 2841 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 194.45, and the node degree mode is 90. The top 5
-	most central nodes are 1266998.ATUJ01000006_gene138 (degree 1263), 1266998.ATUJ01000004_gene1337
-	(degree 1013), 1266998.ATUJ01000001_gene2702 (degree 960), 1266998.ATUJ01000004_gene1278
-	(degree 937) and 1266998.ATUJ01000005_gene1090 (degree 915).
+	The undirected graph Paracoccus zeaxanthinifaciens has 2848 nodes and 276892
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06830 and has 4 connected components, where the component
+	with most nodes has 2841 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 194.45,
+	and the node degree mode is 90. The top 5 most central nodes are 1266998.ATUJ01000006_gene138
+	(degree 1263), 1266998.ATUJ01000004_gene1337 (degree 1013), 1266998.ATUJ01000001_gene2702
+	(degree 960), 1266998.ATUJ01000004_gene1278 (degree 937) and 1266998.ATUJ01000005_gene1090
+	(degree 915).
 	
 
 

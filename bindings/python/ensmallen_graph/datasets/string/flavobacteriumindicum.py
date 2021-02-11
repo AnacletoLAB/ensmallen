@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:40.596115
 
-The undirected graph Flavobacterium indicum has 2653 nodes and 179393 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-has 7 connected components, where the component with most nodes has 2638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 135.24, and the node degree mode is 5. The top 5 most central
-nodes are 1094466.KQS_01560 (degree 1037), 1094466.KQS_06495 (degree 829), 1094466.KQS_03785
-(degree 702), 1094466.KQS_12900 (degree 694) and 1094466.KQS_08650 (degree 689).
+The undirected graph Flavobacterium indicum has 2653 nodes and 179393 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05099 and has 7 connected components, where the component with most
+nodes has 2638 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 135.24, and
+the node degree mode is 5. The top 5 most central nodes are 1094466.KQS_01560
+(degree 1037), 1094466.KQS_06495 (degree 829), 1094466.KQS_03785 (degree
+702), 1094466.KQS_12900 (degree 694) and 1094466.KQS_08650 (degree 689).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumIndicum(
 	
 	Datetime: 2021-02-02 22:22:40.596115
 	
-	The undirected graph Flavobacterium indicum has 2653 nodes and 179393 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-	has 7 connected components, where the component with most nodes has 2638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 135.24, and the node degree mode is 5. The top 5 most central
-	nodes are 1094466.KQS_01560 (degree 1037), 1094466.KQS_06495 (degree 829), 1094466.KQS_03785
-	(degree 702), 1094466.KQS_12900 (degree 694) and 1094466.KQS_08650 (degree 689).
+	The undirected graph Flavobacterium indicum has 2653 nodes and 179393 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05099 and has 7 connected components, where the component with most
+	nodes has 2638 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 135.24, and
+	the node degree mode is 5. The top 5 most central nodes are 1094466.KQS_01560
+	(degree 1037), 1094466.KQS_06495 (degree 829), 1094466.KQS_03785 (degree
+	702), 1094466.KQS_12900 (degree 694) and 1094466.KQS_08650 (degree 689).
 	
 
 

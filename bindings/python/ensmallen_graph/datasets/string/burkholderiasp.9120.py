@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:10.997929
 
-The undirected graph Burkholderia sp. 9120 has 6794 nodes and 1089365 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04721 and
-has 21 connected components, where the component with most nodes has 6747 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 256,
-the mean node degree is 320.68, and the node degree mode is 1. The top 5 most central
-nodes are 1500897.JQNA01000002_gene4904 (degree 3506), 1500897.JQNA01000002_gene3784
-(degree 2710), 1500897.JQNA01000002_gene5203 (degree 2683), 1500897.JQNA01000002_gene4833
-(degree 2467) and 1500897.JQNA01000001_gene6547 (degree 2457).
+The undirected graph Burkholderia sp. 9120 has 6794 nodes and 1089365 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04721 and has 21 connected components, where the component with most
+nodes has 6747 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 256, the mean node degree is 320.68, and
+the node degree mode is 1. The top 5 most central nodes are 1500897.JQNA01000002_gene4904
+(degree 3506), 1500897.JQNA01000002_gene3784 (degree 2710), 1500897.JQNA01000002_gene5203
+(degree 2683), 1500897.JQNA01000002_gene4833 (degree 2467) and 1500897.JQNA01000001_gene6547
+(degree 2457).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaSp.9120(
 	
 	Datetime: 2021-02-03 23:16:10.997929
 	
-	The undirected graph Burkholderia sp. 9120 has 6794 nodes and 1089365 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04721 and
-	has 21 connected components, where the component with most nodes has 6747 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 256,
-	the mean node degree is 320.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1500897.JQNA01000002_gene4904 (degree 3506), 1500897.JQNA01000002_gene3784
-	(degree 2710), 1500897.JQNA01000002_gene5203 (degree 2683), 1500897.JQNA01000002_gene4833
-	(degree 2467) and 1500897.JQNA01000001_gene6547 (degree 2457).
+	The undirected graph Burkholderia sp. 9120 has 6794 nodes and 1089365 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04721 and has 21 connected components, where the component with most
+	nodes has 6747 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 256, the mean node degree is 320.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1500897.JQNA01000002_gene4904
+	(degree 3506), 1500897.JQNA01000002_gene3784 (degree 2710), 1500897.JQNA01000002_gene5203
+	(degree 2683), 1500897.JQNA01000002_gene4833 (degree 2467) and 1500897.JQNA01000001_gene6547
+	(degree 2457).
 	
 
 

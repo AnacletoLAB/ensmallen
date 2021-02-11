@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:38.499892
 
-The undirected graph Burkholderia vietnamiensis has 6529 nodes and 629695 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02955
-and has 39 connected components, where the component with most nodes has 6444 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 192.89, and the node degree mode is 1. The top 5
-most central nodes are 269482.Bcep1808_4248 (degree 2457), 269482.Bcep1808_5666 (degree
-1944), 269482.Bcep1808_0384 (degree 1838), 269482.Bcep1808_1895 (degree 1643) and
-269482.Bcep1808_3359 (degree 1524).
+The undirected graph Burkholderia vietnamiensis has 6529 nodes and 629695
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02955 and has 39 connected components, where the component
+with most nodes has 6444 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 192.89,
+and the node degree mode is 1. The top 5 most central nodes are 269482.Bcep1808_4248
+(degree 2457), 269482.Bcep1808_5666 (degree 1944), 269482.Bcep1808_0384
+(degree 1838), 269482.Bcep1808_1895 (degree 1643) and 269482.Bcep1808_3359
+(degree 1524).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaVietnamiensis(
 	
 	Datetime: 2021-02-02 20:15:38.499892
 	
-	The undirected graph Burkholderia vietnamiensis has 6529 nodes and 629695 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02955
-	and has 39 connected components, where the component with most nodes has 6444 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 192.89, and the node degree mode is 1. The top 5
-	most central nodes are 269482.Bcep1808_4248 (degree 2457), 269482.Bcep1808_5666 (degree
-	1944), 269482.Bcep1808_0384 (degree 1838), 269482.Bcep1808_1895 (degree 1643) and
-	269482.Bcep1808_3359 (degree 1524).
+	The undirected graph Burkholderia vietnamiensis has 6529 nodes and 629695
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02955 and has 39 connected components, where the component
+	with most nodes has 6444 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 192.89,
+	and the node degree mode is 1. The top 5 most central nodes are 269482.Bcep1808_4248
+	(degree 2457), 269482.Bcep1808_5666 (degree 1944), 269482.Bcep1808_0384
+	(degree 1838), 269482.Bcep1808_1895 (degree 1643) and 269482.Bcep1808_3359
+	(degree 1524).
 	
 
 

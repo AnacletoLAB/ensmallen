@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:18.203956
 
-The undirected graph Rhizobium sp. R1200B2 has 4344 nodes and 508373 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05389 and
-has 25 connected components, where the component with most nodes has 4287 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 234.06, and the node degree mode is 1. The top 5 most central
-nodes are 1509405.GV67_08795 (degree 1616), 1509405.GV67_01180 (degree 1375), 1509405.GV67_25575
-(degree 1373), 1509405.GV67_18835 (degree 1368) and 1509405.GV67_03815 (degree 1338).
+The undirected graph Rhizobium sp. R1200B2 has 4344 nodes and 508373 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05389 and has 25 connected components, where the component with most
+nodes has 4287 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 234.06, and
+the node degree mode is 1. The top 5 most central nodes are 1509405.GV67_08795
+(degree 1616), 1509405.GV67_01180 (degree 1375), 1509405.GV67_25575 (degree
+1373), 1509405.GV67_18835 (degree 1368) and 1509405.GV67_03815 (degree
+1338).
 
 
 References
@@ -106,13 +108,15 @@ def RhizobiumSp.R1200b2(
 	
 	Datetime: 2021-02-03 23:17:18.203956
 	
-	The undirected graph Rhizobium sp. R1200B2 has 4344 nodes and 508373 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05389 and
-	has 25 connected components, where the component with most nodes has 4287 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 234.06, and the node degree mode is 1. The top 5 most central
-	nodes are 1509405.GV67_08795 (degree 1616), 1509405.GV67_01180 (degree 1375), 1509405.GV67_25575
-	(degree 1373), 1509405.GV67_18835 (degree 1368) and 1509405.GV67_03815 (degree 1338).
+	The undirected graph Rhizobium sp. R1200B2 has 4344 nodes and 508373 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05389 and has 25 connected components, where the component with most
+	nodes has 4287 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 234.06, and
+	the node degree mode is 1. The top 5 most central nodes are 1509405.GV67_08795
+	(degree 1616), 1509405.GV67_01180 (degree 1375), 1509405.GV67_25575 (degree
+	1373), 1509405.GV67_18835 (degree 1368) and 1509405.GV67_03815 (degree
+	1338).
 	
 
 

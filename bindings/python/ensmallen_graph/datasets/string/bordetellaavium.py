@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:30.227110
 
-The undirected graph Bordetella avium has 3363 nodes and 239194 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04231 and
-has 10 connected components, where the component with most nodes has 3338 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 142.25, and the node degree mode is 77. The top 5 most central
-nodes are 360910.BAV2388 (degree 1342), 360910.BAV1568 (degree 967), 360910.BAV3291
-(degree 920), 360910.BAV0472 (degree 858) and 360910.BAV1567 (degree 830).
+The undirected graph Bordetella avium has 3363 nodes and 239194 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04231 and has 10 connected components, where the component with most
+nodes has 3338 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 142.25, and
+the node degree mode is 77. The top 5 most central nodes are 360910.BAV2388
+(degree 1342), 360910.BAV1568 (degree 967), 360910.BAV3291 (degree 920),
+360910.BAV0472 (degree 858) and 360910.BAV1567 (degree 830).
 
 
 References
@@ -106,13 +107,14 @@ def BordetellaAvium(
 	
 	Datetime: 2021-02-02 20:34:30.227110
 	
-	The undirected graph Bordetella avium has 3363 nodes and 239194 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04231 and
-	has 10 connected components, where the component with most nodes has 3338 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 142.25, and the node degree mode is 77. The top 5 most central
-	nodes are 360910.BAV2388 (degree 1342), 360910.BAV1568 (degree 967), 360910.BAV3291
-	(degree 920), 360910.BAV0472 (degree 858) and 360910.BAV1567 (degree 830).
+	The undirected graph Bordetella avium has 3363 nodes and 239194 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04231 and has 10 connected components, where the component with most
+	nodes has 3338 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 142.25, and
+	the node degree mode is 77. The top 5 most central nodes are 360910.BAV2388
+	(degree 1342), 360910.BAV1568 (degree 967), 360910.BAV3291 (degree 920),
+	360910.BAV0472 (degree 858) and 360910.BAV1567 (degree 830).
 	
 
 

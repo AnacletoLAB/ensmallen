@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:00:52.235842
 
-The undirected graph Mycobacterium septicum has 6445 nodes and 987082 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04753 and
-has 33 connected components, where the component with most nodes has 6370 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 306.31, and the node degree mode is 3. The top 5 most central
-nodes are 1341646.CBMO010000137_gene2362 (degree 2327), 1341646.CBMO010000037_gene4825
-(degree 1853), 1341646.CBMO010000128_gene3262 (degree 1819), 1341646.CBMO010000084_gene37
-(degree 1810) and 1341646.CBMO010000053_gene3605 (degree 1656).
+The undirected graph Mycobacterium septicum has 6445 nodes and 987082 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04753 and has 33 connected components, where the component with most
+nodes has 6370 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 306.31, and
+the node degree mode is 3. The top 5 most central nodes are 1341646.CBMO010000137_gene2362
+(degree 2327), 1341646.CBMO010000037_gene4825 (degree 1853), 1341646.CBMO010000128_gene3262
+(degree 1819), 1341646.CBMO010000084_gene37 (degree 1810) and 1341646.CBMO010000053_gene3605
+(degree 1656).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSepticum(
 	
 	Datetime: 2021-02-03 22:00:52.235842
 	
-	The undirected graph Mycobacterium septicum has 6445 nodes and 987082 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04753 and
-	has 33 connected components, where the component with most nodes has 6370 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 306.31, and the node degree mode is 3. The top 5 most central
-	nodes are 1341646.CBMO010000137_gene2362 (degree 2327), 1341646.CBMO010000037_gene4825
-	(degree 1853), 1341646.CBMO010000128_gene3262 (degree 1819), 1341646.CBMO010000084_gene37
-	(degree 1810) and 1341646.CBMO010000053_gene3605 (degree 1656).
+	The undirected graph Mycobacterium septicum has 6445 nodes and 987082 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04753 and has 33 connected components, where the component with most
+	nodes has 6370 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 306.31, and
+	the node degree mode is 3. The top 5 most central nodes are 1341646.CBMO010000137_gene2362
+	(degree 2327), 1341646.CBMO010000037_gene4825 (degree 1853), 1341646.CBMO010000128_gene3262
+	(degree 1819), 1341646.CBMO010000084_gene37 (degree 1810) and 1341646.CBMO010000053_gene3605
+	(degree 1656).
 	
 
 

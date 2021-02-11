@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:58.100738
 
-The undirected graph Paracoccidioides sp. lutzii has 5433 nodes and 452719 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03068
-and has 8 connected components, where the component with most nodes has 5418 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 166.66, and the node degree mode is 1. The top 5
-most central nodes are 1048829.XP_002789411.1 (degree 1388), 1048829.XP_002794059.1
-(degree 1127), 1048829.XP_002789622.1 (degree 1117), 1048829.XP_002797128.1 (degree
-1063) and 1048829.XP_002789127.1 (degree 1026).
+The undirected graph Paracoccidioides sp. lutzii has 5433 nodes and 452719
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03068 and has 8 connected components, where the component
+with most nodes has 5418 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 166.66,
+and the node degree mode is 1. The top 5 most central nodes are 1048829.XP_002789411.1
+(degree 1388), 1048829.XP_002794059.1 (degree 1127), 1048829.XP_002789622.1
+(degree 1117), 1048829.XP_002797128.1 (degree 1063) and 1048829.XP_002789127.1
+(degree 1026).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccidioidesSp.Lutzii(
 	
 	Datetime: 2021-02-02 22:16:58.100738
 	
-	The undirected graph Paracoccidioides sp. lutzii has 5433 nodes and 452719 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03068
-	and has 8 connected components, where the component with most nodes has 5418 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 166.66, and the node degree mode is 1. The top 5
-	most central nodes are 1048829.XP_002789411.1 (degree 1388), 1048829.XP_002794059.1
-	(degree 1127), 1048829.XP_002789622.1 (degree 1117), 1048829.XP_002797128.1 (degree
-	1063) and 1048829.XP_002789127.1 (degree 1026).
+	The undirected graph Paracoccidioides sp. lutzii has 5433 nodes and 452719
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03068 and has 8 connected components, where the component
+	with most nodes has 5418 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 166.66,
+	and the node degree mode is 1. The top 5 most central nodes are 1048829.XP_002789411.1
+	(degree 1388), 1048829.XP_002794059.1 (degree 1127), 1048829.XP_002789622.1
+	(degree 1117), 1048829.XP_002797128.1 (degree 1063) and 1048829.XP_002789127.1
+	(degree 1026).
 	
 
 

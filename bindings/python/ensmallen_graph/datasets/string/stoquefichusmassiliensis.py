@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:58.988549
 
-The undirected graph Stoquefichus massiliensis has 3503 nodes and 857390 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13978 and has 16 connected components, where the component with most nodes has
-3469 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 428, the mean node degree is 489.52, and the node degree mode is 1. The
-top 5 most central nodes are 1211844.CBLM010000150_gene639 (degree 2029), 1211844.CBLM010000014_gene1413
+The undirected graph Stoquefichus massiliensis has 3503 nodes and 857390
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13978 and has 16 connected components, where the
+component with most nodes has 3469 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 428, the mean node degree
+is 489.52, and the node degree mode is 1. The top 5 most central nodes
+are 1211844.CBLM010000150_gene639 (degree 2029), 1211844.CBLM010000014_gene1413
 (degree 1956), 1211844.CBLM010000114_gene840 (degree 1942), 1211844.CBLM010000054_gene2457
 (degree 1890) and 1211844.CBLM010000038_gene2906 (degree 1819).
 
@@ -107,12 +108,13 @@ def StoquefichusMassiliensis(
 	
 	Datetime: 2021-02-02 23:19:58.988549
 	
-	The undirected graph Stoquefichus massiliensis has 3503 nodes and 857390 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13978 and has 16 connected components, where the component with most nodes has
-	3469 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 428, the mean node degree is 489.52, and the node degree mode is 1. The
-	top 5 most central nodes are 1211844.CBLM010000150_gene639 (degree 2029), 1211844.CBLM010000014_gene1413
+	The undirected graph Stoquefichus massiliensis has 3503 nodes and 857390
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13978 and has 16 connected components, where the
+	component with most nodes has 3469 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 428, the mean node degree
+	is 489.52, and the node degree mode is 1. The top 5 most central nodes
+	are 1211844.CBLM010000150_gene639 (degree 2029), 1211844.CBLM010000014_gene1413
 	(degree 1956), 1211844.CBLM010000114_gene840 (degree 1942), 1211844.CBLM010000054_gene2457
 	(degree 1890) and 1211844.CBLM010000038_gene2906 (degree 1819).
 	

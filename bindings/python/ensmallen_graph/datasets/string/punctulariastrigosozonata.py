@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:31.031101
 
-The undirected graph Punctularia strigosozonata has 6656 nodes and 519984 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02348
-and has 19 connected components, where the component with most nodes has 6615 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 156.25, and the node degree mode is 1. The top 5 most
-central nodes are 202698.XP_007379240.1 (degree 1729), 202698.XP_007381377.1 (degree
-1478), 202698.XP_007386138.1 (degree 1412), 202698.XP_007387716.1 (degree 1217) and
-202698.XP_007385736.1 (degree 1111).
+The undirected graph Punctularia strigosozonata has 6656 nodes and 519984
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02348 and has 19 connected components, where the component
+with most nodes has 6615 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 156.25,
+and the node degree mode is 1. The top 5 most central nodes are 202698.XP_007379240.1
+(degree 1729), 202698.XP_007381377.1 (degree 1478), 202698.XP_007386138.1
+(degree 1412), 202698.XP_007387716.1 (degree 1217) and 202698.XP_007385736.1
+(degree 1111).
 
 
 References
@@ -107,14 +108,15 @@ def PunctulariaStrigosozonata(
 	
 	Datetime: 2021-02-02 19:59:31.031101
 	
-	The undirected graph Punctularia strigosozonata has 6656 nodes and 519984 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02348
-	and has 19 connected components, where the component with most nodes has 6615 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 156.25, and the node degree mode is 1. The top 5 most
-	central nodes are 202698.XP_007379240.1 (degree 1729), 202698.XP_007381377.1 (degree
-	1478), 202698.XP_007386138.1 (degree 1412), 202698.XP_007387716.1 (degree 1217) and
-	202698.XP_007385736.1 (degree 1111).
+	The undirected graph Punctularia strigosozonata has 6656 nodes and 519984
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02348 and has 19 connected components, where the component
+	with most nodes has 6615 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 156.25,
+	and the node degree mode is 1. The top 5 most central nodes are 202698.XP_007379240.1
+	(degree 1729), 202698.XP_007381377.1 (degree 1478), 202698.XP_007386138.1
+	(degree 1412), 202698.XP_007387716.1 (degree 1217) and 202698.XP_007385736.1
+	(degree 1111).
 	
 
 

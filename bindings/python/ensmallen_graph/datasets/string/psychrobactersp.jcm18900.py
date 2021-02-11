@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:30:46.651740
 
-The undirected graph Psychrobacter sp. JCM18900 has 2857 nodes and 248489 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06091
-and has 10 connected components, where the component with most nodes has 2836 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 173.95, and the node degree mode is 2. The top 5
-most central nodes are 1298608.JCM18900_1575 (degree 1066), 1298608.JCM18900_12163
-(degree 929), 1298608.JCM18900_11192 (degree 902), 1298608.JCM18900_1537 (degree
-888) and 1298608.JCM18900_75 (degree 881).
+The undirected graph Psychrobacter sp. JCM18900 has 2857 nodes and 248489
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06091 and has 10 connected components, where the component
+with most nodes has 2836 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 173.95,
+and the node degree mode is 2. The top 5 most central nodes are 1298608.JCM18900_1575
+(degree 1066), 1298608.JCM18900_12163 (degree 929), 1298608.JCM18900_11192
+(degree 902), 1298608.JCM18900_1537 (degree 888) and 1298608.JCM18900_75
+(degree 881).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterSp.Jcm18900(
 	
 	Datetime: 2021-02-03 21:30:46.651740
 	
-	The undirected graph Psychrobacter sp. JCM18900 has 2857 nodes and 248489 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06091
-	and has 10 connected components, where the component with most nodes has 2836 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 173.95, and the node degree mode is 2. The top 5
-	most central nodes are 1298608.JCM18900_1575 (degree 1066), 1298608.JCM18900_12163
-	(degree 929), 1298608.JCM18900_11192 (degree 902), 1298608.JCM18900_1537 (degree
-	888) and 1298608.JCM18900_75 (degree 881).
+	The undirected graph Psychrobacter sp. JCM18900 has 2857 nodes and 248489
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06091 and has 10 connected components, where the component
+	with most nodes has 2836 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 173.95,
+	and the node degree mode is 2. The top 5 most central nodes are 1298608.JCM18900_1575
+	(degree 1066), 1298608.JCM18900_12163 (degree 929), 1298608.JCM18900_11192
+	(degree 902), 1298608.JCM18900_1537 (degree 888) and 1298608.JCM18900_75
+	(degree 881).
 	
 
 

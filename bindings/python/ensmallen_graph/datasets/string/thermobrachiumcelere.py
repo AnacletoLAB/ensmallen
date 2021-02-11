@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:13.470837
 
-The undirected graph Thermobrachium celere has 2355 nodes and 248968 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08982 and
-has 5 connected components, where the component with most nodes has 2347 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 211.44, and the node degree mode is 3. The top 5 most central
-nodes are 941824.TCEL_00182 (degree 1092), 941824.TCEL_00963 (degree 1051), 941824.TCEL_02064
-(degree 1005), 941824.TCEL_00209 (degree 957) and 941824.TCEL_00563 (degree 953).
+The undirected graph Thermobrachium celere has 2355 nodes and 248968 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08982 and has 5 connected components, where the component with most
+nodes has 2347 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 211.44, and
+the node degree mode is 3. The top 5 most central nodes are 941824.TCEL_00182
+(degree 1092), 941824.TCEL_00963 (degree 1051), 941824.TCEL_02064 (degree
+1005), 941824.TCEL_00209 (degree 957) and 941824.TCEL_00563 (degree 953).
 
 
 References
@@ -106,13 +107,14 @@ def ThermobrachiumCelere(
 	
 	Datetime: 2021-02-02 22:01:13.470837
 	
-	The undirected graph Thermobrachium celere has 2355 nodes and 248968 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08982 and
-	has 5 connected components, where the component with most nodes has 2347 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 211.44, and the node degree mode is 3. The top 5 most central
-	nodes are 941824.TCEL_00182 (degree 1092), 941824.TCEL_00963 (degree 1051), 941824.TCEL_02064
-	(degree 1005), 941824.TCEL_00209 (degree 957) and 941824.TCEL_00563 (degree 953).
+	The undirected graph Thermobrachium celere has 2355 nodes and 248968 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08982 and has 5 connected components, where the component with most
+	nodes has 2347 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 211.44, and
+	the node degree mode is 3. The top 5 most central nodes are 941824.TCEL_00182
+	(degree 1092), 941824.TCEL_00963 (degree 1051), 941824.TCEL_02064 (degree
+	1005), 941824.TCEL_00209 (degree 957) and 941824.TCEL_00563 (degree 953).
 	
 
 

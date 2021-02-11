@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:02:06.056767
 
-The undirected graph Chlamydia sp. Diamant has 2410 nodes and 127611 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-has 45 connected components, where the component with most nodes has 2289 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 71,
-the mean node degree is 105.90, and the node degree mode is 2. The top 5 most central
-nodes are 1444711.CCJF01000005_gene1076 (degree 996), 1444711.CCJF01000005_gene666
-(degree 842), 1444711.CCJF01000005_gene1648 (degree 764), 1444711.CCJF01000004_gene1853
-(degree 701) and 1444711.CCJF01000004_gene2319 (degree 636).
+The undirected graph Chlamydia sp. Diamant has 2410 nodes and 127611 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04396 and has 45 connected components, where the component with most
+nodes has 2289 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 71, the mean node degree is 105.90, and
+the node degree mode is 2. The top 5 most central nodes are 1444711.CCJF01000005_gene1076
+(degree 996), 1444711.CCJF01000005_gene666 (degree 842), 1444711.CCJF01000005_gene1648
+(degree 764), 1444711.CCJF01000004_gene1853 (degree 701) and 1444711.CCJF01000004_gene2319
+(degree 636).
 
 
 References
@@ -107,14 +108,15 @@ def ChlamydiaSp.Diamant(
 	
 	Datetime: 2021-02-03 23:02:06.056767
 	
-	The undirected graph Chlamydia sp. Diamant has 2410 nodes and 127611 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-	has 45 connected components, where the component with most nodes has 2289 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 71,
-	the mean node degree is 105.90, and the node degree mode is 2. The top 5 most central
-	nodes are 1444711.CCJF01000005_gene1076 (degree 996), 1444711.CCJF01000005_gene666
-	(degree 842), 1444711.CCJF01000005_gene1648 (degree 764), 1444711.CCJF01000004_gene1853
-	(degree 701) and 1444711.CCJF01000004_gene2319 (degree 636).
+	The undirected graph Chlamydia sp. Diamant has 2410 nodes and 127611 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04396 and has 45 connected components, where the component with most
+	nodes has 2289 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 71, the mean node degree is 105.90, and
+	the node degree mode is 2. The top 5 most central nodes are 1444711.CCJF01000005_gene1076
+	(degree 996), 1444711.CCJF01000005_gene666 (degree 842), 1444711.CCJF01000005_gene1648
+	(degree 764), 1444711.CCJF01000004_gene1853 (degree 701) and 1444711.CCJF01000004_gene2319
+	(degree 636).
 	
 
 

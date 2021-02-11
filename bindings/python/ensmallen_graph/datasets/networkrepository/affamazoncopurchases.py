@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:58:29.466631
 
-The undirected graph aff-amazon-copurchases has 403394 nodes and 2443408 weighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00003 and has 7 connected components, where the component with most nodes has
-403364 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 10, the mean node degree is 12.11, and the node degree mode is 10.
-The top 5 most central nodes are 195 (degree 2752), 183 (degree 2487), 34 (degree
-2281), 1322 (degree 1512) and 1857 (degree 1174).
+The undirected graph aff-amazon-copurchases has 403394 nodes and 2443408
+weighted edges, of which none are self-loops. The graph is extremely sparse
+as it has a density of 0.00003 and has 7 connected components, where the
+component with most nodes has 403364 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 10, the mean node degree
+is 12.11, and the node degree mode is 10. The top 5 most central nodes
+are 195 (degree 2752), 183 (degree 2487), 34 (degree 2281), 1322 (degree
+1512) and 1857 (degree 1174).
 
 
 References
@@ -114,13 +115,14 @@ def AffAmazonCopurchases(
 	
 	Datetime: 2021-02-06 11:58:29.466631
 	
-	The undirected graph aff-amazon-copurchases has 403394 nodes and 2443408 weighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00003 and has 7 connected components, where the component with most nodes has
-	403364 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 10, the mean node degree is 12.11, and the node degree mode is 10.
-	The top 5 most central nodes are 195 (degree 2752), 183 (degree 2487), 34 (degree
-	2281), 1322 (degree 1512) and 1857 (degree 1174).
+	The undirected graph aff-amazon-copurchases has 403394 nodes and 2443408
+	weighted edges, of which none are self-loops. The graph is extremely sparse
+	as it has a density of 0.00003 and has 7 connected components, where the
+	component with most nodes has 403364 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 10, the mean node degree
+	is 12.11, and the node degree mode is 10. The top 5 most central nodes
+	are 195 (degree 2752), 183 (degree 2487), 34 (degree 2281), 1322 (degree
+	1512) and 1857 (degree 1174).
 	
 
 

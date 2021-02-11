@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:35.466006
 
-The undirected graph Synergistes jonesii has 2488 nodes and 155520 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05027 and
-has 5 connected components, where the component with most nodes has 2477 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 125.02, and the node degree mode is 6. The top 5 most central
-nodes are 2754.EH55_02050 (degree 958), 2754.EH55_10740 (degree 913), 2754.EH55_11210
-(degree 705), 2754.EH55_02550 (degree 698) and 2754.EH55_10790 (degree 676).
+The undirected graph Synergistes jonesii has 2488 nodes and 155520 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05027 and has 5 connected components, where the component with most
+nodes has 2477 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 125.02, and
+the node degree mode is 6. The top 5 most central nodes are 2754.EH55_02050
+(degree 958), 2754.EH55_10740 (degree 913), 2754.EH55_11210 (degree 705),
+2754.EH55_02550 (degree 698) and 2754.EH55_10790 (degree 676).
 
 
 References
@@ -106,13 +107,14 @@ def SynergistesJonesii(
 	
 	Datetime: 2021-02-02 16:25:35.466006
 	
-	The undirected graph Synergistes jonesii has 2488 nodes and 155520 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05027 and
-	has 5 connected components, where the component with most nodes has 2477 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 125.02, and the node degree mode is 6. The top 5 most central
-	nodes are 2754.EH55_02050 (degree 958), 2754.EH55_10740 (degree 913), 2754.EH55_11210
-	(degree 705), 2754.EH55_02550 (degree 698) and 2754.EH55_10790 (degree 676).
+	The undirected graph Synergistes jonesii has 2488 nodes and 155520 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05027 and has 5 connected components, where the component with most
+	nodes has 2477 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 125.02, and
+	the node degree mode is 6. The top 5 most central nodes are 2754.EH55_02050
+	(degree 958), 2754.EH55_10740 (degree 913), 2754.EH55_11210 (degree 705),
+	2754.EH55_02550 (degree 698) and 2754.EH55_10790 (degree 676).
 	
 
 

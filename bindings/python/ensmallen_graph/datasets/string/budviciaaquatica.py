@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:46.106451
 
-The undirected graph Budvicia aquatica has 4820 nodes and 676871 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05828 and
-has 38 connected components, where the component with most nodes has 4726 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 257,
-the mean node degree is 280.86, and the node degree mode is 1. The top 5 most central
-nodes are 1111728.ATYS01000038_gene808 (degree 1660), 1111728.ATYS01000013_gene4917
-(degree 1599), 1111728.ATYS01000034_gene20 (degree 1570), 1111728.ATYS01000007_gene1274
-(degree 1444) and 1111728.ATYS01000011_gene330 (degree 1434).
+The undirected graph Budvicia aquatica has 4820 nodes and 676871 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05828 and has 38 connected components, where the component with most
+nodes has 4726 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 257, the mean node degree is 280.86, and
+the node degree mode is 1. The top 5 most central nodes are 1111728.ATYS01000038_gene808
+(degree 1660), 1111728.ATYS01000013_gene4917 (degree 1599), 1111728.ATYS01000034_gene20
+(degree 1570), 1111728.ATYS01000007_gene1274 (degree 1444) and 1111728.ATYS01000011_gene330
+(degree 1434).
 
 
 References
@@ -107,14 +108,15 @@ def BudviciaAquatica(
 	
 	Datetime: 2021-02-02 22:25:46.106451
 	
-	The undirected graph Budvicia aquatica has 4820 nodes and 676871 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05828 and
-	has 38 connected components, where the component with most nodes has 4726 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 257,
-	the mean node degree is 280.86, and the node degree mode is 1. The top 5 most central
-	nodes are 1111728.ATYS01000038_gene808 (degree 1660), 1111728.ATYS01000013_gene4917
-	(degree 1599), 1111728.ATYS01000034_gene20 (degree 1570), 1111728.ATYS01000007_gene1274
-	(degree 1444) and 1111728.ATYS01000011_gene330 (degree 1434).
+	The undirected graph Budvicia aquatica has 4820 nodes and 676871 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05828 and has 38 connected components, where the component with most
+	nodes has 4726 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 257, the mean node degree is 280.86, and
+	the node degree mode is 1. The top 5 most central nodes are 1111728.ATYS01000038_gene808
+	(degree 1660), 1111728.ATYS01000013_gene4917 (degree 1599), 1111728.ATYS01000034_gene20
+	(degree 1570), 1111728.ATYS01000007_gene1274 (degree 1444) and 1111728.ATYS01000011_gene330
+	(degree 1434).
 	
 
 

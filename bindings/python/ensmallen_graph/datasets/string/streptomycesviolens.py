@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:44.940788
 
-The undirected graph Streptomyces violens has 6748 nodes and 991632 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04356 and
-has 19 connected components, where the component with most nodes has 6707 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 242,
-the mean node degree is 293.90, and the node degree mode is 3. The top 5 most central
-nodes are 66377.JOBH01000011_gene2195 (degree 3307), 66377.JOBH01000012_gene4298
-(degree 2389), 66377.JOBH01000007_gene1905 (degree 2031), 66377.JOBH01000007_gene1944
-(degree 2016) and 66377.JOBH01000001_gene1291 (degree 1889).
+The undirected graph Streptomyces violens has 6748 nodes and 991632 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04356 and has 19 connected components, where the component with most
+nodes has 6707 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 242, the mean node degree is 293.90, and
+the node degree mode is 3. The top 5 most central nodes are 66377.JOBH01000011_gene2195
+(degree 3307), 66377.JOBH01000012_gene4298 (degree 2389), 66377.JOBH01000007_gene1905
+(degree 2031), 66377.JOBH01000007_gene1944 (degree 2016) and 66377.JOBH01000001_gene1291
+(degree 1889).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesViolens(
 	
 	Datetime: 2021-02-02 18:25:44.940788
 	
-	The undirected graph Streptomyces violens has 6748 nodes and 991632 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04356 and
-	has 19 connected components, where the component with most nodes has 6707 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 242,
-	the mean node degree is 293.90, and the node degree mode is 3. The top 5 most central
-	nodes are 66377.JOBH01000011_gene2195 (degree 3307), 66377.JOBH01000012_gene4298
-	(degree 2389), 66377.JOBH01000007_gene1905 (degree 2031), 66377.JOBH01000007_gene1944
-	(degree 2016) and 66377.JOBH01000001_gene1291 (degree 1889).
+	The undirected graph Streptomyces violens has 6748 nodes and 991632 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04356 and has 19 connected components, where the component with most
+	nodes has 6707 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 242, the mean node degree is 293.90, and
+	the node degree mode is 3. The top 5 most central nodes are 66377.JOBH01000011_gene2195
+	(degree 3307), 66377.JOBH01000012_gene4298 (degree 2389), 66377.JOBH01000007_gene1905
+	(degree 2031), 66377.JOBH01000007_gene1944 (degree 2016) and 66377.JOBH01000001_gene1291
+	(degree 1889).
 	
 
 

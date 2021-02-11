@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:21.081680
 
-The undirected graph Babela massiliensis has 971 nodes and 47682 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10125
-and has 13 connected components, where the component with most nodes has 935 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 71, the mean node degree is 98.21, and the node degree mode is 4. The top 5 most
-central nodes are 673862.BABL1_960 (degree 454), 673862.BABL1_71 (degree 417), 673862.BABL1_990
-(degree 409), 673862.BABL1_488 (degree 403) and 673862.BABL1_479 (degree 401).
+The undirected graph Babela massiliensis has 971 nodes and 47682 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10125 and has 13 connected components, where the component
+with most nodes has 935 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 71, the mean node degree is 98.21,
+and the node degree mode is 4. The top 5 most central nodes are 673862.BABL1_960
+(degree 454), 673862.BABL1_71 (degree 417), 673862.BABL1_990 (degree 409),
+673862.BABL1_488 (degree 403) and 673862.BABL1_479 (degree 401).
 
 
 References
@@ -106,13 +107,14 @@ def BabelaMassiliensis(
 	
 	Datetime: 2021-02-02 21:29:21.081680
 	
-	The undirected graph Babela massiliensis has 971 nodes and 47682 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10125
-	and has 13 connected components, where the component with most nodes has 935 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 71, the mean node degree is 98.21, and the node degree mode is 4. The top 5 most
-	central nodes are 673862.BABL1_960 (degree 454), 673862.BABL1_71 (degree 417), 673862.BABL1_990
-	(degree 409), 673862.BABL1_488 (degree 403) and 673862.BABL1_479 (degree 401).
+	The undirected graph Babela massiliensis has 971 nodes and 47682 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10125 and has 13 connected components, where the component
+	with most nodes has 935 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 71, the mean node degree is 98.21,
+	and the node degree mode is 4. The top 5 most central nodes are 673862.BABL1_960
+	(degree 454), 673862.BABL1_71 (degree 417), 673862.BABL1_990 (degree 409),
+	673862.BABL1_488 (degree 403) and 673862.BABL1_479 (degree 401).
 	
 
 

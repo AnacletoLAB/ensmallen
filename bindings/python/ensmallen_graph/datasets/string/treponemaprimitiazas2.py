@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:01.375604
 
-The undirected graph Treponema primitia ZAS2 has 3478 nodes and 218051 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03606 and
-has 22 connected components, where the component with most nodes has 3418 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 125.39, and the node degree mode is 4. The top 5 most central
-nodes are 545694.TREPR_0425 (degree 1035), 545694.TREPR_3297 (degree 986), 545694.TREPR_1350
-(degree 964), 545694.TREPR_3490 (degree 901) and 545694.TREPR_2223 (degree 880).
+The undirected graph Treponema primitia ZAS2 has 3478 nodes and 218051
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03606 and has 22 connected components, where the component
+with most nodes has 3418 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 125.39,
+and the node degree mode is 4. The top 5 most central nodes are 545694.TREPR_0425
+(degree 1035), 545694.TREPR_3297 (degree 986), 545694.TREPR_1350 (degree
+964), 545694.TREPR_3490 (degree 901) and 545694.TREPR_2223 (degree 880).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaPrimitiaZas2(
 	
 	Datetime: 2021-02-02 21:08:01.375604
 	
-	The undirected graph Treponema primitia ZAS2 has 3478 nodes and 218051 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03606 and
-	has 22 connected components, where the component with most nodes has 3418 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 125.39, and the node degree mode is 4. The top 5 most central
-	nodes are 545694.TREPR_0425 (degree 1035), 545694.TREPR_3297 (degree 986), 545694.TREPR_1350
-	(degree 964), 545694.TREPR_3490 (degree 901) and 545694.TREPR_2223 (degree 880).
+	The undirected graph Treponema primitia ZAS2 has 3478 nodes and 218051
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03606 and has 22 connected components, where the component
+	with most nodes has 3418 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 125.39,
+	and the node degree mode is 4. The top 5 most central nodes are 545694.TREPR_0425
+	(degree 1035), 545694.TREPR_3297 (degree 986), 545694.TREPR_1350 (degree
+	964), 545694.TREPR_3490 (degree 901) and 545694.TREPR_2223 (degree 880).
 	
 
 

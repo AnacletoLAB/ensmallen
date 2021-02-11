@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:20.535434
 
-The undirected graph Halococcus sp. 197A has 3212 nodes and 253170 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04909 and
-has 22 connected components, where the component with most nodes has 3158 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 157.64, and the node degree mode is 3. The top 5 most central
-nodes are 1197130.BAFM01000007_gene1506 (degree 887), 1197130.BAFM01000001_gene109
-(degree 879), 1197130.BAFM01000007_gene1374 (degree 851), 1197130.BAFM01000016_gene2542
-(degree 850) and 1197130.BAFM01000011_gene1971 (degree 844).
+The undirected graph Halococcus sp. 197A has 3212 nodes and 253170 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04909 and has 22 connected components, where the component with most
+nodes has 3158 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 157.64, and
+the node degree mode is 3. The top 5 most central nodes are 1197130.BAFM01000007_gene1506
+(degree 887), 1197130.BAFM01000001_gene109 (degree 879), 1197130.BAFM01000007_gene1374
+(degree 851), 1197130.BAFM01000016_gene2542 (degree 850) and 1197130.BAFM01000011_gene1971
+(degree 844).
 
 
 References
@@ -107,14 +108,15 @@ def HalococcusSp.197a(
 	
 	Datetime: 2021-02-02 23:13:20.535434
 	
-	The undirected graph Halococcus sp. 197A has 3212 nodes and 253170 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04909 and
-	has 22 connected components, where the component with most nodes has 3158 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 157.64, and the node degree mode is 3. The top 5 most central
-	nodes are 1197130.BAFM01000007_gene1506 (degree 887), 1197130.BAFM01000001_gene109
-	(degree 879), 1197130.BAFM01000007_gene1374 (degree 851), 1197130.BAFM01000016_gene2542
-	(degree 850) and 1197130.BAFM01000011_gene1971 (degree 844).
+	The undirected graph Halococcus sp. 197A has 3212 nodes and 253170 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04909 and has 22 connected components, where the component with most
+	nodes has 3158 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 157.64, and
+	the node degree mode is 3. The top 5 most central nodes are 1197130.BAFM01000007_gene1506
+	(degree 887), 1197130.BAFM01000001_gene109 (degree 879), 1197130.BAFM01000007_gene1374
+	(degree 851), 1197130.BAFM01000016_gene2542 (degree 850) and 1197130.BAFM01000011_gene1971
+	(degree 844).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:51.801454
 
-The undirected graph Caulobacter henricii has 4420 nodes and 377820 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03869 and
-has 7 connected components, where the component with most nodes has 4400 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 170.96, and the node degree mode is 3. The top 5 most central
-nodes are 69395.JQLZ01000002_gene1130 (degree 1903), 69395.JQLZ01000006_gene1990
-(degree 1476), 69395.JQLZ01000008_gene2431 (degree 1099), 69395.JQLZ01000008_gene2428
-(degree 1075) and 69395.JQLZ01000009_gene1840 (degree 1064).
+The undirected graph Caulobacter henricii has 4420 nodes and 377820 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03869 and has 7 connected components, where the component with most
+nodes has 4400 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 170.96, and
+the node degree mode is 3. The top 5 most central nodes are 69395.JQLZ01000002_gene1130
+(degree 1903), 69395.JQLZ01000006_gene1990 (degree 1476), 69395.JQLZ01000008_gene2431
+(degree 1099), 69395.JQLZ01000008_gene2428 (degree 1075) and 69395.JQLZ01000009_gene1840
+(degree 1064).
 
 
 References
@@ -107,14 +108,15 @@ def CaulobacterHenricii(
 	
 	Datetime: 2021-02-02 18:29:51.801454
 	
-	The undirected graph Caulobacter henricii has 4420 nodes and 377820 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03869 and
-	has 7 connected components, where the component with most nodes has 4400 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 170.96, and the node degree mode is 3. The top 5 most central
-	nodes are 69395.JQLZ01000002_gene1130 (degree 1903), 69395.JQLZ01000006_gene1990
-	(degree 1476), 69395.JQLZ01000008_gene2431 (degree 1099), 69395.JQLZ01000008_gene2428
-	(degree 1075) and 69395.JQLZ01000009_gene1840 (degree 1064).
+	The undirected graph Caulobacter henricii has 4420 nodes and 377820 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03869 and has 7 connected components, where the component with most
+	nodes has 4400 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 170.96, and
+	the node degree mode is 3. The top 5 most central nodes are 69395.JQLZ01000002_gene1130
+	(degree 1903), 69395.JQLZ01000006_gene1990 (degree 1476), 69395.JQLZ01000008_gene2431
+	(degree 1099), 69395.JQLZ01000008_gene2428 (degree 1075) and 69395.JQLZ01000009_gene1840
+	(degree 1064).
 	
 
 

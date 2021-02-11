@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:12.193921
 
-The undirected graph Lysinibacillus varians has 4456 nodes and 451696 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04551 and
-has 30 connected components, where the component with most nodes has 4389 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 202.74, and the node degree mode is 1. The top 5 most central
-nodes are 1145276.T479_20975 (degree 1223), 1145276.T479_18745 (degree 1092), 1145276.T479_01800
-(degree 1067), 1145276.T479_04795 (degree 1029) and 1145276.T479_14580 (degree 959).
+The undirected graph Lysinibacillus varians has 4456 nodes and 451696 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04551 and has 30 connected components, where the component with most
+nodes has 4389 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 189, the mean node degree is 202.74, and
+the node degree mode is 1. The top 5 most central nodes are 1145276.T479_20975
+(degree 1223), 1145276.T479_18745 (degree 1092), 1145276.T479_01800 (degree
+1067), 1145276.T479_04795 (degree 1029) and 1145276.T479_14580 (degree
+959).
 
 
 References
@@ -106,13 +108,15 @@ def LysinibacillusVarians(
 	
 	Datetime: 2021-02-02 22:59:12.193921
 	
-	The undirected graph Lysinibacillus varians has 4456 nodes and 451696 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04551 and
-	has 30 connected components, where the component with most nodes has 4389 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 202.74, and the node degree mode is 1. The top 5 most central
-	nodes are 1145276.T479_20975 (degree 1223), 1145276.T479_18745 (degree 1092), 1145276.T479_01800
-	(degree 1067), 1145276.T479_04795 (degree 1029) and 1145276.T479_14580 (degree 959).
+	The undirected graph Lysinibacillus varians has 4456 nodes and 451696 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04551 and has 30 connected components, where the component with most
+	nodes has 4389 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 189, the mean node degree is 202.74, and
+	the node degree mode is 1. The top 5 most central nodes are 1145276.T479_20975
+	(degree 1223), 1145276.T479_18745 (degree 1092), 1145276.T479_01800 (degree
+	1067), 1145276.T479_04795 (degree 1029) and 1145276.T479_14580 (degree
+	959).
 	
 
 

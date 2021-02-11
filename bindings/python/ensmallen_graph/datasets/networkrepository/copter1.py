@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:24.429938
 
-The undirected graph copter1 has 17222 nodes and 114143 unweighted edges, of which
-17222 are self-loops. The graph is quite sparse as it has a density of 0.00071 and
-is connected, as it has a single component. The graph median node degree is 10, the
-mean node degree is 12.26, and the node degree mode is 19. The top 5 most central
-nodes are 16026 (degree 19), 16024 (degree 19), 16022 (degree 19), 16020 (degree
-19) and 16018 (degree 19).
+The undirected graph copter1 has 17222 nodes and 114143 unweighted edges,
+of which 17222 are self-loops. The graph is quite sparse as it has a density
+of 0.00071 and is connected, as it has a single component. The graph median
+node degree is 10, the mean node degree is 12.26, and the node degree mode
+is 19. The top 5 most central nodes are 16026 (degree 19), 16024 (degree
+19), 16022 (degree 19), 16020 (degree 19) and 16018 (degree 19).
 
 
 References
@@ -102,12 +102,12 @@ def Copter1(
 	
 	Datetime: 2021-02-06 10:20:24.429938
 	
-	The undirected graph copter1 has 17222 nodes and 114143 unweighted edges, of which
-	17222 are self-loops. The graph is quite sparse as it has a density of 0.00071 and
-	is connected, as it has a single component. The graph median node degree is 10, the
-	mean node degree is 12.26, and the node degree mode is 19. The top 5 most central
-	nodes are 16026 (degree 19), 16024 (degree 19), 16022 (degree 19), 16020 (degree
-	19) and 16018 (degree 19).
+	The undirected graph copter1 has 17222 nodes and 114143 unweighted edges,
+	of which 17222 are self-loops. The graph is quite sparse as it has a density
+	of 0.00071 and is connected, as it has a single component. The graph median
+	node degree is 10, the mean node degree is 12.26, and the node degree mode
+	is 19. The top 5 most central nodes are 16026 (degree 19), 16024 (degree
+	19), 16022 (degree 19), 16020 (degree 19) and 16018 (degree 19).
 	
 
 

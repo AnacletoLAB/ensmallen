@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:09.420207
 
-The undirected graph Oryza glumipatula has 22435 nodes and 4627764 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01839 and
-has 7 connected components, where the component with most nodes has 22423 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 412.55, and the node degree mode is 8. The top 5 most central
-nodes are 40148.OGLUM02G12190.2 (degree 7352), 40148.OGLUM03G35940.1 (degree 5865),
-40148.OGLUM02G11470.1 (degree 5360), 40148.OGLUM08G19750.1 (degree 5356) and 40148.OGLUM11G13250.1
+The undirected graph Oryza glumipatula has 22435 nodes and 4627764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01839 and has 7 connected components, where the component with most
+nodes has 22423 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 412.55, and
+the node degree mode is 8. The top 5 most central nodes are 40148.OGLUM02G12190.2
+(degree 7352), 40148.OGLUM03G35940.1 (degree 5865), 40148.OGLUM02G11470.1
+(degree 5360), 40148.OGLUM08G19750.1 (degree 5356) and 40148.OGLUM11G13250.1
 (degree 5020).
 
 
@@ -107,13 +108,14 @@ def OryzaGlumipatula(
 	
 	Datetime: 2021-02-02 18:11:09.420207
 	
-	The undirected graph Oryza glumipatula has 22435 nodes and 4627764 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01839 and
-	has 7 connected components, where the component with most nodes has 22423 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 412.55, and the node degree mode is 8. The top 5 most central
-	nodes are 40148.OGLUM02G12190.2 (degree 7352), 40148.OGLUM03G35940.1 (degree 5865),
-	40148.OGLUM02G11470.1 (degree 5360), 40148.OGLUM08G19750.1 (degree 5356) and 40148.OGLUM11G13250.1
+	The undirected graph Oryza glumipatula has 22435 nodes and 4627764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01839 and has 7 connected components, where the component with most
+	nodes has 22423 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 412.55, and
+	the node degree mode is 8. The top 5 most central nodes are 40148.OGLUM02G12190.2
+	(degree 7352), 40148.OGLUM03G35940.1 (degree 5865), 40148.OGLUM02G11470.1
+	(degree 5360), 40148.OGLUM08G19750.1 (degree 5356) and 40148.OGLUM11G13250.1
 	(degree 5020).
 	
 

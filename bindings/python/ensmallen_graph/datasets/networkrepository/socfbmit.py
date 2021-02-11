@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:23.520082
 
-The undirected graph socfb-MIT has 6402 nodes and 251230 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01226 and is connected,
-as it has a single component. The graph median node degree is 56, the mean node degree
-is 78.48, and the node degree mode is 1. The top 5 most central nodes are 2982 (degree
-708), 3591 (degree 694), 5214 (degree 665), 1770 (degree 623) and 2720 (degree 617).
+The undirected graph socfb-MIT has 6402 nodes and 251230 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01226 and is connected, as it has a single component. The graph median
+node degree is 56, the mean node degree is 78.48, and the node degree mode
+is 1. The top 5 most central nodes are 2982 (degree 708), 3591 (degree
+694), 5214 (degree 665), 1770 (degree 623) and 2720 (degree 617).
 
 
 References
@@ -122,11 +123,12 @@ def SocfbMit(
 	
 	Datetime: 2021-02-06 11:49:23.520082
 	
-	The undirected graph socfb-MIT has 6402 nodes and 251230 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01226 and is connected,
-	as it has a single component. The graph median node degree is 56, the mean node degree
-	is 78.48, and the node degree mode is 1. The top 5 most central nodes are 2982 (degree
-	708), 3591 (degree 694), 5214 (degree 665), 1770 (degree 623) and 2720 (degree 617).
+	The undirected graph socfb-MIT has 6402 nodes and 251230 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01226 and is connected, as it has a single component. The graph median
+	node degree is 56, the mean node degree is 78.48, and the node degree mode
+	is 1. The top 5 most central nodes are 2982 (degree 708), 3591 (degree
+	694), 5214 (degree 665), 1770 (degree 623) and 2720 (degree 617).
 	
 
 

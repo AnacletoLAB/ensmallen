@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:27:13.357553
 
-The undirected graph sc-pkustk13 has 94893 nodes and 3260967 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00072
-and is connected, as it has a single component. The graph median node degree is 56,
-the mean node degree is 68.73, and the node degree mode is 53. The top 5 most central
-nodes are 10428 (degree 299), 10427 (degree 299), 10426 (degree 299), 76005 (degree
-269) and 76004 (degree 269).
+The undirected graph sc-pkustk13 has 94893 nodes and 3260967 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00072 and is connected, as it has a single component. The
+graph median node degree is 56, the mean node degree is 68.73, and the
+node degree mode is 53. The top 5 most central nodes are 10428 (degree
+299), 10427 (degree 299), 10426 (degree 299), 76005 (degree 269) and 76004
+(degree 269).
 
 
 References
@@ -109,12 +110,13 @@ def ScPkustk13(
 	
 	Datetime: 2021-02-06 12:27:13.357553
 	
-	The undirected graph sc-pkustk13 has 94893 nodes and 3260967 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00072
-	and is connected, as it has a single component. The graph median node degree is 56,
-	the mean node degree is 68.73, and the node degree mode is 53. The top 5 most central
-	nodes are 10428 (degree 299), 10427 (degree 299), 10426 (degree 299), 76005 (degree
-	269) and 76004 (degree 269).
+	The undirected graph sc-pkustk13 has 94893 nodes and 3260967 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00072 and is connected, as it has a single component. The
+	graph median node degree is 56, the mean node degree is 68.73, and the
+	node degree mode is 53. The top 5 most central nodes are 10428 (degree
+	299), 10427 (degree 299), 10426 (degree 299), 76005 (degree 269) and 76004
+	(degree 269).
 	
 
 

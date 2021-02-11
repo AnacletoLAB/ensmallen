@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:32.792079
 
-The undirected graph Mycoplasma columbinum has 608 nodes and 21854 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11843
-and has 4 connected components, where the component with most nodes has 599 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 54, the mean node degree is 71.89, and the node degree mode is 5. The top 5 most
-central nodes are 1037410.MCSF7_00929 (degree 244), 1037410.MCSF7_01901 (degree 241),
-1037410.MCSF7_00321 (degree 220), 1037410.MCSF7_00571 (degree 219) and 1037410.MCSF7_00944
-(degree 216).
+The undirected graph Mycoplasma columbinum has 608 nodes and 21854 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11843 and has 4 connected components, where the component
+with most nodes has 599 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 54, the mean node degree is 71.89,
+and the node degree mode is 5. The top 5 most central nodes are 1037410.MCSF7_00929
+(degree 244), 1037410.MCSF7_01901 (degree 241), 1037410.MCSF7_00321 (degree
+220), 1037410.MCSF7_00571 (degree 219) and 1037410.MCSF7_00944 (degree
+216).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaColumbinum(
 	
 	Datetime: 2021-02-02 22:12:32.792079
 	
-	The undirected graph Mycoplasma columbinum has 608 nodes and 21854 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11843
-	and has 4 connected components, where the component with most nodes has 599 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 54, the mean node degree is 71.89, and the node degree mode is 5. The top 5 most
-	central nodes are 1037410.MCSF7_00929 (degree 244), 1037410.MCSF7_01901 (degree 241),
-	1037410.MCSF7_00321 (degree 220), 1037410.MCSF7_00571 (degree 219) and 1037410.MCSF7_00944
-	(degree 216).
+	The undirected graph Mycoplasma columbinum has 608 nodes and 21854 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11843 and has 4 connected components, where the component
+	with most nodes has 599 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 54, the mean node degree is 71.89,
+	and the node degree mode is 5. The top 5 most central nodes are 1037410.MCSF7_00929
+	(degree 244), 1037410.MCSF7_01901 (degree 241), 1037410.MCSF7_00321 (degree
+	220), 1037410.MCSF7_00571 (degree 219) and 1037410.MCSF7_00944 (degree
+	216).
 	
 
 

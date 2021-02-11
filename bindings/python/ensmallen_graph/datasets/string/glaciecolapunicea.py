@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:52.687543
 
-The undirected graph Glaciecola punicea has 2835 nodes and 193065 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-has 19 connected components, where the component with most nodes has 2794 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 136.20, and the node degree mode is 1. The top 5 most central
-nodes are 1121923.GPUN_2370 (degree 1038), 1121923.GPUN_0256 (degree 886), 1121923.GPUN_0489
-(degree 867), 1121923.GPUN_0255 (degree 864) and 1121923.GPUN_1138 (degree 850).
+The undirected graph Glaciecola punicea has 2835 nodes and 193065 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04806 and has 19 connected components, where the component with most
+nodes has 2794 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 136.20, and
+the node degree mode is 1. The top 5 most central nodes are 1121923.GPUN_2370
+(degree 1038), 1121923.GPUN_0256 (degree 886), 1121923.GPUN_0489 (degree
+867), 1121923.GPUN_0255 (degree 864) and 1121923.GPUN_1138 (degree 850).
 
 
 References
@@ -106,13 +107,14 @@ def GlaciecolaPunicea(
 	
 	Datetime: 2021-02-02 22:38:52.687543
 	
-	The undirected graph Glaciecola punicea has 2835 nodes and 193065 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-	has 19 connected components, where the component with most nodes has 2794 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 136.20, and the node degree mode is 1. The top 5 most central
-	nodes are 1121923.GPUN_2370 (degree 1038), 1121923.GPUN_0256 (degree 886), 1121923.GPUN_0489
-	(degree 867), 1121923.GPUN_0255 (degree 864) and 1121923.GPUN_1138 (degree 850).
+	The undirected graph Glaciecola punicea has 2835 nodes and 193065 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04806 and has 19 connected components, where the component with most
+	nodes has 2794 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 136.20, and
+	the node degree mode is 1. The top 5 most central nodes are 1121923.GPUN_2370
+	(degree 1038), 1121923.GPUN_0256 (degree 886), 1121923.GPUN_0489 (degree
+	867), 1121923.GPUN_0255 (degree 864) and 1121923.GPUN_1138 (degree 850).
 	
 
 

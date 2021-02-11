@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:29.871238
 
-The undirected graph Clostridium algidicarnis has 2784 nodes and 234439 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06052
-and has 10 connected components, where the component with most nodes has 2758 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 168.42, and the node degree mode is 2. The top 5
-most central nodes are 37659.JNLN01000001_gene195 (degree 1240), 37659.JNLN01000001_gene363
-(degree 1122), 37659.JNLN01000001_gene2179 (degree 1003), 37659.JNLN01000001_gene1209
-(degree 921) and 37659.JNLN01000001_gene2683 (degree 879).
+The undirected graph Clostridium algidicarnis has 2784 nodes and 234439
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06052 and has 10 connected components, where the component
+with most nodes has 2758 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 168.42,
+and the node degree mode is 2. The top 5 most central nodes are 37659.JNLN01000001_gene195
+(degree 1240), 37659.JNLN01000001_gene363 (degree 1122), 37659.JNLN01000001_gene2179
+(degree 1003), 37659.JNLN01000001_gene1209 (degree 921) and 37659.JNLN01000001_gene2683
+(degree 879).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumAlgidicarnis(
 	
 	Datetime: 2021-02-02 18:06:29.871238
 	
-	The undirected graph Clostridium algidicarnis has 2784 nodes and 234439 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06052
-	and has 10 connected components, where the component with most nodes has 2758 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 168.42, and the node degree mode is 2. The top 5
-	most central nodes are 37659.JNLN01000001_gene195 (degree 1240), 37659.JNLN01000001_gene363
-	(degree 1122), 37659.JNLN01000001_gene2179 (degree 1003), 37659.JNLN01000001_gene1209
-	(degree 921) and 37659.JNLN01000001_gene2683 (degree 879).
+	The undirected graph Clostridium algidicarnis has 2784 nodes and 234439
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06052 and has 10 connected components, where the component
+	with most nodes has 2758 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 168.42,
+	and the node degree mode is 2. The top 5 most central nodes are 37659.JNLN01000001_gene195
+	(degree 1240), 37659.JNLN01000001_gene363 (degree 1122), 37659.JNLN01000001_gene2179
+	(degree 1003), 37659.JNLN01000001_gene1209 (degree 921) and 37659.JNLN01000001_gene2683
+	(degree 879).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:38.661572
 
-The undirected graph fe-tooth has 78136 nodes and 452591 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00015 and
-is connected, as it has a single component. The graph median node degree is 12, the
-mean node degree is 11.58 and the node degree mode is 6. The top 5 most central nodes
-are 29906 (degree 39), 61929 (degree 31), 63865 (degree 30), 64912 (degree 30) and
-64904 (degree 30).
+The undirected graph fe-tooth has 78136 nodes and 452591 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00015 and is connected, as it has a single component. The graph median
+node degree is 12, the mean node degree is 11.58 and the node degree mode
+is 6. The top 5 most central nodes are 29906 (degree 39), 61929 (degree
+31), 63865 (degree 30), 64912 (degree 30) and 64904 (degree 30).
 
 
 References
@@ -109,12 +109,12 @@ def FeTooth(
 	
 	Datetime: 2021-02-03 23:12:38.661572
 	
-	The undirected graph fe-tooth has 78136 nodes and 452591 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00015 and
-	is connected, as it has a single component. The graph median node degree is 12, the
-	mean node degree is 11.58 and the node degree mode is 6. The top 5 most central nodes
-	are 29906 (degree 39), 61929 (degree 31), 63865 (degree 30), 64912 (degree 30) and
-	64904 (degree 30).
+	The undirected graph fe-tooth has 78136 nodes and 452591 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00015 and is connected, as it has a single component. The graph median
+	node degree is 12, the mean node degree is 11.58 and the node degree mode
+	is 6. The top 5 most central nodes are 29906 (degree 39), 61929 (degree
+	31), 63865 (degree 30), 64912 (degree 30) and 64904 (degree 30).
 	
 
 

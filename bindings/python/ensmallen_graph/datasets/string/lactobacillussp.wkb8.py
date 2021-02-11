@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:25.189866
 
-The undirected graph Lactobacillus sp. wkB8 has 1748 nodes and 145703 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09543 and
-has 7 connected components, where the component with most nodes has 1731 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 166.71, and the node degree mode is 6. The top 5 most central
-nodes are 1545702.LACWKB8_1220 (degree 893), 1545702.LACWKB8_1075 (degree 728), 1545702.LACWKB8_0652
-(degree 676), 1545702.LACWKB8_0691 (degree 659) and 1545702.LACWKB8_1284 (degree
+The undirected graph Lactobacillus sp. wkB8 has 1748 nodes and 145703 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09543 and has 7 connected components, where the component with most
+nodes has 1731 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 166.71, and
+the node degree mode is 6. The top 5 most central nodes are 1545702.LACWKB8_1220
+(degree 893), 1545702.LACWKB8_1075 (degree 728), 1545702.LACWKB8_0652 (degree
+676), 1545702.LACWKB8_0691 (degree 659) and 1545702.LACWKB8_1284 (degree
 626).
 
 
@@ -107,13 +108,14 @@ def LactobacillusSp.Wkb8(
 	
 	Datetime: 2021-02-03 23:20:25.189866
 	
-	The undirected graph Lactobacillus sp. wkB8 has 1748 nodes and 145703 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09543 and
-	has 7 connected components, where the component with most nodes has 1731 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 166.71, and the node degree mode is 6. The top 5 most central
-	nodes are 1545702.LACWKB8_1220 (degree 893), 1545702.LACWKB8_1075 (degree 728), 1545702.LACWKB8_0652
-	(degree 676), 1545702.LACWKB8_0691 (degree 659) and 1545702.LACWKB8_1284 (degree
+	The undirected graph Lactobacillus sp. wkB8 has 1748 nodes and 145703 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09543 and has 7 connected components, where the component with most
+	nodes has 1731 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 166.71, and
+	the node degree mode is 6. The top 5 most central nodes are 1545702.LACWKB8_1220
+	(degree 893), 1545702.LACWKB8_1075 (degree 728), 1545702.LACWKB8_0652 (degree
+	676), 1545702.LACWKB8_0691 (degree 659) and 1545702.LACWKB8_1284 (degree
 	626).
 	
 

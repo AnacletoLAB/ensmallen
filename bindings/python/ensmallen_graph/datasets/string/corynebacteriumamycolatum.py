@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:04.756622
 
-The undirected graph Corynebacterium amycolatum has 2073 nodes and 148219 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06902
-and has 10 connected components, where the component with most nodes has 2053 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 143.00, and the node degree mode is 2. The top 5
-most central nodes are 553204.CORAM0001_1183 (degree 882), 553204.CORAM0001_1022
-(degree 845), 553204.CORAM0001_0488 (degree 724), 553204.CORAM0001_0272 (degree 711)
-and 553204.CORAM0001_1894 (degree 648).
+The undirected graph Corynebacterium amycolatum has 2073 nodes and 148219
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06902 and has 10 connected components, where the component
+with most nodes has 2053 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 143.00,
+and the node degree mode is 2. The top 5 most central nodes are 553204.CORAM0001_1183
+(degree 882), 553204.CORAM0001_1022 (degree 845), 553204.CORAM0001_0488
+(degree 724), 553204.CORAM0001_0272 (degree 711) and 553204.CORAM0001_1894
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumAmycolatum(
 	
 	Datetime: 2021-02-02 21:10:04.756622
 	
-	The undirected graph Corynebacterium amycolatum has 2073 nodes and 148219 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06902
-	and has 10 connected components, where the component with most nodes has 2053 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 143.00, and the node degree mode is 2. The top 5
-	most central nodes are 553204.CORAM0001_1183 (degree 882), 553204.CORAM0001_1022
-	(degree 845), 553204.CORAM0001_0488 (degree 724), 553204.CORAM0001_0272 (degree 711)
-	and 553204.CORAM0001_1894 (degree 648).
+	The undirected graph Corynebacterium amycolatum has 2073 nodes and 148219
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06902 and has 10 connected components, where the component
+	with most nodes has 2053 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 143.00,
+	and the node degree mode is 2. The top 5 most central nodes are 553204.CORAM0001_1183
+	(degree 882), 553204.CORAM0001_1022 (degree 845), 553204.CORAM0001_0488
+	(degree 724), 553204.CORAM0001_0272 (degree 711) and 553204.CORAM0001_1894
+	(degree 648).
 	
 
 

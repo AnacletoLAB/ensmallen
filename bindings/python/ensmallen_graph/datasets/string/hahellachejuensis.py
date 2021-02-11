@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:37.181232
 
-The undirected graph Hahella chejuensis has 6613 nodes and 787629 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03603 and
-has 70 connected components, where the component with most nodes has 6433 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 238.21, and the node degree mode is 2. The top 5 most central
-nodes are 349521.HCH_06350 (degree 2104), 349521.HCH_00794 (degree 2055), 349521.HCH_02966
-(degree 1720), 349521.HCH_03588 (degree 1618) and 349521.HCH_04267 (degree 1568).
+The undirected graph Hahella chejuensis has 6613 nodes and 787629 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03603 and has 70 connected components, where the component with most
+nodes has 6433 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 238.21, and
+the node degree mode is 2. The top 5 most central nodes are 349521.HCH_06350
+(degree 2104), 349521.HCH_00794 (degree 2055), 349521.HCH_02966 (degree
+1720), 349521.HCH_03588 (degree 1618) and 349521.HCH_04267 (degree 1568).
 
 
 References
@@ -106,13 +107,14 @@ def HahellaChejuensis(
 	
 	Datetime: 2021-02-02 20:32:37.181232
 	
-	The undirected graph Hahella chejuensis has 6613 nodes and 787629 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03603 and
-	has 70 connected components, where the component with most nodes has 6433 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 238.21, and the node degree mode is 2. The top 5 most central
-	nodes are 349521.HCH_06350 (degree 2104), 349521.HCH_00794 (degree 2055), 349521.HCH_02966
-	(degree 1720), 349521.HCH_03588 (degree 1618) and 349521.HCH_04267 (degree 1568).
+	The undirected graph Hahella chejuensis has 6613 nodes and 787629 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03603 and has 70 connected components, where the component with most
+	nodes has 6433 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 238.21, and
+	the node degree mode is 2. The top 5 most central nodes are 349521.HCH_06350
+	(degree 2104), 349521.HCH_00794 (degree 2055), 349521.HCH_02966 (degree
+	1720), 349521.HCH_03588 (degree 1618) and 349521.HCH_04267 (degree 1568).
 	
 
 

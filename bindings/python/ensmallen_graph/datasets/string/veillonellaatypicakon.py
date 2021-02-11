@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:53.807644
 
-The undirected graph Veillonella atypica KON has 1899 nodes and 120373 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06679 and
-has 10 connected components, where the component with most nodes has 1866 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 126.78, and the node degree mode is 7. The top 5 most central
-nodes are 1128111.HMPREF0870_00627 (degree 762), 1128111.HMPREF0870_00281 (degree
-673), 1128111.HMPREF0870_00190 (degree 651), 1128111.HMPREF0870_00960 (degree 645)
-and 1128111.HMPREF0870_00506 (degree 622).
+The undirected graph Veillonella atypica KON has 1899 nodes and 120373
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06679 and has 10 connected components, where the component
+with most nodes has 1866 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 126.78,
+and the node degree mode is 7. The top 5 most central nodes are 1128111.HMPREF0870_00627
+(degree 762), 1128111.HMPREF0870_00281 (degree 673), 1128111.HMPREF0870_00190
+(degree 651), 1128111.HMPREF0870_00960 (degree 645) and 1128111.HMPREF0870_00506
+(degree 622).
 
 
 References
@@ -107,14 +108,15 @@ def VeillonellaAtypicaKon(
 	
 	Datetime: 2021-02-02 22:54:53.807644
 	
-	The undirected graph Veillonella atypica KON has 1899 nodes and 120373 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06679 and
-	has 10 connected components, where the component with most nodes has 1866 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 126.78, and the node degree mode is 7. The top 5 most central
-	nodes are 1128111.HMPREF0870_00627 (degree 762), 1128111.HMPREF0870_00281 (degree
-	673), 1128111.HMPREF0870_00190 (degree 651), 1128111.HMPREF0870_00960 (degree 645)
-	and 1128111.HMPREF0870_00506 (degree 622).
+	The undirected graph Veillonella atypica KON has 1899 nodes and 120373
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06679 and has 10 connected components, where the component
+	with most nodes has 1866 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 126.78,
+	and the node degree mode is 7. The top 5 most central nodes are 1128111.HMPREF0870_00627
+	(degree 762), 1128111.HMPREF0870_00281 (degree 673), 1128111.HMPREF0870_00190
+	(degree 651), 1128111.HMPREF0870_00960 (degree 645) and 1128111.HMPREF0870_00506
+	(degree 622).
 	
 
 

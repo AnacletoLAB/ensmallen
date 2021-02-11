@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:57.315512
 
-The undirected graph Schizosaccharomyces octosporus has 4221 nodes and 639684 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07182
-and has 2 connected components, where the component with most nodes has 4219 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 252, the mean node degree is 303.10, and the node degree mode is 23. The top 5
-most central nodes are 4899.EPX74232 (degree 1473), 4899.EPX72162 (degree 1431),
-4899.EPX72889 (degree 1427), 4899.EPX73930 (degree 1360) and 4899.EPX72235 (degree
-1269).
+The undirected graph Schizosaccharomyces octosporus has 4221 nodes and
+639684 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07182 and has 2 connected components, where the
+component with most nodes has 4219 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+is 303.10, and the node degree mode is 23. The top 5 most central nodes
+are 4899.EPX74232 (degree 1473), 4899.EPX72162 (degree 1431), 4899.EPX72889
+(degree 1427), 4899.EPX73930 (degree 1360) and 4899.EPX72235 (degree 1269).
 
 
 References
@@ -107,14 +107,14 @@ def SchizosaccharomycesOctosporus(
 	
 	Datetime: 2021-02-02 17:10:57.315512
 	
-	The undirected graph Schizosaccharomyces octosporus has 4221 nodes and 639684 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07182
-	and has 2 connected components, where the component with most nodes has 4219 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 252, the mean node degree is 303.10, and the node degree mode is 23. The top 5
-	most central nodes are 4899.EPX74232 (degree 1473), 4899.EPX72162 (degree 1431),
-	4899.EPX72889 (degree 1427), 4899.EPX73930 (degree 1360) and 4899.EPX72235 (degree
-	1269).
+	The undirected graph Schizosaccharomyces octosporus has 4221 nodes and
+	639684 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07182 and has 2 connected components, where the
+	component with most nodes has 4219 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+	is 303.10, and the node degree mode is 23. The top 5 most central nodes
+	are 4899.EPX74232 (degree 1473), 4899.EPX72162 (degree 1431), 4899.EPX72889
+	(degree 1427), 4899.EPX73930 (degree 1360) and 4899.EPX72235 (degree 1269).
 	
 
 

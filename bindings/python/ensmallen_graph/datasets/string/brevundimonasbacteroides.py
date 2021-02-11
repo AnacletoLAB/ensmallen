@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:39.010090
 
-The undirected graph Brevundimonas bacteroides has 3081 nodes and 220297 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04643
-and has 7 connected components, where the component with most nodes has 3068 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 143.00, and the node degree mode is 3. The top 5
-most central nodes are 1121124.JNIX01000013_gene1403 (degree 1104), 1121124.JNIX01000007_gene615
-(degree 925), 1121124.JNIX01000005_gene1341 (degree 816), 1121124.JNIX01000005_gene1344
-(degree 791) and 1121124.JNIX01000015_gene1928 (degree 784).
+The undirected graph Brevundimonas bacteroides has 3081 nodes and 220297
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04643 and has 7 connected components, where the component
+with most nodes has 3068 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 143.00,
+and the node degree mode is 3. The top 5 most central nodes are 1121124.JNIX01000013_gene1403
+(degree 1104), 1121124.JNIX01000007_gene615 (degree 925), 1121124.JNIX01000005_gene1341
+(degree 816), 1121124.JNIX01000005_gene1344 (degree 791) and 1121124.JNIX01000015_gene1928
+(degree 784).
 
 
 References
@@ -107,14 +108,15 @@ def BrevundimonasBacteroides(
 	
 	Datetime: 2021-02-02 22:33:39.010090
 	
-	The undirected graph Brevundimonas bacteroides has 3081 nodes and 220297 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04643
-	and has 7 connected components, where the component with most nodes has 3068 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 143.00, and the node degree mode is 3. The top 5
-	most central nodes are 1121124.JNIX01000013_gene1403 (degree 1104), 1121124.JNIX01000007_gene615
-	(degree 925), 1121124.JNIX01000005_gene1341 (degree 816), 1121124.JNIX01000005_gene1344
-	(degree 791) and 1121124.JNIX01000015_gene1928 (degree 784).
+	The undirected graph Brevundimonas bacteroides has 3081 nodes and 220297
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04643 and has 7 connected components, where the component
+	with most nodes has 3068 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 143.00,
+	and the node degree mode is 3. The top 5 most central nodes are 1121124.JNIX01000013_gene1403
+	(degree 1104), 1121124.JNIX01000007_gene615 (degree 925), 1121124.JNIX01000005_gene1341
+	(degree 816), 1121124.JNIX01000005_gene1344 (degree 791) and 1121124.JNIX01000015_gene1928
+	(degree 784).
 	
 
 

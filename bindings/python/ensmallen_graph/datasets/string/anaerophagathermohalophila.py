@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:22.863544
 
-The undirected graph Anaerophaga thermohalophila has 3288 nodes and 350052 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06478
-and has 31 connected components, where the component with most nodes has 3210 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 212.93, and the node degree mode is 1. The top 5
-most central nodes are 886379.AEWI01000032_gene2717 (degree 1057), 886379.AEWI01000043_gene3293
-(degree 1044), 886379.AEWI01000052_gene2657 (degree 1021), 886379.AEWI01000026_gene444
-(degree 1000) and 886379.AEWI01000144_gene3254 (degree 866).
+The undirected graph Anaerophaga thermohalophila has 3288 nodes and 350052
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06478 and has 31 connected components, where the component
+with most nodes has 3210 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 212.93,
+and the node degree mode is 1. The top 5 most central nodes are 886379.AEWI01000032_gene2717
+(degree 1057), 886379.AEWI01000043_gene3293 (degree 1044), 886379.AEWI01000052_gene2657
+(degree 1021), 886379.AEWI01000026_gene444 (degree 1000) and 886379.AEWI01000144_gene3254
+(degree 866).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerophagaThermohalophila(
 	
 	Datetime: 2021-02-02 21:52:22.863544
 	
-	The undirected graph Anaerophaga thermohalophila has 3288 nodes and 350052 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06478
-	and has 31 connected components, where the component with most nodes has 3210 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 212.93, and the node degree mode is 1. The top 5
-	most central nodes are 886379.AEWI01000032_gene2717 (degree 1057), 886379.AEWI01000043_gene3293
-	(degree 1044), 886379.AEWI01000052_gene2657 (degree 1021), 886379.AEWI01000026_gene444
-	(degree 1000) and 886379.AEWI01000144_gene3254 (degree 866).
+	The undirected graph Anaerophaga thermohalophila has 3288 nodes and 350052
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06478 and has 31 connected components, where the component
+	with most nodes has 3210 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 212.93,
+	and the node degree mode is 1. The top 5 most central nodes are 886379.AEWI01000032_gene2717
+	(degree 1057), 886379.AEWI01000043_gene3293 (degree 1044), 886379.AEWI01000052_gene2657
+	(degree 1021), 886379.AEWI01000026_gene444 (degree 1000) and 886379.AEWI01000144_gene3254
+	(degree 866).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:17.223362
 
-The undirected graph Solibacillus silvestris has 3736 nodes and 388257 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05565 and
-has 10 connected components, where the component with most nodes has 3712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 207.85, and the node degree mode is 1. The top 5 most central
-nodes are 1002809.SSIL_1198 (degree 1307), 1002809.SSIL_0460 (degree 1121), 1002809.SSIL_1044
-(degree 1047), 1002809.SSIL_2903 (degree 991) and 1002809.SSIL_3049 (degree 937).
+The undirected graph Solibacillus silvestris has 3736 nodes and 388257
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05565 and has 10 connected components, where the component
+with most nodes has 3712 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 207.85,
+and the node degree mode is 1. The top 5 most central nodes are 1002809.SSIL_1198
+(degree 1307), 1002809.SSIL_0460 (degree 1121), 1002809.SSIL_1044 (degree
+1047), 1002809.SSIL_2903 (degree 991) and 1002809.SSIL_3049 (degree 937).
 
 
 References
@@ -106,13 +107,14 @@ def SolibacillusSilvestris(
 	
 	Datetime: 2021-02-02 22:07:17.223362
 	
-	The undirected graph Solibacillus silvestris has 3736 nodes and 388257 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05565 and
-	has 10 connected components, where the component with most nodes has 3712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 207.85, and the node degree mode is 1. The top 5 most central
-	nodes are 1002809.SSIL_1198 (degree 1307), 1002809.SSIL_0460 (degree 1121), 1002809.SSIL_1044
-	(degree 1047), 1002809.SSIL_2903 (degree 991) and 1002809.SSIL_3049 (degree 937).
+	The undirected graph Solibacillus silvestris has 3736 nodes and 388257
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05565 and has 10 connected components, where the component
+	with most nodes has 3712 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 207.85,
+	and the node degree mode is 1. The top 5 most central nodes are 1002809.SSIL_1198
+	(degree 1307), 1002809.SSIL_0460 (degree 1121), 1002809.SSIL_1044 (degree
+	1047), 1002809.SSIL_2903 (degree 991) and 1002809.SSIL_3049 (degree 937).
 	
 
 

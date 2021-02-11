@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:18.325864
 
-The undirected graph Bradyrhizobium sp. ORS278 has 6636 nodes and 1059012 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04810
-and has 28 connected components, where the component with most nodes has 6569 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 276, the mean node degree is 319.17, and the node degree mode is 2. The top 5
-most central nodes are 114615.BRADO3946 (degree 2991), 114615.BRADO5809 (degree 2335),
-114615.BRADO0752 (degree 2328), 114615.BRADO5320 (degree 2111) and 114615.BRADO4029
-(degree 1881).
+The undirected graph Bradyrhizobium sp. ORS278 has 6636 nodes and 1059012
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04810 and has 28 connected components, where the component
+with most nodes has 6569 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 276, the mean node degree is 319.17,
+and the node degree mode is 2. The top 5 most central nodes are 114615.BRADO3946
+(degree 2991), 114615.BRADO5809 (degree 2335), 114615.BRADO0752 (degree
+2328), 114615.BRADO5320 (degree 2111) and 114615.BRADO4029 (degree 1881).
 
 
 References
@@ -107,14 +107,14 @@ def BradyrhizobiumSp.Ors278(
 	
 	Datetime: 2021-02-02 19:47:18.325864
 	
-	The undirected graph Bradyrhizobium sp. ORS278 has 6636 nodes and 1059012 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04810
-	and has 28 connected components, where the component with most nodes has 6569 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 276, the mean node degree is 319.17, and the node degree mode is 2. The top 5
-	most central nodes are 114615.BRADO3946 (degree 2991), 114615.BRADO5809 (degree 2335),
-	114615.BRADO0752 (degree 2328), 114615.BRADO5320 (degree 2111) and 114615.BRADO4029
-	(degree 1881).
+	The undirected graph Bradyrhizobium sp. ORS278 has 6636 nodes and 1059012
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04810 and has 28 connected components, where the component
+	with most nodes has 6569 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 276, the mean node degree is 319.17,
+	and the node degree mode is 2. The top 5 most central nodes are 114615.BRADO3946
+	(degree 2991), 114615.BRADO5809 (degree 2335), 114615.BRADO0752 (degree
+	2328), 114615.BRADO5320 (degree 2111) and 114615.BRADO4029 (degree 1881).
 	
 
 

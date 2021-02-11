@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:06.452272
 
-The undirected graph Mycoplasma hyopneumoniae 232 has 674 nodes and 30359 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13386 and has 15 connected components, where the component with most nodes has
-635 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 60, the mean node degree is 90.09, and the node degree mode is 2. The top
-5 most central nodes are 295358.mhp105 (degree 326), 295358.mhp060 (degree 285),
-295358.mhp041 (degree 275), 295358.mhp139 (degree 275) and 295358.mhp072 (degree
-272).
+The undirected graph Mycoplasma hyopneumoniae 232 has 674 nodes and 30359
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13386 and has 15 connected components, where the
+component with most nodes has 635 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 60, the mean node degree
+is 90.09, and the node degree mode is 2. The top 5 most central nodes are
+295358.mhp105 (degree 326), 295358.mhp060 (degree 285), 295358.mhp041 (degree
+275), 295358.mhp139 (degree 275) and 295358.mhp072 (degree 272).
 
 
 References
@@ -107,14 +107,14 @@ def MycoplasmaHyopneumoniae232(
 	
 	Datetime: 2021-02-02 20:21:06.452272
 	
-	The undirected graph Mycoplasma hyopneumoniae 232 has 674 nodes and 30359 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13386 and has 15 connected components, where the component with most nodes has
-	635 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 60, the mean node degree is 90.09, and the node degree mode is 2. The top
-	5 most central nodes are 295358.mhp105 (degree 326), 295358.mhp060 (degree 285),
-	295358.mhp041 (degree 275), 295358.mhp139 (degree 275) and 295358.mhp072 (degree
-	272).
+	The undirected graph Mycoplasma hyopneumoniae 232 has 674 nodes and 30359
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13386 and has 15 connected components, where the
+	component with most nodes has 635 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 60, the mean node degree
+	is 90.09, and the node degree mode is 2. The top 5 most central nodes are
+	295358.mhp105 (degree 326), 295358.mhp060 (degree 285), 295358.mhp041 (degree
+	275), 295358.mhp139 (degree 275) and 295358.mhp072 (degree 272).
 	
 
 

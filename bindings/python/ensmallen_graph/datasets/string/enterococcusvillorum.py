@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:21.421902
 
-The undirected graph Enterococcus villorum has 2741 nodes and 224137 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05969 and
-has 29 connected components, where the component with most nodes has 2673 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 163.54, and the node degree mode is 1. The top 5 most central
-nodes are 1158604.I591_00735 (degree 1102), 1158604.I591_02451 (degree 976), 1158604.I591_02297
-(degree 973), 1158604.I591_00661 (degree 915) and 1158604.I591_00648 (degree 876).
+The undirected graph Enterococcus villorum has 2741 nodes and 224137 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05969 and has 29 connected components, where the component with most
+nodes has 2673 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 163.54, and
+the node degree mode is 1. The top 5 most central nodes are 1158604.I591_00735
+(degree 1102), 1158604.I591_02451 (degree 976), 1158604.I591_02297 (degree
+973), 1158604.I591_00661 (degree 915) and 1158604.I591_00648 (degree 876).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusVillorum(
 	
 	Datetime: 2021-02-02 23:03:21.421902
 	
-	The undirected graph Enterococcus villorum has 2741 nodes and 224137 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05969 and
-	has 29 connected components, where the component with most nodes has 2673 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 163.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1158604.I591_00735 (degree 1102), 1158604.I591_02451 (degree 976), 1158604.I591_02297
-	(degree 973), 1158604.I591_00661 (degree 915) and 1158604.I591_00648 (degree 876).
+	The undirected graph Enterococcus villorum has 2741 nodes and 224137 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05969 and has 29 connected components, where the component with most
+	nodes has 2673 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 163.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1158604.I591_00735
+	(degree 1102), 1158604.I591_02451 (degree 976), 1158604.I591_02297 (degree
+	973), 1158604.I591_00661 (degree 915) and 1158604.I591_00648 (degree 876).
 	
 
 

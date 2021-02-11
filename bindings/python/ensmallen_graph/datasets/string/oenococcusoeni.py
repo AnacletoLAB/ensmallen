@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:57.564337
 
-The undirected graph Oenococcus oeni has 1657 nodes and 86260 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06287 and
-has 7 connected components, where the component with most nodes has 1642 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 73,
-the mean node degree is 104.12, and the node degree mode is 1. The top 5 most central
-nodes are 203123.OEOE_0673 (degree 754), 203123.OEOE_1123 (degree 622), 203123.OEOE_0789
-(degree 553), 203123.OEOE_1309 (degree 547) and 203123.OEOE_1746 (degree 546).
+The undirected graph Oenococcus oeni has 1657 nodes and 86260 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06287 and has 7 connected components, where the component with most
+nodes has 1642 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 73, the mean node degree is 104.12, and
+the node degree mode is 1. The top 5 most central nodes are 203123.OEOE_0673
+(degree 754), 203123.OEOE_1123 (degree 622), 203123.OEOE_0789 (degree 553),
+203123.OEOE_1309 (degree 547) and 203123.OEOE_1746 (degree 546).
 
 
 References
@@ -106,13 +107,14 @@ def OenococcusOeni(
 	
 	Datetime: 2021-02-02 19:59:57.564337
 	
-	The undirected graph Oenococcus oeni has 1657 nodes and 86260 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06287 and
-	has 7 connected components, where the component with most nodes has 1642 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 73,
-	the mean node degree is 104.12, and the node degree mode is 1. The top 5 most central
-	nodes are 203123.OEOE_0673 (degree 754), 203123.OEOE_1123 (degree 622), 203123.OEOE_0789
-	(degree 553), 203123.OEOE_1309 (degree 547) and 203123.OEOE_1746 (degree 546).
+	The undirected graph Oenococcus oeni has 1657 nodes and 86260 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06287 and has 7 connected components, where the component with most
+	nodes has 1642 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 73, the mean node degree is 104.12, and
+	the node degree mode is 1. The top 5 most central nodes are 203123.OEOE_0673
+	(degree 754), 203123.OEOE_1123 (degree 622), 203123.OEOE_0789 (degree 553),
+	203123.OEOE_1309 (degree 547) and 203123.OEOE_1746 (degree 546).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:32:26.961298
 
-The undirected graph web-NotreDame has 325729 nodes and 1117563 weighted edges, of
-which 27455 are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 6.78, and the node degree mode is 1. The top 5 most
-central nodes are 12130 (degree 10721), 1 (degree 7623), 124803 (degree 7026), 31332
-(degree 4316) and 140171 (degree 4282).
+The undirected graph web-NotreDame has 325729 nodes and 1117563 weighted
+edges, of which 27455 are self-loops. The graph is extremely sparse as
+it has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 6.78, and the
+node degree mode is 1. The top 5 most central nodes are 12130 (degree 10721),
+1 (degree 7623), 124803 (degree 7026), 31332 (degree 4316) and 140171 (degree
+4282).
 
 
 References
@@ -102,12 +103,13 @@ def WebNotredame(
 	
 	Datetime: 2021-02-06 12:32:26.961298
 	
-	The undirected graph web-NotreDame has 325729 nodes and 1117563 weighted edges, of
-	which 27455 are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 6.78, and the node degree mode is 1. The top 5 most
-	central nodes are 12130 (degree 10721), 1 (degree 7623), 124803 (degree 7026), 31332
-	(degree 4316) and 140171 (degree 4282).
+	The undirected graph web-NotreDame has 325729 nodes and 1117563 weighted
+	edges, of which 27455 are self-loops. The graph is extremely sparse as
+	it has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 6.78, and the
+	node degree mode is 1. The top 5 most central nodes are 12130 (degree 10721),
+	1 (degree 7623), 124803 (degree 7026), 31332 (degree 4316) and 140171 (degree
+	4282).
 	
 
 

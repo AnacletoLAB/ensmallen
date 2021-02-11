@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:10:18.651259
 
-The undirected graph flickrEdges has 105938 nodes and 2316948 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00041
-and has 83 connected components, where the component with most nodes has 105722 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 7, the mean node degree is 43.74, and the node degree mode is 5. The top 5 most
-central nodes are 313 (degree 5425), 919 (degree 2045), 5126 (degree 1858), 3329
-(degree 1794) and 9984 (degree 1658).
+The undirected graph flickrEdges has 105938 nodes and 2316948 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00041 and has 83 connected components, where the component
+with most nodes has 105722 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 7, the mean node degree is
+43.74, and the node degree mode is 5. The top 5 most central nodes are
+313 (degree 5425), 919 (degree 2045), 5126 (degree 1858), 3329 (degree
+1794) and 9984 (degree 1658).
 
 
 References
@@ -103,13 +104,14 @@ def Flickredges(
 	
 	Datetime: 2021-02-06 12:10:18.651259
 	
-	The undirected graph flickrEdges has 105938 nodes and 2316948 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00041
-	and has 83 connected components, where the component with most nodes has 105722 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 7, the mean node degree is 43.74, and the node degree mode is 5. The top 5 most
-	central nodes are 313 (degree 5425), 919 (degree 2045), 5126 (degree 1858), 3329
-	(degree 1794) and 9984 (degree 1658).
+	The undirected graph flickrEdges has 105938 nodes and 2316948 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00041 and has 83 connected components, where the component
+	with most nodes has 105722 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 7, the mean node degree is
+	43.74, and the node degree mode is 5. The top 5 most central nodes are
+	313 (degree 5425), 919 (degree 2045), 5126 (degree 1858), 3329 (degree
+	1794) and 9984 (degree 1658).
 	
 
 

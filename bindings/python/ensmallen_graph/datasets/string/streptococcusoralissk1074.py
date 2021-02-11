@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:22.403403
 
-The undirected graph Streptococcus oralis SK1074 has 1761 nodes and 130312 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08409
-and has 4 connected components, where the component with most nodes has 1754 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 148.00, and the node degree mode is 17. The top 5
-most central nodes are 1095738.HMPREF1047_1184 (degree 813), 1095738.HMPREF1047_1684
-(degree 737), 1095738.HMPREF1047_0546 (degree 675), 1095738.HMPREF1047_0167 (degree
-646) and 1095738.HMPREF1047_1673 (degree 646).
+The undirected graph Streptococcus oralis SK1074 has 1761 nodes and 130312
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08409 and has 4 connected components, where the component
+with most nodes has 1754 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 148.00,
+and the node degree mode is 17. The top 5 most central nodes are 1095738.HMPREF1047_1184
+(degree 813), 1095738.HMPREF1047_1684 (degree 737), 1095738.HMPREF1047_0546
+(degree 675), 1095738.HMPREF1047_0167 (degree 646) and 1095738.HMPREF1047_1673
+(degree 646).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusOralisSk1074(
 	
 	Datetime: 2021-02-02 22:23:22.403403
 	
-	The undirected graph Streptococcus oralis SK1074 has 1761 nodes and 130312 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08409
-	and has 4 connected components, where the component with most nodes has 1754 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 148.00, and the node degree mode is 17. The top 5
-	most central nodes are 1095738.HMPREF1047_1184 (degree 813), 1095738.HMPREF1047_1684
-	(degree 737), 1095738.HMPREF1047_0546 (degree 675), 1095738.HMPREF1047_0167 (degree
-	646) and 1095738.HMPREF1047_1673 (degree 646).
+	The undirected graph Streptococcus oralis SK1074 has 1761 nodes and 130312
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08409 and has 4 connected components, where the component
+	with most nodes has 1754 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 148.00,
+	and the node degree mode is 17. The top 5 most central nodes are 1095738.HMPREF1047_1184
+	(degree 813), 1095738.HMPREF1047_1684 (degree 737), 1095738.HMPREF1047_0546
+	(degree 675), 1095738.HMPREF1047_0167 (degree 646) and 1095738.HMPREF1047_1673
+	(degree 646).
 	
 
 

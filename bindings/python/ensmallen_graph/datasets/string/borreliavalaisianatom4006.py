@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:57.474239
 
-The undirected graph Borrelia valaisiana Tom4006 has 892 nodes and 55654 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.14005 and has 7 connected components, where the component with most nodes has
-864 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 109, the mean node degree is 124.78, and the node degree mode is 4. The
-top 5 most central nodes are 1398491.P613_02110 (degree 497), 1398491.P613_02775
-(degree 480), 1398491.P613_04520 (degree 447), 1398491.P613_02975 (degree 433) and
-1398491.P613_02640 (degree 418).
+The undirected graph Borrelia valaisiana Tom4006 has 892 nodes and 55654
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.14005 and has 7 connected components, where the
+component with most nodes has 864 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+is 124.78, and the node degree mode is 4. The top 5 most central nodes
+are 1398491.P613_02110 (degree 497), 1398491.P613_02775 (degree 480), 1398491.P613_04520
+(degree 447), 1398491.P613_02975 (degree 433) and 1398491.P613_02640 (degree
+418).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaValaisianaTom4006(
 	
 	Datetime: 2021-02-03 22:30:57.474239
 	
-	The undirected graph Borrelia valaisiana Tom4006 has 892 nodes and 55654 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.14005 and has 7 connected components, where the component with most nodes has
-	864 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 109, the mean node degree is 124.78, and the node degree mode is 4. The
-	top 5 most central nodes are 1398491.P613_02110 (degree 497), 1398491.P613_02775
-	(degree 480), 1398491.P613_04520 (degree 447), 1398491.P613_02975 (degree 433) and
-	1398491.P613_02640 (degree 418).
+	The undirected graph Borrelia valaisiana Tom4006 has 892 nodes and 55654
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.14005 and has 7 connected components, where the
+	component with most nodes has 864 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+	is 124.78, and the node degree mode is 4. The top 5 most central nodes
+	are 1398491.P613_02110 (degree 497), 1398491.P613_02775 (degree 480), 1398491.P613_04520
+	(degree 447), 1398491.P613_02975 (degree 433) and 1398491.P613_02640 (degree
+	418).
 	
 
 

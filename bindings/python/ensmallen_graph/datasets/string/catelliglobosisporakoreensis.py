@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:07.686159
 
-The undirected graph Catelliglobosispora koreensis has 7334 nodes and 793230 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02950
-and has 36 connected components, where the component with most nodes has 7256 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 184, the mean node degree is 216.32, and the node degree mode is 2. The top 5
-most central nodes are 1121272.KB903249_gene1305 (degree 2097), 1121272.KB903283_gene4866
-(degree 1803), 1121272.KB903293_gene7062 (degree 1683), 1121272.KB903252_gene1072
-(degree 1651) and 1121272.KB903250_gene2915 (degree 1638).
+The undirected graph Catelliglobosispora koreensis has 7334 nodes and 793230
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02950 and has 36 connected components, where the component
+with most nodes has 7256 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 184, the mean node degree is 216.32,
+and the node degree mode is 2. The top 5 most central nodes are 1121272.KB903249_gene1305
+(degree 2097), 1121272.KB903283_gene4866 (degree 1803), 1121272.KB903293_gene7062
+(degree 1683), 1121272.KB903252_gene1072 (degree 1651) and 1121272.KB903250_gene2915
+(degree 1638).
 
 
 References
@@ -107,14 +108,15 @@ def CatelliglobosisporaKoreensis(
 	
 	Datetime: 2021-02-02 22:34:07.686159
 	
-	The undirected graph Catelliglobosispora koreensis has 7334 nodes and 793230 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02950
-	and has 36 connected components, where the component with most nodes has 7256 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 184, the mean node degree is 216.32, and the node degree mode is 2. The top 5
-	most central nodes are 1121272.KB903249_gene1305 (degree 2097), 1121272.KB903283_gene4866
-	(degree 1803), 1121272.KB903293_gene7062 (degree 1683), 1121272.KB903252_gene1072
-	(degree 1651) and 1121272.KB903250_gene2915 (degree 1638).
+	The undirected graph Catelliglobosispora koreensis has 7334 nodes and 793230
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02950 and has 36 connected components, where the component
+	with most nodes has 7256 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 184, the mean node degree is 216.32,
+	and the node degree mode is 2. The top 5 most central nodes are 1121272.KB903249_gene1305
+	(degree 2097), 1121272.KB903283_gene4866 (degree 1803), 1121272.KB903293_gene7062
+	(degree 1683), 1121272.KB903252_gene1072 (degree 1651) and 1121272.KB903250_gene2915
+	(degree 1638).
 	
 
 

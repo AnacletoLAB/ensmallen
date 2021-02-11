@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:02.298406
 
-The undirected graph Methanococcus maripaludis C7 has 1775 nodes and 193661 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.12300 and has 13 connected components, where the component with most nodes has
-1736 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 220, the mean node degree is 218.21, and the node degree mode is 9. The
-top 5 most central nodes are 426368.MmarC7_1327 (degree 717), 426368.MmarC7_0320
-(degree 706), 426368.MmarC7_0761 (degree 693), 426368.MmarC7_0577 (degree 687) and
-426368.MmarC7_1711 (degree 675).
+The undirected graph Methanococcus maripaludis C7 has 1775 nodes and 193661
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.12300 and has 13 connected components, where the
+component with most nodes has 1736 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 220, the mean node degree
+is 218.21, and the node degree mode is 9. The top 5 most central nodes
+are 426368.MmarC7_1327 (degree 717), 426368.MmarC7_0320 (degree 706), 426368.MmarC7_0761
+(degree 693), 426368.MmarC7_0577 (degree 687) and 426368.MmarC7_1711 (degree
+675).
 
 
 References
@@ -107,14 +108,15 @@ def MethanococcusMaripaludisC7(
 	
 	Datetime: 2021-02-02 20:48:02.298406
 	
-	The undirected graph Methanococcus maripaludis C7 has 1775 nodes and 193661 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.12300 and has 13 connected components, where the component with most nodes has
-	1736 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 220, the mean node degree is 218.21, and the node degree mode is 9. The
-	top 5 most central nodes are 426368.MmarC7_1327 (degree 717), 426368.MmarC7_0320
-	(degree 706), 426368.MmarC7_0761 (degree 693), 426368.MmarC7_0577 (degree 687) and
-	426368.MmarC7_1711 (degree 675).
+	The undirected graph Methanococcus maripaludis C7 has 1775 nodes and 193661
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.12300 and has 13 connected components, where the
+	component with most nodes has 1736 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 220, the mean node degree
+	is 218.21, and the node degree mode is 9. The top 5 most central nodes
+	are 426368.MmarC7_1327 (degree 717), 426368.MmarC7_0320 (degree 706), 426368.MmarC7_0761
+	(degree 693), 426368.MmarC7_0577 (degree 687) and 426368.MmarC7_1711 (degree
+	675).
 	
 
 

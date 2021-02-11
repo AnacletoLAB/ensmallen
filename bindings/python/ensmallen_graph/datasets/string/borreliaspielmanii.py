@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:05.018679
 
-The undirected graph Borrelia spielmanii has 814 nodes and 60629 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.18323
-and has 2 connected components, where the component with most nodes has 812 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 148.97, and the node degree mode is 7. The top 5
-most central nodes are 498742.BSPA14S_0420 (degree 497), 498742.BSPA14S_0557 (degree
-480), 498742.BSPA14S_0236 (degree 445), 498742.BSPA14S_0730 (degree 431) and 498742.BSPA14S_0597
-(degree 430).
+The undirected graph Borrelia spielmanii has 814 nodes and 60629 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.18323 and has 2 connected components, where the component
+with most nodes has 812 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 148.97,
+and the node degree mode is 7. The top 5 most central nodes are 498742.BSPA14S_0420
+(degree 497), 498742.BSPA14S_0557 (degree 480), 498742.BSPA14S_0236 (degree
+445), 498742.BSPA14S_0730 (degree 431) and 498742.BSPA14S_0597 (degree
+430).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaSpielmanii(
 	
 	Datetime: 2021-02-02 21:01:05.018679
 	
-	The undirected graph Borrelia spielmanii has 814 nodes and 60629 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.18323
-	and has 2 connected components, where the component with most nodes has 812 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 148.97, and the node degree mode is 7. The top 5
-	most central nodes are 498742.BSPA14S_0420 (degree 497), 498742.BSPA14S_0557 (degree
-	480), 498742.BSPA14S_0236 (degree 445), 498742.BSPA14S_0730 (degree 431) and 498742.BSPA14S_0597
-	(degree 430).
+	The undirected graph Borrelia spielmanii has 814 nodes and 60629 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.18323 and has 2 connected components, where the component
+	with most nodes has 812 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 148.97,
+	and the node degree mode is 7. The top 5 most central nodes are 498742.BSPA14S_0420
+	(degree 497), 498742.BSPA14S_0557 (degree 480), 498742.BSPA14S_0236 (degree
+	445), 498742.BSPA14S_0730 (degree 431) and 498742.BSPA14S_0597 (degree
+	430).
 	
 
 

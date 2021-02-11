@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:41.022904
 
-The undirected graph MANN-a9 has 45 nodes and 918 unweighted edges, of which none
-are self-loops. The graph is extremely dense as it has a density of 0.92727 and is
-connected, as it has a single component. The graph median node degree is 41, the
-mean node degree is 40.80 and the node degree mode is 41. The top 5 most central
-nodes are 45 (degree 41), 44 (degree 41), 43 (degree 41), 42 (degree 41) and 41 (degree
-41).
+The undirected graph MANN-a9 has 45 nodes and 918 unweighted edges, of
+which none are self-loops. The graph is extremely dense as it has a density
+of 0.92727 and is connected, as it has a single component. The graph median
+node degree is 41, the mean node degree is 40.80 and the node degree mode
+is 41. The top 5 most central nodes are 45 (degree 41), 44 (degree 41),
+43 (degree 41), 42 (degree 41) and 41 (degree 41).
 
 
 References
@@ -115,12 +115,12 @@ def MannA9(
 	
 	Datetime: 2021-02-03 22:53:41.022904
 	
-	The undirected graph MANN-a9 has 45 nodes and 918 unweighted edges, of which none
-	are self-loops. The graph is extremely dense as it has a density of 0.92727 and is
-	connected, as it has a single component. The graph median node degree is 41, the
-	mean node degree is 40.80 and the node degree mode is 41. The top 5 most central
-	nodes are 45 (degree 41), 44 (degree 41), 43 (degree 41), 42 (degree 41) and 41 (degree
-	41).
+	The undirected graph MANN-a9 has 45 nodes and 918 unweighted edges, of
+	which none are self-loops. The graph is extremely dense as it has a density
+	of 0.92727 and is connected, as it has a single component. The graph median
+	node degree is 41, the mean node degree is 40.80 and the node degree mode
+	is 41. The top 5 most central nodes are 45 (degree 41), 44 (degree 41),
+	43 (degree 41), 42 (degree 41) and 41 (degree 41).
 	
 
 

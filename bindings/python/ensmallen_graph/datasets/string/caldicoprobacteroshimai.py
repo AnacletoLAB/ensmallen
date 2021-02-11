@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:38:11.729040
 
-The undirected graph Caldicoprobacter oshimai has 2432 nodes and 170502 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05768
-and has 13 connected components, where the component with most nodes has 2404 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 140.22, and the node degree mode is 2. The top 5
-most central nodes are 1304880.JAGB01000002_gene1670 (degree 840), 1304880.JAGB01000002_gene1555
-(degree 774), 1304880.JAGB01000001_gene145 (degree 773), 1304880.JAGB01000001_gene726
-(degree 697) and 1304880.JAGB01000001_gene748 (degree 648).
+The undirected graph Caldicoprobacter oshimai has 2432 nodes and 170502
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05768 and has 13 connected components, where the component
+with most nodes has 2404 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 140.22,
+and the node degree mode is 2. The top 5 most central nodes are 1304880.JAGB01000002_gene1670
+(degree 840), 1304880.JAGB01000002_gene1555 (degree 774), 1304880.JAGB01000001_gene145
+(degree 773), 1304880.JAGB01000001_gene726 (degree 697) and 1304880.JAGB01000001_gene748
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicoprobacterOshimai(
 	
 	Datetime: 2021-02-03 21:38:11.729040
 	
-	The undirected graph Caldicoprobacter oshimai has 2432 nodes and 170502 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05768
-	and has 13 connected components, where the component with most nodes has 2404 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 140.22, and the node degree mode is 2. The top 5
-	most central nodes are 1304880.JAGB01000002_gene1670 (degree 840), 1304880.JAGB01000002_gene1555
-	(degree 774), 1304880.JAGB01000001_gene145 (degree 773), 1304880.JAGB01000001_gene726
-	(degree 697) and 1304880.JAGB01000001_gene748 (degree 648).
+	The undirected graph Caldicoprobacter oshimai has 2432 nodes and 170502
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05768 and has 13 connected components, where the component
+	with most nodes has 2404 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 140.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1304880.JAGB01000002_gene1670
+	(degree 840), 1304880.JAGB01000002_gene1555 (degree 774), 1304880.JAGB01000001_gene145
+	(degree 773), 1304880.JAGB01000001_gene726 (degree 697) and 1304880.JAGB01000001_gene748
+	(degree 648).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:36.414372
 
-The undirected graph Sediminimonas qiaohouensis has 3314 nodes and 418306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07620
-and has 6 connected components, where the component with most nodes has 3301 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 252.45, and the node degree mode is 2. The top 5
-most central nodes are 1123247.AUIJ01000003_gene2000 (degree 1416), 1123247.AUIJ01000010_gene113
-(degree 1138), 1123247.AUIJ01000002_gene2083 (degree 1133), 1123247.AUIJ01000019_gene11
-(degree 1121) and 1123247.AUIJ01000009_gene3038 (degree 1069).
+The undirected graph Sediminimonas qiaohouensis has 3314 nodes and 418306
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07620 and has 6 connected components, where the component
+with most nodes has 3301 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 252.45,
+and the node degree mode is 2. The top 5 most central nodes are 1123247.AUIJ01000003_gene2000
+(degree 1416), 1123247.AUIJ01000010_gene113 (degree 1138), 1123247.AUIJ01000002_gene2083
+(degree 1133), 1123247.AUIJ01000019_gene11 (degree 1121) and 1123247.AUIJ01000009_gene3038
+(degree 1069).
 
 
 References
@@ -107,14 +108,15 @@ def SediminimonasQiaohouensis(
 	
 	Datetime: 2021-02-02 22:48:36.414372
 	
-	The undirected graph Sediminimonas qiaohouensis has 3314 nodes and 418306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07620
-	and has 6 connected components, where the component with most nodes has 3301 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 252.45, and the node degree mode is 2. The top 5
-	most central nodes are 1123247.AUIJ01000003_gene2000 (degree 1416), 1123247.AUIJ01000010_gene113
-	(degree 1138), 1123247.AUIJ01000002_gene2083 (degree 1133), 1123247.AUIJ01000019_gene11
-	(degree 1121) and 1123247.AUIJ01000009_gene3038 (degree 1069).
+	The undirected graph Sediminimonas qiaohouensis has 3314 nodes and 418306
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07620 and has 6 connected components, where the component
+	with most nodes has 3301 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 252.45,
+	and the node degree mode is 2. The top 5 most central nodes are 1123247.AUIJ01000003_gene2000
+	(degree 1416), 1123247.AUIJ01000010_gene113 (degree 1138), 1123247.AUIJ01000002_gene2083
+	(degree 1133), 1123247.AUIJ01000019_gene11 (degree 1121) and 1123247.AUIJ01000009_gene3038
+	(degree 1069).
 	
 
 

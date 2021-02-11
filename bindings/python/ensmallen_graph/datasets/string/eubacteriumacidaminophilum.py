@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:16:38.094886
 
-The undirected graph Eubacterium acidaminophilum has 2896 nodes and 223323 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05327
-and has 6 connected components, where the component with most nodes has 2885 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 154.23, and the node degree mode is 3. The top 5
-most central nodes are 1286171.EAL2_c11350 (degree 1045), 1286171.EAL2_c17430 (degree
-857), 1286171.EAL2_c09080 (degree 831), 1286171.EAL2_c22190 (degree 809) and 1286171.EAL2_c14420
-(degree 793).
+The undirected graph Eubacterium acidaminophilum has 2896 nodes and 223323
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05327 and has 6 connected components, where the component
+with most nodes has 2885 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 154.23,
+and the node degree mode is 3. The top 5 most central nodes are 1286171.EAL2_c11350
+(degree 1045), 1286171.EAL2_c17430 (degree 857), 1286171.EAL2_c09080 (degree
+831), 1286171.EAL2_c22190 (degree 809) and 1286171.EAL2_c14420 (degree
+793).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumAcidaminophilum(
 	
 	Datetime: 2021-02-03 21:16:38.094886
 	
-	The undirected graph Eubacterium acidaminophilum has 2896 nodes and 223323 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05327
-	and has 6 connected components, where the component with most nodes has 2885 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 154.23, and the node degree mode is 3. The top 5
-	most central nodes are 1286171.EAL2_c11350 (degree 1045), 1286171.EAL2_c17430 (degree
-	857), 1286171.EAL2_c09080 (degree 831), 1286171.EAL2_c22190 (degree 809) and 1286171.EAL2_c14420
-	(degree 793).
+	The undirected graph Eubacterium acidaminophilum has 2896 nodes and 223323
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05327 and has 6 connected components, where the component
+	with most nodes has 2885 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 154.23,
+	and the node degree mode is 3. The top 5 most central nodes are 1286171.EAL2_c11350
+	(degree 1045), 1286171.EAL2_c17430 (degree 857), 1286171.EAL2_c09080 (degree
+	831), 1286171.EAL2_c22190 (degree 809) and 1286171.EAL2_c14420 (degree
+	793).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:22:04.967734
 
-The undirected graph Lactobacillus paraplantarum has 2679 nodes and 173593 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04839
-and has 12 connected components, where the component with most nodes has 2654 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 129.60, and the node degree mode is 2. The top 5 most
-central nodes are 60520.HR47_04715 (degree 1079), 60520.HR47_10725 (degree 829),
-60520.HR47_05100 (degree 823), 60520.HR47_07945 (degree 793) and 60520.HR47_11870
-(degree 760).
+The undirected graph Lactobacillus paraplantarum has 2679 nodes and 173593
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04839 and has 12 connected components, where the component
+with most nodes has 2654 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 129.60,
+and the node degree mode is 2. The top 5 most central nodes are 60520.HR47_04715
+(degree 1079), 60520.HR47_10725 (degree 829), 60520.HR47_05100 (degree
+823), 60520.HR47_07945 (degree 793) and 60520.HR47_11870 (degree 760).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusParaplantarum(
 	
 	Datetime: 2021-02-02 18:22:04.967734
 	
-	The undirected graph Lactobacillus paraplantarum has 2679 nodes and 173593 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04839
-	and has 12 connected components, where the component with most nodes has 2654 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 129.60, and the node degree mode is 2. The top 5 most
-	central nodes are 60520.HR47_04715 (degree 1079), 60520.HR47_10725 (degree 829),
-	60520.HR47_05100 (degree 823), 60520.HR47_07945 (degree 793) and 60520.HR47_11870
-	(degree 760).
+	The undirected graph Lactobacillus paraplantarum has 2679 nodes and 173593
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04839 and has 12 connected components, where the component
+	with most nodes has 2654 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 129.60,
+	and the node degree mode is 2. The top 5 most central nodes are 60520.HR47_04715
+	(degree 1079), 60520.HR47_10725 (degree 829), 60520.HR47_05100 (degree
+	823), 60520.HR47_07945 (degree 793) and 60520.HR47_11870 (degree 760).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:39.799412
 
-The undirected graph Fusobacterium periodonticum has 2558 nodes and 152630 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04667
-and has 10 connected components, where the component with most nodes has 2531 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 119.34, and the node degree mode is 37. The top 5
-most central nodes are 546275.FUSPEROL_01075 (degree 962), 546275.FUSPEROL_00070
-(degree 766), 546275.FUSPEROL_00567 (degree 686), 546275.FUSPEROL_01264 (degree 667)
-and 546275.FUSPEROL_00973 (degree 659).
+The undirected graph Fusobacterium periodonticum has 2558 nodes and 152630
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04667 and has 10 connected components, where the component
+with most nodes has 2531 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 119.34,
+and the node degree mode is 37. The top 5 most central nodes are 546275.FUSPEROL_01075
+(degree 962), 546275.FUSPEROL_00070 (degree 766), 546275.FUSPEROL_00567
+(degree 686), 546275.FUSPEROL_01264 (degree 667) and 546275.FUSPEROL_00973
+(degree 659).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumPeriodonticum(
 	
 	Datetime: 2021-02-02 21:08:39.799412
 	
-	The undirected graph Fusobacterium periodonticum has 2558 nodes and 152630 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04667
-	and has 10 connected components, where the component with most nodes has 2531 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 119.34, and the node degree mode is 37. The top 5
-	most central nodes are 546275.FUSPEROL_01075 (degree 962), 546275.FUSPEROL_00070
-	(degree 766), 546275.FUSPEROL_00567 (degree 686), 546275.FUSPEROL_01264 (degree 667)
-	and 546275.FUSPEROL_00973 (degree 659).
+	The undirected graph Fusobacterium periodonticum has 2558 nodes and 152630
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04667 and has 10 connected components, where the component
+	with most nodes has 2531 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 119.34,
+	and the node degree mode is 37. The top 5 most central nodes are 546275.FUSPEROL_01075
+	(degree 962), 546275.FUSPEROL_00070 (degree 766), 546275.FUSPEROL_00567
+	(degree 686), 546275.FUSPEROL_01264 (degree 667) and 546275.FUSPEROL_00973
+	(degree 659).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:44.695270
 
-The undirected graph Thermomonospora curvata has 4819 nodes and 538046 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04635 and
-has 28 connected components, where the component with most nodes has 4762 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 223.30, and the node degree mode is 1. The top 5 most central
-nodes are 471852.Tcur_4775 (degree 2106), 471852.Tcur_2644 (degree 2042), 471852.Tcur_2852
-(degree 1582), 471852.Tcur_4776 (degree 1551) and 471852.Tcur_0181 (degree 1302).
+The undirected graph Thermomonospora curvata has 4819 nodes and 538046
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04635 and has 28 connected components, where the component
+with most nodes has 4762 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 223.30,
+and the node degree mode is 1. The top 5 most central nodes are 471852.Tcur_4775
+(degree 2106), 471852.Tcur_2644 (degree 2042), 471852.Tcur_2852 (degree
+1582), 471852.Tcur_4776 (degree 1551) and 471852.Tcur_0181 (degree 1302).
 
 
 References
@@ -106,13 +107,14 @@ def ThermomonosporaCurvata(
 	
 	Datetime: 2021-02-02 20:55:44.695270
 	
-	The undirected graph Thermomonospora curvata has 4819 nodes and 538046 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04635 and
-	has 28 connected components, where the component with most nodes has 4762 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 223.30, and the node degree mode is 1. The top 5 most central
-	nodes are 471852.Tcur_4775 (degree 2106), 471852.Tcur_2644 (degree 2042), 471852.Tcur_2852
-	(degree 1582), 471852.Tcur_4776 (degree 1551) and 471852.Tcur_0181 (degree 1302).
+	The undirected graph Thermomonospora curvata has 4819 nodes and 538046
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04635 and has 28 connected components, where the component
+	with most nodes has 4762 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 223.30,
+	and the node degree mode is 1. The top 5 most central nodes are 471852.Tcur_4775
+	(degree 2106), 471852.Tcur_2644 (degree 2042), 471852.Tcur_2852 (degree
+	1582), 471852.Tcur_4776 (degree 1551) and 471852.Tcur_0181 (degree 1302).
 	
 
 

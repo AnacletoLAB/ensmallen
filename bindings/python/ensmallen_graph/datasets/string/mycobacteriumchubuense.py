@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:00.527493
 
-The undirected graph Mycobacterium chubuense has 5147 nodes and 838228 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06329 and
-has 16 connected components, where the component with most nodes has 5105 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 259,
-the mean node degree is 325.72, and the node degree mode is 4. The top 5 most central
-nodes are 710421.Mycch_0293 (degree 2436), 710421.Mycch_3556 (degree 2156), 710421.Mycch_1631
-(degree 2122), 710421.Mycch_2573 (degree 1872) and 710421.Mycch_3426 (degree 1674).
+The undirected graph Mycobacterium chubuense has 5147 nodes and 838228
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06329 and has 16 connected components, where the component
+with most nodes has 5105 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 259, the mean node degree is 325.72,
+and the node degree mode is 4. The top 5 most central nodes are 710421.Mycch_0293
+(degree 2436), 710421.Mycch_3556 (degree 2156), 710421.Mycch_1631 (degree
+2122), 710421.Mycch_2573 (degree 1872) and 710421.Mycch_3426 (degree 1674).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumChubuense(
 	
 	Datetime: 2021-02-02 21:35:00.527493
 	
-	The undirected graph Mycobacterium chubuense has 5147 nodes and 838228 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06329 and
-	has 16 connected components, where the component with most nodes has 5105 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 259,
-	the mean node degree is 325.72, and the node degree mode is 4. The top 5 most central
-	nodes are 710421.Mycch_0293 (degree 2436), 710421.Mycch_3556 (degree 2156), 710421.Mycch_1631
-	(degree 2122), 710421.Mycch_2573 (degree 1872) and 710421.Mycch_3426 (degree 1674).
+	The undirected graph Mycobacterium chubuense has 5147 nodes and 838228
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06329 and has 16 connected components, where the component
+	with most nodes has 5105 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 259, the mean node degree is 325.72,
+	and the node degree mode is 4. The top 5 most central nodes are 710421.Mycch_0293
+	(degree 2436), 710421.Mycch_3556 (degree 2156), 710421.Mycch_1631 (degree
+	2122), 710421.Mycch_2573 (degree 1872) and 710421.Mycch_3426 (degree 1674).
 	
 
 

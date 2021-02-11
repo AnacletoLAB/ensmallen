@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:58.065720
 
-The undirected graph Riesia pediculicola has 542 nodes and 21290 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14521
-and is connected, as it has a single component. The graph median node degree is 71,
-the mean node degree is 78.56, and the node degree mode is 5. The top 5 most central
-nodes are 515618.RIEPE_0099 (degree 282), 515618.RIEPE_0330 (degree 255), 515618.RIEPE_0111
-(degree 254), 515618.RIEPE_0548 (degree 253) and 515618.RIEPE_0178 (degree 236).
+The undirected graph Riesia pediculicola has 542 nodes and 21290 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14521 and is connected, as it has a single component. The
+graph median node degree is 71, the mean node degree is 78.56, and the
+node degree mode is 5. The top 5 most central nodes are 515618.RIEPE_0099
+(degree 282), 515618.RIEPE_0330 (degree 255), 515618.RIEPE_0111 (degree
+254), 515618.RIEPE_0548 (degree 253) and 515618.RIEPE_0178 (degree 236).
 
 
 References
@@ -105,12 +106,13 @@ def RiesiaPediculicola(
 	
 	Datetime: 2021-02-02 21:02:58.065720
 	
-	The undirected graph Riesia pediculicola has 542 nodes and 21290 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14521
-	and is connected, as it has a single component. The graph median node degree is 71,
-	the mean node degree is 78.56, and the node degree mode is 5. The top 5 most central
-	nodes are 515618.RIEPE_0099 (degree 282), 515618.RIEPE_0330 (degree 255), 515618.RIEPE_0111
-	(degree 254), 515618.RIEPE_0548 (degree 253) and 515618.RIEPE_0178 (degree 236).
+	The undirected graph Riesia pediculicola has 542 nodes and 21290 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14521 and is connected, as it has a single component. The
+	graph median node degree is 71, the mean node degree is 78.56, and the
+	node degree mode is 5. The top 5 most central nodes are 515618.RIEPE_0099
+	(degree 282), 515618.RIEPE_0330 (degree 255), 515618.RIEPE_0111 (degree
+	254), 515618.RIEPE_0548 (degree 253) and 515618.RIEPE_0178 (degree 236).
 	
 
 

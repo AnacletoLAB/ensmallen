@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:10.873215
 
-The undirected graph Ureaplasma diversum has 643 nodes and 26528 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12853
-and has 8 connected components, where the component with most nodes has 626 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 57, the mean node degree is 82.51, and the node degree mode is 2. The top 5 most
-central nodes are 1188241.UDIV_7120 (degree 288), 1188241.UDIV_5080 (degree 260),
-1188241.UDIV_6230 (degree 256), 1188241.UDIV_6610 (degree 254) and 1188241.UDIV_0250
-(degree 245).
+The undirected graph Ureaplasma diversum has 643 nodes and 26528 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12853 and has 8 connected components, where the component
+with most nodes has 626 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 57, the mean node degree is 82.51,
+and the node degree mode is 2. The top 5 most central nodes are 1188241.UDIV_7120
+(degree 288), 1188241.UDIV_5080 (degree 260), 1188241.UDIV_6230 (degree
+256), 1188241.UDIV_6610 (degree 254) and 1188241.UDIV_0250 (degree 245).
 
 
 References
@@ -107,14 +107,14 @@ def UreaplasmaDiversum(
 	
 	Datetime: 2021-02-02 23:11:10.873215
 	
-	The undirected graph Ureaplasma diversum has 643 nodes and 26528 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12853
-	and has 8 connected components, where the component with most nodes has 626 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 57, the mean node degree is 82.51, and the node degree mode is 2. The top 5 most
-	central nodes are 1188241.UDIV_7120 (degree 288), 1188241.UDIV_5080 (degree 260),
-	1188241.UDIV_6230 (degree 256), 1188241.UDIV_6610 (degree 254) and 1188241.UDIV_0250
-	(degree 245).
+	The undirected graph Ureaplasma diversum has 643 nodes and 26528 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12853 and has 8 connected components, where the component
+	with most nodes has 626 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 57, the mean node degree is 82.51,
+	and the node degree mode is 2. The top 5 most central nodes are 1188241.UDIV_7120
+	(degree 288), 1188241.UDIV_5080 (degree 260), 1188241.UDIV_6230 (degree
+	256), 1188241.UDIV_6610 (degree 254) and 1188241.UDIV_0250 (degree 245).
 	
 
 

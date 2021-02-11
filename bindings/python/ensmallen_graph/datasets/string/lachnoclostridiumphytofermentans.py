@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:55.249684
 
-The undirected graph Lachnoclostridium phytofermentans has 3860 nodes and 285349
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03831 and has 16 connected components, where the component with most nodes has
-3824 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 111, the mean node degree is 147.85, and the node degree mode is 1. The
-top 5 most central nodes are 357809.Cphy_3287 (degree 1230), 357809.Cphy_1188 (degree
-1189), 357809.Cphy_0025 (degree 1178), 357809.Cphy_0603 (degree 1118) and 357809.Cphy_3426
-(degree 1078).
+The undirected graph Lachnoclostridium phytofermentans has 3860 nodes and
+285349 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03831 and has 16 connected components, where the
+component with most nodes has 3824 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+is 147.85, and the node degree mode is 1. The top 5 most central nodes
+are 357809.Cphy_3287 (degree 1230), 357809.Cphy_1188 (degree 1189), 357809.Cphy_0025
+(degree 1178), 357809.Cphy_0603 (degree 1118) and 357809.Cphy_3426 (degree
+1078).
 
 
 References
@@ -107,14 +108,15 @@ def LachnoclostridiumPhytofermentans(
 	
 	Datetime: 2021-02-02 20:33:55.249684
 	
-	The undirected graph Lachnoclostridium phytofermentans has 3860 nodes and 285349
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03831 and has 16 connected components, where the component with most nodes has
-	3824 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 111, the mean node degree is 147.85, and the node degree mode is 1. The
-	top 5 most central nodes are 357809.Cphy_3287 (degree 1230), 357809.Cphy_1188 (degree
-	1189), 357809.Cphy_0025 (degree 1178), 357809.Cphy_0603 (degree 1118) and 357809.Cphy_3426
-	(degree 1078).
+	The undirected graph Lachnoclostridium phytofermentans has 3860 nodes and
+	285349 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03831 and has 16 connected components, where the
+	component with most nodes has 3824 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+	is 147.85, and the node degree mode is 1. The top 5 most central nodes
+	are 357809.Cphy_3287 (degree 1230), 357809.Cphy_1188 (degree 1189), 357809.Cphy_0025
+	(degree 1178), 357809.Cphy_0603 (degree 1118) and 357809.Cphy_3426 (degree
+	1078).
 	
 
 

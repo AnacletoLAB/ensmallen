@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:44.450862
 
-The undirected graph Thermanaerovibrio acidaminovorans has 1735 nodes and 131653
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08752 and is connected, as it has a single component. The graph median node
-degree is 128, the mean node degree is 151.76, and the node degree mode is 66. The
-top 5 most central nodes are 525903.Taci_0750 (degree 853), 525903.Taci_1372 (degree
-840), 525903.Taci_1079 (degree 817), 525903.Taci_1451 (degree 781) and 525903.Taci_1228
-(degree 712).
+The undirected graph Thermanaerovibrio acidaminovorans has 1735 nodes and
+131653 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08752 and is connected, as it has a single component.
+The graph median node degree is 128, the mean node degree is 151.76, and
+the node degree mode is 66. The top 5 most central nodes are 525903.Taci_0750
+(degree 853), 525903.Taci_1372 (degree 840), 525903.Taci_1079 (degree 817),
+525903.Taci_1451 (degree 781) and 525903.Taci_1228 (degree 712).
 
 
 References
@@ -106,13 +106,13 @@ def ThermanaerovibrioAcidaminovorans(
 	
 	Datetime: 2021-02-02 21:05:44.450862
 	
-	The undirected graph Thermanaerovibrio acidaminovorans has 1735 nodes and 131653
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08752 and is connected, as it has a single component. The graph median node
-	degree is 128, the mean node degree is 151.76, and the node degree mode is 66. The
-	top 5 most central nodes are 525903.Taci_0750 (degree 853), 525903.Taci_1372 (degree
-	840), 525903.Taci_1079 (degree 817), 525903.Taci_1451 (degree 781) and 525903.Taci_1228
-	(degree 712).
+	The undirected graph Thermanaerovibrio acidaminovorans has 1735 nodes and
+	131653 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08752 and is connected, as it has a single component.
+	The graph median node degree is 128, the mean node degree is 151.76, and
+	the node degree mode is 66. The top 5 most central nodes are 525903.Taci_0750
+	(degree 853), 525903.Taci_1372 (degree 840), 525903.Taci_1079 (degree 817),
+	525903.Taci_1451 (degree 781) and 525903.Taci_1228 (degree 712).
 	
 
 

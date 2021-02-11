@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:53.063234
 
-The undirected graph Chlorobium phaeobacteroides DSM266 has 2623 nodes and 153375
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04460 and has 10 connected components, where the component with most nodes has
-2602 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 86, the mean node degree is 116.95, and the node degree mode is 3. The
-top 5 most central nodes are 290317.Cpha266_1750 (degree 1562), 290317.Cpha266_0536
-(degree 1043), 290317.Cpha266_1957 (degree 975), 290317.Cpha266_0617 (degree 847)
-and 290317.Cpha266_0571 (degree 753).
+The undirected graph Chlorobium phaeobacteroides DSM266 has 2623 nodes
+and 153375 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04460 and has 10 connected components, where the
+component with most nodes has 2602 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 116.95, and the node degree mode is 3. The top 5 most central nodes
+are 290317.Cpha266_1750 (degree 1562), 290317.Cpha266_0536 (degree 1043),
+290317.Cpha266_1957 (degree 975), 290317.Cpha266_0617 (degree 847) and
+290317.Cpha266_0571 (degree 753).
 
 
 References
@@ -107,14 +108,15 @@ def ChlorobiumPhaeobacteroidesDsm266(
 	
 	Datetime: 2021-02-02 20:19:53.063234
 	
-	The undirected graph Chlorobium phaeobacteroides DSM266 has 2623 nodes and 153375
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04460 and has 10 connected components, where the component with most nodes has
-	2602 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 86, the mean node degree is 116.95, and the node degree mode is 3. The
-	top 5 most central nodes are 290317.Cpha266_1750 (degree 1562), 290317.Cpha266_0536
-	(degree 1043), 290317.Cpha266_1957 (degree 975), 290317.Cpha266_0617 (degree 847)
-	and 290317.Cpha266_0571 (degree 753).
+	The undirected graph Chlorobium phaeobacteroides DSM266 has 2623 nodes
+	and 153375 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04460 and has 10 connected components, where the
+	component with most nodes has 2602 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 116.95, and the node degree mode is 3. The top 5 most central nodes
+	are 290317.Cpha266_1750 (degree 1562), 290317.Cpha266_0536 (degree 1043),
+	290317.Cpha266_1957 (degree 975), 290317.Cpha266_0617 (degree 847) and
+	290317.Cpha266_0571 (degree 753).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:08.585360
 
-The undirected graph Propionibacterium acidifaciens has 2258 nodes and 172634 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06775
-and has 13 connected components, where the component with most nodes has 2233 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 152.91, and the node degree mode is 1. The top 5
-most central nodes are 1122994.AUFR01000028_gene46 (degree 951), 1122994.AUFR01000036_gene1084
+The undirected graph Propionibacterium acidifaciens has 2258 nodes and
+172634 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06775 and has 13 connected components, where the
+component with most nodes has 2233 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+is 152.91, and the node degree mode is 1. The top 5 most central nodes
+are 1122994.AUFR01000028_gene46 (degree 951), 1122994.AUFR01000036_gene1084
 (degree 838), 1122994.AUFR01000002_gene1306 (degree 823), 1122994.AUFR01000011_gene2028
 (degree 753) and 1122994.AUFR01000029_gene494 (degree 743).
 
@@ -107,12 +108,13 @@ def PropionibacteriumAcidifaciens(
 	
 	Datetime: 2021-02-02 22:46:08.585360
 	
-	The undirected graph Propionibacterium acidifaciens has 2258 nodes and 172634 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06775
-	and has 13 connected components, where the component with most nodes has 2233 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 152.91, and the node degree mode is 1. The top 5
-	most central nodes are 1122994.AUFR01000028_gene46 (degree 951), 1122994.AUFR01000036_gene1084
+	The undirected graph Propionibacterium acidifaciens has 2258 nodes and
+	172634 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06775 and has 13 connected components, where the
+	component with most nodes has 2233 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 152.91, and the node degree mode is 1. The top 5 most central nodes
+	are 1122994.AUFR01000028_gene46 (degree 951), 1122994.AUFR01000036_gene1084
 	(degree 838), 1122994.AUFR01000002_gene1306 (degree 823), 1122994.AUFR01000011_gene2028
 	(degree 753) and 1122994.AUFR01000029_gene494 (degree 743).
 	

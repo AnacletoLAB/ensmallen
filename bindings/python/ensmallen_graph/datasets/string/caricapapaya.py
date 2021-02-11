@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:27:46.292319
 
-The undirected graph Carica papaya has 18670 nodes and 2616036 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01501 and
-has 21 connected components, where the component with most nodes has 18624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 280.24, and the node degree mode is 2. The top 5
-most central nodes are 3649.evm.model.supercontig_40.28 (degree 3823), 3649.evm.model.supercontig_454.3
-(degree 3586), 3649.evm.model.supercontig_967.2 (degree 3444), 3649.evm.model.supercontig_49.137
-(degree 3299) and 3649.evm.model.supercontig_48.85 (degree 3011).
+The undirected graph Carica papaya has 18670 nodes and 2616036 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01501 and has 21 connected components, where the component with most
+nodes has 18624 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 280.24, and
+the node degree mode is 2. The top 5 most central nodes are 3649.evm.model.supercontig_40.28
+(degree 3823), 3649.evm.model.supercontig_454.3 (degree 3586), 3649.evm.model.supercontig_967.2
+(degree 3444), 3649.evm.model.supercontig_49.137 (degree 3299) and 3649.evm.model.supercontig_48.85
+(degree 3011).
 
 
 References
@@ -107,14 +108,15 @@ def CaricaPapaya(
 	
 	Datetime: 2021-02-02 16:27:46.292319
 	
-	The undirected graph Carica papaya has 18670 nodes and 2616036 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01501 and
-	has 21 connected components, where the component with most nodes has 18624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 280.24, and the node degree mode is 2. The top 5
-	most central nodes are 3649.evm.model.supercontig_40.28 (degree 3823), 3649.evm.model.supercontig_454.3
-	(degree 3586), 3649.evm.model.supercontig_967.2 (degree 3444), 3649.evm.model.supercontig_49.137
-	(degree 3299) and 3649.evm.model.supercontig_48.85 (degree 3011).
+	The undirected graph Carica papaya has 18670 nodes and 2616036 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01501 and has 21 connected components, where the component with most
+	nodes has 18624 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 280.24, and
+	the node degree mode is 2. The top 5 most central nodes are 3649.evm.model.supercontig_40.28
+	(degree 3823), 3649.evm.model.supercontig_454.3 (degree 3586), 3649.evm.model.supercontig_967.2
+	(degree 3444), 3649.evm.model.supercontig_49.137 (degree 3299) and 3649.evm.model.supercontig_48.85
+	(degree 3011).
 	
 
 

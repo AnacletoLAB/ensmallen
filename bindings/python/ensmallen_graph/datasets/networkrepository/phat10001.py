@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:41.321950
 
-The undirected graph p-hat1000-1 has 1000 nodes and 122253 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.24475 and
-is connected, as it has a single component. The graph median node degree is 245,
-the mean node degree is 244.51 and the node degree mode is 312. The top 5 most central
-nodes are 461 (degree 408), 801 (degree 402), 623 (degree 395), 653 (degree 394)
-and 777 (degree 391).
+The undirected graph p-hat1000-1 has 1000 nodes and 122253 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.24475 and is connected, as it has a single component. The graph median
+node degree is 245, the mean node degree is 244.51 and the node degree
+mode is 312. The top 5 most central nodes are 461 (degree 408), 801 (degree
+402), 623 (degree 395), 653 (degree 394) and 777 (degree 391).
 
 
 References
@@ -115,12 +115,12 @@ def PHat10001(
 	
 	Datetime: 2021-02-03 22:55:41.321950
 	
-	The undirected graph p-hat1000-1 has 1000 nodes and 122253 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.24475 and
-	is connected, as it has a single component. The graph median node degree is 245,
-	the mean node degree is 244.51 and the node degree mode is 312. The top 5 most central
-	nodes are 461 (degree 408), 801 (degree 402), 623 (degree 395), 653 (degree 394)
-	and 777 (degree 391).
+	The undirected graph p-hat1000-1 has 1000 nodes and 122253 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.24475 and is connected, as it has a single component. The graph median
+	node degree is 245, the mean node degree is 244.51 and the node degree
+	mode is 312. The top 5 most central nodes are 461 (degree 408), 801 (degree
+	402), 623 (degree 395), 653 (degree 394) and 777 (degree 391).
 	
 
 

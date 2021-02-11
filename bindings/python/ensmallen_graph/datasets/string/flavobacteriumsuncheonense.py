@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:25.618483
 
-The undirected graph Flavobacterium suncheonense has 2553 nodes and 185445 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05693
-and has 35 connected components, where the component with most nodes has 2449 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 145.28, and the node degree mode is 3. The top 5
-most central nodes are 1121899.Q764_06335 (degree 969), 1121899.Q764_12530 (degree
-805), 1121899.Q764_00630 (degree 795), 1121899.Q764_00890 (degree 749) and 1121899.Q764_13010
-(degree 722).
+The undirected graph Flavobacterium suncheonense has 2553 nodes and 185445
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05693 and has 35 connected components, where the component
+with most nodes has 2449 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 145.28,
+and the node degree mode is 3. The top 5 most central nodes are 1121899.Q764_06335
+(degree 969), 1121899.Q764_12530 (degree 805), 1121899.Q764_00630 (degree
+795), 1121899.Q764_00890 (degree 749) and 1121899.Q764_13010 (degree 722).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumSuncheonense(
 	
 	Datetime: 2021-02-02 22:38:25.618483
 	
-	The undirected graph Flavobacterium suncheonense has 2553 nodes and 185445 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05693
-	and has 35 connected components, where the component with most nodes has 2449 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 145.28, and the node degree mode is 3. The top 5
-	most central nodes are 1121899.Q764_06335 (degree 969), 1121899.Q764_12530 (degree
-	805), 1121899.Q764_00630 (degree 795), 1121899.Q764_00890 (degree 749) and 1121899.Q764_13010
-	(degree 722).
+	The undirected graph Flavobacterium suncheonense has 2553 nodes and 185445
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05693 and has 35 connected components, where the component
+	with most nodes has 2449 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 145.28,
+	and the node degree mode is 3. The top 5 most central nodes are 1121899.Q764_06335
+	(degree 969), 1121899.Q764_12530 (degree 805), 1121899.Q764_00630 (degree
+	795), 1121899.Q764_00890 (degree 749) and 1121899.Q764_13010 (degree 722).
 	
 
 

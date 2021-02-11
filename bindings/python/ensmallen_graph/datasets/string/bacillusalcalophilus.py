@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:39.106558
 
-The undirected graph Bacillus alcalophilus has 3652 nodes and 271695 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04075 and
-has 23 connected components, where the component with most nodes has 3595 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 148.79, and the node degree mode is 2. The top 5 most central
-nodes are 1218173.BALCAV_0207955 (degree 1191), 1218173.BALCAV_0221125 (degree 1095),
-1218173.BALCAV_0218115 (degree 961), 1218173.BALCAV_0208355 (degree 926) and 1218173.BALCAV_0200040
+The undirected graph Bacillus alcalophilus has 3652 nodes and 271695 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04075 and has 23 connected components, where the component with most
+nodes has 3595 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 148.79, and
+the node degree mode is 2. The top 5 most central nodes are 1218173.BALCAV_0207955
+(degree 1191), 1218173.BALCAV_0221125 (degree 1095), 1218173.BALCAV_0218115
+(degree 961), 1218173.BALCAV_0208355 (degree 926) and 1218173.BALCAV_0200040
 (degree 899).
 
 
@@ -107,13 +108,14 @@ def BacillusAlcalophilus(
 	
 	Datetime: 2021-02-02 23:22:39.106558
 	
-	The undirected graph Bacillus alcalophilus has 3652 nodes and 271695 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04075 and
-	has 23 connected components, where the component with most nodes has 3595 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 148.79, and the node degree mode is 2. The top 5 most central
-	nodes are 1218173.BALCAV_0207955 (degree 1191), 1218173.BALCAV_0221125 (degree 1095),
-	1218173.BALCAV_0218115 (degree 961), 1218173.BALCAV_0208355 (degree 926) and 1218173.BALCAV_0200040
+	The undirected graph Bacillus alcalophilus has 3652 nodes and 271695 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04075 and has 23 connected components, where the component with most
+	nodes has 3595 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 148.79, and
+	the node degree mode is 2. The top 5 most central nodes are 1218173.BALCAV_0207955
+	(degree 1191), 1218173.BALCAV_0221125 (degree 1095), 1218173.BALCAV_0218115
+	(degree 961), 1218173.BALCAV_0208355 (degree 926) and 1218173.BALCAV_0200040
 	(degree 899).
 	
 

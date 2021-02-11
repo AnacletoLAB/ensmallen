@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:09.557316
 
-The undirected graph Corynebacterium striatum has 2622 nodes and 157342 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04579
-and has 11 connected components, where the component with most nodes has 2593 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 120.02, and the node degree mode is 3. The top 5 most
-central nodes are 525268.HMPREF0308_1302 (degree 970), 525268.HMPREF0308_0254 (degree
-770), 525268.HMPREF0308_1354 (degree 762), 525268.HMPREF0308_1560 (degree 753) and
-525268.HMPREF0308_1556 (degree 668).
+The undirected graph Corynebacterium striatum has 2622 nodes and 157342
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04579 and has 11 connected components, where the component
+with most nodes has 2593 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 120.02,
+and the node degree mode is 3. The top 5 most central nodes are 525268.HMPREF0308_1302
+(degree 970), 525268.HMPREF0308_0254 (degree 770), 525268.HMPREF0308_1354
+(degree 762), 525268.HMPREF0308_1560 (degree 753) and 525268.HMPREF0308_1556
+(degree 668).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumStriatum(
 	
 	Datetime: 2021-02-02 21:05:09.557316
 	
-	The undirected graph Corynebacterium striatum has 2622 nodes and 157342 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04579
-	and has 11 connected components, where the component with most nodes has 2593 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 120.02, and the node degree mode is 3. The top 5 most
-	central nodes are 525268.HMPREF0308_1302 (degree 970), 525268.HMPREF0308_0254 (degree
-	770), 525268.HMPREF0308_1354 (degree 762), 525268.HMPREF0308_1560 (degree 753) and
-	525268.HMPREF0308_1556 (degree 668).
+	The undirected graph Corynebacterium striatum has 2622 nodes and 157342
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04579 and has 11 connected components, where the component
+	with most nodes has 2593 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 120.02,
+	and the node degree mode is 3. The top 5 most central nodes are 525268.HMPREF0308_1302
+	(degree 970), 525268.HMPREF0308_0254 (degree 770), 525268.HMPREF0308_1354
+	(degree 762), 525268.HMPREF0308_1560 (degree 753) and 525268.HMPREF0308_1556
+	(degree 668).
 	
 
 

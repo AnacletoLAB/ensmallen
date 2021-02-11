@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:27.616345
 
-The undirected graph Hoeflea sp. 108 has 5541 nodes and 762555 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04968 and
-has 13 connected components, where the component with most nodes has 5515 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 275.24, and the node degree mode is 1. The top 5 most central
-nodes are 1116369.KB890024_gene279 (degree 2116), 1116369.KB890024_gene3596 (degree
-1745), 1116369.KB890024_gene1688 (degree 1713), 1116369.KB890024_gene1142 (degree
-1657) and 1116369.KB890024_gene2502 (degree 1628).
+The undirected graph Hoeflea sp. 108 has 5541 nodes and 762555 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04968 and has 13 connected components, where the component with most
+nodes has 5515 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 275.24, and
+the node degree mode is 1. The top 5 most central nodes are 1116369.KB890024_gene279
+(degree 2116), 1116369.KB890024_gene3596 (degree 1745), 1116369.KB890024_gene1688
+(degree 1713), 1116369.KB890024_gene1142 (degree 1657) and 1116369.KB890024_gene2502
+(degree 1628).
 
 
 References
@@ -107,14 +108,15 @@ def HoefleaSp.108(
 	
 	Datetime: 2021-02-02 22:27:27.616345
 	
-	The undirected graph Hoeflea sp. 108 has 5541 nodes and 762555 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04968 and
-	has 13 connected components, where the component with most nodes has 5515 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 275.24, and the node degree mode is 1. The top 5 most central
-	nodes are 1116369.KB890024_gene279 (degree 2116), 1116369.KB890024_gene3596 (degree
-	1745), 1116369.KB890024_gene1688 (degree 1713), 1116369.KB890024_gene1142 (degree
-	1657) and 1116369.KB890024_gene2502 (degree 1628).
+	The undirected graph Hoeflea sp. 108 has 5541 nodes and 762555 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04968 and has 13 connected components, where the component with most
+	nodes has 5515 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 275.24, and
+	the node degree mode is 1. The top 5 most central nodes are 1116369.KB890024_gene279
+	(degree 2116), 1116369.KB890024_gene3596 (degree 1745), 1116369.KB890024_gene1688
+	(degree 1713), 1116369.KB890024_gene1142 (degree 1657) and 1116369.KB890024_gene2502
+	(degree 1628).
 	
 
 

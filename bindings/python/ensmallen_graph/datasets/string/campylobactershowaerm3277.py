@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:14.864690
 
-The undirected graph Campylobacter showae RM3277 has 2309 nodes and 115381 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04330
-and has 28 connected components, where the component with most nodes has 2242 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 71, the mean node degree is 99.94, and the node degree mode is 2. The top 5 most
-central nodes are 553219.CAMSH0001_2032 (degree 756), 553219.CAMSH0001_0551 (degree
-741), 553219.CAMSH0001_0827 (degree 667), 553219.CAMSH0001_1004 (degree 659) and
-553219.CAMSH0001_2236 (degree 627).
+The undirected graph Campylobacter showae RM3277 has 2309 nodes and 115381
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04330 and has 28 connected components, where the component
+with most nodes has 2242 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 71, the mean node degree is 99.94,
+and the node degree mode is 2. The top 5 most central nodes are 553219.CAMSH0001_2032
+(degree 756), 553219.CAMSH0001_0551 (degree 741), 553219.CAMSH0001_0827
+(degree 667), 553219.CAMSH0001_1004 (degree 659) and 553219.CAMSH0001_2236
+(degree 627).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterShowaeRm3277(
 	
 	Datetime: 2021-02-02 21:10:14.864690
 	
-	The undirected graph Campylobacter showae RM3277 has 2309 nodes and 115381 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04330
-	and has 28 connected components, where the component with most nodes has 2242 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 71, the mean node degree is 99.94, and the node degree mode is 2. The top 5 most
-	central nodes are 553219.CAMSH0001_2032 (degree 756), 553219.CAMSH0001_0551 (degree
-	741), 553219.CAMSH0001_0827 (degree 667), 553219.CAMSH0001_1004 (degree 659) and
-	553219.CAMSH0001_2236 (degree 627).
+	The undirected graph Campylobacter showae RM3277 has 2309 nodes and 115381
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04330 and has 28 connected components, where the component
+	with most nodes has 2242 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 71, the mean node degree is 99.94,
+	and the node degree mode is 2. The top 5 most central nodes are 553219.CAMSH0001_2032
+	(degree 756), 553219.CAMSH0001_0551 (degree 741), 553219.CAMSH0001_0827
+	(degree 667), 553219.CAMSH0001_1004 (degree 659) and 553219.CAMSH0001_2236
+	(degree 627).
 	
 
 

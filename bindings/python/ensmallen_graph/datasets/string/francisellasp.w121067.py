@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:33.429124
 
-The undirected graph Francisella sp. W121067 has 1510 nodes and 101145 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08878 and
-has 12 connected components, where the component with most nodes has 1484 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 133.97, and the node degree mode is 3. The top 5 most central
-nodes are 1385420.FRA_36c08310 (degree 644), 1385420.FRA_34c07040 (degree 601), 1385420.FRA_35c07390
-(degree 597), 1385420.FRA_29c03220 (degree 536) and 1385420.FRA_41c10060 (degree
+The undirected graph Francisella sp. W121067 has 1510 nodes and 101145
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08878 and has 12 connected components, where the component
+with most nodes has 1484 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 133.97,
+and the node degree mode is 3. The top 5 most central nodes are 1385420.FRA_36c08310
+(degree 644), 1385420.FRA_34c07040 (degree 601), 1385420.FRA_35c07390 (degree
+597), 1385420.FRA_29c03220 (degree 536) and 1385420.FRA_41c10060 (degree
 522).
 
 
@@ -107,13 +108,14 @@ def FrancisellaSp.W121067(
 	
 	Datetime: 2021-02-03 22:19:33.429124
 	
-	The undirected graph Francisella sp. W121067 has 1510 nodes and 101145 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08878 and
-	has 12 connected components, where the component with most nodes has 1484 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 133.97, and the node degree mode is 3. The top 5 most central
-	nodes are 1385420.FRA_36c08310 (degree 644), 1385420.FRA_34c07040 (degree 601), 1385420.FRA_35c07390
-	(degree 597), 1385420.FRA_29c03220 (degree 536) and 1385420.FRA_41c10060 (degree
+	The undirected graph Francisella sp. W121067 has 1510 nodes and 101145
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08878 and has 12 connected components, where the component
+	with most nodes has 1484 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 133.97,
+	and the node degree mode is 3. The top 5 most central nodes are 1385420.FRA_36c08310
+	(degree 644), 1385420.FRA_34c07040 (degree 601), 1385420.FRA_35c07390 (degree
+	597), 1385420.FRA_29c03220 (degree 536) and 1385420.FRA_41c10060 (degree
 	522).
 	
 

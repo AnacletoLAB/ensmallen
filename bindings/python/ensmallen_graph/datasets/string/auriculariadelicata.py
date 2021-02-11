@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:40.130854
 
-The undirected graph Auricularia delicata has 8431 nodes and 826280 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02325 and
-has 12 connected components, where the component with most nodes has 8386 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 196.01, and the node degree mode is 1. The top 5 most central
-nodes are 160860.XP_007344897.1 (degree 2056), 160860.XP_007338540.1 (degree 1828),
-160860.XP_007347326.1 (degree 1717), 160860.XP_007338676.1 (degree 1643) and 160860.XP_007352355.1
+The undirected graph Auricularia delicata has 8431 nodes and 826280 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02325 and has 12 connected components, where the component with most
+nodes has 8386 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 196.01, and
+the node degree mode is 1. The top 5 most central nodes are 160860.XP_007344897.1
+(degree 2056), 160860.XP_007338540.1 (degree 1828), 160860.XP_007347326.1
+(degree 1717), 160860.XP_007338676.1 (degree 1643) and 160860.XP_007352355.1
 (degree 1539).
 
 
@@ -107,13 +108,14 @@ def AuriculariaDelicata(
 	
 	Datetime: 2021-02-02 19:53:40.130854
 	
-	The undirected graph Auricularia delicata has 8431 nodes and 826280 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02325 and
-	has 12 connected components, where the component with most nodes has 8386 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 196.01, and the node degree mode is 1. The top 5 most central
-	nodes are 160860.XP_007344897.1 (degree 2056), 160860.XP_007338540.1 (degree 1828),
-	160860.XP_007347326.1 (degree 1717), 160860.XP_007338676.1 (degree 1643) and 160860.XP_007352355.1
+	The undirected graph Auricularia delicata has 8431 nodes and 826280 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02325 and has 12 connected components, where the component with most
+	nodes has 8386 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 196.01, and
+	the node degree mode is 1. The top 5 most central nodes are 160860.XP_007344897.1
+	(degree 2056), 160860.XP_007338540.1 (degree 1828), 160860.XP_007347326.1
+	(degree 1717), 160860.XP_007338676.1 (degree 1643) and 160860.XP_007352355.1
 	(degree 1539).
 	
 

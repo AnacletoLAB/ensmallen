@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:01.826617
 
-The undirected graph Streptomyces sp. ATexABD23 has 6683 nodes and 929712 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04164
-and has 26 connected components, where the component with most nodes has 6625 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 278.23, and the node degree mode is 2. The top 5
-most central nodes are 1157635.KB892007_gene3160 (degree 2653), 1157635.KB892079_gene6555
-(degree 2220), 1157635.KB892006_gene3256 (degree 1930), 1157635.KB892024_gene553
-(degree 1928) and 1157635.KB892002_gene4150 (degree 1911).
+The undirected graph Streptomyces sp. ATexABD23 has 6683 nodes and 929712
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04164 and has 26 connected components, where the component
+with most nodes has 6625 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 278.23,
+and the node degree mode is 2. The top 5 most central nodes are 1157635.KB892007_gene3160
+(degree 2653), 1157635.KB892079_gene6555 (degree 2220), 1157635.KB892006_gene3256
+(degree 1930), 1157635.KB892024_gene553 (degree 1928) and 1157635.KB892002_gene4150
+(degree 1911).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Atexabd23(
 	
 	Datetime: 2021-02-02 23:02:01.826617
 	
-	The undirected graph Streptomyces sp. ATexABD23 has 6683 nodes and 929712 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04164
-	and has 26 connected components, where the component with most nodes has 6625 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 278.23, and the node degree mode is 2. The top 5
-	most central nodes are 1157635.KB892007_gene3160 (degree 2653), 1157635.KB892079_gene6555
-	(degree 2220), 1157635.KB892006_gene3256 (degree 1930), 1157635.KB892024_gene553
-	(degree 1928) and 1157635.KB892002_gene4150 (degree 1911).
+	The undirected graph Streptomyces sp. ATexABD23 has 6683 nodes and 929712
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04164 and has 26 connected components, where the component
+	with most nodes has 6625 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 278.23,
+	and the node degree mode is 2. The top 5 most central nodes are 1157635.KB892007_gene3160
+	(degree 2653), 1157635.KB892079_gene6555 (degree 2220), 1157635.KB892006_gene3256
+	(degree 1930), 1157635.KB892024_gene553 (degree 1928) and 1157635.KB892002_gene4150
+	(degree 1911).
 	
 
 

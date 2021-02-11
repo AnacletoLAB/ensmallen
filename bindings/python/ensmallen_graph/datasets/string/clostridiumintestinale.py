@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:24:52.345054
 
-The undirected graph Clostridium intestinale has 4342 nodes and 618549 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06563 and
-has 17 connected components, where the component with most nodes has 4296 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 284.91, and the node degree mode is 6. The top 5 most central
-nodes are 1294142.CINTURNW_4326 (degree 2011), 1294142.CINTURNW_2528 (degree 1946),
-1294142.CINTURNW_0283 (degree 1847), 1294142.CINTURNW_1771 (degree 1780) and 1294142.CINTURNW_3765
+The undirected graph Clostridium intestinale has 4342 nodes and 618549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06563 and has 17 connected components, where the component
+with most nodes has 4296 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 284.91,
+and the node degree mode is 6. The top 5 most central nodes are 1294142.CINTURNW_4326
+(degree 2011), 1294142.CINTURNW_2528 (degree 1946), 1294142.CINTURNW_0283
+(degree 1847), 1294142.CINTURNW_1771 (degree 1780) and 1294142.CINTURNW_3765
 (degree 1588).
 
 
@@ -107,13 +108,14 @@ def ClostridiumIntestinale(
 	
 	Datetime: 2021-02-03 21:24:52.345054
 	
-	The undirected graph Clostridium intestinale has 4342 nodes and 618549 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06563 and
-	has 17 connected components, where the component with most nodes has 4296 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 284.91, and the node degree mode is 6. The top 5 most central
-	nodes are 1294142.CINTURNW_4326 (degree 2011), 1294142.CINTURNW_2528 (degree 1946),
-	1294142.CINTURNW_0283 (degree 1847), 1294142.CINTURNW_1771 (degree 1780) and 1294142.CINTURNW_3765
+	The undirected graph Clostridium intestinale has 4342 nodes and 618549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06563 and has 17 connected components, where the component
+	with most nodes has 4296 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 284.91,
+	and the node degree mode is 6. The top 5 most central nodes are 1294142.CINTURNW_4326
+	(degree 2011), 1294142.CINTURNW_2528 (degree 1946), 1294142.CINTURNW_0283
+	(degree 1847), 1294142.CINTURNW_1771 (degree 1780) and 1294142.CINTURNW_3765
 	(degree 1588).
 	
 

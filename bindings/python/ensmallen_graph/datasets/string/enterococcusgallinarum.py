@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:47.944989
 
-The undirected graph Enterococcus gallinarum has 3025 nodes and 469782 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10271
-and has 12 connected components, where the component with most nodes has 3000 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 310.60, and the node degree mode is 5. The top 5
-most central nodes are 565653.EGBG_02327 (degree 1614), 565653.EGBG_00866 (degree
-1608), 565653.EGBG_00819 (degree 1442), 565653.EGBG_02957 (degree 1388) and 565653.EGBG_02552
-(degree 1381).
+The undirected graph Enterococcus gallinarum has 3025 nodes and 469782
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10271 and has 12 connected components, where the
+component with most nodes has 3000 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 241, the mean node degree
+is 310.60, and the node degree mode is 5. The top 5 most central nodes
+are 565653.EGBG_02327 (degree 1614), 565653.EGBG_00866 (degree 1608), 565653.EGBG_00819
+(degree 1442), 565653.EGBG_02957 (degree 1388) and 565653.EGBG_02552 (degree
+1381).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusGallinarum(
 	
 	Datetime: 2021-02-05 17:17:47.944989
 	
-	The undirected graph Enterococcus gallinarum has 3025 nodes and 469782 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10271
-	and has 12 connected components, where the component with most nodes has 3000 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 310.60, and the node degree mode is 5. The top 5
-	most central nodes are 565653.EGBG_02327 (degree 1614), 565653.EGBG_00866 (degree
-	1608), 565653.EGBG_00819 (degree 1442), 565653.EGBG_02957 (degree 1388) and 565653.EGBG_02552
-	(degree 1381).
+	The undirected graph Enterococcus gallinarum has 3025 nodes and 469782
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10271 and has 12 connected components, where the
+	component with most nodes has 3000 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 241, the mean node degree
+	is 310.60, and the node degree mode is 5. The top 5 most central nodes
+	are 565653.EGBG_02327 (degree 1614), 565653.EGBG_00866 (degree 1608), 565653.EGBG_00819
+	(degree 1442), 565653.EGBG_02957 (degree 1388) and 565653.EGBG_02552 (degree
+	1381).
 	
 
 

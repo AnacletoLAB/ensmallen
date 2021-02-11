@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:21.844720
 
-The undirected graph fe-4elt2 has 11143 nodes and 32818 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00053 and
-is connected, as it has a single component. The graph median node degree is 6, the
-mean node degree is 5.89 and the node degree mode is 6. The top 5 most central nodes
-are 7076 (degree 12), 6187 (degree 12), 8355 (degree 10), 5989 (degree 10) and 5790
-(degree 10).
+The undirected graph fe-4elt2 has 11143 nodes and 32818 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00053 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 5.89 and the node degree mode
+is 6. The top 5 most central nodes are 7076 (degree 12), 6187 (degree 12),
+8355 (degree 10), 5989 (degree 10) and 5790 (degree 10).
 
 
 References
@@ -109,12 +109,12 @@ def Fe4elt2(
 	
 	Datetime: 2021-02-03 23:12:21.844720
 	
-	The undirected graph fe-4elt2 has 11143 nodes and 32818 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00053 and
-	is connected, as it has a single component. The graph median node degree is 6, the
-	mean node degree is 5.89 and the node degree mode is 6. The top 5 most central nodes
-	are 7076 (degree 12), 6187 (degree 12), 8355 (degree 10), 5989 (degree 10) and 5790
-	(degree 10).
+	The undirected graph fe-4elt2 has 11143 nodes and 32818 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00053 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 5.89 and the node degree mode
+	is 6. The top 5 most central nodes are 7076 (degree 12), 6187 (degree 12),
+	8355 (degree 10), 5989 (degree 10) and 5790 (degree 10).
 	
 
 

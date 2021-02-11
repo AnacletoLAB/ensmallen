@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:51.659427
 
-The undirected graph Cytophaga hutchinsonii has 3763 nodes and 406567 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05744 and
-has 15 connected components, where the component with most nodes has 3730 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 216.09, and the node degree mode is 2. The top 5 most central
-nodes are 269798.CHU_1796 (degree 1360), 269798.CHU_2784 (degree 1349), 269798.CHU_3657
-(degree 1253), 269798.CHU_2895 (degree 1142) and 269798.CHU_0196 (degree 994).
+The undirected graph Cytophaga hutchinsonii has 3763 nodes and 406567 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05744 and has 15 connected components, where the component with most
+nodes has 3730 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 216.09, and
+the node degree mode is 2. The top 5 most central nodes are 269798.CHU_1796
+(degree 1360), 269798.CHU_2784 (degree 1349), 269798.CHU_3657 (degree 1253),
+269798.CHU_2895 (degree 1142) and 269798.CHU_0196 (degree 994).
 
 
 References
@@ -106,13 +107,14 @@ def CytophagaHutchinsonii(
 	
 	Datetime: 2021-02-02 20:15:51.659427
 	
-	The undirected graph Cytophaga hutchinsonii has 3763 nodes and 406567 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05744 and
-	has 15 connected components, where the component with most nodes has 3730 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 216.09, and the node degree mode is 2. The top 5 most central
-	nodes are 269798.CHU_1796 (degree 1360), 269798.CHU_2784 (degree 1349), 269798.CHU_3657
-	(degree 1253), 269798.CHU_2895 (degree 1142) and 269798.CHU_0196 (degree 994).
+	The undirected graph Cytophaga hutchinsonii has 3763 nodes and 406567 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05744 and has 15 connected components, where the component with most
+	nodes has 3730 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 216.09, and
+	the node degree mode is 2. The top 5 most central nodes are 269798.CHU_1796
+	(degree 1360), 269798.CHU_2784 (degree 1349), 269798.CHU_3657 (degree 1253),
+	269798.CHU_2895 (degree 1142) and 269798.CHU_0196 (degree 994).
 	
 
 

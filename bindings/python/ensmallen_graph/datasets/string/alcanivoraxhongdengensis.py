@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:18.948782
 
-The undirected graph Alcanivorax hongdengensis has 3390 nodes and 266287 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-and has 11 connected components, where the component with most nodes has 3368 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 157.10, and the node degree mode is 2. The top 5
-most central nodes are 1177179.A11A3_16000 (degree 1143), 1177179.A11A3_12770 (degree
-1013), 1177179.A11A3_05074 (degree 928), 1177179.A11A3_04395 (degree 909) and 1177179.A11A3_02322
-(degree 898).
+The undirected graph Alcanivorax hongdengensis has 3390 nodes and 266287
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04636 and has 11 connected components, where the component
+with most nodes has 3368 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 157.10,
+and the node degree mode is 2. The top 5 most central nodes are 1177179.A11A3_16000
+(degree 1143), 1177179.A11A3_12770 (degree 1013), 1177179.A11A3_05074 (degree
+928), 1177179.A11A3_04395 (degree 909) and 1177179.A11A3_02322 (degree
+898).
 
 
 References
@@ -107,14 +108,15 @@ def AlcanivoraxHongdengensis(
 	
 	Datetime: 2021-02-02 23:09:18.948782
 	
-	The undirected graph Alcanivorax hongdengensis has 3390 nodes and 266287 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-	and has 11 connected components, where the component with most nodes has 3368 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 157.10, and the node degree mode is 2. The top 5
-	most central nodes are 1177179.A11A3_16000 (degree 1143), 1177179.A11A3_12770 (degree
-	1013), 1177179.A11A3_05074 (degree 928), 1177179.A11A3_04395 (degree 909) and 1177179.A11A3_02322
-	(degree 898).
+	The undirected graph Alcanivorax hongdengensis has 3390 nodes and 266287
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04636 and has 11 connected components, where the component
+	with most nodes has 3368 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 157.10,
+	and the node degree mode is 2. The top 5 most central nodes are 1177179.A11A3_16000
+	(degree 1143), 1177179.A11A3_12770 (degree 1013), 1177179.A11A3_05074 (degree
+	928), 1177179.A11A3_04395 (degree 909) and 1177179.A11A3_02322 (degree
+	898).
 	
 
 

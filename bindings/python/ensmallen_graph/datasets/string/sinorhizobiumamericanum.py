@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:00.468669
 
-The undirected graph Sinorhizobium americanum has 6494 nodes and 688057 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03264
-and has 34 connected components, where the component with most nodes has 6419 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 211.91, and the node degree mode is 2. The top 5
-most central nodes are 1408224.SAMCCGM7_c0559 (degree 2206), 1408224.SAMCCGM7_c5579
-(degree 1931), 1408224.SAMCCGM7_c0010 (degree 1826), 1408224.SAMCCGM7_c6485 (degree
-1764) and 1408224.SAMCCGM7_c0337 (degree 1763).
+The undirected graph Sinorhizobium americanum has 6494 nodes and 688057
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03264 and has 34 connected components, where the component
+with most nodes has 6419 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 211.91,
+and the node degree mode is 2. The top 5 most central nodes are 1408224.SAMCCGM7_c0559
+(degree 2206), 1408224.SAMCCGM7_c5579 (degree 1931), 1408224.SAMCCGM7_c0010
+(degree 1826), 1408224.SAMCCGM7_c6485 (degree 1764) and 1408224.SAMCCGM7_c0337
+(degree 1763).
 
 
 References
@@ -107,14 +108,15 @@ def SinorhizobiumAmericanum(
 	
 	Datetime: 2021-02-03 22:34:00.468669
 	
-	The undirected graph Sinorhizobium americanum has 6494 nodes and 688057 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03264
-	and has 34 connected components, where the component with most nodes has 6419 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 211.91, and the node degree mode is 2. The top 5
-	most central nodes are 1408224.SAMCCGM7_c0559 (degree 2206), 1408224.SAMCCGM7_c5579
-	(degree 1931), 1408224.SAMCCGM7_c0010 (degree 1826), 1408224.SAMCCGM7_c6485 (degree
-	1764) and 1408224.SAMCCGM7_c0337 (degree 1763).
+	The undirected graph Sinorhizobium americanum has 6494 nodes and 688057
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03264 and has 34 connected components, where the component
+	with most nodes has 6419 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 211.91,
+	and the node degree mode is 2. The top 5 most central nodes are 1408224.SAMCCGM7_c0559
+	(degree 2206), 1408224.SAMCCGM7_c5579 (degree 1931), 1408224.SAMCCGM7_c0010
+	(degree 1826), 1408224.SAMCCGM7_c6485 (degree 1764) and 1408224.SAMCCGM7_c0337
+	(degree 1763).
 	
 
 

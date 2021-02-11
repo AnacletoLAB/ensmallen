@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:05.953031
 
-The undirected graph Erwinia pyrifoliae has 3650 nodes and 298557 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04483 and
-has 16 connected components, where the component with most nodes has 3613 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 163.59, and the node degree mode is 2. The top 5 most central
-nodes are 634499.EpC_00250 (degree 1344), 634499.EpC_10570 (degree 1173), 634499.EpC_03230
-(degree 1089), 634499.EpC_03240 (degree 1053) and 634499.EpC_09460 (degree 1016).
+The undirected graph Erwinia pyrifoliae has 3650 nodes and 298557 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04483 and has 16 connected components, where the component with most
+nodes has 3613 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 163.59, and
+the node degree mode is 2. The top 5 most central nodes are 634499.EpC_00250
+(degree 1344), 634499.EpC_10570 (degree 1173), 634499.EpC_03230 (degree
+1089), 634499.EpC_03240 (degree 1053) and 634499.EpC_09460 (degree 1016).
 
 
 References
@@ -106,13 +107,14 @@ def ErwiniaPyrifoliae(
 	
 	Datetime: 2021-02-02 21:22:05.953031
 	
-	The undirected graph Erwinia pyrifoliae has 3650 nodes and 298557 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04483 and
-	has 16 connected components, where the component with most nodes has 3613 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 163.59, and the node degree mode is 2. The top 5 most central
-	nodes are 634499.EpC_00250 (degree 1344), 634499.EpC_10570 (degree 1173), 634499.EpC_03230
-	(degree 1089), 634499.EpC_03240 (degree 1053) and 634499.EpC_09460 (degree 1016).
+	The undirected graph Erwinia pyrifoliae has 3650 nodes and 298557 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04483 and has 16 connected components, where the component with most
+	nodes has 3613 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 163.59, and
+	the node degree mode is 2. The top 5 most central nodes are 634499.EpC_00250
+	(degree 1344), 634499.EpC_10570 (degree 1173), 634499.EpC_03230 (degree
+	1089), 634499.EpC_03240 (degree 1053) and 634499.EpC_09460 (degree 1016).
 	
 
 

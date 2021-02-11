@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:46.444892
 
-The undirected graph Pseudomonas putida W619 has 5149 nodes and 494712 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03733 and
-has 23 connected components, where the component with most nodes has 5100 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 192.16, and the node degree mode is 1. The top 5 most central
-nodes are 390235.PputW619_4380 (degree 2117), 390235.PputW619_5105 (degree 1924),
-390235.PputW619_0390 (degree 1436), 390235.PputW619_0675 (degree 1411) and 390235.PputW619_4193
+The undirected graph Pseudomonas putida W619 has 5149 nodes and 494712
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03733 and has 23 connected components, where the component
+with most nodes has 5100 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 192.16,
+and the node degree mode is 1. The top 5 most central nodes are 390235.PputW619_4380
+(degree 2117), 390235.PputW619_5105 (degree 1924), 390235.PputW619_0390
+(degree 1436), 390235.PputW619_0675 (degree 1411) and 390235.PputW619_4193
 (degree 1404).
 
 
@@ -107,13 +108,14 @@ def PseudomonasPutidaW619(
 	
 	Datetime: 2021-02-02 20:38:46.444892
 	
-	The undirected graph Pseudomonas putida W619 has 5149 nodes and 494712 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03733 and
-	has 23 connected components, where the component with most nodes has 5100 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 192.16, and the node degree mode is 1. The top 5 most central
-	nodes are 390235.PputW619_4380 (degree 2117), 390235.PputW619_5105 (degree 1924),
-	390235.PputW619_0390 (degree 1436), 390235.PputW619_0675 (degree 1411) and 390235.PputW619_4193
+	The undirected graph Pseudomonas putida W619 has 5149 nodes and 494712
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03733 and has 23 connected components, where the component
+	with most nodes has 5100 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 192.16,
+	and the node degree mode is 1. The top 5 most central nodes are 390235.PputW619_4380
+	(degree 2117), 390235.PputW619_5105 (degree 1924), 390235.PputW619_0390
+	(degree 1436), 390235.PputW619_0675 (degree 1411) and 390235.PputW619_4193
 	(degree 1404).
 	
 

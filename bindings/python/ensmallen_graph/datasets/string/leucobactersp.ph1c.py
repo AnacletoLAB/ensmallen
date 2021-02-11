@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:29:06.726816
 
-The undirected graph Leucobacter sp. PH1c has 2651 nodes and 245767 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06997 and
-has 4 connected components, where the component with most nodes has 2642 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 185.41, and the node degree mode is 3. The top 5 most central
-nodes are 1397278.AYMV01000019_gene1179 (degree 930), 1397278.AYMV01000018_gene818
-(degree 908), 1397278.AYMV01000019_gene1183 (degree 744), 1397278.AYMV01000039_gene1297
-(degree 740) and 1397278.AYMV01000011_gene1681 (degree 733).
+The undirected graph Leucobacter sp. PH1c has 2651 nodes and 245767 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06997 and has 4 connected components, where the component with most
+nodes has 2642 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 185.41, and
+the node degree mode is 3. The top 5 most central nodes are 1397278.AYMV01000019_gene1179
+(degree 930), 1397278.AYMV01000018_gene818 (degree 908), 1397278.AYMV01000019_gene1183
+(degree 744), 1397278.AYMV01000039_gene1297 (degree 740) and 1397278.AYMV01000011_gene1681
+(degree 733).
 
 
 References
@@ -107,14 +108,15 @@ def LeucobacterSp.Ph1c(
 	
 	Datetime: 2021-02-03 22:29:06.726816
 	
-	The undirected graph Leucobacter sp. PH1c has 2651 nodes and 245767 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06997 and
-	has 4 connected components, where the component with most nodes has 2642 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 185.41, and the node degree mode is 3. The top 5 most central
-	nodes are 1397278.AYMV01000019_gene1179 (degree 930), 1397278.AYMV01000018_gene818
-	(degree 908), 1397278.AYMV01000019_gene1183 (degree 744), 1397278.AYMV01000039_gene1297
-	(degree 740) and 1397278.AYMV01000011_gene1681 (degree 733).
+	The undirected graph Leucobacter sp. PH1c has 2651 nodes and 245767 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06997 and has 4 connected components, where the component with most
+	nodes has 2642 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 185.41, and
+	the node degree mode is 3. The top 5 most central nodes are 1397278.AYMV01000019_gene1179
+	(degree 930), 1397278.AYMV01000018_gene818 (degree 908), 1397278.AYMV01000019_gene1183
+	(degree 744), 1397278.AYMV01000039_gene1297 (degree 740) and 1397278.AYMV01000011_gene1681
+	(degree 733).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:14.582886
 
-The undirected graph Hepatobacter penaei has 998 nodes and 39128 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-has 23 connected components, where the component with most nodes has 927 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 62,
-the mean node degree is 78.41, and the node degree mode is 2. The top 5 most central
-nodes are 1274402.JQAJ01000001_gene134 (degree 325), 1274402.JQAJ01000001_gene273
-(degree 323), 1274402.JQAJ01000001_gene88 (degree 318), 1274402.JQAJ01000005_gene959
-(degree 305) and 1274402.JQAJ01000001_gene82 (degree 291).
+The undirected graph Hepatobacter penaei has 998 nodes and 39128 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07865 and has 23 connected components, where the component with most
+nodes has 927 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 62, the mean node degree is 78.41, and
+the node degree mode is 2. The top 5 most central nodes are 1274402.JQAJ01000001_gene134
+(degree 325), 1274402.JQAJ01000001_gene273 (degree 323), 1274402.JQAJ01000001_gene88
+(degree 318), 1274402.JQAJ01000005_gene959 (degree 305) and 1274402.JQAJ01000001_gene82
+(degree 291).
 
 
 References
@@ -107,14 +108,15 @@ def HepatobacterPenaei(
 	
 	Datetime: 2021-02-02 23:38:14.582886
 	
-	The undirected graph Hepatobacter penaei has 998 nodes and 39128 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-	has 23 connected components, where the component with most nodes has 927 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 62,
-	the mean node degree is 78.41, and the node degree mode is 2. The top 5 most central
-	nodes are 1274402.JQAJ01000001_gene134 (degree 325), 1274402.JQAJ01000001_gene273
-	(degree 323), 1274402.JQAJ01000001_gene88 (degree 318), 1274402.JQAJ01000005_gene959
-	(degree 305) and 1274402.JQAJ01000001_gene82 (degree 291).
+	The undirected graph Hepatobacter penaei has 998 nodes and 39128 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07865 and has 23 connected components, where the component with most
+	nodes has 927 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 62, the mean node degree is 78.41, and
+	the node degree mode is 2. The top 5 most central nodes are 1274402.JQAJ01000001_gene134
+	(degree 325), 1274402.JQAJ01000001_gene273 (degree 323), 1274402.JQAJ01000001_gene88
+	(degree 318), 1274402.JQAJ01000005_gene959 (degree 305) and 1274402.JQAJ01000001_gene82
+	(degree 291).
 	
 
 

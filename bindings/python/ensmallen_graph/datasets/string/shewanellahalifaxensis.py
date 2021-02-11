@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:43.551256
 
-The undirected graph Shewanella halifaxensis has 4230 nodes and 550408 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06154 and
-has 10 connected components, where the component with most nodes has 4208 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 260.24, and the node degree mode is 1. The top 5 most central
-nodes are 458817.Shal_0641 (degree 1661), 458817.Shal_0706 (degree 1617), 458817.Shal_4220
-(degree 1599), 458817.Shal_0720 (degree 1553) and 458817.Shal_1698 (degree 1326).
+The undirected graph Shewanella halifaxensis has 4230 nodes and 550408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06154 and has 10 connected components, where the component
+with most nodes has 4208 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 260.24,
+and the node degree mode is 1. The top 5 most central nodes are 458817.Shal_0641
+(degree 1661), 458817.Shal_0706 (degree 1617), 458817.Shal_4220 (degree
+1599), 458817.Shal_0720 (degree 1553) and 458817.Shal_1698 (degree 1326).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaHalifaxensis(
 	
 	Datetime: 2021-02-02 20:53:43.551256
 	
-	The undirected graph Shewanella halifaxensis has 4230 nodes and 550408 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06154 and
-	has 10 connected components, where the component with most nodes has 4208 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 260.24, and the node degree mode is 1. The top 5 most central
-	nodes are 458817.Shal_0641 (degree 1661), 458817.Shal_0706 (degree 1617), 458817.Shal_4220
-	(degree 1599), 458817.Shal_0720 (degree 1553) and 458817.Shal_1698 (degree 1326).
+	The undirected graph Shewanella halifaxensis has 4230 nodes and 550408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06154 and has 10 connected components, where the component
+	with most nodes has 4208 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 260.24,
+	and the node degree mode is 1. The top 5 most central nodes are 458817.Shal_0641
+	(degree 1661), 458817.Shal_0706 (degree 1617), 458817.Shal_4220 (degree
+	1599), 458817.Shal_0720 (degree 1553) and 458817.Shal_1698 (degree 1326).
 	
 
 

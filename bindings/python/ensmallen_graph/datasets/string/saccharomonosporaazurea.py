@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:34.653426
 
-The undirected graph Saccharomonospora azurea has 4508 nodes and 495302 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04876
-and has 9 connected components, where the component with most nodes has 4487 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 180, the mean node degree is 219.74, and the node degree mode is 3. The top 5
-most central nodes are 1114959.SZMC14600_18239 (degree 1915), 1114959.SZMC14600_02739
-(degree 1705), 1114959.SZMC14600_03416 (degree 1458), 1114959.SZMC14600_01147 (degree
-1456) and 1114959.SZMC14600_12438 (degree 1428).
+The undirected graph Saccharomonospora azurea has 4508 nodes and 495302
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04876 and has 9 connected components, where the component
+with most nodes has 4487 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 219.74,
+and the node degree mode is 3. The top 5 most central nodes are 1114959.SZMC14600_18239
+(degree 1915), 1114959.SZMC14600_02739 (degree 1705), 1114959.SZMC14600_03416
+(degree 1458), 1114959.SZMC14600_01147 (degree 1456) and 1114959.SZMC14600_12438
+(degree 1428).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharomonosporaAzurea(
 	
 	Datetime: 2021-02-02 22:26:34.653426
 	
-	The undirected graph Saccharomonospora azurea has 4508 nodes and 495302 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04876
-	and has 9 connected components, where the component with most nodes has 4487 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 180, the mean node degree is 219.74, and the node degree mode is 3. The top 5
-	most central nodes are 1114959.SZMC14600_18239 (degree 1915), 1114959.SZMC14600_02739
-	(degree 1705), 1114959.SZMC14600_03416 (degree 1458), 1114959.SZMC14600_01147 (degree
-	1456) and 1114959.SZMC14600_12438 (degree 1428).
+	The undirected graph Saccharomonospora azurea has 4508 nodes and 495302
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04876 and has 9 connected components, where the component
+	with most nodes has 4487 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 219.74,
+	and the node degree mode is 3. The top 5 most central nodes are 1114959.SZMC14600_18239
+	(degree 1915), 1114959.SZMC14600_02739 (degree 1705), 1114959.SZMC14600_03416
+	(degree 1458), 1114959.SZMC14600_01147 (degree 1456) and 1114959.SZMC14600_12438
+	(degree 1428).
 	
 
 

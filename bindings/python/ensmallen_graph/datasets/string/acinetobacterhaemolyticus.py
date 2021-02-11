@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:07.401881
 
-The undirected graph Acinetobacter haemolyticus has 3071 nodes and 184554 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03915
-and has 16 connected components, where the component with most nodes has 3031 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 120.19, and the node degree mode is 1. The top 5 most
-central nodes are 1331660.L313_1953 (degree 1086), 1331660.L313_0838 (degree 891),
-1331660.L313_0363 (degree 884), 1331660.L313_1731 (degree 822) and 1331660.L313_1913
-(degree 760).
+The undirected graph Acinetobacter haemolyticus has 3071 nodes and 184554
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03915 and has 16 connected components, where the component
+with most nodes has 3031 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 120.19,
+and the node degree mode is 1. The top 5 most central nodes are 1331660.L313_1953
+(degree 1086), 1331660.L313_0838 (degree 891), 1331660.L313_0363 (degree
+884), 1331660.L313_1731 (degree 822) and 1331660.L313_1913 (degree 760).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterHaemolyticus(
 	
 	Datetime: 2021-02-03 21:55:07.401881
 	
-	The undirected graph Acinetobacter haemolyticus has 3071 nodes and 184554 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03915
-	and has 16 connected components, where the component with most nodes has 3031 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 120.19, and the node degree mode is 1. The top 5 most
-	central nodes are 1331660.L313_1953 (degree 1086), 1331660.L313_0838 (degree 891),
-	1331660.L313_0363 (degree 884), 1331660.L313_1731 (degree 822) and 1331660.L313_1913
-	(degree 760).
+	The undirected graph Acinetobacter haemolyticus has 3071 nodes and 184554
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03915 and has 16 connected components, where the component
+	with most nodes has 3031 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 120.19,
+	and the node degree mode is 1. The top 5 most central nodes are 1331660.L313_1953
+	(degree 1086), 1331660.L313_0838 (degree 891), 1331660.L313_0363 (degree
+	884), 1331660.L313_1731 (degree 822) and 1331660.L313_1913 (degree 760).
 	
 
 

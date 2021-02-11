@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:47.040134
 
-The undirected graph Staphylococcus sp. AL1 has 2550 nodes and 186853 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05749 and
-has 15 connected components, where the component with most nodes has 2518 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 146.55, and the node degree mode is 1. The top 5 most central
-nodes are 861530.ALOZ01000059_gene122 (degree 961), 861530.ALOZ01000075_gene1371
-(degree 892), 861530.ALOZ01000075_gene1372 (degree 840), 861530.ALOZ01000029_gene2565
-(degree 784) and 861530.ALOZ01000071_gene1983 (degree 741).
+The undirected graph Staphylococcus sp. AL1 has 2550 nodes and 186853 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05749 and has 15 connected components, where the component with most
+nodes has 2518 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 146.55, and
+the node degree mode is 1. The top 5 most central nodes are 861530.ALOZ01000059_gene122
+(degree 961), 861530.ALOZ01000075_gene1371 (degree 892), 861530.ALOZ01000075_gene1372
+(degree 840), 861530.ALOZ01000029_gene2565 (degree 784) and 861530.ALOZ01000071_gene1983
+(degree 741).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusSp.Al1(
 	
 	Datetime: 2021-02-02 21:46:47.040134
 	
-	The undirected graph Staphylococcus sp. AL1 has 2550 nodes and 186853 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05749 and
-	has 15 connected components, where the component with most nodes has 2518 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 146.55, and the node degree mode is 1. The top 5 most central
-	nodes are 861530.ALOZ01000059_gene122 (degree 961), 861530.ALOZ01000075_gene1371
-	(degree 892), 861530.ALOZ01000075_gene1372 (degree 840), 861530.ALOZ01000029_gene2565
-	(degree 784) and 861530.ALOZ01000071_gene1983 (degree 741).
+	The undirected graph Staphylococcus sp. AL1 has 2550 nodes and 186853 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05749 and has 15 connected components, where the component with most
+	nodes has 2518 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 146.55, and
+	the node degree mode is 1. The top 5 most central nodes are 861530.ALOZ01000059_gene122
+	(degree 961), 861530.ALOZ01000075_gene1371 (degree 892), 861530.ALOZ01000075_gene1372
+	(degree 840), 861530.ALOZ01000029_gene2565 (degree 784) and 861530.ALOZ01000071_gene1983
+	(degree 741).
 	
 
 

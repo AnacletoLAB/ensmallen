@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:37.807258
 
-The undirected graph Sulfuricurvum sp. MLSB has 1981 nodes and 142064 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07244 and
-has 11 connected components, where the component with most nodes has 1953 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 143.43, and the node degree mode is 2. The top 5 most central
-nodes are 1537917.JU82_07835 (degree 912), 1537917.JU82_04810 (degree 782), 1537917.JU82_08205
-(degree 712), 1537917.JU82_10620 (degree 694) and 1537917.JU82_11160 (degree 676).
+The undirected graph Sulfuricurvum sp. MLSB has 1981 nodes and 142064 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07244 and has 11 connected components, where the component with most
+nodes has 1953 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 143.43, and
+the node degree mode is 2. The top 5 most central nodes are 1537917.JU82_07835
+(degree 912), 1537917.JU82_04810 (degree 782), 1537917.JU82_08205 (degree
+712), 1537917.JU82_10620 (degree 694) and 1537917.JU82_11160 (degree 676).
 
 
 References
@@ -106,13 +107,14 @@ def SulfuricurvumSp.Mlsb(
 	
 	Datetime: 2021-02-03 23:19:37.807258
 	
-	The undirected graph Sulfuricurvum sp. MLSB has 1981 nodes and 142064 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07244 and
-	has 11 connected components, where the component with most nodes has 1953 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 143.43, and the node degree mode is 2. The top 5 most central
-	nodes are 1537917.JU82_07835 (degree 912), 1537917.JU82_04810 (degree 782), 1537917.JU82_08205
-	(degree 712), 1537917.JU82_10620 (degree 694) and 1537917.JU82_11160 (degree 676).
+	The undirected graph Sulfuricurvum sp. MLSB has 1981 nodes and 142064 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07244 and has 11 connected components, where the component with most
+	nodes has 1953 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 143.43, and
+	the node degree mode is 2. The top 5 most central nodes are 1537917.JU82_07835
+	(degree 912), 1537917.JU82_04810 (degree 782), 1537917.JU82_08205 (degree
+	712), 1537917.JU82_10620 (degree 694) and 1537917.JU82_11160 (degree 676).
 	
 
 

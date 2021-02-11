@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:49.166676
 
-The undirected graph Nocardioides sp. J54 has 4366 nodes and 459473 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04822 and
-has 13 connected components, where the component with most nodes has 4336 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 210.48, and the node degree mode is 3. The top 5 most central
-nodes are 935866.JAER01000003_gene1318 (degree 1471), 935866.JAER01000001_gene2533
-(degree 1378), 935866.JAER01000001_gene2521 (degree 1363), 935866.JAER01000052_gene2865
-(degree 1335) and 935866.JAER01000012_gene3513 (degree 1286).
+The undirected graph Nocardioides sp. J54 has 4366 nodes and 459473 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04822 and has 13 connected components, where the component with most
+nodes has 4336 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 210.48, and
+the node degree mode is 3. The top 5 most central nodes are 935866.JAER01000003_gene1318
+(degree 1471), 935866.JAER01000001_gene2533 (degree 1378), 935866.JAER01000001_gene2521
+(degree 1363), 935866.JAER01000052_gene2865 (degree 1335) and 935866.JAER01000012_gene3513
+(degree 1286).
 
 
 References
@@ -107,14 +108,15 @@ def NocardioidesSp.J54(
 	
 	Datetime: 2021-02-02 21:59:49.166676
 	
-	The undirected graph Nocardioides sp. J54 has 4366 nodes and 459473 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04822 and
-	has 13 connected components, where the component with most nodes has 4336 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 210.48, and the node degree mode is 3. The top 5 most central
-	nodes are 935866.JAER01000003_gene1318 (degree 1471), 935866.JAER01000001_gene2533
-	(degree 1378), 935866.JAER01000001_gene2521 (degree 1363), 935866.JAER01000052_gene2865
-	(degree 1335) and 935866.JAER01000012_gene3513 (degree 1286).
+	The undirected graph Nocardioides sp. J54 has 4366 nodes and 459473 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04822 and has 13 connected components, where the component with most
+	nodes has 4336 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 210.48, and
+	the node degree mode is 3. The top 5 most central nodes are 935866.JAER01000003_gene1318
+	(degree 1471), 935866.JAER01000001_gene2533 (degree 1378), 935866.JAER01000001_gene2521
+	(degree 1363), 935866.JAER01000052_gene2865 (degree 1335) and 935866.JAER01000012_gene3513
+	(degree 1286).
 	
 
 

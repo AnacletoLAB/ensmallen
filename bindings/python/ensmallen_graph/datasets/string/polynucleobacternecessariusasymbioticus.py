@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:22.509396
 
-The undirected graph Polynucleobacter necessarius asymbioticus has 2073 nodes and
-145546 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.06777 and has 6 connected components, where the component with most
-nodes has 2062 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 120, the mean node degree is 140.42, and the node degree mode
-is 2. The top 5 most central nodes are 312153.Pnuc_1711 (degree 888), 312153.Pnuc_1422
-(degree 739), 312153.Pnuc_1096 (degree 712), 312153.Pnuc_1423 (degree 669) and 312153.Pnuc_2033
+The undirected graph Polynucleobacter necessarius asymbioticus has 2073
+nodes and 145546 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.06777 and has 6 connected components,
+where the component with most nodes has 2062 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 120, the mean
+node degree is 140.42, and the node degree mode is 2. The top 5 most central
+nodes are 312153.Pnuc_1711 (degree 888), 312153.Pnuc_1422 (degree 739),
+312153.Pnuc_1096 (degree 712), 312153.Pnuc_1423 (degree 669) and 312153.Pnuc_2033
 (degree 667).
 
 
@@ -107,13 +108,14 @@ def PolynucleobacterNecessariusAsymbioticus(
 	
 	Datetime: 2021-02-02 20:23:22.509396
 	
-	The undirected graph Polynucleobacter necessarius asymbioticus has 2073 nodes and
-	145546 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.06777 and has 6 connected components, where the component with most
-	nodes has 2062 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 120, the mean node degree is 140.42, and the node degree mode
-	is 2. The top 5 most central nodes are 312153.Pnuc_1711 (degree 888), 312153.Pnuc_1422
-	(degree 739), 312153.Pnuc_1096 (degree 712), 312153.Pnuc_1423 (degree 669) and 312153.Pnuc_2033
+	The undirected graph Polynucleobacter necessarius asymbioticus has 2073
+	nodes and 145546 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.06777 and has 6 connected components,
+	where the component with most nodes has 2062 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 120, the mean
+	node degree is 140.42, and the node degree mode is 2. The top 5 most central
+	nodes are 312153.Pnuc_1711 (degree 888), 312153.Pnuc_1422 (degree 739),
+	312153.Pnuc_1096 (degree 712), 312153.Pnuc_1423 (degree 669) and 312153.Pnuc_2033
 	(degree 667).
 	
 

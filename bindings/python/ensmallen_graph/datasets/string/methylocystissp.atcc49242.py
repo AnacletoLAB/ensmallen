@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:39.929191
 
-The undirected graph Methylocystis sp. ATCC49242 has 4129 nodes and 413425 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04851
-and has 27 connected components, where the component with most nodes has 4069 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 180, the mean node degree is 200.25, and the node degree mode is 1. The top 5
-most central nodes are 622637.KE124774_gene2287 (degree 1307), 622637.KE124770_gene183
-(degree 1109), 622637.KE124770_gene187 (degree 1037), 622637.KE124774_gene1004 (degree
-1035) and 622637.KE124774_gene1172 (degree 1006).
+The undirected graph Methylocystis sp. ATCC49242 has 4129 nodes and 413425
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04851 and has 27 connected components, where the component
+with most nodes has 4069 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 200.25,
+and the node degree mode is 1. The top 5 most central nodes are 622637.KE124774_gene2287
+(degree 1307), 622637.KE124770_gene183 (degree 1109), 622637.KE124770_gene187
+(degree 1037), 622637.KE124774_gene1004 (degree 1035) and 622637.KE124774_gene1172
+(degree 1006).
 
 
 References
@@ -107,14 +108,15 @@ def MethylocystisSp.Atcc49242(
 	
 	Datetime: 2021-02-02 21:20:39.929191
 	
-	The undirected graph Methylocystis sp. ATCC49242 has 4129 nodes and 413425 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04851
-	and has 27 connected components, where the component with most nodes has 4069 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 180, the mean node degree is 200.25, and the node degree mode is 1. The top 5
-	most central nodes are 622637.KE124774_gene2287 (degree 1307), 622637.KE124770_gene183
-	(degree 1109), 622637.KE124770_gene187 (degree 1037), 622637.KE124774_gene1004 (degree
-	1035) and 622637.KE124774_gene1172 (degree 1006).
+	The undirected graph Methylocystis sp. ATCC49242 has 4129 nodes and 413425
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04851 and has 27 connected components, where the component
+	with most nodes has 4069 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 200.25,
+	and the node degree mode is 1. The top 5 most central nodes are 622637.KE124774_gene2287
+	(degree 1307), 622637.KE124770_gene183 (degree 1109), 622637.KE124770_gene187
+	(degree 1037), 622637.KE124774_gene1004 (degree 1035) and 622637.KE124774_gene1172
+	(degree 1006).
 	
 
 

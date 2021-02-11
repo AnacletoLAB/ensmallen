@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:46.655863
 
-The undirected graph Enterococcus sulfureus has 2168 nodes and 166020 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07068 and
-has 4 connected components, where the component with most nodes has 2160 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 153.15, and the node degree mode is 3. The top 5 most central
-nodes are 1140003.I573_01618 (degree 963), 1140003.I573_01001 (degree 870), 1140003.I573_01504
-(degree 837), 1140003.I573_00765 (degree 825) and 1140003.I573_00639 (degree 813).
+The undirected graph Enterococcus sulfureus has 2168 nodes and 166020 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07068 and has 4 connected components, where the component with most
+nodes has 2160 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 153.15, and
+the node degree mode is 3. The top 5 most central nodes are 1140003.I573_01618
+(degree 963), 1140003.I573_01001 (degree 870), 1140003.I573_01504 (degree
+837), 1140003.I573_00765 (degree 825) and 1140003.I573_00639 (degree 813).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusSulfureus(
 	
 	Datetime: 2021-02-02 22:57:46.655863
 	
-	The undirected graph Enterococcus sulfureus has 2168 nodes and 166020 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07068 and
-	has 4 connected components, where the component with most nodes has 2160 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 153.15, and the node degree mode is 3. The top 5 most central
-	nodes are 1140003.I573_01618 (degree 963), 1140003.I573_01001 (degree 870), 1140003.I573_01504
-	(degree 837), 1140003.I573_00765 (degree 825) and 1140003.I573_00639 (degree 813).
+	The undirected graph Enterococcus sulfureus has 2168 nodes and 166020 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07068 and has 4 connected components, where the component with most
+	nodes has 2160 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 153.15, and
+	the node degree mode is 3. The top 5 most central nodes are 1140003.I573_01618
+	(degree 963), 1140003.I573_01001 (degree 870), 1140003.I573_01504 (degree
+	837), 1140003.I573_00765 (degree 825) and 1140003.I573_00639 (degree 813).
 	
 
 

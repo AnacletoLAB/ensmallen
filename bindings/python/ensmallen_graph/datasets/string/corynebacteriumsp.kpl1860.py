@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:51.873411
 
-The undirected graph Corynebacterium sp. KPL1860 has 2314 nodes and 160585 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06001
-and has 7 connected components, where the component with most nodes has 2301 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 138.79, and the node degree mode is 2. The top 5
-most central nodes are 1203567.HMPREF1286_01975 (degree 893), 1203567.HMPREF1286_00080
-(degree 739), 1203567.HMPREF1286_00873 (degree 734), 1203567.HMPREF1286_00870 (degree
-728) and 1203567.HMPREF1286_00172 (degree 688).
+The undirected graph Corynebacterium sp. KPL1860 has 2314 nodes and 160585
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06001 and has 7 connected components, where the component
+with most nodes has 2301 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 138.79,
+and the node degree mode is 2. The top 5 most central nodes are 1203567.HMPREF1286_01975
+(degree 893), 1203567.HMPREF1286_00080 (degree 739), 1203567.HMPREF1286_00873
+(degree 734), 1203567.HMPREF1286_00870 (degree 728) and 1203567.HMPREF1286_00172
+(degree 688).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumSp.Kpl1860(
 	
 	Datetime: 2021-02-02 23:14:51.873411
 	
-	The undirected graph Corynebacterium sp. KPL1860 has 2314 nodes and 160585 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06001
-	and has 7 connected components, where the component with most nodes has 2301 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 138.79, and the node degree mode is 2. The top 5
-	most central nodes are 1203567.HMPREF1286_01975 (degree 893), 1203567.HMPREF1286_00080
-	(degree 739), 1203567.HMPREF1286_00873 (degree 734), 1203567.HMPREF1286_00870 (degree
-	728) and 1203567.HMPREF1286_00172 (degree 688).
+	The undirected graph Corynebacterium sp. KPL1860 has 2314 nodes and 160585
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06001 and has 7 connected components, where the component
+	with most nodes has 2301 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 138.79,
+	and the node degree mode is 2. The top 5 most central nodes are 1203567.HMPREF1286_01975
+	(degree 893), 1203567.HMPREF1286_00080 (degree 739), 1203567.HMPREF1286_00873
+	(degree 734), 1203567.HMPREF1286_00870 (degree 728) and 1203567.HMPREF1286_00172
+	(degree 688).
 	
 
 

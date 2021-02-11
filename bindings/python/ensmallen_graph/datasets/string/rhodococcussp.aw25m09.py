@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:38.441928
 
-The undirected graph Rhodococcus sp. AW25M09 has 5077 nodes and 572084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04440 and
-has 19 connected components, where the component with most nodes has 5032 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 225.36, and the node degree mode is 3. The top 5 most central
-nodes are 1268303.RHODMAR_2494 (degree 1654), 1268303.RHODMAR_3014 (degree 1438),
-1268303.RHODMAR_2898 (degree 1415), 1268303.RHODMAR_3860 (degree 1396) and 1268303.RHODMAR_3857
+The undirected graph Rhodococcus sp. AW25M09 has 5077 nodes and 572084
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04440 and has 19 connected components, where the component
+with most nodes has 5032 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 225.36,
+and the node degree mode is 3. The top 5 most central nodes are 1268303.RHODMAR_2494
+(degree 1654), 1268303.RHODMAR_3014 (degree 1438), 1268303.RHODMAR_2898
+(degree 1415), 1268303.RHODMAR_3860 (degree 1396) and 1268303.RHODMAR_3857
 (degree 1307).
 
 
@@ -107,13 +108,14 @@ def RhodococcusSp.Aw25m09(
 	
 	Datetime: 2021-02-02 23:37:38.441928
 	
-	The undirected graph Rhodococcus sp. AW25M09 has 5077 nodes and 572084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04440 and
-	has 19 connected components, where the component with most nodes has 5032 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 225.36, and the node degree mode is 3. The top 5 most central
-	nodes are 1268303.RHODMAR_2494 (degree 1654), 1268303.RHODMAR_3014 (degree 1438),
-	1268303.RHODMAR_2898 (degree 1415), 1268303.RHODMAR_3860 (degree 1396) and 1268303.RHODMAR_3857
+	The undirected graph Rhodococcus sp. AW25M09 has 5077 nodes and 572084
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04440 and has 19 connected components, where the component
+	with most nodes has 5032 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 225.36,
+	and the node degree mode is 3. The top 5 most central nodes are 1268303.RHODMAR_2494
+	(degree 1654), 1268303.RHODMAR_3014 (degree 1438), 1268303.RHODMAR_2898
+	(degree 1415), 1268303.RHODMAR_3860 (degree 1396) and 1268303.RHODMAR_3857
 	(degree 1307).
 	
 

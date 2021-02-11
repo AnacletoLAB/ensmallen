@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:46.920105
 
-The undirected graph Frankia sp. QA3 has 5882 nodes and 929252 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05373 and
-has 32 connected components, where the component with most nodes has 5803 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 250,
-the mean node degree is 315.96, and the node degree mode is 1. The top 5 most central
-nodes are 710111.FraQA3DRAFT_3818 (degree 1900), 710111.FraQA3DRAFT_6497 (degree
-1874), 710111.FraQA3DRAFT_6231 (degree 1793), 710111.FraQA3DRAFT_2878 (degree 1740)
-and 710111.FraQA3DRAFT_5698 (degree 1726).
+The undirected graph Frankia sp. QA3 has 5882 nodes and 929252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05373 and has 32 connected components, where the component with most
+nodes has 5803 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 250, the mean node degree is 315.96, and
+the node degree mode is 1. The top 5 most central nodes are 710111.FraQA3DRAFT_3818
+(degree 1900), 710111.FraQA3DRAFT_6497 (degree 1874), 710111.FraQA3DRAFT_6231
+(degree 1793), 710111.FraQA3DRAFT_2878 (degree 1740) and 710111.FraQA3DRAFT_5698
+(degree 1726).
 
 
 References
@@ -107,14 +108,15 @@ def FrankiaSp.Qa3(
 	
 	Datetime: 2021-02-02 21:34:46.920105
 	
-	The undirected graph Frankia sp. QA3 has 5882 nodes and 929252 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05373 and
-	has 32 connected components, where the component with most nodes has 5803 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 250,
-	the mean node degree is 315.96, and the node degree mode is 1. The top 5 most central
-	nodes are 710111.FraQA3DRAFT_3818 (degree 1900), 710111.FraQA3DRAFT_6497 (degree
-	1874), 710111.FraQA3DRAFT_6231 (degree 1793), 710111.FraQA3DRAFT_2878 (degree 1740)
-	and 710111.FraQA3DRAFT_5698 (degree 1726).
+	The undirected graph Frankia sp. QA3 has 5882 nodes and 929252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05373 and has 32 connected components, where the component with most
+	nodes has 5803 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 250, the mean node degree is 315.96, and
+	the node degree mode is 1. The top 5 most central nodes are 710111.FraQA3DRAFT_3818
+	(degree 1900), 710111.FraQA3DRAFT_6497 (degree 1874), 710111.FraQA3DRAFT_6231
+	(degree 1793), 710111.FraQA3DRAFT_2878 (degree 1740) and 710111.FraQA3DRAFT_5698
+	(degree 1726).
 	
 
 

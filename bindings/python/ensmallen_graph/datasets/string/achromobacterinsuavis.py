@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:29.290826
 
-The undirected graph Achromobacter insuavis has 6109 nodes and 906557 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-has 14 connected components, where the component with most nodes has 6077 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 296.79, and the node degree mode is 2. The top 5 most central
-nodes are 1003200.AXXA_18482 (degree 2113), 1003200.AXXA_11655 (degree 1921), 1003200.AXXA_04523
-(degree 1905), 1003200.AXXA_24500 (degree 1890) and 1003200.AXXA_08588 (degree 1853).
+The undirected graph Achromobacter insuavis has 6109 nodes and 906557 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04859 and has 14 connected components, where the component with most
+nodes has 6077 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 235, the mean node degree is 296.79, and
+the node degree mode is 2. The top 5 most central nodes are 1003200.AXXA_18482
+(degree 2113), 1003200.AXXA_11655 (degree 1921), 1003200.AXXA_04523 (degree
+1905), 1003200.AXXA_24500 (degree 1890) and 1003200.AXXA_08588 (degree
+1853).
 
 
 References
@@ -106,13 +108,15 @@ def AchromobacterInsuavis(
 	
 	Datetime: 2021-02-02 22:07:29.290826
 	
-	The undirected graph Achromobacter insuavis has 6109 nodes and 906557 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-	has 14 connected components, where the component with most nodes has 6077 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 296.79, and the node degree mode is 2. The top 5 most central
-	nodes are 1003200.AXXA_18482 (degree 2113), 1003200.AXXA_11655 (degree 1921), 1003200.AXXA_04523
-	(degree 1905), 1003200.AXXA_24500 (degree 1890) and 1003200.AXXA_08588 (degree 1853).
+	The undirected graph Achromobacter insuavis has 6109 nodes and 906557 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04859 and has 14 connected components, where the component with most
+	nodes has 6077 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 235, the mean node degree is 296.79, and
+	the node degree mode is 2. The top 5 most central nodes are 1003200.AXXA_18482
+	(degree 2113), 1003200.AXXA_11655 (degree 1921), 1003200.AXXA_04523 (degree
+	1905), 1003200.AXXA_24500 (degree 1890) and 1003200.AXXA_08588 (degree
+	1853).
 	
 
 

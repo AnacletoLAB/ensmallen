@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:30.216417
 
-The undirected graph Coriobacterium glomerans has 1751 nodes and 244299 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.15945 and has 10 connected components, where the component with most nodes has
-1728 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 253, the mean node degree is 279.04, and the node degree mode is 2. The
-top 5 most central nodes are 700015.Corgl_0202 (degree 1133), 700015.Corgl_1047 (degree
-1075), 700015.Corgl_1066 (degree 1026), 700015.Corgl_1210 (degree 965) and 700015.Corgl_1163
-(degree 922).
+The undirected graph Coriobacterium glomerans has 1751 nodes and 244299
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.15945 and has 10 connected components, where the
+component with most nodes has 1728 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 253, the mean node degree
+is 279.04, and the node degree mode is 2. The top 5 most central nodes
+are 700015.Corgl_0202 (degree 1133), 700015.Corgl_1047 (degree 1075), 700015.Corgl_1066
+(degree 1026), 700015.Corgl_1210 (degree 965) and 700015.Corgl_1163 (degree
+922).
 
 
 References
@@ -107,14 +108,15 @@ def CoriobacteriumGlomerans(
 	
 	Datetime: 2021-02-02 21:33:30.216417
 	
-	The undirected graph Coriobacterium glomerans has 1751 nodes and 244299 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.15945 and has 10 connected components, where the component with most nodes has
-	1728 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 253, the mean node degree is 279.04, and the node degree mode is 2. The
-	top 5 most central nodes are 700015.Corgl_0202 (degree 1133), 700015.Corgl_1047 (degree
-	1075), 700015.Corgl_1066 (degree 1026), 700015.Corgl_1210 (degree 965) and 700015.Corgl_1163
-	(degree 922).
+	The undirected graph Coriobacterium glomerans has 1751 nodes and 244299
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.15945 and has 10 connected components, where the
+	component with most nodes has 1728 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 253, the mean node degree
+	is 279.04, and the node degree mode is 2. The top 5 most central nodes
+	are 700015.Corgl_0202 (degree 1133), 700015.Corgl_1047 (degree 1075), 700015.Corgl_1066
+	(degree 1026), 700015.Corgl_1210 (degree 965) and 700015.Corgl_1163 (degree
+	922).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:35.962762
 
-The undirected graph Alteromonas macleodii Black has 3750 nodes and 319246 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04542
-and has 5 connected components, where the component with most nodes has 3741 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 170.26, and the node degree mode is 4. The top 5
-most central nodes are 1004785.AMBLS11_00070 (degree 1382), 1004785.AMBLS11_01630
-(degree 1168), 1004785.AMBLS11_12805 (degree 1063), 1004785.AMBLS11_11325 (degree
-1005) and 1004785.AMBLS11_14615 (degree 979).
+The undirected graph Alteromonas macleodii Black has 3750 nodes and 319246
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04542 and has 5 connected components, where the component
+with most nodes has 3741 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 170.26,
+and the node degree mode is 4. The top 5 most central nodes are 1004785.AMBLS11_00070
+(degree 1382), 1004785.AMBLS11_01630 (degree 1168), 1004785.AMBLS11_12805
+(degree 1063), 1004785.AMBLS11_11325 (degree 1005) and 1004785.AMBLS11_14615
+(degree 979).
 
 
 References
@@ -107,14 +108,15 @@ def AlteromonasMacleodiiBlack(
 	
 	Datetime: 2021-02-02 22:07:35.962762
 	
-	The undirected graph Alteromonas macleodii Black has 3750 nodes and 319246 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04542
-	and has 5 connected components, where the component with most nodes has 3741 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 170.26, and the node degree mode is 4. The top 5
-	most central nodes are 1004785.AMBLS11_00070 (degree 1382), 1004785.AMBLS11_01630
-	(degree 1168), 1004785.AMBLS11_12805 (degree 1063), 1004785.AMBLS11_11325 (degree
-	1005) and 1004785.AMBLS11_14615 (degree 979).
+	The undirected graph Alteromonas macleodii Black has 3750 nodes and 319246
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04542 and has 5 connected components, where the component
+	with most nodes has 3741 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 170.26,
+	and the node degree mode is 4. The top 5 most central nodes are 1004785.AMBLS11_00070
+	(degree 1382), 1004785.AMBLS11_01630 (degree 1168), 1004785.AMBLS11_12805
+	(degree 1063), 1004785.AMBLS11_11325 (degree 1005) and 1004785.AMBLS11_14615
+	(degree 979).
 	
 
 

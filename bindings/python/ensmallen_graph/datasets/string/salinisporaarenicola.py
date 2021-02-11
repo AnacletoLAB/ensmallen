@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:09.639351
 
-The undirected graph Salinispora arenicola has 4857 nodes and 432137 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03664 and
-has 23 connected components, where the component with most nodes has 4805 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 177.94, and the node degree mode is 2. The top 5 most central
-nodes are 391037.Sare_1247 (degree 1518), 391037.Sare_1246 (degree 1502), 391037.Sare_3372
-(degree 1451), 391037.Sare_3392 (degree 1226) and 391037.Sare_2072 (degree 1224).
+The undirected graph Salinispora arenicola has 4857 nodes and 432137 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03664 and has 23 connected components, where the component with most
+nodes has 4805 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 177.94, and
+the node degree mode is 2. The top 5 most central nodes are 391037.Sare_1247
+(degree 1518), 391037.Sare_1246 (degree 1502), 391037.Sare_3372 (degree
+1451), 391037.Sare_3392 (degree 1226) and 391037.Sare_2072 (degree 1224).
 
 
 References
@@ -106,13 +107,14 @@ def SalinisporaArenicola(
 	
 	Datetime: 2021-02-02 20:39:09.639351
 	
-	The undirected graph Salinispora arenicola has 4857 nodes and 432137 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03664 and
-	has 23 connected components, where the component with most nodes has 4805 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 177.94, and the node degree mode is 2. The top 5 most central
-	nodes are 391037.Sare_1247 (degree 1518), 391037.Sare_1246 (degree 1502), 391037.Sare_3372
-	(degree 1451), 391037.Sare_3392 (degree 1226) and 391037.Sare_2072 (degree 1224).
+	The undirected graph Salinispora arenicola has 4857 nodes and 432137 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03664 and has 23 connected components, where the component with most
+	nodes has 4805 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 177.94, and
+	the node degree mode is 2. The top 5 most central nodes are 391037.Sare_1247
+	(degree 1518), 391037.Sare_1246 (degree 1502), 391037.Sare_3372 (degree
+	1451), 391037.Sare_3392 (degree 1226) and 391037.Sare_2072 (degree 1224).
 	
 
 

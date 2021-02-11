@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:21.853945
 
-The undirected graph Caedibacter acanthamoebae has 1388 nodes and 47281 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04912
-and has 35 connected components, where the component with most nodes has 1301 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 42, the mean node degree is 68.13, and the node degree mode is 2. The top 5 most
-central nodes are 244581.IM40_00240 (degree 531), 244581.IM40_01500 (degree 373),
-244581.IM40_01355 (degree 349), 244581.IM40_00295 (degree 345) and 244581.IM40_00200
-(degree 324).
+The undirected graph Caedibacter acanthamoebae has 1388 nodes and 47281
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04912 and has 35 connected components, where the component
+with most nodes has 1301 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 42, the mean node degree is 68.13,
+and the node degree mode is 2. The top 5 most central nodes are 244581.IM40_00240
+(degree 531), 244581.IM40_01500 (degree 373), 244581.IM40_01355 (degree
+349), 244581.IM40_00295 (degree 345) and 244581.IM40_00200 (degree 324).
 
 
 References
@@ -107,14 +107,14 @@ def CaedibacterAcanthamoebae(
 	
 	Datetime: 2021-02-02 20:10:21.853945
 	
-	The undirected graph Caedibacter acanthamoebae has 1388 nodes and 47281 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04912
-	and has 35 connected components, where the component with most nodes has 1301 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 42, the mean node degree is 68.13, and the node degree mode is 2. The top 5 most
-	central nodes are 244581.IM40_00240 (degree 531), 244581.IM40_01500 (degree 373),
-	244581.IM40_01355 (degree 349), 244581.IM40_00295 (degree 345) and 244581.IM40_00200
-	(degree 324).
+	The undirected graph Caedibacter acanthamoebae has 1388 nodes and 47281
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04912 and has 35 connected components, where the component
+	with most nodes has 1301 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 42, the mean node degree is 68.13,
+	and the node degree mode is 2. The top 5 most central nodes are 244581.IM40_00240
+	(degree 531), 244581.IM40_01500 (degree 373), 244581.IM40_01355 (degree
+	349), 244581.IM40_00295 (degree 345) and 244581.IM40_00200 (degree 324).
 	
 
 

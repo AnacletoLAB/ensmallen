@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:25:15.647823
 
-The undirected graph Pseudomonas denitrificans has 5028 nodes and 481614 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03811
-and has 11 connected components, where the component with most nodes has 5006 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 191.57, and the node degree mode is 2. The top 5
-most central nodes are 1294143.H681_01035 (degree 1799), 1294143.H681_22595 (degree
-1409), 1294143.H681_21200 (degree 1406), 1294143.H681_04820 (degree 1373) and 1294143.H681_18770
-(degree 1238).
+The undirected graph Pseudomonas denitrificans has 5028 nodes and 481614
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03811 and has 11 connected components, where the component
+with most nodes has 5006 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 191.57,
+and the node degree mode is 2. The top 5 most central nodes are 1294143.H681_01035
+(degree 1799), 1294143.H681_22595 (degree 1409), 1294143.H681_21200 (degree
+1406), 1294143.H681_04820 (degree 1373) and 1294143.H681_18770 (degree
+1238).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasDenitrificans(
 	
 	Datetime: 2021-02-03 21:25:15.647823
 	
-	The undirected graph Pseudomonas denitrificans has 5028 nodes and 481614 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03811
-	and has 11 connected components, where the component with most nodes has 5006 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 191.57, and the node degree mode is 2. The top 5
-	most central nodes are 1294143.H681_01035 (degree 1799), 1294143.H681_22595 (degree
-	1409), 1294143.H681_21200 (degree 1406), 1294143.H681_04820 (degree 1373) and 1294143.H681_18770
-	(degree 1238).
+	The undirected graph Pseudomonas denitrificans has 5028 nodes and 481614
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03811 and has 11 connected components, where the component
+	with most nodes has 5006 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 191.57,
+	and the node degree mode is 2. The top 5 most central nodes are 1294143.H681_01035
+	(degree 1799), 1294143.H681_22595 (degree 1409), 1294143.H681_21200 (degree
+	1406), 1294143.H681_04820 (degree 1373) and 1294143.H681_18770 (degree
+	1238).
 	
 
 

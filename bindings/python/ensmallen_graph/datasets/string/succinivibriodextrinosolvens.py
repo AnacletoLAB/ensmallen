@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:29.512908
 
-The undirected graph Succinivibrio dextrinosolvens has 2233 nodes and 144617 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05803
-and has 12 connected components, where the component with most nodes has 2206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 129.53, and the node degree mode is 1. The top 5
-most central nodes are 1410676.JNKL01000003_gene549 (degree 897), 1410676.JNKL01000039_gene1514
-(degree 798), 1410676.JNKL01000069_gene5 (degree 711), 1410676.JNKL01000028_gene1051
-(degree 660) and 1410676.JNKL01000024_gene766 (degree 648).
+The undirected graph Succinivibrio dextrinosolvens has 2233 nodes and 144617
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05803 and has 12 connected components, where the component
+with most nodes has 2206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 129.53,
+and the node degree mode is 1. The top 5 most central nodes are 1410676.JNKL01000003_gene549
+(degree 897), 1410676.JNKL01000039_gene1514 (degree 798), 1410676.JNKL01000069_gene5
+(degree 711), 1410676.JNKL01000028_gene1051 (degree 660) and 1410676.JNKL01000024_gene766
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def SuccinivibrioDextrinosolvens(
 	
 	Datetime: 2021-02-03 22:44:29.512908
 	
-	The undirected graph Succinivibrio dextrinosolvens has 2233 nodes and 144617 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05803
-	and has 12 connected components, where the component with most nodes has 2206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 129.53, and the node degree mode is 1. The top 5
-	most central nodes are 1410676.JNKL01000003_gene549 (degree 897), 1410676.JNKL01000039_gene1514
-	(degree 798), 1410676.JNKL01000069_gene5 (degree 711), 1410676.JNKL01000028_gene1051
-	(degree 660) and 1410676.JNKL01000024_gene766 (degree 648).
+	The undirected graph Succinivibrio dextrinosolvens has 2233 nodes and 144617
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05803 and has 12 connected components, where the component
+	with most nodes has 2206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 129.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1410676.JNKL01000003_gene549
+	(degree 897), 1410676.JNKL01000039_gene1514 (degree 798), 1410676.JNKL01000069_gene5
+	(degree 711), 1410676.JNKL01000028_gene1051 (degree 660) and 1410676.JNKL01000024_gene766
+	(degree 648).
 	
 
 

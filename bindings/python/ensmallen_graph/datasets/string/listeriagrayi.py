@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:20.792849
 
-The undirected graph Listeria grayi has 2610 nodes and 208456 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06123 and
-has 14 connected components, where the component with most nodes has 2576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 159.74, and the node degree mode is 5. The top 5 most central
-nodes are 525367.HMPREF0556_12225 (degree 925), 525367.HMPREF0556_11992 (degree 888),
-525367.HMPREF0556_11207 (degree 862), 525367.HMPREF0556_10227 (degree 851) and 525367.HMPREF0556_10330
+The undirected graph Listeria grayi has 2610 nodes and 208456 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06123 and has 14 connected components, where the component with most
+nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 159.74, and
+the node degree mode is 5. The top 5 most central nodes are 525367.HMPREF0556_12225
+(degree 925), 525367.HMPREF0556_11992 (degree 888), 525367.HMPREF0556_11207
+(degree 862), 525367.HMPREF0556_10227 (degree 851) and 525367.HMPREF0556_10330
 (degree 843).
 
 
@@ -107,13 +108,14 @@ def ListeriaGrayi(
 	
 	Datetime: 2021-02-02 21:05:20.792849
 	
-	The undirected graph Listeria grayi has 2610 nodes and 208456 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06123 and
-	has 14 connected components, where the component with most nodes has 2576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 159.74, and the node degree mode is 5. The top 5 most central
-	nodes are 525367.HMPREF0556_12225 (degree 925), 525367.HMPREF0556_11992 (degree 888),
-	525367.HMPREF0556_11207 (degree 862), 525367.HMPREF0556_10227 (degree 851) and 525367.HMPREF0556_10330
+	The undirected graph Listeria grayi has 2610 nodes and 208456 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06123 and has 14 connected components, where the component with most
+	nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 159.74, and
+	the node degree mode is 5. The top 5 most central nodes are 525367.HMPREF0556_12225
+	(degree 925), 525367.HMPREF0556_11992 (degree 888), 525367.HMPREF0556_11207
+	(degree 862), 525367.HMPREF0556_10227 (degree 851) and 525367.HMPREF0556_10330
 	(degree 843).
 	
 

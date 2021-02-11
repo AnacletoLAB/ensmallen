@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:05.437091
 
-The undirected graph Pyrobaculum aerophilum has 2568 nodes and 161057 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04886 and
-has 54 connected components, where the component with most nodes has 2404 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 72,
-the mean node degree is 125.43, and the node degree mode is 3. The top 5 most central
-nodes are 178306.PAE1740 (degree 794), 178306.PAE1501 (degree 748), 178306.PAE2480
-(degree 727), 178306.PAE0654 (degree 716) and 178306.PAE3238 (degree 715).
+The undirected graph Pyrobaculum aerophilum has 2568 nodes and 161057 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04886 and has 54 connected components, where the component with most
+nodes has 2404 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 72, the mean node degree is 125.43, and
+the node degree mode is 3. The top 5 most central nodes are 178306.PAE1740
+(degree 794), 178306.PAE1501 (degree 748), 178306.PAE2480 (degree 727),
+178306.PAE0654 (degree 716) and 178306.PAE3238 (degree 715).
 
 
 References
@@ -106,13 +107,14 @@ def PyrobaculumAerophilum(
 	
 	Datetime: 2021-02-02 19:56:05.437091
 	
-	The undirected graph Pyrobaculum aerophilum has 2568 nodes and 161057 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04886 and
-	has 54 connected components, where the component with most nodes has 2404 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 72,
-	the mean node degree is 125.43, and the node degree mode is 3. The top 5 most central
-	nodes are 178306.PAE1740 (degree 794), 178306.PAE1501 (degree 748), 178306.PAE2480
-	(degree 727), 178306.PAE0654 (degree 716) and 178306.PAE3238 (degree 715).
+	The undirected graph Pyrobaculum aerophilum has 2568 nodes and 161057 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04886 and has 54 connected components, where the component with most
+	nodes has 2404 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 72, the mean node degree is 125.43, and
+	the node degree mode is 3. The top 5 most central nodes are 178306.PAE1740
+	(degree 794), 178306.PAE1501 (degree 748), 178306.PAE2480 (degree 727),
+	178306.PAE0654 (degree 716) and 178306.PAE3238 (degree 715).
 	
 
 

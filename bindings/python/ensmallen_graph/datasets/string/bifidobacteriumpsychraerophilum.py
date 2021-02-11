@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:57.939990
 
-The undirected graph Bifidobacterium psychraerophilum has 2101 nodes and 137200 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06219
-and has 11 connected components, where the component with most nodes has 2079 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 130.60, and the node degree mode is 2. The top 5
-most central nodes are 218140.BPSY_0941 (degree 947), 218140.BPSY_1697 (degree 874),
-218140.BPSY_1175 (degree 846), 218140.BPSY_1682 (degree 702) and 218140.BPSY_1388
-(degree 695).
+The undirected graph Bifidobacterium psychraerophilum has 2101 nodes and
+137200 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06219 and has 11 connected components, where the
+component with most nodes has 2079 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+is 130.60, and the node degree mode is 2. The top 5 most central nodes
+are 218140.BPSY_0941 (degree 947), 218140.BPSY_1697 (degree 874), 218140.BPSY_1175
+(degree 846), 218140.BPSY_1682 (degree 702) and 218140.BPSY_1388 (degree
+695).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumPsychraerophilum(
 	
 	Datetime: 2021-02-02 20:02:57.939990
 	
-	The undirected graph Bifidobacterium psychraerophilum has 2101 nodes and 137200 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06219
-	and has 11 connected components, where the component with most nodes has 2079 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 130.60, and the node degree mode is 2. The top 5
-	most central nodes are 218140.BPSY_0941 (degree 947), 218140.BPSY_1697 (degree 874),
-	218140.BPSY_1175 (degree 846), 218140.BPSY_1682 (degree 702) and 218140.BPSY_1388
-	(degree 695).
+	The undirected graph Bifidobacterium psychraerophilum has 2101 nodes and
+	137200 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06219 and has 11 connected components, where the
+	component with most nodes has 2079 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+	is 130.60, and the node degree mode is 2. The top 5 most central nodes
+	are 218140.BPSY_0941 (degree 947), 218140.BPSY_1697 (degree 874), 218140.BPSY_1175
+	(degree 846), 218140.BPSY_1682 (degree 702) and 218140.BPSY_1388 (degree
+	695).
 	
 
 

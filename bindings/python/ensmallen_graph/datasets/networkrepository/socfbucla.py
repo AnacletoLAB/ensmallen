@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:46.253668
 
-The undirected graph socfb-UCLA has 20453 nodes and 747604 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00357 and is connected,
-as it has a single component. The graph median node degree is 52, the mean node degree
-is 73.10, and the node degree mode is 1. The top 5 most central nodes are 715 (degree
-1180), 8866 (degree 868), 1951 (degree 831), 384 (degree 795) and 12100 (degree 795).
+The undirected graph socfb-UCLA has 20453 nodes and 747604 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00357 and is connected, as it has a single component. The graph median
+node degree is 52, the mean node degree is 73.10, and the node degree mode
+is 1. The top 5 most central nodes are 715 (degree 1180), 8866 (degree
+868), 1951 (degree 831), 384 (degree 795) and 12100 (degree 795).
 
 
 References
@@ -122,11 +123,12 @@ def SocfbUcla(
 	
 	Datetime: 2021-02-06 11:50:46.253668
 	
-	The undirected graph socfb-UCLA has 20453 nodes and 747604 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00357 and is connected,
-	as it has a single component. The graph median node degree is 52, the mean node degree
-	is 73.10, and the node degree mode is 1. The top 5 most central nodes are 715 (degree
-	1180), 8866 (degree 868), 1951 (degree 831), 384 (degree 795) and 12100 (degree 795).
+	The undirected graph socfb-UCLA has 20453 nodes and 747604 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00357 and is connected, as it has a single component. The graph median
+	node degree is 52, the mean node degree is 73.10, and the node degree mode
+	is 1. The top 5 most central nodes are 715 (degree 1180), 8866 (degree
+	868), 1951 (degree 831), 384 (degree 795) and 12100 (degree 795).
 	
 
 

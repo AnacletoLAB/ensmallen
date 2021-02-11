@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:26.122765
 
-The undirected graph Methylibium petroleiphilum has 4431 nodes and 465777 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04746
-and has 17 connected components, where the component with most nodes has 4379 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 210.24, and the node degree mode is 4. The top 5
-most central nodes are 420662.Mpe_A2494 (degree 2147), 420662.Mpe_A1148 (degree 1661),
-420662.Mpe_A1622 (degree 1353), 420662.Mpe_A0099 (degree 1310) and 420662.Mpe_A0812
-(degree 1257).
+The undirected graph Methylibium petroleiphilum has 4431 nodes and 465777
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04746 and has 17 connected components, where the component
+with most nodes has 4379 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 210.24,
+and the node degree mode is 4. The top 5 most central nodes are 420662.Mpe_A2494
+(degree 2147), 420662.Mpe_A1148 (degree 1661), 420662.Mpe_A1622 (degree
+1353), 420662.Mpe_A0099 (degree 1310) and 420662.Mpe_A0812 (degree 1257).
 
 
 References
@@ -107,14 +107,14 @@ def MethylibiumPetroleiphilum(
 	
 	Datetime: 2021-02-02 20:47:26.122765
 	
-	The undirected graph Methylibium petroleiphilum has 4431 nodes and 465777 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04746
-	and has 17 connected components, where the component with most nodes has 4379 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 210.24, and the node degree mode is 4. The top 5
-	most central nodes are 420662.Mpe_A2494 (degree 2147), 420662.Mpe_A1148 (degree 1661),
-	420662.Mpe_A1622 (degree 1353), 420662.Mpe_A0099 (degree 1310) and 420662.Mpe_A0812
-	(degree 1257).
+	The undirected graph Methylibium petroleiphilum has 4431 nodes and 465777
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04746 and has 17 connected components, where the component
+	with most nodes has 4379 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 210.24,
+	and the node degree mode is 4. The top 5 most central nodes are 420662.Mpe_A2494
+	(degree 2147), 420662.Mpe_A1148 (degree 1661), 420662.Mpe_A1622 (degree
+	1353), 420662.Mpe_A0099 (degree 1310) and 420662.Mpe_A0812 (degree 1257).
 	
 
 

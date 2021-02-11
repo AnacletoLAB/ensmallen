@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:13.425588
 
-The undirected graph Bacillus bogoriensis has 4754 nodes and 234962 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02080 and
-has 31 connected components, where the component with most nodes has 4672 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 98.85, and the node degree mode is 3. The top 5 most central
-nodes are 1408424.JHYI01000026_gene944 (degree 543), 1408424.JHYI01000012_gene2316
-(degree 516), 1408424.JHYI01000010_gene812 (degree 471), 1408424.JHYI01000045_gene1528
-(degree 454) and 1408424.JHYI01000012_gene2213 (degree 453).
+The undirected graph Bacillus bogoriensis has 4754 nodes and 234962 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02080 and has 31 connected components, where the component with most
+nodes has 4672 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 98.85, and
+the node degree mode is 3. The top 5 most central nodes are 1408424.JHYI01000026_gene944
+(degree 543), 1408424.JHYI01000012_gene2316 (degree 516), 1408424.JHYI01000010_gene812
+(degree 471), 1408424.JHYI01000045_gene1528 (degree 454) and 1408424.JHYI01000012_gene2213
+(degree 453).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusBogoriensis(
 	
 	Datetime: 2021-02-03 22:36:13.425588
 	
-	The undirected graph Bacillus bogoriensis has 4754 nodes and 234962 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02080 and
-	has 31 connected components, where the component with most nodes has 4672 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 98.85, and the node degree mode is 3. The top 5 most central
-	nodes are 1408424.JHYI01000026_gene944 (degree 543), 1408424.JHYI01000012_gene2316
-	(degree 516), 1408424.JHYI01000010_gene812 (degree 471), 1408424.JHYI01000045_gene1528
-	(degree 454) and 1408424.JHYI01000012_gene2213 (degree 453).
+	The undirected graph Bacillus bogoriensis has 4754 nodes and 234962 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02080 and has 31 connected components, where the component with most
+	nodes has 4672 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 98.85, and
+	the node degree mode is 3. The top 5 most central nodes are 1408424.JHYI01000026_gene944
+	(degree 543), 1408424.JHYI01000012_gene2316 (degree 516), 1408424.JHYI01000010_gene812
+	(degree 471), 1408424.JHYI01000045_gene1528 (degree 454) and 1408424.JHYI01000012_gene2213
+	(degree 453).
 	
 
 

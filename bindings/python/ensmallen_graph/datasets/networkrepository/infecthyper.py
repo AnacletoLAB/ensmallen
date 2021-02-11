@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:08.770298
 
-The undirected graph infect-hyper has 113 nodes and 2196 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.34703 and
-is connected, as it has a single component. The graph median node degree is 37, the
-mean node degree is 38.87, and the node degree mode is 27. The top 5 most central
-nodes are 30 (degree 98), 42 (degree 82), 38 (degree 82), 102 (degree 81) and 33
-(degree 79).
+The undirected graph infect-hyper has 113 nodes and 2196 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.34703 and is connected, as it has a single component. The graph median
+node degree is 37, the mean node degree is 38.87, and the node degree mode
+is 27. The top 5 most central nodes are 30 (degree 98), 42 (degree 82),
+38 (degree 82), 102 (degree 81) and 33 (degree 79).
 
 
 References
@@ -107,12 +107,12 @@ def InfectHyper(
 	
 	Datetime: 2021-02-06 09:27:08.770298
 	
-	The undirected graph infect-hyper has 113 nodes and 2196 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.34703 and
-	is connected, as it has a single component. The graph median node degree is 37, the
-	mean node degree is 38.87, and the node degree mode is 27. The top 5 most central
-	nodes are 30 (degree 98), 42 (degree 82), 38 (degree 82), 102 (degree 81) and 33
-	(degree 79).
+	The undirected graph infect-hyper has 113 nodes and 2196 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.34703 and is connected, as it has a single component. The graph median
+	node degree is 37, the mean node degree is 38.87, and the node degree mode
+	is 27. The top 5 most central nodes are 30 (degree 98), 42 (degree 82),
+	38 (degree 82), 102 (degree 81) and 33 (degree 79).
 	
 
 

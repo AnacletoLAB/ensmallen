@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:23.442181
 
-The undirected graph Desulfurococcus fermentans has 1404 nodes and 87633 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08898
-and has 7 connected components, where the component with most nodes has 1392 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 124.83, and the node degree mode is 4. The top 5
-most central nodes are 768672.Desfe_0454 (degree 573), 768672.Desfe_0222 (degree
-556), 768672.Desfe_0262 (degree 536), 768672.Desfe_1318 (degree 499) and 768672.Desfe_1470
-(degree 487).
+The undirected graph Desulfurococcus fermentans has 1404 nodes and 87633
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08898 and has 7 connected components, where the component
+with most nodes has 1392 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 124.83,
+and the node degree mode is 4. The top 5 most central nodes are 768672.Desfe_0454
+(degree 573), 768672.Desfe_0222 (degree 556), 768672.Desfe_0262 (degree
+536), 768672.Desfe_1318 (degree 499) and 768672.Desfe_1470 (degree 487).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfurococcusFermentans(
 	
 	Datetime: 2021-02-02 21:44:23.442181
 	
-	The undirected graph Desulfurococcus fermentans has 1404 nodes and 87633 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08898
-	and has 7 connected components, where the component with most nodes has 1392 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 124.83, and the node degree mode is 4. The top 5
-	most central nodes are 768672.Desfe_0454 (degree 573), 768672.Desfe_0222 (degree
-	556), 768672.Desfe_0262 (degree 536), 768672.Desfe_1318 (degree 499) and 768672.Desfe_1470
-	(degree 487).
+	The undirected graph Desulfurococcus fermentans has 1404 nodes and 87633
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08898 and has 7 connected components, where the component
+	with most nodes has 1392 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 124.83,
+	and the node degree mode is 4. The top 5 most central nodes are 768672.Desfe_0454
+	(degree 573), 768672.Desfe_0222 (degree 556), 768672.Desfe_0262 (degree
+	536), 768672.Desfe_1318 (degree 499) and 768672.Desfe_1470 (degree 487).
 	
 
 

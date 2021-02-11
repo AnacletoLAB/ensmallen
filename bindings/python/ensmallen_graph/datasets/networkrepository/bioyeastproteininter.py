@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:53.581713
 
-The undirected graph bio-yeast-protein-inter has 1870 nodes, of which 24 are singletons
-(all have self-loops), and 2277 unweighted edges, of which 74 are self-loops. The
-graph is sparse as it has a density of 0.00128 and has 173 connected components,
-where the component with most nodes has 1458 nodes and the component with the least
-nodes has a single node. The graph median node degree is 1, the mean node degree
-is 2.40 and the node degree mode is 1. The top 5 most central nodes are 224 (degree
-56), 1183 (degree 38), 150 (degree 30), 1219 (degree 29) and 819 (degree 29).
+The undirected graph bio-yeast-protein-inter has 1870 nodes, of which 24
+are singletons (all have self-loops), and 2277 unweighted edges, of which
+74 are self-loops. The graph is sparse as it has a density of 0.00128 and
+has 173 connected components, where the component with most nodes has 1458
+nodes and the component with the least nodes has a single node. The graph
+median node degree is 1, the mean node degree is 2.40 and the node degree
+mode is 1. The top 5 most central nodes are 224 (degree 56), 1183 (degree
+38), 150 (degree 30), 1219 (degree 29) and 819 (degree 29).
 
 
 References
@@ -110,13 +111,14 @@ def BioYeastProteinInter(
 	
 	Datetime: 2021-02-03 22:36:53.581713
 	
-	The undirected graph bio-yeast-protein-inter has 1870 nodes, of which 24 are singletons
-	(all have self-loops), and 2277 unweighted edges, of which 74 are self-loops. The
-	graph is sparse as it has a density of 0.00128 and has 173 connected components,
-	where the component with most nodes has 1458 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 1, the mean node degree
-	is 2.40 and the node degree mode is 1. The top 5 most central nodes are 224 (degree
-	56), 1183 (degree 38), 150 (degree 30), 1219 (degree 29) and 819 (degree 29).
+	The undirected graph bio-yeast-protein-inter has 1870 nodes, of which 24
+	are singletons (all have self-loops), and 2277 unweighted edges, of which
+	74 are self-loops. The graph is sparse as it has a density of 0.00128 and
+	has 173 connected components, where the component with most nodes has 1458
+	nodes and the component with the least nodes has a single node. The graph
+	median node degree is 1, the mean node degree is 2.40 and the node degree
+	mode is 1. The top 5 most central nodes are 224 (degree 56), 1183 (degree
+	38), 150 (degree 30), 1219 (degree 29) and 819 (degree 29).
 	
 
 

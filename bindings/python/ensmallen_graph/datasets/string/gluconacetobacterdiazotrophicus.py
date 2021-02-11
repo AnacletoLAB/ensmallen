@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:41.332487
 
-The undirected graph Gluconacetobacter diazotrophicus has 3774 nodes and 312043 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04383
-and has 11 connected components, where the component with most nodes has 3751 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 165.36, and the node degree mode is 4. The top 5
-most central nodes are 272568.GDI3537 (degree 1287), 272568.GDI0286 (degree 1222),
-272568.GDI3147 (degree 1017), 272568.GDI2111 (degree 962) and 272568.GDI1154 (degree
-848).
+The undirected graph Gluconacetobacter diazotrophicus has 3774 nodes and
+312043 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04383 and has 11 connected components, where the
+component with most nodes has 3751 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+is 165.36, and the node degree mode is 4. The top 5 most central nodes
+are 272568.GDI3537 (degree 1287), 272568.GDI0286 (degree 1222), 272568.GDI3147
+(degree 1017), 272568.GDI2111 (degree 962) and 272568.GDI1154 (degree 848).
 
 
 References
@@ -107,14 +107,14 @@ def GluconacetobacterDiazotrophicus(
 	
 	Datetime: 2021-02-02 20:16:41.332487
 	
-	The undirected graph Gluconacetobacter diazotrophicus has 3774 nodes and 312043 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04383
-	and has 11 connected components, where the component with most nodes has 3751 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 165.36, and the node degree mode is 4. The top 5
-	most central nodes are 272568.GDI3537 (degree 1287), 272568.GDI0286 (degree 1222),
-	272568.GDI3147 (degree 1017), 272568.GDI2111 (degree 962) and 272568.GDI1154 (degree
-	848).
+	The undirected graph Gluconacetobacter diazotrophicus has 3774 nodes and
+	312043 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04383 and has 11 connected components, where the
+	component with most nodes has 3751 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+	is 165.36, and the node degree mode is 4. The top 5 most central nodes
+	are 272568.GDI3537 (degree 1287), 272568.GDI0286 (degree 1222), 272568.GDI3147
+	(degree 1017), 272568.GDI2111 (degree 962) and 272568.GDI1154 (degree 848).
 	
 
 

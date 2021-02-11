@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:04.536693
 
-The undirected graph Pyrenophora teres has 7522 nodes and 581342 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02055 and
-has 35 connected components, where the component with most nodes has 7448 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 154.57, and the node degree mode is 1. The top 5 most central
-nodes are 53485.EFQ88385 (degree 2016), 53485.EFQ91900 (degree 1936), 53485.EFQ87619
-(degree 1900), 53485.EFQ90287 (degree 1543) and 53485.EFQ89753 (degree 1399).
+The undirected graph Pyrenophora teres has 7522 nodes and 581342 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02055 and has 35 connected components, where the component with most
+nodes has 7448 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 154.57, and
+the node degree mode is 1. The top 5 most central nodes are 53485.EFQ88385
+(degree 2016), 53485.EFQ91900 (degree 1936), 53485.EFQ87619 (degree 1900),
+53485.EFQ90287 (degree 1543) and 53485.EFQ89753 (degree 1399).
 
 
 References
@@ -106,13 +107,14 @@ def PyrenophoraTeres(
 	
 	Datetime: 2021-02-02 18:18:04.536693
 	
-	The undirected graph Pyrenophora teres has 7522 nodes and 581342 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02055 and
-	has 35 connected components, where the component with most nodes has 7448 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 154.57, and the node degree mode is 1. The top 5 most central
-	nodes are 53485.EFQ88385 (degree 2016), 53485.EFQ91900 (degree 1936), 53485.EFQ87619
-	(degree 1900), 53485.EFQ90287 (degree 1543) and 53485.EFQ89753 (degree 1399).
+	The undirected graph Pyrenophora teres has 7522 nodes and 581342 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02055 and has 35 connected components, where the component with most
+	nodes has 7448 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 154.57, and
+	the node degree mode is 1. The top 5 most central nodes are 53485.EFQ88385
+	(degree 2016), 53485.EFQ91900 (degree 1936), 53485.EFQ87619 (degree 1900),
+	53485.EFQ90287 (degree 1543) and 53485.EFQ89753 (degree 1399).
 	
 
 

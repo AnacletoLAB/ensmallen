@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:14.471175
 
-The undirected graph alpha proteobacterium Mf 105b01 has 3630 nodes and 397182 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06030
-and has 10 connected components, where the component with most nodes has 3607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 218.83, and the node degree mode is 2. The top 5
-most central nodes are 1282876.BAOK01000001_gene3604 (degree 1234), 1282876.BAOK01000001_gene2471
+The undirected graph alpha proteobacterium Mf 105b01 has 3630 nodes and
+397182 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06030 and has 10 connected components, where the
+component with most nodes has 3607 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 179, the mean node degree
+is 218.83, and the node degree mode is 2. The top 5 most central nodes
+are 1282876.BAOK01000001_gene3604 (degree 1234), 1282876.BAOK01000001_gene2471
 (degree 1174), 1282876.BAOK01000001_gene2439 (degree 1104), 1282876.BAOK01000002_gene102
 (degree 1034) and 1282876.BAOK01000001_gene2867 (degree 1011).
 
@@ -107,12 +108,13 @@ def AlphaProteobacteriumMf105b01(
 	
 	Datetime: 2021-02-03 21:12:14.471175
 	
-	The undirected graph alpha proteobacterium Mf 105b01 has 3630 nodes and 397182 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06030
-	and has 10 connected components, where the component with most nodes has 3607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 218.83, and the node degree mode is 2. The top 5
-	most central nodes are 1282876.BAOK01000001_gene3604 (degree 1234), 1282876.BAOK01000001_gene2471
+	The undirected graph alpha proteobacterium Mf 105b01 has 3630 nodes and
+	397182 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06030 and has 10 connected components, where the
+	component with most nodes has 3607 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 179, the mean node degree
+	is 218.83, and the node degree mode is 2. The top 5 most central nodes
+	are 1282876.BAOK01000001_gene3604 (degree 1234), 1282876.BAOK01000001_gene2471
 	(degree 1174), 1282876.BAOK01000001_gene2439 (degree 1104), 1282876.BAOK01000002_gene102
 	(degree 1034) and 1282876.BAOK01000001_gene2867 (degree 1011).
 	

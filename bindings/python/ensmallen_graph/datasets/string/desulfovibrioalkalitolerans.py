@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:37.945497
 
-The undirected graph Desulfovibrio alkalitolerans has 2908 nodes and 285028 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-and has 5 connected components, where the component with most nodes has 2899 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 196.03, and the node degree mode is 6. The top 5
-most central nodes are 1121439.dsat_2148 (degree 1323), 1121439.dsat_1043 (degree
-1076), 1121439.dsat_1432 (degree 1034), 1121439.dsat_2797 (degree 1018) and 1121439.dsat_0744
-(degree 984).
+The undirected graph Desulfovibrio alkalitolerans has 2908 nodes and 285028
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06743 and has 5 connected components, where the component
+with most nodes has 2899 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 196.03,
+and the node degree mode is 6. The top 5 most central nodes are 1121439.dsat_2148
+(degree 1323), 1121439.dsat_1043 (degree 1076), 1121439.dsat_1432 (degree
+1034), 1121439.dsat_2797 (degree 1018) and 1121439.dsat_0744 (degree 984).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioAlkalitolerans(
 	
 	Datetime: 2021-02-02 22:36:37.945497
 	
-	The undirected graph Desulfovibrio alkalitolerans has 2908 nodes and 285028 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-	and has 5 connected components, where the component with most nodes has 2899 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 196.03, and the node degree mode is 6. The top 5
-	most central nodes are 1121439.dsat_2148 (degree 1323), 1121439.dsat_1043 (degree
-	1076), 1121439.dsat_1432 (degree 1034), 1121439.dsat_2797 (degree 1018) and 1121439.dsat_0744
-	(degree 984).
+	The undirected graph Desulfovibrio alkalitolerans has 2908 nodes and 285028
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06743 and has 5 connected components, where the component
+	with most nodes has 2899 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 196.03,
+	and the node degree mode is 6. The top 5 most central nodes are 1121439.dsat_2148
+	(degree 1323), 1121439.dsat_1043 (degree 1076), 1121439.dsat_1432 (degree
+	1034), 1121439.dsat_2797 (degree 1018) and 1121439.dsat_0744 (degree 984).
 	
 
 

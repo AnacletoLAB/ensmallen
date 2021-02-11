@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:31.497640
 
-The undirected graph Strongyloides ratti has 6912 nodes and 1402019 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05870 and
-has 14 connected components, where the component with most nodes has 6877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 289,
-the mean node degree is 405.68, and the node degree mode is 1. The top 5 most central
-nodes are 34506.g3720 (degree 3812), 34506.g6044 (degree 3569), 34506.g1089 (degree
-3254), 34506.g5665 (degree 3217) and 34506.g5327 (degree 3040).
+The undirected graph Strongyloides ratti has 6912 nodes and 1402019 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05870 and has 14 connected components, where the component with most
+nodes has 6877 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 289, the mean node degree is 405.68, and
+the node degree mode is 1. The top 5 most central nodes are 34506.g3720
+(degree 3812), 34506.g6044 (degree 3569), 34506.g1089 (degree 3254), 34506.g5665
+(degree 3217) and 34506.g5327 (degree 3040).
 
 
 References
@@ -106,13 +107,14 @@ def StrongyloidesRatti(
 	
 	Datetime: 2021-02-02 18:04:31.497640
 	
-	The undirected graph Strongyloides ratti has 6912 nodes and 1402019 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05870 and
-	has 14 connected components, where the component with most nodes has 6877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 289,
-	the mean node degree is 405.68, and the node degree mode is 1. The top 5 most central
-	nodes are 34506.g3720 (degree 3812), 34506.g6044 (degree 3569), 34506.g1089 (degree
-	3254), 34506.g5665 (degree 3217) and 34506.g5327 (degree 3040).
+	The undirected graph Strongyloides ratti has 6912 nodes and 1402019 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05870 and has 14 connected components, where the component with most
+	nodes has 6877 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 289, the mean node degree is 405.68, and
+	the node degree mode is 1. The top 5 most central nodes are 34506.g3720
+	(degree 3812), 34506.g6044 (degree 3569), 34506.g1089 (degree 3254), 34506.g5665
+	(degree 3217) and 34506.g5327 (degree 3040).
 	
 
 

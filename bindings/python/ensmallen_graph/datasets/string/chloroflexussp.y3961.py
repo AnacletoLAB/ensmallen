@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:25.525609
 
-The undirected graph Chloroflexus sp. Y3961 has 3660 nodes and 337274 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05037 and
-has 21 connected components, where the component with most nodes has 3616 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 184.30, and the node degree mode is 1. The top 5 most central
-nodes are 867845.KI911784_gene1668 (degree 1912), 867845.KI911784_gene1323 (degree
-1809), 867845.KI911784_gene2360 (degree 1559), 867845.KI911784_gene2176 (degree 1498)
-and 867845.KI911784_gene1686 (degree 1398).
+The undirected graph Chloroflexus sp. Y3961 has 3660 nodes and 337274 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05037 and has 21 connected components, where the component with most
+nodes has 3616 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 184.30, and
+the node degree mode is 1. The top 5 most central nodes are 867845.KI911784_gene1668
+(degree 1912), 867845.KI911784_gene1323 (degree 1809), 867845.KI911784_gene2360
+(degree 1559), 867845.KI911784_gene2176 (degree 1498) and 867845.KI911784_gene1686
+(degree 1398).
 
 
 References
@@ -107,14 +108,15 @@ def ChloroflexusSp.Y3961(
 	
 	Datetime: 2021-02-02 21:48:25.525609
 	
-	The undirected graph Chloroflexus sp. Y3961 has 3660 nodes and 337274 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05037 and
-	has 21 connected components, where the component with most nodes has 3616 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 184.30, and the node degree mode is 1. The top 5 most central
-	nodes are 867845.KI911784_gene1668 (degree 1912), 867845.KI911784_gene1323 (degree
-	1809), 867845.KI911784_gene2360 (degree 1559), 867845.KI911784_gene2176 (degree 1498)
-	and 867845.KI911784_gene1686 (degree 1398).
+	The undirected graph Chloroflexus sp. Y3961 has 3660 nodes and 337274 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05037 and has 21 connected components, where the component with most
+	nodes has 3616 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 184.30, and
+	the node degree mode is 1. The top 5 most central nodes are 867845.KI911784_gene1668
+	(degree 1912), 867845.KI911784_gene1323 (degree 1809), 867845.KI911784_gene2360
+	(degree 1559), 867845.KI911784_gene2176 (degree 1498) and 867845.KI911784_gene1686
+	(degree 1398).
 	
 
 

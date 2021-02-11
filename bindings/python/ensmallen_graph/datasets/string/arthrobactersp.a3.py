@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:58.773663
 
-The undirected graph Arthrobacter sp. A3 has 3984 nodes and 335376 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04227 and
-has 21 connected components, where the component with most nodes has 3933 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 168.36, and the node degree mode is 1. The top 5 most central
-nodes are 595593.JREV01000022_gene1671 (degree 1526), 595593.JREV01000022_gene1510
-(degree 1350), 595593.JREV01000054_gene2419 (degree 1329), 595593.JREV01000008_gene2806
-(degree 1136) and 595593.JREV01000003_gene3055 (degree 1118).
+The undirected graph Arthrobacter sp. A3 has 3984 nodes and 335376 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04227 and has 21 connected components, where the component with most
+nodes has 3933 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 168.36, and
+the node degree mode is 1. The top 5 most central nodes are 595593.JREV01000022_gene1671
+(degree 1526), 595593.JREV01000022_gene1510 (degree 1350), 595593.JREV01000054_gene2419
+(degree 1329), 595593.JREV01000008_gene2806 (degree 1136) and 595593.JREV01000003_gene3055
+(degree 1118).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.A3(
 	
 	Datetime: 2021-02-02 21:18:58.773663
 	
-	The undirected graph Arthrobacter sp. A3 has 3984 nodes and 335376 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04227 and
-	has 21 connected components, where the component with most nodes has 3933 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 168.36, and the node degree mode is 1. The top 5 most central
-	nodes are 595593.JREV01000022_gene1671 (degree 1526), 595593.JREV01000022_gene1510
-	(degree 1350), 595593.JREV01000054_gene2419 (degree 1329), 595593.JREV01000008_gene2806
-	(degree 1136) and 595593.JREV01000003_gene3055 (degree 1118).
+	The undirected graph Arthrobacter sp. A3 has 3984 nodes and 335376 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04227 and has 21 connected components, where the component with most
+	nodes has 3933 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 168.36, and
+	the node degree mode is 1. The top 5 most central nodes are 595593.JREV01000022_gene1671
+	(degree 1526), 595593.JREV01000022_gene1510 (degree 1350), 595593.JREV01000054_gene2419
+	(degree 1329), 595593.JREV01000008_gene2806 (degree 1136) and 595593.JREV01000003_gene3055
+	(degree 1118).
 	
 
 

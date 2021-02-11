@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:37.491895
 
-The undirected graph Dickeya sp. 2B12 has 3581 nodes and 389774 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06081 and
-has 9 connected components, where the component with most nodes has 3559 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 217.69, and the node degree mode is 1. The top 5 most central
-nodes are 1577887.JSYG01000017_gene1858 (degree 1241), 1577887.JSYG01000043_gene2091
-(degree 1177), 1577887.JSYG01000022_gene2912 (degree 1175), 1577887.JSYG01000017_gene1930
-(degree 1171) and 1577887.JSYG01000034_gene3336 (degree 1104).
+The undirected graph Dickeya sp. 2B12 has 3581 nodes and 389774 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06081 and has 9 connected components, where the component with most
+nodes has 3559 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 217.69, and
+the node degree mode is 1. The top 5 most central nodes are 1577887.JSYG01000017_gene1858
+(degree 1241), 1577887.JSYG01000043_gene2091 (degree 1177), 1577887.JSYG01000022_gene2912
+(degree 1175), 1577887.JSYG01000017_gene1930 (degree 1171) and 1577887.JSYG01000034_gene3336
+(degree 1104).
 
 
 References
@@ -107,14 +108,15 @@ def DickeyaSp.2b12(
 	
 	Datetime: 2021-02-03 23:21:37.491895
 	
-	The undirected graph Dickeya sp. 2B12 has 3581 nodes and 389774 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06081 and
-	has 9 connected components, where the component with most nodes has 3559 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 217.69, and the node degree mode is 1. The top 5 most central
-	nodes are 1577887.JSYG01000017_gene1858 (degree 1241), 1577887.JSYG01000043_gene2091
-	(degree 1177), 1577887.JSYG01000022_gene2912 (degree 1175), 1577887.JSYG01000017_gene1930
-	(degree 1171) and 1577887.JSYG01000034_gene3336 (degree 1104).
+	The undirected graph Dickeya sp. 2B12 has 3581 nodes and 389774 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06081 and has 9 connected components, where the component with most
+	nodes has 3559 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 217.69, and
+	the node degree mode is 1. The top 5 most central nodes are 1577887.JSYG01000017_gene1858
+	(degree 1241), 1577887.JSYG01000043_gene2091 (degree 1177), 1577887.JSYG01000022_gene2912
+	(degree 1175), 1577887.JSYG01000017_gene1930 (degree 1171) and 1577887.JSYG01000034_gene3336
+	(degree 1104).
 	
 
 

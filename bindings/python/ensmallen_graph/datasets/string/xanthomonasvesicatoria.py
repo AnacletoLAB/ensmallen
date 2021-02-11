@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:00.526238
 
-The undirected graph Xanthomonas vesicatoria has 4796 nodes and 367700 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03198 and
-has 57 connected components, where the component with most nodes has 4653 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 153.34, and the node degree mode is 1. The top 5 most central
-nodes are 925775.XVE_3603 (degree 1499), 925775.XVE_0991 (degree 1312), 925775.XVE_1036
-(degree 1276), 925775.XVE_1969 (degree 1115) and 925775.XVE_1868 (degree 1114).
+The undirected graph Xanthomonas vesicatoria has 4796 nodes and 367700
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03198 and has 57 connected components, where the component
+with most nodes has 4653 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 153.34,
+and the node degree mode is 1. The top 5 most central nodes are 925775.XVE_3603
+(degree 1499), 925775.XVE_0991 (degree 1312), 925775.XVE_1036 (degree 1276),
+925775.XVE_1969 (degree 1115) and 925775.XVE_1868 (degree 1114).
 
 
 References
@@ -106,13 +107,14 @@ def XanthomonasVesicatoria(
 	
 	Datetime: 2021-02-02 21:56:00.526238
 	
-	The undirected graph Xanthomonas vesicatoria has 4796 nodes and 367700 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03198 and
-	has 57 connected components, where the component with most nodes has 4653 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 153.34, and the node degree mode is 1. The top 5 most central
-	nodes are 925775.XVE_3603 (degree 1499), 925775.XVE_0991 (degree 1312), 925775.XVE_1036
-	(degree 1276), 925775.XVE_1969 (degree 1115) and 925775.XVE_1868 (degree 1114).
+	The undirected graph Xanthomonas vesicatoria has 4796 nodes and 367700
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03198 and has 57 connected components, where the component
+	with most nodes has 4653 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 153.34,
+	and the node degree mode is 1. The top 5 most central nodes are 925775.XVE_3603
+	(degree 1499), 925775.XVE_0991 (degree 1312), 925775.XVE_1036 (degree 1276),
+	925775.XVE_1969 (degree 1115) and 925775.XVE_1868 (degree 1114).
 	
 
 

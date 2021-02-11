@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:59.591378
 
-The undirected graph Bacteroidaceae bacterium MS4 has 4004 nodes and 353711 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04414
-and has 22 connected components, where the component with most nodes has 3938 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 176.68, and the node degree mode is 11. The top 5
-most central nodes are 1347393.HG726019_gene7603 (degree 1268), 1347393.HG726028_gene2249
-(degree 1129), 1347393.HG726020_gene1535 (degree 1073), 1347393.HG726023_gene3428
-(degree 1071) and 1347393.HG726023_gene3135 (degree 1053).
+The undirected graph Bacteroidaceae bacterium MS4 has 4004 nodes and 353711
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04414 and has 22 connected components, where the component
+with most nodes has 3938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 176.68,
+and the node degree mode is 11. The top 5 most central nodes are 1347393.HG726019_gene7603
+(degree 1268), 1347393.HG726028_gene2249 (degree 1129), 1347393.HG726020_gene1535
+(degree 1073), 1347393.HG726023_gene3428 (degree 1071) and 1347393.HG726023_gene3135
+(degree 1053).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidaceaeBacteriumMs4(
 	
 	Datetime: 2021-02-03 22:03:59.591378
 	
-	The undirected graph Bacteroidaceae bacterium MS4 has 4004 nodes and 353711 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04414
-	and has 22 connected components, where the component with most nodes has 3938 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 176.68, and the node degree mode is 11. The top 5
-	most central nodes are 1347393.HG726019_gene7603 (degree 1268), 1347393.HG726028_gene2249
-	(degree 1129), 1347393.HG726020_gene1535 (degree 1073), 1347393.HG726023_gene3428
-	(degree 1071) and 1347393.HG726023_gene3135 (degree 1053).
+	The undirected graph Bacteroidaceae bacterium MS4 has 4004 nodes and 353711
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04414 and has 22 connected components, where the component
+	with most nodes has 3938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 176.68,
+	and the node degree mode is 11. The top 5 most central nodes are 1347393.HG726019_gene7603
+	(degree 1268), 1347393.HG726028_gene2249 (degree 1129), 1347393.HG726020_gene1535
+	(degree 1073), 1347393.HG726023_gene3428 (degree 1071) and 1347393.HG726023_gene3135
+	(degree 1053).
 	
 
 

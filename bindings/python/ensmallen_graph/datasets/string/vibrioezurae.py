@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:21.252432
 
-The undirected graph Vibrio ezurae has 3181 nodes and 267490 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.05289 and has 12
-connected components, where the component with most nodes has 3155 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 168.18, and the node degree mode is 2. The top 5 most central
-nodes are 1219080.VEZ01S_37_00560 (degree 1125), 1219080.VEZ01S_26_00260 (degree
-1008), 1219080.VEZ01S_38_00910 (degree 992), 1219080.VEZ01S_07_00400 (degree 979)
-and 1219080.VEZ01S_02_00200 (degree 893).
+The undirected graph Vibrio ezurae has 3181 nodes and 267490 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.05289 and has 12 connected components, where the component with most
+nodes has 3155 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 168.18, and
+the node degree mode is 2. The top 5 most central nodes are 1219080.VEZ01S_37_00560
+(degree 1125), 1219080.VEZ01S_26_00260 (degree 1008), 1219080.VEZ01S_38_00910
+(degree 992), 1219080.VEZ01S_07_00400 (degree 979) and 1219080.VEZ01S_02_00200
+(degree 893).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioEzurae(
 	
 	Datetime: 2021-02-02 23:23:21.252432
 	
-	The undirected graph Vibrio ezurae has 3181 nodes and 267490 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.05289 and has 12
-	connected components, where the component with most nodes has 3155 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 168.18, and the node degree mode is 2. The top 5 most central
-	nodes are 1219080.VEZ01S_37_00560 (degree 1125), 1219080.VEZ01S_26_00260 (degree
-	1008), 1219080.VEZ01S_38_00910 (degree 992), 1219080.VEZ01S_07_00400 (degree 979)
-	and 1219080.VEZ01S_02_00200 (degree 893).
+	The undirected graph Vibrio ezurae has 3181 nodes and 267490 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.05289 and has 12 connected components, where the component with most
+	nodes has 3155 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 168.18, and
+	the node degree mode is 2. The top 5 most central nodes are 1219080.VEZ01S_37_00560
+	(degree 1125), 1219080.VEZ01S_26_00260 (degree 1008), 1219080.VEZ01S_38_00910
+	(degree 992), 1219080.VEZ01S_07_00400 (degree 979) and 1219080.VEZ01S_02_00200
+	(degree 893).
 	
 
 

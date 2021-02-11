@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:57.388777
 
-The undirected graph Bacteroides massiliensis dnLKV3 has 4526 nodes and 517455 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-and has 16 connected components, where the component with most nodes has 4490 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 228.66, and the node degree mode is 2. The top 5
-most central nodes are 1235788.C802_00501 (degree 1253), 1235788.C802_04000 (degree
-1184), 1235788.C802_02141 (degree 1181), 1235788.C802_01668 (degree 1114) and 1235788.C802_00652
-(degree 1078).
+The undirected graph Bacteroides massiliensis dnLKV3 has 4526 nodes and
+517455 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05053 and has 16 connected components, where the
+component with most nodes has 4490 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+is 228.66, and the node degree mode is 2. The top 5 most central nodes
+are 1235788.C802_00501 (degree 1253), 1235788.C802_04000 (degree 1184),
+1235788.C802_02141 (degree 1181), 1235788.C802_01668 (degree 1114) and
+1235788.C802_00652 (degree 1078).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesMassiliensisDnlkv3(
 	
 	Datetime: 2021-02-02 23:29:57.388777
 	
-	The undirected graph Bacteroides massiliensis dnLKV3 has 4526 nodes and 517455 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-	and has 16 connected components, where the component with most nodes has 4490 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 228.66, and the node degree mode is 2. The top 5
-	most central nodes are 1235788.C802_00501 (degree 1253), 1235788.C802_04000 (degree
-	1184), 1235788.C802_02141 (degree 1181), 1235788.C802_01668 (degree 1114) and 1235788.C802_00652
-	(degree 1078).
+	The undirected graph Bacteroides massiliensis dnLKV3 has 4526 nodes and
+	517455 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05053 and has 16 connected components, where the
+	component with most nodes has 4490 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+	is 228.66, and the node degree mode is 2. The top 5 most central nodes
+	are 1235788.C802_00501 (degree 1253), 1235788.C802_04000 (degree 1184),
+	1235788.C802_02141 (degree 1181), 1235788.C802_01668 (degree 1114) and
+	1235788.C802_00652 (degree 1078).
 	
 
 

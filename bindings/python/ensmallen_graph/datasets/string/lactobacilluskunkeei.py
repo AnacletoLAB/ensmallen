@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:53.672111
 
-The undirected graph Lactobacillus kunkeei has 1348 nodes and 85801 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09451 and
-has 5 connected components, where the component with most nodes has 1339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 127.30, and the node degree mode is 2. The top 5 most central
-nodes are 148814.JI66_02565 (degree 662), 148814.JI66_04110 (degree 524), 148814.JI66_05680
-(degree 482), 148814.JI66_02100 (degree 475) and 148814.JI66_00855 (degree 451).
+The undirected graph Lactobacillus kunkeei has 1348 nodes and 85801 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09451 and has 5 connected components, where the component with most
+nodes has 1339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 127.30, and
+the node degree mode is 2. The top 5 most central nodes are 148814.JI66_02565
+(degree 662), 148814.JI66_04110 (degree 524), 148814.JI66_05680 (degree
+482), 148814.JI66_02100 (degree 475) and 148814.JI66_00855 (degree 451).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusKunkeei(
 	
 	Datetime: 2021-02-02 19:51:53.672111
 	
-	The undirected graph Lactobacillus kunkeei has 1348 nodes and 85801 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09451 and
-	has 5 connected components, where the component with most nodes has 1339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 127.30, and the node degree mode is 2. The top 5 most central
-	nodes are 148814.JI66_02565 (degree 662), 148814.JI66_04110 (degree 524), 148814.JI66_05680
-	(degree 482), 148814.JI66_02100 (degree 475) and 148814.JI66_00855 (degree 451).
+	The undirected graph Lactobacillus kunkeei has 1348 nodes and 85801 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09451 and has 5 connected components, where the component with most
+	nodes has 1339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 127.30, and
+	the node degree mode is 2. The top 5 most central nodes are 148814.JI66_02565
+	(degree 662), 148814.JI66_04110 (degree 524), 148814.JI66_05680 (degree
+	482), 148814.JI66_02100 (degree 475) and 148814.JI66_00855 (degree 451).
 	
 
 

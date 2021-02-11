@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:11.491377
 
-The undirected graph Amphibacillus xylanus has 2402 nodes and 168605 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05847 and
-has 5 connected components, where the component with most nodes has 2391 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 140.39, and the node degree mode is 4. The top 5 most central
-nodes are 698758.AXY_09390 (degree 840), 698758.AXY_11210 (degree 833), 698758.AXY_03930
-(degree 824), 698758.AXY_11000 (degree 735) and 698758.AXY_00090 (degree 722).
+The undirected graph Amphibacillus xylanus has 2402 nodes and 168605 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05847 and has 5 connected components, where the component with most
+nodes has 2391 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 140.39, and
+the node degree mode is 4. The top 5 most central nodes are 698758.AXY_09390
+(degree 840), 698758.AXY_11210 (degree 833), 698758.AXY_03930 (degree 824),
+698758.AXY_11000 (degree 735) and 698758.AXY_00090 (degree 722).
 
 
 References
@@ -106,13 +107,14 @@ def AmphibacillusXylanus(
 	
 	Datetime: 2021-02-02 21:33:11.491377
 	
-	The undirected graph Amphibacillus xylanus has 2402 nodes and 168605 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05847 and
-	has 5 connected components, where the component with most nodes has 2391 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 140.39, and the node degree mode is 4. The top 5 most central
-	nodes are 698758.AXY_09390 (degree 840), 698758.AXY_11210 (degree 833), 698758.AXY_03930
-	(degree 824), 698758.AXY_11000 (degree 735) and 698758.AXY_00090 (degree 722).
+	The undirected graph Amphibacillus xylanus has 2402 nodes and 168605 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05847 and has 5 connected components, where the component with most
+	nodes has 2391 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 140.39, and
+	the node degree mode is 4. The top 5 most central nodes are 698758.AXY_09390
+	(degree 840), 698758.AXY_11210 (degree 833), 698758.AXY_03930 (degree 824),
+	698758.AXY_11000 (degree 735) and 698758.AXY_00090 (degree 722).
 	
 
 

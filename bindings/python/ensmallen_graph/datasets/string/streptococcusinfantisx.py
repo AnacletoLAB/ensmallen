@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:26.185397
 
-The undirected graph Streptococcus infantis X has 1902 nodes and 132671 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07339
-and has 10 connected components, where the component with most nodes has 1880 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 139.51, and the node degree mode is 19. The top 5
-most central nodes are 997830.HMPREF1124_0467 (degree 816), 997830.HMPREF1124_1604
-(degree 756), 997830.HMPREF1124_0322 (degree 724), 997830.HMPREF1124_0378 (degree
-677) and 997830.HMPREF1124_1521 (degree 668).
+The undirected graph Streptococcus infantis X has 1902 nodes and 132671
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07339 and has 10 connected components, where the component
+with most nodes has 1880 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 139.51,
+and the node degree mode is 19. The top 5 most central nodes are 997830.HMPREF1124_0467
+(degree 816), 997830.HMPREF1124_1604 (degree 756), 997830.HMPREF1124_0322
+(degree 724), 997830.HMPREF1124_0378 (degree 677) and 997830.HMPREF1124_1521
+(degree 668).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusInfantisX(
 	
 	Datetime: 2021-02-02 22:05:26.185397
 	
-	The undirected graph Streptococcus infantis X has 1902 nodes and 132671 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07339
-	and has 10 connected components, where the component with most nodes has 1880 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 139.51, and the node degree mode is 19. The top 5
-	most central nodes are 997830.HMPREF1124_0467 (degree 816), 997830.HMPREF1124_1604
-	(degree 756), 997830.HMPREF1124_0322 (degree 724), 997830.HMPREF1124_0378 (degree
-	677) and 997830.HMPREF1124_1521 (degree 668).
+	The undirected graph Streptococcus infantis X has 1902 nodes and 132671
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07339 and has 10 connected components, where the component
+	with most nodes has 1880 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 139.51,
+	and the node degree mode is 19. The top 5 most central nodes are 997830.HMPREF1124_0467
+	(degree 816), 997830.HMPREF1124_1604 (degree 756), 997830.HMPREF1124_0322
+	(degree 724), 997830.HMPREF1124_0378 (degree 677) and 997830.HMPREF1124_1521
+	(degree 668).
 	
 
 

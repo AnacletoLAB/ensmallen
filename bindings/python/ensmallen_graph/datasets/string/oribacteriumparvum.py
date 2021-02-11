@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:24.488793
 
-The undirected graph Oribacterium parvum has 2224 nodes and 148860 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06022 and
-has 4 connected components, where the component with most nodes has 2217 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 133.87, and the node degree mode is 7. The top 5 most central
-nodes are 796945.HMPREF1145_0271 (degree 941), 796945.HMPREF1145_1072 (degree 846),
-796945.HMPREF1145_2279 (degree 735), 796945.HMPREF1145_1906 (degree 730) and 796945.HMPREF1145_0854
+The undirected graph Oribacterium parvum has 2224 nodes and 148860 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06022 and has 4 connected components, where the component with most
+nodes has 2217 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 133.87, and
+the node degree mode is 7. The top 5 most central nodes are 796945.HMPREF1145_0271
+(degree 941), 796945.HMPREF1145_1072 (degree 846), 796945.HMPREF1145_2279
+(degree 735), 796945.HMPREF1145_1906 (degree 730) and 796945.HMPREF1145_0854
 (degree 726).
 
 
@@ -107,13 +108,14 @@ def OribacteriumParvum(
 	
 	Datetime: 2021-02-02 21:45:24.488793
 	
-	The undirected graph Oribacterium parvum has 2224 nodes and 148860 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06022 and
-	has 4 connected components, where the component with most nodes has 2217 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 133.87, and the node degree mode is 7. The top 5 most central
-	nodes are 796945.HMPREF1145_0271 (degree 941), 796945.HMPREF1145_1072 (degree 846),
-	796945.HMPREF1145_2279 (degree 735), 796945.HMPREF1145_1906 (degree 730) and 796945.HMPREF1145_0854
+	The undirected graph Oribacterium parvum has 2224 nodes and 148860 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06022 and has 4 connected components, where the component with most
+	nodes has 2217 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 133.87, and
+	the node degree mode is 7. The top 5 most central nodes are 796945.HMPREF1145_0271
+	(degree 941), 796945.HMPREF1145_1072 (degree 846), 796945.HMPREF1145_2279
+	(degree 735), 796945.HMPREF1145_1906 (degree 730) and 796945.HMPREF1145_0854
 	(degree 726).
 	
 

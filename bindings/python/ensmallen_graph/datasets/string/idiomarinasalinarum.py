@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:00.485112
 
-The undirected graph Idiomarina salinarum has 2089 nodes and 179651 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08237 and
-has 6 connected components, where the component with most nodes has 2074 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 172.00, and the node degree mode is 7. The top 5 most central
-nodes are 435908.IDSA_07370 (degree 897), 435908.IDSA_04455 (degree 758), 435908.IDSA_10445
-(degree 750), 435908.IDSA_10450 (degree 744) and 435908.IDSA_10280 (degree 733).
+The undirected graph Idiomarina salinarum has 2089 nodes and 179651 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08237 and has 6 connected components, where the component with most
+nodes has 2074 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 172.00, and
+the node degree mode is 7. The top 5 most central nodes are 435908.IDSA_07370
+(degree 897), 435908.IDSA_04455 (degree 758), 435908.IDSA_10445 (degree
+750), 435908.IDSA_10450 (degree 744) and 435908.IDSA_10280 (degree 733).
 
 
 References
@@ -106,13 +107,14 @@ def IdiomarinaSalinarum(
 	
 	Datetime: 2021-02-02 20:49:00.485112
 	
-	The undirected graph Idiomarina salinarum has 2089 nodes and 179651 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08237 and
-	has 6 connected components, where the component with most nodes has 2074 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 172.00, and the node degree mode is 7. The top 5 most central
-	nodes are 435908.IDSA_07370 (degree 897), 435908.IDSA_04455 (degree 758), 435908.IDSA_10445
-	(degree 750), 435908.IDSA_10450 (degree 744) and 435908.IDSA_10280 (degree 733).
+	The undirected graph Idiomarina salinarum has 2089 nodes and 179651 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08237 and has 6 connected components, where the component with most
+	nodes has 2074 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 172.00, and
+	the node degree mode is 7. The top 5 most central nodes are 435908.IDSA_07370
+	(degree 897), 435908.IDSA_04455 (degree 758), 435908.IDSA_10445 (degree
+	750), 435908.IDSA_10450 (degree 744) and 435908.IDSA_10280 (degree 733).
 	
 
 

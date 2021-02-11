@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:25.784227
 
-The undirected graph Gordonia paraffinivorans has 4158 nodes and 498456 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05768
-and has 12 connected components, where the component with most nodes has 4132 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 239.76, and the node degree mode is 2. The top 5
-most central nodes are 1223543.GP2_011_00410 (degree 1648), 1223543.GP2_025_00060
-(degree 1403), 1223543.GP2_016_00510 (degree 1311), 1223543.GP2_042_00020 (degree
-1285) and 1223543.GP2_011_01110 (degree 1269).
+The undirected graph Gordonia paraffinivorans has 4158 nodes and 498456
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05768 and has 12 connected components, where the component
+with most nodes has 4132 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 239.76,
+and the node degree mode is 2. The top 5 most central nodes are 1223543.GP2_011_00410
+(degree 1648), 1223543.GP2_025_00060 (degree 1403), 1223543.GP2_016_00510
+(degree 1311), 1223543.GP2_042_00020 (degree 1285) and 1223543.GP2_011_01110
+(degree 1269).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaParaffinivorans(
 	
 	Datetime: 2021-02-02 23:24:25.784227
 	
-	The undirected graph Gordonia paraffinivorans has 4158 nodes and 498456 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05768
-	and has 12 connected components, where the component with most nodes has 4132 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 239.76, and the node degree mode is 2. The top 5
-	most central nodes are 1223543.GP2_011_00410 (degree 1648), 1223543.GP2_025_00060
-	(degree 1403), 1223543.GP2_016_00510 (degree 1311), 1223543.GP2_042_00020 (degree
-	1285) and 1223543.GP2_011_01110 (degree 1269).
+	The undirected graph Gordonia paraffinivorans has 4158 nodes and 498456
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05768 and has 12 connected components, where the component
+	with most nodes has 4132 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 239.76,
+	and the node degree mode is 2. The top 5 most central nodes are 1223543.GP2_011_00410
+	(degree 1648), 1223543.GP2_025_00060 (degree 1403), 1223543.GP2_016_00510
+	(degree 1311), 1223543.GP2_042_00020 (degree 1285) and 1223543.GP2_011_01110
+	(degree 1269).
 	
 
 

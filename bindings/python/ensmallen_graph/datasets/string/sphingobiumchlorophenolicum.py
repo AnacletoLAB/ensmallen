@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:51.956916
 
-The undirected graph Sphingobium chlorophenolicum has 4431 nodes and 582356 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05934
-and has 10 connected components, where the component with most nodes has 4411 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 237, the mean node degree is 262.86, and the node degree mode is 5. The top 5
-most central nodes are 46429.BV95_04136 (degree 1631), 46429.BV95_02591 (degree 1554),
-46429.BV95_04110 (degree 1219), 46429.BV95_02592 (degree 1195) and 46429.BV95_01526
-(degree 1190).
+The undirected graph Sphingobium chlorophenolicum has 4431 nodes and 582356
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05934 and has 10 connected components, where the component
+with most nodes has 4411 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 262.86,
+and the node degree mode is 5. The top 5 most central nodes are 46429.BV95_04136
+(degree 1631), 46429.BV95_02591 (degree 1554), 46429.BV95_04110 (degree
+1219), 46429.BV95_02592 (degree 1195) and 46429.BV95_01526 (degree 1190).
 
 
 References
@@ -107,14 +107,14 @@ def SphingobiumChlorophenolicum(
 	
 	Datetime: 2021-02-02 18:15:51.956916
 	
-	The undirected graph Sphingobium chlorophenolicum has 4431 nodes and 582356 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05934
-	and has 10 connected components, where the component with most nodes has 4411 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 237, the mean node degree is 262.86, and the node degree mode is 5. The top 5
-	most central nodes are 46429.BV95_04136 (degree 1631), 46429.BV95_02591 (degree 1554),
-	46429.BV95_04110 (degree 1219), 46429.BV95_02592 (degree 1195) and 46429.BV95_01526
-	(degree 1190).
+	The undirected graph Sphingobium chlorophenolicum has 4431 nodes and 582356
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05934 and has 10 connected components, where the component
+	with most nodes has 4411 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 262.86,
+	and the node degree mode is 5. The top 5 most central nodes are 46429.BV95_04136
+	(degree 1631), 46429.BV95_02591 (degree 1554), 46429.BV95_04110 (degree
+	1219), 46429.BV95_02592 (degree 1195) and 46429.BV95_01526 (degree 1190).
 	
 
 

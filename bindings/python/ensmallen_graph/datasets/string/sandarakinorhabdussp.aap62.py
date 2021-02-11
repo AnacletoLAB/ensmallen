@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:29.172887
 
-The undirected graph Sandarakinorhabdus sp. AAP62 has 2855 nodes and 198961 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04884
-and has 4 connected components, where the component with most nodes has 2849 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 139.38, and the node degree mode is 5. The top 5
-most central nodes are 1248916.ANFY01000003_gene458 (degree 983), 1248916.ANFY01000007_gene2304
-(degree 949), 1248916.ANFY01000005_gene2795 (degree 930), 1248916.ANFY01000009_gene257
-(degree 858) and 1248916.ANFY01000009_gene268 (degree 854).
+The undirected graph Sandarakinorhabdus sp. AAP62 has 2855 nodes and 198961
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04884 and has 4 connected components, where the component
+with most nodes has 2849 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 139.38,
+and the node degree mode is 5. The top 5 most central nodes are 1248916.ANFY01000003_gene458
+(degree 983), 1248916.ANFY01000007_gene2304 (degree 949), 1248916.ANFY01000005_gene2795
+(degree 930), 1248916.ANFY01000009_gene257 (degree 858) and 1248916.ANFY01000009_gene268
+(degree 854).
 
 
 References
@@ -107,14 +108,15 @@ def SandarakinorhabdusSp.Aap62(
 	
 	Datetime: 2021-02-02 23:34:29.172887
 	
-	The undirected graph Sandarakinorhabdus sp. AAP62 has 2855 nodes and 198961 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04884
-	and has 4 connected components, where the component with most nodes has 2849 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 139.38, and the node degree mode is 5. The top 5
-	most central nodes are 1248916.ANFY01000003_gene458 (degree 983), 1248916.ANFY01000007_gene2304
-	(degree 949), 1248916.ANFY01000005_gene2795 (degree 930), 1248916.ANFY01000009_gene257
-	(degree 858) and 1248916.ANFY01000009_gene268 (degree 854).
+	The undirected graph Sandarakinorhabdus sp. AAP62 has 2855 nodes and 198961
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04884 and has 4 connected components, where the component
+	with most nodes has 2849 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 139.38,
+	and the node degree mode is 5. The top 5 most central nodes are 1248916.ANFY01000003_gene458
+	(degree 983), 1248916.ANFY01000007_gene2304 (degree 949), 1248916.ANFY01000005_gene2795
+	(degree 930), 1248916.ANFY01000009_gene257 (degree 858) and 1248916.ANFY01000009_gene268
+	(degree 854).
 	
 
 

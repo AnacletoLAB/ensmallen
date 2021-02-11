@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:57.985540
 
-The undirected graph Fischerella sp. PCC9339 has 6471 nodes and 853632 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04078 and
-has 52 connected components, where the component with most nodes has 6321 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 263.83, and the node degree mode is 1. The top 5 most central
-nodes are 1174528.JH992898_gene4621 (degree 2191), 1174528.JH992892_gene6293 (degree
-2180), 1174528.JH992893_gene5887 (degree 2166), 1174528.JH992898_gene2534 (degree
-2103) and 1174528.JH992893_gene5847 (degree 2079).
+The undirected graph Fischerella sp. PCC9339 has 6471 nodes and 853632
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04078 and has 52 connected components, where the component
+with most nodes has 6321 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 263.83,
+and the node degree mode is 1. The top 5 most central nodes are 1174528.JH992898_gene4621
+(degree 2191), 1174528.JH992892_gene6293 (degree 2180), 1174528.JH992893_gene5887
+(degree 2166), 1174528.JH992898_gene2534 (degree 2103) and 1174528.JH992893_gene5847
+(degree 2079).
 
 
 References
@@ -107,14 +108,15 @@ def FischerellaSp.Pcc9339(
 	
 	Datetime: 2021-02-02 23:08:57.985540
 	
-	The undirected graph Fischerella sp. PCC9339 has 6471 nodes and 853632 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04078 and
-	has 52 connected components, where the component with most nodes has 6321 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 263.83, and the node degree mode is 1. The top 5 most central
-	nodes are 1174528.JH992898_gene4621 (degree 2191), 1174528.JH992892_gene6293 (degree
-	2180), 1174528.JH992893_gene5887 (degree 2166), 1174528.JH992898_gene2534 (degree
-	2103) and 1174528.JH992893_gene5847 (degree 2079).
+	The undirected graph Fischerella sp. PCC9339 has 6471 nodes and 853632
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04078 and has 52 connected components, where the component
+	with most nodes has 6321 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 263.83,
+	and the node degree mode is 1. The top 5 most central nodes are 1174528.JH992898_gene4621
+	(degree 2191), 1174528.JH992892_gene6293 (degree 2180), 1174528.JH992893_gene5887
+	(degree 2166), 1174528.JH992898_gene2534 (degree 2103) and 1174528.JH992893_gene5847
+	(degree 2079).
 	
 
 

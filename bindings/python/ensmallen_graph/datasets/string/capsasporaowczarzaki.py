@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:03.892071
 
-The undirected graph Capsaspora owczarzaki has 6187 nodes and 1049847 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05486 and
-has 3 connected components, where the component with most nodes has 6181 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 254,
-the mean node degree is 339.37, and the node degree mode is 13. The top 5 most central
-nodes are 192875.XP_004363442.1 (degree 2862), 192875.XP_004348414.1 (degree 1982),
-192875.XP_004347384.1 (degree 1981), 192875.XP_004345036.1 (degree 1938) and 192875.XP_004365225.1
+The undirected graph Capsaspora owczarzaki has 6187 nodes and 1049847 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05486 and has 3 connected components, where the component with most
+nodes has 6181 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 254, the mean node degree is 339.37, and
+the node degree mode is 13. The top 5 most central nodes are 192875.XP_004363442.1
+(degree 2862), 192875.XP_004348414.1 (degree 1982), 192875.XP_004347384.1
+(degree 1981), 192875.XP_004345036.1 (degree 1938) and 192875.XP_004365225.1
 (degree 1869).
 
 
@@ -107,13 +108,14 @@ def CapsasporaOwczarzaki(
 	
 	Datetime: 2021-02-02 19:58:03.892071
 	
-	The undirected graph Capsaspora owczarzaki has 6187 nodes and 1049847 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05486 and
-	has 3 connected components, where the component with most nodes has 6181 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 254,
-	the mean node degree is 339.37, and the node degree mode is 13. The top 5 most central
-	nodes are 192875.XP_004363442.1 (degree 2862), 192875.XP_004348414.1 (degree 1982),
-	192875.XP_004347384.1 (degree 1981), 192875.XP_004345036.1 (degree 1938) and 192875.XP_004365225.1
+	The undirected graph Capsaspora owczarzaki has 6187 nodes and 1049847 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05486 and has 3 connected components, where the component with most
+	nodes has 6181 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 254, the mean node degree is 339.37, and
+	the node degree mode is 13. The top 5 most central nodes are 192875.XP_004363442.1
+	(degree 2862), 192875.XP_004348414.1 (degree 1982), 192875.XP_004347384.1
+	(degree 1981), 192875.XP_004345036.1 (degree 1938) and 192875.XP_004365225.1
 	(degree 1869).
 	
 

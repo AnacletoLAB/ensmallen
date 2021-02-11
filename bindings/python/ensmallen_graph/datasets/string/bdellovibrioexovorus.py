@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:23.824816
 
-The undirected graph Bdellovibrio exovorus has 2609 nodes and 143589 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04221 and
-has 25 connected components, where the component with most nodes has 2547 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 75,
-the mean node degree is 110.07, and the node degree mode is 3. The top 5 most central
-nodes are 1184267.A11Q_716 (degree 1084), 1184267.A11Q_1307 (degree 898), 1184267.A11Q_477
-(degree 879), 1184267.A11Q_895 (degree 695) and 1184267.A11Q_1288 (degree 687).
+The undirected graph Bdellovibrio exovorus has 2609 nodes and 143589 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04221 and has 25 connected components, where the component with most
+nodes has 2547 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 75, the mean node degree is 110.07, and
+the node degree mode is 3. The top 5 most central nodes are 1184267.A11Q_716
+(degree 1084), 1184267.A11Q_1307 (degree 898), 1184267.A11Q_477 (degree
+879), 1184267.A11Q_895 (degree 695) and 1184267.A11Q_1288 (degree 687).
 
 
 References
@@ -106,13 +107,14 @@ def BdellovibrioExovorus(
 	
 	Datetime: 2021-02-02 23:10:23.824816
 	
-	The undirected graph Bdellovibrio exovorus has 2609 nodes and 143589 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04221 and
-	has 25 connected components, where the component with most nodes has 2547 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 75,
-	the mean node degree is 110.07, and the node degree mode is 3. The top 5 most central
-	nodes are 1184267.A11Q_716 (degree 1084), 1184267.A11Q_1307 (degree 898), 1184267.A11Q_477
-	(degree 879), 1184267.A11Q_895 (degree 695) and 1184267.A11Q_1288 (degree 687).
+	The undirected graph Bdellovibrio exovorus has 2609 nodes and 143589 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04221 and has 25 connected components, where the component with most
+	nodes has 2547 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 75, the mean node degree is 110.07, and
+	the node degree mode is 3. The top 5 most central nodes are 1184267.A11Q_716
+	(degree 1084), 1184267.A11Q_1307 (degree 898), 1184267.A11Q_477 (degree
+	879), 1184267.A11Q_895 (degree 695) and 1184267.A11Q_1288 (degree 687).
 	
 
 

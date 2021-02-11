@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:49.363900
 
-The undirected graph Streptomyces glaucescens has 6504 nodes and 674030 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03187
-and has 30 connected components, where the component with most nodes has 6428 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 207.27, and the node degree mode is 2. The top 5
-most central nodes are 1907.SGLAU_24765 (degree 2958), 1907.SGLAU_09060 (degree 1942),
-1907.SGLAU_20560 (degree 1707), 1907.SGLAU_25860 (degree 1704) and 1907.SGLAU_16700
-(degree 1696).
+The undirected graph Streptomyces glaucescens has 6504 nodes and 674030
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03187 and has 30 connected components, where the component
+with most nodes has 6428 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 207.27,
+and the node degree mode is 2. The top 5 most central nodes are 1907.SGLAU_24765
+(degree 2958), 1907.SGLAU_09060 (degree 1942), 1907.SGLAU_20560 (degree
+1707), 1907.SGLAU_25860 (degree 1704) and 1907.SGLAU_16700 (degree 1696).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesGlaucescens(
 	
 	Datetime: 2021-02-02 16:23:49.363900
 	
-	The undirected graph Streptomyces glaucescens has 6504 nodes and 674030 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03187
-	and has 30 connected components, where the component with most nodes has 6428 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 207.27, and the node degree mode is 2. The top 5
-	most central nodes are 1907.SGLAU_24765 (degree 2958), 1907.SGLAU_09060 (degree 1942),
-	1907.SGLAU_20560 (degree 1707), 1907.SGLAU_25860 (degree 1704) and 1907.SGLAU_16700
-	(degree 1696).
+	The undirected graph Streptomyces glaucescens has 6504 nodes and 674030
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03187 and has 30 connected components, where the component
+	with most nodes has 6428 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 207.27,
+	and the node degree mode is 2. The top 5 most central nodes are 1907.SGLAU_24765
+	(degree 2958), 1907.SGLAU_09060 (degree 1942), 1907.SGLAU_20560 (degree
+	1707), 1907.SGLAU_25860 (degree 1704) and 1907.SGLAU_16700 (degree 1696).
 	
 
 

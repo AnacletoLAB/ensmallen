@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:35.138078
 
-The undirected graph Planktothrix agardhii has 3981 nodes and 528574 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06672 and
-has 6 connected components, where the component with most nodes has 3969 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 265.55, and the node degree mode is 3. The top 5 most central
-nodes are 388467.A19Y_2226 (degree 1529), 388467.A19Y_4051 (degree 1515), 388467.A19Y_2228
-(degree 1500), 388467.A19Y_0397 (degree 1432) and 388467.A19Y_3935 (degree 1382).
+The undirected graph Planktothrix agardhii has 3981 nodes and 528574 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06672 and has 6 connected components, where the component with most
+nodes has 3969 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 265.55, and
+the node degree mode is 3. The top 5 most central nodes are 388467.A19Y_2226
+(degree 1529), 388467.A19Y_4051 (degree 1515), 388467.A19Y_2228 (degree
+1500), 388467.A19Y_0397 (degree 1432) and 388467.A19Y_3935 (degree 1382).
 
 
 References
@@ -106,13 +107,14 @@ def PlanktothrixAgardhii(
 	
 	Datetime: 2021-02-02 20:38:35.138078
 	
-	The undirected graph Planktothrix agardhii has 3981 nodes and 528574 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06672 and
-	has 6 connected components, where the component with most nodes has 3969 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 265.55, and the node degree mode is 3. The top 5 most central
-	nodes are 388467.A19Y_2226 (degree 1529), 388467.A19Y_4051 (degree 1515), 388467.A19Y_2228
-	(degree 1500), 388467.A19Y_0397 (degree 1432) and 388467.A19Y_3935 (degree 1382).
+	The undirected graph Planktothrix agardhii has 3981 nodes and 528574 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06672 and has 6 connected components, where the component with most
+	nodes has 3969 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 265.55, and
+	the node degree mode is 3. The top 5 most central nodes are 388467.A19Y_2226
+	(degree 1529), 388467.A19Y_4051 (degree 1515), 388467.A19Y_2228 (degree
+	1500), 388467.A19Y_0397 (degree 1432) and 388467.A19Y_3935 (degree 1382).
 	
 
 

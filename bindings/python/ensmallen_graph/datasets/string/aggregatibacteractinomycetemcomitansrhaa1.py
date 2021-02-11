@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:25.356643
 
-The undirected graph Aggregatibacter actinomycetemcomitans RhAA1 has 2130 nodes and
-110043 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04853 and has 5 connected components, where the component with most
-nodes has 2122 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 82, the mean node degree is 103.33, and the node degree mode
-is 9. The top 5 most central nodes are 1089447.RHAA1_00085 (degree 821), 1089447.RHAA1_08348
-(degree 637), 1089447.RHAA1_05998 (degree 624), 1089447.RHAA1_05363 (degree 596)
+The undirected graph Aggregatibacter actinomycetemcomitans RhAA1 has 2130
+nodes and 110043 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04853 and has 5 connected components,
+where the component with most nodes has 2122 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 82, the mean
+node degree is 103.33, and the node degree mode is 9. The top 5 most central
+nodes are 1089447.RHAA1_00085 (degree 821), 1089447.RHAA1_08348 (degree
+637), 1089447.RHAA1_05998 (degree 624), 1089447.RHAA1_05363 (degree 596)
 and 1089447.RHAA1_01009 (degree 594).
 
 
@@ -107,13 +108,14 @@ def AggregatibacterActinomycetemcomitansRhaa1(
 	
 	Datetime: 2021-02-02 22:21:25.356643
 	
-	The undirected graph Aggregatibacter actinomycetemcomitans RhAA1 has 2130 nodes and
-	110043 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04853 and has 5 connected components, where the component with most
-	nodes has 2122 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 82, the mean node degree is 103.33, and the node degree mode
-	is 9. The top 5 most central nodes are 1089447.RHAA1_00085 (degree 821), 1089447.RHAA1_08348
-	(degree 637), 1089447.RHAA1_05998 (degree 624), 1089447.RHAA1_05363 (degree 596)
+	The undirected graph Aggregatibacter actinomycetemcomitans RhAA1 has 2130
+	nodes and 110043 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04853 and has 5 connected components,
+	where the component with most nodes has 2122 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 82, the mean
+	node degree is 103.33, and the node degree mode is 9. The top 5 most central
+	nodes are 1089447.RHAA1_00085 (degree 821), 1089447.RHAA1_08348 (degree
+	637), 1089447.RHAA1_05998 (degree 624), 1089447.RHAA1_05363 (degree 596)
 	and 1089447.RHAA1_01009 (degree 594).
 	
 

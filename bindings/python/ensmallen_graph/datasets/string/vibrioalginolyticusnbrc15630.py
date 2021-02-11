@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:13.485474
 
-The undirected graph Vibrio alginolyticus NBRC15630 has 4644 nodes and 460339 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04270
-and has 19 connected components, where the component with most nodes has 4604 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 198.25, and the node degree mode is 1. The top 5
-most central nodes are 1219076.N646_2296 (degree 1791), 1219076.N646_2773 (degree
-1550), 1219076.N646_2641 (degree 1430), 1219076.N646_1575 (degree 1360) and 1219076.N646_1992
-(degree 1292).
+The undirected graph Vibrio alginolyticus NBRC15630 has 4644 nodes and
+460339 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04270 and has 19 connected components, where the
+component with most nodes has 4604 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+is 198.25, and the node degree mode is 1. The top 5 most central nodes
+are 1219076.N646_2296 (degree 1791), 1219076.N646_2773 (degree 1550), 1219076.N646_2641
+(degree 1430), 1219076.N646_1575 (degree 1360) and 1219076.N646_1992 (degree
+1292).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioAlginolyticusNbrc15630(
 	
 	Datetime: 2021-02-02 23:23:13.485474
 	
-	The undirected graph Vibrio alginolyticus NBRC15630 has 4644 nodes and 460339 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04270
-	and has 19 connected components, where the component with most nodes has 4604 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 198.25, and the node degree mode is 1. The top 5
-	most central nodes are 1219076.N646_2296 (degree 1791), 1219076.N646_2773 (degree
-	1550), 1219076.N646_2641 (degree 1430), 1219076.N646_1575 (degree 1360) and 1219076.N646_1992
-	(degree 1292).
+	The undirected graph Vibrio alginolyticus NBRC15630 has 4644 nodes and
+	460339 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04270 and has 19 connected components, where the
+	component with most nodes has 4604 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+	is 198.25, and the node degree mode is 1. The top 5 most central nodes
+	are 1219076.N646_2296 (degree 1791), 1219076.N646_2773 (degree 1550), 1219076.N646_2641
+	(degree 1430), 1219076.N646_1575 (degree 1360) and 1219076.N646_1992 (degree
+	1292).
 	
 
 

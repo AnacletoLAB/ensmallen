@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:43.793256
 
-The undirected graph Rhizobium sp. YR519 has 5287 nodes and 736947 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05274 and
-has 30 connected components, where the component with most nodes has 5224 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 278.78, and the node degree mode is 1. The top 5 most central
-nodes are 1500259.JQLD01000004_gene1427 (degree 1980), 1500259.JQLD01000004_gene1113
-(degree 1931), 1500259.JQLD01000004_gene1105 (degree 1494), 1500259.JQLD01000010_gene4874
-(degree 1473) and 1500259.JQLD01000007_gene2502 (degree 1466).
+The undirected graph Rhizobium sp. YR519 has 5287 nodes and 736947 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05274 and has 30 connected components, where the component with most
+nodes has 5224 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 278.78, and
+the node degree mode is 1. The top 5 most central nodes are 1500259.JQLD01000004_gene1427
+(degree 1980), 1500259.JQLD01000004_gene1113 (degree 1931), 1500259.JQLD01000004_gene1105
+(degree 1494), 1500259.JQLD01000010_gene4874 (degree 1473) and 1500259.JQLD01000007_gene2502
+(degree 1466).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.Yr519(
 	
 	Datetime: 2021-02-05 17:18:43.793256
 	
-	The undirected graph Rhizobium sp. YR519 has 5287 nodes and 736947 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05274 and
-	has 30 connected components, where the component with most nodes has 5224 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 278.78, and the node degree mode is 1. The top 5 most central
-	nodes are 1500259.JQLD01000004_gene1427 (degree 1980), 1500259.JQLD01000004_gene1113
-	(degree 1931), 1500259.JQLD01000004_gene1105 (degree 1494), 1500259.JQLD01000010_gene4874
-	(degree 1473) and 1500259.JQLD01000007_gene2502 (degree 1466).
+	The undirected graph Rhizobium sp. YR519 has 5287 nodes and 736947 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05274 and has 30 connected components, where the component with most
+	nodes has 5224 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 278.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1500259.JQLD01000004_gene1427
+	(degree 1980), 1500259.JQLD01000004_gene1113 (degree 1931), 1500259.JQLD01000004_gene1105
+	(degree 1494), 1500259.JQLD01000010_gene4874 (degree 1473) and 1500259.JQLD01000007_gene2502
+	(degree 1466).
 	
 
 

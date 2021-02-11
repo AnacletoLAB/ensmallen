@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:14.815039
 
-The undirected graph Advenella mimigardefordensis has 4055 nodes and 394699 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04802
-and has 12 connected components, where the component with most nodes has 4033 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 144, the mean node degree is 194.67, and the node degree mode is 1. The top 5
-most central nodes are 1247726.MIM_c11680 (degree 1639), 1247726.MIM_c14740 (degree
-1600), 1247726.MIM_c06550 (degree 1358), 1247726.MIM_c04730 (degree 1281) and 1247726.MIM_c21360
-(degree 1277).
+The undirected graph Advenella mimigardefordensis has 4055 nodes and 394699
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04802 and has 12 connected components, where the component
+with most nodes has 4033 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 194.67,
+and the node degree mode is 1. The top 5 most central nodes are 1247726.MIM_c11680
+(degree 1639), 1247726.MIM_c14740 (degree 1600), 1247726.MIM_c06550 (degree
+1358), 1247726.MIM_c04730 (degree 1281) and 1247726.MIM_c21360 (degree
+1277).
 
 
 References
@@ -107,14 +108,15 @@ def AdvenellaMimigardefordensis(
 	
 	Datetime: 2021-02-02 23:34:14.815039
 	
-	The undirected graph Advenella mimigardefordensis has 4055 nodes and 394699 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04802
-	and has 12 connected components, where the component with most nodes has 4033 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 144, the mean node degree is 194.67, and the node degree mode is 1. The top 5
-	most central nodes are 1247726.MIM_c11680 (degree 1639), 1247726.MIM_c14740 (degree
-	1600), 1247726.MIM_c06550 (degree 1358), 1247726.MIM_c04730 (degree 1281) and 1247726.MIM_c21360
-	(degree 1277).
+	The undirected graph Advenella mimigardefordensis has 4055 nodes and 394699
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04802 and has 12 connected components, where the component
+	with most nodes has 4033 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 194.67,
+	and the node degree mode is 1. The top 5 most central nodes are 1247726.MIM_c11680
+	(degree 1639), 1247726.MIM_c14740 (degree 1600), 1247726.MIM_c06550 (degree
+	1358), 1247726.MIM_c04730 (degree 1281) and 1247726.MIM_c21360 (degree
+	1277).
 	
 
 

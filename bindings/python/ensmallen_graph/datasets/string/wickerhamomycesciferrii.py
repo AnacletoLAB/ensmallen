@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:16.395740
 
-The undirected graph Wickerhamomyces ciferrii has 5203 nodes and 521323 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03852
-and is connected, as it has a single component. The graph median node degree is 141,
-the mean node degree is 200.39, and the node degree mode is 1. The top 5 most central
-nodes are 1041607.K0KMC6 (degree 1280), 1041607.K0KTU4 (degree 1266), 1041607.K0KGY1
-(degree 1198), 1041607.K0KMV2 (degree 1146) and 1041607.K0KNL6 (degree 1134).
+The undirected graph Wickerhamomyces ciferrii has 5203 nodes and 521323
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03852 and is connected, as it has a single component.
+The graph median node degree is 141, the mean node degree is 200.39, and
+the node degree mode is 1. The top 5 most central nodes are 1041607.K0KMC6
+(degree 1280), 1041607.K0KTU4 (degree 1266), 1041607.K0KGY1 (degree 1198),
+1041607.K0KMV2 (degree 1146) and 1041607.K0KNL6 (degree 1134).
 
 
 References
@@ -105,12 +106,13 @@ def WickerhamomycesCiferrii(
 	
 	Datetime: 2021-02-02 22:15:16.395740
 	
-	The undirected graph Wickerhamomyces ciferrii has 5203 nodes and 521323 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03852
-	and is connected, as it has a single component. The graph median node degree is 141,
-	the mean node degree is 200.39, and the node degree mode is 1. The top 5 most central
-	nodes are 1041607.K0KMC6 (degree 1280), 1041607.K0KTU4 (degree 1266), 1041607.K0KGY1
-	(degree 1198), 1041607.K0KMV2 (degree 1146) and 1041607.K0KNL6 (degree 1134).
+	The undirected graph Wickerhamomyces ciferrii has 5203 nodes and 521323
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03852 and is connected, as it has a single component.
+	The graph median node degree is 141, the mean node degree is 200.39, and
+	the node degree mode is 1. The top 5 most central nodes are 1041607.K0KMC6
+	(degree 1280), 1041607.K0KTU4 (degree 1266), 1041607.K0KGY1 (degree 1198),
+	1041607.K0KMV2 (degree 1146) and 1041607.K0KNL6 (degree 1134).
 	
 
 

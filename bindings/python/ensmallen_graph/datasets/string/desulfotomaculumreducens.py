@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:22.766695
 
-The undirected graph Desulfotomaculum reducens has 3245 nodes and 241367 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04586
-and has 17 connected components, where the component with most nodes has 3206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 148.76, and the node degree mode is 1. The top 5
-most central nodes are 349161.Dred_1410 (degree 1347), 349161.Dred_1599 (degree 1234),
-349161.Dred_1131 (degree 1119), 349161.Dred_1154 (degree 925) and 349161.Dred_2462
-(degree 856).
+The undirected graph Desulfotomaculum reducens has 3245 nodes and 241367
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04586 and has 17 connected components, where the component
+with most nodes has 3206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 148.76,
+and the node degree mode is 1. The top 5 most central nodes are 349161.Dred_1410
+(degree 1347), 349161.Dred_1599 (degree 1234), 349161.Dred_1131 (degree
+1119), 349161.Dred_1154 (degree 925) and 349161.Dred_2462 (degree 856).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotomaculumReducens(
 	
 	Datetime: 2021-02-02 20:32:22.766695
 	
-	The undirected graph Desulfotomaculum reducens has 3245 nodes and 241367 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04586
-	and has 17 connected components, where the component with most nodes has 3206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 148.76, and the node degree mode is 1. The top 5
-	most central nodes are 349161.Dred_1410 (degree 1347), 349161.Dred_1599 (degree 1234),
-	349161.Dred_1131 (degree 1119), 349161.Dred_1154 (degree 925) and 349161.Dred_2462
-	(degree 856).
+	The undirected graph Desulfotomaculum reducens has 3245 nodes and 241367
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04586 and has 17 connected components, where the component
+	with most nodes has 3206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 148.76,
+	and the node degree mode is 1. The top 5 most central nodes are 349161.Dred_1410
+	(degree 1347), 349161.Dred_1599 (degree 1234), 349161.Dred_1131 (degree
+	1119), 349161.Dred_1154 (degree 925) and 349161.Dred_2462 (degree 856).
 	
 
 

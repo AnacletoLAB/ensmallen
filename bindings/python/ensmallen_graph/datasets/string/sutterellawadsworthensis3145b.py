@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:02.894436
 
-The undirected graph Sutterella wadsworthensis 3145B has 2325 nodes and 200352 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07416
-and has 7 connected components, where the component with most nodes has 2308 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 172.35, and the node degree mode is 1. The top 5
-most central nodes are 742821.HMPREF9464_02016 (degree 804), 742821.HMPREF9464_00460
-(degree 766), 742821.HMPREF9464_00888 (degree 756), 742821.HMPREF9464_00450 (degree
+The undirected graph Sutterella wadsworthensis 3145B has 2325 nodes and
+200352 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07416 and has 7 connected components, where the
+component with most nodes has 2308 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+is 172.35, and the node degree mode is 1. The top 5 most central nodes
+are 742821.HMPREF9464_02016 (degree 804), 742821.HMPREF9464_00460 (degree
+766), 742821.HMPREF9464_00888 (degree 756), 742821.HMPREF9464_00450 (degree
 749) and 742821.HMPREF9464_00487 (degree 653).
 
 
@@ -107,13 +108,14 @@ def SutterellaWadsworthensis3145b(
 	
 	Datetime: 2021-02-02 21:38:02.894436
 	
-	The undirected graph Sutterella wadsworthensis 3145B has 2325 nodes and 200352 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07416
-	and has 7 connected components, where the component with most nodes has 2308 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 172.35, and the node degree mode is 1. The top 5
-	most central nodes are 742821.HMPREF9464_02016 (degree 804), 742821.HMPREF9464_00460
-	(degree 766), 742821.HMPREF9464_00888 (degree 756), 742821.HMPREF9464_00450 (degree
+	The undirected graph Sutterella wadsworthensis 3145B has 2325 nodes and
+	200352 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07416 and has 7 connected components, where the
+	component with most nodes has 2308 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+	is 172.35, and the node degree mode is 1. The top 5 most central nodes
+	are 742821.HMPREF9464_02016 (degree 804), 742821.HMPREF9464_00460 (degree
+	766), 742821.HMPREF9464_00888 (degree 756), 742821.HMPREF9464_00450 (degree
 	749) and 742821.HMPREF9464_00487 (degree 653).
 	
 

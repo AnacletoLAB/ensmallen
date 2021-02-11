@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:18.491835
 
-The undirected graph Chryseobacterium formosense has 3654 nodes and 262440 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03932
-and has 21 connected components, where the component with most nodes has 3603 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 143.65, and the node degree mode is 4. The top 5
-most central nodes are 236814.IX39_19370 (degree 1072), 236814.IX39_00265 (degree
-892), 236814.IX39_02115 (degree 891), 236814.IX39_04315 (degree 816) and 236814.IX39_07125
-(degree 813).
+The undirected graph Chryseobacterium formosense has 3654 nodes and 262440
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03932 and has 21 connected components, where the component
+with most nodes has 3603 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 143.65,
+and the node degree mode is 4. The top 5 most central nodes are 236814.IX39_19370
+(degree 1072), 236814.IX39_00265 (degree 892), 236814.IX39_02115 (degree
+891), 236814.IX39_04315 (degree 816) and 236814.IX39_07125 (degree 813).
 
 
 References
@@ -107,14 +107,14 @@ def ChryseobacteriumFormosense(
 	
 	Datetime: 2021-02-02 20:08:18.491835
 	
-	The undirected graph Chryseobacterium formosense has 3654 nodes and 262440 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03932
-	and has 21 connected components, where the component with most nodes has 3603 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 143.65, and the node degree mode is 4. The top 5
-	most central nodes are 236814.IX39_19370 (degree 1072), 236814.IX39_00265 (degree
-	892), 236814.IX39_02115 (degree 891), 236814.IX39_04315 (degree 816) and 236814.IX39_07125
-	(degree 813).
+	The undirected graph Chryseobacterium formosense has 3654 nodes and 262440
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03932 and has 21 connected components, where the component
+	with most nodes has 3603 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 143.65,
+	and the node degree mode is 4. The top 5 most central nodes are 236814.IX39_19370
+	(degree 1072), 236814.IX39_00265 (degree 892), 236814.IX39_02115 (degree
+	891), 236814.IX39_04315 (degree 816) and 236814.IX39_07125 (degree 813).
 	
 
 

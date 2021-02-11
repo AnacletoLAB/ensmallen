@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:10.448037
 
-The undirected graph Geitlerinema sp. PCC7407 has 3773 nodes and 468515 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06584
-and has 7 connected components, where the component with most nodes has 3761 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 248.35, and the node degree mode is 1. The top 5
-most central nodes are 1173025.GEI7407_1778 (degree 2197), 1173025.GEI7407_1641 (degree
-1770), 1173025.GEI7407_2105 (degree 1525), 1173025.GEI7407_0146 (degree 1410) and
-1173025.GEI7407_1923 (degree 1290).
+The undirected graph Geitlerinema sp. PCC7407 has 3773 nodes and 468515
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06584 and has 7 connected components, where the component
+with most nodes has 3761 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 248.35,
+and the node degree mode is 1. The top 5 most central nodes are 1173025.GEI7407_1778
+(degree 2197), 1173025.GEI7407_1641 (degree 1770), 1173025.GEI7407_2105
+(degree 1525), 1173025.GEI7407_0146 (degree 1410) and 1173025.GEI7407_1923
+(degree 1290).
 
 
 References
@@ -107,14 +108,15 @@ def GeitlerinemaSp.Pcc7407(
 	
 	Datetime: 2021-02-02 23:08:10.448037
 	
-	The undirected graph Geitlerinema sp. PCC7407 has 3773 nodes and 468515 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06584
-	and has 7 connected components, where the component with most nodes has 3761 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 248.35, and the node degree mode is 1. The top 5
-	most central nodes are 1173025.GEI7407_1778 (degree 2197), 1173025.GEI7407_1641 (degree
-	1770), 1173025.GEI7407_2105 (degree 1525), 1173025.GEI7407_0146 (degree 1410) and
-	1173025.GEI7407_1923 (degree 1290).
+	The undirected graph Geitlerinema sp. PCC7407 has 3773 nodes and 468515
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06584 and has 7 connected components, where the component
+	with most nodes has 3761 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 248.35,
+	and the node degree mode is 1. The top 5 most central nodes are 1173025.GEI7407_1778
+	(degree 2197), 1173025.GEI7407_1641 (degree 1770), 1173025.GEI7407_2105
+	(degree 1525), 1173025.GEI7407_0146 (degree 1410) and 1173025.GEI7407_1923
+	(degree 1290).
 	
 
 

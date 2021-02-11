@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:46:19.284247
 
-The undirected graph Porticoccus hydrocarbonoclasticus has 2244 nodes and 207377
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08240 and has 2 connected components, where the component with most nodes has
-2242 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 159, the mean node degree is 184.83, and the node degree mode is 133. The
-top 5 most central nodes are 1415778.JQMM01000001_gene605 (degree 911), 1415778.JQMM01000001_gene2241
+The undirected graph Porticoccus hydrocarbonoclasticus has 2244 nodes and
+207377 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08240 and has 2 connected components, where the
+component with most nodes has 2242 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+is 184.83, and the node degree mode is 133. The top 5 most central nodes
+are 1415778.JQMM01000001_gene605 (degree 911), 1415778.JQMM01000001_gene2241
 (degree 816), 1415778.JQMM01000001_gene1651 (degree 802), 1415778.JQMM01000001_gene980
 (degree 772) and 1415778.JQMM01000001_gene2104 (degree 766).
 
@@ -107,12 +108,13 @@ def PorticoccusHydrocarbonoclasticus(
 	
 	Datetime: 2021-02-03 22:46:19.284247
 	
-	The undirected graph Porticoccus hydrocarbonoclasticus has 2244 nodes and 207377
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08240 and has 2 connected components, where the component with most nodes has
-	2242 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 159, the mean node degree is 184.83, and the node degree mode is 133. The
-	top 5 most central nodes are 1415778.JQMM01000001_gene605 (degree 911), 1415778.JQMM01000001_gene2241
+	The undirected graph Porticoccus hydrocarbonoclasticus has 2244 nodes and
+	207377 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08240 and has 2 connected components, where the
+	component with most nodes has 2242 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+	is 184.83, and the node degree mode is 133. The top 5 most central nodes
+	are 1415778.JQMM01000001_gene605 (degree 911), 1415778.JQMM01000001_gene2241
 	(degree 816), 1415778.JQMM01000001_gene1651 (degree 802), 1415778.JQMM01000001_gene980
 	(degree 772) and 1415778.JQMM01000001_gene2104 (degree 766).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:14.499488
 
-The undirected graph Methanothermococcus okinawensis has 1584 nodes and 170446 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13595 and has 6 connected components, where the component with most nodes has
-1571 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 226, the mean node degree is 215.21, and the node degree mode is 7. The
-top 5 most central nodes are 647113.Metok_0880 (degree 669), 647113.Metok_1494 (degree
-656), 647113.Metok_0996 (degree 651), 647113.Metok_0556 (degree 644) and 647113.Metok_1350
+The undirected graph Methanothermococcus okinawensis has 1584 nodes and
+170446 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.13595 and has 6 connected components, where
+the component with most nodes has 1571 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 226, the mean
+node degree is 215.21, and the node degree mode is 7. The top 5 most central
+nodes are 647113.Metok_0880 (degree 669), 647113.Metok_1494 (degree 656),
+647113.Metok_0996 (degree 651), 647113.Metok_0556 (degree 644) and 647113.Metok_1350
 (degree 643).
 
 
@@ -107,13 +108,14 @@ def MethanothermococcusOkinawensis(
 	
 	Datetime: 2021-02-02 21:25:14.499488
 	
-	The undirected graph Methanothermococcus okinawensis has 1584 nodes and 170446 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13595 and has 6 connected components, where the component with most nodes has
-	1571 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 226, the mean node degree is 215.21, and the node degree mode is 7. The
-	top 5 most central nodes are 647113.Metok_0880 (degree 669), 647113.Metok_1494 (degree
-	656), 647113.Metok_0996 (degree 651), 647113.Metok_0556 (degree 644) and 647113.Metok_1350
+	The undirected graph Methanothermococcus okinawensis has 1584 nodes and
+	170446 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.13595 and has 6 connected components, where
+	the component with most nodes has 1571 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 226, the mean
+	node degree is 215.21, and the node degree mode is 7. The top 5 most central
+	nodes are 647113.Metok_0880 (degree 669), 647113.Metok_1494 (degree 656),
+	647113.Metok_0996 (degree 651), 647113.Metok_0556 (degree 644) and 647113.Metok_1350
 	(degree 643).
 	
 

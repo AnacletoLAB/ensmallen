@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:28.475114
 
-The undirected graph Spiroplasma sabaudiense has 910 nodes and 57100 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13806
-and has 13 connected components, where the component with most nodes has 865 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 125.49, and the node degree mode is 7. The top 5 most
-central nodes are 1276257.SSABA_v1c06860 (degree 454), 1276257.SSABA_v1c07490 (degree
-451), 1276257.SSABA_v1c02900 (degree 441), 1276257.SSABA_v1c06080 (degree 438) and
-1276257.SSABA_v1c06640 (degree 412).
+The undirected graph Spiroplasma sabaudiense has 910 nodes and 57100 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13806 and has 13 connected components, where the component
+with most nodes has 865 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 125.49,
+and the node degree mode is 7. The top 5 most central nodes are 1276257.SSABA_v1c06860
+(degree 454), 1276257.SSABA_v1c07490 (degree 451), 1276257.SSABA_v1c02900
+(degree 441), 1276257.SSABA_v1c06080 (degree 438) and 1276257.SSABA_v1c06640
+(degree 412).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaSabaudiense(
 	
 	Datetime: 2021-02-02 23:38:28.475114
 	
-	The undirected graph Spiroplasma sabaudiense has 910 nodes and 57100 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13806
-	and has 13 connected components, where the component with most nodes has 865 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 125.49, and the node degree mode is 7. The top 5 most
-	central nodes are 1276257.SSABA_v1c06860 (degree 454), 1276257.SSABA_v1c07490 (degree
-	451), 1276257.SSABA_v1c02900 (degree 441), 1276257.SSABA_v1c06080 (degree 438) and
-	1276257.SSABA_v1c06640 (degree 412).
+	The undirected graph Spiroplasma sabaudiense has 910 nodes and 57100 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13806 and has 13 connected components, where the component
+	with most nodes has 865 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 125.49,
+	and the node degree mode is 7. The top 5 most central nodes are 1276257.SSABA_v1c06860
+	(degree 454), 1276257.SSABA_v1c07490 (degree 451), 1276257.SSABA_v1c02900
+	(degree 441), 1276257.SSABA_v1c06080 (degree 438) and 1276257.SSABA_v1c06640
+	(degree 412).
 	
 
 

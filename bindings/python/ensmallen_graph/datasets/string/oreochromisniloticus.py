@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:28:48.000586
 
-The undirected graph Oreochromis niloticus has 20156 nodes and 3811890 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01877 and
-has 2 connected components, where the component with most nodes has 20154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 259,
-the mean node degree is 378.24, and the node degree mode is 119. The top 5 most central
-nodes are 8128.ENSONIP00000017445 (degree 4572), 8128.ENSONIP00000001083 (degree
-4567), 8128.ENSONIP00000023133 (degree 4349), 8128.ENSONIP00000020791 (degree 4325)
-and 8128.ENSONIP00000020250 (degree 4215).
+The undirected graph Oreochromis niloticus has 20156 nodes and 3811890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01877 and has 2 connected components, where the component
+with most nodes has 20154 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 259, the mean node degree
+is 378.24, and the node degree mode is 119. The top 5 most central nodes
+are 8128.ENSONIP00000017445 (degree 4572), 8128.ENSONIP00000001083 (degree
+4567), 8128.ENSONIP00000023133 (degree 4349), 8128.ENSONIP00000020791 (degree
+4325) and 8128.ENSONIP00000020250 (degree 4215).
 
 
 References
@@ -107,14 +108,15 @@ def OreochromisNiloticus(
 	
 	Datetime: 2021-02-02 17:28:48.000586
 	
-	The undirected graph Oreochromis niloticus has 20156 nodes and 3811890 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01877 and
-	has 2 connected components, where the component with most nodes has 20154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 259,
-	the mean node degree is 378.24, and the node degree mode is 119. The top 5 most central
-	nodes are 8128.ENSONIP00000017445 (degree 4572), 8128.ENSONIP00000001083 (degree
-	4567), 8128.ENSONIP00000023133 (degree 4349), 8128.ENSONIP00000020791 (degree 4325)
-	and 8128.ENSONIP00000020250 (degree 4215).
+	The undirected graph Oreochromis niloticus has 20156 nodes and 3811890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01877 and has 2 connected components, where the component
+	with most nodes has 20154 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 259, the mean node degree
+	is 378.24, and the node degree mode is 119. The top 5 most central nodes
+	are 8128.ENSONIP00000017445 (degree 4572), 8128.ENSONIP00000001083 (degree
+	4567), 8128.ENSONIP00000023133 (degree 4349), 8128.ENSONIP00000020791 (degree
+	4325) and 8128.ENSONIP00000020250 (degree 4215).
 	
 
 

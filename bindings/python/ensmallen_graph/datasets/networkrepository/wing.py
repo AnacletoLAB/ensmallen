@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:34:14.018343
 
-The undirected graph wing has 62032 nodes and 121544 unweighted edges, of which none
-are self-loops. The graph is extremely sparse as it has a density of 0.00006 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 3.92 and the node degree mode is 4. The top 5 most central nodes
-are 49789 (degree 4), 49350 (degree 4), 62027 (degree 4), 62029 (degree 4) and 48093
-(degree 4).
+The undirected graph wing has 62032 nodes and 121544 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00006 and is connected, as it has a single component. The
+graph median node degree is 4, the mean node degree is 3.92 and the node
+degree mode is 4. The top 5 most central nodes are 49789 (degree 4), 49350
+(degree 4), 62027 (degree 4), 62029 (degree 4) and 48093 (degree 4).
 
 
 References
@@ -109,12 +109,12 @@ def Wing(
 	
 	Datetime: 2021-02-03 23:34:14.018343
 	
-	The undirected graph wing has 62032 nodes and 121544 unweighted edges, of which none
-	are self-loops. The graph is extremely sparse as it has a density of 0.00006 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 3.92 and the node degree mode is 4. The top 5 most central nodes
-	are 49789 (degree 4), 49350 (degree 4), 62027 (degree 4), 62029 (degree 4) and 48093
-	(degree 4).
+	The undirected graph wing has 62032 nodes and 121544 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00006 and is connected, as it has a single component. The
+	graph median node degree is 4, the mean node degree is 3.92 and the node
+	degree mode is 4. The top 5 most central nodes are 49789 (degree 4), 49350
+	(degree 4), 62027 (degree 4), 62029 (degree 4) and 48093 (degree 4).
 	
 
 

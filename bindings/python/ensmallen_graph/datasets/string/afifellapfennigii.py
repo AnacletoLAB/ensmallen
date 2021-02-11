@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:27.426344
 
-The undirected graph Afifella pfennigii has 3620 nodes and 308252 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04706 and
-has 5 connected components, where the component with most nodes has 3611 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 170.30, and the node degree mode is 2. The top 5 most central
-nodes are 1120956.JHZK01000011_gene1259 (degree 1448), 1120956.JHZK01000048_gene1863
-(degree 1182), 1120956.JHZK01000008_gene601 (degree 1169), 1120956.JHZK01000004_gene1446
-(degree 1055) and 1120956.JHZK01000002_gene827 (degree 1029).
+The undirected graph Afifella pfennigii has 3620 nodes and 308252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04706 and has 5 connected components, where the component with most
+nodes has 3611 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 170.30, and
+the node degree mode is 2. The top 5 most central nodes are 1120956.JHZK01000011_gene1259
+(degree 1448), 1120956.JHZK01000048_gene1863 (degree 1182), 1120956.JHZK01000008_gene601
+(degree 1169), 1120956.JHZK01000004_gene1446 (degree 1055) and 1120956.JHZK01000002_gene827
+(degree 1029).
 
 
 References
@@ -107,14 +108,15 @@ def AfifellaPfennigii(
 	
 	Datetime: 2021-02-02 22:30:27.426344
 	
-	The undirected graph Afifella pfennigii has 3620 nodes and 308252 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04706 and
-	has 5 connected components, where the component with most nodes has 3611 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 170.30, and the node degree mode is 2. The top 5 most central
-	nodes are 1120956.JHZK01000011_gene1259 (degree 1448), 1120956.JHZK01000048_gene1863
-	(degree 1182), 1120956.JHZK01000008_gene601 (degree 1169), 1120956.JHZK01000004_gene1446
-	(degree 1055) and 1120956.JHZK01000002_gene827 (degree 1029).
+	The undirected graph Afifella pfennigii has 3620 nodes and 308252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04706 and has 5 connected components, where the component with most
+	nodes has 3611 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 170.30, and
+	the node degree mode is 2. The top 5 most central nodes are 1120956.JHZK01000011_gene1259
+	(degree 1448), 1120956.JHZK01000048_gene1863 (degree 1182), 1120956.JHZK01000008_gene601
+	(degree 1169), 1120956.JHZK01000004_gene1446 (degree 1055) and 1120956.JHZK01000002_gene827
+	(degree 1029).
 	
 
 

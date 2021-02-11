@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:49.094624
 
-The undirected graph Flavobacterium branchiophilum has 2802 nodes and 184270 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04696
-and has 21 connected components, where the component with most nodes has 2738 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 131.53, and the node degree mode is 1. The top 5
-most central nodes are 1034807.FBFL15_0089 (degree 1037), 1034807.FBFL15_0799 (degree
-1023), 1034807.FBFL15_1285 (degree 848), 1034807.FBFL15_1772 (degree 776) and 1034807.FBFL15_1548
-(degree 761).
+The undirected graph Flavobacterium branchiophilum has 2802 nodes and 184270
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04696 and has 21 connected components, where the component
+with most nodes has 2738 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 131.53,
+and the node degree mode is 1. The top 5 most central nodes are 1034807.FBFL15_0089
+(degree 1037), 1034807.FBFL15_0799 (degree 1023), 1034807.FBFL15_1285 (degree
+848), 1034807.FBFL15_1772 (degree 776) and 1034807.FBFL15_1548 (degree
+761).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumBranchiophilum(
 	
 	Datetime: 2021-02-02 22:11:49.094624
 	
-	The undirected graph Flavobacterium branchiophilum has 2802 nodes and 184270 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04696
-	and has 21 connected components, where the component with most nodes has 2738 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 131.53, and the node degree mode is 1. The top 5
-	most central nodes are 1034807.FBFL15_0089 (degree 1037), 1034807.FBFL15_0799 (degree
-	1023), 1034807.FBFL15_1285 (degree 848), 1034807.FBFL15_1772 (degree 776) and 1034807.FBFL15_1548
-	(degree 761).
+	The undirected graph Flavobacterium branchiophilum has 2802 nodes and 184270
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04696 and has 21 connected components, where the component
+	with most nodes has 2738 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 131.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1034807.FBFL15_0089
+	(degree 1037), 1034807.FBFL15_0799 (degree 1023), 1034807.FBFL15_1285 (degree
+	848), 1034807.FBFL15_1772 (degree 776) and 1034807.FBFL15_1548 (degree
+	761).
 	
 
 

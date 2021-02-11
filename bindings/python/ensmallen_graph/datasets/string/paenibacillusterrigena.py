@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:49.181725
 
-The undirected graph Paenibacillus terrigena has 5433 nodes and 655867 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04445 and
-has 16 connected components, where the component with most nodes has 5393 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 241.44, and the node degree mode is 1. The top 5 most central
-nodes are 1122927.KB895419_gene2549 (degree 1778), 1122927.KB895427_gene2189 (degree
-1706), 1122927.KB895413_gene1445 (degree 1687), 1122927.KB895415_gene4684 (degree
-1480) and 1122927.KB895414_gene5134 (degree 1448).
+The undirected graph Paenibacillus terrigena has 5433 nodes and 655867
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04445 and has 16 connected components, where the component
+with most nodes has 5393 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 241.44,
+and the node degree mode is 1. The top 5 most central nodes are 1122927.KB895419_gene2549
+(degree 1778), 1122927.KB895427_gene2189 (degree 1706), 1122927.KB895413_gene1445
+(degree 1687), 1122927.KB895415_gene4684 (degree 1480) and 1122927.KB895414_gene5134
+(degree 1448).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusTerrigena(
 	
 	Datetime: 2021-02-02 22:44:49.181725
 	
-	The undirected graph Paenibacillus terrigena has 5433 nodes and 655867 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04445 and
-	has 16 connected components, where the component with most nodes has 5393 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 241.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1122927.KB895419_gene2549 (degree 1778), 1122927.KB895427_gene2189 (degree
-	1706), 1122927.KB895413_gene1445 (degree 1687), 1122927.KB895415_gene4684 (degree
-	1480) and 1122927.KB895414_gene5134 (degree 1448).
+	The undirected graph Paenibacillus terrigena has 5433 nodes and 655867
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04445 and has 16 connected components, where the component
+	with most nodes has 5393 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 241.44,
+	and the node degree mode is 1. The top 5 most central nodes are 1122927.KB895419_gene2549
+	(degree 1778), 1122927.KB895427_gene2189 (degree 1706), 1122927.KB895413_gene1445
+	(degree 1687), 1122927.KB895415_gene4684 (degree 1480) and 1122927.KB895414_gene5134
+	(degree 1448).
 	
 
 

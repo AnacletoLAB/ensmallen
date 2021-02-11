@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:18.876364
 
-The undirected graph Oribacterium sp. F0263 has 2796 nodes and 158225 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04049 and
-has 22 connected components, where the component with most nodes has 2737 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 113.18, and the node degree mode is 2. The top 5 most central
-nodes are 1321782.HMPREF1986_01349 (degree 889), 1321782.HMPREF1986_02771 (degree
-882), 1321782.HMPREF1986_02142 (degree 794), 1321782.HMPREF1986_01351 (degree 769)
-and 1321782.HMPREF1986_01872 (degree 619).
+The undirected graph Oribacterium sp. F0263 has 2796 nodes and 158225 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04049 and has 22 connected components, where the component with most
+nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 78, the mean node degree is 113.18, and
+the node degree mode is 2. The top 5 most central nodes are 1321782.HMPREF1986_01349
+(degree 889), 1321782.HMPREF1986_02771 (degree 882), 1321782.HMPREF1986_02142
+(degree 794), 1321782.HMPREF1986_01351 (degree 769) and 1321782.HMPREF1986_01872
+(degree 619).
 
 
 References
@@ -107,14 +108,15 @@ def OribacteriumSp.F0263(
 	
 	Datetime: 2021-02-03 21:53:18.876364
 	
-	The undirected graph Oribacterium sp. F0263 has 2796 nodes and 158225 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04049 and
-	has 22 connected components, where the component with most nodes has 2737 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 113.18, and the node degree mode is 2. The top 5 most central
-	nodes are 1321782.HMPREF1986_01349 (degree 889), 1321782.HMPREF1986_02771 (degree
-	882), 1321782.HMPREF1986_02142 (degree 794), 1321782.HMPREF1986_01351 (degree 769)
-	and 1321782.HMPREF1986_01872 (degree 619).
+	The undirected graph Oribacterium sp. F0263 has 2796 nodes and 158225 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04049 and has 22 connected components, where the component with most
+	nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 78, the mean node degree is 113.18, and
+	the node degree mode is 2. The top 5 most central nodes are 1321782.HMPREF1986_01349
+	(degree 889), 1321782.HMPREF1986_02771 (degree 882), 1321782.HMPREF1986_02142
+	(degree 794), 1321782.HMPREF1986_01351 (degree 769) and 1321782.HMPREF1986_01872
+	(degree 619).
 	
 
 

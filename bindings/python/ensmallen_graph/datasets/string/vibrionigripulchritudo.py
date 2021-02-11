@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:26.216777
 
-The undirected graph Vibrio nigripulchritudo has 6145 nodes and 556874 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02950 and
-has 53 connected components, where the component with most nodes has 5989 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 181.24, and the node degree mode is 4. The top 5 most central
-nodes are 1238450.VIBNISOn1_200016 (degree 1877), 1238450.VIBNISOn1_790034 (degree
-1417), 1238450.VIBNISOn1_950002 (degree 1391), 1238450.VIBNISOn1_210019 (degree 1343)
-and 1238450.VIBNISOn1_600045 (degree 1332).
+The undirected graph Vibrio nigripulchritudo has 6145 nodes and 556874
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02950 and has 53 connected components, where the component
+with most nodes has 5989 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 181.24,
+and the node degree mode is 4. The top 5 most central nodes are 1238450.VIBNISOn1_200016
+(degree 1877), 1238450.VIBNISOn1_790034 (degree 1417), 1238450.VIBNISOn1_950002
+(degree 1391), 1238450.VIBNISOn1_210019 (degree 1343) and 1238450.VIBNISOn1_600045
+(degree 1332).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioNigripulchritudo(
 	
 	Datetime: 2021-02-02 23:32:26.216777
 	
-	The undirected graph Vibrio nigripulchritudo has 6145 nodes and 556874 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02950 and
-	has 53 connected components, where the component with most nodes has 5989 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 181.24, and the node degree mode is 4. The top 5 most central
-	nodes are 1238450.VIBNISOn1_200016 (degree 1877), 1238450.VIBNISOn1_790034 (degree
-	1417), 1238450.VIBNISOn1_950002 (degree 1391), 1238450.VIBNISOn1_210019 (degree 1343)
-	and 1238450.VIBNISOn1_600045 (degree 1332).
+	The undirected graph Vibrio nigripulchritudo has 6145 nodes and 556874
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02950 and has 53 connected components, where the component
+	with most nodes has 5989 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 181.24,
+	and the node degree mode is 4. The top 5 most central nodes are 1238450.VIBNISOn1_200016
+	(degree 1877), 1238450.VIBNISOn1_790034 (degree 1417), 1238450.VIBNISOn1_950002
+	(degree 1391), 1238450.VIBNISOn1_210019 (degree 1343) and 1238450.VIBNISOn1_600045
+	(degree 1332).
 	
 
 

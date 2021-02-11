@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:13:25.748442
 
-The undirected graph Candida dubliniensis has 5060 nodes and 434391 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03394 and
-has 10 connected components, where the component with most nodes has 5039 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 171.70, and the node degree mode is 1. The top 5 most central
-nodes are 42374.XP_002419583.1 (degree 1116), 42374.XP_002420708.1 (degree 1067),
-42374.XP_002421666.1 (degree 1041), 42374.XP_002417908.1 (degree 941) and 42374.XP_002422523.1
+The undirected graph Candida dubliniensis has 5060 nodes and 434391 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03394 and has 10 connected components, where the component with most
+nodes has 5039 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 171.70, and
+the node degree mode is 1. The top 5 most central nodes are 42374.XP_002419583.1
+(degree 1116), 42374.XP_002420708.1 (degree 1067), 42374.XP_002421666.1
+(degree 1041), 42374.XP_002417908.1 (degree 941) and 42374.XP_002422523.1
 (degree 941).
 
 
@@ -107,13 +108,14 @@ def CandidaDubliniensis(
 	
 	Datetime: 2021-02-02 18:13:25.748442
 	
-	The undirected graph Candida dubliniensis has 5060 nodes and 434391 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03394 and
-	has 10 connected components, where the component with most nodes has 5039 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 171.70, and the node degree mode is 1. The top 5 most central
-	nodes are 42374.XP_002419583.1 (degree 1116), 42374.XP_002420708.1 (degree 1067),
-	42374.XP_002421666.1 (degree 1041), 42374.XP_002417908.1 (degree 941) and 42374.XP_002422523.1
+	The undirected graph Candida dubliniensis has 5060 nodes and 434391 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03394 and has 10 connected components, where the component with most
+	nodes has 5039 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 171.70, and
+	the node degree mode is 1. The top 5 most central nodes are 42374.XP_002419583.1
+	(degree 1116), 42374.XP_002420708.1 (degree 1067), 42374.XP_002421666.1
+	(degree 1041), 42374.XP_002417908.1 (degree 941) and 42374.XP_002422523.1
 	(degree 941).
 	
 

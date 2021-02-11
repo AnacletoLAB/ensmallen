@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:01.070821
 
-The undirected graph Prevotella shahii has 2964 nodes and 215705 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04912 and
-has 52 connected components, where the component with most nodes has 2838 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 145.55, and the node degree mode is 1. The top 5 most central
-nodes are 1122991.BAIZ01000031_gene2105 (degree 1354), 1122991.BAIZ01000020_gene1614
-(degree 1087), 1122991.BAIZ01000010_gene972 (degree 951), 1122991.BAIZ01000030_gene2091
-(degree 811) and 1122991.BAIZ01000027_gene1955 (degree 798).
+The undirected graph Prevotella shahii has 2964 nodes and 215705 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04912 and has 52 connected components, where the component with most
+nodes has 2838 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 145.55, and
+the node degree mode is 1. The top 5 most central nodes are 1122991.BAIZ01000031_gene2105
+(degree 1354), 1122991.BAIZ01000020_gene1614 (degree 1087), 1122991.BAIZ01000010_gene972
+(degree 951), 1122991.BAIZ01000030_gene2091 (degree 811) and 1122991.BAIZ01000027_gene1955
+(degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaShahii(
 	
 	Datetime: 2021-02-02 22:46:01.070821
 	
-	The undirected graph Prevotella shahii has 2964 nodes and 215705 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04912 and
-	has 52 connected components, where the component with most nodes has 2838 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 145.55, and the node degree mode is 1. The top 5 most central
-	nodes are 1122991.BAIZ01000031_gene2105 (degree 1354), 1122991.BAIZ01000020_gene1614
-	(degree 1087), 1122991.BAIZ01000010_gene972 (degree 951), 1122991.BAIZ01000030_gene2091
-	(degree 811) and 1122991.BAIZ01000027_gene1955 (degree 798).
+	The undirected graph Prevotella shahii has 2964 nodes and 215705 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04912 and has 52 connected components, where the component with most
+	nodes has 2838 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 145.55, and
+	the node degree mode is 1. The top 5 most central nodes are 1122991.BAIZ01000031_gene2105
+	(degree 1354), 1122991.BAIZ01000020_gene1614 (degree 1087), 1122991.BAIZ01000010_gene972
+	(degree 951), 1122991.BAIZ01000030_gene2091 (degree 811) and 1122991.BAIZ01000027_gene1955
+	(degree 798).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:07.851379
 
-The undirected graph Mycobacterium rhodesiae NBB3 has 6106 nodes and 1052433 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05647
-and has 14 connected components, where the component with most nodes has 6072 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 266, the mean node degree is 344.72, and the node degree mode is 4. The top 5
-most central nodes are 710685.MycrhN_4174 (degree 2240), 710685.MycrhN_4068 (degree
-2227), 710685.MycrhN_4335 (degree 2202), 710685.MycrhN_6304 (degree 2035) and 710685.MycrhN_0030
-(degree 2033).
+The undirected graph Mycobacterium rhodesiae NBB3 has 6106 nodes and 1052433
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05647 and has 14 connected components, where the component
+with most nodes has 6072 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 266, the mean node degree is 344.72,
+and the node degree mode is 4. The top 5 most central nodes are 710685.MycrhN_4174
+(degree 2240), 710685.MycrhN_4068 (degree 2227), 710685.MycrhN_4335 (degree
+2202), 710685.MycrhN_6304 (degree 2035) and 710685.MycrhN_0030 (degree
+2033).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumRhodesiaeNbb3(
 	
 	Datetime: 2021-02-02 21:35:07.851379
 	
-	The undirected graph Mycobacterium rhodesiae NBB3 has 6106 nodes and 1052433 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05647
-	and has 14 connected components, where the component with most nodes has 6072 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 266, the mean node degree is 344.72, and the node degree mode is 4. The top 5
-	most central nodes are 710685.MycrhN_4174 (degree 2240), 710685.MycrhN_4068 (degree
-	2227), 710685.MycrhN_4335 (degree 2202), 710685.MycrhN_6304 (degree 2035) and 710685.MycrhN_0030
-	(degree 2033).
+	The undirected graph Mycobacterium rhodesiae NBB3 has 6106 nodes and 1052433
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05647 and has 14 connected components, where the component
+	with most nodes has 6072 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 266, the mean node degree is 344.72,
+	and the node degree mode is 4. The top 5 most central nodes are 710685.MycrhN_4174
+	(degree 2240), 710685.MycrhN_4068 (degree 2227), 710685.MycrhN_4335 (degree
+	2202), 710685.MycrhN_6304 (degree 2035) and 710685.MycrhN_0030 (degree
+	2033).
 	
 
 

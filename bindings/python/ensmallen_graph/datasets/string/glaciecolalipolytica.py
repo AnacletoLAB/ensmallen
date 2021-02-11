@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:44.756762
 
-The undirected graph Glaciecola lipolytica has 4280 nodes and 387491 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04232 and
-has 26 connected components, where the component with most nodes has 4216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 181.07, and the node degree mode is 2. The top 5 most central
-nodes are 1127673.GLIP_0591 (degree 1548), 1127673.GLIP_0043 (degree 1442), 1127673.GLIP_0585
-(degree 1214), 1127673.GLIP_0107 (degree 1197) and 1127673.GLIP_2530 (degree 1170).
+The undirected graph Glaciecola lipolytica has 4280 nodes and 387491 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04232 and has 26 connected components, where the component with most
+nodes has 4216 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 181.07, and
+the node degree mode is 2. The top 5 most central nodes are 1127673.GLIP_0591
+(degree 1548), 1127673.GLIP_0043 (degree 1442), 1127673.GLIP_0585 (degree
+1214), 1127673.GLIP_0107 (degree 1197) and 1127673.GLIP_2530 (degree 1170).
 
 
 References
@@ -106,13 +107,14 @@ def GlaciecolaLipolytica(
 	
 	Datetime: 2021-02-02 22:54:44.756762
 	
-	The undirected graph Glaciecola lipolytica has 4280 nodes and 387491 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04232 and
-	has 26 connected components, where the component with most nodes has 4216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 181.07, and the node degree mode is 2. The top 5 most central
-	nodes are 1127673.GLIP_0591 (degree 1548), 1127673.GLIP_0043 (degree 1442), 1127673.GLIP_0585
-	(degree 1214), 1127673.GLIP_0107 (degree 1197) and 1127673.GLIP_2530 (degree 1170).
+	The undirected graph Glaciecola lipolytica has 4280 nodes and 387491 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04232 and has 26 connected components, where the component with most
+	nodes has 4216 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 181.07, and
+	the node degree mode is 2. The top 5 most central nodes are 1127673.GLIP_0591
+	(degree 1548), 1127673.GLIP_0043 (degree 1442), 1127673.GLIP_0585 (degree
+	1214), 1127673.GLIP_0107 (degree 1197) and 1127673.GLIP_2530 (degree 1170).
 	
 
 

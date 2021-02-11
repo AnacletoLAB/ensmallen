@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:34:13.706709
 
-The undirected graph Prunus persica has 21478 nodes and 3201246 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01388 and
-has 12 connected components, where the component with most nodes has 21456 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 298.10, and the node degree mode is 2. The top 5
-most central nodes are 3760.EMJ05185 (degree 6505), 3760.EMJ01492 (degree 4495),
-3760.EMJ26527 (degree 3974), 3760.EMJ09504 (degree 3887) and 3760.EMJ05303 (degree
-3813).
+The undirected graph Prunus persica has 21478 nodes and 3201246 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01388 and has 12 connected components, where the component with most
+nodes has 21456 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 298.10, and
+the node degree mode is 2. The top 5 most central nodes are 3760.EMJ05185
+(degree 6505), 3760.EMJ01492 (degree 4495), 3760.EMJ26527 (degree 3974),
+3760.EMJ09504 (degree 3887) and 3760.EMJ05303 (degree 3813).
 
 
 References
@@ -107,14 +107,14 @@ def PrunusPersica(
 	
 	Datetime: 2021-02-02 16:34:13.706709
 	
-	The undirected graph Prunus persica has 21478 nodes and 3201246 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01388 and
-	has 12 connected components, where the component with most nodes has 21456 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 298.10, and the node degree mode is 2. The top 5
-	most central nodes are 3760.EMJ05185 (degree 6505), 3760.EMJ01492 (degree 4495),
-	3760.EMJ26527 (degree 3974), 3760.EMJ09504 (degree 3887) and 3760.EMJ05303 (degree
-	3813).
+	The undirected graph Prunus persica has 21478 nodes and 3201246 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01388 and has 12 connected components, where the component with most
+	nodes has 21456 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 298.10, and
+	the node degree mode is 2. The top 5 most central nodes are 3760.EMJ05185
+	(degree 6505), 3760.EMJ01492 (degree 4495), 3760.EMJ26527 (degree 3974),
+	3760.EMJ09504 (degree 3887) and 3760.EMJ05303 (degree 3813).
 	
 
 

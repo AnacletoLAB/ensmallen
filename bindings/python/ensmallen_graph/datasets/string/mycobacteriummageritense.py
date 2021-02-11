@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:37.724017
 
-The undirected graph Mycobacterium mageritense has 7619 nodes and 1136079 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03915
-and has 38 connected components, where the component with most nodes has 7509 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 298.22, and the node degree mode is 3. The top 5
-most central nodes are 1209984.BN978_00415 (degree 3003), 1209984.BN978_04554 (degree
-2670), 1209984.BN978_07589 (degree 2449), 1209984.BN978_00053 (degree 2380) and 1209984.BN978_07077
-(degree 2072).
+The undirected graph Mycobacterium mageritense has 7619 nodes and 1136079
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03915 and has 38 connected components, where the component
+with most nodes has 7509 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 298.22,
+and the node degree mode is 3. The top 5 most central nodes are 1209984.BN978_00415
+(degree 3003), 1209984.BN978_04554 (degree 2670), 1209984.BN978_07589 (degree
+2449), 1209984.BN978_00053 (degree 2380) and 1209984.BN978_07077 (degree
+2072).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumMageritense(
 	
 	Datetime: 2021-02-02 23:18:37.724017
 	
-	The undirected graph Mycobacterium mageritense has 7619 nodes and 1136079 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03915
-	and has 38 connected components, where the component with most nodes has 7509 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 298.22, and the node degree mode is 3. The top 5
-	most central nodes are 1209984.BN978_00415 (degree 3003), 1209984.BN978_04554 (degree
-	2670), 1209984.BN978_07589 (degree 2449), 1209984.BN978_00053 (degree 2380) and 1209984.BN978_07077
-	(degree 2072).
+	The undirected graph Mycobacterium mageritense has 7619 nodes and 1136079
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03915 and has 38 connected components, where the component
+	with most nodes has 7509 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 298.22,
+	and the node degree mode is 3. The top 5 most central nodes are 1209984.BN978_00415
+	(degree 3003), 1209984.BN978_04554 (degree 2670), 1209984.BN978_07589 (degree
+	2449), 1209984.BN978_00053 (degree 2380) and 1209984.BN978_07077 (degree
+	2072).
 	
 
 

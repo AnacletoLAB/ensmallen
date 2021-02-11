@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:15.771873
 
-The undirected graph Pseudoxanthomonas spadix has 3124 nodes and 239928 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04918
-and has 7 connected components, where the component with most nodes has 3111 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 153.60, and the node degree mode is 4. The top 5
-most central nodes are 1045855.DSC_00480 (degree 1201), 1045855.DSC_10465 (degree
-1160), 1045855.DSC_01370 (degree 1118), 1045855.DSC_05310 (degree 1104) and 1045855.DSC_10250
-(degree 1064).
+The undirected graph Pseudoxanthomonas spadix has 3124 nodes and 239928
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04918 and has 7 connected components, where the component
+with most nodes has 3111 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 153.60,
+and the node degree mode is 4. The top 5 most central nodes are 1045855.DSC_00480
+(degree 1201), 1045855.DSC_10465 (degree 1160), 1045855.DSC_01370 (degree
+1118), 1045855.DSC_05310 (degree 1104) and 1045855.DSC_10250 (degree 1064).
 
 
 References
@@ -107,14 +107,14 @@ def PseudoxanthomonasSpadix(
 	
 	Datetime: 2021-02-02 22:16:15.771873
 	
-	The undirected graph Pseudoxanthomonas spadix has 3124 nodes and 239928 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04918
-	and has 7 connected components, where the component with most nodes has 3111 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 153.60, and the node degree mode is 4. The top 5
-	most central nodes are 1045855.DSC_00480 (degree 1201), 1045855.DSC_10465 (degree
-	1160), 1045855.DSC_01370 (degree 1118), 1045855.DSC_05310 (degree 1104) and 1045855.DSC_10250
-	(degree 1064).
+	The undirected graph Pseudoxanthomonas spadix has 3124 nodes and 239928
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04918 and has 7 connected components, where the component
+	with most nodes has 3111 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 153.60,
+	and the node degree mode is 4. The top 5 most central nodes are 1045855.DSC_00480
+	(degree 1201), 1045855.DSC_10465 (degree 1160), 1045855.DSC_01370 (degree
+	1118), 1045855.DSC_05310 (degree 1104) and 1045855.DSC_10250 (degree 1064).
 	
 
 

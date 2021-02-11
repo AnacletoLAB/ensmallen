@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:31.439540
 
-The undirected graph Sphingobium japonicum UT26S has 4096 nodes and 315244 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03759
-and has 18 connected components, where the component with most nodes has 4043 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 153.93, and the node degree mode is 6. The top 5
-most central nodes are 452662.SJA_C1-33240 (degree 1462), 452662.SJA_C2-00400 (degree
-1334), 452662.SJA_C2-02930 (degree 1239), 452662.SJA_C1-22330 (degree 1202) and 452662.SJA_C1-05730
-(degree 1058).
+The undirected graph Sphingobium japonicum UT26S has 4096 nodes and 315244
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03759 and has 18 connected components, where the component
+with most nodes has 4043 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 153.93,
+and the node degree mode is 6. The top 5 most central nodes are 452662.SJA_C1-33240
+(degree 1462), 452662.SJA_C2-00400 (degree 1334), 452662.SJA_C2-02930 (degree
+1239), 452662.SJA_C1-22330 (degree 1202) and 452662.SJA_C1-05730 (degree
+1058).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobiumJaponicumUt26s(
 	
 	Datetime: 2021-02-02 20:52:31.439540
 	
-	The undirected graph Sphingobium japonicum UT26S has 4096 nodes and 315244 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03759
-	and has 18 connected components, where the component with most nodes has 4043 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 153.93, and the node degree mode is 6. The top 5
-	most central nodes are 452662.SJA_C1-33240 (degree 1462), 452662.SJA_C2-00400 (degree
-	1334), 452662.SJA_C2-02930 (degree 1239), 452662.SJA_C1-22330 (degree 1202) and 452662.SJA_C1-05730
-	(degree 1058).
+	The undirected graph Sphingobium japonicum UT26S has 4096 nodes and 315244
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03759 and has 18 connected components, where the component
+	with most nodes has 4043 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 153.93,
+	and the node degree mode is 6. The top 5 most central nodes are 452662.SJA_C1-33240
+	(degree 1462), 452662.SJA_C2-00400 (degree 1334), 452662.SJA_C2-02930 (degree
+	1239), 452662.SJA_C1-22330 (degree 1202) and 452662.SJA_C1-05730 (degree
+	1058).
 	
 
 

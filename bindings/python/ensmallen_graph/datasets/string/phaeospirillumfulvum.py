@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:49:12.795814
 
-The undirected graph Phaeospirillum fulvum has 3428 nodes and 522274 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08891 and
-has 9 connected components, where the component with most nodes has 3408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 278,
-the mean node degree is 304.71, and the node degree mode is 2. The top 5 most central
-nodes are 1316936.K678_11835 (degree 1556), 1316936.K678_15566 (degree 1489), 1316936.K678_02750
-(degree 1432), 1316936.K678_10190 (degree 1395) and 1316936.K678_07228 (degree 1380).
+The undirected graph Phaeospirillum fulvum has 3428 nodes and 522274 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08891 and has 9 connected components, where the component with most
+nodes has 3408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 278, the mean node degree is 304.71, and
+the node degree mode is 2. The top 5 most central nodes are 1316936.K678_11835
+(degree 1556), 1316936.K678_15566 (degree 1489), 1316936.K678_02750 (degree
+1432), 1316936.K678_10190 (degree 1395) and 1316936.K678_07228 (degree
+1380).
 
 
 References
@@ -106,13 +108,15 @@ def PhaeospirillumFulvum(
 	
 	Datetime: 2021-02-03 21:49:12.795814
 	
-	The undirected graph Phaeospirillum fulvum has 3428 nodes and 522274 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08891 and
-	has 9 connected components, where the component with most nodes has 3408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 278,
-	the mean node degree is 304.71, and the node degree mode is 2. The top 5 most central
-	nodes are 1316936.K678_11835 (degree 1556), 1316936.K678_15566 (degree 1489), 1316936.K678_02750
-	(degree 1432), 1316936.K678_10190 (degree 1395) and 1316936.K678_07228 (degree 1380).
+	The undirected graph Phaeospirillum fulvum has 3428 nodes and 522274 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08891 and has 9 connected components, where the component with most
+	nodes has 3408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 278, the mean node degree is 304.71, and
+	the node degree mode is 2. The top 5 most central nodes are 1316936.K678_11835
+	(degree 1556), 1316936.K678_15566 (degree 1489), 1316936.K678_02750 (degree
+	1432), 1316936.K678_10190 (degree 1395) and 1316936.K678_07228 (degree
+	1380).
 	
 
 

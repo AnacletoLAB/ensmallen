@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:24.644982
 
-The undirected graph Coccidioides immitis has 5909 nodes and 462493 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02650 and
-has 27 connected components, where the component with most nodes has 5849 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 156.54, and the node degree mode is 2. The top 5 most central
-nodes are 5501.XP_001242928.1 (degree 1409), 5501.XP_001241297.1 (degree 1253), 5501.XP_001242508.1
-(degree 1112), 5501.XP_001242487.1 (degree 1111) and 5501.XP_001246797.1 (degree
+The undirected graph Coccidioides immitis has 5909 nodes and 462493 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02650 and has 27 connected components, where the component with most
+nodes has 5849 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 156.54, and
+the node degree mode is 2. The top 5 most central nodes are 5501.XP_001242928.1
+(degree 1409), 5501.XP_001241297.1 (degree 1253), 5501.XP_001242508.1 (degree
+1112), 5501.XP_001242487.1 (degree 1111) and 5501.XP_001246797.1 (degree
 1058).
 
 
@@ -107,13 +108,14 @@ def CoccidioidesImmitis(
 	
 	Datetime: 2021-02-02 17:14:24.644982
 	
-	The undirected graph Coccidioides immitis has 5909 nodes and 462493 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02650 and
-	has 27 connected components, where the component with most nodes has 5849 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 156.54, and the node degree mode is 2. The top 5 most central
-	nodes are 5501.XP_001242928.1 (degree 1409), 5501.XP_001241297.1 (degree 1253), 5501.XP_001242508.1
-	(degree 1112), 5501.XP_001242487.1 (degree 1111) and 5501.XP_001246797.1 (degree
+	The undirected graph Coccidioides immitis has 5909 nodes and 462493 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02650 and has 27 connected components, where the component with most
+	nodes has 5849 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 156.54, and
+	the node degree mode is 2. The top 5 most central nodes are 5501.XP_001242928.1
+	(degree 1409), 5501.XP_001241297.1 (degree 1253), 5501.XP_001242508.1 (degree
+	1112), 5501.XP_001242487.1 (degree 1111) and 5501.XP_001246797.1 (degree
 	1058).
 	
 

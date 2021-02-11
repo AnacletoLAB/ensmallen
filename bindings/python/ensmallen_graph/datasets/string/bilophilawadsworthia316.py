@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:30.751653
 
-The undirected graph Bilophila wadsworthia 316 has 3733 nodes and 361336 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05187
-and has 16 connected components, where the component with most nodes has 3686 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 193.59, and the node degree mode is 3. The top 5
-most central nodes are 563192.HMPREF0179_00292 (degree 1382), 563192.HMPREF0179_05316
-(degree 1175), 563192.HMPREF0179_00847 (degree 1110), 563192.HMPREF0179_01252 (degree
-1097) and 563192.HMPREF0179_03493 (degree 1050).
+The undirected graph Bilophila wadsworthia 316 has 3733 nodes and 361336
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05187 and has 16 connected components, where the component
+with most nodes has 3686 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 193.59,
+and the node degree mode is 3. The top 5 most central nodes are 563192.HMPREF0179_00292
+(degree 1382), 563192.HMPREF0179_05316 (degree 1175), 563192.HMPREF0179_00847
+(degree 1110), 563192.HMPREF0179_01252 (degree 1097) and 563192.HMPREF0179_03493
+(degree 1050).
 
 
 References
@@ -107,14 +108,15 @@ def BilophilaWadsworthia316(
 	
 	Datetime: 2021-02-02 21:12:30.751653
 	
-	The undirected graph Bilophila wadsworthia 316 has 3733 nodes and 361336 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05187
-	and has 16 connected components, where the component with most nodes has 3686 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 193.59, and the node degree mode is 3. The top 5
-	most central nodes are 563192.HMPREF0179_00292 (degree 1382), 563192.HMPREF0179_05316
-	(degree 1175), 563192.HMPREF0179_00847 (degree 1110), 563192.HMPREF0179_01252 (degree
-	1097) and 563192.HMPREF0179_03493 (degree 1050).
+	The undirected graph Bilophila wadsworthia 316 has 3733 nodes and 361336
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05187 and has 16 connected components, where the component
+	with most nodes has 3686 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 193.59,
+	and the node degree mode is 3. The top 5 most central nodes are 563192.HMPREF0179_00292
+	(degree 1382), 563192.HMPREF0179_05316 (degree 1175), 563192.HMPREF0179_00847
+	(degree 1110), 563192.HMPREF0179_01252 (degree 1097) and 563192.HMPREF0179_03493
+	(degree 1050).
 	
 
 

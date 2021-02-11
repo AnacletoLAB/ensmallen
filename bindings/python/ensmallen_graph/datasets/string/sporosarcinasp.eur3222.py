@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:40:20.119736
 
-The undirected graph Sporosarcina sp. EUR3222 has 3332 nodes and 336146 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06057
-and has 14 connected components, where the component with most nodes has 3303 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 201.77, and the node degree mode is 1. The top 5
-most central nodes are 1305836.AXVE01000003_gene2282 (degree 1142), 1305836.AXVE01000011_gene891
-(degree 931), 1305836.AXVE01000013_gene2145 (degree 931), 1305836.AXVE01000003_gene2503
-(degree 903) and 1305836.AXVE01000004_gene1554 (degree 902).
+The undirected graph Sporosarcina sp. EUR3222 has 3332 nodes and 336146
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06057 and has 14 connected components, where the component
+with most nodes has 3303 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 201.77,
+and the node degree mode is 1. The top 5 most central nodes are 1305836.AXVE01000003_gene2282
+(degree 1142), 1305836.AXVE01000011_gene891 (degree 931), 1305836.AXVE01000013_gene2145
+(degree 931), 1305836.AXVE01000003_gene2503 (degree 903) and 1305836.AXVE01000004_gene1554
+(degree 902).
 
 
 References
@@ -107,14 +108,15 @@ def SporosarcinaSp.Eur3222(
 	
 	Datetime: 2021-02-03 21:40:20.119736
 	
-	The undirected graph Sporosarcina sp. EUR3222 has 3332 nodes and 336146 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06057
-	and has 14 connected components, where the component with most nodes has 3303 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 201.77, and the node degree mode is 1. The top 5
-	most central nodes are 1305836.AXVE01000003_gene2282 (degree 1142), 1305836.AXVE01000011_gene891
-	(degree 931), 1305836.AXVE01000013_gene2145 (degree 931), 1305836.AXVE01000003_gene2503
-	(degree 903) and 1305836.AXVE01000004_gene1554 (degree 902).
+	The undirected graph Sporosarcina sp. EUR3222 has 3332 nodes and 336146
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06057 and has 14 connected components, where the component
+	with most nodes has 3303 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 201.77,
+	and the node degree mode is 1. The top 5 most central nodes are 1305836.AXVE01000003_gene2282
+	(degree 1142), 1305836.AXVE01000011_gene891 (degree 931), 1305836.AXVE01000013_gene2145
+	(degree 931), 1305836.AXVE01000003_gene2503 (degree 903) and 1305836.AXVE01000004_gene1554
+	(degree 902).
 	
 
 

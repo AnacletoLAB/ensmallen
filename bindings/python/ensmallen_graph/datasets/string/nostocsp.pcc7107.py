@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:51.079603
 
-The undirected graph Nostoc sp. PCC7107 has 5158 nodes and 465743 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03502 and
-has 25 connected components, where the component with most nodes has 5092 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 180.59, and the node degree mode is 2. The top 5 most central
-nodes are 317936.Nos7107_0766 (degree 1975), 317936.Nos7107_2954 (degree 1911), 317936.Nos7107_3646
-(degree 1669), 317936.Nos7107_3571 (degree 1440) and 317936.Nos7107_3844 (degree
+The undirected graph Nostoc sp. PCC7107 has 5158 nodes and 465743 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03502 and has 25 connected components, where the component with most
+nodes has 5092 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 180.59, and
+the node degree mode is 2. The top 5 most central nodes are 317936.Nos7107_0766
+(degree 1975), 317936.Nos7107_2954 (degree 1911), 317936.Nos7107_3646 (degree
+1669), 317936.Nos7107_3571 (degree 1440) and 317936.Nos7107_3844 (degree
 1428).
 
 
@@ -107,13 +108,14 @@ def NostocSp.Pcc7107(
 	
 	Datetime: 2021-02-02 20:26:51.079603
 	
-	The undirected graph Nostoc sp. PCC7107 has 5158 nodes and 465743 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03502 and
-	has 25 connected components, where the component with most nodes has 5092 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 180.59, and the node degree mode is 2. The top 5 most central
-	nodes are 317936.Nos7107_0766 (degree 1975), 317936.Nos7107_2954 (degree 1911), 317936.Nos7107_3646
-	(degree 1669), 317936.Nos7107_3571 (degree 1440) and 317936.Nos7107_3844 (degree
+	The undirected graph Nostoc sp. PCC7107 has 5158 nodes and 465743 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03502 and has 25 connected components, where the component with most
+	nodes has 5092 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 180.59, and
+	the node degree mode is 2. The top 5 most central nodes are 317936.Nos7107_0766
+	(degree 1975), 317936.Nos7107_2954 (degree 1911), 317936.Nos7107_3646 (degree
+	1669), 317936.Nos7107_3571 (degree 1440) and 317936.Nos7107_3844 (degree
 	1428).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:00:45.488693
 
-The undirected graph Sulfitobacter guttiformis has 3685 nodes and 390041 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05746
-and has 11 connected components, where the component with most nodes has 3662 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 211.69, and the node degree mode is 1. The top 5
-most central nodes are 1443111.JASG01000004_gene3459 (degree 1463), 1443111.JASG01000004_gene2125
-(degree 1227), 1443111.JASG01000004_gene1728 (degree 1123), 1443111.JASG01000004_gene807
-(degree 1094) and 1443111.JASG01000004_gene3468 (degree 1086).
+The undirected graph Sulfitobacter guttiformis has 3685 nodes and 390041
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05746 and has 11 connected components, where the component
+with most nodes has 3662 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 211.69,
+and the node degree mode is 1. The top 5 most central nodes are 1443111.JASG01000004_gene3459
+(degree 1463), 1443111.JASG01000004_gene2125 (degree 1227), 1443111.JASG01000004_gene1728
+(degree 1123), 1443111.JASG01000004_gene807 (degree 1094) and 1443111.JASG01000004_gene3468
+(degree 1086).
 
 
 References
@@ -107,14 +108,15 @@ def SulfitobacterGuttiformis(
 	
 	Datetime: 2021-02-03 23:00:45.488693
 	
-	The undirected graph Sulfitobacter guttiformis has 3685 nodes and 390041 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05746
-	and has 11 connected components, where the component with most nodes has 3662 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 211.69, and the node degree mode is 1. The top 5
-	most central nodes are 1443111.JASG01000004_gene3459 (degree 1463), 1443111.JASG01000004_gene2125
-	(degree 1227), 1443111.JASG01000004_gene1728 (degree 1123), 1443111.JASG01000004_gene807
-	(degree 1094) and 1443111.JASG01000004_gene3468 (degree 1086).
+	The undirected graph Sulfitobacter guttiformis has 3685 nodes and 390041
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05746 and has 11 connected components, where the component
+	with most nodes has 3662 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 211.69,
+	and the node degree mode is 1. The top 5 most central nodes are 1443111.JASG01000004_gene3459
+	(degree 1463), 1443111.JASG01000004_gene2125 (degree 1227), 1443111.JASG01000004_gene1728
+	(degree 1123), 1443111.JASG01000004_gene807 (degree 1094) and 1443111.JASG01000004_gene3468
+	(degree 1086).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:19.973266
 
-The undirected graph Aequorivita sublithincola has 3127 nodes and 328641 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06724
-and has 7 connected components, where the component with most nodes has 3107 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 193, the mean node degree is 210.20, and the node degree mode is 4. The top 5
-most central nodes are 746697.Aeqsu_1833 (degree 1244), 746697.Aeqsu_0965 (degree
-1155), 746697.Aeqsu_3072 (degree 1134), 746697.Aeqsu_0459 (degree 1120) and 746697.Aeqsu_1696
-(degree 987).
+The undirected graph Aequorivita sublithincola has 3127 nodes and 328641
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06724 and has 7 connected components, where the component
+with most nodes has 3107 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 193, the mean node degree is 210.20,
+and the node degree mode is 4. The top 5 most central nodes are 746697.Aeqsu_1833
+(degree 1244), 746697.Aeqsu_0965 (degree 1155), 746697.Aeqsu_3072 (degree
+1134), 746697.Aeqsu_0459 (degree 1120) and 746697.Aeqsu_1696 (degree 987).
 
 
 References
@@ -107,14 +107,14 @@ def AequorivitaSublithincola(
 	
 	Datetime: 2021-02-02 21:39:19.973266
 	
-	The undirected graph Aequorivita sublithincola has 3127 nodes and 328641 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06724
-	and has 7 connected components, where the component with most nodes has 3107 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 193, the mean node degree is 210.20, and the node degree mode is 4. The top 5
-	most central nodes are 746697.Aeqsu_1833 (degree 1244), 746697.Aeqsu_0965 (degree
-	1155), 746697.Aeqsu_3072 (degree 1134), 746697.Aeqsu_0459 (degree 1120) and 746697.Aeqsu_1696
-	(degree 987).
+	The undirected graph Aequorivita sublithincola has 3127 nodes and 328641
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06724 and has 7 connected components, where the component
+	with most nodes has 3107 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 193, the mean node degree is 210.20,
+	and the node degree mode is 4. The top 5 most central nodes are 746697.Aeqsu_1833
+	(degree 1244), 746697.Aeqsu_0965 (degree 1155), 746697.Aeqsu_3072 (degree
+	1134), 746697.Aeqsu_0459 (degree 1120) and 746697.Aeqsu_1696 (degree 987).
 	
 
 

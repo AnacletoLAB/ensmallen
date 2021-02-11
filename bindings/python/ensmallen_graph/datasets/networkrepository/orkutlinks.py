@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 21:14:54.254565
 
-The undirected graph orkut-links has 2983407 nodes and 17846116 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 11.96, and the node degree mode is 1. The top 5 most
-central nodes are 47991 (degree 33313), 46169 (degree 29657), 46170 (degree 27317),
-48302 (degree 25795) and 95064 (degree 25423).
+The undirected graph orkut-links has 2983407 nodes and 17846116 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 11.96, and the
+node degree mode is 1. The top 5 most central nodes are 47991 (degree 33313),
+46169 (degree 29657), 46170 (degree 27317), 48302 (degree 25795) and 95064
+(degree 25423).
 
 
 References
@@ -102,12 +103,13 @@ def OrkutLinks(
 	
 	Datetime: 2021-02-06 21:14:54.254565
 	
-	The undirected graph orkut-links has 2983407 nodes and 17846116 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 11.96, and the node degree mode is 1. The top 5 most
-	central nodes are 47991 (degree 33313), 46169 (degree 29657), 46170 (degree 27317),
-	48302 (degree 25795) and 95064 (degree 25423).
+	The undirected graph orkut-links has 2983407 nodes and 17846116 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 11.96, and the
+	node degree mode is 1. The top 5 most central nodes are 47991 (degree 33313),
+	46169 (degree 29657), 46170 (degree 27317), 48302 (degree 25795) and 95064
+	(degree 25423).
 	
 
 

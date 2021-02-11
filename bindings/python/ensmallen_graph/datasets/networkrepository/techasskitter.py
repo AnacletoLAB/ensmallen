@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:47:19.769919
 
-The undirected graph tech-as-skitter has 1696415 nodes and 11095298 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00001 and has 756 connected components, where the component with most nodes has
-1694616 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 5, the mean node degree is 13.08, and the node degree mode is 2. The
-top 5 most central nodes are 7047 (degree 35455), 1040 (degree 33982), 7580 (degree
-33376), 7589 (degree 30714) and 7041 (degree 30056).
+The undirected graph tech-as-skitter has 1696415 nodes and 11095298 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and has 756 connected components, where the component
+with most nodes has 1694616 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 5, the mean node degree is
+13.08, and the node degree mode is 2. The top 5 most central nodes are
+7047 (degree 35455), 1040 (degree 33982), 7580 (degree 33376), 7589 (degree
+30714) and 7041 (degree 30056).
 
 
 References
@@ -108,13 +109,14 @@ def TechAsSkitter(
 	
 	Datetime: 2021-02-07 15:47:19.769919
 	
-	The undirected graph tech-as-skitter has 1696415 nodes and 11095298 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00001 and has 756 connected components, where the component with most nodes has
-	1694616 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 5, the mean node degree is 13.08, and the node degree mode is 2. The
-	top 5 most central nodes are 7047 (degree 35455), 1040 (degree 33982), 7580 (degree
-	33376), 7589 (degree 30714) and 7041 (degree 30056).
+	The undirected graph tech-as-skitter has 1696415 nodes and 11095298 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and has 756 connected components, where the component
+	with most nodes has 1694616 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 5, the mean node degree is
+	13.08, and the node degree mode is 2. The top 5 most central nodes are
+	7047 (degree 35455), 1040 (degree 33982), 7580 (degree 33376), 7589 (degree
+	30714) and 7041 (degree 30056).
 	
 
 

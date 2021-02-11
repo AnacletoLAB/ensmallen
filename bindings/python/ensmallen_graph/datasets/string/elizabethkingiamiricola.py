@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:00.846161
 
-The undirected graph Elizabethkingia miricola has 4006 nodes and 408129 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-and has 30 connected components, where the component with most nodes has 3922 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 203.76, and the node degree mode is 1. The top 5
-most central nodes are 172045.KS04_08565 (degree 1260), 172045.KS04_07540 (degree
-1068), 172045.KS04_07155 (degree 1009), 172045.KS04_06585 (degree 867) and 172045.KS04_07475
-(degree 851).
+The undirected graph Elizabethkingia miricola has 4006 nodes and 408129
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05088 and has 30 connected components, where the component
+with most nodes has 3922 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 203.76,
+and the node degree mode is 1. The top 5 most central nodes are 172045.KS04_08565
+(degree 1260), 172045.KS04_07540 (degree 1068), 172045.KS04_07155 (degree
+1009), 172045.KS04_06585 (degree 867) and 172045.KS04_07475 (degree 851).
 
 
 References
@@ -107,14 +107,14 @@ def ElizabethkingiaMiricola(
 	
 	Datetime: 2021-02-02 19:55:00.846161
 	
-	The undirected graph Elizabethkingia miricola has 4006 nodes and 408129 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-	and has 30 connected components, where the component with most nodes has 3922 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 203.76, and the node degree mode is 1. The top 5
-	most central nodes are 172045.KS04_08565 (degree 1260), 172045.KS04_07540 (degree
-	1068), 172045.KS04_07155 (degree 1009), 172045.KS04_06585 (degree 867) and 172045.KS04_07475
-	(degree 851).
+	The undirected graph Elizabethkingia miricola has 4006 nodes and 408129
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05088 and has 30 connected components, where the component
+	with most nodes has 3922 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 203.76,
+	and the node degree mode is 1. The top 5 most central nodes are 172045.KS04_08565
+	(degree 1260), 172045.KS04_07540 (degree 1068), 172045.KS04_07155 (degree
+	1009), 172045.KS04_06585 (degree 867) and 172045.KS04_07475 (degree 851).
 	
 
 

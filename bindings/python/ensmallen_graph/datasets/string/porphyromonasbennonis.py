@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:36.635021
 
-The undirected graph Porphyromonas bennonis has 6673 nodes and 1122823 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05044 and
-has 44 connected components, where the component with most nodes has 6545 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 285,
-the mean node degree is 336.53, and the node degree mode is 1. The top 5 most central
-nodes are 1122971.BAME01000011_gene1494 (degree 2473), 1122971.BAME01000009_gene1197
-(degree 2456), 1122971.BAME01000014_gene1719 (degree 2234), 1122971.BAME01000044_gene3827
-(degree 2234) and 1122971.BAME01000120_gene6190 (degree 2215).
+The undirected graph Porphyromonas bennonis has 6673 nodes and 1122823
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05044 and has 44 connected components, where the component
+with most nodes has 6545 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 285, the mean node degree is 336.53,
+and the node degree mode is 1. The top 5 most central nodes are 1122971.BAME01000011_gene1494
+(degree 2473), 1122971.BAME01000009_gene1197 (degree 2456), 1122971.BAME01000014_gene1719
+(degree 2234), 1122971.BAME01000044_gene3827 (degree 2234) and 1122971.BAME01000120_gene6190
+(degree 2215).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasBennonis(
 	
 	Datetime: 2021-02-02 22:45:36.635021
 	
-	The undirected graph Porphyromonas bennonis has 6673 nodes and 1122823 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05044 and
-	has 44 connected components, where the component with most nodes has 6545 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 285,
-	the mean node degree is 336.53, and the node degree mode is 1. The top 5 most central
-	nodes are 1122971.BAME01000011_gene1494 (degree 2473), 1122971.BAME01000009_gene1197
-	(degree 2456), 1122971.BAME01000014_gene1719 (degree 2234), 1122971.BAME01000044_gene3827
-	(degree 2234) and 1122971.BAME01000120_gene6190 (degree 2215).
+	The undirected graph Porphyromonas bennonis has 6673 nodes and 1122823
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05044 and has 44 connected components, where the component
+	with most nodes has 6545 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 285, the mean node degree is 336.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1122971.BAME01000011_gene1494
+	(degree 2473), 1122971.BAME01000009_gene1197 (degree 2456), 1122971.BAME01000014_gene1719
+	(degree 2234), 1122971.BAME01000044_gene3827 (degree 2234) and 1122971.BAME01000120_gene6190
+	(degree 2215).
 	
 
 

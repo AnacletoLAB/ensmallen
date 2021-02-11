@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:06.516580
 
-The undirected graph Clostridium sulfidigenes has 3098 nodes and 221334 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-and has 22 connected components, where the component with most nodes has 3046 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 142.89, and the node degree mode is 1. The top 5
-most central nodes are 318464.IO99_12425 (degree 1133), 318464.IO99_03845 (degree
-1125), 318464.IO99_10815 (degree 930), 318464.IO99_01160 (degree 890) and 318464.IO99_00375
-(degree 869).
+The undirected graph Clostridium sulfidigenes has 3098 nodes and 221334
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04614 and has 22 connected components, where the component
+with most nodes has 3046 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 142.89,
+and the node degree mode is 1. The top 5 most central nodes are 318464.IO99_12425
+(degree 1133), 318464.IO99_03845 (degree 1125), 318464.IO99_10815 (degree
+930), 318464.IO99_01160 (degree 890) and 318464.IO99_00375 (degree 869).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumSulfidigenes(
 	
 	Datetime: 2021-02-02 20:27:06.516580
 	
-	The undirected graph Clostridium sulfidigenes has 3098 nodes and 221334 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-	and has 22 connected components, where the component with most nodes has 3046 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 142.89, and the node degree mode is 1. The top 5
-	most central nodes are 318464.IO99_12425 (degree 1133), 318464.IO99_03845 (degree
-	1125), 318464.IO99_10815 (degree 930), 318464.IO99_01160 (degree 890) and 318464.IO99_00375
-	(degree 869).
+	The undirected graph Clostridium sulfidigenes has 3098 nodes and 221334
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04614 and has 22 connected components, where the component
+	with most nodes has 3046 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 142.89,
+	and the node degree mode is 1. The top 5 most central nodes are 318464.IO99_12425
+	(degree 1133), 318464.IO99_03845 (degree 1125), 318464.IO99_10815 (degree
+	930), 318464.IO99_01160 (degree 890) and 318464.IO99_00375 (degree 869).
 	
 
 

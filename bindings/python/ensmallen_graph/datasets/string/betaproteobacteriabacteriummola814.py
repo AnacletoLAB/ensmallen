@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:52.195248
 
-The undirected graph Betaproteobacteria bacterium MOLA814 has 2669 nodes and 236479
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06642 and has 6 connected components, where the component with most nodes has
-2658 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 146, the mean node degree is 177.20, and the node degree mode is 2. The
-top 5 most central nodes are 1408164.MOLA814_01613 (degree 1074), 1408164.MOLA814_01797
-(degree 950), 1408164.MOLA814_00572 (degree 889), 1408164.MOLA814_01829 (degree 816)
-and 1408164.MOLA814_02386 (degree 798).
+The undirected graph Betaproteobacteria bacterium MOLA814 has 2669 nodes
+and 236479 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06642 and has 6 connected components, where the
+component with most nodes has 2658 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+is 177.20, and the node degree mode is 2. The top 5 most central nodes
+are 1408164.MOLA814_01613 (degree 1074), 1408164.MOLA814_01797 (degree
+950), 1408164.MOLA814_00572 (degree 889), 1408164.MOLA814_01829 (degree
+816) and 1408164.MOLA814_02386 (degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def BetaproteobacteriaBacteriumMola814(
 	
 	Datetime: 2021-02-03 22:33:52.195248
 	
-	The undirected graph Betaproteobacteria bacterium MOLA814 has 2669 nodes and 236479
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06642 and has 6 connected components, where the component with most nodes has
-	2658 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 146, the mean node degree is 177.20, and the node degree mode is 2. The
-	top 5 most central nodes are 1408164.MOLA814_01613 (degree 1074), 1408164.MOLA814_01797
-	(degree 950), 1408164.MOLA814_00572 (degree 889), 1408164.MOLA814_01829 (degree 816)
-	and 1408164.MOLA814_02386 (degree 798).
+	The undirected graph Betaproteobacteria bacterium MOLA814 has 2669 nodes
+	and 236479 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06642 and has 6 connected components, where the
+	component with most nodes has 2658 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+	is 177.20, and the node degree mode is 2. The top 5 most central nodes
+	are 1408164.MOLA814_01613 (degree 1074), 1408164.MOLA814_01797 (degree
+	950), 1408164.MOLA814_00572 (degree 889), 1408164.MOLA814_01829 (degree
+	816) and 1408164.MOLA814_02386 (degree 798).
 	
 
 

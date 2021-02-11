@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:05.523556
 
-The undirected graph Sphingobacterium antarcticus has 3809 nodes and 303311 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04182
-and has 16 connected components, where the component with most nodes has 3774 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 159.26, and the node degree mode is 2. The top 5
-most central nodes are 1358423.N180_19960 (degree 1019), 1358423.N180_16015 (degree
-931), 1358423.N180_12830 (degree 902), 1358423.N180_14440 (degree 892) and 1358423.N180_15605
-(degree 869).
+The undirected graph Sphingobacterium antarcticus has 3809 nodes and 303311
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04182 and has 16 connected components, where the component
+with most nodes has 3774 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 159.26,
+and the node degree mode is 2. The top 5 most central nodes are 1358423.N180_19960
+(degree 1019), 1358423.N180_16015 (degree 931), 1358423.N180_12830 (degree
+902), 1358423.N180_14440 (degree 892) and 1358423.N180_15605 (degree 869).
 
 
 References
@@ -107,14 +107,14 @@ def SphingobacteriumAntarcticus(
 	
 	Datetime: 2021-02-03 22:09:05.523556
 	
-	The undirected graph Sphingobacterium antarcticus has 3809 nodes and 303311 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04182
-	and has 16 connected components, where the component with most nodes has 3774 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 159.26, and the node degree mode is 2. The top 5
-	most central nodes are 1358423.N180_19960 (degree 1019), 1358423.N180_16015 (degree
-	931), 1358423.N180_12830 (degree 902), 1358423.N180_14440 (degree 892) and 1358423.N180_15605
-	(degree 869).
+	The undirected graph Sphingobacterium antarcticus has 3809 nodes and 303311
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04182 and has 16 connected components, where the component
+	with most nodes has 3774 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 159.26,
+	and the node degree mode is 2. The top 5 most central nodes are 1358423.N180_19960
+	(degree 1019), 1358423.N180_16015 (degree 931), 1358423.N180_12830 (degree
+	902), 1358423.N180_14440 (degree 892) and 1358423.N180_15605 (degree 869).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:34.407427
 
-The undirected graph Weissella confusa has 2110 nodes and 125708 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05650 and
-has 7 connected components, where the component with most nodes has 2096 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 119.15, and the node degree mode is 8. The top 5 most central
-nodes are 1127131.WEISSC39_07600 (degree 868), 1127131.WEISSC39_00250 (degree 722),
-1127131.WEISSC39_04520 (degree 702), 1127131.WEISSC39_06930 (degree 695) and 1127131.WEISSC39_09450
+The undirected graph Weissella confusa has 2110 nodes and 125708 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05650 and has 7 connected components, where the component with most
+nodes has 2096 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 119.15, and
+the node degree mode is 8. The top 5 most central nodes are 1127131.WEISSC39_07600
+(degree 868), 1127131.WEISSC39_00250 (degree 722), 1127131.WEISSC39_04520
+(degree 702), 1127131.WEISSC39_06930 (degree 695) and 1127131.WEISSC39_09450
 (degree 623).
 
 
@@ -107,13 +108,14 @@ def WeissellaConfusa(
 	
 	Datetime: 2021-02-02 22:54:34.407427
 	
-	The undirected graph Weissella confusa has 2110 nodes and 125708 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05650 and
-	has 7 connected components, where the component with most nodes has 2096 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 119.15, and the node degree mode is 8. The top 5 most central
-	nodes are 1127131.WEISSC39_07600 (degree 868), 1127131.WEISSC39_00250 (degree 722),
-	1127131.WEISSC39_04520 (degree 702), 1127131.WEISSC39_06930 (degree 695) and 1127131.WEISSC39_09450
+	The undirected graph Weissella confusa has 2110 nodes and 125708 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05650 and has 7 connected components, where the component with most
+	nodes has 2096 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 119.15, and
+	the node degree mode is 8. The top 5 most central nodes are 1127131.WEISSC39_07600
+	(degree 868), 1127131.WEISSC39_00250 (degree 722), 1127131.WEISSC39_04520
+	(degree 702), 1127131.WEISSC39_06930 (degree 695) and 1127131.WEISSC39_09450
 	(degree 623).
 	
 

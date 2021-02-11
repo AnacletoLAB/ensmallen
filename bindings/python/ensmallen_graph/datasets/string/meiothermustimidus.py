@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:35.878076
 
-The undirected graph Meiothermus timidus has 2995 nodes and 204287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04556 and
-has 11 connected components, where the component with most nodes has 2963 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 136.42, and the node degree mode is 3. The top 5 most central
-nodes are 1122223.KB890688_gene1784 (degree 1136), 1122223.KB890699_gene549 (degree
-909), 1122223.KB890688_gene1818 (degree 903), 1122223.KB890696_gene323 (degree 897)
-and 1122223.KB890699_gene582 (degree 847).
+The undirected graph Meiothermus timidus has 2995 nodes and 204287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04556 and has 11 connected components, where the component with most
+nodes has 2963 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 136.42, and
+the node degree mode is 3. The top 5 most central nodes are 1122223.KB890688_gene1784
+(degree 1136), 1122223.KB890699_gene549 (degree 909), 1122223.KB890688_gene1818
+(degree 903), 1122223.KB890696_gene323 (degree 897) and 1122223.KB890699_gene582
+(degree 847).
 
 
 References
@@ -107,14 +108,15 @@ def MeiothermusTimidus(
 	
 	Datetime: 2021-02-02 22:42:35.878076
 	
-	The undirected graph Meiothermus timidus has 2995 nodes and 204287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04556 and
-	has 11 connected components, where the component with most nodes has 2963 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 136.42, and the node degree mode is 3. The top 5 most central
-	nodes are 1122223.KB890688_gene1784 (degree 1136), 1122223.KB890699_gene549 (degree
-	909), 1122223.KB890688_gene1818 (degree 903), 1122223.KB890696_gene323 (degree 897)
-	and 1122223.KB890699_gene582 (degree 847).
+	The undirected graph Meiothermus timidus has 2995 nodes and 204287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04556 and has 11 connected components, where the component with most
+	nodes has 2963 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 136.42, and
+	the node degree mode is 3. The top 5 most central nodes are 1122223.KB890688_gene1784
+	(degree 1136), 1122223.KB890699_gene549 (degree 909), 1122223.KB890688_gene1818
+	(degree 903), 1122223.KB890696_gene323 (degree 897) and 1122223.KB890699_gene582
+	(degree 847).
 	
 
 

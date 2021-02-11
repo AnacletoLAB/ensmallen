@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:05:30.817613
 
-The undirected graph G47 has 1000 nodes and 9990 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.02000 and is connected,
-as it has a single component. The graph median node degree is 20, the mean node degree
-is 19.98, and the node degree mode is 19. The top 5 most central nodes are 706 (degree
-34), 96 (degree 34), 876 (degree 33), 716 (degree 33) and 558 (degree 32).
+The undirected graph G47 has 1000 nodes and 9990 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.02000
+and is connected, as it has a single component. The graph median node degree
+is 20, the mean node degree is 19.98, and the node degree mode is 19. The
+top 5 most central nodes are 706 (degree 34), 96 (degree 34), 876 (degree
+33), 716 (degree 33) and 558 (degree 32).
 
 
 References
@@ -101,11 +102,12 @@ def G47(
 	
 	Datetime: 2021-02-06 10:05:30.817613
 	
-	The undirected graph G47 has 1000 nodes and 9990 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.02000 and is connected,
-	as it has a single component. The graph median node degree is 20, the mean node degree
-	is 19.98, and the node degree mode is 19. The top 5 most central nodes are 706 (degree
-	34), 96 (degree 34), 876 (degree 33), 716 (degree 33) and 558 (degree 32).
+	The undirected graph G47 has 1000 nodes and 9990 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.02000
+	and is connected, as it has a single component. The graph median node degree
+	is 20, the mean node degree is 19.98, and the node degree mode is 19. The
+	top 5 most central nodes are 706 (degree 34), 96 (degree 34), 876 (degree
+	33), 716 (degree 33) and 558 (degree 32).
 	
 
 

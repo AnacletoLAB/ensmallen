@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:37.200439
 
-The undirected graph Mycobacterium ulcerans has 4079 nodes and 455054 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05471 and
-has 13 connected components, where the component with most nodes has 4052 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 223.12, and the node degree mode is 3. The top 5 most central
-nodes are 362242.MUL_3818 (degree 1540), 362242.MUL_2889 (degree 1324), 362242.MUL_1611
-(degree 1302), 362242.MUL_3077 (degree 1298) and 362242.MUL_4983 (degree 1203).
+The undirected graph Mycobacterium ulcerans has 4079 nodes and 455054 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05471 and has 13 connected components, where the component with most
+nodes has 4052 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 223.12, and
+the node degree mode is 3. The top 5 most central nodes are 362242.MUL_3818
+(degree 1540), 362242.MUL_2889 (degree 1324), 362242.MUL_1611 (degree 1302),
+362242.MUL_3077 (degree 1298) and 362242.MUL_4983 (degree 1203).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumUlcerans(
 	
 	Datetime: 2021-02-02 20:34:37.200439
 	
-	The undirected graph Mycobacterium ulcerans has 4079 nodes and 455054 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05471 and
-	has 13 connected components, where the component with most nodes has 4052 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 223.12, and the node degree mode is 3. The top 5 most central
-	nodes are 362242.MUL_3818 (degree 1540), 362242.MUL_2889 (degree 1324), 362242.MUL_1611
-	(degree 1302), 362242.MUL_3077 (degree 1298) and 362242.MUL_4983 (degree 1203).
+	The undirected graph Mycobacterium ulcerans has 4079 nodes and 455054 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05471 and has 13 connected components, where the component with most
+	nodes has 4052 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 223.12, and
+	the node degree mode is 3. The top 5 most central nodes are 362242.MUL_3818
+	(degree 1540), 362242.MUL_2889 (degree 1324), 362242.MUL_1611 (degree 1302),
+	362242.MUL_3077 (degree 1298) and 362242.MUL_4983 (degree 1203).
 	
 
 

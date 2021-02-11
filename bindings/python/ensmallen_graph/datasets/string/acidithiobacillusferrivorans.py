@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:07.522062
 
-The undirected graph Acidithiobacillus ferrivorans has 3053 nodes and 186621 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04006
-and has 7 connected components, where the component with most nodes has 3038 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 122.25, and the node degree mode is 10. The top 5
-most central nodes are 743299.Acife_3099 (degree 921), 743299.Acife_0587 (degree
-868), 743299.Acife_2040 (degree 792), 743299.Acife_2039 (degree 780) and 743299.Acife_2167
-(degree 770).
+The undirected graph Acidithiobacillus ferrivorans has 3053 nodes and 186621
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04006 and has 7 connected components, where the component
+with most nodes has 3038 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 122.25,
+and the node degree mode is 10. The top 5 most central nodes are 743299.Acife_3099
+(degree 921), 743299.Acife_0587 (degree 868), 743299.Acife_2040 (degree
+792), 743299.Acife_2039 (degree 780) and 743299.Acife_2167 (degree 770).
 
 
 References
@@ -107,14 +107,14 @@ def AcidithiobacillusFerrivorans(
 	
 	Datetime: 2021-02-02 21:38:07.522062
 	
-	The undirected graph Acidithiobacillus ferrivorans has 3053 nodes and 186621 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04006
-	and has 7 connected components, where the component with most nodes has 3038 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 122.25, and the node degree mode is 10. The top 5
-	most central nodes are 743299.Acife_3099 (degree 921), 743299.Acife_0587 (degree
-	868), 743299.Acife_2040 (degree 792), 743299.Acife_2039 (degree 780) and 743299.Acife_2167
-	(degree 770).
+	The undirected graph Acidithiobacillus ferrivorans has 3053 nodes and 186621
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04006 and has 7 connected components, where the component
+	with most nodes has 3038 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 122.25,
+	and the node degree mode is 10. The top 5 most central nodes are 743299.Acife_3099
+	(degree 921), 743299.Acife_0587 (degree 868), 743299.Acife_2040 (degree
+	792), 743299.Acife_2039 (degree 780) and 743299.Acife_2167 (degree 770).
 	
 
 

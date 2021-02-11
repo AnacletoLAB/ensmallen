@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:46.588022
 
-The undirected graph Burkholderia sordidicola has 8626 nodes and 1544205 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04151
-and has 50 connected components, where the component with most nodes has 8510 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 283, the mean node degree is 358.04, and the node degree mode is 1. The top 5
-most central nodes are 196367.JNFG01000011_gene6142 (degree 3033), 196367.JNFG01000005_gene7348
-(degree 2996), 196367.JNFG01000002_gene2292 (degree 2986), 196367.JNFG01000049_gene1589
-(degree 2726) and 196367.JNFG01000006_gene7104 (degree 2423).
+The undirected graph Burkholderia sordidicola has 8626 nodes and 1544205
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04151 and has 50 connected components, where the component
+with most nodes has 8510 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 283, the mean node degree is 358.04,
+and the node degree mode is 1. The top 5 most central nodes are 196367.JNFG01000011_gene6142
+(degree 3033), 196367.JNFG01000005_gene7348 (degree 2996), 196367.JNFG01000002_gene2292
+(degree 2986), 196367.JNFG01000049_gene1589 (degree 2726) and 196367.JNFG01000006_gene7104
+(degree 2423).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaSordidicola(
 	
 	Datetime: 2021-02-02 19:58:46.588022
 	
-	The undirected graph Burkholderia sordidicola has 8626 nodes and 1544205 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04151
-	and has 50 connected components, where the component with most nodes has 8510 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 283, the mean node degree is 358.04, and the node degree mode is 1. The top 5
-	most central nodes are 196367.JNFG01000011_gene6142 (degree 3033), 196367.JNFG01000005_gene7348
-	(degree 2996), 196367.JNFG01000002_gene2292 (degree 2986), 196367.JNFG01000049_gene1589
-	(degree 2726) and 196367.JNFG01000006_gene7104 (degree 2423).
+	The undirected graph Burkholderia sordidicola has 8626 nodes and 1544205
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04151 and has 50 connected components, where the component
+	with most nodes has 8510 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 283, the mean node degree is 358.04,
+	and the node degree mode is 1. The top 5 most central nodes are 196367.JNFG01000011_gene6142
+	(degree 3033), 196367.JNFG01000005_gene7348 (degree 2996), 196367.JNFG01000002_gene2292
+	(degree 2986), 196367.JNFG01000049_gene1589 (degree 2726) and 196367.JNFG01000006_gene7104
+	(degree 2423).
 	
 
 

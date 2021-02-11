@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:25.957827
 
-The undirected graph Thiomicrospira arctica has 2233 nodes and 183860 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07378 and
-has 6 connected components, where the component with most nodes has 2220 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 164.68, and the node degree mode is 3. The top 5 most central
-nodes are 1123514.KB905902_gene281 (degree 1033), 1123514.KB905899_gene707 (degree
-976), 1123514.KB905899_gene1518 (degree 871), 1123514.KB905899_gene1519 (degree 824)
-and 1123514.KB905899_gene776 (degree 805).
+The undirected graph Thiomicrospira arctica has 2233 nodes and 183860 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07378 and has 6 connected components, where the component with most
+nodes has 2220 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 164.68, and
+the node degree mode is 3. The top 5 most central nodes are 1123514.KB905902_gene281
+(degree 1033), 1123514.KB905899_gene707 (degree 976), 1123514.KB905899_gene1518
+(degree 871), 1123514.KB905899_gene1519 (degree 824) and 1123514.KB905899_gene776
+(degree 805).
 
 
 References
@@ -107,14 +108,15 @@ def ThiomicrospiraArctica(
 	
 	Datetime: 2021-02-02 22:53:25.957827
 	
-	The undirected graph Thiomicrospira arctica has 2233 nodes and 183860 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07378 and
-	has 6 connected components, where the component with most nodes has 2220 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 164.68, and the node degree mode is 3. The top 5 most central
-	nodes are 1123514.KB905902_gene281 (degree 1033), 1123514.KB905899_gene707 (degree
-	976), 1123514.KB905899_gene1518 (degree 871), 1123514.KB905899_gene1519 (degree 824)
-	and 1123514.KB905899_gene776 (degree 805).
+	The undirected graph Thiomicrospira arctica has 2233 nodes and 183860 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07378 and has 6 connected components, where the component with most
+	nodes has 2220 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 164.68, and
+	the node degree mode is 3. The top 5 most central nodes are 1123514.KB905902_gene281
+	(degree 1033), 1123514.KB905899_gene707 (degree 976), 1123514.KB905899_gene1518
+	(degree 871), 1123514.KB905899_gene1519 (degree 824) and 1123514.KB905899_gene776
+	(degree 805).
 	
 
 

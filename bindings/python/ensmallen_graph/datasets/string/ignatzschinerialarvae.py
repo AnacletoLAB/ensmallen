@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:53.714906
 
-The undirected graph Ignatzschineria larvae has 2010 nodes and 127155 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06298 and
-has 12 connected components, where the component with most nodes has 1982 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 126.52, and the node degree mode is 3. The top 5 most central
-nodes are 1111732.AZOD01000026_gene668 (degree 648), 1111732.AZOD01000031_gene2031
-(degree 642), 1111732.AZOD01000001_gene1567 (degree 580), 1111732.AZOD01000005_gene824
-(degree 559) and 1111732.AZOD01000014_gene1461 (degree 548).
+The undirected graph Ignatzschineria larvae has 2010 nodes and 127155 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06298 and has 12 connected components, where the component with most
+nodes has 1982 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 126.52, and
+the node degree mode is 3. The top 5 most central nodes are 1111732.AZOD01000026_gene668
+(degree 648), 1111732.AZOD01000031_gene2031 (degree 642), 1111732.AZOD01000001_gene1567
+(degree 580), 1111732.AZOD01000005_gene824 (degree 559) and 1111732.AZOD01000014_gene1461
+(degree 548).
 
 
 References
@@ -107,14 +108,15 @@ def IgnatzschineriaLarvae(
 	
 	Datetime: 2021-02-02 22:25:53.714906
 	
-	The undirected graph Ignatzschineria larvae has 2010 nodes and 127155 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06298 and
-	has 12 connected components, where the component with most nodes has 1982 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 126.52, and the node degree mode is 3. The top 5 most central
-	nodes are 1111732.AZOD01000026_gene668 (degree 648), 1111732.AZOD01000031_gene2031
-	(degree 642), 1111732.AZOD01000001_gene1567 (degree 580), 1111732.AZOD01000005_gene824
-	(degree 559) and 1111732.AZOD01000014_gene1461 (degree 548).
+	The undirected graph Ignatzschineria larvae has 2010 nodes and 127155 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06298 and has 12 connected components, where the component with most
+	nodes has 1982 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 126.52, and
+	the node degree mode is 3. The top 5 most central nodes are 1111732.AZOD01000026_gene668
+	(degree 648), 1111732.AZOD01000031_gene2031 (degree 642), 1111732.AZOD01000001_gene1567
+	(degree 580), 1111732.AZOD01000005_gene824 (degree 559) and 1111732.AZOD01000014_gene1461
+	(degree 548).
 	
 
 

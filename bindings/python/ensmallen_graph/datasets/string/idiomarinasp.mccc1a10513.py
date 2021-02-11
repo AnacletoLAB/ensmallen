@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:35.910838
 
-The undirected graph Idiomarina sp. MCCC1A10513 has 2277 nodes and 157332 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06072
-and has 8 connected components, where the component with most nodes has 2260 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 138.19, and the node degree mode is 3. The top 5
-most central nodes are 1517416.IDAT_10860 (degree 917), 1517416.IDAT_01545 (degree
-775), 1517416.IDAT_08865 (degree 747), 1517416.IDAT_11540 (degree 744) and 1517416.IDAT_08870
-(degree 736).
+The undirected graph Idiomarina sp. MCCC1A10513 has 2277 nodes and 157332
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06072 and has 8 connected components, where the component
+with most nodes has 2260 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 138.19,
+and the node degree mode is 3. The top 5 most central nodes are 1517416.IDAT_10860
+(degree 917), 1517416.IDAT_01545 (degree 775), 1517416.IDAT_08865 (degree
+747), 1517416.IDAT_11540 (degree 744) and 1517416.IDAT_08870 (degree 736).
 
 
 References
@@ -107,14 +107,14 @@ def IdiomarinaSp.Mccc1a10513(
 	
 	Datetime: 2021-02-03 23:17:35.910838
 	
-	The undirected graph Idiomarina sp. MCCC1A10513 has 2277 nodes and 157332 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06072
-	and has 8 connected components, where the component with most nodes has 2260 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 138.19, and the node degree mode is 3. The top 5
-	most central nodes are 1517416.IDAT_10860 (degree 917), 1517416.IDAT_01545 (degree
-	775), 1517416.IDAT_08865 (degree 747), 1517416.IDAT_11540 (degree 744) and 1517416.IDAT_08870
-	(degree 736).
+	The undirected graph Idiomarina sp. MCCC1A10513 has 2277 nodes and 157332
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06072 and has 8 connected components, where the component
+	with most nodes has 2260 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 138.19,
+	and the node degree mode is 3. The top 5 most central nodes are 1517416.IDAT_10860
+	(degree 917), 1517416.IDAT_01545 (degree 775), 1517416.IDAT_08865 (degree
+	747), 1517416.IDAT_11540 (degree 744) and 1517416.IDAT_08870 (degree 736).
 	
 
 

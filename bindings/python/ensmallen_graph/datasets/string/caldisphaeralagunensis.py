@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:02.863303
 
-The undirected graph Caldisphaera lagunensis has 1468 nodes and 136588 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12685
-and has 3 connected components, where the component with most nodes has 1464 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 186.09, and the node degree mode is 2. The top 5
-most central nodes are 1056495.Calag_0739 (degree 728), 1056495.Calag_0509 (degree
-695), 1056495.Calag_1167 (degree 673), 1056495.Calag_0007 (degree 634) and 1056495.Calag_0740
-(degree 631).
+The undirected graph Caldisphaera lagunensis has 1468 nodes and 136588
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.12685 and has 3 connected components, where the
+component with most nodes has 1464 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 173, the mean node degree
+is 186.09, and the node degree mode is 2. The top 5 most central nodes
+are 1056495.Calag_0739 (degree 728), 1056495.Calag_0509 (degree 695), 1056495.Calag_1167
+(degree 673), 1056495.Calag_0007 (degree 634) and 1056495.Calag_0740 (degree
+631).
 
 
 References
@@ -107,14 +108,15 @@ def CaldisphaeraLagunensis(
 	
 	Datetime: 2021-02-02 22:18:02.863303
 	
-	The undirected graph Caldisphaera lagunensis has 1468 nodes and 136588 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12685
-	and has 3 connected components, where the component with most nodes has 1464 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 186.09, and the node degree mode is 2. The top 5
-	most central nodes are 1056495.Calag_0739 (degree 728), 1056495.Calag_0509 (degree
-	695), 1056495.Calag_1167 (degree 673), 1056495.Calag_0007 (degree 634) and 1056495.Calag_0740
-	(degree 631).
+	The undirected graph Caldisphaera lagunensis has 1468 nodes and 136588
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.12685 and has 3 connected components, where the
+	component with most nodes has 1464 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 173, the mean node degree
+	is 186.09, and the node degree mode is 2. The top 5 most central nodes
+	are 1056495.Calag_0739 (degree 728), 1056495.Calag_0509 (degree 695), 1056495.Calag_1167
+	(degree 673), 1056495.Calag_0007 (degree 634) and 1056495.Calag_0740 (degree
+	631).
 	
 
 

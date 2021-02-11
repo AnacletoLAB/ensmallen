@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:20.660326
 
-The undirected graph Burkholderia sp. WSM2230 has 5339 nodes and 892759 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06265
-and has 17 connected components, where the component with most nodes has 5298 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 273, the mean node degree is 334.43, and the node degree mode is 1. The top 5
-most central nodes are 944435.AXAJ01000001_gene775 (degree 2504), 944435.AXAJ01000015_gene5356
-(degree 2164), 944435.AXAJ01000006_gene3787 (degree 2014), 944435.AXAJ01000005_gene3441
-(degree 1970) and 944435.AXAJ01000009_gene1209 (degree 1852).
+The undirected graph Burkholderia sp. WSM2230 has 5339 nodes and 892759
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06265 and has 17 connected components, where the component
+with most nodes has 5298 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 273, the mean node degree is 334.43,
+and the node degree mode is 1. The top 5 most central nodes are 944435.AXAJ01000001_gene775
+(degree 2504), 944435.AXAJ01000015_gene5356 (degree 2164), 944435.AXAJ01000006_gene3787
+(degree 2014), 944435.AXAJ01000005_gene3441 (degree 1970) and 944435.AXAJ01000009_gene1209
+(degree 1852).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaSp.Wsm2230(
 	
 	Datetime: 2021-02-02 22:01:20.660326
 	
-	The undirected graph Burkholderia sp. WSM2230 has 5339 nodes and 892759 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06265
-	and has 17 connected components, where the component with most nodes has 5298 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 273, the mean node degree is 334.43, and the node degree mode is 1. The top 5
-	most central nodes are 944435.AXAJ01000001_gene775 (degree 2504), 944435.AXAJ01000015_gene5356
-	(degree 2164), 944435.AXAJ01000006_gene3787 (degree 2014), 944435.AXAJ01000005_gene3441
-	(degree 1970) and 944435.AXAJ01000009_gene1209 (degree 1852).
+	The undirected graph Burkholderia sp. WSM2230 has 5339 nodes and 892759
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06265 and has 17 connected components, where the component
+	with most nodes has 5298 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 273, the mean node degree is 334.43,
+	and the node degree mode is 1. The top 5 most central nodes are 944435.AXAJ01000001_gene775
+	(degree 2504), 944435.AXAJ01000015_gene5356 (degree 2164), 944435.AXAJ01000006_gene3787
+	(degree 2014), 944435.AXAJ01000005_gene3441 (degree 1970) and 944435.AXAJ01000009_gene1209
+	(degree 1852).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:51.850005
 
-The undirected graph Methylobacterium sp. GXF4 has 5814 nodes and 714559 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-and has 50 connected components, where the component with most nodes has 5681 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 186, the mean node degree is 245.81, and the node degree mode is 3. The top 5
-most central nodes are 1096546.WYO_5364 (degree 1793), 1096546.WYO_0557 (degree 1793),
-1096546.WYO_2372 (degree 1734), 1096546.WYO_2024 (degree 1703) and 1096546.WYO_2631
-(degree 1680).
+The undirected graph Methylobacterium sp. GXF4 has 5814 nodes and 714559
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04229 and has 50 connected components, where the component
+with most nodes has 5681 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 186, the mean node degree is 245.81,
+and the node degree mode is 3. The top 5 most central nodes are 1096546.WYO_5364
+(degree 1793), 1096546.WYO_0557 (degree 1793), 1096546.WYO_2372 (degree
+1734), 1096546.WYO_2024 (degree 1703) and 1096546.WYO_2631 (degree 1680).
 
 
 References
@@ -107,14 +107,14 @@ def MethylobacteriumSp.Gxf4(
 	
 	Datetime: 2021-02-02 22:23:51.850005
 	
-	The undirected graph Methylobacterium sp. GXF4 has 5814 nodes and 714559 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-	and has 50 connected components, where the component with most nodes has 5681 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 186, the mean node degree is 245.81, and the node degree mode is 3. The top 5
-	most central nodes are 1096546.WYO_5364 (degree 1793), 1096546.WYO_0557 (degree 1793),
-	1096546.WYO_2372 (degree 1734), 1096546.WYO_2024 (degree 1703) and 1096546.WYO_2631
-	(degree 1680).
+	The undirected graph Methylobacterium sp. GXF4 has 5814 nodes and 714559
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04229 and has 50 connected components, where the component
+	with most nodes has 5681 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 186, the mean node degree is 245.81,
+	and the node degree mode is 3. The top 5 most central nodes are 1096546.WYO_5364
+	(degree 1793), 1096546.WYO_0557 (degree 1793), 1096546.WYO_2372 (degree
+	1734), 1096546.WYO_2024 (degree 1703) and 1096546.WYO_2631 (degree 1680).
 	
 
 

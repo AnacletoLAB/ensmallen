@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:36.337771
 
-The undirected graph Xanthomonas axonopodis phaseoli has 4004 nodes and 310838 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03879
-and has 21 connected components, where the component with most nodes has 3961 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 155.26, and the node degree mode is 1. The top 5
-most central nodes are 317013.NY99_05230 (degree 1322), 317013.NY99_21185 (degree
-1201), 317013.NY99_09285 (degree 1183), 317013.NY99_07360 (degree 1064) and 317013.NY99_10780
-(degree 1028).
+The undirected graph Xanthomonas axonopodis phaseoli has 4004 nodes and
+310838 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03879 and has 21 connected components, where the
+component with most nodes has 3961 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 155.26, and the node degree mode is 1. The top 5 most central nodes
+are 317013.NY99_05230 (degree 1322), 317013.NY99_21185 (degree 1201), 317013.NY99_09285
+(degree 1183), 317013.NY99_07360 (degree 1064) and 317013.NY99_10780 (degree
+1028).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasAxonopodisPhaseoli(
 	
 	Datetime: 2021-02-02 20:26:36.337771
 	
-	The undirected graph Xanthomonas axonopodis phaseoli has 4004 nodes and 310838 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03879
-	and has 21 connected components, where the component with most nodes has 3961 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 155.26, and the node degree mode is 1. The top 5
-	most central nodes are 317013.NY99_05230 (degree 1322), 317013.NY99_21185 (degree
-	1201), 317013.NY99_09285 (degree 1183), 317013.NY99_07360 (degree 1064) and 317013.NY99_10780
-	(degree 1028).
+	The undirected graph Xanthomonas axonopodis phaseoli has 4004 nodes and
+	310838 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03879 and has 21 connected components, where the
+	component with most nodes has 3961 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 155.26, and the node degree mode is 1. The top 5 most central nodes
+	are 317013.NY99_05230 (degree 1322), 317013.NY99_21185 (degree 1201), 317013.NY99_09285
+	(degree 1183), 317013.NY99_07360 (degree 1064) and 317013.NY99_10780 (degree
+	1028).
 	
 
 

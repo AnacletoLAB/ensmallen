@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:07.249281
 
-The undirected graph socfb-Haverford76 has 1446 nodes and 59589 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05704 and
-is connected, as it has a single component. The graph median node degree is 70, the
-mean node degree is 82.42, and the node degree mode is 61. The top 5 most central
-nodes are 860 (degree 375), 15 (degree 350), 768 (degree 347), 619 (degree 344) and
-491 (degree 338).
+The undirected graph socfb-Haverford76 has 1446 nodes and 59589 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05704 and is connected, as it has a single component. The graph median
+node degree is 70, the mean node degree is 82.42, and the node degree mode
+is 61. The top 5 most central nodes are 860 (degree 375), 15 (degree 350),
+768 (degree 347), 619 (degree 344) and 491 (degree 338).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbHaverford76(
 	
 	Datetime: 2021-02-06 10:55:07.249281
 	
-	The undirected graph socfb-Haverford76 has 1446 nodes and 59589 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05704 and
-	is connected, as it has a single component. The graph median node degree is 70, the
-	mean node degree is 82.42, and the node degree mode is 61. The top 5 most central
-	nodes are 860 (degree 375), 15 (degree 350), 768 (degree 347), 619 (degree 344) and
-	491 (degree 338).
+	The undirected graph socfb-Haverford76 has 1446 nodes and 59589 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05704 and is connected, as it has a single component. The graph median
+	node degree is 70, the mean node degree is 82.42, and the node degree mode
+	is 61. The top 5 most central nodes are 860 (degree 375), 15 (degree 350),
+	768 (degree 347), 619 (degree 344) and 491 (degree 338).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:42.112833
 
-The undirected graph Thiobacillus denitrificans ATCC25259 has 2818 nodes and 264428
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06662 and has 8 connected components, where the component with most nodes has
-2800 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 165, the mean node degree is 187.67, and the node degree mode is 2. The
-top 5 most central nodes are 292415.Tbd_2453 (degree 1254), 292415.Tbd_2468 (degree
-1090), 292415.Tbd_1268 (degree 1020), 292415.Tbd_1751 (degree 944) and 292415.Tbd_0652
-(degree 880).
+The undirected graph Thiobacillus denitrificans ATCC25259 has 2818 nodes
+and 264428 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06662 and has 8 connected components, where the
+component with most nodes has 2800 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 165, the mean node degree
+is 187.67, and the node degree mode is 2. The top 5 most central nodes
+are 292415.Tbd_2453 (degree 1254), 292415.Tbd_2468 (degree 1090), 292415.Tbd_1268
+(degree 1020), 292415.Tbd_1751 (degree 944) and 292415.Tbd_0652 (degree
+880).
 
 
 References
@@ -107,14 +108,15 @@ def ThiobacillusDenitrificansAtcc25259(
 	
 	Datetime: 2021-02-02 20:20:42.112833
 	
-	The undirected graph Thiobacillus denitrificans ATCC25259 has 2818 nodes and 264428
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06662 and has 8 connected components, where the component with most nodes has
-	2800 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 165, the mean node degree is 187.67, and the node degree mode is 2. The
-	top 5 most central nodes are 292415.Tbd_2453 (degree 1254), 292415.Tbd_2468 (degree
-	1090), 292415.Tbd_1268 (degree 1020), 292415.Tbd_1751 (degree 944) and 292415.Tbd_0652
-	(degree 880).
+	The undirected graph Thiobacillus denitrificans ATCC25259 has 2818 nodes
+	and 264428 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06662 and has 8 connected components, where the
+	component with most nodes has 2800 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 165, the mean node degree
+	is 187.67, and the node degree mode is 2. The top 5 most central nodes
+	are 292415.Tbd_2453 (degree 1254), 292415.Tbd_2468 (degree 1090), 292415.Tbd_1268
+	(degree 1020), 292415.Tbd_1751 (degree 944) and 292415.Tbd_0652 (degree
+	880).
 	
 
 

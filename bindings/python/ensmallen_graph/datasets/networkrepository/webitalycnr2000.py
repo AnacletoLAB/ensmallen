@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:33:24.228668
 
-The undirected graph web-italycnr-2000 has 325557 nodes and 2826411 unweighted edges,
-of which 87442 are self-loops. The graph is extremely sparse as it has a density
-of 0.00005 and is connected, as it has a single component. The graph median node
-degree is 5, the mean node degree is 17.09, and the node degree mode is 1. The top
-5 most central nodes are 60601 (degree 18237), 60603 (degree 18237), 60602 (degree
-18237), 60605 (degree 18237) and 60604 (degree 18237).
+The undirected graph web-italycnr-2000 has 325557 nodes and 2826411 unweighted
+edges, of which 87442 are self-loops. The graph is extremely sparse as
+it has a density of 0.00005 and is connected, as it has a single component.
+The graph median node degree is 5, the mean node degree is 17.09, and the
+node degree mode is 1. The top 5 most central nodes are 60601 (degree 18237),
+60603 (degree 18237), 60602 (degree 18237), 60605 (degree 18237) and 60604
+(degree 18237).
 
 
 References
@@ -119,12 +120,13 @@ def WebItalycnr2000(
 	
 	Datetime: 2021-02-06 12:33:24.228668
 	
-	The undirected graph web-italycnr-2000 has 325557 nodes and 2826411 unweighted edges,
-	of which 87442 are self-loops. The graph is extremely sparse as it has a density
-	of 0.00005 and is connected, as it has a single component. The graph median node
-	degree is 5, the mean node degree is 17.09, and the node degree mode is 1. The top
-	5 most central nodes are 60601 (degree 18237), 60603 (degree 18237), 60602 (degree
-	18237), 60605 (degree 18237) and 60604 (degree 18237).
+	The undirected graph web-italycnr-2000 has 325557 nodes and 2826411 unweighted
+	edges, of which 87442 are self-loops. The graph is extremely sparse as
+	it has a density of 0.00005 and is connected, as it has a single component.
+	The graph median node degree is 5, the mean node degree is 17.09, and the
+	node degree mode is 1. The top 5 most central nodes are 60601 (degree 18237),
+	60603 (degree 18237), 60602 (degree 18237), 60605 (degree 18237) and 60604
+	(degree 18237).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:13.549959
 
-The undirected graph Deinococcus radiodurans has 2924 nodes and 260302 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06091 and
-has 8 connected components, where the component with most nodes has 2901 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 178.05, and the node degree mode is 5. The top 5 most central
-nodes are 243230.DR_0603 (degree 1245), 243230.DR_1707 (degree 1172), 243230.DR_2444
-(degree 946), 243230.DR_1878 (degree 937) and 243230.DR_1874 (degree 910).
+The undirected graph Deinococcus radiodurans has 2924 nodes and 260302
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06091 and has 8 connected components, where the component
+with most nodes has 2901 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 178.05,
+and the node degree mode is 5. The top 5 most central nodes are 243230.DR_0603
+(degree 1245), 243230.DR_1707 (degree 1172), 243230.DR_2444 (degree 946),
+243230.DR_1878 (degree 937) and 243230.DR_1874 (degree 910).
 
 
 References
@@ -106,13 +107,14 @@ def DeinococcusRadiodurans(
 	
 	Datetime: 2021-02-02 20:09:13.549959
 	
-	The undirected graph Deinococcus radiodurans has 2924 nodes and 260302 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06091 and
-	has 8 connected components, where the component with most nodes has 2901 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 178.05, and the node degree mode is 5. The top 5 most central
-	nodes are 243230.DR_0603 (degree 1245), 243230.DR_1707 (degree 1172), 243230.DR_2444
-	(degree 946), 243230.DR_1878 (degree 937) and 243230.DR_1874 (degree 910).
+	The undirected graph Deinococcus radiodurans has 2924 nodes and 260302
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06091 and has 8 connected components, where the component
+	with most nodes has 2901 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 178.05,
+	and the node degree mode is 5. The top 5 most central nodes are 243230.DR_0603
+	(degree 1245), 243230.DR_1707 (degree 1172), 243230.DR_2444 (degree 946),
+	243230.DR_1878 (degree 937) and 243230.DR_1874 (degree 910).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:24.606932
 
-The undirected graph Clostridiales genomosp. has 1556 nodes and 70093 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05794 and
-has 7 connected components, where the component with most nodes has 1543 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 56,
-the mean node degree is 90.09, and the node degree mode is 2. The top 5 most central
-nodes are 699246.HMPREF0868_0853 (degree 697), 699246.HMPREF0868_0610 (degree 637),
-699246.HMPREF0868_0954 (degree 590), 699246.HMPREF0868_1440 (degree 553) and 699246.HMPREF0868_1042
+The undirected graph Clostridiales genomosp. has 1556 nodes and 70093 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05794 and has 7 connected components, where the component with most
+nodes has 1543 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 90.09, and
+the node degree mode is 2. The top 5 most central nodes are 699246.HMPREF0868_0853
+(degree 697), 699246.HMPREF0868_0610 (degree 637), 699246.HMPREF0868_0954
+(degree 590), 699246.HMPREF0868_1440 (degree 553) and 699246.HMPREF0868_1042
 (degree 541).
 
 
@@ -107,13 +108,14 @@ def ClostridialesGenomosp.(
 	
 	Datetime: 2021-02-02 21:33:24.606932
 	
-	The undirected graph Clostridiales genomosp. has 1556 nodes and 70093 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05794 and
-	has 7 connected components, where the component with most nodes has 1543 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 56,
-	the mean node degree is 90.09, and the node degree mode is 2. The top 5 most central
-	nodes are 699246.HMPREF0868_0853 (degree 697), 699246.HMPREF0868_0610 (degree 637),
-	699246.HMPREF0868_0954 (degree 590), 699246.HMPREF0868_1440 (degree 553) and 699246.HMPREF0868_1042
+	The undirected graph Clostridiales genomosp. has 1556 nodes and 70093 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05794 and has 7 connected components, where the component with most
+	nodes has 1543 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 90.09, and
+	the node degree mode is 2. The top 5 most central nodes are 699246.HMPREF0868_0853
+	(degree 697), 699246.HMPREF0868_0610 (degree 637), 699246.HMPREF0868_0954
+	(degree 590), 699246.HMPREF0868_1440 (degree 553) and 699246.HMPREF0868_1042
 	(degree 541).
 	
 

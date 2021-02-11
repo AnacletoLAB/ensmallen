@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:38:32.294875
 
-The undirected graph ca-MathSciNet has 332689 nodes and 820644 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00001 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 4.93 and the node degree mode is 1. The top 5 most
-central nodes are 29552 (degree 496), 30063 (degree 282), 10519 (degree 276), 534
-(degree 267) and 31978 (degree 266).
+The undirected graph ca-MathSciNet has 332689 nodes and 820644 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 4.93 and the
+node degree mode is 1. The top 5 most central nodes are 29552 (degree 496),
+30063 (degree 282), 10519 (degree 276), 534 (degree 267) and 31978 (degree
+266).
 
 
 References
@@ -115,12 +116,13 @@ def CaMathscinet(
 	
 	Datetime: 2021-02-03 22:38:32.294875
 	
-	The undirected graph ca-MathSciNet has 332689 nodes and 820644 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00001 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 4.93 and the node degree mode is 1. The top 5 most
-	central nodes are 29552 (degree 496), 30063 (degree 282), 10519 (degree 276), 534
-	(degree 267) and 31978 (degree 266).
+	The undirected graph ca-MathSciNet has 332689 nodes and 820644 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 4.93 and the
+	node degree mode is 1. The top 5 most central nodes are 29552 (degree 496),
+	30063 (degree 282), 10519 (degree 276), 534 (degree 267) and 31978 (degree
+	266).
 	
 
 

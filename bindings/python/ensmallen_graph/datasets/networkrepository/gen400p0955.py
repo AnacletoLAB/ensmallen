@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:27.761946
 
-The undirected graph gen400-p0-9-55 has 400 nodes and 71820 unweighted edges, of
-which none are self-loops. The graph is extremely dense as it has a density of 0.90000
-and is connected, as it has a single component. The graph median node degree is 360,
-the mean node degree is 359.10 and the node degree mode is 362. The top 5 most central
-nodes are 367 (degree 375), 296 (degree 375), 269 (degree 375), 161 (degree 375)
-and 69 (degree 375).
+The undirected graph gen400-p0-9-55 has 400 nodes and 71820 unweighted
+edges, of which none are self-loops. The graph is extremely dense as it
+has a density of 0.90000 and is connected, as it has a single component.
+The graph median node degree is 360, the mean node degree is 359.10 and
+the node degree mode is 362. The top 5 most central nodes are 367 (degree
+375), 296 (degree 375), 269 (degree 375), 161 (degree 375) and 69 (degree
+375).
 
 
 References
@@ -115,12 +116,13 @@ def Gen400P0955(
 	
 	Datetime: 2021-02-03 22:54:27.761946
 	
-	The undirected graph gen400-p0-9-55 has 400 nodes and 71820 unweighted edges, of
-	which none are self-loops. The graph is extremely dense as it has a density of 0.90000
-	and is connected, as it has a single component. The graph median node degree is 360,
-	the mean node degree is 359.10 and the node degree mode is 362. The top 5 most central
-	nodes are 367 (degree 375), 296 (degree 375), 269 (degree 375), 161 (degree 375)
-	and 69 (degree 375).
+	The undirected graph gen400-p0-9-55 has 400 nodes and 71820 unweighted
+	edges, of which none are self-loops. The graph is extremely dense as it
+	has a density of 0.90000 and is connected, as it has a single component.
+	The graph median node degree is 360, the mean node degree is 359.10 and
+	the node degree mode is 362. The top 5 most central nodes are 367 (degree
+	375), 296 (degree 375), 269 (degree 375), 161 (degree 375) and 69 (degree
+	375).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:29.390465
 
-The undirected graph Arthrobacter sp. UNC362MFTsu51 has 4514 nodes and 463585 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04551
-and has 20 connected components, where the component with most nodes has 4470 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 205.40, and the node degree mode is 1. The top 5
-most central nodes are 1449044.JMLE01000020_gene1860 (degree 1483), 1449044.JMLE01000005_gene651
+The undirected graph Arthrobacter sp. UNC362MFTsu51 has 4514 nodes and
+463585 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04551 and has 20 connected components, where the
+component with most nodes has 4470 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+is 205.40, and the node degree mode is 1. The top 5 most central nodes
+are 1449044.JMLE01000020_gene1860 (degree 1483), 1449044.JMLE01000005_gene651
 (degree 1406), 1449044.JMLE01000002_gene4316 (degree 1393), 1449044.JMLE01000001_gene4119
 (degree 1375) and 1449044.JMLE01000009_gene3220 (degree 1317).
 
@@ -107,12 +108,13 @@ def ArthrobacterSp.Unc362mftsu51(
 	
 	Datetime: 2021-02-03 23:03:29.390465
 	
-	The undirected graph Arthrobacter sp. UNC362MFTsu51 has 4514 nodes and 463585 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04551
-	and has 20 connected components, where the component with most nodes has 4470 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 205.40, and the node degree mode is 1. The top 5
-	most central nodes are 1449044.JMLE01000020_gene1860 (degree 1483), 1449044.JMLE01000005_gene651
+	The undirected graph Arthrobacter sp. UNC362MFTsu51 has 4514 nodes and
+	463585 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04551 and has 20 connected components, where the
+	component with most nodes has 4470 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+	is 205.40, and the node degree mode is 1. The top 5 most central nodes
+	are 1449044.JMLE01000020_gene1860 (degree 1483), 1449044.JMLE01000005_gene651
 	(degree 1406), 1449044.JMLE01000002_gene4316 (degree 1393), 1449044.JMLE01000001_gene4119
 	(degree 1375) and 1449044.JMLE01000009_gene3220 (degree 1317).
 	

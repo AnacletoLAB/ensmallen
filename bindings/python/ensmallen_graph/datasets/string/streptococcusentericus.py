@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:28.905569
 
-The undirected graph Streptococcus entericus has 1907 nodes and 139064 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07652 and
-has 4 connected components, where the component with most nodes has 1900 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 145.85, and the node degree mode is 2. The top 5 most central
-nodes are 1123302.KB904156_gene1428 (degree 849), 1123302.KB904159_gene1276 (degree
-782), 1123302.KB904185_gene862 (degree 683), 1123302.KB904170_gene360 (degree 680)
-and 1123302.KB904185_gene856 (degree 671).
+The undirected graph Streptococcus entericus has 1907 nodes and 139064
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07652 and has 4 connected components, where the component
+with most nodes has 1900 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 145.85,
+and the node degree mode is 2. The top 5 most central nodes are 1123302.KB904156_gene1428
+(degree 849), 1123302.KB904159_gene1276 (degree 782), 1123302.KB904185_gene862
+(degree 683), 1123302.KB904170_gene360 (degree 680) and 1123302.KB904185_gene856
+(degree 671).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusEntericus(
 	
 	Datetime: 2021-02-02 22:50:28.905569
 	
-	The undirected graph Streptococcus entericus has 1907 nodes and 139064 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07652 and
-	has 4 connected components, where the component with most nodes has 1900 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 145.85, and the node degree mode is 2. The top 5 most central
-	nodes are 1123302.KB904156_gene1428 (degree 849), 1123302.KB904159_gene1276 (degree
-	782), 1123302.KB904185_gene862 (degree 683), 1123302.KB904170_gene360 (degree 680)
-	and 1123302.KB904185_gene856 (degree 671).
+	The undirected graph Streptococcus entericus has 1907 nodes and 139064
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07652 and has 4 connected components, where the component
+	with most nodes has 1900 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 145.85,
+	and the node degree mode is 2. The top 5 most central nodes are 1123302.KB904156_gene1428
+	(degree 849), 1123302.KB904159_gene1276 (degree 782), 1123302.KB904185_gene862
+	(degree 683), 1123302.KB904170_gene360 (degree 680) and 1123302.KB904185_gene856
+	(degree 671).
 	
 
 

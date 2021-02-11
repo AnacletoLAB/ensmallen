@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:16.749356
 
-The undirected graph cfinder-google has 15763 nodes and 149456 unweighted edges,
-of which 871 are self-loops. The graph is sparse as it has a density of 0.00120 and
-is connected, as it has a single component. The graph median node degree is 10, the
-mean node degree is 18.91, and the node degree mode is 1. The top 5 most central
-nodes are 1 (degree 11401), 14 (degree 7733), 69 (degree 3681), 72 (degree 3427)
-and 41 (degree 3387).
+The undirected graph cfinder-google has 15763 nodes and 149456 unweighted
+edges, of which 871 are self-loops. The graph is sparse as it has a density
+of 0.00120 and is connected, as it has a single component. The graph median
+node degree is 10, the mean node degree is 18.91, and the node degree mode
+is 1. The top 5 most central nodes are 1 (degree 11401), 14 (degree 7733),
+69 (degree 3681), 72 (degree 3427) and 41 (degree 3387).
 
 
 References
@@ -102,12 +102,12 @@ def CfinderGoogle(
 	
 	Datetime: 2021-02-06 11:07:16.749356
 	
-	The undirected graph cfinder-google has 15763 nodes and 149456 unweighted edges,
-	of which 871 are self-loops. The graph is sparse as it has a density of 0.00120 and
-	is connected, as it has a single component. The graph median node degree is 10, the
-	mean node degree is 18.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1 (degree 11401), 14 (degree 7733), 69 (degree 3681), 72 (degree 3427)
-	and 41 (degree 3387).
+	The undirected graph cfinder-google has 15763 nodes and 149456 unweighted
+	edges, of which 871 are self-loops. The graph is sparse as it has a density
+	of 0.00120 and is connected, as it has a single component. The graph median
+	node degree is 10, the mean node degree is 18.91, and the node degree mode
+	is 1. The top 5 most central nodes are 1 (degree 11401), 14 (degree 7733),
+	69 (degree 3681), 72 (degree 3427) and 41 (degree 3387).
 	
 
 

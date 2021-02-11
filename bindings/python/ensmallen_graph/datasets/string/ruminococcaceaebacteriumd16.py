@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:38.616824
 
-The undirected graph Ruminococcaceae bacterium D16 has 2974 nodes and 179226 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04054
-and has 9 connected components, where the component with most nodes has 2950 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 120.53, and the node degree mode is 2. The top 5 most
-central nodes are 552398.HMPREF0866_01573 (degree 1113), 552398.HMPREF0866_02047
-(degree 901), 552398.HMPREF0866_00248 (degree 883), 552398.HMPREF0866_00204 (degree
-776) and 552398.HMPREF0866_01481 (degree 758).
+The undirected graph Ruminococcaceae bacterium D16 has 2974 nodes and 179226
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04054 and has 9 connected components, where the component
+with most nodes has 2950 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 120.53,
+and the node degree mode is 2. The top 5 most central nodes are 552398.HMPREF0866_01573
+(degree 1113), 552398.HMPREF0866_02047 (degree 901), 552398.HMPREF0866_00248
+(degree 883), 552398.HMPREF0866_00204 (degree 776) and 552398.HMPREF0866_01481
+(degree 758).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcaceaeBacteriumD16(
 	
 	Datetime: 2021-02-02 21:09:38.616824
 	
-	The undirected graph Ruminococcaceae bacterium D16 has 2974 nodes and 179226 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04054
-	and has 9 connected components, where the component with most nodes has 2950 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 120.53, and the node degree mode is 2. The top 5 most
-	central nodes are 552398.HMPREF0866_01573 (degree 1113), 552398.HMPREF0866_02047
-	(degree 901), 552398.HMPREF0866_00248 (degree 883), 552398.HMPREF0866_00204 (degree
-	776) and 552398.HMPREF0866_01481 (degree 758).
+	The undirected graph Ruminococcaceae bacterium D16 has 2974 nodes and 179226
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04054 and has 9 connected components, where the component
+	with most nodes has 2950 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 120.53,
+	and the node degree mode is 2. The top 5 most central nodes are 552398.HMPREF0866_01573
+	(degree 1113), 552398.HMPREF0866_02047 (degree 901), 552398.HMPREF0866_00248
+	(degree 883), 552398.HMPREF0866_00204 (degree 776) and 552398.HMPREF0866_01481
+	(degree 758).
 	
 
 

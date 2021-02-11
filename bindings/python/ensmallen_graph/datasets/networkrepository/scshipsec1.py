@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:27:31.075101
 
-The undirected graph sc-shipsec1 has 140385 nodes and 1707759 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00017
-and has 3 connected components, where the component with most nodes has 139995 nodes
-and the component with the least nodes has 195 nodes. The graph median node degree
-is 23, the mean node degree is 24.33, and the node degree mode is 20. The top 5 most
-central nodes are 135844 (degree 67), 135843 (degree 67), 134756 (degree 67), 134755
+The undirected graph sc-shipsec1 has 140385 nodes and 1707759 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00017 and has 3 connected components, where the component
+with most nodes has 139995 nodes and the component with the least nodes
+has 195 nodes. The graph median node degree is 23, the mean node degree
+is 24.33, and the node degree mode is 20. The top 5 most central nodes
+are 135844 (degree 67), 135843 (degree 67), 134756 (degree 67), 134755
 (degree 67) and 128905 (degree 67).
 
 
@@ -110,12 +111,13 @@ def ScShipsec1(
 	
 	Datetime: 2021-02-06 12:27:31.075101
 	
-	The undirected graph sc-shipsec1 has 140385 nodes and 1707759 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00017
-	and has 3 connected components, where the component with most nodes has 139995 nodes
-	and the component with the least nodes has 195 nodes. The graph median node degree
-	is 23, the mean node degree is 24.33, and the node degree mode is 20. The top 5 most
-	central nodes are 135844 (degree 67), 135843 (degree 67), 134756 (degree 67), 134755
+	The undirected graph sc-shipsec1 has 140385 nodes and 1707759 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00017 and has 3 connected components, where the component
+	with most nodes has 139995 nodes and the component with the least nodes
+	has 195 nodes. The graph median node degree is 23, the mean node degree
+	is 24.33, and the node degree mode is 20. The top 5 most central nodes
+	are 135844 (degree 67), 135843 (degree 67), 134756 (degree 67), 134755
 	(degree 67) and 128905 (degree 67).
 	
 

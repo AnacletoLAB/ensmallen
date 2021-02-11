@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:29:56.869217
 
-The undirected graph t0331-4l has 46915 nodes and 430940 unweighted edges, of which
-7 are self-loops. The graph is quite sparse as it has a density of 0.00039 and is
-connected, as it has a single component. The graph median node degree is 10, the
-mean node degree is 18.37, and the node degree mode is 1. The top 5 most central
-nodes are 326 (degree 1950), 617 (degree 1943), 462 (degree 1933), 45 (degree 1933)
-and 22 (degree 1933).
+The undirected graph t0331-4l has 46915 nodes and 430940 unweighted edges,
+of which 7 are self-loops. The graph is quite sparse as it has a density
+of 0.00039 and is connected, as it has a single component. The graph median
+node degree is 10, the mean node degree is 18.37, and the node degree mode
+is 1. The top 5 most central nodes are 326 (degree 1950), 617 (degree 1943),
+462 (degree 1933), 45 (degree 1933) and 22 (degree 1933).
 
 
 References
@@ -102,12 +102,12 @@ def T03314l(
 	
 	Datetime: 2021-02-06 11:29:56.869217
 	
-	The undirected graph t0331-4l has 46915 nodes and 430940 unweighted edges, of which
-	7 are self-loops. The graph is quite sparse as it has a density of 0.00039 and is
-	connected, as it has a single component. The graph median node degree is 10, the
-	mean node degree is 18.37, and the node degree mode is 1. The top 5 most central
-	nodes are 326 (degree 1950), 617 (degree 1943), 462 (degree 1933), 45 (degree 1933)
-	and 22 (degree 1933).
+	The undirected graph t0331-4l has 46915 nodes and 430940 unweighted edges,
+	of which 7 are self-loops. The graph is quite sparse as it has a density
+	of 0.00039 and is connected, as it has a single component. The graph median
+	node degree is 10, the mean node degree is 18.37, and the node degree mode
+	is 1. The top 5 most central nodes are 326 (degree 1950), 617 (degree 1943),
+	462 (degree 1933), 45 (degree 1933) and 22 (degree 1933).
 	
 
 

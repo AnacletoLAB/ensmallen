@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:19.474839
 
-The undirected graph Sulfitobacter sp. NB68 has 3611 nodes and 389672 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05979 and
-has 8 connected components, where the component with most nodes has 3592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 215.82, and the node degree mode is 4. The top 5 most central
-nodes are 1342302.JASC01000001_gene375 (degree 1514), 1342302.JASC01000014_gene2178
-(degree 1427), 1342302.JASC01000014_gene1623 (degree 1260), 1342302.JASC01000014_gene2117
-(degree 1136) and 1342302.JASC01000002_gene126 (degree 1106).
+The undirected graph Sulfitobacter sp. NB68 has 3611 nodes and 389672 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05979 and has 8 connected components, where the component with most
+nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 215.82, and
+the node degree mode is 4. The top 5 most central nodes are 1342302.JASC01000001_gene375
+(degree 1514), 1342302.JASC01000014_gene2178 (degree 1427), 1342302.JASC01000014_gene1623
+(degree 1260), 1342302.JASC01000014_gene2117 (degree 1136) and 1342302.JASC01000002_gene126
+(degree 1106).
 
 
 References
@@ -107,14 +108,15 @@ def SulfitobacterSp.Nb68(
 	
 	Datetime: 2021-02-03 22:01:19.474839
 	
-	The undirected graph Sulfitobacter sp. NB68 has 3611 nodes and 389672 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05979 and
-	has 8 connected components, where the component with most nodes has 3592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 215.82, and the node degree mode is 4. The top 5 most central
-	nodes are 1342302.JASC01000001_gene375 (degree 1514), 1342302.JASC01000014_gene2178
-	(degree 1427), 1342302.JASC01000014_gene1623 (degree 1260), 1342302.JASC01000014_gene2117
-	(degree 1136) and 1342302.JASC01000002_gene126 (degree 1106).
+	The undirected graph Sulfitobacter sp. NB68 has 3611 nodes and 389672 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05979 and has 8 connected components, where the component with most
+	nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 215.82, and
+	the node degree mode is 4. The top 5 most central nodes are 1342302.JASC01000001_gene375
+	(degree 1514), 1342302.JASC01000014_gene2178 (degree 1427), 1342302.JASC01000014_gene1623
+	(degree 1260), 1342302.JASC01000014_gene2117 (degree 1136) and 1342302.JASC01000002_gene126
+	(degree 1106).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:09.923469
 
-The undirected graph Nodularia spumigena has 5180 nodes and 502499 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03746 and
-has 33 connected components, where the component with most nodes has 5101 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 194.02, and the node degree mode is 3. The top 5 most central
-nodes are 313624.NSP_33190 (degree 1798), 313624.NSP_42150 (degree 1686), 313624.NSP_10970
-(degree 1541), 313624.NSP_26730 (degree 1493) and 313624.NSP_44820 (degree 1398).
+The undirected graph Nodularia spumigena has 5180 nodes and 502499 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03746 and has 33 connected components, where the component with most
+nodes has 5101 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 194.02, and
+the node degree mode is 3. The top 5 most central nodes are 313624.NSP_33190
+(degree 1798), 313624.NSP_42150 (degree 1686), 313624.NSP_10970 (degree
+1541), 313624.NSP_26730 (degree 1493) and 313624.NSP_44820 (degree 1398).
 
 
 References
@@ -106,13 +107,14 @@ def NodulariaSpumigena(
 	
 	Datetime: 2021-02-02 20:24:09.923469
 	
-	The undirected graph Nodularia spumigena has 5180 nodes and 502499 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03746 and
-	has 33 connected components, where the component with most nodes has 5101 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 194.02, and the node degree mode is 3. The top 5 most central
-	nodes are 313624.NSP_33190 (degree 1798), 313624.NSP_42150 (degree 1686), 313624.NSP_10970
-	(degree 1541), 313624.NSP_26730 (degree 1493) and 313624.NSP_44820 (degree 1398).
+	The undirected graph Nodularia spumigena has 5180 nodes and 502499 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03746 and has 33 connected components, where the component with most
+	nodes has 5101 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 194.02, and
+	the node degree mode is 3. The top 5 most central nodes are 313624.NSP_33190
+	(degree 1798), 313624.NSP_42150 (degree 1686), 313624.NSP_10970 (degree
+	1541), 313624.NSP_26730 (degree 1493) and 313624.NSP_44820 (degree 1398).
 	
 
 

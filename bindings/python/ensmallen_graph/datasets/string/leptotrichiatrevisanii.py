@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:26.542193
 
-The undirected graph Leptotrichia trevisanii has 2720 nodes and 148074 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04004 and
-has 16 connected components, where the component with most nodes has 2651 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 71,
-the mean node degree is 108.88, and the node degree mode is 7. The top 5 most central
-nodes are 1122173.AXVL01000001_gene1845 (degree 1116), 1122173.AXVL01000006_gene1244
-(degree 839), 1122173.AXVL01000009_gene1006 (degree 706), 1122173.AXVL01000021_gene2220
-(degree 699) and 1122173.AXVL01000036_gene1349 (degree 672).
+The undirected graph Leptotrichia trevisanii has 2720 nodes and 148074
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04004 and has 16 connected components, where the component
+with most nodes has 2651 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 71, the mean node degree is 108.88,
+and the node degree mode is 7. The top 5 most central nodes are 1122173.AXVL01000001_gene1845
+(degree 1116), 1122173.AXVL01000006_gene1244 (degree 839), 1122173.AXVL01000009_gene1006
+(degree 706), 1122173.AXVL01000021_gene2220 (degree 699) and 1122173.AXVL01000036_gene1349
+(degree 672).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaTrevisanii(
 	
 	Datetime: 2021-02-02 22:41:26.542193
 	
-	The undirected graph Leptotrichia trevisanii has 2720 nodes and 148074 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04004 and
-	has 16 connected components, where the component with most nodes has 2651 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 71,
-	the mean node degree is 108.88, and the node degree mode is 7. The top 5 most central
-	nodes are 1122173.AXVL01000001_gene1845 (degree 1116), 1122173.AXVL01000006_gene1244
-	(degree 839), 1122173.AXVL01000009_gene1006 (degree 706), 1122173.AXVL01000021_gene2220
-	(degree 699) and 1122173.AXVL01000036_gene1349 (degree 672).
+	The undirected graph Leptotrichia trevisanii has 2720 nodes and 148074
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04004 and has 16 connected components, where the component
+	with most nodes has 2651 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 71, the mean node degree is 108.88,
+	and the node degree mode is 7. The top 5 most central nodes are 1122173.AXVL01000001_gene1845
+	(degree 1116), 1122173.AXVL01000006_gene1244 (degree 839), 1122173.AXVL01000009_gene1006
+	(degree 706), 1122173.AXVL01000021_gene2220 (degree 699) and 1122173.AXVL01000036_gene1349
+	(degree 672).
 	
 
 

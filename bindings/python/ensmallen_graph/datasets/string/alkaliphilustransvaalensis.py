@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:47.381951
 
-The undirected graph Alkaliphilus transvaalensis has 3795 nodes and 318713 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04427
-and has 18 connected components, where the component with most nodes has 3752 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 167.96, and the node degree mode is 2. The top 5
-most central nodes are 1408422.JHYF01000011_gene3487 (degree 1497), 1408422.JHYF01000001_gene2875
-(degree 1329), 1408422.JHYF01000002_gene2313 (degree 1261), 1408422.JHYF01000011_gene3397
-(degree 1173) and 1408422.JHYF01000011_gene3473 (degree 981).
+The undirected graph Alkaliphilus transvaalensis has 3795 nodes and 318713
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04427 and has 18 connected components, where the component
+with most nodes has 3752 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 167.96,
+and the node degree mode is 2. The top 5 most central nodes are 1408422.JHYF01000011_gene3487
+(degree 1497), 1408422.JHYF01000001_gene2875 (degree 1329), 1408422.JHYF01000002_gene2313
+(degree 1261), 1408422.JHYF01000011_gene3397 (degree 1173) and 1408422.JHYF01000011_gene3473
+(degree 981).
 
 
 References
@@ -107,14 +108,15 @@ def AlkaliphilusTransvaalensis(
 	
 	Datetime: 2021-02-03 22:35:47.381951
 	
-	The undirected graph Alkaliphilus transvaalensis has 3795 nodes and 318713 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04427
-	and has 18 connected components, where the component with most nodes has 3752 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 167.96, and the node degree mode is 2. The top 5
-	most central nodes are 1408422.JHYF01000011_gene3487 (degree 1497), 1408422.JHYF01000001_gene2875
-	(degree 1329), 1408422.JHYF01000002_gene2313 (degree 1261), 1408422.JHYF01000011_gene3397
-	(degree 1173) and 1408422.JHYF01000011_gene3473 (degree 981).
+	The undirected graph Alkaliphilus transvaalensis has 3795 nodes and 318713
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04427 and has 18 connected components, where the component
+	with most nodes has 3752 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 167.96,
+	and the node degree mode is 2. The top 5 most central nodes are 1408422.JHYF01000011_gene3487
+	(degree 1497), 1408422.JHYF01000001_gene2875 (degree 1329), 1408422.JHYF01000002_gene2313
+	(degree 1261), 1408422.JHYF01000011_gene3397 (degree 1173) and 1408422.JHYF01000011_gene3473
+	(degree 981).
 	
 
 

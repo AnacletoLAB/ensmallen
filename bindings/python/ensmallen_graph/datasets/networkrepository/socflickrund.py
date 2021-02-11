@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:04:44.674554
 
-The undirected graph soc-flickr-und has 1715255 nodes and 15555042 unweighted edges,
-of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and has 20318 connected components, where the component with most nodes has 1624992
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 1, the mean node degree is 18.14, and the node degree mode is 1. The top 5 most
-central nodes are 847 (degree 27236), 3410 (degree 19581), 3421 (degree 19129), 397
-(degree 16348) and 915 (degree 14483).
+The undirected graph soc-flickr-und has 1715255 nodes and 15555042 unweighted
+edges, of which 1 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and has 20318 connected components, where the component
+with most nodes has 1624992 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 1, the mean node degree is
+18.14, and the node degree mode is 1. The top 5 most central nodes are
+847 (degree 27236), 3410 (degree 19581), 3421 (degree 19129), 397 (degree
+16348) and 915 (degree 14483).
 
 
 References
@@ -112,13 +113,14 @@ def SocFlickrUnd(
 	
 	Datetime: 2021-02-07 16:04:44.674554
 	
-	The undirected graph soc-flickr-und has 1715255 nodes and 15555042 unweighted edges,
-	of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and has 20318 connected components, where the component with most nodes has 1624992
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1, the mean node degree is 18.14, and the node degree mode is 1. The top 5 most
-	central nodes are 847 (degree 27236), 3410 (degree 19581), 3421 (degree 19129), 397
-	(degree 16348) and 915 (degree 14483).
+	The undirected graph soc-flickr-und has 1715255 nodes and 15555042 unweighted
+	edges, of which 1 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and has 20318 connected components, where the component
+	with most nodes has 1624992 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 1, the mean node degree is
+	18.14, and the node degree mode is 1. The top 5 most central nodes are
+	847 (degree 27236), 3410 (degree 19581), 3421 (degree 19129), 397 (degree
+	16348) and 915 (degree 14483).
 	
 
 

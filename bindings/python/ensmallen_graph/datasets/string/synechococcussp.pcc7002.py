@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:42.724782
 
-The undirected graph Synechococcus sp. PCC7002 has 2853 nodes and 295267 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-and has 3 connected components, where the component with most nodes has 2849 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 206.99, and the node degree mode is 7. The top 5
-most central nodes are 32049.SYNPCC7002_A1325 (degree 1110), 32049.SYNPCC7002_A1280
-(degree 1093), 32049.SYNPCC7002_A1443 (degree 948), 32049.SYNPCC7002_A0158 (degree
-940) and 32049.SYNPCC7002_A0563 (degree 909).
+The undirected graph Synechococcus sp. PCC7002 has 2853 nodes and 295267
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07258 and has 3 connected components, where the component
+with most nodes has 2849 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 206.99,
+and the node degree mode is 7. The top 5 most central nodes are 32049.SYNPCC7002_A1325
+(degree 1110), 32049.SYNPCC7002_A1280 (degree 1093), 32049.SYNPCC7002_A1443
+(degree 948), 32049.SYNPCC7002_A0158 (degree 940) and 32049.SYNPCC7002_A0563
+(degree 909).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Pcc7002(
 	
 	Datetime: 2021-02-02 18:02:42.724782
 	
-	The undirected graph Synechococcus sp. PCC7002 has 2853 nodes and 295267 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-	and has 3 connected components, where the component with most nodes has 2849 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 206.99, and the node degree mode is 7. The top 5
-	most central nodes are 32049.SYNPCC7002_A1325 (degree 1110), 32049.SYNPCC7002_A1280
-	(degree 1093), 32049.SYNPCC7002_A1443 (degree 948), 32049.SYNPCC7002_A0158 (degree
-	940) and 32049.SYNPCC7002_A0563 (degree 909).
+	The undirected graph Synechococcus sp. PCC7002 has 2853 nodes and 295267
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07258 and has 3 connected components, where the component
+	with most nodes has 2849 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 206.99,
+	and the node degree mode is 7. The top 5 most central nodes are 32049.SYNPCC7002_A1325
+	(degree 1110), 32049.SYNPCC7002_A1280 (degree 1093), 32049.SYNPCC7002_A1443
+	(degree 948), 32049.SYNPCC7002_A0158 (degree 940) and 32049.SYNPCC7002_A0563
+	(degree 909).
 	
 
 

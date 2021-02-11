@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:01.755522
 
-The undirected graph Salinispora pacifica has 4763 nodes and 667496 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05886 and
-has 22 connected components, where the component with most nodes has 4714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 229,
-the mean node degree is 280.28, and the node degree mode is 1. The top 5 most central
-nodes are 1136417.AZWE01000017_gene916 (degree 1723), 1136417.AZWE01000050_gene4697
-(degree 1514), 1136417.AZWE01000073_gene4171 (degree 1454), 1136417.AZWE01000012_gene2534
-(degree 1437) and 1136417.AZWE01000002_gene3666 (degree 1424).
+The undirected graph Salinispora pacifica has 4763 nodes and 667496 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05886 and has 22 connected components, where the component with most
+nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 280.28, and
+the node degree mode is 1. The top 5 most central nodes are 1136417.AZWE01000017_gene916
+(degree 1723), 1136417.AZWE01000050_gene4697 (degree 1514), 1136417.AZWE01000073_gene4171
+(degree 1454), 1136417.AZWE01000012_gene2534 (degree 1437) and 1136417.AZWE01000002_gene3666
+(degree 1424).
 
 
 References
@@ -107,14 +108,15 @@ def SalinisporaPacifica(
 	
 	Datetime: 2021-02-02 22:57:01.755522
 	
-	The undirected graph Salinispora pacifica has 4763 nodes and 667496 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05886 and
-	has 22 connected components, where the component with most nodes has 4714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 229,
-	the mean node degree is 280.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1136417.AZWE01000017_gene916 (degree 1723), 1136417.AZWE01000050_gene4697
-	(degree 1514), 1136417.AZWE01000073_gene4171 (degree 1454), 1136417.AZWE01000012_gene2534
-	(degree 1437) and 1136417.AZWE01000002_gene3666 (degree 1424).
+	The undirected graph Salinispora pacifica has 4763 nodes and 667496 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05886 and has 22 connected components, where the component with most
+	nodes has 4714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 280.28, and
+	the node degree mode is 1. The top 5 most central nodes are 1136417.AZWE01000017_gene916
+	(degree 1723), 1136417.AZWE01000050_gene4697 (degree 1514), 1136417.AZWE01000073_gene4171
+	(degree 1454), 1136417.AZWE01000012_gene2534 (degree 1437) and 1136417.AZWE01000002_gene3666
+	(degree 1424).
 	
 
 

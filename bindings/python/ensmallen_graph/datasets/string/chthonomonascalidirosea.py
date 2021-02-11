@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:02.116263
 
-The undirected graph Chthonomonas calidirosea has 2809 nodes and 205694 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05216
-and has 8 connected components, where the component with most nodes has 2790 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 146.45, and the node degree mode is 3. The top 5
-most central nodes are 1303518.CCALI_01053 (degree 1452), 1303518.CCALI_01980 (degree
-1053), 1303518.CCALI_01069 (degree 1029), 1303518.CCALI_02052 (degree 829) and 1303518.CCALI_00432
-(degree 807).
+The undirected graph Chthonomonas calidirosea has 2809 nodes and 205694
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05216 and has 8 connected components, where the component
+with most nodes has 2790 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 146.45,
+and the node degree mode is 3. The top 5 most central nodes are 1303518.CCALI_01053
+(degree 1452), 1303518.CCALI_01980 (degree 1053), 1303518.CCALI_01069 (degree
+1029), 1303518.CCALI_02052 (degree 829) and 1303518.CCALI_00432 (degree
+807).
 
 
 References
@@ -107,14 +108,15 @@ def ChthonomonasCalidirosea(
 	
 	Datetime: 2021-02-03 21:36:02.116263
 	
-	The undirected graph Chthonomonas calidirosea has 2809 nodes and 205694 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05216
-	and has 8 connected components, where the component with most nodes has 2790 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 146.45, and the node degree mode is 3. The top 5
-	most central nodes are 1303518.CCALI_01053 (degree 1452), 1303518.CCALI_01980 (degree
-	1053), 1303518.CCALI_01069 (degree 1029), 1303518.CCALI_02052 (degree 829) and 1303518.CCALI_00432
-	(degree 807).
+	The undirected graph Chthonomonas calidirosea has 2809 nodes and 205694
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05216 and has 8 connected components, where the component
+	with most nodes has 2790 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 146.45,
+	and the node degree mode is 3. The top 5 most central nodes are 1303518.CCALI_01053
+	(degree 1452), 1303518.CCALI_01980 (degree 1053), 1303518.CCALI_01069 (degree
+	1029), 1303518.CCALI_02052 (degree 829) and 1303518.CCALI_00432 (degree
+	807).
 	
 
 

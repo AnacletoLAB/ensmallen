@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:59.969403
 
-The undirected graph Olsenella profusa has 2608 nodes and 211854 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06232 and
-has 20 connected components, where the component with most nodes has 2551 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 162.46, and the node degree mode is 3. The top 5 most central
-nodes are 1125712.HMPREF1316_0735 (degree 1158), 1125712.HMPREF1316_0285 (degree
-1132), 1125712.HMPREF1316_2447 (degree 1004), 1125712.HMPREF1316_0765 (degree 963)
-and 1125712.HMPREF1316_0922 (degree 915).
+The undirected graph Olsenella profusa has 2608 nodes and 211854 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06232 and has 20 connected components, where the component with most
+nodes has 2551 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 162.46, and
+the node degree mode is 3. The top 5 most central nodes are 1125712.HMPREF1316_0735
+(degree 1158), 1125712.HMPREF1316_0285 (degree 1132), 1125712.HMPREF1316_2447
+(degree 1004), 1125712.HMPREF1316_0765 (degree 963) and 1125712.HMPREF1316_0922
+(degree 915).
 
 
 References
@@ -107,14 +108,15 @@ def OlsenellaProfusa(
 	
 	Datetime: 2021-02-02 22:53:59.969403
 	
-	The undirected graph Olsenella profusa has 2608 nodes and 211854 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06232 and
-	has 20 connected components, where the component with most nodes has 2551 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 162.46, and the node degree mode is 3. The top 5 most central
-	nodes are 1125712.HMPREF1316_0735 (degree 1158), 1125712.HMPREF1316_0285 (degree
-	1132), 1125712.HMPREF1316_2447 (degree 1004), 1125712.HMPREF1316_0765 (degree 963)
-	and 1125712.HMPREF1316_0922 (degree 915).
+	The undirected graph Olsenella profusa has 2608 nodes and 211854 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06232 and has 20 connected components, where the component with most
+	nodes has 2551 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 162.46, and
+	the node degree mode is 3. The top 5 most central nodes are 1125712.HMPREF1316_0735
+	(degree 1158), 1125712.HMPREF1316_0285 (degree 1132), 1125712.HMPREF1316_2447
+	(degree 1004), 1125712.HMPREF1316_0765 (degree 963) and 1125712.HMPREF1316_0922
+	(degree 915).
 	
 
 

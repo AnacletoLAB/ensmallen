@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:02.358543
 
-The undirected graph Glaciecola nitratireducens has 3609 nodes and 266175 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04088
-and has 17 connected components, where the component with most nodes has 3573 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 147.51, and the node degree mode is 3. The top 5
-most central nodes are 1085623.GNIT_0015 (degree 1357), 1085623.GNIT_1036 (degree
-1043), 1085623.GNIT_0877 (degree 910), 1085623.GNIT_0944 (degree 904) and 1085623.GNIT_1478
-(degree 845).
+The undirected graph Glaciecola nitratireducens has 3609 nodes and 266175
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04088 and has 17 connected components, where the component
+with most nodes has 3573 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 147.51,
+and the node degree mode is 3. The top 5 most central nodes are 1085623.GNIT_0015
+(degree 1357), 1085623.GNIT_1036 (degree 1043), 1085623.GNIT_0877 (degree
+910), 1085623.GNIT_0944 (degree 904) and 1085623.GNIT_1478 (degree 845).
 
 
 References
@@ -107,14 +107,14 @@ def GlaciecolaNitratireducens(
 	
 	Datetime: 2021-02-02 22:21:02.358543
 	
-	The undirected graph Glaciecola nitratireducens has 3609 nodes and 266175 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04088
-	and has 17 connected components, where the component with most nodes has 3573 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 147.51, and the node degree mode is 3. The top 5
-	most central nodes are 1085623.GNIT_0015 (degree 1357), 1085623.GNIT_1036 (degree
-	1043), 1085623.GNIT_0877 (degree 910), 1085623.GNIT_0944 (degree 904) and 1085623.GNIT_1478
-	(degree 845).
+	The undirected graph Glaciecola nitratireducens has 3609 nodes and 266175
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04088 and has 17 connected components, where the component
+	with most nodes has 3573 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 147.51,
+	and the node degree mode is 3. The top 5 most central nodes are 1085623.GNIT_0015
+	(degree 1357), 1085623.GNIT_1036 (degree 1043), 1085623.GNIT_0877 (degree
+	910), 1085623.GNIT_0944 (degree 904) and 1085623.GNIT_1478 (degree 845).
 	
 
 

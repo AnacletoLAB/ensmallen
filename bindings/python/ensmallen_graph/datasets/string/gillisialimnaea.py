@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:00.520202
 
-The undirected graph Gillisia limnaea has 3395 nodes and 275921 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04789 and
-has 8 connected components, where the component with most nodes has 3371 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 162.55, and the node degree mode is 2. The top 5 most central
-nodes are 865937.Gilli_2638 (degree 1198), 865937.Gilli_1615 (degree 1089), 865937.Gilli_2803
-(degree 996), 865937.Gilli_3213 (degree 990) and 865937.Gilli_2293 (degree 990).
+The undirected graph Gillisia limnaea has 3395 nodes and 275921 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04789 and has 8 connected components, where the component with most
+nodes has 3371 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 162.55, and
+the node degree mode is 2. The top 5 most central nodes are 865937.Gilli_2638
+(degree 1198), 865937.Gilli_1615 (degree 1089), 865937.Gilli_2803 (degree
+996), 865937.Gilli_3213 (degree 990) and 865937.Gilli_2293 (degree 990).
 
 
 References
@@ -106,13 +107,14 @@ def GillisiaLimnaea(
 	
 	Datetime: 2021-02-02 21:48:00.520202
 	
-	The undirected graph Gillisia limnaea has 3395 nodes and 275921 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04789 and
-	has 8 connected components, where the component with most nodes has 3371 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 162.55, and the node degree mode is 2. The top 5 most central
-	nodes are 865937.Gilli_2638 (degree 1198), 865937.Gilli_1615 (degree 1089), 865937.Gilli_2803
-	(degree 996), 865937.Gilli_3213 (degree 990) and 865937.Gilli_2293 (degree 990).
+	The undirected graph Gillisia limnaea has 3395 nodes and 275921 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04789 and has 8 connected components, where the component with most
+	nodes has 3371 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 162.55, and
+	the node degree mode is 2. The top 5 most central nodes are 865937.Gilli_2638
+	(degree 1198), 865937.Gilli_1615 (degree 1089), 865937.Gilli_2803 (degree
+	996), 865937.Gilli_3213 (degree 990) and 865937.Gilli_2293 (degree 990).
 	
 
 

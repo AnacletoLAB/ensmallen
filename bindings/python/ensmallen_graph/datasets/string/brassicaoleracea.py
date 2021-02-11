@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:32:26.603274
 
-The undirected graph Brassica oleracea has 40378 nodes and 14111584 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01731 and
-has 5 connected components, where the component with most nodes has 40367 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 336,
-the mean node degree is 698.97, and the node degree mode is 10. The top 5 most central
-nodes are 3712.Bo00846s040.1 (degree 13901), 3712.Bo1g024190.1 (degree 9727), 3712.Bo3g042380.1
-(degree 8969), 3712.Bo3g090180.1 (degree 8966) and 3712.Bo1g007160.1 (degree 8966).
+The undirected graph Brassica oleracea has 40378 nodes and 14111584 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01731 and has 5 connected components, where the component with most
+nodes has 40367 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 336, the mean node degree is 698.97, and
+the node degree mode is 10. The top 5 most central nodes are 3712.Bo00846s040.1
+(degree 13901), 3712.Bo1g024190.1 (degree 9727), 3712.Bo3g042380.1 (degree
+8969), 3712.Bo3g090180.1 (degree 8966) and 3712.Bo1g007160.1 (degree 8966).
 
 
 References
@@ -106,13 +107,14 @@ def BrassicaOleracea(
 	
 	Datetime: 2021-02-02 16:32:26.603274
 	
-	The undirected graph Brassica oleracea has 40378 nodes and 14111584 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01731 and
-	has 5 connected components, where the component with most nodes has 40367 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 336,
-	the mean node degree is 698.97, and the node degree mode is 10. The top 5 most central
-	nodes are 3712.Bo00846s040.1 (degree 13901), 3712.Bo1g024190.1 (degree 9727), 3712.Bo3g042380.1
-	(degree 8969), 3712.Bo3g090180.1 (degree 8966) and 3712.Bo1g007160.1 (degree 8966).
+	The undirected graph Brassica oleracea has 40378 nodes and 14111584 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01731 and has 5 connected components, where the component with most
+	nodes has 40367 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 336, the mean node degree is 698.97, and
+	the node degree mode is 10. The top 5 most central nodes are 3712.Bo00846s040.1
+	(degree 13901), 3712.Bo1g024190.1 (degree 9727), 3712.Bo3g042380.1 (degree
+	8969), 3712.Bo3g090180.1 (degree 8966) and 3712.Bo1g007160.1 (degree 8966).
 	
 
 

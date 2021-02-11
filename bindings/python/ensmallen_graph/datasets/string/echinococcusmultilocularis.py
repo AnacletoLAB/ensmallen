@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:18:13.124741
 
-The undirected graph Echinococcus multilocularis has 6548 nodes and 1157448 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05400
-and has 4 connected components, where the component with most nodes has 6542 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 270, the mean node degree is 353.53, and the node degree mode is 445. The top
-5 most central nodes are 6211.A0A087VZG0 (degree 2255), 6211.A0A087VXL6 (degree 2196),
-6211.A0A068Y8F2 (degree 2138), 6211.A0A087W0C3 (degree 2035) and 6211.A0A068Y929
-(degree 1933).
+The undirected graph Echinococcus multilocularis has 6548 nodes and 1157448
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05400 and has 4 connected components, where the component
+with most nodes has 6542 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 270, the mean node degree is 353.53,
+and the node degree mode is 445. The top 5 most central nodes are 6211.A0A087VZG0
+(degree 2255), 6211.A0A087VXL6 (degree 2196), 6211.A0A068Y8F2 (degree 2138),
+6211.A0A087W0C3 (degree 2035) and 6211.A0A068Y929 (degree 1933).
 
 
 References
@@ -107,14 +107,14 @@ def EchinococcusMultilocularis(
 	
 	Datetime: 2021-02-02 17:18:13.124741
 	
-	The undirected graph Echinococcus multilocularis has 6548 nodes and 1157448 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05400
-	and has 4 connected components, where the component with most nodes has 6542 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 270, the mean node degree is 353.53, and the node degree mode is 445. The top
-	5 most central nodes are 6211.A0A087VZG0 (degree 2255), 6211.A0A087VXL6 (degree 2196),
-	6211.A0A068Y8F2 (degree 2138), 6211.A0A087W0C3 (degree 2035) and 6211.A0A068Y929
-	(degree 1933).
+	The undirected graph Echinococcus multilocularis has 6548 nodes and 1157448
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05400 and has 4 connected components, where the component
+	with most nodes has 6542 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 270, the mean node degree is 353.53,
+	and the node degree mode is 445. The top 5 most central nodes are 6211.A0A087VZG0
+	(degree 2255), 6211.A0A087VXL6 (degree 2196), 6211.A0A068Y8F2 (degree 2138),
+	6211.A0A087W0C3 (degree 2035) and 6211.A0A068Y929 (degree 1933).
 	
 
 

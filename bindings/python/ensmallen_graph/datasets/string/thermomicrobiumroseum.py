@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:00.761093
 
-The undirected graph Thermomicrobium roseum has 2812 nodes and 165804 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04195 and
-has 29 connected components, where the component with most nodes has 2743 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 117.93, and the node degree mode is 1. The top 5 most central
-nodes are 309801.trd_0700 (degree 1161), 309801.trd_1141 (degree 1055), 309801.trd_1184
-(degree 945), 309801.trd_A0215 (degree 908) and 309801.trd_1105 (degree 828).
+The undirected graph Thermomicrobium roseum has 2812 nodes and 165804 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04195 and has 29 connected components, where the component with most
+nodes has 2743 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 117.93, and
+the node degree mode is 1. The top 5 most central nodes are 309801.trd_0700
+(degree 1161), 309801.trd_1141 (degree 1055), 309801.trd_1184 (degree 945),
+309801.trd_A0215 (degree 908) and 309801.trd_1105 (degree 828).
 
 
 References
@@ -106,13 +107,14 @@ def ThermomicrobiumRoseum(
 	
 	Datetime: 2021-02-02 20:23:00.761093
 	
-	The undirected graph Thermomicrobium roseum has 2812 nodes and 165804 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04195 and
-	has 29 connected components, where the component with most nodes has 2743 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 117.93, and the node degree mode is 1. The top 5 most central
-	nodes are 309801.trd_0700 (degree 1161), 309801.trd_1141 (degree 1055), 309801.trd_1184
-	(degree 945), 309801.trd_A0215 (degree 908) and 309801.trd_1105 (degree 828).
+	The undirected graph Thermomicrobium roseum has 2812 nodes and 165804 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04195 and has 29 connected components, where the component with most
+	nodes has 2743 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 117.93, and
+	the node degree mode is 1. The top 5 most central nodes are 309801.trd_0700
+	(degree 1161), 309801.trd_1141 (degree 1055), 309801.trd_1184 (degree 945),
+	309801.trd_A0215 (degree 908) and 309801.trd_1105 (degree 828).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:48:12.986602
 
-The undirected graph Cricetulus griseus has 21197 nodes and 4686673 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02086 and
-has 3 connected components, where the component with most nodes has 21193 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 311,
-the mean node degree is 442.20, and the node degree mode is 10. The top 5 most central
-nodes are 10029.XP_007609036.1 (degree 4684), 10029.XP_007629324.1 (degree 4440),
-10029.NP_001230905.1 (degree 4318), 10029.XP_007614402.1 (degree 4294) and 10029.XP_007623025.1
+The undirected graph Cricetulus griseus has 21197 nodes and 4686673 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02086 and has 3 connected components, where the component with most
+nodes has 21193 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 311, the mean node degree is 442.20, and
+the node degree mode is 10. The top 5 most central nodes are 10029.XP_007609036.1
+(degree 4684), 10029.XP_007629324.1 (degree 4440), 10029.NP_001230905.1
+(degree 4318), 10029.XP_007614402.1 (degree 4294) and 10029.XP_007623025.1
 (degree 4101).
 
 
@@ -107,13 +108,14 @@ def CricetulusGriseus(
 	
 	Datetime: 2021-02-02 17:48:12.986602
 	
-	The undirected graph Cricetulus griseus has 21197 nodes and 4686673 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02086 and
-	has 3 connected components, where the component with most nodes has 21193 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 311,
-	the mean node degree is 442.20, and the node degree mode is 10. The top 5 most central
-	nodes are 10029.XP_007609036.1 (degree 4684), 10029.XP_007629324.1 (degree 4440),
-	10029.NP_001230905.1 (degree 4318), 10029.XP_007614402.1 (degree 4294) and 10029.XP_007623025.1
+	The undirected graph Cricetulus griseus has 21197 nodes and 4686673 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02086 and has 3 connected components, where the component with most
+	nodes has 21193 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 311, the mean node degree is 442.20, and
+	the node degree mode is 10. The top 5 most central nodes are 10029.XP_007609036.1
+	(degree 4684), 10029.XP_007629324.1 (degree 4440), 10029.NP_001230905.1
+	(degree 4318), 10029.XP_007614402.1 (degree 4294) and 10029.XP_007623025.1
 	(degree 4101).
 	
 

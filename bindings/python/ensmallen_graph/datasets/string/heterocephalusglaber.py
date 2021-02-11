@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:09.005289
 
-The undirected graph Heterocephalus glaber has 20248 nodes and 4560578 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02225 and
-has 3 connected components, where the component with most nodes has 20244 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 313,
-the mean node degree is 450.47, and the node degree mode is 9. The top 5 most central
-nodes are 10181.XP_004862887.1 (degree 4636), 10181.XP_004859221.1 (degree 4588),
-10181.XP_004842513.1 (degree 4503), 10181.XP_004856331.1 (degree 4245) and 10181.XP_004869455.1
-(degree 4064).
+The undirected graph Heterocephalus glaber has 20248 nodes and 4560578
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02225 and has 3 connected components, where the component
+with most nodes has 20244 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 313, the mean node degree
+is 450.47, and the node degree mode is 9. The top 5 most central nodes
+are 10181.XP_004862887.1 (degree 4636), 10181.XP_004859221.1 (degree 4588),
+10181.XP_004842513.1 (degree 4503), 10181.XP_004856331.1 (degree 4245)
+and 10181.XP_004869455.1 (degree 4064).
 
 
 References
@@ -107,14 +108,15 @@ def HeterocephalusGlaber(
 	
 	Datetime: 2021-02-02 17:52:09.005289
 	
-	The undirected graph Heterocephalus glaber has 20248 nodes and 4560578 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02225 and
-	has 3 connected components, where the component with most nodes has 20244 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 313,
-	the mean node degree is 450.47, and the node degree mode is 9. The top 5 most central
-	nodes are 10181.XP_004862887.1 (degree 4636), 10181.XP_004859221.1 (degree 4588),
-	10181.XP_004842513.1 (degree 4503), 10181.XP_004856331.1 (degree 4245) and 10181.XP_004869455.1
-	(degree 4064).
+	The undirected graph Heterocephalus glaber has 20248 nodes and 4560578
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02225 and has 3 connected components, where the component
+	with most nodes has 20244 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 313, the mean node degree
+	is 450.47, and the node degree mode is 9. The top 5 most central nodes
+	are 10181.XP_004862887.1 (degree 4636), 10181.XP_004859221.1 (degree 4588),
+	10181.XP_004842513.1 (degree 4503), 10181.XP_004856331.1 (degree 4245)
+	and 10181.XP_004869455.1 (degree 4064).
 	
 
 

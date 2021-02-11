@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:55.350240
 
-The undirected graph Lactobacillus otakiensis has 2281 nodes and 128462 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04940
-and has 17 connected components, where the component with most nodes has 2244 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 112.64, and the node degree mode is 4. The top 5 most
-central nodes are 1423780.LOT_2176 (degree 1080), 1423780.LOT_0216 (degree 855),
-1423780.LOT_0291 (degree 693), 1423780.LOT_2052 (degree 635) and 1423780.LOT_0435
-(degree 607).
+The undirected graph Lactobacillus otakiensis has 2281 nodes and 128462
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04940 and has 17 connected components, where the component
+with most nodes has 2244 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 112.64,
+and the node degree mode is 4. The top 5 most central nodes are 1423780.LOT_2176
+(degree 1080), 1423780.LOT_0216 (degree 855), 1423780.LOT_0291 (degree
+693), 1423780.LOT_2052 (degree 635) and 1423780.LOT_0435 (degree 607).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusOtakiensis(
 	
 	Datetime: 2021-02-03 22:51:55.350240
 	
-	The undirected graph Lactobacillus otakiensis has 2281 nodes and 128462 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04940
-	and has 17 connected components, where the component with most nodes has 2244 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 112.64, and the node degree mode is 4. The top 5 most
-	central nodes are 1423780.LOT_2176 (degree 1080), 1423780.LOT_0216 (degree 855),
-	1423780.LOT_0291 (degree 693), 1423780.LOT_2052 (degree 635) and 1423780.LOT_0435
-	(degree 607).
+	The undirected graph Lactobacillus otakiensis has 2281 nodes and 128462
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04940 and has 17 connected components, where the component
+	with most nodes has 2244 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 112.64,
+	and the node degree mode is 4. The top 5 most central nodes are 1423780.LOT_2176
+	(degree 1080), 1423780.LOT_0216 (degree 855), 1423780.LOT_0291 (degree
+	693), 1423780.LOT_2052 (degree 635) and 1423780.LOT_0435 (degree 607).
 	
 
 

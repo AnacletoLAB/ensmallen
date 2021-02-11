@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:47.397837
 
-The undirected graph DSJC1000-5 has 1000 nodes and 249826 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.50015
-and is connected, as it has a single component. The graph median node degree is 500,
-the mean node degree is 499.65 and the node degree mode is 503. The top 5 most central
-nodes are 916 (degree 551), 792 (degree 545), 80 (degree 545), 597 (degree 543) and
-428 (degree 542).
+The undirected graph DSJC1000-5 has 1000 nodes and 249826 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.50015 and is connected, as it has a single component. The
+graph median node degree is 500, the mean node degree is 499.65 and the
+node degree mode is 503. The top 5 most central nodes are 916 (degree 551),
+792 (degree 545), 80 (degree 545), 597 (degree 543) and 428 (degree 542).
 
 
 References
@@ -115,12 +115,12 @@ def Dsjc10005(
 	
 	Datetime: 2021-02-03 22:52:47.397837
 	
-	The undirected graph DSJC1000-5 has 1000 nodes and 249826 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.50015
-	and is connected, as it has a single component. The graph median node degree is 500,
-	the mean node degree is 499.65 and the node degree mode is 503. The top 5 most central
-	nodes are 916 (degree 551), 792 (degree 545), 80 (degree 545), 597 (degree 543) and
-	428 (degree 542).
+	The undirected graph DSJC1000-5 has 1000 nodes and 249826 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.50015 and is connected, as it has a single component. The
+	graph median node degree is 500, the mean node degree is 499.65 and the
+	node degree mode is 503. The top 5 most central nodes are 916 (degree 551),
+	792 (degree 545), 80 (degree 545), 597 (degree 543) and 428 (degree 542).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:56.544101
 
-The undirected graph socfb-Oklahoma97 has 17425 nodes and 892528 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00588
-and has 3 connected components, where the component with most nodes has 17420 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 68, the mean node degree is 102.44, and the node degree mode is 1. The top 5 most
-central nodes are 1884 (degree 2568), 4507 (degree 2462), 2863 (degree 2354), 1234
-(degree 1409) and 17134 (degree 1143).
+The undirected graph socfb-Oklahoma97 has 17425 nodes and 892528 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00588 and has 3 connected components, where the component with most
+nodes has 17420 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 68, the mean node degree is 102.44, and
+the node degree mode is 1. The top 5 most central nodes are 1884 (degree
+2568), 4507 (degree 2462), 2863 (degree 2354), 1234 (degree 1409) and 17134
+(degree 1143).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbOklahoma97(
 	
 	Datetime: 2021-02-06 11:49:56.544101
 	
-	The undirected graph socfb-Oklahoma97 has 17425 nodes and 892528 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00588
-	and has 3 connected components, where the component with most nodes has 17420 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 68, the mean node degree is 102.44, and the node degree mode is 1. The top 5 most
-	central nodes are 1884 (degree 2568), 4507 (degree 2462), 2863 (degree 2354), 1234
-	(degree 1409) and 17134 (degree 1143).
+	The undirected graph socfb-Oklahoma97 has 17425 nodes and 892528 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00588 and has 3 connected components, where the component with most
+	nodes has 17420 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 68, the mean node degree is 102.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1884 (degree
+	2568), 4507 (degree 2462), 2863 (degree 2354), 1234 (degree 1409) and 17134
+	(degree 1143).
 	
 
 

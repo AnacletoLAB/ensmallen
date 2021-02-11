@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:54.991340
 
-The undirected graph Lysinibacillus odysseyi has 4029 nodes and 355950 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04387 and
-has 45 connected components, where the component with most nodes has 3896 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 176.69, and the node degree mode is 1. The top 5 most central
-nodes are 1220589.CD32_15540 (degree 1284), 1220589.CD32_03285 (degree 1210), 1220589.CD32_03700
-(degree 1193), 1220589.CD32_02175 (degree 1109) and 1220589.CD32_07320 (degree 1008).
+The undirected graph Lysinibacillus odysseyi has 4029 nodes and 355950
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04387 and has 45 connected components, where the component
+with most nodes has 3896 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 176.69,
+and the node degree mode is 1. The top 5 most central nodes are 1220589.CD32_15540
+(degree 1284), 1220589.CD32_03285 (degree 1210), 1220589.CD32_03700 (degree
+1193), 1220589.CD32_02175 (degree 1109) and 1220589.CD32_07320 (degree
+1008).
 
 
 References
@@ -106,13 +108,15 @@ def LysinibacillusOdysseyi(
 	
 	Datetime: 2021-02-02 23:23:54.991340
 	
-	The undirected graph Lysinibacillus odysseyi has 4029 nodes and 355950 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04387 and
-	has 45 connected components, where the component with most nodes has 3896 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 176.69, and the node degree mode is 1. The top 5 most central
-	nodes are 1220589.CD32_15540 (degree 1284), 1220589.CD32_03285 (degree 1210), 1220589.CD32_03700
-	(degree 1193), 1220589.CD32_02175 (degree 1109) and 1220589.CD32_07320 (degree 1008).
+	The undirected graph Lysinibacillus odysseyi has 4029 nodes and 355950
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04387 and has 45 connected components, where the component
+	with most nodes has 3896 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 176.69,
+	and the node degree mode is 1. The top 5 most central nodes are 1220589.CD32_15540
+	(degree 1284), 1220589.CD32_03285 (degree 1210), 1220589.CD32_03700 (degree
+	1193), 1220589.CD32_02175 (degree 1109) and 1220589.CD32_07320 (degree
+	1008).
 	
 
 

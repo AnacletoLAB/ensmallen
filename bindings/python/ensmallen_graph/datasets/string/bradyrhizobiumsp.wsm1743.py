@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:24.347138
 
-The undirected graph Bradyrhizobium sp. WSM1743 has 6783 nodes and 964073 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04191
-and has 70 connected components, where the component with most nodes has 6625 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 284.26, and the node degree mode is 1. The top 5
-most central nodes are 318996.AXAZ01000001_gene4515 (degree 3364), 318996.AXAZ01000012_gene2599
-(degree 2561), 318996.AXAZ01000045_gene1409 (degree 2512), 318996.AXAZ01000077_gene1675
-(degree 2363) and 318996.AXAZ01000018_gene1085 (degree 2107).
+The undirected graph Bradyrhizobium sp. WSM1743 has 6783 nodes and 964073
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04191 and has 70 connected components, where the component
+with most nodes has 6625 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 284.26,
+and the node degree mode is 1. The top 5 most central nodes are 318996.AXAZ01000001_gene4515
+(degree 3364), 318996.AXAZ01000012_gene2599 (degree 2561), 318996.AXAZ01000045_gene1409
+(degree 2512), 318996.AXAZ01000077_gene1675 (degree 2363) and 318996.AXAZ01000018_gene1085
+(degree 2107).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Wsm1743(
 	
 	Datetime: 2021-02-02 20:27:24.347138
 	
-	The undirected graph Bradyrhizobium sp. WSM1743 has 6783 nodes and 964073 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04191
-	and has 70 connected components, where the component with most nodes has 6625 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 284.26, and the node degree mode is 1. The top 5
-	most central nodes are 318996.AXAZ01000001_gene4515 (degree 3364), 318996.AXAZ01000012_gene2599
-	(degree 2561), 318996.AXAZ01000045_gene1409 (degree 2512), 318996.AXAZ01000077_gene1675
-	(degree 2363) and 318996.AXAZ01000018_gene1085 (degree 2107).
+	The undirected graph Bradyrhizobium sp. WSM1743 has 6783 nodes and 964073
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04191 and has 70 connected components, where the component
+	with most nodes has 6625 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 284.26,
+	and the node degree mode is 1. The top 5 most central nodes are 318996.AXAZ01000001_gene4515
+	(degree 3364), 318996.AXAZ01000012_gene2599 (degree 2561), 318996.AXAZ01000045_gene1409
+	(degree 2512), 318996.AXAZ01000077_gene1675 (degree 2363) and 318996.AXAZ01000018_gene1085
+	(degree 2107).
 	
 
 

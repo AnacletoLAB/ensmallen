@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:57.021826
 
-The undirected graph Penicillium oxalicum has 6701 nodes and 657546 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02929 and
-has 24 connected components, where the component with most nodes has 6652 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 196.25, and the node degree mode is 1. The top 5 most central
-nodes are 69781.S8AHK6 (degree 1677), 69781.S7ZTN7 (degree 1532), 69781.S7ZEC9 (degree
-1474), 69781.S8B5S6 (degree 1373) and 69781.S8AV48 (degree 1361).
+The undirected graph Penicillium oxalicum has 6701 nodes and 657546 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02929 and has 24 connected components, where the component with most
+nodes has 6652 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 196.25, and
+the node degree mode is 1. The top 5 most central nodes are 69781.S8AHK6
+(degree 1677), 69781.S7ZTN7 (degree 1532), 69781.S7ZEC9 (degree 1474),
+69781.S8B5S6 (degree 1373) and 69781.S8AV48 (degree 1361).
 
 
 References
@@ -106,13 +107,14 @@ def PenicilliumOxalicum(
 	
 	Datetime: 2021-02-02 18:29:57.021826
 	
-	The undirected graph Penicillium oxalicum has 6701 nodes and 657546 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02929 and
-	has 24 connected components, where the component with most nodes has 6652 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 196.25, and the node degree mode is 1. The top 5 most central
-	nodes are 69781.S8AHK6 (degree 1677), 69781.S7ZTN7 (degree 1532), 69781.S7ZEC9 (degree
-	1474), 69781.S8B5S6 (degree 1373) and 69781.S8AV48 (degree 1361).
+	The undirected graph Penicillium oxalicum has 6701 nodes and 657546 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02929 and has 24 connected components, where the component with most
+	nodes has 6652 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 196.25, and
+	the node degree mode is 1. The top 5 most central nodes are 69781.S8AHK6
+	(degree 1677), 69781.S7ZTN7 (degree 1532), 69781.S7ZEC9 (degree 1474),
+	69781.S8B5S6 (degree 1373) and 69781.S8AV48 (degree 1361).
 	
 
 

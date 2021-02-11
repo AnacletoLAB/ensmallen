@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:29.617009
 
-The undirected graph Plasmodium knowlesi has 4034 nodes and 424268 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-has 10 connected components, where the component with most nodes has 4015 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 210.35, and the node degree mode is 1. The top 5 most central
-nodes are 5850.PKH_093620 (degree 1256), 5850.PKH_113350 (degree 1229), 5850.PKH_051230
-(degree 1201), 5850.PKH_111030 (degree 1195) and 5850.PKH_090430 (degree 1137).
+The undirected graph Plasmodium knowlesi has 4034 nodes and 424268 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05216 and has 10 connected components, where the component with most
+nodes has 4015 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 210.35, and
+the node degree mode is 1. The top 5 most central nodes are 5850.PKH_093620
+(degree 1256), 5850.PKH_113350 (degree 1229), 5850.PKH_051230 (degree 1201),
+5850.PKH_111030 (degree 1195) and 5850.PKH_090430 (degree 1137).
 
 
 References
@@ -106,13 +107,14 @@ def PlasmodiumKnowlesi(
 	
 	Datetime: 2021-02-02 17:16:29.617009
 	
-	The undirected graph Plasmodium knowlesi has 4034 nodes and 424268 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-	has 10 connected components, where the component with most nodes has 4015 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 210.35, and the node degree mode is 1. The top 5 most central
-	nodes are 5850.PKH_093620 (degree 1256), 5850.PKH_113350 (degree 1229), 5850.PKH_051230
-	(degree 1201), 5850.PKH_111030 (degree 1195) and 5850.PKH_090430 (degree 1137).
+	The undirected graph Plasmodium knowlesi has 4034 nodes and 424268 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05216 and has 10 connected components, where the component with most
+	nodes has 4015 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 210.35, and
+	the node degree mode is 1. The top 5 most central nodes are 5850.PKH_093620
+	(degree 1256), 5850.PKH_113350 (degree 1229), 5850.PKH_051230 (degree 1201),
+	5850.PKH_111030 (degree 1195) and 5850.PKH_090430 (degree 1137).
 	
 
 

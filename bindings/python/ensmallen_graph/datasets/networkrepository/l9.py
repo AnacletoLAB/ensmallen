@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:13:55.084162
 
-The undirected graph L-9 has 17983 nodes and 35596 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00022 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 3.96, and the node degree mode is 4. The top 5 most central nodes are 17953 (degree
-4), 17952 (degree 4), 17951 (degree 4), 17950 (degree 4) and 17949 (degree 4).
+The undirected graph L-9 has 17983 nodes and 35596 unweighted edges, of
+which none are self-loops. The graph is quite sparse as it has a density
+of 0.00022 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 3.96, and the node degree mode
+is 4. The top 5 most central nodes are 17953 (degree 4), 17952 (degree
+4), 17951 (degree 4), 17950 (degree 4) and 17949 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def L9(
 	
 	Datetime: 2021-02-06 10:13:55.084162
 	
-	The undirected graph L-9 has 17983 nodes and 35596 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00022 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 3.96, and the node degree mode is 4. The top 5 most central nodes are 17953 (degree
-	4), 17952 (degree 4), 17951 (degree 4), 17950 (degree 4) and 17949 (degree 4).
+	The undirected graph L-9 has 17983 nodes and 35596 unweighted edges, of
+	which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00022 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 3.96, and the node degree mode
+	is 4. The top 5 most central nodes are 17953 (degree 4), 17952 (degree
+	4), 17951 (degree 4), 17950 (degree 4) and 17949 (degree 4).
 	
 
 

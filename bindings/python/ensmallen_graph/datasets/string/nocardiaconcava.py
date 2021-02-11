@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:26.324954
 
-The undirected graph Nocardia concava has 8149 nodes and 1283643 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03867 and
-has 38 connected components, where the component with most nodes has 8066 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 260,
-the mean node degree is 315.04, and the node degree mode is 3. The top 5 most central
-nodes are 1206741.BAFX01000045_gene3248 (degree 2335), 1206741.BAFX01000023_gene8024
-(degree 2317), 1206741.BAFX01000023_gene8033 (degree 2111), 1206741.BAFX01000064_gene5021
-(degree 2037) and 1206741.BAFX01000017_gene7165 (degree 2024).
+The undirected graph Nocardia concava has 8149 nodes and 1283643 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03867 and has 38 connected components, where the component with most
+nodes has 8066 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 260, the mean node degree is 315.04, and
+the node degree mode is 3. The top 5 most central nodes are 1206741.BAFX01000045_gene3248
+(degree 2335), 1206741.BAFX01000023_gene8024 (degree 2317), 1206741.BAFX01000023_gene8033
+(degree 2111), 1206741.BAFX01000064_gene5021 (degree 2037) and 1206741.BAFX01000017_gene7165
+(degree 2024).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaConcava(
 	
 	Datetime: 2021-02-02 23:17:26.324954
 	
-	The undirected graph Nocardia concava has 8149 nodes and 1283643 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03867 and
-	has 38 connected components, where the component with most nodes has 8066 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 260,
-	the mean node degree is 315.04, and the node degree mode is 3. The top 5 most central
-	nodes are 1206741.BAFX01000045_gene3248 (degree 2335), 1206741.BAFX01000023_gene8024
-	(degree 2317), 1206741.BAFX01000023_gene8033 (degree 2111), 1206741.BAFX01000064_gene5021
-	(degree 2037) and 1206741.BAFX01000017_gene7165 (degree 2024).
+	The undirected graph Nocardia concava has 8149 nodes and 1283643 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03867 and has 38 connected components, where the component with most
+	nodes has 8066 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 260, the mean node degree is 315.04, and
+	the node degree mode is 3. The top 5 most central nodes are 1206741.BAFX01000045_gene3248
+	(degree 2335), 1206741.BAFX01000023_gene8024 (degree 2317), 1206741.BAFX01000023_gene8033
+	(degree 2111), 1206741.BAFX01000064_gene5021 (degree 2037) and 1206741.BAFX01000017_gene7165
+	(degree 2024).
 	
 
 

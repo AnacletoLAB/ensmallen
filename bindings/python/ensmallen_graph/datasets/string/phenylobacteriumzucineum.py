@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:09.773608
 
-The undirected graph Phenylobacterium zucineum has 3837 nodes and 446816 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06071
-and has 4 connected components, where the component with most nodes has 3831 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 232.90, and the node degree mode is 1. The top 5
-most central nodes are 450851.PHZ_c2079 (degree 1812), 450851.PHZ_c3388 (degree 1600),
-450851.PHZ_p0134 (degree 1263), 450851.PHZ_c1417 (degree 1183) and 450851.PHZ_c1163
-(degree 1130).
+The undirected graph Phenylobacterium zucineum has 3837 nodes and 446816
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06071 and has 4 connected components, where the component
+with most nodes has 3831 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 232.90,
+and the node degree mode is 1. The top 5 most central nodes are 450851.PHZ_c2079
+(degree 1812), 450851.PHZ_c3388 (degree 1600), 450851.PHZ_p0134 (degree
+1263), 450851.PHZ_c1417 (degree 1183) and 450851.PHZ_c1163 (degree 1130).
 
 
 References
@@ -107,14 +107,14 @@ def PhenylobacteriumZucineum(
 	
 	Datetime: 2021-02-02 20:52:09.773608
 	
-	The undirected graph Phenylobacterium zucineum has 3837 nodes and 446816 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06071
-	and has 4 connected components, where the component with most nodes has 3831 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 232.90, and the node degree mode is 1. The top 5
-	most central nodes are 450851.PHZ_c2079 (degree 1812), 450851.PHZ_c3388 (degree 1600),
-	450851.PHZ_p0134 (degree 1263), 450851.PHZ_c1417 (degree 1183) and 450851.PHZ_c1163
-	(degree 1130).
+	The undirected graph Phenylobacterium zucineum has 3837 nodes and 446816
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06071 and has 4 connected components, where the component
+	with most nodes has 3831 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 232.90,
+	and the node degree mode is 1. The top 5 most central nodes are 450851.PHZ_c2079
+	(degree 1812), 450851.PHZ_c3388 (degree 1600), 450851.PHZ_p0134 (degree
+	1263), 450851.PHZ_c1417 (degree 1183) and 450851.PHZ_c1163 (degree 1130).
 	
 
 

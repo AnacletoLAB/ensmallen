@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:17.895636
 
-The undirected graph Mycobacterium abscessus has 4916 nodes and 735685 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-has 12 connected components, where the component with most nodes has 4868 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 278,
-the mean node degree is 299.30, and the node degree mode is 2. The top 5 most central
-nodes are 36809.MAB_1512 (degree 1520), 36809.MAB_4814 (degree 1459), 36809.MAB_2615c
-(degree 1393), 36809.MAB_3755c (degree 1369) and 36809.MAB_3148c (degree 1319).
+The undirected graph Mycobacterium abscessus has 4916 nodes and 735685
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06090 and has 12 connected components, where the component
+with most nodes has 4868 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 278, the mean node degree is 299.30,
+and the node degree mode is 2. The top 5 most central nodes are 36809.MAB_1512
+(degree 1520), 36809.MAB_4814 (degree 1459), 36809.MAB_2615c (degree 1393),
+36809.MAB_3755c (degree 1369) and 36809.MAB_3148c (degree 1319).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumAbscessus(
 	
 	Datetime: 2021-02-02 18:06:17.895636
 	
-	The undirected graph Mycobacterium abscessus has 4916 nodes and 735685 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-	has 12 connected components, where the component with most nodes has 4868 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 278,
-	the mean node degree is 299.30, and the node degree mode is 2. The top 5 most central
-	nodes are 36809.MAB_1512 (degree 1520), 36809.MAB_4814 (degree 1459), 36809.MAB_2615c
-	(degree 1393), 36809.MAB_3755c (degree 1369) and 36809.MAB_3148c (degree 1319).
+	The undirected graph Mycobacterium abscessus has 4916 nodes and 735685
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06090 and has 12 connected components, where the component
+	with most nodes has 4868 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 278, the mean node degree is 299.30,
+	and the node degree mode is 2. The top 5 most central nodes are 36809.MAB_1512
+	(degree 1520), 36809.MAB_4814 (degree 1459), 36809.MAB_2615c (degree 1393),
+	36809.MAB_3755c (degree 1369) and 36809.MAB_3148c (degree 1319).
 	
 
 

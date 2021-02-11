@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:15:27.871562
 
-The undirected graph Geodermatophilaceae bacterium URHA0031 has 4806 nodes and 781838
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06771 and has 11 connected components, where the component with most nodes has
-4780 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 294, the mean node degree is 325.36, and the node degree mode is 3. The
-top 5 most central nodes are 1380393.JHVP01000023_gene3276 (degree 1649), 1380393.JHVP01000013_gene3398
+The undirected graph Geodermatophilaceae bacterium URHA0031 has 4806 nodes
+and 781838 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06771 and has 11 connected components, where the
+component with most nodes has 4780 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 294, the mean node degree
+is 325.36, and the node degree mode is 3. The top 5 most central nodes
+are 1380393.JHVP01000023_gene3276 (degree 1649), 1380393.JHVP01000013_gene3398
 (degree 1572), 1380393.JHVP01000002_gene1527 (degree 1478), 1380393.JHVP01000001_gene2032
 (degree 1473) and 1380393.JHVP01000010_gene2967 (degree 1469).
 
@@ -107,12 +108,13 @@ def GeodermatophilaceaeBacteriumUrha0031(
 	
 	Datetime: 2021-02-03 22:15:27.871562
 	
-	The undirected graph Geodermatophilaceae bacterium URHA0031 has 4806 nodes and 781838
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06771 and has 11 connected components, where the component with most nodes has
-	4780 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 294, the mean node degree is 325.36, and the node degree mode is 3. The
-	top 5 most central nodes are 1380393.JHVP01000023_gene3276 (degree 1649), 1380393.JHVP01000013_gene3398
+	The undirected graph Geodermatophilaceae bacterium URHA0031 has 4806 nodes
+	and 781838 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06771 and has 11 connected components, where the
+	component with most nodes has 4780 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 294, the mean node degree
+	is 325.36, and the node degree mode is 3. The top 5 most central nodes
+	are 1380393.JHVP01000023_gene3276 (degree 1649), 1380393.JHVP01000013_gene3398
 	(degree 1572), 1380393.JHVP01000002_gene1527 (degree 1478), 1380393.JHVP01000001_gene2032
 	(degree 1473) and 1380393.JHVP01000010_gene2967 (degree 1469).
 	

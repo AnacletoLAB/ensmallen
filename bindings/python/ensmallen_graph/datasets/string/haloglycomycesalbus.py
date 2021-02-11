@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:08.303949
 
-The undirected graph Haloglycomyces albus has 2935 nodes and 304807 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07079 and
-has 29 connected components, where the component with most nodes has 2870 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 207.70, and the node degree mode is 1. The top 5 most central
-nodes are 1089549.AZUQ01000001_gene2264 (degree 1015), 1089549.AZUQ01000001_gene1462
-(degree 1013), 1089549.AZUQ01000001_gene2053 (degree 976), 1089549.AZUQ01000001_gene2487
-(degree 963) and 1089549.AZUQ01000001_gene2079 (degree 939).
+The undirected graph Haloglycomyces albus has 2935 nodes and 304807 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07079 and has 29 connected components, where the component with most
+nodes has 2870 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 207.70, and
+the node degree mode is 1. The top 5 most central nodes are 1089549.AZUQ01000001_gene2264
+(degree 1015), 1089549.AZUQ01000001_gene1462 (degree 1013), 1089549.AZUQ01000001_gene2053
+(degree 976), 1089549.AZUQ01000001_gene2487 (degree 963) and 1089549.AZUQ01000001_gene2079
+(degree 939).
 
 
 References
@@ -107,14 +108,15 @@ def HaloglycomycesAlbus(
 	
 	Datetime: 2021-02-02 22:22:08.303949
 	
-	The undirected graph Haloglycomyces albus has 2935 nodes and 304807 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07079 and
-	has 29 connected components, where the component with most nodes has 2870 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 207.70, and the node degree mode is 1. The top 5 most central
-	nodes are 1089549.AZUQ01000001_gene2264 (degree 1015), 1089549.AZUQ01000001_gene1462
-	(degree 1013), 1089549.AZUQ01000001_gene2053 (degree 976), 1089549.AZUQ01000001_gene2487
-	(degree 963) and 1089549.AZUQ01000001_gene2079 (degree 939).
+	The undirected graph Haloglycomyces albus has 2935 nodes and 304807 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07079 and has 29 connected components, where the component with most
+	nodes has 2870 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 207.70, and
+	the node degree mode is 1. The top 5 most central nodes are 1089549.AZUQ01000001_gene2264
+	(degree 1015), 1089549.AZUQ01000001_gene1462 (degree 1013), 1089549.AZUQ01000001_gene2053
+	(degree 976), 1089549.AZUQ01000001_gene2487 (degree 963) and 1089549.AZUQ01000001_gene2079
+	(degree 939).
 	
 
 

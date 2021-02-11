@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:33.336040
 
-The undirected graph Citrus sinensis has 19569 nodes and 2652801 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01386 and
-has 9 connected components, where the component with most nodes has 19553 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 271.12, and the node degree mode is 2. The top 5 most central
-nodes are 2711.XP_006494327.1 (degree 6047), 2711.XP_006487231.1 (degree 3937), 2711.XP_006492934.1
-(degree 3573), 2711.XP_006493011.1 (degree 3560) and 2711.XP_006472708.1 (degree
+The undirected graph Citrus sinensis has 19569 nodes and 2652801 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01386 and has 9 connected components, where the component with most
+nodes has 19553 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 271.12, and
+the node degree mode is 2. The top 5 most central nodes are 2711.XP_006494327.1
+(degree 6047), 2711.XP_006487231.1 (degree 3937), 2711.XP_006492934.1 (degree
+3573), 2711.XP_006493011.1 (degree 3560) and 2711.XP_006472708.1 (degree
 3523).
 
 
@@ -107,13 +108,14 @@ def CitrusSinensis(
 	
 	Datetime: 2021-02-02 16:25:33.336040
 	
-	The undirected graph Citrus sinensis has 19569 nodes and 2652801 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01386 and
-	has 9 connected components, where the component with most nodes has 19553 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 271.12, and the node degree mode is 2. The top 5 most central
-	nodes are 2711.XP_006494327.1 (degree 6047), 2711.XP_006487231.1 (degree 3937), 2711.XP_006492934.1
-	(degree 3573), 2711.XP_006493011.1 (degree 3560) and 2711.XP_006472708.1 (degree
+	The undirected graph Citrus sinensis has 19569 nodes and 2652801 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01386 and has 9 connected components, where the component with most
+	nodes has 19553 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 271.12, and
+	the node degree mode is 2. The top 5 most central nodes are 2711.XP_006494327.1
+	(degree 6047), 2711.XP_006487231.1 (degree 3937), 2711.XP_006492934.1 (degree
+	3573), 2711.XP_006493011.1 (degree 3560) and 2711.XP_006472708.1 (degree
 	3523).
 	
 

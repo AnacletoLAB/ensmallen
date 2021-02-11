@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:47.259991
 
-The undirected graph Parabacteroides distasonis has 3828 nodes and 346468 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04730
-and has 10 connected components, where the component with most nodes has 3806 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 181.02, and the node degree mode is 6. The top 5
-most central nodes are 435591.BDI_2972 (degree 1494), 435591.BDI_1484 (degree 1295),
-435591.BDI_1022 (degree 1291), 435591.BDI_2740 (degree 1236) and 435591.BDI_3372
-(degree 1103).
+The undirected graph Parabacteroides distasonis has 3828 nodes and 346468
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04730 and has 10 connected components, where the component
+with most nodes has 3806 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 181.02,
+and the node degree mode is 6. The top 5 most central nodes are 435591.BDI_2972
+(degree 1494), 435591.BDI_1484 (degree 1295), 435591.BDI_1022 (degree 1291),
+435591.BDI_2740 (degree 1236) and 435591.BDI_3372 (degree 1103).
 
 
 References
@@ -107,14 +107,14 @@ def ParabacteroidesDistasonis(
 	
 	Datetime: 2021-02-02 20:48:47.259991
 	
-	The undirected graph Parabacteroides distasonis has 3828 nodes and 346468 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04730
-	and has 10 connected components, where the component with most nodes has 3806 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 181.02, and the node degree mode is 6. The top 5
-	most central nodes are 435591.BDI_2972 (degree 1494), 435591.BDI_1484 (degree 1295),
-	435591.BDI_1022 (degree 1291), 435591.BDI_2740 (degree 1236) and 435591.BDI_3372
-	(degree 1103).
+	The undirected graph Parabacteroides distasonis has 3828 nodes and 346468
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04730 and has 10 connected components, where the component
+	with most nodes has 3806 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 181.02,
+	and the node degree mode is 6. The top 5 most central nodes are 435591.BDI_2972
+	(degree 1494), 435591.BDI_1484 (degree 1295), 435591.BDI_1022 (degree 1291),
+	435591.BDI_2740 (degree 1236) and 435591.BDI_3372 (degree 1103).
 	
 
 

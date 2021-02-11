@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:41:36.024885
 
-The undirected graph web-uk-2005 has 129632 nodes and 11744049 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00140
-and is connected, as it has a single component. The graph median node degree is 207,
-the mean node degree is 181.19, and the node degree mode is 208. The top 5 most central
-nodes are 86952 (degree 850), 101504 (degree 500), 83192 (degree 500), 102003 (degree
-499) and 102002 (degree 499).
+The undirected graph web-uk-2005 has 129632 nodes and 11744049 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00140 and is connected, as it has a single component. The graph median
+node degree is 207, the mean node degree is 181.19, and the node degree
+mode is 208. The top 5 most central nodes are 86952 (degree 850), 101504
+(degree 500), 83192 (degree 500), 102003 (degree 499) and 102002 (degree
+499).
 
 
 References
@@ -119,12 +120,13 @@ def WebUk2005(
 	
 	Datetime: 2021-02-07 16:41:36.024885
 	
-	The undirected graph web-uk-2005 has 129632 nodes and 11744049 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00140
-	and is connected, as it has a single component. The graph median node degree is 207,
-	the mean node degree is 181.19, and the node degree mode is 208. The top 5 most central
-	nodes are 86952 (degree 850), 101504 (degree 500), 83192 (degree 500), 102003 (degree
-	499) and 102002 (degree 499).
+	The undirected graph web-uk-2005 has 129632 nodes and 11744049 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00140 and is connected, as it has a single component. The graph median
+	node degree is 207, the mean node degree is 181.19, and the node degree
+	mode is 208. The top 5 most central nodes are 86952 (degree 850), 101504
+	(degree 500), 83192 (degree 500), 102003 (degree 499) and 102002 (degree
+	499).
 	
 
 

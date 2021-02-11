@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:49.091049
 
-The undirected graph bio-grid-worm has 3507 nodes and 6531 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00106 and has 71
-connected components, where the component with most nodes has 3343 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 1, the
-mean node degree is 3.72, and the node degree mode is 1. The top 5 most central nodes
-are 1257 (degree 523), 2775 (degree 202), 2305 (degree 181), 2820 (degree 178) and
-3262 (degree 164).
+The undirected graph bio-grid-worm has 3507 nodes and 6531 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00106 and has 71 connected components, where the component with most
+nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 1, the mean node degree is 3.72, and the
+node degree mode is 1. The top 5 most central nodes are 1257 (degree 523),
+2775 (degree 202), 2305 (degree 181), 2820 (degree 178) and 3262 (degree
+164).
 
 
 References
@@ -103,13 +104,14 @@ def BioGridWorm(
 	
 	Datetime: 2021-02-05 17:18:49.091049
 	
-	The undirected graph bio-grid-worm has 3507 nodes and 6531 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00106 and has 71
-	connected components, where the component with most nodes has 3343 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 1, the
-	mean node degree is 3.72, and the node degree mode is 1. The top 5 most central nodes
-	are 1257 (degree 523), 2775 (degree 202), 2305 (degree 181), 2820 (degree 178) and
-	3262 (degree 164).
+	The undirected graph bio-grid-worm has 3507 nodes and 6531 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00106 and has 71 connected components, where the component with most
+	nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 1, the mean node degree is 3.72, and the
+	node degree mode is 1. The top 5 most central nodes are 1257 (degree 523),
+	2775 (degree 202), 2305 (degree 181), 2820 (degree 178) and 3262 (degree
+	164).
 	
 
 

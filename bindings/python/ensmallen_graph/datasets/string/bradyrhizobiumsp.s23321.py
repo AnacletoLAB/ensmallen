@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:33.616951
 
-The undirected graph Bradyrhizobium sp. S23321 has 6828 nodes and 747936 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03209
-and has 47 connected components, where the component with most nodes has 6706 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 219.08, and the node degree mode is 2. The top 5
-most central nodes are 335659.S23_53770 (degree 2864), 335659.S23_66670 (degree 2602),
-335659.S23_15550 (degree 2410), 335659.S23_63100 (degree 1989) and 335659.S23_47550
-(degree 1988).
+The undirected graph Bradyrhizobium sp. S23321 has 6828 nodes and 747936
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03209 and has 47 connected components, where the component
+with most nodes has 6706 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 219.08,
+and the node degree mode is 2. The top 5 most central nodes are 335659.S23_53770
+(degree 2864), 335659.S23_66670 (degree 2602), 335659.S23_15550 (degree
+2410), 335659.S23_63100 (degree 1989) and 335659.S23_47550 (degree 1988).
 
 
 References
@@ -107,14 +107,14 @@ def BradyrhizobiumSp.S23321(
 	
 	Datetime: 2021-02-02 20:30:33.616951
 	
-	The undirected graph Bradyrhizobium sp. S23321 has 6828 nodes and 747936 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03209
-	and has 47 connected components, where the component with most nodes has 6706 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 219.08, and the node degree mode is 2. The top 5
-	most central nodes are 335659.S23_53770 (degree 2864), 335659.S23_66670 (degree 2602),
-	335659.S23_15550 (degree 2410), 335659.S23_63100 (degree 1989) and 335659.S23_47550
-	(degree 1988).
+	The undirected graph Bradyrhizobium sp. S23321 has 6828 nodes and 747936
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03209 and has 47 connected components, where the component
+	with most nodes has 6706 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 219.08,
+	and the node degree mode is 2. The top 5 most central nodes are 335659.S23_53770
+	(degree 2864), 335659.S23_66670 (degree 2602), 335659.S23_15550 (degree
+	2410), 335659.S23_63100 (degree 1989) and 335659.S23_47550 (degree 1988).
 	
 
 

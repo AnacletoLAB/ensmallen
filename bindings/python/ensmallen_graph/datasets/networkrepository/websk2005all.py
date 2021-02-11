@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 08:02:58.982964
 
-The undirected graph web-sk-2005-all has 50636073 nodes, of which 14 are singletons
-(all have self-loops), and 1829182983 unweighted edges, of which 19119653 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 45 connected
-components, where the component with most nodes has 50634118 nodes and the component
-with the least nodes has a single node. The graph median node degree is 30, the mean
-node degree is 71.87, and the node degree mode is 1. The top 5 most central nodes
-are 42265166 (degree 8563817), 17866473 (degree 2874442), 29511208 (degree 2466089),
+The undirected graph web-sk-2005-all has 50636073 nodes, of which 14 are
+singletons (all have self-loops), and 1829182983 unweighted edges, of which
+19119653 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 45 connected components, where the component with most
+nodes has 50634118 nodes and the component with the least nodes has a single
+node. The graph median node degree is 30, the mean node degree is 71.87,
+and the node degree mode is 1. The top 5 most central nodes are 42265166
+(degree 8563817), 17866473 (degree 2874442), 29511208 (degree 2466089),
 50284701 (degree 1582409) and 48932213 (degree 1367113).
 
 
@@ -121,13 +122,14 @@ def WebSk2005All(
 	
 	Datetime: 2021-02-05 08:02:58.982964
 	
-	The undirected graph web-sk-2005-all has 50636073 nodes, of which 14 are singletons
-	(all have self-loops), and 1829182983 unweighted edges, of which 19119653 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 45 connected
-	components, where the component with most nodes has 50634118 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 30, the mean
-	node degree is 71.87, and the node degree mode is 1. The top 5 most central nodes
-	are 42265166 (degree 8563817), 17866473 (degree 2874442), 29511208 (degree 2466089),
+	The undirected graph web-sk-2005-all has 50636073 nodes, of which 14 are
+	singletons (all have self-loops), and 1829182983 unweighted edges, of which
+	19119653 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 45 connected components, where the component with most
+	nodes has 50634118 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 30, the mean node degree is 71.87,
+	and the node degree mode is 1. The top 5 most central nodes are 42265166
+	(degree 8563817), 17866473 (degree 2874442), 29511208 (degree 2466089),
 	50284701 (degree 1582409) and 48932213 (degree 1367113).
 	
 

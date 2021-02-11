@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:17.141248
 
-The undirected graph Acinetobacter ursingii has 3246 nodes and 281981 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05354 and
-has 9 connected components, where the component with most nodes has 3226 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 173.74, and the node degree mode is 3. The top 5 most central
-nodes are 981336.F944_03029 (degree 1194), 981336.F944_03155 (degree 1119), 981336.F944_02292
-(degree 994), 981336.F944_03179 (degree 985) and 981336.F944_01981 (degree 903).
+The undirected graph Acinetobacter ursingii has 3246 nodes and 281981 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05354 and has 9 connected components, where the component with most
+nodes has 3226 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 173.74, and
+the node degree mode is 3. The top 5 most central nodes are 981336.F944_03029
+(degree 1194), 981336.F944_03155 (degree 1119), 981336.F944_02292 (degree
+994), 981336.F944_03179 (degree 985) and 981336.F944_01981 (degree 903).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterUrsingii(
 	
 	Datetime: 2021-02-02 22:03:17.141248
 	
-	The undirected graph Acinetobacter ursingii has 3246 nodes and 281981 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05354 and
-	has 9 connected components, where the component with most nodes has 3226 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 173.74, and the node degree mode is 3. The top 5 most central
-	nodes are 981336.F944_03029 (degree 1194), 981336.F944_03155 (degree 1119), 981336.F944_02292
-	(degree 994), 981336.F944_03179 (degree 985) and 981336.F944_01981 (degree 903).
+	The undirected graph Acinetobacter ursingii has 3246 nodes and 281981 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05354 and has 9 connected components, where the component with most
+	nodes has 3226 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 173.74, and
+	the node degree mode is 3. The top 5 most central nodes are 981336.F944_03029
+	(degree 1194), 981336.F944_03155 (degree 1119), 981336.F944_02292 (degree
+	994), 981336.F944_03179 (degree 985) and 981336.F944_01981 (degree 903).
 	
 
 

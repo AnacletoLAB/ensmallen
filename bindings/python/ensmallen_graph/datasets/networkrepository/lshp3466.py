@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:23:08.303202
 
-The undirected graph lshp3466 has 3466 nodes and 13681 unweighted edges, of which
-3466 are self-loops. The graph is sparse as it has a density of 0.00199 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.89, and the node degree mode is 7. The top 5 most central nodes are 3462 (degree
-7), 3459 (degree 7), 3458 (degree 7), 3455 (degree 7) and 3454 (degree 7).
+The undirected graph lshp3466 has 3466 nodes and 13681 unweighted edges,
+of which 3466 are self-loops. The graph is sparse as it has a density of
+0.00199 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.89, and the node degree mode
+is 7. The top 5 most central nodes are 3462 (degree 7), 3459 (degree 7),
+3458 (degree 7), 3455 (degree 7) and 3454 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp3466(
 	
 	Datetime: 2021-02-06 10:23:08.303202
 	
-	The undirected graph lshp3466 has 3466 nodes and 13681 unweighted edges, of which
-	3466 are self-loops. The graph is sparse as it has a density of 0.00199 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.89, and the node degree mode is 7. The top 5 most central nodes are 3462 (degree
-	7), 3459 (degree 7), 3458 (degree 7), 3455 (degree 7) and 3454 (degree 7).
+	The undirected graph lshp3466 has 3466 nodes and 13681 unweighted edges,
+	of which 3466 are self-loops. The graph is sparse as it has a density of
+	0.00199 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.89, and the node degree mode
+	is 7. The top 5 most central nodes are 3462 (degree 7), 3459 (degree 7),
+	3458 (degree 7), 3455 (degree 7) and 3454 (degree 7).
 	
 
 

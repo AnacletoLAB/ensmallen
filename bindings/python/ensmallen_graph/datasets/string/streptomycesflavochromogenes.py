@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:26.198774
 
-The undirected graph Streptomyces flavochromogenes has 7721 nodes and 1058826 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03553
-and has 37 connected components, where the component with most nodes has 7625 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 274.27, and the node degree mode is 2. The top 5
-most central nodes are 68199.JNZO01000048_gene5648 (degree 3556), 68199.JNZO01000011_gene5214
-(degree 2089), 68199.JNZO01000038_gene2027 (degree 2085), 68199.JNZO01000021_gene4684
-(degree 2074) and 68199.JNZO01000022_gene4419 (degree 2025).
+The undirected graph Streptomyces flavochromogenes has 7721 nodes and 1058826
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03553 and has 37 connected components, where the component
+with most nodes has 7625 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 274.27,
+and the node degree mode is 2. The top 5 most central nodes are 68199.JNZO01000048_gene5648
+(degree 3556), 68199.JNZO01000011_gene5214 (degree 2089), 68199.JNZO01000038_gene2027
+(degree 2085), 68199.JNZO01000021_gene4684 (degree 2074) and 68199.JNZO01000022_gene4419
+(degree 2025).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesFlavochromogenes(
 	
 	Datetime: 2021-02-02 18:28:26.198774
 	
-	The undirected graph Streptomyces flavochromogenes has 7721 nodes and 1058826 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03553
-	and has 37 connected components, where the component with most nodes has 7625 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 274.27, and the node degree mode is 2. The top 5
-	most central nodes are 68199.JNZO01000048_gene5648 (degree 3556), 68199.JNZO01000011_gene5214
-	(degree 2089), 68199.JNZO01000038_gene2027 (degree 2085), 68199.JNZO01000021_gene4684
-	(degree 2074) and 68199.JNZO01000022_gene4419 (degree 2025).
+	The undirected graph Streptomyces flavochromogenes has 7721 nodes and 1058826
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03553 and has 37 connected components, where the component
+	with most nodes has 7625 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 274.27,
+	and the node degree mode is 2. The top 5 most central nodes are 68199.JNZO01000048_gene5648
+	(degree 3556), 68199.JNZO01000011_gene5214 (degree 2089), 68199.JNZO01000038_gene2027
+	(degree 2085), 68199.JNZO01000021_gene4684 (degree 2074) and 68199.JNZO01000022_gene4419
+	(degree 2025).
 	
 
 

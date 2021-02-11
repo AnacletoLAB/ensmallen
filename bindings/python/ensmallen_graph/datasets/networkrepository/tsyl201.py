@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:19:57.198241
 
-The undirected graph tsyl201 has 20685 nodes and 1237821 unweighted edges, of which
-20685 are self-loops. The graph is sparse as it has a density of 0.00574 and is connected,
-as it has a single component. The graph median node degree is 96, the mean node degree
-is 118.68, and the node degree mode is 96. The top 5 most central nodes are 11814
-(degree 162), 11813 (degree 162), 11812 (degree 162), 10038 (degree 162) and 10037
-(degree 162).
+The undirected graph tsyl201 has 20685 nodes and 1237821 unweighted edges,
+of which 20685 are self-loops. The graph is sparse as it has a density
+of 0.00574 and is connected, as it has a single component. The graph median
+node degree is 96, the mean node degree is 118.68, and the node degree
+mode is 96. The top 5 most central nodes are 11814 (degree 162), 11813
+(degree 162), 11812 (degree 162), 10038 (degree 162) and 10037 (degree
+162).
 
 
 References
@@ -102,12 +103,13 @@ def Tsyl201(
 	
 	Datetime: 2021-02-06 12:19:57.198241
 	
-	The undirected graph tsyl201 has 20685 nodes and 1237821 unweighted edges, of which
-	20685 are self-loops. The graph is sparse as it has a density of 0.00574 and is connected,
-	as it has a single component. The graph median node degree is 96, the mean node degree
-	is 118.68, and the node degree mode is 96. The top 5 most central nodes are 11814
-	(degree 162), 11813 (degree 162), 11812 (degree 162), 10038 (degree 162) and 10037
-	(degree 162).
+	The undirected graph tsyl201 has 20685 nodes and 1237821 unweighted edges,
+	of which 20685 are self-loops. The graph is sparse as it has a density
+	of 0.00574 and is connected, as it has a single component. The graph median
+	node degree is 96, the mean node degree is 118.68, and the node degree
+	mode is 96. The top 5 most central nodes are 11814 (degree 162), 11813
+	(degree 162), 11812 (degree 162), 10038 (degree 162) and 10037 (degree
+	162).
 	
 
 

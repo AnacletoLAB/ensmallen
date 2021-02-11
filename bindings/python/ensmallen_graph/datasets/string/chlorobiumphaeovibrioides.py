@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:54.929961
 
-The undirected graph Chlorobium phaeovibrioides has 1751 nodes and 105519 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06887
-and has 2 connected components, where the component with most nodes has 1748 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 96, the mean node degree is 120.52, and the node degree mode is 3. The top 5 most
-central nodes are 290318.Cvib_0424 (degree 985), 290318.Cvib_1434 (degree 845), 290318.Cvib_0771
-(degree 671), 290318.Cvib_0436 (degree 667) and 290318.Cvib_1589 (degree 624).
+The undirected graph Chlorobium phaeovibrioides has 1751 nodes and 105519
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06887 and has 2 connected components, where the component
+with most nodes has 1748 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 96, the mean node degree is 120.52,
+and the node degree mode is 3. The top 5 most central nodes are 290318.Cvib_0424
+(degree 985), 290318.Cvib_1434 (degree 845), 290318.Cvib_0771 (degree 671),
+290318.Cvib_0436 (degree 667) and 290318.Cvib_1589 (degree 624).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorobiumPhaeovibrioides(
 	
 	Datetime: 2021-02-02 20:19:54.929961
 	
-	The undirected graph Chlorobium phaeovibrioides has 1751 nodes and 105519 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06887
-	and has 2 connected components, where the component with most nodes has 1748 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 96, the mean node degree is 120.52, and the node degree mode is 3. The top 5 most
-	central nodes are 290318.Cvib_0424 (degree 985), 290318.Cvib_1434 (degree 845), 290318.Cvib_0771
-	(degree 671), 290318.Cvib_0436 (degree 667) and 290318.Cvib_1589 (degree 624).
+	The undirected graph Chlorobium phaeovibrioides has 1751 nodes and 105519
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06887 and has 2 connected components, where the component
+	with most nodes has 1748 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 96, the mean node degree is 120.52,
+	and the node degree mode is 3. The top 5 most central nodes are 290318.Cvib_0424
+	(degree 985), 290318.Cvib_1434 (degree 845), 290318.Cvib_0771 (degree 671),
+	290318.Cvib_0436 (degree 667) and 290318.Cvib_1589 (degree 624).
 	
 
 

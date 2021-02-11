@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:02.766437
 
-The undirected graph Gordonia effusa has 4387 nodes and 478084 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04969 and
-has 20 connected components, where the component with most nodes has 4328 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 217.95, and the node degree mode is 3. The top 5 most central
-nodes are 1077974.GOEFS_121_00250 (degree 1630), 1077974.GOEFS_036_00410 (degree
-1386), 1077974.GOEFS_105_01140 (degree 1381), 1077974.GOEFS_073_00440 (degree 1270)
-and 1077974.GOEFS_105_00430 (degree 1233).
+The undirected graph Gordonia effusa has 4387 nodes and 478084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04969 and has 20 connected components, where the component with most
+nodes has 4328 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 217.95, and
+the node degree mode is 3. The top 5 most central nodes are 1077974.GOEFS_121_00250
+(degree 1630), 1077974.GOEFS_036_00410 (degree 1386), 1077974.GOEFS_105_01140
+(degree 1381), 1077974.GOEFS_073_00440 (degree 1270) and 1077974.GOEFS_105_00430
+(degree 1233).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaEffusa(
 	
 	Datetime: 2021-02-02 22:20:02.766437
 	
-	The undirected graph Gordonia effusa has 4387 nodes and 478084 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04969 and
-	has 20 connected components, where the component with most nodes has 4328 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 217.95, and the node degree mode is 3. The top 5 most central
-	nodes are 1077974.GOEFS_121_00250 (degree 1630), 1077974.GOEFS_036_00410 (degree
-	1386), 1077974.GOEFS_105_01140 (degree 1381), 1077974.GOEFS_073_00440 (degree 1270)
-	and 1077974.GOEFS_105_00430 (degree 1233).
+	The undirected graph Gordonia effusa has 4387 nodes and 478084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04969 and has 20 connected components, where the component with most
+	nodes has 4328 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 217.95, and
+	the node degree mode is 3. The top 5 most central nodes are 1077974.GOEFS_121_00250
+	(degree 1630), 1077974.GOEFS_036_00410 (degree 1386), 1077974.GOEFS_105_01140
+	(degree 1381), 1077974.GOEFS_073_00440 (degree 1270) and 1077974.GOEFS_105_00430
+	(degree 1233).
 	
 
 

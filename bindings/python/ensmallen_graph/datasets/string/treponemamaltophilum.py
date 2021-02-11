@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:52.504848
 
-The undirected graph Treponema maltophilum has 2277 nodes and 138325 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05338 and
-has 4 connected components, where the component with most nodes has 2271 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 121.50, and the node degree mode is 6. The top 5 most central
-nodes are 1125699.HMPREF9194_00408 (degree 856), 1125699.HMPREF9194_01404 (degree
-766), 1125699.HMPREF9194_01279 (degree 754), 1125699.HMPREF9194_00380 (degree 728)
-and 1125699.HMPREF9194_01562 (degree 679).
+The undirected graph Treponema maltophilum has 2277 nodes and 138325 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05338 and has 4 connected components, where the component with most
+nodes has 2271 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 121.50, and
+the node degree mode is 6. The top 5 most central nodes are 1125699.HMPREF9194_00408
+(degree 856), 1125699.HMPREF9194_01404 (degree 766), 1125699.HMPREF9194_01279
+(degree 754), 1125699.HMPREF9194_00380 (degree 728) and 1125699.HMPREF9194_01562
+(degree 679).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaMaltophilum(
 	
 	Datetime: 2021-02-02 22:53:52.504848
 	
-	The undirected graph Treponema maltophilum has 2277 nodes and 138325 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05338 and
-	has 4 connected components, where the component with most nodes has 2271 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 121.50, and the node degree mode is 6. The top 5 most central
-	nodes are 1125699.HMPREF9194_00408 (degree 856), 1125699.HMPREF9194_01404 (degree
-	766), 1125699.HMPREF9194_01279 (degree 754), 1125699.HMPREF9194_00380 (degree 728)
-	and 1125699.HMPREF9194_01562 (degree 679).
+	The undirected graph Treponema maltophilum has 2277 nodes and 138325 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05338 and has 4 connected components, where the component with most
+	nodes has 2271 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 121.50, and
+	the node degree mode is 6. The top 5 most central nodes are 1125699.HMPREF9194_00408
+	(degree 856), 1125699.HMPREF9194_01404 (degree 766), 1125699.HMPREF9194_01279
+	(degree 754), 1125699.HMPREF9194_00380 (degree 728) and 1125699.HMPREF9194_01562
+	(degree 679).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:16.899957
 
-The undirected graph Shimwellia blattae has 3895 nodes and 376218 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04961 and
-has 3 connected components, where the component with most nodes has 3890 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 193.18, and the node degree mode is 5. The top 5 most central
-nodes are 630626.EBL_c39420 (degree 1265), 630626.EBL_c10530 (degree 1070), 630626.EBL_c03680
-(degree 1065), 630626.EBL_c19740 (degree 1057) and 630626.EBL_c03650 (degree 1028).
+The undirected graph Shimwellia blattae has 3895 nodes and 376218 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04961 and has 3 connected components, where the component with most
+nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 193.18, and
+the node degree mode is 5. The top 5 most central nodes are 630626.EBL_c39420
+(degree 1265), 630626.EBL_c10530 (degree 1070), 630626.EBL_c03680 (degree
+1065), 630626.EBL_c19740 (degree 1057) and 630626.EBL_c03650 (degree 1028).
 
 
 References
@@ -106,13 +107,14 @@ def ShimwelliaBlattae(
 	
 	Datetime: 2021-02-02 21:21:16.899957
 	
-	The undirected graph Shimwellia blattae has 3895 nodes and 376218 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04961 and
-	has 3 connected components, where the component with most nodes has 3890 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 193.18, and the node degree mode is 5. The top 5 most central
-	nodes are 630626.EBL_c39420 (degree 1265), 630626.EBL_c10530 (degree 1070), 630626.EBL_c03680
-	(degree 1065), 630626.EBL_c19740 (degree 1057) and 630626.EBL_c03650 (degree 1028).
+	The undirected graph Shimwellia blattae has 3895 nodes and 376218 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04961 and has 3 connected components, where the component with most
+	nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 193.18, and
+	the node degree mode is 5. The top 5 most central nodes are 630626.EBL_c39420
+	(degree 1265), 630626.EBL_c10530 (degree 1070), 630626.EBL_c03680 (degree
+	1065), 630626.EBL_c19740 (degree 1057) and 630626.EBL_c03650 (degree 1028).
 	
 
 

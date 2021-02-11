@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:16.237865
 
-The undirected graph Pyrenophora triticirepentis has 7393 nodes and 708077 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02591
-and has 29 connected components, where the component with most nodes has 7335 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 191.55, and the node degree mode is 1. The top 5
-most central nodes are 45151.EDU43102 (degree 1796), 45151.EDU44462 (degree 1548),
-45151.EDU44538 (degree 1516), 45151.EDU46538 (degree 1494) and 45151.EDU40929 (degree
-1478).
+The undirected graph Pyrenophora triticirepentis has 7393 nodes and 708077
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02591 and has 29 connected components, where the component
+with most nodes has 7335 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 191.55,
+and the node degree mode is 1. The top 5 most central nodes are 45151.EDU43102
+(degree 1796), 45151.EDU44462 (degree 1548), 45151.EDU44538 (degree 1516),
+45151.EDU46538 (degree 1494) and 45151.EDU40929 (degree 1478).
 
 
 References
@@ -107,14 +107,14 @@ def PyrenophoraTriticirepentis(
 	
 	Datetime: 2021-02-02 18:15:16.237865
 	
-	The undirected graph Pyrenophora triticirepentis has 7393 nodes and 708077 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02591
-	and has 29 connected components, where the component with most nodes has 7335 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 191.55, and the node degree mode is 1. The top 5
-	most central nodes are 45151.EDU43102 (degree 1796), 45151.EDU44462 (degree 1548),
-	45151.EDU44538 (degree 1516), 45151.EDU46538 (degree 1494) and 45151.EDU40929 (degree
-	1478).
+	The undirected graph Pyrenophora triticirepentis has 7393 nodes and 708077
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02591 and has 29 connected components, where the component
+	with most nodes has 7335 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 191.55,
+	and the node degree mode is 1. The top 5 most central nodes are 45151.EDU43102
+	(degree 1796), 45151.EDU44462 (degree 1548), 45151.EDU44538 (degree 1516),
+	45151.EDU46538 (degree 1494) and 45151.EDU40929 (degree 1478).
 	
 
 

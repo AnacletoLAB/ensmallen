@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:32.372593
 
-The undirected graph Saccharopolyspora rectivirgula has 3184 nodes and 357158 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07048
-and has 14 connected components, where the component with most nodes has 3147 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 224.35, and the node degree mode is 1. The top 5
-most central nodes are 28042.GU90_01905 (degree 1392), 28042.GU90_00525 (degree 1177),
-28042.GU90_04890 (degree 932), 28042.GU90_13950 (degree 925) and 28042.GU90_08580
-(degree 914).
+The undirected graph Saccharopolyspora rectivirgula has 3184 nodes and
+357158 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07048 and has 14 connected components, where the
+component with most nodes has 3147 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 204, the mean node degree
+is 224.35, and the node degree mode is 1. The top 5 most central nodes
+are 28042.GU90_01905 (degree 1392), 28042.GU90_00525 (degree 1177), 28042.GU90_04890
+(degree 932), 28042.GU90_13950 (degree 925) and 28042.GU90_08580 (degree
+914).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharopolysporaRectivirgula(
 	
 	Datetime: 2021-02-02 17:55:32.372593
 	
-	The undirected graph Saccharopolyspora rectivirgula has 3184 nodes and 357158 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07048
-	and has 14 connected components, where the component with most nodes has 3147 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 224.35, and the node degree mode is 1. The top 5
-	most central nodes are 28042.GU90_01905 (degree 1392), 28042.GU90_00525 (degree 1177),
-	28042.GU90_04890 (degree 932), 28042.GU90_13950 (degree 925) and 28042.GU90_08580
-	(degree 914).
+	The undirected graph Saccharopolyspora rectivirgula has 3184 nodes and
+	357158 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07048 and has 14 connected components, where the
+	component with most nodes has 3147 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 204, the mean node degree
+	is 224.35, and the node degree mode is 1. The top 5 most central nodes
+	are 28042.GU90_01905 (degree 1392), 28042.GU90_00525 (degree 1177), 28042.GU90_04890
+	(degree 932), 28042.GU90_13950 (degree 925) and 28042.GU90_08580 (degree
+	914).
 	
 
 

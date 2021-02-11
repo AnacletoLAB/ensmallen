@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:52.367542
 
-The undirected graph Bifidobacterium dentium has 2099 nodes and 132982 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06040 and
-has 9 connected components, where the component with most nodes has 2076 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 126.71, and the node degree mode is 5. The top 5 most central
-nodes are 401473.BDP_0362 (degree 900), 401473.BDP_0991 (degree 839), 401473.BDP_1298
-(degree 722), 401473.BDP_0621 (degree 666) and 401473.BDP_1005 (degree 664).
+The undirected graph Bifidobacterium dentium has 2099 nodes and 132982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06040 and has 9 connected components, where the component
+with most nodes has 2076 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 126.71,
+and the node degree mode is 5. The top 5 most central nodes are 401473.BDP_0362
+(degree 900), 401473.BDP_0991 (degree 839), 401473.BDP_1298 (degree 722),
+401473.BDP_0621 (degree 666) and 401473.BDP_1005 (degree 664).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumDentium(
 	
 	Datetime: 2021-02-02 20:43:52.367542
 	
-	The undirected graph Bifidobacterium dentium has 2099 nodes and 132982 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06040 and
-	has 9 connected components, where the component with most nodes has 2076 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 126.71, and the node degree mode is 5. The top 5 most central
-	nodes are 401473.BDP_0362 (degree 900), 401473.BDP_0991 (degree 839), 401473.BDP_1298
-	(degree 722), 401473.BDP_0621 (degree 666) and 401473.BDP_1005 (degree 664).
+	The undirected graph Bifidobacterium dentium has 2099 nodes and 132982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06040 and has 9 connected components, where the component
+	with most nodes has 2076 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 126.71,
+	and the node degree mode is 5. The top 5 most central nodes are 401473.BDP_0362
+	(degree 900), 401473.BDP_0991 (degree 839), 401473.BDP_1298 (degree 722),
+	401473.BDP_0621 (degree 666) and 401473.BDP_1005 (degree 664).
 	
 
 

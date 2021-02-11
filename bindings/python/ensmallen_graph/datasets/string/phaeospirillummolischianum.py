@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:57.668116
 
-The undirected graph Phaeospirillum molischianum has 3748 nodes and 462625 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06588
-and has 28 connected components, where the component with most nodes has 3674 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 201, the mean node degree is 246.86, and the node degree mode is 2. The top 5
-most central nodes are 1150626.PHAMO_170044 (degree 1465), 1150626.PHAMO_220075 (degree
-1380), 1150626.PHAMO_270290 (degree 1312), 1150626.PHAMO_210102 (degree 1279) and
-1150626.PHAMO_270137 (degree 1260).
+The undirected graph Phaeospirillum molischianum has 3748 nodes and 462625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06588 and has 28 connected components, where the component
+with most nodes has 3674 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 246.86,
+and the node degree mode is 2. The top 5 most central nodes are 1150626.PHAMO_170044
+(degree 1465), 1150626.PHAMO_220075 (degree 1380), 1150626.PHAMO_270290
+(degree 1312), 1150626.PHAMO_210102 (degree 1279) and 1150626.PHAMO_270137
+(degree 1260).
 
 
 References
@@ -107,14 +108,15 @@ def PhaeospirillumMolischianum(
 	
 	Datetime: 2021-02-02 22:59:57.668116
 	
-	The undirected graph Phaeospirillum molischianum has 3748 nodes and 462625 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06588
-	and has 28 connected components, where the component with most nodes has 3674 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 201, the mean node degree is 246.86, and the node degree mode is 2. The top 5
-	most central nodes are 1150626.PHAMO_170044 (degree 1465), 1150626.PHAMO_220075 (degree
-	1380), 1150626.PHAMO_270290 (degree 1312), 1150626.PHAMO_210102 (degree 1279) and
-	1150626.PHAMO_270137 (degree 1260).
+	The undirected graph Phaeospirillum molischianum has 3748 nodes and 462625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06588 and has 28 connected components, where the component
+	with most nodes has 3674 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 246.86,
+	and the node degree mode is 2. The top 5 most central nodes are 1150626.PHAMO_170044
+	(degree 1465), 1150626.PHAMO_220075 (degree 1380), 1150626.PHAMO_270290
+	(degree 1312), 1150626.PHAMO_210102 (degree 1279) and 1150626.PHAMO_270137
+	(degree 1260).
 	
 
 

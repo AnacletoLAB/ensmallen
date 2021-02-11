@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:57.418564
 
-The undirected graph Pyrobaculum calidifontis has 2129 nodes and 151087 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06670
-and has 13 connected components, where the component with most nodes has 2094 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 141.93, and the node degree mode is 3. The top 5
-most central nodes are 410359.Pcal_0632 (degree 761), 410359.Pcal_0817 (degree 713),
-410359.Pcal_1387 (degree 687), 410359.Pcal_1052 (degree 680) and 410359.Pcal_1771
-(degree 670).
+The undirected graph Pyrobaculum calidifontis has 2129 nodes and 151087
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06670 and has 13 connected components, where the component
+with most nodes has 2094 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 141.93,
+and the node degree mode is 3. The top 5 most central nodes are 410359.Pcal_0632
+(degree 761), 410359.Pcal_0817 (degree 713), 410359.Pcal_1387 (degree 687),
+410359.Pcal_1052 (degree 680) and 410359.Pcal_1771 (degree 670).
 
 
 References
@@ -107,14 +107,14 @@ def PyrobaculumCalidifontis(
 	
 	Datetime: 2021-02-02 20:44:57.418564
 	
-	The undirected graph Pyrobaculum calidifontis has 2129 nodes and 151087 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06670
-	and has 13 connected components, where the component with most nodes has 2094 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 141.93, and the node degree mode is 3. The top 5
-	most central nodes are 410359.Pcal_0632 (degree 761), 410359.Pcal_0817 (degree 713),
-	410359.Pcal_1387 (degree 687), 410359.Pcal_1052 (degree 680) and 410359.Pcal_1771
-	(degree 670).
+	The undirected graph Pyrobaculum calidifontis has 2129 nodes and 151087
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06670 and has 13 connected components, where the component
+	with most nodes has 2094 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 141.93,
+	and the node degree mode is 3. The top 5 most central nodes are 410359.Pcal_0632
+	(degree 761), 410359.Pcal_0817 (degree 713), 410359.Pcal_1387 (degree 687),
+	410359.Pcal_1052 (degree 680) and 410359.Pcal_1771 (degree 670).
 	
 
 

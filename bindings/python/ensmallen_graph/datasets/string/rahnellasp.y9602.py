@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:58.546742
 
-The undirected graph Rahnella sp. Y9602 has 4961 nodes and 417727 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03395 and
-has 13 connected components, where the component with most nodes has 4934 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 168.40, and the node degree mode is 1. The top 5 most central
-nodes are 741091.Rahaq_2080 (degree 1515), 741091.Rahaq_4389 (degree 1511), 741091.Rahaq_3956
-(degree 1334), 741091.Rahaq_1057 (degree 1220) and 741091.Rahaq_3955 (degree 1208).
+The undirected graph Rahnella sp. Y9602 has 4961 nodes and 417727 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03395 and has 13 connected components, where the component with most
+nodes has 4934 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 168.40, and
+the node degree mode is 1. The top 5 most central nodes are 741091.Rahaq_2080
+(degree 1515), 741091.Rahaq_4389 (degree 1511), 741091.Rahaq_3956 (degree
+1334), 741091.Rahaq_1057 (degree 1220) and 741091.Rahaq_3955 (degree 1208).
 
 
 References
@@ -106,13 +107,14 @@ def RahnellaSp.Y9602(
 	
 	Datetime: 2021-02-02 21:36:58.546742
 	
-	The undirected graph Rahnella sp. Y9602 has 4961 nodes and 417727 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03395 and
-	has 13 connected components, where the component with most nodes has 4934 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 168.40, and the node degree mode is 1. The top 5 most central
-	nodes are 741091.Rahaq_2080 (degree 1515), 741091.Rahaq_4389 (degree 1511), 741091.Rahaq_3956
-	(degree 1334), 741091.Rahaq_1057 (degree 1220) and 741091.Rahaq_3955 (degree 1208).
+	The undirected graph Rahnella sp. Y9602 has 4961 nodes and 417727 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03395 and has 13 connected components, where the component with most
+	nodes has 4934 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 168.40, and
+	the node degree mode is 1. The top 5 most central nodes are 741091.Rahaq_2080
+	(degree 1515), 741091.Rahaq_4389 (degree 1511), 741091.Rahaq_3956 (degree
+	1334), 741091.Rahaq_1057 (degree 1220) and 741091.Rahaq_3955 (degree 1208).
 	
 
 

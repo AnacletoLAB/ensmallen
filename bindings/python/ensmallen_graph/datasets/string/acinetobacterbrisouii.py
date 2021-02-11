@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:04.344962
 
-The undirected graph Acinetobacter brisouii has 2895 nodes and 251421 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06002 and
-has 8 connected components, where the component with most nodes has 2879 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 173.69, and the node degree mode is 3. The top 5 most central
-nodes are 1217652.F954_01653 (degree 1101), 1217652.F954_01971 (degree 945), 1217652.F954_01959
-(degree 919), 1217652.F954_02416 (degree 906) and 1217652.F954_01561 (degree 904).
+The undirected graph Acinetobacter brisouii has 2895 nodes and 251421 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06002 and has 8 connected components, where the component with most
+nodes has 2879 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 173.69, and
+the node degree mode is 3. The top 5 most central nodes are 1217652.F954_01653
+(degree 1101), 1217652.F954_01971 (degree 945), 1217652.F954_01959 (degree
+919), 1217652.F954_02416 (degree 906) and 1217652.F954_01561 (degree 904).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterBrisouii(
 	
 	Datetime: 2021-02-02 23:21:04.344962
 	
-	The undirected graph Acinetobacter brisouii has 2895 nodes and 251421 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06002 and
-	has 8 connected components, where the component with most nodes has 2879 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 173.69, and the node degree mode is 3. The top 5 most central
-	nodes are 1217652.F954_01653 (degree 1101), 1217652.F954_01971 (degree 945), 1217652.F954_01959
-	(degree 919), 1217652.F954_02416 (degree 906) and 1217652.F954_01561 (degree 904).
+	The undirected graph Acinetobacter brisouii has 2895 nodes and 251421 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06002 and has 8 connected components, where the component with most
+	nodes has 2879 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 173.69, and
+	the node degree mode is 3. The top 5 most central nodes are 1217652.F954_01653
+	(degree 1101), 1217652.F954_01971 (degree 945), 1217652.F954_01959 (degree
+	919), 1217652.F954_02416 (degree 906) and 1217652.F954_01561 (degree 904).
 	
 
 

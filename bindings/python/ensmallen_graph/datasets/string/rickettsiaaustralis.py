@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:48.178609
 
-The undirected graph Rickettsia australis has 1195 nodes and 56150 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07871 and
-has 29 connected components, where the component with most nodes has 1130 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 69,
-the mean node degree is 93.97, and the node degree mode is 1. The top 5 most central
-nodes are 1105110.MC5_01815 (degree 502), 1105110.MC5_04130 (degree 459), 1105110.MC5_04935
-(degree 420), 1105110.MC5_03870 (degree 396) and 1105110.MC5_06835 (degree 378).
+The undirected graph Rickettsia australis has 1195 nodes and 56150 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07871 and has 29 connected components, where the component with most
+nodes has 1130 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 69, the mean node degree is 93.97, and
+the node degree mode is 1. The top 5 most central nodes are 1105110.MC5_01815
+(degree 502), 1105110.MC5_04130 (degree 459), 1105110.MC5_04935 (degree
+420), 1105110.MC5_03870 (degree 396) and 1105110.MC5_06835 (degree 378).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaAustralis(
 	
 	Datetime: 2021-02-02 22:24:48.178609
 	
-	The undirected graph Rickettsia australis has 1195 nodes and 56150 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07871 and
-	has 29 connected components, where the component with most nodes has 1130 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 69,
-	the mean node degree is 93.97, and the node degree mode is 1. The top 5 most central
-	nodes are 1105110.MC5_01815 (degree 502), 1105110.MC5_04130 (degree 459), 1105110.MC5_04935
-	(degree 420), 1105110.MC5_03870 (degree 396) and 1105110.MC5_06835 (degree 378).
+	The undirected graph Rickettsia australis has 1195 nodes and 56150 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07871 and has 29 connected components, where the component with most
+	nodes has 1130 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 69, the mean node degree is 93.97, and
+	the node degree mode is 1. The top 5 most central nodes are 1105110.MC5_01815
+	(degree 502), 1105110.MC5_04130 (degree 459), 1105110.MC5_04935 (degree
+	420), 1105110.MC5_03870 (degree 396) and 1105110.MC5_06835 (degree 378).
 	
 
 

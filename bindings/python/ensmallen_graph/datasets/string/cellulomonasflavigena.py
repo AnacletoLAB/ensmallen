@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:28.835492
 
-The undirected graph Cellulomonas flavigena has 3666 nodes and 259084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03857 and
-has 10 connected components, where the component with most nodes has 3646 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 141.34, and the node degree mode is 5. The top 5 most central
-nodes are 446466.Cfla_1969 (degree 1057), 446466.Cfla_1982 (degree 952), 446466.Cfla_1718
-(degree 912), 446466.Cfla_1630 (degree 899) and 446466.Cfla_2585 (degree 893).
+The undirected graph Cellulomonas flavigena has 3666 nodes and 259084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03857 and has 10 connected components, where the component with most
+nodes has 3646 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 141.34, and
+the node degree mode is 5. The top 5 most central nodes are 446466.Cfla_1969
+(degree 1057), 446466.Cfla_1982 (degree 952), 446466.Cfla_1718 (degree
+912), 446466.Cfla_1630 (degree 899) and 446466.Cfla_2585 (degree 893).
 
 
 References
@@ -106,13 +107,14 @@ def CellulomonasFlavigena(
 	
 	Datetime: 2021-02-02 20:51:28.835492
 	
-	The undirected graph Cellulomonas flavigena has 3666 nodes and 259084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03857 and
-	has 10 connected components, where the component with most nodes has 3646 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 141.34, and the node degree mode is 5. The top 5 most central
-	nodes are 446466.Cfla_1969 (degree 1057), 446466.Cfla_1982 (degree 952), 446466.Cfla_1718
-	(degree 912), 446466.Cfla_1630 (degree 899) and 446466.Cfla_2585 (degree 893).
+	The undirected graph Cellulomonas flavigena has 3666 nodes and 259084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03857 and has 10 connected components, where the component with most
+	nodes has 3646 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 141.34, and
+	the node degree mode is 5. The top 5 most central nodes are 446466.Cfla_1969
+	(degree 1057), 446466.Cfla_1982 (degree 952), 446466.Cfla_1718 (degree
+	912), 446466.Cfla_1630 (degree 899) and 446466.Cfla_2585 (degree 893).
 	
 
 

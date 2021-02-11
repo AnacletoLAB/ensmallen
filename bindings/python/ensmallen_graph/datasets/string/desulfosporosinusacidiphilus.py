@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:12.037959
 
-The undirected graph Desulfosporosinus acidiphilus has 4369 nodes and 348356 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03651
-and has 31 connected components, where the component with most nodes has 4295 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 159.47, and the node degree mode is 1. The top 5
-most central nodes are 646529.Desaci_1776 (degree 1400), 646529.Desaci_0597 (degree
-1353), 646529.Desaci_3292 (degree 1332), 646529.Desaci_0857 (degree 1325) and 646529.Desaci_0373
-(degree 1171).
+The undirected graph Desulfosporosinus acidiphilus has 4369 nodes and 348356
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03651 and has 31 connected components, where the component
+with most nodes has 4295 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 159.47,
+and the node degree mode is 1. The top 5 most central nodes are 646529.Desaci_1776
+(degree 1400), 646529.Desaci_0597 (degree 1353), 646529.Desaci_3292 (degree
+1332), 646529.Desaci_0857 (degree 1325) and 646529.Desaci_0373 (degree
+1171).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfosporosinusAcidiphilus(
 	
 	Datetime: 2021-02-02 21:25:12.037959
 	
-	The undirected graph Desulfosporosinus acidiphilus has 4369 nodes and 348356 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03651
-	and has 31 connected components, where the component with most nodes has 4295 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 159.47, and the node degree mode is 1. The top 5
-	most central nodes are 646529.Desaci_1776 (degree 1400), 646529.Desaci_0597 (degree
-	1353), 646529.Desaci_3292 (degree 1332), 646529.Desaci_0857 (degree 1325) and 646529.Desaci_0373
-	(degree 1171).
+	The undirected graph Desulfosporosinus acidiphilus has 4369 nodes and 348356
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03651 and has 31 connected components, where the component
+	with most nodes has 4295 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 159.47,
+	and the node degree mode is 1. The top 5 most central nodes are 646529.Desaci_1776
+	(degree 1400), 646529.Desaci_0597 (degree 1353), 646529.Desaci_3292 (degree
+	1332), 646529.Desaci_0857 (degree 1325) and 646529.Desaci_0373 (degree
+	1171).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:30.932769
 
-The undirected graph Prochlorococcus sp. MIT0701 has 2870 nodes and 133358 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03239
-and has 130 connected components, where the component with most nodes has 2528 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 61, the mean node degree is 92.93, and the node degree mode is 2. The top 5 most
-central nodes are 1499502.EV12_0194 (degree 791), 1499502.EV12_1734 (degree 631),
-1499502.EV12_1447 (degree 629), 1499502.EV12_0240 (degree 620) and 1499502.EV12_2836
-(degree 617).
+The undirected graph Prochlorococcus sp. MIT0701 has 2870 nodes and 133358
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03239 and has 130 connected components, where the component
+with most nodes has 2528 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 61, the mean node degree is 92.93,
+and the node degree mode is 2. The top 5 most central nodes are 1499502.EV12_0194
+(degree 791), 1499502.EV12_1734 (degree 631), 1499502.EV12_1447 (degree
+629), 1499502.EV12_0240 (degree 620) and 1499502.EV12_2836 (degree 617).
 
 
 References
@@ -107,14 +107,14 @@ def ProchlorococcusSp.Mit0701(
 	
 	Datetime: 2021-02-03 23:14:30.932769
 	
-	The undirected graph Prochlorococcus sp. MIT0701 has 2870 nodes and 133358 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03239
-	and has 130 connected components, where the component with most nodes has 2528 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 61, the mean node degree is 92.93, and the node degree mode is 2. The top 5 most
-	central nodes are 1499502.EV12_0194 (degree 791), 1499502.EV12_1734 (degree 631),
-	1499502.EV12_1447 (degree 629), 1499502.EV12_0240 (degree 620) and 1499502.EV12_2836
-	(degree 617).
+	The undirected graph Prochlorococcus sp. MIT0701 has 2870 nodes and 133358
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03239 and has 130 connected components, where the component
+	with most nodes has 2528 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 61, the mean node degree is 92.93,
+	and the node degree mode is 2. The top 5 most central nodes are 1499502.EV12_0194
+	(degree 791), 1499502.EV12_1734 (degree 631), 1499502.EV12_1447 (degree
+	629), 1499502.EV12_0240 (degree 620) and 1499502.EV12_2836 (degree 617).
 	
 
 

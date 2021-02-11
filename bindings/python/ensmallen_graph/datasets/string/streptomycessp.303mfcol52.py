@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:15.299660
 
-The undirected graph Streptomyces sp. 303MFCol52 has 8165 nodes and 1337881 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04014
-and has 32 connected components, where the component with most nodes has 8093 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 270, the mean node degree is 327.71, and the node degree mode is 2. The top 5
-most central nodes are 1172181.KB911698_gene5563 (degree 3914), 1172181.KB911713_gene4438
-(degree 2400), 1172181.KB911729_gene7320 (degree 2387), 1172181.KB911700_gene7984
-(degree 2281) and 1172181.KB911732_gene3963 (degree 2212).
+The undirected graph Streptomyces sp. 303MFCol52 has 8165 nodes and 1337881
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04014 and has 32 connected components, where the component
+with most nodes has 8093 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 270, the mean node degree is 327.71,
+and the node degree mode is 2. The top 5 most central nodes are 1172181.KB911698_gene5563
+(degree 3914), 1172181.KB911713_gene4438 (degree 2400), 1172181.KB911729_gene7320
+(degree 2387), 1172181.KB911700_gene7984 (degree 2281) and 1172181.KB911732_gene3963
+(degree 2212).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.303mfcol52(
 	
 	Datetime: 2021-02-02 23:07:15.299660
 	
-	The undirected graph Streptomyces sp. 303MFCol52 has 8165 nodes and 1337881 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04014
-	and has 32 connected components, where the component with most nodes has 8093 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 270, the mean node degree is 327.71, and the node degree mode is 2. The top 5
-	most central nodes are 1172181.KB911698_gene5563 (degree 3914), 1172181.KB911713_gene4438
-	(degree 2400), 1172181.KB911729_gene7320 (degree 2387), 1172181.KB911700_gene7984
-	(degree 2281) and 1172181.KB911732_gene3963 (degree 2212).
+	The undirected graph Streptomyces sp. 303MFCol52 has 8165 nodes and 1337881
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04014 and has 32 connected components, where the component
+	with most nodes has 8093 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 270, the mean node degree is 327.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1172181.KB911698_gene5563
+	(degree 3914), 1172181.KB911713_gene4438 (degree 2400), 1172181.KB911729_gene7320
+	(degree 2387), 1172181.KB911700_gene7984 (degree 2281) and 1172181.KB911732_gene3963
+	(degree 2212).
 	
 
 

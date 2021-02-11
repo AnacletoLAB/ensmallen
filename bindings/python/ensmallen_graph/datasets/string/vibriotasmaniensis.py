@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:20.466686
 
-The undirected graph Vibrio tasmaniensis has 4381 nodes and 342428 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03569 and
-has 19 connected components, where the component with most nodes has 4336 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 156.32, and the node degree mode is 2. The top 5 most central
-nodes are 575788.VS_0108 (degree 1448), 575788.VS_2215 (degree 1183), 575788.VS_0629
-(degree 1174), 575788.VS_2505 (degree 1008) and 575788.VS_1009 (degree 1002).
+The undirected graph Vibrio tasmaniensis has 4381 nodes and 342428 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03569 and has 19 connected components, where the component with most
+nodes has 4336 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 156.32, and
+the node degree mode is 2. The top 5 most central nodes are 575788.VS_0108
+(degree 1448), 575788.VS_2215 (degree 1183), 575788.VS_0629 (degree 1174),
+575788.VS_2505 (degree 1008) and 575788.VS_1009 (degree 1002).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioTasmaniensis(
 	
 	Datetime: 2021-02-02 21:15:20.466686
 	
-	The undirected graph Vibrio tasmaniensis has 4381 nodes and 342428 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03569 and
-	has 19 connected components, where the component with most nodes has 4336 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 156.32, and the node degree mode is 2. The top 5 most central
-	nodes are 575788.VS_0108 (degree 1448), 575788.VS_2215 (degree 1183), 575788.VS_0629
-	(degree 1174), 575788.VS_2505 (degree 1008) and 575788.VS_1009 (degree 1002).
+	The undirected graph Vibrio tasmaniensis has 4381 nodes and 342428 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03569 and has 19 connected components, where the component with most
+	nodes has 4336 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 156.32, and
+	the node degree mode is 2. The top 5 most central nodes are 575788.VS_0108
+	(degree 1448), 575788.VS_2215 (degree 1183), 575788.VS_0629 (degree 1174),
+	575788.VS_2505 (degree 1008) and 575788.VS_1009 (degree 1002).
 	
 
 

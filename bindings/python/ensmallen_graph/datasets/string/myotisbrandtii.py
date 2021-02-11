@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:07.792597
 
-The undirected graph Myotis brandtii has 19156 nodes and 4429877 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02415 and
-has 2 connected components, where the component with most nodes has 19154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 332,
-the mean node degree is 462.51, and the node degree mode is 10. The top 5 most central
-nodes are 109478.XP_005857492.1 (degree 5130), 109478.XP_005861698.1 (degree 4615),
-109478.XP_005880330.1 (degree 4335), 109478.XP_005885794.1 (degree 4201) and 109478.XP_005875561.1
+The undirected graph Myotis brandtii has 19156 nodes and 4429877 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02415 and has 2 connected components, where the component with most
+nodes has 19154 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 332, the mean node degree is 462.51, and
+the node degree mode is 10. The top 5 most central nodes are 109478.XP_005857492.1
+(degree 5130), 109478.XP_005861698.1 (degree 4615), 109478.XP_005880330.1
+(degree 4335), 109478.XP_005885794.1 (degree 4201) and 109478.XP_005875561.1
 (degree 3744).
 
 
@@ -107,13 +108,14 @@ def MyotisBrandtii(
 	
 	Datetime: 2021-02-02 19:46:07.792597
 	
-	The undirected graph Myotis brandtii has 19156 nodes and 4429877 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02415 and
-	has 2 connected components, where the component with most nodes has 19154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 332,
-	the mean node degree is 462.51, and the node degree mode is 10. The top 5 most central
-	nodes are 109478.XP_005857492.1 (degree 5130), 109478.XP_005861698.1 (degree 4615),
-	109478.XP_005880330.1 (degree 4335), 109478.XP_005885794.1 (degree 4201) and 109478.XP_005875561.1
+	The undirected graph Myotis brandtii has 19156 nodes and 4429877 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02415 and has 2 connected components, where the component with most
+	nodes has 19154 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 332, the mean node degree is 462.51, and
+	the node degree mode is 10. The top 5 most central nodes are 109478.XP_005857492.1
+	(degree 5130), 109478.XP_005861698.1 (degree 4615), 109478.XP_005880330.1
+	(degree 4335), 109478.XP_005885794.1 (degree 4201) and 109478.XP_005875561.1
 	(degree 3744).
 	
 

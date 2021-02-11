@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:33.046815
 
-The undirected graph Clavibacter michiganensis sepedonicus has 3044 nodes and 237266
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05123 and has 14 connected components, where the component with most nodes has
-3008 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 137, the mean node degree is 155.89, and the node degree mode is 3. The
-top 5 most central nodes are 31964.CMS1999 (degree 1018), 31964.CMS0540 (degree 833),
-31964.CMS0533 (degree 766), 31964.CMS1230 (degree 765) and 31964.CMS2006 (degree
-737).
+The undirected graph Clavibacter michiganensis sepedonicus has 3044 nodes
+and 237266 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05123 and has 14 connected components, where the
+component with most nodes has 3008 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 137, the mean node degree
+is 155.89, and the node degree mode is 3. The top 5 most central nodes
+are 31964.CMS1999 (degree 1018), 31964.CMS0540 (degree 833), 31964.CMS0533
+(degree 766), 31964.CMS1230 (degree 765) and 31964.CMS2006 (degree 737).
 
 
 References
@@ -107,14 +107,14 @@ def ClavibacterMichiganensisSepedonicus(
 	
 	Datetime: 2021-02-02 18:02:33.046815
 	
-	The undirected graph Clavibacter michiganensis sepedonicus has 3044 nodes and 237266
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05123 and has 14 connected components, where the component with most nodes has
-	3008 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 137, the mean node degree is 155.89, and the node degree mode is 3. The
-	top 5 most central nodes are 31964.CMS1999 (degree 1018), 31964.CMS0540 (degree 833),
-	31964.CMS0533 (degree 766), 31964.CMS1230 (degree 765) and 31964.CMS2006 (degree
-	737).
+	The undirected graph Clavibacter michiganensis sepedonicus has 3044 nodes
+	and 237266 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05123 and has 14 connected components, where the
+	component with most nodes has 3008 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 137, the mean node degree
+	is 155.89, and the node degree mode is 3. The top 5 most central nodes
+	are 31964.CMS1999 (degree 1018), 31964.CMS0540 (degree 833), 31964.CMS0533
+	(degree 766), 31964.CMS1230 (degree 765) and 31964.CMS2006 (degree 737).
 	
 
 

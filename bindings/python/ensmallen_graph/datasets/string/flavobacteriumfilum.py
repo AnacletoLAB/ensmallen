@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:07.867503
 
-The undirected graph Flavobacterium filum has 2822 nodes and 189044 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04749 and
-has 13 connected components, where the component with most nodes has 2788 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 133.98, and the node degree mode is 4. The top 5 most central
-nodes are 1121889.AUDM01000012_gene1402 (degree 1020), 1121889.AUDM01000009_gene1127
-(degree 852), 1121889.AUDM01000007_gene1000 (degree 779), 1121889.AUDM01000013_gene1848
-(degree 752) and 1121889.AUDM01000012_gene1423 (degree 683).
+The undirected graph Flavobacterium filum has 2822 nodes and 189044 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04749 and has 13 connected components, where the component with most
+nodes has 2788 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 133.98, and
+the node degree mode is 4. The top 5 most central nodes are 1121889.AUDM01000012_gene1402
+(degree 1020), 1121889.AUDM01000009_gene1127 (degree 852), 1121889.AUDM01000007_gene1000
+(degree 779), 1121889.AUDM01000013_gene1848 (degree 752) and 1121889.AUDM01000012_gene1423
+(degree 683).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumFilum(
 	
 	Datetime: 2021-02-02 22:38:07.867503
 	
-	The undirected graph Flavobacterium filum has 2822 nodes and 189044 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04749 and
-	has 13 connected components, where the component with most nodes has 2788 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 133.98, and the node degree mode is 4. The top 5 most central
-	nodes are 1121889.AUDM01000012_gene1402 (degree 1020), 1121889.AUDM01000009_gene1127
-	(degree 852), 1121889.AUDM01000007_gene1000 (degree 779), 1121889.AUDM01000013_gene1848
-	(degree 752) and 1121889.AUDM01000012_gene1423 (degree 683).
+	The undirected graph Flavobacterium filum has 2822 nodes and 189044 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04749 and has 13 connected components, where the component with most
+	nodes has 2788 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 133.98, and
+	the node degree mode is 4. The top 5 most central nodes are 1121889.AUDM01000012_gene1402
+	(degree 1020), 1121889.AUDM01000009_gene1127 (degree 852), 1121889.AUDM01000007_gene1000
+	(degree 779), 1121889.AUDM01000013_gene1848 (degree 752) and 1121889.AUDM01000012_gene1423
+	(degree 683).
 	
 
 

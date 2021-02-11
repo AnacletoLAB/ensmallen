@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:19.913986
 
-The undirected graph Haematobacter massiliensis has 3782 nodes and 435986 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06098
-and has 13 connected components, where the component with most nodes has 3756 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 230.56, and the node degree mode is 1. The top 5
-most central nodes are 195105.CN97_10575 (degree 1583), 195105.CN97_09730 (degree
-1232), 195105.CN97_00615 (degree 1127), 195105.CN97_09850 (degree 1125) and 195105.CN97_01590
-(degree 1117).
+The undirected graph Haematobacter massiliensis has 3782 nodes and 435986
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06098 and has 13 connected components, where the component
+with most nodes has 3756 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 230.56,
+and the node degree mode is 1. The top 5 most central nodes are 195105.CN97_10575
+(degree 1583), 195105.CN97_09730 (degree 1232), 195105.CN97_00615 (degree
+1127), 195105.CN97_09850 (degree 1125) and 195105.CN97_01590 (degree 1117).
 
 
 References
@@ -107,14 +107,14 @@ def HaematobacterMassiliensis(
 	
 	Datetime: 2021-02-02 19:58:19.913986
 	
-	The undirected graph Haematobacter massiliensis has 3782 nodes and 435986 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06098
-	and has 13 connected components, where the component with most nodes has 3756 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 230.56, and the node degree mode is 1. The top 5
-	most central nodes are 195105.CN97_10575 (degree 1583), 195105.CN97_09730 (degree
-	1232), 195105.CN97_00615 (degree 1127), 195105.CN97_09850 (degree 1125) and 195105.CN97_01590
-	(degree 1117).
+	The undirected graph Haematobacter massiliensis has 3782 nodes and 435986
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06098 and has 13 connected components, where the component
+	with most nodes has 3756 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 230.56,
+	and the node degree mode is 1. The top 5 most central nodes are 195105.CN97_10575
+	(degree 1583), 195105.CN97_09730 (degree 1232), 195105.CN97_00615 (degree
+	1127), 195105.CN97_09850 (degree 1125) and 195105.CN97_01590 (degree 1117).
 	
 
 

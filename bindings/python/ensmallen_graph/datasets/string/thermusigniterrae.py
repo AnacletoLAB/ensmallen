@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:14.406312
 
-The undirected graph Thermus igniterrae has 2272 nodes and 155996 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06047 and
-has 6 connected components, where the component with most nodes has 2261 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 137.32, and the node degree mode is 3. The top 5 most central
-nodes are 1123388.AQWU01000064_gene1926 (degree 943), 1123388.AQWU01000070_gene146
-(degree 830), 1123388.AQWU01000067_gene617 (degree 809), 1123388.AQWU01000065_gene1961
-(degree 739) and 1123388.AQWU01000065_gene1964 (degree 733).
+The undirected graph Thermus igniterrae has 2272 nodes and 155996 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06047 and has 6 connected components, where the component with most
+nodes has 2261 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 137.32, and
+the node degree mode is 3. The top 5 most central nodes are 1123388.AQWU01000064_gene1926
+(degree 943), 1123388.AQWU01000070_gene146 (degree 830), 1123388.AQWU01000067_gene617
+(degree 809), 1123388.AQWU01000065_gene1961 (degree 739) and 1123388.AQWU01000065_gene1964
+(degree 733).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusIgniterrae(
 	
 	Datetime: 2021-02-02 22:52:14.406312
 	
-	The undirected graph Thermus igniterrae has 2272 nodes and 155996 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06047 and
-	has 6 connected components, where the component with most nodes has 2261 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 137.32, and the node degree mode is 3. The top 5 most central
-	nodes are 1123388.AQWU01000064_gene1926 (degree 943), 1123388.AQWU01000070_gene146
-	(degree 830), 1123388.AQWU01000067_gene617 (degree 809), 1123388.AQWU01000065_gene1961
-	(degree 739) and 1123388.AQWU01000065_gene1964 (degree 733).
+	The undirected graph Thermus igniterrae has 2272 nodes and 155996 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06047 and has 6 connected components, where the component with most
+	nodes has 2261 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 137.32, and
+	the node degree mode is 3. The top 5 most central nodes are 1123388.AQWU01000064_gene1926
+	(degree 943), 1123388.AQWU01000070_gene146 (degree 830), 1123388.AQWU01000067_gene617
+	(degree 809), 1123388.AQWU01000065_gene1961 (degree 739) and 1123388.AQWU01000065_gene1964
+	(degree 733).
 	
 
 

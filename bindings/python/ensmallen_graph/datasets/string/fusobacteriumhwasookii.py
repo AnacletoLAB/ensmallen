@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:45.159352
 
-The undirected graph Fusobacterium hwasookii has 2194 nodes and 139041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-has 3 connected components, where the component with most nodes has 2188 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 94,
-the mean node degree is 126.75, and the node degree mode is 10. The top 5 most central
-nodes are 1216362.B437_01035 (degree 914), 1216362.B437_00185 (degree 775), 1216362.B437_10897
-(degree 729), 1216362.B437_08733 (degree 705) and 1216362.B437_05495 (degree 703).
+The undirected graph Fusobacterium hwasookii has 2194 nodes and 139041
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05780 and has 3 connected components, where the component
+with most nodes has 2188 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 94, the mean node degree is 126.75,
+and the node degree mode is 10. The top 5 most central nodes are 1216362.B437_01035
+(degree 914), 1216362.B437_00185 (degree 775), 1216362.B437_10897 (degree
+729), 1216362.B437_08733 (degree 705) and 1216362.B437_05495 (degree 703).
 
 
 References
@@ -106,13 +107,14 @@ def FusobacteriumHwasookii(
 	
 	Datetime: 2021-02-02 23:20:45.159352
 	
-	The undirected graph Fusobacterium hwasookii has 2194 nodes and 139041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-	has 3 connected components, where the component with most nodes has 2188 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 94,
-	the mean node degree is 126.75, and the node degree mode is 10. The top 5 most central
-	nodes are 1216362.B437_01035 (degree 914), 1216362.B437_00185 (degree 775), 1216362.B437_10897
-	(degree 729), 1216362.B437_08733 (degree 705) and 1216362.B437_05495 (degree 703).
+	The undirected graph Fusobacterium hwasookii has 2194 nodes and 139041
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05780 and has 3 connected components, where the component
+	with most nodes has 2188 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 94, the mean node degree is 126.75,
+	and the node degree mode is 10. The top 5 most central nodes are 1216362.B437_01035
+	(degree 914), 1216362.B437_00185 (degree 775), 1216362.B437_10897 (degree
+	729), 1216362.B437_08733 (degree 705) and 1216362.B437_05495 (degree 703).
 	
 
 

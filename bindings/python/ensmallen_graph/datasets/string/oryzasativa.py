@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:43:49.332705
 
-The undirected graph Oryza sativa has 25106 nodes and 4474524 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01420 and
-has 42 connected components, where the component with most nodes has 25014 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 356.45, and the node degree mode is 1. The top 5
-most central nodes are 4530.OS12T0641100-02 (degree 7762), 4530.OS12T0641300-01 (degree
-7691), 4530.OS12T0638800-00 (degree 7580), 4530.OS12T0636400-01 (degree 7499) and
-4530.OS02T0281000-01 (degree 6685).
+The undirected graph Oryza sativa has 25106 nodes and 4474524 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01420 and has 42 connected components, where the component with most
+nodes has 25014 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 356.45, and
+the node degree mode is 1. The top 5 most central nodes are 4530.OS12T0641100-02
+(degree 7762), 4530.OS12T0641300-01 (degree 7691), 4530.OS12T0638800-00
+(degree 7580), 4530.OS12T0636400-01 (degree 7499) and 4530.OS02T0281000-01
+(degree 6685).
 
 
 References
@@ -107,14 +108,15 @@ def OryzaSativa(
 	
 	Datetime: 2021-02-02 16:43:49.332705
 	
-	The undirected graph Oryza sativa has 25106 nodes and 4474524 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01420 and
-	has 42 connected components, where the component with most nodes has 25014 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 356.45, and the node degree mode is 1. The top 5
-	most central nodes are 4530.OS12T0641100-02 (degree 7762), 4530.OS12T0641300-01 (degree
-	7691), 4530.OS12T0638800-00 (degree 7580), 4530.OS12T0636400-01 (degree 7499) and
-	4530.OS02T0281000-01 (degree 6685).
+	The undirected graph Oryza sativa has 25106 nodes and 4474524 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01420 and has 42 connected components, where the component with most
+	nodes has 25014 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 356.45, and
+	the node degree mode is 1. The top 5 most central nodes are 4530.OS12T0641100-02
+	(degree 7762), 4530.OS12T0641300-01 (degree 7691), 4530.OS12T0638800-00
+	(degree 7580), 4530.OS12T0636400-01 (degree 7499) and 4530.OS02T0281000-01
+	(degree 6685).
 	
 
 

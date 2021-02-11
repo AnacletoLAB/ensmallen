@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:17.408536
 
-The undirected graph Bacillus sp. 123MFChir2 has 4266 nodes and 471584 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05184 and
-has 32 connected components, where the component with most nodes has 4200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 221.09, and the node degree mode is 1. The top 5 most central
-nodes are 1169144.KB910962_gene3013 (degree 1477), 1169144.KB910989_gene2774 (degree
-1379), 1169144.KB910992_gene2866 (degree 1356), 1169144.KB910924_gene424 (degree
-1270) and 1169144.KB910940_gene2567 (degree 1200).
+The undirected graph Bacillus sp. 123MFChir2 has 4266 nodes and 471584
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05184 and has 32 connected components, where the component
+with most nodes has 4200 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 221.09,
+and the node degree mode is 1. The top 5 most central nodes are 1169144.KB910962_gene3013
+(degree 1477), 1169144.KB910989_gene2774 (degree 1379), 1169144.KB910992_gene2866
+(degree 1356), 1169144.KB910924_gene424 (degree 1270) and 1169144.KB910940_gene2567
+(degree 1200).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.123mfchir2(
 	
 	Datetime: 2021-02-02 23:06:17.408536
 	
-	The undirected graph Bacillus sp. 123MFChir2 has 4266 nodes and 471584 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05184 and
-	has 32 connected components, where the component with most nodes has 4200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 221.09, and the node degree mode is 1. The top 5 most central
-	nodes are 1169144.KB910962_gene3013 (degree 1477), 1169144.KB910989_gene2774 (degree
-	1379), 1169144.KB910992_gene2866 (degree 1356), 1169144.KB910924_gene424 (degree
-	1270) and 1169144.KB910940_gene2567 (degree 1200).
+	The undirected graph Bacillus sp. 123MFChir2 has 4266 nodes and 471584
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05184 and has 32 connected components, where the component
+	with most nodes has 4200 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 221.09,
+	and the node degree mode is 1. The top 5 most central nodes are 1169144.KB910962_gene3013
+	(degree 1477), 1169144.KB910989_gene2774 (degree 1379), 1169144.KB910992_gene2866
+	(degree 1356), 1169144.KB910924_gene424 (degree 1270) and 1169144.KB910940_gene2567
+	(degree 1200).
 	
 
 

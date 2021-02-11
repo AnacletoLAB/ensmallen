@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:49.940037
 
-The undirected graph Salmonella enterica CT18 has 4510 nodes and 536455 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05276
-and has 3 connected components, where the component with most nodes has 4506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 225, the mean node degree is 237.90, and the node degree mode is 130. The top
-5 most central nodes are 220341.16502532 (degree 1442), 220341.16504737 (degree 1298),
-220341.16504395 (degree 1121), 220341.16502841 (degree 1066) and 220341.16504803
-(degree 1065).
+The undirected graph Salmonella enterica CT18 has 4510 nodes and 536455
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05276 and has 3 connected components, where the component
+with most nodes has 4506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 225, the mean node degree is 237.90,
+and the node degree mode is 130. The top 5 most central nodes are 220341.16502532
+(degree 1442), 220341.16504737 (degree 1298), 220341.16504395 (degree 1121),
+220341.16502841 (degree 1066) and 220341.16504803 (degree 1065).
 
 
 References
@@ -107,14 +107,14 @@ def SalmonellaEntericaCt18(
 	
 	Datetime: 2021-02-02 20:03:49.940037
 	
-	The undirected graph Salmonella enterica CT18 has 4510 nodes and 536455 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05276
-	and has 3 connected components, where the component with most nodes has 4506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 225, the mean node degree is 237.90, and the node degree mode is 130. The top
-	5 most central nodes are 220341.16502532 (degree 1442), 220341.16504737 (degree 1298),
-	220341.16504395 (degree 1121), 220341.16502841 (degree 1066) and 220341.16504803
-	(degree 1065).
+	The undirected graph Salmonella enterica CT18 has 4510 nodes and 536455
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05276 and has 3 connected components, where the component
+	with most nodes has 4506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 225, the mean node degree is 237.90,
+	and the node degree mode is 130. The top 5 most central nodes are 220341.16502532
+	(degree 1442), 220341.16504737 (degree 1298), 220341.16504395 (degree 1121),
+	220341.16502841 (degree 1066) and 220341.16504803 (degree 1065).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:00.556646
 
-The undirected graph Photobacterium damselae has 3428 nodes and 270479 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04605 and
-has 10 connected components, where the component with most nodes has 3410 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 157.81, and the node degree mode is 1. The top 5 most central
-nodes are 675817.VDA_000430 (degree 1694), 675817.VDA_001599 (degree 1306), 675817.VDA_003147
-(degree 1263), 675817.VDA_000429 (degree 1189) and 675817.VDA_002692 (degree 1029).
+The undirected graph Photobacterium damselae has 3428 nodes and 270479
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04605 and has 10 connected components, where the component
+with most nodes has 3410 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 157.81,
+and the node degree mode is 1. The top 5 most central nodes are 675817.VDA_000430
+(degree 1694), 675817.VDA_001599 (degree 1306), 675817.VDA_003147 (degree
+1263), 675817.VDA_000429 (degree 1189) and 675817.VDA_002692 (degree 1029).
 
 
 References
@@ -106,13 +107,14 @@ def PhotobacteriumDamselae(
 	
 	Datetime: 2021-02-02 21:30:00.556646
 	
-	The undirected graph Photobacterium damselae has 3428 nodes and 270479 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04605 and
-	has 10 connected components, where the component with most nodes has 3410 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 157.81, and the node degree mode is 1. The top 5 most central
-	nodes are 675817.VDA_000430 (degree 1694), 675817.VDA_001599 (degree 1306), 675817.VDA_003147
-	(degree 1263), 675817.VDA_000429 (degree 1189) and 675817.VDA_002692 (degree 1029).
+	The undirected graph Photobacterium damselae has 3428 nodes and 270479
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04605 and has 10 connected components, where the component
+	with most nodes has 3410 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 157.81,
+	and the node degree mode is 1. The top 5 most central nodes are 675817.VDA_000430
+	(degree 1694), 675817.VDA_001599 (degree 1306), 675817.VDA_003147 (degree
+	1263), 675817.VDA_000429 (degree 1189) and 675817.VDA_002692 (degree 1029).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:43.150408
 
-The undirected graph Clostridium clariflavum has 3809 nodes and 364047 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05020 and
-has 28 connected components, where the component with most nodes has 3738 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 191.15, and the node degree mode is 2. The top 5 most central
-nodes are 720554.Clocl_1587 (degree 1549), 720554.Clocl_1483 (degree 1380), 720554.Clocl_1001
-(degree 1200), 720554.Clocl_1845 (degree 1074) and 720554.Clocl_2156 (degree 1072).
+The undirected graph Clostridium clariflavum has 3809 nodes and 364047
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05020 and has 28 connected components, where the component
+with most nodes has 3738 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 191.15,
+and the node degree mode is 2. The top 5 most central nodes are 720554.Clocl_1587
+(degree 1549), 720554.Clocl_1483 (degree 1380), 720554.Clocl_1001 (degree
+1200), 720554.Clocl_1845 (degree 1074) and 720554.Clocl_2156 (degree 1072).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumClariflavum(
 	
 	Datetime: 2021-02-02 21:36:43.150408
 	
-	The undirected graph Clostridium clariflavum has 3809 nodes and 364047 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05020 and
-	has 28 connected components, where the component with most nodes has 3738 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 191.15, and the node degree mode is 2. The top 5 most central
-	nodes are 720554.Clocl_1587 (degree 1549), 720554.Clocl_1483 (degree 1380), 720554.Clocl_1001
-	(degree 1200), 720554.Clocl_1845 (degree 1074) and 720554.Clocl_2156 (degree 1072).
+	The undirected graph Clostridium clariflavum has 3809 nodes and 364047
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05020 and has 28 connected components, where the component
+	with most nodes has 3738 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 191.15,
+	and the node degree mode is 2. The top 5 most central nodes are 720554.Clocl_1587
+	(degree 1549), 720554.Clocl_1483 (degree 1380), 720554.Clocl_1001 (degree
+	1200), 720554.Clocl_1845 (degree 1074) and 720554.Clocl_2156 (degree 1072).
 	
 
 

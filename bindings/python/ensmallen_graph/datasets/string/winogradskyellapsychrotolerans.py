@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:54.044834
 
-The undirected graph Winogradskyella psychrotolerans has 3973 nodes and 453435 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05747
-and has 14 connected components, where the component with most nodes has 3940 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 228.26, and the node degree mode is 4. The top 5
-most central nodes are 641526.ADIWIN_2154 (degree 1318), 641526.ADIWIN_1897 (degree
-1299), 641526.ADIWIN_3382 (degree 968), 641526.ADIWIN_0534 (degree 949) and 641526.ADIWIN_1533
+The undirected graph Winogradskyella psychrotolerans has 3973 nodes and
+453435 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05747 and has 14 connected components, where the
+component with most nodes has 3940 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 217, the mean node degree
+is 228.26, and the node degree mode is 4. The top 5 most central nodes
+are 641526.ADIWIN_2154 (degree 1318), 641526.ADIWIN_1897 (degree 1299),
+641526.ADIWIN_3382 (degree 968), 641526.ADIWIN_0534 (degree 949) and 641526.ADIWIN_1533
 (degree 911).
 
 
@@ -107,13 +108,14 @@ def WinogradskyellaPsychrotolerans(
 	
 	Datetime: 2021-02-02 21:23:54.044834
 	
-	The undirected graph Winogradskyella psychrotolerans has 3973 nodes and 453435 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05747
-	and has 14 connected components, where the component with most nodes has 3940 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 228.26, and the node degree mode is 4. The top 5
-	most central nodes are 641526.ADIWIN_2154 (degree 1318), 641526.ADIWIN_1897 (degree
-	1299), 641526.ADIWIN_3382 (degree 968), 641526.ADIWIN_0534 (degree 949) and 641526.ADIWIN_1533
+	The undirected graph Winogradskyella psychrotolerans has 3973 nodes and
+	453435 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05747 and has 14 connected components, where the
+	component with most nodes has 3940 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 217, the mean node degree
+	is 228.26, and the node degree mode is 4. The top 5 most central nodes
+	are 641526.ADIWIN_2154 (degree 1318), 641526.ADIWIN_1897 (degree 1299),
+	641526.ADIWIN_3382 (degree 968), 641526.ADIWIN_0534 (degree 949) and 641526.ADIWIN_1533
 	(degree 911).
 	
 

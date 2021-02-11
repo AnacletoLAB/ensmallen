@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:35.261807
 
-The undirected graph Streptococcus sp. ACC21 has 1966 nodes and 149155 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07722 and
-has 5 connected components, where the component with most nodes has 1950 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 117,
-the mean node degree is 151.73, and the node degree mode is 11. The top 5 most central
-nodes are 1161413.HMPREF1510_0375 (degree 920), 1161413.HMPREF1510_0932 (degree 829),
-1161413.HMPREF1510_0971 (degree 769), 1161413.HMPREF1510_0258 (degree 761) and 1161413.HMPREF1510_0651
+The undirected graph Streptococcus sp. ACC21 has 1966 nodes and 149155
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07722 and has 5 connected components, where the component
+with most nodes has 1950 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 117, the mean node degree is 151.73,
+and the node degree mode is 11. The top 5 most central nodes are 1161413.HMPREF1510_0375
+(degree 920), 1161413.HMPREF1510_0932 (degree 829), 1161413.HMPREF1510_0971
+(degree 769), 1161413.HMPREF1510_0258 (degree 761) and 1161413.HMPREF1510_0651
 (degree 725).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.Acc21(
 	
 	Datetime: 2021-02-02 23:04:35.261807
 	
-	The undirected graph Streptococcus sp. ACC21 has 1966 nodes and 149155 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07722 and
-	has 5 connected components, where the component with most nodes has 1950 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 117,
-	the mean node degree is 151.73, and the node degree mode is 11. The top 5 most central
-	nodes are 1161413.HMPREF1510_0375 (degree 920), 1161413.HMPREF1510_0932 (degree 829),
-	1161413.HMPREF1510_0971 (degree 769), 1161413.HMPREF1510_0258 (degree 761) and 1161413.HMPREF1510_0651
+	The undirected graph Streptococcus sp. ACC21 has 1966 nodes and 149155
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07722 and has 5 connected components, where the component
+	with most nodes has 1950 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 117, the mean node degree is 151.73,
+	and the node degree mode is 11. The top 5 most central nodes are 1161413.HMPREF1510_0375
+	(degree 920), 1161413.HMPREF1510_0932 (degree 829), 1161413.HMPREF1510_0971
+	(degree 769), 1161413.HMPREF1510_0258 (degree 761) and 1161413.HMPREF1510_0651
 	(degree 725).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:33.776073
 
-The undirected graph Actinobacillus minor 202 has 2030 nodes and 145404 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07060
-and has 2 connected components, where the component with most nodes has 2028 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 143.26, and the node degree mode is 4. The top 5
-most central nodes are 591023.AM202_00195 (degree 872), 591023.AM202_02285 (degree
-747), 591023.AM202_0124 (degree 746), 591023.AM202_0127 (degree 713) and 591023.AM202_03200
-(degree 602).
+The undirected graph Actinobacillus minor 202 has 2030 nodes and 145404
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07060 and has 2 connected components, where the component
+with most nodes has 2028 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 143.26,
+and the node degree mode is 4. The top 5 most central nodes are 591023.AM202_00195
+(degree 872), 591023.AM202_02285 (degree 747), 591023.AM202_0124 (degree
+746), 591023.AM202_0127 (degree 713) and 591023.AM202_03200 (degree 602).
 
 
 References
@@ -107,14 +107,14 @@ def ActinobacillusMinor202(
 	
 	Datetime: 2021-02-02 21:17:33.776073
 	
-	The undirected graph Actinobacillus minor 202 has 2030 nodes and 145404 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07060
-	and has 2 connected components, where the component with most nodes has 2028 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 143.26, and the node degree mode is 4. The top 5
-	most central nodes are 591023.AM202_00195 (degree 872), 591023.AM202_02285 (degree
-	747), 591023.AM202_0124 (degree 746), 591023.AM202_0127 (degree 713) and 591023.AM202_03200
-	(degree 602).
+	The undirected graph Actinobacillus minor 202 has 2030 nodes and 145404
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07060 and has 2 connected components, where the component
+	with most nodes has 2028 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 143.26,
+	and the node degree mode is 4. The top 5 most central nodes are 591023.AM202_00195
+	(degree 872), 591023.AM202_02285 (degree 747), 591023.AM202_0124 (degree
+	746), 591023.AM202_0127 (degree 713) and 591023.AM202_03200 (degree 602).
 	
 
 

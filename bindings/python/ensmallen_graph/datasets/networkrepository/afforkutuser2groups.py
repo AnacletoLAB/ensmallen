@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 09:21:12.482754
 
-The undirected graph aff-orkut-user2groups has 8730857 nodes and 327036553 weighted
-edges, of which 67 are self-loops. The graph is extremely sparse as it has a density
-of 0.00001 and is connected, as it has a single component. The graph median node
-degree is 5, the mean node degree is 74.92, and the node degree mode is 1. The top
-5 most central nodes are 6637 (degree 318268), 7337 (degree 284411), 6748 (degree
-221550), 7769 (degree 213405) and 7761 (degree 208320).
+The undirected graph aff-orkut-user2groups has 8730857 nodes and 327036553
+weighted edges, of which 67 are self-loops. The graph is extremely sparse
+as it has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 5, the mean node degree is 74.92, and the
+node degree mode is 1. The top 5 most central nodes are 6637 (degree 318268),
+7337 (degree 284411), 6748 (degree 221550), 7769 (degree 213405) and 7761
+(degree 208320).
 
 
 References
@@ -110,12 +111,13 @@ def AffOrkutUser2groups(
 	
 	Datetime: 2021-02-04 09:21:12.482754
 	
-	The undirected graph aff-orkut-user2groups has 8730857 nodes and 327036553 weighted
-	edges, of which 67 are self-loops. The graph is extremely sparse as it has a density
-	of 0.00001 and is connected, as it has a single component. The graph median node
-	degree is 5, the mean node degree is 74.92, and the node degree mode is 1. The top
-	5 most central nodes are 6637 (degree 318268), 7337 (degree 284411), 6748 (degree
-	221550), 7769 (degree 213405) and 7761 (degree 208320).
+	The undirected graph aff-orkut-user2groups has 8730857 nodes and 327036553
+	weighted edges, of which 67 are self-loops. The graph is extremely sparse
+	as it has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 5, the mean node degree is 74.92, and the
+	node degree mode is 1. The top 5 most central nodes are 6637 (degree 318268),
+	7337 (degree 284411), 6748 (degree 221550), 7769 (degree 213405) and 7761
+	(degree 208320).
 	
 
 

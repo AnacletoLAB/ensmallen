@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:05.680243
 
-The undirected graph Campylobacter sp. 1485E has 1749 nodes and 98004 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06411 and
-has 2 connected components, where the component with most nodes has 1747 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 90,
-the mean node degree is 112.07, and the node degree mode is 29. The top 5 most central
-nodes are 1244531.CIG1485E_0244 (degree 774), 1244531.CIG1485E_0451 (degree 632),
-1244531.CIG1485E_1279 (degree 606), 1244531.CIG1485E_0705 (degree 603) and 1244531.CIG1485E_0381
+The undirected graph Campylobacter sp. 1485E has 1749 nodes and 98004 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06411 and has 2 connected components, where the component with most
+nodes has 1747 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 90, the mean node degree is 112.07, and
+the node degree mode is 29. The top 5 most central nodes are 1244531.CIG1485E_0244
+(degree 774), 1244531.CIG1485E_0451 (degree 632), 1244531.CIG1485E_1279
+(degree 606), 1244531.CIG1485E_0705 (degree 603) and 1244531.CIG1485E_0381
 (degree 545).
 
 
@@ -107,13 +108,14 @@ def CampylobacterSp.1485e(
 	
 	Datetime: 2021-02-02 23:33:05.680243
 	
-	The undirected graph Campylobacter sp. 1485E has 1749 nodes and 98004 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06411 and
-	has 2 connected components, where the component with most nodes has 1747 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 90,
-	the mean node degree is 112.07, and the node degree mode is 29. The top 5 most central
-	nodes are 1244531.CIG1485E_0244 (degree 774), 1244531.CIG1485E_0451 (degree 632),
-	1244531.CIG1485E_1279 (degree 606), 1244531.CIG1485E_0705 (degree 603) and 1244531.CIG1485E_0381
+	The undirected graph Campylobacter sp. 1485E has 1749 nodes and 98004 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06411 and has 2 connected components, where the component with most
+	nodes has 1747 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 90, the mean node degree is 112.07, and
+	the node degree mode is 29. The top 5 most central nodes are 1244531.CIG1485E_0244
+	(degree 774), 1244531.CIG1485E_0451 (degree 632), 1244531.CIG1485E_1279
+	(degree 606), 1244531.CIG1485E_0705 (degree 603) and 1244531.CIG1485E_0381
 	(degree 545).
 	
 

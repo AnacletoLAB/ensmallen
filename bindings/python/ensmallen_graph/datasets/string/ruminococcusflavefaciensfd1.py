@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:32.691575
 
-The undirected graph Ruminococcus flavefaciens FD1 has 3849 nodes and 351779 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04750
-and has 23 connected components, where the component with most nodes has 3789 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 182.79, and the node degree mode is 3. The top 5
-most central nodes are 641112.ACOK01000119_gene1496 (degree 1621), 641112.ACOK01000078_gene3150
-(degree 1266), 641112.ACOK01000004_gene3737 (degree 1195), 641112.ACOK01000072_gene2845
-(degree 923) and 641112.ACOK01000103_gene509 (degree 916).
+The undirected graph Ruminococcus flavefaciens FD1 has 3849 nodes and 351779
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04750 and has 23 connected components, where the component
+with most nodes has 3789 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 182.79,
+and the node degree mode is 3. The top 5 most central nodes are 641112.ACOK01000119_gene1496
+(degree 1621), 641112.ACOK01000078_gene3150 (degree 1266), 641112.ACOK01000004_gene3737
+(degree 1195), 641112.ACOK01000072_gene2845 (degree 923) and 641112.ACOK01000103_gene509
+(degree 916).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusFlavefaciensFd1(
 	
 	Datetime: 2021-02-02 21:23:32.691575
 	
-	The undirected graph Ruminococcus flavefaciens FD1 has 3849 nodes and 351779 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04750
-	and has 23 connected components, where the component with most nodes has 3789 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 182.79, and the node degree mode is 3. The top 5
-	most central nodes are 641112.ACOK01000119_gene1496 (degree 1621), 641112.ACOK01000078_gene3150
-	(degree 1266), 641112.ACOK01000004_gene3737 (degree 1195), 641112.ACOK01000072_gene2845
-	(degree 923) and 641112.ACOK01000103_gene509 (degree 916).
+	The undirected graph Ruminococcus flavefaciens FD1 has 3849 nodes and 351779
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04750 and has 23 connected components, where the component
+	with most nodes has 3789 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 182.79,
+	and the node degree mode is 3. The top 5 most central nodes are 641112.ACOK01000119_gene1496
+	(degree 1621), 641112.ACOK01000078_gene3150 (degree 1266), 641112.ACOK01000004_gene3737
+	(degree 1195), 641112.ACOK01000072_gene2845 (degree 923) and 641112.ACOK01000103_gene509
+	(degree 916).
 	
 
 

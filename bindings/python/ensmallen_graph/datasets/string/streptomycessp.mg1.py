@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:12.217465
 
-The undirected graph Streptomyces sp. Mg1 has 7587 nodes and 931053 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03235 and
-has 56 connected components, where the component with most nodes has 7451 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 245.43, and the node degree mode is 2. The top 5 most central
-nodes are 465541.ATCJ01000005_gene5746 (degree 3434), 465541.ATCJ01000005_gene2742
-(degree 2111), 465541.ATCJ01000005_gene4901 (degree 2040), 465541.ATCJ01000005_gene891
-(degree 1784) and 465541.ATCJ01000005_gene2793 (degree 1705).
+The undirected graph Streptomyces sp. Mg1 has 7587 nodes and 931053 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03235 and has 56 connected components, where the component with most
+nodes has 7451 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 245.43, and
+the node degree mode is 2. The top 5 most central nodes are 465541.ATCJ01000005_gene5746
+(degree 3434), 465541.ATCJ01000005_gene2742 (degree 2111), 465541.ATCJ01000005_gene4901
+(degree 2040), 465541.ATCJ01000005_gene891 (degree 1784) and 465541.ATCJ01000005_gene2793
+(degree 1705).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Mg1(
 	
 	Datetime: 2021-02-02 20:54:12.217465
 	
-	The undirected graph Streptomyces sp. Mg1 has 7587 nodes and 931053 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03235 and
-	has 56 connected components, where the component with most nodes has 7451 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 245.43, and the node degree mode is 2. The top 5 most central
-	nodes are 465541.ATCJ01000005_gene5746 (degree 3434), 465541.ATCJ01000005_gene2742
-	(degree 2111), 465541.ATCJ01000005_gene4901 (degree 2040), 465541.ATCJ01000005_gene891
-	(degree 1784) and 465541.ATCJ01000005_gene2793 (degree 1705).
+	The undirected graph Streptomyces sp. Mg1 has 7587 nodes and 931053 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03235 and has 56 connected components, where the component with most
+	nodes has 7451 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 245.43, and
+	the node degree mode is 2. The top 5 most central nodes are 465541.ATCJ01000005_gene5746
+	(degree 3434), 465541.ATCJ01000005_gene2742 (degree 2111), 465541.ATCJ01000005_gene4901
+	(degree 2040), 465541.ATCJ01000005_gene891 (degree 1784) and 465541.ATCJ01000005_gene2793
+	(degree 1705).
 	
 
 

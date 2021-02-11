@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:58.469051
 
-The undirected graph Actinomyces europaeus has 1662 nodes and 114911 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08325 and
-has 7 connected components, where the component with most nodes has 1647 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 138.28, and the node degree mode is 2. The top 5 most central
-nodes are 883069.HMPREF9238_00001 (degree 835), 883069.HMPREF9238_00268 (degree 747),
-883069.HMPREF9238_00727 (degree 743), 883069.HMPREF9238_00721 (degree 654) and 883069.HMPREF9238_01714
+The undirected graph Actinomyces europaeus has 1662 nodes and 114911 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08325 and has 7 connected components, where the component with most
+nodes has 1647 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 138.28, and
+the node degree mode is 2. The top 5 most central nodes are 883069.HMPREF9238_00001
+(degree 835), 883069.HMPREF9238_00268 (degree 747), 883069.HMPREF9238_00727
+(degree 743), 883069.HMPREF9238_00721 (degree 654) and 883069.HMPREF9238_01714
 (degree 615).
 
 
@@ -107,13 +108,14 @@ def ActinomycesEuropaeus(
 	
 	Datetime: 2021-02-02 21:50:58.469051
 	
-	The undirected graph Actinomyces europaeus has 1662 nodes and 114911 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08325 and
-	has 7 connected components, where the component with most nodes has 1647 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 138.28, and the node degree mode is 2. The top 5 most central
-	nodes are 883069.HMPREF9238_00001 (degree 835), 883069.HMPREF9238_00268 (degree 747),
-	883069.HMPREF9238_00727 (degree 743), 883069.HMPREF9238_00721 (degree 654) and 883069.HMPREF9238_01714
+	The undirected graph Actinomyces europaeus has 1662 nodes and 114911 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08325 and has 7 connected components, where the component with most
+	nodes has 1647 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 138.28, and
+	the node degree mode is 2. The top 5 most central nodes are 883069.HMPREF9238_00001
+	(degree 835), 883069.HMPREF9238_00268 (degree 747), 883069.HMPREF9238_00727
+	(degree 743), 883069.HMPREF9238_00721 (degree 654) and 883069.HMPREF9238_01714
 	(degree 615).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:53.838636
 
-The undirected graph Bifidobacterium pseudolongum globosum has 1565 nodes and 106550
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08706 and has 6 connected components, where the component with most nodes has
-1548 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 118, the mean node degree is 136.17, and the node degree mode is 2. The
-top 5 most central nodes are 1690.BPSG_1412 (degree 764), 1690.BPSG_0788 (degree
-743), 1690.BPSG_0036 (degree 738), 1690.BPSG_1573 (degree 634) and 1690.BPSG_0886
-(degree 627).
+The undirected graph Bifidobacterium pseudolongum globosum has 1565 nodes
+and 106550 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08706 and has 6 connected components, where the
+component with most nodes has 1548 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+is 136.17, and the node degree mode is 2. The top 5 most central nodes
+are 1690.BPSG_1412 (degree 764), 1690.BPSG_0788 (degree 743), 1690.BPSG_0036
+(degree 738), 1690.BPSG_1573 (degree 634) and 1690.BPSG_0886 (degree 627).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumPseudolongumGlobosum(
 	
 	Datetime: 2021-02-02 16:22:53.838636
 	
-	The undirected graph Bifidobacterium pseudolongum globosum has 1565 nodes and 106550
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08706 and has 6 connected components, where the component with most nodes has
-	1548 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 118, the mean node degree is 136.17, and the node degree mode is 2. The
-	top 5 most central nodes are 1690.BPSG_1412 (degree 764), 1690.BPSG_0788 (degree
-	743), 1690.BPSG_0036 (degree 738), 1690.BPSG_1573 (degree 634) and 1690.BPSG_0886
-	(degree 627).
+	The undirected graph Bifidobacterium pseudolongum globosum has 1565 nodes
+	and 106550 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08706 and has 6 connected components, where the
+	component with most nodes has 1548 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+	is 136.17, and the node degree mode is 2. The top 5 most central nodes
+	are 1690.BPSG_1412 (degree 764), 1690.BPSG_0788 (degree 743), 1690.BPSG_0036
+	(degree 738), 1690.BPSG_1573 (degree 634) and 1690.BPSG_0886 (degree 627).
 	
 
 

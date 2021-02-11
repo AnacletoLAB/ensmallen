@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:56.895654
 
-The undirected graph Citromicrobium bathyomarinum has 3095 nodes and 383131 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08002
-and has 3 connected components, where the component with most nodes has 3091 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 247.58, and the node degree mode is 3. The top 5
-most central nodes are 685035.ADAE01000002_gene2076 (degree 1270), 685035.ADAE01000018_gene371
-(degree 1139), 685035.ADAE01000002_gene2265 (degree 1057), 685035.ADAE01000018_gene1074
-(degree 1024) and 685035.ADAE01000018_gene663 (degree 1020).
+The undirected graph Citromicrobium bathyomarinum has 3095 nodes and 383131
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08002 and has 3 connected components, where the component
+with most nodes has 3091 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 247.58,
+and the node degree mode is 3. The top 5 most central nodes are 685035.ADAE01000002_gene2076
+(degree 1270), 685035.ADAE01000018_gene371 (degree 1139), 685035.ADAE01000002_gene2265
+(degree 1057), 685035.ADAE01000018_gene1074 (degree 1024) and 685035.ADAE01000018_gene663
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def CitromicrobiumBathyomarinum(
 	
 	Datetime: 2021-02-02 21:30:56.895654
 	
-	The undirected graph Citromicrobium bathyomarinum has 3095 nodes and 383131 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08002
-	and has 3 connected components, where the component with most nodes has 3091 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 247.58, and the node degree mode is 3. The top 5
-	most central nodes are 685035.ADAE01000002_gene2076 (degree 1270), 685035.ADAE01000018_gene371
-	(degree 1139), 685035.ADAE01000002_gene2265 (degree 1057), 685035.ADAE01000018_gene1074
-	(degree 1024) and 685035.ADAE01000018_gene663 (degree 1020).
+	The undirected graph Citromicrobium bathyomarinum has 3095 nodes and 383131
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08002 and has 3 connected components, where the component
+	with most nodes has 3091 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 247.58,
+	and the node degree mode is 3. The top 5 most central nodes are 685035.ADAE01000002_gene2076
+	(degree 1270), 685035.ADAE01000018_gene371 (degree 1139), 685035.ADAE01000002_gene2265
+	(degree 1057), 685035.ADAE01000018_gene1074 (degree 1024) and 685035.ADAE01000018_gene663
+	(degree 1020).
 	
 
 

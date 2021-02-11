@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:45.123719
 
-The undirected graph Photodesmus blepharus has 914 nodes and 58176 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13943
-and is connected, as it has a single component. The graph median node degree is 113,
-the mean node degree is 127.30, and the node degree mode is 92. The top 5 most central
-nodes are 1179155.CF67_17045 (degree 505), 1179155.CF67_01022 (degree 450), 1179155.CF67_04178
-(degree 394), 1179155.CF67_03004 (degree 390) and 1179155.CF67_14041 (degree 351).
+The undirected graph Photodesmus blepharus has 914 nodes and 58176 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13943 and is connected, as it has a single component. The
+graph median node degree is 113, the mean node degree is 127.30, and the
+node degree mode is 92. The top 5 most central nodes are 1179155.CF67_17045
+(degree 505), 1179155.CF67_01022 (degree 450), 1179155.CF67_04178 (degree
+394), 1179155.CF67_03004 (degree 390) and 1179155.CF67_14041 (degree 351).
 
 
 References
@@ -105,12 +106,13 @@ def PhotodesmusBlepharus(
 	
 	Datetime: 2021-02-02 23:09:45.123719
 	
-	The undirected graph Photodesmus blepharus has 914 nodes and 58176 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13943
-	and is connected, as it has a single component. The graph median node degree is 113,
-	the mean node degree is 127.30, and the node degree mode is 92. The top 5 most central
-	nodes are 1179155.CF67_17045 (degree 505), 1179155.CF67_01022 (degree 450), 1179155.CF67_04178
-	(degree 394), 1179155.CF67_03004 (degree 390) and 1179155.CF67_14041 (degree 351).
+	The undirected graph Photodesmus blepharus has 914 nodes and 58176 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13943 and is connected, as it has a single component. The
+	graph median node degree is 113, the mean node degree is 127.30, and the
+	node degree mode is 92. The top 5 most central nodes are 1179155.CF67_17045
+	(degree 505), 1179155.CF67_01022 (degree 450), 1179155.CF67_04178 (degree
+	394), 1179155.CF67_03004 (degree 390) and 1179155.CF67_14041 (degree 351).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:53:24.550772
 
-The undirected graph Citrus clementina has 20927 nodes and 3222930 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01472 and
-has 13 connected components, where the component with most nodes has 20903 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 308.02, and the node degree mode is 2. The top 5
-most central nodes are 85681.XP_006451245.1 (degree 6776), 85681.XP_006423346.1 (degree
-4304), 85681.XP_006428397.1 (degree 4016), 85681.XP_006421319.1 (degree 3984) and
-85681.XP_006434111.1 (degree 3898).
+The undirected graph Citrus clementina has 20927 nodes and 3222930 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01472 and has 13 connected components, where the component with most
+nodes has 20903 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 308.02, and
+the node degree mode is 2. The top 5 most central nodes are 85681.XP_006451245.1
+(degree 6776), 85681.XP_006423346.1 (degree 4304), 85681.XP_006428397.1
+(degree 4016), 85681.XP_006421319.1 (degree 3984) and 85681.XP_006434111.1
+(degree 3898).
 
 
 References
@@ -107,14 +108,15 @@ def CitrusClementina(
 	
 	Datetime: 2021-02-02 18:53:24.550772
 	
-	The undirected graph Citrus clementina has 20927 nodes and 3222930 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01472 and
-	has 13 connected components, where the component with most nodes has 20903 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 308.02, and the node degree mode is 2. The top 5
-	most central nodes are 85681.XP_006451245.1 (degree 6776), 85681.XP_006423346.1 (degree
-	4304), 85681.XP_006428397.1 (degree 4016), 85681.XP_006421319.1 (degree 3984) and
-	85681.XP_006434111.1 (degree 3898).
+	The undirected graph Citrus clementina has 20927 nodes and 3222930 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01472 and has 13 connected components, where the component with most
+	nodes has 20903 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 308.02, and
+	the node degree mode is 2. The top 5 most central nodes are 85681.XP_006451245.1
+	(degree 6776), 85681.XP_006423346.1 (degree 4304), 85681.XP_006428397.1
+	(degree 4016), 85681.XP_006421319.1 (degree 3984) and 85681.XP_006434111.1
+	(degree 3898).
 	
 
 

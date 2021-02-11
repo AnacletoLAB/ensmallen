@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:21.611579
 
-The undirected graph Thermogladius cellulolyticus has 1402 nodes and 106982 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10893 and has 6 connected components, where the component with most nodes has
-1391 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 154, the mean node degree is 152.61, and the node degree mode is 4. The
-top 5 most central nodes are 1184251.TCELL_0128 (degree 588), 1184251.TCELL_1039
-(degree 573), 1184251.TCELL_1375 (degree 550), 1184251.TCELL_1373 (degree 541) and
-1184251.TCELL_0317 (degree 504).
+The undirected graph Thermogladius cellulolyticus has 1402 nodes and 106982
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10893 and has 6 connected components, where the
+component with most nodes has 1391 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+is 152.61, and the node degree mode is 4. The top 5 most central nodes
+are 1184251.TCELL_0128 (degree 588), 1184251.TCELL_1039 (degree 573), 1184251.TCELL_1375
+(degree 550), 1184251.TCELL_1373 (degree 541) and 1184251.TCELL_0317 (degree
+504).
 
 
 References
@@ -107,14 +108,15 @@ def ThermogladiusCellulolyticus(
 	
 	Datetime: 2021-02-02 23:10:21.611579
 	
-	The undirected graph Thermogladius cellulolyticus has 1402 nodes and 106982 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10893 and has 6 connected components, where the component with most nodes has
-	1391 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 154, the mean node degree is 152.61, and the node degree mode is 4. The
-	top 5 most central nodes are 1184251.TCELL_0128 (degree 588), 1184251.TCELL_1039
-	(degree 573), 1184251.TCELL_1375 (degree 550), 1184251.TCELL_1373 (degree 541) and
-	1184251.TCELL_0317 (degree 504).
+	The undirected graph Thermogladius cellulolyticus has 1402 nodes and 106982
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10893 and has 6 connected components, where the
+	component with most nodes has 1391 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+	is 152.61, and the node degree mode is 4. The top 5 most central nodes
+	are 1184251.TCELL_0128 (degree 588), 1184251.TCELL_1039 (degree 573), 1184251.TCELL_1375
+	(degree 550), 1184251.TCELL_1373 (degree 541) and 1184251.TCELL_0317 (degree
+	504).
 	
 
 

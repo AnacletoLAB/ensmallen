@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:38.115834
 
-The undirected graph Thioalkalivibrio thiocyanodenitrificans has 3342 nodes and 307069
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05500 and has 20 connected components, where the component with most nodes has
-3293 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 140, the mean node degree is 183.76, and the node degree mode is 3. The
-top 5 most central nodes are 713586.KB900536_gene2217 (degree 1100), 713586.KB900536_gene3089
-(degree 1051), 713586.KB900536_gene3090 (degree 1043), 713586.KB900536_gene2798 (degree
-1005) and 713586.KB900536_gene2437 (degree 975).
+The undirected graph Thioalkalivibrio thiocyanodenitrificans has 3342 nodes
+and 307069 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05500 and has 20 connected components, where the
+component with most nodes has 3293 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 140, the mean node degree
+is 183.76, and the node degree mode is 3. The top 5 most central nodes
+are 713586.KB900536_gene2217 (degree 1100), 713586.KB900536_gene3089 (degree
+1051), 713586.KB900536_gene3090 (degree 1043), 713586.KB900536_gene2798
+(degree 1005) and 713586.KB900536_gene2437 (degree 975).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioThiocyanodenitrificans(
 	
 	Datetime: 2021-02-02 21:35:38.115834
 	
-	The undirected graph Thioalkalivibrio thiocyanodenitrificans has 3342 nodes and 307069
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05500 and has 20 connected components, where the component with most nodes has
-	3293 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 140, the mean node degree is 183.76, and the node degree mode is 3. The
-	top 5 most central nodes are 713586.KB900536_gene2217 (degree 1100), 713586.KB900536_gene3089
-	(degree 1051), 713586.KB900536_gene3090 (degree 1043), 713586.KB900536_gene2798 (degree
-	1005) and 713586.KB900536_gene2437 (degree 975).
+	The undirected graph Thioalkalivibrio thiocyanodenitrificans has 3342 nodes
+	and 307069 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05500 and has 20 connected components, where the
+	component with most nodes has 3293 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 140, the mean node degree
+	is 183.76, and the node degree mode is 3. The top 5 most central nodes
+	are 713586.KB900536_gene2217 (degree 1100), 713586.KB900536_gene3089 (degree
+	1051), 713586.KB900536_gene3090 (degree 1043), 713586.KB900536_gene2798
+	(degree 1005) and 713586.KB900536_gene2437 (degree 975).
 	
 
 

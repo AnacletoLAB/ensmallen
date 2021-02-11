@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:18.144921
 
-The undirected graph Enterococcus faecalis ATCC29212 has 2785 nodes and 274662 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07085
-and has 5 connected components, where the component with most nodes has 2774 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 169, the mean node degree is 197.24, and the node degree mode is 11. The top 5
-most central nodes are 1201292.DR75_2815 (degree 1212), 1201292.DR75_2198 (degree
-1025), 1201292.DR75_1836 (degree 910), 1201292.DR75_372 (degree 896) and 1201292.DR75_2868
-(degree 874).
+The undirected graph Enterococcus faecalis ATCC29212 has 2785 nodes and
+274662 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07085 and has 5 connected components, where the
+component with most nodes has 2774 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+is 197.24, and the node degree mode is 11. The top 5 most central nodes
+are 1201292.DR75_2815 (degree 1212), 1201292.DR75_2198 (degree 1025), 1201292.DR75_1836
+(degree 910), 1201292.DR75_372 (degree 896) and 1201292.DR75_2868 (degree
+874).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusFaecalisAtcc29212(
 	
 	Datetime: 2021-02-02 23:14:18.144921
 	
-	The undirected graph Enterococcus faecalis ATCC29212 has 2785 nodes and 274662 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07085
-	and has 5 connected components, where the component with most nodes has 2774 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 169, the mean node degree is 197.24, and the node degree mode is 11. The top 5
-	most central nodes are 1201292.DR75_2815 (degree 1212), 1201292.DR75_2198 (degree
-	1025), 1201292.DR75_1836 (degree 910), 1201292.DR75_372 (degree 896) and 1201292.DR75_2868
-	(degree 874).
+	The undirected graph Enterococcus faecalis ATCC29212 has 2785 nodes and
+	274662 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07085 and has 5 connected components, where the
+	component with most nodes has 2774 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+	is 197.24, and the node degree mode is 11. The top 5 most central nodes
+	are 1201292.DR75_2815 (degree 1212), 1201292.DR75_2198 (degree 1025), 1201292.DR75_1836
+	(degree 910), 1201292.DR75_372 (degree 896) and 1201292.DR75_2868 (degree
+	874).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:58.264084
 
-The undirected graph Tatumella morbirosei has 3603 nodes and 453024 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06981 and
-has 13 connected components, where the component with most nodes has 3579 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 229,
-the mean node degree is 251.47, and the node degree mode is 1. The top 5 most central
-nodes are 642227.HA49_03480 (degree 1304), 642227.HA49_01720 (degree 1191), 642227.HA49_16130
-(degree 1035), 642227.HA49_17470 (degree 996) and 642227.HA49_17475 (degree 987).
+The undirected graph Tatumella morbirosei has 3603 nodes and 453024 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06981 and has 13 connected components, where the component with most
+nodes has 3579 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 251.47, and
+the node degree mode is 1. The top 5 most central nodes are 642227.HA49_03480
+(degree 1304), 642227.HA49_01720 (degree 1191), 642227.HA49_16130 (degree
+1035), 642227.HA49_17470 (degree 996) and 642227.HA49_17475 (degree 987).
 
 
 References
@@ -106,13 +107,14 @@ def TatumellaMorbirosei(
 	
 	Datetime: 2021-02-02 21:23:58.264084
 	
-	The undirected graph Tatumella morbirosei has 3603 nodes and 453024 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06981 and
-	has 13 connected components, where the component with most nodes has 3579 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 229,
-	the mean node degree is 251.47, and the node degree mode is 1. The top 5 most central
-	nodes are 642227.HA49_03480 (degree 1304), 642227.HA49_01720 (degree 1191), 642227.HA49_16130
-	(degree 1035), 642227.HA49_17470 (degree 996) and 642227.HA49_17475 (degree 987).
+	The undirected graph Tatumella morbirosei has 3603 nodes and 453024 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06981 and has 13 connected components, where the component with most
+	nodes has 3579 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 251.47, and
+	the node degree mode is 1. The top 5 most central nodes are 642227.HA49_03480
+	(degree 1304), 642227.HA49_01720 (degree 1191), 642227.HA49_16130 (degree
+	1035), 642227.HA49_17470 (degree 996) and 642227.HA49_17475 (degree 987).
 	
 
 

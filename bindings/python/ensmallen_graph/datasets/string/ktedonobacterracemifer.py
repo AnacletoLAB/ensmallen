@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:49.703634
 
-The undirected graph Ktedonobacter racemifer has 10988 nodes and 1611107 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02669
-and has 176 connected components, where the component with most nodes has 10507 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 293.25, and the node degree mode is 2. The top 5
-most central nodes are 485913.Krac_7865 (degree 2504), 485913.Krac_11725 (degree
-2476), 485913.Krac_11079 (degree 2373), 485913.Krac_10265 (degree 2007) and 485913.Krac_9125
-(degree 1905).
+The undirected graph Ktedonobacter racemifer has 10988 nodes and 1611107
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02669 and has 176 connected components, where the component
+with most nodes has 10507 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 253, the mean node degree
+is 293.25, and the node degree mode is 2. The top 5 most central nodes
+are 485913.Krac_7865 (degree 2504), 485913.Krac_11725 (degree 2476), 485913.Krac_11079
+(degree 2373), 485913.Krac_10265 (degree 2007) and 485913.Krac_9125 (degree
+1905).
 
 
 References
@@ -107,14 +108,15 @@ def KtedonobacterRacemifer(
 	
 	Datetime: 2021-02-02 20:58:49.703634
 	
-	The undirected graph Ktedonobacter racemifer has 10988 nodes and 1611107 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02669
-	and has 176 connected components, where the component with most nodes has 10507 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 293.25, and the node degree mode is 2. The top 5
-	most central nodes are 485913.Krac_7865 (degree 2504), 485913.Krac_11725 (degree
-	2476), 485913.Krac_11079 (degree 2373), 485913.Krac_10265 (degree 2007) and 485913.Krac_9125
-	(degree 1905).
+	The undirected graph Ktedonobacter racemifer has 10988 nodes and 1611107
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02669 and has 176 connected components, where the component
+	with most nodes has 10507 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 253, the mean node degree
+	is 293.25, and the node degree mode is 2. The top 5 most central nodes
+	are 485913.Krac_7865 (degree 2504), 485913.Krac_11725 (degree 2476), 485913.Krac_11079
+	(degree 2373), 485913.Krac_10265 (degree 2007) and 485913.Krac_9125 (degree
+	1905).
 	
 
 

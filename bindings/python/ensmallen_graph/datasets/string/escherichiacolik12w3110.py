@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:33.213506
 
-The undirected graph Escherichia coli K12 W3110 has 4210 nodes and 387039 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04368
-and is connected, as it has a single component. The graph median node degree is 155,
-the mean node degree is 183.87, and the node degree mode is 122. The top 5 most central
-nodes are 316407.1742250 (degree 1454), 316407.85676195 (degree 1409), 316407.1799781
-(degree 1316), 316407.1805567 (degree 1256) and 316407.85676006 (degree 1157).
+The undirected graph Escherichia coli K12 W3110 has 4210 nodes and 387039
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04368 and is connected, as it has a single component.
+The graph median node degree is 155, the mean node degree is 183.87, and
+the node degree mode is 122. The top 5 most central nodes are 316407.1742250
+(degree 1454), 316407.85676195 (degree 1409), 316407.1799781 (degree 1316),
+316407.1805567 (degree 1256) and 316407.85676006 (degree 1157).
 
 
 References
@@ -105,12 +106,13 @@ def EscherichiaColiK12W3110(
 	
 	Datetime: 2021-02-02 20:26:33.213506
 	
-	The undirected graph Escherichia coli K12 W3110 has 4210 nodes and 387039 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04368
-	and is connected, as it has a single component. The graph median node degree is 155,
-	the mean node degree is 183.87, and the node degree mode is 122. The top 5 most central
-	nodes are 316407.1742250 (degree 1454), 316407.85676195 (degree 1409), 316407.1799781
-	(degree 1316), 316407.1805567 (degree 1256) and 316407.85676006 (degree 1157).
+	The undirected graph Escherichia coli K12 W3110 has 4210 nodes and 387039
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04368 and is connected, as it has a single component.
+	The graph median node degree is 155, the mean node degree is 183.87, and
+	the node degree mode is 122. The top 5 most central nodes are 316407.1742250
+	(degree 1454), 316407.85676195 (degree 1409), 316407.1799781 (degree 1316),
+	316407.1805567 (degree 1256) and 316407.85676006 (degree 1157).
 	
 
 

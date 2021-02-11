@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:17.360768
 
-The undirected graph Lysobacter daejeonensis has 2541 nodes and 222472 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06894 and
-has 12 connected components, where the component with most nodes has 2516 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 175.11, and the node degree mode is 2. The top 5 most central
-nodes are 1385517.N800_13895 (degree 1500), 1385517.N800_04795 (degree 988), 1385517.N800_10145
-(degree 910), 1385517.N800_05110 (degree 899) and 1385517.N800_05045 (degree 818).
+The undirected graph Lysobacter daejeonensis has 2541 nodes and 222472
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06894 and has 12 connected components, where the component
+with most nodes has 2516 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 175.11,
+and the node degree mode is 2. The top 5 most central nodes are 1385517.N800_13895
+(degree 1500), 1385517.N800_04795 (degree 988), 1385517.N800_10145 (degree
+910), 1385517.N800_05110 (degree 899) and 1385517.N800_05045 (degree 818).
 
 
 References
@@ -106,13 +107,14 @@ def LysobacterDaejeonensis(
 	
 	Datetime: 2021-02-03 22:20:17.360768
 	
-	The undirected graph Lysobacter daejeonensis has 2541 nodes and 222472 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06894 and
-	has 12 connected components, where the component with most nodes has 2516 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 175.11, and the node degree mode is 2. The top 5 most central
-	nodes are 1385517.N800_13895 (degree 1500), 1385517.N800_04795 (degree 988), 1385517.N800_10145
-	(degree 910), 1385517.N800_05110 (degree 899) and 1385517.N800_05045 (degree 818).
+	The undirected graph Lysobacter daejeonensis has 2541 nodes and 222472
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06894 and has 12 connected components, where the component
+	with most nodes has 2516 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 175.11,
+	and the node degree mode is 2. The top 5 most central nodes are 1385517.N800_13895
+	(degree 1500), 1385517.N800_04795 (degree 988), 1385517.N800_10145 (degree
+	910), 1385517.N800_05110 (degree 899) and 1385517.N800_05045 (degree 818).
 	
 
 

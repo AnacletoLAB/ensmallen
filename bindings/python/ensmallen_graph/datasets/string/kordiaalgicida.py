@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:22.781283
 
-The undirected graph Kordia algicida has 4452 nodes and 389460 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03931 and
-has 40 connected components, where the component with most nodes has 4353 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 174.96, and the node degree mode is 5. The top 5 most central
-nodes are 391587.KAOT1_19572 (degree 1200), 391587.KAOT1_21272 (degree 1132), 391587.KAOT1_10906
-(degree 958), 391587.KAOT1_07548 (degree 868) and 391587.KAOT1_19727 (degree 831).
+The undirected graph Kordia algicida has 4452 nodes and 389460 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03931 and has 40 connected components, where the component with most
+nodes has 4353 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 174.96, and
+the node degree mode is 5. The top 5 most central nodes are 391587.KAOT1_19572
+(degree 1200), 391587.KAOT1_21272 (degree 1132), 391587.KAOT1_10906 (degree
+958), 391587.KAOT1_07548 (degree 868) and 391587.KAOT1_19727 (degree 831).
 
 
 References
@@ -106,13 +107,14 @@ def KordiaAlgicida(
 	
 	Datetime: 2021-02-02 20:39:22.781283
 	
-	The undirected graph Kordia algicida has 4452 nodes and 389460 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03931 and
-	has 40 connected components, where the component with most nodes has 4353 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 174.96, and the node degree mode is 5. The top 5 most central
-	nodes are 391587.KAOT1_19572 (degree 1200), 391587.KAOT1_21272 (degree 1132), 391587.KAOT1_10906
-	(degree 958), 391587.KAOT1_07548 (degree 868) and 391587.KAOT1_19727 (degree 831).
+	The undirected graph Kordia algicida has 4452 nodes and 389460 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03931 and has 40 connected components, where the component with most
+	nodes has 4353 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 174.96, and
+	the node degree mode is 5. The top 5 most central nodes are 391587.KAOT1_19572
+	(degree 1200), 391587.KAOT1_21272 (degree 1132), 391587.KAOT1_10906 (degree
+	958), 391587.KAOT1_07548 (degree 868) and 391587.KAOT1_19727 (degree 831).
 	
 
 

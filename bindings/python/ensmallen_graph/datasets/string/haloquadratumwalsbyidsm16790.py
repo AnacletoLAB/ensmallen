@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:47.735473
 
-The undirected graph Haloquadratum walsbyi DSM16790 has 2484 nodes and 348517 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11301 and has 18 connected components, where the component with most nodes has
-2444 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 288, the mean node degree is 280.61, and the node degree mode is 1. The
-top 5 most central nodes are 362976.HQ_1095A (degree 1018), 362976.HQ_2393A (degree
-991), 362976.HQ_1084A (degree 918), 362976.HQ_1465A (degree 818) and 362976.HQ_3435A
+The undirected graph Haloquadratum walsbyi DSM16790 has 2484 nodes and
+348517 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.11301 and has 18 connected components, where
+the component with most nodes has 2444 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 288, the mean
+node degree is 280.61, and the node degree mode is 1. The top 5 most central
+nodes are 362976.HQ_1095A (degree 1018), 362976.HQ_2393A (degree 991),
+362976.HQ_1084A (degree 918), 362976.HQ_1465A (degree 818) and 362976.HQ_3435A
 (degree 781).
 
 
@@ -107,13 +108,14 @@ def HaloquadratumWalsbyiDsm16790(
 	
 	Datetime: 2021-02-02 20:34:47.735473
 	
-	The undirected graph Haloquadratum walsbyi DSM16790 has 2484 nodes and 348517 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11301 and has 18 connected components, where the component with most nodes has
-	2444 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 288, the mean node degree is 280.61, and the node degree mode is 1. The
-	top 5 most central nodes are 362976.HQ_1095A (degree 1018), 362976.HQ_2393A (degree
-	991), 362976.HQ_1084A (degree 918), 362976.HQ_1465A (degree 818) and 362976.HQ_3435A
+	The undirected graph Haloquadratum walsbyi DSM16790 has 2484 nodes and
+	348517 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.11301 and has 18 connected components, where
+	the component with most nodes has 2444 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 288, the mean
+	node degree is 280.61, and the node degree mode is 1. The top 5 most central
+	nodes are 362976.HQ_1095A (degree 1018), 362976.HQ_2393A (degree 991),
+	362976.HQ_1084A (degree 918), 362976.HQ_1465A (degree 818) and 362976.HQ_3435A
 	(degree 781).
 	
 

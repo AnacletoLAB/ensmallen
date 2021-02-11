@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:11.443730
 
-The undirected graph Streptococcus mitis B6 has 1999 nodes and 110301 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05523 and
-has 9 connected components, where the component with most nodes has 1976 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 110.36, and the node degree mode is 28. The top 5 most central
-nodes are 365659.smi_0048 (degree 839), 365659.smi_1531 (degree 751), 365659.smi_0231
-(degree 634), 365659.smi_1342 (degree 628) and 365659.smi_0842 (degree 602).
+The undirected graph Streptococcus mitis B6 has 1999 nodes and 110301 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05523 and has 9 connected components, where the component with most
+nodes has 1976 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 83, the mean node degree is 110.36, and
+the node degree mode is 28. The top 5 most central nodes are 365659.smi_0048
+(degree 839), 365659.smi_1531 (degree 751), 365659.smi_0231 (degree 634),
+365659.smi_1342 (degree 628) and 365659.smi_0842 (degree 602).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMitisB6(
 	
 	Datetime: 2021-02-02 20:35:11.443730
 	
-	The undirected graph Streptococcus mitis B6 has 1999 nodes and 110301 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05523 and
-	has 9 connected components, where the component with most nodes has 1976 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 110.36, and the node degree mode is 28. The top 5 most central
-	nodes are 365659.smi_0048 (degree 839), 365659.smi_1531 (degree 751), 365659.smi_0231
-	(degree 634), 365659.smi_1342 (degree 628) and 365659.smi_0842 (degree 602).
+	The undirected graph Streptococcus mitis B6 has 1999 nodes and 110301 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05523 and has 9 connected components, where the component with most
+	nodes has 1976 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 83, the mean node degree is 110.36, and
+	the node degree mode is 28. The top 5 most central nodes are 365659.smi_0048
+	(degree 839), 365659.smi_1531 (degree 751), 365659.smi_0231 (degree 634),
+	365659.smi_1342 (degree 628) and 365659.smi_0842 (degree 602).
 	
 
 

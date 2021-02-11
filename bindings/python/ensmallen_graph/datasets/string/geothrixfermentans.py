@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:45.948788
 
-The undirected graph Geothrix fermentans has 2808 nodes and 272955 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06926 and
-has 5 connected components, where the component with most nodes has 2799 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 194.41, and the node degree mode is 3. The top 5 most central
-nodes are 1121920.AUAU01000001_gene2250 (degree 981), 1121920.AUAU01000002_gene2129
-(degree 950), 1121920.AUAU01000006_gene330 (degree 912), 1121920.AUAU01000007_gene559
-(degree 892) and 1121920.AUAU01000003_gene1185 (degree 861).
+The undirected graph Geothrix fermentans has 2808 nodes and 272955 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06926 and has 5 connected components, where the component with most
+nodes has 2799 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 194.41, and
+the node degree mode is 3. The top 5 most central nodes are 1121920.AUAU01000001_gene2250
+(degree 981), 1121920.AUAU01000002_gene2129 (degree 950), 1121920.AUAU01000006_gene330
+(degree 912), 1121920.AUAU01000007_gene559 (degree 892) and 1121920.AUAU01000003_gene1185
+(degree 861).
 
 
 References
@@ -107,14 +108,15 @@ def GeothrixFermentans(
 	
 	Datetime: 2021-02-02 22:38:45.948788
 	
-	The undirected graph Geothrix fermentans has 2808 nodes and 272955 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06926 and
-	has 5 connected components, where the component with most nodes has 2799 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 194.41, and the node degree mode is 3. The top 5 most central
-	nodes are 1121920.AUAU01000001_gene2250 (degree 981), 1121920.AUAU01000002_gene2129
-	(degree 950), 1121920.AUAU01000006_gene330 (degree 912), 1121920.AUAU01000007_gene559
-	(degree 892) and 1121920.AUAU01000003_gene1185 (degree 861).
+	The undirected graph Geothrix fermentans has 2808 nodes and 272955 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06926 and has 5 connected components, where the component with most
+	nodes has 2799 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 194.41, and
+	the node degree mode is 3. The top 5 most central nodes are 1121920.AUAU01000001_gene2250
+	(degree 981), 1121920.AUAU01000002_gene2129 (degree 950), 1121920.AUAU01000006_gene330
+	(degree 912), 1121920.AUAU01000007_gene559 (degree 892) and 1121920.AUAU01000003_gene1185
+	(degree 861).
 	
 
 

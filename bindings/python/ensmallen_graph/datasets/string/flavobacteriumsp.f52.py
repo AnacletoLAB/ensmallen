@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:27.141640
 
-The undirected graph Flavobacterium sp. F52 has 4523 nodes and 430371 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04208 and
-has 5 connected components, where the component with most nodes has 4513 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 190.30, and the node degree mode is 6. The top 5 most central
-nodes are 1202532.FF52_04245 (degree 1414), 1202532.FF52_14914 (degree 1406), 1202532.FF52_21027
-(degree 1319), 1202532.FF52_08224 (degree 1314) and 1202532.FF52_20325 (degree 1274).
+The undirected graph Flavobacterium sp. F52 has 4523 nodes and 430371 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04208 and has 5 connected components, where the component with most
+nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 190.30, and
+the node degree mode is 6. The top 5 most central nodes are 1202532.FF52_04245
+(degree 1414), 1202532.FF52_14914 (degree 1406), 1202532.FF52_21027 (degree
+1319), 1202532.FF52_08224 (degree 1314) and 1202532.FF52_20325 (degree
+1274).
 
 
 References
@@ -106,13 +108,15 @@ def FlavobacteriumSp.F52(
 	
 	Datetime: 2021-02-02 23:14:27.141640
 	
-	The undirected graph Flavobacterium sp. F52 has 4523 nodes and 430371 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04208 and
-	has 5 connected components, where the component with most nodes has 4513 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 190.30, and the node degree mode is 6. The top 5 most central
-	nodes are 1202532.FF52_04245 (degree 1414), 1202532.FF52_14914 (degree 1406), 1202532.FF52_21027
-	(degree 1319), 1202532.FF52_08224 (degree 1314) and 1202532.FF52_20325 (degree 1274).
+	The undirected graph Flavobacterium sp. F52 has 4523 nodes and 430371 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04208 and has 5 connected components, where the component with most
+	nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 190.30, and
+	the node degree mode is 6. The top 5 most central nodes are 1202532.FF52_04245
+	(degree 1414), 1202532.FF52_14914 (degree 1406), 1202532.FF52_21027 (degree
+	1319), 1202532.FF52_08224 (degree 1314) and 1202532.FF52_20325 (degree
+	1274).
 	
 
 

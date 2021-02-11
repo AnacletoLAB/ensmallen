@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:04.626387
 
-The undirected graph Flaviramulus ichthyoenteri has 3418 nodes and 379936 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06506
-and has 10 connected components, where the component with most nodes has 3389 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 222.31, and the node degree mode is 7. The top 5
-most central nodes are 1380600.AUYN01000007_gene3417 (degree 1179), 1380600.AUYN01000009_gene1316
-(degree 1178), 1380600.AUYN01000009_gene1730 (degree 1098), 1380600.AUYN01000009_gene961
-(degree 1005) and 1380600.AUYN01000003_gene129 (degree 955).
+The undirected graph Flaviramulus ichthyoenteri has 3418 nodes and 379936
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06506 and has 10 connected components, where the component
+with most nodes has 3389 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 222.31,
+and the node degree mode is 7. The top 5 most central nodes are 1380600.AUYN01000007_gene3417
+(degree 1179), 1380600.AUYN01000009_gene1316 (degree 1178), 1380600.AUYN01000009_gene1730
+(degree 1098), 1380600.AUYN01000009_gene961 (degree 1005) and 1380600.AUYN01000003_gene129
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def FlaviramulusIchthyoenteri(
 	
 	Datetime: 2021-02-03 22:17:04.626387
 	
-	The undirected graph Flaviramulus ichthyoenteri has 3418 nodes and 379936 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06506
-	and has 10 connected components, where the component with most nodes has 3389 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 222.31, and the node degree mode is 7. The top 5
-	most central nodes are 1380600.AUYN01000007_gene3417 (degree 1179), 1380600.AUYN01000009_gene1316
-	(degree 1178), 1380600.AUYN01000009_gene1730 (degree 1098), 1380600.AUYN01000009_gene961
-	(degree 1005) and 1380600.AUYN01000003_gene129 (degree 955).
+	The undirected graph Flaviramulus ichthyoenteri has 3418 nodes and 379936
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06506 and has 10 connected components, where the component
+	with most nodes has 3389 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 222.31,
+	and the node degree mode is 7. The top 5 most central nodes are 1380600.AUYN01000007_gene3417
+	(degree 1179), 1380600.AUYN01000009_gene1316 (degree 1178), 1380600.AUYN01000009_gene1730
+	(degree 1098), 1380600.AUYN01000009_gene961 (degree 1005) and 1380600.AUYN01000003_gene129
+	(degree 955).
 	
 
 

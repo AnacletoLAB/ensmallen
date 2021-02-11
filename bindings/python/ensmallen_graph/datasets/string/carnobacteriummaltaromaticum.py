@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:40.340630
 
-The undirected graph Carnobacterium maltaromaticum has 3545 nodes and 332647 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05295
-and has 10 connected components, where the component with most nodes has 3521 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 187.67, and the node degree mode is 5. The top 5
-most central nodes are 1234679.BN424_1142 (degree 1510), 1234679.BN424_2923 (degree
-1328), 1234679.BN424_3081 (degree 1304), 1234679.BN424_199 (degree 1243) and 1234679.BN424_2844
-(degree 1170).
+The undirected graph Carnobacterium maltaromaticum has 3545 nodes and 332647
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05295 and has 10 connected components, where the component
+with most nodes has 3521 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 187.67,
+and the node degree mode is 5. The top 5 most central nodes are 1234679.BN424_1142
+(degree 1510), 1234679.BN424_2923 (degree 1328), 1234679.BN424_3081 (degree
+1304), 1234679.BN424_199 (degree 1243) and 1234679.BN424_2844 (degree 1170).
 
 
 References
@@ -107,14 +107,14 @@ def CarnobacteriumMaltaromaticum(
 	
 	Datetime: 2021-02-02 23:29:40.340630
 	
-	The undirected graph Carnobacterium maltaromaticum has 3545 nodes and 332647 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05295
-	and has 10 connected components, where the component with most nodes has 3521 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 187.67, and the node degree mode is 5. The top 5
-	most central nodes are 1234679.BN424_1142 (degree 1510), 1234679.BN424_2923 (degree
-	1328), 1234679.BN424_3081 (degree 1304), 1234679.BN424_199 (degree 1243) and 1234679.BN424_2844
-	(degree 1170).
+	The undirected graph Carnobacterium maltaromaticum has 3545 nodes and 332647
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05295 and has 10 connected components, where the component
+	with most nodes has 3521 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 187.67,
+	and the node degree mode is 5. The top 5 most central nodes are 1234679.BN424_1142
+	(degree 1510), 1234679.BN424_2923 (degree 1328), 1234679.BN424_3081 (degree
+	1304), 1234679.BN424_199 (degree 1243) and 1234679.BN424_2844 (degree 1170).
 	
 
 

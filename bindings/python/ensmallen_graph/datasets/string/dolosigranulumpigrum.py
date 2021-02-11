@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:14.935260
 
-The undirected graph Dolosigranulum pigrum has 1677 nodes and 114167 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08124 and
-has 6 connected components, where the component with most nodes has 1666 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 136.16, and the node degree mode is 4. The top 5 most central
-nodes are 883103.HMPREF9703_01227 (degree 740), 883103.HMPREF9703_00658 (degree 661),
-883103.HMPREF9703_01336 (degree 575), 883103.HMPREF9703_01173 (degree 553) and 883103.HMPREF9703_01338
+The undirected graph Dolosigranulum pigrum has 1677 nodes and 114167 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08124 and has 6 connected components, where the component with most
+nodes has 1666 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 136.16, and
+the node degree mode is 4. The top 5 most central nodes are 883103.HMPREF9703_01227
+(degree 740), 883103.HMPREF9703_00658 (degree 661), 883103.HMPREF9703_01336
+(degree 575), 883103.HMPREF9703_01173 (degree 553) and 883103.HMPREF9703_01338
 (degree 542).
 
 
@@ -107,13 +108,14 @@ def DolosigranulumPigrum(
 	
 	Datetime: 2021-02-02 21:51:14.935260
 	
-	The undirected graph Dolosigranulum pigrum has 1677 nodes and 114167 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08124 and
-	has 6 connected components, where the component with most nodes has 1666 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 136.16, and the node degree mode is 4. The top 5 most central
-	nodes are 883103.HMPREF9703_01227 (degree 740), 883103.HMPREF9703_00658 (degree 661),
-	883103.HMPREF9703_01336 (degree 575), 883103.HMPREF9703_01173 (degree 553) and 883103.HMPREF9703_01338
+	The undirected graph Dolosigranulum pigrum has 1677 nodes and 114167 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08124 and has 6 connected components, where the component with most
+	nodes has 1666 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 136.16, and
+	the node degree mode is 4. The top 5 most central nodes are 883103.HMPREF9703_01227
+	(degree 740), 883103.HMPREF9703_00658 (degree 661), 883103.HMPREF9703_01336
+	(degree 575), 883103.HMPREF9703_01173 (degree 553) and 883103.HMPREF9703_01338
 	(degree 542).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:14.577057
 
-The undirected graph Laribacter hongkongensis has 3174 nodes and 248278 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-and has 19 connected components, where the component with most nodes has 3134 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 156.44, and the node degree mode is 3. The top 5
-most central nodes are 557598.LHK_01443 (degree 1255), 557598.LHK_02983 (degree 1197),
-557598.LHK_01269 (degree 1158), 557598.LHK_00639 (degree 1107) and 557598.LHK_01015
-(degree 963).
+The undirected graph Laribacter hongkongensis has 3174 nodes and 248278
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04931 and has 19 connected components, where the component
+with most nodes has 3134 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 156.44,
+and the node degree mode is 3. The top 5 most central nodes are 557598.LHK_01443
+(degree 1255), 557598.LHK_02983 (degree 1197), 557598.LHK_01269 (degree
+1158), 557598.LHK_00639 (degree 1107) and 557598.LHK_01015 (degree 963).
 
 
 References
@@ -107,14 +107,14 @@ def LaribacterHongkongensis(
 	
 	Datetime: 2021-02-02 21:11:14.577057
 	
-	The undirected graph Laribacter hongkongensis has 3174 nodes and 248278 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-	and has 19 connected components, where the component with most nodes has 3134 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 156.44, and the node degree mode is 3. The top 5
-	most central nodes are 557598.LHK_01443 (degree 1255), 557598.LHK_02983 (degree 1197),
-	557598.LHK_01269 (degree 1158), 557598.LHK_00639 (degree 1107) and 557598.LHK_01015
-	(degree 963).
+	The undirected graph Laribacter hongkongensis has 3174 nodes and 248278
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04931 and has 19 connected components, where the component
+	with most nodes has 3134 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 156.44,
+	and the node degree mode is 3. The top 5 most central nodes are 557598.LHK_01443
+	(degree 1255), 557598.LHK_02983 (degree 1197), 557598.LHK_01269 (degree
+	1158), 557598.LHK_00639 (degree 1107) and 557598.LHK_01015 (degree 963).
 	
 
 

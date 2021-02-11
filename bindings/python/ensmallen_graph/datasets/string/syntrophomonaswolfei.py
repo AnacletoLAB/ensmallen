@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:23.217404
 
-The undirected graph Syntrophomonas wolfei has 2482 nodes and 158257 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05140 and
-has 3 connected components, where the component with most nodes has 2478 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 127.52, and the node degree mode is 4. The top 5 most central
-nodes are 335541.Swol_2017 (degree 992), 335541.Swol_1420 (degree 926), 335541.Swol_0601
-(degree 918), 335541.Swol_1784 (degree 816) and 335541.Swol_1344 (degree 813).
+The undirected graph Syntrophomonas wolfei has 2482 nodes and 158257 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05140 and has 3 connected components, where the component with most
+nodes has 2478 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 127.52, and
+the node degree mode is 4. The top 5 most central nodes are 335541.Swol_2017
+(degree 992), 335541.Swol_1420 (degree 926), 335541.Swol_0601 (degree 918),
+335541.Swol_1784 (degree 816) and 335541.Swol_1344 (degree 813).
 
 
 References
@@ -106,13 +107,14 @@ def SyntrophomonasWolfei(
 	
 	Datetime: 2021-02-02 20:30:23.217404
 	
-	The undirected graph Syntrophomonas wolfei has 2482 nodes and 158257 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05140 and
-	has 3 connected components, where the component with most nodes has 2478 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 127.52, and the node degree mode is 4. The top 5 most central
-	nodes are 335541.Swol_2017 (degree 992), 335541.Swol_1420 (degree 926), 335541.Swol_0601
-	(degree 918), 335541.Swol_1784 (degree 816) and 335541.Swol_1344 (degree 813).
+	The undirected graph Syntrophomonas wolfei has 2482 nodes and 158257 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05140 and has 3 connected components, where the component with most
+	nodes has 2478 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 127.52, and
+	the node degree mode is 4. The top 5 most central nodes are 335541.Swol_2017
+	(degree 992), 335541.Swol_1420 (degree 926), 335541.Swol_0601 (degree 918),
+	335541.Swol_1784 (degree 816) and 335541.Swol_1344 (degree 813).
 	
 
 

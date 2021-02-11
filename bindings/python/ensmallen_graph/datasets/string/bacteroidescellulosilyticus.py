@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:33.488257
 
-The undirected graph Bacteroides cellulosilyticus has 5192 nodes and 538560 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03996
-and has 32 connected components, where the component with most nodes has 5099 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 207.46, and the node degree mode is 2. The top 5
-most central nodes are 1268240.ATFI01000001_gene3125 (degree 1710), 1268240.ATFI01000011_gene1469
-(degree 1360), 1268240.ATFI01000008_gene2087 (degree 1349), 1268240.ATFI01000008_gene1980
-(degree 1329) and 1268240.ATFI01000002_gene4837 (degree 1318).
+The undirected graph Bacteroides cellulosilyticus has 5192 nodes and 538560
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03996 and has 32 connected components, where the component
+with most nodes has 5099 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 207.46,
+and the node degree mode is 2. The top 5 most central nodes are 1268240.ATFI01000001_gene3125
+(degree 1710), 1268240.ATFI01000011_gene1469 (degree 1360), 1268240.ATFI01000008_gene2087
+(degree 1349), 1268240.ATFI01000008_gene1980 (degree 1329) and 1268240.ATFI01000002_gene4837
+(degree 1318).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesCellulosilyticus(
 	
 	Datetime: 2021-02-02 23:37:33.488257
 	
-	The undirected graph Bacteroides cellulosilyticus has 5192 nodes and 538560 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03996
-	and has 32 connected components, where the component with most nodes has 5099 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 207.46, and the node degree mode is 2. The top 5
-	most central nodes are 1268240.ATFI01000001_gene3125 (degree 1710), 1268240.ATFI01000011_gene1469
-	(degree 1360), 1268240.ATFI01000008_gene2087 (degree 1349), 1268240.ATFI01000008_gene1980
-	(degree 1329) and 1268240.ATFI01000002_gene4837 (degree 1318).
+	The undirected graph Bacteroides cellulosilyticus has 5192 nodes and 538560
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03996 and has 32 connected components, where the component
+	with most nodes has 5099 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 207.46,
+	and the node degree mode is 2. The top 5 most central nodes are 1268240.ATFI01000001_gene3125
+	(degree 1710), 1268240.ATFI01000011_gene1469 (degree 1360), 1268240.ATFI01000008_gene2087
+	(degree 1349), 1268240.ATFI01000008_gene1980 (degree 1329) and 1268240.ATFI01000002_gene4837
+	(degree 1318).
 	
 
 

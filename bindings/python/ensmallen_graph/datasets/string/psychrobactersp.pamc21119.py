@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:03.573055
 
-The undirected graph Psychrobacter sp. PAMC21119 has 2756 nodes and 262203 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06907
-and has 8 connected components, where the component with most nodes has 2739 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 190.28, and the node degree mode is 2. The top 5
-most central nodes are 1112209.AHVZ01000040_gene2080 (degree 1049), 1112209.AHVZ01000031_gene1870
-(degree 874), 1112209.AHVZ01000020_gene1336 (degree 874), 1112209.AHVZ01000041_gene814
-(degree 832) and 1112209.AHVZ01000038_gene13 (degree 793).
+The undirected graph Psychrobacter sp. PAMC21119 has 2756 nodes and 262203
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06907 and has 8 connected components, where the component
+with most nodes has 2739 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 190.28,
+and the node degree mode is 2. The top 5 most central nodes are 1112209.AHVZ01000040_gene2080
+(degree 1049), 1112209.AHVZ01000031_gene1870 (degree 874), 1112209.AHVZ01000020_gene1336
+(degree 874), 1112209.AHVZ01000041_gene814 (degree 832) and 1112209.AHVZ01000038_gene13
+(degree 793).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterSp.Pamc21119(
 	
 	Datetime: 2021-02-02 22:26:03.573055
 	
-	The undirected graph Psychrobacter sp. PAMC21119 has 2756 nodes and 262203 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06907
-	and has 8 connected components, where the component with most nodes has 2739 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 190.28, and the node degree mode is 2. The top 5
-	most central nodes are 1112209.AHVZ01000040_gene2080 (degree 1049), 1112209.AHVZ01000031_gene1870
-	(degree 874), 1112209.AHVZ01000020_gene1336 (degree 874), 1112209.AHVZ01000041_gene814
-	(degree 832) and 1112209.AHVZ01000038_gene13 (degree 793).
+	The undirected graph Psychrobacter sp. PAMC21119 has 2756 nodes and 262203
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06907 and has 8 connected components, where the component
+	with most nodes has 2739 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 190.28,
+	and the node degree mode is 2. The top 5 most central nodes are 1112209.AHVZ01000040_gene2080
+	(degree 1049), 1112209.AHVZ01000031_gene1870 (degree 874), 1112209.AHVZ01000020_gene1336
+	(degree 874), 1112209.AHVZ01000041_gene814 (degree 832) and 1112209.AHVZ01000038_gene13
+	(degree 793).
 	
 
 

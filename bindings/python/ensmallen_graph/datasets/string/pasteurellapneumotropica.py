@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:50.061905
 
-The undirected graph Pasteurella pneumotropica has 2192 nodes and 148213 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06172
-and has 12 connected components, where the component with most nodes has 2162 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 135.23, and the node degree mode is 3. The top 5
-most central nodes are 758.BBIX01000006_gene708 (degree 863), 758.BBIX01000006_gene579
-(degree 763), 758.BBIX01000009_gene1846 (degree 742), 758.BBIX01000008_gene892 (degree
-732) and 758.BBIX01000009_gene1848 (degree 673).
+The undirected graph Pasteurella pneumotropica has 2192 nodes and 148213
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06172 and has 12 connected components, where the component
+with most nodes has 2162 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 135.23,
+and the node degree mode is 3. The top 5 most central nodes are 758.BBIX01000006_gene708
+(degree 863), 758.BBIX01000006_gene579 (degree 763), 758.BBIX01000009_gene1846
+(degree 742), 758.BBIX01000008_gene892 (degree 732) and 758.BBIX01000009_gene1848
+(degree 673).
 
 
 References
@@ -107,14 +108,15 @@ def PasteurellaPneumotropica(
 	
 	Datetime: 2021-02-02 16:21:50.061905
 	
-	The undirected graph Pasteurella pneumotropica has 2192 nodes and 148213 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06172
-	and has 12 connected components, where the component with most nodes has 2162 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 135.23, and the node degree mode is 3. The top 5
-	most central nodes are 758.BBIX01000006_gene708 (degree 863), 758.BBIX01000006_gene579
-	(degree 763), 758.BBIX01000009_gene1846 (degree 742), 758.BBIX01000008_gene892 (degree
-	732) and 758.BBIX01000009_gene1848 (degree 673).
+	The undirected graph Pasteurella pneumotropica has 2192 nodes and 148213
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06172 and has 12 connected components, where the component
+	with most nodes has 2162 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 135.23,
+	and the node degree mode is 3. The top 5 most central nodes are 758.BBIX01000006_gene708
+	(degree 863), 758.BBIX01000006_gene579 (degree 763), 758.BBIX01000009_gene1846
+	(degree 742), 758.BBIX01000008_gene892 (degree 732) and 758.BBIX01000009_gene1848
+	(degree 673).
 	
 
 

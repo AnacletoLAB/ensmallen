@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:55.958540
 
-The undirected graph Bradyrhizobium sp. Ai1a2 has 7562 nodes and 1067150 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03733
-and has 59 connected components, where the component with most nodes has 7418 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 222, the mean node degree is 282.24, and the node degree mode is 1. The top 5
-most central nodes are 196490.AUEZ01000089_gene6590 (degree 3827), 196490.AUEZ01000016_gene3073
-(degree 2813), 196490.AUEZ01000019_gene563 (degree 2265), 196490.AUEZ01000019_gene522
-(degree 2256) and 196490.AUEZ01000081_gene2089 (degree 2249).
+The undirected graph Bradyrhizobium sp. Ai1a2 has 7562 nodes and 1067150
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03733 and has 59 connected components, where the component
+with most nodes has 7418 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 222, the mean node degree is 282.24,
+and the node degree mode is 1. The top 5 most central nodes are 196490.AUEZ01000089_gene6590
+(degree 3827), 196490.AUEZ01000016_gene3073 (degree 2813), 196490.AUEZ01000019_gene563
+(degree 2265), 196490.AUEZ01000019_gene522 (degree 2256) and 196490.AUEZ01000081_gene2089
+(degree 2249).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Ai1a2(
 	
 	Datetime: 2021-02-02 19:58:55.958540
 	
-	The undirected graph Bradyrhizobium sp. Ai1a2 has 7562 nodes and 1067150 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03733
-	and has 59 connected components, where the component with most nodes has 7418 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 222, the mean node degree is 282.24, and the node degree mode is 1. The top 5
-	most central nodes are 196490.AUEZ01000089_gene6590 (degree 3827), 196490.AUEZ01000016_gene3073
-	(degree 2813), 196490.AUEZ01000019_gene563 (degree 2265), 196490.AUEZ01000019_gene522
-	(degree 2256) and 196490.AUEZ01000081_gene2089 (degree 2249).
+	The undirected graph Bradyrhizobium sp. Ai1a2 has 7562 nodes and 1067150
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03733 and has 59 connected components, where the component
+	with most nodes has 7418 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 222, the mean node degree is 282.24,
+	and the node degree mode is 1. The top 5 most central nodes are 196490.AUEZ01000089_gene6590
+	(degree 3827), 196490.AUEZ01000016_gene3073 (degree 2813), 196490.AUEZ01000019_gene563
+	(degree 2265), 196490.AUEZ01000019_gene522 (degree 2256) and 196490.AUEZ01000081_gene2089
+	(degree 2249).
 	
 
 

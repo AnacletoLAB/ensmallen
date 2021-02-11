@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:54.507471
 
-The undirected graph Pseudomonas protegens Pf5 has 6062 nodes and 593083 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03228
-and has 15 connected components, where the component with most nodes has 6031 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 195.67, and the node degree mode is 3. The top 5
-most central nodes are 220664.PFL_0082 (degree 2104), 220664.PFL_0453 (degree 1757),
-220664.PFL_4844 (degree 1476), 220664.PFL_0813 (degree 1465) and 220664.PFL_4939
-(degree 1465).
+The undirected graph Pseudomonas protegens Pf5 has 6062 nodes and 593083
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03228 and has 15 connected components, where the component
+with most nodes has 6031 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 195.67,
+and the node degree mode is 3. The top 5 most central nodes are 220664.PFL_0082
+(degree 2104), 220664.PFL_0453 (degree 1757), 220664.PFL_4844 (degree 1476),
+220664.PFL_0813 (degree 1465) and 220664.PFL_4939 (degree 1465).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasProtegensPf5(
 	
 	Datetime: 2021-02-02 20:03:54.507471
 	
-	The undirected graph Pseudomonas protegens Pf5 has 6062 nodes and 593083 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03228
-	and has 15 connected components, where the component with most nodes has 6031 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 195.67, and the node degree mode is 3. The top 5
-	most central nodes are 220664.PFL_0082 (degree 2104), 220664.PFL_0453 (degree 1757),
-	220664.PFL_4844 (degree 1476), 220664.PFL_0813 (degree 1465) and 220664.PFL_4939
-	(degree 1465).
+	The undirected graph Pseudomonas protegens Pf5 has 6062 nodes and 593083
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03228 and has 15 connected components, where the component
+	with most nodes has 6031 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 195.67,
+	and the node degree mode is 3. The top 5 most central nodes are 220664.PFL_0082
+	(degree 2104), 220664.PFL_0453 (degree 1757), 220664.PFL_4844 (degree 1476),
+	220664.PFL_0813 (degree 1465) and 220664.PFL_4939 (degree 1465).
 	
 
 

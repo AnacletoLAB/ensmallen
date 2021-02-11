@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:00.194500
 
-The undirected graph Mannheimia varigena USMARC1296 has 2095 nodes and 121290 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05530
-and has 3 connected components, where the component with most nodes has 2090 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 115.79, and the node degree mode is 10. The top 5
-most central nodes are 1433287.X808_12150 (degree 867), 1433287.X808_13510 (degree
-750), 1433287.X808_9680 (degree 687), 1433287.X808_7450 (degree 671) and 1433287.X808_9650
-(degree 641).
+The undirected graph Mannheimia varigena USMARC1296 has 2095 nodes and
+121290 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05530 and has 3 connected components, where the
+component with most nodes has 2090 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 92, the mean node degree
+is 115.79, and the node degree mode is 10. The top 5 most central nodes
+are 1433287.X808_12150 (degree 867), 1433287.X808_13510 (degree 750), 1433287.X808_9680
+(degree 687), 1433287.X808_7450 (degree 671) and 1433287.X808_9650 (degree
+641).
 
 
 References
@@ -107,14 +108,15 @@ def MannheimiaVarigenaUsmarc1296(
 	
 	Datetime: 2021-02-03 22:54:00.194500
 	
-	The undirected graph Mannheimia varigena USMARC1296 has 2095 nodes and 121290 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05530
-	and has 3 connected components, where the component with most nodes has 2090 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 115.79, and the node degree mode is 10. The top 5
-	most central nodes are 1433287.X808_12150 (degree 867), 1433287.X808_13510 (degree
-	750), 1433287.X808_9680 (degree 687), 1433287.X808_7450 (degree 671) and 1433287.X808_9650
-	(degree 641).
+	The undirected graph Mannheimia varigena USMARC1296 has 2095 nodes and
+	121290 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05530 and has 3 connected components, where the
+	component with most nodes has 2090 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 92, the mean node degree
+	is 115.79, and the node degree mode is 10. The top 5 most central nodes
+	are 1433287.X808_12150 (degree 867), 1433287.X808_13510 (degree 750), 1433287.X808_9680
+	(degree 687), 1433287.X808_7450 (degree 671) and 1433287.X808_9650 (degree
+	641).
 	
 
 

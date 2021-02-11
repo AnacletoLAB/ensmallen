@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:22.533926
 
-The undirected graph Streptomyces sulphureus has 5916 nodes and 709268 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04054 and
-has 25 connected components, where the component with most nodes has 5852 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 239.78, and the node degree mode is 2. The top 5 most central
-nodes are 1123321.KB905818_gene4635 (degree 2252), 1123321.KB905814_gene2309 (degree
-2103), 1123321.KB905815_gene3181 (degree 1738), 1123321.KB905817_gene5219 (degree
-1662) and 1123321.KB905815_gene3205 (degree 1610).
+The undirected graph Streptomyces sulphureus has 5916 nodes and 709268
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04054 and has 25 connected components, where the component
+with most nodes has 5852 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 200, the mean node degree is 239.78,
+and the node degree mode is 2. The top 5 most central nodes are 1123321.KB905818_gene4635
+(degree 2252), 1123321.KB905814_gene2309 (degree 2103), 1123321.KB905815_gene3181
+(degree 1738), 1123321.KB905817_gene5219 (degree 1662) and 1123321.KB905815_gene3205
+(degree 1610).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSulphureus(
 	
 	Datetime: 2021-02-02 22:51:22.533926
 	
-	The undirected graph Streptomyces sulphureus has 5916 nodes and 709268 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04054 and
-	has 25 connected components, where the component with most nodes has 5852 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 239.78, and the node degree mode is 2. The top 5 most central
-	nodes are 1123321.KB905818_gene4635 (degree 2252), 1123321.KB905814_gene2309 (degree
-	2103), 1123321.KB905815_gene3181 (degree 1738), 1123321.KB905817_gene5219 (degree
-	1662) and 1123321.KB905815_gene3205 (degree 1610).
+	The undirected graph Streptomyces sulphureus has 5916 nodes and 709268
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04054 and has 25 connected components, where the component
+	with most nodes has 5852 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 200, the mean node degree is 239.78,
+	and the node degree mode is 2. The top 5 most central nodes are 1123321.KB905818_gene4635
+	(degree 2252), 1123321.KB905814_gene2309 (degree 2103), 1123321.KB905815_gene3181
+	(degree 1738), 1123321.KB905817_gene5219 (degree 1662) and 1123321.KB905815_gene3205
+	(degree 1610).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:42.905929
 
-The undirected graph Actinomyces israelii has 3019 nodes and 252512 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05543 and
-has 26 connected components, where the component with most nodes has 2956 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 167.28, and the node degree mode is 2. The top 5 most central
-nodes are 1120944.JONS01000004_gene2917 (degree 1250), 1120944.JONS01000001_gene1859
-(degree 1145), 1120944.JONS01000030_gene1487 (degree 1068), 1120944.JONS01000009_gene556
-(degree 1054) and 1120944.JONS01000013_gene187 (degree 1007).
+The undirected graph Actinomyces israelii has 3019 nodes and 252512 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05543 and has 26 connected components, where the component with most
+nodes has 2956 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 167.28, and
+the node degree mode is 2. The top 5 most central nodes are 1120944.JONS01000004_gene2917
+(degree 1250), 1120944.JONS01000001_gene1859 (degree 1145), 1120944.JONS01000030_gene1487
+(degree 1068), 1120944.JONS01000009_gene556 (degree 1054) and 1120944.JONS01000013_gene187
+(degree 1007).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesIsraelii(
 	
 	Datetime: 2021-02-02 22:29:42.905929
 	
-	The undirected graph Actinomyces israelii has 3019 nodes and 252512 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05543 and
-	has 26 connected components, where the component with most nodes has 2956 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 167.28, and the node degree mode is 2. The top 5 most central
-	nodes are 1120944.JONS01000004_gene2917 (degree 1250), 1120944.JONS01000001_gene1859
-	(degree 1145), 1120944.JONS01000030_gene1487 (degree 1068), 1120944.JONS01000009_gene556
-	(degree 1054) and 1120944.JONS01000013_gene187 (degree 1007).
+	The undirected graph Actinomyces israelii has 3019 nodes and 252512 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05543 and has 26 connected components, where the component with most
+	nodes has 2956 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 167.28, and
+	the node degree mode is 2. The top 5 most central nodes are 1120944.JONS01000004_gene2917
+	(degree 1250), 1120944.JONS01000001_gene1859 (degree 1145), 1120944.JONS01000030_gene1487
+	(degree 1068), 1120944.JONS01000009_gene556 (degree 1054) and 1120944.JONS01000013_gene187
+	(degree 1007).
 	
 
 

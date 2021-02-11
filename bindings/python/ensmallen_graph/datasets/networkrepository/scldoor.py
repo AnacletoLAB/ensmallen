@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:01:37.600654
 
-The undirected graph sc-ldoor has 909537 nodes and 20770807 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and is connected, as it has a single component. The graph median node degree is 46,
-the mean node degree is 45.67, and the node degree mode is 34. The top 5 most central
-nodes are 298760 (degree 76), 298759 (degree 76), 298758 (degree 76), 298757 (degree
-76) and 298756 (degree 76).
+The undirected graph sc-ldoor has 909537 nodes and 20770807 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00005 and is connected, as it has a single component.
+The graph median node degree is 46, the mean node degree is 45.67, and
+the node degree mode is 34. The top 5 most central nodes are 298760 (degree
+76), 298759 (degree 76), 298758 (degree 76), 298757 (degree 76) and 298756
+(degree 76).
 
 
 References
@@ -109,12 +110,13 @@ def ScLdoor(
 	
 	Datetime: 2021-02-07 16:01:37.600654
 	
-	The undirected graph sc-ldoor has 909537 nodes and 20770807 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and is connected, as it has a single component. The graph median node degree is 46,
-	the mean node degree is 45.67, and the node degree mode is 34. The top 5 most central
-	nodes are 298760 (degree 76), 298759 (degree 76), 298758 (degree 76), 298757 (degree
-	76) and 298756 (degree 76).
+	The undirected graph sc-ldoor has 909537 nodes and 20770807 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00005 and is connected, as it has a single component.
+	The graph median node degree is 46, the mean node degree is 45.67, and
+	the node degree mode is 34. The top 5 most central nodes are 298760 (degree
+	76), 298759 (degree 76), 298758 (degree 76), 298757 (degree 76) and 298756
+	(degree 76).
 	
 
 

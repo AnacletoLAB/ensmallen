@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:58.185126
 
-The undirected graph Arthrobacter phenanthrenivorans has 4013 nodes and 324564 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04032
-and has 14 connected components, where the component with most nodes has 3981 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 161.76, and the node degree mode is 3. The top 5
-most central nodes are 930171.Asphe3_17800 (degree 1307), 930171.Asphe3_16710 (degree
-1192), 930171.Asphe3_27140 (degree 1153), 930171.Asphe3_33230 (degree 1123) and 930171.Asphe3_27210
-(degree 1049).
+The undirected graph Arthrobacter phenanthrenivorans has 4013 nodes and
+324564 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04032 and has 14 connected components, where the
+component with most nodes has 3981 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 126, the mean node degree
+is 161.76, and the node degree mode is 3. The top 5 most central nodes
+are 930171.Asphe3_17800 (degree 1307), 930171.Asphe3_16710 (degree 1192),
+930171.Asphe3_27140 (degree 1153), 930171.Asphe3_33230 (degree 1123) and
+930171.Asphe3_27210 (degree 1049).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterPhenanthrenivorans(
 	
 	Datetime: 2021-02-02 21:57:58.185126
 	
-	The undirected graph Arthrobacter phenanthrenivorans has 4013 nodes and 324564 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04032
-	and has 14 connected components, where the component with most nodes has 3981 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 161.76, and the node degree mode is 3. The top 5
-	most central nodes are 930171.Asphe3_17800 (degree 1307), 930171.Asphe3_16710 (degree
-	1192), 930171.Asphe3_27140 (degree 1153), 930171.Asphe3_33230 (degree 1123) and 930171.Asphe3_27210
-	(degree 1049).
+	The undirected graph Arthrobacter phenanthrenivorans has 4013 nodes and
+	324564 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04032 and has 14 connected components, where the
+	component with most nodes has 3981 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 126, the mean node degree
+	is 161.76, and the node degree mode is 3. The top 5 most central nodes
+	are 930171.Asphe3_17800 (degree 1307), 930171.Asphe3_16710 (degree 1192),
+	930171.Asphe3_27140 (degree 1153), 930171.Asphe3_33230 (degree 1123) and
+	930171.Asphe3_27210 (degree 1049).
 	
 
 

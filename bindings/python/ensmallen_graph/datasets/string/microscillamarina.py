@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:58.916257
 
-The undirected graph Microscilla marina has 8022 nodes and 824060 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02561 and
-has 203 connected components, where the component with most nodes has 7456 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 205.45, and the node degree mode is 2. The top 5
-most central nodes are 313606.M23134_01422 (degree 1768), 313606.M23134_08279 (degree
-1619), 313606.M23134_08281 (degree 1610), 313606.M23134_05992 (degree 1569) and 313606.M23134_03761
-(degree 1424).
+The undirected graph Microscilla marina has 8022 nodes and 824060 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02561 and has 203 connected components, where the component with most
+nodes has 7456 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 205.45, and
+the node degree mode is 2. The top 5 most central nodes are 313606.M23134_01422
+(degree 1768), 313606.M23134_08279 (degree 1619), 313606.M23134_08281 (degree
+1610), 313606.M23134_05992 (degree 1569) and 313606.M23134_03761 (degree
+1424).
 
 
 References
@@ -107,14 +108,15 @@ def MicroscillaMarina(
 	
 	Datetime: 2021-02-02 20:23:58.916257
 	
-	The undirected graph Microscilla marina has 8022 nodes and 824060 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02561 and
-	has 203 connected components, where the component with most nodes has 7456 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 205.45, and the node degree mode is 2. The top 5
-	most central nodes are 313606.M23134_01422 (degree 1768), 313606.M23134_08279 (degree
-	1619), 313606.M23134_08281 (degree 1610), 313606.M23134_05992 (degree 1569) and 313606.M23134_03761
-	(degree 1424).
+	The undirected graph Microscilla marina has 8022 nodes and 824060 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02561 and has 203 connected components, where the component with most
+	nodes has 7456 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 205.45, and
+	the node degree mode is 2. The top 5 most central nodes are 313606.M23134_01422
+	(degree 1768), 313606.M23134_08279 (degree 1619), 313606.M23134_08281 (degree
+	1610), 313606.M23134_05992 (degree 1569) and 313606.M23134_03761 (degree
+	1424).
 	
 
 

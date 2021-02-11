@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:43.214851
 
-The undirected graph Shewanella sediminis has 4444 nodes and 502688 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05092 and
-has 8 connected components, where the component with most nodes has 4428 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 226.23, and the node degree mode is 2. The top 5 most central
-nodes are 425104.Ssed_2865 (degree 1867), 425104.Ssed_0096 (degree 1810), 425104.Ssed_3967
-(degree 1598), 425104.Ssed_1381 (degree 1482) and 425104.Ssed_0627 (degree 1421).
+The undirected graph Shewanella sediminis has 4444 nodes and 502688 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05092 and has 8 connected components, where the component with most
+nodes has 4428 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 226.23, and
+the node degree mode is 2. The top 5 most central nodes are 425104.Ssed_2865
+(degree 1867), 425104.Ssed_0096 (degree 1810), 425104.Ssed_3967 (degree
+1598), 425104.Ssed_1381 (degree 1482) and 425104.Ssed_0627 (degree 1421).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaSediminis(
 	
 	Datetime: 2021-02-02 20:47:43.214851
 	
-	The undirected graph Shewanella sediminis has 4444 nodes and 502688 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05092 and
-	has 8 connected components, where the component with most nodes has 4428 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 226.23, and the node degree mode is 2. The top 5 most central
-	nodes are 425104.Ssed_2865 (degree 1867), 425104.Ssed_0096 (degree 1810), 425104.Ssed_3967
-	(degree 1598), 425104.Ssed_1381 (degree 1482) and 425104.Ssed_0627 (degree 1421).
+	The undirected graph Shewanella sediminis has 4444 nodes and 502688 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05092 and has 8 connected components, where the component with most
+	nodes has 4428 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 226.23, and
+	the node degree mode is 2. The top 5 most central nodes are 425104.Ssed_2865
+	(degree 1867), 425104.Ssed_0096 (degree 1810), 425104.Ssed_3967 (degree
+	1598), 425104.Ssed_1381 (degree 1482) and 425104.Ssed_0627 (degree 1421).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:47.986498
 
-The undirected graph Halanaerobium hydrogeniformans has 2281 nodes and 172646 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06639
-and has 5 connected components, where the component with most nodes has 2273 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 151.38, and the node degree mode is 8. The top 5
-most central nodes are 656519.Halsa_1751 (degree 983), 656519.Halsa_2334 (degree
-874), 656519.Halsa_0195 (degree 835), 656519.Halsa_1544 (degree 822) and 656519.Halsa_1849
-(degree 816).
+The undirected graph Halanaerobium hydrogeniformans has 2281 nodes and
+172646 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06639 and has 5 connected components, where the
+component with most nodes has 2273 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 151.38, and the node degree mode is 8. The top 5 most central nodes
+are 656519.Halsa_1751 (degree 983), 656519.Halsa_2334 (degree 874), 656519.Halsa_0195
+(degree 835), 656519.Halsa_1544 (degree 822) and 656519.Halsa_1849 (degree
+816).
 
 
 References
@@ -107,14 +108,15 @@ def HalanaerobiumHydrogeniformans(
 	
 	Datetime: 2021-02-02 21:26:47.986498
 	
-	The undirected graph Halanaerobium hydrogeniformans has 2281 nodes and 172646 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06639
-	and has 5 connected components, where the component with most nodes has 2273 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 151.38, and the node degree mode is 8. The top 5
-	most central nodes are 656519.Halsa_1751 (degree 983), 656519.Halsa_2334 (degree
-	874), 656519.Halsa_0195 (degree 835), 656519.Halsa_1544 (degree 822) and 656519.Halsa_1849
-	(degree 816).
+	The undirected graph Halanaerobium hydrogeniformans has 2281 nodes and
+	172646 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06639 and has 5 connected components, where the
+	component with most nodes has 2273 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 151.38, and the node degree mode is 8. The top 5 most central nodes
+	are 656519.Halsa_1751 (degree 983), 656519.Halsa_2334 (degree 874), 656519.Halsa_0195
+	(degree 835), 656519.Halsa_1544 (degree 822) and 656519.Halsa_1849 (degree
+	816).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:50.819914
 
-The undirected graph cond-mat-2003 has 30460 nodes and 120029 weighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00026
-and has 896 connected components, where the component with most nodes has 27519 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 5, the mean node degree is 7.88, and the node degree mode is 2. The top 5 most
-central nodes are 1886 (degree 202), 1887 (degree 195), 131 (degree 193), 381 (degree
-182) and 2023 (degree 176).
+The undirected graph cond-mat-2003 has 30460 nodes and 120029 weighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00026 and has 896 connected components, where the component
+with most nodes has 27519 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 5, the mean node degree is
+7.88, and the node degree mode is 2. The top 5 most central nodes are 1886
+(degree 202), 1887 (degree 195), 131 (degree 193), 381 (degree 182) and
+2023 (degree 176).
 
 
 References
@@ -103,13 +104,14 @@ def CondMat2003(
 	
 	Datetime: 2021-02-06 11:07:50.819914
 	
-	The undirected graph cond-mat-2003 has 30460 nodes and 120029 weighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00026
-	and has 896 connected components, where the component with most nodes has 27519 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 5, the mean node degree is 7.88, and the node degree mode is 2. The top 5 most
-	central nodes are 1886 (degree 202), 1887 (degree 195), 131 (degree 193), 381 (degree
-	182) and 2023 (degree 176).
+	The undirected graph cond-mat-2003 has 30460 nodes and 120029 weighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00026 and has 896 connected components, where the component
+	with most nodes has 27519 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 5, the mean node degree is
+	7.88, and the node degree mode is 2. The top 5 most central nodes are 1886
+	(degree 202), 1887 (degree 195), 131 (degree 193), 381 (degree 182) and
+	2023 (degree 176).
 	
 
 

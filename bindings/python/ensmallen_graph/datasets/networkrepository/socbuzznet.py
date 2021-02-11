@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:28:37.761245
 
-The undirected graph soc-buzznet has 101163 nodes and 2763066 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00054
-and is connected, as it has a single component. The graph median node degree is 14,
-the mean node degree is 54.63, and the node degree mode is 2. The top 5 most central
-nodes are 100947 (degree 64289), 505 (degree 52757), 101098 (degree 28576), 130 (degree
-24514) and 451 (degree 21046).
+The undirected graph soc-buzznet has 101163 nodes and 2763066 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00054 and is connected, as it has a single component. The
+graph median node degree is 14, the mean node degree is 54.63, and the
+node degree mode is 2. The top 5 most central nodes are 100947 (degree
+64289), 505 (degree 52757), 101098 (degree 28576), 130 (degree 24514) and
+451 (degree 21046).
 
 
 References
@@ -111,12 +112,13 @@ def SocBuzznet(
 	
 	Datetime: 2021-02-06 12:28:37.761245
 	
-	The undirected graph soc-buzznet has 101163 nodes and 2763066 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00054
-	and is connected, as it has a single component. The graph median node degree is 14,
-	the mean node degree is 54.63, and the node degree mode is 2. The top 5 most central
-	nodes are 100947 (degree 64289), 505 (degree 52757), 101098 (degree 28576), 130 (degree
-	24514) and 451 (degree 21046).
+	The undirected graph soc-buzznet has 101163 nodes and 2763066 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00054 and is connected, as it has a single component. The
+	graph median node degree is 14, the mean node degree is 54.63, and the
+	node degree mode is 2. The top 5 most central nodes are 100947 (degree
+	64289), 505 (degree 52757), 101098 (degree 28576), 130 (degree 24514) and
+	451 (degree 21046).
 	
 
 

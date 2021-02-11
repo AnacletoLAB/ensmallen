@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:48.692630
 
-The undirected graph Enterococcus casseliflavus has 3094 nodes and 407604 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08519
-and has 16 connected components, where the component with most nodes has 3054 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 225, the mean node degree is 263.48, and the node degree mode is 4. The top 5
-most central nodes are 565655.ECBG_00868 (degree 1445), 565655.ECBG_01601 (degree
-1276), 565655.ECBG_00826 (degree 1247), 565655.ECBG_01126 (degree 1201) and 565655.ECBG_01236
-(degree 1173).
+The undirected graph Enterococcus casseliflavus has 3094 nodes and 407604
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08519 and has 16 connected components, where the component
+with most nodes has 3054 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 225, the mean node degree is 263.48,
+and the node degree mode is 4. The top 5 most central nodes are 565655.ECBG_00868
+(degree 1445), 565655.ECBG_01601 (degree 1276), 565655.ECBG_00826 (degree
+1247), 565655.ECBG_01126 (degree 1201) and 565655.ECBG_01236 (degree 1173).
 
 
 References
@@ -107,14 +107,14 @@ def EnterococcusCasseliflavus(
 	
 	Datetime: 2021-02-02 21:12:48.692630
 	
-	The undirected graph Enterococcus casseliflavus has 3094 nodes and 407604 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08519
-	and has 16 connected components, where the component with most nodes has 3054 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 225, the mean node degree is 263.48, and the node degree mode is 4. The top 5
-	most central nodes are 565655.ECBG_00868 (degree 1445), 565655.ECBG_01601 (degree
-	1276), 565655.ECBG_00826 (degree 1247), 565655.ECBG_01126 (degree 1201) and 565655.ECBG_01236
-	(degree 1173).
+	The undirected graph Enterococcus casseliflavus has 3094 nodes and 407604
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08519 and has 16 connected components, where the component
+	with most nodes has 3054 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 225, the mean node degree is 263.48,
+	and the node degree mode is 4. The top 5 most central nodes are 565655.ECBG_00868
+	(degree 1445), 565655.ECBG_01601 (degree 1276), 565655.ECBG_00826 (degree
+	1247), 565655.ECBG_01126 (degree 1201) and 565655.ECBG_01236 (degree 1173).
 	
 
 

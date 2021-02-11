@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:34.862084
 
-The undirected graph Citrobacter rodentium has 4820 nodes and 539959 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04649 and
-has 13 connected components, where the component with most nodes has 4795 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 224.05, and the node degree mode is 4. The top 5 most central
-nodes are 637910.ROD_16441 (degree 1629), 637910.ROD_38971 (degree 1541), 637910.ROD_24481
-(degree 1351), 637910.ROD_46101 (degree 1307) and 637910.ROD_46051 (degree 1275).
+The undirected graph Citrobacter rodentium has 4820 nodes and 539959 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04649 and has 13 connected components, where the component with most
+nodes has 4795 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 224.05, and
+the node degree mode is 4. The top 5 most central nodes are 637910.ROD_16441
+(degree 1629), 637910.ROD_38971 (degree 1541), 637910.ROD_24481 (degree
+1351), 637910.ROD_46101 (degree 1307) and 637910.ROD_46051 (degree 1275).
 
 
 References
@@ -106,13 +107,14 @@ def CitrobacterRodentium(
 	
 	Datetime: 2021-02-02 21:22:34.862084
 	
-	The undirected graph Citrobacter rodentium has 4820 nodes and 539959 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04649 and
-	has 13 connected components, where the component with most nodes has 4795 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 224.05, and the node degree mode is 4. The top 5 most central
-	nodes are 637910.ROD_16441 (degree 1629), 637910.ROD_38971 (degree 1541), 637910.ROD_24481
-	(degree 1351), 637910.ROD_46101 (degree 1307) and 637910.ROD_46051 (degree 1275).
+	The undirected graph Citrobacter rodentium has 4820 nodes and 539959 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04649 and has 13 connected components, where the component with most
+	nodes has 4795 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 224.05, and
+	the node degree mode is 4. The top 5 most central nodes are 637910.ROD_16441
+	(degree 1629), 637910.ROD_38971 (degree 1541), 637910.ROD_24481 (degree
+	1351), 637910.ROD_46101 (degree 1307) and 637910.ROD_46051 (degree 1275).
 	
 
 

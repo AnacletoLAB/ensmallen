@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:30:22.314687
 
-The undirected graph packing-500x100x100-b050 has 2145839 nodes and 17488243 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00001 and is connected, as it has a single component. The graph median node
-degree is 18, the mean node degree is 16.30 and the node degree mode is 18. The top
-5 most central nodes are 2143950 (degree 18), 2143949 (degree 18), 2143948 (degree
-18), 2143947 (degree 18) and 2143946 (degree 18).
+The undirected graph packing-500x100x100-b050 has 2145839 nodes and 17488243
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00001 and is connected, as it has a single
+component. The graph median node degree is 18, the mean node degree is
+16.30 and the node degree mode is 18. The top 5 most central nodes are
+2143950 (degree 18), 2143949 (degree 18), 2143948 (degree 18), 2143947
+(degree 18) and 2143946 (degree 18).
 
 
 References
@@ -102,12 +103,13 @@ def Packing500x100x100B050(
 	
 	Datetime: 2021-02-03 23:30:22.314687
 	
-	The undirected graph packing-500x100x100-b050 has 2145839 nodes and 17488243 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00001 and is connected, as it has a single component. The graph median node
-	degree is 18, the mean node degree is 16.30 and the node degree mode is 18. The top
-	5 most central nodes are 2143950 (degree 18), 2143949 (degree 18), 2143948 (degree
-	18), 2143947 (degree 18) and 2143946 (degree 18).
+	The undirected graph packing-500x100x100-b050 has 2145839 nodes and 17488243
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00001 and is connected, as it has a single
+	component. The graph median node degree is 18, the mean node degree is
+	16.30 and the node degree mode is 18. The top 5 most central nodes are
+	2143950 (degree 18), 2143949 (degree 18), 2143948 (degree 18), 2143947
+	(degree 18) and 2143946 (degree 18).
 	
 
 

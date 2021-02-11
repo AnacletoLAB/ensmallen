@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:58.151500
 
-The undirected graph Prevotella paludivivens has 2855 nodes and 214135 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05256 and
-has 22 connected components, where the component with most nodes has 2792 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 150.01, and the node degree mode is 4. The top 5 most central
-nodes are 1122990.BAJH01000027_gene2455 (degree 1005), 1122990.BAJH01000012_gene1704
-(degree 945), 1122990.BAJH01000004_gene736 (degree 887), 1122990.BAJH01000021_gene2228
-(degree 824) and 1122990.BAJH01000004_gene660 (degree 773).
+The undirected graph Prevotella paludivivens has 2855 nodes and 214135
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05256 and has 22 connected components, where the component
+with most nodes has 2792 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 150.01,
+and the node degree mode is 4. The top 5 most central nodes are 1122990.BAJH01000027_gene2455
+(degree 1005), 1122990.BAJH01000012_gene1704 (degree 945), 1122990.BAJH01000004_gene736
+(degree 887), 1122990.BAJH01000021_gene2228 (degree 824) and 1122990.BAJH01000004_gene660
+(degree 773).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaPaludivivens(
 	
 	Datetime: 2021-02-02 22:45:58.151500
 	
-	The undirected graph Prevotella paludivivens has 2855 nodes and 214135 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05256 and
-	has 22 connected components, where the component with most nodes has 2792 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 150.01, and the node degree mode is 4. The top 5 most central
-	nodes are 1122990.BAJH01000027_gene2455 (degree 1005), 1122990.BAJH01000012_gene1704
-	(degree 945), 1122990.BAJH01000004_gene736 (degree 887), 1122990.BAJH01000021_gene2228
-	(degree 824) and 1122990.BAJH01000004_gene660 (degree 773).
+	The undirected graph Prevotella paludivivens has 2855 nodes and 214135
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05256 and has 22 connected components, where the component
+	with most nodes has 2792 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 150.01,
+	and the node degree mode is 4. The top 5 most central nodes are 1122990.BAJH01000027_gene2455
+	(degree 1005), 1122990.BAJH01000012_gene1704 (degree 945), 1122990.BAJH01000004_gene736
+	(degree 887), 1122990.BAJH01000021_gene2228 (degree 824) and 1122990.BAJH01000004_gene660
+	(degree 773).
 	
 
 

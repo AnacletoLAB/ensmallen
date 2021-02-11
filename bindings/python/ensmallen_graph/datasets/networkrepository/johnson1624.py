@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:51.707145
 
-The undirected graph johnson16-2-4 has 120 nodes and 5460 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.76471
-and is connected, as it has a single component. The graph median node degree is 91,
-the mean node degree is 91.00 and the node degree mode is 91. The top 5 most central
-nodes are 120 (degree 91), 119 (degree 91), 118 (degree 91), 117 (degree 91) and
-116 (degree 91).
+The undirected graph johnson16-2-4 has 120 nodes and 5460 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.76471 and is connected, as it has a single component. The
+graph median node degree is 91, the mean node degree is 91.00 and the node
+degree mode is 91. The top 5 most central nodes are 120 (degree 91), 119
+(degree 91), 118 (degree 91), 117 (degree 91) and 116 (degree 91).
 
 
 References
@@ -115,12 +115,12 @@ def Johnson1624(
 	
 	Datetime: 2021-02-03 22:54:51.707145
 	
-	The undirected graph johnson16-2-4 has 120 nodes and 5460 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.76471
-	and is connected, as it has a single component. The graph median node degree is 91,
-	the mean node degree is 91.00 and the node degree mode is 91. The top 5 most central
-	nodes are 120 (degree 91), 119 (degree 91), 118 (degree 91), 117 (degree 91) and
-	116 (degree 91).
+	The undirected graph johnson16-2-4 has 120 nodes and 5460 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.76471 and is connected, as it has a single component. The
+	graph median node degree is 91, the mean node degree is 91.00 and the node
+	degree mode is 91. The top 5 most central nodes are 120 (degree 91), 119
+	(degree 91), 118 (degree 91), 117 (degree 91) and 116 (degree 91).
 	
 
 

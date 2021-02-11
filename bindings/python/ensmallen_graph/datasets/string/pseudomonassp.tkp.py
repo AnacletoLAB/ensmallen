@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:45:32.760302
 
-The undirected graph Pseudomonas sp. TKP has 6254 nodes and 655783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03354 and
-has 22 connected components, where the component with most nodes has 6196 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 209.72, and the node degree mode is 2. The top 5 most central
-nodes are 1415630.U771_00615 (degree 2329), 1415630.U771_27250 (degree 1994), 1415630.U771_02445
-(degree 1825), 1415630.U771_26180 (degree 1698) and 1415630.U771_26185 (degree 1587).
+The undirected graph Pseudomonas sp. TKP has 6254 nodes and 655783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03354 and has 22 connected components, where the component with most
+nodes has 6196 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 209.72, and
+the node degree mode is 2. The top 5 most central nodes are 1415630.U771_00615
+(degree 2329), 1415630.U771_27250 (degree 1994), 1415630.U771_02445 (degree
+1825), 1415630.U771_26180 (degree 1698) and 1415630.U771_26185 (degree
+1587).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasSp.Tkp(
 	
 	Datetime: 2021-02-03 22:45:32.760302
 	
-	The undirected graph Pseudomonas sp. TKP has 6254 nodes and 655783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03354 and
-	has 22 connected components, where the component with most nodes has 6196 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 209.72, and the node degree mode is 2. The top 5 most central
-	nodes are 1415630.U771_00615 (degree 2329), 1415630.U771_27250 (degree 1994), 1415630.U771_02445
-	(degree 1825), 1415630.U771_26180 (degree 1698) and 1415630.U771_26185 (degree 1587).
+	The undirected graph Pseudomonas sp. TKP has 6254 nodes and 655783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03354 and has 22 connected components, where the component with most
+	nodes has 6196 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 209.72, and
+	the node degree mode is 2. The top 5 most central nodes are 1415630.U771_00615
+	(degree 2329), 1415630.U771_27250 (degree 1994), 1415630.U771_02445 (degree
+	1825), 1415630.U771_26180 (degree 1698) and 1415630.U771_26185 (degree
+	1587).
 	
 
 

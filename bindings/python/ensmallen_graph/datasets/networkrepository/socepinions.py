@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:44:33.306873
 
-The undirected graph soc-epinions has 26588 nodes and 100120 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00028
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 7.53, and the node degree mode is 1. The top 5 most central
-nodes are 35 (degree 443), 32 (degree 426), 1783 (degree 423), 486 (degree 422) and
-1024 (degree 412).
+The undirected graph soc-epinions has 26588 nodes and 100120 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00028 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 7.53, and the node
+degree mode is 1. The top 5 most central nodes are 35 (degree 443), 32
+(degree 426), 1783 (degree 423), 486 (degree 422) and 1024 (degree 412).
 
 
 References
@@ -119,12 +119,12 @@ def SocEpinions(
 	
 	Datetime: 2021-02-06 11:44:33.306873
 	
-	The undirected graph soc-epinions has 26588 nodes and 100120 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00028
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 7.53, and the node degree mode is 1. The top 5 most central
-	nodes are 35 (degree 443), 32 (degree 426), 1783 (degree 423), 486 (degree 422) and
-	1024 (degree 412).
+	The undirected graph soc-epinions has 26588 nodes and 100120 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00028 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 7.53, and the node
+	degree mode is 1. The top 5 most central nodes are 35 (degree 443), 32
+	(degree 426), 1783 (degree 423), 486 (degree 422) and 1024 (degree 412).
 	
 
 

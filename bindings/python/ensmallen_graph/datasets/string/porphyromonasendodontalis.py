@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:54.634207
 
-The undirected graph Porphyromonas endodontalis has 1926 nodes and 101759 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05489
-and has 16 connected components, where the component with most nodes has 1887 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 105.67, and the node degree mode is 7. The top 5 most
-central nodes are 553175.POREN0001_0992 (degree 868), 553175.POREN0001_0830 (degree
-682), 553175.POREN0001_1121 (degree 631), 553175.POREN0001_1823 (degree 564) and
-553175.POREN0001_0794 (degree 559).
+The undirected graph Porphyromonas endodontalis has 1926 nodes and 101759
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05489 and has 16 connected components, where the component
+with most nodes has 1887 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 105.67,
+and the node degree mode is 7. The top 5 most central nodes are 553175.POREN0001_0992
+(degree 868), 553175.POREN0001_0830 (degree 682), 553175.POREN0001_1121
+(degree 631), 553175.POREN0001_1823 (degree 564) and 553175.POREN0001_0794
+(degree 559).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasEndodontalis(
 	
 	Datetime: 2021-02-02 21:09:54.634207
 	
-	The undirected graph Porphyromonas endodontalis has 1926 nodes and 101759 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05489
-	and has 16 connected components, where the component with most nodes has 1887 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 105.67, and the node degree mode is 7. The top 5 most
-	central nodes are 553175.POREN0001_0992 (degree 868), 553175.POREN0001_0830 (degree
-	682), 553175.POREN0001_1121 (degree 631), 553175.POREN0001_1823 (degree 564) and
-	553175.POREN0001_0794 (degree 559).
+	The undirected graph Porphyromonas endodontalis has 1926 nodes and 101759
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05489 and has 16 connected components, where the component
+	with most nodes has 1887 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 105.67,
+	and the node degree mode is 7. The top 5 most central nodes are 553175.POREN0001_0992
+	(degree 868), 553175.POREN0001_0830 (degree 682), 553175.POREN0001_1121
+	(degree 631), 553175.POREN0001_1823 (degree 564) and 553175.POREN0001_0794
+	(degree 559).
 	
 
 

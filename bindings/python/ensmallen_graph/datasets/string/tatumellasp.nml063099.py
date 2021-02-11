@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:02:05.390386
 
-The undirected graph Tatumella sp. NML063099 has 2964 nodes and 288572 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06572 and
-has 7 connected components, where the component with most nodes has 2950 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 194.72, and the node degree mode is 1. The top 5 most central
-nodes are 1344012.ATMI01000006_gene815 (degree 1072), 1344012.ATMI01000035_gene2898
-(degree 988), 1344012.ATMI01000041_gene290 (degree 985), 1344012.ATMI01000013_gene2661
-(degree 976) and 1344012.ATMI01000003_gene912 (degree 962).
+The undirected graph Tatumella sp. NML063099 has 2964 nodes and 288572
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06572 and has 7 connected components, where the component
+with most nodes has 2950 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 194.72,
+and the node degree mode is 1. The top 5 most central nodes are 1344012.ATMI01000006_gene815
+(degree 1072), 1344012.ATMI01000035_gene2898 (degree 988), 1344012.ATMI01000041_gene290
+(degree 985), 1344012.ATMI01000013_gene2661 (degree 976) and 1344012.ATMI01000003_gene912
+(degree 962).
 
 
 References
@@ -107,14 +108,15 @@ def TatumellaSp.Nml063099(
 	
 	Datetime: 2021-02-03 22:02:05.390386
 	
-	The undirected graph Tatumella sp. NML063099 has 2964 nodes and 288572 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06572 and
-	has 7 connected components, where the component with most nodes has 2950 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 194.72, and the node degree mode is 1. The top 5 most central
-	nodes are 1344012.ATMI01000006_gene815 (degree 1072), 1344012.ATMI01000035_gene2898
-	(degree 988), 1344012.ATMI01000041_gene290 (degree 985), 1344012.ATMI01000013_gene2661
-	(degree 976) and 1344012.ATMI01000003_gene912 (degree 962).
+	The undirected graph Tatumella sp. NML063099 has 2964 nodes and 288572
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06572 and has 7 connected components, where the component
+	with most nodes has 2950 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 194.72,
+	and the node degree mode is 1. The top 5 most central nodes are 1344012.ATMI01000006_gene815
+	(degree 1072), 1344012.ATMI01000035_gene2898 (degree 988), 1344012.ATMI01000041_gene290
+	(degree 985), 1344012.ATMI01000013_gene2661 (degree 976) and 1344012.ATMI01000003_gene912
+	(degree 962).
 	
 
 

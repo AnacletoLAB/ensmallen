@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:22.682160
 
-The undirected graph Nocardioides sp. CF8 has 3864 nodes and 352178 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04719 and
-has 7 connected components, where the component with most nodes has 3849 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 182.29, and the node degree mode is 5. The top 5 most central
-nodes are 110319.CF8_0565 (degree 1624), 110319.CF8_1932 (degree 1212), 110319.CF8_0769
-(degree 1191), 110319.CF8_2516 (degree 1127) and 110319.CF8_3131 (degree 1118).
+The undirected graph Nocardioides sp. CF8 has 3864 nodes and 352178 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04719 and has 7 connected components, where the component with most
+nodes has 3849 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 182.29, and
+the node degree mode is 5. The top 5 most central nodes are 110319.CF8_0565
+(degree 1624), 110319.CF8_1932 (degree 1212), 110319.CF8_0769 (degree 1191),
+110319.CF8_2516 (degree 1127) and 110319.CF8_3131 (degree 1118).
 
 
 References
@@ -106,13 +107,14 @@ def NocardioidesSp.Cf8(
 	
 	Datetime: 2021-02-02 19:46:22.682160
 	
-	The undirected graph Nocardioides sp. CF8 has 3864 nodes and 352178 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04719 and
-	has 7 connected components, where the component with most nodes has 3849 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 182.29, and the node degree mode is 5. The top 5 most central
-	nodes are 110319.CF8_0565 (degree 1624), 110319.CF8_1932 (degree 1212), 110319.CF8_0769
-	(degree 1191), 110319.CF8_2516 (degree 1127) and 110319.CF8_3131 (degree 1118).
+	The undirected graph Nocardioides sp. CF8 has 3864 nodes and 352178 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04719 and has 7 connected components, where the component with most
+	nodes has 3849 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 182.29, and
+	the node degree mode is 5. The top 5 most central nodes are 110319.CF8_0565
+	(degree 1624), 110319.CF8_1932 (degree 1212), 110319.CF8_0769 (degree 1191),
+	110319.CF8_2516 (degree 1127) and 110319.CF8_3131 (degree 1118).
 	
 
 

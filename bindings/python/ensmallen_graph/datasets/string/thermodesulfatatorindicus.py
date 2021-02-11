@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:46.026626
 
-The undirected graph Thermodesulfatator indicus has 2183 nodes and 158869 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06671
-and has 3 connected components, where the component with most nodes has 2175 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 145.55, and the node degree mode is 4. The top 5
-most central nodes are 667014.Thein_1717 (degree 937), 667014.Thein_0670 (degree
-775), 667014.Thein_2120 (degree 726), 667014.Thein_1566 (degree 699) and 667014.Thein_0148
-(degree 686).
+The undirected graph Thermodesulfatator indicus has 2183 nodes and 158869
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06671 and has 3 connected components, where the component
+with most nodes has 2175 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 145.55,
+and the node degree mode is 4. The top 5 most central nodes are 667014.Thein_1717
+(degree 937), 667014.Thein_0670 (degree 775), 667014.Thein_2120 (degree
+726), 667014.Thein_1566 (degree 699) and 667014.Thein_0148 (degree 686).
 
 
 References
@@ -107,14 +107,14 @@ def ThermodesulfatatorIndicus(
 	
 	Datetime: 2021-02-02 21:28:46.026626
 	
-	The undirected graph Thermodesulfatator indicus has 2183 nodes and 158869 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06671
-	and has 3 connected components, where the component with most nodes has 2175 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 145.55, and the node degree mode is 4. The top 5
-	most central nodes are 667014.Thein_1717 (degree 937), 667014.Thein_0670 (degree
-	775), 667014.Thein_2120 (degree 726), 667014.Thein_1566 (degree 699) and 667014.Thein_0148
-	(degree 686).
+	The undirected graph Thermodesulfatator indicus has 2183 nodes and 158869
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06671 and has 3 connected components, where the component
+	with most nodes has 2175 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 145.55,
+	and the node degree mode is 4. The top 5 most central nodes are 667014.Thein_1717
+	(degree 937), 667014.Thein_0670 (degree 775), 667014.Thein_2120 (degree
+	726), 667014.Thein_1566 (degree 699) and 667014.Thein_0148 (degree 686).
 	
 
 

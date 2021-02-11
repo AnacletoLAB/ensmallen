@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:29.244161
 
-The undirected graph Streptomyces griseoflavus has 6920 nodes and 1167114 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04875
-and has 36 connected components, where the component with most nodes has 6841 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 281, the mean node degree is 337.32, and the node degree mode is 1. The top 5
-most central nodes are 467200.ACFA01000261_gene4127 (degree 2298), 467200.ACFA01000595_gene5359
-(degree 2294), 467200.ACFA01000683_gene4164 (degree 2091), 467200.ACFA01000629_gene6245
-(degree 1909) and 467200.ACFA01000064_gene6364 (degree 1909).
+The undirected graph Streptomyces griseoflavus has 6920 nodes and 1167114
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04875 and has 36 connected components, where the component
+with most nodes has 6841 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 281, the mean node degree is 337.32,
+and the node degree mode is 1. The top 5 most central nodes are 467200.ACFA01000261_gene4127
+(degree 2298), 467200.ACFA01000595_gene5359 (degree 2294), 467200.ACFA01000683_gene4164
+(degree 2091), 467200.ACFA01000629_gene6245 (degree 1909) and 467200.ACFA01000064_gene6364
+(degree 1909).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesGriseoflavus(
 	
 	Datetime: 2021-02-02 20:54:29.244161
 	
-	The undirected graph Streptomyces griseoflavus has 6920 nodes and 1167114 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04875
-	and has 36 connected components, where the component with most nodes has 6841 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 281, the mean node degree is 337.32, and the node degree mode is 1. The top 5
-	most central nodes are 467200.ACFA01000261_gene4127 (degree 2298), 467200.ACFA01000595_gene5359
-	(degree 2294), 467200.ACFA01000683_gene4164 (degree 2091), 467200.ACFA01000629_gene6245
-	(degree 1909) and 467200.ACFA01000064_gene6364 (degree 1909).
+	The undirected graph Streptomyces griseoflavus has 6920 nodes and 1167114
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04875 and has 36 connected components, where the component
+	with most nodes has 6841 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 281, the mean node degree is 337.32,
+	and the node degree mode is 1. The top 5 most central nodes are 467200.ACFA01000261_gene4127
+	(degree 2298), 467200.ACFA01000595_gene5359 (degree 2294), 467200.ACFA01000683_gene4164
+	(degree 2091), 467200.ACFA01000629_gene6245 (degree 1909) and 467200.ACFA01000064_gene6364
+	(degree 1909).
 	
 
 

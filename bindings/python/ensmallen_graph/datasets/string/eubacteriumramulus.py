@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:17.826414
 
-The undirected graph Eubacterium ramulus has 3420 nodes and 261253 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04469 and
-has 11 connected components, where the component with most nodes has 3388 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 152.78, and the node degree mode is 7. The top 5 most central
-nodes are 1256908.HMPREF0373_02509 (degree 1202), 1256908.HMPREF0373_01743 (degree
-1068), 1256908.HMPREF0373_01009 (degree 984), 1256908.HMPREF0373_03195 (degree 916)
-and 1256908.HMPREF0373_02036 (degree 897).
+The undirected graph Eubacterium ramulus has 3420 nodes and 261253 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04469 and has 11 connected components, where the component with most
+nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 152.78, and
+the node degree mode is 7. The top 5 most central nodes are 1256908.HMPREF0373_02509
+(degree 1202), 1256908.HMPREF0373_01743 (degree 1068), 1256908.HMPREF0373_01009
+(degree 984), 1256908.HMPREF0373_03195 (degree 916) and 1256908.HMPREF0373_02036
+(degree 897).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumRamulus(
 	
 	Datetime: 2021-02-02 23:35:17.826414
 	
-	The undirected graph Eubacterium ramulus has 3420 nodes and 261253 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04469 and
-	has 11 connected components, where the component with most nodes has 3388 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 152.78, and the node degree mode is 7. The top 5 most central
-	nodes are 1256908.HMPREF0373_02509 (degree 1202), 1256908.HMPREF0373_01743 (degree
-	1068), 1256908.HMPREF0373_01009 (degree 984), 1256908.HMPREF0373_03195 (degree 916)
-	and 1256908.HMPREF0373_02036 (degree 897).
+	The undirected graph Eubacterium ramulus has 3420 nodes and 261253 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04469 and has 11 connected components, where the component with most
+	nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 152.78, and
+	the node degree mode is 7. The top 5 most central nodes are 1256908.HMPREF0373_02509
+	(degree 1202), 1256908.HMPREF0373_01743 (degree 1068), 1256908.HMPREF0373_01009
+	(degree 984), 1256908.HMPREF0373_03195 (degree 916) and 1256908.HMPREF0373_02036
+	(degree 897).
 	
 
 

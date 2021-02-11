@@ -10,15 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:42.993703
 
-The undirected graph Erysipelotrichaceae bacterium NK3D112 has 2712 nodes and 373541
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.10161 and has 9 connected components, where the component with most
-nodes has 2693 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 232, the mean node degree is 275.47, and the node degree mode
-is 2. The top 5 most central nodes are 877415.JNJQ01000026_gene66 (degree 1426),
-877415.JNJQ01000003_gene1745 (degree 1382), 877415.JNJQ01000001_gene2157 (degree
-1307), 877415.JNJQ01000006_gene889 (degree 1271) and 877415.JNJQ01000014_gene435
-(degree 1211).
+The undirected graph Erysipelotrichaceae bacterium NK3D112 has 2712 nodes
+and 373541 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.10161 and has 9 connected components, where
+the component with most nodes has 2693 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 232, the mean
+node degree is 275.47, and the node degree mode is 2. The top 5 most central
+nodes are 877415.JNJQ01000026_gene66 (degree 1426), 877415.JNJQ01000003_gene1745
+(degree 1382), 877415.JNJQ01000001_gene2157 (degree 1307), 877415.JNJQ01000006_gene889
+(degree 1271) and 877415.JNJQ01000014_gene435 (degree 1211).
 
 
 References
@@ -108,15 +108,15 @@ def ErysipelotrichaceaeBacteriumNk3d112(
 	
 	Datetime: 2021-02-02 21:49:42.993703
 	
-	The undirected graph Erysipelotrichaceae bacterium NK3D112 has 2712 nodes and 373541
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.10161 and has 9 connected components, where the component with most
-	nodes has 2693 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 232, the mean node degree is 275.47, and the node degree mode
-	is 2. The top 5 most central nodes are 877415.JNJQ01000026_gene66 (degree 1426),
-	877415.JNJQ01000003_gene1745 (degree 1382), 877415.JNJQ01000001_gene2157 (degree
-	1307), 877415.JNJQ01000006_gene889 (degree 1271) and 877415.JNJQ01000014_gene435
-	(degree 1211).
+	The undirected graph Erysipelotrichaceae bacterium NK3D112 has 2712 nodes
+	and 373541 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.10161 and has 9 connected components, where
+	the component with most nodes has 2693 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 232, the mean
+	node degree is 275.47, and the node degree mode is 2. The top 5 most central
+	nodes are 877415.JNJQ01000026_gene66 (degree 1426), 877415.JNJQ01000003_gene1745
+	(degree 1382), 877415.JNJQ01000001_gene2157 (degree 1307), 877415.JNJQ01000006_gene889
+	(degree 1271) and 877415.JNJQ01000014_gene435 (degree 1211).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:28.079626
 
-The undirected graph Pedobacter borealis has 4615 nodes and 418315 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03929 and
-has 37 connected components, where the component with most nodes has 4531 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 181.28, and the node degree mode is 1. The top 5 most central
-nodes are 1454007.JAUG01000010_gene2517 (degree 1360), 1454007.JAUG01000139_gene4166
-(degree 1218), 1454007.JAUG01000022_gene1255 (degree 1187), 1454007.JAUG01000059_gene3546
-(degree 1149) and 1454007.JAUG01000122_gene1097 (degree 1068).
+The undirected graph Pedobacter borealis has 4615 nodes and 418315 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03929 and has 37 connected components, where the component with most
+nodes has 4531 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 181.28, and
+the node degree mode is 1. The top 5 most central nodes are 1454007.JAUG01000010_gene2517
+(degree 1360), 1454007.JAUG01000139_gene4166 (degree 1218), 1454007.JAUG01000022_gene1255
+(degree 1187), 1454007.JAUG01000059_gene3546 (degree 1149) and 1454007.JAUG01000122_gene1097
+(degree 1068).
 
 
 References
@@ -107,14 +108,15 @@ def PedobacterBorealis(
 	
 	Datetime: 2021-02-03 23:06:28.079626
 	
-	The undirected graph Pedobacter borealis has 4615 nodes and 418315 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03929 and
-	has 37 connected components, where the component with most nodes has 4531 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 181.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1454007.JAUG01000010_gene2517 (degree 1360), 1454007.JAUG01000139_gene4166
-	(degree 1218), 1454007.JAUG01000022_gene1255 (degree 1187), 1454007.JAUG01000059_gene3546
-	(degree 1149) and 1454007.JAUG01000122_gene1097 (degree 1068).
+	The undirected graph Pedobacter borealis has 4615 nodes and 418315 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03929 and has 37 connected components, where the component with most
+	nodes has 4531 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 181.28, and
+	the node degree mode is 1. The top 5 most central nodes are 1454007.JAUG01000010_gene2517
+	(degree 1360), 1454007.JAUG01000139_gene4166 (degree 1218), 1454007.JAUG01000022_gene1255
+	(degree 1187), 1454007.JAUG01000059_gene3546 (degree 1149) and 1454007.JAUG01000122_gene1097
+	(degree 1068).
 	
 
 

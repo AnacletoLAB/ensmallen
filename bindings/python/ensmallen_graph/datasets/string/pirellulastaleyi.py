@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:34.159100
 
-The undirected graph Pirellula staleyi has 4622 nodes and 447602 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-has 44 connected components, where the component with most nodes has 4507 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 193.68, and the node degree mode is 3. The top 5 most central
-nodes are 530564.Psta_3785 (degree 1483), 530564.Psta_1397 (degree 1312), 530564.Psta_3824
-(degree 1295), 530564.Psta_1253 (degree 1184) and 530564.Psta_3991 (degree 1174).
+The undirected graph Pirellula staleyi has 4622 nodes and 447602 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04191 and has 44 connected components, where the component with most
+nodes has 4507 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 193.68, and
+the node degree mode is 3. The top 5 most central nodes are 530564.Psta_3785
+(degree 1483), 530564.Psta_1397 (degree 1312), 530564.Psta_3824 (degree
+1295), 530564.Psta_1253 (degree 1184) and 530564.Psta_3991 (degree 1174).
 
 
 References
@@ -106,13 +107,14 @@ def PirellulaStaleyi(
 	
 	Datetime: 2021-02-02 21:06:34.159100
 	
-	The undirected graph Pirellula staleyi has 4622 nodes and 447602 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-	has 44 connected components, where the component with most nodes has 4507 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 193.68, and the node degree mode is 3. The top 5 most central
-	nodes are 530564.Psta_3785 (degree 1483), 530564.Psta_1397 (degree 1312), 530564.Psta_3824
-	(degree 1295), 530564.Psta_1253 (degree 1184) and 530564.Psta_3991 (degree 1174).
+	The undirected graph Pirellula staleyi has 4622 nodes and 447602 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04191 and has 44 connected components, where the component with most
+	nodes has 4507 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 193.68, and
+	the node degree mode is 3. The top 5 most central nodes are 530564.Psta_3785
+	(degree 1483), 530564.Psta_1397 (degree 1312), 530564.Psta_3824 (degree
+	1295), 530564.Psta_1253 (degree 1184) and 530564.Psta_3991 (degree 1174).
 	
 
 

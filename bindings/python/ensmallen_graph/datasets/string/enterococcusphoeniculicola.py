@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:45.942021
 
-The undirected graph Enterococcus phoeniculicola has 3483 nodes and 485103 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08000
-and has 13 connected components, where the component with most nodes has 3458 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 278.55, and the node degree mode is 2. The top 5
-most central nodes are 1158610.UC3_00861 (degree 1545), 1158610.UC3_00087 (degree
-1492), 1158610.UC3_02949 (degree 1459), 1158610.UC3_00785 (degree 1449) and 1158610.UC3_01626
-(degree 1436).
+The undirected graph Enterococcus phoeniculicola has 3483 nodes and 485103
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08000 and has 13 connected components, where the component
+with most nodes has 3458 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 278.55,
+and the node degree mode is 2. The top 5 most central nodes are 1158610.UC3_00861
+(degree 1545), 1158610.UC3_00087 (degree 1492), 1158610.UC3_02949 (degree
+1459), 1158610.UC3_00785 (degree 1449) and 1158610.UC3_01626 (degree 1436).
 
 
 References
@@ -107,14 +107,14 @@ def EnterococcusPhoeniculicola(
 	
 	Datetime: 2021-02-02 23:03:45.942021
 	
-	The undirected graph Enterococcus phoeniculicola has 3483 nodes and 485103 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08000
-	and has 13 connected components, where the component with most nodes has 3458 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 278.55, and the node degree mode is 2. The top 5
-	most central nodes are 1158610.UC3_00861 (degree 1545), 1158610.UC3_00087 (degree
-	1492), 1158610.UC3_02949 (degree 1459), 1158610.UC3_00785 (degree 1449) and 1158610.UC3_01626
-	(degree 1436).
+	The undirected graph Enterococcus phoeniculicola has 3483 nodes and 485103
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08000 and has 13 connected components, where the component
+	with most nodes has 3458 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 278.55,
+	and the node degree mode is 2. The top 5 most central nodes are 1158610.UC3_00861
+	(degree 1545), 1158610.UC3_00087 (degree 1492), 1158610.UC3_02949 (degree
+	1459), 1158610.UC3_00785 (degree 1449) and 1158610.UC3_01626 (degree 1436).
 	
 
 

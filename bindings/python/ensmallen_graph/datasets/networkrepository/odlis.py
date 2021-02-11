@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:08.452778
 
-The undirected graph ODLIS has 2900 nodes and 16382 weighted edges, of which 5 are
-self-loops. The graph is sparse as it has a density of 0.00390 and has 2 connected
-components, where the component with most nodes has 2898 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 7, the mean node
-degree is 11.30, and the node degree mode is 1. The top 5 most central nodes are
-342 (degree 593), 1548 (degree 566), 2878 (degree 380), 2134 (degree 372) and 2186
-(degree 368).
+The undirected graph ODLIS has 2900 nodes and 16382 weighted edges, of
+which 5 are self-loops. The graph is sparse as it has a density of 0.00390
+and has 2 connected components, where the component with most nodes has
+2898 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 7, the mean node degree is 11.30, and the node degree
+mode is 1. The top 5 most central nodes are 342 (degree 593), 1548 (degree
+566), 2878 (degree 380), 2134 (degree 372) and 2186 (degree 368).
 
 
 References
@@ -103,13 +103,13 @@ def Odlis(
 	
 	Datetime: 2021-02-06 10:14:08.452778
 	
-	The undirected graph ODLIS has 2900 nodes and 16382 weighted edges, of which 5 are
-	self-loops. The graph is sparse as it has a density of 0.00390 and has 2 connected
-	components, where the component with most nodes has 2898 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 7, the mean node
-	degree is 11.30, and the node degree mode is 1. The top 5 most central nodes are
-	342 (degree 593), 1548 (degree 566), 2878 (degree 380), 2134 (degree 372) and 2186
-	(degree 368).
+	The undirected graph ODLIS has 2900 nodes and 16382 weighted edges, of
+	which 5 are self-loops. The graph is sparse as it has a density of 0.00390
+	and has 2 connected components, where the component with most nodes has
+	2898 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 7, the mean node degree is 11.30, and the node degree
+	mode is 1. The top 5 most central nodes are 342 (degree 593), 1548 (degree
+	566), 2878 (degree 380), 2134 (degree 372) and 2186 (degree 368).
 	
 
 

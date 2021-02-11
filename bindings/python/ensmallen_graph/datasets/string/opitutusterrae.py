@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:15.563581
 
-The undirected graph Opitutus terrae has 4581 nodes and 471587 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04495 and
-has 18 connected components, where the component with most nodes has 4535 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 205.89, and the node degree mode is 2. The top 5 most central
-nodes are 452637.Oter_1136 (degree 2269), 452637.Oter_3035 (degree 1726), 452637.Oter_1969
-(degree 1618), 452637.Oter_0776 (degree 1578) and 452637.Oter_1811 (degree 1221).
+The undirected graph Opitutus terrae has 4581 nodes and 471587 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04495 and has 18 connected components, where the component with most
+nodes has 4535 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 205.89, and
+the node degree mode is 2. The top 5 most central nodes are 452637.Oter_1136
+(degree 2269), 452637.Oter_3035 (degree 1726), 452637.Oter_1969 (degree
+1618), 452637.Oter_0776 (degree 1578) and 452637.Oter_1811 (degree 1221).
 
 
 References
@@ -106,13 +107,14 @@ def OpitutusTerrae(
 	
 	Datetime: 2021-02-02 20:52:15.563581
 	
-	The undirected graph Opitutus terrae has 4581 nodes and 471587 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04495 and
-	has 18 connected components, where the component with most nodes has 4535 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 205.89, and the node degree mode is 2. The top 5 most central
-	nodes are 452637.Oter_1136 (degree 2269), 452637.Oter_3035 (degree 1726), 452637.Oter_1969
-	(degree 1618), 452637.Oter_0776 (degree 1578) and 452637.Oter_1811 (degree 1221).
+	The undirected graph Opitutus terrae has 4581 nodes and 471587 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04495 and has 18 connected components, where the component with most
+	nodes has 4535 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 205.89, and
+	the node degree mode is 2. The top 5 most central nodes are 452637.Oter_1136
+	(degree 2269), 452637.Oter_3035 (degree 1726), 452637.Oter_1969 (degree
+	1618), 452637.Oter_0776 (degree 1578) and 452637.Oter_1811 (degree 1221).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:18.542799
 
-The undirected graph Sphingopyxis sp. MWB1 has 2770 nodes and 239442 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06243 and
-has 4 connected components, where the component with most nodes has 2760 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 172.88, and the node degree mode is 2. The top 5 most central
-nodes are 1537715.JQFJ01000005_gene111 (degree 1054), 1537715.JQFJ01000002_gene1016
-(degree 941), 1537715.JQFJ01000002_gene1256 (degree 935), 1537715.JQFJ01000002_gene2267
-(degree 834) and 1537715.JQFJ01000002_gene1979 (degree 824).
+The undirected graph Sphingopyxis sp. MWB1 has 2770 nodes and 239442 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06243 and has 4 connected components, where the component with most
+nodes has 2760 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 172.88, and
+the node degree mode is 2. The top 5 most central nodes are 1537715.JQFJ01000005_gene111
+(degree 1054), 1537715.JQFJ01000002_gene1016 (degree 941), 1537715.JQFJ01000002_gene1256
+(degree 935), 1537715.JQFJ01000002_gene2267 (degree 834) and 1537715.JQFJ01000002_gene1979
+(degree 824).
 
 
 References
@@ -107,14 +108,15 @@ def SphingopyxisSp.Mwb1(
 	
 	Datetime: 2021-02-03 23:19:18.542799
 	
-	The undirected graph Sphingopyxis sp. MWB1 has 2770 nodes and 239442 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06243 and
-	has 4 connected components, where the component with most nodes has 2760 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 172.88, and the node degree mode is 2. The top 5 most central
-	nodes are 1537715.JQFJ01000005_gene111 (degree 1054), 1537715.JQFJ01000002_gene1016
-	(degree 941), 1537715.JQFJ01000002_gene1256 (degree 935), 1537715.JQFJ01000002_gene2267
-	(degree 834) and 1537715.JQFJ01000002_gene1979 (degree 824).
+	The undirected graph Sphingopyxis sp. MWB1 has 2770 nodes and 239442 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06243 and has 4 connected components, where the component with most
+	nodes has 2760 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 172.88, and
+	the node degree mode is 2. The top 5 most central nodes are 1537715.JQFJ01000005_gene111
+	(degree 1054), 1537715.JQFJ01000002_gene1016 (degree 941), 1537715.JQFJ01000002_gene1256
+	(degree 935), 1537715.JQFJ01000002_gene2267 (degree 834) and 1537715.JQFJ01000002_gene1979
+	(degree 824).
 	
 
 

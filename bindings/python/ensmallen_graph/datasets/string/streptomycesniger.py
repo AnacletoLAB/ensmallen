@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:37.108590
 
-The undirected graph Streptomyces niger has 7199 nodes and 1002729 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03870 and
-has 30 connected components, where the component with most nodes has 7133 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 278.57, and the node degree mode is 1. The top 5 most central
-nodes are 66373.JOFQ01000038_gene2284 (degree 3630), 66373.JOFQ01000007_gene3596
-(degree 2246), 66373.JOFQ01000034_gene4085 (degree 2242), 66373.JOFQ01000002_gene4870
-(degree 2186) and 66373.JOFQ01000021_gene6098 (degree 1853).
+The undirected graph Streptomyces niger has 7199 nodes and 1002729 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03870 and has 30 connected components, where the component with most
+nodes has 7133 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 235, the mean node degree is 278.57, and
+the node degree mode is 1. The top 5 most central nodes are 66373.JOFQ01000038_gene2284
+(degree 3630), 66373.JOFQ01000007_gene3596 (degree 2246), 66373.JOFQ01000034_gene4085
+(degree 2242), 66373.JOFQ01000002_gene4870 (degree 2186) and 66373.JOFQ01000021_gene6098
+(degree 1853).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesNiger(
 	
 	Datetime: 2021-02-02 18:25:37.108590
 	
-	The undirected graph Streptomyces niger has 7199 nodes and 1002729 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03870 and
-	has 30 connected components, where the component with most nodes has 7133 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 278.57, and the node degree mode is 1. The top 5 most central
-	nodes are 66373.JOFQ01000038_gene2284 (degree 3630), 66373.JOFQ01000007_gene3596
-	(degree 2246), 66373.JOFQ01000034_gene4085 (degree 2242), 66373.JOFQ01000002_gene4870
-	(degree 2186) and 66373.JOFQ01000021_gene6098 (degree 1853).
+	The undirected graph Streptomyces niger has 7199 nodes and 1002729 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03870 and has 30 connected components, where the component with most
+	nodes has 7133 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 235, the mean node degree is 278.57, and
+	the node degree mode is 1. The top 5 most central nodes are 66373.JOFQ01000038_gene2284
+	(degree 3630), 66373.JOFQ01000007_gene3596 (degree 2246), 66373.JOFQ01000034_gene4085
+	(degree 2242), 66373.JOFQ01000002_gene4870 (degree 2186) and 66373.JOFQ01000021_gene6098
+	(degree 1853).
 	
 
 

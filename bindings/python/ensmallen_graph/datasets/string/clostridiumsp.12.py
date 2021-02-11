@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:13.530349
 
-The undirected graph Clostridium sp. 12 has 4081 nodes and 446437 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05362 and
-has 26 connected components, where the component with most nodes has 4002 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 218.79, and the node degree mode is 1. The top 5 most central
-nodes are 1163671.JAGI01000002_gene2663 (degree 1508), 1163671.JAGI01000002_gene3898
-(degree 1321), 1163671.JAGI01000002_gene1871 (degree 1203), 1163671.JAGI01000002_gene2129
-(degree 1169) and 1163671.JAGI01000002_gene2637 (degree 1137).
+The undirected graph Clostridium sp. 12 has 4081 nodes and 446437 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05362 and has 26 connected components, where the component with most
+nodes has 4002 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 218.79, and
+the node degree mode is 1. The top 5 most central nodes are 1163671.JAGI01000002_gene2663
+(degree 1508), 1163671.JAGI01000002_gene3898 (degree 1321), 1163671.JAGI01000002_gene1871
+(degree 1203), 1163671.JAGI01000002_gene2129 (degree 1169) and 1163671.JAGI01000002_gene2637
+(degree 1137).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.12(
 	
 	Datetime: 2021-02-05 17:18:13.530349
 	
-	The undirected graph Clostridium sp. 12 has 4081 nodes and 446437 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05362 and
-	has 26 connected components, where the component with most nodes has 4002 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 218.79, and the node degree mode is 1. The top 5 most central
-	nodes are 1163671.JAGI01000002_gene2663 (degree 1508), 1163671.JAGI01000002_gene3898
-	(degree 1321), 1163671.JAGI01000002_gene1871 (degree 1203), 1163671.JAGI01000002_gene2129
-	(degree 1169) and 1163671.JAGI01000002_gene2637 (degree 1137).
+	The undirected graph Clostridium sp. 12 has 4081 nodes and 446437 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05362 and has 26 connected components, where the component with most
+	nodes has 4002 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 218.79, and
+	the node degree mode is 1. The top 5 most central nodes are 1163671.JAGI01000002_gene2663
+	(degree 1508), 1163671.JAGI01000002_gene3898 (degree 1321), 1163671.JAGI01000002_gene1871
+	(degree 1203), 1163671.JAGI01000002_gene2129 (degree 1169) and 1163671.JAGI01000002_gene2637
+	(degree 1137).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:35.590042
 
-The undirected graph Veillonella dispar has 1945 nodes and 144992 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07669 and
-has 8 connected components, where the component with most nodes has 1925 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 149.09, and the node degree mode is 7. The top 5 most central
-nodes are 546273.VEIDISOL_01316 (degree 785), 546273.VEIDISOL_01258 (degree 707),
-546273.VEIDISOL_00568 (degree 657), 546273.VEIDISOL_01465 (degree 653) and 546273.VEIDISOL_00989
+The undirected graph Veillonella dispar has 1945 nodes and 144992 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07669 and has 8 connected components, where the component with most
+nodes has 1925 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 149.09, and
+the node degree mode is 7. The top 5 most central nodes are 546273.VEIDISOL_01316
+(degree 785), 546273.VEIDISOL_01258 (degree 707), 546273.VEIDISOL_00568
+(degree 657), 546273.VEIDISOL_01465 (degree 653) and 546273.VEIDISOL_00989
 (degree 643).
 
 
@@ -107,13 +108,14 @@ def VeillonellaDispar(
 	
 	Datetime: 2021-02-02 21:08:35.590042
 	
-	The undirected graph Veillonella dispar has 1945 nodes and 144992 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07669 and
-	has 8 connected components, where the component with most nodes has 1925 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 149.09, and the node degree mode is 7. The top 5 most central
-	nodes are 546273.VEIDISOL_01316 (degree 785), 546273.VEIDISOL_01258 (degree 707),
-	546273.VEIDISOL_00568 (degree 657), 546273.VEIDISOL_01465 (degree 653) and 546273.VEIDISOL_00989
+	The undirected graph Veillonella dispar has 1945 nodes and 144992 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07669 and has 8 connected components, where the component with most
+	nodes has 1925 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 149.09, and
+	the node degree mode is 7. The top 5 most central nodes are 546273.VEIDISOL_01316
+	(degree 785), 546273.VEIDISOL_01258 (degree 707), 546273.VEIDISOL_00568
+	(degree 657), 546273.VEIDISOL_01465 (degree 653) and 546273.VEIDISOL_00989
 	(degree 643).
 	
 

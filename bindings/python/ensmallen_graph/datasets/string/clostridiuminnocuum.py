@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:59.305386
 
-The undirected graph Clostridium innocuum has 4629 nodes and 1806948 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.16869
-and has 16 connected components, where the component with most nodes has 4592 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 707, the mean node degree is 780.71, and the node degree mode is 3. The top 5
-most central nodes are 999413.HMPREF1094_01606 (degree 2774), 999413.HMPREF1094_02688
-(degree 2704), 999413.HMPREF1094_02832 (degree 2678), 999413.HMPREF1094_02733 (degree
-2676) and 999413.HMPREF1094_03833 (degree 2634).
+The undirected graph Clostridium innocuum has 4629 nodes and 1806948 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.16869 and has 16 connected components, where the component
+with most nodes has 4592 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 707, the mean node degree is 780.71,
+and the node degree mode is 3. The top 5 most central nodes are 999413.HMPREF1094_01606
+(degree 2774), 999413.HMPREF1094_02688 (degree 2704), 999413.HMPREF1094_02832
+(degree 2678), 999413.HMPREF1094_02733 (degree 2676) and 999413.HMPREF1094_03833
+(degree 2634).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumInnocuum(
 	
 	Datetime: 2021-02-02 22:05:59.305386
 	
-	The undirected graph Clostridium innocuum has 4629 nodes and 1806948 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.16869
-	and has 16 connected components, where the component with most nodes has 4592 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 707, the mean node degree is 780.71, and the node degree mode is 3. The top 5
-	most central nodes are 999413.HMPREF1094_01606 (degree 2774), 999413.HMPREF1094_02688
-	(degree 2704), 999413.HMPREF1094_02832 (degree 2678), 999413.HMPREF1094_02733 (degree
-	2676) and 999413.HMPREF1094_03833 (degree 2634).
+	The undirected graph Clostridium innocuum has 4629 nodes and 1806948 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.16869 and has 16 connected components, where the component
+	with most nodes has 4592 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 707, the mean node degree is 780.71,
+	and the node degree mode is 3. The top 5 most central nodes are 999413.HMPREF1094_01606
+	(degree 2774), 999413.HMPREF1094_02688 (degree 2704), 999413.HMPREF1094_02832
+	(degree 2678), 999413.HMPREF1094_02733 (degree 2676) and 999413.HMPREF1094_03833
+	(degree 2634).
 	
 
 

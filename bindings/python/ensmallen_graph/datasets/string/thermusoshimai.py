@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:14.238198
 
-The undirected graph Thermus oshimai has 2105 nodes and 147366 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06655 and
-has 2 connected components, where the component with most nodes has 2103 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 140.02, and the node degree mode is 7. The top 5 most central
-nodes are 751945.Theos_0888 (degree 965), 751945.Theos_1473 (degree 866), 751945.Theos_0652
-(degree 831), 751945.Theos_1632 (degree 748) and 751945.Theos_0682 (degree 731).
+The undirected graph Thermus oshimai has 2105 nodes and 147366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06655 and has 2 connected components, where the component with most
+nodes has 2103 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 140.02, and
+the node degree mode is 7. The top 5 most central nodes are 751945.Theos_0888
+(degree 965), 751945.Theos_1473 (degree 866), 751945.Theos_0652 (degree
+831), 751945.Theos_1632 (degree 748) and 751945.Theos_0682 (degree 731).
 
 
 References
@@ -106,13 +107,14 @@ def ThermusOshimai(
 	
 	Datetime: 2021-02-02 21:40:14.238198
 	
-	The undirected graph Thermus oshimai has 2105 nodes and 147366 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06655 and
-	has 2 connected components, where the component with most nodes has 2103 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 140.02, and the node degree mode is 7. The top 5 most central
-	nodes are 751945.Theos_0888 (degree 965), 751945.Theos_1473 (degree 866), 751945.Theos_0652
-	(degree 831), 751945.Theos_1632 (degree 748) and 751945.Theos_0682 (degree 731).
+	The undirected graph Thermus oshimai has 2105 nodes and 147366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06655 and has 2 connected components, where the component with most
+	nodes has 2103 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 140.02, and
+	the node degree mode is 7. The top 5 most central nodes are 751945.Theos_0888
+	(degree 965), 751945.Theos_1473 (degree 866), 751945.Theos_0652 (degree
+	831), 751945.Theos_1632 (degree 748) and 751945.Theos_0682 (degree 731).
 	
 
 

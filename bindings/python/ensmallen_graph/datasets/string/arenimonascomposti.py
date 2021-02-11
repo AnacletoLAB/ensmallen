@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:56.226295
 
-The undirected graph Arenimonas composti has 2822 nodes and 244467 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06142 and
-has 11 connected components, where the component with most nodes has 2798 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 173.26, and the node degree mode is 2. The top 5 most central
-nodes are 1121013.P873_02115 (degree 1333), 1121013.P873_05440 (degree 989), 1121013.P873_10950
-(degree 980), 1121013.P873_08410 (degree 944) and 1121013.P873_02015 (degree 886).
+The undirected graph Arenimonas composti has 2822 nodes and 244467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06142 and has 11 connected components, where the component with most
+nodes has 2798 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 173.26, and
+the node degree mode is 2. The top 5 most central nodes are 1121013.P873_02115
+(degree 1333), 1121013.P873_05440 (degree 989), 1121013.P873_10950 (degree
+980), 1121013.P873_08410 (degree 944) and 1121013.P873_02015 (degree 886).
 
 
 References
@@ -106,13 +107,14 @@ def ArenimonasComposti(
 	
 	Datetime: 2021-02-02 22:31:56.226295
 	
-	The undirected graph Arenimonas composti has 2822 nodes and 244467 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06142 and
-	has 11 connected components, where the component with most nodes has 2798 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 173.26, and the node degree mode is 2. The top 5 most central
-	nodes are 1121013.P873_02115 (degree 1333), 1121013.P873_05440 (degree 989), 1121013.P873_10950
-	(degree 980), 1121013.P873_08410 (degree 944) and 1121013.P873_02015 (degree 886).
+	The undirected graph Arenimonas composti has 2822 nodes and 244467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06142 and has 11 connected components, where the component with most
+	nodes has 2798 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 173.26, and
+	the node degree mode is 2. The top 5 most central nodes are 1121013.P873_02115
+	(degree 1333), 1121013.P873_05440 (degree 989), 1121013.P873_10950 (degree
+	980), 1121013.P873_08410 (degree 944) and 1121013.P873_02015 (degree 886).
 	
 
 

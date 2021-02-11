@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:37:32.557414
 
-The undirected graph cage15 has 264392 nodes and 655319 weighted edges, of which
-38981 are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 4.81, and the node degree mode is 1. The top 5 most central
-nodes are 5151899 (degree 44), 5151893 (degree 44), 5151889 (degree 44), 5151887
-(degree 44) and 5151882 (degree 44).
+The undirected graph cage15 has 264392 nodes and 655319 weighted edges,
+of which 38981 are self-loops. The graph is extremely sparse as it has
+a density of 0.00002 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 4.81, and the node
+degree mode is 1. The top 5 most central nodes are 5151899 (degree 44),
+5151893 (degree 44), 5151889 (degree 44), 5151887 (degree 44) and 5151882
+(degree 44).
 
 
 References
@@ -102,12 +103,13 @@ def Cage15(
 	
 	Datetime: 2021-02-06 20:37:32.557414
 	
-	The undirected graph cage15 has 264392 nodes and 655319 weighted edges, of which
-	38981 are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 4.81, and the node degree mode is 1. The top 5 most central
-	nodes are 5151899 (degree 44), 5151893 (degree 44), 5151889 (degree 44), 5151887
-	(degree 44) and 5151882 (degree 44).
+	The undirected graph cage15 has 264392 nodes and 655319 weighted edges,
+	of which 38981 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00002 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 4.81, and the node
+	degree mode is 1. The top 5 most central nodes are 5151899 (degree 44),
+	5151893 (degree 44), 5151889 (degree 44), 5151887 (degree 44) and 5151882
+	(degree 44).
 	
 
 

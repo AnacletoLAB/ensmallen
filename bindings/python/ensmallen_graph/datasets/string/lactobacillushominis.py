@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:37.654435
 
-The undirected graph Lactobacillus hominis has 1884 nodes and 116362 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06560 and
-has 7 connected components, where the component with most nodes has 1863 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 123.53, and the node degree mode is 11. The top 5 most central
-nodes are 1423758.BN55_00290 (degree 839), 1423758.BN55_01350 (degree 633), 1423758.BN55_01895
-(degree 611), 1423758.BN55_03810 (degree 600) and 1423758.BN55_03870 (degree 536).
+The undirected graph Lactobacillus hominis has 1884 nodes and 116362 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06560 and has 7 connected components, where the component with most
+nodes has 1863 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 123.53, and
+the node degree mode is 11. The top 5 most central nodes are 1423758.BN55_00290
+(degree 839), 1423758.BN55_01350 (degree 633), 1423758.BN55_01895 (degree
+611), 1423758.BN55_03810 (degree 600) and 1423758.BN55_03870 (degree 536).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusHominis(
 	
 	Datetime: 2021-02-03 22:51:37.654435
 	
-	The undirected graph Lactobacillus hominis has 1884 nodes and 116362 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06560 and
-	has 7 connected components, where the component with most nodes has 1863 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 123.53, and the node degree mode is 11. The top 5 most central
-	nodes are 1423758.BN55_00290 (degree 839), 1423758.BN55_01350 (degree 633), 1423758.BN55_01895
-	(degree 611), 1423758.BN55_03810 (degree 600) and 1423758.BN55_03870 (degree 536).
+	The undirected graph Lactobacillus hominis has 1884 nodes and 116362 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06560 and has 7 connected components, where the component with most
+	nodes has 1863 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 123.53, and
+	the node degree mode is 11. The top 5 most central nodes are 1423758.BN55_00290
+	(degree 839), 1423758.BN55_01350 (degree 633), 1423758.BN55_01895 (degree
+	611), 1423758.BN55_03810 (degree 600) and 1423758.BN55_03870 (degree 536).
 	
 
 

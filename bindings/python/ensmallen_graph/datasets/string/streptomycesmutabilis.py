@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:13.915529
 
-The undirected graph Streptomyces mutabilis has 6222 nodes and 865080 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04470 and
-has 50 connected components, where the component with most nodes has 6090 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 278.07, and the node degree mode is 2. The top 5 most central
-nodes are 67332.FM21_21325 (degree 2894), 67332.FM21_08105 (degree 1925), 67332.FM21_04905
-(degree 1894), 67332.FM21_13785 (degree 1867) and 67332.FM21_07985 (degree 1749).
+The undirected graph Streptomyces mutabilis has 6222 nodes and 865080 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04470 and has 50 connected components, where the component with most
+nodes has 6090 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 278.07, and
+the node degree mode is 2. The top 5 most central nodes are 67332.FM21_21325
+(degree 2894), 67332.FM21_08105 (degree 1925), 67332.FM21_04905 (degree
+1894), 67332.FM21_13785 (degree 1867) and 67332.FM21_07985 (degree 1749).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesMutabilis(
 	
 	Datetime: 2021-02-02 18:27:13.915529
 	
-	The undirected graph Streptomyces mutabilis has 6222 nodes and 865080 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04470 and
-	has 50 connected components, where the component with most nodes has 6090 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 278.07, and the node degree mode is 2. The top 5 most central
-	nodes are 67332.FM21_21325 (degree 2894), 67332.FM21_08105 (degree 1925), 67332.FM21_04905
-	(degree 1894), 67332.FM21_13785 (degree 1867) and 67332.FM21_07985 (degree 1749).
+	The undirected graph Streptomyces mutabilis has 6222 nodes and 865080 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04470 and has 50 connected components, where the component with most
+	nodes has 6090 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 278.07, and
+	the node degree mode is 2. The top 5 most central nodes are 67332.FM21_21325
+	(degree 2894), 67332.FM21_08105 (degree 1925), 67332.FM21_04905 (degree
+	1894), 67332.FM21_13785 (degree 1867) and 67332.FM21_07985 (degree 1749).
 	
 
 

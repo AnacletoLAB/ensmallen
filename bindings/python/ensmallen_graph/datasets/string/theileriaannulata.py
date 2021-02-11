@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:47.919731
 
-The undirected graph Theileria annulata has 2413 nodes and 309661 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10641
-and has 10 connected components, where the component with most nodes has 2394 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 256.66, and the node degree mode is 1. The top 5
-most central nodes are 5874.XP_954266.1 (degree 1264), 5874.XP_953992.1 (degree 1095),
-5874.XP_954352.1 (degree 1072), 5874.XP_951815.1 (degree 1068) and 5874.XP_952563.1
-(degree 1067).
+The undirected graph Theileria annulata has 2413 nodes and 309661 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10641 and has 10 connected components, where the component
+with most nodes has 2394 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 213, the mean node degree is 256.66,
+and the node degree mode is 1. The top 5 most central nodes are 5874.XP_954266.1
+(degree 1264), 5874.XP_953992.1 (degree 1095), 5874.XP_954352.1 (degree
+1072), 5874.XP_951815.1 (degree 1068) and 5874.XP_952563.1 (degree 1067).
 
 
 References
@@ -107,14 +107,14 @@ def TheileriaAnnulata(
 	
 	Datetime: 2021-02-02 17:16:47.919731
 	
-	The undirected graph Theileria annulata has 2413 nodes and 309661 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10641
-	and has 10 connected components, where the component with most nodes has 2394 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 256.66, and the node degree mode is 1. The top 5
-	most central nodes are 5874.XP_954266.1 (degree 1264), 5874.XP_953992.1 (degree 1095),
-	5874.XP_954352.1 (degree 1072), 5874.XP_951815.1 (degree 1068) and 5874.XP_952563.1
-	(degree 1067).
+	The undirected graph Theileria annulata has 2413 nodes and 309661 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10641 and has 10 connected components, where the component
+	with most nodes has 2394 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 213, the mean node degree is 256.66,
+	and the node degree mode is 1. The top 5 most central nodes are 5874.XP_954266.1
+	(degree 1264), 5874.XP_953992.1 (degree 1095), 5874.XP_954352.1 (degree
+	1072), 5874.XP_951815.1 (degree 1068) and 5874.XP_952563.1 (degree 1067).
 	
 
 

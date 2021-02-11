@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:20.624247
 
-The undirected graph Helicobacter acinonychis has 1604 nodes and 73448 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05713 and
-has 11 connected components, where the component with most nodes has 1566 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 61,
-the mean node degree is 91.58, and the node degree mode is 6. The top 5 most central
-nodes are 382638.Hac_1719 (degree 629), 382638.Hac_1578 (degree 563), 382638.Hac_0466
-(degree 511), 382638.Hac_1197 (degree 507) and 382638.Hac_0457 (degree 497).
+The undirected graph Helicobacter acinonychis has 1604 nodes and 73448
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05713 and has 11 connected components, where the component
+with most nodes has 1566 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 61, the mean node degree is 91.58,
+and the node degree mode is 6. The top 5 most central nodes are 382638.Hac_1719
+(degree 629), 382638.Hac_1578 (degree 563), 382638.Hac_0466 (degree 511),
+382638.Hac_1197 (degree 507) and 382638.Hac_0457 (degree 497).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterAcinonychis(
 	
 	Datetime: 2021-02-02 20:37:20.624247
 	
-	The undirected graph Helicobacter acinonychis has 1604 nodes and 73448 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05713 and
-	has 11 connected components, where the component with most nodes has 1566 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 61,
-	the mean node degree is 91.58, and the node degree mode is 6. The top 5 most central
-	nodes are 382638.Hac_1719 (degree 629), 382638.Hac_1578 (degree 563), 382638.Hac_0466
-	(degree 511), 382638.Hac_1197 (degree 507) and 382638.Hac_0457 (degree 497).
+	The undirected graph Helicobacter acinonychis has 1604 nodes and 73448
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05713 and has 11 connected components, where the component
+	with most nodes has 1566 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 61, the mean node degree is 91.58,
+	and the node degree mode is 6. The top 5 most central nodes are 382638.Hac_1719
+	(degree 629), 382638.Hac_1578 (degree 563), 382638.Hac_0466 (degree 511),
+	382638.Hac_1197 (degree 507) and 382638.Hac_0457 (degree 497).
 	
 
 

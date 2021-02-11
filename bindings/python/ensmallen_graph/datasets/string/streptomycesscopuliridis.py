@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:58:47.760659
 
-The undirected graph Streptomyces scopuliridis has 6868 nodes and 980437 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04158
-and has 27 connected components, where the component with most nodes has 6802 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 236, the mean node degree is 285.51, and the node degree mode is 2. The top 5
-most central nodes are 1440053.JOEI01000004_gene3780 (degree 3326), 1440053.JOEI01000010_gene5624
-(degree 2900), 1440053.JOEI01000012_gene4285 (degree 2139), 1440053.JOEI01000019_gene632
-(degree 2107) and 1440053.JOEI01000018_gene353 (degree 1932).
+The undirected graph Streptomyces scopuliridis has 6868 nodes and 980437
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04158 and has 27 connected components, where the component
+with most nodes has 6802 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 236, the mean node degree is 285.51,
+and the node degree mode is 2. The top 5 most central nodes are 1440053.JOEI01000004_gene3780
+(degree 3326), 1440053.JOEI01000010_gene5624 (degree 2900), 1440053.JOEI01000012_gene4285
+(degree 2139), 1440053.JOEI01000019_gene632 (degree 2107) and 1440053.JOEI01000018_gene353
+(degree 1932).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesScopuliridis(
 	
 	Datetime: 2021-02-03 22:58:47.760659
 	
-	The undirected graph Streptomyces scopuliridis has 6868 nodes and 980437 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04158
-	and has 27 connected components, where the component with most nodes has 6802 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 236, the mean node degree is 285.51, and the node degree mode is 2. The top 5
-	most central nodes are 1440053.JOEI01000004_gene3780 (degree 3326), 1440053.JOEI01000010_gene5624
-	(degree 2900), 1440053.JOEI01000012_gene4285 (degree 2139), 1440053.JOEI01000019_gene632
-	(degree 2107) and 1440053.JOEI01000018_gene353 (degree 1932).
+	The undirected graph Streptomyces scopuliridis has 6868 nodes and 980437
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04158 and has 27 connected components, where the component
+	with most nodes has 6802 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 236, the mean node degree is 285.51,
+	and the node degree mode is 2. The top 5 most central nodes are 1440053.JOEI01000004_gene3780
+	(degree 3326), 1440053.JOEI01000010_gene5624 (degree 2900), 1440053.JOEI01000012_gene4285
+	(degree 2139), 1440053.JOEI01000019_gene632 (degree 2107) and 1440053.JOEI01000018_gene353
+	(degree 1932).
 	
 
 

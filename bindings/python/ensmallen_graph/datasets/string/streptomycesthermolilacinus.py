@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:41:46.342613
 
-The undirected graph Streptomyces thermolilacinus has 5453 nodes and 702334 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04725
-and has 26 connected components, where the component with most nodes has 5397 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 257.60, and the node degree mode is 3. The top 5
-most central nodes are 1306406.ASHX01000001_gene217 (degree 2410), 1306406.ASHX01000001_gene2730
-(degree 1749), 1306406.ASHX01000001_gene1826 (degree 1722), 1306406.ASHX01000001_gene3274
-(degree 1720) and 1306406.ASHX01000001_gene4318 (degree 1691).
+The undirected graph Streptomyces thermolilacinus has 5453 nodes and 702334
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04725 and has 26 connected components, where the component
+with most nodes has 5397 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 257.60,
+and the node degree mode is 3. The top 5 most central nodes are 1306406.ASHX01000001_gene217
+(degree 2410), 1306406.ASHX01000001_gene2730 (degree 1749), 1306406.ASHX01000001_gene1826
+(degree 1722), 1306406.ASHX01000001_gene3274 (degree 1720) and 1306406.ASHX01000001_gene4318
+(degree 1691).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesThermolilacinus(
 	
 	Datetime: 2021-02-03 21:41:46.342613
 	
-	The undirected graph Streptomyces thermolilacinus has 5453 nodes and 702334 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04725
-	and has 26 connected components, where the component with most nodes has 5397 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 257.60, and the node degree mode is 3. The top 5
-	most central nodes are 1306406.ASHX01000001_gene217 (degree 2410), 1306406.ASHX01000001_gene2730
-	(degree 1749), 1306406.ASHX01000001_gene1826 (degree 1722), 1306406.ASHX01000001_gene3274
-	(degree 1720) and 1306406.ASHX01000001_gene4318 (degree 1691).
+	The undirected graph Streptomyces thermolilacinus has 5453 nodes and 702334
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04725 and has 26 connected components, where the component
+	with most nodes has 5397 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 257.60,
+	and the node degree mode is 3. The top 5 most central nodes are 1306406.ASHX01000001_gene217
+	(degree 2410), 1306406.ASHX01000001_gene2730 (degree 1749), 1306406.ASHX01000001_gene1826
+	(degree 1722), 1306406.ASHX01000001_gene3274 (degree 1720) and 1306406.ASHX01000001_gene4318
+	(degree 1691).
 	
 
 

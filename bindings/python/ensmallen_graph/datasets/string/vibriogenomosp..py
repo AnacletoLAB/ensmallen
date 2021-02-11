@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:57.561583
 
-The undirected graph Vibrio genomosp. has 3934 nodes and 466431 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06029 and
-has 30 connected components, where the component with most nodes has 3827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 237.13, and the node degree mode is 1. The top 5 most central
-nodes are 1187848.AJYQ01000053_gene2059 (degree 1530), 1187848.AJYQ01000091_gene3522
-(degree 1372), 1187848.AJYQ01000121_gene3252 (degree 1371), 1187848.AJYQ01000099_gene2411
-(degree 1370) and 1187848.AJYQ01000127_gene614 (degree 1323).
+The undirected graph Vibrio genomosp. has 3934 nodes and 466431 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06029 and has 30 connected components, where the component with most
+nodes has 3827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 237.13, and
+the node degree mode is 1. The top 5 most central nodes are 1187848.AJYQ01000053_gene2059
+(degree 1530), 1187848.AJYQ01000091_gene3522 (degree 1372), 1187848.AJYQ01000121_gene3252
+(degree 1371), 1187848.AJYQ01000099_gene2411 (degree 1370) and 1187848.AJYQ01000127_gene614
+(degree 1323).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioGenomosp.(
 	
 	Datetime: 2021-02-02 23:10:57.561583
 	
-	The undirected graph Vibrio genomosp. has 3934 nodes and 466431 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06029 and
-	has 30 connected components, where the component with most nodes has 3827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 237.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1187848.AJYQ01000053_gene2059 (degree 1530), 1187848.AJYQ01000091_gene3522
-	(degree 1372), 1187848.AJYQ01000121_gene3252 (degree 1371), 1187848.AJYQ01000099_gene2411
-	(degree 1370) and 1187848.AJYQ01000127_gene614 (degree 1323).
+	The undirected graph Vibrio genomosp. has 3934 nodes and 466431 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06029 and has 30 connected components, where the component with most
+	nodes has 3827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 237.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1187848.AJYQ01000053_gene2059
+	(degree 1530), 1187848.AJYQ01000091_gene3522 (degree 1372), 1187848.AJYQ01000121_gene3252
+	(degree 1371), 1187848.AJYQ01000099_gene2411 (degree 1370) and 1187848.AJYQ01000127_gene614
+	(degree 1323).
 	
 
 

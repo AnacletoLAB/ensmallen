@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:23.124029
 
-The undirected graph Bordetella pertussis Tohama has 3417 nodes and 269708 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04621
-and has 2 connected components, where the component with most nodes has 3414 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 124, the mean node degree is 157.86, and the node degree mode is 5. The top 5
-most central nodes are 257313.BP1254 (degree 1265), 257313.BP1092 (degree 1051),
-257313.BP3753 (degree 916), 257313.BP2700 (degree 892) and 257313.BP2624 (degree
-881).
+The undirected graph Bordetella pertussis Tohama has 3417 nodes and 269708
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04621 and has 2 connected components, where the component
+with most nodes has 3414 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 124, the mean node degree is 157.86,
+and the node degree mode is 5. The top 5 most central nodes are 257313.BP1254
+(degree 1265), 257313.BP1092 (degree 1051), 257313.BP3753 (degree 916),
+257313.BP2700 (degree 892) and 257313.BP2624 (degree 881).
 
 
 References
@@ -107,14 +107,14 @@ def BordetellaPertussisTohama(
 	
 	Datetime: 2021-02-02 20:12:23.124029
 	
-	The undirected graph Bordetella pertussis Tohama has 3417 nodes and 269708 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04621
-	and has 2 connected components, where the component with most nodes has 3414 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 124, the mean node degree is 157.86, and the node degree mode is 5. The top 5
-	most central nodes are 257313.BP1254 (degree 1265), 257313.BP1092 (degree 1051),
-	257313.BP3753 (degree 916), 257313.BP2700 (degree 892) and 257313.BP2624 (degree
-	881).
+	The undirected graph Bordetella pertussis Tohama has 3417 nodes and 269708
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04621 and has 2 connected components, where the component
+	with most nodes has 3414 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 124, the mean node degree is 157.86,
+	and the node degree mode is 5. The top 5 most central nodes are 257313.BP1254
+	(degree 1265), 257313.BP1092 (degree 1051), 257313.BP3753 (degree 916),
+	257313.BP2700 (degree 892) and 257313.BP2624 (degree 881).
 	
 
 

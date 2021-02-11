@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:07.345902
 
-The undirected graph Novosphingobium aromaticivorans has 3737 nodes and 255160 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03655
-and has 8 connected components, where the component with most nodes has 3716 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 136.56, and the node degree mode is 6. The top 5
-most central nodes are 279238.Saro_0278 (degree 1226), 279238.Saro_2971 (degree 1107),
-279238.Saro_0301 (degree 1015), 279238.Saro_3493 (degree 1007) and 279238.Saro_3176
-(degree 909).
+The undirected graph Novosphingobium aromaticivorans has 3737 nodes and
+255160 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03655 and has 8 connected components, where the
+component with most nodes has 3716 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 136.56, and the node degree mode is 6. The top 5 most central nodes
+are 279238.Saro_0278 (degree 1226), 279238.Saro_2971 (degree 1107), 279238.Saro_0301
+(degree 1015), 279238.Saro_3493 (degree 1007) and 279238.Saro_3176 (degree
+909).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumAromaticivorans(
 	
 	Datetime: 2021-02-02 20:18:07.345902
 	
-	The undirected graph Novosphingobium aromaticivorans has 3737 nodes and 255160 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03655
-	and has 8 connected components, where the component with most nodes has 3716 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 136.56, and the node degree mode is 6. The top 5
-	most central nodes are 279238.Saro_0278 (degree 1226), 279238.Saro_2971 (degree 1107),
-	279238.Saro_0301 (degree 1015), 279238.Saro_3493 (degree 1007) and 279238.Saro_3176
-	(degree 909).
+	The undirected graph Novosphingobium aromaticivorans has 3737 nodes and
+	255160 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03655 and has 8 connected components, where the
+	component with most nodes has 3716 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 136.56, and the node degree mode is 6. The top 5 most central nodes
+	are 279238.Saro_0278 (degree 1226), 279238.Saro_2971 (degree 1107), 279238.Saro_0301
+	(degree 1015), 279238.Saro_3493 (degree 1007) and 279238.Saro_3176 (degree
+	909).
 	
 
 

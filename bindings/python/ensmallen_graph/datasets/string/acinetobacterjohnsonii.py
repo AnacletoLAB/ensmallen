@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:55.624653
 
-The undirected graph Acinetobacter johnsonii has 3300 nodes and 261631 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-has 14 connected components, where the component with most nodes has 3271 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 158.56, and the node degree mode is 1. The top 5 most central
-nodes are 575586.HMPREF0016_01619 (degree 1156), 575586.HMPREF0016_02687 (degree
-1089), 575586.HMPREF0016_02664 (degree 933), 575586.HMPREF0016_01659 (degree 926)
-and 575586.HMPREF0016_00662 (degree 838).
+The undirected graph Acinetobacter johnsonii has 3300 nodes and 261631
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04806 and has 14 connected components, where the component
+with most nodes has 3271 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 158.56,
+and the node degree mode is 1. The top 5 most central nodes are 575586.HMPREF0016_01619
+(degree 1156), 575586.HMPREF0016_02687 (degree 1089), 575586.HMPREF0016_02664
+(degree 933), 575586.HMPREF0016_01659 (degree 926) and 575586.HMPREF0016_00662
+(degree 838).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterJohnsonii(
 	
 	Datetime: 2021-02-02 21:14:55.624653
 	
-	The undirected graph Acinetobacter johnsonii has 3300 nodes and 261631 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-	has 14 connected components, where the component with most nodes has 3271 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 158.56, and the node degree mode is 1. The top 5 most central
-	nodes are 575586.HMPREF0016_01619 (degree 1156), 575586.HMPREF0016_02687 (degree
-	1089), 575586.HMPREF0016_02664 (degree 933), 575586.HMPREF0016_01659 (degree 926)
-	and 575586.HMPREF0016_00662 (degree 838).
+	The undirected graph Acinetobacter johnsonii has 3300 nodes and 261631
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04806 and has 14 connected components, where the component
+	with most nodes has 3271 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 158.56,
+	and the node degree mode is 1. The top 5 most central nodes are 575586.HMPREF0016_01619
+	(degree 1156), 575586.HMPREF0016_02687 (degree 1089), 575586.HMPREF0016_02664
+	(degree 933), 575586.HMPREF0016_01659 (degree 926) and 575586.HMPREF0016_00662
+	(degree 838).
 	
 
 

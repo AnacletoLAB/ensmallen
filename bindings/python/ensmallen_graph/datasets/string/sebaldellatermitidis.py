@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:54.737915
 
-The undirected graph Sebaldella termitidis has 4052 nodes and 388565 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04734 and
-has 23 connected components, where the component with most nodes has 3989 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 191.79, and the node degree mode is 3. The top 5 most central
-nodes are 526218.Sterm_0119 (degree 1446), 526218.Sterm_2019 (degree 1423), 526218.Sterm_2408
-(degree 1195), 526218.Sterm_1132 (degree 1193) and 526218.Sterm_1556 (degree 1182).
+The undirected graph Sebaldella termitidis has 4052 nodes and 388565 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04734 and has 23 connected components, where the component with most
+nodes has 3989 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 191.79, and
+the node degree mode is 3. The top 5 most central nodes are 526218.Sterm_0119
+(degree 1446), 526218.Sterm_2019 (degree 1423), 526218.Sterm_2408 (degree
+1195), 526218.Sterm_1132 (degree 1193) and 526218.Sterm_1556 (degree 1182).
 
 
 References
@@ -106,13 +107,14 @@ def SebaldellaTermitidis(
 	
 	Datetime: 2021-02-02 21:05:54.737915
 	
-	The undirected graph Sebaldella termitidis has 4052 nodes and 388565 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04734 and
-	has 23 connected components, where the component with most nodes has 3989 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 191.79, and the node degree mode is 3. The top 5 most central
-	nodes are 526218.Sterm_0119 (degree 1446), 526218.Sterm_2019 (degree 1423), 526218.Sterm_2408
-	(degree 1195), 526218.Sterm_1132 (degree 1193) and 526218.Sterm_1556 (degree 1182).
+	The undirected graph Sebaldella termitidis has 4052 nodes and 388565 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04734 and has 23 connected components, where the component with most
+	nodes has 3989 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 191.79, and
+	the node degree mode is 3. The top 5 most central nodes are 526218.Sterm_0119
+	(degree 1446), 526218.Sterm_2019 (degree 1423), 526218.Sterm_2408 (degree
+	1195), 526218.Sterm_1132 (degree 1193) and 526218.Sterm_1556 (degree 1182).
 	
 
 

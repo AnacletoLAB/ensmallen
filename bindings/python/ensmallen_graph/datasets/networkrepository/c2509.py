@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:10.971705
 
-The undirected graph C250-9 has 250 nodes and 27984 unweighted edges, of which none
-are self-loops. The graph is extremely dense as it has a density of 0.89908 and is
-connected, as it has a single component. The graph median node degree is 224, the
-mean node degree is 223.87 and the node degree mode is 224. The top 5 most central
-nodes are 125 (degree 236), 63 (degree 234), 6 (degree 234), 230 (degree 233) and
-197 (degree 233).
+The undirected graph C250-9 has 250 nodes and 27984 unweighted edges, of
+which none are self-loops. The graph is extremely dense as it has a density
+of 0.89908 and is connected, as it has a single component. The graph median
+node degree is 224, the mean node degree is 223.87 and the node degree
+mode is 224. The top 5 most central nodes are 125 (degree 236), 63 (degree
+234), 6 (degree 234), 230 (degree 233) and 197 (degree 233).
 
 
 References
@@ -115,12 +115,12 @@ def C2509(
 	
 	Datetime: 2021-02-03 22:52:10.971705
 	
-	The undirected graph C250-9 has 250 nodes and 27984 unweighted edges, of which none
-	are self-loops. The graph is extremely dense as it has a density of 0.89908 and is
-	connected, as it has a single component. The graph median node degree is 224, the
-	mean node degree is 223.87 and the node degree mode is 224. The top 5 most central
-	nodes are 125 (degree 236), 63 (degree 234), 6 (degree 234), 230 (degree 233) and
-	197 (degree 233).
+	The undirected graph C250-9 has 250 nodes and 27984 unweighted edges, of
+	which none are self-loops. The graph is extremely dense as it has a density
+	of 0.89908 and is connected, as it has a single component. The graph median
+	node degree is 224, the mean node degree is 223.87 and the node degree
+	mode is 224. The top 5 most central nodes are 125 (degree 236), 63 (degree
+	234), 6 (degree 234), 230 (degree 233) and 197 (degree 233).
 	
 
 

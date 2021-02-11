@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:49.426432
 
-The undirected graph Cytophaga fermentans has 4601 nodes and 442653 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04183 and
-has 34 connected components, where the component with most nodes has 4517 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 192.42, and the node degree mode is 1. The top 5 most central
-nodes are 869213.JCM21142_93410 (degree 1518), 869213.JCM21142_72820 (degree 1340),
-869213.JCM21142_3875 (degree 1209), 869213.JCM21142_73047 (degree 1187) and 869213.JCM21142_41548
+The undirected graph Cytophaga fermentans has 4601 nodes and 442653 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04183 and has 34 connected components, where the component with most
+nodes has 4517 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 192.42, and
+the node degree mode is 1. The top 5 most central nodes are 869213.JCM21142_93410
+(degree 1518), 869213.JCM21142_72820 (degree 1340), 869213.JCM21142_3875
+(degree 1209), 869213.JCM21142_73047 (degree 1187) and 869213.JCM21142_41548
 (degree 1099).
 
 
@@ -107,13 +108,14 @@ def CytophagaFermentans(
 	
 	Datetime: 2021-02-02 21:48:49.426432
 	
-	The undirected graph Cytophaga fermentans has 4601 nodes and 442653 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04183 and
-	has 34 connected components, where the component with most nodes has 4517 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 192.42, and the node degree mode is 1. The top 5 most central
-	nodes are 869213.JCM21142_93410 (degree 1518), 869213.JCM21142_72820 (degree 1340),
-	869213.JCM21142_3875 (degree 1209), 869213.JCM21142_73047 (degree 1187) and 869213.JCM21142_41548
+	The undirected graph Cytophaga fermentans has 4601 nodes and 442653 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04183 and has 34 connected components, where the component with most
+	nodes has 4517 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 192.42, and
+	the node degree mode is 1. The top 5 most central nodes are 869213.JCM21142_93410
+	(degree 1518), 869213.JCM21142_72820 (degree 1340), 869213.JCM21142_3875
+	(degree 1209), 869213.JCM21142_73047 (degree 1187) and 869213.JCM21142_41548
 	(degree 1099).
 	
 

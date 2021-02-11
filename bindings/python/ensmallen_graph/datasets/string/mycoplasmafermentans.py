@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:46.280045
 
-The undirected graph Mycoplasma fermentans has 882 nodes and 32856 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08457 and
-has 11 connected components, where the component with most nodes has 858 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 40,
-the mean node degree is 74.50, and the node degree mode is 3. The top 5 most central
-nodes are 496833.MBIO_0170 (degree 322), 496833.MBIO_0827 (degree 296), 496833.MBIO_0300
-(degree 278), 496833.MBIO_0251 (degree 264) and 496833.MBIO_0585 (degree 264).
+The undirected graph Mycoplasma fermentans has 882 nodes and 32856 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08457 and has 11 connected components, where the component with most
+nodes has 858 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 40, the mean node degree is 74.50, and
+the node degree mode is 3. The top 5 most central nodes are 496833.MBIO_0170
+(degree 322), 496833.MBIO_0827 (degree 296), 496833.MBIO_0300 (degree 278),
+496833.MBIO_0251 (degree 264) and 496833.MBIO_0585 (degree 264).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaFermentans(
 	
 	Datetime: 2021-02-02 21:00:46.280045
 	
-	The undirected graph Mycoplasma fermentans has 882 nodes and 32856 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08457 and
-	has 11 connected components, where the component with most nodes has 858 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 40,
-	the mean node degree is 74.50, and the node degree mode is 3. The top 5 most central
-	nodes are 496833.MBIO_0170 (degree 322), 496833.MBIO_0827 (degree 296), 496833.MBIO_0300
-	(degree 278), 496833.MBIO_0251 (degree 264) and 496833.MBIO_0585 (degree 264).
+	The undirected graph Mycoplasma fermentans has 882 nodes and 32856 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08457 and has 11 connected components, where the component with most
+	nodes has 858 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 40, the mean node degree is 74.50, and
+	the node degree mode is 3. The top 5 most central nodes are 496833.MBIO_0170
+	(degree 322), 496833.MBIO_0827 (degree 296), 496833.MBIO_0300 (degree 278),
+	496833.MBIO_0251 (degree 264) and 496833.MBIO_0585 (degree 264).
 	
 
 

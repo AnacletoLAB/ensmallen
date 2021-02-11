@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:58.104296
 
-The undirected graph Kribbella catacumbae has 8712 nodes and 1445725 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03810 and
-has 42 connected components, where the component with most nodes has 8610 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 273,
-the mean node degree is 331.89, and the node degree mode is 1. The top 5 most central
-nodes are 1122138.AQUZ01000023_gene7844 (degree 2819), 1122138.AQUZ01000016_gene213
-(degree 2380), 1122138.AQUZ01000058_gene3474 (degree 2359), 1122138.AQUZ01000020_gene8265
-(degree 2316) and 1122138.AQUZ01000017_gene6579 (degree 2310).
+The undirected graph Kribbella catacumbae has 8712 nodes and 1445725 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03810 and has 42 connected components, where the component with most
+nodes has 8610 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 273, the mean node degree is 331.89, and
+the node degree mode is 1. The top 5 most central nodes are 1122138.AQUZ01000023_gene7844
+(degree 2819), 1122138.AQUZ01000016_gene213 (degree 2380), 1122138.AQUZ01000058_gene3474
+(degree 2359), 1122138.AQUZ01000020_gene8265 (degree 2316) and 1122138.AQUZ01000017_gene6579
+(degree 2310).
 
 
 References
@@ -107,14 +108,15 @@ def KribbellaCatacumbae(
 	
 	Datetime: 2021-02-02 22:40:58.104296
 	
-	The undirected graph Kribbella catacumbae has 8712 nodes and 1445725 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03810 and
-	has 42 connected components, where the component with most nodes has 8610 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 273,
-	the mean node degree is 331.89, and the node degree mode is 1. The top 5 most central
-	nodes are 1122138.AQUZ01000023_gene7844 (degree 2819), 1122138.AQUZ01000016_gene213
-	(degree 2380), 1122138.AQUZ01000058_gene3474 (degree 2359), 1122138.AQUZ01000020_gene8265
-	(degree 2316) and 1122138.AQUZ01000017_gene6579 (degree 2310).
+	The undirected graph Kribbella catacumbae has 8712 nodes and 1445725 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03810 and has 42 connected components, where the component with most
+	nodes has 8610 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 273, the mean node degree is 331.89, and
+	the node degree mode is 1. The top 5 most central nodes are 1122138.AQUZ01000023_gene7844
+	(degree 2819), 1122138.AQUZ01000016_gene213 (degree 2380), 1122138.AQUZ01000058_gene3474
+	(degree 2359), 1122138.AQUZ01000020_gene8265 (degree 2316) and 1122138.AQUZ01000017_gene6579
+	(degree 2310).
 	
 
 

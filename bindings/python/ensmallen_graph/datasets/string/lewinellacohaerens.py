@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:35.509747
 
-The undirected graph Lewinella cohaerens has 5386 nodes and 720909 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04971 and
-has 29 connected components, where the component with most nodes has 5305 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 232,
-the mean node degree is 267.70, and the node degree mode is 4. The top 5 most central
-nodes are 1122176.KB903542_gene371 (degree 1479), 1122176.KB903598_gene4679 (degree
-1430), 1122176.KB903541_gene236 (degree 1310), 1122176.KB903578_gene4850 (degree
-1300) and 1122176.KB903540_gene57 (degree 1291).
+The undirected graph Lewinella cohaerens has 5386 nodes and 720909 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04971 and has 29 connected components, where the component with most
+nodes has 5305 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 232, the mean node degree is 267.70, and
+the node degree mode is 4. The top 5 most central nodes are 1122176.KB903542_gene371
+(degree 1479), 1122176.KB903598_gene4679 (degree 1430), 1122176.KB903541_gene236
+(degree 1310), 1122176.KB903578_gene4850 (degree 1300) and 1122176.KB903540_gene57
+(degree 1291).
 
 
 References
@@ -107,14 +108,15 @@ def LewinellaCohaerens(
 	
 	Datetime: 2021-02-02 22:41:35.509747
 	
-	The undirected graph Lewinella cohaerens has 5386 nodes and 720909 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04971 and
-	has 29 connected components, where the component with most nodes has 5305 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 232,
-	the mean node degree is 267.70, and the node degree mode is 4. The top 5 most central
-	nodes are 1122176.KB903542_gene371 (degree 1479), 1122176.KB903598_gene4679 (degree
-	1430), 1122176.KB903541_gene236 (degree 1310), 1122176.KB903578_gene4850 (degree
-	1300) and 1122176.KB903540_gene57 (degree 1291).
+	The undirected graph Lewinella cohaerens has 5386 nodes and 720909 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04971 and has 29 connected components, where the component with most
+	nodes has 5305 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 232, the mean node degree is 267.70, and
+	the node degree mode is 4. The top 5 most central nodes are 1122176.KB903542_gene371
+	(degree 1479), 1122176.KB903598_gene4679 (degree 1430), 1122176.KB903541_gene236
+	(degree 1310), 1122176.KB903578_gene4850 (degree 1300) and 1122176.KB903540_gene57
+	(degree 1291).
 	
 
 

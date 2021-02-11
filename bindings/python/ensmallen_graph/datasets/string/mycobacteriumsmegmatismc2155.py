@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:39.836003
 
-The undirected graph Mycobacterium smegmatis MC2155 has 6655 nodes and 1133433 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05119
-and has 22 connected components, where the component with most nodes has 6609 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 273, the mean node degree is 340.63, and the node degree mode is 1. The top 5
-most central nodes are 246196.MSMEI_1866 (degree 2779), 246196.MSMEI_4637 (degree
-2506), 246196.MSMEI_2195 (degree 2326), 246196.MSMEI_3749 (degree 2230) and 246196.MSMEI_4610
-(degree 2036).
+The undirected graph Mycobacterium smegmatis MC2155 has 6655 nodes and
+1133433 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05119 and has 22 connected components, where the
+component with most nodes has 6609 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 273, the mean node degree
+is 340.63, and the node degree mode is 1. The top 5 most central nodes
+are 246196.MSMEI_1866 (degree 2779), 246196.MSMEI_4637 (degree 2506), 246196.MSMEI_2195
+(degree 2326), 246196.MSMEI_3749 (degree 2230) and 246196.MSMEI_4610 (degree
+2036).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSmegmatisMc2155(
 	
 	Datetime: 2021-02-02 20:10:39.836003
 	
-	The undirected graph Mycobacterium smegmatis MC2155 has 6655 nodes and 1133433 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05119
-	and has 22 connected components, where the component with most nodes has 6609 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 273, the mean node degree is 340.63, and the node degree mode is 1. The top 5
-	most central nodes are 246196.MSMEI_1866 (degree 2779), 246196.MSMEI_4637 (degree
-	2506), 246196.MSMEI_2195 (degree 2326), 246196.MSMEI_3749 (degree 2230) and 246196.MSMEI_4610
-	(degree 2036).
+	The undirected graph Mycobacterium smegmatis MC2155 has 6655 nodes and
+	1133433 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05119 and has 22 connected components, where the
+	component with most nodes has 6609 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 273, the mean node degree
+	is 340.63, and the node degree mode is 1. The top 5 most central nodes
+	are 246196.MSMEI_1866 (degree 2779), 246196.MSMEI_4637 (degree 2506), 246196.MSMEI_2195
+	(degree 2326), 246196.MSMEI_3749 (degree 2230) and 246196.MSMEI_4610 (degree
+	2036).
 	
 
 

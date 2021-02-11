@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:00:18.479085
 
-The undirected graph Arcobacter cibarius has 2185 nodes and 181934 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07625 and
-has 3 connected components, where the component with most nodes has 2180 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 166.53, and the node degree mode is 3. The top 5 most central
-nodes are 1442598.JABW01000004_gene167 (degree 1003), 1442598.JABW01000011_gene352
-(degree 994), 1442598.JABW01000016_gene1896 (degree 830), 1442598.JABW01000013_gene2176
-(degree 817) and 1442598.JABW01000027_gene842 (degree 758).
+The undirected graph Arcobacter cibarius has 2185 nodes and 181934 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07625 and has 3 connected components, where the component with most
+nodes has 2180 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 166.53, and
+the node degree mode is 3. The top 5 most central nodes are 1442598.JABW01000004_gene167
+(degree 1003), 1442598.JABW01000011_gene352 (degree 994), 1442598.JABW01000016_gene1896
+(degree 830), 1442598.JABW01000013_gene2176 (degree 817) and 1442598.JABW01000027_gene842
+(degree 758).
 
 
 References
@@ -107,14 +108,15 @@ def ArcobacterCibarius(
 	
 	Datetime: 2021-02-03 23:00:18.479085
 	
-	The undirected graph Arcobacter cibarius has 2185 nodes and 181934 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07625 and
-	has 3 connected components, where the component with most nodes has 2180 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 166.53, and the node degree mode is 3. The top 5 most central
-	nodes are 1442598.JABW01000004_gene167 (degree 1003), 1442598.JABW01000011_gene352
-	(degree 994), 1442598.JABW01000016_gene1896 (degree 830), 1442598.JABW01000013_gene2176
-	(degree 817) and 1442598.JABW01000027_gene842 (degree 758).
+	The undirected graph Arcobacter cibarius has 2185 nodes and 181934 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07625 and has 3 connected components, where the component with most
+	nodes has 2180 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 166.53, and
+	the node degree mode is 3. The top 5 most central nodes are 1442598.JABW01000004_gene167
+	(degree 1003), 1442598.JABW01000011_gene352 (degree 994), 1442598.JABW01000016_gene1896
+	(degree 830), 1442598.JABW01000013_gene2176 (degree 817) and 1442598.JABW01000027_gene842
+	(degree 758).
 	
 
 

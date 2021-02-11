@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:34.071755
 
-The undirected graph Streptomyces venezuelae has 7427 nodes and 974864 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03535 and
-has 24 connected components, where the component with most nodes has 7363 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 219,
-the mean node degree is 262.52, and the node degree mode is 4. The top 5 most central
-nodes are 953739.SVEN_5396 (degree 3590), 953739.SVEN_3761 (degree 2317), 953739.SVEN_1631
-(degree 2087), 953739.SVEN_4465 (degree 2000) and 953739.SVEN_0372 (degree 1980).
+The undirected graph Streptomyces venezuelae has 7427 nodes and 974864
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03535 and has 24 connected components, where the component
+with most nodes has 7363 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 262.52,
+and the node degree mode is 4. The top 5 most central nodes are 953739.SVEN_5396
+(degree 3590), 953739.SVEN_3761 (degree 2317), 953739.SVEN_1631 (degree
+2087), 953739.SVEN_4465 (degree 2000) and 953739.SVEN_0372 (degree 1980).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesVenezuelae(
 	
 	Datetime: 2021-02-02 22:02:34.071755
 	
-	The undirected graph Streptomyces venezuelae has 7427 nodes and 974864 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03535 and
-	has 24 connected components, where the component with most nodes has 7363 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 219,
-	the mean node degree is 262.52, and the node degree mode is 4. The top 5 most central
-	nodes are 953739.SVEN_5396 (degree 3590), 953739.SVEN_3761 (degree 2317), 953739.SVEN_1631
-	(degree 2087), 953739.SVEN_4465 (degree 2000) and 953739.SVEN_0372 (degree 1980).
+	The undirected graph Streptomyces venezuelae has 7427 nodes and 974864
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03535 and has 24 connected components, where the component
+	with most nodes has 7363 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 262.52,
+	and the node degree mode is 4. The top 5 most central nodes are 953739.SVEN_5396
+	(degree 3590), 953739.SVEN_3761 (degree 2317), 953739.SVEN_1631 (degree
+	2087), 953739.SVEN_4465 (degree 2000) and 953739.SVEN_0372 (degree 1980).
 	
 
 

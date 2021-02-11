@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:02.445936
 
-The undirected graph Candida albicans has 4989 nodes and 477876 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03841 and
-has 10 connected components, where the component with most nodes has 4971 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 191.57, and the node degree mode is 1. The top 5 most central
-nodes are 5476.C4YRW3 (degree 1148), 5476.Q92211 (degree 1136), 5476.C4YTQ8 (degree
-1088), 5476.C4YFV6 (degree 1051) and 5476.C4YN85 (degree 930).
+The undirected graph Candida albicans has 4989 nodes and 477876 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03841 and has 10 connected components, where the component with most
+nodes has 4971 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 191.57, and
+the node degree mode is 1. The top 5 most central nodes are 5476.C4YRW3
+(degree 1148), 5476.Q92211 (degree 1136), 5476.C4YTQ8 (degree 1088), 5476.C4YFV6
+(degree 1051) and 5476.C4YN85 (degree 930).
 
 
 References
@@ -106,13 +107,14 @@ def CandidaAlbicans(
 	
 	Datetime: 2021-02-02 17:14:02.445936
 	
-	The undirected graph Candida albicans has 4989 nodes and 477876 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03841 and
-	has 10 connected components, where the component with most nodes has 4971 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 191.57, and the node degree mode is 1. The top 5 most central
-	nodes are 5476.C4YRW3 (degree 1148), 5476.Q92211 (degree 1136), 5476.C4YTQ8 (degree
-	1088), 5476.C4YFV6 (degree 1051) and 5476.C4YN85 (degree 930).
+	The undirected graph Candida albicans has 4989 nodes and 477876 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03841 and has 10 connected components, where the component with most
+	nodes has 4971 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 191.57, and
+	the node degree mode is 1. The top 5 most central nodes are 5476.C4YRW3
+	(degree 1148), 5476.Q92211 (degree 1136), 5476.C4YTQ8 (degree 1088), 5476.C4YFV6
+	(degree 1051) and 5476.C4YN85 (degree 930).
 	
 
 

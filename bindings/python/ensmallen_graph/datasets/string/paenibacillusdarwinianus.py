@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:17.105720
 
-The undirected graph Paenibacillus darwinianus has 2758 nodes and 242560 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06380
-and has 6 connected components, where the component with most nodes has 2746 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 175.90, and the node degree mode is 4. The top 5
-most central nodes are 1380763.BG53_04055 (degree 985), 1380763.BG53_03360 (degree
-915), 1380763.BG53_08870 (degree 908), 1380763.BG53_02645 (degree 904) and 1380763.BG53_03980
-(degree 863).
+The undirected graph Paenibacillus darwinianus has 2758 nodes and 242560
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06380 and has 6 connected components, where the component
+with most nodes has 2746 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 175.90,
+and the node degree mode is 4. The top 5 most central nodes are 1380763.BG53_04055
+(degree 985), 1380763.BG53_03360 (degree 915), 1380763.BG53_08870 (degree
+908), 1380763.BG53_02645 (degree 904) and 1380763.BG53_03980 (degree 863).
 
 
 References
@@ -107,14 +107,14 @@ def PaenibacillusDarwinianus(
 	
 	Datetime: 2021-02-03 22:17:17.105720
 	
-	The undirected graph Paenibacillus darwinianus has 2758 nodes and 242560 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06380
-	and has 6 connected components, where the component with most nodes has 2746 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 175.90, and the node degree mode is 4. The top 5
-	most central nodes are 1380763.BG53_04055 (degree 985), 1380763.BG53_03360 (degree
-	915), 1380763.BG53_08870 (degree 908), 1380763.BG53_02645 (degree 904) and 1380763.BG53_03980
-	(degree 863).
+	The undirected graph Paenibacillus darwinianus has 2758 nodes and 242560
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06380 and has 6 connected components, where the component
+	with most nodes has 2746 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 175.90,
+	and the node degree mode is 4. The top 5 most central nodes are 1380763.BG53_04055
+	(degree 985), 1380763.BG53_03360 (degree 915), 1380763.BG53_08870 (degree
+	908), 1380763.BG53_02645 (degree 904) and 1380763.BG53_03980 (degree 863).
 	
 
 

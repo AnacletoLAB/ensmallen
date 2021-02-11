@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:10.184217
 
-The undirected graph Clostridium methylpentosum has 3821 nodes and 143996 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01973
-and has 103 connected components, where the component with most nodes has 3561 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 45, the mean node degree is 75.37, and the node degree mode is 3. The top 5 most
-central nodes are 537013.CLOSTMETH_00461 (degree 775), 537013.CLOSTMETH_00652 (degree
-767), 537013.CLOSTMETH_00314 (degree 654), 537013.CLOSTMETH_01363 (degree 637) and
-537013.CLOSTMETH_03149 (degree 624).
+The undirected graph Clostridium methylpentosum has 3821 nodes and 143996
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01973 and has 103 connected components, where the component
+with most nodes has 3561 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 45, the mean node degree is 75.37,
+and the node degree mode is 3. The top 5 most central nodes are 537013.CLOSTMETH_00461
+(degree 775), 537013.CLOSTMETH_00652 (degree 767), 537013.CLOSTMETH_00314
+(degree 654), 537013.CLOSTMETH_01363 (degree 637) and 537013.CLOSTMETH_03149
+(degree 624).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumMethylpentosum(
 	
 	Datetime: 2021-02-02 21:07:10.184217
 	
-	The undirected graph Clostridium methylpentosum has 3821 nodes and 143996 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01973
-	and has 103 connected components, where the component with most nodes has 3561 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 45, the mean node degree is 75.37, and the node degree mode is 3. The top 5 most
-	central nodes are 537013.CLOSTMETH_00461 (degree 775), 537013.CLOSTMETH_00652 (degree
-	767), 537013.CLOSTMETH_00314 (degree 654), 537013.CLOSTMETH_01363 (degree 637) and
-	537013.CLOSTMETH_03149 (degree 624).
+	The undirected graph Clostridium methylpentosum has 3821 nodes and 143996
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01973 and has 103 connected components, where the component
+	with most nodes has 3561 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 45, the mean node degree is 75.37,
+	and the node degree mode is 3. The top 5 most central nodes are 537013.CLOSTMETH_00461
+	(degree 775), 537013.CLOSTMETH_00652 (degree 767), 537013.CLOSTMETH_00314
+	(degree 654), 537013.CLOSTMETH_01363 (degree 637) and 537013.CLOSTMETH_03149
+	(degree 624).
 	
 
 

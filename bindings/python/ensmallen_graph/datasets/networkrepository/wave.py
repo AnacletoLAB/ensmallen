@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:20:53.050167
 
-The undirected graph wave has 156317 nodes and 1059331 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00009
-and is connected, as it has a single component. The graph median node degree is 14,
-the mean node degree is 13.55, and the node degree mode is 11. The top 5 most central
-nodes are 153981 (degree 44), 143645 (degree 43), 127237 (degree 42), 153992 (degree
-41) and 143782 (degree 40).
+The undirected graph wave has 156317 nodes and 1059331 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00009 and is connected, as it has a single component. The
+graph median node degree is 14, the mean node degree is 13.55, and the
+node degree mode is 11. The top 5 most central nodes are 153981 (degree
+44), 143645 (degree 43), 127237 (degree 42), 153992 (degree 41) and 143782
+(degree 40).
 
 
 References
@@ -102,12 +103,13 @@ def Wave(
 	
 	Datetime: 2021-02-06 12:20:53.050167
 	
-	The undirected graph wave has 156317 nodes and 1059331 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00009
-	and is connected, as it has a single component. The graph median node degree is 14,
-	the mean node degree is 13.55, and the node degree mode is 11. The top 5 most central
-	nodes are 153981 (degree 44), 143645 (degree 43), 127237 (degree 42), 153992 (degree
-	41) and 143782 (degree 40).
+	The undirected graph wave has 156317 nodes and 1059331 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00009 and is connected, as it has a single component. The
+	graph median node degree is 14, the mean node degree is 13.55, and the
+	node degree mode is 11. The top 5 most central nodes are 153981 (degree
+	44), 143645 (degree 43), 127237 (degree 42), 153992 (degree 41) and 143782
+	(degree 40).
 	
 
 

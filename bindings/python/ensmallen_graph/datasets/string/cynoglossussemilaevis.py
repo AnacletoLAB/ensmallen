@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:20.357922
 
-The undirected graph Cynoglossus semilaevis has 20369 nodes and 5576672 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02688
-and has 7 connected components, where the component with most nodes has 20356 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 387, the mean node degree is 547.56, and the node degree mode is 446. The top
-5 most central nodes are 244447.XP_008330500.1 (degree 5062), 244447.XP_008331712.1
-(degree 4917), 244447.XP_008320975.1 (degree 4520), 244447.XP_008309521.1 (degree
+The undirected graph Cynoglossus semilaevis has 20369 nodes and 5576672
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02688 and has 7 connected components, where the component
+with most nodes has 20356 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 387, the mean node degree
+is 547.56, and the node degree mode is 446. The top 5 most central nodes
+are 244447.XP_008330500.1 (degree 5062), 244447.XP_008331712.1 (degree
+4917), 244447.XP_008320975.1 (degree 4520), 244447.XP_008309521.1 (degree
 4492) and 244447.XP_008309015.1 (degree 4391).
 
 
@@ -107,13 +108,14 @@ def CynoglossusSemilaevis(
 	
 	Datetime: 2021-02-02 20:10:20.357922
 	
-	The undirected graph Cynoglossus semilaevis has 20369 nodes and 5576672 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02688
-	and has 7 connected components, where the component with most nodes has 20356 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 387, the mean node degree is 547.56, and the node degree mode is 446. The top
-	5 most central nodes are 244447.XP_008330500.1 (degree 5062), 244447.XP_008331712.1
-	(degree 4917), 244447.XP_008320975.1 (degree 4520), 244447.XP_008309521.1 (degree
+	The undirected graph Cynoglossus semilaevis has 20369 nodes and 5576672
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02688 and has 7 connected components, where the component
+	with most nodes has 20356 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 387, the mean node degree
+	is 547.56, and the node degree mode is 446. The top 5 most central nodes
+	are 244447.XP_008330500.1 (degree 5062), 244447.XP_008331712.1 (degree
+	4917), 244447.XP_008320975.1 (degree 4520), 244447.XP_008309521.1 (degree
 	4492) and 244447.XP_008309015.1 (degree 4391).
 	
 

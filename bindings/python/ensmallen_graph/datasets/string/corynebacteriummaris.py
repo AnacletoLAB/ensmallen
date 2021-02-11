@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:41.674733
 
-The undirected graph Corynebacterium maris has 2565 nodes and 170445 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05183 and
-has 7 connected components, where the component with most nodes has 2553 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 132.90, and the node degree mode is 3. The top 5 most central
-nodes are 1224163.B841_06260 (degree 1043), 1224163.B841_02010 (degree 907), 1224163.B841_10625
-(degree 902), 1224163.B841_02960 (degree 822) and 1224163.B841_06395 (degree 769).
+The undirected graph Corynebacterium maris has 2565 nodes and 170445 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05183 and has 7 connected components, where the component with most
+nodes has 2553 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 132.90, and
+the node degree mode is 3. The top 5 most central nodes are 1224163.B841_06260
+(degree 1043), 1224163.B841_02010 (degree 907), 1224163.B841_10625 (degree
+902), 1224163.B841_02960 (degree 822) and 1224163.B841_06395 (degree 769).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumMaris(
 	
 	Datetime: 2021-02-02 23:24:41.674733
 	
-	The undirected graph Corynebacterium maris has 2565 nodes and 170445 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05183 and
-	has 7 connected components, where the component with most nodes has 2553 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 132.90, and the node degree mode is 3. The top 5 most central
-	nodes are 1224163.B841_06260 (degree 1043), 1224163.B841_02010 (degree 907), 1224163.B841_10625
-	(degree 902), 1224163.B841_02960 (degree 822) and 1224163.B841_06395 (degree 769).
+	The undirected graph Corynebacterium maris has 2565 nodes and 170445 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05183 and has 7 connected components, where the component with most
+	nodes has 2553 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 132.90, and
+	the node degree mode is 3. The top 5 most central nodes are 1224163.B841_06260
+	(degree 1043), 1224163.B841_02010 (degree 907), 1224163.B841_10625 (degree
+	902), 1224163.B841_02960 (degree 822) and 1224163.B841_06395 (degree 769).
 	
 
 

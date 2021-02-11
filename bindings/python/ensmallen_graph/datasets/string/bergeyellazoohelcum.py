@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:12.907310
 
-The undirected graph Bergeyella zoohelcum has 2115 nodes and 153996 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06888 and
-has 7 connected components, where the component with most nodes has 2096 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 145.62, and the node degree mode is 6. The top 5 most central
-nodes are 883096.HMPREF9699_01056 (degree 753), 883096.HMPREF9699_01700 (degree 747),
-883096.HMPREF9699_01230 (degree 723), 883096.HMPREF9699_01201 (degree 690) and 883096.HMPREF9699_01469
+The undirected graph Bergeyella zoohelcum has 2115 nodes and 153996 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06888 and has 7 connected components, where the component with most
+nodes has 2096 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 145.62, and
+the node degree mode is 6. The top 5 most central nodes are 883096.HMPREF9699_01056
+(degree 753), 883096.HMPREF9699_01700 (degree 747), 883096.HMPREF9699_01230
+(degree 723), 883096.HMPREF9699_01201 (degree 690) and 883096.HMPREF9699_01469
 (degree 590).
 
 
@@ -107,13 +108,14 @@ def BergeyellaZoohelcum(
 	
 	Datetime: 2021-02-02 21:51:12.907310
 	
-	The undirected graph Bergeyella zoohelcum has 2115 nodes and 153996 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06888 and
-	has 7 connected components, where the component with most nodes has 2096 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 145.62, and the node degree mode is 6. The top 5 most central
-	nodes are 883096.HMPREF9699_01056 (degree 753), 883096.HMPREF9699_01700 (degree 747),
-	883096.HMPREF9699_01230 (degree 723), 883096.HMPREF9699_01201 (degree 690) and 883096.HMPREF9699_01469
+	The undirected graph Bergeyella zoohelcum has 2115 nodes and 153996 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06888 and has 7 connected components, where the component with most
+	nodes has 2096 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 145.62, and
+	the node degree mode is 6. The top 5 most central nodes are 883096.HMPREF9699_01056
+	(degree 753), 883096.HMPREF9699_01700 (degree 747), 883096.HMPREF9699_01230
+	(degree 723), 883096.HMPREF9699_01201 (degree 690) and 883096.HMPREF9699_01469
 	(degree 590).
 	
 

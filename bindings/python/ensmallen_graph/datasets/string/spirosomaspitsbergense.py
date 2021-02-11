@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:58.893720
 
-The undirected graph Spirosoma spitsbergense has 6091 nodes and 988929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05332 and
-has 36 connected components, where the component with most nodes has 6005 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 295,
-the mean node degree is 324.72, and the node degree mode is 1. The top 5 most central
-nodes are 1123278.KB893422_gene1562 (degree 1951), 1123278.KB893396_gene4901 (degree
-1921), 1123278.KB893614_gene5231 (degree 1853), 1123278.KB893445_gene1153 (degree
-1800) and 1123278.KB893533_gene155 (degree 1681).
+The undirected graph Spirosoma spitsbergense has 6091 nodes and 988929
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05332 and has 36 connected components, where the component
+with most nodes has 6005 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 295, the mean node degree is 324.72,
+and the node degree mode is 1. The top 5 most central nodes are 1123278.KB893422_gene1562
+(degree 1951), 1123278.KB893396_gene4901 (degree 1921), 1123278.KB893614_gene5231
+(degree 1853), 1123278.KB893445_gene1153 (degree 1800) and 1123278.KB893533_gene155
+(degree 1681).
 
 
 References
@@ -107,14 +108,15 @@ def SpirosomaSpitsbergense(
 	
 	Datetime: 2021-02-02 22:49:58.893720
 	
-	The undirected graph Spirosoma spitsbergense has 6091 nodes and 988929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05332 and
-	has 36 connected components, where the component with most nodes has 6005 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 295,
-	the mean node degree is 324.72, and the node degree mode is 1. The top 5 most central
-	nodes are 1123278.KB893422_gene1562 (degree 1951), 1123278.KB893396_gene4901 (degree
-	1921), 1123278.KB893614_gene5231 (degree 1853), 1123278.KB893445_gene1153 (degree
-	1800) and 1123278.KB893533_gene155 (degree 1681).
+	The undirected graph Spirosoma spitsbergense has 6091 nodes and 988929
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05332 and has 36 connected components, where the component
+	with most nodes has 6005 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 295, the mean node degree is 324.72,
+	and the node degree mode is 1. The top 5 most central nodes are 1123278.KB893422_gene1562
+	(degree 1951), 1123278.KB893396_gene4901 (degree 1921), 1123278.KB893614_gene5231
+	(degree 1853), 1123278.KB893445_gene1153 (degree 1800) and 1123278.KB893533_gene155
+	(degree 1681).
 	
 
 

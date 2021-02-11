@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:52.906246
 
-The undirected graph Pseudomonas sp. 20BN has 3402 nodes and 502666 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08689 and
-has 4 connected components, where the component with most nodes has 3394 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 295.51, and the node degree mode is 4. The top 5 most central
-nodes are 1499686.BN1079_02503 (degree 1666), 1499686.BN1079_00841 (degree 1530),
-1499686.BN1079_00840 (degree 1515), 1499686.BN1079_03412 (degree 1490) and 1499686.BN1079_01163
+The undirected graph Pseudomonas sp. 20BN has 3402 nodes and 502666 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08689 and has 4 connected components, where the component with most
+nodes has 3394 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 252, the mean node degree is 295.51, and
+the node degree mode is 4. The top 5 most central nodes are 1499686.BN1079_02503
+(degree 1666), 1499686.BN1079_00841 (degree 1530), 1499686.BN1079_00840
+(degree 1515), 1499686.BN1079_03412 (degree 1490) and 1499686.BN1079_01163
 (degree 1478).
 
 
@@ -107,13 +108,14 @@ def PseudomonasSp.20bn(
 	
 	Datetime: 2021-02-03 23:14:52.906246
 	
-	The undirected graph Pseudomonas sp. 20BN has 3402 nodes and 502666 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08689 and
-	has 4 connected components, where the component with most nodes has 3394 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 295.51, and the node degree mode is 4. The top 5 most central
-	nodes are 1499686.BN1079_02503 (degree 1666), 1499686.BN1079_00841 (degree 1530),
-	1499686.BN1079_00840 (degree 1515), 1499686.BN1079_03412 (degree 1490) and 1499686.BN1079_01163
+	The undirected graph Pseudomonas sp. 20BN has 3402 nodes and 502666 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08689 and has 4 connected components, where the component with most
+	nodes has 3394 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 252, the mean node degree is 295.51, and
+	the node degree mode is 4. The top 5 most central nodes are 1499686.BN1079_02503
+	(degree 1666), 1499686.BN1079_00841 (degree 1530), 1499686.BN1079_00840
+	(degree 1515), 1499686.BN1079_03412 (degree 1490) and 1499686.BN1079_01163
 	(degree 1478).
 	
 

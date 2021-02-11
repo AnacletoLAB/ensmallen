@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:16.332520
 
-The undirected graph Calditerrivibrio nitroreducens has 2089 nodes and 154203 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07071
-and has 4 connected components, where the component with most nodes has 2081 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 147.63, and the node degree mode is 53. The top 5
-most central nodes are 768670.Calni_1275 (degree 1018), 768670.Calni_1547 (degree
-924), 768670.Calni_1023 (degree 828), 768670.Calni_0134 (degree 802) and 768670.Calni_0921
-(degree 799).
+The undirected graph Calditerrivibrio nitroreducens has 2089 nodes and
+154203 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07071 and has 4 connected components, where the
+component with most nodes has 2081 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+is 147.63, and the node degree mode is 53. The top 5 most central nodes
+are 768670.Calni_1275 (degree 1018), 768670.Calni_1547 (degree 924), 768670.Calni_1023
+(degree 828), 768670.Calni_0134 (degree 802) and 768670.Calni_0921 (degree
+799).
 
 
 References
@@ -107,14 +108,15 @@ def CalditerrivibrioNitroreducens(
 	
 	Datetime: 2021-02-02 21:44:16.332520
 	
-	The undirected graph Calditerrivibrio nitroreducens has 2089 nodes and 154203 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07071
-	and has 4 connected components, where the component with most nodes has 2081 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 147.63, and the node degree mode is 53. The top 5
-	most central nodes are 768670.Calni_1275 (degree 1018), 768670.Calni_1547 (degree
-	924), 768670.Calni_1023 (degree 828), 768670.Calni_0134 (degree 802) and 768670.Calni_0921
-	(degree 799).
+	The undirected graph Calditerrivibrio nitroreducens has 2089 nodes and
+	154203 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07071 and has 4 connected components, where the
+	component with most nodes has 2081 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+	is 147.63, and the node degree mode is 53. The top 5 most central nodes
+	are 768670.Calni_1275 (degree 1018), 768670.Calni_1547 (degree 924), 768670.Calni_1023
+	(degree 828), 768670.Calni_0134 (degree 802) and 768670.Calni_0921 (degree
+	799).
 	
 
 

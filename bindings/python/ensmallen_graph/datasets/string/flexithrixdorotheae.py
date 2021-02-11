@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:32.395750
 
-The undirected graph Flexithrix dorotheae has 7178 nodes and 792246 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03076 and
-has 39 connected components, where the component with most nodes has 7088 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 220.74, and the node degree mode is 1. The top 5 most central
-nodes are 1121904.ARBP01000007_gene3005 (degree 2658), 1121904.ARBP01000001_gene5941
-(degree 1915), 1121904.ARBP01000021_gene3580 (degree 1907), 1121904.ARBP01000007_gene2914
-(degree 1741) and 1121904.ARBP01000004_gene919 (degree 1582).
+The undirected graph Flexithrix dorotheae has 7178 nodes and 792246 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03076 and has 39 connected components, where the component with most
+nodes has 7088 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 220.74, and
+the node degree mode is 1. The top 5 most central nodes are 1121904.ARBP01000007_gene3005
+(degree 2658), 1121904.ARBP01000001_gene5941 (degree 1915), 1121904.ARBP01000021_gene3580
+(degree 1907), 1121904.ARBP01000007_gene2914 (degree 1741) and 1121904.ARBP01000004_gene919
+(degree 1582).
 
 
 References
@@ -107,14 +108,15 @@ def FlexithrixDorotheae(
 	
 	Datetime: 2021-02-02 22:38:32.395750
 	
-	The undirected graph Flexithrix dorotheae has 7178 nodes and 792246 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03076 and
-	has 39 connected components, where the component with most nodes has 7088 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 220.74, and the node degree mode is 1. The top 5 most central
-	nodes are 1121904.ARBP01000007_gene3005 (degree 2658), 1121904.ARBP01000001_gene5941
-	(degree 1915), 1121904.ARBP01000021_gene3580 (degree 1907), 1121904.ARBP01000007_gene2914
-	(degree 1741) and 1121904.ARBP01000004_gene919 (degree 1582).
+	The undirected graph Flexithrix dorotheae has 7178 nodes and 792246 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03076 and has 39 connected components, where the component with most
+	nodes has 7088 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 220.74, and
+	the node degree mode is 1. The top 5 most central nodes are 1121904.ARBP01000007_gene3005
+	(degree 2658), 1121904.ARBP01000001_gene5941 (degree 1915), 1121904.ARBP01000021_gene3580
+	(degree 1907), 1121904.ARBP01000007_gene2914 (degree 1741) and 1121904.ARBP01000004_gene919
+	(degree 1582).
 	
 
 

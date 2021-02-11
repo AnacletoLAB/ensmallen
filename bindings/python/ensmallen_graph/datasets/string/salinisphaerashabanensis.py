@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:22.404494
 
-The undirected graph Salinisphaera shabanensis has 3497 nodes and 413885 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06771
-and has 7 connected components, where the component with most nodes has 3481 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 236.71, and the node degree mode is 2. The top 5
-most central nodes are 1033802.SSPSH_001648 (degree 1246), 1033802.SSPSH_000432 (degree
-1188), 1033802.SSPSH_003508 (degree 1093), 1033802.SSPSH_000027 (degree 1076) and
-1033802.SSPSH_002936 (degree 1064).
+The undirected graph Salinisphaera shabanensis has 3497 nodes and 413885
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06771 and has 7 connected components, where the component
+with most nodes has 3481 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 236.71,
+and the node degree mode is 2. The top 5 most central nodes are 1033802.SSPSH_001648
+(degree 1246), 1033802.SSPSH_000432 (degree 1188), 1033802.SSPSH_003508
+(degree 1093), 1033802.SSPSH_000027 (degree 1076) and 1033802.SSPSH_002936
+(degree 1064).
 
 
 References
@@ -107,14 +108,15 @@ def SalinisphaeraShabanensis(
 	
 	Datetime: 2021-02-02 22:11:22.404494
 	
-	The undirected graph Salinisphaera shabanensis has 3497 nodes and 413885 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06771
-	and has 7 connected components, where the component with most nodes has 3481 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 236.71, and the node degree mode is 2. The top 5
-	most central nodes are 1033802.SSPSH_001648 (degree 1246), 1033802.SSPSH_000432 (degree
-	1188), 1033802.SSPSH_003508 (degree 1093), 1033802.SSPSH_000027 (degree 1076) and
-	1033802.SSPSH_002936 (degree 1064).
+	The undirected graph Salinisphaera shabanensis has 3497 nodes and 413885
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06771 and has 7 connected components, where the component
+	with most nodes has 3481 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 236.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1033802.SSPSH_001648
+	(degree 1246), 1033802.SSPSH_000432 (degree 1188), 1033802.SSPSH_003508
+	(degree 1093), 1033802.SSPSH_000027 (degree 1076) and 1033802.SSPSH_002936
+	(degree 1064).
 	
 
 

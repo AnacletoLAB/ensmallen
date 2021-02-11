@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:12.256358
 
-The undirected graph Syntrophothermus lipocalidus has 2304 nodes and 167408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06310
-and has 3 connected components, where the component with most nodes has 2299 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 145.32, and the node degree mode is 2. The top 5
-most central nodes are 643648.Slip_1695 (degree 931), 643648.Slip_0536 (degree 928),
-643648.Slip_1484 (degree 759), 643648.Slip_0054 (degree 757) and 643648.Slip_0590
-(degree 743).
+The undirected graph Syntrophothermus lipocalidus has 2304 nodes and 167408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06310 and has 3 connected components, where the component
+with most nodes has 2299 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 145.32,
+and the node degree mode is 2. The top 5 most central nodes are 643648.Slip_1695
+(degree 931), 643648.Slip_0536 (degree 928), 643648.Slip_1484 (degree 759),
+643648.Slip_0054 (degree 757) and 643648.Slip_0590 (degree 743).
 
 
 References
@@ -107,14 +107,14 @@ def SyntrophothermusLipocalidus(
 	
 	Datetime: 2021-02-02 21:24:12.256358
 	
-	The undirected graph Syntrophothermus lipocalidus has 2304 nodes and 167408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06310
-	and has 3 connected components, where the component with most nodes has 2299 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 145.32, and the node degree mode is 2. The top 5
-	most central nodes are 643648.Slip_1695 (degree 931), 643648.Slip_0536 (degree 928),
-	643648.Slip_1484 (degree 759), 643648.Slip_0054 (degree 757) and 643648.Slip_0590
-	(degree 743).
+	The undirected graph Syntrophothermus lipocalidus has 2304 nodes and 167408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06310 and has 3 connected components, where the component
+	with most nodes has 2299 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 145.32,
+	and the node degree mode is 2. The top 5 most central nodes are 643648.Slip_1695
+	(degree 931), 643648.Slip_0536 (degree 928), 643648.Slip_1484 (degree 759),
+	643648.Slip_0054 (degree 757) and 643648.Slip_0590 (degree 743).
 	
 
 

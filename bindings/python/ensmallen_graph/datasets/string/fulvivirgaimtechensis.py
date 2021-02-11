@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:58.156447
 
-The undirected graph Fulvivirga imtechensis has 5812 nodes and 468011 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02771 and
-has 66 connected components, where the component with most nodes has 5655 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 161.05, and the node degree mode is 1. The top 5 most central
-nodes are 1237149.C900_00814 (degree 1535), 1237149.C900_04426 (degree 1498), 1237149.C900_03138
-(degree 1354), 1237149.C900_02140 (degree 1184) and 1237149.C900_01765 (degree 1159).
+The undirected graph Fulvivirga imtechensis has 5812 nodes and 468011 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02771 and has 66 connected components, where the component with most
+nodes has 5655 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 161.05, and
+the node degree mode is 1. The top 5 most central nodes are 1237149.C900_00814
+(degree 1535), 1237149.C900_04426 (degree 1498), 1237149.C900_03138 (degree
+1354), 1237149.C900_02140 (degree 1184) and 1237149.C900_01765 (degree
+1159).
 
 
 References
@@ -106,13 +108,15 @@ def FulvivirgaImtechensis(
 	
 	Datetime: 2021-02-02 23:31:58.156447
 	
-	The undirected graph Fulvivirga imtechensis has 5812 nodes and 468011 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02771 and
-	has 66 connected components, where the component with most nodes has 5655 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 161.05, and the node degree mode is 1. The top 5 most central
-	nodes are 1237149.C900_00814 (degree 1535), 1237149.C900_04426 (degree 1498), 1237149.C900_03138
-	(degree 1354), 1237149.C900_02140 (degree 1184) and 1237149.C900_01765 (degree 1159).
+	The undirected graph Fulvivirga imtechensis has 5812 nodes and 468011 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02771 and has 66 connected components, where the component with most
+	nodes has 5655 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 161.05, and
+	the node degree mode is 1. The top 5 most central nodes are 1237149.C900_00814
+	(degree 1535), 1237149.C900_04426 (degree 1498), 1237149.C900_03138 (degree
+	1354), 1237149.C900_02140 (degree 1184) and 1237149.C900_01765 (degree
+	1159).
 	
 
 

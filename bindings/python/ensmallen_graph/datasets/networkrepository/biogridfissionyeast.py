@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:42.659078
 
-The undirected graph bio-grid-fission-yeast has 2026 nodes and 12637 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00616
-and has 22 connected components, where the component with most nodes has 1972 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 12.47 and the node degree mode is 1. The top 5 most
-central nodes are 1678 (degree 439), 645 (degree 160), 392 (degree 159), 1148 (degree
-151) and 1132 (degree 150).
+The undirected graph bio-grid-fission-yeast has 2026 nodes and 12637 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00616 and has 22 connected components, where the component with most
+nodes has 1972 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 3, the mean node degree is 12.47 and the
+node degree mode is 1. The top 5 most central nodes are 1678 (degree 439),
+645 (degree 160), 392 (degree 159), 1148 (degree 151) and 1132 (degree
+150).
 
 
 References
@@ -103,13 +104,14 @@ def BioGridFissionYeast(
 	
 	Datetime: 2021-02-03 22:30:42.659078
 	
-	The undirected graph bio-grid-fission-yeast has 2026 nodes and 12637 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00616
-	and has 22 connected components, where the component with most nodes has 1972 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 12.47 and the node degree mode is 1. The top 5 most
-	central nodes are 1678 (degree 439), 645 (degree 160), 392 (degree 159), 1148 (degree
-	151) and 1132 (degree 150).
+	The undirected graph bio-grid-fission-yeast has 2026 nodes and 12637 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00616 and has 22 connected components, where the component with most
+	nodes has 1972 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 3, the mean node degree is 12.47 and the
+	node degree mode is 1. The top 5 most central nodes are 1678 (degree 439),
+	645 (degree 160), 392 (degree 159), 1148 (degree 151) and 1132 (degree
+	150).
 	
 
 

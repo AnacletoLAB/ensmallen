@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:13.515757
 
-The undirected graph Lysobacter defluvii has 2417 nodes and 203348 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06965 and
-has 8 connected components, where the component with most nodes has 2397 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 168.26, and the node degree mode is 1. The top 5 most central
-nodes are 1385515.N791_09795 (degree 895), 1385515.N791_12630 (degree 886), 1385515.N791_06630
-(degree 860), 1385515.N791_02445 (degree 788) and 1385515.N791_11865 (degree 767).
+The undirected graph Lysobacter defluvii has 2417 nodes and 203348 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06965 and has 8 connected components, where the component with most
+nodes has 2397 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 168.26, and
+the node degree mode is 1. The top 5 most central nodes are 1385515.N791_09795
+(degree 895), 1385515.N791_12630 (degree 886), 1385515.N791_06630 (degree
+860), 1385515.N791_02445 (degree 788) and 1385515.N791_11865 (degree 767).
 
 
 References
@@ -106,13 +107,14 @@ def LysobacterDefluvii(
 	
 	Datetime: 2021-02-03 22:20:13.515757
 	
-	The undirected graph Lysobacter defluvii has 2417 nodes and 203348 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06965 and
-	has 8 connected components, where the component with most nodes has 2397 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 168.26, and the node degree mode is 1. The top 5 most central
-	nodes are 1385515.N791_09795 (degree 895), 1385515.N791_12630 (degree 886), 1385515.N791_06630
-	(degree 860), 1385515.N791_02445 (degree 788) and 1385515.N791_11865 (degree 767).
+	The undirected graph Lysobacter defluvii has 2417 nodes and 203348 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06965 and has 8 connected components, where the component with most
+	nodes has 2397 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 168.26, and
+	the node degree mode is 1. The top 5 most central nodes are 1385515.N791_09795
+	(degree 895), 1385515.N791_12630 (degree 886), 1385515.N791_06630 (degree
+	860), 1385515.N791_02445 (degree 788) and 1385515.N791_11865 (degree 767).
 	
 
 

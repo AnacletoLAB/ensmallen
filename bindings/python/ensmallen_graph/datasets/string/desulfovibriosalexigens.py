@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:58.158334
 
-The undirected graph Desulfovibrio salexigens has 3788 nodes and 336875 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04697
-and has 12 connected components, where the component with most nodes has 3756 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 177.86, and the node degree mode is 3. The top 5
-most central nodes are 526222.Desal_2961 (degree 1679), 526222.Desal_0729 (degree
-1279), 526222.Desal_2869 (degree 1236), 526222.Desal_1954 (degree 1181) and 526222.Desal_1566
-(degree 1147).
+The undirected graph Desulfovibrio salexigens has 3788 nodes and 336875
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04697 and has 12 connected components, where the component
+with most nodes has 3756 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 177.86,
+and the node degree mode is 3. The top 5 most central nodes are 526222.Desal_2961
+(degree 1679), 526222.Desal_0729 (degree 1279), 526222.Desal_2869 (degree
+1236), 526222.Desal_1954 (degree 1181) and 526222.Desal_1566 (degree 1147).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioSalexigens(
 	
 	Datetime: 2021-02-02 21:05:58.158334
 	
-	The undirected graph Desulfovibrio salexigens has 3788 nodes and 336875 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04697
-	and has 12 connected components, where the component with most nodes has 3756 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 177.86, and the node degree mode is 3. The top 5
-	most central nodes are 526222.Desal_2961 (degree 1679), 526222.Desal_0729 (degree
-	1279), 526222.Desal_2869 (degree 1236), 526222.Desal_1954 (degree 1181) and 526222.Desal_1566
-	(degree 1147).
+	The undirected graph Desulfovibrio salexigens has 3788 nodes and 336875
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04697 and has 12 connected components, where the component
+	with most nodes has 3756 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 177.86,
+	and the node degree mode is 3. The top 5 most central nodes are 526222.Desal_2961
+	(degree 1679), 526222.Desal_0729 (degree 1279), 526222.Desal_2869 (degree
+	1236), 526222.Desal_1954 (degree 1181) and 526222.Desal_1566 (degree 1147).
 	
 
 

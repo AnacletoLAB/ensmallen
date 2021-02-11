@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:15:55.074634
 
-The undirected graph Methylophaga lonarensis has 2524 nodes and 206583 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06488 and
-has 4 connected components, where the component with most nodes has 2518 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 163.69, and the node degree mode is 1. The top 5 most central
-nodes are 1286106.MPL1_03905 (degree 1065), 1286106.MPL1_05759 (degree 874), 1286106.MPL1_12391
-(degree 860), 1286106.MPL1_03288 (degree 853) and 1286106.MPL1_03293 (degree 848).
+The undirected graph Methylophaga lonarensis has 2524 nodes and 206583
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06488 and has 4 connected components, where the component
+with most nodes has 2518 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 163.69,
+and the node degree mode is 1. The top 5 most central nodes are 1286106.MPL1_03905
+(degree 1065), 1286106.MPL1_05759 (degree 874), 1286106.MPL1_12391 (degree
+860), 1286106.MPL1_03288 (degree 853) and 1286106.MPL1_03293 (degree 848).
 
 
 References
@@ -106,13 +107,14 @@ def MethylophagaLonarensis(
 	
 	Datetime: 2021-02-03 21:15:55.074634
 	
-	The undirected graph Methylophaga lonarensis has 2524 nodes and 206583 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06488 and
-	has 4 connected components, where the component with most nodes has 2518 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 163.69, and the node degree mode is 1. The top 5 most central
-	nodes are 1286106.MPL1_03905 (degree 1065), 1286106.MPL1_05759 (degree 874), 1286106.MPL1_12391
-	(degree 860), 1286106.MPL1_03288 (degree 853) and 1286106.MPL1_03293 (degree 848).
+	The undirected graph Methylophaga lonarensis has 2524 nodes and 206583
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06488 and has 4 connected components, where the component
+	with most nodes has 2518 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 163.69,
+	and the node degree mode is 1. The top 5 most central nodes are 1286106.MPL1_03905
+	(degree 1065), 1286106.MPL1_05759 (degree 874), 1286106.MPL1_12391 (degree
+	860), 1286106.MPL1_03288 (degree 853) and 1286106.MPL1_03293 (degree 848).
 	
 
 

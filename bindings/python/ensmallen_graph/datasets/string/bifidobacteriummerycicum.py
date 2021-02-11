@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:37.437850
 
-The undirected graph Bifidobacterium merycicum has 1729 nodes and 106648 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07139
-and has 6 connected components, where the component with most nodes has 1719 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 123.36, and the node degree mode is 1. The top 5
-most central nodes are 78345.BMERY_1221 (degree 767), 78345.BMERY_1602 (degree 692),
-78345.BMERY_0611 (degree 626), 78345.BMERY_1109 (degree 626) and 78345.BMERY_0959
-(degree 619).
+The undirected graph Bifidobacterium merycicum has 1729 nodes and 106648
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07139 and has 6 connected components, where the component
+with most nodes has 1719 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 123.36,
+and the node degree mode is 1. The top 5 most central nodes are 78345.BMERY_1221
+(degree 767), 78345.BMERY_1602 (degree 692), 78345.BMERY_0611 (degree 626),
+78345.BMERY_1109 (degree 626) and 78345.BMERY_0959 (degree 619).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumMerycicum(
 	
 	Datetime: 2021-02-02 18:33:37.437850
 	
-	The undirected graph Bifidobacterium merycicum has 1729 nodes and 106648 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07139
-	and has 6 connected components, where the component with most nodes has 1719 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 123.36, and the node degree mode is 1. The top 5
-	most central nodes are 78345.BMERY_1221 (degree 767), 78345.BMERY_1602 (degree 692),
-	78345.BMERY_0611 (degree 626), 78345.BMERY_1109 (degree 626) and 78345.BMERY_0959
-	(degree 619).
+	The undirected graph Bifidobacterium merycicum has 1729 nodes and 106648
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07139 and has 6 connected components, where the component
+	with most nodes has 1719 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 123.36,
+	and the node degree mode is 1. The top 5 most central nodes are 78345.BMERY_1221
+	(degree 767), 78345.BMERY_1602 (degree 692), 78345.BMERY_0611 (degree 626),
+	78345.BMERY_1109 (degree 626) and 78345.BMERY_0959 (degree 619).
 	
 
 

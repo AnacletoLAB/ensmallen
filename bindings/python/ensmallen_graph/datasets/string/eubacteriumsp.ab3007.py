@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:24:05.671550
 
-The undirected graph Eubacterium sp. AB3007 has 1950 nodes and 148751 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07828 and
-has 3 connected components, where the component with most nodes has 1946 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 152.57, and the node degree mode is 4. The top 5 most central
-nodes are 1392487.JIAD01000001_gene1799 (degree 863), 1392487.JIAD01000001_gene376
-(degree 795), 1392487.JIAD01000001_gene359 (degree 700), 1392487.JIAD01000001_gene1366
-(degree 698) and 1392487.JIAD01000001_gene794 (degree 690).
+The undirected graph Eubacterium sp. AB3007 has 1950 nodes and 148751 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07828 and has 3 connected components, where the component with most
+nodes has 1946 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 152.57, and
+the node degree mode is 4. The top 5 most central nodes are 1392487.JIAD01000001_gene1799
+(degree 863), 1392487.JIAD01000001_gene376 (degree 795), 1392487.JIAD01000001_gene359
+(degree 700), 1392487.JIAD01000001_gene1366 (degree 698) and 1392487.JIAD01000001_gene794
+(degree 690).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumSp.Ab3007(
 	
 	Datetime: 2021-02-03 22:24:05.671550
 	
-	The undirected graph Eubacterium sp. AB3007 has 1950 nodes and 148751 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07828 and
-	has 3 connected components, where the component with most nodes has 1946 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 152.57, and the node degree mode is 4. The top 5 most central
-	nodes are 1392487.JIAD01000001_gene1799 (degree 863), 1392487.JIAD01000001_gene376
-	(degree 795), 1392487.JIAD01000001_gene359 (degree 700), 1392487.JIAD01000001_gene1366
-	(degree 698) and 1392487.JIAD01000001_gene794 (degree 690).
+	The undirected graph Eubacterium sp. AB3007 has 1950 nodes and 148751 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07828 and has 3 connected components, where the component with most
+	nodes has 1946 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 152.57, and
+	the node degree mode is 4. The top 5 most central nodes are 1392487.JIAD01000001_gene1799
+	(degree 863), 1392487.JIAD01000001_gene376 (degree 795), 1392487.JIAD01000001_gene359
+	(degree 700), 1392487.JIAD01000001_gene1366 (degree 698) and 1392487.JIAD01000001_gene794
+	(degree 690).
 	
 
 

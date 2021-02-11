@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:24.419424
 
-The undirected graph Paracoccus sp. TRP has 3746 nodes and 375922 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05359 and
-has 12 connected components, where the component with most nodes has 3724 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 200.71, and the node degree mode is 1. The top 5 most central
-nodes are 412597.AEPN01000002_gene2754 (degree 1424), 412597.AEPN01000012_gene2514
-(degree 1211), 412597.AEPN01000004_gene3223 (degree 1107), 412597.AEPN01000022_gene842
-(degree 1081) and 412597.AEPN01000003_gene3481 (degree 1071).
+The undirected graph Paracoccus sp. TRP has 3746 nodes and 375922 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05359 and has 12 connected components, where the component with most
+nodes has 3724 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 200.71, and
+the node degree mode is 1. The top 5 most central nodes are 412597.AEPN01000002_gene2754
+(degree 1424), 412597.AEPN01000012_gene2514 (degree 1211), 412597.AEPN01000004_gene3223
+(degree 1107), 412597.AEPN01000022_gene842 (degree 1081) and 412597.AEPN01000003_gene3481
+(degree 1071).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusSp.Trp(
 	
 	Datetime: 2021-02-02 20:46:24.419424
 	
-	The undirected graph Paracoccus sp. TRP has 3746 nodes and 375922 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05359 and
-	has 12 connected components, where the component with most nodes has 3724 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 200.71, and the node degree mode is 1. The top 5 most central
-	nodes are 412597.AEPN01000002_gene2754 (degree 1424), 412597.AEPN01000012_gene2514
-	(degree 1211), 412597.AEPN01000004_gene3223 (degree 1107), 412597.AEPN01000022_gene842
-	(degree 1081) and 412597.AEPN01000003_gene3481 (degree 1071).
+	The undirected graph Paracoccus sp. TRP has 3746 nodes and 375922 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05359 and has 12 connected components, where the component with most
+	nodes has 3724 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 200.71, and
+	the node degree mode is 1. The top 5 most central nodes are 412597.AEPN01000002_gene2754
+	(degree 1424), 412597.AEPN01000012_gene2514 (degree 1211), 412597.AEPN01000004_gene3223
+	(degree 1107), 412597.AEPN01000022_gene842 (degree 1081) and 412597.AEPN01000003_gene3481
+	(degree 1071).
 	
 
 

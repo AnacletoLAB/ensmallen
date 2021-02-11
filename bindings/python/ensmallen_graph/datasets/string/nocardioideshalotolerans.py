@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:32.480550
 
-The undirected graph Nocardioides halotolerans has 4498 nodes and 481098 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04757
-and has 13 connected components, where the component with most nodes has 4466 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 213.92, and the node degree mode is 4. The top 5
-most central nodes are 1122609.AUGT01000008_gene2868 (degree 1772), 1122609.AUGT01000001_gene2823
-(degree 1418), 1122609.AUGT01000024_gene416 (degree 1363), 1122609.AUGT01000029_gene2612
-(degree 1263) and 1122609.AUGT01000028_gene2648 (degree 1244).
+The undirected graph Nocardioides halotolerans has 4498 nodes and 481098
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04757 and has 13 connected components, where the component
+with most nodes has 4466 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 213.92,
+and the node degree mode is 4. The top 5 most central nodes are 1122609.AUGT01000008_gene2868
+(degree 1772), 1122609.AUGT01000001_gene2823 (degree 1418), 1122609.AUGT01000024_gene416
+(degree 1363), 1122609.AUGT01000029_gene2612 (degree 1263) and 1122609.AUGT01000028_gene2648
+(degree 1244).
 
 
 References
@@ -107,14 +108,15 @@ def NocardioidesHalotolerans(
 	
 	Datetime: 2021-02-02 22:43:32.480550
 	
-	The undirected graph Nocardioides halotolerans has 4498 nodes and 481098 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04757
-	and has 13 connected components, where the component with most nodes has 4466 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 213.92, and the node degree mode is 4. The top 5
-	most central nodes are 1122609.AUGT01000008_gene2868 (degree 1772), 1122609.AUGT01000001_gene2823
-	(degree 1418), 1122609.AUGT01000024_gene416 (degree 1363), 1122609.AUGT01000029_gene2612
-	(degree 1263) and 1122609.AUGT01000028_gene2648 (degree 1244).
+	The undirected graph Nocardioides halotolerans has 4498 nodes and 481098
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04757 and has 13 connected components, where the component
+	with most nodes has 4466 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 213.92,
+	and the node degree mode is 4. The top 5 most central nodes are 1122609.AUGT01000008_gene2868
+	(degree 1772), 1122609.AUGT01000001_gene2823 (degree 1418), 1122609.AUGT01000024_gene416
+	(degree 1363), 1122609.AUGT01000029_gene2612 (degree 1263) and 1122609.AUGT01000028_gene2648
+	(degree 1244).
 	
 
 

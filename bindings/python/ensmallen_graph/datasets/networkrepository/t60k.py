@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:32:48.050083
 
-The undirected graph t60k has 60005 nodes and 89440 unweighted edges, of which none
-are self-loops. The graph is extremely sparse as it has a density of 0.00005 and
-is connected, as it has a single component. The graph median node degree is 3, the
-mean node degree is 2.98 and the node degree mode is 3. The top 5 most central nodes
-are 59961 (degree 3), 59923 (degree 3), 59855 (degree 3), 59749 (degree 3) and 59857
-(degree 3).
+The undirected graph t60k has 60005 nodes and 89440 unweighted edges, of
+which none are self-loops. The graph is extremely sparse as it has a density
+of 0.00005 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 2.98 and the node degree mode
+is 3. The top 5 most central nodes are 59961 (degree 3), 59923 (degree
+3), 59855 (degree 3), 59749 (degree 3) and 59857 (degree 3).
 
 
 References
@@ -102,12 +102,12 @@ def T60k(
 	
 	Datetime: 2021-02-03 23:32:48.050083
 	
-	The undirected graph t60k has 60005 nodes and 89440 unweighted edges, of which none
-	are self-loops. The graph is extremely sparse as it has a density of 0.00005 and
-	is connected, as it has a single component. The graph median node degree is 3, the
-	mean node degree is 2.98 and the node degree mode is 3. The top 5 most central nodes
-	are 59961 (degree 3), 59923 (degree 3), 59855 (degree 3), 59749 (degree 3) and 59857
-	(degree 3).
+	The undirected graph t60k has 60005 nodes and 89440 unweighted edges, of
+	which none are self-loops. The graph is extremely sparse as it has a density
+	of 0.00005 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 2.98 and the node degree mode
+	is 3. The top 5 most central nodes are 59961 (degree 3), 59923 (degree
+	3), 59855 (degree 3), 59749 (degree 3) and 59857 (degree 3).
 	
 
 

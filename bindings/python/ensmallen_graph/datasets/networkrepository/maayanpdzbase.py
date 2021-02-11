@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:14:06.845658
 
-The undirected graph maayan-pdzbase has 212 nodes and 244 unweighted edges, of which
-2 are self-loops. The graph is dense as it has a density of 0.01086 and has 19 connected
-components, where the component with most nodes has 161 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 1, the mean node degree
-is 2.29, and the node degree mode is 1. The top 5 most central nodes are 14 (degree
-21), 26 (degree 13), 3 (degree 13), 34 (degree 12) and 32 (degree 12).
+The undirected graph maayan-pdzbase has 212 nodes and 244 unweighted edges,
+of which 2 are self-loops. The graph is dense as it has a density of 0.01086
+and has 19 connected components, where the component with most nodes has
+161 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 1, the mean node degree is 2.29, and the node degree
+mode is 1. The top 5 most central nodes are 14 (degree 21), 26 (degree
+13), 3 (degree 13), 34 (degree 12) and 32 (degree 12).
 
 
 References
@@ -102,12 +103,13 @@ def MaayanPdzbase(
 	
 	Datetime: 2021-02-06 08:14:06.845658
 	
-	The undirected graph maayan-pdzbase has 212 nodes and 244 unweighted edges, of which
-	2 are self-loops. The graph is dense as it has a density of 0.01086 and has 19 connected
-	components, where the component with most nodes has 161 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 1, the mean node degree
-	is 2.29, and the node degree mode is 1. The top 5 most central nodes are 14 (degree
-	21), 26 (degree 13), 3 (degree 13), 34 (degree 12) and 32 (degree 12).
+	The undirected graph maayan-pdzbase has 212 nodes and 244 unweighted edges,
+	of which 2 are self-loops. The graph is dense as it has a density of 0.01086
+	and has 19 connected components, where the component with most nodes has
+	161 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 1, the mean node degree is 2.29, and the node degree
+	mode is 1. The top 5 most central nodes are 14 (degree 21), 26 (degree
+	13), 3 (degree 13), 34 (degree 12) and 32 (degree 12).
 	
 
 

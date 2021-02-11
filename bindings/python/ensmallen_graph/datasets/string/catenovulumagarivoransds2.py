@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:42.326393
 
-The undirected graph Catenovulum agarivorans DS2 has 3812 nodes and 524270 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07218
-and has 7 connected components, where the component with most nodes has 3798 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 275.06, and the node degree mode is 3. The top 5
-most central nodes are 1328313.DS2_13984 (degree 1447), 1328313.DS2_13254 (degree
-1304), 1328313.DS2_00385 (degree 1233), 1328313.DS2_02353 (degree 1226) and 1328313.DS2_00380
-(degree 1183).
+The undirected graph Catenovulum agarivorans DS2 has 3812 nodes and 524270
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07218 and has 7 connected components, where the component
+with most nodes has 3798 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 275.06,
+and the node degree mode is 3. The top 5 most central nodes are 1328313.DS2_13984
+(degree 1447), 1328313.DS2_13254 (degree 1304), 1328313.DS2_00385 (degree
+1233), 1328313.DS2_02353 (degree 1226) and 1328313.DS2_00380 (degree 1183).
 
 
 References
@@ -107,14 +107,14 @@ def CatenovulumAgarivoransDs2(
 	
 	Datetime: 2021-02-03 21:54:42.326393
 	
-	The undirected graph Catenovulum agarivorans DS2 has 3812 nodes and 524270 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07218
-	and has 7 connected components, where the component with most nodes has 3798 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 275.06, and the node degree mode is 3. The top 5
-	most central nodes are 1328313.DS2_13984 (degree 1447), 1328313.DS2_13254 (degree
-	1304), 1328313.DS2_00385 (degree 1233), 1328313.DS2_02353 (degree 1226) and 1328313.DS2_00380
-	(degree 1183).
+	The undirected graph Catenovulum agarivorans DS2 has 3812 nodes and 524270
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07218 and has 7 connected components, where the component
+	with most nodes has 3798 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 275.06,
+	and the node degree mode is 3. The top 5 most central nodes are 1328313.DS2_13984
+	(degree 1447), 1328313.DS2_13254 (degree 1304), 1328313.DS2_00385 (degree
+	1233), 1328313.DS2_02353 (degree 1226) and 1328313.DS2_00380 (degree 1183).
 	
 
 

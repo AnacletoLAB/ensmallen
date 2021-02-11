@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:49.013754
 
-The undirected graph Enterococcus caccae has 3218 nodes and 289400 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05591 and
-has 18 connected components, where the component with most nodes has 3167 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 179.86, and the node degree mode is 3. The top 5 most central
-nodes are 1158612.I580_00605 (degree 1301), 1158612.I580_02216 (degree 1115), 1158612.I580_02584
-(degree 1069), 1158612.I580_01274 (degree 1025) and 1158612.I580_02908 (degree 1017).
+The undirected graph Enterococcus caccae has 3218 nodes and 289400 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05591 and has 18 connected components, where the component with most
+nodes has 3167 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 179.86, and
+the node degree mode is 3. The top 5 most central nodes are 1158612.I580_00605
+(degree 1301), 1158612.I580_02216 (degree 1115), 1158612.I580_02584 (degree
+1069), 1158612.I580_01274 (degree 1025) and 1158612.I580_02908 (degree
+1017).
 
 
 References
@@ -106,13 +108,15 @@ def EnterococcusCaccae(
 	
 	Datetime: 2021-02-02 23:03:49.013754
 	
-	The undirected graph Enterococcus caccae has 3218 nodes and 289400 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05591 and
-	has 18 connected components, where the component with most nodes has 3167 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 179.86, and the node degree mode is 3. The top 5 most central
-	nodes are 1158612.I580_00605 (degree 1301), 1158612.I580_02216 (degree 1115), 1158612.I580_02584
-	(degree 1069), 1158612.I580_01274 (degree 1025) and 1158612.I580_02908 (degree 1017).
+	The undirected graph Enterococcus caccae has 3218 nodes and 289400 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05591 and has 18 connected components, where the component with most
+	nodes has 3167 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 179.86, and
+	the node degree mode is 3. The top 5 most central nodes are 1158612.I580_00605
+	(degree 1301), 1158612.I580_02216 (degree 1115), 1158612.I580_02584 (degree
+	1069), 1158612.I580_01274 (degree 1025) and 1158612.I580_02908 (degree
+	1017).
 	
 
 

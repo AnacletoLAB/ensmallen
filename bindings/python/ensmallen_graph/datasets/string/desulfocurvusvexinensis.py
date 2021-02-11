@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:10.815402
 
-The undirected graph Desulfocurvus vexinensis has 3128 nodes and 339846 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06949
-and has 7 connected components, where the component with most nodes has 3114 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 176, the mean node degree is 217.29, and the node degree mode is 1. The top 5
-most central nodes are 1121406.JAEX01000013_gene1261 (degree 1432), 1121406.JAEX01000001_gene455
-(degree 1147), 1121406.JAEX01000002_gene1021 (degree 1131), 1121406.JAEX01000019_gene2768
-(degree 1129) and 1121406.JAEX01000002_gene918 (degree 1103).
+The undirected graph Desulfocurvus vexinensis has 3128 nodes and 339846
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06949 and has 7 connected components, where the component
+with most nodes has 3114 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 176, the mean node degree is 217.29,
+and the node degree mode is 1. The top 5 most central nodes are 1121406.JAEX01000013_gene1261
+(degree 1432), 1121406.JAEX01000001_gene455 (degree 1147), 1121406.JAEX01000002_gene1021
+(degree 1131), 1121406.JAEX01000019_gene2768 (degree 1129) and 1121406.JAEX01000002_gene918
+(degree 1103).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfocurvusVexinensis(
 	
 	Datetime: 2021-02-02 22:36:10.815402
 	
-	The undirected graph Desulfocurvus vexinensis has 3128 nodes and 339846 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06949
-	and has 7 connected components, where the component with most nodes has 3114 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 176, the mean node degree is 217.29, and the node degree mode is 1. The top 5
-	most central nodes are 1121406.JAEX01000013_gene1261 (degree 1432), 1121406.JAEX01000001_gene455
-	(degree 1147), 1121406.JAEX01000002_gene1021 (degree 1131), 1121406.JAEX01000019_gene2768
-	(degree 1129) and 1121406.JAEX01000002_gene918 (degree 1103).
+	The undirected graph Desulfocurvus vexinensis has 3128 nodes and 339846
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06949 and has 7 connected components, where the component
+	with most nodes has 3114 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 176, the mean node degree is 217.29,
+	and the node degree mode is 1. The top 5 most central nodes are 1121406.JAEX01000013_gene1261
+	(degree 1432), 1121406.JAEX01000001_gene455 (degree 1147), 1121406.JAEX01000002_gene1021
+	(degree 1131), 1121406.JAEX01000019_gene2768 (degree 1129) and 1121406.JAEX01000002_gene918
+	(degree 1103).
 	
 
 

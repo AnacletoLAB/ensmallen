@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:23.204409
 
-The undirected graph Hymenobacter norwichensis has 4598 nodes and 475216 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04497
-and has 29 connected components, where the component with most nodes has 4527 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 206.71, and the node degree mode is 2. The top 5
-most central nodes are 1121957.ATVL01000014_gene1525 (degree 1344), 1121957.ATVL01000010_gene369
-(degree 1328), 1121957.ATVL01000009_gene938 (degree 1273), 1121957.ATVL01000010_gene228
-(degree 1153) and 1121957.ATVL01000010_gene421 (degree 1152).
+The undirected graph Hymenobacter norwichensis has 4598 nodes and 475216
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04497 and has 29 connected components, where the component
+with most nodes has 4527 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 206.71,
+and the node degree mode is 2. The top 5 most central nodes are 1121957.ATVL01000014_gene1525
+(degree 1344), 1121957.ATVL01000010_gene369 (degree 1328), 1121957.ATVL01000009_gene938
+(degree 1273), 1121957.ATVL01000010_gene228 (degree 1153) and 1121957.ATVL01000010_gene421
+(degree 1152).
 
 
 References
@@ -107,14 +108,15 @@ def HymenobacterNorwichensis(
 	
 	Datetime: 2021-02-02 22:40:23.204409
 	
-	The undirected graph Hymenobacter norwichensis has 4598 nodes and 475216 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04497
-	and has 29 connected components, where the component with most nodes has 4527 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 206.71, and the node degree mode is 2. The top 5
-	most central nodes are 1121957.ATVL01000014_gene1525 (degree 1344), 1121957.ATVL01000010_gene369
-	(degree 1328), 1121957.ATVL01000009_gene938 (degree 1273), 1121957.ATVL01000010_gene228
-	(degree 1153) and 1121957.ATVL01000010_gene421 (degree 1152).
+	The undirected graph Hymenobacter norwichensis has 4598 nodes and 475216
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04497 and has 29 connected components, where the component
+	with most nodes has 4527 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 206.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1121957.ATVL01000014_gene1525
+	(degree 1344), 1121957.ATVL01000010_gene369 (degree 1328), 1121957.ATVL01000009_gene938
+	(degree 1273), 1121957.ATVL01000010_gene228 (degree 1153) and 1121957.ATVL01000010_gene421
+	(degree 1152).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:20.040844
 
-The undirected graph Acinetobacter sp. Ver3 has 3044 nodes and 267172 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05769 and
-has 10 connected components, where the component with most nodes has 3023 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 175.54, and the node degree mode is 5. The top 5 most central
-nodes are 466088.CL42_11890 (degree 1112), 466088.CL42_05255 (degree 985), 466088.CL42_03740
-(degree 983), 466088.CL42_05145 (degree 975) and 466088.CL42_13720 (degree 957).
+The undirected graph Acinetobacter sp. Ver3 has 3044 nodes and 267172 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05769 and has 10 connected components, where the component with most
+nodes has 3023 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 175.54, and
+the node degree mode is 5. The top 5 most central nodes are 466088.CL42_11890
+(degree 1112), 466088.CL42_05255 (degree 985), 466088.CL42_03740 (degree
+983), 466088.CL42_05145 (degree 975) and 466088.CL42_13720 (degree 957).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterSp.Ver3(
 	
 	Datetime: 2021-02-02 20:54:20.040844
 	
-	The undirected graph Acinetobacter sp. Ver3 has 3044 nodes and 267172 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05769 and
-	has 10 connected components, where the component with most nodes has 3023 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 175.54, and the node degree mode is 5. The top 5 most central
-	nodes are 466088.CL42_11890 (degree 1112), 466088.CL42_05255 (degree 985), 466088.CL42_03740
-	(degree 983), 466088.CL42_05145 (degree 975) and 466088.CL42_13720 (degree 957).
+	The undirected graph Acinetobacter sp. Ver3 has 3044 nodes and 267172 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05769 and has 10 connected components, where the component with most
+	nodes has 3023 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 175.54, and
+	the node degree mode is 5. The top 5 most central nodes are 466088.CL42_11890
+	(degree 1112), 466088.CL42_05255 (degree 985), 466088.CL42_03740 (degree
+	983), 466088.CL42_05145 (degree 975) and 466088.CL42_13720 (degree 957).
 	
 
 

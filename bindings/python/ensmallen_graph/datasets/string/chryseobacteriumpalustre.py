@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:19.899209
 
-The undirected graph Chryseobacterium palustre has 2586 nodes and 175516 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05251
-and has 7 connected components, where the component with most nodes has 2570 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 135.74, and the node degree mode is 3. The top 5
-most central nodes are 1121288.AULL01000010_gene1374 (degree 938), 1121288.AULL01000013_gene1869
-(degree 823), 1121288.AULL01000020_gene2599 (degree 813), 1121288.AULL01000011_gene981
-(degree 693) and 1121288.AULL01000019_gene1433 (degree 674).
+The undirected graph Chryseobacterium palustre has 2586 nodes and 175516
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05251 and has 7 connected components, where the component
+with most nodes has 2570 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 135.74,
+and the node degree mode is 3. The top 5 most central nodes are 1121288.AULL01000010_gene1374
+(degree 938), 1121288.AULL01000013_gene1869 (degree 823), 1121288.AULL01000020_gene2599
+(degree 813), 1121288.AULL01000011_gene981 (degree 693) and 1121288.AULL01000019_gene1433
+(degree 674).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumPalustre(
 	
 	Datetime: 2021-02-02 22:34:19.899209
 	
-	The undirected graph Chryseobacterium palustre has 2586 nodes and 175516 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05251
-	and has 7 connected components, where the component with most nodes has 2570 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 135.74, and the node degree mode is 3. The top 5
-	most central nodes are 1121288.AULL01000010_gene1374 (degree 938), 1121288.AULL01000013_gene1869
-	(degree 823), 1121288.AULL01000020_gene2599 (degree 813), 1121288.AULL01000011_gene981
-	(degree 693) and 1121288.AULL01000019_gene1433 (degree 674).
+	The undirected graph Chryseobacterium palustre has 2586 nodes and 175516
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05251 and has 7 connected components, where the component
+	with most nodes has 2570 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 135.74,
+	and the node degree mode is 3. The top 5 most central nodes are 1121288.AULL01000010_gene1374
+	(degree 938), 1121288.AULL01000013_gene1869 (degree 823), 1121288.AULL01000020_gene2599
+	(degree 813), 1121288.AULL01000011_gene981 (degree 693) and 1121288.AULL01000019_gene1433
+	(degree 674).
 	
 
 

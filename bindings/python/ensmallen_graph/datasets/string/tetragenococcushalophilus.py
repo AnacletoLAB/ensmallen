@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:42.836788
 
-The undirected graph Tetragenococcus halophilus has 2544 nodes and 237757 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07350
-and has 3 connected components, where the component with most nodes has 2539 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 186.92, and the node degree mode is 5. The top 5
-most central nodes are 945021.TEH_15050 (degree 1157), 945021.TEH_23060 (degree 1072),
-945021.TEH_06430 (degree 1025), 945021.TEH_25220 (degree 888) and 945021.TEH_13000
-(degree 885).
+The undirected graph Tetragenococcus halophilus has 2544 nodes and 237757
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07350 and has 3 connected components, where the component
+with most nodes has 2539 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 186.92,
+and the node degree mode is 5. The top 5 most central nodes are 945021.TEH_15050
+(degree 1157), 945021.TEH_23060 (degree 1072), 945021.TEH_06430 (degree
+1025), 945021.TEH_25220 (degree 888) and 945021.TEH_13000 (degree 885).
 
 
 References
@@ -107,14 +107,14 @@ def TetragenococcusHalophilus(
 	
 	Datetime: 2021-02-02 22:01:42.836788
 	
-	The undirected graph Tetragenococcus halophilus has 2544 nodes and 237757 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07350
-	and has 3 connected components, where the component with most nodes has 2539 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 186.92, and the node degree mode is 5. The top 5
-	most central nodes are 945021.TEH_15050 (degree 1157), 945021.TEH_23060 (degree 1072),
-	945021.TEH_06430 (degree 1025), 945021.TEH_25220 (degree 888) and 945021.TEH_13000
-	(degree 885).
+	The undirected graph Tetragenococcus halophilus has 2544 nodes and 237757
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07350 and has 3 connected components, where the component
+	with most nodes has 2539 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 186.92,
+	and the node degree mode is 5. The top 5 most central nodes are 945021.TEH_15050
+	(degree 1157), 945021.TEH_23060 (degree 1072), 945021.TEH_06430 (degree
+	1025), 945021.TEH_25220 (degree 888) and 945021.TEH_13000 (degree 885).
 	
 
 

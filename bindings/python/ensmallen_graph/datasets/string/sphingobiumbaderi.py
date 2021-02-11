@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:38.350907
 
-The undirected graph Sphingobium baderi has 4741 nodes and 373081 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03320 and
-has 21 connected components, where the component with most nodes has 4681 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 157.38, and the node degree mode is 3. The top 5 most central
-nodes are 1114964.L485_03215 (degree 1512), 1114964.L485_16140 (degree 1491), 1114964.L485_06555
-(degree 1035), 1114964.L485_13690 (degree 1008) and 1114964.L485_06145 (degree 1008).
+The undirected graph Sphingobium baderi has 4741 nodes and 373081 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03320 and has 21 connected components, where the component with most
+nodes has 4681 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 157.38, and
+the node degree mode is 3. The top 5 most central nodes are 1114964.L485_03215
+(degree 1512), 1114964.L485_16140 (degree 1491), 1114964.L485_06555 (degree
+1035), 1114964.L485_13690 (degree 1008) and 1114964.L485_06145 (degree
+1008).
 
 
 References
@@ -106,13 +108,15 @@ def SphingobiumBaderi(
 	
 	Datetime: 2021-02-02 22:26:38.350907
 	
-	The undirected graph Sphingobium baderi has 4741 nodes and 373081 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03320 and
-	has 21 connected components, where the component with most nodes has 4681 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 157.38, and the node degree mode is 3. The top 5 most central
-	nodes are 1114964.L485_03215 (degree 1512), 1114964.L485_16140 (degree 1491), 1114964.L485_06555
-	(degree 1035), 1114964.L485_13690 (degree 1008) and 1114964.L485_06145 (degree 1008).
+	The undirected graph Sphingobium baderi has 4741 nodes and 373081 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03320 and has 21 connected components, where the component with most
+	nodes has 4681 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 157.38, and
+	the node degree mode is 3. The top 5 most central nodes are 1114964.L485_03215
+	(degree 1512), 1114964.L485_16140 (degree 1491), 1114964.L485_06555 (degree
+	1035), 1114964.L485_13690 (degree 1008) and 1114964.L485_06145 (degree
+	1008).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:00.338209
 
-The undirected graph Brachyspira murdochii has 2784 nodes and 148766 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03840 and
-has 16 connected components, where the component with most nodes has 2737 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 69,
-the mean node degree is 106.87, and the node degree mode is 3. The top 5 most central
-nodes are 526224.Bmur_2534 (degree 971), 526224.Bmur_1113 (degree 971), 526224.Bmur_2403
-(degree 773), 526224.Bmur_2315 (degree 743) and 526224.Bmur_0095 (degree 724).
+The undirected graph Brachyspira murdochii has 2784 nodes and 148766 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03840 and has 16 connected components, where the component with most
+nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 69, the mean node degree is 106.87, and
+the node degree mode is 3. The top 5 most central nodes are 526224.Bmur_2534
+(degree 971), 526224.Bmur_1113 (degree 971), 526224.Bmur_2403 (degree 773),
+526224.Bmur_2315 (degree 743) and 526224.Bmur_0095 (degree 724).
 
 
 References
@@ -106,13 +107,14 @@ def BrachyspiraMurdochii(
 	
 	Datetime: 2021-02-02 21:06:00.338209
 	
-	The undirected graph Brachyspira murdochii has 2784 nodes and 148766 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03840 and
-	has 16 connected components, where the component with most nodes has 2737 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 69,
-	the mean node degree is 106.87, and the node degree mode is 3. The top 5 most central
-	nodes are 526224.Bmur_2534 (degree 971), 526224.Bmur_1113 (degree 971), 526224.Bmur_2403
-	(degree 773), 526224.Bmur_2315 (degree 743) and 526224.Bmur_0095 (degree 724).
+	The undirected graph Brachyspira murdochii has 2784 nodes and 148766 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03840 and has 16 connected components, where the component with most
+	nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 69, the mean node degree is 106.87, and
+	the node degree mode is 3. The top 5 most central nodes are 526224.Bmur_2534
+	(degree 971), 526224.Bmur_1113 (degree 971), 526224.Bmur_2403 (degree 773),
+	526224.Bmur_2315 (degree 743) and 526224.Bmur_0095 (degree 724).
 	
 
 

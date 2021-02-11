@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:14.594663
 
-The undirected graph Citrobacter amalonaticus has 4824 nodes and 567757 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04881
-and has 14 connected components, where the component with most nodes has 4794 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 235.39, and the node degree mode is 2. The top 5
-most central nodes are 35703.DQ02_01380 (degree 1765), 35703.DQ02_14950 (degree 1666),
-35703.DQ02_04940 (degree 1569), 35703.DQ02_05970 (degree 1311) and 35703.DQ02_03880
-(degree 1254).
+The undirected graph Citrobacter amalonaticus has 4824 nodes and 567757
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04881 and has 14 connected components, where the component
+with most nodes has 4794 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 235.39,
+and the node degree mode is 2. The top 5 most central nodes are 35703.DQ02_01380
+(degree 1765), 35703.DQ02_14950 (degree 1666), 35703.DQ02_04940 (degree
+1569), 35703.DQ02_05970 (degree 1311) and 35703.DQ02_03880 (degree 1254).
 
 
 References
@@ -107,14 +107,14 @@ def CitrobacterAmalonaticus(
 	
 	Datetime: 2021-02-02 18:05:14.594663
 	
-	The undirected graph Citrobacter amalonaticus has 4824 nodes and 567757 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04881
-	and has 14 connected components, where the component with most nodes has 4794 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 235.39, and the node degree mode is 2. The top 5
-	most central nodes are 35703.DQ02_01380 (degree 1765), 35703.DQ02_14950 (degree 1666),
-	35703.DQ02_04940 (degree 1569), 35703.DQ02_05970 (degree 1311) and 35703.DQ02_03880
-	(degree 1254).
+	The undirected graph Citrobacter amalonaticus has 4824 nodes and 567757
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04881 and has 14 connected components, where the component
+	with most nodes has 4794 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 235.39,
+	and the node degree mode is 2. The top 5 most central nodes are 35703.DQ02_01380
+	(degree 1765), 35703.DQ02_14950 (degree 1666), 35703.DQ02_04940 (degree
+	1569), 35703.DQ02_05970 (degree 1311) and 35703.DQ02_03880 (degree 1254).
 	
 
 

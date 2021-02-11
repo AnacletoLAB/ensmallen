@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:56.145438
 
-The undirected graph Bacillus sp. 37MA has 3918 nodes and 323862 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04221 and
-has 47 connected components, where the component with most nodes has 3809 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 165.32, and the node degree mode is 1. The top 5 most central
-nodes are 1132442.KB889752_gene2448 (degree 1379), 1132442.KB889752_gene1661 (degree
-1237), 1132442.KB889752_gene3362 (degree 1196), 1132442.KB889752_gene3387 (degree
-1103) and 1132442.KB889752_gene1744 (degree 1007).
+The undirected graph Bacillus sp. 37MA has 3918 nodes and 323862 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04221 and has 47 connected components, where the component with most
+nodes has 3809 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 165.32, and
+the node degree mode is 1. The top 5 most central nodes are 1132442.KB889752_gene2448
+(degree 1379), 1132442.KB889752_gene1661 (degree 1237), 1132442.KB889752_gene3362
+(degree 1196), 1132442.KB889752_gene3387 (degree 1103) and 1132442.KB889752_gene1744
+(degree 1007).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.37ma(
 	
 	Datetime: 2021-02-02 22:55:56.145438
 	
-	The undirected graph Bacillus sp. 37MA has 3918 nodes and 323862 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04221 and
-	has 47 connected components, where the component with most nodes has 3809 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 165.32, and the node degree mode is 1. The top 5 most central
-	nodes are 1132442.KB889752_gene2448 (degree 1379), 1132442.KB889752_gene1661 (degree
-	1237), 1132442.KB889752_gene3362 (degree 1196), 1132442.KB889752_gene3387 (degree
-	1103) and 1132442.KB889752_gene1744 (degree 1007).
+	The undirected graph Bacillus sp. 37MA has 3918 nodes and 323862 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04221 and has 47 connected components, where the component with most
+	nodes has 3809 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 165.32, and
+	the node degree mode is 1. The top 5 most central nodes are 1132442.KB889752_gene2448
+	(degree 1379), 1132442.KB889752_gene1661 (degree 1237), 1132442.KB889752_gene3362
+	(degree 1196), 1132442.KB889752_gene3387 (degree 1103) and 1132442.KB889752_gene1744
+	(degree 1007).
 	
 
 

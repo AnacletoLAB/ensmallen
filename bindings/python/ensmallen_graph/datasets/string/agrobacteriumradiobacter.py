@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:18.822972
 
-The undirected graph Agrobacterium radiobacter has 6101 nodes and 598062 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03214
-and has 19 connected components, where the component with most nodes has 6058 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 196.05, and the node degree mode is 1. The top 5
-most central nodes are 311403.Arad_0271 (degree 2092), 311403.Arad_0812 (degree 1939),
-311403.Arad_3395 (degree 1646), 311403.Arad_3836 (degree 1591) and 311403.Arad_0510
-(degree 1401).
+The undirected graph Agrobacterium radiobacter has 6101 nodes and 598062
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03214 and has 19 connected components, where the component
+with most nodes has 6058 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 196.05,
+and the node degree mode is 1. The top 5 most central nodes are 311403.Arad_0271
+(degree 2092), 311403.Arad_0812 (degree 1939), 311403.Arad_3395 (degree
+1646), 311403.Arad_3836 (degree 1591) and 311403.Arad_0510 (degree 1401).
 
 
 References
@@ -107,14 +107,14 @@ def AgrobacteriumRadiobacter(
 	
 	Datetime: 2021-02-02 20:23:18.822972
 	
-	The undirected graph Agrobacterium radiobacter has 6101 nodes and 598062 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03214
-	and has 19 connected components, where the component with most nodes has 6058 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 196.05, and the node degree mode is 1. The top 5
-	most central nodes are 311403.Arad_0271 (degree 2092), 311403.Arad_0812 (degree 1939),
-	311403.Arad_3395 (degree 1646), 311403.Arad_3836 (degree 1591) and 311403.Arad_0510
-	(degree 1401).
+	The undirected graph Agrobacterium radiobacter has 6101 nodes and 598062
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03214 and has 19 connected components, where the component
+	with most nodes has 6058 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 196.05,
+	and the node degree mode is 1. The top 5 most central nodes are 311403.Arad_0271
+	(degree 2092), 311403.Arad_0812 (degree 1939), 311403.Arad_3395 (degree
+	1646), 311403.Arad_3836 (degree 1591) and 311403.Arad_0510 (degree 1401).
 	
 
 

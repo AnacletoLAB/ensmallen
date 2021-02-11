@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:41:15.670436
 
-The undirected graph ca-dblp-2012 has 317080 nodes and 1049866 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 4, the mean node degree is 6.62 and the node degree mode is 2. The top 5 most
-central nodes are 22805 (degree 343), 27334 (degree 296), 35645 (degree 290), 2910
-(degree 269) and 46346 (degree 264).
+The undirected graph ca-dblp-2012 has 317080 nodes and 1049866 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 6.62 and the
+node degree mode is 2. The top 5 most central nodes are 22805 (degree 343),
+27334 (degree 296), 35645 (degree 290), 2910 (degree 269) and 46346 (degree
+264).
 
 
 References
@@ -112,12 +113,13 @@ def CaDblp2012(
 	
 	Datetime: 2021-02-03 22:41:15.670436
 	
-	The undirected graph ca-dblp-2012 has 317080 nodes and 1049866 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 4, the mean node degree is 6.62 and the node degree mode is 2. The top 5 most
-	central nodes are 22805 (degree 343), 27334 (degree 296), 35645 (degree 290), 2910
-	(degree 269) and 46346 (degree 264).
+	The undirected graph ca-dblp-2012 has 317080 nodes and 1049866 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 6.62 and the
+	node degree mode is 2. The top 5 most central nodes are 22805 (degree 343),
+	27334 (degree 296), 35645 (degree 290), 2910 (degree 269) and 46346 (degree
+	264).
 	
 
 

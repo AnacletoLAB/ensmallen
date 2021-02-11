@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:36:52.669129
 
-The undirected graph Medicago truncatula has 21631 nodes and 4064217 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01737 and
-has 9 connected components, where the component with most nodes has 21612 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 375.78, and the node degree mode is 6. The top 5 most central
-nodes are 3880.AES89162 (degree 5224), 3880.AES74214 (degree 5224), 3880.AES84899
-(degree 5063), 3880.AES88228 (degree 4736) and 3880.AES68722 (degree 4527).
+The undirected graph Medicago truncatula has 21631 nodes and 4064217 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01737 and has 9 connected components, where the component with most
+nodes has 21612 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 375.78, and
+the node degree mode is 6. The top 5 most central nodes are 3880.AES89162
+(degree 5224), 3880.AES74214 (degree 5224), 3880.AES84899 (degree 5063),
+3880.AES88228 (degree 4736) and 3880.AES68722 (degree 4527).
 
 
 References
@@ -106,13 +107,14 @@ def MedicagoTruncatula(
 	
 	Datetime: 2021-02-02 16:36:52.669129
 	
-	The undirected graph Medicago truncatula has 21631 nodes and 4064217 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01737 and
-	has 9 connected components, where the component with most nodes has 21612 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 375.78, and the node degree mode is 6. The top 5 most central
-	nodes are 3880.AES89162 (degree 5224), 3880.AES74214 (degree 5224), 3880.AES84899
-	(degree 5063), 3880.AES88228 (degree 4736) and 3880.AES68722 (degree 4527).
+	The undirected graph Medicago truncatula has 21631 nodes and 4064217 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01737 and has 9 connected components, where the component with most
+	nodes has 21612 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 375.78, and
+	the node degree mode is 6. The top 5 most central nodes are 3880.AES89162
+	(degree 5224), 3880.AES74214 (degree 5224), 3880.AES84899 (degree 5063),
+	3880.AES88228 (degree 4736) and 3880.AES68722 (degree 4527).
 	
 
 

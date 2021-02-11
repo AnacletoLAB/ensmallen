@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:40.260004
 
-The undirected graph Geobacillus vulcani has 3132 nodes and 292089 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05957 and
-has 11 connected components, where the component with most nodes has 3108 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 186.52, and the node degree mode is 2. The top 5 most central
-nodes are 1382315.JPOI01000001_gene1542 (degree 1252), 1382315.JPOI01000001_gene627
-(degree 1030), 1382315.JPOI01000001_gene850 (degree 958), 1382315.JPOI01000001_gene2792
-(degree 927) and 1382315.JPOI01000001_gene1784 (degree 909).
+The undirected graph Geobacillus vulcani has 3132 nodes and 292089 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05957 and has 11 connected components, where the component with most
+nodes has 3108 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 186.52, and
+the node degree mode is 2. The top 5 most central nodes are 1382315.JPOI01000001_gene1542
+(degree 1252), 1382315.JPOI01000001_gene627 (degree 1030), 1382315.JPOI01000001_gene850
+(degree 958), 1382315.JPOI01000001_gene2792 (degree 927) and 1382315.JPOI01000001_gene1784
+(degree 909).
 
 
 References
@@ -107,14 +108,15 @@ def GeobacillusVulcani(
 	
 	Datetime: 2021-02-03 22:18:40.260004
 	
-	The undirected graph Geobacillus vulcani has 3132 nodes and 292089 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05957 and
-	has 11 connected components, where the component with most nodes has 3108 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 186.52, and the node degree mode is 2. The top 5 most central
-	nodes are 1382315.JPOI01000001_gene1542 (degree 1252), 1382315.JPOI01000001_gene627
-	(degree 1030), 1382315.JPOI01000001_gene850 (degree 958), 1382315.JPOI01000001_gene2792
-	(degree 927) and 1382315.JPOI01000001_gene1784 (degree 909).
+	The undirected graph Geobacillus vulcani has 3132 nodes and 292089 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05957 and has 11 connected components, where the component with most
+	nodes has 3108 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 186.52, and
+	the node degree mode is 2. The top 5 most central nodes are 1382315.JPOI01000001_gene1542
+	(degree 1252), 1382315.JPOI01000001_gene627 (degree 1030), 1382315.JPOI01000001_gene850
+	(degree 958), 1382315.JPOI01000001_gene2792 (degree 927) and 1382315.JPOI01000001_gene1784
+	(degree 909).
 	
 
 

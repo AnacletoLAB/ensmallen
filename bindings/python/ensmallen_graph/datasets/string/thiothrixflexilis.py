@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:30.203867
 
-The undirected graph Thiothrix flexilis has 3385 nodes and 263723 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04605 and
-has 23 connected components, where the component with most nodes has 3331 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 155.82, and the node degree mode is 2. The top 5 most central
-nodes are 1123400.KB904747_gene545 (degree 1094), 1123400.KB904748_gene287 (degree
-1075), 1123400.KB904749_gene709 (degree 1015), 1123400.KB904747_gene493 (degree 906)
-and 1123400.KB904765_gene1396 (degree 875).
+The undirected graph Thiothrix flexilis has 3385 nodes and 263723 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04605 and has 23 connected components, where the component with most
+nodes has 3331 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 155.82, and
+the node degree mode is 2. The top 5 most central nodes are 1123400.KB904747_gene545
+(degree 1094), 1123400.KB904748_gene287 (degree 1075), 1123400.KB904749_gene709
+(degree 1015), 1123400.KB904747_gene493 (degree 906) and 1123400.KB904765_gene1396
+(degree 875).
 
 
 References
@@ -107,14 +108,15 @@ def ThiothrixFlexilis(
 	
 	Datetime: 2021-02-02 22:52:30.203867
 	
-	The undirected graph Thiothrix flexilis has 3385 nodes and 263723 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04605 and
-	has 23 connected components, where the component with most nodes has 3331 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 155.82, and the node degree mode is 2. The top 5 most central
-	nodes are 1123400.KB904747_gene545 (degree 1094), 1123400.KB904748_gene287 (degree
-	1075), 1123400.KB904749_gene709 (degree 1015), 1123400.KB904747_gene493 (degree 906)
-	and 1123400.KB904765_gene1396 (degree 875).
+	The undirected graph Thiothrix flexilis has 3385 nodes and 263723 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04605 and has 23 connected components, where the component with most
+	nodes has 3331 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 155.82, and
+	the node degree mode is 2. The top 5 most central nodes are 1123400.KB904747_gene545
+	(degree 1094), 1123400.KB904748_gene287 (degree 1075), 1123400.KB904749_gene709
+	(degree 1015), 1123400.KB904747_gene493 (degree 906) and 1123400.KB904765_gene1396
+	(degree 875).
 	
 
 

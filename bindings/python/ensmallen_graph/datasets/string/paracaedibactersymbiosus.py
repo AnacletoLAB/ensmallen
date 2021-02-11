@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:24.177984
 
-The undirected graph Paracaedibacter symbiosus has 2395 nodes and 157581 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05497
-and has 61 connected components, where the component with most nodes has 2257 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 131.59, and the node degree mode is 1. The top 5 most
-central nodes are 244582.JQAK01000004_gene228 (degree 872), 244582.JQAK01000001_gene2009
-(degree 671), 244582.JQAK01000001_gene1730 (degree 651), 244582.JQAK01000001_gene1718
-(degree 646) and 244582.JQAK01000001_gene1114 (degree 644).
+The undirected graph Paracaedibacter symbiosus has 2395 nodes and 157581
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05497 and has 61 connected components, where the component
+with most nodes has 2257 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 131.59,
+and the node degree mode is 1. The top 5 most central nodes are 244582.JQAK01000004_gene228
+(degree 872), 244582.JQAK01000001_gene2009 (degree 671), 244582.JQAK01000001_gene1730
+(degree 651), 244582.JQAK01000001_gene1718 (degree 646) and 244582.JQAK01000001_gene1114
+(degree 644).
 
 
 References
@@ -107,14 +108,15 @@ def ParacaedibacterSymbiosus(
 	
 	Datetime: 2021-02-02 20:10:24.177984
 	
-	The undirected graph Paracaedibacter symbiosus has 2395 nodes and 157581 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05497
-	and has 61 connected components, where the component with most nodes has 2257 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 131.59, and the node degree mode is 1. The top 5 most
-	central nodes are 244582.JQAK01000004_gene228 (degree 872), 244582.JQAK01000001_gene2009
-	(degree 671), 244582.JQAK01000001_gene1730 (degree 651), 244582.JQAK01000001_gene1718
-	(degree 646) and 244582.JQAK01000001_gene1114 (degree 644).
+	The undirected graph Paracaedibacter symbiosus has 2395 nodes and 157581
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05497 and has 61 connected components, where the component
+	with most nodes has 2257 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 131.59,
+	and the node degree mode is 1. The top 5 most central nodes are 244582.JQAK01000004_gene228
+	(degree 872), 244582.JQAK01000001_gene2009 (degree 671), 244582.JQAK01000001_gene1730
+	(degree 651), 244582.JQAK01000001_gene1718 (degree 646) and 244582.JQAK01000001_gene1114
+	(degree 644).
 	
 
 

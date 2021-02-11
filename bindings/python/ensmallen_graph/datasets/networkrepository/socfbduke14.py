@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:01.948765
 
-The undirected graph socfb-Duke14 has 9885 nodes and 506437 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01037 and
-is connected, as it has a single component. The graph median node degree is 83, the
-mean node degree is 102.47, and the node degree mode is 1. The top 5 most central
-nodes are 2559 (degree 1887), 4488 (degree 813), 2830 (degree 766), 761 (degree 729)
-and 3830 (degree 725).
+The undirected graph socfb-Duke14 has 9885 nodes and 506437 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01037 and is connected, as it has a single component. The graph median
+node degree is 83, the mean node degree is 102.47, and the node degree
+mode is 1. The top 5 most central nodes are 2559 (degree 1887), 4488 (degree
+813), 2830 (degree 766), 761 (degree 729) and 3830 (degree 725).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbDuke14(
 	
 	Datetime: 2021-02-06 11:49:01.948765
 	
-	The undirected graph socfb-Duke14 has 9885 nodes and 506437 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01037 and
-	is connected, as it has a single component. The graph median node degree is 83, the
-	mean node degree is 102.47, and the node degree mode is 1. The top 5 most central
-	nodes are 2559 (degree 1887), 4488 (degree 813), 2830 (degree 766), 761 (degree 729)
-	and 3830 (degree 725).
+	The undirected graph socfb-Duke14 has 9885 nodes and 506437 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01037 and is connected, as it has a single component. The graph median
+	node degree is 83, the mean node degree is 102.47, and the node degree
+	mode is 1. The top 5 most central nodes are 2559 (degree 1887), 4488 (degree
+	813), 2830 (degree 766), 761 (degree 729) and 3830 (degree 725).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:29.981528
 
-The undirected graph Kangiella koreensis has 2621 nodes and 208000 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06058 and
-has 7 connected components, where the component with most nodes has 2609 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 158.72, and the node degree mode is 5. The top 5 most central
-nodes are 523791.Kkor_2493 (degree 1032), 523791.Kkor_0839 (degree 866), 523791.Kkor_0859
-(degree 824), 523791.Kkor_1830 (degree 815) and 523791.Kkor_1831 (degree 764).
+The undirected graph Kangiella koreensis has 2621 nodes and 208000 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06058 and has 7 connected components, where the component with most
+nodes has 2609 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 158.72, and
+the node degree mode is 5. The top 5 most central nodes are 523791.Kkor_2493
+(degree 1032), 523791.Kkor_0839 (degree 866), 523791.Kkor_0859 (degree
+824), 523791.Kkor_1830 (degree 815) and 523791.Kkor_1831 (degree 764).
 
 
 References
@@ -106,13 +107,14 @@ def KangiellaKoreensis(
 	
 	Datetime: 2021-02-02 21:04:29.981528
 	
-	The undirected graph Kangiella koreensis has 2621 nodes and 208000 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06058 and
-	has 7 connected components, where the component with most nodes has 2609 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 158.72, and the node degree mode is 5. The top 5 most central
-	nodes are 523791.Kkor_2493 (degree 1032), 523791.Kkor_0839 (degree 866), 523791.Kkor_0859
-	(degree 824), 523791.Kkor_1830 (degree 815) and 523791.Kkor_1831 (degree 764).
+	The undirected graph Kangiella koreensis has 2621 nodes and 208000 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06058 and has 7 connected components, where the component with most
+	nodes has 2609 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 158.72, and
+	the node degree mode is 5. The top 5 most central nodes are 523791.Kkor_2493
+	(degree 1032), 523791.Kkor_0839 (degree 866), 523791.Kkor_0859 (degree
+	824), 523791.Kkor_1830 (degree 815) and 523791.Kkor_1831 (degree 764).
 	
 
 

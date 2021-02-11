@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:21:41.815009
 
-The undirected graph Schmidhempelia bombi has 1711 nodes and 105538 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07214 and
-has 29 connected components, where the component with most nodes has 1628 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 123.36, and the node degree mode is 2. The top 5 most central
-nodes are 1387197.AWGA01000037_gene1707 (degree 727), 1387197.AWGA01000055_gene1508
-(degree 667), 1387197.AWGA01000048_gene1199 (degree 568), 1387197.AWGA01000010_gene524
-(degree 567) and 1387197.AWGA01000055_gene1465 (degree 535).
+The undirected graph Schmidhempelia bombi has 1711 nodes and 105538 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07214 and has 29 connected components, where the component with most
+nodes has 1628 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 123.36, and
+the node degree mode is 2. The top 5 most central nodes are 1387197.AWGA01000037_gene1707
+(degree 727), 1387197.AWGA01000055_gene1508 (degree 667), 1387197.AWGA01000048_gene1199
+(degree 568), 1387197.AWGA01000010_gene524 (degree 567) and 1387197.AWGA01000055_gene1465
+(degree 535).
 
 
 References
@@ -107,14 +108,15 @@ def SchmidhempeliaBombi(
 	
 	Datetime: 2021-02-03 22:21:41.815009
 	
-	The undirected graph Schmidhempelia bombi has 1711 nodes and 105538 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07214 and
-	has 29 connected components, where the component with most nodes has 1628 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 123.36, and the node degree mode is 2. The top 5 most central
-	nodes are 1387197.AWGA01000037_gene1707 (degree 727), 1387197.AWGA01000055_gene1508
-	(degree 667), 1387197.AWGA01000048_gene1199 (degree 568), 1387197.AWGA01000010_gene524
-	(degree 567) and 1387197.AWGA01000055_gene1465 (degree 535).
+	The undirected graph Schmidhempelia bombi has 1711 nodes and 105538 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07214 and has 29 connected components, where the component with most
+	nodes has 1628 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 123.36, and
+	the node degree mode is 2. The top 5 most central nodes are 1387197.AWGA01000037_gene1707
+	(degree 727), 1387197.AWGA01000055_gene1508 (degree 667), 1387197.AWGA01000048_gene1199
+	(degree 568), 1387197.AWGA01000010_gene524 (degree 567) and 1387197.AWGA01000055_gene1465
+	(degree 535).
 	
 
 

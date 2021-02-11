@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:33.015618
 
-The undirected graph Ruminococcus gnavus has 3827 nodes and 273806 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03740 and
-has 18 connected components, where the component with most nodes has 3786 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 143.09, and the node degree mode is 10. The top 5 most central
-nodes are 411470.RUMGNA_00520 (degree 1267), 411470.RUMGNA_02099 (degree 1192), 411470.RUMGNA_01370
-(degree 1125), 411470.RUMGNA_03688 (degree 1044) and 411470.RUMGNA_02469 (degree
+The undirected graph Ruminococcus gnavus has 3827 nodes and 273806 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03740 and has 18 connected components, where the component with most
+nodes has 3786 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 143.09, and
+the node degree mode is 10. The top 5 most central nodes are 411470.RUMGNA_00520
+(degree 1267), 411470.RUMGNA_02099 (degree 1192), 411470.RUMGNA_01370 (degree
+1125), 411470.RUMGNA_03688 (degree 1044) and 411470.RUMGNA_02469 (degree
 973).
 
 
@@ -107,13 +108,14 @@ def RuminococcusGnavus(
 	
 	Datetime: 2021-02-02 20:45:33.015618
 	
-	The undirected graph Ruminococcus gnavus has 3827 nodes and 273806 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03740 and
-	has 18 connected components, where the component with most nodes has 3786 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 143.09, and the node degree mode is 10. The top 5 most central
-	nodes are 411470.RUMGNA_00520 (degree 1267), 411470.RUMGNA_02099 (degree 1192), 411470.RUMGNA_01370
-	(degree 1125), 411470.RUMGNA_03688 (degree 1044) and 411470.RUMGNA_02469 (degree
+	The undirected graph Ruminococcus gnavus has 3827 nodes and 273806 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03740 and has 18 connected components, where the component with most
+	nodes has 3786 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 143.09, and
+	the node degree mode is 10. The top 5 most central nodes are 411470.RUMGNA_00520
+	(degree 1267), 411470.RUMGNA_02099 (degree 1192), 411470.RUMGNA_01370 (degree
+	1125), 411470.RUMGNA_03688 (degree 1044) and 411470.RUMGNA_02469 (degree
 	973).
 	
 

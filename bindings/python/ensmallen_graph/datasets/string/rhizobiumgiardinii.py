@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:14:35.938652
 
-The undirected graph Rhizobium giardinii has 6091 nodes and 840404 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04531 and
-has 24 connected components, where the component with most nodes has 6044 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 275.95, and the node degree mode is 1. The top 5 most central
-nodes are 1041139.KB902683_gene2739 (degree 3097), 1041139.KB902679_gene1992 (degree
-2326), 1041139.KB902689_gene1124 (degree 2324), 1041139.KB902691_gene865 (degree
-1920) and 1041139.KB902578_gene5510 (degree 1792).
+The undirected graph Rhizobium giardinii has 6091 nodes and 840404 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04531 and has 24 connected components, where the component with most
+nodes has 6044 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 275.95, and
+the node degree mode is 1. The top 5 most central nodes are 1041139.KB902683_gene2739
+(degree 3097), 1041139.KB902679_gene1992 (degree 2326), 1041139.KB902689_gene1124
+(degree 2324), 1041139.KB902691_gene865 (degree 1920) and 1041139.KB902578_gene5510
+(degree 1792).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumGiardinii(
 	
 	Datetime: 2021-02-02 22:14:35.938652
 	
-	The undirected graph Rhizobium giardinii has 6091 nodes and 840404 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04531 and
-	has 24 connected components, where the component with most nodes has 6044 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 275.95, and the node degree mode is 1. The top 5 most central
-	nodes are 1041139.KB902683_gene2739 (degree 3097), 1041139.KB902679_gene1992 (degree
-	2326), 1041139.KB902689_gene1124 (degree 2324), 1041139.KB902691_gene865 (degree
-	1920) and 1041139.KB902578_gene5510 (degree 1792).
+	The undirected graph Rhizobium giardinii has 6091 nodes and 840404 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04531 and has 24 connected components, where the component with most
+	nodes has 6044 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 275.95, and
+	the node degree mode is 1. The top 5 most central nodes are 1041139.KB902683_gene2739
+	(degree 3097), 1041139.KB902679_gene1992 (degree 2326), 1041139.KB902689_gene1124
+	(degree 2324), 1041139.KB902691_gene865 (degree 1920) and 1041139.KB902578_gene5510
+	(degree 1792).
 	
 
 

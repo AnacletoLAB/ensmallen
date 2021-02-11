@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:49.714355
 
-The undirected graph Longispora albida has 6149 nodes and 791250 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04186 and
-has 29 connected components, where the component with most nodes has 6089 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 257.36, and the node degree mode is 3. The top 5 most central
-nodes are 1122182.KB903814_gene3082 (degree 1869), 1122182.KB903821_gene1290 (degree
-1759), 1122182.KB903813_gene2461 (degree 1674), 1122182.KB903839_gene973 (degree
-1667) and 1122182.KB903814_gene3153 (degree 1640).
+The undirected graph Longispora albida has 6149 nodes and 791250 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04186 and has 29 connected components, where the component with most
+nodes has 6089 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 257.36, and
+the node degree mode is 3. The top 5 most central nodes are 1122182.KB903814_gene3082
+(degree 1869), 1122182.KB903821_gene1290 (degree 1759), 1122182.KB903813_gene2461
+(degree 1674), 1122182.KB903839_gene973 (degree 1667) and 1122182.KB903814_gene3153
+(degree 1640).
 
 
 References
@@ -107,14 +108,15 @@ def LongisporaAlbida(
 	
 	Datetime: 2021-02-02 22:41:49.714355
 	
-	The undirected graph Longispora albida has 6149 nodes and 791250 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04186 and
-	has 29 connected components, where the component with most nodes has 6089 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 257.36, and the node degree mode is 3. The top 5 most central
-	nodes are 1122182.KB903814_gene3082 (degree 1869), 1122182.KB903821_gene1290 (degree
-	1759), 1122182.KB903813_gene2461 (degree 1674), 1122182.KB903839_gene973 (degree
-	1667) and 1122182.KB903814_gene3153 (degree 1640).
+	The undirected graph Longispora albida has 6149 nodes and 791250 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04186 and has 29 connected components, where the component with most
+	nodes has 6089 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 257.36, and
+	the node degree mode is 3. The top 5 most central nodes are 1122182.KB903814_gene3082
+	(degree 1869), 1122182.KB903821_gene1290 (degree 1759), 1122182.KB903813_gene2461
+	(degree 1674), 1122182.KB903839_gene973 (degree 1667) and 1122182.KB903814_gene3153
+	(degree 1640).
 	
 
 

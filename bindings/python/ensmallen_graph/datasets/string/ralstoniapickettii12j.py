@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:02.213860
 
-The undirected graph Ralstonia pickettii 12J has 4919 nodes and 579446 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04790 and
-has 20 connected components, where the component with most nodes has 4872 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 209,
-the mean node degree is 235.60, and the node degree mode is 3. The top 5 most central
-nodes are 402626.Rpic_2435 (degree 1775), 402626.Rpic_3243 (degree 1323), 402626.Rpic_1308
-(degree 1289), 402626.Rpic_1306 (degree 1193) and 402626.Rpic_2594 (degree 1166).
+The undirected graph Ralstonia pickettii 12J has 4919 nodes and 579446
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04790 and has 20 connected components, where the component
+with most nodes has 4872 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 209, the mean node degree is 235.60,
+and the node degree mode is 3. The top 5 most central nodes are 402626.Rpic_2435
+(degree 1775), 402626.Rpic_3243 (degree 1323), 402626.Rpic_1308 (degree
+1289), 402626.Rpic_1306 (degree 1193) and 402626.Rpic_2594 (degree 1166).
 
 
 References
@@ -106,13 +107,14 @@ def RalstoniaPickettii12j(
 	
 	Datetime: 2021-02-02 20:44:02.213860
 	
-	The undirected graph Ralstonia pickettii 12J has 4919 nodes and 579446 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04790 and
-	has 20 connected components, where the component with most nodes has 4872 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 209,
-	the mean node degree is 235.60, and the node degree mode is 3. The top 5 most central
-	nodes are 402626.Rpic_2435 (degree 1775), 402626.Rpic_3243 (degree 1323), 402626.Rpic_1308
-	(degree 1289), 402626.Rpic_1306 (degree 1193) and 402626.Rpic_2594 (degree 1166).
+	The undirected graph Ralstonia pickettii 12J has 4919 nodes and 579446
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04790 and has 20 connected components, where the component
+	with most nodes has 4872 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 209, the mean node degree is 235.60,
+	and the node degree mode is 3. The top 5 most central nodes are 402626.Rpic_2435
+	(degree 1775), 402626.Rpic_3243 (degree 1323), 402626.Rpic_1308 (degree
+	1289), 402626.Rpic_1306 (degree 1193) and 402626.Rpic_2594 (degree 1166).
 	
 
 

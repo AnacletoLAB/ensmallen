@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:06.896018
 
-The undirected graph Bacillus sp. NSP222 has 3789 nodes and 379021 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05282 and
-has 16 connected components, where the component with most nodes has 3756 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 200.06, and the node degree mode is 2. The top 5 most central
-nodes are 1071073.KI530537_gene1566 (degree 1306), 1071073.KI530537_gene2318 (degree
-1147), 1071073.KI530534_gene807 (degree 1103), 1071073.KI530537_gene2000 (degree
-1083) and 1071073.KI530537_gene1748 (degree 1082).
+The undirected graph Bacillus sp. NSP222 has 3789 nodes and 379021 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05282 and has 16 connected components, where the component with most
+nodes has 3756 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 200.06, and
+the node degree mode is 2. The top 5 most central nodes are 1071073.KI530537_gene1566
+(degree 1306), 1071073.KI530537_gene2318 (degree 1147), 1071073.KI530534_gene807
+(degree 1103), 1071073.KI530537_gene2000 (degree 1083) and 1071073.KI530537_gene1748
+(degree 1082).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Nsp222(
 	
 	Datetime: 2021-02-02 22:19:06.896018
 	
-	The undirected graph Bacillus sp. NSP222 has 3789 nodes and 379021 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05282 and
-	has 16 connected components, where the component with most nodes has 3756 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 200.06, and the node degree mode is 2. The top 5 most central
-	nodes are 1071073.KI530537_gene1566 (degree 1306), 1071073.KI530537_gene2318 (degree
-	1147), 1071073.KI530534_gene807 (degree 1103), 1071073.KI530537_gene2000 (degree
-	1083) and 1071073.KI530537_gene1748 (degree 1082).
+	The undirected graph Bacillus sp. NSP222 has 3789 nodes and 379021 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05282 and has 16 connected components, where the component with most
+	nodes has 3756 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 200.06, and
+	the node degree mode is 2. The top 5 most central nodes are 1071073.KI530537_gene1566
+	(degree 1306), 1071073.KI530537_gene2318 (degree 1147), 1071073.KI530534_gene807
+	(degree 1103), 1071073.KI530537_gene2000 (degree 1083) and 1071073.KI530537_gene1748
+	(degree 1082).
 	
 
 

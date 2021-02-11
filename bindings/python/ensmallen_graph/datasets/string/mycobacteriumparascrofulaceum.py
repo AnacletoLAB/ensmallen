@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:27.478491
 
-The undirected graph Mycobacterium parascrofulaceum has 6355 nodes and 898408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04450
-and has 73 connected components, where the component with most nodes has 6168 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 282.74, and the node degree mode is 1. The top 5
-most central nodes are 525368.HMPREF0591_5437 (degree 2263), 525368.HMPREF0591_2790
-(degree 1995), 525368.HMPREF0591_5996 (degree 1951), 525368.HMPREF0591_5528 (degree
+The undirected graph Mycobacterium parascrofulaceum has 6355 nodes and
+898408 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04450 and has 73 connected components, where the
+component with most nodes has 6168 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+is 282.74, and the node degree mode is 1. The top 5 most central nodes
+are 525368.HMPREF0591_5437 (degree 2263), 525368.HMPREF0591_2790 (degree
+1995), 525368.HMPREF0591_5996 (degree 1951), 525368.HMPREF0591_5528 (degree
 1936) and 525368.HMPREF0591_3521 (degree 1874).
 
 
@@ -107,13 +108,14 @@ def MycobacteriumParascrofulaceum(
 	
 	Datetime: 2021-02-02 21:05:27.478491
 	
-	The undirected graph Mycobacterium parascrofulaceum has 6355 nodes and 898408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04450
-	and has 73 connected components, where the component with most nodes has 6168 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 282.74, and the node degree mode is 1. The top 5
-	most central nodes are 525368.HMPREF0591_5437 (degree 2263), 525368.HMPREF0591_2790
-	(degree 1995), 525368.HMPREF0591_5996 (degree 1951), 525368.HMPREF0591_5528 (degree
+	The undirected graph Mycobacterium parascrofulaceum has 6355 nodes and
+	898408 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04450 and has 73 connected components, where the
+	component with most nodes has 6168 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+	is 282.74, and the node degree mode is 1. The top 5 most central nodes
+	are 525368.HMPREF0591_5437 (degree 2263), 525368.HMPREF0591_2790 (degree
+	1995), 525368.HMPREF0591_5996 (degree 1951), 525368.HMPREF0591_5528 (degree
 	1936) and 525368.HMPREF0591_3521 (degree 1874).
 	
 

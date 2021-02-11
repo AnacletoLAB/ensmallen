@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:13:36.449975
 
-The undirected graph email-EuAll has 265214 nodes, of which 205 are singletons (all
-have self-loops), and 365570 unweighted edges, of which 1089 are self-loops. The
-graph is extremely sparse as it has a density of 0.00001 and has 15836 connected
-components, where the component with most nodes has 224832 nodes and the component
-with the least nodes has a single node. The graph median node degree is 1, the mean
-node degree is 2.75, and the node degree mode is 1. The top 5 most central nodes
-are 179171 (degree 7636), 423 (degree 6308), 31 (degree 6002), 73 (degree 4309) and
-299 (degree 3988).
+The undirected graph email-EuAll has 265214 nodes, of which 205 are singletons
+(all have self-loops), and 365570 unweighted edges, of which 1089 are self-loops.
+The graph is extremely sparse as it has a density of 0.00001 and has 15836
+connected components, where the component with most nodes has 224832 nodes
+and the component with the least nodes has a single node. The graph median
+node degree is 1, the mean node degree is 2.75, and the node degree mode
+is 1. The top 5 most central nodes are 179171 (degree 7636), 423 (degree
+6308), 31 (degree 6002), 73 (degree 4309) and 299 (degree 3988).
 
 
 References
@@ -104,14 +104,14 @@ def EmailEuall(
 	
 	Datetime: 2021-02-06 11:13:36.449975
 	
-	The undirected graph email-EuAll has 265214 nodes, of which 205 are singletons (all
-	have self-loops), and 365570 unweighted edges, of which 1089 are self-loops. The
-	graph is extremely sparse as it has a density of 0.00001 and has 15836 connected
-	components, where the component with most nodes has 224832 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 1, the mean
-	node degree is 2.75, and the node degree mode is 1. The top 5 most central nodes
-	are 179171 (degree 7636), 423 (degree 6308), 31 (degree 6002), 73 (degree 4309) and
-	299 (degree 3988).
+	The undirected graph email-EuAll has 265214 nodes, of which 205 are singletons
+	(all have self-loops), and 365570 unweighted edges, of which 1089 are self-loops.
+	The graph is extremely sparse as it has a density of 0.00001 and has 15836
+	connected components, where the component with most nodes has 224832 nodes
+	and the component with the least nodes has a single node. The graph median
+	node degree is 1, the mean node degree is 2.75, and the node degree mode
+	is 1. The top 5 most central nodes are 179171 (degree 7636), 423 (degree
+	6308), 31 (degree 6002), 73 (degree 4309) and 299 (degree 3988).
 	
 
 

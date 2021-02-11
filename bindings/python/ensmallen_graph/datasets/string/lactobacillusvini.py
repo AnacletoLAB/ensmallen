@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:09.521184
 
-The undirected graph Lactobacillus vini has 2213 nodes and 160494 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06557 and
-has 9 connected components, where the component with most nodes has 2194 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 145.05, and the node degree mode is 4. The top 5 most central
-nodes are 1133569.AHYZ01000060_gene866 (degree 1036), 1133569.AHYZ01000100_gene1293
-(degree 858), 1133569.AHYZ01000026_gene997 (degree 787), 1133569.AHYZ01000144_gene1031
-(degree 772) and 1133569.AHYZ01000079_gene1838 (degree 719).
+The undirected graph Lactobacillus vini has 2213 nodes and 160494 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06557 and has 9 connected components, where the component with most
+nodes has 2194 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 145.05, and
+the node degree mode is 4. The top 5 most central nodes are 1133569.AHYZ01000060_gene866
+(degree 1036), 1133569.AHYZ01000100_gene1293 (degree 858), 1133569.AHYZ01000026_gene997
+(degree 787), 1133569.AHYZ01000144_gene1031 (degree 772) and 1133569.AHYZ01000079_gene1838
+(degree 719).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusVini(
 	
 	Datetime: 2021-02-02 22:56:09.521184
 	
-	The undirected graph Lactobacillus vini has 2213 nodes and 160494 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06557 and
-	has 9 connected components, where the component with most nodes has 2194 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 145.05, and the node degree mode is 4. The top 5 most central
-	nodes are 1133569.AHYZ01000060_gene866 (degree 1036), 1133569.AHYZ01000100_gene1293
-	(degree 858), 1133569.AHYZ01000026_gene997 (degree 787), 1133569.AHYZ01000144_gene1031
-	(degree 772) and 1133569.AHYZ01000079_gene1838 (degree 719).
+	The undirected graph Lactobacillus vini has 2213 nodes and 160494 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06557 and has 9 connected components, where the component with most
+	nodes has 2194 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 145.05, and
+	the node degree mode is 4. The top 5 most central nodes are 1133569.AHYZ01000060_gene866
+	(degree 1036), 1133569.AHYZ01000100_gene1293 (degree 858), 1133569.AHYZ01000026_gene997
+	(degree 787), 1133569.AHYZ01000144_gene1031 (degree 772) and 1133569.AHYZ01000079_gene1838
+	(degree 719).
 	
 
 

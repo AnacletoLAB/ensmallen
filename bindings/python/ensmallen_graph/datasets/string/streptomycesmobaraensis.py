@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:17.089752
 
-The undirected graph Streptomyces mobaraensis has 6350 nodes and 901377 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04472
-and has 31 connected components, where the component with most nodes has 6269 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 283.90, and the node degree mode is 2. The top 5
-most central nodes are 1223523.H340_30161 (degree 3006), 1223523.H340_23096 (degree
-2157), 1223523.H340_10200 (degree 2060), 1223523.H340_16676 (degree 1801) and 1223523.H340_13706
-(degree 1755).
+The undirected graph Streptomyces mobaraensis has 6350 nodes and 901377
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04472 and has 31 connected components, where the component
+with most nodes has 6269 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 283.90,
+and the node degree mode is 2. The top 5 most central nodes are 1223523.H340_30161
+(degree 3006), 1223523.H340_23096 (degree 2157), 1223523.H340_10200 (degree
+2060), 1223523.H340_16676 (degree 1801) and 1223523.H340_13706 (degree
+1755).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesMobaraensis(
 	
 	Datetime: 2021-02-02 23:24:17.089752
 	
-	The undirected graph Streptomyces mobaraensis has 6350 nodes and 901377 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04472
-	and has 31 connected components, where the component with most nodes has 6269 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 283.90, and the node degree mode is 2. The top 5
-	most central nodes are 1223523.H340_30161 (degree 3006), 1223523.H340_23096 (degree
-	2157), 1223523.H340_10200 (degree 2060), 1223523.H340_16676 (degree 1801) and 1223523.H340_13706
-	(degree 1755).
+	The undirected graph Streptomyces mobaraensis has 6350 nodes and 901377
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04472 and has 31 connected components, where the component
+	with most nodes has 6269 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 283.90,
+	and the node degree mode is 2. The top 5 most central nodes are 1223523.H340_30161
+	(degree 3006), 1223523.H340_23096 (degree 2157), 1223523.H340_10200 (degree
+	2060), 1223523.H340_16676 (degree 1801) and 1223523.H340_13706 (degree
+	1755).
 	
 
 

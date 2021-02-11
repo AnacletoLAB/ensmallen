@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:43.370830
 
-The undirected graph Virgibacillus halodenitrificans has 3831 nodes and 383891 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05233
-and has 13 connected components, where the component with most nodes has 3801 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 200.41, and the node degree mode is 3. The top 5
-most central nodes are 1196028.ALEF01000056_gene3180 (degree 1448), 1196028.ALEF01000049_gene291
+The undirected graph Virgibacillus halodenitrificans has 3831 nodes and
+383891 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05233 and has 13 connected components, where the
+component with most nodes has 3801 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+is 200.41, and the node degree mode is 3. The top 5 most central nodes
+are 1196028.ALEF01000056_gene3180 (degree 1448), 1196028.ALEF01000049_gene291
 (degree 1097), 1196028.ALEF01000048_gene211 (degree 1035), 1196028.ALEF01000081_gene3422
 (degree 992) and 1196028.ALEF01000045_gene50 (degree 964).
 
@@ -107,12 +108,13 @@ def VirgibacillusHalodenitrificans(
 	
 	Datetime: 2021-02-02 23:12:43.370830
 	
-	The undirected graph Virgibacillus halodenitrificans has 3831 nodes and 383891 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05233
-	and has 13 connected components, where the component with most nodes has 3801 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 200.41, and the node degree mode is 3. The top 5
-	most central nodes are 1196028.ALEF01000056_gene3180 (degree 1448), 1196028.ALEF01000049_gene291
+	The undirected graph Virgibacillus halodenitrificans has 3831 nodes and
+	383891 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05233 and has 13 connected components, where the
+	component with most nodes has 3801 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+	is 200.41, and the node degree mode is 3. The top 5 most central nodes
+	are 1196028.ALEF01000056_gene3180 (degree 1448), 1196028.ALEF01000049_gene291
 	(degree 1097), 1196028.ALEF01000048_gene211 (degree 1035), 1196028.ALEF01000081_gene3422
 	(degree 992) and 1196028.ALEF01000045_gene50 (degree 964).
 	

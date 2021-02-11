@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:41.884295
 
-The undirected graph Lactobacillus casei BL23 has 2973 nodes and 311967 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07061
-and has 9 connected components, where the component with most nodes has 2952 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 184, the mean node degree is 209.87, and the node degree mode is 5. The top 5
-most central nodes are 543734.LCABL_19280 (degree 1312), 543734.LCABL_08380 (degree
-1105), 543734.LCABL_02060 (degree 1053), 543734.LCABL_18370 (degree 1004) and 543734.LCABL_25190
-(degree 972).
+The undirected graph Lactobacillus casei BL23 has 2973 nodes and 311967
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07061 and has 9 connected components, where the component
+with most nodes has 2952 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 184, the mean node degree is 209.87,
+and the node degree mode is 5. The top 5 most central nodes are 543734.LCABL_19280
+(degree 1312), 543734.LCABL_08380 (degree 1105), 543734.LCABL_02060 (degree
+1053), 543734.LCABL_18370 (degree 1004) and 543734.LCABL_25190 (degree
+972).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusCaseiBl23(
 	
 	Datetime: 2021-02-02 21:07:41.884295
 	
-	The undirected graph Lactobacillus casei BL23 has 2973 nodes and 311967 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07061
-	and has 9 connected components, where the component with most nodes has 2952 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 184, the mean node degree is 209.87, and the node degree mode is 5. The top 5
-	most central nodes are 543734.LCABL_19280 (degree 1312), 543734.LCABL_08380 (degree
-	1105), 543734.LCABL_02060 (degree 1053), 543734.LCABL_18370 (degree 1004) and 543734.LCABL_25190
-	(degree 972).
+	The undirected graph Lactobacillus casei BL23 has 2973 nodes and 311967
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07061 and has 9 connected components, where the component
+	with most nodes has 2952 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 184, the mean node degree is 209.87,
+	and the node degree mode is 5. The top 5 most central nodes are 543734.LCABL_19280
+	(degree 1312), 543734.LCABL_08380 (degree 1105), 543734.LCABL_02060 (degree
+	1053), 543734.LCABL_18370 (degree 1004) and 543734.LCABL_25190 (degree
+	972).
 	
 
 

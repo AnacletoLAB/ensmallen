@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:22.123680
 
-The undirected graph Knoellia flava has 3342 nodes and 316069 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05661 and
-has 14 connected components, where the component with most nodes has 3313 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 189.15, and the node degree mode is 2. The top 5 most central
-nodes are 1385518.N798_14485 (degree 1118), 1385518.N798_05830 (degree 1018), 1385518.N798_00720
-(degree 1004), 1385518.N798_15355 (degree 995) and 1385518.N798_09470 (degree 980).
+The undirected graph Knoellia flava has 3342 nodes and 316069 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05661 and has 14 connected components, where the component with most
+nodes has 3313 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 189.15, and
+the node degree mode is 2. The top 5 most central nodes are 1385518.N798_14485
+(degree 1118), 1385518.N798_05830 (degree 1018), 1385518.N798_00720 (degree
+1004), 1385518.N798_15355 (degree 995) and 1385518.N798_09470 (degree 980).
 
 
 References
@@ -106,13 +107,14 @@ def KnoelliaFlava(
 	
 	Datetime: 2021-02-03 22:20:22.123680
 	
-	The undirected graph Knoellia flava has 3342 nodes and 316069 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05661 and
-	has 14 connected components, where the component with most nodes has 3313 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 189.15, and the node degree mode is 2. The top 5 most central
-	nodes are 1385518.N798_14485 (degree 1118), 1385518.N798_05830 (degree 1018), 1385518.N798_00720
-	(degree 1004), 1385518.N798_15355 (degree 995) and 1385518.N798_09470 (degree 980).
+	The undirected graph Knoellia flava has 3342 nodes and 316069 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05661 and has 14 connected components, where the component with most
+	nodes has 3313 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 189.15, and
+	the node degree mode is 2. The top 5 most central nodes are 1385518.N798_14485
+	(degree 1118), 1385518.N798_05830 (degree 1018), 1385518.N798_00720 (degree
+	1004), 1385518.N798_15355 (degree 995) and 1385518.N798_09470 (degree 980).
 	
 
 

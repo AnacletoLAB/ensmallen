@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:34.033129
 
-The undirected graph Sphingomonas melonis has 3703 nodes and 361534 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05275 and
-has 16 connected components, where the component with most nodes has 3664 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 195.27, and the node degree mode is 5. The top 5 most central
-nodes are 1090320.KB900605_gene1263 (degree 1370), 1090320.KB900605_gene2598 (degree
-1195), 1090320.KB900605_gene2075 (degree 1039), 1090320.KB900605_gene890 (degree
-1018) and 1090320.KB900605_gene835 (degree 958).
+The undirected graph Sphingomonas melonis has 3703 nodes and 361534 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05275 and has 16 connected components, where the component with most
+nodes has 3664 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 195.27, and
+the node degree mode is 5. The top 5 most central nodes are 1090320.KB900605_gene1263
+(degree 1370), 1090320.KB900605_gene2598 (degree 1195), 1090320.KB900605_gene2075
+(degree 1039), 1090320.KB900605_gene890 (degree 1018) and 1090320.KB900605_gene835
+(degree 958).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasMelonis(
 	
 	Datetime: 2021-02-02 22:22:34.033129
 	
-	The undirected graph Sphingomonas melonis has 3703 nodes and 361534 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05275 and
-	has 16 connected components, where the component with most nodes has 3664 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 195.27, and the node degree mode is 5. The top 5 most central
-	nodes are 1090320.KB900605_gene1263 (degree 1370), 1090320.KB900605_gene2598 (degree
-	1195), 1090320.KB900605_gene2075 (degree 1039), 1090320.KB900605_gene890 (degree
-	1018) and 1090320.KB900605_gene835 (degree 958).
+	The undirected graph Sphingomonas melonis has 3703 nodes and 361534 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05275 and has 16 connected components, where the component with most
+	nodes has 3664 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 195.27, and
+	the node degree mode is 5. The top 5 most central nodes are 1090320.KB900605_gene1263
+	(degree 1370), 1090320.KB900605_gene2598 (degree 1195), 1090320.KB900605_gene2075
+	(degree 1039), 1090320.KB900605_gene890 (degree 1018) and 1090320.KB900605_gene835
+	(degree 958).
 	
 
 

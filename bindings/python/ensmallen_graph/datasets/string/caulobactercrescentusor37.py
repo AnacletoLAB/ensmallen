@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:22:48.744250
 
-The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05307
-and has 10 connected components, where the component with most nodes has 4031 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 214.81, and the node degree mode is 2. The top 5
-most central nodes are 1292034.OR37_00454 (degree 1488), 1292034.OR37_03117 (degree
-1440), 1292034.OR37_02661 (degree 1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658
-(degree 1157).
+The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05307 and has 10 connected components, where the component
+with most nodes has 4031 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 214.81,
+and the node degree mode is 2. The top 5 most central nodes are 1292034.OR37_00454
+(degree 1488), 1292034.OR37_03117 (degree 1440), 1292034.OR37_02661 (degree
+1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658 (degree
+1157).
 
 
 References
@@ -107,14 +108,15 @@ def CaulobacterCrescentusOr37(
 	
 	Datetime: 2021-02-03 21:22:48.744250
 	
-	The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05307
-	and has 10 connected components, where the component with most nodes has 4031 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 214.81, and the node degree mode is 2. The top 5
-	most central nodes are 1292034.OR37_00454 (degree 1488), 1292034.OR37_03117 (degree
-	1440), 1292034.OR37_02661 (degree 1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658
-	(degree 1157).
+	The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05307 and has 10 connected components, where the component
+	with most nodes has 4031 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 214.81,
+	and the node degree mode is 2. The top 5 most central nodes are 1292034.OR37_00454
+	(degree 1488), 1292034.OR37_03117 (degree 1440), 1292034.OR37_02661 (degree
+	1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658 (degree
+	1157).
 	
 
 

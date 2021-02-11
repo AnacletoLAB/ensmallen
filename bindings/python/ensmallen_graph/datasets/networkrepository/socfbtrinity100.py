@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:25.456374
 
-The undirected graph socfb-Trinity100 has 2613 nodes and 111996 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03282 and
-is connected, as it has a single component. The graph median node degree is 76, the
-mean node degree is 85.72, and the node degree mode is 1. The top 5 most central
-nodes are 1868 (degree 404), 1117 (degree 366), 2475 (degree 358), 1787 (degree 341)
-and 1722 (degree 339).
+The undirected graph socfb-Trinity100 has 2613 nodes and 111996 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03282 and is connected, as it has a single component. The graph median
+node degree is 76, the mean node degree is 85.72, and the node degree mode
+is 1. The top 5 most central nodes are 1868 (degree 404), 1117 (degree
+366), 2475 (degree 358), 1787 (degree 341) and 1722 (degree 339).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbTrinity100(
 	
 	Datetime: 2021-02-06 11:50:25.456374
 	
-	The undirected graph socfb-Trinity100 has 2613 nodes and 111996 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03282 and
-	is connected, as it has a single component. The graph median node degree is 76, the
-	mean node degree is 85.72, and the node degree mode is 1. The top 5 most central
-	nodes are 1868 (degree 404), 1117 (degree 366), 2475 (degree 358), 1787 (degree 341)
-	and 1722 (degree 339).
+	The undirected graph socfb-Trinity100 has 2613 nodes and 111996 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03282 and is connected, as it has a single component. The graph median
+	node degree is 76, the mean node degree is 85.72, and the node degree mode
+	is 1. The top 5 most central nodes are 1868 (degree 404), 1117 (degree
+	366), 2475 (degree 358), 1787 (degree 341) and 1722 (degree 339).
 	
 
 

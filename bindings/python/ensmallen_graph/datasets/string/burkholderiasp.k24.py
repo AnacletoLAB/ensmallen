@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:37.431962
 
-The undirected graph Burkholderia sp. K24 has 6794 nodes and 966259 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04187 and
-has 41 connected components, where the component with most nodes has 6687 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 284.44, and the node degree mode is 1. The top 5 most central
-nodes are 1472716.KBK24_0125805 (degree 2447), 1472716.KBK24_0113420 (degree 2185),
-1472716.KBK24_0134785 (degree 2116), 1472716.KBK24_0123205 (degree 2108) and 1472716.KBK24_0107375
+The undirected graph Burkholderia sp. K24 has 6794 nodes and 966259 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04187 and has 41 connected components, where the component with most
+nodes has 6687 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 284.44, and
+the node degree mode is 1. The top 5 most central nodes are 1472716.KBK24_0125805
+(degree 2447), 1472716.KBK24_0113420 (degree 2185), 1472716.KBK24_0134785
+(degree 2116), 1472716.KBK24_0123205 (degree 2108) and 1472716.KBK24_0107375
 (degree 2007).
 
 
@@ -107,13 +108,14 @@ def BurkholderiaSp.K24(
 	
 	Datetime: 2021-02-05 17:18:37.431962
 	
-	The undirected graph Burkholderia sp. K24 has 6794 nodes and 966259 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04187 and
-	has 41 connected components, where the component with most nodes has 6687 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 284.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1472716.KBK24_0125805 (degree 2447), 1472716.KBK24_0113420 (degree 2185),
-	1472716.KBK24_0134785 (degree 2116), 1472716.KBK24_0123205 (degree 2108) and 1472716.KBK24_0107375
+	The undirected graph Burkholderia sp. K24 has 6794 nodes and 966259 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04187 and has 41 connected components, where the component with most
+	nodes has 6687 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 284.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1472716.KBK24_0125805
+	(degree 2447), 1472716.KBK24_0113420 (degree 2185), 1472716.KBK24_0134785
+	(degree 2116), 1472716.KBK24_0123205 (degree 2108) and 1472716.KBK24_0107375
 	(degree 2007).
 	
 

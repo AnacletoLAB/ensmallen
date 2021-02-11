@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:40.622844
 
-The undirected graph Sphaerochaeta globosa has 2999 nodes and 258969 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05761 and
-has 7 connected components, where the component with most nodes has 2986 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 172.70, and the node degree mode is 7. The top 5 most central
-nodes are 158189.SpiBuddy_0815 (degree 1248), 158189.SpiBuddy_3009 (degree 1185),
-158189.SpiBuddy_0064 (degree 1128), 158189.SpiBuddy_1467 (degree 988) and 158189.SpiBuddy_1203
+The undirected graph Sphaerochaeta globosa has 2999 nodes and 258969 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05761 and has 7 connected components, where the component with most
+nodes has 2986 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 172.70, and
+the node degree mode is 7. The top 5 most central nodes are 158189.SpiBuddy_0815
+(degree 1248), 158189.SpiBuddy_3009 (degree 1185), 158189.SpiBuddy_0064
+(degree 1128), 158189.SpiBuddy_1467 (degree 988) and 158189.SpiBuddy_1203
 (degree 987).
 
 
@@ -107,13 +108,14 @@ def SphaerochaetaGlobosa(
 	
 	Datetime: 2021-02-02 19:52:40.622844
 	
-	The undirected graph Sphaerochaeta globosa has 2999 nodes and 258969 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05761 and
-	has 7 connected components, where the component with most nodes has 2986 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 172.70, and the node degree mode is 7. The top 5 most central
-	nodes are 158189.SpiBuddy_0815 (degree 1248), 158189.SpiBuddy_3009 (degree 1185),
-	158189.SpiBuddy_0064 (degree 1128), 158189.SpiBuddy_1467 (degree 988) and 158189.SpiBuddy_1203
+	The undirected graph Sphaerochaeta globosa has 2999 nodes and 258969 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05761 and has 7 connected components, where the component with most
+	nodes has 2986 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 172.70, and
+	the node degree mode is 7. The top 5 most central nodes are 158189.SpiBuddy_0815
+	(degree 1248), 158189.SpiBuddy_3009 (degree 1185), 158189.SpiBuddy_0064
+	(degree 1128), 158189.SpiBuddy_1467 (degree 988) and 158189.SpiBuddy_1203
 	(degree 987).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:13.264798
 
-The undirected graph Ehrlichia ruminantium has 806 nodes and 46443 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14316
-and has 11 connected components, where the component with most nodes has 782 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 115.24, and the node degree mode is 1. The top 5
-most central nodes are 254945.Erum3180 (degree 476), 254945.Erum0490 (degree 438),
-254945.Erum7500 (degree 401), 254945.Erum5830 (degree 389) and 254945.Erum6420 (degree
-376).
+The undirected graph Ehrlichia ruminantium has 806 nodes and 46443 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14316 and has 11 connected components, where the component
+with most nodes has 782 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 115.24,
+and the node degree mode is 1. The top 5 most central nodes are 254945.Erum3180
+(degree 476), 254945.Erum0490 (degree 438), 254945.Erum7500 (degree 401),
+254945.Erum5830 (degree 389) and 254945.Erum6420 (degree 376).
 
 
 References
@@ -107,14 +107,14 @@ def EhrlichiaRuminantium(
 	
 	Datetime: 2021-02-02 20:12:13.264798
 	
-	The undirected graph Ehrlichia ruminantium has 806 nodes and 46443 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14316
-	and has 11 connected components, where the component with most nodes has 782 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 115.24, and the node degree mode is 1. The top 5
-	most central nodes are 254945.Erum3180 (degree 476), 254945.Erum0490 (degree 438),
-	254945.Erum7500 (degree 401), 254945.Erum5830 (degree 389) and 254945.Erum6420 (degree
-	376).
+	The undirected graph Ehrlichia ruminantium has 806 nodes and 46443 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14316 and has 11 connected components, where the component
+	with most nodes has 782 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 115.24,
+	and the node degree mode is 1. The top 5 most central nodes are 254945.Erum3180
+	(degree 476), 254945.Erum0490 (degree 438), 254945.Erum7500 (degree 401),
+	254945.Erum5830 (degree 389) and 254945.Erum6420 (degree 376).
 	
 
 

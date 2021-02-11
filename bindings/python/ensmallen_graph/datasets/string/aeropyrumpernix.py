@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:17.528065
 
-The undirected graph Aeropyrum pernix has 1686 nodes and 148496 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10454
-and has 7 connected components, where the component with most nodes has 1670 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 176.15, and the node degree mode is 6. The top 5
-most central nodes are 272557.APE_0171.1 (degree 696), 272557.APE_1538.1 (degree
-636), 272557.APE_0768.1 (degree 616), 272557.APE_2072.1 (degree 574) and 272557.APE_0907.1
-(degree 569).
+The undirected graph Aeropyrum pernix has 1686 nodes and 148496 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10454 and has 7 connected components, where the component
+with most nodes has 1670 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 176.15,
+and the node degree mode is 6. The top 5 most central nodes are 272557.APE_0171.1
+(degree 696), 272557.APE_1538.1 (degree 636), 272557.APE_0768.1 (degree
+616), 272557.APE_2072.1 (degree 574) and 272557.APE_0907.1 (degree 569).
 
 
 References
@@ -107,14 +107,14 @@ def AeropyrumPernix(
 	
 	Datetime: 2021-02-02 20:16:17.528065
 	
-	The undirected graph Aeropyrum pernix has 1686 nodes and 148496 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10454
-	and has 7 connected components, where the component with most nodes has 1670 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 176.15, and the node degree mode is 6. The top 5
-	most central nodes are 272557.APE_0171.1 (degree 696), 272557.APE_1538.1 (degree
-	636), 272557.APE_0768.1 (degree 616), 272557.APE_2072.1 (degree 574) and 272557.APE_0907.1
-	(degree 569).
+	The undirected graph Aeropyrum pernix has 1686 nodes and 148496 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10454 and has 7 connected components, where the component
+	with most nodes has 1670 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 176.15,
+	and the node degree mode is 6. The top 5 most central nodes are 272557.APE_0171.1
+	(degree 696), 272557.APE_1538.1 (degree 636), 272557.APE_0768.1 (degree
+	616), 272557.APE_2072.1 (degree 574) and 272557.APE_0907.1 (degree 569).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:30.739465
 
-The undirected graph Jonesia quinghaiensis has 2631 nodes and 197576 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05711 and
-has 18 connected components, where the component with most nodes has 2588 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 150.19, and the node degree mode is 3. The top 5 most central
-nodes are 1122130.AUHN01000008_gene1466 (degree 933), 1122130.AUHN01000009_gene474
-(degree 861), 1122130.AUHN01000005_gene2313 (degree 843), 1122130.AUHN01000009_gene463
-(degree 814) and 1122130.AUHN01000012_gene2645 (degree 764).
+The undirected graph Jonesia quinghaiensis has 2631 nodes and 197576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05711 and has 18 connected components, where the component with most
+nodes has 2588 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 150.19, and
+the node degree mode is 3. The top 5 most central nodes are 1122130.AUHN01000008_gene1466
+(degree 933), 1122130.AUHN01000009_gene474 (degree 861), 1122130.AUHN01000005_gene2313
+(degree 843), 1122130.AUHN01000009_gene463 (degree 814) and 1122130.AUHN01000012_gene2645
+(degree 764).
 
 
 References
@@ -107,14 +108,15 @@ def JonesiaQuinghaiensis(
 	
 	Datetime: 2021-02-02 22:40:30.739465
 	
-	The undirected graph Jonesia quinghaiensis has 2631 nodes and 197576 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05711 and
-	has 18 connected components, where the component with most nodes has 2588 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 150.19, and the node degree mode is 3. The top 5 most central
-	nodes are 1122130.AUHN01000008_gene1466 (degree 933), 1122130.AUHN01000009_gene474
-	(degree 861), 1122130.AUHN01000005_gene2313 (degree 843), 1122130.AUHN01000009_gene463
-	(degree 814) and 1122130.AUHN01000012_gene2645 (degree 764).
+	The undirected graph Jonesia quinghaiensis has 2631 nodes and 197576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05711 and has 18 connected components, where the component with most
+	nodes has 2588 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 150.19, and
+	the node degree mode is 3. The top 5 most central nodes are 1122130.AUHN01000008_gene1466
+	(degree 933), 1122130.AUHN01000009_gene474 (degree 861), 1122130.AUHN01000005_gene2313
+	(degree 843), 1122130.AUHN01000009_gene463 (degree 814) and 1122130.AUHN01000012_gene2645
+	(degree 764).
 	
 
 

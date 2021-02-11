@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:06.477251
 
-The undirected graph Brevundimonas diminuta 4704 has 3467 nodes and 283187 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04713
-and has 16 connected components, where the component with most nodes has 3431 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 163.36, and the node degree mode is 3. The top 5
-most central nodes are 1035191.HMPREF0185_00073 (degree 1199), 1035191.HMPREF0185_02430
-(degree 1000), 1035191.HMPREF0185_00328 (degree 943), 1035191.HMPREF0185_01651 (degree
-896) and 1035191.HMPREF0185_02541 (degree 885).
+The undirected graph Brevundimonas diminuta 4704 has 3467 nodes and 283187
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04713 and has 16 connected components, where the component
+with most nodes has 3431 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 163.36,
+and the node degree mode is 3. The top 5 most central nodes are 1035191.HMPREF0185_00073
+(degree 1199), 1035191.HMPREF0185_02430 (degree 1000), 1035191.HMPREF0185_00328
+(degree 943), 1035191.HMPREF0185_01651 (degree 896) and 1035191.HMPREF0185_02541
+(degree 885).
 
 
 References
@@ -107,14 +108,15 @@ def BrevundimonasDiminuta4704(
 	
 	Datetime: 2021-02-02 22:12:06.477251
 	
-	The undirected graph Brevundimonas diminuta 4704 has 3467 nodes and 283187 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04713
-	and has 16 connected components, where the component with most nodes has 3431 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 163.36, and the node degree mode is 3. The top 5
-	most central nodes are 1035191.HMPREF0185_00073 (degree 1199), 1035191.HMPREF0185_02430
-	(degree 1000), 1035191.HMPREF0185_00328 (degree 943), 1035191.HMPREF0185_01651 (degree
-	896) and 1035191.HMPREF0185_02541 (degree 885).
+	The undirected graph Brevundimonas diminuta 4704 has 3467 nodes and 283187
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04713 and has 16 connected components, where the component
+	with most nodes has 3431 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 163.36,
+	and the node degree mode is 3. The top 5 most central nodes are 1035191.HMPREF0185_00073
+	(degree 1199), 1035191.HMPREF0185_02430 (degree 1000), 1035191.HMPREF0185_00328
+	(degree 943), 1035191.HMPREF0185_01651 (degree 896) and 1035191.HMPREF0185_02541
+	(degree 885).
 	
 
 

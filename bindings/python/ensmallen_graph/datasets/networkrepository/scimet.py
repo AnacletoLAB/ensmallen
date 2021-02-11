@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:19.087125
 
-The undirected graph SciMet has 2729 nodes and 10400 weighted edges, of which 1 are
-self-loops. The graph is sparse as it has a density of 0.00279 and has 21 connected
-components, where the component with most nodes has 2678 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 5, the mean node
-degree is 7.62, and the node degree mode is 1. The top 5 most central nodes are 927
-(degree 164), 1032 (degree 110), 432 (degree 105), 252 (degree 92) and 542 (degree
-76).
+The undirected graph SciMet has 2729 nodes and 10400 weighted edges, of
+which 1 are self-loops. The graph is sparse as it has a density of 0.00279
+and has 21 connected components, where the component with most nodes has
+2678 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 5, the mean node degree is 7.62, and the node degree
+mode is 1. The top 5 most central nodes are 927 (degree 164), 1032 (degree
+110), 432 (degree 105), 252 (degree 92) and 542 (degree 76).
 
 
 References
@@ -103,13 +103,13 @@ def Scimet(
 	
 	Datetime: 2021-02-06 10:14:19.087125
 	
-	The undirected graph SciMet has 2729 nodes and 10400 weighted edges, of which 1 are
-	self-loops. The graph is sparse as it has a density of 0.00279 and has 21 connected
-	components, where the component with most nodes has 2678 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 5, the mean node
-	degree is 7.62, and the node degree mode is 1. The top 5 most central nodes are 927
-	(degree 164), 1032 (degree 110), 432 (degree 105), 252 (degree 92) and 542 (degree
-	76).
+	The undirected graph SciMet has 2729 nodes and 10400 weighted edges, of
+	which 1 are self-loops. The graph is sparse as it has a density of 0.00279
+	and has 21 connected components, where the component with most nodes has
+	2678 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 5, the mean node degree is 7.62, and the node degree
+	mode is 1. The top 5 most central nodes are 927 (degree 164), 1032 (degree
+	110), 432 (degree 105), 252 (degree 92) and 542 (degree 76).
 	
 
 

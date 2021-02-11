@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:13.854735
 
-The undirected graph Larimichthys crocea has 21247 nodes and 6182402 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02739 and
-has 6 connected components, where the component with most nodes has 21237 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 408,
-the mean node degree is 581.96, and the node degree mode is 593. The top 5 most central
-nodes are 215358.XP_010745182.1 (degree 5381), 215358.XP_010733783.1 (degree 4817),
-215358.XP_010749683.1 (degree 4803), 215358.XP_010742609.1 (degree 4607) and 215358.XP_010741722.1
+The undirected graph Larimichthys crocea has 21247 nodes and 6182402 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02739 and has 6 connected components, where the component with most
+nodes has 21237 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 408, the mean node degree is 581.96, and
+the node degree mode is 593. The top 5 most central nodes are 215358.XP_010745182.1
+(degree 5381), 215358.XP_010733783.1 (degree 4817), 215358.XP_010749683.1
+(degree 4803), 215358.XP_010742609.1 (degree 4607) and 215358.XP_010741722.1
 (degree 4555).
 
 
@@ -107,13 +108,14 @@ def LarimichthysCrocea(
 	
 	Datetime: 2021-02-02 20:02:13.854735
 	
-	The undirected graph Larimichthys crocea has 21247 nodes and 6182402 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02739 and
-	has 6 connected components, where the component with most nodes has 21237 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 408,
-	the mean node degree is 581.96, and the node degree mode is 593. The top 5 most central
-	nodes are 215358.XP_010745182.1 (degree 5381), 215358.XP_010733783.1 (degree 4817),
-	215358.XP_010749683.1 (degree 4803), 215358.XP_010742609.1 (degree 4607) and 215358.XP_010741722.1
+	The undirected graph Larimichthys crocea has 21247 nodes and 6182402 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02739 and has 6 connected components, where the component with most
+	nodes has 21237 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 408, the mean node degree is 581.96, and
+	the node degree mode is 593. The top 5 most central nodes are 215358.XP_010745182.1
+	(degree 5381), 215358.XP_010733783.1 (degree 4817), 215358.XP_010749683.1
+	(degree 4803), 215358.XP_010742609.1 (degree 4607) and 215358.XP_010741722.1
 	(degree 4555).
 	
 

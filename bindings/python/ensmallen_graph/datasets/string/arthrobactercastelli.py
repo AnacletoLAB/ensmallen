@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:07.229852
 
-The undirected graph Arthrobacter castelli has 4208 nodes and 387465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04377 and
-has 22 connected components, where the component with most nodes has 4157 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 184.16, and the node degree mode is 3. The top 5 most central
-nodes are 1121019.AUMN01000003_gene1136 (degree 1226), 1121019.AUMN01000002_gene370
-(degree 1168), 1121019.AUMN01000002_gene385 (degree 1129), 1121019.AUMN01000015_gene3741
-(degree 1108) and 1121019.AUMN01000008_gene3189 (degree 1102).
+The undirected graph Arthrobacter castelli has 4208 nodes and 387465 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04377 and has 22 connected components, where the component with most
+nodes has 4157 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 184.16, and
+the node degree mode is 3. The top 5 most central nodes are 1121019.AUMN01000003_gene1136
+(degree 1226), 1121019.AUMN01000002_gene370 (degree 1168), 1121019.AUMN01000002_gene385
+(degree 1129), 1121019.AUMN01000015_gene3741 (degree 1108) and 1121019.AUMN01000008_gene3189
+(degree 1102).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterCastelli(
 	
 	Datetime: 2021-02-02 22:32:07.229852
 	
-	The undirected graph Arthrobacter castelli has 4208 nodes and 387465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04377 and
-	has 22 connected components, where the component with most nodes has 4157 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 184.16, and the node degree mode is 3. The top 5 most central
-	nodes are 1121019.AUMN01000003_gene1136 (degree 1226), 1121019.AUMN01000002_gene370
-	(degree 1168), 1121019.AUMN01000002_gene385 (degree 1129), 1121019.AUMN01000015_gene3741
-	(degree 1108) and 1121019.AUMN01000008_gene3189 (degree 1102).
+	The undirected graph Arthrobacter castelli has 4208 nodes and 387465 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04377 and has 22 connected components, where the component with most
+	nodes has 4157 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 184.16, and
+	the node degree mode is 3. The top 5 most central nodes are 1121019.AUMN01000003_gene1136
+	(degree 1226), 1121019.AUMN01000002_gene370 (degree 1168), 1121019.AUMN01000002_gene385
+	(degree 1129), 1121019.AUMN01000015_gene3741 (degree 1108) and 1121019.AUMN01000008_gene3189
+	(degree 1102).
 	
 
 

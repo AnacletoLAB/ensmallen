@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:22.791604
 
-The undirected graph Porphyromonas canoris has 1676 nodes and 95491 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06803 and
-has 12 connected components, where the component with most nodes has 1652 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 113.95, and the node degree mode is 1. The top 5 most central
-nodes are 36875.HQ29_05370 (degree 735), 36875.HQ29_04480 (degree 657), 36875.HQ29_03295
-(degree 590), 36875.HQ29_03465 (degree 572) and 36875.HQ29_07625 (degree 496).
+The undirected graph Porphyromonas canoris has 1676 nodes and 95491 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06803 and has 12 connected components, where the component with most
+nodes has 1652 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 113.95, and
+the node degree mode is 1. The top 5 most central nodes are 36875.HQ29_05370
+(degree 735), 36875.HQ29_04480 (degree 657), 36875.HQ29_03295 (degree 590),
+36875.HQ29_03465 (degree 572) and 36875.HQ29_07625 (degree 496).
 
 
 References
@@ -106,13 +107,14 @@ def PorphyromonasCanoris(
 	
 	Datetime: 2021-02-02 18:06:22.791604
 	
-	The undirected graph Porphyromonas canoris has 1676 nodes and 95491 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06803 and
-	has 12 connected components, where the component with most nodes has 1652 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 113.95, and the node degree mode is 1. The top 5 most central
-	nodes are 36875.HQ29_05370 (degree 735), 36875.HQ29_04480 (degree 657), 36875.HQ29_03295
-	(degree 590), 36875.HQ29_03465 (degree 572) and 36875.HQ29_07625 (degree 496).
+	The undirected graph Porphyromonas canoris has 1676 nodes and 95491 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06803 and has 12 connected components, where the component with most
+	nodes has 1652 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 113.95, and
+	the node degree mode is 1. The top 5 most central nodes are 36875.HQ29_05370
+	(degree 735), 36875.HQ29_04480 (degree 657), 36875.HQ29_03295 (degree 590),
+	36875.HQ29_03465 (degree 572) and 36875.HQ29_07625 (degree 496).
 	
 
 

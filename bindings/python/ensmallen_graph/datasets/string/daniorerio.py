@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:25:19.852102
 
-The undirected graph Danio rerio has 24681 nodes and 7058228 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02317 and has 2
-connected components, where the component with most nodes has 24679 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 391,
-the mean node degree is 571.96, and the node degree mode is 163. The top 5 most central
-nodes are 7955.ENSDARP00000106580 (degree 6303), 7955.ENSDARP00000094521 (degree
-6108), 7955.ENSDARP00000063799 (degree 5991), 7955.ENSDARP00000038550 (degree 5819)
-and 7955.ENSDARP00000084288 (degree 5529).
+The undirected graph Danio rerio has 24681 nodes and 7058228 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02317 and has 2 connected components, where the component with most nodes
+has 24679 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 391, the mean node degree is 571.96, and the
+node degree mode is 163. The top 5 most central nodes are 7955.ENSDARP00000106580
+(degree 6303), 7955.ENSDARP00000094521 (degree 6108), 7955.ENSDARP00000063799
+(degree 5991), 7955.ENSDARP00000038550 (degree 5819) and 7955.ENSDARP00000084288
+(degree 5529).
 
 
 References
@@ -107,14 +108,15 @@ def DanioRerio(
 	
 	Datetime: 2021-02-02 17:25:19.852102
 	
-	The undirected graph Danio rerio has 24681 nodes and 7058228 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02317 and has 2
-	connected components, where the component with most nodes has 24679 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 391,
-	the mean node degree is 571.96, and the node degree mode is 163. The top 5 most central
-	nodes are 7955.ENSDARP00000106580 (degree 6303), 7955.ENSDARP00000094521 (degree
-	6108), 7955.ENSDARP00000063799 (degree 5991), 7955.ENSDARP00000038550 (degree 5819)
-	and 7955.ENSDARP00000084288 (degree 5529).
+	The undirected graph Danio rerio has 24681 nodes and 7058228 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02317 and has 2 connected components, where the component with most nodes
+	has 24679 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 391, the mean node degree is 571.96, and the
+	node degree mode is 163. The top 5 most central nodes are 7955.ENSDARP00000106580
+	(degree 6303), 7955.ENSDARP00000094521 (degree 6108), 7955.ENSDARP00000063799
+	(degree 5991), 7955.ENSDARP00000038550 (degree 5819) and 7955.ENSDARP00000084288
+	(degree 5529).
 	
 
 

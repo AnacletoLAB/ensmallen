@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:18.255591
 
-The undirected graph Citromicrobium sp. JLT1363 has 2861 nodes and 235660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05760
-and has 7 connected components, where the component with most nodes has 2846 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 164.74, and the node degree mode is 4. The top 5
-most central nodes are 517722.AEUE01000002_gene2276 (degree 1152), 517722.AEUE01000004_gene1197
-(degree 997), 517722.AEUE01000001_gene2631 (degree 955), 517722.AEUE01000006_gene1867
-(degree 870) and 517722.AEUE01000002_gene2240 (degree 860).
+The undirected graph Citromicrobium sp. JLT1363 has 2861 nodes and 235660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05760 and has 7 connected components, where the component
+with most nodes has 2846 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 164.74,
+and the node degree mode is 4. The top 5 most central nodes are 517722.AEUE01000002_gene2276
+(degree 1152), 517722.AEUE01000004_gene1197 (degree 997), 517722.AEUE01000001_gene2631
+(degree 955), 517722.AEUE01000006_gene1867 (degree 870) and 517722.AEUE01000002_gene2240
+(degree 860).
 
 
 References
@@ -107,14 +108,15 @@ def CitromicrobiumSp.Jlt1363(
 	
 	Datetime: 2021-02-02 21:03:18.255591
 	
-	The undirected graph Citromicrobium sp. JLT1363 has 2861 nodes and 235660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05760
-	and has 7 connected components, where the component with most nodes has 2846 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 164.74, and the node degree mode is 4. The top 5
-	most central nodes are 517722.AEUE01000002_gene2276 (degree 1152), 517722.AEUE01000004_gene1197
-	(degree 997), 517722.AEUE01000001_gene2631 (degree 955), 517722.AEUE01000006_gene1867
-	(degree 870) and 517722.AEUE01000002_gene2240 (degree 860).
+	The undirected graph Citromicrobium sp. JLT1363 has 2861 nodes and 235660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05760 and has 7 connected components, where the component
+	with most nodes has 2846 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 164.74,
+	and the node degree mode is 4. The top 5 most central nodes are 517722.AEUE01000002_gene2276
+	(degree 1152), 517722.AEUE01000004_gene1197 (degree 997), 517722.AEUE01000001_gene2631
+	(degree 955), 517722.AEUE01000006_gene1867 (degree 870) and 517722.AEUE01000002_gene2240
+	(degree 860).
 	
 
 

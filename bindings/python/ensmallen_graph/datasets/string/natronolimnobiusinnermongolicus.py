@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:16.420275
 
-The undirected graph Natronolimnobius innermongolicus has 4306 nodes and 401530 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04332
-and has 36 connected components, where the component with most nodes has 4215 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 186.50, and the node degree mode is 2. The top 5
-most central nodes are 1227499.C493_07609 (degree 1336), 1227499.C493_10338 (degree
-1256), 1227499.C493_07559 (degree 1159), 1227499.C493_10548 (degree 1042) and 1227499.C493_05545
-(degree 1034).
+The undirected graph Natronolimnobius innermongolicus has 4306 nodes and
+401530 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04332 and has 36 connected components, where the
+component with most nodes has 4215 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+is 186.50, and the node degree mode is 2. The top 5 most central nodes
+are 1227499.C493_07609 (degree 1336), 1227499.C493_10338 (degree 1256),
+1227499.C493_07559 (degree 1159), 1227499.C493_10548 (degree 1042) and
+1227499.C493_05545 (degree 1034).
 
 
 References
@@ -107,14 +108,15 @@ def NatronolimnobiusInnermongolicus(
 	
 	Datetime: 2021-02-02 23:26:16.420275
 	
-	The undirected graph Natronolimnobius innermongolicus has 4306 nodes and 401530 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04332
-	and has 36 connected components, where the component with most nodes has 4215 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 186.50, and the node degree mode is 2. The top 5
-	most central nodes are 1227499.C493_07609 (degree 1336), 1227499.C493_10338 (degree
-	1256), 1227499.C493_07559 (degree 1159), 1227499.C493_10548 (degree 1042) and 1227499.C493_05545
-	(degree 1034).
+	The undirected graph Natronolimnobius innermongolicus has 4306 nodes and
+	401530 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04332 and has 36 connected components, where the
+	component with most nodes has 4215 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+	is 186.50, and the node degree mode is 2. The top 5 most central nodes
+	are 1227499.C493_07609 (degree 1336), 1227499.C493_10338 (degree 1256),
+	1227499.C493_07559 (degree 1159), 1227499.C493_10548 (degree 1042) and
+	1227499.C493_05545 (degree 1034).
 	
 
 

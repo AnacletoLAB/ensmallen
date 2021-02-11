@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:18.097206
 
-The undirected graph Vibrio azureus has 4092 nodes and 465207 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05558 and
-has 54 connected components, where the component with most nodes has 3951 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 227.37, and the node degree mode is 1. The top 5 most central
-nodes are 1219077.VAZ01S_065_00320 (degree 1608), 1219077.VAZ01S_038_00460 (degree
-1521), 1219077.VAZ01S_044_00110 (degree 1452), 1219077.VAZ01S_054_00330 (degree 1452)
-and 1219077.VAZ01S_053_00400 (degree 1376).
+The undirected graph Vibrio azureus has 4092 nodes and 465207 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05558 and has 54 connected components, where the component with most
+nodes has 3951 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 227.37, and
+the node degree mode is 1. The top 5 most central nodes are 1219077.VAZ01S_065_00320
+(degree 1608), 1219077.VAZ01S_038_00460 (degree 1521), 1219077.VAZ01S_044_00110
+(degree 1452), 1219077.VAZ01S_054_00330 (degree 1452) and 1219077.VAZ01S_053_00400
+(degree 1376).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioAzureus(
 	
 	Datetime: 2021-02-02 23:23:18.097206
 	
-	The undirected graph Vibrio azureus has 4092 nodes and 465207 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05558 and
-	has 54 connected components, where the component with most nodes has 3951 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 227.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1219077.VAZ01S_065_00320 (degree 1608), 1219077.VAZ01S_038_00460 (degree
-	1521), 1219077.VAZ01S_044_00110 (degree 1452), 1219077.VAZ01S_054_00330 (degree 1452)
-	and 1219077.VAZ01S_053_00400 (degree 1376).
+	The undirected graph Vibrio azureus has 4092 nodes and 465207 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05558 and has 54 connected components, where the component with most
+	nodes has 3951 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 227.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1219077.VAZ01S_065_00320
+	(degree 1608), 1219077.VAZ01S_038_00460 (degree 1521), 1219077.VAZ01S_044_00110
+	(degree 1452), 1219077.VAZ01S_054_00330 (degree 1452) and 1219077.VAZ01S_053_00400
+	(degree 1376).
 	
 
 

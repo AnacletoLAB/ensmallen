@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:01.765956
 
-The undirected graph Pseudomonas sp. UW4 has 5391 nodes and 516058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03552 and
-has 10 connected components, where the component with most nodes has 5370 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 191.45, and the node degree mode is 1. The top 5 most central
-nodes are 1207075.PputUW4_00070 (degree 1877), 1207075.PputUW4_02185 (degree 1854),
-1207075.PputUW4_00352 (degree 1547), 1207075.PputUW4_00676 (degree 1529) and 1207075.PputUW4_04112
+The undirected graph Pseudomonas sp. UW4 has 5391 nodes and 516058 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03552 and has 10 connected components, where the component with most
+nodes has 5370 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 191.45, and
+the node degree mode is 1. The top 5 most central nodes are 1207075.PputUW4_00070
+(degree 1877), 1207075.PputUW4_02185 (degree 1854), 1207075.PputUW4_00352
+(degree 1547), 1207075.PputUW4_00676 (degree 1529) and 1207075.PputUW4_04112
 (degree 1428).
 
 
@@ -107,13 +108,14 @@ def PseudomonasSp.Uw4(
 	
 	Datetime: 2021-02-02 23:18:01.765956
 	
-	The undirected graph Pseudomonas sp. UW4 has 5391 nodes and 516058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03552 and
-	has 10 connected components, where the component with most nodes has 5370 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 191.45, and the node degree mode is 1. The top 5 most central
-	nodes are 1207075.PputUW4_00070 (degree 1877), 1207075.PputUW4_02185 (degree 1854),
-	1207075.PputUW4_00352 (degree 1547), 1207075.PputUW4_00676 (degree 1529) and 1207075.PputUW4_04112
+	The undirected graph Pseudomonas sp. UW4 has 5391 nodes and 516058 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03552 and has 10 connected components, where the component with most
+	nodes has 5370 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 191.45, and
+	the node degree mode is 1. The top 5 most central nodes are 1207075.PputUW4_00070
+	(degree 1877), 1207075.PputUW4_02185 (degree 1854), 1207075.PputUW4_00352
+	(degree 1547), 1207075.PputUW4_00676 (degree 1529) and 1207075.PputUW4_04112
 	(degree 1428).
 	
 

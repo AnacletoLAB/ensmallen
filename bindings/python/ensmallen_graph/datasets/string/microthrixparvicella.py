@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:09.793849
 
-The undirected graph Microthrix parvicella has 4105 nodes and 377898 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04486 and
-has 34 connected components, where the component with most nodes has 4017 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 184.12, and the node degree mode is 4. The top 5 most central
-nodes are 1229780.BN381_80407 (degree 1370), 1229780.BN381_10302 (degree 1182), 1229780.BN381_100099
-(degree 1129), 1229780.BN381_150056 (degree 1079) and 1229780.BN381_100025 (degree
-1007).
+The undirected graph Microthrix parvicella has 4105 nodes and 377898 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04486 and has 34 connected components, where the component with most
+nodes has 4017 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 168, the mean node degree is 184.12, and
+the node degree mode is 4. The top 5 most central nodes are 1229780.BN381_80407
+(degree 1370), 1229780.BN381_10302 (degree 1182), 1229780.BN381_100099
+(degree 1129), 1229780.BN381_150056 (degree 1079) and 1229780.BN381_100025
+(degree 1007).
 
 
 References
@@ -107,14 +108,15 @@ def MicrothrixParvicella(
 	
 	Datetime: 2021-02-02 23:27:09.793849
 	
-	The undirected graph Microthrix parvicella has 4105 nodes and 377898 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04486 and
-	has 34 connected components, where the component with most nodes has 4017 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 184.12, and the node degree mode is 4. The top 5 most central
-	nodes are 1229780.BN381_80407 (degree 1370), 1229780.BN381_10302 (degree 1182), 1229780.BN381_100099
-	(degree 1129), 1229780.BN381_150056 (degree 1079) and 1229780.BN381_100025 (degree
-	1007).
+	The undirected graph Microthrix parvicella has 4105 nodes and 377898 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04486 and has 34 connected components, where the component with most
+	nodes has 4017 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 168, the mean node degree is 184.12, and
+	the node degree mode is 4. The top 5 most central nodes are 1229780.BN381_80407
+	(degree 1370), 1229780.BN381_10302 (degree 1182), 1229780.BN381_100099
+	(degree 1129), 1229780.BN381_150056 (degree 1079) and 1229780.BN381_100025
+	(degree 1007).
 	
 
 

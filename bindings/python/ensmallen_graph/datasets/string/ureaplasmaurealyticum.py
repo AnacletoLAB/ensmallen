@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:40.326370
 
-The undirected graph Ureaplasma urealyticum has 638 nodes and 26126 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12857
-and has 6 connected components, where the component with most nodes has 628 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 60, the mean node degree is 81.90, and the node degree mode is 8. The top 5 most
-central nodes are 565575.UUR10_0501 (degree 322), 565575.UUR10_0346 (degree 257),
-565575.UUR10_0331 (degree 242), 565575.UUR10_0090 (degree 237) and 565575.UUR10_0671
-(degree 231).
+The undirected graph Ureaplasma urealyticum has 638 nodes and 26126 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12857 and has 6 connected components, where the component
+with most nodes has 628 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 60, the mean node degree is 81.90,
+and the node degree mode is 8. The top 5 most central nodes are 565575.UUR10_0501
+(degree 322), 565575.UUR10_0346 (degree 257), 565575.UUR10_0331 (degree
+242), 565575.UUR10_0090 (degree 237) and 565575.UUR10_0671 (degree 231).
 
 
 References
@@ -107,14 +107,14 @@ def UreaplasmaUrealyticum(
 	
 	Datetime: 2021-02-02 21:12:40.326370
 	
-	The undirected graph Ureaplasma urealyticum has 638 nodes and 26126 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12857
-	and has 6 connected components, where the component with most nodes has 628 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 60, the mean node degree is 81.90, and the node degree mode is 8. The top 5 most
-	central nodes are 565575.UUR10_0501 (degree 322), 565575.UUR10_0346 (degree 257),
-	565575.UUR10_0331 (degree 242), 565575.UUR10_0090 (degree 237) and 565575.UUR10_0671
-	(degree 231).
+	The undirected graph Ureaplasma urealyticum has 638 nodes and 26126 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12857 and has 6 connected components, where the component
+	with most nodes has 628 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 60, the mean node degree is 81.90,
+	and the node degree mode is 8. The top 5 most central nodes are 565575.UUR10_0501
+	(degree 322), 565575.UUR10_0346 (degree 257), 565575.UUR10_0331 (degree
+	242), 565575.UUR10_0090 (degree 237) and 565575.UUR10_0671 (degree 231).
 	
 
 

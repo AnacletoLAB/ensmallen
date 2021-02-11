@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:35.358266
 
-The undirected graph Pseudogulbenkiania sp. NH8B has 3994 nodes and 422590 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05300
-and has 12 connected components, where the component with most nodes has 3967 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 211.61, and the node degree mode is 1. The top 5
-most central nodes are 748280.NH8B_3609 (degree 2051), 748280.NH8B_3742 (degree 1754),
-748280.NH8B_3977 (degree 1614), 748280.NH8B_2263 (degree 1609) and 748280.NH8B_2667
-(degree 1411).
+The undirected graph Pseudogulbenkiania sp. NH8B has 3994 nodes and 422590
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05300 and has 12 connected components, where the component
+with most nodes has 3967 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 211.61,
+and the node degree mode is 1. The top 5 most central nodes are 748280.NH8B_3609
+(degree 2051), 748280.NH8B_3742 (degree 1754), 748280.NH8B_3977 (degree
+1614), 748280.NH8B_2263 (degree 1609) and 748280.NH8B_2667 (degree 1411).
 
 
 References
@@ -107,14 +107,14 @@ def PseudogulbenkianiaSp.Nh8b(
 	
 	Datetime: 2021-02-02 21:39:35.358266
 	
-	The undirected graph Pseudogulbenkiania sp. NH8B has 3994 nodes and 422590 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05300
-	and has 12 connected components, where the component with most nodes has 3967 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 211.61, and the node degree mode is 1. The top 5
-	most central nodes are 748280.NH8B_3609 (degree 2051), 748280.NH8B_3742 (degree 1754),
-	748280.NH8B_3977 (degree 1614), 748280.NH8B_2263 (degree 1609) and 748280.NH8B_2667
-	(degree 1411).
+	The undirected graph Pseudogulbenkiania sp. NH8B has 3994 nodes and 422590
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05300 and has 12 connected components, where the component
+	with most nodes has 3967 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 211.61,
+	and the node degree mode is 1. The top 5 most central nodes are 748280.NH8B_3609
+	(degree 2051), 748280.NH8B_3742 (degree 1754), 748280.NH8B_3977 (degree
+	1614), 748280.NH8B_2263 (degree 1609) and 748280.NH8B_2667 (degree 1411).
 	
 
 

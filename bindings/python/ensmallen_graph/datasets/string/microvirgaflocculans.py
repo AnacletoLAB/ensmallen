@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:57:32.240541
 
-The undirected graph Microvirga flocculans has 3615 nodes and 383055 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05864 and
-has 11 connected components, where the component with most nodes has 3592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 211.93, and the node degree mode is 3. The top 5 most central
-nodes are 1336243.JAEA01000001_gene1895 (degree 1330), 1336243.JAEA01000010_gene3428
-(degree 1179), 1336243.JAEA01000003_gene2479 (degree 1174), 1336243.JAEA01000012_gene2909
-(degree 1174) and 1336243.JAEA01000008_gene1105 (degree 1146).
+The undirected graph Microvirga flocculans has 3615 nodes and 383055 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05864 and has 11 connected components, where the component with most
+nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 211.93, and
+the node degree mode is 3. The top 5 most central nodes are 1336243.JAEA01000001_gene1895
+(degree 1330), 1336243.JAEA01000010_gene3428 (degree 1179), 1336243.JAEA01000003_gene2479
+(degree 1174), 1336243.JAEA01000012_gene2909 (degree 1174) and 1336243.JAEA01000008_gene1105
+(degree 1146).
 
 
 References
@@ -107,14 +108,15 @@ def MicrovirgaFlocculans(
 	
 	Datetime: 2021-02-03 21:57:32.240541
 	
-	The undirected graph Microvirga flocculans has 3615 nodes and 383055 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05864 and
-	has 11 connected components, where the component with most nodes has 3592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 211.93, and the node degree mode is 3. The top 5 most central
-	nodes are 1336243.JAEA01000001_gene1895 (degree 1330), 1336243.JAEA01000010_gene3428
-	(degree 1179), 1336243.JAEA01000003_gene2479 (degree 1174), 1336243.JAEA01000012_gene2909
-	(degree 1174) and 1336243.JAEA01000008_gene1105 (degree 1146).
+	The undirected graph Microvirga flocculans has 3615 nodes and 383055 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05864 and has 11 connected components, where the component with most
+	nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 211.93, and
+	the node degree mode is 3. The top 5 most central nodes are 1336243.JAEA01000001_gene1895
+	(degree 1330), 1336243.JAEA01000010_gene3428 (degree 1179), 1336243.JAEA01000003_gene2479
+	(degree 1174), 1336243.JAEA01000012_gene2909 (degree 1174) and 1336243.JAEA01000008_gene1105
+	(degree 1146).
 	
 
 

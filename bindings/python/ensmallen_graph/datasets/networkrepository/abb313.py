@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:08.676612
 
-The undirected graph abb313 has 313 nodes and 1554 unweighted edges, of which 1 are
-self-loops. The graph is dense as it has a density of 0.03182 and is connected, as
-it has a single component. The graph median node degree is 10, the mean node degree
-is 9.93, and the node degree mode is 5. The top 5 most central nodes are 56 (degree
-32), 55 (degree 31), 41 (degree 23), 21 (degree 23) and 85 (degree 21).
+The undirected graph abb313 has 313 nodes and 1554 unweighted edges, of
+which 1 are self-loops. The graph is dense as it has a density of 0.03182
+and is connected, as it has a single component. The graph median node degree
+is 10, the mean node degree is 9.93, and the node degree mode is 5. The
+top 5 most central nodes are 56 (degree 32), 55 (degree 31), 41 (degree
+23), 21 (degree 23) and 85 (degree 21).
 
 
 References
@@ -101,11 +102,12 @@ def Abb313(
 	
 	Datetime: 2021-02-06 08:02:08.676612
 	
-	The undirected graph abb313 has 313 nodes and 1554 unweighted edges, of which 1 are
-	self-loops. The graph is dense as it has a density of 0.03182 and is connected, as
-	it has a single component. The graph median node degree is 10, the mean node degree
-	is 9.93, and the node degree mode is 5. The top 5 most central nodes are 56 (degree
-	32), 55 (degree 31), 41 (degree 23), 21 (degree 23) and 85 (degree 21).
+	The undirected graph abb313 has 313 nodes and 1554 unweighted edges, of
+	which 1 are self-loops. The graph is dense as it has a density of 0.03182
+	and is connected, as it has a single component. The graph median node degree
+	is 10, the mean node degree is 9.93, and the node degree mode is 5. The
+	top 5 most central nodes are 56 (degree 32), 55 (degree 31), 41 (degree
+	23), 21 (degree 23) and 85 (degree 21).
 	
 
 

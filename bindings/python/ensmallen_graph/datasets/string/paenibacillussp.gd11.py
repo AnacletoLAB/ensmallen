@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:13.179307
 
-The undirected graph Paenibacillus sp. GD11 has 4701 nodes and 587925 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-has 10 connected components, where the component with most nodes has 4683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 250.13, and the node degree mode is 3. The top 5 most central
-nodes are 1274374.CBLK010000088_gene4701 (degree 1580), 1274374.CBLK010000061_gene650
-(degree 1578), 1274374.CBLK010000009_gene4382 (degree 1480), 1274374.CBLK010000006_gene4458
-(degree 1362) and 1274374.CBLK010000053_gene2242 (degree 1362).
+The undirected graph Paenibacillus sp. GD11 has 4701 nodes and 587925 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05322 and has 10 connected components, where the component with most
+nodes has 4683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 250.13, and
+the node degree mode is 3. The top 5 most central nodes are 1274374.CBLK010000088_gene4701
+(degree 1580), 1274374.CBLK010000061_gene650 (degree 1578), 1274374.CBLK010000009_gene4382
+(degree 1480), 1274374.CBLK010000006_gene4458 (degree 1362) and 1274374.CBLK010000053_gene2242
+(degree 1362).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Gd11(
 	
 	Datetime: 2021-02-02 23:38:13.179307
 	
-	The undirected graph Paenibacillus sp. GD11 has 4701 nodes and 587925 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-	has 10 connected components, where the component with most nodes has 4683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 250.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1274374.CBLK010000088_gene4701 (degree 1580), 1274374.CBLK010000061_gene650
-	(degree 1578), 1274374.CBLK010000009_gene4382 (degree 1480), 1274374.CBLK010000006_gene4458
-	(degree 1362) and 1274374.CBLK010000053_gene2242 (degree 1362).
+	The undirected graph Paenibacillus sp. GD11 has 4701 nodes and 587925 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05322 and has 10 connected components, where the component with most
+	nodes has 4683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 250.13, and
+	the node degree mode is 3. The top 5 most central nodes are 1274374.CBLK010000088_gene4701
+	(degree 1580), 1274374.CBLK010000061_gene650 (degree 1578), 1274374.CBLK010000009_gene4382
+	(degree 1480), 1274374.CBLK010000006_gene4458 (degree 1362) and 1274374.CBLK010000053_gene2242
+	(degree 1362).
 	
 
 

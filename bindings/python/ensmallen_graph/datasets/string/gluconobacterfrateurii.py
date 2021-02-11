@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:44:49.972377
 
-The undirected graph Gluconobacter frateurii has 3057 nodes and 227835 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04878 and
-has 10 connected components, where the component with most nodes has 3029 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 149.06, and the node degree mode is 3. The top 5 most central
-nodes are 1307834.BARL01000005_gene2588 (degree 1074), 1307834.BARL01000005_gene2463
-(degree 1045), 1307834.BARL01000005_gene2750 (degree 839), 1307834.BARL01000003_gene1360
-(degree 838) and 1307834.BARL01000001_gene603 (degree 832).
+The undirected graph Gluconobacter frateurii has 3057 nodes and 227835
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04878 and has 10 connected components, where the component
+with most nodes has 3029 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 149.06,
+and the node degree mode is 3. The top 5 most central nodes are 1307834.BARL01000005_gene2588
+(degree 1074), 1307834.BARL01000005_gene2463 (degree 1045), 1307834.BARL01000005_gene2750
+(degree 839), 1307834.BARL01000003_gene1360 (degree 838) and 1307834.BARL01000001_gene603
+(degree 832).
 
 
 References
@@ -107,14 +108,15 @@ def GluconobacterFrateurii(
 	
 	Datetime: 2021-02-03 21:44:49.972377
 	
-	The undirected graph Gluconobacter frateurii has 3057 nodes and 227835 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04878 and
-	has 10 connected components, where the component with most nodes has 3029 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 149.06, and the node degree mode is 3. The top 5 most central
-	nodes are 1307834.BARL01000005_gene2588 (degree 1074), 1307834.BARL01000005_gene2463
-	(degree 1045), 1307834.BARL01000005_gene2750 (degree 839), 1307834.BARL01000003_gene1360
-	(degree 838) and 1307834.BARL01000001_gene603 (degree 832).
+	The undirected graph Gluconobacter frateurii has 3057 nodes and 227835
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04878 and has 10 connected components, where the component
+	with most nodes has 3029 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 149.06,
+	and the node degree mode is 3. The top 5 most central nodes are 1307834.BARL01000005_gene2588
+	(degree 1074), 1307834.BARL01000005_gene2463 (degree 1045), 1307834.BARL01000005_gene2750
+	(degree 839), 1307834.BARL01000003_gene1360 (degree 838) and 1307834.BARL01000001_gene603
+	(degree 832).
 	
 
 

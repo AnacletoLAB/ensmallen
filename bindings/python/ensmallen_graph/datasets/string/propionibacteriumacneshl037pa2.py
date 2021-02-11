@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:08.893850
 
-The undirected graph Propionibacterium acnes HL037PA2 has 2813 nodes and 202388 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05117
-and has 41 connected components, where the component with most nodes has 2708 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 143.89, and the node degree mode is 1. The top 5
-most central nodes are 765123.HMPREF9621_00787 (degree 1007), 765123.HMPREF9621_00859
-(degree 900), 765123.HMPREF9621_01935 (degree 890), 765123.HMPREF9621_02605 (degree
+The undirected graph Propionibacterium acnes HL037PA2 has 2813 nodes and
+202388 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05117 and has 41 connected components, where the
+component with most nodes has 2708 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 143.89, and the node degree mode is 1. The top 5 most central nodes
+are 765123.HMPREF9621_00787 (degree 1007), 765123.HMPREF9621_00859 (degree
+900), 765123.HMPREF9621_01935 (degree 890), 765123.HMPREF9621_02605 (degree
 885) and 765123.HMPREF9621_01346 (degree 871).
 
 
@@ -107,13 +108,14 @@ def PropionibacteriumAcnesHl037pa2(
 	
 	Datetime: 2021-02-02 21:43:08.893850
 	
-	The undirected graph Propionibacterium acnes HL037PA2 has 2813 nodes and 202388 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05117
-	and has 41 connected components, where the component with most nodes has 2708 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 143.89, and the node degree mode is 1. The top 5
-	most central nodes are 765123.HMPREF9621_00787 (degree 1007), 765123.HMPREF9621_00859
-	(degree 900), 765123.HMPREF9621_01935 (degree 890), 765123.HMPREF9621_02605 (degree
+	The undirected graph Propionibacterium acnes HL037PA2 has 2813 nodes and
+	202388 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05117 and has 41 connected components, where the
+	component with most nodes has 2708 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 143.89, and the node degree mode is 1. The top 5 most central nodes
+	are 765123.HMPREF9621_00787 (degree 1007), 765123.HMPREF9621_00859 (degree
+	900), 765123.HMPREF9621_01935 (degree 890), 765123.HMPREF9621_02605 (degree
 	885) and 765123.HMPREF9621_01346 (degree 871).
 	
 

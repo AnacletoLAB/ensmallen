@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:25.843550
 
-The undirected graph Staphylococcus xylosus has 2495 nodes and 236758 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07610 and
-has 3 connected components, where the component with most nodes has 2491 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 189.79, and the node degree mode is 3. The top 5 most central
-nodes are 1288.SXYLSMQ121_1114 (degree 1018), 1288.SXYLSMQ121_2361 (degree 882),
-1288.SXYLSMQ121_1591 (degree 815), 1288.SXYLSMQ121_2362 (degree 809) and 1288.SXYLSMQ121_0176
+The undirected graph Staphylococcus xylosus has 2495 nodes and 236758 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07610 and has 3 connected components, where the component with most
+nodes has 2491 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 189.79, and
+the node degree mode is 3. The top 5 most central nodes are 1288.SXYLSMQ121_1114
+(degree 1018), 1288.SXYLSMQ121_2361 (degree 882), 1288.SXYLSMQ121_1591
+(degree 815), 1288.SXYLSMQ121_2362 (degree 809) and 1288.SXYLSMQ121_0176
 (degree 804).
 
 
@@ -107,13 +108,14 @@ def StaphylococcusXylosus(
 	
 	Datetime: 2021-02-02 16:22:25.843550
 	
-	The undirected graph Staphylococcus xylosus has 2495 nodes and 236758 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07610 and
-	has 3 connected components, where the component with most nodes has 2491 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 189.79, and the node degree mode is 3. The top 5 most central
-	nodes are 1288.SXYLSMQ121_1114 (degree 1018), 1288.SXYLSMQ121_2361 (degree 882),
-	1288.SXYLSMQ121_1591 (degree 815), 1288.SXYLSMQ121_2362 (degree 809) and 1288.SXYLSMQ121_0176
+	The undirected graph Staphylococcus xylosus has 2495 nodes and 236758 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07610 and has 3 connected components, where the component with most
+	nodes has 2491 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 189.79, and
+	the node degree mode is 3. The top 5 most central nodes are 1288.SXYLSMQ121_1114
+	(degree 1018), 1288.SXYLSMQ121_2361 (degree 882), 1288.SXYLSMQ121_1591
+	(degree 815), 1288.SXYLSMQ121_2362 (degree 809) and 1288.SXYLSMQ121_0176
 	(degree 804).
 	
 

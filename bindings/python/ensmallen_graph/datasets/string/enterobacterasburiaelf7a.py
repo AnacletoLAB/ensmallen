@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:23.040722
 
-The undirected graph Enterobacter asburiae LF7a has 4430 nodes and 379052 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03864
-and has 6 connected components, where the component with most nodes has 4419 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 171.13, and the node degree mode is 112. The top
-5 most central nodes are 640513.Entas_2043 (degree 1659), 640513.Entas_2316 (degree
-1453), 640513.Entas_4409 (degree 1435), 640513.Entas_3225 (degree 1147) and 640513.Entas_3896
-(degree 1073).
+The undirected graph Enterobacter asburiae LF7a has 4430 nodes and 379052
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03864 and has 6 connected components, where the component
+with most nodes has 4419 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 171.13,
+and the node degree mode is 112. The top 5 most central nodes are 640513.Entas_2043
+(degree 1659), 640513.Entas_2316 (degree 1453), 640513.Entas_4409 (degree
+1435), 640513.Entas_3225 (degree 1147) and 640513.Entas_3896 (degree 1073).
 
 
 References
@@ -107,14 +107,14 @@ def EnterobacterAsburiaeLf7a(
 	
 	Datetime: 2021-02-02 21:23:23.040722
 	
-	The undirected graph Enterobacter asburiae LF7a has 4430 nodes and 379052 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03864
-	and has 6 connected components, where the component with most nodes has 4419 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 171.13, and the node degree mode is 112. The top
-	5 most central nodes are 640513.Entas_2043 (degree 1659), 640513.Entas_2316 (degree
-	1453), 640513.Entas_4409 (degree 1435), 640513.Entas_3225 (degree 1147) and 640513.Entas_3896
-	(degree 1073).
+	The undirected graph Enterobacter asburiae LF7a has 4430 nodes and 379052
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03864 and has 6 connected components, where the component
+	with most nodes has 4419 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 171.13,
+	and the node degree mode is 112. The top 5 most central nodes are 640513.Entas_2043
+	(degree 1659), 640513.Entas_2316 (degree 1453), 640513.Entas_4409 (degree
+	1435), 640513.Entas_3225 (degree 1147) and 640513.Entas_3896 (degree 1073).
 	
 
 

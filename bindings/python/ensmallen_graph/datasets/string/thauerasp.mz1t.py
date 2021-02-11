@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:46:04.779548
 
-The undirected graph Thauera sp. MZ1T has 3965 nodes and 467820 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05953 and
-has 5 connected components, where the component with most nodes has 3956 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 235.97, and the node degree mode is 3. The top 5 most central
-nodes are 85643.Tmz1t_2984 (degree 2195), 85643.Tmz1t_3813 (degree 1721), 85643.Tmz1t_2831
-(degree 1587), 85643.Tmz1t_1730 (degree 1553) and 85643.Tmz1t_0842 (degree 1233).
+The undirected graph Thauera sp. MZ1T has 3965 nodes and 467820 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05953 and has 5 connected components, where the component with most
+nodes has 3956 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 235.97, and
+the node degree mode is 3. The top 5 most central nodes are 85643.Tmz1t_2984
+(degree 2195), 85643.Tmz1t_3813 (degree 1721), 85643.Tmz1t_2831 (degree
+1587), 85643.Tmz1t_1730 (degree 1553) and 85643.Tmz1t_0842 (degree 1233).
 
 
 References
@@ -106,13 +107,14 @@ def ThaueraSp.Mz1t(
 	
 	Datetime: 2021-02-02 18:46:04.779548
 	
-	The undirected graph Thauera sp. MZ1T has 3965 nodes and 467820 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05953 and
-	has 5 connected components, where the component with most nodes has 3956 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 235.97, and the node degree mode is 3. The top 5 most central
-	nodes are 85643.Tmz1t_2984 (degree 2195), 85643.Tmz1t_3813 (degree 1721), 85643.Tmz1t_2831
-	(degree 1587), 85643.Tmz1t_1730 (degree 1553) and 85643.Tmz1t_0842 (degree 1233).
+	The undirected graph Thauera sp. MZ1T has 3965 nodes and 467820 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05953 and has 5 connected components, where the component with most
+	nodes has 3956 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 235.97, and
+	the node degree mode is 3. The top 5 most central nodes are 85643.Tmz1t_2984
+	(degree 2195), 85643.Tmz1t_3813 (degree 1721), 85643.Tmz1t_2831 (degree
+	1587), 85643.Tmz1t_1730 (degree 1553) and 85643.Tmz1t_0842 (degree 1233).
 	
 
 

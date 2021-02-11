@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:51.034625
 
-The undirected graph Anaerococcus prevotii DSM20548 has 1800 nodes and 127221 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07858
-and has 5 connected components, where the component with most nodes has 1791 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 141.36, and the node degree mode is 52. The top 5
-most central nodes are 525919.Apre_1330 (degree 857), 525919.Apre_0330 (degree 837),
-525919.Apre_1107 (degree 769), 525919.Apre_1106 (degree 677) and 525919.Apre_1019
-(degree 674).
+The undirected graph Anaerococcus prevotii DSM20548 has 1800 nodes and
+127221 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07858 and has 5 connected components, where the
+component with most nodes has 1791 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+is 141.36, and the node degree mode is 52. The top 5 most central nodes
+are 525919.Apre_1330 (degree 857), 525919.Apre_0330 (degree 837), 525919.Apre_1107
+(degree 769), 525919.Apre_1106 (degree 677) and 525919.Apre_1019 (degree
+674).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerococcusPrevotiiDsm20548(
 	
 	Datetime: 2021-02-02 21:05:51.034625
 	
-	The undirected graph Anaerococcus prevotii DSM20548 has 1800 nodes and 127221 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07858
-	and has 5 connected components, where the component with most nodes has 1791 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 141.36, and the node degree mode is 52. The top 5
-	most central nodes are 525919.Apre_1330 (degree 857), 525919.Apre_0330 (degree 837),
-	525919.Apre_1107 (degree 769), 525919.Apre_1106 (degree 677) and 525919.Apre_1019
-	(degree 674).
+	The undirected graph Anaerococcus prevotii DSM20548 has 1800 nodes and
+	127221 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07858 and has 5 connected components, where the
+	component with most nodes has 1791 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+	is 141.36, and the node degree mode is 52. The top 5 most central nodes
+	are 525919.Apre_1330 (degree 857), 525919.Apre_0330 (degree 837), 525919.Apre_1107
+	(degree 769), 525919.Apre_1106 (degree 677) and 525919.Apre_1019 (degree
+	674).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:06.404624
 
-The undirected graph Actinobacillus succinogenes has 2077 nodes and 121506 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05636
-and is connected, as it has a single component. The graph median node degree is 94,
-the mean node degree is 117.00, and the node degree mode is 45. The top 5 most central
-nodes are 339671.Asuc_0021 (degree 836), 339671.Asuc_1831 (degree 738), 339671.Asuc_0896
-(degree 673), 339671.Asuc_0893 (degree 633) and 339671.Asuc_1368 (degree 553).
+The undirected graph Actinobacillus succinogenes has 2077 nodes and 121506
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05636 and is connected, as it has a single component.
+The graph median node degree is 94, the mean node degree is 117.00, and
+the node degree mode is 45. The top 5 most central nodes are 339671.Asuc_0021
+(degree 836), 339671.Asuc_1831 (degree 738), 339671.Asuc_0896 (degree 673),
+339671.Asuc_0893 (degree 633) and 339671.Asuc_1368 (degree 553).
 
 
 References
@@ -105,12 +106,13 @@ def ActinobacillusSuccinogenes(
 	
 	Datetime: 2021-02-02 20:31:06.404624
 	
-	The undirected graph Actinobacillus succinogenes has 2077 nodes and 121506 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05636
-	and is connected, as it has a single component. The graph median node degree is 94,
-	the mean node degree is 117.00, and the node degree mode is 45. The top 5 most central
-	nodes are 339671.Asuc_0021 (degree 836), 339671.Asuc_1831 (degree 738), 339671.Asuc_0896
-	(degree 673), 339671.Asuc_0893 (degree 633) and 339671.Asuc_1368 (degree 553).
+	The undirected graph Actinobacillus succinogenes has 2077 nodes and 121506
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05636 and is connected, as it has a single component.
+	The graph median node degree is 94, the mean node degree is 117.00, and
+	the node degree mode is 45. The top 5 most central nodes are 339671.Asuc_0021
+	(degree 836), 339671.Asuc_1831 (degree 738), 339671.Asuc_0896 (degree 673),
+	339671.Asuc_0893 (degree 633) and 339671.Asuc_1368 (degree 553).
 	
 
 

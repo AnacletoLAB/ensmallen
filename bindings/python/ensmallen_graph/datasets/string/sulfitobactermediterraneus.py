@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:39:21.875710
 
-The undirected graph Sulfitobacter mediterraneus has 3636 nodes and 496298 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07510
-and has 3 connected components, where the component with most nodes has 3632 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 246, the mean node degree is 272.99, and the node degree mode is 3. The top 5
-most central nodes are 83219.PM02_07225 (degree 1507), 83219.PM02_08250 (degree 1284),
-83219.PM02_07285 (degree 1238), 83219.PM02_05755 (degree 1126) and 83219.PM02_04355
-(degree 1113).
+The undirected graph Sulfitobacter mediterraneus has 3636 nodes and 496298
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07510 and has 3 connected components, where the component
+with most nodes has 3632 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 246, the mean node degree is 272.99,
+and the node degree mode is 3. The top 5 most central nodes are 83219.PM02_07225
+(degree 1507), 83219.PM02_08250 (degree 1284), 83219.PM02_07285 (degree
+1238), 83219.PM02_05755 (degree 1126) and 83219.PM02_04355 (degree 1113).
 
 
 References
@@ -107,14 +107,14 @@ def SulfitobacterMediterraneus(
 	
 	Datetime: 2021-02-02 18:39:21.875710
 	
-	The undirected graph Sulfitobacter mediterraneus has 3636 nodes and 496298 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07510
-	and has 3 connected components, where the component with most nodes has 3632 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 246, the mean node degree is 272.99, and the node degree mode is 3. The top 5
-	most central nodes are 83219.PM02_07225 (degree 1507), 83219.PM02_08250 (degree 1284),
-	83219.PM02_07285 (degree 1238), 83219.PM02_05755 (degree 1126) and 83219.PM02_04355
-	(degree 1113).
+	The undirected graph Sulfitobacter mediterraneus has 3636 nodes and 496298
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07510 and has 3 connected components, where the component
+	with most nodes has 3632 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 246, the mean node degree is 272.99,
+	and the node degree mode is 3. The top 5 most central nodes are 83219.PM02_07225
+	(degree 1507), 83219.PM02_08250 (degree 1284), 83219.PM02_07285 (degree
+	1238), 83219.PM02_05755 (degree 1126) and 83219.PM02_04355 (degree 1113).
 	
 
 

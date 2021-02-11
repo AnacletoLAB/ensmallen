@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:14:33.909293
 
-The undirected graph g3rmt3m3 has 5357 nodes and 106526 unweighted edges, of which
-5357 are self-loops. The graph is sparse as it has a density of 0.00724 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 38.77, and the node degree mode is 42. The top 5 most central nodes are 1506 (degree
-48), 1505 (degree 48), 1504 (degree 48), 1503 (degree 48) and 1502 (degree 48).
+The undirected graph g3rmt3m3 has 5357 nodes and 106526 unweighted edges,
+of which 5357 are self-loops. The graph is sparse as it has a density of
+0.00724 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 38.77, and the node degree mode
+is 42. The top 5 most central nodes are 1506 (degree 48), 1505 (degree
+48), 1504 (degree 48), 1503 (degree 48) and 1502 (degree 48).
 
 
 References
@@ -101,11 +102,12 @@ def G3rmt3m3(
 	
 	Datetime: 2021-02-06 11:14:33.909293
 	
-	The undirected graph g3rmt3m3 has 5357 nodes and 106526 unweighted edges, of which
-	5357 are self-loops. The graph is sparse as it has a density of 0.00724 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 38.77, and the node degree mode is 42. The top 5 most central nodes are 1506 (degree
-	48), 1505 (degree 48), 1504 (degree 48), 1503 (degree 48) and 1502 (degree 48).
+	The undirected graph g3rmt3m3 has 5357 nodes and 106526 unweighted edges,
+	of which 5357 are self-loops. The graph is sparse as it has a density of
+	0.00724 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 38.77, and the node degree mode
+	is 42. The top 5 most central nodes are 1506 (degree 48), 1505 (degree
+	48), 1504 (degree 48), 1503 (degree 48) and 1502 (degree 48).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:44.529446
 
-The undirected graph Clostridium sticklandii has 2549 nodes and 166209 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05118 and
-has 3 connected components, where the component with most nodes has 2542 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 94,
-the mean node degree is 130.41, and the node degree mode is 3. The top 5 most central
-nodes are 1511.CLOST_1047 (degree 1241), 1511.CLOST_1407 (degree 1114), 1511.CLOST_0339
-(degree 1048), 1511.CLOST_1639 (degree 969) and 1511.CLOST_0464 (degree 877).
+The undirected graph Clostridium sticklandii has 2549 nodes and 166209
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05118 and has 3 connected components, where the component
+with most nodes has 2542 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 94, the mean node degree is 130.41,
+and the node degree mode is 3. The top 5 most central nodes are 1511.CLOST_1047
+(degree 1241), 1511.CLOST_1407 (degree 1114), 1511.CLOST_0339 (degree 1048),
+1511.CLOST_1639 (degree 969) and 1511.CLOST_0464 (degree 877).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSticklandii(
 	
 	Datetime: 2021-02-02 16:22:44.529446
 	
-	The undirected graph Clostridium sticklandii has 2549 nodes and 166209 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05118 and
-	has 3 connected components, where the component with most nodes has 2542 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 94,
-	the mean node degree is 130.41, and the node degree mode is 3. The top 5 most central
-	nodes are 1511.CLOST_1047 (degree 1241), 1511.CLOST_1407 (degree 1114), 1511.CLOST_0339
-	(degree 1048), 1511.CLOST_1639 (degree 969) and 1511.CLOST_0464 (degree 877).
+	The undirected graph Clostridium sticklandii has 2549 nodes and 166209
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05118 and has 3 connected components, where the component
+	with most nodes has 2542 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 94, the mean node degree is 130.41,
+	and the node degree mode is 3. The top 5 most central nodes are 1511.CLOST_1047
+	(degree 1241), 1511.CLOST_1407 (degree 1114), 1511.CLOST_0339 (degree 1048),
+	1511.CLOST_1639 (degree 969) and 1511.CLOST_0464 (degree 877).
 	
 
 

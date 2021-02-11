@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:42.818265
 
-The undirected graph Burkholderia phenoliruptrix has 6430 nodes and 708430 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03427
-and has 21 connected components, where the component with most nodes has 6385 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 220.35, and the node degree mode is 2. The top 5
-most central nodes are 1229205.BUPH_00274 (degree 2447), 1229205.BUPH_01512 (degree
-2443), 1229205.BUPH_06321 (degree 2052), 1229205.BUPH_04763 (degree 1835) and 1229205.BUPH_02708
-(degree 1737).
+The undirected graph Burkholderia phenoliruptrix has 6430 nodes and 708430
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03427 and has 21 connected components, where the component
+with most nodes has 6385 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 220.35,
+and the node degree mode is 2. The top 5 most central nodes are 1229205.BUPH_00274
+(degree 2447), 1229205.BUPH_01512 (degree 2443), 1229205.BUPH_06321 (degree
+2052), 1229205.BUPH_04763 (degree 1835) and 1229205.BUPH_02708 (degree
+1737).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaPhenoliruptrix(
 	
 	Datetime: 2021-02-02 23:26:42.818265
 	
-	The undirected graph Burkholderia phenoliruptrix has 6430 nodes and 708430 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03427
-	and has 21 connected components, where the component with most nodes has 6385 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 220.35, and the node degree mode is 2. The top 5
-	most central nodes are 1229205.BUPH_00274 (degree 2447), 1229205.BUPH_01512 (degree
-	2443), 1229205.BUPH_06321 (degree 2052), 1229205.BUPH_04763 (degree 1835) and 1229205.BUPH_02708
-	(degree 1737).
+	The undirected graph Burkholderia phenoliruptrix has 6430 nodes and 708430
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03427 and has 21 connected components, where the component
+	with most nodes has 6385 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 220.35,
+	and the node degree mode is 2. The top 5 most central nodes are 1229205.BUPH_00274
+	(degree 2447), 1229205.BUPH_01512 (degree 2443), 1229205.BUPH_06321 (degree
+	2052), 1229205.BUPH_04763 (degree 1835) and 1229205.BUPH_02708 (degree
+	1737).
 	
 
 

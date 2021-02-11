@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:21.896606
 
-The undirected graph Ruminococcus albus AD2013 has 3528 nodes and 242114 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03891
-and has 26 connected components, where the component with most nodes has 3469 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 137.25, and the node degree mode is 2. The top 5
-most central nodes are 1384065.JAGS01000001_gene3100 (degree 1375), 1384065.JAGS01000001_gene2883
-(degree 1251), 1384065.JAGS01000001_gene2206 (degree 1146), 1384065.JAGS01000001_gene2448
-(degree 1036) and 1384065.JAGS01000001_gene378 (degree 1014).
+The undirected graph Ruminococcus albus AD2013 has 3528 nodes and 242114
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03891 and has 26 connected components, where the component
+with most nodes has 3469 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 137.25,
+and the node degree mode is 2. The top 5 most central nodes are 1384065.JAGS01000001_gene3100
+(degree 1375), 1384065.JAGS01000001_gene2883 (degree 1251), 1384065.JAGS01000001_gene2206
+(degree 1146), 1384065.JAGS01000001_gene2448 (degree 1036) and 1384065.JAGS01000001_gene378
+(degree 1014).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusAlbusAd2013(
 	
 	Datetime: 2021-02-03 22:19:21.896606
 	
-	The undirected graph Ruminococcus albus AD2013 has 3528 nodes and 242114 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03891
-	and has 26 connected components, where the component with most nodes has 3469 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 137.25, and the node degree mode is 2. The top 5
-	most central nodes are 1384065.JAGS01000001_gene3100 (degree 1375), 1384065.JAGS01000001_gene2883
-	(degree 1251), 1384065.JAGS01000001_gene2206 (degree 1146), 1384065.JAGS01000001_gene2448
-	(degree 1036) and 1384065.JAGS01000001_gene378 (degree 1014).
+	The undirected graph Ruminococcus albus AD2013 has 3528 nodes and 242114
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03891 and has 26 connected components, where the component
+	with most nodes has 3469 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 137.25,
+	and the node degree mode is 2. The top 5 most central nodes are 1384065.JAGS01000001_gene3100
+	(degree 1375), 1384065.JAGS01000001_gene2883 (degree 1251), 1384065.JAGS01000001_gene2206
+	(degree 1146), 1384065.JAGS01000001_gene2448 (degree 1036) and 1384065.JAGS01000001_gene378
+	(degree 1014).
 	
 
 

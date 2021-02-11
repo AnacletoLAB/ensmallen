@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:12.995068
 
-The undirected graph Nesterenkonia alba has 2241 nodes and 143515 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05718 and
-has 14 connected components, where the component with most nodes has 2211 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 128.08, and the node degree mode is 3. The top 5 most central
-nodes are 1122602.ATXP01000003_gene1534 (degree 935), 1122602.ATXP01000010_gene435
-(degree 855), 1122602.ATXP01000003_gene1629 (degree 807), 1122602.ATXP01000001_gene1093
-(degree 789) and 1122602.ATXP01000016_gene1235 (degree 740).
+The undirected graph Nesterenkonia alba has 2241 nodes and 143515 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05718 and has 14 connected components, where the component with most
+nodes has 2211 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 128.08, and
+the node degree mode is 3. The top 5 most central nodes are 1122602.ATXP01000003_gene1534
+(degree 935), 1122602.ATXP01000010_gene435 (degree 855), 1122602.ATXP01000003_gene1629
+(degree 807), 1122602.ATXP01000001_gene1093 (degree 789) and 1122602.ATXP01000016_gene1235
+(degree 740).
 
 
 References
@@ -107,14 +108,15 @@ def NesterenkoniaAlba(
 	
 	Datetime: 2021-02-02 22:43:12.995068
 	
-	The undirected graph Nesterenkonia alba has 2241 nodes and 143515 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05718 and
-	has 14 connected components, where the component with most nodes has 2211 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 128.08, and the node degree mode is 3. The top 5 most central
-	nodes are 1122602.ATXP01000003_gene1534 (degree 935), 1122602.ATXP01000010_gene435
-	(degree 855), 1122602.ATXP01000003_gene1629 (degree 807), 1122602.ATXP01000001_gene1093
-	(degree 789) and 1122602.ATXP01000016_gene1235 (degree 740).
+	The undirected graph Nesterenkonia alba has 2241 nodes and 143515 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05718 and has 14 connected components, where the component with most
+	nodes has 2211 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 128.08, and
+	the node degree mode is 3. The top 5 most central nodes are 1122602.ATXP01000003_gene1534
+	(degree 935), 1122602.ATXP01000010_gene435 (degree 855), 1122602.ATXP01000003_gene1629
+	(degree 807), 1122602.ATXP01000001_gene1093 (degree 789) and 1122602.ATXP01000016_gene1235
+	(degree 740).
 	
 
 

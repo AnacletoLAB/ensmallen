@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:46.233021
 
-The undirected graph Prevotella disiens JCM6334 has 2740 nodes and 142666 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03802
-and has 45 connected components, where the component with most nodes has 2638 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 104.14, and the node degree mode is 1. The top 5 most
-central nodes are 1235811.HMPREF0653_01905 (degree 863), 1235811.HMPREF0653_01437
-(degree 741), 1235811.HMPREF0653_00898 (degree 658), 1235811.HMPREF0653_02585 (degree
-656) and 1235811.HMPREF0653_01925 (degree 649).
+The undirected graph Prevotella disiens JCM6334 has 2740 nodes and 142666
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03802 and has 45 connected components, where the component
+with most nodes has 2638 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 104.14,
+and the node degree mode is 1. The top 5 most central nodes are 1235811.HMPREF0653_01905
+(degree 863), 1235811.HMPREF0653_01437 (degree 741), 1235811.HMPREF0653_00898
+(degree 658), 1235811.HMPREF0653_02585 (degree 656) and 1235811.HMPREF0653_01925
+(degree 649).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaDisiensJcm6334(
 	
 	Datetime: 2021-02-02 23:30:46.233021
 	
-	The undirected graph Prevotella disiens JCM6334 has 2740 nodes and 142666 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03802
-	and has 45 connected components, where the component with most nodes has 2638 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 104.14, and the node degree mode is 1. The top 5 most
-	central nodes are 1235811.HMPREF0653_01905 (degree 863), 1235811.HMPREF0653_01437
-	(degree 741), 1235811.HMPREF0653_00898 (degree 658), 1235811.HMPREF0653_02585 (degree
-	656) and 1235811.HMPREF0653_01925 (degree 649).
+	The undirected graph Prevotella disiens JCM6334 has 2740 nodes and 142666
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03802 and has 45 connected components, where the component
+	with most nodes has 2638 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 104.14,
+	and the node degree mode is 1. The top 5 most central nodes are 1235811.HMPREF0653_01905
+	(degree 863), 1235811.HMPREF0653_01437 (degree 741), 1235811.HMPREF0653_00898
+	(degree 658), 1235811.HMPREF0653_02585 (degree 656) and 1235811.HMPREF0653_01925
+	(degree 649).
 	
 
 

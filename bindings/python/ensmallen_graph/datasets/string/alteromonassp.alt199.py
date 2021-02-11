@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:33:29.481879
 
-The undirected graph Alteromonas sp. ALT199 has 3862 nodes and 478113 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06413 and
-has 11 connected components, where the component with most nodes has 3837 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 247.60, and the node degree mode is 4. The top 5 most central
-nodes are 1298865.H978DRAFT_3153 (degree 1450), 1298865.H978DRAFT_3432 (degree 1413),
-1298865.H978DRAFT_4020 (degree 1341), 1298865.H978DRAFT_2777 (degree 1292) and 1298865.H978DRAFT_2509
+The undirected graph Alteromonas sp. ALT199 has 3862 nodes and 478113 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06413 and has 11 connected components, where the component with most
+nodes has 3837 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 247.60, and
+the node degree mode is 4. The top 5 most central nodes are 1298865.H978DRAFT_3153
+(degree 1450), 1298865.H978DRAFT_3432 (degree 1413), 1298865.H978DRAFT_4020
+(degree 1341), 1298865.H978DRAFT_2777 (degree 1292) and 1298865.H978DRAFT_2509
 (degree 1249).
 
 
@@ -107,13 +108,14 @@ def AlteromonasSp.Alt199(
 	
 	Datetime: 2021-02-03 21:33:29.481879
 	
-	The undirected graph Alteromonas sp. ALT199 has 3862 nodes and 478113 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06413 and
-	has 11 connected components, where the component with most nodes has 3837 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 247.60, and the node degree mode is 4. The top 5 most central
-	nodes are 1298865.H978DRAFT_3153 (degree 1450), 1298865.H978DRAFT_3432 (degree 1413),
-	1298865.H978DRAFT_4020 (degree 1341), 1298865.H978DRAFT_2777 (degree 1292) and 1298865.H978DRAFT_2509
+	The undirected graph Alteromonas sp. ALT199 has 3862 nodes and 478113 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06413 and has 11 connected components, where the component with most
+	nodes has 3837 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 247.60, and
+	the node degree mode is 4. The top 5 most central nodes are 1298865.H978DRAFT_3153
+	(degree 1450), 1298865.H978DRAFT_3432 (degree 1413), 1298865.H978DRAFT_4020
+	(degree 1341), 1298865.H978DRAFT_2777 (degree 1292) and 1298865.H978DRAFT_2509
 	(degree 1249).
 	
 

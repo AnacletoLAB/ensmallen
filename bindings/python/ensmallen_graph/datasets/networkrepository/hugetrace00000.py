@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:01.983790
 
-The undirected graph hugetrace-00000 has 4588484 nodes and 6879133 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-central nodes are 4588006 (degree 3), 4587477 (degree 3), 4586791 (degree 3), 4586790
-(degree 3) and 4587515 (degree 3).
+The undirected graph hugetrace-00000 has 4588484 nodes and 6879133 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 3.00 and the
+node degree mode is 3. The top 5 most central nodes are 4588006 (degree
+3), 4587477 (degree 3), 4586791 (degree 3), 4586790 (degree 3) and 4587515
+(degree 3).
 
 
 References
@@ -102,12 +103,13 @@ def Hugetrace00000(
 	
 	Datetime: 2021-02-03 23:14:01.983790
 	
-	The undirected graph hugetrace-00000 has 4588484 nodes and 6879133 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-	central nodes are 4588006 (degree 3), 4587477 (degree 3), 4586791 (degree 3), 4586790
-	(degree 3) and 4587515 (degree 3).
+	The undirected graph hugetrace-00000 has 4588484 nodes and 6879133 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 3.00 and the
+	node degree mode is 3. The top 5 most central nodes are 4588006 (degree
+	3), 4587477 (degree 3), 4586791 (degree 3), 4586790 (degree 3) and 4587515
+	(degree 3).
 	
 
 

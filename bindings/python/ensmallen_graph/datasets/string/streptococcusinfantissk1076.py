@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:53.283490
 
-The undirected graph Streptococcus infantis SK1076 has 1756 nodes and 128438 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08335
-and has 8 connected components, where the component with most nodes has 1733 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 146.28, and the node degree mode is 13. The top 5
-most central nodes are 1005705.HMPREF9967_0541 (degree 824), 1005705.HMPREF9967_0015
-(degree 771), 1005705.HMPREF9967_0735 (degree 673), 1005705.HMPREF9967_0462 (degree
-662) and 1005705.HMPREF9967_0841 (degree 646).
+The undirected graph Streptococcus infantis SK1076 has 1756 nodes and 128438
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08335 and has 8 connected components, where the component
+with most nodes has 1733 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 146.28,
+and the node degree mode is 13. The top 5 most central nodes are 1005705.HMPREF9967_0541
+(degree 824), 1005705.HMPREF9967_0015 (degree 771), 1005705.HMPREF9967_0735
+(degree 673), 1005705.HMPREF9967_0462 (degree 662) and 1005705.HMPREF9967_0841
+(degree 646).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusInfantisSk1076(
 	
 	Datetime: 2021-02-02 22:07:53.283490
 	
-	The undirected graph Streptococcus infantis SK1076 has 1756 nodes and 128438 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08335
-	and has 8 connected components, where the component with most nodes has 1733 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 146.28, and the node degree mode is 13. The top 5
-	most central nodes are 1005705.HMPREF9967_0541 (degree 824), 1005705.HMPREF9967_0015
-	(degree 771), 1005705.HMPREF9967_0735 (degree 673), 1005705.HMPREF9967_0462 (degree
-	662) and 1005705.HMPREF9967_0841 (degree 646).
+	The undirected graph Streptococcus infantis SK1076 has 1756 nodes and 128438
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08335 and has 8 connected components, where the component
+	with most nodes has 1733 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 146.28,
+	and the node degree mode is 13. The top 5 most central nodes are 1005705.HMPREF9967_0541
+	(degree 824), 1005705.HMPREF9967_0015 (degree 771), 1005705.HMPREF9967_0735
+	(degree 673), 1005705.HMPREF9967_0462 (degree 662) and 1005705.HMPREF9967_0841
+	(degree 646).
 	
 
 

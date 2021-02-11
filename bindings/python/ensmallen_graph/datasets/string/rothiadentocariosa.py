@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:33.471669
 
-The undirected graph Rothia dentocariosa has 2193 nodes and 102342 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04258 and
-has 19 connected components, where the component with most nodes has 2129 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 93.34, and the node degree mode is 4. The top 5 most central
-nodes are 762948.HMPREF0733_11832 (degree 743), 762948.HMPREF0733_10234 (degree 638),
-762948.HMPREF0733_11608 (degree 608), 762948.HMPREF0733_10246 (degree 576) and 762948.HMPREF0733_11007
+The undirected graph Rothia dentocariosa has 2193 nodes and 102342 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04258 and has 19 connected components, where the component with most
+nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 93.34, and
+the node degree mode is 4. The top 5 most central nodes are 762948.HMPREF0733_11832
+(degree 743), 762948.HMPREF0733_10234 (degree 638), 762948.HMPREF0733_11608
+(degree 608), 762948.HMPREF0733_10246 (degree 576) and 762948.HMPREF0733_11007
 (degree 571).
 
 
@@ -107,13 +108,14 @@ def RothiaDentocariosa(
 	
 	Datetime: 2021-02-02 21:42:33.471669
 	
-	The undirected graph Rothia dentocariosa has 2193 nodes and 102342 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04258 and
-	has 19 connected components, where the component with most nodes has 2129 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 93.34, and the node degree mode is 4. The top 5 most central
-	nodes are 762948.HMPREF0733_11832 (degree 743), 762948.HMPREF0733_10234 (degree 638),
-	762948.HMPREF0733_11608 (degree 608), 762948.HMPREF0733_10246 (degree 576) and 762948.HMPREF0733_11007
+	The undirected graph Rothia dentocariosa has 2193 nodes and 102342 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04258 and has 19 connected components, where the component with most
+	nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 93.34, and
+	the node degree mode is 4. The top 5 most central nodes are 762948.HMPREF0733_11832
+	(degree 743), 762948.HMPREF0733_10234 (degree 638), 762948.HMPREF0733_11608
+	(degree 608), 762948.HMPREF0733_10246 (degree 576) and 762948.HMPREF0733_11007
 	(degree 571).
 	
 

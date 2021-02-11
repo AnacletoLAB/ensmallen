@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:20.947737
 
-The undirected graph Shewanella piezotolerans has 4740 nodes and 556607 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04956
-and has 21 connected components, where the component with most nodes has 4695 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 234.86, and the node degree mode is 2. The top 5
-most central nodes are 225849.swp_5074 (degree 1629), 225849.swp_4584 (degree 1605),
-225849.swp_4467 (degree 1597), 225849.swp_3550 (degree 1441) and 225849.swp_4451
-(degree 1431).
+The undirected graph Shewanella piezotolerans has 4740 nodes and 556607
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04956 and has 21 connected components, where the component
+with most nodes has 4695 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 234.86,
+and the node degree mode is 2. The top 5 most central nodes are 225849.swp_5074
+(degree 1629), 225849.swp_4584 (degree 1605), 225849.swp_4467 (degree 1597),
+225849.swp_3550 (degree 1441) and 225849.swp_4451 (degree 1431).
 
 
 References
@@ -107,14 +107,14 @@ def ShewanellaPiezotolerans(
 	
 	Datetime: 2021-02-02 20:06:20.947737
 	
-	The undirected graph Shewanella piezotolerans has 4740 nodes and 556607 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04956
-	and has 21 connected components, where the component with most nodes has 4695 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 234.86, and the node degree mode is 2. The top 5
-	most central nodes are 225849.swp_5074 (degree 1629), 225849.swp_4584 (degree 1605),
-	225849.swp_4467 (degree 1597), 225849.swp_3550 (degree 1441) and 225849.swp_4451
-	(degree 1431).
+	The undirected graph Shewanella piezotolerans has 4740 nodes and 556607
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04956 and has 21 connected components, where the component
+	with most nodes has 4695 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 234.86,
+	and the node degree mode is 2. The top 5 most central nodes are 225849.swp_5074
+	(degree 1629), 225849.swp_4584 (degree 1605), 225849.swp_4467 (degree 1597),
+	225849.swp_3550 (degree 1441) and 225849.swp_4451 (degree 1431).
 	
 
 

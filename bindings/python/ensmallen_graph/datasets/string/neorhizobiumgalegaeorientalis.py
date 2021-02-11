@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:06.275914
 
-The undirected graph Neorhizobium galegae orientalis has 6126 nodes and 533980 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02846
-and has 19 connected components, where the component with most nodes has 6080 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 174.33, and the node degree mode is 3. The top 5
-most central nodes are 1028800.RG540_PA16700 (degree 2238), 1028800.RG540_CH43200
-(degree 1689), 1028800.RG540_CH30850 (degree 1585), 1028800.RG540_CH44880 (degree
+The undirected graph Neorhizobium galegae orientalis has 6126 nodes and
+533980 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.02846 and has 19 connected components, where the
+component with most nodes has 6080 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 140, the mean node degree
+is 174.33, and the node degree mode is 3. The top 5 most central nodes
+are 1028800.RG540_PA16700 (degree 2238), 1028800.RG540_CH43200 (degree
+1689), 1028800.RG540_CH30850 (degree 1585), 1028800.RG540_CH44880 (degree
 1548) and 1028800.RG540_CH06100 (degree 1395).
 
 
@@ -107,13 +108,14 @@ def NeorhizobiumGalegaeOrientalis(
 	
 	Datetime: 2021-02-02 22:10:06.275914
 	
-	The undirected graph Neorhizobium galegae orientalis has 6126 nodes and 533980 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02846
-	and has 19 connected components, where the component with most nodes has 6080 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 174.33, and the node degree mode is 3. The top 5
-	most central nodes are 1028800.RG540_PA16700 (degree 2238), 1028800.RG540_CH43200
-	(degree 1689), 1028800.RG540_CH30850 (degree 1585), 1028800.RG540_CH44880 (degree
+	The undirected graph Neorhizobium galegae orientalis has 6126 nodes and
+	533980 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.02846 and has 19 connected components, where the
+	component with most nodes has 6080 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 140, the mean node degree
+	is 174.33, and the node degree mode is 3. The top 5 most central nodes
+	are 1028800.RG540_PA16700 (degree 2238), 1028800.RG540_CH43200 (degree
+	1689), 1028800.RG540_CH30850 (degree 1585), 1028800.RG540_CH44880 (degree
 	1548) and 1028800.RG540_CH06100 (degree 1395).
 	
 

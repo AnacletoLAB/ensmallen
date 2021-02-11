@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:57.045695
 
-The undirected graph Streptomyces bingchenggensis has 9896 nodes and 1451842 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02965
-and has 52 connected components, where the component with most nodes has 9775 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 293.42, and the node degree mode is 2. The top 5
-most central nodes are 749414.SBI_09652 (degree 5197), 749414.SBI_03357 (degree 4538),
-749414.SBI_00671 (degree 3750), 749414.SBI_08156 (degree 3282) and 749414.SBI_09651
-(degree 3130).
+The undirected graph Streptomyces bingchenggensis has 9896 nodes and 1451842
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02965 and has 52 connected components, where the component
+with most nodes has 9775 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 293.42,
+and the node degree mode is 2. The top 5 most central nodes are 749414.SBI_09652
+(degree 5197), 749414.SBI_03357 (degree 4538), 749414.SBI_00671 (degree
+3750), 749414.SBI_08156 (degree 3282) and 749414.SBI_09651 (degree 3130).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesBingchenggensis(
 	
 	Datetime: 2021-02-02 21:39:57.045695
 	
-	The undirected graph Streptomyces bingchenggensis has 9896 nodes and 1451842 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02965
-	and has 52 connected components, where the component with most nodes has 9775 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 293.42, and the node degree mode is 2. The top 5
-	most central nodes are 749414.SBI_09652 (degree 5197), 749414.SBI_03357 (degree 4538),
-	749414.SBI_00671 (degree 3750), 749414.SBI_08156 (degree 3282) and 749414.SBI_09651
-	(degree 3130).
+	The undirected graph Streptomyces bingchenggensis has 9896 nodes and 1451842
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02965 and has 52 connected components, where the component
+	with most nodes has 9775 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 293.42,
+	and the node degree mode is 2. The top 5 most central nodes are 749414.SBI_09652
+	(degree 5197), 749414.SBI_03357 (degree 4538), 749414.SBI_00671 (degree
+	3750), 749414.SBI_08156 (degree 3282) and 749414.SBI_09651 (degree 3130).
 	
 
 

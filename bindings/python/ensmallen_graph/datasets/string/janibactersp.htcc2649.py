@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:33.223359
 
-The undirected graph Janibacter sp. HTCC2649 has 4040 nodes and 480874 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05894 and
-has 10 connected components, where the component with most nodes has 4015 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 238.06, and the node degree mode is 4. The top 5 most central
-nodes are 313589.JNB_03775 (degree 1200), 313589.JNB_16063 (degree 1183), 313589.JNB_17533
-(degree 1144), 313589.JNB_14613 (degree 1116) and 313589.JNB_08379 (degree 1054).
+The undirected graph Janibacter sp. HTCC2649 has 4040 nodes and 480874
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05894 and has 10 connected components, where the component
+with most nodes has 4015 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 238.06,
+and the node degree mode is 4. The top 5 most central nodes are 313589.JNB_03775
+(degree 1200), 313589.JNB_16063 (degree 1183), 313589.JNB_17533 (degree
+1144), 313589.JNB_14613 (degree 1116) and 313589.JNB_08379 (degree 1054).
 
 
 References
@@ -106,13 +107,14 @@ def JanibacterSp.Htcc2649(
 	
 	Datetime: 2021-02-02 20:23:33.223359
 	
-	The undirected graph Janibacter sp. HTCC2649 has 4040 nodes and 480874 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05894 and
-	has 10 connected components, where the component with most nodes has 4015 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 238.06, and the node degree mode is 4. The top 5 most central
-	nodes are 313589.JNB_03775 (degree 1200), 313589.JNB_16063 (degree 1183), 313589.JNB_17533
-	(degree 1144), 313589.JNB_14613 (degree 1116) and 313589.JNB_08379 (degree 1054).
+	The undirected graph Janibacter sp. HTCC2649 has 4040 nodes and 480874
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05894 and has 10 connected components, where the component
+	with most nodes has 4015 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 238.06,
+	and the node degree mode is 4. The top 5 most central nodes are 313589.JNB_03775
+	(degree 1200), 313589.JNB_16063 (degree 1183), 313589.JNB_17533 (degree
+	1144), 313589.JNB_14613 (degree 1116) and 313589.JNB_08379 (degree 1054).
 	
 
 

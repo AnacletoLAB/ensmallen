@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:18.371381
 
-The undirected graph Erythrobacter litoralis has 2986 nodes and 180038 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04040 and
-has 9 connected components, where the component with most nodes has 2969 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 120.59, and the node degree mode is 3. The top 5 most central
-nodes are 314225.ELI_14330 (degree 1021), 314225.ELI_11710 (degree 846), 314225.ELI_15035
-(degree 794), 314225.ELI_06055 (degree 708) and 314225.ELI_07095 (degree 707).
+The undirected graph Erythrobacter litoralis has 2986 nodes and 180038
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04040 and has 9 connected components, where the component
+with most nodes has 2969 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 120.59,
+and the node degree mode is 3. The top 5 most central nodes are 314225.ELI_14330
+(degree 1021), 314225.ELI_11710 (degree 846), 314225.ELI_15035 (degree
+794), 314225.ELI_06055 (degree 708) and 314225.ELI_07095 (degree 707).
 
 
 References
@@ -106,13 +107,14 @@ def ErythrobacterLitoralis(
 	
 	Datetime: 2021-02-02 20:24:18.371381
 	
-	The undirected graph Erythrobacter litoralis has 2986 nodes and 180038 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04040 and
-	has 9 connected components, where the component with most nodes has 2969 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 120.59, and the node degree mode is 3. The top 5 most central
-	nodes are 314225.ELI_14330 (degree 1021), 314225.ELI_11710 (degree 846), 314225.ELI_15035
-	(degree 794), 314225.ELI_06055 (degree 708) and 314225.ELI_07095 (degree 707).
+	The undirected graph Erythrobacter litoralis has 2986 nodes and 180038
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04040 and has 9 connected components, where the component
+	with most nodes has 2969 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 120.59,
+	and the node degree mode is 3. The top 5 most central nodes are 314225.ELI_14330
+	(degree 1021), 314225.ELI_11710 (degree 846), 314225.ELI_15035 (degree
+	794), 314225.ELI_06055 (degree 708) and 314225.ELI_07095 (degree 707).
 	
 
 

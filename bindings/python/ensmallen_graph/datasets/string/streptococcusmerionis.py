@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:41.034485
 
-The undirected graph Streptococcus merionis has 2082 nodes and 260139 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12008
-and has 6 connected components, where the component with most nodes has 2070 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 249.89, and the node degree mode is 4. The top 5
-most central nodes are 1123308.KB904545_gene1582 (degree 1111), 1123308.KB904538_gene261
-(degree 1056), 1123308.KB904556_gene968 (degree 1023), 1123308.KB904559_gene1399
-(degree 1000) and 1123308.KB904543_gene1696 (degree 960).
+The undirected graph Streptococcus merionis has 2082 nodes and 260139 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12008 and has 6 connected components, where the component
+with most nodes has 2070 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 249.89,
+and the node degree mode is 4. The top 5 most central nodes are 1123308.KB904545_gene1582
+(degree 1111), 1123308.KB904538_gene261 (degree 1056), 1123308.KB904556_gene968
+(degree 1023), 1123308.KB904559_gene1399 (degree 1000) and 1123308.KB904543_gene1696
+(degree 960).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMerionis(
 	
 	Datetime: 2021-02-02 22:50:41.034485
 	
-	The undirected graph Streptococcus merionis has 2082 nodes and 260139 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12008
-	and has 6 connected components, where the component with most nodes has 2070 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 249.89, and the node degree mode is 4. The top 5
-	most central nodes are 1123308.KB904545_gene1582 (degree 1111), 1123308.KB904538_gene261
-	(degree 1056), 1123308.KB904556_gene968 (degree 1023), 1123308.KB904559_gene1399
-	(degree 1000) and 1123308.KB904543_gene1696 (degree 960).
+	The undirected graph Streptococcus merionis has 2082 nodes and 260139 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12008 and has 6 connected components, where the component
+	with most nodes has 2070 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 249.89,
+	and the node degree mode is 4. The top 5 most central nodes are 1123308.KB904545_gene1582
+	(degree 1111), 1123308.KB904538_gene261 (degree 1056), 1123308.KB904556_gene968
+	(degree 1023), 1123308.KB904559_gene1399 (degree 1000) and 1123308.KB904543_gene1696
+	(degree 960).
 	
 
 

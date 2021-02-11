@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:31.193659
 
-The undirected graph Paracoccus aminophilus has 3775 nodes and 275094 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03862 and
-has 7 connected components, where the component with most nodes has 3757 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 145.75, and the node degree mode is 4. The top 5 most central
-nodes are 1367847.JCM7686_1103 (degree 1442), 1367847.JCM7686_2602 (degree 961),
-1367847.JCM7686_3020 (degree 951), 1367847.JCM7686_2542 (degree 949) and 1367847.JCM7686_3036
+The undirected graph Paracoccus aminophilus has 3775 nodes and 275094 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03862 and has 7 connected components, where the component with most
+nodes has 3757 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 145.75, and
+the node degree mode is 4. The top 5 most central nodes are 1367847.JCM7686_1103
+(degree 1442), 1367847.JCM7686_2602 (degree 961), 1367847.JCM7686_3020
+(degree 951), 1367847.JCM7686_2542 (degree 949) and 1367847.JCM7686_3036
 (degree 931).
 
 
@@ -107,13 +108,14 @@ def ParacoccusAminophilus(
 	
 	Datetime: 2021-02-03 22:09:31.193659
 	
-	The undirected graph Paracoccus aminophilus has 3775 nodes and 275094 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03862 and
-	has 7 connected components, where the component with most nodes has 3757 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 145.75, and the node degree mode is 4. The top 5 most central
-	nodes are 1367847.JCM7686_1103 (degree 1442), 1367847.JCM7686_2602 (degree 961),
-	1367847.JCM7686_3020 (degree 951), 1367847.JCM7686_2542 (degree 949) and 1367847.JCM7686_3036
+	The undirected graph Paracoccus aminophilus has 3775 nodes and 275094 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03862 and has 7 connected components, where the component with most
+	nodes has 3757 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 145.75, and
+	the node degree mode is 4. The top 5 most central nodes are 1367847.JCM7686_1103
+	(degree 1442), 1367847.JCM7686_2602 (degree 961), 1367847.JCM7686_3020
+	(degree 951), 1367847.JCM7686_2542 (degree 949) and 1367847.JCM7686_3036
 	(degree 931).
 	
 

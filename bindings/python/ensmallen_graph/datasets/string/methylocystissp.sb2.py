@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:34.005065
 
-The undirected graph Methylocystis sp. SB2 has 3290 nodes and 382882 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07077 and
-has 17 connected components, where the component with most nodes has 3254 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 232.76, and the node degree mode is 1. The top 5 most central
-nodes are 743836.AYNA01000009_gene1553 (degree 1239), 743836.AYNA01000089_gene3254
-(degree 1061), 743836.AYNA01000076_gene2876 (degree 1018), 743836.AYNA01000121_gene2503
-(degree 1009) and 743836.AYNA01000104_gene2052 (degree 991).
+The undirected graph Methylocystis sp. SB2 has 3290 nodes and 382882 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07077 and has 17 connected components, where the component with most
+nodes has 3254 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 232.76, and
+the node degree mode is 1. The top 5 most central nodes are 743836.AYNA01000009_gene1553
+(degree 1239), 743836.AYNA01000089_gene3254 (degree 1061), 743836.AYNA01000076_gene2876
+(degree 1018), 743836.AYNA01000121_gene2503 (degree 1009) and 743836.AYNA01000104_gene2052
+(degree 991).
 
 
 References
@@ -107,14 +108,15 @@ def MethylocystisSp.Sb2(
 	
 	Datetime: 2021-02-02 21:38:34.005065
 	
-	The undirected graph Methylocystis sp. SB2 has 3290 nodes and 382882 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07077 and
-	has 17 connected components, where the component with most nodes has 3254 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 232.76, and the node degree mode is 1. The top 5 most central
-	nodes are 743836.AYNA01000009_gene1553 (degree 1239), 743836.AYNA01000089_gene3254
-	(degree 1061), 743836.AYNA01000076_gene2876 (degree 1018), 743836.AYNA01000121_gene2503
-	(degree 1009) and 743836.AYNA01000104_gene2052 (degree 991).
+	The undirected graph Methylocystis sp. SB2 has 3290 nodes and 382882 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07077 and has 17 connected components, where the component with most
+	nodes has 3254 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 232.76, and
+	the node degree mode is 1. The top 5 most central nodes are 743836.AYNA01000009_gene1553
+	(degree 1239), 743836.AYNA01000089_gene3254 (degree 1061), 743836.AYNA01000076_gene2876
+	(degree 1018), 743836.AYNA01000121_gene2503 (degree 1009) and 743836.AYNA01000104_gene2052
+	(degree 991).
 	
 
 

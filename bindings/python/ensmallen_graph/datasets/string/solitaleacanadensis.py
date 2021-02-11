@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:20.938400
 
-The undirected graph Solitalea canadensis has 4281 nodes and 510959 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05577 and
-has 14 connected components, where the component with most nodes has 4247 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 219,
-the mean node degree is 238.71, and the node degree mode is 3. The top 5 most central
-nodes are 929556.Solca_2664 (degree 2189), 929556.Solca_4100 (degree 1585), 929556.Solca_1536
-(degree 1439), 929556.Solca_1467 (degree 1189) and 929556.Solca_2365 (degree 1186).
+The undirected graph Solitalea canadensis has 4281 nodes and 510959 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05577 and has 14 connected components, where the component with most
+nodes has 4247 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 219, the mean node degree is 238.71, and
+the node degree mode is 3. The top 5 most central nodes are 929556.Solca_2664
+(degree 2189), 929556.Solca_4100 (degree 1585), 929556.Solca_1536 (degree
+1439), 929556.Solca_1467 (degree 1189) and 929556.Solca_2365 (degree 1186).
 
 
 References
@@ -106,13 +107,14 @@ def SolitaleaCanadensis(
 	
 	Datetime: 2021-02-02 21:57:20.938400
 	
-	The undirected graph Solitalea canadensis has 4281 nodes and 510959 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05577 and
-	has 14 connected components, where the component with most nodes has 4247 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 219,
-	the mean node degree is 238.71, and the node degree mode is 3. The top 5 most central
-	nodes are 929556.Solca_2664 (degree 2189), 929556.Solca_4100 (degree 1585), 929556.Solca_1536
-	(degree 1439), 929556.Solca_1467 (degree 1189) and 929556.Solca_2365 (degree 1186).
+	The undirected graph Solitalea canadensis has 4281 nodes and 510959 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05577 and has 14 connected components, where the component with most
+	nodes has 4247 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 219, the mean node degree is 238.71, and
+	the node degree mode is 3. The top 5 most central nodes are 929556.Solca_2664
+	(degree 2189), 929556.Solca_4100 (degree 1585), 929556.Solca_1536 (degree
+	1439), 929556.Solca_1467 (degree 1189) and 929556.Solca_2365 (degree 1186).
 	
 
 

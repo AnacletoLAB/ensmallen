@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:18.502000
 
-The undirected graph Koribacter versatilis has 4741 nodes and 527115 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04691 and
-has 14 connected components, where the component with most nodes has 4712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 222.36, and the node degree mode is 3. The top 5 most central
-nodes are 204669.Acid345_4059 (degree 1853), 204669.Acid345_4479 (degree 1639), 204669.Acid345_4052
-(degree 1592), 204669.Acid345_1066 (degree 1452) and 204669.Acid345_2810 (degree
+The undirected graph Koribacter versatilis has 4741 nodes and 527115 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04691 and has 14 connected components, where the component with most
+nodes has 4712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 189, the mean node degree is 222.36, and
+the node degree mode is 3. The top 5 most central nodes are 204669.Acid345_4059
+(degree 1853), 204669.Acid345_4479 (degree 1639), 204669.Acid345_4052 (degree
+1592), 204669.Acid345_1066 (degree 1452) and 204669.Acid345_2810 (degree
 1387).
 
 
@@ -107,13 +108,14 @@ def KoribacterVersatilis(
 	
 	Datetime: 2021-02-02 20:00:18.502000
 	
-	The undirected graph Koribacter versatilis has 4741 nodes and 527115 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04691 and
-	has 14 connected components, where the component with most nodes has 4712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 222.36, and the node degree mode is 3. The top 5 most central
-	nodes are 204669.Acid345_4059 (degree 1853), 204669.Acid345_4479 (degree 1639), 204669.Acid345_4052
-	(degree 1592), 204669.Acid345_1066 (degree 1452) and 204669.Acid345_2810 (degree
+	The undirected graph Koribacter versatilis has 4741 nodes and 527115 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04691 and has 14 connected components, where the component with most
+	nodes has 4712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 189, the mean node degree is 222.36, and
+	the node degree mode is 3. The top 5 most central nodes are 204669.Acid345_4059
+	(degree 1853), 204669.Acid345_4479 (degree 1639), 204669.Acid345_4052 (degree
+	1592), 204669.Acid345_1066 (degree 1452) and 204669.Acid345_2810 (degree
 	1387).
 	
 

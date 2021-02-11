@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:07.649896
 
-The undirected graph Hamadaea tsunoensis has 8046 nodes and 922953 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02852 and
-has 41 connected components, where the component with most nodes has 7947 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 229.42, and the node degree mode is 3. The top 5 most central
-nodes are 1121946.AUAX01000005_gene5403 (degree 1916), 1121946.AUAX01000003_gene1487
-(degree 1863), 1121946.AUAX01000001_gene2452 (degree 1819), 1121946.AUAX01000024_gene7579
-(degree 1801) and 1121946.AUAX01000018_gene6907 (degree 1443).
+The undirected graph Hamadaea tsunoensis has 8046 nodes and 922953 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02852 and has 41 connected components, where the component with most
+nodes has 7947 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 229.42, and
+the node degree mode is 3. The top 5 most central nodes are 1121946.AUAX01000005_gene5403
+(degree 1916), 1121946.AUAX01000003_gene1487 (degree 1863), 1121946.AUAX01000001_gene2452
+(degree 1819), 1121946.AUAX01000024_gene7579 (degree 1801) and 1121946.AUAX01000018_gene6907
+(degree 1443).
 
 
 References
@@ -107,14 +108,15 @@ def HamadaeaTsunoensis(
 	
 	Datetime: 2021-02-02 22:40:07.649896
 	
-	The undirected graph Hamadaea tsunoensis has 8046 nodes and 922953 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02852 and
-	has 41 connected components, where the component with most nodes has 7947 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 229.42, and the node degree mode is 3. The top 5 most central
-	nodes are 1121946.AUAX01000005_gene5403 (degree 1916), 1121946.AUAX01000003_gene1487
-	(degree 1863), 1121946.AUAX01000001_gene2452 (degree 1819), 1121946.AUAX01000024_gene7579
-	(degree 1801) and 1121946.AUAX01000018_gene6907 (degree 1443).
+	The undirected graph Hamadaea tsunoensis has 8046 nodes and 922953 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02852 and has 41 connected components, where the component with most
+	nodes has 7947 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 229.42, and
+	the node degree mode is 3. The top 5 most central nodes are 1121946.AUAX01000005_gene5403
+	(degree 1916), 1121946.AUAX01000003_gene1487 (degree 1863), 1121946.AUAX01000001_gene2452
+	(degree 1819), 1121946.AUAX01000024_gene7579 (degree 1801) and 1121946.AUAX01000018_gene6907
+	(degree 1443).
 	
 
 

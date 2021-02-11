@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:21.011435
 
-The undirected graph Prevotella bergensis has 2762 nodes and 169521 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04446 and
-has 26 connected components, where the component with most nodes has 2692 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 122.75, and the node degree mode is 3. The top 5 most central
-nodes are 585502.HMPREF0645_2373 (degree 810), 585502.HMPREF0645_1505 (degree 800),
-585502.HMPREF0645_0275 (degree 771), 585502.HMPREF0645_0838 (degree 710) and 585502.HMPREF0645_1398
+The undirected graph Prevotella bergensis has 2762 nodes and 169521 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04446 and has 26 connected components, where the component with most
+nodes has 2692 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 122.75, and
+the node degree mode is 3. The top 5 most central nodes are 585502.HMPREF0645_2373
+(degree 810), 585502.HMPREF0645_1505 (degree 800), 585502.HMPREF0645_0275
+(degree 771), 585502.HMPREF0645_0838 (degree 710) and 585502.HMPREF0645_1398
 (degree 705).
 
 
@@ -107,13 +108,14 @@ def PrevotellaBergensis(
 	
 	Datetime: 2021-02-02 21:16:21.011435
 	
-	The undirected graph Prevotella bergensis has 2762 nodes and 169521 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04446 and
-	has 26 connected components, where the component with most nodes has 2692 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 122.75, and the node degree mode is 3. The top 5 most central
-	nodes are 585502.HMPREF0645_2373 (degree 810), 585502.HMPREF0645_1505 (degree 800),
-	585502.HMPREF0645_0275 (degree 771), 585502.HMPREF0645_0838 (degree 710) and 585502.HMPREF0645_1398
+	The undirected graph Prevotella bergensis has 2762 nodes and 169521 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04446 and has 26 connected components, where the component with most
+	nodes has 2692 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 122.75, and
+	the node degree mode is 3. The top 5 most central nodes are 585502.HMPREF0645_2373
+	(degree 810), 585502.HMPREF0645_1505 (degree 800), 585502.HMPREF0645_0275
+	(degree 771), 585502.HMPREF0645_0838 (degree 710) and 585502.HMPREF0645_1398
 	(degree 705).
 	
 

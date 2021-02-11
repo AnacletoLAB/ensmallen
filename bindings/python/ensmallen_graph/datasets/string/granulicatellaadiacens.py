@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:39.517577
 
-The undirected graph Granulicatella adiacens has 1907 nodes and 162308 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08931 and
-has 5 connected components, where the component with most nodes has 1899 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 170.22, and the node degree mode is 8. The top 5 most central
-nodes are 638301.HMPREF0444_0723 (degree 867), 638301.HMPREF0444_1753 (degree 799),
-638301.HMPREF0444_0475 (degree 782), 638301.HMPREF0444_1344 (degree 731) and 638301.HMPREF0444_0428
+The undirected graph Granulicatella adiacens has 1907 nodes and 162308
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08931 and has 5 connected components, where the component
+with most nodes has 1899 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 170.22,
+and the node degree mode is 8. The top 5 most central nodes are 638301.HMPREF0444_0723
+(degree 867), 638301.HMPREF0444_1753 (degree 799), 638301.HMPREF0444_0475
+(degree 782), 638301.HMPREF0444_1344 (degree 731) and 638301.HMPREF0444_0428
 (degree 683).
 
 
@@ -107,13 +108,14 @@ def GranulicatellaAdiacens(
 	
 	Datetime: 2021-02-02 21:22:39.517577
 	
-	The undirected graph Granulicatella adiacens has 1907 nodes and 162308 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08931 and
-	has 5 connected components, where the component with most nodes has 1899 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 170.22, and the node degree mode is 8. The top 5 most central
-	nodes are 638301.HMPREF0444_0723 (degree 867), 638301.HMPREF0444_1753 (degree 799),
-	638301.HMPREF0444_0475 (degree 782), 638301.HMPREF0444_1344 (degree 731) and 638301.HMPREF0444_0428
+	The undirected graph Granulicatella adiacens has 1907 nodes and 162308
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08931 and has 5 connected components, where the component
+	with most nodes has 1899 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 170.22,
+	and the node degree mode is 8. The top 5 most central nodes are 638301.HMPREF0444_0723
+	(degree 867), 638301.HMPREF0444_1753 (degree 799), 638301.HMPREF0444_0475
+	(degree 782), 638301.HMPREF0444_1344 (degree 731) and 638301.HMPREF0444_0428
 	(degree 683).
 	
 

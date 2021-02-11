@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:49.866414
 
-The undirected graph ca-CSphd has 1881 nodes and 1739 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00098 and
-has 168 connected components, where the component with most nodes has 1024 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 1, the mean node degree is 1.85, and the node degree mode is 1. The top 5 most
-central nodes are 216 (degree 46), 18 (degree 24), 132 (degree 21), 20 (degree 21)
-and 258 (degree 19).
+The undirected graph ca-CSphd has 1881 nodes and 1739 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00098 and has 168 connected components, where the component with most
+nodes has 1024 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 1, the mean node degree is 1.85, and the
+node degree mode is 1. The top 5 most central nodes are 216 (degree 46),
+18 (degree 24), 132 (degree 21), 20 (degree 21) and 258 (degree 19).
 
 
 References
@@ -111,13 +111,13 @@ def CaCsphd(
 	
 	Datetime: 2021-02-05 17:18:49.866414
 	
-	The undirected graph ca-CSphd has 1881 nodes and 1739 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00098 and
-	has 168 connected components, where the component with most nodes has 1024 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1, the mean node degree is 1.85, and the node degree mode is 1. The top 5 most
-	central nodes are 216 (degree 46), 18 (degree 24), 132 (degree 21), 20 (degree 21)
-	and 258 (degree 19).
+	The undirected graph ca-CSphd has 1881 nodes and 1739 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00098 and has 168 connected components, where the component with most
+	nodes has 1024 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 1, the mean node degree is 1.85, and the
+	node degree mode is 1. The top 5 most central nodes are 216 (degree 46),
+	18 (degree 24), 132 (degree 21), 20 (degree 21) and 258 (degree 19).
 	
 
 

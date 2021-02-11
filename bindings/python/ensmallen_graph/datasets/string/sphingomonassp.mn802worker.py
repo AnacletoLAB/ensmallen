@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:13.200542
 
-The undirected graph Sphingomonas sp. Mn802worker has 3013 nodes and 255312 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05627
-and has 16 connected components, where the component with most nodes has 2965 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 169.47, and the node degree mode is 4. The top 5
-most central nodes are 629773.AORY01000015_gene1269 (degree 1090), 629773.AORY01000001_gene2061
-(degree 944), 629773.AORY01000014_gene2554 (degree 842), 629773.AORY01000015_gene1183
-(degree 813) and 629773.AORY01000002_gene1650 (degree 811).
+The undirected graph Sphingomonas sp. Mn802worker has 3013 nodes and 255312
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05627 and has 16 connected components, where the component
+with most nodes has 2965 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 169.47,
+and the node degree mode is 4. The top 5 most central nodes are 629773.AORY01000015_gene1269
+(degree 1090), 629773.AORY01000001_gene2061 (degree 944), 629773.AORY01000014_gene2554
+(degree 842), 629773.AORY01000015_gene1183 (degree 813) and 629773.AORY01000002_gene1650
+(degree 811).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.Mn802worker(
 	
 	Datetime: 2021-02-02 21:21:13.200542
 	
-	The undirected graph Sphingomonas sp. Mn802worker has 3013 nodes and 255312 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05627
-	and has 16 connected components, where the component with most nodes has 2965 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 169.47, and the node degree mode is 4. The top 5
-	most central nodes are 629773.AORY01000015_gene1269 (degree 1090), 629773.AORY01000001_gene2061
-	(degree 944), 629773.AORY01000014_gene2554 (degree 842), 629773.AORY01000015_gene1183
-	(degree 813) and 629773.AORY01000002_gene1650 (degree 811).
+	The undirected graph Sphingomonas sp. Mn802worker has 3013 nodes and 255312
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05627 and has 16 connected components, where the component
+	with most nodes has 2965 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 169.47,
+	and the node degree mode is 4. The top 5 most central nodes are 629773.AORY01000015_gene1269
+	(degree 1090), 629773.AORY01000001_gene2061 (degree 944), 629773.AORY01000014_gene2554
+	(degree 842), 629773.AORY01000015_gene1183 (degree 813) and 629773.AORY01000002_gene1650
+	(degree 811).
 	
 
 

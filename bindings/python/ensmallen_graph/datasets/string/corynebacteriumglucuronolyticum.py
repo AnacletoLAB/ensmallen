@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:12.218691
 
-The undirected graph Corynebacterium glucuronolyticum has 2585 nodes and 188422 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05642
-and has 25 connected components, where the component with most nodes has 2526 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 145.78, and the node degree mode is 1. The top 5
-most central nodes are 548477.HMPREF0294_1264 (degree 936), 548477.HMPREF0294_1161
-(degree 921), 548477.HMPREF0294_1824 (degree 812), 548477.HMPREF0294_0180 (degree
+The undirected graph Corynebacterium glucuronolyticum has 2585 nodes and
+188422 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05642 and has 25 connected components, where the
+component with most nodes has 2526 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+is 145.78, and the node degree mode is 1. The top 5 most central nodes
+are 548477.HMPREF0294_1264 (degree 936), 548477.HMPREF0294_1161 (degree
+921), 548477.HMPREF0294_1824 (degree 812), 548477.HMPREF0294_0180 (degree
 806) and 548477.HMPREF0294_1291 (degree 755).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumGlucuronolyticum(
 	
 	Datetime: 2021-02-02 21:09:12.218691
 	
-	The undirected graph Corynebacterium glucuronolyticum has 2585 nodes and 188422 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05642
-	and has 25 connected components, where the component with most nodes has 2526 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 145.78, and the node degree mode is 1. The top 5
-	most central nodes are 548477.HMPREF0294_1264 (degree 936), 548477.HMPREF0294_1161
-	(degree 921), 548477.HMPREF0294_1824 (degree 812), 548477.HMPREF0294_0180 (degree
+	The undirected graph Corynebacterium glucuronolyticum has 2585 nodes and
+	188422 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05642 and has 25 connected components, where the
+	component with most nodes has 2526 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+	is 145.78, and the node degree mode is 1. The top 5 most central nodes
+	are 548477.HMPREF0294_1264 (degree 936), 548477.HMPREF0294_1161 (degree
+	921), 548477.HMPREF0294_1824 (degree 812), 548477.HMPREF0294_0180 (degree
 	806) and 548477.HMPREF0294_1291 (degree 755).
 	
 

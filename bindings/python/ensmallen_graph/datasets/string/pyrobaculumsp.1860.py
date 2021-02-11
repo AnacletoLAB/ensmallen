@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:38.561984
 
-The undirected graph Pyrobaculum sp. 1860 has 2801 nodes and 185046 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04719 and
-has 63 connected components, where the component with most nodes has 2617 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 73,
-the mean node degree is 132.13, and the node degree mode is 4. The top 5 most central
-nodes are 1104324.P186_0070 (degree 854), 1104324.P186_2792 (degree 807), 1104324.P186_0377
-(degree 760), 1104324.P186_1330 (degree 748) and 1104324.P186_2178 (degree 747).
+The undirected graph Pyrobaculum sp. 1860 has 2801 nodes and 185046 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04719 and has 63 connected components, where the component with most
+nodes has 2617 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 73, the mean node degree is 132.13, and
+the node degree mode is 4. The top 5 most central nodes are 1104324.P186_0070
+(degree 854), 1104324.P186_2792 (degree 807), 1104324.P186_0377 (degree
+760), 1104324.P186_1330 (degree 748) and 1104324.P186_2178 (degree 747).
 
 
 References
@@ -106,13 +107,14 @@ def PyrobaculumSp.1860(
 	
 	Datetime: 2021-02-02 22:24:38.561984
 	
-	The undirected graph Pyrobaculum sp. 1860 has 2801 nodes and 185046 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04719 and
-	has 63 connected components, where the component with most nodes has 2617 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 73,
-	the mean node degree is 132.13, and the node degree mode is 4. The top 5 most central
-	nodes are 1104324.P186_0070 (degree 854), 1104324.P186_2792 (degree 807), 1104324.P186_0377
-	(degree 760), 1104324.P186_1330 (degree 748) and 1104324.P186_2178 (degree 747).
+	The undirected graph Pyrobaculum sp. 1860 has 2801 nodes and 185046 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04719 and has 63 connected components, where the component with most
+	nodes has 2617 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 73, the mean node degree is 132.13, and
+	the node degree mode is 4. The top 5 most central nodes are 1104324.P186_0070
+	(degree 854), 1104324.P186_2792 (degree 807), 1104324.P186_0377 (degree
+	760), 1104324.P186_1330 (degree 748) and 1104324.P186_2178 (degree 747).
 	
 
 

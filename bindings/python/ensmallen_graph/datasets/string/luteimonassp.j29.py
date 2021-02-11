@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:44.287959
 
-The undirected graph Luteimonas sp. J29 has 2978 nodes and 267385 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06032 and
-has 4 connected components, where the component with most nodes has 2972 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 179.57, and the node degree mode is 5. The top 5 most central
-nodes are 935863.AWZR01000001_gene1812 (degree 1115), 935863.AWZR01000002_gene1088
-(degree 1104), 935863.AWZR01000001_gene1751 (degree 1051), 935863.AWZR01000012_gene2498
-(degree 1001) and 935863.AWZR01000007_gene167 (degree 922).
+The undirected graph Luteimonas sp. J29 has 2978 nodes and 267385 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06032 and has 4 connected components, where the component with most
+nodes has 2972 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 179.57, and
+the node degree mode is 5. The top 5 most central nodes are 935863.AWZR01000001_gene1812
+(degree 1115), 935863.AWZR01000002_gene1088 (degree 1104), 935863.AWZR01000001_gene1751
+(degree 1051), 935863.AWZR01000012_gene2498 (degree 1001) and 935863.AWZR01000007_gene167
+(degree 922).
 
 
 References
@@ -107,14 +108,15 @@ def LuteimonasSp.J29(
 	
 	Datetime: 2021-02-02 21:59:44.287959
 	
-	The undirected graph Luteimonas sp. J29 has 2978 nodes and 267385 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06032 and
-	has 4 connected components, where the component with most nodes has 2972 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 179.57, and the node degree mode is 5. The top 5 most central
-	nodes are 935863.AWZR01000001_gene1812 (degree 1115), 935863.AWZR01000002_gene1088
-	(degree 1104), 935863.AWZR01000001_gene1751 (degree 1051), 935863.AWZR01000012_gene2498
-	(degree 1001) and 935863.AWZR01000007_gene167 (degree 922).
+	The undirected graph Luteimonas sp. J29 has 2978 nodes and 267385 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06032 and has 4 connected components, where the component with most
+	nodes has 2972 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 179.57, and
+	the node degree mode is 5. The top 5 most central nodes are 935863.AWZR01000001_gene1812
+	(degree 1115), 935863.AWZR01000002_gene1088 (degree 1104), 935863.AWZR01000001_gene1751
+	(degree 1051), 935863.AWZR01000012_gene2498 (degree 1001) and 935863.AWZR01000007_gene167
+	(degree 922).
 	
 
 

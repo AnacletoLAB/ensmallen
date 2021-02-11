@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:30:47.310481
 
-The undirected graph soc-wiki-Talk-dir has 2394385 nodes and 4659564 weighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and has 2555 connected components, where the component with most nodes has
-2388953 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 1, the mean node degree is 3.89, and the node degree mode is 1. The
-top 5 most central nodes are 137042 (degree 100029), 16896 (degree 32392), 146624
-(degree 22679), 654 (degree 19587) and 17066 (degree 19311).
+The undirected graph soc-wiki-Talk-dir has 2394385 nodes and 4659564 weighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and has 2555 connected components, where the component
+with most nodes has 2388953 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 1, the mean node degree is
+3.89, and the node degree mode is 1. The top 5 most central nodes are 137042
+(degree 100029), 16896 (degree 32392), 146624 (degree 22679), 654 (degree
+19587) and 17066 (degree 19311).
 
 
 References
@@ -112,13 +113,14 @@ def SocWikiTalkDir(
 	
 	Datetime: 2021-02-06 12:30:47.310481
 	
-	The undirected graph soc-wiki-Talk-dir has 2394385 nodes and 4659564 weighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and has 2555 connected components, where the component with most nodes has
-	2388953 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 1, the mean node degree is 3.89, and the node degree mode is 1. The
-	top 5 most central nodes are 137042 (degree 100029), 16896 (degree 32392), 146624
-	(degree 22679), 654 (degree 19587) and 17066 (degree 19311).
+	The undirected graph soc-wiki-Talk-dir has 2394385 nodes and 4659564 weighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and has 2555 connected components, where the component
+	with most nodes has 2388953 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 1, the mean node degree is
+	3.89, and the node degree mode is 1. The top 5 most central nodes are 137042
+	(degree 100029), 16896 (degree 32392), 146624 (degree 22679), 654 (degree
+	19587) and 17066 (degree 19311).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:30.849256
 
-The undirected graph Propionibacteriaceae bacterium P6A17 has 2486 nodes and 238355
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07717 and has 11 connected components, where the component with most nodes has
-2460 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 170, the mean node degree is 191.76, and the node degree mode is 6. The
-top 5 most central nodes are 1410634.JHVD01000001_gene1608 (degree 1000), 1410634.JHVD01000004_gene740
+The undirected graph Propionibacteriaceae bacterium P6A17 has 2486 nodes
+and 238355 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07717 and has 11 connected components, where the
+component with most nodes has 2460 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+is 191.76, and the node degree mode is 6. The top 5 most central nodes
+are 1410634.JHVD01000001_gene1608 (degree 1000), 1410634.JHVD01000004_gene740
 (degree 969), 1410634.JHVD01000003_gene1947 (degree 905), 1410634.JHVD01000001_gene1456
 (degree 901) and 1410634.JHVD01000012_gene595 (degree 882).
 
@@ -107,12 +108,13 @@ def PropionibacteriaceaeBacteriumP6a17(
 	
 	Datetime: 2021-02-03 22:43:30.849256
 	
-	The undirected graph Propionibacteriaceae bacterium P6A17 has 2486 nodes and 238355
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07717 and has 11 connected components, where the component with most nodes has
-	2460 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 170, the mean node degree is 191.76, and the node degree mode is 6. The
-	top 5 most central nodes are 1410634.JHVD01000001_gene1608 (degree 1000), 1410634.JHVD01000004_gene740
+	The undirected graph Propionibacteriaceae bacterium P6A17 has 2486 nodes
+	and 238355 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07717 and has 11 connected components, where the
+	component with most nodes has 2460 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+	is 191.76, and the node degree mode is 6. The top 5 most central nodes
+	are 1410634.JHVD01000001_gene1608 (degree 1000), 1410634.JHVD01000004_gene740
 	(degree 969), 1410634.JHVD01000003_gene1947 (degree 905), 1410634.JHVD01000001_gene1456
 	(degree 901) and 1410634.JHVD01000012_gene595 (degree 882).
 	

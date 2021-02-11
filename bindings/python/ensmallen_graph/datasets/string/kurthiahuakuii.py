@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:03.081486
 
-The undirected graph Kurthia huakuii has 3427 nodes and 367543 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06261 and
-has 20 connected components, where the component with most nodes has 3385 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 214.50, and the node degree mode is 1. The top 5 most central
-nodes are 1334046.AYTB01000008_gene2841 (degree 1237), 1334046.AYTB01000021_gene714
-(degree 1017), 1334046.AYTB01000007_gene3364 (degree 993), 1334046.AYTB01000007_gene3146
-(degree 945) and 1334046.AYTB01000008_gene2650 (degree 876).
+The undirected graph Kurthia huakuii has 3427 nodes and 367543 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06261 and has 20 connected components, where the component with most
+nodes has 3385 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 214.50, and
+the node degree mode is 1. The top 5 most central nodes are 1334046.AYTB01000008_gene2841
+(degree 1237), 1334046.AYTB01000021_gene714 (degree 1017), 1334046.AYTB01000007_gene3364
+(degree 993), 1334046.AYTB01000007_gene3146 (degree 945) and 1334046.AYTB01000008_gene2650
+(degree 876).
 
 
 References
@@ -107,14 +108,15 @@ def KurthiaHuakuii(
 	
 	Datetime: 2021-02-03 21:56:03.081486
 	
-	The undirected graph Kurthia huakuii has 3427 nodes and 367543 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06261 and
-	has 20 connected components, where the component with most nodes has 3385 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 214.50, and the node degree mode is 1. The top 5 most central
-	nodes are 1334046.AYTB01000008_gene2841 (degree 1237), 1334046.AYTB01000021_gene714
-	(degree 1017), 1334046.AYTB01000007_gene3364 (degree 993), 1334046.AYTB01000007_gene3146
-	(degree 945) and 1334046.AYTB01000008_gene2650 (degree 876).
+	The undirected graph Kurthia huakuii has 3427 nodes and 367543 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06261 and has 20 connected components, where the component with most
+	nodes has 3385 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 214.50, and
+	the node degree mode is 1. The top 5 most central nodes are 1334046.AYTB01000008_gene2841
+	(degree 1237), 1334046.AYTB01000021_gene714 (degree 1017), 1334046.AYTB01000007_gene3364
+	(degree 993), 1334046.AYTB01000007_gene3146 (degree 945) and 1334046.AYTB01000008_gene2650
+	(degree 876).
 	
 
 

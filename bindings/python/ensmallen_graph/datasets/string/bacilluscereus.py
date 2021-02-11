@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:35.239793
 
-The undirected graph Bacillus cereus has 5670 nodes and 736050 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04580 and
-has 39 connected components, where the component with most nodes has 5567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 246,
-the mean node degree is 259.63, and the node degree mode is 1. The top 5 most central
-nodes are 1396.DJ87_2891 (degree 1964), 1396.DJ87_292 (degree 1852), 1396.DJ87_5737
-(degree 1544), 1396.DJ87_551 (degree 1423) and 1396.DJ87_5615 (degree 1368).
+The undirected graph Bacillus cereus has 5670 nodes and 736050 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04580 and has 39 connected components, where the component with most
+nodes has 5567 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 246, the mean node degree is 259.63, and
+the node degree mode is 1. The top 5 most central nodes are 1396.DJ87_2891
+(degree 1964), 1396.DJ87_292 (degree 1852), 1396.DJ87_5737 (degree 1544),
+1396.DJ87_551 (degree 1423) and 1396.DJ87_5615 (degree 1368).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusCereus(
 	
 	Datetime: 2021-02-02 16:22:35.239793
 	
-	The undirected graph Bacillus cereus has 5670 nodes and 736050 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04580 and
-	has 39 connected components, where the component with most nodes has 5567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 246,
-	the mean node degree is 259.63, and the node degree mode is 1. The top 5 most central
-	nodes are 1396.DJ87_2891 (degree 1964), 1396.DJ87_292 (degree 1852), 1396.DJ87_5737
-	(degree 1544), 1396.DJ87_551 (degree 1423) and 1396.DJ87_5615 (degree 1368).
+	The undirected graph Bacillus cereus has 5670 nodes and 736050 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04580 and has 39 connected components, where the component with most
+	nodes has 5567 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 246, the mean node degree is 259.63, and
+	the node degree mode is 1. The top 5 most central nodes are 1396.DJ87_2891
+	(degree 1964), 1396.DJ87_292 (degree 1852), 1396.DJ87_5737 (degree 1544),
+	1396.DJ87_551 (degree 1423) and 1396.DJ87_5615 (degree 1368).
 	
 
 

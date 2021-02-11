@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:37.003168
 
-The undirected graph bio-human-gene2 has 14340 nodes, of which 318 are singletons
-(all have self-loops), and 9041364 weighted edges, of which 14340 are self-loops.
-The graph is dense as it has a density of 0.08787 and has 320 connected components,
-where the component with most nodes has 14020 nodes and the component with the least
-nodes has a single node. The graph median node degree is 750, the mean node degree
-is 1260.00 and the node degree mode is 1. The top 5 most central nodes are 1312 (degree
-7229), 6351 (degree 6857), 8470 (degree 6834), 6871 (degree 6765) and 8738 (degree
+The undirected graph bio-human-gene2 has 14340 nodes, of which 318 are
+singletons (all have self-loops), and 9041364 weighted edges, of which
+14340 are self-loops. The graph is dense as it has a density of 0.08787
+and has 320 connected components, where the component with most nodes has
+14020 nodes and the component with the least nodes has a single node. The
+graph median node degree is 750, the mean node degree is 1260.00 and the
+node degree mode is 1. The top 5 most central nodes are 1312 (degree 7229),
+6351 (degree 6857), 8470 (degree 6834), 6871 (degree 6765) and 8738 (degree
 6709).
 
 
@@ -114,13 +115,14 @@ def BioHumanGene2(
 	
 	Datetime: 2021-02-03 22:34:37.003168
 	
-	The undirected graph bio-human-gene2 has 14340 nodes, of which 318 are singletons
-	(all have self-loops), and 9041364 weighted edges, of which 14340 are self-loops.
-	The graph is dense as it has a density of 0.08787 and has 320 connected components,
-	where the component with most nodes has 14020 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 750, the mean node degree
-	is 1260.00 and the node degree mode is 1. The top 5 most central nodes are 1312 (degree
-	7229), 6351 (degree 6857), 8470 (degree 6834), 6871 (degree 6765) and 8738 (degree
+	The undirected graph bio-human-gene2 has 14340 nodes, of which 318 are
+	singletons (all have self-loops), and 9041364 weighted edges, of which
+	14340 are self-loops. The graph is dense as it has a density of 0.08787
+	and has 320 connected components, where the component with most nodes has
+	14020 nodes and the component with the least nodes has a single node. The
+	graph median node degree is 750, the mean node degree is 1260.00 and the
+	node degree mode is 1. The top 5 most central nodes are 1312 (degree 7229),
+	6351 (degree 6857), 8470 (degree 6834), 6871 (degree 6765) and 8738 (degree
 	6709).
 	
 

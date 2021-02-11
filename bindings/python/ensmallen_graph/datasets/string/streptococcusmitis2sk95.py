@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:46.967777
 
-The undirected graph Streptococcus mitis 2 SK95 has 1992 nodes and 129905 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-and has 9 connected components, where the component with most nodes has 1961 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 130.43, and the node degree mode is 5. The top 5
-most central nodes are 1000588.HMPREF9965_0263 (degree 845), 1000588.HMPREF9965_0290
-(degree 725), 1000588.HMPREF9965_0680 (degree 682), 1000588.HMPREF9965_1466 (degree
-651) and 1000588.HMPREF9965_1151 (degree 646).
+The undirected graph Streptococcus mitis 2 SK95 has 1992 nodes and 129905
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06551 and has 9 connected components, where the component
+with most nodes has 1961 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 130.43,
+and the node degree mode is 5. The top 5 most central nodes are 1000588.HMPREF9965_0263
+(degree 845), 1000588.HMPREF9965_0290 (degree 725), 1000588.HMPREF9965_0680
+(degree 682), 1000588.HMPREF9965_1466 (degree 651) and 1000588.HMPREF9965_1151
+(degree 646).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitis2Sk95(
 	
 	Datetime: 2021-02-02 22:06:46.967777
 	
-	The undirected graph Streptococcus mitis 2 SK95 has 1992 nodes and 129905 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-	and has 9 connected components, where the component with most nodes has 1961 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 130.43, and the node degree mode is 5. The top 5
-	most central nodes are 1000588.HMPREF9965_0263 (degree 845), 1000588.HMPREF9965_0290
-	(degree 725), 1000588.HMPREF9965_0680 (degree 682), 1000588.HMPREF9965_1466 (degree
-	651) and 1000588.HMPREF9965_1151 (degree 646).
+	The undirected graph Streptococcus mitis 2 SK95 has 1992 nodes and 129905
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06551 and has 9 connected components, where the component
+	with most nodes has 1961 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 130.43,
+	and the node degree mode is 5. The top 5 most central nodes are 1000588.HMPREF9965_0263
+	(degree 845), 1000588.HMPREF9965_0290 (degree 725), 1000588.HMPREF9965_0680
+	(degree 682), 1000588.HMPREF9965_1466 (degree 651) and 1000588.HMPREF9965_1151
+	(degree 646).
 	
 
 

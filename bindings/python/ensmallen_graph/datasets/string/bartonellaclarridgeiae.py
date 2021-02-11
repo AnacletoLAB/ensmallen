@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:31.009549
 
-The undirected graph Bartonella clarridgeiae has 1284 nodes and 74453 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09039 and
-has 4 connected components, where the component with most nodes has 1277 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 115.97, and the node degree mode is 1. The top 5 most central
-nodes are 696125.BARCL_0007 (degree 595), 696125.BARCL_1090 (degree 499), 696125.BARCL_0093
-(degree 478), 696125.BARCL_0065 (degree 474) and 696125.BARCL_1086 (degree 472).
+The undirected graph Bartonella clarridgeiae has 1284 nodes and 74453 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09039 and has 4 connected components, where the component with most
+nodes has 1277 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 115.97, and
+the node degree mode is 1. The top 5 most central nodes are 696125.BARCL_0007
+(degree 595), 696125.BARCL_1090 (degree 499), 696125.BARCL_0093 (degree
+478), 696125.BARCL_0065 (degree 474) and 696125.BARCL_1086 (degree 472).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaClarridgeiae(
 	
 	Datetime: 2021-02-02 21:32:31.009549
 	
-	The undirected graph Bartonella clarridgeiae has 1284 nodes and 74453 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09039 and
-	has 4 connected components, where the component with most nodes has 1277 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 115.97, and the node degree mode is 1. The top 5 most central
-	nodes are 696125.BARCL_0007 (degree 595), 696125.BARCL_1090 (degree 499), 696125.BARCL_0093
-	(degree 478), 696125.BARCL_0065 (degree 474) and 696125.BARCL_1086 (degree 472).
+	The undirected graph Bartonella clarridgeiae has 1284 nodes and 74453 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09039 and has 4 connected components, where the component with most
+	nodes has 1277 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 115.97, and
+	the node degree mode is 1. The top 5 most central nodes are 696125.BARCL_0007
+	(degree 595), 696125.BARCL_1090 (degree 499), 696125.BARCL_0093 (degree
+	478), 696125.BARCL_0065 (degree 474) and 696125.BARCL_1086 (degree 472).
 	
 
 

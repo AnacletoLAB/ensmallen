@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:14.629975
 
-The undirected graph Fusobacterium nucleatum vincentii 4113 has 2142 nodes and 120875
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05271 and has 7 connected components, where the component with most nodes has
-2120 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 81, the mean node degree is 112.86, and the node degree mode is 8. The
-top 5 most central nodes are 469606.FSCG_00249 (degree 846), 469606.FSCG_00342 (degree
-726), 469606.FSCG_01481 (degree 684), 469606.FSCG_01557 (degree 675) and 469606.FSCG_00665
-(degree 649).
+The undirected graph Fusobacterium nucleatum vincentii 4113 has 2142 nodes
+and 120875 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05271 and has 7 connected components, where the
+component with most nodes has 2120 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+is 112.86, and the node degree mode is 8. The top 5 most central nodes
+are 469606.FSCG_00249 (degree 846), 469606.FSCG_00342 (degree 726), 469606.FSCG_01481
+(degree 684), 469606.FSCG_01557 (degree 675) and 469606.FSCG_00665 (degree
+649).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumNucleatumVincentii4113(
 	
 	Datetime: 2021-02-02 20:55:14.629975
 	
-	The undirected graph Fusobacterium nucleatum vincentii 4113 has 2142 nodes and 120875
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05271 and has 7 connected components, where the component with most nodes has
-	2120 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 81, the mean node degree is 112.86, and the node degree mode is 8. The
-	top 5 most central nodes are 469606.FSCG_00249 (degree 846), 469606.FSCG_00342 (degree
-	726), 469606.FSCG_01481 (degree 684), 469606.FSCG_01557 (degree 675) and 469606.FSCG_00665
-	(degree 649).
+	The undirected graph Fusobacterium nucleatum vincentii 4113 has 2142 nodes
+	and 120875 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05271 and has 7 connected components, where the
+	component with most nodes has 2120 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+	is 112.86, and the node degree mode is 8. The top 5 most central nodes
+	are 469606.FSCG_00249 (degree 846), 469606.FSCG_00342 (degree 726), 469606.FSCG_01481
+	(degree 684), 469606.FSCG_01557 (degree 675) and 469606.FSCG_00665 (degree
+	649).
 	
 
 

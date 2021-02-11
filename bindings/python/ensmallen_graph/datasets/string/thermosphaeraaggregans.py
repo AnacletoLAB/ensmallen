@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:43.769163
 
-The undirected graph Thermosphaera aggregans has 1376 nodes and 102252 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10809
-and has 6 connected components, where the component with most nodes has 1362 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 148.62, and the node degree mode is 4. The top 5
-most central nodes are 633148.Tagg_0301 (degree 588), 633148.Tagg_0303 (degree 560),
-633148.Tagg_0780 (degree 549), 633148.Tagg_1159 (degree 501) and 633148.Tagg_0991
-(degree 489).
+The undirected graph Thermosphaera aggregans has 1376 nodes and 102252
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10809 and has 6 connected components, where the
+component with most nodes has 1362 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+is 148.62, and the node degree mode is 4. The top 5 most central nodes
+are 633148.Tagg_0301 (degree 588), 633148.Tagg_0303 (degree 560), 633148.Tagg_0780
+(degree 549), 633148.Tagg_1159 (degree 501) and 633148.Tagg_0991 (degree
+489).
 
 
 References
@@ -107,14 +108,15 @@ def ThermosphaeraAggregans(
 	
 	Datetime: 2021-02-02 21:21:43.769163
 	
-	The undirected graph Thermosphaera aggregans has 1376 nodes and 102252 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10809
-	and has 6 connected components, where the component with most nodes has 1362 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 148.62, and the node degree mode is 4. The top 5
-	most central nodes are 633148.Tagg_0301 (degree 588), 633148.Tagg_0303 (degree 560),
-	633148.Tagg_0780 (degree 549), 633148.Tagg_1159 (degree 501) and 633148.Tagg_0991
-	(degree 489).
+	The undirected graph Thermosphaera aggregans has 1376 nodes and 102252
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10809 and has 6 connected components, where the
+	component with most nodes has 1362 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 146, the mean node degree
+	is 148.62, and the node degree mode is 4. The top 5 most central nodes
+	are 633148.Tagg_0301 (degree 588), 633148.Tagg_0303 (degree 560), 633148.Tagg_0780
+	(degree 549), 633148.Tagg_1159 (degree 501) and 633148.Tagg_0991 (degree
+	489).
 	
 
 

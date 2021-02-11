@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:38.676291
 
-The undirected graph Variovorax paradoxus S110 has 6249 nodes and 768673 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03937
-and has 12 connected components, where the component with most nodes has 6219 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 246.01, and the node degree mode is 3. The top 5
-most central nodes are 543728.Vapar_1542 (degree 2627), 543728.Vapar_0774 (degree
-2414), 543728.Vapar_6170 (degree 2023), 543728.Vapar_1152 (degree 1965) and 543728.Vapar_2764
-(degree 1953).
+The undirected graph Variovorax paradoxus S110 has 6249 nodes and 768673
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03937 and has 12 connected components, where the component
+with most nodes has 6219 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 246.01,
+and the node degree mode is 3. The top 5 most central nodes are 543728.Vapar_1542
+(degree 2627), 543728.Vapar_0774 (degree 2414), 543728.Vapar_6170 (degree
+2023), 543728.Vapar_1152 (degree 1965) and 543728.Vapar_2764 (degree 1953).
 
 
 References
@@ -107,14 +107,14 @@ def VariovoraxParadoxusS110(
 	
 	Datetime: 2021-02-02 21:07:38.676291
 	
-	The undirected graph Variovorax paradoxus S110 has 6249 nodes and 768673 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03937
-	and has 12 connected components, where the component with most nodes has 6219 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 246.01, and the node degree mode is 3. The top 5
-	most central nodes are 543728.Vapar_1542 (degree 2627), 543728.Vapar_0774 (degree
-	2414), 543728.Vapar_6170 (degree 2023), 543728.Vapar_1152 (degree 1965) and 543728.Vapar_2764
-	(degree 1953).
+	The undirected graph Variovorax paradoxus S110 has 6249 nodes and 768673
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03937 and has 12 connected components, where the component
+	with most nodes has 6219 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 246.01,
+	and the node degree mode is 3. The top 5 most central nodes are 543728.Vapar_1542
+	(degree 2627), 543728.Vapar_0774 (degree 2414), 543728.Vapar_6170 (degree
+	2023), 543728.Vapar_1152 (degree 1965) and 543728.Vapar_2764 (degree 1953).
 	
 
 

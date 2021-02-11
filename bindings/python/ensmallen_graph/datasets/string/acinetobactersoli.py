@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:59:52.816809
 
-The undirected graph Acinetobacter soli has 3008 nodes and 216355 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04784 and
-has 6 connected components, where the component with most nodes has 2993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 143.85, and the node degree mode is 6. The top 5 most central
-nodes are 487316.BBNM01000013_gene1908 (degree 1159), 487316.BBNM01000002_gene1257
-(degree 952), 487316.BBNM01000006_gene2167 (degree 885), 487316.BBNM01000013_gene1947
-(degree 833) and 487316.BBNM01000002_gene1276 (degree 801).
+The undirected graph Acinetobacter soli has 3008 nodes and 216355 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04784 and has 6 connected components, where the component with most
+nodes has 2993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 143.85, and
+the node degree mode is 6. The top 5 most central nodes are 487316.BBNM01000013_gene1908
+(degree 1159), 487316.BBNM01000002_gene1257 (degree 952), 487316.BBNM01000006_gene2167
+(degree 885), 487316.BBNM01000013_gene1947 (degree 833) and 487316.BBNM01000002_gene1276
+(degree 801).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSoli(
 	
 	Datetime: 2021-02-02 20:59:52.816809
 	
-	The undirected graph Acinetobacter soli has 3008 nodes and 216355 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04784 and
-	has 6 connected components, where the component with most nodes has 2993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 143.85, and the node degree mode is 6. The top 5 most central
-	nodes are 487316.BBNM01000013_gene1908 (degree 1159), 487316.BBNM01000002_gene1257
-	(degree 952), 487316.BBNM01000006_gene2167 (degree 885), 487316.BBNM01000013_gene1947
-	(degree 833) and 487316.BBNM01000002_gene1276 (degree 801).
+	The undirected graph Acinetobacter soli has 3008 nodes and 216355 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04784 and has 6 connected components, where the component with most
+	nodes has 2993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 143.85, and
+	the node degree mode is 6. The top 5 most central nodes are 487316.BBNM01000013_gene1908
+	(degree 1159), 487316.BBNM01000002_gene1257 (degree 952), 487316.BBNM01000006_gene2167
+	(degree 885), 487316.BBNM01000013_gene1947 (degree 833) and 487316.BBNM01000002_gene1276
+	(degree 801).
 	
 
 

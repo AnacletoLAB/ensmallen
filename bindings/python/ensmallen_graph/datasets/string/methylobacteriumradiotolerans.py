@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:59.910167
 
-The undirected graph Methylobacterium radiotolerans has 6096 nodes and 618306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03328
-and has 52 connected components, where the component with most nodes has 5950 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 202.86, and the node degree mode is 2. The top 5
-most central nodes are 426355.Mrad2831_3536 (degree 2400), 426355.Mrad2831_3210 (degree
-1944), 426355.Mrad2831_5529 (degree 1876), 426355.Mrad2831_2306 (degree 1856) and
-426355.Mrad2831_0036 (degree 1797).
+The undirected graph Methylobacterium radiotolerans has 6096 nodes and
+618306 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03328 and has 52 connected components, where the
+component with most nodes has 5950 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 155, the mean node degree
+is 202.86, and the node degree mode is 2. The top 5 most central nodes
+are 426355.Mrad2831_3536 (degree 2400), 426355.Mrad2831_3210 (degree 1944),
+426355.Mrad2831_5529 (degree 1876), 426355.Mrad2831_2306 (degree 1856)
+and 426355.Mrad2831_0036 (degree 1797).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumRadiotolerans(
 	
 	Datetime: 2021-02-02 20:47:59.910167
 	
-	The undirected graph Methylobacterium radiotolerans has 6096 nodes and 618306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03328
-	and has 52 connected components, where the component with most nodes has 5950 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 202.86, and the node degree mode is 2. The top 5
-	most central nodes are 426355.Mrad2831_3536 (degree 2400), 426355.Mrad2831_3210 (degree
-	1944), 426355.Mrad2831_5529 (degree 1876), 426355.Mrad2831_2306 (degree 1856) and
-	426355.Mrad2831_0036 (degree 1797).
+	The undirected graph Methylobacterium radiotolerans has 6096 nodes and
+	618306 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03328 and has 52 connected components, where the
+	component with most nodes has 5950 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 155, the mean node degree
+	is 202.86, and the node degree mode is 2. The top 5 most central nodes
+	are 426355.Mrad2831_3536 (degree 2400), 426355.Mrad2831_3210 (degree 1944),
+	426355.Mrad2831_5529 (degree 1876), 426355.Mrad2831_2306 (degree 1856)
+	and 426355.Mrad2831_0036 (degree 1797).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:18.670630
 
-The undirected graph Drosophila ananassae has 12455 nodes and 1353356 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01745 and
-has 10 connected components, where the component with most nodes has 12436 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 217.32, and the node degree mode is 1. The top 5
-most central nodes are 7217.FBpp0119878 (degree 3151), 7217.FBpp0120882 (degree 2338),
-7217.FBpp0117314 (degree 2269), 7217.FBpp0121166 (degree 2081) and 7217.FBpp0123168
-(degree 2057).
+The undirected graph Drosophila ananassae has 12455 nodes and 1353356 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01745 and has 10 connected components, where the component with most
+nodes has 12436 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 217.32, and
+the node degree mode is 1. The top 5 most central nodes are 7217.FBpp0119878
+(degree 3151), 7217.FBpp0120882 (degree 2338), 7217.FBpp0117314 (degree
+2269), 7217.FBpp0121166 (degree 2081) and 7217.FBpp0123168 (degree 2057).
 
 
 References
@@ -107,14 +107,14 @@ def DrosophilaAnanassae(
 	
 	Datetime: 2021-02-02 17:21:18.670630
 	
-	The undirected graph Drosophila ananassae has 12455 nodes and 1353356 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01745 and
-	has 10 connected components, where the component with most nodes has 12436 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 217.32, and the node degree mode is 1. The top 5
-	most central nodes are 7217.FBpp0119878 (degree 3151), 7217.FBpp0120882 (degree 2338),
-	7217.FBpp0117314 (degree 2269), 7217.FBpp0121166 (degree 2081) and 7217.FBpp0123168
-	(degree 2057).
+	The undirected graph Drosophila ananassae has 12455 nodes and 1353356 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01745 and has 10 connected components, where the component with most
+	nodes has 12436 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 217.32, and
+	the node degree mode is 1. The top 5 most central nodes are 7217.FBpp0119878
+	(degree 3151), 7217.FBpp0120882 (degree 2338), 7217.FBpp0117314 (degree
+	2269), 7217.FBpp0121166 (degree 2081) and 7217.FBpp0123168 (degree 2057).
 	
 
 

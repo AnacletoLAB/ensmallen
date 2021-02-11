@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:03.638643
 
-The undirected graph Pseudomonas sp. M47T1 has 5619 nodes and 904038 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05728 and
-has 20 connected components, where the component with most nodes has 5576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 257,
-the mean node degree is 321.78, and the node degree mode is 1. The top 5 most central
-nodes are 1179778.PMM47T1_07366 (degree 2093), 1179778.PMM47T1_23994 (degree 1838),
-1179778.PMM47T1_03644 (degree 1774), 1179778.PMM47T1_04369 (degree 1691) and 1179778.PMM47T1_08241
+The undirected graph Pseudomonas sp. M47T1 has 5619 nodes and 904038 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05728 and has 20 connected components, where the component with most
+nodes has 5576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 257, the mean node degree is 321.78, and
+the node degree mode is 1. The top 5 most central nodes are 1179778.PMM47T1_07366
+(degree 2093), 1179778.PMM47T1_23994 (degree 1838), 1179778.PMM47T1_03644
+(degree 1774), 1179778.PMM47T1_04369 (degree 1691) and 1179778.PMM47T1_08241
 (degree 1687).
 
 
@@ -107,13 +108,14 @@ def PseudomonasSp.M47t1(
 	
 	Datetime: 2021-02-02 23:10:03.638643
 	
-	The undirected graph Pseudomonas sp. M47T1 has 5619 nodes and 904038 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05728 and
-	has 20 connected components, where the component with most nodes has 5576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 257,
-	the mean node degree is 321.78, and the node degree mode is 1. The top 5 most central
-	nodes are 1179778.PMM47T1_07366 (degree 2093), 1179778.PMM47T1_23994 (degree 1838),
-	1179778.PMM47T1_03644 (degree 1774), 1179778.PMM47T1_04369 (degree 1691) and 1179778.PMM47T1_08241
+	The undirected graph Pseudomonas sp. M47T1 has 5619 nodes and 904038 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05728 and has 20 connected components, where the component with most
+	nodes has 5576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 257, the mean node degree is 321.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1179778.PMM47T1_07366
+	(degree 2093), 1179778.PMM47T1_23994 (degree 1838), 1179778.PMM47T1_03644
+	(degree 1774), 1179778.PMM47T1_04369 (degree 1691) and 1179778.PMM47T1_08241
 	(degree 1687).
 	
 

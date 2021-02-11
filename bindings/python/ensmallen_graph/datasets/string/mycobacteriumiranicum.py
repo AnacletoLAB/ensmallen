@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:10:42.179108
 
-The undirected graph Mycobacterium iranicum has 5749 nodes and 716850 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04339 and
-has 19 connected components, where the component with most nodes has 5710 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 249.38, and the node degree mode is 3. The top 5 most central
-nodes are 1370125.AUWT01000052_gene4874 (degree 1962), 1370125.AUWT01000027_gene5401
-(degree 1784), 1370125.AUWT01000005_gene3090 (degree 1641), 1370125.AUWT01000018_gene4019
-(degree 1592) and 1370125.AUWT01000076_gene1098 (degree 1572).
+The undirected graph Mycobacterium iranicum has 5749 nodes and 716850 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04339 and has 19 connected components, where the component with most
+nodes has 5710 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 249.38, and
+the node degree mode is 3. The top 5 most central nodes are 1370125.AUWT01000052_gene4874
+(degree 1962), 1370125.AUWT01000027_gene5401 (degree 1784), 1370125.AUWT01000005_gene3090
+(degree 1641), 1370125.AUWT01000018_gene4019 (degree 1592) and 1370125.AUWT01000076_gene1098
+(degree 1572).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumIranicum(
 	
 	Datetime: 2021-02-03 22:10:42.179108
 	
-	The undirected graph Mycobacterium iranicum has 5749 nodes and 716850 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04339 and
-	has 19 connected components, where the component with most nodes has 5710 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 249.38, and the node degree mode is 3. The top 5 most central
-	nodes are 1370125.AUWT01000052_gene4874 (degree 1962), 1370125.AUWT01000027_gene5401
-	(degree 1784), 1370125.AUWT01000005_gene3090 (degree 1641), 1370125.AUWT01000018_gene4019
-	(degree 1592) and 1370125.AUWT01000076_gene1098 (degree 1572).
+	The undirected graph Mycobacterium iranicum has 5749 nodes and 716850 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04339 and has 19 connected components, where the component with most
+	nodes has 5710 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 249.38, and
+	the node degree mode is 3. The top 5 most central nodes are 1370125.AUWT01000052_gene4874
+	(degree 1962), 1370125.AUWT01000027_gene5401 (degree 1784), 1370125.AUWT01000005_gene3090
+	(degree 1641), 1370125.AUWT01000018_gene4019 (degree 1592) and 1370125.AUWT01000076_gene1098
+	(degree 1572).
 	
 
 

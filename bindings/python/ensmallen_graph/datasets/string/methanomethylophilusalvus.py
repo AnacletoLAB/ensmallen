@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:34.681426
 
-The undirected graph Methanomethylophilus alvus has 1624 nodes and 121559 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09224
-and has 9 connected components, where the component with most nodes has 1602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 149.70, and the node degree mode is 2. The top 5
-most central nodes are 1236689.MMALV_10610 (degree 570), 1236689.MMALV_15110 (degree
-538), 1236689.MMALV_10940 (degree 519), 1236689.MMALV_09930 (degree 519) and 1236689.MMALV_12930
-(degree 509).
+The undirected graph Methanomethylophilus alvus has 1624 nodes and 121559
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09224 and has 9 connected components, where the component
+with most nodes has 1602 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 149.70,
+and the node degree mode is 2. The top 5 most central nodes are 1236689.MMALV_10610
+(degree 570), 1236689.MMALV_15110 (degree 538), 1236689.MMALV_10940 (degree
+519), 1236689.MMALV_09930 (degree 519) and 1236689.MMALV_12930 (degree
+509).
 
 
 References
@@ -107,14 +108,15 @@ def MethanomethylophilusAlvus(
 	
 	Datetime: 2021-02-02 23:31:34.681426
 	
-	The undirected graph Methanomethylophilus alvus has 1624 nodes and 121559 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09224
-	and has 9 connected components, where the component with most nodes has 1602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 149.70, and the node degree mode is 2. The top 5
-	most central nodes are 1236689.MMALV_10610 (degree 570), 1236689.MMALV_15110 (degree
-	538), 1236689.MMALV_10940 (degree 519), 1236689.MMALV_09930 (degree 519) and 1236689.MMALV_12930
-	(degree 509).
+	The undirected graph Methanomethylophilus alvus has 1624 nodes and 121559
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09224 and has 9 connected components, where the component
+	with most nodes has 1602 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 149.70,
+	and the node degree mode is 2. The top 5 most central nodes are 1236689.MMALV_10610
+	(degree 570), 1236689.MMALV_15110 (degree 538), 1236689.MMALV_10940 (degree
+	519), 1236689.MMALV_09930 (degree 519) and 1236689.MMALV_12930 (degree
+	509).
 	
 
 

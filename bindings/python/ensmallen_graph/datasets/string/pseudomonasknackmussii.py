@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:43.234021
 
-The undirected graph Pseudomonas knackmussii has 5721 nodes and 709552 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04337 and
-has 11 connected components, where the component with most nodes has 5696 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 248.05, and the node degree mode is 3. The top 5 most central
-nodes are 1301098.PKB_0217 (degree 2401), 1301098.PKB_4997 (degree 2034), 1301098.PKB_4373
-(degree 1964), 1301098.PKB_2492 (degree 1862) and 1301098.PKB_5343 (degree 1835).
+The undirected graph Pseudomonas knackmussii has 5721 nodes and 709552
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04337 and has 11 connected components, where the component
+with most nodes has 5696 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 248.05,
+and the node degree mode is 3. The top 5 most central nodes are 1301098.PKB_0217
+(degree 2401), 1301098.PKB_4997 (degree 2034), 1301098.PKB_4373 (degree
+1964), 1301098.PKB_2492 (degree 1862) and 1301098.PKB_5343 (degree 1835).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasKnackmussii(
 	
 	Datetime: 2021-02-03 21:35:43.234021
 	
-	The undirected graph Pseudomonas knackmussii has 5721 nodes and 709552 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04337 and
-	has 11 connected components, where the component with most nodes has 5696 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 248.05, and the node degree mode is 3. The top 5 most central
-	nodes are 1301098.PKB_0217 (degree 2401), 1301098.PKB_4997 (degree 2034), 1301098.PKB_4373
-	(degree 1964), 1301098.PKB_2492 (degree 1862) and 1301098.PKB_5343 (degree 1835).
+	The undirected graph Pseudomonas knackmussii has 5721 nodes and 709552
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04337 and has 11 connected components, where the component
+	with most nodes has 5696 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 248.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1301098.PKB_0217
+	(degree 2401), 1301098.PKB_4997 (degree 2034), 1301098.PKB_4373 (degree
+	1964), 1301098.PKB_2492 (degree 1862) and 1301098.PKB_5343 (degree 1835).
 	
 
 

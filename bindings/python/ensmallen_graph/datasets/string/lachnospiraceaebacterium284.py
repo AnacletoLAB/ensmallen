@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:58.649843
 
-The undirected graph Lachnospiraceae bacterium 284 has 3990 nodes and 426864 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05364
-and has 15 connected components, where the component with most nodes has 3951 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 213.97, and the node degree mode is 4. The top 5
-most central nodes are 397287.C807_01171 (degree 1662), 397287.C807_02047 (degree
-1405), 397287.C807_03723 (degree 1355), 397287.C807_03593 (degree 1272) and 397287.C807_02239
-(degree 1268).
+The undirected graph Lachnospiraceae bacterium 284 has 3990 nodes and 426864
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05364 and has 15 connected components, where the component
+with most nodes has 3951 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 213.97,
+and the node degree mode is 4. The top 5 most central nodes are 397287.C807_01171
+(degree 1662), 397287.C807_02047 (degree 1405), 397287.C807_03723 (degree
+1355), 397287.C807_03593 (degree 1272) and 397287.C807_02239 (degree 1268).
 
 
 References
@@ -107,14 +107,14 @@ def LachnospiraceaeBacterium284(
 	
 	Datetime: 2021-02-02 20:41:58.649843
 	
-	The undirected graph Lachnospiraceae bacterium 284 has 3990 nodes and 426864 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05364
-	and has 15 connected components, where the component with most nodes has 3951 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 213.97, and the node degree mode is 4. The top 5
-	most central nodes are 397287.C807_01171 (degree 1662), 397287.C807_02047 (degree
-	1405), 397287.C807_03723 (degree 1355), 397287.C807_03593 (degree 1272) and 397287.C807_02239
-	(degree 1268).
+	The undirected graph Lachnospiraceae bacterium 284 has 3990 nodes and 426864
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05364 and has 15 connected components, where the component
+	with most nodes has 3951 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 213.97,
+	and the node degree mode is 4. The top 5 most central nodes are 397287.C807_01171
+	(degree 1662), 397287.C807_02047 (degree 1405), 397287.C807_03723 (degree
+	1355), 397287.C807_03593 (degree 1272) and 397287.C807_02239 (degree 1268).
 	
 
 

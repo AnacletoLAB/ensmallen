@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:54.495970
 
-The undirected graph alpha proteobacterium MA2 has 3384 nodes and 475660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08310
-and has 5 connected components, where the component with most nodes has 3375 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 254, the mean node degree is 281.12, and the node degree mode is 2. The top 5
-most central nodes are 1333998.M2A_0399 (degree 1446), 1333998.M2A_2340 (degree 1331),
-1333998.M2A_0287 (degree 1288), 1333998.M2A_2310 (degree 1246) and 1333998.M2A_2089
-(degree 1205).
+The undirected graph alpha proteobacterium MA2 has 3384 nodes and 475660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08310 and has 5 connected components, where the component
+with most nodes has 3375 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 254, the mean node degree is 281.12,
+and the node degree mode is 2. The top 5 most central nodes are 1333998.M2A_0399
+(degree 1446), 1333998.M2A_2340 (degree 1331), 1333998.M2A_0287 (degree
+1288), 1333998.M2A_2310 (degree 1246) and 1333998.M2A_2089 (degree 1205).
 
 
 References
@@ -107,14 +107,14 @@ def AlphaProteobacteriumMa2(
 	
 	Datetime: 2021-02-03 21:55:54.495970
 	
-	The undirected graph alpha proteobacterium MA2 has 3384 nodes and 475660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08310
-	and has 5 connected components, where the component with most nodes has 3375 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 254, the mean node degree is 281.12, and the node degree mode is 2. The top 5
-	most central nodes are 1333998.M2A_0399 (degree 1446), 1333998.M2A_2340 (degree 1331),
-	1333998.M2A_0287 (degree 1288), 1333998.M2A_2310 (degree 1246) and 1333998.M2A_2089
-	(degree 1205).
+	The undirected graph alpha proteobacterium MA2 has 3384 nodes and 475660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08310 and has 5 connected components, where the component
+	with most nodes has 3375 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 254, the mean node degree is 281.12,
+	and the node degree mode is 2. The top 5 most central nodes are 1333998.M2A_0399
+	(degree 1446), 1333998.M2A_2340 (degree 1331), 1333998.M2A_0287 (degree
+	1288), 1333998.M2A_2310 (degree 1246) and 1333998.M2A_2089 (degree 1205).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:32.893038
 
-The undirected graph Oribacterium sp. NK2B42 has 3171 nodes and 291033 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05791 and
-has 14 connected components, where the component with most nodes has 3134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 183.56, and the node degree mode is 2. The top 5 most central
-nodes are 689781.AUJX01000008_gene631 (degree 1134), 689781.AUJX01000032_gene21 (degree
-1076), 689781.AUJX01000035_gene238 (degree 1020), 689781.AUJX01000007_gene774 (degree
-1020) and 689781.AUJX01000016_gene2346 (degree 929).
+The undirected graph Oribacterium sp. NK2B42 has 3171 nodes and 291033
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05791 and has 14 connected components, where the component
+with most nodes has 3134 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 183.56,
+and the node degree mode is 2. The top 5 most central nodes are 689781.AUJX01000008_gene631
+(degree 1134), 689781.AUJX01000032_gene21 (degree 1076), 689781.AUJX01000035_gene238
+(degree 1020), 689781.AUJX01000007_gene774 (degree 1020) and 689781.AUJX01000016_gene2346
+(degree 929).
 
 
 References
@@ -107,14 +108,15 @@ def OribacteriumSp.Nk2b42(
 	
 	Datetime: 2021-02-02 21:31:32.893038
 	
-	The undirected graph Oribacterium sp. NK2B42 has 3171 nodes and 291033 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05791 and
-	has 14 connected components, where the component with most nodes has 3134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 183.56, and the node degree mode is 2. The top 5 most central
-	nodes are 689781.AUJX01000008_gene631 (degree 1134), 689781.AUJX01000032_gene21 (degree
-	1076), 689781.AUJX01000035_gene238 (degree 1020), 689781.AUJX01000007_gene774 (degree
-	1020) and 689781.AUJX01000016_gene2346 (degree 929).
+	The undirected graph Oribacterium sp. NK2B42 has 3171 nodes and 291033
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05791 and has 14 connected components, where the component
+	with most nodes has 3134 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 183.56,
+	and the node degree mode is 2. The top 5 most central nodes are 689781.AUJX01000008_gene631
+	(degree 1134), 689781.AUJX01000032_gene21 (degree 1076), 689781.AUJX01000035_gene238
+	(degree 1020), 689781.AUJX01000007_gene774 (degree 1020) and 689781.AUJX01000016_gene2346
+	(degree 929).
 	
 
 

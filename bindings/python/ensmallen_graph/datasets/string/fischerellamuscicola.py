@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:44.879307
 
-The undirected graph Fischerella muscicola has 5851 nodes and 708626 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04141 and
-has 37 connected components, where the component with most nodes has 5756 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 242.22, and the node degree mode is 2. The top 5 most central
-nodes are 306281.AJLK01000078_gene844 (degree 2009), 306281.AJLK01000117_gene4185
-(degree 2007), 306281.AJLK01000004_gene749 (degree 1883), 306281.AJLK01000130_gene5668
-(degree 1871) and 306281.AJLK01000124_gene390 (degree 1656).
+The undirected graph Fischerella muscicola has 5851 nodes and 708626 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04141 and has 37 connected components, where the component with most
+nodes has 5756 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 242.22, and
+the node degree mode is 2. The top 5 most central nodes are 306281.AJLK01000078_gene844
+(degree 2009), 306281.AJLK01000117_gene4185 (degree 2007), 306281.AJLK01000004_gene749
+(degree 1883), 306281.AJLK01000130_gene5668 (degree 1871) and 306281.AJLK01000124_gene390
+(degree 1656).
 
 
 References
@@ -107,14 +108,15 @@ def FischerellaMuscicola(
 	
 	Datetime: 2021-02-02 20:22:44.879307
 	
-	The undirected graph Fischerella muscicola has 5851 nodes and 708626 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04141 and
-	has 37 connected components, where the component with most nodes has 5756 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 242.22, and the node degree mode is 2. The top 5 most central
-	nodes are 306281.AJLK01000078_gene844 (degree 2009), 306281.AJLK01000117_gene4185
-	(degree 2007), 306281.AJLK01000004_gene749 (degree 1883), 306281.AJLK01000130_gene5668
-	(degree 1871) and 306281.AJLK01000124_gene390 (degree 1656).
+	The undirected graph Fischerella muscicola has 5851 nodes and 708626 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04141 and has 37 connected components, where the component with most
+	nodes has 5756 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 242.22, and
+	the node degree mode is 2. The top 5 most central nodes are 306281.AJLK01000078_gene844
+	(degree 2009), 306281.AJLK01000117_gene4185 (degree 2007), 306281.AJLK01000004_gene749
+	(degree 1883), 306281.AJLK01000130_gene5668 (degree 1871) and 306281.AJLK01000124_gene390
+	(degree 1656).
 	
 
 

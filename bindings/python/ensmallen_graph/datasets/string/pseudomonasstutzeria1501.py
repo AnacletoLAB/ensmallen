@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:44.422801
 
-The undirected graph Pseudomonas stutzeri A1501 has 4118 nodes and 494965 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05839
-and has 5 connected components, where the component with most nodes has 4108 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 214, the mean node degree is 240.39, and the node degree mode is 3. The top 5
-most central nodes are 379731.PST_0113 (degree 1662), 379731.PST_1402 (degree 1278),
-379731.PST_3007 (degree 1252), 379731.PST_0561 (degree 1231) and 379731.PST_3340
-(degree 1143).
+The undirected graph Pseudomonas stutzeri A1501 has 4118 nodes and 494965
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05839 and has 5 connected components, where the component
+with most nodes has 4108 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 240.39,
+and the node degree mode is 3. The top 5 most central nodes are 379731.PST_0113
+(degree 1662), 379731.PST_1402 (degree 1278), 379731.PST_3007 (degree 1252),
+379731.PST_0561 (degree 1231) and 379731.PST_3340 (degree 1143).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasStutzeriA1501(
 	
 	Datetime: 2021-02-02 20:36:44.422801
 	
-	The undirected graph Pseudomonas stutzeri A1501 has 4118 nodes and 494965 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05839
-	and has 5 connected components, where the component with most nodes has 4108 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 214, the mean node degree is 240.39, and the node degree mode is 3. The top 5
-	most central nodes are 379731.PST_0113 (degree 1662), 379731.PST_1402 (degree 1278),
-	379731.PST_3007 (degree 1252), 379731.PST_0561 (degree 1231) and 379731.PST_3340
-	(degree 1143).
+	The undirected graph Pseudomonas stutzeri A1501 has 4118 nodes and 494965
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05839 and has 5 connected components, where the component
+	with most nodes has 4108 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 240.39,
+	and the node degree mode is 3. The top 5 most central nodes are 379731.PST_0113
+	(degree 1662), 379731.PST_1402 (degree 1278), 379731.PST_3007 (degree 1252),
+	379731.PST_0561 (degree 1231) and 379731.PST_3340 (degree 1143).
 	
 
 

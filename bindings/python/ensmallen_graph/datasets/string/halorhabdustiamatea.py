@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:24.910915
 
-The undirected graph Halorhabdus tiamatea has 2949 nodes and 180108 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04143 and
-has 34 connected components, where the component with most nodes has 2853 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 122.15, and the node degree mode is 3. The top 5 most central
-nodes are 1033806.HTIA_1563 (degree 788), 1033806.HTIA_p2804 (degree 744), 1033806.HTIA_0514
-(degree 684), 1033806.HTIA_2318 (degree 617) and 1033806.HTIA_2319 (degree 603).
+The undirected graph Halorhabdus tiamatea has 2949 nodes and 180108 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04143 and has 34 connected components, where the component with most
+nodes has 2853 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 122.15, and
+the node degree mode is 3. The top 5 most central nodes are 1033806.HTIA_1563
+(degree 788), 1033806.HTIA_p2804 (degree 744), 1033806.HTIA_0514 (degree
+684), 1033806.HTIA_2318 (degree 617) and 1033806.HTIA_2319 (degree 603).
 
 
 References
@@ -106,13 +107,14 @@ def HalorhabdusTiamatea(
 	
 	Datetime: 2021-02-02 22:11:24.910915
 	
-	The undirected graph Halorhabdus tiamatea has 2949 nodes and 180108 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04143 and
-	has 34 connected components, where the component with most nodes has 2853 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 122.15, and the node degree mode is 3. The top 5 most central
-	nodes are 1033806.HTIA_1563 (degree 788), 1033806.HTIA_p2804 (degree 744), 1033806.HTIA_0514
-	(degree 684), 1033806.HTIA_2318 (degree 617) and 1033806.HTIA_2319 (degree 603).
+	The undirected graph Halorhabdus tiamatea has 2949 nodes and 180108 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04143 and has 34 connected components, where the component with most
+	nodes has 2853 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 122.15, and
+	the node degree mode is 3. The top 5 most central nodes are 1033806.HTIA_1563
+	(degree 788), 1033806.HTIA_p2804 (degree 744), 1033806.HTIA_0514 (degree
+	684), 1033806.HTIA_2318 (degree 617) and 1033806.HTIA_2319 (degree 603).
 	
 
 

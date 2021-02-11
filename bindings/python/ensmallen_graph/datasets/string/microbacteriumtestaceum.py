@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:43.614222
 
-The undirected graph Microbacterium testaceum has 3635 nodes and 342485 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05185
-and has 7 connected components, where the component with most nodes has 3623 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 188.44, and the node degree mode is 2. The top 5
-most central nodes are 979556.MTES_3564 (degree 1123), 979556.MTES_0504 (degree 997),
-979556.MTES_1766 (degree 980), 979556.MTES_0805 (degree 962) and 979556.MTES_0796
-(degree 953).
+The undirected graph Microbacterium testaceum has 3635 nodes and 342485
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05185 and has 7 connected components, where the component
+with most nodes has 3623 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 188.44,
+and the node degree mode is 2. The top 5 most central nodes are 979556.MTES_3564
+(degree 1123), 979556.MTES_0504 (degree 997), 979556.MTES_1766 (degree
+980), 979556.MTES_0805 (degree 962) and 979556.MTES_0796 (degree 953).
 
 
 References
@@ -107,14 +107,14 @@ def MicrobacteriumTestaceum(
 	
 	Datetime: 2021-02-02 22:02:43.614222
 	
-	The undirected graph Microbacterium testaceum has 3635 nodes and 342485 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05185
-	and has 7 connected components, where the component with most nodes has 3623 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 188.44, and the node degree mode is 2. The top 5
-	most central nodes are 979556.MTES_3564 (degree 1123), 979556.MTES_0504 (degree 997),
-	979556.MTES_1766 (degree 980), 979556.MTES_0805 (degree 962) and 979556.MTES_0796
-	(degree 953).
+	The undirected graph Microbacterium testaceum has 3635 nodes and 342485
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05185 and has 7 connected components, where the component
+	with most nodes has 3623 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 188.44,
+	and the node degree mode is 2. The top 5 most central nodes are 979556.MTES_3564
+	(degree 1123), 979556.MTES_0504 (degree 997), 979556.MTES_1766 (degree
+	980), 979556.MTES_0805 (degree 962) and 979556.MTES_0796 (degree 953).
 	
 
 

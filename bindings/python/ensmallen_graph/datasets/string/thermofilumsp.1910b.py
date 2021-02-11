@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:07.705096
 
-The undirected graph Thermofilum sp. 1910b has 1873 nodes and 98803 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05636 and
-has 11 connected components, where the component with most nodes has 1851 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 105.50, and the node degree mode is 3. The top 5 most central
-nodes are 1365176.N186_06330 (degree 620), 1365176.N186_05175 (degree 604), 1365176.N186_05500
-(degree 590), 1365176.N186_05840 (degree 561) and 1365176.N186_05295 (degree 543).
+The undirected graph Thermofilum sp. 1910b has 1873 nodes and 98803 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05636 and has 11 connected components, where the component with most
+nodes has 1851 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 105.50, and
+the node degree mode is 3. The top 5 most central nodes are 1365176.N186_06330
+(degree 620), 1365176.N186_05175 (degree 604), 1365176.N186_05500 (degree
+590), 1365176.N186_05840 (degree 561) and 1365176.N186_05295 (degree 543).
 
 
 References
@@ -106,13 +107,14 @@ def ThermofilumSp.1910b(
 	
 	Datetime: 2021-02-03 22:09:07.705096
 	
-	The undirected graph Thermofilum sp. 1910b has 1873 nodes and 98803 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05636 and
-	has 11 connected components, where the component with most nodes has 1851 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 105.50, and the node degree mode is 3. The top 5 most central
-	nodes are 1365176.N186_06330 (degree 620), 1365176.N186_05175 (degree 604), 1365176.N186_05500
-	(degree 590), 1365176.N186_05840 (degree 561) and 1365176.N186_05295 (degree 543).
+	The undirected graph Thermofilum sp. 1910b has 1873 nodes and 98803 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05636 and has 11 connected components, where the component with most
+	nodes has 1851 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 105.50, and
+	the node degree mode is 3. The top 5 most central nodes are 1365176.N186_06330
+	(degree 620), 1365176.N186_05175 (degree 604), 1365176.N186_05500 (degree
+	590), 1365176.N186_05840 (degree 561) and 1365176.N186_05295 (degree 543).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:22.339568
 
-The undirected graph Prevotella pallens has 2763 nodes and 148884 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03902 and
-has 64 connected components, where the component with most nodes has 2593 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 107.77, and the node degree mode is 1. The top 5 most central
-nodes are 997353.HMPREF9144_0288 (degree 885), 997353.HMPREF9144_0662 (degree 765),
-997353.HMPREF9144_0696 (degree 756), 997353.HMPREF9144_2354 (degree 729) and 997353.HMPREF9144_1278
+The undirected graph Prevotella pallens has 2763 nodes and 148884 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03902 and has 64 connected components, where the component with most
+nodes has 2593 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 107.77, and
+the node degree mode is 1. The top 5 most central nodes are 997353.HMPREF9144_0288
+(degree 885), 997353.HMPREF9144_0662 (degree 765), 997353.HMPREF9144_0696
+(degree 756), 997353.HMPREF9144_2354 (degree 729) and 997353.HMPREF9144_1278
 (degree 694).
 
 
@@ -107,13 +108,14 @@ def PrevotellaPallens(
 	
 	Datetime: 2021-02-02 22:05:22.339568
 	
-	The undirected graph Prevotella pallens has 2763 nodes and 148884 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03902 and
-	has 64 connected components, where the component with most nodes has 2593 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 107.77, and the node degree mode is 1. The top 5 most central
-	nodes are 997353.HMPREF9144_0288 (degree 885), 997353.HMPREF9144_0662 (degree 765),
-	997353.HMPREF9144_0696 (degree 756), 997353.HMPREF9144_2354 (degree 729) and 997353.HMPREF9144_1278
+	The undirected graph Prevotella pallens has 2763 nodes and 148884 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03902 and has 64 connected components, where the component with most
+	nodes has 2593 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 107.77, and
+	the node degree mode is 1. The top 5 most central nodes are 997353.HMPREF9144_0288
+	(degree 885), 997353.HMPREF9144_0662 (degree 765), 997353.HMPREF9144_0696
+	(degree 756), 997353.HMPREF9144_2354 (degree 729) and 997353.HMPREF9144_1278
 	(degree 694).
 	
 

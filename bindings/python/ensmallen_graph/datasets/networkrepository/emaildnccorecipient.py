@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:06:01.289830
 
-The undirected graph email-dnc-corecipient has 906 nodes and 10429 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-has 25 connected components, where the component with most nodes has 849 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 4,
-the mean node degree is 23.02 and the node degree mode is 1. The top 5 most central
-nodes are 1874 (degree 368), 1669 (degree 312), 1258 (degree 256), 999 (degree 225)
-and 1963 (degree 202).
+The undirected graph email-dnc-corecipient has 906 nodes and 10429 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02544 and has 25 connected components, where the component with most
+nodes has 849 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 4, the mean node degree is 23.02 and the
+node degree mode is 1. The top 5 most central nodes are 1874 (degree 368),
+1669 (degree 312), 1258 (degree 256), 999 (degree 225) and 1963 (degree
+202).
 
 
 References
@@ -103,13 +104,14 @@ def EmailDncCorecipient(
 	
 	Datetime: 2021-02-04 00:06:01.289830
 	
-	The undirected graph email-dnc-corecipient has 906 nodes and 10429 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-	has 25 connected components, where the component with most nodes has 849 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 4,
-	the mean node degree is 23.02 and the node degree mode is 1. The top 5 most central
-	nodes are 1874 (degree 368), 1669 (degree 312), 1258 (degree 256), 999 (degree 225)
-	and 1963 (degree 202).
+	The undirected graph email-dnc-corecipient has 906 nodes and 10429 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02544 and has 25 connected components, where the component with most
+	nodes has 849 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 4, the mean node degree is 23.02 and the
+	node degree mode is 1. The top 5 most central nodes are 1874 (degree 368),
+	1669 (degree 312), 1258 (degree 256), 999 (degree 225) and 1963 (degree
+	202).
 	
 
 

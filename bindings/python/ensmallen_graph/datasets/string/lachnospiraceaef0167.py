@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:06.444960
 
-The undirected graph Lachnospiraceae F0167 has 3051 nodes and 198179 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04259 and
-has 13 connected components, where the component with most nodes has 3020 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 129.91, and the node degree mode is 1. The top 5 most central
-nodes are 575593.HMPREF0491_01882 (degree 1046), 575593.HMPREF0491_02126 (degree
-1029), 575593.HMPREF0491_00890 (degree 798), 575593.HMPREF0491_02685 (degree 673)
-and 575593.HMPREF0491_00906 (degree 661).
+The undirected graph Lachnospiraceae F0167 has 3051 nodes and 198179 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04259 and has 13 connected components, where the component with most
+nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 129.91, and
+the node degree mode is 1. The top 5 most central nodes are 575593.HMPREF0491_01882
+(degree 1046), 575593.HMPREF0491_02126 (degree 1029), 575593.HMPREF0491_00890
+(degree 798), 575593.HMPREF0491_02685 (degree 673) and 575593.HMPREF0491_00906
+(degree 661).
 
 
 References
@@ -107,14 +108,15 @@ def LachnospiraceaeF0167(
 	
 	Datetime: 2021-02-02 21:15:06.444960
 	
-	The undirected graph Lachnospiraceae F0167 has 3051 nodes and 198179 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04259 and
-	has 13 connected components, where the component with most nodes has 3020 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 129.91, and the node degree mode is 1. The top 5 most central
-	nodes are 575593.HMPREF0491_01882 (degree 1046), 575593.HMPREF0491_02126 (degree
-	1029), 575593.HMPREF0491_00890 (degree 798), 575593.HMPREF0491_02685 (degree 673)
-	and 575593.HMPREF0491_00906 (degree 661).
+	The undirected graph Lachnospiraceae F0167 has 3051 nodes and 198179 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04259 and has 13 connected components, where the component with most
+	nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 129.91, and
+	the node degree mode is 1. The top 5 most central nodes are 575593.HMPREF0491_01882
+	(degree 1046), 575593.HMPREF0491_02126 (degree 1029), 575593.HMPREF0491_00890
+	(degree 798), 575593.HMPREF0491_02685 (degree 673) and 575593.HMPREF0491_00906
+	(degree 661).
 	
 
 

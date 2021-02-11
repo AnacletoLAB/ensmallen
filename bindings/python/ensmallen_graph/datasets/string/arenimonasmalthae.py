@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:06.079511
 
-The undirected graph Arenimonas malthae has 2835 nodes and 273074 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06798 and
-has 4 connected components, where the component with most nodes has 2829 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 192.64, and the node degree mode is 2. The top 5 most central
-nodes are 1384054.N790_05730 (degree 1026), 1384054.N790_11245 (degree 1022), 1384054.N790_12860
-(degree 1002), 1384054.N790_00140 (degree 975) and 1384054.N790_13550 (degree 949).
+The undirected graph Arenimonas malthae has 2835 nodes and 273074 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06798 and has 4 connected components, where the component with most
+nodes has 2829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 192.64, and
+the node degree mode is 2. The top 5 most central nodes are 1384054.N790_05730
+(degree 1026), 1384054.N790_11245 (degree 1022), 1384054.N790_12860 (degree
+1002), 1384054.N790_00140 (degree 975) and 1384054.N790_13550 (degree 949).
 
 
 References
@@ -106,13 +107,14 @@ def ArenimonasMalthae(
 	
 	Datetime: 2021-02-03 22:19:06.079511
 	
-	The undirected graph Arenimonas malthae has 2835 nodes and 273074 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06798 and
-	has 4 connected components, where the component with most nodes has 2829 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 192.64, and the node degree mode is 2. The top 5 most central
-	nodes are 1384054.N790_05730 (degree 1026), 1384054.N790_11245 (degree 1022), 1384054.N790_12860
-	(degree 1002), 1384054.N790_00140 (degree 975) and 1384054.N790_13550 (degree 949).
+	The undirected graph Arenimonas malthae has 2835 nodes and 273074 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06798 and has 4 connected components, where the component with most
+	nodes has 2829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 192.64, and
+	the node degree mode is 2. The top 5 most central nodes are 1384054.N790_05730
+	(degree 1026), 1384054.N790_11245 (degree 1022), 1384054.N790_12860 (degree
+	1002), 1384054.N790_00140 (degree 975) and 1384054.N790_13550 (degree 949).
 	
 
 

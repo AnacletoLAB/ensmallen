@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:22.449915
 
-The undirected graph Herpetosiphon aurantiacus has 5000 nodes and 567192 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04538
-and has 19 connected components, where the component with most nodes has 4948 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 193, the mean node degree is 226.88, and the node degree mode is 4. The top 5
-most central nodes are 316274.Haur_2169 (degree 2740), 316274.Haur_1217 (degree 1933),
-316274.Haur_0069 (degree 1921), 316274.Haur_1999 (degree 1613) and 316274.Haur_1450
-(degree 1411).
+The undirected graph Herpetosiphon aurantiacus has 5000 nodes and 567192
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04538 and has 19 connected components, where the component
+with most nodes has 4948 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 193, the mean node degree is 226.88,
+and the node degree mode is 4. The top 5 most central nodes are 316274.Haur_2169
+(degree 2740), 316274.Haur_1217 (degree 1933), 316274.Haur_0069 (degree
+1921), 316274.Haur_1999 (degree 1613) and 316274.Haur_1450 (degree 1411).
 
 
 References
@@ -107,14 +107,14 @@ def HerpetosiphonAurantiacus(
 	
 	Datetime: 2021-02-02 20:26:22.449915
 	
-	The undirected graph Herpetosiphon aurantiacus has 5000 nodes and 567192 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04538
-	and has 19 connected components, where the component with most nodes has 4948 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 193, the mean node degree is 226.88, and the node degree mode is 4. The top 5
-	most central nodes are 316274.Haur_2169 (degree 2740), 316274.Haur_1217 (degree 1933),
-	316274.Haur_0069 (degree 1921), 316274.Haur_1999 (degree 1613) and 316274.Haur_1450
-	(degree 1411).
+	The undirected graph Herpetosiphon aurantiacus has 5000 nodes and 567192
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04538 and has 19 connected components, where the component
+	with most nodes has 4948 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 193, the mean node degree is 226.88,
+	and the node degree mode is 4. The top 5 most central nodes are 316274.Haur_2169
+	(degree 2740), 316274.Haur_1217 (degree 1933), 316274.Haur_0069 (degree
+	1921), 316274.Haur_1999 (degree 1613) and 316274.Haur_1450 (degree 1411).
 	
 
 

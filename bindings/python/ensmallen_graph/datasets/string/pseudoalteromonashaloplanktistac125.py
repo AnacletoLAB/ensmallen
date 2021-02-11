@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:15.057333
 
-The undirected graph Pseudoalteromonas haloplanktis TAC125 has 3469 nodes and 334852
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05567 and has 13 connected components, where the component with most nodes has
-3435 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 174, the mean node degree is 193.05, and the node degree mode is 2. The
-top 5 most central nodes are 326442.PSHAa2757 (degree 1227), 326442.PSHAa1444 (degree
-1077), 326442.PSHAa0649 (degree 1036), 326442.PSHAa1317 (degree 953) and 326442.PSHAb0557
-(degree 885).
+The undirected graph Pseudoalteromonas haloplanktis TAC125 has 3469 nodes
+and 334852 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05567 and has 13 connected components, where the
+component with most nodes has 3435 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 174, the mean node degree
+is 193.05, and the node degree mode is 2. The top 5 most central nodes
+are 326442.PSHAa2757 (degree 1227), 326442.PSHAa1444 (degree 1077), 326442.PSHAa0649
+(degree 1036), 326442.PSHAa1317 (degree 953) and 326442.PSHAb0557 (degree
+885).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasHaloplanktisTac125(
 	
 	Datetime: 2021-02-02 20:29:15.057333
 	
-	The undirected graph Pseudoalteromonas haloplanktis TAC125 has 3469 nodes and 334852
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05567 and has 13 connected components, where the component with most nodes has
-	3435 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 174, the mean node degree is 193.05, and the node degree mode is 2. The
-	top 5 most central nodes are 326442.PSHAa2757 (degree 1227), 326442.PSHAa1444 (degree
-	1077), 326442.PSHAa0649 (degree 1036), 326442.PSHAa1317 (degree 953) and 326442.PSHAb0557
-	(degree 885).
+	The undirected graph Pseudoalteromonas haloplanktis TAC125 has 3469 nodes
+	and 334852 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05567 and has 13 connected components, where the
+	component with most nodes has 3435 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 174, the mean node degree
+	is 193.05, and the node degree mode is 2. The top 5 most central nodes
+	are 326442.PSHAa2757 (degree 1227), 326442.PSHAa1444 (degree 1077), 326442.PSHAa0649
+	(degree 1036), 326442.PSHAa1317 (degree 953) and 326442.PSHAb0557 (degree
+	885).
 	
 
 

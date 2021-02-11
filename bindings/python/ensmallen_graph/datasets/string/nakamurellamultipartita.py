@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:03.841263
 
-The undirected graph Nakamurella multipartita has 5187 nodes and 600520 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04465
-and has 19 connected components, where the component with most nodes has 5143 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 218, the mean node degree is 231.55, and the node degree mode is 3. The top 5
-most central nodes are 479431.Namu_4238 (degree 1731), 479431.Namu_3037 (degree 1620),
-479431.Namu_3886 (degree 1529), 479431.Namu_3072 (degree 1401) and 479431.Namu_1250
-(degree 1366).
+The undirected graph Nakamurella multipartita has 5187 nodes and 600520
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04465 and has 19 connected components, where the component
+with most nodes has 5143 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 218, the mean node degree is 231.55,
+and the node degree mode is 3. The top 5 most central nodes are 479431.Namu_4238
+(degree 1731), 479431.Namu_3037 (degree 1620), 479431.Namu_3886 (degree
+1529), 479431.Namu_3072 (degree 1401) and 479431.Namu_1250 (degree 1366).
 
 
 References
@@ -107,14 +107,14 @@ def NakamurellaMultipartita(
 	
 	Datetime: 2021-02-02 20:57:03.841263
 	
-	The undirected graph Nakamurella multipartita has 5187 nodes and 600520 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04465
-	and has 19 connected components, where the component with most nodes has 5143 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 218, the mean node degree is 231.55, and the node degree mode is 3. The top 5
-	most central nodes are 479431.Namu_4238 (degree 1731), 479431.Namu_3037 (degree 1620),
-	479431.Namu_3886 (degree 1529), 479431.Namu_3072 (degree 1401) and 479431.Namu_1250
-	(degree 1366).
+	The undirected graph Nakamurella multipartita has 5187 nodes and 600520
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04465 and has 19 connected components, where the component
+	with most nodes has 5143 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 218, the mean node degree is 231.55,
+	and the node degree mode is 3. The top 5 most central nodes are 479431.Namu_4238
+	(degree 1731), 479431.Namu_3037 (degree 1620), 479431.Namu_3886 (degree
+	1529), 479431.Namu_3072 (degree 1401) and 479431.Namu_1250 (degree 1366).
 	
 
 

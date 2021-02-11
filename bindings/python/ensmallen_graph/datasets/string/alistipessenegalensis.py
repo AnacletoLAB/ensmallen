@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:45.948176
 
-The undirected graph Alistipes senegalensis has 2813 nodes and 214822 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05432 and
-has 6 connected components, where the component with most nodes has 2796 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 152.74, and the node degree mode is 7. The top 5 most central
-nodes are 1033732.CAHI01000030_gene1331 (degree 921), 1033732.CAHI01000009_gene1631
-(degree 887), 1033732.CAHI01000009_gene1633 (degree 841), 1033732.CAHI01000030_gene1008
-(degree 810) and 1033732.CAHI01000022_gene1515 (degree 779).
+The undirected graph Alistipes senegalensis has 2813 nodes and 214822 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05432 and has 6 connected components, where the component with most
+nodes has 2796 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 152.74, and
+the node degree mode is 7. The top 5 most central nodes are 1033732.CAHI01000030_gene1331
+(degree 921), 1033732.CAHI01000009_gene1631 (degree 887), 1033732.CAHI01000009_gene1633
+(degree 841), 1033732.CAHI01000030_gene1008 (degree 810) and 1033732.CAHI01000022_gene1515
+(degree 779).
 
 
 References
@@ -107,14 +108,15 @@ def AlistipesSenegalensis(
 	
 	Datetime: 2021-02-02 22:10:45.948176
 	
-	The undirected graph Alistipes senegalensis has 2813 nodes and 214822 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05432 and
-	has 6 connected components, where the component with most nodes has 2796 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 152.74, and the node degree mode is 7. The top 5 most central
-	nodes are 1033732.CAHI01000030_gene1331 (degree 921), 1033732.CAHI01000009_gene1631
-	(degree 887), 1033732.CAHI01000009_gene1633 (degree 841), 1033732.CAHI01000030_gene1008
-	(degree 810) and 1033732.CAHI01000022_gene1515 (degree 779).
+	The undirected graph Alistipes senegalensis has 2813 nodes and 214822 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05432 and has 6 connected components, where the component with most
+	nodes has 2796 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 152.74, and
+	the node degree mode is 7. The top 5 most central nodes are 1033732.CAHI01000030_gene1331
+	(degree 921), 1033732.CAHI01000009_gene1631 (degree 887), 1033732.CAHI01000009_gene1633
+	(degree 841), 1033732.CAHI01000030_gene1008 (degree 810) and 1033732.CAHI01000022_gene1515
+	(degree 779).
 	
 
 

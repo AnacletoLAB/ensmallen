@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:38:44.054223
 
-The undirected graph EX1 has 560 nodes and 4368 unweighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.02791 and is connected, as
-it has a single component. The graph median node degree is 16, the mean node degree
-is 15.60, and the node degree mode is 16. The top 5 most central nodes are 338 (degree
-18), 337 (degree 18), 488 (degree 18), 495 (degree 18) and 461 (degree 18).
+The undirected graph EX1 has 560 nodes and 4368 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.02791
+and is connected, as it has a single component. The graph median node degree
+is 16, the mean node degree is 15.60, and the node degree mode is 16. The
+top 5 most central nodes are 338 (degree 18), 337 (degree 18), 488 (degree
+18), 495 (degree 18) and 461 (degree 18).
 
 
 References
@@ -101,11 +102,12 @@ def Ex1(
 	
 	Datetime: 2021-02-06 06:38:44.054223
 	
-	The undirected graph EX1 has 560 nodes and 4368 unweighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.02791 and is connected, as
-	it has a single component. The graph median node degree is 16, the mean node degree
-	is 15.60, and the node degree mode is 16. The top 5 most central nodes are 338 (degree
-	18), 337 (degree 18), 488 (degree 18), 495 (degree 18) and 461 (degree 18).
+	The undirected graph EX1 has 560 nodes and 4368 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.02791
+	and is connected, as it has a single component. The graph median node degree
+	is 16, the mean node degree is 15.60, and the node degree mode is 16. The
+	top 5 most central nodes are 338 (degree 18), 337 (degree 18), 488 (degree
+	18), 495 (degree 18) and 461 (degree 18).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:33.448500
 
-The undirected graph Thermaerobacter subterraneus has 2287 nodes and 182048 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06964
-and has 6 connected components, where the component with most nodes has 2277 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 159.20, and the node degree mode is 2. The top 5
-most central nodes are 867903.ThesuDRAFT_02138 (degree 985), 867903.ThesuDRAFT_02119
-(degree 971), 867903.ThesuDRAFT_00336 (degree 888), 867903.ThesuDRAFT_02297 (degree
-864) and 867903.ThesuDRAFT_01452 (degree 857).
+The undirected graph Thermaerobacter subterraneus has 2287 nodes and 182048
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06964 and has 6 connected components, where the component
+with most nodes has 2277 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 159.20,
+and the node degree mode is 2. The top 5 most central nodes are 867903.ThesuDRAFT_02138
+(degree 985), 867903.ThesuDRAFT_02119 (degree 971), 867903.ThesuDRAFT_00336
+(degree 888), 867903.ThesuDRAFT_02297 (degree 864) and 867903.ThesuDRAFT_01452
+(degree 857).
 
 
 References
@@ -107,14 +108,15 @@ def ThermaerobacterSubterraneus(
 	
 	Datetime: 2021-02-02 21:48:33.448500
 	
-	The undirected graph Thermaerobacter subterraneus has 2287 nodes and 182048 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06964
-	and has 6 connected components, where the component with most nodes has 2277 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 159.20, and the node degree mode is 2. The top 5
-	most central nodes are 867903.ThesuDRAFT_02138 (degree 985), 867903.ThesuDRAFT_02119
-	(degree 971), 867903.ThesuDRAFT_00336 (degree 888), 867903.ThesuDRAFT_02297 (degree
-	864) and 867903.ThesuDRAFT_01452 (degree 857).
+	The undirected graph Thermaerobacter subterraneus has 2287 nodes and 182048
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06964 and has 6 connected components, where the component
+	with most nodes has 2277 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 159.20,
+	and the node degree mode is 2. The top 5 most central nodes are 867903.ThesuDRAFT_02138
+	(degree 985), 867903.ThesuDRAFT_02119 (degree 971), 867903.ThesuDRAFT_00336
+	(degree 888), 867903.ThesuDRAFT_02297 (degree 864) and 867903.ThesuDRAFT_01452
+	(degree 857).
 	
 
 

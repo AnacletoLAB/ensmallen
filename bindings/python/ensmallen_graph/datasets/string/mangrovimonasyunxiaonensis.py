@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:23.164344
 
-The undirected graph Mangrovimonas yunxiaonensis has 2309 nodes and 216050 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08108
-and has 6 connected components, where the component with most nodes has 2296 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 187.14, and the node degree mode is 4. The top 5
-most central nodes are 1197477.IA57_03325 (degree 952), 1197477.IA57_08010 (degree
-929), 1197477.IA57_11075 (degree 905), 1197477.IA57_10060 (degree 792) and 1197477.IA57_11080
-(degree 788).
+The undirected graph Mangrovimonas yunxiaonensis has 2309 nodes and 216050
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08108 and has 6 connected components, where the component
+with most nodes has 2296 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 187.14,
+and the node degree mode is 4. The top 5 most central nodes are 1197477.IA57_03325
+(degree 952), 1197477.IA57_08010 (degree 929), 1197477.IA57_11075 (degree
+905), 1197477.IA57_10060 (degree 792) and 1197477.IA57_11080 (degree 788).
 
 
 References
@@ -107,14 +107,14 @@ def MangrovimonasYunxiaonensis(
 	
 	Datetime: 2021-02-02 23:13:23.164344
 	
-	The undirected graph Mangrovimonas yunxiaonensis has 2309 nodes and 216050 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08108
-	and has 6 connected components, where the component with most nodes has 2296 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 187.14, and the node degree mode is 4. The top 5
-	most central nodes are 1197477.IA57_03325 (degree 952), 1197477.IA57_08010 (degree
-	929), 1197477.IA57_11075 (degree 905), 1197477.IA57_10060 (degree 792) and 1197477.IA57_11080
-	(degree 788).
+	The undirected graph Mangrovimonas yunxiaonensis has 2309 nodes and 216050
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08108 and has 6 connected components, where the component
+	with most nodes has 2296 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 187.14,
+	and the node degree mode is 4. The top 5 most central nodes are 1197477.IA57_03325
+	(degree 952), 1197477.IA57_08010 (degree 929), 1197477.IA57_11075 (degree
+	905), 1197477.IA57_10060 (degree 792) and 1197477.IA57_11080 (degree 788).
 	
 
 

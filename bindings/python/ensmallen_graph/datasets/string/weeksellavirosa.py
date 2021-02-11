@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:02.738295
 
-The undirected graph Weeksella virosa has 2039 nodes and 169449 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08155 and
-has 5 connected components, where the component with most nodes has 2027 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 166.21, and the node degree mode is 3. The top 5 most central
-nodes are 865938.Weevi_1229 (degree 878), 865938.Weevi_1244 (degree 812), 865938.Weevi_1663
-(degree 698), 865938.Weevi_0925 (degree 688) and 865938.Weevi_1752 (degree 636).
+The undirected graph Weeksella virosa has 2039 nodes and 169449 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08155 and has 5 connected components, where the component with most
+nodes has 2027 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 166.21, and
+the node degree mode is 3. The top 5 most central nodes are 865938.Weevi_1229
+(degree 878), 865938.Weevi_1244 (degree 812), 865938.Weevi_1663 (degree
+698), 865938.Weevi_0925 (degree 688) and 865938.Weevi_1752 (degree 636).
 
 
 References
@@ -106,13 +107,14 @@ def WeeksellaVirosa(
 	
 	Datetime: 2021-02-02 21:48:02.738295
 	
-	The undirected graph Weeksella virosa has 2039 nodes and 169449 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08155 and
-	has 5 connected components, where the component with most nodes has 2027 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 166.21, and the node degree mode is 3. The top 5 most central
-	nodes are 865938.Weevi_1229 (degree 878), 865938.Weevi_1244 (degree 812), 865938.Weevi_1663
-	(degree 698), 865938.Weevi_0925 (degree 688) and 865938.Weevi_1752 (degree 636).
+	The undirected graph Weeksella virosa has 2039 nodes and 169449 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08155 and has 5 connected components, where the component with most
+	nodes has 2027 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 166.21, and
+	the node degree mode is 3. The top 5 most central nodes are 865938.Weevi_1229
+	(degree 878), 865938.Weevi_1244 (degree 812), 865938.Weevi_1663 (degree
+	698), 865938.Weevi_0925 (degree 688) and 865938.Weevi_1752 (degree 636).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:23.613944
 
-The undirected graph Staphylococcus warneri L37603 has 2360 nodes and 182400 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06553
-and has 11 connected components, where the component with most nodes has 2336 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 154.58, and the node degree mode is 6. The top 5
-most central nodes are 596319.STAWA0001_1601 (degree 898), 596319.STAWA0001_2407
-(degree 843), 596319.STAWA0001_2406 (degree 839), 596319.STAWA0001_0921 (degree 811)
-and 596319.STAWA0001_0783 (degree 757).
+The undirected graph Staphylococcus warneri L37603 has 2360 nodes and 182400
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06553 and has 11 connected components, where the component
+with most nodes has 2336 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 154.58,
+and the node degree mode is 6. The top 5 most central nodes are 596319.STAWA0001_1601
+(degree 898), 596319.STAWA0001_2407 (degree 843), 596319.STAWA0001_2406
+(degree 839), 596319.STAWA0001_0921 (degree 811) and 596319.STAWA0001_0783
+(degree 757).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusWarneriL37603(
 	
 	Datetime: 2021-02-02 21:19:23.613944
 	
-	The undirected graph Staphylococcus warneri L37603 has 2360 nodes and 182400 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06553
-	and has 11 connected components, where the component with most nodes has 2336 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 154.58, and the node degree mode is 6. The top 5
-	most central nodes are 596319.STAWA0001_1601 (degree 898), 596319.STAWA0001_2407
-	(degree 843), 596319.STAWA0001_2406 (degree 839), 596319.STAWA0001_0921 (degree 811)
-	and 596319.STAWA0001_0783 (degree 757).
+	The undirected graph Staphylococcus warneri L37603 has 2360 nodes and 182400
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06553 and has 11 connected components, where the component
+	with most nodes has 2336 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 154.58,
+	and the node degree mode is 6. The top 5 most central nodes are 596319.STAWA0001_1601
+	(degree 898), 596319.STAWA0001_2407 (degree 843), 596319.STAWA0001_2406
+	(degree 839), 596319.STAWA0001_0921 (degree 811) and 596319.STAWA0001_0783
+	(degree 757).
 	
 
 

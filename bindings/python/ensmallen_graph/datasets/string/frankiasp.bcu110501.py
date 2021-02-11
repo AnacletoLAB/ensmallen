@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:09.622957
 
-The undirected graph Frankia sp. BCU110501 has 6365 nodes and 1070022 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05283 and
-has 36 connected components, where the component with most nodes has 6275 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 303,
-the mean node degree is 336.22, and the node degree mode is 1. The top 5 most central
-nodes are 365528.KB891123_gene3165 (degree 2341), 365528.KB891274_gene2742 (degree
-2306), 365528.KB891208_gene2803 (degree 2093), 365528.KB891148_gene4833 (degree 1939)
-and 365528.KB891103_gene4199 (degree 1903).
+The undirected graph Frankia sp. BCU110501 has 6365 nodes and 1070022 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05283 and has 36 connected components, where the component with most
+nodes has 6275 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 303, the mean node degree is 336.22, and
+the node degree mode is 1. The top 5 most central nodes are 365528.KB891123_gene3165
+(degree 2341), 365528.KB891274_gene2742 (degree 2306), 365528.KB891208_gene2803
+(degree 2093), 365528.KB891148_gene4833 (degree 1939) and 365528.KB891103_gene4199
+(degree 1903).
 
 
 References
@@ -107,14 +108,15 @@ def FrankiaSp.Bcu110501(
 	
 	Datetime: 2021-02-02 20:35:09.622957
 	
-	The undirected graph Frankia sp. BCU110501 has 6365 nodes and 1070022 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05283 and
-	has 36 connected components, where the component with most nodes has 6275 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 303,
-	the mean node degree is 336.22, and the node degree mode is 1. The top 5 most central
-	nodes are 365528.KB891123_gene3165 (degree 2341), 365528.KB891274_gene2742 (degree
-	2306), 365528.KB891208_gene2803 (degree 2093), 365528.KB891148_gene4833 (degree 1939)
-	and 365528.KB891103_gene4199 (degree 1903).
+	The undirected graph Frankia sp. BCU110501 has 6365 nodes and 1070022 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05283 and has 36 connected components, where the component with most
+	nodes has 6275 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 303, the mean node degree is 336.22, and
+	the node degree mode is 1. The top 5 most central nodes are 365528.KB891123_gene3165
+	(degree 2341), 365528.KB891274_gene2742 (degree 2306), 365528.KB891208_gene2803
+	(degree 2093), 365528.KB891148_gene4833 (degree 1939) and 365528.KB891103_gene4199
+	(degree 1903).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:43:26.664181
 
-The undirected graph Streptomyces sp. R1NS10 has 10467 nodes and 2586886 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04723
-and has 33 connected components, where the component with most nodes has 10375 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 394, the mean node degree is 494.29, and the node degree mode is 2. The top 5
-most central nodes are 1306990.BARG01000119_gene10113 (degree 4905), 1306990.BARG01000002_gene137
+The undirected graph Streptomyces sp. R1NS10 has 10467 nodes and 2586886
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04723 and has 33 connected components, where the component
+with most nodes has 10375 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 394, the mean node degree
+is 494.29, and the node degree mode is 2. The top 5 most central nodes
+are 1306990.BARG01000119_gene10113 (degree 4905), 1306990.BARG01000002_gene137
 (degree 3621), 1306990.BARG01000031_gene3541 (degree 3550), 1306990.BARG01000088_gene8689
 (degree 3411) and 1306990.BARG01000072_gene7744 (degree 3378).
 
@@ -107,12 +108,13 @@ def StreptomycesSp.R1ns10(
 	
 	Datetime: 2021-02-03 21:43:26.664181
 	
-	The undirected graph Streptomyces sp. R1NS10 has 10467 nodes and 2586886 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04723
-	and has 33 connected components, where the component with most nodes has 10375 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 394, the mean node degree is 494.29, and the node degree mode is 2. The top 5
-	most central nodes are 1306990.BARG01000119_gene10113 (degree 4905), 1306990.BARG01000002_gene137
+	The undirected graph Streptomyces sp. R1NS10 has 10467 nodes and 2586886
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04723 and has 33 connected components, where the component
+	with most nodes has 10375 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 394, the mean node degree
+	is 494.29, and the node degree mode is 2. The top 5 most central nodes
+	are 1306990.BARG01000119_gene10113 (degree 4905), 1306990.BARG01000002_gene137
 	(degree 3621), 1306990.BARG01000031_gene3541 (degree 3550), 1306990.BARG01000088_gene8689
 	(degree 3411) and 1306990.BARG01000072_gene7744 (degree 3378).
 	

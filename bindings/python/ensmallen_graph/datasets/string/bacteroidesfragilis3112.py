@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:21.938688
 
-The undirected graph Bacteroides fragilis 3112 has 4865 nodes and 425603 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03597
-and has 41 connected components, where the component with most nodes has 4753 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 174.97, and the node degree mode is 3. The top 5
-most central nodes are 457424.BFAG_02893 (degree 1553), 457424.BFAG_03701 (degree
-1292), 457424.BFAG_03455 (degree 1276), 457424.BFAG_03062 (degree 1245) and 457424.BFAG_02604
-(degree 1180).
+The undirected graph Bacteroides fragilis 3112 has 4865 nodes and 425603
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03597 and has 41 connected components, where the component
+with most nodes has 4753 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 174.97,
+and the node degree mode is 3. The top 5 most central nodes are 457424.BFAG_02893
+(degree 1553), 457424.BFAG_03701 (degree 1292), 457424.BFAG_03455 (degree
+1276), 457424.BFAG_03062 (degree 1245) and 457424.BFAG_02604 (degree 1180).
 
 
 References
@@ -107,14 +107,14 @@ def BacteroidesFragilis3112(
 	
 	Datetime: 2021-02-02 20:53:21.938688
 	
-	The undirected graph Bacteroides fragilis 3112 has 4865 nodes and 425603 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03597
-	and has 41 connected components, where the component with most nodes has 4753 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 174.97, and the node degree mode is 3. The top 5
-	most central nodes are 457424.BFAG_02893 (degree 1553), 457424.BFAG_03701 (degree
-	1292), 457424.BFAG_03455 (degree 1276), 457424.BFAG_03062 (degree 1245) and 457424.BFAG_02604
-	(degree 1180).
+	The undirected graph Bacteroides fragilis 3112 has 4865 nodes and 425603
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03597 and has 41 connected components, where the component
+	with most nodes has 4753 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 174.97,
+	and the node degree mode is 3. The top 5 most central nodes are 457424.BFAG_02893
+	(degree 1553), 457424.BFAG_03701 (degree 1292), 457424.BFAG_03455 (degree
+	1276), 457424.BFAG_03062 (degree 1245) and 457424.BFAG_02604 (degree 1180).
 	
 
 

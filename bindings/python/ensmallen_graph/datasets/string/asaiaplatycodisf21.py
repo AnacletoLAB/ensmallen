@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:42.840844
 
-The undirected graph Asaia platycodi SF21 has 3228 nodes and 252439 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-has 17 connected components, where the component with most nodes has 3189 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 156.41, and the node degree mode is 3. The top 5 most central
-nodes are 1382230.ASAP_1954 (degree 1057), 1382230.ASAP_0376 (degree 1045), 1382230.ASAP_2261
-(degree 1002), 1382230.ASAP_1363 (degree 937) and 1382230.ASAP_0148 (degree 884).
+The undirected graph Asaia platycodi SF21 has 3228 nodes and 252439 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04847 and has 17 connected components, where the component with most
+nodes has 3189 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 156.41, and
+the node degree mode is 3. The top 5 most central nodes are 1382230.ASAP_1954
+(degree 1057), 1382230.ASAP_0376 (degree 1045), 1382230.ASAP_2261 (degree
+1002), 1382230.ASAP_1363 (degree 937) and 1382230.ASAP_0148 (degree 884).
 
 
 References
@@ -106,13 +107,14 @@ def AsaiaPlatycodiSf21(
 	
 	Datetime: 2021-02-03 22:17:42.840844
 	
-	The undirected graph Asaia platycodi SF21 has 3228 nodes and 252439 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-	has 17 connected components, where the component with most nodes has 3189 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 156.41, and the node degree mode is 3. The top 5 most central
-	nodes are 1382230.ASAP_1954 (degree 1057), 1382230.ASAP_0376 (degree 1045), 1382230.ASAP_2261
-	(degree 1002), 1382230.ASAP_1363 (degree 937) and 1382230.ASAP_0148 (degree 884).
+	The undirected graph Asaia platycodi SF21 has 3228 nodes and 252439 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04847 and has 17 connected components, where the component with most
+	nodes has 3189 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 156.41, and
+	the node degree mode is 3. The top 5 most central nodes are 1382230.ASAP_1954
+	(degree 1057), 1382230.ASAP_0376 (degree 1045), 1382230.ASAP_2261 (degree
+	1002), 1382230.ASAP_1363 (degree 937) and 1382230.ASAP_0148 (degree 884).
 	
 
 

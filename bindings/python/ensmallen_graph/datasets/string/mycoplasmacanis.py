@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:07.345946
 
-The undirected graph Mycoplasma canis has 644 nodes and 24395 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.11782
-and has 8 connected components, where the component with most nodes has 622 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 50, the mean node degree is 75.76, and the node degree mode is 14. The top 5 most
-central nodes are 1117644.MCANPG14_01158 (degree 257), 1117644.MCANPG14_01313 (degree
-242), 1117644.MCANPG14_00255 (degree 236), 1117644.MCANPG14_03175 (degree 229) and
-1117644.MCANPG14_02730 (degree 226).
+The undirected graph Mycoplasma canis has 644 nodes and 24395 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11782 and has 8 connected components, where the component
+with most nodes has 622 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 50, the mean node degree is 75.76,
+and the node degree mode is 14. The top 5 most central nodes are 1117644.MCANPG14_01158
+(degree 257), 1117644.MCANPG14_01313 (degree 242), 1117644.MCANPG14_00255
+(degree 236), 1117644.MCANPG14_03175 (degree 229) and 1117644.MCANPG14_02730
+(degree 226).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaCanis(
 	
 	Datetime: 2021-02-02 22:28:07.345946
 	
-	The undirected graph Mycoplasma canis has 644 nodes and 24395 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.11782
-	and has 8 connected components, where the component with most nodes has 622 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 50, the mean node degree is 75.76, and the node degree mode is 14. The top 5 most
-	central nodes are 1117644.MCANPG14_01158 (degree 257), 1117644.MCANPG14_01313 (degree
-	242), 1117644.MCANPG14_00255 (degree 236), 1117644.MCANPG14_03175 (degree 229) and
-	1117644.MCANPG14_02730 (degree 226).
+	The undirected graph Mycoplasma canis has 644 nodes and 24395 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11782 and has 8 connected components, where the component
+	with most nodes has 622 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 50, the mean node degree is 75.76,
+	and the node degree mode is 14. The top 5 most central nodes are 1117644.MCANPG14_01158
+	(degree 257), 1117644.MCANPG14_01313 (degree 242), 1117644.MCANPG14_00255
+	(degree 236), 1117644.MCANPG14_03175 (degree 229) and 1117644.MCANPG14_02730
+	(degree 226).
 	
 
 

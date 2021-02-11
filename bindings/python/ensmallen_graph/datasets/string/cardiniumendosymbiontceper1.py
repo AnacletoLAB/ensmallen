@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:13.213859
 
-The undirected graph Cardinium endosymbiont cEper1 has 819 nodes and 42421 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.12664 and has 4 connected components, where the component with most nodes has
-805 nodes and the component with the least nodes has 4 nodes. The graph median node
-degree is 88, the mean node degree is 103.59, and the node degree mode is 3. The
-top 5 most central nodes are 1231626.CAHE_0016 (degree 370), 1231626.CAHE_0574 (degree
-366), 1231626.CAHE_0312 (degree 349), 1231626.CAHE_0837 (degree 343) and 1231626.CAHE_0441
-(degree 341).
+The undirected graph Cardinium endosymbiont cEper1 has 819 nodes and 42421
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.12664 and has 4 connected components, where the
+component with most nodes has 805 nodes and the component with the least
+nodes has 4 nodes. The graph median node degree is 88, the mean node degree
+is 103.59, and the node degree mode is 3. The top 5 most central nodes
+are 1231626.CAHE_0016 (degree 370), 1231626.CAHE_0574 (degree 366), 1231626.CAHE_0312
+(degree 349), 1231626.CAHE_0837 (degree 343) and 1231626.CAHE_0441 (degree
+341).
 
 
 References
@@ -107,14 +108,15 @@ def CardiniumEndosymbiontCeper1(
 	
 	Datetime: 2021-02-02 23:28:13.213859
 	
-	The undirected graph Cardinium endosymbiont cEper1 has 819 nodes and 42421 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.12664 and has 4 connected components, where the component with most nodes has
-	805 nodes and the component with the least nodes has 4 nodes. The graph median node
-	degree is 88, the mean node degree is 103.59, and the node degree mode is 3. The
-	top 5 most central nodes are 1231626.CAHE_0016 (degree 370), 1231626.CAHE_0574 (degree
-	366), 1231626.CAHE_0312 (degree 349), 1231626.CAHE_0837 (degree 343) and 1231626.CAHE_0441
-	(degree 341).
+	The undirected graph Cardinium endosymbiont cEper1 has 819 nodes and 42421
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.12664 and has 4 connected components, where the
+	component with most nodes has 805 nodes and the component with the least
+	nodes has 4 nodes. The graph median node degree is 88, the mean node degree
+	is 103.59, and the node degree mode is 3. The top 5 most central nodes
+	are 1231626.CAHE_0016 (degree 370), 1231626.CAHE_0574 (degree 366), 1231626.CAHE_0312
+	(degree 349), 1231626.CAHE_0837 (degree 343) and 1231626.CAHE_0441 (degree
+	341).
 	
 
 

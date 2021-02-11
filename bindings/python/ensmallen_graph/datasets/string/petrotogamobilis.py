@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:16.463999
 
-The undirected graph Petrotoga mobilis has 1892 nodes and 142467 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07964 and
-has 3 connected components, where the component with most nodes has 1885 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 121,
-the mean node degree is 150.60, and the node degree mode is 12. The top 5 most central
-nodes are 403833.Pmob_1444 (degree 995), 403833.Pmob_1695 (degree 918), 403833.Pmob_0077
-(degree 900), 403833.Pmob_0046 (degree 764) and 403833.Pmob_1239 (degree 748).
+The undirected graph Petrotoga mobilis has 1892 nodes and 142467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07964 and has 3 connected components, where the component with most
+nodes has 1885 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 121, the mean node degree is 150.60, and
+the node degree mode is 12. The top 5 most central nodes are 403833.Pmob_1444
+(degree 995), 403833.Pmob_1695 (degree 918), 403833.Pmob_0077 (degree 900),
+403833.Pmob_0046 (degree 764) and 403833.Pmob_1239 (degree 748).
 
 
 References
@@ -106,13 +107,14 @@ def PetrotogaMobilis(
 	
 	Datetime: 2021-02-02 20:44:16.463999
 	
-	The undirected graph Petrotoga mobilis has 1892 nodes and 142467 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07964 and
-	has 3 connected components, where the component with most nodes has 1885 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 121,
-	the mean node degree is 150.60, and the node degree mode is 12. The top 5 most central
-	nodes are 403833.Pmob_1444 (degree 995), 403833.Pmob_1695 (degree 918), 403833.Pmob_0077
-	(degree 900), 403833.Pmob_0046 (degree 764) and 403833.Pmob_1239 (degree 748).
+	The undirected graph Petrotoga mobilis has 1892 nodes and 142467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07964 and has 3 connected components, where the component with most
+	nodes has 1885 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 121, the mean node degree is 150.60, and
+	the node degree mode is 12. The top 5 most central nodes are 403833.Pmob_1444
+	(degree 995), 403833.Pmob_1695 (degree 918), 403833.Pmob_0077 (degree 900),
+	403833.Pmob_0046 (degree 764) and 403833.Pmob_1239 (degree 748).
 	
 
 

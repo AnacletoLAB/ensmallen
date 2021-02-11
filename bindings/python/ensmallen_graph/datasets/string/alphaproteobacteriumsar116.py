@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:15.466447
 
-The undirected graph Alphaproteobacterium SAR116 has 2310 nodes and 183174 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06868
-and has 9 connected components, where the component with most nodes has 2293 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 158.59, and the node degree mode is 1. The top 5
-most central nodes are 909943.HIMB100_00006620 (degree 965), 909943.HIMB100_00011790
-(degree 890), 909943.HIMB100_00005410 (degree 836), 909943.HIMB100_00013610 (degree
-786) and 909943.HIMB100_00020120 (degree 768).
+The undirected graph Alphaproteobacterium SAR116 has 2310 nodes and 183174
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06868 and has 9 connected components, where the component
+with most nodes has 2293 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 158.59,
+and the node degree mode is 1. The top 5 most central nodes are 909943.HIMB100_00006620
+(degree 965), 909943.HIMB100_00011790 (degree 890), 909943.HIMB100_00005410
+(degree 836), 909943.HIMB100_00013610 (degree 786) and 909943.HIMB100_00020120
+(degree 768).
 
 
 References
@@ -107,14 +108,15 @@ def AlphaproteobacteriumSar116(
 	
 	Datetime: 2021-02-02 21:55:15.466447
 	
-	The undirected graph Alphaproteobacterium SAR116 has 2310 nodes and 183174 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06868
-	and has 9 connected components, where the component with most nodes has 2293 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 158.59, and the node degree mode is 1. The top 5
-	most central nodes are 909943.HIMB100_00006620 (degree 965), 909943.HIMB100_00011790
-	(degree 890), 909943.HIMB100_00005410 (degree 836), 909943.HIMB100_00013610 (degree
-	786) and 909943.HIMB100_00020120 (degree 768).
+	The undirected graph Alphaproteobacterium SAR116 has 2310 nodes and 183174
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06868 and has 9 connected components, where the component
+	with most nodes has 2293 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 158.59,
+	and the node degree mode is 1. The top 5 most central nodes are 909943.HIMB100_00006620
+	(degree 965), 909943.HIMB100_00011790 (degree 890), 909943.HIMB100_00005410
+	(degree 836), 909943.HIMB100_00013610 (degree 786) and 909943.HIMB100_00020120
+	(degree 768).
 	
 
 

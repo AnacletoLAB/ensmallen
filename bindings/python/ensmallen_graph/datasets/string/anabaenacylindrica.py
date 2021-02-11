@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:07.339928
 
-The undirected graph Anabaena cylindrica has 5243 nodes and 477993 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03478 and
-has 20 connected components, where the component with most nodes has 5200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 182.34, and the node degree mode is 2. The top 5 most central
-nodes are 272123.Anacy_4264 (degree 2119), 272123.Anacy_2790 (degree 1650), 272123.Anacy_0789
-(degree 1522), 272123.Anacy_4718 (degree 1492) and 272123.Anacy_3153 (degree 1487).
+The undirected graph Anabaena cylindrica has 5243 nodes and 477993 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03478 and has 20 connected components, where the component with most
+nodes has 5200 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 182.34, and
+the node degree mode is 2. The top 5 most central nodes are 272123.Anacy_4264
+(degree 2119), 272123.Anacy_2790 (degree 1650), 272123.Anacy_0789 (degree
+1522), 272123.Anacy_4718 (degree 1492) and 272123.Anacy_3153 (degree 1487).
 
 
 References
@@ -106,13 +107,14 @@ def AnabaenaCylindrica(
 	
 	Datetime: 2021-02-02 20:16:07.339928
 	
-	The undirected graph Anabaena cylindrica has 5243 nodes and 477993 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03478 and
-	has 20 connected components, where the component with most nodes has 5200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 182.34, and the node degree mode is 2. The top 5 most central
-	nodes are 272123.Anacy_4264 (degree 2119), 272123.Anacy_2790 (degree 1650), 272123.Anacy_0789
-	(degree 1522), 272123.Anacy_4718 (degree 1492) and 272123.Anacy_3153 (degree 1487).
+	The undirected graph Anabaena cylindrica has 5243 nodes and 477993 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03478 and has 20 connected components, where the component with most
+	nodes has 5200 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 182.34, and
+	the node degree mode is 2. The top 5 most central nodes are 272123.Anacy_4264
+	(degree 2119), 272123.Anacy_2790 (degree 1650), 272123.Anacy_0789 (degree
+	1522), 272123.Anacy_4718 (degree 1492) and 272123.Anacy_3153 (degree 1487).
 	
 
 

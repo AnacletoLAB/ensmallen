@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:34.389995
 
-The undirected graph Actinomadura atramentaria has 5891 nodes and 945666 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05451
-and has 33 connected components, where the component with most nodes has 5800 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 262, the mean node degree is 321.05, and the node degree mode is 3. The top 5
-most central nodes are 1120936.KB907219_gene3089 (degree 2021), 1120936.KB907212_gene5020
-(degree 2018), 1120936.KB907221_gene2178 (degree 1822), 1120936.KB907210_gene5497
-(degree 1740) and 1120936.KB907211_gene235 (degree 1708).
+The undirected graph Actinomadura atramentaria has 5891 nodes and 945666
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05451 and has 33 connected components, where the component
+with most nodes has 5800 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 262, the mean node degree is 321.05,
+and the node degree mode is 3. The top 5 most central nodes are 1120936.KB907219_gene3089
+(degree 2021), 1120936.KB907212_gene5020 (degree 2018), 1120936.KB907221_gene2178
+(degree 1822), 1120936.KB907210_gene5497 (degree 1740) and 1120936.KB907211_gene235
+(degree 1708).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomaduraAtramentaria(
 	
 	Datetime: 2021-02-02 22:29:34.389995
 	
-	The undirected graph Actinomadura atramentaria has 5891 nodes and 945666 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05451
-	and has 33 connected components, where the component with most nodes has 5800 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 262, the mean node degree is 321.05, and the node degree mode is 3. The top 5
-	most central nodes are 1120936.KB907219_gene3089 (degree 2021), 1120936.KB907212_gene5020
-	(degree 2018), 1120936.KB907221_gene2178 (degree 1822), 1120936.KB907210_gene5497
-	(degree 1740) and 1120936.KB907211_gene235 (degree 1708).
+	The undirected graph Actinomadura atramentaria has 5891 nodes and 945666
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05451 and has 33 connected components, where the component
+	with most nodes has 5800 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 262, the mean node degree is 321.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1120936.KB907219_gene3089
+	(degree 2021), 1120936.KB907212_gene5020 (degree 2018), 1120936.KB907221_gene2178
+	(degree 1822), 1120936.KB907210_gene5497 (degree 1740) and 1120936.KB907211_gene235
+	(degree 1708).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:14.178586
 
-The undirected graph Acinetobacter lwoffii NCTC 5866 has 2985 nodes and 242640 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05448
-and has 10 connected components, where the component with most nodes has 2960 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 162.57, and the node degree mode is 4. The top 5
-most central nodes are 981327.F925_01264 (degree 1025), 981327.F925_02110 (degree
-906), 981327.F925_00867 (degree 905), 981327.F925_02886 (degree 878) and 981327.F925_02786
-(degree 862).
+The undirected graph Acinetobacter lwoffii NCTC 5866 has 2985 nodes and
+242640 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05448 and has 10 connected components, where the
+component with most nodes has 2960 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 162.57, and the node degree mode is 4. The top 5 most central nodes
+are 981327.F925_01264 (degree 1025), 981327.F925_02110 (degree 906), 981327.F925_00867
+(degree 905), 981327.F925_02886 (degree 878) and 981327.F925_02786 (degree
+862).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterLwoffiiNctc5866(
 	
 	Datetime: 2021-02-02 22:03:14.178586
 	
-	The undirected graph Acinetobacter lwoffii NCTC 5866 has 2985 nodes and 242640 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05448
-	and has 10 connected components, where the component with most nodes has 2960 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 162.57, and the node degree mode is 4. The top 5
-	most central nodes are 981327.F925_01264 (degree 1025), 981327.F925_02110 (degree
-	906), 981327.F925_00867 (degree 905), 981327.F925_02886 (degree 878) and 981327.F925_02786
-	(degree 862).
+	The undirected graph Acinetobacter lwoffii NCTC 5866 has 2985 nodes and
+	242640 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05448 and has 10 connected components, where the
+	component with most nodes has 2960 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 162.57, and the node degree mode is 4. The top 5 most central nodes
+	are 981327.F925_01264 (degree 1025), 981327.F925_02110 (degree 906), 981327.F925_00867
+	(degree 905), 981327.F925_02886 (degree 878) and 981327.F925_02786 (degree
+	862).
 	
 
 

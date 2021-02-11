@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:47.579565
 
-The undirected graph Clostridium colicanis has 3249 nodes and 261311 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04952 and
-has 28 connected components, where the component with most nodes has 3175 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 160.86, and the node degree mode is 1. The top 5 most central
-nodes are 999411.HMPREF1092_00602 (degree 1271), 999411.HMPREF1092_02281 (degree
-1124), 999411.HMPREF1092_01664 (degree 1045), 999411.HMPREF1092_01910 (degree 928)
-and 999411.HMPREF1092_01426 (degree 918).
+The undirected graph Clostridium colicanis has 3249 nodes and 261311 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04952 and has 28 connected components, where the component with most
+nodes has 3175 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 160.86, and
+the node degree mode is 1. The top 5 most central nodes are 999411.HMPREF1092_00602
+(degree 1271), 999411.HMPREF1092_02281 (degree 1124), 999411.HMPREF1092_01664
+(degree 1045), 999411.HMPREF1092_01910 (degree 928) and 999411.HMPREF1092_01426
+(degree 918).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumColicanis(
 	
 	Datetime: 2021-02-02 22:05:47.579565
 	
-	The undirected graph Clostridium colicanis has 3249 nodes and 261311 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04952 and
-	has 28 connected components, where the component with most nodes has 3175 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 160.86, and the node degree mode is 1. The top 5 most central
-	nodes are 999411.HMPREF1092_00602 (degree 1271), 999411.HMPREF1092_02281 (degree
-	1124), 999411.HMPREF1092_01664 (degree 1045), 999411.HMPREF1092_01910 (degree 928)
-	and 999411.HMPREF1092_01426 (degree 918).
+	The undirected graph Clostridium colicanis has 3249 nodes and 261311 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04952 and has 28 connected components, where the component with most
+	nodes has 3175 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 160.86, and
+	the node degree mode is 1. The top 5 most central nodes are 999411.HMPREF1092_00602
+	(degree 1271), 999411.HMPREF1092_02281 (degree 1124), 999411.HMPREF1092_01664
+	(degree 1045), 999411.HMPREF1092_01910 (degree 928) and 999411.HMPREF1092_01426
+	(degree 918).
 	
 
 

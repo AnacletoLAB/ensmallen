@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:00:11.875482
 
-The undirected graph Serratia fonticola RB25 has 4767 nodes and 688531 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06061 and
-has 16 connected components, where the component with most nodes has 4732 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 288.87, and the node degree mode is 1. The top 5 most central
-nodes are 1441930.Z042_11705 (degree 1765), 1441930.Z042_25260 (degree 1657), 1441930.Z042_04945
-(degree 1572), 1441930.Z042_24950 (degree 1553) and 1441930.Z042_04240 (degree 1547).
+The undirected graph Serratia fonticola RB25 has 4767 nodes and 688531
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06061 and has 16 connected components, where the component
+with most nodes has 4732 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 247, the mean node degree is 288.87,
+and the node degree mode is 1. The top 5 most central nodes are 1441930.Z042_11705
+(degree 1765), 1441930.Z042_25260 (degree 1657), 1441930.Z042_04945 (degree
+1572), 1441930.Z042_24950 (degree 1553) and 1441930.Z042_04240 (degree
+1547).
 
 
 References
@@ -106,13 +108,15 @@ def SerratiaFonticolaRb25(
 	
 	Datetime: 2021-02-03 23:00:11.875482
 	
-	The undirected graph Serratia fonticola RB25 has 4767 nodes and 688531 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06061 and
-	has 16 connected components, where the component with most nodes has 4732 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 288.87, and the node degree mode is 1. The top 5 most central
-	nodes are 1441930.Z042_11705 (degree 1765), 1441930.Z042_25260 (degree 1657), 1441930.Z042_04945
-	(degree 1572), 1441930.Z042_24950 (degree 1553) and 1441930.Z042_04240 (degree 1547).
+	The undirected graph Serratia fonticola RB25 has 4767 nodes and 688531
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06061 and has 16 connected components, where the component
+	with most nodes has 4732 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 247, the mean node degree is 288.87,
+	and the node degree mode is 1. The top 5 most central nodes are 1441930.Z042_11705
+	(degree 1765), 1441930.Z042_25260 (degree 1657), 1441930.Z042_04945 (degree
+	1572), 1441930.Z042_24950 (degree 1553) and 1441930.Z042_04240 (degree
+	1547).
 	
 
 

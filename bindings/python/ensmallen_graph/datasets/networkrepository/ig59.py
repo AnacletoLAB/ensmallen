@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:46.739944
 
-The undirected graph IG5-9 has 538 nodes and 4570 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.03164 and is connected, as
-it has a single component. The graph median node degree is 13, the mean node degree
-is 16.99, and the node degree mode is 10. The top 5 most central nodes are 526 (degree
-71), 536 (degree 70), 533 (degree 65), 529 (degree 65) and 535 (degree 61).
+The undirected graph IG5-9 has 538 nodes and 4570 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.03164
+and is connected, as it has a single component. The graph median node degree
+is 13, the mean node degree is 16.99, and the node degree mode is 10. The
+top 5 most central nodes are 526 (degree 71), 536 (degree 70), 533 (degree
+65), 529 (degree 65) and 535 (degree 61).
 
 
 References
@@ -101,11 +102,12 @@ def Ig59(
 	
 	Datetime: 2021-02-06 07:59:46.739944
 	
-	The undirected graph IG5-9 has 538 nodes and 4570 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.03164 and is connected, as
-	it has a single component. The graph median node degree is 13, the mean node degree
-	is 16.99, and the node degree mode is 10. The top 5 most central nodes are 526 (degree
-	71), 536 (degree 70), 533 (degree 65), 529 (degree 65) and 535 (degree 61).
+	The undirected graph IG5-9 has 538 nodes and 4570 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.03164
+	and is connected, as it has a single component. The graph median node degree
+	is 13, the mean node degree is 16.99, and the node degree mode is 10. The
+	top 5 most central nodes are 526 (degree 71), 536 (degree 70), 533 (degree
+	65), 529 (degree 65) and 535 (degree 61).
 	
 
 

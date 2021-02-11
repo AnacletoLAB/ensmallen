@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:58.973911
 
-The undirected graph Thermococcus sp. 4557 has 2124 nodes and 130781 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05801 and
-has 5 connected components, where the component with most nodes has 2113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 123.15, and the node degree mode is 4. The top 5 most central
-nodes are 1042877.GQS_01790 (degree 653), 1042877.GQS_07225 (degree 577), 1042877.GQS_00165
-(degree 550), 1042877.GQS_07175 (degree 547) and 1042877.GQS_05875 (degree 546).
+The undirected graph Thermococcus sp. 4557 has 2124 nodes and 130781 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05801 and has 5 connected components, where the component with most
+nodes has 2113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 123.15, and
+the node degree mode is 4. The top 5 most central nodes are 1042877.GQS_01790
+(degree 653), 1042877.GQS_07225 (degree 577), 1042877.GQS_00165 (degree
+550), 1042877.GQS_07175 (degree 547) and 1042877.GQS_05875 (degree 546).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusSp.4557(
 	
 	Datetime: 2021-02-02 22:15:58.973911
 	
-	The undirected graph Thermococcus sp. 4557 has 2124 nodes and 130781 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05801 and
-	has 5 connected components, where the component with most nodes has 2113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 123.15, and the node degree mode is 4. The top 5 most central
-	nodes are 1042877.GQS_01790 (degree 653), 1042877.GQS_07225 (degree 577), 1042877.GQS_00165
-	(degree 550), 1042877.GQS_07175 (degree 547) and 1042877.GQS_05875 (degree 546).
+	The undirected graph Thermococcus sp. 4557 has 2124 nodes and 130781 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05801 and has 5 connected components, where the component with most
+	nodes has 2113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 123.15, and
+	the node degree mode is 4. The top 5 most central nodes are 1042877.GQS_01790
+	(degree 653), 1042877.GQS_07225 (degree 577), 1042877.GQS_00165 (degree
+	550), 1042877.GQS_07175 (degree 547) and 1042877.GQS_05875 (degree 546).
 	
 
 

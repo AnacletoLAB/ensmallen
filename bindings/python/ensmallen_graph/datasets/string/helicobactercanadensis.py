@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:13.504004
 
-The undirected graph Helicobacter canadensis has 1531 nodes and 100010 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08539 and
-has 2 connected components, where the component with most nodes has 1529 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 130.65, and the node degree mode is 75. The top 5 most central
-nodes are 537970.HCAN_0543 (degree 713), 537970.HCAN_0216 (degree 650), 537970.HCAN_1280
-(degree 649), 537970.HCAN_0617 (degree 561) and 537970.HCAN_0409 (degree 546).
+The undirected graph Helicobacter canadensis has 1531 nodes and 100010
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08539 and has 2 connected components, where the component
+with most nodes has 1529 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 130.65,
+and the node degree mode is 75. The top 5 most central nodes are 537970.HCAN_0543
+(degree 713), 537970.HCAN_0216 (degree 650), 537970.HCAN_1280 (degree 649),
+537970.HCAN_0617 (degree 561) and 537970.HCAN_0409 (degree 546).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterCanadensis(
 	
 	Datetime: 2021-02-02 21:07:13.504004
 	
-	The undirected graph Helicobacter canadensis has 1531 nodes and 100010 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08539 and
-	has 2 connected components, where the component with most nodes has 1529 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 130.65, and the node degree mode is 75. The top 5 most central
-	nodes are 537970.HCAN_0543 (degree 713), 537970.HCAN_0216 (degree 650), 537970.HCAN_1280
-	(degree 649), 537970.HCAN_0617 (degree 561) and 537970.HCAN_0409 (degree 546).
+	The undirected graph Helicobacter canadensis has 1531 nodes and 100010
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08539 and has 2 connected components, where the component
+	with most nodes has 1529 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 130.65,
+	and the node degree mode is 75. The top 5 most central nodes are 537970.HCAN_0543
+	(degree 713), 537970.HCAN_0216 (degree 650), 537970.HCAN_1280 (degree 649),
+	537970.HCAN_0617 (degree 561) and 537970.HCAN_0409 (degree 546).
 	
 
 

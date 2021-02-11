@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:12.097438
 
-The undirected graph Halococcus morrhuae has 2971 nodes and 220731 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05003 and
-has 32 connected components, where the component with most nodes has 2900 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 148.59, and the node degree mode is 2. The top 5 most central
-nodes are 931277.C448_02361 (degree 847), 931277.C448_13576 (degree 836), 931277.C448_08899
-(degree 783), 931277.C448_07027 (degree 759) and 931277.C448_09054 (degree 708).
+The undirected graph Halococcus morrhuae has 2971 nodes and 220731 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05003 and has 32 connected components, where the component with most
+nodes has 2900 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 148.59, and
+the node degree mode is 2. The top 5 most central nodes are 931277.C448_02361
+(degree 847), 931277.C448_13576 (degree 836), 931277.C448_08899 (degree
+783), 931277.C448_07027 (degree 759) and 931277.C448_09054 (degree 708).
 
 
 References
@@ -106,13 +107,14 @@ def HalococcusMorrhuae(
 	
 	Datetime: 2021-02-02 21:58:12.097438
 	
-	The undirected graph Halococcus morrhuae has 2971 nodes and 220731 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05003 and
-	has 32 connected components, where the component with most nodes has 2900 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 148.59, and the node degree mode is 2. The top 5 most central
-	nodes are 931277.C448_02361 (degree 847), 931277.C448_13576 (degree 836), 931277.C448_08899
-	(degree 783), 931277.C448_07027 (degree 759) and 931277.C448_09054 (degree 708).
+	The undirected graph Halococcus morrhuae has 2971 nodes and 220731 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05003 and has 32 connected components, where the component with most
+	nodes has 2900 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 148.59, and
+	the node degree mode is 2. The top 5 most central nodes are 931277.C448_02361
+	(degree 847), 931277.C448_13576 (degree 836), 931277.C448_08899 (degree
+	783), 931277.C448_07027 (degree 759) and 931277.C448_09054 (degree 708).
 	
 
 

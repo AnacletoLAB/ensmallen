@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:22.668497
 
-The undirected graph Blumeria graminis has 4601 nodes and 500847 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04733 and
-has 5 connected components, where the component with most nodes has 4592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 217.71, and the node degree mode is 1. The top 5 most central
-nodes are 34373.CCU74409 (degree 1277), 34373.CCU77272 (degree 1254), 34373.CCU74198
-(degree 1183), 34373.CCU75561 (degree 1181) and 34373.CCU76638 (degree 1091).
+The undirected graph Blumeria graminis has 4601 nodes and 500847 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04733 and has 5 connected components, where the component with most
+nodes has 4592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 217.71, and
+the node degree mode is 1. The top 5 most central nodes are 34373.CCU74409
+(degree 1277), 34373.CCU77272 (degree 1254), 34373.CCU74198 (degree 1183),
+34373.CCU75561 (degree 1181) and 34373.CCU76638 (degree 1091).
 
 
 References
@@ -106,13 +107,14 @@ def BlumeriaGraminis(
 	
 	Datetime: 2021-02-02 18:04:22.668497
 	
-	The undirected graph Blumeria graminis has 4601 nodes and 500847 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04733 and
-	has 5 connected components, where the component with most nodes has 4592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 217.71, and the node degree mode is 1. The top 5 most central
-	nodes are 34373.CCU74409 (degree 1277), 34373.CCU77272 (degree 1254), 34373.CCU74198
-	(degree 1183), 34373.CCU75561 (degree 1181) and 34373.CCU76638 (degree 1091).
+	The undirected graph Blumeria graminis has 4601 nodes and 500847 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04733 and has 5 connected components, where the component with most
+	nodes has 4592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 217.71, and
+	the node degree mode is 1. The top 5 most central nodes are 34373.CCU74409
+	(degree 1277), 34373.CCU77272 (degree 1254), 34373.CCU74198 (degree 1183),
+	34373.CCU75561 (degree 1181) and 34373.CCU76638 (degree 1091).
 	
 
 

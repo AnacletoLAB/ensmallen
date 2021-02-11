@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:41.023199
 
-The undirected graph Staphylococcus chromogenes has 2215 nodes and 158469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06463
-and has 10 connected components, where the component with most nodes has 2195 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 143.09, and the node degree mode is 3. The top 5
-most central nodes are 1220551.SCHR_05187 (degree 899), 1220551.SCHR_07557 (degree
-801), 1220551.SCHR_07552 (degree 794), 1220551.SCHR_03065 (degree 727) and 1220551.SCHR_10570
-(degree 716).
+The undirected graph Staphylococcus chromogenes has 2215 nodes and 158469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06463 and has 10 connected components, where the component
+with most nodes has 2195 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 143.09,
+and the node degree mode is 3. The top 5 most central nodes are 1220551.SCHR_05187
+(degree 899), 1220551.SCHR_07557 (degree 801), 1220551.SCHR_07552 (degree
+794), 1220551.SCHR_03065 (degree 727) and 1220551.SCHR_10570 (degree 716).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylococcusChromogenes(
 	
 	Datetime: 2021-02-02 23:23:41.023199
 	
-	The undirected graph Staphylococcus chromogenes has 2215 nodes and 158469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06463
-	and has 10 connected components, where the component with most nodes has 2195 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 143.09, and the node degree mode is 3. The top 5
-	most central nodes are 1220551.SCHR_05187 (degree 899), 1220551.SCHR_07557 (degree
-	801), 1220551.SCHR_07552 (degree 794), 1220551.SCHR_03065 (degree 727) and 1220551.SCHR_10570
-	(degree 716).
+	The undirected graph Staphylococcus chromogenes has 2215 nodes and 158469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06463 and has 10 connected components, where the component
+	with most nodes has 2195 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 143.09,
+	and the node degree mode is 3. The top 5 most central nodes are 1220551.SCHR_05187
+	(degree 899), 1220551.SCHR_07557 (degree 801), 1220551.SCHR_07552 (degree
+	794), 1220551.SCHR_03065 (degree 727) and 1220551.SCHR_10570 (degree 716).
 	
 
 

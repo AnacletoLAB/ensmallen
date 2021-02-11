@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:32:06.103298
 
-The undirected graph wb-cs-stanford has 9435 nodes, of which 9 are singletons (all
-have self-loops), and 28726 unweighted edges, of which 1299 are self-loops. The graph
-is quite sparse as it has a density of 0.00063 and has 43 connected components, where
-the component with most nodes has 8929 nodes and the component with the least nodes
-has a single node. The graph median node degree is 4, the mean node degree is 5.95,
-and the node degree mode is 1. The top 5 most central nodes are 2264 (degree 340),
-6840 (degree 278), 6839 (degree 278), 6837 (degree 278) and 6562 (degree 278).
+The undirected graph wb-cs-stanford has 9435 nodes, of which 9 are singletons
+(all have self-loops), and 28726 unweighted edges, of which 1299 are self-loops.
+The graph is quite sparse as it has a density of 0.00063 and has 43 connected
+components, where the component with most nodes has 8929 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 4, the mean node degree is 5.95, and the node degree mode is
+1. The top 5 most central nodes are 2264 (degree 340), 6840 (degree 278),
+6839 (degree 278), 6837 (degree 278) and 6562 (degree 278).
 
 
 References
@@ -103,13 +104,14 @@ def WbCsStanford(
 	
 	Datetime: 2021-02-06 10:32:06.103298
 	
-	The undirected graph wb-cs-stanford has 9435 nodes, of which 9 are singletons (all
-	have self-loops), and 28726 unweighted edges, of which 1299 are self-loops. The graph
-	is quite sparse as it has a density of 0.00063 and has 43 connected components, where
-	the component with most nodes has 8929 nodes and the component with the least nodes
-	has a single node. The graph median node degree is 4, the mean node degree is 5.95,
-	and the node degree mode is 1. The top 5 most central nodes are 2264 (degree 340),
-	6840 (degree 278), 6839 (degree 278), 6837 (degree 278) and 6562 (degree 278).
+	The undirected graph wb-cs-stanford has 9435 nodes, of which 9 are singletons
+	(all have self-loops), and 28726 unweighted edges, of which 1299 are self-loops.
+	The graph is quite sparse as it has a density of 0.00063 and has 43 connected
+	components, where the component with most nodes has 8929 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 4, the mean node degree is 5.95, and the node degree mode is
+	1. The top 5 most central nodes are 2264 (degree 340), 6840 (degree 278),
+	6839 (degree 278), 6837 (degree 278) and 6562 (degree 278).
 	
 
 

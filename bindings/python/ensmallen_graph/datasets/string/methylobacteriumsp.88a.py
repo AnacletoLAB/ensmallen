@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:43.717429
 
-The undirected graph Methylobacterium sp. 88A has 4253 nodes and 348680 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03856
-and has 31 connected components, where the component with most nodes has 4176 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 163.97, and the node degree mode is 2. The top 5
-most central nodes are 1131813.AQVT01000001_gene3683 (degree 1382), 1131813.AQVT01000001_gene2324
-(degree 1315), 1131813.AQVT01000001_gene3258 (degree 1182), 1131813.AQVT01000001_gene3250
-(degree 1067) and 1131813.AQVT01000001_gene3175 (degree 1048).
+The undirected graph Methylobacterium sp. 88A has 4253 nodes and 348680
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03856 and has 31 connected components, where the component
+with most nodes has 4176 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 163.97,
+and the node degree mode is 2. The top 5 most central nodes are 1131813.AQVT01000001_gene3683
+(degree 1382), 1131813.AQVT01000001_gene2324 (degree 1315), 1131813.AQVT01000001_gene3258
+(degree 1182), 1131813.AQVT01000001_gene3250 (degree 1067) and 1131813.AQVT01000001_gene3175
+(degree 1048).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumSp.88a(
 	
 	Datetime: 2021-02-02 22:55:43.717429
 	
-	The undirected graph Methylobacterium sp. 88A has 4253 nodes and 348680 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03856
-	and has 31 connected components, where the component with most nodes has 4176 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 163.97, and the node degree mode is 2. The top 5
-	most central nodes are 1131813.AQVT01000001_gene3683 (degree 1382), 1131813.AQVT01000001_gene2324
-	(degree 1315), 1131813.AQVT01000001_gene3258 (degree 1182), 1131813.AQVT01000001_gene3250
-	(degree 1067) and 1131813.AQVT01000001_gene3175 (degree 1048).
+	The undirected graph Methylobacterium sp. 88A has 4253 nodes and 348680
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03856 and has 31 connected components, where the component
+	with most nodes has 4176 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 163.97,
+	and the node degree mode is 2. The top 5 most central nodes are 1131813.AQVT01000001_gene3683
+	(degree 1382), 1131813.AQVT01000001_gene2324 (degree 1315), 1131813.AQVT01000001_gene3258
+	(degree 1182), 1131813.AQVT01000001_gene3250 (degree 1067) and 1131813.AQVT01000001_gene3175
+	(degree 1048).
 	
 
 

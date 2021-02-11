@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:46.140710
 
-The undirected graph Sphingobacterium sp. ACCC05744 has 3919 nodes and 344268 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04484
-and has 34 connected components, where the component with most nodes has 3839 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 175.69, and the node degree mode is 2. The top 5
-most central nodes are 1229276.DI53_1804 (degree 1354), 1229276.DI53_3193 (degree
-1143), 1229276.DI53_1514 (degree 1038), 1229276.DI53_2180 (degree 1036) and 1229276.DI53_1004
-(degree 941).
+The undirected graph Sphingobacterium sp. ACCC05744 has 3919 nodes and
+344268 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04484 and has 34 connected components, where the
+component with most nodes has 3839 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+is 175.69, and the node degree mode is 2. The top 5 most central nodes
+are 1229276.DI53_1804 (degree 1354), 1229276.DI53_3193 (degree 1143), 1229276.DI53_1514
+(degree 1038), 1229276.DI53_2180 (degree 1036) and 1229276.DI53_1004 (degree
+941).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobacteriumSp.Accc05744(
 	
 	Datetime: 2021-02-02 23:26:46.140710
 	
-	The undirected graph Sphingobacterium sp. ACCC05744 has 3919 nodes and 344268 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04484
-	and has 34 connected components, where the component with most nodes has 3839 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 175.69, and the node degree mode is 2. The top 5
-	most central nodes are 1229276.DI53_1804 (degree 1354), 1229276.DI53_3193 (degree
-	1143), 1229276.DI53_1514 (degree 1038), 1229276.DI53_2180 (degree 1036) and 1229276.DI53_1004
-	(degree 941).
+	The undirected graph Sphingobacterium sp. ACCC05744 has 3919 nodes and
+	344268 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04484 and has 34 connected components, where the
+	component with most nodes has 3839 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+	is 175.69, and the node degree mode is 2. The top 5 most central nodes
+	are 1229276.DI53_1804 (degree 1354), 1229276.DI53_3193 (degree 1143), 1229276.DI53_1514
+	(degree 1038), 1229276.DI53_2180 (degree 1036) and 1229276.DI53_1004 (degree
+	941).
 	
 
 

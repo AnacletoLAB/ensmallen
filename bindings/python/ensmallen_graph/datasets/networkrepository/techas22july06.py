@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:31:24.206322
 
-The undirected graph tech-as-22july06 has 22963 nodes and 48436 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00018
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 4.22, and the node degree mode is 2. The top 5 most central
-nodes are 4 (degree 2390), 3 (degree 2016), 15 (degree 1713), 23 (degree 1298) and
-59 (degree 1243).
+The undirected graph tech-as-22july06 has 22963 nodes and 48436 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00018 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 4.22, and the node
+degree mode is 2. The top 5 most central nodes are 4 (degree 2390), 3 (degree
+2016), 15 (degree 1713), 23 (degree 1298) and 59 (degree 1243).
 
 
 References
@@ -102,12 +102,12 @@ def TechAs22july06(
 	
 	Datetime: 2021-02-06 10:31:24.206322
 	
-	The undirected graph tech-as-22july06 has 22963 nodes and 48436 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00018
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 4.22, and the node degree mode is 2. The top 5 most central
-	nodes are 4 (degree 2390), 3 (degree 2016), 15 (degree 1713), 23 (degree 1298) and
-	59 (degree 1243).
+	The undirected graph tech-as-22july06 has 22963 nodes and 48436 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00018 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 4.22, and the node
+	degree mode is 2. The top 5 most central nodes are 4 (degree 2390), 3 (degree
+	2016), 15 (degree 1713), 23 (degree 1298) and 59 (degree 1243).
 	
 
 

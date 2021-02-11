@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:19.410831
 
-The undirected graph Tyzzerella nexilis has 4182 nodes and 394330 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04511 and
-has 16 connected components, where the component with most nodes has 4139 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 188.58, and the node degree mode is 3. The top 5 most central
-nodes are 500632.CLONEX_01552 (degree 1514), 500632.CLONEX_00412 (degree 1387), 500632.CLONEX_02148
-(degree 1248), 500632.CLONEX_00833 (degree 1217) and 500632.CLONEX_03214 (degree
+The undirected graph Tyzzerella nexilis has 4182 nodes and 394330 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04511 and has 16 connected components, where the component with most
+nodes has 4139 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 188.58, and
+the node degree mode is 3. The top 5 most central nodes are 500632.CLONEX_01552
+(degree 1514), 500632.CLONEX_00412 (degree 1387), 500632.CLONEX_02148 (degree
+1248), 500632.CLONEX_00833 (degree 1217) and 500632.CLONEX_03214 (degree
 1187).
 
 
@@ -107,13 +108,14 @@ def TyzzerellaNexilis(
 	
 	Datetime: 2021-02-02 21:01:19.410831
 	
-	The undirected graph Tyzzerella nexilis has 4182 nodes and 394330 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04511 and
-	has 16 connected components, where the component with most nodes has 4139 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 188.58, and the node degree mode is 3. The top 5 most central
-	nodes are 500632.CLONEX_01552 (degree 1514), 500632.CLONEX_00412 (degree 1387), 500632.CLONEX_02148
-	(degree 1248), 500632.CLONEX_00833 (degree 1217) and 500632.CLONEX_03214 (degree
+	The undirected graph Tyzzerella nexilis has 4182 nodes and 394330 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04511 and has 16 connected components, where the component with most
+	nodes has 4139 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 188.58, and
+	the node degree mode is 3. The top 5 most central nodes are 500632.CLONEX_01552
+	(degree 1514), 500632.CLONEX_00412 (degree 1387), 500632.CLONEX_02148 (degree
+	1248), 500632.CLONEX_00833 (degree 1217) and 500632.CLONEX_03214 (degree
 	1187).
 	
 

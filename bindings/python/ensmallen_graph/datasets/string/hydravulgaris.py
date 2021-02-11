@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:17:56.195512
 
-The undirected graph Hydra vulgaris has 11317 nodes and 1472098 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02299 and
-has 13 connected components, where the component with most nodes has 11268 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 260.16, and the node degree mode is 3. The top 5
-most central nodes are 6087.XP_002165158.2 (degree 2642), 6087.XP_002156807.2 (degree
-2268), 6087.XP_002167306.2 (degree 2217), 6087.XP_004209126.1 (degree 2140) and 6087.XP_002169026.1
-(degree 2135).
+The undirected graph Hydra vulgaris has 11317 nodes and 1472098 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02299 and has 13 connected components, where the component with most
+nodes has 11268 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 260.16, and
+the node degree mode is 3. The top 5 most central nodes are 6087.XP_002165158.2
+(degree 2642), 6087.XP_002156807.2 (degree 2268), 6087.XP_002167306.2 (degree
+2217), 6087.XP_004209126.1 (degree 2140) and 6087.XP_002169026.1 (degree
+2135).
 
 
 References
@@ -107,14 +108,15 @@ def HydraVulgaris(
 	
 	Datetime: 2021-02-02 17:17:56.195512
 	
-	The undirected graph Hydra vulgaris has 11317 nodes and 1472098 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02299 and
-	has 13 connected components, where the component with most nodes has 11268 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 260.16, and the node degree mode is 3. The top 5
-	most central nodes are 6087.XP_002165158.2 (degree 2642), 6087.XP_002156807.2 (degree
-	2268), 6087.XP_002167306.2 (degree 2217), 6087.XP_004209126.1 (degree 2140) and 6087.XP_002169026.1
-	(degree 2135).
+	The undirected graph Hydra vulgaris has 11317 nodes and 1472098 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02299 and has 13 connected components, where the component with most
+	nodes has 11268 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 260.16, and
+	the node degree mode is 3. The top 5 most central nodes are 6087.XP_002165158.2
+	(degree 2642), 6087.XP_002156807.2 (degree 2268), 6087.XP_002167306.2 (degree
+	2217), 6087.XP_004209126.1 (degree 2140) and 6087.XP_002169026.1 (degree
+	2135).
 	
 
 

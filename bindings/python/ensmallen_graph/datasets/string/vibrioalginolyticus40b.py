@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:26.659943
 
-The undirected graph Vibrio alginolyticus 40B has 4290 nodes and 691593 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07517
-and has 9 connected components, where the component with most nodes has 4272 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 273, the mean node degree is 322.42, and the node degree mode is 1. The top 5
-most central nodes are 674977.VMC_02480 (degree 1948), 674977.VMC_07420 (degree 1899),
-674977.VMC_13210 (degree 1842), 674977.VMC_24400 (degree 1799) and 674977.VMC_40450
-(degree 1681).
+The undirected graph Vibrio alginolyticus 40B has 4290 nodes and 691593
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07517 and has 9 connected components, where the component
+with most nodes has 4272 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 273, the mean node degree is 322.42,
+and the node degree mode is 1. The top 5 most central nodes are 674977.VMC_02480
+(degree 1948), 674977.VMC_07420 (degree 1899), 674977.VMC_13210 (degree
+1842), 674977.VMC_24400 (degree 1799) and 674977.VMC_40450 (degree 1681).
 
 
 References
@@ -107,14 +107,14 @@ def VibrioAlginolyticus40b(
 	
 	Datetime: 2021-02-02 21:29:26.659943
 	
-	The undirected graph Vibrio alginolyticus 40B has 4290 nodes and 691593 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07517
-	and has 9 connected components, where the component with most nodes has 4272 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 273, the mean node degree is 322.42, and the node degree mode is 1. The top 5
-	most central nodes are 674977.VMC_02480 (degree 1948), 674977.VMC_07420 (degree 1899),
-	674977.VMC_13210 (degree 1842), 674977.VMC_24400 (degree 1799) and 674977.VMC_40450
-	(degree 1681).
+	The undirected graph Vibrio alginolyticus 40B has 4290 nodes and 691593
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07517 and has 9 connected components, where the component
+	with most nodes has 4272 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 273, the mean node degree is 322.42,
+	and the node degree mode is 1. The top 5 most central nodes are 674977.VMC_02480
+	(degree 1948), 674977.VMC_07420 (degree 1899), 674977.VMC_13210 (degree
+	1842), 674977.VMC_24400 (degree 1799) and 674977.VMC_40450 (degree 1681).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:48.624415
 
-The undirected graph Dietzia alimentaria has 3092 nodes and 233450 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04885 and
-has 17 connected components, where the component with most nodes has 3046 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 151.00, and the node degree mode is 6. The top 5 most central
-nodes are 1077144.AGFF01000024_gene282 (degree 1186), 1077144.AGFF01000032_gene2953
-(degree 1002), 1077144.AGFF01000024_gene456 (degree 961), 1077144.AGFF01000024_gene451
-(degree 882) and 1077144.AGFF01000014_gene3009 (degree 762).
+The undirected graph Dietzia alimentaria has 3092 nodes and 233450 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04885 and has 17 connected components, where the component with most
+nodes has 3046 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 151.00, and
+the node degree mode is 6. The top 5 most central nodes are 1077144.AGFF01000024_gene282
+(degree 1186), 1077144.AGFF01000032_gene2953 (degree 1002), 1077144.AGFF01000024_gene456
+(degree 961), 1077144.AGFF01000024_gene451 (degree 882) and 1077144.AGFF01000014_gene3009
+(degree 762).
 
 
 References
@@ -107,14 +108,15 @@ def DietziaAlimentaria(
 	
 	Datetime: 2021-02-02 22:19:48.624415
 	
-	The undirected graph Dietzia alimentaria has 3092 nodes and 233450 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04885 and
-	has 17 connected components, where the component with most nodes has 3046 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 151.00, and the node degree mode is 6. The top 5 most central
-	nodes are 1077144.AGFF01000024_gene282 (degree 1186), 1077144.AGFF01000032_gene2953
-	(degree 1002), 1077144.AGFF01000024_gene456 (degree 961), 1077144.AGFF01000024_gene451
-	(degree 882) and 1077144.AGFF01000014_gene3009 (degree 762).
+	The undirected graph Dietzia alimentaria has 3092 nodes and 233450 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04885 and has 17 connected components, where the component with most
+	nodes has 3046 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 151.00, and
+	the node degree mode is 6. The top 5 most central nodes are 1077144.AGFF01000024_gene282
+	(degree 1186), 1077144.AGFF01000032_gene2953 (degree 1002), 1077144.AGFF01000024_gene456
+	(degree 961), 1077144.AGFF01000024_gene451 (degree 882) and 1077144.AGFF01000014_gene3009
+	(degree 762).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:09.290943
 
-The undirected graph Gordonia bronchialis has 4659 nodes and 506157 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04665 and
-has 18 connected components, where the component with most nodes has 4597 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 217.28, and the node degree mode is 4. The top 5 most central
-nodes are 526226.Gbro_4160 (degree 1699), 526226.Gbro_1994 (degree 1603), 526226.Gbro_2886
-(degree 1576), 526226.Gbro_0629 (degree 1458) and 526226.Gbro_2830 (degree 1429).
+The undirected graph Gordonia bronchialis has 4659 nodes and 506157 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04665 and has 18 connected components, where the component with most
+nodes has 4597 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 217.28, and
+the node degree mode is 4. The top 5 most central nodes are 526226.Gbro_4160
+(degree 1699), 526226.Gbro_1994 (degree 1603), 526226.Gbro_2886 (degree
+1576), 526226.Gbro_0629 (degree 1458) and 526226.Gbro_2830 (degree 1429).
 
 
 References
@@ -106,13 +107,14 @@ def GordoniaBronchialis(
 	
 	Datetime: 2021-02-02 21:06:09.290943
 	
-	The undirected graph Gordonia bronchialis has 4659 nodes and 506157 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04665 and
-	has 18 connected components, where the component with most nodes has 4597 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 217.28, and the node degree mode is 4. The top 5 most central
-	nodes are 526226.Gbro_4160 (degree 1699), 526226.Gbro_1994 (degree 1603), 526226.Gbro_2886
-	(degree 1576), 526226.Gbro_0629 (degree 1458) and 526226.Gbro_2830 (degree 1429).
+	The undirected graph Gordonia bronchialis has 4659 nodes and 506157 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04665 and has 18 connected components, where the component with most
+	nodes has 4597 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 217.28, and
+	the node degree mode is 4. The top 5 most central nodes are 526226.Gbro_4160
+	(degree 1699), 526226.Gbro_1994 (degree 1603), 526226.Gbro_2886 (degree
+	1576), 526226.Gbro_0629 (degree 1458) and 526226.Gbro_2830 (degree 1429).
 	
 
 

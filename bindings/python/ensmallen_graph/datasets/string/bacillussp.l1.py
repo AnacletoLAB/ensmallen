@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:29.010200
 
-The undirected graph Bacillus sp. L1 has 3787 nodes and 340869 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04755 and
-has 23 connected components, where the component with most nodes has 3740 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 180.02, and the node degree mode is 1. The top 5 most central
-nodes are 1134413.ANNK01000052_gene1141 (degree 1297), 1134413.ANNK01000161_gene3574
-(degree 1257), 1134413.ANNK01000173_gene486 (degree 1145), 1134413.ANNK01000095_gene935
-(degree 1117) and 1134413.ANNK01000114_gene1933 (degree 1082).
+The undirected graph Bacillus sp. L1 has 3787 nodes and 340869 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04755 and has 23 connected components, where the component with most
+nodes has 3740 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 180.02, and
+the node degree mode is 1. The top 5 most central nodes are 1134413.ANNK01000052_gene1141
+(degree 1297), 1134413.ANNK01000161_gene3574 (degree 1257), 1134413.ANNK01000173_gene486
+(degree 1145), 1134413.ANNK01000095_gene935 (degree 1117) and 1134413.ANNK01000114_gene1933
+(degree 1082).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.L1(
 	
 	Datetime: 2021-02-02 22:56:29.010200
 	
-	The undirected graph Bacillus sp. L1 has 3787 nodes and 340869 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04755 and
-	has 23 connected components, where the component with most nodes has 3740 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 180.02, and the node degree mode is 1. The top 5 most central
-	nodes are 1134413.ANNK01000052_gene1141 (degree 1297), 1134413.ANNK01000161_gene3574
-	(degree 1257), 1134413.ANNK01000173_gene486 (degree 1145), 1134413.ANNK01000095_gene935
-	(degree 1117) and 1134413.ANNK01000114_gene1933 (degree 1082).
+	The undirected graph Bacillus sp. L1 has 3787 nodes and 340869 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04755 and has 23 connected components, where the component with most
+	nodes has 3740 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 180.02, and
+	the node degree mode is 1. The top 5 most central nodes are 1134413.ANNK01000052_gene1141
+	(degree 1297), 1134413.ANNK01000161_gene3574 (degree 1257), 1134413.ANNK01000173_gene486
+	(degree 1145), 1134413.ANNK01000095_gene935 (degree 1117) and 1134413.ANNK01000114_gene1933
+	(degree 1082).
 	
 
 

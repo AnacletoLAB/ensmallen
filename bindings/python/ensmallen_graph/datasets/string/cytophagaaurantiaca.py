@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:27.437989
 
-The undirected graph Cytophaga aurantiaca has 3778 nodes and 335301 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04700 and
-has 13 connected components, where the component with most nodes has 3742 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 177.50, and the node degree mode is 4. The top 5 most central
-nodes are 1121373.KB903665_gene3032 (degree 1342), 1121373.KB903620_gene2238 (degree
-1191), 1121373.KB903634_gene675 (degree 1100), 1121373.KB903664_gene2676 (degree
-1075) and 1121373.KB903622_gene2843 (degree 937).
+The undirected graph Cytophaga aurantiaca has 3778 nodes and 335301 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04700 and has 13 connected components, where the component with most
+nodes has 3742 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 177.50, and
+the node degree mode is 4. The top 5 most central nodes are 1121373.KB903665_gene3032
+(degree 1342), 1121373.KB903620_gene2238 (degree 1191), 1121373.KB903634_gene675
+(degree 1100), 1121373.KB903664_gene2676 (degree 1075) and 1121373.KB903622_gene2843
+(degree 937).
 
 
 References
@@ -107,14 +108,15 @@ def CytophagaAurantiaca(
 	
 	Datetime: 2021-02-02 22:35:27.437989
 	
-	The undirected graph Cytophaga aurantiaca has 3778 nodes and 335301 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04700 and
-	has 13 connected components, where the component with most nodes has 3742 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 177.50, and the node degree mode is 4. The top 5 most central
-	nodes are 1121373.KB903665_gene3032 (degree 1342), 1121373.KB903620_gene2238 (degree
-	1191), 1121373.KB903634_gene675 (degree 1100), 1121373.KB903664_gene2676 (degree
-	1075) and 1121373.KB903622_gene2843 (degree 937).
+	The undirected graph Cytophaga aurantiaca has 3778 nodes and 335301 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04700 and has 13 connected components, where the component with most
+	nodes has 3742 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 177.50, and
+	the node degree mode is 4. The top 5 most central nodes are 1121373.KB903665_gene3032
+	(degree 1342), 1121373.KB903620_gene2238 (degree 1191), 1121373.KB903634_gene675
+	(degree 1100), 1121373.KB903664_gene2676 (degree 1075) and 1121373.KB903622_gene2843
+	(degree 937).
 	
 
 

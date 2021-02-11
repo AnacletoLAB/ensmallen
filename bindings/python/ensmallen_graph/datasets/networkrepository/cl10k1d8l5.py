@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:03:28.219243
 
-The undirected graph CL-10K-1d8-L5 has 10000 nodes with 5 different node types: 3
-(nodes number 2000), 1 (nodes number 2000), 2 (nodes number 2000), 5 (nodes number
-2000) and 4 (nodes number 2000), of which 779 are singletons, and 44256 unweighted
-edges, of which 28 are self-loops. The graph is quite sparse as it has a density
-of 0.00088 and has 797 connected components, where the component with most nodes
-has 9187 nodes and the component with the least nodes has a single node. The graph
-median node degree is 3, the mean node degree is 8.85 and the node degree mode is
-2. The top 5 most central nodes are 3710 (degree 218), 8678 (degree 209), 9104 (degree
-199), 4332 (degree 196) and 4207 (degree 192).
+The undirected graph CL-10K-1d8-L5 has 10000 nodes with 5 different node
+types: 3 (nodes number 2000), 1 (nodes number 2000), 2 (nodes number 2000),
+5 (nodes number 2000) and 4 (nodes number 2000), of which 779 are singletons,
+and 44256 unweighted edges, of which 28 are self-loops. The graph is quite
+sparse as it has a density of 0.00088 and has 797 connected components,
+where the component with most nodes has 9187 nodes and the component with
+the least nodes has a single node. The graph median node degree is 3, the
+mean node degree is 8.85 and the node degree mode is 2. The top 5 most
+central nodes are 3710 (degree 218), 8678 (degree 209), 9104 (degree 199),
+4332 (degree 196) and 4207 (degree 192).
 
 
 References
@@ -105,15 +106,16 @@ def Cl10k1d8L5(
 	
 	Datetime: 2021-02-04 08:03:28.219243
 	
-	The undirected graph CL-10K-1d8-L5 has 10000 nodes with 5 different node types: 3
-	(nodes number 2000), 1 (nodes number 2000), 2 (nodes number 2000), 5 (nodes number
-	2000) and 4 (nodes number 2000), of which 779 are singletons, and 44256 unweighted
-	edges, of which 28 are self-loops. The graph is quite sparse as it has a density
-	of 0.00088 and has 797 connected components, where the component with most nodes
-	has 9187 nodes and the component with the least nodes has a single node. The graph
-	median node degree is 3, the mean node degree is 8.85 and the node degree mode is
-	2. The top 5 most central nodes are 3710 (degree 218), 8678 (degree 209), 9104 (degree
-	199), 4332 (degree 196) and 4207 (degree 192).
+	The undirected graph CL-10K-1d8-L5 has 10000 nodes with 5 different node
+	types: 3 (nodes number 2000), 1 (nodes number 2000), 2 (nodes number 2000),
+	5 (nodes number 2000) and 4 (nodes number 2000), of which 779 are singletons,
+	and 44256 unweighted edges, of which 28 are self-loops. The graph is quite
+	sparse as it has a density of 0.00088 and has 797 connected components,
+	where the component with most nodes has 9187 nodes and the component with
+	the least nodes has a single node. The graph median node degree is 3, the
+	mean node degree is 8.85 and the node degree mode is 2. The top 5 most
+	central nodes are 3710 (degree 218), 8678 (degree 209), 9104 (degree 199),
+	4332 (degree 196) and 4207 (degree 192).
 	
 
 

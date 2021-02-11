@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:41.979739
 
-The undirected graph Parascardovia denticolens DSM10105 has 1655 nodes and 101928
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07447 and has 12 connected components, where the component with most nodes has
-1618 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 100, the mean node degree is 123.18, and the node degree mode is 6. The
-top 5 most central nodes are 864564.HMPREF0620_0363 (degree 728), 864564.HMPREF0620_0702
-(degree 716), 864564.HMPREF0620_1199 (degree 646), 864564.HMPREF0620_0031 (degree
+The undirected graph Parascardovia denticolens DSM10105 has 1655 nodes
+and 101928 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07447 and has 12 connected components, where the
+component with most nodes has 1618 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 123.18, and the node degree mode is 6. The top 5 most central nodes
+are 864564.HMPREF0620_0363 (degree 728), 864564.HMPREF0620_0702 (degree
+716), 864564.HMPREF0620_1199 (degree 646), 864564.HMPREF0620_0031 (degree
 632) and 864564.HMPREF0620_0538 (degree 611).
 
 
@@ -107,13 +108,14 @@ def ParascardoviaDenticolensDsm10105(
 	
 	Datetime: 2021-02-02 21:47:41.979739
 	
-	The undirected graph Parascardovia denticolens DSM10105 has 1655 nodes and 101928
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07447 and has 12 connected components, where the component with most nodes has
-	1618 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 100, the mean node degree is 123.18, and the node degree mode is 6. The
-	top 5 most central nodes are 864564.HMPREF0620_0363 (degree 728), 864564.HMPREF0620_0702
-	(degree 716), 864564.HMPREF0620_1199 (degree 646), 864564.HMPREF0620_0031 (degree
+	The undirected graph Parascardovia denticolens DSM10105 has 1655 nodes
+	and 101928 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07447 and has 12 connected components, where the
+	component with most nodes has 1618 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 123.18, and the node degree mode is 6. The top 5 most central nodes
+	are 864564.HMPREF0620_0363 (degree 728), 864564.HMPREF0620_0702 (degree
+	716), 864564.HMPREF0620_1199 (degree 646), 864564.HMPREF0620_0031 (degree
 	632) and 864564.HMPREF0620_0538 (degree 611).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:07.744230
 
-The undirected graph Mitsuokella jalaludinii has 1966 nodes and 138655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07178 and
-has 5 connected components, where the component with most nodes has 1957 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 141.05, and the node degree mode is 2. The top 5 most central
-nodes are 1410665.JNKR01000003_gene1987 (degree 889), 1410665.JNKR01000028_gene150
-(degree 745), 1410665.JNKR01000005_gene1631 (degree 744), 1410665.JNKR01000002_gene1822
-(degree 713) and 1410665.JNKR01000008_gene1125 (degree 685).
+The undirected graph Mitsuokella jalaludinii has 1966 nodes and 138655
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07178 and has 5 connected components, where the component
+with most nodes has 1957 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 141.05,
+and the node degree mode is 2. The top 5 most central nodes are 1410665.JNKR01000003_gene1987
+(degree 889), 1410665.JNKR01000028_gene150 (degree 745), 1410665.JNKR01000005_gene1631
+(degree 744), 1410665.JNKR01000002_gene1822 (degree 713) and 1410665.JNKR01000008_gene1125
+(degree 685).
 
 
 References
@@ -107,14 +108,15 @@ def MitsuokellaJalaludinii(
 	
 	Datetime: 2021-02-03 22:44:07.744230
 	
-	The undirected graph Mitsuokella jalaludinii has 1966 nodes and 138655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07178 and
-	has 5 connected components, where the component with most nodes has 1957 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 141.05, and the node degree mode is 2. The top 5 most central
-	nodes are 1410665.JNKR01000003_gene1987 (degree 889), 1410665.JNKR01000028_gene150
-	(degree 745), 1410665.JNKR01000005_gene1631 (degree 744), 1410665.JNKR01000002_gene1822
-	(degree 713) and 1410665.JNKR01000008_gene1125 (degree 685).
+	The undirected graph Mitsuokella jalaludinii has 1966 nodes and 138655
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07178 and has 5 connected components, where the component
+	with most nodes has 1957 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 141.05,
+	and the node degree mode is 2. The top 5 most central nodes are 1410665.JNKR01000003_gene1987
+	(degree 889), 1410665.JNKR01000028_gene150 (degree 745), 1410665.JNKR01000005_gene1631
+	(degree 744), 1410665.JNKR01000002_gene1822 (degree 713) and 1410665.JNKR01000008_gene1125
+	(degree 685).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:19.293845
 
-The undirected graph Blastomyces dermatitidis has 5822 nodes and 588497 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03473
-and has 12 connected components, where the component with most nodes has 5799 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 202.16, and the node degree mode is 1. The top 5
-most central nodes are 5039.XP_002628012.1 (degree 1476), 5039.XP_002627625.1 (degree
-1365), 5039.XP_002626672.1 (degree 1294), 5039.XP_002628986.1 (degree 1242) and 5039.XP_002621741.1
-(degree 1217).
+The undirected graph Blastomyces dermatitidis has 5822 nodes and 588497
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03473 and has 12 connected components, where the component
+with most nodes has 5799 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 202.16,
+and the node degree mode is 1. The top 5 most central nodes are 5039.XP_002628012.1
+(degree 1476), 5039.XP_002627625.1 (degree 1365), 5039.XP_002626672.1 (degree
+1294), 5039.XP_002628986.1 (degree 1242) and 5039.XP_002621741.1 (degree
+1217).
 
 
 References
@@ -107,14 +108,15 @@ def BlastomycesDermatitidis(
 	
 	Datetime: 2021-02-02 17:12:19.293845
 	
-	The undirected graph Blastomyces dermatitidis has 5822 nodes and 588497 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03473
-	and has 12 connected components, where the component with most nodes has 5799 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 202.16, and the node degree mode is 1. The top 5
-	most central nodes are 5039.XP_002628012.1 (degree 1476), 5039.XP_002627625.1 (degree
-	1365), 5039.XP_002626672.1 (degree 1294), 5039.XP_002628986.1 (degree 1242) and 5039.XP_002621741.1
-	(degree 1217).
+	The undirected graph Blastomyces dermatitidis has 5822 nodes and 588497
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03473 and has 12 connected components, where the component
+	with most nodes has 5799 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 202.16,
+	and the node degree mode is 1. The top 5 most central nodes are 5039.XP_002628012.1
+	(degree 1476), 5039.XP_002627625.1 (degree 1365), 5039.XP_002626672.1 (degree
+	1294), 5039.XP_002628986.1 (degree 1242) and 5039.XP_002621741.1 (degree
+	1217).
 	
 
 

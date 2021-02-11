@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:33.006496
 
-The undirected graph Caenorhabditis brenneri has 18932 nodes and 4117142 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02298
-and has 12 connected components, where the component with most nodes has 18906 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 249, the mean node degree is 434.94, and the node degree mode is 1. The top 5
-most central nodes are 135651.CBN04051 (degree 7309), 135651.CBN32771 (degree 5572),
-135651.CBN25317 (degree 4738), 135651.CBN01669 (degree 4303) and 135651.CBN15930.2
-(degree 4241).
+The undirected graph Caenorhabditis brenneri has 18932 nodes and 4117142
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02298 and has 12 connected components, where the component
+with most nodes has 18906 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 249, the mean node degree
+is 434.94, and the node degree mode is 1. The top 5 most central nodes
+are 135651.CBN04051 (degree 7309), 135651.CBN32771 (degree 5572), 135651.CBN25317
+(degree 4738), 135651.CBN01669 (degree 4303) and 135651.CBN15930.2 (degree
+4241).
 
 
 References
@@ -107,14 +108,15 @@ def CaenorhabditisBrenneri(
 	
 	Datetime: 2021-02-02 19:50:33.006496
 	
-	The undirected graph Caenorhabditis brenneri has 18932 nodes and 4117142 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02298
-	and has 12 connected components, where the component with most nodes has 18906 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 249, the mean node degree is 434.94, and the node degree mode is 1. The top 5
-	most central nodes are 135651.CBN04051 (degree 7309), 135651.CBN32771 (degree 5572),
-	135651.CBN25317 (degree 4738), 135651.CBN01669 (degree 4303) and 135651.CBN15930.2
-	(degree 4241).
+	The undirected graph Caenorhabditis brenneri has 18932 nodes and 4117142
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02298 and has 12 connected components, where the component
+	with most nodes has 18906 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 249, the mean node degree
+	is 434.94, and the node degree mode is 1. The top 5 most central nodes
+	are 135651.CBN04051 (degree 7309), 135651.CBN32771 (degree 5572), 135651.CBN25317
+	(degree 4738), 135651.CBN01669 (degree 4303) and 135651.CBN15930.2 (degree
+	4241).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:31:00.544002
 
-The undirected graph skirt has 12598 nodes, of which 3 are singletons (all have self-loops),
-and 104559 unweighted edges, of which 12598 are self-loops. The graph is sparse as
-it has a density of 0.00124 and has 7 connected components, where the component with
-most nodes has 7928 nodes and the component with the least nodes has a single node.
-The graph median node degree is 18, the mean node degree is 15.60, and the node degree
-mode is 18. The top 5 most central nodes are 9240 (degree 33), 8998 (degree 33),
+The undirected graph skirt has 12598 nodes, of which 3 are singletons (all
+have self-loops), and 104559 unweighted edges, of which 12598 are self-loops.
+The graph is sparse as it has a density of 0.00124 and has 7 connected
+components, where the component with most nodes has 7928 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 18, the mean node degree is 15.60, and the node degree mode is
+18. The top 5 most central nodes are 9240 (degree 33), 8998 (degree 33),
 8735 (degree 33), 8421 (degree 33) and 8363 (degree 33).
 
 
@@ -103,12 +104,13 @@ def Skirt(
 	
 	Datetime: 2021-02-06 10:31:00.544002
 	
-	The undirected graph skirt has 12598 nodes, of which 3 are singletons (all have self-loops),
-	and 104559 unweighted edges, of which 12598 are self-loops. The graph is sparse as
-	it has a density of 0.00124 and has 7 connected components, where the component with
-	most nodes has 7928 nodes and the component with the least nodes has a single node.
-	The graph median node degree is 18, the mean node degree is 15.60, and the node degree
-	mode is 18. The top 5 most central nodes are 9240 (degree 33), 8998 (degree 33),
+	The undirected graph skirt has 12598 nodes, of which 3 are singletons (all
+	have self-loops), and 104559 unweighted edges, of which 12598 are self-loops.
+	The graph is sparse as it has a density of 0.00124 and has 7 connected
+	components, where the component with most nodes has 7928 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 18, the mean node degree is 15.60, and the node degree mode is
+	18. The top 5 most central nodes are 9240 (degree 33), 8998 (degree 33),
 	8735 (degree 33), 8421 (degree 33) and 8363 (degree 33).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:11.816788
 
-The undirected graph Streptomyces sp. C has 7463 nodes and 1197503 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04301 and
-has 45 connected components, where the component with most nodes has 7351 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 269,
-the mean node degree is 320.92, and the node degree mode is 2. The top 5 most central
-nodes are 253839.SSNG_05255 (degree 3481), 253839.SSNG_00793 (degree 2212), 253839.SSNG_01278
-(degree 2044), 253839.SSNG_04281 (degree 2027) and 253839.SSNG_03346 (degree 1998).
+The undirected graph Streptomyces sp. C has 7463 nodes and 1197503 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04301 and has 45 connected components, where the component with most
+nodes has 7351 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 269, the mean node degree is 320.92, and
+the node degree mode is 2. The top 5 most central nodes are 253839.SSNG_05255
+(degree 3481), 253839.SSNG_00793 (degree 2212), 253839.SSNG_01278 (degree
+2044), 253839.SSNG_04281 (degree 2027) and 253839.SSNG_03346 (degree 1998).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesSp.C(
 	
 	Datetime: 2021-02-02 20:12:11.816788
 	
-	The undirected graph Streptomyces sp. C has 7463 nodes and 1197503 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04301 and
-	has 45 connected components, where the component with most nodes has 7351 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 269,
-	the mean node degree is 320.92, and the node degree mode is 2. The top 5 most central
-	nodes are 253839.SSNG_05255 (degree 3481), 253839.SSNG_00793 (degree 2212), 253839.SSNG_01278
-	(degree 2044), 253839.SSNG_04281 (degree 2027) and 253839.SSNG_03346 (degree 1998).
+	The undirected graph Streptomyces sp. C has 7463 nodes and 1197503 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04301 and has 45 connected components, where the component with most
+	nodes has 7351 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 269, the mean node degree is 320.92, and
+	the node degree mode is 2. The top 5 most central nodes are 253839.SSNG_05255
+	(degree 3481), 253839.SSNG_00793 (degree 2212), 253839.SSNG_01278 (degree
+	2044), 253839.SSNG_04281 (degree 2027) and 253839.SSNG_03346 (degree 1998).
 	
 
 

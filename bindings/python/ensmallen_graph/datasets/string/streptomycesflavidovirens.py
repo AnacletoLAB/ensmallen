@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:05.041684
 
-The undirected graph Streptomyces flavidovirens has 6208 nodes and 745893 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03871
-and has 31 connected components, where the component with most nodes has 6140 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 201, the mean node degree is 240.30, and the node degree mode is 2. The top 5
-most central nodes are 1123319.AUBE01000020_gene3023 (degree 2822), 1123319.AUBE01000003_gene803
-(degree 1858), 1123319.AUBE01000022_gene2882 (degree 1842), 1123319.AUBE01000016_gene5937
-(degree 1794) and 1123319.AUBE01000016_gene5980 (degree 1776).
+The undirected graph Streptomyces flavidovirens has 6208 nodes and 745893
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03871 and has 31 connected components, where the component
+with most nodes has 6140 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 240.30,
+and the node degree mode is 2. The top 5 most central nodes are 1123319.AUBE01000020_gene3023
+(degree 2822), 1123319.AUBE01000003_gene803 (degree 1858), 1123319.AUBE01000022_gene2882
+(degree 1842), 1123319.AUBE01000016_gene5937 (degree 1794) and 1123319.AUBE01000016_gene5980
+(degree 1776).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesFlavidovirens(
 	
 	Datetime: 2021-02-02 22:51:05.041684
 	
-	The undirected graph Streptomyces flavidovirens has 6208 nodes and 745893 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03871
-	and has 31 connected components, where the component with most nodes has 6140 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 201, the mean node degree is 240.30, and the node degree mode is 2. The top 5
-	most central nodes are 1123319.AUBE01000020_gene3023 (degree 2822), 1123319.AUBE01000003_gene803
-	(degree 1858), 1123319.AUBE01000022_gene2882 (degree 1842), 1123319.AUBE01000016_gene5937
-	(degree 1794) and 1123319.AUBE01000016_gene5980 (degree 1776).
+	The undirected graph Streptomyces flavidovirens has 6208 nodes and 745893
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03871 and has 31 connected components, where the component
+	with most nodes has 6140 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 240.30,
+	and the node degree mode is 2. The top 5 most central nodes are 1123319.AUBE01000020_gene3023
+	(degree 2822), 1123319.AUBE01000003_gene803 (degree 1858), 1123319.AUBE01000022_gene2882
+	(degree 1842), 1123319.AUBE01000016_gene5937 (degree 1794) and 1123319.AUBE01000016_gene5980
+	(degree 1776).
 	
 
 

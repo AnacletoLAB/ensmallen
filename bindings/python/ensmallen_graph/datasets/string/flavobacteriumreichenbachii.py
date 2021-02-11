@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:40.560534
 
-The undirected graph Flavobacterium reichenbachii has 4460 nodes and 367624 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03697
-and has 23 connected components, where the component with most nodes has 4405 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 164.85, and the node degree mode is 2. The top 5
-most central nodes are 362418.IW19_13470 (degree 1600), 362418.IW19_15705 (degree
-1298), 362418.IW19_01825 (degree 1274), 362418.IW19_07905 (degree 1218) and 362418.IW19_08740
-(degree 1078).
+The undirected graph Flavobacterium reichenbachii has 4460 nodes and 367624
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03697 and has 23 connected components, where the component
+with most nodes has 4405 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 164.85,
+and the node degree mode is 2. The top 5 most central nodes are 362418.IW19_13470
+(degree 1600), 362418.IW19_15705 (degree 1298), 362418.IW19_01825 (degree
+1274), 362418.IW19_07905 (degree 1218) and 362418.IW19_08740 (degree 1078).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumReichenbachii(
 	
 	Datetime: 2021-02-02 20:34:40.560534
 	
-	The undirected graph Flavobacterium reichenbachii has 4460 nodes and 367624 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03697
-	and has 23 connected components, where the component with most nodes has 4405 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 164.85, and the node degree mode is 2. The top 5
-	most central nodes are 362418.IW19_13470 (degree 1600), 362418.IW19_15705 (degree
-	1298), 362418.IW19_01825 (degree 1274), 362418.IW19_07905 (degree 1218) and 362418.IW19_08740
-	(degree 1078).
+	The undirected graph Flavobacterium reichenbachii has 4460 nodes and 367624
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03697 and has 23 connected components, where the component
+	with most nodes has 4405 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 164.85,
+	and the node degree mode is 2. The top 5 most central nodes are 362418.IW19_13470
+	(degree 1600), 362418.IW19_15705 (degree 1298), 362418.IW19_01825 (degree
+	1274), 362418.IW19_07905 (degree 1218) and 362418.IW19_08740 (degree 1078).
 	
 
 

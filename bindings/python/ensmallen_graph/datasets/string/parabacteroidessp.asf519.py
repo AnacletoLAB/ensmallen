@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:44.015330
 
-The undirected graph Parabacteroides sp. ASF519 has 5410 nodes and 606955 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04148
-and has 20 connected components, where the component with most nodes has 5362 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 224.38, and the node degree mode is 9. The top 5
-most central nodes are 1235803.C825_01987 (degree 1681), 1235803.C825_03690 (degree
-1349), 1235803.C825_01095 (degree 1335), 1235803.C825_04051 (degree 1321) and 1235803.C825_03824
-(degree 1313).
+The undirected graph Parabacteroides sp. ASF519 has 5410 nodes and 606955
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04148 and has 20 connected components, where the component
+with most nodes has 5362 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 224.38,
+and the node degree mode is 9. The top 5 most central nodes are 1235803.C825_01987
+(degree 1681), 1235803.C825_03690 (degree 1349), 1235803.C825_01095 (degree
+1335), 1235803.C825_04051 (degree 1321) and 1235803.C825_03824 (degree
+1313).
 
 
 References
@@ -107,14 +108,15 @@ def ParabacteroidesSp.Asf519(
 	
 	Datetime: 2021-02-02 23:30:44.015330
 	
-	The undirected graph Parabacteroides sp. ASF519 has 5410 nodes and 606955 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04148
-	and has 20 connected components, where the component with most nodes has 5362 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 224.38, and the node degree mode is 9. The top 5
-	most central nodes are 1235803.C825_01987 (degree 1681), 1235803.C825_03690 (degree
-	1349), 1235803.C825_01095 (degree 1335), 1235803.C825_04051 (degree 1321) and 1235803.C825_03824
-	(degree 1313).
+	The undirected graph Parabacteroides sp. ASF519 has 5410 nodes and 606955
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04148 and has 20 connected components, where the component
+	with most nodes has 5362 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 224.38,
+	and the node degree mode is 9. The top 5 most central nodes are 1235803.C825_01987
+	(degree 1681), 1235803.C825_03690 (degree 1349), 1235803.C825_01095 (degree
+	1335), 1235803.C825_04051 (degree 1321) and 1235803.C825_03824 (degree
+	1313).
 	
 
 

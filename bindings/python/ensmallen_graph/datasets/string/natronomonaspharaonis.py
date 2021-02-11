@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:06.175688
 
-The undirected graph Natronomonas pharaonis has 2643 nodes and 419918 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12027
-and has 6 connected components, where the component with most nodes has 2632 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 338, the mean node degree is 317.76, and the node degree mode is 3. The top 5
-most central nodes are 348780.NP_0370A (degree 1197), 348780.NP_0994A (degree 1008),
-348780.NP_0012A (degree 954), 348780.NP_0218A (degree 920) and 348780.NP_1358A (degree
-879).
+The undirected graph Natronomonas pharaonis has 2643 nodes and 419918 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12027 and has 6 connected components, where the component
+with most nodes has 2632 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 338, the mean node degree is 317.76,
+and the node degree mode is 3. The top 5 most central nodes are 348780.NP_0370A
+(degree 1197), 348780.NP_0994A (degree 1008), 348780.NP_0012A (degree 954),
+348780.NP_0218A (degree 920) and 348780.NP_1358A (degree 879).
 
 
 References
@@ -107,14 +107,14 @@ def NatronomonasPharaonis(
 	
 	Datetime: 2021-02-02 20:32:06.175688
 	
-	The undirected graph Natronomonas pharaonis has 2643 nodes and 419918 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12027
-	and has 6 connected components, where the component with most nodes has 2632 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 338, the mean node degree is 317.76, and the node degree mode is 3. The top 5
-	most central nodes are 348780.NP_0370A (degree 1197), 348780.NP_0994A (degree 1008),
-	348780.NP_0012A (degree 954), 348780.NP_0218A (degree 920) and 348780.NP_1358A (degree
-	879).
+	The undirected graph Natronomonas pharaonis has 2643 nodes and 419918 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12027 and has 6 connected components, where the component
+	with most nodes has 2632 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 338, the mean node degree is 317.76,
+	and the node degree mode is 3. The top 5 most central nodes are 348780.NP_0370A
+	(degree 1197), 348780.NP_0994A (degree 1008), 348780.NP_0012A (degree 954),
+	348780.NP_0218A (degree 920) and 348780.NP_1358A (degree 879).
 	
 
 

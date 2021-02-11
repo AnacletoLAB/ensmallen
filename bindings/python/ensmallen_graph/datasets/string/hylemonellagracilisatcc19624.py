@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:30.404317
 
-The undirected graph Hylemonella gracilis ATCC19624 has 3319 nodes and 430551 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07819
-and has 4 connected components, where the component with most nodes has 3313 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 259.45, and the node degree mode is 2. The top 5
-most central nodes are 887062.HGR_15649 (degree 1358), 887062.HGR_03312 (degree 1186),
-887062.HGR_03307 (degree 1174), 887062.HGR_11608 (degree 1112) and 887062.HGR_06441
-(degree 1045).
+The undirected graph Hylemonella gracilis ATCC19624 has 3319 nodes and
+430551 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07819 and has 4 connected components, where the
+component with most nodes has 3313 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 230, the mean node degree
+is 259.45, and the node degree mode is 2. The top 5 most central nodes
+are 887062.HGR_15649 (degree 1358), 887062.HGR_03312 (degree 1186), 887062.HGR_03307
+(degree 1174), 887062.HGR_11608 (degree 1112) and 887062.HGR_06441 (degree
+1045).
 
 
 References
@@ -107,14 +108,15 @@ def HylemonellaGracilisAtcc19624(
 	
 	Datetime: 2021-02-02 21:52:30.404317
 	
-	The undirected graph Hylemonella gracilis ATCC19624 has 3319 nodes and 430551 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07819
-	and has 4 connected components, where the component with most nodes has 3313 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 259.45, and the node degree mode is 2. The top 5
-	most central nodes are 887062.HGR_15649 (degree 1358), 887062.HGR_03312 (degree 1186),
-	887062.HGR_03307 (degree 1174), 887062.HGR_11608 (degree 1112) and 887062.HGR_06441
-	(degree 1045).
+	The undirected graph Hylemonella gracilis ATCC19624 has 3319 nodes and
+	430551 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07819 and has 4 connected components, where the
+	component with most nodes has 3313 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 230, the mean node degree
+	is 259.45, and the node degree mode is 2. The top 5 most central nodes
+	are 887062.HGR_15649 (degree 1358), 887062.HGR_03312 (degree 1186), 887062.HGR_03307
+	(degree 1174), 887062.HGR_11608 (degree 1112) and 887062.HGR_06441 (degree
+	1045).
 	
 
 

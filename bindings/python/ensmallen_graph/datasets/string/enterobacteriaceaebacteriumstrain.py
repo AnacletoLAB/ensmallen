@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:59.500325
 
-The undirected graph Enterobacteriaceae bacterium strain has 4308 nodes and 489669
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05278 and has 3 connected components, where the component with most nodes has
-4304 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 201, the mean node degree is 227.33, and the node degree mode is 2. The
-top 5 most central nodes are 693444.D782_2359 (degree 1532), 693444.D782_4492 (degree
-1428), 693444.D782_0484 (degree 1329), 693444.D782_1435 (degree 1273) and 693444.D782_0482
-(degree 1253).
+The undirected graph Enterobacteriaceae bacterium strain has 4308 nodes
+and 489669 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05278 and has 3 connected components, where the
+component with most nodes has 4304 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 201, the mean node degree
+is 227.33, and the node degree mode is 2. The top 5 most central nodes
+are 693444.D782_2359 (degree 1532), 693444.D782_4492 (degree 1428), 693444.D782_0484
+(degree 1329), 693444.D782_1435 (degree 1273) and 693444.D782_0482 (degree
+1253).
 
 
 References
@@ -107,14 +108,15 @@ def EnterobacteriaceaeBacteriumStrain(
 	
 	Datetime: 2021-02-02 21:31:59.500325
 	
-	The undirected graph Enterobacteriaceae bacterium strain has 4308 nodes and 489669
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05278 and has 3 connected components, where the component with most nodes has
-	4304 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 201, the mean node degree is 227.33, and the node degree mode is 2. The
-	top 5 most central nodes are 693444.D782_2359 (degree 1532), 693444.D782_4492 (degree
-	1428), 693444.D782_0484 (degree 1329), 693444.D782_1435 (degree 1273) and 693444.D782_0482
-	(degree 1253).
+	The undirected graph Enterobacteriaceae bacterium strain has 4308 nodes
+	and 489669 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05278 and has 3 connected components, where the
+	component with most nodes has 4304 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 201, the mean node degree
+	is 227.33, and the node degree mode is 2. The top 5 most central nodes
+	are 693444.D782_2359 (degree 1532), 693444.D782_4492 (degree 1428), 693444.D782_0484
+	(degree 1329), 693444.D782_1435 (degree 1273) and 693444.D782_0482 (degree
+	1253).
 	
 
 

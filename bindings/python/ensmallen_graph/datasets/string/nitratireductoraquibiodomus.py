@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:54.347183
 
-The undirected graph Nitratireductor aquibiodomus has 4865 nodes and 644132 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05444
-and has 18 connected components, where the component with most nodes has 4828 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 264.80, and the node degree mode is 2. The top 5
-most central nodes are 1231185.BAMP01000004_gene3852 (degree 1888), 1231185.BAMP01000131_gene1009
-(degree 1645), 1231185.BAMP01000042_gene1161 (degree 1565), 1231185.BAMP01000007_gene4121
-(degree 1545) and 1231185.BAMP01000042_gene1170 (degree 1469).
+The undirected graph Nitratireductor aquibiodomus has 4865 nodes and 644132
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05444 and has 18 connected components, where the component
+with most nodes has 4828 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 264.80,
+and the node degree mode is 2. The top 5 most central nodes are 1231185.BAMP01000004_gene3852
+(degree 1888), 1231185.BAMP01000131_gene1009 (degree 1645), 1231185.BAMP01000042_gene1161
+(degree 1565), 1231185.BAMP01000007_gene4121 (degree 1545) and 1231185.BAMP01000042_gene1170
+(degree 1469).
 
 
 References
@@ -107,14 +108,15 @@ def NitratireductorAquibiodomus(
 	
 	Datetime: 2021-02-02 23:27:54.347183
 	
-	The undirected graph Nitratireductor aquibiodomus has 4865 nodes and 644132 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05444
-	and has 18 connected components, where the component with most nodes has 4828 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 264.80, and the node degree mode is 2. The top 5
-	most central nodes are 1231185.BAMP01000004_gene3852 (degree 1888), 1231185.BAMP01000131_gene1009
-	(degree 1645), 1231185.BAMP01000042_gene1161 (degree 1565), 1231185.BAMP01000007_gene4121
-	(degree 1545) and 1231185.BAMP01000042_gene1170 (degree 1469).
+	The undirected graph Nitratireductor aquibiodomus has 4865 nodes and 644132
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05444 and has 18 connected components, where the component
+	with most nodes has 4828 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 264.80,
+	and the node degree mode is 2. The top 5 most central nodes are 1231185.BAMP01000004_gene3852
+	(degree 1888), 1231185.BAMP01000131_gene1009 (degree 1645), 1231185.BAMP01000042_gene1161
+	(degree 1565), 1231185.BAMP01000007_gene4121 (degree 1545) and 1231185.BAMP01000042_gene1170
+	(degree 1469).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:08.137413
 
-The undirected graph Gordonia shandongensis has 3027 nodes and 311948 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06811 and
-has 3 connected components, where the component with most nodes has 3020 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 206.11, and the node degree mode is 2. The top 5 most central
-nodes are 1121928.AUHE01000010_gene2652 (degree 1313), 1121928.AUHE01000002_gene900
-(degree 1180), 1121928.AUHE01000011_gene1301 (degree 1073), 1121928.AUHE01000007_gene1104
-(degree 1007) and 1121928.AUHE01000002_gene845 (degree 991).
+The undirected graph Gordonia shandongensis has 3027 nodes and 311948 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06811 and has 3 connected components, where the component with most
+nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 206.11, and
+the node degree mode is 2. The top 5 most central nodes are 1121928.AUHE01000010_gene2652
+(degree 1313), 1121928.AUHE01000002_gene900 (degree 1180), 1121928.AUHE01000011_gene1301
+(degree 1073), 1121928.AUHE01000007_gene1104 (degree 1007) and 1121928.AUHE01000002_gene845
+(degree 991).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaShandongensis(
 	
 	Datetime: 2021-02-02 22:39:08.137413
 	
-	The undirected graph Gordonia shandongensis has 3027 nodes and 311948 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06811 and
-	has 3 connected components, where the component with most nodes has 3020 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 206.11, and the node degree mode is 2. The top 5 most central
-	nodes are 1121928.AUHE01000010_gene2652 (degree 1313), 1121928.AUHE01000002_gene900
-	(degree 1180), 1121928.AUHE01000011_gene1301 (degree 1073), 1121928.AUHE01000007_gene1104
-	(degree 1007) and 1121928.AUHE01000002_gene845 (degree 991).
+	The undirected graph Gordonia shandongensis has 3027 nodes and 311948 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06811 and has 3 connected components, where the component with most
+	nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 206.11, and
+	the node degree mode is 2. The top 5 most central nodes are 1121928.AUHE01000010_gene2652
+	(degree 1313), 1121928.AUHE01000002_gene900 (degree 1180), 1121928.AUHE01000011_gene1301
+	(degree 1073), 1121928.AUHE01000007_gene1104 (degree 1007) and 1121928.AUHE01000002_gene845
+	(degree 991).
 	
 
 

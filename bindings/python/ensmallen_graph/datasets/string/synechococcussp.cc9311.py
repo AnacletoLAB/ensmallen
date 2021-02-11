@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:29.653830
 
-The undirected graph Synechococcus sp. CC9311 has 2823 nodes and 148638 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03732
-and has 60 connected components, where the component with most nodes has 2659 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 105.30, and the node degree mode is 2. The top 5 most
-central nodes are 64471.sync_0928 (degree 917), 64471.sync_0047 (degree 694), 64471.sync_0387
-(degree 638), 64471.sync_1887 (degree 601) and 64471.sync_0694 (degree 597).
+The undirected graph Synechococcus sp. CC9311 has 2823 nodes and 148638
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03732 and has 60 connected components, where the component
+with most nodes has 2659 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 105.30,
+and the node degree mode is 2. The top 5 most central nodes are 64471.sync_0928
+(degree 917), 64471.sync_0047 (degree 694), 64471.sync_0387 (degree 638),
+64471.sync_1887 (degree 601) and 64471.sync_0694 (degree 597).
 
 
 References
@@ -106,13 +107,14 @@ def SynechococcusSp.Cc9311(
 	
 	Datetime: 2021-02-02 18:24:29.653830
 	
-	The undirected graph Synechococcus sp. CC9311 has 2823 nodes and 148638 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03732
-	and has 60 connected components, where the component with most nodes has 2659 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 105.30, and the node degree mode is 2. The top 5 most
-	central nodes are 64471.sync_0928 (degree 917), 64471.sync_0047 (degree 694), 64471.sync_0387
-	(degree 638), 64471.sync_1887 (degree 601) and 64471.sync_0694 (degree 597).
+	The undirected graph Synechococcus sp. CC9311 has 2823 nodes and 148638
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03732 and has 60 connected components, where the component
+	with most nodes has 2659 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 105.30,
+	and the node degree mode is 2. The top 5 most central nodes are 64471.sync_0928
+	(degree 917), 64471.sync_0047 (degree 694), 64471.sync_0387 (degree 638),
+	64471.sync_1887 (degree 601) and 64471.sync_0694 (degree 597).
 	
 
 

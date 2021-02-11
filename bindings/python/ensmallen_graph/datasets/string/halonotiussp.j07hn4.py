@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:03.206135
 
-The undirected graph Halonotius sp. J07HN4 has 3188 nodes and 251833 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04957 and
-has 13 connected components, where the component with most nodes has 3158 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 157.99, and the node degree mode is 3. The top 5 most central
-nodes are 1070774.J07HN4v3_02618 (degree 833), 1070774.J07HN4v3_02146 (degree 815),
-1070774.J07HN4v3_02609 (degree 808), 1070774.J07HN4v3_02880 (degree 797) and 1070774.J07HN4v3_03140
+The undirected graph Halonotius sp. J07HN4 has 3188 nodes and 251833 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04957 and has 13 connected components, where the component with most
+nodes has 3158 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 157.99, and
+the node degree mode is 3. The top 5 most central nodes are 1070774.J07HN4v3_02618
+(degree 833), 1070774.J07HN4v3_02146 (degree 815), 1070774.J07HN4v3_02609
+(degree 808), 1070774.J07HN4v3_02880 (degree 797) and 1070774.J07HN4v3_03140
 (degree 782).
 
 
@@ -107,13 +108,14 @@ def HalonotiusSp.J07hn4(
 	
 	Datetime: 2021-02-02 22:19:03.206135
 	
-	The undirected graph Halonotius sp. J07HN4 has 3188 nodes and 251833 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04957 and
-	has 13 connected components, where the component with most nodes has 3158 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 157.99, and the node degree mode is 3. The top 5 most central
-	nodes are 1070774.J07HN4v3_02618 (degree 833), 1070774.J07HN4v3_02146 (degree 815),
-	1070774.J07HN4v3_02609 (degree 808), 1070774.J07HN4v3_02880 (degree 797) and 1070774.J07HN4v3_03140
+	The undirected graph Halonotius sp. J07HN4 has 3188 nodes and 251833 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04957 and has 13 connected components, where the component with most
+	nodes has 3158 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 157.99, and
+	the node degree mode is 3. The top 5 most central nodes are 1070774.J07HN4v3_02618
+	(degree 833), 1070774.J07HN4v3_02146 (degree 815), 1070774.J07HN4v3_02609
+	(degree 808), 1070774.J07HN4v3_02880 (degree 797) and 1070774.J07HN4v3_03140
 	(degree 782).
 	
 

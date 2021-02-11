@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:58.984657
 
-The undirected graph Desulfotomaculum acetoxidans has 3988 nodes and 231445 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02911
-and has 35 connected components, where the component with most nodes has 3900 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 116.07, and the node degree mode is 2. The top 5 most
-central nodes are 485916.Dtox_2087 (degree 1059), 485916.Dtox_3758 (degree 893),
-485916.Dtox_2304 (degree 893), 485916.Dtox_0088 (degree 810) and 485916.Dtox_2102
-(degree 798).
+The undirected graph Desulfotomaculum acetoxidans has 3988 nodes and 231445
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02911 and has 35 connected components, where the component
+with most nodes has 3900 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 116.07,
+and the node degree mode is 2. The top 5 most central nodes are 485916.Dtox_2087
+(degree 1059), 485916.Dtox_3758 (degree 893), 485916.Dtox_2304 (degree
+893), 485916.Dtox_0088 (degree 810) and 485916.Dtox_2102 (degree 798).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotomaculumAcetoxidans(
 	
 	Datetime: 2021-02-02 20:58:58.984657
 	
-	The undirected graph Desulfotomaculum acetoxidans has 3988 nodes and 231445 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02911
-	and has 35 connected components, where the component with most nodes has 3900 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 116.07, and the node degree mode is 2. The top 5 most
-	central nodes are 485916.Dtox_2087 (degree 1059), 485916.Dtox_3758 (degree 893),
-	485916.Dtox_2304 (degree 893), 485916.Dtox_0088 (degree 810) and 485916.Dtox_2102
-	(degree 798).
+	The undirected graph Desulfotomaculum acetoxidans has 3988 nodes and 231445
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02911 and has 35 connected components, where the component
+	with most nodes has 3900 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 116.07,
+	and the node degree mode is 2. The top 5 most central nodes are 485916.Dtox_2087
+	(degree 1059), 485916.Dtox_3758 (degree 893), 485916.Dtox_2304 (degree
+	893), 485916.Dtox_0088 (degree 810) and 485916.Dtox_2102 (degree 798).
 	
 
 

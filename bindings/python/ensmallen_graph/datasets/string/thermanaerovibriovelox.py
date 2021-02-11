@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:45.903870
 
-The undirected graph Thermanaerovibrio velox has 1733 nodes and 134142 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08938 and
-has 2 connected components, where the component with most nodes has 1731 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 154.81, and the node degree mode is 137. The top 5 most central
-nodes are 926567.TheveDRAFT_1043 (degree 917), 926567.TheveDRAFT_0968 (degree 816),
-926567.TheveDRAFT_0800 (degree 756), 926567.TheveDRAFT_1707 (degree 733) and 926567.TheveDRAFT_1385
+The undirected graph Thermanaerovibrio velox has 1733 nodes and 134142
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08938 and has 2 connected components, where the component
+with most nodes has 1731 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 154.81,
+and the node degree mode is 137. The top 5 most central nodes are 926567.TheveDRAFT_1043
+(degree 917), 926567.TheveDRAFT_0968 (degree 816), 926567.TheveDRAFT_0800
+(degree 756), 926567.TheveDRAFT_1707 (degree 733) and 926567.TheveDRAFT_1385
 (degree 709).
 
 
@@ -107,13 +108,14 @@ def ThermanaerovibrioVelox(
 	
 	Datetime: 2021-02-02 21:56:45.903870
 	
-	The undirected graph Thermanaerovibrio velox has 1733 nodes and 134142 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08938 and
-	has 2 connected components, where the component with most nodes has 1731 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 154.81, and the node degree mode is 137. The top 5 most central
-	nodes are 926567.TheveDRAFT_1043 (degree 917), 926567.TheveDRAFT_0968 (degree 816),
-	926567.TheveDRAFT_0800 (degree 756), 926567.TheveDRAFT_1707 (degree 733) and 926567.TheveDRAFT_1385
+	The undirected graph Thermanaerovibrio velox has 1733 nodes and 134142
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08938 and has 2 connected components, where the component
+	with most nodes has 1731 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 154.81,
+	and the node degree mode is 137. The top 5 most central nodes are 926567.TheveDRAFT_1043
+	(degree 917), 926567.TheveDRAFT_0968 (degree 816), 926567.TheveDRAFT_0800
+	(degree 756), 926567.TheveDRAFT_1707 (degree 733) and 926567.TheveDRAFT_1385
 	(degree 709).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:54:53.394145
 
-The undirected graph Sphaerulina musiva has 6665 nodes and 622538 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02803 and
-has 10 connected components, where the component with most nodes has 6647 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 186.81, and the node degree mode is 1. The top 5 most central
-nodes are 85929.M3B762 (degree 1793), 85929.N1QIP2 (degree 1651), 85929.M3AS42 (degree
-1449), 85929.M3D599 (degree 1404) and 85929.M3DB42 (degree 1340).
+The undirected graph Sphaerulina musiva has 6665 nodes and 622538 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02803 and has 10 connected components, where the component with most
+nodes has 6647 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 186.81, and
+the node degree mode is 1. The top 5 most central nodes are 85929.M3B762
+(degree 1793), 85929.N1QIP2 (degree 1651), 85929.M3AS42 (degree 1449),
+85929.M3D599 (degree 1404) and 85929.M3DB42 (degree 1340).
 
 
 References
@@ -106,13 +107,14 @@ def SphaerulinaMusiva(
 	
 	Datetime: 2021-02-02 18:54:53.394145
 	
-	The undirected graph Sphaerulina musiva has 6665 nodes and 622538 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02803 and
-	has 10 connected components, where the component with most nodes has 6647 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 186.81, and the node degree mode is 1. The top 5 most central
-	nodes are 85929.M3B762 (degree 1793), 85929.N1QIP2 (degree 1651), 85929.M3AS42 (degree
-	1449), 85929.M3D599 (degree 1404) and 85929.M3DB42 (degree 1340).
+	The undirected graph Sphaerulina musiva has 6665 nodes and 622538 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02803 and has 10 connected components, where the component with most
+	nodes has 6647 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 186.81, and
+	the node degree mode is 1. The top 5 most central nodes are 85929.M3B762
+	(degree 1793), 85929.N1QIP2 (degree 1651), 85929.M3AS42 (degree 1449),
+	85929.M3D599 (degree 1404) and 85929.M3DB42 (degree 1340).
 	
 
 

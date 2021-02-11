@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:02.015103
 
-The undirected graph Enterococcus italicus has 2364 nodes and 164799 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05900 and
-has 11 connected components, where the component with most nodes has 2341 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 139.42, and the node degree mode is 4. The top 5 most central
-nodes are 888064.HMPREF9088_1207 (degree 1041), 888064.HMPREF9088_1517 (degree 882),
-888064.HMPREF9088_2339 (degree 812), 888064.HMPREF9088_0454 (degree 769) and 888064.HMPREF9088_1533
+The undirected graph Enterococcus italicus has 2364 nodes and 164799 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05900 and has 11 connected components, where the component with most
+nodes has 2341 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 139.42, and
+the node degree mode is 4. The top 5 most central nodes are 888064.HMPREF9088_1207
+(degree 1041), 888064.HMPREF9088_1517 (degree 882), 888064.HMPREF9088_2339
+(degree 812), 888064.HMPREF9088_0454 (degree 769) and 888064.HMPREF9088_1533
 (degree 751).
 
 
@@ -107,13 +108,14 @@ def EnterococcusItalicus(
 	
 	Datetime: 2021-02-02 21:53:02.015103
 	
-	The undirected graph Enterococcus italicus has 2364 nodes and 164799 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05900 and
-	has 11 connected components, where the component with most nodes has 2341 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 139.42, and the node degree mode is 4. The top 5 most central
-	nodes are 888064.HMPREF9088_1207 (degree 1041), 888064.HMPREF9088_1517 (degree 882),
-	888064.HMPREF9088_2339 (degree 812), 888064.HMPREF9088_0454 (degree 769) and 888064.HMPREF9088_1533
+	The undirected graph Enterococcus italicus has 2364 nodes and 164799 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05900 and has 11 connected components, where the component with most
+	nodes has 2341 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 139.42, and
+	the node degree mode is 4. The top 5 most central nodes are 888064.HMPREF9088_1207
+	(degree 1041), 888064.HMPREF9088_1517 (degree 882), 888064.HMPREF9088_2339
+	(degree 812), 888064.HMPREF9088_0454 (degree 769) and 888064.HMPREF9088_1533
 	(degree 751).
 	
 

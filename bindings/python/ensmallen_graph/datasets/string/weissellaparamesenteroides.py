@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:25.030531
 
-The undirected graph Weissella paramesenteroides has 1938 nodes and 102048 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05437
-and has 8 connected components, where the component with most nodes has 1911 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 105.31, and the node degree mode is 41. The top 5
-most central nodes are 585506.HMPREF0877_1354 (degree 856), 585506.HMPREF0877_1604
-(degree 566), 585506.HMPREF0877_1952 (degree 565), 585506.HMPREF0877_1669 (degree
-559) and 585506.HMPREF0877_0370 (degree 534).
+The undirected graph Weissella paramesenteroides has 1938 nodes and 102048
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05437 and has 8 connected components, where the component
+with most nodes has 1911 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 105.31,
+and the node degree mode is 41. The top 5 most central nodes are 585506.HMPREF0877_1354
+(degree 856), 585506.HMPREF0877_1604 (degree 566), 585506.HMPREF0877_1952
+(degree 565), 585506.HMPREF0877_1669 (degree 559) and 585506.HMPREF0877_0370
+(degree 534).
 
 
 References
@@ -107,14 +108,15 @@ def WeissellaParamesenteroides(
 	
 	Datetime: 2021-02-02 21:16:25.030531
 	
-	The undirected graph Weissella paramesenteroides has 1938 nodes and 102048 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05437
-	and has 8 connected components, where the component with most nodes has 1911 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 105.31, and the node degree mode is 41. The top 5
-	most central nodes are 585506.HMPREF0877_1354 (degree 856), 585506.HMPREF0877_1604
-	(degree 566), 585506.HMPREF0877_1952 (degree 565), 585506.HMPREF0877_1669 (degree
-	559) and 585506.HMPREF0877_0370 (degree 534).
+	The undirected graph Weissella paramesenteroides has 1938 nodes and 102048
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05437 and has 8 connected components, where the component
+	with most nodes has 1911 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 105.31,
+	and the node degree mode is 41. The top 5 most central nodes are 585506.HMPREF0877_1354
+	(degree 856), 585506.HMPREF0877_1604 (degree 566), 585506.HMPREF0877_1952
+	(degree 565), 585506.HMPREF0877_1669 (degree 559) and 585506.HMPREF0877_0370
+	(degree 534).
 	
 
 

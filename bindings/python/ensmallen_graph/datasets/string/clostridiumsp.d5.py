@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:00.245130
 
-The undirected graph Clostridium sp. D5 has 4481 nodes and 459757 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04580 and
-has 12 connected components, where the component with most nodes has 4459 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 205.20, and the node degree mode is 1. The top 5 most central
-nodes are 556261.HMPREF0240_03633 (degree 1968), 556261.HMPREF0240_01835 (degree
-1731), 556261.HMPREF0240_04084 (degree 1728), 556261.HMPREF0240_02177 (degree 1424)
-and 556261.HMPREF0240_01742 (degree 1409).
+The undirected graph Clostridium sp. D5 has 4481 nodes and 459757 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04580 and has 12 connected components, where the component with most
+nodes has 4459 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 205.20, and
+the node degree mode is 1. The top 5 most central nodes are 556261.HMPREF0240_03633
+(degree 1968), 556261.HMPREF0240_01835 (degree 1731), 556261.HMPREF0240_04084
+(degree 1728), 556261.HMPREF0240_02177 (degree 1424) and 556261.HMPREF0240_01742
+(degree 1409).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.D5(
 	
 	Datetime: 2021-02-02 21:11:00.245130
 	
-	The undirected graph Clostridium sp. D5 has 4481 nodes and 459757 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04580 and
-	has 12 connected components, where the component with most nodes has 4459 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 205.20, and the node degree mode is 1. The top 5 most central
-	nodes are 556261.HMPREF0240_03633 (degree 1968), 556261.HMPREF0240_01835 (degree
-	1731), 556261.HMPREF0240_04084 (degree 1728), 556261.HMPREF0240_02177 (degree 1424)
-	and 556261.HMPREF0240_01742 (degree 1409).
+	The undirected graph Clostridium sp. D5 has 4481 nodes and 459757 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04580 and has 12 connected components, where the component with most
+	nodes has 4459 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 205.20, and
+	the node degree mode is 1. The top 5 most central nodes are 556261.HMPREF0240_03633
+	(degree 1968), 556261.HMPREF0240_01835 (degree 1731), 556261.HMPREF0240_04084
+	(degree 1728), 556261.HMPREF0240_02177 (degree 1424) and 556261.HMPREF0240_01742
+	(degree 1409).
 	
 
 

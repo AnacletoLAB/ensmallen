@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:47.722791
 
-The undirected graph Gordonia sp. KTR9 has 4891 nodes and 736217 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06156 and
-has 20 connected components, where the component with most nodes has 4829 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 301.05, and the node degree mode is 3. The top 5 most central
-nodes are 337191.KTR9_4090 (degree 2112), 337191.KTR9_1925 (degree 1988), 337191.KTR9_2706
-(degree 1953), 337191.KTR9_2472 (degree 1884) and 337191.KTR9_0212 (degree 1859).
+The undirected graph Gordonia sp. KTR9 has 4891 nodes and 736217 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06156 and has 20 connected components, where the component with most
+nodes has 4829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 301.05, and
+the node degree mode is 3. The top 5 most central nodes are 337191.KTR9_4090
+(degree 2112), 337191.KTR9_1925 (degree 1988), 337191.KTR9_2706 (degree
+1953), 337191.KTR9_2472 (degree 1884) and 337191.KTR9_0212 (degree 1859).
 
 
 References
@@ -106,13 +107,14 @@ def GordoniaSp.Ktr9(
 	
 	Datetime: 2021-02-02 20:30:47.722791
 	
-	The undirected graph Gordonia sp. KTR9 has 4891 nodes and 736217 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06156 and
-	has 20 connected components, where the component with most nodes has 4829 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 301.05, and the node degree mode is 3. The top 5 most central
-	nodes are 337191.KTR9_4090 (degree 2112), 337191.KTR9_1925 (degree 1988), 337191.KTR9_2706
-	(degree 1953), 337191.KTR9_2472 (degree 1884) and 337191.KTR9_0212 (degree 1859).
+	The undirected graph Gordonia sp. KTR9 has 4891 nodes and 736217 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06156 and has 20 connected components, where the component with most
+	nodes has 4829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 301.05, and
+	the node degree mode is 3. The top 5 most central nodes are 337191.KTR9_4090
+	(degree 2112), 337191.KTR9_1925 (degree 1988), 337191.KTR9_2706 (degree
+	1953), 337191.KTR9_2472 (degree 1884) and 337191.KTR9_0212 (degree 1859).
 	
 
 

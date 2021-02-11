@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:25.039229
 
-The undirected graph Streptococcus infantis ATCC700779 has 1919 nodes and 125890
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06841 and has 15 connected components, where the component with most nodes has
-1872 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 104, the mean node degree is 131.20, and the node degree mode is 12. The
-top 5 most central nodes are 889204.HMPREF9423_1445 (degree 809), 889204.HMPREF9423_1365
-(degree 714), 889204.HMPREF9423_1470 (degree 713), 889204.HMPREF9423_1229 (degree
+The undirected graph Streptococcus infantis ATCC700779 has 1919 nodes and
+125890 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06841 and has 15 connected components, where the
+component with most nodes has 1872 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 104, the mean node degree
+is 131.20, and the node degree mode is 12. The top 5 most central nodes
+are 889204.HMPREF9423_1445 (degree 809), 889204.HMPREF9423_1365 (degree
+714), 889204.HMPREF9423_1470 (degree 713), 889204.HMPREF9423_1229 (degree
 664) and 889204.HMPREF9423_1109 (degree 642).
 
 
@@ -107,13 +108,14 @@ def StreptococcusInfantisAtcc700779(
 	
 	Datetime: 2021-02-02 21:53:25.039229
 	
-	The undirected graph Streptococcus infantis ATCC700779 has 1919 nodes and 125890
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06841 and has 15 connected components, where the component with most nodes has
-	1872 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 104, the mean node degree is 131.20, and the node degree mode is 12. The
-	top 5 most central nodes are 889204.HMPREF9423_1445 (degree 809), 889204.HMPREF9423_1365
-	(degree 714), 889204.HMPREF9423_1470 (degree 713), 889204.HMPREF9423_1229 (degree
+	The undirected graph Streptococcus infantis ATCC700779 has 1919 nodes and
+	125890 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06841 and has 15 connected components, where the
+	component with most nodes has 1872 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 104, the mean node degree
+	is 131.20, and the node degree mode is 12. The top 5 most central nodes
+	are 889204.HMPREF9423_1445 (degree 809), 889204.HMPREF9423_1365 (degree
+	714), 889204.HMPREF9423_1470 (degree 713), 889204.HMPREF9423_1229 (degree
 	664) and 889204.HMPREF9423_1109 (degree 642).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:41.996112
 
-The undirected graph Amycolatopsis methanolica has 7022 nodes and 1091094 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04426
-and has 20 connected components, where the component with most nodes has 6979 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 249, the mean node degree is 310.76, and the node degree mode is 3. The top 5
-most central nodes are 1068978.AMETH_2180 (degree 2869), 1068978.AMETH_2687 (degree
-2598), 1068978.AMETH_5593 (degree 2585), 1068978.AMETH_2958 (degree 2215) and 1068978.AMETH_2714
-(degree 2106).
+The undirected graph Amycolatopsis methanolica has 7022 nodes and 1091094
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04426 and has 20 connected components, where the component
+with most nodes has 6979 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 249, the mean node degree is 310.76,
+and the node degree mode is 3. The top 5 most central nodes are 1068978.AMETH_2180
+(degree 2869), 1068978.AMETH_2687 (degree 2598), 1068978.AMETH_5593 (degree
+2585), 1068978.AMETH_2958 (degree 2215) and 1068978.AMETH_2714 (degree
+2106).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisMethanolica(
 	
 	Datetime: 2021-02-02 22:18:41.996112
 	
-	The undirected graph Amycolatopsis methanolica has 7022 nodes and 1091094 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04426
-	and has 20 connected components, where the component with most nodes has 6979 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 249, the mean node degree is 310.76, and the node degree mode is 3. The top 5
-	most central nodes are 1068978.AMETH_2180 (degree 2869), 1068978.AMETH_2687 (degree
-	2598), 1068978.AMETH_5593 (degree 2585), 1068978.AMETH_2958 (degree 2215) and 1068978.AMETH_2714
-	(degree 2106).
+	The undirected graph Amycolatopsis methanolica has 7022 nodes and 1091094
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04426 and has 20 connected components, where the component
+	with most nodes has 6979 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 249, the mean node degree is 310.76,
+	and the node degree mode is 3. The top 5 most central nodes are 1068978.AMETH_2180
+	(degree 2869), 1068978.AMETH_2687 (degree 2598), 1068978.AMETH_5593 (degree
+	2585), 1068978.AMETH_2958 (degree 2215) and 1068978.AMETH_2714 (degree
+	2106).
 	
 
 

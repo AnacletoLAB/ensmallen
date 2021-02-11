@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:02.502660
 
-The undirected graph Burkholderia sp. lig30 has 4934 nodes and 779065 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06402 and
-has 27 connected components, where the component with most nodes has 4869 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 264,
-the mean node degree is 315.79, and the node degree mode is 3. The top 5 most central
-nodes are 1192124.LIG30_1596 (degree 2099), 1192124.LIG30_4079 (degree 1729), 1192124.LIG30_2291
-(degree 1720), 1192124.LIG30_2360 (degree 1690) and 1192124.LIG30_4027 (degree 1666).
+The undirected graph Burkholderia sp. lig30 has 4934 nodes and 779065 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06402 and has 27 connected components, where the component with most
+nodes has 4869 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 264, the mean node degree is 315.79, and
+the node degree mode is 3. The top 5 most central nodes are 1192124.LIG30_1596
+(degree 2099), 1192124.LIG30_4079 (degree 1729), 1192124.LIG30_2291 (degree
+1720), 1192124.LIG30_2360 (degree 1690) and 1192124.LIG30_4027 (degree
+1666).
 
 
 References
@@ -106,13 +108,15 @@ def BurkholderiaSp.Lig30(
 	
 	Datetime: 2021-02-02 23:12:02.502660
 	
-	The undirected graph Burkholderia sp. lig30 has 4934 nodes and 779065 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06402 and
-	has 27 connected components, where the component with most nodes has 4869 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 264,
-	the mean node degree is 315.79, and the node degree mode is 3. The top 5 most central
-	nodes are 1192124.LIG30_1596 (degree 2099), 1192124.LIG30_4079 (degree 1729), 1192124.LIG30_2291
-	(degree 1720), 1192124.LIG30_2360 (degree 1690) and 1192124.LIG30_4027 (degree 1666).
+	The undirected graph Burkholderia sp. lig30 has 4934 nodes and 779065 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06402 and has 27 connected components, where the component with most
+	nodes has 4869 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 264, the mean node degree is 315.79, and
+	the node degree mode is 3. The top 5 most central nodes are 1192124.LIG30_1596
+	(degree 2099), 1192124.LIG30_4079 (degree 1729), 1192124.LIG30_2291 (degree
+	1720), 1192124.LIG30_2360 (degree 1690) and 1192124.LIG30_4027 (degree
+	1666).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:30.539230
 
-The undirected graph Alistipes marseilloanorexicus has 1956 nodes and 134231 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07020
-and has 15 connected components, where the component with most nodes has 1925 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 137.25, and the node degree mode is 1. The top 5
-most central nodes are 1211813.CAPH01000023_gene1932 (degree 834), 1211813.CAPH01000003_gene1252
-(degree 740), 1211813.CAPH01000013_gene542 (degree 693), 1211813.CAPH01000006_gene1426
-(degree 614) and 1211813.CAPH01000007_gene1848 (degree 572).
+The undirected graph Alistipes marseilloanorexicus has 1956 nodes and 134231
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07020 and has 15 connected components, where the component
+with most nodes has 1925 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 137.25,
+and the node degree mode is 1. The top 5 most central nodes are 1211813.CAPH01000023_gene1932
+(degree 834), 1211813.CAPH01000003_gene1252 (degree 740), 1211813.CAPH01000013_gene542
+(degree 693), 1211813.CAPH01000006_gene1426 (degree 614) and 1211813.CAPH01000007_gene1848
+(degree 572).
 
 
 References
@@ -107,14 +108,15 @@ def AlistipesMarseilloanorexicus(
 	
 	Datetime: 2021-02-02 23:19:30.539230
 	
-	The undirected graph Alistipes marseilloanorexicus has 1956 nodes and 134231 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07020
-	and has 15 connected components, where the component with most nodes has 1925 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 137.25, and the node degree mode is 1. The top 5
-	most central nodes are 1211813.CAPH01000023_gene1932 (degree 834), 1211813.CAPH01000003_gene1252
-	(degree 740), 1211813.CAPH01000013_gene542 (degree 693), 1211813.CAPH01000006_gene1426
-	(degree 614) and 1211813.CAPH01000007_gene1848 (degree 572).
+	The undirected graph Alistipes marseilloanorexicus has 1956 nodes and 134231
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07020 and has 15 connected components, where the component
+	with most nodes has 1925 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 137.25,
+	and the node degree mode is 1. The top 5 most central nodes are 1211813.CAPH01000023_gene1932
+	(degree 834), 1211813.CAPH01000003_gene1252 (degree 740), 1211813.CAPH01000013_gene542
+	(degree 693), 1211813.CAPH01000006_gene1426 (degree 614) and 1211813.CAPH01000007_gene1848
+	(degree 572).
 	
 
 

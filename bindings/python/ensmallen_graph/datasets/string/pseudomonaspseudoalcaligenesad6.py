@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:15.115727
 
-The undirected graph Pseudomonas pseudoalcaligenes AD6 has 4798 nodes and 905380
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07867 and has 16 connected components, where the component with most nodes has
-4757 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 325, the mean node degree is 377.40, and the node degree mode is 2. The
-top 5 most central nodes are 1453503.AU05_15670 (degree 2322), 1453503.AU05_20095
-(degree 2042), 1453503.AU05_14695 (degree 1904), 1453503.AU05_23270 (degree 1851)
-and 1453503.AU05_05785 (degree 1837).
+The undirected graph Pseudomonas pseudoalcaligenes AD6 has 4798 nodes and
+905380 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07867 and has 16 connected components, where the
+component with most nodes has 4757 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 325, the mean node degree
+is 377.40, and the node degree mode is 2. The top 5 most central nodes
+are 1453503.AU05_15670 (degree 2322), 1453503.AU05_20095 (degree 2042),
+1453503.AU05_14695 (degree 1904), 1453503.AU05_23270 (degree 1851) and
+1453503.AU05_05785 (degree 1837).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPseudoalcaligenesAd6(
 	
 	Datetime: 2021-02-03 23:06:15.115727
 	
-	The undirected graph Pseudomonas pseudoalcaligenes AD6 has 4798 nodes and 905380
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07867 and has 16 connected components, where the component with most nodes has
-	4757 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 325, the mean node degree is 377.40, and the node degree mode is 2. The
-	top 5 most central nodes are 1453503.AU05_15670 (degree 2322), 1453503.AU05_20095
-	(degree 2042), 1453503.AU05_14695 (degree 1904), 1453503.AU05_23270 (degree 1851)
-	and 1453503.AU05_05785 (degree 1837).
+	The undirected graph Pseudomonas pseudoalcaligenes AD6 has 4798 nodes and
+	905380 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07867 and has 16 connected components, where the
+	component with most nodes has 4757 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 325, the mean node degree
+	is 377.40, and the node degree mode is 2. The top 5 most central nodes
+	are 1453503.AU05_15670 (degree 2322), 1453503.AU05_20095 (degree 2042),
+	1453503.AU05_14695 (degree 1904), 1453503.AU05_23270 (degree 1851) and
+	1453503.AU05_05785 (degree 1837).
 	
 
 

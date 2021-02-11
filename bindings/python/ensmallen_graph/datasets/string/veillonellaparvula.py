@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:34.446455
 
-The undirected graph Veillonella parvula has 1832 nodes and 104519 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06232 and
-has 4 connected components, where the component with most nodes has 1826 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 114.10, and the node degree mode is 8. The top 5 most central
-nodes are 479436.Vpar_0778 (degree 781), 479436.Vpar_0831 (degree 636), 479436.Vpar_0181
-(degree 626), 479436.Vpar_0616 (degree 611) and 479436.Vpar_1390 (degree 590).
+The undirected graph Veillonella parvula has 1832 nodes and 104519 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06232 and has 4 connected components, where the component with most
+nodes has 1826 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 88, the mean node degree is 114.10, and
+the node degree mode is 8. The top 5 most central nodes are 479436.Vpar_0778
+(degree 781), 479436.Vpar_0831 (degree 636), 479436.Vpar_0181 (degree 626),
+479436.Vpar_0616 (degree 611) and 479436.Vpar_1390 (degree 590).
 
 
 References
@@ -106,13 +107,14 @@ def VeillonellaParvula(
 	
 	Datetime: 2021-02-02 20:57:34.446455
 	
-	The undirected graph Veillonella parvula has 1832 nodes and 104519 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06232 and
-	has 4 connected components, where the component with most nodes has 1826 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 114.10, and the node degree mode is 8. The top 5 most central
-	nodes are 479436.Vpar_0778 (degree 781), 479436.Vpar_0831 (degree 636), 479436.Vpar_0181
-	(degree 626), 479436.Vpar_0616 (degree 611) and 479436.Vpar_1390 (degree 590).
+	The undirected graph Veillonella parvula has 1832 nodes and 104519 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06232 and has 4 connected components, where the component with most
+	nodes has 1826 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 88, the mean node degree is 114.10, and
+	the node degree mode is 8. The top 5 most central nodes are 479436.Vpar_0778
+	(degree 781), 479436.Vpar_0831 (degree 636), 479436.Vpar_0181 (degree 626),
+	479436.Vpar_0616 (degree 611) and 479436.Vpar_1390 (degree 590).
 	
 
 

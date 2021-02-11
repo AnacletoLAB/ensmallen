@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:33.669019
 
-The undirected graph Kitasatospora arboriphila has 5158 nodes and 865732 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06509
-and has 15 connected components, where the component with most nodes has 5121 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 311, the mean node degree is 335.69, and the node degree mode is 2. The top 5
-most central nodes are 258052.JNYV01000002_gene912 (degree 2096), 258052.JNYV01000001_gene698
-(degree 1933), 258052.JNYV01000001_gene8 (degree 1626), 258052.JNYV01000007_gene2943
-(degree 1560) and 258052.JNYV01000001_gene81 (degree 1416).
+The undirected graph Kitasatospora arboriphila has 5158 nodes and 865732
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06509 and has 15 connected components, where the component
+with most nodes has 5121 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 311, the mean node degree is 335.69,
+and the node degree mode is 2. The top 5 most central nodes are 258052.JNYV01000002_gene912
+(degree 2096), 258052.JNYV01000001_gene698 (degree 1933), 258052.JNYV01000001_gene8
+(degree 1626), 258052.JNYV01000007_gene2943 (degree 1560) and 258052.JNYV01000001_gene81
+(degree 1416).
 
 
 References
@@ -107,14 +108,15 @@ def KitasatosporaArboriphila(
 	
 	Datetime: 2021-02-02 20:12:33.669019
 	
-	The undirected graph Kitasatospora arboriphila has 5158 nodes and 865732 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06509
-	and has 15 connected components, where the component with most nodes has 5121 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 311, the mean node degree is 335.69, and the node degree mode is 2. The top 5
-	most central nodes are 258052.JNYV01000002_gene912 (degree 2096), 258052.JNYV01000001_gene698
-	(degree 1933), 258052.JNYV01000001_gene8 (degree 1626), 258052.JNYV01000007_gene2943
-	(degree 1560) and 258052.JNYV01000001_gene81 (degree 1416).
+	The undirected graph Kitasatospora arboriphila has 5158 nodes and 865732
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06509 and has 15 connected components, where the component
+	with most nodes has 5121 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 311, the mean node degree is 335.69,
+	and the node degree mode is 2. The top 5 most central nodes are 258052.JNYV01000002_gene912
+	(degree 2096), 258052.JNYV01000001_gene698 (degree 1933), 258052.JNYV01000001_gene8
+	(degree 1626), 258052.JNYV01000007_gene2943 (degree 1560) and 258052.JNYV01000001_gene81
+	(degree 1416).
 	
 
 

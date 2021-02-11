@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:01.973698
 
-The undirected graph Capnocytophaga ochracea DSM7271 has 2160 nodes and 172018 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07377
-and has 8 connected components, where the component with most nodes has 2135 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 159.28, and the node degree mode is 4. The top 5
-most central nodes are 521097.Coch_1092 (degree 835), 521097.Coch_0220 (degree 768),
-521097.Coch_1562 (degree 683), 521097.Coch_0490 (degree 677) and 521097.Coch_1470
-(degree 650).
+The undirected graph Capnocytophaga ochracea DSM7271 has 2160 nodes and
+172018 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07377 and has 8 connected components, where the
+component with most nodes has 2135 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 149, the mean node degree
+is 159.28, and the node degree mode is 4. The top 5 most central nodes
+are 521097.Coch_1092 (degree 835), 521097.Coch_0220 (degree 768), 521097.Coch_1562
+(degree 683), 521097.Coch_0490 (degree 677) and 521097.Coch_1470 (degree
+650).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaOchraceaDsm7271(
 	
 	Datetime: 2021-02-02 21:04:01.973698
 	
-	The undirected graph Capnocytophaga ochracea DSM7271 has 2160 nodes and 172018 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07377
-	and has 8 connected components, where the component with most nodes has 2135 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 159.28, and the node degree mode is 4. The top 5
-	most central nodes are 521097.Coch_1092 (degree 835), 521097.Coch_0220 (degree 768),
-	521097.Coch_1562 (degree 683), 521097.Coch_0490 (degree 677) and 521097.Coch_1470
-	(degree 650).
+	The undirected graph Capnocytophaga ochracea DSM7271 has 2160 nodes and
+	172018 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07377 and has 8 connected components, where the
+	component with most nodes has 2135 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 149, the mean node degree
+	is 159.28, and the node degree mode is 4. The top 5 most central nodes
+	are 521097.Coch_1092 (degree 835), 521097.Coch_0220 (degree 768), 521097.Coch_1562
+	(degree 683), 521097.Coch_0490 (degree 677) and 521097.Coch_1470 (degree
+	650).
 	
 
 

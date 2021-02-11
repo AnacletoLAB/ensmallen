@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:54.683289
 
-The undirected graph Chelativorans sp. BNC1 has 4148 nodes and 426783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04962 and
-has 7 connected components, where the component with most nodes has 4133 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 205.78, and the node degree mode is 2. The top 5 most central
-nodes are 266779.Meso_3945 (degree 1667), 266779.Meso_2580 (degree 1187), 266779.Meso_2744
-(degree 1164), 266779.Meso_0495 (degree 1156) and 266779.Meso_0772 (degree 1108).
+The undirected graph Chelativorans sp. BNC1 has 4148 nodes and 426783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04962 and has 7 connected components, where the component with most
+nodes has 4133 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 205.78, and
+the node degree mode is 2. The top 5 most central nodes are 266779.Meso_3945
+(degree 1667), 266779.Meso_2580 (degree 1187), 266779.Meso_2744 (degree
+1164), 266779.Meso_0495 (degree 1156) and 266779.Meso_0772 (degree 1108).
 
 
 References
@@ -106,13 +107,14 @@ def ChelativoransSp.Bnc1(
 	
 	Datetime: 2021-02-02 20:14:54.683289
 	
-	The undirected graph Chelativorans sp. BNC1 has 4148 nodes and 426783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04962 and
-	has 7 connected components, where the component with most nodes has 4133 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 205.78, and the node degree mode is 2. The top 5 most central
-	nodes are 266779.Meso_3945 (degree 1667), 266779.Meso_2580 (degree 1187), 266779.Meso_2744
-	(degree 1164), 266779.Meso_0495 (degree 1156) and 266779.Meso_0772 (degree 1108).
+	The undirected graph Chelativorans sp. BNC1 has 4148 nodes and 426783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04962 and has 7 connected components, where the component with most
+	nodes has 4133 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 205.78, and
+	the node degree mode is 2. The top 5 most central nodes are 266779.Meso_3945
+	(degree 1667), 266779.Meso_2580 (degree 1187), 266779.Meso_2744 (degree
+	1164), 266779.Meso_0495 (degree 1156) and 266779.Meso_0772 (degree 1108).
 	
 
 

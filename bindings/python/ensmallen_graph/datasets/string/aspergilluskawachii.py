@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:44.789102
 
-The undirected graph Aspergillus kawachii has 8287 nodes and 812455 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02366 and
-has 28 connected components, where the component with most nodes has 8232 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 196.08, and the node degree mode is 1. The top 5 most central
-nodes are 40384.G7XNH6 (degree 2129), 40384.G7XMM9 (degree 1928), 40384.G7XKC1 (degree
-1791), 40384.G7XRL9 (degree 1716) and 40384.G7XPI1 (degree 1587).
+The undirected graph Aspergillus kawachii has 8287 nodes and 812455 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02366 and has 28 connected components, where the component with most
+nodes has 8232 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 196.08, and
+the node degree mode is 1. The top 5 most central nodes are 40384.G7XNH6
+(degree 2129), 40384.G7XMM9 (degree 1928), 40384.G7XKC1 (degree 1791),
+40384.G7XRL9 (degree 1716) and 40384.G7XPI1 (degree 1587).
 
 
 References
@@ -106,13 +107,14 @@ def AspergillusKawachii(
 	
 	Datetime: 2021-02-02 18:11:44.789102
 	
-	The undirected graph Aspergillus kawachii has 8287 nodes and 812455 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02366 and
-	has 28 connected components, where the component with most nodes has 8232 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 196.08, and the node degree mode is 1. The top 5 most central
-	nodes are 40384.G7XNH6 (degree 2129), 40384.G7XMM9 (degree 1928), 40384.G7XKC1 (degree
-	1791), 40384.G7XRL9 (degree 1716) and 40384.G7XPI1 (degree 1587).
+	The undirected graph Aspergillus kawachii has 8287 nodes and 812455 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02366 and has 28 connected components, where the component with most
+	nodes has 8232 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 196.08, and
+	the node degree mode is 1. The top 5 most central nodes are 40384.G7XNH6
+	(degree 2129), 40384.G7XMM9 (degree 1928), 40384.G7XKC1 (degree 1791),
+	40384.G7XRL9 (degree 1716) and 40384.G7XPI1 (degree 1587).
 	
 
 

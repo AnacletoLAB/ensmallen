@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:31.769398
 
-The undirected graph Streptococcus thermophilus LMG18311 has 1874 nodes and 123298
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07026 and has 4 connected components, where the component with most nodes has
-1866 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 100, the mean node degree is 131.59, and the node degree mode is 5. The
-top 5 most central nodes are 264199.stu1761 (degree 840), 264199.stu2016 (degree
-723), 264199.stu0120 (degree 658), 264199.stu0886 (degree 657) and 264199.stu0451
-(degree 645).
+The undirected graph Streptococcus thermophilus LMG18311 has 1874 nodes
+and 123298 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07026 and has 4 connected components, where the
+component with most nodes has 1866 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 131.59, and the node degree mode is 5. The top 5 most central nodes
+are 264199.stu1761 (degree 840), 264199.stu2016 (degree 723), 264199.stu0120
+(degree 658), 264199.stu0886 (degree 657) and 264199.stu0451 (degree 645).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusThermophilusLmg18311(
 	
 	Datetime: 2021-02-02 20:13:31.769398
 	
-	The undirected graph Streptococcus thermophilus LMG18311 has 1874 nodes and 123298
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07026 and has 4 connected components, where the component with most nodes has
-	1866 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 100, the mean node degree is 131.59, and the node degree mode is 5. The
-	top 5 most central nodes are 264199.stu1761 (degree 840), 264199.stu2016 (degree
-	723), 264199.stu0120 (degree 658), 264199.stu0886 (degree 657) and 264199.stu0451
-	(degree 645).
+	The undirected graph Streptococcus thermophilus LMG18311 has 1874 nodes
+	and 123298 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07026 and has 4 connected components, where the
+	component with most nodes has 1866 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 131.59, and the node degree mode is 5. The top 5 most central nodes
+	are 264199.stu1761 (degree 840), 264199.stu2016 (degree 723), 264199.stu0120
+	(degree 658), 264199.stu0886 (degree 657) and 264199.stu0451 (degree 645).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:11.044768
 
-The undirected graph Bulleidia extructa has 1403 nodes and 97086 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09871 and
-has 3 connected components, where the component with most nodes has 1399 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 138.40, and the node degree mode is 13. The top 5 most central
-nodes are 679192.HMPREF9013_0407 (degree 642), 679192.HMPREF9013_0225 (degree 588),
-679192.HMPREF9013_0216 (degree 566), 679192.HMPREF9013_1054 (degree 564) and 679192.HMPREF9013_0798
+The undirected graph Bulleidia extructa has 1403 nodes and 97086 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09871 and has 3 connected components, where the component with most
+nodes has 1399 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 138.40, and
+the node degree mode is 13. The top 5 most central nodes are 679192.HMPREF9013_0407
+(degree 642), 679192.HMPREF9013_0225 (degree 588), 679192.HMPREF9013_0216
+(degree 566), 679192.HMPREF9013_1054 (degree 564) and 679192.HMPREF9013_0798
 (degree 539).
 
 
@@ -107,13 +108,14 @@ def BulleidiaExtructa(
 	
 	Datetime: 2021-02-02 21:30:11.044768
 	
-	The undirected graph Bulleidia extructa has 1403 nodes and 97086 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09871 and
-	has 3 connected components, where the component with most nodes has 1399 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 138.40, and the node degree mode is 13. The top 5 most central
-	nodes are 679192.HMPREF9013_0407 (degree 642), 679192.HMPREF9013_0225 (degree 588),
-	679192.HMPREF9013_0216 (degree 566), 679192.HMPREF9013_1054 (degree 564) and 679192.HMPREF9013_0798
+	The undirected graph Bulleidia extructa has 1403 nodes and 97086 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09871 and has 3 connected components, where the component with most
+	nodes has 1399 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 138.40, and
+	the node degree mode is 13. The top 5 most central nodes are 679192.HMPREF9013_0407
+	(degree 642), 679192.HMPREF9013_0225 (degree 588), 679192.HMPREF9013_0216
+	(degree 566), 679192.HMPREF9013_1054 (degree 564) and 679192.HMPREF9013_0798
 	(degree 539).
 	
 

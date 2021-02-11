@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:47.866899
 
-The undirected graph Rhizobium sp. OK494 has 6540 nodes and 1047065 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04897 and
-has 15 connected components, where the component with most nodes has 6509 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 257,
-the mean node degree is 320.20, and the node degree mode is 1. The top 5 most central
-nodes are 1500306.JQLA01000040_gene2104 (degree 2611), 1500306.JQLA01000008_gene4207
-(degree 2512), 1500306.JQLA01000042_gene4977 (degree 2369), 1500306.JQLA01000004_gene5466
-(degree 2264) and 1500306.JQLA01000006_gene578 (degree 2152).
+The undirected graph Rhizobium sp. OK494 has 6540 nodes and 1047065 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04897 and has 15 connected components, where the component with most
+nodes has 6509 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 257, the mean node degree is 320.20, and
+the node degree mode is 1. The top 5 most central nodes are 1500306.JQLA01000040_gene2104
+(degree 2611), 1500306.JQLA01000008_gene4207 (degree 2512), 1500306.JQLA01000042_gene4977
+(degree 2369), 1500306.JQLA01000004_gene5466 (degree 2264) and 1500306.JQLA01000006_gene578
+(degree 2152).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.Ok494(
 	
 	Datetime: 2021-02-03 23:15:47.866899
 	
-	The undirected graph Rhizobium sp. OK494 has 6540 nodes and 1047065 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04897 and
-	has 15 connected components, where the component with most nodes has 6509 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 257,
-	the mean node degree is 320.20, and the node degree mode is 1. The top 5 most central
-	nodes are 1500306.JQLA01000040_gene2104 (degree 2611), 1500306.JQLA01000008_gene4207
-	(degree 2512), 1500306.JQLA01000042_gene4977 (degree 2369), 1500306.JQLA01000004_gene5466
-	(degree 2264) and 1500306.JQLA01000006_gene578 (degree 2152).
+	The undirected graph Rhizobium sp. OK494 has 6540 nodes and 1047065 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04897 and has 15 connected components, where the component with most
+	nodes has 6509 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 257, the mean node degree is 320.20, and
+	the node degree mode is 1. The top 5 most central nodes are 1500306.JQLA01000040_gene2104
+	(degree 2611), 1500306.JQLA01000008_gene4207 (degree 2512), 1500306.JQLA01000042_gene4977
+	(degree 2369), 1500306.JQLA01000004_gene5466 (degree 2264) and 1500306.JQLA01000006_gene578
+	(degree 2152).
 	
 
 

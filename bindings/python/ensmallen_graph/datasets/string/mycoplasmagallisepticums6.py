@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:25.043957
 
-The undirected graph Mycoplasma gallisepticum S6 has 817 nodes and 37739 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11322 and has 5 connected components, where the component with most nodes has
-800 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 54, the mean node degree is 92.38, and the node degree mode is 8. The top
-5 most central nodes are 1006581.GCW_00660 (degree 376), 1006581.GCW_03075 (degree
-360), 1006581.GCW_92037 (degree 347), 1006581.GCW_02695 (degree 316) and 1006581.GCW_03145
-(degree 309).
+The undirected graph Mycoplasma gallisepticum S6 has 817 nodes and 37739
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11322 and has 5 connected components, where the
+component with most nodes has 800 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 54, the mean node degree
+is 92.38, and the node degree mode is 8. The top 5 most central nodes are
+1006581.GCW_00660 (degree 376), 1006581.GCW_03075 (degree 360), 1006581.GCW_92037
+(degree 347), 1006581.GCW_02695 (degree 316) and 1006581.GCW_03145 (degree
+309).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaGallisepticumS6(
 	
 	Datetime: 2021-02-02 22:08:25.043957
 	
-	The undirected graph Mycoplasma gallisepticum S6 has 817 nodes and 37739 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11322 and has 5 connected components, where the component with most nodes has
-	800 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 54, the mean node degree is 92.38, and the node degree mode is 8. The top
-	5 most central nodes are 1006581.GCW_00660 (degree 376), 1006581.GCW_03075 (degree
-	360), 1006581.GCW_92037 (degree 347), 1006581.GCW_02695 (degree 316) and 1006581.GCW_03145
-	(degree 309).
+	The undirected graph Mycoplasma gallisepticum S6 has 817 nodes and 37739
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11322 and has 5 connected components, where the
+	component with most nodes has 800 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 54, the mean node degree
+	is 92.38, and the node degree mode is 8. The top 5 most central nodes are
+	1006581.GCW_00660 (degree 376), 1006581.GCW_03075 (degree 360), 1006581.GCW_92037
+	(degree 347), 1006581.GCW_02695 (degree 316) and 1006581.GCW_03145 (degree
+	309).
 	
 
 

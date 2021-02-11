@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:17.388474
 
-The undirected graph Rhodovulum sulfidophilum has 3668 nodes and 258747 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03847
-and has 9 connected components, where the component with most nodes has 3652 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 141.08, and the node degree mode is 1. The top 5
-most central nodes are 1188256.BASI01000001_gene259 (degree 1464), 1188256.BASI01000005_gene2048
-(degree 1022), 1188256.BASI01000003_gene2715 (degree 1004), 1188256.BASI01000005_gene1826
-(degree 961) and 1188256.BASI01000003_gene2572 (degree 955).
+The undirected graph Rhodovulum sulfidophilum has 3668 nodes and 258747
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03847 and has 9 connected components, where the component
+with most nodes has 3652 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 141.08,
+and the node degree mode is 1. The top 5 most central nodes are 1188256.BASI01000001_gene259
+(degree 1464), 1188256.BASI01000005_gene2048 (degree 1022), 1188256.BASI01000003_gene2715
+(degree 1004), 1188256.BASI01000005_gene1826 (degree 961) and 1188256.BASI01000003_gene2572
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def RhodovulumSulfidophilum(
 	
 	Datetime: 2021-02-02 23:11:17.388474
 	
-	The undirected graph Rhodovulum sulfidophilum has 3668 nodes and 258747 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03847
-	and has 9 connected components, where the component with most nodes has 3652 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 141.08, and the node degree mode is 1. The top 5
-	most central nodes are 1188256.BASI01000001_gene259 (degree 1464), 1188256.BASI01000005_gene2048
-	(degree 1022), 1188256.BASI01000003_gene2715 (degree 1004), 1188256.BASI01000005_gene1826
-	(degree 961) and 1188256.BASI01000003_gene2572 (degree 955).
+	The undirected graph Rhodovulum sulfidophilum has 3668 nodes and 258747
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03847 and has 9 connected components, where the component
+	with most nodes has 3652 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 141.08,
+	and the node degree mode is 1. The top 5 most central nodes are 1188256.BASI01000001_gene259
+	(degree 1464), 1188256.BASI01000005_gene2048 (degree 1022), 1188256.BASI01000003_gene2715
+	(degree 1004), 1188256.BASI01000005_gene1826 (degree 961) and 1188256.BASI01000003_gene2572
+	(degree 955).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:50.214141
 
-The undirected graph Rhodococcus triatomae has 5227 nodes and 725990 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05315 and
-has 23 connected components, where the component with most nodes has 5173 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 277.78, and the node degree mode is 1. The top 5 most central
-nodes are 1278078.G419_01135 (degree 2179), 1278078.G419_05552 (degree 1708), 1278078.G419_06062
-(degree 1628), 1278078.G419_17991 (degree 1609) and 1278078.G419_19434 (degree 1527).
+The undirected graph Rhodococcus triatomae has 5227 nodes and 725990 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05315 and has 23 connected components, where the component with most
+nodes has 5173 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 277.78, and
+the node degree mode is 1. The top 5 most central nodes are 1278078.G419_01135
+(degree 2179), 1278078.G419_05552 (degree 1708), 1278078.G419_06062 (degree
+1628), 1278078.G419_17991 (degree 1609) and 1278078.G419_19434 (degree
+1527).
 
 
 References
@@ -106,13 +108,15 @@ def RhodococcusTriatomae(
 	
 	Datetime: 2021-02-02 23:38:50.214141
 	
-	The undirected graph Rhodococcus triatomae has 5227 nodes and 725990 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05315 and
-	has 23 connected components, where the component with most nodes has 5173 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 277.78, and the node degree mode is 1. The top 5 most central
-	nodes are 1278078.G419_01135 (degree 2179), 1278078.G419_05552 (degree 1708), 1278078.G419_06062
-	(degree 1628), 1278078.G419_17991 (degree 1609) and 1278078.G419_19434 (degree 1527).
+	The undirected graph Rhodococcus triatomae has 5227 nodes and 725990 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05315 and has 23 connected components, where the component with most
+	nodes has 5173 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 277.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1278078.G419_01135
+	(degree 2179), 1278078.G419_05552 (degree 1708), 1278078.G419_06062 (degree
+	1628), 1278078.G419_17991 (degree 1609) and 1278078.G419_19434 (degree
+	1527).
 	
 
 

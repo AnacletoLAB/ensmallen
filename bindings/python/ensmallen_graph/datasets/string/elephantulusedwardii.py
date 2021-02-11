@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:57:57.197844
 
-The undirected graph Elephantulus edwardii has 20054 nodes and 7583016 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03771 and
-is connected, as it has a single component. The graph median node degree is 591,
-the mean node degree is 756.26, and the node degree mode is 87. The top 5 most central
-nodes are 28737.XP_006900882.1 (degree 5768), 28737.XP_006887844.1 (degree 5684),
-28737.XP_006898446.1 (degree 5522), 28737.XP_006886812.1 (degree 5101) and 28737.XP_006902137.1
+The undirected graph Elephantulus edwardii has 20054 nodes and 7583016
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03771 and is connected, as it has a single component.
+The graph median node degree is 591, the mean node degree is 756.26, and
+the node degree mode is 87. The top 5 most central nodes are 28737.XP_006900882.1
+(degree 5768), 28737.XP_006887844.1 (degree 5684), 28737.XP_006898446.1
+(degree 5522), 28737.XP_006886812.1 (degree 5101) and 28737.XP_006902137.1
 (degree 5049).
 
 
@@ -106,12 +107,13 @@ def ElephantulusEdwardii(
 	
 	Datetime: 2021-02-02 17:57:57.197844
 	
-	The undirected graph Elephantulus edwardii has 20054 nodes and 7583016 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03771 and
-	is connected, as it has a single component. The graph median node degree is 591,
-	the mean node degree is 756.26, and the node degree mode is 87. The top 5 most central
-	nodes are 28737.XP_006900882.1 (degree 5768), 28737.XP_006887844.1 (degree 5684),
-	28737.XP_006898446.1 (degree 5522), 28737.XP_006886812.1 (degree 5101) and 28737.XP_006902137.1
+	The undirected graph Elephantulus edwardii has 20054 nodes and 7583016
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03771 and is connected, as it has a single component.
+	The graph median node degree is 591, the mean node degree is 756.26, and
+	the node degree mode is 87. The top 5 most central nodes are 28737.XP_006900882.1
+	(degree 5768), 28737.XP_006887844.1 (degree 5684), 28737.XP_006898446.1
+	(degree 5522), 28737.XP_006886812.1 (degree 5101) and 28737.XP_006902137.1
 	(degree 5049).
 	
 

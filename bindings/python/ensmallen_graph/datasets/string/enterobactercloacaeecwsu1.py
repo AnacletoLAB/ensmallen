@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:21.412025
 
-The undirected graph Enterobacter cloacae EcWSU1 has 4534 nodes and 610189 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05938
-and has 7 connected components, where the component with most nodes has 4521 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 269.16, and the node degree mode is 3. The top 5
-most central nodes are 1045856.EcWSU1_02111 (degree 2016), 1045856.EcWSU1_02410 (degree
-1580), 1045856.EcWSU1_04495 (degree 1509), 1045856.EcWSU1_04320 (degree 1444) and
-1045856.EcWSU1_04015 (degree 1444).
+The undirected graph Enterobacter cloacae EcWSU1 has 4534 nodes and 610189
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05938 and has 7 connected components, where the component
+with most nodes has 4521 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 230, the mean node degree is 269.16,
+and the node degree mode is 3. The top 5 most central nodes are 1045856.EcWSU1_02111
+(degree 2016), 1045856.EcWSU1_02410 (degree 1580), 1045856.EcWSU1_04495
+(degree 1509), 1045856.EcWSU1_04320 (degree 1444) and 1045856.EcWSU1_04015
+(degree 1444).
 
 
 References
@@ -107,14 +108,15 @@ def EnterobacterCloacaeEcwsu1(
 	
 	Datetime: 2021-02-02 22:16:21.412025
 	
-	The undirected graph Enterobacter cloacae EcWSU1 has 4534 nodes and 610189 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05938
-	and has 7 connected components, where the component with most nodes has 4521 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 269.16, and the node degree mode is 3. The top 5
-	most central nodes are 1045856.EcWSU1_02111 (degree 2016), 1045856.EcWSU1_02410 (degree
-	1580), 1045856.EcWSU1_04495 (degree 1509), 1045856.EcWSU1_04320 (degree 1444) and
-	1045856.EcWSU1_04015 (degree 1444).
+	The undirected graph Enterobacter cloacae EcWSU1 has 4534 nodes and 610189
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05938 and has 7 connected components, where the component
+	with most nodes has 4521 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 230, the mean node degree is 269.16,
+	and the node degree mode is 3. The top 5 most central nodes are 1045856.EcWSU1_02111
+	(degree 2016), 1045856.EcWSU1_02410 (degree 1580), 1045856.EcWSU1_04495
+	(degree 1509), 1045856.EcWSU1_04320 (degree 1444) and 1045856.EcWSU1_04015
+	(degree 1444).
 	
 
 

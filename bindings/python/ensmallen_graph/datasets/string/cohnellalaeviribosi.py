@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:47.688778
 
-The undirected graph Cohnella laeviribosi has 3743 nodes and 504558 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07205 and
-has 8 connected components, where the component with most nodes has 3727 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 246,
-the mean node degree is 269.60, and the node degree mode is 1. The top 5 most central
-nodes are 1121346.KB899810_gene1478 (degree 1298), 1121346.KB899823_gene2313 (degree
-1235), 1121346.KB899847_gene61 (degree 1142), 1121346.KB899820_gene2745 (degree 1099)
-and 1121346.KB899827_gene480 (degree 1087).
+The undirected graph Cohnella laeviribosi has 3743 nodes and 504558 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07205 and has 8 connected components, where the component with most
+nodes has 3727 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 246, the mean node degree is 269.60, and
+the node degree mode is 1. The top 5 most central nodes are 1121346.KB899810_gene1478
+(degree 1298), 1121346.KB899823_gene2313 (degree 1235), 1121346.KB899847_gene61
+(degree 1142), 1121346.KB899820_gene2745 (degree 1099) and 1121346.KB899827_gene480
+(degree 1087).
 
 
 References
@@ -107,14 +108,15 @@ def CohnellaLaeviribosi(
 	
 	Datetime: 2021-02-02 22:34:47.688778
 	
-	The undirected graph Cohnella laeviribosi has 3743 nodes and 504558 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07205 and
-	has 8 connected components, where the component with most nodes has 3727 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 246,
-	the mean node degree is 269.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1121346.KB899810_gene1478 (degree 1298), 1121346.KB899823_gene2313 (degree
-	1235), 1121346.KB899847_gene61 (degree 1142), 1121346.KB899820_gene2745 (degree 1099)
-	and 1121346.KB899827_gene480 (degree 1087).
+	The undirected graph Cohnella laeviribosi has 3743 nodes and 504558 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07205 and has 8 connected components, where the component with most
+	nodes has 3727 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 246, the mean node degree is 269.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1121346.KB899810_gene1478
+	(degree 1298), 1121346.KB899823_gene2313 (degree 1235), 1121346.KB899847_gene61
+	(degree 1142), 1121346.KB899820_gene2745 (degree 1099) and 1121346.KB899827_gene480
+	(degree 1087).
 	
 
 

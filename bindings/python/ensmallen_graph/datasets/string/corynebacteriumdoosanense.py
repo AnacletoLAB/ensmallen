@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:31.189415
 
-The undirected graph Corynebacterium doosanense has 2460 nodes and 163101 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05393
-and has 11 connected components, where the component with most nodes has 2438 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 132.60, and the node degree mode is 1. The top 5
-most central nodes are 558173.CDOO_02300 (degree 987), 558173.CDOO_06735 (degree
-909), 558173.CDOO_03230 (degree 734), 558173.CDOO_07685 (degree 684) and 558173.CDOO_06865
-(degree 660).
+The undirected graph Corynebacterium doosanense has 2460 nodes and 163101
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05393 and has 11 connected components, where the component
+with most nodes has 2438 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 132.60,
+and the node degree mode is 1. The top 5 most central nodes are 558173.CDOO_02300
+(degree 987), 558173.CDOO_06735 (degree 909), 558173.CDOO_03230 (degree
+734), 558173.CDOO_07685 (degree 684) and 558173.CDOO_06865 (degree 660).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumDoosanense(
 	
 	Datetime: 2021-02-02 21:11:31.189415
 	
-	The undirected graph Corynebacterium doosanense has 2460 nodes and 163101 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05393
-	and has 11 connected components, where the component with most nodes has 2438 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 132.60, and the node degree mode is 1. The top 5
-	most central nodes are 558173.CDOO_02300 (degree 987), 558173.CDOO_06735 (degree
-	909), 558173.CDOO_03230 (degree 734), 558173.CDOO_07685 (degree 684) and 558173.CDOO_06865
-	(degree 660).
+	The undirected graph Corynebacterium doosanense has 2460 nodes and 163101
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05393 and has 11 connected components, where the component
+	with most nodes has 2438 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 132.60,
+	and the node degree mode is 1. The top 5 most central nodes are 558173.CDOO_02300
+	(degree 987), 558173.CDOO_06735 (degree 909), 558173.CDOO_03230 (degree
+	734), 558173.CDOO_07685 (degree 684) and 558173.CDOO_06865 (degree 660).
 	
 
 

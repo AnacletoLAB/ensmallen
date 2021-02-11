@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:59.797794
 
-The undirected graph Acidobacteriaceae bacterium KBS96 has 5428 nodes and 668067
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04536 and has 32 connected components, where the component with most nodes has
-5354 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 198, the mean node degree is 246.16, and the node degree mode is 2. The
-top 5 most central nodes are 1267535.KB906767_gene5340 (degree 2752), 1267535.KB906767_gene5480
+The undirected graph Acidobacteriaceae bacterium KBS96 has 5428 nodes and
+668067 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04536 and has 32 connected components, where the
+component with most nodes has 5354 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+is 246.16, and the node degree mode is 2. The top 5 most central nodes
+are 1267535.KB906767_gene5340 (degree 2752), 1267535.KB906767_gene5480
 (degree 1853), 1267535.KB906767_gene4146 (degree 1764), 1267535.KB906767_gene447
 (degree 1598) and 1267535.KB906767_gene3434 (degree 1579).
 
@@ -107,12 +108,13 @@ def AcidobacteriaceaeBacteriumKbs96(
 	
 	Datetime: 2021-02-02 23:36:59.797794
 	
-	The undirected graph Acidobacteriaceae bacterium KBS96 has 5428 nodes and 668067
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04536 and has 32 connected components, where the component with most nodes has
-	5354 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 198, the mean node degree is 246.16, and the node degree mode is 2. The
-	top 5 most central nodes are 1267535.KB906767_gene5340 (degree 2752), 1267535.KB906767_gene5480
+	The undirected graph Acidobacteriaceae bacterium KBS96 has 5428 nodes and
+	668067 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04536 and has 32 connected components, where the
+	component with most nodes has 5354 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+	is 246.16, and the node degree mode is 2. The top 5 most central nodes
+	are 1267535.KB906767_gene5340 (degree 2752), 1267535.KB906767_gene5480
 	(degree 1853), 1267535.KB906767_gene4146 (degree 1764), 1267535.KB906767_gene447
 	(degree 1598) and 1267535.KB906767_gene3434 (degree 1579).
 	

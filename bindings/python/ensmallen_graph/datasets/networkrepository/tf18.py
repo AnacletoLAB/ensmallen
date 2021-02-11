@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:57:39.652327
 
-The undirected graph TF18 has 123867 nodes and 1597296 weighted edges, of which 90
-are self-loops. The graph is quite sparse as it has a density of 0.00021 and is connected,
-as it has a single component. The graph median node degree is 25, the mean node degree
-is 25.79, and the node degree mode is 27. The top 5 most central nodes are 91641
-(degree 96), 94924 (degree 95), 94696 (degree 95), 91076 (degree 95) and 91093 (degree
-94).
+The undirected graph TF18 has 123867 nodes and 1597296 weighted edges,
+of which 90 are self-loops. The graph is quite sparse as it has a density
+of 0.00021 and is connected, as it has a single component. The graph median
+node degree is 25, the mean node degree is 25.79, and the node degree mode
+is 27. The top 5 most central nodes are 91641 (degree 96), 94924 (degree
+95), 94696 (degree 95), 91076 (degree 95) and 91093 (degree 94).
 
 
 References
@@ -102,12 +102,12 @@ def Tf18(
 	
 	Datetime: 2021-02-06 11:57:39.652327
 	
-	The undirected graph TF18 has 123867 nodes and 1597296 weighted edges, of which 90
-	are self-loops. The graph is quite sparse as it has a density of 0.00021 and is connected,
-	as it has a single component. The graph median node degree is 25, the mean node degree
-	is 25.79, and the node degree mode is 27. The top 5 most central nodes are 91641
-	(degree 96), 94924 (degree 95), 94696 (degree 95), 91076 (degree 95) and 91093 (degree
-	94).
+	The undirected graph TF18 has 123867 nodes and 1597296 weighted edges,
+	of which 90 are self-loops. The graph is quite sparse as it has a density
+	of 0.00021 and is connected, as it has a single component. The graph median
+	node degree is 25, the mean node degree is 25.79, and the node degree mode
+	is 27. The top 5 most central nodes are 91641 (degree 96), 94924 (degree
+	95), 94696 (degree 95), 91076 (degree 95) and 91093 (degree 94).
 	
 
 

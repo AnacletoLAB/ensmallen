@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:30:57.752416
 
-The undirected graph Columba livia has 14443 nodes and 2599134 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02492 and
-is connected, as it has a single component. The graph median node degree is 258,
-the mean node degree is 359.92, and the node degree mode is 126. The top 5 most central
-nodes are 8932.XP_005501162.1 (degree 3245), 8932.XP_005506330.1 (degree 3176), 8932.XP_005514944.1
-(degree 3126), 8932.XP_005510688.1 (degree 2981) and 8932.XP_005510100.1 (degree
-2946).
+The undirected graph Columba livia has 14443 nodes and 2599134 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02492 and is connected, as it has a single component. The graph median
+node degree is 258, the mean node degree is 359.92, and the node degree
+mode is 126. The top 5 most central nodes are 8932.XP_005501162.1 (degree
+3245), 8932.XP_005506330.1 (degree 3176), 8932.XP_005514944.1 (degree 3126),
+8932.XP_005510688.1 (degree 2981) and 8932.XP_005510100.1 (degree 2946).
 
 
 References
@@ -106,13 +106,13 @@ def ColumbaLivia(
 	
 	Datetime: 2021-02-02 17:30:57.752416
 	
-	The undirected graph Columba livia has 14443 nodes and 2599134 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02492 and
-	is connected, as it has a single component. The graph median node degree is 258,
-	the mean node degree is 359.92, and the node degree mode is 126. The top 5 most central
-	nodes are 8932.XP_005501162.1 (degree 3245), 8932.XP_005506330.1 (degree 3176), 8932.XP_005514944.1
-	(degree 3126), 8932.XP_005510688.1 (degree 2981) and 8932.XP_005510100.1 (degree
-	2946).
+	The undirected graph Columba livia has 14443 nodes and 2599134 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02492 and is connected, as it has a single component. The graph median
+	node degree is 258, the mean node degree is 359.92, and the node degree
+	mode is 126. The top 5 most central nodes are 8932.XP_005501162.1 (degree
+	3245), 8932.XP_005506330.1 (degree 3176), 8932.XP_005514944.1 (degree 3126),
+	8932.XP_005510688.1 (degree 2981) and 8932.XP_005510100.1 (degree 2946).
 	
 
 

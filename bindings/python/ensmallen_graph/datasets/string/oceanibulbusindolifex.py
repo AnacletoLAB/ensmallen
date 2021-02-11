@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:16.814033
 
-The undirected graph Oceanibulbus indolifex has 4096 nodes and 541395 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06456 and
-has 25 connected components, where the component with most nodes has 4042 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 264.35, and the node degree mode is 2. The top 5 most central
-nodes are 391624.OIHEL45_05035 (degree 1621), 391624.OIHEL45_10703 (degree 1497),
-391624.OIHEL45_17056 (degree 1428), 391624.OIHEL45_15394 (degree 1336) and 391624.OIHEL45_12760
+The undirected graph Oceanibulbus indolifex has 4096 nodes and 541395 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06456 and has 25 connected components, where the component with most
+nodes has 4042 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 264.35, and
+the node degree mode is 2. The top 5 most central nodes are 391624.OIHEL45_05035
+(degree 1621), 391624.OIHEL45_10703 (degree 1497), 391624.OIHEL45_17056
+(degree 1428), 391624.OIHEL45_15394 (degree 1336) and 391624.OIHEL45_12760
 (degree 1217).
 
 
@@ -107,13 +108,14 @@ def OceanibulbusIndolifex(
 	
 	Datetime: 2021-02-02 20:40:16.814033
 	
-	The undirected graph Oceanibulbus indolifex has 4096 nodes and 541395 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06456 and
-	has 25 connected components, where the component with most nodes has 4042 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 264.35, and the node degree mode is 2. The top 5 most central
-	nodes are 391624.OIHEL45_05035 (degree 1621), 391624.OIHEL45_10703 (degree 1497),
-	391624.OIHEL45_17056 (degree 1428), 391624.OIHEL45_15394 (degree 1336) and 391624.OIHEL45_12760
+	The undirected graph Oceanibulbus indolifex has 4096 nodes and 541395 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06456 and has 25 connected components, where the component with most
+	nodes has 4042 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 264.35, and
+	the node degree mode is 2. The top 5 most central nodes are 391624.OIHEL45_05035
+	(degree 1621), 391624.OIHEL45_10703 (degree 1497), 391624.OIHEL45_17056
+	(degree 1428), 391624.OIHEL45_15394 (degree 1336) and 391624.OIHEL45_12760
 	(degree 1217).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:29.620056
 
-The undirected graph Thalassospira profundimaris has 4023 nodes and 528029 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06527
-and has 7 connected components, where the component with most nodes has 4010 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 262.51, and the node degree mode is 3. The top 5
-most central nodes are 1177928.TH2_01770 (degree 1800), 1177928.TH2_19368 (degree
-1517), 1177928.TH2_20116 (degree 1471), 1177928.TH2_10394 (degree 1306) and 1177928.TH2_16456
-(degree 1287).
+The undirected graph Thalassospira profundimaris has 4023 nodes and 528029
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06527 and has 7 connected components, where the component
+with most nodes has 4010 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 262.51,
+and the node degree mode is 3. The top 5 most central nodes are 1177928.TH2_01770
+(degree 1800), 1177928.TH2_19368 (degree 1517), 1177928.TH2_20116 (degree
+1471), 1177928.TH2_10394 (degree 1306) and 1177928.TH2_16456 (degree 1287).
 
 
 References
@@ -107,14 +107,14 @@ def ThalassospiraProfundimaris(
 	
 	Datetime: 2021-02-02 23:09:29.620056
 	
-	The undirected graph Thalassospira profundimaris has 4023 nodes and 528029 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06527
-	and has 7 connected components, where the component with most nodes has 4010 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 262.51, and the node degree mode is 3. The top 5
-	most central nodes are 1177928.TH2_01770 (degree 1800), 1177928.TH2_19368 (degree
-	1517), 1177928.TH2_20116 (degree 1471), 1177928.TH2_10394 (degree 1306) and 1177928.TH2_16456
-	(degree 1287).
+	The undirected graph Thalassospira profundimaris has 4023 nodes and 528029
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06527 and has 7 connected components, where the component
+	with most nodes has 4010 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 262.51,
+	and the node degree mode is 3. The top 5 most central nodes are 1177928.TH2_01770
+	(degree 1800), 1177928.TH2_19368 (degree 1517), 1177928.TH2_20116 (degree
+	1471), 1177928.TH2_10394 (degree 1306) and 1177928.TH2_16456 (degree 1287).
 	
 
 

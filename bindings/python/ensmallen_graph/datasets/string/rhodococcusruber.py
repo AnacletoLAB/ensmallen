@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:39.397921
 
-The undirected graph Rhodococcus ruber has 4911 nodes and 892827 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07405 and
-has 20 connected components, where the component with most nodes has 4866 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 291,
-the mean node degree is 363.60, and the node degree mode is 3. The top 5 most central
-nodes are 1240349.ANGC01000020_gene4233 (degree 2424), 1240349.ANGC01000011_gene325
-(degree 2043), 1240349.ANGC01000034_gene3051 (degree 1966), 1240349.ANGC01000026_gene3738
-(degree 1953) and 1240349.ANGC01000003_gene1943 (degree 1803).
+The undirected graph Rhodococcus ruber has 4911 nodes and 892827 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07405 and has 20 connected components, where the component with most
+nodes has 4866 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 291, the mean node degree is 363.60, and
+the node degree mode is 3. The top 5 most central nodes are 1240349.ANGC01000020_gene4233
+(degree 2424), 1240349.ANGC01000011_gene325 (degree 2043), 1240349.ANGC01000034_gene3051
+(degree 1966), 1240349.ANGC01000026_gene3738 (degree 1953) and 1240349.ANGC01000003_gene1943
+(degree 1803).
 
 
 References
@@ -107,14 +108,15 @@ def RhodococcusRuber(
 	
 	Datetime: 2021-02-02 23:32:39.397921
 	
-	The undirected graph Rhodococcus ruber has 4911 nodes and 892827 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07405 and
-	has 20 connected components, where the component with most nodes has 4866 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 291,
-	the mean node degree is 363.60, and the node degree mode is 3. The top 5 most central
-	nodes are 1240349.ANGC01000020_gene4233 (degree 2424), 1240349.ANGC01000011_gene325
-	(degree 2043), 1240349.ANGC01000034_gene3051 (degree 1966), 1240349.ANGC01000026_gene3738
-	(degree 1953) and 1240349.ANGC01000003_gene1943 (degree 1803).
+	The undirected graph Rhodococcus ruber has 4911 nodes and 892827 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07405 and has 20 connected components, where the component with most
+	nodes has 4866 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 291, the mean node degree is 363.60, and
+	the node degree mode is 3. The top 5 most central nodes are 1240349.ANGC01000020_gene4233
+	(degree 2424), 1240349.ANGC01000011_gene325 (degree 2043), 1240349.ANGC01000034_gene3051
+	(degree 1966), 1240349.ANGC01000026_gene3738 (degree 1953) and 1240349.ANGC01000003_gene1943
+	(degree 1803).
 	
 
 

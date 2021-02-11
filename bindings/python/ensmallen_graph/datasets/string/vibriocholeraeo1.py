@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:38.391458
 
-The undirected graph Vibrio cholerae O1 has 3762 nodes and 435480 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06156 and
-has 11 connected components, where the component with most nodes has 3737 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 231.52, and the node degree mode is 4. The top 5 most central
-nodes are 243277.VC_0108 (degree 1304), 243277.VC_0622 (degree 1268), 243277.VC_A0530
-(degree 1176), 243277.VC_0768 (degree 1148) and 243277.VC_A0985 (degree 1029).
+The undirected graph Vibrio cholerae O1 has 3762 nodes and 435480 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06156 and has 11 connected components, where the component with most
+nodes has 3737 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 231.52, and
+the node degree mode is 4. The top 5 most central nodes are 243277.VC_0108
+(degree 1304), 243277.VC_0622 (degree 1268), 243277.VC_A0530 (degree 1176),
+243277.VC_0768 (degree 1148) and 243277.VC_A0985 (degree 1029).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioCholeraeO1(
 	
 	Datetime: 2021-02-02 20:09:38.391458
 	
-	The undirected graph Vibrio cholerae O1 has 3762 nodes and 435480 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06156 and
-	has 11 connected components, where the component with most nodes has 3737 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 231.52, and the node degree mode is 4. The top 5 most central
-	nodes are 243277.VC_0108 (degree 1304), 243277.VC_0622 (degree 1268), 243277.VC_A0530
-	(degree 1176), 243277.VC_0768 (degree 1148) and 243277.VC_A0985 (degree 1029).
+	The undirected graph Vibrio cholerae O1 has 3762 nodes and 435480 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06156 and has 11 connected components, where the component with most
+	nodes has 3737 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 231.52, and
+	the node degree mode is 4. The top 5 most central nodes are 243277.VC_0108
+	(degree 1304), 243277.VC_0622 (degree 1268), 243277.VC_A0530 (degree 1176),
+	243277.VC_0768 (degree 1148) and 243277.VC_A0985 (degree 1029).
 	
 
 

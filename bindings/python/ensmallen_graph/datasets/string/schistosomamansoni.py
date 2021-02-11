@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:18:05.023996
 
-The undirected graph Schistosoma mansoni has 8647 nodes and 1131168 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03026 and
-has 25 connected components, where the component with most nodes has 8584 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 261.63, and the node degree mode is 1. The top 5 most central
-nodes are 6183.Smp_173990.1 (degree 2120), 6183.Smp_142710.1 (degree 2054), 6183.Smp_047190.1
-(degree 1933), 6183.Smp_034000.1 (degree 1923) and 6183.Smp_160500.1 (degree 1893).
+The undirected graph Schistosoma mansoni has 8647 nodes and 1131168 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03026 and has 25 connected components, where the component with most
+nodes has 8584 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 189, the mean node degree is 261.63, and
+the node degree mode is 1. The top 5 most central nodes are 6183.Smp_173990.1
+(degree 2120), 6183.Smp_142710.1 (degree 2054), 6183.Smp_047190.1 (degree
+1933), 6183.Smp_034000.1 (degree 1923) and 6183.Smp_160500.1 (degree 1893).
 
 
 References
@@ -106,13 +107,14 @@ def SchistosomaMansoni(
 	
 	Datetime: 2021-02-02 17:18:05.023996
 	
-	The undirected graph Schistosoma mansoni has 8647 nodes and 1131168 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03026 and
-	has 25 connected components, where the component with most nodes has 8584 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 261.63, and the node degree mode is 1. The top 5 most central
-	nodes are 6183.Smp_173990.1 (degree 2120), 6183.Smp_142710.1 (degree 2054), 6183.Smp_047190.1
-	(degree 1933), 6183.Smp_034000.1 (degree 1923) and 6183.Smp_160500.1 (degree 1893).
+	The undirected graph Schistosoma mansoni has 8647 nodes and 1131168 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03026 and has 25 connected components, where the component with most
+	nodes has 8584 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 189, the mean node degree is 261.63, and
+	the node degree mode is 1. The top 5 most central nodes are 6183.Smp_173990.1
+	(degree 2120), 6183.Smp_142710.1 (degree 2054), 6183.Smp_047190.1 (degree
+	1933), 6183.Smp_034000.1 (degree 1923) and 6183.Smp_160500.1 (degree 1893).
 	
 
 

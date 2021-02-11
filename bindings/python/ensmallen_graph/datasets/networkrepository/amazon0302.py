@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:02:40.075015
 
-The undirected graph amazon0302 has 262111 nodes and 899792 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 6,
-the mean node degree is 6.87, and the node degree mode is 5. The top 5 most central
-nodes are 14950 (degree 420), 4430 (degree 405), 34 (degree 363), 10520 (degree 335)
-and 12772 (degree 330).
+The undirected graph amazon0302 has 262111 nodes and 899792 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 6, the mean node degree is 6.87, and the
+node degree mode is 5. The top 5 most central nodes are 14950 (degree 420),
+4430 (degree 405), 34 (degree 363), 10520 (degree 335) and 12772 (degree
+330).
 
 
 References
@@ -102,12 +103,13 @@ def Amazon0302(
 	
 	Datetime: 2021-02-06 12:02:40.075015
 	
-	The undirected graph amazon0302 has 262111 nodes and 899792 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 6,
-	the mean node degree is 6.87, and the node degree mode is 5. The top 5 most central
-	nodes are 14950 (degree 420), 4430 (degree 405), 34 (degree 363), 10520 (degree 335)
-	and 12772 (degree 330).
+	The undirected graph amazon0302 has 262111 nodes and 899792 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 6, the mean node degree is 6.87, and the
+	node degree mode is 5. The top 5 most central nodes are 14950 (degree 420),
+	4430 (degree 405), 34 (degree 363), 10520 (degree 335) and 12772 (degree
+	330).
 	
 
 

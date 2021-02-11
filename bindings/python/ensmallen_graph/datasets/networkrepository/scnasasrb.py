@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:26:59.685840
 
-The undirected graph sc-nasasrb has 54870 nodes and 1311227 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00087
-and is connected, as it has a single component. The graph median node degree is 50,
-the mean node degree is 47.79, and the node degree mode is 53. The top 5 most central
-nodes are 612 (degree 275), 611 (degree 275), 610 (degree 275), 609 (degree 275)
-and 607 (degree 275).
+The undirected graph sc-nasasrb has 54870 nodes and 1311227 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00087 and is connected, as it has a single component. The
+graph median node degree is 50, the mean node degree is 47.79, and the
+node degree mode is 53. The top 5 most central nodes are 612 (degree 275),
+611 (degree 275), 610 (degree 275), 609 (degree 275) and 607 (degree 275).
 
 
 References
@@ -109,12 +109,12 @@ def ScNasasrb(
 	
 	Datetime: 2021-02-06 12:26:59.685840
 	
-	The undirected graph sc-nasasrb has 54870 nodes and 1311227 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00087
-	and is connected, as it has a single component. The graph median node degree is 50,
-	the mean node degree is 47.79, and the node degree mode is 53. The top 5 most central
-	nodes are 612 (degree 275), 611 (degree 275), 610 (degree 275), 609 (degree 275)
-	and 607 (degree 275).
+	The undirected graph sc-nasasrb has 54870 nodes and 1311227 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00087 and is connected, as it has a single component. The
+	graph median node degree is 50, the mean node degree is 47.79, and the
+	node degree mode is 53. The top 5 most central nodes are 612 (degree 275),
+	611 (degree 275), 610 (degree 275), 609 (degree 275) and 607 (degree 275).
 	
 
 

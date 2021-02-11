@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:03.831146
 
-The undirected graph Scardovia wiggsiae has 1235 nodes and 79310 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10408
-and has 7 connected components, where the component with most nodes has 1219 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 128.44, and the node degree mode is 6. The top 5
-most central nodes are 857290.HMPREF9156_00562 (degree 638), 857290.HMPREF9156_00384
-(degree 610), 857290.HMPREF9156_00305 (degree 603), 857290.HMPREF9156_00648 (degree
-552) and 857290.HMPREF9156_01094 (degree 512).
+The undirected graph Scardovia wiggsiae has 1235 nodes and 79310 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10408 and has 7 connected components, where the component
+with most nodes has 1219 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 128.44,
+and the node degree mode is 6. The top 5 most central nodes are 857290.HMPREF9156_00562
+(degree 638), 857290.HMPREF9156_00384 (degree 610), 857290.HMPREF9156_00305
+(degree 603), 857290.HMPREF9156_00648 (degree 552) and 857290.HMPREF9156_01094
+(degree 512).
 
 
 References
@@ -107,14 +108,15 @@ def ScardoviaWiggsiae(
 	
 	Datetime: 2021-02-02 21:46:03.831146
 	
-	The undirected graph Scardovia wiggsiae has 1235 nodes and 79310 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10408
-	and has 7 connected components, where the component with most nodes has 1219 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 128.44, and the node degree mode is 6. The top 5
-	most central nodes are 857290.HMPREF9156_00562 (degree 638), 857290.HMPREF9156_00384
-	(degree 610), 857290.HMPREF9156_00305 (degree 603), 857290.HMPREF9156_00648 (degree
-	552) and 857290.HMPREF9156_01094 (degree 512).
+	The undirected graph Scardovia wiggsiae has 1235 nodes and 79310 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10408 and has 7 connected components, where the component
+	with most nodes has 1219 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 128.44,
+	and the node degree mode is 6. The top 5 most central nodes are 857290.HMPREF9156_00562
+	(degree 638), 857290.HMPREF9156_00384 (degree 610), 857290.HMPREF9156_00305
+	(degree 603), 857290.HMPREF9156_00648 (degree 552) and 857290.HMPREF9156_01094
+	(degree 512).
 	
 
 

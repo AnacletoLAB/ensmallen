@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:22.169278
 
-The undirected graph Methylophilus sp. 5 has 2635 nodes and 200452 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05776 and
-has 8 connected components, where the component with most nodes has 2621 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 152.15, and the node degree mode is 1. The top 5 most central
-nodes are 1112274.KI911560_gene1517 (degree 1031), 1112274.KI911560_gene2625 (degree
-845), 1112274.KI911560_gene2177 (degree 833), 1112274.KI911560_gene2176 (degree 792)
-and 1112274.KI911560_gene909 (degree 779).
+The undirected graph Methylophilus sp. 5 has 2635 nodes and 200452 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05776 and has 8 connected components, where the component with most
+nodes has 2621 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 152.15, and
+the node degree mode is 1. The top 5 most central nodes are 1112274.KI911560_gene1517
+(degree 1031), 1112274.KI911560_gene2625 (degree 845), 1112274.KI911560_gene2177
+(degree 833), 1112274.KI911560_gene2176 (degree 792) and 1112274.KI911560_gene909
+(degree 779).
 
 
 References
@@ -107,14 +108,15 @@ def MethylophilusSp.5(
 	
 	Datetime: 2021-02-02 22:26:22.169278
 	
-	The undirected graph Methylophilus sp. 5 has 2635 nodes and 200452 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05776 and
-	has 8 connected components, where the component with most nodes has 2621 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 152.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1112274.KI911560_gene1517 (degree 1031), 1112274.KI911560_gene2625 (degree
-	845), 1112274.KI911560_gene2177 (degree 833), 1112274.KI911560_gene2176 (degree 792)
-	and 1112274.KI911560_gene909 (degree 779).
+	The undirected graph Methylophilus sp. 5 has 2635 nodes and 200452 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05776 and has 8 connected components, where the component with most
+	nodes has 2621 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 152.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1112274.KI911560_gene1517
+	(degree 1031), 1112274.KI911560_gene2625 (degree 845), 1112274.KI911560_gene2177
+	(degree 833), 1112274.KI911560_gene2176 (degree 792) and 1112274.KI911560_gene909
+	(degree 779).
 	
 
 

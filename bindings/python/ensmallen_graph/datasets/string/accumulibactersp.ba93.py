@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:23.415142
 
-The undirected graph Accumulibacter sp. BA93 has 3978 nodes and 458434 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05795 and
-has 23 connected components, where the component with most nodes has 3918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 230.48, and the node degree mode is 1. The top 5 most central
-nodes are 1454004.AW11_01983 (degree 1675), 1454004.AW11_02151 (degree 1507), 1454004.AW11_01182
-(degree 1321), 1454004.AW11_04061 (degree 1267) and 1454004.AW11_01561 (degree 1184).
+The undirected graph Accumulibacter sp. BA93 has 3978 nodes and 458434
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05795 and has 23 connected components, where the component
+with most nodes has 3918 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 230.48,
+and the node degree mode is 1. The top 5 most central nodes are 1454004.AW11_01983
+(degree 1675), 1454004.AW11_02151 (degree 1507), 1454004.AW11_01182 (degree
+1321), 1454004.AW11_04061 (degree 1267) and 1454004.AW11_01561 (degree
+1184).
 
 
 References
@@ -106,13 +108,15 @@ def AccumulibacterSp.Ba93(
 	
 	Datetime: 2021-02-03 23:06:23.415142
 	
-	The undirected graph Accumulibacter sp. BA93 has 3978 nodes and 458434 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05795 and
-	has 23 connected components, where the component with most nodes has 3918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 230.48, and the node degree mode is 1. The top 5 most central
-	nodes are 1454004.AW11_01983 (degree 1675), 1454004.AW11_02151 (degree 1507), 1454004.AW11_01182
-	(degree 1321), 1454004.AW11_04061 (degree 1267) and 1454004.AW11_01561 (degree 1184).
+	The undirected graph Accumulibacter sp. BA93 has 3978 nodes and 458434
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05795 and has 23 connected components, where the component
+	with most nodes has 3918 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 230.48,
+	and the node degree mode is 1. The top 5 most central nodes are 1454004.AW11_01983
+	(degree 1675), 1454004.AW11_02151 (degree 1507), 1454004.AW11_01182 (degree
+	1321), 1454004.AW11_04061 (degree 1267) and 1454004.AW11_01561 (degree
+	1184).
 	
 
 

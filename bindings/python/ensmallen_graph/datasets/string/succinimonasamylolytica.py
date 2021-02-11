@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:12.202264
 
-The undirected graph Succinimonas amylolytica has 2557 nodes and 201944 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06180
-and has 33 connected components, where the component with most nodes has 2470 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 157.95, and the node degree mode is 2. The top 5
-most central nodes are 1265507.KB899636_gene1618 (degree 923), 1265507.KB899636_gene1971
-(degree 908), 1265507.KB899636_gene2032 (degree 837), 1265507.KB899637_gene506 (degree
-836) and 1265507.KB899638_gene943 (degree 823).
+The undirected graph Succinimonas amylolytica has 2557 nodes and 201944
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06180 and has 33 connected components, where the component
+with most nodes has 2470 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 157.95,
+and the node degree mode is 2. The top 5 most central nodes are 1265507.KB899636_gene1618
+(degree 923), 1265507.KB899636_gene1971 (degree 908), 1265507.KB899636_gene2032
+(degree 837), 1265507.KB899637_gene506 (degree 836) and 1265507.KB899638_gene943
+(degree 823).
 
 
 References
@@ -107,14 +108,15 @@ def SuccinimonasAmylolytica(
 	
 	Datetime: 2021-02-02 23:36:12.202264
 	
-	The undirected graph Succinimonas amylolytica has 2557 nodes and 201944 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06180
-	and has 33 connected components, where the component with most nodes has 2470 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 157.95, and the node degree mode is 2. The top 5
-	most central nodes are 1265507.KB899636_gene1618 (degree 923), 1265507.KB899636_gene1971
-	(degree 908), 1265507.KB899636_gene2032 (degree 837), 1265507.KB899637_gene506 (degree
-	836) and 1265507.KB899638_gene943 (degree 823).
+	The undirected graph Succinimonas amylolytica has 2557 nodes and 201944
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06180 and has 33 connected components, where the component
+	with most nodes has 2470 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 157.95,
+	and the node degree mode is 2. The top 5 most central nodes are 1265507.KB899636_gene1618
+	(degree 923), 1265507.KB899636_gene1971 (degree 908), 1265507.KB899636_gene2032
+	(degree 837), 1265507.KB899637_gene506 (degree 836) and 1265507.KB899638_gene943
+	(degree 823).
 	
 
 

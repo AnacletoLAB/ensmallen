@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:27.178114
 
-The undirected graph Streptomyces albus J1074 has 5805 nodes and 691779 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-and has 14 connected components, where the component with most nodes has 5773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 202, the mean node degree is 238.34, and the node degree mode is 2. The top 5
-most central nodes are 457425.XNR_1115 (degree 2806), 457425.XNR_2901 (degree 1928),
-457425.XNR_4879 (degree 1903), 457425.XNR_3170 (degree 1650) and 457425.XNR_4853
-(degree 1601).
+The undirected graph Streptomyces albus J1074 has 5805 nodes and 691779
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04106 and has 14 connected components, where the component
+with most nodes has 5773 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 238.34,
+and the node degree mode is 2. The top 5 most central nodes are 457425.XNR_1115
+(degree 2806), 457425.XNR_2901 (degree 1928), 457425.XNR_4879 (degree 1903),
+457425.XNR_3170 (degree 1650) and 457425.XNR_4853 (degree 1601).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesAlbusJ1074(
 	
 	Datetime: 2021-02-02 20:53:27.178114
 	
-	The undirected graph Streptomyces albus J1074 has 5805 nodes and 691779 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-	and has 14 connected components, where the component with most nodes has 5773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 202, the mean node degree is 238.34, and the node degree mode is 2. The top 5
-	most central nodes are 457425.XNR_1115 (degree 2806), 457425.XNR_2901 (degree 1928),
-	457425.XNR_4879 (degree 1903), 457425.XNR_3170 (degree 1650) and 457425.XNR_4853
-	(degree 1601).
+	The undirected graph Streptomyces albus J1074 has 5805 nodes and 691779
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04106 and has 14 connected components, where the component
+	with most nodes has 5773 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 238.34,
+	and the node degree mode is 2. The top 5 most central nodes are 457425.XNR_1115
+	(degree 2806), 457425.XNR_2901 (degree 1928), 457425.XNR_4879 (degree 1903),
+	457425.XNR_3170 (degree 1650) and 457425.XNR_4853 (degree 1601).
 	
 
 

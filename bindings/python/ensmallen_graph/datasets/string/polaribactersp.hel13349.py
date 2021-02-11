@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:58:19.647820
 
-The undirected graph Polaribacter sp. Hel13349 has 2586 nodes and 242540 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07256
-and has 5 connected components, where the component with most nodes has 2577 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 187.58, and the node degree mode is 3. The top 5
-most central nodes are 1336803.PHEL49_2352 (degree 999), 1336803.PHEL49_0806 (degree
-992), 1336803.PHEL49_1197 (degree 828), 1336803.PHEL49_0723 (degree 771) and 1336803.PHEL49_0622
-(degree 751).
+The undirected graph Polaribacter sp. Hel13349 has 2586 nodes and 242540
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07256 and has 5 connected components, where the component
+with most nodes has 2577 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 187.58,
+and the node degree mode is 3. The top 5 most central nodes are 1336803.PHEL49_2352
+(degree 999), 1336803.PHEL49_0806 (degree 992), 1336803.PHEL49_1197 (degree
+828), 1336803.PHEL49_0723 (degree 771) and 1336803.PHEL49_0622 (degree
+751).
 
 
 References
@@ -107,14 +108,15 @@ def PolaribacterSp.Hel13349(
 	
 	Datetime: 2021-02-03 21:58:19.647820
 	
-	The undirected graph Polaribacter sp. Hel13349 has 2586 nodes and 242540 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07256
-	and has 5 connected components, where the component with most nodes has 2577 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 187.58, and the node degree mode is 3. The top 5
-	most central nodes are 1336803.PHEL49_2352 (degree 999), 1336803.PHEL49_0806 (degree
-	992), 1336803.PHEL49_1197 (degree 828), 1336803.PHEL49_0723 (degree 771) and 1336803.PHEL49_0622
-	(degree 751).
+	The undirected graph Polaribacter sp. Hel13349 has 2586 nodes and 242540
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07256 and has 5 connected components, where the component
+	with most nodes has 2577 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 187.58,
+	and the node degree mode is 3. The top 5 most central nodes are 1336803.PHEL49_2352
+	(degree 999), 1336803.PHEL49_0806 (degree 992), 1336803.PHEL49_1197 (degree
+	828), 1336803.PHEL49_0723 (degree 771) and 1336803.PHEL49_0622 (degree
+	751).
 	
 
 

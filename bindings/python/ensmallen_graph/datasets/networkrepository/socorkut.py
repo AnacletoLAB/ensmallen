@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 10:42:53.409172
 
-The undirected graph soc-orkut has 2997166 nodes and 106349209 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 42, the mean node degree is 70.97, and the node degree mode is 1. The top 5 most
-central nodes are 42984 (degree 27466), 43248 (degree 25382), 42352 (degree 23958),
-43559 (degree 23792) and 42606 (degree 22844).
+The undirected graph soc-orkut has 2997166 nodes and 106349209 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 42, the mean node degree is 70.97, and
+the node degree mode is 1. The top 5 most central nodes are 42984 (degree
+27466), 43248 (degree 25382), 42352 (degree 23958), 43559 (degree 23792)
+and 42606 (degree 22844).
 
 
 References
@@ -110,12 +111,13 @@ def SocOrkut(
 	
 	Datetime: 2021-02-04 10:42:53.409172
 	
-	The undirected graph soc-orkut has 2997166 nodes and 106349209 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 42, the mean node degree is 70.97, and the node degree mode is 1. The top 5 most
-	central nodes are 42984 (degree 27466), 43248 (degree 25382), 42352 (degree 23958),
-	43559 (degree 23792) and 42606 (degree 22844).
+	The undirected graph soc-orkut has 2997166 nodes and 106349209 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 42, the mean node degree is 70.97, and
+	the node degree mode is 1. The top 5 most central nodes are 42984 (degree
+	27466), 43248 (degree 25382), 42352 (degree 23958), 43559 (degree 23792)
+	and 42606 (degree 22844).
 	
 
 

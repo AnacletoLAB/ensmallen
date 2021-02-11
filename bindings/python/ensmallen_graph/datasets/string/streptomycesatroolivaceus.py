@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:01.922148
 
-The undirected graph Streptomyces atroolivaceus has 6948 nodes and 1023223 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04240
-and has 28 connected components, where the component with most nodes has 6881 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 294.54, and the node degree mode is 2. The top 5
-most central nodes are 66869.JNXG01000020_gene3418 (degree 3202), 66869.JNXG01000003_gene3325
-(degree 2118), 66869.JNXG01000018_gene4517 (degree 2084), 66869.JNXG01000001_gene3988
-(degree 2018) and 66869.JNXG01000017_gene5001 (degree 2014).
+The undirected graph Streptomyces atroolivaceus has 6948 nodes and 1023223
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04240 and has 28 connected components, where the component
+with most nodes has 6881 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 247, the mean node degree is 294.54,
+and the node degree mode is 2. The top 5 most central nodes are 66869.JNXG01000020_gene3418
+(degree 3202), 66869.JNXG01000003_gene3325 (degree 2118), 66869.JNXG01000018_gene4517
+(degree 2084), 66869.JNXG01000001_gene3988 (degree 2018) and 66869.JNXG01000017_gene5001
+(degree 2014).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAtroolivaceus(
 	
 	Datetime: 2021-02-02 18:26:01.922148
 	
-	The undirected graph Streptomyces atroolivaceus has 6948 nodes and 1023223 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04240
-	and has 28 connected components, where the component with most nodes has 6881 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 294.54, and the node degree mode is 2. The top 5
-	most central nodes are 66869.JNXG01000020_gene3418 (degree 3202), 66869.JNXG01000003_gene3325
-	(degree 2118), 66869.JNXG01000018_gene4517 (degree 2084), 66869.JNXG01000001_gene3988
-	(degree 2018) and 66869.JNXG01000017_gene5001 (degree 2014).
+	The undirected graph Streptomyces atroolivaceus has 6948 nodes and 1023223
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04240 and has 28 connected components, where the component
+	with most nodes has 6881 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 247, the mean node degree is 294.54,
+	and the node degree mode is 2. The top 5 most central nodes are 66869.JNXG01000020_gene3418
+	(degree 3202), 66869.JNXG01000003_gene3325 (degree 2118), 66869.JNXG01000018_gene4517
+	(degree 2084), 66869.JNXG01000001_gene3988 (degree 2018) and 66869.JNXG01000017_gene5001
+	(degree 2014).
 	
 
 

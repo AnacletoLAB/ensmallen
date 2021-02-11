@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:18.744734
 
-The undirected graph Chlamydia psittaci 10139811 has 1153 nodes and 42716 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06432
-and has 59 connected components, where the component with most nodes has 988 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 46, the mean node degree is 74.10, and the node degree mode is 2. The top 5 most
-central nodes are 1238237.CP10139811_0883 (degree 438), 1238237.CP10139811_0904 (degree
-390), 1238237.CP10139811_1005 (degree 365), 1238237.CP10139811_0575 (degree 349)
-and 1238237.CP10139811_0981 (degree 345).
+The undirected graph Chlamydia psittaci 10139811 has 1153 nodes and 42716
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06432 and has 59 connected components, where the component
+with most nodes has 988 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 46, the mean node degree is 74.10,
+and the node degree mode is 2. The top 5 most central nodes are 1238237.CP10139811_0883
+(degree 438), 1238237.CP10139811_0904 (degree 390), 1238237.CP10139811_1005
+(degree 365), 1238237.CP10139811_0575 (degree 349) and 1238237.CP10139811_0981
+(degree 345).
 
 
 References
@@ -107,14 +108,15 @@ def ChlamydiaPsittaci10139811(
 	
 	Datetime: 2021-02-02 23:32:18.744734
 	
-	The undirected graph Chlamydia psittaci 10139811 has 1153 nodes and 42716 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06432
-	and has 59 connected components, where the component with most nodes has 988 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 46, the mean node degree is 74.10, and the node degree mode is 2. The top 5 most
-	central nodes are 1238237.CP10139811_0883 (degree 438), 1238237.CP10139811_0904 (degree
-	390), 1238237.CP10139811_1005 (degree 365), 1238237.CP10139811_0575 (degree 349)
-	and 1238237.CP10139811_0981 (degree 345).
+	The undirected graph Chlamydia psittaci 10139811 has 1153 nodes and 42716
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06432 and has 59 connected components, where the component
+	with most nodes has 988 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 46, the mean node degree is 74.10,
+	and the node degree mode is 2. The top 5 most central nodes are 1238237.CP10139811_0883
+	(degree 438), 1238237.CP10139811_0904 (degree 390), 1238237.CP10139811_1005
+	(degree 365), 1238237.CP10139811_0575 (degree 349) and 1238237.CP10139811_0981
+	(degree 345).
 	
 
 

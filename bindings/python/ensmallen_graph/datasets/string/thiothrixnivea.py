@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:53.901964
 
-The undirected graph Thiothrix nivea has 4293 nodes and 525467 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05704 and
-has 22 connected components, where the component with most nodes has 4238 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 244.80, and the node degree mode is 2. The top 5 most central
-nodes are 870187.Thini_0124 (degree 1770), 870187.Thini_2445 (degree 1671), 870187.Thini_2684
-(degree 1549), 870187.Thini_1534 (degree 1458) and 870187.Thini_0125 (degree 1395).
+The undirected graph Thiothrix nivea has 4293 nodes and 525467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05704 and has 22 connected components, where the component with most
+nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 244.80, and
+the node degree mode is 2. The top 5 most central nodes are 870187.Thini_0124
+(degree 1770), 870187.Thini_2445 (degree 1671), 870187.Thini_2684 (degree
+1549), 870187.Thini_1534 (degree 1458) and 870187.Thini_0125 (degree 1395).
 
 
 References
@@ -106,13 +107,14 @@ def ThiothrixNivea(
 	
 	Datetime: 2021-02-02 21:48:53.901964
 	
-	The undirected graph Thiothrix nivea has 4293 nodes and 525467 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05704 and
-	has 22 connected components, where the component with most nodes has 4238 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 244.80, and the node degree mode is 2. The top 5 most central
-	nodes are 870187.Thini_0124 (degree 1770), 870187.Thini_2445 (degree 1671), 870187.Thini_2684
-	(degree 1549), 870187.Thini_1534 (degree 1458) and 870187.Thini_0125 (degree 1395).
+	The undirected graph Thiothrix nivea has 4293 nodes and 525467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05704 and has 22 connected components, where the component with most
+	nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 244.80, and
+	the node degree mode is 2. The top 5 most central nodes are 870187.Thini_0124
+	(degree 1770), 870187.Thini_2445 (degree 1671), 870187.Thini_2684 (degree
+	1549), 870187.Thini_1534 (degree 1458) and 870187.Thini_0125 (degree 1395).
 	
 
 

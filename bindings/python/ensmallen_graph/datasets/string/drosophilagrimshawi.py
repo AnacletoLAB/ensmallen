@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:35.987589
 
-The undirected graph Drosophila grimshawi has 12863 nodes and 1379993 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01668 and
-has 8 connected components, where the component with most nodes has 12848 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 214.57, and the node degree mode is 1. The top 5 most central
-nodes are 7222.FBpp0151117 (degree 3273), 7222.FBpp0146922 (degree 2439), 7222.FBpp0152614
-(degree 2385), 7222.FBpp0154954 (degree 2106) and 7222.FBpp0147542 (degree 2055).
+The undirected graph Drosophila grimshawi has 12863 nodes and 1379993 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01668 and has 8 connected components, where the component with most
+nodes has 12848 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 214.57, and
+the node degree mode is 1. The top 5 most central nodes are 7222.FBpp0151117
+(degree 3273), 7222.FBpp0146922 (degree 2439), 7222.FBpp0152614 (degree
+2385), 7222.FBpp0154954 (degree 2106) and 7222.FBpp0147542 (degree 2055).
 
 
 References
@@ -106,13 +107,14 @@ def DrosophilaGrimshawi(
 	
 	Datetime: 2021-02-02 17:21:35.987589
 	
-	The undirected graph Drosophila grimshawi has 12863 nodes and 1379993 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01668 and
-	has 8 connected components, where the component with most nodes has 12848 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 214.57, and the node degree mode is 1. The top 5 most central
-	nodes are 7222.FBpp0151117 (degree 3273), 7222.FBpp0146922 (degree 2439), 7222.FBpp0152614
-	(degree 2385), 7222.FBpp0154954 (degree 2106) and 7222.FBpp0147542 (degree 2055).
+	The undirected graph Drosophila grimshawi has 12863 nodes and 1379993 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01668 and has 8 connected components, where the component with most
+	nodes has 12848 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 214.57, and
+	the node degree mode is 1. The top 5 most central nodes are 7222.FBpp0151117
+	(degree 3273), 7222.FBpp0146922 (degree 2439), 7222.FBpp0152614 (degree
+	2385), 7222.FBpp0154954 (degree 2106) and 7222.FBpp0147542 (degree 2055).
 	
 
 

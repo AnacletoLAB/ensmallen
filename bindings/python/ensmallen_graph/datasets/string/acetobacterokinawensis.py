@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:04.838610
 
-The undirected graph Acetobacter okinawensis has 3316 nodes and 336591 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06124 and
-has 18 connected components, where the component with most nodes has 3270 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 203.01, and the node degree mode is 2. The top 5 most central
-nodes are 1236501.BAJU01000030_gene2428 (degree 1495), 1236501.BAJU01000007_gene1148
-(degree 1273), 1236501.BAJU01000007_gene1127 (degree 1248), 1236501.BAJU01000004_gene773
-(degree 1059) and 1236501.BAJU01000019_gene1976 (degree 1046).
+The undirected graph Acetobacter okinawensis has 3316 nodes and 336591
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06124 and has 18 connected components, where the component
+with most nodes has 3270 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 203.01,
+and the node degree mode is 2. The top 5 most central nodes are 1236501.BAJU01000030_gene2428
+(degree 1495), 1236501.BAJU01000007_gene1148 (degree 1273), 1236501.BAJU01000007_gene1127
+(degree 1248), 1236501.BAJU01000004_gene773 (degree 1059) and 1236501.BAJU01000019_gene1976
+(degree 1046).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterOkinawensis(
 	
 	Datetime: 2021-02-02 23:31:04.838610
 	
-	The undirected graph Acetobacter okinawensis has 3316 nodes and 336591 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06124 and
-	has 18 connected components, where the component with most nodes has 3270 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 203.01, and the node degree mode is 2. The top 5 most central
-	nodes are 1236501.BAJU01000030_gene2428 (degree 1495), 1236501.BAJU01000007_gene1148
-	(degree 1273), 1236501.BAJU01000007_gene1127 (degree 1248), 1236501.BAJU01000004_gene773
-	(degree 1059) and 1236501.BAJU01000019_gene1976 (degree 1046).
+	The undirected graph Acetobacter okinawensis has 3316 nodes and 336591
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06124 and has 18 connected components, where the component
+	with most nodes has 3270 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 203.01,
+	and the node degree mode is 2. The top 5 most central nodes are 1236501.BAJU01000030_gene2428
+	(degree 1495), 1236501.BAJU01000007_gene1148 (degree 1273), 1236501.BAJU01000007_gene1127
+	(degree 1248), 1236501.BAJU01000004_gene773 (degree 1059) and 1236501.BAJU01000019_gene1976
+	(degree 1046).
 	
 
 

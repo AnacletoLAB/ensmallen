@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:19.297461
 
-The undirected graph Gramella echinicola has 3156 nodes and 266839 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05360 and
-has 4 connected components, where the component with most nodes has 3148 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 169.10, and the node degree mode is 6. The top 5 most central
-nodes are 1121931.AUHG01000019_gene3013 (degree 1176), 1121931.AUHG01000016_gene991
-(degree 1154), 1121931.AUHG01000010_gene796 (degree 1153), 1121931.AUHG01000011_gene1655
-(degree 1062) and 1121931.AUHG01000011_gene1941 (degree 937).
+The undirected graph Gramella echinicola has 3156 nodes and 266839 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05360 and has 4 connected components, where the component with most
+nodes has 3148 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 169.10, and
+the node degree mode is 6. The top 5 most central nodes are 1121931.AUHG01000019_gene3013
+(degree 1176), 1121931.AUHG01000016_gene991 (degree 1154), 1121931.AUHG01000010_gene796
+(degree 1153), 1121931.AUHG01000011_gene1655 (degree 1062) and 1121931.AUHG01000011_gene1941
+(degree 937).
 
 
 References
@@ -107,14 +108,15 @@ def GramellaEchinicola(
 	
 	Datetime: 2021-02-02 22:39:19.297461
 	
-	The undirected graph Gramella echinicola has 3156 nodes and 266839 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05360 and
-	has 4 connected components, where the component with most nodes has 3148 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 169.10, and the node degree mode is 6. The top 5 most central
-	nodes are 1121931.AUHG01000019_gene3013 (degree 1176), 1121931.AUHG01000016_gene991
-	(degree 1154), 1121931.AUHG01000010_gene796 (degree 1153), 1121931.AUHG01000011_gene1655
-	(degree 1062) and 1121931.AUHG01000011_gene1941 (degree 937).
+	The undirected graph Gramella echinicola has 3156 nodes and 266839 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05360 and has 4 connected components, where the component with most
+	nodes has 3148 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 169.10, and
+	the node degree mode is 6. The top 5 most central nodes are 1121931.AUHG01000019_gene3013
+	(degree 1176), 1121931.AUHG01000016_gene991 (degree 1154), 1121931.AUHG01000010_gene796
+	(degree 1153), 1121931.AUHG01000011_gene1655 (degree 1062) and 1121931.AUHG01000011_gene1941
+	(degree 937).
 	
 
 

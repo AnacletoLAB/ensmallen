@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:44.743497
 
-The undirected graph Bacillus chagannorensis has 3102 nodes and 255989 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-has 7 connected components, where the component with most nodes has 3087 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 165.05, and the node degree mode is 3. The top 5 most central
-nodes are 1121087.AUCK01000011_gene2003 (degree 1167), 1121087.AUCK01000039_gene94
-(degree 1084), 1121087.AUCK01000036_gene1520 (degree 1034), 1121087.AUCK01000004_gene1193
-(degree 944) and 1121087.AUCK01000002_gene2421 (degree 901).
+The undirected graph Bacillus chagannorensis has 3102 nodes and 255989
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05322 and has 7 connected components, where the component
+with most nodes has 3087 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 165.05,
+and the node degree mode is 3. The top 5 most central nodes are 1121087.AUCK01000011_gene2003
+(degree 1167), 1121087.AUCK01000039_gene94 (degree 1084), 1121087.AUCK01000036_gene1520
+(degree 1034), 1121087.AUCK01000004_gene1193 (degree 944) and 1121087.AUCK01000002_gene2421
+(degree 901).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusChagannorensis(
 	
 	Datetime: 2021-02-02 22:32:44.743497
 	
-	The undirected graph Bacillus chagannorensis has 3102 nodes and 255989 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-	has 7 connected components, where the component with most nodes has 3087 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 165.05, and the node degree mode is 3. The top 5 most central
-	nodes are 1121087.AUCK01000011_gene2003 (degree 1167), 1121087.AUCK01000039_gene94
-	(degree 1084), 1121087.AUCK01000036_gene1520 (degree 1034), 1121087.AUCK01000004_gene1193
-	(degree 944) and 1121087.AUCK01000002_gene2421 (degree 901).
+	The undirected graph Bacillus chagannorensis has 3102 nodes and 255989
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05322 and has 7 connected components, where the component
+	with most nodes has 3087 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 165.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1121087.AUCK01000011_gene2003
+	(degree 1167), 1121087.AUCK01000039_gene94 (degree 1084), 1121087.AUCK01000036_gene1520
+	(degree 1034), 1121087.AUCK01000004_gene1193 (degree 944) and 1121087.AUCK01000002_gene2421
+	(degree 901).
 	
 
 

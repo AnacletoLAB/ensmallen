@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:05.547755
 
-The undirected graph Helicobacter bilis has 2215 nodes and 90547 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03693 and
-has 24 connected components, where the component with most nodes has 2136 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 48,
-the mean node degree is 81.76, and the node degree mode is 7. The top 5 most central
-nodes are 613026.HRAG_00640 (degree 737), 613026.HRAG_00105 (degree 718), 613026.HRAG_01404
-(degree 664), 613026.HRAG_00020 (degree 659) and 613026.HRAG_00081 (degree 542).
+The undirected graph Helicobacter bilis has 2215 nodes and 90547 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03693 and has 24 connected components, where the component with most
+nodes has 2136 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 48, the mean node degree is 81.76, and
+the node degree mode is 7. The top 5 most central nodes are 613026.HRAG_00640
+(degree 737), 613026.HRAG_00105 (degree 718), 613026.HRAG_01404 (degree
+664), 613026.HRAG_00020 (degree 659) and 613026.HRAG_00081 (degree 542).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterBilis(
 	
 	Datetime: 2021-02-02 21:20:05.547755
 	
-	The undirected graph Helicobacter bilis has 2215 nodes and 90547 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03693 and
-	has 24 connected components, where the component with most nodes has 2136 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 48,
-	the mean node degree is 81.76, and the node degree mode is 7. The top 5 most central
-	nodes are 613026.HRAG_00640 (degree 737), 613026.HRAG_00105 (degree 718), 613026.HRAG_01404
-	(degree 664), 613026.HRAG_00020 (degree 659) and 613026.HRAG_00081 (degree 542).
+	The undirected graph Helicobacter bilis has 2215 nodes and 90547 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03693 and has 24 connected components, where the component with most
+	nodes has 2136 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 48, the mean node degree is 81.76, and
+	the node degree mode is 7. The top 5 most central nodes are 613026.HRAG_00640
+	(degree 737), 613026.HRAG_00105 (degree 718), 613026.HRAG_01404 (degree
+	664), 613026.HRAG_00020 (degree 659) and 613026.HRAG_00081 (degree 542).
 	
 
 

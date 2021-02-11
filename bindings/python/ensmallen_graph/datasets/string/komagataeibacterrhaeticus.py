@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:43.881589
 
-The undirected graph Komagataeibacter rhaeticus has 3309 nodes and 269859 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-and has 22 connected components, where the component with most nodes has 3263 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 163.11, and the node degree mode is 1. The top 5
-most central nodes are 1432055.GLUCORHAEAF1_03555 (degree 1189), 1432055.GLUCORHAEAF1_11320
-(degree 1105), 1432055.GLUCORHAEAF1_02615 (degree 981), 1432055.GLUCORHAEAF1_18500
-(degree 922) and 1432055.GLUCORHAEAF1_09460 (degree 899).
+The undirected graph Komagataeibacter rhaeticus has 3309 nodes and 269859
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04931 and has 22 connected components, where the component
+with most nodes has 3263 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 163.11,
+and the node degree mode is 1. The top 5 most central nodes are 1432055.GLUCORHAEAF1_03555
+(degree 1189), 1432055.GLUCORHAEAF1_11320 (degree 1105), 1432055.GLUCORHAEAF1_02615
+(degree 981), 1432055.GLUCORHAEAF1_18500 (degree 922) and 1432055.GLUCORHAEAF1_09460
+(degree 899).
 
 
 References
@@ -107,14 +108,15 @@ def KomagataeibacterRhaeticus(
 	
 	Datetime: 2021-02-03 22:53:43.881589
 	
-	The undirected graph Komagataeibacter rhaeticus has 3309 nodes and 269859 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-	and has 22 connected components, where the component with most nodes has 3263 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 163.11, and the node degree mode is 1. The top 5
-	most central nodes are 1432055.GLUCORHAEAF1_03555 (degree 1189), 1432055.GLUCORHAEAF1_11320
-	(degree 1105), 1432055.GLUCORHAEAF1_02615 (degree 981), 1432055.GLUCORHAEAF1_18500
-	(degree 922) and 1432055.GLUCORHAEAF1_09460 (degree 899).
+	The undirected graph Komagataeibacter rhaeticus has 3309 nodes and 269859
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04931 and has 22 connected components, where the component
+	with most nodes has 3263 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 163.11,
+	and the node degree mode is 1. The top 5 most central nodes are 1432055.GLUCORHAEAF1_03555
+	(degree 1189), 1432055.GLUCORHAEAF1_11320 (degree 1105), 1432055.GLUCORHAEAF1_02615
+	(degree 981), 1432055.GLUCORHAEAF1_18500 (degree 922) and 1432055.GLUCORHAEAF1_09460
+	(degree 899).
 	
 
 

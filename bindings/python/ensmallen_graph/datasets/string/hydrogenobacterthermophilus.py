@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:59.265159
 
-The undirected graph Hydrogenobacter thermophilus has 1889 nodes and 136143 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07635
-and has 2 connected components, where the component with most nodes has 1884 nodes
-and the component with the least nodes has 5 nodes. The graph median node degree
-is 123, the mean node degree is 144.14, and the node degree mode is 33. The top 5
-most central nodes are 608538.HTH_0570 (degree 837), 608538.HTH_0425 (degree 673),
-608538.HTH_0774 (degree 660), 608538.HTH_1644 (degree 660) and 608538.HTH_1314 (degree
-660).
+The undirected graph Hydrogenobacter thermophilus has 1889 nodes and 136143
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07635 and has 2 connected components, where the component
+with most nodes has 1884 nodes and the component with the least nodes has
+5 nodes. The graph median node degree is 123, the mean node degree is 144.14,
+and the node degree mode is 33. The top 5 most central nodes are 608538.HTH_0570
+(degree 837), 608538.HTH_0425 (degree 673), 608538.HTH_0774 (degree 660),
+608538.HTH_1644 (degree 660) and 608538.HTH_1314 (degree 660).
 
 
 References
@@ -107,14 +107,14 @@ def HydrogenobacterThermophilus(
 	
 	Datetime: 2021-02-02 21:19:59.265159
 	
-	The undirected graph Hydrogenobacter thermophilus has 1889 nodes and 136143 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07635
-	and has 2 connected components, where the component with most nodes has 1884 nodes
-	and the component with the least nodes has 5 nodes. The graph median node degree
-	is 123, the mean node degree is 144.14, and the node degree mode is 33. The top 5
-	most central nodes are 608538.HTH_0570 (degree 837), 608538.HTH_0425 (degree 673),
-	608538.HTH_0774 (degree 660), 608538.HTH_1644 (degree 660) and 608538.HTH_1314 (degree
-	660).
+	The undirected graph Hydrogenobacter thermophilus has 1889 nodes and 136143
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07635 and has 2 connected components, where the component
+	with most nodes has 1884 nodes and the component with the least nodes has
+	5 nodes. The graph median node degree is 123, the mean node degree is 144.14,
+	and the node degree mode is 33. The top 5 most central nodes are 608538.HTH_0570
+	(degree 837), 608538.HTH_0425 (degree 673), 608538.HTH_0774 (degree 660),
+	608538.HTH_1644 (degree 660) and 608538.HTH_1314 (degree 660).
 	
 
 

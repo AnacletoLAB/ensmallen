@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:22.052968
 
-The undirected graph Aureimonas ureilytica has 4492 nodes and 469584 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04655 and
-has 24 connected components, where the component with most nodes has 4410 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 209.08, and the node degree mode is 2. The top 5 most central
-nodes are 1121028.ARQE01000003_gene653 (degree 1672), 1121028.ARQE01000009_gene4027
-(degree 1370), 1121028.ARQE01000005_gene2713 (degree 1355), 1121028.ARQE01000005_gene2706
-(degree 1290) and 1121028.ARQE01000008_gene2253 (degree 1285).
+The undirected graph Aureimonas ureilytica has 4492 nodes and 469584 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04655 and has 24 connected components, where the component with most
+nodes has 4410 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 209.08, and
+the node degree mode is 2. The top 5 most central nodes are 1121028.ARQE01000003_gene653
+(degree 1672), 1121028.ARQE01000009_gene4027 (degree 1370), 1121028.ARQE01000005_gene2713
+(degree 1355), 1121028.ARQE01000005_gene2706 (degree 1290) and 1121028.ARQE01000008_gene2253
+(degree 1285).
 
 
 References
@@ -107,14 +108,15 @@ def AureimonasUreilytica(
 	
 	Datetime: 2021-02-02 22:32:22.052968
 	
-	The undirected graph Aureimonas ureilytica has 4492 nodes and 469584 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04655 and
-	has 24 connected components, where the component with most nodes has 4410 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 209.08, and the node degree mode is 2. The top 5 most central
-	nodes are 1121028.ARQE01000003_gene653 (degree 1672), 1121028.ARQE01000009_gene4027
-	(degree 1370), 1121028.ARQE01000005_gene2713 (degree 1355), 1121028.ARQE01000005_gene2706
-	(degree 1290) and 1121028.ARQE01000008_gene2253 (degree 1285).
+	The undirected graph Aureimonas ureilytica has 4492 nodes and 469584 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04655 and has 24 connected components, where the component with most
+	nodes has 4410 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 209.08, and
+	the node degree mode is 2. The top 5 most central nodes are 1121028.ARQE01000003_gene653
+	(degree 1672), 1121028.ARQE01000009_gene4027 (degree 1370), 1121028.ARQE01000005_gene2713
+	(degree 1355), 1121028.ARQE01000005_gene2706 (degree 1290) and 1121028.ARQE01000008_gene2253
+	(degree 1285).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:04.557214
 
-The undirected graph Alicyclobacillus acidocaldarius DSM446 has 2959 nodes and 229657
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05248 and has 11 connected components, where the component with most nodes has
-2930 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 132, the mean node degree is 155.23, and the node degree mode is 3. The
-top 5 most central nodes are 521098.Aaci_2345 (degree 1079), 521098.Aaci_2559 (degree
-901), 521098.Aaci_0392 (degree 898), 521098.Aaci_1226 (degree 807) and 521098.Aaci_0011
-(degree 744).
+The undirected graph Alicyclobacillus acidocaldarius DSM446 has 2959 nodes
+and 229657 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05248 and has 11 connected components, where the
+component with most nodes has 2930 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 132, the mean node degree
+is 155.23, and the node degree mode is 3. The top 5 most central nodes
+are 521098.Aaci_2345 (degree 1079), 521098.Aaci_2559 (degree 901), 521098.Aaci_0392
+(degree 898), 521098.Aaci_1226 (degree 807) and 521098.Aaci_0011 (degree
+744).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusAcidocaldariusDsm446(
 	
 	Datetime: 2021-02-02 21:04:04.557214
 	
-	The undirected graph Alicyclobacillus acidocaldarius DSM446 has 2959 nodes and 229657
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05248 and has 11 connected components, where the component with most nodes has
-	2930 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 132, the mean node degree is 155.23, and the node degree mode is 3. The
-	top 5 most central nodes are 521098.Aaci_2345 (degree 1079), 521098.Aaci_2559 (degree
-	901), 521098.Aaci_0392 (degree 898), 521098.Aaci_1226 (degree 807) and 521098.Aaci_0011
-	(degree 744).
+	The undirected graph Alicyclobacillus acidocaldarius DSM446 has 2959 nodes
+	and 229657 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05248 and has 11 connected components, where the
+	component with most nodes has 2930 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 132, the mean node degree
+	is 155.23, and the node degree mode is 3. The top 5 most central nodes
+	are 521098.Aaci_2345 (degree 1079), 521098.Aaci_2559 (degree 901), 521098.Aaci_0392
+	(degree 898), 521098.Aaci_1226 (degree 807) and 521098.Aaci_0011 (degree
+	744).
 	
 
 

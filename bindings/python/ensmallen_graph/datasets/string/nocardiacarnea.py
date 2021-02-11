@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:05.244858
 
-The undirected graph Nocardia carnea has 6663 nodes and 902340 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04066 and
-has 48 connected components, where the component with most nodes has 6540 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 270.85, and the node degree mode is 1. The top 5 most central
-nodes are 1206726.BAFV01000018_gene1224 (degree 2487), 1206726.BAFV01000125_gene6544
-(degree 2356), 1206726.BAFV01000052_gene3556 (degree 2185), 1206726.BAFV01000125_gene6555
-(degree 1878) and 1206726.BAFV01000013_gene788 (degree 1715).
+The undirected graph Nocardia carnea has 6663 nodes and 902340 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04066 and has 48 connected components, where the component with most
+nodes has 6540 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 270.85, and
+the node degree mode is 1. The top 5 most central nodes are 1206726.BAFV01000018_gene1224
+(degree 2487), 1206726.BAFV01000125_gene6544 (degree 2356), 1206726.BAFV01000052_gene3556
+(degree 2185), 1206726.BAFV01000125_gene6555 (degree 1878) and 1206726.BAFV01000013_gene788
+(degree 1715).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaCarnea(
 	
 	Datetime: 2021-02-02 23:16:05.244858
 	
-	The undirected graph Nocardia carnea has 6663 nodes and 902340 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04066 and
-	has 48 connected components, where the component with most nodes has 6540 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 270.85, and the node degree mode is 1. The top 5 most central
-	nodes are 1206726.BAFV01000018_gene1224 (degree 2487), 1206726.BAFV01000125_gene6544
-	(degree 2356), 1206726.BAFV01000052_gene3556 (degree 2185), 1206726.BAFV01000125_gene6555
-	(degree 1878) and 1206726.BAFV01000013_gene788 (degree 1715).
+	The undirected graph Nocardia carnea has 6663 nodes and 902340 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04066 and has 48 connected components, where the component with most
+	nodes has 6540 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 270.85, and
+	the node degree mode is 1. The top 5 most central nodes are 1206726.BAFV01000018_gene1224
+	(degree 2487), 1206726.BAFV01000125_gene6544 (degree 2356), 1206726.BAFV01000052_gene3556
+	(degree 2185), 1206726.BAFV01000125_gene6555 (degree 1878) and 1206726.BAFV01000013_gene788
+	(degree 1715).
 	
 
 

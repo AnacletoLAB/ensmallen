@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:17.703902
 
-The undirected graph Sulfurovum sp. AR has 2103 nodes and 137552 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06223 and
-has 7 connected components, where the component with most nodes has 2086 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 130.82, and the node degree mode is 3. The top 5 most central
-nodes are 1165841.SULAR_01350 (degree 923), 1165841.SULAR_05813 (degree 798), 1165841.SULAR_06283
-(degree 756), 1165841.SULAR_06123 (degree 664) and 1165841.SULAR_04302 (degree 653).
+The undirected graph Sulfurovum sp. AR has 2103 nodes and 137552 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06223 and has 7 connected components, where the component with most
+nodes has 2086 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 130.82, and
+the node degree mode is 3. The top 5 most central nodes are 1165841.SULAR_01350
+(degree 923), 1165841.SULAR_05813 (degree 798), 1165841.SULAR_06283 (degree
+756), 1165841.SULAR_06123 (degree 664) and 1165841.SULAR_04302 (degree
+653).
 
 
 References
@@ -106,13 +108,15 @@ def SulfurovumSp.Ar(
 	
 	Datetime: 2021-02-02 23:05:17.703902
 	
-	The undirected graph Sulfurovum sp. AR has 2103 nodes and 137552 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06223 and
-	has 7 connected components, where the component with most nodes has 2086 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 130.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1165841.SULAR_01350 (degree 923), 1165841.SULAR_05813 (degree 798), 1165841.SULAR_06283
-	(degree 756), 1165841.SULAR_06123 (degree 664) and 1165841.SULAR_04302 (degree 653).
+	The undirected graph Sulfurovum sp. AR has 2103 nodes and 137552 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06223 and has 7 connected components, where the component with most
+	nodes has 2086 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 130.82, and
+	the node degree mode is 3. The top 5 most central nodes are 1165841.SULAR_01350
+	(degree 923), 1165841.SULAR_05813 (degree 798), 1165841.SULAR_06283 (degree
+	756), 1165841.SULAR_06123 (degree 664) and 1165841.SULAR_04302 (degree
+	653).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:23.889985
 
-The undirected graph Janthinobacterium agaricidamnosum has 5425 nodes and 545792
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03710 and has 40 connected components, where the component with most nodes has
-5325 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 158, the mean node degree is 201.21, and the node degree mode is 2. The
-top 5 most central nodes are 1349767.GJA_4565 (degree 1839), 1349767.GJA_2769 (degree
-1588), 1349767.GJA_57 (degree 1540), 1349767.GJA_1424 (degree 1506) and 1349767.GJA_2924
-(degree 1499).
+The undirected graph Janthinobacterium agaricidamnosum has 5425 nodes and
+545792 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03710 and has 40 connected components, where the
+component with most nodes has 5325 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 158, the mean node degree
+is 201.21, and the node degree mode is 2. The top 5 most central nodes
+are 1349767.GJA_4565 (degree 1839), 1349767.GJA_2769 (degree 1588), 1349767.GJA_57
+(degree 1540), 1349767.GJA_1424 (degree 1506) and 1349767.GJA_2924 (degree
+1499).
 
 
 References
@@ -107,14 +108,15 @@ def JanthinobacteriumAgaricidamnosum(
 	
 	Datetime: 2021-02-05 17:18:23.889985
 	
-	The undirected graph Janthinobacterium agaricidamnosum has 5425 nodes and 545792
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03710 and has 40 connected components, where the component with most nodes has
-	5325 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 158, the mean node degree is 201.21, and the node degree mode is 2. The
-	top 5 most central nodes are 1349767.GJA_4565 (degree 1839), 1349767.GJA_2769 (degree
-	1588), 1349767.GJA_57 (degree 1540), 1349767.GJA_1424 (degree 1506) and 1349767.GJA_2924
-	(degree 1499).
+	The undirected graph Janthinobacterium agaricidamnosum has 5425 nodes and
+	545792 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03710 and has 40 connected components, where the
+	component with most nodes has 5325 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 158, the mean node degree
+	is 201.21, and the node degree mode is 2. The top 5 most central nodes
+	are 1349767.GJA_4565 (degree 1839), 1349767.GJA_2769 (degree 1588), 1349767.GJA_57
+	(degree 1540), 1349767.GJA_1424 (degree 1506) and 1349767.GJA_2924 (degree
+	1499).
 	
 
 

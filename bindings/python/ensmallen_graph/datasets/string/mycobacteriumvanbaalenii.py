@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:58.728292
 
-The undirected graph Mycobacterium vanbaalenii has 5942 nodes and 850433 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04818
-and has 21 connected components, where the component with most nodes has 5890 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 286.24, and the node degree mode is 4. The top 5
-most central nodes are 350058.Mvan_2071 (degree 2128), 350058.Mvan_4003 (degree 2108),
-350058.Mvan_4125 (degree 2081), 350058.Mvan_1931 (degree 2052) and 350058.Mvan_4109
-(degree 1938).
+The undirected graph Mycobacterium vanbaalenii has 5942 nodes and 850433
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04818 and has 21 connected components, where the component
+with most nodes has 5890 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 286.24,
+and the node degree mode is 4. The top 5 most central nodes are 350058.Mvan_2071
+(degree 2128), 350058.Mvan_4003 (degree 2108), 350058.Mvan_4125 (degree
+2081), 350058.Mvan_1931 (degree 2052) and 350058.Mvan_4109 (degree 1938).
 
 
 References
@@ -107,14 +107,14 @@ def MycobacteriumVanbaalenii(
 	
 	Datetime: 2021-02-02 20:32:58.728292
 	
-	The undirected graph Mycobacterium vanbaalenii has 5942 nodes and 850433 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04818
-	and has 21 connected components, where the component with most nodes has 5890 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 286.24, and the node degree mode is 4. The top 5
-	most central nodes are 350058.Mvan_2071 (degree 2128), 350058.Mvan_4003 (degree 2108),
-	350058.Mvan_4125 (degree 2081), 350058.Mvan_1931 (degree 2052) and 350058.Mvan_4109
-	(degree 1938).
+	The undirected graph Mycobacterium vanbaalenii has 5942 nodes and 850433
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04818 and has 21 connected components, where the component
+	with most nodes has 5890 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 286.24,
+	and the node degree mode is 4. The top 5 most central nodes are 350058.Mvan_2071
+	(degree 2128), 350058.Mvan_4003 (degree 2108), 350058.Mvan_4125 (degree
+	2081), 350058.Mvan_1931 (degree 2052) and 350058.Mvan_4109 (degree 1938).
 	
 
 

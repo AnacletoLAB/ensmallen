@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:07:14.563766
 
-The undirected graph cage7 has 340 nodes and 1712 weighted edges, of which 340 are
-self-loops. The graph is dense as it has a density of 0.02676 and is connected, as
-it has a single component. The graph median node degree is 9, the mean node degree
-is 9.07, and the node degree mode is 8. The top 5 most central nodes are 265 (degree
-16), 263 (degree 16), 291 (degree 16), 290 (degree 16) and 289 (degree 16).
+The undirected graph cage7 has 340 nodes and 1712 weighted edges, of which
+340 are self-loops. The graph is dense as it has a density of 0.02676 and
+is connected, as it has a single component. The graph median node degree
+is 9, the mean node degree is 9.07, and the node degree mode is 8. The
+top 5 most central nodes are 265 (degree 16), 263 (degree 16), 291 (degree
+16), 290 (degree 16) and 289 (degree 16).
 
 
 References
@@ -101,11 +102,12 @@ def Cage7(
 	
 	Datetime: 2021-02-06 08:07:14.563766
 	
-	The undirected graph cage7 has 340 nodes and 1712 weighted edges, of which 340 are
-	self-loops. The graph is dense as it has a density of 0.02676 and is connected, as
-	it has a single component. The graph median node degree is 9, the mean node degree
-	is 9.07, and the node degree mode is 8. The top 5 most central nodes are 265 (degree
-	16), 263 (degree 16), 291 (degree 16), 290 (degree 16) and 289 (degree 16).
+	The undirected graph cage7 has 340 nodes and 1712 weighted edges, of which
+	340 are self-loops. The graph is dense as it has a density of 0.02676 and
+	is connected, as it has a single component. The graph median node degree
+	is 9, the mean node degree is 9.07, and the node degree mode is 8. The
+	top 5 most central nodes are 265 (degree 16), 263 (degree 16), 291 (degree
+	16), 290 (degree 16) and 289 (degree 16).
 	
 
 

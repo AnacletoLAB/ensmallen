@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:38:27.380703
 
-The undirected graph road-luxembourg-osm has 114599 nodes and 119666 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 2.09, and the node degree mode is 2. The top 5 most
-central nodes are 6398 (degree 6), 107750 (degree 5), 59514 (degree 5), 57452 (degree
-5) and 57446 (degree 5).
+The undirected graph road-luxembourg-osm has 114599 nodes and 119666 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.09, and the
+node degree mode is 2. The top 5 most central nodes are 6398 (degree 6),
+107750 (degree 5), 59514 (degree 5), 57452 (degree 5) and 57446 (degree
+5).
 
 
 References
@@ -102,12 +103,13 @@ def RoadLuxembourgOsm(
 	
 	Datetime: 2021-02-06 11:38:27.380703
 	
-	The undirected graph road-luxembourg-osm has 114599 nodes and 119666 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 2.09, and the node degree mode is 2. The top 5 most
-	central nodes are 6398 (degree 6), 107750 (degree 5), 59514 (degree 5), 57452 (degree
-	5) and 57446 (degree 5).
+	The undirected graph road-luxembourg-osm has 114599 nodes and 119666 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.09, and the
+	node degree mode is 2. The top 5 most central nodes are 6398 (degree 6),
+	107750 (degree 5), 59514 (degree 5), 57452 (degree 5) and 57446 (degree
+	5).
 	
 
 

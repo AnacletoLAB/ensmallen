@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:47.692287
 
-The undirected graph channel-500x100x100-b050 has 4802000 nodes and 42681372 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 18, the mean node degree is 17.78 and the node degree mode is 18. The top
-5 most central nodes are 4799549 (degree 18), 4799548 (degree 18), 4799547 (degree
-18), 4799546 (degree 18) and 4799545 (degree 18).
+The undirected graph channel-500x100x100-b050 has 4802000 nodes and 42681372
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and is connected, as it has a single
+component. The graph median node degree is 18, the mean node degree is
+17.78 and the node degree mode is 18. The top 5 most central nodes are
+4799549 (degree 18), 4799548 (degree 18), 4799547 (degree 18), 4799546
+(degree 18) and 4799545 (degree 18).
 
 
 References
@@ -102,12 +103,13 @@ def Channel500x100x100B050(
 	
 	Datetime: 2021-02-03 23:06:47.692287
 	
-	The undirected graph channel-500x100x100-b050 has 4802000 nodes and 42681372 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 18, the mean node degree is 17.78 and the node degree mode is 18. The top
-	5 most central nodes are 4799549 (degree 18), 4799548 (degree 18), 4799547 (degree
-	18), 4799546 (degree 18) and 4799545 (degree 18).
+	The undirected graph channel-500x100x100-b050 has 4802000 nodes and 42681372
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and is connected, as it has a single
+	component. The graph median node degree is 18, the mean node degree is
+	17.78 and the node degree mode is 18. The top 5 most central nodes are
+	4799549 (degree 18), 4799548 (degree 18), 4799547 (degree 18), 4799546
+	(degree 18) and 4799545 (degree 18).
 	
 
 

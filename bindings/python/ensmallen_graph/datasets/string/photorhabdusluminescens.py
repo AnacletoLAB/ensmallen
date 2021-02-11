@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:25.536265
 
-The undirected graph Photorhabdus luminescens has 4616 nodes and 332595 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03123
-and has 20 connected components, where the component with most nodes has 4573 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 144.11, and the node degree mode is 1. The top 5
-most central nodes are 243265.plu2284 (degree 1747), 243265.plu2321 (degree 1367),
-243265.plu0386 (degree 1247), 243265.plu0908 (degree 1121) and 243265.plu2712 (degree
-1027).
+The undirected graph Photorhabdus luminescens has 4616 nodes and 332595
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03123 and has 20 connected components, where the component
+with most nodes has 4573 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 144.11,
+and the node degree mode is 1. The top 5 most central nodes are 243265.plu2284
+(degree 1747), 243265.plu2321 (degree 1367), 243265.plu0386 (degree 1247),
+243265.plu0908 (degree 1121) and 243265.plu2712 (degree 1027).
 
 
 References
@@ -107,14 +107,14 @@ def PhotorhabdusLuminescens(
 	
 	Datetime: 2021-02-02 20:09:25.536265
 	
-	The undirected graph Photorhabdus luminescens has 4616 nodes and 332595 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03123
-	and has 20 connected components, where the component with most nodes has 4573 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 144.11, and the node degree mode is 1. The top 5
-	most central nodes are 243265.plu2284 (degree 1747), 243265.plu2321 (degree 1367),
-	243265.plu0386 (degree 1247), 243265.plu0908 (degree 1121) and 243265.plu2712 (degree
-	1027).
+	The undirected graph Photorhabdus luminescens has 4616 nodes and 332595
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03123 and has 20 connected components, where the component
+	with most nodes has 4573 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 144.11,
+	and the node degree mode is 1. The top 5 most central nodes are 243265.plu2284
+	(degree 1747), 243265.plu2321 (degree 1367), 243265.plu0386 (degree 1247),
+	243265.plu0908 (degree 1121) and 243265.plu2712 (degree 1027).
 	
 
 

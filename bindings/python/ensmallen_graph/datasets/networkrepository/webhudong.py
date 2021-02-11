@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:41:14.944739
 
-The undirected graph web-hudong has 1984484 nodes, of which 9829 are singletons (all
-have self-loops), and 14615608 unweighted edges, of which 187226 are self-loops.
-The graph is extremely sparse as it has a density of 0.00001 and has 14858 connected
-components, where the component with most nodes has 1962418 nodes and the component
-with the least nodes has a single node. The graph median node degree is 5, the mean
-node degree is 14.64, and the node degree mode is 1. The top 5 most central nodes
-are 117 (degree 61440), 7 (degree 46430), 355 (degree 39973), 1414 (degree 36076)
-and 1308 (degree 31307).
+The undirected graph web-hudong has 1984484 nodes, of which 9829 are singletons
+(all have self-loops), and 14615608 unweighted edges, of which 187226 are
+self-loops. The graph is extremely sparse as it has a density of 0.00001
+and has 14858 connected components, where the component with most nodes
+has 1962418 nodes and the component with the least nodes has a single node.
+The graph median node degree is 5, the mean node degree is 14.64, and the
+node degree mode is 1. The top 5 most central nodes are 117 (degree 61440),
+7 (degree 46430), 355 (degree 39973), 1414 (degree 36076) and 1308 (degree
+31307).
 
 
 References
@@ -112,14 +113,15 @@ def WebHudong(
 	
 	Datetime: 2021-02-07 16:41:14.944739
 	
-	The undirected graph web-hudong has 1984484 nodes, of which 9829 are singletons (all
-	have self-loops), and 14615608 unweighted edges, of which 187226 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00001 and has 14858 connected
-	components, where the component with most nodes has 1962418 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 5, the mean
-	node degree is 14.64, and the node degree mode is 1. The top 5 most central nodes
-	are 117 (degree 61440), 7 (degree 46430), 355 (degree 39973), 1414 (degree 36076)
-	and 1308 (degree 31307).
+	The undirected graph web-hudong has 1984484 nodes, of which 9829 are singletons
+	(all have self-loops), and 14615608 unweighted edges, of which 187226 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00001
+	and has 14858 connected components, where the component with most nodes
+	has 1962418 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 5, the mean node degree is 14.64, and the
+	node degree mode is 1. The top 5 most central nodes are 117 (degree 61440),
+	7 (degree 46430), 355 (degree 39973), 1414 (degree 36076) and 1308 (degree
+	31307).
 	
 
 

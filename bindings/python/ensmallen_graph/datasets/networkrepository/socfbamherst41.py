@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:00.056677
 
-The undirected graph socfb-Amherst41 has 2235 nodes and 90954 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03643 and
-is connected, as it has a single component. The graph median node degree is 70, the
-mean node degree is 81.39, and the node degree mode is 1. The top 5 most central
-nodes are 1700 (degree 467), 1423 (degree 467), 222 (degree 456), 2229 (degree 371)
-and 308 (degree 361).
+The undirected graph socfb-Amherst41 has 2235 nodes and 90954 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03643 and is connected, as it has a single component. The graph median
+node degree is 70, the mean node degree is 81.39, and the node degree mode
+is 1. The top 5 most central nodes are 1700 (degree 467), 1423 (degree
+467), 222 (degree 456), 2229 (degree 371) and 308 (degree 361).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbAmherst41(
 	
 	Datetime: 2021-02-06 10:55:00.056677
 	
-	The undirected graph socfb-Amherst41 has 2235 nodes and 90954 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03643 and
-	is connected, as it has a single component. The graph median node degree is 70, the
-	mean node degree is 81.39, and the node degree mode is 1. The top 5 most central
-	nodes are 1700 (degree 467), 1423 (degree 467), 222 (degree 456), 2229 (degree 371)
-	and 308 (degree 361).
+	The undirected graph socfb-Amherst41 has 2235 nodes and 90954 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03643 and is connected, as it has a single component. The graph median
+	node degree is 70, the mean node degree is 81.39, and the node degree mode
+	is 1. The top 5 most central nodes are 1700 (degree 467), 1423 (degree
+	467), 222 (degree 456), 2229 (degree 371) and 308 (degree 361).
 	
 
 

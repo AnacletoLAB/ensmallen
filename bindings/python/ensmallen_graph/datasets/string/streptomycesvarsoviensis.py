@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:44.014438
 
-The undirected graph Streptomyces varsoviensis has 6971 nodes and 1311350 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05398
-and has 30 connected components, where the component with most nodes has 6891 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 315, the mean node degree is 376.23, and the node degree mode is 2. The top 5
-most central nodes are 67373.JOBF01000043_gene3006 (degree 3507), 67373.JOBF01000003_gene529
-(degree 2624), 67373.JOBF01000031_gene2928 (degree 2591), 67373.JOBF01000023_gene6378
-(degree 2479) and 67373.JOBF01000009_gene3078 (degree 2176).
+The undirected graph Streptomyces varsoviensis has 6971 nodes and 1311350
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05398 and has 30 connected components, where the component
+with most nodes has 6891 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 315, the mean node degree is 376.23,
+and the node degree mode is 2. The top 5 most central nodes are 67373.JOBF01000043_gene3006
+(degree 3507), 67373.JOBF01000003_gene529 (degree 2624), 67373.JOBF01000031_gene2928
+(degree 2591), 67373.JOBF01000023_gene6378 (degree 2479) and 67373.JOBF01000009_gene3078
+(degree 2176).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesVarsoviensis(
 	
 	Datetime: 2021-02-02 18:27:44.014438
 	
-	The undirected graph Streptomyces varsoviensis has 6971 nodes and 1311350 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05398
-	and has 30 connected components, where the component with most nodes has 6891 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 315, the mean node degree is 376.23, and the node degree mode is 2. The top 5
-	most central nodes are 67373.JOBF01000043_gene3006 (degree 3507), 67373.JOBF01000003_gene529
-	(degree 2624), 67373.JOBF01000031_gene2928 (degree 2591), 67373.JOBF01000023_gene6378
-	(degree 2479) and 67373.JOBF01000009_gene3078 (degree 2176).
+	The undirected graph Streptomyces varsoviensis has 6971 nodes and 1311350
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05398 and has 30 connected components, where the component
+	with most nodes has 6891 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 315, the mean node degree is 376.23,
+	and the node degree mode is 2. The top 5 most central nodes are 67373.JOBF01000043_gene3006
+	(degree 3507), 67373.JOBF01000003_gene529 (degree 2624), 67373.JOBF01000031_gene2928
+	(degree 2591), 67373.JOBF01000023_gene6378 (degree 2479) and 67373.JOBF01000009_gene3078
+	(degree 2176).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:11.492126
 
-The undirected graph Halomonas elongata has 3460 nodes and 219960 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03676 and
-has 2 connected components, where the component with most nodes has 3458 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 127.14, and the node degree mode is 59. The top 5 most central
-nodes are 768066.HELO_4002 (degree 1222), 768066.HELO_3559 (degree 1136), 768066.HELO_1630
-(degree 909), 768066.HELO_2728 (degree 880) and 768066.HELO_4099 (degree 855).
+The undirected graph Halomonas elongata has 3460 nodes and 219960 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03676 and has 2 connected components, where the component with most
+nodes has 3458 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 127.14, and
+the node degree mode is 59. The top 5 most central nodes are 768066.HELO_4002
+(degree 1222), 768066.HELO_3559 (degree 1136), 768066.HELO_1630 (degree
+909), 768066.HELO_2728 (degree 880) and 768066.HELO_4099 (degree 855).
 
 
 References
@@ -106,13 +107,14 @@ def HalomonasElongata(
 	
 	Datetime: 2021-02-02 21:44:11.492126
 	
-	The undirected graph Halomonas elongata has 3460 nodes and 219960 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03676 and
-	has 2 connected components, where the component with most nodes has 3458 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 127.14, and the node degree mode is 59. The top 5 most central
-	nodes are 768066.HELO_4002 (degree 1222), 768066.HELO_3559 (degree 1136), 768066.HELO_1630
-	(degree 909), 768066.HELO_2728 (degree 880) and 768066.HELO_4099 (degree 855).
+	The undirected graph Halomonas elongata has 3460 nodes and 219960 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03676 and has 2 connected components, where the component with most
+	nodes has 3458 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 127.14, and
+	the node degree mode is 59. The top 5 most central nodes are 768066.HELO_4002
+	(degree 1222), 768066.HELO_3559 (degree 1136), 768066.HELO_1630 (degree
+	909), 768066.HELO_2728 (degree 880) and 768066.HELO_4099 (degree 855).
 	
 
 

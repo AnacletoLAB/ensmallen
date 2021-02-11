@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:03.199769
 
-The undirected graph Arabis alpina has 16465 nodes and 2572911 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01898 and
-has 6 connected components, where the component with most nodes has 16454 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 312.53, and the node degree mode is 6. The top 5 most central
-nodes are 50452.A0A087H456 (degree 4333), 50452.A0A087HCB0 (degree 4111), 50452.A0A087HE25
-(degree 3974), 50452.A0A087HCL3 (degree 3901) and 50452.A0A087HS95 (degree 3875).
+The undirected graph Arabis alpina has 16465 nodes and 2572911 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01898 and has 6 connected components, where the component with most
+nodes has 16454 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 312.53, and
+the node degree mode is 6. The top 5 most central nodes are 50452.A0A087H456
+(degree 4333), 50452.A0A087HCB0 (degree 4111), 50452.A0A087HE25 (degree
+3974), 50452.A0A087HCL3 (degree 3901) and 50452.A0A087HS95 (degree 3875).
 
 
 References
@@ -106,13 +107,14 @@ def ArabisAlpina(
 	
 	Datetime: 2021-02-02 18:17:03.199769
 	
-	The undirected graph Arabis alpina has 16465 nodes and 2572911 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01898 and
-	has 6 connected components, where the component with most nodes has 16454 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 312.53, and the node degree mode is 6. The top 5 most central
-	nodes are 50452.A0A087H456 (degree 4333), 50452.A0A087HCB0 (degree 4111), 50452.A0A087HE25
-	(degree 3974), 50452.A0A087HCL3 (degree 3901) and 50452.A0A087HS95 (degree 3875).
+	The undirected graph Arabis alpina has 16465 nodes and 2572911 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01898 and has 6 connected components, where the component with most
+	nodes has 16454 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 312.53, and
+	the node degree mode is 6. The top 5 most central nodes are 50452.A0A087H456
+	(degree 4333), 50452.A0A087HCB0 (degree 4111), 50452.A0A087HE25 (degree
+	3974), 50452.A0A087HCL3 (degree 3901) and 50452.A0A087HS95 (degree 3875).
 	
 
 

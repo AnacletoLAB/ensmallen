@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:17.326624
 
-The undirected graph Stenoxybacter acetivorans has 2139 nodes and 124176 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05431
-and has 7 connected components, where the component with most nodes has 2126 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 116.11, and the node degree mode is 1. The top 5 most
-central nodes are 1123296.JQKE01000097_gene691 (degree 784), 1123296.JQKE01000018_gene1606
-(degree 705), 1123296.JQKE01000031_gene1760 (degree 656), 1123296.JQKE01000013_gene200
-(degree 621) and 1123296.JQKE01000101_gene618 (degree 575).
+The undirected graph Stenoxybacter acetivorans has 2139 nodes and 124176
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05431 and has 7 connected components, where the component
+with most nodes has 2126 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 116.11,
+and the node degree mode is 1. The top 5 most central nodes are 1123296.JQKE01000097_gene691
+(degree 784), 1123296.JQKE01000018_gene1606 (degree 705), 1123296.JQKE01000031_gene1760
+(degree 656), 1123296.JQKE01000013_gene200 (degree 621) and 1123296.JQKE01000101_gene618
+(degree 575).
 
 
 References
@@ -107,14 +108,15 @@ def StenoxybacterAcetivorans(
 	
 	Datetime: 2021-02-02 22:50:17.326624
 	
-	The undirected graph Stenoxybacter acetivorans has 2139 nodes and 124176 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05431
-	and has 7 connected components, where the component with most nodes has 2126 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 116.11, and the node degree mode is 1. The top 5 most
-	central nodes are 1123296.JQKE01000097_gene691 (degree 784), 1123296.JQKE01000018_gene1606
-	(degree 705), 1123296.JQKE01000031_gene1760 (degree 656), 1123296.JQKE01000013_gene200
-	(degree 621) and 1123296.JQKE01000101_gene618 (degree 575).
+	The undirected graph Stenoxybacter acetivorans has 2139 nodes and 124176
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05431 and has 7 connected components, where the component
+	with most nodes has 2126 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 116.11,
+	and the node degree mode is 1. The top 5 most central nodes are 1123296.JQKE01000097_gene691
+	(degree 784), 1123296.JQKE01000018_gene1606 (degree 705), 1123296.JQKE01000031_gene1760
+	(degree 656), 1123296.JQKE01000013_gene200 (degree 621) and 1123296.JQKE01000101_gene618
+	(degree 575).
 	
 
 

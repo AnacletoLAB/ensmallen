@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:08.019675
 
-The undirected graph Chrysochloris asiatica has 19127 nodes and 4125941 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02256
-and has 2 connected components, where the component with most nodes has 19125 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 316, the mean node degree is 431.43, and the node degree mode is 98. The top 5
-most central nodes are 185453.XP_006872620.1 (degree 4256), 185453.XP_006870917.1
-(degree 4211), 185453.XP_006862074.1 (degree 4180), 185453.XP_006840033.1 (degree
+The undirected graph Chrysochloris asiatica has 19127 nodes and 4125941
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02256 and has 2 connected components, where the component
+with most nodes has 19125 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 316, the mean node degree
+is 431.43, and the node degree mode is 98. The top 5 most central nodes
+are 185453.XP_006872620.1 (degree 4256), 185453.XP_006870917.1 (degree
+4211), 185453.XP_006862074.1 (degree 4180), 185453.XP_006840033.1 (degree
 3923) and 185453.XP_006862605.1 (degree 3668).
 
 
@@ -107,13 +108,14 @@ def ChrysochlorisAsiatica(
 	
 	Datetime: 2021-02-02 19:57:08.019675
 	
-	The undirected graph Chrysochloris asiatica has 19127 nodes and 4125941 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02256
-	and has 2 connected components, where the component with most nodes has 19125 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 316, the mean node degree is 431.43, and the node degree mode is 98. The top 5
-	most central nodes are 185453.XP_006872620.1 (degree 4256), 185453.XP_006870917.1
-	(degree 4211), 185453.XP_006862074.1 (degree 4180), 185453.XP_006840033.1 (degree
+	The undirected graph Chrysochloris asiatica has 19127 nodes and 4125941
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02256 and has 2 connected components, where the component
+	with most nodes has 19125 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 316, the mean node degree
+	is 431.43, and the node degree mode is 98. The top 5 most central nodes
+	are 185453.XP_006872620.1 (degree 4256), 185453.XP_006870917.1 (degree
+	4211), 185453.XP_006862074.1 (degree 4180), 185453.XP_006840033.1 (degree
 	3923) and 185453.XP_006862605.1 (degree 3668).
 	
 

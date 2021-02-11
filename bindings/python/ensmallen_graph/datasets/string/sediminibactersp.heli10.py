@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:24:42.915543
 
-The undirected graph Sediminibacter sp. HelI10 has 3577 nodes and 366701 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05734
-and has 14 connected components, where the component with most nodes has 3547 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 190, the mean node degree is 205.03, and the node degree mode is 3. The top 5
-most central nodes are 1392490.JHZX01000001_gene1386 (degree 1206), 1392490.JHZX01000001_gene1135
-(degree 1195), 1392490.JHZX01000001_gene349 (degree 991), 1392490.JHZX01000001_gene3310
-(degree 990) and 1392490.JHZX01000001_gene552 (degree 900).
+The undirected graph Sediminibacter sp. HelI10 has 3577 nodes and 366701
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05734 and has 14 connected components, where the component
+with most nodes has 3547 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 190, the mean node degree is 205.03,
+and the node degree mode is 3. The top 5 most central nodes are 1392490.JHZX01000001_gene1386
+(degree 1206), 1392490.JHZX01000001_gene1135 (degree 1195), 1392490.JHZX01000001_gene349
+(degree 991), 1392490.JHZX01000001_gene3310 (degree 990) and 1392490.JHZX01000001_gene552
+(degree 900).
 
 
 References
@@ -107,14 +108,15 @@ def SediminibacterSp.Heli10(
 	
 	Datetime: 2021-02-03 22:24:42.915543
 	
-	The undirected graph Sediminibacter sp. HelI10 has 3577 nodes and 366701 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05734
-	and has 14 connected components, where the component with most nodes has 3547 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 190, the mean node degree is 205.03, and the node degree mode is 3. The top 5
-	most central nodes are 1392490.JHZX01000001_gene1386 (degree 1206), 1392490.JHZX01000001_gene1135
-	(degree 1195), 1392490.JHZX01000001_gene349 (degree 991), 1392490.JHZX01000001_gene3310
-	(degree 990) and 1392490.JHZX01000001_gene552 (degree 900).
+	The undirected graph Sediminibacter sp. HelI10 has 3577 nodes and 366701
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05734 and has 14 connected components, where the component
+	with most nodes has 3547 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 190, the mean node degree is 205.03,
+	and the node degree mode is 3. The top 5 most central nodes are 1392490.JHZX01000001_gene1386
+	(degree 1206), 1392490.JHZX01000001_gene1135 (degree 1195), 1392490.JHZX01000001_gene349
+	(degree 991), 1392490.JHZX01000001_gene3310 (degree 990) and 1392490.JHZX01000001_gene552
+	(degree 900).
 	
 
 

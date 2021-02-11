@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:04.945887
 
-The undirected graph Geodermatophilus obscurus has 4743 nodes and 520338 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04627
-and has 15 connected components, where the component with most nodes has 4713 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 200, the mean node degree is 219.41, and the node degree mode is 1. The top 5
-most central nodes are 526225.Gobs_0116 (degree 2015), 526225.Gobs_0277 (degree 1953),
-526225.Gobs_1299 (degree 1674), 526225.Gobs_3201 (degree 1446) and 526225.Gobs_1802
-(degree 1222).
+The undirected graph Geodermatophilus obscurus has 4743 nodes and 520338
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04627 and has 15 connected components, where the component
+with most nodes has 4713 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 200, the mean node degree is 219.41,
+and the node degree mode is 1. The top 5 most central nodes are 526225.Gobs_0116
+(degree 2015), 526225.Gobs_0277 (degree 1953), 526225.Gobs_1299 (degree
+1674), 526225.Gobs_3201 (degree 1446) and 526225.Gobs_1802 (degree 1222).
 
 
 References
@@ -107,14 +107,14 @@ def GeodermatophilusObscurus(
 	
 	Datetime: 2021-02-02 21:06:04.945887
 	
-	The undirected graph Geodermatophilus obscurus has 4743 nodes and 520338 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04627
-	and has 15 connected components, where the component with most nodes has 4713 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 200, the mean node degree is 219.41, and the node degree mode is 1. The top 5
-	most central nodes are 526225.Gobs_0116 (degree 2015), 526225.Gobs_0277 (degree 1953),
-	526225.Gobs_1299 (degree 1674), 526225.Gobs_3201 (degree 1446) and 526225.Gobs_1802
-	(degree 1222).
+	The undirected graph Geodermatophilus obscurus has 4743 nodes and 520338
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04627 and has 15 connected components, where the component
+	with most nodes has 4713 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 200, the mean node degree is 219.41,
+	and the node degree mode is 1. The top 5 most central nodes are 526225.Gobs_0116
+	(degree 2015), 526225.Gobs_0277 (degree 1953), 526225.Gobs_1299 (degree
+	1674), 526225.Gobs_3201 (degree 1446) and 526225.Gobs_1802 (degree 1222).
 	
 
 

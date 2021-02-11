@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:21.260592
 
-The undirected graph Gordonia malaquae has 4240 nodes and 448453 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04990 and
-has 32 connected components, where the component with most nodes has 4146 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 211.53, and the node degree mode is 6. The top 5 most central
-nodes are 1223542.GM1_014_00630 (degree 1633), 1223542.GM1_003_02340 (degree 1255),
-1223542.GM1_044_00320 (degree 1240), 1223542.GM1_051_00170 (degree 1232) and 1223542.GM1_021_00770
+The undirected graph Gordonia malaquae has 4240 nodes and 448453 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04990 and has 32 connected components, where the component with most
+nodes has 4146 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 211.53, and
+the node degree mode is 6. The top 5 most central nodes are 1223542.GM1_014_00630
+(degree 1633), 1223542.GM1_003_02340 (degree 1255), 1223542.GM1_044_00320
+(degree 1240), 1223542.GM1_051_00170 (degree 1232) and 1223542.GM1_021_00770
 (degree 1164).
 
 
@@ -107,13 +108,14 @@ def GordoniaMalaquae(
 	
 	Datetime: 2021-02-02 23:24:21.260592
 	
-	The undirected graph Gordonia malaquae has 4240 nodes and 448453 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04990 and
-	has 32 connected components, where the component with most nodes has 4146 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 211.53, and the node degree mode is 6. The top 5 most central
-	nodes are 1223542.GM1_014_00630 (degree 1633), 1223542.GM1_003_02340 (degree 1255),
-	1223542.GM1_044_00320 (degree 1240), 1223542.GM1_051_00170 (degree 1232) and 1223542.GM1_021_00770
+	The undirected graph Gordonia malaquae has 4240 nodes and 448453 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04990 and has 32 connected components, where the component with most
+	nodes has 4146 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 211.53, and
+	the node degree mode is 6. The top 5 most central nodes are 1223542.GM1_014_00630
+	(degree 1633), 1223542.GM1_003_02340 (degree 1255), 1223542.GM1_044_00320
+	(degree 1240), 1223542.GM1_051_00170 (degree 1232) and 1223542.GM1_021_00770
 	(degree 1164).
 	
 

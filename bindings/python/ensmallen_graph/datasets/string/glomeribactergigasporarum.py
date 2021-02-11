@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:00.438096
 
-The undirected graph Glomeribacter gigasporarum has 1444 nodes and 76375 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07331
-and has 12 connected components, where the component with most nodes has 1418 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 105.78, and the node degree mode is 3. The top 5 most
-central nodes are 1070319.CAGGBEG34_180088 (degree 462), 1070319.CAGGBEG34_1200003
-(degree 440), 1070319.CAGGBEG34_200109 (degree 440), 1070319.CAGGBEG34_340001 (degree
-398) and 1070319.CAGGBEG34_490001 (degree 397).
+The undirected graph Glomeribacter gigasporarum has 1444 nodes and 76375
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07331 and has 12 connected components, where the component
+with most nodes has 1418 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 105.78,
+and the node degree mode is 3. The top 5 most central nodes are 1070319.CAGGBEG34_180088
+(degree 462), 1070319.CAGGBEG34_1200003 (degree 440), 1070319.CAGGBEG34_200109
+(degree 440), 1070319.CAGGBEG34_340001 (degree 398) and 1070319.CAGGBEG34_490001
+(degree 397).
 
 
 References
@@ -107,14 +108,15 @@ def GlomeribacterGigasporarum(
 	
 	Datetime: 2021-02-02 22:19:00.438096
 	
-	The undirected graph Glomeribacter gigasporarum has 1444 nodes and 76375 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07331
-	and has 12 connected components, where the component with most nodes has 1418 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 105.78, and the node degree mode is 3. The top 5 most
-	central nodes are 1070319.CAGGBEG34_180088 (degree 462), 1070319.CAGGBEG34_1200003
-	(degree 440), 1070319.CAGGBEG34_200109 (degree 440), 1070319.CAGGBEG34_340001 (degree
-	398) and 1070319.CAGGBEG34_490001 (degree 397).
+	The undirected graph Glomeribacter gigasporarum has 1444 nodes and 76375
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07331 and has 12 connected components, where the component
+	with most nodes has 1418 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 105.78,
+	and the node degree mode is 3. The top 5 most central nodes are 1070319.CAGGBEG34_180088
+	(degree 462), 1070319.CAGGBEG34_1200003 (degree 440), 1070319.CAGGBEG34_200109
+	(degree 440), 1070319.CAGGBEG34_340001 (degree 398) and 1070319.CAGGBEG34_490001
+	(degree 397).
 	
 
 

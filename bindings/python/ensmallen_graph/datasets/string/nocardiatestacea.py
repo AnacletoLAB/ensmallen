@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:16.548579
 
-The undirected graph Nocardia testacea has 6507 nodes and 811341 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03833 and
-has 43 connected components, where the component with most nodes has 6404 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 249.37, and the node degree mode is 1. The top 5 most central
-nodes are 1206739.BAGJ01000128_gene1375 (degree 2060), 1206739.BAGJ01000029_gene2446
-(degree 1987), 1206739.BAGJ01000272_gene5357 (degree 1876), 1206739.BAGJ01000001_gene6227
-(degree 1728) and 1206739.BAGJ01000135_gene640 (degree 1603).
+The undirected graph Nocardia testacea has 6507 nodes and 811341 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03833 and has 43 connected components, where the component with most
+nodes has 6404 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 249.37, and
+the node degree mode is 1. The top 5 most central nodes are 1206739.BAGJ01000128_gene1375
+(degree 2060), 1206739.BAGJ01000029_gene2446 (degree 1987), 1206739.BAGJ01000272_gene5357
+(degree 1876), 1206739.BAGJ01000001_gene6227 (degree 1728) and 1206739.BAGJ01000135_gene640
+(degree 1603).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaTestacea(
 	
 	Datetime: 2021-02-02 23:17:16.548579
 	
-	The undirected graph Nocardia testacea has 6507 nodes and 811341 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03833 and
-	has 43 connected components, where the component with most nodes has 6404 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 249.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1206739.BAGJ01000128_gene1375 (degree 2060), 1206739.BAGJ01000029_gene2446
-	(degree 1987), 1206739.BAGJ01000272_gene5357 (degree 1876), 1206739.BAGJ01000001_gene6227
-	(degree 1728) and 1206739.BAGJ01000135_gene640 (degree 1603).
+	The undirected graph Nocardia testacea has 6507 nodes and 811341 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03833 and has 43 connected components, where the component with most
+	nodes has 6404 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 249.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1206739.BAGJ01000128_gene1375
+	(degree 2060), 1206739.BAGJ01000029_gene2446 (degree 1987), 1206739.BAGJ01000272_gene5357
+	(degree 1876), 1206739.BAGJ01000001_gene6227 (degree 1728) and 1206739.BAGJ01000135_gene640
+	(degree 1603).
 	
 
 

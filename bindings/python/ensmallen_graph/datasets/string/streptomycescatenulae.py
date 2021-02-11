@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:16.551803
 
-The undirected graph Streptomyces catenulae has 5853 nodes and 803752 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04693 and
-has 28 connected components, where the component with most nodes has 5768 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 229,
-the mean node degree is 274.65, and the node degree mode is 3. The top 5 most central
-nodes are 66875.JODY01000058_gene5783 (degree 2816), 66875.JODY01000017_gene470 (degree
-1650), 66875.JODY01000040_gene1277 (degree 1621), 66875.JODY01000017_gene544 (degree
-1576) and 66875.JODY01000007_gene2453 (degree 1565).
+The undirected graph Streptomyces catenulae has 5853 nodes and 803752 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04693 and has 28 connected components, where the component with most
+nodes has 5768 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 274.65, and
+the node degree mode is 3. The top 5 most central nodes are 66875.JODY01000058_gene5783
+(degree 2816), 66875.JODY01000017_gene470 (degree 1650), 66875.JODY01000040_gene1277
+(degree 1621), 66875.JODY01000017_gene544 (degree 1576) and 66875.JODY01000007_gene2453
+(degree 1565).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesCatenulae(
 	
 	Datetime: 2021-02-02 18:26:16.551803
 	
-	The undirected graph Streptomyces catenulae has 5853 nodes and 803752 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04693 and
-	has 28 connected components, where the component with most nodes has 5768 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 229,
-	the mean node degree is 274.65, and the node degree mode is 3. The top 5 most central
-	nodes are 66875.JODY01000058_gene5783 (degree 2816), 66875.JODY01000017_gene470 (degree
-	1650), 66875.JODY01000040_gene1277 (degree 1621), 66875.JODY01000017_gene544 (degree
-	1576) and 66875.JODY01000007_gene2453 (degree 1565).
+	The undirected graph Streptomyces catenulae has 5853 nodes and 803752 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04693 and has 28 connected components, where the component with most
+	nodes has 5768 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 274.65, and
+	the node degree mode is 3. The top 5 most central nodes are 66875.JODY01000058_gene5783
+	(degree 2816), 66875.JODY01000017_gene470 (degree 1650), 66875.JODY01000040_gene1277
+	(degree 1621), 66875.JODY01000017_gene544 (degree 1576) and 66875.JODY01000007_gene2453
+	(degree 1565).
 	
 
 

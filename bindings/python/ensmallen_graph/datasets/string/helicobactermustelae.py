@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:22.861503
 
-The undirected graph Helicobacter mustelae has 1392 nodes and 70106 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07241 and
-has 8 connected components, where the component with most nodes has 1374 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 100.73, and the node degree mode is 1. The top 5 most central
-nodes are 679897.HMU03190 (degree 559), 679897.HMU07510 (degree 516), 679897.HMU00550
-(degree 490), 679897.HMU08360 (degree 443) and 679897.HMU07970 (degree 442).
+The undirected graph Helicobacter mustelae has 1392 nodes and 70106 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07241 and has 8 connected components, where the component with most
+nodes has 1374 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 100.73, and
+the node degree mode is 1. The top 5 most central nodes are 679897.HMU03190
+(degree 559), 679897.HMU07510 (degree 516), 679897.HMU00550 (degree 490),
+679897.HMU08360 (degree 443) and 679897.HMU07970 (degree 442).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterMustelae(
 	
 	Datetime: 2021-02-02 21:30:22.861503
 	
-	The undirected graph Helicobacter mustelae has 1392 nodes and 70106 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07241 and
-	has 8 connected components, where the component with most nodes has 1374 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 100.73, and the node degree mode is 1. The top 5 most central
-	nodes are 679897.HMU03190 (degree 559), 679897.HMU07510 (degree 516), 679897.HMU00550
-	(degree 490), 679897.HMU08360 (degree 443) and 679897.HMU07970 (degree 442).
+	The undirected graph Helicobacter mustelae has 1392 nodes and 70106 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07241 and has 8 connected components, where the component with most
+	nodes has 1374 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 100.73, and
+	the node degree mode is 1. The top 5 most central nodes are 679897.HMU03190
+	(degree 559), 679897.HMU07510 (degree 516), 679897.HMU00550 (degree 490),
+	679897.HMU08360 (degree 443) and 679897.HMU07970 (degree 442).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:02.230228
 
-The undirected graph Desulfobacter postgatei has 3391 nodes and 276102 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-has 25 connected components, where the component with most nodes has 3328 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 162.84, and the node degree mode is 3. The top 5 most central
-nodes are 879212.DespoDRAFT_00831 (degree 1341), 879212.DespoDRAFT_03231 (degree
-1297), 879212.DespoDRAFT_00201 (degree 1263), 879212.DespoDRAFT_03683 (degree 1261)
-and 879212.DespoDRAFT_02313 (degree 1175).
+The undirected graph Desulfobacter postgatei has 3391 nodes and 276102
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04804 and has 25 connected components, where the component
+with most nodes has 3328 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 162.84,
+and the node degree mode is 3. The top 5 most central nodes are 879212.DespoDRAFT_00831
+(degree 1341), 879212.DespoDRAFT_03231 (degree 1297), 879212.DespoDRAFT_00201
+(degree 1263), 879212.DespoDRAFT_03683 (degree 1261) and 879212.DespoDRAFT_02313
+(degree 1175).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfobacterPostgatei(
 	
 	Datetime: 2021-02-02 21:50:02.230228
 	
-	The undirected graph Desulfobacter postgatei has 3391 nodes and 276102 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-	has 25 connected components, where the component with most nodes has 3328 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 162.84, and the node degree mode is 3. The top 5 most central
-	nodes are 879212.DespoDRAFT_00831 (degree 1341), 879212.DespoDRAFT_03231 (degree
-	1297), 879212.DespoDRAFT_00201 (degree 1263), 879212.DespoDRAFT_03683 (degree 1261)
-	and 879212.DespoDRAFT_02313 (degree 1175).
+	The undirected graph Desulfobacter postgatei has 3391 nodes and 276102
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04804 and has 25 connected components, where the component
+	with most nodes has 3328 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 162.84,
+	and the node degree mode is 3. The top 5 most central nodes are 879212.DespoDRAFT_00831
+	(degree 1341), 879212.DespoDRAFT_03231 (degree 1297), 879212.DespoDRAFT_00201
+	(degree 1263), 879212.DespoDRAFT_03683 (degree 1261) and 879212.DespoDRAFT_02313
+	(degree 1175).
 	
 
 

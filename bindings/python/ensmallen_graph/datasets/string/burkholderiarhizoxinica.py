@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:52.864723
 
-The undirected graph Burkholderia rhizoxinica has 3562 nodes and 176563 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02784
-and has 43 connected components, where the component with most nodes has 3452 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 70, the mean node degree is 99.14, and the node degree mode is 3. The top 5 most
-central nodes are 882378.RBRH_01169 (degree 1137), 882378.RBRH_02704 (degree 869),
-882378.RBRH_02313 (degree 796), 882378.RBRH_00140 (degree 782) and 882378.RBRH_02146
-(degree 760).
+The undirected graph Burkholderia rhizoxinica has 3562 nodes and 176563
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02784 and has 43 connected components, where the component
+with most nodes has 3452 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 70, the mean node degree is 99.14,
+and the node degree mode is 3. The top 5 most central nodes are 882378.RBRH_01169
+(degree 1137), 882378.RBRH_02704 (degree 869), 882378.RBRH_02313 (degree
+796), 882378.RBRH_00140 (degree 782) and 882378.RBRH_02146 (degree 760).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaRhizoxinica(
 	
 	Datetime: 2021-02-02 21:50:52.864723
 	
-	The undirected graph Burkholderia rhizoxinica has 3562 nodes and 176563 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02784
-	and has 43 connected components, where the component with most nodes has 3452 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 70, the mean node degree is 99.14, and the node degree mode is 3. The top 5 most
-	central nodes are 882378.RBRH_01169 (degree 1137), 882378.RBRH_02704 (degree 869),
-	882378.RBRH_02313 (degree 796), 882378.RBRH_00140 (degree 782) and 882378.RBRH_02146
-	(degree 760).
+	The undirected graph Burkholderia rhizoxinica has 3562 nodes and 176563
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02784 and has 43 connected components, where the component
+	with most nodes has 3452 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 70, the mean node degree is 99.14,
+	and the node degree mode is 3. The top 5 most central nodes are 882378.RBRH_01169
+	(degree 1137), 882378.RBRH_02704 (degree 869), 882378.RBRH_02313 (degree
+	796), 882378.RBRH_00140 (degree 782) and 882378.RBRH_02146 (degree 760).
 	
 
 

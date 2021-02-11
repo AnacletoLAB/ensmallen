@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:08.864181
 
-The undirected graph Bacillus coagulans 26 has 2916 nodes and 201112 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04732 and
-has 10 connected components, where the component with most nodes has 2896 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 137.94, and the node degree mode is 1. The top 5 most central
-nodes are 941639.BCO26_1960 (degree 1092), 941639.BCO26_1746 (degree 819), 941639.BCO26_1366
-(degree 748), 941639.BCO26_1210 (degree 745) and 941639.BCO26_2960 (degree 733).
+The undirected graph Bacillus coagulans 26 has 2916 nodes and 201112 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04732 and has 10 connected components, where the component with most
+nodes has 2896 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 137.94, and
+the node degree mode is 1. The top 5 most central nodes are 941639.BCO26_1960
+(degree 1092), 941639.BCO26_1746 (degree 819), 941639.BCO26_1366 (degree
+748), 941639.BCO26_1210 (degree 745) and 941639.BCO26_2960 (degree 733).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusCoagulans26(
 	
 	Datetime: 2021-02-02 22:01:08.864181
 	
-	The undirected graph Bacillus coagulans 26 has 2916 nodes and 201112 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04732 and
-	has 10 connected components, where the component with most nodes has 2896 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 137.94, and the node degree mode is 1. The top 5 most central
-	nodes are 941639.BCO26_1960 (degree 1092), 941639.BCO26_1746 (degree 819), 941639.BCO26_1366
-	(degree 748), 941639.BCO26_1210 (degree 745) and 941639.BCO26_2960 (degree 733).
+	The undirected graph Bacillus coagulans 26 has 2916 nodes and 201112 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04732 and has 10 connected components, where the component with most
+	nodes has 2896 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 137.94, and
+	the node degree mode is 1. The top 5 most central nodes are 941639.BCO26_1960
+	(degree 1092), 941639.BCO26_1746 (degree 819), 941639.BCO26_1366 (degree
+	748), 941639.BCO26_1210 (degree 745) and 941639.BCO26_2960 (degree 733).
 	
 
 

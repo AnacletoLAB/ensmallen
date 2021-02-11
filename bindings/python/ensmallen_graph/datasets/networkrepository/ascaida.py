@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:50.945348
 
-The undirected graph as-caida has 26475 nodes and 53381 weighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00015 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 4.03, and the node degree mode is 2. The top 5 most central nodes
-are 233 (degree 2628), 2562 (degree 2052), 107 (degree 1699), 330 (degree 1677) and
-1041 (degree 1631).
+The undirected graph as-caida has 26475 nodes and 53381 weighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00015 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.03, and the node degree mode
+is 2. The top 5 most central nodes are 233 (degree 2628), 2562 (degree
+2052), 107 (degree 1699), 330 (degree 1677) and 1041 (degree 1631).
 
 
 References
@@ -102,12 +102,12 @@ def AsCaida(
 	
 	Datetime: 2021-02-06 11:02:50.945348
 	
-	The undirected graph as-caida has 26475 nodes and 53381 weighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00015 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 4.03, and the node degree mode is 2. The top 5 most central nodes
-	are 233 (degree 2628), 2562 (degree 2052), 107 (degree 1699), 330 (degree 1677) and
-	1041 (degree 1631).
+	The undirected graph as-caida has 26475 nodes and 53381 weighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00015 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.03, and the node degree mode
+	is 2. The top 5 most central nodes are 233 (degree 2628), 2562 (degree
+	2052), 107 (degree 1699), 330 (degree 1677) and 1041 (degree 1631).
 	
 
 

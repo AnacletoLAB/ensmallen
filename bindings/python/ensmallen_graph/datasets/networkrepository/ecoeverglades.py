@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:59:01.525155
 
-The undirected graph eco-everglades has 69 nodes and 885 weighted edges, of which
-5 are self-loops. The graph is quite dense as it has a density of 0.37617 and is
-connected, as it has a single component. The graph median node degree is 25, the
-mean node degree is 25.58 and the node degree mode is 26. The top 5 most central
-nodes are 66 (degree 64), 69 (degree 63), 64 (degree 61), 68 (degree 55) and 10 (degree
-50).
+The undirected graph eco-everglades has 69 nodes and 885 weighted edges,
+of which 5 are self-loops. The graph is quite dense as it has a density
+of 0.37617 and is connected, as it has a single component. The graph median
+node degree is 25, the mean node degree is 25.58 and the node degree mode
+is 26. The top 5 most central nodes are 66 (degree 64), 69 (degree 63),
+64 (degree 61), 68 (degree 55) and 10 (degree 50).
 
 
 References
@@ -122,12 +122,12 @@ def EcoEverglades(
 	
 	Datetime: 2021-02-03 23:59:01.525155
 	
-	The undirected graph eco-everglades has 69 nodes and 885 weighted edges, of which
-	5 are self-loops. The graph is quite dense as it has a density of 0.37617 and is
-	connected, as it has a single component. The graph median node degree is 25, the
-	mean node degree is 25.58 and the node degree mode is 26. The top 5 most central
-	nodes are 66 (degree 64), 69 (degree 63), 64 (degree 61), 68 (degree 55) and 10 (degree
-	50).
+	The undirected graph eco-everglades has 69 nodes and 885 weighted edges,
+	of which 5 are self-loops. The graph is quite dense as it has a density
+	of 0.37617 and is connected, as it has a single component. The graph median
+	node degree is 25, the mean node degree is 25.58 and the node degree mode
+	is 26. The top 5 most central nodes are 66 (degree 64), 69 (degree 63),
+	64 (degree 61), 68 (degree 55) and 10 (degree 50).
 	
 
 

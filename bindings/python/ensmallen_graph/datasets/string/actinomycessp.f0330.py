@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:14.416483
 
-The undirected graph Actinomyces sp. F0330 has 2957 nodes and 214682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04912 and
-has 24 connected components, where the component with most nodes has 2902 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 145.20, and the node degree mode is 3. The top 5 most central
-nodes are 653386.HMPREF0975_00866 (degree 1167), 653386.HMPREF0975_01333 (degree
-1082), 653386.HMPREF0975_00487 (degree 966), 653386.HMPREF0975_00677 (degree 870)
-and 653386.HMPREF0975_00015 (degree 800).
+The undirected graph Actinomyces sp. F0330 has 2957 nodes and 214682 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04912 and has 24 connected components, where the component with most
+nodes has 2902 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 145.20, and
+the node degree mode is 3. The top 5 most central nodes are 653386.HMPREF0975_00866
+(degree 1167), 653386.HMPREF0975_01333 (degree 1082), 653386.HMPREF0975_00487
+(degree 966), 653386.HMPREF0975_00677 (degree 870) and 653386.HMPREF0975_00015
+(degree 800).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesSp.F0330(
 	
 	Datetime: 2021-02-02 21:26:14.416483
 	
-	The undirected graph Actinomyces sp. F0330 has 2957 nodes and 214682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04912 and
-	has 24 connected components, where the component with most nodes has 2902 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 145.20, and the node degree mode is 3. The top 5 most central
-	nodes are 653386.HMPREF0975_00866 (degree 1167), 653386.HMPREF0975_01333 (degree
-	1082), 653386.HMPREF0975_00487 (degree 966), 653386.HMPREF0975_00677 (degree 870)
-	and 653386.HMPREF0975_00015 (degree 800).
+	The undirected graph Actinomyces sp. F0330 has 2957 nodes and 214682 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04912 and has 24 connected components, where the component with most
+	nodes has 2902 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 145.20, and
+	the node degree mode is 3. The top 5 most central nodes are 653386.HMPREF0975_00866
+	(degree 1167), 653386.HMPREF0975_01333 (degree 1082), 653386.HMPREF0975_00487
+	(degree 966), 653386.HMPREF0975_00677 (degree 870) and 653386.HMPREF0975_00015
+	(degree 800).
 	
 
 

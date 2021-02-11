@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:26:21.127216
 
-The undirected graph road-roadNet-CA has 1957027 nodes and 2760388 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 2.82, and the node degree mode is 3. The top 5 most
-central nodes are 557860 (degree 12), 517101 (degree 10), 530677 (degree 10), 1782186
-(degree 9) and 1858704 (degree 8).
+The undirected graph road-roadNet-CA has 1957027 nodes and 2760388 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 2.82, and the
+node degree mode is 3. The top 5 most central nodes are 557860 (degree
+12), 517101 (degree 10), 530677 (degree 10), 1782186 (degree 9) and 1858704
+(degree 8).
 
 
 References
@@ -102,12 +103,13 @@ def RoadRoadnetCa(
 	
 	Datetime: 2021-02-06 12:26:21.127216
 	
-	The undirected graph road-roadNet-CA has 1957027 nodes and 2760388 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 2.82, and the node degree mode is 3. The top 5 most
-	central nodes are 557860 (degree 12), 517101 (degree 10), 530677 (degree 10), 1782186
-	(degree 9) and 1858704 (degree 8).
+	The undirected graph road-roadNet-CA has 1957027 nodes and 2760388 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 2.82, and the
+	node degree mode is 3. The top 5 most central nodes are 557860 (degree
+	12), 517101 (degree 10), 530677 (degree 10), 1782186 (degree 9) and 1858704
+	(degree 8).
 	
 
 

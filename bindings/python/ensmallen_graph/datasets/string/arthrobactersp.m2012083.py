@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:27.428980
 
-The undirected graph Arthrobacter sp. M2012083 has 4168 nodes and 426700 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04914
-and has 24 connected components, where the component with most nodes has 4113 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 204.75, and the node degree mode is 2. The top 5
-most central nodes are 1197706.AKKK01000008_gene845 (degree 1502), 1197706.AKKK01000047_gene3434
-(degree 1409), 1197706.AKKK01000004_gene191 (degree 1350), 1197706.AKKK01000030_gene2834
-(degree 1332) and 1197706.AKKK01000047_gene3441 (degree 1266).
+The undirected graph Arthrobacter sp. M2012083 has 4168 nodes and 426700
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04914 and has 24 connected components, where the component
+with most nodes has 4113 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 204.75,
+and the node degree mode is 2. The top 5 most central nodes are 1197706.AKKK01000008_gene845
+(degree 1502), 1197706.AKKK01000047_gene3434 (degree 1409), 1197706.AKKK01000004_gene191
+(degree 1350), 1197706.AKKK01000030_gene2834 (degree 1332) and 1197706.AKKK01000047_gene3441
+(degree 1266).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.M2012083(
 	
 	Datetime: 2021-02-02 23:13:27.428980
 	
-	The undirected graph Arthrobacter sp. M2012083 has 4168 nodes and 426700 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04914
-	and has 24 connected components, where the component with most nodes has 4113 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 204.75, and the node degree mode is 2. The top 5
-	most central nodes are 1197706.AKKK01000008_gene845 (degree 1502), 1197706.AKKK01000047_gene3434
-	(degree 1409), 1197706.AKKK01000004_gene191 (degree 1350), 1197706.AKKK01000030_gene2834
-	(degree 1332) and 1197706.AKKK01000047_gene3441 (degree 1266).
+	The undirected graph Arthrobacter sp. M2012083 has 4168 nodes and 426700
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04914 and has 24 connected components, where the component
+	with most nodes has 4113 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 204.75,
+	and the node degree mode is 2. The top 5 most central nodes are 1197706.AKKK01000008_gene845
+	(degree 1502), 1197706.AKKK01000047_gene3434 (degree 1409), 1197706.AKKK01000004_gene191
+	(degree 1350), 1197706.AKKK01000030_gene2834 (degree 1332) and 1197706.AKKK01000047_gene3441
+	(degree 1266).
 	
 
 

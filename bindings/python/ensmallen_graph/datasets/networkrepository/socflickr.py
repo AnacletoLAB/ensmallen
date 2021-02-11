@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:29:40.377934
 
-The undirected graph soc-flickr has 513969 nodes and 3190452 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 12.41, and the node degree mode is 1. The top 5 most central
-nodes are 9206 (degree 4369), 3844 (degree 4196), 1553 (degree 4011), 76 (degree
-4004) and 1642 (degree 3810).
+The undirected graph soc-flickr has 513969 nodes and 3190452 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 12.41, and the
+node degree mode is 1. The top 5 most central nodes are 9206 (degree 4369),
+3844 (degree 4196), 1553 (degree 4011), 76 (degree 4004) and 1642 (degree
+3810).
 
 
 References
@@ -116,12 +117,13 @@ def SocFlickr(
 	
 	Datetime: 2021-02-06 12:29:40.377934
 	
-	The undirected graph soc-flickr has 513969 nodes and 3190452 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 12.41, and the node degree mode is 1. The top 5 most central
-	nodes are 9206 (degree 4369), 3844 (degree 4196), 1553 (degree 4011), 76 (degree
-	4004) and 1642 (degree 3810).
+	The undirected graph soc-flickr has 513969 nodes and 3190452 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 12.41, and the
+	node degree mode is 1. The top 5 most central nodes are 9206 (degree 4369),
+	3844 (degree 4196), 1553 (degree 4011), 76 (degree 4004) and 1642 (degree
+	3810).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:29.952247
 
-The undirected graph Barnesiella viscericola has 2481 nodes and 149980 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04875 and
-has 9 connected components, where the component with most nodes has 2461 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 120.90, and the node degree mode is 3. The top 5 most central
-nodes are 880074.BARVI_07320 (degree 922), 880074.BARVI_07970 (degree 709), 880074.BARVI_12880
-(degree 685), 880074.BARVI_03235 (degree 664) and 880074.BARVI_05970 (degree 650).
+The undirected graph Barnesiella viscericola has 2481 nodes and 149980
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04875 and has 9 connected components, where the component
+with most nodes has 2461 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 120.90,
+and the node degree mode is 3. The top 5 most central nodes are 880074.BARVI_07320
+(degree 922), 880074.BARVI_07970 (degree 709), 880074.BARVI_12880 (degree
+685), 880074.BARVI_03235 (degree 664) and 880074.BARVI_05970 (degree 650).
 
 
 References
@@ -106,13 +107,14 @@ def BarnesiellaViscericola(
 	
 	Datetime: 2021-02-02 21:50:29.952247
 	
-	The undirected graph Barnesiella viscericola has 2481 nodes and 149980 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04875 and
-	has 9 connected components, where the component with most nodes has 2461 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 120.90, and the node degree mode is 3. The top 5 most central
-	nodes are 880074.BARVI_07320 (degree 922), 880074.BARVI_07970 (degree 709), 880074.BARVI_12880
-	(degree 685), 880074.BARVI_03235 (degree 664) and 880074.BARVI_05970 (degree 650).
+	The undirected graph Barnesiella viscericola has 2481 nodes and 149980
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04875 and has 9 connected components, where the component
+	with most nodes has 2461 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 120.90,
+	and the node degree mode is 3. The top 5 most central nodes are 880074.BARVI_07320
+	(degree 922), 880074.BARVI_07970 (degree 709), 880074.BARVI_12880 (degree
+	685), 880074.BARVI_03235 (degree 664) and 880074.BARVI_05970 (degree 650).
 	
 
 

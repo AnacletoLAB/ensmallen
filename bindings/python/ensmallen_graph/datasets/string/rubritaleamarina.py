@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:31.671755
 
-The undirected graph Rubritalea marina has 2477 nodes and 144021 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-has 15 connected components, where the component with most nodes has 2445 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 90,
-the mean node degree is 116.29, and the node degree mode is 1. The top 5 most central
-nodes are 1123070.KB899256_gene2193 (degree 921), 1123070.KB899254_gene1246 (degree
-900), 1123070.KB899250_gene447 (degree 759), 1123070.KB899250_gene446 (degree 725)
-and 1123070.KB899257_gene2329 (degree 614).
+The undirected graph Rubritalea marina has 2477 nodes and 144021 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04697 and has 15 connected components, where the component with most
+nodes has 2445 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 90, the mean node degree is 116.29, and
+the node degree mode is 1. The top 5 most central nodes are 1123070.KB899256_gene2193
+(degree 921), 1123070.KB899254_gene1246 (degree 900), 1123070.KB899250_gene447
+(degree 759), 1123070.KB899250_gene446 (degree 725) and 1123070.KB899257_gene2329
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def RubritaleaMarina(
 	
 	Datetime: 2021-02-02 22:47:31.671755
 	
-	The undirected graph Rubritalea marina has 2477 nodes and 144021 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-	has 15 connected components, where the component with most nodes has 2445 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 90,
-	the mean node degree is 116.29, and the node degree mode is 1. The top 5 most central
-	nodes are 1123070.KB899256_gene2193 (degree 921), 1123070.KB899254_gene1246 (degree
-	900), 1123070.KB899250_gene447 (degree 759), 1123070.KB899250_gene446 (degree 725)
-	and 1123070.KB899257_gene2329 (degree 614).
+	The undirected graph Rubritalea marina has 2477 nodes and 144021 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04697 and has 15 connected components, where the component with most
+	nodes has 2445 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 90, the mean node degree is 116.29, and
+	the node degree mode is 1. The top 5 most central nodes are 1123070.KB899256_gene2193
+	(degree 921), 1123070.KB899254_gene1246 (degree 900), 1123070.KB899250_gene447
+	(degree 759), 1123070.KB899250_gene446 (degree 725) and 1123070.KB899257_gene2329
+	(degree 614).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:28.783276
 
-The undirected graph Lentibacillus jeotgali has 3649 nodes and 375759 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05646 and
-has 17 connected components, where the component with most nodes has 3602 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 205.95, and the node degree mode is 2. The top 5 most central
-nodes are 558169.AGAV01000025_gene118 (degree 1230), 558169.AGAV01000015_gene324
-(degree 1026), 558169.AGAV01000014_gene1621 (degree 1012), 558169.AGAV01000008_gene726
-(degree 966) and 558169.AGAV01000005_gene2072 (degree 958).
+The undirected graph Lentibacillus jeotgali has 3649 nodes and 375759 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05646 and has 17 connected components, where the component with most
+nodes has 3602 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 189, the mean node degree is 205.95, and
+the node degree mode is 2. The top 5 most central nodes are 558169.AGAV01000025_gene118
+(degree 1230), 558169.AGAV01000015_gene324 (degree 1026), 558169.AGAV01000014_gene1621
+(degree 1012), 558169.AGAV01000008_gene726 (degree 966) and 558169.AGAV01000005_gene2072
+(degree 958).
 
 
 References
@@ -107,14 +108,15 @@ def LentibacillusJeotgali(
 	
 	Datetime: 2021-02-02 21:11:28.783276
 	
-	The undirected graph Lentibacillus jeotgali has 3649 nodes and 375759 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05646 and
-	has 17 connected components, where the component with most nodes has 3602 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 205.95, and the node degree mode is 2. The top 5 most central
-	nodes are 558169.AGAV01000025_gene118 (degree 1230), 558169.AGAV01000015_gene324
-	(degree 1026), 558169.AGAV01000014_gene1621 (degree 1012), 558169.AGAV01000008_gene726
-	(degree 966) and 558169.AGAV01000005_gene2072 (degree 958).
+	The undirected graph Lentibacillus jeotgali has 3649 nodes and 375759 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05646 and has 17 connected components, where the component with most
+	nodes has 3602 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 189, the mean node degree is 205.95, and
+	the node degree mode is 2. The top 5 most central nodes are 558169.AGAV01000025_gene118
+	(degree 1230), 558169.AGAV01000015_gene324 (degree 1026), 558169.AGAV01000014_gene1621
+	(degree 1012), 558169.AGAV01000008_gene726 (degree 966) and 558169.AGAV01000005_gene2072
+	(degree 958).
 	
 
 

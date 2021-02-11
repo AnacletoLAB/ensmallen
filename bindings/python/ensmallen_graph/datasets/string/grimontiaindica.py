@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:07.890347
 
-The undirected graph Grimontia indica has 4862 nodes and 584575 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04947 and
-has 20 connected components, where the component with most nodes has 4816 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 240.47, and the node degree mode is 3. The top 5 most central
-nodes are 1056512.D515_02202 (degree 1774), 1056512.D515_00310 (degree 1470), 1056512.D515_03872
-(degree 1444), 1056512.D515_00186 (degree 1436) and 1056512.D515_00187 (degree 1417).
+The undirected graph Grimontia indica has 4862 nodes and 584575 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04947 and has 20 connected components, where the component with most
+nodes has 4816 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 240.47, and
+the node degree mode is 3. The top 5 most central nodes are 1056512.D515_02202
+(degree 1774), 1056512.D515_00310 (degree 1470), 1056512.D515_03872 (degree
+1444), 1056512.D515_00186 (degree 1436) and 1056512.D515_00187 (degree
+1417).
 
 
 References
@@ -106,13 +108,15 @@ def GrimontiaIndica(
 	
 	Datetime: 2021-02-02 22:18:07.890347
 	
-	The undirected graph Grimontia indica has 4862 nodes and 584575 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04947 and
-	has 20 connected components, where the component with most nodes has 4816 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 240.47, and the node degree mode is 3. The top 5 most central
-	nodes are 1056512.D515_02202 (degree 1774), 1056512.D515_00310 (degree 1470), 1056512.D515_03872
-	(degree 1444), 1056512.D515_00186 (degree 1436) and 1056512.D515_00187 (degree 1417).
+	The undirected graph Grimontia indica has 4862 nodes and 584575 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04947 and has 20 connected components, where the component with most
+	nodes has 4816 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 240.47, and
+	the node degree mode is 3. The top 5 most central nodes are 1056512.D515_02202
+	(degree 1774), 1056512.D515_00310 (degree 1470), 1056512.D515_03872 (degree
+	1444), 1056512.D515_00186 (degree 1436) and 1056512.D515_00187 (degree
+	1417).
 	
 
 

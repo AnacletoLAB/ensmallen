@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:59:03.347871
 
-The undirected graph Pedobacter heparinus has 4243 nodes and 509605 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05663 and
-has 7 connected components, where the component with most nodes has 4228 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 240.21, and the node degree mode is 4. The top 5 most central
-nodes are 485917.Phep_4214 (degree 1440), 485917.Phep_3343 (degree 1106), 485917.Phep_2726
-(degree 1098), 485917.Phep_2033 (degree 1080) and 485917.Phep_1594 (degree 1039).
+The undirected graph Pedobacter heparinus has 4243 nodes and 509605 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05663 and has 7 connected components, where the component with most
+nodes has 4228 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 240.21, and
+the node degree mode is 4. The top 5 most central nodes are 485917.Phep_4214
+(degree 1440), 485917.Phep_3343 (degree 1106), 485917.Phep_2726 (degree
+1098), 485917.Phep_2033 (degree 1080) and 485917.Phep_1594 (degree 1039).
 
 
 References
@@ -106,13 +107,14 @@ def PedobacterHeparinus(
 	
 	Datetime: 2021-02-02 20:59:03.347871
 	
-	The undirected graph Pedobacter heparinus has 4243 nodes and 509605 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05663 and
-	has 7 connected components, where the component with most nodes has 4228 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 240.21, and the node degree mode is 4. The top 5 most central
-	nodes are 485917.Phep_4214 (degree 1440), 485917.Phep_3343 (degree 1106), 485917.Phep_2726
-	(degree 1098), 485917.Phep_2033 (degree 1080) and 485917.Phep_1594 (degree 1039).
+	The undirected graph Pedobacter heparinus has 4243 nodes and 509605 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05663 and has 7 connected components, where the component with most
+	nodes has 4228 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 240.21, and
+	the node degree mode is 4. The top 5 most central nodes are 485917.Phep_4214
+	(degree 1440), 485917.Phep_3343 (degree 1106), 485917.Phep_2726 (degree
+	1098), 485917.Phep_2033 (degree 1080) and 485917.Phep_1594 (degree 1039).
 	
 
 

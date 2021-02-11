@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:30.714911
 
-The undirected graph Pseudomonas alcaligenes NBRC14159 has 4506 nodes and 326383
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03216 and has 14 connected components, where the component with most nodes has
-4466 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 119, the mean node degree is 144.87, and the node degree mode is 8. The
-top 5 most central nodes are 1215092.PA6_016_00850 (degree 1539), 1215092.PA6_001_00360
-(degree 1054), 1215092.PA6_010_00510 (degree 1024), 1215092.PA6_007_01510 (degree
+The undirected graph Pseudomonas alcaligenes NBRC14159 has 4506 nodes and
+326383 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03216 and has 14 connected components, where the
+component with most nodes has 4466 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+is 144.87, and the node degree mode is 8. The top 5 most central nodes
+are 1215092.PA6_016_00850 (degree 1539), 1215092.PA6_001_00360 (degree
+1054), 1215092.PA6_010_00510 (degree 1024), 1215092.PA6_007_01510 (degree
 989) and 1215092.PA6_010_00520 (degree 986).
 
 
@@ -107,13 +108,14 @@ def PseudomonasAlcaligenesNbrc14159(
 	
 	Datetime: 2021-02-02 23:20:30.714911
 	
-	The undirected graph Pseudomonas alcaligenes NBRC14159 has 4506 nodes and 326383
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03216 and has 14 connected components, where the component with most nodes has
-	4466 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 119, the mean node degree is 144.87, and the node degree mode is 8. The
-	top 5 most central nodes are 1215092.PA6_016_00850 (degree 1539), 1215092.PA6_001_00360
-	(degree 1054), 1215092.PA6_010_00510 (degree 1024), 1215092.PA6_007_01510 (degree
+	The undirected graph Pseudomonas alcaligenes NBRC14159 has 4506 nodes and
+	326383 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03216 and has 14 connected components, where the
+	component with most nodes has 4466 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+	is 144.87, and the node degree mode is 8. The top 5 most central nodes
+	are 1215092.PA6_016_00850 (degree 1539), 1215092.PA6_001_00360 (degree
+	1054), 1215092.PA6_010_00510 (degree 1024), 1215092.PA6_007_01510 (degree
 	989) and 1215092.PA6_010_00520 (degree 986).
 	
 

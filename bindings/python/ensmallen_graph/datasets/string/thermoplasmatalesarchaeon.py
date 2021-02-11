@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:48.924402
 
-The undirected graph Thermoplasmatales archaeon has 1518 nodes and 118612 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10302 and has 8 connected components, where the component with most nodes has
-1492 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 148, the mean node degree is 156.27, and the node degree mode is 4. The
-top 5 most central nodes are 1054217.TALC_00731 (degree 599), 1054217.TALC_01240
-(degree 559), 1054217.TALC_01451 (degree 554), 1054217.TALC_01406 (degree 543) and
-1054217.TALC_00680 (degree 536).
+The undirected graph Thermoplasmatales archaeon has 1518 nodes and 118612
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10302 and has 8 connected components, where the
+component with most nodes has 1492 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+is 156.27, and the node degree mode is 4. The top 5 most central nodes
+are 1054217.TALC_00731 (degree 599), 1054217.TALC_01240 (degree 559), 1054217.TALC_01451
+(degree 554), 1054217.TALC_01406 (degree 543) and 1054217.TALC_00680 (degree
+536).
 
 
 References
@@ -107,14 +108,15 @@ def ThermoplasmatalesArchaeon(
 	
 	Datetime: 2021-02-02 22:17:48.924402
 	
-	The undirected graph Thermoplasmatales archaeon has 1518 nodes and 118612 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10302 and has 8 connected components, where the component with most nodes has
-	1492 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 148, the mean node degree is 156.27, and the node degree mode is 4. The
-	top 5 most central nodes are 1054217.TALC_00731 (degree 599), 1054217.TALC_01240
-	(degree 559), 1054217.TALC_01451 (degree 554), 1054217.TALC_01406 (degree 543) and
-	1054217.TALC_00680 (degree 536).
+	The undirected graph Thermoplasmatales archaeon has 1518 nodes and 118612
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10302 and has 8 connected components, where the
+	component with most nodes has 1492 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+	is 156.27, and the node degree mode is 4. The top 5 most central nodes
+	are 1054217.TALC_00731 (degree 599), 1054217.TALC_01240 (degree 559), 1054217.TALC_01451
+	(degree 554), 1054217.TALC_01406 (degree 543) and 1054217.TALC_00680 (degree
+	536).
 	
 
 

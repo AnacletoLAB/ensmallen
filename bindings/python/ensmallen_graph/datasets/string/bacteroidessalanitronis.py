@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:48.712411
 
-The undirected graph Bacteroides salanitronis has 3548 nodes and 218964 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03480
-and has 22 connected components, where the component with most nodes has 3479 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 123.43, and the node degree mode is 6. The top 5 most
-central nodes are 667015.Bacsa_2385 (degree 1147), 667015.Bacsa_2961 (degree 873),
-667015.Bacsa_1442 (degree 868), 667015.Bacsa_0172 (degree 834) and 667015.Bacsa_2358
-(degree 794).
+The undirected graph Bacteroides salanitronis has 3548 nodes and 218964
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03480 and has 22 connected components, where the component
+with most nodes has 3479 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 123.43,
+and the node degree mode is 6. The top 5 most central nodes are 667015.Bacsa_2385
+(degree 1147), 667015.Bacsa_2961 (degree 873), 667015.Bacsa_1442 (degree
+868), 667015.Bacsa_0172 (degree 834) and 667015.Bacsa_2358 (degree 794).
 
 
 References
@@ -107,14 +107,14 @@ def BacteroidesSalanitronis(
 	
 	Datetime: 2021-02-02 21:28:48.712411
 	
-	The undirected graph Bacteroides salanitronis has 3548 nodes and 218964 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03480
-	and has 22 connected components, where the component with most nodes has 3479 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 123.43, and the node degree mode is 6. The top 5 most
-	central nodes are 667015.Bacsa_2385 (degree 1147), 667015.Bacsa_2961 (degree 873),
-	667015.Bacsa_1442 (degree 868), 667015.Bacsa_0172 (degree 834) and 667015.Bacsa_2358
-	(degree 794).
+	The undirected graph Bacteroides salanitronis has 3548 nodes and 218964
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03480 and has 22 connected components, where the component
+	with most nodes has 3479 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 123.43,
+	and the node degree mode is 6. The top 5 most central nodes are 667015.Bacsa_2385
+	(degree 1147), 667015.Bacsa_2961 (degree 873), 667015.Bacsa_1442 (degree
+	868), 667015.Bacsa_0172 (degree 834) and 667015.Bacsa_2358 (degree 794).
 	
 
 

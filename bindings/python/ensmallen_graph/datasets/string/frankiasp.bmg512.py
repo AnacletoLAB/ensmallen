@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:25.772874
 
-The undirected graph Frankia sp. BMG512 has 5924 nodes and 677293 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03861 and
-has 32 connected components, where the component with most nodes has 5857 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 228.66, and the node degree mode is 1. The top 5 most central
-nodes are 222534.KB893670_gene3914 (degree 2177), 222534.KB893739_gene1290 (degree
-1637), 222534.KB893783_gene5223 (degree 1615), 222534.KB893748_gene2748 (degree 1598)
-and 222534.KB893712_gene4886 (degree 1562).
+The undirected graph Frankia sp. BMG512 has 5924 nodes and 677293 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03861 and has 32 connected components, where the component with most
+nodes has 5857 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 228.66, and
+the node degree mode is 1. The top 5 most central nodes are 222534.KB893670_gene3914
+(degree 2177), 222534.KB893739_gene1290 (degree 1637), 222534.KB893783_gene5223
+(degree 1615), 222534.KB893748_gene2748 (degree 1598) and 222534.KB893712_gene4886
+(degree 1562).
 
 
 References
@@ -107,14 +108,15 @@ def FrankiaSp.Bmg512(
 	
 	Datetime: 2021-02-02 20:04:25.772874
 	
-	The undirected graph Frankia sp. BMG512 has 5924 nodes and 677293 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03861 and
-	has 32 connected components, where the component with most nodes has 5857 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 228.66, and the node degree mode is 1. The top 5 most central
-	nodes are 222534.KB893670_gene3914 (degree 2177), 222534.KB893739_gene1290 (degree
-	1637), 222534.KB893783_gene5223 (degree 1615), 222534.KB893748_gene2748 (degree 1598)
-	and 222534.KB893712_gene4886 (degree 1562).
+	The undirected graph Frankia sp. BMG512 has 5924 nodes and 677293 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03861 and has 32 connected components, where the component with most
+	nodes has 5857 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 228.66, and
+	the node degree mode is 1. The top 5 most central nodes are 222534.KB893670_gene3914
+	(degree 2177), 222534.KB893739_gene1290 (degree 1637), 222534.KB893783_gene5223
+	(degree 1615), 222534.KB893748_gene2748 (degree 1598) and 222534.KB893712_gene4886
+	(degree 1562).
 	
 
 

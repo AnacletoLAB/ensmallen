@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:24.027107
 
-The undirected graph Scheffersomyces stipitis has 5051 nodes and 434537 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03407
-and has 3 connected components, where the component with most nodes has 5047 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 172.06, and the node degree mode is 1. The top 5
-most central nodes are 4924.XP_001386771.2 (degree 1102), 4924.XP_001384855.2 (degree
-1076), 4924.XP_001386952.1 (degree 980), 4924.XP_001386996.2 (degree 974) and 4924.XP_001384704.1
-(degree 962).
+The undirected graph Scheffersomyces stipitis has 5051 nodes and 434537
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03407 and has 3 connected components, where the component
+with most nodes has 5047 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 172.06,
+and the node degree mode is 1. The top 5 most central nodes are 4924.XP_001386771.2
+(degree 1102), 4924.XP_001384855.2 (degree 1076), 4924.XP_001386952.1 (degree
+980), 4924.XP_001386996.2 (degree 974) and 4924.XP_001384704.1 (degree
+962).
 
 
 References
@@ -107,14 +108,15 @@ def ScheffersomycesStipitis(
 	
 	Datetime: 2021-02-02 17:11:24.027107
 	
-	The undirected graph Scheffersomyces stipitis has 5051 nodes and 434537 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03407
-	and has 3 connected components, where the component with most nodes has 5047 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 172.06, and the node degree mode is 1. The top 5
-	most central nodes are 4924.XP_001386771.2 (degree 1102), 4924.XP_001384855.2 (degree
-	1076), 4924.XP_001386952.1 (degree 980), 4924.XP_001386996.2 (degree 974) and 4924.XP_001384704.1
-	(degree 962).
+	The undirected graph Scheffersomyces stipitis has 5051 nodes and 434537
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03407 and has 3 connected components, where the component
+	with most nodes has 5047 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 172.06,
+	and the node degree mode is 1. The top 5 most central nodes are 4924.XP_001386771.2
+	(degree 1102), 4924.XP_001384855.2 (degree 1076), 4924.XP_001386952.1 (degree
+	980), 4924.XP_001386996.2 (degree 974) and 4924.XP_001384704.1 (degree
+	962).
 	
 
 

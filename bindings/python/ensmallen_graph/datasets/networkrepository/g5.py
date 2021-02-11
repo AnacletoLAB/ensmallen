@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:05:52.904111
 
-The undirected graph G5 has 800 nodes and 19176 unweighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.06000 and is connected, as
-it has a single component. The graph median node degree is 48, the mean node degree
-is 47.94, and the node degree mode is 51. The top 5 most central nodes are 97 (degree
-70), 232 (degree 68), 402 (degree 67), 491 (degree 67) and 252 (degree 66).
+The undirected graph G5 has 800 nodes and 19176 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.06000
+and is connected, as it has a single component. The graph median node degree
+is 48, the mean node degree is 47.94, and the node degree mode is 51. The
+top 5 most central nodes are 97 (degree 70), 232 (degree 68), 402 (degree
+67), 491 (degree 67) and 252 (degree 66).
 
 
 References
@@ -101,11 +102,12 @@ def G5(
 	
 	Datetime: 2021-02-06 10:05:52.904111
 	
-	The undirected graph G5 has 800 nodes and 19176 unweighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.06000 and is connected, as
-	it has a single component. The graph median node degree is 48, the mean node degree
-	is 47.94, and the node degree mode is 51. The top 5 most central nodes are 97 (degree
-	70), 232 (degree 68), 402 (degree 67), 491 (degree 67) and 252 (degree 66).
+	The undirected graph G5 has 800 nodes and 19176 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.06000
+	and is connected, as it has a single component. The graph median node degree
+	is 48, the mean node degree is 47.94, and the node degree mode is 51. The
+	top 5 most central nodes are 97 (degree 70), 232 (degree 68), 402 (degree
+	67), 491 (degree 67) and 252 (degree 66).
 	
 
 

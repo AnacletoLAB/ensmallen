@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:55.568805
 
-The undirected graph Methylobacterium extorquens PA1 has 4755 nodes and 576943 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05104
-and has 21 connected components, where the component with most nodes has 4705 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 242.67, and the node degree mode is 2. The top 5
-most central nodes are 419610.Mext_2471 (degree 1833), 419610.Mext_4502 (degree 1707),
-419610.Mext_1671 (degree 1652), 419610.Mext_3972 (degree 1390) and 419610.Mext_3266
-(degree 1346).
+The undirected graph Methylobacterium extorquens PA1 has 4755 nodes and
+576943 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05104 and has 21 connected components, where the
+component with most nodes has 4705 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 211, the mean node degree
+is 242.67, and the node degree mode is 2. The top 5 most central nodes
+are 419610.Mext_2471 (degree 1833), 419610.Mext_4502 (degree 1707), 419610.Mext_1671
+(degree 1652), 419610.Mext_3972 (degree 1390) and 419610.Mext_3266 (degree
+1346).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumExtorquensPa1(
 	
 	Datetime: 2021-02-02 20:46:55.568805
 	
-	The undirected graph Methylobacterium extorquens PA1 has 4755 nodes and 576943 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05104
-	and has 21 connected components, where the component with most nodes has 4705 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 242.67, and the node degree mode is 2. The top 5
-	most central nodes are 419610.Mext_2471 (degree 1833), 419610.Mext_4502 (degree 1707),
-	419610.Mext_1671 (degree 1652), 419610.Mext_3972 (degree 1390) and 419610.Mext_3266
-	(degree 1346).
+	The undirected graph Methylobacterium extorquens PA1 has 4755 nodes and
+	576943 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05104 and has 21 connected components, where the
+	component with most nodes has 4705 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 211, the mean node degree
+	is 242.67, and the node degree mode is 2. The top 5 most central nodes
+	are 419610.Mext_2471 (degree 1833), 419610.Mext_4502 (degree 1707), 419610.Mext_1671
+	(degree 1652), 419610.Mext_3972 (degree 1390) and 419610.Mext_3266 (degree
+	1346).
 	
 
 

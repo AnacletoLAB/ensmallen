@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:27:01.102148
 
-The undirected graph Actinomadura madurae has 9094 nodes and 1729490 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04183 and
-has 31 connected components, where the component with most nodes has 9025 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 307,
-the mean node degree is 380.36, and the node degree mode is 3. The top 5 most central
-nodes are 1394178.AWOO02000083_gene4545 (degree 2606), 1394178.AWOO02000020_gene7407
-(degree 2601), 1394178.AWOO02000016_gene6957 (degree 2509), 1394178.AWOO02000003_gene2672
-(degree 2475) and 1394178.AWOO02000033_gene8516 (degree 2432).
+The undirected graph Actinomadura madurae has 9094 nodes and 1729490 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04183 and has 31 connected components, where the component with most
+nodes has 9025 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 307, the mean node degree is 380.36, and
+the node degree mode is 3. The top 5 most central nodes are 1394178.AWOO02000083_gene4545
+(degree 2606), 1394178.AWOO02000020_gene7407 (degree 2601), 1394178.AWOO02000016_gene6957
+(degree 2509), 1394178.AWOO02000003_gene2672 (degree 2475) and 1394178.AWOO02000033_gene8516
+(degree 2432).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomaduraMadurae(
 	
 	Datetime: 2021-02-03 22:27:01.102148
 	
-	The undirected graph Actinomadura madurae has 9094 nodes and 1729490 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04183 and
-	has 31 connected components, where the component with most nodes has 9025 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 307,
-	the mean node degree is 380.36, and the node degree mode is 3. The top 5 most central
-	nodes are 1394178.AWOO02000083_gene4545 (degree 2606), 1394178.AWOO02000020_gene7407
-	(degree 2601), 1394178.AWOO02000016_gene6957 (degree 2509), 1394178.AWOO02000003_gene2672
-	(degree 2475) and 1394178.AWOO02000033_gene8516 (degree 2432).
+	The undirected graph Actinomadura madurae has 9094 nodes and 1729490 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04183 and has 31 connected components, where the component with most
+	nodes has 9025 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 307, the mean node degree is 380.36, and
+	the node degree mode is 3. The top 5 most central nodes are 1394178.AWOO02000083_gene4545
+	(degree 2606), 1394178.AWOO02000020_gene7407 (degree 2601), 1394178.AWOO02000016_gene6957
+	(degree 2509), 1394178.AWOO02000003_gene2672 (degree 2475) and 1394178.AWOO02000033_gene8516
+	(degree 2432).
 	
 
 

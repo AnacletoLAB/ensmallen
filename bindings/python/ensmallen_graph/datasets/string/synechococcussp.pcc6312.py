@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:26.196685
 
-The undirected graph Synechococcus sp. PCC6312 has 3519 nodes and 230306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03721
-and has 19 connected components, where the component with most nodes has 3474 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 130.89, and the node degree mode is 5. The top 5
-most central nodes are 195253.Syn6312_3590 (degree 1178), 195253.Syn6312_3742 (degree
-1173), 195253.Syn6312_1445 (degree 946), 195253.Syn6312_3722 (degree 891) and 195253.Syn6312_0059
-(degree 843).
+The undirected graph Synechococcus sp. PCC6312 has 3519 nodes and 230306
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03721 and has 19 connected components, where the component
+with most nodes has 3474 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 130.89,
+and the node degree mode is 5. The top 5 most central nodes are 195253.Syn6312_3590
+(degree 1178), 195253.Syn6312_3742 (degree 1173), 195253.Syn6312_1445 (degree
+946), 195253.Syn6312_3722 (degree 891) and 195253.Syn6312_0059 (degree
+843).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Pcc6312(
 	
 	Datetime: 2021-02-02 19:58:26.196685
 	
-	The undirected graph Synechococcus sp. PCC6312 has 3519 nodes and 230306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03721
-	and has 19 connected components, where the component with most nodes has 3474 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 130.89, and the node degree mode is 5. The top 5
-	most central nodes are 195253.Syn6312_3590 (degree 1178), 195253.Syn6312_3742 (degree
-	1173), 195253.Syn6312_1445 (degree 946), 195253.Syn6312_3722 (degree 891) and 195253.Syn6312_0059
-	(degree 843).
+	The undirected graph Synechococcus sp. PCC6312 has 3519 nodes and 230306
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03721 and has 19 connected components, where the component
+	with most nodes has 3474 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 130.89,
+	and the node degree mode is 5. The top 5 most central nodes are 195253.Syn6312_3590
+	(degree 1178), 195253.Syn6312_3742 (degree 1173), 195253.Syn6312_1445 (degree
+	946), 195253.Syn6312_3722 (degree 891) and 195253.Syn6312_0059 (degree
+	843).
 	
 
 

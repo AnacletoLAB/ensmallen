@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:06.471777
 
-The undirected graph Jejuia pallidilutea has 4190 nodes and 573163 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06531 and
-has 13 connected components, where the component with most nodes has 4160 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 257,
-the mean node degree is 273.59, and the node degree mode is 2. The top 5 most central
-nodes are 504487.JCM19302_1838 (degree 1525), 504487.JCM19302_793 (degree 1255),
-504487.JCM19302_835 (degree 1233), 504487.JCM19302_3086 (degree 1185) and 504487.JCM19302_1991
-(degree 1159).
+The undirected graph Jejuia pallidilutea has 4190 nodes and 573163 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06531 and has 13 connected components, where the component with most
+nodes has 4160 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 257, the mean node degree is 273.59, and
+the node degree mode is 2. The top 5 most central nodes are 504487.JCM19302_1838
+(degree 1525), 504487.JCM19302_793 (degree 1255), 504487.JCM19302_835 (degree
+1233), 504487.JCM19302_3086 (degree 1185) and 504487.JCM19302_1991 (degree
+1159).
 
 
 References
@@ -107,14 +108,15 @@ def JejuiaPallidilutea(
 	
 	Datetime: 2021-02-02 21:02:06.471777
 	
-	The undirected graph Jejuia pallidilutea has 4190 nodes and 573163 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06531 and
-	has 13 connected components, where the component with most nodes has 4160 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 257,
-	the mean node degree is 273.59, and the node degree mode is 2. The top 5 most central
-	nodes are 504487.JCM19302_1838 (degree 1525), 504487.JCM19302_793 (degree 1255),
-	504487.JCM19302_835 (degree 1233), 504487.JCM19302_3086 (degree 1185) and 504487.JCM19302_1991
-	(degree 1159).
+	The undirected graph Jejuia pallidilutea has 4190 nodes and 573163 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06531 and has 13 connected components, where the component with most
+	nodes has 4160 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 257, the mean node degree is 273.59, and
+	the node degree mode is 2. The top 5 most central nodes are 504487.JCM19302_1838
+	(degree 1525), 504487.JCM19302_793 (degree 1255), 504487.JCM19302_835 (degree
+	1233), 504487.JCM19302_3086 (degree 1185) and 504487.JCM19302_1991 (degree
+	1159).
 	
 
 

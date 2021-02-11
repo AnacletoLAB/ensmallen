@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:21.194715
 
-The undirected graph Prevotella scopos has 2683 nodes and 207975 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-has 26 connected components, where the component with most nodes has 2621 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 155.03, and the node degree mode is 2. The top 5 most central
-nodes are 1236518.BAKP01000004_gene466 (degree 1067), 1236518.BAKP01000019_gene1387
-(degree 990), 1236518.BAKP01000021_gene1471 (degree 930), 1236518.BAKP01000005_gene567
-(degree 840) and 1236518.BAKP01000023_gene1547 (degree 820).
+The undirected graph Prevotella scopos has 2683 nodes and 207975 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05780 and has 26 connected components, where the component with most
+nodes has 2621 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 155.03, and
+the node degree mode is 2. The top 5 most central nodes are 1236518.BAKP01000004_gene466
+(degree 1067), 1236518.BAKP01000019_gene1387 (degree 990), 1236518.BAKP01000021_gene1471
+(degree 930), 1236518.BAKP01000005_gene567 (degree 840) and 1236518.BAKP01000023_gene1547
+(degree 820).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaScopos(
 	
 	Datetime: 2021-02-02 23:31:21.194715
 	
-	The undirected graph Prevotella scopos has 2683 nodes and 207975 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-	has 26 connected components, where the component with most nodes has 2621 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 155.03, and the node degree mode is 2. The top 5 most central
-	nodes are 1236518.BAKP01000004_gene466 (degree 1067), 1236518.BAKP01000019_gene1387
-	(degree 990), 1236518.BAKP01000021_gene1471 (degree 930), 1236518.BAKP01000005_gene567
-	(degree 840) and 1236518.BAKP01000023_gene1547 (degree 820).
+	The undirected graph Prevotella scopos has 2683 nodes and 207975 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05780 and has 26 connected components, where the component with most
+	nodes has 2621 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 155.03, and
+	the node degree mode is 2. The top 5 most central nodes are 1236518.BAKP01000004_gene466
+	(degree 1067), 1236518.BAKP01000019_gene1387 (degree 990), 1236518.BAKP01000021_gene1471
+	(degree 930), 1236518.BAKP01000005_gene567 (degree 840) and 1236518.BAKP01000023_gene1547
+	(degree 820).
 	
 
 

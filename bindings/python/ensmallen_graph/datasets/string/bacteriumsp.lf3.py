@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:56.680754
 
-The undirected graph Bacterium sp. LF3 has 2849 nodes and 263463 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06494 and
-has 6 connected components, where the component with most nodes has 2835 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 184.95, and the node degree mode is 4. The top 5 most central
-nodes are 1504823.CCMM01000005_gene228 (degree 1310), 1504823.CCMM01000011_gene1488
-(degree 1200), 1504823.CCMM01000010_gene1334 (degree 1171), 1504823.CCMM01000012_gene1651
-(degree 1143) and 1504823.CCMM01000009_gene1093 (degree 987).
+The undirected graph Bacterium sp. LF3 has 2849 nodes and 263463 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06494 and has 6 connected components, where the component with most
+nodes has 2835 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 184.95, and
+the node degree mode is 4. The top 5 most central nodes are 1504823.CCMM01000005_gene228
+(degree 1310), 1504823.CCMM01000011_gene1488 (degree 1200), 1504823.CCMM01000010_gene1334
+(degree 1171), 1504823.CCMM01000012_gene1651 (degree 1143) and 1504823.CCMM01000009_gene1093
+(degree 987).
 
 
 References
@@ -107,14 +108,15 @@ def BacteriumSp.Lf3(
 	
 	Datetime: 2021-02-03 23:16:56.680754
 	
-	The undirected graph Bacterium sp. LF3 has 2849 nodes and 263463 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06494 and
-	has 6 connected components, where the component with most nodes has 2835 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 184.95, and the node degree mode is 4. The top 5 most central
-	nodes are 1504823.CCMM01000005_gene228 (degree 1310), 1504823.CCMM01000011_gene1488
-	(degree 1200), 1504823.CCMM01000010_gene1334 (degree 1171), 1504823.CCMM01000012_gene1651
-	(degree 1143) and 1504823.CCMM01000009_gene1093 (degree 987).
+	The undirected graph Bacterium sp. LF3 has 2849 nodes and 263463 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06494 and has 6 connected components, where the component with most
+	nodes has 2835 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 184.95, and
+	the node degree mode is 4. The top 5 most central nodes are 1504823.CCMM01000005_gene228
+	(degree 1310), 1504823.CCMM01000011_gene1488 (degree 1200), 1504823.CCMM01000010_gene1334
+	(degree 1171), 1504823.CCMM01000012_gene1651 (degree 1143) and 1504823.CCMM01000009_gene1093
+	(degree 987).
 	
 
 

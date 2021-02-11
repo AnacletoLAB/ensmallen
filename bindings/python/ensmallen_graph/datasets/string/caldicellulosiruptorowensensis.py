@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:35.640311
 
-The undirected graph Caldicellulosiruptor owensensis has 2135 nodes and 132303 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-and has 8 connected components, where the component with most nodes has 2118 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 123.94, and the node degree mode is 4. The top 5 most
-central nodes are 632518.Calow_1184 (degree 882), 632518.Calow_1220 (degree 853),
-632518.Calow_1118 (degree 754), 632518.Calow_0201 (degree 747) and 632518.Calow_1383
-(degree 733).
+The undirected graph Caldicellulosiruptor owensensis has 2135 nodes and
+132303 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05808 and has 8 connected components, where the
+component with most nodes has 2118 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+is 123.94, and the node degree mode is 4. The top 5 most central nodes
+are 632518.Calow_1184 (degree 882), 632518.Calow_1220 (degree 853), 632518.Calow_1118
+(degree 754), 632518.Calow_0201 (degree 747) and 632518.Calow_1383 (degree
+733).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicellulosiruptorOwensensis(
 	
 	Datetime: 2021-02-02 21:21:35.640311
 	
-	The undirected graph Caldicellulosiruptor owensensis has 2135 nodes and 132303 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-	and has 8 connected components, where the component with most nodes has 2118 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 123.94, and the node degree mode is 4. The top 5 most
-	central nodes are 632518.Calow_1184 (degree 882), 632518.Calow_1220 (degree 853),
-	632518.Calow_1118 (degree 754), 632518.Calow_0201 (degree 747) and 632518.Calow_1383
-	(degree 733).
+	The undirected graph Caldicellulosiruptor owensensis has 2135 nodes and
+	132303 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05808 and has 8 connected components, where the
+	component with most nodes has 2118 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+	is 123.94, and the node degree mode is 4. The top 5 most central nodes
+	are 632518.Calow_1184 (degree 882), 632518.Calow_1220 (degree 853), 632518.Calow_1118
+	(degree 754), 632518.Calow_0201 (degree 747) and 632518.Calow_1383 (degree
+	733).
 	
 
 

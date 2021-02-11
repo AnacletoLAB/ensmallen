@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:45.580935
 
-The undirected graph Propionibacterium acidipropionici has 3303 nodes and 243459
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04464 and has 16 connected components, where the component with most nodes has
-3266 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 110, the mean node degree is 147.42, and the node degree mode is 3. The
-top 5 most central nodes are 1171373.PACID_13010 (degree 1318), 1171373.PACID_05170
-(degree 1028), 1171373.PACID_18210 (degree 963), 1171373.PACID_33100 (degree 930)
-and 1171373.PACID_10230 (degree 901).
+The undirected graph Propionibacterium acidipropionici has 3303 nodes and
+243459 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04464 and has 16 connected components, where the
+component with most nodes has 3266 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 147.42, and the node degree mode is 3. The top 5 most central nodes
+are 1171373.PACID_13010 (degree 1318), 1171373.PACID_05170 (degree 1028),
+1171373.PACID_18210 (degree 963), 1171373.PACID_33100 (degree 930) and
+1171373.PACID_10230 (degree 901).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumAcidipropionici(
 	
 	Datetime: 2021-02-02 23:06:45.580935
 	
-	The undirected graph Propionibacterium acidipropionici has 3303 nodes and 243459
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04464 and has 16 connected components, where the component with most nodes has
-	3266 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 110, the mean node degree is 147.42, and the node degree mode is 3. The
-	top 5 most central nodes are 1171373.PACID_13010 (degree 1318), 1171373.PACID_05170
-	(degree 1028), 1171373.PACID_18210 (degree 963), 1171373.PACID_33100 (degree 930)
-	and 1171373.PACID_10230 (degree 901).
+	The undirected graph Propionibacterium acidipropionici has 3303 nodes and
+	243459 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04464 and has 16 connected components, where the
+	component with most nodes has 3266 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 147.42, and the node degree mode is 3. The top 5 most central nodes
+	are 1171373.PACID_13010 (degree 1318), 1171373.PACID_05170 (degree 1028),
+	1171373.PACID_18210 (degree 963), 1171373.PACID_33100 (degree 930) and
+	1171373.PACID_10230 (degree 901).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:04.989283
 
-The undirected graph Chinchilla lanigera has 18883 nodes and 4142798 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02324 and
-is connected, as it has a single component. The graph median node degree is 307,
-the mean node degree is 438.79, and the node degree mode is 1. The top 5 most central
-nodes are 34839.XP_005375061.1 (degree 4660), 34839.XP_005375905.1 (degree 4487),
-34839.XP_005377875.1 (degree 4119), 34839.XP_005405403.1 (degree 4119) and 34839.XP_005384571.1
-(degree 4044).
+The undirected graph Chinchilla lanigera has 18883 nodes and 4142798 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02324 and is connected, as it has a single component. The graph median
+node degree is 307, the mean node degree is 438.79, and the node degree
+mode is 1. The top 5 most central nodes are 34839.XP_005375061.1 (degree
+4660), 34839.XP_005375905.1 (degree 4487), 34839.XP_005377875.1 (degree
+4119), 34839.XP_005405403.1 (degree 4119) and 34839.XP_005384571.1 (degree
+4044).
 
 
 References
@@ -106,13 +107,14 @@ def ChinchillaLanigera(
 	
 	Datetime: 2021-02-02 18:05:04.989283
 	
-	The undirected graph Chinchilla lanigera has 18883 nodes and 4142798 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02324 and
-	is connected, as it has a single component. The graph median node degree is 307,
-	the mean node degree is 438.79, and the node degree mode is 1. The top 5 most central
-	nodes are 34839.XP_005375061.1 (degree 4660), 34839.XP_005375905.1 (degree 4487),
-	34839.XP_005377875.1 (degree 4119), 34839.XP_005405403.1 (degree 4119) and 34839.XP_005384571.1
-	(degree 4044).
+	The undirected graph Chinchilla lanigera has 18883 nodes and 4142798 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02324 and is connected, as it has a single component. The graph median
+	node degree is 307, the mean node degree is 438.79, and the node degree
+	mode is 1. The top 5 most central nodes are 34839.XP_005375061.1 (degree
+	4660), 34839.XP_005375905.1 (degree 4487), 34839.XP_005377875.1 (degree
+	4119), 34839.XP_005405403.1 (degree 4119) and 34839.XP_005384571.1 (degree
+	4044).
 	
 
 

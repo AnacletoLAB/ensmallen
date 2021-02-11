@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:22.558605
 
-The undirected graph Dorea sp. 52 has 5811 nodes and 496801 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02943 and has 20
-connected components, where the component with most nodes has 5764 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 170.99, and the node degree mode is 2. The top 5 most central
-nodes are 1235798.C817_00347 (degree 1703), 1235798.C817_05505 (degree 1554), 1235798.C817_01739
-(degree 1419), 1235798.C817_05186 (degree 1407) and 1235798.C817_00043 (degree 1340).
+The undirected graph Dorea sp. 52 has 5811 nodes and 496801 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02943 and has 20 connected components, where the component with most
+nodes has 5764 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 170.99, and
+the node degree mode is 2. The top 5 most central nodes are 1235798.C817_00347
+(degree 1703), 1235798.C817_05505 (degree 1554), 1235798.C817_01739 (degree
+1419), 1235798.C817_05186 (degree 1407) and 1235798.C817_00043 (degree
+1340).
 
 
 References
@@ -106,13 +108,15 @@ def DoreaSp.52(
 	
 	Datetime: 2021-02-02 23:30:22.558605
 	
-	The undirected graph Dorea sp. 52 has 5811 nodes and 496801 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02943 and has 20
-	connected components, where the component with most nodes has 5764 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 170.99, and the node degree mode is 2. The top 5 most central
-	nodes are 1235798.C817_00347 (degree 1703), 1235798.C817_05505 (degree 1554), 1235798.C817_01739
-	(degree 1419), 1235798.C817_05186 (degree 1407) and 1235798.C817_00043 (degree 1340).
+	The undirected graph Dorea sp. 52 has 5811 nodes and 496801 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02943 and has 20 connected components, where the component with most
+	nodes has 5764 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 170.99, and
+	the node degree mode is 2. The top 5 most central nodes are 1235798.C817_00347
+	(degree 1703), 1235798.C817_05505 (degree 1554), 1235798.C817_01739 (degree
+	1419), 1235798.C817_05186 (degree 1407) and 1235798.C817_00043 (degree
+	1340).
 	
 
 

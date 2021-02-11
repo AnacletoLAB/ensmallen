@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:41.728051
 
-The undirected graph Carnobacterium pleistocenium has 2506 nodes and 204835 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06526
-and has 13 connected components, where the component with most nodes has 2477 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 163.48, and the node degree mode is 2. The top 5
-most central nodes are 1449343.JQLQ01000002_gene1864 (degree 1156), 1449343.JQLQ01000002_gene2491
-(degree 924), 1449343.JQLQ01000002_gene1615 (degree 896), 1449343.JQLQ01000002_gene1895
-(degree 860) and 1449343.JQLQ01000002_gene1429 (degree 827).
+The undirected graph Carnobacterium pleistocenium has 2506 nodes and 204835
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06526 and has 13 connected components, where the component
+with most nodes has 2477 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 163.48,
+and the node degree mode is 2. The top 5 most central nodes are 1449343.JQLQ01000002_gene1864
+(degree 1156), 1449343.JQLQ01000002_gene2491 (degree 924), 1449343.JQLQ01000002_gene1615
+(degree 896), 1449343.JQLQ01000002_gene1895 (degree 860) and 1449343.JQLQ01000002_gene1429
+(degree 827).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumPleistocenium(
 	
 	Datetime: 2021-02-03 23:04:41.728051
 	
-	The undirected graph Carnobacterium pleistocenium has 2506 nodes and 204835 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06526
-	and has 13 connected components, where the component with most nodes has 2477 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 163.48, and the node degree mode is 2. The top 5
-	most central nodes are 1449343.JQLQ01000002_gene1864 (degree 1156), 1449343.JQLQ01000002_gene2491
-	(degree 924), 1449343.JQLQ01000002_gene1615 (degree 896), 1449343.JQLQ01000002_gene1895
-	(degree 860) and 1449343.JQLQ01000002_gene1429 (degree 827).
+	The undirected graph Carnobacterium pleistocenium has 2506 nodes and 204835
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06526 and has 13 connected components, where the component
+	with most nodes has 2477 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 163.48,
+	and the node degree mode is 2. The top 5 most central nodes are 1449343.JQLQ01000002_gene1864
+	(degree 1156), 1449343.JQLQ01000002_gene2491 (degree 924), 1449343.JQLQ01000002_gene1615
+	(degree 896), 1449343.JQLQ01000002_gene1895 (degree 860) and 1449343.JQLQ01000002_gene1429
+	(degree 827).
 	
 
 

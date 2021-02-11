@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:21.861373
 
-The undirected graph SmallW has 233 nodes and 994 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.03678 and is connected, as
-it has a single component. The graph median node degree is 5, the mean node degree
-is 8.53, and the node degree mode is 2. The top 5 most central nodes are 1 (degree
-147), 215 (degree 105), 3 (degree 63), 14 (degree 52) and 240 (degree 46).
+The undirected graph SmallW has 233 nodes and 994 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.03678
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 8.53, and the node degree mode is 2. The
+top 5 most central nodes are 1 (degree 147), 215 (degree 105), 3 (degree
+63), 14 (degree 52) and 240 (degree 46).
 
 
 References
@@ -101,11 +102,12 @@ def Smallw(
 	
 	Datetime: 2021-02-06 08:00:21.861373
 	
-	The undirected graph SmallW has 233 nodes and 994 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.03678 and is connected, as
-	it has a single component. The graph median node degree is 5, the mean node degree
-	is 8.53, and the node degree mode is 2. The top 5 most central nodes are 1 (degree
-	147), 215 (degree 105), 3 (degree 63), 14 (degree 52) and 240 (degree 46).
+	The undirected graph SmallW has 233 nodes and 994 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.03678
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 8.53, and the node degree mode is 2. The
+	top 5 most central nodes are 1 (degree 147), 215 (degree 105), 3 (degree
+	63), 14 (degree 52) and 240 (degree 46).
 	
 
 

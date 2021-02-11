@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:12.348264
 
-The undirected graph Streptococcus sanguinis SK49 has 2262 nodes and 145368 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05685
-and has 2 connected components, where the component with most nodes has 2256 nodes
-and the component with the least nodes has 6 nodes. The graph median node degree
-is 99, the mean node degree is 128.53, and the node degree mode is 10. The top 5
-most central nodes are 888808.HMPREF9380_0009 (degree 880), 888808.HMPREF9380_0104
-(degree 791), 888808.HMPREF9380_1308 (degree 718), 888808.HMPREF9380_0643 (degree
-716) and 888808.HMPREF9380_1722 (degree 643).
+The undirected graph Streptococcus sanguinis SK49 has 2262 nodes and 145368
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05685 and has 2 connected components, where the component
+with most nodes has 2256 nodes and the component with the least nodes has
+6 nodes. The graph median node degree is 99, the mean node degree is 128.53,
+and the node degree mode is 10. The top 5 most central nodes are 888808.HMPREF9380_0009
+(degree 880), 888808.HMPREF9380_0104 (degree 791), 888808.HMPREF9380_1308
+(degree 718), 888808.HMPREF9380_0643 (degree 716) and 888808.HMPREF9380_1722
+(degree 643).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSanguinisSk49(
 	
 	Datetime: 2021-02-02 21:53:12.348264
 	
-	The undirected graph Streptococcus sanguinis SK49 has 2262 nodes and 145368 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05685
-	and has 2 connected components, where the component with most nodes has 2256 nodes
-	and the component with the least nodes has 6 nodes. The graph median node degree
-	is 99, the mean node degree is 128.53, and the node degree mode is 10. The top 5
-	most central nodes are 888808.HMPREF9380_0009 (degree 880), 888808.HMPREF9380_0104
-	(degree 791), 888808.HMPREF9380_1308 (degree 718), 888808.HMPREF9380_0643 (degree
-	716) and 888808.HMPREF9380_1722 (degree 643).
+	The undirected graph Streptococcus sanguinis SK49 has 2262 nodes and 145368
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05685 and has 2 connected components, where the component
+	with most nodes has 2256 nodes and the component with the least nodes has
+	6 nodes. The graph median node degree is 99, the mean node degree is 128.53,
+	and the node degree mode is 10. The top 5 most central nodes are 888808.HMPREF9380_0009
+	(degree 880), 888808.HMPREF9380_0104 (degree 791), 888808.HMPREF9380_1308
+	(degree 718), 888808.HMPREF9380_0643 (degree 716) and 888808.HMPREF9380_1722
+	(degree 643).
 	
 
 

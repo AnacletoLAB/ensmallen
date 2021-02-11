@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:49.068707
 
-The undirected graph Pseudomonas putida CSV86 has 5760 nodes and 461918 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02785
-and has 28 connected components, where the component with most nodes has 5696 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 160.39, and the node degree mode is 1. The top 5
-most central nodes are 1005395.CSV86_17802 (degree 1688), 1005395.CSV86_06546 (degree
-1192), 1005395.CSV86_23057 (degree 1178), 1005395.CSV86_00918 (degree 1176) and 1005395.CSV86_07356
-(degree 1169).
+The undirected graph Pseudomonas putida CSV86 has 5760 nodes and 461918
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02785 and has 28 connected components, where the component
+with most nodes has 5696 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 160.39,
+and the node degree mode is 1. The top 5 most central nodes are 1005395.CSV86_17802
+(degree 1688), 1005395.CSV86_06546 (degree 1192), 1005395.CSV86_23057 (degree
+1178), 1005395.CSV86_00918 (degree 1176) and 1005395.CSV86_07356 (degree
+1169).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPutidaCsv86(
 	
 	Datetime: 2021-02-02 22:07:49.068707
 	
-	The undirected graph Pseudomonas putida CSV86 has 5760 nodes and 461918 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02785
-	and has 28 connected components, where the component with most nodes has 5696 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 160.39, and the node degree mode is 1. The top 5
-	most central nodes are 1005395.CSV86_17802 (degree 1688), 1005395.CSV86_06546 (degree
-	1192), 1005395.CSV86_23057 (degree 1178), 1005395.CSV86_00918 (degree 1176) and 1005395.CSV86_07356
-	(degree 1169).
+	The undirected graph Pseudomonas putida CSV86 has 5760 nodes and 461918
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02785 and has 28 connected components, where the component
+	with most nodes has 5696 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 160.39,
+	and the node degree mode is 1. The top 5 most central nodes are 1005395.CSV86_17802
+	(degree 1688), 1005395.CSV86_06546 (degree 1192), 1005395.CSV86_23057 (degree
+	1178), 1005395.CSV86_00918 (degree 1176) and 1005395.CSV86_07356 (degree
+	1169).
 	
 
 

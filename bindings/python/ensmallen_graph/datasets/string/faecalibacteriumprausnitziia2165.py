@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:56.043069
 
-The undirected graph Faecalibacterium prausnitzii A2165 has 3436 nodes and 239659
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04061 and has 9 connected components, where the component with most nodes has
-3419 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 113, the mean node degree is 139.50, and the node degree mode is 5. The
-top 5 most central nodes are 411483.FAEPRAA2165_01005 (degree 1200), 411483.FAEPRAA2165_01634
-(degree 1028), 411483.FAEPRAA2165_00785 (degree 946), 411483.FAEPRAA2165_00243 (degree
-926) and 411483.FAEPRAA2165_00961 (degree 896).
+The undirected graph Faecalibacterium prausnitzii A2165 has 3436 nodes
+and 239659 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04061 and has 9 connected components, where the
+component with most nodes has 3419 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+is 139.50, and the node degree mode is 5. The top 5 most central nodes
+are 411483.FAEPRAA2165_01005 (degree 1200), 411483.FAEPRAA2165_01634 (degree
+1028), 411483.FAEPRAA2165_00785 (degree 946), 411483.FAEPRAA2165_00243
+(degree 926) and 411483.FAEPRAA2165_00961 (degree 896).
 
 
 References
@@ -107,14 +108,15 @@ def FaecalibacteriumPrausnitziiA2165(
 	
 	Datetime: 2021-02-02 20:45:56.043069
 	
-	The undirected graph Faecalibacterium prausnitzii A2165 has 3436 nodes and 239659
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04061 and has 9 connected components, where the component with most nodes has
-	3419 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 113, the mean node degree is 139.50, and the node degree mode is 5. The
-	top 5 most central nodes are 411483.FAEPRAA2165_01005 (degree 1200), 411483.FAEPRAA2165_01634
-	(degree 1028), 411483.FAEPRAA2165_00785 (degree 946), 411483.FAEPRAA2165_00243 (degree
-	926) and 411483.FAEPRAA2165_00961 (degree 896).
+	The undirected graph Faecalibacterium prausnitzii A2165 has 3436 nodes
+	and 239659 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04061 and has 9 connected components, where the
+	component with most nodes has 3419 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+	is 139.50, and the node degree mode is 5. The top 5 most central nodes
+	are 411483.FAEPRAA2165_01005 (degree 1200), 411483.FAEPRAA2165_01634 (degree
+	1028), 411483.FAEPRAA2165_00785 (degree 946), 411483.FAEPRAA2165_00243
+	(degree 926) and 411483.FAEPRAA2165_00961 (degree 896).
 	
 
 

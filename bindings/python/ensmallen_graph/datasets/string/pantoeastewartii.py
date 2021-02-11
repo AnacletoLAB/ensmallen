@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:28.651331
 
-The undirected graph Pantoea stewartii has 4244 nodes and 442154 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-has 11 connected components, where the component with most nodes has 4220 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 208.37, and the node degree mode is 1. The top 5 most central
-nodes are 66269.NL54_18375 (degree 1398), 66269.NL54_07160 (degree 1216), 66269.NL54_09755
-(degree 1086), 66269.NL54_16055 (degree 1019) and 66269.NL54_07165 (degree 1018).
+The undirected graph Pantoea stewartii has 4244 nodes and 442154 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04911 and has 11 connected components, where the component with most
+nodes has 4220 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 208.37, and
+the node degree mode is 1. The top 5 most central nodes are 66269.NL54_18375
+(degree 1398), 66269.NL54_07160 (degree 1216), 66269.NL54_09755 (degree
+1086), 66269.NL54_16055 (degree 1019) and 66269.NL54_07165 (degree 1018).
 
 
 References
@@ -106,13 +107,14 @@ def PantoeaStewartii(
 	
 	Datetime: 2021-02-02 18:25:28.651331
 	
-	The undirected graph Pantoea stewartii has 4244 nodes and 442154 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-	has 11 connected components, where the component with most nodes has 4220 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 208.37, and the node degree mode is 1. The top 5 most central
-	nodes are 66269.NL54_18375 (degree 1398), 66269.NL54_07160 (degree 1216), 66269.NL54_09755
-	(degree 1086), 66269.NL54_16055 (degree 1019) and 66269.NL54_07165 (degree 1018).
+	The undirected graph Pantoea stewartii has 4244 nodes and 442154 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04911 and has 11 connected components, where the component with most
+	nodes has 4220 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 208.37, and
+	the node degree mode is 1. The top 5 most central nodes are 66269.NL54_18375
+	(degree 1398), 66269.NL54_07160 (degree 1216), 66269.NL54_09755 (degree
+	1086), 66269.NL54_16055 (degree 1019) and 66269.NL54_07165 (degree 1018).
 	
 
 

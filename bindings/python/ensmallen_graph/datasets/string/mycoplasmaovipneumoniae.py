@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:08.149116
 
-The undirected graph Mycoplasma ovipneumoniae has 647 nodes and 27613 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13213
-and has 10 connected components, where the component with most nodes has 627 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 63, the mean node degree is 85.36, and the node degree mode is 5. The top 5 most
-central nodes are 1188239.MOVI_1080 (degree 326), 1188239.MOVI_2380 (degree 278),
-1188239.MOVI_0320 (degree 270), 1188239.MOVI_2490 (degree 253) and 1188239.MOVI_5600
-(degree 249).
+The undirected graph Mycoplasma ovipneumoniae has 647 nodes and 27613 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13213 and has 10 connected components, where the component
+with most nodes has 627 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 63, the mean node degree is 85.36,
+and the node degree mode is 5. The top 5 most central nodes are 1188239.MOVI_1080
+(degree 326), 1188239.MOVI_2380 (degree 278), 1188239.MOVI_0320 (degree
+270), 1188239.MOVI_2490 (degree 253) and 1188239.MOVI_5600 (degree 249).
 
 
 References
@@ -107,14 +107,14 @@ def MycoplasmaOvipneumoniae(
 	
 	Datetime: 2021-02-02 23:11:08.149116
 	
-	The undirected graph Mycoplasma ovipneumoniae has 647 nodes and 27613 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13213
-	and has 10 connected components, where the component with most nodes has 627 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 63, the mean node degree is 85.36, and the node degree mode is 5. The top 5 most
-	central nodes are 1188239.MOVI_1080 (degree 326), 1188239.MOVI_2380 (degree 278),
-	1188239.MOVI_0320 (degree 270), 1188239.MOVI_2490 (degree 253) and 1188239.MOVI_5600
-	(degree 249).
+	The undirected graph Mycoplasma ovipneumoniae has 647 nodes and 27613 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13213 and has 10 connected components, where the component
+	with most nodes has 627 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 63, the mean node degree is 85.36,
+	and the node degree mode is 5. The top 5 most central nodes are 1188239.MOVI_1080
+	(degree 326), 1188239.MOVI_2380 (degree 278), 1188239.MOVI_0320 (degree
+	270), 1188239.MOVI_2490 (degree 253) and 1188239.MOVI_5600 (degree 249).
 	
 
 

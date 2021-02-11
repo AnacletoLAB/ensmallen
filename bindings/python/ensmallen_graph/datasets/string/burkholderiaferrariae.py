@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:13.838645
 
-The undirected graph Burkholderia ferrariae has 6362 nodes and 1160139 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05734 and
-has 29 connected components, where the component with most nodes has 6293 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 297,
-the mean node degree is 364.71, and the node degree mode is 2. The top 5 most central
-nodes are 1218076.BAYB01000002_gene73 (degree 2414), 1218076.BAYB01000026_gene4432
-(degree 2335), 1218076.BAYB01000006_gene1112 (degree 2285), 1218076.BAYB01000028_gene4684
-(degree 2183) and 1218076.BAYB01000024_gene4176 (degree 2116).
+The undirected graph Burkholderia ferrariae has 6362 nodes and 1160139
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05734 and has 29 connected components, where the component
+with most nodes has 6293 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 297, the mean node degree is 364.71,
+and the node degree mode is 2. The top 5 most central nodes are 1218076.BAYB01000002_gene73
+(degree 2414), 1218076.BAYB01000026_gene4432 (degree 2335), 1218076.BAYB01000006_gene1112
+(degree 2285), 1218076.BAYB01000028_gene4684 (degree 2183) and 1218076.BAYB01000024_gene4176
+(degree 2116).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaFerrariae(
 	
 	Datetime: 2021-02-02 23:22:13.838645
 	
-	The undirected graph Burkholderia ferrariae has 6362 nodes and 1160139 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05734 and
-	has 29 connected components, where the component with most nodes has 6293 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 297,
-	the mean node degree is 364.71, and the node degree mode is 2. The top 5 most central
-	nodes are 1218076.BAYB01000002_gene73 (degree 2414), 1218076.BAYB01000026_gene4432
-	(degree 2335), 1218076.BAYB01000006_gene1112 (degree 2285), 1218076.BAYB01000028_gene4684
-	(degree 2183) and 1218076.BAYB01000024_gene4176 (degree 2116).
+	The undirected graph Burkholderia ferrariae has 6362 nodes and 1160139
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05734 and has 29 connected components, where the component
+	with most nodes has 6293 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 297, the mean node degree is 364.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1218076.BAYB01000002_gene73
+	(degree 2414), 1218076.BAYB01000026_gene4432 (degree 2335), 1218076.BAYB01000006_gene1112
+	(degree 2285), 1218076.BAYB01000028_gene4684 (degree 2183) and 1218076.BAYB01000024_gene4176
+	(degree 2116).
 	
 
 

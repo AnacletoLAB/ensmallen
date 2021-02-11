@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:04:59.419721
 
-The undirected graph Thauera terpenica has 3786 nodes and 359763 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05021 and
-has 9 connected components, where the component with most nodes has 3761 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 190.05, and the node degree mode is 5. The top 5 most central
-nodes are 1348657.M622_18745 (degree 1193), 1348657.M622_00015 (degree 1114), 1348657.M622_00715
-(degree 1109), 1348657.M622_09940 (degree 1097) and 1348657.M622_15440 (degree 1091).
+The undirected graph Thauera terpenica has 3786 nodes and 359763 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05021 and has 9 connected components, where the component with most
+nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 190.05, and
+the node degree mode is 5. The top 5 most central nodes are 1348657.M622_18745
+(degree 1193), 1348657.M622_00015 (degree 1114), 1348657.M622_00715 (degree
+1109), 1348657.M622_09940 (degree 1097) and 1348657.M622_15440 (degree
+1091).
 
 
 References
@@ -106,13 +108,15 @@ def ThaueraTerpenica(
 	
 	Datetime: 2021-02-03 22:04:59.419721
 	
-	The undirected graph Thauera terpenica has 3786 nodes and 359763 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05021 and
-	has 9 connected components, where the component with most nodes has 3761 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 190.05, and the node degree mode is 5. The top 5 most central
-	nodes are 1348657.M622_18745 (degree 1193), 1348657.M622_00015 (degree 1114), 1348657.M622_00715
-	(degree 1109), 1348657.M622_09940 (degree 1097) and 1348657.M622_15440 (degree 1091).
+	The undirected graph Thauera terpenica has 3786 nodes and 359763 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05021 and has 9 connected components, where the component with most
+	nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 190.05, and
+	the node degree mode is 5. The top 5 most central nodes are 1348657.M622_18745
+	(degree 1193), 1348657.M622_00015 (degree 1114), 1348657.M622_00715 (degree
+	1109), 1348657.M622_09940 (degree 1097) and 1348657.M622_15440 (degree
+	1091).
 	
 
 

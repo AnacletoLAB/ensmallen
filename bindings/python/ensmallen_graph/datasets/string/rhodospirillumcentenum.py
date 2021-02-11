@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:33.914883
 
-The undirected graph Rhodospirillum centenum has 3965 nodes and 372384 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04739 and
-has 9 connected components, where the component with most nodes has 3948 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 187.84, and the node degree mode is 3. The top 5 most central
-nodes are 414684.RC1_2483 (degree 1648), 414684.RC1_3972 (degree 1338), 414684.RC1_2798
-(degree 1291), 414684.RC1_3193 (degree 1155) and 414684.RC1_0155 (degree 1124).
+The undirected graph Rhodospirillum centenum has 3965 nodes and 372384
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04739 and has 9 connected components, where the component
+with most nodes has 3948 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 187.84,
+and the node degree mode is 3. The top 5 most central nodes are 414684.RC1_2483
+(degree 1648), 414684.RC1_3972 (degree 1338), 414684.RC1_2798 (degree 1291),
+414684.RC1_3193 (degree 1155) and 414684.RC1_0155 (degree 1124).
 
 
 References
@@ -106,13 +107,14 @@ def RhodospirillumCentenum(
 	
 	Datetime: 2021-02-02 20:46:33.914883
 	
-	The undirected graph Rhodospirillum centenum has 3965 nodes and 372384 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04739 and
-	has 9 connected components, where the component with most nodes has 3948 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 187.84, and the node degree mode is 3. The top 5 most central
-	nodes are 414684.RC1_2483 (degree 1648), 414684.RC1_3972 (degree 1338), 414684.RC1_2798
-	(degree 1291), 414684.RC1_3193 (degree 1155) and 414684.RC1_0155 (degree 1124).
+	The undirected graph Rhodospirillum centenum has 3965 nodes and 372384
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04739 and has 9 connected components, where the component
+	with most nodes has 3948 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 187.84,
+	and the node degree mode is 3. The top 5 most central nodes are 414684.RC1_2483
+	(degree 1648), 414684.RC1_3972 (degree 1338), 414684.RC1_2798 (degree 1291),
+	414684.RC1_3193 (degree 1155) and 414684.RC1_0155 (degree 1124).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:39.884556
 
-The undirected graph Fusobacterium sp. F0437 has 2256 nodes and 164880 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06482 and
-has 9 connected components, where the component with most nodes has 2231 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 146.17, and the node degree mode is 10. The top 5 most central
-nodes are 861452.HMPREF9093_01996 (degree 811), 861452.HMPREF9093_02226 (degree 798),
-861452.HMPREF9093_00729 (degree 766), 861452.HMPREF9093_00404 (degree 736) and 861452.HMPREF9093_01284
+The undirected graph Fusobacterium sp. F0437 has 2256 nodes and 164880
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06482 and has 9 connected components, where the component
+with most nodes has 2231 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 146.17,
+and the node degree mode is 10. The top 5 most central nodes are 861452.HMPREF9093_01996
+(degree 811), 861452.HMPREF9093_02226 (degree 798), 861452.HMPREF9093_00729
+(degree 766), 861452.HMPREF9093_00404 (degree 736) and 861452.HMPREF9093_01284
 (degree 719).
 
 
@@ -107,13 +108,14 @@ def FusobacteriumSp.F0437(
 	
 	Datetime: 2021-02-02 21:46:39.884556
 	
-	The undirected graph Fusobacterium sp. F0437 has 2256 nodes and 164880 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06482 and
-	has 9 connected components, where the component with most nodes has 2231 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 146.17, and the node degree mode is 10. The top 5 most central
-	nodes are 861452.HMPREF9093_01996 (degree 811), 861452.HMPREF9093_02226 (degree 798),
-	861452.HMPREF9093_00729 (degree 766), 861452.HMPREF9093_00404 (degree 736) and 861452.HMPREF9093_01284
+	The undirected graph Fusobacterium sp. F0437 has 2256 nodes and 164880
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06482 and has 9 connected components, where the component
+	with most nodes has 2231 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 146.17,
+	and the node degree mode is 10. The top 5 most central nodes are 861452.HMPREF9093_01996
+	(degree 811), 861452.HMPREF9093_02226 (degree 798), 861452.HMPREF9093_00729
+	(degree 766), 861452.HMPREF9093_00404 (degree 736) and 861452.HMPREF9093_01284
 	(degree 719).
 	
 

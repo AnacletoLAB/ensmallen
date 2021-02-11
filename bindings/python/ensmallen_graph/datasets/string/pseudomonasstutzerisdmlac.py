@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:13.035686
 
-The undirected graph Pseudomonas stutzeri SDMLAC has 3773 nodes and 328001 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-and has 6 connected components, where the component with most nodes has 3763 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 173.87, and the node degree mode is 4. The top 5
-most central nodes are 1109445.AGSX01000122_gene2182 (degree 1568), 1109445.AGSX01000103_gene1828
-(degree 1245), 1109445.AGSX01000117_gene3379 (degree 1177), 1109445.AGSX01000062_gene756
-(degree 1154) and 1109445.AGSX01000103_gene1829 (degree 1137).
+The undirected graph Pseudomonas stutzeri SDMLAC has 3773 nodes and 328001
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04609 and has 6 connected components, where the component
+with most nodes has 3763 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 173.87,
+and the node degree mode is 4. The top 5 most central nodes are 1109445.AGSX01000122_gene2182
+(degree 1568), 1109445.AGSX01000103_gene1828 (degree 1245), 1109445.AGSX01000117_gene3379
+(degree 1177), 1109445.AGSX01000062_gene756 (degree 1154) and 1109445.AGSX01000103_gene1829
+(degree 1137).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriSdmlac(
 	
 	Datetime: 2021-02-02 22:25:13.035686
 	
-	The undirected graph Pseudomonas stutzeri SDMLAC has 3773 nodes and 328001 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-	and has 6 connected components, where the component with most nodes has 3763 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 173.87, and the node degree mode is 4. The top 5
-	most central nodes are 1109445.AGSX01000122_gene2182 (degree 1568), 1109445.AGSX01000103_gene1828
-	(degree 1245), 1109445.AGSX01000117_gene3379 (degree 1177), 1109445.AGSX01000062_gene756
-	(degree 1154) and 1109445.AGSX01000103_gene1829 (degree 1137).
+	The undirected graph Pseudomonas stutzeri SDMLAC has 3773 nodes and 328001
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04609 and has 6 connected components, where the component
+	with most nodes has 3763 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 173.87,
+	and the node degree mode is 4. The top 5 most central nodes are 1109445.AGSX01000122_gene2182
+	(degree 1568), 1109445.AGSX01000103_gene1828 (degree 1245), 1109445.AGSX01000117_gene3379
+	(degree 1177), 1109445.AGSX01000062_gene756 (degree 1154) and 1109445.AGSX01000103_gene1829
+	(degree 1137).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:44.955284
 
-The undirected graph Streptococcus anginosus SK52 has 1895 nodes and 121473 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06769
-and has 8 connected components, where the component with most nodes has 1879 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 128.20, and the node degree mode is 5. The top 5 most
-central nodes are 1000570.HMPREF9966_1553 (degree 874), 1000570.HMPREF9966_0758 (degree
-702), 1000570.HMPREF9966_1422 (degree 683), 1000570.HMPREF9966_1339 (degree 658)
-and 1000570.HMPREF9966_0335 (degree 649).
+The undirected graph Streptococcus anginosus SK52 has 1895 nodes and 121473
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06769 and has 8 connected components, where the component
+with most nodes has 1879 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 128.20,
+and the node degree mode is 5. The top 5 most central nodes are 1000570.HMPREF9966_1553
+(degree 874), 1000570.HMPREF9966_0758 (degree 702), 1000570.HMPREF9966_1422
+(degree 683), 1000570.HMPREF9966_1339 (degree 658) and 1000570.HMPREF9966_0335
+(degree 649).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusAnginosusSk52(
 	
 	Datetime: 2021-02-02 22:06:44.955284
 	
-	The undirected graph Streptococcus anginosus SK52 has 1895 nodes and 121473 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06769
-	and has 8 connected components, where the component with most nodes has 1879 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 128.20, and the node degree mode is 5. The top 5 most
-	central nodes are 1000570.HMPREF9966_1553 (degree 874), 1000570.HMPREF9966_0758 (degree
-	702), 1000570.HMPREF9966_1422 (degree 683), 1000570.HMPREF9966_1339 (degree 658)
-	and 1000570.HMPREF9966_0335 (degree 649).
+	The undirected graph Streptococcus anginosus SK52 has 1895 nodes and 121473
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06769 and has 8 connected components, where the component
+	with most nodes has 1879 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 128.20,
+	and the node degree mode is 5. The top 5 most central nodes are 1000570.HMPREF9966_1553
+	(degree 874), 1000570.HMPREF9966_0758 (degree 702), 1000570.HMPREF9966_1422
+	(degree 683), 1000570.HMPREF9966_1339 (degree 658) and 1000570.HMPREF9966_0335
+	(degree 649).
 	
 
 

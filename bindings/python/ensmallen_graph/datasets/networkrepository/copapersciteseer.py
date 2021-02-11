@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph coPapersCiteseer.
+This file offers the methods to automatically retrieve the graph co-papers-citeseer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -8,15 +8,15 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-10 13:02:14.120090
+Datetime: 2021-02-10 13:01:47.685992
 
-The undirected graph coPapersCiteseer has 100263 nodes and 497913 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00010 and has 8795 connected components, where the component with most nodes has
-30398 nodes and the component with the least nodes has a single node. The graph median
-node degree is 7, the mean node degree is 9.93, and the node degree mode is 2. The
-top 5 most central nodes are 339577 (degree 91), 328884 (degree 85), 352076 (degree
-82), 352067 (degree 82) and 328890 (degree 82).
+The undirected graph co-papers-citeseer has 434102 nodes and 16036720 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00017 and is connected, as it has a single component. The
+graph median node degree is 39, the mean node degree is 73.88, and the
+node degree mode is 5. The top 5 most central nodes are 19132 (degree 1188),
+18930 (degree 1161), 18868 (degree 1161), 21288 (degree 1103) and 13449
+(degree 1100).
 
 
 References
@@ -31,6 +31,15 @@ Please cite the following if you use the data:
     year={2015}
 }
 
+@inproceedings{geisberger2008better,
+        title={Better Approximation of Betweenness Centrality.},
+        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+        booktitle={ALENEX},
+        pages={90--100},
+        year={2008},
+        organization={SIAM}
+}
+
 
 Usage example
 ----------------------
@@ -39,10 +48,10 @@ The usage of this graph is relatively straightforward:
 .. code:: python
 
     # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import Copapersciteseer
+    from ensmallen_graph.datasets.networkrepository import CoPapersCiteseer
 
     # Then load the graph
-    graph = Copapersciteseer()
+    graph = CoPapersCiteseer()
 
     # Finally, you can do anything with it, for instance, compute its report:
     print(graph)
@@ -72,12 +81,12 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Copapersciteseer(
+def CoPapersCiteseer(
     directed: bool = False,
     verbose: int = 2,
     cache_path: str = "graphs/networkrepository"
 ) -> EnsmallenGraph:
-    """Return new instance of the coPapersCiteseer graph.
+    """Return new instance of the co-papers-citeseer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -94,22 +103,22 @@ def Copapersciteseer(
 
     Returns
     -----------------------
-    Instace of coPapersCiteseer graph.
+    Instace of co-papers-citeseer graph.
 
 	Report
 	---------------------
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-10 13:02:14.120090
+	Datetime: 2021-02-10 13:01:47.685992
 	
-	The undirected graph coPapersCiteseer has 100263 nodes and 497913 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00010 and has 8795 connected components, where the component with most nodes has
-	30398 nodes and the component with the least nodes has a single node. The graph median
-	node degree is 7, the mean node degree is 9.93, and the node degree mode is 2. The
-	top 5 most central nodes are 339577 (degree 91), 328884 (degree 85), 352076 (degree
-	82), 352067 (degree 82) and 328890 (degree 82).
+	The undirected graph co-papers-citeseer has 434102 nodes and 16036720 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00017 and is connected, as it has a single component. The
+	graph median node degree is 39, the mean node degree is 73.88, and the
+	node degree mode is 5. The top 5 most central nodes are 19132 (degree 1188),
+	18930 (degree 1161), 18868 (degree 1161), 21288 (degree 1103) and 13449
+	(degree 1100).
 	
 
 
@@ -125,6 +134,15 @@ def Copapersciteseer(
 	    year={2015}
 	}
 	
+	@inproceedings{geisberger2008better,
+	        title={Better Approximation of Betweenness Centrality.},
+	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+	        booktitle={ALENEX},
+	        pages={90--100},
+	        year={2008},
+	        organization={SIAM}
+	}
+	
 
 
 	Usage example
@@ -134,10 +152,10 @@ def Copapersciteseer(
 	.. code:: python
 	
 	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import Copapersciteseer
+	    from ensmallen_graph.datasets.networkrepository import CoPapersCiteseer
 	
 	    # Then load the graph
-	    graph = Copapersciteseer()
+	    graph = CoPapersCiteseer()
 	
 	    # Finally, you can do anything with it, for instance, compute its report:
 	    print(graph)
@@ -165,7 +183,7 @@ def Copapersciteseer(
 
     """
     return AutomaticallyRetrievedGraph(
-        "Copapersciteseer",
+        "CoPapersCiteseer",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,

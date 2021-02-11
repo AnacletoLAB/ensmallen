@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:35.696714
 
-The undirected graph Chloroflexus aurantiacus has 3805 nodes and 385359 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05325
-and has 18 connected components, where the component with most nodes has 3769 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 202.55, and the node degree mode is 2. The top 5
-most central nodes are 324602.Caur_0894 (degree 2244), 324602.Caur_0341 (degree 1837),
-324602.Caur_1952 (degree 1695), 324602.Caur_0613 (degree 1549) and 324602.Caur_2080
-(degree 1456).
+The undirected graph Chloroflexus aurantiacus has 3805 nodes and 385359
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05325 and has 18 connected components, where the component
+with most nodes has 3769 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 202.55,
+and the node degree mode is 2. The top 5 most central nodes are 324602.Caur_0894
+(degree 2244), 324602.Caur_0341 (degree 1837), 324602.Caur_1952 (degree
+1695), 324602.Caur_0613 (degree 1549) and 324602.Caur_2080 (degree 1456).
 
 
 References
@@ -107,14 +107,14 @@ def ChloroflexusAurantiacus(
 	
 	Datetime: 2021-02-02 20:28:35.696714
 	
-	The undirected graph Chloroflexus aurantiacus has 3805 nodes and 385359 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05325
-	and has 18 connected components, where the component with most nodes has 3769 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 202.55, and the node degree mode is 2. The top 5
-	most central nodes are 324602.Caur_0894 (degree 2244), 324602.Caur_0341 (degree 1837),
-	324602.Caur_1952 (degree 1695), 324602.Caur_0613 (degree 1549) and 324602.Caur_2080
-	(degree 1456).
+	The undirected graph Chloroflexus aurantiacus has 3805 nodes and 385359
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05325 and has 18 connected components, where the component
+	with most nodes has 3769 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 202.55,
+	and the node degree mode is 2. The top 5 most central nodes are 324602.Caur_0894
+	(degree 2244), 324602.Caur_0341 (degree 1837), 324602.Caur_1952 (degree
+	1695), 324602.Caur_0613 (degree 1549) and 324602.Caur_2080 (degree 1456).
 	
 
 

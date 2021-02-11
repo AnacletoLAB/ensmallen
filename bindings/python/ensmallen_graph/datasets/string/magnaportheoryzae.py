@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:16.444210
 
-The undirected graph Magnaporthe oryzae has 7729 nodes and 568944 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01905 and
-has 19 connected components, where the component with most nodes has 7690 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 147.22, and the node degree mode is 1. The top 5 most central
-nodes are 318829.MGG_06425T0 (degree 1767), 318829.MGG_01084T0 (degree 1381), 318829.MGG_09898T0
-(degree 1265), 318829.MGG_12805T0 (degree 1215) and 318829.MGG_02351T0 (degree 1200).
+The undirected graph Magnaporthe oryzae has 7729 nodes and 568944 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01905 and has 19 connected components, where the component with most
+nodes has 7690 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 83, the mean node degree is 147.22, and
+the node degree mode is 1. The top 5 most central nodes are 318829.MGG_06425T0
+(degree 1767), 318829.MGG_01084T0 (degree 1381), 318829.MGG_09898T0 (degree
+1265), 318829.MGG_12805T0 (degree 1215) and 318829.MGG_02351T0 (degree
+1200).
 
 
 References
@@ -106,13 +108,15 @@ def MagnaportheOryzae(
 	
 	Datetime: 2021-02-02 20:27:16.444210
 	
-	The undirected graph Magnaporthe oryzae has 7729 nodes and 568944 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01905 and
-	has 19 connected components, where the component with most nodes has 7690 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 147.22, and the node degree mode is 1. The top 5 most central
-	nodes are 318829.MGG_06425T0 (degree 1767), 318829.MGG_01084T0 (degree 1381), 318829.MGG_09898T0
-	(degree 1265), 318829.MGG_12805T0 (degree 1215) and 318829.MGG_02351T0 (degree 1200).
+	The undirected graph Magnaporthe oryzae has 7729 nodes and 568944 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01905 and has 19 connected components, where the component with most
+	nodes has 7690 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 83, the mean node degree is 147.22, and
+	the node degree mode is 1. The top 5 most central nodes are 318829.MGG_06425T0
+	(degree 1767), 318829.MGG_01084T0 (degree 1381), 318829.MGG_09898T0 (degree
+	1265), 318829.MGG_12805T0 (degree 1215) and 318829.MGG_02351T0 (degree
+	1200).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:44:38.293838
 
-The undirected graph Loxodonta africana has 19711 nodes and 3962653 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02040 and
-has 2 connected components, where the component with most nodes has 19709 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 286,
-the mean node degree is 402.08, and the node degree mode is 10. The top 5 most central
-nodes are 9785.ENSLAFP00000017134 (degree 4063), 9785.ENSLAFP00000007443 (degree
-3945), 9785.ENSLAFP00000020656 (degree 3756), 9785.ENSLAFP00000005492 (degree 3748)
-and 9785.ENSLAFP00000008420 (degree 3447).
+The undirected graph Loxodonta africana has 19711 nodes and 3962653 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02040 and has 2 connected components, where the component with most
+nodes has 19709 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 286, the mean node degree is 402.08, and
+the node degree mode is 10. The top 5 most central nodes are 9785.ENSLAFP00000017134
+(degree 4063), 9785.ENSLAFP00000007443 (degree 3945), 9785.ENSLAFP00000020656
+(degree 3756), 9785.ENSLAFP00000005492 (degree 3748) and 9785.ENSLAFP00000008420
+(degree 3447).
 
 
 References
@@ -107,14 +108,15 @@ def LoxodontaAfricana(
 	
 	Datetime: 2021-02-02 17:44:38.293838
 	
-	The undirected graph Loxodonta africana has 19711 nodes and 3962653 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02040 and
-	has 2 connected components, where the component with most nodes has 19709 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 286,
-	the mean node degree is 402.08, and the node degree mode is 10. The top 5 most central
-	nodes are 9785.ENSLAFP00000017134 (degree 4063), 9785.ENSLAFP00000007443 (degree
-	3945), 9785.ENSLAFP00000020656 (degree 3756), 9785.ENSLAFP00000005492 (degree 3748)
-	and 9785.ENSLAFP00000008420 (degree 3447).
+	The undirected graph Loxodonta africana has 19711 nodes and 3962653 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02040 and has 2 connected components, where the component with most
+	nodes has 19709 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 286, the mean node degree is 402.08, and
+	the node degree mode is 10. The top 5 most central nodes are 9785.ENSLAFP00000017134
+	(degree 4063), 9785.ENSLAFP00000007443 (degree 3945), 9785.ENSLAFP00000020656
+	(degree 3756), 9785.ENSLAFP00000005492 (degree 3748) and 9785.ENSLAFP00000008420
+	(degree 3447).
 	
 
 

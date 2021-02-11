@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:25.695449
 
-The undirected graph Desulfurella acetivorans has 1821 nodes and 146506 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08841
-and has 2 connected components, where the component with most nodes has 1819 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 160.91, and the node degree mode is 5. The top 5
-most central nodes are 694431.DESACE_07085 (degree 889), 694431.DESACE_08665 (degree
-876), 694431.DESACE_01430 (degree 682), 694431.DESACE_08905 (degree 617) and 694431.DESACE_05440
-(degree 602).
+The undirected graph Desulfurella acetivorans has 1821 nodes and 146506
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08841 and has 2 connected components, where the component
+with most nodes has 1819 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 160.91,
+and the node degree mode is 5. The top 5 most central nodes are 694431.DESACE_07085
+(degree 889), 694431.DESACE_08665 (degree 876), 694431.DESACE_01430 (degree
+682), 694431.DESACE_08905 (degree 617) and 694431.DESACE_05440 (degree
+602).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfurellaAcetivorans(
 	
 	Datetime: 2021-02-02 21:32:25.695449
 	
-	The undirected graph Desulfurella acetivorans has 1821 nodes and 146506 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08841
-	and has 2 connected components, where the component with most nodes has 1819 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 160.91, and the node degree mode is 5. The top 5
-	most central nodes are 694431.DESACE_07085 (degree 889), 694431.DESACE_08665 (degree
-	876), 694431.DESACE_01430 (degree 682), 694431.DESACE_08905 (degree 617) and 694431.DESACE_05440
-	(degree 602).
+	The undirected graph Desulfurella acetivorans has 1821 nodes and 146506
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08841 and has 2 connected components, where the component
+	with most nodes has 1819 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 160.91,
+	and the node degree mode is 5. The top 5 most central nodes are 694431.DESACE_07085
+	(degree 889), 694431.DESACE_08665 (degree 876), 694431.DESACE_01430 (degree
+	682), 694431.DESACE_08905 (degree 617) and 694431.DESACE_05440 (degree
+	602).
 	
 
 

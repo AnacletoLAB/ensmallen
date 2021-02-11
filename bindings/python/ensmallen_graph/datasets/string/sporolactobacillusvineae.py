@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:06.469069
 
-The undirected graph Sporolactobacillus vineae has 2558 nodes and 233533 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07141
-and has 4 connected components, where the component with most nodes has 2552 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 182.59, and the node degree mode is 3. The top 5
-most central nodes are 1123284.KB899043_gene250 (degree 1058), 1123284.KB899050_gene1801
-(degree 978), 1123284.KB899043_gene80 (degree 851), 1123284.KB899054_gene2036 (degree
-780) and 1123284.KB899044_gene466 (degree 760).
+The undirected graph Sporolactobacillus vineae has 2558 nodes and 233533
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07141 and has 4 connected components, where the component
+with most nodes has 2552 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 182.59,
+and the node degree mode is 3. The top 5 most central nodes are 1123284.KB899043_gene250
+(degree 1058), 1123284.KB899050_gene1801 (degree 978), 1123284.KB899043_gene80
+(degree 851), 1123284.KB899054_gene2036 (degree 780) and 1123284.KB899044_gene466
+(degree 760).
 
 
 References
@@ -107,14 +108,15 @@ def SporolactobacillusVineae(
 	
 	Datetime: 2021-02-02 22:50:06.469069
 	
-	The undirected graph Sporolactobacillus vineae has 2558 nodes and 233533 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07141
-	and has 4 connected components, where the component with most nodes has 2552 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 182.59, and the node degree mode is 3. The top 5
-	most central nodes are 1123284.KB899043_gene250 (degree 1058), 1123284.KB899050_gene1801
-	(degree 978), 1123284.KB899043_gene80 (degree 851), 1123284.KB899054_gene2036 (degree
-	780) and 1123284.KB899044_gene466 (degree 760).
+	The undirected graph Sporolactobacillus vineae has 2558 nodes and 233533
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07141 and has 4 connected components, where the component
+	with most nodes has 2552 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 182.59,
+	and the node degree mode is 3. The top 5 most central nodes are 1123284.KB899043_gene250
+	(degree 1058), 1123284.KB899050_gene1801 (degree 978), 1123284.KB899043_gene80
+	(degree 851), 1123284.KB899054_gene2036 (degree 780) and 1123284.KB899044_gene466
+	(degree 760).
 	
 
 

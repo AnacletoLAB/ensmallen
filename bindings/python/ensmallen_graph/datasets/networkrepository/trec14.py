@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:58:01.011975
 
-The undirected graph Trec14 has 15905 nodes and 2869638 weighted edges, of which
-124 are self-loops. The graph is dense as it has a density of 0.02269 and is connected,
-as it has a single component. The graph median node degree is 101, the mean node
-degree is 360.84, and the node degree mode is 12. The top 5 most central nodes are
-1871 (degree 3044), 1870 (degree 2821), 2070 (degree 2803), 2021 (degree 2712) and
-1875 (degree 2530).
+The undirected graph Trec14 has 15905 nodes and 2869638 weighted edges,
+of which 124 are self-loops. The graph is dense as it has a density of
+0.02269 and is connected, as it has a single component. The graph median
+node degree is 101, the mean node degree is 360.84, and the node degree
+mode is 12. The top 5 most central nodes are 1871 (degree 3044), 1870 (degree
+2821), 2070 (degree 2803), 2021 (degree 2712) and 1875 (degree 2530).
 
 
 References
@@ -102,12 +102,12 @@ def Trec14(
 	
 	Datetime: 2021-02-06 11:58:01.011975
 	
-	The undirected graph Trec14 has 15905 nodes and 2869638 weighted edges, of which
-	124 are self-loops. The graph is dense as it has a density of 0.02269 and is connected,
-	as it has a single component. The graph median node degree is 101, the mean node
-	degree is 360.84, and the node degree mode is 12. The top 5 most central nodes are
-	1871 (degree 3044), 1870 (degree 2821), 2070 (degree 2803), 2021 (degree 2712) and
-	1875 (degree 2530).
+	The undirected graph Trec14 has 15905 nodes and 2869638 weighted edges,
+	of which 124 are self-loops. The graph is dense as it has a density of
+	0.02269 and is connected, as it has a single component. The graph median
+	node degree is 101, the mean node degree is 360.84, and the node degree
+	mode is 12. The top 5 most central nodes are 1871 (degree 3044), 1870 (degree
+	2821), 2070 (degree 2803), 2021 (degree 2712) and 1875 (degree 2530).
 	
 
 

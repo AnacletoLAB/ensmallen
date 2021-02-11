@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:59.794120
 
-The undirected graph Clostridium botulinum A2 Kyoto has 3826 nodes and 264227 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03611
-and has 15 connected components, where the component with most nodes has 3783 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 138.12, and the node degree mode is 2. The top 5
-most central nodes are 536232.CLM_3411 (degree 1345), 536232.CLM_3728 (degree 1160),
-536232.CLM_3729 (degree 1067), 536232.CLM_1345 (degree 1032) and 536232.CLM_0639
-(degree 1017).
+The undirected graph Clostridium botulinum A2 Kyoto has 3826 nodes and
+264227 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03611 and has 15 connected components, where the
+component with most nodes has 3783 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 138.12, and the node degree mode is 2. The top 5 most central nodes
+are 536232.CLM_3411 (degree 1345), 536232.CLM_3728 (degree 1160), 536232.CLM_3729
+(degree 1067), 536232.CLM_1345 (degree 1032) and 536232.CLM_0639 (degree
+1017).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumBotulinumA2Kyoto(
 	
 	Datetime: 2021-02-02 21:06:59.794120
 	
-	The undirected graph Clostridium botulinum A2 Kyoto has 3826 nodes and 264227 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03611
-	and has 15 connected components, where the component with most nodes has 3783 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 138.12, and the node degree mode is 2. The top 5
-	most central nodes are 536232.CLM_3411 (degree 1345), 536232.CLM_3728 (degree 1160),
-	536232.CLM_3729 (degree 1067), 536232.CLM_1345 (degree 1032) and 536232.CLM_0639
-	(degree 1017).
+	The undirected graph Clostridium botulinum A2 Kyoto has 3826 nodes and
+	264227 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03611 and has 15 connected components, where the
+	component with most nodes has 3783 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 138.12, and the node degree mode is 2. The top 5 most central nodes
+	are 536232.CLM_3411 (degree 1345), 536232.CLM_3728 (degree 1160), 536232.CLM_3729
+	(degree 1067), 536232.CLM_1345 (degree 1032) and 536232.CLM_0639 (degree
+	1017).
 	
 
 

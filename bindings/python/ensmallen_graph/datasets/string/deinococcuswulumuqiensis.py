@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:20:46.925089
 
-The undirected graph Deinococcus wulumuqiensis has 2977 nodes and 188762 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04261
-and has 10 connected components, where the component with most nodes has 2955 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 126.81, and the node degree mode is 2. The top 5 most
-central nodes are 1288484.APCS01000080_gene2121 (degree 1121), 1288484.APCS01000010_gene1029
-(degree 1104), 1288484.APCS01000018_gene1943 (degree 979), 1288484.APCS01000018_gene1939
-(degree 878) and 1288484.APCS01000040_gene1739 (degree 802).
+The undirected graph Deinococcus wulumuqiensis has 2977 nodes and 188762
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04261 and has 10 connected components, where the component
+with most nodes has 2955 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 126.81,
+and the node degree mode is 2. The top 5 most central nodes are 1288484.APCS01000080_gene2121
+(degree 1121), 1288484.APCS01000010_gene1029 (degree 1104), 1288484.APCS01000018_gene1943
+(degree 979), 1288484.APCS01000018_gene1939 (degree 878) and 1288484.APCS01000040_gene1739
+(degree 802).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusWulumuqiensis(
 	
 	Datetime: 2021-02-03 21:20:46.925089
 	
-	The undirected graph Deinococcus wulumuqiensis has 2977 nodes and 188762 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04261
-	and has 10 connected components, where the component with most nodes has 2955 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 126.81, and the node degree mode is 2. The top 5 most
-	central nodes are 1288484.APCS01000080_gene2121 (degree 1121), 1288484.APCS01000010_gene1029
-	(degree 1104), 1288484.APCS01000018_gene1943 (degree 979), 1288484.APCS01000018_gene1939
-	(degree 878) and 1288484.APCS01000040_gene1739 (degree 802).
+	The undirected graph Deinococcus wulumuqiensis has 2977 nodes and 188762
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04261 and has 10 connected components, where the component
+	with most nodes has 2955 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 126.81,
+	and the node degree mode is 2. The top 5 most central nodes are 1288484.APCS01000080_gene2121
+	(degree 1121), 1288484.APCS01000010_gene1029 (degree 1104), 1288484.APCS01000018_gene1943
+	(degree 979), 1288484.APCS01000018_gene1939 (degree 878) and 1288484.APCS01000040_gene1739
+	(degree 802).
 	
 
 

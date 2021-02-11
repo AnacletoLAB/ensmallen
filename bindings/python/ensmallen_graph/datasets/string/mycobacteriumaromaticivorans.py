@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:59:22.791944
 
-The undirected graph Mycobacterium aromaticivorans has 5764 nodes and 816199 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04914
-and has 39 connected components, where the component with most nodes has 5669 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 236, the mean node degree is 283.21, and the node degree mode is 2. The top 5
-most central nodes are 1440774.Y900_021180 (degree 2251), 1440774.Y900_012145 (degree
-1870), 1440774.Y900_025155 (degree 1775), 1440774.Y900_007375 (degree 1752) and 1440774.Y900_022105
-(degree 1749).
+The undirected graph Mycobacterium aromaticivorans has 5764 nodes and 816199
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04914 and has 39 connected components, where the component
+with most nodes has 5669 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 236, the mean node degree is 283.21,
+and the node degree mode is 2. The top 5 most central nodes are 1440774.Y900_021180
+(degree 2251), 1440774.Y900_012145 (degree 1870), 1440774.Y900_025155 (degree
+1775), 1440774.Y900_007375 (degree 1752) and 1440774.Y900_022105 (degree
+1749).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumAromaticivorans(
 	
 	Datetime: 2021-02-03 22:59:22.791944
 	
-	The undirected graph Mycobacterium aromaticivorans has 5764 nodes and 816199 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04914
-	and has 39 connected components, where the component with most nodes has 5669 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 236, the mean node degree is 283.21, and the node degree mode is 2. The top 5
-	most central nodes are 1440774.Y900_021180 (degree 2251), 1440774.Y900_012145 (degree
-	1870), 1440774.Y900_025155 (degree 1775), 1440774.Y900_007375 (degree 1752) and 1440774.Y900_022105
-	(degree 1749).
+	The undirected graph Mycobacterium aromaticivorans has 5764 nodes and 816199
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04914 and has 39 connected components, where the component
+	with most nodes has 5669 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 236, the mean node degree is 283.21,
+	and the node degree mode is 2. The top 5 most central nodes are 1440774.Y900_021180
+	(degree 2251), 1440774.Y900_012145 (degree 1870), 1440774.Y900_025155 (degree
+	1775), 1440774.Y900_007375 (degree 1752) and 1440774.Y900_022105 (degree
+	1749).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:24.211440
 
-The undirected graph Spirochaeta sp. JC230 has 2246 nodes and 200083 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07936 and
-has 15 connected components, where the component with most nodes has 2214 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 178.17, and the node degree mode is 1. The top 5 most central
-nodes are 1480694.DC28_04965 (degree 1013), 1480694.DC28_10625 (degree 885), 1480694.DC28_09170
-(degree 873), 1480694.DC28_00685 (degree 840) and 1480694.DC28_03115 (degree 827).
+The undirected graph Spirochaeta sp. JC230 has 2246 nodes and 200083 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07936 and has 15 connected components, where the component with most
+nodes has 2214 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 178.17, and
+the node degree mode is 1. The top 5 most central nodes are 1480694.DC28_04965
+(degree 1013), 1480694.DC28_10625 (degree 885), 1480694.DC28_09170 (degree
+873), 1480694.DC28_00685 (degree 840) and 1480694.DC28_03115 (degree 827).
 
 
 References
@@ -106,13 +107,14 @@ def SpirochaetaSp.Jc230(
 	
 	Datetime: 2021-02-03 23:13:24.211440
 	
-	The undirected graph Spirochaeta sp. JC230 has 2246 nodes and 200083 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07936 and
-	has 15 connected components, where the component with most nodes has 2214 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 178.17, and the node degree mode is 1. The top 5 most central
-	nodes are 1480694.DC28_04965 (degree 1013), 1480694.DC28_10625 (degree 885), 1480694.DC28_09170
-	(degree 873), 1480694.DC28_00685 (degree 840) and 1480694.DC28_03115 (degree 827).
+	The undirected graph Spirochaeta sp. JC230 has 2246 nodes and 200083 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07936 and has 15 connected components, where the component with most
+	nodes has 2214 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 178.17, and
+	the node degree mode is 1. The top 5 most central nodes are 1480694.DC28_04965
+	(degree 1013), 1480694.DC28_10625 (degree 885), 1480694.DC28_09170 (degree
+	873), 1480694.DC28_00685 (degree 840) and 1480694.DC28_03115 (degree 827).
 	
 
 

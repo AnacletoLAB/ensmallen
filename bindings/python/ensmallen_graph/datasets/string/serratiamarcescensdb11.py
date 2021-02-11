@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:48.767750
 
-The undirected graph Serratia marcescens Db11 has 4704 nodes and 520732 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04708
-and has 7 connected components, where the component with most nodes has 4692 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 221.40, and the node degree mode is 5. The top 5
-most central nodes are 273526.SMDB11_4099 (degree 1489), 273526.SMDB11_1856 (degree
-1280), 273526.SMDB11_3579 (degree 1215), 273526.SMDB11_3577 (degree 1175) and 273526.SMDB11_2990
-(degree 1140).
+The undirected graph Serratia marcescens Db11 has 4704 nodes and 520732
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04708 and has 7 connected components, where the component
+with most nodes has 4692 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 221.40,
+and the node degree mode is 5. The top 5 most central nodes are 273526.SMDB11_4099
+(degree 1489), 273526.SMDB11_1856 (degree 1280), 273526.SMDB11_3579 (degree
+1215), 273526.SMDB11_3577 (degree 1175) and 273526.SMDB11_2990 (degree
+1140).
 
 
 References
@@ -107,14 +108,15 @@ def SerratiaMarcescensDb11(
 	
 	Datetime: 2021-02-02 20:17:48.767750
 	
-	The undirected graph Serratia marcescens Db11 has 4704 nodes and 520732 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04708
-	and has 7 connected components, where the component with most nodes has 4692 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 221.40, and the node degree mode is 5. The top 5
-	most central nodes are 273526.SMDB11_4099 (degree 1489), 273526.SMDB11_1856 (degree
-	1280), 273526.SMDB11_3579 (degree 1215), 273526.SMDB11_3577 (degree 1175) and 273526.SMDB11_2990
-	(degree 1140).
+	The undirected graph Serratia marcescens Db11 has 4704 nodes and 520732
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04708 and has 7 connected components, where the component
+	with most nodes has 4692 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 221.40,
+	and the node degree mode is 5. The top 5 most central nodes are 273526.SMDB11_4099
+	(degree 1489), 273526.SMDB11_1856 (degree 1280), 273526.SMDB11_3579 (degree
+	1215), 273526.SMDB11_3577 (degree 1175) and 273526.SMDB11_2990 (degree
+	1140).
 	
 
 

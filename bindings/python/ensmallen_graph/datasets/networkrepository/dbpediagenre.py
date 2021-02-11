@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:34.790443
 
-The undirected graph dbpedia-genre has 258770 nodes and 463493 unweighted edges,
-of which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 3.58, and the node degree mode is 1. The top 5 most central
-nodes are 7 (degree 24824), 104 (degree 22125), 2 (degree 16721), 84 (degree 11780)
-and 66 (degree 11518).
+The undirected graph dbpedia-genre has 258770 nodes and 463493 unweighted
+edges, of which 5 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 3.58, and the node
+degree mode is 1. The top 5 most central nodes are 7 (degree 24824), 104
+(degree 22125), 2 (degree 16721), 84 (degree 11780) and 66 (degree 11518).
 
 
 References
@@ -102,12 +102,12 @@ def DbpediaGenre(
 	
 	Datetime: 2021-02-06 11:08:34.790443
 	
-	The undirected graph dbpedia-genre has 258770 nodes and 463493 unweighted edges,
-	of which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 3.58, and the node degree mode is 1. The top 5 most central
-	nodes are 7 (degree 24824), 104 (degree 22125), 2 (degree 16721), 84 (degree 11780)
-	and 66 (degree 11518).
+	The undirected graph dbpedia-genre has 258770 nodes and 463493 unweighted
+	edges, of which 5 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 3.58, and the node
+	degree mode is 1. The top 5 most central nodes are 7 (degree 24824), 104
+	(degree 22125), 2 (degree 16721), 84 (degree 11780) and 66 (degree 11518).
 	
 
 

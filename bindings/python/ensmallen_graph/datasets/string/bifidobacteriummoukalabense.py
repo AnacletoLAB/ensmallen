@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:52.513329
 
-The undirected graph Bifidobacterium moukalabense has 2037 nodes and 136985 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06606
-and has 14 connected components, where the component with most nodes has 2002 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 134.50, and the node degree mode is 2. The top 5
-most central nodes are 1435051.BMOU_2112 (degree 1086), 1435051.BMOU_1642 (degree
-905), 1435051.BMOU_0894 (degree 829), 1435051.BMOU_1879 (degree 770) and 1435051.BMOU_0015
-(degree 718).
+The undirected graph Bifidobacterium moukalabense has 2037 nodes and 136985
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06606 and has 14 connected components, where the component
+with most nodes has 2002 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 134.50,
+and the node degree mode is 2. The top 5 most central nodes are 1435051.BMOU_2112
+(degree 1086), 1435051.BMOU_1642 (degree 905), 1435051.BMOU_0894 (degree
+829), 1435051.BMOU_1879 (degree 770) and 1435051.BMOU_0015 (degree 718).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumMoukalabense(
 	
 	Datetime: 2021-02-03 22:54:52.513329
 	
-	The undirected graph Bifidobacterium moukalabense has 2037 nodes and 136985 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06606
-	and has 14 connected components, where the component with most nodes has 2002 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 134.50, and the node degree mode is 2. The top 5
-	most central nodes are 1435051.BMOU_2112 (degree 1086), 1435051.BMOU_1642 (degree
-	905), 1435051.BMOU_0894 (degree 829), 1435051.BMOU_1879 (degree 770) and 1435051.BMOU_0015
-	(degree 718).
+	The undirected graph Bifidobacterium moukalabense has 2037 nodes and 136985
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06606 and has 14 connected components, where the component
+	with most nodes has 2002 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 134.50,
+	and the node degree mode is 2. The top 5 most central nodes are 1435051.BMOU_2112
+	(degree 1086), 1435051.BMOU_1642 (degree 905), 1435051.BMOU_0894 (degree
+	829), 1435051.BMOU_1879 (degree 770) and 1435051.BMOU_0015 (degree 718).
 	
 
 

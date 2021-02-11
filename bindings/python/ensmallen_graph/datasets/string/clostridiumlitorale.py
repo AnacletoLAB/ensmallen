@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:29.778356
 
-The undirected graph Clostridium litorale has 3067 nodes and 314576 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06691 and
-has 10 connected components, where the component with most nodes has 3047 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 205.14, and the node degree mode is 4. The top 5 most central
-nodes are 1121324.CLIT_11c00670 (degree 1380), 1121324.CLIT_4c00900 (degree 1285),
-1121324.CLIT_20c00330 (degree 1190), 1121324.CLIT_4c02090 (degree 1122) and 1121324.CLIT_11c00870
+The undirected graph Clostridium litorale has 3067 nodes and 314576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06691 and has 10 connected components, where the component with most
+nodes has 3047 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 205.14, and
+the node degree mode is 4. The top 5 most central nodes are 1121324.CLIT_11c00670
+(degree 1380), 1121324.CLIT_4c00900 (degree 1285), 1121324.CLIT_20c00330
+(degree 1190), 1121324.CLIT_4c02090 (degree 1122) and 1121324.CLIT_11c00870
 (degree 1002).
 
 
@@ -107,13 +108,14 @@ def ClostridiumLitorale(
 	
 	Datetime: 2021-02-02 22:34:29.778356
 	
-	The undirected graph Clostridium litorale has 3067 nodes and 314576 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06691 and
-	has 10 connected components, where the component with most nodes has 3047 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 205.14, and the node degree mode is 4. The top 5 most central
-	nodes are 1121324.CLIT_11c00670 (degree 1380), 1121324.CLIT_4c00900 (degree 1285),
-	1121324.CLIT_20c00330 (degree 1190), 1121324.CLIT_4c02090 (degree 1122) and 1121324.CLIT_11c00870
+	The undirected graph Clostridium litorale has 3067 nodes and 314576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06691 and has 10 connected components, where the component with most
+	nodes has 3047 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 205.14, and
+	the node degree mode is 4. The top 5 most central nodes are 1121324.CLIT_11c00670
+	(degree 1380), 1121324.CLIT_4c00900 (degree 1285), 1121324.CLIT_20c00330
+	(degree 1190), 1121324.CLIT_4c02090 (degree 1122) and 1121324.CLIT_11c00870
 	(degree 1002).
 	
 

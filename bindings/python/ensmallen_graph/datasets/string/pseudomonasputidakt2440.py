@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:25.064443
 
-The undirected graph Pseudomonas putida KT2440 has 5295 nodes and 747311 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05332
-and has 14 connected components, where the component with most nodes has 5264 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 254, the mean node degree is 282.27, and the node degree mode is 2. The top 5
-most central nodes are 160488.PP_0806 (degree 1818), 160488.PP_0123 (degree 1582),
-160488.PP_4737 (degree 1459), 160488.PP_5076 (degree 1416) and 160488.PP_1032 (degree
-1407).
+The undirected graph Pseudomonas putida KT2440 has 5295 nodes and 747311
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05332 and has 14 connected components, where the component
+with most nodes has 5264 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 254, the mean node degree is 282.27,
+and the node degree mode is 2. The top 5 most central nodes are 160488.PP_0806
+(degree 1818), 160488.PP_0123 (degree 1582), 160488.PP_4737 (degree 1459),
+160488.PP_5076 (degree 1416) and 160488.PP_1032 (degree 1407).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasPutidaKt2440(
 	
 	Datetime: 2021-02-02 19:53:25.064443
 	
-	The undirected graph Pseudomonas putida KT2440 has 5295 nodes and 747311 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05332
-	and has 14 connected components, where the component with most nodes has 5264 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 254, the mean node degree is 282.27, and the node degree mode is 2. The top 5
-	most central nodes are 160488.PP_0806 (degree 1818), 160488.PP_0123 (degree 1582),
-	160488.PP_4737 (degree 1459), 160488.PP_5076 (degree 1416) and 160488.PP_1032 (degree
-	1407).
+	The undirected graph Pseudomonas putida KT2440 has 5295 nodes and 747311
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05332 and has 14 connected components, where the component
+	with most nodes has 5264 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 254, the mean node degree is 282.27,
+	and the node degree mode is 2. The top 5 most central nodes are 160488.PP_0806
+	(degree 1818), 160488.PP_0123 (degree 1582), 160488.PP_4737 (degree 1459),
+	160488.PP_5076 (degree 1416) and 160488.PP_1032 (degree 1407).
 	
 
 

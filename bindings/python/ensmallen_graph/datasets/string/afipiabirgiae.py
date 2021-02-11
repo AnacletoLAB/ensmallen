@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:35.681322
 
-The undirected graph Afipia birgiae has 4802 nodes and 504104 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04373 and
-has 29 connected components, where the component with most nodes has 4733 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 209.96, and the node degree mode is 2. The top 5 most central
-nodes are 1197906.CAJQ02000015_gene282 (degree 2011), 1197906.CAJQ02000043_gene1976
-(degree 1677), 1197906.CAJQ02000026_gene3703 (degree 1677), 1197906.CAJQ02000003_gene3192
-(degree 1388) and 1197906.CAJQ02000016_gene138 (degree 1377).
+The undirected graph Afipia birgiae has 4802 nodes and 504104 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04373 and has 29 connected components, where the component with most
+nodes has 4733 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 209.96, and
+the node degree mode is 2. The top 5 most central nodes are 1197906.CAJQ02000015_gene282
+(degree 2011), 1197906.CAJQ02000043_gene1976 (degree 1677), 1197906.CAJQ02000026_gene3703
+(degree 1677), 1197906.CAJQ02000003_gene3192 (degree 1388) and 1197906.CAJQ02000016_gene138
+(degree 1377).
 
 
 References
@@ -107,14 +108,15 @@ def AfipiaBirgiae(
 	
 	Datetime: 2021-02-02 23:13:35.681322
 	
-	The undirected graph Afipia birgiae has 4802 nodes and 504104 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04373 and
-	has 29 connected components, where the component with most nodes has 4733 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 209.96, and the node degree mode is 2. The top 5 most central
-	nodes are 1197906.CAJQ02000015_gene282 (degree 2011), 1197906.CAJQ02000043_gene1976
-	(degree 1677), 1197906.CAJQ02000026_gene3703 (degree 1677), 1197906.CAJQ02000003_gene3192
-	(degree 1388) and 1197906.CAJQ02000016_gene138 (degree 1377).
+	The undirected graph Afipia birgiae has 4802 nodes and 504104 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04373 and has 29 connected components, where the component with most
+	nodes has 4733 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 209.96, and
+	the node degree mode is 2. The top 5 most central nodes are 1197906.CAJQ02000015_gene282
+	(degree 2011), 1197906.CAJQ02000043_gene1976 (degree 1677), 1197906.CAJQ02000026_gene3703
+	(degree 1677), 1197906.CAJQ02000003_gene3192 (degree 1388) and 1197906.CAJQ02000016_gene138
+	(degree 1377).
 	
 
 

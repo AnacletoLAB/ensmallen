@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:02.850852
 
-The undirected graph Gammaproteobacteria bacterium NOR53 has 3634 nodes and 310267
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04700 and has 21 connected components, where the component with most nodes has
-3582 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 141, the mean node degree is 170.76, and the node degree mode is 2. The
-top 5 most central nodes are 566466.NOR53_3282 (degree 1241), 566466.NOR53_981 (degree
-1116), 566466.NOR53_3272 (degree 1043), 566466.NOR53_2818 (degree 1021) and 566466.NOR53_1433
-(degree 993).
+The undirected graph Gammaproteobacteria bacterium NOR53 has 3634 nodes
+and 310267 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04700 and has 21 connected components, where the
+component with most nodes has 3582 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+is 170.76, and the node degree mode is 2. The top 5 most central nodes
+are 566466.NOR53_3282 (degree 1241), 566466.NOR53_981 (degree 1116), 566466.NOR53_3272
+(degree 1043), 566466.NOR53_2818 (degree 1021) and 566466.NOR53_1433 (degree
+993).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumNor53(
 	
 	Datetime: 2021-02-02 21:13:02.850852
 	
-	The undirected graph Gammaproteobacteria bacterium NOR53 has 3634 nodes and 310267
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04700 and has 21 connected components, where the component with most nodes has
-	3582 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 141, the mean node degree is 170.76, and the node degree mode is 2. The
-	top 5 most central nodes are 566466.NOR53_3282 (degree 1241), 566466.NOR53_981 (degree
-	1116), 566466.NOR53_3272 (degree 1043), 566466.NOR53_2818 (degree 1021) and 566466.NOR53_1433
-	(degree 993).
+	The undirected graph Gammaproteobacteria bacterium NOR53 has 3634 nodes
+	and 310267 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04700 and has 21 connected components, where the
+	component with most nodes has 3582 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+	is 170.76, and the node degree mode is 2. The top 5 most central nodes
+	are 566466.NOR53_3282 (degree 1241), 566466.NOR53_981 (degree 1116), 566466.NOR53_3272
+	(degree 1043), 566466.NOR53_2818 (degree 1021) and 566466.NOR53_1433 (degree
+	993).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:05.970612
 
-The undirected graph Lactobacillus brevis ATCC367 has 2176 nodes and 110156 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04655
-and has 9 connected components, where the component with most nodes has 2158 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 72, the mean node degree is 101.25, and the node degree mode is 3. The top 5 most
-central nodes are 387344.LVIS_1042 (degree 829), 387344.LVIS_0455 (degree 619), 387344.LVIS_1329
-(degree 601), 387344.LVIS_1088 (degree 576) and 387344.LVIS_1653 (degree 538).
+The undirected graph Lactobacillus brevis ATCC367 has 2176 nodes and 110156
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04655 and has 9 connected components, where the component
+with most nodes has 2158 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 72, the mean node degree is 101.25,
+and the node degree mode is 3. The top 5 most central nodes are 387344.LVIS_1042
+(degree 829), 387344.LVIS_0455 (degree 619), 387344.LVIS_1329 (degree 601),
+387344.LVIS_1088 (degree 576) and 387344.LVIS_1653 (degree 538).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusBrevisAtcc367(
 	
 	Datetime: 2021-02-02 20:38:05.970612
 	
-	The undirected graph Lactobacillus brevis ATCC367 has 2176 nodes and 110156 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04655
-	and has 9 connected components, where the component with most nodes has 2158 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 72, the mean node degree is 101.25, and the node degree mode is 3. The top 5 most
-	central nodes are 387344.LVIS_1042 (degree 829), 387344.LVIS_0455 (degree 619), 387344.LVIS_1329
-	(degree 601), 387344.LVIS_1088 (degree 576) and 387344.LVIS_1653 (degree 538).
+	The undirected graph Lactobacillus brevis ATCC367 has 2176 nodes and 110156
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04655 and has 9 connected components, where the component
+	with most nodes has 2158 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 72, the mean node degree is 101.25,
+	and the node degree mode is 3. The top 5 most central nodes are 387344.LVIS_1042
+	(degree 829), 387344.LVIS_0455 (degree 619), 387344.LVIS_1329 (degree 601),
+	387344.LVIS_1088 (degree 576) and 387344.LVIS_1653 (degree 538).
 	
 
 

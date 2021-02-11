@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:45:31.539845
 
-The undirected graph Acinetobacter bereziniae has 4494 nodes and 564150 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05588
-and has 40 connected components, where the component with most nodes has 4382 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 251.07, and the node degree mode is 3. The top 5
-most central nodes are 106648.BBLJ01000038_gene4129 (degree 1423), 106648.BBLJ01000066_gene4289
-(degree 1406), 106648.BBLJ01000004_gene1800 (degree 1380), 106648.BBLJ01000022_gene3323
-(degree 1290) and 106648.BBLJ01000021_gene3120 (degree 1228).
+The undirected graph Acinetobacter bereziniae has 4494 nodes and 564150
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05588 and has 40 connected components, where the component
+with most nodes has 4382 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 251.07,
+and the node degree mode is 3. The top 5 most central nodes are 106648.BBLJ01000038_gene4129
+(degree 1423), 106648.BBLJ01000066_gene4289 (degree 1406), 106648.BBLJ01000004_gene1800
+(degree 1380), 106648.BBLJ01000022_gene3323 (degree 1290) and 106648.BBLJ01000021_gene3120
+(degree 1228).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterBereziniae(
 	
 	Datetime: 2021-02-02 19:45:31.539845
 	
-	The undirected graph Acinetobacter bereziniae has 4494 nodes and 564150 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05588
-	and has 40 connected components, where the component with most nodes has 4382 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 251.07, and the node degree mode is 3. The top 5
-	most central nodes are 106648.BBLJ01000038_gene4129 (degree 1423), 106648.BBLJ01000066_gene4289
-	(degree 1406), 106648.BBLJ01000004_gene1800 (degree 1380), 106648.BBLJ01000022_gene3323
-	(degree 1290) and 106648.BBLJ01000021_gene3120 (degree 1228).
+	The undirected graph Acinetobacter bereziniae has 4494 nodes and 564150
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05588 and has 40 connected components, where the component
+	with most nodes has 4382 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 251.07,
+	and the node degree mode is 3. The top 5 most central nodes are 106648.BBLJ01000038_gene4129
+	(degree 1423), 106648.BBLJ01000066_gene4289 (degree 1406), 106648.BBLJ01000004_gene1800
+	(degree 1380), 106648.BBLJ01000022_gene3323 (degree 1290) and 106648.BBLJ01000021_gene3120
+	(degree 1228).
 	
 
 

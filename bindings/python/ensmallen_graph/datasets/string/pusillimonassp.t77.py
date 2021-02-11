@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:45.172228
 
-The undirected graph Pusillimonas sp. T77 has 3731 nodes and 379962 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05461 and
-has 7 connected components, where the component with most nodes has 3717 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 203.68, and the node degree mode is 4. The top 5 most central
-nodes are 1007105.PT7_3348 (degree 1556), 1007105.PT7_0455 (degree 1394), 1007105.PT7_1874
-(degree 1069), 1007105.PT7_1931 (degree 1067) and 1007105.PT7_0847 (degree 1063).
+The undirected graph Pusillimonas sp. T77 has 3731 nodes and 379962 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05461 and has 7 connected components, where the component with most
+nodes has 3717 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 203.68, and
+the node degree mode is 4. The top 5 most central nodes are 1007105.PT7_3348
+(degree 1556), 1007105.PT7_0455 (degree 1394), 1007105.PT7_1874 (degree
+1069), 1007105.PT7_1931 (degree 1067) and 1007105.PT7_0847 (degree 1063).
 
 
 References
@@ -106,13 +107,14 @@ def PusillimonasSp.T77(
 	
 	Datetime: 2021-02-02 22:08:45.172228
 	
-	The undirected graph Pusillimonas sp. T77 has 3731 nodes and 379962 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05461 and
-	has 7 connected components, where the component with most nodes has 3717 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 203.68, and the node degree mode is 4. The top 5 most central
-	nodes are 1007105.PT7_3348 (degree 1556), 1007105.PT7_0455 (degree 1394), 1007105.PT7_1874
-	(degree 1069), 1007105.PT7_1931 (degree 1067) and 1007105.PT7_0847 (degree 1063).
+	The undirected graph Pusillimonas sp. T77 has 3731 nodes and 379962 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05461 and has 7 connected components, where the component with most
+	nodes has 3717 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 203.68, and
+	the node degree mode is 4. The top 5 most central nodes are 1007105.PT7_3348
+	(degree 1556), 1007105.PT7_0455 (degree 1394), 1007105.PT7_1874 (degree
+	1069), 1007105.PT7_1931 (degree 1067) and 1007105.PT7_0847 (degree 1063).
 	
 
 

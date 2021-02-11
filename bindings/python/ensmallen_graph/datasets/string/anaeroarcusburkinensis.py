@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:25.999648
 
-The undirected graph Anaeroarcus burkinensis has 3007 nodes and 389646 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08621 and
-has 9 connected components, where the component with most nodes has 2990 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 259.16, and the node degree mode is 1. The top 5 most central
-nodes are 1120985.AUMI01000003_gene686 (degree 1324), 1120985.AUMI01000017_gene2562
-(degree 1281), 1120985.AUMI01000020_gene1266 (degree 1198), 1120985.AUMI01000011_gene442
-(degree 1126) and 1120985.AUMI01000020_gene1282 (degree 1075).
+The undirected graph Anaeroarcus burkinensis has 3007 nodes and 389646
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08621 and has 9 connected components, where the component
+with most nodes has 2990 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 259.16,
+and the node degree mode is 1. The top 5 most central nodes are 1120985.AUMI01000003_gene686
+(degree 1324), 1120985.AUMI01000017_gene2562 (degree 1281), 1120985.AUMI01000020_gene1266
+(degree 1198), 1120985.AUMI01000011_gene442 (degree 1126) and 1120985.AUMI01000020_gene1282
+(degree 1075).
 
 
 References
@@ -107,14 +108,15 @@ def AnaeroarcusBurkinensis(
 	
 	Datetime: 2021-02-02 22:31:25.999648
 	
-	The undirected graph Anaeroarcus burkinensis has 3007 nodes and 389646 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08621 and
-	has 9 connected components, where the component with most nodes has 2990 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 259.16, and the node degree mode is 1. The top 5 most central
-	nodes are 1120985.AUMI01000003_gene686 (degree 1324), 1120985.AUMI01000017_gene2562
-	(degree 1281), 1120985.AUMI01000020_gene1266 (degree 1198), 1120985.AUMI01000011_gene442
-	(degree 1126) and 1120985.AUMI01000020_gene1282 (degree 1075).
+	The undirected graph Anaeroarcus burkinensis has 3007 nodes and 389646
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08621 and has 9 connected components, where the component
+	with most nodes has 2990 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 259.16,
+	and the node degree mode is 1. The top 5 most central nodes are 1120985.AUMI01000003_gene686
+	(degree 1324), 1120985.AUMI01000017_gene2562 (degree 1281), 1120985.AUMI01000020_gene1266
+	(degree 1198), 1120985.AUMI01000011_gene442 (degree 1126) and 1120985.AUMI01000020_gene1282
+	(degree 1075).
 	
 
 

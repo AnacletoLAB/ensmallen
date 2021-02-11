@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:51.876738
 
-The undirected graph Clostridium sp. 01 has 3832 nodes and 353152 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04811 and
-has 15 connected components, where the component with most nodes has 3803 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 184.32, and the node degree mode is 5. The top 5 most central
-nodes are 1301100.HG529424_gene1991 (degree 1446), 1301100.HG529304_gene3091 (degree
-1168), 1301100.HG529326_gene4541 (degree 1162), 1301100.HG529365_gene1373 (degree
-1150) and 1301100.HG529420_gene2929 (degree 1146).
+The undirected graph Clostridium sp. 01 has 3832 nodes and 353152 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04811 and has 15 connected components, where the component with most
+nodes has 3803 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 184.32, and
+the node degree mode is 5. The top 5 most central nodes are 1301100.HG529424_gene1991
+(degree 1446), 1301100.HG529304_gene3091 (degree 1168), 1301100.HG529326_gene4541
+(degree 1162), 1301100.HG529365_gene1373 (degree 1150) and 1301100.HG529420_gene2929
+(degree 1146).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.01(
 	
 	Datetime: 2021-02-03 21:35:51.876738
 	
-	The undirected graph Clostridium sp. 01 has 3832 nodes and 353152 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04811 and
-	has 15 connected components, where the component with most nodes has 3803 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 184.32, and the node degree mode is 5. The top 5 most central
-	nodes are 1301100.HG529424_gene1991 (degree 1446), 1301100.HG529304_gene3091 (degree
-	1168), 1301100.HG529326_gene4541 (degree 1162), 1301100.HG529365_gene1373 (degree
-	1150) and 1301100.HG529420_gene2929 (degree 1146).
+	The undirected graph Clostridium sp. 01 has 3832 nodes and 353152 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04811 and has 15 connected components, where the component with most
+	nodes has 3803 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 184.32, and
+	the node degree mode is 5. The top 5 most central nodes are 1301100.HG529424_gene1991
+	(degree 1446), 1301100.HG529304_gene3091 (degree 1168), 1301100.HG529326_gene4541
+	(degree 1162), 1301100.HG529365_gene1373 (degree 1150) and 1301100.HG529420_gene2929
+	(degree 1146).
 	
 
 

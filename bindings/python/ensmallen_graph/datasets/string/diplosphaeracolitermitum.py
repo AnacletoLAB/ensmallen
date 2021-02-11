@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:56.321936
 
-The undirected graph Diplosphaera colitermitum has 4617 nodes and 313633 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02943
-and has 79 connected components, where the component with most nodes has 4386 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 135.86, and the node degree mode is 2. The top 5 most
-central nodes are 278957.ABEA03000047_gene1284 (degree 1304), 278957.ABEA03000180_gene2018
-(degree 1010), 278957.ABEA03000135_gene1744 (degree 996), 278957.ABEA03000160_gene44
-(degree 955) and 278957.ABEA03000041_gene2242 (degree 923).
+The undirected graph Diplosphaera colitermitum has 4617 nodes and 313633
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02943 and has 79 connected components, where the component
+with most nodes has 4386 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 135.86,
+and the node degree mode is 2. The top 5 most central nodes are 278957.ABEA03000047_gene1284
+(degree 1304), 278957.ABEA03000180_gene2018 (degree 1010), 278957.ABEA03000135_gene1744
+(degree 996), 278957.ABEA03000160_gene44 (degree 955) and 278957.ABEA03000041_gene2242
+(degree 923).
 
 
 References
@@ -107,14 +108,15 @@ def DiplosphaeraColitermitum(
 	
 	Datetime: 2021-02-02 20:17:56.321936
 	
-	The undirected graph Diplosphaera colitermitum has 4617 nodes and 313633 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02943
-	and has 79 connected components, where the component with most nodes has 4386 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 135.86, and the node degree mode is 2. The top 5 most
-	central nodes are 278957.ABEA03000047_gene1284 (degree 1304), 278957.ABEA03000180_gene2018
-	(degree 1010), 278957.ABEA03000135_gene1744 (degree 996), 278957.ABEA03000160_gene44
-	(degree 955) and 278957.ABEA03000041_gene2242 (degree 923).
+	The undirected graph Diplosphaera colitermitum has 4617 nodes and 313633
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02943 and has 79 connected components, where the component
+	with most nodes has 4386 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 135.86,
+	and the node degree mode is 2. The top 5 most central nodes are 278957.ABEA03000047_gene1284
+	(degree 1304), 278957.ABEA03000180_gene2018 (degree 1010), 278957.ABEA03000135_gene1744
+	(degree 996), 278957.ABEA03000160_gene44 (degree 955) and 278957.ABEA03000041_gene2242
+	(degree 923).
 	
 
 

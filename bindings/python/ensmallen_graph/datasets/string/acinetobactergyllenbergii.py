@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:11.733606
 
-The undirected graph Acinetobacter gyllenbergii has 4335 nodes and 377229 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04016
-and has 42 connected components, where the component with most nodes has 4213 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 174.04, and the node degree mode is 4. The top 5
-most central nodes are 1217658.F987_02991 (degree 1282), 1217658.F987_02394 (degree
-1281), 1217658.F987_03352 (degree 1163), 1217658.F987_02437 (degree 1147) and 1217658.F987_02118
-(degree 1061).
+The undirected graph Acinetobacter gyllenbergii has 4335 nodes and 377229
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04016 and has 42 connected components, where the component
+with most nodes has 4213 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 174.04,
+and the node degree mode is 4. The top 5 most central nodes are 1217658.F987_02991
+(degree 1282), 1217658.F987_02394 (degree 1281), 1217658.F987_03352 (degree
+1163), 1217658.F987_02437 (degree 1147) and 1217658.F987_02118 (degree
+1061).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterGyllenbergii(
 	
 	Datetime: 2021-02-02 23:21:11.733606
 	
-	The undirected graph Acinetobacter gyllenbergii has 4335 nodes and 377229 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04016
-	and has 42 connected components, where the component with most nodes has 4213 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 174.04, and the node degree mode is 4. The top 5
-	most central nodes are 1217658.F987_02991 (degree 1282), 1217658.F987_02394 (degree
-	1281), 1217658.F987_03352 (degree 1163), 1217658.F987_02437 (degree 1147) and 1217658.F987_02118
-	(degree 1061).
+	The undirected graph Acinetobacter gyllenbergii has 4335 nodes and 377229
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04016 and has 42 connected components, where the component
+	with most nodes has 4213 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 174.04,
+	and the node degree mode is 4. The top 5 most central nodes are 1217658.F987_02991
+	(degree 1282), 1217658.F987_02394 (degree 1281), 1217658.F987_03352 (degree
+	1163), 1217658.F987_02437 (degree 1147) and 1217658.F987_02118 (degree
+	1061).
 	
 
 

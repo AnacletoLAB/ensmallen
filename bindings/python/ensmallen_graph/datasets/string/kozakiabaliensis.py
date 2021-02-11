@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:59.649614
 
-The undirected graph Kozakia baliensis has 2899 nodes and 169856 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04044 and
-has 21 connected components, where the component with most nodes has 2834 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 117.18, and the node degree mode is 3. The top 5 most central
-nodes are 153496.JNAB01000054_gene1084 (degree 1070), 153496.JNAB01000037_gene497
-(degree 857), 153496.JNAB01000044_gene1810 (degree 753), 153496.JNAB01000027_gene2266
-(degree 724) and 153496.JNAB01000017_gene642 (degree 723).
+The undirected graph Kozakia baliensis has 2899 nodes and 169856 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04044 and has 21 connected components, where the component with most
+nodes has 2834 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 117.18, and
+the node degree mode is 3. The top 5 most central nodes are 153496.JNAB01000054_gene1084
+(degree 1070), 153496.JNAB01000037_gene497 (degree 857), 153496.JNAB01000044_gene1810
+(degree 753), 153496.JNAB01000027_gene2266 (degree 724) and 153496.JNAB01000017_gene642
+(degree 723).
 
 
 References
@@ -107,14 +108,15 @@ def KozakiaBaliensis(
 	
 	Datetime: 2021-02-02 19:51:59.649614
 	
-	The undirected graph Kozakia baliensis has 2899 nodes and 169856 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04044 and
-	has 21 connected components, where the component with most nodes has 2834 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 117.18, and the node degree mode is 3. The top 5 most central
-	nodes are 153496.JNAB01000054_gene1084 (degree 1070), 153496.JNAB01000037_gene497
-	(degree 857), 153496.JNAB01000044_gene1810 (degree 753), 153496.JNAB01000027_gene2266
-	(degree 724) and 153496.JNAB01000017_gene642 (degree 723).
+	The undirected graph Kozakia baliensis has 2899 nodes and 169856 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04044 and has 21 connected components, where the component with most
+	nodes has 2834 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 117.18, and
+	the node degree mode is 3. The top 5 most central nodes are 153496.JNAB01000054_gene1084
+	(degree 1070), 153496.JNAB01000037_gene497 (degree 857), 153496.JNAB01000044_gene1810
+	(degree 753), 153496.JNAB01000027_gene2266 (degree 724) and 153496.JNAB01000017_gene642
+	(degree 723).
 	
 
 

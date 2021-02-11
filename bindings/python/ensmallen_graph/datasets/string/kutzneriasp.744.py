@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:57.589763
 
-The undirected graph Kutzneria sp. 744 has 10139 nodes and 1924959 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03745 and
-has 36 connected components, where the component with most nodes has 10021 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 318, the mean node degree is 379.71, and the node degree mode is 2. The top 5
-most central nodes are 345341.KUTG_00134 (degree 3145), 345341.KUTG_02785 (degree
-2957), 345341.KUTG_01585 (degree 2612), 345341.KUTG_04333 (degree 2548) and 345341.KUTG_05923
-(degree 2519).
+The undirected graph Kutzneria sp. 744 has 10139 nodes and 1924959 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03745 and has 36 connected components, where the component with most
+nodes has 10021 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 318, the mean node degree is 379.71, and
+the node degree mode is 2. The top 5 most central nodes are 345341.KUTG_00134
+(degree 3145), 345341.KUTG_02785 (degree 2957), 345341.KUTG_01585 (degree
+2612), 345341.KUTG_04333 (degree 2548) and 345341.KUTG_05923 (degree 2519).
 
 
 References
@@ -107,14 +107,14 @@ def KutzneriaSp.744(
 	
 	Datetime: 2021-02-02 20:31:57.589763
 	
-	The undirected graph Kutzneria sp. 744 has 10139 nodes and 1924959 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03745 and
-	has 36 connected components, where the component with most nodes has 10021 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 318, the mean node degree is 379.71, and the node degree mode is 2. The top 5
-	most central nodes are 345341.KUTG_00134 (degree 3145), 345341.KUTG_02785 (degree
-	2957), 345341.KUTG_01585 (degree 2612), 345341.KUTG_04333 (degree 2548) and 345341.KUTG_05923
-	(degree 2519).
+	The undirected graph Kutzneria sp. 744 has 10139 nodes and 1924959 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03745 and has 36 connected components, where the component with most
+	nodes has 10021 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 318, the mean node degree is 379.71, and
+	the node degree mode is 2. The top 5 most central nodes are 345341.KUTG_00134
+	(degree 3145), 345341.KUTG_02785 (degree 2957), 345341.KUTG_01585 (degree
+	2612), 345341.KUTG_04333 (degree 2548) and 345341.KUTG_05923 (degree 2519).
 	
 
 

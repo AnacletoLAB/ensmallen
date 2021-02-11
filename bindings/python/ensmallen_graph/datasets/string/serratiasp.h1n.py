@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:29:45.125009
 
-The undirected graph Serratia sp. H1n has 5258 nodes and 654084 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04733 and
-has 6 connected components, where the component with most nodes has 5248 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 248.80, and the node degree mode is 1. The top 5 most central
-nodes are 1397284.AYMN01000009_gene1888 (degree 1974), 1397284.AYMN01000005_gene1528
-(degree 1675), 1397284.AYMN01000017_gene786 (degree 1508), 1397284.AYMN01000033_gene1103
-(degree 1506) and 1397284.AYMN01000006_gene1247 (degree 1464).
+The undirected graph Serratia sp. H1n has 5258 nodes and 654084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04733 and has 6 connected components, where the component with most
+nodes has 5248 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 248.80, and
+the node degree mode is 1. The top 5 most central nodes are 1397284.AYMN01000009_gene1888
+(degree 1974), 1397284.AYMN01000005_gene1528 (degree 1675), 1397284.AYMN01000017_gene786
+(degree 1508), 1397284.AYMN01000033_gene1103 (degree 1506) and 1397284.AYMN01000006_gene1247
+(degree 1464).
 
 
 References
@@ -107,14 +108,15 @@ def SerratiaSp.H1n(
 	
 	Datetime: 2021-02-03 22:29:45.125009
 	
-	The undirected graph Serratia sp. H1n has 5258 nodes and 654084 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04733 and
-	has 6 connected components, where the component with most nodes has 5248 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 248.80, and the node degree mode is 1. The top 5 most central
-	nodes are 1397284.AYMN01000009_gene1888 (degree 1974), 1397284.AYMN01000005_gene1528
-	(degree 1675), 1397284.AYMN01000017_gene786 (degree 1508), 1397284.AYMN01000033_gene1103
-	(degree 1506) and 1397284.AYMN01000006_gene1247 (degree 1464).
+	The undirected graph Serratia sp. H1n has 5258 nodes and 654084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04733 and has 6 connected components, where the component with most
+	nodes has 5248 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 248.80, and
+	the node degree mode is 1. The top 5 most central nodes are 1397284.AYMN01000009_gene1888
+	(degree 1974), 1397284.AYMN01000005_gene1528 (degree 1675), 1397284.AYMN01000017_gene786
+	(degree 1508), 1397284.AYMN01000033_gene1103 (degree 1506) and 1397284.AYMN01000006_gene1247
+	(degree 1464).
 	
 
 

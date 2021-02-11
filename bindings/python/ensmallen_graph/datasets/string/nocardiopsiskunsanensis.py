@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:33.496696
 
-The undirected graph Nocardiopsis kunsanensis has 4438 nodes and 409741 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04162
-and has 25 connected components, where the component with most nodes has 4380 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 184.65, and the node degree mode is 2. The top 5
-most central nodes are 1246445.ANAY01000049_gene2628 (degree 1570), 1246445.ANAY01000011_gene1054
-(degree 1501), 1246445.ANAY01000001_gene520 (degree 1209), 1246445.ANAY01000016_gene2209
-(degree 1198) and 1246445.ANAY01000008_gene805 (degree 1197).
+The undirected graph Nocardiopsis kunsanensis has 4438 nodes and 409741
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04162 and has 25 connected components, where the component
+with most nodes has 4380 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 184.65,
+and the node degree mode is 2. The top 5 most central nodes are 1246445.ANAY01000049_gene2628
+(degree 1570), 1246445.ANAY01000011_gene1054 (degree 1501), 1246445.ANAY01000001_gene520
+(degree 1209), 1246445.ANAY01000016_gene2209 (degree 1198) and 1246445.ANAY01000008_gene805
+(degree 1197).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisKunsanensis(
 	
 	Datetime: 2021-02-02 23:33:33.496696
 	
-	The undirected graph Nocardiopsis kunsanensis has 4438 nodes and 409741 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04162
-	and has 25 connected components, where the component with most nodes has 4380 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 184.65, and the node degree mode is 2. The top 5
-	most central nodes are 1246445.ANAY01000049_gene2628 (degree 1570), 1246445.ANAY01000011_gene1054
-	(degree 1501), 1246445.ANAY01000001_gene520 (degree 1209), 1246445.ANAY01000016_gene2209
-	(degree 1198) and 1246445.ANAY01000008_gene805 (degree 1197).
+	The undirected graph Nocardiopsis kunsanensis has 4438 nodes and 409741
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04162 and has 25 connected components, where the component
+	with most nodes has 4380 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 184.65,
+	and the node degree mode is 2. The top 5 most central nodes are 1246445.ANAY01000049_gene2628
+	(degree 1570), 1246445.ANAY01000011_gene1054 (degree 1501), 1246445.ANAY01000001_gene520
+	(degree 1209), 1246445.ANAY01000016_gene2209 (degree 1198) and 1246445.ANAY01000008_gene805
+	(degree 1197).
 	
 
 

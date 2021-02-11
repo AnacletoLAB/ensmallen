@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:24:38.954940
 
-The undirected graph pcrystk02 has 13965 nodes and 491274 unweighted edges, of which
-13965 are self-loops. The graph is sparse as it has a density of 0.00497 and is connected,
-as it has a single component. The graph median node degree is 81, the mean node degree
-is 69.36, and the node degree mode is 81. The top 5 most central nodes are 13506
-(degree 81), 13505 (degree 81), 13504 (degree 81), 13503 (degree 81) and 13502 (degree
-81).
+The undirected graph pcrystk02 has 13965 nodes and 491274 unweighted edges,
+of which 13965 are self-loops. The graph is sparse as it has a density
+of 0.00497 and is connected, as it has a single component. The graph median
+node degree is 81, the mean node degree is 69.36, and the node degree mode
+is 81. The top 5 most central nodes are 13506 (degree 81), 13505 (degree
+81), 13504 (degree 81), 13503 (degree 81) and 13502 (degree 81).
 
 
 References
@@ -102,12 +102,12 @@ def Pcrystk02(
 	
 	Datetime: 2021-02-06 11:24:38.954940
 	
-	The undirected graph pcrystk02 has 13965 nodes and 491274 unweighted edges, of which
-	13965 are self-loops. The graph is sparse as it has a density of 0.00497 and is connected,
-	as it has a single component. The graph median node degree is 81, the mean node degree
-	is 69.36, and the node degree mode is 81. The top 5 most central nodes are 13506
-	(degree 81), 13505 (degree 81), 13504 (degree 81), 13503 (degree 81) and 13502 (degree
-	81).
+	The undirected graph pcrystk02 has 13965 nodes and 491274 unweighted edges,
+	of which 13965 are self-loops. The graph is sparse as it has a density
+	of 0.00497 and is connected, as it has a single component. The graph median
+	node degree is 81, the mean node degree is 69.36, and the node degree mode
+	is 81. The top 5 most central nodes are 13506 (degree 81), 13505 (degree
+	81), 13504 (degree 81), 13503 (degree 81) and 13502 (degree 81).
 	
 
 

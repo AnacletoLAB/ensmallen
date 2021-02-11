@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:52.731591
 
-The undirected graph Prevotella maculosa has 2445 nodes and 151802 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05081 and
-has 20 connected components, where the component with most nodes has 2402 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 124.17, and the node degree mode is 2. The top 5 most central
-nodes are 1122986.KB908326_gene559 (degree 814), 1122986.KB908319_gene270 (degree
-748), 1122986.KB908320_gene1655 (degree 707), 1122986.KB908321_gene1148 (degree 649)
-and 1122986.KB908328_gene2383 (degree 630).
+The undirected graph Prevotella maculosa has 2445 nodes and 151802 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05081 and has 20 connected components, where the component with most
+nodes has 2402 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 124.17, and
+the node degree mode is 2. The top 5 most central nodes are 1122986.KB908326_gene559
+(degree 814), 1122986.KB908319_gene270 (degree 748), 1122986.KB908320_gene1655
+(degree 707), 1122986.KB908321_gene1148 (degree 649) and 1122986.KB908328_gene2383
+(degree 630).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaMaculosa(
 	
 	Datetime: 2021-02-02 22:45:52.731591
 	
-	The undirected graph Prevotella maculosa has 2445 nodes and 151802 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05081 and
-	has 20 connected components, where the component with most nodes has 2402 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 124.17, and the node degree mode is 2. The top 5 most central
-	nodes are 1122986.KB908326_gene559 (degree 814), 1122986.KB908319_gene270 (degree
-	748), 1122986.KB908320_gene1655 (degree 707), 1122986.KB908321_gene1148 (degree 649)
-	and 1122986.KB908328_gene2383 (degree 630).
+	The undirected graph Prevotella maculosa has 2445 nodes and 151802 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05081 and has 20 connected components, where the component with most
+	nodes has 2402 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 124.17, and
+	the node degree mode is 2. The top 5 most central nodes are 1122986.KB908326_gene559
+	(degree 814), 1122986.KB908319_gene270 (degree 748), 1122986.KB908320_gene1655
+	(degree 707), 1122986.KB908321_gene1148 (degree 649) and 1122986.KB908328_gene2383
+	(degree 630).
 	
 
 

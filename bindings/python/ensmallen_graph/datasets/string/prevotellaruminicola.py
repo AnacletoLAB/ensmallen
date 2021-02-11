@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:12.362420
 
-The undirected graph Prevotella ruminicola has 2737 nodes and 290358 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07755 and
-has 10 connected components, where the component with most nodes has 2712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 212.17, and the node degree mode is 4. The top 5 most central
-nodes are 264731.PRU_2485 (degree 1116), 264731.PRU_1203 (degree 945), 264731.PRU_0835
-(degree 906), 264731.PRU_1572 (degree 905) and 264731.PRU_1678 (degree 852).
+The undirected graph Prevotella ruminicola has 2737 nodes and 290358 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07755 and has 10 connected components, where the component with most
+nodes has 2712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 192, the mean node degree is 212.17, and
+the node degree mode is 4. The top 5 most central nodes are 264731.PRU_2485
+(degree 1116), 264731.PRU_1203 (degree 945), 264731.PRU_0835 (degree 906),
+264731.PRU_1572 (degree 905) and 264731.PRU_1678 (degree 852).
 
 
 References
@@ -106,13 +107,14 @@ def PrevotellaRuminicola(
 	
 	Datetime: 2021-02-02 20:14:12.362420
 	
-	The undirected graph Prevotella ruminicola has 2737 nodes and 290358 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07755 and
-	has 10 connected components, where the component with most nodes has 2712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 212.17, and the node degree mode is 4. The top 5 most central
-	nodes are 264731.PRU_2485 (degree 1116), 264731.PRU_1203 (degree 945), 264731.PRU_0835
-	(degree 906), 264731.PRU_1572 (degree 905) and 264731.PRU_1678 (degree 852).
+	The undirected graph Prevotella ruminicola has 2737 nodes and 290358 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07755 and has 10 connected components, where the component with most
+	nodes has 2712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 192, the mean node degree is 212.17, and
+	the node degree mode is 4. The top 5 most central nodes are 264731.PRU_2485
+	(degree 1116), 264731.PRU_1203 (degree 945), 264731.PRU_0835 (degree 906),
+	264731.PRU_1572 (degree 905) and 264731.PRU_1678 (degree 852).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:53.772816
 
-The undirected graph Pannonibacter phragmitetus has 4072 nodes and 466819 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05632
-and has 7 connected components, where the component with most nodes has 4060 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 229.28, and the node degree mode is 1. The top 5
-most central nodes are 1122929.KB908218_gene1514 (degree 1750), 1122929.KB908215_gene890
-(degree 1310), 1122929.KB908221_gene2820 (degree 1297), 1122929.KB908234_gene4092
-(degree 1196) and 1122929.KB908215_gene581 (degree 1138).
+The undirected graph Pannonibacter phragmitetus has 4072 nodes and 466819
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05632 and has 7 connected components, where the component
+with most nodes has 4060 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 229.28,
+and the node degree mode is 1. The top 5 most central nodes are 1122929.KB908218_gene1514
+(degree 1750), 1122929.KB908215_gene890 (degree 1310), 1122929.KB908221_gene2820
+(degree 1297), 1122929.KB908234_gene4092 (degree 1196) and 1122929.KB908215_gene581
+(degree 1138).
 
 
 References
@@ -107,14 +108,15 @@ def PannonibacterPhragmitetus(
 	
 	Datetime: 2021-02-02 22:44:53.772816
 	
-	The undirected graph Pannonibacter phragmitetus has 4072 nodes and 466819 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05632
-	and has 7 connected components, where the component with most nodes has 4060 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 229.28, and the node degree mode is 1. The top 5
-	most central nodes are 1122929.KB908218_gene1514 (degree 1750), 1122929.KB908215_gene890
-	(degree 1310), 1122929.KB908221_gene2820 (degree 1297), 1122929.KB908234_gene4092
-	(degree 1196) and 1122929.KB908215_gene581 (degree 1138).
+	The undirected graph Pannonibacter phragmitetus has 4072 nodes and 466819
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05632 and has 7 connected components, where the component
+	with most nodes has 4060 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 229.28,
+	and the node degree mode is 1. The top 5 most central nodes are 1122929.KB908218_gene1514
+	(degree 1750), 1122929.KB908215_gene890 (degree 1310), 1122929.KB908221_gene2820
+	(degree 1297), 1122929.KB908234_gene4092 (degree 1196) and 1122929.KB908215_gene581
+	(degree 1138).
 	
 
 

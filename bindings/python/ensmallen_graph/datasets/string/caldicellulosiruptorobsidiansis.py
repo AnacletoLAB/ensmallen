@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:54.617406
 
-The undirected graph Caldicellulosiruptor obsidiansis has 2172 nodes and 132365 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05614
-and has 9 connected components, where the component with most nodes has 2152 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 121.88, and the node degree mode is 5. The top 5 most
-central nodes are 608506.COB47_1148 (degree 857), 608506.COB47_1113 (degree 843),
-608506.COB47_1230 (degree 759), 608506.COB47_0274 (degree 734) and 608506.COB47_0943
-(degree 731).
+The undirected graph Caldicellulosiruptor obsidiansis has 2172 nodes and
+132365 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05614 and has 9 connected components, where the
+component with most nodes has 2152 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+is 121.88, and the node degree mode is 5. The top 5 most central nodes
+are 608506.COB47_1148 (degree 857), 608506.COB47_1113 (degree 843), 608506.COB47_1230
+(degree 759), 608506.COB47_0274 (degree 734) and 608506.COB47_0943 (degree
+731).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicellulosiruptorObsidiansis(
 	
 	Datetime: 2021-02-02 21:19:54.617406
 	
-	The undirected graph Caldicellulosiruptor obsidiansis has 2172 nodes and 132365 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05614
-	and has 9 connected components, where the component with most nodes has 2152 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 121.88, and the node degree mode is 5. The top 5 most
-	central nodes are 608506.COB47_1148 (degree 857), 608506.COB47_1113 (degree 843),
-	608506.COB47_1230 (degree 759), 608506.COB47_0274 (degree 734) and 608506.COB47_0943
-	(degree 731).
+	The undirected graph Caldicellulosiruptor obsidiansis has 2172 nodes and
+	132365 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05614 and has 9 connected components, where the
+	component with most nodes has 2152 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+	is 121.88, and the node degree mode is 5. The top 5 most central nodes
+	are 608506.COB47_1148 (degree 857), 608506.COB47_1113 (degree 843), 608506.COB47_1230
+	(degree 759), 608506.COB47_0274 (degree 734) and 608506.COB47_0943 (degree
+	731).
 	
 
 

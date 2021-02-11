@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:51.242773
 
-The undirected graph Streptococcus pneumoniae TIGR4 has 2100 nodes and 153683 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06973
-and has 5 connected components, where the component with most nodes has 2091 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 146.36, and the node degree mode is 5. The top 5
-most central nodes are 170187.SP_0032 (degree 835), 170187.SP_1445 (degree 687),
-170187.SP_2228 (degree 644), 170187.SP_0788 (degree 641) and 170187.SP_0517 (degree
-636).
+The undirected graph Streptococcus pneumoniae TIGR4 has 2100 nodes and
+153683 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06973 and has 5 connected components, where the
+component with most nodes has 2091 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+is 146.36, and the node degree mode is 5. The top 5 most central nodes
+are 170187.SP_0032 (degree 835), 170187.SP_1445 (degree 687), 170187.SP_2228
+(degree 644), 170187.SP_0788 (degree 641) and 170187.SP_0517 (degree 636).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusPneumoniaeTigr4(
 	
 	Datetime: 2021-02-02 19:54:51.242773
 	
-	The undirected graph Streptococcus pneumoniae TIGR4 has 2100 nodes and 153683 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06973
-	and has 5 connected components, where the component with most nodes has 2091 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 146.36, and the node degree mode is 5. The top 5
-	most central nodes are 170187.SP_0032 (degree 835), 170187.SP_1445 (degree 687),
-	170187.SP_2228 (degree 644), 170187.SP_0788 (degree 641) and 170187.SP_0517 (degree
-	636).
+	The undirected graph Streptococcus pneumoniae TIGR4 has 2100 nodes and
+	153683 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06973 and has 5 connected components, where the
+	component with most nodes has 2091 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+	is 146.36, and the node degree mode is 5. The top 5 most central nodes
+	are 170187.SP_0032 (degree 835), 170187.SP_1445 (degree 687), 170187.SP_2228
+	(degree 644), 170187.SP_0788 (degree 641) and 170187.SP_0517 (degree 636).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:21.400727
 
-The undirected graph Rhizobium mongolense has 6456 nodes and 814464 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03909 and
-has 49 connected components, where the component with most nodes has 6346 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 252.31, and the node degree mode is 1. The top 5 most central
-nodes are 1079460.ATTQ01000002_gene4965 (degree 2502), 1079460.ATTQ01000022_gene830
-(degree 2031), 1079460.ATTQ01000022_gene859 (degree 2003), 1079460.ATTQ01000008_gene1062
-(degree 1950) and 1079460.ATTQ01000014_gene2893 (degree 1810).
+The undirected graph Rhizobium mongolense has 6456 nodes and 814464 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03909 and has 49 connected components, where the component with most
+nodes has 6346 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 252.31, and
+the node degree mode is 1. The top 5 most central nodes are 1079460.ATTQ01000002_gene4965
+(degree 2502), 1079460.ATTQ01000022_gene830 (degree 2031), 1079460.ATTQ01000022_gene859
+(degree 2003), 1079460.ATTQ01000008_gene1062 (degree 1950) and 1079460.ATTQ01000014_gene2893
+(degree 1810).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumMongolense(
 	
 	Datetime: 2021-02-02 22:20:21.400727
 	
-	The undirected graph Rhizobium mongolense has 6456 nodes and 814464 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03909 and
-	has 49 connected components, where the component with most nodes has 6346 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 252.31, and the node degree mode is 1. The top 5 most central
-	nodes are 1079460.ATTQ01000002_gene4965 (degree 2502), 1079460.ATTQ01000022_gene830
-	(degree 2031), 1079460.ATTQ01000022_gene859 (degree 2003), 1079460.ATTQ01000008_gene1062
-	(degree 1950) and 1079460.ATTQ01000014_gene2893 (degree 1810).
+	The undirected graph Rhizobium mongolense has 6456 nodes and 814464 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03909 and has 49 connected components, where the component with most
+	nodes has 6346 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 252.31, and
+	the node degree mode is 1. The top 5 most central nodes are 1079460.ATTQ01000002_gene4965
+	(degree 2502), 1079460.ATTQ01000022_gene830 (degree 2031), 1079460.ATTQ01000022_gene859
+	(degree 2003), 1079460.ATTQ01000008_gene1062 (degree 1950) and 1079460.ATTQ01000014_gene2893
+	(degree 1810).
 	
 
 

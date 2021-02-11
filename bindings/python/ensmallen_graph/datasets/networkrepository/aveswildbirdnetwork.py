@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:39:58.953173
 
-The undirected multigraph aves-wildbird-network has 202 nodes and 11900 weighted
-edges with 6 different edge types:  the 5 most common are 6, 5, 4, 3 and 2, of which
-none are self-loops and 14652 are parallel. The graph is quite dense as it has a
-density of 0.22531 and is connected, as it has a single component. The graph median
-node degree is 75, the mean node degree is 117.82 and the node degree mode is 6.
-The top 5 most central nodes are 6 (degree 397), 56 (degree 379), 11 (degree 363),
-12 (degree 351) and 58 (degree 347).
+The undirected multigraph aves-wildbird-network has 202 nodes and 11900
+weighted edges with 6 different edge types:  the 5 most common are 6, 5,
+4, 3 and 2, of which none are self-loops and 14652 are parallel. The graph
+is quite dense as it has a density of 0.22531 and is connected, as it has
+a single component. The graph median node degree is 75, the mean node degree
+is 117.82 and the node degree mode is 6. The top 5 most central nodes are
+6 (degree 397), 56 (degree 379), 11 (degree 363), 12 (degree 351) and 58
+(degree 347).
 
 
 References
@@ -103,13 +104,14 @@ def AvesWildbirdNetwork(
 	
 	Datetime: 2021-02-03 23:39:58.953173
 	
-	The undirected multigraph aves-wildbird-network has 202 nodes and 11900 weighted
-	edges with 6 different edge types:  the 5 most common are 6, 5, 4, 3 and 2, of which
-	none are self-loops and 14652 are parallel. The graph is quite dense as it has a
-	density of 0.22531 and is connected, as it has a single component. The graph median
-	node degree is 75, the mean node degree is 117.82 and the node degree mode is 6.
-	The top 5 most central nodes are 6 (degree 397), 56 (degree 379), 11 (degree 363),
-	12 (degree 351) and 58 (degree 347).
+	The undirected multigraph aves-wildbird-network has 202 nodes and 11900
+	weighted edges with 6 different edge types:  the 5 most common are 6, 5,
+	4, 3 and 2, of which none are self-loops and 14652 are parallel. The graph
+	is quite dense as it has a density of 0.22531 and is connected, as it has
+	a single component. The graph median node degree is 75, the mean node degree
+	is 117.82 and the node degree mode is 6. The top 5 most central nodes are
+	6 (degree 397), 56 (degree 379), 11 (degree 363), 12 (degree 351) and 58
+	(degree 347).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:02.764919
 
-The undirected graph Clostridiales bacterium VE20214 has 2953 nodes and 264264 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06063
-and has 3 connected components, where the component with most nodes has 2948 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 178.98, and the node degree mode is 11. The top 5
-most central nodes are 1232452.BAIB02000006_gene1051 (degree 1268), 1232452.BAIB02000006_gene1459
+The undirected graph Clostridiales bacterium VE20214 has 2953 nodes and
+264264 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06063 and has 3 connected components, where the
+component with most nodes has 2948 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+is 178.98, and the node degree mode is 11. The top 5 most central nodes
+are 1232452.BAIB02000006_gene1051 (degree 1268), 1232452.BAIB02000006_gene1459
 (degree 1127), 1232452.BAIB02000008_gene1904 (degree 1107), 1232452.BAIB02000021_gene2850
 (degree 993) and 1232452.BAIB02000021_gene2892 (degree 975).
 
@@ -107,12 +108,13 @@ def ClostridialesBacteriumVe20214(
 	
 	Datetime: 2021-02-02 23:29:02.764919
 	
-	The undirected graph Clostridiales bacterium VE20214 has 2953 nodes and 264264 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06063
-	and has 3 connected components, where the component with most nodes has 2948 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 178.98, and the node degree mode is 11. The top 5
-	most central nodes are 1232452.BAIB02000006_gene1051 (degree 1268), 1232452.BAIB02000006_gene1459
+	The undirected graph Clostridiales bacterium VE20214 has 2953 nodes and
+	264264 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06063 and has 3 connected components, where the
+	component with most nodes has 2948 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+	is 178.98, and the node degree mode is 11. The top 5 most central nodes
+	are 1232452.BAIB02000006_gene1051 (degree 1268), 1232452.BAIB02000006_gene1459
 	(degree 1127), 1232452.BAIB02000008_gene1904 (degree 1107), 1232452.BAIB02000021_gene2850
 	(degree 993) and 1232452.BAIB02000021_gene2892 (degree 975).
 	

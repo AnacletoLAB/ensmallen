@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:14.744620
 
-The undirected graph Spathaspora passalidarum has 4990 nodes and 433187 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03480
-and has 5 connected components, where the component with most nodes has 4982 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 173.62, and the node degree mode is 1. The top 5
-most central nodes are 340170.XP_007376574.1 (degree 1123), 340170.XP_007374141.1
-(degree 1067), 340170.XP_007377092.1 (degree 1060), 340170.XP_007373248.1 (degree
-940) and 340170.XP_007375872.1 (degree 921).
+The undirected graph Spathaspora passalidarum has 4990 nodes and 433187
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03480 and has 5 connected components, where the component
+with most nodes has 4982 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 173.62,
+and the node degree mode is 1. The top 5 most central nodes are 340170.XP_007376574.1
+(degree 1123), 340170.XP_007374141.1 (degree 1067), 340170.XP_007377092.1
+(degree 1060), 340170.XP_007373248.1 (degree 940) and 340170.XP_007375872.1
+(degree 921).
 
 
 References
@@ -107,14 +108,15 @@ def SpathasporaPassalidarum(
 	
 	Datetime: 2021-02-02 20:31:14.744620
 	
-	The undirected graph Spathaspora passalidarum has 4990 nodes and 433187 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03480
-	and has 5 connected components, where the component with most nodes has 4982 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 173.62, and the node degree mode is 1. The top 5
-	most central nodes are 340170.XP_007376574.1 (degree 1123), 340170.XP_007374141.1
-	(degree 1067), 340170.XP_007377092.1 (degree 1060), 340170.XP_007373248.1 (degree
-	940) and 340170.XP_007375872.1 (degree 921).
+	The undirected graph Spathaspora passalidarum has 4990 nodes and 433187
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03480 and has 5 connected components, where the component
+	with most nodes has 4982 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 173.62,
+	and the node degree mode is 1. The top 5 most central nodes are 340170.XP_007376574.1
+	(degree 1123), 340170.XP_007374141.1 (degree 1067), 340170.XP_007377092.1
+	(degree 1060), 340170.XP_007373248.1 (degree 940) and 340170.XP_007375872.1
+	(degree 921).
 	
 
 

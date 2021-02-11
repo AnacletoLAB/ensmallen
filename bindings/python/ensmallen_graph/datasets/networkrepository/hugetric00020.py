@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:27:33.591442
 
-The undirected graph hugetric-00020 has 7122792 nodes and 10680777 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-central nodes are 7118503 (degree 3), 7117390 (degree 3), 7121033 (degree 3), 7109996
-(degree 3) and 7109246 (degree 3).
+The undirected graph hugetric-00020 has 7122792 nodes and 10680777 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 3.00 and the
+node degree mode is 3. The top 5 most central nodes are 7118503 (degree
+3), 7117390 (degree 3), 7121033 (degree 3), 7109996 (degree 3) and 7109246
+(degree 3).
 
 
 References
@@ -102,12 +103,13 @@ def Hugetric00020(
 	
 	Datetime: 2021-02-03 23:27:33.591442
 	
-	The undirected graph hugetric-00020 has 7122792 nodes and 10680777 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 3.00 and the node degree mode is 3. The top 5 most
-	central nodes are 7118503 (degree 3), 7117390 (degree 3), 7121033 (degree 3), 7109996
-	(degree 3) and 7109246 (degree 3).
+	The undirected graph hugetric-00020 has 7122792 nodes and 10680777 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 3.00 and the
+	node degree mode is 3. The top 5 most central nodes are 7118503 (degree
+	3), 7117390 (degree 3), 7121033 (degree 3), 7109996 (degree 3) and 7109246
+	(degree 3).
 	
 
 

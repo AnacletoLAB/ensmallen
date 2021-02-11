@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:38.125412
 
-The undirected graph Veillonella sp. F0422 has 1576 nodes and 99887 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08048 and
-has 3 connected components, where the component with most nodes has 1572 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 126.76, and the node degree mode is 1. The top 5 most central
-nodes are 944564.HMPREF9200_0206 (degree 743), 944564.HMPREF9200_0230 (degree 678),
-944564.HMPREF9200_0478 (degree 641), 944564.HMPREF9200_0218 (degree 604) and 944564.HMPREF9200_0371
+The undirected graph Veillonella sp. F0422 has 1576 nodes and 99887 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08048 and has 3 connected components, where the component with most
+nodes has 1572 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 126.76, and
+the node degree mode is 1. The top 5 most central nodes are 944564.HMPREF9200_0206
+(degree 743), 944564.HMPREF9200_0230 (degree 678), 944564.HMPREF9200_0478
+(degree 641), 944564.HMPREF9200_0218 (degree 604) and 944564.HMPREF9200_0371
 (degree 585).
 
 
@@ -107,13 +108,14 @@ def VeillonellaSp.F0422(
 	
 	Datetime: 2021-02-02 22:01:38.125412
 	
-	The undirected graph Veillonella sp. F0422 has 1576 nodes and 99887 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08048 and
-	has 3 connected components, where the component with most nodes has 1572 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 126.76, and the node degree mode is 1. The top 5 most central
-	nodes are 944564.HMPREF9200_0206 (degree 743), 944564.HMPREF9200_0230 (degree 678),
-	944564.HMPREF9200_0478 (degree 641), 944564.HMPREF9200_0218 (degree 604) and 944564.HMPREF9200_0371
+	The undirected graph Veillonella sp. F0422 has 1576 nodes and 99887 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08048 and has 3 connected components, where the component with most
+	nodes has 1572 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 126.76, and
+	the node degree mode is 1. The top 5 most central nodes are 944564.HMPREF9200_0206
+	(degree 743), 944564.HMPREF9200_0230 (degree 678), 944564.HMPREF9200_0478
+	(degree 641), 944564.HMPREF9200_0218 (degree 604) and 944564.HMPREF9200_0371
 	(degree 585).
 	
 

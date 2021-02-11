@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:24.153623
 
-The undirected graph Sandarakinorhabdus limnophila has 2466 nodes and 183274 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06030
-and has 7 connected components, where the component with most nodes has 2454 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 148.64, and the node degree mode is 2. The top 5
-most central nodes are 1123240.ATVO01000004_gene1074 (degree 954), 1123240.ATVO01000008_gene2323
-(degree 887), 1123240.ATVO01000003_gene493 (degree 885), 1123240.ATVO01000007_gene2275
-(degree 834) and 1123240.ATVO01000003_gene128 (degree 782).
+The undirected graph Sandarakinorhabdus limnophila has 2466 nodes and 183274
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06030 and has 7 connected components, where the component
+with most nodes has 2454 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 148.64,
+and the node degree mode is 2. The top 5 most central nodes are 1123240.ATVO01000004_gene1074
+(degree 954), 1123240.ATVO01000008_gene2323 (degree 887), 1123240.ATVO01000003_gene493
+(degree 885), 1123240.ATVO01000007_gene2275 (degree 834) and 1123240.ATVO01000003_gene128
+(degree 782).
 
 
 References
@@ -107,14 +108,15 @@ def SandarakinorhabdusLimnophila(
 	
 	Datetime: 2021-02-02 22:48:24.153623
 	
-	The undirected graph Sandarakinorhabdus limnophila has 2466 nodes and 183274 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06030
-	and has 7 connected components, where the component with most nodes has 2454 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 148.64, and the node degree mode is 2. The top 5
-	most central nodes are 1123240.ATVO01000004_gene1074 (degree 954), 1123240.ATVO01000008_gene2323
-	(degree 887), 1123240.ATVO01000003_gene493 (degree 885), 1123240.ATVO01000007_gene2275
-	(degree 834) and 1123240.ATVO01000003_gene128 (degree 782).
+	The undirected graph Sandarakinorhabdus limnophila has 2466 nodes and 183274
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06030 and has 7 connected components, where the component
+	with most nodes has 2454 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 148.64,
+	and the node degree mode is 2. The top 5 most central nodes are 1123240.ATVO01000004_gene1074
+	(degree 954), 1123240.ATVO01000008_gene2323 (degree 887), 1123240.ATVO01000003_gene493
+	(degree 885), 1123240.ATVO01000007_gene2275 (degree 834) and 1123240.ATVO01000003_gene128
+	(degree 782).
 	
 
 

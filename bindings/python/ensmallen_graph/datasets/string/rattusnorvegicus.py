@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:50:35.833895
 
-The undirected graph Rattus norvegicus has 22234 nodes and 6839089 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02767 and
-has 9 connected components, where the component with most nodes has 22216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 455,
-the mean node degree is 615.19, and the node degree mode is 381. The top 5 most central
-nodes are 10116.ENSRNOP00000038369 (degree 5280), 10116.ENSRNOP00000032975 (degree
-4691), 10116.ENSRNOP00000047840 (degree 4516), 10116.ENSRNOP00000026627 (degree 4360)
-and 10116.ENSRNOP00000005742 (degree 4349).
+The undirected graph Rattus norvegicus has 22234 nodes and 6839089 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02767 and has 9 connected components, where the component with most
+nodes has 22216 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 455, the mean node degree is 615.19, and
+the node degree mode is 381. The top 5 most central nodes are 10116.ENSRNOP00000038369
+(degree 5280), 10116.ENSRNOP00000032975 (degree 4691), 10116.ENSRNOP00000047840
+(degree 4516), 10116.ENSRNOP00000026627 (degree 4360) and 10116.ENSRNOP00000005742
+(degree 4349).
 
 
 References
@@ -107,14 +108,15 @@ def RattusNorvegicus(
 	
 	Datetime: 2021-02-02 17:50:35.833895
 	
-	The undirected graph Rattus norvegicus has 22234 nodes and 6839089 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02767 and
-	has 9 connected components, where the component with most nodes has 22216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 455,
-	the mean node degree is 615.19, and the node degree mode is 381. The top 5 most central
-	nodes are 10116.ENSRNOP00000038369 (degree 5280), 10116.ENSRNOP00000032975 (degree
-	4691), 10116.ENSRNOP00000047840 (degree 4516), 10116.ENSRNOP00000026627 (degree 4360)
-	and 10116.ENSRNOP00000005742 (degree 4349).
+	The undirected graph Rattus norvegicus has 22234 nodes and 6839089 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02767 and has 9 connected components, where the component with most
+	nodes has 22216 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 455, the mean node degree is 615.19, and
+	the node degree mode is 381. The top 5 most central nodes are 10116.ENSRNOP00000038369
+	(degree 5280), 10116.ENSRNOP00000032975 (degree 4691), 10116.ENSRNOP00000047840
+	(degree 4516), 10116.ENSRNOP00000026627 (degree 4360) and 10116.ENSRNOP00000005742
+	(degree 4349).
 	
 
 

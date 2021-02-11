@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:10.598716
 
-The undirected graph Paenibacillus sp. OSYSE has 5719 nodes and 645715 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03949 and
-has 27 connected components, where the component with most nodes has 5660 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 189,
-the mean node degree is 225.81, and the node degree mode is 1. The top 5 most central
-nodes are 1196323.ALKF01000176_gene3031 (degree 1806), 1196323.ALKF01000192_gene3218
-(degree 1755), 1196323.ALKF01000131_gene4677 (degree 1543), 1196323.ALKF01000191_gene5604
-(degree 1505) and 1196323.ALKF01000136_gene3429 (degree 1336).
+The undirected graph Paenibacillus sp. OSYSE has 5719 nodes and 645715
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03949 and has 27 connected components, where the component
+with most nodes has 5660 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 225.81,
+and the node degree mode is 1. The top 5 most central nodes are 1196323.ALKF01000176_gene3031
+(degree 1806), 1196323.ALKF01000192_gene3218 (degree 1755), 1196323.ALKF01000131_gene4677
+(degree 1543), 1196323.ALKF01000191_gene5604 (degree 1505) and 1196323.ALKF01000136_gene3429
+(degree 1336).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Osyse(
 	
 	Datetime: 2021-02-02 23:13:10.598716
 	
-	The undirected graph Paenibacillus sp. OSYSE has 5719 nodes and 645715 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03949 and
-	has 27 connected components, where the component with most nodes has 5660 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 189,
-	the mean node degree is 225.81, and the node degree mode is 1. The top 5 most central
-	nodes are 1196323.ALKF01000176_gene3031 (degree 1806), 1196323.ALKF01000192_gene3218
-	(degree 1755), 1196323.ALKF01000131_gene4677 (degree 1543), 1196323.ALKF01000191_gene5604
-	(degree 1505) and 1196323.ALKF01000136_gene3429 (degree 1336).
+	The undirected graph Paenibacillus sp. OSYSE has 5719 nodes and 645715
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03949 and has 27 connected components, where the component
+	with most nodes has 5660 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 225.81,
+	and the node degree mode is 1. The top 5 most central nodes are 1196323.ALKF01000176_gene3031
+	(degree 1806), 1196323.ALKF01000192_gene3218 (degree 1755), 1196323.ALKF01000131_gene4677
+	(degree 1543), 1196323.ALKF01000191_gene5604 (degree 1505) and 1196323.ALKF01000136_gene3429
+	(degree 1336).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:15.490081
 
-The undirected graph Pandoraea pnomenusa has 4153 nodes and 455773 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-has 24 connected components, where the component with most nodes has 4102 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 219.49, and the node degree mode is 1. The top 5 most central
-nodes are 93220.LV28_05645 (degree 1611), 93220.LV28_03170 (degree 1443), 93220.LV28_12670
-(degree 1280), 93220.LV28_01105 (degree 1249) and 93220.LV28_18265 (degree 1138).
+The undirected graph Pandoraea pnomenusa has 4153 nodes and 455773 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05286 and has 24 connected components, where the component with most
+nodes has 4102 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 219.49, and
+the node degree mode is 1. The top 5 most central nodes are 93220.LV28_05645
+(degree 1611), 93220.LV28_03170 (degree 1443), 93220.LV28_12670 (degree
+1280), 93220.LV28_01105 (degree 1249) and 93220.LV28_18265 (degree 1138).
 
 
 References
@@ -106,13 +107,14 @@ def PandoraeaPnomenusa(
 	
 	Datetime: 2021-02-02 19:41:15.490081
 	
-	The undirected graph Pandoraea pnomenusa has 4153 nodes and 455773 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-	has 24 connected components, where the component with most nodes has 4102 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 219.49, and the node degree mode is 1. The top 5 most central
-	nodes are 93220.LV28_05645 (degree 1611), 93220.LV28_03170 (degree 1443), 93220.LV28_12670
-	(degree 1280), 93220.LV28_01105 (degree 1249) and 93220.LV28_18265 (degree 1138).
+	The undirected graph Pandoraea pnomenusa has 4153 nodes and 455773 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05286 and has 24 connected components, where the component with most
+	nodes has 4102 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 219.49, and
+	the node degree mode is 1. The top 5 most central nodes are 93220.LV28_05645
+	(degree 1611), 93220.LV28_03170 (degree 1443), 93220.LV28_12670 (degree
+	1280), 93220.LV28_01105 (degree 1249) and 93220.LV28_18265 (degree 1138).
 	
 
 

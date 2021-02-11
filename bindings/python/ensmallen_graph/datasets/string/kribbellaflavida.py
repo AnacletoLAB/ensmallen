@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:32.604355
 
-The undirected graph Kribbella flavida has 6888 nodes and 1005267 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04238 and
-has 18 connected components, where the component with most nodes has 6851 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 266,
-the mean node degree is 291.89, and the node degree mode is 3. The top 5 most central
-nodes are 479435.Kfla_4457 (degree 2632), 479435.Kfla_3089 (degree 1844), 479435.Kfla_6335
-(degree 1773), 479435.Kfla_6010 (degree 1566) and 479435.Kfla_3074 (degree 1565).
+The undirected graph Kribbella flavida has 6888 nodes and 1005267 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04238 and has 18 connected components, where the component with most
+nodes has 6851 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 266, the mean node degree is 291.89, and
+the node degree mode is 3. The top 5 most central nodes are 479435.Kfla_4457
+(degree 2632), 479435.Kfla_3089 (degree 1844), 479435.Kfla_6335 (degree
+1773), 479435.Kfla_6010 (degree 1566) and 479435.Kfla_3074 (degree 1565).
 
 
 References
@@ -106,13 +107,14 @@ def KribbellaFlavida(
 	
 	Datetime: 2021-02-02 20:57:32.604355
 	
-	The undirected graph Kribbella flavida has 6888 nodes and 1005267 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04238 and
-	has 18 connected components, where the component with most nodes has 6851 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 266,
-	the mean node degree is 291.89, and the node degree mode is 3. The top 5 most central
-	nodes are 479435.Kfla_4457 (degree 2632), 479435.Kfla_3089 (degree 1844), 479435.Kfla_6335
-	(degree 1773), 479435.Kfla_6010 (degree 1566) and 479435.Kfla_3074 (degree 1565).
+	The undirected graph Kribbella flavida has 6888 nodes and 1005267 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04238 and has 18 connected components, where the component with most
+	nodes has 6851 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 266, the mean node degree is 291.89, and
+	the node degree mode is 3. The top 5 most central nodes are 479435.Kfla_4457
+	(degree 2632), 479435.Kfla_3089 (degree 1844), 479435.Kfla_6335 (degree
+	1773), 479435.Kfla_6010 (degree 1566) and 479435.Kfla_3074 (degree 1565).
 	
 
 

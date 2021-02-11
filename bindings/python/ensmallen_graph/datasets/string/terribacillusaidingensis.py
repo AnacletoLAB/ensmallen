@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:46.946007
 
-The undirected graph Terribacillus aidingensis has 3202 nodes and 275787 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05381
-and has 12 connected components, where the component with most nodes has 3175 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 172.26, and the node degree mode is 2. The top 5
-most central nodes are 586416.GZ22_10765 (degree 1170), 586416.GZ22_11695 (degree
-819), 586416.GZ22_01825 (degree 775), 586416.GZ22_09485 (degree 775) and 586416.GZ22_09785
-(degree 769).
+The undirected graph Terribacillus aidingensis has 3202 nodes and 275787
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05381 and has 12 connected components, where the component
+with most nodes has 3175 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 172.26,
+and the node degree mode is 2. The top 5 most central nodes are 586416.GZ22_10765
+(degree 1170), 586416.GZ22_11695 (degree 819), 586416.GZ22_01825 (degree
+775), 586416.GZ22_09485 (degree 775) and 586416.GZ22_09785 (degree 769).
 
 
 References
@@ -107,14 +107,14 @@ def TerribacillusAidingensis(
 	
 	Datetime: 2021-02-02 21:16:46.946007
 	
-	The undirected graph Terribacillus aidingensis has 3202 nodes and 275787 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05381
-	and has 12 connected components, where the component with most nodes has 3175 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 172.26, and the node degree mode is 2. The top 5
-	most central nodes are 586416.GZ22_10765 (degree 1170), 586416.GZ22_11695 (degree
-	819), 586416.GZ22_01825 (degree 775), 586416.GZ22_09485 (degree 775) and 586416.GZ22_09785
-	(degree 769).
+	The undirected graph Terribacillus aidingensis has 3202 nodes and 275787
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05381 and has 12 connected components, where the component
+	with most nodes has 3175 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 172.26,
+	and the node degree mode is 2. The top 5 most central nodes are 586416.GZ22_10765
+	(degree 1170), 586416.GZ22_11695 (degree 819), 586416.GZ22_01825 (degree
+	775), 586416.GZ22_09485 (degree 775) and 586416.GZ22_09785 (degree 769).
 	
 
 

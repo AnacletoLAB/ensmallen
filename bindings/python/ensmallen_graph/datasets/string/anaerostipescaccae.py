@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:05.228972
 
-The undirected graph Anaerostipes caccae has 3704 nodes and 958521 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13977
-and has 10 connected components, where the component with most nodes has 3672 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 455, the mean node degree is 517.56, and the node degree mode is 7. The top 5
-most central nodes are 411490.ANACAC_01642 (degree 2094), 411490.ANACAC_02623 (degree
-2054), 411490.ANACAC_02265 (degree 2016), 411490.ANACAC_03802 (degree 1958) and 411490.ANACAC_01636
-(degree 1917).
+The undirected graph Anaerostipes caccae has 3704 nodes and 958521 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13977 and has 10 connected components, where the component
+with most nodes has 3672 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 455, the mean node degree is 517.56,
+and the node degree mode is 7. The top 5 most central nodes are 411490.ANACAC_01642
+(degree 2094), 411490.ANACAC_02623 (degree 2054), 411490.ANACAC_02265 (degree
+2016), 411490.ANACAC_03802 (degree 1958) and 411490.ANACAC_01636 (degree
+1917).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerostipesCaccae(
 	
 	Datetime: 2021-02-02 20:46:05.228972
 	
-	The undirected graph Anaerostipes caccae has 3704 nodes and 958521 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13977
-	and has 10 connected components, where the component with most nodes has 3672 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 455, the mean node degree is 517.56, and the node degree mode is 7. The top 5
-	most central nodes are 411490.ANACAC_01642 (degree 2094), 411490.ANACAC_02623 (degree
-	2054), 411490.ANACAC_02265 (degree 2016), 411490.ANACAC_03802 (degree 1958) and 411490.ANACAC_01636
-	(degree 1917).
+	The undirected graph Anaerostipes caccae has 3704 nodes and 958521 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13977 and has 10 connected components, where the component
+	with most nodes has 3672 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 455, the mean node degree is 517.56,
+	and the node degree mode is 7. The top 5 most central nodes are 411490.ANACAC_01642
+	(degree 2094), 411490.ANACAC_02623 (degree 2054), 411490.ANACAC_02265 (degree
+	2016), 411490.ANACAC_03802 (degree 1958) and 411490.ANACAC_01636 (degree
+	1917).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:22:26.358396
 
-The undirected graph Dietzia sp. UCDTHP has 3442 nodes and 280905 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04743 and
-has 14 connected components, where the component with most nodes has 3410 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 163.22, and the node degree mode is 1. The top 5 most central
-nodes are 1292020.H483_0105170 (degree 1435), 1292020.H483_0115615 (degree 1197),
-1292020.H483_0108680 (degree 1143), 1292020.H483_0108665 (degree 1047) and 1292020.H483_0114470
+The undirected graph Dietzia sp. UCDTHP has 3442 nodes and 280905 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04743 and has 14 connected components, where the component with most
+nodes has 3410 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 163.22, and
+the node degree mode is 1. The top 5 most central nodes are 1292020.H483_0105170
+(degree 1435), 1292020.H483_0115615 (degree 1197), 1292020.H483_0108680
+(degree 1143), 1292020.H483_0108665 (degree 1047) and 1292020.H483_0114470
 (degree 1000).
 
 
@@ -107,13 +108,14 @@ def DietziaSp.Ucdthp(
 	
 	Datetime: 2021-02-03 21:22:26.358396
 	
-	The undirected graph Dietzia sp. UCDTHP has 3442 nodes and 280905 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04743 and
-	has 14 connected components, where the component with most nodes has 3410 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 163.22, and the node degree mode is 1. The top 5 most central
-	nodes are 1292020.H483_0105170 (degree 1435), 1292020.H483_0115615 (degree 1197),
-	1292020.H483_0108680 (degree 1143), 1292020.H483_0108665 (degree 1047) and 1292020.H483_0114470
+	The undirected graph Dietzia sp. UCDTHP has 3442 nodes and 280905 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04743 and has 14 connected components, where the component with most
+	nodes has 3410 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 163.22, and
+	the node degree mode is 1. The top 5 most central nodes are 1292020.H483_0105170
+	(degree 1435), 1292020.H483_0115615 (degree 1197), 1292020.H483_0108680
+	(degree 1143), 1292020.H483_0108665 (degree 1047) and 1292020.H483_0114470
 	(degree 1000).
 	
 

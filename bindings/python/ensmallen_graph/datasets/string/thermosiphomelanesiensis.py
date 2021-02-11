@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:04.160306
 
-The undirected graph Thermosipho melanesiensis has 1866 nodes and 140747 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08089
-and has 9 connected components, where the component with most nodes has 1844 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 150.85, and the node degree mode is 24. The top 5
-most central nodes are 391009.Tmel_1425 (degree 930), 391009.Tmel_1917 (degree 928),
-391009.Tmel_0718 (degree 804), 391009.Tmel_1623 (degree 780) and 391009.Tmel_1578
-(degree 749).
+The undirected graph Thermosipho melanesiensis has 1866 nodes and 140747
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08089 and has 9 connected components, where the component
+with most nodes has 1844 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 150.85,
+and the node degree mode is 24. The top 5 most central nodes are 391009.Tmel_1425
+(degree 930), 391009.Tmel_1917 (degree 928), 391009.Tmel_0718 (degree 804),
+391009.Tmel_1623 (degree 780) and 391009.Tmel_1578 (degree 749).
 
 
 References
@@ -107,14 +107,14 @@ def ThermosiphoMelanesiensis(
 	
 	Datetime: 2021-02-02 20:39:04.160306
 	
-	The undirected graph Thermosipho melanesiensis has 1866 nodes and 140747 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08089
-	and has 9 connected components, where the component with most nodes has 1844 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 150.85, and the node degree mode is 24. The top 5
-	most central nodes are 391009.Tmel_1425 (degree 930), 391009.Tmel_1917 (degree 928),
-	391009.Tmel_0718 (degree 804), 391009.Tmel_1623 (degree 780) and 391009.Tmel_1578
-	(degree 749).
+	The undirected graph Thermosipho melanesiensis has 1866 nodes and 140747
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08089 and has 9 connected components, where the component
+	with most nodes has 1844 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 150.85,
+	and the node degree mode is 24. The top 5 most central nodes are 391009.Tmel_1425
+	(degree 930), 391009.Tmel_1917 (degree 928), 391009.Tmel_0718 (degree 804),
+	391009.Tmel_1623 (degree 780) and 391009.Tmel_1578 (degree 749).
 	
 
 

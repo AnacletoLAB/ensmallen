@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:06.630631
 
-The undirected graph Serratia sp. Ag1 has 4503 nodes and 622354 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06140 and
-has 7 connected components, where the component with most nodes has 4486 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 276.42, and the node degree mode is 2. The top 5 most central
-nodes are 1524467.IV04_24300 (degree 1764), 1524467.IV04_02755 (degree 1534), 1524467.IV04_15550
-(degree 1520), 1524467.IV04_20635 (degree 1516) and 1524467.IV04_15790 (degree 1486).
+The undirected graph Serratia sp. Ag1 has 4503 nodes and 622354 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06140 and has 7 connected components, where the component with most
+nodes has 4486 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 276.42, and
+the node degree mode is 2. The top 5 most central nodes are 1524467.IV04_24300
+(degree 1764), 1524467.IV04_02755 (degree 1534), 1524467.IV04_15550 (degree
+1520), 1524467.IV04_20635 (degree 1516) and 1524467.IV04_15790 (degree
+1486).
 
 
 References
@@ -106,13 +108,15 @@ def SerratiaSp.Ag1(
 	
 	Datetime: 2021-02-03 23:18:06.630631
 	
-	The undirected graph Serratia sp. Ag1 has 4503 nodes and 622354 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06140 and
-	has 7 connected components, where the component with most nodes has 4486 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 276.42, and the node degree mode is 2. The top 5 most central
-	nodes are 1524467.IV04_24300 (degree 1764), 1524467.IV04_02755 (degree 1534), 1524467.IV04_15550
-	(degree 1520), 1524467.IV04_20635 (degree 1516) and 1524467.IV04_15790 (degree 1486).
+	The undirected graph Serratia sp. Ag1 has 4503 nodes and 622354 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06140 and has 7 connected components, where the component with most
+	nodes has 4486 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 276.42, and
+	the node degree mode is 2. The top 5 most central nodes are 1524467.IV04_24300
+	(degree 1764), 1524467.IV04_02755 (degree 1534), 1524467.IV04_15550 (degree
+	1520), 1524467.IV04_20635 (degree 1516) and 1524467.IV04_15790 (degree
+	1486).
 	
 
 

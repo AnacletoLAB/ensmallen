@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:38.909039
 
-The undirected graph Porphyromonas levii has 2015 nodes and 128671 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-has 8 connected components, where the component with most nodes has 2001 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 127.71, and the node degree mode is 1. The top 5 most central
-nodes are 1122973.KB904233_gene323 (degree 744), 1122973.KB904283_gene1030 (degree
-696), 1122973.KB904252_gene1304 (degree 628), 1122973.KB904246_gene719 (degree 611)
-and 1122973.KB904255_gene1322 (degree 597).
+The undirected graph Porphyromonas levii has 2015 nodes and 128671 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06341 and has 8 connected components, where the component with most
+nodes has 2001 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 127.71, and
+the node degree mode is 1. The top 5 most central nodes are 1122973.KB904233_gene323
+(degree 744), 1122973.KB904283_gene1030 (degree 696), 1122973.KB904252_gene1304
+(degree 628), 1122973.KB904246_gene719 (degree 611) and 1122973.KB904255_gene1322
+(degree 597).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasLevii(
 	
 	Datetime: 2021-02-02 22:45:38.909039
 	
-	The undirected graph Porphyromonas levii has 2015 nodes and 128671 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-	has 8 connected components, where the component with most nodes has 2001 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 127.71, and the node degree mode is 1. The top 5 most central
-	nodes are 1122973.KB904233_gene323 (degree 744), 1122973.KB904283_gene1030 (degree
-	696), 1122973.KB904252_gene1304 (degree 628), 1122973.KB904246_gene719 (degree 611)
-	and 1122973.KB904255_gene1322 (degree 597).
+	The undirected graph Porphyromonas levii has 2015 nodes and 128671 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06341 and has 8 connected components, where the component with most
+	nodes has 2001 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 127.71, and
+	the node degree mode is 1. The top 5 most central nodes are 1122973.KB904233_gene323
+	(degree 744), 1122973.KB904283_gene1030 (degree 696), 1122973.KB904252_gene1304
+	(degree 628), 1122973.KB904246_gene719 (degree 611) and 1122973.KB904255_gene1322
+	(degree 597).
 	
 
 

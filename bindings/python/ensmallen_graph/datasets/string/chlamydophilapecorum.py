@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:50.080731
 
-The undirected graph Chlamydophila pecorum has 966 nodes and 40504 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08690 and
-has 5 connected components, where the component with most nodes has 953 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 63,
-the mean node degree is 83.86, and the node degree mode is 3. The top 5 most central
-nodes are 331635.G5S_0437 (degree 450), 331635.G5S_0458 (degree 402), 331635.G5S_0569
-(degree 354), 331635.G5S_0496 (degree 347) and 331635.G5S_0127 (degree 346).
+The undirected graph Chlamydophila pecorum has 966 nodes and 40504 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08690 and has 5 connected components, where the component with most
+nodes has 953 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 63, the mean node degree is 83.86, and
+the node degree mode is 3. The top 5 most central nodes are 331635.G5S_0437
+(degree 450), 331635.G5S_0458 (degree 402), 331635.G5S_0569 (degree 354),
+331635.G5S_0496 (degree 347) and 331635.G5S_0127 (degree 346).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydophilaPecorum(
 	
 	Datetime: 2021-02-02 20:29:50.080731
 	
-	The undirected graph Chlamydophila pecorum has 966 nodes and 40504 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08690 and
-	has 5 connected components, where the component with most nodes has 953 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 63,
-	the mean node degree is 83.86, and the node degree mode is 3. The top 5 most central
-	nodes are 331635.G5S_0437 (degree 450), 331635.G5S_0458 (degree 402), 331635.G5S_0569
-	(degree 354), 331635.G5S_0496 (degree 347) and 331635.G5S_0127 (degree 346).
+	The undirected graph Chlamydophila pecorum has 966 nodes and 40504 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08690 and has 5 connected components, where the component with most
+	nodes has 953 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 63, the mean node degree is 83.86, and
+	the node degree mode is 3. The top 5 most central nodes are 331635.G5S_0437
+	(degree 450), 331635.G5S_0458 (degree 402), 331635.G5S_0569 (degree 354),
+	331635.G5S_0496 (degree 347) and 331635.G5S_0127 (degree 346).
 	
 
 

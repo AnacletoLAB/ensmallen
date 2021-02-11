@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:05.377354
 
-The undirected graph Citrobacter sp. 302 has 4658 nodes and 494138 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04556 and
-has 16 connected components, where the component with most nodes has 4606 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 212.17, and the node degree mode is 5. The top 5 most central
-nodes are 469595.CSAG_01456 (degree 1710), 469595.CSAG_02460 (degree 1567), 469595.CSAG_04501
-(degree 1474), 469595.CSAG_03010 (degree 1347) and 469595.CSAG_02295 (degree 1292).
+The undirected graph Citrobacter sp. 302 has 4658 nodes and 494138 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04556 and has 16 connected components, where the component with most
+nodes has 4606 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 212.17, and
+the node degree mode is 5. The top 5 most central nodes are 469595.CSAG_01456
+(degree 1710), 469595.CSAG_02460 (degree 1567), 469595.CSAG_04501 (degree
+1474), 469595.CSAG_03010 (degree 1347) and 469595.CSAG_02295 (degree 1292).
 
 
 References
@@ -106,13 +107,14 @@ def CitrobacterSp.302(
 	
 	Datetime: 2021-02-02 20:55:05.377354
 	
-	The undirected graph Citrobacter sp. 302 has 4658 nodes and 494138 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04556 and
-	has 16 connected components, where the component with most nodes has 4606 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 212.17, and the node degree mode is 5. The top 5 most central
-	nodes are 469595.CSAG_01456 (degree 1710), 469595.CSAG_02460 (degree 1567), 469595.CSAG_04501
-	(degree 1474), 469595.CSAG_03010 (degree 1347) and 469595.CSAG_02295 (degree 1292).
+	The undirected graph Citrobacter sp. 302 has 4658 nodes and 494138 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04556 and has 16 connected components, where the component with most
+	nodes has 4606 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 212.17, and
+	the node degree mode is 5. The top 5 most central nodes are 469595.CSAG_01456
+	(degree 1710), 469595.CSAG_02460 (degree 1567), 469595.CSAG_04501 (degree
+	1474), 469595.CSAG_03010 (degree 1347) and 469595.CSAG_02295 (degree 1292).
 	
 
 

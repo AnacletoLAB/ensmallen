@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:25.455660
 
-The undirected graph Basilea psittacipulmonis has 1437 nodes and 59649 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-has 8 connected components, where the component with most nodes has 1416 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 62,
-the mean node degree is 83.02, and the node degree mode is 1. The top 5 most central
-nodes are 1072685.IX83_06070 (degree 640), 1072685.IX83_03075 (degree 639), 1072685.IX83_03215
-(degree 562), 1072685.IX83_02970 (degree 478) and 1072685.IX83_07275 (degree 449).
+The undirected graph Basilea psittacipulmonis has 1437 nodes and 59649
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05781 and has 8 connected components, where the component
+with most nodes has 1416 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 62, the mean node degree is 83.02,
+and the node degree mode is 1. The top 5 most central nodes are 1072685.IX83_06070
+(degree 640), 1072685.IX83_03075 (degree 639), 1072685.IX83_03215 (degree
+562), 1072685.IX83_02970 (degree 478) and 1072685.IX83_07275 (degree 449).
 
 
 References
@@ -106,13 +107,14 @@ def BasileaPsittacipulmonis(
 	
 	Datetime: 2021-02-02 22:19:25.455660
 	
-	The undirected graph Basilea psittacipulmonis has 1437 nodes and 59649 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-	has 8 connected components, where the component with most nodes has 1416 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 62,
-	the mean node degree is 83.02, and the node degree mode is 1. The top 5 most central
-	nodes are 1072685.IX83_06070 (degree 640), 1072685.IX83_03075 (degree 639), 1072685.IX83_03215
-	(degree 562), 1072685.IX83_02970 (degree 478) and 1072685.IX83_07275 (degree 449).
+	The undirected graph Basilea psittacipulmonis has 1437 nodes and 59649
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05781 and has 8 connected components, where the component
+	with most nodes has 1416 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 62, the mean node degree is 83.02,
+	and the node degree mode is 1. The top 5 most central nodes are 1072685.IX83_06070
+	(degree 640), 1072685.IX83_03075 (degree 639), 1072685.IX83_03215 (degree
+	562), 1072685.IX83_02970 (degree 478) and 1072685.IX83_07275 (degree 449).
 	
 
 

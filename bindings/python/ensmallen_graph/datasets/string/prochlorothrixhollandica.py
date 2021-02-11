@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:43.669110
 
-The undirected graph Prochlorothrix hollandica has 3817 nodes and 474364 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06513
-and has 14 connected components, where the component with most nodes has 3789 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 237, the mean node degree is 248.55, and the node degree mode is 1. The top 5
-most central nodes are 317619.ANKN01000230_gene252 (degree 1352), 317619.ANKN01000191_gene568
-(degree 1335), 317619.ANKN01000010_gene2970 (degree 1319), 317619.ANKN01000143_gene3679
-(degree 1221) and 317619.ANKN01000100_gene3759 (degree 1144).
+The undirected graph Prochlorothrix hollandica has 3817 nodes and 474364
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06513 and has 14 connected components, where the component
+with most nodes has 3789 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 248.55,
+and the node degree mode is 1. The top 5 most central nodes are 317619.ANKN01000230_gene252
+(degree 1352), 317619.ANKN01000191_gene568 (degree 1335), 317619.ANKN01000010_gene2970
+(degree 1319), 317619.ANKN01000143_gene3679 (degree 1221) and 317619.ANKN01000100_gene3759
+(degree 1144).
 
 
 References
@@ -107,14 +108,15 @@ def ProchlorothrixHollandica(
 	
 	Datetime: 2021-02-02 20:26:43.669110
 	
-	The undirected graph Prochlorothrix hollandica has 3817 nodes and 474364 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06513
-	and has 14 connected components, where the component with most nodes has 3789 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 237, the mean node degree is 248.55, and the node degree mode is 1. The top 5
-	most central nodes are 317619.ANKN01000230_gene252 (degree 1352), 317619.ANKN01000191_gene568
-	(degree 1335), 317619.ANKN01000010_gene2970 (degree 1319), 317619.ANKN01000143_gene3679
-	(degree 1221) and 317619.ANKN01000100_gene3759 (degree 1144).
+	The undirected graph Prochlorothrix hollandica has 3817 nodes and 474364
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06513 and has 14 connected components, where the component
+	with most nodes has 3789 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 248.55,
+	and the node degree mode is 1. The top 5 most central nodes are 317619.ANKN01000230_gene252
+	(degree 1352), 317619.ANKN01000191_gene568 (degree 1335), 317619.ANKN01000010_gene2970
+	(degree 1319), 317619.ANKN01000143_gene3679 (degree 1221) and 317619.ANKN01000100_gene3759
+	(degree 1144).
 	
 
 

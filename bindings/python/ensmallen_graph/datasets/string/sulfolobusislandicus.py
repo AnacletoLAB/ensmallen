@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:00.660756
 
-The undirected graph Sulfolobus islandicus has 2601 nodes and 188974 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-has 27 connected components, where the component with most nodes has 2538 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 145.31, and the node degree mode is 3. The top 5 most central
-nodes are 930945.SiRe_1456 (degree 893), 930945.SiRe_2622 (degree 783), 930945.SiRe_1455
-(degree 756), 930945.SiRe_1458 (degree 754) and 930945.SiRe_2615 (degree 732).
+The undirected graph Sulfolobus islandicus has 2601 nodes and 188974 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05589 and has 27 connected components, where the component with most
+nodes has 2538 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 145.31, and
+the node degree mode is 3. The top 5 most central nodes are 930945.SiRe_1456
+(degree 893), 930945.SiRe_2622 (degree 783), 930945.SiRe_1455 (degree 756),
+930945.SiRe_1458 (degree 754) and 930945.SiRe_2615 (degree 732).
 
 
 References
@@ -106,13 +107,14 @@ def SulfolobusIslandicus(
 	
 	Datetime: 2021-02-02 21:58:00.660756
 	
-	The undirected graph Sulfolobus islandicus has 2601 nodes and 188974 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-	has 27 connected components, where the component with most nodes has 2538 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 145.31, and the node degree mode is 3. The top 5 most central
-	nodes are 930945.SiRe_1456 (degree 893), 930945.SiRe_2622 (degree 783), 930945.SiRe_1455
-	(degree 756), 930945.SiRe_1458 (degree 754) and 930945.SiRe_2615 (degree 732).
+	The undirected graph Sulfolobus islandicus has 2601 nodes and 188974 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05589 and has 27 connected components, where the component with most
+	nodes has 2538 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 145.31, and
+	the node degree mode is 3. The top 5 most central nodes are 930945.SiRe_1456
+	(degree 893), 930945.SiRe_2622 (degree 783), 930945.SiRe_1455 (degree 756),
+	930945.SiRe_1458 (degree 754) and 930945.SiRe_2615 (degree 732).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:57.215663
 
-The undirected graph Desulfovibrio piezophilus has 3309 nodes and 331564 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06058
-and has 14 connected components, where the component with most nodes has 3280 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 200.40, and the node degree mode is 6. The top 5
-most central nodes are 1322246.BN4_11055 (degree 1563), 1322246.BN4_10594 (degree
-1244), 1322246.BN4_12088 (degree 1217), 1322246.BN4_11968 (degree 1164) and 1322246.BN4_11381
-(degree 1157).
+The undirected graph Desulfovibrio piezophilus has 3309 nodes and 331564
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06058 and has 14 connected components, where the component
+with most nodes has 3280 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 200.40,
+and the node degree mode is 6. The top 5 most central nodes are 1322246.BN4_11055
+(degree 1563), 1322246.BN4_10594 (degree 1244), 1322246.BN4_12088 (degree
+1217), 1322246.BN4_11968 (degree 1164) and 1322246.BN4_11381 (degree 1157).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioPiezophilus(
 	
 	Datetime: 2021-02-03 21:53:57.215663
 	
-	The undirected graph Desulfovibrio piezophilus has 3309 nodes and 331564 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06058
-	and has 14 connected components, where the component with most nodes has 3280 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 200.40, and the node degree mode is 6. The top 5
-	most central nodes are 1322246.BN4_11055 (degree 1563), 1322246.BN4_10594 (degree
-	1244), 1322246.BN4_12088 (degree 1217), 1322246.BN4_11968 (degree 1164) and 1322246.BN4_11381
-	(degree 1157).
+	The undirected graph Desulfovibrio piezophilus has 3309 nodes and 331564
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06058 and has 14 connected components, where the component
+	with most nodes has 3280 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 200.40,
+	and the node degree mode is 6. The top 5 most central nodes are 1322246.BN4_11055
+	(degree 1563), 1322246.BN4_10594 (degree 1244), 1322246.BN4_12088 (degree
+	1217), 1322246.BN4_11968 (degree 1164) and 1322246.BN4_11381 (degree 1157).
 	
 
 

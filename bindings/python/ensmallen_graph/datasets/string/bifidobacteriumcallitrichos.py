@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:58.064244
 
-The undirected graph Bifidobacterium callitrichos has 2331 nodes and 149750 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05514
-and has 11 connected components, where the component with most nodes has 2303 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 128.49, and the node degree mode is 2. The top 5
-most central nodes are 1437609.BCAL_0093 (degree 909), 1437609.BCAL_0485 (degree
-864), 1437609.BCAL_1208 (degree 827), 1437609.BCAL_0054 (degree 791) and 1437609.BCAL_1299
-(degree 776).
+The undirected graph Bifidobacterium callitrichos has 2331 nodes and 149750
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05514 and has 11 connected components, where the component
+with most nodes has 2303 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 128.49,
+and the node degree mode is 2. The top 5 most central nodes are 1437609.BCAL_0093
+(degree 909), 1437609.BCAL_0485 (degree 864), 1437609.BCAL_1208 (degree
+827), 1437609.BCAL_0054 (degree 791) and 1437609.BCAL_1299 (degree 776).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumCallitrichos(
 	
 	Datetime: 2021-02-03 22:55:58.064244
 	
-	The undirected graph Bifidobacterium callitrichos has 2331 nodes and 149750 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05514
-	and has 11 connected components, where the component with most nodes has 2303 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 128.49, and the node degree mode is 2. The top 5
-	most central nodes are 1437609.BCAL_0093 (degree 909), 1437609.BCAL_0485 (degree
-	864), 1437609.BCAL_1208 (degree 827), 1437609.BCAL_0054 (degree 791) and 1437609.BCAL_1299
-	(degree 776).
+	The undirected graph Bifidobacterium callitrichos has 2331 nodes and 149750
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05514 and has 11 connected components, where the component
+	with most nodes has 2303 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 128.49,
+	and the node degree mode is 2. The top 5 most central nodes are 1437609.BCAL_0093
+	(degree 909), 1437609.BCAL_0485 (degree 864), 1437609.BCAL_1208 (degree
+	827), 1437609.BCAL_0054 (degree 791) and 1437609.BCAL_1299 (degree 776).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:47.733126
 
-The undirected graph Pseudonocardia asaccharolytica has 4870 nodes and 544612 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04594
-and has 15 connected components, where the component with most nodes has 4832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 223.66, and the node degree mode is 2. The top 5
-most central nodes are 1123024.AUII01000027_gene2626 (degree 1718), 1123024.AUII01000003_gene3300
+The undirected graph Pseudonocardia asaccharolytica has 4870 nodes and
+544612 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04594 and has 15 connected components, where the
+component with most nodes has 4832 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+is 223.66, and the node degree mode is 2. The top 5 most central nodes
+are 1123024.AUII01000027_gene2626 (degree 1718), 1123024.AUII01000003_gene3300
 (degree 1333), 1123024.AUII01000003_gene3583 (degree 1331), 1123024.AUII01000026_gene2543
 (degree 1326) and 1123024.AUII01000003_gene3576 (degree 1306).
 
@@ -107,12 +108,13 @@ def PseudonocardiaAsaccharolytica(
 	
 	Datetime: 2021-02-02 22:46:47.733126
 	
-	The undirected graph Pseudonocardia asaccharolytica has 4870 nodes and 544612 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04594
-	and has 15 connected components, where the component with most nodes has 4832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 223.66, and the node degree mode is 2. The top 5
-	most central nodes are 1123024.AUII01000027_gene2626 (degree 1718), 1123024.AUII01000003_gene3300
+	The undirected graph Pseudonocardia asaccharolytica has 4870 nodes and
+	544612 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04594 and has 15 connected components, where the
+	component with most nodes has 4832 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 181, the mean node degree
+	is 223.66, and the node degree mode is 2. The top 5 most central nodes
+	are 1123024.AUII01000027_gene2626 (degree 1718), 1123024.AUII01000003_gene3300
 	(degree 1333), 1123024.AUII01000003_gene3583 (degree 1331), 1123024.AUII01000026_gene2543
 	(degree 1326) and 1123024.AUII01000003_gene3576 (degree 1306).
 	

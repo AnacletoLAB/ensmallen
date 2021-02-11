@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:37.125871
 
-The undirected graph Ignicoccus hospitalis has 1429 nodes and 85797 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08409 and
-has 4 connected components, where the component with most nodes has 1420 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 120.08, and the node degree mode is 3. The top 5 most central
-nodes are 453591.Igni_1006 (degree 508), 453591.Igni_1001 (degree 476), 453591.Igni_0696
-(degree 471), 453591.Igni_0096 (degree 458) and 453591.Igni_0897 (degree 443).
+The undirected graph Ignicoccus hospitalis has 1429 nodes and 85797 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08409 and has 4 connected components, where the component with most
+nodes has 1420 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 120.08, and
+the node degree mode is 3. The top 5 most central nodes are 453591.Igni_1006
+(degree 508), 453591.Igni_1001 (degree 476), 453591.Igni_0696 (degree 471),
+453591.Igni_0096 (degree 458) and 453591.Igni_0897 (degree 443).
 
 
 References
@@ -106,13 +107,14 @@ def IgnicoccusHospitalis(
 	
 	Datetime: 2021-02-02 20:52:37.125871
 	
-	The undirected graph Ignicoccus hospitalis has 1429 nodes and 85797 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08409 and
-	has 4 connected components, where the component with most nodes has 1420 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 120.08, and the node degree mode is 3. The top 5 most central
-	nodes are 453591.Igni_1006 (degree 508), 453591.Igni_1001 (degree 476), 453591.Igni_0696
-	(degree 471), 453591.Igni_0096 (degree 458) and 453591.Igni_0897 (degree 443).
+	The undirected graph Ignicoccus hospitalis has 1429 nodes and 85797 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08409 and has 4 connected components, where the component with most
+	nodes has 1420 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 120.08, and
+	the node degree mode is 3. The top 5 most central nodes are 453591.Igni_1006
+	(degree 508), 453591.Igni_1001 (degree 476), 453591.Igni_0696 (degree 471),
+	453591.Igni_0096 (degree 458) and 453591.Igni_0897 (degree 443).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:10:02.616659
 
-The undirected graph Streptomyces sp. NRRLS149 has 10236 nodes and 1698515 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03243
-and has 95 connected components, where the component with most nodes has 10003 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 281, the mean node degree is 331.87, and the node degree mode is 1. The top 5
-most central nodes are 1463885.KL578359_gene10022 (degree 3169), 1463885.KL578353_gene8460
+The undirected graph Streptomyces sp. NRRLS149 has 10236 nodes and 1698515
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03243 and has 95 connected components, where the component
+with most nodes has 10003 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 281, the mean node degree
+is 331.87, and the node degree mode is 1. The top 5 most central nodes
+are 1463885.KL578359_gene10022 (degree 3169), 1463885.KL578353_gene8460
 (degree 2745), 1463885.KL578392_gene2403 (degree 2715), 1463885.KL578486_gene8502
 (degree 2685) and 1463885.KL578385_gene9147 (degree 2682).
 
@@ -107,12 +108,13 @@ def StreptomycesSp.Nrrls149(
 	
 	Datetime: 2021-02-03 23:10:02.616659
 	
-	The undirected graph Streptomyces sp. NRRLS149 has 10236 nodes and 1698515 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03243
-	and has 95 connected components, where the component with most nodes has 10003 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 281, the mean node degree is 331.87, and the node degree mode is 1. The top 5
-	most central nodes are 1463885.KL578359_gene10022 (degree 3169), 1463885.KL578353_gene8460
+	The undirected graph Streptomyces sp. NRRLS149 has 10236 nodes and 1698515
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03243 and has 95 connected components, where the component
+	with most nodes has 10003 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 281, the mean node degree
+	is 331.87, and the node degree mode is 1. The top 5 most central nodes
+	are 1463885.KL578359_gene10022 (degree 3169), 1463885.KL578353_gene8460
 	(degree 2745), 1463885.KL578392_gene2403 (degree 2715), 1463885.KL578486_gene8502
 	(degree 2685) and 1463885.KL578385_gene9147 (degree 2682).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:45:09.147660
 
-The undirected graph Pseudozyma flocculosa has 4933 nodes and 478428 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03933 and
-has 5 connected components, where the component with most nodes has 4923 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 193.97, and the node degree mode is 1. The top 5 most central
-nodes are 84751.XP_007879681.1 (degree 1499), 84751.XP_007877390.1 (degree 1354),
-84751.XP_007877598.1 (degree 1331), 84751.XP_007878318.1 (degree 1148) and 84751.XP_007877263.1
+The undirected graph Pseudozyma flocculosa has 4933 nodes and 478428 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03933 and has 5 connected components, where the component with most
+nodes has 4923 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 193.97, and
+the node degree mode is 1. The top 5 most central nodes are 84751.XP_007879681.1
+(degree 1499), 84751.XP_007877390.1 (degree 1354), 84751.XP_007877598.1
+(degree 1331), 84751.XP_007878318.1 (degree 1148) and 84751.XP_007877263.1
 (degree 1094).
 
 
@@ -107,13 +108,14 @@ def PseudozymaFlocculosa(
 	
 	Datetime: 2021-02-02 18:45:09.147660
 	
-	The undirected graph Pseudozyma flocculosa has 4933 nodes and 478428 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03933 and
-	has 5 connected components, where the component with most nodes has 4923 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 193.97, and the node degree mode is 1. The top 5 most central
-	nodes are 84751.XP_007879681.1 (degree 1499), 84751.XP_007877390.1 (degree 1354),
-	84751.XP_007877598.1 (degree 1331), 84751.XP_007878318.1 (degree 1148) and 84751.XP_007877263.1
+	The undirected graph Pseudozyma flocculosa has 4933 nodes and 478428 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03933 and has 5 connected components, where the component with most
+	nodes has 4923 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 193.97, and
+	the node degree mode is 1. The top 5 most central nodes are 84751.XP_007879681.1
+	(degree 1499), 84751.XP_007877390.1 (degree 1354), 84751.XP_007877598.1
+	(degree 1331), 84751.XP_007878318.1 (degree 1148) and 84751.XP_007877263.1
 	(degree 1094).
 	
 

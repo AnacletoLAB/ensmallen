@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:45:53.817882
 
-The undirected graph Halomonas sp. TG39a has 4303 nodes and 562504 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06077 and
-has 11 connected components, where the component with most nodes has 4281 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 261.45, and the node degree mode is 1. The top 5 most central
-nodes are 1415755.JQLV01000002_gene727 (degree 1910), 1415755.JQLV01000002_gene828
-(degree 1757), 1415755.JQLV01000001_gene1351 (degree 1476), 1415755.JQLV01000001_gene1988
-(degree 1475) and 1415755.JQLV01000001_gene4094 (degree 1441).
+The undirected graph Halomonas sp. TG39a has 4303 nodes and 562504 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06077 and has 11 connected components, where the component with most
+nodes has 4281 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 261.45, and
+the node degree mode is 1. The top 5 most central nodes are 1415755.JQLV01000002_gene727
+(degree 1910), 1415755.JQLV01000002_gene828 (degree 1757), 1415755.JQLV01000001_gene1351
+(degree 1476), 1415755.JQLV01000001_gene1988 (degree 1475) and 1415755.JQLV01000001_gene4094
+(degree 1441).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasSp.Tg39a(
 	
 	Datetime: 2021-02-03 22:45:53.817882
 	
-	The undirected graph Halomonas sp. TG39a has 4303 nodes and 562504 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06077 and
-	has 11 connected components, where the component with most nodes has 4281 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 261.45, and the node degree mode is 1. The top 5 most central
-	nodes are 1415755.JQLV01000002_gene727 (degree 1910), 1415755.JQLV01000002_gene828
-	(degree 1757), 1415755.JQLV01000001_gene1351 (degree 1476), 1415755.JQLV01000001_gene1988
-	(degree 1475) and 1415755.JQLV01000001_gene4094 (degree 1441).
+	The undirected graph Halomonas sp. TG39a has 4303 nodes and 562504 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06077 and has 11 connected components, where the component with most
+	nodes has 4281 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 261.45, and
+	the node degree mode is 1. The top 5 most central nodes are 1415755.JQLV01000002_gene727
+	(degree 1910), 1415755.JQLV01000002_gene828 (degree 1757), 1415755.JQLV01000001_gene1351
+	(degree 1476), 1415755.JQLV01000001_gene1988 (degree 1475) and 1415755.JQLV01000001_gene4094
+	(degree 1441).
 	
 
 

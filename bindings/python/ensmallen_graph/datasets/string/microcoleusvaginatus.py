@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:01.155695
 
-The undirected graph Microcoleus vaginatus has 5046 nodes and 782126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06145 and
-has 18 connected components, where the component with most nodes has 5005 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 289,
-the mean node degree is 310.00, and the node degree mode is 3. The top 5 most central
-nodes are 756067.MicvaDRAFT_1634 (degree 1941), 756067.MicvaDRAFT_2450 (degree 1726),
-756067.MicvaDRAFT_2432 (degree 1641), 756067.MicvaDRAFT_2824 (degree 1639) and 756067.MicvaDRAFT_0974
+The undirected graph Microcoleus vaginatus has 5046 nodes and 782126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06145 and has 18 connected components, where the component with most
+nodes has 5005 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 289, the mean node degree is 310.00, and
+the node degree mode is 3. The top 5 most central nodes are 756067.MicvaDRAFT_1634
+(degree 1941), 756067.MicvaDRAFT_2450 (degree 1726), 756067.MicvaDRAFT_2432
+(degree 1641), 756067.MicvaDRAFT_2824 (degree 1639) and 756067.MicvaDRAFT_0974
 (degree 1557).
 
 
@@ -107,13 +108,14 @@ def MicrocoleusVaginatus(
 	
 	Datetime: 2021-02-02 21:41:01.155695
 	
-	The undirected graph Microcoleus vaginatus has 5046 nodes and 782126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06145 and
-	has 18 connected components, where the component with most nodes has 5005 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 289,
-	the mean node degree is 310.00, and the node degree mode is 3. The top 5 most central
-	nodes are 756067.MicvaDRAFT_1634 (degree 1941), 756067.MicvaDRAFT_2450 (degree 1726),
-	756067.MicvaDRAFT_2432 (degree 1641), 756067.MicvaDRAFT_2824 (degree 1639) and 756067.MicvaDRAFT_0974
+	The undirected graph Microcoleus vaginatus has 5046 nodes and 782126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06145 and has 18 connected components, where the component with most
+	nodes has 5005 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 289, the mean node degree is 310.00, and
+	the node degree mode is 3. The top 5 most central nodes are 756067.MicvaDRAFT_1634
+	(degree 1941), 756067.MicvaDRAFT_2450 (degree 1726), 756067.MicvaDRAFT_2432
+	(degree 1641), 756067.MicvaDRAFT_2824 (degree 1639) and 756067.MicvaDRAFT_0974
 	(degree 1557).
 	
 

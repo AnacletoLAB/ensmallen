@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:55.573115
 
-The undirected graph Sphingobium herbicidovorans has 3883 nodes and 411373 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05458
-and has 10 connected components, where the component with most nodes has 3854 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 211.88, and the node degree mode is 3. The top 5
-most central nodes are 1219045.BV98_001726 (degree 1496), 1219045.BV98_003274 (degree
-1414), 1219045.BV98_001048 (degree 1374), 1219045.BV98_003863 (degree 1313) and 1219045.BV98_001014
-(degree 1193).
+The undirected graph Sphingobium herbicidovorans has 3883 nodes and 411373
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05458 and has 10 connected components, where the component
+with most nodes has 3854 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 211.88,
+and the node degree mode is 3. The top 5 most central nodes are 1219045.BV98_001726
+(degree 1496), 1219045.BV98_003274 (degree 1414), 1219045.BV98_001048 (degree
+1374), 1219045.BV98_003863 (degree 1313) and 1219045.BV98_001014 (degree
+1193).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobiumHerbicidovorans(
 	
 	Datetime: 2021-02-02 23:22:55.573115
 	
-	The undirected graph Sphingobium herbicidovorans has 3883 nodes and 411373 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05458
-	and has 10 connected components, where the component with most nodes has 3854 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 211.88, and the node degree mode is 3. The top 5
-	most central nodes are 1219045.BV98_001726 (degree 1496), 1219045.BV98_003274 (degree
-	1414), 1219045.BV98_001048 (degree 1374), 1219045.BV98_003863 (degree 1313) and 1219045.BV98_001014
-	(degree 1193).
+	The undirected graph Sphingobium herbicidovorans has 3883 nodes and 411373
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05458 and has 10 connected components, where the component
+	with most nodes has 3854 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 211.88,
+	and the node degree mode is 3. The top 5 most central nodes are 1219045.BV98_001726
+	(degree 1496), 1219045.BV98_003274 (degree 1414), 1219045.BV98_001048 (degree
+	1374), 1219045.BV98_003863 (degree 1313) and 1219045.BV98_001014 (degree
+	1193).
 	
 
 

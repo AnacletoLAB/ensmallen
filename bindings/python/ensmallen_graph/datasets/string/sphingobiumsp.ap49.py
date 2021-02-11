@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:17.356157
 
-The undirected graph Sphingobium sp. AP49 has 4182 nodes and 427330 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04888 and
-has 9 connected components, where the component with most nodes has 4162 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 204.37, and the node degree mode is 4. The top 5 most central
-nodes are 1144307.PMI04_04007 (degree 1402), 1144307.PMI04_03016 (degree 1119), 1144307.PMI04_03136
-(degree 1078), 1144307.PMI04_01347 (degree 1047) and 1144307.PMI04_02473 (degree
+The undirected graph Sphingobium sp. AP49 has 4182 nodes and 427330 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04888 and has 9 connected components, where the component with most
+nodes has 4162 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 204.37, and
+the node degree mode is 4. The top 5 most central nodes are 1144307.PMI04_04007
+(degree 1402), 1144307.PMI04_03016 (degree 1119), 1144307.PMI04_03136 (degree
+1078), 1144307.PMI04_01347 (degree 1047) and 1144307.PMI04_02473 (degree
 1027).
 
 
@@ -107,13 +108,14 @@ def SphingobiumSp.Ap49(
 	
 	Datetime: 2021-02-02 22:58:17.356157
 	
-	The undirected graph Sphingobium sp. AP49 has 4182 nodes and 427330 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04888 and
-	has 9 connected components, where the component with most nodes has 4162 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 204.37, and the node degree mode is 4. The top 5 most central
-	nodes are 1144307.PMI04_04007 (degree 1402), 1144307.PMI04_03016 (degree 1119), 1144307.PMI04_03136
-	(degree 1078), 1144307.PMI04_01347 (degree 1047) and 1144307.PMI04_02473 (degree
+	The undirected graph Sphingobium sp. AP49 has 4182 nodes and 427330 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04888 and has 9 connected components, where the component with most
+	nodes has 4162 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 204.37, and
+	the node degree mode is 4. The top 5 most central nodes are 1144307.PMI04_04007
+	(degree 1402), 1144307.PMI04_03016 (degree 1119), 1144307.PMI04_03136 (degree
+	1078), 1144307.PMI04_01347 (degree 1047) and 1144307.PMI04_02473 (degree
 	1027).
 	
 

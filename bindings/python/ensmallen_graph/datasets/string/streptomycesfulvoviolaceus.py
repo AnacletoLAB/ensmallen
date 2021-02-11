@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:24.825292
 
-The undirected graph Streptomyces fulvoviolaceus has 10376 nodes and 1970303 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03661
-and has 50 connected components, where the component with most nodes has 10259 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 318, the mean node degree is 379.78, and the node degree mode is 2. The top 5
-most central nodes are 285535.JOEY01000055_gene6239 (degree 4855), 285535.JOEY01000034_gene9857
+The undirected graph Streptomyces fulvoviolaceus has 10376 nodes and 1970303
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03661 and has 50 connected components, where the component
+with most nodes has 10259 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 318, the mean node degree
+is 379.78, and the node degree mode is 2. The top 5 most central nodes
+are 285535.JOEY01000055_gene6239 (degree 4855), 285535.JOEY01000034_gene9857
 (degree 3539), 285535.JOEY01000002_gene4767 (degree 2940), 285535.JOEY01000005_gene7887
 (degree 2883) and 285535.JOEY01000003_gene10430 (degree 2877).
 
@@ -107,12 +108,13 @@ def StreptomycesFulvoviolaceus(
 	
 	Datetime: 2021-02-02 20:19:24.825292
 	
-	The undirected graph Streptomyces fulvoviolaceus has 10376 nodes and 1970303 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03661
-	and has 50 connected components, where the component with most nodes has 10259 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 318, the mean node degree is 379.78, and the node degree mode is 2. The top 5
-	most central nodes are 285535.JOEY01000055_gene6239 (degree 4855), 285535.JOEY01000034_gene9857
+	The undirected graph Streptomyces fulvoviolaceus has 10376 nodes and 1970303
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03661 and has 50 connected components, where the component
+	with most nodes has 10259 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 318, the mean node degree
+	is 379.78, and the node degree mode is 2. The top 5 most central nodes
+	are 285535.JOEY01000055_gene6239 (degree 4855), 285535.JOEY01000034_gene9857
 	(degree 3539), 285535.JOEY01000002_gene4767 (degree 2940), 285535.JOEY01000005_gene7887
 	(degree 2883) and 285535.JOEY01000003_gene10430 (degree 2877).
 	

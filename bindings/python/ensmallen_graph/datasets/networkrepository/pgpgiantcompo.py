@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:17.030734
 
-The undirected graph PGPgiantcompo has 10680 nodes and 24316 weighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00043 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 4.55, and the node degree mode is 1. The top 5 most central nodes
-are 1144 (degree 205), 6656 (degree 163), 6556 (degree 127), 6933 (degree 113) and
-1690 (degree 109).
+The undirected graph PGPgiantcompo has 10680 nodes and 24316 weighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00043 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.55, and the node degree mode
+is 1. The top 5 most central nodes are 1144 (degree 205), 6656 (degree
+163), 6556 (degree 127), 6933 (degree 113) and 1690 (degree 109).
 
 
 References
@@ -102,12 +102,12 @@ def Pgpgiantcompo(
 	
 	Datetime: 2021-02-06 10:14:17.030734
 	
-	The undirected graph PGPgiantcompo has 10680 nodes and 24316 weighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00043 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 4.55, and the node degree mode is 1. The top 5 most central nodes
-	are 1144 (degree 205), 6656 (degree 163), 6556 (degree 127), 6933 (degree 113) and
-	1690 (degree 109).
+	The undirected graph PGPgiantcompo has 10680 nodes and 24316 weighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00043 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.55, and the node degree mode
+	is 1. The top 5 most central nodes are 1144 (degree 205), 6656 (degree
+	163), 6556 (degree 127), 6933 (degree 113) and 1690 (degree 109).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:20.023653
 
-The undirected graph SmaGri has 1024 nodes and 4917 weighted edges, of which 1 are
-self-loops. The graph is sparse as it has a density of 0.00939 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 9.60, and the node degree mode is 1. The top 5 most central nodes are 1 (degree
-232), 10 (degree 207), 21 (degree 161), 470 (degree 151) and 58 (degree 128).
+The undirected graph SmaGri has 1024 nodes and 4917 weighted edges, of
+which 1 are self-loops. The graph is sparse as it has a density of 0.00939
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 9.60, and the node degree mode is 1. The
+top 5 most central nodes are 1 (degree 232), 10 (degree 207), 21 (degree
+161), 470 (degree 151) and 58 (degree 128).
 
 
 References
@@ -101,11 +102,12 @@ def Smagri(
 	
 	Datetime: 2021-02-06 08:00:20.023653
 	
-	The undirected graph SmaGri has 1024 nodes and 4917 weighted edges, of which 1 are
-	self-loops. The graph is sparse as it has a density of 0.00939 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 9.60, and the node degree mode is 1. The top 5 most central nodes are 1 (degree
-	232), 10 (degree 207), 21 (degree 161), 470 (degree 151) and 58 (degree 128).
+	The undirected graph SmaGri has 1024 nodes and 4917 weighted edges, of
+	which 1 are self-loops. The graph is sparse as it has a density of 0.00939
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 9.60, and the node degree mode is 1. The
+	top 5 most central nodes are 1 (degree 232), 10 (degree 207), 21 (degree
+	161), 470 (degree 151) and 58 (degree 128).
 	
 
 

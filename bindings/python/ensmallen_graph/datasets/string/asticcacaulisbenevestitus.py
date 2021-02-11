@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:14.712387
 
-The undirected graph Asticcacaulis benevestitus has 4545 nodes and 558102 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05405
-and has 27 connected components, where the component with most nodes has 4485 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 245.59, and the node degree mode is 3. The top 5
-most central nodes are 1121022.ABENE_22270 (degree 1607), 1121022.ABENE_14560 (degree
-1386), 1121022.ABENE_02535 (degree 1369), 1121022.ABENE_02935 (degree 1272) and 1121022.ABENE_06070
-(degree 1257).
+The undirected graph Asticcacaulis benevestitus has 4545 nodes and 558102
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05405 and has 27 connected components, where the component
+with most nodes has 4485 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 245.59,
+and the node degree mode is 3. The top 5 most central nodes are 1121022.ABENE_22270
+(degree 1607), 1121022.ABENE_14560 (degree 1386), 1121022.ABENE_02535 (degree
+1369), 1121022.ABENE_02935 (degree 1272) and 1121022.ABENE_06070 (degree
+1257).
 
 
 References
@@ -107,14 +108,15 @@ def AsticcacaulisBenevestitus(
 	
 	Datetime: 2021-02-02 22:32:14.712387
 	
-	The undirected graph Asticcacaulis benevestitus has 4545 nodes and 558102 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05405
-	and has 27 connected components, where the component with most nodes has 4485 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 245.59, and the node degree mode is 3. The top 5
-	most central nodes are 1121022.ABENE_22270 (degree 1607), 1121022.ABENE_14560 (degree
-	1386), 1121022.ABENE_02535 (degree 1369), 1121022.ABENE_02935 (degree 1272) and 1121022.ABENE_06070
-	(degree 1257).
+	The undirected graph Asticcacaulis benevestitus has 4545 nodes and 558102
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05405 and has 27 connected components, where the component
+	with most nodes has 4485 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 245.59,
+	and the node degree mode is 3. The top 5 most central nodes are 1121022.ABENE_22270
+	(degree 1607), 1121022.ABENE_14560 (degree 1386), 1121022.ABENE_02535 (degree
+	1369), 1121022.ABENE_02935 (degree 1272) and 1121022.ABENE_06070 (degree
+	1257).
 	
 
 

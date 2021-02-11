@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:10.482936
 
-The undirected graph Erwinia billingiae has 4670 nodes and 499452 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04581 and
-has 4 connected components, where the component with most nodes has 4663 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 213.90, and the node degree mode is 2. The top 5 most central
-nodes are 634500.EbC_06480 (degree 1534), 634500.EbC_00260 (degree 1451), 634500.EbC_40470
-(degree 1388), 634500.EbC_33660 (degree 1169) and 634500.EbC_40450 (degree 1131).
+The undirected graph Erwinia billingiae has 4670 nodes and 499452 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04581 and has 4 connected components, where the component with most
+nodes has 4663 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 213.90, and
+the node degree mode is 2. The top 5 most central nodes are 634500.EbC_06480
+(degree 1534), 634500.EbC_00260 (degree 1451), 634500.EbC_40470 (degree
+1388), 634500.EbC_33660 (degree 1169) and 634500.EbC_40450 (degree 1131).
 
 
 References
@@ -106,13 +107,14 @@ def ErwiniaBillingiae(
 	
 	Datetime: 2021-02-02 21:22:10.482936
 	
-	The undirected graph Erwinia billingiae has 4670 nodes and 499452 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04581 and
-	has 4 connected components, where the component with most nodes has 4663 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 213.90, and the node degree mode is 2. The top 5 most central
-	nodes are 634500.EbC_06480 (degree 1534), 634500.EbC_00260 (degree 1451), 634500.EbC_40470
-	(degree 1388), 634500.EbC_33660 (degree 1169) and 634500.EbC_40450 (degree 1131).
+	The undirected graph Erwinia billingiae has 4670 nodes and 499452 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04581 and has 4 connected components, where the component with most
+	nodes has 4663 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 213.90, and
+	the node degree mode is 2. The top 5 most central nodes are 634500.EbC_06480
+	(degree 1534), 634500.EbC_00260 (degree 1451), 634500.EbC_40470 (degree
+	1388), 634500.EbC_33660 (degree 1169) and 634500.EbC_40450 (degree 1131).
 	
 
 

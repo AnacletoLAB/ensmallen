@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:54.214409
 
-The undirected graph Mucor circinelloides has 7990 nodes and 1270454 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03981 and
-has 14 connected components, where the component with most nodes has 7961 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 234,
-the mean node degree is 318.01, and the node degree mode is 1. The top 5 most central
-nodes are 36080.S2JIQ7 (degree 2520), 36080.S2JA33 (degree 2299), 36080.S2JS36 (degree
-2278), 36080.S2JWC2 (degree 2025) and 36080.S2JMD7 (degree 1910).
+The undirected graph Mucor circinelloides has 7990 nodes and 1270454 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03981 and has 14 connected components, where the component with most
+nodes has 7961 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 234, the mean node degree is 318.01, and
+the node degree mode is 1. The top 5 most central nodes are 36080.S2JIQ7
+(degree 2520), 36080.S2JA33 (degree 2299), 36080.S2JS36 (degree 2278),
+36080.S2JWC2 (degree 2025) and 36080.S2JMD7 (degree 1910).
 
 
 References
@@ -106,13 +107,14 @@ def MucorCircinelloides(
 	
 	Datetime: 2021-02-02 18:05:54.214409
 	
-	The undirected graph Mucor circinelloides has 7990 nodes and 1270454 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03981 and
-	has 14 connected components, where the component with most nodes has 7961 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 234,
-	the mean node degree is 318.01, and the node degree mode is 1. The top 5 most central
-	nodes are 36080.S2JIQ7 (degree 2520), 36080.S2JA33 (degree 2299), 36080.S2JS36 (degree
-	2278), 36080.S2JWC2 (degree 2025) and 36080.S2JMD7 (degree 1910).
+	The undirected graph Mucor circinelloides has 7990 nodes and 1270454 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03981 and has 14 connected components, where the component with most
+	nodes has 7961 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 234, the mean node degree is 318.01, and
+	the node degree mode is 1. The top 5 most central nodes are 36080.S2JIQ7
+	(degree 2520), 36080.S2JA33 (degree 2299), 36080.S2JS36 (degree 2278),
+	36080.S2JWC2 (degree 2025) and 36080.S2JMD7 (degree 1910).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:54:20.947061
 
-The undirected graph G15 has 800 nodes and 4661 unweighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.01458 and is connected, as
-it has a single component. The graph median node degree is 8, the mean node degree
-is 11.65, and the node degree mode is 6. The top 5 most central nodes are 6 (degree
-153), 4 (degree 121), 5 (degree 120), 3 (degree 89) and 2 (degree 86).
+The undirected graph G15 has 800 nodes and 4661 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.01458
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 11.65, and the node degree mode is 6. The
+top 5 most central nodes are 6 (degree 153), 4 (degree 121), 5 (degree
+120), 3 (degree 89) and 2 (degree 86).
 
 
 References
@@ -101,11 +102,12 @@ def G15(
 	
 	Datetime: 2021-02-06 06:54:20.947061
 	
-	The undirected graph G15 has 800 nodes and 4661 unweighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.01458 and is connected, as
-	it has a single component. The graph median node degree is 8, the mean node degree
-	is 11.65, and the node degree mode is 6. The top 5 most central nodes are 6 (degree
-	153), 4 (degree 121), 5 (degree 120), 3 (degree 89) and 2 (degree 86).
+	The undirected graph G15 has 800 nodes and 4661 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.01458
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 11.65, and the node degree mode is 6. The
+	top 5 most central nodes are 6 (degree 153), 4 (degree 121), 5 (degree
+	120), 3 (degree 89) and 2 (degree 86).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:42.554898
 
-The undirected graph Chlamydophila pneumoniae TW183 has 1102 nodes and 44490 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07334
-and has 12 connected components, where the component with most nodes has 1066 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 58, the mean node degree is 80.74, and the node degree mode is 6. The top 5 most
-central nodes are 182082.CpB0636 (degree 468), 182082.CpB0618 (degree 407), 182082.CpB0325
+The undirected graph Chlamydophila pneumoniae TW183 has 1102 nodes and
+44490 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07334 and has 12 connected components, where the
+component with most nodes has 1066 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 58, the mean node degree
+is 80.74, and the node degree mode is 6. The top 5 most central nodes are
+182082.CpB0636 (degree 468), 182082.CpB0618 (degree 407), 182082.CpB0325
 (degree 403), 182082.CpB0118 (degree 390) and 182082.CpB0173 (degree 364).
 
 
@@ -106,12 +107,13 @@ def ChlamydophilaPneumoniaeTw183(
 	
 	Datetime: 2021-02-02 19:56:42.554898
 	
-	The undirected graph Chlamydophila pneumoniae TW183 has 1102 nodes and 44490 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07334
-	and has 12 connected components, where the component with most nodes has 1066 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 58, the mean node degree is 80.74, and the node degree mode is 6. The top 5 most
-	central nodes are 182082.CpB0636 (degree 468), 182082.CpB0618 (degree 407), 182082.CpB0325
+	The undirected graph Chlamydophila pneumoniae TW183 has 1102 nodes and
+	44490 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07334 and has 12 connected components, where the
+	component with most nodes has 1066 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 58, the mean node degree
+	is 80.74, and the node degree mode is 6. The top 5 most central nodes are
+	182082.CpB0636 (degree 468), 182082.CpB0618 (degree 407), 182082.CpB0325
 	(degree 403), 182082.CpB0118 (degree 390) and 182082.CpB0173 (degree 364).
 	
 

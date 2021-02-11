@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:38.730407
 
-The undirected graph Chryseobacterium luteum has 3963 nodes and 384330 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04895 and
-has 35 connected components, where the component with most nodes has 3844 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 193.96, and the node degree mode is 2. The top 5 most central
-nodes are 421531.IX38_09000 (degree 1110), 421531.IX38_05105 (degree 977), 421531.IX38_13270
-(degree 931), 421531.IX38_22600 (degree 874) and 421531.IX38_20845 (degree 826).
+The undirected graph Chryseobacterium luteum has 3963 nodes and 384330
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04895 and has 35 connected components, where the component
+with most nodes has 3844 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 193.96,
+and the node degree mode is 2. The top 5 most central nodes are 421531.IX38_09000
+(degree 1110), 421531.IX38_05105 (degree 977), 421531.IX38_13270 (degree
+931), 421531.IX38_22600 (degree 874) and 421531.IX38_20845 (degree 826).
 
 
 References
@@ -106,13 +107,14 @@ def ChryseobacteriumLuteum(
 	
 	Datetime: 2021-02-02 20:47:38.730407
 	
-	The undirected graph Chryseobacterium luteum has 3963 nodes and 384330 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04895 and
-	has 35 connected components, where the component with most nodes has 3844 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 193.96, and the node degree mode is 2. The top 5 most central
-	nodes are 421531.IX38_09000 (degree 1110), 421531.IX38_05105 (degree 977), 421531.IX38_13270
-	(degree 931), 421531.IX38_22600 (degree 874) and 421531.IX38_20845 (degree 826).
+	The undirected graph Chryseobacterium luteum has 3963 nodes and 384330
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04895 and has 35 connected components, where the component
+	with most nodes has 3844 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 193.96,
+	and the node degree mode is 2. The top 5 most central nodes are 421531.IX38_09000
+	(degree 1110), 421531.IX38_05105 (degree 977), 421531.IX38_13270 (degree
+	931), 421531.IX38_22600 (degree 874) and 421531.IX38_20845 (degree 826).
 	
 
 

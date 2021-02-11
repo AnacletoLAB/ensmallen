@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:24.472824
 
-The undirected graph Erysipelotrichaceae bacterium 3153 has 3791 nodes and 1128617
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.15710 and has 22 connected components, where the component with most
-nodes has 3743 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 554, the mean node degree is 595.42, and the node degree mode
-is 1. The top 5 most central nodes are 658659.HMPREF0983_02264 (degree 2232), 658659.HMPREF0983_01482
-(degree 2201), 658659.HMPREF0983_02177 (degree 2182), 658659.HMPREF0983_01518 (degree
-2157) and 658659.HMPREF0983_02046 (degree 2148).
+The undirected graph Erysipelotrichaceae bacterium 3153 has 3791 nodes
+and 1128617 weighted edges, of which none are self-loops. The graph is
+quite dense as it has a density of 0.15710 and has 22 connected components,
+where the component with most nodes has 3743 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 554, the mean
+node degree is 595.42, and the node degree mode is 1. The top 5 most central
+nodes are 658659.HMPREF0983_02264 (degree 2232), 658659.HMPREF0983_01482
+(degree 2201), 658659.HMPREF0983_02177 (degree 2182), 658659.HMPREF0983_01518
+(degree 2157) and 658659.HMPREF0983_02046 (degree 2148).
 
 
 References
@@ -107,14 +108,15 @@ def ErysipelotrichaceaeBacterium3153(
 	
 	Datetime: 2021-02-02 21:27:24.472824
 	
-	The undirected graph Erysipelotrichaceae bacterium 3153 has 3791 nodes and 1128617
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.15710 and has 22 connected components, where the component with most
-	nodes has 3743 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 554, the mean node degree is 595.42, and the node degree mode
-	is 1. The top 5 most central nodes are 658659.HMPREF0983_02264 (degree 2232), 658659.HMPREF0983_01482
-	(degree 2201), 658659.HMPREF0983_02177 (degree 2182), 658659.HMPREF0983_01518 (degree
-	2157) and 658659.HMPREF0983_02046 (degree 2148).
+	The undirected graph Erysipelotrichaceae bacterium 3153 has 3791 nodes
+	and 1128617 weighted edges, of which none are self-loops. The graph is
+	quite dense as it has a density of 0.15710 and has 22 connected components,
+	where the component with most nodes has 3743 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 554, the mean
+	node degree is 595.42, and the node degree mode is 1. The top 5 most central
+	nodes are 658659.HMPREF0983_02264 (degree 2232), 658659.HMPREF0983_01482
+	(degree 2201), 658659.HMPREF0983_02177 (degree 2182), 658659.HMPREF0983_01518
+	(degree 2157) and 658659.HMPREF0983_02046 (degree 2148).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:22:00.439031
 
-The undirected graph Prochlorococcus marinus SB has 1877 nodes and 101439 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05762
-and has 40 connected components, where the component with most nodes has 1749 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 108.09, and the node degree mode is 4. The top 5 most
-central nodes are 59926.EV02_1812 (degree 699), 59926.EV02_1446 (degree 501), 59926.EV02_1512
-(degree 498), 59926.EV02_1369 (degree 495) and 59926.EV02_0772 (degree 487).
+The undirected graph Prochlorococcus marinus SB has 1877 nodes and 101439
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05762 and has 40 connected components, where the component
+with most nodes has 1749 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 108.09,
+and the node degree mode is 4. The top 5 most central nodes are 59926.EV02_1812
+(degree 699), 59926.EV02_1446 (degree 501), 59926.EV02_1512 (degree 498),
+59926.EV02_1369 (degree 495) and 59926.EV02_0772 (degree 487).
 
 
 References
@@ -106,13 +107,14 @@ def ProchlorococcusMarinusSb(
 	
 	Datetime: 2021-02-02 18:22:00.439031
 	
-	The undirected graph Prochlorococcus marinus SB has 1877 nodes and 101439 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05762
-	and has 40 connected components, where the component with most nodes has 1749 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 108.09, and the node degree mode is 4. The top 5 most
-	central nodes are 59926.EV02_1812 (degree 699), 59926.EV02_1446 (degree 501), 59926.EV02_1512
-	(degree 498), 59926.EV02_1369 (degree 495) and 59926.EV02_0772 (degree 487).
+	The undirected graph Prochlorococcus marinus SB has 1877 nodes and 101439
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05762 and has 40 connected components, where the component
+	with most nodes has 1749 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 108.09,
+	and the node degree mode is 4. The top 5 most central nodes are 59926.EV02_1812
+	(degree 699), 59926.EV02_1446 (degree 501), 59926.EV02_1512 (degree 498),
+	59926.EV02_1369 (degree 495) and 59926.EV02_0772 (degree 487).
 	
 
 

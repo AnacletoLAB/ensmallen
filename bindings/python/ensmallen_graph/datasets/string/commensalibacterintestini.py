@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:18.237920
 
-The undirected graph Commensalibacter intestini has 2180 nodes and 145737 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06136
-and has 21 connected components, where the component with most nodes has 2132 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 133.70, and the node degree mode is 1. The top 5
-most central nodes are 1088868.CIN_14650 (degree 814), 1088868.CIN_08400 (degree
-740), 1088868.CIN_15650 (degree 685), 1088868.CIN_01260 (degree 617) and 1088868.CIN_20170
-(degree 612).
+The undirected graph Commensalibacter intestini has 2180 nodes and 145737
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06136 and has 21 connected components, where the component
+with most nodes has 2132 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 133.70,
+and the node degree mode is 1. The top 5 most central nodes are 1088868.CIN_14650
+(degree 814), 1088868.CIN_08400 (degree 740), 1088868.CIN_15650 (degree
+685), 1088868.CIN_01260 (degree 617) and 1088868.CIN_20170 (degree 612).
 
 
 References
@@ -107,14 +107,14 @@ def CommensalibacterIntestini(
 	
 	Datetime: 2021-02-02 22:21:18.237920
 	
-	The undirected graph Commensalibacter intestini has 2180 nodes and 145737 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06136
-	and has 21 connected components, where the component with most nodes has 2132 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 133.70, and the node degree mode is 1. The top 5
-	most central nodes are 1088868.CIN_14650 (degree 814), 1088868.CIN_08400 (degree
-	740), 1088868.CIN_15650 (degree 685), 1088868.CIN_01260 (degree 617) and 1088868.CIN_20170
-	(degree 612).
+	The undirected graph Commensalibacter intestini has 2180 nodes and 145737
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06136 and has 21 connected components, where the component
+	with most nodes has 2132 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 133.70,
+	and the node degree mode is 1. The top 5 most central nodes are 1088868.CIN_14650
+	(degree 814), 1088868.CIN_08400 (degree 740), 1088868.CIN_15650 (degree
+	685), 1088868.CIN_01260 (degree 617) and 1088868.CIN_20170 (degree 612).
 	
 
 

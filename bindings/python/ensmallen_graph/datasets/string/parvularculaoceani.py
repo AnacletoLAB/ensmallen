@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:18.284850
 
-The undirected graph Parvularcula oceani has 3030 nodes and 311491 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06788 and
-has 11 connected components, where the component with most nodes has 3009 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 205.60, and the node degree mode is 1. The top 5 most central
-nodes are 1247963.JPHU01000002_gene2748 (degree 1369), 1247963.JPHU01000001_gene2032
-(degree 1095), 1247963.JPHU01000006_gene167 (degree 1093), 1247963.JPHU01000012_gene858
-(degree 1059) and 1247963.JPHU01000004_gene464 (degree 1048).
+The undirected graph Parvularcula oceani has 3030 nodes and 311491 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06788 and has 11 connected components, where the component with most
+nodes has 3009 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 205.60, and
+the node degree mode is 1. The top 5 most central nodes are 1247963.JPHU01000002_gene2748
+(degree 1369), 1247963.JPHU01000001_gene2032 (degree 1095), 1247963.JPHU01000006_gene167
+(degree 1093), 1247963.JPHU01000012_gene858 (degree 1059) and 1247963.JPHU01000004_gene464
+(degree 1048).
 
 
 References
@@ -107,14 +108,15 @@ def ParvularculaOceani(
 	
 	Datetime: 2021-02-02 23:34:18.284850
 	
-	The undirected graph Parvularcula oceani has 3030 nodes and 311491 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06788 and
-	has 11 connected components, where the component with most nodes has 3009 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 205.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1247963.JPHU01000002_gene2748 (degree 1369), 1247963.JPHU01000001_gene2032
-	(degree 1095), 1247963.JPHU01000006_gene167 (degree 1093), 1247963.JPHU01000012_gene858
-	(degree 1059) and 1247963.JPHU01000004_gene464 (degree 1048).
+	The undirected graph Parvularcula oceani has 3030 nodes and 311491 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06788 and has 11 connected components, where the component with most
+	nodes has 3009 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 205.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1247963.JPHU01000002_gene2748
+	(degree 1369), 1247963.JPHU01000001_gene2032 (degree 1095), 1247963.JPHU01000006_gene167
+	(degree 1093), 1247963.JPHU01000012_gene858 (degree 1059) and 1247963.JPHU01000004_gene464
+	(degree 1048).
 	
 
 

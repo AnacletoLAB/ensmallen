@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:05.184832
 
-The undirected graph Flavobacterium daejeonense has 3555 nodes and 259445 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04107
-and has 13 connected components, where the component with most nodes has 3524 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 145.96, and the node degree mode is 3. The top 5
-most central nodes are 1121887.AUDK01000002_gene2023 (degree 1079), 1121887.AUDK01000013_gene3328
-(degree 847), 1121887.AUDK01000024_gene1121 (degree 820), 1121887.AUDK01000005_gene3099
-(degree 793) and 1121887.AUDK01000004_gene345 (degree 786).
+The undirected graph Flavobacterium daejeonense has 3555 nodes and 259445
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04107 and has 13 connected components, where the component
+with most nodes has 3524 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 145.96,
+and the node degree mode is 3. The top 5 most central nodes are 1121887.AUDK01000002_gene2023
+(degree 1079), 1121887.AUDK01000013_gene3328 (degree 847), 1121887.AUDK01000024_gene1121
+(degree 820), 1121887.AUDK01000005_gene3099 (degree 793) and 1121887.AUDK01000004_gene345
+(degree 786).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumDaejeonense(
 	
 	Datetime: 2021-02-02 22:38:05.184832
 	
-	The undirected graph Flavobacterium daejeonense has 3555 nodes and 259445 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04107
-	and has 13 connected components, where the component with most nodes has 3524 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 145.96, and the node degree mode is 3. The top 5
-	most central nodes are 1121887.AUDK01000002_gene2023 (degree 1079), 1121887.AUDK01000013_gene3328
-	(degree 847), 1121887.AUDK01000024_gene1121 (degree 820), 1121887.AUDK01000005_gene3099
-	(degree 793) and 1121887.AUDK01000004_gene345 (degree 786).
+	The undirected graph Flavobacterium daejeonense has 3555 nodes and 259445
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04107 and has 13 connected components, where the component
+	with most nodes has 3524 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 145.96,
+	and the node degree mode is 3. The top 5 most central nodes are 1121887.AUDK01000002_gene2023
+	(degree 1079), 1121887.AUDK01000013_gene3328 (degree 847), 1121887.AUDK01000024_gene1121
+	(degree 820), 1121887.AUDK01000005_gene3099 (degree 793) and 1121887.AUDK01000004_gene345
+	(degree 786).
 	
 
 

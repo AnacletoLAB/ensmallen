@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:08.913696
 
-The undirected graph Deinococcus sp. RL has 2602 nodes and 215087 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06356 and
-has 11 connected components, where the component with most nodes has 2577 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 165.32, and the node degree mode is 4. The top 5 most central
-nodes are 1489678.RDMS_07825 (degree 994), 1489678.RDMS_06200 (degree 889), 1489678.RDMS_08130
-(degree 822), 1489678.RDMS_01880 (degree 763) and 1489678.RDMS_10875 (degree 738).
+The undirected graph Deinococcus sp. RL has 2602 nodes and 215087 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06356 and has 11 connected components, where the component with most
+nodes has 2577 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 165.32, and
+the node degree mode is 4. The top 5 most central nodes are 1489678.RDMS_07825
+(degree 994), 1489678.RDMS_06200 (degree 889), 1489678.RDMS_08130 (degree
+822), 1489678.RDMS_01880 (degree 763) and 1489678.RDMS_10875 (degree 738).
 
 
 References
@@ -106,13 +107,14 @@ def DeinococcusSp.Rl(
 	
 	Datetime: 2021-02-03 23:14:08.913696
 	
-	The undirected graph Deinococcus sp. RL has 2602 nodes and 215087 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06356 and
-	has 11 connected components, where the component with most nodes has 2577 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 165.32, and the node degree mode is 4. The top 5 most central
-	nodes are 1489678.RDMS_07825 (degree 994), 1489678.RDMS_06200 (degree 889), 1489678.RDMS_08130
-	(degree 822), 1489678.RDMS_01880 (degree 763) and 1489678.RDMS_10875 (degree 738).
+	The undirected graph Deinococcus sp. RL has 2602 nodes and 215087 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06356 and has 11 connected components, where the component with most
+	nodes has 2577 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 165.32, and
+	the node degree mode is 4. The top 5 most central nodes are 1489678.RDMS_07825
+	(degree 994), 1489678.RDMS_06200 (degree 889), 1489678.RDMS_08130 (degree
+	822), 1489678.RDMS_01880 (degree 763) and 1489678.RDMS_10875 (degree 738).
 	
 
 

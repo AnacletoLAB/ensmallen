@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:10.413608
 
-The undirected graph Bacillus okhensis has 4275 nodes and 411368 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04503 and
-has 27 connected components, where the component with most nodes has 4205 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 192.45, and the node degree mode is 1. The top 5 most central
-nodes are 333138.LQ50_20910 (degree 1452), 333138.LQ50_06545 (degree 1374), 333138.LQ50_25430
-(degree 1305), 333138.LQ50_09725 (degree 1282) and 333138.LQ50_23635 (degree 1224).
+The undirected graph Bacillus okhensis has 4275 nodes and 411368 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04503 and has 27 connected components, where the component with most
+nodes has 4205 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 192.45, and
+the node degree mode is 1. The top 5 most central nodes are 333138.LQ50_20910
+(degree 1452), 333138.LQ50_06545 (degree 1374), 333138.LQ50_25430 (degree
+1305), 333138.LQ50_09725 (degree 1282) and 333138.LQ50_23635 (degree 1224).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusOkhensis(
 	
 	Datetime: 2021-02-02 20:30:10.413608
 	
-	The undirected graph Bacillus okhensis has 4275 nodes and 411368 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04503 and
-	has 27 connected components, where the component with most nodes has 4205 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 192.45, and the node degree mode is 1. The top 5 most central
-	nodes are 333138.LQ50_20910 (degree 1452), 333138.LQ50_06545 (degree 1374), 333138.LQ50_25430
-	(degree 1305), 333138.LQ50_09725 (degree 1282) and 333138.LQ50_23635 (degree 1224).
+	The undirected graph Bacillus okhensis has 4275 nodes and 411368 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04503 and has 27 connected components, where the component with most
+	nodes has 4205 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 192.45, and
+	the node degree mode is 1. The top 5 most central nodes are 333138.LQ50_20910
+	(degree 1452), 333138.LQ50_06545 (degree 1374), 333138.LQ50_25430 (degree
+	1305), 333138.LQ50_09725 (degree 1282) and 333138.LQ50_23635 (degree 1224).
 	
 
 

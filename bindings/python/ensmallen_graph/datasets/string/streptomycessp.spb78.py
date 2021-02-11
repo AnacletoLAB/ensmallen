@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:39.235053
 
-The undirected graph Streptomyces sp. SPB78 has 6257 nodes and 700429 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03579 and
-has 46 connected components, where the component with most nodes has 6144 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 223.89, and the node degree mode is 2. The top 5 most central
-nodes are 591157.SSLG_05024 (degree 2692), 591157.SSLG_01213 (degree 1620), 591157.SSLG_00710
-(degree 1550), 591157.SSLG_02350 (degree 1530) and 591157.SSLG_02340 (degree 1517).
+The undirected graph Streptomyces sp. SPB78 has 6257 nodes and 700429 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03579 and has 46 connected components, where the component with most
+nodes has 6144 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 223.89, and
+the node degree mode is 2. The top 5 most central nodes are 591157.SSLG_05024
+(degree 2692), 591157.SSLG_01213 (degree 1620), 591157.SSLG_00710 (degree
+1550), 591157.SSLG_02350 (degree 1530) and 591157.SSLG_02340 (degree 1517).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesSp.Spb78(
 	
 	Datetime: 2021-02-02 21:17:39.235053
 	
-	The undirected graph Streptomyces sp. SPB78 has 6257 nodes and 700429 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03579 and
-	has 46 connected components, where the component with most nodes has 6144 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 223.89, and the node degree mode is 2. The top 5 most central
-	nodes are 591157.SSLG_05024 (degree 2692), 591157.SSLG_01213 (degree 1620), 591157.SSLG_00710
-	(degree 1550), 591157.SSLG_02350 (degree 1530) and 591157.SSLG_02340 (degree 1517).
+	The undirected graph Streptomyces sp. SPB78 has 6257 nodes and 700429 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03579 and has 46 connected components, where the component with most
+	nodes has 6144 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 223.89, and
+	the node degree mode is 2. The top 5 most central nodes are 591157.SSLG_05024
+	(degree 2692), 591157.SSLG_01213 (degree 1620), 591157.SSLG_00710 (degree
+	1550), 591157.SSLG_02350 (degree 1530) and 591157.SSLG_02340 (degree 1517).
 	
 
 

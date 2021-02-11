@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:03.595784
 
-The undirected graph Desulfobulbus japonicus has 4577 nodes and 479772 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04581 and
-has 33 connected components, where the component with most nodes has 4503 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 209.64, and the node degree mode is 1. The top 5 most central
-nodes are 1121403.AUCV01000014_gene4565 (degree 2019), 1121403.AUCV01000049_gene2152
-(degree 1734), 1121403.AUCV01000008_gene1528 (degree 1628), 1121403.AUCV01000031_gene2817
-(degree 1502) and 1121403.AUCV01000062_gene3689 (degree 1486).
+The undirected graph Desulfobulbus japonicus has 4577 nodes and 479772
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04581 and has 33 connected components, where the component
+with most nodes has 4503 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 209.64,
+and the node degree mode is 1. The top 5 most central nodes are 1121403.AUCV01000014_gene4565
+(degree 2019), 1121403.AUCV01000049_gene2152 (degree 1734), 1121403.AUCV01000008_gene1528
+(degree 1628), 1121403.AUCV01000031_gene2817 (degree 1502) and 1121403.AUCV01000062_gene3689
+(degree 1486).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfobulbusJaponicus(
 	
 	Datetime: 2021-02-02 22:36:03.595784
 	
-	The undirected graph Desulfobulbus japonicus has 4577 nodes and 479772 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04581 and
-	has 33 connected components, where the component with most nodes has 4503 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 209.64, and the node degree mode is 1. The top 5 most central
-	nodes are 1121403.AUCV01000014_gene4565 (degree 2019), 1121403.AUCV01000049_gene2152
-	(degree 1734), 1121403.AUCV01000008_gene1528 (degree 1628), 1121403.AUCV01000031_gene2817
-	(degree 1502) and 1121403.AUCV01000062_gene3689 (degree 1486).
+	The undirected graph Desulfobulbus japonicus has 4577 nodes and 479772
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04581 and has 33 connected components, where the component
+	with most nodes has 4503 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 209.64,
+	and the node degree mode is 1. The top 5 most central nodes are 1121403.AUCV01000014_gene4565
+	(degree 2019), 1121403.AUCV01000049_gene2152 (degree 1734), 1121403.AUCV01000008_gene1528
+	(degree 1628), 1121403.AUCV01000031_gene2817 (degree 1502) and 1121403.AUCV01000062_gene3689
+	(degree 1486).
 	
 
 

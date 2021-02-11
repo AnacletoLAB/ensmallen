@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:22.873782
 
-The undirected graph Aeromonas diversa has 3677 nodes and 560518 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08294 and
-has 5 connected components, where the component with most nodes has 3669 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 248,
-the mean node degree is 304.88, and the node degree mode is 1. The top 5 most central
-nodes are 1268237.G114_14661 (degree 1739), 1268237.G114_16340 (degree 1602), 1268237.G114_17444
-(degree 1593), 1268237.G114_09684 (degree 1561) and 1268237.G114_17439 (degree 1503).
+The undirected graph Aeromonas diversa has 3677 nodes and 560518 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08294 and has 5 connected components, where the component with most
+nodes has 3669 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 248, the mean node degree is 304.88, and
+the node degree mode is 1. The top 5 most central nodes are 1268237.G114_14661
+(degree 1739), 1268237.G114_16340 (degree 1602), 1268237.G114_17444 (degree
+1593), 1268237.G114_09684 (degree 1561) and 1268237.G114_17439 (degree
+1503).
 
 
 References
@@ -106,13 +108,15 @@ def AeromonasDiversa(
 	
 	Datetime: 2021-02-02 23:37:22.873782
 	
-	The undirected graph Aeromonas diversa has 3677 nodes and 560518 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08294 and
-	has 5 connected components, where the component with most nodes has 3669 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 248,
-	the mean node degree is 304.88, and the node degree mode is 1. The top 5 most central
-	nodes are 1268237.G114_14661 (degree 1739), 1268237.G114_16340 (degree 1602), 1268237.G114_17444
-	(degree 1593), 1268237.G114_09684 (degree 1561) and 1268237.G114_17439 (degree 1503).
+	The undirected graph Aeromonas diversa has 3677 nodes and 560518 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08294 and has 5 connected components, where the component with most
+	nodes has 3669 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 248, the mean node degree is 304.88, and
+	the node degree mode is 1. The top 5 most central nodes are 1268237.G114_14661
+	(degree 1739), 1268237.G114_16340 (degree 1602), 1268237.G114_17444 (degree
+	1593), 1268237.G114_09684 (degree 1561) and 1268237.G114_17439 (degree
+	1503).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:08.604602
 
-The undirected graph Methanobrevibacter smithii ATCC35061 has 1780 nodes and 138652
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08757 and has 8 connected components, where the component with most nodes has
-1760 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 142, the mean node degree is 155.79, and the node degree mode is 4. The
-top 5 most central nodes are 420247.Msm_1109 (degree 700), 420247.Msm_0518 (degree
-667), 420247.Msm_0919 (degree 636), 420247.Msm_1333 (degree 631) and 420247.Msm_0160
-(degree 629).
+The undirected graph Methanobrevibacter smithii ATCC35061 has 1780 nodes
+and 138652 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08757 and has 8 connected components, where the
+component with most nodes has 1760 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+is 155.79, and the node degree mode is 4. The top 5 most central nodes
+are 420247.Msm_1109 (degree 700), 420247.Msm_0518 (degree 667), 420247.Msm_0919
+(degree 636), 420247.Msm_1333 (degree 631) and 420247.Msm_0160 (degree
+629).
 
 
 References
@@ -107,14 +108,15 @@ def MethanobrevibacterSmithiiAtcc35061(
 	
 	Datetime: 2021-02-02 20:47:08.604602
 	
-	The undirected graph Methanobrevibacter smithii ATCC35061 has 1780 nodes and 138652
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08757 and has 8 connected components, where the component with most nodes has
-	1760 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 142, the mean node degree is 155.79, and the node degree mode is 4. The
-	top 5 most central nodes are 420247.Msm_1109 (degree 700), 420247.Msm_0518 (degree
-	667), 420247.Msm_0919 (degree 636), 420247.Msm_1333 (degree 631) and 420247.Msm_0160
-	(degree 629).
+	The undirected graph Methanobrevibacter smithii ATCC35061 has 1780 nodes
+	and 138652 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08757 and has 8 connected components, where the
+	component with most nodes has 1760 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+	is 155.79, and the node degree mode is 4. The top 5 most central nodes
+	are 420247.Msm_1109 (degree 700), 420247.Msm_0518 (degree 667), 420247.Msm_0919
+	(degree 636), 420247.Msm_1333 (degree 631) and 420247.Msm_0160 (degree
+	629).
 	
 
 

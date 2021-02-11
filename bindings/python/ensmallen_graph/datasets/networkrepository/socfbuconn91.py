@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:10.208546
 
-The undirected graph socfb-UConn91 has 17212 nodes and 604870 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00408 and
-has 4 connected components, where the component with most nodes has 17206 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 55,
-the mean node degree is 70.28, and the node degree mode is 1. The top 5 most central
-nodes are 854 (degree 1709), 14546 (degree 1021), 3314 (degree 822), 2293 (degree
-746) and 10760 (degree 722).
+The undirected graph socfb-UConn91 has 17212 nodes and 604870 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00408 and has 4 connected components, where the component with most
+nodes has 17206 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 55, the mean node degree is 70.28, and
+the node degree mode is 1. The top 5 most central nodes are 854 (degree
+1709), 14546 (degree 1021), 3314 (degree 822), 2293 (degree 746) and 10760
+(degree 722).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbUconn91(
 	
 	Datetime: 2021-02-06 11:51:10.208546
 	
-	The undirected graph socfb-UConn91 has 17212 nodes and 604870 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00408 and
-	has 4 connected components, where the component with most nodes has 17206 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 55,
-	the mean node degree is 70.28, and the node degree mode is 1. The top 5 most central
-	nodes are 854 (degree 1709), 14546 (degree 1021), 3314 (degree 822), 2293 (degree
-	746) and 10760 (degree 722).
+	The undirected graph socfb-UConn91 has 17212 nodes and 604870 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00408 and has 4 connected components, where the component with most
+	nodes has 17206 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 55, the mean node degree is 70.28, and
+	the node degree mode is 1. The top 5 most central nodes are 854 (degree
+	1709), 14546 (degree 1021), 3314 (degree 822), 2293 (degree 746) and 10760
+	(degree 722).
 	
 
 

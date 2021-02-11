@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:04.426793
 
-The undirected graph Streptococcus thermophilus LMD9 has 1687 nodes and 89873 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06320
-and has 12 connected components, where the component with most nodes has 1659 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 106.55, and the node degree mode is 3. The top 5 most
-central nodes are 322159.STER_1736 (degree 727), 322159.STER_1992 (degree 612), 322159.STER_0912
-(degree 591), 322159.STER_0485 (degree 555) and 322159.STER_0163 (degree 554).
+The undirected graph Streptococcus thermophilus LMD9 has 1687 nodes and
+89873 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06320 and has 12 connected components, where the
+component with most nodes has 1659 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 106.55, and the node degree mode is 3. The top 5 most central nodes
+are 322159.STER_1736 (degree 727), 322159.STER_1992 (degree 612), 322159.STER_0912
+(degree 591), 322159.STER_0485 (degree 555) and 322159.STER_0163 (degree
+554).
 
 
 References
@@ -106,13 +108,15 @@ def StreptococcusThermophilusLmd9(
 	
 	Datetime: 2021-02-02 20:28:04.426793
 	
-	The undirected graph Streptococcus thermophilus LMD9 has 1687 nodes and 89873 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06320
-	and has 12 connected components, where the component with most nodes has 1659 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 106.55, and the node degree mode is 3. The top 5 most
-	central nodes are 322159.STER_1736 (degree 727), 322159.STER_1992 (degree 612), 322159.STER_0912
-	(degree 591), 322159.STER_0485 (degree 555) and 322159.STER_0163 (degree 554).
+	The undirected graph Streptococcus thermophilus LMD9 has 1687 nodes and
+	89873 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06320 and has 12 connected components, where the
+	component with most nodes has 1659 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 106.55, and the node degree mode is 3. The top 5 most central nodes
+	are 322159.STER_1736 (degree 727), 322159.STER_1992 (degree 612), 322159.STER_0912
+	(degree 591), 322159.STER_0485 (degree 555) and 322159.STER_0163 (degree
+	554).
 	
 
 

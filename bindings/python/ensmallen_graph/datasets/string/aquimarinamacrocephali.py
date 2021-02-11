@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:01:34.833240
 
-The undirected graph Aquimarina macrocephali has 5378 nodes and 512079 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03542 and
-has 51 connected components, where the component with most nodes has 5233 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 190.43, and the node degree mode is 2. The top 5 most central
-nodes are 1443665.JACA01000003_gene594 (degree 2059), 1443665.JACA01000048_gene5362
-(degree 1561), 1443665.JACA01000003_gene698 (degree 1403), 1443665.JACA01000044_gene4651
-(degree 1396) and 1443665.JACA01000003_gene747 (degree 1327).
+The undirected graph Aquimarina macrocephali has 5378 nodes and 512079
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03542 and has 51 connected components, where the component
+with most nodes has 5233 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 190.43,
+and the node degree mode is 2. The top 5 most central nodes are 1443665.JACA01000003_gene594
+(degree 2059), 1443665.JACA01000048_gene5362 (degree 1561), 1443665.JACA01000003_gene698
+(degree 1403), 1443665.JACA01000044_gene4651 (degree 1396) and 1443665.JACA01000003_gene747
+(degree 1327).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaMacrocephali(
 	
 	Datetime: 2021-02-03 23:01:34.833240
 	
-	The undirected graph Aquimarina macrocephali has 5378 nodes and 512079 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03542 and
-	has 51 connected components, where the component with most nodes has 5233 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 190.43, and the node degree mode is 2. The top 5 most central
-	nodes are 1443665.JACA01000003_gene594 (degree 2059), 1443665.JACA01000048_gene5362
-	(degree 1561), 1443665.JACA01000003_gene698 (degree 1403), 1443665.JACA01000044_gene4651
-	(degree 1396) and 1443665.JACA01000003_gene747 (degree 1327).
+	The undirected graph Aquimarina macrocephali has 5378 nodes and 512079
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03542 and has 51 connected components, where the component
+	with most nodes has 5233 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 190.43,
+	and the node degree mode is 2. The top 5 most central nodes are 1443665.JACA01000003_gene594
+	(degree 2059), 1443665.JACA01000048_gene5362 (degree 1561), 1443665.JACA01000003_gene698
+	(degree 1403), 1443665.JACA01000044_gene4651 (degree 1396) and 1443665.JACA01000003_gene747
+	(degree 1327).
 	
 
 

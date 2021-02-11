@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:02.216966
 
-The undirected graph Capsella grandiflora has 20937 nodes and 3861403 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01762 and
-has 8 connected components, where the component with most nodes has 20923 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 368.86, and the node degree mode is 5. The top 5 most central
-nodes are 264402.Cagra.8477s0015.1.p (degree 6557), 264402.Cagra.2774s0014.1.p (degree
-5221), 264402.Cagra.4031s0003.1.p (degree 4722), 264402.Cagra.7793s0004.1.p (degree
-4265) and 264402.Cagra.2350s0006.1.p (degree 4263).
+The undirected graph Capsella grandiflora has 20937 nodes and 3861403 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01762 and has 8 connected components, where the component with most
+nodes has 20923 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 368.86, and
+the node degree mode is 5. The top 5 most central nodes are 264402.Cagra.8477s0015.1.p
+(degree 6557), 264402.Cagra.2774s0014.1.p (degree 5221), 264402.Cagra.4031s0003.1.p
+(degree 4722), 264402.Cagra.7793s0004.1.p (degree 4265) and 264402.Cagra.2350s0006.1.p
+(degree 4263).
 
 
 References
@@ -107,14 +108,15 @@ def CapsellaGrandiflora(
 	
 	Datetime: 2021-02-02 20:14:02.216966
 	
-	The undirected graph Capsella grandiflora has 20937 nodes and 3861403 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01762 and
-	has 8 connected components, where the component with most nodes has 20923 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 368.86, and the node degree mode is 5. The top 5 most central
-	nodes are 264402.Cagra.8477s0015.1.p (degree 6557), 264402.Cagra.2774s0014.1.p (degree
-	5221), 264402.Cagra.4031s0003.1.p (degree 4722), 264402.Cagra.7793s0004.1.p (degree
-	4265) and 264402.Cagra.2350s0006.1.p (degree 4263).
+	The undirected graph Capsella grandiflora has 20937 nodes and 3861403 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01762 and has 8 connected components, where the component with most
+	nodes has 20923 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 368.86, and
+	the node degree mode is 5. The top 5 most central nodes are 264402.Cagra.8477s0015.1.p
+	(degree 6557), 264402.Cagra.2774s0014.1.p (degree 5221), 264402.Cagra.4031s0003.1.p
+	(degree 4722), 264402.Cagra.7793s0004.1.p (degree 4265) and 264402.Cagra.2350s0006.1.p
+	(degree 4263).
 	
 
 

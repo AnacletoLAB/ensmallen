@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:16.523982
 
-The undirected graph Rhizobium leguminosarum WSM2304 has 5438 nodes and 487665 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03299
-and has 31 connected components, where the component with most nodes has 5355 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 179.35, and the node degree mode is 2. The top 5
-most central nodes are 395492.Rleg2_5393 (degree 2148), 395492.Rleg2_4103 (degree
-1835), 395492.Rleg2_0209 (degree 1765), 395492.Rleg2_2950 (degree 1684) and 395492.Rleg2_3317
-(degree 1565).
+The undirected graph Rhizobium leguminosarum WSM2304 has 5438 nodes and
+487665 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03299 and has 31 connected components, where the
+component with most nodes has 5355 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+is 179.35, and the node degree mode is 2. The top 5 most central nodes
+are 395492.Rleg2_5393 (degree 2148), 395492.Rleg2_4103 (degree 1835), 395492.Rleg2_0209
+(degree 1765), 395492.Rleg2_2950 (degree 1684) and 395492.Rleg2_3317 (degree
+1565).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumLeguminosarumWsm2304(
 	
 	Datetime: 2021-02-02 20:41:16.523982
 	
-	The undirected graph Rhizobium leguminosarum WSM2304 has 5438 nodes and 487665 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03299
-	and has 31 connected components, where the component with most nodes has 5355 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 179.35, and the node degree mode is 2. The top 5
-	most central nodes are 395492.Rleg2_5393 (degree 2148), 395492.Rleg2_4103 (degree
-	1835), 395492.Rleg2_0209 (degree 1765), 395492.Rleg2_2950 (degree 1684) and 395492.Rleg2_3317
-	(degree 1565).
+	The undirected graph Rhizobium leguminosarum WSM2304 has 5438 nodes and
+	487665 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03299 and has 31 connected components, where the
+	component with most nodes has 5355 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+	is 179.35, and the node degree mode is 2. The top 5 most central nodes
+	are 395492.Rleg2_5393 (degree 2148), 395492.Rleg2_4103 (degree 1835), 395492.Rleg2_0209
+	(degree 1765), 395492.Rleg2_2950 (degree 1684) and 395492.Rleg2_3317 (degree
+	1565).
 	
 
 

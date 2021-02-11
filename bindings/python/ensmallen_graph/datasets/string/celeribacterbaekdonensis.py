@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:15.066114
 
-The undirected graph Celeribacter baekdonensis has 4183 nodes and 551316 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06303
-and has 3 connected components, where the component with most nodes has 4178 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 263.60, and the node degree mode is 2. The top 5
-most central nodes are 1208323.B30_11260 (degree 1573), 1208323.B30_03677 (degree
-1472), 1208323.B30_06741 (degree 1214), 1208323.B30_06591 (degree 1161) and 1208323.B30_19228
-(degree 1115).
+The undirected graph Celeribacter baekdonensis has 4183 nodes and 551316
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06303 and has 3 connected components, where the component
+with most nodes has 4178 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 263.60,
+and the node degree mode is 2. The top 5 most central nodes are 1208323.B30_11260
+(degree 1573), 1208323.B30_03677 (degree 1472), 1208323.B30_06741 (degree
+1214), 1208323.B30_06591 (degree 1161) and 1208323.B30_19228 (degree 1115).
 
 
 References
@@ -107,14 +107,14 @@ def CeleribacterBaekdonensis(
 	
 	Datetime: 2021-02-02 23:18:15.066114
 	
-	The undirected graph Celeribacter baekdonensis has 4183 nodes and 551316 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06303
-	and has 3 connected components, where the component with most nodes has 4178 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 263.60, and the node degree mode is 2. The top 5
-	most central nodes are 1208323.B30_11260 (degree 1573), 1208323.B30_03677 (degree
-	1472), 1208323.B30_06741 (degree 1214), 1208323.B30_06591 (degree 1161) and 1208323.B30_19228
-	(degree 1115).
+	The undirected graph Celeribacter baekdonensis has 4183 nodes and 551316
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06303 and has 3 connected components, where the component
+	with most nodes has 4178 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 263.60,
+	and the node degree mode is 2. The top 5 most central nodes are 1208323.B30_11260
+	(degree 1573), 1208323.B30_03677 (degree 1472), 1208323.B30_06741 (degree
+	1214), 1208323.B30_06591 (degree 1161) and 1208323.B30_19228 (degree 1115).
 	
 
 

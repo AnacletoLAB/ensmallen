@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:52.847840
 
-The undirected graph Nocardioides sp. Iso805N has 4078 nodes and 333366 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04010
-and has 19 connected components, where the component with most nodes has 4037 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 163.49, and the node degree mode is 2. The top 5
-most central nodes are 1283287.KB822576_gene3723 (degree 1228), 1283287.KB822575_gene50
-(degree 1077), 1283287.KB822579_gene1862 (degree 1070), 1283287.KB822575_gene3 (degree
-982) and 1283287.KB822586_gene843 (degree 960).
+The undirected graph Nocardioides sp. Iso805N has 4078 nodes and 333366
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04010 and has 19 connected components, where the component
+with most nodes has 4037 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 163.49,
+and the node degree mode is 2. The top 5 most central nodes are 1283287.KB822576_gene3723
+(degree 1228), 1283287.KB822575_gene50 (degree 1077), 1283287.KB822579_gene1862
+(degree 1070), 1283287.KB822575_gene3 (degree 982) and 1283287.KB822586_gene843
+(degree 960).
 
 
 References
@@ -107,14 +108,15 @@ def NocardioidesSp.Iso805n(
 	
 	Datetime: 2021-02-03 21:12:52.847840
 	
-	The undirected graph Nocardioides sp. Iso805N has 4078 nodes and 333366 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04010
-	and has 19 connected components, where the component with most nodes has 4037 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 163.49, and the node degree mode is 2. The top 5
-	most central nodes are 1283287.KB822576_gene3723 (degree 1228), 1283287.KB822575_gene50
-	(degree 1077), 1283287.KB822579_gene1862 (degree 1070), 1283287.KB822575_gene3 (degree
-	982) and 1283287.KB822586_gene843 (degree 960).
+	The undirected graph Nocardioides sp. Iso805N has 4078 nodes and 333366
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04010 and has 19 connected components, where the component
+	with most nodes has 4037 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 163.49,
+	and the node degree mode is 2. The top 5 most central nodes are 1283287.KB822576_gene3723
+	(degree 1228), 1283287.KB822575_gene50 (degree 1077), 1283287.KB822579_gene1862
+	(degree 1070), 1283287.KB822575_gene3 (degree 982) and 1283287.KB822586_gene843
+	(degree 960).
 	
 
 

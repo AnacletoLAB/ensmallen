@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:52.516204
 
-The undirected graph Mycobacterium gilvum has 5243 nodes and 710925 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05173 and
-has 15 connected components, where the component with most nodes has 5211 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 271.19, and the node degree mode is 5. The top 5 most central
-nodes are 350054.Mflv_1353 (degree 2267), 350054.Mflv_4423 (degree 2157), 350054.Mflv_2532
-(degree 1948), 350054.Mflv_3564 (degree 1729) and 350054.Mflv_4983 (degree 1654).
+The undirected graph Mycobacterium gilvum has 5243 nodes and 710925 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05173 and has 15 connected components, where the component with most
+nodes has 5211 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 271.19, and
+the node degree mode is 5. The top 5 most central nodes are 350054.Mflv_1353
+(degree 2267), 350054.Mflv_4423 (degree 2157), 350054.Mflv_2532 (degree
+1948), 350054.Mflv_3564 (degree 1729) and 350054.Mflv_4983 (degree 1654).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumGilvum(
 	
 	Datetime: 2021-02-02 20:32:52.516204
 	
-	The undirected graph Mycobacterium gilvum has 5243 nodes and 710925 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05173 and
-	has 15 connected components, where the component with most nodes has 5211 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 271.19, and the node degree mode is 5. The top 5 most central
-	nodes are 350054.Mflv_1353 (degree 2267), 350054.Mflv_4423 (degree 2157), 350054.Mflv_2532
-	(degree 1948), 350054.Mflv_3564 (degree 1729) and 350054.Mflv_4983 (degree 1654).
+	The undirected graph Mycobacterium gilvum has 5243 nodes and 710925 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05173 and has 15 connected components, where the component with most
+	nodes has 5211 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 271.19, and
+	the node degree mode is 5. The top 5 most central nodes are 350054.Mflv_1353
+	(degree 2267), 350054.Mflv_4423 (degree 2157), 350054.Mflv_2532 (degree
+	1948), 350054.Mflv_3564 (degree 1729) and 350054.Mflv_4983 (degree 1654).
 	
 
 

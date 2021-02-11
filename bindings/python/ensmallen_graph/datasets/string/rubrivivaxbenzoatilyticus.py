@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:33.414578
 
-The undirected graph Rubrivivax benzoatilyticus has 3875 nodes and 519912 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-and has 6 connected components, where the component with most nodes has 3864 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 233, the mean node degree is 268.34, and the node degree mode is 2. The top 5
-most central nodes are 987059.RBXJA2T_04953 (degree 2070), 987059.RBXJA2T_09347 (degree
-1854), 987059.RBXJA2T_14576 (degree 1801), 987059.RBXJA2T_14988 (degree 1605) and
-987059.RBXJA2T_10349 (degree 1458).
+The undirected graph Rubrivivax benzoatilyticus has 3875 nodes and 519912
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06927 and has 6 connected components, where the component
+with most nodes has 3864 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 233, the mean node degree is 268.34,
+and the node degree mode is 2. The top 5 most central nodes are 987059.RBXJA2T_04953
+(degree 2070), 987059.RBXJA2T_09347 (degree 1854), 987059.RBXJA2T_14576
+(degree 1801), 987059.RBXJA2T_14988 (degree 1605) and 987059.RBXJA2T_10349
+(degree 1458).
 
 
 References
@@ -107,14 +108,15 @@ def RubrivivaxBenzoatilyticus(
 	
 	Datetime: 2021-02-02 22:04:33.414578
 	
-	The undirected graph Rubrivivax benzoatilyticus has 3875 nodes and 519912 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-	and has 6 connected components, where the component with most nodes has 3864 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 233, the mean node degree is 268.34, and the node degree mode is 2. The top 5
-	most central nodes are 987059.RBXJA2T_04953 (degree 2070), 987059.RBXJA2T_09347 (degree
-	1854), 987059.RBXJA2T_14576 (degree 1801), 987059.RBXJA2T_14988 (degree 1605) and
-	987059.RBXJA2T_10349 (degree 1458).
+	The undirected graph Rubrivivax benzoatilyticus has 3875 nodes and 519912
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06927 and has 6 connected components, where the component
+	with most nodes has 3864 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 233, the mean node degree is 268.34,
+	and the node degree mode is 2. The top 5 most central nodes are 987059.RBXJA2T_04953
+	(degree 2070), 987059.RBXJA2T_09347 (degree 1854), 987059.RBXJA2T_14576
+	(degree 1801), 987059.RBXJA2T_14988 (degree 1605) and 987059.RBXJA2T_10349
+	(degree 1458).
 	
 
 

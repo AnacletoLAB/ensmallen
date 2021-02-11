@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:48.783086
 
-The undirected graph Dokdonia sp. 4H375 has 2968 nodes and 235889 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05357 and
-has 5 connected components, where the component with most nodes has 2960 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 158.95, and the node degree mode is 3. The top 5 most central
-nodes are 983548.Krodi_0680 (degree 1178), 983548.Krodi_0036 (degree 896), 983548.Krodi_0111
-(degree 832), 983548.Krodi_1774 (degree 786) and 983548.Krodi_2956 (degree 786).
+The undirected graph Dokdonia sp. 4H375 has 2968 nodes and 235889 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05357 and has 5 connected components, where the component with most
+nodes has 2960 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 158.95, and
+the node degree mode is 3. The top 5 most central nodes are 983548.Krodi_0680
+(degree 1178), 983548.Krodi_0036 (degree 896), 983548.Krodi_0111 (degree
+832), 983548.Krodi_1774 (degree 786) and 983548.Krodi_2956 (degree 786).
 
 
 References
@@ -106,13 +107,14 @@ def DokdoniaSp.4h375(
 	
 	Datetime: 2021-02-02 22:03:48.783086
 	
-	The undirected graph Dokdonia sp. 4H375 has 2968 nodes and 235889 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05357 and
-	has 5 connected components, where the component with most nodes has 2960 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 158.95, and the node degree mode is 3. The top 5 most central
-	nodes are 983548.Krodi_0680 (degree 1178), 983548.Krodi_0036 (degree 896), 983548.Krodi_0111
-	(degree 832), 983548.Krodi_1774 (degree 786) and 983548.Krodi_2956 (degree 786).
+	The undirected graph Dokdonia sp. 4H375 has 2968 nodes and 235889 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05357 and has 5 connected components, where the component with most
+	nodes has 2960 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 158.95, and
+	the node degree mode is 3. The top 5 most central nodes are 983548.Krodi_0680
+	(degree 1178), 983548.Krodi_0036 (degree 896), 983548.Krodi_0111 (degree
+	832), 983548.Krodi_1774 (degree 786) and 983548.Krodi_2956 (degree 786).
 	
 
 

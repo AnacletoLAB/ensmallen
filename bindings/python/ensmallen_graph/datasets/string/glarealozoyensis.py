@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:53.621017
 
-The undirected graph Glarea lozoyensis has 7841 nodes and 606666 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01974 and
-has 14 connected components, where the component with most nodes has 7812 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 154.74, and the node degree mode is 1. The top 5 most central
-nodes are 101852.XP_008080589.1 (degree 1850), 101852.XP_008084343.1 (degree 1550),
-101852.XP_008086288.1 (degree 1424), 101852.XP_008085876.1 (degree 1221) and 101852.XP_008078694.1
+The undirected graph Glarea lozoyensis has 7841 nodes and 606666 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01974 and has 14 connected components, where the component with most
+nodes has 7812 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 154.74, and
+the node degree mode is 1. The top 5 most central nodes are 101852.XP_008080589.1
+(degree 1850), 101852.XP_008084343.1 (degree 1550), 101852.XP_008086288.1
+(degree 1424), 101852.XP_008085876.1 (degree 1221) and 101852.XP_008078694.1
 (degree 1218).
 
 
@@ -107,13 +108,14 @@ def GlareaLozoyensis(
 	
 	Datetime: 2021-02-02 19:42:53.621017
 	
-	The undirected graph Glarea lozoyensis has 7841 nodes and 606666 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01974 and
-	has 14 connected components, where the component with most nodes has 7812 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 154.74, and the node degree mode is 1. The top 5 most central
-	nodes are 101852.XP_008080589.1 (degree 1850), 101852.XP_008084343.1 (degree 1550),
-	101852.XP_008086288.1 (degree 1424), 101852.XP_008085876.1 (degree 1221) and 101852.XP_008078694.1
+	The undirected graph Glarea lozoyensis has 7841 nodes and 606666 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01974 and has 14 connected components, where the component with most
+	nodes has 7812 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 154.74, and
+	the node degree mode is 1. The top 5 most central nodes are 101852.XP_008080589.1
+	(degree 1850), 101852.XP_008084343.1 (degree 1550), 101852.XP_008086288.1
+	(degree 1424), 101852.XP_008085876.1 (degree 1221) and 101852.XP_008078694.1
 	(degree 1218).
 	
 

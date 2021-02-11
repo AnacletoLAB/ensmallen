@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:30.376191
 
-The undirected graph Rhodobacterales bacterium HTCC2255 has 2228 nodes and 203991
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08223 and has 3 connected components, where the component with most nodes has
-2222 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 153, the mean node degree is 183.12, and the node degree mode is 3. The
-top 5 most central nodes are 367336.OM2255_10411 (degree 1012), 367336.OM2255_00297
-(degree 866), 367336.OM2255_12145 (degree 855), 367336.OM2255_02982 (degree 840)
-and 367336.OM2255_09476 (degree 822).
+The undirected graph Rhodobacterales bacterium HTCC2255 has 2228 nodes
+and 203991 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08223 and has 3 connected components, where the
+component with most nodes has 2222 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 153, the mean node degree
+is 183.12, and the node degree mode is 3. The top 5 most central nodes
+are 367336.OM2255_10411 (degree 1012), 367336.OM2255_00297 (degree 866),
+367336.OM2255_12145 (degree 855), 367336.OM2255_02982 (degree 840) and
+367336.OM2255_09476 (degree 822).
 
 
 References
@@ -107,14 +108,15 @@ def RhodobacteralesBacteriumHtcc2255(
 	
 	Datetime: 2021-02-02 20:35:30.376191
 	
-	The undirected graph Rhodobacterales bacterium HTCC2255 has 2228 nodes and 203991
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08223 and has 3 connected components, where the component with most nodes has
-	2222 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 153, the mean node degree is 183.12, and the node degree mode is 3. The
-	top 5 most central nodes are 367336.OM2255_10411 (degree 1012), 367336.OM2255_00297
-	(degree 866), 367336.OM2255_12145 (degree 855), 367336.OM2255_02982 (degree 840)
-	and 367336.OM2255_09476 (degree 822).
+	The undirected graph Rhodobacterales bacterium HTCC2255 has 2228 nodes
+	and 203991 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08223 and has 3 connected components, where the
+	component with most nodes has 2222 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 153, the mean node degree
+	is 183.12, and the node degree mode is 3. The top 5 most central nodes
+	are 367336.OM2255_10411 (degree 1012), 367336.OM2255_00297 (degree 866),
+	367336.OM2255_12145 (degree 855), 367336.OM2255_02982 (degree 840) and
+	367336.OM2255_09476 (degree 822).
 	
 
 

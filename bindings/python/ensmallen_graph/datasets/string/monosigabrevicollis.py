@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:35:04.538259
 
-The undirected graph Monosiga brevicollis has 5881 nodes and 698430 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04039 and
-has 3 connected components, where the component with most nodes has 5877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 237.52, and the node degree mode is 1. The top 5 most central
-nodes are 81824.XP_001750527.1 (degree 1892), 81824.XP_001747471.1 (degree 1841),
-81824.XP_001746627.1 (degree 1730), 81824.XP_001750866.1 (degree 1671) and 81824.XP_001749453.1
+The undirected graph Monosiga brevicollis has 5881 nodes and 698430 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04039 and has 3 connected components, where the component with most
+nodes has 5877 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 237.52, and
+the node degree mode is 1. The top 5 most central nodes are 81824.XP_001750527.1
+(degree 1892), 81824.XP_001747471.1 (degree 1841), 81824.XP_001746627.1
+(degree 1730), 81824.XP_001750866.1 (degree 1671) and 81824.XP_001749453.1
 (degree 1657).
 
 
@@ -107,13 +108,14 @@ def MonosigaBrevicollis(
 	
 	Datetime: 2021-02-02 18:35:04.538259
 	
-	The undirected graph Monosiga brevicollis has 5881 nodes and 698430 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04039 and
-	has 3 connected components, where the component with most nodes has 5877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 237.52, and the node degree mode is 1. The top 5 most central
-	nodes are 81824.XP_001750527.1 (degree 1892), 81824.XP_001747471.1 (degree 1841),
-	81824.XP_001746627.1 (degree 1730), 81824.XP_001750866.1 (degree 1671) and 81824.XP_001749453.1
+	The undirected graph Monosiga brevicollis has 5881 nodes and 698430 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04039 and has 3 connected components, where the component with most
+	nodes has 5877 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 237.52, and
+	the node degree mode is 1. The top 5 most central nodes are 81824.XP_001750527.1
+	(degree 1892), 81824.XP_001747471.1 (degree 1841), 81824.XP_001746627.1
+	(degree 1730), 81824.XP_001750866.1 (degree 1671) and 81824.XP_001749453.1
 	(degree 1657).
 	
 

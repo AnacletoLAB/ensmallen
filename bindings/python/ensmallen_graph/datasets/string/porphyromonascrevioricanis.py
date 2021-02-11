@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:01.760328
 
-The undirected graph Porphyromonas crevioricanis has 1542 nodes and 85390 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07187
-and has 15 connected components, where the component with most nodes has 1508 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 110.75, and the node degree mode is 2. The top 5 most
-central nodes are 393921.HQ45_05840 (degree 781), 393921.HQ45_00770 (degree 660),
-393921.HQ45_05300 (degree 653), 393921.HQ45_08340 (degree 599) and 393921.HQ45_01295
-(degree 594).
+The undirected graph Porphyromonas crevioricanis has 1542 nodes and 85390
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07187 and has 15 connected components, where the component
+with most nodes has 1508 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 110.75,
+and the node degree mode is 2. The top 5 most central nodes are 393921.HQ45_05840
+(degree 781), 393921.HQ45_00770 (degree 660), 393921.HQ45_05300 (degree
+653), 393921.HQ45_08340 (degree 599) and 393921.HQ45_01295 (degree 594).
 
 
 References
@@ -107,14 +107,14 @@ def PorphyromonasCrevioricanis(
 	
 	Datetime: 2021-02-02 20:41:01.760328
 	
-	The undirected graph Porphyromonas crevioricanis has 1542 nodes and 85390 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07187
-	and has 15 connected components, where the component with most nodes has 1508 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 110.75, and the node degree mode is 2. The top 5 most
-	central nodes are 393921.HQ45_05840 (degree 781), 393921.HQ45_00770 (degree 660),
-	393921.HQ45_05300 (degree 653), 393921.HQ45_08340 (degree 599) and 393921.HQ45_01295
-	(degree 594).
+	The undirected graph Porphyromonas crevioricanis has 1542 nodes and 85390
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07187 and has 15 connected components, where the component
+	with most nodes has 1508 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 110.75,
+	and the node degree mode is 2. The top 5 most central nodes are 393921.HQ45_05840
+	(degree 781), 393921.HQ45_00770 (degree 660), 393921.HQ45_05300 (degree
+	653), 393921.HQ45_08340 (degree 599) and 393921.HQ45_01295 (degree 594).
 	
 
 

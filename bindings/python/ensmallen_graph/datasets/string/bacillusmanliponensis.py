@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:40.190933
 
-The undirected graph Bacillus manliponensis has 4286 nodes and 477912 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05204 and
-has 32 connected components, where the component with most nodes has 4210 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 223.01, and the node degree mode is 1. The top 5 most central
-nodes are 574376.BAMA_02425 (degree 1525), 574376.BAMA_13060 (degree 1355), 574376.BAMA_08670
-(degree 1304), 574376.BAMA_18555 (degree 1299) and 574376.BAMA_23655 (degree 1219).
+The undirected graph Bacillus manliponensis has 4286 nodes and 477912 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05204 and has 32 connected components, where the component with most
+nodes has 4210 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 223.01, and
+the node degree mode is 1. The top 5 most central nodes are 574376.BAMA_02425
+(degree 1525), 574376.BAMA_13060 (degree 1355), 574376.BAMA_08670 (degree
+1304), 574376.BAMA_18555 (degree 1299) and 574376.BAMA_23655 (degree 1219).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusManliponensis(
 	
 	Datetime: 2021-02-02 21:14:40.190933
 	
-	The undirected graph Bacillus manliponensis has 4286 nodes and 477912 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05204 and
-	has 32 connected components, where the component with most nodes has 4210 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 223.01, and the node degree mode is 1. The top 5 most central
-	nodes are 574376.BAMA_02425 (degree 1525), 574376.BAMA_13060 (degree 1355), 574376.BAMA_08670
-	(degree 1304), 574376.BAMA_18555 (degree 1299) and 574376.BAMA_23655 (degree 1219).
+	The undirected graph Bacillus manliponensis has 4286 nodes and 477912 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05204 and has 32 connected components, where the component with most
+	nodes has 4210 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 223.01, and
+	the node degree mode is 1. The top 5 most central nodes are 574376.BAMA_02425
+	(degree 1525), 574376.BAMA_13060 (degree 1355), 574376.BAMA_08670 (degree
+	1304), 574376.BAMA_18555 (degree 1299) and 574376.BAMA_23655 (degree 1219).
 	
 
 

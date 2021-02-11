@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:17:01.701556
 
-The undirected graph roadNet-CA has 1965206 nodes and 2766607 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and has 2638 connected components, where the component with most nodes has 1957027
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 2.82, and the node degree mode is 3. The top 5 most
-central nodes are 562819 (degree 12), 521169 (degree 10), 534752 (degree 10), 1795417
-(degree 9) and 1872331 (degree 8).
+The undirected graph roadNet-CA has 1965206 nodes and 2766607 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and has 2638 connected components, where the component
+with most nodes has 1957027 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 3, the mean node degree is
+2.82, and the node degree mode is 3. The top 5 most central nodes are 562819
+(degree 12), 521169 (degree 10), 534752 (degree 10), 1795417 (degree 9)
+and 1872331 (degree 8).
 
 
 References
@@ -103,13 +104,14 @@ def RoadnetCa(
 	
 	Datetime: 2021-02-06 12:17:01.701556
 	
-	The undirected graph roadNet-CA has 1965206 nodes and 2766607 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and has 2638 connected components, where the component with most nodes has 1957027
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 2.82, and the node degree mode is 3. The top 5 most
-	central nodes are 562819 (degree 12), 521169 (degree 10), 534752 (degree 10), 1795417
-	(degree 9) and 1872331 (degree 8).
+	The undirected graph roadNet-CA has 1965206 nodes and 2766607 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and has 2638 connected components, where the component
+	with most nodes has 1957027 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 3, the mean node degree is
+	2.82, and the node degree mode is 3. The top 5 most central nodes are 562819
+	(degree 12), 521169 (degree 10), 534752 (degree 10), 1795417 (degree 9)
+	and 1872331 (degree 8).
 	
 
 

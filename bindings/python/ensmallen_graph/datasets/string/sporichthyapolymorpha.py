@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:53.611277
 
-The undirected graph Sporichthya polymorpha has 5069 nodes and 667032 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05193 and
-has 9 connected components, where the component with most nodes has 5050 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 244,
-the mean node degree is 263.18, and the node degree mode is 2. The top 5 most central
-nodes are 1048339.KB913029_gene840 (degree 2252), 1048339.KB913029_gene734 (degree
-1536), 1048339.KB913029_gene4521 (degree 1406), 1048339.KB913029_gene2088 (degree
-1315) and 1048339.KB913029_gene3309 (degree 1308).
+The undirected graph Sporichthya polymorpha has 5069 nodes and 667032 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05193 and has 9 connected components, where the component with most
+nodes has 5050 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 244, the mean node degree is 263.18, and
+the node degree mode is 2. The top 5 most central nodes are 1048339.KB913029_gene840
+(degree 2252), 1048339.KB913029_gene734 (degree 1536), 1048339.KB913029_gene4521
+(degree 1406), 1048339.KB913029_gene2088 (degree 1315) and 1048339.KB913029_gene3309
+(degree 1308).
 
 
 References
@@ -107,14 +108,15 @@ def SporichthyaPolymorpha(
 	
 	Datetime: 2021-02-02 22:16:53.611277
 	
-	The undirected graph Sporichthya polymorpha has 5069 nodes and 667032 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05193 and
-	has 9 connected components, where the component with most nodes has 5050 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 244,
-	the mean node degree is 263.18, and the node degree mode is 2. The top 5 most central
-	nodes are 1048339.KB913029_gene840 (degree 2252), 1048339.KB913029_gene734 (degree
-	1536), 1048339.KB913029_gene4521 (degree 1406), 1048339.KB913029_gene2088 (degree
-	1315) and 1048339.KB913029_gene3309 (degree 1308).
+	The undirected graph Sporichthya polymorpha has 5069 nodes and 667032 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05193 and has 9 connected components, where the component with most
+	nodes has 5050 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 244, the mean node degree is 263.18, and
+	the node degree mode is 2. The top 5 most central nodes are 1048339.KB913029_gene840
+	(degree 2252), 1048339.KB913029_gene734 (degree 1536), 1048339.KB913029_gene4521
+	(degree 1406), 1048339.KB913029_gene2088 (degree 1315) and 1048339.KB913029_gene3309
+	(degree 1308).
 	
 
 

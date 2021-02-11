@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:08.190926
 
-The undirected graph Selenomonas ruminantium lactilytica has 2810 nodes and 203124
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05147 and has 7 connected components, where the component with most nodes has
-2795 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 113, the mean node degree is 144.57, and the node degree mode is 12. The
-top 5 most central nodes are 927704.SELR_15050 (degree 1120), 927704.SELR_27370 (degree
-1079), 927704.SELR_04430 (degree 916), 927704.SELR_07270 (degree 910) and 927704.SELR_14670
-(degree 892).
+The undirected graph Selenomonas ruminantium lactilytica has 2810 nodes
+and 203124 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05147 and has 7 connected components, where the
+component with most nodes has 2795 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+is 144.57, and the node degree mode is 12. The top 5 most central nodes
+are 927704.SELR_15050 (degree 1120), 927704.SELR_27370 (degree 1079), 927704.SELR_04430
+(degree 916), 927704.SELR_07270 (degree 910) and 927704.SELR_14670 (degree
+892).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasRuminantiumLactilytica(
 	
 	Datetime: 2021-02-02 21:57:08.190926
 	
-	The undirected graph Selenomonas ruminantium lactilytica has 2810 nodes and 203124
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05147 and has 7 connected components, where the component with most nodes has
-	2795 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 113, the mean node degree is 144.57, and the node degree mode is 12. The
-	top 5 most central nodes are 927704.SELR_15050 (degree 1120), 927704.SELR_27370 (degree
-	1079), 927704.SELR_04430 (degree 916), 927704.SELR_07270 (degree 910) and 927704.SELR_14670
-	(degree 892).
+	The undirected graph Selenomonas ruminantium lactilytica has 2810 nodes
+	and 203124 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05147 and has 7 connected components, where the
+	component with most nodes has 2795 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+	is 144.57, and the node degree mode is 12. The top 5 most central nodes
+	are 927704.SELR_15050 (degree 1120), 927704.SELR_27370 (degree 1079), 927704.SELR_04430
+	(degree 916), 927704.SELR_07270 (degree 910) and 927704.SELR_14670 (degree
+	892).
 	
 
 

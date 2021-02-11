@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:27.863466
 
-The undirected graph Providencia rustigianii has 3917 nodes and 417774 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-has 19 connected components, where the component with most nodes has 3876 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 213.31, and the node degree mode is 1. The top 5 most central
-nodes are 500637.PROVRUST_05668 (degree 1126), 500637.PROVRUST_07297 (degree 1085),
-500637.PROVRUST_06156 (degree 1075), 500637.PROVRUST_07296 (degree 1047) and 500637.PROVRUST_07496
+The undirected graph Providencia rustigianii has 3917 nodes and 417774
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05447 and has 19 connected components, where the component
+with most nodes has 3876 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 213.31,
+and the node degree mode is 1. The top 5 most central nodes are 500637.PROVRUST_05668
+(degree 1126), 500637.PROVRUST_07297 (degree 1085), 500637.PROVRUST_06156
+(degree 1075), 500637.PROVRUST_07296 (degree 1047) and 500637.PROVRUST_07496
 (degree 945).
 
 
@@ -107,13 +108,14 @@ def ProvidenciaRustigianii(
 	
 	Datetime: 2021-02-02 21:01:27.863466
 	
-	The undirected graph Providencia rustigianii has 3917 nodes and 417774 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-	has 19 connected components, where the component with most nodes has 3876 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 213.31, and the node degree mode is 1. The top 5 most central
-	nodes are 500637.PROVRUST_05668 (degree 1126), 500637.PROVRUST_07297 (degree 1085),
-	500637.PROVRUST_06156 (degree 1075), 500637.PROVRUST_07296 (degree 1047) and 500637.PROVRUST_07496
+	The undirected graph Providencia rustigianii has 3917 nodes and 417774
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05447 and has 19 connected components, where the component
+	with most nodes has 3876 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 213.31,
+	and the node degree mode is 1. The top 5 most central nodes are 500637.PROVRUST_05668
+	(degree 1126), 500637.PROVRUST_07297 (degree 1085), 500637.PROVRUST_06156
+	(degree 1075), 500637.PROVRUST_07296 (degree 1047) and 500637.PROVRUST_07496
 	(degree 945).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:20.965256
 
-The undirected graph Silicibacter sp. TrichCH4B has 4665 nodes and 582980 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05359
-and has 26 connected components, where the component with most nodes has 4602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 220, the mean node degree is 249.94, and the node degree mode is 2. The top 5
-most central nodes are 644076.SCH4B_2986 (degree 1725), 644076.SCH4B_0520 (degree
-1637), 644076.SCH4B_2573 (degree 1635), 644076.SCH4B_2879 (degree 1317) and 644076.SCH4B_4695
-(degree 1307).
+The undirected graph Silicibacter sp. TrichCH4B has 4665 nodes and 582980
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05359 and has 26 connected components, where the component
+with most nodes has 4602 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 220, the mean node degree is 249.94,
+and the node degree mode is 2. The top 5 most central nodes are 644076.SCH4B_2986
+(degree 1725), 644076.SCH4B_0520 (degree 1637), 644076.SCH4B_2573 (degree
+1635), 644076.SCH4B_2879 (degree 1317) and 644076.SCH4B_4695 (degree 1307).
 
 
 References
@@ -107,14 +107,14 @@ def SilicibacterSp.Trichch4b(
 	
 	Datetime: 2021-02-02 21:24:20.965256
 	
-	The undirected graph Silicibacter sp. TrichCH4B has 4665 nodes and 582980 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05359
-	and has 26 connected components, where the component with most nodes has 4602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 220, the mean node degree is 249.94, and the node degree mode is 2. The top 5
-	most central nodes are 644076.SCH4B_2986 (degree 1725), 644076.SCH4B_0520 (degree
-	1637), 644076.SCH4B_2573 (degree 1635), 644076.SCH4B_2879 (degree 1317) and 644076.SCH4B_4695
-	(degree 1307).
+	The undirected graph Silicibacter sp. TrichCH4B has 4665 nodes and 582980
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05359 and has 26 connected components, where the component
+	with most nodes has 4602 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 220, the mean node degree is 249.94,
+	and the node degree mode is 2. The top 5 most central nodes are 644076.SCH4B_2986
+	(degree 1725), 644076.SCH4B_0520 (degree 1637), 644076.SCH4B_2573 (degree
+	1635), 644076.SCH4B_2879 (degree 1317) and 644076.SCH4B_4695 (degree 1307).
 	
 
 

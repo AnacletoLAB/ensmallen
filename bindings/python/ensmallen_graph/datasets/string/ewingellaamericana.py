@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:25.099982
 
-The undirected graph Ewingella americana has 4376 nodes and 693884 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07249 and
-has 5 connected components, where the component with most nodes has 4366 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 285,
-the mean node degree is 317.13, and the node degree mode is 2. The top 5 most central
-nodes are 910964.GEAM_3689 (degree 1544), 910964.GEAM_1724 (degree 1542), 910964.GEAM_0096
-(degree 1460), 910964.GEAM_1671 (degree 1413) and 910964.GEAM_3550 (degree 1408).
+The undirected graph Ewingella americana has 4376 nodes and 693884 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07249 and has 5 connected components, where the component with most
+nodes has 4366 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 285, the mean node degree is 317.13, and
+the node degree mode is 2. The top 5 most central nodes are 910964.GEAM_3689
+(degree 1544), 910964.GEAM_1724 (degree 1542), 910964.GEAM_0096 (degree
+1460), 910964.GEAM_1671 (degree 1413) and 910964.GEAM_3550 (degree 1408).
 
 
 References
@@ -106,13 +107,14 @@ def EwingellaAmericana(
 	
 	Datetime: 2021-02-02 21:55:25.099982
 	
-	The undirected graph Ewingella americana has 4376 nodes and 693884 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07249 and
-	has 5 connected components, where the component with most nodes has 4366 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 285,
-	the mean node degree is 317.13, and the node degree mode is 2. The top 5 most central
-	nodes are 910964.GEAM_3689 (degree 1544), 910964.GEAM_1724 (degree 1542), 910964.GEAM_0096
-	(degree 1460), 910964.GEAM_1671 (degree 1413) and 910964.GEAM_3550 (degree 1408).
+	The undirected graph Ewingella americana has 4376 nodes and 693884 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07249 and has 5 connected components, where the component with most
+	nodes has 4366 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 285, the mean node degree is 317.13, and
+	the node degree mode is 2. The top 5 most central nodes are 910964.GEAM_3689
+	(degree 1544), 910964.GEAM_1724 (degree 1542), 910964.GEAM_0096 (degree
+	1460), 910964.GEAM_1671 (degree 1413) and 910964.GEAM_3550 (degree 1408).
 	
 
 

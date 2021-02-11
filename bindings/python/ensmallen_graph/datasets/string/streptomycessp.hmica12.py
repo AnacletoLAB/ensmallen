@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:19.824355
 
-The undirected graph Streptomyces sp. HmicA12 has 8122 nodes and 1352793 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04102
-and has 26 connected components, where the component with most nodes has 8061 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 278, the mean node degree is 333.12, and the node degree mode is 2. The top 5
-most central nodes are 1156844.KB891852_gene3681 (degree 3822), 1156844.KB891806_gene1766
-(degree 2848), 1156844.KB891800_gene952 (degree 2496), 1156844.KB891809_gene7696
-(degree 2492) and 1156844.KB891803_gene2316 (degree 2476).
+The undirected graph Streptomyces sp. HmicA12 has 8122 nodes and 1352793
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04102 and has 26 connected components, where the component
+with most nodes has 8061 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 278, the mean node degree is 333.12,
+and the node degree mode is 2. The top 5 most central nodes are 1156844.KB891852_gene3681
+(degree 3822), 1156844.KB891806_gene1766 (degree 2848), 1156844.KB891800_gene952
+(degree 2496), 1156844.KB891809_gene7696 (degree 2492) and 1156844.KB891803_gene2316
+(degree 2476).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Hmica12(
 	
 	Datetime: 2021-02-02 23:01:19.824355
 	
-	The undirected graph Streptomyces sp. HmicA12 has 8122 nodes and 1352793 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04102
-	and has 26 connected components, where the component with most nodes has 8061 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 278, the mean node degree is 333.12, and the node degree mode is 2. The top 5
-	most central nodes are 1156844.KB891852_gene3681 (degree 3822), 1156844.KB891806_gene1766
-	(degree 2848), 1156844.KB891800_gene952 (degree 2496), 1156844.KB891809_gene7696
-	(degree 2492) and 1156844.KB891803_gene2316 (degree 2476).
+	The undirected graph Streptomyces sp. HmicA12 has 8122 nodes and 1352793
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04102 and has 26 connected components, where the component
+	with most nodes has 8061 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 278, the mean node degree is 333.12,
+	and the node degree mode is 2. The top 5 most central nodes are 1156844.KB891852_gene3681
+	(degree 3822), 1156844.KB891806_gene1766 (degree 2848), 1156844.KB891800_gene952
+	(degree 2496), 1156844.KB891809_gene7696 (degree 2492) and 1156844.KB891803_gene2316
+	(degree 2476).
 	
 
 

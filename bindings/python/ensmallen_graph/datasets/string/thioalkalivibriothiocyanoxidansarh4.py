@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:40.754205
 
-The undirected graph Thioalkalivibrio thiocyanoxidans ARh4 has 3378 nodes and 217449
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03812 and has 10 connected components, where the component with most nodes has
-3355 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 94, the mean node degree is 128.74, and the node degree mode is 3. The
-top 5 most central nodes are 713587.THITH_09820 (degree 1334), 713587.THITH_17135
-(degree 1191), 713587.THITH_12790 (degree 948), 713587.THITH_13125 (degree 905) and
-713587.THITH_14910 (degree 896).
+The undirected graph Thioalkalivibrio thiocyanoxidans ARh4 has 3378 nodes
+and 217449 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03812 and has 10 connected components, where the
+component with most nodes has 3355 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+is 128.74, and the node degree mode is 3. The top 5 most central nodes
+are 713587.THITH_09820 (degree 1334), 713587.THITH_17135 (degree 1191),
+713587.THITH_12790 (degree 948), 713587.THITH_13125 (degree 905) and 713587.THITH_14910
+(degree 896).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioThiocyanoxidansArh4(
 	
 	Datetime: 2021-02-02 21:35:40.754205
 	
-	The undirected graph Thioalkalivibrio thiocyanoxidans ARh4 has 3378 nodes and 217449
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03812 and has 10 connected components, where the component with most nodes has
-	3355 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 94, the mean node degree is 128.74, and the node degree mode is 3. The
-	top 5 most central nodes are 713587.THITH_09820 (degree 1334), 713587.THITH_17135
-	(degree 1191), 713587.THITH_12790 (degree 948), 713587.THITH_13125 (degree 905) and
-	713587.THITH_14910 (degree 896).
+	The undirected graph Thioalkalivibrio thiocyanoxidans ARh4 has 3378 nodes
+	and 217449 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03812 and has 10 connected components, where the
+	component with most nodes has 3355 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+	is 128.74, and the node degree mode is 3. The top 5 most central nodes
+	are 713587.THITH_09820 (degree 1334), 713587.THITH_17135 (degree 1191),
+	713587.THITH_12790 (degree 948), 713587.THITH_13125 (degree 905) and 713587.THITH_14910
+	(degree 896).
 	
 
 

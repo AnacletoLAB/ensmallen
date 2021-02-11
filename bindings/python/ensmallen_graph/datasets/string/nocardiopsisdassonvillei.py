@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:34.472310
 
-The undirected graph Nocardiopsis dassonvillei has 5443 nodes and 704222 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04755
-and has 14 connected components, where the component with most nodes has 5415 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 258.76, and the node degree mode is 2. The top 5
-most central nodes are 446468.Ndas_0959 (degree 1837), 446468.Ndas_4006 (degree 1461),
-446468.Ndas_3166 (degree 1342), 446468.Ndas_5202 (degree 1299) and 446468.Ndas_5471
-(degree 1208).
+The undirected graph Nocardiopsis dassonvillei has 5443 nodes and 704222
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04755 and has 14 connected components, where the component
+with most nodes has 5415 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 258.76,
+and the node degree mode is 2. The top 5 most central nodes are 446468.Ndas_0959
+(degree 1837), 446468.Ndas_4006 (degree 1461), 446468.Ndas_3166 (degree
+1342), 446468.Ndas_5202 (degree 1299) and 446468.Ndas_5471 (degree 1208).
 
 
 References
@@ -107,14 +107,14 @@ def NocardiopsisDassonvillei(
 	
 	Datetime: 2021-02-02 20:51:34.472310
 	
-	The undirected graph Nocardiopsis dassonvillei has 5443 nodes and 704222 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04755
-	and has 14 connected components, where the component with most nodes has 5415 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 258.76, and the node degree mode is 2. The top 5
-	most central nodes are 446468.Ndas_0959 (degree 1837), 446468.Ndas_4006 (degree 1461),
-	446468.Ndas_3166 (degree 1342), 446468.Ndas_5202 (degree 1299) and 446468.Ndas_5471
-	(degree 1208).
+	The undirected graph Nocardiopsis dassonvillei has 5443 nodes and 704222
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04755 and has 14 connected components, where the component
+	with most nodes has 5415 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 258.76,
+	and the node degree mode is 2. The top 5 most central nodes are 446468.Ndas_0959
+	(degree 1837), 446468.Ndas_4006 (degree 1461), 446468.Ndas_3166 (degree
+	1342), 446468.Ndas_5202 (degree 1299) and 446468.Ndas_5471 (degree 1208).
 	
 
 

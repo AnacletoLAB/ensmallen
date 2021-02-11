@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:30.026791
 
-The undirected graph Actinomyces sp. S4C9 has 1426 nodes and 87411 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08603 and
-has 5 connected components, where the component with most nodes has 1418 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 122.60, and the node degree mode is 1. The top 5 most central
-nodes are 1219581.HMPREF1628_03335 (degree 668), 1219581.HMPREF1628_01145 (degree
-657), 1219581.HMPREF1628_01115 (degree 575), 1219581.HMPREF1628_08390 (degree 554)
-and 1219581.HMPREF1628_03050 (degree 530).
+The undirected graph Actinomyces sp. S4C9 has 1426 nodes and 87411 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08603 and has 5 connected components, where the component with most
+nodes has 1418 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 122.60, and
+the node degree mode is 1. The top 5 most central nodes are 1219581.HMPREF1628_03335
+(degree 668), 1219581.HMPREF1628_01145 (degree 657), 1219581.HMPREF1628_01115
+(degree 575), 1219581.HMPREF1628_08390 (degree 554) and 1219581.HMPREF1628_03050
+(degree 530).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesSp.S4c9(
 	
 	Datetime: 2021-02-02 23:23:30.026791
 	
-	The undirected graph Actinomyces sp. S4C9 has 1426 nodes and 87411 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08603 and
-	has 5 connected components, where the component with most nodes has 1418 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 122.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1219581.HMPREF1628_03335 (degree 668), 1219581.HMPREF1628_01145 (degree
-	657), 1219581.HMPREF1628_01115 (degree 575), 1219581.HMPREF1628_08390 (degree 554)
-	and 1219581.HMPREF1628_03050 (degree 530).
+	The undirected graph Actinomyces sp. S4C9 has 1426 nodes and 87411 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08603 and has 5 connected components, where the component with most
+	nodes has 1418 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 122.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1219581.HMPREF1628_03335
+	(degree 668), 1219581.HMPREF1628_01145 (degree 657), 1219581.HMPREF1628_01115
+	(degree 575), 1219581.HMPREF1628_08390 (degree 554) and 1219581.HMPREF1628_03050
+	(degree 530).
 	
 
 

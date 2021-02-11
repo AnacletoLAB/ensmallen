@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:46.294183
 
-The undirected graph tube2 has 21498 nodes and 459277 weighted edges, of which 21498
-are self-loops. The graph is sparse as it has a density of 0.00194 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 41.73, and the node degree mode is 42. The top 5 most central nodes are 20736
-(degree 48), 20735 (degree 48), 20734 (degree 48), 20733 (degree 48) and 20732 (degree
-48).
+The undirected graph tube2 has 21498 nodes and 459277 weighted edges, of
+which 21498 are self-loops. The graph is sparse as it has a density of
+0.00194 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 41.73, and the node degree mode
+is 42. The top 5 most central nodes are 20736 (degree 48), 20735 (degree
+48), 20734 (degree 48), 20733 (degree 48) and 20732 (degree 48).
 
 
 References
@@ -102,12 +102,12 @@ def Tube2(
 	
 	Datetime: 2021-02-06 11:35:46.294183
 	
-	The undirected graph tube2 has 21498 nodes and 459277 weighted edges, of which 21498
-	are self-loops. The graph is sparse as it has a density of 0.00194 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 41.73, and the node degree mode is 42. The top 5 most central nodes are 20736
-	(degree 48), 20735 (degree 48), 20734 (degree 48), 20733 (degree 48) and 20732 (degree
-	48).
+	The undirected graph tube2 has 21498 nodes and 459277 weighted edges, of
+	which 21498 are self-loops. The graph is sparse as it has a density of
+	0.00194 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 41.73, and the node degree mode
+	is 42. The top 5 most central nodes are 20736 (degree 48), 20735 (degree
+	48), 20734 (degree 48), 20733 (degree 48) and 20732 (degree 48).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:23.121058
 
-The undirected graph Amycolicicoccus subflavus has 4547 nodes and 676375 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06544
-and has 16 connected components, where the component with most nodes has 4506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 264, the mean node degree is 297.50, and the node degree mode is 3. The top 5
-most central nodes are 443218.AS9A_2732 (degree 2182), 443218.AS9A_3620 (degree 1855),
-443218.AS9A_0532 (degree 1793), 443218.AS9A_1092 (degree 1610) and 443218.AS9A_1477
-(degree 1600).
+The undirected graph Amycolicicoccus subflavus has 4547 nodes and 676375
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06544 and has 16 connected components, where the component
+with most nodes has 4506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 264, the mean node degree is 297.50,
+and the node degree mode is 3. The top 5 most central nodes are 443218.AS9A_2732
+(degree 2182), 443218.AS9A_3620 (degree 1855), 443218.AS9A_0532 (degree
+1793), 443218.AS9A_1092 (degree 1610) and 443218.AS9A_1477 (degree 1600).
 
 
 References
@@ -107,14 +107,14 @@ def AmycolicicoccusSubflavus(
 	
 	Datetime: 2021-02-02 20:50:23.121058
 	
-	The undirected graph Amycolicicoccus subflavus has 4547 nodes and 676375 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06544
-	and has 16 connected components, where the component with most nodes has 4506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 264, the mean node degree is 297.50, and the node degree mode is 3. The top 5
-	most central nodes are 443218.AS9A_2732 (degree 2182), 443218.AS9A_3620 (degree 1855),
-	443218.AS9A_0532 (degree 1793), 443218.AS9A_1092 (degree 1610) and 443218.AS9A_1477
-	(degree 1600).
+	The undirected graph Amycolicicoccus subflavus has 4547 nodes and 676375
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06544 and has 16 connected components, where the component
+	with most nodes has 4506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 264, the mean node degree is 297.50,
+	and the node degree mode is 3. The top 5 most central nodes are 443218.AS9A_2732
+	(degree 2182), 443218.AS9A_3620 (degree 1855), 443218.AS9A_0532 (degree
+	1793), 443218.AS9A_1092 (degree 1610) and 443218.AS9A_1477 (degree 1600).
 	
 
 

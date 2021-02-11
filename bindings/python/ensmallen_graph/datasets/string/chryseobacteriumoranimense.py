@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:48.050288
 
-The undirected graph Chryseobacterium oranimense has 4295 nodes and 385616 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04182
-and has 22 connected components, where the component with most nodes has 4250 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 179.57, and the node degree mode is 5. The top 5
-most central nodes are 1300143.CCAV010000004_gene2427 (degree 1258), 1300143.CCAV010000011_gene2822
-(degree 1232), 1300143.CCAV010000005_gene3617 (degree 1218), 1300143.CCAV010000006_gene3983
-(degree 1060) and 1300143.CCAV010000004_gene2690 (degree 1026).
+The undirected graph Chryseobacterium oranimense has 4295 nodes and 385616
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04182 and has 22 connected components, where the component
+with most nodes has 4250 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 179.57,
+and the node degree mode is 5. The top 5 most central nodes are 1300143.CCAV010000004_gene2427
+(degree 1258), 1300143.CCAV010000011_gene2822 (degree 1232), 1300143.CCAV010000005_gene3617
+(degree 1218), 1300143.CCAV010000006_gene3983 (degree 1060) and 1300143.CCAV010000004_gene2690
+(degree 1026).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumOranimense(
 	
 	Datetime: 2021-02-03 21:34:48.050288
 	
-	The undirected graph Chryseobacterium oranimense has 4295 nodes and 385616 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04182
-	and has 22 connected components, where the component with most nodes has 4250 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 179.57, and the node degree mode is 5. The top 5
-	most central nodes are 1300143.CCAV010000004_gene2427 (degree 1258), 1300143.CCAV010000011_gene2822
-	(degree 1232), 1300143.CCAV010000005_gene3617 (degree 1218), 1300143.CCAV010000006_gene3983
-	(degree 1060) and 1300143.CCAV010000004_gene2690 (degree 1026).
+	The undirected graph Chryseobacterium oranimense has 4295 nodes and 385616
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04182 and has 22 connected components, where the component
+	with most nodes has 4250 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 179.57,
+	and the node degree mode is 5. The top 5 most central nodes are 1300143.CCAV010000004_gene2427
+	(degree 1258), 1300143.CCAV010000011_gene2822 (degree 1232), 1300143.CCAV010000005_gene3617
+	(degree 1218), 1300143.CCAV010000006_gene3983 (degree 1060) and 1300143.CCAV010000004_gene2690
+	(degree 1026).
 	
 
 

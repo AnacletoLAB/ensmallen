@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:36.575869
 
-The undirected graph Photobacterium phosphoreum has 4561 nodes and 497057 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04780
-and has 41 connected components, where the component with most nodes has 4464 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 217.96, and the node degree mode is 1. The top 5
-most central nodes are 1454202.PPBDW_100229___1 (degree 2504), 1454202.PPBDW_100228___1
-(degree 2255), 1454202.PPBDW_100232___1 (degree 1681), 1454202.PPBDW_100226___1 (degree
-1672) and 1454202.PPBDW_20046___1 (degree 1652).
+The undirected graph Photobacterium phosphoreum has 4561 nodes and 497057
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04780 and has 41 connected components, where the component
+with most nodes has 4464 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 217.96,
+and the node degree mode is 1. The top 5 most central nodes are 1454202.PPBDW_100229___1
+(degree 2504), 1454202.PPBDW_100228___1 (degree 2255), 1454202.PPBDW_100232___1
+(degree 1681), 1454202.PPBDW_100226___1 (degree 1672) and 1454202.PPBDW_20046___1
+(degree 1652).
 
 
 References
@@ -107,14 +108,15 @@ def PhotobacteriumPhosphoreum(
 	
 	Datetime: 2021-02-03 23:06:36.575869
 	
-	The undirected graph Photobacterium phosphoreum has 4561 nodes and 497057 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04780
-	and has 41 connected components, where the component with most nodes has 4464 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 217.96, and the node degree mode is 1. The top 5
-	most central nodes are 1454202.PPBDW_100229___1 (degree 2504), 1454202.PPBDW_100228___1
-	(degree 2255), 1454202.PPBDW_100232___1 (degree 1681), 1454202.PPBDW_100226___1 (degree
-	1672) and 1454202.PPBDW_20046___1 (degree 1652).
+	The undirected graph Photobacterium phosphoreum has 4561 nodes and 497057
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04780 and has 41 connected components, where the component
+	with most nodes has 4464 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 217.96,
+	and the node degree mode is 1. The top 5 most central nodes are 1454202.PPBDW_100229___1
+	(degree 2504), 1454202.PPBDW_100228___1 (degree 2255), 1454202.PPBDW_100232___1
+	(degree 1681), 1454202.PPBDW_100226___1 (degree 1672) and 1454202.PPBDW_20046___1
+	(degree 1652).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:18:35.845870
 
-The undirected graph sls has 1686491 nodes and 3465600 weighted edges, of which 2
-are self-loops. The graph is extremely sparse as it has a density of 0.00000 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 4.11, and the node degree mode is 2. The top 5 most central nodes
-are 62729 (degree 1685394), 62656 (degree 125001), 62718 (degree 107858), 62711 (degree
-96654) and 62642 (degree 96393).
+The undirected graph sls has 1686491 nodes and 3465600 weighted edges,
+of which 2 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.11, and the node degree mode
+is 2. The top 5 most central nodes are 62729 (degree 1685394), 62656 (degree
+125001), 62718 (degree 107858), 62711 (degree 96654) and 62642 (degree
+96393).
 
 
 References
@@ -102,12 +103,13 @@ def Sls(
 	
 	Datetime: 2021-02-06 12:18:35.845870
 	
-	The undirected graph sls has 1686491 nodes and 3465600 weighted edges, of which 2
-	are self-loops. The graph is extremely sparse as it has a density of 0.00000 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 4.11, and the node degree mode is 2. The top 5 most central nodes
-	are 62729 (degree 1685394), 62656 (degree 125001), 62718 (degree 107858), 62711 (degree
-	96654) and 62642 (degree 96393).
+	The undirected graph sls has 1686491 nodes and 3465600 weighted edges,
+	of which 2 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.11, and the node degree mode
+	is 2. The top 5 most central nodes are 62729 (degree 1685394), 62656 (degree
+	125001), 62718 (degree 107858), 62711 (degree 96654) and 62642 (degree
+	96393).
 	
 
 

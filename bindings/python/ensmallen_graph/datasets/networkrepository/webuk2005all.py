@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 08:38:23.049097
 
-The undirected graph web-uk-2005-all has 39454746 nodes, of which 283 are singletons
-(all have self-loops), and 798046329 unweighted edges, of which 15019204 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 7727 connected
-components, where the component with most nodes has 39252879 nodes and the component
-with the least nodes has a single node. The graph median node degree is 16, the mean
-node degree is 40.07, and the node degree mode is 1. The top 5 most central nodes
-are 34054381 (degree 1776858), 34054389 (degree 1769764), 34054395 (degree 1769758),
-34054411 (degree 1769758) and 34054398 (degree 1769757).
+The undirected graph web-uk-2005-all has 39454746 nodes, of which 283 are
+singletons (all have self-loops), and 798046329 unweighted edges, of which
+15019204 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 7727 connected components, where the component with
+most nodes has 39252879 nodes and the component with the least nodes has
+a single node. The graph median node degree is 16, the mean node degree
+is 40.07, and the node degree mode is 1. The top 5 most central nodes are
+34054381 (degree 1776858), 34054389 (degree 1769764), 34054395 (degree
+1769758), 34054411 (degree 1769758) and 34054398 (degree 1769757).
 
 
 References
@@ -121,14 +122,15 @@ def WebUk2005All(
 	
 	Datetime: 2021-02-05 08:38:23.049097
 	
-	The undirected graph web-uk-2005-all has 39454746 nodes, of which 283 are singletons
-	(all have self-loops), and 798046329 unweighted edges, of which 15019204 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 7727 connected
-	components, where the component with most nodes has 39252879 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 16, the mean
-	node degree is 40.07, and the node degree mode is 1. The top 5 most central nodes
-	are 34054381 (degree 1776858), 34054389 (degree 1769764), 34054395 (degree 1769758),
-	34054411 (degree 1769758) and 34054398 (degree 1769757).
+	The undirected graph web-uk-2005-all has 39454746 nodes, of which 283 are
+	singletons (all have self-loops), and 798046329 unweighted edges, of which
+	15019204 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 7727 connected components, where the component with
+	most nodes has 39252879 nodes and the component with the least nodes has
+	a single node. The graph median node degree is 16, the mean node degree
+	is 40.07, and the node degree mode is 1. The top 5 most central nodes are
+	34054381 (degree 1776858), 34054389 (degree 1769764), 34054395 (degree
+	1769758), 34054411 (degree 1769758) and 34054398 (degree 1769757).
 	
 
 

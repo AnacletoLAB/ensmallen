@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:51:17.221834
 
-The undirected graph Mycoplasma girerdii has 566 nodes and 24137 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.15096
-and has 3 connected components, where the component with most nodes has 562 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 69, the mean node degree is 85.29, and the node degree mode is 7. The top 5 most
-central nodes are 1318617.MGM1_0490 (degree 296), 1318617.MGM1_4970 (degree 254),
-1318617.MGM1_1630 (degree 249), 1318617.MGM1_3160 (degree 242) and 1318617.MGM1_2650
-(degree 232).
+The undirected graph Mycoplasma girerdii has 566 nodes and 24137 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15096 and has 3 connected components, where the component
+with most nodes has 562 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 69, the mean node degree is 85.29,
+and the node degree mode is 7. The top 5 most central nodes are 1318617.MGM1_0490
+(degree 296), 1318617.MGM1_4970 (degree 254), 1318617.MGM1_1630 (degree
+249), 1318617.MGM1_3160 (degree 242) and 1318617.MGM1_2650 (degree 232).
 
 
 References
@@ -107,14 +107,14 @@ def MycoplasmaGirerdii(
 	
 	Datetime: 2021-02-03 21:51:17.221834
 	
-	The undirected graph Mycoplasma girerdii has 566 nodes and 24137 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.15096
-	and has 3 connected components, where the component with most nodes has 562 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 69, the mean node degree is 85.29, and the node degree mode is 7. The top 5 most
-	central nodes are 1318617.MGM1_0490 (degree 296), 1318617.MGM1_4970 (degree 254),
-	1318617.MGM1_1630 (degree 249), 1318617.MGM1_3160 (degree 242) and 1318617.MGM1_2650
-	(degree 232).
+	The undirected graph Mycoplasma girerdii has 566 nodes and 24137 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15096 and has 3 connected components, where the component
+	with most nodes has 562 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 69, the mean node degree is 85.29,
+	and the node degree mode is 7. The top 5 most central nodes are 1318617.MGM1_0490
+	(degree 296), 1318617.MGM1_4970 (degree 254), 1318617.MGM1_1630 (degree
+	249), 1318617.MGM1_3160 (degree 242) and 1318617.MGM1_2650 (degree 232).
 	
 
 

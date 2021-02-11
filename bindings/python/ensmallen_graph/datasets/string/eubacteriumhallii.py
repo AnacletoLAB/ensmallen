@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:29.878812
 
-The undirected graph Eubacterium hallii has 3180 nodes and 214305 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04240 and
-has 9 connected components, where the component with most nodes has 3163 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 134.78, and the node degree mode is 4. The top 5 most central
-nodes are 411469.EUBHAL_01318 (degree 1208), 411469.EUBHAL_03015 (degree 903), 411469.EUBHAL_00273
-(degree 891), 411469.EUBHAL_00404 (degree 849) and 411469.EUBHAL_00921 (degree 797).
+The undirected graph Eubacterium hallii has 3180 nodes and 214305 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04240 and has 9 connected components, where the component with most
+nodes has 3163 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 134.78, and
+the node degree mode is 4. The top 5 most central nodes are 411469.EUBHAL_01318
+(degree 1208), 411469.EUBHAL_03015 (degree 903), 411469.EUBHAL_00273 (degree
+891), 411469.EUBHAL_00404 (degree 849) and 411469.EUBHAL_00921 (degree
+797).
 
 
 References
@@ -106,13 +108,15 @@ def EubacteriumHallii(
 	
 	Datetime: 2021-02-02 20:45:29.878812
 	
-	The undirected graph Eubacterium hallii has 3180 nodes and 214305 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04240 and
-	has 9 connected components, where the component with most nodes has 3163 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 134.78, and the node degree mode is 4. The top 5 most central
-	nodes are 411469.EUBHAL_01318 (degree 1208), 411469.EUBHAL_03015 (degree 903), 411469.EUBHAL_00273
-	(degree 891), 411469.EUBHAL_00404 (degree 849) and 411469.EUBHAL_00921 (degree 797).
+	The undirected graph Eubacterium hallii has 3180 nodes and 214305 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04240 and has 9 connected components, where the component with most
+	nodes has 3163 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 134.78, and
+	the node degree mode is 4. The top 5 most central nodes are 411469.EUBHAL_01318
+	(degree 1208), 411469.EUBHAL_03015 (degree 903), 411469.EUBHAL_00273 (degree
+	891), 411469.EUBHAL_00404 (degree 849) and 411469.EUBHAL_00921 (degree
+	797).
 	
 
 

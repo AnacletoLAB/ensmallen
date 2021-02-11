@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:02:17.755490
 
-The undirected graph Exiguobacterium pavilionensis has 3064 nodes and 287706 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06131
-and has 12 connected components, where the component with most nodes has 3035 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 187.80, and the node degree mode is 2. The top 5
-most central nodes are 1345023.M467_13875 (degree 1067), 1345023.M467_07415 (degree
-1003), 1345023.M467_04075 (degree 987), 1345023.M467_04055 (degree 943) and 1345023.M467_01200
-(degree 909).
+The undirected graph Exiguobacterium pavilionensis has 3064 nodes and 287706
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06131 and has 12 connected components, where the component
+with most nodes has 3035 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 187.80,
+and the node degree mode is 2. The top 5 most central nodes are 1345023.M467_13875
+(degree 1067), 1345023.M467_07415 (degree 1003), 1345023.M467_04075 (degree
+987), 1345023.M467_04055 (degree 943) and 1345023.M467_01200 (degree 909).
 
 
 References
@@ -107,14 +107,14 @@ def ExiguobacteriumPavilionensis(
 	
 	Datetime: 2021-02-03 22:02:17.755490
 	
-	The undirected graph Exiguobacterium pavilionensis has 3064 nodes and 287706 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06131
-	and has 12 connected components, where the component with most nodes has 3035 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 187.80, and the node degree mode is 2. The top 5
-	most central nodes are 1345023.M467_13875 (degree 1067), 1345023.M467_07415 (degree
-	1003), 1345023.M467_04075 (degree 987), 1345023.M467_04055 (degree 943) and 1345023.M467_01200
-	(degree 909).
+	The undirected graph Exiguobacterium pavilionensis has 3064 nodes and 287706
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06131 and has 12 connected components, where the component
+	with most nodes has 3035 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 187.80,
+	and the node degree mode is 2. The top 5 most central nodes are 1345023.M467_13875
+	(degree 1067), 1345023.M467_07415 (degree 1003), 1345023.M467_04075 (degree
+	987), 1345023.M467_04055 (degree 943) and 1345023.M467_01200 (degree 909).
 	
 
 

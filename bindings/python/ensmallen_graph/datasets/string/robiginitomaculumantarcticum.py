@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:18.962504
 
-The undirected graph Robiginitomaculum antarcticum has 2518 nodes and 187114 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05905
-and has 6 connected components, where the component with most nodes has 2508 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 148.62, and the node degree mode is 1. The top 5
-most central nodes are 1123059.KB823013_gene436 (degree 989), 1123059.KB823011_gene1211
-(degree 886), 1123059.KB823011_gene1431 (degree 764), 1123059.KB823014_gene179 (degree
-742) and 1123059.KB823011_gene1711 (degree 733).
+The undirected graph Robiginitomaculum antarcticum has 2518 nodes and 187114
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05905 and has 6 connected components, where the component
+with most nodes has 2508 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 148.62,
+and the node degree mode is 1. The top 5 most central nodes are 1123059.KB823013_gene436
+(degree 989), 1123059.KB823011_gene1211 (degree 886), 1123059.KB823011_gene1431
+(degree 764), 1123059.KB823014_gene179 (degree 742) and 1123059.KB823011_gene1711
+(degree 733).
 
 
 References
@@ -107,14 +108,15 @@ def RobiginitomaculumAntarcticum(
 	
 	Datetime: 2021-02-02 22:47:18.962504
 	
-	The undirected graph Robiginitomaculum antarcticum has 2518 nodes and 187114 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05905
-	and has 6 connected components, where the component with most nodes has 2508 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 148.62, and the node degree mode is 1. The top 5
-	most central nodes are 1123059.KB823013_gene436 (degree 989), 1123059.KB823011_gene1211
-	(degree 886), 1123059.KB823011_gene1431 (degree 764), 1123059.KB823014_gene179 (degree
-	742) and 1123059.KB823011_gene1711 (degree 733).
+	The undirected graph Robiginitomaculum antarcticum has 2518 nodes and 187114
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05905 and has 6 connected components, where the component
+	with most nodes has 2508 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 148.62,
+	and the node degree mode is 1. The top 5 most central nodes are 1123059.KB823013_gene436
+	(degree 989), 1123059.KB823011_gene1211 (degree 886), 1123059.KB823011_gene1431
+	(degree 764), 1123059.KB823014_gene179 (degree 742) and 1123059.KB823011_gene1711
+	(degree 733).
 	
 
 

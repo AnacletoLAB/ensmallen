@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:17.221317
 
-The undirected graph Commensalibacter sp. MX01 has 2039 nodes and 145022 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06980
-and has 8 connected components, where the component with most nodes has 2021 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 142.25, and the node degree mode is 2. The top 5
-most central nodes are 1208583.COMX_08705 (degree 824), 1208583.COMX_03760 (degree
-744), 1208583.COMX_08195 (degree 679), 1208583.COMX_02455 (degree 629) and 1208583.COMX_09046
-(degree 618).
+The undirected graph Commensalibacter sp. MX01 has 2039 nodes and 145022
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06980 and has 8 connected components, where the component
+with most nodes has 2021 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 142.25,
+and the node degree mode is 2. The top 5 most central nodes are 1208583.COMX_08705
+(degree 824), 1208583.COMX_03760 (degree 744), 1208583.COMX_08195 (degree
+679), 1208583.COMX_02455 (degree 629) and 1208583.COMX_09046 (degree 618).
 
 
 References
@@ -107,14 +107,14 @@ def CommensalibacterSp.Mx01(
 	
 	Datetime: 2021-02-02 23:18:17.221317
 	
-	The undirected graph Commensalibacter sp. MX01 has 2039 nodes and 145022 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06980
-	and has 8 connected components, where the component with most nodes has 2021 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 142.25, and the node degree mode is 2. The top 5
-	most central nodes are 1208583.COMX_08705 (degree 824), 1208583.COMX_03760 (degree
-	744), 1208583.COMX_08195 (degree 679), 1208583.COMX_02455 (degree 629) and 1208583.COMX_09046
-	(degree 618).
+	The undirected graph Commensalibacter sp. MX01 has 2039 nodes and 145022
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06980 and has 8 connected components, where the component
+	with most nodes has 2021 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 142.25,
+	and the node degree mode is 2. The top 5 most central nodes are 1208583.COMX_08705
+	(degree 824), 1208583.COMX_03760 (degree 744), 1208583.COMX_08195 (degree
+	679), 1208583.COMX_02455 (degree 629) and 1208583.COMX_09046 (degree 618).
 	
 
 

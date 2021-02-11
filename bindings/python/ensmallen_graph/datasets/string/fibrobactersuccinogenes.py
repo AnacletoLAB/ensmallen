@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:26.228046
 
-The undirected graph Fibrobacter succinogenes has 3067 nodes and 187599 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03990
-and has 6 connected components, where the component with most nodes has 3050 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 122.33, and the node degree mode is 7. The top 5
-most central nodes are 59374.Fisuc_0785 (degree 1020), 59374.Fisuc_2452 (degree 909),
-59374.Fisuc_2881 (degree 890), 59374.Fisuc_0875 (degree 844) and 59374.Fisuc_0185
-(degree 840).
+The undirected graph Fibrobacter succinogenes has 3067 nodes and 187599
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03990 and has 6 connected components, where the component
+with most nodes has 3050 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 122.33,
+and the node degree mode is 7. The top 5 most central nodes are 59374.Fisuc_0785
+(degree 1020), 59374.Fisuc_2452 (degree 909), 59374.Fisuc_2881 (degree
+890), 59374.Fisuc_0875 (degree 844) and 59374.Fisuc_0185 (degree 840).
 
 
 References
@@ -107,14 +107,14 @@ def FibrobacterSuccinogenes(
 	
 	Datetime: 2021-02-02 18:19:26.228046
 	
-	The undirected graph Fibrobacter succinogenes has 3067 nodes and 187599 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03990
-	and has 6 connected components, where the component with most nodes has 3050 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 122.33, and the node degree mode is 7. The top 5
-	most central nodes are 59374.Fisuc_0785 (degree 1020), 59374.Fisuc_2452 (degree 909),
-	59374.Fisuc_2881 (degree 890), 59374.Fisuc_0875 (degree 844) and 59374.Fisuc_0185
-	(degree 840).
+	The undirected graph Fibrobacter succinogenes has 3067 nodes and 187599
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03990 and has 6 connected components, where the component
+	with most nodes has 3050 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 122.33,
+	and the node degree mode is 7. The top 5 most central nodes are 59374.Fisuc_0785
+	(degree 1020), 59374.Fisuc_2452 (degree 909), 59374.Fisuc_2881 (degree
+	890), 59374.Fisuc_0875 (degree 844) and 59374.Fisuc_0185 (degree 840).
 	
 
 

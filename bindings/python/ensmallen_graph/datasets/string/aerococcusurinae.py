@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:16.407722
 
-The undirected graph Aerococcus urinae has 1710 nodes and 115281 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07890 and
-has 2 connected components, where the component with most nodes has 1708 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 134.83, and the node degree mode is 5. The top 5 most central
-nodes are 866775.HMPREF9243_1492 (degree 848), 866775.HMPREF9243_0784 (degree 722),
-866775.HMPREF9243_1445 (degree 695), 866775.HMPREF9243_1865 (degree 681) and 866775.HMPREF9243_1126
+The undirected graph Aerococcus urinae has 1710 nodes and 115281 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07890 and has 2 connected components, where the component with most
+nodes has 1708 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 134.83, and
+the node degree mode is 5. The top 5 most central nodes are 866775.HMPREF9243_1492
+(degree 848), 866775.HMPREF9243_0784 (degree 722), 866775.HMPREF9243_1445
+(degree 695), 866775.HMPREF9243_1865 (degree 681) and 866775.HMPREF9243_1126
 (degree 653).
 
 
@@ -107,13 +108,14 @@ def AerococcusUrinae(
 	
 	Datetime: 2021-02-02 21:48:16.407722
 	
-	The undirected graph Aerococcus urinae has 1710 nodes and 115281 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07890 and
-	has 2 connected components, where the component with most nodes has 1708 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 134.83, and the node degree mode is 5. The top 5 most central
-	nodes are 866775.HMPREF9243_1492 (degree 848), 866775.HMPREF9243_0784 (degree 722),
-	866775.HMPREF9243_1445 (degree 695), 866775.HMPREF9243_1865 (degree 681) and 866775.HMPREF9243_1126
+	The undirected graph Aerococcus urinae has 1710 nodes and 115281 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07890 and has 2 connected components, where the component with most
+	nodes has 1708 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 134.83, and
+	the node degree mode is 5. The top 5 most central nodes are 866775.HMPREF9243_1492
+	(degree 848), 866775.HMPREF9243_0784 (degree 722), 866775.HMPREF9243_1445
+	(degree 695), 866775.HMPREF9243_1865 (degree 681) and 866775.HMPREF9243_1126
 	(degree 653).
 	
 

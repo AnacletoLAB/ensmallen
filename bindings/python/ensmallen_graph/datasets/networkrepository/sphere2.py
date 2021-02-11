@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:46:36.113690
 
-The undirected graph sphere2 has 66 nodes and 258 unweighted edges, of which 66 are
-self-loops. The graph is quite dense as it has a density of 0.10331 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.82, and the node degree mode is 7. The top 5 most central nodes are 65 (degree
-7), 64 (degree 7), 63 (degree 7), 62 (degree 7) and 61 (degree 7).
+The undirected graph sphere2 has 66 nodes and 258 unweighted edges, of
+which 66 are self-loops. The graph is quite dense as it has a density of
+0.10331 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.82, and the node degree mode
+is 7. The top 5 most central nodes are 65 (degree 7), 64 (degree 7), 63
+(degree 7), 62 (degree 7) and 61 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Sphere2(
 	
 	Datetime: 2021-02-06 08:46:36.113690
 	
-	The undirected graph sphere2 has 66 nodes and 258 unweighted edges, of which 66 are
-	self-loops. The graph is quite dense as it has a density of 0.10331 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.82, and the node degree mode is 7. The top 5 most central nodes are 65 (degree
-	7), 64 (degree 7), 63 (degree 7), 62 (degree 7) and 61 (degree 7).
+	The undirected graph sphere2 has 66 nodes and 258 unweighted edges, of
+	which 66 are self-loops. The graph is quite dense as it has a density of
+	0.10331 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.82, and the node degree mode
+	is 7. The top 5 most central nodes are 65 (degree 7), 64 (degree 7), 63
+	(degree 7), 62 (degree 7) and 61 (degree 7).
 	
 
 

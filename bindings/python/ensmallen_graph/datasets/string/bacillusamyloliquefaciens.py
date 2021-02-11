@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:58.417792
 
-The undirected graph Bacillus amyloliquefaciens has 3682 nodes and 307834 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04543
-and has 7 connected components, where the component with most nodes has 3665 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 167.21, and the node degree mode is 4. The top 5
-most central nodes are 326423.RBAM_017000 (degree 1612), 326423.RBAM_022000 (degree
-1539), 326423.RBAM_016980 (degree 1517), 326423.RBAM_026130 (degree 1317) and 326423.RBAM_006760
-(degree 1145).
+The undirected graph Bacillus amyloliquefaciens has 3682 nodes and 307834
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04543 and has 7 connected components, where the component
+with most nodes has 3665 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 167.21,
+and the node degree mode is 4. The top 5 most central nodes are 326423.RBAM_017000
+(degree 1612), 326423.RBAM_022000 (degree 1539), 326423.RBAM_016980 (degree
+1517), 326423.RBAM_026130 (degree 1317) and 326423.RBAM_006760 (degree
+1145).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusAmyloliquefaciens(
 	
 	Datetime: 2021-02-02 20:28:58.417792
 	
-	The undirected graph Bacillus amyloliquefaciens has 3682 nodes and 307834 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04543
-	and has 7 connected components, where the component with most nodes has 3665 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 167.21, and the node degree mode is 4. The top 5
-	most central nodes are 326423.RBAM_017000 (degree 1612), 326423.RBAM_022000 (degree
-	1539), 326423.RBAM_016980 (degree 1517), 326423.RBAM_026130 (degree 1317) and 326423.RBAM_006760
-	(degree 1145).
+	The undirected graph Bacillus amyloliquefaciens has 3682 nodes and 307834
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04543 and has 7 connected components, where the component
+	with most nodes has 3665 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 167.21,
+	and the node degree mode is 4. The top 5 most central nodes are 326423.RBAM_017000
+	(degree 1612), 326423.RBAM_022000 (degree 1539), 326423.RBAM_016980 (degree
+	1517), 326423.RBAM_026130 (degree 1317) and 326423.RBAM_006760 (degree
+	1145).
 	
 
 

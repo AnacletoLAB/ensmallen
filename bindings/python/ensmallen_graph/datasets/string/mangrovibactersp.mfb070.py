@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:50.051466
 
-The undirected graph Mangrovibacter sp. MFB070 has 4751 nodes and 757693 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06715
-and has 11 connected components, where the component with most nodes has 4723 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 291, the mean node degree is 318.96, and the node degree mode is 2. The top 5
-most central nodes are 1224318.DT73_05490 (degree 1654), 1224318.DT73_23760 (degree
-1646), 1224318.DT73_03575 (degree 1570), 1224318.DT73_11455 (degree 1560) and 1224318.DT73_09125
-(degree 1553).
+The undirected graph Mangrovibacter sp. MFB070 has 4751 nodes and 757693
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06715 and has 11 connected components, where the component
+with most nodes has 4723 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 291, the mean node degree is 318.96,
+and the node degree mode is 2. The top 5 most central nodes are 1224318.DT73_05490
+(degree 1654), 1224318.DT73_23760 (degree 1646), 1224318.DT73_03575 (degree
+1570), 1224318.DT73_11455 (degree 1560) and 1224318.DT73_09125 (degree
+1553).
 
 
 References
@@ -107,14 +108,15 @@ def MangrovibacterSp.Mfb070(
 	
 	Datetime: 2021-02-02 23:24:50.051466
 	
-	The undirected graph Mangrovibacter sp. MFB070 has 4751 nodes and 757693 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06715
-	and has 11 connected components, where the component with most nodes has 4723 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 291, the mean node degree is 318.96, and the node degree mode is 2. The top 5
-	most central nodes are 1224318.DT73_05490 (degree 1654), 1224318.DT73_23760 (degree
-	1646), 1224318.DT73_03575 (degree 1570), 1224318.DT73_11455 (degree 1560) and 1224318.DT73_09125
-	(degree 1553).
+	The undirected graph Mangrovibacter sp. MFB070 has 4751 nodes and 757693
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06715 and has 11 connected components, where the component
+	with most nodes has 4723 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 291, the mean node degree is 318.96,
+	and the node degree mode is 2. The top 5 most central nodes are 1224318.DT73_05490
+	(degree 1654), 1224318.DT73_23760 (degree 1646), 1224318.DT73_03575 (degree
+	1570), 1224318.DT73_11455 (degree 1560) and 1224318.DT73_09125 (degree
+	1553).
 	
 
 

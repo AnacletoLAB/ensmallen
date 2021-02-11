@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:26:37.921189
 
-The undirected graph rt-retweet-crawl has 1112702 nodes and 2278852 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 4.10, and the node degree mode is 1. The top 5 most
-central nodes are 508794 (degree 5070), 27351 (degree 4634), 390165 (degree 4342),
-208853 (degree 1673) and 1095919 (degree 1658).
+The undirected graph rt-retweet-crawl has 1112702 nodes and 2278852 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 4.10, and the
+node degree mode is 1. The top 5 most central nodes are 508794 (degree
+5070), 27351 (degree 4634), 390165 (degree 4342), 208853 (degree 1673)
+and 1095919 (degree 1658).
 
 
 References
@@ -117,12 +118,13 @@ def RtRetweetCrawl(
 	
 	Datetime: 2021-02-06 12:26:37.921189
 	
-	The undirected graph rt-retweet-crawl has 1112702 nodes and 2278852 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 4.10, and the node degree mode is 1. The top 5 most
-	central nodes are 508794 (degree 5070), 27351 (degree 4634), 390165 (degree 4342),
-	208853 (degree 1673) and 1095919 (degree 1658).
+	The undirected graph rt-retweet-crawl has 1112702 nodes and 2278852 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 4.10, and the
+	node degree mode is 1. The top 5 most central nodes are 508794 (degree
+	5070), 27351 (degree 4634), 390165 (degree 4342), 208853 (degree 1673)
+	and 1095919 (degree 1658).
 	
 
 

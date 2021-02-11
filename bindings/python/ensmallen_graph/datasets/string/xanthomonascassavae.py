@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:28.206329
 
-The undirected graph Xanthomonas cassavae has 4197 nodes and 496444 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05638 and
-has 17 connected components, where the component with most nodes has 4147 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 236.57, and the node degree mode is 1. The top 5 most central
-nodes are 1219375.CM002139_gene1942 (degree 1756), 1219375.CM002139_gene1632 (degree
-1582), 1219375.CM002139_gene4201 (degree 1448), 1219375.CM002139_gene2165 (degree
-1424) and 1219375.CM002139_gene70 (degree 1393).
+The undirected graph Xanthomonas cassavae has 4197 nodes and 496444 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05638 and has 17 connected components, where the component with most
+nodes has 4147 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 236.57, and
+the node degree mode is 1. The top 5 most central nodes are 1219375.CM002139_gene1942
+(degree 1756), 1219375.CM002139_gene1632 (degree 1582), 1219375.CM002139_gene4201
+(degree 1448), 1219375.CM002139_gene2165 (degree 1424) and 1219375.CM002139_gene70
+(degree 1393).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasCassavae(
 	
 	Datetime: 2021-02-02 23:23:28.206329
 	
-	The undirected graph Xanthomonas cassavae has 4197 nodes and 496444 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05638 and
-	has 17 connected components, where the component with most nodes has 4147 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 236.57, and the node degree mode is 1. The top 5 most central
-	nodes are 1219375.CM002139_gene1942 (degree 1756), 1219375.CM002139_gene1632 (degree
-	1582), 1219375.CM002139_gene4201 (degree 1448), 1219375.CM002139_gene2165 (degree
-	1424) and 1219375.CM002139_gene70 (degree 1393).
+	The undirected graph Xanthomonas cassavae has 4197 nodes and 496444 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05638 and has 17 connected components, where the component with most
+	nodes has 4147 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 236.57, and
+	the node degree mode is 1. The top 5 most central nodes are 1219375.CM002139_gene1942
+	(degree 1756), 1219375.CM002139_gene1632 (degree 1582), 1219375.CM002139_gene4201
+	(degree 1448), 1219375.CM002139_gene2165 (degree 1424) and 1219375.CM002139_gene70
+	(degree 1393).
 	
 
 

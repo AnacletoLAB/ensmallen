@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:45:26.206362
 
-The undirected graph Maylandia zebra has 21596 nodes and 5713068 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02450 and
-has 4 connected components, where the component with most nodes has 21590 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 366,
-the mean node degree is 529.09, and the node degree mode is 398. The top 5 most central
-nodes are 106582.XP_004561696.1 (degree 5296), 106582.XP_004564509.1 (degree 4627),
-106582.XP_004539829.1 (degree 4550), 106582.XP_004568769.1 (degree 4442) and 106582.XP_004551417.1
+The undirected graph Maylandia zebra has 21596 nodes and 5713068 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02450 and has 4 connected components, where the component with most
+nodes has 21590 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 366, the mean node degree is 529.09, and
+the node degree mode is 398. The top 5 most central nodes are 106582.XP_004561696.1
+(degree 5296), 106582.XP_004564509.1 (degree 4627), 106582.XP_004539829.1
+(degree 4550), 106582.XP_004568769.1 (degree 4442) and 106582.XP_004551417.1
 (degree 4439).
 
 
@@ -107,13 +108,14 @@ def MaylandiaZebra(
 	
 	Datetime: 2021-02-02 19:45:26.206362
 	
-	The undirected graph Maylandia zebra has 21596 nodes and 5713068 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02450 and
-	has 4 connected components, where the component with most nodes has 21590 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 366,
-	the mean node degree is 529.09, and the node degree mode is 398. The top 5 most central
-	nodes are 106582.XP_004561696.1 (degree 5296), 106582.XP_004564509.1 (degree 4627),
-	106582.XP_004539829.1 (degree 4550), 106582.XP_004568769.1 (degree 4442) and 106582.XP_004551417.1
+	The undirected graph Maylandia zebra has 21596 nodes and 5713068 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02450 and has 4 connected components, where the component with most
+	nodes has 21590 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 366, the mean node degree is 529.09, and
+	the node degree mode is 398. The top 5 most central nodes are 106582.XP_004561696.1
+	(degree 5296), 106582.XP_004564509.1 (degree 4627), 106582.XP_004539829.1
+	(degree 4550), 106582.XP_004568769.1 (degree 4442) and 106582.XP_004551417.1
 	(degree 4439).
 	
 

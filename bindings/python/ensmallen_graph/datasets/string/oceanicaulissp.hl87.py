@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:16.335932
 
-The undirected graph Oceanicaulis sp. HL87 has 2555 nodes and 210242 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06444 and
-has 4 connected components, where the component with most nodes has 2548 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 164.57, and the node degree mode is 5. The top 5 most central
-nodes are 1479238.JQMZ01000001_gene378 (degree 995), 1479238.JQMZ01000001_gene989
-(degree 828), 1479238.JQMZ01000001_gene381 (degree 782), 1479238.JQMZ01000001_gene1437
-(degree 737) and 1479238.JQMZ01000001_gene637 (degree 720).
+The undirected graph Oceanicaulis sp. HL87 has 2555 nodes and 210242 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06444 and has 4 connected components, where the component with most
+nodes has 2548 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 164.57, and
+the node degree mode is 5. The top 5 most central nodes are 1479238.JQMZ01000001_gene378
+(degree 995), 1479238.JQMZ01000001_gene989 (degree 828), 1479238.JQMZ01000001_gene381
+(degree 782), 1479238.JQMZ01000001_gene1437 (degree 737) and 1479238.JQMZ01000001_gene637
+(degree 720).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicaulisSp.Hl87(
 	
 	Datetime: 2021-02-03 23:13:16.335932
 	
-	The undirected graph Oceanicaulis sp. HL87 has 2555 nodes and 210242 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06444 and
-	has 4 connected components, where the component with most nodes has 2548 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 164.57, and the node degree mode is 5. The top 5 most central
-	nodes are 1479238.JQMZ01000001_gene378 (degree 995), 1479238.JQMZ01000001_gene989
-	(degree 828), 1479238.JQMZ01000001_gene381 (degree 782), 1479238.JQMZ01000001_gene1437
-	(degree 737) and 1479238.JQMZ01000001_gene637 (degree 720).
+	The undirected graph Oceanicaulis sp. HL87 has 2555 nodes and 210242 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06444 and has 4 connected components, where the component with most
+	nodes has 2548 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 164.57, and
+	the node degree mode is 5. The top 5 most central nodes are 1479238.JQMZ01000001_gene378
+	(degree 995), 1479238.JQMZ01000001_gene989 (degree 828), 1479238.JQMZ01000001_gene381
+	(degree 782), 1479238.JQMZ01000001_gene1437 (degree 737) and 1479238.JQMZ01000001_gene637
+	(degree 720).
 	
 
 

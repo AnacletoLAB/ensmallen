@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:04.824847
 
-The undirected graph Thermicanus aegyptius has 3334 nodes and 338005 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06083 and
-has 23 connected components, where the component with most nodes has 3282 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 202.76, and the node degree mode is 1. The top 5 most central
-nodes are 1089548.KI783301_gene415 (degree 1261), 1089548.KI783301_gene1774 (degree
-1202), 1089548.KI783301_gene3204 (degree 1088), 1089548.KI783301_gene2913 (degree
-962) and 1089548.KI783301_gene2045 (degree 932).
+The undirected graph Thermicanus aegyptius has 3334 nodes and 338005 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06083 and has 23 connected components, where the component with most
+nodes has 3282 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 202.76, and
+the node degree mode is 1. The top 5 most central nodes are 1089548.KI783301_gene415
+(degree 1261), 1089548.KI783301_gene1774 (degree 1202), 1089548.KI783301_gene3204
+(degree 1088), 1089548.KI783301_gene2913 (degree 962) and 1089548.KI783301_gene2045
+(degree 932).
 
 
 References
@@ -107,14 +108,15 @@ def ThermicanusAegyptius(
 	
 	Datetime: 2021-02-02 22:22:04.824847
 	
-	The undirected graph Thermicanus aegyptius has 3334 nodes and 338005 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06083 and
-	has 23 connected components, where the component with most nodes has 3282 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 202.76, and the node degree mode is 1. The top 5 most central
-	nodes are 1089548.KI783301_gene415 (degree 1261), 1089548.KI783301_gene1774 (degree
-	1202), 1089548.KI783301_gene3204 (degree 1088), 1089548.KI783301_gene2913 (degree
-	962) and 1089548.KI783301_gene2045 (degree 932).
+	The undirected graph Thermicanus aegyptius has 3334 nodes and 338005 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06083 and has 23 connected components, where the component with most
+	nodes has 3282 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 202.76, and
+	the node degree mode is 1. The top 5 most central nodes are 1089548.KI783301_gene415
+	(degree 1261), 1089548.KI783301_gene1774 (degree 1202), 1089548.KI783301_gene3204
+	(degree 1088), 1089548.KI783301_gene2913 (degree 962) and 1089548.KI783301_gene2045
+	(degree 932).
 	
 
 

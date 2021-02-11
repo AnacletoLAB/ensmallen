@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:59.893477
 
-The undirected graph Megasphaera sp. NM10 has 2429 nodes and 185433 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06288 and
-has 5 connected components, where the component with most nodes has 2421 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 152.68, and the node degree mode is 2. The top 5 most central
-nodes are 1273103.NM10_02739 (degree 896), 1273103.NM10_06078 (degree 819), 1273103.NM10_01781
-(degree 810), 1273103.NM10_10585 (degree 784) and 1273103.NM10_07194 (degree 756).
+The undirected graph Megasphaera sp. NM10 has 2429 nodes and 185433 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06288 and has 5 connected components, where the component with most
+nodes has 2421 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 152.68, and
+the node degree mode is 2. The top 5 most central nodes are 1273103.NM10_02739
+(degree 896), 1273103.NM10_06078 (degree 819), 1273103.NM10_01781 (degree
+810), 1273103.NM10_10585 (degree 784) and 1273103.NM10_07194 (degree 756).
 
 
 References
@@ -106,13 +107,14 @@ def MegasphaeraSp.Nm10(
 	
 	Datetime: 2021-02-02 23:37:59.893477
 	
-	The undirected graph Megasphaera sp. NM10 has 2429 nodes and 185433 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06288 and
-	has 5 connected components, where the component with most nodes has 2421 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 152.68, and the node degree mode is 2. The top 5 most central
-	nodes are 1273103.NM10_02739 (degree 896), 1273103.NM10_06078 (degree 819), 1273103.NM10_01781
-	(degree 810), 1273103.NM10_10585 (degree 784) and 1273103.NM10_07194 (degree 756).
+	The undirected graph Megasphaera sp. NM10 has 2429 nodes and 185433 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06288 and has 5 connected components, where the component with most
+	nodes has 2421 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 152.68, and
+	the node degree mode is 2. The top 5 most central nodes are 1273103.NM10_02739
+	(degree 896), 1273103.NM10_06078 (degree 819), 1273103.NM10_01781 (degree
+	810), 1273103.NM10_10585 (degree 784) and 1273103.NM10_07194 (degree 756).
 	
 
 

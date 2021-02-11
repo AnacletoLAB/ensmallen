@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:25.073144
 
-The undirected graph Blautia wexlerae has 4003 nodes and 332754 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04154 and
-has 20 connected components, where the component with most nodes has 3960 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 166.25, and the node degree mode is 1. The top 5 most central
-nodes are 1121115.AXVN01000001_gene1122 (degree 1476), 1121115.AXVN01000047_gene1266
-(degree 1331), 1121115.AXVN01000075_gene2099 (degree 1175), 1121115.AXVN01000021_gene1700
-(degree 1064) and 1121115.AXVN01000084_gene1827 (degree 1054).
+The undirected graph Blautia wexlerae has 4003 nodes and 332754 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04154 and has 20 connected components, where the component with most
+nodes has 3960 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 166.25, and
+the node degree mode is 1. The top 5 most central nodes are 1121115.AXVN01000001_gene1122
+(degree 1476), 1121115.AXVN01000047_gene1266 (degree 1331), 1121115.AXVN01000075_gene2099
+(degree 1175), 1121115.AXVN01000021_gene1700 (degree 1064) and 1121115.AXVN01000084_gene1827
+(degree 1054).
 
 
 References
@@ -107,14 +108,15 @@ def BlautiaWexlerae(
 	
 	Datetime: 2021-02-02 22:33:25.073144
 	
-	The undirected graph Blautia wexlerae has 4003 nodes and 332754 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04154 and
-	has 20 connected components, where the component with most nodes has 3960 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 166.25, and the node degree mode is 1. The top 5 most central
-	nodes are 1121115.AXVN01000001_gene1122 (degree 1476), 1121115.AXVN01000047_gene1266
-	(degree 1331), 1121115.AXVN01000075_gene2099 (degree 1175), 1121115.AXVN01000021_gene1700
-	(degree 1064) and 1121115.AXVN01000084_gene1827 (degree 1054).
+	The undirected graph Blautia wexlerae has 4003 nodes and 332754 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04154 and has 20 connected components, where the component with most
+	nodes has 3960 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 166.25, and
+	the node degree mode is 1. The top 5 most central nodes are 1121115.AXVN01000001_gene1122
+	(degree 1476), 1121115.AXVN01000047_gene1266 (degree 1331), 1121115.AXVN01000075_gene2099
+	(degree 1175), 1121115.AXVN01000021_gene1700 (degree 1064) and 1121115.AXVN01000084_gene1827
+	(degree 1054).
 	
 
 

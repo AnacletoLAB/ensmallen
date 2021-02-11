@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:19.355008
 
-The undirected graph Echinicola vietnamensis has 4476 nodes and 358653 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03581 and
-has 17 connected components, where the component with most nodes has 4434 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 160.26, and the node degree mode is 2. The top 5 most central
-nodes are 926556.Echvi_3649 (degree 1583), 926556.Echvi_1032 (degree 1531), 926556.Echvi_4572
-(degree 1265), 926556.Echvi_2760 (degree 1258) and 926556.Echvi_4259 (degree 1234).
+The undirected graph Echinicola vietnamensis has 4476 nodes and 358653
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03581 and has 17 connected components, where the component
+with most nodes has 4434 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 160.26,
+and the node degree mode is 2. The top 5 most central nodes are 926556.Echvi_3649
+(degree 1583), 926556.Echvi_1032 (degree 1531), 926556.Echvi_4572 (degree
+1265), 926556.Echvi_2760 (degree 1258) and 926556.Echvi_4259 (degree 1234).
 
 
 References
@@ -106,13 +107,14 @@ def EchinicolaVietnamensis(
 	
 	Datetime: 2021-02-02 21:56:19.355008
 	
-	The undirected graph Echinicola vietnamensis has 4476 nodes and 358653 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03581 and
-	has 17 connected components, where the component with most nodes has 4434 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 160.26, and the node degree mode is 2. The top 5 most central
-	nodes are 926556.Echvi_3649 (degree 1583), 926556.Echvi_1032 (degree 1531), 926556.Echvi_4572
-	(degree 1265), 926556.Echvi_2760 (degree 1258) and 926556.Echvi_4259 (degree 1234).
+	The undirected graph Echinicola vietnamensis has 4476 nodes and 358653
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03581 and has 17 connected components, where the component
+	with most nodes has 4434 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 160.26,
+	and the node degree mode is 2. The top 5 most central nodes are 926556.Echvi_3649
+	(degree 1583), 926556.Echvi_1032 (degree 1531), 926556.Echvi_4572 (degree
+	1265), 926556.Echvi_2760 (degree 1258) and 926556.Echvi_4259 (degree 1234).
 	
 
 

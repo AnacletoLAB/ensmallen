@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:32.166223
 
-The undirected graph Paenibacillus odorifer has 5386 nodes and 771820 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-has 13 connected components, where the component with most nodes has 5361 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 258,
-the mean node degree is 286.60, and the node degree mode is 3. The top 5 most central
-nodes are 189426.PODO_09510 (degree 2025), 189426.PODO_29820 (degree 1698), 189426.PODO_26775
-(degree 1378), 189426.PODO_02245 (degree 1326) and 189426.PODO_22000 (degree 1261).
+The undirected graph Paenibacillus odorifer has 5386 nodes and 771820 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05322 and has 13 connected components, where the component with most
+nodes has 5361 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 258, the mean node degree is 286.60, and
+the node degree mode is 3. The top 5 most central nodes are 189426.PODO_09510
+(degree 2025), 189426.PODO_29820 (degree 1698), 189426.PODO_26775 (degree
+1378), 189426.PODO_02245 (degree 1326) and 189426.PODO_22000 (degree 1261).
 
 
 References
@@ -106,13 +107,14 @@ def PaenibacillusOdorifer(
 	
 	Datetime: 2021-02-02 19:57:32.166223
 	
-	The undirected graph Paenibacillus odorifer has 5386 nodes and 771820 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-	has 13 connected components, where the component with most nodes has 5361 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 258,
-	the mean node degree is 286.60, and the node degree mode is 3. The top 5 most central
-	nodes are 189426.PODO_09510 (degree 2025), 189426.PODO_29820 (degree 1698), 189426.PODO_26775
-	(degree 1378), 189426.PODO_02245 (degree 1326) and 189426.PODO_22000 (degree 1261).
+	The undirected graph Paenibacillus odorifer has 5386 nodes and 771820 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05322 and has 13 connected components, where the component with most
+	nodes has 5361 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 258, the mean node degree is 286.60, and
+	the node degree mode is 3. The top 5 most central nodes are 189426.PODO_09510
+	(degree 2025), 189426.PODO_29820 (degree 1698), 189426.PODO_26775 (degree
+	1378), 189426.PODO_02245 (degree 1326) and 189426.PODO_22000 (degree 1261).
 	
 
 

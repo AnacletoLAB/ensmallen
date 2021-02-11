@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:51.519298
 
-The undirected graph Aggregatibacter aphrophilus has 2193 nodes and 109785 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04568
-and has 10 connected components, where the component with most nodes has 2171 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 100.12, and the node degree mode is 2. The top 5 most
-central nodes are 634176.NT05HA_1903 (degree 816), 634176.NT05HA_0517 (degree 644),
-634176.NT05HA_1208 (degree 636), 634176.NT05HA_0529 (degree 611) and 634176.NT05HA_0762
-(degree 593).
+The undirected graph Aggregatibacter aphrophilus has 2193 nodes and 109785
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04568 and has 10 connected components, where the component
+with most nodes has 2171 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 78, the mean node degree is 100.12,
+and the node degree mode is 2. The top 5 most central nodes are 634176.NT05HA_1903
+(degree 816), 634176.NT05HA_0517 (degree 644), 634176.NT05HA_1208 (degree
+636), 634176.NT05HA_0529 (degree 611) and 634176.NT05HA_0762 (degree 593).
 
 
 References
@@ -107,14 +107,14 @@ def AggregatibacterAphrophilus(
 	
 	Datetime: 2021-02-02 21:21:51.519298
 	
-	The undirected graph Aggregatibacter aphrophilus has 2193 nodes and 109785 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04568
-	and has 10 connected components, where the component with most nodes has 2171 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 100.12, and the node degree mode is 2. The top 5 most
-	central nodes are 634176.NT05HA_1903 (degree 816), 634176.NT05HA_0517 (degree 644),
-	634176.NT05HA_1208 (degree 636), 634176.NT05HA_0529 (degree 611) and 634176.NT05HA_0762
-	(degree 593).
+	The undirected graph Aggregatibacter aphrophilus has 2193 nodes and 109785
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04568 and has 10 connected components, where the component
+	with most nodes has 2171 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 78, the mean node degree is 100.12,
+	and the node degree mode is 2. The top 5 most central nodes are 634176.NT05HA_1903
+	(degree 816), 634176.NT05HA_0517 (degree 644), 634176.NT05HA_1208 (degree
+	636), 634176.NT05HA_0529 (degree 611) and 634176.NT05HA_0762 (degree 593).
 	
 
 

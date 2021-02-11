@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:14.735034
 
-The undirected graph Aeromonas salmonicida has 4067 nodes and 513656 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06212 and
-has 13 connected components, where the component with most nodes has 4035 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 252.60, and the node degree mode is 2. The top 5 most central
-nodes are 382245.ASA_2109 (degree 2102), 382245.ASA_4194 (degree 1586), 382245.ASA_1140
-(degree 1514), 382245.ASA_1667 (degree 1301) and 382245.ASA_1869 (degree 1268).
+The undirected graph Aeromonas salmonicida has 4067 nodes and 513656 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06212 and has 13 connected components, where the component with most
+nodes has 4035 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 252.60, and
+the node degree mode is 2. The top 5 most central nodes are 382245.ASA_2109
+(degree 2102), 382245.ASA_4194 (degree 1586), 382245.ASA_1140 (degree 1514),
+382245.ASA_1667 (degree 1301) and 382245.ASA_1869 (degree 1268).
 
 
 References
@@ -106,13 +107,14 @@ def AeromonasSalmonicida(
 	
 	Datetime: 2021-02-02 20:37:14.735034
 	
-	The undirected graph Aeromonas salmonicida has 4067 nodes and 513656 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06212 and
-	has 13 connected components, where the component with most nodes has 4035 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 252.60, and the node degree mode is 2. The top 5 most central
-	nodes are 382245.ASA_2109 (degree 2102), 382245.ASA_4194 (degree 1586), 382245.ASA_1140
-	(degree 1514), 382245.ASA_1667 (degree 1301) and 382245.ASA_1869 (degree 1268).
+	The undirected graph Aeromonas salmonicida has 4067 nodes and 513656 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06212 and has 13 connected components, where the component with most
+	nodes has 4035 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 252.60, and
+	the node degree mode is 2. The top 5 most central nodes are 382245.ASA_2109
+	(degree 2102), 382245.ASA_4194 (degree 1586), 382245.ASA_1140 (degree 1514),
+	382245.ASA_1667 (degree 1301) and 382245.ASA_1869 (degree 1268).
 	
 
 

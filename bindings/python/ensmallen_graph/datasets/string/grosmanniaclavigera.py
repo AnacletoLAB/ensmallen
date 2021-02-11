@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:37.597250
 
-The undirected graph Grosmannia clavigera has 6176 nodes and 606633 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03181 and
-has 11 connected components, where the component with most nodes has 6153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 196.45, and the node degree mode is 1. The top 5 most central
-nodes are 226899.F0XIU3 (degree 1575), 226899.F0XTW3 (degree 1519), 226899.F0XGX5
-(degree 1512), 226899.F0X6X2 (degree 1467) and 226899.F0X6M1 (degree 1448).
+The undirected graph Grosmannia clavigera has 6176 nodes and 606633 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03181 and has 11 connected components, where the component with most
+nodes has 6153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 196.45, and
+the node degree mode is 1. The top 5 most central nodes are 226899.F0XIU3
+(degree 1575), 226899.F0XTW3 (degree 1519), 226899.F0XGX5 (degree 1512),
+226899.F0X6X2 (degree 1467) and 226899.F0X6M1 (degree 1448).
 
 
 References
@@ -106,13 +107,14 @@ def GrosmanniaClavigera(
 	
 	Datetime: 2021-02-02 20:06:37.597250
 	
-	The undirected graph Grosmannia clavigera has 6176 nodes and 606633 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03181 and
-	has 11 connected components, where the component with most nodes has 6153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 196.45, and the node degree mode is 1. The top 5 most central
-	nodes are 226899.F0XIU3 (degree 1575), 226899.F0XTW3 (degree 1519), 226899.F0XGX5
-	(degree 1512), 226899.F0X6X2 (degree 1467) and 226899.F0X6M1 (degree 1448).
+	The undirected graph Grosmannia clavigera has 6176 nodes and 606633 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03181 and has 11 connected components, where the component with most
+	nodes has 6153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 196.45, and
+	the node degree mode is 1. The top 5 most central nodes are 226899.F0XIU3
+	(degree 1575), 226899.F0XTW3 (degree 1519), 226899.F0XGX5 (degree 1512),
+	226899.F0X6X2 (degree 1467) and 226899.F0X6M1 (degree 1448).
 	
 
 

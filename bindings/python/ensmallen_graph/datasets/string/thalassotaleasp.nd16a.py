@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:45.992021
 
-The undirected graph Thalassotalea sp. ND16A has 3892 nodes and 523629 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06915 and
-has 22 connected components, where the component with most nodes has 3836 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 245,
-the mean node degree is 269.08, and the node degree mode is 3. The top 5 most central
-nodes are 1535422.ND16A_1621 (degree 1463), 1535422.ND16A_2694 (degree 1425), 1535422.ND16A_1976
-(degree 1325), 1535422.ND16A_2986 (degree 1321) and 1535422.ND16A_2596 (degree 1298).
+The undirected graph Thalassotalea sp. ND16A has 3892 nodes and 523629
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06915 and has 22 connected components, where the component
+with most nodes has 3836 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 269.08,
+and the node degree mode is 3. The top 5 most central nodes are 1535422.ND16A_1621
+(degree 1463), 1535422.ND16A_2694 (degree 1425), 1535422.ND16A_1976 (degree
+1325), 1535422.ND16A_2986 (degree 1321) and 1535422.ND16A_2596 (degree
+1298).
 
 
 References
@@ -106,13 +108,15 @@ def ThalassotaleaSp.Nd16a(
 	
 	Datetime: 2021-02-03 23:18:45.992021
 	
-	The undirected graph Thalassotalea sp. ND16A has 3892 nodes and 523629 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06915 and
-	has 22 connected components, where the component with most nodes has 3836 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 245,
-	the mean node degree is 269.08, and the node degree mode is 3. The top 5 most central
-	nodes are 1535422.ND16A_1621 (degree 1463), 1535422.ND16A_2694 (degree 1425), 1535422.ND16A_1976
-	(degree 1325), 1535422.ND16A_2986 (degree 1321) and 1535422.ND16A_2596 (degree 1298).
+	The undirected graph Thalassotalea sp. ND16A has 3892 nodes and 523629
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06915 and has 22 connected components, where the component
+	with most nodes has 3836 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 269.08,
+	and the node degree mode is 3. The top 5 most central nodes are 1535422.ND16A_1621
+	(degree 1463), 1535422.ND16A_2694 (degree 1425), 1535422.ND16A_1976 (degree
+	1325), 1535422.ND16A_2986 (degree 1321) and 1535422.ND16A_2596 (degree
+	1298).
 	
 
 

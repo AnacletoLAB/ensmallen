@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:03.352592
 
-The undirected graph Tropheryma whipplei has 796 nodes and 42542 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13445
-and has 3 connected components, where the component with most nodes has 791 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 106.89, and the node degree mode is 6. The top 5 most
-central nodes are 203267.TWT_168 (degree 378), 203267.TWT_051 (degree 378), 203267.TWT_586
-(degree 378), 203267.TWT_075 (degree 370) and 203267.TWT_079 (degree 361).
+The undirected graph Tropheryma whipplei has 796 nodes and 42542 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13445 and has 3 connected components, where the component
+with most nodes has 791 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 106.89,
+and the node degree mode is 6. The top 5 most central nodes are 203267.TWT_168
+(degree 378), 203267.TWT_051 (degree 378), 203267.TWT_586 (degree 378),
+203267.TWT_075 (degree 370) and 203267.TWT_079 (degree 361).
 
 
 References
@@ -106,13 +107,14 @@ def TropherymaWhipplei(
 	
 	Datetime: 2021-02-02 20:00:03.352592
 	
-	The undirected graph Tropheryma whipplei has 796 nodes and 42542 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13445
-	and has 3 connected components, where the component with most nodes has 791 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 106.89, and the node degree mode is 6. The top 5 most
-	central nodes are 203267.TWT_168 (degree 378), 203267.TWT_051 (degree 378), 203267.TWT_586
-	(degree 378), 203267.TWT_075 (degree 370) and 203267.TWT_079 (degree 361).
+	The undirected graph Tropheryma whipplei has 796 nodes and 42542 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13445 and has 3 connected components, where the component
+	with most nodes has 791 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 106.89,
+	and the node degree mode is 6. The top 5 most central nodes are 203267.TWT_168
+	(degree 378), 203267.TWT_051 (degree 378), 203267.TWT_586 (degree 378),
+	203267.TWT_075 (degree 370) and 203267.TWT_079 (degree 361).
 	
 
 

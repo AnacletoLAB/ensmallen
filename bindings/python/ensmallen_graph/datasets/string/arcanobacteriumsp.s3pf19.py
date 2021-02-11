@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:31.530156
 
-The undirected graph Arcanobacterium sp. S3PF19 has 976 nodes and 51307 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10783 and has 7 connected components, where the component with most nodes has
-963 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 88, the mean node degree is 105.14, and the node degree mode is 1. The
-top 5 most central nodes are 1219585.HMPREF1631_01080 (degree 494), 1219585.HMPREF1631_04225
-(degree 475), 1219585.HMPREF1631_00015 (degree 426), 1219585.HMPREF1631_06675 (degree
+The undirected graph Arcanobacterium sp. S3PF19 has 976 nodes and 51307
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10783 and has 7 connected components, where the
+component with most nodes has 963 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+is 105.14, and the node degree mode is 1. The top 5 most central nodes
+are 1219585.HMPREF1631_01080 (degree 494), 1219585.HMPREF1631_04225 (degree
+475), 1219585.HMPREF1631_00015 (degree 426), 1219585.HMPREF1631_06675 (degree
 420) and 1219585.HMPREF1631_00830 (degree 400).
 
 
@@ -107,13 +108,14 @@ def ArcanobacteriumSp.S3pf19(
 	
 	Datetime: 2021-02-02 23:23:31.530156
 	
-	The undirected graph Arcanobacterium sp. S3PF19 has 976 nodes and 51307 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10783 and has 7 connected components, where the component with most nodes has
-	963 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 88, the mean node degree is 105.14, and the node degree mode is 1. The
-	top 5 most central nodes are 1219585.HMPREF1631_01080 (degree 494), 1219585.HMPREF1631_04225
-	(degree 475), 1219585.HMPREF1631_00015 (degree 426), 1219585.HMPREF1631_06675 (degree
+	The undirected graph Arcanobacterium sp. S3PF19 has 976 nodes and 51307
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10783 and has 7 connected components, where the
+	component with most nodes has 963 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+	is 105.14, and the node degree mode is 1. The top 5 most central nodes
+	are 1219585.HMPREF1631_01080 (degree 494), 1219585.HMPREF1631_04225 (degree
+	475), 1219585.HMPREF1631_00015 (degree 426), 1219585.HMPREF1631_06675 (degree
 	420) and 1219585.HMPREF1631_00830 (degree 400).
 	
 

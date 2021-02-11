@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:53.580894
 
-The undirected graph Streptococcus plurextorum has 2037 nodes and 146249 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07053
-and has 11 connected components, where the component with most nodes has 1997 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 143.59, and the node degree mode is 7. The top 5
-most central nodes are 1123314.AUIO01000004_gene1085 (degree 886), 1123314.AUIO01000013_gene599
-(degree 774), 1123314.AUIO01000007_gene556 (degree 741), 1123314.AUIO01000011_gene1723
-(degree 726) and 1123314.AUIO01000010_gene251 (degree 710).
+The undirected graph Streptococcus plurextorum has 2037 nodes and 146249
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07053 and has 11 connected components, where the component
+with most nodes has 1997 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 143.59,
+and the node degree mode is 7. The top 5 most central nodes are 1123314.AUIO01000004_gene1085
+(degree 886), 1123314.AUIO01000013_gene599 (degree 774), 1123314.AUIO01000007_gene556
+(degree 741), 1123314.AUIO01000011_gene1723 (degree 726) and 1123314.AUIO01000010_gene251
+(degree 710).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusPlurextorum(
 	
 	Datetime: 2021-02-02 22:50:53.580894
 	
-	The undirected graph Streptococcus plurextorum has 2037 nodes and 146249 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07053
-	and has 11 connected components, where the component with most nodes has 1997 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 143.59, and the node degree mode is 7. The top 5
-	most central nodes are 1123314.AUIO01000004_gene1085 (degree 886), 1123314.AUIO01000013_gene599
-	(degree 774), 1123314.AUIO01000007_gene556 (degree 741), 1123314.AUIO01000011_gene1723
-	(degree 726) and 1123314.AUIO01000010_gene251 (degree 710).
+	The undirected graph Streptococcus plurextorum has 2037 nodes and 146249
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07053 and has 11 connected components, where the component
+	with most nodes has 1997 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 143.59,
+	and the node degree mode is 7. The top 5 most central nodes are 1123314.AUIO01000004_gene1085
+	(degree 886), 1123314.AUIO01000013_gene599 (degree 774), 1123314.AUIO01000007_gene556
+	(degree 741), 1123314.AUIO01000011_gene1723 (degree 726) and 1123314.AUIO01000010_gene251
+	(degree 710).
 	
 
 

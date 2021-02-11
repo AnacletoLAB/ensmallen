@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:43.571054
 
-The undirected graph Photodesmus katoptron has 865 nodes and 53844 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14409
-and is connected, as it has a single component. The graph median node degree is 114,
-the mean node degree is 124.49, and the node degree mode is 81. The top 5 most central
-nodes are 28176.CF66_9009 (degree 429), 28176.CF66_3034 (degree 370), 28176.CF66_2083
-(degree 342), 28176.CF66_4064 (degree 339) and 28176.CF66_0102 (degree 329).
+The undirected graph Photodesmus katoptron has 865 nodes and 53844 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14409 and is connected, as it has a single component. The
+graph median node degree is 114, the mean node degree is 124.49, and the
+node degree mode is 81. The top 5 most central nodes are 28176.CF66_9009
+(degree 429), 28176.CF66_3034 (degree 370), 28176.CF66_2083 (degree 342),
+28176.CF66_4064 (degree 339) and 28176.CF66_0102 (degree 329).
 
 
 References
@@ -105,12 +106,13 @@ def PhotodesmusKatoptron(
 	
 	Datetime: 2021-02-02 17:55:43.571054
 	
-	The undirected graph Photodesmus katoptron has 865 nodes and 53844 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14409
-	and is connected, as it has a single component. The graph median node degree is 114,
-	the mean node degree is 124.49, and the node degree mode is 81. The top 5 most central
-	nodes are 28176.CF66_9009 (degree 429), 28176.CF66_3034 (degree 370), 28176.CF66_2083
-	(degree 342), 28176.CF66_4064 (degree 339) and 28176.CF66_0102 (degree 329).
+	The undirected graph Photodesmus katoptron has 865 nodes and 53844 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14409 and is connected, as it has a single component. The
+	graph median node degree is 114, the mean node degree is 124.49, and the
+	node degree mode is 81. The top 5 most central nodes are 28176.CF66_9009
+	(degree 429), 28176.CF66_3034 (degree 370), 28176.CF66_2083 (degree 342),
+	28176.CF66_4064 (degree 339) and 28176.CF66_0102 (degree 329).
 	
 
 

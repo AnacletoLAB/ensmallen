@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:11.607352
 
-The undirected graph Salinimonas chungwhensis has 3454 nodes and 405902 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06807
-and has 15 connected components, where the component with most nodes has 3413 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 235.03, and the node degree mode is 1. The top 5
-most central nodes are 1123236.KB899377_gene19 (degree 1320), 1123236.KB899380_gene2878
-(degree 1152), 1123236.KB899379_gene1387 (degree 1136), 1123236.KB899377_gene465
-(degree 1123) and 1123236.KB899379_gene1386 (degree 1100).
+The undirected graph Salinimonas chungwhensis has 3454 nodes and 405902
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06807 and has 15 connected components, where the component
+with most nodes has 3413 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 235.03,
+and the node degree mode is 1. The top 5 most central nodes are 1123236.KB899377_gene19
+(degree 1320), 1123236.KB899380_gene2878 (degree 1152), 1123236.KB899379_gene1387
+(degree 1136), 1123236.KB899377_gene465 (degree 1123) and 1123236.KB899379_gene1386
+(degree 1100).
 
 
 References
@@ -107,14 +108,15 @@ def SalinimonasChungwhensis(
 	
 	Datetime: 2021-02-02 22:48:11.607352
 	
-	The undirected graph Salinimonas chungwhensis has 3454 nodes and 405902 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06807
-	and has 15 connected components, where the component with most nodes has 3413 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 235.03, and the node degree mode is 1. The top 5
-	most central nodes are 1123236.KB899377_gene19 (degree 1320), 1123236.KB899380_gene2878
-	(degree 1152), 1123236.KB899379_gene1387 (degree 1136), 1123236.KB899377_gene465
-	(degree 1123) and 1123236.KB899379_gene1386 (degree 1100).
+	The undirected graph Salinimonas chungwhensis has 3454 nodes and 405902
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06807 and has 15 connected components, where the component
+	with most nodes has 3413 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 235.03,
+	and the node degree mode is 1. The top 5 most central nodes are 1123236.KB899377_gene19
+	(degree 1320), 1123236.KB899380_gene2878 (degree 1152), 1123236.KB899379_gene1387
+	(degree 1136), 1123236.KB899377_gene465 (degree 1123) and 1123236.KB899379_gene1386
+	(degree 1100).
 	
 
 

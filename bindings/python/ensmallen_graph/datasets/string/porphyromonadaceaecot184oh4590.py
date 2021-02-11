@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:43.863578
 
-The undirected graph Porphyromonadaceae COT184OH4590 has 1798 nodes and 116053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-and has 22 connected components, where the component with most nodes has 1744 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 129.09, and the node degree mode is 1. The top 5
-most central nodes are 1517682.HW49_01155 (degree 694), 1517682.HW49_11335 (degree
-598), 1517682.HW49_08335 (degree 555), 1517682.HW49_08755 (degree 536) and 1517682.HW49_07430
-(degree 499).
+The undirected graph Porphyromonadaceae COT184OH4590 has 1798 nodes and
+116053 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07184 and has 22 connected components, where the
+component with most nodes has 1744 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+is 129.09, and the node degree mode is 1. The top 5 most central nodes
+are 1517682.HW49_01155 (degree 694), 1517682.HW49_11335 (degree 598), 1517682.HW49_08335
+(degree 555), 1517682.HW49_08755 (degree 536) and 1517682.HW49_07430 (degree
+499).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonadaceaeCot184oh4590(
 	
 	Datetime: 2021-02-03 23:17:43.863578
 	
-	The undirected graph Porphyromonadaceae COT184OH4590 has 1798 nodes and 116053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-	and has 22 connected components, where the component with most nodes has 1744 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 129.09, and the node degree mode is 1. The top 5
-	most central nodes are 1517682.HW49_01155 (degree 694), 1517682.HW49_11335 (degree
-	598), 1517682.HW49_08335 (degree 555), 1517682.HW49_08755 (degree 536) and 1517682.HW49_07430
-	(degree 499).
+	The undirected graph Porphyromonadaceae COT184OH4590 has 1798 nodes and
+	116053 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07184 and has 22 connected components, where the
+	component with most nodes has 1744 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+	is 129.09, and the node degree mode is 1. The top 5 most central nodes
+	are 1517682.HW49_01155 (degree 694), 1517682.HW49_11335 (degree 598), 1517682.HW49_08335
+	(degree 555), 1517682.HW49_08755 (degree 536) and 1517682.HW49_07430 (degree
+	499).
 	
 
 

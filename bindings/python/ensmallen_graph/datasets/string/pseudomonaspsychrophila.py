@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:07.715954
 
-The undirected graph Pseudomonas psychrophila has 4467 nodes and 344484 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03454
-and has 13 connected components, where the component with most nodes has 4441 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 154.24, and the node degree mode is 1. The top 5
-most central nodes are 1211112.ALJC01000091_gene1196 (degree 1456), 1211112.ALJC01000010_gene210
-(degree 1099), 1211112.ALJC01000118_gene742 (degree 1077), 1211112.ALJC01000010_gene209
-(degree 1047) and 1211112.ALJC01000107_gene2754 (degree 1044).
+The undirected graph Pseudomonas psychrophila has 4467 nodes and 344484
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03454 and has 13 connected components, where the component
+with most nodes has 4441 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 154.24,
+and the node degree mode is 1. The top 5 most central nodes are 1211112.ALJC01000091_gene1196
+(degree 1456), 1211112.ALJC01000010_gene210 (degree 1099), 1211112.ALJC01000118_gene742
+(degree 1077), 1211112.ALJC01000010_gene209 (degree 1047) and 1211112.ALJC01000107_gene2754
+(degree 1044).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPsychrophila(
 	
 	Datetime: 2021-02-02 23:19:07.715954
 	
-	The undirected graph Pseudomonas psychrophila has 4467 nodes and 344484 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03454
-	and has 13 connected components, where the component with most nodes has 4441 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 154.24, and the node degree mode is 1. The top 5
-	most central nodes are 1211112.ALJC01000091_gene1196 (degree 1456), 1211112.ALJC01000010_gene210
-	(degree 1099), 1211112.ALJC01000118_gene742 (degree 1077), 1211112.ALJC01000010_gene209
-	(degree 1047) and 1211112.ALJC01000107_gene2754 (degree 1044).
+	The undirected graph Pseudomonas psychrophila has 4467 nodes and 344484
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03454 and has 13 connected components, where the component
+	with most nodes has 4441 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 154.24,
+	and the node degree mode is 1. The top 5 most central nodes are 1211112.ALJC01000091_gene1196
+	(degree 1456), 1211112.ALJC01000010_gene210 (degree 1099), 1211112.ALJC01000118_gene742
+	(degree 1077), 1211112.ALJC01000010_gene209 (degree 1047) and 1211112.ALJC01000107_gene2754
+	(degree 1044).
 	
 
 

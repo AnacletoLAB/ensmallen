@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:33.824819
 
-The undirected graph Leifsonia sp. 109 has 3756 nodes and 297769 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04223 and
-has 10 connected components, where the component with most nodes has 3734 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 158.56, and the node degree mode is 3. The top 5 most central
-nodes are 1150399.AQYK01000001_gene1164 (degree 1428), 1150399.AQYK01000002_gene2213
-(degree 1081), 1150399.AQYK01000002_gene2194 (degree 1020), 1150399.AQYK01000002_gene2934
-(degree 1009) and 1150399.AQYK01000002_gene2943 (degree 1007).
+The undirected graph Leifsonia sp. 109 has 3756 nodes and 297769 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04223 and has 10 connected components, where the component with most
+nodes has 3734 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 158.56, and
+the node degree mode is 3. The top 5 most central nodes are 1150399.AQYK01000001_gene1164
+(degree 1428), 1150399.AQYK01000002_gene2213 (degree 1081), 1150399.AQYK01000002_gene2194
+(degree 1020), 1150399.AQYK01000002_gene2934 (degree 1009) and 1150399.AQYK01000002_gene2943
+(degree 1007).
 
 
 References
@@ -107,14 +108,15 @@ def LeifsoniaSp.109(
 	
 	Datetime: 2021-02-02 22:59:33.824819
 	
-	The undirected graph Leifsonia sp. 109 has 3756 nodes and 297769 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04223 and
-	has 10 connected components, where the component with most nodes has 3734 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 158.56, and the node degree mode is 3. The top 5 most central
-	nodes are 1150399.AQYK01000001_gene1164 (degree 1428), 1150399.AQYK01000002_gene2213
-	(degree 1081), 1150399.AQYK01000002_gene2194 (degree 1020), 1150399.AQYK01000002_gene2934
-	(degree 1009) and 1150399.AQYK01000002_gene2943 (degree 1007).
+	The undirected graph Leifsonia sp. 109 has 3756 nodes and 297769 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04223 and has 10 connected components, where the component with most
+	nodes has 3734 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 158.56, and
+	the node degree mode is 3. The top 5 most central nodes are 1150399.AQYK01000001_gene1164
+	(degree 1428), 1150399.AQYK01000002_gene2213 (degree 1081), 1150399.AQYK01000002_gene2194
+	(degree 1020), 1150399.AQYK01000002_gene2934 (degree 1009) and 1150399.AQYK01000002_gene2943
+	(degree 1007).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:33.713957
 
-The undirected graph Streptomyces clavuligerus has 7236 nodes and 1180279 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04509
-and has 27 connected components, where the component with most nodes has 7163 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 311, the mean node degree is 326.22, and the node degree mode is 3. The top 5
-most central nodes are 443255.SCLAV_4637 (degree 3177), 443255.SCLAV_5620 (degree
-2885), 443255.SCLAV_1194 (degree 2022), 443255.SCLAV_1231 (degree 1718) and 443255.SCLAV_3712
-(degree 1705).
+The undirected graph Streptomyces clavuligerus has 7236 nodes and 1180279
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04509 and has 27 connected components, where the component
+with most nodes has 7163 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 311, the mean node degree is 326.22,
+and the node degree mode is 3. The top 5 most central nodes are 443255.SCLAV_4637
+(degree 3177), 443255.SCLAV_5620 (degree 2885), 443255.SCLAV_1194 (degree
+2022), 443255.SCLAV_1231 (degree 1718) and 443255.SCLAV_3712 (degree 1705).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesClavuligerus(
 	
 	Datetime: 2021-02-02 20:50:33.713957
 	
-	The undirected graph Streptomyces clavuligerus has 7236 nodes and 1180279 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04509
-	and has 27 connected components, where the component with most nodes has 7163 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 311, the mean node degree is 326.22, and the node degree mode is 3. The top 5
-	most central nodes are 443255.SCLAV_4637 (degree 3177), 443255.SCLAV_5620 (degree
-	2885), 443255.SCLAV_1194 (degree 2022), 443255.SCLAV_1231 (degree 1718) and 443255.SCLAV_3712
-	(degree 1705).
+	The undirected graph Streptomyces clavuligerus has 7236 nodes and 1180279
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04509 and has 27 connected components, where the component
+	with most nodes has 7163 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 311, the mean node degree is 326.22,
+	and the node degree mode is 3. The top 5 most central nodes are 443255.SCLAV_4637
+	(degree 3177), 443255.SCLAV_5620 (degree 2885), 443255.SCLAV_1194 (degree
+	2022), 443255.SCLAV_1231 (degree 1718) and 443255.SCLAV_3712 (degree 1705).
 	
 
 

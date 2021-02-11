@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:22.345260
 
-The undirected graph Acholeplasma modicum has 1135 nodes and 67836 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10541
-and has 2 connected components, where the component with most nodes has 1132 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 90, the mean node degree is 119.53, and the node degree mode is 14. The top 5
-most central nodes are 1408417.JHYB01000002_gene354 (degree 587), 1408417.JHYB01000007_gene1112
-(degree 494), 1408417.JHYB01000004_gene848 (degree 461), 1408417.JHYB01000002_gene484
-(degree 431) and 1408417.JHYB01000004_gene956 (degree 420).
+The undirected graph Acholeplasma modicum has 1135 nodes and 67836 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10541 and has 2 connected components, where the component
+with most nodes has 1132 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 90, the mean node degree is 119.53,
+and the node degree mode is 14. The top 5 most central nodes are 1408417.JHYB01000002_gene354
+(degree 587), 1408417.JHYB01000007_gene1112 (degree 494), 1408417.JHYB01000004_gene848
+(degree 461), 1408417.JHYB01000002_gene484 (degree 431) and 1408417.JHYB01000004_gene956
+(degree 420).
 
 
 References
@@ -107,14 +108,15 @@ def AcholeplasmaModicum(
 	
 	Datetime: 2021-02-03 22:35:22.345260
 	
-	The undirected graph Acholeplasma modicum has 1135 nodes and 67836 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10541
-	and has 2 connected components, where the component with most nodes has 1132 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 90, the mean node degree is 119.53, and the node degree mode is 14. The top 5
-	most central nodes are 1408417.JHYB01000002_gene354 (degree 587), 1408417.JHYB01000007_gene1112
-	(degree 494), 1408417.JHYB01000004_gene848 (degree 461), 1408417.JHYB01000002_gene484
-	(degree 431) and 1408417.JHYB01000004_gene956 (degree 420).
+	The undirected graph Acholeplasma modicum has 1135 nodes and 67836 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10541 and has 2 connected components, where the component
+	with most nodes has 1132 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 90, the mean node degree is 119.53,
+	and the node degree mode is 14. The top 5 most central nodes are 1408417.JHYB01000002_gene354
+	(degree 587), 1408417.JHYB01000007_gene1112 (degree 494), 1408417.JHYB01000004_gene848
+	(degree 461), 1408417.JHYB01000002_gene484 (degree 431) and 1408417.JHYB01000004_gene956
+	(degree 420).
 	
 
 

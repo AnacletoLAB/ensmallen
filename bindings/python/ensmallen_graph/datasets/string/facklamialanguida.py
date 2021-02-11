@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:23.022835
 
-The undirected graph Facklamia languida has 1519 nodes and 112081 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09721 and
-has 5 connected components, where the component with most nodes has 1508 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 147.57, and the node degree mode is 1. The top 5 most central
-nodes are 883113.HMPREF9708_00442 (degree 737), 883113.HMPREF9708_01382 (degree 545),
-883113.HMPREF9708_00062 (degree 532), 883113.HMPREF9708_00869 (degree 501) and 883113.HMPREF9708_00040
+The undirected graph Facklamia languida has 1519 nodes and 112081 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09721 and has 5 connected components, where the component with most
+nodes has 1508 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 147.57, and
+the node degree mode is 1. The top 5 most central nodes are 883113.HMPREF9708_00442
+(degree 737), 883113.HMPREF9708_01382 (degree 545), 883113.HMPREF9708_00062
+(degree 532), 883113.HMPREF9708_00869 (degree 501) and 883113.HMPREF9708_00040
 (degree 488).
 
 
@@ -107,13 +108,14 @@ def FacklamiaLanguida(
 	
 	Datetime: 2021-02-02 21:51:23.022835
 	
-	The undirected graph Facklamia languida has 1519 nodes and 112081 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09721 and
-	has 5 connected components, where the component with most nodes has 1508 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 147.57, and the node degree mode is 1. The top 5 most central
-	nodes are 883113.HMPREF9708_00442 (degree 737), 883113.HMPREF9708_01382 (degree 545),
-	883113.HMPREF9708_00062 (degree 532), 883113.HMPREF9708_00869 (degree 501) and 883113.HMPREF9708_00040
+	The undirected graph Facklamia languida has 1519 nodes and 112081 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09721 and has 5 connected components, where the component with most
+	nodes has 1508 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 147.57, and
+	the node degree mode is 1. The top 5 most central nodes are 883113.HMPREF9708_00442
+	(degree 737), 883113.HMPREF9708_01382 (degree 545), 883113.HMPREF9708_00062
+	(degree 532), 883113.HMPREF9708_00869 (degree 501) and 883113.HMPREF9708_00040
 	(degree 488).
 	
 

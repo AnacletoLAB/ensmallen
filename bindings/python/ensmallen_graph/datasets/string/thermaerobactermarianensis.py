@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:47.964469
 
-The undirected graph Thermaerobacter marianensis has 2299 nodes and 189025 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07156
-and has 7 connected components, where the component with most nodes has 2282 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 164.44, and the node degree mode is 5. The top 5
-most central nodes are 644966.Tmar_1824 (degree 1038), 644966.Tmar_0443 (degree 1026),
-644966.Tmar_0422 (degree 1014), 644966.Tmar_0918 (degree 913) and 644966.Tmar_0282
-(degree 837).
+The undirected graph Thermaerobacter marianensis has 2299 nodes and 189025
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07156 and has 7 connected components, where the component
+with most nodes has 2282 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 164.44,
+and the node degree mode is 5. The top 5 most central nodes are 644966.Tmar_1824
+(degree 1038), 644966.Tmar_0443 (degree 1026), 644966.Tmar_0422 (degree
+1014), 644966.Tmar_0918 (degree 913) and 644966.Tmar_0282 (degree 837).
 
 
 References
@@ -107,14 +107,14 @@ def ThermaerobacterMarianensis(
 	
 	Datetime: 2021-02-02 21:24:47.964469
 	
-	The undirected graph Thermaerobacter marianensis has 2299 nodes and 189025 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07156
-	and has 7 connected components, where the component with most nodes has 2282 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 164.44, and the node degree mode is 5. The top 5
-	most central nodes are 644966.Tmar_1824 (degree 1038), 644966.Tmar_0443 (degree 1026),
-	644966.Tmar_0422 (degree 1014), 644966.Tmar_0918 (degree 913) and 644966.Tmar_0282
-	(degree 837).
+	The undirected graph Thermaerobacter marianensis has 2299 nodes and 189025
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07156 and has 7 connected components, where the component
+	with most nodes has 2282 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 164.44,
+	and the node degree mode is 5. The top 5 most central nodes are 644966.Tmar_1824
+	(degree 1038), 644966.Tmar_0443 (degree 1026), 644966.Tmar_0422 (degree
+	1014), 644966.Tmar_0918 (degree 913) and 644966.Tmar_0282 (degree 837).
 	
 
 

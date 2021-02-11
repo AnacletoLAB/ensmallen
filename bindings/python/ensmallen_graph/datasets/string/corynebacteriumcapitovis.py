@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:56.970806
 
-The undirected graph Corynebacterium capitovis has 1840 nodes and 126788 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07494
-and has 4 connected components, where the component with most nodes has 1831 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 137.81, and the node degree mode is 4. The top 5
-most central nodes are 1121354.AQUV01000002_gene1135 (degree 822), 1121354.AQUV01000003_gene31
-(degree 798), 1121354.AQUV01000002_gene1056 (degree 747), 1121354.AQUV01000003_gene11
-(degree 633) and 1121354.AQUV01000004_gene522 (degree 614).
+The undirected graph Corynebacterium capitovis has 1840 nodes and 126788
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07494 and has 4 connected components, where the component
+with most nodes has 1831 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 137.81,
+and the node degree mode is 4. The top 5 most central nodes are 1121354.AQUV01000002_gene1135
+(degree 822), 1121354.AQUV01000003_gene31 (degree 798), 1121354.AQUV01000002_gene1056
+(degree 747), 1121354.AQUV01000003_gene11 (degree 633) and 1121354.AQUV01000004_gene522
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumCapitovis(
 	
 	Datetime: 2021-02-02 22:34:56.970806
 	
-	The undirected graph Corynebacterium capitovis has 1840 nodes and 126788 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07494
-	and has 4 connected components, where the component with most nodes has 1831 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 137.81, and the node degree mode is 4. The top 5
-	most central nodes are 1121354.AQUV01000002_gene1135 (degree 822), 1121354.AQUV01000003_gene31
-	(degree 798), 1121354.AQUV01000002_gene1056 (degree 747), 1121354.AQUV01000003_gene11
-	(degree 633) and 1121354.AQUV01000004_gene522 (degree 614).
+	The undirected graph Corynebacterium capitovis has 1840 nodes and 126788
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07494 and has 4 connected components, where the component
+	with most nodes has 1831 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 137.81,
+	and the node degree mode is 4. The top 5 most central nodes are 1121354.AQUV01000002_gene1135
+	(degree 822), 1121354.AQUV01000003_gene31 (degree 798), 1121354.AQUV01000002_gene1056
+	(degree 747), 1121354.AQUV01000003_gene11 (degree 633) and 1121354.AQUV01000004_gene522
+	(degree 614).
 	
 
 

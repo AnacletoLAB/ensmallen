@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:11.523068
 
-The undirected graph Arthrobacter sp. FB24 has 4278 nodes and 492492 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05383 and
-has 13 connected components, where the component with most nodes has 4246 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 230.24, and the node degree mode is 1. The top 5 most central
-nodes are 290399.Arth_2063 (degree 1719), 290399.Arth_1493 (degree 1701), 290399.Arth_3669
-(degree 1565), 290399.Arth_2644 (degree 1531) and 290399.Arth_2879 (degree 1525).
+The undirected graph Arthrobacter sp. FB24 has 4278 nodes and 492492 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05383 and has 13 connected components, where the component with most
+nodes has 4246 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 230.24, and
+the node degree mode is 1. The top 5 most central nodes are 290399.Arth_2063
+(degree 1719), 290399.Arth_1493 (degree 1701), 290399.Arth_3669 (degree
+1565), 290399.Arth_2644 (degree 1531) and 290399.Arth_2879 (degree 1525).
 
 
 References
@@ -106,13 +107,14 @@ def ArthrobacterSp.Fb24(
 	
 	Datetime: 2021-02-02 20:20:11.523068
 	
-	The undirected graph Arthrobacter sp. FB24 has 4278 nodes and 492492 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05383 and
-	has 13 connected components, where the component with most nodes has 4246 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 230.24, and the node degree mode is 1. The top 5 most central
-	nodes are 290399.Arth_2063 (degree 1719), 290399.Arth_1493 (degree 1701), 290399.Arth_3669
-	(degree 1565), 290399.Arth_2644 (degree 1531) and 290399.Arth_2879 (degree 1525).
+	The undirected graph Arthrobacter sp. FB24 has 4278 nodes and 492492 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05383 and has 13 connected components, where the component with most
+	nodes has 4246 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 230.24, and
+	the node degree mode is 1. The top 5 most central nodes are 290399.Arth_2063
+	(degree 1719), 290399.Arth_1493 (degree 1701), 290399.Arth_3669 (degree
+	1565), 290399.Arth_2644 (degree 1531) and 290399.Arth_2879 (degree 1525).
 	
 
 

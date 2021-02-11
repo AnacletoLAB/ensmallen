@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:37.467976
 
-The undirected graph Thermofilum pendens has 1866 nodes and 140059 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08049 and
-has 17 connected components, where the component with most nodes has 1807 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 150.12, and the node degree mode is 5. The top 5 most central
-nodes are 368408.Tpen_0948 (degree 681), 368408.Tpen_0880 (degree 622), 368408.Tpen_1821
-(degree 605), 368408.Tpen_1765 (degree 580) and 368408.Tpen_0660 (degree 559).
+The undirected graph Thermofilum pendens has 1866 nodes and 140059 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08049 and has 17 connected components, where the component with most
+nodes has 1807 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 150.12, and
+the node degree mode is 5. The top 5 most central nodes are 368408.Tpen_0948
+(degree 681), 368408.Tpen_0880 (degree 622), 368408.Tpen_1821 (degree 605),
+368408.Tpen_1765 (degree 580) and 368408.Tpen_0660 (degree 559).
 
 
 References
@@ -106,13 +107,14 @@ def ThermofilumPendens(
 	
 	Datetime: 2021-02-02 20:35:37.467976
 	
-	The undirected graph Thermofilum pendens has 1866 nodes and 140059 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08049 and
-	has 17 connected components, where the component with most nodes has 1807 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 150.12, and the node degree mode is 5. The top 5 most central
-	nodes are 368408.Tpen_0948 (degree 681), 368408.Tpen_0880 (degree 622), 368408.Tpen_1821
-	(degree 605), 368408.Tpen_1765 (degree 580) and 368408.Tpen_0660 (degree 559).
+	The undirected graph Thermofilum pendens has 1866 nodes and 140059 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08049 and has 17 connected components, where the component with most
+	nodes has 1807 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 150.12, and
+	the node degree mode is 5. The top 5 most central nodes are 368408.Tpen_0948
+	(degree 681), 368408.Tpen_0880 (degree 622), 368408.Tpen_1821 (degree 605),
+	368408.Tpen_1765 (degree 580) and 368408.Tpen_0660 (degree 559).
 	
 
 

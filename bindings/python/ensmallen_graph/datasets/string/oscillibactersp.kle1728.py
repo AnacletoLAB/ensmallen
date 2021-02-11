@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:04.617327
 
-The undirected graph Oscillibacter sp. KLE1728 has 4202 nodes and 254556 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02884
-and has 38 connected components, where the component with most nodes has 4105 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 121.16, and the node degree mode is 3. The top 5 most
-central nodes are 1226322.HMPREF1545_03227 (degree 1300), 1226322.HMPREF1545_02394
-(degree 1266), 1226322.HMPREF1545_02421 (degree 1184), 1226322.HMPREF1545_03498 (degree
-1071) and 1226322.HMPREF1545_04007 (degree 942).
+The undirected graph Oscillibacter sp. KLE1728 has 4202 nodes and 254556
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02884 and has 38 connected components, where the component
+with most nodes has 4105 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 121.16,
+and the node degree mode is 3. The top 5 most central nodes are 1226322.HMPREF1545_03227
+(degree 1300), 1226322.HMPREF1545_02394 (degree 1266), 1226322.HMPREF1545_02421
+(degree 1184), 1226322.HMPREF1545_03498 (degree 1071) and 1226322.HMPREF1545_04007
+(degree 942).
 
 
 References
@@ -107,14 +108,15 @@ def OscillibacterSp.Kle1728(
 	
 	Datetime: 2021-02-02 23:25:04.617327
 	
-	The undirected graph Oscillibacter sp. KLE1728 has 4202 nodes and 254556 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02884
-	and has 38 connected components, where the component with most nodes has 4105 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 121.16, and the node degree mode is 3. The top 5 most
-	central nodes are 1226322.HMPREF1545_03227 (degree 1300), 1226322.HMPREF1545_02394
-	(degree 1266), 1226322.HMPREF1545_02421 (degree 1184), 1226322.HMPREF1545_03498 (degree
-	1071) and 1226322.HMPREF1545_04007 (degree 942).
+	The undirected graph Oscillibacter sp. KLE1728 has 4202 nodes and 254556
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02884 and has 38 connected components, where the component
+	with most nodes has 4105 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 121.16,
+	and the node degree mode is 3. The top 5 most central nodes are 1226322.HMPREF1545_03227
+	(degree 1300), 1226322.HMPREF1545_02394 (degree 1266), 1226322.HMPREF1545_02421
+	(degree 1184), 1226322.HMPREF1545_03498 (degree 1071) and 1226322.HMPREF1545_04007
+	(degree 942).
 	
 
 

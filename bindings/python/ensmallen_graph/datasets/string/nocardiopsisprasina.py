@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:29.317186
 
-The undirected graph Nocardiopsis prasina has 5198 nodes and 604470 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04475 and
-has 16 connected components, where the component with most nodes has 5166 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 232.58, and the node degree mode is 1. The top 5 most central
-nodes are 1245475.ANAE01000125_gene519 (degree 1794), 1245475.ANAE01000029_gene2385
-(degree 1704), 1245475.ANAE01000078_gene5115 (degree 1541), 1245475.ANAE01000007_gene4470
-(degree 1494) and 1245475.ANAE01000212_gene1687 (degree 1442).
+The undirected graph Nocardiopsis prasina has 5198 nodes and 604470 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04475 and has 16 connected components, where the component with most
+nodes has 5166 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 232.58, and
+the node degree mode is 1. The top 5 most central nodes are 1245475.ANAE01000125_gene519
+(degree 1794), 1245475.ANAE01000029_gene2385 (degree 1704), 1245475.ANAE01000078_gene5115
+(degree 1541), 1245475.ANAE01000007_gene4470 (degree 1494) and 1245475.ANAE01000212_gene1687
+(degree 1442).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisPrasina(
 	
 	Datetime: 2021-02-02 23:33:29.317186
 	
-	The undirected graph Nocardiopsis prasina has 5198 nodes and 604470 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04475 and
-	has 16 connected components, where the component with most nodes has 5166 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 232.58, and the node degree mode is 1. The top 5 most central
-	nodes are 1245475.ANAE01000125_gene519 (degree 1794), 1245475.ANAE01000029_gene2385
-	(degree 1704), 1245475.ANAE01000078_gene5115 (degree 1541), 1245475.ANAE01000007_gene4470
-	(degree 1494) and 1245475.ANAE01000212_gene1687 (degree 1442).
+	The undirected graph Nocardiopsis prasina has 5198 nodes and 604470 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04475 and has 16 connected components, where the component with most
+	nodes has 5166 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 232.58, and
+	the node degree mode is 1. The top 5 most central nodes are 1245475.ANAE01000125_gene519
+	(degree 1794), 1245475.ANAE01000029_gene2385 (degree 1704), 1245475.ANAE01000078_gene5115
+	(degree 1541), 1245475.ANAE01000007_gene4470 (degree 1494) and 1245475.ANAE01000212_gene1687
+	(degree 1442).
 	
 
 

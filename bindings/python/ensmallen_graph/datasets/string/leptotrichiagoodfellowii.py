@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:28.097297
 
-The undirected graph Leptotrichia goodfellowii has 2334 nodes and 158468 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05820
-and has 22 connected components, where the component with most nodes has 2276 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 135.79, and the node degree mode is 1. The top 5 most
-central nodes are 596323.HMPREF0554_0410 (degree 924), 596323.HMPREF0554_0783 (degree
-903), 596323.HMPREF0554_2135 (degree 807), 596323.HMPREF0554_2474 (degree 802) and
-596323.HMPREF0554_1076 (degree 710).
+The undirected graph Leptotrichia goodfellowii has 2334 nodes and 158468
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05820 and has 22 connected components, where the component
+with most nodes has 2276 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 135.79,
+and the node degree mode is 1. The top 5 most central nodes are 596323.HMPREF0554_0410
+(degree 924), 596323.HMPREF0554_0783 (degree 903), 596323.HMPREF0554_2135
+(degree 807), 596323.HMPREF0554_2474 (degree 802) and 596323.HMPREF0554_1076
+(degree 710).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaGoodfellowii(
 	
 	Datetime: 2021-02-02 21:19:28.097297
 	
-	The undirected graph Leptotrichia goodfellowii has 2334 nodes and 158468 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05820
-	and has 22 connected components, where the component with most nodes has 2276 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 135.79, and the node degree mode is 1. The top 5 most
-	central nodes are 596323.HMPREF0554_0410 (degree 924), 596323.HMPREF0554_0783 (degree
-	903), 596323.HMPREF0554_2135 (degree 807), 596323.HMPREF0554_2474 (degree 802) and
-	596323.HMPREF0554_1076 (degree 710).
+	The undirected graph Leptotrichia goodfellowii has 2334 nodes and 158468
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05820 and has 22 connected components, where the component
+	with most nodes has 2276 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 135.79,
+	and the node degree mode is 1. The top 5 most central nodes are 596323.HMPREF0554_0410
+	(degree 924), 596323.HMPREF0554_0783 (degree 903), 596323.HMPREF0554_2135
+	(degree 807), 596323.HMPREF0554_2474 (degree 802) and 596323.HMPREF0554_1076
+	(degree 710).
 	
 
 

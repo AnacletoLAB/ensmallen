@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:32.736511
 
-The undirected graph Anaerovorax odorimutans has 3005 nodes and 212948 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04718 and
-has 12 connected components, where the component with most nodes has 2980 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 141.73, and the node degree mode is 6. The top 5 most central
-nodes are 1120998.AUFC01000009_gene2133 (degree 1238), 1120998.AUFC01000009_gene2111
-(degree 1143), 1120998.AUFC01000002_gene2626 (degree 959), 1120998.AUFC01000001_gene1988
-(degree 950) and 1120998.AUFC01000020_gene365 (degree 945).
+The undirected graph Anaerovorax odorimutans has 3005 nodes and 212948
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04718 and has 12 connected components, where the component
+with most nodes has 2980 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 141.73,
+and the node degree mode is 6. The top 5 most central nodes are 1120998.AUFC01000009_gene2133
+(degree 1238), 1120998.AUFC01000009_gene2111 (degree 1143), 1120998.AUFC01000002_gene2626
+(degree 959), 1120998.AUFC01000001_gene1988 (degree 950) and 1120998.AUFC01000020_gene365
+(degree 945).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerovoraxOdorimutans(
 	
 	Datetime: 2021-02-02 22:31:32.736511
 	
-	The undirected graph Anaerovorax odorimutans has 3005 nodes and 212948 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04718 and
-	has 12 connected components, where the component with most nodes has 2980 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 141.73, and the node degree mode is 6. The top 5 most central
-	nodes are 1120998.AUFC01000009_gene2133 (degree 1238), 1120998.AUFC01000009_gene2111
-	(degree 1143), 1120998.AUFC01000002_gene2626 (degree 959), 1120998.AUFC01000001_gene1988
-	(degree 950) and 1120998.AUFC01000020_gene365 (degree 945).
+	The undirected graph Anaerovorax odorimutans has 3005 nodes and 212948
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04718 and has 12 connected components, where the component
+	with most nodes has 2980 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 141.73,
+	and the node degree mode is 6. The top 5 most central nodes are 1120998.AUFC01000009_gene2133
+	(degree 1238), 1120998.AUFC01000009_gene2111 (degree 1143), 1120998.AUFC01000002_gene2626
+	(degree 959), 1120998.AUFC01000001_gene1988 (degree 950) and 1120998.AUFC01000020_gene365
+	(degree 945).
 	
 
 

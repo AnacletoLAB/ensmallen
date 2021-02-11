@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:23.730231
 
-The undirected graph Neisseria mucosa ATCC25996 has 3091 nodes and 145044 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03037
-and has 31 connected components, where the component with most nodes has 3023 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 93.85, and the node degree mode is 2. The top 5 most
-central nodes are 546266.NEIMUCOT_04420 (degree 929), 546266.NEIMUCOT_05169 (degree
-846), 546266.NEIMUCOT_05429 (degree 764), 546266.NEIMUCOT_03679 (degree 708) and
-546266.NEIMUCOT_04899 (degree 695).
+The undirected graph Neisseria mucosa ATCC25996 has 3091 nodes and 145044
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03037 and has 31 connected components, where the component
+with most nodes has 3023 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 93.85,
+and the node degree mode is 2. The top 5 most central nodes are 546266.NEIMUCOT_04420
+(degree 929), 546266.NEIMUCOT_05169 (degree 846), 546266.NEIMUCOT_05429
+(degree 764), 546266.NEIMUCOT_03679 (degree 708) and 546266.NEIMUCOT_04899
+(degree 695).
 
 
 References
@@ -107,14 +108,15 @@ def NeisseriaMucosaAtcc25996(
 	
 	Datetime: 2021-02-02 21:08:23.730231
 	
-	The undirected graph Neisseria mucosa ATCC25996 has 3091 nodes and 145044 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03037
-	and has 31 connected components, where the component with most nodes has 3023 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 93.85, and the node degree mode is 2. The top 5 most
-	central nodes are 546266.NEIMUCOT_04420 (degree 929), 546266.NEIMUCOT_05169 (degree
-	846), 546266.NEIMUCOT_05429 (degree 764), 546266.NEIMUCOT_03679 (degree 708) and
-	546266.NEIMUCOT_04899 (degree 695).
+	The undirected graph Neisseria mucosa ATCC25996 has 3091 nodes and 145044
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03037 and has 31 connected components, where the component
+	with most nodes has 3023 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 93.85,
+	and the node degree mode is 2. The top 5 most central nodes are 546266.NEIMUCOT_04420
+	(degree 929), 546266.NEIMUCOT_05169 (degree 846), 546266.NEIMUCOT_05429
+	(degree 764), 546266.NEIMUCOT_03679 (degree 708) and 546266.NEIMUCOT_04899
+	(degree 695).
 	
 
 

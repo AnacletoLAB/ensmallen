@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:22:21.813437
 
-The undirected graph Lactobacillus oryzae has 1861 nodes and 105700 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06107 and
-has 10 connected components, where the component with most nodes has 1839 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 113.59, and the node degree mode is 2. The top 5 most central
-nodes are 1291743.LOSG293_011010 (degree 804), 1291743.LOSG293_050540 (degree 637),
-1291743.LOSG293_010180 (degree 636), 1291743.LOSG293_110210 (degree 597) and 1291743.LOSG293_210030
+The undirected graph Lactobacillus oryzae has 1861 nodes and 105700 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06107 and has 10 connected components, where the component with most
+nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 113.59, and
+the node degree mode is 2. The top 5 most central nodes are 1291743.LOSG293_011010
+(degree 804), 1291743.LOSG293_050540 (degree 637), 1291743.LOSG293_010180
+(degree 636), 1291743.LOSG293_110210 (degree 597) and 1291743.LOSG293_210030
 (degree 572).
 
 
@@ -107,13 +108,14 @@ def LactobacillusOryzae(
 	
 	Datetime: 2021-02-03 21:22:21.813437
 	
-	The undirected graph Lactobacillus oryzae has 1861 nodes and 105700 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06107 and
-	has 10 connected components, where the component with most nodes has 1839 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 113.59, and the node degree mode is 2. The top 5 most central
-	nodes are 1291743.LOSG293_011010 (degree 804), 1291743.LOSG293_050540 (degree 637),
-	1291743.LOSG293_010180 (degree 636), 1291743.LOSG293_110210 (degree 597) and 1291743.LOSG293_210030
+	The undirected graph Lactobacillus oryzae has 1861 nodes and 105700 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06107 and has 10 connected components, where the component with most
+	nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 113.59, and
+	the node degree mode is 2. The top 5 most central nodes are 1291743.LOSG293_011010
+	(degree 804), 1291743.LOSG293_050540 (degree 637), 1291743.LOSG293_010180
+	(degree 636), 1291743.LOSG293_110210 (degree 597) and 1291743.LOSG293_210030
 	(degree 572).
 	
 

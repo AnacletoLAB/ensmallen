@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:12.719326
 
-The undirected graph Burkholderia bryophila has 6207 nodes and 921537 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04785 and
-has 26 connected components, where the component with most nodes has 6150 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 232,
-the mean node degree is 296.93, and the node degree mode is 1. The top 5 most central
-nodes are 1169143.KB911035_gene2033 (degree 2794), 1169143.KB911037_gene4175 (degree
-2404), 1169143.KB911050_gene2742 (degree 2208), 1169143.KB911035_gene2373 (degree
-2132) and 1169143.KB911047_gene5439 (degree 2115).
+The undirected graph Burkholderia bryophila has 6207 nodes and 921537 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04785 and has 26 connected components, where the component with most
+nodes has 6150 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 232, the mean node degree is 296.93, and
+the node degree mode is 1. The top 5 most central nodes are 1169143.KB911035_gene2033
+(degree 2794), 1169143.KB911037_gene4175 (degree 2404), 1169143.KB911050_gene2742
+(degree 2208), 1169143.KB911035_gene2373 (degree 2132) and 1169143.KB911047_gene5439
+(degree 2115).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaBryophila(
 	
 	Datetime: 2021-02-02 23:06:12.719326
 	
-	The undirected graph Burkholderia bryophila has 6207 nodes and 921537 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04785 and
-	has 26 connected components, where the component with most nodes has 6150 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 232,
-	the mean node degree is 296.93, and the node degree mode is 1. The top 5 most central
-	nodes are 1169143.KB911035_gene2033 (degree 2794), 1169143.KB911037_gene4175 (degree
-	2404), 1169143.KB911050_gene2742 (degree 2208), 1169143.KB911035_gene2373 (degree
-	2132) and 1169143.KB911047_gene5439 (degree 2115).
+	The undirected graph Burkholderia bryophila has 6207 nodes and 921537 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04785 and has 26 connected components, where the component with most
+	nodes has 6150 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 232, the mean node degree is 296.93, and
+	the node degree mode is 1. The top 5 most central nodes are 1169143.KB911035_gene2033
+	(degree 2794), 1169143.KB911037_gene4175 (degree 2404), 1169143.KB911050_gene2742
+	(degree 2208), 1169143.KB911035_gene2373 (degree 2132) and 1169143.KB911047_gene5439
+	(degree 2115).
 	
 
 

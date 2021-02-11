@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:49:31.201655
 
-The undirected graph Nipponia nippon has 14780 nodes and 2287157 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02094 and
-is connected, as it has a single component. The graph median node degree is 228,
-the mean node degree is 309.49, and the node degree mode is 86. The top 5 most central
-nodes are 128390.XP_009460761.1 (degree 2948), 128390.XP_009471854.1 (degree 2930),
-128390.XP_009471287.1 (degree 2836), 128390.XP_009474412.1 (degree 2806) and 128390.XP_009461624.1
-(degree 2796).
+The undirected graph Nipponia nippon has 14780 nodes and 2287157 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02094 and is connected, as it has a single component. The graph median
+node degree is 228, the mean node degree is 309.49, and the node degree
+mode is 86. The top 5 most central nodes are 128390.XP_009460761.1 (degree
+2948), 128390.XP_009471854.1 (degree 2930), 128390.XP_009471287.1 (degree
+2836), 128390.XP_009474412.1 (degree 2806) and 128390.XP_009461624.1 (degree
+2796).
 
 
 References
@@ -106,13 +107,14 @@ def NipponiaNippon(
 	
 	Datetime: 2021-02-02 19:49:31.201655
 	
-	The undirected graph Nipponia nippon has 14780 nodes and 2287157 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02094 and
-	is connected, as it has a single component. The graph median node degree is 228,
-	the mean node degree is 309.49, and the node degree mode is 86. The top 5 most central
-	nodes are 128390.XP_009460761.1 (degree 2948), 128390.XP_009471854.1 (degree 2930),
-	128390.XP_009471287.1 (degree 2836), 128390.XP_009474412.1 (degree 2806) and 128390.XP_009461624.1
-	(degree 2796).
+	The undirected graph Nipponia nippon has 14780 nodes and 2287157 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02094 and is connected, as it has a single component. The graph median
+	node degree is 228, the mean node degree is 309.49, and the node degree
+	mode is 86. The top 5 most central nodes are 128390.XP_009460761.1 (degree
+	2948), 128390.XP_009471854.1 (degree 2930), 128390.XP_009471287.1 (degree
+	2836), 128390.XP_009474412.1 (degree 2806) and 128390.XP_009461624.1 (degree
+	2796).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:58.561795
 
-The undirected graph Prevotella pleuritidis has 2236 nodes and 180242 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07213 and
-has 18 connected components, where the component with most nodes has 2196 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 161.22, and the node degree mode is 1. The top 5 most central
-nodes are 1236494.BAJN01000008_gene1258 (degree 1207), 1236494.BAJN01000004_gene799
-(degree 882), 1236494.BAJN01000001_gene83 (degree 842), 1236494.BAJN01000002_gene501
-(degree 801) and 1236494.BAJN01000006_gene999 (degree 786).
+The undirected graph Prevotella pleuritidis has 2236 nodes and 180242 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07213 and has 18 connected components, where the component with most
+nodes has 2196 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 161.22, and
+the node degree mode is 1. The top 5 most central nodes are 1236494.BAJN01000008_gene1258
+(degree 1207), 1236494.BAJN01000004_gene799 (degree 882), 1236494.BAJN01000001_gene83
+(degree 842), 1236494.BAJN01000002_gene501 (degree 801) and 1236494.BAJN01000006_gene999
+(degree 786).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaPleuritidis(
 	
 	Datetime: 2021-02-02 23:30:58.561795
 	
-	The undirected graph Prevotella pleuritidis has 2236 nodes and 180242 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07213 and
-	has 18 connected components, where the component with most nodes has 2196 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 161.22, and the node degree mode is 1. The top 5 most central
-	nodes are 1236494.BAJN01000008_gene1258 (degree 1207), 1236494.BAJN01000004_gene799
-	(degree 882), 1236494.BAJN01000001_gene83 (degree 842), 1236494.BAJN01000002_gene501
-	(degree 801) and 1236494.BAJN01000006_gene999 (degree 786).
+	The undirected graph Prevotella pleuritidis has 2236 nodes and 180242 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07213 and has 18 connected components, where the component with most
+	nodes has 2196 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 161.22, and
+	the node degree mode is 1. The top 5 most central nodes are 1236494.BAJN01000008_gene1258
+	(degree 1207), 1236494.BAJN01000004_gene799 (degree 882), 1236494.BAJN01000001_gene83
+	(degree 842), 1236494.BAJN01000002_gene501 (degree 801) and 1236494.BAJN01000006_gene999
+	(degree 786).
 	
 
 

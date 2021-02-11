@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:03.939064
 
-The undirected graph Haemophilus parainfluenzae has 1965 nodes and 111451 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05776
-and has 5 connected components, where the component with most nodes has 1956 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 113.44, and the node degree mode is 4. The top 5 most
-central nodes are 862965.PARA_01820 (degree 814), 862965.PARA_15430 (degree 691),
-862965.PARA_13950 (degree 630), 862965.PARA_13960 (degree 617) and 862965.PARA_18730
-(degree 582).
+The undirected graph Haemophilus parainfluenzae has 1965 nodes and 111451
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05776 and has 5 connected components, where the component
+with most nodes has 1956 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 113.44,
+and the node degree mode is 4. The top 5 most central nodes are 862965.PARA_01820
+(degree 814), 862965.PARA_15430 (degree 691), 862965.PARA_13950 (degree
+630), 862965.PARA_13960 (degree 617) and 862965.PARA_18730 (degree 582).
 
 
 References
@@ -107,14 +107,14 @@ def HaemophilusParainfluenzae(
 	
 	Datetime: 2021-02-02 21:47:03.939064
 	
-	The undirected graph Haemophilus parainfluenzae has 1965 nodes and 111451 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05776
-	and has 5 connected components, where the component with most nodes has 1956 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 113.44, and the node degree mode is 4. The top 5 most
-	central nodes are 862965.PARA_01820 (degree 814), 862965.PARA_15430 (degree 691),
-	862965.PARA_13950 (degree 630), 862965.PARA_13960 (degree 617) and 862965.PARA_18730
-	(degree 582).
+	The undirected graph Haemophilus parainfluenzae has 1965 nodes and 111451
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05776 and has 5 connected components, where the component
+	with most nodes has 1956 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 113.44,
+	and the node degree mode is 4. The top 5 most central nodes are 862965.PARA_01820
+	(degree 814), 862965.PARA_15430 (degree 691), 862965.PARA_13950 (degree
+	630), 862965.PARA_13960 (degree 617) and 862965.PARA_18730 (degree 582).
 	
 
 

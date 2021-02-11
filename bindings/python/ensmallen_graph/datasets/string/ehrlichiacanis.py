@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:39.930964
 
-The undirected graph Ehrlichia canis has 878 nodes and 45309 weighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.11768 and
-has 24 connected components, where the component with most nodes has 818 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 103.21, and the node degree mode is 2. The top 5 most central
-nodes are 269484.Ecaj_0297 (degree 478), 269484.Ecaj_0587 (degree 394), 269484.Ecaj_0784
-(degree 389), 269484.Ecaj_0647 (degree 365) and 269484.Ecaj_0261 (degree 357).
+The undirected graph Ehrlichia canis has 878 nodes and 45309 weighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.11768 and has 24 connected components, where the component with most
+nodes has 818 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 103.21, and
+the node degree mode is 2. The top 5 most central nodes are 269484.Ecaj_0297
+(degree 478), 269484.Ecaj_0587 (degree 394), 269484.Ecaj_0784 (degree 389),
+269484.Ecaj_0647 (degree 365) and 269484.Ecaj_0261 (degree 357).
 
 
 References
@@ -106,13 +107,14 @@ def EhrlichiaCanis(
 	
 	Datetime: 2021-02-02 20:15:39.930964
 	
-	The undirected graph Ehrlichia canis has 878 nodes and 45309 weighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.11768 and
-	has 24 connected components, where the component with most nodes has 818 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 103.21, and the node degree mode is 2. The top 5 most central
-	nodes are 269484.Ecaj_0297 (degree 478), 269484.Ecaj_0587 (degree 394), 269484.Ecaj_0784
-	(degree 389), 269484.Ecaj_0647 (degree 365) and 269484.Ecaj_0261 (degree 357).
+	The undirected graph Ehrlichia canis has 878 nodes and 45309 weighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.11768 and has 24 connected components, where the component with most
+	nodes has 818 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 103.21, and
+	the node degree mode is 2. The top 5 most central nodes are 269484.Ecaj_0297
+	(degree 478), 269484.Ecaj_0587 (degree 394), 269484.Ecaj_0784 (degree 389),
+	269484.Ecaj_0647 (degree 365) and 269484.Ecaj_0261 (degree 357).
 	
 
 

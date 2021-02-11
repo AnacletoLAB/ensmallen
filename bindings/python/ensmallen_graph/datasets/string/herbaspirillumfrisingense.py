@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:37.841310
 
-The undirected graph Herbaspirillum frisingense has 4835 nodes and 913408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07816
-and has 9 connected components, where the component with most nodes has 4819 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 317, the mean node degree is 377.83, and the node degree mode is 1. The top 5
-most central nodes are 864073.HFRIS_004618 (degree 2371), 864073.HFRIS_012334 (degree
-1932), 864073.HFRIS_024042 (degree 1750), 864073.HFRIS_021566 (degree 1727) and 864073.HFRIS_002054
-(degree 1722).
+The undirected graph Herbaspirillum frisingense has 4835 nodes and 913408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07816 and has 9 connected components, where the component
+with most nodes has 4819 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 317, the mean node degree is 377.83,
+and the node degree mode is 1. The top 5 most central nodes are 864073.HFRIS_004618
+(degree 2371), 864073.HFRIS_012334 (degree 1932), 864073.HFRIS_024042 (degree
+1750), 864073.HFRIS_021566 (degree 1727) and 864073.HFRIS_002054 (degree
+1722).
 
 
 References
@@ -107,14 +108,15 @@ def HerbaspirillumFrisingense(
 	
 	Datetime: 2021-02-02 21:47:37.841310
 	
-	The undirected graph Herbaspirillum frisingense has 4835 nodes and 913408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07816
-	and has 9 connected components, where the component with most nodes has 4819 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 317, the mean node degree is 377.83, and the node degree mode is 1. The top 5
-	most central nodes are 864073.HFRIS_004618 (degree 2371), 864073.HFRIS_012334 (degree
-	1932), 864073.HFRIS_024042 (degree 1750), 864073.HFRIS_021566 (degree 1727) and 864073.HFRIS_002054
-	(degree 1722).
+	The undirected graph Herbaspirillum frisingense has 4835 nodes and 913408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07816 and has 9 connected components, where the component
+	with most nodes has 4819 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 317, the mean node degree is 377.83,
+	and the node degree mode is 1. The top 5 most central nodes are 864073.HFRIS_004618
+	(degree 2371), 864073.HFRIS_012334 (degree 1932), 864073.HFRIS_024042 (degree
+	1750), 864073.HFRIS_021566 (degree 1727) and 864073.HFRIS_002054 (degree
+	1722).
 	
 
 

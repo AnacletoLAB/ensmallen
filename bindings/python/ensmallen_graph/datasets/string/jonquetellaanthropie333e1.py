@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:05.648434
 
-The undirected graph Jonquetella anthropi E333E1 has 1817 nodes and 93213 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05650
-and has 11 connected components, where the component with most nodes has 1790 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 72, the mean node degree is 102.60, and the node degree mode is 9. The top 5 most
-central nodes are 645512.GCWU000246_00785 (degree 743), 645512.GCWU000246_00479 (degree
-699), 645512.GCWU000246_00734 (degree 550), 645512.GCWU000246_01815 (degree 510)
-and 645512.GCWU000246_00786 (degree 502).
+The undirected graph Jonquetella anthropi E333E1 has 1817 nodes and 93213
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05650 and has 11 connected components, where the component
+with most nodes has 1790 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 72, the mean node degree is 102.60,
+and the node degree mode is 9. The top 5 most central nodes are 645512.GCWU000246_00785
+(degree 743), 645512.GCWU000246_00479 (degree 699), 645512.GCWU000246_00734
+(degree 550), 645512.GCWU000246_01815 (degree 510) and 645512.GCWU000246_00786
+(degree 502).
 
 
 References
@@ -107,14 +108,15 @@ def JonquetellaAnthropiE333e1(
 	
 	Datetime: 2021-02-02 21:25:05.648434
 	
-	The undirected graph Jonquetella anthropi E333E1 has 1817 nodes and 93213 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05650
-	and has 11 connected components, where the component with most nodes has 1790 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 72, the mean node degree is 102.60, and the node degree mode is 9. The top 5 most
-	central nodes are 645512.GCWU000246_00785 (degree 743), 645512.GCWU000246_00479 (degree
-	699), 645512.GCWU000246_00734 (degree 550), 645512.GCWU000246_01815 (degree 510)
-	and 645512.GCWU000246_00786 (degree 502).
+	The undirected graph Jonquetella anthropi E333E1 has 1817 nodes and 93213
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05650 and has 11 connected components, where the component
+	with most nodes has 1790 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 72, the mean node degree is 102.60,
+	and the node degree mode is 9. The top 5 most central nodes are 645512.GCWU000246_00785
+	(degree 743), 645512.GCWU000246_00479 (degree 699), 645512.GCWU000246_00734
+	(degree 550), 645512.GCWU000246_01815 (degree 510) and 645512.GCWU000246_00786
+	(degree 502).
 	
 
 

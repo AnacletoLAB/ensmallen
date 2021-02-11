@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:32:21.982511
 
-The undirected graph web-BerkStan has 12305 nodes and 19500 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00026
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 3.17, and the node degree mode is 2. The top 5 most central
-nodes are 11791 (degree 59), 89 (degree 58), 4031 (degree 49), 1499 (degree 42) and
-8906 (degree 41).
+The undirected graph web-BerkStan has 12305 nodes and 19500 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00026 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 3.17, and the node
+degree mode is 2. The top 5 most central nodes are 11791 (degree 59), 89
+(degree 58), 4031 (degree 49), 1499 (degree 42) and 8906 (degree 41).
 
 
 References
@@ -102,12 +102,12 @@ def WebBerkstan(
 	
 	Datetime: 2021-02-06 12:32:21.982511
 	
-	The undirected graph web-BerkStan has 12305 nodes and 19500 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00026
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 3.17, and the node degree mode is 2. The top 5 most central
-	nodes are 11791 (degree 59), 89 (degree 58), 4031 (degree 49), 1499 (degree 42) and
-	8906 (degree 41).
+	The undirected graph web-BerkStan has 12305 nodes and 19500 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00026 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 3.17, and the node
+	degree mode is 2. The top 5 most central nodes are 11791 (degree 59), 89
+	(degree 58), 4031 (degree 49), 1499 (degree 42) and 8906 (degree 41).
 	
 
 

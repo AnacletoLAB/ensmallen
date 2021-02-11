@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:02.300456
 
-The undirected graph Eubacterium cellulosolvens LD2006 has 2409 nodes and 199316
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06872 and has 12 connected components, where the component with most nodes has
-2384 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 135, the mean node degree is 165.48, and the node degree mode is 1. The
-top 5 most central nodes are 1408436.JHXY01000007_gene301 (degree 1094), 1408436.JHXY01000036_gene1374
+The undirected graph Eubacterium cellulosolvens LD2006 has 2409 nodes and
+199316 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06872 and has 12 connected components, where the
+component with most nodes has 2384 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+is 165.48, and the node degree mode is 1. The top 5 most central nodes
+are 1408436.JHXY01000007_gene301 (degree 1094), 1408436.JHXY01000036_gene1374
 (degree 1055), 1408436.JHXY01000010_gene860 (degree 911), 1408436.JHXY01000027_gene937
 (degree 858) and 1408436.JHXY01000027_gene936 (degree 840).
 
@@ -107,12 +108,13 @@ def EubacteriumCellulosolvensLd2006(
 	
 	Datetime: 2021-02-03 22:37:02.300456
 	
-	The undirected graph Eubacterium cellulosolvens LD2006 has 2409 nodes and 199316
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06872 and has 12 connected components, where the component with most nodes has
-	2384 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 135, the mean node degree is 165.48, and the node degree mode is 1. The
-	top 5 most central nodes are 1408436.JHXY01000007_gene301 (degree 1094), 1408436.JHXY01000036_gene1374
+	The undirected graph Eubacterium cellulosolvens LD2006 has 2409 nodes and
+	199316 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06872 and has 12 connected components, where the
+	component with most nodes has 2384 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+	is 165.48, and the node degree mode is 1. The top 5 most central nodes
+	are 1408436.JHXY01000007_gene301 (degree 1094), 1408436.JHXY01000036_gene1374
 	(degree 1055), 1408436.JHXY01000010_gene860 (degree 911), 1408436.JHXY01000027_gene937
 	(degree 858) and 1408436.JHXY01000027_gene936 (degree 840).
 	

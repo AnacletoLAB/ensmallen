@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:19.619583
 
-The undirected graph Ammonifex degensii has 2072 nodes and 114197 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-has 6 connected components, where the component with most nodes has 2056 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 110.23, and the node degree mode is 7. The top 5 most central
-nodes are 429009.Adeg_1024 (degree 797), 429009.Adeg_1302 (degree 705), 429009.Adeg_1129
-(degree 642), 429009.Adeg_0887 (degree 632) and 429009.Adeg_1146 (degree 609).
+The undirected graph Ammonifex degensii has 2072 nodes and 114197 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05322 and has 6 connected components, where the component with most
+nodes has 2056 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 110.23, and
+the node degree mode is 7. The top 5 most central nodes are 429009.Adeg_1024
+(degree 797), 429009.Adeg_1302 (degree 705), 429009.Adeg_1129 (degree 642),
+429009.Adeg_0887 (degree 632) and 429009.Adeg_1146 (degree 609).
 
 
 References
@@ -106,13 +107,14 @@ def AmmonifexDegensii(
 	
 	Datetime: 2021-02-02 20:48:19.619583
 	
-	The undirected graph Ammonifex degensii has 2072 nodes and 114197 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05322 and
-	has 6 connected components, where the component with most nodes has 2056 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 110.23, and the node degree mode is 7. The top 5 most central
-	nodes are 429009.Adeg_1024 (degree 797), 429009.Adeg_1302 (degree 705), 429009.Adeg_1129
-	(degree 642), 429009.Adeg_0887 (degree 632) and 429009.Adeg_1146 (degree 609).
+	The undirected graph Ammonifex degensii has 2072 nodes and 114197 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05322 and has 6 connected components, where the component with most
+	nodes has 2056 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 110.23, and
+	the node degree mode is 7. The top 5 most central nodes are 429009.Adeg_1024
+	(degree 797), 429009.Adeg_1302 (degree 705), 429009.Adeg_1129 (degree 642),
+	429009.Adeg_0887 (degree 632) and 429009.Adeg_1146 (degree 609).
 	
 
 

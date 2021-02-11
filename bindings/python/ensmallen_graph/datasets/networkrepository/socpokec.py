@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:23:35.441290
 
-The undirected graph soc-pokec has 1632803 nodes and 22301964 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 13,
-the mean node degree is 27.32, and the node degree mode is 1. The top 5 most central
-nodes are 5935 (degree 14854), 5867 (degree 9712), 1891 (degree 8881), 189 (degree
-6699) and 6228 (degree 5824).
+The undirected graph soc-pokec has 1632803 nodes and 22301964 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 13, the mean node degree is 27.32, and
+the node degree mode is 1. The top 5 most central nodes are 5935 (degree
+14854), 5867 (degree 9712), 1891 (degree 8881), 189 (degree 6699) and 6228
+(degree 5824).
 
 
 References
@@ -107,12 +108,13 @@ def SocPokec(
 	
 	Datetime: 2021-02-07 16:23:35.441290
 	
-	The undirected graph soc-pokec has 1632803 nodes and 22301964 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 13,
-	the mean node degree is 27.32, and the node degree mode is 1. The top 5 most central
-	nodes are 5935 (degree 14854), 5867 (degree 9712), 1891 (degree 8881), 189 (degree
-	6699) and 6228 (degree 5824).
+	The undirected graph soc-pokec has 1632803 nodes and 22301964 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 13, the mean node degree is 27.32, and
+	the node degree mode is 1. The top 5 most central nodes are 5935 (degree
+	14854), 5867 (degree 9712), 1891 (degree 8881), 189 (degree 6699) and 6228
+	(degree 5824).
 	
 
 

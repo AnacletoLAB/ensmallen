@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:51.914338
 
-The undirected graph Rhodanobacter spathiphylli has 3395 nodes and 262562 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04557
-and has 13 connected components, where the component with most nodes has 3366 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 154.68, and the node degree mode is 3. The top 5
-most central nodes are 1163407.UU7_04522 (degree 1075), 1163407.UU7_04957 (degree
-1028), 1163407.UU7_06693 (degree 1022), 1163407.UU7_12641 (degree 908) and 1163407.UU7_12648
-(degree 890).
+The undirected graph Rhodanobacter spathiphylli has 3395 nodes and 262562
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04557 and has 13 connected components, where the component
+with most nodes has 3366 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 154.68,
+and the node degree mode is 3. The top 5 most central nodes are 1163407.UU7_04522
+(degree 1075), 1163407.UU7_04957 (degree 1028), 1163407.UU7_06693 (degree
+1022), 1163407.UU7_12641 (degree 908) and 1163407.UU7_12648 (degree 890).
 
 
 References
@@ -107,14 +107,14 @@ def RhodanobacterSpathiphylli(
 	
 	Datetime: 2021-02-02 23:04:51.914338
 	
-	The undirected graph Rhodanobacter spathiphylli has 3395 nodes and 262562 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04557
-	and has 13 connected components, where the component with most nodes has 3366 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 154.68, and the node degree mode is 3. The top 5
-	most central nodes are 1163407.UU7_04522 (degree 1075), 1163407.UU7_04957 (degree
-	1028), 1163407.UU7_06693 (degree 1022), 1163407.UU7_12641 (degree 908) and 1163407.UU7_12648
-	(degree 890).
+	The undirected graph Rhodanobacter spathiphylli has 3395 nodes and 262562
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04557 and has 13 connected components, where the component
+	with most nodes has 3366 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 154.68,
+	and the node degree mode is 3. The top 5 most central nodes are 1163407.UU7_04522
+	(degree 1075), 1163407.UU7_04957 (degree 1028), 1163407.UU7_06693 (degree
+	1022), 1163407.UU7_12641 (degree 908) and 1163407.UU7_12648 (degree 890).
 	
 
 

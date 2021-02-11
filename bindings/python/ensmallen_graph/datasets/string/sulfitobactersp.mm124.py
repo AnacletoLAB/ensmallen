@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:05.303974
 
-The undirected graph Sulfitobacter sp. MM124 has 4117 nodes and 457276 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05397 and
-has 6 connected components, where the component with most nodes has 4107 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 222.14, and the node degree mode is 4. The top 5 most central
-nodes are 1342299.Z947_2279 (degree 1697), 1342299.Z947_925 (degree 1549), 1342299.Z947_4187
-(degree 1427), 1342299.Z947_2795 (degree 1311) and 1342299.Z947_3239 (degree 1278).
+The undirected graph Sulfitobacter sp. MM124 has 4117 nodes and 457276
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05397 and has 6 connected components, where the component
+with most nodes has 4107 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 178, the mean node degree is 222.14,
+and the node degree mode is 4. The top 5 most central nodes are 1342299.Z947_2279
+(degree 1697), 1342299.Z947_925 (degree 1549), 1342299.Z947_4187 (degree
+1427), 1342299.Z947_2795 (degree 1311) and 1342299.Z947_3239 (degree 1278).
 
 
 References
@@ -106,13 +107,14 @@ def SulfitobacterSp.Mm124(
 	
 	Datetime: 2021-02-03 22:01:05.303974
 	
-	The undirected graph Sulfitobacter sp. MM124 has 4117 nodes and 457276 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05397 and
-	has 6 connected components, where the component with most nodes has 4107 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 222.14, and the node degree mode is 4. The top 5 most central
-	nodes are 1342299.Z947_2279 (degree 1697), 1342299.Z947_925 (degree 1549), 1342299.Z947_4187
-	(degree 1427), 1342299.Z947_2795 (degree 1311) and 1342299.Z947_3239 (degree 1278).
+	The undirected graph Sulfitobacter sp. MM124 has 4117 nodes and 457276
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05397 and has 6 connected components, where the component
+	with most nodes has 4107 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 178, the mean node degree is 222.14,
+	and the node degree mode is 4. The top 5 most central nodes are 1342299.Z947_2279
+	(degree 1697), 1342299.Z947_925 (degree 1549), 1342299.Z947_4187 (degree
+	1427), 1342299.Z947_2795 (degree 1311) and 1342299.Z947_3239 (degree 1278).
 	
 
 

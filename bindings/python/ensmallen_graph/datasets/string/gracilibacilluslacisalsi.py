@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:12.818022
 
-The undirected graph Gracilibacillus lacisalsi has 4215 nodes and 469901 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05291
-and has 13 connected components, where the component with most nodes has 4186 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 222.97, and the node degree mode is 5. The top 5
-most central nodes are 1121929.KB898664_gene1229 (degree 1289), 1121929.KB898665_gene2871
-(degree 1248), 1121929.KB898677_gene1790 (degree 1201), 1121929.KB898664_gene1512
-(degree 1074) and 1121929.KB898668_gene3376 (degree 1068).
+The undirected graph Gracilibacillus lacisalsi has 4215 nodes and 469901
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05291 and has 13 connected components, where the component
+with most nodes has 4186 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 222.97,
+and the node degree mode is 5. The top 5 most central nodes are 1121929.KB898664_gene1229
+(degree 1289), 1121929.KB898665_gene2871 (degree 1248), 1121929.KB898677_gene1790
+(degree 1201), 1121929.KB898664_gene1512 (degree 1074) and 1121929.KB898668_gene3376
+(degree 1068).
 
 
 References
@@ -107,14 +108,15 @@ def GracilibacillusLacisalsi(
 	
 	Datetime: 2021-02-02 22:39:12.818022
 	
-	The undirected graph Gracilibacillus lacisalsi has 4215 nodes and 469901 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05291
-	and has 13 connected components, where the component with most nodes has 4186 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 222.97, and the node degree mode is 5. The top 5
-	most central nodes are 1121929.KB898664_gene1229 (degree 1289), 1121929.KB898665_gene2871
-	(degree 1248), 1121929.KB898677_gene1790 (degree 1201), 1121929.KB898664_gene1512
-	(degree 1074) and 1121929.KB898668_gene3376 (degree 1068).
+	The undirected graph Gracilibacillus lacisalsi has 4215 nodes and 469901
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05291 and has 13 connected components, where the component
+	with most nodes has 4186 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 222.97,
+	and the node degree mode is 5. The top 5 most central nodes are 1121929.KB898664_gene1229
+	(degree 1289), 1121929.KB898665_gene2871 (degree 1248), 1121929.KB898677_gene1790
+	(degree 1201), 1121929.KB898664_gene1512 (degree 1074) and 1121929.KB898668_gene3376
+	(degree 1068).
 	
 
 

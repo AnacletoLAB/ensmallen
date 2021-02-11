@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:12.124915
 
-The undirected graph Sphingobium sp. YL23 has 3574 nodes and 326528 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05114 and
-has 22 connected components, where the component with most nodes has 3518 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 182.72, and the node degree mode is 4. The top 5 most central
-nodes are 1335760.ASTG01000002_gene2217 (degree 1370), 1335760.ASTG01000019_gene2768
-(degree 1197), 1335760.ASTG01000019_gene2764 (degree 1082), 1335760.ASTG01000014_gene2430
-(degree 1006) and 1335760.ASTG01000001_gene3168 (degree 983).
+The undirected graph Sphingobium sp. YL23 has 3574 nodes and 326528 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05114 and has 22 connected components, where the component with most
+nodes has 3518 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 182.72, and
+the node degree mode is 4. The top 5 most central nodes are 1335760.ASTG01000002_gene2217
+(degree 1370), 1335760.ASTG01000019_gene2768 (degree 1197), 1335760.ASTG01000019_gene2764
+(degree 1082), 1335760.ASTG01000014_gene2430 (degree 1006) and 1335760.ASTG01000001_gene3168
+(degree 983).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobiumSp.Yl23(
 	
 	Datetime: 2021-02-03 21:56:12.124915
 	
-	The undirected graph Sphingobium sp. YL23 has 3574 nodes and 326528 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05114 and
-	has 22 connected components, where the component with most nodes has 3518 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 182.72, and the node degree mode is 4. The top 5 most central
-	nodes are 1335760.ASTG01000002_gene2217 (degree 1370), 1335760.ASTG01000019_gene2768
-	(degree 1197), 1335760.ASTG01000019_gene2764 (degree 1082), 1335760.ASTG01000014_gene2430
-	(degree 1006) and 1335760.ASTG01000001_gene3168 (degree 983).
+	The undirected graph Sphingobium sp. YL23 has 3574 nodes and 326528 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05114 and has 22 connected components, where the component with most
+	nodes has 3518 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 182.72, and
+	the node degree mode is 4. The top 5 most central nodes are 1335760.ASTG01000002_gene2217
+	(degree 1370), 1335760.ASTG01000019_gene2768 (degree 1197), 1335760.ASTG01000019_gene2764
+	(degree 1082), 1335760.ASTG01000014_gene2430 (degree 1006) and 1335760.ASTG01000001_gene3168
+	(degree 983).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:59:49.948418
 
-The undirected graph Chitinophaga pinensis has 7106 nodes and 1010212 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04002 and
-has 28 connected components, where the component with most nodes has 7038 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 249,
-the mean node degree is 284.33, and the node degree mode is 2. The top 5 most central
-nodes are 485918.Cpin_0325 (degree 3193), 485918.Cpin_5296 (degree 3109), 485918.Cpin_5290
-(degree 3026), 485918.Cpin_5297 (degree 2092) and 485918.Cpin_0712 (degree 1982).
+The undirected graph Chitinophaga pinensis has 7106 nodes and 1010212 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04002 and has 28 connected components, where the component with most
+nodes has 7038 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 249, the mean node degree is 284.33, and
+the node degree mode is 2. The top 5 most central nodes are 485918.Cpin_0325
+(degree 3193), 485918.Cpin_5296 (degree 3109), 485918.Cpin_5290 (degree
+3026), 485918.Cpin_5297 (degree 2092) and 485918.Cpin_0712 (degree 1982).
 
 
 References
@@ -106,13 +107,14 @@ def ChitinophagaPinensis(
 	
 	Datetime: 2021-02-02 20:59:49.948418
 	
-	The undirected graph Chitinophaga pinensis has 7106 nodes and 1010212 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04002 and
-	has 28 connected components, where the component with most nodes has 7038 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 249,
-	the mean node degree is 284.33, and the node degree mode is 2. The top 5 most central
-	nodes are 485918.Cpin_0325 (degree 3193), 485918.Cpin_5296 (degree 3109), 485918.Cpin_5290
-	(degree 3026), 485918.Cpin_5297 (degree 2092) and 485918.Cpin_0712 (degree 1982).
+	The undirected graph Chitinophaga pinensis has 7106 nodes and 1010212 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04002 and has 28 connected components, where the component with most
+	nodes has 7038 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 249, the mean node degree is 284.33, and
+	the node degree mode is 2. The top 5 most central nodes are 485918.Cpin_0325
+	(degree 3193), 485918.Cpin_5296 (degree 3109), 485918.Cpin_5290 (degree
+	3026), 485918.Cpin_5297 (degree 2092) and 485918.Cpin_0712 (degree 1982).
 	
 
 

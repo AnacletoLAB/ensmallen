@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:39:52.388294
 
-The undirected multigraph aves-weaver-social has 445 nodes and 1336 unweighted edges
-with 23 different edge types:  the 5 most common are 16, 3, 13, 8 and 11, of which
-3 are self-loops and 2 are parallel. The graph is dense as it has a density of 0.01350
-and has 22 connected components, where the component with most nodes has 117 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 5, the mean node degree is 6.00 and the node degree mode is 4. The top 5 most
-central nodes are 32 (degree 27), 236 (degree 23), 329 (degree 21), 270 (degree 21)
-and 240 (degree 21).
+The undirected multigraph aves-weaver-social has 445 nodes and 1336 unweighted
+edges with 23 different edge types:  the 5 most common are 16, 3, 13, 8
+and 11, of which 3 are self-loops and 2 are parallel. The graph is dense
+as it has a density of 0.01350 and has 22 connected components, where the
+component with most nodes has 117 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 5, the mean node degree
+is 6.00 and the node degree mode is 4. The top 5 most central nodes are
+32 (degree 27), 236 (degree 23), 329 (degree 21), 270 (degree 21) and 240
+(degree 21).
 
 
 References
@@ -104,14 +105,15 @@ def AvesWeaverSocial(
 	
 	Datetime: 2021-02-03 23:39:52.388294
 	
-	The undirected multigraph aves-weaver-social has 445 nodes and 1336 unweighted edges
-	with 23 different edge types:  the 5 most common are 16, 3, 13, 8 and 11, of which
-	3 are self-loops and 2 are parallel. The graph is dense as it has a density of 0.01350
-	and has 22 connected components, where the component with most nodes has 117 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 5, the mean node degree is 6.00 and the node degree mode is 4. The top 5 most
-	central nodes are 32 (degree 27), 236 (degree 23), 329 (degree 21), 270 (degree 21)
-	and 240 (degree 21).
+	The undirected multigraph aves-weaver-social has 445 nodes and 1336 unweighted
+	edges with 23 different edge types:  the 5 most common are 16, 3, 13, 8
+	and 11, of which 3 are self-loops and 2 are parallel. The graph is dense
+	as it has a density of 0.01350 and has 22 connected components, where the
+	component with most nodes has 117 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 5, the mean node degree
+	is 6.00 and the node degree mode is 4. The top 5 most central nodes are
+	32 (degree 27), 236 (degree 23), 329 (degree 21), 270 (degree 21) and 240
+	(degree 21).
 	
 
 

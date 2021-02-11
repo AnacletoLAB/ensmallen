@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:27.767709
 
-The undirected graph Caldithrix abyssi has 3719 nodes and 393853 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05697 and
-has 6 connected components, where the component with most nodes has 3707 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 211.81, and the node degree mode is 2. The top 5 most central
-nodes are 880073.Calab_2544 (degree 1338), 880073.Calab_1547 (degree 1300), 880073.Calab_0376
-(degree 1162), 880073.Calab_2438 (degree 1127) and 880073.Calab_0529 (degree 1090).
+The undirected graph Caldithrix abyssi has 3719 nodes and 393853 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05697 and has 6 connected components, where the component with most
+nodes has 3707 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 211.81, and
+the node degree mode is 2. The top 5 most central nodes are 880073.Calab_2544
+(degree 1338), 880073.Calab_1547 (degree 1300), 880073.Calab_0376 (degree
+1162), 880073.Calab_2438 (degree 1127) and 880073.Calab_0529 (degree 1090).
 
 
 References
@@ -106,13 +107,14 @@ def CaldithrixAbyssi(
 	
 	Datetime: 2021-02-02 21:50:27.767709
 	
-	The undirected graph Caldithrix abyssi has 3719 nodes and 393853 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05697 and
-	has 6 connected components, where the component with most nodes has 3707 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 211.81, and the node degree mode is 2. The top 5 most central
-	nodes are 880073.Calab_2544 (degree 1338), 880073.Calab_1547 (degree 1300), 880073.Calab_0376
-	(degree 1162), 880073.Calab_2438 (degree 1127) and 880073.Calab_0529 (degree 1090).
+	The undirected graph Caldithrix abyssi has 3719 nodes and 393853 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05697 and has 6 connected components, where the component with most
+	nodes has 3707 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 211.81, and
+	the node degree mode is 2. The top 5 most central nodes are 880073.Calab_2544
+	(degree 1338), 880073.Calab_1547 (degree 1300), 880073.Calab_0376 (degree
+	1162), 880073.Calab_2438 (degree 1127) and 880073.Calab_0529 (degree 1090).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:05.272727
 
-The undirected graph Korarchaeum cryptofilum has 1586 nodes and 127648 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10156
-and has 11 connected components, where the component with most nodes has 1561 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 160.97, and the node degree mode is 4. The top 5
-most central nodes are 374847.Kcr_1130 (degree 644), 374847.Kcr_1468 (degree 623),
-374847.Kcr_1501 (degree 569), 374847.Kcr_0873 (degree 555) and 374847.Kcr_1402 (degree
+The undirected graph Korarchaeum cryptofilum has 1586 nodes and 127648
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10156 and has 11 connected components, where the
+component with most nodes has 1561 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+is 160.97, and the node degree mode is 4. The top 5 most central nodes
+are 374847.Kcr_1130 (degree 644), 374847.Kcr_1468 (degree 623), 374847.Kcr_1501
+(degree 569), 374847.Kcr_0873 (degree 555) and 374847.Kcr_1402 (degree
 553).
 
 
@@ -107,13 +108,14 @@ def KorarchaeumCryptofilum(
 	
 	Datetime: 2021-02-02 20:36:05.272727
 	
-	The undirected graph Korarchaeum cryptofilum has 1586 nodes and 127648 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10156
-	and has 11 connected components, where the component with most nodes has 1561 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 160.97, and the node degree mode is 4. The top 5
-	most central nodes are 374847.Kcr_1130 (degree 644), 374847.Kcr_1468 (degree 623),
-	374847.Kcr_1501 (degree 569), 374847.Kcr_0873 (degree 555) and 374847.Kcr_1402 (degree
+	The undirected graph Korarchaeum cryptofilum has 1586 nodes and 127648
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10156 and has 11 connected components, where the
+	component with most nodes has 1561 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 159, the mean node degree
+	is 160.97, and the node degree mode is 4. The top 5 most central nodes
+	are 374847.Kcr_1130 (degree 644), 374847.Kcr_1468 (degree 623), 374847.Kcr_1501
+	(degree 569), 374847.Kcr_0873 (degree 555) and 374847.Kcr_1402 (degree
 	553).
 	
 

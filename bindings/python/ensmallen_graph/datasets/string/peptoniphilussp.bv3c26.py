@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:31.786916
 
-The undirected graph Peptoniphilus sp. BV3C26 has 1922 nodes and 137851 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07467
-and has 2 connected components, where the component with most nodes has 1919 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 105, the mean node degree is 143.45, and the node degree mode is 3. The top 5
-most central nodes are 1111134.HMPREF1253_1463 (degree 814), 1111134.HMPREF1253_1546
-(degree 669), 1111134.HMPREF1253_0349 (degree 649), 1111134.HMPREF1253_1741 (degree
-641) and 1111134.HMPREF1253_1373 (degree 636).
+The undirected graph Peptoniphilus sp. BV3C26 has 1922 nodes and 137851
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07467 and has 2 connected components, where the component
+with most nodes has 1919 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 105, the mean node degree is 143.45,
+and the node degree mode is 3. The top 5 most central nodes are 1111134.HMPREF1253_1463
+(degree 814), 1111134.HMPREF1253_1546 (degree 669), 1111134.HMPREF1253_0349
+(degree 649), 1111134.HMPREF1253_1741 (degree 641) and 1111134.HMPREF1253_1373
+(degree 636).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoniphilusSp.Bv3c26(
 	
 	Datetime: 2021-02-02 22:25:31.786916
 	
-	The undirected graph Peptoniphilus sp. BV3C26 has 1922 nodes and 137851 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07467
-	and has 2 connected components, where the component with most nodes has 1919 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 105, the mean node degree is 143.45, and the node degree mode is 3. The top 5
-	most central nodes are 1111134.HMPREF1253_1463 (degree 814), 1111134.HMPREF1253_1546
-	(degree 669), 1111134.HMPREF1253_0349 (degree 649), 1111134.HMPREF1253_1741 (degree
-	641) and 1111134.HMPREF1253_1373 (degree 636).
+	The undirected graph Peptoniphilus sp. BV3C26 has 1922 nodes and 137851
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07467 and has 2 connected components, where the component
+	with most nodes has 1919 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 105, the mean node degree is 143.45,
+	and the node degree mode is 3. The top 5 most central nodes are 1111134.HMPREF1253_1463
+	(degree 814), 1111134.HMPREF1253_1546 (degree 669), 1111134.HMPREF1253_0349
+	(degree 649), 1111134.HMPREF1253_1741 (degree 641) and 1111134.HMPREF1253_1373
+	(degree 636).
 	
 
 

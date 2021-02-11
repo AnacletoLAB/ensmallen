@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:21.035831
 
-The undirected graph Caulobacter segnis has 4108 nodes and 347496 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-has 6 connected components, where the component with most nodes has 4094 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 169.18, and the node degree mode is 4. The top 5 most central
-nodes are 509190.Cseg_0223 (degree 1545), 509190.Cseg_3213 (degree 1542), 509190.Cseg_2587
-(degree 1196), 509190.Cseg_4092 (degree 1112) and 509190.Cseg_1955 (degree 1078).
+The undirected graph Caulobacter segnis has 4108 nodes and 347496 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04119 and has 6 connected components, where the component with most
+nodes has 4094 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 169.18, and
+the node degree mode is 4. The top 5 most central nodes are 509190.Cseg_0223
+(degree 1545), 509190.Cseg_3213 (degree 1542), 509190.Cseg_2587 (degree
+1196), 509190.Cseg_4092 (degree 1112) and 509190.Cseg_1955 (degree 1078).
 
 
 References
@@ -106,13 +107,14 @@ def CaulobacterSegnis(
 	
 	Datetime: 2021-02-02 21:02:21.035831
 	
-	The undirected graph Caulobacter segnis has 4108 nodes and 347496 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-	has 6 connected components, where the component with most nodes has 4094 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 169.18, and the node degree mode is 4. The top 5 most central
-	nodes are 509190.Cseg_0223 (degree 1545), 509190.Cseg_3213 (degree 1542), 509190.Cseg_2587
-	(degree 1196), 509190.Cseg_4092 (degree 1112) and 509190.Cseg_1955 (degree 1078).
+	The undirected graph Caulobacter segnis has 4108 nodes and 347496 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04119 and has 6 connected components, where the component with most
+	nodes has 4094 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 169.18, and
+	the node degree mode is 4. The top 5 most central nodes are 509190.Cseg_0223
+	(degree 1545), 509190.Cseg_3213 (degree 1542), 509190.Cseg_2587 (degree
+	1196), 509190.Cseg_4092 (degree 1112) and 509190.Cseg_1955 (degree 1078).
 	
 
 

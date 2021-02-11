@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:55:15.607280
 
-The undirected graph youtube-links has 212110 nodes and 508977 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 4.80, and the node degree mode is 1. The top 5 most
-central nodes are 381 (degree 28589), 32 (degree 10456), 374 (degree 7459), 41 (degree
-7381) and 3156 (degree 6102).
+The undirected graph youtube-links has 212110 nodes and 508977 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 4.80, and the
+node degree mode is 1. The top 5 most central nodes are 381 (degree 28589),
+32 (degree 10456), 374 (degree 7459), 41 (degree 7381) and 3156 (degree
+6102).
 
 
 References
@@ -102,12 +103,13 @@ def YoutubeLinks(
 	
 	Datetime: 2021-02-07 15:55:15.607280
 	
-	The undirected graph youtube-links has 212110 nodes and 508977 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 4.80, and the node degree mode is 1. The top 5 most
-	central nodes are 381 (degree 28589), 32 (degree 10456), 374 (degree 7459), 41 (degree
-	7381) and 3156 (degree 6102).
+	The undirected graph youtube-links has 212110 nodes and 508977 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 4.80, and the
+	node degree mode is 1. The top 5 most central nodes are 381 (degree 28589),
+	32 (degree 10456), 374 (degree 7459), 41 (degree 7381) and 3156 (degree
+	6102).
 	
 
 

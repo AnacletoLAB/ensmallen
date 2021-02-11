@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:45.412043
 
-The undirected graph Cloacimonas acidaminovorans has 1780 nodes and 126343 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07980
-and has 7 connected components, where the component with most nodes has 1766 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 141.96, and the node degree mode is 7. The top 5
-most central nodes are 459349.CLOAM1048 (degree 1060), 459349.CLOAM1364 (degree 791),
-459349.CLOAM0964 (degree 771), 459349.CLOAM0238 (degree 732) and 459349.CLOAM0440
-(degree 689).
+The undirected graph Cloacimonas acidaminovorans has 1780 nodes and 126343
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07980 and has 7 connected components, where the component
+with most nodes has 1766 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 141.96,
+and the node degree mode is 7. The top 5 most central nodes are 459349.CLOAM1048
+(degree 1060), 459349.CLOAM1364 (degree 791), 459349.CLOAM0964 (degree
+771), 459349.CLOAM0238 (degree 732) and 459349.CLOAM0440 (degree 689).
 
 
 References
@@ -107,14 +107,14 @@ def CloacimonasAcidaminovorans(
 	
 	Datetime: 2021-02-02 20:53:45.412043
 	
-	The undirected graph Cloacimonas acidaminovorans has 1780 nodes and 126343 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07980
-	and has 7 connected components, where the component with most nodes has 1766 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 141.96, and the node degree mode is 7. The top 5
-	most central nodes are 459349.CLOAM1048 (degree 1060), 459349.CLOAM1364 (degree 791),
-	459349.CLOAM0964 (degree 771), 459349.CLOAM0238 (degree 732) and 459349.CLOAM0440
-	(degree 689).
+	The undirected graph Cloacimonas acidaminovorans has 1780 nodes and 126343
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07980 and has 7 connected components, where the component
+	with most nodes has 1766 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 141.96,
+	and the node degree mode is 7. The top 5 most central nodes are 459349.CLOAM1048
+	(degree 1060), 459349.CLOAM1364 (degree 791), 459349.CLOAM0964 (degree
+	771), 459349.CLOAM0238 (degree 732) and 459349.CLOAM0440 (degree 689).
 	
 
 

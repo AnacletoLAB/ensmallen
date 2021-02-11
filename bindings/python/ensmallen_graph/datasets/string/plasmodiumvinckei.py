@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:38.052035
 
-The undirected graph Plasmodium vinckei has 4060 nodes and 461399 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05600 and
-has 17 connected components, where the component with most nodes has 4027 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 227.29, and the node degree mode is 1. The top 5 most central
-nodes are 5860.XP_008625773.1 (degree 1428), 5860.XP_008626152.1 (degree 1316), 5860.XP_008624928.1
-(degree 1289), 5860.XP_008625231.1 (degree 1271) and 5860.XP_008623507.1 (degree
+The undirected graph Plasmodium vinckei has 4060 nodes and 461399 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05600 and has 17 connected components, where the component with most
+nodes has 4027 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 227.29, and
+the node degree mode is 1. The top 5 most central nodes are 5860.XP_008625773.1
+(degree 1428), 5860.XP_008626152.1 (degree 1316), 5860.XP_008624928.1 (degree
+1289), 5860.XP_008625231.1 (degree 1271) and 5860.XP_008623507.1 (degree
 1254).
 
 
@@ -107,13 +108,14 @@ def PlasmodiumVinckei(
 	
 	Datetime: 2021-02-02 17:16:38.052035
 	
-	The undirected graph Plasmodium vinckei has 4060 nodes and 461399 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05600 and
-	has 17 connected components, where the component with most nodes has 4027 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 227.29, and the node degree mode is 1. The top 5 most central
-	nodes are 5860.XP_008625773.1 (degree 1428), 5860.XP_008626152.1 (degree 1316), 5860.XP_008624928.1
-	(degree 1289), 5860.XP_008625231.1 (degree 1271) and 5860.XP_008623507.1 (degree
+	The undirected graph Plasmodium vinckei has 4060 nodes and 461399 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05600 and has 17 connected components, where the component with most
+	nodes has 4027 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 227.29, and
+	the node degree mode is 1. The top 5 most central nodes are 5860.XP_008625773.1
+	(degree 1428), 5860.XP_008626152.1 (degree 1316), 5860.XP_008624928.1 (degree
+	1289), 5860.XP_008625231.1 (degree 1271) and 5860.XP_008623507.1 (degree
 	1254).
 	
 

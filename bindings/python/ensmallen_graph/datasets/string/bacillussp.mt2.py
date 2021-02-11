@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:35.391661
 
-The undirected graph Bacillus sp. MT2 has 4000 nodes and 445060 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05565 and
-has 11 connected components, where the component with most nodes has 3976 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 222.53, and the node degree mode is 2. The top 5 most central
-nodes are 1499680.CCFE01000018_gene1349 (degree 1439), 1499680.CCFE01000024_gene2795
-(degree 1231), 1499680.CCFE01000016_gene1113 (degree 1184), 1499680.CCFE01000016_gene1144
-(degree 1137) and 1499680.CCFE01000018_gene1588 (degree 1079).
+The undirected graph Bacillus sp. MT2 has 4000 nodes and 445060 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05565 and has 11 connected components, where the component with most
+nodes has 3976 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 222.53, and
+the node degree mode is 2. The top 5 most central nodes are 1499680.CCFE01000018_gene1349
+(degree 1439), 1499680.CCFE01000024_gene2795 (degree 1231), 1499680.CCFE01000016_gene1113
+(degree 1184), 1499680.CCFE01000016_gene1144 (degree 1137) and 1499680.CCFE01000018_gene1588
+(degree 1079).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Mt2(
 	
 	Datetime: 2021-02-03 23:14:35.391661
 	
-	The undirected graph Bacillus sp. MT2 has 4000 nodes and 445060 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05565 and
-	has 11 connected components, where the component with most nodes has 3976 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 222.53, and the node degree mode is 2. The top 5 most central
-	nodes are 1499680.CCFE01000018_gene1349 (degree 1439), 1499680.CCFE01000024_gene2795
-	(degree 1231), 1499680.CCFE01000016_gene1113 (degree 1184), 1499680.CCFE01000016_gene1144
-	(degree 1137) and 1499680.CCFE01000018_gene1588 (degree 1079).
+	The undirected graph Bacillus sp. MT2 has 4000 nodes and 445060 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05565 and has 11 connected components, where the component with most
+	nodes has 3976 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 222.53, and
+	the node degree mode is 2. The top 5 most central nodes are 1499680.CCFE01000018_gene1349
+	(degree 1439), 1499680.CCFE01000024_gene2795 (degree 1231), 1499680.CCFE01000016_gene1113
+	(degree 1184), 1499680.CCFE01000016_gene1144 (degree 1137) and 1499680.CCFE01000018_gene1588
+	(degree 1079).
 	
 
 

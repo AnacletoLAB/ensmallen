@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:01.548795
 
-The undirected graph Eggerthia catenaformis has 1873 nodes and 157331 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08974 and
-has 6 connected components, where the component with most nodes has 1858 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 168.00, and the node degree mode is 5. The top 5 most central
-nodes are 999415.HMPREF9943_00464 (degree 905), 999415.HMPREF9943_01526 (degree 732),
-999415.HMPREF9943_01311 (degree 685), 999415.HMPREF9943_00952 (degree 661) and 999415.HMPREF9943_00457
+The undirected graph Eggerthia catenaformis has 1873 nodes and 157331 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08974 and has 6 connected components, where the component with most
+nodes has 1858 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 168.00, and
+the node degree mode is 5. The top 5 most central nodes are 999415.HMPREF9943_00464
+(degree 905), 999415.HMPREF9943_01526 (degree 732), 999415.HMPREF9943_01311
+(degree 685), 999415.HMPREF9943_00952 (degree 661) and 999415.HMPREF9943_00457
 (degree 636).
 
 
@@ -107,13 +108,14 @@ def EggerthiaCatenaformis(
 	
 	Datetime: 2021-02-02 22:06:01.548795
 	
-	The undirected graph Eggerthia catenaformis has 1873 nodes and 157331 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08974 and
-	has 6 connected components, where the component with most nodes has 1858 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 168.00, and the node degree mode is 5. The top 5 most central
-	nodes are 999415.HMPREF9943_00464 (degree 905), 999415.HMPREF9943_01526 (degree 732),
-	999415.HMPREF9943_01311 (degree 685), 999415.HMPREF9943_00952 (degree 661) and 999415.HMPREF9943_00457
+	The undirected graph Eggerthia catenaformis has 1873 nodes and 157331 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08974 and has 6 connected components, where the component with most
+	nodes has 1858 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 168.00, and
+	the node degree mode is 5. The top 5 most central nodes are 999415.HMPREF9943_00464
+	(degree 905), 999415.HMPREF9943_01526 (degree 732), 999415.HMPREF9943_01311
+	(degree 685), 999415.HMPREF9943_00952 (degree 661) and 999415.HMPREF9943_00457
 	(degree 636).
 	
 

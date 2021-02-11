@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:45.873347
 
-The undirected graph Streptococcus orisratti has 2304 nodes and 164298 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06193 and
-has 17 connected components, where the component with most nodes has 2257 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 142.62, and the node degree mode is 3. The top 5 most central
-nodes are 1123311.KB904449_gene206 (degree 889), 1123311.KB904452_gene577 (degree
-854), 1123311.KB904464_gene1034 (degree 798), 1123311.KB904463_gene1148 (degree 763)
-and 1123311.KB904458_gene623 (degree 760).
+The undirected graph Streptococcus orisratti has 2304 nodes and 164298
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06193 and has 17 connected components, where the component
+with most nodes has 2257 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 142.62,
+and the node degree mode is 3. The top 5 most central nodes are 1123311.KB904449_gene206
+(degree 889), 1123311.KB904452_gene577 (degree 854), 1123311.KB904464_gene1034
+(degree 798), 1123311.KB904463_gene1148 (degree 763) and 1123311.KB904458_gene623
+(degree 760).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusOrisratti(
 	
 	Datetime: 2021-02-02 22:50:45.873347
 	
-	The undirected graph Streptococcus orisratti has 2304 nodes and 164298 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06193 and
-	has 17 connected components, where the component with most nodes has 2257 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 142.62, and the node degree mode is 3. The top 5 most central
-	nodes are 1123311.KB904449_gene206 (degree 889), 1123311.KB904452_gene577 (degree
-	854), 1123311.KB904464_gene1034 (degree 798), 1123311.KB904463_gene1148 (degree 763)
-	and 1123311.KB904458_gene623 (degree 760).
+	The undirected graph Streptococcus orisratti has 2304 nodes and 164298
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06193 and has 17 connected components, where the component
+	with most nodes has 2257 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 142.62,
+	and the node degree mode is 3. The top 5 most central nodes are 1123311.KB904449_gene206
+	(degree 889), 1123311.KB904452_gene577 (degree 854), 1123311.KB904464_gene1034
+	(degree 798), 1123311.KB904463_gene1148 (degree 763) and 1123311.KB904458_gene623
+	(degree 760).
 	
 
 

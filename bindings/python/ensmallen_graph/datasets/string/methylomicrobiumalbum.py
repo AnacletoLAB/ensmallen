@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:11.882425
 
-The undirected graph Methylomicrobium album has 3736 nodes and 357706 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05127 and
-has 21 connected components, where the component with most nodes has 3683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 191.49, and the node degree mode is 1. The top 5 most central
-nodes are 686340.Metal_0372 (degree 1385), 686340.Metal_2227 (degree 1316), 686340.Metal_0732
-(degree 1133), 686340.Metal_3216 (degree 1032) and 686340.Metal_0536 (degree 1021).
+The undirected graph Methylomicrobium album has 3736 nodes and 357706 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05127 and has 21 connected components, where the component with most
+nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 191.49, and
+the node degree mode is 1. The top 5 most central nodes are 686340.Metal_0372
+(degree 1385), 686340.Metal_2227 (degree 1316), 686340.Metal_0732 (degree
+1133), 686340.Metal_3216 (degree 1032) and 686340.Metal_0536 (degree 1021).
 
 
 References
@@ -106,13 +107,14 @@ def MethylomicrobiumAlbum(
 	
 	Datetime: 2021-02-02 21:31:11.882425
 	
-	The undirected graph Methylomicrobium album has 3736 nodes and 357706 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05127 and
-	has 21 connected components, where the component with most nodes has 3683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 191.49, and the node degree mode is 1. The top 5 most central
-	nodes are 686340.Metal_0372 (degree 1385), 686340.Metal_2227 (degree 1316), 686340.Metal_0732
-	(degree 1133), 686340.Metal_3216 (degree 1032) and 686340.Metal_0536 (degree 1021).
+	The undirected graph Methylomicrobium album has 3736 nodes and 357706 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05127 and has 21 connected components, where the component with most
+	nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 191.49, and
+	the node degree mode is 1. The top 5 most central nodes are 686340.Metal_0372
+	(degree 1385), 686340.Metal_2227 (degree 1316), 686340.Metal_0732 (degree
+	1133), 686340.Metal_3216 (degree 1032) and 686340.Metal_0536 (degree 1021).
 	
 
 

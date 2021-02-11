@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:58.869904
 
-The undirected graph Mycoplasma hominis has 533 nodes and 24194 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.17065
-and is connected, as it has a single component. The graph median node degree is 78,
-the mean node degree is 90.78, and the node degree mode is 7. The top 5 most central
-nodes are 347256.MHO_1180 (degree 311), 347256.MHO_4940 (degree 243), 347256.MHO_4060
-(degree 232), 347256.MHO_1170 (degree 229) and 347256.MHO_4590 (degree 226).
+The undirected graph Mycoplasma hominis has 533 nodes and 24194 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17065 and is connected, as it has a single component. The
+graph median node degree is 78, the mean node degree is 90.78, and the
+node degree mode is 7. The top 5 most central nodes are 347256.MHO_1180
+(degree 311), 347256.MHO_4940 (degree 243), 347256.MHO_4060 (degree 232),
+347256.MHO_1170 (degree 229) and 347256.MHO_4590 (degree 226).
 
 
 References
@@ -105,12 +106,13 @@ def MycoplasmaHominis(
 	
 	Datetime: 2021-02-02 20:31:58.869904
 	
-	The undirected graph Mycoplasma hominis has 533 nodes and 24194 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.17065
-	and is connected, as it has a single component. The graph median node degree is 78,
-	the mean node degree is 90.78, and the node degree mode is 7. The top 5 most central
-	nodes are 347256.MHO_1180 (degree 311), 347256.MHO_4940 (degree 243), 347256.MHO_4060
-	(degree 232), 347256.MHO_1170 (degree 229) and 347256.MHO_4590 (degree 226).
+	The undirected graph Mycoplasma hominis has 533 nodes and 24194 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17065 and is connected, as it has a single component. The
+	graph median node degree is 78, the mean node degree is 90.78, and the
+	node degree mode is 7. The top 5 most central nodes are 347256.MHO_1180
+	(degree 311), 347256.MHO_4940 (degree 243), 347256.MHO_4060 (degree 232),
+	347256.MHO_1170 (degree 229) and 347256.MHO_4590 (degree 226).
 	
 
 

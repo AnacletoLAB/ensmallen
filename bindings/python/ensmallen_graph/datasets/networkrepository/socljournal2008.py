@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:16:05.899569
 
-The undirected graph soc-ljournal-2008 has 5363201 nodes, of which 15 are singletons
-(all have self-loops), and 50545899 unweighted edges, of which 1031628 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 16 connected
-components, where the component with most nodes has 5363186 nodes and the component
-with the least nodes has a single node. The graph median node degree is 5, the mean
-node degree is 18.66, and the node degree mode is 1. The top 5 most central nodes
-are 5177967 (degree 19432), 5176502 (degree 17626), 5176071 (degree 15789), 4196011
+The undirected graph soc-ljournal-2008 has 5363201 nodes, of which 15 are
+singletons (all have self-loops), and 50545899 unweighted edges, of which
+1031628 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 16 connected components, where the component with most
+nodes has 5363186 nodes and the component with the least nodes has a single
+node. The graph median node degree is 5, the mean node degree is 18.66,
+and the node degree mode is 1. The top 5 most central nodes are 5177967
+(degree 19432), 5176502 (degree 17626), 5176071 (degree 15789), 4196011
 (degree 14130) and 5170500 (degree 13764).
 
 
@@ -104,13 +105,14 @@ def SocLjournal2008(
 	
 	Datetime: 2021-02-07 16:16:05.899569
 	
-	The undirected graph soc-ljournal-2008 has 5363201 nodes, of which 15 are singletons
-	(all have self-loops), and 50545899 unweighted edges, of which 1031628 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 16 connected
-	components, where the component with most nodes has 5363186 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 5, the mean
-	node degree is 18.66, and the node degree mode is 1. The top 5 most central nodes
-	are 5177967 (degree 19432), 5176502 (degree 17626), 5176071 (degree 15789), 4196011
+	The undirected graph soc-ljournal-2008 has 5363201 nodes, of which 15 are
+	singletons (all have self-loops), and 50545899 unweighted edges, of which
+	1031628 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 16 connected components, where the component with most
+	nodes has 5363186 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 5, the mean node degree is 18.66,
+	and the node degree mode is 1. The top 5 most central nodes are 5177967
+	(degree 19432), 5176502 (degree 17626), 5176071 (degree 15789), 4196011
 	(degree 14130) and 5170500 (degree 13764).
 	
 

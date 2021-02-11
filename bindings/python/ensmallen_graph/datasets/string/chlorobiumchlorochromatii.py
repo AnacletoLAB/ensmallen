@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:16.825208
 
-The undirected graph Chlorobium chlorochromatii has 1993 nodes and 131430 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06621
-and has 7 connected components, where the component with most nodes has 1974 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 131.89, and the node degree mode is 2. The top 5
-most central nodes are 340177.Cag_1242 (degree 1258), 340177.Cag_0738 (degree 899),
-340177.Cag_1026 (degree 865), 340177.Cag_0179 (degree 848) and 340177.Cag_1730 (degree
-625).
+The undirected graph Chlorobium chlorochromatii has 1993 nodes and 131430
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06621 and has 7 connected components, where the component
+with most nodes has 1974 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 131.89,
+and the node degree mode is 2. The top 5 most central nodes are 340177.Cag_1242
+(degree 1258), 340177.Cag_0738 (degree 899), 340177.Cag_1026 (degree 865),
+340177.Cag_0179 (degree 848) and 340177.Cag_1730 (degree 625).
 
 
 References
@@ -107,14 +107,14 @@ def ChlorobiumChlorochromatii(
 	
 	Datetime: 2021-02-02 20:31:16.825208
 	
-	The undirected graph Chlorobium chlorochromatii has 1993 nodes and 131430 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06621
-	and has 7 connected components, where the component with most nodes has 1974 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 131.89, and the node degree mode is 2. The top 5
-	most central nodes are 340177.Cag_1242 (degree 1258), 340177.Cag_0738 (degree 899),
-	340177.Cag_1026 (degree 865), 340177.Cag_0179 (degree 848) and 340177.Cag_1730 (degree
-	625).
+	The undirected graph Chlorobium chlorochromatii has 1993 nodes and 131430
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06621 and has 7 connected components, where the component
+	with most nodes has 1974 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 131.89,
+	and the node degree mode is 2. The top 5 most central nodes are 340177.Cag_1242
+	(degree 1258), 340177.Cag_0738 (degree 899), 340177.Cag_1026 (degree 865),
+	340177.Cag_0179 (degree 848) and 340177.Cag_1730 (degree 625).
 	
 
 

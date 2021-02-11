@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:36.469381
 
-The undirected graph san200-0-9-3 has 200 nodes and 17910 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.90000
-and is connected, as it has a single component. The graph median node degree is 180,
-the mean node degree is 179.10 and the node degree mode is 180. The top 5 most central
-nodes are 96 (degree 187), 18 (degree 187), 160 (degree 186), 76 (degree 186) and
-66 (degree 186).
+The undirected graph san200-0-9-3 has 200 nodes and 17910 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.90000 and is connected, as it has a single component. The
+graph median node degree is 180, the mean node degree is 179.10 and the
+node degree mode is 180. The top 5 most central nodes are 96 (degree 187),
+18 (degree 187), 160 (degree 186), 76 (degree 186) and 66 (degree 186).
 
 
 References
@@ -115,12 +115,12 @@ def San200093(
 	
 	Datetime: 2021-02-03 22:56:36.469381
 	
-	The undirected graph san200-0-9-3 has 200 nodes and 17910 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.90000
-	and is connected, as it has a single component. The graph median node degree is 180,
-	the mean node degree is 179.10 and the node degree mode is 180. The top 5 most central
-	nodes are 96 (degree 187), 18 (degree 187), 160 (degree 186), 76 (degree 186) and
-	66 (degree 186).
+	The undirected graph san200-0-9-3 has 200 nodes and 17910 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.90000 and is connected, as it has a single component. The
+	graph median node degree is 180, the mean node degree is 179.10 and the
+	node degree mode is 180. The top 5 most central nodes are 96 (degree 187),
+	18 (degree 187), 160 (degree 186), 76 (degree 186) and 66 (degree 186).
 	
 
 

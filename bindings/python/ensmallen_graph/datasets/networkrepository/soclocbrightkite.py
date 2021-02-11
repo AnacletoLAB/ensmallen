@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:30:25.704042
 
-The undirected graph soc-loc-brightkite has 58228 nodes and 214078 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-and has 547 connected components, where the component with most nodes has 56739 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 7.35, and the node degree mode is 1. The top 5 most
-central nodes are 41 (degree 1134), 458 (degree 1055), 107 (degree 854), 115 (degree
-838) and 158 (degree 833).
+The undirected graph soc-loc-brightkite has 58228 nodes and 214078 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00013 and has 547 connected components, where the component
+with most nodes has 56739 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 2, the mean node degree is
+7.35, and the node degree mode is 1. The top 5 most central nodes are 41
+(degree 1134), 458 (degree 1055), 107 (degree 854), 115 (degree 838) and
+158 (degree 833).
 
 
 References
@@ -103,13 +104,14 @@ def SocLocBrightkite(
 	
 	Datetime: 2021-02-06 12:30:25.704042
 	
-	The undirected graph soc-loc-brightkite has 58228 nodes and 214078 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-	and has 547 connected components, where the component with most nodes has 56739 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 7.35, and the node degree mode is 1. The top 5 most
-	central nodes are 41 (degree 1134), 458 (degree 1055), 107 (degree 854), 115 (degree
-	838) and 158 (degree 833).
+	The undirected graph soc-loc-brightkite has 58228 nodes and 214078 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00013 and has 547 connected components, where the component
+	with most nodes has 56739 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 2, the mean node degree is
+	7.35, and the node degree mode is 1. The top 5 most central nodes are 41
+	(degree 1134), 458 (degree 1055), 107 (degree 854), 115 (degree 838) and
+	158 (degree 833).
 	
 
 

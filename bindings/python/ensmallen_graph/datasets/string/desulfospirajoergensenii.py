@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:09.592148
 
-The undirected graph Desulfospira joergensenii has 4725 nodes and 889554 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07971
-and has 9 connected components, where the component with most nodes has 4707 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 322, the mean node degree is 376.53, and the node degree mode is 2. The top 5
-most central nodes are 1265505.ATUG01000002_gene2399 (degree 3209), 1265505.ATUG01000002_gene1798
-(degree 2341), 1265505.ATUG01000003_gene211 (degree 2089), 1265505.ATUG01000002_gene2563
-(degree 1977) and 1265505.ATUG01000003_gene304 (degree 1849).
+The undirected graph Desulfospira joergensenii has 4725 nodes and 889554
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07971 and has 9 connected components, where the component
+with most nodes has 4707 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 322, the mean node degree is 376.53,
+and the node degree mode is 2. The top 5 most central nodes are 1265505.ATUG01000002_gene2399
+(degree 3209), 1265505.ATUG01000002_gene1798 (degree 2341), 1265505.ATUG01000003_gene211
+(degree 2089), 1265505.ATUG01000002_gene2563 (degree 1977) and 1265505.ATUG01000003_gene304
+(degree 1849).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfospiraJoergensenii(
 	
 	Datetime: 2021-02-02 23:36:09.592148
 	
-	The undirected graph Desulfospira joergensenii has 4725 nodes and 889554 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07971
-	and has 9 connected components, where the component with most nodes has 4707 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 322, the mean node degree is 376.53, and the node degree mode is 2. The top 5
-	most central nodes are 1265505.ATUG01000002_gene2399 (degree 3209), 1265505.ATUG01000002_gene1798
-	(degree 2341), 1265505.ATUG01000003_gene211 (degree 2089), 1265505.ATUG01000002_gene2563
-	(degree 1977) and 1265505.ATUG01000003_gene304 (degree 1849).
+	The undirected graph Desulfospira joergensenii has 4725 nodes and 889554
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07971 and has 9 connected components, where the component
+	with most nodes has 4707 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 322, the mean node degree is 376.53,
+	and the node degree mode is 2. The top 5 most central nodes are 1265505.ATUG01000002_gene2399
+	(degree 3209), 1265505.ATUG01000002_gene1798 (degree 2341), 1265505.ATUG01000003_gene211
+	(degree 2089), 1265505.ATUG01000002_gene2563 (degree 1977) and 1265505.ATUG01000003_gene304
+	(degree 1849).
 	
 
 

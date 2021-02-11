@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:32.403580
 
-The undirected graph Gemmatimonadetes bacterium KBS708 has 5321 nodes and 521030
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03681 and has 14 connected components, where the component with most nodes has
-5292 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 175, the mean node degree is 195.84, and the node degree mode is 6. The
-top 5 most central nodes are 861299.J421_0071 (degree 2249), 861299.J421_1151 (degree
-1670), 861299.J421_2977 (degree 1132), 861299.J421_3918 (degree 1115) and 861299.J421_5885
-(degree 1043).
+The undirected graph Gemmatimonadetes bacterium KBS708 has 5321 nodes and
+521030 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03681 and has 14 connected components, where the
+component with most nodes has 5292 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 175, the mean node degree
+is 195.84, and the node degree mode is 6. The top 5 most central nodes
+are 861299.J421_0071 (degree 2249), 861299.J421_1151 (degree 1670), 861299.J421_2977
+(degree 1132), 861299.J421_3918 (degree 1115) and 861299.J421_5885 (degree
+1043).
 
 
 References
@@ -107,14 +108,15 @@ def GemmatimonadetesBacteriumKbs708(
 	
 	Datetime: 2021-02-02 21:46:32.403580
 	
-	The undirected graph Gemmatimonadetes bacterium KBS708 has 5321 nodes and 521030
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03681 and has 14 connected components, where the component with most nodes has
-	5292 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 175, the mean node degree is 195.84, and the node degree mode is 6. The
-	top 5 most central nodes are 861299.J421_0071 (degree 2249), 861299.J421_1151 (degree
-	1670), 861299.J421_2977 (degree 1132), 861299.J421_3918 (degree 1115) and 861299.J421_5885
-	(degree 1043).
+	The undirected graph Gemmatimonadetes bacterium KBS708 has 5321 nodes and
+	521030 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03681 and has 14 connected components, where the
+	component with most nodes has 5292 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 175, the mean node degree
+	is 195.84, and the node degree mode is 6. The top 5 most central nodes
+	are 861299.J421_0071 (degree 2249), 861299.J421_1151 (degree 1670), 861299.J421_2977
+	(degree 1132), 861299.J421_3918 (degree 1115) and 861299.J421_5885 (degree
+	1043).
 	
 
 

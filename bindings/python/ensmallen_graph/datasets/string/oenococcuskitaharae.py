@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:07.983649
 
-The undirected graph Oenococcus kitaharae has 1811 nodes and 109085 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06656 and
-has 12 connected components, where the component with most nodes has 1774 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 120.47, and the node degree mode is 4. The top 5 most central
-nodes are 1045004.OKIT_1753 (degree 796), 1045004.OKIT_1344 (degree 688), 1045004.OKIT_1186
-(degree 654), 1045004.OKIT_0606 (degree 595) and 1045004.OKIT_1655 (degree 595).
+The undirected graph Oenococcus kitaharae has 1811 nodes and 109085 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06656 and has 12 connected components, where the component with most
+nodes has 1774 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 120.47, and
+the node degree mode is 4. The top 5 most central nodes are 1045004.OKIT_1753
+(degree 796), 1045004.OKIT_1344 (degree 688), 1045004.OKIT_1186 (degree
+654), 1045004.OKIT_0606 (degree 595) and 1045004.OKIT_1655 (degree 595).
 
 
 References
@@ -106,13 +107,14 @@ def OenococcusKitaharae(
 	
 	Datetime: 2021-02-02 22:16:07.983649
 	
-	The undirected graph Oenococcus kitaharae has 1811 nodes and 109085 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06656 and
-	has 12 connected components, where the component with most nodes has 1774 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 120.47, and the node degree mode is 4. The top 5 most central
-	nodes are 1045004.OKIT_1753 (degree 796), 1045004.OKIT_1344 (degree 688), 1045004.OKIT_1186
-	(degree 654), 1045004.OKIT_0606 (degree 595) and 1045004.OKIT_1655 (degree 595).
+	The undirected graph Oenococcus kitaharae has 1811 nodes and 109085 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06656 and has 12 connected components, where the component with most
+	nodes has 1774 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 120.47, and
+	the node degree mode is 4. The top 5 most central nodes are 1045004.OKIT_1753
+	(degree 796), 1045004.OKIT_1344 (degree 688), 1045004.OKIT_1186 (degree
+	654), 1045004.OKIT_0606 (degree 595) and 1045004.OKIT_1655 (degree 595).
 	
 
 

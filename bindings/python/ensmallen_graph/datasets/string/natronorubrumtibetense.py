@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:25.876426
 
-The undirected graph Natronorubrum tibetense has 4586 nodes and 381262 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03626 and
-has 49 connected components, where the component with most nodes has 4468 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 166.27, and the node degree mode is 2. The top 5 most central
-nodes are 1114856.C496_20040 (degree 1163), 1114856.C496_20935 (degree 1162), 1114856.C496_01760
-(degree 1095), 1114856.C496_22784 (degree 1044) and 1114856.C496_17977 (degree 981).
+The undirected graph Natronorubrum tibetense has 4586 nodes and 381262
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03626 and has 49 connected components, where the component
+with most nodes has 4468 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 166.27,
+and the node degree mode is 2. The top 5 most central nodes are 1114856.C496_20040
+(degree 1163), 1114856.C496_20935 (degree 1162), 1114856.C496_01760 (degree
+1095), 1114856.C496_22784 (degree 1044) and 1114856.C496_17977 (degree
+981).
 
 
 References
@@ -106,13 +108,15 @@ def NatronorubrumTibetense(
 	
 	Datetime: 2021-02-02 22:26:25.876426
 	
-	The undirected graph Natronorubrum tibetense has 4586 nodes and 381262 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03626 and
-	has 49 connected components, where the component with most nodes has 4468 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 166.27, and the node degree mode is 2. The top 5 most central
-	nodes are 1114856.C496_20040 (degree 1163), 1114856.C496_20935 (degree 1162), 1114856.C496_01760
-	(degree 1095), 1114856.C496_22784 (degree 1044) and 1114856.C496_17977 (degree 981).
+	The undirected graph Natronorubrum tibetense has 4586 nodes and 381262
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03626 and has 49 connected components, where the component
+	with most nodes has 4468 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 166.27,
+	and the node degree mode is 2. The top 5 most central nodes are 1114856.C496_20040
+	(degree 1163), 1114856.C496_20935 (degree 1162), 1114856.C496_01760 (degree
+	1095), 1114856.C496_22784 (degree 1044) and 1114856.C496_17977 (degree
+	981).
 	
 
 

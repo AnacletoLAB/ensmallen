@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:13.420036
 
-The undirected graph Spirillospora albida has 5418 nodes and 1006025 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06856 and
-has 19 connected components, where the component with most nodes has 5376 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 335,
-the mean node degree is 371.36, and the node degree mode is 2. The top 5 most central
-nodes are 58123.JOFJ01000006_gene122 (degree 2021), 58123.JOFJ01000002_gene2385 (degree
-1726), 58123.JOFJ01000001_gene3242 (degree 1710), 58123.JOFJ01000002_gene2698 (degree
-1700) and 58123.JOFJ01000012_gene5355 (degree 1681).
+The undirected graph Spirillospora albida has 5418 nodes and 1006025 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06856 and has 19 connected components, where the component with most
+nodes has 5376 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 335, the mean node degree is 371.36, and
+the node degree mode is 2. The top 5 most central nodes are 58123.JOFJ01000006_gene122
+(degree 2021), 58123.JOFJ01000002_gene2385 (degree 1726), 58123.JOFJ01000001_gene3242
+(degree 1710), 58123.JOFJ01000002_gene2698 (degree 1700) and 58123.JOFJ01000012_gene5355
+(degree 1681).
 
 
 References
@@ -107,14 +108,15 @@ def SpirillosporaAlbida(
 	
 	Datetime: 2021-02-02 18:19:13.420036
 	
-	The undirected graph Spirillospora albida has 5418 nodes and 1006025 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06856 and
-	has 19 connected components, where the component with most nodes has 5376 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 335,
-	the mean node degree is 371.36, and the node degree mode is 2. The top 5 most central
-	nodes are 58123.JOFJ01000006_gene122 (degree 2021), 58123.JOFJ01000002_gene2385 (degree
-	1726), 58123.JOFJ01000001_gene3242 (degree 1710), 58123.JOFJ01000002_gene2698 (degree
-	1700) and 58123.JOFJ01000012_gene5355 (degree 1681).
+	The undirected graph Spirillospora albida has 5418 nodes and 1006025 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06856 and has 19 connected components, where the component with most
+	nodes has 5376 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 335, the mean node degree is 371.36, and
+	the node degree mode is 2. The top 5 most central nodes are 58123.JOFJ01000006_gene122
+	(degree 2021), 58123.JOFJ01000002_gene2385 (degree 1726), 58123.JOFJ01000001_gene3242
+	(degree 1710), 58123.JOFJ01000002_gene2698 (degree 1700) and 58123.JOFJ01000012_gene5355
+	(degree 1681).
 	
 
 

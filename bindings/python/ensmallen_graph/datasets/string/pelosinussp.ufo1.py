@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:39.251185
 
-The undirected graph Pelosinus sp. UFO1 has 4716 nodes and 583694 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05250 and
-has 29 connected components, where the component with most nodes has 4648 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 209,
-the mean node degree is 247.54, and the node degree mode is 1. The top 5 most central
-nodes are 484770.UFO1_2626 (degree 1838), 484770.UFO1_0108 (degree 1478), 484770.UFO1_0264
-(degree 1472), 484770.UFO1_2023 (degree 1385) and 484770.UFO1_4371 (degree 1383).
+The undirected graph Pelosinus sp. UFO1 has 4716 nodes and 583694 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05250 and has 29 connected components, where the component with most
+nodes has 4648 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 209, the mean node degree is 247.54, and
+the node degree mode is 1. The top 5 most central nodes are 484770.UFO1_2626
+(degree 1838), 484770.UFO1_0108 (degree 1478), 484770.UFO1_0264 (degree
+1472), 484770.UFO1_2023 (degree 1385) and 484770.UFO1_4371 (degree 1383).
 
 
 References
@@ -106,13 +107,14 @@ def PelosinusSp.Ufo1(
 	
 	Datetime: 2021-02-02 20:58:39.251185
 	
-	The undirected graph Pelosinus sp. UFO1 has 4716 nodes and 583694 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05250 and
-	has 29 connected components, where the component with most nodes has 4648 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 209,
-	the mean node degree is 247.54, and the node degree mode is 1. The top 5 most central
-	nodes are 484770.UFO1_2626 (degree 1838), 484770.UFO1_0108 (degree 1478), 484770.UFO1_0264
-	(degree 1472), 484770.UFO1_2023 (degree 1385) and 484770.UFO1_4371 (degree 1383).
+	The undirected graph Pelosinus sp. UFO1 has 4716 nodes and 583694 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05250 and has 29 connected components, where the component with most
+	nodes has 4648 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 209, the mean node degree is 247.54, and
+	the node degree mode is 1. The top 5 most central nodes are 484770.UFO1_2626
+	(degree 1838), 484770.UFO1_0108 (degree 1478), 484770.UFO1_0264 (degree
+	1472), 484770.UFO1_2023 (degree 1385) and 484770.UFO1_4371 (degree 1383).
 	
 
 

@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:19.767787
 
-The undirected graph web-EPA has 4271 nodes and 8909 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00098 and has
-8 connected components, where the component with most nodes has 4253 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 2, the
-mean node degree is 4.17, and the node degree mode is 1. The top 5 most central nodes
-are 53 (degree 175), 75 (degree 175), 61 (degree 164), 7 (degree 144) and 102 (degree
-136).
+The undirected graph web-EPA has 4271 nodes and 8909 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00098 and has 8 connected components, where the component with most
+nodes has 4253 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 4.17, and the
+node degree mode is 1. The top 5 most central nodes are 53 (degree 175),
+75 (degree 175), 61 (degree 164), 7 (degree 144) and 102 (degree 136).
 
 
 References
@@ -111,13 +111,13 @@ def WebEpa(
 	
 	Datetime: 2021-02-06 09:52:19.767787
 	
-	The undirected graph web-EPA has 4271 nodes and 8909 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00098 and has
-	8 connected components, where the component with most nodes has 4253 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 2, the
-	mean node degree is 4.17, and the node degree mode is 1. The top 5 most central nodes
-	are 53 (degree 175), 75 (degree 175), 61 (degree 164), 7 (degree 144) and 102 (degree
-	136).
+	The undirected graph web-EPA has 4271 nodes and 8909 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00098 and has 8 connected components, where the component with most
+	nodes has 4253 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 4.17, and the
+	node degree mode is 1. The top 5 most central nodes are 53 (degree 175),
+	75 (degree 175), 61 (degree 164), 7 (degree 144) and 102 (degree 136).
 	
 
 

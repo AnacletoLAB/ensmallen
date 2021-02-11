@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:40.408510
 
-The undirected graph Nonlabens sediminis has 2929 nodes and 217694 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05077 and
-has 12 connected components, where the component with most nodes has 2899 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 148.65, and the node degree mode is 2. The top 5 most central
-nodes are 319236.JCM19294_2262 (degree 843), 319236.JCM19294_1952 (degree 843), 319236.JCM19294_835
-(degree 784), 319236.JCM19294_2434 (degree 741) and 319236.JCM19294_1781 (degree
+The undirected graph Nonlabens sediminis has 2929 nodes and 217694 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05077 and has 12 connected components, where the component with most
+nodes has 2899 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 148.65, and
+the node degree mode is 2. The top 5 most central nodes are 319236.JCM19294_2262
+(degree 843), 319236.JCM19294_1952 (degree 843), 319236.JCM19294_835 (degree
+784), 319236.JCM19294_2434 (degree 741) and 319236.JCM19294_1781 (degree
 692).
 
 
@@ -107,13 +108,14 @@ def NonlabensSediminis(
 	
 	Datetime: 2021-02-02 20:27:40.408510
 	
-	The undirected graph Nonlabens sediminis has 2929 nodes and 217694 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05077 and
-	has 12 connected components, where the component with most nodes has 2899 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 148.65, and the node degree mode is 2. The top 5 most central
-	nodes are 319236.JCM19294_2262 (degree 843), 319236.JCM19294_1952 (degree 843), 319236.JCM19294_835
-	(degree 784), 319236.JCM19294_2434 (degree 741) and 319236.JCM19294_1781 (degree
+	The undirected graph Nonlabens sediminis has 2929 nodes and 217694 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05077 and has 12 connected components, where the component with most
+	nodes has 2899 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 148.65, and
+	the node degree mode is 2. The top 5 most central nodes are 319236.JCM19294_2262
+	(degree 843), 319236.JCM19294_1952 (degree 843), 319236.JCM19294_835 (degree
+	784), 319236.JCM19294_2434 (degree 741) and 319236.JCM19294_1781 (degree
 	692).
 	
 

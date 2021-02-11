@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:15.588282
 
-The undirected graph Streptococcus vestibularis has 1967 nodes and 132441 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06850
-and has 9 connected components, where the component with most nodes has 1948 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 134.66, and the node degree mode is 3. The top 5
-most central nodes are 904306.HMPREF9192_0604 (degree 855), 904306.HMPREF9192_1876
-(degree 823), 904306.HMPREF9192_0370 (degree 791), 904306.HMPREF9192_0958 (degree
-724) and 904306.HMPREF9192_1994 (degree 686).
+The undirected graph Streptococcus vestibularis has 1967 nodes and 132441
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06850 and has 9 connected components, where the component
+with most nodes has 1948 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 134.66,
+and the node degree mode is 3. The top 5 most central nodes are 904306.HMPREF9192_0604
+(degree 855), 904306.HMPREF9192_1876 (degree 823), 904306.HMPREF9192_0370
+(degree 791), 904306.HMPREF9192_0958 (degree 724) and 904306.HMPREF9192_1994
+(degree 686).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusVestibularis(
 	
 	Datetime: 2021-02-02 21:54:15.588282
 	
-	The undirected graph Streptococcus vestibularis has 1967 nodes and 132441 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06850
-	and has 9 connected components, where the component with most nodes has 1948 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 134.66, and the node degree mode is 3. The top 5
-	most central nodes are 904306.HMPREF9192_0604 (degree 855), 904306.HMPREF9192_1876
-	(degree 823), 904306.HMPREF9192_0370 (degree 791), 904306.HMPREF9192_0958 (degree
-	724) and 904306.HMPREF9192_1994 (degree 686).
+	The undirected graph Streptococcus vestibularis has 1967 nodes and 132441
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06850 and has 9 connected components, where the component
+	with most nodes has 1948 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 134.66,
+	and the node degree mode is 3. The top 5 most central nodes are 904306.HMPREF9192_0604
+	(degree 855), 904306.HMPREF9192_1876 (degree 823), 904306.HMPREF9192_0370
+	(degree 791), 904306.HMPREF9192_0958 (degree 724) and 904306.HMPREF9192_1994
+	(degree 686).
 	
 
 

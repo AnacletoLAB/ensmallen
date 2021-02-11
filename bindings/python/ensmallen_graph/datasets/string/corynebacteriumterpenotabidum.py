@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:55.730430
 
-The undirected graph Corynebacterium terpenotabidum has 2350 nodes and 156827 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05682
-and has 14 connected components, where the component with most nodes has 2308 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 133.47, and the node degree mode is 5. The top 5
-most central nodes are 1200352.A606_10715 (degree 1030), 1200352.A606_04970 (degree
-959), 1200352.A606_03090 (degree 804), 1200352.A606_09255 (degree 784) and 1200352.A606_09280
+The undirected graph Corynebacterium terpenotabidum has 2350 nodes and
+156827 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05682 and has 14 connected components, where the
+component with most nodes has 2308 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+is 133.47, and the node degree mode is 5. The top 5 most central nodes
+are 1200352.A606_10715 (degree 1030), 1200352.A606_04970 (degree 959),
+1200352.A606_03090 (degree 804), 1200352.A606_09255 (degree 784) and 1200352.A606_09280
 (degree 781).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumTerpenotabidum(
 	
 	Datetime: 2021-02-02 23:13:55.730430
 	
-	The undirected graph Corynebacterium terpenotabidum has 2350 nodes and 156827 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05682
-	and has 14 connected components, where the component with most nodes has 2308 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 133.47, and the node degree mode is 5. The top 5
-	most central nodes are 1200352.A606_10715 (degree 1030), 1200352.A606_04970 (degree
-	959), 1200352.A606_03090 (degree 804), 1200352.A606_09255 (degree 784) and 1200352.A606_09280
+	The undirected graph Corynebacterium terpenotabidum has 2350 nodes and
+	156827 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05682 and has 14 connected components, where the
+	component with most nodes has 2308 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+	is 133.47, and the node degree mode is 5. The top 5 most central nodes
+	are 1200352.A606_10715 (degree 1030), 1200352.A606_04970 (degree 959),
+	1200352.A606_03090 (degree 804), 1200352.A606_09255 (degree 784) and 1200352.A606_09280
 	(degree 781).
 	
 

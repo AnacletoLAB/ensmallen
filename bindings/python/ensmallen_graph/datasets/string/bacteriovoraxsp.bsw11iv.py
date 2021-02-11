@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:17.444672
 
-The undirected graph Bacteriovorax sp. BSW11IV has 3435 nodes and 271912 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04610
-and has 30 connected components, where the component with most nodes has 3357 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 158.32, and the node degree mode is 4. The top 5
-most central nodes are 1353529.M899_1492 (degree 1325), 1353529.M899_1347 (degree
-1101), 1353529.M899_2503 (degree 1080), 1353529.M899_1411 (degree 1055) and 1353529.M899_0464
-(degree 1051).
+The undirected graph Bacteriovorax sp. BSW11IV has 3435 nodes and 271912
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04610 and has 30 connected components, where the component
+with most nodes has 3357 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 158.32,
+and the node degree mode is 4. The top 5 most central nodes are 1353529.M899_1492
+(degree 1325), 1353529.M899_1347 (degree 1101), 1353529.M899_2503 (degree
+1080), 1353529.M899_1411 (degree 1055) and 1353529.M899_0464 (degree 1051).
 
 
 References
@@ -107,14 +107,14 @@ def BacteriovoraxSp.Bsw11iv(
 	
 	Datetime: 2021-02-03 22:07:17.444672
 	
-	The undirected graph Bacteriovorax sp. BSW11IV has 3435 nodes and 271912 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04610
-	and has 30 connected components, where the component with most nodes has 3357 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 158.32, and the node degree mode is 4. The top 5
-	most central nodes are 1353529.M899_1492 (degree 1325), 1353529.M899_1347 (degree
-	1101), 1353529.M899_2503 (degree 1080), 1353529.M899_1411 (degree 1055) and 1353529.M899_0464
-	(degree 1051).
+	The undirected graph Bacteriovorax sp. BSW11IV has 3435 nodes and 271912
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04610 and has 30 connected components, where the component
+	with most nodes has 3357 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 158.32,
+	and the node degree mode is 4. The top 5 most central nodes are 1353529.M899_1492
+	(degree 1325), 1353529.M899_1347 (degree 1101), 1353529.M899_2503 (degree
+	1080), 1353529.M899_1411 (degree 1055) and 1353529.M899_0464 (degree 1051).
 	
 
 

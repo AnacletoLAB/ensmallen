@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:09.247790
 
-The undirected graph Nocardia pneumoniae has 6400 nodes and 874181 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04269 and
-has 31 connected components, where the component with most nodes has 6318 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 273.18, and the node degree mode is 2. The top 5 most central
-nodes are 1206737.BAGF01000075_gene4772 (degree 2383), 1206737.BAGF01000040_gene2268
-(degree 2059), 1206737.BAGF01000023_gene1217 (degree 1977), 1206737.BAGF01000035_gene1918
-(degree 1955) and 1206737.BAGF01000045_gene2868 (degree 1937).
+The undirected graph Nocardia pneumoniae has 6400 nodes and 874181 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04269 and has 31 connected components, where the component with most
+nodes has 6318 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 273.18, and
+the node degree mode is 2. The top 5 most central nodes are 1206737.BAGF01000075_gene4772
+(degree 2383), 1206737.BAGF01000040_gene2268 (degree 2059), 1206737.BAGF01000023_gene1217
+(degree 1977), 1206737.BAGF01000035_gene1918 (degree 1955) and 1206737.BAGF01000045_gene2868
+(degree 1937).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaPneumoniae(
 	
 	Datetime: 2021-02-02 23:17:09.247790
 	
-	The undirected graph Nocardia pneumoniae has 6400 nodes and 874181 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04269 and
-	has 31 connected components, where the component with most nodes has 6318 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 273.18, and the node degree mode is 2. The top 5 most central
-	nodes are 1206737.BAGF01000075_gene4772 (degree 2383), 1206737.BAGF01000040_gene2268
-	(degree 2059), 1206737.BAGF01000023_gene1217 (degree 1977), 1206737.BAGF01000035_gene1918
-	(degree 1955) and 1206737.BAGF01000045_gene2868 (degree 1937).
+	The undirected graph Nocardia pneumoniae has 6400 nodes and 874181 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04269 and has 31 connected components, where the component with most
+	nodes has 6318 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 273.18, and
+	the node degree mode is 2. The top 5 most central nodes are 1206737.BAGF01000075_gene4772
+	(degree 2383), 1206737.BAGF01000040_gene2268 (degree 2059), 1206737.BAGF01000023_gene1217
+	(degree 1977), 1206737.BAGF01000035_gene1918 (degree 1955) and 1206737.BAGF01000045_gene2868
+	(degree 1937).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:21.089562
 
-The undirected graph web-edu has 3031 nodes and 6474 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00141 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 4.27, and the node degree mode is 3. The top 5 most central nodes are 2818 (degree
-104), 342 (degree 84), 294 (degree 73), 1575 (degree 72) and 1849 (degree 66).
+The undirected graph web-edu has 3031 nodes and 6474 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00141 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 4.27, and the node degree mode
+is 3. The top 5 most central nodes are 2818 (degree 104), 342 (degree 84),
+294 (degree 73), 1575 (degree 72) and 1849 (degree 66).
 
 
 References
@@ -110,11 +111,12 @@ def WebEdu(
 	
 	Datetime: 2021-02-06 09:52:21.089562
 	
-	The undirected graph web-edu has 3031 nodes and 6474 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00141 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 4.27, and the node degree mode is 3. The top 5 most central nodes are 2818 (degree
-	104), 342 (degree 84), 294 (degree 73), 1575 (degree 72) and 1849 (degree 66).
+	The undirected graph web-edu has 3031 nodes and 6474 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00141 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 4.27, and the node degree mode
+	is 3. The top 5 most central nodes are 2818 (degree 104), 342 (degree 84),
+	294 (degree 73), 1575 (degree 72) and 1849 (degree 66).
 	
 
 

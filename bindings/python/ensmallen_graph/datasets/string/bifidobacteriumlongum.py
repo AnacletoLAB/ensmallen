@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:55.997282
 
-The undirected graph Bifidobacterium longum has 1884 nodes and 146422 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08255 and
-has 8 connected components, where the component with most nodes has 1867 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 155.44, and the node degree mode is 3. The top 5 most central
-nodes are 216816.GS08_09385 (degree 816), 216816.GS08_03760 (degree 808), 216816.GS08_03300
-(degree 684), 216816.GS08_03990 (degree 625) and 216816.GS08_08195 (degree 607).
+The undirected graph Bifidobacterium longum has 1884 nodes and 146422 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08255 and has 8 connected components, where the component with most
+nodes has 1867 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 155.44, and
+the node degree mode is 3. The top 5 most central nodes are 216816.GS08_09385
+(degree 816), 216816.GS08_03760 (degree 808), 216816.GS08_03300 (degree
+684), 216816.GS08_03990 (degree 625) and 216816.GS08_08195 (degree 607).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumLongum(
 	
 	Datetime: 2021-02-02 20:02:55.997282
 	
-	The undirected graph Bifidobacterium longum has 1884 nodes and 146422 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08255 and
-	has 8 connected components, where the component with most nodes has 1867 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 155.44, and the node degree mode is 3. The top 5 most central
-	nodes are 216816.GS08_09385 (degree 816), 216816.GS08_03760 (degree 808), 216816.GS08_03300
-	(degree 684), 216816.GS08_03990 (degree 625) and 216816.GS08_08195 (degree 607).
+	The undirected graph Bifidobacterium longum has 1884 nodes and 146422 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08255 and has 8 connected components, where the component with most
+	nodes has 1867 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 155.44, and
+	the node degree mode is 3. The top 5 most central nodes are 216816.GS08_09385
+	(degree 816), 216816.GS08_03760 (degree 808), 216816.GS08_03300 (degree
+	684), 216816.GS08_03990 (degree 625) and 216816.GS08_08195 (degree 607).
 	
 
 

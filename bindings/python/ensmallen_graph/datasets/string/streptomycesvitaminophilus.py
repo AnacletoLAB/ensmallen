@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:28.511332
 
-The undirected graph Streptomyces vitaminophilus has 5317 nodes and 695211 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04919
-and has 22 connected components, where the component with most nodes has 5257 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 261.50, and the node degree mode is 2. The top 5
-most central nodes are 1123322.KB904654_gene957 (degree 2552), 1123322.KB904653_gene822
-(degree 1886), 1123322.KB904661_gene4240 (degree 1564), 1123322.KB904680_gene3303
-(degree 1530) and 1123322.KB904704_gene48 (degree 1519).
+The undirected graph Streptomyces vitaminophilus has 5317 nodes and 695211
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04919 and has 22 connected components, where the component
+with most nodes has 5257 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 261.50,
+and the node degree mode is 2. The top 5 most central nodes are 1123322.KB904654_gene957
+(degree 2552), 1123322.KB904653_gene822 (degree 1886), 1123322.KB904661_gene4240
+(degree 1564), 1123322.KB904680_gene3303 (degree 1530) and 1123322.KB904704_gene48
+(degree 1519).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesVitaminophilus(
 	
 	Datetime: 2021-02-02 22:51:28.511332
 	
-	The undirected graph Streptomyces vitaminophilus has 5317 nodes and 695211 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04919
-	and has 22 connected components, where the component with most nodes has 5257 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 261.50, and the node degree mode is 2. The top 5
-	most central nodes are 1123322.KB904654_gene957 (degree 2552), 1123322.KB904653_gene822
-	(degree 1886), 1123322.KB904661_gene4240 (degree 1564), 1123322.KB904680_gene3303
-	(degree 1530) and 1123322.KB904704_gene48 (degree 1519).
+	The undirected graph Streptomyces vitaminophilus has 5317 nodes and 695211
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04919 and has 22 connected components, where the component
+	with most nodes has 5257 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 261.50,
+	and the node degree mode is 2. The top 5 most central nodes are 1123322.KB904654_gene957
+	(degree 2552), 1123322.KB904653_gene822 (degree 1886), 1123322.KB904661_gene4240
+	(degree 1564), 1123322.KB904680_gene3303 (degree 1530) and 1123322.KB904704_gene48
+	(degree 1519).
 	
 
 

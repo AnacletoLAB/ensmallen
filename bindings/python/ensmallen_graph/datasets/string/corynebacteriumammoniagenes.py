@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:46.073064
 
-The undirected graph Corynebacterium ammoniagenes has 2638 nodes and 159439 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04584
-and has 9 connected components, where the component with most nodes has 2620 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 120.88, and the node degree mode is 2. The top 5 most
-central nodes are 649754.HMPREF0281_02178 (degree 931), 649754.HMPREF0281_00958 (degree
-877), 649754.HMPREF0281_01212 (degree 871), 649754.HMPREF0281_01783 (degree 825)
-and 649754.HMPREF0281_00649 (degree 770).
+The undirected graph Corynebacterium ammoniagenes has 2638 nodes and 159439
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04584 and has 9 connected components, where the component
+with most nodes has 2620 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 120.88,
+and the node degree mode is 2. The top 5 most central nodes are 649754.HMPREF0281_02178
+(degree 931), 649754.HMPREF0281_00958 (degree 877), 649754.HMPREF0281_01212
+(degree 871), 649754.HMPREF0281_01783 (degree 825) and 649754.HMPREF0281_00649
+(degree 770).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumAmmoniagenes(
 	
 	Datetime: 2021-02-02 21:25:46.073064
 	
-	The undirected graph Corynebacterium ammoniagenes has 2638 nodes and 159439 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04584
-	and has 9 connected components, where the component with most nodes has 2620 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 120.88, and the node degree mode is 2. The top 5 most
-	central nodes are 649754.HMPREF0281_02178 (degree 931), 649754.HMPREF0281_00958 (degree
-	877), 649754.HMPREF0281_01212 (degree 871), 649754.HMPREF0281_01783 (degree 825)
-	and 649754.HMPREF0281_00649 (degree 770).
+	The undirected graph Corynebacterium ammoniagenes has 2638 nodes and 159439
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04584 and has 9 connected components, where the component
+	with most nodes has 2620 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 120.88,
+	and the node degree mode is 2. The top 5 most central nodes are 649754.HMPREF0281_02178
+	(degree 931), 649754.HMPREF0281_00958 (degree 877), 649754.HMPREF0281_01212
+	(degree 871), 649754.HMPREF0281_01783 (degree 825) and 649754.HMPREF0281_00649
+	(degree 770).
 	
 
 

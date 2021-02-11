@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:11.083591
 
-The undirected graph Simiduia agarivorans has 3807 nodes and 377667 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05213 and
-has 17 connected components, where the component with most nodes has 3761 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 198.41, and the node degree mode is 5. The top 5 most central
-nodes are 1117647.M5M_07175 (degree 1365), 1117647.M5M_11625 (degree 1326), 1117647.M5M_18110
-(degree 1141), 1117647.M5M_19280 (degree 1117) and 1117647.M5M_03310 (degree 1052).
+The undirected graph Simiduia agarivorans has 3807 nodes and 377667 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05213 and has 17 connected components, where the component with most
+nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 198.41, and
+the node degree mode is 5. The top 5 most central nodes are 1117647.M5M_07175
+(degree 1365), 1117647.M5M_11625 (degree 1326), 1117647.M5M_18110 (degree
+1141), 1117647.M5M_19280 (degree 1117) and 1117647.M5M_03310 (degree 1052).
 
 
 References
@@ -106,13 +107,14 @@ def SimiduiaAgarivorans(
 	
 	Datetime: 2021-02-02 22:28:11.083591
 	
-	The undirected graph Simiduia agarivorans has 3807 nodes and 377667 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05213 and
-	has 17 connected components, where the component with most nodes has 3761 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 198.41, and the node degree mode is 5. The top 5 most central
-	nodes are 1117647.M5M_07175 (degree 1365), 1117647.M5M_11625 (degree 1326), 1117647.M5M_18110
-	(degree 1141), 1117647.M5M_19280 (degree 1117) and 1117647.M5M_03310 (degree 1052).
+	The undirected graph Simiduia agarivorans has 3807 nodes and 377667 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05213 and has 17 connected components, where the component with most
+	nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 198.41, and
+	the node degree mode is 5. The top 5 most central nodes are 1117647.M5M_07175
+	(degree 1365), 1117647.M5M_11625 (degree 1326), 1117647.M5M_18110 (degree
+	1141), 1117647.M5M_19280 (degree 1117) and 1117647.M5M_03310 (degree 1052).
 	
 
 

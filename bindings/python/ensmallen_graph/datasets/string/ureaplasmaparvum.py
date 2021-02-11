@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:38.243996
 
-The undirected graph Ureaplasma parvum has 610 nodes and 28103 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.15130
-and has 4 connected components, where the component with most nodes has 595 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 82, the mean node degree is 92.14, and the node degree mode is 5. The top 5 most
-central nodes are 273119.UU457 (degree 302), 273119.UU339 (degree 279), 273119.UU141
-(degree 254), 273119.UU084 (degree 249) and 273119.UU324 (degree 247).
+The undirected graph Ureaplasma parvum has 610 nodes and 28103 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15130 and has 4 connected components, where the component
+with most nodes has 595 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 82, the mean node degree is 92.14,
+and the node degree mode is 5. The top 5 most central nodes are 273119.UU457
+(degree 302), 273119.UU339 (degree 279), 273119.UU141 (degree 254), 273119.UU084
+(degree 249) and 273119.UU324 (degree 247).
 
 
 References
@@ -106,13 +107,14 @@ def UreaplasmaParvum(
 	
 	Datetime: 2021-02-02 20:17:38.243996
 	
-	The undirected graph Ureaplasma parvum has 610 nodes and 28103 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.15130
-	and has 4 connected components, where the component with most nodes has 595 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 82, the mean node degree is 92.14, and the node degree mode is 5. The top 5 most
-	central nodes are 273119.UU457 (degree 302), 273119.UU339 (degree 279), 273119.UU141
-	(degree 254), 273119.UU084 (degree 249) and 273119.UU324 (degree 247).
+	The undirected graph Ureaplasma parvum has 610 nodes and 28103 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15130 and has 4 connected components, where the component
+	with most nodes has 595 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 82, the mean node degree is 92.14,
+	and the node degree mode is 5. The top 5 most central nodes are 273119.UU457
+	(degree 302), 273119.UU339 (degree 279), 273119.UU141 (degree 254), 273119.UU084
+	(degree 249) and 273119.UU324 (degree 247).
 	
 
 

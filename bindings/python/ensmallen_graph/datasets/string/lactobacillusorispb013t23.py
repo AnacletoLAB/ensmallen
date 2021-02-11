@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:46.946827
 
-The undirected graph Lactobacillus oris PB013T23 has 2024 nodes and 146172 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07140
-and has 8 connected components, where the component with most nodes has 2010 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 144.44, and the node degree mode is 5. The top 5
-most central nodes are 908339.HMPREF9265_1906 (degree 950), 908339.HMPREF9265_0238
-(degree 785), 908339.HMPREF9265_0900 (degree 698), 908339.HMPREF9265_1498 (degree
-651) and 908339.HMPREF9265_1857 (degree 650).
+The undirected graph Lactobacillus oris PB013T23 has 2024 nodes and 146172
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07140 and has 8 connected components, where the component
+with most nodes has 2010 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 144.44,
+and the node degree mode is 5. The top 5 most central nodes are 908339.HMPREF9265_1906
+(degree 950), 908339.HMPREF9265_0238 (degree 785), 908339.HMPREF9265_0900
+(degree 698), 908339.HMPREF9265_1498 (degree 651) and 908339.HMPREF9265_1857
+(degree 650).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusOrisPb013t23(
 	
 	Datetime: 2021-02-02 21:54:46.946827
 	
-	The undirected graph Lactobacillus oris PB013T23 has 2024 nodes and 146172 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07140
-	and has 8 connected components, where the component with most nodes has 2010 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 144.44, and the node degree mode is 5. The top 5
-	most central nodes are 908339.HMPREF9265_1906 (degree 950), 908339.HMPREF9265_0238
-	(degree 785), 908339.HMPREF9265_0900 (degree 698), 908339.HMPREF9265_1498 (degree
-	651) and 908339.HMPREF9265_1857 (degree 650).
+	The undirected graph Lactobacillus oris PB013T23 has 2024 nodes and 146172
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07140 and has 8 connected components, where the component
+	with most nodes has 2010 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 144.44,
+	and the node degree mode is 5. The top 5 most central nodes are 908339.HMPREF9265_1906
+	(degree 950), 908339.HMPREF9265_0238 (degree 785), 908339.HMPREF9265_0900
+	(degree 698), 908339.HMPREF9265_1498 (degree 651) and 908339.HMPREF9265_1857
+	(degree 650).
 	
 
 

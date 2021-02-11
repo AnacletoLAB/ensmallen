@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:03.274751
 
-The undirected graph Lachnospiraceae bacterium 9143BFAA has 2700 nodes and 201583
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05532 and has 6 connected components, where the component with most nodes has
-2680 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 111, the mean node degree is 149.32, and the node degree mode is 7. The
-top 5 most central nodes are 658088.HMPREF0987_00387 (degree 1100), 658088.HMPREF0987_01325
-(degree 1039), 658088.HMPREF0987_02533 (degree 897), 658088.HMPREF0987_01486 (degree
+The undirected graph Lachnospiraceae bacterium 9143BFAA has 2700 nodes
+and 201583 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05532 and has 6 connected components, where the
+component with most nodes has 2680 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+is 149.32, and the node degree mode is 7. The top 5 most central nodes
+are 658088.HMPREF0987_00387 (degree 1100), 658088.HMPREF0987_01325 (degree
+1039), 658088.HMPREF0987_02533 (degree 897), 658088.HMPREF0987_01486 (degree
 865) and 658088.HMPREF0987_02443 (degree 863).
 
 
@@ -107,13 +108,14 @@ def LachnospiraceaeBacterium9143bfaa(
 	
 	Datetime: 2021-02-02 21:27:03.274751
 	
-	The undirected graph Lachnospiraceae bacterium 9143BFAA has 2700 nodes and 201583
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05532 and has 6 connected components, where the component with most nodes has
-	2680 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 111, the mean node degree is 149.32, and the node degree mode is 7. The
-	top 5 most central nodes are 658088.HMPREF0987_00387 (degree 1100), 658088.HMPREF0987_01325
-	(degree 1039), 658088.HMPREF0987_02533 (degree 897), 658088.HMPREF0987_01486 (degree
+	The undirected graph Lachnospiraceae bacterium 9143BFAA has 2700 nodes
+	and 201583 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05532 and has 6 connected components, where the
+	component with most nodes has 2680 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 111, the mean node degree
+	is 149.32, and the node degree mode is 7. The top 5 most central nodes
+	are 658088.HMPREF0987_00387 (degree 1100), 658088.HMPREF0987_01325 (degree
+	1039), 658088.HMPREF0987_02533 (degree 897), 658088.HMPREF0987_01486 (degree
 	865) and 658088.HMPREF0987_02443 (degree 863).
 	
 

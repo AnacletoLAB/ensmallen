@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:10.160352
 
-The undirected graph Bartonella sp. R4 has 1788 nodes and 109284 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06841 and
-has 28 connected components, where the component with most nodes has 1720 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 122.24, and the node degree mode is 1. The top 5 most central
-nodes are 928210.CALU01000019_gene1333 (degree 747), 928210.CALU01000047_gene163
-(degree 640), 928210.CALU01000002_gene442 (degree 587), 928210.CALU01000047_gene160
-(degree 562) and 928210.CALU01000019_gene1276 (degree 560).
+The undirected graph Bartonella sp. R4 has 1788 nodes and 109284 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06841 and has 28 connected components, where the component with most
+nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 122.24, and
+the node degree mode is 1. The top 5 most central nodes are 928210.CALU01000019_gene1333
+(degree 747), 928210.CALU01000047_gene163 (degree 640), 928210.CALU01000002_gene442
+(degree 587), 928210.CALU01000047_gene160 (degree 562) and 928210.CALU01000019_gene1276
+(degree 560).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaSp.R4(
 	
 	Datetime: 2021-02-02 21:57:10.160352
 	
-	The undirected graph Bartonella sp. R4 has 1788 nodes and 109284 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06841 and
-	has 28 connected components, where the component with most nodes has 1720 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 122.24, and the node degree mode is 1. The top 5 most central
-	nodes are 928210.CALU01000019_gene1333 (degree 747), 928210.CALU01000047_gene163
-	(degree 640), 928210.CALU01000002_gene442 (degree 587), 928210.CALU01000047_gene160
-	(degree 562) and 928210.CALU01000019_gene1276 (degree 560).
+	The undirected graph Bartonella sp. R4 has 1788 nodes and 109284 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06841 and has 28 connected components, where the component with most
+	nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 122.24, and
+	the node degree mode is 1. The top 5 most central nodes are 928210.CALU01000019_gene1333
+	(degree 747), 928210.CALU01000047_gene163 (degree 640), 928210.CALU01000002_gene442
+	(degree 587), 928210.CALU01000047_gene160 (degree 562) and 928210.CALU01000019_gene1276
+	(degree 560).
 	
 
 

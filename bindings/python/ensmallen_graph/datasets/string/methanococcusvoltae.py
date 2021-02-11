@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:54.782837
 
-The undirected graph Methanococcus voltae has 1707 nodes and 185996 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12774
-and has 6 connected components, where the component with most nodes has 1695 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 217.92, and the node degree mode is 2. The top 5
-most central nodes are 456320.Mvol_1211 (degree 710), 456320.Mvol_0963 (degree 705),
-456320.Mvol_0544 (degree 699), 456320.Mvol_0628 (degree 687) and 456320.Mvol_0366
-(degree 686).
+The undirected graph Methanococcus voltae has 1707 nodes and 185996 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12774 and has 6 connected components, where the component
+with most nodes has 1695 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 230, the mean node degree is 217.92,
+and the node degree mode is 2. The top 5 most central nodes are 456320.Mvol_1211
+(degree 710), 456320.Mvol_0963 (degree 705), 456320.Mvol_0544 (degree 699),
+456320.Mvol_0628 (degree 687) and 456320.Mvol_0366 (degree 686).
 
 
 References
@@ -107,14 +107,14 @@ def MethanococcusVoltae(
 	
 	Datetime: 2021-02-02 20:52:54.782837
 	
-	The undirected graph Methanococcus voltae has 1707 nodes and 185996 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12774
-	and has 6 connected components, where the component with most nodes has 1695 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 217.92, and the node degree mode is 2. The top 5
-	most central nodes are 456320.Mvol_1211 (degree 710), 456320.Mvol_0963 (degree 705),
-	456320.Mvol_0544 (degree 699), 456320.Mvol_0628 (degree 687) and 456320.Mvol_0366
-	(degree 686).
+	The undirected graph Methanococcus voltae has 1707 nodes and 185996 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12774 and has 6 connected components, where the component
+	with most nodes has 1695 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 230, the mean node degree is 217.92,
+	and the node degree mode is 2. The top 5 most central nodes are 456320.Mvol_1211
+	(degree 710), 456320.Mvol_0963 (degree 705), 456320.Mvol_0544 (degree 699),
+	456320.Mvol_0628 (degree 687) and 456320.Mvol_0366 (degree 686).
 	
 
 

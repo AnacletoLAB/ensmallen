@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:37.632512
 
-The undirected graph Togninia minima has 7096 nodes and 553047 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02197 and
-has 15 connected components, where the component with most nodes has 7063 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 155.88, and the node degree mode is 1. The top 5 most central
-nodes are 223192.XP_007917153.1 (degree 1841), 223192.XP_007914832.1 (degree 1398),
-223192.XP_007918644.1 (degree 1312), 223192.XP_007916883.1 (degree 1232) and 223192.XP_007915836.1
+The undirected graph Togninia minima has 7096 nodes and 553047 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02197 and has 15 connected components, where the component with most
+nodes has 7063 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 155.88, and
+the node degree mode is 1. The top 5 most central nodes are 223192.XP_007917153.1
+(degree 1841), 223192.XP_007914832.1 (degree 1398), 223192.XP_007918644.1
+(degree 1312), 223192.XP_007916883.1 (degree 1232) and 223192.XP_007915836.1
 (degree 1217).
 
 
@@ -107,13 +108,14 @@ def TogniniaMinima(
 	
 	Datetime: 2021-02-02 20:04:37.632512
 	
-	The undirected graph Togninia minima has 7096 nodes and 553047 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02197 and
-	has 15 connected components, where the component with most nodes has 7063 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 155.88, and the node degree mode is 1. The top 5 most central
-	nodes are 223192.XP_007917153.1 (degree 1841), 223192.XP_007914832.1 (degree 1398),
-	223192.XP_007918644.1 (degree 1312), 223192.XP_007916883.1 (degree 1232) and 223192.XP_007915836.1
+	The undirected graph Togninia minima has 7096 nodes and 553047 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02197 and has 15 connected components, where the component with most
+	nodes has 7063 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 155.88, and
+	the node degree mode is 1. The top 5 most central nodes are 223192.XP_007917153.1
+	(degree 1841), 223192.XP_007914832.1 (degree 1398), 223192.XP_007918644.1
+	(degree 1312), 223192.XP_007916883.1 (degree 1232) and 223192.XP_007915836.1
 	(degree 1217).
 	
 

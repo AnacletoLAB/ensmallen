@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:46.086659
 
-The undirected graph Glaciecola sp. 4H37YE5 has 4511 nodes and 520393 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05116 and
-has 18 connected components, where the component with most nodes has 4462 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 230.72, and the node degree mode is 2. The top 5 most central
-nodes are 983545.Glaag_0015 (degree 1466), 983545.Glaag_3103 (degree 1351), 983545.Glaag_4031
-(degree 1350), 983545.Glaag_1213 (degree 1192) and 983545.Glaag_0988 (degree 1111).
+The undirected graph Glaciecola sp. 4H37YE5 has 4511 nodes and 520393 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05116 and has 18 connected components, where the component with most
+nodes has 4462 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 230.72, and
+the node degree mode is 2. The top 5 most central nodes are 983545.Glaag_0015
+(degree 1466), 983545.Glaag_3103 (degree 1351), 983545.Glaag_4031 (degree
+1350), 983545.Glaag_1213 (degree 1192) and 983545.Glaag_0988 (degree 1111).
 
 
 References
@@ -106,13 +107,14 @@ def GlaciecolaSp.4h37ye5(
 	
 	Datetime: 2021-02-02 22:03:46.086659
 	
-	The undirected graph Glaciecola sp. 4H37YE5 has 4511 nodes and 520393 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05116 and
-	has 18 connected components, where the component with most nodes has 4462 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 230.72, and the node degree mode is 2. The top 5 most central
-	nodes are 983545.Glaag_0015 (degree 1466), 983545.Glaag_3103 (degree 1351), 983545.Glaag_4031
-	(degree 1350), 983545.Glaag_1213 (degree 1192) and 983545.Glaag_0988 (degree 1111).
+	The undirected graph Glaciecola sp. 4H37YE5 has 4511 nodes and 520393 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05116 and has 18 connected components, where the component with most
+	nodes has 4462 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 230.72, and
+	the node degree mode is 2. The top 5 most central nodes are 983545.Glaag_0015
+	(degree 1466), 983545.Glaag_3103 (degree 1351), 983545.Glaag_4031 (degree
+	1350), 983545.Glaag_1213 (degree 1192) and 983545.Glaag_0988 (degree 1111).
 	
 
 

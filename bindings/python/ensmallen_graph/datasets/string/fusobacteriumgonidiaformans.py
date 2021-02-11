@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:20.931210
 
-The undirected graph Fusobacterium gonidiaformans has 1614 nodes and 106189 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08158
-and has 10 connected components, where the component with most nodes has 1592 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 131.58, and the node degree mode is 2. The top 5
-most central nodes are 469615.FGAG_00381 (degree 761), 469615.FGAG_00065 (degree
-593), 469615.FGAG_00348 (degree 587), 469615.FGAG_00985 (degree 587) and 469615.FGAG_01335
-(degree 579).
+The undirected graph Fusobacterium gonidiaformans has 1614 nodes and 106189
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08158 and has 10 connected components, where the component
+with most nodes has 1592 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 131.58,
+and the node degree mode is 2. The top 5 most central nodes are 469615.FGAG_00381
+(degree 761), 469615.FGAG_00065 (degree 593), 469615.FGAG_00348 (degree
+587), 469615.FGAG_00985 (degree 587) and 469615.FGAG_01335 (degree 579).
 
 
 References
@@ -107,14 +107,14 @@ def FusobacteriumGonidiaformans(
 	
 	Datetime: 2021-02-02 20:55:20.931210
 	
-	The undirected graph Fusobacterium gonidiaformans has 1614 nodes and 106189 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08158
-	and has 10 connected components, where the component with most nodes has 1592 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 131.58, and the node degree mode is 2. The top 5
-	most central nodes are 469615.FGAG_00381 (degree 761), 469615.FGAG_00065 (degree
-	593), 469615.FGAG_00348 (degree 587), 469615.FGAG_00985 (degree 587) and 469615.FGAG_01335
-	(degree 579).
+	The undirected graph Fusobacterium gonidiaformans has 1614 nodes and 106189
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08158 and has 10 connected components, where the component
+	with most nodes has 1592 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 131.58,
+	and the node degree mode is 2. The top 5 most central nodes are 469615.FGAG_00381
+	(degree 761), 469615.FGAG_00065 (degree 593), 469615.FGAG_00348 (degree
+	587), 469615.FGAG_00985 (degree 587) and 469615.FGAG_01335 (degree 579).
 	
 
 

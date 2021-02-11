@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:00.041768
 
-The undirected graph Bacillus sp. G2 has 5112 nodes and 655764 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05020 and
-has 31 connected components, where the component with most nodes has 5038 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 256.56, and the node degree mode is 3. The top 5 most central
-nodes are 1243664.CAVL020000005_gene288 (degree 1899), 1243664.CAVL020000064_gene3144
-(degree 1528), 1243664.CAVL020000025_gene1506 (degree 1492), 1243664.CAVL020000027_gene768
-(degree 1486) and 1243664.CAVL020000032_gene2844 (degree 1448).
+The undirected graph Bacillus sp. G2 has 5112 nodes and 655764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05020 and has 31 connected components, where the component with most
+nodes has 5038 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 256.56, and
+the node degree mode is 3. The top 5 most central nodes are 1243664.CAVL020000005_gene288
+(degree 1899), 1243664.CAVL020000064_gene3144 (degree 1528), 1243664.CAVL020000025_gene1506
+(degree 1492), 1243664.CAVL020000027_gene768 (degree 1486) and 1243664.CAVL020000032_gene2844
+(degree 1448).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.G2(
 	
 	Datetime: 2021-02-02 23:33:00.041768
 	
-	The undirected graph Bacillus sp. G2 has 5112 nodes and 655764 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05020 and
-	has 31 connected components, where the component with most nodes has 5038 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 256.56, and the node degree mode is 3. The top 5 most central
-	nodes are 1243664.CAVL020000005_gene288 (degree 1899), 1243664.CAVL020000064_gene3144
-	(degree 1528), 1243664.CAVL020000025_gene1506 (degree 1492), 1243664.CAVL020000027_gene768
-	(degree 1486) and 1243664.CAVL020000032_gene2844 (degree 1448).
+	The undirected graph Bacillus sp. G2 has 5112 nodes and 655764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05020 and has 31 connected components, where the component with most
+	nodes has 5038 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 256.56, and
+	the node degree mode is 3. The top 5 most central nodes are 1243664.CAVL020000005_gene288
+	(degree 1899), 1243664.CAVL020000064_gene3144 (degree 1528), 1243664.CAVL020000025_gene1506
+	(degree 1492), 1243664.CAVL020000027_gene768 (degree 1486) and 1243664.CAVL020000032_gene2844
+	(degree 1448).
 	
 
 

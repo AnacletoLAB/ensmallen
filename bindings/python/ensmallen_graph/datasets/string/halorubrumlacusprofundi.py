@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:46.218775
 
-The undirected graph Halorubrum lacusprofundi has 3513 nodes and 577076 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09355
-and has 19 connected components, where the component with most nodes has 3468 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 342, the mean node degree is 328.54, and the node degree mode is 1. The top 5
-most central nodes are 416348.Hlac_3225 (degree 1243), 416348.Hlac_2432 (degree 1177),
-416348.Hlac_1683 (degree 1166), 416348.Hlac_0836 (degree 1148) and 416348.Hlac_0682
-(degree 981).
+The undirected graph Halorubrum lacusprofundi has 3513 nodes and 577076
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09355 and has 19 connected components, where the component
+with most nodes has 3468 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 342, the mean node degree is 328.54,
+and the node degree mode is 1. The top 5 most central nodes are 416348.Hlac_3225
+(degree 1243), 416348.Hlac_2432 (degree 1177), 416348.Hlac_1683 (degree
+1166), 416348.Hlac_0836 (degree 1148) and 416348.Hlac_0682 (degree 981).
 
 
 References
@@ -107,14 +107,14 @@ def HalorubrumLacusprofundi(
 	
 	Datetime: 2021-02-02 20:46:46.218775
 	
-	The undirected graph Halorubrum lacusprofundi has 3513 nodes and 577076 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09355
-	and has 19 connected components, where the component with most nodes has 3468 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 342, the mean node degree is 328.54, and the node degree mode is 1. The top 5
-	most central nodes are 416348.Hlac_3225 (degree 1243), 416348.Hlac_2432 (degree 1177),
-	416348.Hlac_1683 (degree 1166), 416348.Hlac_0836 (degree 1148) and 416348.Hlac_0682
-	(degree 981).
+	The undirected graph Halorubrum lacusprofundi has 3513 nodes and 577076
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09355 and has 19 connected components, where the component
+	with most nodes has 3468 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 342, the mean node degree is 328.54,
+	and the node degree mode is 1. The top 5 most central nodes are 416348.Hlac_3225
+	(degree 1243), 416348.Hlac_2432 (degree 1177), 416348.Hlac_1683 (degree
+	1166), 416348.Hlac_0836 (degree 1148) and 416348.Hlac_0682 (degree 981).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:12.001731
 
-The undirected graph Flavobacterium sp. EM1308 has 3608 nodes and 272666 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-and has 16 connected components, where the component with most nodes has 3560 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 151.15, and the node degree mode is 2. The top 5
-most central nodes are 1492737.FEM08_03370 (degree 1155), 1492737.FEM08_21680 (degree
-1109), 1492737.FEM08_31940 (degree 1010), 1492737.FEM08_09000 (degree 912) and 1492737.FEM08_35850
-(degree 907).
+The undirected graph Flavobacterium sp. EM1308 has 3608 nodes and 272666
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04190 and has 16 connected components, where the component
+with most nodes has 3560 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 151.15,
+and the node degree mode is 2. The top 5 most central nodes are 1492737.FEM08_03370
+(degree 1155), 1492737.FEM08_21680 (degree 1109), 1492737.FEM08_31940 (degree
+1010), 1492737.FEM08_09000 (degree 912) and 1492737.FEM08_35850 (degree
+907).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Em1308(
 	
 	Datetime: 2021-02-03 23:14:12.001731
 	
-	The undirected graph Flavobacterium sp. EM1308 has 3608 nodes and 272666 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-	and has 16 connected components, where the component with most nodes has 3560 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 151.15, and the node degree mode is 2. The top 5
-	most central nodes are 1492737.FEM08_03370 (degree 1155), 1492737.FEM08_21680 (degree
-	1109), 1492737.FEM08_31940 (degree 1010), 1492737.FEM08_09000 (degree 912) and 1492737.FEM08_35850
-	(degree 907).
+	The undirected graph Flavobacterium sp. EM1308 has 3608 nodes and 272666
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04190 and has 16 connected components, where the component
+	with most nodes has 3560 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 151.15,
+	and the node degree mode is 2. The top 5 most central nodes are 1492737.FEM08_03370
+	(degree 1155), 1492737.FEM08_21680 (degree 1109), 1492737.FEM08_31940 (degree
+	1010), 1492737.FEM08_09000 (degree 912) and 1492737.FEM08_35850 (degree
+	907).
 	
 
 

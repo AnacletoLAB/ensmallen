@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:12.562815
 
-The undirected graph Bacteriovorax sp. Seq25V has 3269 nodes and 230169 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04309
-and has 29 connected components, where the component with most nodes has 3199 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 140.82, and the node degree mode is 2. The top 5
-most central nodes are 1201288.M900_0345 (degree 1204), 1201288.M900_1623 (degree
-928), 1201288.M900_1352 (degree 881), 1201288.M900_1145 (degree 861) and 1201288.M900_0628
-(degree 842).
+The undirected graph Bacteriovorax sp. Seq25V has 3269 nodes and 230169
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04309 and has 29 connected components, where the component
+with most nodes has 3199 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 140.82,
+and the node degree mode is 2. The top 5 most central nodes are 1201288.M900_0345
+(degree 1204), 1201288.M900_1623 (degree 928), 1201288.M900_1352 (degree
+881), 1201288.M900_1145 (degree 861) and 1201288.M900_0628 (degree 842).
 
 
 References
@@ -107,14 +107,14 @@ def BacteriovoraxSp.Seq25v(
 	
 	Datetime: 2021-02-02 23:14:12.562815
 	
-	The undirected graph Bacteriovorax sp. Seq25V has 3269 nodes and 230169 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04309
-	and has 29 connected components, where the component with most nodes has 3199 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 140.82, and the node degree mode is 2. The top 5
-	most central nodes are 1201288.M900_0345 (degree 1204), 1201288.M900_1623 (degree
-	928), 1201288.M900_1352 (degree 881), 1201288.M900_1145 (degree 861) and 1201288.M900_0628
-	(degree 842).
+	The undirected graph Bacteriovorax sp. Seq25V has 3269 nodes and 230169
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04309 and has 29 connected components, where the component
+	with most nodes has 3199 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 140.82,
+	and the node degree mode is 2. The top 5 most central nodes are 1201288.M900_0345
+	(degree 1204), 1201288.M900_1623 (degree 928), 1201288.M900_1352 (degree
+	881), 1201288.M900_1145 (degree 861) and 1201288.M900_0628 (degree 842).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:29.439829
 
-The undirected graph Coriobacteriaceae bacterium GD5 has 1845 nodes and 189371 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11132 and has 12 connected components, where the component with most nodes has
-1816 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 174, the mean node degree is 205.28, and the node degree mode is 1. The
-top 5 most central nodes are 1232436.CAPF01000055_gene150 (degree 1099), 1232436.CAPF01000018_gene436
+The undirected graph Coriobacteriaceae bacterium GD5 has 1845 nodes and
+189371 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.11132 and has 12 connected components, where
+the component with most nodes has 1816 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 174, the mean
+node degree is 205.28, and the node degree mode is 1. The top 5 most central
+nodes are 1232436.CAPF01000055_gene150 (degree 1099), 1232436.CAPF01000018_gene436
 (degree 1026), 1232436.CAPF01000032_gene1364 (degree 914), 1232436.CAPF01000004_gene219
 (degree 887) and 1232436.CAPF01000063_gene1604 (degree 858).
 
@@ -107,12 +108,13 @@ def CoriobacteriaceaeBacteriumGd5(
 	
 	Datetime: 2021-02-02 23:28:29.439829
 	
-	The undirected graph Coriobacteriaceae bacterium GD5 has 1845 nodes and 189371 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11132 and has 12 connected components, where the component with most nodes has
-	1816 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 174, the mean node degree is 205.28, and the node degree mode is 1. The
-	top 5 most central nodes are 1232436.CAPF01000055_gene150 (degree 1099), 1232436.CAPF01000018_gene436
+	The undirected graph Coriobacteriaceae bacterium GD5 has 1845 nodes and
+	189371 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.11132 and has 12 connected components, where
+	the component with most nodes has 1816 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 174, the mean
+	node degree is 205.28, and the node degree mode is 1. The top 5 most central
+	nodes are 1232436.CAPF01000055_gene150 (degree 1099), 1232436.CAPF01000018_gene436
 	(degree 1026), 1232436.CAPF01000032_gene1364 (degree 914), 1232436.CAPF01000004_gene219
 	(degree 887) and 1232436.CAPF01000063_gene1604 (degree 858).
 	

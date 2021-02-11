@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:47.571903
 
-The undirected graph Pseudomonas lutea has 4549 nodes and 541709 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05237 and
-has 30 connected components, where the component with most nodes has 4481 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 238.17, and the node degree mode is 1. The top 5 most central
-nodes are 243924.LT42_03485 (degree 1742), 243924.LT42_21190 (degree 1654), 243924.LT42_16980
-(degree 1535), 243924.LT42_18825 (degree 1509) and 243924.LT42_11785 (degree 1494).
+The undirected graph Pseudomonas lutea has 4549 nodes and 541709 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05237 and has 30 connected components, where the component with most
+nodes has 4481 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 196, the mean node degree is 238.17, and
+the node degree mode is 1. The top 5 most central nodes are 243924.LT42_03485
+(degree 1742), 243924.LT42_21190 (degree 1654), 243924.LT42_16980 (degree
+1535), 243924.LT42_18825 (degree 1509) and 243924.LT42_11785 (degree 1494).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasLutea(
 	
 	Datetime: 2021-02-02 20:09:47.571903
 	
-	The undirected graph Pseudomonas lutea has 4549 nodes and 541709 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05237 and
-	has 30 connected components, where the component with most nodes has 4481 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 238.17, and the node degree mode is 1. The top 5 most central
-	nodes are 243924.LT42_03485 (degree 1742), 243924.LT42_21190 (degree 1654), 243924.LT42_16980
-	(degree 1535), 243924.LT42_18825 (degree 1509) and 243924.LT42_11785 (degree 1494).
+	The undirected graph Pseudomonas lutea has 4549 nodes and 541709 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05237 and has 30 connected components, where the component with most
+	nodes has 4481 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 196, the mean node degree is 238.17, and
+	the node degree mode is 1. The top 5 most central nodes are 243924.LT42_03485
+	(degree 1742), 243924.LT42_21190 (degree 1654), 243924.LT42_16980 (degree
+	1535), 243924.LT42_18825 (degree 1509) and 243924.LT42_11785 (degree 1494).
 	
 
 

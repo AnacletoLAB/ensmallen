@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:57.923364
 
-The undirected graph Buchnera aphidicola G002 has 572 nodes and 28739 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.17598
-and is connected, as it has a single component. The graph median node degree is 91,
-the mean node degree is 100.49, and the node degree mode is 53. The top 5 most central
-nodes are 1009858.BUMPG002_CDS00467 (degree 323), 1009858.BUMPG002_CDS00402 (degree
-264), 1009858.BUMPG002_CDS00249 (degree 254), 1009858.BUMPG002_CDS00553 (degree 253)
-and 1009858.BUMPG002_CDS00569 (degree 246).
+The undirected graph Buchnera aphidicola G002 has 572 nodes and 28739 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17598 and is connected, as it has a single component. The
+graph median node degree is 91, the mean node degree is 100.49, and the
+node degree mode is 53. The top 5 most central nodes are 1009858.BUMPG002_CDS00467
+(degree 323), 1009858.BUMPG002_CDS00402 (degree 264), 1009858.BUMPG002_CDS00249
+(degree 254), 1009858.BUMPG002_CDS00553 (degree 253) and 1009858.BUMPG002_CDS00569
+(degree 246).
 
 
 References
@@ -106,13 +107,14 @@ def BuchneraAphidicolaG002(
 	
 	Datetime: 2021-02-02 22:08:57.923364
 	
-	The undirected graph Buchnera aphidicola G002 has 572 nodes and 28739 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.17598
-	and is connected, as it has a single component. The graph median node degree is 91,
-	the mean node degree is 100.49, and the node degree mode is 53. The top 5 most central
-	nodes are 1009858.BUMPG002_CDS00467 (degree 323), 1009858.BUMPG002_CDS00402 (degree
-	264), 1009858.BUMPG002_CDS00249 (degree 254), 1009858.BUMPG002_CDS00553 (degree 253)
-	and 1009858.BUMPG002_CDS00569 (degree 246).
+	The undirected graph Buchnera aphidicola G002 has 572 nodes and 28739 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17598 and is connected, as it has a single component. The
+	graph median node degree is 91, the mean node degree is 100.49, and the
+	node degree mode is 53. The top 5 most central nodes are 1009858.BUMPG002_CDS00467
+	(degree 323), 1009858.BUMPG002_CDS00402 (degree 264), 1009858.BUMPG002_CDS00249
+	(degree 254), 1009858.BUMPG002_CDS00553 (degree 253) and 1009858.BUMPG002_CDS00569
+	(degree 246).
 	
 
 

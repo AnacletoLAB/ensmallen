@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:32.531115
 
-The undirected graph Actinoplanes subtropicus has 10016 nodes and 1434185 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02859
-and has 65 connected components, where the component with most nodes has 9872 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 243, the mean node degree is 286.38, and the node degree mode is 2. The top 5
-most central nodes are 543632.JOJL01000021_gene1148 (degree 2761), 543632.JOJL01000021_gene1221
-(degree 2692), 543632.JOJL01000013_gene9322 (degree 2522), 543632.JOJL01000008_gene5803
-(degree 2507) and 543632.JOJL01000008_gene5807 (degree 2439).
+The undirected graph Actinoplanes subtropicus has 10016 nodes and 1434185
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02859 and has 65 connected components, where the component
+with most nodes has 9872 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 243, the mean node degree is 286.38,
+and the node degree mode is 2. The top 5 most central nodes are 543632.JOJL01000021_gene1148
+(degree 2761), 543632.JOJL01000021_gene1221 (degree 2692), 543632.JOJL01000013_gene9322
+(degree 2522), 543632.JOJL01000008_gene5803 (degree 2507) and 543632.JOJL01000008_gene5807
+(degree 2439).
 
 
 References
@@ -107,14 +108,15 @@ def ActinoplanesSubtropicus(
 	
 	Datetime: 2021-02-02 21:07:32.531115
 	
-	The undirected graph Actinoplanes subtropicus has 10016 nodes and 1434185 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02859
-	and has 65 connected components, where the component with most nodes has 9872 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 243, the mean node degree is 286.38, and the node degree mode is 2. The top 5
-	most central nodes are 543632.JOJL01000021_gene1148 (degree 2761), 543632.JOJL01000021_gene1221
-	(degree 2692), 543632.JOJL01000013_gene9322 (degree 2522), 543632.JOJL01000008_gene5803
-	(degree 2507) and 543632.JOJL01000008_gene5807 (degree 2439).
+	The undirected graph Actinoplanes subtropicus has 10016 nodes and 1434185
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02859 and has 65 connected components, where the component
+	with most nodes has 9872 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 243, the mean node degree is 286.38,
+	and the node degree mode is 2. The top 5 most central nodes are 543632.JOJL01000021_gene1148
+	(degree 2761), 543632.JOJL01000021_gene1221 (degree 2692), 543632.JOJL01000013_gene9322
+	(degree 2522), 543632.JOJL01000008_gene5803 (degree 2507) and 543632.JOJL01000008_gene5807
+	(degree 2439).
 	
 
 

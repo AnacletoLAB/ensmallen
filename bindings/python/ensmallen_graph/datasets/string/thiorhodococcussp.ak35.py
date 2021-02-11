@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:39.990562
 
-The undirected graph Thiorhodococcus sp. AK35 has 4166 nodes and 738015 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08507
-and has 14 connected components, where the component with most nodes has 4131 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 310, the mean node degree is 354.30, and the node degree mode is 2. The top 5
-most central nodes are 1249627.D779_4189 (degree 2008), 1249627.D779_0025 (degree
-1881), 1249627.D779_3052 (degree 1867), 1249627.D779_3139 (degree 1783) and 1249627.D779_0141
-(degree 1769).
+The undirected graph Thiorhodococcus sp. AK35 has 4166 nodes and 738015
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08507 and has 14 connected components, where the component
+with most nodes has 4131 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 310, the mean node degree is 354.30,
+and the node degree mode is 2. The top 5 most central nodes are 1249627.D779_4189
+(degree 2008), 1249627.D779_0025 (degree 1881), 1249627.D779_3052 (degree
+1867), 1249627.D779_3139 (degree 1783) and 1249627.D779_0141 (degree 1769).
 
 
 References
@@ -107,14 +107,14 @@ def ThiorhodococcusSp.Ak35(
 	
 	Datetime: 2021-02-02 23:34:39.990562
 	
-	The undirected graph Thiorhodococcus sp. AK35 has 4166 nodes and 738015 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08507
-	and has 14 connected components, where the component with most nodes has 4131 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 310, the mean node degree is 354.30, and the node degree mode is 2. The top 5
-	most central nodes are 1249627.D779_4189 (degree 2008), 1249627.D779_0025 (degree
-	1881), 1249627.D779_3052 (degree 1867), 1249627.D779_3139 (degree 1783) and 1249627.D779_0141
-	(degree 1769).
+	The undirected graph Thiorhodococcus sp. AK35 has 4166 nodes and 738015
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08507 and has 14 connected components, where the component
+	with most nodes has 4131 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 310, the mean node degree is 354.30,
+	and the node degree mode is 2. The top 5 most central nodes are 1249627.D779_4189
+	(degree 2008), 1249627.D779_0025 (degree 1881), 1249627.D779_3052 (degree
+	1867), 1249627.D779_3139 (degree 1783) and 1249627.D779_0141 (degree 1769).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:24:26.117059
 
-The undirected graph opt1 has 15449 nodes and 973052 unweighted edges, of which 15449
-are self-loops. The graph is sparse as it has a density of 0.00809 and is connected,
-as it has a single component. The graph median node degree is 132, the mean node
-degree is 124.97, and the node degree mode is 153. The top 5 most central nodes are
-15253 (degree 243), 15252 (degree 243), 15251 (degree 243), 15241 (degree 243) and
-15240 (degree 243).
+The undirected graph opt1 has 15449 nodes and 973052 unweighted edges,
+of which 15449 are self-loops. The graph is sparse as it has a density
+of 0.00809 and is connected, as it has a single component. The graph median
+node degree is 132, the mean node degree is 124.97, and the node degree
+mode is 153. The top 5 most central nodes are 15253 (degree 243), 15252
+(degree 243), 15251 (degree 243), 15241 (degree 243) and 15240 (degree
+243).
 
 
 References
@@ -102,12 +103,13 @@ def Opt1(
 	
 	Datetime: 2021-02-06 11:24:26.117059
 	
-	The undirected graph opt1 has 15449 nodes and 973052 unweighted edges, of which 15449
-	are self-loops. The graph is sparse as it has a density of 0.00809 and is connected,
-	as it has a single component. The graph median node degree is 132, the mean node
-	degree is 124.97, and the node degree mode is 153. The top 5 most central nodes are
-	15253 (degree 243), 15252 (degree 243), 15251 (degree 243), 15241 (degree 243) and
-	15240 (degree 243).
+	The undirected graph opt1 has 15449 nodes and 973052 unweighted edges,
+	of which 15449 are self-loops. The graph is sparse as it has a density
+	of 0.00809 and is connected, as it has a single component. The graph median
+	node degree is 132, the mean node degree is 124.97, and the node degree
+	mode is 153. The top 5 most central nodes are 15253 (degree 243), 15252
+	(degree 243), 15251 (degree 243), 15241 (degree 243) and 15240 (degree
+	243).
 	
 
 

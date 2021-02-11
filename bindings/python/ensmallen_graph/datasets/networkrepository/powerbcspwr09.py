@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:22:50.437178
 
-The undirected graph power-bcspwr09 has 1723 nodes and 4117 unweighted edges, of
-which 1723 are self-loops. The graph is sparse as it has a density of 0.00219 and
-is connected, as it has a single component. The graph median node degree is 3, the
-mean node degree is 3.78, and the node degree mode is 3. The top 5 most central nodes
-are 1481 (degree 15), 1660 (degree 14), 1517 (degree 12), 1577 (degree 12) and 1497
-(degree 12).
+The undirected graph power-bcspwr09 has 1723 nodes and 4117 unweighted
+edges, of which 1723 are self-loops. The graph is sparse as it has a density
+of 0.00219 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 3.78, and the node degree mode
+is 3. The top 5 most central nodes are 1481 (degree 15), 1660 (degree 14),
+1517 (degree 12), 1577 (degree 12) and 1497 (degree 12).
 
 
 References
@@ -102,12 +102,12 @@ def PowerBcspwr09(
 	
 	Datetime: 2021-02-06 09:22:50.437178
 	
-	The undirected graph power-bcspwr09 has 1723 nodes and 4117 unweighted edges, of
-	which 1723 are self-loops. The graph is sparse as it has a density of 0.00219 and
-	is connected, as it has a single component. The graph median node degree is 3, the
-	mean node degree is 3.78, and the node degree mode is 3. The top 5 most central nodes
-	are 1481 (degree 15), 1660 (degree 14), 1517 (degree 12), 1577 (degree 12) and 1497
-	(degree 12).
+	The undirected graph power-bcspwr09 has 1723 nodes and 4117 unweighted
+	edges, of which 1723 are self-loops. The graph is sparse as it has a density
+	of 0.00219 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 3.78, and the node degree mode
+	is 3. The top 5 most central nodes are 1481 (degree 15), 1660 (degree 14),
+	1517 (degree 12), 1577 (degree 12) and 1497 (degree 12).
 	
 
 

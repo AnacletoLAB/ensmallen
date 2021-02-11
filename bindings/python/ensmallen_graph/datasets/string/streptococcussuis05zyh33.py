@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:18.968285
 
-The undirected graph Streptococcus suis 05ZYH33 has 2139 nodes and 134499 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05882
-and has 5 connected components, where the component with most nodes has 2124 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 125.76, and the node degree mode is 5. The top 5 most
-central nodes are 391295.SSU05_1378 (degree 956), 391295.SSU05_0280 (degree 778),
-391295.SSU05_0873 (degree 751), 391295.SSU05_0300 (degree 718) and 391295.SSU05_2183
-(degree 648).
+The undirected graph Streptococcus suis 05ZYH33 has 2139 nodes and 134499
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05882 and has 5 connected components, where the component
+with most nodes has 2124 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 125.76,
+and the node degree mode is 5. The top 5 most central nodes are 391295.SSU05_1378
+(degree 956), 391295.SSU05_0280 (degree 778), 391295.SSU05_0873 (degree
+751), 391295.SSU05_0300 (degree 718) and 391295.SSU05_2183 (degree 648).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusSuis05zyh33(
 	
 	Datetime: 2021-02-02 20:39:18.968285
 	
-	The undirected graph Streptococcus suis 05ZYH33 has 2139 nodes and 134499 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05882
-	and has 5 connected components, where the component with most nodes has 2124 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 125.76, and the node degree mode is 5. The top 5 most
-	central nodes are 391295.SSU05_1378 (degree 956), 391295.SSU05_0280 (degree 778),
-	391295.SSU05_0873 (degree 751), 391295.SSU05_0300 (degree 718) and 391295.SSU05_2183
-	(degree 648).
+	The undirected graph Streptococcus suis 05ZYH33 has 2139 nodes and 134499
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05882 and has 5 connected components, where the component
+	with most nodes has 2124 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 125.76,
+	and the node degree mode is 5. The top 5 most central nodes are 391295.SSU05_1378
+	(degree 956), 391295.SSU05_0280 (degree 778), 391295.SSU05_0873 (degree
+	751), 391295.SSU05_0300 (degree 718) and 391295.SSU05_2183 (degree 648).
 	
 
 

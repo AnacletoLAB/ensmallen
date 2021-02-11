@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:39.036683
 
-The undirected graph Kazachstania africana has 5013 nodes and 532099 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04236 and
-is connected, as it has a single component. The graph median node degree is 154,
-the mean node degree is 212.29, and the node degree mode is 23. The top 5 most central
-nodes are 432096.XP_003956876.1 (degree 1216), 432096.XP_003955284.1 (degree 1083),
-432096.XP_003955539.1 (degree 1082), 432096.XP_003959325.1 (degree 998) and 432096.XP_003959544.1
-(degree 995).
+The undirected graph Kazachstania africana has 5013 nodes and 532099 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04236 and is connected, as it has a single component. The graph median
+node degree is 154, the mean node degree is 212.29, and the node degree
+mode is 23. The top 5 most central nodes are 432096.XP_003956876.1 (degree
+1216), 432096.XP_003955284.1 (degree 1083), 432096.XP_003955539.1 (degree
+1082), 432096.XP_003959325.1 (degree 998) and 432096.XP_003959544.1 (degree
+995).
 
 
 References
@@ -106,13 +107,14 @@ def KazachstaniaAfricana(
 	
 	Datetime: 2021-02-02 20:48:39.036683
 	
-	The undirected graph Kazachstania africana has 5013 nodes and 532099 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04236 and
-	is connected, as it has a single component. The graph median node degree is 154,
-	the mean node degree is 212.29, and the node degree mode is 23. The top 5 most central
-	nodes are 432096.XP_003956876.1 (degree 1216), 432096.XP_003955284.1 (degree 1083),
-	432096.XP_003955539.1 (degree 1082), 432096.XP_003959325.1 (degree 998) and 432096.XP_003959544.1
-	(degree 995).
+	The undirected graph Kazachstania africana has 5013 nodes and 532099 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04236 and is connected, as it has a single component. The graph median
+	node degree is 154, the mean node degree is 212.29, and the node degree
+	mode is 23. The top 5 most central nodes are 432096.XP_003956876.1 (degree
+	1216), 432096.XP_003955284.1 (degree 1083), 432096.XP_003955539.1 (degree
+	1082), 432096.XP_003959325.1 (degree 998) and 432096.XP_003959544.1 (degree
+	995).
 	
 
 

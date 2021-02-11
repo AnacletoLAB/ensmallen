@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:25.502745
 
-The undirected graph Faecalibacterium prausnitzii KLE1255 has 3314 nodes and 169023
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03079 and has 19 connected components, where the component with most nodes has
-3272 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 68, the mean node degree is 102.01, and the node degree mode is 2. The
-top 5 most central nodes are 748224.HMPREF9436_02828 (degree 1064), 748224.HMPREF9436_00122
-(degree 894), 748224.HMPREF9436_00680 (degree 839), 748224.HMPREF9436_00998 (degree
+The undirected graph Faecalibacterium prausnitzii KLE1255 has 3314 nodes
+and 169023 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03079 and has 19 connected components, where the
+component with most nodes has 3272 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 68, the mean node degree
+is 102.01, and the node degree mode is 2. The top 5 most central nodes
+are 748224.HMPREF9436_02828 (degree 1064), 748224.HMPREF9436_00122 (degree
+894), 748224.HMPREF9436_00680 (degree 839), 748224.HMPREF9436_00998 (degree
 804) and 748224.HMPREF9436_00928 (degree 776).
 
 
@@ -107,13 +108,14 @@ def FaecalibacteriumPrausnitziiKle1255(
 	
 	Datetime: 2021-02-02 21:39:25.502745
 	
-	The undirected graph Faecalibacterium prausnitzii KLE1255 has 3314 nodes and 169023
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03079 and has 19 connected components, where the component with most nodes has
-	3272 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 68, the mean node degree is 102.01, and the node degree mode is 2. The
-	top 5 most central nodes are 748224.HMPREF9436_02828 (degree 1064), 748224.HMPREF9436_00122
-	(degree 894), 748224.HMPREF9436_00680 (degree 839), 748224.HMPREF9436_00998 (degree
+	The undirected graph Faecalibacterium prausnitzii KLE1255 has 3314 nodes
+	and 169023 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03079 and has 19 connected components, where the
+	component with most nodes has 3272 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 68, the mean node degree
+	is 102.01, and the node degree mode is 2. The top 5 most central nodes
+	are 748224.HMPREF9436_02828 (degree 1064), 748224.HMPREF9436_00122 (degree
+	894), 748224.HMPREF9436_00680 (degree 839), 748224.HMPREF9436_00998 (degree
 	804) and 748224.HMPREF9436_00928 (degree 776).
 	
 

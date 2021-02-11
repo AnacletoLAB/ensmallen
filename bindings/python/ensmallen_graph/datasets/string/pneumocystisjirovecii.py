@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:22.537951
 
-The undirected graph Pneumocystis jirovecii has 2886 nodes and 348319 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08367 and
-has 12 connected components, where the component with most nodes has 2864 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 241.39, and the node degree mode is 1. The top 5 most central
-nodes are 42068.L0PF98 (degree 1503), 42068.L0PER6 (degree 1325), 42068.L0PGR1 (degree
-1302), 42068.L0PDK4 (degree 1252) and 42068.L0PGD0 (degree 1248).
+The undirected graph Pneumocystis jirovecii has 2886 nodes and 348319 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08367 and has 12 connected components, where the component with most
+nodes has 2864 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 241.39, and
+the node degree mode is 1. The top 5 most central nodes are 42068.L0PF98
+(degree 1503), 42068.L0PER6 (degree 1325), 42068.L0PGR1 (degree 1302),
+42068.L0PDK4 (degree 1252) and 42068.L0PGD0 (degree 1248).
 
 
 References
@@ -106,13 +107,14 @@ def PneumocystisJirovecii(
 	
 	Datetime: 2021-02-02 18:12:22.537951
 	
-	The undirected graph Pneumocystis jirovecii has 2886 nodes and 348319 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08367 and
-	has 12 connected components, where the component with most nodes has 2864 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 241.39, and the node degree mode is 1. The top 5 most central
-	nodes are 42068.L0PF98 (degree 1503), 42068.L0PER6 (degree 1325), 42068.L0PGR1 (degree
-	1302), 42068.L0PDK4 (degree 1252) and 42068.L0PGD0 (degree 1248).
+	The undirected graph Pneumocystis jirovecii has 2886 nodes and 348319 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08367 and has 12 connected components, where the component with most
+	nodes has 2864 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 241.39, and
+	the node degree mode is 1. The top 5 most central nodes are 42068.L0PF98
+	(degree 1503), 42068.L0PER6 (degree 1325), 42068.L0PGR1 (degree 1302),
+	42068.L0PDK4 (degree 1252) and 42068.L0PGD0 (degree 1248).
 	
 
 

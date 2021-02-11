@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:40.352805
 
-The undirected graph Bradyrhizobium sp. BTAi1 has 7514 nodes and 941408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03335
-and has 35 connected components, where the component with most nodes has 7436 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 195, the mean node degree is 250.57, and the node degree mode is 2. The top 5
-most central nodes are 288000.BBta_4316 (degree 3976), 288000.BBta_7357 (degree 2922),
-288000.BBta_5808 (degree 2448), 288000.BBta_6315 (degree 2423) and 288000.BBta_0860
-(degree 2188).
+The undirected graph Bradyrhizobium sp. BTAi1 has 7514 nodes and 941408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03335 and has 35 connected components, where the component
+with most nodes has 7436 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 250.57,
+and the node degree mode is 2. The top 5 most central nodes are 288000.BBta_4316
+(degree 3976), 288000.BBta_7357 (degree 2922), 288000.BBta_5808 (degree
+2448), 288000.BBta_6315 (degree 2423) and 288000.BBta_0860 (degree 2188).
 
 
 References
@@ -107,14 +107,14 @@ def BradyrhizobiumSp.Btai1(
 	
 	Datetime: 2021-02-02 20:19:40.352805
 	
-	The undirected graph Bradyrhizobium sp. BTAi1 has 7514 nodes and 941408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03335
-	and has 35 connected components, where the component with most nodes has 7436 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 195, the mean node degree is 250.57, and the node degree mode is 2. The top 5
-	most central nodes are 288000.BBta_4316 (degree 3976), 288000.BBta_7357 (degree 2922),
-	288000.BBta_5808 (degree 2448), 288000.BBta_6315 (degree 2423) and 288000.BBta_0860
-	(degree 2188).
+	The undirected graph Bradyrhizobium sp. BTAi1 has 7514 nodes and 941408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03335 and has 35 connected components, where the component
+	with most nodes has 7436 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 250.57,
+	and the node degree mode is 2. The top 5 most central nodes are 288000.BBta_4316
+	(degree 3976), 288000.BBta_7357 (degree 2922), 288000.BBta_5808 (degree
+	2448), 288000.BBta_6315 (degree 2423) and 288000.BBta_0860 (degree 2188).
 	
 
 

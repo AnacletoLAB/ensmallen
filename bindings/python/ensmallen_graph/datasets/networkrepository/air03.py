@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:21.074119
 
-The undirected graph air03 has 10757 nodes and 91014 unweighted edges, of which 8
-are self-loops. The graph is sparse as it has a density of 0.00157 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 16.92, and the node degree mode is 8. The top 5 most central nodes are 124 (degree
-3866), 123 (degree 3763), 122 (degree 2960), 121 (degree 2827) and 120 (degree 2491).
+The undirected graph air03 has 10757 nodes and 91014 unweighted edges,
+of which 8 are self-loops. The graph is sparse as it has a density of 0.00157
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 16.92, and the node degree mode is 8. The
+top 5 most central nodes are 124 (degree 3866), 123 (degree 3763), 122
+(degree 2960), 121 (degree 2827) and 120 (degree 2491).
 
 
 References
@@ -101,11 +102,12 @@ def Air03(
 	
 	Datetime: 2021-02-06 10:15:21.074119
 	
-	The undirected graph air03 has 10757 nodes and 91014 unweighted edges, of which 8
-	are self-loops. The graph is sparse as it has a density of 0.00157 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 16.92, and the node degree mode is 8. The top 5 most central nodes are 124 (degree
-	3866), 123 (degree 3763), 122 (degree 2960), 121 (degree 2827) and 120 (degree 2491).
+	The undirected graph air03 has 10757 nodes and 91014 unweighted edges,
+	of which 8 are self-loops. The graph is sparse as it has a density of 0.00157
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 16.92, and the node degree mode is 8. The
+	top 5 most central nodes are 124 (degree 3866), 123 (degree 3763), 122
+	(degree 2960), 121 (degree 2827) and 120 (degree 2491).
 	
 
 

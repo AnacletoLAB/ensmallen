@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:40.261593
 
-The undirected graph Nostoc sp. PCC7120 has 5290 nodes and 524226 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03747 and
-has 16 connected components, where the component with most nodes has 5257 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 198.20, and the node degree mode is 1. The top 5 most central
-nodes are 103690.17131520 (degree 2089), 103690.17130601 (degree 1703), 103690.17135536
-(degree 1644), 103690.17131771 (degree 1547) and 103690.17130576 (degree 1524).
+The undirected graph Nostoc sp. PCC7120 has 5290 nodes and 524226 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03747 and has 16 connected components, where the component with most
+nodes has 5257 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 198.20, and
+the node degree mode is 1. The top 5 most central nodes are 103690.17131520
+(degree 2089), 103690.17130601 (degree 1703), 103690.17135536 (degree 1644),
+103690.17131771 (degree 1547) and 103690.17130576 (degree 1524).
 
 
 References
@@ -106,13 +107,14 @@ def NostocSp.Pcc7120(
 	
 	Datetime: 2021-02-02 19:43:40.261593
 	
-	The undirected graph Nostoc sp. PCC7120 has 5290 nodes and 524226 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03747 and
-	has 16 connected components, where the component with most nodes has 5257 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 198.20, and the node degree mode is 1. The top 5 most central
-	nodes are 103690.17131520 (degree 2089), 103690.17130601 (degree 1703), 103690.17135536
-	(degree 1644), 103690.17131771 (degree 1547) and 103690.17130576 (degree 1524).
+	The undirected graph Nostoc sp. PCC7120 has 5290 nodes and 524226 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03747 and has 16 connected components, where the component with most
+	nodes has 5257 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 198.20, and
+	the node degree mode is 1. The top 5 most central nodes are 103690.17131520
+	(degree 2089), 103690.17130601 (degree 1703), 103690.17135536 (degree 1644),
+	103690.17131771 (degree 1547) and 103690.17130576 (degree 1524).
 	
 
 

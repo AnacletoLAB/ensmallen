@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:12.581088
 
-The undirected graph Synechocystis sp. PCC6714 has 3505 nodes and 264579 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04309
-and has 10 connected components, where the component with most nodes has 3479 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 150.97, and the node degree mode is 3. The top 5
-most central nodes are 1147.D082_04290 (degree 1320), 1147.D082_14220 (degree 1175),
-1147.D082_26080 (degree 1097), 1147.D082_07980 (degree 1070) and 1147.D082_17020
-(degree 1055).
+The undirected graph Synechocystis sp. PCC6714 has 3505 nodes and 264579
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04309 and has 10 connected components, where the component
+with most nodes has 3479 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 150.97,
+and the node degree mode is 3. The top 5 most central nodes are 1147.D082_04290
+(degree 1320), 1147.D082_14220 (degree 1175), 1147.D082_26080 (degree 1097),
+1147.D082_07980 (degree 1070) and 1147.D082_17020 (degree 1055).
 
 
 References
@@ -107,14 +107,14 @@ def SynechocystisSp.Pcc6714(
 	
 	Datetime: 2021-02-02 16:22:12.581088
 	
-	The undirected graph Synechocystis sp. PCC6714 has 3505 nodes and 264579 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04309
-	and has 10 connected components, where the component with most nodes has 3479 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 150.97, and the node degree mode is 3. The top 5
-	most central nodes are 1147.D082_04290 (degree 1320), 1147.D082_14220 (degree 1175),
-	1147.D082_26080 (degree 1097), 1147.D082_07980 (degree 1070) and 1147.D082_17020
-	(degree 1055).
+	The undirected graph Synechocystis sp. PCC6714 has 3505 nodes and 264579
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04309 and has 10 connected components, where the component
+	with most nodes has 3479 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 150.97,
+	and the node degree mode is 3. The top 5 most central nodes are 1147.D082_04290
+	(degree 1320), 1147.D082_14220 (degree 1175), 1147.D082_26080 (degree 1097),
+	1147.D082_07980 (degree 1070) and 1147.D082_17020 (degree 1055).
 	
 
 

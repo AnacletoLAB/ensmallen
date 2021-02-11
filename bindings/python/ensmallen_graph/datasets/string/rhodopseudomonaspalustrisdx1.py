@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:03.786483
 
-The undirected graph Rhodopseudomonas palustris DX1 has 4879 nodes and 689703 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05796
-and has 14 connected components, where the component with most nodes has 4843 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 244, the mean node degree is 282.72, and the node degree mode is 3. The top 5
-most central nodes are 652103.Rpdx1_4896 (degree 1901), 652103.Rpdx1_1717 (degree
-1758), 652103.Rpdx1_4899 (degree 1596), 652103.Rpdx1_2045 (degree 1594) and 652103.Rpdx1_1020
-(degree 1589).
+The undirected graph Rhodopseudomonas palustris DX1 has 4879 nodes and
+689703 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05796 and has 14 connected components, where the
+component with most nodes has 4843 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 244, the mean node degree
+is 282.72, and the node degree mode is 3. The top 5 most central nodes
+are 652103.Rpdx1_4896 (degree 1901), 652103.Rpdx1_1717 (degree 1758), 652103.Rpdx1_4899
+(degree 1596), 652103.Rpdx1_2045 (degree 1594) and 652103.Rpdx1_1020 (degree
+1589).
 
 
 References
@@ -107,14 +108,15 @@ def RhodopseudomonasPalustrisDx1(
 	
 	Datetime: 2021-02-02 21:26:03.786483
 	
-	The undirected graph Rhodopseudomonas palustris DX1 has 4879 nodes and 689703 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05796
-	and has 14 connected components, where the component with most nodes has 4843 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 244, the mean node degree is 282.72, and the node degree mode is 3. The top 5
-	most central nodes are 652103.Rpdx1_4896 (degree 1901), 652103.Rpdx1_1717 (degree
-	1758), 652103.Rpdx1_4899 (degree 1596), 652103.Rpdx1_2045 (degree 1594) and 652103.Rpdx1_1020
-	(degree 1589).
+	The undirected graph Rhodopseudomonas palustris DX1 has 4879 nodes and
+	689703 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05796 and has 14 connected components, where the
+	component with most nodes has 4843 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 244, the mean node degree
+	is 282.72, and the node degree mode is 3. The top 5 most central nodes
+	are 652103.Rpdx1_4896 (degree 1901), 652103.Rpdx1_1717 (degree 1758), 652103.Rpdx1_4899
+	(degree 1596), 652103.Rpdx1_2045 (degree 1594) and 652103.Rpdx1_1020 (degree
+	1589).
 	
 
 

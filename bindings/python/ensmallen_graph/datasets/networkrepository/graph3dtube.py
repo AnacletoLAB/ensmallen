@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:54:55.227239
 
-The undirected graph 3dtube has 45330 nodes and 1629474 unweighted edges, of which
-45330 are self-loops. The graph is sparse as it has a density of 0.00156 and is connected,
-as it has a single component. The graph median node degree is 81, the mean node degree
-is 70.89, and the node degree mode is 81. The top 5 most central nodes are 48 (degree
-2364), 47 (degree 2364), 46 (degree 2364), 44 (degree 2364) and 43 (degree 2364).
+The undirected graph 3dtube has 45330 nodes and 1629474 unweighted edges,
+of which 45330 are self-loops. The graph is sparse as it has a density
+of 0.00156 and is connected, as it has a single component. The graph median
+node degree is 81, the mean node degree is 70.89, and the node degree mode
+is 81. The top 5 most central nodes are 48 (degree 2364), 47 (degree 2364),
+46 (degree 2364), 44 (degree 2364) and 43 (degree 2364).
 
 
 References
@@ -101,11 +102,12 @@ def Graph3dtube(
 	
 	Datetime: 2021-02-06 11:54:55.227239
 	
-	The undirected graph 3dtube has 45330 nodes and 1629474 unweighted edges, of which
-	45330 are self-loops. The graph is sparse as it has a density of 0.00156 and is connected,
-	as it has a single component. The graph median node degree is 81, the mean node degree
-	is 70.89, and the node degree mode is 81. The top 5 most central nodes are 48 (degree
-	2364), 47 (degree 2364), 46 (degree 2364), 44 (degree 2364) and 43 (degree 2364).
+	The undirected graph 3dtube has 45330 nodes and 1629474 unweighted edges,
+	of which 45330 are self-loops. The graph is sparse as it has a density
+	of 0.00156 and is connected, as it has a single component. The graph median
+	node degree is 81, the mean node degree is 70.89, and the node degree mode
+	is 81. The top 5 most central nodes are 48 (degree 2364), 47 (degree 2364),
+	46 (degree 2364), 44 (degree 2364) and 43 (degree 2364).
 	
 
 

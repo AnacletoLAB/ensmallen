@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:44.412089
 
-The undirected graph Myxococcus stipitatus has 7986 nodes and 910264 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02855 and
-has 59 connected components, where the component with most nodes has 7831 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 227.96, and the node degree mode is 3. The top 5 most central
-nodes are 1278073.MYSTI_01449 (degree 2864), 1278073.MYSTI_01891 (degree 2750), 1278073.MYSTI_07341
-(degree 2654), 1278073.MYSTI_04931 (degree 2434) and 1278073.MYSTI_02344 (degree
+The undirected graph Myxococcus stipitatus has 7986 nodes and 910264 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02855 and has 59 connected components, where the component with most
+nodes has 7831 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 227.96, and
+the node degree mode is 3. The top 5 most central nodes are 1278073.MYSTI_01449
+(degree 2864), 1278073.MYSTI_01891 (degree 2750), 1278073.MYSTI_07341 (degree
+2654), 1278073.MYSTI_04931 (degree 2434) and 1278073.MYSTI_02344 (degree
 2403).
 
 
@@ -107,13 +108,14 @@ def MyxococcusStipitatus(
 	
 	Datetime: 2021-02-02 23:38:44.412089
 	
-	The undirected graph Myxococcus stipitatus has 7986 nodes and 910264 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02855 and
-	has 59 connected components, where the component with most nodes has 7831 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 227.96, and the node degree mode is 3. The top 5 most central
-	nodes are 1278073.MYSTI_01449 (degree 2864), 1278073.MYSTI_01891 (degree 2750), 1278073.MYSTI_07341
-	(degree 2654), 1278073.MYSTI_04931 (degree 2434) and 1278073.MYSTI_02344 (degree
+	The undirected graph Myxococcus stipitatus has 7986 nodes and 910264 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02855 and has 59 connected components, where the component with most
+	nodes has 7831 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 227.96, and
+	the node degree mode is 3. The top 5 most central nodes are 1278073.MYSTI_01449
+	(degree 2864), 1278073.MYSTI_01891 (degree 2750), 1278073.MYSTI_07341 (degree
+	2654), 1278073.MYSTI_04931 (degree 2434) and 1278073.MYSTI_02344 (degree
 	2403).
 	
 

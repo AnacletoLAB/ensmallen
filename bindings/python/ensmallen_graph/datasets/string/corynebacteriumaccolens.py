@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:02.829108
 
-The undirected graph Corynebacterium accolens has 2303 nodes and 159027 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-and has 17 connected components, where the component with most nodes has 2261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 138.10, and the node degree mode is 2. The top 5
-most central nodes are 525260.HMPREF0276_0402 (degree 907), 525260.HMPREF0276_0679
-(degree 755), 525260.HMPREF0276_1343 (degree 743), 525260.HMPREF0276_1345 (degree
-720) and 525260.HMPREF0276_0425 (degree 684).
+The undirected graph Corynebacterium accolens has 2303 nodes and 159027
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05999 and has 17 connected components, where the component
+with most nodes has 2261 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 138.10,
+and the node degree mode is 2. The top 5 most central nodes are 525260.HMPREF0276_0402
+(degree 907), 525260.HMPREF0276_0679 (degree 755), 525260.HMPREF0276_1343
+(degree 743), 525260.HMPREF0276_1345 (degree 720) and 525260.HMPREF0276_0425
+(degree 684).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumAccolens(
 	
 	Datetime: 2021-02-02 21:05:02.829108
 	
-	The undirected graph Corynebacterium accolens has 2303 nodes and 159027 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-	and has 17 connected components, where the component with most nodes has 2261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 138.10, and the node degree mode is 2. The top 5
-	most central nodes are 525260.HMPREF0276_0402 (degree 907), 525260.HMPREF0276_0679
-	(degree 755), 525260.HMPREF0276_1343 (degree 743), 525260.HMPREF0276_1345 (degree
-	720) and 525260.HMPREF0276_0425 (degree 684).
+	The undirected graph Corynebacterium accolens has 2303 nodes and 159027
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05999 and has 17 connected components, where the component
+	with most nodes has 2261 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 138.10,
+	and the node degree mode is 2. The top 5 most central nodes are 525260.HMPREF0276_0402
+	(degree 907), 525260.HMPREF0276_0679 (degree 755), 525260.HMPREF0276_1343
+	(degree 743), 525260.HMPREF0276_1345 (degree 720) and 525260.HMPREF0276_0425
+	(degree 684).
 	
 
 

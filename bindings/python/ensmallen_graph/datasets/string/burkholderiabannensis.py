@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:05.190340
 
-The undirected graph Burkholderia bannensis has 7057 nodes and 1107379 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04448 and
-has 23 connected components, where the component with most nodes has 7011 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 258,
-the mean node degree is 313.84, and the node degree mode is 1. The top 5 most central
-nodes are 1218075.BAYA01000003_gene1007 (degree 2529), 1218075.BAYA01000019_gene4952
-(degree 2507), 1218075.BAYA01000006_gene2279 (degree 2440), 1218075.BAYA01000016_gene4492
-(degree 2378) and 1218075.BAYA01000022_gene5176 (degree 2301).
+The undirected graph Burkholderia bannensis has 7057 nodes and 1107379
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04448 and has 23 connected components, where the component
+with most nodes has 7011 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 313.84,
+and the node degree mode is 1. The top 5 most central nodes are 1218075.BAYA01000003_gene1007
+(degree 2529), 1218075.BAYA01000019_gene4952 (degree 2507), 1218075.BAYA01000006_gene2279
+(degree 2440), 1218075.BAYA01000016_gene4492 (degree 2378) and 1218075.BAYA01000022_gene5176
+(degree 2301).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaBannensis(
 	
 	Datetime: 2021-02-02 23:22:05.190340
 	
-	The undirected graph Burkholderia bannensis has 7057 nodes and 1107379 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04448 and
-	has 23 connected components, where the component with most nodes has 7011 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 258,
-	the mean node degree is 313.84, and the node degree mode is 1. The top 5 most central
-	nodes are 1218075.BAYA01000003_gene1007 (degree 2529), 1218075.BAYA01000019_gene4952
-	(degree 2507), 1218075.BAYA01000006_gene2279 (degree 2440), 1218075.BAYA01000016_gene4492
-	(degree 2378) and 1218075.BAYA01000022_gene5176 (degree 2301).
+	The undirected graph Burkholderia bannensis has 7057 nodes and 1107379
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04448 and has 23 connected components, where the component
+	with most nodes has 7011 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 313.84,
+	and the node degree mode is 1. The top 5 most central nodes are 1218075.BAYA01000003_gene1007
+	(degree 2529), 1218075.BAYA01000019_gene4952 (degree 2507), 1218075.BAYA01000006_gene2279
+	(degree 2440), 1218075.BAYA01000016_gene4492 (degree 2378) and 1218075.BAYA01000022_gene5176
+	(degree 2301).
 	
 
 

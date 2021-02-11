@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:04.268843
 
-The undirected graph Schleiferia thermophila has 2271 nodes and 174838 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06783 and
-has 12 connected components, where the component with most nodes has 2241 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 153.97, and the node degree mode is 3. The top 5 most central
-nodes are 1453500.AT05_01670 (degree 880), 1453500.AT05_01795 (degree 827), 1453500.AT05_10805
-(degree 721), 1453500.AT05_03645 (degree 617) and 1453500.AT05_09835 (degree 613).
+The undirected graph Schleiferia thermophila has 2271 nodes and 174838
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06783 and has 12 connected components, where the component
+with most nodes has 2241 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 153.97,
+and the node degree mode is 3. The top 5 most central nodes are 1453500.AT05_01670
+(degree 880), 1453500.AT05_01795 (degree 827), 1453500.AT05_10805 (degree
+721), 1453500.AT05_03645 (degree 617) and 1453500.AT05_09835 (degree 613).
 
 
 References
@@ -106,13 +107,14 @@ def SchleiferiaThermophila(
 	
 	Datetime: 2021-02-03 23:06:04.268843
 	
-	The undirected graph Schleiferia thermophila has 2271 nodes and 174838 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06783 and
-	has 12 connected components, where the component with most nodes has 2241 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 153.97, and the node degree mode is 3. The top 5 most central
-	nodes are 1453500.AT05_01670 (degree 880), 1453500.AT05_01795 (degree 827), 1453500.AT05_10805
-	(degree 721), 1453500.AT05_03645 (degree 617) and 1453500.AT05_09835 (degree 613).
+	The undirected graph Schleiferia thermophila has 2271 nodes and 174838
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06783 and has 12 connected components, where the component
+	with most nodes has 2241 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 153.97,
+	and the node degree mode is 3. The top 5 most central nodes are 1453500.AT05_01670
+	(degree 880), 1453500.AT05_01795 (degree 827), 1453500.AT05_10805 (degree
+	721), 1453500.AT05_03645 (degree 617) and 1453500.AT05_09835 (degree 613).
 	
 
 

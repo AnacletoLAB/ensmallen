@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:47.891240
 
-The undirected graph Mahella australiensis has 2850 nodes and 204562 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05039 and
-has 12 connected components, where the component with most nodes has 2820 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 143.55, and the node degree mode is 60. The top 5 most central
-nodes are 697281.Mahau_1179 (degree 948), 697281.Mahau_1642 (degree 831), 697281.Mahau_1470
-(degree 809), 697281.Mahau_1974 (degree 769) and 697281.Mahau_0283 (degree 763).
+The undirected graph Mahella australiensis has 2850 nodes and 204562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05039 and has 12 connected components, where the component with most
+nodes has 2820 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 143.55, and
+the node degree mode is 60. The top 5 most central nodes are 697281.Mahau_1179
+(degree 948), 697281.Mahau_1642 (degree 831), 697281.Mahau_1470 (degree
+809), 697281.Mahau_1974 (degree 769) and 697281.Mahau_0283 (degree 763).
 
 
 References
@@ -106,13 +107,14 @@ def MahellaAustraliensis(
 	
 	Datetime: 2021-02-02 21:32:47.891240
 	
-	The undirected graph Mahella australiensis has 2850 nodes and 204562 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05039 and
-	has 12 connected components, where the component with most nodes has 2820 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 143.55, and the node degree mode is 60. The top 5 most central
-	nodes are 697281.Mahau_1179 (degree 948), 697281.Mahau_1642 (degree 831), 697281.Mahau_1470
-	(degree 809), 697281.Mahau_1974 (degree 769) and 697281.Mahau_0283 (degree 763).
+	The undirected graph Mahella australiensis has 2850 nodes and 204562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05039 and has 12 connected components, where the component with most
+	nodes has 2820 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 143.55, and
+	the node degree mode is 60. The top 5 most central nodes are 697281.Mahau_1179
+	(degree 948), 697281.Mahau_1642 (degree 831), 697281.Mahau_1470 (degree
+	809), 697281.Mahau_1974 (degree 769) and 697281.Mahau_0283 (degree 763).
 	
 
 

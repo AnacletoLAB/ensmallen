@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:58:01.344246
 
-The undirected graph Kluyveromyces lactis has 4674 nodes and 440643 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04035 and
-has 2 connected components, where the component with most nodes has 4672 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 188.55, and the node degree mode is 31. The top 5 most central
-nodes are 28985.XP_453299.1 (degree 1068), 28985.XP_454657.1 (degree 1047), 28985.XP_455109.1
-(degree 1032), 28985.XP_455310.1 (degree 965) and 28985.XP_453640.1 (degree 914).
+The undirected graph Kluyveromyces lactis has 4674 nodes and 440643 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04035 and has 2 connected components, where the component with most
+nodes has 4672 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 188.55, and
+the node degree mode is 31. The top 5 most central nodes are 28985.XP_453299.1
+(degree 1068), 28985.XP_454657.1 (degree 1047), 28985.XP_455109.1 (degree
+1032), 28985.XP_455310.1 (degree 965) and 28985.XP_453640.1 (degree 914).
 
 
 References
@@ -106,13 +107,14 @@ def KluyveromycesLactis(
 	
 	Datetime: 2021-02-02 17:58:01.344246
 	
-	The undirected graph Kluyveromyces lactis has 4674 nodes and 440643 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04035 and
-	has 2 connected components, where the component with most nodes has 4672 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 188.55, and the node degree mode is 31. The top 5 most central
-	nodes are 28985.XP_453299.1 (degree 1068), 28985.XP_454657.1 (degree 1047), 28985.XP_455109.1
-	(degree 1032), 28985.XP_455310.1 (degree 965) and 28985.XP_453640.1 (degree 914).
+	The undirected graph Kluyveromyces lactis has 4674 nodes and 440643 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04035 and has 2 connected components, where the component with most
+	nodes has 4672 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 188.55, and
+	the node degree mode is 31. The top 5 most central nodes are 28985.XP_453299.1
+	(degree 1068), 28985.XP_454657.1 (degree 1047), 28985.XP_455109.1 (degree
+	1032), 28985.XP_455310.1 (degree 965) and 28985.XP_453640.1 (degree 914).
 	
 
 

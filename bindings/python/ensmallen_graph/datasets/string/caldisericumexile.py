@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:33.846302
 
-The undirected graph Caldisericum exile has 1577 nodes and 97641 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07857 and
-has 9 connected components, where the component with most nodes has 1555 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 123.83, and the node degree mode is 8. The top 5 most central
-nodes are 511051.CSE_09900 (degree 842), 511051.CSE_09160 (degree 715), 511051.CSE_06920
-(degree 572), 511051.CSE_09610 (degree 557) and 511051.CSE_10120 (degree 532).
+The undirected graph Caldisericum exile has 1577 nodes and 97641 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07857 and has 9 connected components, where the component with most
+nodes has 1555 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 123.83, and
+the node degree mode is 8. The top 5 most central nodes are 511051.CSE_09900
+(degree 842), 511051.CSE_09160 (degree 715), 511051.CSE_06920 (degree 572),
+511051.CSE_09610 (degree 557) and 511051.CSE_10120 (degree 532).
 
 
 References
@@ -106,13 +107,14 @@ def CaldisericumExile(
 	
 	Datetime: 2021-02-02 21:02:33.846302
 	
-	The undirected graph Caldisericum exile has 1577 nodes and 97641 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07857 and
-	has 9 connected components, where the component with most nodes has 1555 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 123.83, and the node degree mode is 8. The top 5 most central
-	nodes are 511051.CSE_09900 (degree 842), 511051.CSE_09160 (degree 715), 511051.CSE_06920
-	(degree 572), 511051.CSE_09610 (degree 557) and 511051.CSE_10120 (degree 532).
+	The undirected graph Caldisericum exile has 1577 nodes and 97641 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07857 and has 9 connected components, where the component with most
+	nodes has 1555 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 123.83, and
+	the node degree mode is 8. The top 5 most central nodes are 511051.CSE_09900
+	(degree 842), 511051.CSE_09160 (degree 715), 511051.CSE_06920 (degree 572),
+	511051.CSE_09610 (degree 557) and 511051.CSE_10120 (degree 532).
 	
 
 

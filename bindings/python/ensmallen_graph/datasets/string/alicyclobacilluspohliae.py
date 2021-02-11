@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:06.855035
 
-The undirected graph Alicyclobacillus pohliae has 3205 nodes and 270142 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05261
-and has 22 connected components, where the component with most nodes has 3151 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 168.58, and the node degree mode is 2. The top 5
-most central nodes are 1120973.AQXL01000122_gene194 (degree 1325), 1120973.AQXL01000114_gene704
-(degree 1039), 1120973.AQXL01000075_gene965 (degree 954), 1120973.AQXL01000134_gene1618
-(degree 900) and 1120973.AQXL01000120_gene801 (degree 899).
+The undirected graph Alicyclobacillus pohliae has 3205 nodes and 270142
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05261 and has 22 connected components, where the component
+with most nodes has 3151 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 168.58,
+and the node degree mode is 2. The top 5 most central nodes are 1120973.AQXL01000122_gene194
+(degree 1325), 1120973.AQXL01000114_gene704 (degree 1039), 1120973.AQXL01000075_gene965
+(degree 954), 1120973.AQXL01000134_gene1618 (degree 900) and 1120973.AQXL01000120_gene801
+(degree 899).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusPohliae(
 	
 	Datetime: 2021-02-02 22:31:06.855035
 	
-	The undirected graph Alicyclobacillus pohliae has 3205 nodes and 270142 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05261
-	and has 22 connected components, where the component with most nodes has 3151 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 168.58, and the node degree mode is 2. The top 5
-	most central nodes are 1120973.AQXL01000122_gene194 (degree 1325), 1120973.AQXL01000114_gene704
-	(degree 1039), 1120973.AQXL01000075_gene965 (degree 954), 1120973.AQXL01000134_gene1618
-	(degree 900) and 1120973.AQXL01000120_gene801 (degree 899).
+	The undirected graph Alicyclobacillus pohliae has 3205 nodes and 270142
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05261 and has 22 connected components, where the component
+	with most nodes has 3151 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 168.58,
+	and the node degree mode is 2. The top 5 most central nodes are 1120973.AQXL01000122_gene194
+	(degree 1325), 1120973.AQXL01000114_gene704 (degree 1039), 1120973.AQXL01000075_gene965
+	(degree 954), 1120973.AQXL01000134_gene1618 (degree 900) and 1120973.AQXL01000120_gene801
+	(degree 899).
 	
 
 

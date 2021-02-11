@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:27.678221
 
-The undirected graph Streptobacillus moniliformis has 1427 nodes and 98467 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09678
-and has 7 connected components, where the component with most nodes has 1412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 138.01, and the node degree mode is 2. The top 5
-most central nodes are 519441.Smon_1103 (degree 690), 519441.Smon_0948 (degree 657),
-519441.Smon_1423 (degree 621), 519441.Smon_0300 (degree 594) and 519441.Smon_0852
-(degree 590).
+The undirected graph Streptobacillus moniliformis has 1427 nodes and 98467
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09678 and has 7 connected components, where the component
+with most nodes has 1412 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 138.01,
+and the node degree mode is 2. The top 5 most central nodes are 519441.Smon_1103
+(degree 690), 519441.Smon_0948 (degree 657), 519441.Smon_1423 (degree 621),
+519441.Smon_0300 (degree 594) and 519441.Smon_0852 (degree 590).
 
 
 References
@@ -107,14 +107,14 @@ def StreptobacillusMoniliformis(
 	
 	Datetime: 2021-02-02 21:03:27.678221
 	
-	The undirected graph Streptobacillus moniliformis has 1427 nodes and 98467 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09678
-	and has 7 connected components, where the component with most nodes has 1412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 138.01, and the node degree mode is 2. The top 5
-	most central nodes are 519441.Smon_1103 (degree 690), 519441.Smon_0948 (degree 657),
-	519441.Smon_1423 (degree 621), 519441.Smon_0300 (degree 594) and 519441.Smon_0852
-	(degree 590).
+	The undirected graph Streptobacillus moniliformis has 1427 nodes and 98467
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09678 and has 7 connected components, where the component
+	with most nodes has 1412 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 138.01,
+	and the node degree mode is 2. The top 5 most central nodes are 519441.Smon_1103
+	(degree 690), 519441.Smon_0948 (degree 657), 519441.Smon_1423 (degree 621),
+	519441.Smon_0300 (degree 594) and 519441.Smon_0852 (degree 590).
 	
 
 

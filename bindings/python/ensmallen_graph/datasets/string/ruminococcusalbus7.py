@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:00.069562
 
-The undirected graph Ruminococcus albus 7 has 3501 nodes and 172666 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02818 and
-has 34 connected components, where the component with most nodes has 3409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 98.64, and the node degree mode is 7. The top 5 most central
-nodes are 697329.Rumal_0287 (degree 1029), 697329.Rumal_0973 (degree 871), 697329.Rumal_0032
-(degree 859), 697329.Rumal_3203 (degree 798) and 697329.Rumal_1611 (degree 766).
+The undirected graph Ruminococcus albus 7 has 3501 nodes and 172666 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02818 and has 34 connected components, where the component with most
+nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 98.64, and
+the node degree mode is 7. The top 5 most central nodes are 697329.Rumal_0287
+(degree 1029), 697329.Rumal_0973 (degree 871), 697329.Rumal_0032 (degree
+859), 697329.Rumal_3203 (degree 798) and 697329.Rumal_1611 (degree 766).
 
 
 References
@@ -106,13 +107,14 @@ def RuminococcusAlbus7(
 	
 	Datetime: 2021-02-02 21:33:00.069562
 	
-	The undirected graph Ruminococcus albus 7 has 3501 nodes and 172666 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02818 and
-	has 34 connected components, where the component with most nodes has 3409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 98.64, and the node degree mode is 7. The top 5 most central
-	nodes are 697329.Rumal_0287 (degree 1029), 697329.Rumal_0973 (degree 871), 697329.Rumal_0032
-	(degree 859), 697329.Rumal_3203 (degree 798) and 697329.Rumal_1611 (degree 766).
+	The undirected graph Ruminococcus albus 7 has 3501 nodes and 172666 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02818 and has 34 connected components, where the component with most
+	nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 98.64, and
+	the node degree mode is 7. The top 5 most central nodes are 697329.Rumal_0287
+	(degree 1029), 697329.Rumal_0973 (degree 871), 697329.Rumal_0032 (degree
+	859), 697329.Rumal_3203 (degree 798) and 697329.Rumal_1611 (degree 766).
 	
 
 

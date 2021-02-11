@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:24.283467
 
-The undirected graph Prevotella multisaccharivorax has 2677 nodes and 176975 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04941
-and has 15 connected components, where the component with most nodes has 2645 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 132.22, and the node degree mode is 2. The top 5
-most central nodes are 688246.Premu_0556 (degree 897), 688246.Premu_0960 (degree
-812), 688246.Premu_2781 (degree 741), 688246.Premu_1194 (degree 711) and 688246.Premu_0905
-(degree 686).
+The undirected graph Prevotella multisaccharivorax has 2677 nodes and 176975
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04941 and has 15 connected components, where the component
+with most nodes has 2645 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 132.22,
+and the node degree mode is 2. The top 5 most central nodes are 688246.Premu_0556
+(degree 897), 688246.Premu_0960 (degree 812), 688246.Premu_2781 (degree
+741), 688246.Premu_1194 (degree 711) and 688246.Premu_0905 (degree 686).
 
 
 References
@@ -107,14 +107,14 @@ def PrevotellaMultisaccharivorax(
 	
 	Datetime: 2021-02-02 21:31:24.283467
 	
-	The undirected graph Prevotella multisaccharivorax has 2677 nodes and 176975 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04941
-	and has 15 connected components, where the component with most nodes has 2645 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 132.22, and the node degree mode is 2. The top 5
-	most central nodes are 688246.Premu_0556 (degree 897), 688246.Premu_0960 (degree
-	812), 688246.Premu_2781 (degree 741), 688246.Premu_1194 (degree 711) and 688246.Premu_0905
-	(degree 686).
+	The undirected graph Prevotella multisaccharivorax has 2677 nodes and 176975
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04941 and has 15 connected components, where the component
+	with most nodes has 2645 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 132.22,
+	and the node degree mode is 2. The top 5 most central nodes are 688246.Premu_0556
+	(degree 897), 688246.Premu_0960 (degree 812), 688246.Premu_2781 (degree
+	741), 688246.Premu_1194 (degree 711) and 688246.Premu_0905 (degree 686).
 	
 
 

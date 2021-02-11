@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:45.264823
 
-The undirected graph Holophaga foetida has 3405 nodes and 389836 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06727 and
-has 16 connected components, where the component with most nodes has 3366 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 228.98, and the node degree mode is 3. The top 5 most central
-nodes are 903818.KI912268_gene3364 (degree 1411), 903818.KI912268_gene2225 (degree
-1203), 903818.KI912269_gene385 (degree 1188), 903818.KI912269_gene226 (degree 1111)
-and 903818.KI912268_gene2829 (degree 1110).
+The undirected graph Holophaga foetida has 3405 nodes and 389836 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06727 and has 16 connected components, where the component with most
+nodes has 3366 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 228.98, and
+the node degree mode is 3. The top 5 most central nodes are 903818.KI912268_gene3364
+(degree 1411), 903818.KI912268_gene2225 (degree 1203), 903818.KI912269_gene385
+(degree 1188), 903818.KI912269_gene226 (degree 1111) and 903818.KI912268_gene2829
+(degree 1110).
 
 
 References
@@ -107,14 +108,15 @@ def HolophagaFoetida(
 	
 	Datetime: 2021-02-02 21:53:45.264823
 	
-	The undirected graph Holophaga foetida has 3405 nodes and 389836 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06727 and
-	has 16 connected components, where the component with most nodes has 3366 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 228.98, and the node degree mode is 3. The top 5 most central
-	nodes are 903818.KI912268_gene3364 (degree 1411), 903818.KI912268_gene2225 (degree
-	1203), 903818.KI912269_gene385 (degree 1188), 903818.KI912269_gene226 (degree 1111)
-	and 903818.KI912268_gene2829 (degree 1110).
+	The undirected graph Holophaga foetida has 3405 nodes and 389836 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06727 and has 16 connected components, where the component with most
+	nodes has 3366 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 228.98, and
+	the node degree mode is 3. The top 5 most central nodes are 903818.KI912268_gene3364
+	(degree 1411), 903818.KI912268_gene2225 (degree 1203), 903818.KI912269_gene385
+	(degree 1188), 903818.KI912269_gene226 (degree 1111) and 903818.KI912268_gene2829
+	(degree 1110).
 	
 
 

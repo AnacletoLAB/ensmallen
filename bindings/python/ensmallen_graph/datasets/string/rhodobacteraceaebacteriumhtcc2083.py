@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:06.041278
 
-The undirected graph Rhodobacteraceae bacterium HTCC2083 has 4125 nodes and 497559
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05850 and has 17 connected components, where the component with most nodes has
-4081 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 182, the mean node degree is 241.24, and the node degree mode is 3. The
-top 5 most central nodes are 314270.RB2083_3940 (degree 1716), 314270.RB2083_3805
-(degree 1564), 314270.RB2083_114 (degree 1495), 314270.RB2083_3751 (degree 1337)
-and 314270.RB2083_640 (degree 1317).
+The undirected graph Rhodobacteraceae bacterium HTCC2083 has 4125 nodes
+and 497559 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05850 and has 17 connected components, where the
+component with most nodes has 4081 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 182, the mean node degree
+is 241.24, and the node degree mode is 3. The top 5 most central nodes
+are 314270.RB2083_3940 (degree 1716), 314270.RB2083_3805 (degree 1564),
+314270.RB2083_114 (degree 1495), 314270.RB2083_3751 (degree 1337) and 314270.RB2083_640
+(degree 1317).
 
 
 References
@@ -107,14 +108,15 @@ def RhodobacteraceaeBacteriumHtcc2083(
 	
 	Datetime: 2021-02-02 20:25:06.041278
 	
-	The undirected graph Rhodobacteraceae bacterium HTCC2083 has 4125 nodes and 497559
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05850 and has 17 connected components, where the component with most nodes has
-	4081 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 182, the mean node degree is 241.24, and the node degree mode is 3. The
-	top 5 most central nodes are 314270.RB2083_3940 (degree 1716), 314270.RB2083_3805
-	(degree 1564), 314270.RB2083_114 (degree 1495), 314270.RB2083_3751 (degree 1337)
-	and 314270.RB2083_640 (degree 1317).
+	The undirected graph Rhodobacteraceae bacterium HTCC2083 has 4125 nodes
+	and 497559 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05850 and has 17 connected components, where the
+	component with most nodes has 4081 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 182, the mean node degree
+	is 241.24, and the node degree mode is 3. The top 5 most central nodes
+	are 314270.RB2083_3940 (degree 1716), 314270.RB2083_3805 (degree 1564),
+	314270.RB2083_114 (degree 1495), 314270.RB2083_3751 (degree 1337) and 314270.RB2083_640
+	(degree 1317).
 	
 
 

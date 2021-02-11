@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:38.550301
 
-The undirected graph Pedobacter oryzae has 3042 nodes and 221810 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04796 and
-has 8 connected components, where the component with most nodes has 3019 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 145.83, and the node degree mode is 7. The top 5 most central
-nodes are 468059.AUHA01000002_gene769 (degree 1081), 468059.AUHA01000005_gene2517
-(degree 910), 468059.AUHA01000002_gene1289 (degree 876), 468059.AUHA01000003_gene1712
-(degree 832) and 468059.AUHA01000003_gene1529 (degree 788).
+The undirected graph Pedobacter oryzae has 3042 nodes and 221810 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04796 and has 8 connected components, where the component with most
+nodes has 3019 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 145.83, and
+the node degree mode is 7. The top 5 most central nodes are 468059.AUHA01000002_gene769
+(degree 1081), 468059.AUHA01000005_gene2517 (degree 910), 468059.AUHA01000002_gene1289
+(degree 876), 468059.AUHA01000003_gene1712 (degree 832) and 468059.AUHA01000003_gene1529
+(degree 788).
 
 
 References
@@ -107,14 +108,15 @@ def PedobacterOryzae(
 	
 	Datetime: 2021-02-02 20:54:38.550301
 	
-	The undirected graph Pedobacter oryzae has 3042 nodes and 221810 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04796 and
-	has 8 connected components, where the component with most nodes has 3019 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 145.83, and the node degree mode is 7. The top 5 most central
-	nodes are 468059.AUHA01000002_gene769 (degree 1081), 468059.AUHA01000005_gene2517
-	(degree 910), 468059.AUHA01000002_gene1289 (degree 876), 468059.AUHA01000003_gene1712
-	(degree 832) and 468059.AUHA01000003_gene1529 (degree 788).
+	The undirected graph Pedobacter oryzae has 3042 nodes and 221810 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04796 and has 8 connected components, where the component with most
+	nodes has 3019 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 145.83, and
+	the node degree mode is 7. The top 5 most central nodes are 468059.AUHA01000002_gene769
+	(degree 1081), 468059.AUHA01000005_gene2517 (degree 910), 468059.AUHA01000002_gene1289
+	(degree 876), 468059.AUHA01000003_gene1712 (degree 832) and 468059.AUHA01000003_gene1529
+	(degree 788).
 	
 
 

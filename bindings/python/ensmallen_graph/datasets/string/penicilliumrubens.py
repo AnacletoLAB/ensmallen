@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:09.197021
 
-The undirected graph Penicillium rubens has 7943 nodes and 601076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01906 and
-has 23 connected components, where the component with most nodes has 7890 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 151.35, and the node degree mode is 1. The top 5 most central
-nodes are 1108849.XP_002559645.1 (degree 1967), 1108849.XP_002568470.1 (degree 1478),
-1108849.XP_002561712.1 (degree 1236), 1108849.XP_002559743.1 (degree 1236) and 1108849.XP_002560824.1
+The undirected graph Penicillium rubens has 7943 nodes and 601076 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01906 and has 23 connected components, where the component with most
+nodes has 7890 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 83, the mean node degree is 151.35, and
+the node degree mode is 1. The top 5 most central nodes are 1108849.XP_002559645.1
+(degree 1967), 1108849.XP_002568470.1 (degree 1478), 1108849.XP_002561712.1
+(degree 1236), 1108849.XP_002559743.1 (degree 1236) and 1108849.XP_002560824.1
 (degree 1208).
 
 
@@ -107,13 +108,14 @@ def PenicilliumRubens(
 	
 	Datetime: 2021-02-02 22:25:09.197021
 	
-	The undirected graph Penicillium rubens has 7943 nodes and 601076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01906 and
-	has 23 connected components, where the component with most nodes has 7890 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 151.35, and the node degree mode is 1. The top 5 most central
-	nodes are 1108849.XP_002559645.1 (degree 1967), 1108849.XP_002568470.1 (degree 1478),
-	1108849.XP_002561712.1 (degree 1236), 1108849.XP_002559743.1 (degree 1236) and 1108849.XP_002560824.1
+	The undirected graph Penicillium rubens has 7943 nodes and 601076 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01906 and has 23 connected components, where the component with most
+	nodes has 7890 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 83, the mean node degree is 151.35, and
+	the node degree mode is 1. The top 5 most central nodes are 1108849.XP_002559645.1
+	(degree 1967), 1108849.XP_002568470.1 (degree 1478), 1108849.XP_002561712.1
+	(degree 1236), 1108849.XP_002559743.1 (degree 1236) and 1108849.XP_002560824.1
 	(degree 1208).
 	
 

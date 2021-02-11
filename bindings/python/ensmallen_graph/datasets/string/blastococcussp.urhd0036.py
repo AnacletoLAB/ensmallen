@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:16.440643
 
-The undirected graph Blastococcus sp. URHD0036 has 4873 nodes and 554813 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04674
-and has 8 connected components, where the component with most nodes has 4856 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 184, the mean node degree is 227.71, and the node degree mode is 2. The top 5
-most central nodes are 1380356.JNIK01000006_gene1448 (degree 1863), 1380356.JNIK01000021_gene4544
-(degree 1495), 1380356.JNIK01000019_gene239 (degree 1471), 1380356.JNIK01000005_gene927
-(degree 1393) and 1380356.JNIK01000021_gene4601 (degree 1343).
+The undirected graph Blastococcus sp. URHD0036 has 4873 nodes and 554813
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04674 and has 8 connected components, where the component
+with most nodes has 4856 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 184, the mean node degree is 227.71,
+and the node degree mode is 2. The top 5 most central nodes are 1380356.JNIK01000006_gene1448
+(degree 1863), 1380356.JNIK01000021_gene4544 (degree 1495), 1380356.JNIK01000019_gene239
+(degree 1471), 1380356.JNIK01000005_gene927 (degree 1393) and 1380356.JNIK01000021_gene4601
+(degree 1343).
 
 
 References
@@ -107,14 +108,15 @@ def BlastococcusSp.Urhd0036(
 	
 	Datetime: 2021-02-03 22:13:16.440643
 	
-	The undirected graph Blastococcus sp. URHD0036 has 4873 nodes and 554813 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04674
-	and has 8 connected components, where the component with most nodes has 4856 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 184, the mean node degree is 227.71, and the node degree mode is 2. The top 5
-	most central nodes are 1380356.JNIK01000006_gene1448 (degree 1863), 1380356.JNIK01000021_gene4544
-	(degree 1495), 1380356.JNIK01000019_gene239 (degree 1471), 1380356.JNIK01000005_gene927
-	(degree 1393) and 1380356.JNIK01000021_gene4601 (degree 1343).
+	The undirected graph Blastococcus sp. URHD0036 has 4873 nodes and 554813
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04674 and has 8 connected components, where the component
+	with most nodes has 4856 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 184, the mean node degree is 227.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1380356.JNIK01000006_gene1448
+	(degree 1863), 1380356.JNIK01000021_gene4544 (degree 1495), 1380356.JNIK01000019_gene239
+	(degree 1471), 1380356.JNIK01000005_gene927 (degree 1393) and 1380356.JNIK01000021_gene4601
+	(degree 1343).
 	
 
 

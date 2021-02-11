@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:27.108393
 
-The undirected graph Pantoea sp. Sc1 has 4030 nodes and 496378 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06114 and
-has 10 connected components, where the component with most nodes has 4007 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 246.34, and the node degree mode is 1. The top 5 most central
-nodes are 593105.S7A_19244 (degree 1772), 593105.S7A_03940 (degree 1342), 593105.S7A_04575
-(degree 1306), 593105.S7A_04625 (degree 1300) and 593105.S7A_13465 (degree 1299).
+The undirected graph Pantoea sp. Sc1 has 4030 nodes and 496378 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06114 and has 10 connected components, where the component with most
+nodes has 4007 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 246.34, and
+the node degree mode is 1. The top 5 most central nodes are 593105.S7A_19244
+(degree 1772), 593105.S7A_03940 (degree 1342), 593105.S7A_04575 (degree
+1306), 593105.S7A_04625 (degree 1300) and 593105.S7A_13465 (degree 1299).
 
 
 References
@@ -106,13 +107,14 @@ def PantoeaSp.Sc1(
 	
 	Datetime: 2021-02-02 21:18:27.108393
 	
-	The undirected graph Pantoea sp. Sc1 has 4030 nodes and 496378 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06114 and
-	has 10 connected components, where the component with most nodes has 4007 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 246.34, and the node degree mode is 1. The top 5 most central
-	nodes are 593105.S7A_19244 (degree 1772), 593105.S7A_03940 (degree 1342), 593105.S7A_04575
-	(degree 1306), 593105.S7A_04625 (degree 1300) and 593105.S7A_13465 (degree 1299).
+	The undirected graph Pantoea sp. Sc1 has 4030 nodes and 496378 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06114 and has 10 connected components, where the component with most
+	nodes has 4007 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 246.34, and
+	the node degree mode is 1. The top 5 most central nodes are 593105.S7A_19244
+	(degree 1772), 593105.S7A_03940 (degree 1342), 593105.S7A_04575 (degree
+	1306), 593105.S7A_04625 (degree 1300) and 593105.S7A_13465 (degree 1299).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:30.044151
 
-The undirected graph Natronomonas moolapensis has 2707 nodes and 184514 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05038
-and has 14 connected components, where the component with most nodes has 2674 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 136.32, and the node degree mode is 4. The top 5
-most central nodes are 268739.Nmlp_2533 (degree 1168), 268739.Nmlp_2535 (degree 787),
-268739.Nmlp_1502 (degree 758), 268739.Nmlp_3286 (degree 714) and 268739.Nmlp_3588
-(degree 671).
+The undirected graph Natronomonas moolapensis has 2707 nodes and 184514
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05038 and has 14 connected components, where the component
+with most nodes has 2674 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 136.32,
+and the node degree mode is 4. The top 5 most central nodes are 268739.Nmlp_2533
+(degree 1168), 268739.Nmlp_2535 (degree 787), 268739.Nmlp_1502 (degree
+758), 268739.Nmlp_3286 (degree 714) and 268739.Nmlp_3588 (degree 671).
 
 
 References
@@ -107,14 +107,14 @@ def NatronomonasMoolapensis(
 	
 	Datetime: 2021-02-02 20:15:30.044151
 	
-	The undirected graph Natronomonas moolapensis has 2707 nodes and 184514 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05038
-	and has 14 connected components, where the component with most nodes has 2674 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 136.32, and the node degree mode is 4. The top 5
-	most central nodes are 268739.Nmlp_2533 (degree 1168), 268739.Nmlp_2535 (degree 787),
-	268739.Nmlp_1502 (degree 758), 268739.Nmlp_3286 (degree 714) and 268739.Nmlp_3588
-	(degree 671).
+	The undirected graph Natronomonas moolapensis has 2707 nodes and 184514
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05038 and has 14 connected components, where the component
+	with most nodes has 2674 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 136.32,
+	and the node degree mode is 4. The top 5 most central nodes are 268739.Nmlp_2533
+	(degree 1168), 268739.Nmlp_2535 (degree 787), 268739.Nmlp_1502 (degree
+	758), 268739.Nmlp_3286 (degree 714) and 268739.Nmlp_3588 (degree 671).
 	
 
 

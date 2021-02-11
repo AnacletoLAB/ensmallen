@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:35.919154
 
-The undirected graph Shewanella putrefaciens has 3939 nodes and 513830 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06625 and
-has 7 connected components, where the component with most nodes has 3923 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 236,
-the mean node degree is 260.89, and the node degree mode is 1. The top 5 most central
-nodes are 319224.Sputcn32_3142 (degree 2358), 319224.Sputcn32_3906 (degree 1605),
-319224.Sputcn32_3155 (degree 1575), 319224.Sputcn32_2645 (degree 1371) and 319224.Sputcn32_2348
+The undirected graph Shewanella putrefaciens has 3939 nodes and 513830
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06625 and has 7 connected components, where the component
+with most nodes has 3923 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 236, the mean node degree is 260.89,
+and the node degree mode is 1. The top 5 most central nodes are 319224.Sputcn32_3142
+(degree 2358), 319224.Sputcn32_3906 (degree 1605), 319224.Sputcn32_3155
+(degree 1575), 319224.Sputcn32_2645 (degree 1371) and 319224.Sputcn32_2348
 (degree 1198).
 
 
@@ -107,13 +108,14 @@ def ShewanellaPutrefaciens(
 	
 	Datetime: 2021-02-02 20:27:35.919154
 	
-	The undirected graph Shewanella putrefaciens has 3939 nodes and 513830 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06625 and
-	has 7 connected components, where the component with most nodes has 3923 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 236,
-	the mean node degree is 260.89, and the node degree mode is 1. The top 5 most central
-	nodes are 319224.Sputcn32_3142 (degree 2358), 319224.Sputcn32_3906 (degree 1605),
-	319224.Sputcn32_3155 (degree 1575), 319224.Sputcn32_2645 (degree 1371) and 319224.Sputcn32_2348
+	The undirected graph Shewanella putrefaciens has 3939 nodes and 513830
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06625 and has 7 connected components, where the component
+	with most nodes has 3923 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 236, the mean node degree is 260.89,
+	and the node degree mode is 1. The top 5 most central nodes are 319224.Sputcn32_3142
+	(degree 2358), 319224.Sputcn32_3906 (degree 1605), 319224.Sputcn32_3155
+	(degree 1575), 319224.Sputcn32_2645 (degree 1371) and 319224.Sputcn32_2348
 	(degree 1198).
 	
 

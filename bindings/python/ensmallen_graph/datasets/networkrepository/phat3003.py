@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:09.296950
 
-The undirected graph p-hat300-3 has 300 nodes and 33390 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.74448
-and is connected, as it has a single component. The graph median node degree is 224,
-the mean node degree is 222.60 and the node degree mode is 238. The top 5 most central
-nodes are 76 (degree 267), 255 (degree 265), 38 (degree 264), 259 (degree 262) and
-239 (degree 262).
+The undirected graph p-hat300-3 has 300 nodes and 33390 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.74448 and is connected, as it has a single component. The
+graph median node degree is 224, the mean node degree is 222.60 and the
+node degree mode is 238. The top 5 most central nodes are 76 (degree 267),
+255 (degree 265), 38 (degree 264), 259 (degree 262) and 239 (degree 262).
 
 
 References
@@ -115,12 +115,12 @@ def PHat3003(
 	
 	Datetime: 2021-02-03 22:56:09.296950
 	
-	The undirected graph p-hat300-3 has 300 nodes and 33390 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.74448
-	and is connected, as it has a single component. The graph median node degree is 224,
-	the mean node degree is 222.60 and the node degree mode is 238. The top 5 most central
-	nodes are 76 (degree 267), 255 (degree 265), 38 (degree 264), 259 (degree 262) and
-	239 (degree 262).
+	The undirected graph p-hat300-3 has 300 nodes and 33390 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.74448 and is connected, as it has a single component. The
+	graph median node degree is 224, the mean node degree is 222.60 and the
+	node degree mode is 238. The top 5 most central nodes are 76 (degree 267),
+	255 (degree 265), 38 (degree 264), 259 (degree 262) and 239 (degree 262).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:43.926739
 
-The undirected graph lshp1270 has 1270 nodes and 4969 unweighted edges, of which
-1270 are self-loops. The graph is sparse as it has a density of 0.00538 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.83, and the node degree mode is 7. The top 5 most central nodes are 1266 (degree
-7), 1263 (degree 7), 1262 (degree 7), 1259 (degree 7) and 1258 (degree 7).
+The undirected graph lshp1270 has 1270 nodes and 4969 unweighted edges,
+of which 1270 are self-loops. The graph is sparse as it has a density of
+0.00538 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.83, and the node degree mode
+is 7. The top 5 most central nodes are 1266 (degree 7), 1263 (degree 7),
+1262 (degree 7), 1259 (degree 7) and 1258 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp1270(
 	
 	Datetime: 2021-02-06 08:13:43.926739
 	
-	The undirected graph lshp1270 has 1270 nodes and 4969 unweighted edges, of which
-	1270 are self-loops. The graph is sparse as it has a density of 0.00538 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.83, and the node degree mode is 7. The top 5 most central nodes are 1266 (degree
-	7), 1263 (degree 7), 1262 (degree 7), 1259 (degree 7) and 1258 (degree 7).
+	The undirected graph lshp1270 has 1270 nodes and 4969 unweighted edges,
+	of which 1270 are self-loops. The graph is sparse as it has a density of
+	0.00538 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.83, and the node degree mode
+	is 7. The top 5 most central nodes are 1266 (degree 7), 1263 (degree 7),
+	1262 (degree 7), 1259 (degree 7) and 1258 (degree 7).
 	
 
 

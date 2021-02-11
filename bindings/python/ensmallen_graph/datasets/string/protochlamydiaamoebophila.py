@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:33.553697
 
-The undirected graph Protochlamydia amoebophila has 1965 nodes and 103167 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05346
-and has 44 connected components, where the component with most nodes has 1863 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 77, the mean node degree is 105.00, and the node degree mode is 1. The top 5 most
-central nodes are 264201.pc1236 (degree 804), 264201.pc0223 (degree 688), 264201.pc0882
-(degree 587), 264201.pc1639 (degree 567) and 264201.pc0251 (degree 558).
+The undirected graph Protochlamydia amoebophila has 1965 nodes and 103167
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05346 and has 44 connected components, where the component
+with most nodes has 1863 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 77, the mean node degree is 105.00,
+and the node degree mode is 1. The top 5 most central nodes are 264201.pc1236
+(degree 804), 264201.pc0223 (degree 688), 264201.pc0882 (degree 587), 264201.pc1639
+(degree 567) and 264201.pc0251 (degree 558).
 
 
 References
@@ -106,13 +107,14 @@ def ProtochlamydiaAmoebophila(
 	
 	Datetime: 2021-02-02 20:13:33.553697
 	
-	The undirected graph Protochlamydia amoebophila has 1965 nodes and 103167 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05346
-	and has 44 connected components, where the component with most nodes has 1863 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 77, the mean node degree is 105.00, and the node degree mode is 1. The top 5 most
-	central nodes are 264201.pc1236 (degree 804), 264201.pc0223 (degree 688), 264201.pc0882
-	(degree 587), 264201.pc1639 (degree 567) and 264201.pc0251 (degree 558).
+	The undirected graph Protochlamydia amoebophila has 1965 nodes and 103167
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05346 and has 44 connected components, where the component
+	with most nodes has 1863 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 77, the mean node degree is 105.00,
+	and the node degree mode is 1. The top 5 most central nodes are 264201.pc1236
+	(degree 804), 264201.pc0223 (degree 688), 264201.pc0882 (degree 587), 264201.pc1639
+	(degree 567) and 264201.pc0251 (degree 558).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:12.654977
 
-The undirected graph Lactobacillus psittaci has 1332 nodes and 83344 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09402 and
-has 2 connected components, where the component with most nodes has 1330 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 125.14, and the node degree mode is 67. The top 5 most central
-nodes are 1122152.AUEI01000001_gene589 (degree 630), 1122152.AUEI01000001_gene600
-(degree 524), 1122152.AUEI01000004_gene715 (degree 516), 1122152.AUEI01000015_gene404
-(degree 446) and 1122152.AUEI01000004_gene875 (degree 437).
+The undirected graph Lactobacillus psittaci has 1332 nodes and 83344 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09402 and has 2 connected components, where the component with most
+nodes has 1330 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 125.14, and
+the node degree mode is 67. The top 5 most central nodes are 1122152.AUEI01000001_gene589
+(degree 630), 1122152.AUEI01000001_gene600 (degree 524), 1122152.AUEI01000004_gene715
+(degree 516), 1122152.AUEI01000015_gene404 (degree 446) and 1122152.AUEI01000004_gene875
+(degree 437).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusPsittaci(
 	
 	Datetime: 2021-02-02 22:41:12.654977
 	
-	The undirected graph Lactobacillus psittaci has 1332 nodes and 83344 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09402 and
-	has 2 connected components, where the component with most nodes has 1330 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 125.14, and the node degree mode is 67. The top 5 most central
-	nodes are 1122152.AUEI01000001_gene589 (degree 630), 1122152.AUEI01000001_gene600
-	(degree 524), 1122152.AUEI01000004_gene715 (degree 516), 1122152.AUEI01000015_gene404
-	(degree 446) and 1122152.AUEI01000004_gene875 (degree 437).
+	The undirected graph Lactobacillus psittaci has 1332 nodes and 83344 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09402 and has 2 connected components, where the component with most
+	nodes has 1330 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 125.14, and
+	the node degree mode is 67. The top 5 most central nodes are 1122152.AUEI01000001_gene589
+	(degree 630), 1122152.AUEI01000001_gene600 (degree 524), 1122152.AUEI01000004_gene715
+	(degree 516), 1122152.AUEI01000015_gene404 (degree 446) and 1122152.AUEI01000004_gene875
+	(degree 437).
 	
 
 

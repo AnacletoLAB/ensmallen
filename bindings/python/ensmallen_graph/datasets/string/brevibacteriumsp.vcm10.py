@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:35.771312
 
-The undirected graph Brevibacterium sp. VCM10 has 3322 nodes and 275161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-and has 11 connected components, where the component with most nodes has 3301 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 165.66, and the node degree mode is 1. The top 5
-most central nodes are 1381751.JAJB01000023_gene1701 (degree 1013), 1381751.JAJB01000009_gene2442
-(degree 993), 1381751.JAJB01000008_gene2612 (degree 981), 1381751.JAJB01000030_gene1087
-(degree 944) and 1381751.JAJB01000031_gene865 (degree 892).
+The undirected graph Brevibacterium sp. VCM10 has 3322 nodes and 275161
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04988 and has 11 connected components, where the component
+with most nodes has 3301 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 165.66,
+and the node degree mode is 1. The top 5 most central nodes are 1381751.JAJB01000023_gene1701
+(degree 1013), 1381751.JAJB01000009_gene2442 (degree 993), 1381751.JAJB01000008_gene2612
+(degree 981), 1381751.JAJB01000030_gene1087 (degree 944) and 1381751.JAJB01000031_gene865
+(degree 892).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacteriumSp.Vcm10(
 	
 	Datetime: 2021-02-03 22:17:35.771312
 	
-	The undirected graph Brevibacterium sp. VCM10 has 3322 nodes and 275161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-	and has 11 connected components, where the component with most nodes has 3301 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 165.66, and the node degree mode is 1. The top 5
-	most central nodes are 1381751.JAJB01000023_gene1701 (degree 1013), 1381751.JAJB01000009_gene2442
-	(degree 993), 1381751.JAJB01000008_gene2612 (degree 981), 1381751.JAJB01000030_gene1087
-	(degree 944) and 1381751.JAJB01000031_gene865 (degree 892).
+	The undirected graph Brevibacterium sp. VCM10 has 3322 nodes and 275161
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04988 and has 11 connected components, where the component
+	with most nodes has 3301 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 165.66,
+	and the node degree mode is 1. The top 5 most central nodes are 1381751.JAJB01000023_gene1701
+	(degree 1013), 1381751.JAJB01000009_gene2442 (degree 993), 1381751.JAJB01000008_gene2612
+	(degree 981), 1381751.JAJB01000030_gene1087 (degree 944) and 1381751.JAJB01000031_gene865
+	(degree 892).
 	
 
 

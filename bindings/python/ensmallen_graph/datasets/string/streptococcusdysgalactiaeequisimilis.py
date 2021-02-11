@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:23.692936
 
-The undirected graph Streptococcus dysgalactiae equisimilis has 2202 nodes and 176335
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07277 and has 2 connected components, where the component with most nodes has
-2199 nodes and the component with the least nodes has 3 nodes. The graph median node
-degree is 138, the mean node degree is 160.16, and the node degree mode is 7. The
-top 5 most central nodes are 759913.SDSE_2097 (degree 904), 759913.SDSE_0986 (degree
-784), 759913.SDSE_1908 (degree 729), 759913.SDSE_2276 (degree 703) and 759913.SDSE_0491
-(degree 702).
+The undirected graph Streptococcus dysgalactiae equisimilis has 2202 nodes
+and 176335 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07277 and has 2 connected components, where the
+component with most nodes has 2199 nodes and the component with the least
+nodes has 3 nodes. The graph median node degree is 138, the mean node degree
+is 160.16, and the node degree mode is 7. The top 5 most central nodes
+are 759913.SDSE_2097 (degree 904), 759913.SDSE_0986 (degree 784), 759913.SDSE_1908
+(degree 729), 759913.SDSE_2276 (degree 703) and 759913.SDSE_0491 (degree
+702).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusDysgalactiaeEquisimilis(
 	
 	Datetime: 2021-02-02 21:41:23.692936
 	
-	The undirected graph Streptococcus dysgalactiae equisimilis has 2202 nodes and 176335
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07277 and has 2 connected components, where the component with most nodes has
-	2199 nodes and the component with the least nodes has 3 nodes. The graph median node
-	degree is 138, the mean node degree is 160.16, and the node degree mode is 7. The
-	top 5 most central nodes are 759913.SDSE_2097 (degree 904), 759913.SDSE_0986 (degree
-	784), 759913.SDSE_1908 (degree 729), 759913.SDSE_2276 (degree 703) and 759913.SDSE_0491
-	(degree 702).
+	The undirected graph Streptococcus dysgalactiae equisimilis has 2202 nodes
+	and 176335 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07277 and has 2 connected components, where the
+	component with most nodes has 2199 nodes and the component with the least
+	nodes has 3 nodes. The graph median node degree is 138, the mean node degree
+	is 160.16, and the node degree mode is 7. The top 5 most central nodes
+	are 759913.SDSE_2097 (degree 904), 759913.SDSE_0986 (degree 784), 759913.SDSE_1908
+	(degree 729), 759913.SDSE_2276 (degree 703) and 759913.SDSE_0491 (degree
+	702).
 	
 
 

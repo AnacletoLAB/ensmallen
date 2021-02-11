@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:45.268416
 
-The undirected graph Claviceps purpurea has 5869 nodes and 548053 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03183 and
-has 12 connected components, where the component with most nodes has 5846 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 186.76, and the node degree mode is 1. The top 5 most central
-nodes are 5111.M1W8R2 (degree 1473), 5111.M1VU60 (degree 1396), 5111.M1VX76 (degree
-1344), 5111.M1W706 (degree 1335) and 5111.M1WEH4 (degree 1309).
+The undirected graph Claviceps purpurea has 5869 nodes and 548053 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03183 and has 12 connected components, where the component with most
+nodes has 5846 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 186.76, and
+the node degree mode is 1. The top 5 most central nodes are 5111.M1W8R2
+(degree 1473), 5111.M1VU60 (degree 1396), 5111.M1VX76 (degree 1344), 5111.M1W706
+(degree 1335) and 5111.M1WEH4 (degree 1309).
 
 
 References
@@ -106,13 +107,14 @@ def ClavicepsPurpurea(
 	
 	Datetime: 2021-02-02 17:12:45.268416
 	
-	The undirected graph Claviceps purpurea has 5869 nodes and 548053 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03183 and
-	has 12 connected components, where the component with most nodes has 5846 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 186.76, and the node degree mode is 1. The top 5 most central
-	nodes are 5111.M1W8R2 (degree 1473), 5111.M1VU60 (degree 1396), 5111.M1VX76 (degree
-	1344), 5111.M1W706 (degree 1335) and 5111.M1WEH4 (degree 1309).
+	The undirected graph Claviceps purpurea has 5869 nodes and 548053 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03183 and has 12 connected components, where the component with most
+	nodes has 5846 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 186.76, and
+	the node degree mode is 1. The top 5 most central nodes are 5111.M1W8R2
+	(degree 1473), 5111.M1VU60 (degree 1396), 5111.M1VX76 (degree 1344), 5111.M1W706
+	(degree 1335) and 5111.M1WEH4 (degree 1309).
 	
 
 

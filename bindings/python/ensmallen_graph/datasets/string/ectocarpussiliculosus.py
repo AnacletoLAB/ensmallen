@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:53.380079
 
-The undirected graph Ectocarpus siliculosus has 7938 nodes and 2139234 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06791 and
-has 9 connected components, where the component with most nodes has 7920 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 382,
-the mean node degree is 538.99, and the node degree mode is 1. The top 5 most central
-nodes are 2880.D7G873 (degree 3947), 2880.D8LI58 (degree 3550), 2880.D1J774 (degree
-3271), 2880.D7FP79 (degree 3269) and 2880.D7G638 (degree 3249).
+The undirected graph Ectocarpus siliculosus has 7938 nodes and 2139234
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06791 and has 9 connected components, where the component
+with most nodes has 7920 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 382, the mean node degree is 538.99,
+and the node degree mode is 1. The top 5 most central nodes are 2880.D7G873
+(degree 3947), 2880.D8LI58 (degree 3550), 2880.D1J774 (degree 3271), 2880.D7FP79
+(degree 3269) and 2880.D7G638 (degree 3249).
 
 
 References
@@ -106,13 +107,14 @@ def EctocarpusSiliculosus(
 	
 	Datetime: 2021-02-02 16:25:53.380079
 	
-	The undirected graph Ectocarpus siliculosus has 7938 nodes and 2139234 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06791 and
-	has 9 connected components, where the component with most nodes has 7920 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 382,
-	the mean node degree is 538.99, and the node degree mode is 1. The top 5 most central
-	nodes are 2880.D7G873 (degree 3947), 2880.D8LI58 (degree 3550), 2880.D1J774 (degree
-	3271), 2880.D7FP79 (degree 3269) and 2880.D7G638 (degree 3249).
+	The undirected graph Ectocarpus siliculosus has 7938 nodes and 2139234
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06791 and has 9 connected components, where the component
+	with most nodes has 7920 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 382, the mean node degree is 538.99,
+	and the node degree mode is 1. The top 5 most central nodes are 2880.D7G873
+	(degree 3947), 2880.D8LI58 (degree 3550), 2880.D1J774 (degree 3271), 2880.D7FP79
+	(degree 3269) and 2880.D7G638 (degree 3249).
 	
 
 

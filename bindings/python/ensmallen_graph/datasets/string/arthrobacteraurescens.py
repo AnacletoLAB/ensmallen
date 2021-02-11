@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:58.961537
 
-The undirected graph Arthrobacter aurescens has 4264 nodes and 432149 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04755 and
-has 19 connected components, where the component with most nodes has 4225 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 202.70, and the node degree mode is 1. The top 5 most central
-nodes are 290340.AAur_1628 (degree 1755), 290340.AAur_2065 (degree 1522), 290340.AAur_0187
-(degree 1476), 290340.AAur_2867 (degree 1434) and 290340.AAur_1842 (degree 1390).
+The undirected graph Arthrobacter aurescens has 4264 nodes and 432149 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04755 and has 19 connected components, where the component with most
+nodes has 4225 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 202.70, and
+the node degree mode is 1. The top 5 most central nodes are 290340.AAur_1628
+(degree 1755), 290340.AAur_2065 (degree 1522), 290340.AAur_0187 (degree
+1476), 290340.AAur_2867 (degree 1434) and 290340.AAur_1842 (degree 1390).
 
 
 References
@@ -106,13 +107,14 @@ def ArthrobacterAurescens(
 	
 	Datetime: 2021-02-02 20:19:58.961537
 	
-	The undirected graph Arthrobacter aurescens has 4264 nodes and 432149 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04755 and
-	has 19 connected components, where the component with most nodes has 4225 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 202.70, and the node degree mode is 1. The top 5 most central
-	nodes are 290340.AAur_1628 (degree 1755), 290340.AAur_2065 (degree 1522), 290340.AAur_0187
-	(degree 1476), 290340.AAur_2867 (degree 1434) and 290340.AAur_1842 (degree 1390).
+	The undirected graph Arthrobacter aurescens has 4264 nodes and 432149 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04755 and has 19 connected components, where the component with most
+	nodes has 4225 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 202.70, and
+	the node degree mode is 1. The top 5 most central nodes are 290340.AAur_1628
+	(degree 1755), 290340.AAur_2065 (degree 1522), 290340.AAur_0187 (degree
+	1476), 290340.AAur_2867 (degree 1434) and 290340.AAur_1842 (degree 1390).
 	
 
 

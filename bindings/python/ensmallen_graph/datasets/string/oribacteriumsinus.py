@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:18.541634
 
-The undirected graph Oribacterium sinus has 2614 nodes and 170080 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04980 and
-has 7 connected components, where the component with most nodes has 2599 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 130.13, and the node degree mode is 5. The top 5 most central
-nodes are 585501.HMPREF6123_2312 (degree 935), 585501.HMPREF6123_0759 (degree 860),
-585501.HMPREF6123_0332 (degree 814), 585501.HMPREF6123_0178 (degree 754) and 585501.HMPREF6123_1060
+The undirected graph Oribacterium sinus has 2614 nodes and 170080 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04980 and has 7 connected components, where the component with most
+nodes has 2599 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 130.13, and
+the node degree mode is 5. The top 5 most central nodes are 585501.HMPREF6123_2312
+(degree 935), 585501.HMPREF6123_0759 (degree 860), 585501.HMPREF6123_0332
+(degree 814), 585501.HMPREF6123_0178 (degree 754) and 585501.HMPREF6123_1060
 (degree 729).
 
 
@@ -107,13 +108,14 @@ def OribacteriumSinus(
 	
 	Datetime: 2021-02-02 21:16:18.541634
 	
-	The undirected graph Oribacterium sinus has 2614 nodes and 170080 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04980 and
-	has 7 connected components, where the component with most nodes has 2599 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 130.13, and the node degree mode is 5. The top 5 most central
-	nodes are 585501.HMPREF6123_2312 (degree 935), 585501.HMPREF6123_0759 (degree 860),
-	585501.HMPREF6123_0332 (degree 814), 585501.HMPREF6123_0178 (degree 754) and 585501.HMPREF6123_1060
+	The undirected graph Oribacterium sinus has 2614 nodes and 170080 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04980 and has 7 connected components, where the component with most
+	nodes has 2599 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 130.13, and
+	the node degree mode is 5. The top 5 most central nodes are 585501.HMPREF6123_2312
+	(degree 935), 585501.HMPREF6123_0759 (degree 860), 585501.HMPREF6123_0332
+	(degree 814), 585501.HMPREF6123_0178 (degree 754) and 585501.HMPREF6123_1060
 	(degree 729).
 	
 

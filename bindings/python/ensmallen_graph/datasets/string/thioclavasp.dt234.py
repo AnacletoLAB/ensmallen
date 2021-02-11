@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:13.677868
 
-The undirected graph Thioclava sp. DT234 has 3635 nodes and 384633 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05824 and
-has 14 connected components, where the component with most nodes has 3598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 211.63, and the node degree mode is 3. The top 5 most central
-nodes are 1353528.DT23_14755 (degree 1505), 1353528.DT23_12195 (degree 1169), 1353528.DT23_02375
-(degree 1089), 1353528.DT23_10955 (degree 1073) and 1353528.DT23_01930 (degree 1063).
+The undirected graph Thioclava sp. DT234 has 3635 nodes and 384633 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05824 and has 14 connected components, where the component with most
+nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 211.63, and
+the node degree mode is 3. The top 5 most central nodes are 1353528.DT23_14755
+(degree 1505), 1353528.DT23_12195 (degree 1169), 1353528.DT23_02375 (degree
+1089), 1353528.DT23_10955 (degree 1073) and 1353528.DT23_01930 (degree
+1063).
 
 
 References
@@ -106,13 +108,15 @@ def ThioclavaSp.Dt234(
 	
 	Datetime: 2021-02-03 22:07:13.677868
 	
-	The undirected graph Thioclava sp. DT234 has 3635 nodes and 384633 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05824 and
-	has 14 connected components, where the component with most nodes has 3598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 211.63, and the node degree mode is 3. The top 5 most central
-	nodes are 1353528.DT23_14755 (degree 1505), 1353528.DT23_12195 (degree 1169), 1353528.DT23_02375
-	(degree 1089), 1353528.DT23_10955 (degree 1073) and 1353528.DT23_01930 (degree 1063).
+	The undirected graph Thioclava sp. DT234 has 3635 nodes and 384633 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05824 and has 14 connected components, where the component with most
+	nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 211.63, and
+	the node degree mode is 3. The top 5 most central nodes are 1353528.DT23_14755
+	(degree 1505), 1353528.DT23_12195 (degree 1169), 1353528.DT23_02375 (degree
+	1089), 1353528.DT23_10955 (degree 1073) and 1353528.DT23_01930 (degree
+	1063).
 	
 
 

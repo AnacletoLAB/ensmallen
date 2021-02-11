@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:52.529945
 
-The undirected graph Methanosphaerula palustris has 2598 nodes and 375342 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11126 and has 17 connected components, where the component with most nodes has
-2558 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 297, the mean node degree is 288.95, and the node degree mode is 3. The
-top 5 most central nodes are 521011.Mpal_1305 (degree 1073), 521011.Mpal_2790 (degree
-1026), 521011.Mpal_0566 (degree 971), 521011.Mpal_0403 (degree 958) and 521011.Mpal_2349
-(degree 955).
+The undirected graph Methanosphaerula palustris has 2598 nodes and 375342
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11126 and has 17 connected components, where the
+component with most nodes has 2558 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 297, the mean node degree
+is 288.95, and the node degree mode is 3. The top 5 most central nodes
+are 521011.Mpal_1305 (degree 1073), 521011.Mpal_2790 (degree 1026), 521011.Mpal_0566
+(degree 971), 521011.Mpal_0403 (degree 958) and 521011.Mpal_2349 (degree
+955).
 
 
 References
@@ -107,14 +108,15 @@ def MethanosphaerulaPalustris(
 	
 	Datetime: 2021-02-02 21:03:52.529945
 	
-	The undirected graph Methanosphaerula palustris has 2598 nodes and 375342 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11126 and has 17 connected components, where the component with most nodes has
-	2558 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 297, the mean node degree is 288.95, and the node degree mode is 3. The
-	top 5 most central nodes are 521011.Mpal_1305 (degree 1073), 521011.Mpal_2790 (degree
-	1026), 521011.Mpal_0566 (degree 971), 521011.Mpal_0403 (degree 958) and 521011.Mpal_2349
-	(degree 955).
+	The undirected graph Methanosphaerula palustris has 2598 nodes and 375342
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11126 and has 17 connected components, where the
+	component with most nodes has 2558 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 297, the mean node degree
+	is 288.95, and the node degree mode is 3. The top 5 most central nodes
+	are 521011.Mpal_1305 (degree 1073), 521011.Mpal_2790 (degree 1026), 521011.Mpal_0566
+	(degree 971), 521011.Mpal_0403 (degree 958) and 521011.Mpal_2349 (degree
+	955).
 	
 
 

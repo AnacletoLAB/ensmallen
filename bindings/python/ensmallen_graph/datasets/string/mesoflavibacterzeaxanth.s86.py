@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:32.559022
 
-The undirected graph Mesoflavibacter zeaxanth. S86 has 3218 nodes and 265965 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05138
-and has 8 connected components, where the component with most nodes has 3199 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 165.30, and the node degree mode is 4. The top 5
-most central nodes are 1004149.AFOE01000020_gene3181 (degree 1125), 1004149.AFOE01000042_gene2740
-(degree 1083), 1004149.AFOE01000052_gene275 (degree 994), 1004149.AFOE01000009_gene2151
-(degree 973) and 1004149.AFOE01000038_gene857 (degree 842).
+The undirected graph Mesoflavibacter zeaxanth. S86 has 3218 nodes and 265965
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05138 and has 8 connected components, where the component
+with most nodes has 3199 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 165.30,
+and the node degree mode is 4. The top 5 most central nodes are 1004149.AFOE01000020_gene3181
+(degree 1125), 1004149.AFOE01000042_gene2740 (degree 1083), 1004149.AFOE01000052_gene275
+(degree 994), 1004149.AFOE01000009_gene2151 (degree 973) and 1004149.AFOE01000038_gene857
+(degree 842).
 
 
 References
@@ -107,14 +108,15 @@ def MesoflavibacterZeaxanth.S86(
 	
 	Datetime: 2021-02-02 22:07:32.559022
 	
-	The undirected graph Mesoflavibacter zeaxanth. S86 has 3218 nodes and 265965 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05138
-	and has 8 connected components, where the component with most nodes has 3199 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 165.30, and the node degree mode is 4. The top 5
-	most central nodes are 1004149.AFOE01000020_gene3181 (degree 1125), 1004149.AFOE01000042_gene2740
-	(degree 1083), 1004149.AFOE01000052_gene275 (degree 994), 1004149.AFOE01000009_gene2151
-	(degree 973) and 1004149.AFOE01000038_gene857 (degree 842).
+	The undirected graph Mesoflavibacter zeaxanth. S86 has 3218 nodes and 265965
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05138 and has 8 connected components, where the component
+	with most nodes has 3199 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 165.30,
+	and the node degree mode is 4. The top 5 most central nodes are 1004149.AFOE01000020_gene3181
+	(degree 1125), 1004149.AFOE01000042_gene2740 (degree 1083), 1004149.AFOE01000052_gene275
+	(degree 994), 1004149.AFOE01000009_gene2151 (degree 973) and 1004149.AFOE01000038_gene857
+	(degree 842).
 	
 
 

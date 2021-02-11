@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:34.613607
 
-The undirected graph Haloferax mediterranei has 2880 nodes and 197298 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04759 and
-has 26 connected components, where the component with most nodes has 2814 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 137.01, and the node degree mode is 2. The top 5 most central
-nodes are 523841.HFX_1649 (degree 830), 523841.HFX_0444 (degree 829), 523841.HFX_1365
-(degree 774), 523841.HFX_2571 (degree 731) and 523841.HFX_1557 (degree 726).
+The undirected graph Haloferax mediterranei has 2880 nodes and 197298 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04759 and has 26 connected components, where the component with most
+nodes has 2814 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 137.01, and
+the node degree mode is 2. The top 5 most central nodes are 523841.HFX_1649
+(degree 830), 523841.HFX_0444 (degree 829), 523841.HFX_1365 (degree 774),
+523841.HFX_2571 (degree 731) and 523841.HFX_1557 (degree 726).
 
 
 References
@@ -106,13 +107,14 @@ def HaloferaxMediterranei(
 	
 	Datetime: 2021-02-02 21:04:34.613607
 	
-	The undirected graph Haloferax mediterranei has 2880 nodes and 197298 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04759 and
-	has 26 connected components, where the component with most nodes has 2814 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 137.01, and the node degree mode is 2. The top 5 most central
-	nodes are 523841.HFX_1649 (degree 830), 523841.HFX_0444 (degree 829), 523841.HFX_1365
-	(degree 774), 523841.HFX_2571 (degree 731) and 523841.HFX_1557 (degree 726).
+	The undirected graph Haloferax mediterranei has 2880 nodes and 197298 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04759 and has 26 connected components, where the component with most
+	nodes has 2814 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 137.01, and
+	the node degree mode is 2. The top 5 most central nodes are 523841.HFX_1649
+	(degree 830), 523841.HFX_0444 (degree 829), 523841.HFX_1365 (degree 774),
+	523841.HFX_2571 (degree 731) and 523841.HFX_1557 (degree 726).
 	
 
 

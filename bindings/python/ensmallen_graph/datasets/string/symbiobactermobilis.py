@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:15.937778
 
-The undirected graph Symbiobacter mobilis has 2613 nodes and 276811 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08111 and
-has 9 connected components, where the component with most nodes has 2595 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 211.87, and the node degree mode is 6. The top 5 most central
-nodes are 946483.Cenrod_2578 (degree 1329), 946483.Cenrod_1285 (degree 1195), 946483.Cenrod_0604
-(degree 1194), 946483.Cenrod_1662 (degree 1119) and 946483.Cenrod_1265 (degree 1111).
+The undirected graph Symbiobacter mobilis has 2613 nodes and 276811 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08111 and has 9 connected components, where the component with most
+nodes has 2595 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 211.87, and
+the node degree mode is 6. The top 5 most central nodes are 946483.Cenrod_2578
+(degree 1329), 946483.Cenrod_1285 (degree 1195), 946483.Cenrod_0604 (degree
+1194), 946483.Cenrod_1662 (degree 1119) and 946483.Cenrod_1265 (degree
+1111).
 
 
 References
@@ -106,13 +108,15 @@ def SymbiobacterMobilis(
 	
 	Datetime: 2021-02-02 22:02:15.937778
 	
-	The undirected graph Symbiobacter mobilis has 2613 nodes and 276811 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08111 and
-	has 9 connected components, where the component with most nodes has 2595 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 211.87, and the node degree mode is 6. The top 5 most central
-	nodes are 946483.Cenrod_2578 (degree 1329), 946483.Cenrod_1285 (degree 1195), 946483.Cenrod_0604
-	(degree 1194), 946483.Cenrod_1662 (degree 1119) and 946483.Cenrod_1265 (degree 1111).
+	The undirected graph Symbiobacter mobilis has 2613 nodes and 276811 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08111 and has 9 connected components, where the component with most
+	nodes has 2595 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 211.87, and
+	the node degree mode is 6. The top 5 most central nodes are 946483.Cenrod_2578
+	(degree 1329), 946483.Cenrod_1285 (degree 1195), 946483.Cenrod_0604 (degree
+	1194), 946483.Cenrod_1662 (degree 1119) and 946483.Cenrod_1265 (degree
+	1111).
 	
 
 

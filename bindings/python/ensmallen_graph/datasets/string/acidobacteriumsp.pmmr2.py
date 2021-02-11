@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:55.969341
 
-The undirected graph Acidobacterium sp. PMMR2 has 3037 nodes and 280111 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06076
-and has 8 connected components, where the component with most nodes has 3020 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 184.47, and the node degree mode is 3. The top 5
-most central nodes are 1382359.JIAL01000001_gene2785 (degree 1173), 1382359.JIAL01000001_gene2693
-(degree 1157), 1382359.JIAL01000001_gene664 (degree 1006), 1382359.JIAL01000001_gene1987
-(degree 999) and 1382359.JIAL01000001_gene702 (degree 959).
+The undirected graph Acidobacterium sp. PMMR2 has 3037 nodes and 280111
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06076 and has 8 connected components, where the component
+with most nodes has 3020 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 184.47,
+and the node degree mode is 3. The top 5 most central nodes are 1382359.JIAL01000001_gene2785
+(degree 1173), 1382359.JIAL01000001_gene2693 (degree 1157), 1382359.JIAL01000001_gene664
+(degree 1006), 1382359.JIAL01000001_gene1987 (degree 999) and 1382359.JIAL01000001_gene702
+(degree 959).
 
 
 References
@@ -107,14 +108,15 @@ def AcidobacteriumSp.Pmmr2(
 	
 	Datetime: 2021-02-03 22:18:55.969341
 	
-	The undirected graph Acidobacterium sp. PMMR2 has 3037 nodes and 280111 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06076
-	and has 8 connected components, where the component with most nodes has 3020 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 184.47, and the node degree mode is 3. The top 5
-	most central nodes are 1382359.JIAL01000001_gene2785 (degree 1173), 1382359.JIAL01000001_gene2693
-	(degree 1157), 1382359.JIAL01000001_gene664 (degree 1006), 1382359.JIAL01000001_gene1987
-	(degree 999) and 1382359.JIAL01000001_gene702 (degree 959).
+	The undirected graph Acidobacterium sp. PMMR2 has 3037 nodes and 280111
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06076 and has 8 connected components, where the component
+	with most nodes has 3020 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 184.47,
+	and the node degree mode is 3. The top 5 most central nodes are 1382359.JIAL01000001_gene2785
+	(degree 1173), 1382359.JIAL01000001_gene2693 (degree 1157), 1382359.JIAL01000001_gene664
+	(degree 1006), 1382359.JIAL01000001_gene1987 (degree 999) and 1382359.JIAL01000001_gene702
+	(degree 959).
 	
 
 

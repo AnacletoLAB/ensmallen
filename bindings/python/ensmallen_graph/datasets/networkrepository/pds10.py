@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:29:14.171028
 
-The undirected graph pds10 has 16558 nodes and 83108 unweighted edges, of which 16558
-are self-loops. The graph is quite sparse as it has a density of 0.00055 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 9.04, and the node degree mode is 6. The top 5 most central nodes are 15389 (degree
-97), 13990 (degree 97), 12591 (degree 97), 11192 (degree 97) and 9793 (degree 97).
+The undirected graph pds10 has 16558 nodes and 83108 unweighted edges,
+of which 16558 are self-loops. The graph is quite sparse as it has a density
+of 0.00055 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 9.04, and the node degree mode
+is 6. The top 5 most central nodes are 15389 (degree 97), 13990 (degree
+97), 12591 (degree 97), 11192 (degree 97) and 9793 (degree 97).
 
 
 References
@@ -101,11 +102,12 @@ def Pds10(
 	
 	Datetime: 2021-02-06 10:29:14.171028
 	
-	The undirected graph pds10 has 16558 nodes and 83108 unweighted edges, of which 16558
-	are self-loops. The graph is quite sparse as it has a density of 0.00055 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 9.04, and the node degree mode is 6. The top 5 most central nodes are 15389 (degree
-	97), 13990 (degree 97), 12591 (degree 97), 11192 (degree 97) and 9793 (degree 97).
+	The undirected graph pds10 has 16558 nodes and 83108 unweighted edges,
+	of which 16558 are self-loops. The graph is quite sparse as it has a density
+	of 0.00055 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 9.04, and the node degree mode
+	is 6. The top 5 most central nodes are 15389 (degree 97), 13990 (degree
+	97), 12591 (degree 97), 11192 (degree 97) and 9793 (degree 97).
 	
 
 

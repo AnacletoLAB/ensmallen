@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:59.736084
 
-The undirected graph alpha proteobacterium BAL199 has 6023 nodes and 832794 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04592
-and has 21 connected components, where the component with most nodes has 5977 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 276.54, and the node degree mode is 2. The top 5
-most central nodes are 331869.BAL199_17638 (degree 2024), 331869.BAL199_21294 (degree
-1801), 331869.BAL199_23332 (degree 1721), 331869.BAL199_08678 (degree 1622) and 331869.BAL199_04714
-(degree 1566).
+The undirected graph alpha proteobacterium BAL199 has 6023 nodes and 832794
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04592 and has 21 connected components, where the component
+with most nodes has 5977 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 276.54,
+and the node degree mode is 2. The top 5 most central nodes are 331869.BAL199_17638
+(degree 2024), 331869.BAL199_21294 (degree 1801), 331869.BAL199_23332 (degree
+1721), 331869.BAL199_08678 (degree 1622) and 331869.BAL199_04714 (degree
+1566).
 
 
 References
@@ -107,14 +108,15 @@ def AlphaProteobacteriumBal199(
 	
 	Datetime: 2021-02-02 20:29:59.736084
 	
-	The undirected graph alpha proteobacterium BAL199 has 6023 nodes and 832794 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04592
-	and has 21 connected components, where the component with most nodes has 5977 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 276.54, and the node degree mode is 2. The top 5
-	most central nodes are 331869.BAL199_17638 (degree 2024), 331869.BAL199_21294 (degree
-	1801), 331869.BAL199_23332 (degree 1721), 331869.BAL199_08678 (degree 1622) and 331869.BAL199_04714
-	(degree 1566).
+	The undirected graph alpha proteobacterium BAL199 has 6023 nodes and 832794
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04592 and has 21 connected components, where the component
+	with most nodes has 5977 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 276.54,
+	and the node degree mode is 2. The top 5 most central nodes are 331869.BAL199_17638
+	(degree 2024), 331869.BAL199_21294 (degree 1801), 331869.BAL199_23332 (degree
+	1721), 331869.BAL199_08678 (degree 1622) and 331869.BAL199_04714 (degree
+	1566).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:44.101127
 
-The undirected graph Ustilago hordei has 5097 nodes and 537797 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04141 and
-has 19 connected components, where the component with most nodes has 5060 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 211.02, and the node degree mode is 3. The top 5 most central
-nodes are 120017.I2FZU4 (degree 1457), 120017.I2FP14 (degree 1456), 120017.I2FP55
-(degree 1429), 120017.I2FRN5 (degree 1417) and 120017.I2FMI0 (degree 1311).
+The undirected graph Ustilago hordei has 5097 nodes and 537797 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04141 and has 19 connected components, where the component with most
+nodes has 5060 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 211.02, and
+the node degree mode is 3. The top 5 most central nodes are 120017.I2FZU4
+(degree 1457), 120017.I2FP14 (degree 1456), 120017.I2FP55 (degree 1429),
+120017.I2FRN5 (degree 1417) and 120017.I2FMI0 (degree 1311).
 
 
 References
@@ -106,13 +107,14 @@ def UstilagoHordei(
 	
 	Datetime: 2021-02-02 19:48:44.101127
 	
-	The undirected graph Ustilago hordei has 5097 nodes and 537797 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04141 and
-	has 19 connected components, where the component with most nodes has 5060 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 211.02, and the node degree mode is 3. The top 5 most central
-	nodes are 120017.I2FZU4 (degree 1457), 120017.I2FP14 (degree 1456), 120017.I2FP55
-	(degree 1429), 120017.I2FRN5 (degree 1417) and 120017.I2FMI0 (degree 1311).
+	The undirected graph Ustilago hordei has 5097 nodes and 537797 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04141 and has 19 connected components, where the component with most
+	nodes has 5060 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 211.02, and
+	the node degree mode is 3. The top 5 most central nodes are 120017.I2FZU4
+	(degree 1457), 120017.I2FP14 (degree 1456), 120017.I2FP55 (degree 1429),
+	120017.I2FRN5 (degree 1417) and 120017.I2FMI0 (degree 1311).
 	
 
 

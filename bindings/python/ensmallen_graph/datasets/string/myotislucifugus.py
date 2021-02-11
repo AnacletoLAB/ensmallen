@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:57.422573
 
-The undirected graph Myotis lucifugus has 19308 nodes and 5136262 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02756 and
-is connected, as it has a single component. The graph median node degree is 397,
-the mean node degree is 532.03, and the node degree mode is 43. The top 5 most central
-nodes are 59463.ENSMLUP00000009209 (degree 4684), 59463.ENSMLUP00000000975 (degree
-4597), 59463.ENSMLUP00000014811 (degree 4148), 59463.ENSMLUP00000011297 (degree 4002)
-and 59463.ENSMLUP00000008555 (degree 3911).
+The undirected graph Myotis lucifugus has 19308 nodes and 5136262 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02756 and is connected, as it has a single component. The graph median
+node degree is 397, the mean node degree is 532.03, and the node degree
+mode is 43. The top 5 most central nodes are 59463.ENSMLUP00000009209 (degree
+4684), 59463.ENSMLUP00000000975 (degree 4597), 59463.ENSMLUP00000014811
+(degree 4148), 59463.ENSMLUP00000011297 (degree 4002) and 59463.ENSMLUP00000008555
+(degree 3911).
 
 
 References
@@ -106,13 +107,14 @@ def MyotisLucifugus(
 	
 	Datetime: 2021-02-02 18:19:57.422573
 	
-	The undirected graph Myotis lucifugus has 19308 nodes and 5136262 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02756 and
-	is connected, as it has a single component. The graph median node degree is 397,
-	the mean node degree is 532.03, and the node degree mode is 43. The top 5 most central
-	nodes are 59463.ENSMLUP00000009209 (degree 4684), 59463.ENSMLUP00000000975 (degree
-	4597), 59463.ENSMLUP00000014811 (degree 4148), 59463.ENSMLUP00000011297 (degree 4002)
-	and 59463.ENSMLUP00000008555 (degree 3911).
+	The undirected graph Myotis lucifugus has 19308 nodes and 5136262 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02756 and is connected, as it has a single component. The graph median
+	node degree is 397, the mean node degree is 532.03, and the node degree
+	mode is 43. The top 5 most central nodes are 59463.ENSMLUP00000009209 (degree
+	4684), 59463.ENSMLUP00000000975 (degree 4597), 59463.ENSMLUP00000014811
+	(degree 4148), 59463.ENSMLUP00000011297 (degree 4002) and 59463.ENSMLUP00000008555
+	(degree 3911).
 	
 
 

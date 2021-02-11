@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:28.561957
 
-The undirected graph Thecamonas trahens has 6238 nodes and 1017736 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05232 and
-has 4 connected components, where the component with most nodes has 6228 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 326.30, and the node degree mode is 1. The top 5 most central
-nodes are 529818.AMSG_05321T0 (degree 2770), 529818.AMSG_12293T0 (degree 2730), 529818.AMSG_02866T0
-(degree 2646), 529818.AMSG_12014T0 (degree 2554) and 529818.AMSG_03611T0 (degree
+The undirected graph Thecamonas trahens has 6238 nodes and 1017736 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05232 and has 4 connected components, where the component with most
+nodes has 6228 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 241, the mean node degree is 326.30, and
+the node degree mode is 1. The top 5 most central nodes are 529818.AMSG_05321T0
+(degree 2770), 529818.AMSG_12293T0 (degree 2730), 529818.AMSG_02866T0 (degree
+2646), 529818.AMSG_12014T0 (degree 2554) and 529818.AMSG_03611T0 (degree
 2523).
 
 
@@ -107,13 +108,14 @@ def ThecamonasTrahens(
 	
 	Datetime: 2021-02-02 21:06:28.561957
 	
-	The undirected graph Thecamonas trahens has 6238 nodes and 1017736 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05232 and
-	has 4 connected components, where the component with most nodes has 6228 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 326.30, and the node degree mode is 1. The top 5 most central
-	nodes are 529818.AMSG_05321T0 (degree 2770), 529818.AMSG_12293T0 (degree 2730), 529818.AMSG_02866T0
-	(degree 2646), 529818.AMSG_12014T0 (degree 2554) and 529818.AMSG_03611T0 (degree
+	The undirected graph Thecamonas trahens has 6238 nodes and 1017736 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05232 and has 4 connected components, where the component with most
+	nodes has 6228 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 241, the mean node degree is 326.30, and
+	the node degree mode is 1. The top 5 most central nodes are 529818.AMSG_05321T0
+	(degree 2770), 529818.AMSG_12293T0 (degree 2730), 529818.AMSG_02866T0 (degree
+	2646), 529818.AMSG_12014T0 (degree 2554) and 529818.AMSG_03611T0 (degree
 	2523).
 	
 

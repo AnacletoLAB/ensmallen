@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:48:53.129359
 
-The undirected graph Pseudomonas mandelii PD30 has 6068 nodes and 895168 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04863
-and has 33 connected components, where the component with most nodes has 5987 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 295.05, and the node degree mode is 1. The top 5
-most central nodes are 1419583.V466_21900 (degree 2282), 1419583.V466_16760 (degree
-2140), 1419583.V466_06050 (degree 1943), 1419583.V466_12375 (degree 1881) and 1419583.V466_27710
-(degree 1872).
+The undirected graph Pseudomonas mandelii PD30 has 6068 nodes and 895168
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04863 and has 33 connected components, where the component
+with most nodes has 5987 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 295.05,
+and the node degree mode is 1. The top 5 most central nodes are 1419583.V466_21900
+(degree 2282), 1419583.V466_16760 (degree 2140), 1419583.V466_06050 (degree
+1943), 1419583.V466_12375 (degree 1881) and 1419583.V466_27710 (degree
+1872).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasMandeliiPd30(
 	
 	Datetime: 2021-02-03 22:48:53.129359
 	
-	The undirected graph Pseudomonas mandelii PD30 has 6068 nodes and 895168 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04863
-	and has 33 connected components, where the component with most nodes has 5987 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 295.05, and the node degree mode is 1. The top 5
-	most central nodes are 1419583.V466_21900 (degree 2282), 1419583.V466_16760 (degree
-	2140), 1419583.V466_06050 (degree 1943), 1419583.V466_12375 (degree 1881) and 1419583.V466_27710
-	(degree 1872).
+	The undirected graph Pseudomonas mandelii PD30 has 6068 nodes and 895168
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04863 and has 33 connected components, where the component
+	with most nodes has 5987 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 295.05,
+	and the node degree mode is 1. The top 5 most central nodes are 1419583.V466_21900
+	(degree 2282), 1419583.V466_16760 (degree 2140), 1419583.V466_06050 (degree
+	1943), 1419583.V466_12375 (degree 1881) and 1419583.V466_27710 (degree
+	1872).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:44.896157
 
-The undirected graph Synechococcus sp. WH 7803 has 2524 nodes and 146898 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-and has 18 connected components, where the component with most nodes has 2468 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 116.40, and the node degree mode is 3. The top 5 most
-central nodes are 32051.SynWH7803_1617 (degree 895), 32051.SynWH7803_0048 (degree
-776), 32051.SynWH7803_1778 (degree 632), 32051.SynWH7803_0385 (degree 622) and 32051.SynWH7803_1737
-(degree 593).
+The undirected graph Synechococcus sp. WH 7803 has 2524 nodes and 146898
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04614 and has 18 connected components, where the component
+with most nodes has 2468 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 116.40,
+and the node degree mode is 3. The top 5 most central nodes are 32051.SynWH7803_1617
+(degree 895), 32051.SynWH7803_0048 (degree 776), 32051.SynWH7803_1778 (degree
+632), 32051.SynWH7803_0385 (degree 622) and 32051.SynWH7803_1737 (degree
+593).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Wh7803(
 	
 	Datetime: 2021-02-02 18:02:44.896157
 	
-	The undirected graph Synechococcus sp. WH 7803 has 2524 nodes and 146898 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04614
-	and has 18 connected components, where the component with most nodes has 2468 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 116.40, and the node degree mode is 3. The top 5 most
-	central nodes are 32051.SynWH7803_1617 (degree 895), 32051.SynWH7803_0048 (degree
-	776), 32051.SynWH7803_1778 (degree 632), 32051.SynWH7803_0385 (degree 622) and 32051.SynWH7803_1737
-	(degree 593).
+	The undirected graph Synechococcus sp. WH 7803 has 2524 nodes and 146898
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04614 and has 18 connected components, where the component
+	with most nodes has 2468 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 116.40,
+	and the node degree mode is 3. The top 5 most central nodes are 32051.SynWH7803_1617
+	(degree 895), 32051.SynWH7803_0048 (degree 776), 32051.SynWH7803_1778 (degree
+	632), 32051.SynWH7803_0385 (degree 622) and 32051.SynWH7803_1737 (degree
+	593).
 	
 
 

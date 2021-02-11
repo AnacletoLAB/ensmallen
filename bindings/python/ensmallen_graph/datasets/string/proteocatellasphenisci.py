@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:20.976064
 
-The undirected graph Proteocatella sphenisci has 2308 nodes and 184595 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06934 and
-has 3 connected components, where the component with most nodes has 2304 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 159.96, and the node degree mode is 8. The top 5 most central
-nodes are 1123009.AUID01000013_gene1715 (degree 1042), 1123009.AUID01000014_gene1832
-(degree 1027), 1123009.AUID01000008_gene806 (degree 975), 1123009.AUID01000006_gene883
-(degree 877) and 1123009.AUID01000025_gene91 (degree 718).
+The undirected graph Proteocatella sphenisci has 2308 nodes and 184595
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06934 and has 3 connected components, where the component
+with most nodes has 2304 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 159.96,
+and the node degree mode is 8. The top 5 most central nodes are 1123009.AUID01000013_gene1715
+(degree 1042), 1123009.AUID01000014_gene1832 (degree 1027), 1123009.AUID01000008_gene806
+(degree 975), 1123009.AUID01000006_gene883 (degree 877) and 1123009.AUID01000025_gene91
+(degree 718).
 
 
 References
@@ -107,14 +108,15 @@ def ProteocatellaSphenisci(
 	
 	Datetime: 2021-02-02 22:46:20.976064
 	
-	The undirected graph Proteocatella sphenisci has 2308 nodes and 184595 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06934 and
-	has 3 connected components, where the component with most nodes has 2304 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 159.96, and the node degree mode is 8. The top 5 most central
-	nodes are 1123009.AUID01000013_gene1715 (degree 1042), 1123009.AUID01000014_gene1832
-	(degree 1027), 1123009.AUID01000008_gene806 (degree 975), 1123009.AUID01000006_gene883
-	(degree 877) and 1123009.AUID01000025_gene91 (degree 718).
+	The undirected graph Proteocatella sphenisci has 2308 nodes and 184595
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06934 and has 3 connected components, where the component
+	with most nodes has 2304 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 159.96,
+	and the node degree mode is 8. The top 5 most central nodes are 1123009.AUID01000013_gene1715
+	(degree 1042), 1123009.AUID01000014_gene1832 (degree 1027), 1123009.AUID01000008_gene806
+	(degree 975), 1123009.AUID01000006_gene883 (degree 877) and 1123009.AUID01000025_gene91
+	(degree 718).
 	
 
 

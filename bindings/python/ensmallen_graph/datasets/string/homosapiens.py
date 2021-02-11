@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:39:21.328067
 
-The undirected graph Homo sapiens has 19354 nodes and 5879727 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03140 and
-is connected, as it has a single component. The graph median node degree is 469,
-the mean node degree is 607.60, and the node degree mode is 198. The top 5 most central
-nodes are 9606.ENSP00000229239 (degree 7645), 9606.ENSP00000451828 (degree 6508),
-9606.ENSP00000269305 (degree 6196), 9606.ENSP00000380432 (degree 6054) and 9606.ENSP00000479618
-(degree 5787).
+The undirected graph Homo sapiens has 19354 nodes and 5879727 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03140 and is connected, as it has a single component. The graph median
+node degree is 469, the mean node degree is 607.60, and the node degree
+mode is 198. The top 5 most central nodes are 9606.ENSP00000229239 (degree
+7645), 9606.ENSP00000451828 (degree 6508), 9606.ENSP00000269305 (degree
+6196), 9606.ENSP00000380432 (degree 6054) and 9606.ENSP00000479618 (degree
+5787).
 
 
 References
@@ -106,13 +107,14 @@ def HomoSapiens(
 	
 	Datetime: 2021-02-02 17:39:21.328067
 	
-	The undirected graph Homo sapiens has 19354 nodes and 5879727 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03140 and
-	is connected, as it has a single component. The graph median node degree is 469,
-	the mean node degree is 607.60, and the node degree mode is 198. The top 5 most central
-	nodes are 9606.ENSP00000229239 (degree 7645), 9606.ENSP00000451828 (degree 6508),
-	9606.ENSP00000269305 (degree 6196), 9606.ENSP00000380432 (degree 6054) and 9606.ENSP00000479618
-	(degree 5787).
+	The undirected graph Homo sapiens has 19354 nodes and 5879727 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03140 and is connected, as it has a single component. The graph median
+	node degree is 469, the mean node degree is 607.60, and the node degree
+	mode is 198. The top 5 most central nodes are 9606.ENSP00000229239 (degree
+	7645), 9606.ENSP00000451828 (degree 6508), 9606.ENSP00000269305 (degree
+	6196), 9606.ENSP00000380432 (degree 6054) and 9606.ENSP00000479618 (degree
+	5787).
 	
 
 

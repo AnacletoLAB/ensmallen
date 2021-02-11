@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:20:14.186486
 
-The undirected graph odepb400 has 399 nodes, of which 399 are singletons (all have
-self-loops), and 399 weighted edges, of which 399 are self-loops. The graph is sparse
-as it has a density of 0.00251 and has 399 connected components, where the component
-with most nodes has a single node and the component with the least nodes has a single
-node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-degree mode is 1. The top 5 most central nodes are 399 (degree 1), 398 (degree 1),
-397 (degree 1), 396 (degree 1) and 395 (degree 1).
+The undirected graph odepb400 has 399 nodes, of which 399 are singletons
+(all have self-loops), and 399 weighted edges, of which 399 are self-loops.
+The graph is sparse as it has a density of 0.00251 and has 399 connected
+components, where the component with most nodes has a single node and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 1.00, and the node degree mode is
+1. The top 5 most central nodes are 399 (degree 1), 398 (degree 1), 397
+(degree 1), 396 (degree 1) and 395 (degree 1).
 
 
 References
@@ -103,13 +104,14 @@ def Odepb400(
 	
 	Datetime: 2021-02-06 08:20:14.186486
 	
-	The undirected graph odepb400 has 399 nodes, of which 399 are singletons (all have
-	self-loops), and 399 weighted edges, of which 399 are self-loops. The graph is sparse
-	as it has a density of 0.00251 and has 399 connected components, where the component
-	with most nodes has a single node and the component with the least nodes has a single
-	node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-	degree mode is 1. The top 5 most central nodes are 399 (degree 1), 398 (degree 1),
-	397 (degree 1), 396 (degree 1) and 395 (degree 1).
+	The undirected graph odepb400 has 399 nodes, of which 399 are singletons
+	(all have self-loops), and 399 weighted edges, of which 399 are self-loops.
+	The graph is sparse as it has a density of 0.00251 and has 399 connected
+	components, where the component with most nodes has a single node and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 1.00, and the node degree mode is
+	1. The top 5 most central nodes are 399 (degree 1), 398 (degree 1), 397
+	(degree 1), 396 (degree 1) and 395 (degree 1).
 	
 
 

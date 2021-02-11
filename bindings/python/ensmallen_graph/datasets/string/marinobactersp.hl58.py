@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:13.596274
 
-The undirected graph Marinobacter sp. HL58 has 3648 nodes and 531816 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07995 and
-has 6 connected components, where the component with most nodes has 3638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 263,
-the mean node degree is 291.57, and the node degree mode is 2. The top 5 most central
-nodes are 1479237.JMLY01000001_gene1082 (degree 1498), 1479237.JMLY01000001_gene2505
-(degree 1474), 1479237.JMLY01000001_gene3005 (degree 1292), 1479237.JMLY01000001_gene2970
-(degree 1239) and 1479237.JMLY01000001_gene1534 (degree 1228).
+The undirected graph Marinobacter sp. HL58 has 3648 nodes and 531816 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07995 and has 6 connected components, where the component with most
+nodes has 3638 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 263, the mean node degree is 291.57, and
+the node degree mode is 2. The top 5 most central nodes are 1479237.JMLY01000001_gene1082
+(degree 1498), 1479237.JMLY01000001_gene2505 (degree 1474), 1479237.JMLY01000001_gene3005
+(degree 1292), 1479237.JMLY01000001_gene2970 (degree 1239) and 1479237.JMLY01000001_gene1534
+(degree 1228).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterSp.Hl58(
 	
 	Datetime: 2021-02-03 23:13:13.596274
 	
-	The undirected graph Marinobacter sp. HL58 has 3648 nodes and 531816 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07995 and
-	has 6 connected components, where the component with most nodes has 3638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 263,
-	the mean node degree is 291.57, and the node degree mode is 2. The top 5 most central
-	nodes are 1479237.JMLY01000001_gene1082 (degree 1498), 1479237.JMLY01000001_gene2505
-	(degree 1474), 1479237.JMLY01000001_gene3005 (degree 1292), 1479237.JMLY01000001_gene2970
-	(degree 1239) and 1479237.JMLY01000001_gene1534 (degree 1228).
+	The undirected graph Marinobacter sp. HL58 has 3648 nodes and 531816 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07995 and has 6 connected components, where the component with most
+	nodes has 3638 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 263, the mean node degree is 291.57, and
+	the node degree mode is 2. The top 5 most central nodes are 1479237.JMLY01000001_gene1082
+	(degree 1498), 1479237.JMLY01000001_gene2505 (degree 1474), 1479237.JMLY01000001_gene3005
+	(degree 1292), 1479237.JMLY01000001_gene2970 (degree 1239) and 1479237.JMLY01000001_gene1534
+	(degree 1228).
 	
 
 

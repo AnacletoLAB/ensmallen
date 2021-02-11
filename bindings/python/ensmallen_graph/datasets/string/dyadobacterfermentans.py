@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:54.350593
 
-The undirected graph Dyadobacter fermentans has 5683 nodes and 783096 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04850 and
-has 14 connected components, where the component with most nodes has 5654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 275.59, and the node degree mode is 2. The top 5 most central
-nodes are 471854.Dfer_0260 (degree 2167), 471854.Dfer_5761 (degree 1754), 471854.Dfer_0854
-(degree 1694), 471854.Dfer_1096 (degree 1603) and 471854.Dfer_1604 (degree 1388).
+The undirected graph Dyadobacter fermentans has 5683 nodes and 783096 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04850 and has 14 connected components, where the component with most
+nodes has 5654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 235, the mean node degree is 275.59, and
+the node degree mode is 2. The top 5 most central nodes are 471854.Dfer_0260
+(degree 2167), 471854.Dfer_5761 (degree 1754), 471854.Dfer_0854 (degree
+1694), 471854.Dfer_1096 (degree 1603) and 471854.Dfer_1604 (degree 1388).
 
 
 References
@@ -106,13 +107,14 @@ def DyadobacterFermentans(
 	
 	Datetime: 2021-02-02 20:55:54.350593
 	
-	The undirected graph Dyadobacter fermentans has 5683 nodes and 783096 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04850 and
-	has 14 connected components, where the component with most nodes has 5654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 275.59, and the node degree mode is 2. The top 5 most central
-	nodes are 471854.Dfer_0260 (degree 2167), 471854.Dfer_5761 (degree 1754), 471854.Dfer_0854
-	(degree 1694), 471854.Dfer_1096 (degree 1603) and 471854.Dfer_1604 (degree 1388).
+	The undirected graph Dyadobacter fermentans has 5683 nodes and 783096 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04850 and has 14 connected components, where the component with most
+	nodes has 5654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 235, the mean node degree is 275.59, and
+	the node degree mode is 2. The top 5 most central nodes are 471854.Dfer_0260
+	(degree 2167), 471854.Dfer_5761 (degree 1754), 471854.Dfer_0854 (degree
+	1694), 471854.Dfer_1096 (degree 1603) and 471854.Dfer_1604 (degree 1388).
 	
 
 

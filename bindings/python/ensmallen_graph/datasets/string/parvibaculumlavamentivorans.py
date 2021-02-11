@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:14.383083
 
-The undirected graph Parvibaculum lavamentivorans has 3628 nodes and 398919 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06063
-and has 2 connected components, where the component with most nodes has 3626 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 219.91, and the node degree mode is 4. The top 5
-most central nodes are 402881.Plav_0105 (degree 1323), 402881.Plav_1103 (degree 1074),
-402881.Plav_3595 (degree 1035), 402881.Plav_1969 (degree 1030) and 402881.Plav_0221
-(degree 1017).
+The undirected graph Parvibaculum lavamentivorans has 3628 nodes and 398919
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06063 and has 2 connected components, where the component
+with most nodes has 3626 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 219.91,
+and the node degree mode is 4. The top 5 most central nodes are 402881.Plav_0105
+(degree 1323), 402881.Plav_1103 (degree 1074), 402881.Plav_3595 (degree
+1035), 402881.Plav_1969 (degree 1030) and 402881.Plav_0221 (degree 1017).
 
 
 References
@@ -107,14 +107,14 @@ def ParvibaculumLavamentivorans(
 	
 	Datetime: 2021-02-02 20:44:14.383083
 	
-	The undirected graph Parvibaculum lavamentivorans has 3628 nodes and 398919 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06063
-	and has 2 connected components, where the component with most nodes has 3626 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 219.91, and the node degree mode is 4. The top 5
-	most central nodes are 402881.Plav_0105 (degree 1323), 402881.Plav_1103 (degree 1074),
-	402881.Plav_3595 (degree 1035), 402881.Plav_1969 (degree 1030) and 402881.Plav_0221
-	(degree 1017).
+	The undirected graph Parvibaculum lavamentivorans has 3628 nodes and 398919
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06063 and has 2 connected components, where the component
+	with most nodes has 3626 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 219.91,
+	and the node degree mode is 4. The top 5 most central nodes are 402881.Plav_0105
+	(degree 1323), 402881.Plav_1103 (degree 1074), 402881.Plav_3595 (degree
+	1035), 402881.Plav_1969 (degree 1030) and 402881.Plav_0221 (degree 1017).
 	
 
 

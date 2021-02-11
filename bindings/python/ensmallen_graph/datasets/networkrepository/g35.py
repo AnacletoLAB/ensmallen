@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:02:19.482375
 
-The undirected graph G35 has 2000 nodes and 11778 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00589 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 11.78, and the node degree mode is 6. The top 5 most central nodes are 5 (degree
-210), 4 (degree 202), 3 (degree 194), 9 (degree 179) and 2 (degree 167).
+The undirected graph G35 has 2000 nodes and 11778 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00589
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 11.78, and the node degree mode is 6. The
+top 5 most central nodes are 5 (degree 210), 4 (degree 202), 3 (degree
+194), 9 (degree 179) and 2 (degree 167).
 
 
 References
@@ -101,11 +102,12 @@ def G35(
 	
 	Datetime: 2021-02-06 10:02:19.482375
 	
-	The undirected graph G35 has 2000 nodes and 11778 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00589 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 11.78, and the node degree mode is 6. The top 5 most central nodes are 5 (degree
-	210), 4 (degree 202), 3 (degree 194), 9 (degree 179) and 2 (degree 167).
+	The undirected graph G35 has 2000 nodes and 11778 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00589
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 11.78, and the node degree mode is 6. The
+	top 5 most central nodes are 5 (degree 210), 4 (degree 202), 3 (degree
+	194), 9 (degree 179) and 2 (degree 167).
 	
 
 

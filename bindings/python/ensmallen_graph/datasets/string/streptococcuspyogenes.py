@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:27.953808
 
-The undirected graph Streptococcus pyogenes has 1833 nodes and 145657 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08675 and
-has 3 connected components, where the component with most nodes has 1829 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 158.93, and the node degree mode is 18. The top 5 most central
-nodes are 1314.HKU360_00203 (degree 824), 1314.HKU360_00963 (degree 712), 1314.HKU360_01967
-(degree 659), 1314.HKU360_01553 (degree 655) and 1314.HKU360_00380 (degree 632).
+The undirected graph Streptococcus pyogenes has 1833 nodes and 145657 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08675 and has 3 connected components, where the component with most
+nodes has 1829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 158.93, and
+the node degree mode is 18. The top 5 most central nodes are 1314.HKU360_00203
+(degree 824), 1314.HKU360_00963 (degree 712), 1314.HKU360_01967 (degree
+659), 1314.HKU360_01553 (degree 655) and 1314.HKU360_00380 (degree 632).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusPyogenes(
 	
 	Datetime: 2021-02-02 16:22:27.953808
 	
-	The undirected graph Streptococcus pyogenes has 1833 nodes and 145657 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08675 and
-	has 3 connected components, where the component with most nodes has 1829 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 158.93, and the node degree mode is 18. The top 5 most central
-	nodes are 1314.HKU360_00203 (degree 824), 1314.HKU360_00963 (degree 712), 1314.HKU360_01967
-	(degree 659), 1314.HKU360_01553 (degree 655) and 1314.HKU360_00380 (degree 632).
+	The undirected graph Streptococcus pyogenes has 1833 nodes and 145657 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08675 and has 3 connected components, where the component with most
+	nodes has 1829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 158.93, and
+	the node degree mode is 18. The top 5 most central nodes are 1314.HKU360_00203
+	(degree 824), 1314.HKU360_00963 (degree 712), 1314.HKU360_01967 (degree
+	659), 1314.HKU360_01553 (degree 655) and 1314.HKU360_00380 (degree 632).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:30.528786
 
-The undirected graph Bizionia argentinensis has 3054 nodes and 314658 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-has 13 connected components, where the component with most nodes has 3025 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 206.06, and the node degree mode is 3. The top 5 most central
-nodes are 1046627.BZARG_935 (degree 1199), 1046627.BZARG_1159 (degree 1129), 1046627.BZARG_903
-(degree 1126), 1046627.BZARG_2170 (degree 1061) and 1046627.BZARG_653 (degree 973).
+The undirected graph Bizionia argentinensis has 3054 nodes and 314658 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06750 and has 13 connected components, where the component with most
+nodes has 3025 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 206.06, and
+the node degree mode is 3. The top 5 most central nodes are 1046627.BZARG_935
+(degree 1199), 1046627.BZARG_1159 (degree 1129), 1046627.BZARG_903 (degree
+1126), 1046627.BZARG_2170 (degree 1061) and 1046627.BZARG_653 (degree 973).
 
 
 References
@@ -106,13 +107,14 @@ def BizioniaArgentinensis(
 	
 	Datetime: 2021-02-02 22:16:30.528786
 	
-	The undirected graph Bizionia argentinensis has 3054 nodes and 314658 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-	has 13 connected components, where the component with most nodes has 3025 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 206.06, and the node degree mode is 3. The top 5 most central
-	nodes are 1046627.BZARG_935 (degree 1199), 1046627.BZARG_1159 (degree 1129), 1046627.BZARG_903
-	(degree 1126), 1046627.BZARG_2170 (degree 1061) and 1046627.BZARG_653 (degree 973).
+	The undirected graph Bizionia argentinensis has 3054 nodes and 314658 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06750 and has 13 connected components, where the component with most
+	nodes has 3025 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 206.06, and
+	the node degree mode is 3. The top 5 most central nodes are 1046627.BZARG_935
+	(degree 1199), 1046627.BZARG_1159 (degree 1129), 1046627.BZARG_903 (degree
+	1126), 1046627.BZARG_2170 (degree 1061) and 1046627.BZARG_653 (degree 973).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:37.609132
 
-The undirected graph bio-celegans has 453 nodes and 2025 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01978 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 8.94 and the node degree mode is 3. The top 5 most central nodes are 186 (degree
-237), 147 (degree 123), 408 (degree 109), 145 (degree 104) and 228 (degree 75).
+The undirected graph bio-celegans has 453 nodes and 2025 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01978 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 8.94 and the node degree mode
+is 3. The top 5 most central nodes are 186 (degree 237), 147 (degree 123),
+408 (degree 109), 145 (degree 104) and 228 (degree 75).
 
 
 References
@@ -110,11 +111,12 @@ def BioCelegans(
 	
 	Datetime: 2021-02-03 22:30:37.609132
 	
-	The undirected graph bio-celegans has 453 nodes and 2025 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01978 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 8.94 and the node degree mode is 3. The top 5 most central nodes are 186 (degree
-	237), 147 (degree 123), 408 (degree 109), 145 (degree 104) and 228 (degree 75).
+	The undirected graph bio-celegans has 453 nodes and 2025 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01978 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 8.94 and the node degree mode
+	is 3. The top 5 most central nodes are 186 (degree 237), 147 (degree 123),
+	408 (degree 109), 145 (degree 104) and 228 (degree 75).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:33.735063
 
-The undirected graph Amycolatopsis rifamycinica has 8256 nodes and 1394851 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04093
-and has 26 connected components, where the component with most nodes has 8191 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 290, the mean node degree is 337.90, and the node degree mode is 4. The top 5
-most central nodes are 287986.DV20_18535 (degree 2610), 287986.DV20_00635 (degree
-2579), 287986.DV20_07170 (degree 2474), 287986.DV20_11295 (degree 2437) and 287986.DV20_39350
-(degree 2301).
+The undirected graph Amycolatopsis rifamycinica has 8256 nodes and 1394851
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04093 and has 26 connected components, where the component
+with most nodes has 8191 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 290, the mean node degree is 337.90,
+and the node degree mode is 4. The top 5 most central nodes are 287986.DV20_18535
+(degree 2610), 287986.DV20_00635 (degree 2579), 287986.DV20_07170 (degree
+2474), 287986.DV20_11295 (degree 2437) and 287986.DV20_39350 (degree 2301).
 
 
 References
@@ -107,14 +107,14 @@ def AmycolatopsisRifamycinica(
 	
 	Datetime: 2021-02-02 20:19:33.735063
 	
-	The undirected graph Amycolatopsis rifamycinica has 8256 nodes and 1394851 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04093
-	and has 26 connected components, where the component with most nodes has 8191 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 290, the mean node degree is 337.90, and the node degree mode is 4. The top 5
-	most central nodes are 287986.DV20_18535 (degree 2610), 287986.DV20_00635 (degree
-	2579), 287986.DV20_07170 (degree 2474), 287986.DV20_11295 (degree 2437) and 287986.DV20_39350
-	(degree 2301).
+	The undirected graph Amycolatopsis rifamycinica has 8256 nodes and 1394851
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04093 and has 26 connected components, where the component
+	with most nodes has 8191 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 290, the mean node degree is 337.90,
+	and the node degree mode is 4. The top 5 most central nodes are 287986.DV20_18535
+	(degree 2610), 287986.DV20_00635 (degree 2579), 287986.DV20_07170 (degree
+	2474), 287986.DV20_11295 (degree 2437) and 287986.DV20_39350 (degree 2301).
 	
 
 

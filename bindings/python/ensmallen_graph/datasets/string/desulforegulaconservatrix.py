@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:39:01.687828
 
-The undirected graph Desulforegula conservatrix has 3667 nodes and 467932 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06962
-and has 21 connected components, where the component with most nodes has 3622 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 212, the mean node degree is 255.21, and the node degree mode is 1. The top 5
-most central nodes are 1304885.AUEY01000048_gene607 (degree 1787), 1304885.AUEY01000079_gene1030
-(degree 1625), 1304885.AUEY01000020_gene3477 (degree 1594), 1304885.AUEY01000030_gene2434
-(degree 1514) and 1304885.AUEY01000003_gene474 (degree 1507).
+The undirected graph Desulforegula conservatrix has 3667 nodes and 467932
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06962 and has 21 connected components, where the component
+with most nodes has 3622 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 212, the mean node degree is 255.21,
+and the node degree mode is 1. The top 5 most central nodes are 1304885.AUEY01000048_gene607
+(degree 1787), 1304885.AUEY01000079_gene1030 (degree 1625), 1304885.AUEY01000020_gene3477
+(degree 1594), 1304885.AUEY01000030_gene2434 (degree 1514) and 1304885.AUEY01000003_gene474
+(degree 1507).
 
 
 References
@@ -107,14 +108,15 @@ def DesulforegulaConservatrix(
 	
 	Datetime: 2021-02-03 21:39:01.687828
 	
-	The undirected graph Desulforegula conservatrix has 3667 nodes and 467932 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06962
-	and has 21 connected components, where the component with most nodes has 3622 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 212, the mean node degree is 255.21, and the node degree mode is 1. The top 5
-	most central nodes are 1304885.AUEY01000048_gene607 (degree 1787), 1304885.AUEY01000079_gene1030
-	(degree 1625), 1304885.AUEY01000020_gene3477 (degree 1594), 1304885.AUEY01000030_gene2434
-	(degree 1514) and 1304885.AUEY01000003_gene474 (degree 1507).
+	The undirected graph Desulforegula conservatrix has 3667 nodes and 467932
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06962 and has 21 connected components, where the component
+	with most nodes has 3622 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 212, the mean node degree is 255.21,
+	and the node degree mode is 1. The top 5 most central nodes are 1304885.AUEY01000048_gene607
+	(degree 1787), 1304885.AUEY01000079_gene1030 (degree 1625), 1304885.AUEY01000020_gene3477
+	(degree 1594), 1304885.AUEY01000030_gene2434 (degree 1514) and 1304885.AUEY01000003_gene474
+	(degree 1507).
 	
 
 

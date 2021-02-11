@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:10.286374
 
-The undirected graph Yaniella halotolerans has 2523 nodes and 191908 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06032 and
-is connected, as it has a single component. The graph median node degree is 125,
-the mean node degree is 152.13, and the node degree mode is 3. The top 5 most central
-nodes are 1123507.ATVQ01000002_gene353 (degree 1106), 1123507.ATVQ01000001_gene2185
-(degree 850), 1123507.ATVQ01000003_gene765 (degree 840), 1123507.ATVQ01000003_gene535
-(degree 832) and 1123507.ATVQ01000001_gene1194 (degree 824).
+The undirected graph Yaniella halotolerans has 2523 nodes and 191908 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06032 and is connected, as it has a single component. The graph median
+node degree is 125, the mean node degree is 152.13, and the node degree
+mode is 3. The top 5 most central nodes are 1123507.ATVQ01000002_gene353
+(degree 1106), 1123507.ATVQ01000001_gene2185 (degree 850), 1123507.ATVQ01000003_gene765
+(degree 840), 1123507.ATVQ01000003_gene535 (degree 832) and 1123507.ATVQ01000001_gene1194
+(degree 824).
 
 
 References
@@ -106,13 +107,14 @@ def YaniellaHalotolerans(
 	
 	Datetime: 2021-02-02 22:53:10.286374
 	
-	The undirected graph Yaniella halotolerans has 2523 nodes and 191908 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06032 and
-	is connected, as it has a single component. The graph median node degree is 125,
-	the mean node degree is 152.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1123507.ATVQ01000002_gene353 (degree 1106), 1123507.ATVQ01000001_gene2185
-	(degree 850), 1123507.ATVQ01000003_gene765 (degree 840), 1123507.ATVQ01000003_gene535
-	(degree 832) and 1123507.ATVQ01000001_gene1194 (degree 824).
+	The undirected graph Yaniella halotolerans has 2523 nodes and 191908 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06032 and is connected, as it has a single component. The graph median
+	node degree is 125, the mean node degree is 152.13, and the node degree
+	mode is 3. The top 5 most central nodes are 1123507.ATVQ01000002_gene353
+	(degree 1106), 1123507.ATVQ01000001_gene2185 (degree 850), 1123507.ATVQ01000003_gene765
+	(degree 840), 1123507.ATVQ01000003_gene535 (degree 832) and 1123507.ATVQ01000001_gene1194
+	(degree 824).
 	
 
 

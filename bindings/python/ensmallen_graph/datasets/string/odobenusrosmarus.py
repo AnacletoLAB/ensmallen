@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:42:03.840677
 
-The undirected graph Odobenus rosmarus has 18891 nodes and 4550490 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02550 and
-is connected, as it has a single component. The graph median node degree is 350,
-the mean node degree is 481.76, and the node degree mode is 163. The top 5 most central
-nodes are 9707.XP_004396949.1 (degree 4427), 9707.XP_004406614.1 (degree 4315), 9707.XP_004400172.1
-(degree 3989), 9707.XP_004402327.1 (degree 3873) and 9707.XP_004417190.1 (degree
-3764).
+The undirected graph Odobenus rosmarus has 18891 nodes and 4550490 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02550 and is connected, as it has a single component. The graph median
+node degree is 350, the mean node degree is 481.76, and the node degree
+mode is 163. The top 5 most central nodes are 9707.XP_004396949.1 (degree
+4427), 9707.XP_004406614.1 (degree 4315), 9707.XP_004400172.1 (degree 3989),
+9707.XP_004402327.1 (degree 3873) and 9707.XP_004417190.1 (degree 3764).
 
 
 References
@@ -106,13 +106,13 @@ def OdobenusRosmarus(
 	
 	Datetime: 2021-02-02 17:42:03.840677
 	
-	The undirected graph Odobenus rosmarus has 18891 nodes and 4550490 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02550 and
-	is connected, as it has a single component. The graph median node degree is 350,
-	the mean node degree is 481.76, and the node degree mode is 163. The top 5 most central
-	nodes are 9707.XP_004396949.1 (degree 4427), 9707.XP_004406614.1 (degree 4315), 9707.XP_004400172.1
-	(degree 3989), 9707.XP_004402327.1 (degree 3873) and 9707.XP_004417190.1 (degree
-	3764).
+	The undirected graph Odobenus rosmarus has 18891 nodes and 4550490 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02550 and is connected, as it has a single component. The graph median
+	node degree is 350, the mean node degree is 481.76, and the node degree
+	mode is 163. The top 5 most central nodes are 9707.XP_004396949.1 (degree
+	4427), 9707.XP_004406614.1 (degree 4315), 9707.XP_004400172.1 (degree 3989),
+	9707.XP_004402327.1 (degree 3873) and 9707.XP_004417190.1 (degree 3764).
 	
 
 

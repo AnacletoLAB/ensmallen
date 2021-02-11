@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:10.075758
 
-The undirected graph Aquamicrobium defluvii has 4415 nodes and 608947 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06250 and
-has 12 connected components, where the component with most nodes has 4389 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 275.85, and the node degree mode is 3. The top 5 most central
-nodes are 69279.BG36_21520 (degree 1845), 69279.BG36_23110 (degree 1344), 69279.BG36_20715
-(degree 1336), 69279.BG36_22605 (degree 1317) and 69279.BG36_10380 (degree 1309).
+The undirected graph Aquamicrobium defluvii has 4415 nodes and 608947 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06250 and has 12 connected components, where the component with most
+nodes has 4389 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 275.85, and
+the node degree mode is 3. The top 5 most central nodes are 69279.BG36_21520
+(degree 1845), 69279.BG36_23110 (degree 1344), 69279.BG36_20715 (degree
+1336), 69279.BG36_22605 (degree 1317) and 69279.BG36_10380 (degree 1309).
 
 
 References
@@ -106,13 +107,14 @@ def AquamicrobiumDefluvii(
 	
 	Datetime: 2021-02-02 18:29:10.075758
 	
-	The undirected graph Aquamicrobium defluvii has 4415 nodes and 608947 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06250 and
-	has 12 connected components, where the component with most nodes has 4389 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 275.85, and the node degree mode is 3. The top 5 most central
-	nodes are 69279.BG36_21520 (degree 1845), 69279.BG36_23110 (degree 1344), 69279.BG36_20715
-	(degree 1336), 69279.BG36_22605 (degree 1317) and 69279.BG36_10380 (degree 1309).
+	The undirected graph Aquamicrobium defluvii has 4415 nodes and 608947 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06250 and has 12 connected components, where the component with most
+	nodes has 4389 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 275.85, and
+	the node degree mode is 3. The top 5 most central nodes are 69279.BG36_21520
+	(degree 1845), 69279.BG36_23110 (degree 1344), 69279.BG36_20715 (degree
+	1336), 69279.BG36_22605 (degree 1317) and 69279.BG36_10380 (degree 1309).
 	
 
 

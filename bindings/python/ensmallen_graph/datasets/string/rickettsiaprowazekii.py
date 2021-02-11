@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:15.401389
 
-The undirected graph Rickettsia prowazekii has 833 nodes and 51787 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14945
-and has 3 connected components, where the component with most nodes has 829 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 124.34, and the node degree mode is 1. The top 5
-most central nodes are 272947.RP776 (degree 470), 272947.RP418 (degree 406), 272947.RP847
-(degree 397), 272947.RP626 (degree 380) and 272947.RP553 (degree 377).
+The undirected graph Rickettsia prowazekii has 833 nodes and 51787 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14945 and has 3 connected components, where the component
+with most nodes has 829 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 124.34,
+and the node degree mode is 1. The top 5 most central nodes are 272947.RP776
+(degree 470), 272947.RP418 (degree 406), 272947.RP847 (degree 397), 272947.RP626
+(degree 380) and 272947.RP553 (degree 377).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaProwazekii(
 	
 	Datetime: 2021-02-02 20:17:15.401389
 	
-	The undirected graph Rickettsia prowazekii has 833 nodes and 51787 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14945
-	and has 3 connected components, where the component with most nodes has 829 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 124.34, and the node degree mode is 1. The top 5
-	most central nodes are 272947.RP776 (degree 470), 272947.RP418 (degree 406), 272947.RP847
-	(degree 397), 272947.RP626 (degree 380) and 272947.RP553 (degree 377).
+	The undirected graph Rickettsia prowazekii has 833 nodes and 51787 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14945 and has 3 connected components, where the component
+	with most nodes has 829 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 124.34,
+	and the node degree mode is 1. The top 5 most central nodes are 272947.RP776
+	(degree 470), 272947.RP418 (degree 406), 272947.RP847 (degree 397), 272947.RP626
+	(degree 380) and 272947.RP553 (degree 377).
 	
 
 

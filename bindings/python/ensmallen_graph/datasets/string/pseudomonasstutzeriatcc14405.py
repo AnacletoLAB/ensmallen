@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:39.603813
 
-The undirected graph Pseudomonas stutzeri ATCC14405 has 4099 nodes and 551084 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06561
-and has 10 connected components, where the component with most nodes has 4077 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 221, the mean node degree is 268.89, and the node degree mode is 1. The top 5
-most central nodes are 32042.PstZobell_14837 (degree 1735), 32042.PstZobell_12519
-(degree 1686), 32042.PstZobell_16346 (degree 1493), 32042.PstZobell_16351 (degree
+The undirected graph Pseudomonas stutzeri ATCC14405 has 4099 nodes and
+551084 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06561 and has 10 connected components, where the
+component with most nodes has 4077 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 221, the mean node degree
+is 268.89, and the node degree mode is 1. The top 5 most central nodes
+are 32042.PstZobell_14837 (degree 1735), 32042.PstZobell_12519 (degree
+1686), 32042.PstZobell_16346 (degree 1493), 32042.PstZobell_16351 (degree
 1445) and 32042.PstZobell_03510 (degree 1441).
 
 
@@ -107,13 +108,14 @@ def PseudomonasStutzeriAtcc14405(
 	
 	Datetime: 2021-02-02 18:02:39.603813
 	
-	The undirected graph Pseudomonas stutzeri ATCC14405 has 4099 nodes and 551084 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06561
-	and has 10 connected components, where the component with most nodes has 4077 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 221, the mean node degree is 268.89, and the node degree mode is 1. The top 5
-	most central nodes are 32042.PstZobell_14837 (degree 1735), 32042.PstZobell_12519
-	(degree 1686), 32042.PstZobell_16346 (degree 1493), 32042.PstZobell_16351 (degree
+	The undirected graph Pseudomonas stutzeri ATCC14405 has 4099 nodes and
+	551084 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06561 and has 10 connected components, where the
+	component with most nodes has 4077 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 221, the mean node degree
+	is 268.89, and the node degree mode is 1. The top 5 most central nodes
+	are 32042.PstZobell_14837 (degree 1735), 32042.PstZobell_12519 (degree
+	1686), 32042.PstZobell_16346 (degree 1493), 32042.PstZobell_16351 (degree
 	1445) and 32042.PstZobell_03510 (degree 1441).
 	
 

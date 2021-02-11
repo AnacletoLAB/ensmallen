@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:02.399014
 
-The undirected graph Massilia sp. 9096 has 4598 nodes and 689703 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06526 and
-has 11 connected components, where the component with most nodes has 4576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 300.00, and the node degree mode is 2. The top 5 most central
-nodes are 1500894.JQNN01000001_gene1297 (degree 2623), 1500894.JQNN01000001_gene4334
-(degree 1840), 1500894.JQNN01000001_gene1607 (degree 1779), 1500894.JQNN01000001_gene3501
-(degree 1669) and 1500894.JQNN01000001_gene3416 (degree 1619).
+The undirected graph Massilia sp. 9096 has 4598 nodes and 689703 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06526 and has 11 connected components, where the component with most
+nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 241, the mean node degree is 300.00, and
+the node degree mode is 2. The top 5 most central nodes are 1500894.JQNN01000001_gene1297
+(degree 2623), 1500894.JQNN01000001_gene4334 (degree 1840), 1500894.JQNN01000001_gene1607
+(degree 1779), 1500894.JQNN01000001_gene3501 (degree 1669) and 1500894.JQNN01000001_gene3416
+(degree 1619).
 
 
 References
@@ -107,14 +108,15 @@ def MassiliaSp.9096(
 	
 	Datetime: 2021-02-03 23:16:02.399014
 	
-	The undirected graph Massilia sp. 9096 has 4598 nodes and 689703 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06526 and
-	has 11 connected components, where the component with most nodes has 4576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 300.00, and the node degree mode is 2. The top 5 most central
-	nodes are 1500894.JQNN01000001_gene1297 (degree 2623), 1500894.JQNN01000001_gene4334
-	(degree 1840), 1500894.JQNN01000001_gene1607 (degree 1779), 1500894.JQNN01000001_gene3501
-	(degree 1669) and 1500894.JQNN01000001_gene3416 (degree 1619).
+	The undirected graph Massilia sp. 9096 has 4598 nodes and 689703 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06526 and has 11 connected components, where the component with most
+	nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 241, the mean node degree is 300.00, and
+	the node degree mode is 2. The top 5 most central nodes are 1500894.JQNN01000001_gene1297
+	(degree 2623), 1500894.JQNN01000001_gene4334 (degree 1840), 1500894.JQNN01000001_gene1607
+	(degree 1779), 1500894.JQNN01000001_gene3501 (degree 1669) and 1500894.JQNN01000001_gene3416
+	(degree 1619).
 	
 
 

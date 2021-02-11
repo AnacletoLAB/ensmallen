@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:50.069429
 
-The undirected graph Bacillus cytotoxicus has 3803 nodes and 287380 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-has 20 connected components, where the component with most nodes has 3760 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 151.13, and the node degree mode is 2. The top 5 most central
-nodes are 315749.Bcer98_3272 (degree 1325), 315749.Bcer98_0253 (degree 1044), 315749.Bcer98_0452
-(degree 974), 315749.Bcer98_3040 (degree 965) and 315749.Bcer98_2808 (degree 848).
+The undirected graph Bacillus cytotoxicus has 3803 nodes and 287380 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03975 and has 20 connected components, where the component with most
+nodes has 3760 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 151.13, and
+the node degree mode is 2. The top 5 most central nodes are 315749.Bcer98_3272
+(degree 1325), 315749.Bcer98_0253 (degree 1044), 315749.Bcer98_0452 (degree
+974), 315749.Bcer98_3040 (degree 965) and 315749.Bcer98_2808 (degree 848).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusCytotoxicus(
 	
 	Datetime: 2021-02-02 20:25:50.069429
 	
-	The undirected graph Bacillus cytotoxicus has 3803 nodes and 287380 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-	has 20 connected components, where the component with most nodes has 3760 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 151.13, and the node degree mode is 2. The top 5 most central
-	nodes are 315749.Bcer98_3272 (degree 1325), 315749.Bcer98_0253 (degree 1044), 315749.Bcer98_0452
-	(degree 974), 315749.Bcer98_3040 (degree 965) and 315749.Bcer98_2808 (degree 848).
+	The undirected graph Bacillus cytotoxicus has 3803 nodes and 287380 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03975 and has 20 connected components, where the component with most
+	nodes has 3760 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 151.13, and
+	the node degree mode is 2. The top 5 most central nodes are 315749.Bcer98_3272
+	(degree 1325), 315749.Bcer98_0253 (degree 1044), 315749.Bcer98_0452 (degree
+	974), 315749.Bcer98_3040 (degree 965) and 315749.Bcer98_2808 (degree 848).
 	
 
 

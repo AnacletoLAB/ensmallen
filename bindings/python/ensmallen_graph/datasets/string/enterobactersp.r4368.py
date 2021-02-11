@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:33.849347
 
-The undirected graph Enterobacter sp. R4368 has 4776 nodes and 520426 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04564 and
-has 14 connected components, where the component with most nodes has 4745 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 217.93, and the node degree mode is 2. The top 5 most central
-nodes are 1166130.H650_15325 (degree 1825), 1166130.H650_02990 (degree 1794), 1166130.H650_02155
-(degree 1690), 1166130.H650_12590 (degree 1575) and 1166130.H650_12580 (degree 1547).
+The undirected graph Enterobacter sp. R4368 has 4776 nodes and 520426 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04564 and has 14 connected components, where the component with most
+nodes has 4745 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 217.93, and
+the node degree mode is 2. The top 5 most central nodes are 1166130.H650_15325
+(degree 1825), 1166130.H650_02990 (degree 1794), 1166130.H650_02155 (degree
+1690), 1166130.H650_12590 (degree 1575) and 1166130.H650_12580 (degree
+1547).
 
 
 References
@@ -106,13 +108,15 @@ def EnterobacterSp.R4368(
 	
 	Datetime: 2021-02-02 23:05:33.849347
 	
-	The undirected graph Enterobacter sp. R4368 has 4776 nodes and 520426 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04564 and
-	has 14 connected components, where the component with most nodes has 4745 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 217.93, and the node degree mode is 2. The top 5 most central
-	nodes are 1166130.H650_15325 (degree 1825), 1166130.H650_02990 (degree 1794), 1166130.H650_02155
-	(degree 1690), 1166130.H650_12590 (degree 1575) and 1166130.H650_12580 (degree 1547).
+	The undirected graph Enterobacter sp. R4368 has 4776 nodes and 520426 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04564 and has 14 connected components, where the component with most
+	nodes has 4745 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 217.93, and
+	the node degree mode is 2. The top 5 most central nodes are 1166130.H650_15325
+	(degree 1825), 1166130.H650_02990 (degree 1794), 1166130.H650_02155 (degree
+	1690), 1166130.H650_12590 (degree 1575) and 1166130.H650_12580 (degree
+	1547).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:58.777937
 
-The undirected graph Arcobacter nitrofigilis has 3112 nodes and 250058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05166 and
-has 3 connected components, where the component with most nodes has 3107 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 160.71, and the node degree mode is 9. The top 5 most central
-nodes are 572480.Arnit_1161 (degree 1334), 572480.Arnit_1658 (degree 1332), 572480.Arnit_2213
-(degree 1243), 572480.Arnit_1601 (degree 1074) and 572480.Arnit_2519 (degree 1062).
+The undirected graph Arcobacter nitrofigilis has 3112 nodes and 250058
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05166 and has 3 connected components, where the component
+with most nodes has 3107 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 160.71,
+and the node degree mode is 9. The top 5 most central nodes are 572480.Arnit_1161
+(degree 1334), 572480.Arnit_1658 (degree 1332), 572480.Arnit_2213 (degree
+1243), 572480.Arnit_1601 (degree 1074) and 572480.Arnit_2519 (degree 1062).
 
 
 References
@@ -106,13 +107,14 @@ def ArcobacterNitrofigilis(
 	
 	Datetime: 2021-02-02 21:13:58.777937
 	
-	The undirected graph Arcobacter nitrofigilis has 3112 nodes and 250058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05166 and
-	has 3 connected components, where the component with most nodes has 3107 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 160.71, and the node degree mode is 9. The top 5 most central
-	nodes are 572480.Arnit_1161 (degree 1334), 572480.Arnit_1658 (degree 1332), 572480.Arnit_2213
-	(degree 1243), 572480.Arnit_1601 (degree 1074) and 572480.Arnit_2519 (degree 1062).
+	The undirected graph Arcobacter nitrofigilis has 3112 nodes and 250058
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05166 and has 3 connected components, where the component
+	with most nodes has 3107 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 160.71,
+	and the node degree mode is 9. The top 5 most central nodes are 572480.Arnit_1161
+	(degree 1334), 572480.Arnit_1658 (degree 1332), 572480.Arnit_2213 (degree
+	1243), 572480.Arnit_1601 (degree 1074) and 572480.Arnit_2519 (degree 1062).
 	
 
 

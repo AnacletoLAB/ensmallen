@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:46:41.020574
 
-The undirected graph Sorghum bicolor has 25359 nodes and 4306339 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01339 and
-has 6 connected components, where the component with most nodes has 25349 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 339.63, and the node degree mode is 5. The top 5 most central
-nodes are 4558.Sb04g011020.1 (degree 7375), 4558.Sb05g016730.1 (degree 6021), 4558.Sb01g020930.1
-(degree 4538), 4558.Sb04g009900.1 (degree 4278) and 4558.Sb02g041670.1 (degree 3775).
+The undirected graph Sorghum bicolor has 25359 nodes and 4306339 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01339 and has 6 connected components, where the component with most
+nodes has 25349 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 339.63, and
+the node degree mode is 5. The top 5 most central nodes are 4558.Sb04g011020.1
+(degree 7375), 4558.Sb05g016730.1 (degree 6021), 4558.Sb01g020930.1 (degree
+4538), 4558.Sb04g009900.1 (degree 4278) and 4558.Sb02g041670.1 (degree
+3775).
 
 
 References
@@ -106,13 +108,15 @@ def SorghumBicolor(
 	
 	Datetime: 2021-02-02 16:46:41.020574
 	
-	The undirected graph Sorghum bicolor has 25359 nodes and 4306339 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01339 and
-	has 6 connected components, where the component with most nodes has 25349 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 339.63, and the node degree mode is 5. The top 5 most central
-	nodes are 4558.Sb04g011020.1 (degree 7375), 4558.Sb05g016730.1 (degree 6021), 4558.Sb01g020930.1
-	(degree 4538), 4558.Sb04g009900.1 (degree 4278) and 4558.Sb02g041670.1 (degree 3775).
+	The undirected graph Sorghum bicolor has 25359 nodes and 4306339 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01339 and has 6 connected components, where the component with most
+	nodes has 25349 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 339.63, and
+	the node degree mode is 5. The top 5 most central nodes are 4558.Sb04g011020.1
+	(degree 7375), 4558.Sb05g016730.1 (degree 6021), 4558.Sb01g020930.1 (degree
+	4538), 4558.Sb04g009900.1 (degree 4278) and 4558.Sb02g041670.1 (degree
+	3775).
 	
 
 

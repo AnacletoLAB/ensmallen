@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:58:26.790719
 
-The undirected graph Ursus maritimus has 19022 nodes and 3917518 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02165 and
-has 2 connected components, where the component with most nodes has 19020 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 288,
-the mean node degree is 411.89, and the node degree mode is 11. The top 5 most central
-nodes are 29073.XP_008699343.1 (degree 4288), 29073.XP_008685521.1 (degree 4140),
-29073.XP_008708477.1 (degree 4107), 29073.XP_008683462.1 (degree 3538) and 29073.XP_008695833.1
+The undirected graph Ursus maritimus has 19022 nodes and 3917518 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02165 and has 2 connected components, where the component with most
+nodes has 19020 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 288, the mean node degree is 411.89, and
+the node degree mode is 11. The top 5 most central nodes are 29073.XP_008699343.1
+(degree 4288), 29073.XP_008685521.1 (degree 4140), 29073.XP_008708477.1
+(degree 4107), 29073.XP_008683462.1 (degree 3538) and 29073.XP_008695833.1
 (degree 3521).
 
 
@@ -107,13 +108,14 @@ def UrsusMaritimus(
 	
 	Datetime: 2021-02-02 17:58:26.790719
 	
-	The undirected graph Ursus maritimus has 19022 nodes and 3917518 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02165 and
-	has 2 connected components, where the component with most nodes has 19020 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 288,
-	the mean node degree is 411.89, and the node degree mode is 11. The top 5 most central
-	nodes are 29073.XP_008699343.1 (degree 4288), 29073.XP_008685521.1 (degree 4140),
-	29073.XP_008708477.1 (degree 4107), 29073.XP_008683462.1 (degree 3538) and 29073.XP_008695833.1
+	The undirected graph Ursus maritimus has 19022 nodes and 3917518 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02165 and has 2 connected components, where the component with most
+	nodes has 19020 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 288, the mean node degree is 411.89, and
+	the node degree mode is 11. The top 5 most central nodes are 29073.XP_008699343.1
+	(degree 4288), 29073.XP_008685521.1 (degree 4140), 29073.XP_008708477.1
+	(degree 4107), 29073.XP_008683462.1 (degree 3538) and 29073.XP_008695833.1
 	(degree 3521).
 	
 

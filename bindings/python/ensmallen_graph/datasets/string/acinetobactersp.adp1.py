@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:51.044561
 
-The undirected graph Acinetobacter sp. ADP1 has 3266 nodes and 380996 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07146 and
-has 3 connected components, where the component with most nodes has 3262 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 233.31, and the node degree mode is 7. The top 5 most central
-nodes are 62977.ACIAD3030 (degree 1242), 62977.ACIAD3465 (degree 1159), 62977.ACIAD3072
-(degree 1144), 62977.ACIAD2901 (degree 994) and 62977.ACIAD0768 (degree 960).
+The undirected graph Acinetobacter sp. ADP1 has 3266 nodes and 380996 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07146 and has 3 connected components, where the component with most
+nodes has 3262 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 233.31, and
+the node degree mode is 7. The top 5 most central nodes are 62977.ACIAD3030
+(degree 1242), 62977.ACIAD3465 (degree 1159), 62977.ACIAD3072 (degree 1144),
+62977.ACIAD2901 (degree 994) and 62977.ACIAD0768 (degree 960).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterSp.Adp1(
 	
 	Datetime: 2021-02-02 18:23:51.044561
 	
-	The undirected graph Acinetobacter sp. ADP1 has 3266 nodes and 380996 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07146 and
-	has 3 connected components, where the component with most nodes has 3262 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 233.31, and the node degree mode is 7. The top 5 most central
-	nodes are 62977.ACIAD3030 (degree 1242), 62977.ACIAD3465 (degree 1159), 62977.ACIAD3072
-	(degree 1144), 62977.ACIAD2901 (degree 994) and 62977.ACIAD0768 (degree 960).
+	The undirected graph Acinetobacter sp. ADP1 has 3266 nodes and 380996 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07146 and has 3 connected components, where the component with most
+	nodes has 3262 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 233.31, and
+	the node degree mode is 7. The top 5 most central nodes are 62977.ACIAD3030
+	(degree 1242), 62977.ACIAD3465 (degree 1159), 62977.ACIAD3072 (degree 1144),
+	62977.ACIAD2901 (degree 994) and 62977.ACIAD0768 (degree 960).
 	
 
 

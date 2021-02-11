@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:38.161892
 
-The undirected graph Lactobacillus ingluviei has 1807 nodes and 119918 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07349 and
-has 7 connected components, where the component with most nodes has 1782 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 132.73, and the node degree mode is 3. The top 5 most central
-nodes are 1203076.CAKF01000010_gene267 (degree 803), 1203076.CAKF01000030_gene782
-(degree 651), 1203076.CAKF01000012_gene1154 (degree 626), 1203076.CAKF01000006_gene548
-(degree 564) and 1203076.CAKF01000001_gene1087 (degree 542).
+The undirected graph Lactobacillus ingluviei has 1807 nodes and 119918
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07349 and has 7 connected components, where the component
+with most nodes has 1782 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 132.73,
+and the node degree mode is 3. The top 5 most central nodes are 1203076.CAKF01000010_gene267
+(degree 803), 1203076.CAKF01000030_gene782 (degree 651), 1203076.CAKF01000012_gene1154
+(degree 626), 1203076.CAKF01000006_gene548 (degree 564) and 1203076.CAKF01000001_gene1087
+(degree 542).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusIngluviei(
 	
 	Datetime: 2021-02-02 23:14:38.161892
 	
-	The undirected graph Lactobacillus ingluviei has 1807 nodes and 119918 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07349 and
-	has 7 connected components, where the component with most nodes has 1782 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 132.73, and the node degree mode is 3. The top 5 most central
-	nodes are 1203076.CAKF01000010_gene267 (degree 803), 1203076.CAKF01000030_gene782
-	(degree 651), 1203076.CAKF01000012_gene1154 (degree 626), 1203076.CAKF01000006_gene548
-	(degree 564) and 1203076.CAKF01000001_gene1087 (degree 542).
+	The undirected graph Lactobacillus ingluviei has 1807 nodes and 119918
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07349 and has 7 connected components, where the component
+	with most nodes has 1782 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 132.73,
+	and the node degree mode is 3. The top 5 most central nodes are 1203076.CAKF01000010_gene267
+	(degree 803), 1203076.CAKF01000030_gene782 (degree 651), 1203076.CAKF01000012_gene1154
+	(degree 626), 1203076.CAKF01000006_gene548 (degree 564) and 1203076.CAKF01000001_gene1087
+	(degree 542).
 	
 
 

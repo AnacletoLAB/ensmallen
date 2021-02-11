@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:56.200521
 
-The undirected graph Stereum hirsutum has 7503 nodes and 646402 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02297 and
-has 26 connected components, where the component with most nodes has 7439 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 172.30, and the node degree mode is 1. The top 5 most central
-nodes are 40492.XP_007310030.1 (degree 1861), 40492.XP_007310750.1 (degree 1519),
-40492.XP_007305576.1 (degree 1477), 40492.XP_007308688.1 (degree 1325) and 40492.XP_007297953.1
+The undirected graph Stereum hirsutum has 7503 nodes and 646402 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02297 and has 26 connected components, where the component with most
+nodes has 7439 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 172.30, and
+the node degree mode is 1. The top 5 most central nodes are 40492.XP_007310030.1
+(degree 1861), 40492.XP_007310750.1 (degree 1519), 40492.XP_007305576.1
+(degree 1477), 40492.XP_007308688.1 (degree 1325) and 40492.XP_007297953.1
 (degree 1251).
 
 
@@ -107,13 +108,14 @@ def StereumHirsutum(
 	
 	Datetime: 2021-02-02 18:11:56.200521
 	
-	The undirected graph Stereum hirsutum has 7503 nodes and 646402 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02297 and
-	has 26 connected components, where the component with most nodes has 7439 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 172.30, and the node degree mode is 1. The top 5 most central
-	nodes are 40492.XP_007310030.1 (degree 1861), 40492.XP_007310750.1 (degree 1519),
-	40492.XP_007305576.1 (degree 1477), 40492.XP_007308688.1 (degree 1325) and 40492.XP_007297953.1
+	The undirected graph Stereum hirsutum has 7503 nodes and 646402 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02297 and has 26 connected components, where the component with most
+	nodes has 7439 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 172.30, and
+	the node degree mode is 1. The top 5 most central nodes are 40492.XP_007310030.1
+	(degree 1861), 40492.XP_007310750.1 (degree 1519), 40492.XP_007305576.1
+	(degree 1477), 40492.XP_007308688.1 (degree 1325) and 40492.XP_007297953.1
 	(degree 1251).
 	
 

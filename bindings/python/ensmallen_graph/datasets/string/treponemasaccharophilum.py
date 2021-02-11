@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:36.288262
 
-The undirected graph Treponema saccharophilum has 2801 nodes and 253407 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06462
-and has 15 connected components, where the component with most nodes has 2764 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 180.94, and the node degree mode is 4. The top 5
-most central nodes are 907348.TresaDRAFT_2370 (degree 1181), 907348.TresaDRAFT_2017
-(degree 1151), 907348.TresaDRAFT_2329 (degree 1106), 907348.TresaDRAFT_0471 (degree
-978) and 907348.TresaDRAFT_1461 (degree 977).
+The undirected graph Treponema saccharophilum has 2801 nodes and 253407
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06462 and has 15 connected components, where the component
+with most nodes has 2764 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 180.94,
+and the node degree mode is 4. The top 5 most central nodes are 907348.TresaDRAFT_2370
+(degree 1181), 907348.TresaDRAFT_2017 (degree 1151), 907348.TresaDRAFT_2329
+(degree 1106), 907348.TresaDRAFT_0471 (degree 978) and 907348.TresaDRAFT_1461
+(degree 977).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaSaccharophilum(
 	
 	Datetime: 2021-02-02 21:54:36.288262
 	
-	The undirected graph Treponema saccharophilum has 2801 nodes and 253407 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06462
-	and has 15 connected components, where the component with most nodes has 2764 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 180.94, and the node degree mode is 4. The top 5
-	most central nodes are 907348.TresaDRAFT_2370 (degree 1181), 907348.TresaDRAFT_2017
-	(degree 1151), 907348.TresaDRAFT_2329 (degree 1106), 907348.TresaDRAFT_0471 (degree
-	978) and 907348.TresaDRAFT_1461 (degree 977).
+	The undirected graph Treponema saccharophilum has 2801 nodes and 253407
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06462 and has 15 connected components, where the component
+	with most nodes has 2764 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 180.94,
+	and the node degree mode is 4. The top 5 most central nodes are 907348.TresaDRAFT_2370
+	(degree 1181), 907348.TresaDRAFT_2017 (degree 1151), 907348.TresaDRAFT_2329
+	(degree 1106), 907348.TresaDRAFT_0471 (degree 978) and 907348.TresaDRAFT_1461
+	(degree 977).
 	
 
 

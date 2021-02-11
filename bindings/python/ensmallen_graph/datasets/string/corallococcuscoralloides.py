@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:08.736213
 
-The undirected graph Corallococcus coralloides has 7993 nodes and 887746 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02779
-and has 48 connected components, where the component with most nodes has 7877 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 222.13, and the node degree mode is 2. The top 5
-most central nodes are 1144275.COCOR_07311 (degree 3084), 1144275.COCOR_03338 (degree
-2354), 1144275.COCOR_04943 (degree 2130), 1144275.COCOR_01331 (degree 2059) and 1144275.COCOR_06042
-(degree 1970).
+The undirected graph Corallococcus coralloides has 7993 nodes and 887746
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02779 and has 48 connected components, where the component
+with most nodes has 7877 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 222.13,
+and the node degree mode is 2. The top 5 most central nodes are 1144275.COCOR_07311
+(degree 3084), 1144275.COCOR_03338 (degree 2354), 1144275.COCOR_04943 (degree
+2130), 1144275.COCOR_01331 (degree 2059) and 1144275.COCOR_06042 (degree
+1970).
 
 
 References
@@ -107,14 +108,15 @@ def CorallococcusCoralloides(
 	
 	Datetime: 2021-02-02 22:58:08.736213
 	
-	The undirected graph Corallococcus coralloides has 7993 nodes and 887746 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02779
-	and has 48 connected components, where the component with most nodes has 7877 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 222.13, and the node degree mode is 2. The top 5
-	most central nodes are 1144275.COCOR_07311 (degree 3084), 1144275.COCOR_03338 (degree
-	2354), 1144275.COCOR_04943 (degree 2130), 1144275.COCOR_01331 (degree 2059) and 1144275.COCOR_06042
-	(degree 1970).
+	The undirected graph Corallococcus coralloides has 7993 nodes and 887746
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02779 and has 48 connected components, where the component
+	with most nodes has 7877 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 222.13,
+	and the node degree mode is 2. The top 5 most central nodes are 1144275.COCOR_07311
+	(degree 3084), 1144275.COCOR_03338 (degree 2354), 1144275.COCOR_04943 (degree
+	2130), 1144275.COCOR_01331 (degree 2059) and 1144275.COCOR_06042 (degree
+	1970).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:49:52.471274
 
-The undirected graph Roseivivax sp. 22IIs10s has 4231 nodes and 595764 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06658 and
-has 15 connected components, where the component with most nodes has 4191 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 250,
-the mean node degree is 281.62, and the node degree mode is 7. The top 5 most central
-nodes are 1317118.ATO8_05251 (degree 1738), 1317118.ATO8_12061 (degree 1627), 1317118.ATO8_01455
-(degree 1398), 1317118.ATO8_19529 (degree 1386) and 1317118.ATO8_08996 (degree 1282).
+The undirected graph Roseivivax sp. 22IIs10s has 4231 nodes and 595764
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06658 and has 15 connected components, where the component
+with most nodes has 4191 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 250, the mean node degree is 281.62,
+and the node degree mode is 7. The top 5 most central nodes are 1317118.ATO8_05251
+(degree 1738), 1317118.ATO8_12061 (degree 1627), 1317118.ATO8_01455 (degree
+1398), 1317118.ATO8_19529 (degree 1386) and 1317118.ATO8_08996 (degree
+1282).
 
 
 References
@@ -106,13 +108,15 @@ def RoseivivaxSp.22iis10s(
 	
 	Datetime: 2021-02-03 21:49:52.471274
 	
-	The undirected graph Roseivivax sp. 22IIs10s has 4231 nodes and 595764 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06658 and
-	has 15 connected components, where the component with most nodes has 4191 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 250,
-	the mean node degree is 281.62, and the node degree mode is 7. The top 5 most central
-	nodes are 1317118.ATO8_05251 (degree 1738), 1317118.ATO8_12061 (degree 1627), 1317118.ATO8_01455
-	(degree 1398), 1317118.ATO8_19529 (degree 1386) and 1317118.ATO8_08996 (degree 1282).
+	The undirected graph Roseivivax sp. 22IIs10s has 4231 nodes and 595764
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06658 and has 15 connected components, where the component
+	with most nodes has 4191 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 250, the mean node degree is 281.62,
+	and the node degree mode is 7. The top 5 most central nodes are 1317118.ATO8_05251
+	(degree 1738), 1317118.ATO8_12061 (degree 1627), 1317118.ATO8_01455 (degree
+	1398), 1317118.ATO8_19529 (degree 1386) and 1317118.ATO8_08996 (degree
+	1282).
 	
 
 

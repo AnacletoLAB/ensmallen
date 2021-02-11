@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:12.355567
 
-The undirected graph Hellea balneolensis has 2978 nodes and 196764 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04439 and
-has 11 connected components, where the component with most nodes has 2953 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 132.15, and the node degree mode is 5. The top 5 most central
-nodes are 1121948.AUAC01000002_gene1921 (degree 1023), 1121948.AUAC01000002_gene968
-(degree 930), 1121948.AUAC01000003_gene2409 (degree 778), 1121948.AUAC01000003_gene2200
-(degree 770) and 1121948.AUAC01000002_gene1321 (degree 723).
+The undirected graph Hellea balneolensis has 2978 nodes and 196764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04439 and has 11 connected components, where the component with most
+nodes has 2953 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 132.15, and
+the node degree mode is 5. The top 5 most central nodes are 1121948.AUAC01000002_gene1921
+(degree 1023), 1121948.AUAC01000002_gene968 (degree 930), 1121948.AUAC01000003_gene2409
+(degree 778), 1121948.AUAC01000003_gene2200 (degree 770) and 1121948.AUAC01000002_gene1321
+(degree 723).
 
 
 References
@@ -107,14 +108,15 @@ def HelleaBalneolensis(
 	
 	Datetime: 2021-02-02 22:40:12.355567
 	
-	The undirected graph Hellea balneolensis has 2978 nodes and 196764 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04439 and
-	has 11 connected components, where the component with most nodes has 2953 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 132.15, and the node degree mode is 5. The top 5 most central
-	nodes are 1121948.AUAC01000002_gene1921 (degree 1023), 1121948.AUAC01000002_gene968
-	(degree 930), 1121948.AUAC01000003_gene2409 (degree 778), 1121948.AUAC01000003_gene2200
-	(degree 770) and 1121948.AUAC01000002_gene1321 (degree 723).
+	The undirected graph Hellea balneolensis has 2978 nodes and 196764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04439 and has 11 connected components, where the component with most
+	nodes has 2953 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 132.15, and
+	the node degree mode is 5. The top 5 most central nodes are 1121948.AUAC01000002_gene1921
+	(degree 1023), 1121948.AUAC01000002_gene968 (degree 930), 1121948.AUAC01000003_gene2409
+	(degree 778), 1121948.AUAC01000003_gene2200 (degree 770) and 1121948.AUAC01000002_gene1321
+	(degree 723).
 	
 
 

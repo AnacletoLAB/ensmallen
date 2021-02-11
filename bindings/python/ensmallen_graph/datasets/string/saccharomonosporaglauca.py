@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:14.087286
 
-The undirected graph Saccharomonospora glauca has 4213 nodes and 396459 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04468
-and has 15 connected components, where the component with most nodes has 4179 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 188.21, and the node degree mode is 3. The top 5
-most central nodes are 928724.SacglDRAFT_03059 (degree 1396), 928724.SacglDRAFT_02904
-(degree 1313), 928724.SacglDRAFT_00581 (degree 1290), 928724.SacglDRAFT_00798 (degree
-1161) and 928724.SacglDRAFT_03529 (degree 1159).
+The undirected graph Saccharomonospora glauca has 4213 nodes and 396459
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04468 and has 15 connected components, where the component
+with most nodes has 4179 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 188.21,
+and the node degree mode is 3. The top 5 most central nodes are 928724.SacglDRAFT_03059
+(degree 1396), 928724.SacglDRAFT_02904 (degree 1313), 928724.SacglDRAFT_00581
+(degree 1290), 928724.SacglDRAFT_00798 (degree 1161) and 928724.SacglDRAFT_03529
+(degree 1159).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharomonosporaGlauca(
 	
 	Datetime: 2021-02-02 21:57:14.087286
 	
-	The undirected graph Saccharomonospora glauca has 4213 nodes and 396459 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04468
-	and has 15 connected components, where the component with most nodes has 4179 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 188.21, and the node degree mode is 3. The top 5
-	most central nodes are 928724.SacglDRAFT_03059 (degree 1396), 928724.SacglDRAFT_02904
-	(degree 1313), 928724.SacglDRAFT_00581 (degree 1290), 928724.SacglDRAFT_00798 (degree
-	1161) and 928724.SacglDRAFT_03529 (degree 1159).
+	The undirected graph Saccharomonospora glauca has 4213 nodes and 396459
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04468 and has 15 connected components, where the component
+	with most nodes has 4179 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 188.21,
+	and the node degree mode is 3. The top 5 most central nodes are 928724.SacglDRAFT_03059
+	(degree 1396), 928724.SacglDRAFT_02904 (degree 1313), 928724.SacglDRAFT_00581
+	(degree 1290), 928724.SacglDRAFT_00798 (degree 1161) and 928724.SacglDRAFT_03529
+	(degree 1159).
 	
 
 

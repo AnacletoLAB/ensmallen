@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:21.989544
 
-The undirected graph Gallionella capsiferriformans has 2879 nodes and 220559 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05324
-and has 7 connected components, where the component with most nodes has 2863 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 153.22, and the node degree mode is 5. The top 5
-most central nodes are 395494.Galf_1315 (degree 1382), 395494.Galf_2568 (degree 1238),
-395494.Galf_0198 (degree 1204), 395494.Galf_2239 (degree 1164) and 395494.Galf_0678
-(degree 1002).
+The undirected graph Gallionella capsiferriformans has 2879 nodes and 220559
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05324 and has 7 connected components, where the component
+with most nodes has 2863 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 153.22,
+and the node degree mode is 5. The top 5 most central nodes are 395494.Galf_1315
+(degree 1382), 395494.Galf_2568 (degree 1238), 395494.Galf_0198 (degree
+1204), 395494.Galf_2239 (degree 1164) and 395494.Galf_0678 (degree 1002).
 
 
 References
@@ -107,14 +107,14 @@ def GallionellaCapsiferriformans(
 	
 	Datetime: 2021-02-02 20:41:21.989544
 	
-	The undirected graph Gallionella capsiferriformans has 2879 nodes and 220559 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05324
-	and has 7 connected components, where the component with most nodes has 2863 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 153.22, and the node degree mode is 5. The top 5
-	most central nodes are 395494.Galf_1315 (degree 1382), 395494.Galf_2568 (degree 1238),
-	395494.Galf_0198 (degree 1204), 395494.Galf_2239 (degree 1164) and 395494.Galf_0678
-	(degree 1002).
+	The undirected graph Gallionella capsiferriformans has 2879 nodes and 220559
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05324 and has 7 connected components, where the component
+	with most nodes has 2863 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 153.22,
+	and the node degree mode is 5. The top 5 most central nodes are 395494.Galf_1315
+	(degree 1382), 395494.Galf_2568 (degree 1238), 395494.Galf_0198 (degree
+	1204), 395494.Galf_2239 (degree 1164) and 395494.Galf_0678 (degree 1002).
 	
 
 

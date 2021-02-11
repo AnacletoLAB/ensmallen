@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:51.215392
 
-The undirected graph Lactobacillus nodensis has 2845 nodes and 194425 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-has 13 connected components, where the component with most nodes has 2815 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 136.68, and the node degree mode is 4. The top 5 most central
-nodes are 1423775.BAMN01000018_gene2384 (degree 1075), 1423775.BAMN01000006_gene999
-(degree 810), 1423775.BAMN01000006_gene941 (degree 740), 1423775.BAMN01000001_gene2730
-(degree 706) and 1423775.BAMN01000016_gene2284 (degree 699).
+The undirected graph Lactobacillus nodensis has 2845 nodes and 194425 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04806 and has 13 connected components, where the component with most
+nodes has 2815 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 136.68, and
+the node degree mode is 4. The top 5 most central nodes are 1423775.BAMN01000018_gene2384
+(degree 1075), 1423775.BAMN01000006_gene999 (degree 810), 1423775.BAMN01000006_gene941
+(degree 740), 1423775.BAMN01000001_gene2730 (degree 706) and 1423775.BAMN01000016_gene2284
+(degree 699).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusNodensis(
 	
 	Datetime: 2021-02-03 22:51:51.215392
 	
-	The undirected graph Lactobacillus nodensis has 2845 nodes and 194425 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-	has 13 connected components, where the component with most nodes has 2815 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 136.68, and the node degree mode is 4. The top 5 most central
-	nodes are 1423775.BAMN01000018_gene2384 (degree 1075), 1423775.BAMN01000006_gene999
-	(degree 810), 1423775.BAMN01000006_gene941 (degree 740), 1423775.BAMN01000001_gene2730
-	(degree 706) and 1423775.BAMN01000016_gene2284 (degree 699).
+	The undirected graph Lactobacillus nodensis has 2845 nodes and 194425 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04806 and has 13 connected components, where the component with most
+	nodes has 2815 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 136.68, and
+	the node degree mode is 4. The top 5 most central nodes are 1423775.BAMN01000018_gene2384
+	(degree 1075), 1423775.BAMN01000006_gene999 (degree 810), 1423775.BAMN01000006_gene941
+	(degree 740), 1423775.BAMN01000001_gene2730 (degree 706) and 1423775.BAMN01000016_gene2284
+	(degree 699).
 	
 
 

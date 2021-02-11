@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:18.860469
 
-The undirected graph Prevotella salivae has 2855 nodes and 156684 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03846 and
-has 47 connected components, where the component with most nodes has 2723 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 109.76, and the node degree mode is 2. The top 5 most central
-nodes are 888832.HMPREF9420_1656 (degree 880), 888832.HMPREF9420_2036 (degree 779),
-888832.HMPREF9420_2014 (degree 747), 888832.HMPREF9420_0885 (degree 710) and 888832.HMPREF9420_0673
+The undirected graph Prevotella salivae has 2855 nodes and 156684 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03846 and has 47 connected components, where the component with most
+nodes has 2723 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 109.76, and
+the node degree mode is 2. The top 5 most central nodes are 888832.HMPREF9420_1656
+(degree 880), 888832.HMPREF9420_2036 (degree 779), 888832.HMPREF9420_2014
+(degree 747), 888832.HMPREF9420_0885 (degree 710) and 888832.HMPREF9420_0673
 (degree 692).
 
 
@@ -107,13 +108,14 @@ def PrevotellaSalivae(
 	
 	Datetime: 2021-02-02 21:53:18.860469
 	
-	The undirected graph Prevotella salivae has 2855 nodes and 156684 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03846 and
-	has 47 connected components, where the component with most nodes has 2723 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 109.76, and the node degree mode is 2. The top 5 most central
-	nodes are 888832.HMPREF9420_1656 (degree 880), 888832.HMPREF9420_2036 (degree 779),
-	888832.HMPREF9420_2014 (degree 747), 888832.HMPREF9420_0885 (degree 710) and 888832.HMPREF9420_0673
+	The undirected graph Prevotella salivae has 2855 nodes and 156684 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03846 and has 47 connected components, where the component with most
+	nodes has 2723 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 109.76, and
+	the node degree mode is 2. The top 5 most central nodes are 888832.HMPREF9420_1656
+	(degree 880), 888832.HMPREF9420_2036 (degree 779), 888832.HMPREF9420_2014
+	(degree 747), 888832.HMPREF9420_0885 (degree 710) and 888832.HMPREF9420_0673
 	(degree 692).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:00.359247
 
-The undirected graph Thermotoga sp. Mc24 has 1793 nodes and 126098 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07849 and
-has 2 connected components, where the component with most nodes has 1791 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 140.66, and the node degree mode is 19. The top 5 most central
-nodes are 1231241.Mc24_07704 (degree 1018), 1231241.Mc24_07914 (degree 839), 1231241.Mc24_03908
-(degree 825), 1231241.Mc24_06110 (degree 697) and 1231241.Mc24_02493 (degree 686).
+The undirected graph Thermotoga sp. Mc24 has 1793 nodes and 126098 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07849 and has 2 connected components, where the component with most
+nodes has 1791 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 140.66, and
+the node degree mode is 19. The top 5 most central nodes are 1231241.Mc24_07704
+(degree 1018), 1231241.Mc24_07914 (degree 839), 1231241.Mc24_03908 (degree
+825), 1231241.Mc24_06110 (degree 697) and 1231241.Mc24_02493 (degree 686).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaSp.Mc24(
 	
 	Datetime: 2021-02-02 23:28:00.359247
 	
-	The undirected graph Thermotoga sp. Mc24 has 1793 nodes and 126098 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07849 and
-	has 2 connected components, where the component with most nodes has 1791 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 140.66, and the node degree mode is 19. The top 5 most central
-	nodes are 1231241.Mc24_07704 (degree 1018), 1231241.Mc24_07914 (degree 839), 1231241.Mc24_03908
-	(degree 825), 1231241.Mc24_06110 (degree 697) and 1231241.Mc24_02493 (degree 686).
+	The undirected graph Thermotoga sp. Mc24 has 1793 nodes and 126098 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07849 and has 2 connected components, where the component with most
+	nodes has 1791 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 140.66, and
+	the node degree mode is 19. The top 5 most central nodes are 1231241.Mc24_07704
+	(degree 1018), 1231241.Mc24_07914 (degree 839), 1231241.Mc24_03908 (degree
+	825), 1231241.Mc24_06110 (degree 697) and 1231241.Mc24_02493 (degree 686).
 	
 
 

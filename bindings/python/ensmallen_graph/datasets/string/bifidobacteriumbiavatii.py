@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:53.852784
 
-The undirected graph Bifidobacterium biavatii has 2537 nodes and 170947 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05314
-and has 11 connected components, where the component with most nodes has 2508 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 134.76, and the node degree mode is 2. The top 5
-most central nodes are 1437608.BBIA_2545 (degree 948), 1437608.BBIA_2622 (degree
-906), 1437608.BBIA_2572 (degree 905), 1437608.BBIA_0386 (degree 818) and 1437608.BBIA_2260
-(degree 780).
+The undirected graph Bifidobacterium biavatii has 2537 nodes and 170947
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05314 and has 11 connected components, where the component
+with most nodes has 2508 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 134.76,
+and the node degree mode is 2. The top 5 most central nodes are 1437608.BBIA_2545
+(degree 948), 1437608.BBIA_2622 (degree 906), 1437608.BBIA_2572 (degree
+905), 1437608.BBIA_0386 (degree 818) and 1437608.BBIA_2260 (degree 780).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumBiavatii(
 	
 	Datetime: 2021-02-03 22:55:53.852784
 	
-	The undirected graph Bifidobacterium biavatii has 2537 nodes and 170947 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05314
-	and has 11 connected components, where the component with most nodes has 2508 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 134.76, and the node degree mode is 2. The top 5
-	most central nodes are 1437608.BBIA_2545 (degree 948), 1437608.BBIA_2622 (degree
-	906), 1437608.BBIA_2572 (degree 905), 1437608.BBIA_0386 (degree 818) and 1437608.BBIA_2260
-	(degree 780).
+	The undirected graph Bifidobacterium biavatii has 2537 nodes and 170947
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05314 and has 11 connected components, where the component
+	with most nodes has 2508 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 134.76,
+	and the node degree mode is 2. The top 5 most central nodes are 1437608.BBIA_2545
+	(degree 948), 1437608.BBIA_2622 (degree 906), 1437608.BBIA_2572 (degree
+	905), 1437608.BBIA_0386 (degree 818) and 1437608.BBIA_2260 (degree 780).
 	
 
 

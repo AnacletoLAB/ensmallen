@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:15.678499
 
-The undirected graph Alcanivorax sp. DG881 has 3313 nodes and 343611 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06263 and
-has 10 connected components, where the component with most nodes has 3295 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 207.43, and the node degree mode is 2. The top 5 most central
-nodes are 236097.ADG881_586 (degree 1111), 236097.ADG881_2380 (degree 1062), 236097.ADG881_2674
-(degree 958), 236097.ADG881_739 (degree 925) and 236097.ADG881_3083 (degree 918).
+The undirected graph Alcanivorax sp. DG881 has 3313 nodes and 343611 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06263 and has 10 connected components, where the component with most
+nodes has 3295 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 207.43, and
+the node degree mode is 2. The top 5 most central nodes are 236097.ADG881_586
+(degree 1111), 236097.ADG881_2380 (degree 1062), 236097.ADG881_2674 (degree
+958), 236097.ADG881_739 (degree 925) and 236097.ADG881_3083 (degree 918).
 
 
 References
@@ -106,13 +107,14 @@ def AlcanivoraxSp.Dg881(
 	
 	Datetime: 2021-02-02 20:08:15.678499
 	
-	The undirected graph Alcanivorax sp. DG881 has 3313 nodes and 343611 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06263 and
-	has 10 connected components, where the component with most nodes has 3295 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 207.43, and the node degree mode is 2. The top 5 most central
-	nodes are 236097.ADG881_586 (degree 1111), 236097.ADG881_2380 (degree 1062), 236097.ADG881_2674
-	(degree 958), 236097.ADG881_739 (degree 925) and 236097.ADG881_3083 (degree 918).
+	The undirected graph Alcanivorax sp. DG881 has 3313 nodes and 343611 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06263 and has 10 connected components, where the component with most
+	nodes has 3295 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 207.43, and
+	the node degree mode is 2. The top 5 most central nodes are 236097.ADG881_586
+	(degree 1111), 236097.ADG881_2380 (degree 1062), 236097.ADG881_2674 (degree
+	958), 236097.ADG881_739 (degree 925) and 236097.ADG881_3083 (degree 918).
 	
 
 

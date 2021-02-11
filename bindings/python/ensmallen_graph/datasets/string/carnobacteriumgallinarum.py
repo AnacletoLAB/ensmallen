@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:36.391251
 
-The undirected graph Carnobacterium gallinarum has 3758 nodes and 379512 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05376
-and has 22 connected components, where the component with most nodes has 3696 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 201.98, and the node degree mode is 6. The top 5
-most central nodes are 1449338.JQLU01000003_gene674 (degree 1416), 1449338.JQLU01000005_gene3559
-(degree 1385), 1449338.JQLU01000005_gene2116 (degree 1363), 1449338.JQLU01000005_gene2741
-(degree 1327) and 1449338.JQLU01000005_gene1469 (degree 1269).
+The undirected graph Carnobacterium gallinarum has 3758 nodes and 379512
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05376 and has 22 connected components, where the component
+with most nodes has 3696 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 201.98,
+and the node degree mode is 6. The top 5 most central nodes are 1449338.JQLU01000003_gene674
+(degree 1416), 1449338.JQLU01000005_gene3559 (degree 1385), 1449338.JQLU01000005_gene2116
+(degree 1363), 1449338.JQLU01000005_gene2741 (degree 1327) and 1449338.JQLU01000005_gene1469
+(degree 1269).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumGallinarum(
 	
 	Datetime: 2021-02-03 23:04:36.391251
 	
-	The undirected graph Carnobacterium gallinarum has 3758 nodes and 379512 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05376
-	and has 22 connected components, where the component with most nodes has 3696 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 201.98, and the node degree mode is 6. The top 5
-	most central nodes are 1449338.JQLU01000003_gene674 (degree 1416), 1449338.JQLU01000005_gene3559
-	(degree 1385), 1449338.JQLU01000005_gene2116 (degree 1363), 1449338.JQLU01000005_gene2741
-	(degree 1327) and 1449338.JQLU01000005_gene1469 (degree 1269).
+	The undirected graph Carnobacterium gallinarum has 3758 nodes and 379512
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05376 and has 22 connected components, where the component
+	with most nodes has 3696 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 201.98,
+	and the node degree mode is 6. The top 5 most central nodes are 1449338.JQLU01000003_gene674
+	(degree 1416), 1449338.JQLU01000005_gene3559 (degree 1385), 1449338.JQLU01000005_gene2116
+	(degree 1363), 1449338.JQLU01000005_gene2741 (degree 1327) and 1449338.JQLU01000005_gene1469
+	(degree 1269).
 	
 
 

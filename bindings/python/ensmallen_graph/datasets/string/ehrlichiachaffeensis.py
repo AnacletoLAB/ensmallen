@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:28.559982
 
-The undirected graph Ehrlichia chaffeensis has 1065 nodes and 48823 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08617 and
-has 26 connected components, where the component with most nodes has 990 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 70,
-the mean node degree is 91.69, and the node degree mode is 1. The top 5 most central
-nodes are 205920.ECH_0778 (degree 497), 205920.ECH_0080 (degree 445), 205920.ECH_0224
-(degree 402), 205920.ECH_0822 (degree 396) and 205920.ECH_0434 (degree 393).
+The undirected graph Ehrlichia chaffeensis has 1065 nodes and 48823 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08617 and has 26 connected components, where the component with most
+nodes has 990 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 70, the mean node degree is 91.69, and
+the node degree mode is 1. The top 5 most central nodes are 205920.ECH_0778
+(degree 497), 205920.ECH_0080 (degree 445), 205920.ECH_0224 (degree 402),
+205920.ECH_0822 (degree 396) and 205920.ECH_0434 (degree 393).
 
 
 References
@@ -106,13 +107,14 @@ def EhrlichiaChaffeensis(
 	
 	Datetime: 2021-02-02 20:00:28.559982
 	
-	The undirected graph Ehrlichia chaffeensis has 1065 nodes and 48823 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08617 and
-	has 26 connected components, where the component with most nodes has 990 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 70,
-	the mean node degree is 91.69, and the node degree mode is 1. The top 5 most central
-	nodes are 205920.ECH_0778 (degree 497), 205920.ECH_0080 (degree 445), 205920.ECH_0224
-	(degree 402), 205920.ECH_0822 (degree 396) and 205920.ECH_0434 (degree 393).
+	The undirected graph Ehrlichia chaffeensis has 1065 nodes and 48823 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08617 and has 26 connected components, where the component with most
+	nodes has 990 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 70, the mean node degree is 91.69, and
+	the node degree mode is 1. The top 5 most central nodes are 205920.ECH_0778
+	(degree 497), 205920.ECH_0080 (degree 445), 205920.ECH_0224 (degree 402),
+	205920.ECH_0822 (degree 396) and 205920.ECH_0434 (degree 393).
 	
 
 

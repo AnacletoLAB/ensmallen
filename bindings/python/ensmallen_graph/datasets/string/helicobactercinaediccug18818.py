@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:15.347709
 
-The undirected graph Helicobacter cinaedi CCUG18818 has 2324 nodes and 98468 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03648
-and has 46 connected components, where the component with most nodes has 2154 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 55, the mean node degree is 84.74, and the node degree mode is 11. The top 5 most
-central nodes are 537971.HCCG_00625 (degree 811), 537971.HCCG_00931 (degree 721),
-537971.HCCG_00133 (degree 691), 537971.HCCG_02026 (degree 632) and 537971.HCCG_01496
-(degree 546).
+The undirected graph Helicobacter cinaedi CCUG18818 has 2324 nodes and
+98468 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03648 and has 46 connected components, where the
+component with most nodes has 2154 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 55, the mean node degree
+is 84.74, and the node degree mode is 11. The top 5 most central nodes
+are 537971.HCCG_00625 (degree 811), 537971.HCCG_00931 (degree 721), 537971.HCCG_00133
+(degree 691), 537971.HCCG_02026 (degree 632) and 537971.HCCG_01496 (degree
+546).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterCinaediCcug18818(
 	
 	Datetime: 2021-02-02 21:07:15.347709
 	
-	The undirected graph Helicobacter cinaedi CCUG18818 has 2324 nodes and 98468 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03648
-	and has 46 connected components, where the component with most nodes has 2154 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 55, the mean node degree is 84.74, and the node degree mode is 11. The top 5 most
-	central nodes are 537971.HCCG_00625 (degree 811), 537971.HCCG_00931 (degree 721),
-	537971.HCCG_00133 (degree 691), 537971.HCCG_02026 (degree 632) and 537971.HCCG_01496
-	(degree 546).
+	The undirected graph Helicobacter cinaedi CCUG18818 has 2324 nodes and
+	98468 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03648 and has 46 connected components, where the
+	component with most nodes has 2154 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 55, the mean node degree
+	is 84.74, and the node degree mode is 11. The top 5 most central nodes
+	are 537971.HCCG_00625 (degree 811), 537971.HCCG_00931 (degree 721), 537971.HCCG_00133
+	(degree 691), 537971.HCCG_02026 (degree 632) and 537971.HCCG_01496 (degree
+	546).
 	
 
 

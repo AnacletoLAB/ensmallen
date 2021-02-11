@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:38.317790
 
-The undirected graph Ruminococcus callidus has 3397 nodes and 174441 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03024 and
-has 34 connected components, where the component with most nodes has 3307 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 63,
-the mean node degree is 102.70, and the node degree mode is 1. The top 5 most central
-nodes are 411473.RUMCAL_02695 (degree 920), 411473.RUMCAL_01867 (degree 847), 411473.RUMCAL_00529
-(degree 787), 411473.RUMCAL_02335 (degree 752) and 411473.RUMCAL_02228 (degree 746).
+The undirected graph Ruminococcus callidus has 3397 nodes and 174441 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03024 and has 34 connected components, where the component with most
+nodes has 3307 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 63, the mean node degree is 102.70, and
+the node degree mode is 1. The top 5 most central nodes are 411473.RUMCAL_02695
+(degree 920), 411473.RUMCAL_01867 (degree 847), 411473.RUMCAL_00529 (degree
+787), 411473.RUMCAL_02335 (degree 752) and 411473.RUMCAL_02228 (degree
+746).
 
 
 References
@@ -106,13 +108,15 @@ def RuminococcusCallidus(
 	
 	Datetime: 2021-02-02 20:45:38.317790
 	
-	The undirected graph Ruminococcus callidus has 3397 nodes and 174441 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03024 and
-	has 34 connected components, where the component with most nodes has 3307 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 63,
-	the mean node degree is 102.70, and the node degree mode is 1. The top 5 most central
-	nodes are 411473.RUMCAL_02695 (degree 920), 411473.RUMCAL_01867 (degree 847), 411473.RUMCAL_00529
-	(degree 787), 411473.RUMCAL_02335 (degree 752) and 411473.RUMCAL_02228 (degree 746).
+	The undirected graph Ruminococcus callidus has 3397 nodes and 174441 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03024 and has 34 connected components, where the component with most
+	nodes has 3307 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 63, the mean node degree is 102.70, and
+	the node degree mode is 1. The top 5 most central nodes are 411473.RUMCAL_02695
+	(degree 920), 411473.RUMCAL_01867 (degree 847), 411473.RUMCAL_00529 (degree
+	787), 411473.RUMCAL_02335 (degree 752) and 411473.RUMCAL_02228 (degree
+	746).
 	
 
 

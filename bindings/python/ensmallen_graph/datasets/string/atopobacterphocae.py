@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:41.335459
 
-The undirected graph Atopobacter phocae has 1571 nodes and 107879 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08748 and
-has 5 connected components, where the component with most nodes has 1560 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 137.34, and the node degree mode is 4. The top 5 most central
-nodes are 1336234.JAGN01000008_gene1427 (degree 724), 1336234.JAGN01000004_gene504
-(degree 676), 1336234.JAGN01000050_gene639 (degree 629), 1336234.JAGN01000018_gene18
-(degree 570) and 1336234.JAGN01000002_gene998 (degree 569).
+The undirected graph Atopobacter phocae has 1571 nodes and 107879 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08748 and has 5 connected components, where the component with most
+nodes has 1560 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 137.34, and
+the node degree mode is 4. The top 5 most central nodes are 1336234.JAGN01000008_gene1427
+(degree 724), 1336234.JAGN01000004_gene504 (degree 676), 1336234.JAGN01000050_gene639
+(degree 629), 1336234.JAGN01000018_gene18 (degree 570) and 1336234.JAGN01000002_gene998
+(degree 569).
 
 
 References
@@ -107,14 +108,15 @@ def AtopobacterPhocae(
 	
 	Datetime: 2021-02-03 21:56:41.335459
 	
-	The undirected graph Atopobacter phocae has 1571 nodes and 107879 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08748 and
-	has 5 connected components, where the component with most nodes has 1560 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 137.34, and the node degree mode is 4. The top 5 most central
-	nodes are 1336234.JAGN01000008_gene1427 (degree 724), 1336234.JAGN01000004_gene504
-	(degree 676), 1336234.JAGN01000050_gene639 (degree 629), 1336234.JAGN01000018_gene18
-	(degree 570) and 1336234.JAGN01000002_gene998 (degree 569).
+	The undirected graph Atopobacter phocae has 1571 nodes and 107879 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08748 and has 5 connected components, where the component with most
+	nodes has 1560 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 137.34, and
+	the node degree mode is 4. The top 5 most central nodes are 1336234.JAGN01000008_gene1427
+	(degree 724), 1336234.JAGN01000004_gene504 (degree 676), 1336234.JAGN01000050_gene639
+	(degree 629), 1336234.JAGN01000018_gene18 (degree 570) and 1336234.JAGN01000002_gene998
+	(degree 569).
 	
 
 

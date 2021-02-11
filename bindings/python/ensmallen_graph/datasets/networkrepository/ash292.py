@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:39.062083
 
-The undirected graph ash292 has 292 nodes and 1250 unweighted edges, of which 292
-are self-loops. The graph is dense as it has a density of 0.02599 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 7.56, and the node degree mode is 7. The top 5 most central nodes are 165 (degree
-14), 183 (degree 13), 162 (degree 13), 114 (degree 13) and 187 (degree 12).
+The undirected graph ash292 has 292 nodes and 1250 unweighted edges, of
+which 292 are self-loops. The graph is dense as it has a density of 0.02599
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 7.56, and the node degree mode is 7. The
+top 5 most central nodes are 165 (degree 14), 183 (degree 13), 162 (degree
+13), 114 (degree 13) and 187 (degree 12).
 
 
 References
@@ -101,11 +102,12 @@ def Ash292(
 	
 	Datetime: 2021-02-06 08:02:39.062083
 	
-	The undirected graph ash292 has 292 nodes and 1250 unweighted edges, of which 292
-	are self-loops. The graph is dense as it has a density of 0.02599 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 7.56, and the node degree mode is 7. The top 5 most central nodes are 165 (degree
-	14), 183 (degree 13), 162 (degree 13), 114 (degree 13) and 187 (degree 12).
+	The undirected graph ash292 has 292 nodes and 1250 unweighted edges, of
+	which 292 are self-loops. The graph is dense as it has a density of 0.02599
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 7.56, and the node degree mode is 7. The
+	top 5 most central nodes are 165 (degree 14), 183 (degree 13), 162 (degree
+	13), 114 (degree 13) and 187 (degree 12).
 	
 
 

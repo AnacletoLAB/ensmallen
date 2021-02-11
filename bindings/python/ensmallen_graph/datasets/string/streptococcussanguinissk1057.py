@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:16.635231
 
-The undirected graph Streptococcus sanguinis SK1057 has 2308 nodes and 148232 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05568
-and has 4 connected components, where the component with most nodes has 2300 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 128.45, and the node degree mode is 11. The top 5
-most central nodes are 888821.HMPREF9394_0037 (degree 863), 888821.HMPREF9394_0131
-(degree 822), 888821.HMPREF9394_1322 (degree 741), 888821.HMPREF9394_0630 (degree
+The undirected graph Streptococcus sanguinis SK1057 has 2308 nodes and
+148232 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05568 and has 4 connected components, where the
+component with most nodes has 2300 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+is 128.45, and the node degree mode is 11. The top 5 most central nodes
+are 888821.HMPREF9394_0037 (degree 863), 888821.HMPREF9394_0131 (degree
+822), 888821.HMPREF9394_1322 (degree 741), 888821.HMPREF9394_0630 (degree
 693) and 888821.HMPREF9394_0753 (degree 657).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSanguinisSk1057(
 	
 	Datetime: 2021-02-02 21:53:16.635231
 	
-	The undirected graph Streptococcus sanguinis SK1057 has 2308 nodes and 148232 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05568
-	and has 4 connected components, where the component with most nodes has 2300 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 128.45, and the node degree mode is 11. The top 5
-	most central nodes are 888821.HMPREF9394_0037 (degree 863), 888821.HMPREF9394_0131
-	(degree 822), 888821.HMPREF9394_1322 (degree 741), 888821.HMPREF9394_0630 (degree
+	The undirected graph Streptococcus sanguinis SK1057 has 2308 nodes and
+	148232 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05568 and has 4 connected components, where the
+	component with most nodes has 2300 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+	is 128.45, and the node degree mode is 11. The top 5 most central nodes
+	are 888821.HMPREF9394_0037 (degree 863), 888821.HMPREF9394_0131 (degree
+	822), 888821.HMPREF9394_1322 (degree 741), 888821.HMPREF9394_0630 (degree
 	693) and 888821.HMPREF9394_0753 (degree 657).
 	
 

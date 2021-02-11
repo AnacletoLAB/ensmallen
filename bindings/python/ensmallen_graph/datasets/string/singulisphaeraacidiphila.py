@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:15.704461
 
-The undirected graph Singulisphaera acidiphila has 6891 nodes and 937668 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03950
-and has 77 connected components, where the component with most nodes has 6704 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 272.14, and the node degree mode is 2. The top 5
-most central nodes are 886293.Sinac_3636 (degree 2565), 886293.Sinac_7345 (degree
-2030), 886293.Sinac_4454 (degree 2027), 886293.Sinac_5362 (degree 2014) and 886293.Sinac_5564
-(degree 1950).
+The undirected graph Singulisphaera acidiphila has 6891 nodes and 937668
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03950 and has 77 connected components, where the component
+with most nodes has 6704 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 272.14,
+and the node degree mode is 2. The top 5 most central nodes are 886293.Sinac_3636
+(degree 2565), 886293.Sinac_7345 (degree 2030), 886293.Sinac_4454 (degree
+2027), 886293.Sinac_5362 (degree 2014) and 886293.Sinac_5564 (degree 1950).
 
 
 References
@@ -107,14 +107,14 @@ def SingulisphaeraAcidiphila(
 	
 	Datetime: 2021-02-02 21:52:15.704461
 	
-	The undirected graph Singulisphaera acidiphila has 6891 nodes and 937668 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03950
-	and has 77 connected components, where the component with most nodes has 6704 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 272.14, and the node degree mode is 2. The top 5
-	most central nodes are 886293.Sinac_3636 (degree 2565), 886293.Sinac_7345 (degree
-	2030), 886293.Sinac_4454 (degree 2027), 886293.Sinac_5362 (degree 2014) and 886293.Sinac_5564
-	(degree 1950).
+	The undirected graph Singulisphaera acidiphila has 6891 nodes and 937668
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03950 and has 77 connected components, where the component
+	with most nodes has 6704 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 272.14,
+	and the node degree mode is 2. The top 5 most central nodes are 886293.Sinac_3636
+	(degree 2565), 886293.Sinac_7345 (degree 2030), 886293.Sinac_4454 (degree
+	2027), 886293.Sinac_5362 (degree 2014) and 886293.Sinac_5564 (degree 1950).
 	
 
 

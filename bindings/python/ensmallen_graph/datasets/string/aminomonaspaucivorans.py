@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:58.400181
 
-The undirected graph Aminomonas paucivorans has 2391 nodes and 237770 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08322 and
-has 2 connected components, where the component with most nodes has 2389 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 198.89, and the node degree mode is 8. The top 5 most central
-nodes are 584708.Apau_1171 (degree 1117), 584708.Apau_1528 (degree 1061), 584708.Apau_2001
-(degree 968), 584708.Apau_1365 (degree 912) and 584708.Apau_0757 (degree 854).
+The undirected graph Aminomonas paucivorans has 2391 nodes and 237770 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08322 and has 2 connected components, where the component with most
+nodes has 2389 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 198.89, and
+the node degree mode is 8. The top 5 most central nodes are 584708.Apau_1171
+(degree 1117), 584708.Apau_1528 (degree 1061), 584708.Apau_2001 (degree
+968), 584708.Apau_1365 (degree 912) and 584708.Apau_0757 (degree 854).
 
 
 References
@@ -106,13 +107,14 @@ def AminomonasPaucivorans(
 	
 	Datetime: 2021-02-02 21:15:58.400181
 	
-	The undirected graph Aminomonas paucivorans has 2391 nodes and 237770 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08322 and
-	has 2 connected components, where the component with most nodes has 2389 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 198.89, and the node degree mode is 8. The top 5 most central
-	nodes are 584708.Apau_1171 (degree 1117), 584708.Apau_1528 (degree 1061), 584708.Apau_2001
-	(degree 968), 584708.Apau_1365 (degree 912) and 584708.Apau_0757 (degree 854).
+	The undirected graph Aminomonas paucivorans has 2391 nodes and 237770 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08322 and has 2 connected components, where the component with most
+	nodes has 2389 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 198.89, and
+	the node degree mode is 8. The top 5 most central nodes are 584708.Apau_1171
+	(degree 1117), 584708.Apau_1528 (degree 1061), 584708.Apau_2001 (degree
+	968), 584708.Apau_1365 (degree 912) and 584708.Apau_0757 (degree 854).
 	
 
 

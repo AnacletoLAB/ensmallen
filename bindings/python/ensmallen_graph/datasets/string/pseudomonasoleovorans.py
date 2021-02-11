@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:17:12.422733
 
-The undirected graph Pseudomonas oleovorans has 4654 nodes and 942527 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08705 and
-has 9 connected components, where the component with most nodes has 4634 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 374,
-the mean node degree is 405.04, and the node degree mode is 2. The top 5 most central
-nodes are 301.JNHE01000020_gene3982 (degree 2173), 301.JNHE01000004_gene1699 (degree
-1892), 301.JNHE01000006_gene1029 (degree 1798), 301.JNHE01000002_gene2274 (degree
-1792) and 301.JNHE01000057_gene106 (degree 1772).
+The undirected graph Pseudomonas oleovorans has 4654 nodes and 942527 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08705 and has 9 connected components, where the component with most
+nodes has 4634 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 374, the mean node degree is 405.04, and
+the node degree mode is 2. The top 5 most central nodes are 301.JNHE01000020_gene3982
+(degree 2173), 301.JNHE01000004_gene1699 (degree 1892), 301.JNHE01000006_gene1029
+(degree 1798), 301.JNHE01000002_gene2274 (degree 1792) and 301.JNHE01000057_gene106
+(degree 1772).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasOleovorans(
 	
 	Datetime: 2021-02-02 16:17:12.422733
 	
-	The undirected graph Pseudomonas oleovorans has 4654 nodes and 942527 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08705 and
-	has 9 connected components, where the component with most nodes has 4634 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 374,
-	the mean node degree is 405.04, and the node degree mode is 2. The top 5 most central
-	nodes are 301.JNHE01000020_gene3982 (degree 2173), 301.JNHE01000004_gene1699 (degree
-	1892), 301.JNHE01000006_gene1029 (degree 1798), 301.JNHE01000002_gene2274 (degree
-	1792) and 301.JNHE01000057_gene106 (degree 1772).
+	The undirected graph Pseudomonas oleovorans has 4654 nodes and 942527 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08705 and has 9 connected components, where the component with most
+	nodes has 4634 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 374, the mean node degree is 405.04, and
+	the node degree mode is 2. The top 5 most central nodes are 301.JNHE01000020_gene3982
+	(degree 2173), 301.JNHE01000004_gene1699 (degree 1892), 301.JNHE01000006_gene1029
+	(degree 1798), 301.JNHE01000002_gene2274 (degree 1792) and 301.JNHE01000057_gene106
+	(degree 1772).
 	
 
 

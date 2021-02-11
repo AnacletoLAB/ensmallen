@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:32:15.214205
 
-The undirected graph Endolissoclinum faulkneri L5 has 766 nodes and 42326 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.14446 and is connected, as it has a single component. The graph median node
-degree is 96, the mean node degree is 110.51, and the node degree mode is 102. The
-top 5 most central nodes are 1401328.P856_794 (degree 650), 1401328.P856_795 (degree
-595), 1401328.P856_790 (degree 564), 1401328.P856_821 (degree 430) and 1401328.P856_726
-(degree 416).
+The undirected graph Endolissoclinum faulkneri L5 has 766 nodes and 42326
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.14446 and is connected, as it has a single component.
+The graph median node degree is 96, the mean node degree is 110.51, and
+the node degree mode is 102. The top 5 most central nodes are 1401328.P856_794
+(degree 650), 1401328.P856_795 (degree 595), 1401328.P856_790 (degree 564),
+1401328.P856_821 (degree 430) and 1401328.P856_726 (degree 416).
 
 
 References
@@ -106,13 +106,13 @@ def EndolissoclinumFaulkneriL5(
 	
 	Datetime: 2021-02-03 22:32:15.214205
 	
-	The undirected graph Endolissoclinum faulkneri L5 has 766 nodes and 42326 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.14446 and is connected, as it has a single component. The graph median node
-	degree is 96, the mean node degree is 110.51, and the node degree mode is 102. The
-	top 5 most central nodes are 1401328.P856_794 (degree 650), 1401328.P856_795 (degree
-	595), 1401328.P856_790 (degree 564), 1401328.P856_821 (degree 430) and 1401328.P856_726
-	(degree 416).
+	The undirected graph Endolissoclinum faulkneri L5 has 766 nodes and 42326
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.14446 and is connected, as it has a single component.
+	The graph median node degree is 96, the mean node degree is 110.51, and
+	the node degree mode is 102. The top 5 most central nodes are 1401328.P856_794
+	(degree 650), 1401328.P856_795 (degree 595), 1401328.P856_790 (degree 564),
+	1401328.P856_821 (degree 430) and 1401328.P856_726 (degree 416).
 	
 
 

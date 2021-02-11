@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:59.473240
 
-The undirected graph Phycisphaera mikurensis has 3251 nodes and 199917 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03784 and
-has 19 connected components, where the component with most nodes has 3210 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 122.99, and the node degree mode is 5. The top 5 most central
-nodes are 1142394.PSMK_07250 (degree 1082), 1142394.PSMK_10410 (degree 1041), 1142394.PSMK_24590
-(degree 796), 1142394.PSMK_27430 (degree 787) and 1142394.PSMK_22160 (degree 774).
+The undirected graph Phycisphaera mikurensis has 3251 nodes and 199917
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03784 and has 19 connected components, where the component
+with most nodes has 3210 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 122.99,
+and the node degree mode is 5. The top 5 most central nodes are 1142394.PSMK_07250
+(degree 1082), 1142394.PSMK_10410 (degree 1041), 1142394.PSMK_24590 (degree
+796), 1142394.PSMK_27430 (degree 787) and 1142394.PSMK_22160 (degree 774).
 
 
 References
@@ -106,13 +107,14 @@ def PhycisphaeraMikurensis(
 	
 	Datetime: 2021-02-02 22:57:59.473240
 	
-	The undirected graph Phycisphaera mikurensis has 3251 nodes and 199917 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03784 and
-	has 19 connected components, where the component with most nodes has 3210 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 122.99, and the node degree mode is 5. The top 5 most central
-	nodes are 1142394.PSMK_07250 (degree 1082), 1142394.PSMK_10410 (degree 1041), 1142394.PSMK_24590
-	(degree 796), 1142394.PSMK_27430 (degree 787) and 1142394.PSMK_22160 (degree 774).
+	The undirected graph Phycisphaera mikurensis has 3251 nodes and 199917
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03784 and has 19 connected components, where the component
+	with most nodes has 3210 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 122.99,
+	and the node degree mode is 5. The top 5 most central nodes are 1142394.PSMK_07250
+	(degree 1082), 1142394.PSMK_10410 (degree 1041), 1142394.PSMK_24590 (degree
+	796), 1142394.PSMK_27430 (degree 787) and 1142394.PSMK_22160 (degree 774).
 	
 
 

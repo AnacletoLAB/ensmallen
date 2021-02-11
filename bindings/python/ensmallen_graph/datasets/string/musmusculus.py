@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:49:53.263254
 
-The undirected graph Mus musculus has 21291 nodes and 5972403 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02635 and
-has 19 connected components, where the component with most nodes has 21236 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 424, the mean node degree is 561.03, and the node degree mode is 1. The top 5
-most central nodes are 10090.ENSMUSP00000113942 (degree 6344), 10090.ENSMUSP00000001780
-(degree 5894), 10090.ENSMUSP00000069851 (degree 5802), 10090.ENSMUSP00000104298 (degree
-5490) and 10090.ENSMUSP00000031314 (degree 5085).
+The undirected graph Mus musculus has 21291 nodes and 5972403 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02635 and has 19 connected components, where the component with most
+nodes has 21236 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 424, the mean node degree is 561.03, and
+the node degree mode is 1. The top 5 most central nodes are 10090.ENSMUSP00000113942
+(degree 6344), 10090.ENSMUSP00000001780 (degree 5894), 10090.ENSMUSP00000069851
+(degree 5802), 10090.ENSMUSP00000104298 (degree 5490) and 10090.ENSMUSP00000031314
+(degree 5085).
 
 
 References
@@ -107,14 +108,15 @@ def MusMusculus(
 	
 	Datetime: 2021-02-02 17:49:53.263254
 	
-	The undirected graph Mus musculus has 21291 nodes and 5972403 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02635 and
-	has 19 connected components, where the component with most nodes has 21236 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 424, the mean node degree is 561.03, and the node degree mode is 1. The top 5
-	most central nodes are 10090.ENSMUSP00000113942 (degree 6344), 10090.ENSMUSP00000001780
-	(degree 5894), 10090.ENSMUSP00000069851 (degree 5802), 10090.ENSMUSP00000104298 (degree
-	5490) and 10090.ENSMUSP00000031314 (degree 5085).
+	The undirected graph Mus musculus has 21291 nodes and 5972403 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02635 and has 19 connected components, where the component with most
+	nodes has 21236 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 424, the mean node degree is 561.03, and
+	the node degree mode is 1. The top 5 most central nodes are 10090.ENSMUSP00000113942
+	(degree 6344), 10090.ENSMUSP00000001780 (degree 5894), 10090.ENSMUSP00000069851
+	(degree 5802), 10090.ENSMUSP00000104298 (degree 5490) and 10090.ENSMUSP00000031314
+	(degree 5085).
 	
 
 

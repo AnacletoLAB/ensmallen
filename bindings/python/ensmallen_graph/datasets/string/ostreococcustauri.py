@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:30:02.387803
 
-The undirected graph Ostreococcus tauri has 5423 nodes and 681150 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04633 and
-has 35 connected components, where the component with most nodes has 5351 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 251.21, and the node degree mode is 1. The top 5 most central
-nodes are 70448.A0A090N3J9 (degree 2051), 70448.A0A090M2Y4 (degree 1972), 70448.A0A096P8S8
-(degree 1746), 70448.A0A090N3M5 (degree 1603) and 70448.A0A096P931 (degree 1464).
+The undirected graph Ostreococcus tauri has 5423 nodes and 681150 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04633 and has 35 connected components, where the component with most
+nodes has 5351 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 251.21, and
+the node degree mode is 1. The top 5 most central nodes are 70448.A0A090N3J9
+(degree 2051), 70448.A0A090M2Y4 (degree 1972), 70448.A0A096P8S8 (degree
+1746), 70448.A0A090N3M5 (degree 1603) and 70448.A0A096P931 (degree 1464).
 
 
 References
@@ -106,13 +107,14 @@ def OstreococcusTauri(
 	
 	Datetime: 2021-02-02 18:30:02.387803
 	
-	The undirected graph Ostreococcus tauri has 5423 nodes and 681150 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04633 and
-	has 35 connected components, where the component with most nodes has 5351 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 251.21, and the node degree mode is 1. The top 5 most central
-	nodes are 70448.A0A090N3J9 (degree 2051), 70448.A0A090M2Y4 (degree 1972), 70448.A0A096P8S8
-	(degree 1746), 70448.A0A090N3M5 (degree 1603) and 70448.A0A096P931 (degree 1464).
+	The undirected graph Ostreococcus tauri has 5423 nodes and 681150 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04633 and has 35 connected components, where the component with most
+	nodes has 5351 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 251.21, and
+	the node degree mode is 1. The top 5 most central nodes are 70448.A0A090N3J9
+	(degree 2051), 70448.A0A090M2Y4 (degree 1972), 70448.A0A096P8S8 (degree
+	1746), 70448.A0A090N3M5 (degree 1603) and 70448.A0A096P931 (degree 1464).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:33.674198
 
-The undirected graph Paenibacillus ginsengihumi has 4622 nodes and 543519 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05090
-and has 18 connected components, where the component with most nodes has 4587 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 235.19, and the node degree mode is 1. The top 5
-most central nodes are 1122919.KB905558_gene1234 (degree 1655), 1122919.KB905655_gene3697
-(degree 1488), 1122919.KB905563_gene2544 (degree 1476), 1122919.KB905583_gene3767
-(degree 1342) and 1122919.KB905583_gene3784 (degree 1326).
+The undirected graph Paenibacillus ginsengihumi has 4622 nodes and 543519
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05090 and has 18 connected components, where the component
+with most nodes has 4587 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 235.19,
+and the node degree mode is 1. The top 5 most central nodes are 1122919.KB905558_gene1234
+(degree 1655), 1122919.KB905655_gene3697 (degree 1488), 1122919.KB905563_gene2544
+(degree 1476), 1122919.KB905583_gene3767 (degree 1342) and 1122919.KB905583_gene3784
+(degree 1326).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusGinsengihumi(
 	
 	Datetime: 2021-02-02 22:44:33.674198
 	
-	The undirected graph Paenibacillus ginsengihumi has 4622 nodes and 543519 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05090
-	and has 18 connected components, where the component with most nodes has 4587 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 235.19, and the node degree mode is 1. The top 5
-	most central nodes are 1122919.KB905558_gene1234 (degree 1655), 1122919.KB905655_gene3697
-	(degree 1488), 1122919.KB905563_gene2544 (degree 1476), 1122919.KB905583_gene3767
-	(degree 1342) and 1122919.KB905583_gene3784 (degree 1326).
+	The undirected graph Paenibacillus ginsengihumi has 4622 nodes and 543519
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05090 and has 18 connected components, where the component
+	with most nodes has 4587 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 235.19,
+	and the node degree mode is 1. The top 5 most central nodes are 1122919.KB905558_gene1234
+	(degree 1655), 1122919.KB905655_gene3697 (degree 1488), 1122919.KB905563_gene2544
+	(degree 1476), 1122919.KB905583_gene3767 (degree 1342) and 1122919.KB905583_gene3784
+	(degree 1326).
 	
 
 

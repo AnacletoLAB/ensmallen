@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:14.045661
 
-The undirected graph Enterococcus hirae has 2701 nodes and 174234 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04778 and
-has 33 connected components, where the component with most nodes has 2616 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 129.01, and the node degree mode is 3. The top 5 most central
-nodes are 768486.EHR_04990 (degree 847), 768486.EHR_03695 (degree 840), 768486.EHR_14305
-(degree 838), 768486.EHR_10650 (degree 831) and 768486.EHR_00860 (degree 817).
+The undirected graph Enterococcus hirae has 2701 nodes and 174234 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04778 and has 33 connected components, where the component with most
+nodes has 2616 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 129.01, and
+the node degree mode is 3. The top 5 most central nodes are 768486.EHR_04990
+(degree 847), 768486.EHR_03695 (degree 840), 768486.EHR_14305 (degree 838),
+768486.EHR_10650 (degree 831) and 768486.EHR_00860 (degree 817).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusHirae(
 	
 	Datetime: 2021-02-02 21:44:14.045661
 	
-	The undirected graph Enterococcus hirae has 2701 nodes and 174234 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04778 and
-	has 33 connected components, where the component with most nodes has 2616 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 129.01, and the node degree mode is 3. The top 5 most central
-	nodes are 768486.EHR_04990 (degree 847), 768486.EHR_03695 (degree 840), 768486.EHR_14305
-	(degree 838), 768486.EHR_10650 (degree 831) and 768486.EHR_00860 (degree 817).
+	The undirected graph Enterococcus hirae has 2701 nodes and 174234 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04778 and has 33 connected components, where the component with most
+	nodes has 2616 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 129.01, and
+	the node degree mode is 3. The top 5 most central nodes are 768486.EHR_04990
+	(degree 847), 768486.EHR_03695 (degree 840), 768486.EHR_14305 (degree 838),
+	768486.EHR_10650 (degree 831) and 768486.EHR_00860 (degree 817).
 	
 
 

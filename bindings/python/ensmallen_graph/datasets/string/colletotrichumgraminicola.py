@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:28.734538
 
-The undirected graph Colletotrichum graminicola has 8200 nodes and 766034 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02279
-and has 25 connected components, where the component with most nodes has 8147 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 186.84, and the node degree mode is 1. The top 5
-most central nodes are 31870.EFQ24953 (degree 1952), 31870.EFQ28288 (degree 1738),
-31870.EFQ35853 (degree 1678), 31870.EFQ30042 (degree 1597) and 31870.EFQ33012 (degree
-1560).
+The undirected graph Colletotrichum graminicola has 8200 nodes and 766034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02279 and has 25 connected components, where the component
+with most nodes has 8147 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 186.84,
+and the node degree mode is 1. The top 5 most central nodes are 31870.EFQ24953
+(degree 1952), 31870.EFQ28288 (degree 1738), 31870.EFQ35853 (degree 1678),
+31870.EFQ30042 (degree 1597) and 31870.EFQ33012 (degree 1560).
 
 
 References
@@ -107,14 +107,14 @@ def ColletotrichumGraminicola(
 	
 	Datetime: 2021-02-02 18:02:28.734538
 	
-	The undirected graph Colletotrichum graminicola has 8200 nodes and 766034 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02279
-	and has 25 connected components, where the component with most nodes has 8147 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 186.84, and the node degree mode is 1. The top 5
-	most central nodes are 31870.EFQ24953 (degree 1952), 31870.EFQ28288 (degree 1738),
-	31870.EFQ35853 (degree 1678), 31870.EFQ30042 (degree 1597) and 31870.EFQ33012 (degree
-	1560).
+	The undirected graph Colletotrichum graminicola has 8200 nodes and 766034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02279 and has 25 connected components, where the component
+	with most nodes has 8147 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 186.84,
+	and the node degree mode is 1. The top 5 most central nodes are 31870.EFQ24953
+	(degree 1952), 31870.EFQ28288 (degree 1738), 31870.EFQ35853 (degree 1678),
+	31870.EFQ30042 (degree 1597) and 31870.EFQ33012 (degree 1560).
 	
 
 

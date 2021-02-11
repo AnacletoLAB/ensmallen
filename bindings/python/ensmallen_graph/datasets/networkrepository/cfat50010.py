@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:18.781010
 
-The undirected graph c-fat500-10 has 500 nodes and 46627 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.37376 and
-is connected, as it has a single component. The graph median node degree is 187,
-the mean node degree is 186.51 and the node degree mode is 187. The top 5 most central
-nodes are 499 (degree 188), 498 (degree 188), 491 (degree 188), 490 (degree 188)
-and 483 (degree 188).
+The undirected graph c-fat500-10 has 500 nodes and 46627 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.37376 and is connected, as it has a single component. The graph median
+node degree is 187, the mean node degree is 186.51 and the node degree
+mode is 187. The top 5 most central nodes are 499 (degree 188), 498 (degree
+188), 491 (degree 188), 490 (degree 188) and 483 (degree 188).
 
 
 References
@@ -115,12 +115,12 @@ def CFat50010(
 	
 	Datetime: 2021-02-03 22:54:18.781010
 	
-	The undirected graph c-fat500-10 has 500 nodes and 46627 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.37376 and
-	is connected, as it has a single component. The graph median node degree is 187,
-	the mean node degree is 186.51 and the node degree mode is 187. The top 5 most central
-	nodes are 499 (degree 188), 498 (degree 188), 491 (degree 188), 490 (degree 188)
-	and 483 (degree 188).
+	The undirected graph c-fat500-10 has 500 nodes and 46627 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.37376 and is connected, as it has a single component. The graph median
+	node degree is 187, the mean node degree is 186.51 and the node degree
+	mode is 187. The top 5 most central nodes are 499 (degree 188), 498 (degree
+	188), 491 (degree 188), 490 (degree 188) and 483 (degree 188).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:46:17.891804
 
-The undirected graph rw496 has 496 nodes and 1423 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.01159 and is connected, as
-it has a single component. The graph median node degree is 6, the mean node degree
-is 5.74, and the node degree mode is 6. The top 5 most central nodes are 489 (degree
-7), 485 (degree 7), 480 (degree 7), 474 (degree 7) and 467 (degree 7).
+The undirected graph rw496 has 496 nodes and 1423 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.01159
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 5.74, and the node degree mode is 6. The
+top 5 most central nodes are 489 (degree 7), 485 (degree 7), 480 (degree
+7), 474 (degree 7) and 467 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Rw496(
 	
 	Datetime: 2021-02-06 08:46:17.891804
 	
-	The undirected graph rw496 has 496 nodes and 1423 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.01159 and is connected, as
-	it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.74, and the node degree mode is 6. The top 5 most central nodes are 489 (degree
-	7), 485 (degree 7), 480 (degree 7), 474 (degree 7) and 467 (degree 7).
+	The undirected graph rw496 has 496 nodes and 1423 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.01159
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 5.74, and the node degree mode is 6. The
+	top 5 most central nodes are 489 (degree 7), 485 (degree 7), 480 (degree
+	7), 474 (degree 7) and 467 (degree 7).
 	
 
 

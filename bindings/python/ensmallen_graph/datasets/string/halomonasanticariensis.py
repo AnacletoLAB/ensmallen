@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:50.113593
 
-The undirected graph Halomonas anticariensis has 4684 nodes and 607777 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05542 and
-has 15 connected components, where the component with most nodes has 4646 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 259.51, and the node degree mode is 3. The top 5 most central
-nodes are 1121939.L861_24010 (degree 1973), 1121939.L861_22015 (degree 1965), 1121939.L861_06735
-(degree 1509), 1121939.L861_07905 (degree 1472) and 1121939.L861_18485 (degree 1470).
+The undirected graph Halomonas anticariensis has 4684 nodes and 607777
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05542 and has 15 connected components, where the component
+with most nodes has 4646 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 259.51,
+and the node degree mode is 3. The top 5 most central nodes are 1121939.L861_24010
+(degree 1973), 1121939.L861_22015 (degree 1965), 1121939.L861_06735 (degree
+1509), 1121939.L861_07905 (degree 1472) and 1121939.L861_18485 (degree
+1470).
 
 
 References
@@ -106,13 +108,15 @@ def HalomonasAnticariensis(
 	
 	Datetime: 2021-02-02 22:39:50.113593
 	
-	The undirected graph Halomonas anticariensis has 4684 nodes and 607777 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05542 and
-	has 15 connected components, where the component with most nodes has 4646 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 259.51, and the node degree mode is 3. The top 5 most central
-	nodes are 1121939.L861_24010 (degree 1973), 1121939.L861_22015 (degree 1965), 1121939.L861_06735
-	(degree 1509), 1121939.L861_07905 (degree 1472) and 1121939.L861_18485 (degree 1470).
+	The undirected graph Halomonas anticariensis has 4684 nodes and 607777
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05542 and has 15 connected components, where the component
+	with most nodes has 4646 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 259.51,
+	and the node degree mode is 3. The top 5 most central nodes are 1121939.L861_24010
+	(degree 1973), 1121939.L861_22015 (degree 1965), 1121939.L861_06735 (degree
+	1509), 1121939.L861_07905 (degree 1472) and 1121939.L861_18485 (degree
+	1470).
 	
 
 

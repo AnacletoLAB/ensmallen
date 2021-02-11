@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:50.688667
 
-The undirected graph Amycolatopsis balhimycina has 9454 nodes and 1383498 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03096
-and has 32 connected components, where the component with most nodes has 9372 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 292.68, and the node degree mode is 2. The top 5
-most central nodes are 1089545.KB913037_gene2089 (degree 3181), 1089545.KB913037_gene2577
-(degree 2658), 1089545.KB913037_gene4639 (degree 2557), 1089545.KB913037_gene7563
-(degree 2401) and 1089545.KB913037_gene3188 (degree 2280).
+The undirected graph Amycolatopsis balhimycina has 9454 nodes and 1383498
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03096 and has 32 connected components, where the component
+with most nodes has 9372 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 292.68,
+and the node degree mode is 2. The top 5 most central nodes are 1089545.KB913037_gene2089
+(degree 3181), 1089545.KB913037_gene2577 (degree 2658), 1089545.KB913037_gene4639
+(degree 2557), 1089545.KB913037_gene7563 (degree 2401) and 1089545.KB913037_gene3188
+(degree 2280).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisBalhimycina(
 	
 	Datetime: 2021-02-02 22:21:50.688667
 	
-	The undirected graph Amycolatopsis balhimycina has 9454 nodes and 1383498 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03096
-	and has 32 connected components, where the component with most nodes has 9372 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 292.68, and the node degree mode is 2. The top 5
-	most central nodes are 1089545.KB913037_gene2089 (degree 3181), 1089545.KB913037_gene2577
-	(degree 2658), 1089545.KB913037_gene4639 (degree 2557), 1089545.KB913037_gene7563
-	(degree 2401) and 1089545.KB913037_gene3188 (degree 2280).
+	The undirected graph Amycolatopsis balhimycina has 9454 nodes and 1383498
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03096 and has 32 connected components, where the component
+	with most nodes has 9372 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 292.68,
+	and the node degree mode is 2. The top 5 most central nodes are 1089545.KB913037_gene2089
+	(degree 3181), 1089545.KB913037_gene2577 (degree 2658), 1089545.KB913037_gene4639
+	(degree 2557), 1089545.KB913037_gene7563 (degree 2401) and 1089545.KB913037_gene3188
+	(degree 2280).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:19.006917
 
-The undirected graph Actinoplanes utahensis has 7136 nodes and 977251 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03839 and
-has 66 connected components, where the component with most nodes has 6987 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 273.89, and the node degree mode is 1. The top 5 most central
-nodes are 1869.MB27_01275 (degree 2296), 1869.MB27_14350 (degree 2148), 1869.MB27_24870
-(degree 2133), 1869.MB27_09065 (degree 2132) and 1869.MB27_36585 (degree 2084).
+The undirected graph Actinoplanes utahensis has 7136 nodes and 977251 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03839 and has 66 connected components, where the component with most
+nodes has 6987 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 273.89, and
+the node degree mode is 1. The top 5 most central nodes are 1869.MB27_01275
+(degree 2296), 1869.MB27_14350 (degree 2148), 1869.MB27_24870 (degree 2133),
+1869.MB27_09065 (degree 2132) and 1869.MB27_36585 (degree 2084).
 
 
 References
@@ -106,13 +107,14 @@ def ActinoplanesUtahensis(
 	
 	Datetime: 2021-02-02 16:23:19.006917
 	
-	The undirected graph Actinoplanes utahensis has 7136 nodes and 977251 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03839 and
-	has 66 connected components, where the component with most nodes has 6987 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 273.89, and the node degree mode is 1. The top 5 most central
-	nodes are 1869.MB27_01275 (degree 2296), 1869.MB27_14350 (degree 2148), 1869.MB27_24870
-	(degree 2133), 1869.MB27_09065 (degree 2132) and 1869.MB27_36585 (degree 2084).
+	The undirected graph Actinoplanes utahensis has 7136 nodes and 977251 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03839 and has 66 connected components, where the component with most
+	nodes has 6987 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 273.89, and
+	the node degree mode is 1. The top 5 most central nodes are 1869.MB27_01275
+	(degree 2296), 1869.MB27_14350 (degree 2148), 1869.MB27_24870 (degree 2133),
+	1869.MB27_09065 (degree 2132) and 1869.MB27_36585 (degree 2084).
 	
 
 

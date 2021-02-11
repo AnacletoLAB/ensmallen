@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:41.006368
 
-The undirected graph Desulfocapsa sulfexigens has 3481 nodes and 246489 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04070
-and has 17 connected components, where the component with most nodes has 3442 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 141.62, and the node degree mode is 4. The top 5
-most central nodes are 1167006.UWK_01974 (degree 1396), 1167006.UWK_01936 (degree
-1383), 1167006.UWK_01214 (degree 1174), 1167006.UWK_03460 (degree 1141) and 1167006.UWK_03058
-(degree 1047).
+The undirected graph Desulfocapsa sulfexigens has 3481 nodes and 246489
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04070 and has 17 connected components, where the component
+with most nodes has 3442 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 141.62,
+and the node degree mode is 4. The top 5 most central nodes are 1167006.UWK_01974
+(degree 1396), 1167006.UWK_01936 (degree 1383), 1167006.UWK_01214 (degree
+1174), 1167006.UWK_03460 (degree 1141) and 1167006.UWK_03058 (degree 1047).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfocapsaSulfexigens(
 	
 	Datetime: 2021-02-02 23:05:41.006368
 	
-	The undirected graph Desulfocapsa sulfexigens has 3481 nodes and 246489 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04070
-	and has 17 connected components, where the component with most nodes has 3442 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 141.62, and the node degree mode is 4. The top 5
-	most central nodes are 1167006.UWK_01974 (degree 1396), 1167006.UWK_01936 (degree
-	1383), 1167006.UWK_01214 (degree 1174), 1167006.UWK_03460 (degree 1141) and 1167006.UWK_03058
-	(degree 1047).
+	The undirected graph Desulfocapsa sulfexigens has 3481 nodes and 246489
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04070 and has 17 connected components, where the component
+	with most nodes has 3442 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 141.62,
+	and the node degree mode is 4. The top 5 most central nodes are 1167006.UWK_01974
+	(degree 1396), 1167006.UWK_01936 (degree 1383), 1167006.UWK_01214 (degree
+	1174), 1167006.UWK_03460 (degree 1141) and 1167006.UWK_03058 (degree 1047).
 	
 
 

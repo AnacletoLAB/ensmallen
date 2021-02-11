@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:54:05.423933
 
-The undirected graph Chem97Zt has 31022 nodes and 62043 unweighted edges, of which
-2 are self-loops. The graph is quite sparse as it has a density of 0.00013 and is
-connected, as it has a single component. The graph median node degree is 2, the mean
-node degree is 4.00, and the node degree mode is 2. The top 5 most central nodes
-are 2528 (degree 971), 2526 (degree 933), 2529 (degree 918), 2519 (degree 804) and
-2523 (degree 793).
+The undirected graph Chem97Zt has 31022 nodes and 62043 unweighted edges,
+of which 2 are self-loops. The graph is quite sparse as it has a density
+of 0.00013 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.00, and the node degree mode
+is 2. The top 5 most central nodes are 2528 (degree 971), 2526 (degree
+933), 2529 (degree 918), 2519 (degree 804) and 2523 (degree 793).
 
 
 References
@@ -102,12 +102,12 @@ def Chem97zt(
 	
 	Datetime: 2021-02-06 09:54:05.423933
 	
-	The undirected graph Chem97Zt has 31022 nodes and 62043 unweighted edges, of which
-	2 are self-loops. The graph is quite sparse as it has a density of 0.00013 and is
-	connected, as it has a single component. The graph median node degree is 2, the mean
-	node degree is 4.00, and the node degree mode is 2. The top 5 most central nodes
-	are 2528 (degree 971), 2526 (degree 933), 2529 (degree 918), 2519 (degree 804) and
-	2523 (degree 793).
+	The undirected graph Chem97Zt has 31022 nodes and 62043 unweighted edges,
+	of which 2 are self-loops. The graph is quite sparse as it has a density
+	of 0.00013 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.00, and the node degree mode
+	is 2. The top 5 most central nodes are 2528 (degree 971), 2526 (degree
+	933), 2529 (degree 918), 2519 (degree 804) and 2523 (degree 793).
 	
 
 

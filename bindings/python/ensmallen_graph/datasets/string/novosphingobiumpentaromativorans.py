@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:16.031866
 
-The undirected graph Novosphingobium pentaromativorans has 4941 nodes and 430908
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03531 and has 24 connected components, where the component with most nodes has
-4885 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 141, the mean node degree is 174.42, and the node degree mode is 2. The
-top 5 most central nodes are 1088721.NSU_3298 (degree 2339), 1088721.NSU_1548 (degree
-1840), 1088721.NSU_1244 (degree 1641), 1088721.NSU_2666 (degree 1519) and 1088721.NSU_2023
-(degree 1447).
+The undirected graph Novosphingobium pentaromativorans has 4941 nodes and
+430908 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03531 and has 24 connected components, where the
+component with most nodes has 4885 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+is 174.42, and the node degree mode is 2. The top 5 most central nodes
+are 1088721.NSU_3298 (degree 2339), 1088721.NSU_1548 (degree 1840), 1088721.NSU_1244
+(degree 1641), 1088721.NSU_2666 (degree 1519) and 1088721.NSU_2023 (degree
+1447).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumPentaromativorans(
 	
 	Datetime: 2021-02-02 22:21:16.031866
 	
-	The undirected graph Novosphingobium pentaromativorans has 4941 nodes and 430908
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03531 and has 24 connected components, where the component with most nodes has
-	4885 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 141, the mean node degree is 174.42, and the node degree mode is 2. The
-	top 5 most central nodes are 1088721.NSU_3298 (degree 2339), 1088721.NSU_1548 (degree
-	1840), 1088721.NSU_1244 (degree 1641), 1088721.NSU_2666 (degree 1519) and 1088721.NSU_2023
-	(degree 1447).
+	The undirected graph Novosphingobium pentaromativorans has 4941 nodes and
+	430908 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03531 and has 24 connected components, where the
+	component with most nodes has 4885 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+	is 174.42, and the node degree mode is 2. The top 5 most central nodes
+	are 1088721.NSU_3298 (degree 2339), 1088721.NSU_1548 (degree 1840), 1088721.NSU_1244
+	(degree 1641), 1088721.NSU_2666 (degree 1519) and 1088721.NSU_2023 (degree
+	1447).
 	
 
 

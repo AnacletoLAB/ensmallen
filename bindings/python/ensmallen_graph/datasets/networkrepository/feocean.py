@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:30.838957
 
-The undirected graph fe-ocean has 143437 nodes and 409593 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00004
-and is connected, as it has a single component. The graph median node degree is 6,
-the mean node degree is 5.71 and the node degree mode is 6. The top 5 most central
-nodes are 141699 (degree 6), 141688 (degree 6), 141687 (degree 6), 141686 (degree
-6) and 141685 (degree 6).
+The undirected graph fe-ocean has 143437 nodes and 409593 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00004 and is connected, as it has a single component. The
+graph median node degree is 6, the mean node degree is 5.71 and the node
+degree mode is 6. The top 5 most central nodes are 141699 (degree 6), 141688
+(degree 6), 141687 (degree 6), 141686 (degree 6) and 141685 (degree 6).
 
 
 References
@@ -109,12 +109,12 @@ def FeOcean(
 	
 	Datetime: 2021-02-03 23:12:30.838957
 	
-	The undirected graph fe-ocean has 143437 nodes and 409593 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00004
-	and is connected, as it has a single component. The graph median node degree is 6,
-	the mean node degree is 5.71 and the node degree mode is 6. The top 5 most central
-	nodes are 141699 (degree 6), 141688 (degree 6), 141687 (degree 6), 141686 (degree
-	6) and 141685 (degree 6).
+	The undirected graph fe-ocean has 143437 nodes and 409593 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00004 and is connected, as it has a single component. The
+	graph median node degree is 6, the mean node degree is 5.71 and the node
+	degree mode is 6. The top 5 most central nodes are 141699 (degree 6), 141688
+	(degree 6), 141687 (degree 6), 141686 (degree 6) and 141685 (degree 6).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:34.896180
 
-The undirected graph ca-CondMat has 21363 nodes and 91286 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00040 and
-is connected, as it has a single component. The graph median node degree is 5, the
-mean node degree is 8.55 and the node degree mode is 2. The top 5 most central nodes
-are 14563 (degree 279), 10460 (degree 252), 15598 (degree 201), 19433 (degree 190)
-and 4648 (degree 182).
+The undirected graph ca-CondMat has 21363 nodes and 91286 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00040 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 8.55 and the node degree mode
+is 2. The top 5 most central nodes are 14563 (degree 279), 10460 (degree
+252), 15598 (degree 201), 19433 (degree 190) and 4648 (degree 182).
 
 
 References
@@ -102,12 +102,12 @@ def CaCondmat(
 	
 	Datetime: 2021-02-03 22:37:34.896180
 	
-	The undirected graph ca-CondMat has 21363 nodes and 91286 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00040 and
-	is connected, as it has a single component. The graph median node degree is 5, the
-	mean node degree is 8.55 and the node degree mode is 2. The top 5 most central nodes
-	are 14563 (degree 279), 10460 (degree 252), 15598 (degree 201), 19433 (degree 190)
-	and 4648 (degree 182).
+	The undirected graph ca-CondMat has 21363 nodes and 91286 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00040 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 8.55 and the node degree mode
+	is 2. The top 5 most central nodes are 14563 (degree 279), 10460 (degree
+	252), 15598 (degree 201), 19433 (degree 190) and 4648 (degree 182).
 	
 
 

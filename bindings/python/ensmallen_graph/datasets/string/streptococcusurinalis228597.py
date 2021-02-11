@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:00.090339
 
-The undirected graph Streptococcus urinalis 228597 has 2191 nodes and 165086 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06881
-and has 8 connected components, where the component with most nodes has 2171 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 150.69, and the node degree mode is 5. The top 5
-most central nodes are 764291.STRUR_0155 (degree 897), 764291.STRUR_0018 (degree
-807), 764291.STRUR_1132 (degree 796), 764291.STRUR_0499 (degree 795) and 764291.STRUR_2246
-(degree 741).
+The undirected graph Streptococcus urinalis 228597 has 2191 nodes and 165086
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06881 and has 8 connected components, where the component
+with most nodes has 2171 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 150.69,
+and the node degree mode is 5. The top 5 most central nodes are 764291.STRUR_0155
+(degree 897), 764291.STRUR_0018 (degree 807), 764291.STRUR_1132 (degree
+796), 764291.STRUR_0499 (degree 795) and 764291.STRUR_2246 (degree 741).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusUrinalis228597(
 	
 	Datetime: 2021-02-02 21:43:00.090339
 	
-	The undirected graph Streptococcus urinalis 228597 has 2191 nodes and 165086 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06881
-	and has 8 connected components, where the component with most nodes has 2171 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 150.69, and the node degree mode is 5. The top 5
-	most central nodes are 764291.STRUR_0155 (degree 897), 764291.STRUR_0018 (degree
-	807), 764291.STRUR_1132 (degree 796), 764291.STRUR_0499 (degree 795) and 764291.STRUR_2246
-	(degree 741).
+	The undirected graph Streptococcus urinalis 228597 has 2191 nodes and 165086
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06881 and has 8 connected components, where the component
+	with most nodes has 2171 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 150.69,
+	and the node degree mode is 5. The top 5 most central nodes are 764291.STRUR_0155
+	(degree 897), 764291.STRUR_0018 (degree 807), 764291.STRUR_1132 (degree
+	796), 764291.STRUR_0499 (degree 795) and 764291.STRUR_2246 (degree 741).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:58.256709
 
-The undirected graph Clostridium sp. HGF2 has 4163 nodes and 1366530 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.15774
-and has 13 connected components, where the component with most nodes has 4131 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 589, the mean node degree is 656.51, and the node degree mode is 3. The top 5
-most central nodes are 908340.HMPREF9406_0834 (degree 2432), 908340.HMPREF9406_1215
-(degree 2396), 908340.HMPREF9406_0707 (degree 2384), 908340.HMPREF9406_1163 (degree
-2363) and 908340.HMPREF9406_3511 (degree 2295).
+The undirected graph Clostridium sp. HGF2 has 4163 nodes and 1366530 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15774 and has 13 connected components, where the component
+with most nodes has 4131 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 589, the mean node degree is 656.51,
+and the node degree mode is 3. The top 5 most central nodes are 908340.HMPREF9406_0834
+(degree 2432), 908340.HMPREF9406_1215 (degree 2396), 908340.HMPREF9406_0707
+(degree 2384), 908340.HMPREF9406_1163 (degree 2363) and 908340.HMPREF9406_3511
+(degree 2295).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Hgf2(
 	
 	Datetime: 2021-02-02 21:54:58.256709
 	
-	The undirected graph Clostridium sp. HGF2 has 4163 nodes and 1366530 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.15774
-	and has 13 connected components, where the component with most nodes has 4131 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 589, the mean node degree is 656.51, and the node degree mode is 3. The top 5
-	most central nodes are 908340.HMPREF9406_0834 (degree 2432), 908340.HMPREF9406_1215
-	(degree 2396), 908340.HMPREF9406_0707 (degree 2384), 908340.HMPREF9406_1163 (degree
-	2363) and 908340.HMPREF9406_3511 (degree 2295).
+	The undirected graph Clostridium sp. HGF2 has 4163 nodes and 1366530 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15774 and has 13 connected components, where the component
+	with most nodes has 4131 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 589, the mean node degree is 656.51,
+	and the node degree mode is 3. The top 5 most central nodes are 908340.HMPREF9406_0834
+	(degree 2432), 908340.HMPREF9406_1215 (degree 2396), 908340.HMPREF9406_0707
+	(degree 2384), 908340.HMPREF9406_1163 (degree 2363) and 908340.HMPREF9406_3511
+	(degree 2295).
 	
 
 

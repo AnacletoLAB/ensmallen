@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:42.911320
 
-The undirected graph Yarrowia lipolytica has 4918 nodes and 455909 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03771 and
-is connected, as it has a single component. The graph median node degree is 133,
-the mean node degree is 185.40, and the node degree mode is 27. The top 5 most central
-nodes are 4952.CAG81323 (degree 1498), 4952.CAG81816 (degree 1118), 4952.CAG83547
-(degree 1081), 4952.CAG80754 (degree 1035) and 4952.CAG82229 (degree 984).
+The undirected graph Yarrowia lipolytica has 4918 nodes and 455909 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03771 and is connected, as it has a single component. The graph median
+node degree is 133, the mean node degree is 185.40, and the node degree
+mode is 27. The top 5 most central nodes are 4952.CAG81323 (degree 1498),
+4952.CAG81816 (degree 1118), 4952.CAG83547 (degree 1081), 4952.CAG80754
+(degree 1035) and 4952.CAG82229 (degree 984).
 
 
 References
@@ -105,12 +106,13 @@ def YarrowiaLipolytica(
 	
 	Datetime: 2021-02-02 17:11:42.911320
 	
-	The undirected graph Yarrowia lipolytica has 4918 nodes and 455909 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03771 and
-	is connected, as it has a single component. The graph median node degree is 133,
-	the mean node degree is 185.40, and the node degree mode is 27. The top 5 most central
-	nodes are 4952.CAG81323 (degree 1498), 4952.CAG81816 (degree 1118), 4952.CAG83547
-	(degree 1081), 4952.CAG80754 (degree 1035) and 4952.CAG82229 (degree 984).
+	The undirected graph Yarrowia lipolytica has 4918 nodes and 455909 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03771 and is connected, as it has a single component. The graph median
+	node degree is 133, the mean node degree is 185.40, and the node degree
+	mode is 27. The top 5 most central nodes are 4952.CAG81323 (degree 1498),
+	4952.CAG81816 (degree 1118), 4952.CAG83547 (degree 1081), 4952.CAG80754
+	(degree 1035) and 4952.CAG82229 (degree 984).
 	
 
 

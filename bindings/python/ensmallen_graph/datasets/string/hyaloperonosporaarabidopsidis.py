@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:25.281562
 
-The undirected graph Hyaloperonospora arabidopsidis has 6637 nodes and 1276315 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05796
-and has 103 connected components, where the component with most nodes has 6396 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 290, the mean node degree is 384.61, and the node degree mode is 1. The top 5
-most central nodes are 272952.HpaP812660 (degree 2932), 272952.HpaP806535 (degree
-2579), 272952.HpaP800880 (degree 2577), 272952.HpaP808841 (degree 2475) and 272952.HpaP800619
+The undirected graph Hyaloperonospora arabidopsidis has 6637 nodes and
+1276315 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05796 and has 103 connected components, where
+the component with most nodes has 6396 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 290, the mean
+node degree is 384.61, and the node degree mode is 1. The top 5 most central
+nodes are 272952.HpaP812660 (degree 2932), 272952.HpaP806535 (degree 2579),
+272952.HpaP800880 (degree 2577), 272952.HpaP808841 (degree 2475) and 272952.HpaP800619
 (degree 2444).
 
 
@@ -107,13 +108,14 @@ def HyaloperonosporaArabidopsidis(
 	
 	Datetime: 2021-02-02 20:17:25.281562
 	
-	The undirected graph Hyaloperonospora arabidopsidis has 6637 nodes and 1276315 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05796
-	and has 103 connected components, where the component with most nodes has 6396 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 290, the mean node degree is 384.61, and the node degree mode is 1. The top 5
-	most central nodes are 272952.HpaP812660 (degree 2932), 272952.HpaP806535 (degree
-	2579), 272952.HpaP800880 (degree 2577), 272952.HpaP808841 (degree 2475) and 272952.HpaP800619
+	The undirected graph Hyaloperonospora arabidopsidis has 6637 nodes and
+	1276315 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05796 and has 103 connected components, where
+	the component with most nodes has 6396 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 290, the mean
+	node degree is 384.61, and the node degree mode is 1. The top 5 most central
+	nodes are 272952.HpaP812660 (degree 2932), 272952.HpaP806535 (degree 2579),
+	272952.HpaP800880 (degree 2577), 272952.HpaP808841 (degree 2475) and 272952.HpaP800619
 	(degree 2444).
 	
 

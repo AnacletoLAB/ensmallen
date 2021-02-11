@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:23.020742
 
-The undirected graph Pseudoclavibacter soli has 1953 nodes and 115707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06070 and
-has 10 connected components, where the component with most nodes has 1931 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 118.49, and the node degree mode is 4. The top 5 most central
-nodes are 1123013.AUIC01000003_gene305 (degree 829), 1123013.AUIC01000002_gene800
-(degree 675), 1123013.AUIC01000002_gene1226 (degree 650), 1123013.AUIC01000004_gene1758
-(degree 648) and 1123013.AUIC01000003_gene566 (degree 639).
+The undirected graph Pseudoclavibacter soli has 1953 nodes and 115707 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06070 and has 10 connected components, where the component with most
+nodes has 1931 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 118.49, and
+the node degree mode is 4. The top 5 most central nodes are 1123013.AUIC01000003_gene305
+(degree 829), 1123013.AUIC01000002_gene800 (degree 675), 1123013.AUIC01000002_gene1226
+(degree 650), 1123013.AUIC01000004_gene1758 (degree 648) and 1123013.AUIC01000003_gene566
+(degree 639).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoclavibacterSoli(
 	
 	Datetime: 2021-02-02 22:46:23.020742
 	
-	The undirected graph Pseudoclavibacter soli has 1953 nodes and 115707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06070 and
-	has 10 connected components, where the component with most nodes has 1931 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 118.49, and the node degree mode is 4. The top 5 most central
-	nodes are 1123013.AUIC01000003_gene305 (degree 829), 1123013.AUIC01000002_gene800
-	(degree 675), 1123013.AUIC01000002_gene1226 (degree 650), 1123013.AUIC01000004_gene1758
-	(degree 648) and 1123013.AUIC01000003_gene566 (degree 639).
+	The undirected graph Pseudoclavibacter soli has 1953 nodes and 115707 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06070 and has 10 connected components, where the component with most
+	nodes has 1931 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 118.49, and
+	the node degree mode is 4. The top 5 most central nodes are 1123013.AUIC01000003_gene305
+	(degree 829), 1123013.AUIC01000002_gene800 (degree 675), 1123013.AUIC01000002_gene1226
+	(degree 650), 1123013.AUIC01000004_gene1758 (degree 648) and 1123013.AUIC01000003_gene566
+	(degree 639).
 	
 
 

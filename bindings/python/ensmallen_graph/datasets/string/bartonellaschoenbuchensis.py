@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:45.775639
 
-The undirected graph Bartonella schoenbuchensis has 1395 nodes and 88803 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09133
-and has 6 connected components, where the component with most nodes has 1374 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 127.32, and the node degree mode is 6. The top 5
-most central nodes are 1094496.m07a_00060 (degree 650), 1094496.m07a_02680 (degree
-562), 1094496.m07a_05200 (degree 533), 1094496.m07a_02720 (degree 524) and 1094496.m07a_00700
-(degree 508).
+The undirected graph Bartonella schoenbuchensis has 1395 nodes and 88803
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09133 and has 6 connected components, where the component
+with most nodes has 1374 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 127.32,
+and the node degree mode is 6. The top 5 most central nodes are 1094496.m07a_00060
+(degree 650), 1094496.m07a_02680 (degree 562), 1094496.m07a_05200 (degree
+533), 1094496.m07a_02720 (degree 524) and 1094496.m07a_00700 (degree 508).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaSchoenbuchensis(
 	
 	Datetime: 2021-02-02 22:22:45.775639
 	
-	The undirected graph Bartonella schoenbuchensis has 1395 nodes and 88803 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09133
-	and has 6 connected components, where the component with most nodes has 1374 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 127.32, and the node degree mode is 6. The top 5
-	most central nodes are 1094496.m07a_00060 (degree 650), 1094496.m07a_02680 (degree
-	562), 1094496.m07a_05200 (degree 533), 1094496.m07a_02720 (degree 524) and 1094496.m07a_00700
-	(degree 508).
+	The undirected graph Bartonella schoenbuchensis has 1395 nodes and 88803
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09133 and has 6 connected components, where the component
+	with most nodes has 1374 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 127.32,
+	and the node degree mode is 6. The top 5 most central nodes are 1094496.m07a_00060
+	(degree 650), 1094496.m07a_02680 (degree 562), 1094496.m07a_05200 (degree
+	533), 1094496.m07a_02720 (degree 524) and 1094496.m07a_00700 (degree 508).
 	
 
 

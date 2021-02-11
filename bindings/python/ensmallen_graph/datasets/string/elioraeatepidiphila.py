@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:35.118802
 
-The undirected graph Elioraea tepidiphila has 4043 nodes and 313305 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03834 and
-has 4 connected components, where the component with most nodes has 4037 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 154.99, and the node degree mode is 7. The top 5 most central
-nodes are 1121861.KB899937_gene4069 (degree 1286), 1121861.KB899915_gene1839 (degree
-1134), 1121861.KB899925_gene2506 (degree 1080), 1121861.KB899941_gene3863 (degree
-1064) and 1121861.KB899931_gene159 (degree 1055).
+The undirected graph Elioraea tepidiphila has 4043 nodes and 313305 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03834 and has 4 connected components, where the component with most
+nodes has 4037 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 154.99, and
+the node degree mode is 7. The top 5 most central nodes are 1121861.KB899937_gene4069
+(degree 1286), 1121861.KB899915_gene1839 (degree 1134), 1121861.KB899925_gene2506
+(degree 1080), 1121861.KB899941_gene3863 (degree 1064) and 1121861.KB899931_gene159
+(degree 1055).
 
 
 References
@@ -107,14 +108,15 @@ def ElioraeaTepidiphila(
 	
 	Datetime: 2021-02-02 22:37:35.118802
 	
-	The undirected graph Elioraea tepidiphila has 4043 nodes and 313305 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03834 and
-	has 4 connected components, where the component with most nodes has 4037 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 154.99, and the node degree mode is 7. The top 5 most central
-	nodes are 1121861.KB899937_gene4069 (degree 1286), 1121861.KB899915_gene1839 (degree
-	1134), 1121861.KB899925_gene2506 (degree 1080), 1121861.KB899941_gene3863 (degree
-	1064) and 1121861.KB899931_gene159 (degree 1055).
+	The undirected graph Elioraea tepidiphila has 4043 nodes and 313305 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03834 and has 4 connected components, where the component with most
+	nodes has 4037 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 154.99, and
+	the node degree mode is 7. The top 5 most central nodes are 1121861.KB899937_gene4069
+	(degree 1286), 1121861.KB899915_gene1839 (degree 1134), 1121861.KB899925_gene2506
+	(degree 1080), 1121861.KB899941_gene3863 (degree 1064) and 1121861.KB899931_gene159
+	(degree 1055).
 	
 
 

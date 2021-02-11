@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:18.797445
 
-The undirected graph Bacteroides oleiciplenus has 5485 nodes and 589476 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03919
-and has 14 connected components, where the component with most nodes has 5434 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 214.94, and the node degree mode is 7. The top 5
-most central nodes are 742727.HMPREF9447_02334 (degree 1596), 742727.HMPREF9447_05069
-(degree 1481), 742727.HMPREF9447_01995 (degree 1462), 742727.HMPREF9447_02796 (degree
-1430) and 742727.HMPREF9447_05362 (degree 1319).
+The undirected graph Bacteroides oleiciplenus has 5485 nodes and 589476
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03919 and has 14 connected components, where the component
+with most nodes has 5434 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 214.94,
+and the node degree mode is 7. The top 5 most central nodes are 742727.HMPREF9447_02334
+(degree 1596), 742727.HMPREF9447_05069 (degree 1481), 742727.HMPREF9447_01995
+(degree 1462), 742727.HMPREF9447_02796 (degree 1430) and 742727.HMPREF9447_05362
+(degree 1319).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesOleiciplenus(
 	
 	Datetime: 2021-02-02 21:37:18.797445
 	
-	The undirected graph Bacteroides oleiciplenus has 5485 nodes and 589476 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03919
-	and has 14 connected components, where the component with most nodes has 5434 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 214.94, and the node degree mode is 7. The top 5
-	most central nodes are 742727.HMPREF9447_02334 (degree 1596), 742727.HMPREF9447_05069
-	(degree 1481), 742727.HMPREF9447_01995 (degree 1462), 742727.HMPREF9447_02796 (degree
-	1430) and 742727.HMPREF9447_05362 (degree 1319).
+	The undirected graph Bacteroides oleiciplenus has 5485 nodes and 589476
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03919 and has 14 connected components, where the component
+	with most nodes has 5434 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 214.94,
+	and the node degree mode is 7. The top 5 most central nodes are 742727.HMPREF9447_02334
+	(degree 1596), 742727.HMPREF9447_05069 (degree 1481), 742727.HMPREF9447_01995
+	(degree 1462), 742727.HMPREF9447_02796 (degree 1430) and 742727.HMPREF9447_05362
+	(degree 1319).
 	
 
 

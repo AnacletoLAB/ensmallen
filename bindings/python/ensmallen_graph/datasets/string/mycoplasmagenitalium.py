@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:28.108994
 
-The undirected graph Mycoplasma genitalium has 474 nodes and 30419 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.27135
-and is connected, as it has a single component. The graph median node degree is 132,
-the mean node degree is 128.35, and the node degree mode is 212. The top 5 most central
-nodes are 243273.MG_305 (degree 318), 243273.MG_195 (degree 301), 243273.MG_259 (degree
-288), 243273.MG_392 (degree 285) and 243273.MG_249 (degree 281).
+The undirected graph Mycoplasma genitalium has 474 nodes and 30419 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.27135 and is connected, as it has a single component. The
+graph median node degree is 132, the mean node degree is 128.35, and the
+node degree mode is 212. The top 5 most central nodes are 243273.MG_305
+(degree 318), 243273.MG_195 (degree 301), 243273.MG_259 (degree 288), 243273.MG_392
+(degree 285) and 243273.MG_249 (degree 281).
 
 
 References
@@ -105,12 +106,13 @@ def MycoplasmaGenitalium(
 	
 	Datetime: 2021-02-02 20:09:28.108994
 	
-	The undirected graph Mycoplasma genitalium has 474 nodes and 30419 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.27135
-	and is connected, as it has a single component. The graph median node degree is 132,
-	the mean node degree is 128.35, and the node degree mode is 212. The top 5 most central
-	nodes are 243273.MG_305 (degree 318), 243273.MG_195 (degree 301), 243273.MG_259 (degree
-	288), 243273.MG_392 (degree 285) and 243273.MG_249 (degree 281).
+	The undirected graph Mycoplasma genitalium has 474 nodes and 30419 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.27135 and is connected, as it has a single component. The
+	graph median node degree is 132, the mean node degree is 128.35, and the
+	node degree mode is 212. The top 5 most central nodes are 243273.MG_305
+	(degree 318), 243273.MG_195 (degree 301), 243273.MG_259 (degree 288), 243273.MG_392
+	(degree 285) and 243273.MG_249 (degree 281).
 	
 
 

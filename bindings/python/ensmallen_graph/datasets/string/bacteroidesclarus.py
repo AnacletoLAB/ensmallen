@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:53.445141
 
-The undirected graph Bacteroides clarus has 3246 nodes and 237667 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04513 and
-has 13 connected components, where the component with most nodes has 3218 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 146.44, and the node degree mode is 4. The top 5 most central
-nodes are 762984.HMPREF9445_01820 (degree 1115), 762984.HMPREF9445_02738 (degree
-932), 762984.HMPREF9445_03188 (degree 890), 762984.HMPREF9445_01663 (degree 877)
-and 762984.HMPREF9445_02368 (degree 875).
+The undirected graph Bacteroides clarus has 3246 nodes and 237667 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04513 and has 13 connected components, where the component with most
+nodes has 3218 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 146.44, and
+the node degree mode is 4. The top 5 most central nodes are 762984.HMPREF9445_01820
+(degree 1115), 762984.HMPREF9445_02738 (degree 932), 762984.HMPREF9445_03188
+(degree 890), 762984.HMPREF9445_01663 (degree 877) and 762984.HMPREF9445_02368
+(degree 875).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesClarus(
 	
 	Datetime: 2021-02-02 21:42:53.445141
 	
-	The undirected graph Bacteroides clarus has 3246 nodes and 237667 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04513 and
-	has 13 connected components, where the component with most nodes has 3218 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 146.44, and the node degree mode is 4. The top 5 most central
-	nodes are 762984.HMPREF9445_01820 (degree 1115), 762984.HMPREF9445_02738 (degree
-	932), 762984.HMPREF9445_03188 (degree 890), 762984.HMPREF9445_01663 (degree 877)
-	and 762984.HMPREF9445_02368 (degree 875).
+	The undirected graph Bacteroides clarus has 3246 nodes and 237667 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04513 and has 13 connected components, where the component with most
+	nodes has 3218 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 146.44, and
+	the node degree mode is 4. The top 5 most central nodes are 762984.HMPREF9445_01820
+	(degree 1115), 762984.HMPREF9445_02738 (degree 932), 762984.HMPREF9445_03188
+	(degree 890), 762984.HMPREF9445_01663 (degree 877) and 762984.HMPREF9445_02368
+	(degree 875).
 	
 
 

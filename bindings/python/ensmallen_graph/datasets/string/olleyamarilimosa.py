@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:09.363135
 
-The undirected graph Olleya marilimosa has 3005 nodes and 313682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06950 and
-has 9 connected components, where the component with most nodes has 2985 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 208.77, and the node degree mode is 5. The top 5 most central
-nodes are 1353276.JADR01000007_gene1456 (degree 1075), 1353276.JADR01000009_gene1863
-(degree 1060), 1353276.JADR01000009_gene1894 (degree 959), 1353276.JADR01000005_gene2584
-(degree 871) and 1353276.JADR01000005_gene2483 (degree 861).
+The undirected graph Olleya marilimosa has 3005 nodes and 313682 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06950 and has 9 connected components, where the component with most
+nodes has 2985 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 196, the mean node degree is 208.77, and
+the node degree mode is 5. The top 5 most central nodes are 1353276.JADR01000007_gene1456
+(degree 1075), 1353276.JADR01000009_gene1863 (degree 1060), 1353276.JADR01000009_gene1894
+(degree 959), 1353276.JADR01000005_gene2584 (degree 871) and 1353276.JADR01000005_gene2483
+(degree 861).
 
 
 References
@@ -107,14 +108,15 @@ def OlleyaMarilimosa(
 	
 	Datetime: 2021-02-03 22:07:09.363135
 	
-	The undirected graph Olleya marilimosa has 3005 nodes and 313682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06950 and
-	has 9 connected components, where the component with most nodes has 2985 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 208.77, and the node degree mode is 5. The top 5 most central
-	nodes are 1353276.JADR01000007_gene1456 (degree 1075), 1353276.JADR01000009_gene1863
-	(degree 1060), 1353276.JADR01000009_gene1894 (degree 959), 1353276.JADR01000005_gene2584
-	(degree 871) and 1353276.JADR01000005_gene2483 (degree 861).
+	The undirected graph Olleya marilimosa has 3005 nodes and 313682 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06950 and has 9 connected components, where the component with most
+	nodes has 2985 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 196, the mean node degree is 208.77, and
+	the node degree mode is 5. The top 5 most central nodes are 1353276.JADR01000007_gene1456
+	(degree 1075), 1353276.JADR01000009_gene1863 (degree 1060), 1353276.JADR01000009_gene1894
+	(degree 959), 1353276.JADR01000005_gene2584 (degree 871) and 1353276.JADR01000005_gene2483
+	(degree 861).
 	
 
 

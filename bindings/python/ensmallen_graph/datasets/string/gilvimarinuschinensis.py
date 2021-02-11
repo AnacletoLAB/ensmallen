@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:05.349566
 
-The undirected graph Gilvimarinus chinensis has 3433 nodes and 404633 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06869 and
-has 9 connected components, where the component with most nodes has 3409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 235.73, and the node degree mode is 2. The top 5 most central
-nodes are 1121921.KB898706_gene3409 (degree 1181), 1121921.KB898706_gene2641 (degree
-1093), 1121921.KB898711_gene2070 (degree 1088), 1121921.KB898706_gene3190 (degree
-1057) and 1121921.KB898713_gene1762 (degree 1041).
+The undirected graph Gilvimarinus chinensis has 3433 nodes and 404633 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06869 and has 9 connected components, where the component with most
+nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 235.73, and
+the node degree mode is 2. The top 5 most central nodes are 1121921.KB898706_gene3409
+(degree 1181), 1121921.KB898706_gene2641 (degree 1093), 1121921.KB898711_gene2070
+(degree 1088), 1121921.KB898706_gene3190 (degree 1057) and 1121921.KB898713_gene1762
+(degree 1041).
 
 
 References
@@ -107,14 +108,15 @@ def GilvimarinusChinensis(
 	
 	Datetime: 2021-02-05 17:18:05.349566
 	
-	The undirected graph Gilvimarinus chinensis has 3433 nodes and 404633 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06869 and
-	has 9 connected components, where the component with most nodes has 3409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 235.73, and the node degree mode is 2. The top 5 most central
-	nodes are 1121921.KB898706_gene3409 (degree 1181), 1121921.KB898706_gene2641 (degree
-	1093), 1121921.KB898711_gene2070 (degree 1088), 1121921.KB898706_gene3190 (degree
-	1057) and 1121921.KB898713_gene1762 (degree 1041).
+	The undirected graph Gilvimarinus chinensis has 3433 nodes and 404633 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06869 and has 9 connected components, where the component with most
+	nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 235.73, and
+	the node degree mode is 2. The top 5 most central nodes are 1121921.KB898706_gene3409
+	(degree 1181), 1121921.KB898706_gene2641 (degree 1093), 1121921.KB898711_gene2070
+	(degree 1088), 1121921.KB898706_gene3190 (degree 1057) and 1121921.KB898713_gene1762
+	(degree 1041).
 	
 
 

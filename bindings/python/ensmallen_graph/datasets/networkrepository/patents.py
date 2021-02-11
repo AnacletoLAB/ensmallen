@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 21:15:50.898056
 
-The undirected graph patents has 858394 nodes and 2317550 unweighted edges, of which
-1 are self-loops. The graph is extremely sparse as it has a density of 0.00001 and
-has 11000 connected components, where the component with most nodes has 830127 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 4, the mean node degree is 5.40, and the node degree mode is 1. The top 5 most
-central nodes are 2955260 (degree 224), 2892442 (degree 215), 3013626 (degree 202),
-2900538 (degree 197) and 3354520 (degree 175).
+The undirected graph patents has 858394 nodes and 2317550 unweighted edges,
+of which 1 are self-loops. The graph is extremely sparse as it has a density
+of 0.00001 and has 11000 connected components, where the component with
+most nodes has 830127 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 4, the mean node degree is 5.40,
+and the node degree mode is 1. The top 5 most central nodes are 2955260
+(degree 224), 2892442 (degree 215), 3013626 (degree 202), 2900538 (degree
+197) and 3354520 (degree 175).
 
 
 References
@@ -103,13 +104,14 @@ def Patents(
 	
 	Datetime: 2021-02-06 21:15:50.898056
 	
-	The undirected graph patents has 858394 nodes and 2317550 unweighted edges, of which
-	1 are self-loops. The graph is extremely sparse as it has a density of 0.00001 and
-	has 11000 connected components, where the component with most nodes has 830127 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 4, the mean node degree is 5.40, and the node degree mode is 1. The top 5 most
-	central nodes are 2955260 (degree 224), 2892442 (degree 215), 3013626 (degree 202),
-	2900538 (degree 197) and 3354520 (degree 175).
+	The undirected graph patents has 858394 nodes and 2317550 unweighted edges,
+	of which 1 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00001 and has 11000 connected components, where the component with
+	most nodes has 830127 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 4, the mean node degree is 5.40,
+	and the node degree mode is 1. The top 5 most central nodes are 2955260
+	(degree 224), 2892442 (degree 215), 3013626 (degree 202), 2900538 (degree
+	197) and 3354520 (degree 175).
 	
 
 

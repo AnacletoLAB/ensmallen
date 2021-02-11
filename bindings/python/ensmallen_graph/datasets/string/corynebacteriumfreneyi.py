@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:18:48.706235
 
-The undirected graph Corynebacterium freneyi has 1970 nodes and 136652 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07046 and
-has 14 connected components, where the component with most nodes has 1938 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 138.73, and the node degree mode is 1. The top 5 most central
-nodes are 1287475.HMPREF1650_01825 (degree 874), 1287475.HMPREF1650_08380 (degree
-819), 1287475.HMPREF1650_09955 (degree 691), 1287475.HMPREF1650_03920 (degree 678)
-and 1287475.HMPREF1650_00415 (degree 665).
+The undirected graph Corynebacterium freneyi has 1970 nodes and 136652
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07046 and has 14 connected components, where the component
+with most nodes has 1938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 138.73,
+and the node degree mode is 1. The top 5 most central nodes are 1287475.HMPREF1650_01825
+(degree 874), 1287475.HMPREF1650_08380 (degree 819), 1287475.HMPREF1650_09955
+(degree 691), 1287475.HMPREF1650_03920 (degree 678) and 1287475.HMPREF1650_00415
+(degree 665).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumFreneyi(
 	
 	Datetime: 2021-02-03 21:18:48.706235
 	
-	The undirected graph Corynebacterium freneyi has 1970 nodes and 136652 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07046 and
-	has 14 connected components, where the component with most nodes has 1938 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 138.73, and the node degree mode is 1. The top 5 most central
-	nodes are 1287475.HMPREF1650_01825 (degree 874), 1287475.HMPREF1650_08380 (degree
-	819), 1287475.HMPREF1650_09955 (degree 691), 1287475.HMPREF1650_03920 (degree 678)
-	and 1287475.HMPREF1650_00415 (degree 665).
+	The undirected graph Corynebacterium freneyi has 1970 nodes and 136652
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07046 and has 14 connected components, where the component
+	with most nodes has 1938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 138.73,
+	and the node degree mode is 1. The top 5 most central nodes are 1287475.HMPREF1650_01825
+	(degree 874), 1287475.HMPREF1650_08380 (degree 819), 1287475.HMPREF1650_09955
+	(degree 691), 1287475.HMPREF1650_03920 (degree 678) and 1287475.HMPREF1650_00415
+	(degree 665).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:57:49.845530
 
-The undirected graph TF19 has 317955 nodes and 4370514 weighted edges, of which 62
-are self-loops. The graph is extremely sparse as it has a density of 0.00009 and
-is connected, as it has a single component. The graph median node degree is 27, the
-mean node degree is 27.49, and the node degree mode is 28. The top 5 most central
-nodes are 237712 (degree 107), 237574 (degree 107), 215995 (degree 107), 237898 (degree
-106) and 237492 (degree 106).
+The undirected graph TF19 has 317955 nodes and 4370514 weighted edges,
+of which 62 are self-loops. The graph is extremely sparse as it has a density
+of 0.00009 and is connected, as it has a single component. The graph median
+node degree is 27, the mean node degree is 27.49, and the node degree mode
+is 28. The top 5 most central nodes are 237712 (degree 107), 237574 (degree
+107), 215995 (degree 107), 237898 (degree 106) and 237492 (degree 106).
 
 
 References
@@ -102,12 +102,12 @@ def Tf19(
 	
 	Datetime: 2021-02-06 11:57:49.845530
 	
-	The undirected graph TF19 has 317955 nodes and 4370514 weighted edges, of which 62
-	are self-loops. The graph is extremely sparse as it has a density of 0.00009 and
-	is connected, as it has a single component. The graph median node degree is 27, the
-	mean node degree is 27.49, and the node degree mode is 28. The top 5 most central
-	nodes are 237712 (degree 107), 237574 (degree 107), 215995 (degree 107), 237898 (degree
-	106) and 237492 (degree 106).
+	The undirected graph TF19 has 317955 nodes and 4370514 weighted edges,
+	of which 62 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00009 and is connected, as it has a single component. The graph median
+	node degree is 27, the mean node degree is 27.49, and the node degree mode
+	is 28. The top 5 most central nodes are 237712 (degree 107), 237574 (degree
+	107), 215995 (degree 107), 237898 (degree 106) and 237492 (degree 106).
 	
 
 

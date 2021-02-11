@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:22.834496
 
-The undirected graph Hippea jasoniae has 1716 nodes and 125063 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08499 and
-has 2 connected components, where the component with most nodes has 1712 nodes and
-the component with the least nodes has 4 nodes. The graph median node degree is 122,
-the mean node degree is 145.76, and the node degree mode is 51. The top 5 most central
-nodes are 944479.JQLX01000014_gene1652 (degree 836), 944479.JQLX01000018_gene168
-(degree 755), 944479.JQLX01000018_gene140 (degree 647), 944479.JQLX01000014_gene1651
-(degree 594) and 944479.JQLX01000018_gene163 (degree 589).
+The undirected graph Hippea jasoniae has 1716 nodes and 125063 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08499 and has 2 connected components, where the component with most
+nodes has 1712 nodes and the component with the least nodes has 4 nodes.
+The graph median node degree is 122, the mean node degree is 145.76, and
+the node degree mode is 51. The top 5 most central nodes are 944479.JQLX01000014_gene1652
+(degree 836), 944479.JQLX01000018_gene168 (degree 755), 944479.JQLX01000018_gene140
+(degree 647), 944479.JQLX01000014_gene1651 (degree 594) and 944479.JQLX01000018_gene163
+(degree 589).
 
 
 References
@@ -107,14 +108,15 @@ def HippeaJasoniae(
 	
 	Datetime: 2021-02-02 22:01:22.834496
 	
-	The undirected graph Hippea jasoniae has 1716 nodes and 125063 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08499 and
-	has 2 connected components, where the component with most nodes has 1712 nodes and
-	the component with the least nodes has 4 nodes. The graph median node degree is 122,
-	the mean node degree is 145.76, and the node degree mode is 51. The top 5 most central
-	nodes are 944479.JQLX01000014_gene1652 (degree 836), 944479.JQLX01000018_gene168
-	(degree 755), 944479.JQLX01000018_gene140 (degree 647), 944479.JQLX01000014_gene1651
-	(degree 594) and 944479.JQLX01000018_gene163 (degree 589).
+	The undirected graph Hippea jasoniae has 1716 nodes and 125063 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08499 and has 2 connected components, where the component with most
+	nodes has 1712 nodes and the component with the least nodes has 4 nodes.
+	The graph median node degree is 122, the mean node degree is 145.76, and
+	the node degree mode is 51. The top 5 most central nodes are 944479.JQLX01000014_gene1652
+	(degree 836), 944479.JQLX01000018_gene168 (degree 755), 944479.JQLX01000018_gene140
+	(degree 647), 944479.JQLX01000014_gene1651 (degree 594) and 944479.JQLX01000018_gene163
+	(degree 589).
 	
 
 

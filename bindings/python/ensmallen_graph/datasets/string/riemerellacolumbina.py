@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:16.323610
 
-The undirected graph Riemerella columbina has 2421 nodes and 134485 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04591 and
-has 18 connected components, where the component with most nodes has 2372 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 111.10, and the node degree mode is 2. The top 5 most central
-nodes are 1123058.KB894281_gene1769 (degree 797), 1123058.KB894281_gene1795 (degree
-676), 1123058.KB894231_gene1224 (degree 617), 1123058.KB894251_gene2345 (degree 589)
-and 1123058.KB894273_gene2269 (degree 547).
+The undirected graph Riemerella columbina has 2421 nodes and 134485 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04591 and has 18 connected components, where the component with most
+nodes has 2372 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 111.10, and
+the node degree mode is 2. The top 5 most central nodes are 1123058.KB894281_gene1769
+(degree 797), 1123058.KB894281_gene1795 (degree 676), 1123058.KB894231_gene1224
+(degree 617), 1123058.KB894251_gene2345 (degree 589) and 1123058.KB894273_gene2269
+(degree 547).
 
 
 References
@@ -107,14 +108,15 @@ def RiemerellaColumbina(
 	
 	Datetime: 2021-02-02 22:47:16.323610
 	
-	The undirected graph Riemerella columbina has 2421 nodes and 134485 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04591 and
-	has 18 connected components, where the component with most nodes has 2372 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 111.10, and the node degree mode is 2. The top 5 most central
-	nodes are 1123058.KB894281_gene1769 (degree 797), 1123058.KB894281_gene1795 (degree
-	676), 1123058.KB894231_gene1224 (degree 617), 1123058.KB894251_gene2345 (degree 589)
-	and 1123058.KB894273_gene2269 (degree 547).
+	The undirected graph Riemerella columbina has 2421 nodes and 134485 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04591 and has 18 connected components, where the component with most
+	nodes has 2372 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 111.10, and
+	the node degree mode is 2. The top 5 most central nodes are 1123058.KB894281_gene1769
+	(degree 797), 1123058.KB894281_gene1795 (degree 676), 1123058.KB894231_gene1224
+	(degree 617), 1123058.KB894251_gene2345 (degree 589) and 1123058.KB894273_gene2269
+	(degree 547).
 	
 
 

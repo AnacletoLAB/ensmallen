@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:27:22.578668
 
-The undirected graph Salmonella enterica Typhimurium has 4418 nodes and 501482 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05140
-and has 6 connected components, where the component with most nodes has 4408 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 227.02, and the node degree mode is 1. The top 5
-most central nodes are 90371.CY43_08425 (degree 1468), 90371.CY43_20915 (degree 1405),
-90371.CY43_17345 (degree 1155), 90371.CY43_19855 (degree 1098) and 90371.CY43_13400
-(degree 1084).
+The undirected graph Salmonella enterica Typhimurium has 4418 nodes and
+501482 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05140 and has 6 connected components, where the
+component with most nodes has 4408 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+is 227.02, and the node degree mode is 1. The top 5 most central nodes
+are 90371.CY43_08425 (degree 1468), 90371.CY43_20915 (degree 1405), 90371.CY43_17345
+(degree 1155), 90371.CY43_19855 (degree 1098) and 90371.CY43_13400 (degree
+1084).
 
 
 References
@@ -107,14 +108,15 @@ def SalmonellaEntericaTyphimurium(
 	
 	Datetime: 2021-02-02 19:27:22.578668
 	
-	The undirected graph Salmonella enterica Typhimurium has 4418 nodes and 501482 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05140
-	and has 6 connected components, where the component with most nodes has 4408 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 227.02, and the node degree mode is 1. The top 5
-	most central nodes are 90371.CY43_08425 (degree 1468), 90371.CY43_20915 (degree 1405),
-	90371.CY43_17345 (degree 1155), 90371.CY43_19855 (degree 1098) and 90371.CY43_13400
-	(degree 1084).
+	The undirected graph Salmonella enterica Typhimurium has 4418 nodes and
+	501482 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05140 and has 6 connected components, where the
+	component with most nodes has 4408 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+	is 227.02, and the node degree mode is 1. The top 5 most central nodes
+	are 90371.CY43_08425 (degree 1468), 90371.CY43_20915 (degree 1405), 90371.CY43_17345
+	(degree 1155), 90371.CY43_19855 (degree 1098) and 90371.CY43_13400 (degree
+	1084).
 	
 
 

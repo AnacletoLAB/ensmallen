@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:56:24.284591
 
-The undirected graph IG5-18 has 47894 nodes and 1789727 weighted edges, of which
-35 are self-loops. The graph is sparse as it has a density of 0.00156 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 74.74, and the node degree mode is 10. The top 5 most central nodes are 41528
-(degree 1889), 41525 (degree 1725), 41529 (degree 1628), 41538 (degree 1605) and
-41532 (degree 1572).
+The undirected graph IG5-18 has 47894 nodes and 1789727 weighted edges,
+of which 35 are self-loops. The graph is sparse as it has a density of
+0.00156 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 74.74, and the node degree mode
+is 10. The top 5 most central nodes are 41528 (degree 1889), 41525 (degree
+1725), 41529 (degree 1628), 41538 (degree 1605) and 41532 (degree 1572).
 
 
 References
@@ -102,12 +102,12 @@ def Ig518(
 	
 	Datetime: 2021-02-06 11:56:24.284591
 	
-	The undirected graph IG5-18 has 47894 nodes and 1789727 weighted edges, of which
-	35 are self-loops. The graph is sparse as it has a density of 0.00156 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 74.74, and the node degree mode is 10. The top 5 most central nodes are 41528
-	(degree 1889), 41525 (degree 1725), 41529 (degree 1628), 41538 (degree 1605) and
-	41532 (degree 1572).
+	The undirected graph IG5-18 has 47894 nodes and 1789727 weighted edges,
+	of which 35 are self-loops. The graph is sparse as it has a density of
+	0.00156 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 74.74, and the node degree mode
+	is 10. The top 5 most central nodes are 41528 (degree 1889), 41525 (degree
+	1725), 41529 (degree 1628), 41538 (degree 1605) and 41532 (degree 1572).
 	
 
 

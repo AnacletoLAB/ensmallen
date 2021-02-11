@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:03.469941
 
-The undirected graph Takifugu rubripes has 18032 nodes and 4575405 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02814 and
-has 2 connected components, where the component with most nodes has 18030 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 363,
-the mean node degree is 507.48, and the node degree mode is 224. The top 5 most central
-nodes are 31033.ENSTRUP00000004326 (degree 4501), 31033.ENSTRUP00000008698 (degree
-4355), 31033.ENSTRUP00000030675 (degree 3893), 31033.ENSTRUP00000022321 (degree 3863)
-and 31033.ENSTRUP00000013808 (degree 3770).
+The undirected graph Takifugu rubripes has 18032 nodes and 4575405 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02814 and has 2 connected components, where the component with most
+nodes has 18030 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 363, the mean node degree is 507.48, and
+the node degree mode is 224. The top 5 most central nodes are 31033.ENSTRUP00000004326
+(degree 4501), 31033.ENSTRUP00000008698 (degree 4355), 31033.ENSTRUP00000030675
+(degree 3893), 31033.ENSTRUP00000022321 (degree 3863) and 31033.ENSTRUP00000013808
+(degree 3770).
 
 
 References
@@ -107,14 +108,15 @@ def TakifuguRubripes(
 	
 	Datetime: 2021-02-02 18:02:03.469941
 	
-	The undirected graph Takifugu rubripes has 18032 nodes and 4575405 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02814 and
-	has 2 connected components, where the component with most nodes has 18030 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 363,
-	the mean node degree is 507.48, and the node degree mode is 224. The top 5 most central
-	nodes are 31033.ENSTRUP00000004326 (degree 4501), 31033.ENSTRUP00000008698 (degree
-	4355), 31033.ENSTRUP00000030675 (degree 3893), 31033.ENSTRUP00000022321 (degree 3863)
-	and 31033.ENSTRUP00000013808 (degree 3770).
+	The undirected graph Takifugu rubripes has 18032 nodes and 4575405 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02814 and has 2 connected components, where the component with most
+	nodes has 18030 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 363, the mean node degree is 507.48, and
+	the node degree mode is 224. The top 5 most central nodes are 31033.ENSTRUP00000004326
+	(degree 4501), 31033.ENSTRUP00000008698 (degree 4355), 31033.ENSTRUP00000030675
+	(degree 3893), 31033.ENSTRUP00000022321 (degree 3863) and 31033.ENSTRUP00000013808
+	(degree 3770).
 	
 
 

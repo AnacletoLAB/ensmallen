@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:59.780910
 
-The undirected graph Parabacteroides gordonii has 4880 nodes and 676403 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05682
-and has 12 connected components, where the component with most nodes has 4856 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 255, the mean node degree is 277.21, and the node degree mode is 3. The top 5
-most central nodes are 1122931.AUAE01000006_gene3148 (degree 1496), 1122931.AUAE01000008_gene4188
-(degree 1258), 1122931.AUAE01000014_gene2013 (degree 1255), 1122931.AUAE01000005_gene3198
-(degree 1252) and 1122931.AUAE01000035_gene4375 (degree 1245).
+The undirected graph Parabacteroides gordonii has 4880 nodes and 676403
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05682 and has 12 connected components, where the component
+with most nodes has 4856 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 255, the mean node degree is 277.21,
+and the node degree mode is 3. The top 5 most central nodes are 1122931.AUAE01000006_gene3148
+(degree 1496), 1122931.AUAE01000008_gene4188 (degree 1258), 1122931.AUAE01000014_gene2013
+(degree 1255), 1122931.AUAE01000005_gene3198 (degree 1252) and 1122931.AUAE01000035_gene4375
+(degree 1245).
 
 
 References
@@ -107,14 +108,15 @@ def ParabacteroidesGordonii(
 	
 	Datetime: 2021-02-02 22:44:59.780910
 	
-	The undirected graph Parabacteroides gordonii has 4880 nodes and 676403 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05682
-	and has 12 connected components, where the component with most nodes has 4856 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 255, the mean node degree is 277.21, and the node degree mode is 3. The top 5
-	most central nodes are 1122931.AUAE01000006_gene3148 (degree 1496), 1122931.AUAE01000008_gene4188
-	(degree 1258), 1122931.AUAE01000014_gene2013 (degree 1255), 1122931.AUAE01000005_gene3198
-	(degree 1252) and 1122931.AUAE01000035_gene4375 (degree 1245).
+	The undirected graph Parabacteroides gordonii has 4880 nodes and 676403
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05682 and has 12 connected components, where the component
+	with most nodes has 4856 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 255, the mean node degree is 277.21,
+	and the node degree mode is 3. The top 5 most central nodes are 1122931.AUAE01000006_gene3148
+	(degree 1496), 1122931.AUAE01000008_gene4188 (degree 1258), 1122931.AUAE01000014_gene2013
+	(degree 1255), 1122931.AUAE01000005_gene3198 (degree 1252) and 1122931.AUAE01000035_gene4375
+	(degree 1245).
 	
 
 

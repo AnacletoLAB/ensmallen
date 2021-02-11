@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:18.241523
 
-The undirected graph Lactobacillus ultunensis has 2176 nodes and 155466 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06570
-and has 11 connected components, where the component with most nodes has 2146 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 142.89, and the node degree mode is 3. The top 5
-most central nodes are 525365.HMPREF0548_0360 (degree 954), 525365.HMPREF0548_1642
-(degree 854), 525365.HMPREF0548_0475 (degree 775), 525365.HMPREF0548_0114 (degree
-719) and 525365.HMPREF0548_0105 (degree 658).
+The undirected graph Lactobacillus ultunensis has 2176 nodes and 155466
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06570 and has 11 connected components, where the component
+with most nodes has 2146 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 142.89,
+and the node degree mode is 3. The top 5 most central nodes are 525365.HMPREF0548_0360
+(degree 954), 525365.HMPREF0548_1642 (degree 854), 525365.HMPREF0548_0475
+(degree 775), 525365.HMPREF0548_0114 (degree 719) and 525365.HMPREF0548_0105
+(degree 658).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusUltunensis(
 	
 	Datetime: 2021-02-02 21:05:18.241523
 	
-	The undirected graph Lactobacillus ultunensis has 2176 nodes and 155466 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06570
-	and has 11 connected components, where the component with most nodes has 2146 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 142.89, and the node degree mode is 3. The top 5
-	most central nodes are 525365.HMPREF0548_0360 (degree 954), 525365.HMPREF0548_1642
-	(degree 854), 525365.HMPREF0548_0475 (degree 775), 525365.HMPREF0548_0114 (degree
-	719) and 525365.HMPREF0548_0105 (degree 658).
+	The undirected graph Lactobacillus ultunensis has 2176 nodes and 155466
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06570 and has 11 connected components, where the component
+	with most nodes has 2146 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 142.89,
+	and the node degree mode is 3. The top 5 most central nodes are 525365.HMPREF0548_0360
+	(degree 954), 525365.HMPREF0548_1642 (degree 854), 525365.HMPREF0548_0475
+	(degree 775), 525365.HMPREF0548_0114 (degree 719) and 525365.HMPREF0548_0105
+	(degree 658).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:45.248845
 
-The undirected graph Methylobacillus glycogenes has 3398 nodes and 361432 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06262
-and has 8 connected components, where the component with most nodes has 3382 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 212.73, and the node degree mode is 4. The top 5
-most central nodes are 1236959.BAMT01000011_gene3204 (degree 1467), 1236959.BAMT01000001_gene1372
-(degree 1241), 1236959.BAMT01000007_gene2744 (degree 1223), 1236959.BAMT01000007_gene2685
-(degree 1219) and 1236959.BAMT01000003_gene530 (degree 1092).
+The undirected graph Methylobacillus glycogenes has 3398 nodes and 361432
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06262 and has 8 connected components, where the component
+with most nodes has 3382 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 212.73,
+and the node degree mode is 4. The top 5 most central nodes are 1236959.BAMT01000011_gene3204
+(degree 1467), 1236959.BAMT01000001_gene1372 (degree 1241), 1236959.BAMT01000007_gene2744
+(degree 1223), 1236959.BAMT01000007_gene2685 (degree 1219) and 1236959.BAMT01000003_gene530
+(degree 1092).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacillusGlycogenes(
 	
 	Datetime: 2021-02-02 23:31:45.248845
 	
-	The undirected graph Methylobacillus glycogenes has 3398 nodes and 361432 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06262
-	and has 8 connected components, where the component with most nodes has 3382 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 212.73, and the node degree mode is 4. The top 5
-	most central nodes are 1236959.BAMT01000011_gene3204 (degree 1467), 1236959.BAMT01000001_gene1372
-	(degree 1241), 1236959.BAMT01000007_gene2744 (degree 1223), 1236959.BAMT01000007_gene2685
-	(degree 1219) and 1236959.BAMT01000003_gene530 (degree 1092).
+	The undirected graph Methylobacillus glycogenes has 3398 nodes and 361432
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06262 and has 8 connected components, where the component
+	with most nodes has 3382 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 212.73,
+	and the node degree mode is 4. The top 5 most central nodes are 1236959.BAMT01000011_gene3204
+	(degree 1467), 1236959.BAMT01000001_gene1372 (degree 1241), 1236959.BAMT01000007_gene2744
+	(degree 1223), 1236959.BAMT01000007_gene2685 (degree 1219) and 1236959.BAMT01000003_gene530
+	(degree 1092).
 	
 
 

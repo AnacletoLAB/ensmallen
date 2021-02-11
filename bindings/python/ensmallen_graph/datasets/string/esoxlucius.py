@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:26:30.664338
 
-The undirected graph Esox lucius has 22917 nodes and 6542541 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02492 and has 4
-connected components, where the component with most nodes has 22911 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 385,
-the mean node degree is 570.98, and the node degree mode is 349. The top 5 most central
-nodes are 8010.XP_010869031.1 (degree 5822), 8010.XP_010873700.1 (degree 5499), 8010.XP_010875300.1
-(degree 5352), 8010.XP_010896173.1 (degree 5164) and 8010.XP_010874984.1 (degree
+The undirected graph Esox lucius has 22917 nodes and 6542541 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02492 and has 4 connected components, where the component with most nodes
+has 22911 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 385, the mean node degree is 570.98, and the
+node degree mode is 349. The top 5 most central nodes are 8010.XP_010869031.1
+(degree 5822), 8010.XP_010873700.1 (degree 5499), 8010.XP_010875300.1 (degree
+5352), 8010.XP_010896173.1 (degree 5164) and 8010.XP_010874984.1 (degree
 4947).
 
 
@@ -107,13 +108,14 @@ def EsoxLucius(
 	
 	Datetime: 2021-02-02 17:26:30.664338
 	
-	The undirected graph Esox lucius has 22917 nodes and 6542541 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02492 and has 4
-	connected components, where the component with most nodes has 22911 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 385,
-	the mean node degree is 570.98, and the node degree mode is 349. The top 5 most central
-	nodes are 8010.XP_010869031.1 (degree 5822), 8010.XP_010873700.1 (degree 5499), 8010.XP_010875300.1
-	(degree 5352), 8010.XP_010896173.1 (degree 5164) and 8010.XP_010874984.1 (degree
+	The undirected graph Esox lucius has 22917 nodes and 6542541 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02492 and has 4 connected components, where the component with most nodes
+	has 22911 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 385, the mean node degree is 570.98, and the
+	node degree mode is 349. The top 5 most central nodes are 8010.XP_010869031.1
+	(degree 5822), 8010.XP_010873700.1 (degree 5499), 8010.XP_010875300.1 (degree
+	5352), 8010.XP_010896173.1 (degree 5164) and 8010.XP_010874984.1 (degree
 	4947).
 	
 

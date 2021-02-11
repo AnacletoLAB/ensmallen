@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:16:21.545310
 
-The undirected graph epinions has 885388 nodes with 2 different node types: 2 (nodes
-number 755760) and 1 (nodes number 129628), of which 142 are singletons (all have
-self-loops), and 14261449 unweighted edges, of which 538 are self-loops. The graph
-is extremely sparse as it has a density of 0.00004 and has 1340 connected components,
-where the component with most nodes has 882636 nodes and the component with the least
-nodes has a single node. The graph median node degree is 8, the mean node degree
-is 32.21 and the node degree mode is 2. The top 5 most central nodes are 32 (degree
-162342), 22 (degree 55832), 628 (degree 47010), 36 (degree 43857) and 155 (degree
+The undirected graph epinions has 885388 nodes with 2 different node types:
+2 (nodes number 755760) and 1 (nodes number 129628), of which 142 are singletons
+(all have self-loops), and 14261449 unweighted edges, of which 538 are
+self-loops. The graph is extremely sparse as it has a density of 0.00004
+and has 1340 connected components, where the component with most nodes
+has 882636 nodes and the component with the least nodes has a single node.
+The graph median node degree is 8, the mean node degree is 32.21 and the
+node degree mode is 2. The top 5 most central nodes are 32 (degree 162342),
+22 (degree 55832), 628 (degree 47010), 36 (degree 43857) and 155 (degree
 41067).
 
 
@@ -105,14 +106,15 @@ def Epinions(
 	
 	Datetime: 2021-02-04 00:16:21.545310
 	
-	The undirected graph epinions has 885388 nodes with 2 different node types: 2 (nodes
-	number 755760) and 1 (nodes number 129628), of which 142 are singletons (all have
-	self-loops), and 14261449 unweighted edges, of which 538 are self-loops. The graph
-	is extremely sparse as it has a density of 0.00004 and has 1340 connected components,
-	where the component with most nodes has 882636 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 8, the mean node degree
-	is 32.21 and the node degree mode is 2. The top 5 most central nodes are 32 (degree
-	162342), 22 (degree 55832), 628 (degree 47010), 36 (degree 43857) and 155 (degree
+	The undirected graph epinions has 885388 nodes with 2 different node types:
+	2 (nodes number 755760) and 1 (nodes number 129628), of which 142 are singletons
+	(all have self-loops), and 14261449 unweighted edges, of which 538 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00004
+	and has 1340 connected components, where the component with most nodes
+	has 882636 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 8, the mean node degree is 32.21 and the
+	node degree mode is 2. The top 5 most central nodes are 32 (degree 162342),
+	22 (degree 55832), 628 (degree 47010), 36 (degree 43857) and 155 (degree
 	41067).
 	
 

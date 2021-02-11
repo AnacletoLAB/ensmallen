@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:28.239151
 
-The undirected graph Planktomarina temperata has 3008 nodes and 256786 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05678 and
-has 12 connected components, where the component with most nodes has 2979 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 170.74, and the node degree mode is 2. The top 5 most central
-nodes are 666509.RCA23_c01110 (degree 1151), 666509.RCA23_c02380 (degree 875), 666509.RCA23_c04310
-(degree 867), 666509.RCA23_c30090 (degree 862) and 666509.RCA23_c21630 (degree 820).
+The undirected graph Planktomarina temperata has 3008 nodes and 256786
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05678 and has 12 connected components, where the component
+with most nodes has 2979 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 170.74,
+and the node degree mode is 2. The top 5 most central nodes are 666509.RCA23_c01110
+(degree 1151), 666509.RCA23_c02380 (degree 875), 666509.RCA23_c04310 (degree
+867), 666509.RCA23_c30090 (degree 862) and 666509.RCA23_c21630 (degree
+820).
 
 
 References
@@ -106,13 +108,15 @@ def PlanktomarinaTemperata(
 	
 	Datetime: 2021-02-02 21:28:28.239151
 	
-	The undirected graph Planktomarina temperata has 3008 nodes and 256786 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05678 and
-	has 12 connected components, where the component with most nodes has 2979 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 170.74, and the node degree mode is 2. The top 5 most central
-	nodes are 666509.RCA23_c01110 (degree 1151), 666509.RCA23_c02380 (degree 875), 666509.RCA23_c04310
-	(degree 867), 666509.RCA23_c30090 (degree 862) and 666509.RCA23_c21630 (degree 820).
+	The undirected graph Planktomarina temperata has 3008 nodes and 256786
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05678 and has 12 connected components, where the component
+	with most nodes has 2979 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 170.74,
+	and the node degree mode is 2. The top 5 most central nodes are 666509.RCA23_c01110
+	(degree 1151), 666509.RCA23_c02380 (degree 875), 666509.RCA23_c04310 (degree
+	867), 666509.RCA23_c30090 (degree 862) and 666509.RCA23_c21630 (degree
+	820).
 	
 
 

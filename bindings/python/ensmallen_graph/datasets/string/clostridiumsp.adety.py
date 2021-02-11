@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:23:26.503078
 
-The undirected graph Clostridium sp. AdeTY has 3044 nodes and 264977 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05721 and
-has 9 connected components, where the component with most nodes has 3022 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 174.10, and the node degree mode is 2. The top 5 most central
-nodes are 1391647.AVSV01000003_gene1747 (degree 1300), 1391647.AVSV01000011_gene1158
-(degree 1172), 1391647.AVSV01000021_gene2284 (degree 1146), 1391647.AVSV01000028_gene213
-(degree 1066) and 1391647.AVSV01000007_gene61 (degree 1022).
+The undirected graph Clostridium sp. AdeTY has 3044 nodes and 264977 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05721 and has 9 connected components, where the component with most
+nodes has 3022 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 174.10, and
+the node degree mode is 2. The top 5 most central nodes are 1391647.AVSV01000003_gene1747
+(degree 1300), 1391647.AVSV01000011_gene1158 (degree 1172), 1391647.AVSV01000021_gene2284
+(degree 1146), 1391647.AVSV01000028_gene213 (degree 1066) and 1391647.AVSV01000007_gene61
+(degree 1022).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Adety(
 	
 	Datetime: 2021-02-03 22:23:26.503078
 	
-	The undirected graph Clostridium sp. AdeTY has 3044 nodes and 264977 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05721 and
-	has 9 connected components, where the component with most nodes has 3022 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 174.10, and the node degree mode is 2. The top 5 most central
-	nodes are 1391647.AVSV01000003_gene1747 (degree 1300), 1391647.AVSV01000011_gene1158
-	(degree 1172), 1391647.AVSV01000021_gene2284 (degree 1146), 1391647.AVSV01000028_gene213
-	(degree 1066) and 1391647.AVSV01000007_gene61 (degree 1022).
+	The undirected graph Clostridium sp. AdeTY has 3044 nodes and 264977 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05721 and has 9 connected components, where the component with most
+	nodes has 3022 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 174.10, and
+	the node degree mode is 2. The top 5 most central nodes are 1391647.AVSV01000003_gene1747
+	(degree 1300), 1391647.AVSV01000011_gene1158 (degree 1172), 1391647.AVSV01000021_gene2284
+	(degree 1146), 1391647.AVSV01000028_gene213 (degree 1066) and 1391647.AVSV01000007_gene61
+	(degree 1022).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:52.397669
 
-The undirected graph Desulfovibrio sp. FW1012B has 3684 nodes and 489877 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07221
-and has 9 connected components, where the component with most nodes has 3667 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 265.95, and the node degree mode is 3. The top 5
-most central nodes are 644968.DFW101_2193 (degree 1655), 644968.DFW101_3462 (degree
-1405), 644968.DFW101_0568 (degree 1397), 644968.DFW101_1547 (degree 1318) and 644968.DFW101_2407
-(degree 1314).
+The undirected graph Desulfovibrio sp. FW1012B has 3684 nodes and 489877
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07221 and has 9 connected components, where the component
+with most nodes has 3667 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 265.95,
+and the node degree mode is 3. The top 5 most central nodes are 644968.DFW101_2193
+(degree 1655), 644968.DFW101_3462 (degree 1405), 644968.DFW101_0568 (degree
+1397), 644968.DFW101_1547 (degree 1318) and 644968.DFW101_2407 (degree
+1314).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioSp.Fw1012b(
 	
 	Datetime: 2021-02-02 21:24:52.397669
 	
-	The undirected graph Desulfovibrio sp. FW1012B has 3684 nodes and 489877 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07221
-	and has 9 connected components, where the component with most nodes has 3667 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 265.95, and the node degree mode is 3. The top 5
-	most central nodes are 644968.DFW101_2193 (degree 1655), 644968.DFW101_3462 (degree
-	1405), 644968.DFW101_0568 (degree 1397), 644968.DFW101_1547 (degree 1318) and 644968.DFW101_2407
-	(degree 1314).
+	The undirected graph Desulfovibrio sp. FW1012B has 3684 nodes and 489877
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07221 and has 9 connected components, where the component
+	with most nodes has 3667 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 265.95,
+	and the node degree mode is 3. The top 5 most central nodes are 644968.DFW101_2193
+	(degree 1655), 644968.DFW101_3462 (degree 1405), 644968.DFW101_0568 (degree
+	1397), 644968.DFW101_1547 (degree 1318) and 644968.DFW101_2407 (degree
+	1314).
 	
 
 

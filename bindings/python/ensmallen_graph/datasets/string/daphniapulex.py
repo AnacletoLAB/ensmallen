@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:19:47.607082
 
-The undirected graph Daphnia pulex has 13715 nodes and 2421291 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02575 and
-has 5 connected components, where the component with most nodes has 13704 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 219,
-the mean node degree is 353.09, and the node degree mode is 1. The top 5 most central
-nodes are 6669.EFX82937 (degree 4534), 6669.EFX70095 (degree 4162), 6669.EFX78460
-(degree 4158), 6669.EFX76608 (degree 3348) and 6669.EFX81968 (degree 3248).
+The undirected graph Daphnia pulex has 13715 nodes and 2421291 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02575 and has 5 connected components, where the component with most
+nodes has 13704 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 219, the mean node degree is 353.09, and
+the node degree mode is 1. The top 5 most central nodes are 6669.EFX82937
+(degree 4534), 6669.EFX70095 (degree 4162), 6669.EFX78460 (degree 4158),
+6669.EFX76608 (degree 3348) and 6669.EFX81968 (degree 3248).
 
 
 References
@@ -106,13 +107,14 @@ def DaphniaPulex(
 	
 	Datetime: 2021-02-02 17:19:47.607082
 	
-	The undirected graph Daphnia pulex has 13715 nodes and 2421291 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02575 and
-	has 5 connected components, where the component with most nodes has 13704 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 219,
-	the mean node degree is 353.09, and the node degree mode is 1. The top 5 most central
-	nodes are 6669.EFX82937 (degree 4534), 6669.EFX70095 (degree 4162), 6669.EFX78460
-	(degree 4158), 6669.EFX76608 (degree 3348) and 6669.EFX81968 (degree 3248).
+	The undirected graph Daphnia pulex has 13715 nodes and 2421291 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02575 and has 5 connected components, where the component with most
+	nodes has 13704 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 219, the mean node degree is 353.09, and
+	the node degree mode is 1. The top 5 most central nodes are 6669.EFX82937
+	(degree 4534), 6669.EFX70095 (degree 4162), 6669.EFX78460 (degree 4158),
+	6669.EFX76608 (degree 3348) and 6669.EFX81968 (degree 3248).
 	
 
 

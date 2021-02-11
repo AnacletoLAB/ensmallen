@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:52.960992
 
-The undirected graph Verrucomicrobia bacterium LP2A has 2206 nodes and 137361 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05648
-and has 14 connected components, where the component with most nodes has 2164 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 124.53, and the node degree mode is 2. The top 5 most
-central nodes are 478741.JAFS01000002_gene997 (degree 790), 478741.JAFS01000001_gene1265
+The undirected graph Verrucomicrobia bacterium LP2A has 2206 nodes and
+137361 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05648 and has 14 connected components, where the
+component with most nodes has 2164 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+is 124.53, and the node degree mode is 2. The top 5 most central nodes
+are 478741.JAFS01000002_gene997 (degree 790), 478741.JAFS01000001_gene1265
 (degree 688), 478741.JAFS01000001_gene1557 (degree 672), 478741.JAFS01000002_gene478
 (degree 671) and 478741.JAFS01000002_gene273 (degree 635).
 
@@ -107,12 +108,13 @@ def VerrucomicrobiaBacteriumLp2a(
 	
 	Datetime: 2021-02-02 20:56:52.960992
 	
-	The undirected graph Verrucomicrobia bacterium LP2A has 2206 nodes and 137361 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05648
-	and has 14 connected components, where the component with most nodes has 2164 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 124.53, and the node degree mode is 2. The top 5 most
-	central nodes are 478741.JAFS01000002_gene997 (degree 790), 478741.JAFS01000001_gene1265
+	The undirected graph Verrucomicrobia bacterium LP2A has 2206 nodes and
+	137361 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05648 and has 14 connected components, where the
+	component with most nodes has 2164 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+	is 124.53, and the node degree mode is 2. The top 5 most central nodes
+	are 478741.JAFS01000002_gene997 (degree 790), 478741.JAFS01000001_gene1265
 	(degree 688), 478741.JAFS01000001_gene1557 (degree 672), 478741.JAFS01000002_gene478
 	(degree 671) and 478741.JAFS01000002_gene273 (degree 635).
 	

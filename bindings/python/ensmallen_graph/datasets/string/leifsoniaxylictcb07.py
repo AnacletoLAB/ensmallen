@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:17.018882
 
-The undirected graph Leifsonia xyli CTCB07 has 1965 nodes and 130512 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06764 and
-has 16 connected components, where the component with most nodes has 1931 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 132.84, and the node degree mode is 1. The top 5 most central
-nodes are 281090.Lxx19150 (degree 804), 281090.Lxx11410 (degree 775), 281090.Lxx18720
-(degree 760), 281090.Lxx05990 (degree 595) and 281090.Lxx19780 (degree 586).
+The undirected graph Leifsonia xyli CTCB07 has 1965 nodes and 130512 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06764 and has 16 connected components, where the component with most
+nodes has 1931 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 132.84, and
+the node degree mode is 1. The top 5 most central nodes are 281090.Lxx19150
+(degree 804), 281090.Lxx11410 (degree 775), 281090.Lxx18720 (degree 760),
+281090.Lxx05990 (degree 595) and 281090.Lxx19780 (degree 586).
 
 
 References
@@ -106,13 +107,14 @@ def LeifsoniaXyliCtcb07(
 	
 	Datetime: 2021-02-02 20:18:17.018882
 	
-	The undirected graph Leifsonia xyli CTCB07 has 1965 nodes and 130512 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06764 and
-	has 16 connected components, where the component with most nodes has 1931 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 132.84, and the node degree mode is 1. The top 5 most central
-	nodes are 281090.Lxx19150 (degree 804), 281090.Lxx11410 (degree 775), 281090.Lxx18720
-	(degree 760), 281090.Lxx05990 (degree 595) and 281090.Lxx19780 (degree 586).
+	The undirected graph Leifsonia xyli CTCB07 has 1965 nodes and 130512 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06764 and has 16 connected components, where the component with most
+	nodes has 1931 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 132.84, and
+	the node degree mode is 1. The top 5 most central nodes are 281090.Lxx19150
+	(degree 804), 281090.Lxx11410 (degree 775), 281090.Lxx18720 (degree 760),
+	281090.Lxx05990 (degree 595) and 281090.Lxx19780 (degree 586).
 	
 
 

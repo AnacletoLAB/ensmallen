@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:19.133446
 
-The undirected graph Treponema phagedenis has 3083 nodes and 195154 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04108 and
-has 51 connected components, where the component with most nodes has 2957 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 72,
-the mean node degree is 126.60, and the node degree mode is 1. The top 5 most central
-nodes are 754027.HMPREF9554_00322 (degree 996), 754027.HMPREF9554_02276 (degree 893),
-754027.HMPREF9554_00970 (degree 850), 754027.HMPREF9554_02417 (degree 830) and 754027.HMPREF9554_02492
+The undirected graph Treponema phagedenis has 3083 nodes and 195154 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04108 and has 51 connected components, where the component with most
+nodes has 2957 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 72, the mean node degree is 126.60, and
+the node degree mode is 1. The top 5 most central nodes are 754027.HMPREF9554_00322
+(degree 996), 754027.HMPREF9554_02276 (degree 893), 754027.HMPREF9554_00970
+(degree 850), 754027.HMPREF9554_02417 (degree 830) and 754027.HMPREF9554_02492
 (degree 819).
 
 
@@ -107,13 +108,14 @@ def TreponemaPhagedenis(
 	
 	Datetime: 2021-02-02 21:40:19.133446
 	
-	The undirected graph Treponema phagedenis has 3083 nodes and 195154 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04108 and
-	has 51 connected components, where the component with most nodes has 2957 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 72,
-	the mean node degree is 126.60, and the node degree mode is 1. The top 5 most central
-	nodes are 754027.HMPREF9554_00322 (degree 996), 754027.HMPREF9554_02276 (degree 893),
-	754027.HMPREF9554_00970 (degree 850), 754027.HMPREF9554_02417 (degree 830) and 754027.HMPREF9554_02492
+	The undirected graph Treponema phagedenis has 3083 nodes and 195154 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04108 and has 51 connected components, where the component with most
+	nodes has 2957 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 72, the mean node degree is 126.60, and
+	the node degree mode is 1. The top 5 most central nodes are 754027.HMPREF9554_00322
+	(degree 996), 754027.HMPREF9554_02276 (degree 893), 754027.HMPREF9554_00970
+	(degree 850), 754027.HMPREF9554_02417 (degree 830) and 754027.HMPREF9554_02492
 	(degree 819).
 	
 

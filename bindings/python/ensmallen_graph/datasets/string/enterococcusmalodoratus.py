@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:12.561920
 
-The undirected graph Enterococcus malodoratus has 4470 nodes and 1005797 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10070 and has 16 connected components, where the component with most nodes has
-4429 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 359, the mean node degree is 450.02, and the node degree mode is 7. The
-top 5 most central nodes are 1158601.I585_01656 (degree 2205), 1158601.I585_01660
-(degree 2201), 1158601.I585_01977 (degree 2176), 1158601.I585_00079 (degree 2169)
-and 1158601.I585_02093 (degree 2054).
+The undirected graph Enterococcus malodoratus has 4470 nodes and 1005797
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10070 and has 16 connected components, where the
+component with most nodes has 4429 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 359, the mean node degree
+is 450.02, and the node degree mode is 7. The top 5 most central nodes
+are 1158601.I585_01656 (degree 2205), 1158601.I585_01660 (degree 2201),
+1158601.I585_01977 (degree 2176), 1158601.I585_00079 (degree 2169) and
+1158601.I585_02093 (degree 2054).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusMalodoratus(
 	
 	Datetime: 2021-02-02 23:03:12.561920
 	
-	The undirected graph Enterococcus malodoratus has 4470 nodes and 1005797 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10070 and has 16 connected components, where the component with most nodes has
-	4429 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 359, the mean node degree is 450.02, and the node degree mode is 7. The
-	top 5 most central nodes are 1158601.I585_01656 (degree 2205), 1158601.I585_01660
-	(degree 2201), 1158601.I585_01977 (degree 2176), 1158601.I585_00079 (degree 2169)
-	and 1158601.I585_02093 (degree 2054).
+	The undirected graph Enterococcus malodoratus has 4470 nodes and 1005797
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10070 and has 16 connected components, where the
+	component with most nodes has 4429 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 359, the mean node degree
+	is 450.02, and the node degree mode is 7. The top 5 most central nodes
+	are 1158601.I585_01656 (degree 2205), 1158601.I585_01660 (degree 2201),
+	1158601.I585_01977 (degree 2176), 1158601.I585_00079 (degree 2169) and
+	1158601.I585_02093 (degree 2054).
 	
 
 

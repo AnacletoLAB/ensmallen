@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:27.325635
 
-The undirected graph Synechococcus sp. RCC307 has 2523 nodes and 130879 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04114
-and has 48 connected components, where the component with most nodes has 2375 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 103.75, and the node degree mode is 3. The top 5 most
-central nodes are 316278.SynRCC307_1669 (degree 852), 316278.SynRCC307_0574 (degree
-575), 316278.SynRCC307_2164 (degree 564), 316278.SynRCC307_1703 (degree 531) and
-316278.SynRCC307_1751 (degree 521).
+The undirected graph Synechococcus sp. RCC307 has 2523 nodes and 130879
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04114 and has 48 connected components, where the component
+with most nodes has 2375 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 103.75,
+and the node degree mode is 3. The top 5 most central nodes are 316278.SynRCC307_1669
+(degree 852), 316278.SynRCC307_0574 (degree 575), 316278.SynRCC307_2164
+(degree 564), 316278.SynRCC307_1703 (degree 531) and 316278.SynRCC307_1751
+(degree 521).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Rcc307(
 	
 	Datetime: 2021-02-02 20:26:27.325635
 	
-	The undirected graph Synechococcus sp. RCC307 has 2523 nodes and 130879 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04114
-	and has 48 connected components, where the component with most nodes has 2375 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 103.75, and the node degree mode is 3. The top 5 most
-	central nodes are 316278.SynRCC307_1669 (degree 852), 316278.SynRCC307_0574 (degree
-	575), 316278.SynRCC307_2164 (degree 564), 316278.SynRCC307_1703 (degree 531) and
-	316278.SynRCC307_1751 (degree 521).
+	The undirected graph Synechococcus sp. RCC307 has 2523 nodes and 130879
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04114 and has 48 connected components, where the component
+	with most nodes has 2375 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 103.75,
+	and the node degree mode is 3. The top 5 most central nodes are 316278.SynRCC307_1669
+	(degree 852), 316278.SynRCC307_0574 (degree 575), 316278.SynRCC307_2164
+	(degree 564), 316278.SynRCC307_1703 (degree 531) and 316278.SynRCC307_1751
+	(degree 521).
 	
 
 

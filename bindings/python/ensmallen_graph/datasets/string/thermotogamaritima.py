@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:30.237268
 
-The undirected graph Thermotoga maritima has 1867 nodes and 141194 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08106 and
-has 4 connected components, where the component with most nodes has 1860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 151.25, and the node degree mode is 18. The top 5 most central
-nodes are 243274.THEMA_00870 (degree 1064), 243274.THEMA_01220 (degree 865), 243274.THEMA_06150
-(degree 841), 243274.THEMA_01090 (degree 826) and 243274.THEMA_08930 (degree 698).
+The undirected graph Thermotoga maritima has 1867 nodes and 141194 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08106 and has 4 connected components, where the component with most
+nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 151.25, and
+the node degree mode is 18. The top 5 most central nodes are 243274.THEMA_00870
+(degree 1064), 243274.THEMA_01220 (degree 865), 243274.THEMA_06150 (degree
+841), 243274.THEMA_01090 (degree 826) and 243274.THEMA_08930 (degree 698).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaMaritima(
 	
 	Datetime: 2021-02-02 20:09:30.237268
 	
-	The undirected graph Thermotoga maritima has 1867 nodes and 141194 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08106 and
-	has 4 connected components, where the component with most nodes has 1860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 151.25, and the node degree mode is 18. The top 5 most central
-	nodes are 243274.THEMA_00870 (degree 1064), 243274.THEMA_01220 (degree 865), 243274.THEMA_06150
-	(degree 841), 243274.THEMA_01090 (degree 826) and 243274.THEMA_08930 (degree 698).
+	The undirected graph Thermotoga maritima has 1867 nodes and 141194 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08106 and has 4 connected components, where the component with most
+	nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 151.25, and
+	the node degree mode is 18. The top 5 most central nodes are 243274.THEMA_00870
+	(degree 1064), 243274.THEMA_01220 (degree 865), 243274.THEMA_06150 (degree
+	841), 243274.THEMA_01090 (degree 826) and 243274.THEMA_08930 (degree 698).
 	
 
 

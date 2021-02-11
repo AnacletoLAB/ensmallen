@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:38.381938
 
-The undirected graph Thioflavicoccus mobilis has 3408 nodes and 280610 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04833 and
-has 15 connected components, where the component with most nodes has 3368 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 164.68, and the node degree mode is 2. The top 5 most central
-nodes are 765912.Thimo_1570 (degree 1531), 765912.Thimo_1436 (degree 1353), 765912.Thimo_2592
-(degree 1273), 765912.Thimo_3402 (degree 1060) and 765912.Thimo_1404 (degree 1037).
+The undirected graph Thioflavicoccus mobilis has 3408 nodes and 280610
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04833 and has 15 connected components, where the component
+with most nodes has 3368 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 164.68,
+and the node degree mode is 2. The top 5 most central nodes are 765912.Thimo_1570
+(degree 1531), 765912.Thimo_1436 (degree 1353), 765912.Thimo_2592 (degree
+1273), 765912.Thimo_3402 (degree 1060) and 765912.Thimo_1404 (degree 1037).
 
 
 References
@@ -106,13 +107,14 @@ def ThioflavicoccusMobilis(
 	
 	Datetime: 2021-02-02 21:43:38.381938
 	
-	The undirected graph Thioflavicoccus mobilis has 3408 nodes and 280610 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04833 and
-	has 15 connected components, where the component with most nodes has 3368 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 164.68, and the node degree mode is 2. The top 5 most central
-	nodes are 765912.Thimo_1570 (degree 1531), 765912.Thimo_1436 (degree 1353), 765912.Thimo_2592
-	(degree 1273), 765912.Thimo_3402 (degree 1060) and 765912.Thimo_1404 (degree 1037).
+	The undirected graph Thioflavicoccus mobilis has 3408 nodes and 280610
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04833 and has 15 connected components, where the component
+	with most nodes has 3368 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 164.68,
+	and the node degree mode is 2. The top 5 most central nodes are 765912.Thimo_1570
+	(degree 1531), 765912.Thimo_1436 (degree 1353), 765912.Thimo_2592 (degree
+	1273), 765912.Thimo_3402 (degree 1060) and 765912.Thimo_1404 (degree 1037).
 	
 
 

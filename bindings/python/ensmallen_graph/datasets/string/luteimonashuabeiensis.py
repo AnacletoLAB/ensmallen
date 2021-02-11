@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:00:32.654460
 
-The undirected graph Luteimonas huabeiensis has 3666 nodes and 369443 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05499 and
-has 8 connected components, where the component with most nodes has 3651 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 201.55, and the node degree mode is 1. The top 5 most central
-nodes are 1442599.JAAN01000013_gene3667 (degree 1289), 1442599.JAAN01000012_gene125
-(degree 1226), 1442599.JAAN01000010_gene313 (degree 1219), 1442599.JAAN01000043_gene503
-(degree 1198) and 1442599.JAAN01000020_gene2587 (degree 1125).
+The undirected graph Luteimonas huabeiensis has 3666 nodes and 369443 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05499 and has 8 connected components, where the component with most
+nodes has 3651 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 201.55, and
+the node degree mode is 1. The top 5 most central nodes are 1442599.JAAN01000013_gene3667
+(degree 1289), 1442599.JAAN01000012_gene125 (degree 1226), 1442599.JAAN01000010_gene313
+(degree 1219), 1442599.JAAN01000043_gene503 (degree 1198) and 1442599.JAAN01000020_gene2587
+(degree 1125).
 
 
 References
@@ -107,14 +108,15 @@ def LuteimonasHuabeiensis(
 	
 	Datetime: 2021-02-03 23:00:32.654460
 	
-	The undirected graph Luteimonas huabeiensis has 3666 nodes and 369443 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05499 and
-	has 8 connected components, where the component with most nodes has 3651 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 201.55, and the node degree mode is 1. The top 5 most central
-	nodes are 1442599.JAAN01000013_gene3667 (degree 1289), 1442599.JAAN01000012_gene125
-	(degree 1226), 1442599.JAAN01000010_gene313 (degree 1219), 1442599.JAAN01000043_gene503
-	(degree 1198) and 1442599.JAAN01000020_gene2587 (degree 1125).
+	The undirected graph Luteimonas huabeiensis has 3666 nodes and 369443 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05499 and has 8 connected components, where the component with most
+	nodes has 3651 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 201.55, and
+	the node degree mode is 1. The top 5 most central nodes are 1442599.JAAN01000013_gene3667
+	(degree 1289), 1442599.JAAN01000012_gene125 (degree 1226), 1442599.JAAN01000010_gene313
+	(degree 1219), 1442599.JAAN01000043_gene503 (degree 1198) and 1442599.JAAN01000020_gene2587
+	(degree 1125).
 	
 
 

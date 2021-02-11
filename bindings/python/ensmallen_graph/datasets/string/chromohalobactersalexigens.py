@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:07.078934
 
-The undirected graph Chromohalobacter salexigens has 3287 nodes and 260315 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04820
-and has 5 connected components, where the component with most nodes has 3279 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 158.39, and the node degree mode is 3. The top 5
-most central nodes are 290398.Csal_0548 (degree 1220), 290398.Csal_0869 (degree 1107),
-290398.Csal_1635 (degree 951), 290398.Csal_2120 (degree 876) and 290398.Csal_0731
-(degree 863).
+The undirected graph Chromohalobacter salexigens has 3287 nodes and 260315
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04820 and has 5 connected components, where the component
+with most nodes has 3279 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 158.39,
+and the node degree mode is 3. The top 5 most central nodes are 290398.Csal_0548
+(degree 1220), 290398.Csal_0869 (degree 1107), 290398.Csal_1635 (degree
+951), 290398.Csal_2120 (degree 876) and 290398.Csal_0731 (degree 863).
 
 
 References
@@ -107,14 +107,14 @@ def ChromohalobacterSalexigens(
 	
 	Datetime: 2021-02-02 20:20:07.078934
 	
-	The undirected graph Chromohalobacter salexigens has 3287 nodes and 260315 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04820
-	and has 5 connected components, where the component with most nodes has 3279 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 158.39, and the node degree mode is 3. The top 5
-	most central nodes are 290398.Csal_0548 (degree 1220), 290398.Csal_0869 (degree 1107),
-	290398.Csal_1635 (degree 951), 290398.Csal_2120 (degree 876) and 290398.Csal_0731
-	(degree 863).
+	The undirected graph Chromohalobacter salexigens has 3287 nodes and 260315
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04820 and has 5 connected components, where the component
+	with most nodes has 3279 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 158.39,
+	and the node degree mode is 3. The top 5 most central nodes are 290398.Csal_0548
+	(degree 1220), 290398.Csal_0869 (degree 1107), 290398.Csal_1635 (degree
+	951), 290398.Csal_2120 (degree 876) and 290398.Csal_0731 (degree 863).
 	
 
 

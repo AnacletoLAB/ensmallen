@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:23.059621
 
-The undirected graph Megasphaera genomosp. has 1602 nodes and 92783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07235 and
-has 3 connected components, where the component with most nodes has 1598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 115.83, and the node degree mode is 28. The top 5 most central
-nodes are 699218.HMPREF0889_0669 (degree 716), 699218.HMPREF0889_0097 (degree 610),
-699218.HMPREF0889_0350 (degree 600), 699218.HMPREF0889_0393 (degree 596) and 699218.HMPREF0889_1644
+The undirected graph Megasphaera genomosp. has 1602 nodes and 92783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07235 and has 3 connected components, where the component with most
+nodes has 1598 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 115.83, and
+the node degree mode is 28. The top 5 most central nodes are 699218.HMPREF0889_0669
+(degree 716), 699218.HMPREF0889_0097 (degree 610), 699218.HMPREF0889_0350
+(degree 600), 699218.HMPREF0889_0393 (degree 596) and 699218.HMPREF0889_1644
 (degree 586).
 
 
@@ -107,13 +108,14 @@ def MegasphaeraGenomosp.(
 	
 	Datetime: 2021-02-02 21:33:23.059621
 	
-	The undirected graph Megasphaera genomosp. has 1602 nodes and 92783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07235 and
-	has 3 connected components, where the component with most nodes has 1598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 115.83, and the node degree mode is 28. The top 5 most central
-	nodes are 699218.HMPREF0889_0669 (degree 716), 699218.HMPREF0889_0097 (degree 610),
-	699218.HMPREF0889_0350 (degree 600), 699218.HMPREF0889_0393 (degree 596) and 699218.HMPREF0889_1644
+	The undirected graph Megasphaera genomosp. has 1602 nodes and 92783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07235 and has 3 connected components, where the component with most
+	nodes has 1598 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 115.83, and
+	the node degree mode is 28. The top 5 most central nodes are 699218.HMPREF0889_0669
+	(degree 716), 699218.HMPREF0889_0097 (degree 610), 699218.HMPREF0889_0350
+	(degree 600), 699218.HMPREF0889_0393 (degree 596) and 699218.HMPREF0889_1644
 	(degree 586).
 	
 

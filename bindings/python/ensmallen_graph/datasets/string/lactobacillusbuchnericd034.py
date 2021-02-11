@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:16.716373
 
-The undirected graph Lactobacillus buchneri CD034 has 2298 nodes and 163408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06191
-and has 10 connected components, where the component with most nodes has 2277 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 142.22, and the node degree mode is 2. The top 5
-most central nodes are 1071400.LBUCD034_1574 (degree 1092), 1071400.LBUCD034_1341
-(degree 941), 1071400.LBUCD034_1662 (degree 672), 1071400.LBUCD034_2244 (degree 664)
-and 1071400.LBUCD034_1126 (degree 664).
+The undirected graph Lactobacillus buchneri CD034 has 2298 nodes and 163408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06191 and has 10 connected components, where the component
+with most nodes has 2277 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 142.22,
+and the node degree mode is 2. The top 5 most central nodes are 1071400.LBUCD034_1574
+(degree 1092), 1071400.LBUCD034_1341 (degree 941), 1071400.LBUCD034_1662
+(degree 672), 1071400.LBUCD034_2244 (degree 664) and 1071400.LBUCD034_1126
+(degree 664).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusBuchneriCd034(
 	
 	Datetime: 2021-02-02 22:19:16.716373
 	
-	The undirected graph Lactobacillus buchneri CD034 has 2298 nodes and 163408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06191
-	and has 10 connected components, where the component with most nodes has 2277 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 142.22, and the node degree mode is 2. The top 5
-	most central nodes are 1071400.LBUCD034_1574 (degree 1092), 1071400.LBUCD034_1341
-	(degree 941), 1071400.LBUCD034_1662 (degree 672), 1071400.LBUCD034_2244 (degree 664)
-	and 1071400.LBUCD034_1126 (degree 664).
+	The undirected graph Lactobacillus buchneri CD034 has 2298 nodes and 163408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06191 and has 10 connected components, where the component
+	with most nodes has 2277 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 142.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1071400.LBUCD034_1574
+	(degree 1092), 1071400.LBUCD034_1341 (degree 941), 1071400.LBUCD034_1662
+	(degree 672), 1071400.LBUCD034_2244 (degree 664) and 1071400.LBUCD034_1126
+	(degree 664).
 	
 
 

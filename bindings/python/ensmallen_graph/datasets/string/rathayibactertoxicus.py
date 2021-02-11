@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:00.511176
 
-The undirected graph Rathayibacter toxicus has 1955 nodes and 116922 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06121 and
-has 16 connected components, where the component with most nodes has 1922 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 119.61, and the node degree mode is 1. The top 5 most central
-nodes are 1123052.AUDF01000003_gene317 (degree 843), 1123052.AUDF01000002_gene532
-(degree 752), 1123052.AUDF01000002_gene746 (degree 657), 1123052.AUDF01000011_gene1517
-(degree 648) and 1123052.AUDF01000003_gene352 (degree 602).
+The undirected graph Rathayibacter toxicus has 1955 nodes and 116922 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06121 and has 16 connected components, where the component with most
+nodes has 1922 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 119.61, and
+the node degree mode is 1. The top 5 most central nodes are 1123052.AUDF01000003_gene317
+(degree 843), 1123052.AUDF01000002_gene532 (degree 752), 1123052.AUDF01000002_gene746
+(degree 657), 1123052.AUDF01000011_gene1517 (degree 648) and 1123052.AUDF01000003_gene352
+(degree 602).
 
 
 References
@@ -107,14 +108,15 @@ def RathayibacterToxicus(
 	
 	Datetime: 2021-02-02 22:47:00.511176
 	
-	The undirected graph Rathayibacter toxicus has 1955 nodes and 116922 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06121 and
-	has 16 connected components, where the component with most nodes has 1922 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 119.61, and the node degree mode is 1. The top 5 most central
-	nodes are 1123052.AUDF01000003_gene317 (degree 843), 1123052.AUDF01000002_gene532
-	(degree 752), 1123052.AUDF01000002_gene746 (degree 657), 1123052.AUDF01000011_gene1517
-	(degree 648) and 1123052.AUDF01000003_gene352 (degree 602).
+	The undirected graph Rathayibacter toxicus has 1955 nodes and 116922 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06121 and has 16 connected components, where the component with most
+	nodes has 1922 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 119.61, and
+	the node degree mode is 1. The top 5 most central nodes are 1123052.AUDF01000003_gene317
+	(degree 843), 1123052.AUDF01000002_gene532 (degree 752), 1123052.AUDF01000002_gene746
+	(degree 657), 1123052.AUDF01000011_gene1517 (degree 648) and 1123052.AUDF01000003_gene352
+	(degree 602).
 	
 
 

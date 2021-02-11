@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:39.047508
 
-The undirected graph Zootermopsis nevadensis has 9927 nodes and 932363 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01892 and
-has 4 connected components, where the component with most nodes has 9921 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 187.84, and the node degree mode is 45. The top 5 most central
-nodes are 136037.KDR18932 (degree 2756), 136037.KDR23238 (degree 1801), 136037.KDR11830
-(degree 1711), 136037.KDR21908 (degree 1674) and 136037.KDR24072 (degree 1667).
+The undirected graph Zootermopsis nevadensis has 9927 nodes and 932363
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01892 and has 4 connected components, where the component
+with most nodes has 9921 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 187.84,
+and the node degree mode is 45. The top 5 most central nodes are 136037.KDR18932
+(degree 2756), 136037.KDR23238 (degree 1801), 136037.KDR11830 (degree 1711),
+136037.KDR21908 (degree 1674) and 136037.KDR24072 (degree 1667).
 
 
 References
@@ -106,13 +107,14 @@ def ZootermopsisNevadensis(
 	
 	Datetime: 2021-02-02 19:50:39.047508
 	
-	The undirected graph Zootermopsis nevadensis has 9927 nodes and 932363 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01892 and
-	has 4 connected components, where the component with most nodes has 9921 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 187.84, and the node degree mode is 45. The top 5 most central
-	nodes are 136037.KDR18932 (degree 2756), 136037.KDR23238 (degree 1801), 136037.KDR11830
-	(degree 1711), 136037.KDR21908 (degree 1674) and 136037.KDR24072 (degree 1667).
+	The undirected graph Zootermopsis nevadensis has 9927 nodes and 932363
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01892 and has 4 connected components, where the component
+	with most nodes has 9921 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 187.84,
+	and the node degree mode is 45. The top 5 most central nodes are 136037.KDR18932
+	(degree 2756), 136037.KDR23238 (degree 1801), 136037.KDR11830 (degree 1711),
+	136037.KDR21908 (degree 1674) and 136037.KDR24072 (degree 1667).
 	
 
 

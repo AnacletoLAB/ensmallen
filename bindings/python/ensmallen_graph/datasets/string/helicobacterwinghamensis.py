@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:04.340206
 
-The undirected graph Helicobacter winghamensis has 1626 nodes and 112778 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08537
-and has 2 connected components, where the component with most nodes has 1624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 138.72, and the node degree mode is 5. The top 5
-most central nodes are 556267.HWAG_00077 (degree 744), 556267.HWAG_01535 (degree
-685), 556267.HWAG_00446 (degree 667), 556267.HWAG_00943 (degree 605) and 556267.HWAG_00362
-(degree 579).
+The undirected graph Helicobacter winghamensis has 1626 nodes and 112778
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08537 and has 2 connected components, where the component
+with most nodes has 1624 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 138.72,
+and the node degree mode is 5. The top 5 most central nodes are 556267.HWAG_00077
+(degree 744), 556267.HWAG_01535 (degree 685), 556267.HWAG_00446 (degree
+667), 556267.HWAG_00943 (degree 605) and 556267.HWAG_00362 (degree 579).
 
 
 References
@@ -107,14 +107,14 @@ def HelicobacterWinghamensis(
 	
 	Datetime: 2021-02-02 21:11:04.340206
 	
-	The undirected graph Helicobacter winghamensis has 1626 nodes and 112778 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08537
-	and has 2 connected components, where the component with most nodes has 1624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 138.72, and the node degree mode is 5. The top 5
-	most central nodes are 556267.HWAG_00077 (degree 744), 556267.HWAG_01535 (degree
-	685), 556267.HWAG_00446 (degree 667), 556267.HWAG_00943 (degree 605) and 556267.HWAG_00362
-	(degree 579).
+	The undirected graph Helicobacter winghamensis has 1626 nodes and 112778
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08537 and has 2 connected components, where the component
+	with most nodes has 1624 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 138.72,
+	and the node degree mode is 5. The top 5 most central nodes are 556267.HWAG_00077
+	(degree 744), 556267.HWAG_01535 (degree 685), 556267.HWAG_00446 (degree
+	667), 556267.HWAG_00943 (degree 605) and 556267.HWAG_00362 (degree 579).
 	
 
 

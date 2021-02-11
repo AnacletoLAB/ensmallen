@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:04.072969
 
-The undirected graph Anaeromyxobacter dehalogenans has 4327 nodes and 566639 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06054
-and has 16 connected components, where the component with most nodes has 4289 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 221, the mean node degree is 261.91, and the node degree mode is 2. The top 5
-most central nodes are 290397.Adeh_1310 (degree 1892), 290397.Adeh_2348 (degree 1518),
-290397.Adeh_0817 (degree 1419), 290397.Adeh_3529 (degree 1380) and 290397.Adeh_0721
-(degree 1337).
+The undirected graph Anaeromyxobacter dehalogenans has 4327 nodes and 566639
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06054 and has 16 connected components, where the component
+with most nodes has 4289 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 221, the mean node degree is 261.91,
+and the node degree mode is 2. The top 5 most central nodes are 290397.Adeh_1310
+(degree 1892), 290397.Adeh_2348 (degree 1518), 290397.Adeh_0817 (degree
+1419), 290397.Adeh_3529 (degree 1380) and 290397.Adeh_0721 (degree 1337).
 
 
 References
@@ -107,14 +107,14 @@ def AnaeromyxobacterDehalogenans(
 	
 	Datetime: 2021-02-02 20:20:04.072969
 	
-	The undirected graph Anaeromyxobacter dehalogenans has 4327 nodes and 566639 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06054
-	and has 16 connected components, where the component with most nodes has 4289 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 221, the mean node degree is 261.91, and the node degree mode is 2. The top 5
-	most central nodes are 290397.Adeh_1310 (degree 1892), 290397.Adeh_2348 (degree 1518),
-	290397.Adeh_0817 (degree 1419), 290397.Adeh_3529 (degree 1380) and 290397.Adeh_0721
-	(degree 1337).
+	The undirected graph Anaeromyxobacter dehalogenans has 4327 nodes and 566639
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06054 and has 16 connected components, where the component
+	with most nodes has 4289 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 221, the mean node degree is 261.91,
+	and the node degree mode is 2. The top 5 most central nodes are 290397.Adeh_1310
+	(degree 1892), 290397.Adeh_2348 (degree 1518), 290397.Adeh_0817 (degree
+	1419), 290397.Adeh_3529 (degree 1380) and 290397.Adeh_0721 (degree 1337).
 	
 
 

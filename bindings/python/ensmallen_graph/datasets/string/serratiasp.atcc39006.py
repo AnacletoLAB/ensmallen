@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:03.347023
 
-The undirected graph Serratia sp. ATCC39006 has 4384 nodes and 353971 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03684 and
-has 12 connected components, where the component with most nodes has 4359 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 161.48, and the node degree mode is 1. The top 5 most central
-nodes are 104623.Ser39006_00514 (degree 1462), 104623.Ser39006_00904 (degree 1297),
-104623.Ser39006_03625 (degree 1258), 104623.Ser39006_00906 (degree 1205) and 104623.Ser39006_04035
+The undirected graph Serratia sp. ATCC39006 has 4384 nodes and 353971 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03684 and has 12 connected components, where the component with most
+nodes has 4359 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 161.48, and
+the node degree mode is 1. The top 5 most central nodes are 104623.Ser39006_00514
+(degree 1462), 104623.Ser39006_00904 (degree 1297), 104623.Ser39006_03625
+(degree 1258), 104623.Ser39006_00906 (degree 1205) and 104623.Ser39006_04035
 (degree 1136).
 
 
@@ -107,13 +108,14 @@ def SerratiaSp.Atcc39006(
 	
 	Datetime: 2021-02-02 19:44:03.347023
 	
-	The undirected graph Serratia sp. ATCC39006 has 4384 nodes and 353971 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03684 and
-	has 12 connected components, where the component with most nodes has 4359 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 161.48, and the node degree mode is 1. The top 5 most central
-	nodes are 104623.Ser39006_00514 (degree 1462), 104623.Ser39006_00904 (degree 1297),
-	104623.Ser39006_03625 (degree 1258), 104623.Ser39006_00906 (degree 1205) and 104623.Ser39006_04035
+	The undirected graph Serratia sp. ATCC39006 has 4384 nodes and 353971 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03684 and has 12 connected components, where the component with most
+	nodes has 4359 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 161.48, and
+	the node degree mode is 1. The top 5 most central nodes are 104623.Ser39006_00514
+	(degree 1462), 104623.Ser39006_00904 (degree 1297), 104623.Ser39006_03625
+	(degree 1258), 104623.Ser39006_00906 (degree 1205) and 104623.Ser39006_04035
 	(degree 1136).
 	
 

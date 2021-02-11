@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:02:24.661480
 
-The undirected graph aff-wiki-wordbypage has 273959 nodes and 2941900 weighted edges,
-of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00008
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 21.48, and the node degree mode is 1. The top 5 most central
-nodes are 1382 (degree 3412), 1383 (degree 3403), 1214 (degree 3348), 1875 (degree
-3259) and 188 (degree 3160).
+The undirected graph aff-wiki-wordbypage has 273959 nodes and 2941900 weighted
+edges, of which 1 are self-loops. The graph is extremely sparse as it has
+a density of 0.00008 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 21.48, and the node
+degree mode is 1. The top 5 most central nodes are 1382 (degree 3412),
+1383 (degree 3403), 1214 (degree 3348), 1875 (degree 3259) and 188 (degree
+3160).
 
 
 References
@@ -102,12 +103,13 @@ def AffWikiWordbypage(
 	
 	Datetime: 2021-02-06 12:02:24.661480
 	
-	The undirected graph aff-wiki-wordbypage has 273959 nodes and 2941900 weighted edges,
-	of which 1 are self-loops. The graph is extremely sparse as it has a density of 0.00008
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 21.48, and the node degree mode is 1. The top 5 most central
-	nodes are 1382 (degree 3412), 1383 (degree 3403), 1214 (degree 3348), 1875 (degree
-	3259) and 188 (degree 3160).
+	The undirected graph aff-wiki-wordbypage has 273959 nodes and 2941900 weighted
+	edges, of which 1 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00008 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 21.48, and the node
+	degree mode is 1. The top 5 most central nodes are 1382 (degree 3412),
+	1383 (degree 3403), 1214 (degree 3348), 1875 (degree 3259) and 188 (degree
+	3160).
 	
 
 

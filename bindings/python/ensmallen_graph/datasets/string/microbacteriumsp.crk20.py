@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:50.082825
 
-The undirected graph Microbacterium sp. CrK20 has 3703 nodes and 260213 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03796
-and has 11 connected components, where the component with most nodes has 3678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 140.54, and the node degree mode is 3. The top 5
-most central nodes are 1452536.JARE01000047_gene2688 (degree 1021), 1452536.JARE01000047_gene2696
-(degree 1000), 1452536.JARE01000070_gene3410 (degree 932), 1452536.JARE01000059_gene1489
-(degree 928) and 1452536.JARE01000059_gene1515 (degree 922).
+The undirected graph Microbacterium sp. CrK20 has 3703 nodes and 260213
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03796 and has 11 connected components, where the component
+with most nodes has 3678 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 140.54,
+and the node degree mode is 3. The top 5 most central nodes are 1452536.JARE01000047_gene2688
+(degree 1021), 1452536.JARE01000047_gene2696 (degree 1000), 1452536.JARE01000070_gene3410
+(degree 932), 1452536.JARE01000059_gene1489 (degree 928) and 1452536.JARE01000059_gene1515
+(degree 922).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.Crk20(
 	
 	Datetime: 2021-02-03 23:05:50.082825
 	
-	The undirected graph Microbacterium sp. CrK20 has 3703 nodes and 260213 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03796
-	and has 11 connected components, where the component with most nodes has 3678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 140.54, and the node degree mode is 3. The top 5
-	most central nodes are 1452536.JARE01000047_gene2688 (degree 1021), 1452536.JARE01000047_gene2696
-	(degree 1000), 1452536.JARE01000070_gene3410 (degree 932), 1452536.JARE01000059_gene1489
-	(degree 928) and 1452536.JARE01000059_gene1515 (degree 922).
+	The undirected graph Microbacterium sp. CrK20 has 3703 nodes and 260213
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03796 and has 11 connected components, where the component
+	with most nodes has 3678 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 140.54,
+	and the node degree mode is 3. The top 5 most central nodes are 1452536.JARE01000047_gene2688
+	(degree 1021), 1452536.JARE01000047_gene2696 (degree 1000), 1452536.JARE01000070_gene3410
+	(degree 932), 1452536.JARE01000059_gene1489 (degree 928) and 1452536.JARE01000059_gene1515
+	(degree 922).
 	
 
 

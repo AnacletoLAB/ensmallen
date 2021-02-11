@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:23:28.289388
 
-The undirected graph Strongylocentrotus purpuratus has 22334 nodes and 3847067 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01543
-and has 10 connected components, where the component with most nodes has 22311 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 344.50, and the node degree mode is 1. The top 5
-most central nodes are 7668.SPU_023108-tr (degree 5120), 7668.SPU_011519-tr (degree
-5120), 7668.SPU_028462-tr (degree 4972), 7668.SPU_022560-tr (degree 4808) and 7668.SPU_005280-tr
-(degree 4364).
+The undirected graph Strongylocentrotus purpuratus has 22334 nodes and
+3847067 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.01543 and has 10 connected components, where the
+component with most nodes has 22311 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+is 344.50, and the node degree mode is 1. The top 5 most central nodes
+are 7668.SPU_023108-tr (degree 5120), 7668.SPU_011519-tr (degree 5120),
+7668.SPU_028462-tr (degree 4972), 7668.SPU_022560-tr (degree 4808) and
+7668.SPU_005280-tr (degree 4364).
 
 
 References
@@ -107,14 +108,15 @@ def StrongylocentrotusPurpuratus(
 	
 	Datetime: 2021-02-02 17:23:28.289388
 	
-	The undirected graph Strongylocentrotus purpuratus has 22334 nodes and 3847067 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01543
-	and has 10 connected components, where the component with most nodes has 22311 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 344.50, and the node degree mode is 1. The top 5
-	most central nodes are 7668.SPU_023108-tr (degree 5120), 7668.SPU_011519-tr (degree
-	5120), 7668.SPU_028462-tr (degree 4972), 7668.SPU_022560-tr (degree 4808) and 7668.SPU_005280-tr
-	(degree 4364).
+	The undirected graph Strongylocentrotus purpuratus has 22334 nodes and
+	3847067 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.01543 and has 10 connected components, where the
+	component with most nodes has 22311 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+	is 344.50, and the node degree mode is 1. The top 5 most central nodes
+	are 7668.SPU_023108-tr (degree 5120), 7668.SPU_011519-tr (degree 5120),
+	7668.SPU_028462-tr (degree 4972), 7668.SPU_022560-tr (degree 4808) and
+	7668.SPU_005280-tr (degree 4364).
 	
 
 

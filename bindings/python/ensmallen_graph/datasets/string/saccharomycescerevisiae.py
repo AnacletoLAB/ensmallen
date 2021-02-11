@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:34.666141
 
-The undirected graph Saccharomyces cerevisiae has 6574 nodes and 922983 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04272
-and has 4 connected components, where the component with most nodes has 6568 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 280.80, and the node degree mode is 1. The top 5
-most central nodes are 4932.YFL039C (degree 2196), 4932.YEL021W (degree 1910), 4932.YCR012W
-(degree 1641), 4932.YLL039C (degree 1503) and 4932.YGR192C (degree 1482).
+The undirected graph Saccharomyces cerevisiae has 6574 nodes and 922983
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04272 and has 4 connected components, where the component
+with most nodes has 6568 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 213, the mean node degree is 280.80,
+and the node degree mode is 1. The top 5 most central nodes are 4932.YFL039C
+(degree 2196), 4932.YEL021W (degree 1910), 4932.YCR012W (degree 1641),
+4932.YLL039C (degree 1503) and 4932.YGR192C (degree 1482).
 
 
 References
@@ -106,13 +107,14 @@ def SaccharomycesCerevisiae(
 	
 	Datetime: 2021-02-02 17:11:34.666141
 	
-	The undirected graph Saccharomyces cerevisiae has 6574 nodes and 922983 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04272
-	and has 4 connected components, where the component with most nodes has 6568 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 280.80, and the node degree mode is 1. The top 5
-	most central nodes are 4932.YFL039C (degree 2196), 4932.YEL021W (degree 1910), 4932.YCR012W
-	(degree 1641), 4932.YLL039C (degree 1503) and 4932.YGR192C (degree 1482).
+	The undirected graph Saccharomyces cerevisiae has 6574 nodes and 922983
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04272 and has 4 connected components, where the component
+	with most nodes has 6568 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 213, the mean node degree is 280.80,
+	and the node degree mode is 1. The top 5 most central nodes are 4932.YFL039C
+	(degree 2196), 4932.YEL021W (degree 1910), 4932.YCR012W (degree 1641),
+	4932.YLL039C (degree 1503) and 4932.YGR192C (degree 1482).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:00.799316
 
-The undirected graph Pseudoalteromonas spongiae has 4164 nodes and 470200 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05425
-and has 13 connected components, where the component with most nodes has 4130 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 225.84, and the node degree mode is 2. The top 5
-most central nodes are 1117319.PSPO_11445 (degree 1348), 1117319.PSPO_19261 (degree
-1283), 1117319.PSPO_14404 (degree 1279), 1117319.PSPO_03605 (degree 1099) and 1117319.PSPO_16128
-(degree 1059).
+The undirected graph Pseudoalteromonas spongiae has 4164 nodes and 470200
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05425 and has 13 connected components, where the component
+with most nodes has 4130 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 225.84,
+and the node degree mode is 2. The top 5 most central nodes are 1117319.PSPO_11445
+(degree 1348), 1117319.PSPO_19261 (degree 1283), 1117319.PSPO_14404 (degree
+1279), 1117319.PSPO_03605 (degree 1099) and 1117319.PSPO_16128 (degree
+1059).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasSpongiae(
 	
 	Datetime: 2021-02-02 22:28:00.799316
 	
-	The undirected graph Pseudoalteromonas spongiae has 4164 nodes and 470200 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05425
-	and has 13 connected components, where the component with most nodes has 4130 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 225.84, and the node degree mode is 2. The top 5
-	most central nodes are 1117319.PSPO_11445 (degree 1348), 1117319.PSPO_19261 (degree
-	1283), 1117319.PSPO_14404 (degree 1279), 1117319.PSPO_03605 (degree 1099) and 1117319.PSPO_16128
-	(degree 1059).
+	The undirected graph Pseudoalteromonas spongiae has 4164 nodes and 470200
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05425 and has 13 connected components, where the component
+	with most nodes has 4130 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 225.84,
+	and the node degree mode is 2. The top 5 most central nodes are 1117319.PSPO_11445
+	(degree 1348), 1117319.PSPO_19261 (degree 1283), 1117319.PSPO_14404 (degree
+	1279), 1117319.PSPO_03605 (degree 1099) and 1117319.PSPO_16128 (degree
+	1059).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:15.868521
 
-The undirected graph Bacteroides stercorirosoris has 5804 nodes and 736189 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04372
-and has 34 connected components, where the component with most nodes has 5709 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 253.68, and the node degree mode is 2. The top 5
-most central nodes are 1236514.BAKL01000039_gene3148 (degree 1744), 1236514.BAKL01000019_gene1973
-(degree 1723), 1236514.BAKL01000023_gene2224 (degree 1696), 1236514.BAKL01000005_gene703
-(degree 1661) and 1236514.BAKL01000025_gene2349 (degree 1584).
+The undirected graph Bacteroides stercorirosoris has 5804 nodes and 736189
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04372 and has 34 connected components, where the component
+with most nodes has 5709 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 253.68,
+and the node degree mode is 2. The top 5 most central nodes are 1236514.BAKL01000039_gene3148
+(degree 1744), 1236514.BAKL01000019_gene1973 (degree 1723), 1236514.BAKL01000023_gene2224
+(degree 1696), 1236514.BAKL01000005_gene703 (degree 1661) and 1236514.BAKL01000025_gene2349
+(degree 1584).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesStercorirosoris(
 	
 	Datetime: 2021-02-02 23:31:15.868521
 	
-	The undirected graph Bacteroides stercorirosoris has 5804 nodes and 736189 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04372
-	and has 34 connected components, where the component with most nodes has 5709 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 253.68, and the node degree mode is 2. The top 5
-	most central nodes are 1236514.BAKL01000039_gene3148 (degree 1744), 1236514.BAKL01000019_gene1973
-	(degree 1723), 1236514.BAKL01000023_gene2224 (degree 1696), 1236514.BAKL01000005_gene703
-	(degree 1661) and 1236514.BAKL01000025_gene2349 (degree 1584).
+	The undirected graph Bacteroides stercorirosoris has 5804 nodes and 736189
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04372 and has 34 connected components, where the component
+	with most nodes has 5709 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 253.68,
+	and the node degree mode is 2. The top 5 most central nodes are 1236514.BAKL01000039_gene3148
+	(degree 1744), 1236514.BAKL01000019_gene1973 (degree 1723), 1236514.BAKL01000023_gene2224
+	(degree 1696), 1236514.BAKL01000005_gene703 (degree 1661) and 1236514.BAKL01000025_gene2349
+	(degree 1584).
 	
 
 

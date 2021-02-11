@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:42.845715
 
-The undirected graph Desulfosporosinus youngiae has 5062 nodes and 631425 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04929
-and has 26 connected components, where the component with most nodes has 4995 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 190, the mean node degree is 249.48, and the node degree mode is 1. The top 5
-most central nodes are 768710.DesyoDRAFT_1324 (degree 2312), 768710.DesyoDRAFT_3352
-(degree 2046), 768710.DesyoDRAFT_0033 (degree 1903), 768710.DesyoDRAFT_0975 (degree
-1822) and 768710.DesyoDRAFT_0611 (degree 1817).
+The undirected graph Desulfosporosinus youngiae has 5062 nodes and 631425
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04929 and has 26 connected components, where the component
+with most nodes has 4995 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 190, the mean node degree is 249.48,
+and the node degree mode is 1. The top 5 most central nodes are 768710.DesyoDRAFT_1324
+(degree 2312), 768710.DesyoDRAFT_3352 (degree 2046), 768710.DesyoDRAFT_0033
+(degree 1903), 768710.DesyoDRAFT_0975 (degree 1822) and 768710.DesyoDRAFT_0611
+(degree 1817).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfosporosinusYoungiae(
 	
 	Datetime: 2021-02-02 21:44:42.845715
 	
-	The undirected graph Desulfosporosinus youngiae has 5062 nodes and 631425 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04929
-	and has 26 connected components, where the component with most nodes has 4995 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 190, the mean node degree is 249.48, and the node degree mode is 1. The top 5
-	most central nodes are 768710.DesyoDRAFT_1324 (degree 2312), 768710.DesyoDRAFT_3352
-	(degree 2046), 768710.DesyoDRAFT_0033 (degree 1903), 768710.DesyoDRAFT_0975 (degree
-	1822) and 768710.DesyoDRAFT_0611 (degree 1817).
+	The undirected graph Desulfosporosinus youngiae has 5062 nodes and 631425
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04929 and has 26 connected components, where the component
+	with most nodes has 4995 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 190, the mean node degree is 249.48,
+	and the node degree mode is 1. The top 5 most central nodes are 768710.DesyoDRAFT_1324
+	(degree 2312), 768710.DesyoDRAFT_3352 (degree 2046), 768710.DesyoDRAFT_0033
+	(degree 1903), 768710.DesyoDRAFT_0975 (degree 1822) and 768710.DesyoDRAFT_0611
+	(degree 1817).
 	
 
 

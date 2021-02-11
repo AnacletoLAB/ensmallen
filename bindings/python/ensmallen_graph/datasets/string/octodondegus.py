@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:51:39.852708
 
-The undirected graph Octodon degus has 20053 nodes and 6862741 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03413 and
-is connected, as it has a single component. The graph median node degree is 529,
-the mean node degree is 684.46, and the node degree mode is 43. The top 5 most central
-nodes are 10160.XP_004629142.1 (degree 5844), 10160.XP_004643512.1 (degree 5660),
-10160.XP_004631848.1 (degree 5350), 10160.XP_004648482.1 (degree 5199) and 10160.XP_004622998.1
-(degree 5125).
+The undirected graph Octodon degus has 20053 nodes and 6862741 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03413 and is connected, as it has a single component. The graph median
+node degree is 529, the mean node degree is 684.46, and the node degree
+mode is 43. The top 5 most central nodes are 10160.XP_004629142.1 (degree
+5844), 10160.XP_004643512.1 (degree 5660), 10160.XP_004631848.1 (degree
+5350), 10160.XP_004648482.1 (degree 5199) and 10160.XP_004622998.1 (degree
+5125).
 
 
 References
@@ -106,13 +107,14 @@ def OctodonDegus(
 	
 	Datetime: 2021-02-02 17:51:39.852708
 	
-	The undirected graph Octodon degus has 20053 nodes and 6862741 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03413 and
-	is connected, as it has a single component. The graph median node degree is 529,
-	the mean node degree is 684.46, and the node degree mode is 43. The top 5 most central
-	nodes are 10160.XP_004629142.1 (degree 5844), 10160.XP_004643512.1 (degree 5660),
-	10160.XP_004631848.1 (degree 5350), 10160.XP_004648482.1 (degree 5199) and 10160.XP_004622998.1
-	(degree 5125).
+	The undirected graph Octodon degus has 20053 nodes and 6862741 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03413 and is connected, as it has a single component. The graph median
+	node degree is 529, the mean node degree is 684.46, and the node degree
+	mode is 43. The top 5 most central nodes are 10160.XP_004629142.1 (degree
+	5844), 10160.XP_004643512.1 (degree 5660), 10160.XP_004631848.1 (degree
+	5350), 10160.XP_004648482.1 (degree 5199) and 10160.XP_004622998.1 (degree
+	5125).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:43.473990
 
-The undirected graph Rhodobacterales bacterium Y4I has 4110 nodes and 607153 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07190
-and has 12 connected components, where the component with most nodes has 4087 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 270, the mean node degree is 295.45, and the node degree mode is 2. The top 5
-most central nodes are 439496.RBY4I_210 (degree 1741), 439496.RBY4I_2830 (degree
-1598), 439496.RBY4I_3885 (degree 1375), 439496.RBY4I_2577 (degree 1350) and 439496.RBY4I_814
-(degree 1301).
+The undirected graph Rhodobacterales bacterium Y4I has 4110 nodes and 607153
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07190 and has 12 connected components, where the component
+with most nodes has 4087 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 270, the mean node degree is 295.45,
+and the node degree mode is 2. The top 5 most central nodes are 439496.RBY4I_210
+(degree 1741), 439496.RBY4I_2830 (degree 1598), 439496.RBY4I_3885 (degree
+1375), 439496.RBY4I_2577 (degree 1350) and 439496.RBY4I_814 (degree 1301).
 
 
 References
@@ -107,14 +107,14 @@ def RhodobacteralesBacteriumY4i(
 	
 	Datetime: 2021-02-02 20:49:43.473990
 	
-	The undirected graph Rhodobacterales bacterium Y4I has 4110 nodes and 607153 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07190
-	and has 12 connected components, where the component with most nodes has 4087 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 270, the mean node degree is 295.45, and the node degree mode is 2. The top 5
-	most central nodes are 439496.RBY4I_210 (degree 1741), 439496.RBY4I_2830 (degree
-	1598), 439496.RBY4I_3885 (degree 1375), 439496.RBY4I_2577 (degree 1350) and 439496.RBY4I_814
-	(degree 1301).
+	The undirected graph Rhodobacterales bacterium Y4I has 4110 nodes and 607153
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07190 and has 12 connected components, where the component
+	with most nodes has 4087 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 270, the mean node degree is 295.45,
+	and the node degree mode is 2. The top 5 most central nodes are 439496.RBY4I_210
+	(degree 1741), 439496.RBY4I_2830 (degree 1598), 439496.RBY4I_3885 (degree
+	1375), 439496.RBY4I_2577 (degree 1350) and 439496.RBY4I_814 (degree 1301).
 	
 
 

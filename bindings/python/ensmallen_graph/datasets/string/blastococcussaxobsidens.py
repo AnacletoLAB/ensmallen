@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:16.024876
 
-The undirected graph Blastococcus saxobsidens has 4787 nodes and 392718 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03428
-and has 17 connected components, where the component with most nodes has 4751 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 164.08, and the node degree mode is 5. The top 5
-most central nodes are 1146883.BLASA_2296 (degree 1472), 1146883.BLASA_0669 (degree
-1291), 1146883.BLASA_4235 (degree 1216), 1146883.BLASA_2282 (degree 1150) and 1146883.BLASA_2440
-(degree 1117).
+The undirected graph Blastococcus saxobsidens has 4787 nodes and 392718
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03428 and has 17 connected components, where the component
+with most nodes has 4751 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 164.08,
+and the node degree mode is 5. The top 5 most central nodes are 1146883.BLASA_2296
+(degree 1472), 1146883.BLASA_0669 (degree 1291), 1146883.BLASA_4235 (degree
+1216), 1146883.BLASA_2282 (degree 1150) and 1146883.BLASA_2440 (degree
+1117).
 
 
 References
@@ -107,14 +108,15 @@ def BlastococcusSaxobsidens(
 	
 	Datetime: 2021-02-02 22:59:16.024876
 	
-	The undirected graph Blastococcus saxobsidens has 4787 nodes and 392718 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03428
-	and has 17 connected components, where the component with most nodes has 4751 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 164.08, and the node degree mode is 5. The top 5
-	most central nodes are 1146883.BLASA_2296 (degree 1472), 1146883.BLASA_0669 (degree
-	1291), 1146883.BLASA_4235 (degree 1216), 1146883.BLASA_2282 (degree 1150) and 1146883.BLASA_2440
-	(degree 1117).
+	The undirected graph Blastococcus saxobsidens has 4787 nodes and 392718
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03428 and has 17 connected components, where the component
+	with most nodes has 4751 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 164.08,
+	and the node degree mode is 5. The top 5 most central nodes are 1146883.BLASA_2296
+	(degree 1472), 1146883.BLASA_0669 (degree 1291), 1146883.BLASA_4235 (degree
+	1216), 1146883.BLASA_2282 (degree 1150) and 1146883.BLASA_2440 (degree
+	1117).
 	
 
 

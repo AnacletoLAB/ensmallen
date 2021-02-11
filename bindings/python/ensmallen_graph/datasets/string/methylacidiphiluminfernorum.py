@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:38.649662
 
-The undirected graph Methylacidiphilum infernorum has 2391 nodes and 130310 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04561
-and has 47 connected components, where the component with most nodes has 2262 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 109.00, and the node degree mode is 2. The top 5 most
-central nodes are 481448.Minf_2386 (degree 813), 481448.Minf_0244 (degree 694), 481448.Minf_0825
-(degree 655), 481448.Minf_0331 (degree 648) and 481448.Minf_2262 (degree 620).
+The undirected graph Methylacidiphilum infernorum has 2391 nodes and 130310
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04561 and has 47 connected components, where the component
+with most nodes has 2262 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 86, the mean node degree is 109.00,
+and the node degree mode is 2. The top 5 most central nodes are 481448.Minf_2386
+(degree 813), 481448.Minf_0244 (degree 694), 481448.Minf_0825 (degree 655),
+481448.Minf_0331 (degree 648) and 481448.Minf_2262 (degree 620).
 
 
 References
@@ -106,13 +107,14 @@ def MethylacidiphilumInfernorum(
 	
 	Datetime: 2021-02-02 20:57:38.649662
 	
-	The undirected graph Methylacidiphilum infernorum has 2391 nodes and 130310 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04561
-	and has 47 connected components, where the component with most nodes has 2262 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 109.00, and the node degree mode is 2. The top 5 most
-	central nodes are 481448.Minf_2386 (degree 813), 481448.Minf_0244 (degree 694), 481448.Minf_0825
-	(degree 655), 481448.Minf_0331 (degree 648) and 481448.Minf_2262 (degree 620).
+	The undirected graph Methylacidiphilum infernorum has 2391 nodes and 130310
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04561 and has 47 connected components, where the component
+	with most nodes has 2262 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 86, the mean node degree is 109.00,
+	and the node degree mode is 2. The top 5 most central nodes are 481448.Minf_2386
+	(degree 813), 481448.Minf_0244 (degree 694), 481448.Minf_0825 (degree 655),
+	481448.Minf_0331 (degree 648) and 481448.Minf_2262 (degree 620).
 	
 
 

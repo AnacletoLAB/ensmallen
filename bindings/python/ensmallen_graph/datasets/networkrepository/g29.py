@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:00:38.608925
 
-The undirected graph G29 has 2000 nodes and 19990 unweighted edges with 2 different
-edge types: 1 and -1, of which none are self-loops. The graph is dense as it has
-a density of 0.01000 and is connected, as it has a single component. The graph median
-node degree is 20, the mean node degree is 19.99, and the node degree mode is 18.
-The top 5 most central nodes are 1960 (degree 38), 1485 (degree 37), 1789 (degree
-37), 393 (degree 37) and 268 (degree 35).
+The undirected graph G29 has 2000 nodes and 19990 unweighted edges with
+2 different edge types: 1 and -1, of which none are self-loops. The graph
+is dense as it has a density of 0.01000 and is connected, as it has a single
+component. The graph median node degree is 20, the mean node degree is
+19.99, and the node degree mode is 18. The top 5 most central nodes are
+1960 (degree 38), 1485 (degree 37), 1789 (degree 37), 393 (degree 37) and
+268 (degree 35).
 
 
 References
@@ -102,12 +103,13 @@ def G29(
 	
 	Datetime: 2021-02-06 10:00:38.608925
 	
-	The undirected graph G29 has 2000 nodes and 19990 unweighted edges with 2 different
-	edge types: 1 and -1, of which none are self-loops. The graph is dense as it has
-	a density of 0.01000 and is connected, as it has a single component. The graph median
-	node degree is 20, the mean node degree is 19.99, and the node degree mode is 18.
-	The top 5 most central nodes are 1960 (degree 38), 1485 (degree 37), 1789 (degree
-	37), 393 (degree 37) and 268 (degree 35).
+	The undirected graph G29 has 2000 nodes and 19990 unweighted edges with
+	2 different edge types: 1 and -1, of which none are self-loops. The graph
+	is dense as it has a density of 0.01000 and is connected, as it has a single
+	component. The graph median node degree is 20, the mean node degree is
+	19.99, and the node degree mode is 18. The top 5 most central nodes are
+	1960 (degree 38), 1485 (degree 37), 1789 (degree 37), 393 (degree 37) and
+	268 (degree 35).
 	
 
 

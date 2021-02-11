@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:04.619742
 
-The undirected graph Kurthia sp. Dielmo has 4171 nodes and 483473 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05559 and
-has 35 connected components, where the component with most nodes has 4086 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 231.83, and the node degree mode is 3. The top 5 most central
-nodes are 1033738.CAEP01000043_gene1612 (degree 1354), 1033738.CAEP01000163_gene3359
-(degree 1173), 1033738.CAEP01000014_gene3217 (degree 1166), 1033738.CAEP01000007_gene2988
-(degree 1106) and 1033738.CAEP01000005_gene2387 (degree 1079).
+The undirected graph Kurthia sp. Dielmo has 4171 nodes and 483473 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05559 and has 35 connected components, where the component with most
+nodes has 4086 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 231.83, and
+the node degree mode is 3. The top 5 most central nodes are 1033738.CAEP01000043_gene1612
+(degree 1354), 1033738.CAEP01000163_gene3359 (degree 1173), 1033738.CAEP01000014_gene3217
+(degree 1166), 1033738.CAEP01000007_gene2988 (degree 1106) and 1033738.CAEP01000005_gene2387
+(degree 1079).
 
 
 References
@@ -107,14 +108,15 @@ def KurthiaSp.Dielmo(
 	
 	Datetime: 2021-02-02 22:11:04.619742
 	
-	The undirected graph Kurthia sp. Dielmo has 4171 nodes and 483473 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05559 and
-	has 35 connected components, where the component with most nodes has 4086 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 231.83, and the node degree mode is 3. The top 5 most central
-	nodes are 1033738.CAEP01000043_gene1612 (degree 1354), 1033738.CAEP01000163_gene3359
-	(degree 1173), 1033738.CAEP01000014_gene3217 (degree 1166), 1033738.CAEP01000007_gene2988
-	(degree 1106) and 1033738.CAEP01000005_gene2387 (degree 1079).
+	The undirected graph Kurthia sp. Dielmo has 4171 nodes and 483473 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05559 and has 35 connected components, where the component with most
+	nodes has 4086 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 231.83, and
+	the node degree mode is 3. The top 5 most central nodes are 1033738.CAEP01000043_gene1612
+	(degree 1354), 1033738.CAEP01000163_gene3359 (degree 1173), 1033738.CAEP01000014_gene3217
+	(degree 1166), 1033738.CAEP01000007_gene2988 (degree 1106) and 1033738.CAEP01000005_gene2387
+	(degree 1079).
 	
 
 

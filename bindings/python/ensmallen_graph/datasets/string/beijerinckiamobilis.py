@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:19.261961
 
-The undirected graph Beijerinckia mobilis has 3356 nodes and 298660 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05305 and
-has 16 connected components, where the component with most nodes has 3316 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 177.99, and the node degree mode is 2. The top 5 most central
-nodes are 231434.JQJH01000004_gene511 (degree 1318), 231434.JQJH01000003_gene427
-(degree 991), 231434.JQJH01000018_gene3074 (degree 974), 231434.JQJH01000002_gene2608
-(degree 960) and 231434.JQJH01000001_gene1931 (degree 942).
+The undirected graph Beijerinckia mobilis has 3356 nodes and 298660 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05305 and has 16 connected components, where the component with most
+nodes has 3316 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 177.99, and
+the node degree mode is 2. The top 5 most central nodes are 231434.JQJH01000004_gene511
+(degree 1318), 231434.JQJH01000003_gene427 (degree 991), 231434.JQJH01000018_gene3074
+(degree 974), 231434.JQJH01000002_gene2608 (degree 960) and 231434.JQJH01000001_gene1931
+(degree 942).
 
 
 References
@@ -107,14 +108,15 @@ def BeijerinckiaMobilis(
 	
 	Datetime: 2021-02-02 20:07:19.261961
 	
-	The undirected graph Beijerinckia mobilis has 3356 nodes and 298660 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05305 and
-	has 16 connected components, where the component with most nodes has 3316 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 177.99, and the node degree mode is 2. The top 5 most central
-	nodes are 231434.JQJH01000004_gene511 (degree 1318), 231434.JQJH01000003_gene427
-	(degree 991), 231434.JQJH01000018_gene3074 (degree 974), 231434.JQJH01000002_gene2608
-	(degree 960) and 231434.JQJH01000001_gene1931 (degree 942).
+	The undirected graph Beijerinckia mobilis has 3356 nodes and 298660 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05305 and has 16 connected components, where the component with most
+	nodes has 3316 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 177.99, and
+	the node degree mode is 2. The top 5 most central nodes are 231434.JQJH01000004_gene511
+	(degree 1318), 231434.JQJH01000003_gene427 (degree 991), 231434.JQJH01000018_gene3074
+	(degree 974), 231434.JQJH01000002_gene2608 (degree 960) and 231434.JQJH01000001_gene1931
+	(degree 942).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:24.417263
 
-The undirected graph Marinobacter adhaerens has 4146 nodes and 397072 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04621 and
-has 15 connected components, where the component with most nodes has 4114 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 191.54, and the node degree mode is 3. The top 5 most central
-nodes are 225937.HP15_293 (degree 1609), 225937.HP15_3392 (degree 1547), 225937.HP15_2415
-(degree 1309), 225937.HP15_1872 (degree 1260) and 225937.HP15_3808 (degree 1174).
+The undirected graph Marinobacter adhaerens has 4146 nodes and 397072 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04621 and has 15 connected components, where the component with most
+nodes has 4114 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 191.54, and
+the node degree mode is 3. The top 5 most central nodes are 225937.HP15_293
+(degree 1609), 225937.HP15_3392 (degree 1547), 225937.HP15_2415 (degree
+1309), 225937.HP15_1872 (degree 1260) and 225937.HP15_3808 (degree 1174).
 
 
 References
@@ -106,13 +107,14 @@ def MarinobacterAdhaerens(
 	
 	Datetime: 2021-02-02 20:06:24.417263
 	
-	The undirected graph Marinobacter adhaerens has 4146 nodes and 397072 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04621 and
-	has 15 connected components, where the component with most nodes has 4114 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 191.54, and the node degree mode is 3. The top 5 most central
-	nodes are 225937.HP15_293 (degree 1609), 225937.HP15_3392 (degree 1547), 225937.HP15_2415
-	(degree 1309), 225937.HP15_1872 (degree 1260) and 225937.HP15_3808 (degree 1174).
+	The undirected graph Marinobacter adhaerens has 4146 nodes and 397072 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04621 and has 15 connected components, where the component with most
+	nodes has 4114 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 191.54, and
+	the node degree mode is 3. The top 5 most central nodes are 225937.HP15_293
+	(degree 1609), 225937.HP15_3392 (degree 1547), 225937.HP15_2415 (degree
+	1309), 225937.HP15_1872 (degree 1260) and 225937.HP15_3808 (degree 1174).
 	
 
 

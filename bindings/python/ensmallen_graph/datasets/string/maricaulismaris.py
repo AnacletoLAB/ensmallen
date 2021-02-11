@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:04.639096
 
-The undirected graph Maricaulis maris has 3052 nodes and 273567 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05876 and
-has 6 connected components, where the component with most nodes has 3042 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 179.27, and the node degree mode is 3. The top 5 most central
-nodes are 394221.Mmar10_2218 (degree 1155), 394221.Mmar10_0016 (degree 1150), 394221.Mmar10_1184
-(degree 951), 394221.Mmar10_0715 (degree 890) and 394221.Mmar10_1175 (degree 830).
+The undirected graph Maricaulis maris has 3052 nodes and 273567 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05876 and has 6 connected components, where the component with most
+nodes has 3042 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 179.27, and
+the node degree mode is 3. The top 5 most central nodes are 394221.Mmar10_2218
+(degree 1155), 394221.Mmar10_0016 (degree 1150), 394221.Mmar10_1184 (degree
+951), 394221.Mmar10_0715 (degree 890) and 394221.Mmar10_1175 (degree 830).
 
 
 References
@@ -106,13 +107,14 @@ def MaricaulisMaris(
 	
 	Datetime: 2021-02-02 20:41:04.639096
 	
-	The undirected graph Maricaulis maris has 3052 nodes and 273567 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05876 and
-	has 6 connected components, where the component with most nodes has 3042 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 179.27, and the node degree mode is 3. The top 5 most central
-	nodes are 394221.Mmar10_2218 (degree 1155), 394221.Mmar10_0016 (degree 1150), 394221.Mmar10_1184
-	(degree 951), 394221.Mmar10_0715 (degree 890) and 394221.Mmar10_1175 (degree 830).
+	The undirected graph Maricaulis maris has 3052 nodes and 273567 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05876 and has 6 connected components, where the component with most
+	nodes has 3042 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 179.27, and
+	the node degree mode is 3. The top 5 most central nodes are 394221.Mmar10_2218
+	(degree 1155), 394221.Mmar10_0016 (degree 1150), 394221.Mmar10_1184 (degree
+	951), 394221.Mmar10_0715 (degree 890) and 394221.Mmar10_1175 (degree 830).
 	
 
 

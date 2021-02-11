@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:36.086698
 
-The undirected graph Erythrobacter vulgaris has 2648 nodes and 188804 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05387 and
-has 8 connected components, where the component with most nodes has 2633 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 142.60, and the node degree mode is 4. The top 5 most central
-nodes are 291985.CCSI01000007_gene512 (degree 1033), 291985.CCSI01000001_gene2492
-(degree 871), 291985.CCSI01000002_gene1634 (degree 840), 291985.CCSI01000001_gene2276
-(degree 756) and 291985.CCSI01000007_gene540 (degree 740).
+The undirected graph Erythrobacter vulgaris has 2648 nodes and 188804 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05387 and has 8 connected components, where the component with most
+nodes has 2633 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 142.60, and
+the node degree mode is 4. The top 5 most central nodes are 291985.CCSI01000007_gene512
+(degree 1033), 291985.CCSI01000001_gene2492 (degree 871), 291985.CCSI01000002_gene1634
+(degree 840), 291985.CCSI01000001_gene2276 (degree 756) and 291985.CCSI01000007_gene540
+(degree 740).
 
 
 References
@@ -107,14 +108,15 @@ def ErythrobacterVulgaris(
 	
 	Datetime: 2021-02-02 20:20:36.086698
 	
-	The undirected graph Erythrobacter vulgaris has 2648 nodes and 188804 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05387 and
-	has 8 connected components, where the component with most nodes has 2633 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 142.60, and the node degree mode is 4. The top 5 most central
-	nodes are 291985.CCSI01000007_gene512 (degree 1033), 291985.CCSI01000001_gene2492
-	(degree 871), 291985.CCSI01000002_gene1634 (degree 840), 291985.CCSI01000001_gene2276
-	(degree 756) and 291985.CCSI01000007_gene540 (degree 740).
+	The undirected graph Erythrobacter vulgaris has 2648 nodes and 188804 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05387 and has 8 connected components, where the component with most
+	nodes has 2633 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 142.60, and
+	the node degree mode is 4. The top 5 most central nodes are 291985.CCSI01000007_gene512
+	(degree 1033), 291985.CCSI01000001_gene2492 (degree 871), 291985.CCSI01000002_gene1634
+	(degree 840), 291985.CCSI01000001_gene2276 (degree 756) and 291985.CCSI01000007_gene540
+	(degree 740).
 	
 
 

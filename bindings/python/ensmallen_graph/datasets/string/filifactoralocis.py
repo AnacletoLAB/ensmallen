@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:29.593429
 
-The undirected graph Filifactor alocis has 1624 nodes and 91071 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06910 and
-has 8 connected components, where the component with most nodes has 1603 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 112.16, and the node degree mode is 5. The top 5 most central
-nodes are 546269.HMPREF0389_00606 (degree 718), 546269.HMPREF0389_00494 (degree 671),
-546269.HMPREF0389_01060 (degree 574), 546269.HMPREF0389_00351 (degree 563) and 546269.HMPREF0389_01061
+The undirected graph Filifactor alocis has 1624 nodes and 91071 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06910 and has 8 connected components, where the component with most
+nodes has 1603 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 112.16, and
+the node degree mode is 5. The top 5 most central nodes are 546269.HMPREF0389_00606
+(degree 718), 546269.HMPREF0389_00494 (degree 671), 546269.HMPREF0389_01060
+(degree 574), 546269.HMPREF0389_00351 (degree 563) and 546269.HMPREF0389_01061
 (degree 541).
 
 
@@ -107,13 +108,14 @@ def FilifactorAlocis(
 	
 	Datetime: 2021-02-02 21:08:29.593429
 	
-	The undirected graph Filifactor alocis has 1624 nodes and 91071 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06910 and
-	has 8 connected components, where the component with most nodes has 1603 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 112.16, and the node degree mode is 5. The top 5 most central
-	nodes are 546269.HMPREF0389_00606 (degree 718), 546269.HMPREF0389_00494 (degree 671),
-	546269.HMPREF0389_01060 (degree 574), 546269.HMPREF0389_00351 (degree 563) and 546269.HMPREF0389_01061
+	The undirected graph Filifactor alocis has 1624 nodes and 91071 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06910 and has 8 connected components, where the component with most
+	nodes has 1603 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 112.16, and
+	the node degree mode is 5. The top 5 most central nodes are 546269.HMPREF0389_00606
+	(degree 718), 546269.HMPREF0389_00494 (degree 671), 546269.HMPREF0389_01060
+	(degree 574), 546269.HMPREF0389_00351 (degree 563) and 546269.HMPREF0389_01061
 	(degree 541).
 	
 

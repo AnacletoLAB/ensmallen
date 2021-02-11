@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:56.600644
 
-The undirected graph Toxoplasma gondii has 4872 nodes and 559138 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04712 and
-has 200 connected components, where the component with most nodes has 4450 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 229.53, and the node degree mode is 1. The top 5
-most central nodes are 5811.TGME49_094900 (degree 1751), 5811.TGME49_016140 (degree
-1568), 5811.TGME49_032360 (degree 1503), 5811.TGME49_073760 (degree 1496) and 5811.TGME49_054370
-(degree 1438).
+The undirected graph Toxoplasma gondii has 4872 nodes and 559138 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04712 and has 200 connected components, where the component with most
+nodes has 4450 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 229.53, and
+the node degree mode is 1. The top 5 most central nodes are 5811.TGME49_094900
+(degree 1751), 5811.TGME49_016140 (degree 1568), 5811.TGME49_032360 (degree
+1503), 5811.TGME49_073760 (degree 1496) and 5811.TGME49_054370 (degree
+1438).
 
 
 References
@@ -107,14 +108,15 @@ def ToxoplasmaGondii(
 	
 	Datetime: 2021-02-02 17:15:56.600644
 	
-	The undirected graph Toxoplasma gondii has 4872 nodes and 559138 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04712 and
-	has 200 connected components, where the component with most nodes has 4450 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 229.53, and the node degree mode is 1. The top 5
-	most central nodes are 5811.TGME49_094900 (degree 1751), 5811.TGME49_016140 (degree
-	1568), 5811.TGME49_032360 (degree 1503), 5811.TGME49_073760 (degree 1496) and 5811.TGME49_054370
-	(degree 1438).
+	The undirected graph Toxoplasma gondii has 4872 nodes and 559138 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04712 and has 200 connected components, where the component with most
+	nodes has 4450 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 229.53, and
+	the node degree mode is 1. The top 5 most central nodes are 5811.TGME49_094900
+	(degree 1751), 5811.TGME49_016140 (degree 1568), 5811.TGME49_032360 (degree
+	1503), 5811.TGME49_073760 (degree 1496) and 5811.TGME49_054370 (degree
+	1438).
 	
 
 

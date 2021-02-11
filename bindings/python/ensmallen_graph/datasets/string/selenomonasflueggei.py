@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:41.981986
 
-The undirected graph Selenomonas flueggei has 2107 nodes and 188974 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08517 and
-has 7 connected components, where the component with most nodes has 2093 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 179.38, and the node degree mode is 9. The top 5 most central
-nodes are 638302.HMPREF0908_1413 (degree 883), 638302.HMPREF0908_1567 (degree 823),
-638302.HMPREF0908_1238 (degree 809), 638302.HMPREF0908_0784 (degree 790) and 638302.HMPREF0908_0020
+The undirected graph Selenomonas flueggei has 2107 nodes and 188974 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08517 and has 7 connected components, where the component with most
+nodes has 2093 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 179.38, and
+the node degree mode is 9. The top 5 most central nodes are 638302.HMPREF0908_1413
+(degree 883), 638302.HMPREF0908_1567 (degree 823), 638302.HMPREF0908_1238
+(degree 809), 638302.HMPREF0908_0784 (degree 790) and 638302.HMPREF0908_0020
 (degree 767).
 
 
@@ -107,13 +108,14 @@ def SelenomonasFlueggei(
 	
 	Datetime: 2021-02-02 21:22:41.981986
 	
-	The undirected graph Selenomonas flueggei has 2107 nodes and 188974 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08517 and
-	has 7 connected components, where the component with most nodes has 2093 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 179.38, and the node degree mode is 9. The top 5 most central
-	nodes are 638302.HMPREF0908_1413 (degree 883), 638302.HMPREF0908_1567 (degree 823),
-	638302.HMPREF0908_1238 (degree 809), 638302.HMPREF0908_0784 (degree 790) and 638302.HMPREF0908_0020
+	The undirected graph Selenomonas flueggei has 2107 nodes and 188974 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08517 and has 7 connected components, where the component with most
+	nodes has 2093 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 179.38, and
+	the node degree mode is 9. The top 5 most central nodes are 638302.HMPREF0908_1413
+	(degree 883), 638302.HMPREF0908_1567 (degree 823), 638302.HMPREF0908_1238
+	(degree 809), 638302.HMPREF0908_0784 (degree 790) and 638302.HMPREF0908_0020
 	(degree 767).
 	
 

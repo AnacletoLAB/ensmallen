@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:12.418279
 
-The undirected graph Streptacidiphilus jiangxiensis has 8506 nodes and 1868161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05165
-and has 38 connected components, where the component with most nodes has 8415 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 411, the mean node degree is 439.26, and the node degree mode is 1. The top 5
-most central nodes are 235985.BBPN01000001_gene1399 (degree 2624), 235985.BBPN01000028_gene2214
+The undirected graph Streptacidiphilus jiangxiensis has 8506 nodes and
+1868161 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05165 and has 38 connected components, where the
+component with most nodes has 8415 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 411, the mean node degree
+is 439.26, and the node degree mode is 1. The top 5 most central nodes
+are 235985.BBPN01000001_gene1399 (degree 2624), 235985.BBPN01000028_gene2214
 (degree 2383), 235985.BBPN01000028_gene2229 (degree 2245), 235985.BBPN01000046_gene8136
 (degree 2195) and 235985.BBPN01000023_gene2711 (degree 2147).
 
@@ -107,12 +108,13 @@ def StreptacidiphilusJiangxiensis(
 	
 	Datetime: 2021-02-02 20:08:12.418279
 	
-	The undirected graph Streptacidiphilus jiangxiensis has 8506 nodes and 1868161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05165
-	and has 38 connected components, where the component with most nodes has 8415 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 411, the mean node degree is 439.26, and the node degree mode is 1. The top 5
-	most central nodes are 235985.BBPN01000001_gene1399 (degree 2624), 235985.BBPN01000028_gene2214
+	The undirected graph Streptacidiphilus jiangxiensis has 8506 nodes and
+	1868161 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05165 and has 38 connected components, where the
+	component with most nodes has 8415 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 411, the mean node degree
+	is 439.26, and the node degree mode is 1. The top 5 most central nodes
+	are 235985.BBPN01000001_gene1399 (degree 2624), 235985.BBPN01000028_gene2214
 	(degree 2383), 235985.BBPN01000028_gene2229 (degree 2245), 235985.BBPN01000046_gene8136
 	(degree 2195) and 235985.BBPN01000023_gene2711 (degree 2147).
 	

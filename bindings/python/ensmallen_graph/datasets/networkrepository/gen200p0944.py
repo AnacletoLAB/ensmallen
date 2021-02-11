@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:23.765296
 
-The undirected graph gen200-p0-9-44 has 200 nodes and 17910 unweighted edges, of
-which none are self-loops. The graph is extremely dense as it has a density of 0.90000
-and is connected, as it has a single component. The graph median node degree is 180,
-the mean node degree is 179.10 and the node degree mode is 180. The top 5 most central
-nodes are 49 (degree 190), 2 (degree 190), 126 (degree 189), 98 (degree 189) and
-86 (degree 189).
+The undirected graph gen200-p0-9-44 has 200 nodes and 17910 unweighted
+edges, of which none are self-loops. The graph is extremely dense as it
+has a density of 0.90000 and is connected, as it has a single component.
+The graph median node degree is 180, the mean node degree is 179.10 and
+the node degree mode is 180. The top 5 most central nodes are 49 (degree
+190), 2 (degree 190), 126 (degree 189), 98 (degree 189) and 86 (degree
+189).
 
 
 References
@@ -115,12 +116,13 @@ def Gen200P0944(
 	
 	Datetime: 2021-02-03 22:54:23.765296
 	
-	The undirected graph gen200-p0-9-44 has 200 nodes and 17910 unweighted edges, of
-	which none are self-loops. The graph is extremely dense as it has a density of 0.90000
-	and is connected, as it has a single component. The graph median node degree is 180,
-	the mean node degree is 179.10 and the node degree mode is 180. The top 5 most central
-	nodes are 49 (degree 190), 2 (degree 190), 126 (degree 189), 98 (degree 189) and
-	86 (degree 189).
+	The undirected graph gen200-p0-9-44 has 200 nodes and 17910 unweighted
+	edges, of which none are self-loops. The graph is extremely dense as it
+	has a density of 0.90000 and is connected, as it has a single component.
+	The graph median node degree is 180, the mean node degree is 179.10 and
+	the node degree mode is 180. The top 5 most central nodes are 49 (degree
+	190), 2 (degree 190), 126 (degree 189), 98 (degree 189) and 86 (degree
+	189).
 	
 
 

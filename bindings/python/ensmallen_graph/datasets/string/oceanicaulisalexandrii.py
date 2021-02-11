@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:51.059881
 
-The undirected graph Oceanicaulis alexandrii has 2746 nodes and 266852 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07080 and
-has 2 connected components, where the component with most nodes has 2744 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 194.36, and the node degree mode is 2. The top 5 most central
-nodes are 1122613.ATUP01000001_gene1698 (degree 1062), 1122613.ATUP01000001_gene1703
-(degree 928), 1122613.ATUP01000001_gene710 (degree 892), 1122613.ATUP01000002_gene2479
-(degree 891) and 1122613.ATUP01000001_gene661 (degree 834).
+The undirected graph Oceanicaulis alexandrii has 2746 nodes and 266852
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07080 and has 2 connected components, where the component
+with most nodes has 2744 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 194.36,
+and the node degree mode is 2. The top 5 most central nodes are 1122613.ATUP01000001_gene1698
+(degree 1062), 1122613.ATUP01000001_gene1703 (degree 928), 1122613.ATUP01000001_gene710
+(degree 892), 1122613.ATUP01000002_gene2479 (degree 891) and 1122613.ATUP01000001_gene661
+(degree 834).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicaulisAlexandrii(
 	
 	Datetime: 2021-02-02 22:43:51.059881
 	
-	The undirected graph Oceanicaulis alexandrii has 2746 nodes and 266852 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07080 and
-	has 2 connected components, where the component with most nodes has 2744 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 194.36, and the node degree mode is 2. The top 5 most central
-	nodes are 1122613.ATUP01000001_gene1698 (degree 1062), 1122613.ATUP01000001_gene1703
-	(degree 928), 1122613.ATUP01000001_gene710 (degree 892), 1122613.ATUP01000002_gene2479
-	(degree 891) and 1122613.ATUP01000001_gene661 (degree 834).
+	The undirected graph Oceanicaulis alexandrii has 2746 nodes and 266852
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07080 and has 2 connected components, where the component
+	with most nodes has 2744 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 194.36,
+	and the node degree mode is 2. The top 5 most central nodes are 1122613.ATUP01000001_gene1698
+	(degree 1062), 1122613.ATUP01000001_gene1703 (degree 928), 1122613.ATUP01000001_gene710
+	(degree 892), 1122613.ATUP01000002_gene2479 (degree 891) and 1122613.ATUP01000001_gene661
+	(degree 834).
 	
 
 

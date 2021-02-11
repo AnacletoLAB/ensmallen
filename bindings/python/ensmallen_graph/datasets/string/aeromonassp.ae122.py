@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:37.335807
 
-The undirected graph Aeromonas sp. AE122 has 3731 nodes and 574124 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08251 and
-has 2 connected components, where the component with most nodes has 3729 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 261,
-the mean node degree is 307.76, and the node degree mode is 1. The top 5 most central
-nodes are 558884.JRGM01000038_gene2001 (degree 1636), 558884.JRGM01000017_gene2520
-(degree 1561), 558884.JRGM01000180_gene3752 (degree 1538), 558884.JRGM01000014_gene2199
-(degree 1525) and 558884.JRGM01000011_gene3098 (degree 1491).
+The undirected graph Aeromonas sp. AE122 has 3731 nodes and 574124 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08251 and has 2 connected components, where the component with most
+nodes has 3729 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 261, the mean node degree is 307.76, and
+the node degree mode is 1. The top 5 most central nodes are 558884.JRGM01000038_gene2001
+(degree 1636), 558884.JRGM01000017_gene2520 (degree 1561), 558884.JRGM01000180_gene3752
+(degree 1538), 558884.JRGM01000014_gene2199 (degree 1525) and 558884.JRGM01000011_gene3098
+(degree 1491).
 
 
 References
@@ -107,14 +108,15 @@ def AeromonasSp.Ae122(
 	
 	Datetime: 2021-02-02 21:11:37.335807
 	
-	The undirected graph Aeromonas sp. AE122 has 3731 nodes and 574124 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08251 and
-	has 2 connected components, where the component with most nodes has 3729 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 261,
-	the mean node degree is 307.76, and the node degree mode is 1. The top 5 most central
-	nodes are 558884.JRGM01000038_gene2001 (degree 1636), 558884.JRGM01000017_gene2520
-	(degree 1561), 558884.JRGM01000180_gene3752 (degree 1538), 558884.JRGM01000014_gene2199
-	(degree 1525) and 558884.JRGM01000011_gene3098 (degree 1491).
+	The undirected graph Aeromonas sp. AE122 has 3731 nodes and 574124 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08251 and has 2 connected components, where the component with most
+	nodes has 3729 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 261, the mean node degree is 307.76, and
+	the node degree mode is 1. The top 5 most central nodes are 558884.JRGM01000038_gene2001
+	(degree 1636), 558884.JRGM01000017_gene2520 (degree 1561), 558884.JRGM01000180_gene3752
+	(degree 1538), 558884.JRGM01000014_gene2199 (degree 1525) and 558884.JRGM01000011_gene3098
+	(degree 1491).
 	
 
 

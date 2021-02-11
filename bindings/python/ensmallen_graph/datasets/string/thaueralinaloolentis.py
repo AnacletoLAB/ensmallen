@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:54.307158
 
-The undirected graph Thauera linaloolentis has 3823 nodes and 356562 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04881 and
-has 8 connected components, where the component with most nodes has 3796 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 186.54, and the node degree mode is 1. The top 5 most central
-nodes are 1123367.C666_04180 (degree 1408), 1123367.C666_08675 (degree 1190), 1123367.C666_10525
-(degree 1160), 1123367.C666_08065 (degree 1111) and 1123367.C666_10535 (degree 1085).
+The undirected graph Thauera linaloolentis has 3823 nodes and 356562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04881 and has 8 connected components, where the component with most
+nodes has 3796 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 186.54, and
+the node degree mode is 1. The top 5 most central nodes are 1123367.C666_04180
+(degree 1408), 1123367.C666_08675 (degree 1190), 1123367.C666_10525 (degree
+1160), 1123367.C666_08065 (degree 1111) and 1123367.C666_10535 (degree
+1085).
 
 
 References
@@ -106,13 +108,15 @@ def ThaueraLinaloolentis(
 	
 	Datetime: 2021-02-02 22:51:54.307158
 	
-	The undirected graph Thauera linaloolentis has 3823 nodes and 356562 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04881 and
-	has 8 connected components, where the component with most nodes has 3796 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 186.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1123367.C666_04180 (degree 1408), 1123367.C666_08675 (degree 1190), 1123367.C666_10525
-	(degree 1160), 1123367.C666_08065 (degree 1111) and 1123367.C666_10535 (degree 1085).
+	The undirected graph Thauera linaloolentis has 3823 nodes and 356562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04881 and has 8 connected components, where the component with most
+	nodes has 3796 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 186.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1123367.C666_04180
+	(degree 1408), 1123367.C666_08675 (degree 1190), 1123367.C666_10525 (degree
+	1160), 1123367.C666_08065 (degree 1111) and 1123367.C666_10535 (degree
+	1085).
 	
 
 

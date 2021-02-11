@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:37.414637
 
-The undirected graph GlossGT has 67 nodes and 118 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.05337 and has 4 connected
-components, where the component with most nodes has 60 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 3, the mean node degree
-is 3.52, and the node degree mode is 1. The top 5 most central nodes are 71 (degree
-18), 30 (degree 16), 28 (degree 12), 26 (degree 9) and 6 (degree 8).
+The undirected graph GlossGT has 67 nodes and 118 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.05337
+and has 4 connected components, where the component with most nodes has
+60 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 3, the mean node degree is 3.52, and the node degree
+mode is 1. The top 5 most central nodes are 71 (degree 18), 30 (degree
+16), 28 (degree 12), 26 (degree 9) and 6 (degree 8).
 
 
 References
@@ -102,12 +103,13 @@ def Glossgt(
 	
 	Datetime: 2021-02-06 07:59:37.414637
 	
-	The undirected graph GlossGT has 67 nodes and 118 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.05337 and has 4 connected
-	components, where the component with most nodes has 60 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 3, the mean node degree
-	is 3.52, and the node degree mode is 1. The top 5 most central nodes are 71 (degree
-	18), 30 (degree 16), 28 (degree 12), 26 (degree 9) and 6 (degree 8).
+	The undirected graph GlossGT has 67 nodes and 118 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.05337
+	and has 4 connected components, where the component with most nodes has
+	60 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 3, the mean node degree is 3.52, and the node degree
+	mode is 1. The top 5 most central nodes are 71 (degree 18), 30 (degree
+	16), 28 (degree 12), 26 (degree 9) and 6 (degree 8).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:25.927520
 
-The undirected graph Odyssella thessalonicensis has 2397 nodes and 149276 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05198
-and has 64 connected components, where the component with most nodes has 2235 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 124.55, and the node degree mode is 1. The top 5
-most central nodes are 985867.AEWF01000001_gene2018 (degree 797), 985867.AEWF01000001_gene1950
-(degree 727), 985867.AEWF01000004_gene208 (degree 600), 985867.AEWF01000002_gene1365
-(degree 599) and 985867.AEWF01000004_gene246 (degree 591).
+The undirected graph Odyssella thessalonicensis has 2397 nodes and 149276
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05198 and has 64 connected components, where the component
+with most nodes has 2235 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 124.55,
+and the node degree mode is 1. The top 5 most central nodes are 985867.AEWF01000001_gene2018
+(degree 797), 985867.AEWF01000001_gene1950 (degree 727), 985867.AEWF01000004_gene208
+(degree 600), 985867.AEWF01000002_gene1365 (degree 599) and 985867.AEWF01000004_gene246
+(degree 591).
 
 
 References
@@ -107,14 +108,15 @@ def OdyssellaThessalonicensis(
 	
 	Datetime: 2021-02-02 22:04:25.927520
 	
-	The undirected graph Odyssella thessalonicensis has 2397 nodes and 149276 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05198
-	and has 64 connected components, where the component with most nodes has 2235 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 124.55, and the node degree mode is 1. The top 5
-	most central nodes are 985867.AEWF01000001_gene2018 (degree 797), 985867.AEWF01000001_gene1950
-	(degree 727), 985867.AEWF01000004_gene208 (degree 600), 985867.AEWF01000002_gene1365
-	(degree 599) and 985867.AEWF01000004_gene246 (degree 591).
+	The undirected graph Odyssella thessalonicensis has 2397 nodes and 149276
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05198 and has 64 connected components, where the component
+	with most nodes has 2235 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 124.55,
+	and the node degree mode is 1. The top 5 most central nodes are 985867.AEWF01000001_gene2018
+	(degree 797), 985867.AEWF01000001_gene1950 (degree 727), 985867.AEWF01000004_gene208
+	(degree 600), 985867.AEWF01000002_gene1365 (degree 599) and 985867.AEWF01000004_gene246
+	(degree 591).
 	
 
 

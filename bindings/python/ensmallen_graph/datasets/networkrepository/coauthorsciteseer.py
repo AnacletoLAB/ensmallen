@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:11:48.318501
 
-The undirected graph coAuthorsCiteseer has 227320 nodes and 814134 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00003 and is connected, as it has a single component. The graph median node degree
-is 4, the mean node degree is 7.16 and the node degree mode is 2. The top 5 most
-central nodes are 1156 (degree 1372), 409 (degree 483), 432 (degree 482), 3879 (degree
-386) and 3878 (degree 386).
+The undirected graph coAuthorsCiteseer has 227320 nodes and 814134 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 7.16 and the
+node degree mode is 2. The top 5 most central nodes are 1156 (degree 1372),
+409 (degree 483), 432 (degree 482), 3879 (degree 386) and 3878 (degree
+386).
 
 
 References
@@ -102,12 +103,13 @@ def Coauthorsciteseer(
 	
 	Datetime: 2021-02-03 23:11:48.318501
 	
-	The undirected graph coAuthorsCiteseer has 227320 nodes and 814134 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00003 and is connected, as it has a single component. The graph median node degree
-	is 4, the mean node degree is 7.16 and the node degree mode is 2. The top 5 most
-	central nodes are 1156 (degree 1372), 409 (degree 483), 432 (degree 482), 3879 (degree
-	386) and 3878 (degree 386).
+	The undirected graph coAuthorsCiteseer has 227320 nodes and 814134 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 7.16 and the
+	node degree mode is 2. The top 5 most central nodes are 1156 (degree 1372),
+	409 (degree 483), 432 (degree 482), 3879 (degree 386) and 3878 (degree
+	386).
 	
 
 

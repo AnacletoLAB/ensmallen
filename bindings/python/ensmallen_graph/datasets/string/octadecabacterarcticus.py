@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:06.012987
 
-The undirected graph Octadecabacter arcticus has 4519 nodes and 463479 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04540 and
-has 7 connected components, where the component with most nodes has 4503 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 205.12, and the node degree mode is 7. The top 5 most central
-nodes are 391616.OA238_c35360 (degree 1637), 391616.OA238_c46030 (degree 1467), 391616.OA238_c27050
-(degree 1201), 391616.OA238_c19010 (degree 1116) and 391616.OA238_c18000 (degree
+The undirected graph Octadecabacter arcticus has 4519 nodes and 463479
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04540 and has 7 connected components, where the component
+with most nodes has 4503 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 205.12,
+and the node degree mode is 7. The top 5 most central nodes are 391616.OA238_c35360
+(degree 1637), 391616.OA238_c46030 (degree 1467), 391616.OA238_c27050 (degree
+1201), 391616.OA238_c19010 (degree 1116) and 391616.OA238_c18000 (degree
 1084).
 
 
@@ -107,13 +108,14 @@ def OctadecabacterArcticus(
 	
 	Datetime: 2021-02-02 20:40:06.012987
 	
-	The undirected graph Octadecabacter arcticus has 4519 nodes and 463479 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04540 and
-	has 7 connected components, where the component with most nodes has 4503 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 205.12, and the node degree mode is 7. The top 5 most central
-	nodes are 391616.OA238_c35360 (degree 1637), 391616.OA238_c46030 (degree 1467), 391616.OA238_c27050
-	(degree 1201), 391616.OA238_c19010 (degree 1116) and 391616.OA238_c18000 (degree
+	The undirected graph Octadecabacter arcticus has 4519 nodes and 463479
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04540 and has 7 connected components, where the component
+	with most nodes has 4503 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 205.12,
+	and the node degree mode is 7. The top 5 most central nodes are 391616.OA238_c35360
+	(degree 1637), 391616.OA238_c46030 (degree 1467), 391616.OA238_c27050 (degree
+	1201), 391616.OA238_c19010 (degree 1116) and 391616.OA238_c18000 (degree
 	1084).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:24:21.942352
 
-The undirected graph Leeuwenhoekiella sp. MAR2009132 has 3464 nodes and 276817 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04615
-and has 12 connected components, where the component with most nodes has 3436 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 159.83, and the node degree mode is 4. The top 5
-most central nodes are 1392489.JPOL01000002_gene3013 (degree 1162), 1392489.JPOL01000002_gene1406
+The undirected graph Leeuwenhoekiella sp. MAR2009132 has 3464 nodes and
+276817 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04615 and has 12 connected components, where the
+component with most nodes has 3436 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 159.83, and the node degree mode is 4. The top 5 most central nodes
+are 1392489.JPOL01000002_gene3013 (degree 1162), 1392489.JPOL01000002_gene1406
 (degree 1148), 1392489.JPOL01000002_gene2633 (degree 942), 1392489.JPOL01000002_gene827
 (degree 832) and 1392489.JPOL01000002_gene1586 (degree 792).
 
@@ -107,12 +108,13 @@ def LeeuwenhoekiellaSp.Mar2009132(
 	
 	Datetime: 2021-02-03 22:24:21.942352
 	
-	The undirected graph Leeuwenhoekiella sp. MAR2009132 has 3464 nodes and 276817 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04615
-	and has 12 connected components, where the component with most nodes has 3436 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 159.83, and the node degree mode is 4. The top 5
-	most central nodes are 1392489.JPOL01000002_gene3013 (degree 1162), 1392489.JPOL01000002_gene1406
+	The undirected graph Leeuwenhoekiella sp. MAR2009132 has 3464 nodes and
+	276817 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04615 and has 12 connected components, where the
+	component with most nodes has 3436 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 159.83, and the node degree mode is 4. The top 5 most central nodes
+	are 1392489.JPOL01000002_gene3013 (degree 1162), 1392489.JPOL01000002_gene1406
 	(degree 1148), 1392489.JPOL01000002_gene2633 (degree 942), 1392489.JPOL01000002_gene827
 	(degree 832) and 1392489.JPOL01000002_gene1586 (degree 792).
 	

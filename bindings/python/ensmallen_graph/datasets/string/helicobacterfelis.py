@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:16.616569
 
-The undirected graph Helicobacter felis has 1635 nodes and 80753 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06045 and
-has 14 connected components, where the component with most nodes has 1592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 69,
-the mean node degree is 98.78, and the node degree mode is 3. The top 5 most central
-nodes are 936155.HFELIS_05360 (degree 571), 936155.HFELIS_07500 (degree 565), 936155.HFELIS_09460
-(degree 511), 936155.HFELIS_11900 (degree 489) and 936155.HFELIS_06490 (degree 468).
+The undirected graph Helicobacter felis has 1635 nodes and 80753 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06045 and has 14 connected components, where the component with most
+nodes has 1592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 69, the mean node degree is 98.78, and
+the node degree mode is 3. The top 5 most central nodes are 936155.HFELIS_05360
+(degree 571), 936155.HFELIS_07500 (degree 565), 936155.HFELIS_09460 (degree
+511), 936155.HFELIS_11900 (degree 489) and 936155.HFELIS_06490 (degree
+468).
 
 
 References
@@ -106,13 +108,15 @@ def HelicobacterFelis(
 	
 	Datetime: 2021-02-02 22:00:16.616569
 	
-	The undirected graph Helicobacter felis has 1635 nodes and 80753 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06045 and
-	has 14 connected components, where the component with most nodes has 1592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 69,
-	the mean node degree is 98.78, and the node degree mode is 3. The top 5 most central
-	nodes are 936155.HFELIS_05360 (degree 571), 936155.HFELIS_07500 (degree 565), 936155.HFELIS_09460
-	(degree 511), 936155.HFELIS_11900 (degree 489) and 936155.HFELIS_06490 (degree 468).
+	The undirected graph Helicobacter felis has 1635 nodes and 80753 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06045 and has 14 connected components, where the component with most
+	nodes has 1592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 69, the mean node degree is 98.78, and
+	the node degree mode is 3. The top 5 most central nodes are 936155.HFELIS_05360
+	(degree 571), 936155.HFELIS_07500 (degree 565), 936155.HFELIS_09460 (degree
+	511), 936155.HFELIS_11900 (degree 489) and 936155.HFELIS_06490 (degree
+	468).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:52.874230
 
-The undirected graph Listeria welshimeri has 2763 nodes and 254374 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06667 and
-has 13 connected components, where the component with most nodes has 2719 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 184.13, and the node degree mode is 4. The top 5 most central
-nodes are 386043.lwe1578 (degree 1086), 386043.lwe0820 (degree 1031), 386043.lwe0182
-(degree 934), 386043.lwe1071 (degree 893) and 386043.lwe1470 (degree 827).
+The undirected graph Listeria welshimeri has 2763 nodes and 254374 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06667 and has 13 connected components, where the component with most
+nodes has 2719 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 184.13, and
+the node degree mode is 4. The top 5 most central nodes are 386043.lwe1578
+(degree 1086), 386043.lwe0820 (degree 1031), 386043.lwe0182 (degree 934),
+386043.lwe1071 (degree 893) and 386043.lwe1470 (degree 827).
 
 
 References
@@ -106,13 +107,14 @@ def ListeriaWelshimeri(
 	
 	Datetime: 2021-02-02 20:37:52.874230
 	
-	The undirected graph Listeria welshimeri has 2763 nodes and 254374 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06667 and
-	has 13 connected components, where the component with most nodes has 2719 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 184.13, and the node degree mode is 4. The top 5 most central
-	nodes are 386043.lwe1578 (degree 1086), 386043.lwe0820 (degree 1031), 386043.lwe0182
-	(degree 934), 386043.lwe1071 (degree 893) and 386043.lwe1470 (degree 827).
+	The undirected graph Listeria welshimeri has 2763 nodes and 254374 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06667 and has 13 connected components, where the component with most
+	nodes has 2719 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 184.13, and
+	the node degree mode is 4. The top 5 most central nodes are 386043.lwe1578
+	(degree 1086), 386043.lwe0820 (degree 1031), 386043.lwe0182 (degree 934),
+	386043.lwe1071 (degree 893) and 386043.lwe1470 (degree 827).
 	
 
 

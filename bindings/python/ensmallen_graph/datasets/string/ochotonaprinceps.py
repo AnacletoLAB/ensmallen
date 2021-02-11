@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:46:59.340859
 
-The undirected graph Ochotona princeps has 18002 nodes and 3428264 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02116 and
-has 2 connected components, where the component with most nodes has 18000 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 380.88, and the node degree mode is 1. The top 5 most central
-nodes are 9978.XP_004579042.1 (degree 3914), 9978.XP_004577016.1 (degree 3854), 9978.XP_004594227.1
-(degree 3837), 9978.XP_004594559.1 (degree 3560) and 9978.XP_004595471.1 (degree
+The undirected graph Ochotona princeps has 18002 nodes and 3428264 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02116 and has 2 connected components, where the component with most
+nodes has 18000 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 380.88, and
+the node degree mode is 1. The top 5 most central nodes are 9978.XP_004579042.1
+(degree 3914), 9978.XP_004577016.1 (degree 3854), 9978.XP_004594227.1 (degree
+3837), 9978.XP_004594559.1 (degree 3560) and 9978.XP_004595471.1 (degree
 3410).
 
 
@@ -107,13 +108,14 @@ def OchotonaPrinceps(
 	
 	Datetime: 2021-02-02 17:46:59.340859
 	
-	The undirected graph Ochotona princeps has 18002 nodes and 3428264 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02116 and
-	has 2 connected components, where the component with most nodes has 18000 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 380.88, and the node degree mode is 1. The top 5 most central
-	nodes are 9978.XP_004579042.1 (degree 3914), 9978.XP_004577016.1 (degree 3854), 9978.XP_004594227.1
-	(degree 3837), 9978.XP_004594559.1 (degree 3560) and 9978.XP_004595471.1 (degree
+	The undirected graph Ochotona princeps has 18002 nodes and 3428264 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02116 and has 2 connected components, where the component with most
+	nodes has 18000 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 380.88, and
+	the node degree mode is 1. The top 5 most central nodes are 9978.XP_004579042.1
+	(degree 3914), 9978.XP_004577016.1 (degree 3854), 9978.XP_004594227.1 (degree
+	3837), 9978.XP_004594559.1 (degree 3560) and 9978.XP_004595471.1 (degree
 	3410).
 	
 

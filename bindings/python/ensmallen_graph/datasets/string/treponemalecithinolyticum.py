@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:43.380803
 
-The undirected graph Treponema lecithinolyticum has 2148 nodes and 142908 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06198
-and has 10 connected components, where the component with most nodes has 2124 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 133.06, and the node degree mode is 5. The top 5 most
-central nodes are 1321815.HMPREF9193_00353 (degree 842), 1321815.HMPREF9193_00657
-(degree 764), 1321815.HMPREF9193_00067 (degree 731), 1321815.HMPREF9193_01784 (degree
-716) and 1321815.HMPREF9193_01157 (degree 715).
+The undirected graph Treponema lecithinolyticum has 2148 nodes and 142908
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06198 and has 10 connected components, where the component
+with most nodes has 2124 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 133.06,
+and the node degree mode is 5. The top 5 most central nodes are 1321815.HMPREF9193_00353
+(degree 842), 1321815.HMPREF9193_00657 (degree 764), 1321815.HMPREF9193_00067
+(degree 731), 1321815.HMPREF9193_01784 (degree 716) and 1321815.HMPREF9193_01157
+(degree 715).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaLecithinolyticum(
 	
 	Datetime: 2021-02-03 21:53:43.380803
 	
-	The undirected graph Treponema lecithinolyticum has 2148 nodes and 142908 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06198
-	and has 10 connected components, where the component with most nodes has 2124 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 133.06, and the node degree mode is 5. The top 5 most
-	central nodes are 1321815.HMPREF9193_00353 (degree 842), 1321815.HMPREF9193_00657
-	(degree 764), 1321815.HMPREF9193_00067 (degree 731), 1321815.HMPREF9193_01784 (degree
-	716) and 1321815.HMPREF9193_01157 (degree 715).
+	The undirected graph Treponema lecithinolyticum has 2148 nodes and 142908
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06198 and has 10 connected components, where the component
+	with most nodes has 2124 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 133.06,
+	and the node degree mode is 5. The top 5 most central nodes are 1321815.HMPREF9193_00353
+	(degree 842), 1321815.HMPREF9193_00657 (degree 764), 1321815.HMPREF9193_00067
+	(degree 731), 1321815.HMPREF9193_01784 (degree 716) and 1321815.HMPREF9193_01157
+	(degree 715).
 	
 
 

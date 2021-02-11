@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:36.471738
 
-The undirected graph Ruegeria conchae has 4255 nodes and 609840 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06738 and
-has 10 connected components, where the component with most nodes has 4229 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 286.65, and the node degree mode is 1. The top 5 most central
-nodes are 981384.AEYW01000003_gene2062 (degree 1848), 981384.AEYW01000004_gene1837
-(degree 1801), 981384.AEYW01000023_gene3875 (degree 1762), 981384.AEYW01000006_gene2777
-(degree 1540) and 981384.AEYW01000016_gene58 (degree 1519).
+The undirected graph Ruegeria conchae has 4255 nodes and 609840 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06738 and has 10 connected components, where the component with most
+nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 286.65, and
+the node degree mode is 1. The top 5 most central nodes are 981384.AEYW01000003_gene2062
+(degree 1848), 981384.AEYW01000004_gene1837 (degree 1801), 981384.AEYW01000023_gene3875
+(degree 1762), 981384.AEYW01000006_gene2777 (degree 1540) and 981384.AEYW01000016_gene58
+(degree 1519).
 
 
 References
@@ -107,14 +108,15 @@ def RuegeriaConchae(
 	
 	Datetime: 2021-02-02 22:03:36.471738
 	
-	The undirected graph Ruegeria conchae has 4255 nodes and 609840 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06738 and
-	has 10 connected components, where the component with most nodes has 4229 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 286.65, and the node degree mode is 1. The top 5 most central
-	nodes are 981384.AEYW01000003_gene2062 (degree 1848), 981384.AEYW01000004_gene1837
-	(degree 1801), 981384.AEYW01000023_gene3875 (degree 1762), 981384.AEYW01000006_gene2777
-	(degree 1540) and 981384.AEYW01000016_gene58 (degree 1519).
+	The undirected graph Ruegeria conchae has 4255 nodes and 609840 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06738 and has 10 connected components, where the component with most
+	nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 286.65, and
+	the node degree mode is 1. The top 5 most central nodes are 981384.AEYW01000003_gene2062
+	(degree 1848), 981384.AEYW01000004_gene1837 (degree 1801), 981384.AEYW01000023_gene3875
+	(degree 1762), 981384.AEYW01000006_gene2777 (degree 1540) and 981384.AEYW01000016_gene58
+	(degree 1519).
 	
 
 

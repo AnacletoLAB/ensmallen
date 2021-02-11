@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:40.432018
 
-The undirected graph Wolinella succinogenes has 2040 nodes and 183591 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08827 and
-has 3 connected components, where the component with most nodes has 2036 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 179.99, and the node degree mode is 8. The top 5 most central
-nodes are 273121.WS0850 (degree 1152), 273121.WS0430 (degree 960), 273121.WS0467
-(degree 842), 273121.WS1890 (degree 773) and 273121.WS1603 (degree 735).
+The undirected graph Wolinella succinogenes has 2040 nodes and 183591 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08827 and has 3 connected components, where the component with most
+nodes has 2036 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 179.99, and
+the node degree mode is 8. The top 5 most central nodes are 273121.WS0850
+(degree 1152), 273121.WS0430 (degree 960), 273121.WS0467 (degree 842),
+273121.WS1890 (degree 773) and 273121.WS1603 (degree 735).
 
 
 References
@@ -106,13 +107,14 @@ def WolinellaSuccinogenes(
 	
 	Datetime: 2021-02-02 20:17:40.432018
 	
-	The undirected graph Wolinella succinogenes has 2040 nodes and 183591 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08827 and
-	has 3 connected components, where the component with most nodes has 2036 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 179.99, and the node degree mode is 8. The top 5 most central
-	nodes are 273121.WS0850 (degree 1152), 273121.WS0430 (degree 960), 273121.WS0467
-	(degree 842), 273121.WS1890 (degree 773) and 273121.WS1603 (degree 735).
+	The undirected graph Wolinella succinogenes has 2040 nodes and 183591 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08827 and has 3 connected components, where the component with most
+	nodes has 2036 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 179.99, and
+	the node degree mode is 8. The top 5 most central nodes are 273121.WS0850
+	(degree 1152), 273121.WS0430 (degree 960), 273121.WS0467 (degree 842),
+	273121.WS1890 (degree 773) and 273121.WS1603 (degree 735).
 	
 
 

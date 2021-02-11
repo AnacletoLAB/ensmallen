@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:38.093608
 
-The undirected graph Vibrio mimicus has 3736 nodes and 323002 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04630 and
-has 24 connected components, where the component with most nodes has 3681 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 172.91, and the node degree mode is 1. The top 5 most central
-nodes are 675806.VII_003701 (degree 1368), 675806.VII_002987 (degree 1169), 675806.VII_000402
-(degree 1095), 675806.VII_000845 (degree 1068) and 675806.VII_003129 (degree 1037).
+The undirected graph Vibrio mimicus has 3736 nodes and 323002 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04630 and has 24 connected components, where the component with most
+nodes has 3681 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 172.91, and
+the node degree mode is 1. The top 5 most central nodes are 675806.VII_003701
+(degree 1368), 675806.VII_002987 (degree 1169), 675806.VII_000402 (degree
+1095), 675806.VII_000845 (degree 1068) and 675806.VII_003129 (degree 1037).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioMimicus(
 	
 	Datetime: 2021-02-02 21:29:38.093608
 	
-	The undirected graph Vibrio mimicus has 3736 nodes and 323002 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04630 and
-	has 24 connected components, where the component with most nodes has 3681 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 172.91, and the node degree mode is 1. The top 5 most central
-	nodes are 675806.VII_003701 (degree 1368), 675806.VII_002987 (degree 1169), 675806.VII_000402
-	(degree 1095), 675806.VII_000845 (degree 1068) and 675806.VII_003129 (degree 1037).
+	The undirected graph Vibrio mimicus has 3736 nodes and 323002 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04630 and has 24 connected components, where the component with most
+	nodes has 3681 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 172.91, and
+	the node degree mode is 1. The top 5 most central nodes are 675806.VII_003701
+	(degree 1368), 675806.VII_002987 (degree 1169), 675806.VII_000402 (degree
+	1095), 675806.VII_000845 (degree 1068) and 675806.VII_003129 (degree 1037).
 	
 
 

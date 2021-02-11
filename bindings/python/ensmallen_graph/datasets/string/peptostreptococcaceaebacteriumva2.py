@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:05.008607
 
-The undirected graph Peptostreptococcaceae bacterium VA2 has 3508 nodes and 272655
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04432 and has 32 connected components, where the component with most nodes has
-3420 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 112, the mean node degree is 155.45, and the node degree mode is 2. The
-top 5 most central nodes are 1476973.JMMB01000007_gene2761 (degree 1267), 1476973.JMMB01000007_gene447
+The undirected graph Peptostreptococcaceae bacterium VA2 has 3508 nodes
+and 272655 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04432 and has 32 connected components, where the
+component with most nodes has 3420 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 155.45, and the node degree mode is 2. The top 5 most central nodes
+are 1476973.JMMB01000007_gene2761 (degree 1267), 1476973.JMMB01000007_gene447
 (degree 1156), 1476973.JMMB01000007_gene818 (degree 926), 1476973.JMMB01000007_gene536
 (degree 918) and 1476973.JMMB01000007_gene2647 (degree 902).
 
@@ -107,12 +108,13 @@ def PeptostreptococcaceaeBacteriumVa2(
 	
 	Datetime: 2021-02-03 23:13:05.008607
 	
-	The undirected graph Peptostreptococcaceae bacterium VA2 has 3508 nodes and 272655
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04432 and has 32 connected components, where the component with most nodes has
-	3420 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 112, the mean node degree is 155.45, and the node degree mode is 2. The
-	top 5 most central nodes are 1476973.JMMB01000007_gene2761 (degree 1267), 1476973.JMMB01000007_gene447
+	The undirected graph Peptostreptococcaceae bacterium VA2 has 3508 nodes
+	and 272655 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04432 and has 32 connected components, where the
+	component with most nodes has 3420 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 155.45, and the node degree mode is 2. The top 5 most central nodes
+	are 1476973.JMMB01000007_gene2761 (degree 1267), 1476973.JMMB01000007_gene447
 	(degree 1156), 1476973.JMMB01000007_gene818 (degree 926), 1476973.JMMB01000007_gene536
 	(degree 918) and 1476973.JMMB01000007_gene2647 (degree 902).
 	

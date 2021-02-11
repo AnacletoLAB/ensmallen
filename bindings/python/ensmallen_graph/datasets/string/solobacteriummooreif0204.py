@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:11.459733
 
-The undirected graph Solobacterium moorei F0204 has 2026 nodes and 224769 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10957 and has 8 connected components, where the component with most nodes has
-2004 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 199, the mean node degree is 221.88, and the node degree mode is 10. The
-top 5 most central nodes are 706433.HMPREF9430_00724 (degree 988), 706433.HMPREF9430_01436
-(degree 969), 706433.HMPREF9430_01689 (degree 950), 706433.HMPREF9430_01703 (degree
+The undirected graph Solobacterium moorei F0204 has 2026 nodes and 224769
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10957 and has 8 connected components, where the
+component with most nodes has 2004 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+is 221.88, and the node degree mode is 10. The top 5 most central nodes
+are 706433.HMPREF9430_00724 (degree 988), 706433.HMPREF9430_01436 (degree
+969), 706433.HMPREF9430_01689 (degree 950), 706433.HMPREF9430_01703 (degree
 903) and 706433.HMPREF9430_00054 (degree 899).
 
 
@@ -107,13 +108,14 @@ def SolobacteriumMooreiF0204(
 	
 	Datetime: 2021-02-02 21:34:11.459733
 	
-	The undirected graph Solobacterium moorei F0204 has 2026 nodes and 224769 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10957 and has 8 connected components, where the component with most nodes has
-	2004 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 199, the mean node degree is 221.88, and the node degree mode is 10. The
-	top 5 most central nodes are 706433.HMPREF9430_00724 (degree 988), 706433.HMPREF9430_01436
-	(degree 969), 706433.HMPREF9430_01689 (degree 950), 706433.HMPREF9430_01703 (degree
+	The undirected graph Solobacterium moorei F0204 has 2026 nodes and 224769
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10957 and has 8 connected components, where the
+	component with most nodes has 2004 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+	is 221.88, and the node degree mode is 10. The top 5 most central nodes
+	are 706433.HMPREF9430_00724 (degree 988), 706433.HMPREF9430_01436 (degree
+	969), 706433.HMPREF9430_01689 (degree 950), 706433.HMPREF9430_01703 (degree
 	903) and 706433.HMPREF9430_00054 (degree 899).
 	
 

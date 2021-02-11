@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:55.726219
 
-The undirected graph Sphingobium sp. ba1 has 4404 nodes and 368879 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03805 and
-has 32 connected components, where the component with most nodes has 4330 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 167.52, and the node degree mode is 2. The top 5 most central
-nodes are 1522072.IL54_1744 (degree 1502), 1522072.IL54_2086 (degree 1256), 1522072.IL54_0634
-(degree 1162), 1522072.IL54_1504 (degree 1156) and 1522072.IL54_3660 (degree 1046).
+The undirected graph Sphingobium sp. ba1 has 4404 nodes and 368879 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03805 and has 32 connected components, where the component with most
+nodes has 4330 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 167.52, and
+the node degree mode is 2. The top 5 most central nodes are 1522072.IL54_1744
+(degree 1502), 1522072.IL54_2086 (degree 1256), 1522072.IL54_0634 (degree
+1162), 1522072.IL54_1504 (degree 1156) and 1522072.IL54_3660 (degree 1046).
 
 
 References
@@ -106,13 +107,14 @@ def SphingobiumSp.Ba1(
 	
 	Datetime: 2021-02-03 23:17:55.726219
 	
-	The undirected graph Sphingobium sp. ba1 has 4404 nodes and 368879 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03805 and
-	has 32 connected components, where the component with most nodes has 4330 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 167.52, and the node degree mode is 2. The top 5 most central
-	nodes are 1522072.IL54_1744 (degree 1502), 1522072.IL54_2086 (degree 1256), 1522072.IL54_0634
-	(degree 1162), 1522072.IL54_1504 (degree 1156) and 1522072.IL54_3660 (degree 1046).
+	The undirected graph Sphingobium sp. ba1 has 4404 nodes and 368879 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03805 and has 32 connected components, where the component with most
+	nodes has 4330 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 167.52, and
+	the node degree mode is 2. The top 5 most central nodes are 1522072.IL54_1744
+	(degree 1502), 1522072.IL54_2086 (degree 1256), 1522072.IL54_0634 (degree
+	1162), 1522072.IL54_1504 (degree 1156) and 1522072.IL54_3660 (degree 1046).
 	
 
 

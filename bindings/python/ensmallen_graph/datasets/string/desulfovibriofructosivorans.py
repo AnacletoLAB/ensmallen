@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:03.874440
 
-The undirected graph Desulfovibrio fructosivorans has 4117 nodes and 588341 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06944
-and has 26 connected components, where the component with most nodes has 4043 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 233, the mean node degree is 285.81, and the node degree mode is 1. The top 5
-most central nodes are 596151.DesfrDRAFT_3579 (degree 1809), 596151.DesfrDRAFT_2021
-(degree 1524), 596151.DesfrDRAFT_1669 (degree 1514), 596151.DesfrDRAFT_1538 (degree
-1462) and 596151.DesfrDRAFT_0712 (degree 1443).
+The undirected graph Desulfovibrio fructosivorans has 4117 nodes and 588341
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06944 and has 26 connected components, where the component
+with most nodes has 4043 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 233, the mean node degree is 285.81,
+and the node degree mode is 1. The top 5 most central nodes are 596151.DesfrDRAFT_3579
+(degree 1809), 596151.DesfrDRAFT_2021 (degree 1524), 596151.DesfrDRAFT_1669
+(degree 1514), 596151.DesfrDRAFT_1538 (degree 1462) and 596151.DesfrDRAFT_0712
+(degree 1443).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioFructosivorans(
 	
 	Datetime: 2021-02-02 21:19:03.874440
 	
-	The undirected graph Desulfovibrio fructosivorans has 4117 nodes and 588341 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06944
-	and has 26 connected components, where the component with most nodes has 4043 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 233, the mean node degree is 285.81, and the node degree mode is 1. The top 5
-	most central nodes are 596151.DesfrDRAFT_3579 (degree 1809), 596151.DesfrDRAFT_2021
-	(degree 1524), 596151.DesfrDRAFT_1669 (degree 1514), 596151.DesfrDRAFT_1538 (degree
-	1462) and 596151.DesfrDRAFT_0712 (degree 1443).
+	The undirected graph Desulfovibrio fructosivorans has 4117 nodes and 588341
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06944 and has 26 connected components, where the component
+	with most nodes has 4043 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 233, the mean node degree is 285.81,
+	and the node degree mode is 1. The top 5 most central nodes are 596151.DesfrDRAFT_3579
+	(degree 1809), 596151.DesfrDRAFT_2021 (degree 1524), 596151.DesfrDRAFT_1669
+	(degree 1514), 596151.DesfrDRAFT_1538 (degree 1462) and 596151.DesfrDRAFT_0712
+	(degree 1443).
 	
 
 

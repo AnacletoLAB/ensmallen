@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:25:23.943953
 
-The undirected graph ENZYMES118 has 96 nodes with 2 different node types: 1 (nodes
-number 54) and 2 (nodes number 42), of which 1 are singletons, and 121 unweighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02654
-and has 2 connected components, where the component with most nodes has 95 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 2, the mean node degree is 2.52 and the node degree mode is 2. The top 5 most
-central nodes are 96 (degree 5), 54 (degree 5), 39 (degree 5), 55 (degree 4) and
-32 (degree 4).
+The undirected graph ENZYMES118 has 96 nodes with 2 different node types:
+1 (nodes number 54) and 2 (nodes number 42), of which 1 are singletons,
+and 121 unweighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.02654 and has 2 connected components, where the
+component with most nodes has 95 nodes and the component with the least
+nodes has a single node. The graph median node degree is 2, the mean node
+degree is 2.52 and the node degree mode is 2. The top 5 most central nodes
+are 96 (degree 5), 54 (degree 5), 39 (degree 5), 55 (degree 4) and 32 (degree
+4).
 
 
 References
@@ -104,14 +105,15 @@ def Enzymes118(
 	
 	Datetime: 2021-02-04 08:25:23.943953
 	
-	The undirected graph ENZYMES118 has 96 nodes with 2 different node types: 1 (nodes
-	number 54) and 2 (nodes number 42), of which 1 are singletons, and 121 unweighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02654
-	and has 2 connected components, where the component with most nodes has 95 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 2, the mean node degree is 2.52 and the node degree mode is 2. The top 5 most
-	central nodes are 96 (degree 5), 54 (degree 5), 39 (degree 5), 55 (degree 4) and
-	32 (degree 4).
+	The undirected graph ENZYMES118 has 96 nodes with 2 different node types:
+	1 (nodes number 54) and 2 (nodes number 42), of which 1 are singletons,
+	and 121 unweighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.02654 and has 2 connected components, where the
+	component with most nodes has 95 nodes and the component with the least
+	nodes has a single node. The graph median node degree is 2, the mean node
+	degree is 2.52 and the node degree mode is 2. The top 5 most central nodes
+	are 96 (degree 5), 54 (degree 5), 39 (degree 5), 55 (degree 4) and 32 (degree
+	4).
 	
 
 

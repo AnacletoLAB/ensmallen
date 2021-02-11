@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:51.857726
 
-The undirected graph Sphingopyxis sp. LC363 has 3870 nodes and 321290 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04292 and
-has 8 connected components, where the component with most nodes has 3856 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 166.04, and the node degree mode is 4. The top 5 most central
-nodes are 1120705.FG95_02600 (degree 1263), 1120705.FG95_01205 (degree 1108), 1120705.FG95_00760
-(degree 1084), 1120705.FG95_02838 (degree 1006) and 1120705.FG95_02586 (degree 980).
+The undirected graph Sphingopyxis sp. LC363 has 3870 nodes and 321290 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04292 and has 8 connected components, where the component with most
+nodes has 3856 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 166.04, and
+the node degree mode is 4. The top 5 most central nodes are 1120705.FG95_02600
+(degree 1263), 1120705.FG95_01205 (degree 1108), 1120705.FG95_00760 (degree
+1084), 1120705.FG95_02838 (degree 1006) and 1120705.FG95_02586 (degree
+980).
 
 
 References
@@ -106,13 +108,15 @@ def SphingopyxisSp.Lc363(
 	
 	Datetime: 2021-02-02 22:28:51.857726
 	
-	The undirected graph Sphingopyxis sp. LC363 has 3870 nodes and 321290 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04292 and
-	has 8 connected components, where the component with most nodes has 3856 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 166.04, and the node degree mode is 4. The top 5 most central
-	nodes are 1120705.FG95_02600 (degree 1263), 1120705.FG95_01205 (degree 1108), 1120705.FG95_00760
-	(degree 1084), 1120705.FG95_02838 (degree 1006) and 1120705.FG95_02586 (degree 980).
+	The undirected graph Sphingopyxis sp. LC363 has 3870 nodes and 321290 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04292 and has 8 connected components, where the component with most
+	nodes has 3856 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 166.04, and
+	the node degree mode is 4. The top 5 most central nodes are 1120705.FG95_02600
+	(degree 1263), 1120705.FG95_01205 (degree 1108), 1120705.FG95_00760 (degree
+	1084), 1120705.FG95_02838 (degree 1006) and 1120705.FG95_02586 (degree
+	980).
 	
 
 

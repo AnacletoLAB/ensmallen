@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:50.873431
 
-The undirected graph lshp2614 has 2614 nodes and 10297 unweighted edges, of which
-2614 are self-loops. The graph is sparse as it has a density of 0.00263 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.88, and the node degree mode is 7. The top 5 most central nodes are 2610 (degree
-7), 2607 (degree 7), 2606 (degree 7), 2603 (degree 7) and 2602 (degree 7).
+The undirected graph lshp2614 has 2614 nodes and 10297 unweighted edges,
+of which 2614 are self-loops. The graph is sparse as it has a density of
+0.00263 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.88, and the node degree mode
+is 7. The top 5 most central nodes are 2610 (degree 7), 2607 (degree 7),
+2606 (degree 7), 2603 (degree 7) and 2602 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp2614(
 	
 	Datetime: 2021-02-06 08:13:50.873431
 	
-	The undirected graph lshp2614 has 2614 nodes and 10297 unweighted edges, of which
-	2614 are self-loops. The graph is sparse as it has a density of 0.00263 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.88, and the node degree mode is 7. The top 5 most central nodes are 2610 (degree
-	7), 2607 (degree 7), 2606 (degree 7), 2603 (degree 7) and 2602 (degree 7).
+	The undirected graph lshp2614 has 2614 nodes and 10297 unweighted edges,
+	of which 2614 are self-loops. The graph is sparse as it has a density of
+	0.00263 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.88, and the node degree mode
+	is 7. The top 5 most central nodes are 2610 (degree 7), 2607 (degree 7),
+	2606 (degree 7), 2603 (degree 7) and 2602 (degree 7).
 	
 
 

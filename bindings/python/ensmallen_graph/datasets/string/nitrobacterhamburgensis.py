@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:12.564746
 
-The undirected graph Nitrobacter hamburgensis has 3901 nodes and 391162 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05142
-and has 18 connected components, where the component with most nodes has 3860 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 200.54, and the node degree mode is 3. The top 5
-most central nodes are 323097.Nham_0453 (degree 1353), 323097.Nham_3269 (degree 1247),
-323097.Nham_2542 (degree 993), 323097.Nham_0274 (degree 924) and 323097.Nham_0129
-(degree 902).
+The undirected graph Nitrobacter hamburgensis has 3901 nodes and 391162
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05142 and has 18 connected components, where the component
+with most nodes has 3860 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 200.54,
+and the node degree mode is 3. The top 5 most central nodes are 323097.Nham_0453
+(degree 1353), 323097.Nham_3269 (degree 1247), 323097.Nham_2542 (degree
+993), 323097.Nham_0274 (degree 924) and 323097.Nham_0129 (degree 902).
 
 
 References
@@ -107,14 +107,14 @@ def NitrobacterHamburgensis(
 	
 	Datetime: 2021-02-02 20:28:12.564746
 	
-	The undirected graph Nitrobacter hamburgensis has 3901 nodes and 391162 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05142
-	and has 18 connected components, where the component with most nodes has 3860 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 200.54, and the node degree mode is 3. The top 5
-	most central nodes are 323097.Nham_0453 (degree 1353), 323097.Nham_3269 (degree 1247),
-	323097.Nham_2542 (degree 993), 323097.Nham_0274 (degree 924) and 323097.Nham_0129
-	(degree 902).
+	The undirected graph Nitrobacter hamburgensis has 3901 nodes and 391162
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05142 and has 18 connected components, where the component
+	with most nodes has 3860 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 200.54,
+	and the node degree mode is 3. The top 5 most central nodes are 323097.Nham_0453
+	(degree 1353), 323097.Nham_3269 (degree 1247), 323097.Nham_2542 (degree
+	993), 323097.Nham_0274 (degree 924) and 323097.Nham_0129 (degree 902).
 	
 
 

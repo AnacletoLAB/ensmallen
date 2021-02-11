@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:59.709616
 
-The undirected graph Thermodesulfobacterium geofontis has 1588 nodes and 108569 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08616
-and is connected, as it has a single component. The graph median node degree is 117,
-the mean node degree is 136.74, and the node degree mode is 9. The top 5 most central
-nodes are 795359.TOPB45_0793 (degree 755), 795359.TOPB45_0265 (degree 623), 795359.TOPB45_0544
-(degree 612), 795359.TOPB45_0838 (degree 594) and 795359.TOPB45_0079 (degree 580).
+The undirected graph Thermodesulfobacterium geofontis has 1588 nodes and
+108569 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08616 and is connected, as it has a single component.
+The graph median node degree is 117, the mean node degree is 136.74, and
+the node degree mode is 9. The top 5 most central nodes are 795359.TOPB45_0793
+(degree 755), 795359.TOPB45_0265 (degree 623), 795359.TOPB45_0544 (degree
+612), 795359.TOPB45_0838 (degree 594) and 795359.TOPB45_0079 (degree 580).
 
 
 References
@@ -105,12 +106,13 @@ def ThermodesulfobacteriumGeofontis(
 	
 	Datetime: 2021-02-02 21:44:59.709616
 	
-	The undirected graph Thermodesulfobacterium geofontis has 1588 nodes and 108569 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08616
-	and is connected, as it has a single component. The graph median node degree is 117,
-	the mean node degree is 136.74, and the node degree mode is 9. The top 5 most central
-	nodes are 795359.TOPB45_0793 (degree 755), 795359.TOPB45_0265 (degree 623), 795359.TOPB45_0544
-	(degree 612), 795359.TOPB45_0838 (degree 594) and 795359.TOPB45_0079 (degree 580).
+	The undirected graph Thermodesulfobacterium geofontis has 1588 nodes and
+	108569 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08616 and is connected, as it has a single component.
+	The graph median node degree is 117, the mean node degree is 136.74, and
+	the node degree mode is 9. The top 5 most central nodes are 795359.TOPB45_0793
+	(degree 755), 795359.TOPB45_0265 (degree 623), 795359.TOPB45_0544 (degree
+	612), 795359.TOPB45_0838 (degree 594) and 795359.TOPB45_0079 (degree 580).
 	
 
 

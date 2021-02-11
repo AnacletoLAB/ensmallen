@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:51.833822
 
-The undirected graph Cryptosporidium muris has 2331 nodes and 338108 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12451
-and is connected, as it has a single component. The graph median node degree is 255,
-the mean node degree is 290.10, and the node degree mode is 1. The top 5 most central
-nodes are 5808.XP_002142221.1 (degree 1408), 5808.XP_002140852.1 (degree 1217), 5808.XP_002139408.1
-(degree 1103), 5808.XP_002140779.1 (degree 1025) and 5808.XP_002142079.1 (degree
+The undirected graph Cryptosporidium muris has 2331 nodes and 338108 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12451 and is connected, as it has a single component. The
+graph median node degree is 255, the mean node degree is 290.10, and the
+node degree mode is 1. The top 5 most central nodes are 5808.XP_002142221.1
+(degree 1408), 5808.XP_002140852.1 (degree 1217), 5808.XP_002139408.1 (degree
+1103), 5808.XP_002140779.1 (degree 1025) and 5808.XP_002142079.1 (degree
 1022).
 
 
@@ -106,12 +107,13 @@ def CryptosporidiumMuris(
 	
 	Datetime: 2021-02-02 17:15:51.833822
 	
-	The undirected graph Cryptosporidium muris has 2331 nodes and 338108 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12451
-	and is connected, as it has a single component. The graph median node degree is 255,
-	the mean node degree is 290.10, and the node degree mode is 1. The top 5 most central
-	nodes are 5808.XP_002142221.1 (degree 1408), 5808.XP_002140852.1 (degree 1217), 5808.XP_002139408.1
-	(degree 1103), 5808.XP_002140779.1 (degree 1025) and 5808.XP_002142079.1 (degree
+	The undirected graph Cryptosporidium muris has 2331 nodes and 338108 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12451 and is connected, as it has a single component. The
+	graph median node degree is 255, the mean node degree is 290.10, and the
+	node degree mode is 1. The top 5 most central nodes are 5808.XP_002142221.1
+	(degree 1408), 5808.XP_002140852.1 (degree 1217), 5808.XP_002139408.1 (degree
+	1103), 5808.XP_002140779.1 (degree 1025) and 5808.XP_002142079.1 (degree
 	1022).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:01.182199
 
-The undirected graph Oerskovia turbata has 3479 nodes and 369642 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06110 and
-has 7 connected components, where the component with most nodes has 3462 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 212.50, and the node degree mode is 1. The top 5 most central
-nodes are 1713.JOFV01000016_gene19 (degree 1090), 1713.JOFV01000015_gene1749 (degree
-1079), 1713.JOFV01000010_gene1160 (degree 1042), 1713.JOFV01000024_gene2108 (degree
-1010) and 1713.JOFV01000003_gene1411 (degree 1004).
+The undirected graph Oerskovia turbata has 3479 nodes and 369642 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06110 and has 7 connected components, where the component with most
+nodes has 3462 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 212.50, and
+the node degree mode is 1. The top 5 most central nodes are 1713.JOFV01000016_gene19
+(degree 1090), 1713.JOFV01000015_gene1749 (degree 1079), 1713.JOFV01000010_gene1160
+(degree 1042), 1713.JOFV01000024_gene2108 (degree 1010) and 1713.JOFV01000003_gene1411
+(degree 1004).
 
 
 References
@@ -107,14 +108,15 @@ def OerskoviaTurbata(
 	
 	Datetime: 2021-02-02 16:23:01.182199
 	
-	The undirected graph Oerskovia turbata has 3479 nodes and 369642 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06110 and
-	has 7 connected components, where the component with most nodes has 3462 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 212.50, and the node degree mode is 1. The top 5 most central
-	nodes are 1713.JOFV01000016_gene19 (degree 1090), 1713.JOFV01000015_gene1749 (degree
-	1079), 1713.JOFV01000010_gene1160 (degree 1042), 1713.JOFV01000024_gene2108 (degree
-	1010) and 1713.JOFV01000003_gene1411 (degree 1004).
+	The undirected graph Oerskovia turbata has 3479 nodes and 369642 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06110 and has 7 connected components, where the component with most
+	nodes has 3462 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 212.50, and
+	the node degree mode is 1. The top 5 most central nodes are 1713.JOFV01000016_gene19
+	(degree 1090), 1713.JOFV01000015_gene1749 (degree 1079), 1713.JOFV01000010_gene1160
+	(degree 1042), 1713.JOFV01000024_gene2108 (degree 1010) and 1713.JOFV01000003_gene1411
+	(degree 1004).
 	
 
 

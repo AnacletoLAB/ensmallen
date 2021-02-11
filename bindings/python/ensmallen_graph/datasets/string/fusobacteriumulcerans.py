@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:26.457904
 
-The undirected graph Fusobacterium ulcerans has 3174 nodes and 277947 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05520 and
-has 10 connected components, where the component with most nodes has 3154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 175.14, and the node degree mode is 3. The top 5 most central
-nodes are 469617.FUAG_01687 (degree 1391), 469617.FUAG_01977 (degree 1257), 469617.FUAG_01593
-(degree 943), 469617.FUAG_00269 (degree 919) and 469617.FUAG_02447 (degree 867).
+The undirected graph Fusobacterium ulcerans has 3174 nodes and 277947 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05520 and has 10 connected components, where the component with most
+nodes has 3154 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 175.14, and
+the node degree mode is 3. The top 5 most central nodes are 469617.FUAG_01687
+(degree 1391), 469617.FUAG_01977 (degree 1257), 469617.FUAG_01593 (degree
+943), 469617.FUAG_00269 (degree 919) and 469617.FUAG_02447 (degree 867).
 
 
 References
@@ -106,13 +107,14 @@ def FusobacteriumUlcerans(
 	
 	Datetime: 2021-02-02 20:55:26.457904
 	
-	The undirected graph Fusobacterium ulcerans has 3174 nodes and 277947 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05520 and
-	has 10 connected components, where the component with most nodes has 3154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 175.14, and the node degree mode is 3. The top 5 most central
-	nodes are 469617.FUAG_01687 (degree 1391), 469617.FUAG_01977 (degree 1257), 469617.FUAG_01593
-	(degree 943), 469617.FUAG_00269 (degree 919) and 469617.FUAG_02447 (degree 867).
+	The undirected graph Fusobacterium ulcerans has 3174 nodes and 277947 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05520 and has 10 connected components, where the component with most
+	nodes has 3154 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 175.14, and
+	the node degree mode is 3. The top 5 most central nodes are 469617.FUAG_01687
+	(degree 1391), 469617.FUAG_01977 (degree 1257), 469617.FUAG_01593 (degree
+	943), 469617.FUAG_00269 (degree 919) and 469617.FUAG_02447 (degree 867).
 	
 
 

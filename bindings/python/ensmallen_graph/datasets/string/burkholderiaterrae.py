@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:23.959105
 
-The undirected graph Burkholderia terrae has 8018 nodes and 1432287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04456 and
-has 30 connected components, where the component with most nodes has 7953 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 281,
-the mean node degree is 357.27, and the node degree mode is 1. The top 5 most central
-nodes are 1218084.BBJK01000100_gene6312 (degree 4140), 1218084.BBJK01000002_gene246
-(degree 3182), 1218084.BBJK01000171_gene7868 (degree 2944), 1218084.BBJK01000023_gene2336
-(degree 2904) and 1218084.BBJK01000148_gene7512 (degree 2868).
+The undirected graph Burkholderia terrae has 8018 nodes and 1432287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04456 and has 30 connected components, where the component with most
+nodes has 7953 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 281, the mean node degree is 357.27, and
+the node degree mode is 1. The top 5 most central nodes are 1218084.BBJK01000100_gene6312
+(degree 4140), 1218084.BBJK01000002_gene246 (degree 3182), 1218084.BBJK01000171_gene7868
+(degree 2944), 1218084.BBJK01000023_gene2336 (degree 2904) and 1218084.BBJK01000148_gene7512
+(degree 2868).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaTerrae(
 	
 	Datetime: 2021-02-02 23:22:23.959105
 	
-	The undirected graph Burkholderia terrae has 8018 nodes and 1432287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04456 and
-	has 30 connected components, where the component with most nodes has 7953 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 281,
-	the mean node degree is 357.27, and the node degree mode is 1. The top 5 most central
-	nodes are 1218084.BBJK01000100_gene6312 (degree 4140), 1218084.BBJK01000002_gene246
-	(degree 3182), 1218084.BBJK01000171_gene7868 (degree 2944), 1218084.BBJK01000023_gene2336
-	(degree 2904) and 1218084.BBJK01000148_gene7512 (degree 2868).
+	The undirected graph Burkholderia terrae has 8018 nodes and 1432287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04456 and has 30 connected components, where the component with most
+	nodes has 7953 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 281, the mean node degree is 357.27, and
+	the node degree mode is 1. The top 5 most central nodes are 1218084.BBJK01000100_gene6312
+	(degree 4140), 1218084.BBJK01000002_gene246 (degree 3182), 1218084.BBJK01000171_gene7868
+	(degree 2944), 1218084.BBJK01000023_gene2336 (degree 2904) and 1218084.BBJK01000148_gene7512
+	(degree 2868).
 	
 
 

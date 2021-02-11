@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:33.710127
 
-The undirected graph Lactobacillus sakei has 1865 nodes and 110204 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06340 and
-has 4 connected components, where the component with most nodes has 1858 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 118.18, and the node degree mode is 3. The top 5 most central
-nodes are 314315.LCA_1406 (degree 816), 314315.LCA_1236 (degree 615), 314315.LCA_1658
-(degree 610), 314315.LCA_0379 (degree 600) and 314315.LCA_0276 (degree 591).
+The undirected graph Lactobacillus sakei has 1865 nodes and 110204 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06340 and has 4 connected components, where the component with most
+nodes has 1858 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 118.18, and
+the node degree mode is 3. The top 5 most central nodes are 314315.LCA_1406
+(degree 816), 314315.LCA_1236 (degree 615), 314315.LCA_1658 (degree 610),
+314315.LCA_0379 (degree 600) and 314315.LCA_0276 (degree 591).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusSakei(
 	
 	Datetime: 2021-02-02 20:25:33.710127
 	
-	The undirected graph Lactobacillus sakei has 1865 nodes and 110204 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06340 and
-	has 4 connected components, where the component with most nodes has 1858 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 118.18, and the node degree mode is 3. The top 5 most central
-	nodes are 314315.LCA_1406 (degree 816), 314315.LCA_1236 (degree 615), 314315.LCA_1658
-	(degree 610), 314315.LCA_0379 (degree 600) and 314315.LCA_0276 (degree 591).
+	The undirected graph Lactobacillus sakei has 1865 nodes and 110204 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06340 and has 4 connected components, where the component with most
+	nodes has 1858 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 118.18, and
+	the node degree mode is 3. The top 5 most central nodes are 314315.LCA_1406
+	(degree 816), 314315.LCA_1236 (degree 615), 314315.LCA_1658 (degree 610),
+	314315.LCA_0379 (degree 600) and 314315.LCA_0276 (degree 591).
 	
 
 

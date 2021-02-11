@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:26.949531
 
-The undirected graph Lactobacillus fabifermentans has 3291 nodes and 265449 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-and has 30 connected components, where the component with most nodes has 3222 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 161.32, and the node degree mode is 1. The top 5
-most central nodes are 1400520.LFAB_06520 (degree 1274), 1400520.LFAB_15320 (degree
-1225), 1400520.LFAB_07050 (degree 1019), 1400520.LFAB_04000 (degree 979) and 1400520.LFAB_08630
-(degree 944).
+The undirected graph Lactobacillus fabifermentans has 3291 nodes and 265449
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04903 and has 30 connected components, where the component
+with most nodes has 3222 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 161.32,
+and the node degree mode is 1. The top 5 most central nodes are 1400520.LFAB_06520
+(degree 1274), 1400520.LFAB_15320 (degree 1225), 1400520.LFAB_07050 (degree
+1019), 1400520.LFAB_04000 (degree 979) and 1400520.LFAB_08630 (degree 944).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusFabifermentans(
 	
 	Datetime: 2021-02-03 22:31:26.949531
 	
-	The undirected graph Lactobacillus fabifermentans has 3291 nodes and 265449 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-	and has 30 connected components, where the component with most nodes has 3222 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 161.32, and the node degree mode is 1. The top 5
-	most central nodes are 1400520.LFAB_06520 (degree 1274), 1400520.LFAB_15320 (degree
-	1225), 1400520.LFAB_07050 (degree 1019), 1400520.LFAB_04000 (degree 979) and 1400520.LFAB_08630
-	(degree 944).
+	The undirected graph Lactobacillus fabifermentans has 3291 nodes and 265449
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04903 and has 30 connected components, where the component
+	with most nodes has 3222 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 161.32,
+	and the node degree mode is 1. The top 5 most central nodes are 1400520.LFAB_06520
+	(degree 1274), 1400520.LFAB_15320 (degree 1225), 1400520.LFAB_07050 (degree
+	1019), 1400520.LFAB_04000 (degree 979) and 1400520.LFAB_08630 (degree 944).
 	
 
 

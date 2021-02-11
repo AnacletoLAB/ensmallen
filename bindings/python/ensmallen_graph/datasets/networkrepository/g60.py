@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:07:33.446564
 
-The undirected graph G60 has 6957 nodes and 17148 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00071 and has
-2 connected components, where the component with most nodes has 6955 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 5, the
-mean node degree is 4.93, and the node degree mode is 4. The top 5 most central nodes
-are 4048 (degree 14), 1291 (degree 14), 1339 (degree 14), 5436 (degree 14) and 3012
-(degree 13).
+The undirected graph G60 has 6957 nodes and 17148 unweighted edges, of
+which none are self-loops. The graph is quite sparse as it has a density
+of 0.00071 and has 2 connected components, where the component with most
+nodes has 6955 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 5, the mean node degree is 4.93, and the
+node degree mode is 4. The top 5 most central nodes are 4048 (degree 14),
+1291 (degree 14), 1339 (degree 14), 5436 (degree 14) and 3012 (degree 13).
 
 
 References
@@ -103,13 +103,13 @@ def G60(
 	
 	Datetime: 2021-02-06 10:07:33.446564
 	
-	The undirected graph G60 has 6957 nodes and 17148 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00071 and has
-	2 connected components, where the component with most nodes has 6955 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 5, the
-	mean node degree is 4.93, and the node degree mode is 4. The top 5 most central nodes
-	are 4048 (degree 14), 1291 (degree 14), 1339 (degree 14), 5436 (degree 14) and 3012
-	(degree 13).
+	The undirected graph G60 has 6957 nodes and 17148 unweighted edges, of
+	which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00071 and has 2 connected components, where the component with most
+	nodes has 6955 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 5, the mean node degree is 4.93, and the
+	node degree mode is 4. The top 5 most central nodes are 4048 (degree 14),
+	1291 (degree 14), 1339 (degree 14), 5436 (degree 14) and 3012 (degree 13).
 	
 
 

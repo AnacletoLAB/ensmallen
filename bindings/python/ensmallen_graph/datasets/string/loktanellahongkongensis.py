@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:42.842279
 
-The undirected graph Loktanella hongkongensis has 2994 nodes and 235028 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05246
-and has 5 connected components, where the component with most nodes has 2986 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 157.00, and the node degree mode is 3. The top 5
-most central nodes are 1122180.Lokhon_02255 (degree 1205), 1122180.Lokhon_01755 (degree
-918), 1122180.Lokhon_00794 (degree 906), 1122180.Lokhon_02719 (degree 872) and 1122180.Lokhon_01269
+The undirected graph Loktanella hongkongensis has 2994 nodes and 235028
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05246 and has 5 connected components, where the component
+with most nodes has 2986 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 157.00,
+and the node degree mode is 3. The top 5 most central nodes are 1122180.Lokhon_02255
+(degree 1205), 1122180.Lokhon_01755 (degree 918), 1122180.Lokhon_00794
+(degree 906), 1122180.Lokhon_02719 (degree 872) and 1122180.Lokhon_01269
 (degree 825).
 
 
@@ -107,13 +108,14 @@ def LoktanellaHongkongensis(
 	
 	Datetime: 2021-02-02 22:41:42.842279
 	
-	The undirected graph Loktanella hongkongensis has 2994 nodes and 235028 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05246
-	and has 5 connected components, where the component with most nodes has 2986 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 157.00, and the node degree mode is 3. The top 5
-	most central nodes are 1122180.Lokhon_02255 (degree 1205), 1122180.Lokhon_01755 (degree
-	918), 1122180.Lokhon_00794 (degree 906), 1122180.Lokhon_02719 (degree 872) and 1122180.Lokhon_01269
+	The undirected graph Loktanella hongkongensis has 2994 nodes and 235028
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05246 and has 5 connected components, where the component
+	with most nodes has 2986 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 157.00,
+	and the node degree mode is 3. The top 5 most central nodes are 1122180.Lokhon_02255
+	(degree 1205), 1122180.Lokhon_01755 (degree 918), 1122180.Lokhon_00794
+	(degree 906), 1122180.Lokhon_02719 (degree 872) and 1122180.Lokhon_01269
 	(degree 825).
 	
 

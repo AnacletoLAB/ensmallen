@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:02.214896
 
-The undirected graph Imtechella halotolerans has 2687 nodes and 263507 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07302 and
-has 5 connected components, where the component with most nodes has 2679 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 196.13, and the node degree mode is 1. The top 5 most central
-nodes are 946077.W5A_03719 (degree 1011), 946077.W5A_08777 (degree 958), 946077.W5A_09049
-(degree 888), 946077.W5A_10210 (degree 846) and 946077.W5A_06600 (degree 737).
+The undirected graph Imtechella halotolerans has 2687 nodes and 263507
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07302 and has 5 connected components, where the component
+with most nodes has 2679 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 196.13,
+and the node degree mode is 1. The top 5 most central nodes are 946077.W5A_03719
+(degree 1011), 946077.W5A_08777 (degree 958), 946077.W5A_09049 (degree
+888), 946077.W5A_10210 (degree 846) and 946077.W5A_06600 (degree 737).
 
 
 References
@@ -106,13 +107,14 @@ def ImtechellaHalotolerans(
 	
 	Datetime: 2021-02-02 22:02:02.214896
 	
-	The undirected graph Imtechella halotolerans has 2687 nodes and 263507 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07302 and
-	has 5 connected components, where the component with most nodes has 2679 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 196.13, and the node degree mode is 1. The top 5 most central
-	nodes are 946077.W5A_03719 (degree 1011), 946077.W5A_08777 (degree 958), 946077.W5A_09049
-	(degree 888), 946077.W5A_10210 (degree 846) and 946077.W5A_06600 (degree 737).
+	The undirected graph Imtechella halotolerans has 2687 nodes and 263507
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07302 and has 5 connected components, where the component
+	with most nodes has 2679 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 196.13,
+	and the node degree mode is 1. The top 5 most central nodes are 946077.W5A_03719
+	(degree 1011), 946077.W5A_08777 (degree 958), 946077.W5A_09049 (degree
+	888), 946077.W5A_10210 (degree 846) and 946077.W5A_06600 (degree 737).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:14.575454
 
-The undirected graph Burkholderia phymatum has 5812 nodes and 597435 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03538 and
-has 28 connected components, where the component with most nodes has 5747 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 205.59, and the node degree mode is 2. The top 5 most central
-nodes are 391038.Bphy_4419 (degree 2315), 391038.Bphy_0135 (degree 2266), 391038.Bphy_0992
-(degree 1856), 391038.Bphy_5115 (degree 1685) and 391038.Bphy_2788 (degree 1666).
+The undirected graph Burkholderia phymatum has 5812 nodes and 597435 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03538 and has 28 connected components, where the component with most
+nodes has 5747 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 205.59, and
+the node degree mode is 2. The top 5 most central nodes are 391038.Bphy_4419
+(degree 2315), 391038.Bphy_0135 (degree 2266), 391038.Bphy_0992 (degree
+1856), 391038.Bphy_5115 (degree 1685) and 391038.Bphy_2788 (degree 1666).
 
 
 References
@@ -106,13 +107,14 @@ def BurkholderiaPhymatum(
 	
 	Datetime: 2021-02-02 20:39:14.575454
 	
-	The undirected graph Burkholderia phymatum has 5812 nodes and 597435 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03538 and
-	has 28 connected components, where the component with most nodes has 5747 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 205.59, and the node degree mode is 2. The top 5 most central
-	nodes are 391038.Bphy_4419 (degree 2315), 391038.Bphy_0135 (degree 2266), 391038.Bphy_0992
-	(degree 1856), 391038.Bphy_5115 (degree 1685) and 391038.Bphy_2788 (degree 1666).
+	The undirected graph Burkholderia phymatum has 5812 nodes and 597435 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03538 and has 28 connected components, where the component with most
+	nodes has 5747 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 205.59, and
+	the node degree mode is 2. The top 5 most central nodes are 391038.Bphy_4419
+	(degree 2315), 391038.Bphy_0135 (degree 2266), 391038.Bphy_0992 (degree
+	1856), 391038.Bphy_5115 (degree 1685) and 391038.Bphy_2788 (degree 1666).
 	
 
 

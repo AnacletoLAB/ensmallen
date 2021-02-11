@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:49.245108
 
-The undirected graph Bacillus sp. FF4 has 4312 nodes and 444501 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04782 and
-has 19 connected components, where the component with most nodes has 4263 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 206.17, and the node degree mode is 2. The top 5 most central
-nodes are 1347369.CCAD010000063_gene3926 (degree 1425), 1347369.CCAD010000024_gene1535
-(degree 1236), 1347369.CCAD010000007_gene2348 (degree 1218), 1347369.CCAD010000041_gene764
-(degree 1204) and 1347369.CCAD010000092_gene2063 (degree 1200).
+The undirected graph Bacillus sp. FF4 has 4312 nodes and 444501 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04782 and has 19 connected components, where the component with most
+nodes has 4263 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 206.17, and
+the node degree mode is 2. The top 5 most central nodes are 1347369.CCAD010000063_gene3926
+(degree 1425), 1347369.CCAD010000024_gene1535 (degree 1236), 1347369.CCAD010000007_gene2348
+(degree 1218), 1347369.CCAD010000041_gene764 (degree 1204) and 1347369.CCAD010000092_gene2063
+(degree 1200).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Ff4(
 	
 	Datetime: 2021-02-03 22:03:49.245108
 	
-	The undirected graph Bacillus sp. FF4 has 4312 nodes and 444501 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04782 and
-	has 19 connected components, where the component with most nodes has 4263 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 206.17, and the node degree mode is 2. The top 5 most central
-	nodes are 1347369.CCAD010000063_gene3926 (degree 1425), 1347369.CCAD010000024_gene1535
-	(degree 1236), 1347369.CCAD010000007_gene2348 (degree 1218), 1347369.CCAD010000041_gene764
-	(degree 1204) and 1347369.CCAD010000092_gene2063 (degree 1200).
+	The undirected graph Bacillus sp. FF4 has 4312 nodes and 444501 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04782 and has 19 connected components, where the component with most
+	nodes has 4263 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 206.17, and
+	the node degree mode is 2. The top 5 most central nodes are 1347369.CCAD010000063_gene3926
+	(degree 1425), 1347369.CCAD010000024_gene1535 (degree 1236), 1347369.CCAD010000007_gene2348
+	(degree 1218), 1347369.CCAD010000041_gene764 (degree 1204) and 1347369.CCAD010000092_gene2063
+	(degree 1200).
 	
 
 

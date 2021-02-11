@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:30.946388
 
-The undirected graph Streptococcus ferus has 1789 nodes and 118206 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07391 and
-has 7 connected components, where the component with most nodes has 1774 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 132.15, and the node degree mode is 10. The top 5 most central
-nodes are 1123303.AQVD01000003_gene1138 (degree 784), 1123303.AQVD01000003_gene1001
-(degree 691), 1123303.AQVD01000006_gene308 (degree 636), 1123303.AQVD01000002_gene1698
-(degree 598) and 1123303.AQVD01000005_gene1239 (degree 588).
+The undirected graph Streptococcus ferus has 1789 nodes and 118206 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07391 and has 7 connected components, where the component with most
+nodes has 1774 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 132.15, and
+the node degree mode is 10. The top 5 most central nodes are 1123303.AQVD01000003_gene1138
+(degree 784), 1123303.AQVD01000003_gene1001 (degree 691), 1123303.AQVD01000006_gene308
+(degree 636), 1123303.AQVD01000002_gene1698 (degree 598) and 1123303.AQVD01000005_gene1239
+(degree 588).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusFerus(
 	
 	Datetime: 2021-02-02 22:50:30.946388
 	
-	The undirected graph Streptococcus ferus has 1789 nodes and 118206 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07391 and
-	has 7 connected components, where the component with most nodes has 1774 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 132.15, and the node degree mode is 10. The top 5 most central
-	nodes are 1123303.AQVD01000003_gene1138 (degree 784), 1123303.AQVD01000003_gene1001
-	(degree 691), 1123303.AQVD01000006_gene308 (degree 636), 1123303.AQVD01000002_gene1698
-	(degree 598) and 1123303.AQVD01000005_gene1239 (degree 588).
+	The undirected graph Streptococcus ferus has 1789 nodes and 118206 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07391 and has 7 connected components, where the component with most
+	nodes has 1774 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 132.15, and
+	the node degree mode is 10. The top 5 most central nodes are 1123303.AQVD01000003_gene1138
+	(degree 784), 1123303.AQVD01000003_gene1001 (degree 691), 1123303.AQVD01000006_gene308
+	(degree 636), 1123303.AQVD01000002_gene1698 (degree 598) and 1123303.AQVD01000005_gene1239
+	(degree 588).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:49.014606
 
-The undirected graph Mycoplasma crocodyli has 675 nodes and 25453 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11189
-and has 5 connected components, where the component with most nodes has 666 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 50, the mean node degree is 75.42, and the node degree mode is 3. The top 5 most
-central nodes are 512564.MCRO_0173 (degree 264), 512564.MCRO_0739 (degree 241), 512564.MCRO_0478
-(degree 237), 512564.MCRO_0691 (degree 234) and 512564.MCRO_0266 (degree 231).
+The undirected graph Mycoplasma crocodyli has 675 nodes and 25453 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11189 and has 5 connected components, where the component
+with most nodes has 666 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 50, the mean node degree is 75.42,
+and the node degree mode is 3. The top 5 most central nodes are 512564.MCRO_0173
+(degree 264), 512564.MCRO_0739 (degree 241), 512564.MCRO_0478 (degree 237),
+512564.MCRO_0691 (degree 234) and 512564.MCRO_0266 (degree 231).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaCrocodyli(
 	
 	Datetime: 2021-02-02 21:02:49.014606
 	
-	The undirected graph Mycoplasma crocodyli has 675 nodes and 25453 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11189
-	and has 5 connected components, where the component with most nodes has 666 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 50, the mean node degree is 75.42, and the node degree mode is 3. The top 5 most
-	central nodes are 512564.MCRO_0173 (degree 264), 512564.MCRO_0739 (degree 241), 512564.MCRO_0478
-	(degree 237), 512564.MCRO_0691 (degree 234) and 512564.MCRO_0266 (degree 231).
+	The undirected graph Mycoplasma crocodyli has 675 nodes and 25453 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11189 and has 5 connected components, where the component
+	with most nodes has 666 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 50, the mean node degree is 75.42,
+	and the node degree mode is 3. The top 5 most central nodes are 512564.MCRO_0173
+	(degree 264), 512564.MCRO_0739 (degree 241), 512564.MCRO_0478 (degree 237),
+	512564.MCRO_0691 (degree 234) and 512564.MCRO_0266 (degree 231).
 	
 
 

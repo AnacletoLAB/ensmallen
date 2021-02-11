@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:49.203974
 
-The undirected graph Janibacter hoylei has 3032 nodes and 251562 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05475 and
-has 16 connected components, where the component with most nodes has 2995 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 165.94, and the node degree mode is 2. The top 5 most central
-nodes are 1210046.B277_11920 (degree 1049), 1210046.B277_09024 (degree 995), 1210046.B277_01549
-(degree 980), 1210046.B277_02888 (degree 925) and 1210046.B277_12261 (degree 923).
+The undirected graph Janibacter hoylei has 3032 nodes and 251562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05475 and has 16 connected components, where the component with most
+nodes has 2995 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 165.94, and
+the node degree mode is 2. The top 5 most central nodes are 1210046.B277_11920
+(degree 1049), 1210046.B277_09024 (degree 995), 1210046.B277_01549 (degree
+980), 1210046.B277_02888 (degree 925) and 1210046.B277_12261 (degree 923).
 
 
 References
@@ -106,13 +107,14 @@ def JanibacterHoylei(
 	
 	Datetime: 2021-02-02 23:18:49.203974
 	
-	The undirected graph Janibacter hoylei has 3032 nodes and 251562 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05475 and
-	has 16 connected components, where the component with most nodes has 2995 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 165.94, and the node degree mode is 2. The top 5 most central
-	nodes are 1210046.B277_11920 (degree 1049), 1210046.B277_09024 (degree 995), 1210046.B277_01549
-	(degree 980), 1210046.B277_02888 (degree 925) and 1210046.B277_12261 (degree 923).
+	The undirected graph Janibacter hoylei has 3032 nodes and 251562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05475 and has 16 connected components, where the component with most
+	nodes has 2995 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 165.94, and
+	the node degree mode is 2. The top 5 most central nodes are 1210046.B277_11920
+	(degree 1049), 1210046.B277_09024 (degree 995), 1210046.B277_01549 (degree
+	980), 1210046.B277_02888 (degree 925) and 1210046.B277_12261 (degree 923).
 	
 
 

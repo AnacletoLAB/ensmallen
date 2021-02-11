@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:22.571076
 
-The undirected graph Pantoea sp. At9b has 4054 nodes and 321586 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03914 and
-has 8 connected components, where the component with most nodes has 4032 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 158.65, and the node degree mode is 77. The top 5 most central
-nodes are 592316.Pat9b_1927 (degree 1496), 592316.Pat9b_3948 (degree 1327), 592316.Pat9b_1136
-(degree 1311), 592316.Pat9b_2027 (degree 1310) and 592316.Pat9b_1910 (degree 1210).
+The undirected graph Pantoea sp. At9b has 4054 nodes and 321586 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03914 and has 8 connected components, where the component with most
+nodes has 4032 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 158.65, and
+the node degree mode is 77. The top 5 most central nodes are 592316.Pat9b_1927
+(degree 1496), 592316.Pat9b_3948 (degree 1327), 592316.Pat9b_1136 (degree
+1311), 592316.Pat9b_2027 (degree 1310) and 592316.Pat9b_1910 (degree 1210).
 
 
 References
@@ -106,13 +107,14 @@ def PantoeaSp.At9b(
 	
 	Datetime: 2021-02-02 21:18:22.571076
 	
-	The undirected graph Pantoea sp. At9b has 4054 nodes and 321586 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03914 and
-	has 8 connected components, where the component with most nodes has 4032 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 158.65, and the node degree mode is 77. The top 5 most central
-	nodes are 592316.Pat9b_1927 (degree 1496), 592316.Pat9b_3948 (degree 1327), 592316.Pat9b_1136
-	(degree 1311), 592316.Pat9b_2027 (degree 1310) and 592316.Pat9b_1910 (degree 1210).
+	The undirected graph Pantoea sp. At9b has 4054 nodes and 321586 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03914 and has 8 connected components, where the component with most
+	nodes has 4032 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 158.65, and
+	the node degree mode is 77. The top 5 most central nodes are 592316.Pat9b_1927
+	(degree 1496), 592316.Pat9b_3948 (degree 1327), 592316.Pat9b_1136 (degree
+	1311), 592316.Pat9b_2027 (degree 1310) and 592316.Pat9b_1910 (degree 1210).
 	
 
 

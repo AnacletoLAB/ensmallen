@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:32.193336
 
-The undirected graph Clostridium pasteurianum DSM525 has 4004 nodes and 288270 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03597
-and has 7 connected components, where the component with most nodes has 3988 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 143.99, and the node degree mode is 4. The top 5
-most central nodes are 1262449.CP6013_2044 (degree 1427), 1262449.CP6013_3872 (degree
-1186), 1262449.CP6013_2669 (degree 1133), 1262449.CP6013_3739 (degree 1091) and 1262449.CP6013_3541
-(degree 1037).
+The undirected graph Clostridium pasteurianum DSM525 has 4004 nodes and
+288270 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03597 and has 7 connected components, where the
+component with most nodes has 3988 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+is 143.99, and the node degree mode is 4. The top 5 most central nodes
+are 1262449.CP6013_2044 (degree 1427), 1262449.CP6013_3872 (degree 1186),
+1262449.CP6013_2669 (degree 1133), 1262449.CP6013_3739 (degree 1091) and
+1262449.CP6013_3541 (degree 1037).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumPasteurianumDsm525(
 	
 	Datetime: 2021-02-02 23:35:32.193336
 	
-	The undirected graph Clostridium pasteurianum DSM525 has 4004 nodes and 288270 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03597
-	and has 7 connected components, where the component with most nodes has 3988 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 143.99, and the node degree mode is 4. The top 5
-	most central nodes are 1262449.CP6013_2044 (degree 1427), 1262449.CP6013_3872 (degree
-	1186), 1262449.CP6013_2669 (degree 1133), 1262449.CP6013_3739 (degree 1091) and 1262449.CP6013_3541
-	(degree 1037).
+	The undirected graph Clostridium pasteurianum DSM525 has 4004 nodes and
+	288270 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03597 and has 7 connected components, where the
+	component with most nodes has 3988 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+	is 143.99, and the node degree mode is 4. The top 5 most central nodes
+	are 1262449.CP6013_2044 (degree 1427), 1262449.CP6013_3872 (degree 1186),
+	1262449.CP6013_2669 (degree 1133), 1262449.CP6013_3739 (degree 1091) and
+	1262449.CP6013_3541 (degree 1037).
 	
 
 

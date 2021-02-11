@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:14.918616
 
-The undirected graph Rhinopithecus roxellana has 20529 nodes and 5351594 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02540
-and has 3 connected components, where the component with most nodes has 20525 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 374, the mean node degree is 521.37, and the node degree mode is 192. The top
-5 most central nodes are 61622.XP_010367216.1 (degree 5155), 61622.XP_010361780.1
-(degree 4863), 61622.XP_010385672.1 (degree 4646), 61622.XP_010380076.1 (degree 4443)
+The undirected graph Rhinopithecus roxellana has 20529 nodes and 5351594
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02540 and has 3 connected components, where the component
+with most nodes has 20525 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 374, the mean node degree
+is 521.37, and the node degree mode is 192. The top 5 most central nodes
+are 61622.XP_010367216.1 (degree 5155), 61622.XP_010361780.1 (degree 4863),
+61622.XP_010385672.1 (degree 4646), 61622.XP_010380076.1 (degree 4443)
 and 61622.XP_010386710.1 (degree 4208).
 
 
@@ -107,13 +108,14 @@ def RhinopithecusRoxellana(
 	
 	Datetime: 2021-02-02 18:23:14.918616
 	
-	The undirected graph Rhinopithecus roxellana has 20529 nodes and 5351594 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02540
-	and has 3 connected components, where the component with most nodes has 20525 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 374, the mean node degree is 521.37, and the node degree mode is 192. The top
-	5 most central nodes are 61622.XP_010367216.1 (degree 5155), 61622.XP_010361780.1
-	(degree 4863), 61622.XP_010385672.1 (degree 4646), 61622.XP_010380076.1 (degree 4443)
+	The undirected graph Rhinopithecus roxellana has 20529 nodes and 5351594
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02540 and has 3 connected components, where the component
+	with most nodes has 20525 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 374, the mean node degree
+	is 521.37, and the node degree mode is 192. The top 5 most central nodes
+	are 61622.XP_010367216.1 (degree 5155), 61622.XP_010361780.1 (degree 4863),
+	61622.XP_010385672.1 (degree 4646), 61622.XP_010380076.1 (degree 4443)
 	and 61622.XP_010386710.1 (degree 4208).
 	
 

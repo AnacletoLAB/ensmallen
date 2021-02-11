@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:47.749254
 
-The undirected graph Synechococcus sp. NKBG15041c has 2902 nodes and 249469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05927
-and has 6 connected components, where the component with most nodes has 2890 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 171.93, and the node degree mode is 3. The top 5
-most central nodes are 1407650.BAUB01000010_gene1980 (degree 1041), 1407650.BAUB01000010_gene1991
-(degree 1037), 1407650.BAUB01000022_gene2656 (degree 1014), 1407650.BAUB01000005_gene1293
-(degree 999) and 1407650.BAUB01000001_gene8 (degree 918).
+The undirected graph Synechococcus sp. NKBG15041c has 2902 nodes and 249469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05927 and has 6 connected components, where the component
+with most nodes has 2890 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 171.93,
+and the node degree mode is 3. The top 5 most central nodes are 1407650.BAUB01000010_gene1980
+(degree 1041), 1407650.BAUB01000010_gene1991 (degree 1037), 1407650.BAUB01000022_gene2656
+(degree 1014), 1407650.BAUB01000005_gene1293 (degree 999) and 1407650.BAUB01000001_gene8
+(degree 918).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Nkbg15041c(
 	
 	Datetime: 2021-02-03 22:33:47.749254
 	
-	The undirected graph Synechococcus sp. NKBG15041c has 2902 nodes and 249469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05927
-	and has 6 connected components, where the component with most nodes has 2890 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 171.93, and the node degree mode is 3. The top 5
-	most central nodes are 1407650.BAUB01000010_gene1980 (degree 1041), 1407650.BAUB01000010_gene1991
-	(degree 1037), 1407650.BAUB01000022_gene2656 (degree 1014), 1407650.BAUB01000005_gene1293
-	(degree 999) and 1407650.BAUB01000001_gene8 (degree 918).
+	The undirected graph Synechococcus sp. NKBG15041c has 2902 nodes and 249469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05927 and has 6 connected components, where the component
+	with most nodes has 2890 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 171.93,
+	and the node degree mode is 3. The top 5 most central nodes are 1407650.BAUB01000010_gene1980
+	(degree 1041), 1407650.BAUB01000010_gene1991 (degree 1037), 1407650.BAUB01000022_gene2656
+	(degree 1014), 1407650.BAUB01000005_gene1293 (degree 999) and 1407650.BAUB01000001_gene8
+	(degree 918).
 	
 
 

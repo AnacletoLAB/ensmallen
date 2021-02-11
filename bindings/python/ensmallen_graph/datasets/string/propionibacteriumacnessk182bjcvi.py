@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:18.915773
 
-The undirected graph Propionibacterium acnes SK182BJCVI has 2245 nodes and 195266
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07752 and has 13 connected components, where the component with most nodes has
-2217 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 157, the mean node degree is 173.96, and the node degree mode is 3. The
-top 5 most central nodes are 1051006.HMPREF1162_0581 (degree 986), 1051006.HMPREF1162_2110
-(degree 811), 1051006.HMPREF1162_1356 (degree 778), 1051006.HMPREF1162_1573 (degree
+The undirected graph Propionibacterium acnes SK182BJCVI has 2245 nodes
+and 195266 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07752 and has 13 connected components, where the
+component with most nodes has 2217 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 157, the mean node degree
+is 173.96, and the node degree mode is 3. The top 5 most central nodes
+are 1051006.HMPREF1162_0581 (degree 986), 1051006.HMPREF1162_2110 (degree
+811), 1051006.HMPREF1162_1356 (degree 778), 1051006.HMPREF1162_1573 (degree
 772) and 1051006.HMPREF1162_0648 (degree 747).
 
 
@@ -107,13 +108,14 @@ def PropionibacteriumAcnesSk182bjcvi(
 	
 	Datetime: 2021-02-02 22:17:18.915773
 	
-	The undirected graph Propionibacterium acnes SK182BJCVI has 2245 nodes and 195266
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07752 and has 13 connected components, where the component with most nodes has
-	2217 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 157, the mean node degree is 173.96, and the node degree mode is 3. The
-	top 5 most central nodes are 1051006.HMPREF1162_0581 (degree 986), 1051006.HMPREF1162_2110
-	(degree 811), 1051006.HMPREF1162_1356 (degree 778), 1051006.HMPREF1162_1573 (degree
+	The undirected graph Propionibacterium acnes SK182BJCVI has 2245 nodes
+	and 195266 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07752 and has 13 connected components, where the
+	component with most nodes has 2217 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 157, the mean node degree
+	is 173.96, and the node degree mode is 3. The top 5 most central nodes
+	are 1051006.HMPREF1162_0581 (degree 986), 1051006.HMPREF1162_2110 (degree
+	811), 1051006.HMPREF1162_1356 (degree 778), 1051006.HMPREF1162_1573 (degree
 	772) and 1051006.HMPREF1162_0648 (degree 747).
 	
 

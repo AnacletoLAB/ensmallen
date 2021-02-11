@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:16.470330
 
-The undirected graph Paenibacillus senegalensis has 4744 nodes and 500852 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04452
-and has 20 connected components, where the component with most nodes has 4701 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 211.15, and the node degree mode is 1. The top 5
-most central nodes are 1033743.CAES01000011_gene4268 (degree 1407), 1033743.CAES01000050_gene603
-(degree 1396), 1033743.CAES01000112_gene1498 (degree 1378), 1033743.CAES01000040_gene1413
-(degree 1351) and 1033743.CAES01000032_gene947 (degree 1344).
+The undirected graph Paenibacillus senegalensis has 4744 nodes and 500852
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04452 and has 20 connected components, where the component
+with most nodes has 4701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 211.15,
+and the node degree mode is 1. The top 5 most central nodes are 1033743.CAES01000011_gene4268
+(degree 1407), 1033743.CAES01000050_gene603 (degree 1396), 1033743.CAES01000112_gene1498
+(degree 1378), 1033743.CAES01000040_gene1413 (degree 1351) and 1033743.CAES01000032_gene947
+(degree 1344).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSenegalensis(
 	
 	Datetime: 2021-02-02 22:11:16.470330
 	
-	The undirected graph Paenibacillus senegalensis has 4744 nodes and 500852 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04452
-	and has 20 connected components, where the component with most nodes has 4701 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 211.15, and the node degree mode is 1. The top 5
-	most central nodes are 1033743.CAES01000011_gene4268 (degree 1407), 1033743.CAES01000050_gene603
-	(degree 1396), 1033743.CAES01000112_gene1498 (degree 1378), 1033743.CAES01000040_gene1413
-	(degree 1351) and 1033743.CAES01000032_gene947 (degree 1344).
+	The undirected graph Paenibacillus senegalensis has 4744 nodes and 500852
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04452 and has 20 connected components, where the component
+	with most nodes has 4701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 211.15,
+	and the node degree mode is 1. The top 5 most central nodes are 1033743.CAES01000011_gene4268
+	(degree 1407), 1033743.CAES01000050_gene603 (degree 1396), 1033743.CAES01000112_gene1498
+	(degree 1378), 1033743.CAES01000040_gene1413 (degree 1351) and 1033743.CAES01000032_gene947
+	(degree 1344).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:24:26.668737
 
-The undirected graph Lactobacillus equicursoris has 1908 nodes and 132827 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07301
-and has 11 connected components, where the component with most nodes has 1873 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 139.23, and the node degree mode is 5. The top 5
-most central nodes are 1293597.BN147_05410 (degree 898), 1293597.BN147_03610 (degree
-741), 1293597.BN147_09150 (degree 741), 1293597.BN147_06380 (degree 691) and 1293597.BN147_08645
-(degree 671).
+The undirected graph Lactobacillus equicursoris has 1908 nodes and 132827
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07301 and has 11 connected components, where the component
+with most nodes has 1873 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 139.23,
+and the node degree mode is 5. The top 5 most central nodes are 1293597.BN147_05410
+(degree 898), 1293597.BN147_03610 (degree 741), 1293597.BN147_09150 (degree
+741), 1293597.BN147_06380 (degree 691) and 1293597.BN147_08645 (degree
+671).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusEquicursoris(
 	
 	Datetime: 2021-02-03 21:24:26.668737
 	
-	The undirected graph Lactobacillus equicursoris has 1908 nodes and 132827 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07301
-	and has 11 connected components, where the component with most nodes has 1873 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 139.23, and the node degree mode is 5. The top 5
-	most central nodes are 1293597.BN147_05410 (degree 898), 1293597.BN147_03610 (degree
-	741), 1293597.BN147_09150 (degree 741), 1293597.BN147_06380 (degree 691) and 1293597.BN147_08645
-	(degree 671).
+	The undirected graph Lactobacillus equicursoris has 1908 nodes and 132827
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07301 and has 11 connected components, where the component
+	with most nodes has 1873 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 139.23,
+	and the node degree mode is 5. The top 5 most central nodes are 1293597.BN147_05410
+	(degree 898), 1293597.BN147_03610 (degree 741), 1293597.BN147_09150 (degree
+	741), 1293597.BN147_06380 (degree 691) and 1293597.BN147_08645 (degree
+	671).
 	
 
 

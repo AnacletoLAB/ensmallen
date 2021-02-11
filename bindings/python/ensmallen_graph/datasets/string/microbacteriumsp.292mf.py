@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:26.999819
 
-The undirected graph Microbacterium sp. 292MF has 3691 nodes and 305122 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04481
-and has 6 connected components, where the component with most nodes has 3681 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 165.33, and the node degree mode is 3. The top 5
-most central nodes are 1151122.AQYD01000007_gene665 (degree 1226), 1151122.AQYD01000005_gene3164
-(degree 1025), 1151122.AQYD01000005_gene3175 (degree 1017), 1151122.AQYD01000006_gene1905
-(degree 981) and 1151122.AQYD01000006_gene2332 (degree 978).
+The undirected graph Microbacterium sp. 292MF has 3691 nodes and 305122
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04481 and has 6 connected components, where the component
+with most nodes has 3681 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 165.33,
+and the node degree mode is 3. The top 5 most central nodes are 1151122.AQYD01000007_gene665
+(degree 1226), 1151122.AQYD01000005_gene3164 (degree 1025), 1151122.AQYD01000005_gene3175
+(degree 1017), 1151122.AQYD01000006_gene1905 (degree 981) and 1151122.AQYD01000006_gene2332
+(degree 978).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.292mf(
 	
 	Datetime: 2021-02-02 23:00:26.999819
 	
-	The undirected graph Microbacterium sp. 292MF has 3691 nodes and 305122 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04481
-	and has 6 connected components, where the component with most nodes has 3681 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 165.33, and the node degree mode is 3. The top 5
-	most central nodes are 1151122.AQYD01000007_gene665 (degree 1226), 1151122.AQYD01000005_gene3164
-	(degree 1025), 1151122.AQYD01000005_gene3175 (degree 1017), 1151122.AQYD01000006_gene1905
-	(degree 981) and 1151122.AQYD01000006_gene2332 (degree 978).
+	The undirected graph Microbacterium sp. 292MF has 3691 nodes and 305122
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04481 and has 6 connected components, where the component
+	with most nodes has 3681 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 165.33,
+	and the node degree mode is 3. The top 5 most central nodes are 1151122.AQYD01000007_gene665
+	(degree 1226), 1151122.AQYD01000005_gene3164 (degree 1025), 1151122.AQYD01000005_gene3175
+	(degree 1017), 1151122.AQYD01000006_gene1905 (degree 981) and 1151122.AQYD01000006_gene2332
+	(degree 978).
 	
 
 

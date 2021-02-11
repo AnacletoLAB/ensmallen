@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:26.416908
 
-The undirected graph Trichomonas vaginalis has 12722 nodes and 2577115 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03185 and
-has 12 connected components, where the component with most nodes has 12682 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 264, the mean node degree is 405.14, and the node degree mode is 132. The top
-5 most central nodes are 5722.XP_001324781.1 (degree 4145), 5722.XP_001322165.1 (degree
-3829), 5722.XP_001298868.1 (degree 3824), 5722.XP_001311648.1 (degree 3822) and 5722.XP_001308146.1
-(degree 3820).
+The undirected graph Trichomonas vaginalis has 12722 nodes and 2577115
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03185 and has 12 connected components, where the component
+with most nodes has 12682 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 264, the mean node degree
+is 405.14, and the node degree mode is 132. The top 5 most central nodes
+are 5722.XP_001324781.1 (degree 4145), 5722.XP_001322165.1 (degree 3829),
+5722.XP_001298868.1 (degree 3824), 5722.XP_001311648.1 (degree 3822) and
+5722.XP_001308146.1 (degree 3820).
 
 
 References
@@ -107,14 +108,15 @@ def TrichomonasVaginalis(
 	
 	Datetime: 2021-02-02 17:15:26.416908
 	
-	The undirected graph Trichomonas vaginalis has 12722 nodes and 2577115 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03185 and
-	has 12 connected components, where the component with most nodes has 12682 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 264, the mean node degree is 405.14, and the node degree mode is 132. The top
-	5 most central nodes are 5722.XP_001324781.1 (degree 4145), 5722.XP_001322165.1 (degree
-	3829), 5722.XP_001298868.1 (degree 3824), 5722.XP_001311648.1 (degree 3822) and 5722.XP_001308146.1
-	(degree 3820).
+	The undirected graph Trichomonas vaginalis has 12722 nodes and 2577115
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03185 and has 12 connected components, where the component
+	with most nodes has 12682 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 264, the mean node degree
+	is 405.14, and the node degree mode is 132. The top 5 most central nodes
+	are 5722.XP_001324781.1 (degree 4145), 5722.XP_001322165.1 (degree 3829),
+	5722.XP_001298868.1 (degree 3824), 5722.XP_001311648.1 (degree 3822) and
+	5722.XP_001308146.1 (degree 3820).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:21.495870
 
-The undirected graph Salsuginibacillus kocurii has 3573 nodes and 359158 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05628
-and has 22 connected components, where the component with most nodes has 3524 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 201.04, and the node degree mode is 2. The top 5
-most central nodes are 1123239.KB898623_gene1297 (degree 1379), 1123239.KB898623_gene1117
-(degree 1206), 1123239.KB898627_gene3600 (degree 1134), 1123239.KB898626_gene882
-(degree 1109) and 1123239.KB898628_gene3082 (degree 999).
+The undirected graph Salsuginibacillus kocurii has 3573 nodes and 359158
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05628 and has 22 connected components, where the component
+with most nodes has 3524 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 201.04,
+and the node degree mode is 2. The top 5 most central nodes are 1123239.KB898623_gene1297
+(degree 1379), 1123239.KB898623_gene1117 (degree 1206), 1123239.KB898627_gene3600
+(degree 1134), 1123239.KB898626_gene882 (degree 1109) and 1123239.KB898628_gene3082
+(degree 999).
 
 
 References
@@ -107,14 +108,15 @@ def SalsuginibacillusKocurii(
 	
 	Datetime: 2021-02-02 22:48:21.495870
 	
-	The undirected graph Salsuginibacillus kocurii has 3573 nodes and 359158 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05628
-	and has 22 connected components, where the component with most nodes has 3524 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 201.04, and the node degree mode is 2. The top 5
-	most central nodes are 1123239.KB898623_gene1297 (degree 1379), 1123239.KB898623_gene1117
-	(degree 1206), 1123239.KB898627_gene3600 (degree 1134), 1123239.KB898626_gene882
-	(degree 1109) and 1123239.KB898628_gene3082 (degree 999).
+	The undirected graph Salsuginibacillus kocurii has 3573 nodes and 359158
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05628 and has 22 connected components, where the component
+	with most nodes has 3524 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 201.04,
+	and the node degree mode is 2. The top 5 most central nodes are 1123239.KB898623_gene1297
+	(degree 1379), 1123239.KB898623_gene1117 (degree 1206), 1123239.KB898627_gene3600
+	(degree 1134), 1123239.KB898626_gene882 (degree 1109) and 1123239.KB898628_gene3082
+	(degree 999).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:58.427541
 
-The undirected graph Psychroserpens burtonensis has 3551 nodes and 268732 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04264
-and has 22 connected components, where the component with most nodes has 3495 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 151.36, and the node degree mode is 7. The top 5
-most central nodes are 1123037.AUDE01000013_gene556 (degree 1164), 1123037.AUDE01000009_gene1315
-(degree 1050), 1123037.AUDE01000008_gene804 (degree 1028), 1123037.AUDE01000027_gene2124
-(degree 954) and 1123037.AUDE01000018_gene2870 (degree 890).
+The undirected graph Psychroserpens burtonensis has 3551 nodes and 268732
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04264 and has 22 connected components, where the component
+with most nodes has 3495 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 151.36,
+and the node degree mode is 7. The top 5 most central nodes are 1123037.AUDE01000013_gene556
+(degree 1164), 1123037.AUDE01000009_gene1315 (degree 1050), 1123037.AUDE01000008_gene804
+(degree 1028), 1123037.AUDE01000027_gene2124 (degree 954) and 1123037.AUDE01000018_gene2870
+(degree 890).
 
 
 References
@@ -107,14 +108,15 @@ def PsychroserpensBurtonensis(
 	
 	Datetime: 2021-02-02 22:46:58.427541
 	
-	The undirected graph Psychroserpens burtonensis has 3551 nodes and 268732 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04264
-	and has 22 connected components, where the component with most nodes has 3495 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 151.36, and the node degree mode is 7. The top 5
-	most central nodes are 1123037.AUDE01000013_gene556 (degree 1164), 1123037.AUDE01000009_gene1315
-	(degree 1050), 1123037.AUDE01000008_gene804 (degree 1028), 1123037.AUDE01000027_gene2124
-	(degree 954) and 1123037.AUDE01000018_gene2870 (degree 890).
+	The undirected graph Psychroserpens burtonensis has 3551 nodes and 268732
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04264 and has 22 connected components, where the component
+	with most nodes has 3495 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 151.36,
+	and the node degree mode is 7. The top 5 most central nodes are 1123037.AUDE01000013_gene556
+	(degree 1164), 1123037.AUDE01000009_gene1315 (degree 1050), 1123037.AUDE01000008_gene804
+	(degree 1028), 1123037.AUDE01000027_gene2124 (degree 954) and 1123037.AUDE01000018_gene2870
+	(degree 890).
 	
 
 

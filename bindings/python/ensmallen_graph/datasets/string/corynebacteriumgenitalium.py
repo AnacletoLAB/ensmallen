@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:29.165261
 
-The undirected graph Corynebacterium genitalium has 2211 nodes and 148304 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-and has 3 connected components, where the component with most nodes has 2206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 134.15, and the node degree mode is 3. The top 5
-most central nodes are 585529.HMPREF0291_11722 (degree 812), 585529.HMPREF0291_10186
-(degree 747), 585529.HMPREF0291_11843 (degree 746), 585529.HMPREF0291_11691 (degree
-678) and 585529.HMPREF0291_10541 (degree 635).
+The undirected graph Corynebacterium genitalium has 2211 nodes and 148304
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06070 and has 3 connected components, where the component
+with most nodes has 2206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 134.15,
+and the node degree mode is 3. The top 5 most central nodes are 585529.HMPREF0291_11722
+(degree 812), 585529.HMPREF0291_10186 (degree 747), 585529.HMPREF0291_11843
+(degree 746), 585529.HMPREF0291_11691 (degree 678) and 585529.HMPREF0291_10541
+(degree 635).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumGenitalium(
 	
 	Datetime: 2021-02-02 21:16:29.165261
 	
-	The undirected graph Corynebacterium genitalium has 2211 nodes and 148304 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-	and has 3 connected components, where the component with most nodes has 2206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 134.15, and the node degree mode is 3. The top 5
-	most central nodes are 585529.HMPREF0291_11722 (degree 812), 585529.HMPREF0291_10186
-	(degree 747), 585529.HMPREF0291_11843 (degree 746), 585529.HMPREF0291_11691 (degree
-	678) and 585529.HMPREF0291_10541 (degree 635).
+	The undirected graph Corynebacterium genitalium has 2211 nodes and 148304
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06070 and has 3 connected components, where the component
+	with most nodes has 2206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 134.15,
+	and the node degree mode is 3. The top 5 most central nodes are 585529.HMPREF0291_11722
+	(degree 812), 585529.HMPREF0291_10186 (degree 747), 585529.HMPREF0291_11843
+	(degree 746), 585529.HMPREF0291_11691 (degree 678) and 585529.HMPREF0291_10541
+	(degree 635).
 	
 
 

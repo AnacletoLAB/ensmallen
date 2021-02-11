@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:50:39.241812
 
-The undirected graph soc-BlogCatalog-ASU has 10312 nodes with 38 different node types:
- the 5 most common are 8 (nodes number 1423), 5 (nodes number 843), 2 (nodes number
-759), 6 (nodes number 735) and 24 (nodes number 586) and 333983 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00628
-and is connected, as it has a single component. The graph median node degree is 21,
-the mean node degree is 64.78, and the node degree mode is 2. The top 5 most central
-nodes are 4839 (degree 3992), 176 (degree 3925), 4374 (degree 3449), 8157 (degree
+The undirected graph soc-BlogCatalog-ASU has 10312 nodes with 38 different
+node types:  the 5 most common are 8 (nodes number 1423), 5 (nodes number
+843), 2 (nodes number 759), 6 (nodes number 735) and 24 (nodes number 586)
+and 333983 unweighted edges, of which none are self-loops. The graph is
+sparse as it has a density of 0.00628 and is connected, as it has a single
+component. The graph median node degree is 21, the mean node degree is
+64.78, and the node degree mode is 2. The top 5 most central nodes are
+4839 (degree 3992), 176 (degree 3925), 4374 (degree 3449), 8157 (degree
 2976) and 1226 (degree 2780).
 
 
@@ -104,13 +105,14 @@ def SocBlogcatalogAsu(
 	
 	Datetime: 2021-02-04 08:50:39.241812
 	
-	The undirected graph soc-BlogCatalog-ASU has 10312 nodes with 38 different node types:
-	 the 5 most common are 8 (nodes number 1423), 5 (nodes number 843), 2 (nodes number
-	759), 6 (nodes number 735) and 24 (nodes number 586) and 333983 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00628
-	and is connected, as it has a single component. The graph median node degree is 21,
-	the mean node degree is 64.78, and the node degree mode is 2. The top 5 most central
-	nodes are 4839 (degree 3992), 176 (degree 3925), 4374 (degree 3449), 8157 (degree
+	The undirected graph soc-BlogCatalog-ASU has 10312 nodes with 38 different
+	node types:  the 5 most common are 8 (nodes number 1423), 5 (nodes number
+	843), 2 (nodes number 759), 6 (nodes number 735) and 24 (nodes number 586)
+	and 333983 unweighted edges, of which none are self-loops. The graph is
+	sparse as it has a density of 0.00628 and is connected, as it has a single
+	component. The graph median node degree is 21, the mean node degree is
+	64.78, and the node degree mode is 2. The top 5 most central nodes are
+	4839 (degree 3992), 176 (degree 3925), 4374 (degree 3449), 8157 (degree
 	2976) and 1226 (degree 2780).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:29.033472
 
-The undirected graph Arcobacter butzleri ED1 has 2154 nodes and 147403 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06357 and
-has 2 connected components, where the component with most nodes has 2151 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 112,
-the mean node degree is 136.86, and the node degree mode is 6. The top 5 most central
-nodes are 944546.ABED_1185 (degree 935), 944546.ABED_0178 (degree 833), 944546.ABED_0969
-(degree 683), 944546.ABED_0869 (degree 679) and 944546.ABED_1143 (degree 673).
+The undirected graph Arcobacter butzleri ED1 has 2154 nodes and 147403
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06357 and has 2 connected components, where the component
+with most nodes has 2151 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 112, the mean node degree is 136.86,
+and the node degree mode is 6. The top 5 most central nodes are 944546.ABED_1185
+(degree 935), 944546.ABED_0178 (degree 833), 944546.ABED_0969 (degree 683),
+944546.ABED_0869 (degree 679) and 944546.ABED_1143 (degree 673).
 
 
 References
@@ -106,13 +107,14 @@ def ArcobacterButzleriEd1(
 	
 	Datetime: 2021-02-02 22:01:29.033472
 	
-	The undirected graph Arcobacter butzleri ED1 has 2154 nodes and 147403 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06357 and
-	has 2 connected components, where the component with most nodes has 2151 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 112,
-	the mean node degree is 136.86, and the node degree mode is 6. The top 5 most central
-	nodes are 944546.ABED_1185 (degree 935), 944546.ABED_0178 (degree 833), 944546.ABED_0969
-	(degree 683), 944546.ABED_0869 (degree 679) and 944546.ABED_1143 (degree 673).
+	The undirected graph Arcobacter butzleri ED1 has 2154 nodes and 147403
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06357 and has 2 connected components, where the component
+	with most nodes has 2151 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 112, the mean node degree is 136.86,
+	and the node degree mode is 6. The top 5 most central nodes are 944546.ABED_1185
+	(degree 935), 944546.ABED_0178 (degree 833), 944546.ABED_0969 (degree 683),
+	944546.ABED_0869 (degree 679) and 944546.ABED_1143 (degree 673).
 	
 
 

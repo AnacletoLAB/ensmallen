@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:20.003890
 
-The undirected graph Cyanidioschyzon merolae has 3534 nodes and 372120 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05961 and
-has 3 connected components, where the component with most nodes has 3530 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 210.59, and the node degree mode is 2. The top 5 most central
-nodes are 45157.CMS462CT (degree 1450), 45157.CMI061CT (degree 1229), 45157.CMT298CT
-(degree 1222), 45157.CMJ305CT (degree 1068) and 45157.CMT083CT (degree 1065).
+The undirected graph Cyanidioschyzon merolae has 3534 nodes and 372120
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05961 and has 3 connected components, where the component
+with most nodes has 3530 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 210.59,
+and the node degree mode is 2. The top 5 most central nodes are 45157.CMS462CT
+(degree 1450), 45157.CMI061CT (degree 1229), 45157.CMT298CT (degree 1222),
+45157.CMJ305CT (degree 1068) and 45157.CMT083CT (degree 1065).
 
 
 References
@@ -106,13 +107,14 @@ def CyanidioschyzonMerolae(
 	
 	Datetime: 2021-02-02 18:15:20.003890
 	
-	The undirected graph Cyanidioschyzon merolae has 3534 nodes and 372120 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05961 and
-	has 3 connected components, where the component with most nodes has 3530 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 210.59, and the node degree mode is 2. The top 5 most central
-	nodes are 45157.CMS462CT (degree 1450), 45157.CMI061CT (degree 1229), 45157.CMT298CT
-	(degree 1222), 45157.CMJ305CT (degree 1068) and 45157.CMT083CT (degree 1065).
+	The undirected graph Cyanidioschyzon merolae has 3534 nodes and 372120
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05961 and has 3 connected components, where the component
+	with most nodes has 3530 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 210.59,
+	and the node degree mode is 2. The top 5 most central nodes are 45157.CMS462CT
+	(degree 1450), 45157.CMI061CT (degree 1229), 45157.CMT298CT (degree 1222),
+	45157.CMJ305CT (degree 1068) and 45157.CMT083CT (degree 1065).
 	
 
 

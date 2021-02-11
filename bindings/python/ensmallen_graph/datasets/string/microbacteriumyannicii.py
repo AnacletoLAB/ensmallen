@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:22.448833
 
-The undirected graph Microbacterium yannicii has 3590 nodes and 268512 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04168 and
-has 12 connected components, where the component with most nodes has 3560 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 149.59, and the node degree mode is 2. The top 5 most central
-nodes are 1194165.CAJF01000003_gene2526 (degree 1075), 1194165.CAJF01000003_gene2534
-(degree 1053), 1194165.CAJF01000046_gene3445 (degree 1040), 1194165.CAJF01000008_gene422
-(degree 1029) and 1194165.CAJF01000008_gene431 (degree 948).
+The undirected graph Microbacterium yannicii has 3590 nodes and 268512
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04168 and has 12 connected components, where the component
+with most nodes has 3560 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 149.59,
+and the node degree mode is 2. The top 5 most central nodes are 1194165.CAJF01000003_gene2526
+(degree 1075), 1194165.CAJF01000003_gene2534 (degree 1053), 1194165.CAJF01000046_gene3445
+(degree 1040), 1194165.CAJF01000008_gene422 (degree 1029) and 1194165.CAJF01000008_gene431
+(degree 948).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumYannicii(
 	
 	Datetime: 2021-02-02 23:12:22.448833
 	
-	The undirected graph Microbacterium yannicii has 3590 nodes and 268512 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04168 and
-	has 12 connected components, where the component with most nodes has 3560 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 149.59, and the node degree mode is 2. The top 5 most central
-	nodes are 1194165.CAJF01000003_gene2526 (degree 1075), 1194165.CAJF01000003_gene2534
-	(degree 1053), 1194165.CAJF01000046_gene3445 (degree 1040), 1194165.CAJF01000008_gene422
-	(degree 1029) and 1194165.CAJF01000008_gene431 (degree 948).
+	The undirected graph Microbacterium yannicii has 3590 nodes and 268512
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04168 and has 12 connected components, where the component
+	with most nodes has 3560 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 149.59,
+	and the node degree mode is 2. The top 5 most central nodes are 1194165.CAJF01000003_gene2526
+	(degree 1075), 1194165.CAJF01000003_gene2534 (degree 1053), 1194165.CAJF01000046_gene3445
+	(degree 1040), 1194165.CAJF01000008_gene422 (degree 1029) and 1194165.CAJF01000008_gene431
+	(degree 948).
 	
 
 

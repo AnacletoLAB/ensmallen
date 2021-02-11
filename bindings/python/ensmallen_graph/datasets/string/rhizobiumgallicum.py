@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:14:28.756357
 
-The undirected graph Rhizobium gallicum has 6492 nodes and 904079 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04291 and
-has 25 connected components, where the component with most nodes has 6427 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 278.52, and the node degree mode is 2. The top 5 most central
-nodes are 1041138.KB890221_gene1560 (degree 2693), 1041138.KB890233_gene2174 (degree
-2387), 1041138.KB890253_gene4271 (degree 2385), 1041138.KB890253_gene3827 (degree
-2357) and 1041138.KB890233_gene2216 (degree 2317).
+The undirected graph Rhizobium gallicum has 6492 nodes and 904079 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04291 and has 25 connected components, where the component with most
+nodes has 6427 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 278.52, and
+the node degree mode is 2. The top 5 most central nodes are 1041138.KB890221_gene1560
+(degree 2693), 1041138.KB890233_gene2174 (degree 2387), 1041138.KB890253_gene4271
+(degree 2385), 1041138.KB890253_gene3827 (degree 2357) and 1041138.KB890233_gene2216
+(degree 2317).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumGallicum(
 	
 	Datetime: 2021-02-02 22:14:28.756357
 	
-	The undirected graph Rhizobium gallicum has 6492 nodes and 904079 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04291 and
-	has 25 connected components, where the component with most nodes has 6427 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 278.52, and the node degree mode is 2. The top 5 most central
-	nodes are 1041138.KB890221_gene1560 (degree 2693), 1041138.KB890233_gene2174 (degree
-	2387), 1041138.KB890253_gene4271 (degree 2385), 1041138.KB890253_gene3827 (degree
-	2357) and 1041138.KB890233_gene2216 (degree 2317).
+	The undirected graph Rhizobium gallicum has 6492 nodes and 904079 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04291 and has 25 connected components, where the component with most
+	nodes has 6427 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 278.52, and
+	the node degree mode is 2. The top 5 most central nodes are 1041138.KB890221_gene1560
+	(degree 2693), 1041138.KB890233_gene2174 (degree 2387), 1041138.KB890253_gene4271
+	(degree 2385), 1041138.KB890253_gene3827 (degree 2357) and 1041138.KB890233_gene2216
+	(degree 2317).
 	
 
 

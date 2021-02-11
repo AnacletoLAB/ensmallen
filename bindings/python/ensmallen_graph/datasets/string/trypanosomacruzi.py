@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:09.181324
 
-The undirected graph Trypanosoma cruzi has 8106 nodes and 1476283 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04494 and
-has 90 connected components, where the component with most nodes has 7865 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 262,
-the mean node degree is 364.24, and the node degree mode is 1. The top 5 most central
-nodes are 5693.XP_815327.1 (degree 2846), 5693.XP_817112.1 (degree 2425), 5693.XP_807341.1
-(degree 2425), 5693.XP_822138.1 (degree 2237) and 5693.XP_816898.1 (degree 2237).
+The undirected graph Trypanosoma cruzi has 8106 nodes and 1476283 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04494 and has 90 connected components, where the component with most
+nodes has 7865 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 262, the mean node degree is 364.24, and
+the node degree mode is 1. The top 5 most central nodes are 5693.XP_815327.1
+(degree 2846), 5693.XP_817112.1 (degree 2425), 5693.XP_807341.1 (degree
+2425), 5693.XP_822138.1 (degree 2237) and 5693.XP_816898.1 (degree 2237).
 
 
 References
@@ -106,13 +107,14 @@ def TrypanosomaCruzi(
 	
 	Datetime: 2021-02-02 17:15:09.181324
 	
-	The undirected graph Trypanosoma cruzi has 8106 nodes and 1476283 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04494 and
-	has 90 connected components, where the component with most nodes has 7865 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 262,
-	the mean node degree is 364.24, and the node degree mode is 1. The top 5 most central
-	nodes are 5693.XP_815327.1 (degree 2846), 5693.XP_817112.1 (degree 2425), 5693.XP_807341.1
-	(degree 2425), 5693.XP_822138.1 (degree 2237) and 5693.XP_816898.1 (degree 2237).
+	The undirected graph Trypanosoma cruzi has 8106 nodes and 1476283 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04494 and has 90 connected components, where the component with most
+	nodes has 7865 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 262, the mean node degree is 364.24, and
+	the node degree mode is 1. The top 5 most central nodes are 5693.XP_815327.1
+	(degree 2846), 5693.XP_817112.1 (degree 2425), 5693.XP_807341.1 (degree
+	2425), 5693.XP_822138.1 (degree 2237) and 5693.XP_816898.1 (degree 2237).
 	
 
 

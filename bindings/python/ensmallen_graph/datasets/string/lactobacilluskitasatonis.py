@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:45.852502
 
-The undirected graph Lactobacillus kitasatonis has 2020 nodes and 180141 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08834
-and has 12 connected components, where the component with most nodes has 1993 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 178.36, and the node degree mode is 2. The top 5
-most central nodes are 1423767.BALU01000012_gene143 (degree 876), 1423767.BALU01000006_gene817
-(degree 792), 1423767.BALU01000002_gene1870 (degree 739), 1423767.BALU01000005_gene926
-(degree 725) and 1423767.BALU01000014_gene3 (degree 718).
+The undirected graph Lactobacillus kitasatonis has 2020 nodes and 180141
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08834 and has 12 connected components, where the component
+with most nodes has 1993 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 178.36,
+and the node degree mode is 2. The top 5 most central nodes are 1423767.BALU01000012_gene143
+(degree 876), 1423767.BALU01000006_gene817 (degree 792), 1423767.BALU01000002_gene1870
+(degree 739), 1423767.BALU01000005_gene926 (degree 725) and 1423767.BALU01000014_gene3
+(degree 718).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusKitasatonis(
 	
 	Datetime: 2021-02-03 22:51:45.852502
 	
-	The undirected graph Lactobacillus kitasatonis has 2020 nodes and 180141 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08834
-	and has 12 connected components, where the component with most nodes has 1993 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 178.36, and the node degree mode is 2. The top 5
-	most central nodes are 1423767.BALU01000012_gene143 (degree 876), 1423767.BALU01000006_gene817
-	(degree 792), 1423767.BALU01000002_gene1870 (degree 739), 1423767.BALU01000005_gene926
-	(degree 725) and 1423767.BALU01000014_gene3 (degree 718).
+	The undirected graph Lactobacillus kitasatonis has 2020 nodes and 180141
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08834 and has 12 connected components, where the component
+	with most nodes has 1993 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 178.36,
+	and the node degree mode is 2. The top 5 most central nodes are 1423767.BALU01000012_gene143
+	(degree 876), 1423767.BALU01000006_gene817 (degree 792), 1423767.BALU01000002_gene1870
+	(degree 739), 1423767.BALU01000005_gene926 (degree 725) and 1423767.BALU01000014_gene3
+	(degree 718).
 	
 
 

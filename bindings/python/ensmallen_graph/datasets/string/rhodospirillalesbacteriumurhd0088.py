@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:16:13.701099
 
-The undirected graph Rhodospirillales bacterium URHD0088 has 6061 nodes and 957178
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05212 and has 22 connected components, where the component with most nodes has
-6010 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 271, the mean node degree is 315.85, and the node degree mode is 1. The
-top 5 most central nodes are 1380394.JADL01000001_gene2363 (degree 2914), 1380394.JADL01000002_gene1627
+The undirected graph Rhodospirillales bacterium URHD0088 has 6061 nodes
+and 957178 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05212 and has 22 connected components, where the
+component with most nodes has 6010 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 271, the mean node degree
+is 315.85, and the node degree mode is 1. The top 5 most central nodes
+are 1380394.JADL01000001_gene2363 (degree 2914), 1380394.JADL01000002_gene1627
 (degree 2033), 1380394.JADL01000010_gene4308 (degree 1969), 1380394.JADL01000001_gene2302
 (degree 1965) and 1380394.JADL01000013_gene680 (degree 1958).
 
@@ -107,12 +108,13 @@ def RhodospirillalesBacteriumUrhd0088(
 	
 	Datetime: 2021-02-03 22:16:13.701099
 	
-	The undirected graph Rhodospirillales bacterium URHD0088 has 6061 nodes and 957178
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05212 and has 22 connected components, where the component with most nodes has
-	6010 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 271, the mean node degree is 315.85, and the node degree mode is 1. The
-	top 5 most central nodes are 1380394.JADL01000001_gene2363 (degree 2914), 1380394.JADL01000002_gene1627
+	The undirected graph Rhodospirillales bacterium URHD0088 has 6061 nodes
+	and 957178 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05212 and has 22 connected components, where the
+	component with most nodes has 6010 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 271, the mean node degree
+	is 315.85, and the node degree mode is 1. The top 5 most central nodes
+	are 1380394.JADL01000001_gene2363 (degree 2914), 1380394.JADL01000002_gene1627
 	(degree 2033), 1380394.JADL01000010_gene4308 (degree 1969), 1380394.JADL01000001_gene2302
 	(degree 1965) and 1380394.JADL01000013_gene680 (degree 1958).
 	

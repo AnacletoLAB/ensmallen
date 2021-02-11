@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:52.941130
 
-The undirected graph Streptococcus dysgalactiae ATCC27957 has 2090 nodes and 158783
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07274 and has 3 connected components, where the component with most nodes has
-2086 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 116, the mean node degree is 151.95, and the node degree mode is 21. The
-top 5 most central nodes are 663952.SDD27957_10505 (degree 918), 663952.SDD27957_11165
-(degree 801), 663952.SDD27957_04830 (degree 775), 663952.SDD27957_00260 (degree 746)
+The undirected graph Streptococcus dysgalactiae ATCC27957 has 2090 nodes
+and 158783 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07274 and has 3 connected components, where the
+component with most nodes has 2086 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+is 151.95, and the node degree mode is 21. The top 5 most central nodes
+are 663952.SDD27957_10505 (degree 918), 663952.SDD27957_11165 (degree 801),
+663952.SDD27957_04830 (degree 775), 663952.SDD27957_00260 (degree 746)
 and 663952.SDD27957_09535 (degree 713).
 
 
@@ -107,13 +108,14 @@ def StreptococcusDysgalactiaeAtcc27957(
 	
 	Datetime: 2021-02-02 21:27:52.941130
 	
-	The undirected graph Streptococcus dysgalactiae ATCC27957 has 2090 nodes and 158783
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07274 and has 3 connected components, where the component with most nodes has
-	2086 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 116, the mean node degree is 151.95, and the node degree mode is 21. The
-	top 5 most central nodes are 663952.SDD27957_10505 (degree 918), 663952.SDD27957_11165
-	(degree 801), 663952.SDD27957_04830 (degree 775), 663952.SDD27957_00260 (degree 746)
+	The undirected graph Streptococcus dysgalactiae ATCC27957 has 2090 nodes
+	and 158783 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07274 and has 3 connected components, where the
+	component with most nodes has 2086 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+	is 151.95, and the node degree mode is 21. The top 5 most central nodes
+	are 663952.SDD27957_10505 (degree 918), 663952.SDD27957_11165 (degree 801),
+	663952.SDD27957_04830 (degree 775), 663952.SDD27957_00260 (degree 746)
 	and 663952.SDD27957_09535 (degree 713).
 	
 

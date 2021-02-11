@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:02.188165
 
-The undirected graph Alicyclobacillus macrosporangiidus has 3535 nodes and 326552
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05228 and has 15 connected components, where the component with most nodes has
-3504 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 145, the mean node degree is 184.75, and the node degree mode is 3. The
-top 5 most central nodes are 1382304.JNIL01000001_gene1588 (degree 1262), 1382304.JNIL01000001_gene2228
+The undirected graph Alicyclobacillus macrosporangiidus has 3535 nodes
+and 326552 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05228 and has 15 connected components, where the
+component with most nodes has 3504 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 184.75, and the node degree mode is 3. The top 5 most central nodes
+are 1382304.JNIL01000001_gene1588 (degree 1262), 1382304.JNIL01000001_gene2228
 (degree 1116), 1382304.JNIL01000001_gene900 (degree 1067), 1382304.JNIL01000001_gene3492
 (degree 1029) and 1382304.JNIL01000001_gene1651 (degree 915).
 
@@ -107,12 +108,13 @@ def AlicyclobacillusMacrosporangiidus(
 	
 	Datetime: 2021-02-03 22:18:02.188165
 	
-	The undirected graph Alicyclobacillus macrosporangiidus has 3535 nodes and 326552
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05228 and has 15 connected components, where the component with most nodes has
-	3504 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 145, the mean node degree is 184.75, and the node degree mode is 3. The
-	top 5 most central nodes are 1382304.JNIL01000001_gene1588 (degree 1262), 1382304.JNIL01000001_gene2228
+	The undirected graph Alicyclobacillus macrosporangiidus has 3535 nodes
+	and 326552 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05228 and has 15 connected components, where the
+	component with most nodes has 3504 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 184.75, and the node degree mode is 3. The top 5 most central nodes
+	are 1382304.JNIL01000001_gene1588 (degree 1262), 1382304.JNIL01000001_gene2228
 	(degree 1116), 1382304.JNIL01000001_gene900 (degree 1067), 1382304.JNIL01000001_gene3492
 	(degree 1029) and 1382304.JNIL01000001_gene1651 (degree 915).
 	

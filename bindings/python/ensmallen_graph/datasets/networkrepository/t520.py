@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:34:36.999696
 
-The undirected graph t520 has 5563 nodes and 145952 unweighted edges, of which 5563
-are self-loops. The graph is sparse as it has a density of 0.00925 and is connected,
-as it has a single component. The graph median node degree is 54, the mean node degree
-is 51.47, and the node degree mode is 54. The top 5 most central nodes are 5497 (degree
-180), 24 (degree 180), 5238 (degree 72), 5237 (degree 72) and 5236 (degree 72).
+The undirected graph t520 has 5563 nodes and 145952 unweighted edges, of
+which 5563 are self-loops. The graph is sparse as it has a density of 0.00925
+and is connected, as it has a single component. The graph median node degree
+is 54, the mean node degree is 51.47, and the node degree mode is 54. The
+top 5 most central nodes are 5497 (degree 180), 24 (degree 180), 5238 (degree
+72), 5237 (degree 72) and 5236 (degree 72).
 
 
 References
@@ -101,11 +102,12 @@ def T520(
 	
 	Datetime: 2021-02-06 11:34:36.999696
 	
-	The undirected graph t520 has 5563 nodes and 145952 unweighted edges, of which 5563
-	are self-loops. The graph is sparse as it has a density of 0.00925 and is connected,
-	as it has a single component. The graph median node degree is 54, the mean node degree
-	is 51.47, and the node degree mode is 54. The top 5 most central nodes are 5497 (degree
-	180), 24 (degree 180), 5238 (degree 72), 5237 (degree 72) and 5236 (degree 72).
+	The undirected graph t520 has 5563 nodes and 145952 unweighted edges, of
+	which 5563 are self-loops. The graph is sparse as it has a density of 0.00925
+	and is connected, as it has a single component. The graph median node degree
+	is 54, the mean node degree is 51.47, and the node degree mode is 54. The
+	top 5 most central nodes are 5497 (degree 180), 24 (degree 180), 5238 (degree
+	72), 5237 (degree 72) and 5236 (degree 72).
 	
 
 

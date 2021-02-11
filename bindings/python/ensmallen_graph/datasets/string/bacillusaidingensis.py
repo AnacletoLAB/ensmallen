@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:41.730050
 
-The undirected graph Bacillus aidingensis has 4328 nodes and 453306 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04841 and
-has 14 connected components, where the component with most nodes has 4299 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 209.48, and the node degree mode is 2. The top 5 most central
-nodes are 1121085.AUCI01000010_gene447 (degree 1537), 1121085.AUCI01000002_gene3938
-(degree 1419), 1121085.AUCI01000016_gene2085 (degree 1318), 1121085.AUCI01000003_gene3261
-(degree 1235) and 1121085.AUCI01000008_gene639 (degree 1196).
+The undirected graph Bacillus aidingensis has 4328 nodes and 453306 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04841 and has 14 connected components, where the component with most
+nodes has 4299 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 209.48, and
+the node degree mode is 2. The top 5 most central nodes are 1121085.AUCI01000010_gene447
+(degree 1537), 1121085.AUCI01000002_gene3938 (degree 1419), 1121085.AUCI01000016_gene2085
+(degree 1318), 1121085.AUCI01000003_gene3261 (degree 1235) and 1121085.AUCI01000008_gene639
+(degree 1196).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusAidingensis(
 	
 	Datetime: 2021-02-02 22:32:41.730050
 	
-	The undirected graph Bacillus aidingensis has 4328 nodes and 453306 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04841 and
-	has 14 connected components, where the component with most nodes has 4299 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 209.48, and the node degree mode is 2. The top 5 most central
-	nodes are 1121085.AUCI01000010_gene447 (degree 1537), 1121085.AUCI01000002_gene3938
-	(degree 1419), 1121085.AUCI01000016_gene2085 (degree 1318), 1121085.AUCI01000003_gene3261
-	(degree 1235) and 1121085.AUCI01000008_gene639 (degree 1196).
+	The undirected graph Bacillus aidingensis has 4328 nodes and 453306 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04841 and has 14 connected components, where the component with most
+	nodes has 4299 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 209.48, and
+	the node degree mode is 2. The top 5 most central nodes are 1121085.AUCI01000010_gene447
+	(degree 1537), 1121085.AUCI01000002_gene3938 (degree 1419), 1121085.AUCI01000016_gene2085
+	(degree 1318), 1121085.AUCI01000003_gene3261 (degree 1235) and 1121085.AUCI01000008_gene639
+	(degree 1196).
 	
 
 

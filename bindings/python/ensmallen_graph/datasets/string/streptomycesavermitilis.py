@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:33.348791
 
-The undirected graph Streptomyces avermitilis has 7587 nodes and 972357 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03379
-and has 38 connected components, where the component with most nodes has 7496 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 256.32, and the node degree mode is 1. The top 5
-most central nodes are 227882.SAV_2512 (degree 3618), 227882.SAV_6227 (degree 2217),
-227882.SAV_3479 (degree 2121), 227882.SAV_4205 (degree 1948) and 227882.SAV_1085
-(degree 1846).
+The undirected graph Streptomyces avermitilis has 7587 nodes and 972357
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03379 and has 38 connected components, where the component
+with most nodes has 7496 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 256.32,
+and the node degree mode is 1. The top 5 most central nodes are 227882.SAV_2512
+(degree 3618), 227882.SAV_6227 (degree 2217), 227882.SAV_3479 (degree 2121),
+227882.SAV_4205 (degree 1948) and 227882.SAV_1085 (degree 1846).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesAvermitilis(
 	
 	Datetime: 2021-02-05 17:17:33.348791
 	
-	The undirected graph Streptomyces avermitilis has 7587 nodes and 972357 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03379
-	and has 38 connected components, where the component with most nodes has 7496 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 256.32, and the node degree mode is 1. The top 5
-	most central nodes are 227882.SAV_2512 (degree 3618), 227882.SAV_6227 (degree 2217),
-	227882.SAV_3479 (degree 2121), 227882.SAV_4205 (degree 1948) and 227882.SAV_1085
-	(degree 1846).
+	The undirected graph Streptomyces avermitilis has 7587 nodes and 972357
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03379 and has 38 connected components, where the component
+	with most nodes has 7496 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 256.32,
+	and the node degree mode is 1. The top 5 most central nodes are 227882.SAV_2512
+	(degree 3618), 227882.SAV_6227 (degree 2217), 227882.SAV_3479 (degree 2121),
+	227882.SAV_4205 (degree 1948) and 227882.SAV_1085 (degree 1846).
 	
 
 

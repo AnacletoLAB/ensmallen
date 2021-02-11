@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:29.440276
 
-The undirected graph Advenella kashmirensis W13003 has 4467 nodes and 533642 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05350
-and has 8 connected components, where the component with most nodes has 4449 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 238.93, and the node degree mode is 4. The top 5
-most central nodes are 1424334.W822_21670 (degree 1532), 1424334.W822_10595 (degree
-1471), 1424334.W822_09605 (degree 1314), 1424334.W822_15010 (degree 1181) and 1424334.W822_15020
-(degree 1175).
+The undirected graph Advenella kashmirensis W13003 has 4467 nodes and 533642
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05350 and has 8 connected components, where the component
+with most nodes has 4449 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 238.93,
+and the node degree mode is 4. The top 5 most central nodes are 1424334.W822_21670
+(degree 1532), 1424334.W822_10595 (degree 1471), 1424334.W822_09605 (degree
+1314), 1424334.W822_15010 (degree 1181) and 1424334.W822_15020 (degree
+1175).
 
 
 References
@@ -107,14 +108,15 @@ def AdvenellaKashmirensisW13003(
 	
 	Datetime: 2021-02-03 22:52:29.440276
 	
-	The undirected graph Advenella kashmirensis W13003 has 4467 nodes and 533642 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05350
-	and has 8 connected components, where the component with most nodes has 4449 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 238.93, and the node degree mode is 4. The top 5
-	most central nodes are 1424334.W822_21670 (degree 1532), 1424334.W822_10595 (degree
-	1471), 1424334.W822_09605 (degree 1314), 1424334.W822_15010 (degree 1181) and 1424334.W822_15020
-	(degree 1175).
+	The undirected graph Advenella kashmirensis W13003 has 4467 nodes and 533642
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05350 and has 8 connected components, where the component
+	with most nodes has 4449 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 238.93,
+	and the node degree mode is 4. The top 5 most central nodes are 1424334.W822_21670
+	(degree 1532), 1424334.W822_10595 (degree 1471), 1424334.W822_09605 (degree
+	1314), 1424334.W822_15010 (degree 1181) and 1424334.W822_15020 (degree
+	1175).
 	
 
 

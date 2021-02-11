@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:53.127950
 
-The undirected graph socfb-OR has 63392 nodes and 816885 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-is connected, as it has a single component. The graph median node degree is 11, the
-mean node degree is 25.77, and the node degree mode is 1. The top 5 most central
-nodes are 2332 (degree 1098), 471 (degree 932), 554 (degree 917), 2322 (degree 797)
-and 451 (degree 767).
+The undirected graph socfb-OR has 63392 nodes and 816885 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00041 and is connected, as it has a single component. The graph median
+node degree is 11, the mean node degree is 25.77, and the node degree mode
+is 1. The top 5 most central nodes are 2332 (degree 1098), 471 (degree
+932), 554 (degree 917), 2322 (degree 797) and 451 (degree 767).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbOr(
 	
 	Datetime: 2021-02-06 11:49:53.127950
 	
-	The undirected graph socfb-OR has 63392 nodes and 816885 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-	is connected, as it has a single component. The graph median node degree is 11, the
-	mean node degree is 25.77, and the node degree mode is 1. The top 5 most central
-	nodes are 2332 (degree 1098), 471 (degree 932), 554 (degree 917), 2322 (degree 797)
-	and 451 (degree 767).
+	The undirected graph socfb-OR has 63392 nodes and 816885 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00041 and is connected, as it has a single component. The graph median
+	node degree is 11, the mean node degree is 25.77, and the node degree mode
+	is 1. The top 5 most central nodes are 2332 (degree 1098), 471 (degree
+	932), 554 (degree 917), 2322 (degree 797) and 451 (degree 767).
 	
 
 

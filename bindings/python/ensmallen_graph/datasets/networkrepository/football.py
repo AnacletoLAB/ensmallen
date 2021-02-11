@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:11:53.746003
 
-The undirected graph football has 35 nodes and 118 weighted edges, of which none
-are self-loops. The graph is quite dense as it has a density of 0.19832 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 6.74, and the node degree mode is 6. The top 5 most central nodes are 18 (degree
-19), 10 (degree 19), 12 (degree 18), 13 (degree 13) and 14 (degree 12).
+The undirected graph football has 35 nodes and 118 weighted edges, of which
+none are self-loops. The graph is quite dense as it has a density of 0.19832
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 6.74, and the node degree mode is 6. The
+top 5 most central nodes are 18 (degree 19), 10 (degree 19), 12 (degree
+18), 13 (degree 13) and 14 (degree 12).
 
 
 References
@@ -101,11 +102,12 @@ def Football(
 	
 	Datetime: 2021-02-06 08:11:53.746003
 	
-	The undirected graph football has 35 nodes and 118 weighted edges, of which none
-	are self-loops. The graph is quite dense as it has a density of 0.19832 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 6.74, and the node degree mode is 6. The top 5 most central nodes are 18 (degree
-	19), 10 (degree 19), 12 (degree 18), 13 (degree 13) and 14 (degree 12).
+	The undirected graph football has 35 nodes and 118 weighted edges, of which
+	none are self-loops. The graph is quite dense as it has a density of 0.19832
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 6.74, and the node degree mode is 6. The
+	top 5 most central nodes are 18 (degree 19), 10 (degree 19), 12 (degree
+	18), 13 (degree 13) and 14 (degree 12).
 	
 
 

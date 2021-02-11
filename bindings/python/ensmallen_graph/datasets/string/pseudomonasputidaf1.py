@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:23.000192
 
-The undirected graph Pseudomonas putida F1 has 5221 nodes and 718912 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05276 and
-has 8 connected components, where the component with most nodes has 5200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 246,
-the mean node degree is 275.39, and the node degree mode is 4. The top 5 most central
-nodes are 351746.Pput_0140 (degree 1887), 351746.Pput_0830 (degree 1863), 351746.Pput_4949
-(degree 1493), 351746.Pput_4603 (degree 1369) and 351746.Pput_1072 (degree 1365).
+The undirected graph Pseudomonas putida F1 has 5221 nodes and 718912 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05276 and has 8 connected components, where the component with most
+nodes has 5200 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 246, the mean node degree is 275.39, and
+the node degree mode is 4. The top 5 most central nodes are 351746.Pput_0140
+(degree 1887), 351746.Pput_0830 (degree 1863), 351746.Pput_4949 (degree
+1493), 351746.Pput_4603 (degree 1369) and 351746.Pput_1072 (degree 1365).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasPutidaF1(
 	
 	Datetime: 2021-02-02 20:33:23.000192
 	
-	The undirected graph Pseudomonas putida F1 has 5221 nodes and 718912 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05276 and
-	has 8 connected components, where the component with most nodes has 5200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 246,
-	the mean node degree is 275.39, and the node degree mode is 4. The top 5 most central
-	nodes are 351746.Pput_0140 (degree 1887), 351746.Pput_0830 (degree 1863), 351746.Pput_4949
-	(degree 1493), 351746.Pput_4603 (degree 1369) and 351746.Pput_1072 (degree 1365).
+	The undirected graph Pseudomonas putida F1 has 5221 nodes and 718912 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05276 and has 8 connected components, where the component with most
+	nodes has 5200 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 246, the mean node degree is 275.39, and
+	the node degree mode is 4. The top 5 most central nodes are 351746.Pput_0140
+	(degree 1887), 351746.Pput_0830 (degree 1863), 351746.Pput_4949 (degree
+	1493), 351746.Pput_4603 (degree 1369) and 351746.Pput_1072 (degree 1365).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:45.937529
 
-The undirected graph Pseudomonas sp. Lz4W has 4429 nodes and 615693 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06279 and
-has 6 connected components, where the component with most nodes has 4414 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 248,
-the mean node degree is 278.03, and the node degree mode is 2. The top 5 most central
-nodes are 1206777.B195_00245 (degree 1557), 1206777.B195_04257 (degree 1364), 1206777.B195_02658
-(degree 1300), 1206777.B195_11511 (degree 1289) and 1206777.B195_02943 (degree 1271).
+The undirected graph Pseudomonas sp. Lz4W has 4429 nodes and 615693 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06279 and has 6 connected components, where the component with most
+nodes has 4414 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 248, the mean node degree is 278.03, and
+the node degree mode is 2. The top 5 most central nodes are 1206777.B195_00245
+(degree 1557), 1206777.B195_04257 (degree 1364), 1206777.B195_02658 (degree
+1300), 1206777.B195_11511 (degree 1289) and 1206777.B195_02943 (degree
+1271).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasSp.Lz4w(
 	
 	Datetime: 2021-02-02 23:17:45.937529
 	
-	The undirected graph Pseudomonas sp. Lz4W has 4429 nodes and 615693 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06279 and
-	has 6 connected components, where the component with most nodes has 4414 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 248,
-	the mean node degree is 278.03, and the node degree mode is 2. The top 5 most central
-	nodes are 1206777.B195_00245 (degree 1557), 1206777.B195_04257 (degree 1364), 1206777.B195_02658
-	(degree 1300), 1206777.B195_11511 (degree 1289) and 1206777.B195_02943 (degree 1271).
+	The undirected graph Pseudomonas sp. Lz4W has 4429 nodes and 615693 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06279 and has 6 connected components, where the component with most
+	nodes has 4414 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 248, the mean node degree is 278.03, and
+	the node degree mode is 2. The top 5 most central nodes are 1206777.B195_00245
+	(degree 1557), 1206777.B195_04257 (degree 1364), 1206777.B195_02658 (degree
+	1300), 1206777.B195_11511 (degree 1289) and 1206777.B195_02943 (degree
+	1271).
 	
 
 

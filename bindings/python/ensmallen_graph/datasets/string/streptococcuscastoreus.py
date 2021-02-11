@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:22.021937
 
-The undirected graph Streptococcus castoreus has 1775 nodes and 138481 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08796 and
-has 7 connected components, where the component with most nodes has 1763 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 156.03, and the node degree mode is 6. The top 5 most central
-nodes are 1123299.AUKZ01000022_gene1433 (degree 833), 1123299.AUKZ01000009_gene1497
-(degree 743), 1123299.AUKZ01000006_gene905 (degree 740), 1123299.AUKZ01000005_gene1137
-(degree 699) and 1123299.AUKZ01000012_gene1044 (degree 673).
+The undirected graph Streptococcus castoreus has 1775 nodes and 138481
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08796 and has 7 connected components, where the component
+with most nodes has 1763 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 156.03,
+and the node degree mode is 6. The top 5 most central nodes are 1123299.AUKZ01000022_gene1433
+(degree 833), 1123299.AUKZ01000009_gene1497 (degree 743), 1123299.AUKZ01000006_gene905
+(degree 740), 1123299.AUKZ01000005_gene1137 (degree 699) and 1123299.AUKZ01000012_gene1044
+(degree 673).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusCastoreus(
 	
 	Datetime: 2021-02-02 22:50:22.021937
 	
-	The undirected graph Streptococcus castoreus has 1775 nodes and 138481 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08796 and
-	has 7 connected components, where the component with most nodes has 1763 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 156.03, and the node degree mode is 6. The top 5 most central
-	nodes are 1123299.AUKZ01000022_gene1433 (degree 833), 1123299.AUKZ01000009_gene1497
-	(degree 743), 1123299.AUKZ01000006_gene905 (degree 740), 1123299.AUKZ01000005_gene1137
-	(degree 699) and 1123299.AUKZ01000012_gene1044 (degree 673).
+	The undirected graph Streptococcus castoreus has 1775 nodes and 138481
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08796 and has 7 connected components, where the component
+	with most nodes has 1763 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 156.03,
+	and the node degree mode is 6. The top 5 most central nodes are 1123299.AUKZ01000022_gene1433
+	(degree 833), 1123299.AUKZ01000009_gene1497 (degree 743), 1123299.AUKZ01000006_gene905
+	(degree 740), 1123299.AUKZ01000005_gene1137 (degree 699) and 1123299.AUKZ01000012_gene1044
+	(degree 673).
 	
 
 

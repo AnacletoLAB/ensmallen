@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:53.878202
 
-The undirected graph Faecalibacterium prausnitzii SL33 has 2683 nodes and 139759
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03884 and has 18 connected components, where the component with most nodes has
-2616 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 71, the mean node degree is 104.18, and the node degree mode is 3. The
-top 5 most central nodes are 657322.FPR_04940 (degree 1067), 657322.FPR_07600 (degree
-1041), 657322.FPR_31040 (degree 808), 657322.FPR_09230 (degree 775) and 657322.FPR_28380
-(degree 760).
+The undirected graph Faecalibacterium prausnitzii SL33 has 2683 nodes and
+139759 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03884 and has 18 connected components, where the
+component with most nodes has 2616 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 71, the mean node degree
+is 104.18, and the node degree mode is 3. The top 5 most central nodes
+are 657322.FPR_04940 (degree 1067), 657322.FPR_07600 (degree 1041), 657322.FPR_31040
+(degree 808), 657322.FPR_09230 (degree 775) and 657322.FPR_28380 (degree
+760).
 
 
 References
@@ -107,14 +108,15 @@ def FaecalibacteriumPrausnitziiSl33(
 	
 	Datetime: 2021-02-02 21:26:53.878202
 	
-	The undirected graph Faecalibacterium prausnitzii SL33 has 2683 nodes and 139759
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03884 and has 18 connected components, where the component with most nodes has
-	2616 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 71, the mean node degree is 104.18, and the node degree mode is 3. The
-	top 5 most central nodes are 657322.FPR_04940 (degree 1067), 657322.FPR_07600 (degree
-	1041), 657322.FPR_31040 (degree 808), 657322.FPR_09230 (degree 775) and 657322.FPR_28380
-	(degree 760).
+	The undirected graph Faecalibacterium prausnitzii SL33 has 2683 nodes and
+	139759 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03884 and has 18 connected components, where the
+	component with most nodes has 2616 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 71, the mean node degree
+	is 104.18, and the node degree mode is 3. The top 5 most central nodes
+	are 657322.FPR_04940 (degree 1067), 657322.FPR_07600 (degree 1041), 657322.FPR_31040
+	(degree 808), 657322.FPR_09230 (degree 775) and 657322.FPR_28380 (degree
+	760).
 	
 
 

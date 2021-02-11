@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:09.140548
 
-The undirected graph Ruminococcus sp. 5139BFAA has 3488 nodes and 395801 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06508
-and has 6 connected components, where the component with most nodes has 3476 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 226.95, and the node degree mode is 3. The top 5
-most central nodes are 457412.RSAG_01228 (degree 1332), 457412.RSAG_03304 (degree
-1153), 457412.RSAG_01615 (degree 1141), 457412.RSAG_01855 (degree 1130) and 457412.RSAG_02196
-(degree 1081).
+The undirected graph Ruminococcus sp. 5139BFAA has 3488 nodes and 395801
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06508 and has 6 connected components, where the component
+with most nodes has 3476 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 226.95,
+and the node degree mode is 3. The top 5 most central nodes are 457412.RSAG_01228
+(degree 1332), 457412.RSAG_03304 (degree 1153), 457412.RSAG_01615 (degree
+1141), 457412.RSAG_01855 (degree 1130) and 457412.RSAG_02196 (degree 1081).
 
 
 References
@@ -107,14 +107,14 @@ def RuminococcusSp.5139bfaa(
 	
 	Datetime: 2021-02-02 20:53:09.140548
 	
-	The undirected graph Ruminococcus sp. 5139BFAA has 3488 nodes and 395801 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06508
-	and has 6 connected components, where the component with most nodes has 3476 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 226.95, and the node degree mode is 3. The top 5
-	most central nodes are 457412.RSAG_01228 (degree 1332), 457412.RSAG_03304 (degree
-	1153), 457412.RSAG_01615 (degree 1141), 457412.RSAG_01855 (degree 1130) and 457412.RSAG_02196
-	(degree 1081).
+	The undirected graph Ruminococcus sp. 5139BFAA has 3488 nodes and 395801
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06508 and has 6 connected components, where the component
+	with most nodes has 3476 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 226.95,
+	and the node degree mode is 3. The top 5 most central nodes are 457412.RSAG_01228
+	(degree 1332), 457412.RSAG_03304 (degree 1153), 457412.RSAG_01615 (degree
+	1141), 457412.RSAG_01855 (degree 1130) and 457412.RSAG_02196 (degree 1081).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:58.312842
 
-The undirected graph Corynebacterium glutamicum has 3028 nodes and 181633 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03963
-and has 12 connected components, where the component with most nodes has 2996 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 119.97, and the node degree mode is 3. The top 5 most
-central nodes are 196627.cg1525 (degree 1130), 196627.cg0957 (degree 904), 196627.cg2743
-(degree 902), 196627.cg3178 (degree 811) and 196627.cg0703 (degree 787).
+The undirected graph Corynebacterium glutamicum has 3028 nodes and 181633
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03963 and has 12 connected components, where the component
+with most nodes has 2996 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 119.97,
+and the node degree mode is 3. The top 5 most central nodes are 196627.cg1525
+(degree 1130), 196627.cg0957 (degree 904), 196627.cg2743 (degree 902),
+196627.cg3178 (degree 811) and 196627.cg0703 (degree 787).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumGlutamicum(
 	
 	Datetime: 2021-02-02 19:58:58.312842
 	
-	The undirected graph Corynebacterium glutamicum has 3028 nodes and 181633 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03963
-	and has 12 connected components, where the component with most nodes has 2996 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 119.97, and the node degree mode is 3. The top 5 most
-	central nodes are 196627.cg1525 (degree 1130), 196627.cg0957 (degree 904), 196627.cg2743
-	(degree 902), 196627.cg3178 (degree 811) and 196627.cg0703 (degree 787).
+	The undirected graph Corynebacterium glutamicum has 3028 nodes and 181633
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03963 and has 12 connected components, where the component
+	with most nodes has 2996 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 119.97,
+	and the node degree mode is 3. The top 5 most central nodes are 196627.cg1525
+	(degree 1130), 196627.cg0957 (degree 904), 196627.cg2743 (degree 902),
+	196627.cg3178 (degree 811) and 196627.cg0703 (degree 787).
 	
 
 

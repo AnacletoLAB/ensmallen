@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:21.502604
 
-The undirected graph Teredinibacter turnerae T7902 has 4068 nodes and 535990 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06479
-and has 25 connected components, where the component with most nodes has 4017 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 263.52, and the node degree mode is 1. The top 5
-most central nodes are 1056820.KB900700_gene1144 (degree 1853), 1056820.KB900649_gene2898
-(degree 1672), 1056820.KB900630_gene1448 (degree 1540), 1056820.KB900641_gene598
-(degree 1527) and 1056820.KB900649_gene2897 (degree 1511).
+The undirected graph Teredinibacter turnerae T7902 has 4068 nodes and 535990
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06479 and has 25 connected components, where the component
+with most nodes has 4017 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 263.52,
+and the node degree mode is 1. The top 5 most central nodes are 1056820.KB900700_gene1144
+(degree 1853), 1056820.KB900649_gene2898 (degree 1672), 1056820.KB900630_gene1448
+(degree 1540), 1056820.KB900641_gene598 (degree 1527) and 1056820.KB900649_gene2897
+(degree 1511).
 
 
 References
@@ -107,14 +108,15 @@ def TeredinibacterTurneraeT7902(
 	
 	Datetime: 2021-02-02 22:18:21.502604
 	
-	The undirected graph Teredinibacter turnerae T7902 has 4068 nodes and 535990 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06479
-	and has 25 connected components, where the component with most nodes has 4017 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 263.52, and the node degree mode is 1. The top 5
-	most central nodes are 1056820.KB900700_gene1144 (degree 1853), 1056820.KB900649_gene2898
-	(degree 1672), 1056820.KB900630_gene1448 (degree 1540), 1056820.KB900641_gene598
-	(degree 1527) and 1056820.KB900649_gene2897 (degree 1511).
+	The undirected graph Teredinibacter turnerae T7902 has 4068 nodes and 535990
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06479 and has 25 connected components, where the component
+	with most nodes has 4017 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 263.52,
+	and the node degree mode is 1. The top 5 most central nodes are 1056820.KB900700_gene1144
+	(degree 1853), 1056820.KB900649_gene2898 (degree 1672), 1056820.KB900630_gene1448
+	(degree 1540), 1056820.KB900641_gene598 (degree 1527) and 1056820.KB900649_gene2897
+	(degree 1511).
 	
 
 

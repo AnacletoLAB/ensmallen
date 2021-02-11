@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:51.568515
 
-The undirected graph Neisseria mucosa C102 has 2008 nodes and 170813 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08477 and
-has 3 connected components, where the component with most nodes has 2004 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 170.13, and the node degree mode is 6. The top 5 most central
-nodes are 435832.HMPREF0604_01153 (degree 916), 435832.HMPREF0604_01339 (degree 863),
-435832.HMPREF0604_00844 (degree 795), 435832.HMPREF0604_01162 (degree 784) and 435832.HMPREF0604_00398
+The undirected graph Neisseria mucosa C102 has 2008 nodes and 170813 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08477 and has 3 connected components, where the component with most
+nodes has 2004 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 170.13, and
+the node degree mode is 6. The top 5 most central nodes are 435832.HMPREF0604_01153
+(degree 916), 435832.HMPREF0604_01339 (degree 863), 435832.HMPREF0604_00844
+(degree 795), 435832.HMPREF0604_01162 (degree 784) and 435832.HMPREF0604_00398
 (degree 751).
 
 
@@ -107,13 +108,14 @@ def NeisseriaMucosaC102(
 	
 	Datetime: 2021-02-02 20:48:51.568515
 	
-	The undirected graph Neisseria mucosa C102 has 2008 nodes and 170813 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08477 and
-	has 3 connected components, where the component with most nodes has 2004 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 170.13, and the node degree mode is 6. The top 5 most central
-	nodes are 435832.HMPREF0604_01153 (degree 916), 435832.HMPREF0604_01339 (degree 863),
-	435832.HMPREF0604_00844 (degree 795), 435832.HMPREF0604_01162 (degree 784) and 435832.HMPREF0604_00398
+	The undirected graph Neisseria mucosa C102 has 2008 nodes and 170813 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08477 and has 3 connected components, where the component with most
+	nodes has 2004 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 170.13, and
+	the node degree mode is 6. The top 5 most central nodes are 435832.HMPREF0604_01153
+	(degree 916), 435832.HMPREF0604_01339 (degree 863), 435832.HMPREF0604_00844
+	(degree 795), 435832.HMPREF0604_01162 (degree 784) and 435832.HMPREF0604_00398
 	(degree 751).
 	
 

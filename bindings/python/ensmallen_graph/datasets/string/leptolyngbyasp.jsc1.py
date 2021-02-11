@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:58.454473
 
-The undirected graph Leptolyngbya sp. JSC1 has 5135 nodes and 543612 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04124 and
-has 18 connected components, where the component with most nodes has 5097 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 211.73, and the node degree mode is 1. The top 5 most central
-nodes are 1487953.JMKF01000005_gene618 (degree 2069), 1487953.JMKF01000078_gene4096
-(degree 1736), 1487953.JMKF01000037_gene3244 (degree 1468), 1487953.JMKF01000004_gene667
-(degree 1463) and 1487953.JMKF01000090_gene5356 (degree 1403).
+The undirected graph Leptolyngbya sp. JSC1 has 5135 nodes and 543612 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04124 and has 18 connected components, where the component with most
+nodes has 5097 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 211.73, and
+the node degree mode is 1. The top 5 most central nodes are 1487953.JMKF01000005_gene618
+(degree 2069), 1487953.JMKF01000078_gene4096 (degree 1736), 1487953.JMKF01000037_gene3244
+(degree 1468), 1487953.JMKF01000004_gene667 (degree 1463) and 1487953.JMKF01000090_gene5356
+(degree 1403).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaSp.Jsc1(
 	
 	Datetime: 2021-02-03 23:13:58.454473
 	
-	The undirected graph Leptolyngbya sp. JSC1 has 5135 nodes and 543612 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04124 and
-	has 18 connected components, where the component with most nodes has 5097 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 211.73, and the node degree mode is 1. The top 5 most central
-	nodes are 1487953.JMKF01000005_gene618 (degree 2069), 1487953.JMKF01000078_gene4096
-	(degree 1736), 1487953.JMKF01000037_gene3244 (degree 1468), 1487953.JMKF01000004_gene667
-	(degree 1463) and 1487953.JMKF01000090_gene5356 (degree 1403).
+	The undirected graph Leptolyngbya sp. JSC1 has 5135 nodes and 543612 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04124 and has 18 connected components, where the component with most
+	nodes has 5097 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 211.73, and
+	the node degree mode is 1. The top 5 most central nodes are 1487953.JMKF01000005_gene618
+	(degree 2069), 1487953.JMKF01000078_gene4096 (degree 1736), 1487953.JMKF01000037_gene3244
+	(degree 1468), 1487953.JMKF01000004_gene667 (degree 1463) and 1487953.JMKF01000090_gene5356
+	(degree 1403).
 	
 
 

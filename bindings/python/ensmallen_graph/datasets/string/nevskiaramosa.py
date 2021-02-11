@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:17.235924
 
-The undirected graph Nevskia ramosa has 3855 nodes and 400537 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05392 and
-has 3 connected components, where the component with most nodes has 3851 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 207.80, and the node degree mode is 3. The top 5 most central
-nodes are 1122603.ATVI01000006_gene454 (degree 1341), 1122603.ATVI01000011_gene2049
-(degree 1297), 1122603.ATVI01000006_gene664 (degree 1262), 1122603.ATVI01000005_gene3091
-(degree 1137) and 1122603.ATVI01000007_gene1681 (degree 1125).
+The undirected graph Nevskia ramosa has 3855 nodes and 400537 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05392 and has 3 connected components, where the component with most
+nodes has 3851 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 207.80, and
+the node degree mode is 3. The top 5 most central nodes are 1122603.ATVI01000006_gene454
+(degree 1341), 1122603.ATVI01000011_gene2049 (degree 1297), 1122603.ATVI01000006_gene664
+(degree 1262), 1122603.ATVI01000005_gene3091 (degree 1137) and 1122603.ATVI01000007_gene1681
+(degree 1125).
 
 
 References
@@ -107,14 +108,15 @@ def NevskiaRamosa(
 	
 	Datetime: 2021-02-02 22:43:17.235924
 	
-	The undirected graph Nevskia ramosa has 3855 nodes and 400537 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05392 and
-	has 3 connected components, where the component with most nodes has 3851 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 207.80, and the node degree mode is 3. The top 5 most central
-	nodes are 1122603.ATVI01000006_gene454 (degree 1341), 1122603.ATVI01000011_gene2049
-	(degree 1297), 1122603.ATVI01000006_gene664 (degree 1262), 1122603.ATVI01000005_gene3091
-	(degree 1137) and 1122603.ATVI01000007_gene1681 (degree 1125).
+	The undirected graph Nevskia ramosa has 3855 nodes and 400537 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05392 and has 3 connected components, where the component with most
+	nodes has 3851 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 207.80, and
+	the node degree mode is 3. The top 5 most central nodes are 1122603.ATVI01000006_gene454
+	(degree 1341), 1122603.ATVI01000011_gene2049 (degree 1297), 1122603.ATVI01000006_gene664
+	(degree 1262), 1122603.ATVI01000005_gene3091 (degree 1137) and 1122603.ATVI01000007_gene1681
+	(degree 1125).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:37:12.864241
 
-The undirected graph Phaseolus vulgaris has 23410 nodes and 3748944 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01368 and
-has 8 connected components, where the component with most nodes has 23395 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 320.29, and the node degree mode is 1. The top 5 most central
-nodes are 3885.XP_007152897.1 (degree 7272), 3885.XP_007131806.1 (degree 4724), 3885.XP_007136148.1
-(degree 4724), 3885.XP_007151656.1 (degree 4622) and 3885.XP_007145594.1 (degree
+The undirected graph Phaseolus vulgaris has 23410 nodes and 3748944 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01368 and has 8 connected components, where the component with most
+nodes has 23395 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 320.29, and
+the node degree mode is 1. The top 5 most central nodes are 3885.XP_007152897.1
+(degree 7272), 3885.XP_007131806.1 (degree 4724), 3885.XP_007136148.1 (degree
+4724), 3885.XP_007151656.1 (degree 4622) and 3885.XP_007145594.1 (degree
 3984).
 
 
@@ -107,13 +108,14 @@ def PhaseolusVulgaris(
 	
 	Datetime: 2021-02-02 16:37:12.864241
 	
-	The undirected graph Phaseolus vulgaris has 23410 nodes and 3748944 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01368 and
-	has 8 connected components, where the component with most nodes has 23395 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 320.29, and the node degree mode is 1. The top 5 most central
-	nodes are 3885.XP_007152897.1 (degree 7272), 3885.XP_007131806.1 (degree 4724), 3885.XP_007136148.1
-	(degree 4724), 3885.XP_007151656.1 (degree 4622) and 3885.XP_007145594.1 (degree
+	The undirected graph Phaseolus vulgaris has 23410 nodes and 3748944 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01368 and has 8 connected components, where the component with most
+	nodes has 23395 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 320.29, and
+	the node degree mode is 1. The top 5 most central nodes are 3885.XP_007152897.1
+	(degree 7272), 3885.XP_007131806.1 (degree 4724), 3885.XP_007136148.1 (degree
+	4724), 3885.XP_007151656.1 (degree 4622) and 3885.XP_007145594.1 (degree
 	3984).
 	
 

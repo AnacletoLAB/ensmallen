@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:14:43.682742
 
-The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04258
-and has 26 connected components, where the component with most nodes has 6681 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 236, the mean node degree is 287.43, and the node degree mode is 2. The top 5
-most central nodes are 1041142.ATTP01000002_gene3704 (degree 2779), 1041142.ATTP01000008_gene6392
-(degree 2448), 1041142.ATTP01000001_gene2037 (degree 2438), 1041142.ATTP01000030_gene4018
-(degree 2384) and 1041142.ATTP01000001_gene1993 (degree 2345).
+The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04258 and has 26 connected components, where the component
+with most nodes has 6681 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 236, the mean node degree is 287.43,
+and the node degree mode is 2. The top 5 most central nodes are 1041142.ATTP01000002_gene3704
+(degree 2779), 1041142.ATTP01000008_gene6392 (degree 2448), 1041142.ATTP01000001_gene2037
+(degree 2438), 1041142.ATTP01000030_gene4018 (degree 2384) and 1041142.ATTP01000001_gene1993
+(degree 2345).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumLeguminosarumGb30(
 	
 	Datetime: 2021-02-02 22:14:43.682742
 	
-	The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04258
-	and has 26 connected components, where the component with most nodes has 6681 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 236, the mean node degree is 287.43, and the node degree mode is 2. The top 5
-	most central nodes are 1041142.ATTP01000002_gene3704 (degree 2779), 1041142.ATTP01000008_gene6392
-	(degree 2448), 1041142.ATTP01000001_gene2037 (degree 2438), 1041142.ATTP01000030_gene4018
-	(degree 2384) and 1041142.ATTP01000001_gene1993 (degree 2345).
+	The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04258 and has 26 connected components, where the component
+	with most nodes has 6681 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 236, the mean node degree is 287.43,
+	and the node degree mode is 2. The top 5 most central nodes are 1041142.ATTP01000002_gene3704
+	(degree 2779), 1041142.ATTP01000008_gene6392 (degree 2448), 1041142.ATTP01000001_gene2037
+	(degree 2438), 1041142.ATTP01000030_gene4018 (degree 2384) and 1041142.ATTP01000001_gene1993
+	(degree 2345).
 	
 
 

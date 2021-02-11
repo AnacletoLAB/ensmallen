@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:18:55.393128
 
-The undirected graph srb1 has 54924 nodes and 1508538 unweighted edges, of which
-54924 are self-loops. The graph is quite sparse as it has a density of 0.00098 and
-is connected, as it has a single component. The graph median node degree is 54, the
-mean node degree is 53.93, and the node degree mode is 54. The top 5 most central
-nodes are 54924 (degree 270), 54923 (degree 270), 54922 (degree 270), 54921 (degree
-270) and 54920 (degree 270).
+The undirected graph srb1 has 54924 nodes and 1508538 unweighted edges,
+of which 54924 are self-loops. The graph is quite sparse as it has a density
+of 0.00098 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 53.93, and the node degree mode
+is 54. The top 5 most central nodes are 54924 (degree 270), 54923 (degree
+270), 54922 (degree 270), 54921 (degree 270) and 54920 (degree 270).
 
 
 References
@@ -102,12 +102,12 @@ def Srb1(
 	
 	Datetime: 2021-02-06 12:18:55.393128
 	
-	The undirected graph srb1 has 54924 nodes and 1508538 unweighted edges, of which
-	54924 are self-loops. The graph is quite sparse as it has a density of 0.00098 and
-	is connected, as it has a single component. The graph median node degree is 54, the
-	mean node degree is 53.93, and the node degree mode is 54. The top 5 most central
-	nodes are 54924 (degree 270), 54923 (degree 270), 54922 (degree 270), 54921 (degree
-	270) and 54920 (degree 270).
+	The undirected graph srb1 has 54924 nodes and 1508538 unweighted edges,
+	of which 54924 are self-loops. The graph is quite sparse as it has a density
+	of 0.00098 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 53.93, and the node degree mode
+	is 54. The top 5 most central nodes are 54924 (degree 270), 54923 (degree
+	270), 54922 (degree 270), 54921 (degree 270) and 54920 (degree 270).
 	
 
 

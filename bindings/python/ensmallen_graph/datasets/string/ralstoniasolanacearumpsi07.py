@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:20.232696
 
-The undirected graph Ralstonia solanacearum PSI07 has 4885 nodes and 437335 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03666
-and has 50 connected components, where the component with most nodes has 4765 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 179.05, and the node degree mode is 2. The top 5
-most central nodes are 859657.RPSI07_1868 (degree 1820), 859657.RPSI07_1192 (degree
-1747), 859657.RPSI07_1872 (degree 1550), 859657.RPSI07_mp0402 (degree 1459) and 859657.RPSI07_0533
-(degree 1341).
+The undirected graph Ralstonia solanacearum PSI07 has 4885 nodes and 437335
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03666 and has 50 connected components, where the component
+with most nodes has 4765 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 179.05,
+and the node degree mode is 2. The top 5 most central nodes are 859657.RPSI07_1868
+(degree 1820), 859657.RPSI07_1192 (degree 1747), 859657.RPSI07_1872 (degree
+1550), 859657.RPSI07_mp0402 (degree 1459) and 859657.RPSI07_0533 (degree
+1341).
 
 
 References
@@ -107,14 +108,15 @@ def RalstoniaSolanacearumPsi07(
 	
 	Datetime: 2021-02-02 21:46:20.232696
 	
-	The undirected graph Ralstonia solanacearum PSI07 has 4885 nodes and 437335 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03666
-	and has 50 connected components, where the component with most nodes has 4765 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 179.05, and the node degree mode is 2. The top 5
-	most central nodes are 859657.RPSI07_1868 (degree 1820), 859657.RPSI07_1192 (degree
-	1747), 859657.RPSI07_1872 (degree 1550), 859657.RPSI07_mp0402 (degree 1459) and 859657.RPSI07_0533
-	(degree 1341).
+	The undirected graph Ralstonia solanacearum PSI07 has 4885 nodes and 437335
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03666 and has 50 connected components, where the component
+	with most nodes has 4765 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 179.05,
+	and the node degree mode is 2. The top 5 most central nodes are 859657.RPSI07_1868
+	(degree 1820), 859657.RPSI07_1192 (degree 1747), 859657.RPSI07_1872 (degree
+	1550), 859657.RPSI07_mp0402 (degree 1459) and 859657.RPSI07_0533 (degree
+	1341).
 	
 
 

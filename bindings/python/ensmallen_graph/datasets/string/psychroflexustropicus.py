@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:55.258613
 
-The undirected graph Psychroflexus tropicus has 2755 nodes and 192256 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05068 and
-has 13 connected components, where the component with most nodes has 2715 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 139.57, and the node degree mode is 2. The top 5 most central
-nodes are 1123035.ARLA01000028_gene2386 (degree 946), 1123035.ARLA01000021_gene875
-(degree 868), 1123035.ARLA01000028_gene1804 (degree 810), 1123035.ARLA01000023_gene1036
-(degree 798) and 1123035.ARLA01000023_gene1077 (degree 770).
+The undirected graph Psychroflexus tropicus has 2755 nodes and 192256 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05068 and has 13 connected components, where the component with most
+nodes has 2715 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 139.57, and
+the node degree mode is 2. The top 5 most central nodes are 1123035.ARLA01000028_gene2386
+(degree 946), 1123035.ARLA01000021_gene875 (degree 868), 1123035.ARLA01000028_gene1804
+(degree 810), 1123035.ARLA01000023_gene1036 (degree 798) and 1123035.ARLA01000023_gene1077
+(degree 770).
 
 
 References
@@ -107,14 +108,15 @@ def PsychroflexusTropicus(
 	
 	Datetime: 2021-02-02 22:46:55.258613
 	
-	The undirected graph Psychroflexus tropicus has 2755 nodes and 192256 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05068 and
-	has 13 connected components, where the component with most nodes has 2715 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 139.57, and the node degree mode is 2. The top 5 most central
-	nodes are 1123035.ARLA01000028_gene2386 (degree 946), 1123035.ARLA01000021_gene875
-	(degree 868), 1123035.ARLA01000028_gene1804 (degree 810), 1123035.ARLA01000023_gene1036
-	(degree 798) and 1123035.ARLA01000023_gene1077 (degree 770).
+	The undirected graph Psychroflexus tropicus has 2755 nodes and 192256 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05068 and has 13 connected components, where the component with most
+	nodes has 2715 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 139.57, and
+	the node degree mode is 2. The top 5 most central nodes are 1123035.ARLA01000028_gene2386
+	(degree 946), 1123035.ARLA01000021_gene875 (degree 868), 1123035.ARLA01000028_gene1804
+	(degree 810), 1123035.ARLA01000023_gene1036 (degree 798) and 1123035.ARLA01000023_gene1077
+	(degree 770).
 	
 
 

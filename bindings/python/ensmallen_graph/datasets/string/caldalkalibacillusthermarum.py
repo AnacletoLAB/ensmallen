@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:28.874035
 
-The undirected graph Caldalkalibacillus thermarum has 2946 nodes and 280849 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06474
-and has 11 connected components, where the component with most nodes has 2924 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 176, the mean node degree is 190.66, and the node degree mode is 1. The top 5
-most central nodes are 986075.CathTA2_2358 (degree 1203), 986075.CathTA2_2604 (degree
-1021), 986075.CathTA2_2227 (degree 840), 986075.CathTA2_1242 (degree 812) and 986075.CathTA2_1896
-(degree 763).
+The undirected graph Caldalkalibacillus thermarum has 2946 nodes and 280849
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06474 and has 11 connected components, where the component
+with most nodes has 2924 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 176, the mean node degree is 190.66,
+and the node degree mode is 1. The top 5 most central nodes are 986075.CathTA2_2358
+(degree 1203), 986075.CathTA2_2604 (degree 1021), 986075.CathTA2_2227 (degree
+840), 986075.CathTA2_1242 (degree 812) and 986075.CathTA2_1896 (degree
+763).
 
 
 References
@@ -107,14 +108,15 @@ def CaldalkalibacillusThermarum(
 	
 	Datetime: 2021-02-02 22:04:28.874035
 	
-	The undirected graph Caldalkalibacillus thermarum has 2946 nodes and 280849 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06474
-	and has 11 connected components, where the component with most nodes has 2924 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 176, the mean node degree is 190.66, and the node degree mode is 1. The top 5
-	most central nodes are 986075.CathTA2_2358 (degree 1203), 986075.CathTA2_2604 (degree
-	1021), 986075.CathTA2_2227 (degree 840), 986075.CathTA2_1242 (degree 812) and 986075.CathTA2_1896
-	(degree 763).
+	The undirected graph Caldalkalibacillus thermarum has 2946 nodes and 280849
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06474 and has 11 connected components, where the component
+	with most nodes has 2924 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 176, the mean node degree is 190.66,
+	and the node degree mode is 1. The top 5 most central nodes are 986075.CathTA2_2358
+	(degree 1203), 986075.CathTA2_2604 (degree 1021), 986075.CathTA2_2227 (degree
+	840), 986075.CathTA2_1242 (degree 812) and 986075.CathTA2_1896 (degree
+	763).
 	
 
 

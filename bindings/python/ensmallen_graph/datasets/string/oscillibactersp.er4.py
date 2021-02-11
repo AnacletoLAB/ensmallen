@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:46.349580
 
-The undirected graph Oscillibacter sp. ER4 has 2390 nodes and 170944 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05988 and
-has 13 connected components, where the component with most nodes has 2364 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 143.05, and the node degree mode is 1. The top 5 most central
-nodes are 1519439.JPJG01000072_gene1343 (degree 954), 1519439.JPJG01000001_gene1281
-(degree 880), 1519439.JPJG01000005_gene1024 (degree 793), 1519439.JPJG01000034_gene1609
-(degree 793) and 1519439.JPJG01000006_gene1236 (degree 777).
+The undirected graph Oscillibacter sp. ER4 has 2390 nodes and 170944 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05988 and has 13 connected components, where the component with most
+nodes has 2364 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 143.05, and
+the node degree mode is 1. The top 5 most central nodes are 1519439.JPJG01000072_gene1343
+(degree 954), 1519439.JPJG01000001_gene1281 (degree 880), 1519439.JPJG01000005_gene1024
+(degree 793), 1519439.JPJG01000034_gene1609 (degree 793) and 1519439.JPJG01000006_gene1236
+(degree 777).
 
 
 References
@@ -107,14 +108,15 @@ def OscillibacterSp.Er4(
 	
 	Datetime: 2021-02-03 23:17:46.349580
 	
-	The undirected graph Oscillibacter sp. ER4 has 2390 nodes and 170944 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05988 and
-	has 13 connected components, where the component with most nodes has 2364 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 143.05, and the node degree mode is 1. The top 5 most central
-	nodes are 1519439.JPJG01000072_gene1343 (degree 954), 1519439.JPJG01000001_gene1281
-	(degree 880), 1519439.JPJG01000005_gene1024 (degree 793), 1519439.JPJG01000034_gene1609
-	(degree 793) and 1519439.JPJG01000006_gene1236 (degree 777).
+	The undirected graph Oscillibacter sp. ER4 has 2390 nodes and 170944 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05988 and has 13 connected components, where the component with most
+	nodes has 2364 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 143.05, and
+	the node degree mode is 1. The top 5 most central nodes are 1519439.JPJG01000072_gene1343
+	(degree 954), 1519439.JPJG01000001_gene1281 (degree 880), 1519439.JPJG01000005_gene1024
+	(degree 793), 1519439.JPJG01000034_gene1609 (degree 793) and 1519439.JPJG01000006_gene1236
+	(degree 777).
 	
 
 

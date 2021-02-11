@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:01.719762
 
-The undirected graph crplat2 has 18010 nodes and 489478 unweighted edges, of which
-18010 are self-loops. The graph is sparse as it has a density of 0.00296 and is connected,
-as it has a single component. The graph median node degree is 54, the mean node degree
-is 53.36, and the node degree mode is 54. The top 5 most central nodes are 4463 (degree
-72), 4462 (degree 72), 4461 (degree 72), 4460 (degree 72) and 4459 (degree 72).
+The undirected graph crplat2 has 18010 nodes and 489478 unweighted edges,
+of which 18010 are self-loops. The graph is sparse as it has a density
+of 0.00296 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 53.36, and the node degree mode
+is 54. The top 5 most central nodes are 4463 (degree 72), 4462 (degree
+72), 4461 (degree 72), 4460 (degree 72) and 4459 (degree 72).
 
 
 References
@@ -101,11 +102,12 @@ def Crplat2(
 	
 	Datetime: 2021-02-06 11:08:01.719762
 	
-	The undirected graph crplat2 has 18010 nodes and 489478 unweighted edges, of which
-	18010 are self-loops. The graph is sparse as it has a density of 0.00296 and is connected,
-	as it has a single component. The graph median node degree is 54, the mean node degree
-	is 53.36, and the node degree mode is 54. The top 5 most central nodes are 4463 (degree
-	72), 4462 (degree 72), 4461 (degree 72), 4460 (degree 72) and 4459 (degree 72).
+	The undirected graph crplat2 has 18010 nodes and 489478 unweighted edges,
+	of which 18010 are self-loops. The graph is sparse as it has a density
+	of 0.00296 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 53.36, and the node degree mode
+	is 54. The top 5 most central nodes are 4463 (degree 72), 4462 (degree
+	72), 4461 (degree 72), 4460 (degree 72) and 4459 (degree 72).
 	
 
 

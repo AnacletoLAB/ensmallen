@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:41.322549
 
-The undirected graph Paenibacillus sp. FSLR7277 has 6387 nodes and 831802 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04079
-and has 19 connected components, where the component with most nodes has 6347 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 260.47, and the node degree mode is 2. The top 5
-most central nodes are 1227352.C173_31446 (degree 2529), 1227352.C173_13386 (degree
-1911), 1227352.C173_14450 (degree 1845), 1227352.C173_26462 (degree 1838) and 1227352.C173_04151
-(degree 1822).
+The undirected graph Paenibacillus sp. FSLR7277 has 6387 nodes and 831802
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04079 and has 19 connected components, where the component
+with most nodes has 6347 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 230, the mean node degree is 260.47,
+and the node degree mode is 2. The top 5 most central nodes are 1227352.C173_31446
+(degree 2529), 1227352.C173_13386 (degree 1911), 1227352.C173_14450 (degree
+1845), 1227352.C173_26462 (degree 1838) and 1227352.C173_04151 (degree
+1822).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Fslr7277(
 	
 	Datetime: 2021-02-02 23:25:41.322549
 	
-	The undirected graph Paenibacillus sp. FSLR7277 has 6387 nodes and 831802 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04079
-	and has 19 connected components, where the component with most nodes has 6347 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 260.47, and the node degree mode is 2. The top 5
-	most central nodes are 1227352.C173_31446 (degree 2529), 1227352.C173_13386 (degree
-	1911), 1227352.C173_14450 (degree 1845), 1227352.C173_26462 (degree 1838) and 1227352.C173_04151
-	(degree 1822).
+	The undirected graph Paenibacillus sp. FSLR7277 has 6387 nodes and 831802
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04079 and has 19 connected components, where the component
+	with most nodes has 6347 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 230, the mean node degree is 260.47,
+	and the node degree mode is 2. The top 5 most central nodes are 1227352.C173_31446
+	(degree 2529), 1227352.C173_13386 (degree 1911), 1227352.C173_14450 (degree
+	1845), 1227352.C173_26462 (degree 1838) and 1227352.C173_04151 (degree
+	1822).
 	
 
 

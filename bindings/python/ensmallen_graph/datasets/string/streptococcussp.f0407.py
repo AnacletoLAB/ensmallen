@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:44.457971
 
-The undirected graph Streptococcus sp. F0407 has 1863 nodes and 122859 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07083 and
-has 6 connected components, where the component with most nodes has 1847 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 131.89, and the node degree mode is 9. The top 5 most central
-nodes are 861455.HMPREF9184_01529 (degree 808), 861455.HMPREF9184_01502 (degree 709),
-861455.HMPREF9184_01136 (degree 689), 861455.HMPREF9184_01448 (degree 643) and 861455.HMPREF9184_00512
+The undirected graph Streptococcus sp. F0407 has 1863 nodes and 122859
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07083 and has 6 connected components, where the component
+with most nodes has 1847 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 131.89,
+and the node degree mode is 9. The top 5 most central nodes are 861455.HMPREF9184_01529
+(degree 808), 861455.HMPREF9184_01502 (degree 709), 861455.HMPREF9184_01136
+(degree 689), 861455.HMPREF9184_01448 (degree 643) and 861455.HMPREF9184_00512
 (degree 612).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.F0407(
 	
 	Datetime: 2021-02-02 21:46:44.457971
 	
-	The undirected graph Streptococcus sp. F0407 has 1863 nodes and 122859 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07083 and
-	has 6 connected components, where the component with most nodes has 1847 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 131.89, and the node degree mode is 9. The top 5 most central
-	nodes are 861455.HMPREF9184_01529 (degree 808), 861455.HMPREF9184_01502 (degree 709),
-	861455.HMPREF9184_01136 (degree 689), 861455.HMPREF9184_01448 (degree 643) and 861455.HMPREF9184_00512
+	The undirected graph Streptococcus sp. F0407 has 1863 nodes and 122859
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07083 and has 6 connected components, where the component
+	with most nodes has 1847 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 131.89,
+	and the node degree mode is 9. The top 5 most central nodes are 861455.HMPREF9184_01529
+	(degree 808), 861455.HMPREF9184_01502 (degree 709), 861455.HMPREF9184_01136
+	(degree 689), 861455.HMPREF9184_01448 (degree 643) and 861455.HMPREF9184_00512
 	(degree 612).
 	
 

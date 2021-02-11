@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:29.126564
 
-The undirected graph Brevibacillus laterosporus LMG15441 has 4455 nodes and 542272
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05466 and has 40 connected components, where the component with most nodes has
-4349 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 216, the mean node degree is 243.44, and the node degree mode is 2. The
-top 5 most central nodes are 1042163.BRLA_c020420 (degree 1744), 1042163.BRLA_c009240
-(degree 1615), 1042163.BRLA_c020400 (degree 1494), 1042163.BRLA_c020410 (degree 1453)
+The undirected graph Brevibacillus laterosporus LMG15441 has 4455 nodes
+and 542272 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05466 and has 40 connected components, where the
+component with most nodes has 4349 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 216, the mean node degree
+is 243.44, and the node degree mode is 2. The top 5 most central nodes
+are 1042163.BRLA_c020420 (degree 1744), 1042163.BRLA_c009240 (degree 1615),
+1042163.BRLA_c020400 (degree 1494), 1042163.BRLA_c020410 (degree 1453)
 and 1042163.BRLA_c007370 (degree 1250).
 
 
@@ -107,13 +108,14 @@ def BrevibacillusLaterosporusLmg15441(
 	
 	Datetime: 2021-02-02 22:15:29.126564
 	
-	The undirected graph Brevibacillus laterosporus LMG15441 has 4455 nodes and 542272
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05466 and has 40 connected components, where the component with most nodes has
-	4349 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 216, the mean node degree is 243.44, and the node degree mode is 2. The
-	top 5 most central nodes are 1042163.BRLA_c020420 (degree 1744), 1042163.BRLA_c009240
-	(degree 1615), 1042163.BRLA_c020400 (degree 1494), 1042163.BRLA_c020410 (degree 1453)
+	The undirected graph Brevibacillus laterosporus LMG15441 has 4455 nodes
+	and 542272 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05466 and has 40 connected components, where the
+	component with most nodes has 4349 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 216, the mean node degree
+	is 243.44, and the node degree mode is 2. The top 5 most central nodes
+	are 1042163.BRLA_c020420 (degree 1744), 1042163.BRLA_c009240 (degree 1615),
+	1042163.BRLA_c020400 (degree 1494), 1042163.BRLA_c020410 (degree 1453)
 	and 1042163.BRLA_c007370 (degree 1250).
 	
 

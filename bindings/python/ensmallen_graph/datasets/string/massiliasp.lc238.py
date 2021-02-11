@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:44.804561
 
-The undirected graph Massilia sp. LC238 has 5046 nodes and 747558 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05873 and
-has 23 connected components, where the component with most nodes has 4982 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 236,
-the mean node degree is 296.30, and the node degree mode is 2. The top 5 most central
-nodes are 1502852.FG94_00555 (degree 2145), 1502852.FG94_02011 (degree 2052), 1502852.FG94_05042
-(degree 1841), 1502852.FG94_02297 (degree 1781) and 1502852.FG94_05041 (degree 1756).
+The undirected graph Massilia sp. LC238 has 5046 nodes and 747558 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05873 and has 23 connected components, where the component with most
+nodes has 4982 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 236, the mean node degree is 296.30, and
+the node degree mode is 2. The top 5 most central nodes are 1502852.FG94_00555
+(degree 2145), 1502852.FG94_02011 (degree 2052), 1502852.FG94_05042 (degree
+1841), 1502852.FG94_02297 (degree 1781) and 1502852.FG94_05041 (degree
+1756).
 
 
 References
@@ -106,13 +108,15 @@ def MassiliaSp.Lc238(
 	
 	Datetime: 2021-02-03 23:16:44.804561
 	
-	The undirected graph Massilia sp. LC238 has 5046 nodes and 747558 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05873 and
-	has 23 connected components, where the component with most nodes has 4982 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 236,
-	the mean node degree is 296.30, and the node degree mode is 2. The top 5 most central
-	nodes are 1502852.FG94_00555 (degree 2145), 1502852.FG94_02011 (degree 2052), 1502852.FG94_05042
-	(degree 1841), 1502852.FG94_02297 (degree 1781) and 1502852.FG94_05041 (degree 1756).
+	The undirected graph Massilia sp. LC238 has 5046 nodes and 747558 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05873 and has 23 connected components, where the component with most
+	nodes has 4982 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 236, the mean node degree is 296.30, and
+	the node degree mode is 2. The top 5 most central nodes are 1502852.FG94_00555
+	(degree 2145), 1502852.FG94_02011 (degree 2052), 1502852.FG94_05042 (degree
+	1841), 1502852.FG94_02297 (degree 1781) and 1502852.FG94_05041 (degree
+	1756).
 	
 
 

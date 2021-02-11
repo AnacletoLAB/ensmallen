@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:45.558653
 
-The undirected graph Pantoea rwandensis has 3765 nodes and 306976 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04332 and
-has 12 connected components, where the component with most nodes has 3741 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 163.07, and the node degree mode is 1. The top 5 most central
-nodes are 1076550.LH22_12305 (degree 1310), 1076550.LH22_16485 (degree 1299), 1076550.LH22_02530
-(degree 1292), 1076550.LH22_19995 (degree 1166) and 1076550.LH22_07950 (degree 1066).
+The undirected graph Pantoea rwandensis has 3765 nodes and 306976 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04332 and has 12 connected components, where the component with most
+nodes has 3741 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 163.07, and
+the node degree mode is 1. The top 5 most central nodes are 1076550.LH22_12305
+(degree 1310), 1076550.LH22_16485 (degree 1299), 1076550.LH22_02530 (degree
+1292), 1076550.LH22_19995 (degree 1166) and 1076550.LH22_07950 (degree
+1066).
 
 
 References
@@ -106,13 +108,15 @@ def PantoeaRwandensis(
 	
 	Datetime: 2021-02-02 22:19:45.558653
 	
-	The undirected graph Pantoea rwandensis has 3765 nodes and 306976 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04332 and
-	has 12 connected components, where the component with most nodes has 3741 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 163.07, and the node degree mode is 1. The top 5 most central
-	nodes are 1076550.LH22_12305 (degree 1310), 1076550.LH22_16485 (degree 1299), 1076550.LH22_02530
-	(degree 1292), 1076550.LH22_19995 (degree 1166) and 1076550.LH22_07950 (degree 1066).
+	The undirected graph Pantoea rwandensis has 3765 nodes and 306976 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04332 and has 12 connected components, where the component with most
+	nodes has 3741 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 163.07, and
+	the node degree mode is 1. The top 5 most central nodes are 1076550.LH22_12305
+	(degree 1310), 1076550.LH22_16485 (degree 1299), 1076550.LH22_02530 (degree
+	1292), 1076550.LH22_19995 (degree 1166) and 1076550.LH22_07950 (degree
+	1066).
 	
 
 

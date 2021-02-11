@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:59.623419
 
-The undirected graph Bacteroidetes bacterium SCGC AAA027N21 has 2033 nodes and 199689
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.09668 and has 6 connected components, where the component with most nodes has
-2023 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 183, the mean node degree is 196.45, and the node degree mode is 1. The
-top 5 most central nodes are 938709.AUSH02000045_gene357 (degree 1200), 938709.AUSH02000046_gene54
+The undirected graph Bacteroidetes bacterium SCGC AAA027N21 has 2033 nodes
+and 199689 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09668 and has 6 connected components, where the
+component with most nodes has 2023 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+is 196.45, and the node degree mode is 1. The top 5 most central nodes
+are 938709.AUSH02000045_gene357 (degree 1200), 938709.AUSH02000046_gene54
 (degree 928), 938709.AUSH02000015_gene587 (degree 917), 938709.AUSH02000073_gene1733
 (degree 792) and 938709.AUSH02000069_gene1531 (degree 751).
 
@@ -107,12 +108,13 @@ def BacteroidetesBacteriumScgcAaa027n21(
 	
 	Datetime: 2021-02-02 22:00:59.623419
 	
-	The undirected graph Bacteroidetes bacterium SCGC AAA027N21 has 2033 nodes and 199689
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.09668 and has 6 connected components, where the component with most nodes has
-	2023 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 183, the mean node degree is 196.45, and the node degree mode is 1. The
-	top 5 most central nodes are 938709.AUSH02000045_gene357 (degree 1200), 938709.AUSH02000046_gene54
+	The undirected graph Bacteroidetes bacterium SCGC AAA027N21 has 2033 nodes
+	and 199689 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09668 and has 6 connected components, where the
+	component with most nodes has 2023 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+	is 196.45, and the node degree mode is 1. The top 5 most central nodes
+	are 938709.AUSH02000045_gene357 (degree 1200), 938709.AUSH02000046_gene54
 	(degree 928), 938709.AUSH02000015_gene587 (degree 917), 938709.AUSH02000073_gene1733
 	(degree 792) and 938709.AUSH02000069_gene1531 (degree 751).
 	

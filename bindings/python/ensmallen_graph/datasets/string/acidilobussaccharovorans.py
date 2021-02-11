@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:30.385557
 
-The undirected graph Acidilobus saccharovorans has 1489 nodes and 144287 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13024 and has 5 connected components, where the component with most nodes has
-1480 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 200, the mean node degree is 193.80, and the node degree mode is 3. The
-top 5 most central nodes are 666510.ASAC_0892 (degree 712), 666510.ASAC_1230 (degree
-666), 666510.ASAC_0470 (degree 614), 666510.ASAC_1207 (degree 601) and 666510.ASAC_1235
-(degree 581).
+The undirected graph Acidilobus saccharovorans has 1489 nodes and 144287
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13024 and has 5 connected components, where the
+component with most nodes has 1480 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 200, the mean node degree
+is 193.80, and the node degree mode is 3. The top 5 most central nodes
+are 666510.ASAC_0892 (degree 712), 666510.ASAC_1230 (degree 666), 666510.ASAC_0470
+(degree 614), 666510.ASAC_1207 (degree 601) and 666510.ASAC_1235 (degree
+581).
 
 
 References
@@ -107,14 +108,15 @@ def AcidilobusSaccharovorans(
 	
 	Datetime: 2021-02-02 21:28:30.385557
 	
-	The undirected graph Acidilobus saccharovorans has 1489 nodes and 144287 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13024 and has 5 connected components, where the component with most nodes has
-	1480 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 200, the mean node degree is 193.80, and the node degree mode is 3. The
-	top 5 most central nodes are 666510.ASAC_0892 (degree 712), 666510.ASAC_1230 (degree
-	666), 666510.ASAC_0470 (degree 614), 666510.ASAC_1207 (degree 601) and 666510.ASAC_1235
-	(degree 581).
+	The undirected graph Acidilobus saccharovorans has 1489 nodes and 144287
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13024 and has 5 connected components, where the
+	component with most nodes has 1480 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 200, the mean node degree
+	is 193.80, and the node degree mode is 3. The top 5 most central nodes
+	are 666510.ASAC_0892 (degree 712), 666510.ASAC_1230 (degree 666), 666510.ASAC_0470
+	(degree 614), 666510.ASAC_1207 (degree 601) and 666510.ASAC_1235 (degree
+	581).
 	
 
 

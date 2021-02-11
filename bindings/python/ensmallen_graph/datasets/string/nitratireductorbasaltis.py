@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:20.671307
 
-The undirected graph Nitratireductor basaltis has 3433 nodes and 291986 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04956
-and has 3 connected components, where the component with most nodes has 3423 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 170.11, and the node degree mode is 4. The top 5
-most central nodes are 472175.EL18_02580 (degree 1261), 472175.EL18_00137 (degree
-1015), 472175.EL18_01868 (degree 1003), 472175.EL18_01860 (degree 990) and 472175.EL18_01768
-(degree 962).
+The undirected graph Nitratireductor basaltis has 3433 nodes and 291986
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04956 and has 3 connected components, where the component
+with most nodes has 3423 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 170.11,
+and the node degree mode is 4. The top 5 most central nodes are 472175.EL18_02580
+(degree 1261), 472175.EL18_00137 (degree 1015), 472175.EL18_01868 (degree
+1003), 472175.EL18_01860 (degree 990) and 472175.EL18_01768 (degree 962).
 
 
 References
@@ -107,14 +107,14 @@ def NitratireductorBasaltis(
 	
 	Datetime: 2021-02-02 20:56:20.671307
 	
-	The undirected graph Nitratireductor basaltis has 3433 nodes and 291986 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04956
-	and has 3 connected components, where the component with most nodes has 3423 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 170.11, and the node degree mode is 4. The top 5
-	most central nodes are 472175.EL18_02580 (degree 1261), 472175.EL18_00137 (degree
-	1015), 472175.EL18_01868 (degree 1003), 472175.EL18_01860 (degree 990) and 472175.EL18_01768
-	(degree 962).
+	The undirected graph Nitratireductor basaltis has 3433 nodes and 291986
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04956 and has 3 connected components, where the component
+	with most nodes has 3423 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 170.11,
+	and the node degree mode is 4. The top 5 most central nodes are 472175.EL18_02580
+	(degree 1261), 472175.EL18_00137 (degree 1015), 472175.EL18_01868 (degree
+	1003), 472175.EL18_01860 (degree 990) and 472175.EL18_01768 (degree 962).
 	
 
 

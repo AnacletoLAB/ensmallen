@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:08.587838
 
-The undirected graph Lactobacillus coleohominis has 1686 nodes and 122073 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08594
-and has 15 connected components, where the component with most nodes has 1637 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 144.81, and the node degree mode is 2. The top 5
-most central nodes are 575594.ACOH01000003_gene894 (degree 758), 575594.ACOH01000002_gene977
-(degree 653), 575594.ACOH01000011_gene409 (degree 643), 575594.ACOH01000002_gene1159
-(degree 592) and 575594.ACOH01000020_gene1481 (degree 569).
+The undirected graph Lactobacillus coleohominis has 1686 nodes and 122073
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08594 and has 15 connected components, where the component
+with most nodes has 1637 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 144.81,
+and the node degree mode is 2. The top 5 most central nodes are 575594.ACOH01000003_gene894
+(degree 758), 575594.ACOH01000002_gene977 (degree 653), 575594.ACOH01000011_gene409
+(degree 643), 575594.ACOH01000002_gene1159 (degree 592) and 575594.ACOH01000020_gene1481
+(degree 569).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusColeohominis(
 	
 	Datetime: 2021-02-02 21:15:08.587838
 	
-	The undirected graph Lactobacillus coleohominis has 1686 nodes and 122073 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08594
-	and has 15 connected components, where the component with most nodes has 1637 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 144.81, and the node degree mode is 2. The top 5
-	most central nodes are 575594.ACOH01000003_gene894 (degree 758), 575594.ACOH01000002_gene977
-	(degree 653), 575594.ACOH01000011_gene409 (degree 643), 575594.ACOH01000002_gene1159
-	(degree 592) and 575594.ACOH01000020_gene1481 (degree 569).
+	The undirected graph Lactobacillus coleohominis has 1686 nodes and 122073
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08594 and has 15 connected components, where the component
+	with most nodes has 1637 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 144.81,
+	and the node degree mode is 2. The top 5 most central nodes are 575594.ACOH01000003_gene894
+	(degree 758), 575594.ACOH01000002_gene977 (degree 653), 575594.ACOH01000011_gene409
+	(degree 643), 575594.ACOH01000002_gene1159 (degree 592) and 575594.ACOH01000020_gene1481
+	(degree 569).
 	
 
 

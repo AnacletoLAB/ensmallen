@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:46.891980
 
-The undirected graph Acetobacteraceae bacterium AT5844 has 5240 nodes and 569669
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04150 and has 34 connected components, where the component with most nodes has
-5159 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 167, the mean node degree is 217.43, and the node degree mode is 2. The
-top 5 most central nodes are 1054213.HMPREF9946_05090 (degree 1678), 1054213.HMPREF9946_04522
-(degree 1475), 1054213.HMPREF9946_01687 (degree 1405), 1054213.HMPREF9946_03695 (degree
-1382) and 1054213.HMPREF9946_05073 (degree 1235).
+The undirected graph Acetobacteraceae bacterium AT5844 has 5240 nodes and
+569669 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04150 and has 34 connected components, where the
+component with most nodes has 5159 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+is 217.43, and the node degree mode is 2. The top 5 most central nodes
+are 1054213.HMPREF9946_05090 (degree 1678), 1054213.HMPREF9946_04522 (degree
+1475), 1054213.HMPREF9946_01687 (degree 1405), 1054213.HMPREF9946_03695
+(degree 1382) and 1054213.HMPREF9946_05073 (degree 1235).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacteraceaeBacteriumAt5844(
 	
 	Datetime: 2021-02-02 22:17:46.891980
 	
-	The undirected graph Acetobacteraceae bacterium AT5844 has 5240 nodes and 569669
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04150 and has 34 connected components, where the component with most nodes has
-	5159 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 167, the mean node degree is 217.43, and the node degree mode is 2. The
-	top 5 most central nodes are 1054213.HMPREF9946_05090 (degree 1678), 1054213.HMPREF9946_04522
-	(degree 1475), 1054213.HMPREF9946_01687 (degree 1405), 1054213.HMPREF9946_03695 (degree
-	1382) and 1054213.HMPREF9946_05073 (degree 1235).
+	The undirected graph Acetobacteraceae bacterium AT5844 has 5240 nodes and
+	569669 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04150 and has 34 connected components, where the
+	component with most nodes has 5159 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+	is 217.43, and the node degree mode is 2. The top 5 most central nodes
+	are 1054213.HMPREF9946_05090 (degree 1678), 1054213.HMPREF9946_04522 (degree
+	1475), 1054213.HMPREF9946_01687 (degree 1405), 1054213.HMPREF9946_03695
+	(degree 1382) and 1054213.HMPREF9946_05073 (degree 1235).
 	
 
 

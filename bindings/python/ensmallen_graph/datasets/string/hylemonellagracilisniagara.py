@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:55.469282
 
-The undirected graph Hylemonella gracilis Niagara has 3363 nodes and 365606 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06467
-and has 2 connected components, where the component with most nodes has 3361 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 217.43, and the node degree mode is 5. The top 5
-most central nodes are 1458275.AZ34_10150 (degree 1160), 1458275.AZ34_10155 (degree
-1112), 1458275.AZ34_15220 (degree 1027), 1458275.AZ34_13580 (degree 993) and 1458275.AZ34_01605
-(degree 989).
+The undirected graph Hylemonella gracilis Niagara has 3363 nodes and 365606
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06467 and has 2 connected components, where the component
+with most nodes has 3361 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 217.43,
+and the node degree mode is 5. The top 5 most central nodes are 1458275.AZ34_10150
+(degree 1160), 1458275.AZ34_10155 (degree 1112), 1458275.AZ34_15220 (degree
+1027), 1458275.AZ34_13580 (degree 993) and 1458275.AZ34_01605 (degree 989).
 
 
 References
@@ -107,14 +107,14 @@ def HylemonellaGracilisNiagara(
 	
 	Datetime: 2021-02-03 23:06:55.469282
 	
-	The undirected graph Hylemonella gracilis Niagara has 3363 nodes and 365606 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06467
-	and has 2 connected components, where the component with most nodes has 3361 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 217.43, and the node degree mode is 5. The top 5
-	most central nodes are 1458275.AZ34_10150 (degree 1160), 1458275.AZ34_10155 (degree
-	1112), 1458275.AZ34_15220 (degree 1027), 1458275.AZ34_13580 (degree 993) and 1458275.AZ34_01605
-	(degree 989).
+	The undirected graph Hylemonella gracilis Niagara has 3363 nodes and 365606
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06467 and has 2 connected components, where the component
+	with most nodes has 3361 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 217.43,
+	and the node degree mode is 5. The top 5 most central nodes are 1458275.AZ34_10150
+	(degree 1160), 1458275.AZ34_10155 (degree 1112), 1458275.AZ34_15220 (degree
+	1027), 1458275.AZ34_13580 (degree 993) and 1458275.AZ34_01605 (degree 989).
 	
 
 

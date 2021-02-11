@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:16.427157
 
-The undirected graph Corynebacterium pilosum has 2275 nodes and 176280 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06815 and
-has 7 connected components, where the component with most nodes has 2263 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 154.97, and the node degree mode is 4. The top 5 most central
-nodes are 1121366.KB892448_gene2024 (degree 950), 1121366.KB892467_gene1501 (degree
-813), 1121366.KB892450_gene1041 (degree 811), 1121366.KB892470_gene155 (degree 781)
-and 1121366.KB892448_gene2006 (degree 728).
+The undirected graph Corynebacterium pilosum has 2275 nodes and 176280
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06815 and has 7 connected components, where the component
+with most nodes has 2263 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 154.97,
+and the node degree mode is 4. The top 5 most central nodes are 1121366.KB892448_gene2024
+(degree 950), 1121366.KB892467_gene1501 (degree 813), 1121366.KB892450_gene1041
+(degree 811), 1121366.KB892470_gene155 (degree 781) and 1121366.KB892448_gene2006
+(degree 728).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumPilosum(
 	
 	Datetime: 2021-02-02 22:35:16.427157
 	
-	The undirected graph Corynebacterium pilosum has 2275 nodes and 176280 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06815 and
-	has 7 connected components, where the component with most nodes has 2263 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 154.97, and the node degree mode is 4. The top 5 most central
-	nodes are 1121366.KB892448_gene2024 (degree 950), 1121366.KB892467_gene1501 (degree
-	813), 1121366.KB892450_gene1041 (degree 811), 1121366.KB892470_gene155 (degree 781)
-	and 1121366.KB892448_gene2006 (degree 728).
+	The undirected graph Corynebacterium pilosum has 2275 nodes and 176280
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06815 and has 7 connected components, where the component
+	with most nodes has 2263 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 154.97,
+	and the node degree mode is 4. The top 5 most central nodes are 1121366.KB892448_gene2024
+	(degree 950), 1121366.KB892467_gene1501 (degree 813), 1121366.KB892450_gene1041
+	(degree 811), 1121366.KB892470_gene155 (degree 781) and 1121366.KB892448_gene2006
+	(degree 728).
 	
 
 

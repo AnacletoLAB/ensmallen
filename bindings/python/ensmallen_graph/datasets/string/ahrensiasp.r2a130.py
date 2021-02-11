@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:44.286088
 
-The undirected graph Ahrensia sp. R2A130 has 3575 nodes and 358851 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05617 and
-has 23 connected components, where the component with most nodes has 3521 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 200.76, and the node degree mode is 3. The top 5 most central
-nodes are 744979.R2A130_2974 (degree 1232), 744979.R2A130_2623 (degree 1133), 744979.R2A130_2502
-(degree 994), 744979.R2A130_0492 (degree 934) and 744979.R2A130_1673 (degree 920).
+The undirected graph Ahrensia sp. R2A130 has 3575 nodes and 358851 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05617 and has 23 connected components, where the component with most
+nodes has 3521 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 200.76, and
+the node degree mode is 3. The top 5 most central nodes are 744979.R2A130_2974
+(degree 1232), 744979.R2A130_2623 (degree 1133), 744979.R2A130_2502 (degree
+994), 744979.R2A130_0492 (degree 934) and 744979.R2A130_1673 (degree 920).
 
 
 References
@@ -106,13 +107,14 @@ def AhrensiaSp.R2a130(
 	
 	Datetime: 2021-02-02 21:38:44.286088
 	
-	The undirected graph Ahrensia sp. R2A130 has 3575 nodes and 358851 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05617 and
-	has 23 connected components, where the component with most nodes has 3521 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 200.76, and the node degree mode is 3. The top 5 most central
-	nodes are 744979.R2A130_2974 (degree 1232), 744979.R2A130_2623 (degree 1133), 744979.R2A130_2502
-	(degree 994), 744979.R2A130_0492 (degree 934) and 744979.R2A130_1673 (degree 920).
+	The undirected graph Ahrensia sp. R2A130 has 3575 nodes and 358851 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05617 and has 23 connected components, where the component with most
+	nodes has 3521 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 200.76, and
+	the node degree mode is 3. The top 5 most central nodes are 744979.R2A130_2974
+	(degree 1232), 744979.R2A130_2623 (degree 1133), 744979.R2A130_2502 (degree
+	994), 744979.R2A130_0492 (degree 934) and 744979.R2A130_1673 (degree 920).
 	
 
 

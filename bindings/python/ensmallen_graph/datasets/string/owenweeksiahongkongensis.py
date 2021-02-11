@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:34.286263
 
-The undirected graph Owenweeksia hongkongensis has 3468 nodes and 254974 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04241
-and has 14 connected components, where the component with most nodes has 3427 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 147.04, and the node degree mode is 4. The top 5
-most central nodes are 926562.Oweho_1994 (degree 1220), 926562.Oweho_0134 (degree
-1103), 926562.Oweho_0982 (degree 946), 926562.Oweho_0142 (degree 931) and 926562.Oweho_2376
-(degree 925).
+The undirected graph Owenweeksia hongkongensis has 3468 nodes and 254974
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04241 and has 14 connected components, where the component
+with most nodes has 3427 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 147.04,
+and the node degree mode is 4. The top 5 most central nodes are 926562.Oweho_1994
+(degree 1220), 926562.Oweho_0134 (degree 1103), 926562.Oweho_0982 (degree
+946), 926562.Oweho_0142 (degree 931) and 926562.Oweho_2376 (degree 925).
 
 
 References
@@ -107,14 +107,14 @@ def OwenweeksiaHongkongensis(
 	
 	Datetime: 2021-02-02 21:56:34.286263
 	
-	The undirected graph Owenweeksia hongkongensis has 3468 nodes and 254974 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04241
-	and has 14 connected components, where the component with most nodes has 3427 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 147.04, and the node degree mode is 4. The top 5
-	most central nodes are 926562.Oweho_1994 (degree 1220), 926562.Oweho_0134 (degree
-	1103), 926562.Oweho_0982 (degree 946), 926562.Oweho_0142 (degree 931) and 926562.Oweho_2376
-	(degree 925).
+	The undirected graph Owenweeksia hongkongensis has 3468 nodes and 254974
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04241 and has 14 connected components, where the component
+	with most nodes has 3427 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 147.04,
+	and the node degree mode is 4. The top 5 most central nodes are 926562.Oweho_1994
+	(degree 1220), 926562.Oweho_0134 (degree 1103), 926562.Oweho_0982 (degree
+	946), 926562.Oweho_0142 (degree 931) and 926562.Oweho_2376 (degree 925).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:37.929200
 
-The undirected graph Streptococcus massiliensis has 1828 nodes and 150334 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09003
-and is connected, as it has a single component. The graph median node degree is 134,
-the mean node degree is 164.48, and the node degree mode is 2. The top 5 most central
-nodes are 1123307.KB904389_gene1095 (degree 918), 1123307.KB904423_gene1752 (degree
-836), 1123307.KB904387_gene992 (degree 793), 1123307.KB904369_gene1353 (degree 793)
-and 1123307.KB904419_gene530 (degree 711).
+The undirected graph Streptococcus massiliensis has 1828 nodes and 150334
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09003 and is connected, as it has a single component.
+The graph median node degree is 134, the mean node degree is 164.48, and
+the node degree mode is 2. The top 5 most central nodes are 1123307.KB904389_gene1095
+(degree 918), 1123307.KB904423_gene1752 (degree 836), 1123307.KB904387_gene992
+(degree 793), 1123307.KB904369_gene1353 (degree 793) and 1123307.KB904419_gene530
+(degree 711).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMassiliensis(
 	
 	Datetime: 2021-02-02 22:50:37.929200
 	
-	The undirected graph Streptococcus massiliensis has 1828 nodes and 150334 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09003
-	and is connected, as it has a single component. The graph median node degree is 134,
-	the mean node degree is 164.48, and the node degree mode is 2. The top 5 most central
-	nodes are 1123307.KB904389_gene1095 (degree 918), 1123307.KB904423_gene1752 (degree
-	836), 1123307.KB904387_gene992 (degree 793), 1123307.KB904369_gene1353 (degree 793)
-	and 1123307.KB904419_gene530 (degree 711).
+	The undirected graph Streptococcus massiliensis has 1828 nodes and 150334
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09003 and is connected, as it has a single component.
+	The graph median node degree is 134, the mean node degree is 164.48, and
+	the node degree mode is 2. The top 5 most central nodes are 1123307.KB904389_gene1095
+	(degree 918), 1123307.KB904423_gene1752 (degree 836), 1123307.KB904387_gene992
+	(degree 793), 1123307.KB904369_gene1353 (degree 793) and 1123307.KB904419_gene530
+	(degree 711).
 	
 
 

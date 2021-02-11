@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:22.101865
 
-The undirected graph Streptomyces purpeofuscus has 7699 nodes and 1046082 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03530
-and has 52 connected components, where the component with most nodes has 7585 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 271.74, and the node degree mode is 1. The top 5
-most central nodes are 67352.JODS01000025_gene3229 (degree 2227), 67352.JODS01000017_gene2863
-(degree 2065), 67352.JODS01000001_gene350 (degree 2055), 67352.JODS01000006_gene6524
-(degree 1945) and 67352.JODS01000007_gene4752 (degree 1943).
+The undirected graph Streptomyces purpeofuscus has 7699 nodes and 1046082
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03530 and has 52 connected components, where the component
+with most nodes has 7585 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 271.74,
+and the node degree mode is 1. The top 5 most central nodes are 67352.JODS01000025_gene3229
+(degree 2227), 67352.JODS01000017_gene2863 (degree 2065), 67352.JODS01000001_gene350
+(degree 2055), 67352.JODS01000006_gene6524 (degree 1945) and 67352.JODS01000007_gene4752
+(degree 1943).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesPurpeofuscus(
 	
 	Datetime: 2021-02-02 18:27:22.101865
 	
-	The undirected graph Streptomyces purpeofuscus has 7699 nodes and 1046082 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03530
-	and has 52 connected components, where the component with most nodes has 7585 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 271.74, and the node degree mode is 1. The top 5
-	most central nodes are 67352.JODS01000025_gene3229 (degree 2227), 67352.JODS01000017_gene2863
-	(degree 2065), 67352.JODS01000001_gene350 (degree 2055), 67352.JODS01000006_gene6524
-	(degree 1945) and 67352.JODS01000007_gene4752 (degree 1943).
+	The undirected graph Streptomyces purpeofuscus has 7699 nodes and 1046082
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03530 and has 52 connected components, where the component
+	with most nodes has 7585 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 271.74,
+	and the node degree mode is 1. The top 5 most central nodes are 67352.JODS01000025_gene3229
+	(degree 2227), 67352.JODS01000017_gene2863 (degree 2065), 67352.JODS01000001_gene350
+	(degree 2055), 67352.JODS01000006_gene6524 (degree 1945) and 67352.JODS01000007_gene4752
+	(degree 1943).
 	
 
 

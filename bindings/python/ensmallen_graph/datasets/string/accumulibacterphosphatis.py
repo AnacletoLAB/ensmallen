@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:19.940742
 
-The undirected graph Accumulibacter phosphatis has 4328 nodes and 485128 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05181
-and has 5 connected components, where the component with most nodes has 4317 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 195, the mean node degree is 224.18, and the node degree mode is 3. The top 5
-most central nodes are 522306.CAP2UW1_1117 (degree 1773), 522306.CAP2UW1_1243 (degree
-1679), 522306.CAP2UW1_2791 (degree 1551), 522306.CAP2UW1_3910 (degree 1483) and 522306.CAP2UW1_4237
-(degree 1449).
+The undirected graph Accumulibacter phosphatis has 4328 nodes and 485128
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05181 and has 5 connected components, where the component
+with most nodes has 4317 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 224.18,
+and the node degree mode is 3. The top 5 most central nodes are 522306.CAP2UW1_1117
+(degree 1773), 522306.CAP2UW1_1243 (degree 1679), 522306.CAP2UW1_2791 (degree
+1551), 522306.CAP2UW1_3910 (degree 1483) and 522306.CAP2UW1_4237 (degree
+1449).
 
 
 References
@@ -107,14 +108,15 @@ def AccumulibacterPhosphatis(
 	
 	Datetime: 2021-02-02 21:04:19.940742
 	
-	The undirected graph Accumulibacter phosphatis has 4328 nodes and 485128 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05181
-	and has 5 connected components, where the component with most nodes has 4317 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 195, the mean node degree is 224.18, and the node degree mode is 3. The top 5
-	most central nodes are 522306.CAP2UW1_1117 (degree 1773), 522306.CAP2UW1_1243 (degree
-	1679), 522306.CAP2UW1_2791 (degree 1551), 522306.CAP2UW1_3910 (degree 1483) and 522306.CAP2UW1_4237
-	(degree 1449).
+	The undirected graph Accumulibacter phosphatis has 4328 nodes and 485128
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05181 and has 5 connected components, where the component
+	with most nodes has 4317 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 224.18,
+	and the node degree mode is 3. The top 5 most central nodes are 522306.CAP2UW1_1117
+	(degree 1773), 522306.CAP2UW1_1243 (degree 1679), 522306.CAP2UW1_2791 (degree
+	1551), 522306.CAP2UW1_3910 (degree 1483) and 522306.CAP2UW1_4237 (degree
+	1449).
 	
 
 

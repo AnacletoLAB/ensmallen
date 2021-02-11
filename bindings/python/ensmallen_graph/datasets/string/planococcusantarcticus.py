@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:39.962293
 
-The undirected graph Planococcus antarcticus has 3624 nodes and 271131 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04130 and
-has 30 connected components, where the component with most nodes has 3557 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 149.63, and the node degree mode is 1. The top 5 most central
-nodes are 1185653.A1A1_15943 (degree 1321), 1185653.A1A1_03457 (degree 939), 1185653.A1A1_00690
-(degree 888), 1185653.A1A1_05512 (degree 885) and 1185653.A1A1_03907 (degree 839).
+The undirected graph Planococcus antarcticus has 3624 nodes and 271131
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04130 and has 30 connected components, where the component
+with most nodes has 3557 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 149.63,
+and the node degree mode is 1. The top 5 most central nodes are 1185653.A1A1_15943
+(degree 1321), 1185653.A1A1_03457 (degree 939), 1185653.A1A1_00690 (degree
+888), 1185653.A1A1_05512 (degree 885) and 1185653.A1A1_03907 (degree 839).
 
 
 References
@@ -106,13 +107,14 @@ def PlanococcusAntarcticus(
 	
 	Datetime: 2021-02-02 23:10:39.962293
 	
-	The undirected graph Planococcus antarcticus has 3624 nodes and 271131 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04130 and
-	has 30 connected components, where the component with most nodes has 3557 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 149.63, and the node degree mode is 1. The top 5 most central
-	nodes are 1185653.A1A1_15943 (degree 1321), 1185653.A1A1_03457 (degree 939), 1185653.A1A1_00690
-	(degree 888), 1185653.A1A1_05512 (degree 885) and 1185653.A1A1_03907 (degree 839).
+	The undirected graph Planococcus antarcticus has 3624 nodes and 271131
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04130 and has 30 connected components, where the component
+	with most nodes has 3557 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 149.63,
+	and the node degree mode is 1. The top 5 most central nodes are 1185653.A1A1_15943
+	(degree 1321), 1185653.A1A1_03457 (degree 939), 1185653.A1A1_00690 (degree
+	888), 1185653.A1A1_05512 (degree 885) and 1185653.A1A1_03907 (degree 839).
 	
 
 

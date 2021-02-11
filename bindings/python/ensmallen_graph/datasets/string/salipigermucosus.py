@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:17.558370
 
-The undirected graph Salipiger mucosus has 5510 nodes and 717378 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04727 and
-has 35 connected components, where the component with most nodes has 5405 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 225,
-the mean node degree is 260.39, and the node degree mode is 1. The top 5 most central
-nodes are 1123237.Salmuc_04129 (degree 2218), 1123237.Salmuc_00298 (degree 1622),
-1123237.Salmuc_02930 (degree 1589), 1123237.Salmuc_04417 (degree 1414) and 1123237.Salmuc_04729
+The undirected graph Salipiger mucosus has 5510 nodes and 717378 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04727 and has 35 connected components, where the component with most
+nodes has 5405 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 225, the mean node degree is 260.39, and
+the node degree mode is 1. The top 5 most central nodes are 1123237.Salmuc_04129
+(degree 2218), 1123237.Salmuc_00298 (degree 1622), 1123237.Salmuc_02930
+(degree 1589), 1123237.Salmuc_04417 (degree 1414) and 1123237.Salmuc_04729
 (degree 1413).
 
 
@@ -107,13 +108,14 @@ def SalipigerMucosus(
 	
 	Datetime: 2021-02-02 22:48:17.558370
 	
-	The undirected graph Salipiger mucosus has 5510 nodes and 717378 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04727 and
-	has 35 connected components, where the component with most nodes has 5405 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 225,
-	the mean node degree is 260.39, and the node degree mode is 1. The top 5 most central
-	nodes are 1123237.Salmuc_04129 (degree 2218), 1123237.Salmuc_00298 (degree 1622),
-	1123237.Salmuc_02930 (degree 1589), 1123237.Salmuc_04417 (degree 1414) and 1123237.Salmuc_04729
+	The undirected graph Salipiger mucosus has 5510 nodes and 717378 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04727 and has 35 connected components, where the component with most
+	nodes has 5405 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 225, the mean node degree is 260.39, and
+	the node degree mode is 1. The top 5 most central nodes are 1123237.Salmuc_04129
+	(degree 2218), 1123237.Salmuc_00298 (degree 1622), 1123237.Salmuc_02930
+	(degree 1589), 1123237.Salmuc_04417 (degree 1414) and 1123237.Salmuc_04729
 	(degree 1413).
 	
 

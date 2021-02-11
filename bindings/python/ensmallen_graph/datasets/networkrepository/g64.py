@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:12:04.891839
 
-The undirected graph G64 has 7000 nodes and 41459 unweighted edges with 2 different
-edge types: 1 and -1, of which none are self-loops. The graph is sparse as it has
-a density of 0.00169 and is connected, as it has a single component. The graph median
-node degree is 8, the mean node degree is 11.85, and the node degree mode is 6. The
-top 5 most central nodes are 5 (degree 589), 1 (degree 425), 14 (degree 324), 2 (degree
-298) and 4 (degree 273).
+The undirected graph G64 has 7000 nodes and 41459 unweighted edges with
+2 different edge types: 1 and -1, of which none are self-loops. The graph
+is sparse as it has a density of 0.00169 and is connected, as it has a
+single component. The graph median node degree is 8, the mean node degree
+is 11.85, and the node degree mode is 6. The top 5 most central nodes are
+5 (degree 589), 1 (degree 425), 14 (degree 324), 2 (degree 298) and 4 (degree
+273).
 
 
 References
@@ -102,12 +103,13 @@ def G64(
 	
 	Datetime: 2021-02-06 10:12:04.891839
 	
-	The undirected graph G64 has 7000 nodes and 41459 unweighted edges with 2 different
-	edge types: 1 and -1, of which none are self-loops. The graph is sparse as it has
-	a density of 0.00169 and is connected, as it has a single component. The graph median
-	node degree is 8, the mean node degree is 11.85, and the node degree mode is 6. The
-	top 5 most central nodes are 5 (degree 589), 1 (degree 425), 14 (degree 324), 2 (degree
-	298) and 4 (degree 273).
+	The undirected graph G64 has 7000 nodes and 41459 unweighted edges with
+	2 different edge types: 1 and -1, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00169 and is connected, as it has a
+	single component. The graph median node degree is 8, the mean node degree
+	is 11.85, and the node degree mode is 6. The top 5 most central nodes are
+	5 (degree 589), 1 (degree 425), 14 (degree 324), 2 (degree 298) and 4 (degree
+	273).
 	
 
 

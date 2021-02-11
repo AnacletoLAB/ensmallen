@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:28.838276
 
-The undirected graph Clostridium sp. DLVIII has 5626 nodes and 708595 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04478 and
-has 35 connected components, where the component with most nodes has 5528 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 251.90, and the node degree mode is 2. The top 5 most central
-nodes are 641107.CDLVIII_1260 (degree 2147), 641107.CDLVIII_0137 (degree 2025), 641107.CDLVIII_1466
-(degree 2008), 641107.CDLVIII_3314 (degree 1948) and 641107.CDLVIII_0621 (degree
+The undirected graph Clostridium sp. DLVIII has 5626 nodes and 708595 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04478 and has 35 connected components, where the component with most
+nodes has 5528 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 251.90, and
+the node degree mode is 2. The top 5 most central nodes are 641107.CDLVIII_1260
+(degree 2147), 641107.CDLVIII_0137 (degree 2025), 641107.CDLVIII_1466 (degree
+2008), 641107.CDLVIII_3314 (degree 1948) and 641107.CDLVIII_0621 (degree
 1906).
 
 
@@ -107,13 +108,14 @@ def ClostridiumSp.Dlviii(
 	
 	Datetime: 2021-02-02 21:23:28.838276
 	
-	The undirected graph Clostridium sp. DLVIII has 5626 nodes and 708595 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04478 and
-	has 35 connected components, where the component with most nodes has 5528 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 251.90, and the node degree mode is 2. The top 5 most central
-	nodes are 641107.CDLVIII_1260 (degree 2147), 641107.CDLVIII_0137 (degree 2025), 641107.CDLVIII_1466
-	(degree 2008), 641107.CDLVIII_3314 (degree 1948) and 641107.CDLVIII_0621 (degree
+	The undirected graph Clostridium sp. DLVIII has 5626 nodes and 708595 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04478 and has 35 connected components, where the component with most
+	nodes has 5528 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 251.90, and
+	the node degree mode is 2. The top 5 most central nodes are 641107.CDLVIII_1260
+	(degree 2147), 641107.CDLVIII_0137 (degree 2025), 641107.CDLVIII_1466 (degree
+	2008), 641107.CDLVIII_3314 (degree 1948) and 641107.CDLVIII_0621 (degree
 	1906).
 	
 

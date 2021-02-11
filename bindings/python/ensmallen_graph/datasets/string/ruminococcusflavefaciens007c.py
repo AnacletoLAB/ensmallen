@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:59:37.135334
 
-The undirected graph Ruminococcus flavefaciens 007c has 3150 nodes and 211051 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04255
-and has 15 connected components, where the component with most nodes has 3114 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 134.00, and the node degree mode is 7. The top 5
-most central nodes are 1341157.RF007C_03345 (degree 1306), 1341157.RF007C_09780 (degree
-1181), 1341157.RF007C_00425 (degree 1082), 1341157.RF007C_13300 (degree 845) and
+The undirected graph Ruminococcus flavefaciens 007c has 3150 nodes and
+211051 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04255 and has 15 connected components, where the
+component with most nodes has 3114 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 102, the mean node degree
+is 134.00, and the node degree mode is 7. The top 5 most central nodes
+are 1341157.RF007C_03345 (degree 1306), 1341157.RF007C_09780 (degree 1181),
+1341157.RF007C_00425 (degree 1082), 1341157.RF007C_13300 (degree 845) and
 1341157.RF007C_03475 (degree 841).
 
 
@@ -107,13 +108,14 @@ def RuminococcusFlavefaciens007c(
 	
 	Datetime: 2021-02-03 21:59:37.135334
 	
-	The undirected graph Ruminococcus flavefaciens 007c has 3150 nodes and 211051 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04255
-	and has 15 connected components, where the component with most nodes has 3114 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 134.00, and the node degree mode is 7. The top 5
-	most central nodes are 1341157.RF007C_03345 (degree 1306), 1341157.RF007C_09780 (degree
-	1181), 1341157.RF007C_00425 (degree 1082), 1341157.RF007C_13300 (degree 845) and
+	The undirected graph Ruminococcus flavefaciens 007c has 3150 nodes and
+	211051 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04255 and has 15 connected components, where the
+	component with most nodes has 3114 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 102, the mean node degree
+	is 134.00, and the node degree mode is 7. The top 5 most central nodes
+	are 1341157.RF007C_03345 (degree 1306), 1341157.RF007C_09780 (degree 1181),
+	1341157.RF007C_00425 (degree 1082), 1341157.RF007C_13300 (degree 845) and
 	1341157.RF007C_03475 (degree 841).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:40.999245
 
-The undirected graph Paenibacillus wynnii has 4817 nodes and 439574 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03790 and
-has 38 connected components, where the component with most nodes has 4697 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 182.51, and the node degree mode is 3. The top 5 most central
-nodes are 268407.PWYN_24270 (degree 1608), 268407.PWYN_16270 (degree 1586), 268407.PWYN_11610
-(degree 1401), 268407.PWYN_10990 (degree 1190) and 268407.PWYN_26035 (degree 1185).
+The undirected graph Paenibacillus wynnii has 4817 nodes and 439574 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03790 and has 38 connected components, where the component with most
+nodes has 4697 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 182.51, and
+the node degree mode is 3. The top 5 most central nodes are 268407.PWYN_24270
+(degree 1608), 268407.PWYN_16270 (degree 1586), 268407.PWYN_11610 (degree
+1401), 268407.PWYN_10990 (degree 1190) and 268407.PWYN_26035 (degree 1185).
 
 
 References
@@ -106,13 +107,14 @@ def PaenibacillusWynnii(
 	
 	Datetime: 2021-02-05 17:17:40.999245
 	
-	The undirected graph Paenibacillus wynnii has 4817 nodes and 439574 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03790 and
-	has 38 connected components, where the component with most nodes has 4697 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 182.51, and the node degree mode is 3. The top 5 most central
-	nodes are 268407.PWYN_24270 (degree 1608), 268407.PWYN_16270 (degree 1586), 268407.PWYN_11610
-	(degree 1401), 268407.PWYN_10990 (degree 1190) and 268407.PWYN_26035 (degree 1185).
+	The undirected graph Paenibacillus wynnii has 4817 nodes and 439574 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03790 and has 38 connected components, where the component with most
+	nodes has 4697 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 182.51, and
+	the node degree mode is 3. The top 5 most central nodes are 268407.PWYN_24270
+	(degree 1608), 268407.PWYN_16270 (degree 1586), 268407.PWYN_11610 (degree
+	1401), 268407.PWYN_10990 (degree 1190) and 268407.PWYN_26035 (degree 1185).
 	
 
 

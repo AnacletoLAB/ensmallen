@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:56.324696
 
-The undirected graph bcspwr06 has 1454 nodes and 3377 unweighted edges, of which
-1454 are self-loops. The graph is sparse as it has a density of 0.00251 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 3.65, and the node degree mode is 3. The top 5 most central nodes are 598 (degree
-13), 981 (degree 12), 427 (degree 12), 952 (degree 11) and 991 (degree 11).
+The undirected graph bcspwr06 has 1454 nodes and 3377 unweighted edges,
+of which 1454 are self-loops. The graph is sparse as it has a density of
+0.00251 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 3.65, and the node degree mode
+is 3. The top 5 most central nodes are 598 (degree 13), 981 (degree 12),
+427 (degree 12), 952 (degree 11) and 991 (degree 11).
 
 
 References
@@ -101,11 +102,12 @@ def Bcspwr06(
 	
 	Datetime: 2021-02-06 08:02:56.324696
 	
-	The undirected graph bcspwr06 has 1454 nodes and 3377 unweighted edges, of which
-	1454 are self-loops. The graph is sparse as it has a density of 0.00251 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 3.65, and the node degree mode is 3. The top 5 most central nodes are 598 (degree
-	13), 981 (degree 12), 427 (degree 12), 952 (degree 11) and 991 (degree 11).
+	The undirected graph bcspwr06 has 1454 nodes and 3377 unweighted edges,
+	of which 1454 are self-loops. The graph is sparse as it has a density of
+	0.00251 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 3.65, and the node degree mode
+	is 3. The top 5 most central nodes are 598 (degree 13), 981 (degree 12),
+	427 (degree 12), 952 (degree 11) and 991 (degree 11).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:45.707838
 
-The undirected graph Robiginitalea biformata has 3187 nodes and 318910 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06282 and
-has 7 connected components, where the component with most nodes has 3166 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 200.13, and the node degree mode is 5. The top 5 most central
-nodes are 313596.RB2501_03655 (degree 1230), 313596.RB2501_14219 (degree 1219), 313596.RB2501_03785
-(degree 1148), 313596.RB2501_02435 (degree 1098) and 313596.RB2501_13084 (degree
+The undirected graph Robiginitalea biformata has 3187 nodes and 318910
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06282 and has 7 connected components, where the component
+with most nodes has 3166 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 200.13,
+and the node degree mode is 5. The top 5 most central nodes are 313596.RB2501_03655
+(degree 1230), 313596.RB2501_14219 (degree 1219), 313596.RB2501_03785 (degree
+1148), 313596.RB2501_02435 (degree 1098) and 313596.RB2501_13084 (degree
 1024).
 
 
@@ -107,13 +108,14 @@ def RobiginitaleaBiformata(
 	
 	Datetime: 2021-02-02 20:23:45.707838
 	
-	The undirected graph Robiginitalea biformata has 3187 nodes and 318910 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06282 and
-	has 7 connected components, where the component with most nodes has 3166 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 200.13, and the node degree mode is 5. The top 5 most central
-	nodes are 313596.RB2501_03655 (degree 1230), 313596.RB2501_14219 (degree 1219), 313596.RB2501_03785
-	(degree 1148), 313596.RB2501_02435 (degree 1098) and 313596.RB2501_13084 (degree
+	The undirected graph Robiginitalea biformata has 3187 nodes and 318910
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06282 and has 7 connected components, where the component
+	with most nodes has 3166 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 200.13,
+	and the node degree mode is 5. The top 5 most central nodes are 313596.RB2501_03655
+	(degree 1230), 313596.RB2501_14219 (degree 1219), 313596.RB2501_03785 (degree
+	1148), 313596.RB2501_02435 (degree 1098) and 313596.RB2501_13084 (degree
 	1024).
 	
 

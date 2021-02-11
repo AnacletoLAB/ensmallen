@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:05.985421
 
-The undirected graph Alistipes onderdonkii has 2807 nodes and 202998 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05155 and
-has 10 connected components, where the component with most nodes has 2780 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 144.64, and the node degree mode is 4. The top 5 most central
-nodes are 1203611.KB894543_gene1726 (degree 894), 1203611.KB894548_gene2474 (degree
-841), 1203611.KB894548_gene2475 (degree 764), 1203611.KB894541_gene1542 (degree 753)
-and 1203611.KB894545_gene298 (degree 752).
+The undirected graph Alistipes onderdonkii has 2807 nodes and 202998 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05155 and has 10 connected components, where the component with most
+nodes has 2780 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 144.64, and
+the node degree mode is 4. The top 5 most central nodes are 1203611.KB894543_gene1726
+(degree 894), 1203611.KB894548_gene2474 (degree 841), 1203611.KB894548_gene2475
+(degree 764), 1203611.KB894541_gene1542 (degree 753) and 1203611.KB894545_gene298
+(degree 752).
 
 
 References
@@ -107,14 +108,15 @@ def AlistipesOnderdonkii(
 	
 	Datetime: 2021-02-02 23:15:05.985421
 	
-	The undirected graph Alistipes onderdonkii has 2807 nodes and 202998 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05155 and
-	has 10 connected components, where the component with most nodes has 2780 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 144.64, and the node degree mode is 4. The top 5 most central
-	nodes are 1203611.KB894543_gene1726 (degree 894), 1203611.KB894548_gene2474 (degree
-	841), 1203611.KB894548_gene2475 (degree 764), 1203611.KB894541_gene1542 (degree 753)
-	and 1203611.KB894545_gene298 (degree 752).
+	The undirected graph Alistipes onderdonkii has 2807 nodes and 202998 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05155 and has 10 connected components, where the component with most
+	nodes has 2780 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 144.64, and
+	the node degree mode is 4. The top 5 most central nodes are 1203611.KB894543_gene1726
+	(degree 894), 1203611.KB894548_gene2474 (degree 841), 1203611.KB894548_gene2475
+	(degree 764), 1203611.KB894541_gene1542 (degree 753) and 1203611.KB894545_gene298
+	(degree 752).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:14.393227
 
-The undirected graph Tetrapisispora blattae has 4873 nodes and 504084 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04246 and
-is connected, as it has a single component. The graph median node degree is 151,
-the mean node degree is 206.89, and the node degree mode is 13. The top 5 most central
-nodes are 1071379.XP_004178786.1 (degree 1244), 1071379.XP_004179959.1 (degree 1226),
-1071379.XP_004179379.1 (degree 1174), 1071379.XP_004181278.1 (degree 1082) and 1071379.XP_004181620.1
+The undirected graph Tetrapisispora blattae has 4873 nodes and 504084 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04246 and is connected, as it has a single component. The graph median
+node degree is 151, the mean node degree is 206.89, and the node degree
+mode is 13. The top 5 most central nodes are 1071379.XP_004178786.1 (degree
+1244), 1071379.XP_004179959.1 (degree 1226), 1071379.XP_004179379.1 (degree
+1174), 1071379.XP_004181278.1 (degree 1082) and 1071379.XP_004181620.1
 (degree 1033).
 
 
@@ -106,12 +107,13 @@ def TetrapisisporaBlattae(
 	
 	Datetime: 2021-02-02 22:19:14.393227
 	
-	The undirected graph Tetrapisispora blattae has 4873 nodes and 504084 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04246 and
-	is connected, as it has a single component. The graph median node degree is 151,
-	the mean node degree is 206.89, and the node degree mode is 13. The top 5 most central
-	nodes are 1071379.XP_004178786.1 (degree 1244), 1071379.XP_004179959.1 (degree 1226),
-	1071379.XP_004179379.1 (degree 1174), 1071379.XP_004181278.1 (degree 1082) and 1071379.XP_004181620.1
+	The undirected graph Tetrapisispora blattae has 4873 nodes and 504084 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04246 and is connected, as it has a single component. The graph median
+	node degree is 151, the mean node degree is 206.89, and the node degree
+	mode is 13. The top 5 most central nodes are 1071379.XP_004178786.1 (degree
+	1244), 1071379.XP_004179959.1 (degree 1226), 1071379.XP_004179379.1 (degree
+	1174), 1071379.XP_004181278.1 (degree 1082) and 1071379.XP_004181620.1
 	(degree 1033).
 	
 

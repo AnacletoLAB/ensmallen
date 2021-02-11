@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:32.408574
 
-The undirected graph Nitrosomonas cryotolerans has 2425 nodes and 180671 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06147
-and has 14 connected components, where the component with most nodes has 2396 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 149.01, and the node degree mode is 2. The top 5
-most central nodes are 1131553.JIBI01000008_gene1323 (degree 983), 1131553.JIBI01000009_gene1257
-(degree 902), 1131553.JIBI01000045_gene1571 (degree 868), 1131553.JIBI01000001_gene1454
-(degree 819) and 1131553.JIBI01000009_gene1256 (degree 786).
+The undirected graph Nitrosomonas cryotolerans has 2425 nodes and 180671
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06147 and has 14 connected components, where the component
+with most nodes has 2396 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 149.01,
+and the node degree mode is 2. The top 5 most central nodes are 1131553.JIBI01000008_gene1323
+(degree 983), 1131553.JIBI01000009_gene1257 (degree 902), 1131553.JIBI01000045_gene1571
+(degree 868), 1131553.JIBI01000001_gene1454 (degree 819) and 1131553.JIBI01000009_gene1256
+(degree 786).
 
 
 References
@@ -107,14 +108,15 @@ def NitrosomonasCryotolerans(
 	
 	Datetime: 2021-02-02 22:55:32.408574
 	
-	The undirected graph Nitrosomonas cryotolerans has 2425 nodes and 180671 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06147
-	and has 14 connected components, where the component with most nodes has 2396 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 149.01, and the node degree mode is 2. The top 5
-	most central nodes are 1131553.JIBI01000008_gene1323 (degree 983), 1131553.JIBI01000009_gene1257
-	(degree 902), 1131553.JIBI01000045_gene1571 (degree 868), 1131553.JIBI01000001_gene1454
-	(degree 819) and 1131553.JIBI01000009_gene1256 (degree 786).
+	The undirected graph Nitrosomonas cryotolerans has 2425 nodes and 180671
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06147 and has 14 connected components, where the component
+	with most nodes has 2396 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 149.01,
+	and the node degree mode is 2. The top 5 most central nodes are 1131553.JIBI01000008_gene1323
+	(degree 983), 1131553.JIBI01000009_gene1257 (degree 902), 1131553.JIBI01000045_gene1571
+	(degree 868), 1131553.JIBI01000001_gene1454 (degree 819) and 1131553.JIBI01000009_gene1256
+	(degree 786).
 	
 
 

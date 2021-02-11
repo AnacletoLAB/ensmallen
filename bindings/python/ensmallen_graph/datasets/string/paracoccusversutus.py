@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:14.664930
 
-The undirected graph Paracoccus versutus has 4777 nodes and 752523 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06597 and
-has 18 connected components, where the component with most nodes has 4739 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 273,
-the mean node degree is 315.06, and the node degree mode is 1. The top 5 most central
-nodes are 34007.IT40_01545 (degree 1943), 34007.IT40_10890 (degree 1755), 34007.IT40_10900
-(degree 1579), 34007.IT40_06490 (degree 1566) and 34007.IT40_02925 (degree 1563).
+The undirected graph Paracoccus versutus has 4777 nodes and 752523 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06597 and has 18 connected components, where the component with most
+nodes has 4739 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 273, the mean node degree is 315.06, and
+the node degree mode is 1. The top 5 most central nodes are 34007.IT40_01545
+(degree 1943), 34007.IT40_10890 (degree 1755), 34007.IT40_10900 (degree
+1579), 34007.IT40_06490 (degree 1566) and 34007.IT40_02925 (degree 1563).
 
 
 References
@@ -106,13 +107,14 @@ def ParacoccusVersutus(
 	
 	Datetime: 2021-02-02 18:04:14.664930
 	
-	The undirected graph Paracoccus versutus has 4777 nodes and 752523 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06597 and
-	has 18 connected components, where the component with most nodes has 4739 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 273,
-	the mean node degree is 315.06, and the node degree mode is 1. The top 5 most central
-	nodes are 34007.IT40_01545 (degree 1943), 34007.IT40_10890 (degree 1755), 34007.IT40_10900
-	(degree 1579), 34007.IT40_06490 (degree 1566) and 34007.IT40_02925 (degree 1563).
+	The undirected graph Paracoccus versutus has 4777 nodes and 752523 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06597 and has 18 connected components, where the component with most
+	nodes has 4739 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 273, the mean node degree is 315.06, and
+	the node degree mode is 1. The top 5 most central nodes are 34007.IT40_01545
+	(degree 1943), 34007.IT40_10890 (degree 1755), 34007.IT40_10900 (degree
+	1579), 34007.IT40_06490 (degree 1566) and 34007.IT40_02925 (degree 1563).
 	
 
 

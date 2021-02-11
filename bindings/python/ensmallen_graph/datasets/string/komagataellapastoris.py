@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:19.809845
 
-The undirected graph Komagataella pastoris has 4296 nodes and 396845 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04302 and
-has 2 connected components, where the component with most nodes has 4294 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 184.75, and the node degree mode is 1. The top 5 most central
-nodes are 4922.CAY69065 (degree 1051), 4922.CAY69592 (degree 1022), 4922.CAY68529
-(degree 1001), 4922.CAY70252 (degree 959) and 4922.CAY70616 (degree 894).
+The undirected graph Komagataella pastoris has 4296 nodes and 396845 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04302 and has 2 connected components, where the component with most
+nodes has 4294 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 184.75, and
+the node degree mode is 1. The top 5 most central nodes are 4922.CAY69065
+(degree 1051), 4922.CAY69592 (degree 1022), 4922.CAY68529 (degree 1001),
+4922.CAY70252 (degree 959) and 4922.CAY70616 (degree 894).
 
 
 References
@@ -106,13 +107,14 @@ def KomagataellaPastoris(
 	
 	Datetime: 2021-02-02 17:11:19.809845
 	
-	The undirected graph Komagataella pastoris has 4296 nodes and 396845 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04302 and
-	has 2 connected components, where the component with most nodes has 4294 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 184.75, and the node degree mode is 1. The top 5 most central
-	nodes are 4922.CAY69065 (degree 1051), 4922.CAY69592 (degree 1022), 4922.CAY68529
-	(degree 1001), 4922.CAY70252 (degree 959) and 4922.CAY70616 (degree 894).
+	The undirected graph Komagataella pastoris has 4296 nodes and 396845 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04302 and has 2 connected components, where the component with most
+	nodes has 4294 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 184.75, and
+	the node degree mode is 1. The top 5 most central nodes are 4922.CAY69065
+	(degree 1051), 4922.CAY69592 (degree 1022), 4922.CAY68529 (degree 1001),
+	4922.CAY70252 (degree 959) and 4922.CAY70616 (degree 894).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:54.755250
 
-The undirected graph Marmoricola aequoreus has 3743 nodes and 374040 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05341 and
-has 7 connected components, where the component with most nodes has 3731 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 199.86, and the node degree mode is 2. The top 5 most central
-nodes are 397278.JOJN01000001_gene2845 (degree 1571), 397278.JOJN01000010_gene2286
-(degree 1436), 397278.JOJN01000019_gene2342 (degree 1245), 397278.JOJN01000004_gene1431
-(degree 1221) and 397278.JOJN01000002_gene102 (degree 1205).
+The undirected graph Marmoricola aequoreus has 3743 nodes and 374040 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05341 and has 7 connected components, where the component with most
+nodes has 3731 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 199.86, and
+the node degree mode is 2. The top 5 most central nodes are 397278.JOJN01000001_gene2845
+(degree 1571), 397278.JOJN01000010_gene2286 (degree 1436), 397278.JOJN01000019_gene2342
+(degree 1245), 397278.JOJN01000004_gene1431 (degree 1221) and 397278.JOJN01000002_gene102
+(degree 1205).
 
 
 References
@@ -107,14 +108,15 @@ def MarmoricolaAequoreus(
 	
 	Datetime: 2021-02-02 20:41:54.755250
 	
-	The undirected graph Marmoricola aequoreus has 3743 nodes and 374040 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05341 and
-	has 7 connected components, where the component with most nodes has 3731 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 199.86, and the node degree mode is 2. The top 5 most central
-	nodes are 397278.JOJN01000001_gene2845 (degree 1571), 397278.JOJN01000010_gene2286
-	(degree 1436), 397278.JOJN01000019_gene2342 (degree 1245), 397278.JOJN01000004_gene1431
-	(degree 1221) and 397278.JOJN01000002_gene102 (degree 1205).
+	The undirected graph Marmoricola aequoreus has 3743 nodes and 374040 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05341 and has 7 connected components, where the component with most
+	nodes has 3731 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 199.86, and
+	the node degree mode is 2. The top 5 most central nodes are 397278.JOJN01000001_gene2845
+	(degree 1571), 397278.JOJN01000010_gene2286 (degree 1436), 397278.JOJN01000019_gene2342
+	(degree 1245), 397278.JOJN01000004_gene1431 (degree 1221) and 397278.JOJN01000002_gene102
+	(degree 1205).
 	
 
 

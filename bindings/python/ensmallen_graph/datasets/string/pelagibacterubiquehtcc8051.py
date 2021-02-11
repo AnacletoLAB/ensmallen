@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:17.213108
 
-The undirected graph Pelagibacter ubique HTCC8051 has 1458 nodes and 97236 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09155
-and has 3 connected components, where the component with most nodes has 1451 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 133.38, and the node degree mode is 7. The top 5
-most central nodes are 466038.KI421440_gene54 (degree 661), 466038.KI421440_gene1215
-(degree 553), 466038.KI421440_gene1351 (degree 549), 466038.KI421440_gene1095 (degree
-536) and 466038.KI421440_gene644 (degree 525).
+The undirected graph Pelagibacter ubique HTCC8051 has 1458 nodes and 97236
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09155 and has 3 connected components, where the component
+with most nodes has 1451 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 133.38,
+and the node degree mode is 7. The top 5 most central nodes are 466038.KI421440_gene54
+(degree 661), 466038.KI421440_gene1215 (degree 553), 466038.KI421440_gene1351
+(degree 549), 466038.KI421440_gene1095 (degree 536) and 466038.KI421440_gene644
+(degree 525).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterUbiqueHtcc8051(
 	
 	Datetime: 2021-02-02 20:54:17.213108
 	
-	The undirected graph Pelagibacter ubique HTCC8051 has 1458 nodes and 97236 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09155
-	and has 3 connected components, where the component with most nodes has 1451 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 133.38, and the node degree mode is 7. The top 5
-	most central nodes are 466038.KI421440_gene54 (degree 661), 466038.KI421440_gene1215
-	(degree 553), 466038.KI421440_gene1351 (degree 549), 466038.KI421440_gene1095 (degree
-	536) and 466038.KI421440_gene644 (degree 525).
+	The undirected graph Pelagibacter ubique HTCC8051 has 1458 nodes and 97236
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09155 and has 3 connected components, where the component
+	with most nodes has 1451 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 133.38,
+	and the node degree mode is 7. The top 5 most central nodes are 466038.KI421440_gene54
+	(degree 661), 466038.KI421440_gene1215 (degree 553), 466038.KI421440_gene1351
+	(degree 549), 466038.KI421440_gene1095 (degree 536) and 466038.KI421440_gene644
+	(degree 525).
 	
 
 

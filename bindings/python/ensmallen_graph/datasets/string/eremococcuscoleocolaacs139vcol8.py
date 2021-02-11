@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:41.701557
 
-The undirected graph Eremococcus coleocola ACS139VCol8 has 1709 nodes and 128105
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08777 and has 5 connected components, where the component with most nodes has
-1699 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 135, the mean node degree is 149.92, and the node degree mode is 6. The
-top 5 most central nodes are 908337.HMPREF9257_1479 (degree 824), 908337.HMPREF9257_1223
-(degree 687), 908337.HMPREF9257_0759 (degree 666), 908337.HMPREF9257_0161 (degree
+The undirected graph Eremococcus coleocola ACS139VCol8 has 1709 nodes and
+128105 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08777 and has 5 connected components, where the
+component with most nodes has 1699 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+is 149.92, and the node degree mode is 6. The top 5 most central nodes
+are 908337.HMPREF9257_1479 (degree 824), 908337.HMPREF9257_1223 (degree
+687), 908337.HMPREF9257_0759 (degree 666), 908337.HMPREF9257_0161 (degree
 648) and 908337.HMPREF9257_1719 (degree 580).
 
 
@@ -107,13 +108,14 @@ def EremococcusColeocolaAcs139vcol8(
 	
 	Datetime: 2021-02-02 21:54:41.701557
 	
-	The undirected graph Eremococcus coleocola ACS139VCol8 has 1709 nodes and 128105
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08777 and has 5 connected components, where the component with most nodes has
-	1699 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 135, the mean node degree is 149.92, and the node degree mode is 6. The
-	top 5 most central nodes are 908337.HMPREF9257_1479 (degree 824), 908337.HMPREF9257_1223
-	(degree 687), 908337.HMPREF9257_0759 (degree 666), 908337.HMPREF9257_0161 (degree
+	The undirected graph Eremococcus coleocola ACS139VCol8 has 1709 nodes and
+	128105 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08777 and has 5 connected components, where the
+	component with most nodes has 1699 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+	is 149.92, and the node degree mode is 6. The top 5 most central nodes
+	are 908337.HMPREF9257_1479 (degree 824), 908337.HMPREF9257_1223 (degree
+	687), 908337.HMPREF9257_0759 (degree 666), 908337.HMPREF9257_0161 (degree
 	648) and 908337.HMPREF9257_1719 (degree 580).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:45.749665
 
-The undirected graph Pimelobacter simplex has 4602 nodes and 572076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05404 and
-has 31 connected components, where the component with most nodes has 4505 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 248.62, and the node degree mode is 4. The top 5 most central
-nodes are 2045.KR76_23475 (degree 1511), 2045.KR76_11650 (degree 1392), 2045.KR76_06810
-(degree 1354), 2045.KR76_06745 (degree 1347) and 2045.KR76_18725 (degree 1276).
+The undirected graph Pimelobacter simplex has 4602 nodes and 572076 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05404 and has 31 connected components, where the component with most
+nodes has 4505 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 221, the mean node degree is 248.62, and
+the node degree mode is 4. The top 5 most central nodes are 2045.KR76_23475
+(degree 1511), 2045.KR76_11650 (degree 1392), 2045.KR76_06810 (degree 1354),
+2045.KR76_06745 (degree 1347) and 2045.KR76_18725 (degree 1276).
 
 
 References
@@ -106,13 +107,14 @@ def PimelobacterSimplex(
 	
 	Datetime: 2021-02-02 16:24:45.749665
 	
-	The undirected graph Pimelobacter simplex has 4602 nodes and 572076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05404 and
-	has 31 connected components, where the component with most nodes has 4505 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 248.62, and the node degree mode is 4. The top 5 most central
-	nodes are 2045.KR76_23475 (degree 1511), 2045.KR76_11650 (degree 1392), 2045.KR76_06810
-	(degree 1354), 2045.KR76_06745 (degree 1347) and 2045.KR76_18725 (degree 1276).
+	The undirected graph Pimelobacter simplex has 4602 nodes and 572076 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05404 and has 31 connected components, where the component with most
+	nodes has 4505 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 221, the mean node degree is 248.62, and
+	the node degree mode is 4. The top 5 most central nodes are 2045.KR76_23475
+	(degree 1511), 2045.KR76_11650 (degree 1392), 2045.KR76_06810 (degree 1354),
+	2045.KR76_06745 (degree 1347) and 2045.KR76_18725 (degree 1276).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:39.958830
 
-The undirected graph Gammaproteobacteria bacterium MOLA455 has 2324 nodes and 189709
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07028 and has 2 connected components, where the component with most nodes has
-2318 nodes and the component with the least nodes has 6 nodes. The graph median node
-degree is 135, the mean node degree is 163.26, and the node degree mode is 10. The
-top 5 most central nodes are 1411685.U062_01385 (degree 883), 1411685.U062_00261
-(degree 879), 1411685.U062_01877 (degree 808), 1411685.U062_00049 (degree 804) and
-1411685.U062_00947 (degree 773).
+The undirected graph Gammaproteobacteria bacterium MOLA455 has 2324 nodes
+and 189709 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07028 and has 2 connected components, where the
+component with most nodes has 2318 nodes and the component with the least
+nodes has 6 nodes. The graph median node degree is 135, the mean node degree
+is 163.26, and the node degree mode is 10. The top 5 most central nodes
+are 1411685.U062_01385 (degree 883), 1411685.U062_00261 (degree 879), 1411685.U062_01877
+(degree 808), 1411685.U062_00049 (degree 804) and 1411685.U062_00947 (degree
+773).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumMola455(
 	
 	Datetime: 2021-02-03 22:44:39.958830
 	
-	The undirected graph Gammaproteobacteria bacterium MOLA455 has 2324 nodes and 189709
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07028 and has 2 connected components, where the component with most nodes has
-	2318 nodes and the component with the least nodes has 6 nodes. The graph median node
-	degree is 135, the mean node degree is 163.26, and the node degree mode is 10. The
-	top 5 most central nodes are 1411685.U062_01385 (degree 883), 1411685.U062_00261
-	(degree 879), 1411685.U062_01877 (degree 808), 1411685.U062_00049 (degree 804) and
-	1411685.U062_00947 (degree 773).
+	The undirected graph Gammaproteobacteria bacterium MOLA455 has 2324 nodes
+	and 189709 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07028 and has 2 connected components, where the
+	component with most nodes has 2318 nodes and the component with the least
+	nodes has 6 nodes. The graph median node degree is 135, the mean node degree
+	is 163.26, and the node degree mode is 10. The top 5 most central nodes
+	are 1411685.U062_01385 (degree 883), 1411685.U062_00261 (degree 879), 1411685.U062_01877
+	(degree 808), 1411685.U062_00049 (degree 804) and 1411685.U062_00947 (degree
+	773).
 	
 
 

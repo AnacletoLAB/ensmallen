@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:30.116737
 
-The undirected graph socfb-Baylor93 has 12803 nodes and 679817 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00830
-and has 3 connected components, where the component with most nodes has 12799 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 79, the mean node degree is 106.20, and the node degree mode is 1. The top 5 most
-central nodes are 3460 (degree 2109), 11996 (degree 1941), 9527 (degree 1052), 10453
-(degree 1010) and 11342 (degree 981).
+The undirected graph socfb-Baylor93 has 12803 nodes and 679817 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00830 and has 3 connected components, where the component with most
+nodes has 12799 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 79, the mean node degree is 106.20, and
+the node degree mode is 1. The top 5 most central nodes are 3460 (degree
+2109), 11996 (degree 1941), 9527 (degree 1052), 10453 (degree 1010) and
+11342 (degree 981).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbBaylor93(
 	
 	Datetime: 2021-02-06 11:48:30.116737
 	
-	The undirected graph socfb-Baylor93 has 12803 nodes and 679817 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00830
-	and has 3 connected components, where the component with most nodes has 12799 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 79, the mean node degree is 106.20, and the node degree mode is 1. The top 5 most
-	central nodes are 3460 (degree 2109), 11996 (degree 1941), 9527 (degree 1052), 10453
-	(degree 1010) and 11342 (degree 981).
+	The undirected graph socfb-Baylor93 has 12803 nodes and 679817 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00830 and has 3 connected components, where the component with most
+	nodes has 12799 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 79, the mean node degree is 106.20, and
+	the node degree mode is 1. The top 5 most central nodes are 3460 (degree
+	2109), 11996 (degree 1941), 9527 (degree 1052), 10453 (degree 1010) and
+	11342 (degree 981).
 	
 
 

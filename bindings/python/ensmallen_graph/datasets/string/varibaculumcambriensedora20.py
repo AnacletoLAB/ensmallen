@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:26.422926
 
-The undirected graph Varibaculum cambriense DORA20 has 2000 nodes and 165216 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08265
-and has 6 connected components, where the component with most nodes has 1988 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 165.22, and the node degree mode is 3. The top 5
-most central nodes are 1403948.Q618_VCMC00001G0820 (degree 810), 1403948.Q618_VCMC00001G0997
-(degree 741), 1403948.Q618_VCMC00001G0025 (degree 726), 1403948.Q618_VCMC00001G1316
-(degree 708) and 1403948.Q618_VCMC00003G0465 (degree 686).
+The undirected graph Varibaculum cambriense DORA20 has 2000 nodes and 165216
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08265 and has 6 connected components, where the component
+with most nodes has 1988 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 165.22,
+and the node degree mode is 3. The top 5 most central nodes are 1403948.Q618_VCMC00001G0820
+(degree 810), 1403948.Q618_VCMC00001G0997 (degree 741), 1403948.Q618_VCMC00001G0025
+(degree 726), 1403948.Q618_VCMC00001G1316 (degree 708) and 1403948.Q618_VCMC00003G0465
+(degree 686).
 
 
 References
@@ -107,14 +108,15 @@ def VaribaculumCambrienseDora20(
 	
 	Datetime: 2021-02-03 22:33:26.422926
 	
-	The undirected graph Varibaculum cambriense DORA20 has 2000 nodes and 165216 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08265
-	and has 6 connected components, where the component with most nodes has 1988 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 165.22, and the node degree mode is 3. The top 5
-	most central nodes are 1403948.Q618_VCMC00001G0820 (degree 810), 1403948.Q618_VCMC00001G0997
-	(degree 741), 1403948.Q618_VCMC00001G0025 (degree 726), 1403948.Q618_VCMC00001G1316
-	(degree 708) and 1403948.Q618_VCMC00003G0465 (degree 686).
+	The undirected graph Varibaculum cambriense DORA20 has 2000 nodes and 165216
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08265 and has 6 connected components, where the component
+	with most nodes has 1988 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 165.22,
+	and the node degree mode is 3. The top 5 most central nodes are 1403948.Q618_VCMC00001G0820
+	(degree 810), 1403948.Q618_VCMC00001G0997 (degree 741), 1403948.Q618_VCMC00001G0025
+	(degree 726), 1403948.Q618_VCMC00001G1316 (degree 708) and 1403948.Q618_VCMC00003G0465
+	(degree 686).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:56.021485
 
-The undirected graph Halyomorpha halys has 811 nodes and 52858 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.16093
-and is connected, as it has a single component. The graph median node degree is 119,
-the mean node degree is 130.35, and the node degree mode is 68. The top 5 most central
-nodes are 1235990.HHS_04010 (degree 443), 1235990.HHS_07180 (degree 435), 1235990.HHS_06610
-(degree 422), 1235990.HHS_04020 (degree 419) and 1235990.HHS_05060 (degree 384).
+The undirected graph Halyomorpha halys has 811 nodes and 52858 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.16093 and is connected, as it has a single component. The
+graph median node degree is 119, the mean node degree is 130.35, and the
+node degree mode is 68. The top 5 most central nodes are 1235990.HHS_04010
+(degree 443), 1235990.HHS_07180 (degree 435), 1235990.HHS_06610 (degree
+422), 1235990.HHS_04020 (degree 419) and 1235990.HHS_05060 (degree 384).
 
 
 References
@@ -105,12 +106,13 @@ def HalyomorphaHalys(
 	
 	Datetime: 2021-02-02 23:30:56.021485
 	
-	The undirected graph Halyomorpha halys has 811 nodes and 52858 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.16093
-	and is connected, as it has a single component. The graph median node degree is 119,
-	the mean node degree is 130.35, and the node degree mode is 68. The top 5 most central
-	nodes are 1235990.HHS_04010 (degree 443), 1235990.HHS_07180 (degree 435), 1235990.HHS_06610
-	(degree 422), 1235990.HHS_04020 (degree 419) and 1235990.HHS_05060 (degree 384).
+	The undirected graph Halyomorpha halys has 811 nodes and 52858 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.16093 and is connected, as it has a single component. The
+	graph median node degree is 119, the mean node degree is 130.35, and the
+	node degree mode is 68. The top 5 most central nodes are 1235990.HHS_04010
+	(degree 443), 1235990.HHS_07180 (degree 435), 1235990.HHS_06610 (degree
+	422), 1235990.HHS_04020 (degree 419) and 1235990.HHS_05060 (degree 384).
 	
 
 

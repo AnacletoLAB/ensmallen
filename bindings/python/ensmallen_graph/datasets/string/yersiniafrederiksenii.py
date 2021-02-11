@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:47.090657
 
-The undirected graph Yersinia frederiksenii has 4334 nodes and 548879 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05846 and
-has 12 connected components, where the component with most nodes has 4303 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 253.29, and the node degree mode is 2. The top 5 most central
-nodes are 349966.DJ58_615 (degree 1528), 349966.DJ58_100 (degree 1370), 349966.DJ58_1989
-(degree 1333), 349966.DJ58_3000 (degree 1296) and 349966.DJ58_1988 (degree 1283).
+The undirected graph Yersinia frederiksenii has 4334 nodes and 548879 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05846 and has 12 connected components, where the component with most
+nodes has 4303 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 253.29, and
+the node degree mode is 2. The top 5 most central nodes are 349966.DJ58_615
+(degree 1528), 349966.DJ58_100 (degree 1370), 349966.DJ58_1989 (degree
+1333), 349966.DJ58_3000 (degree 1296) and 349966.DJ58_1988 (degree 1283).
 
 
 References
@@ -106,13 +107,14 @@ def YersiniaFrederiksenii(
 	
 	Datetime: 2021-02-02 20:32:47.090657
 	
-	The undirected graph Yersinia frederiksenii has 4334 nodes and 548879 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05846 and
-	has 12 connected components, where the component with most nodes has 4303 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 253.29, and the node degree mode is 2. The top 5 most central
-	nodes are 349966.DJ58_615 (degree 1528), 349966.DJ58_100 (degree 1370), 349966.DJ58_1989
-	(degree 1333), 349966.DJ58_3000 (degree 1296) and 349966.DJ58_1988 (degree 1283).
+	The undirected graph Yersinia frederiksenii has 4334 nodes and 548879 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05846 and has 12 connected components, where the component with most
+	nodes has 4303 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 253.29, and
+	the node degree mode is 2. The top 5 most central nodes are 349966.DJ58_615
+	(degree 1528), 349966.DJ58_100 (degree 1370), 349966.DJ58_1989 (degree
+	1333), 349966.DJ58_3000 (degree 1296) and 349966.DJ58_1988 (degree 1283).
 	
 
 

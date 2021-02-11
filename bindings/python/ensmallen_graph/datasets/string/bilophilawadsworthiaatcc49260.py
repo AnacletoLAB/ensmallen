@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:30.538049
 
-The undirected graph Bilophila wadsworthia ATCC49260 has 3758 nodes and 277535 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03931
-and has 38 connected components, where the component with most nodes has 3660 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 147.70, and the node degree mode is 1. The top 5
-most central nodes are 1408428.JNJP01000009_gene1362 (degree 1315), 1408428.JNJP01000051_gene3811
+The undirected graph Bilophila wadsworthia ATCC49260 has 3758 nodes and
+277535 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03931 and has 38 connected components, where the
+component with most nodes has 3660 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+is 147.70, and the node degree mode is 1. The top 5 most central nodes
+are 1408428.JNJP01000009_gene1362 (degree 1315), 1408428.JNJP01000051_gene3811
 (degree 1307), 1408428.JNJP01000007_gene1868 (degree 1142), 1408428.JNJP01000001_gene3236
 (degree 1078) and 1408428.JNJP01000006_gene2567 (degree 1055).
 
@@ -107,12 +108,13 @@ def BilophilaWadsworthiaAtcc49260(
 	
 	Datetime: 2021-02-03 22:36:30.538049
 	
-	The undirected graph Bilophila wadsworthia ATCC49260 has 3758 nodes and 277535 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03931
-	and has 38 connected components, where the component with most nodes has 3660 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 147.70, and the node degree mode is 1. The top 5
-	most central nodes are 1408428.JNJP01000009_gene1362 (degree 1315), 1408428.JNJP01000051_gene3811
+	The undirected graph Bilophila wadsworthia ATCC49260 has 3758 nodes and
+	277535 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03931 and has 38 connected components, where the
+	component with most nodes has 3660 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+	is 147.70, and the node degree mode is 1. The top 5 most central nodes
+	are 1408428.JNJP01000009_gene1362 (degree 1315), 1408428.JNJP01000051_gene3811
 	(degree 1307), 1408428.JNJP01000007_gene1868 (degree 1142), 1408428.JNJP01000001_gene3236
 	(degree 1078) and 1408428.JNJP01000006_gene2567 (degree 1055).
 	

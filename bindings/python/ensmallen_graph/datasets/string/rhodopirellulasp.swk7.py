@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:41.237303
 
-The undirected graph Rhodopirellula sp. SWK7 has 7105 nodes and 642010 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-has 146 connected components, where the component with most nodes has 6727 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 180.72, and the node degree mode is 1. The top 5
-most central nodes are 595460.RRSWK_00480 (degree 2365), 595460.RRSWK_04959 (degree
-1891), 595460.RRSWK_05662 (degree 1763), 595460.RRSWK_06964 (degree 1715) and 595460.RRSWK_01007
-(degree 1684).
+The undirected graph Rhodopirellula sp. SWK7 has 7105 nodes and 642010
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02544 and has 146 connected components, where the component
+with most nodes has 6727 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 180.72,
+and the node degree mode is 1. The top 5 most central nodes are 595460.RRSWK_00480
+(degree 2365), 595460.RRSWK_04959 (degree 1891), 595460.RRSWK_05662 (degree
+1763), 595460.RRSWK_06964 (degree 1715) and 595460.RRSWK_01007 (degree
+1684).
 
 
 References
@@ -107,14 +108,15 @@ def RhodopirellulaSp.Swk7(
 	
 	Datetime: 2021-02-02 21:18:41.237303
 	
-	The undirected graph Rhodopirellula sp. SWK7 has 7105 nodes and 642010 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02544 and
-	has 146 connected components, where the component with most nodes has 6727 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 180.72, and the node degree mode is 1. The top 5
-	most central nodes are 595460.RRSWK_00480 (degree 2365), 595460.RRSWK_04959 (degree
-	1891), 595460.RRSWK_05662 (degree 1763), 595460.RRSWK_06964 (degree 1715) and 595460.RRSWK_01007
-	(degree 1684).
+	The undirected graph Rhodopirellula sp. SWK7 has 7105 nodes and 642010
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02544 and has 146 connected components, where the component
+	with most nodes has 6727 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 180.72,
+	and the node degree mode is 1. The top 5 most central nodes are 595460.RRSWK_00480
+	(degree 2365), 595460.RRSWK_04959 (degree 1891), 595460.RRSWK_05662 (degree
+	1763), 595460.RRSWK_06964 (degree 1715) and 595460.RRSWK_01007 (degree
+	1684).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:23.812940
 
-The undirected graph Rhizobium etli CIAT652 has 5291 nodes and 446346 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03189 and
-has 28 connected components, where the component with most nodes has 5211 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 168.72, and the node degree mode is 2. The top 5 most central
-nodes are 491916.RHECIAT_PC0000458 (degree 1998), 491916.RHECIAT_CH0000190 (degree
-1835), 491916.RHECIAT_CH0000627 (degree 1566), 491916.RHECIAT_CH0003438 (degree 1546)
-and 491916.RHECIAT_CH0003820 (degree 1504).
+The undirected graph Rhizobium etli CIAT652 has 5291 nodes and 446346 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03189 and has 28 connected components, where the component with most
+nodes has 5211 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 168.72, and
+the node degree mode is 2. The top 5 most central nodes are 491916.RHECIAT_PC0000458
+(degree 1998), 491916.RHECIAT_CH0000190 (degree 1835), 491916.RHECIAT_CH0000627
+(degree 1566), 491916.RHECIAT_CH0003438 (degree 1546) and 491916.RHECIAT_CH0003820
+(degree 1504).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumEtliCiat652(
 	
 	Datetime: 2021-02-02 21:00:23.812940
 	
-	The undirected graph Rhizobium etli CIAT652 has 5291 nodes and 446346 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03189 and
-	has 28 connected components, where the component with most nodes has 5211 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 168.72, and the node degree mode is 2. The top 5 most central
-	nodes are 491916.RHECIAT_PC0000458 (degree 1998), 491916.RHECIAT_CH0000190 (degree
-	1835), 491916.RHECIAT_CH0000627 (degree 1566), 491916.RHECIAT_CH0003438 (degree 1546)
-	and 491916.RHECIAT_CH0003820 (degree 1504).
+	The undirected graph Rhizobium etli CIAT652 has 5291 nodes and 446346 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03189 and has 28 connected components, where the component with most
+	nodes has 5211 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 168.72, and
+	the node degree mode is 2. The top 5 most central nodes are 491916.RHECIAT_PC0000458
+	(degree 1998), 491916.RHECIAT_CH0000190 (degree 1835), 491916.RHECIAT_CH0000627
+	(degree 1566), 491916.RHECIAT_CH0003438 (degree 1546) and 491916.RHECIAT_CH0003820
+	(degree 1504).
 	
 
 

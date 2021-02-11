@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:07.800806
 
-The undirected graph Leisingera sp. ANG1 has 4194 nodes and 557129 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06336 and
-has 12 connected components, where the component with most nodes has 4170 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 265.68, and the node degree mode is 1. The top 5 most central
-nodes are 1002340.AFCF01000004_gene2990 (degree 1764), 1002340.AFCF01000024_gene1172
-(degree 1701), 1002340.AFCF01000066_gene331 (degree 1587), 1002340.AFCF01000066_gene329
-(degree 1564) and 1002340.AFCF01000032_gene3779 (degree 1474).
+The undirected graph Leisingera sp. ANG1 has 4194 nodes and 557129 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06336 and has 12 connected components, where the component with most
+nodes has 4170 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 265.68, and
+the node degree mode is 1. The top 5 most central nodes are 1002340.AFCF01000004_gene2990
+(degree 1764), 1002340.AFCF01000024_gene1172 (degree 1701), 1002340.AFCF01000066_gene331
+(degree 1587), 1002340.AFCF01000066_gene329 (degree 1564) and 1002340.AFCF01000032_gene3779
+(degree 1474).
 
 
 References
@@ -107,14 +108,15 @@ def LeisingeraSp.Ang1(
 	
 	Datetime: 2021-02-02 22:07:07.800806
 	
-	The undirected graph Leisingera sp. ANG1 has 4194 nodes and 557129 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06336 and
-	has 12 connected components, where the component with most nodes has 4170 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 265.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1002340.AFCF01000004_gene2990 (degree 1764), 1002340.AFCF01000024_gene1172
-	(degree 1701), 1002340.AFCF01000066_gene331 (degree 1587), 1002340.AFCF01000066_gene329
-	(degree 1564) and 1002340.AFCF01000032_gene3779 (degree 1474).
+	The undirected graph Leisingera sp. ANG1 has 4194 nodes and 557129 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06336 and has 12 connected components, where the component with most
+	nodes has 4170 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 265.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1002340.AFCF01000004_gene2990
+	(degree 1764), 1002340.AFCF01000024_gene1172 (degree 1701), 1002340.AFCF01000066_gene331
+	(degree 1587), 1002340.AFCF01000066_gene329 (degree 1564) and 1002340.AFCF01000032_gene3779
+	(degree 1474).
 	
 
 

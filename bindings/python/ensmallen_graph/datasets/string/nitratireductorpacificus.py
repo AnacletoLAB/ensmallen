@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:35.660342
 
-The undirected graph Nitratireductor pacificus has 4179 nodes and 474006 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05430
-and has 5 connected components, where the component with most nodes has 4170 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 199, the mean node degree is 226.85, and the node degree mode is 6. The top 5
-most central nodes are 391937.NA2_09853 (degree 1517), 391937.NA2_20133 (degree 1214),
-391937.NA2_04486 (degree 1186), 391937.NA2_06208 (degree 1185) and 391937.NA2_12913
-(degree 1161).
+The undirected graph Nitratireductor pacificus has 4179 nodes and 474006
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05430 and has 5 connected components, where the component
+with most nodes has 4170 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 226.85,
+and the node degree mode is 6. The top 5 most central nodes are 391937.NA2_09853
+(degree 1517), 391937.NA2_20133 (degree 1214), 391937.NA2_04486 (degree
+1186), 391937.NA2_06208 (degree 1185) and 391937.NA2_12913 (degree 1161).
 
 
 References
@@ -107,14 +107,14 @@ def NitratireductorPacificus(
 	
 	Datetime: 2021-02-02 20:40:35.660342
 	
-	The undirected graph Nitratireductor pacificus has 4179 nodes and 474006 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05430
-	and has 5 connected components, where the component with most nodes has 4170 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 199, the mean node degree is 226.85, and the node degree mode is 6. The top 5
-	most central nodes are 391937.NA2_09853 (degree 1517), 391937.NA2_20133 (degree 1214),
-	391937.NA2_04486 (degree 1186), 391937.NA2_06208 (degree 1185) and 391937.NA2_12913
-	(degree 1161).
+	The undirected graph Nitratireductor pacificus has 4179 nodes and 474006
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05430 and has 5 connected components, where the component
+	with most nodes has 4170 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 226.85,
+	and the node degree mode is 6. The top 5 most central nodes are 391937.NA2_09853
+	(degree 1517), 391937.NA2_20133 (degree 1214), 391937.NA2_04486 (degree
+	1186), 391937.NA2_06208 (degree 1185) and 391937.NA2_12913 (degree 1161).
 	
 
 

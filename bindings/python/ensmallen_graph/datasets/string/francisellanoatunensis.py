@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:42.285113
 
-The undirected graph Francisella noatunensis has 1565 nodes and 74751 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06108 and
-has 4 connected components, where the component with most nodes has 1558 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 70,
-the mean node degree is 95.53, and the node degree mode is 4. The top 5 most central
-nodes are 1163389.OOM_0604 (degree 684), 1163389.OOM_1502 (degree 682), 1163389.OOM_0449
-(degree 535), 1163389.OOM_0953 (degree 525) and 1163389.OOM_1720 (degree 519).
+The undirected graph Francisella noatunensis has 1565 nodes and 74751 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06108 and has 4 connected components, where the component with most
+nodes has 1558 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 70, the mean node degree is 95.53, and
+the node degree mode is 4. The top 5 most central nodes are 1163389.OOM_0604
+(degree 684), 1163389.OOM_1502 (degree 682), 1163389.OOM_0449 (degree 535),
+1163389.OOM_0953 (degree 525) and 1163389.OOM_1720 (degree 519).
 
 
 References
@@ -106,13 +107,14 @@ def FrancisellaNoatunensis(
 	
 	Datetime: 2021-02-02 23:04:42.285113
 	
-	The undirected graph Francisella noatunensis has 1565 nodes and 74751 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06108 and
-	has 4 connected components, where the component with most nodes has 1558 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 70,
-	the mean node degree is 95.53, and the node degree mode is 4. The top 5 most central
-	nodes are 1163389.OOM_0604 (degree 684), 1163389.OOM_1502 (degree 682), 1163389.OOM_0449
-	(degree 535), 1163389.OOM_0953 (degree 525) and 1163389.OOM_1720 (degree 519).
+	The undirected graph Francisella noatunensis has 1565 nodes and 74751 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06108 and has 4 connected components, where the component with most
+	nodes has 1558 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 70, the mean node degree is 95.53, and
+	the node degree mode is 4. The top 5 most central nodes are 1163389.OOM_0604
+	(degree 684), 1163389.OOM_1502 (degree 682), 1163389.OOM_0449 (degree 535),
+	1163389.OOM_0953 (degree 525) and 1163389.OOM_1720 (degree 519).
 	
 
 

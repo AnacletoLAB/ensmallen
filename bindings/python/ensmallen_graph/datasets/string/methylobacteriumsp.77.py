@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:33.036604
 
-The undirected graph Methylobacterium sp. 77 has 4078 nodes and 348403 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-has 30 connected components, where the component with most nodes has 4008 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 170.87, and the node degree mode is 1. The top 5 most central
-nodes are 1101192.KB910516_gene3657 (degree 1427), 1101192.KB910516_gene1415 (degree
-1317), 1101192.KB910516_gene2529 (degree 1145), 1101192.KB910516_gene2447 (degree
-1090) and 1101192.KB910516_gene2522 (degree 1090).
+The undirected graph Methylobacterium sp. 77 has 4078 nodes and 348403
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04191 and has 30 connected components, where the component
+with most nodes has 4008 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 170.87,
+and the node degree mode is 1. The top 5 most central nodes are 1101192.KB910516_gene3657
+(degree 1427), 1101192.KB910516_gene1415 (degree 1317), 1101192.KB910516_gene2529
+(degree 1145), 1101192.KB910516_gene2447 (degree 1090) and 1101192.KB910516_gene2522
+(degree 1090).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumSp.77(
 	
 	Datetime: 2021-02-02 22:24:33.036604
 	
-	The undirected graph Methylobacterium sp. 77 has 4078 nodes and 348403 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-	has 30 connected components, where the component with most nodes has 4008 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 170.87, and the node degree mode is 1. The top 5 most central
-	nodes are 1101192.KB910516_gene3657 (degree 1427), 1101192.KB910516_gene1415 (degree
-	1317), 1101192.KB910516_gene2529 (degree 1145), 1101192.KB910516_gene2447 (degree
-	1090) and 1101192.KB910516_gene2522 (degree 1090).
+	The undirected graph Methylobacterium sp. 77 has 4078 nodes and 348403
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04191 and has 30 connected components, where the component
+	with most nodes has 4008 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 170.87,
+	and the node degree mode is 1. The top 5 most central nodes are 1101192.KB910516_gene3657
+	(degree 1427), 1101192.KB910516_gene1415 (degree 1317), 1101192.KB910516_gene2529
+	(degree 1145), 1101192.KB910516_gene2447 (degree 1090) and 1101192.KB910516_gene2522
+	(degree 1090).
 	
 
 

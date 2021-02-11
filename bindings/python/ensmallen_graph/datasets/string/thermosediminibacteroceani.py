@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:36.068798
 
-The undirected graph Thermosediminibacter oceani has 2188 nodes and 176580 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07380
-and has 4 connected components, where the component with most nodes has 2180 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 161.41, and the node degree mode is 6. The top 5
-most central nodes are 555079.Toce_1588 (degree 1174), 555079.Toce_1653 (degree 929),
-555079.Toce_1156 (degree 819), 555079.Toce_0353 (degree 798) and 555079.Toce_0373
-(degree 783).
+The undirected graph Thermosediminibacter oceani has 2188 nodes and 176580
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07380 and has 4 connected components, where the component
+with most nodes has 2180 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 161.41,
+and the node degree mode is 6. The top 5 most central nodes are 555079.Toce_1588
+(degree 1174), 555079.Toce_1653 (degree 929), 555079.Toce_1156 (degree
+819), 555079.Toce_0353 (degree 798) and 555079.Toce_0373 (degree 783).
 
 
 References
@@ -107,14 +107,14 @@ def ThermosediminibacterOceani(
 	
 	Datetime: 2021-02-02 21:10:36.068798
 	
-	The undirected graph Thermosediminibacter oceani has 2188 nodes and 176580 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07380
-	and has 4 connected components, where the component with most nodes has 2180 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 161.41, and the node degree mode is 6. The top 5
-	most central nodes are 555079.Toce_1588 (degree 1174), 555079.Toce_1653 (degree 929),
-	555079.Toce_1156 (degree 819), 555079.Toce_0353 (degree 798) and 555079.Toce_0373
-	(degree 783).
+	The undirected graph Thermosediminibacter oceani has 2188 nodes and 176580
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07380 and has 4 connected components, where the component
+	with most nodes has 2180 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 161.41,
+	and the node degree mode is 6. The top 5 most central nodes are 555079.Toce_1588
+	(degree 1174), 555079.Toce_1653 (degree 929), 555079.Toce_1156 (degree
+	819), 555079.Toce_0353 (degree 798) and 555079.Toce_0373 (degree 783).
 	
 
 

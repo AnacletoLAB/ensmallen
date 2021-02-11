@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:01.427195
 
-The undirected graph Acinetobacter beijerinckii has 3296 nodes and 252804 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04656
-and has 13 connected components, where the component with most nodes has 3267 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 153.40, and the node degree mode is 6. The top 5
-most central nodes are 1217648.F933_01128 (degree 1107), 1217648.F933_01986 (degree
-1005), 1217648.F933_01636 (degree 909), 1217648.F933_00240 (degree 896) and 1217648.F933_01171
-(degree 858).
+The undirected graph Acinetobacter beijerinckii has 3296 nodes and 252804
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04656 and has 13 connected components, where the component
+with most nodes has 3267 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 153.40,
+and the node degree mode is 6. The top 5 most central nodes are 1217648.F933_01128
+(degree 1107), 1217648.F933_01986 (degree 1005), 1217648.F933_01636 (degree
+909), 1217648.F933_00240 (degree 896) and 1217648.F933_01171 (degree 858).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterBeijerinckii(
 	
 	Datetime: 2021-02-02 23:21:01.427195
 	
-	The undirected graph Acinetobacter beijerinckii has 3296 nodes and 252804 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04656
-	and has 13 connected components, where the component with most nodes has 3267 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 153.40, and the node degree mode is 6. The top 5
-	most central nodes are 1217648.F933_01128 (degree 1107), 1217648.F933_01986 (degree
-	1005), 1217648.F933_01636 (degree 909), 1217648.F933_00240 (degree 896) and 1217648.F933_01171
-	(degree 858).
+	The undirected graph Acinetobacter beijerinckii has 3296 nodes and 252804
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04656 and has 13 connected components, where the component
+	with most nodes has 3267 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 153.40,
+	and the node degree mode is 6. The top 5 most central nodes are 1217648.F933_01128
+	(degree 1107), 1217648.F933_01986 (degree 1005), 1217648.F933_01636 (degree
+	909), 1217648.F933_00240 (degree 896) and 1217648.F933_01171 (degree 858).
 	
 
 

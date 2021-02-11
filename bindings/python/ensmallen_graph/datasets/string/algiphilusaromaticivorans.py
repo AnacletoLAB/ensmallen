@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:46:35.087386
 
-The undirected graph Algiphilus aromaticivorans has 3405 nodes and 350784 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06053
-and has 7 connected components, where the component with most nodes has 3392 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 206.04, and the node degree mode is 4. The top 5
-most central nodes are 1415780.JPOG01000001_gene3312 (degree 1170), 1415780.JPOG01000001_gene2386
-(degree 1033), 1415780.JPOG01000001_gene1744 (degree 1004), 1415780.JPOG01000001_gene633
-(degree 973) and 1415780.JPOG01000001_gene2866 (degree 951).
+The undirected graph Algiphilus aromaticivorans has 3405 nodes and 350784
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06053 and has 7 connected components, where the component
+with most nodes has 3392 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 206.04,
+and the node degree mode is 4. The top 5 most central nodes are 1415780.JPOG01000001_gene3312
+(degree 1170), 1415780.JPOG01000001_gene2386 (degree 1033), 1415780.JPOG01000001_gene1744
+(degree 1004), 1415780.JPOG01000001_gene633 (degree 973) and 1415780.JPOG01000001_gene2866
+(degree 951).
 
 
 References
@@ -107,14 +108,15 @@ def AlgiphilusAromaticivorans(
 	
 	Datetime: 2021-02-03 22:46:35.087386
 	
-	The undirected graph Algiphilus aromaticivorans has 3405 nodes and 350784 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06053
-	and has 7 connected components, where the component with most nodes has 3392 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 206.04, and the node degree mode is 4. The top 5
-	most central nodes are 1415780.JPOG01000001_gene3312 (degree 1170), 1415780.JPOG01000001_gene2386
-	(degree 1033), 1415780.JPOG01000001_gene1744 (degree 1004), 1415780.JPOG01000001_gene633
-	(degree 973) and 1415780.JPOG01000001_gene2866 (degree 951).
+	The undirected graph Algiphilus aromaticivorans has 3405 nodes and 350784
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06053 and has 7 connected components, where the component
+	with most nodes has 3392 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 206.04,
+	and the node degree mode is 4. The top 5 most central nodes are 1415780.JPOG01000001_gene3312
+	(degree 1170), 1415780.JPOG01000001_gene2386 (degree 1033), 1415780.JPOG01000001_gene1744
+	(degree 1004), 1415780.JPOG01000001_gene633 (degree 973) and 1415780.JPOG01000001_gene2866
+	(degree 951).
 	
 
 

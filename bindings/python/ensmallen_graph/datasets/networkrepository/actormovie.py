@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:58:18.085510
 
-The undirected graph actor-movie has 383640 nodes and 1470351 unweighted edges, of
-which 25 are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 7.67, and the node degree mode is 1. The top 5 most central
-nodes are 108075 (degree 655), 223550 (degree 515), 223554 (degree 479), 108077 (degree
-434) and 236948 (degree 424).
+The undirected graph actor-movie has 383640 nodes and 1470351 unweighted
+edges, of which 25 are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 7.67, and the
+node degree mode is 1. The top 5 most central nodes are 108075 (degree
+655), 223550 (degree 515), 223554 (degree 479), 108077 (degree 434) and
+236948 (degree 424).
 
 
 References
@@ -102,12 +103,13 @@ def ActorMovie(
 	
 	Datetime: 2021-02-06 11:58:18.085510
 	
-	The undirected graph actor-movie has 383640 nodes and 1470351 unweighted edges, of
-	which 25 are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 7.67, and the node degree mode is 1. The top 5 most central
-	nodes are 108075 (degree 655), 223550 (degree 515), 223554 (degree 479), 108077 (degree
-	434) and 236948 (degree 424).
+	The undirected graph actor-movie has 383640 nodes and 1470351 unweighted
+	edges, of which 25 are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 7.67, and the
+	node degree mode is 1. The top 5 most central nodes are 108075 (degree
+	655), 223550 (degree 515), 223554 (degree 479), 108077 (degree 434) and
+	236948 (degree 424).
 	
 
 

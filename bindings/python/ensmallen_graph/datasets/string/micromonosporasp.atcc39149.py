@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:45.615137
 
-The undirected graph Micromonospora sp. ATCC39149 has 5586 nodes and 982581 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06299
-and has 13 connected components, where the component with most nodes has 5555 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 313, the mean node degree is 351.80, and the node degree mode is 2. The top 5
-most central nodes are 219305.MCAG_02860 (degree 1835), 219305.MCAG_01139 (degree
-1743), 219305.MCAG_04336 (degree 1718), 219305.MCAG_03617 (degree 1680) and 219305.MCAG_00438
-(degree 1640).
+The undirected graph Micromonospora sp. ATCC39149 has 5586 nodes and 982581
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06299 and has 13 connected components, where the component
+with most nodes has 5555 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 313, the mean node degree is 351.80,
+and the node degree mode is 2. The top 5 most central nodes are 219305.MCAG_02860
+(degree 1835), 219305.MCAG_01139 (degree 1743), 219305.MCAG_04336 (degree
+1718), 219305.MCAG_03617 (degree 1680) and 219305.MCAG_00438 (degree 1640).
 
 
 References
@@ -107,14 +107,14 @@ def MicromonosporaSp.Atcc39149(
 	
 	Datetime: 2021-02-02 20:03:45.615137
 	
-	The undirected graph Micromonospora sp. ATCC39149 has 5586 nodes and 982581 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06299
-	and has 13 connected components, where the component with most nodes has 5555 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 313, the mean node degree is 351.80, and the node degree mode is 2. The top 5
-	most central nodes are 219305.MCAG_02860 (degree 1835), 219305.MCAG_01139 (degree
-	1743), 219305.MCAG_04336 (degree 1718), 219305.MCAG_03617 (degree 1680) and 219305.MCAG_00438
-	(degree 1640).
+	The undirected graph Micromonospora sp. ATCC39149 has 5586 nodes and 982581
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06299 and has 13 connected components, where the component
+	with most nodes has 5555 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 313, the mean node degree is 351.80,
+	and the node degree mode is 2. The top 5 most central nodes are 219305.MCAG_02860
+	(degree 1835), 219305.MCAG_01139 (degree 1743), 219305.MCAG_04336 (degree
+	1718), 219305.MCAG_03617 (degree 1680) and 219305.MCAG_00438 (degree 1640).
 	
 
 

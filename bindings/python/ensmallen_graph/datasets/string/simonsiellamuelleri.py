@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:39.102061
 
-The undirected graph Simonsiella muelleri has 2260 nodes and 154366 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06047 and
-has 7 connected components, where the component with most nodes has 2242 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 136.61, and the node degree mode is 4. The top 5 most central
-nodes are 641147.HMPREF9021_01519 (degree 818), 641147.HMPREF9021_01008 (degree 800),
-641147.HMPREF9021_01640 (degree 717), 641147.HMPREF9021_00298 (degree 706) and 641147.HMPREF9021_00218
+The undirected graph Simonsiella muelleri has 2260 nodes and 154366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06047 and has 7 connected components, where the component with most
+nodes has 2242 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 136.61, and
+the node degree mode is 4. The top 5 most central nodes are 641147.HMPREF9021_01519
+(degree 818), 641147.HMPREF9021_01008 (degree 800), 641147.HMPREF9021_01640
+(degree 717), 641147.HMPREF9021_00298 (degree 706) and 641147.HMPREF9021_00218
 (degree 702).
 
 
@@ -107,13 +108,14 @@ def SimonsiellaMuelleri(
 	
 	Datetime: 2021-02-02 21:23:39.102061
 	
-	The undirected graph Simonsiella muelleri has 2260 nodes and 154366 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06047 and
-	has 7 connected components, where the component with most nodes has 2242 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 136.61, and the node degree mode is 4. The top 5 most central
-	nodes are 641147.HMPREF9021_01519 (degree 818), 641147.HMPREF9021_01008 (degree 800),
-	641147.HMPREF9021_01640 (degree 717), 641147.HMPREF9021_00298 (degree 706) and 641147.HMPREF9021_00218
+	The undirected graph Simonsiella muelleri has 2260 nodes and 154366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06047 and has 7 connected components, where the component with most
+	nodes has 2242 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 136.61, and
+	the node degree mode is 4. The top 5 most central nodes are 641147.HMPREF9021_01519
+	(degree 818), 641147.HMPREF9021_01008 (degree 800), 641147.HMPREF9021_01640
+	(degree 717), 641147.HMPREF9021_00298 (degree 706) and 641147.HMPREF9021_00218
 	(degree 702).
 	
 

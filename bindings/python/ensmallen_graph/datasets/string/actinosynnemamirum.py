@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:23.148554
 
-The undirected graph Actinosynnema mirum has 6843 nodes and 961150 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04106 and
-has 21 connected components, where the component with most nodes has 6798 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 280.91, and the node degree mode is 2. The top 5 most central
-nodes are 446462.Amir_5091 (degree 2124), 446462.Amir_2370 (degree 1945), 446462.Amir_2493
-(degree 1888), 446462.Amir_6431 (degree 1824) and 446462.Amir_4359 (degree 1783).
+The undirected graph Actinosynnema mirum has 6843 nodes and 961150 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04106 and has 21 connected components, where the component with most
+nodes has 6798 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 252, the mean node degree is 280.91, and
+the node degree mode is 2. The top 5 most central nodes are 446462.Amir_5091
+(degree 2124), 446462.Amir_2370 (degree 1945), 446462.Amir_2493 (degree
+1888), 446462.Amir_6431 (degree 1824) and 446462.Amir_4359 (degree 1783).
 
 
 References
@@ -106,13 +107,14 @@ def ActinosynnemaMirum(
 	
 	Datetime: 2021-02-02 20:51:23.148554
 	
-	The undirected graph Actinosynnema mirum has 6843 nodes and 961150 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04106 and
-	has 21 connected components, where the component with most nodes has 6798 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 280.91, and the node degree mode is 2. The top 5 most central
-	nodes are 446462.Amir_5091 (degree 2124), 446462.Amir_2370 (degree 1945), 446462.Amir_2493
-	(degree 1888), 446462.Amir_6431 (degree 1824) and 446462.Amir_4359 (degree 1783).
+	The undirected graph Actinosynnema mirum has 6843 nodes and 961150 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04106 and has 21 connected components, where the component with most
+	nodes has 6798 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 252, the mean node degree is 280.91, and
+	the node degree mode is 2. The top 5 most central nodes are 446462.Amir_5091
+	(degree 2124), 446462.Amir_2370 (degree 1945), 446462.Amir_2493 (degree
+	1888), 446462.Amir_6431 (degree 1824) and 446462.Amir_4359 (degree 1783).
 	
 
 

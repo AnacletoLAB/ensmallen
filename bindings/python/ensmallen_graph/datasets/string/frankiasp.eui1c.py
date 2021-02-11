@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:44.837091
 
-The undirected graph Frankia sp. EuI1c has 6959 nodes and 1257042 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05192 and
-has 28 connected components, where the component with most nodes has 6895 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 281,
-the mean node degree is 361.27, and the node degree mode is 1. The top 5 most central
-nodes are 298654.FraEuI1c_3830 (degree 2695), 298654.FraEuI1c_3119 (degree 2489),
-298654.FraEuI1c_3343 (degree 2291), 298654.FraEuI1c_1631 (degree 2291) and 298654.FraEuI1c_0527
+The undirected graph Frankia sp. EuI1c has 6959 nodes and 1257042 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05192 and has 28 connected components, where the component with most
+nodes has 6895 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 281, the mean node degree is 361.27, and
+the node degree mode is 1. The top 5 most central nodes are 298654.FraEuI1c_3830
+(degree 2695), 298654.FraEuI1c_3119 (degree 2489), 298654.FraEuI1c_3343
+(degree 2291), 298654.FraEuI1c_1631 (degree 2291) and 298654.FraEuI1c_0527
 (degree 2262).
 
 
@@ -107,13 +108,14 @@ def FrankiaSp.Eui1c(
 	
 	Datetime: 2021-02-02 20:21:44.837091
 	
-	The undirected graph Frankia sp. EuI1c has 6959 nodes and 1257042 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05192 and
-	has 28 connected components, where the component with most nodes has 6895 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 281,
-	the mean node degree is 361.27, and the node degree mode is 1. The top 5 most central
-	nodes are 298654.FraEuI1c_3830 (degree 2695), 298654.FraEuI1c_3119 (degree 2489),
-	298654.FraEuI1c_3343 (degree 2291), 298654.FraEuI1c_1631 (degree 2291) and 298654.FraEuI1c_0527
+	The undirected graph Frankia sp. EuI1c has 6959 nodes and 1257042 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05192 and has 28 connected components, where the component with most
+	nodes has 6895 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 281, the mean node degree is 361.27, and
+	the node degree mode is 1. The top 5 most central nodes are 298654.FraEuI1c_3830
+	(degree 2695), 298654.FraEuI1c_3119 (degree 2489), 298654.FraEuI1c_3343
+	(degree 2291), 298654.FraEuI1c_1631 (degree 2291) and 298654.FraEuI1c_0527
 	(degree 2262).
 	
 

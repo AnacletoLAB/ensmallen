@@ -11,11 +11,12 @@ had the following characteristics:
 Datetime: 2021-02-07 15:59:05.362292
 
 The undirected graph road-germany-osm has 11548845 nodes and 12369181 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 2, the mean node degree is 2.14, and the node degree mode is 2. The top
-5 most central nodes are 11400351 (degree 13), 11400359 (degree 12), 9992226 (degree
-12), 10834781 (degree 11) and 8996283 (degree 11).
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.14, and the
+node degree mode is 2. The top 5 most central nodes are 11400351 (degree
+13), 11400359 (degree 12), 9992226 (degree 12), 10834781 (degree 11) and
+8996283 (degree 11).
 
 
 References
@@ -103,11 +104,12 @@ def RoadGermanyOsm(
 	Datetime: 2021-02-07 15:59:05.362292
 	
 	The undirected graph road-germany-osm has 11548845 nodes and 12369181 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 2, the mean node degree is 2.14, and the node degree mode is 2. The top
-	5 most central nodes are 11400351 (degree 13), 11400359 (degree 12), 9992226 (degree
-	12), 10834781 (degree 11) and 8996283 (degree 11).
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.14, and the
+	node degree mode is 2. The top 5 most central nodes are 11400351 (degree
+	13), 11400359 (degree 12), 9992226 (degree 12), 10834781 (degree 11) and
+	8996283 (degree 11).
 	
 
 

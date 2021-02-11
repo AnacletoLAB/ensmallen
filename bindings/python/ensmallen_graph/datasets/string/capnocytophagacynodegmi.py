@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:11.957969
 
-The undirected graph Capnocytophaga cynodegmi has 2339 nodes and 140395 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05135
-and has 13 connected components, where the component with most nodes has 2306 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 120.05, and the node degree mode is 4. The top 5 most
-central nodes are 926551.KB900738_gene105 (degree 818), 926551.KB900734_gene1351
-(degree 790), 926551.KB900703_gene902 (degree 752), 926551.KB900721_gene322 (degree
-718) and 926551.KB900737_gene381 (degree 712).
+The undirected graph Capnocytophaga cynodegmi has 2339 nodes and 140395
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05135 and has 13 connected components, where the component
+with most nodes has 2306 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 120.05,
+and the node degree mode is 4. The top 5 most central nodes are 926551.KB900738_gene105
+(degree 818), 926551.KB900734_gene1351 (degree 790), 926551.KB900703_gene902
+(degree 752), 926551.KB900721_gene322 (degree 718) and 926551.KB900737_gene381
+(degree 712).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaCynodegmi(
 	
 	Datetime: 2021-02-02 21:56:11.957969
 	
-	The undirected graph Capnocytophaga cynodegmi has 2339 nodes and 140395 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05135
-	and has 13 connected components, where the component with most nodes has 2306 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 120.05, and the node degree mode is 4. The top 5 most
-	central nodes are 926551.KB900738_gene105 (degree 818), 926551.KB900734_gene1351
-	(degree 790), 926551.KB900703_gene902 (degree 752), 926551.KB900721_gene322 (degree
-	718) and 926551.KB900737_gene381 (degree 712).
+	The undirected graph Capnocytophaga cynodegmi has 2339 nodes and 140395
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05135 and has 13 connected components, where the component
+	with most nodes has 2306 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 120.05,
+	and the node degree mode is 4. The top 5 most central nodes are 926551.KB900738_gene105
+	(degree 818), 926551.KB900734_gene1351 (degree 790), 926551.KB900703_gene902
+	(degree 752), 926551.KB900721_gene322 (degree 718) and 926551.KB900737_gene381
+	(degree 712).
 	
 
 

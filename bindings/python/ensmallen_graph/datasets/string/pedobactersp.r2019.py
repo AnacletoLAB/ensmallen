@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:57.371847
 
-The undirected graph Pedobacter sp. R2019 has 4185 nodes and 368884 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04213 and
-has 22 connected components, where the component with most nodes has 4131 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 176.29, and the node degree mode is 1. The top 5 most central
-nodes are 1270196.JCKI01000001_gene4076 (degree 1307), 1270196.JCKI01000003_gene2266
-(degree 1262), 1270196.JCKI01000008_gene1510 (degree 1249), 1270196.JCKI01000005_gene2976
-(degree 1200) and 1270196.JCKI01000005_gene2906 (degree 1152).
+The undirected graph Pedobacter sp. R2019 has 4185 nodes and 368884 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04213 and has 22 connected components, where the component with most
+nodes has 4131 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 176.29, and
+the node degree mode is 1. The top 5 most central nodes are 1270196.JCKI01000001_gene4076
+(degree 1307), 1270196.JCKI01000003_gene2266 (degree 1262), 1270196.JCKI01000008_gene1510
+(degree 1249), 1270196.JCKI01000005_gene2976 (degree 1200) and 1270196.JCKI01000005_gene2906
+(degree 1152).
 
 
 References
@@ -107,14 +108,15 @@ def PedobacterSp.R2019(
 	
 	Datetime: 2021-02-02 23:37:57.371847
 	
-	The undirected graph Pedobacter sp. R2019 has 4185 nodes and 368884 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04213 and
-	has 22 connected components, where the component with most nodes has 4131 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 176.29, and the node degree mode is 1. The top 5 most central
-	nodes are 1270196.JCKI01000001_gene4076 (degree 1307), 1270196.JCKI01000003_gene2266
-	(degree 1262), 1270196.JCKI01000008_gene1510 (degree 1249), 1270196.JCKI01000005_gene2976
-	(degree 1200) and 1270196.JCKI01000005_gene2906 (degree 1152).
+	The undirected graph Pedobacter sp. R2019 has 4185 nodes and 368884 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04213 and has 22 connected components, where the component with most
+	nodes has 4131 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 176.29, and
+	the node degree mode is 1. The top 5 most central nodes are 1270196.JCKI01000001_gene4076
+	(degree 1307), 1270196.JCKI01000003_gene2266 (degree 1262), 1270196.JCKI01000008_gene1510
+	(degree 1249), 1270196.JCKI01000005_gene2976 (degree 1200) and 1270196.JCKI01000005_gene2906
+	(degree 1152).
 	
 
 

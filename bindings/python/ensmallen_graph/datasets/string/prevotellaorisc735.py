@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:17.969773
 
-The undirected graph Prevotella oris C735 has 2613 nodes and 208134 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06099 and
-has 16 connected components, where the component with most nodes has 2561 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 159.31, and the node degree mode is 1. The top 5 most central
-nodes are 563008.HMPREF0665_01626 (degree 859), 563008.HMPREF0665_00456 (degree 814),
-563008.HMPREF0665_02391 (degree 772), 563008.HMPREF0665_02066 (degree 717) and 563008.HMPREF0665_01624
+The undirected graph Prevotella oris C735 has 2613 nodes and 208134 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06099 and has 16 connected components, where the component with most
+nodes has 2561 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 159.31, and
+the node degree mode is 1. The top 5 most central nodes are 563008.HMPREF0665_01626
+(degree 859), 563008.HMPREF0665_00456 (degree 814), 563008.HMPREF0665_02391
+(degree 772), 563008.HMPREF0665_02066 (degree 717) and 563008.HMPREF0665_01624
 (degree 682).
 
 
@@ -107,13 +108,14 @@ def PrevotellaOrisC735(
 	
 	Datetime: 2021-02-02 21:12:17.969773
 	
-	The undirected graph Prevotella oris C735 has 2613 nodes and 208134 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06099 and
-	has 16 connected components, where the component with most nodes has 2561 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 159.31, and the node degree mode is 1. The top 5 most central
-	nodes are 563008.HMPREF0665_01626 (degree 859), 563008.HMPREF0665_00456 (degree 814),
-	563008.HMPREF0665_02391 (degree 772), 563008.HMPREF0665_02066 (degree 717) and 563008.HMPREF0665_01624
+	The undirected graph Prevotella oris C735 has 2613 nodes and 208134 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06099 and has 16 connected components, where the component with most
+	nodes has 2561 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 159.31, and
+	the node degree mode is 1. The top 5 most central nodes are 563008.HMPREF0665_01626
+	(degree 859), 563008.HMPREF0665_00456 (degree 814), 563008.HMPREF0665_02391
+	(degree 772), 563008.HMPREF0665_02066 (degree 717) and 563008.HMPREF0665_01624
 	(degree 682).
 	
 

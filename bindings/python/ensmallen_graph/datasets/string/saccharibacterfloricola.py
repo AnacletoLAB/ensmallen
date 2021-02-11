@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:50.078121
 
-The undirected graph Saccharibacter floricola has 2119 nodes and 123857 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05519
-and has 21 connected components, where the component with most nodes has 2060 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 116.90, and the node degree mode is 1. The top 5 most
-central nodes are 1123227.KB899333_gene467 (degree 788), 1123227.KB899343_gene2051
-(degree 723), 1123227.KB899333_gene658 (degree 643), 1123227.KB899333_gene693 (degree
-641) and 1123227.KB899335_gene245 (degree 626).
+The undirected graph Saccharibacter floricola has 2119 nodes and 123857
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05519 and has 21 connected components, where the component
+with most nodes has 2060 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 116.90,
+and the node degree mode is 1. The top 5 most central nodes are 1123227.KB899333_gene467
+(degree 788), 1123227.KB899343_gene2051 (degree 723), 1123227.KB899333_gene658
+(degree 643), 1123227.KB899333_gene693 (degree 641) and 1123227.KB899335_gene245
+(degree 626).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharibacterFloricola(
 	
 	Datetime: 2021-02-02 22:47:50.078121
 	
-	The undirected graph Saccharibacter floricola has 2119 nodes and 123857 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05519
-	and has 21 connected components, where the component with most nodes has 2060 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 116.90, and the node degree mode is 1. The top 5 most
-	central nodes are 1123227.KB899333_gene467 (degree 788), 1123227.KB899343_gene2051
-	(degree 723), 1123227.KB899333_gene658 (degree 643), 1123227.KB899333_gene693 (degree
-	641) and 1123227.KB899335_gene245 (degree 626).
+	The undirected graph Saccharibacter floricola has 2119 nodes and 123857
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05519 and has 21 connected components, where the component
+	with most nodes has 2060 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 116.90,
+	and the node degree mode is 1. The top 5 most central nodes are 1123227.KB899333_gene467
+	(degree 788), 1123227.KB899343_gene2051 (degree 723), 1123227.KB899333_gene658
+	(degree 643), 1123227.KB899333_gene693 (degree 641) and 1123227.KB899335_gene245
+	(degree 626).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:27:17.706185
 
-The undirected graph Komagataeibacter xylinus has 3599 nodes and 231429 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03574
-and has 17 connected components, where the component with most nodes has 3556 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 128.61, and the node degree mode is 2. The top 5 most
-central nodes are 1296990.H845_161 (degree 1361), 1296990.H845_1938 (degree 1016),
-1296990.H845_2908 (degree 944), 1296990.H845_3168 (degree 864) and 1296990.H845_557
-(degree 851).
+The undirected graph Komagataeibacter xylinus has 3599 nodes and 231429
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03574 and has 17 connected components, where the component
+with most nodes has 3556 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 128.61,
+and the node degree mode is 2. The top 5 most central nodes are 1296990.H845_161
+(degree 1361), 1296990.H845_1938 (degree 1016), 1296990.H845_2908 (degree
+944), 1296990.H845_3168 (degree 864) and 1296990.H845_557 (degree 851).
 
 
 References
@@ -107,14 +107,14 @@ def KomagataeibacterXylinus(
 	
 	Datetime: 2021-02-03 21:27:17.706185
 	
-	The undirected graph Komagataeibacter xylinus has 3599 nodes and 231429 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03574
-	and has 17 connected components, where the component with most nodes has 3556 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 128.61, and the node degree mode is 2. The top 5 most
-	central nodes are 1296990.H845_161 (degree 1361), 1296990.H845_1938 (degree 1016),
-	1296990.H845_2908 (degree 944), 1296990.H845_3168 (degree 864) and 1296990.H845_557
-	(degree 851).
+	The undirected graph Komagataeibacter xylinus has 3599 nodes and 231429
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03574 and has 17 connected components, where the component
+	with most nodes has 3556 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 128.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1296990.H845_161
+	(degree 1361), 1296990.H845_1938 (degree 1016), 1296990.H845_2908 (degree
+	944), 1296990.H845_3168 (degree 864) and 1296990.H845_557 (degree 851).
 	
 
 

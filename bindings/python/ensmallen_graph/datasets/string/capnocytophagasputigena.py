@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:57.903585
 
-The undirected graph Capnocytophaga sputigena has 2645 nodes and 207409 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05932
-and has 15 connected components, where the component with most nodes has 2602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 156.83, and the node degree mode is 9. The top 5
-most central nodes are 553177.CAPSP0001_1083 (degree 865), 553177.CAPSP0001_2830
-(degree 860), 553177.CAPSP0001_2317 (degree 725), 553177.CAPSP0001_1878 (degree 715)
-and 553177.CAPSP0001_0801 (degree 659).
+The undirected graph Capnocytophaga sputigena has 2645 nodes and 207409
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05932 and has 15 connected components, where the component
+with most nodes has 2602 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 156.83,
+and the node degree mode is 9. The top 5 most central nodes are 553177.CAPSP0001_1083
+(degree 865), 553177.CAPSP0001_2830 (degree 860), 553177.CAPSP0001_2317
+(degree 725), 553177.CAPSP0001_1878 (degree 715) and 553177.CAPSP0001_0801
+(degree 659).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaSputigena(
 	
 	Datetime: 2021-02-02 21:09:57.903585
 	
-	The undirected graph Capnocytophaga sputigena has 2645 nodes and 207409 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05932
-	and has 15 connected components, where the component with most nodes has 2602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 156.83, and the node degree mode is 9. The top 5
-	most central nodes are 553177.CAPSP0001_1083 (degree 865), 553177.CAPSP0001_2830
-	(degree 860), 553177.CAPSP0001_2317 (degree 725), 553177.CAPSP0001_1878 (degree 715)
-	and 553177.CAPSP0001_0801 (degree 659).
+	The undirected graph Capnocytophaga sputigena has 2645 nodes and 207409
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05932 and has 15 connected components, where the component
+	with most nodes has 2602 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 156.83,
+	and the node degree mode is 9. The top 5 most central nodes are 553177.CAPSP0001_1083
+	(degree 865), 553177.CAPSP0001_2830 (degree 860), 553177.CAPSP0001_2317
+	(degree 725), 553177.CAPSP0001_1878 (degree 715) and 553177.CAPSP0001_0801
+	(degree 659).
 	
 
 

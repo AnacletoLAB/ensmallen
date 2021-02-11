@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:35.422750
 
-The undirected graph Actinomyces sp. ph3 has 1573 nodes and 107006 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08655 and
-has 6 connected components, where the component with most nodes has 1560 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 136.05, and the node degree mode is 8. The top 5 most central
-nodes are 1118058.CAGY01000001_gene68 (degree 729), 1118058.CAGY01000002_gene745
-(degree 712), 1118058.CAGY01000001_gene602 (degree 698), 1118058.CAGY01000003_gene887
-(degree 613) and 1118058.CAGY01000001_gene582 (degree 599).
+The undirected graph Actinomyces sp. ph3 has 1573 nodes and 107006 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08655 and has 6 connected components, where the component with most
+nodes has 1560 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 136.05, and
+the node degree mode is 8. The top 5 most central nodes are 1118058.CAGY01000001_gene68
+(degree 729), 1118058.CAGY01000002_gene745 (degree 712), 1118058.CAGY01000001_gene602
+(degree 698), 1118058.CAGY01000003_gene887 (degree 613) and 1118058.CAGY01000001_gene582
+(degree 599).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesSp.Ph3(
 	
 	Datetime: 2021-02-02 22:28:35.422750
 	
-	The undirected graph Actinomyces sp. ph3 has 1573 nodes and 107006 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08655 and
-	has 6 connected components, where the component with most nodes has 1560 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 136.05, and the node degree mode is 8. The top 5 most central
-	nodes are 1118058.CAGY01000001_gene68 (degree 729), 1118058.CAGY01000002_gene745
-	(degree 712), 1118058.CAGY01000001_gene602 (degree 698), 1118058.CAGY01000003_gene887
-	(degree 613) and 1118058.CAGY01000001_gene582 (degree 599).
+	The undirected graph Actinomyces sp. ph3 has 1573 nodes and 107006 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08655 and has 6 connected components, where the component with most
+	nodes has 1560 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 136.05, and
+	the node degree mode is 8. The top 5 most central nodes are 1118058.CAGY01000001_gene68
+	(degree 729), 1118058.CAGY01000002_gene745 (degree 712), 1118058.CAGY01000001_gene602
+	(degree 698), 1118058.CAGY01000003_gene887 (degree 613) and 1118058.CAGY01000001_gene582
+	(degree 599).
 	
 
 

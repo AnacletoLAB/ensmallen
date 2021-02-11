@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:30.368252
 
-The undirected graph Sphingomonas phyllosphaerae FA2 has 3345 nodes and 374313 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06693
-and has 12 connected components, where the component with most nodes has 3309 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 184, the mean node degree is 223.80, and the node degree mode is 2. The top 5
-most central nodes are 1090319.KE386571_gene2676 (degree 1406), 1090319.KE386571_gene1139
+The undirected graph Sphingomonas phyllosphaerae FA2 has 3345 nodes and
+374313 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06693 and has 12 connected components, where the
+component with most nodes has 3309 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 184, the mean node degree
+is 223.80, and the node degree mode is 2. The top 5 most central nodes
+are 1090319.KE386571_gene2676 (degree 1406), 1090319.KE386571_gene1139
 (degree 1262), 1090319.KE386571_gene359 (degree 1092), 1090319.KE386571_gene1761
 (degree 1084) and 1090319.KE386571_gene2744 (degree 1071).
 
@@ -107,12 +108,13 @@ def SphingomonasPhyllosphaeraeFa2(
 	
 	Datetime: 2021-02-02 22:22:30.368252
 	
-	The undirected graph Sphingomonas phyllosphaerae FA2 has 3345 nodes and 374313 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06693
-	and has 12 connected components, where the component with most nodes has 3309 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 184, the mean node degree is 223.80, and the node degree mode is 2. The top 5
-	most central nodes are 1090319.KE386571_gene2676 (degree 1406), 1090319.KE386571_gene1139
+	The undirected graph Sphingomonas phyllosphaerae FA2 has 3345 nodes and
+	374313 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06693 and has 12 connected components, where the
+	component with most nodes has 3309 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 184, the mean node degree
+	is 223.80, and the node degree mode is 2. The top 5 most central nodes
+	are 1090319.KE386571_gene2676 (degree 1406), 1090319.KE386571_gene1139
 	(degree 1262), 1090319.KE386571_gene359 (degree 1092), 1090319.KE386571_gene1761
 	(degree 1084) and 1090319.KE386571_gene2744 (degree 1071).
 	

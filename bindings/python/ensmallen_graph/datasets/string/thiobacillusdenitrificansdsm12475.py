@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:20.084881
 
-The undirected graph Thiobacillus denitrificans DSM12475 has 3197 nodes and 271691
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05318 and has 11 connected components, where the component with most nodes has
-3174 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 136, the mean node degree is 169.97, and the node degree mode is 2. The
-top 5 most central nodes are 1123392.AQWL01000005_gene3200 (degree 1361), 1123392.AQWL01000005_gene3213
+The undirected graph Thiobacillus denitrificans DSM12475 has 3197 nodes
+and 271691 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05318 and has 11 connected components, where the
+component with most nodes has 3174 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 169.97, and the node degree mode is 2. The top 5 most central nodes
+are 1123392.AQWL01000005_gene3200 (degree 1361), 1123392.AQWL01000005_gene3213
 (degree 1200), 1123392.AQWL01000004_gene2636 (degree 1018), 1123392.AQWL01000008_gene1259
 (degree 976) and 1123392.AQWL01000008_gene1260 (degree 971).
 
@@ -107,12 +108,13 @@ def ThiobacillusDenitrificansDsm12475(
 	
 	Datetime: 2021-02-02 22:52:20.084881
 	
-	The undirected graph Thiobacillus denitrificans DSM12475 has 3197 nodes and 271691
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05318 and has 11 connected components, where the component with most nodes has
-	3174 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 136, the mean node degree is 169.97, and the node degree mode is 2. The
-	top 5 most central nodes are 1123392.AQWL01000005_gene3200 (degree 1361), 1123392.AQWL01000005_gene3213
+	The undirected graph Thiobacillus denitrificans DSM12475 has 3197 nodes
+	and 271691 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05318 and has 11 connected components, where the
+	component with most nodes has 3174 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 169.97, and the node degree mode is 2. The top 5 most central nodes
+	are 1123392.AQWL01000005_gene3200 (degree 1361), 1123392.AQWL01000005_gene3213
 	(degree 1200), 1123392.AQWL01000004_gene2636 (degree 1018), 1123392.AQWL01000008_gene1259
 	(degree 976) and 1123392.AQWL01000008_gene1260 (degree 971).
 	

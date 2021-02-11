@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:59:20.915482
 
-The undirected graph adaptive has 6815744 nodes and 13624320 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and is connected, as it has a single component. The graph median node degree is 4,
-the mean node degree is 4.00 and the node degree mode is 4. The top 5 most central
-nodes are 6815737 (degree 4), 6815738 (degree 4), 6815725 (degree 4), 6815716 (degree
-4) and 6815713 (degree 4).
+The undirected graph adaptive has 6815744 nodes and 13624320 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 4.00 and the
+node degree mode is 4. The top 5 most central nodes are 6815737 (degree
+4), 6815738 (degree 4), 6815725 (degree 4), 6815716 (degree 4) and 6815713
+(degree 4).
 
 
 References
@@ -102,12 +103,13 @@ def Adaptive(
 	
 	Datetime: 2021-02-03 22:59:20.915482
 	
-	The undirected graph adaptive has 6815744 nodes and 13624320 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and is connected, as it has a single component. The graph median node degree is 4,
-	the mean node degree is 4.00 and the node degree mode is 4. The top 5 most central
-	nodes are 6815737 (degree 4), 6815738 (degree 4), 6815725 (degree 4), 6815716 (degree
-	4) and 6815713 (degree 4).
+	The undirected graph adaptive has 6815744 nodes and 13624320 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 4.00 and the
+	node degree mode is 4. The top 5 most central nodes are 6815737 (degree
+	4), 6815738 (degree 4), 6815725 (degree 4), 6815716 (degree 4) and 6815713
+	(degree 4).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:24.303256
 
-The undirected graph Idiomarina sp. A28L has 2285 nodes and 172363 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06605 and
-has 6 connected components, where the component with most nodes has 2273 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 150.86, and the node degree mode is 2. The top 5 most central
-nodes are 1036674.A28LD_0510 (degree 935), 1036674.A28LD_0772 (degree 789), 1036674.A28LD_1180
-(degree 783), 1036674.A28LD_1437 (degree 778) and 1036674.A28LD_1724 (degree 778).
+The undirected graph Idiomarina sp. A28L has 2285 nodes and 172363 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06605 and has 6 connected components, where the component with most
+nodes has 2273 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 150.86, and
+the node degree mode is 2. The top 5 most central nodes are 1036674.A28LD_0510
+(degree 935), 1036674.A28LD_0772 (degree 789), 1036674.A28LD_1180 (degree
+783), 1036674.A28LD_1437 (degree 778) and 1036674.A28LD_1724 (degree 778).
 
 
 References
@@ -106,13 +107,14 @@ def IdiomarinaSp.A28l(
 	
 	Datetime: 2021-02-02 22:12:24.303256
 	
-	The undirected graph Idiomarina sp. A28L has 2285 nodes and 172363 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06605 and
-	has 6 connected components, where the component with most nodes has 2273 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 150.86, and the node degree mode is 2. The top 5 most central
-	nodes are 1036674.A28LD_0510 (degree 935), 1036674.A28LD_0772 (degree 789), 1036674.A28LD_1180
-	(degree 783), 1036674.A28LD_1437 (degree 778) and 1036674.A28LD_1724 (degree 778).
+	The undirected graph Idiomarina sp. A28L has 2285 nodes and 172363 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06605 and has 6 connected components, where the component with most
+	nodes has 2273 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 150.86, and
+	the node degree mode is 2. The top 5 most central nodes are 1036674.A28LD_0510
+	(degree 935), 1036674.A28LD_0772 (degree 789), 1036674.A28LD_1180 (degree
+	783), 1036674.A28LD_1437 (degree 778) and 1036674.A28LD_1724 (degree 778).
 	
 
 

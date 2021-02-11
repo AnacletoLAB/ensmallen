@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:28.474031
 
-The undirected graph Brevibacillus massiliensis has 4733 nodes and 562720 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-and has 14 connected components, where the component with most nodes has 4703 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 186, the mean node degree is 237.79, and the node degree mode is 3. The top 5
-most central nodes are 1118054.CAGW01000061_gene2507 (degree 1705), 1118054.CAGW01000082_gene3063
-(degree 1490), 1118054.CAGW01000067_gene1999 (degree 1375), 1118054.CAGW01000031_gene847
-(degree 1292) and 1118054.CAGW01000082_gene3021 (degree 1250).
+The undirected graph Brevibacillus massiliensis has 4733 nodes and 562720
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05025 and has 14 connected components, where the component
+with most nodes has 4703 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 186, the mean node degree is 237.79,
+and the node degree mode is 3. The top 5 most central nodes are 1118054.CAGW01000061_gene2507
+(degree 1705), 1118054.CAGW01000082_gene3063 (degree 1490), 1118054.CAGW01000067_gene1999
+(degree 1375), 1118054.CAGW01000031_gene847 (degree 1292) and 1118054.CAGW01000082_gene3021
+(degree 1250).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacillusMassiliensis(
 	
 	Datetime: 2021-02-02 22:28:28.474031
 	
-	The undirected graph Brevibacillus massiliensis has 4733 nodes and 562720 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-	and has 14 connected components, where the component with most nodes has 4703 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 186, the mean node degree is 237.79, and the node degree mode is 3. The top 5
-	most central nodes are 1118054.CAGW01000061_gene2507 (degree 1705), 1118054.CAGW01000082_gene3063
-	(degree 1490), 1118054.CAGW01000067_gene1999 (degree 1375), 1118054.CAGW01000031_gene847
-	(degree 1292) and 1118054.CAGW01000082_gene3021 (degree 1250).
+	The undirected graph Brevibacillus massiliensis has 4733 nodes and 562720
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05025 and has 14 connected components, where the component
+	with most nodes has 4703 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 186, the mean node degree is 237.79,
+	and the node degree mode is 3. The top 5 most central nodes are 1118054.CAGW01000061_gene2507
+	(degree 1705), 1118054.CAGW01000082_gene3063 (degree 1490), 1118054.CAGW01000067_gene1999
+	(degree 1375), 1118054.CAGW01000031_gene847 (degree 1292) and 1118054.CAGW01000082_gene3021
+	(degree 1250).
 	
 
 

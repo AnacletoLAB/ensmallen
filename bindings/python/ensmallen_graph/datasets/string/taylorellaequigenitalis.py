@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:45.346759
 
-The undirected graph Taylorella equigenitalis has 1544 nodes and 77334 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06492 and
-has 4 connected components, where the component with most nodes has 1537 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 79,
-the mean node degree is 100.17, and the node degree mode is 2. The top 5 most central
-nodes are 937774.TEQUI_0095 (degree 680), 937774.TEQUI_0502 (degree 660), 937774.TEQUI_0929
-(degree 549), 937774.TEQUI_1280 (degree 549) and 937774.TEQUI_1278 (degree 500).
+The undirected graph Taylorella equigenitalis has 1544 nodes and 77334
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06492 and has 4 connected components, where the component
+with most nodes has 1537 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 100.17,
+and the node degree mode is 2. The top 5 most central nodes are 937774.TEQUI_0095
+(degree 680), 937774.TEQUI_0502 (degree 660), 937774.TEQUI_0929 (degree
+549), 937774.TEQUI_1280 (degree 549) and 937774.TEQUI_1278 (degree 500).
 
 
 References
@@ -106,13 +107,14 @@ def TaylorellaEquigenitalis(
 	
 	Datetime: 2021-02-02 22:00:45.346759
 	
-	The undirected graph Taylorella equigenitalis has 1544 nodes and 77334 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06492 and
-	has 4 connected components, where the component with most nodes has 1537 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 79,
-	the mean node degree is 100.17, and the node degree mode is 2. The top 5 most central
-	nodes are 937774.TEQUI_0095 (degree 680), 937774.TEQUI_0502 (degree 660), 937774.TEQUI_0929
-	(degree 549), 937774.TEQUI_1280 (degree 549) and 937774.TEQUI_1278 (degree 500).
+	The undirected graph Taylorella equigenitalis has 1544 nodes and 77334
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06492 and has 4 connected components, where the component
+	with most nodes has 1537 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 100.17,
+	and the node degree mode is 2. The top 5 most central nodes are 937774.TEQUI_0095
+	(degree 680), 937774.TEQUI_0502 (degree 660), 937774.TEQUI_0929 (degree
+	549), 937774.TEQUI_1280 (degree 549) and 937774.TEQUI_1278 (degree 500).
 	
 
 

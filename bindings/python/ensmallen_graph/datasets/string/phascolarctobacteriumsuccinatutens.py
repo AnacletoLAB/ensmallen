@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:57.752187
 
-The undirected graph Phascolarctobacterium succinatutens has 2127 nodes and 106307
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04702 and has 3 connected components, where the component with most nodes has
-2123 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 69, the mean node degree is 99.96, and the node degree mode is 2. The top
-5 most central nodes are 626939.HMPREF9443_01224 (degree 847), 626939.HMPREF9443_01720
-(degree 682), 626939.HMPREF9443_01413 (degree 645), 626939.HMPREF9443_01947 (degree
-584) and 626939.HMPREF9443_00837 (degree 569).
+The undirected graph Phascolarctobacterium succinatutens has 2127 nodes
+and 106307 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04702 and has 3 connected components, where the
+component with most nodes has 2123 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+is 99.96, and the node degree mode is 2. The top 5 most central nodes are
+626939.HMPREF9443_01224 (degree 847), 626939.HMPREF9443_01720 (degree 682),
+626939.HMPREF9443_01413 (degree 645), 626939.HMPREF9443_01947 (degree 584)
+and 626939.HMPREF9443_00837 (degree 569).
 
 
 References
@@ -107,14 +108,15 @@ def PhascolarctobacteriumSuccinatutens(
 	
 	Datetime: 2021-02-02 21:20:57.752187
 	
-	The undirected graph Phascolarctobacterium succinatutens has 2127 nodes and 106307
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04702 and has 3 connected components, where the component with most nodes has
-	2123 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 69, the mean node degree is 99.96, and the node degree mode is 2. The top
-	5 most central nodes are 626939.HMPREF9443_01224 (degree 847), 626939.HMPREF9443_01720
-	(degree 682), 626939.HMPREF9443_01413 (degree 645), 626939.HMPREF9443_01947 (degree
-	584) and 626939.HMPREF9443_00837 (degree 569).
+	The undirected graph Phascolarctobacterium succinatutens has 2127 nodes
+	and 106307 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04702 and has 3 connected components, where the
+	component with most nodes has 2123 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 69, the mean node degree
+	is 99.96, and the node degree mode is 2. The top 5 most central nodes are
+	626939.HMPREF9443_01224 (degree 847), 626939.HMPREF9443_01720 (degree 682),
+	626939.HMPREF9443_01413 (degree 645), 626939.HMPREF9443_01947 (degree 584)
+	and 626939.HMPREF9443_00837 (degree 569).
 	
 
 

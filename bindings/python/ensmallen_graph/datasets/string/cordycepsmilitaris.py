@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:29.711980
 
-The undirected graph Cordyceps militaris has 6743 nodes and 514313 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02263 and
-has 12 connected components, where the component with most nodes has 6713 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 152.55, and the node degree mode is 1. The top 5 most central
-nodes are 73501.XP_006672441.1 (degree 1689), 73501.XP_006669760.1 (degree 1306),
-73501.XP_006669287.1 (degree 1268), 73501.XP_006668469.1 (degree 1187) and 73501.XP_006672690.1
+The undirected graph Cordyceps militaris has 6743 nodes and 514313 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02263 and has 12 connected components, where the component with most
+nodes has 6713 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 152.55, and
+the node degree mode is 1. The top 5 most central nodes are 73501.XP_006672441.1
+(degree 1689), 73501.XP_006669760.1 (degree 1306), 73501.XP_006669287.1
+(degree 1268), 73501.XP_006668469.1 (degree 1187) and 73501.XP_006672690.1
 (degree 1150).
 
 
@@ -107,13 +108,14 @@ def CordycepsMilitaris(
 	
 	Datetime: 2021-02-02 18:32:29.711980
 	
-	The undirected graph Cordyceps militaris has 6743 nodes and 514313 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02263 and
-	has 12 connected components, where the component with most nodes has 6713 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 152.55, and the node degree mode is 1. The top 5 most central
-	nodes are 73501.XP_006672441.1 (degree 1689), 73501.XP_006669760.1 (degree 1306),
-	73501.XP_006669287.1 (degree 1268), 73501.XP_006668469.1 (degree 1187) and 73501.XP_006672690.1
+	The undirected graph Cordyceps militaris has 6743 nodes and 514313 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02263 and has 12 connected components, where the component with most
+	nodes has 6713 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 152.55, and
+	the node degree mode is 1. The top 5 most central nodes are 73501.XP_006672441.1
+	(degree 1689), 73501.XP_006669760.1 (degree 1306), 73501.XP_006669287.1
+	(degree 1268), 73501.XP_006668469.1 (degree 1187) and 73501.XP_006672690.1
 	(degree 1150).
 	
 

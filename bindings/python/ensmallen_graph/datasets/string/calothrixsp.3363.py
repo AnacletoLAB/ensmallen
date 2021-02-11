@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:58:38.302234
 
-The undirected graph Calothrix sp. 3363 has 4732 nodes and 416703 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03723 and
-has 30 connected components, where the component with most nodes has 4655 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 176.12, and the node degree mode is 2. The top 5 most central
-nodes are 1337936.IJ00_22425 (degree 1626), 1337936.IJ00_12900 (degree 1585), 1337936.IJ00_01120
-(degree 1542), 1337936.IJ00_27580 (degree 1351) and 1337936.IJ00_07565 (degree 1328).
+The undirected graph Calothrix sp. 3363 has 4732 nodes and 416703 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03723 and has 30 connected components, where the component with most
+nodes has 4655 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 176.12, and
+the node degree mode is 2. The top 5 most central nodes are 1337936.IJ00_22425
+(degree 1626), 1337936.IJ00_12900 (degree 1585), 1337936.IJ00_01120 (degree
+1542), 1337936.IJ00_27580 (degree 1351) and 1337936.IJ00_07565 (degree
+1328).
 
 
 References
@@ -106,13 +108,15 @@ def CalothrixSp.3363(
 	
 	Datetime: 2021-02-03 21:58:38.302234
 	
-	The undirected graph Calothrix sp. 3363 has 4732 nodes and 416703 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03723 and
-	has 30 connected components, where the component with most nodes has 4655 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 176.12, and the node degree mode is 2. The top 5 most central
-	nodes are 1337936.IJ00_22425 (degree 1626), 1337936.IJ00_12900 (degree 1585), 1337936.IJ00_01120
-	(degree 1542), 1337936.IJ00_27580 (degree 1351) and 1337936.IJ00_07565 (degree 1328).
+	The undirected graph Calothrix sp. 3363 has 4732 nodes and 416703 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03723 and has 30 connected components, where the component with most
+	nodes has 4655 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 176.12, and
+	the node degree mode is 2. The top 5 most central nodes are 1337936.IJ00_22425
+	(degree 1626), 1337936.IJ00_12900 (degree 1585), 1337936.IJ00_01120 (degree
+	1542), 1337936.IJ00_27580 (degree 1351) and 1337936.IJ00_07565 (degree
+	1328).
 	
 
 

@@ -10,15 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:37.445003
 
-The undirected graph Methanothermococcus thermolithotrophicus has 1700 nodes and
-217403 weighted edges, of which none are self-loops. The graph is quite dense as
-it has a density of 0.15054 and has 6 connected components, where the component with
-most nodes has 1690 nodes and the component with the least nodes has 2 nodes. The
-graph median node degree is 242, the mean node degree is 255.77, and the node degree
-mode is 8. The top 5 most central nodes are 523845.AQXV01000053_gene742 (degree 823),
-523845.AQXV01000051_gene1262 (degree 820), 523845.AQXV01000033_gene446 (degree 801),
-523845.AQXV01000045_gene1393 (degree 791) and 523845.AQXV01000055_gene50 (degree
-787).
+The undirected graph Methanothermococcus thermolithotrophicus has 1700
+nodes and 217403 weighted edges, of which none are self-loops. The graph
+is quite dense as it has a density of 0.15054 and has 6 connected components,
+where the component with most nodes has 1690 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 242, the mean
+node degree is 255.77, and the node degree mode is 8. The top 5 most central
+nodes are 523845.AQXV01000053_gene742 (degree 823), 523845.AQXV01000051_gene1262
+(degree 820), 523845.AQXV01000033_gene446 (degree 801), 523845.AQXV01000045_gene1393
+(degree 791) and 523845.AQXV01000055_gene50 (degree 787).
 
 
 References
@@ -108,15 +108,15 @@ def MethanothermococcusThermolithotrophicus(
 	
 	Datetime: 2021-02-02 21:04:37.445003
 	
-	The undirected graph Methanothermococcus thermolithotrophicus has 1700 nodes and
-	217403 weighted edges, of which none are self-loops. The graph is quite dense as
-	it has a density of 0.15054 and has 6 connected components, where the component with
-	most nodes has 1690 nodes and the component with the least nodes has 2 nodes. The
-	graph median node degree is 242, the mean node degree is 255.77, and the node degree
-	mode is 8. The top 5 most central nodes are 523845.AQXV01000053_gene742 (degree 823),
-	523845.AQXV01000051_gene1262 (degree 820), 523845.AQXV01000033_gene446 (degree 801),
-	523845.AQXV01000045_gene1393 (degree 791) and 523845.AQXV01000055_gene50 (degree
-	787).
+	The undirected graph Methanothermococcus thermolithotrophicus has 1700
+	nodes and 217403 weighted edges, of which none are self-loops. The graph
+	is quite dense as it has a density of 0.15054 and has 6 connected components,
+	where the component with most nodes has 1690 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 242, the mean
+	node degree is 255.77, and the node degree mode is 8. The top 5 most central
+	nodes are 523845.AQXV01000053_gene742 (degree 823), 523845.AQXV01000051_gene1262
+	(degree 820), 523845.AQXV01000033_gene446 (degree 801), 523845.AQXV01000045_gene1393
+	(degree 791) and 523845.AQXV01000055_gene50 (degree 787).
 	
 
 

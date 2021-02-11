@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:31:47.562833
 
-The undirected graph Ornithorhynchus anatinus has 20035 nodes and 4985126 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02484
-and has 5 connected components, where the component with most nodes has 20026 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 344, the mean node degree is 497.64, and the node degree mode is 7. The top 5
-most central nodes are 9258.ENSOANP00000001554 (degree 5051), 9258.ENSOANP00000010283
-(degree 4851), 9258.ENSOANP00000009864 (degree 4239), 9258.ENSOANP00000013423 (degree
+The undirected graph Ornithorhynchus anatinus has 20035 nodes and 4985126
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02484 and has 5 connected components, where the component
+with most nodes has 20026 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 344, the mean node degree
+is 497.64, and the node degree mode is 7. The top 5 most central nodes
+are 9258.ENSOANP00000001554 (degree 5051), 9258.ENSOANP00000010283 (degree
+4851), 9258.ENSOANP00000009864 (degree 4239), 9258.ENSOANP00000013423 (degree
 4237) and 9258.ENSOANP00000026775 (degree 4029).
 
 
@@ -107,13 +108,14 @@ def OrnithorhynchusAnatinus(
 	
 	Datetime: 2021-02-02 17:31:47.562833
 	
-	The undirected graph Ornithorhynchus anatinus has 20035 nodes and 4985126 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02484
-	and has 5 connected components, where the component with most nodes has 20026 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 344, the mean node degree is 497.64, and the node degree mode is 7. The top 5
-	most central nodes are 9258.ENSOANP00000001554 (degree 5051), 9258.ENSOANP00000010283
-	(degree 4851), 9258.ENSOANP00000009864 (degree 4239), 9258.ENSOANP00000013423 (degree
+	The undirected graph Ornithorhynchus anatinus has 20035 nodes and 4985126
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02484 and has 5 connected components, where the component
+	with most nodes has 20026 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 344, the mean node degree
+	is 497.64, and the node degree mode is 7. The top 5 most central nodes
+	are 9258.ENSOANP00000001554 (degree 5051), 9258.ENSOANP00000010283 (degree
+	4851), 9258.ENSOANP00000009864 (degree 4239), 9258.ENSOANP00000013423 (degree
 	4237) and 9258.ENSOANP00000026775 (degree 4029).
 	
 

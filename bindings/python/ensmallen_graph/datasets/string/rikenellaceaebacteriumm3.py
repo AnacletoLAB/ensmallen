@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:49.633731
 
-The undirected graph Rikenellaceae bacterium M3 has 2984 nodes and 180141 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04048
-and has 15 connected components, where the component with most nodes has 2939 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 120.74, and the node degree mode is 3. The top 5
-most central nodes are 1433126.BN938_0829 (degree 904), 1433126.BN938_0263 (degree
-734), 1433126.BN938_1607 (degree 714), 1433126.BN938_1421 (degree 634) and 1433126.BN938_1637
-(degree 598).
+The undirected graph Rikenellaceae bacterium M3 has 2984 nodes and 180141
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04048 and has 15 connected components, where the component
+with most nodes has 2939 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 120.74,
+and the node degree mode is 3. The top 5 most central nodes are 1433126.BN938_0829
+(degree 904), 1433126.BN938_0263 (degree 734), 1433126.BN938_1607 (degree
+714), 1433126.BN938_1421 (degree 634) and 1433126.BN938_1637 (degree 598).
 
 
 References
@@ -107,14 +107,14 @@ def RikenellaceaeBacteriumM3(
 	
 	Datetime: 2021-02-03 22:53:49.633731
 	
-	The undirected graph Rikenellaceae bacterium M3 has 2984 nodes and 180141 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04048
-	and has 15 connected components, where the component with most nodes has 2939 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 120.74, and the node degree mode is 3. The top 5
-	most central nodes are 1433126.BN938_0829 (degree 904), 1433126.BN938_0263 (degree
-	734), 1433126.BN938_1607 (degree 714), 1433126.BN938_1421 (degree 634) and 1433126.BN938_1637
-	(degree 598).
+	The undirected graph Rikenellaceae bacterium M3 has 2984 nodes and 180141
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04048 and has 15 connected components, where the component
+	with most nodes has 2939 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 120.74,
+	and the node degree mode is 3. The top 5 most central nodes are 1433126.BN938_0829
+	(degree 904), 1433126.BN938_0263 (degree 734), 1433126.BN938_1607 (degree
+	714), 1433126.BN938_1421 (degree 634) and 1433126.BN938_1637 (degree 598).
 	
 
 

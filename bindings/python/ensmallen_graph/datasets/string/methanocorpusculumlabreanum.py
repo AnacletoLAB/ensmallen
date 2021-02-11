@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:55.299780
 
-The undirected graph Methanocorpusculum labreanum has 1722 nodes and 137547 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09283
-and has 12 connected components, where the component with most nodes has 1690 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 159.75, and the node degree mode is 2. The top 5
-most central nodes are 410358.Mlab_1501 (degree 703), 410358.Mlab_0943 (degree 700),
-410358.Mlab_1133 (degree 694), 410358.Mlab_1723 (degree 631) and 410358.Mlab_0139
-(degree 617).
+The undirected graph Methanocorpusculum labreanum has 1722 nodes and 137547
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09283 and has 12 connected components, where the component
+with most nodes has 1690 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 159.75,
+and the node degree mode is 2. The top 5 most central nodes are 410358.Mlab_1501
+(degree 703), 410358.Mlab_0943 (degree 700), 410358.Mlab_1133 (degree 694),
+410358.Mlab_1723 (degree 631) and 410358.Mlab_0139 (degree 617).
 
 
 References
@@ -107,14 +107,14 @@ def MethanocorpusculumLabreanum(
 	
 	Datetime: 2021-02-02 20:44:55.299780
 	
-	The undirected graph Methanocorpusculum labreanum has 1722 nodes and 137547 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09283
-	and has 12 connected components, where the component with most nodes has 1690 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 159.75, and the node degree mode is 2. The top 5
-	most central nodes are 410358.Mlab_1501 (degree 703), 410358.Mlab_0943 (degree 700),
-	410358.Mlab_1133 (degree 694), 410358.Mlab_1723 (degree 631) and 410358.Mlab_0139
-	(degree 617).
+	The undirected graph Methanocorpusculum labreanum has 1722 nodes and 137547
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09283 and has 12 connected components, where the component
+	with most nodes has 1690 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 159.75,
+	and the node degree mode is 2. The top 5 most central nodes are 410358.Mlab_1501
+	(degree 703), 410358.Mlab_0943 (degree 700), 410358.Mlab_1133 (degree 694),
+	410358.Mlab_1723 (degree 631) and 410358.Mlab_0139 (degree 617).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:48.837965
 
-The undirected graph Clostridium sp. HMP27 has 3420 nodes and 319669 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05468 and
-has 17 connected components, where the component with most nodes has 3379 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 186.94, and the node degree mode is 1. The top 5 most central
-nodes are 1487921.DP68_08230 (degree 1370), 1487921.DP68_11675 (degree 1365), 1487921.DP68_07700
-(degree 1265), 1487921.DP68_18365 (degree 1119) and 1487921.DP68_00695 (degree 948).
+The undirected graph Clostridium sp. HMP27 has 3420 nodes and 319669 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05468 and has 17 connected components, where the component with most
+nodes has 3379 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 186.94, and
+the node degree mode is 1. The top 5 most central nodes are 1487921.DP68_08230
+(degree 1370), 1487921.DP68_11675 (degree 1365), 1487921.DP68_07700 (degree
+1265), 1487921.DP68_18365 (degree 1119) and 1487921.DP68_00695 (degree
+948).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumSp.Hmp27(
 	
 	Datetime: 2021-02-03 23:13:48.837965
 	
-	The undirected graph Clostridium sp. HMP27 has 3420 nodes and 319669 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05468 and
-	has 17 connected components, where the component with most nodes has 3379 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 186.94, and the node degree mode is 1. The top 5 most central
-	nodes are 1487921.DP68_08230 (degree 1370), 1487921.DP68_11675 (degree 1365), 1487921.DP68_07700
-	(degree 1265), 1487921.DP68_18365 (degree 1119) and 1487921.DP68_00695 (degree 948).
+	The undirected graph Clostridium sp. HMP27 has 3420 nodes and 319669 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05468 and has 17 connected components, where the component with most
+	nodes has 3379 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 186.94, and
+	the node degree mode is 1. The top 5 most central nodes are 1487921.DP68_08230
+	(degree 1370), 1487921.DP68_11675 (degree 1365), 1487921.DP68_07700 (degree
+	1265), 1487921.DP68_18365 (degree 1119) and 1487921.DP68_00695 (degree
+	948).
 	
 
 

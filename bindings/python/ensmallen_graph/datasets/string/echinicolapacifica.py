@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:31.518435
 
-The undirected graph Echinicola pacifica has 3818 nodes and 393535 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05401 and
-has 15 connected components, where the component with most nodes has 3788 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 206.15, and the node degree mode is 1. The top 5 most central
-nodes are 1121859.KB890738_gene3334 (degree 1237), 1121859.KB890738_gene3604 (degree
-1190), 1121859.KB890755_gene1111 (degree 1164), 1121859.KB890741_gene3723 (degree
-1049) and 1121859.KB890740_gene3892 (degree 1045).
+The undirected graph Echinicola pacifica has 3818 nodes and 393535 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05401 and has 15 connected components, where the component with most
+nodes has 3788 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 206.15, and
+the node degree mode is 1. The top 5 most central nodes are 1121859.KB890738_gene3334
+(degree 1237), 1121859.KB890738_gene3604 (degree 1190), 1121859.KB890755_gene1111
+(degree 1164), 1121859.KB890741_gene3723 (degree 1049) and 1121859.KB890740_gene3892
+(degree 1045).
 
 
 References
@@ -107,14 +108,15 @@ def EchinicolaPacifica(
 	
 	Datetime: 2021-02-02 22:37:31.518435
 	
-	The undirected graph Echinicola pacifica has 3818 nodes and 393535 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05401 and
-	has 15 connected components, where the component with most nodes has 3788 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 206.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1121859.KB890738_gene3334 (degree 1237), 1121859.KB890738_gene3604 (degree
-	1190), 1121859.KB890755_gene1111 (degree 1164), 1121859.KB890741_gene3723 (degree
-	1049) and 1121859.KB890740_gene3892 (degree 1045).
+	The undirected graph Echinicola pacifica has 3818 nodes and 393535 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05401 and has 15 connected components, where the component with most
+	nodes has 3788 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 206.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1121859.KB890738_gene3334
+	(degree 1237), 1121859.KB890738_gene3604 (degree 1190), 1121859.KB890755_gene1111
+	(degree 1164), 1121859.KB890741_gene3723 (degree 1049) and 1121859.KB890740_gene3892
+	(degree 1045).
 	
 
 

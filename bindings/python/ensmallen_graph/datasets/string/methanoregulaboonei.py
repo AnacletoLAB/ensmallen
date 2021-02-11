@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:57.320236
 
-The undirected graph Methanoregula boonei has 2416 nodes and 225735 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07738 and
-has 21 connected components, where the component with most nodes has 2370 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 186.87, and the node degree mode is 3. The top 5 most central
-nodes are 456442.Mboo_1040 (degree 999), 456442.Mboo_1606 (degree 843), 456442.Mboo_1207
-(degree 839), 456442.Mboo_0085 (degree 828) and 456442.Mboo_2454 (degree 824).
+The undirected graph Methanoregula boonei has 2416 nodes and 225735 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07738 and has 21 connected components, where the component with most
+nodes has 2370 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 186.87, and
+the node degree mode is 3. The top 5 most central nodes are 456442.Mboo_1040
+(degree 999), 456442.Mboo_1606 (degree 843), 456442.Mboo_1207 (degree 839),
+456442.Mboo_0085 (degree 828) and 456442.Mboo_2454 (degree 824).
 
 
 References
@@ -106,13 +107,14 @@ def MethanoregulaBoonei(
 	
 	Datetime: 2021-02-02 20:52:57.320236
 	
-	The undirected graph Methanoregula boonei has 2416 nodes and 225735 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07738 and
-	has 21 connected components, where the component with most nodes has 2370 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 186.87, and the node degree mode is 3. The top 5 most central
-	nodes are 456442.Mboo_1040 (degree 999), 456442.Mboo_1606 (degree 843), 456442.Mboo_1207
-	(degree 839), 456442.Mboo_0085 (degree 828) and 456442.Mboo_2454 (degree 824).
+	The undirected graph Methanoregula boonei has 2416 nodes and 225735 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07738 and has 21 connected components, where the component with most
+	nodes has 2370 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 186.87, and
+	the node degree mode is 3. The top 5 most central nodes are 456442.Mboo_1040
+	(degree 999), 456442.Mboo_1606 (degree 843), 456442.Mboo_1207 (degree 839),
+	456442.Mboo_0085 (degree 828) and 456442.Mboo_2454 (degree 824).
 	
 
 

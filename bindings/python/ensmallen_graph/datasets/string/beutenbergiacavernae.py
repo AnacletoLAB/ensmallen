@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:48.586686
 
-The undirected graph Beutenbergia cavernae has 4183 nodes and 442580 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05060 and
-has 5 connected components, where the component with most nodes has 4171 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 211.61, and the node degree mode is 3. The top 5 most central
-nodes are 471853.Bcav_4210 (degree 1324), 471853.Bcav_2200 (degree 1232), 471853.Bcav_2217
-(degree 1067), 471853.Bcav_1570 (degree 1064) and 471853.Bcav_3709 (degree 1064).
+The undirected graph Beutenbergia cavernae has 4183 nodes and 442580 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05060 and has 5 connected components, where the component with most
+nodes has 4171 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 211.61, and
+the node degree mode is 3. The top 5 most central nodes are 471853.Bcav_4210
+(degree 1324), 471853.Bcav_2200 (degree 1232), 471853.Bcav_2217 (degree
+1067), 471853.Bcav_1570 (degree 1064) and 471853.Bcav_3709 (degree 1064).
 
 
 References
@@ -106,13 +107,14 @@ def BeutenbergiaCavernae(
 	
 	Datetime: 2021-02-02 20:55:48.586686
 	
-	The undirected graph Beutenbergia cavernae has 4183 nodes and 442580 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05060 and
-	has 5 connected components, where the component with most nodes has 4171 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 211.61, and the node degree mode is 3. The top 5 most central
-	nodes are 471853.Bcav_4210 (degree 1324), 471853.Bcav_2200 (degree 1232), 471853.Bcav_2217
-	(degree 1067), 471853.Bcav_1570 (degree 1064) and 471853.Bcav_3709 (degree 1064).
+	The undirected graph Beutenbergia cavernae has 4183 nodes and 442580 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05060 and has 5 connected components, where the component with most
+	nodes has 4171 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 211.61, and
+	the node degree mode is 3. The top 5 most central nodes are 471853.Bcav_4210
+	(degree 1324), 471853.Bcav_2200 (degree 1232), 471853.Bcav_2217 (degree
+	1067), 471853.Bcav_1570 (degree 1064) and 471853.Bcav_3709 (degree 1064).
 	
 
 

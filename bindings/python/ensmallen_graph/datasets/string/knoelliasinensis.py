@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:31.684134
 
-The undirected graph Knoellia sinensis has 3770 nodes and 340613 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-has 18 connected components, where the component with most nodes has 3727 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 180.70, and the node degree mode is 2. The top 5 most central
-nodes are 1385520.N802_17130 (degree 1131), 1385520.N802_04255 (degree 1089), 1385520.N802_03735
-(degree 1060), 1385520.N802_14235 (degree 996) and 1385520.N802_13190 (degree 976).
+The undirected graph Knoellia sinensis has 3770 nodes and 340613 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04794 and has 18 connected components, where the component with most
+nodes has 3727 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 180.70, and
+the node degree mode is 2. The top 5 most central nodes are 1385520.N802_17130
+(degree 1131), 1385520.N802_04255 (degree 1089), 1385520.N802_03735 (degree
+1060), 1385520.N802_14235 (degree 996) and 1385520.N802_13190 (degree 976).
 
 
 References
@@ -106,13 +107,14 @@ def KnoelliaSinensis(
 	
 	Datetime: 2021-02-03 22:20:31.684134
 	
-	The undirected graph Knoellia sinensis has 3770 nodes and 340613 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04794 and
-	has 18 connected components, where the component with most nodes has 3727 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 180.70, and the node degree mode is 2. The top 5 most central
-	nodes are 1385520.N802_17130 (degree 1131), 1385520.N802_04255 (degree 1089), 1385520.N802_03735
-	(degree 1060), 1385520.N802_14235 (degree 996) and 1385520.N802_13190 (degree 976).
+	The undirected graph Knoellia sinensis has 3770 nodes and 340613 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04794 and has 18 connected components, where the component with most
+	nodes has 3727 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 180.70, and
+	the node degree mode is 2. The top 5 most central nodes are 1385520.N802_17130
+	(degree 1131), 1385520.N802_04255 (degree 1089), 1385520.N802_03735 (degree
+	1060), 1385520.N802_14235 (degree 996) and 1385520.N802_13190 (degree 976).
 	
 
 

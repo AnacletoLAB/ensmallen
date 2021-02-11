@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:52.873673
 
-The undirected graph Aeromonas hydrophila ATCC7966 has 4098 nodes and 387276 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04613
-and has 7 connected components, where the component with most nodes has 4084 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 189.01, and the node degree mode is 2. The top 5
-most central nodes are 380703.AHA_2188 (degree 1850), 380703.AHA_0196 (degree 1535),
-380703.AHA_1359 (degree 1360), 380703.AHA_1497 (degree 1331) and 380703.AHA_2703
-(degree 1305).
+The undirected graph Aeromonas hydrophila ATCC7966 has 4098 nodes and 387276
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04613 and has 7 connected components, where the component
+with most nodes has 4084 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 189.01,
+and the node degree mode is 2. The top 5 most central nodes are 380703.AHA_2188
+(degree 1850), 380703.AHA_0196 (degree 1535), 380703.AHA_1359 (degree 1360),
+380703.AHA_1497 (degree 1331) and 380703.AHA_2703 (degree 1305).
 
 
 References
@@ -107,14 +107,14 @@ def AeromonasHydrophilaAtcc7966(
 	
 	Datetime: 2021-02-02 20:36:52.873673
 	
-	The undirected graph Aeromonas hydrophila ATCC7966 has 4098 nodes and 387276 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04613
-	and has 7 connected components, where the component with most nodes has 4084 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 189.01, and the node degree mode is 2. The top 5
-	most central nodes are 380703.AHA_2188 (degree 1850), 380703.AHA_0196 (degree 1535),
-	380703.AHA_1359 (degree 1360), 380703.AHA_1497 (degree 1331) and 380703.AHA_2703
-	(degree 1305).
+	The undirected graph Aeromonas hydrophila ATCC7966 has 4098 nodes and 387276
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04613 and has 7 connected components, where the component
+	with most nodes has 4084 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 189.01,
+	and the node degree mode is 2. The top 5 most central nodes are 380703.AHA_2188
+	(degree 1850), 380703.AHA_0196 (degree 1535), 380703.AHA_1359 (degree 1360),
+	380703.AHA_1497 (degree 1331) and 380703.AHA_2703 (degree 1305).
 	
 
 

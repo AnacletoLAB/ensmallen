@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:57:04.427236
 
-The undirected graph 144 has 144649 nodes and 1074393 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00010 and
-is connected, as it has a single component. The graph median node degree is 15, the
-mean node degree is 14.86 and the node degree mode is 15. The top 5 most central
-nodes are 50965 (degree 26), 40709 (degree 26), 48521 (degree 26), 51145 (degree
-26) and 45423 (degree 26).
+The undirected graph 144 has 144649 nodes and 1074393 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00010 and is connected, as it has a single component. The graph median
+node degree is 15, the mean node degree is 14.86 and the node degree mode
+is 15. The top 5 most central nodes are 50965 (degree 26), 40709 (degree
+26), 48521 (degree 26), 51145 (degree 26) and 45423 (degree 26).
 
 
 References
@@ -102,12 +102,12 @@ def Graph144(
 	
 	Datetime: 2021-02-03 22:57:04.427236
 	
-	The undirected graph 144 has 144649 nodes and 1074393 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00010 and
-	is connected, as it has a single component. The graph median node degree is 15, the
-	mean node degree is 14.86 and the node degree mode is 15. The top 5 most central
-	nodes are 50965 (degree 26), 40709 (degree 26), 48521 (degree 26), 51145 (degree
-	26) and 45423 (degree 26).
+	The undirected graph 144 has 144649 nodes and 1074393 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00010 and is connected, as it has a single component. The graph median
+	node degree is 15, the mean node degree is 14.86 and the node degree mode
+	is 15. The top 5 most central nodes are 50965 (degree 26), 40709 (degree
+	26), 48521 (degree 26), 51145 (degree 26) and 45423 (degree 26).
 	
 
 

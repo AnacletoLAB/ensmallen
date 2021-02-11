@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:06.900812
 
-The undirected graph Actinoplanes globisporus has 9717 nodes and 1366383 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02895
-and has 24 connected components, where the component with most nodes has 9669 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 281.24, and the node degree mode is 2. The top 5
-most central nodes are 1120949.KB903294_gene4728 (degree 2687), 1120949.KB903308_gene1231
-(degree 2605), 1120949.KB903294_gene4161 (degree 2591), 1120949.KB903311_gene705
-(degree 2579) and 1120949.KB903294_gene3953 (degree 2435).
+The undirected graph Actinoplanes globisporus has 9717 nodes and 1366383
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02895 and has 24 connected components, where the component
+with most nodes has 9669 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 281.24,
+and the node degree mode is 2. The top 5 most central nodes are 1120949.KB903294_gene4728
+(degree 2687), 1120949.KB903308_gene1231 (degree 2605), 1120949.KB903294_gene4161
+(degree 2591), 1120949.KB903311_gene705 (degree 2579) and 1120949.KB903294_gene3953
+(degree 2435).
 
 
 References
@@ -107,14 +108,15 @@ def ActinoplanesGlobisporus(
 	
 	Datetime: 2021-02-02 22:30:06.900812
 	
-	The undirected graph Actinoplanes globisporus has 9717 nodes and 1366383 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02895
-	and has 24 connected components, where the component with most nodes has 9669 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 281.24, and the node degree mode is 2. The top 5
-	most central nodes are 1120949.KB903294_gene4728 (degree 2687), 1120949.KB903308_gene1231
-	(degree 2605), 1120949.KB903294_gene4161 (degree 2591), 1120949.KB903311_gene705
-	(degree 2579) and 1120949.KB903294_gene3953 (degree 2435).
+	The undirected graph Actinoplanes globisporus has 9717 nodes and 1366383
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02895 and has 24 connected components, where the component
+	with most nodes has 9669 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 281.24,
+	and the node degree mode is 2. The top 5 most central nodes are 1120949.KB903294_gene4728
+	(degree 2687), 1120949.KB903308_gene1231 (degree 2605), 1120949.KB903294_gene4161
+	(degree 2591), 1120949.KB903311_gene705 (degree 2579) and 1120949.KB903294_gene3953
+	(degree 2435).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:33.780084
 
-The undirected graph Coriobacteriaceae bacterium BV3Ac1 has 1589 nodes and 105756
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08382 and has 11 connected components, where the component with most nodes has
-1566 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 103, the mean node degree is 133.11, and the node degree mode is 1. The
-top 5 most central nodes are 1111135.HMPREF1248_0542 (degree 858), 1111135.HMPREF1248_1351
-(degree 778), 1111135.HMPREF1248_1504 (degree 772), 1111135.HMPREF1248_0042 (degree
+The undirected graph Coriobacteriaceae bacterium BV3Ac1 has 1589 nodes
+and 105756 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08382 and has 11 connected components, where the
+component with most nodes has 1566 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+is 133.11, and the node degree mode is 1. The top 5 most central nodes
+are 1111135.HMPREF1248_0542 (degree 858), 1111135.HMPREF1248_1351 (degree
+778), 1111135.HMPREF1248_1504 (degree 772), 1111135.HMPREF1248_0042 (degree
 700) and 1111135.HMPREF1248_1042 (degree 619).
 
 
@@ -107,13 +108,14 @@ def CoriobacteriaceaeBacteriumBv3ac1(
 	
 	Datetime: 2021-02-02 22:25:33.780084
 	
-	The undirected graph Coriobacteriaceae bacterium BV3Ac1 has 1589 nodes and 105756
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08382 and has 11 connected components, where the component with most nodes has
-	1566 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 103, the mean node degree is 133.11, and the node degree mode is 1. The
-	top 5 most central nodes are 1111135.HMPREF1248_0542 (degree 858), 1111135.HMPREF1248_1351
-	(degree 778), 1111135.HMPREF1248_1504 (degree 772), 1111135.HMPREF1248_0042 (degree
+	The undirected graph Coriobacteriaceae bacterium BV3Ac1 has 1589 nodes
+	and 105756 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08382 and has 11 connected components, where the
+	component with most nodes has 1566 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+	is 133.11, and the node degree mode is 1. The top 5 most central nodes
+	are 1111135.HMPREF1248_0542 (degree 858), 1111135.HMPREF1248_1351 (degree
+	778), 1111135.HMPREF1248_1504 (degree 772), 1111135.HMPREF1248_0042 (degree
 	700) and 1111135.HMPREF1248_1042 (degree 619).
 	
 

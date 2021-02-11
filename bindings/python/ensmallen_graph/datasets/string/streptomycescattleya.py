@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:22.532625
 
-The undirected graph Streptomyces cattleya has 5694 nodes and 666624 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04113 and
-has 26 connected components, where the component with most nodes has 5596 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 234.15, and the node degree mode is 3. The top 5 most central
-nodes are 1003195.SCAT_4527 (degree 2759), 1003195.SCAT_3580 (degree 1948), 1003195.SCAT_5579
-(degree 1749), 1003195.SCAT_1135 (degree 1716) and 1003195.SCAT_3679 (degree 1683).
+The undirected graph Streptomyces cattleya has 5694 nodes and 666624 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04113 and has 26 connected components, where the component with most
+nodes has 5596 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 234.15, and
+the node degree mode is 3. The top 5 most central nodes are 1003195.SCAT_4527
+(degree 2759), 1003195.SCAT_3580 (degree 1948), 1003195.SCAT_5579 (degree
+1749), 1003195.SCAT_1135 (degree 1716) and 1003195.SCAT_3679 (degree 1683).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesCattleya(
 	
 	Datetime: 2021-02-02 22:07:22.532625
 	
-	The undirected graph Streptomyces cattleya has 5694 nodes and 666624 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04113 and
-	has 26 connected components, where the component with most nodes has 5596 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 234.15, and the node degree mode is 3. The top 5 most central
-	nodes are 1003195.SCAT_4527 (degree 2759), 1003195.SCAT_3580 (degree 1948), 1003195.SCAT_5579
-	(degree 1749), 1003195.SCAT_1135 (degree 1716) and 1003195.SCAT_3679 (degree 1683).
+	The undirected graph Streptomyces cattleya has 5694 nodes and 666624 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04113 and has 26 connected components, where the component with most
+	nodes has 5596 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 234.15, and
+	the node degree mode is 3. The top 5 most central nodes are 1003195.SCAT_4527
+	(degree 2759), 1003195.SCAT_3580 (degree 1948), 1003195.SCAT_5579 (degree
+	1749), 1003195.SCAT_1135 (degree 1716) and 1003195.SCAT_3679 (degree 1683).
 	
 
 

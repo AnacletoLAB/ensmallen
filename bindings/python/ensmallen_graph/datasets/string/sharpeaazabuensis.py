@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:26.202083
 
-The undirected graph Sharpea azabuensis has 2351 nodes and 230199 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08333 and
-has 8 connected components, where the component with most nodes has 2335 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 195.83, and the node degree mode is 6. The top 5 most central
-nodes are 1410674.JNKU01000044_gene96 (degree 1112), 1410674.JNKU01000014_gene491
-(degree 915), 1410674.JNKU01000008_gene1271 (degree 895), 1410674.JNKU01000052_gene1212
-(degree 894) and 1410674.JNKU01000005_gene1583 (degree 814).
+The undirected graph Sharpea azabuensis has 2351 nodes and 230199 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08333 and has 8 connected components, where the component with most
+nodes has 2335 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 195.83, and
+the node degree mode is 6. The top 5 most central nodes are 1410674.JNKU01000044_gene96
+(degree 1112), 1410674.JNKU01000014_gene491 (degree 915), 1410674.JNKU01000008_gene1271
+(degree 895), 1410674.JNKU01000052_gene1212 (degree 894) and 1410674.JNKU01000005_gene1583
+(degree 814).
 
 
 References
@@ -107,14 +108,15 @@ def SharpeaAzabuensis(
 	
 	Datetime: 2021-02-03 22:44:26.202083
 	
-	The undirected graph Sharpea azabuensis has 2351 nodes and 230199 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08333 and
-	has 8 connected components, where the component with most nodes has 2335 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 195.83, and the node degree mode is 6. The top 5 most central
-	nodes are 1410674.JNKU01000044_gene96 (degree 1112), 1410674.JNKU01000014_gene491
-	(degree 915), 1410674.JNKU01000008_gene1271 (degree 895), 1410674.JNKU01000052_gene1212
-	(degree 894) and 1410674.JNKU01000005_gene1583 (degree 814).
+	The undirected graph Sharpea azabuensis has 2351 nodes and 230199 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08333 and has 8 connected components, where the component with most
+	nodes has 2335 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 195.83, and
+	the node degree mode is 6. The top 5 most central nodes are 1410674.JNKU01000044_gene96
+	(degree 1112), 1410674.JNKU01000014_gene491 (degree 915), 1410674.JNKU01000008_gene1271
+	(degree 895), 1410674.JNKU01000052_gene1212 (degree 894) and 1410674.JNKU01000005_gene1583
+	(degree 814).
 	
 
 

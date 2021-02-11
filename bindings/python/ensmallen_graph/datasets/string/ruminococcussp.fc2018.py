@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:41:06.755679
 
-The undirected graph Ruminococcus sp. FC2018 has 2129 nodes and 107955 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04766 and
-has 11 connected components, where the component with most nodes has 2107 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 101.41, and the node degree mode is 4. The top 5 most central
-nodes are 1410617.JHXH01000003_gene611 (degree 822), 1410617.JHXH01000003_gene592
-(degree 769), 1410617.JHXH01000003_gene590 (degree 688), 1410617.JHXH01000008_gene2146
-(degree 597) and 1410617.JHXH01000006_gene277 (degree 590).
+The undirected graph Ruminococcus sp. FC2018 has 2129 nodes and 107955
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04766 and has 11 connected components, where the component
+with most nodes has 2107 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 78, the mean node degree is 101.41,
+and the node degree mode is 4. The top 5 most central nodes are 1410617.JHXH01000003_gene611
+(degree 822), 1410617.JHXH01000003_gene592 (degree 769), 1410617.JHXH01000003_gene590
+(degree 688), 1410617.JHXH01000008_gene2146 (degree 597) and 1410617.JHXH01000006_gene277
+(degree 590).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusSp.Fc2018(
 	
 	Datetime: 2021-02-03 22:41:06.755679
 	
-	The undirected graph Ruminococcus sp. FC2018 has 2129 nodes and 107955 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04766 and
-	has 11 connected components, where the component with most nodes has 2107 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 101.41, and the node degree mode is 4. The top 5 most central
-	nodes are 1410617.JHXH01000003_gene611 (degree 822), 1410617.JHXH01000003_gene592
-	(degree 769), 1410617.JHXH01000003_gene590 (degree 688), 1410617.JHXH01000008_gene2146
-	(degree 597) and 1410617.JHXH01000006_gene277 (degree 590).
+	The undirected graph Ruminococcus sp. FC2018 has 2129 nodes and 107955
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04766 and has 11 connected components, where the component
+	with most nodes has 2107 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 78, the mean node degree is 101.41,
+	and the node degree mode is 4. The top 5 most central nodes are 1410617.JHXH01000003_gene611
+	(degree 822), 1410617.JHXH01000003_gene592 (degree 769), 1410617.JHXH01000003_gene590
+	(degree 688), 1410617.JHXH01000008_gene2146 (degree 597) and 1410617.JHXH01000006_gene277
+	(degree 590).
 	
 
 

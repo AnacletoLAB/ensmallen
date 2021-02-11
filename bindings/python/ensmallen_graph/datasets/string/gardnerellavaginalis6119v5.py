@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:19.133837
 
-The undirected graph Gardnerella vaginalis 6119V5 has 1161 nodes and 73977 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10986 and has 4 connected components, where the component with most nodes has
-1155 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 110, the mean node degree is 127.44, and the node degree mode is 2. The
-top 5 most central nodes are 698961.CGSMWGv6119V5_05972 (degree 594), 698961.CGSMWGv6119V5_01333
+The undirected graph Gardnerella vaginalis 6119V5 has 1161 nodes and 73977
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10986 and has 4 connected components, where the
+component with most nodes has 1155 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 127.44, and the node degree mode is 2. The top 5 most central nodes
+are 698961.CGSMWGv6119V5_05972 (degree 594), 698961.CGSMWGv6119V5_01333
 (degree 586), 698961.CGSMWGv6119V5_03999 (degree 562), 698961.CGSMWGv6119V5_01558
 (degree 524) and 698961.CGSMWGv6119V5_01368 (degree 520).
 
@@ -107,12 +108,13 @@ def GardnerellaVaginalis6119v5(
 	
 	Datetime: 2021-02-02 21:33:19.133837
 	
-	The undirected graph Gardnerella vaginalis 6119V5 has 1161 nodes and 73977 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10986 and has 4 connected components, where the component with most nodes has
-	1155 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 110, the mean node degree is 127.44, and the node degree mode is 2. The
-	top 5 most central nodes are 698961.CGSMWGv6119V5_05972 (degree 594), 698961.CGSMWGv6119V5_01333
+	The undirected graph Gardnerella vaginalis 6119V5 has 1161 nodes and 73977
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10986 and has 4 connected components, where the
+	component with most nodes has 1155 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 127.44, and the node degree mode is 2. The top 5 most central nodes
+	are 698961.CGSMWGv6119V5_05972 (degree 594), 698961.CGSMWGv6119V5_01333
 	(degree 586), 698961.CGSMWGv6119V5_03999 (degree 562), 698961.CGSMWGv6119V5_01558
 	(degree 524) and 698961.CGSMWGv6119V5_01368 (degree 520).
 	

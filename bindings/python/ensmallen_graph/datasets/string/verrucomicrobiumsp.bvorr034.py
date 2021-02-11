@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:28:45.392935
 
-The undirected graph Verrucomicrobium sp. BvORR034 has 6306 nodes and 563770 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02836
-and has 80 connected components, where the component with most nodes has 6092 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 178.80, and the node degree mode is 2. The top 5
-most central nodes are 1396418.BATQ01000050_gene289 (degree 2295), 1396418.BATQ01000141_gene3374
-(degree 1927), 1396418.BATQ01000131_gene3966 (degree 1536), 1396418.BATQ01000118_gene4606
-(degree 1296) and 1396418.BATQ01000045_gene6078 (degree 1170).
+The undirected graph Verrucomicrobium sp. BvORR034 has 6306 nodes and 563770
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02836 and has 80 connected components, where the component
+with most nodes has 6092 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 178.80,
+and the node degree mode is 2. The top 5 most central nodes are 1396418.BATQ01000050_gene289
+(degree 2295), 1396418.BATQ01000141_gene3374 (degree 1927), 1396418.BATQ01000131_gene3966
+(degree 1536), 1396418.BATQ01000118_gene4606 (degree 1296) and 1396418.BATQ01000045_gene6078
+(degree 1170).
 
 
 References
@@ -107,14 +108,15 @@ def VerrucomicrobiumSp.Bvorr034(
 	
 	Datetime: 2021-02-03 22:28:45.392935
 	
-	The undirected graph Verrucomicrobium sp. BvORR034 has 6306 nodes and 563770 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02836
-	and has 80 connected components, where the component with most nodes has 6092 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 178.80, and the node degree mode is 2. The top 5
-	most central nodes are 1396418.BATQ01000050_gene289 (degree 2295), 1396418.BATQ01000141_gene3374
-	(degree 1927), 1396418.BATQ01000131_gene3966 (degree 1536), 1396418.BATQ01000118_gene4606
-	(degree 1296) and 1396418.BATQ01000045_gene6078 (degree 1170).
+	The undirected graph Verrucomicrobium sp. BvORR034 has 6306 nodes and 563770
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02836 and has 80 connected components, where the component
+	with most nodes has 6092 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 178.80,
+	and the node degree mode is 2. The top 5 most central nodes are 1396418.BATQ01000050_gene289
+	(degree 2295), 1396418.BATQ01000141_gene3374 (degree 1927), 1396418.BATQ01000131_gene3966
+	(degree 1536), 1396418.BATQ01000118_gene4606 (degree 1296) and 1396418.BATQ01000045_gene6078
+	(degree 1170).
 	
 
 

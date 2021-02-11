@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:54.698158
 
-The undirected graph Photobacterium leiognathi mandapamensis has 3922 nodes and 515980
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06711 and has 17 connected components, where the component with most nodes has
-3881 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 226, the mean node degree is 263.12, and the node degree mode is 2. The
-top 5 most central nodes are 1001530.BACE01000028_gene3931 (degree 2536), 1001530.BACE01000001_gene3554
+The undirected graph Photobacterium leiognathi mandapamensis has 3922 nodes
+and 515980 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06711 and has 17 connected components, where the
+component with most nodes has 3881 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 226, the mean node degree
+is 263.12, and the node degree mode is 2. The top 5 most central nodes
+are 1001530.BACE01000028_gene3931 (degree 2536), 1001530.BACE01000001_gene3554
 (degree 1621), 1001530.BACE01000028_gene3930 (degree 1523), 1001530.BACE01000028_gene3926
 (degree 1442) and 1001530.BACE01000011_gene2309 (degree 1415).
 
@@ -107,12 +108,13 @@ def PhotobacteriumLeiognathiMandapamensis(
 	
 	Datetime: 2021-02-02 22:06:54.698158
 	
-	The undirected graph Photobacterium leiognathi mandapamensis has 3922 nodes and 515980
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06711 and has 17 connected components, where the component with most nodes has
-	3881 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 226, the mean node degree is 263.12, and the node degree mode is 2. The
-	top 5 most central nodes are 1001530.BACE01000028_gene3931 (degree 2536), 1001530.BACE01000001_gene3554
+	The undirected graph Photobacterium leiognathi mandapamensis has 3922 nodes
+	and 515980 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06711 and has 17 connected components, where the
+	component with most nodes has 3881 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 226, the mean node degree
+	is 263.12, and the node degree mode is 2. The top 5 most central nodes
+	are 1001530.BACE01000028_gene3931 (degree 2536), 1001530.BACE01000001_gene3554
 	(degree 1621), 1001530.BACE01000028_gene3930 (degree 1523), 1001530.BACE01000028_gene3926
 	(degree 1442) and 1001530.BACE01000011_gene2309 (degree 1415).
 	

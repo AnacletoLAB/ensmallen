@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:30:06.471365
 
-The undirected graph Arabidopsis thaliana has 25490 nodes and 5830348 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-has 20 connected components, where the component with most nodes has 25449 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 276, the mean node degree is 457.46, and the node degree mode is 1. The top 5
-most central nodes are 3702.AT2G20050.1 (degree 6780), 3702.AT2G16370.1 (degree 4226),
-3702.AT3G24530.1 (degree 4196), 3702.AT2G41680.1 (degree 4182) and 3702.AT4G34570.1
-(degree 4175).
+The undirected graph Arabidopsis thaliana has 25490 nodes and 5830348 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01795 and has 20 connected components, where the component with most
+nodes has 25449 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 276, the mean node degree is 457.46, and
+the node degree mode is 1. The top 5 most central nodes are 3702.AT2G20050.1
+(degree 6780), 3702.AT2G16370.1 (degree 4226), 3702.AT3G24530.1 (degree
+4196), 3702.AT2G41680.1 (degree 4182) and 3702.AT4G34570.1 (degree 4175).
 
 
 References
@@ -107,14 +107,14 @@ def ArabidopsisThaliana(
 	
 	Datetime: 2021-02-02 16:30:06.471365
 	
-	The undirected graph Arabidopsis thaliana has 25490 nodes and 5830348 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-	has 20 connected components, where the component with most nodes has 25449 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 276, the mean node degree is 457.46, and the node degree mode is 1. The top 5
-	most central nodes are 3702.AT2G20050.1 (degree 6780), 3702.AT2G16370.1 (degree 4226),
-	3702.AT3G24530.1 (degree 4196), 3702.AT2G41680.1 (degree 4182) and 3702.AT4G34570.1
-	(degree 4175).
+	The undirected graph Arabidopsis thaliana has 25490 nodes and 5830348 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01795 and has 20 connected components, where the component with most
+	nodes has 25449 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 276, the mean node degree is 457.46, and
+	the node degree mode is 1. The top 5 most central nodes are 3702.AT2G20050.1
+	(degree 6780), 3702.AT2G16370.1 (degree 4226), 3702.AT3G24530.1 (degree
+	4196), 3702.AT2G41680.1 (degree 4182) and 3702.AT4G34570.1 (degree 4175).
 	
 
 

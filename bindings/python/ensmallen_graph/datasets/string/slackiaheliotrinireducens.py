@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:56.556992
 
-The undirected graph Slackia heliotrinireducens has 2741 nodes and 174036 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04635
-and has 9 connected components, where the component with most nodes has 2722 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 126.99, and the node degree mode is 2. The top 5
-most central nodes are 471855.Shel_02240 (degree 1094), 471855.Shel_12990 (degree
-953), 471855.Shel_08510 (degree 792), 471855.Shel_06740 (degree 699) and 471855.Shel_07200
-(degree 689).
+The undirected graph Slackia heliotrinireducens has 2741 nodes and 174036
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04635 and has 9 connected components, where the component
+with most nodes has 2722 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 126.99,
+and the node degree mode is 2. The top 5 most central nodes are 471855.Shel_02240
+(degree 1094), 471855.Shel_12990 (degree 953), 471855.Shel_08510 (degree
+792), 471855.Shel_06740 (degree 699) and 471855.Shel_07200 (degree 689).
 
 
 References
@@ -107,14 +107,14 @@ def SlackiaHeliotrinireducens(
 	
 	Datetime: 2021-02-02 20:55:56.556992
 	
-	The undirected graph Slackia heliotrinireducens has 2741 nodes and 174036 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04635
-	and has 9 connected components, where the component with most nodes has 2722 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 126.99, and the node degree mode is 2. The top 5
-	most central nodes are 471855.Shel_02240 (degree 1094), 471855.Shel_12990 (degree
-	953), 471855.Shel_08510 (degree 792), 471855.Shel_06740 (degree 699) and 471855.Shel_07200
-	(degree 689).
+	The undirected graph Slackia heliotrinireducens has 2741 nodes and 174036
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04635 and has 9 connected components, where the component
+	with most nodes has 2722 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 126.99,
+	and the node degree mode is 2. The top 5 most central nodes are 471855.Shel_02240
+	(degree 1094), 471855.Shel_12990 (degree 953), 471855.Shel_08510 (degree
+	792), 471855.Shel_06740 (degree 699) and 471855.Shel_07200 (degree 689).
 	
 
 

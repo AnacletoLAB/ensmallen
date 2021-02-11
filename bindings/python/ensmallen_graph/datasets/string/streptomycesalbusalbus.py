@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:32.738926
 
-The undirected graph Streptomyces albus albus has 6238 nodes and 962263 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04947
-and has 26 connected components, where the component with most nodes has 6182 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 249, the mean node degree is 308.52, and the node degree mode is 2. The top 5
-most central nodes are 67257.JODR01000038_gene2428 (degree 3882), 67257.JODR01000024_gene5222
-(degree 2477), 67257.JODR01000012_gene6142 (degree 2451), 67257.JODR01000016_gene4794
-(degree 2296) and 67257.JODR01000003_gene1836 (degree 2252).
+The undirected graph Streptomyces albus albus has 6238 nodes and 962263
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04947 and has 26 connected components, where the component
+with most nodes has 6182 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 249, the mean node degree is 308.52,
+and the node degree mode is 2. The top 5 most central nodes are 67257.JODR01000038_gene2428
+(degree 3882), 67257.JODR01000024_gene5222 (degree 2477), 67257.JODR01000012_gene6142
+(degree 2451), 67257.JODR01000016_gene4794 (degree 2296) and 67257.JODR01000003_gene1836
+(degree 2252).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAlbusAlbus(
 	
 	Datetime: 2021-02-02 18:26:32.738926
 	
-	The undirected graph Streptomyces albus albus has 6238 nodes and 962263 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04947
-	and has 26 connected components, where the component with most nodes has 6182 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 249, the mean node degree is 308.52, and the node degree mode is 2. The top 5
-	most central nodes are 67257.JODR01000038_gene2428 (degree 3882), 67257.JODR01000024_gene5222
-	(degree 2477), 67257.JODR01000012_gene6142 (degree 2451), 67257.JODR01000016_gene4794
-	(degree 2296) and 67257.JODR01000003_gene1836 (degree 2252).
+	The undirected graph Streptomyces albus albus has 6238 nodes and 962263
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04947 and has 26 connected components, where the component
+	with most nodes has 6182 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 249, the mean node degree is 308.52,
+	and the node degree mode is 2. The top 5 most central nodes are 67257.JODR01000038_gene2428
+	(degree 3882), 67257.JODR01000024_gene5222 (degree 2477), 67257.JODR01000012_gene6142
+	(degree 2451), 67257.JODR01000016_gene4794 (degree 2296) and 67257.JODR01000003_gene1836
+	(degree 2252).
 	
 
 

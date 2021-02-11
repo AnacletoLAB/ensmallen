@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:40:33.123399
 
-The undirected graph Nicotiana sylvestris has 24530 nodes and 4626653 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01538 and
-has 16 connected components, where the component with most nodes has 24497 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 377.22, and the node degree mode is 3. The top 5
-most central nodes are 4096.XP_009794180.1 (degree 7810), 4096.XP_009800933.1 (degree
-5039), 4096.XP_009776379.1 (degree 5039), 4096.XP_009792521.1 (degree 4568) and 4096.XP_009776334.1
-(degree 4343).
+The undirected graph Nicotiana sylvestris has 24530 nodes and 4626653 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01538 and has 16 connected components, where the component with most
+nodes has 24497 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 377.22, and
+the node degree mode is 3. The top 5 most central nodes are 4096.XP_009794180.1
+(degree 7810), 4096.XP_009800933.1 (degree 5039), 4096.XP_009776379.1 (degree
+5039), 4096.XP_009792521.1 (degree 4568) and 4096.XP_009776334.1 (degree
+4343).
 
 
 References
@@ -107,14 +108,15 @@ def NicotianaSylvestris(
 	
 	Datetime: 2021-02-02 16:40:33.123399
 	
-	The undirected graph Nicotiana sylvestris has 24530 nodes and 4626653 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01538 and
-	has 16 connected components, where the component with most nodes has 24497 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 377.22, and the node degree mode is 3. The top 5
-	most central nodes are 4096.XP_009794180.1 (degree 7810), 4096.XP_009800933.1 (degree
-	5039), 4096.XP_009776379.1 (degree 5039), 4096.XP_009792521.1 (degree 4568) and 4096.XP_009776334.1
-	(degree 4343).
+	The undirected graph Nicotiana sylvestris has 24530 nodes and 4626653 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01538 and has 16 connected components, where the component with most
+	nodes has 24497 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 377.22, and
+	the node degree mode is 3. The top 5 most central nodes are 4096.XP_009794180.1
+	(degree 7810), 4096.XP_009800933.1 (degree 5039), 4096.XP_009776379.1 (degree
+	5039), 4096.XP_009792521.1 (degree 4568) and 4096.XP_009776334.1 (degree
+	4343).
 	
 
 

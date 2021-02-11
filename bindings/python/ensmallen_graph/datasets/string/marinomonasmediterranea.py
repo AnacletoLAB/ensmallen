@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:33.526285
 
-The undirected graph Marinomonas mediterranea has 4095 nodes and 297381 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03548
-and has 14 connected components, where the component with most nodes has 4060 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 145.24, and the node degree mode is 3. The top 5
-most central nodes are 717774.Marme_0202 (degree 1403), 717774.Marme_2911 (degree
-1074), 717774.Marme_0324 (degree 1073), 717774.Marme_4171 (degree 1027) and 717774.Marme_3167
-(degree 1012).
+The undirected graph Marinomonas mediterranea has 4095 nodes and 297381
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03548 and has 14 connected components, where the component
+with most nodes has 4060 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 145.24,
+and the node degree mode is 3. The top 5 most central nodes are 717774.Marme_0202
+(degree 1403), 717774.Marme_2911 (degree 1074), 717774.Marme_0324 (degree
+1073), 717774.Marme_4171 (degree 1027) and 717774.Marme_3167 (degree 1012).
 
 
 References
@@ -107,14 +107,14 @@ def MarinomonasMediterranea(
 	
 	Datetime: 2021-02-02 21:36:33.526285
 	
-	The undirected graph Marinomonas mediterranea has 4095 nodes and 297381 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03548
-	and has 14 connected components, where the component with most nodes has 4060 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 145.24, and the node degree mode is 3. The top 5
-	most central nodes are 717774.Marme_0202 (degree 1403), 717774.Marme_2911 (degree
-	1074), 717774.Marme_0324 (degree 1073), 717774.Marme_4171 (degree 1027) and 717774.Marme_3167
-	(degree 1012).
+	The undirected graph Marinomonas mediterranea has 4095 nodes and 297381
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03548 and has 14 connected components, where the component
+	with most nodes has 4060 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 145.24,
+	and the node degree mode is 3. The top 5 most central nodes are 717774.Marme_0202
+	(degree 1403), 717774.Marme_2911 (degree 1074), 717774.Marme_0324 (degree
+	1073), 717774.Marme_4171 (degree 1027) and 717774.Marme_3167 (degree 1012).
 	
 
 

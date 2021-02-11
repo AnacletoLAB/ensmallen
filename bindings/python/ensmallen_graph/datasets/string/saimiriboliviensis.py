@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:19.631764
 
-The undirected graph Saimiri boliviensis has 19137 nodes and 4573813 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02498 and
-has 2 connected components, where the component with most nodes has 19135 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 341,
-the mean node degree is 478.01, and the node degree mode is 209. The top 5 most central
-nodes are 27679.XP_003925359.1 (degree 4511), 27679.XP_003927784.1 (degree 4414),
-27679.XP_010339013.1 (degree 4076), 27679.XP_003939536.1 (degree 3951) and 27679.XP_010328855.1
+The undirected graph Saimiri boliviensis has 19137 nodes and 4573813 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02498 and has 2 connected components, where the component with most
+nodes has 19135 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 341, the mean node degree is 478.01, and
+the node degree mode is 209. The top 5 most central nodes are 27679.XP_003925359.1
+(degree 4511), 27679.XP_003927784.1 (degree 4414), 27679.XP_010339013.1
+(degree 4076), 27679.XP_003939536.1 (degree 3951) and 27679.XP_010328855.1
 (degree 3904).
 
 
@@ -107,13 +108,14 @@ def SaimiriBoliviensis(
 	
 	Datetime: 2021-02-02 17:55:19.631764
 	
-	The undirected graph Saimiri boliviensis has 19137 nodes and 4573813 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02498 and
-	has 2 connected components, where the component with most nodes has 19135 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 341,
-	the mean node degree is 478.01, and the node degree mode is 209. The top 5 most central
-	nodes are 27679.XP_003925359.1 (degree 4511), 27679.XP_003927784.1 (degree 4414),
-	27679.XP_010339013.1 (degree 4076), 27679.XP_003939536.1 (degree 3951) and 27679.XP_010328855.1
+	The undirected graph Saimiri boliviensis has 19137 nodes and 4573813 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02498 and has 2 connected components, where the component with most
+	nodes has 19135 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 341, the mean node degree is 478.01, and
+	the node degree mode is 209. The top 5 most central nodes are 27679.XP_003925359.1
+	(degree 4511), 27679.XP_003927784.1 (degree 4414), 27679.XP_010339013.1
+	(degree 4076), 27679.XP_003939536.1 (degree 3951) and 27679.XP_010328855.1
 	(degree 3904).
 	
 

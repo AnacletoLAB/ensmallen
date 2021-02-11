@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:40.111087
 
-The undirected graph Leptolyngbya sp. PCC6406 has 4581 nodes and 467703 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04458
-and has 25 connected components, where the component with most nodes has 4530 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 204.19, and the node degree mode is 1. The top 5
-most central nodes are 1173264.KI913949_gene1024 (degree 1719), 1173264.KI913949_gene2300
-(degree 1414), 1173264.KI913949_gene135 (degree 1400), 1173264.KI913949_gene2383
-(degree 1249) and 1173264.KI913949_gene1441 (degree 1202).
+The undirected graph Leptolyngbya sp. PCC6406 has 4581 nodes and 467703
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04458 and has 25 connected components, where the component
+with most nodes has 4530 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 178, the mean node degree is 204.19,
+and the node degree mode is 1. The top 5 most central nodes are 1173264.KI913949_gene1024
+(degree 1719), 1173264.KI913949_gene2300 (degree 1414), 1173264.KI913949_gene135
+(degree 1400), 1173264.KI913949_gene2383 (degree 1249) and 1173264.KI913949_gene1441
+(degree 1202).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaSp.Pcc6406(
 	
 	Datetime: 2021-02-02 23:08:40.111087
 	
-	The undirected graph Leptolyngbya sp. PCC6406 has 4581 nodes and 467703 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04458
-	and has 25 connected components, where the component with most nodes has 4530 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 204.19, and the node degree mode is 1. The top 5
-	most central nodes are 1173264.KI913949_gene1024 (degree 1719), 1173264.KI913949_gene2300
-	(degree 1414), 1173264.KI913949_gene135 (degree 1400), 1173264.KI913949_gene2383
-	(degree 1249) and 1173264.KI913949_gene1441 (degree 1202).
+	The undirected graph Leptolyngbya sp. PCC6406 has 4581 nodes and 467703
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04458 and has 25 connected components, where the component
+	with most nodes has 4530 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 178, the mean node degree is 204.19,
+	and the node degree mode is 1. The top 5 most central nodes are 1173264.KI913949_gene1024
+	(degree 1719), 1173264.KI913949_gene2300 (degree 1414), 1173264.KI913949_gene135
+	(degree 1400), 1173264.KI913949_gene2383 (degree 1249) and 1173264.KI913949_gene1441
+	(degree 1202).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:23.189094
 
-The undirected graph Caenorhabditis remanei has 18741 nodes and 3503660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01995
-and has 29 connected components, where the component with most nodes has 18678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 373.90, and the node degree mode is 1. The top 5
-most central nodes are 31234.CRE28095 (degree 6691), 31234.CRE04688 (degree 5004),
-31234.CRE18952 (degree 4160), 31234.CRE29064.1 (degree 3872) and 31234.CRE21873 (degree
+The undirected graph Caenorhabditis remanei has 18741 nodes and 3503660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01995 and has 29 connected components, where the component
+with most nodes has 18678 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 191, the mean node degree
+is 373.90, and the node degree mode is 1. The top 5 most central nodes
+are 31234.CRE28095 (degree 6691), 31234.CRE04688 (degree 5004), 31234.CRE18952
+(degree 4160), 31234.CRE29064.1 (degree 3872) and 31234.CRE21873 (degree
 3780).
 
 
@@ -107,13 +108,14 @@ def CaenorhabditisRemanei(
 	
 	Datetime: 2021-02-02 18:02:23.189094
 	
-	The undirected graph Caenorhabditis remanei has 18741 nodes and 3503660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01995
-	and has 29 connected components, where the component with most nodes has 18678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 373.90, and the node degree mode is 1. The top 5
-	most central nodes are 31234.CRE28095 (degree 6691), 31234.CRE04688 (degree 5004),
-	31234.CRE18952 (degree 4160), 31234.CRE29064.1 (degree 3872) and 31234.CRE21873 (degree
+	The undirected graph Caenorhabditis remanei has 18741 nodes and 3503660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01995 and has 29 connected components, where the component
+	with most nodes has 18678 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 191, the mean node degree
+	is 373.90, and the node degree mode is 1. The top 5 most central nodes
+	are 31234.CRE28095 (degree 6691), 31234.CRE04688 (degree 5004), 31234.CRE18952
+	(degree 4160), 31234.CRE29064.1 (degree 3872) and 31234.CRE21873 (degree
 	3780).
 	
 

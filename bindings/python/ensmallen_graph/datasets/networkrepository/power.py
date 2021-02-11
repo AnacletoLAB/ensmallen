@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:21:31.332567
 
-The undirected graph power has 4941 nodes and 6594 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00054 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 2.67, and the node degree mode is 2. The top 5 most central nodes are 2554 (degree
-19), 4459 (degree 18), 4346 (degree 14), 3469 (degree 14) and 832 (degree 14).
+The undirected graph power has 4941 nodes and 6594 unweighted edges, of
+which none are self-loops. The graph is quite sparse as it has a density
+of 0.00054 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 2.67, and the node degree mode
+is 2. The top 5 most central nodes are 2554 (degree 19), 4459 (degree 18),
+4346 (degree 14), 3469 (degree 14) and 832 (degree 14).
 
 
 References
@@ -101,11 +102,12 @@ def Power(
 	
 	Datetime: 2021-02-06 08:21:31.332567
 	
-	The undirected graph power has 4941 nodes and 6594 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00054 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 2.67, and the node degree mode is 2. The top 5 most central nodes are 2554 (degree
-	19), 4459 (degree 18), 4346 (degree 14), 3469 (degree 14) and 832 (degree 14).
+	The undirected graph power has 4941 nodes and 6594 unweighted edges, of
+	which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00054 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 2.67, and the node degree mode
+	is 2. The top 5 most central nodes are 2554 (degree 19), 4459 (degree 18),
+	4346 (degree 14), 3469 (degree 14) and 832 (degree 14).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:24.207269
 
-The undirected graph Stenotrophomonas maltophilia K279a has 4364 nodes and 481366
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05056 and has 16 connected components, where the component with most nodes has
-4329 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 197, the mean node degree is 220.61, and the node degree mode is 3. The
-top 5 most central nodes are 522373.Smlt0196 (degree 1335), 522373.Smlt2141 (degree
-1304), 522373.Smlt4589 (degree 1304), 522373.Smlt1168 (degree 1104) and 522373.Smlt0109
-(degree 1013).
+The undirected graph Stenotrophomonas maltophilia K279a has 4364 nodes
+and 481366 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05056 and has 16 connected components, where the
+component with most nodes has 4329 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+is 220.61, and the node degree mode is 3. The top 5 most central nodes
+are 522373.Smlt0196 (degree 1335), 522373.Smlt2141 (degree 1304), 522373.Smlt4589
+(degree 1304), 522373.Smlt1168 (degree 1104) and 522373.Smlt0109 (degree
+1013).
 
 
 References
@@ -107,14 +108,15 @@ def StenotrophomonasMaltophiliaK279a(
 	
 	Datetime: 2021-02-02 21:04:24.207269
 	
-	The undirected graph Stenotrophomonas maltophilia K279a has 4364 nodes and 481366
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05056 and has 16 connected components, where the component with most nodes has
-	4329 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 197, the mean node degree is 220.61, and the node degree mode is 3. The
-	top 5 most central nodes are 522373.Smlt0196 (degree 1335), 522373.Smlt2141 (degree
-	1304), 522373.Smlt4589 (degree 1304), 522373.Smlt1168 (degree 1104) and 522373.Smlt0109
-	(degree 1013).
+	The undirected graph Stenotrophomonas maltophilia K279a has 4364 nodes
+	and 481366 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05056 and has 16 connected components, where the
+	component with most nodes has 4329 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+	is 220.61, and the node degree mode is 3. The top 5 most central nodes
+	are 522373.Smlt0196 (degree 1335), 522373.Smlt2141 (degree 1304), 522373.Smlt4589
+	(degree 1304), 522373.Smlt1168 (degree 1104) and 522373.Smlt0109 (degree
+	1013).
 	
 
 

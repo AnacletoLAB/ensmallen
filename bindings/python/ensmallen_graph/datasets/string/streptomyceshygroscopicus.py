@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:25.222578
 
-The undirected graph Streptomyces hygroscopicus has 8851 nodes and 1122518 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02866
-and has 67 connected components, where the component with most nodes has 8700 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 253.65, and the node degree mode is 1. The top 5
-most central nodes are 1133850.SHJG_6836 (degree 4266), 1133850.SHJG_3476 (degree
-2610), 1133850.SHJG_5882 (degree 2393), 1133850.SHJG_1246 (degree 2373) and 1133850.SHJG_3921
-(degree 2277).
+The undirected graph Streptomyces hygroscopicus has 8851 nodes and 1122518
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02866 and has 67 connected components, where the component
+with most nodes has 8700 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 213, the mean node degree is 253.65,
+and the node degree mode is 1. The top 5 most central nodes are 1133850.SHJG_6836
+(degree 4266), 1133850.SHJG_3476 (degree 2610), 1133850.SHJG_5882 (degree
+2393), 1133850.SHJG_1246 (degree 2373) and 1133850.SHJG_3921 (degree 2277).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesHygroscopicus(
 	
 	Datetime: 2021-02-02 22:56:25.222578
 	
-	The undirected graph Streptomyces hygroscopicus has 8851 nodes and 1122518 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02866
-	and has 67 connected components, where the component with most nodes has 8700 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 253.65, and the node degree mode is 1. The top 5
-	most central nodes are 1133850.SHJG_6836 (degree 4266), 1133850.SHJG_3476 (degree
-	2610), 1133850.SHJG_5882 (degree 2393), 1133850.SHJG_1246 (degree 2373) and 1133850.SHJG_3921
-	(degree 2277).
+	The undirected graph Streptomyces hygroscopicus has 8851 nodes and 1122518
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02866 and has 67 connected components, where the component
+	with most nodes has 8700 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 213, the mean node degree is 253.65,
+	and the node degree mode is 1. The top 5 most central nodes are 1133850.SHJG_6836
+	(degree 4266), 1133850.SHJG_3476 (degree 2610), 1133850.SHJG_5882 (degree
+	2393), 1133850.SHJG_1246 (degree 2373) and 1133850.SHJG_3921 (degree 2277).
 	
 
 

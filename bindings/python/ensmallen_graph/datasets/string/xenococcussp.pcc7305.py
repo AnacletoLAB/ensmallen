@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:16.861417
 
-The undirected graph Xenococcus sp. PCC7305 has 5298 nodes and 544957 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03884 and
-has 29 connected components, where the component with most nodes has 5226 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 205.72, and the node degree mode is 2. The top 5 most central
-nodes are 102125.Xen7305DRAFT_00043190 (degree 1983), 102125.Xen7305DRAFT_00030960
-(degree 1643), 102125.Xen7305DRAFT_00051640 (degree 1517), 102125.Xen7305DRAFT_00004970
-(degree 1504) and 102125.Xen7305DRAFT_00030470 (degree 1502).
+The undirected graph Xenococcus sp. PCC7305 has 5298 nodes and 544957 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03884 and has 29 connected components, where the component with most
+nodes has 5226 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 205.72, and
+the node degree mode is 2. The top 5 most central nodes are 102125.Xen7305DRAFT_00043190
+(degree 1983), 102125.Xen7305DRAFT_00030960 (degree 1643), 102125.Xen7305DRAFT_00051640
+(degree 1517), 102125.Xen7305DRAFT_00004970 (degree 1504) and 102125.Xen7305DRAFT_00030470
+(degree 1502).
 
 
 References
@@ -107,14 +108,15 @@ def XenococcusSp.Pcc7305(
 	
 	Datetime: 2021-02-02 19:43:16.861417
 	
-	The undirected graph Xenococcus sp. PCC7305 has 5298 nodes and 544957 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03884 and
-	has 29 connected components, where the component with most nodes has 5226 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 205.72, and the node degree mode is 2. The top 5 most central
-	nodes are 102125.Xen7305DRAFT_00043190 (degree 1983), 102125.Xen7305DRAFT_00030960
-	(degree 1643), 102125.Xen7305DRAFT_00051640 (degree 1517), 102125.Xen7305DRAFT_00004970
-	(degree 1504) and 102125.Xen7305DRAFT_00030470 (degree 1502).
+	The undirected graph Xenococcus sp. PCC7305 has 5298 nodes and 544957 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03884 and has 29 connected components, where the component with most
+	nodes has 5226 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 205.72, and
+	the node degree mode is 2. The top 5 most central nodes are 102125.Xen7305DRAFT_00043190
+	(degree 1983), 102125.Xen7305DRAFT_00030960 (degree 1643), 102125.Xen7305DRAFT_00051640
+	(degree 1517), 102125.Xen7305DRAFT_00004970 (degree 1504) and 102125.Xen7305DRAFT_00030470
+	(degree 1502).
 	
 
 

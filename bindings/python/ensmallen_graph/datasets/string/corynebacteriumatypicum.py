@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:53.863339
 
-The undirected graph Corynebacterium atypicum has 1549 nodes and 85612 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07141 and
-has 7 connected components, where the component with most nodes has 1534 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 110.54, and the node degree mode is 2. The top 5 most central
-nodes are 191610.CATYP_05865 (degree 615), 191610.CATYP_02395 (degree 570), 191610.CATYP_05760
-(degree 545), 191610.CATYP_04915 (degree 545) and 191610.CATYP_02410 (degree 536).
+The undirected graph Corynebacterium atypicum has 1549 nodes and 85612
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07141 and has 7 connected components, where the component
+with most nodes has 1534 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 110.54,
+and the node degree mode is 2. The top 5 most central nodes are 191610.CATYP_05865
+(degree 615), 191610.CATYP_02395 (degree 570), 191610.CATYP_05760 (degree
+545), 191610.CATYP_04915 (degree 545) and 191610.CATYP_02410 (degree 536).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumAtypicum(
 	
 	Datetime: 2021-02-02 19:57:53.863339
 	
-	The undirected graph Corynebacterium atypicum has 1549 nodes and 85612 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07141 and
-	has 7 connected components, where the component with most nodes has 1534 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 110.54, and the node degree mode is 2. The top 5 most central
-	nodes are 191610.CATYP_05865 (degree 615), 191610.CATYP_02395 (degree 570), 191610.CATYP_05760
-	(degree 545), 191610.CATYP_04915 (degree 545) and 191610.CATYP_02410 (degree 536).
+	The undirected graph Corynebacterium atypicum has 1549 nodes and 85612
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07141 and has 7 connected components, where the component
+	with most nodes has 1534 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 110.54,
+	and the node degree mode is 2. The top 5 most central nodes are 191610.CATYP_05865
+	(degree 615), 191610.CATYP_02395 (degree 570), 191610.CATYP_05760 (degree
+	545), 191610.CATYP_04915 (degree 545) and 191610.CATYP_02410 (degree 536).
 	
 
 

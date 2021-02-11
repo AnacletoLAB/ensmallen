@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:20.898253
 
-The undirected graph Rhodovibrio salinarum has 3688 nodes and 419076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06164 and
-has 15 connected components, where the component with most nodes has 3654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 227.26, and the node degree mode is 1. The top 5 most central
-nodes are 1089552.KI911559_gene3729 (degree 1406), 1089552.KI911559_gene3435 (degree
-1331), 1089552.KI911559_gene1193 (degree 1158), 1089552.KI911559_gene3203 (degree
-1123) and 1089552.KI911559_gene1799 (degree 1084).
+The undirected graph Rhodovibrio salinarum has 3688 nodes and 419076 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06164 and has 15 connected components, where the component with most
+nodes has 3654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 227.26, and
+the node degree mode is 1. The top 5 most central nodes are 1089552.KI911559_gene3729
+(degree 1406), 1089552.KI911559_gene3435 (degree 1331), 1089552.KI911559_gene1193
+(degree 1158), 1089552.KI911559_gene3203 (degree 1123) and 1089552.KI911559_gene1799
+(degree 1084).
 
 
 References
@@ -107,14 +108,15 @@ def RhodovibrioSalinarum(
 	
 	Datetime: 2021-02-02 22:22:20.898253
 	
-	The undirected graph Rhodovibrio salinarum has 3688 nodes and 419076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06164 and
-	has 15 connected components, where the component with most nodes has 3654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 227.26, and the node degree mode is 1. The top 5 most central
-	nodes are 1089552.KI911559_gene3729 (degree 1406), 1089552.KI911559_gene3435 (degree
-	1331), 1089552.KI911559_gene1193 (degree 1158), 1089552.KI911559_gene3203 (degree
-	1123) and 1089552.KI911559_gene1799 (degree 1084).
+	The undirected graph Rhodovibrio salinarum has 3688 nodes and 419076 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06164 and has 15 connected components, where the component with most
+	nodes has 3654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 227.26, and
+	the node degree mode is 1. The top 5 most central nodes are 1089552.KI911559_gene3729
+	(degree 1406), 1089552.KI911559_gene3435 (degree 1331), 1089552.KI911559_gene1193
+	(degree 1158), 1089552.KI911559_gene3203 (degree 1123) and 1089552.KI911559_gene1799
+	(degree 1084).
 	
 
 

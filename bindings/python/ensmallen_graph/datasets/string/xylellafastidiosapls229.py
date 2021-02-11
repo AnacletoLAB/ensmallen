@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:02:11.610531
 
-The undirected graph Xylella fastidiosa PLS229 has 2400 nodes and 122451 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04254
-and has 65 connected components, where the component with most nodes has 2240 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 75, the mean node degree is 102.04, and the node degree mode is 1. The top 5 most
-central nodes are 1444770.AF72_05245 (degree 768), 1444770.AF72_02325 (degree 698),
-1444770.AF72_12620 (degree 674), 1444770.AF72_08380 (degree 674) and 1444770.AF72_08375
-(degree 650).
+The undirected graph Xylella fastidiosa PLS229 has 2400 nodes and 122451
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04254 and has 65 connected components, where the component
+with most nodes has 2240 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 75, the mean node degree is 102.04,
+and the node degree mode is 1. The top 5 most central nodes are 1444770.AF72_05245
+(degree 768), 1444770.AF72_02325 (degree 698), 1444770.AF72_12620 (degree
+674), 1444770.AF72_08380 (degree 674) and 1444770.AF72_08375 (degree 650).
 
 
 References
@@ -107,14 +107,14 @@ def XylellaFastidiosaPls229(
 	
 	Datetime: 2021-02-03 23:02:11.610531
 	
-	The undirected graph Xylella fastidiosa PLS229 has 2400 nodes and 122451 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04254
-	and has 65 connected components, where the component with most nodes has 2240 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 75, the mean node degree is 102.04, and the node degree mode is 1. The top 5 most
-	central nodes are 1444770.AF72_05245 (degree 768), 1444770.AF72_02325 (degree 698),
-	1444770.AF72_12620 (degree 674), 1444770.AF72_08380 (degree 674) and 1444770.AF72_08375
-	(degree 650).
+	The undirected graph Xylella fastidiosa PLS229 has 2400 nodes and 122451
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04254 and has 65 connected components, where the component
+	with most nodes has 2240 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 75, the mean node degree is 102.04,
+	and the node degree mode is 1. The top 5 most central nodes are 1444770.AF72_05245
+	(degree 768), 1444770.AF72_02325 (degree 698), 1444770.AF72_12620 (degree
+	674), 1444770.AF72_08380 (degree 674) and 1444770.AF72_08375 (degree 650).
 	
 
 

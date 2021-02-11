@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:17.955769
 
-The undirected graph Cyclobacterium marinum has 4917 nodes and 603204 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04991 and
-has 21 connected components, where the component with most nodes has 4873 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 219,
-the mean node degree is 245.35, and the node degree mode is 1. The top 5 most central
-nodes are 880070.Cycma_5048 (degree 1432), 880070.Cycma_3014 (degree 1362), 880070.Cycma_2089
-(degree 1361), 880070.Cycma_3490 (degree 1253) and 880070.Cycma_4552 (degree 1224).
+The undirected graph Cyclobacterium marinum has 4917 nodes and 603204 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04991 and has 21 connected components, where the component with most
+nodes has 4873 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 219, the mean node degree is 245.35, and
+the node degree mode is 1. The top 5 most central nodes are 880070.Cycma_5048
+(degree 1432), 880070.Cycma_3014 (degree 1362), 880070.Cycma_2089 (degree
+1361), 880070.Cycma_3490 (degree 1253) and 880070.Cycma_4552 (degree 1224).
 
 
 References
@@ -106,13 +107,14 @@ def CyclobacteriumMarinum(
 	
 	Datetime: 2021-02-02 21:50:17.955769
 	
-	The undirected graph Cyclobacterium marinum has 4917 nodes and 603204 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04991 and
-	has 21 connected components, where the component with most nodes has 4873 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 219,
-	the mean node degree is 245.35, and the node degree mode is 1. The top 5 most central
-	nodes are 880070.Cycma_5048 (degree 1432), 880070.Cycma_3014 (degree 1362), 880070.Cycma_2089
-	(degree 1361), 880070.Cycma_3490 (degree 1253) and 880070.Cycma_4552 (degree 1224).
+	The undirected graph Cyclobacterium marinum has 4917 nodes and 603204 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04991 and has 21 connected components, where the component with most
+	nodes has 4873 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 219, the mean node degree is 245.35, and
+	the node degree mode is 1. The top 5 most central nodes are 880070.Cycma_5048
+	(degree 1432), 880070.Cycma_3014 (degree 1362), 880070.Cycma_2089 (degree
+	1361), 880070.Cycma_3490 (degree 1253) and 880070.Cycma_4552 (degree 1224).
 	
 
 

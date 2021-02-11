@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:54.195663
 
-The undirected graph Streptococcus mitis NCTC 12261 has 1633 nodes and 133737 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10036 and is connected, as it has a single component. The graph median node
-degree is 149, the mean node degree is 163.79, and the node degree mode is 88. The
-top 5 most central nodes are 246201.SM12261_0031 (degree 775), 246201.SM12261_0781
-(degree 704), 246201.SM12261_0195 (degree 669), 246201.SM12261_1081 (degree 636)
-and 246201.SM12261_1294 (degree 627).
+The undirected graph Streptococcus mitis NCTC 12261 has 1633 nodes and
+133737 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.10036 and is connected, as it has a single
+component. The graph median node degree is 149, the mean node degree is
+163.79, and the node degree mode is 88. The top 5 most central nodes are
+246201.SM12261_0031 (degree 775), 246201.SM12261_0781 (degree 704), 246201.SM12261_0195
+(degree 669), 246201.SM12261_1081 (degree 636) and 246201.SM12261_1294
+(degree 627).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMitisNctc12261(
 	
 	Datetime: 2021-02-02 20:10:54.195663
 	
-	The undirected graph Streptococcus mitis NCTC 12261 has 1633 nodes and 133737 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10036 and is connected, as it has a single component. The graph median node
-	degree is 149, the mean node degree is 163.79, and the node degree mode is 88. The
-	top 5 most central nodes are 246201.SM12261_0031 (degree 775), 246201.SM12261_0781
-	(degree 704), 246201.SM12261_0195 (degree 669), 246201.SM12261_1081 (degree 636)
-	and 246201.SM12261_1294 (degree 627).
+	The undirected graph Streptococcus mitis NCTC 12261 has 1633 nodes and
+	133737 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.10036 and is connected, as it has a single
+	component. The graph median node degree is 149, the mean node degree is
+	163.79, and the node degree mode is 88. The top 5 most central nodes are
+	246201.SM12261_0031 (degree 775), 246201.SM12261_0781 (degree 704), 246201.SM12261_0195
+	(degree 669), 246201.SM12261_1081 (degree 636) and 246201.SM12261_1294
+	(degree 627).
 	
 
 

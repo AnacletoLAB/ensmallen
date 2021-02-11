@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:12.956764
 
-The undirected graph Bacillus methanolicus MGA3 has 3200 nodes and 339167 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06626
-and has 16 connected components, where the component with most nodes has 3165 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 211.98, and the node degree mode is 1. The top 5
-most central nodes are 796606.BMMGA3_13025 (degree 1229), 796606.BMMGA3_00070 (degree
-932), 796606.BMMGA3_05895 (degree 879), 796606.BMMGA3_00230 (degree 873) and 796606.BMMGA3_03480
-(degree 854).
+The undirected graph Bacillus methanolicus MGA3 has 3200 nodes and 339167
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06626 and has 16 connected components, where the component
+with most nodes has 3165 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 211.98,
+and the node degree mode is 1. The top 5 most central nodes are 796606.BMMGA3_13025
+(degree 1229), 796606.BMMGA3_00070 (degree 932), 796606.BMMGA3_05895 (degree
+879), 796606.BMMGA3_00230 (degree 873) and 796606.BMMGA3_03480 (degree
+854).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusMethanolicusMga3(
 	
 	Datetime: 2021-02-02 21:45:12.956764
 	
-	The undirected graph Bacillus methanolicus MGA3 has 3200 nodes and 339167 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06626
-	and has 16 connected components, where the component with most nodes has 3165 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 211.98, and the node degree mode is 1. The top 5
-	most central nodes are 796606.BMMGA3_13025 (degree 1229), 796606.BMMGA3_00070 (degree
-	932), 796606.BMMGA3_05895 (degree 879), 796606.BMMGA3_00230 (degree 873) and 796606.BMMGA3_03480
-	(degree 854).
+	The undirected graph Bacillus methanolicus MGA3 has 3200 nodes and 339167
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06626 and has 16 connected components, where the component
+	with most nodes has 3165 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 211.98,
+	and the node degree mode is 1. The top 5 most central nodes are 796606.BMMGA3_13025
+	(degree 1229), 796606.BMMGA3_00070 (degree 932), 796606.BMMGA3_05895 (degree
+	879), 796606.BMMGA3_00230 (degree 873) and 796606.BMMGA3_03480 (degree
+	854).
 	
 
 

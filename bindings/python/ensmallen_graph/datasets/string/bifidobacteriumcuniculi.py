@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:51.996887
 
-The undirected graph Bifidobacterium cuniculi has 2165 nodes and 104485 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04460
-and has 28 connected components, where the component with most nodes has 2071 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 69, the mean node degree is 96.52, and the node degree mode is 3. The top 5 most
-central nodes are 1688.BCUN_0329 (degree 766), 1688.BCUN_1198 (degree 737), 1688.BCUN_1627
-(degree 668), 1688.BCUN_0936 (degree 613) and 1688.BCUN_0338 (degree 613).
+The undirected graph Bifidobacterium cuniculi has 2165 nodes and 104485
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04460 and has 28 connected components, where the component
+with most nodes has 2071 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 69, the mean node degree is 96.52,
+and the node degree mode is 3. The top 5 most central nodes are 1688.BCUN_0329
+(degree 766), 1688.BCUN_1198 (degree 737), 1688.BCUN_1627 (degree 668),
+1688.BCUN_0936 (degree 613) and 1688.BCUN_0338 (degree 613).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumCuniculi(
 	
 	Datetime: 2021-02-02 16:22:51.996887
 	
-	The undirected graph Bifidobacterium cuniculi has 2165 nodes and 104485 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04460
-	and has 28 connected components, where the component with most nodes has 2071 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 69, the mean node degree is 96.52, and the node degree mode is 3. The top 5 most
-	central nodes are 1688.BCUN_0329 (degree 766), 1688.BCUN_1198 (degree 737), 1688.BCUN_1627
-	(degree 668), 1688.BCUN_0936 (degree 613) and 1688.BCUN_0338 (degree 613).
+	The undirected graph Bifidobacterium cuniculi has 2165 nodes and 104485
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04460 and has 28 connected components, where the component
+	with most nodes has 2071 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 69, the mean node degree is 96.52,
+	and the node degree mode is 3. The top 5 most central nodes are 1688.BCUN_0329
+	(degree 766), 1688.BCUN_1198 (degree 737), 1688.BCUN_1627 (degree 668),
+	1688.BCUN_0936 (degree 613) and 1688.BCUN_0338 (degree 613).
 	
 
 

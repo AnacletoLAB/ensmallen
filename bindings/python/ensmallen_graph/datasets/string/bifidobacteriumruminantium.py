@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:40.279655
 
-The undirected graph Bifidobacterium ruminantium has 1819 nodes and 112147 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06783
-and has 10 connected components, where the component with most nodes has 1785 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 123.31, and the node degree mode is 3. The top 5
-most central nodes are 78346.BRUM_1821 (degree 807), 78346.BRUM_0653 (degree 794),
-78346.BRUM_0886 (degree 773), 78346.BRUM_1356 (degree 729) and 78346.BRUM_0893 (degree
-638).
+The undirected graph Bifidobacterium ruminantium has 1819 nodes and 112147
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06783 and has 10 connected components, where the component
+with most nodes has 1785 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 123.31,
+and the node degree mode is 3. The top 5 most central nodes are 78346.BRUM_1821
+(degree 807), 78346.BRUM_0653 (degree 794), 78346.BRUM_0886 (degree 773),
+78346.BRUM_1356 (degree 729) and 78346.BRUM_0893 (degree 638).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumRuminantium(
 	
 	Datetime: 2021-02-02 18:33:40.279655
 	
-	The undirected graph Bifidobacterium ruminantium has 1819 nodes and 112147 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06783
-	and has 10 connected components, where the component with most nodes has 1785 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 123.31, and the node degree mode is 3. The top 5
-	most central nodes are 78346.BRUM_1821 (degree 807), 78346.BRUM_0653 (degree 794),
-	78346.BRUM_0886 (degree 773), 78346.BRUM_1356 (degree 729) and 78346.BRUM_0893 (degree
-	638).
+	The undirected graph Bifidobacterium ruminantium has 1819 nodes and 112147
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06783 and has 10 connected components, where the component
+	with most nodes has 1785 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 123.31,
+	and the node degree mode is 3. The top 5 most central nodes are 78346.BRUM_1821
+	(degree 807), 78346.BRUM_0653 (degree 794), 78346.BRUM_0886 (degree 773),
+	78346.BRUM_1356 (degree 729) and 78346.BRUM_0893 (degree 638).
 	
 
 

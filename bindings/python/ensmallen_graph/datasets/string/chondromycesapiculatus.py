@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:56.713115
 
-The undirected graph Chondromyces apiculatus has 8755 nodes and 830129 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02166 and
-has 125 connected components, where the component with most nodes has 8411 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 189.64, and the node degree mode is 3. The top 5
-most central nodes are 1192034.CAP_5693 (degree 3251), 1192034.CAP_3726 (degree 2169),
-1192034.CAP_4898 (degree 1962), 1192034.CAP_3789 (degree 1950) and 1192034.CAP_5125
-(degree 1909).
+The undirected graph Chondromyces apiculatus has 8755 nodes and 830129
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02166 and has 125 connected components, where the component
+with most nodes has 8411 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 189.64,
+and the node degree mode is 3. The top 5 most central nodes are 1192034.CAP_5693
+(degree 3251), 1192034.CAP_3726 (degree 2169), 1192034.CAP_4898 (degree
+1962), 1192034.CAP_3789 (degree 1950) and 1192034.CAP_5125 (degree 1909).
 
 
 References
@@ -107,14 +107,14 @@ def ChondromycesApiculatus(
 	
 	Datetime: 2021-02-02 23:11:56.713115
 	
-	The undirected graph Chondromyces apiculatus has 8755 nodes and 830129 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02166 and
-	has 125 connected components, where the component with most nodes has 8411 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 189.64, and the node degree mode is 3. The top 5
-	most central nodes are 1192034.CAP_5693 (degree 3251), 1192034.CAP_3726 (degree 2169),
-	1192034.CAP_4898 (degree 1962), 1192034.CAP_3789 (degree 1950) and 1192034.CAP_5125
-	(degree 1909).
+	The undirected graph Chondromyces apiculatus has 8755 nodes and 830129
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02166 and has 125 connected components, where the component
+	with most nodes has 8411 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 189.64,
+	and the node degree mode is 3. The top 5 most central nodes are 1192034.CAP_5693
+	(degree 3251), 1192034.CAP_3726 (degree 2169), 1192034.CAP_4898 (degree
+	1962), 1192034.CAP_3789 (degree 1950) and 1192034.CAP_5125 (degree 1909).
 	
 
 

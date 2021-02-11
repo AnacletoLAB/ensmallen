@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:04.997207
 
-The undirected graph Clostridium sp. Maddingley has 5706 nodes and 1139066 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06998
-and has 24 connected components, where the component with most nodes has 5648 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 349, the mean node degree is 399.25, and the node degree mode is 2. The top 5
-most central nodes are 1196322.A370_03667 (degree 2682), 1196322.A370_05821 (degree
-2350), 1196322.A370_00970 (degree 2293), 1196322.A370_02491 (degree 2256) and 1196322.A370_00991
-(degree 2126).
+The undirected graph Clostridium sp. Maddingley has 5706 nodes and 1139066
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06998 and has 24 connected components, where the component
+with most nodes has 5648 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 349, the mean node degree is 399.25,
+and the node degree mode is 2. The top 5 most central nodes are 1196322.A370_03667
+(degree 2682), 1196322.A370_05821 (degree 2350), 1196322.A370_00970 (degree
+2293), 1196322.A370_02491 (degree 2256) and 1196322.A370_00991 (degree
+2126).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Maddingley(
 	
 	Datetime: 2021-02-02 23:13:04.997207
 	
-	The undirected graph Clostridium sp. Maddingley has 5706 nodes and 1139066 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06998
-	and has 24 connected components, where the component with most nodes has 5648 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 349, the mean node degree is 399.25, and the node degree mode is 2. The top 5
-	most central nodes are 1196322.A370_03667 (degree 2682), 1196322.A370_05821 (degree
-	2350), 1196322.A370_00970 (degree 2293), 1196322.A370_02491 (degree 2256) and 1196322.A370_00991
-	(degree 2126).
+	The undirected graph Clostridium sp. Maddingley has 5706 nodes and 1139066
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06998 and has 24 connected components, where the component
+	with most nodes has 5648 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 349, the mean node degree is 399.25,
+	and the node degree mode is 2. The top 5 most central nodes are 1196322.A370_03667
+	(degree 2682), 1196322.A370_05821 (degree 2350), 1196322.A370_00970 (degree
+	2293), 1196322.A370_02491 (degree 2256) and 1196322.A370_00991 (degree
+	2126).
 	
 
 

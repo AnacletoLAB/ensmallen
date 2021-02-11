@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:49.207368
 
-The undirected graph Streptococcus downei has 2177 nodes and 129830 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05481 and
-has 11 connected components, where the component with most nodes has 2148 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 119.27, and the node degree mode is 3. The top 5 most central
-nodes are 904293.HMPREF9176_0091 (degree 821), 904293.HMPREF9176_0938 (degree 790),
-904293.HMPREF9176_0041 (degree 697), 904293.HMPREF9176_2040 (degree 676) and 904293.HMPREF9176_0819
+The undirected graph Streptococcus downei has 2177 nodes and 129830 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05481 and has 11 connected components, where the component with most
+nodes has 2148 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 119.27, and
+the node degree mode is 3. The top 5 most central nodes are 904293.HMPREF9176_0091
+(degree 821), 904293.HMPREF9176_0938 (degree 790), 904293.HMPREF9176_0041
+(degree 697), 904293.HMPREF9176_2040 (degree 676) and 904293.HMPREF9176_0819
 (degree 640).
 
 
@@ -107,13 +108,14 @@ def StreptococcusDownei(
 	
 	Datetime: 2021-02-02 21:53:49.207368
 	
-	The undirected graph Streptococcus downei has 2177 nodes and 129830 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05481 and
-	has 11 connected components, where the component with most nodes has 2148 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 119.27, and the node degree mode is 3. The top 5 most central
-	nodes are 904293.HMPREF9176_0091 (degree 821), 904293.HMPREF9176_0938 (degree 790),
-	904293.HMPREF9176_0041 (degree 697), 904293.HMPREF9176_2040 (degree 676) and 904293.HMPREF9176_0819
+	The undirected graph Streptococcus downei has 2177 nodes and 129830 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05481 and has 11 connected components, where the component with most
+	nodes has 2148 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 119.27, and
+	the node degree mode is 3. The top 5 most central nodes are 904293.HMPREF9176_0091
+	(degree 821), 904293.HMPREF9176_0938 (degree 790), 904293.HMPREF9176_0041
+	(degree 697), 904293.HMPREF9176_2040 (degree 676) and 904293.HMPREF9176_0819
 	(degree 640).
 	
 

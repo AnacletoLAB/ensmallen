@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:56.100714
 
-The undirected graph Streptococcus pneumoniae D39 has 1898 nodes and 149053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08280
-and has 3 connected components, where the component with most nodes has 1894 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 157.06, and the node degree mode is 6. The top 5
-most central nodes are 373153.SPD_0038 (degree 836), 373153.SPD_1274 (degree 700),
-373153.SPD_0689 (degree 662), 373153.SPD_2055 (degree 655) and 373153.SPD_0460 (degree
-594).
+The undirected graph Streptococcus pneumoniae D39 has 1898 nodes and 149053
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08280 and has 3 connected components, where the component
+with most nodes has 1894 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 157.06,
+and the node degree mode is 6. The top 5 most central nodes are 373153.SPD_0038
+(degree 836), 373153.SPD_1274 (degree 700), 373153.SPD_0689 (degree 662),
+373153.SPD_2055 (degree 655) and 373153.SPD_0460 (degree 594).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusPneumoniaeD39(
 	
 	Datetime: 2021-02-02 20:35:56.100714
 	
-	The undirected graph Streptococcus pneumoniae D39 has 1898 nodes and 149053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08280
-	and has 3 connected components, where the component with most nodes has 1894 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 157.06, and the node degree mode is 6. The top 5
-	most central nodes are 373153.SPD_0038 (degree 836), 373153.SPD_1274 (degree 700),
-	373153.SPD_0689 (degree 662), 373153.SPD_2055 (degree 655) and 373153.SPD_0460 (degree
-	594).
+	The undirected graph Streptococcus pneumoniae D39 has 1898 nodes and 149053
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08280 and has 3 connected components, where the component
+	with most nodes has 1894 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 157.06,
+	and the node degree mode is 6. The top 5 most central nodes are 373153.SPD_0038
+	(degree 836), 373153.SPD_1274 (degree 700), 373153.SPD_0689 (degree 662),
+	373153.SPD_2055 (degree 655) and 373153.SPD_0460 (degree 594).
 	
 
 

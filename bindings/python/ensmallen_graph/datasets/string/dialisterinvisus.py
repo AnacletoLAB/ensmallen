@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:14.730995
 
-The undirected graph Dialister invisus has 1931 nodes and 123711 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06639 and
-has 14 connected components, where the component with most nodes has 1899 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 128.13, and the node degree mode is 3. The top 5 most central
-nodes are 592028.GCWU000321_00820 (degree 695), 592028.GCWU000321_00672 (degree 622),
-592028.GCWU000321_00848 (degree 606), 592028.GCWU000321_00611 (degree 592) and 592028.GCWU000321_00198
+The undirected graph Dialister invisus has 1931 nodes and 123711 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06639 and has 14 connected components, where the component with most
+nodes has 1899 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 128.13, and
+the node degree mode is 3. The top 5 most central nodes are 592028.GCWU000321_00820
+(degree 695), 592028.GCWU000321_00672 (degree 622), 592028.GCWU000321_00848
+(degree 606), 592028.GCWU000321_00611 (degree 592) and 592028.GCWU000321_00198
 (degree 567).
 
 
@@ -107,13 +108,14 @@ def DialisterInvisus(
 	
 	Datetime: 2021-02-02 21:18:14.730995
 	
-	The undirected graph Dialister invisus has 1931 nodes and 123711 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06639 and
-	has 14 connected components, where the component with most nodes has 1899 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 128.13, and the node degree mode is 3. The top 5 most central
-	nodes are 592028.GCWU000321_00820 (degree 695), 592028.GCWU000321_00672 (degree 622),
-	592028.GCWU000321_00848 (degree 606), 592028.GCWU000321_00611 (degree 592) and 592028.GCWU000321_00198
+	The undirected graph Dialister invisus has 1931 nodes and 123711 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06639 and has 14 connected components, where the component with most
+	nodes has 1899 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 128.13, and
+	the node degree mode is 3. The top 5 most central nodes are 592028.GCWU000321_00820
+	(degree 695), 592028.GCWU000321_00672 (degree 622), 592028.GCWU000321_00848
+	(degree 606), 592028.GCWU000321_00611 (degree 592) and 592028.GCWU000321_00198
 	(degree 567).
 	
 

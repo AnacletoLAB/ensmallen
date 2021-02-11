@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:39.486534
 
-The undirected graph Chrysiogenes arsenatis has 2454 nodes and 245837 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08168 and
-has 9 connected components, where the component with most nodes has 2432 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 200.36, and the node degree mode is 10. The top 5 most central
-nodes are 118005.AWNK01000001_gene1847 (degree 1148), 118005.AWNK01000011_gene138
-(degree 1000), 118005.AWNK01000009_gene198 (degree 999), 118005.AWNK01000009_gene252
-(degree 984) and 118005.AWNK01000001_gene1862 (degree 931).
+The undirected graph Chrysiogenes arsenatis has 2454 nodes and 245837 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08168 and has 9 connected components, where the component with most
+nodes has 2432 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 200.36, and
+the node degree mode is 10. The top 5 most central nodes are 118005.AWNK01000001_gene1847
+(degree 1148), 118005.AWNK01000011_gene138 (degree 1000), 118005.AWNK01000009_gene198
+(degree 999), 118005.AWNK01000009_gene252 (degree 984) and 118005.AWNK01000001_gene1862
+(degree 931).
 
 
 References
@@ -107,14 +108,15 @@ def ChrysiogenesArsenatis(
 	
 	Datetime: 2021-02-02 19:47:39.486534
 	
-	The undirected graph Chrysiogenes arsenatis has 2454 nodes and 245837 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08168 and
-	has 9 connected components, where the component with most nodes has 2432 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 200.36, and the node degree mode is 10. The top 5 most central
-	nodes are 118005.AWNK01000001_gene1847 (degree 1148), 118005.AWNK01000011_gene138
-	(degree 1000), 118005.AWNK01000009_gene198 (degree 999), 118005.AWNK01000009_gene252
-	(degree 984) and 118005.AWNK01000001_gene1862 (degree 931).
+	The undirected graph Chrysiogenes arsenatis has 2454 nodes and 245837 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08168 and has 9 connected components, where the component with most
+	nodes has 2432 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 200.36, and
+	the node degree mode is 10. The top 5 most central nodes are 118005.AWNK01000001_gene1847
+	(degree 1148), 118005.AWNK01000011_gene138 (degree 1000), 118005.AWNK01000009_gene198
+	(degree 999), 118005.AWNK01000009_gene252 (degree 984) and 118005.AWNK01000001_gene1862
+	(degree 931).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:29.065424
 
-The undirected graph Bordetella petrii has 5017 nodes and 511349 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04064 and
-has 7 connected components, where the component with most nodes has 5005 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 203.85, and the node degree mode is 3. The top 5 most central
-nodes are 94624.Bpet3126 (degree 1837), 94624.Bpet3930 (degree 1421), 94624.Bpet0467
-(degree 1379), 94624.Bpet0153 (degree 1374) and 94624.Bpet2085 (degree 1324).
+The undirected graph Bordetella petrii has 5017 nodes and 511349 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04064 and has 7 connected components, where the component with most
+nodes has 5005 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 203.85, and
+the node degree mode is 3. The top 5 most central nodes are 94624.Bpet3126
+(degree 1837), 94624.Bpet3930 (degree 1421), 94624.Bpet0467 (degree 1379),
+94624.Bpet0153 (degree 1374) and 94624.Bpet2085 (degree 1324).
 
 
 References
@@ -106,13 +107,14 @@ def BordetellaPetrii(
 	
 	Datetime: 2021-02-02 19:41:29.065424
 	
-	The undirected graph Bordetella petrii has 5017 nodes and 511349 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04064 and
-	has 7 connected components, where the component with most nodes has 5005 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 203.85, and the node degree mode is 3. The top 5 most central
-	nodes are 94624.Bpet3126 (degree 1837), 94624.Bpet3930 (degree 1421), 94624.Bpet0467
-	(degree 1379), 94624.Bpet0153 (degree 1374) and 94624.Bpet2085 (degree 1324).
+	The undirected graph Bordetella petrii has 5017 nodes and 511349 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04064 and has 7 connected components, where the component with most
+	nodes has 5005 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 203.85, and
+	the node degree mode is 3. The top 5 most central nodes are 94624.Bpet3126
+	(degree 1837), 94624.Bpet3930 (degree 1421), 94624.Bpet0467 (degree 1379),
+	94624.Bpet0153 (degree 1374) and 94624.Bpet2085 (degree 1324).
 	
 
 

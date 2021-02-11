@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:42.890266
 
-The undirected graph Clostridium viride has 2077 nodes and 129660 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06014 and
-has 6 connected components, where the component with most nodes has 2066 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 124.85, and the node degree mode is 1. The top 5 most central
-nodes are 1121344.JHZO01000005_gene227 (degree 899), 1121344.JHZO01000004_gene1711
-(degree 798), 1121344.JHZO01000003_gene697 (degree 657), 1121344.JHZO01000006_gene1981
-(degree 652) and 1121344.JHZO01000004_gene1459 (degree 645).
+The undirected graph Clostridium viride has 2077 nodes and 129660 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06014 and has 6 connected components, where the component with most
+nodes has 2066 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 124.85, and
+the node degree mode is 1. The top 5 most central nodes are 1121344.JHZO01000005_gene227
+(degree 899), 1121344.JHZO01000004_gene1711 (degree 798), 1121344.JHZO01000003_gene697
+(degree 657), 1121344.JHZO01000006_gene1981 (degree 652) and 1121344.JHZO01000004_gene1459
+(degree 645).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumViride(
 	
 	Datetime: 2021-02-02 22:34:42.890266
 	
-	The undirected graph Clostridium viride has 2077 nodes and 129660 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06014 and
-	has 6 connected components, where the component with most nodes has 2066 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 124.85, and the node degree mode is 1. The top 5 most central
-	nodes are 1121344.JHZO01000005_gene227 (degree 899), 1121344.JHZO01000004_gene1711
-	(degree 798), 1121344.JHZO01000003_gene697 (degree 657), 1121344.JHZO01000006_gene1981
-	(degree 652) and 1121344.JHZO01000004_gene1459 (degree 645).
+	The undirected graph Clostridium viride has 2077 nodes and 129660 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06014 and has 6 connected components, where the component with most
+	nodes has 2066 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 124.85, and
+	the node degree mode is 1. The top 5 most central nodes are 1121344.JHZO01000005_gene227
+	(degree 899), 1121344.JHZO01000004_gene1711 (degree 798), 1121344.JHZO01000003_gene697
+	(degree 657), 1121344.JHZO01000006_gene1981 (degree 652) and 1121344.JHZO01000004_gene1459
+	(degree 645).
 	
 
 

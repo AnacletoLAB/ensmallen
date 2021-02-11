@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:58.895846
 
-The undirected graph Acinetobacter lwoffii SH145 has 2961 nodes and 253471 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05784
-and has 11 connected components, where the component with most nodes has 2939 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 144, the mean node degree is 171.21, and the node degree mode is 1. The top 5
-most central nodes are 575588.ACPN01000001_gene1322 (degree 1077), 575588.ACPN01000099_gene436
-(degree 959), 575588.ACPN01000121_gene2656 (degree 950), 575588.ACPN01000087_gene974
-(degree 933) and 575588.ACPN01000121_gene2636 (degree 902).
+The undirected graph Acinetobacter lwoffii SH145 has 2961 nodes and 253471
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05784 and has 11 connected components, where the component
+with most nodes has 2939 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 171.21,
+and the node degree mode is 1. The top 5 most central nodes are 575588.ACPN01000001_gene1322
+(degree 1077), 575588.ACPN01000099_gene436 (degree 959), 575588.ACPN01000121_gene2656
+(degree 950), 575588.ACPN01000087_gene974 (degree 933) and 575588.ACPN01000121_gene2636
+(degree 902).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterLwoffiiSh145(
 	
 	Datetime: 2021-02-02 21:14:58.895846
 	
-	The undirected graph Acinetobacter lwoffii SH145 has 2961 nodes and 253471 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05784
-	and has 11 connected components, where the component with most nodes has 2939 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 144, the mean node degree is 171.21, and the node degree mode is 1. The top 5
-	most central nodes are 575588.ACPN01000001_gene1322 (degree 1077), 575588.ACPN01000099_gene436
-	(degree 959), 575588.ACPN01000121_gene2656 (degree 950), 575588.ACPN01000087_gene974
-	(degree 933) and 575588.ACPN01000121_gene2636 (degree 902).
+	The undirected graph Acinetobacter lwoffii SH145 has 2961 nodes and 253471
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05784 and has 11 connected components, where the component
+	with most nodes has 2939 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 171.21,
+	and the node degree mode is 1. The top 5 most central nodes are 575588.ACPN01000001_gene1322
+	(degree 1077), 575588.ACPN01000099_gene436 (degree 959), 575588.ACPN01000121_gene2656
+	(degree 950), 575588.ACPN01000087_gene974 (degree 933) and 575588.ACPN01000121_gene2636
+	(degree 902).
 	
 
 

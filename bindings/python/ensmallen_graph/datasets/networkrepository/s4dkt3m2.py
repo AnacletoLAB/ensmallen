@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:18:07.063212
 
-The undirected graph s4dkt3m2 has 90449 nodes and 1921955 unweighted edges, of which
-90449 are self-loops. The graph is quite sparse as it has a density of 0.00046 and
-is connected, as it has a single component. The graph median node degree is 42, the
-mean node degree is 41.50, and the node degree mode is 42. The top 5 most central
-nodes are 89536 (degree 42), 89535 (degree 42), 89534 (degree 42), 89533 (degree
-42) and 89532 (degree 42).
+The undirected graph s4dkt3m2 has 90449 nodes and 1921955 unweighted edges,
+of which 90449 are self-loops. The graph is quite sparse as it has a density
+of 0.00046 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 41.50, and the node degree mode
+is 42. The top 5 most central nodes are 89536 (degree 42), 89535 (degree
+42), 89534 (degree 42), 89533 (degree 42) and 89532 (degree 42).
 
 
 References
@@ -102,12 +102,12 @@ def S4dkt3m2(
 	
 	Datetime: 2021-02-06 12:18:07.063212
 	
-	The undirected graph s4dkt3m2 has 90449 nodes and 1921955 unweighted edges, of which
-	90449 are self-loops. The graph is quite sparse as it has a density of 0.00046 and
-	is connected, as it has a single component. The graph median node degree is 42, the
-	mean node degree is 41.50, and the node degree mode is 42. The top 5 most central
-	nodes are 89536 (degree 42), 89535 (degree 42), 89534 (degree 42), 89533 (degree
-	42) and 89532 (degree 42).
+	The undirected graph s4dkt3m2 has 90449 nodes and 1921955 unweighted edges,
+	of which 90449 are self-loops. The graph is quite sparse as it has a density
+	of 0.00046 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 41.50, and the node degree mode
+	is 42. The top 5 most central nodes are 89536 (degree 42), 89535 (degree
+	42), 89534 (degree 42), 89533 (degree 42) and 89532 (degree 42).
 	
 
 

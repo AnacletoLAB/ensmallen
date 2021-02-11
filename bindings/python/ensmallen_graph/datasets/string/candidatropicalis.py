@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:20.239816
 
-The undirected graph Candida tropicalis has 5137 nodes and 440348 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03338 and
-has 13 connected components, where the component with most nodes has 5113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 171.44, and the node degree mode is 1. The top 5 most central
-nodes are 5482.XP_002551368.1 (degree 1075), 5482.XP_002546551.1 (degree 1052), 5482.XP_002546236.1
-(degree 1050), 5482.XP_002549329.1 (degree 1009) and 5482.XP_002550710.1 (degree
+The undirected graph Candida tropicalis has 5137 nodes and 440348 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03338 and has 13 connected components, where the component with most
+nodes has 5113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 171.44, and
+the node degree mode is 1. The top 5 most central nodes are 5482.XP_002551368.1
+(degree 1075), 5482.XP_002546551.1 (degree 1052), 5482.XP_002546236.1 (degree
+1050), 5482.XP_002549329.1 (degree 1009) and 5482.XP_002550710.1 (degree
 942).
 
 
@@ -107,13 +108,14 @@ def CandidaTropicalis(
 	
 	Datetime: 2021-02-02 17:14:20.239816
 	
-	The undirected graph Candida tropicalis has 5137 nodes and 440348 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03338 and
-	has 13 connected components, where the component with most nodes has 5113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 171.44, and the node degree mode is 1. The top 5 most central
-	nodes are 5482.XP_002551368.1 (degree 1075), 5482.XP_002546551.1 (degree 1052), 5482.XP_002546236.1
-	(degree 1050), 5482.XP_002549329.1 (degree 1009) and 5482.XP_002550710.1 (degree
+	The undirected graph Candida tropicalis has 5137 nodes and 440348 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03338 and has 13 connected components, where the component with most
+	nodes has 5113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 171.44, and
+	the node degree mode is 1. The top 5 most central nodes are 5482.XP_002551368.1
+	(degree 1075), 5482.XP_002546551.1 (degree 1052), 5482.XP_002546236.1 (degree
+	1050), 5482.XP_002549329.1 (degree 1009) and 5482.XP_002550710.1 (degree
 	942).
 	
 

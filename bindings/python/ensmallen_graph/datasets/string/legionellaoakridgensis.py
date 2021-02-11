@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:45.990945
 
-The undirected graph Legionella oakridgensis has 2905 nodes and 177778 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04215 and
-has 20 connected components, where the component with most nodes has 2858 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 122.39, and the node degree mode is 2. The top 5 most central
-nodes are 1268635.Loa_00125 (degree 1067), 1268635.Loa_01051 (degree 813), 1268635.Loa_02302
-(degree 807), 1268635.Loa_01209 (degree 784) and 1268635.Loa_01721 (degree 765).
+The undirected graph Legionella oakridgensis has 2905 nodes and 177778
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04215 and has 20 connected components, where the component
+with most nodes has 2858 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 122.39,
+and the node degree mode is 2. The top 5 most central nodes are 1268635.Loa_00125
+(degree 1067), 1268635.Loa_01051 (degree 813), 1268635.Loa_02302 (degree
+807), 1268635.Loa_01209 (degree 784) and 1268635.Loa_01721 (degree 765).
 
 
 References
@@ -106,13 +107,14 @@ def LegionellaOakridgensis(
 	
 	Datetime: 2021-02-02 23:37:45.990945
 	
-	The undirected graph Legionella oakridgensis has 2905 nodes and 177778 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04215 and
-	has 20 connected components, where the component with most nodes has 2858 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 122.39, and the node degree mode is 2. The top 5 most central
-	nodes are 1268635.Loa_00125 (degree 1067), 1268635.Loa_01051 (degree 813), 1268635.Loa_02302
-	(degree 807), 1268635.Loa_01209 (degree 784) and 1268635.Loa_01721 (degree 765).
+	The undirected graph Legionella oakridgensis has 2905 nodes and 177778
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04215 and has 20 connected components, where the component
+	with most nodes has 2858 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 122.39,
+	and the node degree mode is 2. The top 5 most central nodes are 1268635.Loa_00125
+	(degree 1067), 1268635.Loa_01051 (degree 813), 1268635.Loa_02302 (degree
+	807), 1268635.Loa_01209 (degree 784) and 1268635.Loa_01721 (degree 765).
 	
 
 

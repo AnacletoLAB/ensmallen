@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:05.827952
 
-The undirected graph aa6 has 7292 nodes and 51705 unweighted edges, of which 5 are
-self-loops. The graph is sparse as it has a density of 0.00194 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 14.18, and the node degree mode is 6. The top 5 most central nodes are 251 (degree
-366), 242 (degree 347), 250 (degree 345), 197 (degree 313) and 198 (degree 308).
+The undirected graph aa6 has 7292 nodes and 51705 unweighted edges, of
+which 5 are self-loops. The graph is sparse as it has a density of 0.00194
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 14.18, and the node degree mode is 6. The
+top 5 most central nodes are 251 (degree 366), 242 (degree 347), 250 (degree
+345), 197 (degree 313) and 198 (degree 308).
 
 
 References
@@ -101,11 +102,12 @@ def Aa6(
 	
 	Datetime: 2021-02-06 10:15:05.827952
 	
-	The undirected graph aa6 has 7292 nodes and 51705 unweighted edges, of which 5 are
-	self-loops. The graph is sparse as it has a density of 0.00194 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 14.18, and the node degree mode is 6. The top 5 most central nodes are 251 (degree
-	366), 242 (degree 347), 250 (degree 345), 197 (degree 313) and 198 (degree 308).
+	The undirected graph aa6 has 7292 nodes and 51705 unweighted edges, of
+	which 5 are self-loops. The graph is sparse as it has a density of 0.00194
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 14.18, and the node degree mode is 6. The
+	top 5 most central nodes are 251 (degree 366), 242 (degree 347), 250 (degree
+	345), 197 (degree 313) and 198 (degree 308).
 	
 
 

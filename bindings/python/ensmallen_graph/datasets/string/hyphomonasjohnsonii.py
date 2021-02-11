@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:09:17.315399
 
-The undirected graph Hyphomonas johnsonii has 3424 nodes and 294634 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05028 and
-has 8 connected components, where the component with most nodes has 3408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 172.10, and the node degree mode is 4. The top 5 most central
-nodes are 1280950.HJO_06115 (degree 1140), 1280950.HJO_01990 (degree 1138), 1280950.HJO_02445
-(degree 1132), 1280950.HJO_02910 (degree 1008) and 1280950.HJO_03500 (degree 980).
+The undirected graph Hyphomonas johnsonii has 3424 nodes and 294634 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05028 and has 8 connected components, where the component with most
+nodes has 3408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 172.10, and
+the node degree mode is 4. The top 5 most central nodes are 1280950.HJO_06115
+(degree 1140), 1280950.HJO_01990 (degree 1138), 1280950.HJO_02445 (degree
+1132), 1280950.HJO_02910 (degree 1008) and 1280950.HJO_03500 (degree 980).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasJohnsonii(
 	
 	Datetime: 2021-02-03 21:09:17.315399
 	
-	The undirected graph Hyphomonas johnsonii has 3424 nodes and 294634 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05028 and
-	has 8 connected components, where the component with most nodes has 3408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 172.10, and the node degree mode is 4. The top 5 most central
-	nodes are 1280950.HJO_06115 (degree 1140), 1280950.HJO_01990 (degree 1138), 1280950.HJO_02445
-	(degree 1132), 1280950.HJO_02910 (degree 1008) and 1280950.HJO_03500 (degree 980).
+	The undirected graph Hyphomonas johnsonii has 3424 nodes and 294634 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05028 and has 8 connected components, where the component with most
+	nodes has 3408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 172.10, and
+	the node degree mode is 4. The top 5 most central nodes are 1280950.HJO_06115
+	(degree 1140), 1280950.HJO_01990 (degree 1138), 1280950.HJO_02445 (degree
+	1132), 1280950.HJO_02910 (degree 1008) and 1280950.HJO_03500 (degree 980).
 	
 
 

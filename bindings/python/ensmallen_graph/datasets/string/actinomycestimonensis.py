@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:07.192092
 
-The undirected graph Actinomyces timonensis has 2356 nodes and 168749 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06083 and
-has 9 connected components, where the component with most nodes has 2336 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 143.25, and the node degree mode is 2. The top 5 most central
-nodes are 521393.JH806633_gene1622 (degree 976), 521393.JH806632_gene867 (degree
-830), 521393.JH806632_gene388 (degree 819), 521393.JH806632_gene1135 (degree 787)
-and 521393.JH806633_gene1685 (degree 781).
+The undirected graph Actinomyces timonensis has 2356 nodes and 168749 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06083 and has 9 connected components, where the component with most
+nodes has 2336 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 143.25, and
+the node degree mode is 2. The top 5 most central nodes are 521393.JH806633_gene1622
+(degree 976), 521393.JH806632_gene867 (degree 830), 521393.JH806632_gene388
+(degree 819), 521393.JH806632_gene1135 (degree 787) and 521393.JH806633_gene1685
+(degree 781).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesTimonensis(
 	
 	Datetime: 2021-02-02 21:04:07.192092
 	
-	The undirected graph Actinomyces timonensis has 2356 nodes and 168749 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06083 and
-	has 9 connected components, where the component with most nodes has 2336 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 143.25, and the node degree mode is 2. The top 5 most central
-	nodes are 521393.JH806633_gene1622 (degree 976), 521393.JH806632_gene867 (degree
-	830), 521393.JH806632_gene388 (degree 819), 521393.JH806632_gene1135 (degree 787)
-	and 521393.JH806633_gene1685 (degree 781).
+	The undirected graph Actinomyces timonensis has 2356 nodes and 168749 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06083 and has 9 connected components, where the component with most
+	nodes has 2336 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 143.25, and
+	the node degree mode is 2. The top 5 most central nodes are 521393.JH806633_gene1622
+	(degree 976), 521393.JH806632_gene867 (degree 830), 521393.JH806632_gene388
+	(degree 819), 521393.JH806632_gene1135 (degree 787) and 521393.JH806633_gene1685
+	(degree 781).
 	
 
 

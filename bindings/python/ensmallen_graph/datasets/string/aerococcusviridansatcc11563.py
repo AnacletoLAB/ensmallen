@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:30.965723
 
-The undirected graph Aerococcus viridans ATCC11563 has 1916 nodes and 156198 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08514
-and has 7 connected components, where the component with most nodes has 1898 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 163.05, and the node degree mode is 2. The top 5
-most central nodes are 655812.HMPREF0061_0624 (degree 951), 655812.HMPREF0061_1667
-(degree 761), 655812.HMPREF0061_1347 (degree 729), 655812.HMPREF0061_1271 (degree
-711) and 655812.HMPREF0061_0975 (degree 710).
+The undirected graph Aerococcus viridans ATCC11563 has 1916 nodes and 156198
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08514 and has 7 connected components, where the component
+with most nodes has 1898 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 163.05,
+and the node degree mode is 2. The top 5 most central nodes are 655812.HMPREF0061_0624
+(degree 951), 655812.HMPREF0061_1667 (degree 761), 655812.HMPREF0061_1347
+(degree 729), 655812.HMPREF0061_1271 (degree 711) and 655812.HMPREF0061_0975
+(degree 710).
 
 
 References
@@ -107,14 +108,15 @@ def AerococcusViridansAtcc11563(
 	
 	Datetime: 2021-02-02 21:26:30.965723
 	
-	The undirected graph Aerococcus viridans ATCC11563 has 1916 nodes and 156198 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08514
-	and has 7 connected components, where the component with most nodes has 1898 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 163.05, and the node degree mode is 2. The top 5
-	most central nodes are 655812.HMPREF0061_0624 (degree 951), 655812.HMPREF0061_1667
-	(degree 761), 655812.HMPREF0061_1347 (degree 729), 655812.HMPREF0061_1271 (degree
-	711) and 655812.HMPREF0061_0975 (degree 710).
+	The undirected graph Aerococcus viridans ATCC11563 has 1916 nodes and 156198
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08514 and has 7 connected components, where the component
+	with most nodes has 1898 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 163.05,
+	and the node degree mode is 2. The top 5 most central nodes are 655812.HMPREF0061_0624
+	(degree 951), 655812.HMPREF0061_1667 (degree 761), 655812.HMPREF0061_1347
+	(degree 729), 655812.HMPREF0061_1271 (degree 711) and 655812.HMPREF0061_0975
+	(degree 710).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:02.145957
 
-The undirected graph Bacillus vietnamensis has 4406 nodes and 431546 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04447 and
-has 10 connected components, where the component with most nodes has 4382 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 195.89, and the node degree mode is 2. The top 5 most central
-nodes are 218284.CCDN010000001_gene527 (degree 1399), 218284.CCDN010000012_gene4434
-(degree 1199), 218284.CCDN010000001_gene41 (degree 1184), 218284.CCDN010000002_gene2798
-(degree 1151) and 218284.CCDN010000001_gene734 (degree 1145).
+The undirected graph Bacillus vietnamensis has 4406 nodes and 431546 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04447 and has 10 connected components, where the component with most
+nodes has 4382 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 195.89, and
+the node degree mode is 2. The top 5 most central nodes are 218284.CCDN010000001_gene527
+(degree 1399), 218284.CCDN010000012_gene4434 (degree 1199), 218284.CCDN010000001_gene41
+(degree 1184), 218284.CCDN010000002_gene2798 (degree 1151) and 218284.CCDN010000001_gene734
+(degree 1145).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusVietnamensis(
 	
 	Datetime: 2021-02-02 20:03:02.145957
 	
-	The undirected graph Bacillus vietnamensis has 4406 nodes and 431546 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04447 and
-	has 10 connected components, where the component with most nodes has 4382 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 195.89, and the node degree mode is 2. The top 5 most central
-	nodes are 218284.CCDN010000001_gene527 (degree 1399), 218284.CCDN010000012_gene4434
-	(degree 1199), 218284.CCDN010000001_gene41 (degree 1184), 218284.CCDN010000002_gene2798
-	(degree 1151) and 218284.CCDN010000001_gene734 (degree 1145).
+	The undirected graph Bacillus vietnamensis has 4406 nodes and 431546 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04447 and has 10 connected components, where the component with most
+	nodes has 4382 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 195.89, and
+	the node degree mode is 2. The top 5 most central nodes are 218284.CCDN010000001_gene527
+	(degree 1399), 218284.CCDN010000012_gene4434 (degree 1199), 218284.CCDN010000001_gene41
+	(degree 1184), 218284.CCDN010000002_gene2798 (degree 1151) and 218284.CCDN010000001_gene734
+	(degree 1145).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:38:27.180556
 
-The undirected graph Dechloromonas agitata has 3235 nodes and 342301 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06544 and
-has 11 connected components, where the component with most nodes has 3213 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 211.62, and the node degree mode is 4. The top 5 most central
-nodes are 1304883.KI912532_gene1945 (degree 1614), 1304883.KI912532_gene625 (degree
-1376), 1304883.KI912532_gene1983 (degree 1311), 1304883.KI912532_gene917 (degree
-1118) and 1304883.KI912532_gene2124 (degree 1073).
+The undirected graph Dechloromonas agitata has 3235 nodes and 342301 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06544 and has 11 connected components, where the component with most
+nodes has 3213 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 211.62, and
+the node degree mode is 4. The top 5 most central nodes are 1304883.KI912532_gene1945
+(degree 1614), 1304883.KI912532_gene625 (degree 1376), 1304883.KI912532_gene1983
+(degree 1311), 1304883.KI912532_gene917 (degree 1118) and 1304883.KI912532_gene2124
+(degree 1073).
 
 
 References
@@ -107,14 +108,15 @@ def DechloromonasAgitata(
 	
 	Datetime: 2021-02-03 21:38:27.180556
 	
-	The undirected graph Dechloromonas agitata has 3235 nodes and 342301 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06544 and
-	has 11 connected components, where the component with most nodes has 3213 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 211.62, and the node degree mode is 4. The top 5 most central
-	nodes are 1304883.KI912532_gene1945 (degree 1614), 1304883.KI912532_gene625 (degree
-	1376), 1304883.KI912532_gene1983 (degree 1311), 1304883.KI912532_gene917 (degree
-	1118) and 1304883.KI912532_gene2124 (degree 1073).
+	The undirected graph Dechloromonas agitata has 3235 nodes and 342301 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06544 and has 11 connected components, where the component with most
+	nodes has 3213 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 211.62, and
+	the node degree mode is 4. The top 5 most central nodes are 1304883.KI912532_gene1945
+	(degree 1614), 1304883.KI912532_gene625 (degree 1376), 1304883.KI912532_gene1983
+	(degree 1311), 1304883.KI912532_gene917 (degree 1118) and 1304883.KI912532_gene2124
+	(degree 1073).
 	
 
 

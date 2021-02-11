@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:32:05.516652
 
-The undirected graph Veillonella montpellierensis has 1489 nodes and 99290 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08963
-and has 13 connected components, where the component with most nodes has 1452 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 133.36, and the node degree mode is 2. The top 5
-most central nodes are 1401067.HMPREF0872_01300 (degree 701), 1401067.HMPREF0872_04755
-(degree 668), 1401067.HMPREF0872_07425 (degree 637), 1401067.HMPREF0872_06315 (degree
-624) and 1401067.HMPREF0872_01140 (degree 577).
+The undirected graph Veillonella montpellierensis has 1489 nodes and 99290
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08963 and has 13 connected components, where the component
+with most nodes has 1452 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 133.36,
+and the node degree mode is 2. The top 5 most central nodes are 1401067.HMPREF0872_01300
+(degree 701), 1401067.HMPREF0872_04755 (degree 668), 1401067.HMPREF0872_07425
+(degree 637), 1401067.HMPREF0872_06315 (degree 624) and 1401067.HMPREF0872_01140
+(degree 577).
 
 
 References
@@ -107,14 +108,15 @@ def VeillonellaMontpellierensis(
 	
 	Datetime: 2021-02-03 22:32:05.516652
 	
-	The undirected graph Veillonella montpellierensis has 1489 nodes and 99290 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08963
-	and has 13 connected components, where the component with most nodes has 1452 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 133.36, and the node degree mode is 2. The top 5
-	most central nodes are 1401067.HMPREF0872_01300 (degree 701), 1401067.HMPREF0872_04755
-	(degree 668), 1401067.HMPREF0872_07425 (degree 637), 1401067.HMPREF0872_06315 (degree
-	624) and 1401067.HMPREF0872_01140 (degree 577).
+	The undirected graph Veillonella montpellierensis has 1489 nodes and 99290
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08963 and has 13 connected components, where the component
+	with most nodes has 1452 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 133.36,
+	and the node degree mode is 2. The top 5 most central nodes are 1401067.HMPREF0872_01300
+	(degree 701), 1401067.HMPREF0872_04755 (degree 668), 1401067.HMPREF0872_07425
+	(degree 637), 1401067.HMPREF0872_06315 (degree 624) and 1401067.HMPREF0872_01140
+	(degree 577).
 	
 
 

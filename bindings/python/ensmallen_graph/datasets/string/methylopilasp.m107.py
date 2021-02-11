@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:25.446164
 
-The undirected graph Methylopila sp. M107 has 3940 nodes and 308449 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-has 10 connected components, where the component with most nodes has 3918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 156.57, and the node degree mode is 5. The top 5 most central
-nodes are 1101190.ARWB01000001_gene2258 (degree 1417), 1101190.ARWB01000001_gene1575
-(degree 1069), 1101190.ARWB01000001_gene3246 (degree 988), 1101190.ARWB01000001_gene1099
-(degree 952) and 1101190.ARWB01000001_gene3862 (degree 944).
+The undirected graph Methylopila sp. M107 has 3940 nodes and 308449 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03975 and has 10 connected components, where the component with most
+nodes has 3918 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 156.57, and
+the node degree mode is 5. The top 5 most central nodes are 1101190.ARWB01000001_gene2258
+(degree 1417), 1101190.ARWB01000001_gene1575 (degree 1069), 1101190.ARWB01000001_gene3246
+(degree 988), 1101190.ARWB01000001_gene1099 (degree 952) and 1101190.ARWB01000001_gene3862
+(degree 944).
 
 
 References
@@ -107,14 +108,15 @@ def MethylopilaSp.M107(
 	
 	Datetime: 2021-02-02 22:24:25.446164
 	
-	The undirected graph Methylopila sp. M107 has 3940 nodes and 308449 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-	has 10 connected components, where the component with most nodes has 3918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 156.57, and the node degree mode is 5. The top 5 most central
-	nodes are 1101190.ARWB01000001_gene2258 (degree 1417), 1101190.ARWB01000001_gene1575
-	(degree 1069), 1101190.ARWB01000001_gene3246 (degree 988), 1101190.ARWB01000001_gene1099
-	(degree 952) and 1101190.ARWB01000001_gene3862 (degree 944).
+	The undirected graph Methylopila sp. M107 has 3940 nodes and 308449 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03975 and has 10 connected components, where the component with most
+	nodes has 3918 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 156.57, and
+	the node degree mode is 5. The top 5 most central nodes are 1101190.ARWB01000001_gene2258
+	(degree 1417), 1101190.ARWB01000001_gene1575 (degree 1069), 1101190.ARWB01000001_gene3246
+	(degree 988), 1101190.ARWB01000001_gene1099 (degree 952) and 1101190.ARWB01000001_gene3862
+	(degree 944).
 	
 
 

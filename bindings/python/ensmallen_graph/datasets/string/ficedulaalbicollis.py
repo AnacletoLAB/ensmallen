@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:21:53.055192
 
-The undirected graph Ficedula albicollis has 14410 nodes and 2502554 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02411 and
-has 2 connected components, where the component with most nodes has 14408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 249,
-the mean node degree is 347.34, and the node degree mode is 111. The top 5 most central
-nodes are 59894.ENSFALP00000008345 (degree 3197), 59894.ENSFALP00000002151 (degree
-3112), 59894.ENSFALP00000005013 (degree 3060), 59894.ENSFALP00000008282 (degree 2768)
-and 59894.ENSFALP00000001531 (degree 2726).
+The undirected graph Ficedula albicollis has 14410 nodes and 2502554 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02411 and has 2 connected components, where the component with most
+nodes has 14408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 249, the mean node degree is 347.34, and
+the node degree mode is 111. The top 5 most central nodes are 59894.ENSFALP00000008345
+(degree 3197), 59894.ENSFALP00000002151 (degree 3112), 59894.ENSFALP00000005013
+(degree 3060), 59894.ENSFALP00000008282 (degree 2768) and 59894.ENSFALP00000001531
+(degree 2726).
 
 
 References
@@ -107,14 +108,15 @@ def FicedulaAlbicollis(
 	
 	Datetime: 2021-02-02 18:21:53.055192
 	
-	The undirected graph Ficedula albicollis has 14410 nodes and 2502554 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02411 and
-	has 2 connected components, where the component with most nodes has 14408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 249,
-	the mean node degree is 347.34, and the node degree mode is 111. The top 5 most central
-	nodes are 59894.ENSFALP00000008345 (degree 3197), 59894.ENSFALP00000002151 (degree
-	3112), 59894.ENSFALP00000005013 (degree 3060), 59894.ENSFALP00000008282 (degree 2768)
-	and 59894.ENSFALP00000001531 (degree 2726).
+	The undirected graph Ficedula albicollis has 14410 nodes and 2502554 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02411 and has 2 connected components, where the component with most
+	nodes has 14408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 249, the mean node degree is 347.34, and
+	the node degree mode is 111. The top 5 most central nodes are 59894.ENSFALP00000008345
+	(degree 3197), 59894.ENSFALP00000002151 (degree 3112), 59894.ENSFALP00000005013
+	(degree 3060), 59894.ENSFALP00000008282 (degree 2768) and 59894.ENSFALP00000001531
+	(degree 2726).
 	
 
 

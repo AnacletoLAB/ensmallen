@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:27:23.910920
 
-The undirected graph Theobroma cacao has 20871 nodes and 2756571 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01266 and
-has 7 connected components, where the component with most nodes has 20859 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 264.15, and the node degree mode is 4. The top 5 most central
-nodes are 3641.EOY30704 (degree 5925), 3641.EOY33650 (degree 4181), 3641.EOX97958
-(degree 3998), 3641.EOY07890 (degree 3611) and 3641.EOY30790 (degree 3533).
+The undirected graph Theobroma cacao has 20871 nodes and 2756571 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01266 and has 7 connected components, where the component with most
+nodes has 20859 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 264.15, and
+the node degree mode is 4. The top 5 most central nodes are 3641.EOY30704
+(degree 5925), 3641.EOY33650 (degree 4181), 3641.EOX97958 (degree 3998),
+3641.EOY07890 (degree 3611) and 3641.EOY30790 (degree 3533).
 
 
 References
@@ -106,13 +107,14 @@ def TheobromaCacao(
 	
 	Datetime: 2021-02-02 16:27:23.910920
 	
-	The undirected graph Theobroma cacao has 20871 nodes and 2756571 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01266 and
-	has 7 connected components, where the component with most nodes has 20859 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 264.15, and the node degree mode is 4. The top 5 most central
-	nodes are 3641.EOY30704 (degree 5925), 3641.EOY33650 (degree 4181), 3641.EOX97958
-	(degree 3998), 3641.EOY07890 (degree 3611) and 3641.EOY30790 (degree 3533).
+	The undirected graph Theobroma cacao has 20871 nodes and 2756571 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01266 and has 7 connected components, where the component with most
+	nodes has 20859 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 264.15, and
+	the node degree mode is 4. The top 5 most central nodes are 3641.EOY30704
+	(degree 5925), 3641.EOY33650 (degree 4181), 3641.EOX97958 (degree 3998),
+	3641.EOY07890 (degree 3611) and 3641.EOY30790 (degree 3533).
 	
 
 

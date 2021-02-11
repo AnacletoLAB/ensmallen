@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:13.954710
 
-The undirected graph Atelocyanobacterium thalassa SIO64986 has 1234 nodes and 124152
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.16319 and has 2 connected components, where the component with most
-nodes has 1232 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 196, the mean node degree is 201.22, and the node degree mode
-is 2. The top 5 most central nodes are 1527444.ucyna2_00076 (degree 823), 1527444.ucyna2_01259
-(degree 683), 1527444.ucyna2_00961 (degree 642), 1527444.ucyna2_01264 (degree 605)
+The undirected graph Atelocyanobacterium thalassa SIO64986 has 1234 nodes
+and 124152 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.16319 and has 2 connected components, where
+the component with most nodes has 1232 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 196, the mean
+node degree is 201.22, and the node degree mode is 2. The top 5 most central
+nodes are 1527444.ucyna2_00076 (degree 823), 1527444.ucyna2_01259 (degree
+683), 1527444.ucyna2_00961 (degree 642), 1527444.ucyna2_01264 (degree 605)
 and 1527444.ucyna2_00777 (degree 600).
 
 
@@ -107,13 +108,14 @@ def AtelocyanobacteriumThalassaSio64986(
 	
 	Datetime: 2021-02-03 23:18:13.954710
 	
-	The undirected graph Atelocyanobacterium thalassa SIO64986 has 1234 nodes and 124152
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.16319 and has 2 connected components, where the component with most
-	nodes has 1232 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 196, the mean node degree is 201.22, and the node degree mode
-	is 2. The top 5 most central nodes are 1527444.ucyna2_00076 (degree 823), 1527444.ucyna2_01259
-	(degree 683), 1527444.ucyna2_00961 (degree 642), 1527444.ucyna2_01264 (degree 605)
+	The undirected graph Atelocyanobacterium thalassa SIO64986 has 1234 nodes
+	and 124152 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.16319 and has 2 connected components, where
+	the component with most nodes has 1232 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 196, the mean
+	node degree is 201.22, and the node degree mode is 2. The top 5 most central
+	nodes are 1527444.ucyna2_00076 (degree 823), 1527444.ucyna2_01259 (degree
+	683), 1527444.ucyna2_00961 (degree 642), 1527444.ucyna2_01264 (degree 605)
 	and 1527444.ucyna2_00777 (degree 600).
 	
 

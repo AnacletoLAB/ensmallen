@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:00.630379
 
-The undirected graph Corynebacterium sp. ATCC6931 has 2090 nodes and 144715 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06629
-and has 8 connected components, where the component with most nodes has 2074 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 138.48, and the node degree mode is 4. The top 5
-most central nodes are 1487956.DR71_1675 (degree 971), 1487956.DR71_199 (degree 925),
-1487956.DR71_450 (degree 680), 1487956.DR71_2180 (degree 664) and 1487956.DR71_1510
-(degree 659).
+The undirected graph Corynebacterium sp. ATCC6931 has 2090 nodes and 144715
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06629 and has 8 connected components, where the component
+with most nodes has 2074 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 138.48,
+and the node degree mode is 4. The top 5 most central nodes are 1487956.DR71_1675
+(degree 971), 1487956.DR71_199 (degree 925), 1487956.DR71_450 (degree 680),
+1487956.DR71_2180 (degree 664) and 1487956.DR71_1510 (degree 659).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumSp.Atcc6931(
 	
 	Datetime: 2021-02-03 23:14:00.630379
 	
-	The undirected graph Corynebacterium sp. ATCC6931 has 2090 nodes and 144715 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06629
-	and has 8 connected components, where the component with most nodes has 2074 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 138.48, and the node degree mode is 4. The top 5
-	most central nodes are 1487956.DR71_1675 (degree 971), 1487956.DR71_199 (degree 925),
-	1487956.DR71_450 (degree 680), 1487956.DR71_2180 (degree 664) and 1487956.DR71_1510
-	(degree 659).
+	The undirected graph Corynebacterium sp. ATCC6931 has 2090 nodes and 144715
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06629 and has 8 connected components, where the component
+	with most nodes has 2074 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 138.48,
+	and the node degree mode is 4. The top 5 most central nodes are 1487956.DR71_1675
+	(degree 971), 1487956.DR71_199 (degree 925), 1487956.DR71_450 (degree 680),
+	1487956.DR71_2180 (degree 664) and 1487956.DR71_1510 (degree 659).
 	
 
 

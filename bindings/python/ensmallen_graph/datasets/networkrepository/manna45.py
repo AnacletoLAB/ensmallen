@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:57.254512
 
-The undirected graph MANN-a45 has 1035 nodes and 533115 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.99630
-and is connected, as it has a single component. The graph median node degree is 1031,
-the mean node degree is 1030.17 and the node degree mode is 1031. The top 5 most
-central nodes are 1035 (degree 1031), 1034 (degree 1031), 1033 (degree 1031), 1032
-(degree 1031) and 1031 (degree 1031).
+The undirected graph MANN-a45 has 1035 nodes and 533115 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.99630 and is connected, as it has a single component. The
+graph median node degree is 1031, the mean node degree is 1030.17 and the
+node degree mode is 1031. The top 5 most central nodes are 1035 (degree
+1031), 1034 (degree 1031), 1033 (degree 1031), 1032 (degree 1031) and 1031
+(degree 1031).
 
 
 References
@@ -115,12 +116,13 @@ def MannA45(
 	
 	Datetime: 2021-02-03 22:52:57.254512
 	
-	The undirected graph MANN-a45 has 1035 nodes and 533115 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.99630
-	and is connected, as it has a single component. The graph median node degree is 1031,
-	the mean node degree is 1030.17 and the node degree mode is 1031. The top 5 most
-	central nodes are 1035 (degree 1031), 1034 (degree 1031), 1033 (degree 1031), 1032
-	(degree 1031) and 1031 (degree 1031).
+	The undirected graph MANN-a45 has 1035 nodes and 533115 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.99630 and is connected, as it has a single component. The
+	graph median node degree is 1031, the mean node degree is 1030.17 and the
+	node degree mode is 1031. The top 5 most central nodes are 1035 (degree
+	1031), 1034 (degree 1031), 1033 (degree 1031), 1032 (degree 1031) and 1031
+	(degree 1031).
 	
 
 

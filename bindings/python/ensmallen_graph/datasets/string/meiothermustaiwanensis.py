@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:33.227163
 
-The undirected graph Meiothermus taiwanensis has 2881 nodes and 187590 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04522 and
-has 12 connected components, where the component with most nodes has 2847 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 130.23, and the node degree mode is 4. The top 5 most central
-nodes are 1122222.AXWR01000006_gene2725 (degree 1050), 1122222.AXWR01000001_gene1871
-(degree 902), 1122222.AXWR01000008_gene2452 (degree 902), 1122222.AXWR01000019_gene2673
-(degree 845) and 1122222.AXWR01000012_gene1024 (degree 831).
+The undirected graph Meiothermus taiwanensis has 2881 nodes and 187590
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04522 and has 12 connected components, where the component
+with most nodes has 2847 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 130.23,
+and the node degree mode is 4. The top 5 most central nodes are 1122222.AXWR01000006_gene2725
+(degree 1050), 1122222.AXWR01000001_gene1871 (degree 902), 1122222.AXWR01000008_gene2452
+(degree 902), 1122222.AXWR01000019_gene2673 (degree 845) and 1122222.AXWR01000012_gene1024
+(degree 831).
 
 
 References
@@ -107,14 +108,15 @@ def MeiothermusTaiwanensis(
 	
 	Datetime: 2021-02-02 22:42:33.227163
 	
-	The undirected graph Meiothermus taiwanensis has 2881 nodes and 187590 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04522 and
-	has 12 connected components, where the component with most nodes has 2847 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 130.23, and the node degree mode is 4. The top 5 most central
-	nodes are 1122222.AXWR01000006_gene2725 (degree 1050), 1122222.AXWR01000001_gene1871
-	(degree 902), 1122222.AXWR01000008_gene2452 (degree 902), 1122222.AXWR01000019_gene2673
-	(degree 845) and 1122222.AXWR01000012_gene1024 (degree 831).
+	The undirected graph Meiothermus taiwanensis has 2881 nodes and 187590
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04522 and has 12 connected components, where the component
+	with most nodes has 2847 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 130.23,
+	and the node degree mode is 4. The top 5 most central nodes are 1122222.AXWR01000006_gene2725
+	(degree 1050), 1122222.AXWR01000001_gene1871 (degree 902), 1122222.AXWR01000008_gene2452
+	(degree 902), 1122222.AXWR01000019_gene2673 (degree 845) and 1122222.AXWR01000012_gene1024
+	(degree 831).
 	
 
 

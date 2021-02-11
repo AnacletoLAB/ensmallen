@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:14.011539
 
-The undirected graph socfb-Indiana has 29732 nodes and 1305757 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00295
-and is connected, as it has a single component. The graph median node degree is 67,
-the mean node degree is 87.84, and the node degree mode is 1. The top 5 most central
-nodes are 17527 (degree 1358), 20151 (degree 1165), 9617 (degree 1129), 5705 (degree
-1056) and 26793 (degree 1024).
+The undirected graph socfb-Indiana has 29732 nodes and 1305757 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00295 and is connected, as it has a single component. The graph median
+node degree is 67, the mean node degree is 87.84, and the node degree mode
+is 1. The top 5 most central nodes are 17527 (degree 1358), 20151 (degree
+1165), 9617 (degree 1129), 5705 (degree 1056) and 26793 (degree 1024).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbIndiana(
 	
 	Datetime: 2021-02-06 12:31:14.011539
 	
-	The undirected graph socfb-Indiana has 29732 nodes and 1305757 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00295
-	and is connected, as it has a single component. The graph median node degree is 67,
-	the mean node degree is 87.84, and the node degree mode is 1. The top 5 most central
-	nodes are 17527 (degree 1358), 20151 (degree 1165), 9617 (degree 1129), 5705 (degree
-	1056) and 26793 (degree 1024).
+	The undirected graph socfb-Indiana has 29732 nodes and 1305757 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00295 and is connected, as it has a single component. The graph median
+	node degree is 67, the mean node degree is 87.84, and the node degree mode
+	is 1. The top 5 most central nodes are 17527 (degree 1358), 20151 (degree
+	1165), 9617 (degree 1129), 5705 (degree 1056) and 26793 (degree 1024).
 	
 
 

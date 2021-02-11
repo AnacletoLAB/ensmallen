@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:39.852156
 
-The undirected graph Pontibacillus halophilus has 3533 nodes and 313577 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05026
-and has 14 connected components, where the component with most nodes has 3503 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 177.51, and the node degree mode is 2. The top 5
-most central nodes are 1385510.N781_10060 (degree 1250), 1385510.N781_11125 (degree
-1031), 1385510.N781_00140 (degree 996), 1385510.N781_12460 (degree 967) and 1385510.N781_01025
-(degree 892).
+The undirected graph Pontibacillus halophilus has 3533 nodes and 313577
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05026 and has 14 connected components, where the component
+with most nodes has 3503 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 177.51,
+and the node degree mode is 2. The top 5 most central nodes are 1385510.N781_10060
+(degree 1250), 1385510.N781_11125 (degree 1031), 1385510.N781_00140 (degree
+996), 1385510.N781_12460 (degree 967) and 1385510.N781_01025 (degree 892).
 
 
 References
@@ -107,14 +107,14 @@ def PontibacillusHalophilus(
 	
 	Datetime: 2021-02-03 22:19:39.852156
 	
-	The undirected graph Pontibacillus halophilus has 3533 nodes and 313577 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05026
-	and has 14 connected components, where the component with most nodes has 3503 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 177.51, and the node degree mode is 2. The top 5
-	most central nodes are 1385510.N781_10060 (degree 1250), 1385510.N781_11125 (degree
-	1031), 1385510.N781_00140 (degree 996), 1385510.N781_12460 (degree 967) and 1385510.N781_01025
-	(degree 892).
+	The undirected graph Pontibacillus halophilus has 3533 nodes and 313577
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05026 and has 14 connected components, where the component
+	with most nodes has 3503 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 177.51,
+	and the node degree mode is 2. The top 5 most central nodes are 1385510.N781_10060
+	(degree 1250), 1385510.N781_11125 (degree 1031), 1385510.N781_00140 (degree
+	996), 1385510.N781_12460 (degree 967) and 1385510.N781_01025 (degree 892).
 	
 
 

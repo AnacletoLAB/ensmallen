@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:45.774740
 
-The undirected graph Rhodopseudomonas palustris CGA009 has 4785 nodes and 760055
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06641 and has 16 connected components, where the component with most nodes has
-4749 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 279, the mean node degree is 317.68, and the node degree mode is 2. The
-top 5 most central nodes are 258594.RPA3339 (degree 2476), 258594.RPA4721 (degree
-2008), 258594.RPA4723 (degree 1967), 258594.RPA3634 (degree 1916) and 258594.RPA0853
-(degree 1689).
+The undirected graph Rhodopseudomonas palustris CGA009 has 4785 nodes and
+760055 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06641 and has 16 connected components, where the
+component with most nodes has 4749 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 279, the mean node degree
+is 317.68, and the node degree mode is 2. The top 5 most central nodes
+are 258594.RPA3339 (degree 2476), 258594.RPA4721 (degree 2008), 258594.RPA4723
+(degree 1967), 258594.RPA3634 (degree 1916) and 258594.RPA0853 (degree
+1689).
 
 
 References
@@ -107,14 +108,15 @@ def RhodopseudomonasPalustrisCga009(
 	
 	Datetime: 2021-02-02 20:12:45.774740
 	
-	The undirected graph Rhodopseudomonas palustris CGA009 has 4785 nodes and 760055
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06641 and has 16 connected components, where the component with most nodes has
-	4749 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 279, the mean node degree is 317.68, and the node degree mode is 2. The
-	top 5 most central nodes are 258594.RPA3339 (degree 2476), 258594.RPA4721 (degree
-	2008), 258594.RPA4723 (degree 1967), 258594.RPA3634 (degree 1916) and 258594.RPA0853
-	(degree 1689).
+	The undirected graph Rhodopseudomonas palustris CGA009 has 4785 nodes and
+	760055 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06641 and has 16 connected components, where the
+	component with most nodes has 4749 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 279, the mean node degree
+	is 317.68, and the node degree mode is 2. The top 5 most central nodes
+	are 258594.RPA3339 (degree 2476), 258594.RPA4721 (degree 2008), 258594.RPA4723
+	(degree 1967), 258594.RPA3634 (degree 1916) and 258594.RPA0853 (degree
+	1689).
 	
 
 

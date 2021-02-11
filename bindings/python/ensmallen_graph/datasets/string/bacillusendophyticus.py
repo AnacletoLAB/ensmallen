@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:47.723677
 
-The undirected graph Bacillus endophyticus has 5000 nodes and 451798 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03615 and
-has 25 connected components, where the component with most nodes has 4945 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 180.72, and the node degree mode is 1. The top 5 most central
-nodes are 1196029.ALIM01000014_gene2695 (degree 1821), 1196029.ALIM01000023_gene185
-(degree 1415), 1196029.ALIM01000014_gene2894 (degree 1311), 1196029.ALIM01000014_gene3582
-(degree 1292) and 1196029.ALIM01000023_gene256 (degree 1271).
+The undirected graph Bacillus endophyticus has 5000 nodes and 451798 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03615 and has 25 connected components, where the component with most
+nodes has 4945 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 180.72, and
+the node degree mode is 1. The top 5 most central nodes are 1196029.ALIM01000014_gene2695
+(degree 1821), 1196029.ALIM01000023_gene185 (degree 1415), 1196029.ALIM01000014_gene2894
+(degree 1311), 1196029.ALIM01000014_gene3582 (degree 1292) and 1196029.ALIM01000023_gene256
+(degree 1271).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusEndophyticus(
 	
 	Datetime: 2021-02-02 23:12:47.723677
 	
-	The undirected graph Bacillus endophyticus has 5000 nodes and 451798 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03615 and
-	has 25 connected components, where the component with most nodes has 4945 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 180.72, and the node degree mode is 1. The top 5 most central
-	nodes are 1196029.ALIM01000014_gene2695 (degree 1821), 1196029.ALIM01000023_gene185
-	(degree 1415), 1196029.ALIM01000014_gene2894 (degree 1311), 1196029.ALIM01000014_gene3582
-	(degree 1292) and 1196029.ALIM01000023_gene256 (degree 1271).
+	The undirected graph Bacillus endophyticus has 5000 nodes and 451798 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03615 and has 25 connected components, where the component with most
+	nodes has 4945 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 180.72, and
+	the node degree mode is 1. The top 5 most central nodes are 1196029.ALIM01000014_gene2695
+	(degree 1821), 1196029.ALIM01000023_gene185 (degree 1415), 1196029.ALIM01000014_gene2894
+	(degree 1311), 1196029.ALIM01000014_gene3582 (degree 1292) and 1196029.ALIM01000023_gene256
+	(degree 1271).
 	
 
 

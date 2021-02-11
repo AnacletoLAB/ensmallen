@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:14.487647
 
-The undirected graph Oscillatoria nigroviridis has 5717 nodes and 776553 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04753
-and has 19 connected components, where the component with most nodes has 5679 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 271.66, and the node degree mode is 2. The top 5
-most central nodes are 179408.Osc7112_4292 (degree 1806), 179408.Osc7112_3862 (degree
-1794), 179408.Osc7112_4598 (degree 1689), 179408.Osc7112_4909 (degree 1687) and 179408.Osc7112_1306
-(degree 1672).
+The undirected graph Oscillatoria nigroviridis has 5717 nodes and 776553
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04753 and has 19 connected components, where the component
+with most nodes has 5679 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 248, the mean node degree is 271.66,
+and the node degree mode is 2. The top 5 most central nodes are 179408.Osc7112_4292
+(degree 1806), 179408.Osc7112_3862 (degree 1794), 179408.Osc7112_4598 (degree
+1689), 179408.Osc7112_4909 (degree 1687) and 179408.Osc7112_1306 (degree
+1672).
 
 
 References
@@ -107,14 +108,15 @@ def OscillatoriaNigroviridis(
 	
 	Datetime: 2021-02-02 19:56:14.487647
 	
-	The undirected graph Oscillatoria nigroviridis has 5717 nodes and 776553 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04753
-	and has 19 connected components, where the component with most nodes has 5679 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 271.66, and the node degree mode is 2. The top 5
-	most central nodes are 179408.Osc7112_4292 (degree 1806), 179408.Osc7112_3862 (degree
-	1794), 179408.Osc7112_4598 (degree 1689), 179408.Osc7112_4909 (degree 1687) and 179408.Osc7112_1306
-	(degree 1672).
+	The undirected graph Oscillatoria nigroviridis has 5717 nodes and 776553
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04753 and has 19 connected components, where the component
+	with most nodes has 5679 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 248, the mean node degree is 271.66,
+	and the node degree mode is 2. The top 5 most central nodes are 179408.Osc7112_4292
+	(degree 1806), 179408.Osc7112_3862 (degree 1794), 179408.Osc7112_4598 (degree
+	1689), 179408.Osc7112_4909 (degree 1687) and 179408.Osc7112_1306 (degree
+	1672).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:31.116665
 
-The undirected graph Mycobacterium vaccae has 5920 nodes and 817925 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04668 and
-has 17 connected components, where the component with most nodes has 5882 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 276.33, and the node degree mode is 2. The top 5 most central
-nodes are 1194972.MVAC_09297 (degree 2464), 1194972.MVAC_01700 (degree 2320), 1194972.MVAC_19953
-(degree 2178), 1194972.MVAC_02309 (degree 1849) and 1194972.MVAC_09826 (degree 1754).
+The undirected graph Mycobacterium vaccae has 5920 nodes and 817925 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04668 and has 17 connected components, where the component with most
+nodes has 5882 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 276.33, and
+the node degree mode is 2. The top 5 most central nodes are 1194972.MVAC_09297
+(degree 2464), 1194972.MVAC_01700 (degree 2320), 1194972.MVAC_19953 (degree
+2178), 1194972.MVAC_02309 (degree 1849) and 1194972.MVAC_09826 (degree
+1754).
 
 
 References
@@ -106,13 +108,15 @@ def MycobacteriumVaccae(
 	
 	Datetime: 2021-02-02 23:12:31.116665
 	
-	The undirected graph Mycobacterium vaccae has 5920 nodes and 817925 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04668 and
-	has 17 connected components, where the component with most nodes has 5882 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 276.33, and the node degree mode is 2. The top 5 most central
-	nodes are 1194972.MVAC_09297 (degree 2464), 1194972.MVAC_01700 (degree 2320), 1194972.MVAC_19953
-	(degree 2178), 1194972.MVAC_02309 (degree 1849) and 1194972.MVAC_09826 (degree 1754).
+	The undirected graph Mycobacterium vaccae has 5920 nodes and 817925 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04668 and has 17 connected components, where the component with most
+	nodes has 5882 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 276.33, and
+	the node degree mode is 2. The top 5 most central nodes are 1194972.MVAC_09297
+	(degree 2464), 1194972.MVAC_01700 (degree 2320), 1194972.MVAC_19953 (degree
+	2178), 1194972.MVAC_02309 (degree 1849) and 1194972.MVAC_09826 (degree
+	1754).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:39.596658
 
-The undirected graph Actinomyces georgiae has 2008 nodes and 142975 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07095 and
-has 14 connected components, where the component with most nodes has 1978 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 142.41, and the node degree mode is 2. The top 5 most central
-nodes are 1120942.AUBM01000004_gene2008 (degree 894), 1120942.AUBM01000006_gene836
-(degree 827), 1120942.AUBM01000008_gene163 (degree 823), 1120942.AUBM01000014_gene226
-(degree 710) and 1120942.AUBM01000009_gene313 (degree 700).
+The undirected graph Actinomyces georgiae has 2008 nodes and 142975 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07095 and has 14 connected components, where the component with most
+nodes has 1978 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 142.41, and
+the node degree mode is 2. The top 5 most central nodes are 1120942.AUBM01000004_gene2008
+(degree 894), 1120942.AUBM01000006_gene836 (degree 827), 1120942.AUBM01000008_gene163
+(degree 823), 1120942.AUBM01000014_gene226 (degree 710) and 1120942.AUBM01000009_gene313
+(degree 700).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesGeorgiae(
 	
 	Datetime: 2021-02-02 22:29:39.596658
 	
-	The undirected graph Actinomyces georgiae has 2008 nodes and 142975 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07095 and
-	has 14 connected components, where the component with most nodes has 1978 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 142.41, and the node degree mode is 2. The top 5 most central
-	nodes are 1120942.AUBM01000004_gene2008 (degree 894), 1120942.AUBM01000006_gene836
-	(degree 827), 1120942.AUBM01000008_gene163 (degree 823), 1120942.AUBM01000014_gene226
-	(degree 710) and 1120942.AUBM01000009_gene313 (degree 700).
+	The undirected graph Actinomyces georgiae has 2008 nodes and 142975 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07095 and has 14 connected components, where the component with most
+	nodes has 1978 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 142.41, and
+	the node degree mode is 2. The top 5 most central nodes are 1120942.AUBM01000004_gene2008
+	(degree 894), 1120942.AUBM01000006_gene836 (degree 827), 1120942.AUBM01000008_gene163
+	(degree 823), 1120942.AUBM01000014_gene226 (degree 710) and 1120942.AUBM01000009_gene313
+	(degree 700).
 	
 
 

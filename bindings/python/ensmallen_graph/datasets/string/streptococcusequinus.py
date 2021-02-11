@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:36.806450
 
-The undirected graph Streptococcus equinus has 1781 nodes and 127515 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08045 and
-has 3 connected components, where the component with most nodes has 1777 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 143.19, and the node degree mode is 7. The top 5 most central
-nodes are 525379.HMPREF0819_1291 (degree 804), 525379.HMPREF0819_1392 (degree 731),
-525379.HMPREF0819_0404 (degree 688), 525379.HMPREF0819_1565 (degree 677) and 525379.HMPREF0819_1004
+The undirected graph Streptococcus equinus has 1781 nodes and 127515 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08045 and has 3 connected components, where the component with most
+nodes has 1777 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 143.19, and
+the node degree mode is 7. The top 5 most central nodes are 525379.HMPREF0819_1291
+(degree 804), 525379.HMPREF0819_1392 (degree 731), 525379.HMPREF0819_0404
+(degree 688), 525379.HMPREF0819_1565 (degree 677) and 525379.HMPREF0819_1004
 (degree 628).
 
 
@@ -107,13 +108,14 @@ def StreptococcusEquinus(
 	
 	Datetime: 2021-02-02 21:05:36.806450
 	
-	The undirected graph Streptococcus equinus has 1781 nodes and 127515 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08045 and
-	has 3 connected components, where the component with most nodes has 1777 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 143.19, and the node degree mode is 7. The top 5 most central
-	nodes are 525379.HMPREF0819_1291 (degree 804), 525379.HMPREF0819_1392 (degree 731),
-	525379.HMPREF0819_0404 (degree 688), 525379.HMPREF0819_1565 (degree 677) and 525379.HMPREF0819_1004
+	The undirected graph Streptococcus equinus has 1781 nodes and 127515 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08045 and has 3 connected components, where the component with most
+	nodes has 1777 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 143.19, and
+	the node degree mode is 7. The top 5 most central nodes are 525379.HMPREF0819_1291
+	(degree 804), 525379.HMPREF0819_1392 (degree 731), 525379.HMPREF0819_0404
+	(degree 688), 525379.HMPREF0819_1565 (degree 677) and 525379.HMPREF0819_1004
 	(degree 628).
 	
 

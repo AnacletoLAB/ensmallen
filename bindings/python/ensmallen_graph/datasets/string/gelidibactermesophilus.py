@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:36.737478
 
-The undirected graph Gelidibacter mesophilus has 3794 nodes and 407168 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05659 and
-has 14 connected components, where the component with most nodes has 3758 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 214.64, and the node degree mode is 2. The top 5 most central
-nodes are 1121912.AUHD01000017_gene3535 (degree 1314), 1121912.AUHD01000006_gene1280
-(degree 1295), 1121912.AUHD01000001_gene2661 (degree 1060), 1121912.AUHD01000016_gene2919
-(degree 935) and 1121912.AUHD01000011_gene755 (degree 913).
+The undirected graph Gelidibacter mesophilus has 3794 nodes and 407168
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05659 and has 14 connected components, where the component
+with most nodes has 3758 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 214.64,
+and the node degree mode is 2. The top 5 most central nodes are 1121912.AUHD01000017_gene3535
+(degree 1314), 1121912.AUHD01000006_gene1280 (degree 1295), 1121912.AUHD01000001_gene2661
+(degree 1060), 1121912.AUHD01000016_gene2919 (degree 935) and 1121912.AUHD01000011_gene755
+(degree 913).
 
 
 References
@@ -107,14 +108,15 @@ def GelidibacterMesophilus(
 	
 	Datetime: 2021-02-02 22:38:36.737478
 	
-	The undirected graph Gelidibacter mesophilus has 3794 nodes and 407168 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05659 and
-	has 14 connected components, where the component with most nodes has 3758 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 214.64, and the node degree mode is 2. The top 5 most central
-	nodes are 1121912.AUHD01000017_gene3535 (degree 1314), 1121912.AUHD01000006_gene1280
-	(degree 1295), 1121912.AUHD01000001_gene2661 (degree 1060), 1121912.AUHD01000016_gene2919
-	(degree 935) and 1121912.AUHD01000011_gene755 (degree 913).
+	The undirected graph Gelidibacter mesophilus has 3794 nodes and 407168
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05659 and has 14 connected components, where the component
+	with most nodes has 3758 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 214.64,
+	and the node degree mode is 2. The top 5 most central nodes are 1121912.AUHD01000017_gene3535
+	(degree 1314), 1121912.AUHD01000006_gene1280 (degree 1295), 1121912.AUHD01000001_gene2661
+	(degree 1060), 1121912.AUHD01000016_gene2919 (degree 935) and 1121912.AUHD01000011_gene755
+	(degree 913).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:59.510302
 
-The undirected graph Pectobacterium wasabiae has 4360 nodes and 344241 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03623 and
-has 23 connected components, where the component with most nodes has 4306 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 157.91, and the node degree mode is 1. The top 5 most central
-nodes are 561231.Pecwa_0933 (degree 1384), 561231.Pecwa_4517 (degree 1339), 561231.Pecwa_3550
-(degree 1198), 561231.Pecwa_0305 (degree 1138) and 561231.Pecwa_0307 (degree 1129).
+The undirected graph Pectobacterium wasabiae has 4360 nodes and 344241
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03623 and has 23 connected components, where the component
+with most nodes has 4306 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 157.91,
+and the node degree mode is 1. The top 5 most central nodes are 561231.Pecwa_0933
+(degree 1384), 561231.Pecwa_4517 (degree 1339), 561231.Pecwa_3550 (degree
+1198), 561231.Pecwa_0305 (degree 1138) and 561231.Pecwa_0307 (degree 1129).
 
 
 References
@@ -106,13 +107,14 @@ def PectobacteriumWasabiae(
 	
 	Datetime: 2021-02-02 21:11:59.510302
 	
-	The undirected graph Pectobacterium wasabiae has 4360 nodes and 344241 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03623 and
-	has 23 connected components, where the component with most nodes has 4306 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 157.91, and the node degree mode is 1. The top 5 most central
-	nodes are 561231.Pecwa_0933 (degree 1384), 561231.Pecwa_4517 (degree 1339), 561231.Pecwa_3550
-	(degree 1198), 561231.Pecwa_0305 (degree 1138) and 561231.Pecwa_0307 (degree 1129).
+	The undirected graph Pectobacterium wasabiae has 4360 nodes and 344241
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03623 and has 23 connected components, where the component
+	with most nodes has 4306 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 157.91,
+	and the node degree mode is 1. The top 5 most central nodes are 561231.Pecwa_0933
+	(degree 1384), 561231.Pecwa_4517 (degree 1339), 561231.Pecwa_3550 (degree
+	1198), 561231.Pecwa_0305 (degree 1138) and 561231.Pecwa_0307 (degree 1129).
 	
 
 

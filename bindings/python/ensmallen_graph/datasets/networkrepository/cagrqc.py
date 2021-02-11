@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:37.791518
 
-The undirected graph ca-GrQc has 4158 nodes and 13422 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00155 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 6.46 and the node degree mode is 2. The top 5 most central nodes are 3348 (degree
-81), 3388 (degree 79), 3614 (degree 77), 1924 (degree 77) and 1554 (degree 68).
+The undirected graph ca-GrQc has 4158 nodes and 13422 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00155 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 6.46 and the node degree mode
+is 2. The top 5 most central nodes are 3348 (degree 81), 3388 (degree 79),
+3614 (degree 77), 1924 (degree 77) and 1554 (degree 68).
 
 
 References
@@ -101,11 +102,12 @@ def CaGrqc(
 	
 	Datetime: 2021-02-03 22:37:37.791518
 	
-	The undirected graph ca-GrQc has 4158 nodes and 13422 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00155 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 6.46 and the node degree mode is 2. The top 5 most central nodes are 3348 (degree
-	81), 3388 (degree 79), 3614 (degree 77), 1924 (degree 77) and 1554 (degree 68).
+	The undirected graph ca-GrQc has 4158 nodes and 13422 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00155 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 6.46 and the node degree mode
+	is 2. The top 5 most central nodes are 3348 (degree 81), 3388 (degree 79),
+	3614 (degree 77), 1924 (degree 77) and 1554 (degree 68).
 	
 
 

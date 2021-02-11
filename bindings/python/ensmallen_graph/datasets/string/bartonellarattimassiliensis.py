@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:55.818259
 
-The undirected graph Bartonella rattimassiliensis has 1671 nodes and 99763 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07150
-and has 10 connected components, where the component with most nodes has 1648 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 119.41, and the node degree mode is 1. The top 5 most
-central nodes are 1094556.MCY_00971 (degree 689), 1094556.MCY_01272 (degree 608),
-1094556.MCY_00372 (degree 552), 1094556.MCY_01269 (degree 536) and 1094556.MCY_01048
-(degree 529).
+The undirected graph Bartonella rattimassiliensis has 1671 nodes and 99763
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07150 and has 10 connected components, where the component
+with most nodes has 1648 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 119.41,
+and the node degree mode is 1. The top 5 most central nodes are 1094556.MCY_00971
+(degree 689), 1094556.MCY_01272 (degree 608), 1094556.MCY_00372 (degree
+552), 1094556.MCY_01269 (degree 536) and 1094556.MCY_01048 (degree 529).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaRattimassiliensis(
 	
 	Datetime: 2021-02-02 22:22:55.818259
 	
-	The undirected graph Bartonella rattimassiliensis has 1671 nodes and 99763 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07150
-	and has 10 connected components, where the component with most nodes has 1648 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 119.41, and the node degree mode is 1. The top 5 most
-	central nodes are 1094556.MCY_00971 (degree 689), 1094556.MCY_01272 (degree 608),
-	1094556.MCY_00372 (degree 552), 1094556.MCY_01269 (degree 536) and 1094556.MCY_01048
-	(degree 529).
+	The undirected graph Bartonella rattimassiliensis has 1671 nodes and 99763
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07150 and has 10 connected components, where the component
+	with most nodes has 1648 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 119.41,
+	and the node degree mode is 1. The top 5 most central nodes are 1094556.MCY_00971
+	(degree 689), 1094556.MCY_01272 (degree 608), 1094556.MCY_00372 (degree
+	552), 1094556.MCY_01269 (degree 536) and 1094556.MCY_01048 (degree 529).
 	
 
 

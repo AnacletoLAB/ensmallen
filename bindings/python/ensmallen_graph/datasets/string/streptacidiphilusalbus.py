@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:41.165389
 
-The undirected graph Streptacidiphilus albus has 8097 nodes and 1753420 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05350
-and has 43 connected components, where the component with most nodes has 7988 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 407, the mean node degree is 433.10, and the node degree mode is 1. The top 5
-most central nodes are 105425.BBPL01000100_gene1218 (degree 2672), 105425.BBPL01000048_gene2867
-(degree 2429), 105425.BBPL01000002_gene6478 (degree 2409), 105425.BBPL01000015_gene2541
-(degree 2264) and 105425.BBPL01000011_gene2083 (degree 2212).
+The undirected graph Streptacidiphilus albus has 8097 nodes and 1753420
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05350 and has 43 connected components, where the component
+with most nodes has 7988 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 407, the mean node degree is 433.10,
+and the node degree mode is 1. The top 5 most central nodes are 105425.BBPL01000100_gene1218
+(degree 2672), 105425.BBPL01000048_gene2867 (degree 2429), 105425.BBPL01000002_gene6478
+(degree 2409), 105425.BBPL01000015_gene2541 (degree 2264) and 105425.BBPL01000011_gene2083
+(degree 2212).
 
 
 References
@@ -107,14 +108,15 @@ def StreptacidiphilusAlbus(
 	
 	Datetime: 2021-02-02 19:44:41.165389
 	
-	The undirected graph Streptacidiphilus albus has 8097 nodes and 1753420 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05350
-	and has 43 connected components, where the component with most nodes has 7988 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 407, the mean node degree is 433.10, and the node degree mode is 1. The top 5
-	most central nodes are 105425.BBPL01000100_gene1218 (degree 2672), 105425.BBPL01000048_gene2867
-	(degree 2429), 105425.BBPL01000002_gene6478 (degree 2409), 105425.BBPL01000015_gene2541
-	(degree 2264) and 105425.BBPL01000011_gene2083 (degree 2212).
+	The undirected graph Streptacidiphilus albus has 8097 nodes and 1753420
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05350 and has 43 connected components, where the component
+	with most nodes has 7988 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 407, the mean node degree is 433.10,
+	and the node degree mode is 1. The top 5 most central nodes are 105425.BBPL01000100_gene1218
+	(degree 2672), 105425.BBPL01000048_gene2867 (degree 2429), 105425.BBPL01000002_gene6478
+	(degree 2409), 105425.BBPL01000015_gene2541 (degree 2264) and 105425.BBPL01000011_gene2083
+	(degree 2212).
 	
 
 

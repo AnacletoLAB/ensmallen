@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:04.512770
 
-The undirected graph Anaerotruncus colihominis has 4359 nodes and 324306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03414
-and has 31 connected components, where the component with most nodes has 4274 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 148.80, and the node degree mode is 2. The top 5
-most central nodes are 445972.ANACOL_02655 (degree 1358), 445972.ANACOL_04268 (degree
-1247), 445972.ANACOL_02159 (degree 1127), 445972.ANACOL_01739 (degree 1020) and 445972.ANACOL_04224
-(degree 1003).
+The undirected graph Anaerotruncus colihominis has 4359 nodes and 324306
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03414 and has 31 connected components, where the component
+with most nodes has 4274 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 148.80,
+and the node degree mode is 2. The top 5 most central nodes are 445972.ANACOL_02655
+(degree 1358), 445972.ANACOL_04268 (degree 1247), 445972.ANACOL_02159 (degree
+1127), 445972.ANACOL_01739 (degree 1020) and 445972.ANACOL_04224 (degree
+1003).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerotruncusColihominis(
 	
 	Datetime: 2021-02-02 20:51:04.512770
 	
-	The undirected graph Anaerotruncus colihominis has 4359 nodes and 324306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03414
-	and has 31 connected components, where the component with most nodes has 4274 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 148.80, and the node degree mode is 2. The top 5
-	most central nodes are 445972.ANACOL_02655 (degree 1358), 445972.ANACOL_04268 (degree
-	1247), 445972.ANACOL_02159 (degree 1127), 445972.ANACOL_01739 (degree 1020) and 445972.ANACOL_04224
-	(degree 1003).
+	The undirected graph Anaerotruncus colihominis has 4359 nodes and 324306
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03414 and has 31 connected components, where the component
+	with most nodes has 4274 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 148.80,
+	and the node degree mode is 2. The top 5 most central nodes are 445972.ANACOL_02655
+	(degree 1358), 445972.ANACOL_04268 (degree 1247), 445972.ANACOL_02159 (degree
+	1127), 445972.ANACOL_01739 (degree 1020) and 445972.ANACOL_04224 (degree
+	1003).
 	
 
 

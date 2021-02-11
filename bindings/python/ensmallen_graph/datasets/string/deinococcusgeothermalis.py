@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:43.304060
 
-The undirected graph Deinococcus geothermalis has 2843 nodes and 262692 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06502
-and has 4 connected components, where the component with most nodes has 2836 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 184.80, and the node degree mode is 4. The top 5
-most central nodes are 319795.Dgeo_1666 (degree 1238), 319795.Dgeo_0598 (degree 964),
-319795.Dgeo_0548 (degree 956), 319795.Dgeo_2076 (degree 855) and 319795.Dgeo_2626
-(degree 846).
+The undirected graph Deinococcus geothermalis has 2843 nodes and 262692
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06502 and has 4 connected components, where the component
+with most nodes has 2836 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 184.80,
+and the node degree mode is 4. The top 5 most central nodes are 319795.Dgeo_1666
+(degree 1238), 319795.Dgeo_0598 (degree 964), 319795.Dgeo_0548 (degree
+956), 319795.Dgeo_2076 (degree 855) and 319795.Dgeo_2626 (degree 846).
 
 
 References
@@ -107,14 +107,14 @@ def DeinococcusGeothermalis(
 	
 	Datetime: 2021-02-02 20:27:43.304060
 	
-	The undirected graph Deinococcus geothermalis has 2843 nodes and 262692 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06502
-	and has 4 connected components, where the component with most nodes has 2836 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 184.80, and the node degree mode is 4. The top 5
-	most central nodes are 319795.Dgeo_1666 (degree 1238), 319795.Dgeo_0598 (degree 964),
-	319795.Dgeo_0548 (degree 956), 319795.Dgeo_2076 (degree 855) and 319795.Dgeo_2626
-	(degree 846).
+	The undirected graph Deinococcus geothermalis has 2843 nodes and 262692
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06502 and has 4 connected components, where the component
+	with most nodes has 2836 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 184.80,
+	and the node degree mode is 4. The top 5 most central nodes are 319795.Dgeo_1666
+	(degree 1238), 319795.Dgeo_0598 (degree 964), 319795.Dgeo_0548 (degree
+	956), 319795.Dgeo_2076 (degree 855) and 319795.Dgeo_2626 (degree 846).
 	
 
 

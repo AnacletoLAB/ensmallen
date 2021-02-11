@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:01.803852
 
-The undirected graph Geobacter lovleyi has 3675 nodes and 321016 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04755 and
-has 12 connected components, where the component with most nodes has 3644 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 174.70, and the node degree mode is 3. The top 5 most central
-nodes are 398767.Glov_2798 (degree 1590), 398767.Glov_0878 (degree 1425), 398767.Glov_1106
-(degree 1315), 398767.Glov_2267 (degree 1270) and 398767.Glov_1900 (degree 1196).
+The undirected graph Geobacter lovleyi has 3675 nodes and 321016 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04755 and has 12 connected components, where the component with most
+nodes has 3644 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 174.70, and
+the node degree mode is 3. The top 5 most central nodes are 398767.Glov_2798
+(degree 1590), 398767.Glov_0878 (degree 1425), 398767.Glov_1106 (degree
+1315), 398767.Glov_2267 (degree 1270) and 398767.Glov_1900 (degree 1196).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacterLovleyi(
 	
 	Datetime: 2021-02-02 20:43:01.803852
 	
-	The undirected graph Geobacter lovleyi has 3675 nodes and 321016 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04755 and
-	has 12 connected components, where the component with most nodes has 3644 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 174.70, and the node degree mode is 3. The top 5 most central
-	nodes are 398767.Glov_2798 (degree 1590), 398767.Glov_0878 (degree 1425), 398767.Glov_1106
-	(degree 1315), 398767.Glov_2267 (degree 1270) and 398767.Glov_1900 (degree 1196).
+	The undirected graph Geobacter lovleyi has 3675 nodes and 321016 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04755 and has 12 connected components, where the component with most
+	nodes has 3644 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 174.70, and
+	the node degree mode is 3. The top 5 most central nodes are 398767.Glov_2798
+	(degree 1590), 398767.Glov_0878 (degree 1425), 398767.Glov_1106 (degree
+	1315), 398767.Glov_2267 (degree 1270) and 398767.Glov_1900 (degree 1196).
 	
 
 

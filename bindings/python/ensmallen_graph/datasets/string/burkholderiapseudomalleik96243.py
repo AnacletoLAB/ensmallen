@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:30.963703
 
-The undirected graph Burkholderia pseudomallei K96243 has 5676 nodes and 814329 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05056
-and has 18 connected components, where the component with most nodes has 5638 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 246, the mean node degree is 286.94, and the node degree mode is 2. The top 5
-most central nodes are 272560.BPSS1770 (degree 2053), 272560.BPSS2328 (degree 1679),
-272560.BPSL3159 (degree 1558), 272560.BPSS0130 (degree 1548) and 272560.BPSS0434
-(degree 1536).
+The undirected graph Burkholderia pseudomallei K96243 has 5676 nodes and
+814329 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05056 and has 18 connected components, where the
+component with most nodes has 5638 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 246, the mean node degree
+is 286.94, and the node degree mode is 2. The top 5 most central nodes
+are 272560.BPSS1770 (degree 2053), 272560.BPSS2328 (degree 1679), 272560.BPSL3159
+(degree 1558), 272560.BPSS0130 (degree 1548) and 272560.BPSS0434 (degree
+1536).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaPseudomalleiK96243(
 	
 	Datetime: 2021-02-02 20:16:30.963703
 	
-	The undirected graph Burkholderia pseudomallei K96243 has 5676 nodes and 814329 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05056
-	and has 18 connected components, where the component with most nodes has 5638 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 246, the mean node degree is 286.94, and the node degree mode is 2. The top 5
-	most central nodes are 272560.BPSS1770 (degree 2053), 272560.BPSS2328 (degree 1679),
-	272560.BPSL3159 (degree 1558), 272560.BPSS0130 (degree 1548) and 272560.BPSS0434
-	(degree 1536).
+	The undirected graph Burkholderia pseudomallei K96243 has 5676 nodes and
+	814329 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05056 and has 18 connected components, where the
+	component with most nodes has 5638 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 246, the mean node degree
+	is 286.94, and the node degree mode is 2. The top 5 most central nodes
+	are 272560.BPSS1770 (degree 2053), 272560.BPSS2328 (degree 1679), 272560.BPSL3159
+	(degree 1558), 272560.BPSS0130 (degree 1548) and 272560.BPSS0434 (degree
+	1536).
 	
 
 

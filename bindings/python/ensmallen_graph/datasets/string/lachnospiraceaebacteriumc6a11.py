@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:42:31.978452
 
-The undirected graph Lachnospiraceae bacterium C6A11 has 2237 nodes and 138430 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05535
-and has 2 connected components, where the component with most nodes has 2235 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 123.76, and the node degree mode is 7. The top 5 most
-central nodes are 1410622.JNKY01000015_gene434 (degree 933), 1410622.JNKY01000017_gene597
+The undirected graph Lachnospiraceae bacterium C6A11 has 2237 nodes and
+138430 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05535 and has 2 connected components, where the
+component with most nodes has 2235 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 99, the mean node degree
+is 123.76, and the node degree mode is 7. The top 5 most central nodes
+are 1410622.JNKY01000015_gene434 (degree 933), 1410622.JNKY01000017_gene597
 (degree 928), 1410622.JNKY01000016_gene753 (degree 809), 1410622.JNKY01000012_gene2002
 (degree 657) and 1410622.JNKY01000017_gene467 (degree 647).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumC6a11(
 	
 	Datetime: 2021-02-03 22:42:31.978452
 	
-	The undirected graph Lachnospiraceae bacterium C6A11 has 2237 nodes and 138430 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05535
-	and has 2 connected components, where the component with most nodes has 2235 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 123.76, and the node degree mode is 7. The top 5 most
-	central nodes are 1410622.JNKY01000015_gene434 (degree 933), 1410622.JNKY01000017_gene597
+	The undirected graph Lachnospiraceae bacterium C6A11 has 2237 nodes and
+	138430 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05535 and has 2 connected components, where the
+	component with most nodes has 2235 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 99, the mean node degree
+	is 123.76, and the node degree mode is 7. The top 5 most central nodes
+	are 1410622.JNKY01000015_gene434 (degree 933), 1410622.JNKY01000017_gene597
 	(degree 928), 1410622.JNKY01000016_gene753 (degree 809), 1410622.JNKY01000012_gene2002
 	(degree 657) and 1410622.JNKY01000017_gene467 (degree 647).
 	

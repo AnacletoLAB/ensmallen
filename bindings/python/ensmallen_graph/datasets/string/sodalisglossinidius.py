@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:34.109041
 
-The undirected graph Sodalis glossinidius has 2378 nodes and 198142 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07011 and
-has 8 connected components, where the component with most nodes has 2364 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 166.65, and the node degree mode is 1. The top 5 most central
-nodes are 343509.SG2235 (degree 912), 343509.SG0508 (degree 871), 343509.SG0970 (degree
-767), 343509.SG1748 (degree 744) and 343509.SG1749 (degree 736).
+The undirected graph Sodalis glossinidius has 2378 nodes and 198142 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07011 and has 8 connected components, where the component with most
+nodes has 2364 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 166.65, and
+the node degree mode is 1. The top 5 most central nodes are 343509.SG2235
+(degree 912), 343509.SG0508 (degree 871), 343509.SG0970 (degree 767), 343509.SG1748
+(degree 744) and 343509.SG1749 (degree 736).
 
 
 References
@@ -106,13 +107,14 @@ def SodalisGlossinidius(
 	
 	Datetime: 2021-02-02 20:31:34.109041
 	
-	The undirected graph Sodalis glossinidius has 2378 nodes and 198142 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07011 and
-	has 8 connected components, where the component with most nodes has 2364 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 166.65, and the node degree mode is 1. The top 5 most central
-	nodes are 343509.SG2235 (degree 912), 343509.SG0508 (degree 871), 343509.SG0970 (degree
-	767), 343509.SG1748 (degree 744) and 343509.SG1749 (degree 736).
+	The undirected graph Sodalis glossinidius has 2378 nodes and 198142 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07011 and has 8 connected components, where the component with most
+	nodes has 2364 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 166.65, and
+	the node degree mode is 1. The top 5 most central nodes are 343509.SG2235
+	(degree 912), 343509.SG0508 (degree 871), 343509.SG0970 (degree 767), 343509.SG1748
+	(degree 744) and 343509.SG1749 (degree 736).
 	
 
 

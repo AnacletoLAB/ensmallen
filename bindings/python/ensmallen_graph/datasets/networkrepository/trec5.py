@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:01:53.769714
 
-The undirected graph Trec5 has 7 nodes and 12 weighted edges, of which 2 are self-loops.
-The graph is extremely dense as it has a density of 0.52381 and is connected, as
-it has a single component. The graph median node degree is 2, the mean node degree
-is 3.14, and the node degree mode is 2. The top 5 most central nodes are 3 (degree
-7), 2 (degree 6), 6 (degree 2), 5 (degree 2) and 4 (degree 2).
+The undirected graph Trec5 has 7 nodes and 12 weighted edges, of which
+2 are self-loops. The graph is extremely dense as it has a density of 0.52381
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 3.14, and the node degree mode is 2. The
+top 5 most central nodes are 3 (degree 7), 2 (degree 6), 6 (degree 2),
+5 (degree 2) and 4 (degree 2).
 
 
 References
@@ -101,11 +102,12 @@ def Trec5(
 	
 	Datetime: 2021-02-06 08:01:53.769714
 	
-	The undirected graph Trec5 has 7 nodes and 12 weighted edges, of which 2 are self-loops.
-	The graph is extremely dense as it has a density of 0.52381 and is connected, as
-	it has a single component. The graph median node degree is 2, the mean node degree
-	is 3.14, and the node degree mode is 2. The top 5 most central nodes are 3 (degree
-	7), 2 (degree 6), 6 (degree 2), 5 (degree 2) and 4 (degree 2).
+	The undirected graph Trec5 has 7 nodes and 12 weighted edges, of which
+	2 are self-loops. The graph is extremely dense as it has a density of 0.52381
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 3.14, and the node degree mode is 2. The
+	top 5 most central nodes are 3 (degree 7), 2 (degree 6), 6 (degree 2),
+	5 (degree 2) and 4 (degree 2).
 	
 
 

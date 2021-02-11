@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:26.854611
 
-The undirected graph Hippea sp. KM1 has 1675 nodes and 122645 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08748 and
-has 3 connected components, where the component with most nodes has 1671 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 146.44, and the node degree mode is 3. The top 5 most central
-nodes are 944481.JAFP01000001_gene1339 (degree 826), 944481.JAFP01000001_gene1642
-(degree 755), 944481.JAFP01000001_gene40 (degree 717), 944481.JAFP01000001_gene61
-(degree 653) and 944481.JAFP01000001_gene1671 (degree 620).
+The undirected graph Hippea sp. KM1 has 1675 nodes and 122645 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08748 and has 3 connected components, where the component with most
+nodes has 1671 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 146.44, and
+the node degree mode is 3. The top 5 most central nodes are 944481.JAFP01000001_gene1339
+(degree 826), 944481.JAFP01000001_gene1642 (degree 755), 944481.JAFP01000001_gene40
+(degree 717), 944481.JAFP01000001_gene61 (degree 653) and 944481.JAFP01000001_gene1671
+(degree 620).
 
 
 References
@@ -107,14 +108,15 @@ def HippeaSp.Km1(
 	
 	Datetime: 2021-02-02 22:01:26.854611
 	
-	The undirected graph Hippea sp. KM1 has 1675 nodes and 122645 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08748 and
-	has 3 connected components, where the component with most nodes has 1671 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 146.44, and the node degree mode is 3. The top 5 most central
-	nodes are 944481.JAFP01000001_gene1339 (degree 826), 944481.JAFP01000001_gene1642
-	(degree 755), 944481.JAFP01000001_gene40 (degree 717), 944481.JAFP01000001_gene61
-	(degree 653) and 944481.JAFP01000001_gene1671 (degree 620).
+	The undirected graph Hippea sp. KM1 has 1675 nodes and 122645 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08748 and has 3 connected components, where the component with most
+	nodes has 1671 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 146.44, and
+	the node degree mode is 3. The top 5 most central nodes are 944481.JAFP01000001_gene1339
+	(degree 826), 944481.JAFP01000001_gene1642 (degree 755), 944481.JAFP01000001_gene40
+	(degree 717), 944481.JAFP01000001_gene61 (degree 653) and 944481.JAFP01000001_gene1671
+	(degree 620).
 	
 
 

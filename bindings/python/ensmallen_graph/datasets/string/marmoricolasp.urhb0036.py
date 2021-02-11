@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:32:20.333437
 
-The undirected graph Marmoricola sp. URHB0036 has 4520 nodes and 423580 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04147
-and has 8 connected components, where the component with most nodes has 4506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 187.42, and the node degree mode is 3. The top 5
-most central nodes are 1298863.AUEP01000001_gene970 (degree 1748), 1298863.AUEP01000014_gene1633
-(degree 1385), 1298863.AUEP01000008_gene1213 (degree 1218), 1298863.AUEP01000009_gene162
-(degree 1115) and 1298863.AUEP01000016_gene4253 (degree 1106).
+The undirected graph Marmoricola sp. URHB0036 has 4520 nodes and 423580
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04147 and has 8 connected components, where the component
+with most nodes has 4506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 187.42,
+and the node degree mode is 3. The top 5 most central nodes are 1298863.AUEP01000001_gene970
+(degree 1748), 1298863.AUEP01000014_gene1633 (degree 1385), 1298863.AUEP01000008_gene1213
+(degree 1218), 1298863.AUEP01000009_gene162 (degree 1115) and 1298863.AUEP01000016_gene4253
+(degree 1106).
 
 
 References
@@ -107,14 +108,15 @@ def MarmoricolaSp.Urhb0036(
 	
 	Datetime: 2021-02-03 21:32:20.333437
 	
-	The undirected graph Marmoricola sp. URHB0036 has 4520 nodes and 423580 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04147
-	and has 8 connected components, where the component with most nodes has 4506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 187.42, and the node degree mode is 3. The top 5
-	most central nodes are 1298863.AUEP01000001_gene970 (degree 1748), 1298863.AUEP01000014_gene1633
-	(degree 1385), 1298863.AUEP01000008_gene1213 (degree 1218), 1298863.AUEP01000009_gene162
-	(degree 1115) and 1298863.AUEP01000016_gene4253 (degree 1106).
+	The undirected graph Marmoricola sp. URHB0036 has 4520 nodes and 423580
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04147 and has 8 connected components, where the component
+	with most nodes has 4506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 187.42,
+	and the node degree mode is 3. The top 5 most central nodes are 1298863.AUEP01000001_gene970
+	(degree 1748), 1298863.AUEP01000014_gene1633 (degree 1385), 1298863.AUEP01000008_gene1213
+	(degree 1218), 1298863.AUEP01000009_gene162 (degree 1115) and 1298863.AUEP01000016_gene4253
+	(degree 1106).
 	
 
 

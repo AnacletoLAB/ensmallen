@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:37.481990
 
-The undirected graph Shuttleworthia sp. MSX8B has 1974 nodes and 119902 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06157
-and has 7 connected components, where the component with most nodes has 1960 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 121.48, and the node degree mode is 7. The top 5 most
-central nodes are 936574.HMPREF1508_1805 (degree 829), 936574.HMPREF1508_1026 (degree
-817), 936574.HMPREF1508_0209 (degree 643), 936574.HMPREF1508_1736 (degree 628) and
-936574.HMPREF1508_1835 (degree 613).
+The undirected graph Shuttleworthia sp. MSX8B has 1974 nodes and 119902
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06157 and has 7 connected components, where the component
+with most nodes has 1960 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 121.48,
+and the node degree mode is 7. The top 5 most central nodes are 936574.HMPREF1508_1805
+(degree 829), 936574.HMPREF1508_1026 (degree 817), 936574.HMPREF1508_0209
+(degree 643), 936574.HMPREF1508_1736 (degree 628) and 936574.HMPREF1508_1835
+(degree 613).
 
 
 References
@@ -107,14 +108,15 @@ def ShuttleworthiaSp.Msx8b(
 	
 	Datetime: 2021-02-02 22:00:37.481990
 	
-	The undirected graph Shuttleworthia sp. MSX8B has 1974 nodes and 119902 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06157
-	and has 7 connected components, where the component with most nodes has 1960 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 121.48, and the node degree mode is 7. The top 5 most
-	central nodes are 936574.HMPREF1508_1805 (degree 829), 936574.HMPREF1508_1026 (degree
-	817), 936574.HMPREF1508_0209 (degree 643), 936574.HMPREF1508_1736 (degree 628) and
-	936574.HMPREF1508_1835 (degree 613).
+	The undirected graph Shuttleworthia sp. MSX8B has 1974 nodes and 119902
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06157 and has 7 connected components, where the component
+	with most nodes has 1960 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 121.48,
+	and the node degree mode is 7. The top 5 most central nodes are 936574.HMPREF1508_1805
+	(degree 829), 936574.HMPREF1508_1026 (degree 817), 936574.HMPREF1508_0209
+	(degree 643), 936574.HMPREF1508_1736 (degree 628) and 936574.HMPREF1508_1835
+	(degree 613).
 	
 
 

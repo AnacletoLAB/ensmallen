@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:12.040666
 
-The undirected graph Paenibacillus peoriae has 4782 nodes and 418656 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03662 and
-has 19 connected components, where the component with most nodes has 4745 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 175.10, and the node degree mode is 1. The top 5 most central
-nodes are 1087481.AGFX01000041_gene715 (degree 1405), 1087481.AGFX01000014_gene2913
-(degree 1305), 1087481.AGFX01000041_gene755 (degree 1256), 1087481.AGFX01000011_gene3959
-(degree 1153) and 1087481.AGFX01000011_gene3723 (degree 1063).
+The undirected graph Paenibacillus peoriae has 4782 nodes and 418656 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03662 and has 19 connected components, where the component with most
+nodes has 4745 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 175.10, and
+the node degree mode is 1. The top 5 most central nodes are 1087481.AGFX01000041_gene715
+(degree 1405), 1087481.AGFX01000014_gene2913 (degree 1305), 1087481.AGFX01000041_gene755
+(degree 1256), 1087481.AGFX01000011_gene3959 (degree 1153) and 1087481.AGFX01000011_gene3723
+(degree 1063).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusPeoriae(
 	
 	Datetime: 2021-02-02 22:21:12.040666
 	
-	The undirected graph Paenibacillus peoriae has 4782 nodes and 418656 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03662 and
-	has 19 connected components, where the component with most nodes has 4745 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 175.10, and the node degree mode is 1. The top 5 most central
-	nodes are 1087481.AGFX01000041_gene715 (degree 1405), 1087481.AGFX01000014_gene2913
-	(degree 1305), 1087481.AGFX01000041_gene755 (degree 1256), 1087481.AGFX01000011_gene3959
-	(degree 1153) and 1087481.AGFX01000011_gene3723 (degree 1063).
+	The undirected graph Paenibacillus peoriae has 4782 nodes and 418656 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03662 and has 19 connected components, where the component with most
+	nodes has 4745 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 175.10, and
+	the node degree mode is 1. The top 5 most central nodes are 1087481.AGFX01000041_gene715
+	(degree 1405), 1087481.AGFX01000014_gene2913 (degree 1305), 1087481.AGFX01000041_gene755
+	(degree 1256), 1087481.AGFX01000011_gene3959 (degree 1153) and 1087481.AGFX01000011_gene3723
+	(degree 1063).
 	
 
 

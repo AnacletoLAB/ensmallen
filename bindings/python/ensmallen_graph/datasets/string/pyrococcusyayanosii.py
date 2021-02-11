@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:20.988514
 
-The undirected graph Pyrococcus yayanosii has 1856 nodes and 114541 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06654 and
-has 16 connected components, where the component with most nodes has 1810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 123.43, and the node degree mode is 4. The top 5 most central
-nodes are 529709.PYCH_00860 (degree 600), 529709.PYCH_17490 (degree 598), 529709.PYCH_06930
-(degree 583), 529709.PYCH_17240 (degree 563) and 529709.PYCH_13930 (degree 543).
+The undirected graph Pyrococcus yayanosii has 1856 nodes and 114541 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06654 and has 16 connected components, where the component with most
+nodes has 1810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 123.43, and
+the node degree mode is 4. The top 5 most central nodes are 529709.PYCH_00860
+(degree 600), 529709.PYCH_17490 (degree 598), 529709.PYCH_06930 (degree
+583), 529709.PYCH_17240 (degree 563) and 529709.PYCH_13930 (degree 543).
 
 
 References
@@ -106,13 +107,14 @@ def PyrococcusYayanosii(
 	
 	Datetime: 2021-02-02 21:06:20.988514
 	
-	The undirected graph Pyrococcus yayanosii has 1856 nodes and 114541 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06654 and
-	has 16 connected components, where the component with most nodes has 1810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 123.43, and the node degree mode is 4. The top 5 most central
-	nodes are 529709.PYCH_00860 (degree 600), 529709.PYCH_17490 (degree 598), 529709.PYCH_06930
-	(degree 583), 529709.PYCH_17240 (degree 563) and 529709.PYCH_13930 (degree 543).
+	The undirected graph Pyrococcus yayanosii has 1856 nodes and 114541 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06654 and has 16 connected components, where the component with most
+	nodes has 1810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 123.43, and
+	the node degree mode is 4. The top 5 most central nodes are 529709.PYCH_00860
+	(degree 600), 529709.PYCH_17490 (degree 598), 529709.PYCH_06930 (degree
+	583), 529709.PYCH_17240 (degree 563) and 529709.PYCH_13930 (degree 543).
 	
 
 

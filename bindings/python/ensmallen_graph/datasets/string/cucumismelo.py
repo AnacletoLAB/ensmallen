@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:28:02.874802
 
-The undirected graph Cucumis melo has 17819 nodes and 2377062 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01497 and
-has 5 connected components, where the component with most nodes has 17811 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 266.80, and the node degree mode is 2. The top 5 most central
-nodes are 3656.XP_008462692.1 (degree 5102), 3656.XP_008460959.1 (degree 4064), 3656.XP_008443576.1
-(degree 3459), 3656.XP_008439056.1 (degree 2990) and 3656.XP_008460755.1 (degree
+The undirected graph Cucumis melo has 17819 nodes and 2377062 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01497 and has 5 connected components, where the component with most
+nodes has 17811 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 266.80, and
+the node degree mode is 2. The top 5 most central nodes are 3656.XP_008462692.1
+(degree 5102), 3656.XP_008460959.1 (degree 4064), 3656.XP_008443576.1 (degree
+3459), 3656.XP_008439056.1 (degree 2990) and 3656.XP_008460755.1 (degree
 2880).
 
 
@@ -107,13 +108,14 @@ def CucumisMelo(
 	
 	Datetime: 2021-02-02 16:28:02.874802
 	
-	The undirected graph Cucumis melo has 17819 nodes and 2377062 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01497 and
-	has 5 connected components, where the component with most nodes has 17811 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 266.80, and the node degree mode is 2. The top 5 most central
-	nodes are 3656.XP_008462692.1 (degree 5102), 3656.XP_008460959.1 (degree 4064), 3656.XP_008443576.1
-	(degree 3459), 3656.XP_008439056.1 (degree 2990) and 3656.XP_008460755.1 (degree
+	The undirected graph Cucumis melo has 17819 nodes and 2377062 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01497 and has 5 connected components, where the component with most
+	nodes has 17811 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 266.80, and
+	the node degree mode is 2. The top 5 most central nodes are 3656.XP_008462692.1
+	(degree 5102), 3656.XP_008460959.1 (degree 4064), 3656.XP_008443576.1 (degree
+	3459), 3656.XP_008439056.1 (degree 2990) and 3656.XP_008460755.1 (degree
 	2880).
 	
 

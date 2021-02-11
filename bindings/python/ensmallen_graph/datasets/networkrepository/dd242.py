@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:20:52.844676
 
-The undirected graph DD242 has 1284 nodes with 20 different node types:  the 5 most
-common are 1 (nodes number 184), 8 (nodes number 136), 10 (nodes number 112), 7 (nodes
-number 104) and 12 (nodes number 92) and 3303 unweighted edges, of which none are
-self-loops. The graph is sparse as it has a density of 0.00401 and has 2 connected
-components, where the component with most nodes has 642 nodes and the component with
-the least nodes has 642 nodes. The graph median node degree is 5, the mean node degree
-is 5.14 and the node degree mode is 5. The top 5 most central nodes are 1133 (degree
-12), 868 (degree 12), 947 (degree 11), 850 (degree 11) and 759 (degree 11).
+The undirected graph DD242 has 1284 nodes with 20 different node types:
+ the 5 most common are 1 (nodes number 184), 8 (nodes number 136), 10 (nodes
+number 112), 7 (nodes number 104) and 12 (nodes number 92) and 3303 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00401 and has 2 connected components, where the component with most
+nodes has 642 nodes and the component with the least nodes has 642 nodes.
+The graph median node degree is 5, the mean node degree is 5.14 and the
+node degree mode is 5. The top 5 most central nodes are 1133 (degree 12),
+868 (degree 12), 947 (degree 11), 850 (degree 11) and 759 (degree 11).
 
 
 References
@@ -104,14 +105,15 @@ def Dd242(
 	
 	Datetime: 2021-02-04 08:20:52.844676
 	
-	The undirected graph DD242 has 1284 nodes with 20 different node types:  the 5 most
-	common are 1 (nodes number 184), 8 (nodes number 136), 10 (nodes number 112), 7 (nodes
-	number 104) and 12 (nodes number 92) and 3303 unweighted edges, of which none are
-	self-loops. The graph is sparse as it has a density of 0.00401 and has 2 connected
-	components, where the component with most nodes has 642 nodes and the component with
-	the least nodes has 642 nodes. The graph median node degree is 5, the mean node degree
-	is 5.14 and the node degree mode is 5. The top 5 most central nodes are 1133 (degree
-	12), 868 (degree 12), 947 (degree 11), 850 (degree 11) and 759 (degree 11).
+	The undirected graph DD242 has 1284 nodes with 20 different node types:
+	 the 5 most common are 1 (nodes number 184), 8 (nodes number 136), 10 (nodes
+	number 112), 7 (nodes number 104) and 12 (nodes number 92) and 3303 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00401 and has 2 connected components, where the component with most
+	nodes has 642 nodes and the component with the least nodes has 642 nodes.
+	The graph median node degree is 5, the mean node degree is 5.14 and the
+	node degree mode is 5. The top 5 most central nodes are 1133 (degree 12),
+	868 (degree 12), 947 (degree 11), 850 (degree 11) and 759 (degree 11).
 	
 
 

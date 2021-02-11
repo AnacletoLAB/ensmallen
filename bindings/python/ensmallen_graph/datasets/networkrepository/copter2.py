@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:58.785091
 
-The undirected graph copter2 has 55476 nodes and 407714 unweighted edges, of which
-55476 are self-loops. The graph is quite sparse as it has a density of 0.00025 and
-is connected, as it has a single component. The graph median node degree is 13, the
-mean node degree is 13.70, and the node degree mode is 13. The top 5 most central
-nodes are 20308 (degree 45), 1610 (degree 42), 19011 (degree 42), 18892 (degree 42)
-and 21430 (degree 41).
+The undirected graph copter2 has 55476 nodes and 407714 unweighted edges,
+of which 55476 are self-loops. The graph is quite sparse as it has a density
+of 0.00025 and is connected, as it has a single component. The graph median
+node degree is 13, the mean node degree is 13.70, and the node degree mode
+is 13. The top 5 most central nodes are 20308 (degree 45), 1610 (degree
+42), 19011 (degree 42), 18892 (degree 42) and 21430 (degree 41).
 
 
 References
@@ -102,12 +102,12 @@ def Copter2(
 	
 	Datetime: 2021-02-06 11:07:58.785091
 	
-	The undirected graph copter2 has 55476 nodes and 407714 unweighted edges, of which
-	55476 are self-loops. The graph is quite sparse as it has a density of 0.00025 and
-	is connected, as it has a single component. The graph median node degree is 13, the
-	mean node degree is 13.70, and the node degree mode is 13. The top 5 most central
-	nodes are 20308 (degree 45), 1610 (degree 42), 19011 (degree 42), 18892 (degree 42)
-	and 21430 (degree 41).
+	The undirected graph copter2 has 55476 nodes and 407714 unweighted edges,
+	of which 55476 are self-loops. The graph is quite sparse as it has a density
+	of 0.00025 and is connected, as it has a single component. The graph median
+	node degree is 13, the mean node degree is 13.70, and the node degree mode
+	is 13. The top 5 most central nodes are 20308 (degree 45), 1610 (degree
+	42), 19011 (degree 42), 18892 (degree 42) and 21430 (degree 41).
 	
 
 

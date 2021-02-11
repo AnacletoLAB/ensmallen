@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:29:22.945737
 
-The undirected graph Myxococcus sp. has 7524 nodes and 718115 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02537 and
-has 69 connected components, where the component with most nodes has 7349 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 190.89, and the node degree mode is 2. The top 5 most central
-nodes are 1297742.A176_01850 (degree 2780), 1297742.A176_03780 (degree 2521), 1297742.A176_03880
-(degree 2187), 1297742.A176_00081 (degree 2162) and 1297742.A176_01168 (degree 1856).
+The undirected graph Myxococcus sp. has 7524 nodes and 718115 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02537 and has 69 connected components, where the component with most
+nodes has 7349 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 190.89, and
+the node degree mode is 2. The top 5 most central nodes are 1297742.A176_01850
+(degree 2780), 1297742.A176_03780 (degree 2521), 1297742.A176_03880 (degree
+2187), 1297742.A176_00081 (degree 2162) and 1297742.A176_01168 (degree
+1856).
 
 
 References
@@ -106,13 +108,15 @@ def MyxococcusSp.(
 	
 	Datetime: 2021-02-03 21:29:22.945737
 	
-	The undirected graph Myxococcus sp. has 7524 nodes and 718115 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02537 and
-	has 69 connected components, where the component with most nodes has 7349 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 190.89, and the node degree mode is 2. The top 5 most central
-	nodes are 1297742.A176_01850 (degree 2780), 1297742.A176_03780 (degree 2521), 1297742.A176_03880
-	(degree 2187), 1297742.A176_00081 (degree 2162) and 1297742.A176_01168 (degree 1856).
+	The undirected graph Myxococcus sp. has 7524 nodes and 718115 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02537 and has 69 connected components, where the component with most
+	nodes has 7349 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 190.89, and
+	the node degree mode is 2. The top 5 most central nodes are 1297742.A176_01850
+	(degree 2780), 1297742.A176_03780 (degree 2521), 1297742.A176_03880 (degree
+	2187), 1297742.A176_00081 (degree 2162) and 1297742.A176_01168 (degree
+	1856).
 	
 
 

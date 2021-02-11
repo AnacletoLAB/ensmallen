@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:50:43.645916
 
-The undirected graph Lactobacillus farraginis has 2323 nodes and 158291 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05869
-and has 15 connected components, where the component with most nodes has 2285 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 136.28, and the node degree mode is 3. The top 5
-most central nodes are 1423743.JCM14108_2888 (degree 1195), 1423743.JCM14108_1732
-(degree 805), 1423743.JCM14108_1735 (degree 750), 1423743.JCM14108_423 (degree 738)
-and 1423743.JCM14108_2194 (degree 720).
+The undirected graph Lactobacillus farraginis has 2323 nodes and 158291
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05869 and has 15 connected components, where the component
+with most nodes has 2285 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 136.28,
+and the node degree mode is 3. The top 5 most central nodes are 1423743.JCM14108_2888
+(degree 1195), 1423743.JCM14108_1732 (degree 805), 1423743.JCM14108_1735
+(degree 750), 1423743.JCM14108_423 (degree 738) and 1423743.JCM14108_2194
+(degree 720).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusFarraginis(
 	
 	Datetime: 2021-02-03 22:50:43.645916
 	
-	The undirected graph Lactobacillus farraginis has 2323 nodes and 158291 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05869
-	and has 15 connected components, where the component with most nodes has 2285 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 136.28, and the node degree mode is 3. The top 5
-	most central nodes are 1423743.JCM14108_2888 (degree 1195), 1423743.JCM14108_1732
-	(degree 805), 1423743.JCM14108_1735 (degree 750), 1423743.JCM14108_423 (degree 738)
-	and 1423743.JCM14108_2194 (degree 720).
+	The undirected graph Lactobacillus farraginis has 2323 nodes and 158291
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05869 and has 15 connected components, where the component
+	with most nodes has 2285 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 136.28,
+	and the node degree mode is 3. The top 5 most central nodes are 1423743.JCM14108_2888
+	(degree 1195), 1423743.JCM14108_1732 (degree 805), 1423743.JCM14108_1735
+	(degree 750), 1423743.JCM14108_423 (degree 738) and 1423743.JCM14108_2194
+	(degree 720).
 	
 
 

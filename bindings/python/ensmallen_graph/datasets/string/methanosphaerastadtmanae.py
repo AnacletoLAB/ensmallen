@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:08.525971
 
-The undirected graph Methanosphaera stadtmanae has 1508 nodes and 151008 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13290 and has 14 connected components, where the component with most nodes has
-1473 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 211, the mean node degree is 200.28, and the node degree mode is 3. The
-top 5 most central nodes are 339860.Msp_1517 (degree 728), 339860.Msp_1488 (degree
-669), 339860.Msp_0369 (degree 667), 339860.Msp_1346 (degree 658) and 339860.Msp_1382
-(degree 628).
+The undirected graph Methanosphaera stadtmanae has 1508 nodes and 151008
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13290 and has 14 connected components, where the
+component with most nodes has 1473 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 211, the mean node degree
+is 200.28, and the node degree mode is 3. The top 5 most central nodes
+are 339860.Msp_1517 (degree 728), 339860.Msp_1488 (degree 669), 339860.Msp_0369
+(degree 667), 339860.Msp_1346 (degree 658) and 339860.Msp_1382 (degree
+628).
 
 
 References
@@ -107,14 +108,15 @@ def MethanosphaeraStadtmanae(
 	
 	Datetime: 2021-02-02 20:31:08.525971
 	
-	The undirected graph Methanosphaera stadtmanae has 1508 nodes and 151008 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13290 and has 14 connected components, where the component with most nodes has
-	1473 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 211, the mean node degree is 200.28, and the node degree mode is 3. The
-	top 5 most central nodes are 339860.Msp_1517 (degree 728), 339860.Msp_1488 (degree
-	669), 339860.Msp_0369 (degree 667), 339860.Msp_1346 (degree 658) and 339860.Msp_1382
-	(degree 628).
+	The undirected graph Methanosphaera stadtmanae has 1508 nodes and 151008
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13290 and has 14 connected components, where the
+	component with most nodes has 1473 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 211, the mean node degree
+	is 200.28, and the node degree mode is 3. The top 5 most central nodes
+	are 339860.Msp_1517 (degree 728), 339860.Msp_1488 (degree 669), 339860.Msp_0369
+	(degree 667), 339860.Msp_1346 (degree 658) and 339860.Msp_1382 (degree
+	628).
 	
 
 

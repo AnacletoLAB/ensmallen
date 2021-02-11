@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:59.918669
 
-The undirected graph Gloeophyllum trabeum has 6721 nodes and 569340 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02521 and
-has 27 connected components, where the component with most nodes has 6659 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 169.42, and the node degree mode is 1. The top 5 most central
-nodes are 104355.XP_007866180.1 (degree 1568), 104355.XP_007865889.1 (degree 1350),
-104355.XP_007861011.1 (degree 1321), 104355.XP_007860597.1 (degree 1296) and 104355.XP_007861109.1
+The undirected graph Gloeophyllum trabeum has 6721 nodes and 569340 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02521 and has 27 connected components, where the component with most
+nodes has 6659 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 169.42, and
+the node degree mode is 1. The top 5 most central nodes are 104355.XP_007866180.1
+(degree 1568), 104355.XP_007865889.1 (degree 1350), 104355.XP_007861011.1
+(degree 1321), 104355.XP_007860597.1 (degree 1296) and 104355.XP_007861109.1
 (degree 1180).
 
 
@@ -107,13 +108,14 @@ def GloeophyllumTrabeum(
 	
 	Datetime: 2021-02-02 19:43:59.918669
 	
-	The undirected graph Gloeophyllum trabeum has 6721 nodes and 569340 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02521 and
-	has 27 connected components, where the component with most nodes has 6659 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 169.42, and the node degree mode is 1. The top 5 most central
-	nodes are 104355.XP_007866180.1 (degree 1568), 104355.XP_007865889.1 (degree 1350),
-	104355.XP_007861011.1 (degree 1321), 104355.XP_007860597.1 (degree 1296) and 104355.XP_007861109.1
+	The undirected graph Gloeophyllum trabeum has 6721 nodes and 569340 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02521 and has 27 connected components, where the component with most
+	nodes has 6659 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 169.42, and
+	the node degree mode is 1. The top 5 most central nodes are 104355.XP_007866180.1
+	(degree 1568), 104355.XP_007865889.1 (degree 1350), 104355.XP_007861011.1
+	(degree 1321), 104355.XP_007860597.1 (degree 1296) and 104355.XP_007861109.1
 	(degree 1180).
 	
 

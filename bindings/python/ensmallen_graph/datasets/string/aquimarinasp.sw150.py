@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:26:15.880531
 
-The undirected graph Aquimarina sp. SW150 has 4254 nodes and 340966 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03769 and
-has 32 connected components, where the component with most nodes has 4160 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 160.30, and the node degree mode is 1. The top 5 most central
-nodes are 1296415.JACC01000007_gene2475 (degree 1283), 1296415.JACC01000062_gene3880
-(degree 1131), 1296415.JACC01000046_gene727 (degree 1107), 1296415.JACC01000024_gene1838
-(degree 1053) and 1296415.JACC01000020_gene3775 (degree 960).
+The undirected graph Aquimarina sp. SW150 has 4254 nodes and 340966 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03769 and has 32 connected components, where the component with most
+nodes has 4160 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 160.30, and
+the node degree mode is 1. The top 5 most central nodes are 1296415.JACC01000007_gene2475
+(degree 1283), 1296415.JACC01000062_gene3880 (degree 1131), 1296415.JACC01000046_gene727
+(degree 1107), 1296415.JACC01000024_gene1838 (degree 1053) and 1296415.JACC01000020_gene3775
+(degree 960).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaSp.Sw150(
 	
 	Datetime: 2021-02-03 21:26:15.880531
 	
-	The undirected graph Aquimarina sp. SW150 has 4254 nodes and 340966 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03769 and
-	has 32 connected components, where the component with most nodes has 4160 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 160.30, and the node degree mode is 1. The top 5 most central
-	nodes are 1296415.JACC01000007_gene2475 (degree 1283), 1296415.JACC01000062_gene3880
-	(degree 1131), 1296415.JACC01000046_gene727 (degree 1107), 1296415.JACC01000024_gene1838
-	(degree 1053) and 1296415.JACC01000020_gene3775 (degree 960).
+	The undirected graph Aquimarina sp. SW150 has 4254 nodes and 340966 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03769 and has 32 connected components, where the component with most
+	nodes has 4160 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 160.30, and
+	the node degree mode is 1. The top 5 most central nodes are 1296415.JACC01000007_gene2475
+	(degree 1283), 1296415.JACC01000062_gene3880 (degree 1131), 1296415.JACC01000046_gene727
+	(degree 1107), 1296415.JACC01000024_gene1838 (degree 1053) and 1296415.JACC01000020_gene3775
+	(degree 960).
 	
 
 

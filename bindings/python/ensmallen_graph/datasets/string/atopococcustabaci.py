@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:17.387944
 
-The undirected graph Atopococcus tabaci has 2159 nodes and 189110 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08118 and
-has 7 connected components, where the component with most nodes has 2144 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 175.18, and the node degree mode is 6. The top 5 most central
-nodes are 1121024.AUCD01000035_gene382 (degree 990), 1121024.AUCD01000001_gene1641
-(degree 842), 1121024.AUCD01000051_gene1223 (degree 788), 1121024.AUCD01000012_gene98
-(degree 755) and 1121024.AUCD01000067_gene694 (degree 722).
+The undirected graph Atopococcus tabaci has 2159 nodes and 189110 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08118 and has 7 connected components, where the component with most
+nodes has 2144 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 175.18, and
+the node degree mode is 6. The top 5 most central nodes are 1121024.AUCD01000035_gene382
+(degree 990), 1121024.AUCD01000001_gene1641 (degree 842), 1121024.AUCD01000051_gene1223
+(degree 788), 1121024.AUCD01000012_gene98 (degree 755) and 1121024.AUCD01000067_gene694
+(degree 722).
 
 
 References
@@ -107,14 +108,15 @@ def AtopococcusTabaci(
 	
 	Datetime: 2021-02-02 22:32:17.387944
 	
-	The undirected graph Atopococcus tabaci has 2159 nodes and 189110 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08118 and
-	has 7 connected components, where the component with most nodes has 2144 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 175.18, and the node degree mode is 6. The top 5 most central
-	nodes are 1121024.AUCD01000035_gene382 (degree 990), 1121024.AUCD01000001_gene1641
-	(degree 842), 1121024.AUCD01000051_gene1223 (degree 788), 1121024.AUCD01000012_gene98
-	(degree 755) and 1121024.AUCD01000067_gene694 (degree 722).
+	The undirected graph Atopococcus tabaci has 2159 nodes and 189110 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08118 and has 7 connected components, where the component with most
+	nodes has 2144 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 175.18, and
+	the node degree mode is 6. The top 5 most central nodes are 1121024.AUCD01000035_gene382
+	(degree 990), 1121024.AUCD01000001_gene1641 (degree 842), 1121024.AUCD01000051_gene1223
+	(degree 788), 1121024.AUCD01000012_gene98 (degree 755) and 1121024.AUCD01000067_gene694
+	(degree 722).
 	
 
 

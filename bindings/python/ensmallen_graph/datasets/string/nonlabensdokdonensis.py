@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:17.640899
 
-The undirected graph Nonlabens dokdonensis has 3575 nodes and 237814 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03723 and
-has 17 connected components, where the component with most nodes has 3535 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 133.04, and the node degree mode is 3. The top 5 most central
-nodes are 592029.DDD_2081 (degree 1254), 592029.DDD_1733 (degree 1142), 592029.DDD_0586
-(degree 1002), 592029.DDD_3250 (degree 879) and 592029.DDD_2245 (degree 872).
+The undirected graph Nonlabens dokdonensis has 3575 nodes and 237814 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03723 and has 17 connected components, where the component with most
+nodes has 3535 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 133.04, and
+the node degree mode is 3. The top 5 most central nodes are 592029.DDD_2081
+(degree 1254), 592029.DDD_1733 (degree 1142), 592029.DDD_0586 (degree 1002),
+592029.DDD_3250 (degree 879) and 592029.DDD_2245 (degree 872).
 
 
 References
@@ -106,13 +107,14 @@ def NonlabensDokdonensis(
 	
 	Datetime: 2021-02-02 21:18:17.640899
 	
-	The undirected graph Nonlabens dokdonensis has 3575 nodes and 237814 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03723 and
-	has 17 connected components, where the component with most nodes has 3535 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 133.04, and the node degree mode is 3. The top 5 most central
-	nodes are 592029.DDD_2081 (degree 1254), 592029.DDD_1733 (degree 1142), 592029.DDD_0586
-	(degree 1002), 592029.DDD_3250 (degree 879) and 592029.DDD_2245 (degree 872).
+	The undirected graph Nonlabens dokdonensis has 3575 nodes and 237814 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03723 and has 17 connected components, where the component with most
+	nodes has 3535 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 133.04, and
+	the node degree mode is 3. The top 5 most central nodes are 592029.DDD_2081
+	(degree 1254), 592029.DDD_1733 (degree 1142), 592029.DDD_0586 (degree 1002),
+	592029.DDD_3250 (degree 879) and 592029.DDD_2245 (degree 872).
 	
 
 

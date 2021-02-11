@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:40.000830
 
-The undirected graph Haladaptatus cibarius has 3795 nodes and 283842 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03943 and
-has 30 connected components, where the component with most nodes has 3712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 149.59, and the node degree mode is 4. The top 5 most central
-nodes are 1455608.JDTH01000002_gene1249 (degree 993), 1455608.JDTH01000001_gene3290
-(degree 965), 1455608.JDTH01000002_gene1859 (degree 954), 1455608.JDTH01000001_gene2957
-(degree 874) and 1455608.JDTH01000002_gene910 (degree 863).
+The undirected graph Haladaptatus cibarius has 3795 nodes and 283842 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03943 and has 30 connected components, where the component with most
+nodes has 3712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 149.59, and
+the node degree mode is 4. The top 5 most central nodes are 1455608.JDTH01000002_gene1249
+(degree 993), 1455608.JDTH01000001_gene3290 (degree 965), 1455608.JDTH01000002_gene1859
+(degree 954), 1455608.JDTH01000001_gene2957 (degree 874) and 1455608.JDTH01000002_gene910
+(degree 863).
 
 
 References
@@ -107,14 +108,15 @@ def HaladaptatusCibarius(
 	
 	Datetime: 2021-02-03 23:06:40.000830
 	
-	The undirected graph Haladaptatus cibarius has 3795 nodes and 283842 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03943 and
-	has 30 connected components, where the component with most nodes has 3712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 149.59, and the node degree mode is 4. The top 5 most central
-	nodes are 1455608.JDTH01000002_gene1249 (degree 993), 1455608.JDTH01000001_gene3290
-	(degree 965), 1455608.JDTH01000002_gene1859 (degree 954), 1455608.JDTH01000001_gene2957
-	(degree 874) and 1455608.JDTH01000002_gene910 (degree 863).
+	The undirected graph Haladaptatus cibarius has 3795 nodes and 283842 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03943 and has 30 connected components, where the component with most
+	nodes has 3712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 149.59, and
+	the node degree mode is 4. The top 5 most central nodes are 1455608.JDTH01000002_gene1249
+	(degree 993), 1455608.JDTH01000001_gene3290 (degree 965), 1455608.JDTH01000002_gene1859
+	(degree 954), 1455608.JDTH01000001_gene2957 (degree 874) and 1455608.JDTH01000002_gene910
+	(degree 863).
 	
 
 

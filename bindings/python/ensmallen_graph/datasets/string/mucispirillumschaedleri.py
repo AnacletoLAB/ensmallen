@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:11:30.405554
 
-The undirected graph Mucispirillum schaedleri has 2118 nodes and 133522 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05956
-and has 20 connected components, where the component with most nodes has 2068 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 126.08, and the node degree mode is 5. The top 5 most
-central nodes are 1379858.N508_01329 (degree 848), 1379858.N508_00298 (degree 768),
-1379858.N508_02129 (degree 644), 1379858.N508_01276 (degree 606) and 1379858.N508_01835
-(degree 604).
+The undirected graph Mucispirillum schaedleri has 2118 nodes and 133522
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05956 and has 20 connected components, where the component
+with most nodes has 2068 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 126.08,
+and the node degree mode is 5. The top 5 most central nodes are 1379858.N508_01329
+(degree 848), 1379858.N508_00298 (degree 768), 1379858.N508_02129 (degree
+644), 1379858.N508_01276 (degree 606) and 1379858.N508_01835 (degree 604).
 
 
 References
@@ -107,14 +107,14 @@ def MucispirillumSchaedleri(
 	
 	Datetime: 2021-02-03 22:11:30.405554
 	
-	The undirected graph Mucispirillum schaedleri has 2118 nodes and 133522 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05956
-	and has 20 connected components, where the component with most nodes has 2068 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 126.08, and the node degree mode is 5. The top 5 most
-	central nodes are 1379858.N508_01329 (degree 848), 1379858.N508_00298 (degree 768),
-	1379858.N508_02129 (degree 644), 1379858.N508_01276 (degree 606) and 1379858.N508_01835
-	(degree 604).
+	The undirected graph Mucispirillum schaedleri has 2118 nodes and 133522
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05956 and has 20 connected components, where the component
+	with most nodes has 2068 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 126.08,
+	and the node degree mode is 5. The top 5 most central nodes are 1379858.N508_01329
+	(degree 848), 1379858.N508_00298 (degree 768), 1379858.N508_02129 (degree
+	644), 1379858.N508_01276 (degree 606) and 1379858.N508_01835 (degree 604).
 	
 
 

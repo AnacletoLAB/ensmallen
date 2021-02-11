@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:33.440308
 
-The undirected graph Rhizobium leguminosarum CB782 has 4681 nodes and 383890 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03505
-and has 19 connected components, where the component with most nodes has 4638 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 164.02, and the node degree mode is 2. The top 5
-most central nodes are 1033991.RLEG12_32090 (degree 1768), 1033991.RLEG12_12375 (degree
-1513), 1033991.RLEG12_14760 (degree 1475), 1033991.RLEG12_26005 (degree 1280) and
-1033991.RLEG12_28005 (degree 1233).
+The undirected graph Rhizobium leguminosarum CB782 has 4681 nodes and 383890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03505 and has 19 connected components, where the component
+with most nodes has 4638 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 164.02,
+and the node degree mode is 2. The top 5 most central nodes are 1033991.RLEG12_32090
+(degree 1768), 1033991.RLEG12_12375 (degree 1513), 1033991.RLEG12_14760
+(degree 1475), 1033991.RLEG12_26005 (degree 1280) and 1033991.RLEG12_28005
+(degree 1233).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumLeguminosarumCb782(
 	
 	Datetime: 2021-02-02 22:11:33.440308
 	
-	The undirected graph Rhizobium leguminosarum CB782 has 4681 nodes and 383890 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03505
-	and has 19 connected components, where the component with most nodes has 4638 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 164.02, and the node degree mode is 2. The top 5
-	most central nodes are 1033991.RLEG12_32090 (degree 1768), 1033991.RLEG12_12375 (degree
-	1513), 1033991.RLEG12_14760 (degree 1475), 1033991.RLEG12_26005 (degree 1280) and
-	1033991.RLEG12_28005 (degree 1233).
+	The undirected graph Rhizobium leguminosarum CB782 has 4681 nodes and 383890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03505 and has 19 connected components, where the component
+	with most nodes has 4638 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 164.02,
+	and the node degree mode is 2. The top 5 most central nodes are 1033991.RLEG12_32090
+	(degree 1768), 1033991.RLEG12_12375 (degree 1513), 1033991.RLEG12_14760
+	(degree 1475), 1033991.RLEG12_26005 (degree 1280) and 1033991.RLEG12_28005
+	(degree 1233).
 	
 
 

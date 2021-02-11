@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:28.308895
 
-The undirected graph Halosimplex carlsbadense has 4369 nodes and 353363 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03703
-and has 60 connected components, where the component with most nodes has 4202 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 161.76, and the node degree mode is 3. The top 5
-most central nodes are 797114.C475_10979 (degree 1018), 797114.C475_02276 (degree
-940), 797114.C475_15403 (degree 929), 797114.C475_15879 (degree 906) and 797114.C475_03959
-(degree 894).
+The undirected graph Halosimplex carlsbadense has 4369 nodes and 353363
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03703 and has 60 connected components, where the component
+with most nodes has 4202 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 161.76,
+and the node degree mode is 3. The top 5 most central nodes are 797114.C475_10979
+(degree 1018), 797114.C475_02276 (degree 940), 797114.C475_15403 (degree
+929), 797114.C475_15879 (degree 906) and 797114.C475_03959 (degree 894).
 
 
 References
@@ -107,14 +107,14 @@ def HalosimplexCarlsbadense(
 	
 	Datetime: 2021-02-02 21:45:28.308895
 	
-	The undirected graph Halosimplex carlsbadense has 4369 nodes and 353363 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03703
-	and has 60 connected components, where the component with most nodes has 4202 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 161.76, and the node degree mode is 3. The top 5
-	most central nodes are 797114.C475_10979 (degree 1018), 797114.C475_02276 (degree
-	940), 797114.C475_15403 (degree 929), 797114.C475_15879 (degree 906) and 797114.C475_03959
-	(degree 894).
+	The undirected graph Halosimplex carlsbadense has 4369 nodes and 353363
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03703 and has 60 connected components, where the component
+	with most nodes has 4202 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 161.76,
+	and the node degree mode is 3. The top 5 most central nodes are 797114.C475_10979
+	(degree 1018), 797114.C475_02276 (degree 940), 797114.C475_15403 (degree
+	929), 797114.C475_15879 (degree 906) and 797114.C475_03959 (degree 894).
 	
 
 

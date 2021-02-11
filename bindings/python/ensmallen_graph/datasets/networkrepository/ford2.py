@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:14:09.482676
 
-The undirected graph ford2 has 100196 nodes and 322442 unweighted edges, of which
-100196 are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and is connected, as it has a single component. The graph median node degree is 5,
-the mean node degree is 5.44, and the node degree mode is 5. The top 5 most central
-nodes are 94899 (degree 30), 94908 (degree 30), 94905 (degree 30), 94903 (degree
-30) and 94894 (degree 30).
+The undirected graph ford2 has 100196 nodes and 322442 unweighted edges,
+of which 100196 are self-loops. The graph is extremely sparse as it has
+a density of 0.00005 and is connected, as it has a single component. The
+graph median node degree is 5, the mean node degree is 5.44, and the node
+degree mode is 5. The top 5 most central nodes are 94899 (degree 30), 94908
+(degree 30), 94905 (degree 30), 94903 (degree 30) and 94894 (degree 30).
 
 
 References
@@ -102,12 +102,12 @@ def Ford2(
 	
 	Datetime: 2021-02-06 11:14:09.482676
 	
-	The undirected graph ford2 has 100196 nodes and 322442 unweighted edges, of which
-	100196 are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and is connected, as it has a single component. The graph median node degree is 5,
-	the mean node degree is 5.44, and the node degree mode is 5. The top 5 most central
-	nodes are 94899 (degree 30), 94908 (degree 30), 94905 (degree 30), 94903 (degree
-	30) and 94894 (degree 30).
+	The undirected graph ford2 has 100196 nodes and 322442 unweighted edges,
+	of which 100196 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00005 and is connected, as it has a single component. The
+	graph median node degree is 5, the mean node degree is 5.44, and the node
+	degree mode is 5. The top 5 most central nodes are 94899 (degree 30), 94908
+	(degree 30), 94905 (degree 30), 94903 (degree 30) and 94894 (degree 30).
 	
 
 

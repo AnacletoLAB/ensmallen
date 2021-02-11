@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:17.197728
 
-The undirected graph Desulfurispirillum indicum has 2549 nodes and 246902 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07603
-and has 6 connected components, where the component with most nodes has 2538 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 193.72, and the node degree mode is 7. The top 5
-most central nodes are 653733.Selin_1052 (degree 1296), 653733.Selin_2096 (degree
-1276), 653733.Selin_1634 (degree 1259), 653733.Selin_0622 (degree 1139) and 653733.Selin_1406
-(degree 1121).
+The undirected graph Desulfurispirillum indicum has 2549 nodes and 246902
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07603 and has 6 connected components, where the component
+with most nodes has 2538 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 193.72,
+and the node degree mode is 7. The top 5 most central nodes are 653733.Selin_1052
+(degree 1296), 653733.Selin_2096 (degree 1276), 653733.Selin_1634 (degree
+1259), 653733.Selin_0622 (degree 1139) and 653733.Selin_1406 (degree 1121).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfurispirillumIndicum(
 	
 	Datetime: 2021-02-02 21:26:17.197728
 	
-	The undirected graph Desulfurispirillum indicum has 2549 nodes and 246902 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07603
-	and has 6 connected components, where the component with most nodes has 2538 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 193.72, and the node degree mode is 7. The top 5
-	most central nodes are 653733.Selin_1052 (degree 1296), 653733.Selin_2096 (degree
-	1276), 653733.Selin_1634 (degree 1259), 653733.Selin_0622 (degree 1139) and 653733.Selin_1406
-	(degree 1121).
+	The undirected graph Desulfurispirillum indicum has 2549 nodes and 246902
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07603 and has 6 connected components, where the component
+	with most nodes has 2538 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 193.72,
+	and the node degree mode is 7. The top 5 most central nodes are 653733.Selin_1052
+	(degree 1296), 653733.Selin_2096 (degree 1276), 653733.Selin_1634 (degree
+	1259), 653733.Selin_0622 (degree 1139) and 653733.Selin_1406 (degree 1121).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:01.489575
 
-The undirected graph Enterobacter aerogenes has 4884 nodes and 556726 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04669 and
-has 13 connected components, where the component with most nodes has 4860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 227.98, and the node degree mode is 1. The top 5 most central
-nodes are 1028307.EAE_20590 (degree 1587), 1028307.EAE_07315 (degree 1546), 1028307.EAE_04490
-(degree 1339), 1028307.EAE_04480 (degree 1241) and 1028307.EAE_00660 (degree 1203).
+The undirected graph Enterobacter aerogenes has 4884 nodes and 556726 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04669 and has 13 connected components, where the component with most
+nodes has 4860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 227.98, and
+the node degree mode is 1. The top 5 most central nodes are 1028307.EAE_20590
+(degree 1587), 1028307.EAE_07315 (degree 1546), 1028307.EAE_04490 (degree
+1339), 1028307.EAE_04480 (degree 1241) and 1028307.EAE_00660 (degree 1203).
 
 
 References
@@ -106,13 +107,14 @@ def EnterobacterAerogenes(
 	
 	Datetime: 2021-02-02 22:10:01.489575
 	
-	The undirected graph Enterobacter aerogenes has 4884 nodes and 556726 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04669 and
-	has 13 connected components, where the component with most nodes has 4860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 227.98, and the node degree mode is 1. The top 5 most central
-	nodes are 1028307.EAE_20590 (degree 1587), 1028307.EAE_07315 (degree 1546), 1028307.EAE_04490
-	(degree 1339), 1028307.EAE_04480 (degree 1241) and 1028307.EAE_00660 (degree 1203).
+	The undirected graph Enterobacter aerogenes has 4884 nodes and 556726 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04669 and has 13 connected components, where the component with most
+	nodes has 4860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 227.98, and
+	the node degree mode is 1. The top 5 most central nodes are 1028307.EAE_20590
+	(degree 1587), 1028307.EAE_07315 (degree 1546), 1028307.EAE_04490 (degree
+	1339), 1028307.EAE_04480 (degree 1241) and 1028307.EAE_00660 (degree 1203).
 	
 
 

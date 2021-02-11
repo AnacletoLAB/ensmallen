@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:46.459648
 
-The undirected graph Actinomyces cardiffensis has 1943 nodes and 116377 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06168
-and has 11 connected components, where the component with most nodes has 1920 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 119.79, and the node degree mode is 3. The top 5
-most central nodes are 888050.HMPREF9004_1464 (degree 782), 888050.HMPREF9004_1071
-(degree 769), 888050.HMPREF9004_0439 (degree 747), 888050.HMPREF9004_0988 (degree
-660) and 888050.HMPREF9004_0418 (degree 643).
+The undirected graph Actinomyces cardiffensis has 1943 nodes and 116377
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06168 and has 11 connected components, where the component
+with most nodes has 1920 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 119.79,
+and the node degree mode is 3. The top 5 most central nodes are 888050.HMPREF9004_1464
+(degree 782), 888050.HMPREF9004_1071 (degree 769), 888050.HMPREF9004_0439
+(degree 747), 888050.HMPREF9004_0988 (degree 660) and 888050.HMPREF9004_0418
+(degree 643).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesCardiffensis(
 	
 	Datetime: 2021-02-02 21:52:46.459648
 	
-	The undirected graph Actinomyces cardiffensis has 1943 nodes and 116377 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06168
-	and has 11 connected components, where the component with most nodes has 1920 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 119.79, and the node degree mode is 3. The top 5
-	most central nodes are 888050.HMPREF9004_1464 (degree 782), 888050.HMPREF9004_1071
-	(degree 769), 888050.HMPREF9004_0439 (degree 747), 888050.HMPREF9004_0988 (degree
-	660) and 888050.HMPREF9004_0418 (degree 643).
+	The undirected graph Actinomyces cardiffensis has 1943 nodes and 116377
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06168 and has 11 connected components, where the component
+	with most nodes has 1920 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 119.79,
+	and the node degree mode is 3. The top 5 most central nodes are 888050.HMPREF9004_1464
+	(degree 782), 888050.HMPREF9004_1071 (degree 769), 888050.HMPREF9004_0439
+	(degree 747), 888050.HMPREF9004_0988 (degree 660) and 888050.HMPREF9004_0418
+	(degree 643).
 	
 
 

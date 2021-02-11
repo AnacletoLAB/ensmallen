@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:51.173533
 
-The undirected graph Faecalicoccus pleomorphus has 1947 nodes and 191433 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10105 and has 8 connected components, where the component with most nodes has
-1930 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 169, the mean node degree is 196.64, and the node degree mode is 1. The
-top 5 most central nodes are 1123313.ATUT01000002_gene265 (degree 952), 1123313.ATUT01000001_gene1021
+The undirected graph Faecalicoccus pleomorphus has 1947 nodes and 191433
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10105 and has 8 connected components, where the
+component with most nodes has 1930 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+is 196.64, and the node degree mode is 1. The top 5 most central nodes
+are 1123313.ATUT01000002_gene265 (degree 952), 1123313.ATUT01000001_gene1021
 (degree 867), 1123313.ATUT01000006_gene1319 (degree 859), 1123313.ATUT01000018_gene1860
 (degree 856) and 1123313.ATUT01000028_gene52 (degree 821).
 
@@ -107,12 +108,13 @@ def FaecalicoccusPleomorphus(
 	
 	Datetime: 2021-02-02 22:50:51.173533
 	
-	The undirected graph Faecalicoccus pleomorphus has 1947 nodes and 191433 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10105 and has 8 connected components, where the component with most nodes has
-	1930 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 169, the mean node degree is 196.64, and the node degree mode is 1. The
-	top 5 most central nodes are 1123313.ATUT01000002_gene265 (degree 952), 1123313.ATUT01000001_gene1021
+	The undirected graph Faecalicoccus pleomorphus has 1947 nodes and 191433
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10105 and has 8 connected components, where the
+	component with most nodes has 1930 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+	is 196.64, and the node degree mode is 1. The top 5 most central nodes
+	are 1123313.ATUT01000002_gene265 (degree 952), 1123313.ATUT01000001_gene1021
 	(degree 867), 1123313.ATUT01000006_gene1319 (degree 859), 1123313.ATUT01000018_gene1860
 	(degree 856) and 1123313.ATUT01000028_gene52 (degree 821).
 	

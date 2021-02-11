@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:45.695103
 
-The undirected graph Bacteroides ovatus has 5430 nodes and 513980 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03487 and
-has 48 connected components, where the component with most nodes has 5306 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 189.31, and the node degree mode is 3. The top 5 most central
-nodes are 411476.BACOVA_01357 (degree 1568), 411476.BACOVA_00198 (degree 1321), 411476.BACOVA_04496
-(degree 1291), 411476.BACOVA_03651 (degree 1285) and 411476.BACOVA_00338 (degree
+The undirected graph Bacteroides ovatus has 5430 nodes and 513980 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03487 and has 48 connected components, where the component with most
+nodes has 5306 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 189.31, and
+the node degree mode is 3. The top 5 most central nodes are 411476.BACOVA_01357
+(degree 1568), 411476.BACOVA_00198 (degree 1321), 411476.BACOVA_04496 (degree
+1291), 411476.BACOVA_03651 (degree 1285) and 411476.BACOVA_00338 (degree
 1214).
 
 
@@ -107,13 +108,14 @@ def BacteroidesOvatus(
 	
 	Datetime: 2021-02-02 20:45:45.695103
 	
-	The undirected graph Bacteroides ovatus has 5430 nodes and 513980 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03487 and
-	has 48 connected components, where the component with most nodes has 5306 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 189.31, and the node degree mode is 3. The top 5 most central
-	nodes are 411476.BACOVA_01357 (degree 1568), 411476.BACOVA_00198 (degree 1321), 411476.BACOVA_04496
-	(degree 1291), 411476.BACOVA_03651 (degree 1285) and 411476.BACOVA_00338 (degree
+	The undirected graph Bacteroides ovatus has 5430 nodes and 513980 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03487 and has 48 connected components, where the component with most
+	nodes has 5306 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 189.31, and
+	the node degree mode is 3. The top 5 most central nodes are 411476.BACOVA_01357
+	(degree 1568), 411476.BACOVA_00198 (degree 1321), 411476.BACOVA_04496 (degree
+	1291), 411476.BACOVA_03651 (degree 1285) and 411476.BACOVA_00338 (degree
 	1214).
 	
 

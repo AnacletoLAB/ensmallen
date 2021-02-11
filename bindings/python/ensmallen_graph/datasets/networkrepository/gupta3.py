@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:11:09.378057
 
-The undirected graph gupta3 has 16783 nodes and 4670105 unweighted edges, of which
-16783 are self-loops. The graph is dense as it has a density of 0.03310 and is connected,
-as it has a single component. The graph median node degree is 327, the mean node
-degree is 555.53, and the node degree mode is 397. The top 5 most central nodes are
-15908 (degree 14672), 15909 (degree 14576), 16474 (degree 14389), 16373 (degree 14291)
-and 16324 (degree 14271).
+The undirected graph gupta3 has 16783 nodes and 4670105 unweighted edges,
+of which 16783 are self-loops. The graph is dense as it has a density of
+0.03310 and is connected, as it has a single component. The graph median
+node degree is 327, the mean node degree is 555.53, and the node degree
+mode is 397. The top 5 most central nodes are 15908 (degree 14672), 15909
+(degree 14576), 16474 (degree 14389), 16373 (degree 14291) and 16324 (degree
+14271).
 
 
 References
@@ -102,12 +103,13 @@ def Gupta3(
 	
 	Datetime: 2021-02-06 12:11:09.378057
 	
-	The undirected graph gupta3 has 16783 nodes and 4670105 unweighted edges, of which
-	16783 are self-loops. The graph is dense as it has a density of 0.03310 and is connected,
-	as it has a single component. The graph median node degree is 327, the mean node
-	degree is 555.53, and the node degree mode is 397. The top 5 most central nodes are
-	15908 (degree 14672), 15909 (degree 14576), 16474 (degree 14389), 16373 (degree 14291)
-	and 16324 (degree 14271).
+	The undirected graph gupta3 has 16783 nodes and 4670105 unweighted edges,
+	of which 16783 are self-loops. The graph is dense as it has a density of
+	0.03310 and is connected, as it has a single component. The graph median
+	node degree is 327, the mean node degree is 555.53, and the node degree
+	mode is 397. The top 5 most central nodes are 15908 (degree 14672), 15909
+	(degree 14576), 16474 (degree 14389), 16373 (degree 14291) and 16324 (degree
+	14271).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:32.971446
 
-The undirected graph Clostridium orbiscindens has 4287 nodes and 309851 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03373
-and has 16 connected components, where the component with most nodes has 4247 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 144.55, and the node degree mode is 3. The top 5
-most central nodes are 742738.HMPREF9460_00983 (degree 1634), 742738.HMPREF9460_02063
-(degree 1564), 742738.HMPREF9460_03931 (degree 1245), 742738.HMPREF9460_01024 (degree
-1167) and 742738.HMPREF9460_03244 (degree 1115).
+The undirected graph Clostridium orbiscindens has 4287 nodes and 309851
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03373 and has 16 connected components, where the component
+with most nodes has 4247 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 144.55,
+and the node degree mode is 3. The top 5 most central nodes are 742738.HMPREF9460_00983
+(degree 1634), 742738.HMPREF9460_02063 (degree 1564), 742738.HMPREF9460_03931
+(degree 1245), 742738.HMPREF9460_01024 (degree 1167) and 742738.HMPREF9460_03244
+(degree 1115).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumOrbiscindens(
 	
 	Datetime: 2021-02-02 21:37:32.971446
 	
-	The undirected graph Clostridium orbiscindens has 4287 nodes and 309851 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03373
-	and has 16 connected components, where the component with most nodes has 4247 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 144.55, and the node degree mode is 3. The top 5
-	most central nodes are 742738.HMPREF9460_00983 (degree 1634), 742738.HMPREF9460_02063
-	(degree 1564), 742738.HMPREF9460_03931 (degree 1245), 742738.HMPREF9460_01024 (degree
-	1167) and 742738.HMPREF9460_03244 (degree 1115).
+	The undirected graph Clostridium orbiscindens has 4287 nodes and 309851
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03373 and has 16 connected components, where the component
+	with most nodes has 4247 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 144.55,
+	and the node degree mode is 3. The top 5 most central nodes are 742738.HMPREF9460_00983
+	(degree 1634), 742738.HMPREF9460_02063 (degree 1564), 742738.HMPREF9460_03931
+	(degree 1245), 742738.HMPREF9460_01024 (degree 1167) and 742738.HMPREF9460_03244
+	(degree 1115).
 	
 
 

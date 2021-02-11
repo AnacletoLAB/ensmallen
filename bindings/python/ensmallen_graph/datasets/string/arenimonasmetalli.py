@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:10.354866
 
-The undirected graph Arenimonas metalli has 2750 nodes and 244904 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06479 and
-has 7 connected components, where the component with most nodes has 2738 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 178.11, and the node degree mode is 1. The top 5 most central
-nodes are 1384056.N787_07495 (degree 979), 1384056.N787_02870 (degree 972), 1384056.N787_02520
-(degree 963), 1384056.N787_02195 (degree 933) and 1384056.N787_02780 (degree 931).
+The undirected graph Arenimonas metalli has 2750 nodes and 244904 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06479 and has 7 connected components, where the component with most
+nodes has 2738 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 178.11, and
+the node degree mode is 1. The top 5 most central nodes are 1384056.N787_07495
+(degree 979), 1384056.N787_02870 (degree 972), 1384056.N787_02520 (degree
+963), 1384056.N787_02195 (degree 933) and 1384056.N787_02780 (degree 931).
 
 
 References
@@ -106,13 +107,14 @@ def ArenimonasMetalli(
 	
 	Datetime: 2021-02-03 22:19:10.354866
 	
-	The undirected graph Arenimonas metalli has 2750 nodes and 244904 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06479 and
-	has 7 connected components, where the component with most nodes has 2738 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 178.11, and the node degree mode is 1. The top 5 most central
-	nodes are 1384056.N787_07495 (degree 979), 1384056.N787_02870 (degree 972), 1384056.N787_02520
-	(degree 963), 1384056.N787_02195 (degree 933) and 1384056.N787_02780 (degree 931).
+	The undirected graph Arenimonas metalli has 2750 nodes and 244904 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06479 and has 7 connected components, where the component with most
+	nodes has 2738 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 178.11, and
+	the node degree mode is 1. The top 5 most central nodes are 1384056.N787_07495
+	(degree 979), 1384056.N787_02870 (degree 972), 1384056.N787_02520 (degree
+	963), 1384056.N787_02195 (degree 933) and 1384056.N787_02780 (degree 931).
 	
 
 

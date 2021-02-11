@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:23.822785
 
-The undirected graph Comamonas testosteroni KF1 has 5444 nodes and 734526 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04958
-and has 19 connected components, where the component with most nodes has 5396 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 237, the mean node degree is 269.85, and the node degree mode is 2. The top 5
-most central nodes are 399795.CtesDRAFT_PD4088 (degree 1643), 399795.CtesDRAFT_PD4377
-(degree 1491), 399795.CtesDRAFT_PD3441 (degree 1465), 399795.CtesDRAFT_PD3534 (degree
-1448) and 399795.CtesDRAFT_PD5404 (degree 1395).
+The undirected graph Comamonas testosteroni KF1 has 5444 nodes and 734526
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04958 and has 19 connected components, where the component
+with most nodes has 5396 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 269.85,
+and the node degree mode is 2. The top 5 most central nodes are 399795.CtesDRAFT_PD4088
+(degree 1643), 399795.CtesDRAFT_PD4377 (degree 1491), 399795.CtesDRAFT_PD3441
+(degree 1465), 399795.CtesDRAFT_PD3534 (degree 1448) and 399795.CtesDRAFT_PD5404
+(degree 1395).
 
 
 References
@@ -107,14 +108,15 @@ def ComamonasTestosteroniKf1(
 	
 	Datetime: 2021-02-02 20:43:23.822785
 	
-	The undirected graph Comamonas testosteroni KF1 has 5444 nodes and 734526 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04958
-	and has 19 connected components, where the component with most nodes has 5396 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 237, the mean node degree is 269.85, and the node degree mode is 2. The top 5
-	most central nodes are 399795.CtesDRAFT_PD4088 (degree 1643), 399795.CtesDRAFT_PD4377
-	(degree 1491), 399795.CtesDRAFT_PD3441 (degree 1465), 399795.CtesDRAFT_PD3534 (degree
-	1448) and 399795.CtesDRAFT_PD5404 (degree 1395).
+	The undirected graph Comamonas testosteroni KF1 has 5444 nodes and 734526
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04958 and has 19 connected components, where the component
+	with most nodes has 5396 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 269.85,
+	and the node degree mode is 2. The top 5 most central nodes are 399795.CtesDRAFT_PD4088
+	(degree 1643), 399795.CtesDRAFT_PD4377 (degree 1491), 399795.CtesDRAFT_PD3441
+	(degree 1465), 399795.CtesDRAFT_PD3534 (degree 1448) and 399795.CtesDRAFT_PD5404
+	(degree 1395).
 	
 
 

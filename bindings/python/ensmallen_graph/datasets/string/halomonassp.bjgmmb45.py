@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:32.908072
 
-The undirected graph Halomonas sp. BJGMMB45 has 4191 nodes and 295896 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03370 and
-has 9 connected components, where the component with most nodes has 4172 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 141.21, and the node degree mode is 1. The top 5 most central
-nodes are 1178482.BJB45_02635 (degree 1614), 1178482.BJB45_08965 (degree 1463), 1178482.BJB45_18695
-(degree 1105), 1178482.BJB45_01655 (degree 1074) and 1178482.BJB45_18260 (degree
+The undirected graph Halomonas sp. BJGMMB45 has 4191 nodes and 295896 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03370 and has 9 connected components, where the component with most
+nodes has 4172 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 141.21, and
+the node degree mode is 1. The top 5 most central nodes are 1178482.BJB45_02635
+(degree 1614), 1178482.BJB45_08965 (degree 1463), 1178482.BJB45_18695 (degree
+1105), 1178482.BJB45_01655 (degree 1074) and 1178482.BJB45_18260 (degree
 1019).
 
 
@@ -107,13 +108,14 @@ def HalomonasSp.Bjgmmb45(
 	
 	Datetime: 2021-02-02 23:09:32.908072
 	
-	The undirected graph Halomonas sp. BJGMMB45 has 4191 nodes and 295896 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03370 and
-	has 9 connected components, where the component with most nodes has 4172 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 141.21, and the node degree mode is 1. The top 5 most central
-	nodes are 1178482.BJB45_02635 (degree 1614), 1178482.BJB45_08965 (degree 1463), 1178482.BJB45_18695
-	(degree 1105), 1178482.BJB45_01655 (degree 1074) and 1178482.BJB45_18260 (degree
+	The undirected graph Halomonas sp. BJGMMB45 has 4191 nodes and 295896 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03370 and has 9 connected components, where the component with most
+	nodes has 4172 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 141.21, and
+	the node degree mode is 1. The top 5 most central nodes are 1178482.BJB45_02635
+	(degree 1614), 1178482.BJB45_08965 (degree 1463), 1178482.BJB45_18695 (degree
+	1105), 1178482.BJB45_01655 (degree 1074) and 1178482.BJB45_18260 (degree
 	1019).
 	
 

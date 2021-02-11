@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:05:37.300892
 
-The undirected graph brack2 has 62631 nodes and 366559 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00019 and
-is connected, as it has a single component. The graph median node degree is 11, the
-mean node degree is 11.71, and the node degree mode is 6. The top 5 most central
-nodes are 60084 (degree 32), 31076 (degree 31), 38666 (degree 30), 22407 (degree
-30) and 38800 (degree 29).
+The undirected graph brack2 has 62631 nodes and 366559 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00019 and is connected, as it has a single component. The graph median
+node degree is 11, the mean node degree is 11.71, and the node degree mode
+is 6. The top 5 most central nodes are 60084 (degree 32), 31076 (degree
+31), 38666 (degree 30), 22407 (degree 30) and 38800 (degree 29).
 
 
 References
@@ -102,12 +102,12 @@ def Brack2(
 	
 	Datetime: 2021-02-06 11:05:37.300892
 	
-	The undirected graph brack2 has 62631 nodes and 366559 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00019 and
-	is connected, as it has a single component. The graph median node degree is 11, the
-	mean node degree is 11.71, and the node degree mode is 6. The top 5 most central
-	nodes are 60084 (degree 32), 31076 (degree 31), 38666 (degree 30), 22407 (degree
-	30) and 38800 (degree 29).
+	The undirected graph brack2 has 62631 nodes and 366559 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00019 and is connected, as it has a single component. The graph median
+	node degree is 11, the mean node degree is 11.71, and the node degree mode
+	is 6. The top 5 most central nodes are 60084 (degree 32), 31076 (degree
+	31), 38666 (degree 30), 22407 (degree 30) and 38800 (degree 29).
 	
 
 

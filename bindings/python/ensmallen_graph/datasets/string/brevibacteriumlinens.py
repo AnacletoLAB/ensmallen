@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:59.541557
 
-The undirected graph Brevibacterium linens has 3786 nodes and 333522 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04655 and
-has 19 connected components, where the component with most nodes has 3746 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 176.19, and the node degree mode is 1. The top 5 most central
-nodes are 321955.AAGP01000001_gene3292 (degree 1286), 321955.AAGP01000013_gene703
-(degree 1231), 321955.AAGP01000001_gene3190 (degree 1198), 321955.AAGP01000004_gene2750
-(degree 1113) and 321955.AAGP01000059_gene1408 (degree 1082).
+The undirected graph Brevibacterium linens has 3786 nodes and 333522 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04655 and has 19 connected components, where the component with most
+nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 176.19, and
+the node degree mode is 1. The top 5 most central nodes are 321955.AAGP01000001_gene3292
+(degree 1286), 321955.AAGP01000013_gene703 (degree 1231), 321955.AAGP01000001_gene3190
+(degree 1198), 321955.AAGP01000004_gene2750 (degree 1113) and 321955.AAGP01000059_gene1408
+(degree 1082).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacteriumLinens(
 	
 	Datetime: 2021-02-02 20:27:59.541557
 	
-	The undirected graph Brevibacterium linens has 3786 nodes and 333522 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04655 and
-	has 19 connected components, where the component with most nodes has 3746 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 176.19, and the node degree mode is 1. The top 5 most central
-	nodes are 321955.AAGP01000001_gene3292 (degree 1286), 321955.AAGP01000013_gene703
-	(degree 1231), 321955.AAGP01000001_gene3190 (degree 1198), 321955.AAGP01000004_gene2750
-	(degree 1113) and 321955.AAGP01000059_gene1408 (degree 1082).
+	The undirected graph Brevibacterium linens has 3786 nodes and 333522 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04655 and has 19 connected components, where the component with most
+	nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 176.19, and
+	the node degree mode is 1. The top 5 most central nodes are 321955.AAGP01000001_gene3292
+	(degree 1286), 321955.AAGP01000013_gene703 (degree 1231), 321955.AAGP01000001_gene3190
+	(degree 1198), 321955.AAGP01000004_gene2750 (degree 1113) and 321955.AAGP01000059_gene1408
+	(degree 1082).
 	
 
 

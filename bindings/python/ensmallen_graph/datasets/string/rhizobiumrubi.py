@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:46.387738
 
-The undirected graph Rhizobium rubi has 4903 nodes and 605800 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05041 and
-has 22 connected components, where the component with most nodes has 4845 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 247.11, and the node degree mode is 3. The top 5 most central
-nodes are 1220582.RRU01S_12_02450 (degree 1863), 1220582.RRU01S_02_01370 (degree
-1524), 1220582.RRU01S_10_00030 (degree 1521), 1220582.RRU01S_10_01050 (degree 1471)
-and 1220582.RRU01S_12_00070 (degree 1431).
+The undirected graph Rhizobium rubi has 4903 nodes and 605800 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05041 and has 22 connected components, where the component with most
+nodes has 4845 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 247.11, and
+the node degree mode is 3. The top 5 most central nodes are 1220582.RRU01S_12_02450
+(degree 1863), 1220582.RRU01S_02_01370 (degree 1524), 1220582.RRU01S_10_00030
+(degree 1521), 1220582.RRU01S_10_01050 (degree 1471) and 1220582.RRU01S_12_00070
+(degree 1431).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumRubi(
 	
 	Datetime: 2021-02-02 23:23:46.387738
 	
-	The undirected graph Rhizobium rubi has 4903 nodes and 605800 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05041 and
-	has 22 connected components, where the component with most nodes has 4845 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 247.11, and the node degree mode is 3. The top 5 most central
-	nodes are 1220582.RRU01S_12_02450 (degree 1863), 1220582.RRU01S_02_01370 (degree
-	1524), 1220582.RRU01S_10_00030 (degree 1521), 1220582.RRU01S_10_01050 (degree 1471)
-	and 1220582.RRU01S_12_00070 (degree 1431).
+	The undirected graph Rhizobium rubi has 4903 nodes and 605800 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05041 and has 22 connected components, where the component with most
+	nodes has 4845 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 247.11, and
+	the node degree mode is 3. The top 5 most central nodes are 1220582.RRU01S_12_02450
+	(degree 1863), 1220582.RRU01S_02_01370 (degree 1524), 1220582.RRU01S_10_00030
+	(degree 1521), 1220582.RRU01S_10_01050 (degree 1471) and 1220582.RRU01S_12_00070
+	(degree 1431).
 	
 
 

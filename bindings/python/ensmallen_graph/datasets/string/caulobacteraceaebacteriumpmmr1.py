@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:17:53.212458
 
-The undirected graph Caulobacteraceae bacterium PMMR1 has 2620 nodes and 235581 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06866
-and has 5 connected components, where the component with most nodes has 2610 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 179.83, and the node degree mode is 2. The top 5
-most central nodes are 1382303.JPOM01000001_gene707 (degree 1004), 1382303.JPOM01000001_gene1746
+The undirected graph Caulobacteraceae bacterium PMMR1 has 2620 nodes and
+235581 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06866 and has 5 connected components, where the
+component with most nodes has 2610 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+is 179.83, and the node degree mode is 2. The top 5 most central nodes
+are 1382303.JPOM01000001_gene707 (degree 1004), 1382303.JPOM01000001_gene1746
 (degree 957), 1382303.JPOM01000001_gene2330 (degree 823), 1382303.JPOM01000001_gene931
 (degree 812) and 1382303.JPOM01000001_gene2435 (degree 792).
 
@@ -107,12 +108,13 @@ def CaulobacteraceaeBacteriumPmmr1(
 	
 	Datetime: 2021-02-03 22:17:53.212458
 	
-	The undirected graph Caulobacteraceae bacterium PMMR1 has 2620 nodes and 235581 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06866
-	and has 5 connected components, where the component with most nodes has 2610 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 179.83, and the node degree mode is 2. The top 5
-	most central nodes are 1382303.JPOM01000001_gene707 (degree 1004), 1382303.JPOM01000001_gene1746
+	The undirected graph Caulobacteraceae bacterium PMMR1 has 2620 nodes and
+	235581 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06866 and has 5 connected components, where the
+	component with most nodes has 2610 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 167, the mean node degree
+	is 179.83, and the node degree mode is 2. The top 5 most central nodes
+	are 1382303.JPOM01000001_gene707 (degree 1004), 1382303.JPOM01000001_gene1746
 	(degree 957), 1382303.JPOM01000001_gene2330 (degree 823), 1382303.JPOM01000001_gene931
 	(degree 812) and 1382303.JPOM01000001_gene2435 (degree 792).
 	

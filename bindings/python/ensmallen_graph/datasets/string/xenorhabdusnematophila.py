@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:45.815993
 
-The undirected graph Xenorhabdus nematophila has 4423 nodes and 270215 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02763 and
-has 31 connected components, where the component with most nodes has 4350 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 122.19, and the node degree mode is 3. The top 5 most central
-nodes are 406817.XNC1_1757 (degree 1403), 406817.XNC1_4331 (degree 1245), 406817.XNC1_4165
-(degree 927), 406817.XNC1_1955 (degree 924) and 406817.XNC1_1954 (degree 915).
+The undirected graph Xenorhabdus nematophila has 4423 nodes and 270215
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02763 and has 31 connected components, where the component
+with most nodes has 4350 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 122.19,
+and the node degree mode is 3. The top 5 most central nodes are 406817.XNC1_1757
+(degree 1403), 406817.XNC1_4331 (degree 1245), 406817.XNC1_4165 (degree
+927), 406817.XNC1_1955 (degree 924) and 406817.XNC1_1954 (degree 915).
 
 
 References
@@ -106,13 +107,14 @@ def XenorhabdusNematophila(
 	
 	Datetime: 2021-02-02 20:44:45.815993
 	
-	The undirected graph Xenorhabdus nematophila has 4423 nodes and 270215 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02763 and
-	has 31 connected components, where the component with most nodes has 4350 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 122.19, and the node degree mode is 3. The top 5 most central
-	nodes are 406817.XNC1_1757 (degree 1403), 406817.XNC1_4331 (degree 1245), 406817.XNC1_4165
-	(degree 927), 406817.XNC1_1955 (degree 924) and 406817.XNC1_1954 (degree 915).
+	The undirected graph Xenorhabdus nematophila has 4423 nodes and 270215
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02763 and has 31 connected components, where the component
+	with most nodes has 4350 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 122.19,
+	and the node degree mode is 3. The top 5 most central nodes are 406817.XNC1_1757
+	(degree 1403), 406817.XNC1_4331 (degree 1245), 406817.XNC1_4165 (degree
+	927), 406817.XNC1_1955 (degree 924) and 406817.XNC1_1954 (degree 915).
 	
 
 

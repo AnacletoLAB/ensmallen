@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:03.667479
 
-The undirected graph bio-DR-CX has 3289 nodes and 84940 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01571 and has 2
-connected components, where the component with most nodes has 3287 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 27, the
-mean node degree is 51.65 and the node degree mode is 1. The top 5 most central nodes
-are 486 (degree 497), 58 (degree 397), 419 (degree 381), 421 (degree 355) and 632
-(degree 343).
+The undirected graph bio-DR-CX has 3289 nodes and 84940 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01571 and has 2 connected components, where the component with most nodes
+has 3287 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 27, the mean node degree is 51.65 and the node
+degree mode is 1. The top 5 most central nodes are 486 (degree 497), 58
+(degree 397), 419 (degree 381), 421 (degree 355) and 632 (degree 343).
 
 
 References
@@ -114,13 +114,13 @@ def BioDrCx(
 	
 	Datetime: 2021-02-03 22:30:03.667479
 	
-	The undirected graph bio-DR-CX has 3289 nodes and 84940 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01571 and has 2
-	connected components, where the component with most nodes has 3287 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 27, the
-	mean node degree is 51.65 and the node degree mode is 1. The top 5 most central nodes
-	are 486 (degree 497), 58 (degree 397), 419 (degree 381), 421 (degree 355) and 632
-	(degree 343).
+	The undirected graph bio-DR-CX has 3289 nodes and 84940 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01571 and has 2 connected components, where the component with most nodes
+	has 3287 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 27, the mean node degree is 51.65 and the node
+	degree mode is 1. The top 5 most central nodes are 486 (degree 497), 58
+	(degree 397), 419 (degree 381), 421 (degree 355) and 632 (degree 343).
 	
 
 

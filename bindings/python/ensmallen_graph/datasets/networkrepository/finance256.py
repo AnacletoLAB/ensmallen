@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:13:59.306724
 
-The undirected graph finance256 has 37376 nodes and 167936 unweighted edges, of which
-37376 are self-loops. The graph is quite sparse as it has a density of 0.00021 and
-is connected, as it has a single component. The graph median node degree is 7, the
-mean node degree is 7.99, and the node degree mode is 7. The top 5 most central nodes
-are 24536 (degree 55), 24440 (degree 55), 24344 (degree 55), 24248 (degree 55) and
-24152 (degree 55).
+The undirected graph finance256 has 37376 nodes and 167936 unweighted edges,
+of which 37376 are self-loops. The graph is quite sparse as it has a density
+of 0.00021 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 7.99, and the node degree mode
+is 7. The top 5 most central nodes are 24536 (degree 55), 24440 (degree
+55), 24344 (degree 55), 24248 (degree 55) and 24152 (degree 55).
 
 
 References
@@ -102,12 +102,12 @@ def Finance256(
 	
 	Datetime: 2021-02-06 11:13:59.306724
 	
-	The undirected graph finance256 has 37376 nodes and 167936 unweighted edges, of which
-	37376 are self-loops. The graph is quite sparse as it has a density of 0.00021 and
-	is connected, as it has a single component. The graph median node degree is 7, the
-	mean node degree is 7.99, and the node degree mode is 7. The top 5 most central nodes
-	are 24536 (degree 55), 24440 (degree 55), 24344 (degree 55), 24248 (degree 55) and
-	24152 (degree 55).
+	The undirected graph finance256 has 37376 nodes and 167936 unweighted edges,
+	of which 37376 are self-loops. The graph is quite sparse as it has a density
+	of 0.00021 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 7.99, and the node degree mode
+	is 7. The top 5 most central nodes are 24536 (degree 55), 24440 (degree
+	55), 24344 (degree 55), 24248 (degree 55) and 24152 (degree 55).
 	
 
 

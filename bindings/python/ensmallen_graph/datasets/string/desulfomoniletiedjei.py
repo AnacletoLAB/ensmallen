@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:25.578550
 
-The undirected graph Desulfomonile tiedjei has 5353 nodes and 677836 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04732 and
-has 54 connected components, where the component with most nodes has 5220 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 253.25, and the node degree mode is 1. The top 5 most central
-nodes are 706587.Desti_1510 (degree 2983), 706587.Desti_3294 (degree 2596), 706587.Desti_3569
-(degree 2565), 706587.Desti_5134 (degree 2540) and 706587.Desti_5543 (degree 2446).
+The undirected graph Desulfomonile tiedjei has 5353 nodes and 677836 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04732 and has 54 connected components, where the component with most
+nodes has 5220 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 253.25, and
+the node degree mode is 1. The top 5 most central nodes are 706587.Desti_1510
+(degree 2983), 706587.Desti_3294 (degree 2596), 706587.Desti_3569 (degree
+2565), 706587.Desti_5134 (degree 2540) and 706587.Desti_5543 (degree 2446).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfomonileTiedjei(
 	
 	Datetime: 2021-02-02 21:34:25.578550
 	
-	The undirected graph Desulfomonile tiedjei has 5353 nodes and 677836 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04732 and
-	has 54 connected components, where the component with most nodes has 5220 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 253.25, and the node degree mode is 1. The top 5 most central
-	nodes are 706587.Desti_1510 (degree 2983), 706587.Desti_3294 (degree 2596), 706587.Desti_3569
-	(degree 2565), 706587.Desti_5134 (degree 2540) and 706587.Desti_5543 (degree 2446).
+	The undirected graph Desulfomonile tiedjei has 5353 nodes and 677836 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04732 and has 54 connected components, where the component with most
+	nodes has 5220 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 253.25, and
+	the node degree mode is 1. The top 5 most central nodes are 706587.Desti_1510
+	(degree 2983), 706587.Desti_3294 (degree 2596), 706587.Desti_3569 (degree
+	2565), 706587.Desti_5134 (degree 2540) and 706587.Desti_5543 (degree 2446).
 	
 
 

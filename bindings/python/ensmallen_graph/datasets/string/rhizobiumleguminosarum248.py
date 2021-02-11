@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:10.169771
 
-The undirected graph Rhizobium leguminosarum 248 has 6551 nodes and 966420 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04505
-and has 28 connected components, where the component with most nodes has 6488 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 243, the mean node degree is 295.05, and the node degree mode is 1. The top 5
-most central nodes are 936136.ARRT01000002_gene572 (degree 2695), 936136.ARRT01000006_gene5879
-(degree 2408), 936136.ARRT01000006_gene4624 (degree 2323), 936136.ARRT01000006_gene1554
-(degree 2279) and 936136.ARRT01000006_gene2086 (degree 2196).
+The undirected graph Rhizobium leguminosarum 248 has 6551 nodes and 966420
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04505 and has 28 connected components, where the component
+with most nodes has 6488 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 243, the mean node degree is 295.05,
+and the node degree mode is 1. The top 5 most central nodes are 936136.ARRT01000002_gene572
+(degree 2695), 936136.ARRT01000006_gene5879 (degree 2408), 936136.ARRT01000006_gene4624
+(degree 2323), 936136.ARRT01000006_gene1554 (degree 2279) and 936136.ARRT01000006_gene2086
+(degree 2196).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumLeguminosarum248(
 	
 	Datetime: 2021-02-02 22:00:10.169771
 	
-	The undirected graph Rhizobium leguminosarum 248 has 6551 nodes and 966420 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04505
-	and has 28 connected components, where the component with most nodes has 6488 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 243, the mean node degree is 295.05, and the node degree mode is 1. The top 5
-	most central nodes are 936136.ARRT01000002_gene572 (degree 2695), 936136.ARRT01000006_gene5879
-	(degree 2408), 936136.ARRT01000006_gene4624 (degree 2323), 936136.ARRT01000006_gene1554
-	(degree 2279) and 936136.ARRT01000006_gene2086 (degree 2196).
+	The undirected graph Rhizobium leguminosarum 248 has 6551 nodes and 966420
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04505 and has 28 connected components, where the component
+	with most nodes has 6488 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 243, the mean node degree is 295.05,
+	and the node degree mode is 1. The top 5 most central nodes are 936136.ARRT01000002_gene572
+	(degree 2695), 936136.ARRT01000006_gene5879 (degree 2408), 936136.ARRT01000006_gene4624
+	(degree 2323), 936136.ARRT01000006_gene1554 (degree 2279) and 936136.ARRT01000006_gene2086
+	(degree 2196).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:59:10.517823
 
-The undirected graph Natrialba asiatica has 4088 nodes and 360646 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04317 and
-has 46 connected components, where the component with most nodes has 3970 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 176.44, and the node degree mode is 3. The top 5 most central
-nodes are 29540.C481_20186 (degree 1193), 29540.C481_08401 (degree 1184), 29540.C481_17447
-(degree 1162), 29540.C481_08186 (degree 1095) and 29540.C481_08086 (degree 1030).
+The undirected graph Natrialba asiatica has 4088 nodes and 360646 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04317 and has 46 connected components, where the component with most
+nodes has 3970 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 176.44, and
+the node degree mode is 3. The top 5 most central nodes are 29540.C481_20186
+(degree 1193), 29540.C481_08401 (degree 1184), 29540.C481_17447 (degree
+1162), 29540.C481_08186 (degree 1095) and 29540.C481_08086 (degree 1030).
 
 
 References
@@ -106,13 +107,14 @@ def NatrialbaAsiatica(
 	
 	Datetime: 2021-02-02 17:59:10.517823
 	
-	The undirected graph Natrialba asiatica has 4088 nodes and 360646 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04317 and
-	has 46 connected components, where the component with most nodes has 3970 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 176.44, and the node degree mode is 3. The top 5 most central
-	nodes are 29540.C481_20186 (degree 1193), 29540.C481_08401 (degree 1184), 29540.C481_17447
-	(degree 1162), 29540.C481_08186 (degree 1095) and 29540.C481_08086 (degree 1030).
+	The undirected graph Natrialba asiatica has 4088 nodes and 360646 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04317 and has 46 connected components, where the component with most
+	nodes has 3970 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 176.44, and
+	the node degree mode is 3. The top 5 most central nodes are 29540.C481_20186
+	(degree 1193), 29540.C481_08401 (degree 1184), 29540.C481_17447 (degree
+	1162), 29540.C481_08186 (degree 1095) and 29540.C481_08086 (degree 1030).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:55.021889
 
-The undirected graph Yersinia enterocolitica 8081 has 4040 nodes and 449859 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05514
-and has 5 connected components, where the component with most nodes has 4031 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 200, the mean node degree is 222.70, and the node degree mode is 2. The top 5
-most central nodes are 393305.YE2618 (degree 1710), 393305.YE0021 (degree 1392),
-393305.YE1082 (degree 1178), 393305.YE3733 (degree 1169) and 393305.YE3735 (degree
-1151).
+The undirected graph Yersinia enterocolitica 8081 has 4040 nodes and 449859
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05514 and has 5 connected components, where the component
+with most nodes has 4031 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 200, the mean node degree is 222.70,
+and the node degree mode is 2. The top 5 most central nodes are 393305.YE2618
+(degree 1710), 393305.YE0021 (degree 1392), 393305.YE1082 (degree 1178),
+393305.YE3733 (degree 1169) and 393305.YE3735 (degree 1151).
 
 
 References
@@ -107,14 +107,14 @@ def YersiniaEnterocolitica8081(
 	
 	Datetime: 2021-02-02 20:40:55.021889
 	
-	The undirected graph Yersinia enterocolitica 8081 has 4040 nodes and 449859 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05514
-	and has 5 connected components, where the component with most nodes has 4031 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 200, the mean node degree is 222.70, and the node degree mode is 2. The top 5
-	most central nodes are 393305.YE2618 (degree 1710), 393305.YE0021 (degree 1392),
-	393305.YE1082 (degree 1178), 393305.YE3733 (degree 1169) and 393305.YE3735 (degree
-	1151).
+	The undirected graph Yersinia enterocolitica 8081 has 4040 nodes and 449859
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05514 and has 5 connected components, where the component
+	with most nodes has 4031 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 200, the mean node degree is 222.70,
+	and the node degree mode is 2. The top 5 most central nodes are 393305.YE2618
+	(degree 1710), 393305.YE0021 (degree 1392), 393305.YE1082 (degree 1178),
+	393305.YE3733 (degree 1169) and 393305.YE3735 (degree 1151).
 	
 
 

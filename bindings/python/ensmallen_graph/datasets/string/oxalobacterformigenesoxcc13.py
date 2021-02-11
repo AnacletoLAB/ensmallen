@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:09.178808
 
-The undirected graph Oxalobacter formigenes OXCC13 has 2049 nodes and 125306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05972
-and has 13 connected components, where the component with most nodes has 2024 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 122.31, and the node degree mode is 1. The top 5
-most central nodes are 556269.ACDQ01000016_gene505 (degree 877), 556269.ACDQ01000011_gene144
-(degree 734), 556269.ACDQ01000010_gene1923 (degree 711), 556269.ACDQ01000010_gene1922
-(degree 656) and 556269.ACDQ01000011_gene4 (degree 626).
+The undirected graph Oxalobacter formigenes OXCC13 has 2049 nodes and 125306
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05972 and has 13 connected components, where the component
+with most nodes has 2024 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 122.31,
+and the node degree mode is 1. The top 5 most central nodes are 556269.ACDQ01000016_gene505
+(degree 877), 556269.ACDQ01000011_gene144 (degree 734), 556269.ACDQ01000010_gene1923
+(degree 711), 556269.ACDQ01000010_gene1922 (degree 656) and 556269.ACDQ01000011_gene4
+(degree 626).
 
 
 References
@@ -107,14 +108,15 @@ def OxalobacterFormigenesOxcc13(
 	
 	Datetime: 2021-02-02 21:11:09.178808
 	
-	The undirected graph Oxalobacter formigenes OXCC13 has 2049 nodes and 125306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05972
-	and has 13 connected components, where the component with most nodes has 2024 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 122.31, and the node degree mode is 1. The top 5
-	most central nodes are 556269.ACDQ01000016_gene505 (degree 877), 556269.ACDQ01000011_gene144
-	(degree 734), 556269.ACDQ01000010_gene1923 (degree 711), 556269.ACDQ01000010_gene1922
-	(degree 656) and 556269.ACDQ01000011_gene4 (degree 626).
+	The undirected graph Oxalobacter formigenes OXCC13 has 2049 nodes and 125306
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05972 and has 13 connected components, where the component
+	with most nodes has 2024 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 122.31,
+	and the node degree mode is 1. The top 5 most central nodes are 556269.ACDQ01000016_gene505
+	(degree 877), 556269.ACDQ01000011_gene144 (degree 734), 556269.ACDQ01000010_gene1923
+	(degree 711), 556269.ACDQ01000010_gene1922 (degree 656) and 556269.ACDQ01000011_gene4
+	(degree 626).
 	
 
 

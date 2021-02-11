@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:31.955258
 
-The undirected graph Anaerobaculum mobile has 2012 nodes and 153238 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07575 and
-has 2 connected components, where the component with most nodes has 2010 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 152.32, and the node degree mode is 79. The top 5 most central
-nodes are 891968.Anamo_1444 (degree 897), 891968.Anamo_1610 (degree 762), 891968.Anamo_0823
-(degree 736), 891968.Anamo_0461 (degree 714) and 891968.Anamo_1657 (degree 692).
+The undirected graph Anaerobaculum mobile has 2012 nodes and 153238 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07575 and has 2 connected components, where the component with most
+nodes has 2010 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 152.32, and
+the node degree mode is 79. The top 5 most central nodes are 891968.Anamo_1444
+(degree 897), 891968.Anamo_1610 (degree 762), 891968.Anamo_0823 (degree
+736), 891968.Anamo_0461 (degree 714) and 891968.Anamo_1657 (degree 692).
 
 
 References
@@ -106,13 +107,14 @@ def AnaerobaculumMobile(
 	
 	Datetime: 2021-02-02 21:53:31.955258
 	
-	The undirected graph Anaerobaculum mobile has 2012 nodes and 153238 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07575 and
-	has 2 connected components, where the component with most nodes has 2010 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 152.32, and the node degree mode is 79. The top 5 most central
-	nodes are 891968.Anamo_1444 (degree 897), 891968.Anamo_1610 (degree 762), 891968.Anamo_0823
-	(degree 736), 891968.Anamo_0461 (degree 714) and 891968.Anamo_1657 (degree 692).
+	The undirected graph Anaerobaculum mobile has 2012 nodes and 153238 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07575 and has 2 connected components, where the component with most
+	nodes has 2010 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 152.32, and
+	the node degree mode is 79. The top 5 most central nodes are 891968.Anamo_1444
+	(degree 897), 891968.Anamo_1610 (degree 762), 891968.Anamo_0823 (degree
+	736), 891968.Anamo_0461 (degree 714) and 891968.Anamo_1657 (degree 692).
 	
 
 

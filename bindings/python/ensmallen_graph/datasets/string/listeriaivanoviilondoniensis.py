@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:33.529209
 
-The undirected graph Listeria ivanovii londoniensis has 2811 nodes and 207572 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05256
-and has 9 connected components, where the component with most nodes has 2792 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 147.69, and the node degree mode is 1. The top 5
-most central nodes are 202752.JL53_04800 (degree 1047), 202752.JL53_08665 (degree
-977), 202752.JL53_06220 (degree 893), 202752.JL53_04070 (degree 851) and 202752.JL53_08100
-(degree 845).
+The undirected graph Listeria ivanovii londoniensis has 2811 nodes and
+207572 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05256 and has 9 connected components, where the
+component with most nodes has 2792 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+is 147.69, and the node degree mode is 1. The top 5 most central nodes
+are 202752.JL53_04800 (degree 1047), 202752.JL53_08665 (degree 977), 202752.JL53_06220
+(degree 893), 202752.JL53_04070 (degree 851) and 202752.JL53_08100 (degree
+845).
 
 
 References
@@ -107,14 +108,15 @@ def ListeriaIvanoviiLondoniensis(
 	
 	Datetime: 2021-02-02 19:59:33.529209
 	
-	The undirected graph Listeria ivanovii londoniensis has 2811 nodes and 207572 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05256
-	and has 9 connected components, where the component with most nodes has 2792 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 147.69, and the node degree mode is 1. The top 5
-	most central nodes are 202752.JL53_04800 (degree 1047), 202752.JL53_08665 (degree
-	977), 202752.JL53_06220 (degree 893), 202752.JL53_04070 (degree 851) and 202752.JL53_08100
-	(degree 845).
+	The undirected graph Listeria ivanovii londoniensis has 2811 nodes and
+	207572 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05256 and has 9 connected components, where the
+	component with most nodes has 2792 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+	is 147.69, and the node degree mode is 1. The top 5 most central nodes
+	are 202752.JL53_04800 (degree 1047), 202752.JL53_08665 (degree 977), 202752.JL53_06220
+	(degree 893), 202752.JL53_04070 (degree 851) and 202752.JL53_08100 (degree
+	845).
 	
 
 

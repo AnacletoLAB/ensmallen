@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:42.046499
 
-The undirected graph Streptococcus sanguinis SK36 has 2253 nodes and 125796 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04959
-and has 5 connected components, where the component with most nodes has 2242 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 111.67, and the node degree mode is 11. The top 5
-most central nodes are 388919.SSA_0100 (degree 878), 388919.SSA_1163 (degree 678),
-388919.SSA_1703 (degree 635), 388919.SSA_2374 (degree 628) and 388919.SSA_1845 (degree
-608).
+The undirected graph Streptococcus sanguinis SK36 has 2253 nodes and 125796
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04959 and has 5 connected components, where the component
+with most nodes has 2242 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 111.67,
+and the node degree mode is 11. The top 5 most central nodes are 388919.SSA_0100
+(degree 878), 388919.SSA_1163 (degree 678), 388919.SSA_1703 (degree 635),
+388919.SSA_2374 (degree 628) and 388919.SSA_1845 (degree 608).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusSanguinisSk36(
 	
 	Datetime: 2021-02-02 20:38:42.046499
 	
-	The undirected graph Streptococcus sanguinis SK36 has 2253 nodes and 125796 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04959
-	and has 5 connected components, where the component with most nodes has 2242 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 111.67, and the node degree mode is 11. The top 5
-	most central nodes are 388919.SSA_0100 (degree 878), 388919.SSA_1163 (degree 678),
-	388919.SSA_1703 (degree 635), 388919.SSA_2374 (degree 628) and 388919.SSA_1845 (degree
-	608).
+	The undirected graph Streptococcus sanguinis SK36 has 2253 nodes and 125796
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04959 and has 5 connected components, where the component
+	with most nodes has 2242 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 111.67,
+	and the node degree mode is 11. The top 5 most central nodes are 388919.SSA_0100
+	(degree 878), 388919.SSA_1163 (degree 678), 388919.SSA_1703 (degree 635),
+	388919.SSA_2374 (degree 628) and 388919.SSA_1845 (degree 608).
 	
 
 

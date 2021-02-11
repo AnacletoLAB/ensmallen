@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:32.611841
 
-The undirected graph Streptomyces toyocaensis has 6222 nodes and 892004 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-and has 25 connected components, where the component with most nodes has 6159 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 286.73, and the node degree mode is 2. The top 5
-most central nodes are 55952.BU52_07015 (degree 3049), 55952.BU52_22205 (degree 2328),
-55952.BU52_18685 (degree 2108), 55952.BU52_22225 (degree 2020) and 55952.BU52_16355
-(degree 1953).
+The undirected graph Streptomyces toyocaensis has 6222 nodes and 892004
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04609 and has 25 connected components, where the component
+with most nodes has 6159 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 286.73,
+and the node degree mode is 2. The top 5 most central nodes are 55952.BU52_07015
+(degree 3049), 55952.BU52_22205 (degree 2328), 55952.BU52_18685 (degree
+2108), 55952.BU52_22225 (degree 2020) and 55952.BU52_16355 (degree 1953).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesToyocaensis(
 	
 	Datetime: 2021-02-02 18:18:32.611841
 	
-	The undirected graph Streptomyces toyocaensis has 6222 nodes and 892004 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-	and has 25 connected components, where the component with most nodes has 6159 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 286.73, and the node degree mode is 2. The top 5
-	most central nodes are 55952.BU52_07015 (degree 3049), 55952.BU52_22205 (degree 2328),
-	55952.BU52_18685 (degree 2108), 55952.BU52_22225 (degree 2020) and 55952.BU52_16355
-	(degree 1953).
+	The undirected graph Streptomyces toyocaensis has 6222 nodes and 892004
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04609 and has 25 connected components, where the component
+	with most nodes has 6159 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 286.73,
+	and the node degree mode is 2. The top 5 most central nodes are 55952.BU52_07015
+	(degree 3049), 55952.BU52_22205 (degree 2328), 55952.BU52_18685 (degree
+	2108), 55952.BU52_22225 (degree 2020) and 55952.BU52_16355 (degree 1953).
 	
 
 

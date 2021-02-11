@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:29:20.134855
 
-The undirected graph pf2177 has 10043 nodes and 30984 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00061 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 6.17, and the node degree mode is 4. The top 5 most central nodes
-are 9725 (degree 40), 9717 (degree 40), 9699 (degree 40), 9684 (degree 40) and 9658
-(degree 40).
+The undirected graph pf2177 has 10043 nodes and 30984 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00061 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 6.17, and the node degree mode
+is 4. The top 5 most central nodes are 9725 (degree 40), 9717 (degree 40),
+9699 (degree 40), 9684 (degree 40) and 9658 (degree 40).
 
 
 References
@@ -102,12 +102,12 @@ def Pf2177(
 	
 	Datetime: 2021-02-06 10:29:20.134855
 	
-	The undirected graph pf2177 has 10043 nodes and 30984 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00061 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 6.17, and the node degree mode is 4. The top 5 most central nodes
-	are 9725 (degree 40), 9717 (degree 40), 9699 (degree 40), 9684 (degree 40) and 9658
-	(degree 40).
+	The undirected graph pf2177 has 10043 nodes and 30984 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00061 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 6.17, and the node degree mode
+	is 4. The top 5 most central nodes are 9725 (degree 40), 9717 (degree 40),
+	9699 (degree 40), 9684 (degree 40) and 9658 (degree 40).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:36:28.524431
 
-The undirected graph Macaca mulatta has 20447 nodes and 5391938 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02580 and
-is connected, as it has a single component. The graph median node degree is 368,
-the mean node degree is 527.41, and the node degree mode is 197. The top 5 most central
-nodes are 9544.ENSMMUP00000007448 (degree 5030), 9544.ENSMMUP00000023356 (degree
-4856), 9544.ENSMMUP00000023719 (degree 4724), 9544.ENSMMUP00000035274 (degree 4626)
-and 9544.ENSMMUP00000004425 (degree 4322).
+The undirected graph Macaca mulatta has 20447 nodes and 5391938 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02580 and is connected, as it has a single component. The graph median
+node degree is 368, the mean node degree is 527.41, and the node degree
+mode is 197. The top 5 most central nodes are 9544.ENSMMUP00000007448 (degree
+5030), 9544.ENSMMUP00000023356 (degree 4856), 9544.ENSMMUP00000023719 (degree
+4724), 9544.ENSMMUP00000035274 (degree 4626) and 9544.ENSMMUP00000004425
+(degree 4322).
 
 
 References
@@ -106,13 +107,14 @@ def MacacaMulatta(
 	
 	Datetime: 2021-02-02 17:36:28.524431
 	
-	The undirected graph Macaca mulatta has 20447 nodes and 5391938 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02580 and
-	is connected, as it has a single component. The graph median node degree is 368,
-	the mean node degree is 527.41, and the node degree mode is 197. The top 5 most central
-	nodes are 9544.ENSMMUP00000007448 (degree 5030), 9544.ENSMMUP00000023356 (degree
-	4856), 9544.ENSMMUP00000023719 (degree 4724), 9544.ENSMMUP00000035274 (degree 4626)
-	and 9544.ENSMMUP00000004425 (degree 4322).
+	The undirected graph Macaca mulatta has 20447 nodes and 5391938 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02580 and is connected, as it has a single component. The graph median
+	node degree is 368, the mean node degree is 527.41, and the node degree
+	mode is 197. The top 5 most central nodes are 9544.ENSMMUP00000007448 (degree
+	5030), 9544.ENSMMUP00000023356 (degree 4856), 9544.ENSMMUP00000023719 (degree
+	4724), 9544.ENSMMUP00000035274 (degree 4626) and 9544.ENSMMUP00000004425
+	(degree 4322).
 	
 
 

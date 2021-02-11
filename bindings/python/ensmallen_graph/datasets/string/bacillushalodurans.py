@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:20.786508
 
-The undirected graph Bacillus halodurans has 4015 nodes and 334368 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04149 and
-has 7 connected components, where the component with most nodes has 4003 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 166.56, and the node degree mode is 4. The top 5 most central
-nodes are 272558.10175775 (degree 1526), 272558.10173221 (degree 1246), 272558.10174346
-(degree 1095), 272558.10173962 (degree 1091) and 272558.10174632 (degree 1061).
+The undirected graph Bacillus halodurans has 4015 nodes and 334368 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04149 and has 7 connected components, where the component with most
+nodes has 4003 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 166.56, and
+the node degree mode is 4. The top 5 most central nodes are 272558.10175775
+(degree 1526), 272558.10173221 (degree 1246), 272558.10174346 (degree 1095),
+272558.10173962 (degree 1091) and 272558.10174632 (degree 1061).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusHalodurans(
 	
 	Datetime: 2021-02-02 20:16:20.786508
 	
-	The undirected graph Bacillus halodurans has 4015 nodes and 334368 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04149 and
-	has 7 connected components, where the component with most nodes has 4003 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 166.56, and the node degree mode is 4. The top 5 most central
-	nodes are 272558.10175775 (degree 1526), 272558.10173221 (degree 1246), 272558.10174346
-	(degree 1095), 272558.10173962 (degree 1091) and 272558.10174632 (degree 1061).
+	The undirected graph Bacillus halodurans has 4015 nodes and 334368 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04149 and has 7 connected components, where the component with most
+	nodes has 4003 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 166.56, and
+	the node degree mode is 4. The top 5 most central nodes are 272558.10175775
+	(degree 1526), 272558.10173221 (degree 1246), 272558.10174346 (degree 1095),
+	272558.10173962 (degree 1091) and 272558.10174632 (degree 1061).
 	
 
 

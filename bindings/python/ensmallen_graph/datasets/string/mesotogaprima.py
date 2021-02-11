@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:26.892719
 
-The undirected graph Mesotoga prima has 2525 nodes and 195906 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06148 and
-has 20 connected components, where the component with most nodes has 2480 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 155.17, and the node degree mode is 1. The top 5 most central
-nodes are 660470.Theba_2265 (degree 1365), 660470.Theba_1057 (degree 1118), 660470.Theba_0014
-(degree 1096), 660470.Theba_0398 (degree 1081) and 660470.Theba_0103 (degree 882).
+The undirected graph Mesotoga prima has 2525 nodes and 195906 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06148 and has 20 connected components, where the component with most
+nodes has 2480 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 155.17, and
+the node degree mode is 1. The top 5 most central nodes are 660470.Theba_2265
+(degree 1365), 660470.Theba_1057 (degree 1118), 660470.Theba_0014 (degree
+1096), 660470.Theba_0398 (degree 1081) and 660470.Theba_0103 (degree 882).
 
 
 References
@@ -106,13 +107,14 @@ def MesotogaPrima(
 	
 	Datetime: 2021-02-02 21:27:26.892719
 	
-	The undirected graph Mesotoga prima has 2525 nodes and 195906 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06148 and
-	has 20 connected components, where the component with most nodes has 2480 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 155.17, and the node degree mode is 1. The top 5 most central
-	nodes are 660470.Theba_2265 (degree 1365), 660470.Theba_1057 (degree 1118), 660470.Theba_0014
-	(degree 1096), 660470.Theba_0398 (degree 1081) and 660470.Theba_0103 (degree 882).
+	The undirected graph Mesotoga prima has 2525 nodes and 195906 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06148 and has 20 connected components, where the component with most
+	nodes has 2480 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 155.17, and
+	the node degree mode is 1. The top 5 most central nodes are 660470.Theba_2265
+	(degree 1365), 660470.Theba_1057 (degree 1118), 660470.Theba_0014 (degree
+	1096), 660470.Theba_0398 (degree 1081) and 660470.Theba_0103 (degree 882).
 	
 
 

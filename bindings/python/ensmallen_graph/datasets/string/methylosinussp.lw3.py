@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:45:36.627845
 
-The undirected graph Methylosinus sp. LW3 has 4288 nodes and 538726 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05861 and
-has 25 connected components, where the component with most nodes has 4230 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 251.27, and the node degree mode is 1. The top 5 most central
-nodes are 107635.AZUO01000002_gene3758 (degree 1447), 107635.AZUO01000001_gene3101
-(degree 1446), 107635.AZUO01000001_gene1958 (degree 1152), 107635.AZUO01000001_gene223
-(degree 1146) and 107635.AZUO01000001_gene2184 (degree 1144).
+The undirected graph Methylosinus sp. LW3 has 4288 nodes and 538726 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05861 and has 25 connected components, where the component with most
+nodes has 4230 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 251.27, and
+the node degree mode is 1. The top 5 most central nodes are 107635.AZUO01000002_gene3758
+(degree 1447), 107635.AZUO01000001_gene3101 (degree 1446), 107635.AZUO01000001_gene1958
+(degree 1152), 107635.AZUO01000001_gene223 (degree 1146) and 107635.AZUO01000001_gene2184
+(degree 1144).
 
 
 References
@@ -107,14 +108,15 @@ def MethylosinusSp.Lw3(
 	
 	Datetime: 2021-02-02 19:45:36.627845
 	
-	The undirected graph Methylosinus sp. LW3 has 4288 nodes and 538726 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05861 and
-	has 25 connected components, where the component with most nodes has 4230 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 251.27, and the node degree mode is 1. The top 5 most central
-	nodes are 107635.AZUO01000002_gene3758 (degree 1447), 107635.AZUO01000001_gene3101
-	(degree 1446), 107635.AZUO01000001_gene1958 (degree 1152), 107635.AZUO01000001_gene223
-	(degree 1146) and 107635.AZUO01000001_gene2184 (degree 1144).
+	The undirected graph Methylosinus sp. LW3 has 4288 nodes and 538726 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05861 and has 25 connected components, where the component with most
+	nodes has 4230 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 251.27, and
+	the node degree mode is 1. The top 5 most central nodes are 107635.AZUO01000002_gene3758
+	(degree 1447), 107635.AZUO01000001_gene3101 (degree 1446), 107635.AZUO01000001_gene1958
+	(degree 1152), 107635.AZUO01000001_gene223 (degree 1146) and 107635.AZUO01000001_gene2184
+	(degree 1144).
 	
 
 

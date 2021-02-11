@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:57.563711
 
-The undirected graph Nodosilinea nodulosa has 5377 nodes and 975652 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-has 34 connected components, where the component with most nodes has 5295 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 335,
-the mean node degree is 362.90, and the node degree mode is 2. The top 5 most central
-nodes are 118166.JH976537_gene469 (degree 2125), 118166.JH976537_gene21 (degree 2030),
-118166.JH976537_gene515 (degree 2022), 118166.JH976537_gene3388 (degree 2021) and
-118166.JH976538_gene5435 (degree 1975).
+The undirected graph Nodosilinea nodulosa has 5377 nodes and 975652 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06750 and has 34 connected components, where the component with most
+nodes has 5295 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 335, the mean node degree is 362.90, and
+the node degree mode is 2. The top 5 most central nodes are 118166.JH976537_gene469
+(degree 2125), 118166.JH976537_gene21 (degree 2030), 118166.JH976537_gene515
+(degree 2022), 118166.JH976537_gene3388 (degree 2021) and 118166.JH976538_gene5435
+(degree 1975).
 
 
 References
@@ -107,14 +108,15 @@ def NodosilineaNodulosa(
 	
 	Datetime: 2021-02-02 19:47:57.563711
 	
-	The undirected graph Nodosilinea nodulosa has 5377 nodes and 975652 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-	has 34 connected components, where the component with most nodes has 5295 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 335,
-	the mean node degree is 362.90, and the node degree mode is 2. The top 5 most central
-	nodes are 118166.JH976537_gene469 (degree 2125), 118166.JH976537_gene21 (degree 2030),
-	118166.JH976537_gene515 (degree 2022), 118166.JH976537_gene3388 (degree 2021) and
-	118166.JH976538_gene5435 (degree 1975).
+	The undirected graph Nodosilinea nodulosa has 5377 nodes and 975652 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06750 and has 34 connected components, where the component with most
+	nodes has 5295 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 335, the mean node degree is 362.90, and
+	the node degree mode is 2. The top 5 most central nodes are 118166.JH976537_gene469
+	(degree 2125), 118166.JH976537_gene21 (degree 2030), 118166.JH976537_gene515
+	(degree 2022), 118166.JH976537_gene3388 (degree 2021) and 118166.JH976538_gene5435
+	(degree 1975).
 	
 
 

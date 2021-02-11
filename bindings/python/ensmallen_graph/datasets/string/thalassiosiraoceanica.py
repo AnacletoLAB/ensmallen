@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:19.914979
 
-The undirected graph Thalassiosira oceanica has 8579 nodes and 1668005 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04533 and
-has 57 connected components, where the component with most nodes has 8407 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 388.86, and the node degree mode is 1. The top 5 most central
-nodes are 159749.K0T9B5 (degree 3242), 159749.K0TML8 (degree 3167), 159749.K0S4L8
-(degree 2913), 159749.K0T512 (degree 2783) and 159749.K0SU06 (degree 2518).
+The undirected graph Thalassiosira oceanica has 8579 nodes and 1668005
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04533 and has 57 connected components, where the component
+with most nodes has 8407 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 388.86,
+and the node degree mode is 1. The top 5 most central nodes are 159749.K0T9B5
+(degree 3242), 159749.K0TML8 (degree 3167), 159749.K0S4L8 (degree 2913),
+159749.K0T512 (degree 2783) and 159749.K0SU06 (degree 2518).
 
 
 References
@@ -106,13 +107,14 @@ def ThalassiosiraOceanica(
 	
 	Datetime: 2021-02-02 19:53:19.914979
 	
-	The undirected graph Thalassiosira oceanica has 8579 nodes and 1668005 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04533 and
-	has 57 connected components, where the component with most nodes has 8407 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 388.86, and the node degree mode is 1. The top 5 most central
-	nodes are 159749.K0T9B5 (degree 3242), 159749.K0TML8 (degree 3167), 159749.K0S4L8
-	(degree 2913), 159749.K0T512 (degree 2783) and 159749.K0SU06 (degree 2518).
+	The undirected graph Thalassiosira oceanica has 8579 nodes and 1668005
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04533 and has 57 connected components, where the component
+	with most nodes has 8407 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 388.86,
+	and the node degree mode is 1. The top 5 most central nodes are 159749.K0T9B5
+	(degree 3242), 159749.K0TML8 (degree 3167), 159749.K0S4L8 (degree 2913),
+	159749.K0T512 (degree 2783) and 159749.K0SU06 (degree 2518).
 	
 
 

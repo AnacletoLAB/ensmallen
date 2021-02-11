@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:37.545704
 
-The undirected graph Rhizobium sp. YS1r has 5539 nodes and 616681 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04021 and
-has 20 connected components, where the component with most nodes has 5494 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 222.67, and the node degree mode is 1. The top 5 most central
-nodes are 1532558.JL39_14715 (degree 1957), 1532558.JL39_22895 (degree 1715), 1532558.JL39_30955
-(degree 1528), 1532558.JL39_08830 (degree 1490) and 1532558.JL39_28915 (degree 1456).
+The undirected graph Rhizobium sp. YS1r has 5539 nodes and 616681 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04021 and has 20 connected components, where the component with most
+nodes has 5494 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 222.67, and
+the node degree mode is 1. The top 5 most central nodes are 1532558.JL39_14715
+(degree 1957), 1532558.JL39_22895 (degree 1715), 1532558.JL39_30955 (degree
+1528), 1532558.JL39_08830 (degree 1490) and 1532558.JL39_28915 (degree
+1456).
 
 
 References
@@ -106,13 +108,15 @@ def RhizobiumSp.Ys1r(
 	
 	Datetime: 2021-02-03 23:18:37.545704
 	
-	The undirected graph Rhizobium sp. YS1r has 5539 nodes and 616681 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04021 and
-	has 20 connected components, where the component with most nodes has 5494 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 222.67, and the node degree mode is 1. The top 5 most central
-	nodes are 1532558.JL39_14715 (degree 1957), 1532558.JL39_22895 (degree 1715), 1532558.JL39_30955
-	(degree 1528), 1532558.JL39_08830 (degree 1490) and 1532558.JL39_28915 (degree 1456).
+	The undirected graph Rhizobium sp. YS1r has 5539 nodes and 616681 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04021 and has 20 connected components, where the component with most
+	nodes has 5494 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 222.67, and
+	the node degree mode is 1. The top 5 most central nodes are 1532558.JL39_14715
+	(degree 1957), 1532558.JL39_22895 (degree 1715), 1532558.JL39_30955 (degree
+	1528), 1532558.JL39_08830 (degree 1490) and 1532558.JL39_28915 (degree
+	1456).
 	
 
 

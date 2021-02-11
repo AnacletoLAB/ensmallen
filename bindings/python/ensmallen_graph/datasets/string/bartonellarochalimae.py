@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:08.372326
 
-The undirected graph Bartonella rochalimae has 1280 nodes and 84665 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10343
-and has 2 connected components, where the component with most nodes has 1278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 132.29, and the node degree mode is 8. The top 5
-most central nodes are 685782.O99_00739 (degree 636), 685782.O99_00596 (degree 550),
-685782.O99_00344 (degree 520), 685782.O99_00014 (degree 504) and 685782.O99_01236
-(degree 493).
+The undirected graph Bartonella rochalimae has 1280 nodes and 84665 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10343 and has 2 connected components, where the component
+with most nodes has 1278 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 132.29,
+and the node degree mode is 8. The top 5 most central nodes are 685782.O99_00739
+(degree 636), 685782.O99_00596 (degree 550), 685782.O99_00344 (degree 520),
+685782.O99_00014 (degree 504) and 685782.O99_01236 (degree 493).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaRochalimae(
 	
 	Datetime: 2021-02-02 21:31:08.372326
 	
-	The undirected graph Bartonella rochalimae has 1280 nodes and 84665 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10343
-	and has 2 connected components, where the component with most nodes has 1278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 132.29, and the node degree mode is 8. The top 5
-	most central nodes are 685782.O99_00739 (degree 636), 685782.O99_00596 (degree 550),
-	685782.O99_00344 (degree 520), 685782.O99_00014 (degree 504) and 685782.O99_01236
-	(degree 493).
+	The undirected graph Bartonella rochalimae has 1280 nodes and 84665 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10343 and has 2 connected components, where the component
+	with most nodes has 1278 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 132.29,
+	and the node degree mode is 8. The top 5 most central nodes are 685782.O99_00739
+	(degree 636), 685782.O99_00596 (degree 550), 685782.O99_00344 (degree 520),
+	685782.O99_00014 (degree 504) and 685782.O99_01236 (degree 493).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:01.621307
 
-The undirected graph Pichia kudriavzevii has 4670 nodes and 563386 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05168 and
-has 12 connected components, where the component with most nodes has 4639 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 241.28, and the node degree mode is 1. The top 5 most central
-nodes are 4909.A0A099P2Z5 (degree 1844), 4909.A0A099P643 (degree 1379), 4909.A0A099NZE2
-(degree 1318), 4909.A0A099P595 (degree 1301) and 4909.A0A099NWJ1 (degree 1294).
+The undirected graph Pichia kudriavzevii has 4670 nodes and 563386 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05168 and has 12 connected components, where the component with most
+nodes has 4639 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 241.28, and
+the node degree mode is 1. The top 5 most central nodes are 4909.A0A099P2Z5
+(degree 1844), 4909.A0A099P643 (degree 1379), 4909.A0A099NZE2 (degree 1318),
+4909.A0A099P595 (degree 1301) and 4909.A0A099NWJ1 (degree 1294).
 
 
 References
@@ -106,13 +107,14 @@ def PichiaKudriavzevii(
 	
 	Datetime: 2021-02-02 17:11:01.621307
 	
-	The undirected graph Pichia kudriavzevii has 4670 nodes and 563386 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05168 and
-	has 12 connected components, where the component with most nodes has 4639 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 241.28, and the node degree mode is 1. The top 5 most central
-	nodes are 4909.A0A099P2Z5 (degree 1844), 4909.A0A099P643 (degree 1379), 4909.A0A099NZE2
-	(degree 1318), 4909.A0A099P595 (degree 1301) and 4909.A0A099NWJ1 (degree 1294).
+	The undirected graph Pichia kudriavzevii has 4670 nodes and 563386 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05168 and has 12 connected components, where the component with most
+	nodes has 4639 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 241.28, and
+	the node degree mode is 1. The top 5 most central nodes are 4909.A0A099P2Z5
+	(degree 1844), 4909.A0A099P643 (degree 1379), 4909.A0A099NZE2 (degree 1318),
+	4909.A0A099P595 (degree 1301) and 4909.A0A099NWJ1 (degree 1294).
 	
 
 

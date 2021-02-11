@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:21.578805
 
-The undirected graph Paracoccus halophilus has 3426 nodes and 294080 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05012 and
-has 18 connected components, where the component with most nodes has 3388 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 171.68, and the node degree mode is 2. The top 5 most central
-nodes are 376733.IT41_07975 (degree 1300), 376733.IT41_12700 (degree 1060), 376733.IT41_12690
-(degree 997), 376733.IT41_04955 (degree 963) and 376733.IT41_00875 (degree 957).
+The undirected graph Paracoccus halophilus has 3426 nodes and 294080 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05012 and has 18 connected components, where the component with most
+nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 171.68, and
+the node degree mode is 2. The top 5 most central nodes are 376733.IT41_07975
+(degree 1300), 376733.IT41_12700 (degree 1060), 376733.IT41_12690 (degree
+997), 376733.IT41_04955 (degree 963) and 376733.IT41_00875 (degree 957).
 
 
 References
@@ -106,13 +107,14 @@ def ParacoccusHalophilus(
 	
 	Datetime: 2021-02-02 20:36:21.578805
 	
-	The undirected graph Paracoccus halophilus has 3426 nodes and 294080 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05012 and
-	has 18 connected components, where the component with most nodes has 3388 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 171.68, and the node degree mode is 2. The top 5 most central
-	nodes are 376733.IT41_07975 (degree 1300), 376733.IT41_12700 (degree 1060), 376733.IT41_12690
-	(degree 997), 376733.IT41_04955 (degree 963) and 376733.IT41_00875 (degree 957).
+	The undirected graph Paracoccus halophilus has 3426 nodes and 294080 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05012 and has 18 connected components, where the component with most
+	nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 171.68, and
+	the node degree mode is 2. The top 5 most central nodes are 376733.IT41_07975
+	(degree 1300), 376733.IT41_12700 (degree 1060), 376733.IT41_12690 (degree
+	997), 376733.IT41_04955 (degree 963) and 376733.IT41_00875 (degree 957).
 	
 
 

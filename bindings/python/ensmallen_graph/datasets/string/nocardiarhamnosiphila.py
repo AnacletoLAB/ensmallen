@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:09.849517
 
-The undirected graph Nocardia rhamnosiphila has 6721 nodes and 908015 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04021 and
-has 26 connected components, where the component with most nodes has 6654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 270.20, and the node degree mode is 2. The top 5 most central
-nodes are 426716.JOAJ01000007_gene4265 (degree 2849), 426716.JOAJ01000016_gene5277
-(degree 2660), 426716.JOAJ01000005_gene2706 (degree 2272), 426716.JOAJ01000005_gene2675
-(degree 2176) and 426716.JOAJ01000003_gene3913 (degree 2121).
+The undirected graph Nocardia rhamnosiphila has 6721 nodes and 908015 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04021 and has 26 connected components, where the component with most
+nodes has 6654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 270.20, and
+the node degree mode is 2. The top 5 most central nodes are 426716.JOAJ01000007_gene4265
+(degree 2849), 426716.JOAJ01000016_gene5277 (degree 2660), 426716.JOAJ01000005_gene2706
+(degree 2272), 426716.JOAJ01000005_gene2675 (degree 2176) and 426716.JOAJ01000003_gene3913
+(degree 2121).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaRhamnosiphila(
 	
 	Datetime: 2021-02-02 20:48:09.849517
 	
-	The undirected graph Nocardia rhamnosiphila has 6721 nodes and 908015 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04021 and
-	has 26 connected components, where the component with most nodes has 6654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 270.20, and the node degree mode is 2. The top 5 most central
-	nodes are 426716.JOAJ01000007_gene4265 (degree 2849), 426716.JOAJ01000016_gene5277
-	(degree 2660), 426716.JOAJ01000005_gene2706 (degree 2272), 426716.JOAJ01000005_gene2675
-	(degree 2176) and 426716.JOAJ01000003_gene3913 (degree 2121).
+	The undirected graph Nocardia rhamnosiphila has 6721 nodes and 908015 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04021 and has 26 connected components, where the component with most
+	nodes has 6654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 270.20, and
+	the node degree mode is 2. The top 5 most central nodes are 426716.JOAJ01000007_gene4265
+	(degree 2849), 426716.JOAJ01000016_gene5277 (degree 2660), 426716.JOAJ01000005_gene2706
+	(degree 2272), 426716.JOAJ01000005_gene2675 (degree 2176) and 426716.JOAJ01000003_gene3913
+	(degree 2121).
 	
 
 

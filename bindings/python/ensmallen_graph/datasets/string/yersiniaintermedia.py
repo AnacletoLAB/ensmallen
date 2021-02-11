@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:42.478034
 
-The undirected graph Yersinia intermedia has 4069 nodes and 317888 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03841 and
-has 12 connected components, where the component with most nodes has 4046 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 156.25, and the node degree mode is 1. The top 5 most central
-nodes are 349965.yinte0001_39000 (degree 1353), 349965.yinte0001_7790 (degree 1225),
-349965.yinte0001_17440 (degree 1153), 349965.yinte0001_640 (degree 1132) and 349965.yinte0001_23700
+The undirected graph Yersinia intermedia has 4069 nodes and 317888 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03841 and has 12 connected components, where the component with most
+nodes has 4046 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 156.25, and
+the node degree mode is 1. The top 5 most central nodes are 349965.yinte0001_39000
+(degree 1353), 349965.yinte0001_7790 (degree 1225), 349965.yinte0001_17440
+(degree 1153), 349965.yinte0001_640 (degree 1132) and 349965.yinte0001_23700
 (degree 1025).
 
 
@@ -107,13 +108,14 @@ def YersiniaIntermedia(
 	
 	Datetime: 2021-02-02 20:32:42.478034
 	
-	The undirected graph Yersinia intermedia has 4069 nodes and 317888 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03841 and
-	has 12 connected components, where the component with most nodes has 4046 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 156.25, and the node degree mode is 1. The top 5 most central
-	nodes are 349965.yinte0001_39000 (degree 1353), 349965.yinte0001_7790 (degree 1225),
-	349965.yinte0001_17440 (degree 1153), 349965.yinte0001_640 (degree 1132) and 349965.yinte0001_23700
+	The undirected graph Yersinia intermedia has 4069 nodes and 317888 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03841 and has 12 connected components, where the component with most
+	nodes has 4046 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 156.25, and
+	the node degree mode is 1. The top 5 most central nodes are 349965.yinte0001_39000
+	(degree 1353), 349965.yinte0001_7790 (degree 1225), 349965.yinte0001_17440
+	(degree 1153), 349965.yinte0001_640 (degree 1132) and 349965.yinte0001_23700
 	(degree 1025).
 	
 

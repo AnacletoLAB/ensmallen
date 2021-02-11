@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:58.725749
 
-The undirected graph Lactobacillus ruminis ATCC27782 has 1828 nodes and 98962 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05926
-and has 10 connected components, where the component with most nodes has 1809 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 108.27, and the node degree mode is 3. The top 5 most
-central nodes are 1069534.LRC_10890 (degree 801), 1069534.LRC_16360 (degree 580),
-1069534.LRC_08700 (degree 562), 1069534.LRC_07870 (degree 537) and 1069534.LRC_12200
-(degree 509).
+The undirected graph Lactobacillus ruminis ATCC27782 has 1828 nodes and
+98962 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05926 and has 10 connected components, where the
+component with most nodes has 1809 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+is 108.27, and the node degree mode is 3. The top 5 most central nodes
+are 1069534.LRC_10890 (degree 801), 1069534.LRC_16360 (degree 580), 1069534.LRC_08700
+(degree 562), 1069534.LRC_07870 (degree 537) and 1069534.LRC_12200 (degree
+509).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusRuminisAtcc27782(
 	
 	Datetime: 2021-02-02 22:18:58.725749
 	
-	The undirected graph Lactobacillus ruminis ATCC27782 has 1828 nodes and 98962 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05926
-	and has 10 connected components, where the component with most nodes has 1809 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 108.27, and the node degree mode is 3. The top 5 most
-	central nodes are 1069534.LRC_10890 (degree 801), 1069534.LRC_16360 (degree 580),
-	1069534.LRC_08700 (degree 562), 1069534.LRC_07870 (degree 537) and 1069534.LRC_12200
-	(degree 509).
+	The undirected graph Lactobacillus ruminis ATCC27782 has 1828 nodes and
+	98962 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05926 and has 10 connected components, where the
+	component with most nodes has 1809 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+	is 108.27, and the node degree mode is 3. The top 5 most central nodes
+	are 1069534.LRC_10890 (degree 801), 1069534.LRC_16360 (degree 580), 1069534.LRC_08700
+	(degree 562), 1069534.LRC_07870 (degree 537) and 1069534.LRC_12200 (degree
+	509).
 	
 
 

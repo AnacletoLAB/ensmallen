@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:29.327278
 
-The undirected graph Methylobacterium sp. 10 has 4310 nodes and 384948 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04146 and
-has 26 connected components, where the component with most nodes has 4252 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 178.63, and the node degree mode is 2. The top 5 most central
-nodes are 1101191.KI912577_gene1216 (degree 1477), 1101191.KI912577_gene2830 (degree
-1421), 1101191.KI912577_gene417 (degree 1292), 1101191.KI912577_gene1705 (degree
-1270) and 1101191.KI912577_gene1791 (degree 1183).
+The undirected graph Methylobacterium sp. 10 has 4310 nodes and 384948
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04146 and has 26 connected components, where the component
+with most nodes has 4252 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 178.63,
+and the node degree mode is 2. The top 5 most central nodes are 1101191.KI912577_gene1216
+(degree 1477), 1101191.KI912577_gene2830 (degree 1421), 1101191.KI912577_gene417
+(degree 1292), 1101191.KI912577_gene1705 (degree 1270) and 1101191.KI912577_gene1791
+(degree 1183).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumSp.10(
 	
 	Datetime: 2021-02-02 22:24:29.327278
 	
-	The undirected graph Methylobacterium sp. 10 has 4310 nodes and 384948 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04146 and
-	has 26 connected components, where the component with most nodes has 4252 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 178.63, and the node degree mode is 2. The top 5 most central
-	nodes are 1101191.KI912577_gene1216 (degree 1477), 1101191.KI912577_gene2830 (degree
-	1421), 1101191.KI912577_gene417 (degree 1292), 1101191.KI912577_gene1705 (degree
-	1270) and 1101191.KI912577_gene1791 (degree 1183).
+	The undirected graph Methylobacterium sp. 10 has 4310 nodes and 384948
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04146 and has 26 connected components, where the component
+	with most nodes has 4252 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 178.63,
+	and the node degree mode is 2. The top 5 most central nodes are 1101191.KI912577_gene1216
+	(degree 1477), 1101191.KI912577_gene2830 (degree 1421), 1101191.KI912577_gene417
+	(degree 1292), 1101191.KI912577_gene1705 (degree 1270) and 1101191.KI912577_gene1791
+	(degree 1183).
 	
 
 

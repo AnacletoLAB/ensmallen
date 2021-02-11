@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:45.643226
 
-The undirected graph Sulfolobus acidocaldarius has 2179 nodes and 173859 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07327
-and has 28 connected components, where the component with most nodes has 2109 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 140, the mean node degree is 159.58, and the node degree mode is 1. The top 5
-most central nodes are 330779.Saci_1356 (degree 831), 330779.Saci_0246 (degree 745),
-330779.Saci_1355 (degree 745), 330779.Saci_0117 (degree 724) and 330779.Saci_1358
-(degree 699).
+The undirected graph Sulfolobus acidocaldarius has 2179 nodes and 173859
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07327 and has 28 connected components, where the component
+with most nodes has 2109 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 159.58,
+and the node degree mode is 1. The top 5 most central nodes are 330779.Saci_1356
+(degree 831), 330779.Saci_0246 (degree 745), 330779.Saci_1355 (degree 745),
+330779.Saci_0117 (degree 724) and 330779.Saci_1358 (degree 699).
 
 
 References
@@ -107,14 +107,14 @@ def SulfolobusAcidocaldarius(
 	
 	Datetime: 2021-02-02 20:29:45.643226
 	
-	The undirected graph Sulfolobus acidocaldarius has 2179 nodes and 173859 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07327
-	and has 28 connected components, where the component with most nodes has 2109 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 140, the mean node degree is 159.58, and the node degree mode is 1. The top 5
-	most central nodes are 330779.Saci_1356 (degree 831), 330779.Saci_0246 (degree 745),
-	330779.Saci_1355 (degree 745), 330779.Saci_0117 (degree 724) and 330779.Saci_1358
-	(degree 699).
+	The undirected graph Sulfolobus acidocaldarius has 2179 nodes and 173859
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07327 and has 28 connected components, where the component
+	with most nodes has 2109 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 159.58,
+	and the node degree mode is 1. The top 5 most central nodes are 330779.Saci_1356
+	(degree 831), 330779.Saci_0246 (degree 745), 330779.Saci_1355 (degree 745),
+	330779.Saci_0117 (degree 724) and 330779.Saci_1358 (degree 699).
 	
 
 

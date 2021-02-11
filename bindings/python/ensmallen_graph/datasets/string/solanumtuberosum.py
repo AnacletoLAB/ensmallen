@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:41:35.216821
 
-The undirected graph Solanum tuberosum has 24630 nodes and 4458273 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01470 and
-has 14 connected components, where the component with most nodes has 24602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 362.02, and the node degree mode is 1. The top 5
-most central nodes are 4113.PGSC0003DMT400096877 (degree 8499), 4113.PGSC0003DMT400097427
-(degree 8429), 4113.PGSC0003DMT400096473 (degree 8423), 4113.PGSC0003DMT400097320
-(degree 8330) and 4113.PGSC0003DMT400097662 (degree 8325).
+The undirected graph Solanum tuberosum has 24630 nodes and 4458273 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01470 and has 14 connected components, where the component with most
+nodes has 24602 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 362.02, and
+the node degree mode is 1. The top 5 most central nodes are 4113.PGSC0003DMT400096877
+(degree 8499), 4113.PGSC0003DMT400097427 (degree 8429), 4113.PGSC0003DMT400096473
+(degree 8423), 4113.PGSC0003DMT400097320 (degree 8330) and 4113.PGSC0003DMT400097662
+(degree 8325).
 
 
 References
@@ -107,14 +108,15 @@ def SolanumTuberosum(
 	
 	Datetime: 2021-02-02 16:41:35.216821
 	
-	The undirected graph Solanum tuberosum has 24630 nodes and 4458273 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01470 and
-	has 14 connected components, where the component with most nodes has 24602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 362.02, and the node degree mode is 1. The top 5
-	most central nodes are 4113.PGSC0003DMT400096877 (degree 8499), 4113.PGSC0003DMT400097427
-	(degree 8429), 4113.PGSC0003DMT400096473 (degree 8423), 4113.PGSC0003DMT400097320
-	(degree 8330) and 4113.PGSC0003DMT400097662 (degree 8325).
+	The undirected graph Solanum tuberosum has 24630 nodes and 4458273 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01470 and has 14 connected components, where the component with most
+	nodes has 24602 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 362.02, and
+	the node degree mode is 1. The top 5 most central nodes are 4113.PGSC0003DMT400096877
+	(degree 8499), 4113.PGSC0003DMT400097427 (degree 8429), 4113.PGSC0003DMT400096473
+	(degree 8423), 4113.PGSC0003DMT400097320 (degree 8330) and 4113.PGSC0003DMT400097662
+	(degree 8325).
 	
 
 

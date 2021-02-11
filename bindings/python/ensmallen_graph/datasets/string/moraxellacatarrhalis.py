@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:08.243440
 
-The undirected graph Moraxella catarrhalis has 1695 nodes and 103433 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07205 and
-has 9 connected components, where the component with most nodes has 1676 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 122.04, and the node degree mode is 2. The top 5 most central
-nodes are 857571.EA1_07925 (degree 732), 857571.EA1_03390 (degree 646), 857571.EA1_00790
-(degree 644), 857571.EA1_00030 (degree 613) and 857571.EA1_06756 (degree 596).
+The undirected graph Moraxella catarrhalis has 1695 nodes and 103433 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07205 and has 9 connected components, where the component with most
+nodes has 1676 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 122.04, and
+the node degree mode is 2. The top 5 most central nodes are 857571.EA1_07925
+(degree 732), 857571.EA1_03390 (degree 646), 857571.EA1_00790 (degree 644),
+857571.EA1_00030 (degree 613) and 857571.EA1_06756 (degree 596).
 
 
 References
@@ -106,13 +107,14 @@ def MoraxellaCatarrhalis(
 	
 	Datetime: 2021-02-02 21:46:08.243440
 	
-	The undirected graph Moraxella catarrhalis has 1695 nodes and 103433 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07205 and
-	has 9 connected components, where the component with most nodes has 1676 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 122.04, and the node degree mode is 2. The top 5 most central
-	nodes are 857571.EA1_07925 (degree 732), 857571.EA1_03390 (degree 646), 857571.EA1_00790
-	(degree 644), 857571.EA1_00030 (degree 613) and 857571.EA1_06756 (degree 596).
+	The undirected graph Moraxella catarrhalis has 1695 nodes and 103433 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07205 and has 9 connected components, where the component with most
+	nodes has 1676 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 122.04, and
+	the node degree mode is 2. The top 5 most central nodes are 857571.EA1_07925
+	(degree 732), 857571.EA1_03390 (degree 646), 857571.EA1_00790 (degree 644),
+	857571.EA1_00030 (degree 613) and 857571.EA1_06756 (degree 596).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:47.363603
 
-The undirected graph Methylovorus glucosetrophus has 2821 nodes and 211126 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05308
-and has 7 connected components, where the component with most nodes has 2808 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 149.68, and the node degree mode is 8. The top 5
-most central nodes are 582744.Msip34_0388 (degree 1077), 582744.Msip34_2262 (degree
-918), 582744.Msip34_1227 (degree 751), 582744.Msip34_1226 (degree 748) and 582744.Msip34_1098
-(degree 733).
+The undirected graph Methylovorus glucosetrophus has 2821 nodes and 211126
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05308 and has 7 connected components, where the component
+with most nodes has 2808 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 149.68,
+and the node degree mode is 8. The top 5 most central nodes are 582744.Msip34_0388
+(degree 1077), 582744.Msip34_2262 (degree 918), 582744.Msip34_1227 (degree
+751), 582744.Msip34_1226 (degree 748) and 582744.Msip34_1098 (degree 733).
 
 
 References
@@ -107,14 +107,14 @@ def MethylovorusGlucosetrophus(
 	
 	Datetime: 2021-02-02 21:15:47.363603
 	
-	The undirected graph Methylovorus glucosetrophus has 2821 nodes and 211126 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05308
-	and has 7 connected components, where the component with most nodes has 2808 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 149.68, and the node degree mode is 8. The top 5
-	most central nodes are 582744.Msip34_0388 (degree 1077), 582744.Msip34_2262 (degree
-	918), 582744.Msip34_1227 (degree 751), 582744.Msip34_1226 (degree 748) and 582744.Msip34_1098
-	(degree 733).
+	The undirected graph Methylovorus glucosetrophus has 2821 nodes and 211126
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05308 and has 7 connected components, where the component
+	with most nodes has 2808 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 149.68,
+	and the node degree mode is 8. The top 5 most central nodes are 582744.Msip34_0388
+	(degree 1077), 582744.Msip34_2262 (degree 918), 582744.Msip34_1227 (degree
+	751), 582744.Msip34_1226 (degree 748) and 582744.Msip34_1098 (degree 733).
 	
 
 

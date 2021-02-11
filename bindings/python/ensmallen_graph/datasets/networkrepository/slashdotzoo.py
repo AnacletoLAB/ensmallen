@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:45:34.450794
 
-The undirected multigraph slashdot-zoo has 79116 nodes and 469622 unweighted edges
-with 2 different edge types: +1 and -1, of which none are self-loops and 3782 are
-parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 11.87, and the node degree mode is 1. The top 5 most central nodes are 29 (degree
-2534), 1065 (degree 2377), 238 (degree 2219), 107 (degree 1709) and 386 (degree 1681).
+The undirected multigraph slashdot-zoo has 79116 nodes and 469622 unweighted
+edges with 2 different edge types: +1 and -1, of which none are self-loops
+and 3782 are parallel. The graph is quite sparse as it has a density of
+0.00015 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 11.87, and the node degree mode
+is 1. The top 5 most central nodes are 29 (degree 2534), 1065 (degree 2377),
+238 (degree 2219), 107 (degree 1709) and 386 (degree 1681).
 
 
 References
@@ -102,12 +103,13 @@ def SlashdotZoo(
 	
 	Datetime: 2021-02-07 15:45:34.450794
 	
-	The undirected multigraph slashdot-zoo has 79116 nodes and 469622 unweighted edges
-	with 2 different edge types: +1 and -1, of which none are self-loops and 3782 are
-	parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 11.87, and the node degree mode is 1. The top 5 most central nodes are 29 (degree
-	2534), 1065 (degree 2377), 238 (degree 2219), 107 (degree 1709) and 386 (degree 1681).
+	The undirected multigraph slashdot-zoo has 79116 nodes and 469622 unweighted
+	edges with 2 different edge types: +1 and -1, of which none are self-loops
+	and 3782 are parallel. The graph is quite sparse as it has a density of
+	0.00015 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 11.87, and the node degree mode
+	is 1. The top 5 most central nodes are 29 (degree 2534), 1065 (degree 2377),
+	238 (degree 2219), 107 (degree 1709) and 386 (degree 1681).
 	
 
 

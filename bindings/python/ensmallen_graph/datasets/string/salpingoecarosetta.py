@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:12.974960
 
-The undirected graph Salpingoeca rosetta has 7282 nodes and 947686 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03575 and
-has 10 connected components, where the component with most nodes has 7261 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 260.28, and the node degree mode is 6. The top 5 most central
-nodes are 946362.XP_004989531.1 (degree 2503), 946362.XP_004989748.1 (degree 2250),
-946362.XP_004997671.1 (degree 1847), 946362.XP_004994175.1 (degree 1846) and 946362.XP_004997347.1
+The undirected graph Salpingoeca rosetta has 7282 nodes and 947686 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03575 and has 10 connected components, where the component with most
+nodes has 7261 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 260.28, and
+the node degree mode is 6. The top 5 most central nodes are 946362.XP_004989531.1
+(degree 2503), 946362.XP_004989748.1 (degree 2250), 946362.XP_004997671.1
+(degree 1847), 946362.XP_004994175.1 (degree 1846) and 946362.XP_004997347.1
 (degree 1833).
 
 
@@ -107,13 +108,14 @@ def SalpingoecaRosetta(
 	
 	Datetime: 2021-02-02 22:02:12.974960
 	
-	The undirected graph Salpingoeca rosetta has 7282 nodes and 947686 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03575 and
-	has 10 connected components, where the component with most nodes has 7261 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 260.28, and the node degree mode is 6. The top 5 most central
-	nodes are 946362.XP_004989531.1 (degree 2503), 946362.XP_004989748.1 (degree 2250),
-	946362.XP_004997671.1 (degree 1847), 946362.XP_004994175.1 (degree 1846) and 946362.XP_004997347.1
+	The undirected graph Salpingoeca rosetta has 7282 nodes and 947686 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03575 and has 10 connected components, where the component with most
+	nodes has 7261 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 260.28, and
+	the node degree mode is 6. The top 5 most central nodes are 946362.XP_004989531.1
+	(degree 2503), 946362.XP_004989748.1 (degree 2250), 946362.XP_004997671.1
+	(degree 1847), 946362.XP_004994175.1 (degree 1846) and 946362.XP_004997347.1
 	(degree 1833).
 	
 

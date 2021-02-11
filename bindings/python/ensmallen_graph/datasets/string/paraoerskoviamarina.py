@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:02.768094
 
-The undirected graph Paraoerskovia marina has 2580 nodes and 219735 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06605 and
-has 2 connected components, where the component with most nodes has 2578 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 170.34, and the node degree mode is 4. The top 5 most central
-nodes are 1122933.JNIY01000006_gene1876 (degree 946), 1122933.JNIY01000003_gene692
-(degree 933), 1122933.JNIY01000005_gene1553 (degree 926), 1122933.JNIY01000003_gene1143
-(degree 828) and 1122933.JNIY01000004_gene2105 (degree 816).
+The undirected graph Paraoerskovia marina has 2580 nodes and 219735 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06605 and has 2 connected components, where the component with most
+nodes has 2578 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 170.34, and
+the node degree mode is 4. The top 5 most central nodes are 1122933.JNIY01000006_gene1876
+(degree 946), 1122933.JNIY01000003_gene692 (degree 933), 1122933.JNIY01000005_gene1553
+(degree 926), 1122933.JNIY01000003_gene1143 (degree 828) and 1122933.JNIY01000004_gene2105
+(degree 816).
 
 
 References
@@ -107,14 +108,15 @@ def ParaoerskoviaMarina(
 	
 	Datetime: 2021-02-02 22:45:02.768094
 	
-	The undirected graph Paraoerskovia marina has 2580 nodes and 219735 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06605 and
-	has 2 connected components, where the component with most nodes has 2578 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 170.34, and the node degree mode is 4. The top 5 most central
-	nodes are 1122933.JNIY01000006_gene1876 (degree 946), 1122933.JNIY01000003_gene692
-	(degree 933), 1122933.JNIY01000005_gene1553 (degree 926), 1122933.JNIY01000003_gene1143
-	(degree 828) and 1122933.JNIY01000004_gene2105 (degree 816).
+	The undirected graph Paraoerskovia marina has 2580 nodes and 219735 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06605 and has 2 connected components, where the component with most
+	nodes has 2578 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 170.34, and
+	the node degree mode is 4. The top 5 most central nodes are 1122933.JNIY01000006_gene1876
+	(degree 946), 1122933.JNIY01000003_gene692 (degree 933), 1122933.JNIY01000005_gene1553
+	(degree 926), 1122933.JNIY01000003_gene1143 (degree 828) and 1122933.JNIY01000004_gene2105
+	(degree 816).
 	
 
 

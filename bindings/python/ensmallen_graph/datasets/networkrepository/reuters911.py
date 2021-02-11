@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:01.213224
 
-The undirected graph Reuters911 has 13314 nodes and 148038 weighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00167 and has 4
-connected components, where the component with most nodes has 13308 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 5, the
-mean node degree is 22.24, and the node degree mode is 2. The top 5 most central
-nodes are 12502 (degree 2265), 1204 (degree 1457), 9012 (degree 1276), 9392 (degree
-1112) and 11775 (degree 1066).
+The undirected graph Reuters911 has 13314 nodes and 148038 weighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00167 and has 4 connected components, where the component with most nodes
+has 13308 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 5, the mean node degree is 22.24, and the node
+degree mode is 2. The top 5 most central nodes are 12502 (degree 2265),
+1204 (degree 1457), 9012 (degree 1276), 9392 (degree 1112) and 11775 (degree
+1066).
 
 
 References
@@ -103,13 +104,14 @@ def Reuters911(
 	
 	Datetime: 2021-02-06 11:02:01.213224
 	
-	The undirected graph Reuters911 has 13314 nodes and 148038 weighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00167 and has 4
-	connected components, where the component with most nodes has 13308 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 5, the
-	mean node degree is 22.24, and the node degree mode is 2. The top 5 most central
-	nodes are 12502 (degree 2265), 1204 (degree 1457), 9012 (degree 1276), 9392 (degree
-	1112) and 11775 (degree 1066).
+	The undirected graph Reuters911 has 13314 nodes and 148038 weighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00167 and has 4 connected components, where the component with most nodes
+	has 13308 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 5, the mean node degree is 22.24, and the node
+	degree mode is 2. The top 5 most central nodes are 12502 (degree 2265),
+	1204 (degree 1457), 9012 (degree 1276), 9392 (degree 1112) and 11775 (degree
+	1066).
 	
 
 

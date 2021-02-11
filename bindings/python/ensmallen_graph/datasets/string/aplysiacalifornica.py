@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:19:32.711237
 
-The undirected graph Aplysia californica has 13225 nodes and 2027875 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02319 and
-has 5 connected components, where the component with most nodes has 13216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 306.67, and the node degree mode is 1. The top 5 most central
-nodes are 6500.XP_005099996.1 (degree 3533), 6500.XP_005109406.1 (degree 3173), 6500.XP_005109042.1
-(degree 3166), 6500.XP_005112308.1 (degree 3100) and 6500.XP_005097560.1 (degree
+The undirected graph Aplysia californica has 13225 nodes and 2027875 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02319 and has 5 connected components, where the component with most
+nodes has 13216 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 306.67, and
+the node degree mode is 1. The top 5 most central nodes are 6500.XP_005099996.1
+(degree 3533), 6500.XP_005109406.1 (degree 3173), 6500.XP_005109042.1 (degree
+3166), 6500.XP_005112308.1 (degree 3100) and 6500.XP_005097560.1 (degree
 2902).
 
 
@@ -107,13 +108,14 @@ def AplysiaCalifornica(
 	
 	Datetime: 2021-02-02 17:19:32.711237
 	
-	The undirected graph Aplysia californica has 13225 nodes and 2027875 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02319 and
-	has 5 connected components, where the component with most nodes has 13216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 306.67, and the node degree mode is 1. The top 5 most central
-	nodes are 6500.XP_005099996.1 (degree 3533), 6500.XP_005109406.1 (degree 3173), 6500.XP_005109042.1
-	(degree 3166), 6500.XP_005112308.1 (degree 3100) and 6500.XP_005097560.1 (degree
+	The undirected graph Aplysia californica has 13225 nodes and 2027875 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02319 and has 5 connected components, where the component with most
+	nodes has 13216 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 306.67, and
+	the node degree mode is 1. The top 5 most central nodes are 6500.XP_005099996.1
+	(degree 3533), 6500.XP_005109406.1 (degree 3173), 6500.XP_005109042.1 (degree
+	3166), 6500.XP_005112308.1 (degree 3100) and 6500.XP_005097560.1 (degree
 	2902).
 	
 

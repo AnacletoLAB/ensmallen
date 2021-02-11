@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:35.260300
 
-The undirected graph Mycobacterium neoaurum has 4628 nodes and 625532 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05842 and
-has 18 connected components, where the component with most nodes has 4576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 270.32, and the node degree mode is 3. The top 5 most central
-nodes are 700508.D174_19850 (degree 1860), 700508.D174_09325 (degree 1723), 700508.D174_09195
-(degree 1719), 700508.D174_17465 (degree 1635) and 700508.D174_10320 (degree 1436).
+The undirected graph Mycobacterium neoaurum has 4628 nodes and 625532 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05842 and has 18 connected components, where the component with most
+nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 270.32, and
+the node degree mode is 3. The top 5 most central nodes are 700508.D174_19850
+(degree 1860), 700508.D174_09325 (degree 1723), 700508.D174_09195 (degree
+1719), 700508.D174_17465 (degree 1635) and 700508.D174_10320 (degree 1436).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumNeoaurum(
 	
 	Datetime: 2021-02-02 21:33:35.260300
 	
-	The undirected graph Mycobacterium neoaurum has 4628 nodes and 625532 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05842 and
-	has 18 connected components, where the component with most nodes has 4576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 270.32, and the node degree mode is 3. The top 5 most central
-	nodes are 700508.D174_19850 (degree 1860), 700508.D174_09325 (degree 1723), 700508.D174_09195
-	(degree 1719), 700508.D174_17465 (degree 1635) and 700508.D174_10320 (degree 1436).
+	The undirected graph Mycobacterium neoaurum has 4628 nodes and 625532 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05842 and has 18 connected components, where the component with most
+	nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 270.32, and
+	the node degree mode is 3. The top 5 most central nodes are 700508.D174_19850
+	(degree 1860), 700508.D174_09325 (degree 1723), 700508.D174_09195 (degree
+	1719), 700508.D174_17465 (degree 1635) and 700508.D174_10320 (degree 1436).
 	
 
 

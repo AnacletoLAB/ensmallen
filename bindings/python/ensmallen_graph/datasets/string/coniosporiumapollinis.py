@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:22:40.655643
 
-The undirected graph Coniosporium apollinis has 6607 nodes and 662707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03037 and
-has 23 connected components, where the component with most nodes has 6554 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 200.61, and the node degree mode is 1. The top 5 most central
-nodes are 61459.XP_007784663.1 (degree 1657), 61459.XP_007779252.1 (degree 1640),
-61459.XP_007776846.1 (degree 1583), 61459.XP_007784350.1 (degree 1456) and 61459.XP_007776347.1
+The undirected graph Coniosporium apollinis has 6607 nodes and 662707 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03037 and has 23 connected components, where the component with most
+nodes has 6554 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 200.61, and
+the node degree mode is 1. The top 5 most central nodes are 61459.XP_007784663.1
+(degree 1657), 61459.XP_007779252.1 (degree 1640), 61459.XP_007776846.1
+(degree 1583), 61459.XP_007784350.1 (degree 1456) and 61459.XP_007776347.1
 (degree 1307).
 
 
@@ -107,13 +108,14 @@ def ConiosporiumApollinis(
 	
 	Datetime: 2021-02-02 18:22:40.655643
 	
-	The undirected graph Coniosporium apollinis has 6607 nodes and 662707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03037 and
-	has 23 connected components, where the component with most nodes has 6554 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 200.61, and the node degree mode is 1. The top 5 most central
-	nodes are 61459.XP_007784663.1 (degree 1657), 61459.XP_007779252.1 (degree 1640),
-	61459.XP_007776846.1 (degree 1583), 61459.XP_007784350.1 (degree 1456) and 61459.XP_007776347.1
+	The undirected graph Coniosporium apollinis has 6607 nodes and 662707 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03037 and has 23 connected components, where the component with most
+	nodes has 6554 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 200.61, and
+	the node degree mode is 1. The top 5 most central nodes are 61459.XP_007784663.1
+	(degree 1657), 61459.XP_007779252.1 (degree 1640), 61459.XP_007776846.1
+	(degree 1583), 61459.XP_007784350.1 (degree 1456) and 61459.XP_007776347.1
 	(degree 1307).
 	
 

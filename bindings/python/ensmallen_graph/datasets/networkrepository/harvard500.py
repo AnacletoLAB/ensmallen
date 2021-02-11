@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:40.153565
 
-The undirected graph Harvard500 has 500 nodes and 2116 unweighted edges, of which
-73 are self-loops. The graph is dense as it has a density of 0.01667 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 8.32, and the node degree mode is 2. The top 5 most central nodes are 1 (degree
-200), 54 (degree 103), 53 (degree 93), 18 (degree 53) and 15 (degree 53).
+The undirected graph Harvard500 has 500 nodes and 2116 unweighted edges,
+of which 73 are self-loops. The graph is dense as it has a density of 0.01667
+and is connected, as it has a single component. The graph median node degree
+is 4, the mean node degree is 8.32, and the node degree mode is 2. The
+top 5 most central nodes are 1 (degree 200), 54 (degree 103), 53 (degree
+93), 18 (degree 53) and 15 (degree 53).
 
 
 References
@@ -101,11 +102,12 @@ def Harvard500(
 	
 	Datetime: 2021-02-06 07:59:40.153565
 	
-	The undirected graph Harvard500 has 500 nodes and 2116 unweighted edges, of which
-	73 are self-loops. The graph is dense as it has a density of 0.01667 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 8.32, and the node degree mode is 2. The top 5 most central nodes are 1 (degree
-	200), 54 (degree 103), 53 (degree 93), 18 (degree 53) and 15 (degree 53).
+	The undirected graph Harvard500 has 500 nodes and 2116 unweighted edges,
+	of which 73 are self-loops. The graph is dense as it has a density of 0.01667
+	and is connected, as it has a single component. The graph median node degree
+	is 4, the mean node degree is 8.32, and the node degree mode is 2. The
+	top 5 most central nodes are 1 (degree 200), 54 (degree 103), 53 (degree
+	93), 18 (degree 53) and 15 (degree 53).
 	
 
 

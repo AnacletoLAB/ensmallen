@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:57.891725
 
-The undirected graph Listeriaceae bacterium FSLA50281 has 3091 nodes and 329762 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06905
-and has 7 connected components, where the component with most nodes has 3076 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 213.37, and the node degree mode is 4. The top 5
-most central nodes are 1552123.EP57_05135 (degree 1143), 1552123.EP57_08000 (degree
-1056), 1552123.EP57_14850 (degree 1031), 1552123.EP57_07300 (degree 980) and 1552123.EP57_11330
+The undirected graph Listeriaceae bacterium FSLA50281 has 3091 nodes and
+329762 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06905 and has 7 connected components, where the
+component with most nodes has 3076 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+is 213.37, and the node degree mode is 4. The top 5 most central nodes
+are 1552123.EP57_05135 (degree 1143), 1552123.EP57_08000 (degree 1056),
+1552123.EP57_14850 (degree 1031), 1552123.EP57_07300 (degree 980) and 1552123.EP57_11330
 (degree 968).
 
 
@@ -107,13 +108,14 @@ def ListeriaceaeBacteriumFsla50281(
 	
 	Datetime: 2021-02-03 23:20:57.891725
 	
-	The undirected graph Listeriaceae bacterium FSLA50281 has 3091 nodes and 329762 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06905
-	and has 7 connected components, where the component with most nodes has 3076 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 213.37, and the node degree mode is 4. The top 5
-	most central nodes are 1552123.EP57_05135 (degree 1143), 1552123.EP57_08000 (degree
-	1056), 1552123.EP57_14850 (degree 1031), 1552123.EP57_07300 (degree 980) and 1552123.EP57_11330
+	The undirected graph Listeriaceae bacterium FSLA50281 has 3091 nodes and
+	329762 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06905 and has 7 connected components, where the
+	component with most nodes has 3076 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+	is 213.37, and the node degree mode is 4. The top 5 most central nodes
+	are 1552123.EP57_05135 (degree 1143), 1552123.EP57_08000 (degree 1056),
+	1552123.EP57_14850 (degree 1031), 1552123.EP57_07300 (degree 980) and 1552123.EP57_11330
 	(degree 968).
 	
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:43.479463
 
-The undirected graph C500-9 has 500 nodes and 112332 unweighted edges, of which none
-are self-loops. The graph is extremely dense as it has a density of 0.90046 and is
-connected, as it has a single component. The graph median node degree is 449, the
-mean node degree is 449.33 and the node degree mode is 449. The top 5 most central
-nodes are 110 (degree 468), 97 (degree 468), 493 (degree 467), 490 (degree 467) and
-194 (degree 467).
+The undirected graph C500-9 has 500 nodes and 112332 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.90046 and is connected, as it has a single component. The
+graph median node degree is 449, the mean node degree is 449.33 and the
+node degree mode is 449. The top 5 most central nodes are 110 (degree 468),
+97 (degree 468), 493 (degree 467), 490 (degree 467) and 194 (degree 467).
 
 
 References
@@ -115,12 +115,12 @@ def C5009(
 	
 	Datetime: 2021-02-03 22:52:43.479463
 	
-	The undirected graph C500-9 has 500 nodes and 112332 unweighted edges, of which none
-	are self-loops. The graph is extremely dense as it has a density of 0.90046 and is
-	connected, as it has a single component. The graph median node degree is 449, the
-	mean node degree is 449.33 and the node degree mode is 449. The top 5 most central
-	nodes are 110 (degree 468), 97 (degree 468), 493 (degree 467), 490 (degree 467) and
-	194 (degree 467).
+	The undirected graph C500-9 has 500 nodes and 112332 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.90046 and is connected, as it has a single component. The
+	graph median node degree is 449, the mean node degree is 449.33 and the
+	node degree mode is 449. The top 5 most central nodes are 110 (degree 468),
+	97 (degree 468), 493 (degree 467), 490 (degree 467) and 194 (degree 467).
 	
 
 

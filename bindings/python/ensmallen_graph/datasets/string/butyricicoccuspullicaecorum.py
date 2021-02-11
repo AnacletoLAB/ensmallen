@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:03.228278
 
-The undirected graph Butyricicoccus pullicaecorum has 3090 nodes and 268655 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05629
-and has 4 connected components, where the component with most nodes has 3083 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 173.89, and the node degree mode is 6. The top 5
-most central nodes are 1203606.HMPREF1526_01848 (degree 1091), 1203606.HMPREF1526_02738
-(degree 917), 1203606.HMPREF1526_00789 (degree 910), 1203606.HMPREF1526_00134 (degree
-898) and 1203606.HMPREF1526_02902 (degree 882).
+The undirected graph Butyricicoccus pullicaecorum has 3090 nodes and 268655
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05629 and has 4 connected components, where the component
+with most nodes has 3083 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 173.89,
+and the node degree mode is 6. The top 5 most central nodes are 1203606.HMPREF1526_01848
+(degree 1091), 1203606.HMPREF1526_02738 (degree 917), 1203606.HMPREF1526_00789
+(degree 910), 1203606.HMPREF1526_00134 (degree 898) and 1203606.HMPREF1526_02902
+(degree 882).
 
 
 References
@@ -107,14 +108,15 @@ def ButyricicoccusPullicaecorum(
 	
 	Datetime: 2021-02-02 23:15:03.228278
 	
-	The undirected graph Butyricicoccus pullicaecorum has 3090 nodes and 268655 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05629
-	and has 4 connected components, where the component with most nodes has 3083 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 173.89, and the node degree mode is 6. The top 5
-	most central nodes are 1203606.HMPREF1526_01848 (degree 1091), 1203606.HMPREF1526_02738
-	(degree 917), 1203606.HMPREF1526_00789 (degree 910), 1203606.HMPREF1526_00134 (degree
-	898) and 1203606.HMPREF1526_02902 (degree 882).
+	The undirected graph Butyricicoccus pullicaecorum has 3090 nodes and 268655
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05629 and has 4 connected components, where the component
+	with most nodes has 3083 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 173.89,
+	and the node degree mode is 6. The top 5 most central nodes are 1203606.HMPREF1526_01848
+	(degree 1091), 1203606.HMPREF1526_02738 (degree 917), 1203606.HMPREF1526_00789
+	(degree 910), 1203606.HMPREF1526_00134 (degree 898) and 1203606.HMPREF1526_02902
+	(degree 882).
 	
 
 

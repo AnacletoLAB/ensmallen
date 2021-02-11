@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:02.869991
 
-The undirected graph Mobiluncus mulieris ATCC35243 has 2263 nodes and 159996 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06251
-and has 22 connected components, where the component with most nodes has 2210 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 141.40, and the node degree mode is 3. The top 5
-most central nodes are 585199.HMPREF0577_0813 (degree 831), 585199.HMPREF0577_0555
-(degree 806), 585199.HMPREF0577_2212 (degree 721), 585199.HMPREF0577_1811 (degree
-712) and 585199.HMPREF0577_1059 (degree 663).
+The undirected graph Mobiluncus mulieris ATCC35243 has 2263 nodes and 159996
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06251 and has 22 connected components, where the component
+with most nodes has 2210 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 141.40,
+and the node degree mode is 3. The top 5 most central nodes are 585199.HMPREF0577_0813
+(degree 831), 585199.HMPREF0577_0555 (degree 806), 585199.HMPREF0577_2212
+(degree 721), 585199.HMPREF0577_1811 (degree 712) and 585199.HMPREF0577_1059
+(degree 663).
 
 
 References
@@ -107,14 +108,15 @@ def MobiluncusMulierisAtcc35243(
 	
 	Datetime: 2021-02-02 21:16:02.869991
 	
-	The undirected graph Mobiluncus mulieris ATCC35243 has 2263 nodes and 159996 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06251
-	and has 22 connected components, where the component with most nodes has 2210 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 141.40, and the node degree mode is 3. The top 5
-	most central nodes are 585199.HMPREF0577_0813 (degree 831), 585199.HMPREF0577_0555
-	(degree 806), 585199.HMPREF0577_2212 (degree 721), 585199.HMPREF0577_1811 (degree
-	712) and 585199.HMPREF0577_1059 (degree 663).
+	The undirected graph Mobiluncus mulieris ATCC35243 has 2263 nodes and 159996
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06251 and has 22 connected components, where the component
+	with most nodes has 2210 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 141.40,
+	and the node degree mode is 3. The top 5 most central nodes are 585199.HMPREF0577_0813
+	(degree 831), 585199.HMPREF0577_0555 (degree 806), 585199.HMPREF0577_2212
+	(degree 721), 585199.HMPREF0577_1811 (degree 712) and 585199.HMPREF0577_1059
+	(degree 663).
 	
 
 

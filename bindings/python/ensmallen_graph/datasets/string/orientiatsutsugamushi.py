@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:39.137461
 
-The undirected graph Orientia tsutsugamushi has 1053 nodes and 61932 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11182
-and has 25 connected components, where the component with most nodes has 1002 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 117.63, and the node degree mode is 1. The top 5 most
-central nodes are 357244.OTBS_1022 (degree 516), 357244.OTBS_0917 (degree 451), 357244.OTBS_0380
-(degree 449), 357244.OTBS_0704 (degree 429) and 357244.OTBS_1140 (degree 424).
+The undirected graph Orientia tsutsugamushi has 1053 nodes and 61932 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11182 and has 25 connected components, where the component
+with most nodes has 1002 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 117.63,
+and the node degree mode is 1. The top 5 most central nodes are 357244.OTBS_1022
+(degree 516), 357244.OTBS_0917 (degree 451), 357244.OTBS_0380 (degree 449),
+357244.OTBS_0704 (degree 429) and 357244.OTBS_1140 (degree 424).
 
 
 References
@@ -106,13 +107,14 @@ def OrientiaTsutsugamushi(
 	
 	Datetime: 2021-02-02 20:33:39.137461
 	
-	The undirected graph Orientia tsutsugamushi has 1053 nodes and 61932 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11182
-	and has 25 connected components, where the component with most nodes has 1002 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 117.63, and the node degree mode is 1. The top 5 most
-	central nodes are 357244.OTBS_1022 (degree 516), 357244.OTBS_0917 (degree 451), 357244.OTBS_0380
-	(degree 449), 357244.OTBS_0704 (degree 429) and 357244.OTBS_1140 (degree 424).
+	The undirected graph Orientia tsutsugamushi has 1053 nodes and 61932 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11182 and has 25 connected components, where the component
+	with most nodes has 1002 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 117.63,
+	and the node degree mode is 1. The top 5 most central nodes are 357244.OTBS_1022
+	(degree 516), 357244.OTBS_0917 (degree 451), 357244.OTBS_0380 (degree 449),
+	357244.OTBS_0704 (degree 429) and 357244.OTBS_1140 (degree 424).
 	
 
 

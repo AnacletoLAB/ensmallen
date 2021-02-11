@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:26.719761
 
-The undirected graph Paenibacillus polymyxa SC2 has 5918 nodes and 449394 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02567
-and has 92 connected components, where the component with most nodes has 5643 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 151.87, and the node degree mode is 3. The top 5
-most central nodes are 886882.PPSC2_c3390 (degree 1711), 886882.PPSC2_c1766 (degree
-1655), 886882.PPSC2_c4528 (degree 1617), 886882.PPSC2_c2652 (degree 1443) and 886882.PPSC2_c0993
-(degree 1421).
+The undirected graph Paenibacillus polymyxa SC2 has 5918 nodes and 449394
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02567 and has 92 connected components, where the component
+with most nodes has 5643 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 151.87,
+and the node degree mode is 3. The top 5 most central nodes are 886882.PPSC2_c3390
+(degree 1711), 886882.PPSC2_c1766 (degree 1655), 886882.PPSC2_c4528 (degree
+1617), 886882.PPSC2_c2652 (degree 1443) and 886882.PPSC2_c0993 (degree
+1421).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusPolymyxaSc2(
 	
 	Datetime: 2021-02-02 21:52:26.719761
 	
-	The undirected graph Paenibacillus polymyxa SC2 has 5918 nodes and 449394 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02567
-	and has 92 connected components, where the component with most nodes has 5643 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 151.87, and the node degree mode is 3. The top 5
-	most central nodes are 886882.PPSC2_c3390 (degree 1711), 886882.PPSC2_c1766 (degree
-	1655), 886882.PPSC2_c4528 (degree 1617), 886882.PPSC2_c2652 (degree 1443) and 886882.PPSC2_c0993
-	(degree 1421).
+	The undirected graph Paenibacillus polymyxa SC2 has 5918 nodes and 449394
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02567 and has 92 connected components, where the component
+	with most nodes has 5643 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 151.87,
+	and the node degree mode is 3. The top 5 most central nodes are 886882.PPSC2_c3390
+	(degree 1711), 886882.PPSC2_c1766 (degree 1655), 886882.PPSC2_c4528 (degree
+	1617), 886882.PPSC2_c2652 (degree 1443) and 886882.PPSC2_c0993 (degree
+	1421).
 	
 
 

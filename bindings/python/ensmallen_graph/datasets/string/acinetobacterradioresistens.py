@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:01.757103
 
-The undirected graph Acinetobacter radioresistens has 2842 nodes and 225566 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05587
-and has 16 connected components, where the component with most nodes has 2801 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 158.74, and the node degree mode is 2. The top 5
-most central nodes are 575589.HMPREF0018_02218 (degree 1015), 575589.HMPREF0018_02444
-(degree 976), 575589.HMPREF0018_01031 (degree 869), 575589.HMPREF0018_02464 (degree
-849) and 575589.HMPREF0018_02178 (degree 841).
+The undirected graph Acinetobacter radioresistens has 2842 nodes and 225566
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05587 and has 16 connected components, where the component
+with most nodes has 2801 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 158.74,
+and the node degree mode is 2. The top 5 most central nodes are 575589.HMPREF0018_02218
+(degree 1015), 575589.HMPREF0018_02444 (degree 976), 575589.HMPREF0018_01031
+(degree 869), 575589.HMPREF0018_02464 (degree 849) and 575589.HMPREF0018_02178
+(degree 841).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterRadioresistens(
 	
 	Datetime: 2021-02-02 21:15:01.757103
 	
-	The undirected graph Acinetobacter radioresistens has 2842 nodes and 225566 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05587
-	and has 16 connected components, where the component with most nodes has 2801 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 158.74, and the node degree mode is 2. The top 5
-	most central nodes are 575589.HMPREF0018_02218 (degree 1015), 575589.HMPREF0018_02444
-	(degree 976), 575589.HMPREF0018_01031 (degree 869), 575589.HMPREF0018_02464 (degree
-	849) and 575589.HMPREF0018_02178 (degree 841).
+	The undirected graph Acinetobacter radioresistens has 2842 nodes and 225566
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05587 and has 16 connected components, where the component
+	with most nodes has 2801 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 158.74,
+	and the node degree mode is 2. The top 5 most central nodes are 575589.HMPREF0018_02218
+	(degree 1015), 575589.HMPREF0018_02444 (degree 976), 575589.HMPREF0018_01031
+	(degree 869), 575589.HMPREF0018_02464 (degree 849) and 575589.HMPREF0018_02178
+	(degree 841).
 	
 
 

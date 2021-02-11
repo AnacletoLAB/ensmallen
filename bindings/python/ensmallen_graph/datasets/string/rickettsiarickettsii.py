@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:28.002474
 
-The undirected graph Rickettsia rickettsii has 1340 nodes and 57380 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06396 and
-has 32 connected components, where the component with most nodes has 1250 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 56,
-the mean node degree is 85.64, and the node degree mode is 2. The top 5 most central
-nodes are 452659.RrIowa_1411 (degree 505), 452659.RrIowa_0694 (degree 423), 452659.RrIowa_1144
-(degree 409), 452659.RrIowa_0288 (degree 406) and 452659.RrIowa_1391 (degree 392).
+The undirected graph Rickettsia rickettsii has 1340 nodes and 57380 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06396 and has 32 connected components, where the component with most
+nodes has 1250 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 85.64, and
+the node degree mode is 2. The top 5 most central nodes are 452659.RrIowa_1411
+(degree 505), 452659.RrIowa_0694 (degree 423), 452659.RrIowa_1144 (degree
+409), 452659.RrIowa_0288 (degree 406) and 452659.RrIowa_1391 (degree 392).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaRickettsii(
 	
 	Datetime: 2021-02-02 20:52:28.002474
 	
-	The undirected graph Rickettsia rickettsii has 1340 nodes and 57380 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06396 and
-	has 32 connected components, where the component with most nodes has 1250 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 56,
-	the mean node degree is 85.64, and the node degree mode is 2. The top 5 most central
-	nodes are 452659.RrIowa_1411 (degree 505), 452659.RrIowa_0694 (degree 423), 452659.RrIowa_1144
-	(degree 409), 452659.RrIowa_0288 (degree 406) and 452659.RrIowa_1391 (degree 392).
+	The undirected graph Rickettsia rickettsii has 1340 nodes and 57380 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06396 and has 32 connected components, where the component with most
+	nodes has 1250 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 85.64, and
+	the node degree mode is 2. The top 5 most central nodes are 452659.RrIowa_1411
+	(degree 505), 452659.RrIowa_0694 (degree 423), 452659.RrIowa_1144 (degree
+	409), 452659.RrIowa_0288 (degree 406) and 452659.RrIowa_1391 (degree 392).
 	
 
 

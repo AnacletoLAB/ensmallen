@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:28.768865
 
-The undirected graph Ensifer sp. BR816 has 6018 nodes and 949356 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05244 and
-has 24 connected components, where the component with most nodes has 5965 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 249,
-the mean node degree is 315.51, and the node degree mode is 1. The top 5 most central
-nodes are 1057002.KB905370_gene1240 (degree 2386), 1057002.KB905370_gene862 (degree
-2312), 1057002.KB905370_gene1542 (degree 1927), 1057002.KB905370_gene823 (degree
-1858) and 1057002.KB905370_gene989 (degree 1856).
+The undirected graph Ensifer sp. BR816 has 6018 nodes and 949356 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05244 and has 24 connected components, where the component with most
+nodes has 5965 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 249, the mean node degree is 315.51, and
+the node degree mode is 1. The top 5 most central nodes are 1057002.KB905370_gene1240
+(degree 2386), 1057002.KB905370_gene862 (degree 2312), 1057002.KB905370_gene1542
+(degree 1927), 1057002.KB905370_gene823 (degree 1858) and 1057002.KB905370_gene989
+(degree 1856).
 
 
 References
@@ -107,14 +108,15 @@ def EnsiferSp.Br816(
 	
 	Datetime: 2021-02-02 22:18:28.768865
 	
-	The undirected graph Ensifer sp. BR816 has 6018 nodes and 949356 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05244 and
-	has 24 connected components, where the component with most nodes has 5965 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 249,
-	the mean node degree is 315.51, and the node degree mode is 1. The top 5 most central
-	nodes are 1057002.KB905370_gene1240 (degree 2386), 1057002.KB905370_gene862 (degree
-	2312), 1057002.KB905370_gene1542 (degree 1927), 1057002.KB905370_gene823 (degree
-	1858) and 1057002.KB905370_gene989 (degree 1856).
+	The undirected graph Ensifer sp. BR816 has 6018 nodes and 949356 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05244 and has 24 connected components, where the component with most
+	nodes has 5965 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 249, the mean node degree is 315.51, and
+	the node degree mode is 1. The top 5 most central nodes are 1057002.KB905370_gene1240
+	(degree 2386), 1057002.KB905370_gene862 (degree 2312), 1057002.KB905370_gene1542
+	(degree 1927), 1057002.KB905370_gene823 (degree 1858) and 1057002.KB905370_gene989
+	(degree 1856).
 	
 
 

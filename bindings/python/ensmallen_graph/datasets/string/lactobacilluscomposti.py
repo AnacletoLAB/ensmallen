@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:50:20.606894
 
-The undirected graph Lactobacillus composti has 3829 nodes and 341732 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04663 and
-has 23 connected components, where the component with most nodes has 3772 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 178.50, and the node degree mode is 2. The top 5 most central
-nodes are 1423734.JCM14202_1506 (degree 1568), 1423734.JCM14202_45 (degree 1408),
-1423734.JCM14202_1421 (degree 1254), 1423734.JCM14202_690 (degree 1172) and 1423734.JCM14202_3708
+The undirected graph Lactobacillus composti has 3829 nodes and 341732 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04663 and has 23 connected components, where the component with most
+nodes has 3772 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 178.50, and
+the node degree mode is 2. The top 5 most central nodes are 1423734.JCM14202_1506
+(degree 1568), 1423734.JCM14202_45 (degree 1408), 1423734.JCM14202_1421
+(degree 1254), 1423734.JCM14202_690 (degree 1172) and 1423734.JCM14202_3708
 (degree 1155).
 
 
@@ -107,13 +108,14 @@ def LactobacillusComposti(
 	
 	Datetime: 2021-02-03 22:50:20.606894
 	
-	The undirected graph Lactobacillus composti has 3829 nodes and 341732 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04663 and
-	has 23 connected components, where the component with most nodes has 3772 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 178.50, and the node degree mode is 2. The top 5 most central
-	nodes are 1423734.JCM14202_1506 (degree 1568), 1423734.JCM14202_45 (degree 1408),
-	1423734.JCM14202_1421 (degree 1254), 1423734.JCM14202_690 (degree 1172) and 1423734.JCM14202_3708
+	The undirected graph Lactobacillus composti has 3829 nodes and 341732 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04663 and has 23 connected components, where the component with most
+	nodes has 3772 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 178.50, and
+	the node degree mode is 2. The top 5 most central nodes are 1423734.JCM14202_1506
+	(degree 1568), 1423734.JCM14202_45 (degree 1408), 1423734.JCM14202_1421
+	(degree 1254), 1423734.JCM14202_690 (degree 1172) and 1423734.JCM14202_3708
 	(degree 1155).
 	
 

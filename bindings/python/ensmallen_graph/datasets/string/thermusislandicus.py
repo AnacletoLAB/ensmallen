@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:16.802786
 
-The undirected graph Thermus islandicus has 2318 nodes and 153599 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05720 and
-has 11 connected components, where the component with most nodes has 2298 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 132.53, and the node degree mode is 1. The top 5 most central
-nodes are 1123389.ATXJ01000007_gene1706 (degree 946), 1123389.ATXJ01000002_gene1450
-(degree 884), 1123389.ATXJ01000002_gene1436 (degree 811), 1123389.ATXJ01000001_gene528
-(degree 801) and 1123389.ATXJ01000001_gene503 (degree 715).
+The undirected graph Thermus islandicus has 2318 nodes and 153599 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05720 and has 11 connected components, where the component with most
+nodes has 2298 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 132.53, and
+the node degree mode is 1. The top 5 most central nodes are 1123389.ATXJ01000007_gene1706
+(degree 946), 1123389.ATXJ01000002_gene1450 (degree 884), 1123389.ATXJ01000002_gene1436
+(degree 811), 1123389.ATXJ01000001_gene528 (degree 801) and 1123389.ATXJ01000001_gene503
+(degree 715).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusIslandicus(
 	
 	Datetime: 2021-02-02 22:52:16.802786
 	
-	The undirected graph Thermus islandicus has 2318 nodes and 153599 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05720 and
-	has 11 connected components, where the component with most nodes has 2298 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 132.53, and the node degree mode is 1. The top 5 most central
-	nodes are 1123389.ATXJ01000007_gene1706 (degree 946), 1123389.ATXJ01000002_gene1450
-	(degree 884), 1123389.ATXJ01000002_gene1436 (degree 811), 1123389.ATXJ01000001_gene528
-	(degree 801) and 1123389.ATXJ01000001_gene503 (degree 715).
+	The undirected graph Thermus islandicus has 2318 nodes and 153599 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05720 and has 11 connected components, where the component with most
+	nodes has 2298 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 132.53, and
+	the node degree mode is 1. The top 5 most central nodes are 1123389.ATXJ01000007_gene1706
+	(degree 946), 1123389.ATXJ01000002_gene1450 (degree 884), 1123389.ATXJ01000002_gene1436
+	(degree 811), 1123389.ATXJ01000001_gene528 (degree 801) and 1123389.ATXJ01000001_gene503
+	(degree 715).
 	
 
 

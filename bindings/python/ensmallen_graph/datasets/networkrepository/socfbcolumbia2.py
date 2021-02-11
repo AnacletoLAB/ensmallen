@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:53.486604
 
-The undirected graph socfb-Columbia2 has 11770 nodes and 444333 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00642
-and has 29 connected components, where the component with most nodes has 11706 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 56, the mean node degree is 75.50, and the node degree mode is 1. The top 5 most
-central nodes are 8394 (degree 3375), 9472 (degree 1637), 8761 (degree 1533), 11758
-(degree 1462) and 1608 (degree 1019).
+The undirected graph socfb-Columbia2 has 11770 nodes and 444333 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00642 and has 29 connected components, where the component with most
+nodes has 11706 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 75.50, and
+the node degree mode is 1. The top 5 most central nodes are 8394 (degree
+3375), 9472 (degree 1637), 8761 (degree 1533), 11758 (degree 1462) and
+1608 (degree 1019).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbColumbia2(
 	
 	Datetime: 2021-02-06 11:48:53.486604
 	
-	The undirected graph socfb-Columbia2 has 11770 nodes and 444333 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00642
-	and has 29 connected components, where the component with most nodes has 11706 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 56, the mean node degree is 75.50, and the node degree mode is 1. The top 5 most
-	central nodes are 8394 (degree 3375), 9472 (degree 1637), 8761 (degree 1533), 11758
-	(degree 1462) and 1608 (degree 1019).
+	The undirected graph socfb-Columbia2 has 11770 nodes and 444333 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00642 and has 29 connected components, where the component with most
+	nodes has 11706 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 75.50, and
+	the node degree mode is 1. The top 5 most central nodes are 8394 (degree
+	3375), 9472 (degree 1637), 8761 (degree 1533), 11758 (degree 1462) and
+	1608 (degree 1019).
 	
 
 

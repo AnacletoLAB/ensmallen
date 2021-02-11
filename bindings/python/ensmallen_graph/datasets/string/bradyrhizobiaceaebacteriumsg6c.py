@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:34.244630
 
-The undirected graph Bradyrhizobiaceae bacterium SG6C has 4161 nodes and 555361 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06417
-and has 20 connected components, where the component with most nodes has 4109 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 239, the mean node degree is 266.94, and the node degree mode is 2. The top 5
-most central nodes are 709797.CSIRO_2102 (degree 1499), 709797.CSIRO_0564 (degree
-1390), 709797.CSIRO_0272 (degree 1361), 709797.CSIRO_0913 (degree 1313) and 709797.CSIRO_1341
-(degree 1273).
+The undirected graph Bradyrhizobiaceae bacterium SG6C has 4161 nodes and
+555361 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06417 and has 20 connected components, where the
+component with most nodes has 4109 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 239, the mean node degree
+is 266.94, and the node degree mode is 2. The top 5 most central nodes
+are 709797.CSIRO_2102 (degree 1499), 709797.CSIRO_0564 (degree 1390), 709797.CSIRO_0272
+(degree 1361), 709797.CSIRO_0913 (degree 1313) and 709797.CSIRO_1341 (degree
+1273).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiaceaeBacteriumSg6c(
 	
 	Datetime: 2021-02-02 21:34:34.244630
 	
-	The undirected graph Bradyrhizobiaceae bacterium SG6C has 4161 nodes and 555361 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06417
-	and has 20 connected components, where the component with most nodes has 4109 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 239, the mean node degree is 266.94, and the node degree mode is 2. The top 5
-	most central nodes are 709797.CSIRO_2102 (degree 1499), 709797.CSIRO_0564 (degree
-	1390), 709797.CSIRO_0272 (degree 1361), 709797.CSIRO_0913 (degree 1313) and 709797.CSIRO_1341
-	(degree 1273).
+	The undirected graph Bradyrhizobiaceae bacterium SG6C has 4161 nodes and
+	555361 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06417 and has 20 connected components, where the
+	component with most nodes has 4109 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 239, the mean node degree
+	is 266.94, and the node degree mode is 2. The top 5 most central nodes
+	are 709797.CSIRO_2102 (degree 1499), 709797.CSIRO_0564 (degree 1390), 709797.CSIRO_0272
+	(degree 1361), 709797.CSIRO_0913 (degree 1313) and 709797.CSIRO_1341 (degree
+	1273).
 	
 
 

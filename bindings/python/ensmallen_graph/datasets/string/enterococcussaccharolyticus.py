@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:32.477119
 
-The undirected graph Enterococcus saccharolyticus has 2577 nodes and 205434 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06189
-and has 8 connected components, where the component with most nodes has 2562 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 159.44, and the node degree mode is 3. The top 5
-most central nodes are 1139996.OMQ_01070 (degree 1138), 1139996.OMQ_02262 (degree
-1013), 1139996.OMQ_00230 (degree 900), 1139996.OMQ_02383 (degree 869) and 1139996.OMQ_00392
-(degree 827).
+The undirected graph Enterococcus saccharolyticus has 2577 nodes and 205434
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06189 and has 8 connected components, where the component
+with most nodes has 2562 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 159.44,
+and the node degree mode is 3. The top 5 most central nodes are 1139996.OMQ_01070
+(degree 1138), 1139996.OMQ_02262 (degree 1013), 1139996.OMQ_00230 (degree
+900), 1139996.OMQ_02383 (degree 869) and 1139996.OMQ_00392 (degree 827).
 
 
 References
@@ -107,14 +107,14 @@ def EnterococcusSaccharolyticus(
 	
 	Datetime: 2021-02-02 22:57:32.477119
 	
-	The undirected graph Enterococcus saccharolyticus has 2577 nodes and 205434 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06189
-	and has 8 connected components, where the component with most nodes has 2562 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 159.44, and the node degree mode is 3. The top 5
-	most central nodes are 1139996.OMQ_01070 (degree 1138), 1139996.OMQ_02262 (degree
-	1013), 1139996.OMQ_00230 (degree 900), 1139996.OMQ_02383 (degree 869) and 1139996.OMQ_00392
-	(degree 827).
+	The undirected graph Enterococcus saccharolyticus has 2577 nodes and 205434
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06189 and has 8 connected components, where the component
+	with most nodes has 2562 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 159.44,
+	and the node degree mode is 3. The top 5 most central nodes are 1139996.OMQ_01070
+	(degree 1138), 1139996.OMQ_02262 (degree 1013), 1139996.OMQ_00230 (degree
+	900), 1139996.OMQ_02383 (degree 869) and 1139996.OMQ_00392 (degree 827).
 	
 
 

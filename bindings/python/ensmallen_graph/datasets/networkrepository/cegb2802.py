@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:09.242107
 
-The undirected graph cegb2802 has 2694 nodes and 140028 unweighted edges, of which
-2694 are self-loops. The graph is dense as it has a density of 0.03822 and is connected,
-as it has a single component. The graph median node degree is 96, the mean node degree
-is 102.96, and the node degree mode is 96. The top 5 most central nodes are 2424
-(degree 153), 2423 (degree 153), 2422 (degree 153), 2421 (degree 153) and 2420 (degree
-153).
+The undirected graph cegb2802 has 2694 nodes and 140028 unweighted edges,
+of which 2694 are self-loops. The graph is dense as it has a density of
+0.03822 and is connected, as it has a single component. The graph median
+node degree is 96, the mean node degree is 102.96, and the node degree
+mode is 96. The top 5 most central nodes are 2424 (degree 153), 2423 (degree
+153), 2422 (degree 153), 2421 (degree 153) and 2420 (degree 153).
 
 
 References
@@ -102,12 +102,12 @@ def Cegb2802(
 	
 	Datetime: 2021-02-06 11:07:09.242107
 	
-	The undirected graph cegb2802 has 2694 nodes and 140028 unweighted edges, of which
-	2694 are self-loops. The graph is dense as it has a density of 0.03822 and is connected,
-	as it has a single component. The graph median node degree is 96, the mean node degree
-	is 102.96, and the node degree mode is 96. The top 5 most central nodes are 2424
-	(degree 153), 2423 (degree 153), 2422 (degree 153), 2421 (degree 153) and 2420 (degree
-	153).
+	The undirected graph cegb2802 has 2694 nodes and 140028 unweighted edges,
+	of which 2694 are self-loops. The graph is dense as it has a density of
+	0.03822 and is connected, as it has a single component. The graph median
+	node degree is 96, the mean node degree is 102.96, and the node degree
+	mode is 96. The top 5 most central nodes are 2424 (degree 153), 2423 (degree
+	153), 2422 (degree 153), 2421 (degree 153) and 2420 (degree 153).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:04:23.273220
 
-The undirected graph G40 has 2000 nodes and 11766 unweighted edges with 2 different
-edge types: -1 and 1, of which none are self-loops. The graph is sparse as it has
-a density of 0.00589 and is connected, as it has a single component. The graph median
-node degree is 8, the mean node degree is 11.77, and the node degree mode is 6. The
-top 5 most central nodes are 4 (degree 326), 3 (degree 159), 2 (degree 146), 8 (degree
-132) and 6 (degree 129).
+The undirected graph G40 has 2000 nodes and 11766 unweighted edges with
+2 different edge types: -1 and 1, of which none are self-loops. The graph
+is sparse as it has a density of 0.00589 and is connected, as it has a
+single component. The graph median node degree is 8, the mean node degree
+is 11.77, and the node degree mode is 6. The top 5 most central nodes are
+4 (degree 326), 3 (degree 159), 2 (degree 146), 8 (degree 132) and 6 (degree
+129).
 
 
 References
@@ -102,12 +103,13 @@ def G40(
 	
 	Datetime: 2021-02-06 10:04:23.273220
 	
-	The undirected graph G40 has 2000 nodes and 11766 unweighted edges with 2 different
-	edge types: -1 and 1, of which none are self-loops. The graph is sparse as it has
-	a density of 0.00589 and is connected, as it has a single component. The graph median
-	node degree is 8, the mean node degree is 11.77, and the node degree mode is 6. The
-	top 5 most central nodes are 4 (degree 326), 3 (degree 159), 2 (degree 146), 8 (degree
-	132) and 6 (degree 129).
+	The undirected graph G40 has 2000 nodes and 11766 unweighted edges with
+	2 different edge types: -1 and 1, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00589 and is connected, as it has a
+	single component. The graph median node degree is 8, the mean node degree
+	is 11.77, and the node degree mode is 6. The top 5 most central nodes are
+	4 (degree 326), 3 (degree 159), 2 (degree 146), 8 (degree 132) and 6 (degree
+	129).
 	
 
 

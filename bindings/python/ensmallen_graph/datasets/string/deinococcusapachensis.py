@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:35.312665
 
-The undirected graph Deinococcus apachensis has 4138 nodes and 248313 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02901 and
-has 42 connected components, where the component with most nodes has 4035 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 120.02, and the node degree mode is 2. The top 5 most central
-nodes are 1121377.KB906398_gene2464 (degree 1294), 1121377.KB906398_gene2674 (degree
-1131), 1121377.KB906403_gene3116 (degree 1055), 1121377.KB906407_gene957 (degree
-874) and 1121377.KB906431_gene569 (degree 855).
+The undirected graph Deinococcus apachensis has 4138 nodes and 248313 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02901 and has 42 connected components, where the component with most
+nodes has 4035 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 120.02, and
+the node degree mode is 2. The top 5 most central nodes are 1121377.KB906398_gene2464
+(degree 1294), 1121377.KB906398_gene2674 (degree 1131), 1121377.KB906403_gene3116
+(degree 1055), 1121377.KB906407_gene957 (degree 874) and 1121377.KB906431_gene569
+(degree 855).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusApachensis(
 	
 	Datetime: 2021-02-02 22:35:35.312665
 	
-	The undirected graph Deinococcus apachensis has 4138 nodes and 248313 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02901 and
-	has 42 connected components, where the component with most nodes has 4035 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 120.02, and the node degree mode is 2. The top 5 most central
-	nodes are 1121377.KB906398_gene2464 (degree 1294), 1121377.KB906398_gene2674 (degree
-	1131), 1121377.KB906403_gene3116 (degree 1055), 1121377.KB906407_gene957 (degree
-	874) and 1121377.KB906431_gene569 (degree 855).
+	The undirected graph Deinococcus apachensis has 4138 nodes and 248313 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02901 and has 42 connected components, where the component with most
+	nodes has 4035 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 120.02, and
+	the node degree mode is 2. The top 5 most central nodes are 1121377.KB906398_gene2464
+	(degree 1294), 1121377.KB906398_gene2674 (degree 1131), 1121377.KB906403_gene3116
+	(degree 1055), 1121377.KB906407_gene957 (degree 874) and 1121377.KB906431_gene569
+	(degree 855).
 	
 
 

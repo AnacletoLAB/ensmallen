@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:27.056586
 
-The undirected graph Bacillus cibi has 3741 nodes and 336748 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04814 and has 13
-connected components, where the component with most nodes has 3714 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 180.03, and the node degree mode is 2. The top 5 most central
-nodes are 265729.GS18_0212710 (degree 1294), 265729.GS18_0219050 (degree 1122), 265729.GS18_0220030
-(degree 997), 265729.GS18_0204580 (degree 995) and 265729.GS18_0209965 (degree 939).
+The undirected graph Bacillus cibi has 3741 nodes and 336748 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04814 and has 13 connected components, where the component with most
+nodes has 3714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 180.03, and
+the node degree mode is 2. The top 5 most central nodes are 265729.GS18_0212710
+(degree 1294), 265729.GS18_0219050 (degree 1122), 265729.GS18_0220030 (degree
+997), 265729.GS18_0204580 (degree 995) and 265729.GS18_0209965 (degree
+939).
 
 
 References
@@ -106,13 +108,15 @@ def BacillusCibi(
 	
 	Datetime: 2021-02-02 20:14:27.056586
 	
-	The undirected graph Bacillus cibi has 3741 nodes and 336748 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04814 and has 13
-	connected components, where the component with most nodes has 3714 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 180.03, and the node degree mode is 2. The top 5 most central
-	nodes are 265729.GS18_0212710 (degree 1294), 265729.GS18_0219050 (degree 1122), 265729.GS18_0220030
-	(degree 997), 265729.GS18_0204580 (degree 995) and 265729.GS18_0209965 (degree 939).
+	The undirected graph Bacillus cibi has 3741 nodes and 336748 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04814 and has 13 connected components, where the component with most
+	nodes has 3714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 180.03, and
+	the node degree mode is 2. The top 5 most central nodes are 265729.GS18_0212710
+	(degree 1294), 265729.GS18_0219050 (degree 1122), 265729.GS18_0220030 (degree
+	997), 265729.GS18_0204580 (degree 995) and 265729.GS18_0209965 (degree
+	939).
 	
 
 

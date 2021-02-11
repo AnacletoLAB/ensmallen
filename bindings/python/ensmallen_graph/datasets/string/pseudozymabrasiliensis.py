@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:23:54.313835
 
-The undirected graph Pseudozyma brasiliensis has 4662 nodes and 488386 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04495 and
-has 25 connected components, where the component with most nodes has 4612 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 209.52, and the node degree mode is 1. The top 5 most central
-nodes are 1392244.V5EQE5 (degree 1490), 1392244.V5F147 (degree 1404), 1392244.V5GRJ7
-(degree 1367), 1392244.V5E6J0 (degree 1293) and 1392244.V5ESI6 (degree 1144).
+The undirected graph Pseudozyma brasiliensis has 4662 nodes and 488386
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04495 and has 25 connected components, where the component
+with most nodes has 4612 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 209.52,
+and the node degree mode is 1. The top 5 most central nodes are 1392244.V5EQE5
+(degree 1490), 1392244.V5F147 (degree 1404), 1392244.V5GRJ7 (degree 1367),
+1392244.V5E6J0 (degree 1293) and 1392244.V5ESI6 (degree 1144).
 
 
 References
@@ -106,13 +107,14 @@ def PseudozymaBrasiliensis(
 	
 	Datetime: 2021-02-03 22:23:54.313835
 	
-	The undirected graph Pseudozyma brasiliensis has 4662 nodes and 488386 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04495 and
-	has 25 connected components, where the component with most nodes has 4612 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 209.52, and the node degree mode is 1. The top 5 most central
-	nodes are 1392244.V5EQE5 (degree 1490), 1392244.V5F147 (degree 1404), 1392244.V5GRJ7
-	(degree 1367), 1392244.V5E6J0 (degree 1293) and 1392244.V5ESI6 (degree 1144).
+	The undirected graph Pseudozyma brasiliensis has 4662 nodes and 488386
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04495 and has 25 connected components, where the component
+	with most nodes has 4612 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 209.52,
+	and the node degree mode is 1. The top 5 most central nodes are 1392244.V5EQE5
+	(degree 1490), 1392244.V5F147 (degree 1404), 1392244.V5GRJ7 (degree 1367),
+	1392244.V5E6J0 (degree 1293) and 1392244.V5ESI6 (degree 1144).
 	
 
 

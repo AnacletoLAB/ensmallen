@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:31.604656
 
-The undirected graph Arcobacter sp. L has 2842 nodes and 219975 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05449 and
-has 5 connected components, where the component with most nodes has 2827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 154.80, and the node degree mode is 6. The top 5 most central
-nodes are 944547.ABLL_1599 (degree 1213), 944547.ABLL_0323 (degree 1087), 944547.ABLL_2349
-(degree 1010), 944547.ABLL_1780 (degree 930) and 944547.ABLL_1768 (degree 891).
+The undirected graph Arcobacter sp. L has 2842 nodes and 219975 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05449 and has 5 connected components, where the component with most
+nodes has 2827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 154.80, and
+the node degree mode is 6. The top 5 most central nodes are 944547.ABLL_1599
+(degree 1213), 944547.ABLL_0323 (degree 1087), 944547.ABLL_2349 (degree
+1010), 944547.ABLL_1780 (degree 930) and 944547.ABLL_1768 (degree 891).
 
 
 References
@@ -106,13 +107,14 @@ def ArcobacterSp.L(
 	
 	Datetime: 2021-02-02 22:01:31.604656
 	
-	The undirected graph Arcobacter sp. L has 2842 nodes and 219975 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05449 and
-	has 5 connected components, where the component with most nodes has 2827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 154.80, and the node degree mode is 6. The top 5 most central
-	nodes are 944547.ABLL_1599 (degree 1213), 944547.ABLL_0323 (degree 1087), 944547.ABLL_2349
-	(degree 1010), 944547.ABLL_1780 (degree 930) and 944547.ABLL_1768 (degree 891).
+	The undirected graph Arcobacter sp. L has 2842 nodes and 219975 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05449 and has 5 connected components, where the component with most
+	nodes has 2827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 154.80, and
+	the node degree mode is 6. The top 5 most central nodes are 944547.ABLL_1599
+	(degree 1213), 944547.ABLL_0323 (degree 1087), 944547.ABLL_2349 (degree
+	1010), 944547.ABLL_1780 (degree 930) and 944547.ABLL_1768 (degree 891).
 	
 
 

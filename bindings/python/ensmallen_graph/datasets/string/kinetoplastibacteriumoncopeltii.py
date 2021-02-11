@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:21.404919
 
-The undirected graph Kinetoplastibacterium oncopeltii has 694 nodes and 36342 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.15113 and is connected, as it has a single component. The graph median node
-degree is 94, the mean node degree is 104.73, and the node degree mode is 96. The
-top 5 most central nodes are 1208920.CONE_0298 (degree 424), 1208920.CONE_0642 (degree
-417), 1208920.CONE_0578 (degree 392), 1208920.CONE_0530 (degree 329) and 1208920.CONE_0027
-(degree 312).
+The undirected graph Kinetoplastibacterium oncopeltii has 694 nodes and
+36342 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.15113 and is connected, as it has a single
+component. The graph median node degree is 94, the mean node degree is
+104.73, and the node degree mode is 96. The top 5 most central nodes are
+1208920.CONE_0298 (degree 424), 1208920.CONE_0642 (degree 417), 1208920.CONE_0578
+(degree 392), 1208920.CONE_0530 (degree 329) and 1208920.CONE_0027 (degree
+312).
 
 
 References
@@ -106,13 +107,14 @@ def KinetoplastibacteriumOncopeltii(
 	
 	Datetime: 2021-02-02 23:18:21.404919
 	
-	The undirected graph Kinetoplastibacterium oncopeltii has 694 nodes and 36342 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.15113 and is connected, as it has a single component. The graph median node
-	degree is 94, the mean node degree is 104.73, and the node degree mode is 96. The
-	top 5 most central nodes are 1208920.CONE_0298 (degree 424), 1208920.CONE_0642 (degree
-	417), 1208920.CONE_0578 (degree 392), 1208920.CONE_0530 (degree 329) and 1208920.CONE_0027
-	(degree 312).
+	The undirected graph Kinetoplastibacterium oncopeltii has 694 nodes and
+	36342 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.15113 and is connected, as it has a single
+	component. The graph median node degree is 94, the mean node degree is
+	104.73, and the node degree mode is 96. The top 5 most central nodes are
+	1208920.CONE_0298 (degree 424), 1208920.CONE_0642 (degree 417), 1208920.CONE_0578
+	(degree 392), 1208920.CONE_0530 (degree 329) and 1208920.CONE_0027 (degree
+	312).
 	
 
 

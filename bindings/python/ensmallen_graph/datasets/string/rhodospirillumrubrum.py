@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:43.555759
 
-The undirected graph Rhodospirillum rubrum has 3773 nodes and 395819 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05562 and
-has 2 connected components, where the component with most nodes has 3771 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 209.82, and the node degree mode is 5. The top 5 most central
-nodes are 269796.Rru_A3514 (degree 1675), 269796.Rru_A0019 (degree 1250), 269796.Rru_A0244
-(degree 1114), 269796.Rru_A0687 (degree 1062) and 269796.Rru_A1410 (degree 1042).
+The undirected graph Rhodospirillum rubrum has 3773 nodes and 395819 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05562 and has 2 connected components, where the component with most
+nodes has 3771 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 209.82, and
+the node degree mode is 5. The top 5 most central nodes are 269796.Rru_A3514
+(degree 1675), 269796.Rru_A0019 (degree 1250), 269796.Rru_A0244 (degree
+1114), 269796.Rru_A0687 (degree 1062) and 269796.Rru_A1410 (degree 1042).
 
 
 References
@@ -106,13 +107,14 @@ def RhodospirillumRubrum(
 	
 	Datetime: 2021-02-02 20:15:43.555759
 	
-	The undirected graph Rhodospirillum rubrum has 3773 nodes and 395819 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05562 and
-	has 2 connected components, where the component with most nodes has 3771 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 209.82, and the node degree mode is 5. The top 5 most central
-	nodes are 269796.Rru_A3514 (degree 1675), 269796.Rru_A0019 (degree 1250), 269796.Rru_A0244
-	(degree 1114), 269796.Rru_A0687 (degree 1062) and 269796.Rru_A1410 (degree 1042).
+	The undirected graph Rhodospirillum rubrum has 3773 nodes and 395819 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05562 and has 2 connected components, where the component with most
+	nodes has 3771 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 209.82, and
+	the node degree mode is 5. The top 5 most central nodes are 269796.Rru_A3514
+	(degree 1675), 269796.Rru_A0019 (degree 1250), 269796.Rru_A0244 (degree
+	1114), 269796.Rru_A0687 (degree 1062) and 269796.Rru_A1410 (degree 1042).
 	
 
 

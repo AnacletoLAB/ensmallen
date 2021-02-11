@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:37.979695
 
-The undirected graph Acinetobacter sp. NIPH973 has 4018 nodes and 330487 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04095
-and has 23 connected components, where the component with most nodes has 3954 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 164.50, and the node degree mode is 2. The top 5
-most central nodes are 520709.F985_01032 (degree 1178), 520709.F985_00192 (degree
-1127), 520709.F985_00173 (degree 1124), 520709.F985_01073 (degree 1007) and 520709.F985_01463
-(degree 901).
+The undirected graph Acinetobacter sp. NIPH973 has 4018 nodes and 330487
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04095 and has 23 connected components, where the component
+with most nodes has 3954 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 164.50,
+and the node degree mode is 2. The top 5 most central nodes are 520709.F985_01032
+(degree 1178), 520709.F985_00192 (degree 1127), 520709.F985_00173 (degree
+1124), 520709.F985_01073 (degree 1007) and 520709.F985_01463 (degree 901).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterSp.Niph973(
 	
 	Datetime: 2021-02-02 21:03:37.979695
 	
-	The undirected graph Acinetobacter sp. NIPH973 has 4018 nodes and 330487 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04095
-	and has 23 connected components, where the component with most nodes has 3954 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 164.50, and the node degree mode is 2. The top 5
-	most central nodes are 520709.F985_01032 (degree 1178), 520709.F985_00192 (degree
-	1127), 520709.F985_00173 (degree 1124), 520709.F985_01073 (degree 1007) and 520709.F985_01463
-	(degree 901).
+	The undirected graph Acinetobacter sp. NIPH973 has 4018 nodes and 330487
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04095 and has 23 connected components, where the component
+	with most nodes has 3954 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 164.50,
+	and the node degree mode is 2. The top 5 most central nodes are 520709.F985_01032
+	(degree 1178), 520709.F985_00192 (degree 1127), 520709.F985_00173 (degree
+	1124), 520709.F985_01073 (degree 1007) and 520709.F985_01463 (degree 901).
 	
 
 

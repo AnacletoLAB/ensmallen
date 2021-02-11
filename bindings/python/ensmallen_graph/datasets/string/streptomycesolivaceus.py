@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:16:07.081620
 
-The undirected graph Streptomyces olivaceus has 7269 nodes and 1221692 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04625 and
-has 24 connected components, where the component with most nodes has 7204 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 279,
-the mean node degree is 336.14, and the node degree mode is 2. The top 5 most central
-nodes are 47716.JOFH01000011_gene6943 (degree 3674), 47716.JOFH01000007_gene1526
-(degree 2697), 47716.JOFH01000020_gene2809 (degree 2358), 47716.JOFH01000036_gene471
-(degree 2356) and 47716.JOFH01000014_gene6009 (degree 2298).
+The undirected graph Streptomyces olivaceus has 7269 nodes and 1221692
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04625 and has 24 connected components, where the component
+with most nodes has 7204 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 279, the mean node degree is 336.14,
+and the node degree mode is 2. The top 5 most central nodes are 47716.JOFH01000011_gene6943
+(degree 3674), 47716.JOFH01000007_gene1526 (degree 2697), 47716.JOFH01000020_gene2809
+(degree 2358), 47716.JOFH01000036_gene471 (degree 2356) and 47716.JOFH01000014_gene6009
+(degree 2298).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesOlivaceus(
 	
 	Datetime: 2021-02-02 18:16:07.081620
 	
-	The undirected graph Streptomyces olivaceus has 7269 nodes and 1221692 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04625 and
-	has 24 connected components, where the component with most nodes has 7204 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 279,
-	the mean node degree is 336.14, and the node degree mode is 2. The top 5 most central
-	nodes are 47716.JOFH01000011_gene6943 (degree 3674), 47716.JOFH01000007_gene1526
-	(degree 2697), 47716.JOFH01000020_gene2809 (degree 2358), 47716.JOFH01000036_gene471
-	(degree 2356) and 47716.JOFH01000014_gene6009 (degree 2298).
+	The undirected graph Streptomyces olivaceus has 7269 nodes and 1221692
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04625 and has 24 connected components, where the component
+	with most nodes has 7204 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 279, the mean node degree is 336.14,
+	and the node degree mode is 2. The top 5 most central nodes are 47716.JOFH01000011_gene6943
+	(degree 3674), 47716.JOFH01000007_gene1526 (degree 2697), 47716.JOFH01000020_gene2809
+	(degree 2358), 47716.JOFH01000036_gene471 (degree 2356) and 47716.JOFH01000014_gene6009
+	(degree 2298).
 	
 
 

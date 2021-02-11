@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:16:26.878034
 
-The undirected graph Raoultella ornithinolytica has 4887 nodes and 581815 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04873
-and has 7 connected components, where the component with most nodes has 4875 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 238.11, and the node degree mode is 3. The top 5
-most central nodes are 1286170.RORB6_02500 (degree 2115), 1286170.RORB6_07635 (degree
-1700), 1286170.RORB6_18475 (degree 1573), 1286170.RORB6_21305 (degree 1428) and 1286170.RORB6_21315
-(degree 1344).
+The undirected graph Raoultella ornithinolytica has 4887 nodes and 581815
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04873 and has 7 connected components, where the component
+with most nodes has 4875 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 238.11,
+and the node degree mode is 3. The top 5 most central nodes are 1286170.RORB6_02500
+(degree 2115), 1286170.RORB6_07635 (degree 1700), 1286170.RORB6_18475 (degree
+1573), 1286170.RORB6_21305 (degree 1428) and 1286170.RORB6_21315 (degree
+1344).
 
 
 References
@@ -107,14 +108,15 @@ def RaoultellaOrnithinolytica(
 	
 	Datetime: 2021-02-03 21:16:26.878034
 	
-	The undirected graph Raoultella ornithinolytica has 4887 nodes and 581815 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04873
-	and has 7 connected components, where the component with most nodes has 4875 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 238.11, and the node degree mode is 3. The top 5
-	most central nodes are 1286170.RORB6_02500 (degree 2115), 1286170.RORB6_07635 (degree
-	1700), 1286170.RORB6_18475 (degree 1573), 1286170.RORB6_21305 (degree 1428) and 1286170.RORB6_21315
-	(degree 1344).
+	The undirected graph Raoultella ornithinolytica has 4887 nodes and 581815
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04873 and has 7 connected components, where the component
+	with most nodes has 4875 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 238.11,
+	and the node degree mode is 3. The top 5 most central nodes are 1286170.RORB6_02500
+	(degree 2115), 1286170.RORB6_07635 (degree 1700), 1286170.RORB6_18475 (degree
+	1573), 1286170.RORB6_21305 (degree 1428) and 1286170.RORB6_21315 (degree
+	1344).
 	
 
 

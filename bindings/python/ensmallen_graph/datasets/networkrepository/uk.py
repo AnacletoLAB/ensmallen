@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:22:41.252437
 
-The undirected graph uk has 4824 nodes and 6837 unweighted edges, of which none are
-self-loops. The graph is quite sparse as it has a density of 0.00059 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 2.83, and the node degree mode is 3. The top 5 most central nodes are 4824 (degree
-3), 4777 (degree 3), 4778 (degree 3), 4771 (degree 3) and 4806 (degree 3).
+The undirected graph uk has 4824 nodes and 6837 unweighted edges, of which
+none are self-loops. The graph is quite sparse as it has a density of 0.00059
+and is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 2.83, and the node degree mode is 3. The
+top 5 most central nodes are 4824 (degree 3), 4777 (degree 3), 4778 (degree
+3), 4771 (degree 3) and 4806 (degree 3).
 
 
 References
@@ -101,11 +102,12 @@ def Uk(
 	
 	Datetime: 2021-02-06 09:22:41.252437
 	
-	The undirected graph uk has 4824 nodes and 6837 unweighted edges, of which none are
-	self-loops. The graph is quite sparse as it has a density of 0.00059 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 2.83, and the node degree mode is 3. The top 5 most central nodes are 4824 (degree
-	3), 4777 (degree 3), 4778 (degree 3), 4771 (degree 3) and 4806 (degree 3).
+	The undirected graph uk has 4824 nodes and 6837 unweighted edges, of which
+	none are self-loops. The graph is quite sparse as it has a density of 0.00059
+	and is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 2.83, and the node degree mode is 3. The
+	top 5 most central nodes are 4824 (degree 3), 4777 (degree 3), 4778 (degree
+	3), 4771 (degree 3) and 4806 (degree 3).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:16.817679
 
-The undirected graph Geminicoccus roseus has 4745 nodes and 665988 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05917 and
-has 9 connected components, where the component with most nodes has 4727 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 280.71, and the node degree mode is 4. The top 5 most central
-nodes are 1089551.KE386572_gene3597 (degree 1653), 1089551.KE386572_gene1945 (degree
-1627), 1089551.KE386572_gene4292 (degree 1438), 1089551.KE386572_gene2449 (degree
-1392) and 1089551.KE386572_gene2982 (degree 1205).
+The undirected graph Geminicoccus roseus has 4745 nodes and 665988 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05917 and has 9 connected components, where the component with most
+nodes has 4727 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 280.71, and
+the node degree mode is 4. The top 5 most central nodes are 1089551.KE386572_gene3597
+(degree 1653), 1089551.KE386572_gene1945 (degree 1627), 1089551.KE386572_gene4292
+(degree 1438), 1089551.KE386572_gene2449 (degree 1392) and 1089551.KE386572_gene2982
+(degree 1205).
 
 
 References
@@ -107,14 +108,15 @@ def GeminicoccusRoseus(
 	
 	Datetime: 2021-02-02 22:22:16.817679
 	
-	The undirected graph Geminicoccus roseus has 4745 nodes and 665988 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05917 and
-	has 9 connected components, where the component with most nodes has 4727 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 280.71, and the node degree mode is 4. The top 5 most central
-	nodes are 1089551.KE386572_gene3597 (degree 1653), 1089551.KE386572_gene1945 (degree
-	1627), 1089551.KE386572_gene4292 (degree 1438), 1089551.KE386572_gene2449 (degree
-	1392) and 1089551.KE386572_gene2982 (degree 1205).
+	The undirected graph Geminicoccus roseus has 4745 nodes and 665988 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05917 and has 9 connected components, where the component with most
+	nodes has 4727 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 280.71, and
+	the node degree mode is 4. The top 5 most central nodes are 1089551.KE386572_gene3597
+	(degree 1653), 1089551.KE386572_gene1945 (degree 1627), 1089551.KE386572_gene4292
+	(degree 1438), 1089551.KE386572_gene2449 (degree 1392) and 1089551.KE386572_gene2982
+	(degree 1205).
 	
 
 

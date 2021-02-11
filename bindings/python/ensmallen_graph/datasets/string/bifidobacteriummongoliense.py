@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:43.993424
 
-The undirected graph Bifidobacterium mongoliense has 1782 nodes and 122777 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07737
-and has 5 connected components, where the component with most nodes has 1773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 137.80, and the node degree mode is 1. The top 5
-most central nodes are 1437603.BMON_0214 (degree 797), 1437603.BMON_1376 (degree
-773), 1437603.BMON_0025 (degree 666), 1437603.BMON_0242 (degree 658) and 1437603.BMON_1082
-(degree 649).
+The undirected graph Bifidobacterium mongoliense has 1782 nodes and 122777
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07737 and has 5 connected components, where the component
+with most nodes has 1773 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 137.80,
+and the node degree mode is 1. The top 5 most central nodes are 1437603.BMON_0214
+(degree 797), 1437603.BMON_1376 (degree 773), 1437603.BMON_0025 (degree
+666), 1437603.BMON_0242 (degree 658) and 1437603.BMON_1082 (degree 649).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumMongoliense(
 	
 	Datetime: 2021-02-03 22:55:43.993424
 	
-	The undirected graph Bifidobacterium mongoliense has 1782 nodes and 122777 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07737
-	and has 5 connected components, where the component with most nodes has 1773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 137.80, and the node degree mode is 1. The top 5
-	most central nodes are 1437603.BMON_0214 (degree 797), 1437603.BMON_1376 (degree
-	773), 1437603.BMON_0025 (degree 666), 1437603.BMON_0242 (degree 658) and 1437603.BMON_1082
-	(degree 649).
+	The undirected graph Bifidobacterium mongoliense has 1782 nodes and 122777
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07737 and has 5 connected components, where the component
+	with most nodes has 1773 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 137.80,
+	and the node degree mode is 1. The top 5 most central nodes are 1437603.BMON_0214
+	(degree 797), 1437603.BMON_1376 (degree 773), 1437603.BMON_0025 (degree
+	666), 1437603.BMON_0242 (degree 658) and 1437603.BMON_1082 (degree 649).
 	
 
 

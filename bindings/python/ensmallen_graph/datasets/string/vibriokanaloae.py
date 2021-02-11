@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:44.664839
 
-The undirected graph Vibrio kanaloae has 3999 nodes and 498094 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06231 and
-has 23 connected components, where the component with most nodes has 3950 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 249.11, and the node degree mode is 1. The top 5 most central
-nodes are 1191299.AJYX01000038_gene3352 (degree 1496), 1191299.AJYX01000052_gene1475
-(degree 1446), 1191299.AJYX01000064_gene3522 (degree 1416), 1191299.AJYX01000066_gene3988
-(degree 1371) and 1191299.AJYX01000055_gene2114 (degree 1271).
+The undirected graph Vibrio kanaloae has 3999 nodes and 498094 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06231 and has 23 connected components, where the component with most
+nodes has 3950 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 249.11, and
+the node degree mode is 1. The top 5 most central nodes are 1191299.AJYX01000038_gene3352
+(degree 1496), 1191299.AJYX01000052_gene1475 (degree 1446), 1191299.AJYX01000064_gene3522
+(degree 1416), 1191299.AJYX01000066_gene3988 (degree 1371) and 1191299.AJYX01000055_gene2114
+(degree 1271).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioKanaloae(
 	
 	Datetime: 2021-02-02 23:11:44.664839
 	
-	The undirected graph Vibrio kanaloae has 3999 nodes and 498094 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06231 and
-	has 23 connected components, where the component with most nodes has 3950 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 249.11, and the node degree mode is 1. The top 5 most central
-	nodes are 1191299.AJYX01000038_gene3352 (degree 1496), 1191299.AJYX01000052_gene1475
-	(degree 1446), 1191299.AJYX01000064_gene3522 (degree 1416), 1191299.AJYX01000066_gene3988
-	(degree 1371) and 1191299.AJYX01000055_gene2114 (degree 1271).
+	The undirected graph Vibrio kanaloae has 3999 nodes and 498094 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06231 and has 23 connected components, where the component with most
+	nodes has 3950 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 249.11, and
+	the node degree mode is 1. The top 5 most central nodes are 1191299.AJYX01000038_gene3352
+	(degree 1496), 1191299.AJYX01000052_gene1475 (degree 1446), 1191299.AJYX01000064_gene3522
+	(degree 1416), 1191299.AJYX01000066_gene3988 (degree 1371) and 1191299.AJYX01000055_gene2114
+	(degree 1271).
 	
 
 

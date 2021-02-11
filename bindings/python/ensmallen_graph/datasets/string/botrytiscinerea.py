@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:00.540178
 
-The undirected graph Botrytis cinerea has 7492 nodes and 483347 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01722 and
-has 35 connected components, where the component with most nodes has 7419 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 65,
-the mean node degree is 129.03, and the node degree mode is 1. The top 5 most central
-nodes are 40559.M7UAS7 (degree 1681), 40559.M7UPM9 (degree 1074), 40559.M7UG12 (degree
-1037), 40559.M7UEB7 (degree 1035) and 40559.M7UIT4 (degree 1032).
+The undirected graph Botrytis cinerea has 7492 nodes and 483347 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01722 and has 35 connected components, where the component with most
+nodes has 7419 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 65, the mean node degree is 129.03, and
+the node degree mode is 1. The top 5 most central nodes are 40559.M7UAS7
+(degree 1681), 40559.M7UPM9 (degree 1074), 40559.M7UG12 (degree 1037),
+40559.M7UEB7 (degree 1035) and 40559.M7UIT4 (degree 1032).
 
 
 References
@@ -106,13 +107,14 @@ def BotrytisCinerea(
 	
 	Datetime: 2021-02-02 18:12:00.540178
 	
-	The undirected graph Botrytis cinerea has 7492 nodes and 483347 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01722 and
-	has 35 connected components, where the component with most nodes has 7419 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 65,
-	the mean node degree is 129.03, and the node degree mode is 1. The top 5 most central
-	nodes are 40559.M7UAS7 (degree 1681), 40559.M7UPM9 (degree 1074), 40559.M7UG12 (degree
-	1037), 40559.M7UEB7 (degree 1035) and 40559.M7UIT4 (degree 1032).
+	The undirected graph Botrytis cinerea has 7492 nodes and 483347 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01722 and has 35 connected components, where the component with most
+	nodes has 7419 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 65, the mean node degree is 129.03, and
+	the node degree mode is 1. The top 5 most central nodes are 40559.M7UAS7
+	(degree 1681), 40559.M7UPM9 (degree 1074), 40559.M7UG12 (degree 1037),
+	40559.M7UEB7 (degree 1035) and 40559.M7UIT4 (degree 1032).
 	
 
 

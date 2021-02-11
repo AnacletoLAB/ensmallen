@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:39.830250
 
-The undirected graph Leucothrix mucor has 4559 nodes and 602295 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05797 and
-has 9 connected components, where the component with most nodes has 4539 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 264.22, and the node degree mode is 2. The top 5 most central
-nodes are 998674.ATTE01000001_gene3187 (degree 1868), 998674.ATTE01000001_gene2191
-(degree 1433), 998674.ATTE01000001_gene3725 (degree 1300), 998674.ATTE01000001_gene2197
-(degree 1269) and 998674.ATTE01000001_gene104 (degree 1232).
+The undirected graph Leucothrix mucor has 4559 nodes and 602295 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05797 and has 9 connected components, where the component with most
+nodes has 4539 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 264.22, and
+the node degree mode is 2. The top 5 most central nodes are 998674.ATTE01000001_gene3187
+(degree 1868), 998674.ATTE01000001_gene2191 (degree 1433), 998674.ATTE01000001_gene3725
+(degree 1300), 998674.ATTE01000001_gene2197 (degree 1269) and 998674.ATTE01000001_gene104
+(degree 1232).
 
 
 References
@@ -107,14 +108,15 @@ def LeucothrixMucor(
 	
 	Datetime: 2021-02-02 22:05:39.830250
 	
-	The undirected graph Leucothrix mucor has 4559 nodes and 602295 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05797 and
-	has 9 connected components, where the component with most nodes has 4539 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 264.22, and the node degree mode is 2. The top 5 most central
-	nodes are 998674.ATTE01000001_gene3187 (degree 1868), 998674.ATTE01000001_gene2191
-	(degree 1433), 998674.ATTE01000001_gene3725 (degree 1300), 998674.ATTE01000001_gene2197
-	(degree 1269) and 998674.ATTE01000001_gene104 (degree 1232).
+	The undirected graph Leucothrix mucor has 4559 nodes and 602295 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05797 and has 9 connected components, where the component with most
+	nodes has 4539 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 264.22, and
+	the node degree mode is 2. The top 5 most central nodes are 998674.ATTE01000001_gene3187
+	(degree 1868), 998674.ATTE01000001_gene2191 (degree 1433), 998674.ATTE01000001_gene3725
+	(degree 1300), 998674.ATTE01000001_gene2197 (degree 1269) and 998674.ATTE01000001_gene104
+	(degree 1232).
 	
 
 

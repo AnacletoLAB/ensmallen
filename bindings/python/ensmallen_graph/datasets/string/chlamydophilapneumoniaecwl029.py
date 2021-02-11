@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:30.475052
 
-The undirected graph Chlamydophila pneumoniae CWL029 has 1045 nodes and 50156 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09195
-and has 8 connected components, where the component with most nodes has 1020 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 95.99, and the node degree mode is 2. The top 5 most
-central nodes are 115713.CPn_0612 (degree 470), 115713.CPn_0315 (degree 417), 115713.CPn_0594
-(degree 404), 115713.CPn_0503 (degree 401) and 115713.CPn_0117 (degree 392).
+The undirected graph Chlamydophila pneumoniae CWL029 has 1045 nodes and
+50156 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09195 and has 8 connected components, where the
+component with most nodes has 1020 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 76, the mean node degree
+is 95.99, and the node degree mode is 2. The top 5 most central nodes are
+115713.CPn_0612 (degree 470), 115713.CPn_0315 (degree 417), 115713.CPn_0594
+(degree 404), 115713.CPn_0503 (degree 401) and 115713.CPn_0117 (degree
+392).
 
 
 References
@@ -106,13 +108,15 @@ def ChlamydophilaPneumoniaeCwl029(
 	
 	Datetime: 2021-02-02 19:47:30.475052
 	
-	The undirected graph Chlamydophila pneumoniae CWL029 has 1045 nodes and 50156 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09195
-	and has 8 connected components, where the component with most nodes has 1020 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 95.99, and the node degree mode is 2. The top 5 most
-	central nodes are 115713.CPn_0612 (degree 470), 115713.CPn_0315 (degree 417), 115713.CPn_0594
-	(degree 404), 115713.CPn_0503 (degree 401) and 115713.CPn_0117 (degree 392).
+	The undirected graph Chlamydophila pneumoniae CWL029 has 1045 nodes and
+	50156 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09195 and has 8 connected components, where the
+	component with most nodes has 1020 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 76, the mean node degree
+	is 95.99, and the node degree mode is 2. The top 5 most central nodes are
+	115713.CPn_0612 (degree 470), 115713.CPn_0315 (degree 417), 115713.CPn_0594
+	(degree 404), 115713.CPn_0503 (degree 401) and 115713.CPn_0117 (degree
+	392).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:35.029866
 
-The undirected graph Pseudonocardia dioxanivorans has 6624 nodes and 1191596 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05432
-and has 18 connected components, where the component with most nodes has 6586 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 321, the mean node degree is 359.78, and the node degree mode is 1. The top 5
-most central nodes are 675635.Psed_2324 (degree 3707), 675635.Psed_3001 (degree 3060),
-675635.Psed_0548 (degree 2815), 675635.Psed_3588 (degree 2236) and 675635.Psed_6430
-(degree 2198).
+The undirected graph Pseudonocardia dioxanivorans has 6624 nodes and 1191596
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05432 and has 18 connected components, where the component
+with most nodes has 6586 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 321, the mean node degree is 359.78,
+and the node degree mode is 1. The top 5 most central nodes are 675635.Psed_2324
+(degree 3707), 675635.Psed_3001 (degree 3060), 675635.Psed_0548 (degree
+2815), 675635.Psed_3588 (degree 2236) and 675635.Psed_6430 (degree 2198).
 
 
 References
@@ -107,14 +107,14 @@ def PseudonocardiaDioxanivorans(
 	
 	Datetime: 2021-02-02 21:29:35.029866
 	
-	The undirected graph Pseudonocardia dioxanivorans has 6624 nodes and 1191596 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05432
-	and has 18 connected components, where the component with most nodes has 6586 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 321, the mean node degree is 359.78, and the node degree mode is 1. The top 5
-	most central nodes are 675635.Psed_2324 (degree 3707), 675635.Psed_3001 (degree 3060),
-	675635.Psed_0548 (degree 2815), 675635.Psed_3588 (degree 2236) and 675635.Psed_6430
-	(degree 2198).
+	The undirected graph Pseudonocardia dioxanivorans has 6624 nodes and 1191596
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05432 and has 18 connected components, where the component
+	with most nodes has 6586 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 321, the mean node degree is 359.78,
+	and the node degree mode is 1. The top 5 most central nodes are 675635.Psed_2324
+	(degree 3707), 675635.Psed_3001 (degree 3060), 675635.Psed_0548 (degree
+	2815), 675635.Psed_3588 (degree 2236) and 675635.Psed_6430 (degree 2198).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:41.076262
 
-The undirected graph Achromobacter arsenitoxydans has 5670 nodes and 822766 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05119
-and has 15 connected components, where the component with most nodes has 5637 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 290.22, and the node degree mode is 2. The top 5
-most central nodes are 477184.KYC_16282 (degree 1970), 477184.KYC_23133 (degree 1900),
-477184.KYC_04767 (degree 1648), 477184.KYC_07191 (degree 1631) and 477184.KYC_25072
-(degree 1630).
+The undirected graph Achromobacter arsenitoxydans has 5670 nodes and 822766
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05119 and has 15 connected components, where the component
+with most nodes has 5637 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 290.22,
+and the node degree mode is 2. The top 5 most central nodes are 477184.KYC_16282
+(degree 1970), 477184.KYC_23133 (degree 1900), 477184.KYC_04767 (degree
+1648), 477184.KYC_07191 (degree 1631) and 477184.KYC_25072 (degree 1630).
 
 
 References
@@ -107,14 +107,14 @@ def AchromobacterArsenitoxydans(
 	
 	Datetime: 2021-02-02 20:56:41.076262
 	
-	The undirected graph Achromobacter arsenitoxydans has 5670 nodes and 822766 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05119
-	and has 15 connected components, where the component with most nodes has 5637 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 290.22, and the node degree mode is 2. The top 5
-	most central nodes are 477184.KYC_16282 (degree 1970), 477184.KYC_23133 (degree 1900),
-	477184.KYC_04767 (degree 1648), 477184.KYC_07191 (degree 1631) and 477184.KYC_25072
-	(degree 1630).
+	The undirected graph Achromobacter arsenitoxydans has 5670 nodes and 822766
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05119 and has 15 connected components, where the component
+	with most nodes has 5637 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 290.22,
+	and the node degree mode is 2. The top 5 most central nodes are 477184.KYC_16282
+	(degree 1970), 477184.KYC_23133 (degree 1900), 477184.KYC_04767 (degree
+	1648), 477184.KYC_07191 (degree 1631) and 477184.KYC_25072 (degree 1630).
 	
 
 

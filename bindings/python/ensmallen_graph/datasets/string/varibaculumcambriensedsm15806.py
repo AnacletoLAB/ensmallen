@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:43.929717
 
-The undirected graph Varibaculum cambriense DSM15806 has 1672 nodes and 109417 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07833
-and has 12 connected components, where the component with most nodes has 1644 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 130.88, and the node degree mode is 5. The top 5
-most central nodes are 1123488.ATUF01000006_gene1320 (degree 696), 1123488.ATUF01000002_gene388
+The undirected graph Varibaculum cambriense DSM15806 has 1672 nodes and
+109417 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07833 and has 12 connected components, where the
+component with most nodes has 1644 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+is 130.88, and the node degree mode is 5. The top 5 most central nodes
+are 1123488.ATUF01000006_gene1320 (degree 696), 1123488.ATUF01000002_gene388
 (degree 651), 1123488.ATUF01000002_gene527 (degree 636), 1123488.ATUF01000002_gene639
 (degree 615) and 1123488.ATUF01000002_gene522 (degree 598).
 
@@ -107,12 +108,13 @@ def VaribaculumCambrienseDsm15806(
 	
 	Datetime: 2021-02-02 22:52:43.929717
 	
-	The undirected graph Varibaculum cambriense DSM15806 has 1672 nodes and 109417 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07833
-	and has 12 connected components, where the component with most nodes has 1644 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 130.88, and the node degree mode is 5. The top 5
-	most central nodes are 1123488.ATUF01000006_gene1320 (degree 696), 1123488.ATUF01000002_gene388
+	The undirected graph Varibaculum cambriense DSM15806 has 1672 nodes and
+	109417 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07833 and has 12 connected components, where the
+	component with most nodes has 1644 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+	is 130.88, and the node degree mode is 5. The top 5 most central nodes
+	are 1123488.ATUF01000006_gene1320 (degree 696), 1123488.ATUF01000002_gene388
 	(degree 651), 1123488.ATUF01000002_gene527 (degree 636), 1123488.ATUF01000002_gene639
 	(degree 615) and 1123488.ATUF01000002_gene522 (degree 598).
 	

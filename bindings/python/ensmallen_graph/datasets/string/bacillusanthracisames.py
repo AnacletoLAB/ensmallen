@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:05.758269
 
-The undirected graph Bacillus anthracis Ames has 5253 nodes and 496901 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03602 and
-has 33 connected components, where the component with most nodes has 5168 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 189.19, and the node degree mode is 2. The top 5 most central
-nodes are 198094.BA_3582 (degree 1824), 198094.BA_4831 (degree 1749), 198094.BA_0268
-(degree 1491), 198094.BA_4491 (degree 1276) and 198094.BA_0530 (degree 1230).
+The undirected graph Bacillus anthracis Ames has 5253 nodes and 496901
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03602 and has 33 connected components, where the component
+with most nodes has 5168 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 189.19,
+and the node degree mode is 2. The top 5 most central nodes are 198094.BA_3582
+(degree 1824), 198094.BA_4831 (degree 1749), 198094.BA_0268 (degree 1491),
+198094.BA_4491 (degree 1276) and 198094.BA_0530 (degree 1230).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusAnthracisAmes(
 	
 	Datetime: 2021-02-02 19:59:05.758269
 	
-	The undirected graph Bacillus anthracis Ames has 5253 nodes and 496901 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03602 and
-	has 33 connected components, where the component with most nodes has 5168 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 189.19, and the node degree mode is 2. The top 5 most central
-	nodes are 198094.BA_3582 (degree 1824), 198094.BA_4831 (degree 1749), 198094.BA_0268
-	(degree 1491), 198094.BA_4491 (degree 1276) and 198094.BA_0530 (degree 1230).
+	The undirected graph Bacillus anthracis Ames has 5253 nodes and 496901
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03602 and has 33 connected components, where the component
+	with most nodes has 5168 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 189.19,
+	and the node degree mode is 2. The top 5 most central nodes are 198094.BA_3582
+	(degree 1824), 198094.BA_4831 (degree 1749), 198094.BA_0268 (degree 1491),
+	198094.BA_4491 (degree 1276) and 198094.BA_0530 (degree 1230).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:12.525125
 
-The undirected graph Natronococcus amylolyticus has 4210 nodes and 363531 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04103
-and has 47 connected components, where the component with most nodes has 4101 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 172.70, and the node degree mode is 2. The top 5
-most central nodes are 1227497.C491_19972 (degree 1174), 1227497.C491_06128 (degree
-1089), 1227497.C491_20102 (degree 1050), 1227497.C491_07336 (degree 1023) and 1227497.C491_01437
-(degree 979).
+The undirected graph Natronococcus amylolyticus has 4210 nodes and 363531
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04103 and has 47 connected components, where the component
+with most nodes has 4101 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 172.70,
+and the node degree mode is 2. The top 5 most central nodes are 1227497.C491_19972
+(degree 1174), 1227497.C491_06128 (degree 1089), 1227497.C491_20102 (degree
+1050), 1227497.C491_07336 (degree 1023) and 1227497.C491_01437 (degree
+979).
 
 
 References
@@ -107,14 +108,15 @@ def NatronococcusAmylolyticus(
 	
 	Datetime: 2021-02-02 23:26:12.525125
 	
-	The undirected graph Natronococcus amylolyticus has 4210 nodes and 363531 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04103
-	and has 47 connected components, where the component with most nodes has 4101 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 172.70, and the node degree mode is 2. The top 5
-	most central nodes are 1227497.C491_19972 (degree 1174), 1227497.C491_06128 (degree
-	1089), 1227497.C491_20102 (degree 1050), 1227497.C491_07336 (degree 1023) and 1227497.C491_01437
-	(degree 979).
+	The undirected graph Natronococcus amylolyticus has 4210 nodes and 363531
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04103 and has 47 connected components, where the component
+	with most nodes has 4101 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 172.70,
+	and the node degree mode is 2. The top 5 most central nodes are 1227497.C491_19972
+	(degree 1174), 1227497.C491_06128 (degree 1089), 1227497.C491_20102 (degree
+	1050), 1227497.C491_07336 (degree 1023) and 1227497.C491_01437 (degree
+	979).
 	
 
 

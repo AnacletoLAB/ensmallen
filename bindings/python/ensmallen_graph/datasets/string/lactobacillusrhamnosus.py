@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:12.799510
 
-The undirected graph Lactobacillus rhamnosus has 2915 nodes and 268570 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06324 and
-has 16 connected components, where the component with most nodes has 2877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 184.27, and the node degree mode is 4. The top 5 most central
-nodes are 568703.LGG_01761 (degree 1221), 568703.LGG_01254 (degree 1083), 568703.LGG_00757
-(degree 1032), 568703.LGG_01604 (degree 919) and 568703.LGG_00249 (degree 899).
+The undirected graph Lactobacillus rhamnosus has 2915 nodes and 268570
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06324 and has 16 connected components, where the component
+with most nodes has 2877 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 184.27,
+and the node degree mode is 4. The top 5 most central nodes are 568703.LGG_01761
+(degree 1221), 568703.LGG_01254 (degree 1083), 568703.LGG_00757 (degree
+1032), 568703.LGG_01604 (degree 919) and 568703.LGG_00249 (degree 899).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusRhamnosus(
 	
 	Datetime: 2021-02-02 21:13:12.799510
 	
-	The undirected graph Lactobacillus rhamnosus has 2915 nodes and 268570 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06324 and
-	has 16 connected components, where the component with most nodes has 2877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 184.27, and the node degree mode is 4. The top 5 most central
-	nodes are 568703.LGG_01761 (degree 1221), 568703.LGG_01254 (degree 1083), 568703.LGG_00757
-	(degree 1032), 568703.LGG_01604 (degree 919) and 568703.LGG_00249 (degree 899).
+	The undirected graph Lactobacillus rhamnosus has 2915 nodes and 268570
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06324 and has 16 connected components, where the component
+	with most nodes has 2877 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 184.27,
+	and the node degree mode is 4. The top 5 most central nodes are 568703.LGG_01761
+	(degree 1221), 568703.LGG_01254 (degree 1083), 568703.LGG_00757 (degree
+	1032), 568703.LGG_01604 (degree 919) and 568703.LGG_00249 (degree 899).
 	
 
 

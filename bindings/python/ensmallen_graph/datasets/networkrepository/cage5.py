@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:07:11.356941
 
-The undirected graph cage5 has 37 nodes and 135 weighted edges, of which 37 are self-loops.
-The graph is quite dense as it has a density of 0.17492 and is connected, as it has
-a single component. The graph median node degree is 6, the mean node degree is 6.30,
-and the node degree mode is 7. The top 5 most central nodes are 28 (degree 10), 25
-(degree 10), 21 (degree 9), 19 (degree 9) and 27 (degree 9).
+The undirected graph cage5 has 37 nodes and 135 weighted edges, of which
+37 are self-loops. The graph is quite dense as it has a density of 0.17492
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 6.30, and the node degree mode is 7. The
+top 5 most central nodes are 28 (degree 10), 25 (degree 10), 21 (degree
+9), 19 (degree 9) and 27 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Cage5(
 	
 	Datetime: 2021-02-06 08:07:11.356941
 	
-	The undirected graph cage5 has 37 nodes and 135 weighted edges, of which 37 are self-loops.
-	The graph is quite dense as it has a density of 0.17492 and is connected, as it has
-	a single component. The graph median node degree is 6, the mean node degree is 6.30,
-	and the node degree mode is 7. The top 5 most central nodes are 28 (degree 10), 25
-	(degree 10), 21 (degree 9), 19 (degree 9) and 27 (degree 9).
+	The undirected graph cage5 has 37 nodes and 135 weighted edges, of which
+	37 are self-loops. The graph is quite dense as it has a density of 0.17492
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 6.30, and the node degree mode is 7. The
+	top 5 most central nodes are 28 (degree 10), 25 (degree 10), 21 (degree
+	9), 19 (degree 9) and 27 (degree 9).
 	
 
 

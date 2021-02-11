@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:28.367892
 
-The undirected graph Francisella sp. TX077308 has 1969 nodes and 102113 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05270
-and has 10 connected components, where the component with most nodes has 1945 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 103.72, and the node degree mode is 4. The top 5 most
-central nodes are 573569.F7308_0616 (degree 745), 573569.F7308_0478 (degree 608),
-573569.F7308_1409 (degree 581), 573569.F7308_0104 (degree 566) and 573569.F7308_0052
-(degree 551).
+The undirected graph Francisella sp. TX077308 has 1969 nodes and 102113
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05270 and has 10 connected components, where the component
+with most nodes has 1945 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 78, the mean node degree is 103.72,
+and the node degree mode is 4. The top 5 most central nodes are 573569.F7308_0616
+(degree 745), 573569.F7308_0478 (degree 608), 573569.F7308_1409 (degree
+581), 573569.F7308_0104 (degree 566) and 573569.F7308_0052 (degree 551).
 
 
 References
@@ -107,14 +107,14 @@ def FrancisellaSp.Tx077308(
 	
 	Datetime: 2021-02-02 21:14:28.367892
 	
-	The undirected graph Francisella sp. TX077308 has 1969 nodes and 102113 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05270
-	and has 10 connected components, where the component with most nodes has 1945 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 103.72, and the node degree mode is 4. The top 5 most
-	central nodes are 573569.F7308_0616 (degree 745), 573569.F7308_0478 (degree 608),
-	573569.F7308_1409 (degree 581), 573569.F7308_0104 (degree 566) and 573569.F7308_0052
-	(degree 551).
+	The undirected graph Francisella sp. TX077308 has 1969 nodes and 102113
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05270 and has 10 connected components, where the component
+	with most nodes has 1945 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 78, the mean node degree is 103.72,
+	and the node degree mode is 4. The top 5 most central nodes are 573569.F7308_0616
+	(degree 745), 573569.F7308_0478 (degree 608), 573569.F7308_1409 (degree
+	581), 573569.F7308_0104 (degree 566) and 573569.F7308_0052 (degree 551).
 	
 
 

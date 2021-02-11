@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:16.053702
 
-The undirected graph Yersinia aldovae has 3906 nodes and 419480 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05500 and
-has 17 connected components, where the component with most nodes has 3868 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 214.79, and the node degree mode is 1. The top 5 most central
-nodes are 527002.yaldo0001_37520 (degree 1289), 527002.yaldo0001_24250 (degree 1176),
-527002.yaldo0001_1770 (degree 1127), 527002.yaldo0001_24240 (degree 1107) and 527002.yaldo0001_14740
+The undirected graph Yersinia aldovae has 3906 nodes and 419480 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05500 and has 17 connected components, where the component with most
+nodes has 3868 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 214.79, and
+the node degree mode is 1. The top 5 most central nodes are 527002.yaldo0001_37520
+(degree 1289), 527002.yaldo0001_24250 (degree 1176), 527002.yaldo0001_1770
+(degree 1127), 527002.yaldo0001_24240 (degree 1107) and 527002.yaldo0001_14740
 (degree 1085).
 
 
@@ -107,13 +108,14 @@ def YersiniaAldovae(
 	
 	Datetime: 2021-02-02 21:06:16.053702
 	
-	The undirected graph Yersinia aldovae has 3906 nodes and 419480 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05500 and
-	has 17 connected components, where the component with most nodes has 3868 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 214.79, and the node degree mode is 1. The top 5 most central
-	nodes are 527002.yaldo0001_37520 (degree 1289), 527002.yaldo0001_24250 (degree 1176),
-	527002.yaldo0001_1770 (degree 1127), 527002.yaldo0001_24240 (degree 1107) and 527002.yaldo0001_14740
+	The undirected graph Yersinia aldovae has 3906 nodes and 419480 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05500 and has 17 connected components, where the component with most
+	nodes has 3868 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 214.79, and
+	the node degree mode is 1. The top 5 most central nodes are 527002.yaldo0001_37520
+	(degree 1289), 527002.yaldo0001_24250 (degree 1176), 527002.yaldo0001_1770
+	(degree 1127), 527002.yaldo0001_24240 (degree 1107) and 527002.yaldo0001_14740
 	(degree 1085).
 	
 

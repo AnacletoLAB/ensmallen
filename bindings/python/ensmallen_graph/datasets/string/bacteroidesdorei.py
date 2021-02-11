@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:43.691618
 
-The undirected graph Bacteroides dorei has 4482 nodes and 528182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05260 and
-has 28 connected components, where the component with most nodes has 4409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 211,
-the mean node degree is 235.69, and the node degree mode is 4. The top 5 most central
-nodes are 357276.EL88_00595 (degree 1513), 357276.EL88_07510 (degree 1264), 357276.EL88_21560
-(degree 1166), 357276.EL88_01450 (degree 1128) and 357276.EL88_23055 (degree 1127).
+The undirected graph Bacteroides dorei has 4482 nodes and 528182 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05260 and has 28 connected components, where the component with most
+nodes has 4409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 211, the mean node degree is 235.69, and
+the node degree mode is 4. The top 5 most central nodes are 357276.EL88_00595
+(degree 1513), 357276.EL88_07510 (degree 1264), 357276.EL88_21560 (degree
+1166), 357276.EL88_01450 (degree 1128) and 357276.EL88_23055 (degree 1127).
 
 
 References
@@ -106,13 +107,14 @@ def BacteroidesDorei(
 	
 	Datetime: 2021-02-02 20:33:43.691618
 	
-	The undirected graph Bacteroides dorei has 4482 nodes and 528182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05260 and
-	has 28 connected components, where the component with most nodes has 4409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 211,
-	the mean node degree is 235.69, and the node degree mode is 4. The top 5 most central
-	nodes are 357276.EL88_00595 (degree 1513), 357276.EL88_07510 (degree 1264), 357276.EL88_21560
-	(degree 1166), 357276.EL88_01450 (degree 1128) and 357276.EL88_23055 (degree 1127).
+	The undirected graph Bacteroides dorei has 4482 nodes and 528182 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05260 and has 28 connected components, where the component with most
+	nodes has 4409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 211, the mean node degree is 235.69, and
+	the node degree mode is 4. The top 5 most central nodes are 357276.EL88_00595
+	(degree 1513), 357276.EL88_07510 (degree 1264), 357276.EL88_21560 (degree
+	1166), 357276.EL88_01450 (degree 1128) and 357276.EL88_23055 (degree 1127).
 	
 
 

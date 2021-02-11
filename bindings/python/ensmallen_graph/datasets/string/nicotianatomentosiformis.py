@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:41:05.672679
 
-The undirected graph Nicotiana tomentosiformis has 25912 nodes and 4901855 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01460
-and has 16 connected components, where the component with most nodes has 25882 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 378.35, and the node degree mode is 3. The top 5
-most central nodes are 4098.XP_009607468.1 (degree 7637), 4098.XP_009612175.1 (degree
-5977), 4098.XP_009616931.1 (degree 4772), 4098.XP_009623505.1 (degree 4764) and 4098.XP_009605274.1
-(degree 4623).
+The undirected graph Nicotiana tomentosiformis has 25912 nodes and 4901855
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01460 and has 16 connected components, where the component
+with most nodes has 25882 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 170, the mean node degree
+is 378.35, and the node degree mode is 3. The top 5 most central nodes
+are 4098.XP_009607468.1 (degree 7637), 4098.XP_009612175.1 (degree 5977),
+4098.XP_009616931.1 (degree 4772), 4098.XP_009623505.1 (degree 4764) and
+4098.XP_009605274.1 (degree 4623).
 
 
 References
@@ -107,14 +108,15 @@ def NicotianaTomentosiformis(
 	
 	Datetime: 2021-02-02 16:41:05.672679
 	
-	The undirected graph Nicotiana tomentosiformis has 25912 nodes and 4901855 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01460
-	and has 16 connected components, where the component with most nodes has 25882 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 378.35, and the node degree mode is 3. The top 5
-	most central nodes are 4098.XP_009607468.1 (degree 7637), 4098.XP_009612175.1 (degree
-	5977), 4098.XP_009616931.1 (degree 4772), 4098.XP_009623505.1 (degree 4764) and 4098.XP_009605274.1
-	(degree 4623).
+	The undirected graph Nicotiana tomentosiformis has 25912 nodes and 4901855
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01460 and has 16 connected components, where the component
+	with most nodes has 25882 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 170, the mean node degree
+	is 378.35, and the node degree mode is 3. The top 5 most central nodes
+	are 4098.XP_009607468.1 (degree 7637), 4098.XP_009612175.1 (degree 5977),
+	4098.XP_009616931.1 (degree 4772), 4098.XP_009623505.1 (degree 4764) and
+	4098.XP_009605274.1 (degree 4623).
 	
 
 

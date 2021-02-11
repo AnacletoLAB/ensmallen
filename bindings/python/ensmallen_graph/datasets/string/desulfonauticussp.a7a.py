@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:11:10.577004
 
-The undirected graph Desulfonauticus sp. A7A has 1912 nodes and 135353 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07409 and
-has 5 connected components, where the component with most nodes has 1902 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 141.58, and the node degree mode is 1. The top 5 most central
-nodes are 1379281.AVAG01000011_gene1246 (degree 879), 1379281.AVAG01000023_gene1901
-(degree 706), 1379281.AVAG01000016_gene954 (degree 689), 1379281.AVAG01000052_gene912
-(degree 675) and 1379281.AVAG01000031_gene106 (degree 673).
+The undirected graph Desulfonauticus sp. A7A has 1912 nodes and 135353
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07409 and has 5 connected components, where the component
+with most nodes has 1902 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 141.58,
+and the node degree mode is 1. The top 5 most central nodes are 1379281.AVAG01000011_gene1246
+(degree 879), 1379281.AVAG01000023_gene1901 (degree 706), 1379281.AVAG01000016_gene954
+(degree 689), 1379281.AVAG01000052_gene912 (degree 675) and 1379281.AVAG01000031_gene106
+(degree 673).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfonauticusSp.A7a(
 	
 	Datetime: 2021-02-03 22:11:10.577004
 	
-	The undirected graph Desulfonauticus sp. A7A has 1912 nodes and 135353 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07409 and
-	has 5 connected components, where the component with most nodes has 1902 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 141.58, and the node degree mode is 1. The top 5 most central
-	nodes are 1379281.AVAG01000011_gene1246 (degree 879), 1379281.AVAG01000023_gene1901
-	(degree 706), 1379281.AVAG01000016_gene954 (degree 689), 1379281.AVAG01000052_gene912
-	(degree 675) and 1379281.AVAG01000031_gene106 (degree 673).
+	The undirected graph Desulfonauticus sp. A7A has 1912 nodes and 135353
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07409 and has 5 connected components, where the component
+	with most nodes has 1902 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 141.58,
+	and the node degree mode is 1. The top 5 most central nodes are 1379281.AVAG01000011_gene1246
+	(degree 879), 1379281.AVAG01000023_gene1901 (degree 706), 1379281.AVAG01000016_gene954
+	(degree 689), 1379281.AVAG01000052_gene912 (degree 675) and 1379281.AVAG01000031_gene106
+	(degree 673).
 	
 
 

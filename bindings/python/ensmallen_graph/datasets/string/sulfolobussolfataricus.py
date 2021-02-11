@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:28.196029
 
-The undirected graph Sulfolobus solfataricus has 2920 nodes and 300105 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07042 and
-has 53 connected components, where the component with most nodes has 2785 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 205.55, and the node degree mode is 1. The top 5 most central
-nodes are 273057.SSO0528 (degree 1027), 273057.SSO2281 (degree 908), 273057.SSO2585
-(degree 903), 273057.SSO2592 (degree 870) and 273057.SSO0527 (degree 845).
+The undirected graph Sulfolobus solfataricus has 2920 nodes and 300105
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07042 and has 53 connected components, where the component
+with most nodes has 2785 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 205.55,
+and the node degree mode is 1. The top 5 most central nodes are 273057.SSO0528
+(degree 1027), 273057.SSO2281 (degree 908), 273057.SSO2585 (degree 903),
+273057.SSO2592 (degree 870) and 273057.SSO0527 (degree 845).
 
 
 References
@@ -106,13 +107,14 @@ def SulfolobusSolfataricus(
 	
 	Datetime: 2021-02-02 20:17:28.196029
 	
-	The undirected graph Sulfolobus solfataricus has 2920 nodes and 300105 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07042 and
-	has 53 connected components, where the component with most nodes has 2785 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 205.55, and the node degree mode is 1. The top 5 most central
-	nodes are 273057.SSO0528 (degree 1027), 273057.SSO2281 (degree 908), 273057.SSO2585
-	(degree 903), 273057.SSO2592 (degree 870) and 273057.SSO0527 (degree 845).
+	The undirected graph Sulfolobus solfataricus has 2920 nodes and 300105
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07042 and has 53 connected components, where the component
+	with most nodes has 2785 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 205.55,
+	and the node degree mode is 1. The top 5 most central nodes are 273057.SSO0528
+	(degree 1027), 273057.SSO2281 (degree 908), 273057.SSO2585 (degree 903),
+	273057.SSO2592 (degree 870) and 273057.SSO0527 (degree 845).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:08.586927
 
-The undirected graph Ralstonia eutropha H16 has 6594 nodes and 1408923 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06482 and
-has 10 connected components, where the component with most nodes has 6574 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 363,
-the mean node degree is 427.33, and the node degree mode is 5. The top 5 most central
-nodes are 381666.H16_A2741 (degree 3010), 381666.H16_B2100 (degree 2820), 381666.H16_B1541
-(degree 2492), 381666.H16_A0749 (degree 2356) and 381666.H16_A0441 (degree 2340).
+The undirected graph Ralstonia eutropha H16 has 6594 nodes and 1408923
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06482 and has 10 connected components, where the component
+with most nodes has 6574 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 363, the mean node degree is 427.33,
+and the node degree mode is 5. The top 5 most central nodes are 381666.H16_A2741
+(degree 3010), 381666.H16_B2100 (degree 2820), 381666.H16_B1541 (degree
+2492), 381666.H16_A0749 (degree 2356) and 381666.H16_A0441 (degree 2340).
 
 
 References
@@ -106,13 +107,14 @@ def RalstoniaEutrophaH16(
 	
 	Datetime: 2021-02-02 20:37:08.586927
 	
-	The undirected graph Ralstonia eutropha H16 has 6594 nodes and 1408923 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06482 and
-	has 10 connected components, where the component with most nodes has 6574 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 363,
-	the mean node degree is 427.33, and the node degree mode is 5. The top 5 most central
-	nodes are 381666.H16_A2741 (degree 3010), 381666.H16_B2100 (degree 2820), 381666.H16_B1541
-	(degree 2492), 381666.H16_A0749 (degree 2356) and 381666.H16_A0441 (degree 2340).
+	The undirected graph Ralstonia eutropha H16 has 6594 nodes and 1408923
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06482 and has 10 connected components, where the component
+	with most nodes has 6574 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 363, the mean node degree is 427.33,
+	and the node degree mode is 5. The top 5 most central nodes are 381666.H16_A2741
+	(degree 3010), 381666.H16_B2100 (degree 2820), 381666.H16_B1541 (degree
+	2492), 381666.H16_A0749 (degree 2356) and 381666.H16_A0441 (degree 2340).
 	
 
 

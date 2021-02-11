@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:56.078301
 
-The undirected graph Sphingomonas paucimobilis has 4641 nodes and 622299 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05780
-and has 22 connected components, where the component with most nodes has 4589 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 268.17, and the node degree mode is 3. The top 5
-most central nodes are 13689.BV96_00133 (degree 2078), 13689.BV96_02524 (degree 1642),
-13689.BV96_03885 (degree 1292), 13689.BV96_00843 (degree 1236) and 13689.BV96_01101
-(degree 1225).
+The undirected graph Sphingomonas paucimobilis has 4641 nodes and 622299
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05780 and has 22 connected components, where the component
+with most nodes has 4589 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 268.17,
+and the node degree mode is 3. The top 5 most central nodes are 13689.BV96_00133
+(degree 2078), 13689.BV96_02524 (degree 1642), 13689.BV96_03885 (degree
+1292), 13689.BV96_00843 (degree 1236) and 13689.BV96_01101 (degree 1225).
 
 
 References
@@ -107,14 +107,14 @@ def SphingomonasPaucimobilis(
 	
 	Datetime: 2021-02-02 17:53:56.078301
 	
-	The undirected graph Sphingomonas paucimobilis has 4641 nodes and 622299 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05780
-	and has 22 connected components, where the component with most nodes has 4589 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 268.17, and the node degree mode is 3. The top 5
-	most central nodes are 13689.BV96_00133 (degree 2078), 13689.BV96_02524 (degree 1642),
-	13689.BV96_03885 (degree 1292), 13689.BV96_00843 (degree 1236) and 13689.BV96_01101
-	(degree 1225).
+	The undirected graph Sphingomonas paucimobilis has 4641 nodes and 622299
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05780 and has 22 connected components, where the component
+	with most nodes has 4589 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 268.17,
+	and the node degree mode is 3. The top 5 most central nodes are 13689.BV96_00133
+	(degree 2078), 13689.BV96_02524 (degree 1642), 13689.BV96_03885 (degree
+	1292), 13689.BV96_00843 (degree 1236) and 13689.BV96_01101 (degree 1225).
 	
 
 

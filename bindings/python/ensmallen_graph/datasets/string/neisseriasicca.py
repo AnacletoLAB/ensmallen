@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:48.796067
 
-The undirected graph Neisseria sicca has 3588 nodes and 121562 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01889 and
-has 59 connected components, where the component with most nodes has 3423 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 37,
-the mean node degree is 67.76, and the node degree mode is 3. The top 5 most central
-nodes are 547045.NEISICOT_03056 (degree 896), 547045.NEISICOT_02542 (degree 880),
-547045.NEISICOT_00395 (degree 684), 547045.NEISICOT_00894 (degree 682) and 547045.NEISICOT_02664
+The undirected graph Neisseria sicca has 3588 nodes and 121562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01889 and has 59 connected components, where the component with most
+nodes has 3423 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 37, the mean node degree is 67.76, and
+the node degree mode is 3. The top 5 most central nodes are 547045.NEISICOT_03056
+(degree 896), 547045.NEISICOT_02542 (degree 880), 547045.NEISICOT_00395
+(degree 684), 547045.NEISICOT_00894 (degree 682) and 547045.NEISICOT_02664
 (degree 677).
 
 
@@ -107,13 +108,14 @@ def NeisseriaSicca(
 	
 	Datetime: 2021-02-02 21:08:48.796067
 	
-	The undirected graph Neisseria sicca has 3588 nodes and 121562 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01889 and
-	has 59 connected components, where the component with most nodes has 3423 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 37,
-	the mean node degree is 67.76, and the node degree mode is 3. The top 5 most central
-	nodes are 547045.NEISICOT_03056 (degree 896), 547045.NEISICOT_02542 (degree 880),
-	547045.NEISICOT_00395 (degree 684), 547045.NEISICOT_00894 (degree 682) and 547045.NEISICOT_02664
+	The undirected graph Neisseria sicca has 3588 nodes and 121562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01889 and has 59 connected components, where the component with most
+	nodes has 3423 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 37, the mean node degree is 67.76, and
+	the node degree mode is 3. The top 5 most central nodes are 547045.NEISICOT_03056
+	(degree 896), 547045.NEISICOT_02542 (degree 880), 547045.NEISICOT_00395
+	(degree 684), 547045.NEISICOT_00894 (degree 682) and 547045.NEISICOT_02664
 	(degree 677).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:12.596243
 
-The undirected graph Nocardia exalbida has 6484 nodes and 923986 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-has 37 connected components, where the component with most nodes has 6403 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 285.00, and the node degree mode is 1. The top 5 most central
-nodes are 1206729.BAFZ01000025_gene580 (degree 2486), 1206729.BAFZ01000034_gene4964
-(degree 1942), 1206729.BAFZ01000161_gene6290 (degree 1842), 1206729.BAFZ01000004_gene1064
-(degree 1837) and 1206729.BAFZ01000062_gene3501 (degree 1790).
+The undirected graph Nocardia exalbida has 6484 nodes and 923986 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04396 and has 37 connected components, where the component with most
+nodes has 6403 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 233, the mean node degree is 285.00, and
+the node degree mode is 1. The top 5 most central nodes are 1206729.BAFZ01000025_gene580
+(degree 2486), 1206729.BAFZ01000034_gene4964 (degree 1942), 1206729.BAFZ01000161_gene6290
+(degree 1842), 1206729.BAFZ01000004_gene1064 (degree 1837) and 1206729.BAFZ01000062_gene3501
+(degree 1790).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaExalbida(
 	
 	Datetime: 2021-02-02 23:16:12.596243
 	
-	The undirected graph Nocardia exalbida has 6484 nodes and 923986 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-	has 37 connected components, where the component with most nodes has 6403 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 285.00, and the node degree mode is 1. The top 5 most central
-	nodes are 1206729.BAFZ01000025_gene580 (degree 2486), 1206729.BAFZ01000034_gene4964
-	(degree 1942), 1206729.BAFZ01000161_gene6290 (degree 1842), 1206729.BAFZ01000004_gene1064
-	(degree 1837) and 1206729.BAFZ01000062_gene3501 (degree 1790).
+	The undirected graph Nocardia exalbida has 6484 nodes and 923986 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04396 and has 37 connected components, where the component with most
+	nodes has 6403 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 233, the mean node degree is 285.00, and
+	the node degree mode is 1. The top 5 most central nodes are 1206729.BAFZ01000025_gene580
+	(degree 2486), 1206729.BAFZ01000034_gene4964 (degree 1942), 1206729.BAFZ01000161_gene6290
+	(degree 1842), 1206729.BAFZ01000004_gene1064 (degree 1837) and 1206729.BAFZ01000062_gene3501
+	(degree 1790).
 	
 
 

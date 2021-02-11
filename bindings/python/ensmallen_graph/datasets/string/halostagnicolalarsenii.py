@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:43.039507
 
-The undirected graph Halostagnicola larsenii has 4069 nodes and 377176 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04557 and
-has 54 connected components, where the component with most nodes has 3876 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 185.39, and the node degree mode is 2. The top 5 most central
-nodes are 797299.HALLA_06695 (degree 1306), 797299.HALLA_06130 (degree 1237), 797299.HALLA_14660
-(degree 1193), 797299.HALLA_12635 (degree 1174) and 797299.HALLA_10880 (degree 1090).
+The undirected graph Halostagnicola larsenii has 4069 nodes and 377176
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04557 and has 54 connected components, where the component
+with most nodes has 3876 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 185.39,
+and the node degree mode is 2. The top 5 most central nodes are 797299.HALLA_06695
+(degree 1306), 797299.HALLA_06130 (degree 1237), 797299.HALLA_14660 (degree
+1193), 797299.HALLA_12635 (degree 1174) and 797299.HALLA_10880 (degree
+1090).
 
 
 References
@@ -106,13 +108,15 @@ def HalostagnicolaLarsenii(
 	
 	Datetime: 2021-02-02 21:45:43.039507
 	
-	The undirected graph Halostagnicola larsenii has 4069 nodes and 377176 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04557 and
-	has 54 connected components, where the component with most nodes has 3876 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 185.39, and the node degree mode is 2. The top 5 most central
-	nodes are 797299.HALLA_06695 (degree 1306), 797299.HALLA_06130 (degree 1237), 797299.HALLA_14660
-	(degree 1193), 797299.HALLA_12635 (degree 1174) and 797299.HALLA_10880 (degree 1090).
+	The undirected graph Halostagnicola larsenii has 4069 nodes and 377176
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04557 and has 54 connected components, where the component
+	with most nodes has 3876 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 185.39,
+	and the node degree mode is 2. The top 5 most central nodes are 797299.HALLA_06695
+	(degree 1306), 797299.HALLA_06130 (degree 1237), 797299.HALLA_14660 (degree
+	1193), 797299.HALLA_12635 (degree 1174) and 797299.HALLA_10880 (degree
+	1090).
 	
 
 

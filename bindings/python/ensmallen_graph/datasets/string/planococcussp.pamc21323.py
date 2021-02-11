@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:11.969774
 
-The undirected graph Planococcus sp. PAMC21323 has 3069 nodes and 245269 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05210
-and has 13 connected components, where the component with most nodes has 3040 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 159.84, and the node degree mode is 1. The top 5
-most central nodes are 1526927.Plano_1117 (degree 1227), 1526927.Plano_1267 (degree
-885), 1526927.Plano_0210 (degree 839), 1526927.Plano_2725 (degree 833) and 1526927.Plano_3027
-(degree 805).
+The undirected graph Planococcus sp. PAMC21323 has 3069 nodes and 245269
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05210 and has 13 connected components, where the component
+with most nodes has 3040 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 159.84,
+and the node degree mode is 1. The top 5 most central nodes are 1526927.Plano_1117
+(degree 1227), 1526927.Plano_1267 (degree 885), 1526927.Plano_0210 (degree
+839), 1526927.Plano_2725 (degree 833) and 1526927.Plano_3027 (degree 805).
 
 
 References
@@ -107,14 +107,14 @@ def PlanococcusSp.Pamc21323(
 	
 	Datetime: 2021-02-03 23:18:11.969774
 	
-	The undirected graph Planococcus sp. PAMC21323 has 3069 nodes and 245269 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05210
-	and has 13 connected components, where the component with most nodes has 3040 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 159.84, and the node degree mode is 1. The top 5
-	most central nodes are 1526927.Plano_1117 (degree 1227), 1526927.Plano_1267 (degree
-	885), 1526927.Plano_0210 (degree 839), 1526927.Plano_2725 (degree 833) and 1526927.Plano_3027
-	(degree 805).
+	The undirected graph Planococcus sp. PAMC21323 has 3069 nodes and 245269
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05210 and has 13 connected components, where the component
+	with most nodes has 3040 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 159.84,
+	and the node degree mode is 1. The top 5 most central nodes are 1526927.Plano_1117
+	(degree 1227), 1526927.Plano_1267 (degree 885), 1526927.Plano_0210 (degree
+	839), 1526927.Plano_2725 (degree 833) and 1526927.Plano_3027 (degree 805).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:08:56.235252
 
-The undirected graph Pseudomonas syringae CC1557 has 5012 nodes and 417947 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03328
-and has 24 connected components, where the component with most nodes has 4963 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 166.78, and the node degree mode is 1. The top 5
-most central nodes are 1357279.N018_24350 (degree 1766), 1357279.N018_19385 (degree
-1277), 1357279.N018_19390 (degree 1172), 1357279.N018_06090 (degree 1109) and 1357279.N018_09830
-(degree 1064).
+The undirected graph Pseudomonas syringae CC1557 has 5012 nodes and 417947
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03328 and has 24 connected components, where the component
+with most nodes has 4963 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 166.78,
+and the node degree mode is 1. The top 5 most central nodes are 1357279.N018_24350
+(degree 1766), 1357279.N018_19385 (degree 1277), 1357279.N018_19390 (degree
+1172), 1357279.N018_06090 (degree 1109) and 1357279.N018_09830 (degree
+1064).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSyringaeCc1557(
 	
 	Datetime: 2021-02-03 22:08:56.235252
 	
-	The undirected graph Pseudomonas syringae CC1557 has 5012 nodes and 417947 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03328
-	and has 24 connected components, where the component with most nodes has 4963 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 166.78, and the node degree mode is 1. The top 5
-	most central nodes are 1357279.N018_24350 (degree 1766), 1357279.N018_19385 (degree
-	1277), 1357279.N018_19390 (degree 1172), 1357279.N018_06090 (degree 1109) and 1357279.N018_09830
-	(degree 1064).
+	The undirected graph Pseudomonas syringae CC1557 has 5012 nodes and 417947
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03328 and has 24 connected components, where the component
+	with most nodes has 4963 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 166.78,
+	and the node degree mode is 1. The top 5 most central nodes are 1357279.N018_24350
+	(degree 1766), 1357279.N018_19385 (degree 1277), 1357279.N018_19390 (degree
+	1172), 1357279.N018_06090 (degree 1109) and 1357279.N018_09830 (degree
+	1064).
 	
 
 

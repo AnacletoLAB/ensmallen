@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:57.450743
 
-The undirected graph Phyllobacterium sp. YR531 has 4815 nodes and 539559 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04656
-and has 17 connected components, where the component with most nodes has 4774 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 175, the mean node degree is 224.12, and the node degree mode is 2. The top 5
-most central nodes are 1144343.PMI41_03563 (degree 1728), 1144343.PMI41_02645 (degree
-1409), 1144343.PMI41_02244 (degree 1357), 1144343.PMI41_01180 (degree 1283) and 1144343.PMI41_02632
-(degree 1230).
+The undirected graph Phyllobacterium sp. YR531 has 4815 nodes and 539559
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04656 and has 17 connected components, where the component
+with most nodes has 4774 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 175, the mean node degree is 224.12,
+and the node degree mode is 2. The top 5 most central nodes are 1144343.PMI41_03563
+(degree 1728), 1144343.PMI41_02645 (degree 1409), 1144343.PMI41_02244 (degree
+1357), 1144343.PMI41_01180 (degree 1283) and 1144343.PMI41_02632 (degree
+1230).
 
 
 References
@@ -107,14 +108,15 @@ def PhyllobacteriumSp.Yr531(
 	
 	Datetime: 2021-02-02 22:58:57.450743
 	
-	The undirected graph Phyllobacterium sp. YR531 has 4815 nodes and 539559 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04656
-	and has 17 connected components, where the component with most nodes has 4774 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 175, the mean node degree is 224.12, and the node degree mode is 2. The top 5
-	most central nodes are 1144343.PMI41_03563 (degree 1728), 1144343.PMI41_02645 (degree
-	1409), 1144343.PMI41_02244 (degree 1357), 1144343.PMI41_01180 (degree 1283) and 1144343.PMI41_02632
-	(degree 1230).
+	The undirected graph Phyllobacterium sp. YR531 has 4815 nodes and 539559
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04656 and has 17 connected components, where the component
+	with most nodes has 4774 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 175, the mean node degree is 224.12,
+	and the node degree mode is 2. The top 5 most central nodes are 1144343.PMI41_03563
+	(degree 1728), 1144343.PMI41_02645 (degree 1409), 1144343.PMI41_02244 (degree
+	1357), 1144343.PMI41_01180 (degree 1283) and 1144343.PMI41_02632 (degree
+	1230).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:33.723896
 
-The undirected graph Enterovibrio norvegicus has 4383 nodes and 675185 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07031 and
-has 10 connected components, where the component with most nodes has 4362 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 308.09, and the node degree mode is 2. The top 5 most central
-nodes are 1190603.AJYD01000081_gene268 (degree 1925), 1190603.AJYD01000067_gene3129
-(degree 1759), 1190603.AJYD01000005_gene3871 (degree 1756), 1190603.AJYD01000060_gene1541
-(degree 1691) and 1190603.AJYD01000060_gene1540 (degree 1678).
+The undirected graph Enterovibrio norvegicus has 4383 nodes and 675185
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07031 and has 10 connected components, where the component
+with most nodes has 4362 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 252, the mean node degree is 308.09,
+and the node degree mode is 2. The top 5 most central nodes are 1190603.AJYD01000081_gene268
+(degree 1925), 1190603.AJYD01000067_gene3129 (degree 1759), 1190603.AJYD01000005_gene3871
+(degree 1756), 1190603.AJYD01000060_gene1541 (degree 1691) and 1190603.AJYD01000060_gene1540
+(degree 1678).
 
 
 References
@@ -107,14 +108,15 @@ def EnterovibrioNorvegicus(
 	
 	Datetime: 2021-02-02 23:11:33.723896
 	
-	The undirected graph Enterovibrio norvegicus has 4383 nodes and 675185 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07031 and
-	has 10 connected components, where the component with most nodes has 4362 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 308.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1190603.AJYD01000081_gene268 (degree 1925), 1190603.AJYD01000067_gene3129
-	(degree 1759), 1190603.AJYD01000005_gene3871 (degree 1756), 1190603.AJYD01000060_gene1541
-	(degree 1691) and 1190603.AJYD01000060_gene1540 (degree 1678).
+	The undirected graph Enterovibrio norvegicus has 4383 nodes and 675185
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07031 and has 10 connected components, where the component
+	with most nodes has 4362 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 252, the mean node degree is 308.09,
+	and the node degree mode is 2. The top 5 most central nodes are 1190603.AJYD01000081_gene268
+	(degree 1925), 1190603.AJYD01000067_gene3129 (degree 1759), 1190603.AJYD01000005_gene3871
+	(degree 1756), 1190603.AJYD01000060_gene1541 (degree 1691) and 1190603.AJYD01000060_gene1540
+	(degree 1678).
 	
 
 

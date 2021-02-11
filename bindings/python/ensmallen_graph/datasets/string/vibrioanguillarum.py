@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:25.984819
 
-The undirected graph Vibrio anguillarum has 3703 nodes and 408154 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05955 and
-has 8 connected components, where the component with most nodes has 3683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 220.45, and the node degree mode is 4. The top 5 most central
-nodes are 55601.VANGNB10_cI2650c (degree 1220), 55601.VANGNB10_cI0521c (degree 1200),
-55601.VANGNB10_cI1749c (degree 1199), 55601.VANGNB10_cI0681 (degree 1154) and 55601.VANGNB10_cI2145c
+The undirected graph Vibrio anguillarum has 3703 nodes and 408154 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05955 and has 8 connected components, where the component with most
+nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 220.45, and
+the node degree mode is 4. The top 5 most central nodes are 55601.VANGNB10_cI2650c
+(degree 1220), 55601.VANGNB10_cI0521c (degree 1200), 55601.VANGNB10_cI1749c
+(degree 1199), 55601.VANGNB10_cI0681 (degree 1154) and 55601.VANGNB10_cI2145c
 (degree 1082).
 
 
@@ -107,13 +108,14 @@ def VibrioAnguillarum(
 	
 	Datetime: 2021-02-02 18:18:25.984819
 	
-	The undirected graph Vibrio anguillarum has 3703 nodes and 408154 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05955 and
-	has 8 connected components, where the component with most nodes has 3683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 220.45, and the node degree mode is 4. The top 5 most central
-	nodes are 55601.VANGNB10_cI2650c (degree 1220), 55601.VANGNB10_cI0521c (degree 1200),
-	55601.VANGNB10_cI1749c (degree 1199), 55601.VANGNB10_cI0681 (degree 1154) and 55601.VANGNB10_cI2145c
+	The undirected graph Vibrio anguillarum has 3703 nodes and 408154 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05955 and has 8 connected components, where the component with most
+	nodes has 3683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 220.45, and
+	the node degree mode is 4. The top 5 most central nodes are 55601.VANGNB10_cI2650c
+	(degree 1220), 55601.VANGNB10_cI0521c (degree 1200), 55601.VANGNB10_cI1749c
+	(degree 1199), 55601.VANGNB10_cI0681 (degree 1154) and 55601.VANGNB10_cI2145c
 	(degree 1082).
 	
 

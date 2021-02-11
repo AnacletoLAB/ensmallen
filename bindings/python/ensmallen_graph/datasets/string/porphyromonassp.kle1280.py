@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:24.205815
 
-The undirected graph Porphyromonas sp. KLE1280 has 1745 nodes and 94179 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06189
-and has 13 connected components, where the component with most nodes has 1715 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 107.94, and the node degree mode is 4. The top 5 most
-central nodes are 997829.HMPREF1121_01017 (degree 706), 997829.HMPREF1121_01215 (degree
-612), 997829.HMPREF1121_01234 (degree 536), 997829.HMPREF1121_01560 (degree 512)
-and 997829.HMPREF1121_00132 (degree 486).
+The undirected graph Porphyromonas sp. KLE1280 has 1745 nodes and 94179
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06189 and has 13 connected components, where the component
+with most nodes has 1715 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 107.94,
+and the node degree mode is 4. The top 5 most central nodes are 997829.HMPREF1121_01017
+(degree 706), 997829.HMPREF1121_01215 (degree 612), 997829.HMPREF1121_01234
+(degree 536), 997829.HMPREF1121_01560 (degree 512) and 997829.HMPREF1121_00132
+(degree 486).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasSp.Kle1280(
 	
 	Datetime: 2021-02-02 22:05:24.205815
 	
-	The undirected graph Porphyromonas sp. KLE1280 has 1745 nodes and 94179 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06189
-	and has 13 connected components, where the component with most nodes has 1715 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 107.94, and the node degree mode is 4. The top 5 most
-	central nodes are 997829.HMPREF1121_01017 (degree 706), 997829.HMPREF1121_01215 (degree
-	612), 997829.HMPREF1121_01234 (degree 536), 997829.HMPREF1121_01560 (degree 512)
-	and 997829.HMPREF1121_00132 (degree 486).
+	The undirected graph Porphyromonas sp. KLE1280 has 1745 nodes and 94179
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06189 and has 13 connected components, where the component
+	with most nodes has 1715 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 107.94,
+	and the node degree mode is 4. The top 5 most central nodes are 997829.HMPREF1121_01017
+	(degree 706), 997829.HMPREF1121_01215 (degree 612), 997829.HMPREF1121_01234
+	(degree 536), 997829.HMPREF1121_01560 (degree 512) and 997829.HMPREF1121_00132
+	(degree 486).
 	
 
 

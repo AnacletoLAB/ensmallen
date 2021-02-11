@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:15.819354
 
-The undirected graph Sinorhizobium medicae has 4578 nodes and 545522 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05207 and
-has 17 connected components, where the component with most nodes has 4542 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 238.32, and the node degree mode is 2. The top 5 most central
-nodes are 366394.Smed_3381 (degree 1811), 366394.Smed_0147 (degree 1753), 366394.Smed_0027
-(degree 1313), 366394.Smed_5686 (degree 1257) and 366394.Smed_0567 (degree 1241).
+The undirected graph Sinorhizobium medicae has 4578 nodes and 545522 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05207 and has 17 connected components, where the component with most
+nodes has 4542 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 238.32, and
+the node degree mode is 2. The top 5 most central nodes are 366394.Smed_3381
+(degree 1811), 366394.Smed_0147 (degree 1753), 366394.Smed_0027 (degree
+1313), 366394.Smed_5686 (degree 1257) and 366394.Smed_0567 (degree 1241).
 
 
 References
@@ -106,13 +107,14 @@ def SinorhizobiumMedicae(
 	
 	Datetime: 2021-02-02 20:35:15.819354
 	
-	The undirected graph Sinorhizobium medicae has 4578 nodes and 545522 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05207 and
-	has 17 connected components, where the component with most nodes has 4542 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 238.32, and the node degree mode is 2. The top 5 most central
-	nodes are 366394.Smed_3381 (degree 1811), 366394.Smed_0147 (degree 1753), 366394.Smed_0027
-	(degree 1313), 366394.Smed_5686 (degree 1257) and 366394.Smed_0567 (degree 1241).
+	The undirected graph Sinorhizobium medicae has 4578 nodes and 545522 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05207 and has 17 connected components, where the component with most
+	nodes has 4542 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 238.32, and
+	the node degree mode is 2. The top 5 most central nodes are 366394.Smed_3381
+	(degree 1811), 366394.Smed_0147 (degree 1753), 366394.Smed_0027 (degree
+	1313), 366394.Smed_5686 (degree 1257) and 366394.Smed_0567 (degree 1241).
 	
 
 

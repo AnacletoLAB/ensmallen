@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:42.203528
 
-The undirected graph Leptolyngbya sp. PCC7376 has 4169 nodes and 310157 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03570
-and has 15 connected components, where the component with most nodes has 4121 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 148.79, and the node degree mode is 2. The top 5
-most central nodes are 111781.Lepto7376_0247 (degree 1877), 111781.Lepto7376_3582
-(degree 1290), 111781.Lepto7376_1287 (degree 1167), 111781.Lepto7376_0181 (degree
-1145) and 111781.Lepto7376_2233 (degree 1130).
+The undirected graph Leptolyngbya sp. PCC7376 has 4169 nodes and 310157
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03570 and has 15 connected components, where the component
+with most nodes has 4121 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 148.79,
+and the node degree mode is 2. The top 5 most central nodes are 111781.Lepto7376_0247
+(degree 1877), 111781.Lepto7376_3582 (degree 1290), 111781.Lepto7376_1287
+(degree 1167), 111781.Lepto7376_0181 (degree 1145) and 111781.Lepto7376_2233
+(degree 1130).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaSp.Pcc7376(
 	
 	Datetime: 2021-02-02 19:46:42.203528
 	
-	The undirected graph Leptolyngbya sp. PCC7376 has 4169 nodes and 310157 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03570
-	and has 15 connected components, where the component with most nodes has 4121 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 148.79, and the node degree mode is 2. The top 5
-	most central nodes are 111781.Lepto7376_0247 (degree 1877), 111781.Lepto7376_3582
-	(degree 1290), 111781.Lepto7376_1287 (degree 1167), 111781.Lepto7376_0181 (degree
-	1145) and 111781.Lepto7376_2233 (degree 1130).
+	The undirected graph Leptolyngbya sp. PCC7376 has 4169 nodes and 310157
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03570 and has 15 connected components, where the component
+	with most nodes has 4121 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 148.79,
+	and the node degree mode is 2. The top 5 most central nodes are 111781.Lepto7376_0247
+	(degree 1877), 111781.Lepto7376_3582 (degree 1290), 111781.Lepto7376_1287
+	(degree 1167), 111781.Lepto7376_0181 (degree 1145) and 111781.Lepto7376_2233
+	(degree 1130).
 	
 
 

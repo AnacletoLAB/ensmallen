@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:32.070933
 
-The undirected graph Xanthobacter autotrophicus has 5010 nodes and 608760 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04852
-and has 13 connected components, where the component with most nodes has 4981 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 243.02, and the node degree mode is 2. The top 5
-most central nodes are 78245.Xaut_0383 (degree 2326), 78245.Xaut_2377 (degree 1641),
-78245.Xaut_1011 (degree 1594), 78245.Xaut_0058 (degree 1400) and 78245.Xaut_0477
-(degree 1323).
+The undirected graph Xanthobacter autotrophicus has 5010 nodes and 608760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04852 and has 13 connected components, where the component
+with most nodes has 4981 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 243.02,
+and the node degree mode is 2. The top 5 most central nodes are 78245.Xaut_0383
+(degree 2326), 78245.Xaut_2377 (degree 1641), 78245.Xaut_1011 (degree 1594),
+78245.Xaut_0058 (degree 1400) and 78245.Xaut_0477 (degree 1323).
 
 
 References
@@ -107,14 +107,14 @@ def XanthobacterAutotrophicus(
 	
 	Datetime: 2021-02-02 18:33:32.070933
 	
-	The undirected graph Xanthobacter autotrophicus has 5010 nodes and 608760 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04852
-	and has 13 connected components, where the component with most nodes has 4981 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 243.02, and the node degree mode is 2. The top 5
-	most central nodes are 78245.Xaut_0383 (degree 2326), 78245.Xaut_2377 (degree 1641),
-	78245.Xaut_1011 (degree 1594), 78245.Xaut_0058 (degree 1400) and 78245.Xaut_0477
-	(degree 1323).
+	The undirected graph Xanthobacter autotrophicus has 5010 nodes and 608760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04852 and has 13 connected components, where the component
+	with most nodes has 4981 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 243.02,
+	and the node degree mode is 2. The top 5 most central nodes are 78245.Xaut_0383
+	(degree 2326), 78245.Xaut_2377 (degree 1641), 78245.Xaut_1011 (degree 1594),
+	78245.Xaut_0058 (degree 1400) and 78245.Xaut_0477 (degree 1323).
 	
 
 

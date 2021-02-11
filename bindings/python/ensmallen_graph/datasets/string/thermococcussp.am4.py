@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:23.911822
 
-The undirected graph Thermococcus sp. AM4 has 2197 nodes and 122894 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05094 and
-has 12 connected components, where the component with most nodes has 2168 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 111.87, and the node degree mode is 4. The top 5 most central
-nodes are 246969.TAM4_1537 (degree 622), 246969.TAM4_1330 (degree 539), 246969.TAM4_1722
-(degree 528), 246969.TAM4_85 (degree 507) and 246969.TAM4_1211 (degree 507).
+The undirected graph Thermococcus sp. AM4 has 2197 nodes and 122894 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05094 and has 12 connected components, where the component with most
+nodes has 2168 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 111.87, and
+the node degree mode is 4. The top 5 most central nodes are 246969.TAM4_1537
+(degree 622), 246969.TAM4_1330 (degree 539), 246969.TAM4_1722 (degree 528),
+246969.TAM4_85 (degree 507) and 246969.TAM4_1211 (degree 507).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusSp.Am4(
 	
 	Datetime: 2021-02-02 20:11:23.911822
 	
-	The undirected graph Thermococcus sp. AM4 has 2197 nodes and 122894 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05094 and
-	has 12 connected components, where the component with most nodes has 2168 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 111.87, and the node degree mode is 4. The top 5 most central
-	nodes are 246969.TAM4_1537 (degree 622), 246969.TAM4_1330 (degree 539), 246969.TAM4_1722
-	(degree 528), 246969.TAM4_85 (degree 507) and 246969.TAM4_1211 (degree 507).
+	The undirected graph Thermococcus sp. AM4 has 2197 nodes and 122894 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05094 and has 12 connected components, where the component with most
+	nodes has 2168 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 111.87, and
+	the node degree mode is 4. The top 5 most central nodes are 246969.TAM4_1537
+	(degree 622), 246969.TAM4_1330 (degree 539), 246969.TAM4_1722 (degree 528),
+	246969.TAM4_85 (degree 507) and 246969.TAM4_1211 (degree 507).
 	
 
 

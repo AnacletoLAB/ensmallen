@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:36.688064
 
-The undirected graph Pseudomonas sp. M1 has 5951 nodes and 1143095 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06457 and
-has 21 connected components, where the component with most nodes has 5904 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 311,
-the mean node degree is 384.17, and the node degree mode is 2. The top 5 most central
-nodes are 95619.PM1_0228610 (degree 2581), 95619.PM1_0222505 (degree 2511), 95619.PM1_0203495
-(degree 2272), 95619.PM1_0223835 (degree 2265) and 95619.PM1_0218040 (degree 2124).
+The undirected graph Pseudomonas sp. M1 has 5951 nodes and 1143095 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06457 and has 21 connected components, where the component with most
+nodes has 5904 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 311, the mean node degree is 384.17, and
+the node degree mode is 2. The top 5 most central nodes are 95619.PM1_0228610
+(degree 2581), 95619.PM1_0222505 (degree 2511), 95619.PM1_0203495 (degree
+2272), 95619.PM1_0223835 (degree 2265) and 95619.PM1_0218040 (degree 2124).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasSp.M1(
 	
 	Datetime: 2021-02-02 19:41:36.688064
 	
-	The undirected graph Pseudomonas sp. M1 has 5951 nodes and 1143095 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06457 and
-	has 21 connected components, where the component with most nodes has 5904 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 311,
-	the mean node degree is 384.17, and the node degree mode is 2. The top 5 most central
-	nodes are 95619.PM1_0228610 (degree 2581), 95619.PM1_0222505 (degree 2511), 95619.PM1_0203495
-	(degree 2272), 95619.PM1_0223835 (degree 2265) and 95619.PM1_0218040 (degree 2124).
+	The undirected graph Pseudomonas sp. M1 has 5951 nodes and 1143095 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06457 and has 21 connected components, where the component with most
+	nodes has 5904 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 311, the mean node degree is 384.17, and
+	the node degree mode is 2. The top 5 most central nodes are 95619.PM1_0228610
+	(degree 2581), 95619.PM1_0222505 (degree 2511), 95619.PM1_0203495 (degree
+	2272), 95619.PM1_0223835 (degree 2265) and 95619.PM1_0218040 (degree 2124).
 	
 
 

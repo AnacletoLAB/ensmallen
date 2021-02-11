@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:08.652333
 
-The undirected graph Kamptonema formosum has 5721 nodes and 858733 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05248 and
-has 22 connected components, where the component with most nodes has 5668 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 280,
-the mean node degree is 300.20, and the node degree mode is 4. The top 5 most central
-nodes are 402777.KB235898_gene5732 (degree 1869), 402777.KB235903_gene1504 (degree
-1824), 402777.KB235903_gene859 (degree 1727), 402777.KB235903_gene2613 (degree 1661)
-and 402777.KB235904_gene3272 (degree 1566).
+The undirected graph Kamptonema formosum has 5721 nodes and 858733 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05248 and has 22 connected components, where the component with most
+nodes has 5668 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 280, the mean node degree is 300.20, and
+the node degree mode is 4. The top 5 most central nodes are 402777.KB235898_gene5732
+(degree 1869), 402777.KB235903_gene1504 (degree 1824), 402777.KB235903_gene859
+(degree 1727), 402777.KB235903_gene2613 (degree 1661) and 402777.KB235904_gene3272
+(degree 1566).
 
 
 References
@@ -107,14 +108,15 @@ def KamptonemaFormosum(
 	
 	Datetime: 2021-02-02 20:44:08.652333
 	
-	The undirected graph Kamptonema formosum has 5721 nodes and 858733 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05248 and
-	has 22 connected components, where the component with most nodes has 5668 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 280,
-	the mean node degree is 300.20, and the node degree mode is 4. The top 5 most central
-	nodes are 402777.KB235898_gene5732 (degree 1869), 402777.KB235903_gene1504 (degree
-	1824), 402777.KB235903_gene859 (degree 1727), 402777.KB235903_gene2613 (degree 1661)
-	and 402777.KB235904_gene3272 (degree 1566).
+	The undirected graph Kamptonema formosum has 5721 nodes and 858733 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05248 and has 22 connected components, where the component with most
+	nodes has 5668 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 280, the mean node degree is 300.20, and
+	the node degree mode is 4. The top 5 most central nodes are 402777.KB235898_gene5732
+	(degree 1869), 402777.KB235903_gene1504 (degree 1824), 402777.KB235903_gene859
+	(degree 1727), 402777.KB235903_gene2613 (degree 1661) and 402777.KB235904_gene3272
+	(degree 1566).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:44.719747
 
-The undirected graph Aspergillus terreus has 7688 nodes and 731406 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02475 and
-has 18 connected components, where the component with most nodes has 7653 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 190.27, and the node degree mode is 1. The top 5 most central
-nodes are 33178.CADATEAP00010177 (degree 1979), 33178.CADATEAP00003467 (degree 1960),
-33178.CADATEAP00005772 (degree 1631), 33178.CADATEAP00009263 (degree 1522) and 33178.CADATEAP00006193
+The undirected graph Aspergillus terreus has 7688 nodes and 731406 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02475 and has 18 connected components, where the component with most
+nodes has 7653 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 190.27, and
+the node degree mode is 1. The top 5 most central nodes are 33178.CADATEAP00010177
+(degree 1979), 33178.CADATEAP00003467 (degree 1960), 33178.CADATEAP00005772
+(degree 1631), 33178.CADATEAP00009263 (degree 1522) and 33178.CADATEAP00006193
 (degree 1447).
 
 
@@ -107,13 +108,14 @@ def AspergillusTerreus(
 	
 	Datetime: 2021-02-02 18:03:44.719747
 	
-	The undirected graph Aspergillus terreus has 7688 nodes and 731406 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02475 and
-	has 18 connected components, where the component with most nodes has 7653 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 190.27, and the node degree mode is 1. The top 5 most central
-	nodes are 33178.CADATEAP00010177 (degree 1979), 33178.CADATEAP00003467 (degree 1960),
-	33178.CADATEAP00005772 (degree 1631), 33178.CADATEAP00009263 (degree 1522) and 33178.CADATEAP00006193
+	The undirected graph Aspergillus terreus has 7688 nodes and 731406 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02475 and has 18 connected components, where the component with most
+	nodes has 7653 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 190.27, and
+	the node degree mode is 1. The top 5 most central nodes are 33178.CADATEAP00010177
+	(degree 1979), 33178.CADATEAP00003467 (degree 1960), 33178.CADATEAP00005772
+	(degree 1631), 33178.CADATEAP00009263 (degree 1522) and 33178.CADATEAP00006193
 	(degree 1447).
 	
 

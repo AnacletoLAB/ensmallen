@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:40.768712
 
-The undirected graph Saccharomonospora cyanea has 5011 nodes and 537031 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04278
-and has 14 connected components, where the component with most nodes has 4983 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 214.34, and the node degree mode is 3. The top 5
-most central nodes are 882082.SaccyDRAFT_0100 (degree 1931), 882082.SaccyDRAFT_3561
-(degree 1674), 882082.SaccyDRAFT_1687 (degree 1610), 882082.SaccyDRAFT_3458 (degree
-1517) and 882082.SaccyDRAFT_0617 (degree 1494).
+The undirected graph Saccharomonospora cyanea has 5011 nodes and 537031
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04278 and has 14 connected components, where the component
+with most nodes has 4983 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 178, the mean node degree is 214.34,
+and the node degree mode is 3. The top 5 most central nodes are 882082.SaccyDRAFT_0100
+(degree 1931), 882082.SaccyDRAFT_3561 (degree 1674), 882082.SaccyDRAFT_1687
+(degree 1610), 882082.SaccyDRAFT_3458 (degree 1517) and 882082.SaccyDRAFT_0617
+(degree 1494).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharomonosporaCyanea(
 	
 	Datetime: 2021-02-02 21:50:40.768712
 	
-	The undirected graph Saccharomonospora cyanea has 5011 nodes and 537031 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04278
-	and has 14 connected components, where the component with most nodes has 4983 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 214.34, and the node degree mode is 3. The top 5
-	most central nodes are 882082.SaccyDRAFT_0100 (degree 1931), 882082.SaccyDRAFT_3561
-	(degree 1674), 882082.SaccyDRAFT_1687 (degree 1610), 882082.SaccyDRAFT_3458 (degree
-	1517) and 882082.SaccyDRAFT_0617 (degree 1494).
+	The undirected graph Saccharomonospora cyanea has 5011 nodes and 537031
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04278 and has 14 connected components, where the component
+	with most nodes has 4983 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 178, the mean node degree is 214.34,
+	and the node degree mode is 3. The top 5 most central nodes are 882082.SaccyDRAFT_0100
+	(degree 1931), 882082.SaccyDRAFT_3561 (degree 1674), 882082.SaccyDRAFT_1687
+	(degree 1610), 882082.SaccyDRAFT_3458 (degree 1517) and 882082.SaccyDRAFT_0617
+	(degree 1494).
 	
 
 

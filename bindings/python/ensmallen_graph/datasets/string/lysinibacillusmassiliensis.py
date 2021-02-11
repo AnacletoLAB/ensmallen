@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:03.926258
 
-The undirected graph Lysinibacillus massiliensis has 3441 nodes and 284272 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04803
-and has 24 connected components, where the component with most nodes has 3385 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 165.23, and the node degree mode is 1. The top 5
-most central nodes are 1211035.CD30_06320 (degree 1321), 1211035.CD30_10665 (degree
-1066), 1211035.CD30_04855 (degree 1001), 1211035.CD30_15880 (degree 983) and 1211035.CD30_18210
-(degree 934).
+The undirected graph Lysinibacillus massiliensis has 3441 nodes and 284272
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04803 and has 24 connected components, where the component
+with most nodes has 3385 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 165.23,
+and the node degree mode is 1. The top 5 most central nodes are 1211035.CD30_06320
+(degree 1321), 1211035.CD30_10665 (degree 1066), 1211035.CD30_04855 (degree
+1001), 1211035.CD30_15880 (degree 983) and 1211035.CD30_18210 (degree 934).
 
 
 References
@@ -107,14 +107,14 @@ def LysinibacillusMassiliensis(
 	
 	Datetime: 2021-02-02 23:19:03.926258
 	
-	The undirected graph Lysinibacillus massiliensis has 3441 nodes and 284272 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04803
-	and has 24 connected components, where the component with most nodes has 3385 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 165.23, and the node degree mode is 1. The top 5
-	most central nodes are 1211035.CD30_06320 (degree 1321), 1211035.CD30_10665 (degree
-	1066), 1211035.CD30_04855 (degree 1001), 1211035.CD30_15880 (degree 983) and 1211035.CD30_18210
-	(degree 934).
+	The undirected graph Lysinibacillus massiliensis has 3441 nodes and 284272
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04803 and has 24 connected components, where the component
+	with most nodes has 3385 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 165.23,
+	and the node degree mode is 1. The top 5 most central nodes are 1211035.CD30_06320
+	(degree 1321), 1211035.CD30_10665 (degree 1066), 1211035.CD30_04855 (degree
+	1001), 1211035.CD30_15880 (degree 983) and 1211035.CD30_18210 (degree 934).
 	
 
 

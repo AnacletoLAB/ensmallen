@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:36.782586
 
-The undirected graph Rickettsia bellii RML369C has 1398 nodes and 75136 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07694
-and has 19 connected components, where the component with most nodes has 1355 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 107.49, and the node degree mode is 2. The top 5 most
-central nodes are 336407.RBE_0342 (degree 586), 336407.RBE_1207 (degree 567), 336407.RBE_0634
-(degree 511), 336407.RBE_0655 (degree 474) and 336407.RBE_1243 (degree 474).
+The undirected graph Rickettsia bellii RML369C has 1398 nodes and 75136
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07694 and has 19 connected components, where the component
+with most nodes has 1355 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 107.49,
+and the node degree mode is 2. The top 5 most central nodes are 336407.RBE_0342
+(degree 586), 336407.RBE_1207 (degree 567), 336407.RBE_0634 (degree 511),
+336407.RBE_0655 (degree 474) and 336407.RBE_1243 (degree 474).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaBelliiRml369c(
 	
 	Datetime: 2021-02-02 20:30:36.782586
 	
-	The undirected graph Rickettsia bellii RML369C has 1398 nodes and 75136 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07694
-	and has 19 connected components, where the component with most nodes has 1355 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 107.49, and the node degree mode is 2. The top 5 most
-	central nodes are 336407.RBE_0342 (degree 586), 336407.RBE_1207 (degree 567), 336407.RBE_0634
-	(degree 511), 336407.RBE_0655 (degree 474) and 336407.RBE_1243 (degree 474).
+	The undirected graph Rickettsia bellii RML369C has 1398 nodes and 75136
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07694 and has 19 connected components, where the component
+	with most nodes has 1355 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 107.49,
+	and the node degree mode is 2. The top 5 most central nodes are 336407.RBE_0342
+	(degree 586), 336407.RBE_1207 (degree 567), 336407.RBE_0634 (degree 511),
+	336407.RBE_0655 (degree 474) and 336407.RBE_1243 (degree 474).
 	
 
 

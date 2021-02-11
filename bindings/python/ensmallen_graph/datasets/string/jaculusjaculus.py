@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:28.481611
 
-The undirected graph Jaculus jaculus has 18274 nodes and 4080763 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02444 and
-is connected, as it has a single component. The graph median node degree is 323,
-the mean node degree is 446.62, and the node degree mode is 1. The top 5 most central
-nodes are 51337.XP_004654551.1 (degree 4349), 51337.XP_004658924.1 (degree 4317),
-51337.XP_004653669.1 (degree 4315), 51337.XP_004653072.1 (degree 4052) and 51337.XP_004670303.1
-(degree 3946).
+The undirected graph Jaculus jaculus has 18274 nodes and 4080763 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02444 and is connected, as it has a single component. The graph median
+node degree is 323, the mean node degree is 446.62, and the node degree
+mode is 1. The top 5 most central nodes are 51337.XP_004654551.1 (degree
+4349), 51337.XP_004658924.1 (degree 4317), 51337.XP_004653669.1 (degree
+4315), 51337.XP_004653072.1 (degree 4052) and 51337.XP_004670303.1 (degree
+3946).
 
 
 References
@@ -106,13 +107,14 @@ def JaculusJaculus(
 	
 	Datetime: 2021-02-02 18:17:28.481611
 	
-	The undirected graph Jaculus jaculus has 18274 nodes and 4080763 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02444 and
-	is connected, as it has a single component. The graph median node degree is 323,
-	the mean node degree is 446.62, and the node degree mode is 1. The top 5 most central
-	nodes are 51337.XP_004654551.1 (degree 4349), 51337.XP_004658924.1 (degree 4317),
-	51337.XP_004653669.1 (degree 4315), 51337.XP_004653072.1 (degree 4052) and 51337.XP_004670303.1
-	(degree 3946).
+	The undirected graph Jaculus jaculus has 18274 nodes and 4080763 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02444 and is connected, as it has a single component. The graph median
+	node degree is 323, the mean node degree is 446.62, and the node degree
+	mode is 1. The top 5 most central nodes are 51337.XP_004654551.1 (degree
+	4349), 51337.XP_004658924.1 (degree 4317), 51337.XP_004653669.1 (degree
+	4315), 51337.XP_004653072.1 (degree 4052) and 51337.XP_004670303.1 (degree
+	3946).
 	
 
 

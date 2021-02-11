@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:44.769303
 
-The undirected graph Anaplasma marginale Florida has 913 nodes and 43795 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10519 and has 21 connected components, where the component with most nodes has
-855 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 82, the mean node degree is 95.94, and the node degree mode is 1. The top
-5 most central nodes are 320483.AMF_914 (degree 441), 320483.AMF_701 (degree 403),
-320483.AMF_073 (degree 398), 320483.AMF_725 (degree 345) and 320483.AMF_013 (degree
-332).
+The undirected graph Anaplasma marginale Florida has 913 nodes and 43795
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10519 and has 21 connected components, where the
+component with most nodes has 855 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+is 95.94, and the node degree mode is 1. The top 5 most central nodes are
+320483.AMF_914 (degree 441), 320483.AMF_701 (degree 403), 320483.AMF_073
+(degree 398), 320483.AMF_725 (degree 345) and 320483.AMF_013 (degree 332).
 
 
 References
@@ -107,14 +107,14 @@ def AnaplasmaMarginaleFlorida(
 	
 	Datetime: 2021-02-02 20:27:44.769303
 	
-	The undirected graph Anaplasma marginale Florida has 913 nodes and 43795 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10519 and has 21 connected components, where the component with most nodes has
-	855 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 82, the mean node degree is 95.94, and the node degree mode is 1. The top
-	5 most central nodes are 320483.AMF_914 (degree 441), 320483.AMF_701 (degree 403),
-	320483.AMF_073 (degree 398), 320483.AMF_725 (degree 345) and 320483.AMF_013 (degree
-	332).
+	The undirected graph Anaplasma marginale Florida has 913 nodes and 43795
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10519 and has 21 connected components, where the
+	component with most nodes has 855 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+	is 95.94, and the node degree mode is 1. The top 5 most central nodes are
+	320483.AMF_914 (degree 441), 320483.AMF_701 (degree 403), 320483.AMF_073
+	(degree 398), 320483.AMF_725 (degree 345) and 320483.AMF_013 (degree 332).
 	
 
 

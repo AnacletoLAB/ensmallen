@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:09.176635
 
-The undirected graph Solimonas flava has 3785 nodes and 486686 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06796 and
-has 6 connected components, where the component with most nodes has 3774 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 257.17, and the node degree mode is 8. The top 5 most central
-nodes are 1123257.AUFV01000009_gene2301 (degree 1568), 1123257.AUFV01000009_gene2302
-(degree 1560), 1123257.AUFV01000006_gene387 (degree 1545), 1123257.AUFV01000010_gene3253
-(degree 1389) and 1123257.AUFV01000003_gene917 (degree 1363).
+The undirected graph Solimonas flava has 3785 nodes and 486686 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06796 and has 6 connected components, where the component with most
+nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 221, the mean node degree is 257.17, and
+the node degree mode is 8. The top 5 most central nodes are 1123257.AUFV01000009_gene2301
+(degree 1568), 1123257.AUFV01000009_gene2302 (degree 1560), 1123257.AUFV01000006_gene387
+(degree 1545), 1123257.AUFV01000010_gene3253 (degree 1389) and 1123257.AUFV01000003_gene917
+(degree 1363).
 
 
 References
@@ -107,14 +108,15 @@ def SolimonasFlava(
 	
 	Datetime: 2021-02-02 22:49:09.176635
 	
-	The undirected graph Solimonas flava has 3785 nodes and 486686 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06796 and
-	has 6 connected components, where the component with most nodes has 3774 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 257.17, and the node degree mode is 8. The top 5 most central
-	nodes are 1123257.AUFV01000009_gene2301 (degree 1568), 1123257.AUFV01000009_gene2302
-	(degree 1560), 1123257.AUFV01000006_gene387 (degree 1545), 1123257.AUFV01000010_gene3253
-	(degree 1389) and 1123257.AUFV01000003_gene917 (degree 1363).
+	The undirected graph Solimonas flava has 3785 nodes and 486686 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06796 and has 6 connected components, where the component with most
+	nodes has 3774 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 221, the mean node degree is 257.17, and
+	the node degree mode is 8. The top 5 most central nodes are 1123257.AUFV01000009_gene2301
+	(degree 1568), 1123257.AUFV01000009_gene2302 (degree 1560), 1123257.AUFV01000006_gene387
+	(degree 1545), 1123257.AUFV01000010_gene3253 (degree 1389) and 1123257.AUFV01000003_gene917
+	(degree 1363).
 	
 
 

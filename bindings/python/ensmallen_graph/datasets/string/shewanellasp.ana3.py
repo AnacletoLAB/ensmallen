@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:24.803084
 
-The undirected graph Shewanella sp. ANA3 has 4314 nodes and 353135 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03796 and
-has 13 connected components, where the component with most nodes has 4287 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 163.72, and the node degree mode is 4. The top 5 most central
-nodes are 94122.Shewana3_3419 (degree 2116), 94122.Shewana3_4109 (degree 1330), 94122.Shewana3_3438
-(degree 1238), 94122.Shewana3_2840 (degree 1160) and 94122.Shewana3_1236 (degree
+The undirected graph Shewanella sp. ANA3 has 4314 nodes and 353135 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03796 and has 13 connected components, where the component with most
+nodes has 4287 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 163.72, and
+the node degree mode is 4. The top 5 most central nodes are 94122.Shewana3_3419
+(degree 2116), 94122.Shewana3_4109 (degree 1330), 94122.Shewana3_3438 (degree
+1238), 94122.Shewana3_2840 (degree 1160) and 94122.Shewana3_1236 (degree
 1065).
 
 
@@ -107,13 +108,14 @@ def ShewanellaSp.Ana3(
 	
 	Datetime: 2021-02-02 19:41:24.803084
 	
-	The undirected graph Shewanella sp. ANA3 has 4314 nodes and 353135 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03796 and
-	has 13 connected components, where the component with most nodes has 4287 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 163.72, and the node degree mode is 4. The top 5 most central
-	nodes are 94122.Shewana3_3419 (degree 2116), 94122.Shewana3_4109 (degree 1330), 94122.Shewana3_3438
-	(degree 1238), 94122.Shewana3_2840 (degree 1160) and 94122.Shewana3_1236 (degree
+	The undirected graph Shewanella sp. ANA3 has 4314 nodes and 353135 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03796 and has 13 connected components, where the component with most
+	nodes has 4287 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 163.72, and
+	the node degree mode is 4. The top 5 most central nodes are 94122.Shewana3_3419
+	(degree 2116), 94122.Shewana3_4109 (degree 1330), 94122.Shewana3_3438 (degree
+	1238), 94122.Shewana3_2840 (degree 1160) and 94122.Shewana3_1236 (degree
 	1065).
 	
 

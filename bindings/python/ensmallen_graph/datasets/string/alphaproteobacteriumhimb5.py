@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:16.030747
 
-The undirected graph alpha proteobacterium HIMB5 has 1424 nodes and 80621 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07957
-and has 3 connected components, where the component with most nodes has 1420 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 113.23, and the node degree mode is 86. The top 5
-most central nodes are 859653.HIMB5_00000560 (degree 638), 859653.HIMB5_00011900
-(degree 478), 859653.HIMB5_00010360 (degree 475), 859653.HIMB5_00007040 (degree 463)
-and 859653.HIMB5_00013490 (degree 456).
+The undirected graph alpha proteobacterium HIMB5 has 1424 nodes and 80621
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07957 and has 3 connected components, where the component
+with most nodes has 1420 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 113.23,
+and the node degree mode is 86. The top 5 most central nodes are 859653.HIMB5_00000560
+(degree 638), 859653.HIMB5_00011900 (degree 478), 859653.HIMB5_00010360
+(degree 475), 859653.HIMB5_00007040 (degree 463) and 859653.HIMB5_00013490
+(degree 456).
 
 
 References
@@ -107,14 +108,15 @@ def AlphaProteobacteriumHimb5(
 	
 	Datetime: 2021-02-02 21:46:16.030747
 	
-	The undirected graph alpha proteobacterium HIMB5 has 1424 nodes and 80621 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07957
-	and has 3 connected components, where the component with most nodes has 1420 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 113.23, and the node degree mode is 86. The top 5
-	most central nodes are 859653.HIMB5_00000560 (degree 638), 859653.HIMB5_00011900
-	(degree 478), 859653.HIMB5_00010360 (degree 475), 859653.HIMB5_00007040 (degree 463)
-	and 859653.HIMB5_00013490 (degree 456).
+	The undirected graph alpha proteobacterium HIMB5 has 1424 nodes and 80621
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07957 and has 3 connected components, where the component
+	with most nodes has 1420 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 113.23,
+	and the node degree mode is 86. The top 5 most central nodes are 859653.HIMB5_00000560
+	(degree 638), 859653.HIMB5_00011900 (degree 478), 859653.HIMB5_00010360
+	(degree 475), 859653.HIMB5_00007040 (degree 463) and 859653.HIMB5_00013490
+	(degree 456).
 	
 
 

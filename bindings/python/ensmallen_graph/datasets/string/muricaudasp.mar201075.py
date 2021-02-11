@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:00.555123
 
-The undirected graph Muricauda sp. MAR201075 has 3937 nodes and 336957 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04349 and
-has 16 connected components, where the component with most nodes has 3892 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 171.17, and the node degree mode is 2. The top 5 most central
-nodes are 1250232.JQNJ01000001_gene1990 (degree 1314), 1250232.JQNJ01000001_gene2313
-(degree 1231), 1250232.JQNJ01000001_gene634 (degree 1178), 1250232.JQNJ01000001_gene246
-(degree 1074) and 1250232.JQNJ01000001_gene3807 (degree 1060).
+The undirected graph Muricauda sp. MAR201075 has 3937 nodes and 336957
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04349 and has 16 connected components, where the component
+with most nodes has 3892 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 144, the mean node degree is 171.17,
+and the node degree mode is 2. The top 5 most central nodes are 1250232.JQNJ01000001_gene1990
+(degree 1314), 1250232.JQNJ01000001_gene2313 (degree 1231), 1250232.JQNJ01000001_gene634
+(degree 1178), 1250232.JQNJ01000001_gene246 (degree 1074) and 1250232.JQNJ01000001_gene3807
+(degree 1060).
 
 
 References
@@ -107,14 +108,15 @@ def MuricaudaSp.Mar201075(
 	
 	Datetime: 2021-02-02 23:35:00.555123
 	
-	The undirected graph Muricauda sp. MAR201075 has 3937 nodes and 336957 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04349 and
-	has 16 connected components, where the component with most nodes has 3892 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 171.17, and the node degree mode is 2. The top 5 most central
-	nodes are 1250232.JQNJ01000001_gene1990 (degree 1314), 1250232.JQNJ01000001_gene2313
-	(degree 1231), 1250232.JQNJ01000001_gene634 (degree 1178), 1250232.JQNJ01000001_gene246
-	(degree 1074) and 1250232.JQNJ01000001_gene3807 (degree 1060).
+	The undirected graph Muricauda sp. MAR201075 has 3937 nodes and 336957
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04349 and has 16 connected components, where the component
+	with most nodes has 3892 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 144, the mean node degree is 171.17,
+	and the node degree mode is 2. The top 5 most central nodes are 1250232.JQNJ01000001_gene1990
+	(degree 1314), 1250232.JQNJ01000001_gene2313 (degree 1231), 1250232.JQNJ01000001_gene634
+	(degree 1178), 1250232.JQNJ01000001_gene246 (degree 1074) and 1250232.JQNJ01000001_gene3807
+	(degree 1060).
 	
 
 

@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:29:58.812212
 
-The undirected graph Chelonia mydas has 17264 nodes and 3386428 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02273 and
-is connected, as it has a single component. The graph median node degree is 272,
-the mean node degree is 392.31, and the node degree mode is 168. The top 5 most central
-nodes are 8469.XP_007066416.1 (degree 4346), 8469.XP_007070850.1 (degree 4222), 8469.XP_007064474.1
-(degree 3947), 8469.XP_007061276.1 (degree 3937) and 8469.XP_007064502.1 (degree
-3470).
+The undirected graph Chelonia mydas has 17264 nodes and 3386428 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02273 and is connected, as it has a single component. The graph median
+node degree is 272, the mean node degree is 392.31, and the node degree
+mode is 168. The top 5 most central nodes are 8469.XP_007066416.1 (degree
+4346), 8469.XP_007070850.1 (degree 4222), 8469.XP_007064474.1 (degree 3947),
+8469.XP_007061276.1 (degree 3937) and 8469.XP_007064502.1 (degree 3470).
 
 
 References
@@ -106,13 +106,13 @@ def CheloniaMydas(
 	
 	Datetime: 2021-02-02 17:29:58.812212
 	
-	The undirected graph Chelonia mydas has 17264 nodes and 3386428 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02273 and
-	is connected, as it has a single component. The graph median node degree is 272,
-	the mean node degree is 392.31, and the node degree mode is 168. The top 5 most central
-	nodes are 8469.XP_007066416.1 (degree 4346), 8469.XP_007070850.1 (degree 4222), 8469.XP_007064474.1
-	(degree 3947), 8469.XP_007061276.1 (degree 3937) and 8469.XP_007064502.1 (degree
-	3470).
+	The undirected graph Chelonia mydas has 17264 nodes and 3386428 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02273 and is connected, as it has a single component. The graph median
+	node degree is 272, the mean node degree is 392.31, and the node degree
+	mode is 168. The top 5 most central nodes are 8469.XP_007066416.1 (degree
+	4346), 8469.XP_007070850.1 (degree 4222), 8469.XP_007064474.1 (degree 3947),
+	8469.XP_007061276.1 (degree 3937) and 8469.XP_007064502.1 (degree 3470).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:19.170317
 
-The undirected graph Flavobacterium chungangense has 4750 nodes and 378437 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03355
-and has 21 connected components, where the component with most nodes has 4685 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 159.34, and the node degree mode is 2. The top 5
-most central nodes are 1453505.JASY01000001_gene3189 (degree 1664), 1453505.JASY01000024_gene277
-(degree 1353), 1453505.JASY01000006_gene1312 (degree 1299), 1453505.JASY01000003_gene1943
-(degree 1211) and 1453505.JASY01000007_gene1018 (degree 1137).
+The undirected graph Flavobacterium chungangense has 4750 nodes and 378437
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03355 and has 21 connected components, where the component
+with most nodes has 4685 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 159.34,
+and the node degree mode is 2. The top 5 most central nodes are 1453505.JASY01000001_gene3189
+(degree 1664), 1453505.JASY01000024_gene277 (degree 1353), 1453505.JASY01000006_gene1312
+(degree 1299), 1453505.JASY01000003_gene1943 (degree 1211) and 1453505.JASY01000007_gene1018
+(degree 1137).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumChungangense(
 	
 	Datetime: 2021-02-03 23:06:19.170317
 	
-	The undirected graph Flavobacterium chungangense has 4750 nodes and 378437 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03355
-	and has 21 connected components, where the component with most nodes has 4685 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 159.34, and the node degree mode is 2. The top 5
-	most central nodes are 1453505.JASY01000001_gene3189 (degree 1664), 1453505.JASY01000024_gene277
-	(degree 1353), 1453505.JASY01000006_gene1312 (degree 1299), 1453505.JASY01000003_gene1943
-	(degree 1211) and 1453505.JASY01000007_gene1018 (degree 1137).
+	The undirected graph Flavobacterium chungangense has 4750 nodes and 378437
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03355 and has 21 connected components, where the component
+	with most nodes has 4685 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 159.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1453505.JASY01000001_gene3189
+	(degree 1664), 1453505.JASY01000024_gene277 (degree 1353), 1453505.JASY01000006_gene1312
+	(degree 1299), 1453505.JASY01000003_gene1943 (degree 1211) and 1453505.JASY01000007_gene1018
+	(degree 1137).
 	
 
 

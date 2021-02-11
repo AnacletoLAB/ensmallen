@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:02.698305
 
-The undirected graph Sphingopyxis sp. MC1 has 3447 nodes and 258578 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04354 and
-has 8 connected components, where the component with most nodes has 3428 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 150.03, and the node degree mode is 4. The top 5 most central
-nodes are 1174684.EBMC1_13928 (degree 1171), 1174684.EBMC1_00940 (degree 1067), 1174684.EBMC1_01615
-(degree 1024), 1174684.EBMC1_13943 (degree 988) and 1174684.EBMC1_06359 (degree 935).
+The undirected graph Sphingopyxis sp. MC1 has 3447 nodes and 258578 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04354 and has 8 connected components, where the component with most
+nodes has 3428 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 150.03, and
+the node degree mode is 4. The top 5 most central nodes are 1174684.EBMC1_13928
+(degree 1171), 1174684.EBMC1_00940 (degree 1067), 1174684.EBMC1_01615 (degree
+1024), 1174684.EBMC1_13943 (degree 988) and 1174684.EBMC1_06359 (degree
+935).
 
 
 References
@@ -106,13 +108,15 @@ def SphingopyxisSp.Mc1(
 	
 	Datetime: 2021-02-02 23:09:02.698305
 	
-	The undirected graph Sphingopyxis sp. MC1 has 3447 nodes and 258578 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04354 and
-	has 8 connected components, where the component with most nodes has 3428 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 150.03, and the node degree mode is 4. The top 5 most central
-	nodes are 1174684.EBMC1_13928 (degree 1171), 1174684.EBMC1_00940 (degree 1067), 1174684.EBMC1_01615
-	(degree 1024), 1174684.EBMC1_13943 (degree 988) and 1174684.EBMC1_06359 (degree 935).
+	The undirected graph Sphingopyxis sp. MC1 has 3447 nodes and 258578 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04354 and has 8 connected components, where the component with most
+	nodes has 3428 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 150.03, and
+	the node degree mode is 4. The top 5 most central nodes are 1174684.EBMC1_13928
+	(degree 1171), 1174684.EBMC1_00940 (degree 1067), 1174684.EBMC1_01615 (degree
+	1024), 1174684.EBMC1_13943 (degree 988) and 1174684.EBMC1_06359 (degree
+	935).
 	
 
 

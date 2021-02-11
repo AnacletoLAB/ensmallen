@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:00.420343
 
-The undirected graph Lysinibacillus manganicus has 3494 nodes and 328202 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05378
-and has 17 connected components, where the component with most nodes has 3459 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 187.87, and the node degree mode is 1. The top 5
-most central nodes are 1384049.CD29_14575 (degree 1306), 1384049.CD29_17395 (degree
-1100), 1384049.CD29_19975 (degree 1039), 1384049.CD29_05440 (degree 1017) and 1384049.CD29_00475
-(degree 1008).
+The undirected graph Lysinibacillus manganicus has 3494 nodes and 328202
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05378 and has 17 connected components, where the component
+with most nodes has 3459 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 187.87,
+and the node degree mode is 1. The top 5 most central nodes are 1384049.CD29_14575
+(degree 1306), 1384049.CD29_17395 (degree 1100), 1384049.CD29_19975 (degree
+1039), 1384049.CD29_05440 (degree 1017) and 1384049.CD29_00475 (degree
+1008).
 
 
 References
@@ -107,14 +108,15 @@ def LysinibacillusManganicus(
 	
 	Datetime: 2021-02-03 22:19:00.420343
 	
-	The undirected graph Lysinibacillus manganicus has 3494 nodes and 328202 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05378
-	and has 17 connected components, where the component with most nodes has 3459 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 187.87, and the node degree mode is 1. The top 5
-	most central nodes are 1384049.CD29_14575 (degree 1306), 1384049.CD29_17395 (degree
-	1100), 1384049.CD29_19975 (degree 1039), 1384049.CD29_05440 (degree 1017) and 1384049.CD29_00475
-	(degree 1008).
+	The undirected graph Lysinibacillus manganicus has 3494 nodes and 328202
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05378 and has 17 connected components, where the component
+	with most nodes has 3459 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 187.87,
+	and the node degree mode is 1. The top 5 most central nodes are 1384049.CD29_14575
+	(degree 1306), 1384049.CD29_17395 (degree 1100), 1384049.CD29_19975 (degree
+	1039), 1384049.CD29_05440 (degree 1017) and 1384049.CD29_00475 (degree
+	1008).
 	
 
 

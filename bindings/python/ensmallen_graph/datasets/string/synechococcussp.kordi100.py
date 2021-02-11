@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:03:22.604048
 
-The undirected graph Synechococcus sp. KORDI100 has 2969 nodes and 147586 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03350
-and has 102 connected components, where the component with most nodes has 2684 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 99.42, and the node degree mode is 2. The top 5 most
-central nodes are 1280380.KR100_05635 (degree 880), 1280380.KR100_01055 (degree 748),
-1280380.KR100_08650 (degree 631), 1280380.KR100_03040 (degree 605) and 1280380.KR100_12055
-(degree 582).
+The undirected graph Synechococcus sp. KORDI100 has 2969 nodes and 147586
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03350 and has 102 connected components, where the component
+with most nodes has 2684 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 99.42,
+and the node degree mode is 2. The top 5 most central nodes are 1280380.KR100_05635
+(degree 880), 1280380.KR100_01055 (degree 748), 1280380.KR100_08650 (degree
+631), 1280380.KR100_03040 (degree 605) and 1280380.KR100_12055 (degree
+582).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Kordi100(
 	
 	Datetime: 2021-02-03 21:03:22.604048
 	
-	The undirected graph Synechococcus sp. KORDI100 has 2969 nodes and 147586 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03350
-	and has 102 connected components, where the component with most nodes has 2684 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 99.42, and the node degree mode is 2. The top 5 most
-	central nodes are 1280380.KR100_05635 (degree 880), 1280380.KR100_01055 (degree 748),
-	1280380.KR100_08650 (degree 631), 1280380.KR100_03040 (degree 605) and 1280380.KR100_12055
-	(degree 582).
+	The undirected graph Synechococcus sp. KORDI100 has 2969 nodes and 147586
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03350 and has 102 connected components, where the component
+	with most nodes has 2684 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 99.42,
+	and the node degree mode is 2. The top 5 most central nodes are 1280380.KR100_05635
+	(degree 880), 1280380.KR100_01055 (degree 748), 1280380.KR100_08650 (degree
+	631), 1280380.KR100_03040 (degree 605) and 1280380.KR100_12055 (degree
+	582).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:40.885706
 
-The undirected graph Parvularcula bermudensis has 2667 nodes and 194387 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05468
-and has 12 connected components, where the component with most nodes has 2638 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 145.77, and the node degree mode is 3. The top 5
-most central nodes are 314260.PB2503_07474 (degree 1095), 314260.PB2503_04342 (degree
-1044), 314260.PB2503_13619 (degree 860), 314260.PB2503_10069 (degree 774) and 314260.PB2503_10964
-(degree 756).
+The undirected graph Parvularcula bermudensis has 2667 nodes and 194387
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05468 and has 12 connected components, where the component
+with most nodes has 2638 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 145.77,
+and the node degree mode is 3. The top 5 most central nodes are 314260.PB2503_07474
+(degree 1095), 314260.PB2503_04342 (degree 1044), 314260.PB2503_13619 (degree
+860), 314260.PB2503_10069 (degree 774) and 314260.PB2503_10964 (degree
+756).
 
 
 References
@@ -107,14 +108,15 @@ def ParvularculaBermudensis(
 	
 	Datetime: 2021-02-02 20:24:40.885706
 	
-	The undirected graph Parvularcula bermudensis has 2667 nodes and 194387 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05468
-	and has 12 connected components, where the component with most nodes has 2638 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 145.77, and the node degree mode is 3. The top 5
-	most central nodes are 314260.PB2503_07474 (degree 1095), 314260.PB2503_04342 (degree
-	1044), 314260.PB2503_13619 (degree 860), 314260.PB2503_10069 (degree 774) and 314260.PB2503_10964
-	(degree 756).
+	The undirected graph Parvularcula bermudensis has 2667 nodes and 194387
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05468 and has 12 connected components, where the component
+	with most nodes has 2638 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 145.77,
+	and the node degree mode is 3. The top 5 most central nodes are 314260.PB2503_07474
+	(degree 1095), 314260.PB2503_04342 (degree 1044), 314260.PB2503_13619 (degree
+	860), 314260.PB2503_10069 (degree 774) and 314260.PB2503_10964 (degree
+	756).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:17:52.652833
 
-The undirected graph cage9 has 3534 nodes and 22564 weighted edges, of which 3534
-are self-loops. The graph is sparse as it has a density of 0.00333 and is connected,
-as it has a single component. The graph median node degree is 12, the mean node degree
-is 11.77, and the node degree mode is 8. The top 5 most central nodes are 3061 (degree
-23), 3059 (degree 23), 2998 (degree 23), 2996 (degree 23) and 2991 (degree 23).
+The undirected graph cage9 has 3534 nodes and 22564 weighted edges, of
+which 3534 are self-loops. The graph is sparse as it has a density of 0.00333
+and is connected, as it has a single component. The graph median node degree
+is 12, the mean node degree is 11.77, and the node degree mode is 8. The
+top 5 most central nodes are 3061 (degree 23), 3059 (degree 23), 2998 (degree
+23), 2996 (degree 23) and 2991 (degree 23).
 
 
 References
@@ -101,11 +102,12 @@ def Cage9(
 	
 	Datetime: 2021-02-06 10:17:52.652833
 	
-	The undirected graph cage9 has 3534 nodes and 22564 weighted edges, of which 3534
-	are self-loops. The graph is sparse as it has a density of 0.00333 and is connected,
-	as it has a single component. The graph median node degree is 12, the mean node degree
-	is 11.77, and the node degree mode is 8. The top 5 most central nodes are 3061 (degree
-	23), 3059 (degree 23), 2998 (degree 23), 2996 (degree 23) and 2991 (degree 23).
+	The undirected graph cage9 has 3534 nodes and 22564 weighted edges, of
+	which 3534 are self-loops. The graph is sparse as it has a density of 0.00333
+	and is connected, as it has a single component. The graph median node degree
+	is 12, the mean node degree is 11.77, and the node degree mode is 8. The
+	top 5 most central nodes are 3061 (degree 23), 3059 (degree 23), 2998 (degree
+	23), 2996 (degree 23) and 2991 (degree 23).
 	
 
 

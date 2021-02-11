@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:41.336400
 
-The undirected graph Sphingomonas wittichii has 5117 nodes and 781167 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05968 and
-has 6 connected components, where the component with most nodes has 5106 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 305.32, and the node degree mode is 2. The top 5 most central
-nodes are 392499.Swit_5353 (degree 2172), 392499.Swit_0590 (degree 2004), 392499.Swit_0450
-(degree 1861), 392499.Swit_4009 (degree 1589) and 392499.Swit_0405 (degree 1378).
+The undirected graph Sphingomonas wittichii has 5117 nodes and 781167 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05968 and has 6 connected components, where the component with most
+nodes has 5106 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 305.32, and
+the node degree mode is 2. The top 5 most central nodes are 392499.Swit_5353
+(degree 2172), 392499.Swit_0590 (degree 2004), 392499.Swit_0450 (degree
+1861), 392499.Swit_4009 (degree 1589) and 392499.Swit_0405 (degree 1378).
 
 
 References
@@ -106,13 +107,14 @@ def SphingomonasWittichii(
 	
 	Datetime: 2021-02-02 20:40:41.336400
 	
-	The undirected graph Sphingomonas wittichii has 5117 nodes and 781167 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05968 and
-	has 6 connected components, where the component with most nodes has 5106 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 305.32, and the node degree mode is 2. The top 5 most central
-	nodes are 392499.Swit_5353 (degree 2172), 392499.Swit_0590 (degree 2004), 392499.Swit_0450
-	(degree 1861), 392499.Swit_4009 (degree 1589) and 392499.Swit_0405 (degree 1378).
+	The undirected graph Sphingomonas wittichii has 5117 nodes and 781167 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05968 and has 6 connected components, where the component with most
+	nodes has 5106 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 305.32, and
+	the node degree mode is 2. The top 5 most central nodes are 392499.Swit_5353
+	(degree 2172), 392499.Swit_0590 (degree 2004), 392499.Swit_0450 (degree
+	1861), 392499.Swit_4009 (degree 1589) and 392499.Swit_0405 (degree 1378).
 	
 
 

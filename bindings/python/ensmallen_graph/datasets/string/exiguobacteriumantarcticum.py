@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:07.805563
 
-The undirected graph Exiguobacterium antarcticum has 2754 nodes and 188149 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04963
-and has 11 connected components, where the component with most nodes has 2720 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 136.64, and the node degree mode is 4. The top 5
-most central nodes are 1087448.Eab7_2048 (degree 1166), 1087448.Eab7_0415 (degree
-937), 1087448.Eab7_1776 (degree 839), 1087448.Eab7_0754 (degree 812) and 1087448.Eab7_1578
-(degree 791).
+The undirected graph Exiguobacterium antarcticum has 2754 nodes and 188149
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04963 and has 11 connected components, where the component
+with most nodes has 2720 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 136.64,
+and the node degree mode is 4. The top 5 most central nodes are 1087448.Eab7_2048
+(degree 1166), 1087448.Eab7_0415 (degree 937), 1087448.Eab7_1776 (degree
+839), 1087448.Eab7_0754 (degree 812) and 1087448.Eab7_1578 (degree 791).
 
 
 References
@@ -107,14 +107,14 @@ def ExiguobacteriumAntarcticum(
 	
 	Datetime: 2021-02-02 22:21:07.805563
 	
-	The undirected graph Exiguobacterium antarcticum has 2754 nodes and 188149 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04963
-	and has 11 connected components, where the component with most nodes has 2720 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 136.64, and the node degree mode is 4. The top 5
-	most central nodes are 1087448.Eab7_2048 (degree 1166), 1087448.Eab7_0415 (degree
-	937), 1087448.Eab7_1776 (degree 839), 1087448.Eab7_0754 (degree 812) and 1087448.Eab7_1578
-	(degree 791).
+	The undirected graph Exiguobacterium antarcticum has 2754 nodes and 188149
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04963 and has 11 connected components, where the component
+	with most nodes has 2720 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 136.64,
+	and the node degree mode is 4. The top 5 most central nodes are 1087448.Eab7_2048
+	(degree 1166), 1087448.Eab7_0415 (degree 937), 1087448.Eab7_1776 (degree
+	839), 1087448.Eab7_0754 (degree 812) and 1087448.Eab7_1578 (degree 791).
 	
 
 

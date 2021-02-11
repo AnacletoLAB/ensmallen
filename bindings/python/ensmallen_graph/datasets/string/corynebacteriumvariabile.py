@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:13.145530
 
-The undirected graph Corynebacterium variabile has 3019 nodes and 230004 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05049
-and has 10 connected components, where the component with most nodes has 2989 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 152.37, and the node degree mode is 3. The top 5
-most central nodes are 858619.CVAR_2516 (degree 1263), 858619.CVAR_1264 (degree 1093),
-858619.CVAR_2286 (degree 965), 858619.CVAR_1673 (degree 937) and 858619.CVAR_2283
-(degree 903).
+The undirected graph Corynebacterium variabile has 3019 nodes and 230004
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05049 and has 10 connected components, where the component
+with most nodes has 2989 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 152.37,
+and the node degree mode is 3. The top 5 most central nodes are 858619.CVAR_2516
+(degree 1263), 858619.CVAR_1264 (degree 1093), 858619.CVAR_2286 (degree
+965), 858619.CVAR_1673 (degree 937) and 858619.CVAR_2283 (degree 903).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumVariabile(
 	
 	Datetime: 2021-02-02 21:46:13.145530
 	
-	The undirected graph Corynebacterium variabile has 3019 nodes and 230004 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05049
-	and has 10 connected components, where the component with most nodes has 2989 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 152.37, and the node degree mode is 3. The top 5
-	most central nodes are 858619.CVAR_2516 (degree 1263), 858619.CVAR_1264 (degree 1093),
-	858619.CVAR_2286 (degree 965), 858619.CVAR_1673 (degree 937) and 858619.CVAR_2283
-	(degree 903).
+	The undirected graph Corynebacterium variabile has 3019 nodes and 230004
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05049 and has 10 connected components, where the component
+	with most nodes has 2989 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 152.37,
+	and the node degree mode is 3. The top 5 most central nodes are 858619.CVAR_2516
+	(degree 1263), 858619.CVAR_1264 (degree 1093), 858619.CVAR_2286 (degree
+	965), 858619.CVAR_1673 (degree 937) and 858619.CVAR_2283 (degree 903).
 	
 
 

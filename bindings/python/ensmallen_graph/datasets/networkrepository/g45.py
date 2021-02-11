@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:05:23.076412
 
-The undirected graph G45 has 1000 nodes and 9990 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.02000 and is connected,
-as it has a single component. The graph median node degree is 20, the mean node degree
-is 19.98, and the node degree mode is 21. The top 5 most central nodes are 864 (degree
-35), 102 (degree 33), 115 (degree 33), 307 (degree 32) and 959 (degree 32).
+The undirected graph G45 has 1000 nodes and 9990 unweighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.02000
+and is connected, as it has a single component. The graph median node degree
+is 20, the mean node degree is 19.98, and the node degree mode is 21. The
+top 5 most central nodes are 864 (degree 35), 102 (degree 33), 115 (degree
+33), 307 (degree 32) and 959 (degree 32).
 
 
 References
@@ -101,11 +102,12 @@ def G45(
 	
 	Datetime: 2021-02-06 10:05:23.076412
 	
-	The undirected graph G45 has 1000 nodes and 9990 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.02000 and is connected,
-	as it has a single component. The graph median node degree is 20, the mean node degree
-	is 19.98, and the node degree mode is 21. The top 5 most central nodes are 864 (degree
-	35), 102 (degree 33), 115 (degree 33), 307 (degree 32) and 959 (degree 32).
+	The undirected graph G45 has 1000 nodes and 9990 unweighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.02000
+	and is connected, as it has a single component. The graph median node degree
+	is 20, the mean node degree is 19.98, and the node degree mode is 21. The
+	top 5 most central nodes are 864 (degree 35), 102 (degree 33), 115 (degree
+	33), 307 (degree 32) and 959 (degree 32).
 	
 
 

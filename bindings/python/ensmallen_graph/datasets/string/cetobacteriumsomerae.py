@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:51:41.292872
 
-The undirected graph Cetobacterium somerae has 2943 nodes and 277252 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06404 and
-has 18 connected components, where the component with most nodes has 2890 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 188.41, and the node degree mode is 2. The top 5 most central
-nodes are 1319815.HMPREF0202_02631 (degree 1275), 1319815.HMPREF0202_01439 (degree
-1135), 1319815.HMPREF0202_01393 (degree 1056), 1319815.HMPREF0202_00655 (degree 927)
-and 1319815.HMPREF0202_02282 (degree 908).
+The undirected graph Cetobacterium somerae has 2943 nodes and 277252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06404 and has 18 connected components, where the component with most
+nodes has 2890 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 188.41, and
+the node degree mode is 2. The top 5 most central nodes are 1319815.HMPREF0202_02631
+(degree 1275), 1319815.HMPREF0202_01439 (degree 1135), 1319815.HMPREF0202_01393
+(degree 1056), 1319815.HMPREF0202_00655 (degree 927) and 1319815.HMPREF0202_02282
+(degree 908).
 
 
 References
@@ -107,14 +108,15 @@ def CetobacteriumSomerae(
 	
 	Datetime: 2021-02-03 21:51:41.292872
 	
-	The undirected graph Cetobacterium somerae has 2943 nodes and 277252 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06404 and
-	has 18 connected components, where the component with most nodes has 2890 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 188.41, and the node degree mode is 2. The top 5 most central
-	nodes are 1319815.HMPREF0202_02631 (degree 1275), 1319815.HMPREF0202_01439 (degree
-	1135), 1319815.HMPREF0202_01393 (degree 1056), 1319815.HMPREF0202_00655 (degree 927)
-	and 1319815.HMPREF0202_02282 (degree 908).
+	The undirected graph Cetobacterium somerae has 2943 nodes and 277252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06404 and has 18 connected components, where the component with most
+	nodes has 2890 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 188.41, and
+	the node degree mode is 2. The top 5 most central nodes are 1319815.HMPREF0202_02631
+	(degree 1275), 1319815.HMPREF0202_01439 (degree 1135), 1319815.HMPREF0202_01393
+	(degree 1056), 1319815.HMPREF0202_00655 (degree 927) and 1319815.HMPREF0202_02282
+	(degree 908).
 	
 
 

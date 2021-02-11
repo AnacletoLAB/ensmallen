@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:48.509053
 
-The undirected graph Cyanobacterium sp. PCC7702 has 4214 nodes and 628909 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07085
-and has 11 connected components, where the component with most nodes has 4187 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 287, the mean node degree is 298.49, and the node degree mode is 2. The top 5
-most central nodes are 1173021.ALWA01000029_gene746 (degree 1673), 1173021.ALWA01000004_gene3236
-(degree 1616), 1173021.ALWA01000039_gene1813 (degree 1476), 1173021.ALWA01000013_gene2962
-(degree 1280) and 1173021.ALWA01000030_gene791 (degree 1277).
+The undirected graph Cyanobacterium sp. PCC7702 has 4214 nodes and 628909
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07085 and has 11 connected components, where the component
+with most nodes has 4187 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 287, the mean node degree is 298.49,
+and the node degree mode is 2. The top 5 most central nodes are 1173021.ALWA01000029_gene746
+(degree 1673), 1173021.ALWA01000004_gene3236 (degree 1616), 1173021.ALWA01000039_gene1813
+(degree 1476), 1173021.ALWA01000013_gene2962 (degree 1280) and 1173021.ALWA01000030_gene791
+(degree 1277).
 
 
 References
@@ -107,14 +108,15 @@ def CyanobacteriumSp.Pcc7702(
 	
 	Datetime: 2021-02-02 23:07:48.509053
 	
-	The undirected graph Cyanobacterium sp. PCC7702 has 4214 nodes and 628909 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07085
-	and has 11 connected components, where the component with most nodes has 4187 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 287, the mean node degree is 298.49, and the node degree mode is 2. The top 5
-	most central nodes are 1173021.ALWA01000029_gene746 (degree 1673), 1173021.ALWA01000004_gene3236
-	(degree 1616), 1173021.ALWA01000039_gene1813 (degree 1476), 1173021.ALWA01000013_gene2962
-	(degree 1280) and 1173021.ALWA01000030_gene791 (degree 1277).
+	The undirected graph Cyanobacterium sp. PCC7702 has 4214 nodes and 628909
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07085 and has 11 connected components, where the component
+	with most nodes has 4187 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 287, the mean node degree is 298.49,
+	and the node degree mode is 2. The top 5 most central nodes are 1173021.ALWA01000029_gene746
+	(degree 1673), 1173021.ALWA01000004_gene3236 (degree 1616), 1173021.ALWA01000039_gene1813
+	(degree 1476), 1173021.ALWA01000013_gene2962 (degree 1280) and 1173021.ALWA01000030_gene791
+	(degree 1277).
 	
 
 

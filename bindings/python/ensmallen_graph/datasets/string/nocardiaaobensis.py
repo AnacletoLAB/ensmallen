@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:50.038663
 
-The undirected graph Nocardia aobensis has 6741 nodes and 1010706 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04449 and
-has 25 connected components, where the component with most nodes has 6689 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 245,
-the mean node degree is 299.87, and the node degree mode is 1. The top 5 most central
-nodes are 1206720.BAFQ01000167_gene4407 (degree 3744), 1206720.BAFQ01000100_gene2524
-(degree 2728), 1206720.BAFQ01000038_gene839 (degree 2616), 1206720.BAFQ01000052_gene1288
-(degree 2308) and 1206720.BAFQ01000073_gene1958 (degree 1952).
+The undirected graph Nocardia aobensis has 6741 nodes and 1010706 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04449 and has 25 connected components, where the component with most
+nodes has 6689 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 245, the mean node degree is 299.87, and
+the node degree mode is 1. The top 5 most central nodes are 1206720.BAFQ01000167_gene4407
+(degree 3744), 1206720.BAFQ01000100_gene2524 (degree 2728), 1206720.BAFQ01000038_gene839
+(degree 2616), 1206720.BAFQ01000052_gene1288 (degree 2308) and 1206720.BAFQ01000073_gene1958
+(degree 1952).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaAobensis(
 	
 	Datetime: 2021-02-02 23:15:50.038663
 	
-	The undirected graph Nocardia aobensis has 6741 nodes and 1010706 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04449 and
-	has 25 connected components, where the component with most nodes has 6689 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 245,
-	the mean node degree is 299.87, and the node degree mode is 1. The top 5 most central
-	nodes are 1206720.BAFQ01000167_gene4407 (degree 3744), 1206720.BAFQ01000100_gene2524
-	(degree 2728), 1206720.BAFQ01000038_gene839 (degree 2616), 1206720.BAFQ01000052_gene1288
-	(degree 2308) and 1206720.BAFQ01000073_gene1958 (degree 1952).
+	The undirected graph Nocardia aobensis has 6741 nodes and 1010706 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04449 and has 25 connected components, where the component with most
+	nodes has 6689 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 245, the mean node degree is 299.87, and
+	the node degree mode is 1. The top 5 most central nodes are 1206720.BAFQ01000167_gene4407
+	(degree 3744), 1206720.BAFQ01000100_gene2524 (degree 2728), 1206720.BAFQ01000038_gene839
+	(degree 2616), 1206720.BAFQ01000052_gene1288 (degree 2308) and 1206720.BAFQ01000073_gene1958
+	(degree 1952).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:08.862722
 
-The undirected graph Thermoanaerobacter kivui has 2362 nodes and 155426 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05574
-and has 8 connected components, where the component with most nodes has 2343 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 131.61, and the node degree mode is 1. The top 5
-most central nodes are 2325.TKV_c08940 (degree 909), 2325.TKV_c05640 (degree 702),
-2325.TKV_c05650 (degree 681), 2325.TKV_c16590 (degree 678) and 2325.TKV_c01120 (degree
-662).
+The undirected graph Thermoanaerobacter kivui has 2362 nodes and 155426
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05574 and has 8 connected components, where the component
+with most nodes has 2343 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 131.61,
+and the node degree mode is 1. The top 5 most central nodes are 2325.TKV_c08940
+(degree 909), 2325.TKV_c05640 (degree 702), 2325.TKV_c05650 (degree 681),
+2325.TKV_c16590 (degree 678) and 2325.TKV_c01120 (degree 662).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoanaerobacterKivui(
 	
 	Datetime: 2021-02-02 16:25:08.862722
 	
-	The undirected graph Thermoanaerobacter kivui has 2362 nodes and 155426 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05574
-	and has 8 connected components, where the component with most nodes has 2343 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 131.61, and the node degree mode is 1. The top 5
-	most central nodes are 2325.TKV_c08940 (degree 909), 2325.TKV_c05640 (degree 702),
-	2325.TKV_c05650 (degree 681), 2325.TKV_c16590 (degree 678) and 2325.TKV_c01120 (degree
-	662).
+	The undirected graph Thermoanaerobacter kivui has 2362 nodes and 155426
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05574 and has 8 connected components, where the component
+	with most nodes has 2343 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 131.61,
+	and the node degree mode is 1. The top 5 most central nodes are 2325.TKV_c08940
+	(degree 909), 2325.TKV_c05640 (degree 702), 2325.TKV_c05650 (degree 681),
+	2325.TKV_c16590 (degree 678) and 2325.TKV_c01120 (degree 662).
 	
 
 

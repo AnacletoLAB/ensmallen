@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:08.563036
 
-The undirected graph Bradyrhizobium sp. URHD0069 has 5744 nodes and 790710 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04794
-and has 64 connected components, where the component with most nodes has 5592 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 275.32, and the node degree mode is 1. The top 5
-most central nodes are 1380355.JNIJ01000021_gene3680 (degree 2801), 1380355.JNIJ01000004_gene2822
-(degree 1947), 1380355.JNIJ01000077_gene4193 (degree 1943), 1380355.JNIJ01000047_gene229
-(degree 1925) and 1380355.JNIJ01000029_gene3099 (degree 1919).
+The undirected graph Bradyrhizobium sp. URHD0069 has 5744 nodes and 790710
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04794 and has 64 connected components, where the component
+with most nodes has 5592 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 275.32,
+and the node degree mode is 1. The top 5 most central nodes are 1380355.JNIJ01000021_gene3680
+(degree 2801), 1380355.JNIJ01000004_gene2822 (degree 1947), 1380355.JNIJ01000077_gene4193
+(degree 1943), 1380355.JNIJ01000047_gene229 (degree 1925) and 1380355.JNIJ01000029_gene3099
+(degree 1919).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Urhd0069(
 	
 	Datetime: 2021-02-03 22:13:08.563036
 	
-	The undirected graph Bradyrhizobium sp. URHD0069 has 5744 nodes and 790710 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04794
-	and has 64 connected components, where the component with most nodes has 5592 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 275.32, and the node degree mode is 1. The top 5
-	most central nodes are 1380355.JNIJ01000021_gene3680 (degree 2801), 1380355.JNIJ01000004_gene2822
-	(degree 1947), 1380355.JNIJ01000077_gene4193 (degree 1943), 1380355.JNIJ01000047_gene229
-	(degree 1925) and 1380355.JNIJ01000029_gene3099 (degree 1919).
+	The undirected graph Bradyrhizobium sp. URHD0069 has 5744 nodes and 790710
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04794 and has 64 connected components, where the component
+	with most nodes has 5592 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 275.32,
+	and the node degree mode is 1. The top 5 most central nodes are 1380355.JNIJ01000021_gene3680
+	(degree 2801), 1380355.JNIJ01000004_gene2822 (degree 1947), 1380355.JNIJ01000077_gene4193
+	(degree 1943), 1380355.JNIJ01000047_gene229 (degree 1925) and 1380355.JNIJ01000029_gene3099
+	(degree 1919).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:41:50.500402
 
-The undirected graph Serratia sp. DD3 has 4529 nodes and 543095 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05297 and
-has 21 connected components, where the component with most nodes has 4476 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 239.83, and the node degree mode is 2. The top 5 most central
-nodes are 1410619.SRDD_12580 (degree 1721), 1410619.SRDD_40370 (degree 1529), 1410619.SRDD_40380
-(degree 1525), 1410619.SRDD_10830 (degree 1480) and 1410619.SRDD_36030 (degree 1366).
+The undirected graph Serratia sp. DD3 has 4529 nodes and 543095 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05297 and has 21 connected components, where the component with most
+nodes has 4476 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 239.83, and
+the node degree mode is 2. The top 5 most central nodes are 1410619.SRDD_12580
+(degree 1721), 1410619.SRDD_40370 (degree 1529), 1410619.SRDD_40380 (degree
+1525), 1410619.SRDD_10830 (degree 1480) and 1410619.SRDD_36030 (degree
+1366).
 
 
 References
@@ -106,13 +108,15 @@ def SerratiaSp.Dd3(
 	
 	Datetime: 2021-02-03 22:41:50.500402
 	
-	The undirected graph Serratia sp. DD3 has 4529 nodes and 543095 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05297 and
-	has 21 connected components, where the component with most nodes has 4476 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 239.83, and the node degree mode is 2. The top 5 most central
-	nodes are 1410619.SRDD_12580 (degree 1721), 1410619.SRDD_40370 (degree 1529), 1410619.SRDD_40380
-	(degree 1525), 1410619.SRDD_10830 (degree 1480) and 1410619.SRDD_36030 (degree 1366).
+	The undirected graph Serratia sp. DD3 has 4529 nodes and 543095 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05297 and has 21 connected components, where the component with most
+	nodes has 4476 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 239.83, and
+	the node degree mode is 2. The top 5 most central nodes are 1410619.SRDD_12580
+	(degree 1721), 1410619.SRDD_40370 (degree 1529), 1410619.SRDD_40380 (degree
+	1525), 1410619.SRDD_10830 (degree 1480) and 1410619.SRDD_36030 (degree
+	1366).
 	
 
 

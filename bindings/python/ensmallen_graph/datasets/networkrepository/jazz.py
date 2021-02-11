@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:55.892182
 
-The undirected graph jazz has 198 nodes and 2742 weighted edges, of which none are
-self-loops. The graph is quite dense as it has a density of 0.14059 and is connected,
-as it has a single component. The graph median node degree is 25, the mean node degree
-is 27.70, and the node degree mode is 31. The top 5 most central nodes are 136 (degree
-100), 60 (degree 96), 132 (degree 75), 168 (degree 74) and 70 (degree 62).
+The undirected graph jazz has 198 nodes and 2742 weighted edges, of which
+none are self-loops. The graph is quite dense as it has a density of 0.14059
+and is connected, as it has a single component. The graph median node degree
+is 25, the mean node degree is 27.70, and the node degree mode is 31. The
+top 5 most central nodes are 136 (degree 100), 60 (degree 96), 132 (degree
+75), 168 (degree 74) and 70 (degree 62).
 
 
 References
@@ -101,11 +102,12 @@ def Jazz(
 	
 	Datetime: 2021-02-06 08:12:55.892182
 	
-	The undirected graph jazz has 198 nodes and 2742 weighted edges, of which none are
-	self-loops. The graph is quite dense as it has a density of 0.14059 and is connected,
-	as it has a single component. The graph median node degree is 25, the mean node degree
-	is 27.70, and the node degree mode is 31. The top 5 most central nodes are 136 (degree
-	100), 60 (degree 96), 132 (degree 75), 168 (degree 74) and 70 (degree 62).
+	The undirected graph jazz has 198 nodes and 2742 weighted edges, of which
+	none are self-loops. The graph is quite dense as it has a density of 0.14059
+	and is connected, as it has a single component. The graph median node degree
+	is 25, the mean node degree is 27.70, and the node degree mode is 31. The
+	top 5 most central nodes are 136 (degree 100), 60 (degree 96), 132 (degree
+	75), 168 (degree 74) and 70 (degree 62).
 	
 
 

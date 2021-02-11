@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:29:47.576210
 
-The undirected graph bio-CE-GT has 924 nodes and 3239 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00760 and has 13 connected
-components, where the component with most nodes has 878 nodes and the component with
-the least nodes has 3 nodes. The graph median node degree is 4, the mean node degree
-is 7.01 and the node degree mode is 2. The top 5 most central nodes are 15 (degree
-151), 7 (degree 149), 12 (degree 119), 87 (degree 117) and 51 (degree 102).
+The undirected graph bio-CE-GT has 924 nodes and 3239 weighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00760
+and has 13 connected components, where the component with most nodes has
+878 nodes and the component with the least nodes has 3 nodes. The graph
+median node degree is 4, the mean node degree is 7.01 and the node degree
+mode is 2. The top 5 most central nodes are 15 (degree 151), 7 (degree
+149), 12 (degree 119), 87 (degree 117) and 51 (degree 102).
 
 
 References
@@ -113,12 +114,13 @@ def BioCeGt(
 	
 	Datetime: 2021-02-03 22:29:47.576210
 	
-	The undirected graph bio-CE-GT has 924 nodes and 3239 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00760 and has 13 connected
-	components, where the component with most nodes has 878 nodes and the component with
-	the least nodes has 3 nodes. The graph median node degree is 4, the mean node degree
-	is 7.01 and the node degree mode is 2. The top 5 most central nodes are 15 (degree
-	151), 7 (degree 149), 12 (degree 119), 87 (degree 117) and 51 (degree 102).
+	The undirected graph bio-CE-GT has 924 nodes and 3239 weighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00760
+	and has 13 connected components, where the component with most nodes has
+	878 nodes and the component with the least nodes has 3 nodes. The graph
+	median node degree is 4, the mean node degree is 7.01 and the node degree
+	mode is 2. The top 5 most central nodes are 15 (degree 151), 7 (degree
+	149), 12 (degree 119), 87 (degree 117) and 51 (degree 102).
 	
 
 

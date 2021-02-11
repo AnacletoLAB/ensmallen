@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:00.103990
 
-The undirected graph Coxiella burnetii has 1795 nodes and 96421 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05988 and
-has 14 connected components, where the component with most nodes has 1766 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 107.43, and the node degree mode is 2. The top 5 most central
-nodes are 227377.CBU_1928 (degree 723), 227377.CBU_1795 (degree 684), 227377.CBU_1290
-(degree 552), 227377.CBU_1341 (degree 552) and 227377.CBU_1342 (degree 552).
+The undirected graph Coxiella burnetii has 1795 nodes and 96421 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05988 and has 14 connected components, where the component with most
+nodes has 1766 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 107.43, and
+the node degree mode is 2. The top 5 most central nodes are 227377.CBU_1928
+(degree 723), 227377.CBU_1795 (degree 684), 227377.CBU_1290 (degree 552),
+227377.CBU_1341 (degree 552) and 227377.CBU_1342 (degree 552).
 
 
 References
@@ -106,13 +107,14 @@ def CoxiellaBurnetii(
 	
 	Datetime: 2021-02-02 20:07:00.103990
 	
-	The undirected graph Coxiella burnetii has 1795 nodes and 96421 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05988 and
-	has 14 connected components, where the component with most nodes has 1766 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 107.43, and the node degree mode is 2. The top 5 most central
-	nodes are 227377.CBU_1928 (degree 723), 227377.CBU_1795 (degree 684), 227377.CBU_1290
-	(degree 552), 227377.CBU_1341 (degree 552) and 227377.CBU_1342 (degree 552).
+	The undirected graph Coxiella burnetii has 1795 nodes and 96421 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05988 and has 14 connected components, where the component with most
+	nodes has 1766 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 107.43, and
+	the node degree mode is 2. The top 5 most central nodes are 227377.CBU_1928
+	(degree 723), 227377.CBU_1795 (degree 684), 227377.CBU_1290 (degree 552),
+	227377.CBU_1341 (degree 552) and 227377.CBU_1342 (degree 552).
 	
 
 

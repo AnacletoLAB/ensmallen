@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:26:24.051273
 
-The undirected graph Chlamydomonas reinhardtii has 13124 nodes and 1634970 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01899
-and has 63 connected components, where the component with most nodes has 12981 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 249.16, and the node degree mode is 1. The top 5
-most central nodes are 3055.EDO98078 (degree 2625), 3055.EDO97805 (degree 2186),
-3055.EDP00757 (degree 2078), 3055.EDP01338 (degree 1990) and 3055.EDP01779 (degree
-1959).
+The undirected graph Chlamydomonas reinhardtii has 13124 nodes and 1634970
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01899 and has 63 connected components, where the component
+with most nodes has 12981 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 156, the mean node degree
+is 249.16, and the node degree mode is 1. The top 5 most central nodes
+are 3055.EDO98078 (degree 2625), 3055.EDO97805 (degree 2186), 3055.EDP00757
+(degree 2078), 3055.EDP01338 (degree 1990) and 3055.EDP01779 (degree 1959).
 
 
 References
@@ -107,14 +107,14 @@ def ChlamydomonasReinhardtii(
 	
 	Datetime: 2021-02-02 16:26:24.051273
 	
-	The undirected graph Chlamydomonas reinhardtii has 13124 nodes and 1634970 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01899
-	and has 63 connected components, where the component with most nodes has 12981 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 249.16, and the node degree mode is 1. The top 5
-	most central nodes are 3055.EDO98078 (degree 2625), 3055.EDO97805 (degree 2186),
-	3055.EDP00757 (degree 2078), 3055.EDP01338 (degree 1990) and 3055.EDP01779 (degree
-	1959).
+	The undirected graph Chlamydomonas reinhardtii has 13124 nodes and 1634970
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01899 and has 63 connected components, where the component
+	with most nodes has 12981 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 156, the mean node degree
+	is 249.16, and the node degree mode is 1. The top 5 most central nodes
+	are 3055.EDO98078 (degree 2625), 3055.EDO97805 (degree 2186), 3055.EDP00757
+	(degree 2078), 3055.EDP01338 (degree 1990) and 3055.EDP01779 (degree 1959).
 	
 
 

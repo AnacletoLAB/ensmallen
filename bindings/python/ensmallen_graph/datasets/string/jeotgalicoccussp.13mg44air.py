@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:36.482866
 
-The undirected graph Jeotgalicoccus sp. 13MG44air has 2176 nodes and 190892 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08067
-and has 3 connected components, where the component with most nodes has 2172 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 175.45, and the node degree mode is 3. The top 5
-most central nodes are 1461582.BN1048_01056 (degree 842), 1461582.BN1048_01687 (degree
-698), 1461582.BN1048_00862 (degree 695), 1461582.BN1048_01787 (degree 682) and 1461582.BN1048_00197
-(degree 668).
+The undirected graph Jeotgalicoccus sp. 13MG44air has 2176 nodes and 190892
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08067 and has 3 connected components, where the component
+with most nodes has 2172 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 175.45,
+and the node degree mode is 3. The top 5 most central nodes are 1461582.BN1048_01056
+(degree 842), 1461582.BN1048_01687 (degree 698), 1461582.BN1048_00862 (degree
+695), 1461582.BN1048_01787 (degree 682) and 1461582.BN1048_00197 (degree
+668).
 
 
 References
@@ -107,14 +108,15 @@ def JeotgalicoccusSp.13mg44air(
 	
 	Datetime: 2021-02-03 23:07:36.482866
 	
-	The undirected graph Jeotgalicoccus sp. 13MG44air has 2176 nodes and 190892 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08067
-	and has 3 connected components, where the component with most nodes has 2172 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 175.45, and the node degree mode is 3. The top 5
-	most central nodes are 1461582.BN1048_01056 (degree 842), 1461582.BN1048_01687 (degree
-	698), 1461582.BN1048_00862 (degree 695), 1461582.BN1048_01787 (degree 682) and 1461582.BN1048_00197
-	(degree 668).
+	The undirected graph Jeotgalicoccus sp. 13MG44air has 2176 nodes and 190892
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08067 and has 3 connected components, where the component
+	with most nodes has 2172 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 175.45,
+	and the node degree mode is 3. The top 5 most central nodes are 1461582.BN1048_01056
+	(degree 842), 1461582.BN1048_01687 (degree 698), 1461582.BN1048_00862 (degree
+	695), 1461582.BN1048_01787 (degree 682) and 1461582.BN1048_00197 (degree
+	668).
 	
 
 

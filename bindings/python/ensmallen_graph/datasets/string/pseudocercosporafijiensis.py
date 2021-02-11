@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:42:05.325734
 
-The undirected graph Pseudocercospora fijiensis has 7416 nodes and 566404 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02060
-and has 13 connected components, where the component with most nodes has 7389 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 152.75, and the node degree mode is 1. The top 5 most
-central nodes are 83344.XP_007919873.1 (degree 1865), 83344.XP_007923557.1 (degree
-1393), 83344.XP_007927358.1 (degree 1347), 83344.XP_007921421.1 (degree 1271) and
-83344.XP_007920692.1 (degree 1218).
+The undirected graph Pseudocercospora fijiensis has 7416 nodes and 566404
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02060 and has 13 connected components, where the component
+with most nodes has 7389 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 152.75,
+and the node degree mode is 1. The top 5 most central nodes are 83344.XP_007919873.1
+(degree 1865), 83344.XP_007923557.1 (degree 1393), 83344.XP_007927358.1
+(degree 1347), 83344.XP_007921421.1 (degree 1271) and 83344.XP_007920692.1
+(degree 1218).
 
 
 References
@@ -107,14 +108,15 @@ def PseudocercosporaFijiensis(
 	
 	Datetime: 2021-02-02 18:42:05.325734
 	
-	The undirected graph Pseudocercospora fijiensis has 7416 nodes and 566404 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02060
-	and has 13 connected components, where the component with most nodes has 7389 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 152.75, and the node degree mode is 1. The top 5 most
-	central nodes are 83344.XP_007919873.1 (degree 1865), 83344.XP_007923557.1 (degree
-	1393), 83344.XP_007927358.1 (degree 1347), 83344.XP_007921421.1 (degree 1271) and
-	83344.XP_007920692.1 (degree 1218).
+	The undirected graph Pseudocercospora fijiensis has 7416 nodes and 566404
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02060 and has 13 connected components, where the component
+	with most nodes has 7389 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 152.75,
+	and the node degree mode is 1. The top 5 most central nodes are 83344.XP_007919873.1
+	(degree 1865), 83344.XP_007923557.1 (degree 1393), 83344.XP_007927358.1
+	(degree 1347), 83344.XP_007921421.1 (degree 1271) and 83344.XP_007920692.1
+	(degree 1218).
 	
 
 

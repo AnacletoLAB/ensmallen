@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:15.092087
 
-The undirected graph Salinisphaera hydrothermalis has 3779 nodes and 427974 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05995
-and has 3 connected components, where the component with most nodes has 3773 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 184, the mean node degree is 226.50, and the node degree mode is 2. The top 5
-most central nodes are 1304275.C41B8_01942 (degree 1535), 1304275.C41B8_07950 (degree
-1364), 1304275.C41B8_16379 (degree 1296), 1304275.C41B8_16374 (degree 1257) and 1304275.C41B8_09376
-(degree 1155).
+The undirected graph Salinisphaera hydrothermalis has 3779 nodes and 427974
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05995 and has 3 connected components, where the component
+with most nodes has 3773 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 184, the mean node degree is 226.50,
+and the node degree mode is 2. The top 5 most central nodes are 1304275.C41B8_01942
+(degree 1535), 1304275.C41B8_07950 (degree 1364), 1304275.C41B8_16379 (degree
+1296), 1304275.C41B8_16374 (degree 1257) and 1304275.C41B8_09376 (degree
+1155).
 
 
 References
@@ -107,14 +108,15 @@ def SalinisphaeraHydrothermalis(
 	
 	Datetime: 2021-02-03 21:36:15.092087
 	
-	The undirected graph Salinisphaera hydrothermalis has 3779 nodes and 427974 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05995
-	and has 3 connected components, where the component with most nodes has 3773 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 184, the mean node degree is 226.50, and the node degree mode is 2. The top 5
-	most central nodes are 1304275.C41B8_01942 (degree 1535), 1304275.C41B8_07950 (degree
-	1364), 1304275.C41B8_16379 (degree 1296), 1304275.C41B8_16374 (degree 1257) and 1304275.C41B8_09376
-	(degree 1155).
+	The undirected graph Salinisphaera hydrothermalis has 3779 nodes and 427974
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05995 and has 3 connected components, where the component
+	with most nodes has 3773 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 184, the mean node degree is 226.50,
+	and the node degree mode is 2. The top 5 most central nodes are 1304275.C41B8_01942
+	(degree 1535), 1304275.C41B8_07950 (degree 1364), 1304275.C41B8_16379 (degree
+	1296), 1304275.C41B8_16374 (degree 1257) and 1304275.C41B8_09376 (degree
+	1155).
 	
 
 

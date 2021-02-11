@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:15:03.237147
 
-The undirected graph Dongia sp. URHE0060 has 5515 nodes and 923876 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06076 and
-has 21 connected components, where the component with most nodes has 5469 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 282,
-the mean node degree is 335.04, and the node degree mode is 2. The top 5 most central
-nodes are 1380391.JIAS01000014_gene2061 (degree 2933), 1380391.JIAS01000014_gene2335
-(degree 1843), 1380391.JIAS01000001_gene2671 (degree 1760), 1380391.JIAS01000002_gene3190
-(degree 1663) and 1380391.JIAS01000013_gene3635 (degree 1599).
+The undirected graph Dongia sp. URHE0060 has 5515 nodes and 923876 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06076 and has 21 connected components, where the component with most
+nodes has 5469 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 282, the mean node degree is 335.04, and
+the node degree mode is 2. The top 5 most central nodes are 1380391.JIAS01000014_gene2061
+(degree 2933), 1380391.JIAS01000014_gene2335 (degree 1843), 1380391.JIAS01000001_gene2671
+(degree 1760), 1380391.JIAS01000002_gene3190 (degree 1663) and 1380391.JIAS01000013_gene3635
+(degree 1599).
 
 
 References
@@ -107,14 +108,15 @@ def DongiaSp.Urhe0060(
 	
 	Datetime: 2021-02-03 22:15:03.237147
 	
-	The undirected graph Dongia sp. URHE0060 has 5515 nodes and 923876 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06076 and
-	has 21 connected components, where the component with most nodes has 5469 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 282,
-	the mean node degree is 335.04, and the node degree mode is 2. The top 5 most central
-	nodes are 1380391.JIAS01000014_gene2061 (degree 2933), 1380391.JIAS01000014_gene2335
-	(degree 1843), 1380391.JIAS01000001_gene2671 (degree 1760), 1380391.JIAS01000002_gene3190
-	(degree 1663) and 1380391.JIAS01000013_gene3635 (degree 1599).
+	The undirected graph Dongia sp. URHE0060 has 5515 nodes and 923876 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06076 and has 21 connected components, where the component with most
+	nodes has 5469 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 282, the mean node degree is 335.04, and
+	the node degree mode is 2. The top 5 most central nodes are 1380391.JIAS01000014_gene2061
+	(degree 2933), 1380391.JIAS01000014_gene2335 (degree 1843), 1380391.JIAS01000001_gene2671
+	(degree 1760), 1380391.JIAS01000002_gene3190 (degree 1663) and 1380391.JIAS01000013_gene3635
+	(degree 1599).
 	
 
 

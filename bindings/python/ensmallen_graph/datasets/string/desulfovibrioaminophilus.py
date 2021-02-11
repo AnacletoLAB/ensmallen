@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:41.719747
 
-The undirected graph Desulfovibrio aminophilus has 3133 nodes and 330006 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06726
-and has 14 connected components, where the component with most nodes has 3102 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 169, the mean node degree is 210.66, and the node degree mode is 3. The top 5
-most central nodes are 1121440.AUMA01000007_gene1153 (degree 1385), 1121440.AUMA01000001_gene57
-(degree 1172), 1121440.AUMA01000007_gene1216 (degree 1152), 1121440.AUMA01000003_gene3036
-(degree 1137) and 1121440.AUMA01000026_gene108 (degree 1132).
+The undirected graph Desulfovibrio aminophilus has 3133 nodes and 330006
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06726 and has 14 connected components, where the component
+with most nodes has 3102 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 169, the mean node degree is 210.66,
+and the node degree mode is 3. The top 5 most central nodes are 1121440.AUMA01000007_gene1153
+(degree 1385), 1121440.AUMA01000001_gene57 (degree 1172), 1121440.AUMA01000007_gene1216
+(degree 1152), 1121440.AUMA01000003_gene3036 (degree 1137) and 1121440.AUMA01000026_gene108
+(degree 1132).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioAminophilus(
 	
 	Datetime: 2021-02-02 22:36:41.719747
 	
-	The undirected graph Desulfovibrio aminophilus has 3133 nodes and 330006 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06726
-	and has 14 connected components, where the component with most nodes has 3102 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 169, the mean node degree is 210.66, and the node degree mode is 3. The top 5
-	most central nodes are 1121440.AUMA01000007_gene1153 (degree 1385), 1121440.AUMA01000001_gene57
-	(degree 1172), 1121440.AUMA01000007_gene1216 (degree 1152), 1121440.AUMA01000003_gene3036
-	(degree 1137) and 1121440.AUMA01000026_gene108 (degree 1132).
+	The undirected graph Desulfovibrio aminophilus has 3133 nodes and 330006
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06726 and has 14 connected components, where the component
+	with most nodes has 3102 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 169, the mean node degree is 210.66,
+	and the node degree mode is 3. The top 5 most central nodes are 1121440.AUMA01000007_gene1153
+	(degree 1385), 1121440.AUMA01000001_gene57 (degree 1172), 1121440.AUMA01000007_gene1216
+	(degree 1152), 1121440.AUMA01000003_gene3036 (degree 1137) and 1121440.AUMA01000026_gene108
+	(degree 1132).
 	
 
 

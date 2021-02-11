@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:43.453701
 
-The undirected graph Arenitalea lutea has 2973 nodes and 314061 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07109 and
-is connected, as it has a single component. The graph median node degree is 198,
-the mean node degree is 211.28, and the node degree mode is 5. The top 5 most central
-nodes are 1178825.ALIH01000001_gene2565 (degree 1114), 1178825.ALIH01000003_gene2005
-(degree 1081), 1178825.ALIH01000012_gene1820 (degree 911), 1178825.ALIH01000014_gene1957
-(degree 799) and 1178825.ALIH01000006_gene1501 (degree 789).
+The undirected graph Arenitalea lutea has 2973 nodes and 314061 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07109 and is connected, as it has a single component. The graph median
+node degree is 198, the mean node degree is 211.28, and the node degree
+mode is 5. The top 5 most central nodes are 1178825.ALIH01000001_gene2565
+(degree 1114), 1178825.ALIH01000003_gene2005 (degree 1081), 1178825.ALIH01000012_gene1820
+(degree 911), 1178825.ALIH01000014_gene1957 (degree 799) and 1178825.ALIH01000006_gene1501
+(degree 789).
 
 
 References
@@ -106,13 +107,14 @@ def ArenitaleaLutea(
 	
 	Datetime: 2021-02-02 23:09:43.453701
 	
-	The undirected graph Arenitalea lutea has 2973 nodes and 314061 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07109 and
-	is connected, as it has a single component. The graph median node degree is 198,
-	the mean node degree is 211.28, and the node degree mode is 5. The top 5 most central
-	nodes are 1178825.ALIH01000001_gene2565 (degree 1114), 1178825.ALIH01000003_gene2005
-	(degree 1081), 1178825.ALIH01000012_gene1820 (degree 911), 1178825.ALIH01000014_gene1957
-	(degree 799) and 1178825.ALIH01000006_gene1501 (degree 789).
+	The undirected graph Arenitalea lutea has 2973 nodes and 314061 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07109 and is connected, as it has a single component. The graph median
+	node degree is 198, the mean node degree is 211.28, and the node degree
+	mode is 5. The top 5 most central nodes are 1178825.ALIH01000001_gene2565
+	(degree 1114), 1178825.ALIH01000003_gene2005 (degree 1081), 1178825.ALIH01000012_gene1820
+	(degree 911), 1178825.ALIH01000014_gene1957 (degree 799) and 1178825.ALIH01000006_gene1501
+	(degree 789).
 	
 
 

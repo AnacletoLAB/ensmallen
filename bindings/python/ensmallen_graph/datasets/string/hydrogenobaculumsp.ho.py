@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:50.563338
 
-The undirected graph Hydrogenobaculum sp. HO has 1573 nodes and 90406 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07312 and
-is connected, as it has a single component. The graph median node degree is 89, the
-mean node degree is 114.95, and the node degree mode is 11. The top 5 most central
-nodes are 547144.HydHO_1500 (degree 622), 547144.HydHO_0606 (degree 618), 547144.HydHO_0634
-(degree 601), 547144.HydHO_1390 (degree 599) and 547144.HydHO_0961 (degree 563).
+The undirected graph Hydrogenobaculum sp. HO has 1573 nodes and 90406 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07312 and is connected, as it has a single component. The graph median
+node degree is 89, the mean node degree is 114.95, and the node degree
+mode is 11. The top 5 most central nodes are 547144.HydHO_1500 (degree
+622), 547144.HydHO_0606 (degree 618), 547144.HydHO_0634 (degree 601), 547144.HydHO_1390
+(degree 599) and 547144.HydHO_0961 (degree 563).
 
 
 References
@@ -105,12 +106,13 @@ def HydrogenobaculumSp.Ho(
 	
 	Datetime: 2021-02-02 21:08:50.563338
 	
-	The undirected graph Hydrogenobaculum sp. HO has 1573 nodes and 90406 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07312 and
-	is connected, as it has a single component. The graph median node degree is 89, the
-	mean node degree is 114.95, and the node degree mode is 11. The top 5 most central
-	nodes are 547144.HydHO_1500 (degree 622), 547144.HydHO_0606 (degree 618), 547144.HydHO_0634
-	(degree 601), 547144.HydHO_1390 (degree 599) and 547144.HydHO_0961 (degree 563).
+	The undirected graph Hydrogenobaculum sp. HO has 1573 nodes and 90406 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07312 and is connected, as it has a single component. The graph median
+	node degree is 89, the mean node degree is 114.95, and the node degree
+	mode is 11. The top 5 most central nodes are 547144.HydHO_1500 (degree
+	622), 547144.HydHO_0606 (degree 618), 547144.HydHO_0634 (degree 601), 547144.HydHO_1390
+	(degree 599) and 547144.HydHO_0961 (degree 563).
 	
 
 

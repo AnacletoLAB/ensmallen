@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:11:25.814886
 
-The undirected graph Sphingomonas sp. FUKUSWIS1 has 3531 nodes and 315069 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05055
-and has 7 connected components, where the component with most nodes has 3510 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 178.46, and the node degree mode is 3. The top 5
-most central nodes are 1379701.JPJC01000206_gene1637 (degree 1417), 1379701.JPJC01000257_gene1476
-(degree 1121), 1379701.JPJC01000030_gene646 (degree 1038), 1379701.JPJC01000012_gene162
-(degree 999) and 1379701.JPJC01000258_gene2700 (degree 967).
+The undirected graph Sphingomonas sp. FUKUSWIS1 has 3531 nodes and 315069
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05055 and has 7 connected components, where the component
+with most nodes has 3510 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 178.46,
+and the node degree mode is 3. The top 5 most central nodes are 1379701.JPJC01000206_gene1637
+(degree 1417), 1379701.JPJC01000257_gene1476 (degree 1121), 1379701.JPJC01000030_gene646
+(degree 1038), 1379701.JPJC01000012_gene162 (degree 999) and 1379701.JPJC01000258_gene2700
+(degree 967).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.Fukuswis1(
 	
 	Datetime: 2021-02-03 22:11:25.814886
 	
-	The undirected graph Sphingomonas sp. FUKUSWIS1 has 3531 nodes and 315069 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05055
-	and has 7 connected components, where the component with most nodes has 3510 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 178.46, and the node degree mode is 3. The top 5
-	most central nodes are 1379701.JPJC01000206_gene1637 (degree 1417), 1379701.JPJC01000257_gene1476
-	(degree 1121), 1379701.JPJC01000030_gene646 (degree 1038), 1379701.JPJC01000012_gene162
-	(degree 999) and 1379701.JPJC01000258_gene2700 (degree 967).
+	The undirected graph Sphingomonas sp. FUKUSWIS1 has 3531 nodes and 315069
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05055 and has 7 connected components, where the component
+	with most nodes has 3510 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 178.46,
+	and the node degree mode is 3. The top 5 most central nodes are 1379701.JPJC01000206_gene1637
+	(degree 1417), 1379701.JPJC01000257_gene1476 (degree 1121), 1379701.JPJC01000030_gene646
+	(degree 1038), 1379701.JPJC01000012_gene162 (degree 999) and 1379701.JPJC01000258_gene2700
+	(degree 967).
 	
 
 

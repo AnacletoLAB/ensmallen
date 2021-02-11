@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:58.113698
 
-The undirected graph Cyphellophora europaea has 7983 nodes and 747866 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02347 and
-has 4 connected components, where the component with most nodes has 7977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 187.36, and the node degree mode is 1. The top 5 most central
-nodes are 293227.XP_008713956.1 (degree 2131), 293227.XP_008715979.1 (degree 1956),
-293227.XP_008716090.1 (degree 1595), 293227.XP_008719862.1 (degree 1542) and 293227.XP_008721272.1
+The undirected graph Cyphellophora europaea has 7983 nodes and 747866 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02347 and has 4 connected components, where the component with most
+nodes has 7977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 187.36, and
+the node degree mode is 1. The top 5 most central nodes are 293227.XP_008713956.1
+(degree 2131), 293227.XP_008715979.1 (degree 1956), 293227.XP_008716090.1
+(degree 1595), 293227.XP_008719862.1 (degree 1542) and 293227.XP_008721272.1
 (degree 1461).
 
 
@@ -107,13 +108,14 @@ def CyphellophoraEuropaea(
 	
 	Datetime: 2021-02-02 20:20:58.113698
 	
-	The undirected graph Cyphellophora europaea has 7983 nodes and 747866 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02347 and
-	has 4 connected components, where the component with most nodes has 7977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 187.36, and the node degree mode is 1. The top 5 most central
-	nodes are 293227.XP_008713956.1 (degree 2131), 293227.XP_008715979.1 (degree 1956),
-	293227.XP_008716090.1 (degree 1595), 293227.XP_008719862.1 (degree 1542) and 293227.XP_008721272.1
+	The undirected graph Cyphellophora europaea has 7983 nodes and 747866 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02347 and has 4 connected components, where the component with most
+	nodes has 7977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 187.36, and
+	the node degree mode is 1. The top 5 most central nodes are 293227.XP_008713956.1
+	(degree 2131), 293227.XP_008715979.1 (degree 1956), 293227.XP_008716090.1
+	(degree 1595), 293227.XP_008719862.1 (degree 1542) and 293227.XP_008721272.1
 	(degree 1461).
 	
 

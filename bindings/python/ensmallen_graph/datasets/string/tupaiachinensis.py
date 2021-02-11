@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:22.028009
 
-The undirected graph Tupaia chinensis has 20040 nodes and 4431937 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02207 and
-has 4 connected components, where the component with most nodes has 20034 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 312,
-the mean node degree is 442.31, and the node degree mode is 10. The top 5 most central
-nodes are 246437.XP_006142392.1 (degree 4348), 246437.XP_006156448.1 (degree 4135),
-246437.XP_006148340.1 (degree 4003), 246437.XP_006170911.1 (degree 3924) and 246437.XP_006140283.1
+The undirected graph Tupaia chinensis has 20040 nodes and 4431937 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02207 and has 4 connected components, where the component with most
+nodes has 20034 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 312, the mean node degree is 442.31, and
+the node degree mode is 10. The top 5 most central nodes are 246437.XP_006142392.1
+(degree 4348), 246437.XP_006156448.1 (degree 4135), 246437.XP_006148340.1
+(degree 4003), 246437.XP_006170911.1 (degree 3924) and 246437.XP_006140283.1
 (degree 3812).
 
 
@@ -107,13 +108,14 @@ def TupaiaChinensis(
 	
 	Datetime: 2021-02-02 20:11:22.028009
 	
-	The undirected graph Tupaia chinensis has 20040 nodes and 4431937 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02207 and
-	has 4 connected components, where the component with most nodes has 20034 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 312,
-	the mean node degree is 442.31, and the node degree mode is 10. The top 5 most central
-	nodes are 246437.XP_006142392.1 (degree 4348), 246437.XP_006156448.1 (degree 4135),
-	246437.XP_006148340.1 (degree 4003), 246437.XP_006170911.1 (degree 3924) and 246437.XP_006140283.1
+	The undirected graph Tupaia chinensis has 20040 nodes and 4431937 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02207 and has 4 connected components, where the component with most
+	nodes has 20034 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 312, the mean node degree is 442.31, and
+	the node degree mode is 10. The top 5 most central nodes are 246437.XP_006142392.1
+	(degree 4348), 246437.XP_006156448.1 (degree 4135), 246437.XP_006148340.1
+	(degree 4003), 246437.XP_006170911.1 (degree 3924) and 246437.XP_006140283.1
 	(degree 3812).
 	
 

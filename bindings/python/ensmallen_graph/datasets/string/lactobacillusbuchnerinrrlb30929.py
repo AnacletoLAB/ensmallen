@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:44.045402
 
-The undirected graph Lactobacillus buchneri NRRLB30929 has 2342 nodes and 132463
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04832 and has 12 connected components, where the component with most nodes has
-2310 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 85, the mean node degree is 113.12, and the node degree mode is 2. The
-top 5 most central nodes are 511437.Lbuc_1516 (degree 1129), 511437.Lbuc_1217 (degree
-958), 511437.Lbuc_1604 (degree 673), 511437.Lbuc_0992 (degree 635) and 511437.Lbuc_1133
-(degree 631).
+The undirected graph Lactobacillus buchneri NRRLB30929 has 2342 nodes and
+132463 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04832 and has 12 connected components, where the
+component with most nodes has 2310 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 85, the mean node degree
+is 113.12, and the node degree mode is 2. The top 5 most central nodes
+are 511437.Lbuc_1516 (degree 1129), 511437.Lbuc_1217 (degree 958), 511437.Lbuc_1604
+(degree 673), 511437.Lbuc_0992 (degree 635) and 511437.Lbuc_1133 (degree
+631).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusBuchneriNrrlb30929(
 	
 	Datetime: 2021-02-02 21:02:44.045402
 	
-	The undirected graph Lactobacillus buchneri NRRLB30929 has 2342 nodes and 132463
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04832 and has 12 connected components, where the component with most nodes has
-	2310 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 85, the mean node degree is 113.12, and the node degree mode is 2. The
-	top 5 most central nodes are 511437.Lbuc_1516 (degree 1129), 511437.Lbuc_1217 (degree
-	958), 511437.Lbuc_1604 (degree 673), 511437.Lbuc_0992 (degree 635) and 511437.Lbuc_1133
-	(degree 631).
+	The undirected graph Lactobacillus buchneri NRRLB30929 has 2342 nodes and
+	132463 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04832 and has 12 connected components, where the
+	component with most nodes has 2310 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 85, the mean node degree
+	is 113.12, and the node degree mode is 2. The top 5 most central nodes
+	are 511437.Lbuc_1516 (degree 1129), 511437.Lbuc_1217 (degree 958), 511437.Lbuc_1604
+	(degree 673), 511437.Lbuc_0992 (degree 635) and 511437.Lbuc_1133 (degree
+	631).
 	
 
 

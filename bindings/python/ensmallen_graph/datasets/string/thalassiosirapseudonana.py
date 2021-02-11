@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:10.272026
 
-The undirected graph Thalassiosira pseudonana has 6334 nodes and 732948 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03654
-and has 22 connected components, where the component with most nodes has 6290 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 231.43, and the node degree mode is 1. The top 5
-most central nodes are 35128.Thaps13647 (degree 2353), 35128.Thaps28239 (degree 2139),
-35128.Thaps41038 (degree 1788), 35128.Thaps26492 (degree 1781) and 35128.Thaps270148
-(degree 1721).
+The undirected graph Thalassiosira pseudonana has 6334 nodes and 732948
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03654 and has 22 connected components, where the component
+with most nodes has 6290 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 231.43,
+and the node degree mode is 1. The top 5 most central nodes are 35128.Thaps13647
+(degree 2353), 35128.Thaps28239 (degree 2139), 35128.Thaps41038 (degree
+1788), 35128.Thaps26492 (degree 1781) and 35128.Thaps270148 (degree 1721).
 
 
 References
@@ -107,14 +107,14 @@ def ThalassiosiraPseudonana(
 	
 	Datetime: 2021-02-02 18:05:10.272026
 	
-	The undirected graph Thalassiosira pseudonana has 6334 nodes and 732948 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03654
-	and has 22 connected components, where the component with most nodes has 6290 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 231.43, and the node degree mode is 1. The top 5
-	most central nodes are 35128.Thaps13647 (degree 2353), 35128.Thaps28239 (degree 2139),
-	35128.Thaps41038 (degree 1788), 35128.Thaps26492 (degree 1781) and 35128.Thaps270148
-	(degree 1721).
+	The undirected graph Thalassiosira pseudonana has 6334 nodes and 732948
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03654 and has 22 connected components, where the component
+	with most nodes has 6290 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 231.43,
+	and the node degree mode is 1. The top 5 most central nodes are 35128.Thaps13647
+	(degree 2353), 35128.Thaps28239 (degree 2139), 35128.Thaps41038 (degree
+	1788), 35128.Thaps26492 (degree 1781) and 35128.Thaps270148 (degree 1721).
 	
 
 

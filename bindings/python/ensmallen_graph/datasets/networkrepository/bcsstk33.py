@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:03:20.139004
 
-The undirected graph bcsstk33 has 8738 nodes and 300321 unweighted edges, of which
-8738 are self-loops. The graph is sparse as it has a density of 0.00775 and is connected,
-as it has a single component. The graph median node degree is 79, the mean node degree
-is 67.74, and the node degree mode is 81. The top 5 most central nodes are 8737 (degree
-141), 8736 (degree 141), 8735 (degree 140), 8734 (degree 140) and 8733 (degree 140).
+The undirected graph bcsstk33 has 8738 nodes and 300321 unweighted edges,
+of which 8738 are self-loops. The graph is sparse as it has a density of
+0.00775 and is connected, as it has a single component. The graph median
+node degree is 79, the mean node degree is 67.74, and the node degree mode
+is 81. The top 5 most central nodes are 8737 (degree 141), 8736 (degree
+141), 8735 (degree 140), 8734 (degree 140) and 8733 (degree 140).
 
 
 References
@@ -101,11 +102,12 @@ def Bcsstk33(
 	
 	Datetime: 2021-02-06 11:03:20.139004
 	
-	The undirected graph bcsstk33 has 8738 nodes and 300321 unweighted edges, of which
-	8738 are self-loops. The graph is sparse as it has a density of 0.00775 and is connected,
-	as it has a single component. The graph median node degree is 79, the mean node degree
-	is 67.74, and the node degree mode is 81. The top 5 most central nodes are 8737 (degree
-	141), 8736 (degree 141), 8735 (degree 140), 8734 (degree 140) and 8733 (degree 140).
+	The undirected graph bcsstk33 has 8738 nodes and 300321 unweighted edges,
+	of which 8738 are self-loops. The graph is sparse as it has a density of
+	0.00775 and is connected, as it has a single component. The graph median
+	node degree is 79, the mean node degree is 67.74, and the node degree mode
+	is 81. The top 5 most central nodes are 8737 (degree 141), 8736 (degree
+	141), 8735 (degree 140), 8734 (degree 140) and 8733 (degree 140).
 	
 
 

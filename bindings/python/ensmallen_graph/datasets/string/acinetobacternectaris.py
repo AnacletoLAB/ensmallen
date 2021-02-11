@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:15.796959
 
-The undirected graph Acinetobacter nectaris has 2531 nodes and 177312 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05538 and
-has 8 connected components, where the component with most nodes has 2517 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 140.11, and the node degree mode is 5. The top 5 most central
-nodes are 1392540.P256_01263 (degree 958), 1392540.P256_01566 (degree 886), 1392540.P256_01580
-(degree 823), 1392540.P256_01015 (degree 714) and 1392540.P256_02077 (degree 696).
+The undirected graph Acinetobacter nectaris has 2531 nodes and 177312 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05538 and has 8 connected components, where the component with most
+nodes has 2517 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 140.11, and
+the node degree mode is 5. The top 5 most central nodes are 1392540.P256_01263
+(degree 958), 1392540.P256_01566 (degree 886), 1392540.P256_01580 (degree
+823), 1392540.P256_01015 (degree 714) and 1392540.P256_02077 (degree 696).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterNectaris(
 	
 	Datetime: 2021-02-03 22:25:15.796959
 	
-	The undirected graph Acinetobacter nectaris has 2531 nodes and 177312 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05538 and
-	has 8 connected components, where the component with most nodes has 2517 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 140.11, and the node degree mode is 5. The top 5 most central
-	nodes are 1392540.P256_01263 (degree 958), 1392540.P256_01566 (degree 886), 1392540.P256_01580
-	(degree 823), 1392540.P256_01015 (degree 714) and 1392540.P256_02077 (degree 696).
+	The undirected graph Acinetobacter nectaris has 2531 nodes and 177312 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05538 and has 8 connected components, where the component with most
+	nodes has 2517 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 140.11, and
+	the node degree mode is 5. The top 5 most central nodes are 1392540.P256_01263
+	(degree 958), 1392540.P256_01566 (degree 886), 1392540.P256_01580 (degree
+	823), 1392540.P256_01015 (degree 714) and 1392540.P256_02077 (degree 696).
 	
 
 

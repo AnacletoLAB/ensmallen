@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:09.179864
 
-The undirected graph Methylophaga aminisulfidivorans has 3144 nodes and 303571 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06144
-and has 12 connected components, where the component with most nodes has 3108 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 193.11, and the node degree mode is 2. The top 5
-most central nodes are 1026882.MAMP_01452 (degree 1250), 1026882.MAMP_02092 (degree
-1244), 1026882.MAMP_01259 (degree 1014), 1026882.MAMP_01505 (degree 993) and 1026882.MAMP_01549
+The undirected graph Methylophaga aminisulfidivorans has 3144 nodes and
+303571 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06144 and has 12 connected components, where the
+component with most nodes has 3108 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+is 193.11, and the node degree mode is 2. The top 5 most central nodes
+are 1026882.MAMP_01452 (degree 1250), 1026882.MAMP_02092 (degree 1244),
+1026882.MAMP_01259 (degree 1014), 1026882.MAMP_01505 (degree 993) and 1026882.MAMP_01549
 (degree 960).
 
 
@@ -107,13 +108,14 @@ def MethylophagaAminisulfidivorans(
 	
 	Datetime: 2021-02-02 22:09:09.179864
 	
-	The undirected graph Methylophaga aminisulfidivorans has 3144 nodes and 303571 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06144
-	and has 12 connected components, where the component with most nodes has 3108 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 193.11, and the node degree mode is 2. The top 5
-	most central nodes are 1026882.MAMP_01452 (degree 1250), 1026882.MAMP_02092 (degree
-	1244), 1026882.MAMP_01259 (degree 1014), 1026882.MAMP_01505 (degree 993) and 1026882.MAMP_01549
+	The undirected graph Methylophaga aminisulfidivorans has 3144 nodes and
+	303571 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06144 and has 12 connected components, where the
+	component with most nodes has 3108 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+	is 193.11, and the node degree mode is 2. The top 5 most central nodes
+	are 1026882.MAMP_01452 (degree 1250), 1026882.MAMP_02092 (degree 1244),
+	1026882.MAMP_01259 (degree 1014), 1026882.MAMP_01505 (degree 993) and 1026882.MAMP_01549
 	(degree 960).
 	
 

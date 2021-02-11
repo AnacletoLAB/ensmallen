@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:03.426035
 
-The undirected graph Cellvibrio japonicus has 3693 nodes and 356625 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05231 and
-has 10 connected components, where the component with most nodes has 3671 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 193.14, and the node degree mode is 2. The top 5 most central
-nodes are 498211.CJA_3359 (degree 1306), 498211.CJA_3002 (degree 1242), 498211.CJA_3478
-(degree 1235), 498211.CJA_1898 (degree 1219) and 498211.CJA_2029 (degree 1120).
+The undirected graph Cellvibrio japonicus has 3693 nodes and 356625 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05231 and has 10 connected components, where the component with most
+nodes has 3671 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 193.14, and
+the node degree mode is 2. The top 5 most central nodes are 498211.CJA_3359
+(degree 1306), 498211.CJA_3002 (degree 1242), 498211.CJA_3478 (degree 1235),
+498211.CJA_1898 (degree 1219) and 498211.CJA_2029 (degree 1120).
 
 
 References
@@ -106,13 +107,14 @@ def CellvibrioJaponicus(
 	
 	Datetime: 2021-02-02 21:01:03.426035
 	
-	The undirected graph Cellvibrio japonicus has 3693 nodes and 356625 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05231 and
-	has 10 connected components, where the component with most nodes has 3671 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 193.14, and the node degree mode is 2. The top 5 most central
-	nodes are 498211.CJA_3359 (degree 1306), 498211.CJA_3002 (degree 1242), 498211.CJA_3478
-	(degree 1235), 498211.CJA_1898 (degree 1219) and 498211.CJA_2029 (degree 1120).
+	The undirected graph Cellvibrio japonicus has 3693 nodes and 356625 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05231 and has 10 connected components, where the component with most
+	nodes has 3671 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 193.14, and
+	the node degree mode is 2. The top 5 most central nodes are 498211.CJA_3359
+	(degree 1306), 498211.CJA_3002 (degree 1242), 498211.CJA_3478 (degree 1235),
+	498211.CJA_1898 (degree 1219) and 498211.CJA_2029 (degree 1120).
 	
 
 

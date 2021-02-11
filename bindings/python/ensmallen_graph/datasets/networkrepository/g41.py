@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:04:48.462190
 
-The undirected graph G41 has 2000 nodes and 11785 unweighted edges with 2 different
-edge types: -1 and 1, of which none are self-loops. The graph is sparse as it has
-a density of 0.00590 and is connected, as it has a single component. The graph median
-node degree is 8, the mean node degree is 11.79, and the node degree mode is 6. The
-top 5 most central nodes are 4 (degree 279), 5 (degree 226), 3 (degree 176), 10 (degree
-156) and 2 (degree 129).
+The undirected graph G41 has 2000 nodes and 11785 unweighted edges with
+2 different edge types: -1 and 1, of which none are self-loops. The graph
+is sparse as it has a density of 0.00590 and is connected, as it has a
+single component. The graph median node degree is 8, the mean node degree
+is 11.79, and the node degree mode is 6. The top 5 most central nodes are
+4 (degree 279), 5 (degree 226), 3 (degree 176), 10 (degree 156) and 2 (degree
+129).
 
 
 References
@@ -102,12 +103,13 @@ def G41(
 	
 	Datetime: 2021-02-06 10:04:48.462190
 	
-	The undirected graph G41 has 2000 nodes and 11785 unweighted edges with 2 different
-	edge types: -1 and 1, of which none are self-loops. The graph is sparse as it has
-	a density of 0.00590 and is connected, as it has a single component. The graph median
-	node degree is 8, the mean node degree is 11.79, and the node degree mode is 6. The
-	top 5 most central nodes are 4 (degree 279), 5 (degree 226), 3 (degree 176), 10 (degree
-	156) and 2 (degree 129).
+	The undirected graph G41 has 2000 nodes and 11785 unweighted edges with
+	2 different edge types: -1 and 1, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00590 and is connected, as it has a
+	single component. The graph median node degree is 8, the mean node degree
+	is 11.79, and the node degree mode is 6. The top 5 most central nodes are
+	4 (degree 279), 5 (degree 226), 3 (degree 176), 10 (degree 156) and 2 (degree
+	129).
 	
 
 

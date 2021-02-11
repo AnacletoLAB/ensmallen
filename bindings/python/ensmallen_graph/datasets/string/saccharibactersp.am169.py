@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:22.124028
 
-The undirected graph Saccharibacter sp. AM169 has 1827 nodes and 114433 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06860
-and has 11 connected components, where the component with most nodes has 1801 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 125.27, and the node degree mode is 5. The top 5
-most central nodes are 1343158.SACS_1520 (degree 760), 1343158.SACS_1559 (degree
-690), 1343158.SACS_1318 (degree 634), 1343158.SACS_1279 (degree 602) and 1343158.SACS_0445
-(degree 591).
+The undirected graph Saccharibacter sp. AM169 has 1827 nodes and 114433
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06860 and has 11 connected components, where the component
+with most nodes has 1801 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 125.27,
+and the node degree mode is 5. The top 5 most central nodes are 1343158.SACS_1520
+(degree 760), 1343158.SACS_1559 (degree 690), 1343158.SACS_1318 (degree
+634), 1343158.SACS_1279 (degree 602) and 1343158.SACS_0445 (degree 591).
 
 
 References
@@ -107,14 +107,14 @@ def SaccharibacterSp.Am169(
 	
 	Datetime: 2021-02-03 22:01:22.124028
 	
-	The undirected graph Saccharibacter sp. AM169 has 1827 nodes and 114433 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06860
-	and has 11 connected components, where the component with most nodes has 1801 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 125.27, and the node degree mode is 5. The top 5
-	most central nodes are 1343158.SACS_1520 (degree 760), 1343158.SACS_1559 (degree
-	690), 1343158.SACS_1318 (degree 634), 1343158.SACS_1279 (degree 602) and 1343158.SACS_0445
-	(degree 591).
+	The undirected graph Saccharibacter sp. AM169 has 1827 nodes and 114433
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06860 and has 11 connected components, where the component
+	with most nodes has 1801 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 125.27,
+	and the node degree mode is 5. The top 5 most central nodes are 1343158.SACS_1520
+	(degree 760), 1343158.SACS_1559 (degree 690), 1343158.SACS_1318 (degree
+	634), 1343158.SACS_1279 (degree 602) and 1343158.SACS_0445 (degree 591).
 	
 
 

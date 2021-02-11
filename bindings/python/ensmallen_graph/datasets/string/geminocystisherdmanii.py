@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:59.064554
 
-The undirected graph Geminocystis herdmanii has 4124 nodes and 444011 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05223 and
-has 10 connected components, where the component with most nodes has 4106 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 215.33, and the node degree mode is 4. The top 5 most central
-nodes are 113355.CM001775_gene1895 (degree 1548), 113355.CM001775_gene3963 (degree
-1281), 113355.CM001775_gene2017 (degree 1236), 113355.CM001775_gene2717 (degree 1051)
-and 113355.CM001775_gene455 (degree 1048).
+The undirected graph Geminocystis herdmanii has 4124 nodes and 444011 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05223 and has 10 connected components, where the component with most
+nodes has 4106 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 196, the mean node degree is 215.33, and
+the node degree mode is 4. The top 5 most central nodes are 113355.CM001775_gene1895
+(degree 1548), 113355.CM001775_gene3963 (degree 1281), 113355.CM001775_gene2017
+(degree 1236), 113355.CM001775_gene2717 (degree 1051) and 113355.CM001775_gene455
+(degree 1048).
 
 
 References
@@ -107,14 +108,15 @@ def GeminocystisHerdmanii(
 	
 	Datetime: 2021-02-02 19:46:59.064554
 	
-	The undirected graph Geminocystis herdmanii has 4124 nodes and 444011 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05223 and
-	has 10 connected components, where the component with most nodes has 4106 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 215.33, and the node degree mode is 4. The top 5 most central
-	nodes are 113355.CM001775_gene1895 (degree 1548), 113355.CM001775_gene3963 (degree
-	1281), 113355.CM001775_gene2017 (degree 1236), 113355.CM001775_gene2717 (degree 1051)
-	and 113355.CM001775_gene455 (degree 1048).
+	The undirected graph Geminocystis herdmanii has 4124 nodes and 444011 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05223 and has 10 connected components, where the component with most
+	nodes has 4106 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 196, the mean node degree is 215.33, and
+	the node degree mode is 4. The top 5 most central nodes are 113355.CM001775_gene1895
+	(degree 1548), 113355.CM001775_gene3963 (degree 1281), 113355.CM001775_gene2017
+	(degree 1236), 113355.CM001775_gene2717 (degree 1051) and 113355.CM001775_gene455
+	(degree 1048).
 	
 
 

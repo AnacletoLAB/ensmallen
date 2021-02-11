@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:58.589947
 
-The undirected graph Streptococcus oligofermentans has 2056 nodes and 106410 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05037
-and has 6 connected components, where the component with most nodes has 2043 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 103.51, and the node degree mode is 10. The top 5
-most central nodes are 1302863.I872_00430 (degree 830), 1302863.I872_04470 (degree
-643), 1302863.I872_08230 (degree 586), 1302863.I872_10590 (degree 571) and 1302863.I872_01260
-(degree 556).
+The undirected graph Streptococcus oligofermentans has 2056 nodes and 106410
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05037 and has 6 connected components, where the component
+with most nodes has 2043 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 103.51,
+and the node degree mode is 10. The top 5 most central nodes are 1302863.I872_00430
+(degree 830), 1302863.I872_04470 (degree 643), 1302863.I872_08230 (degree
+586), 1302863.I872_10590 (degree 571) and 1302863.I872_01260 (degree 556).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusOligofermentans(
 	
 	Datetime: 2021-02-03 21:35:58.589947
 	
-	The undirected graph Streptococcus oligofermentans has 2056 nodes and 106410 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05037
-	and has 6 connected components, where the component with most nodes has 2043 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 103.51, and the node degree mode is 10. The top 5
-	most central nodes are 1302863.I872_00430 (degree 830), 1302863.I872_04470 (degree
-	643), 1302863.I872_08230 (degree 586), 1302863.I872_10590 (degree 571) and 1302863.I872_01260
-	(degree 556).
+	The undirected graph Streptococcus oligofermentans has 2056 nodes and 106410
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05037 and has 6 connected components, where the component
+	with most nodes has 2043 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 103.51,
+	and the node degree mode is 10. The top 5 most central nodes are 1302863.I872_00430
+	(degree 830), 1302863.I872_04470 (degree 643), 1302863.I872_08230 (degree
+	586), 1302863.I872_10590 (degree 571) and 1302863.I872_01260 (degree 556).
 	
 
 

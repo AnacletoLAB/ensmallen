@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:32.600421
 
-The undirected graph Chryseobacterium indologenes has 4170 nodes and 331993 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03819
-and has 21 connected components, where the component with most nodes has 4122 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 159.23, and the node degree mode is 5. The top 5
-most central nodes are 1218103.CIN01S_16_01320 (degree 1442), 1218103.CIN01S_19_00430
-(degree 1143), 1218103.CIN01S_09_02550 (degree 988), 1218103.CIN01S_12_00050 (degree
-959) and 1218103.CIN01S_13_00760 (degree 934).
+The undirected graph Chryseobacterium indologenes has 4170 nodes and 331993
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03819 and has 21 connected components, where the component
+with most nodes has 4122 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 159.23,
+and the node degree mode is 5. The top 5 most central nodes are 1218103.CIN01S_16_01320
+(degree 1442), 1218103.CIN01S_19_00430 (degree 1143), 1218103.CIN01S_09_02550
+(degree 988), 1218103.CIN01S_12_00050 (degree 959) and 1218103.CIN01S_13_00760
+(degree 934).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumIndologenes(
 	
 	Datetime: 2021-02-02 23:22:32.600421
 	
-	The undirected graph Chryseobacterium indologenes has 4170 nodes and 331993 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03819
-	and has 21 connected components, where the component with most nodes has 4122 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 159.23, and the node degree mode is 5. The top 5
-	most central nodes are 1218103.CIN01S_16_01320 (degree 1442), 1218103.CIN01S_19_00430
-	(degree 1143), 1218103.CIN01S_09_02550 (degree 988), 1218103.CIN01S_12_00050 (degree
-	959) and 1218103.CIN01S_13_00760 (degree 934).
+	The undirected graph Chryseobacterium indologenes has 4170 nodes and 331993
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03819 and has 21 connected components, where the component
+	with most nodes has 4122 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 159.23,
+	and the node degree mode is 5. The top 5 most central nodes are 1218103.CIN01S_16_01320
+	(degree 1442), 1218103.CIN01S_19_00430 (degree 1143), 1218103.CIN01S_09_02550
+	(degree 988), 1218103.CIN01S_12_00050 (degree 959) and 1218103.CIN01S_13_00760
+	(degree 934).
 	
 
 

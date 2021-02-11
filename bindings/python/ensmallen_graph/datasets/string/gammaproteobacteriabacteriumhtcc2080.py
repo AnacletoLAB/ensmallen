@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:44.972512
 
-The undirected graph Gammaproteobacteria bacterium HTCC2080 has 3161 nodes and 303232
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06071 and has 18 connected components, where the component with most nodes has
-3125 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 154, the mean node degree is 191.86, and the node degree mode is 1. The
-top 5 most central nodes are 247639.MGP2080_01391 (degree 1171), 247639.MGP2080_07509
-(degree 1069), 247639.MGP2080_14531 (degree 1041), 247639.MGP2080_03650 (degree 1016)
+The undirected graph Gammaproteobacteria bacterium HTCC2080 has 3161 nodes
+and 303232 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06071 and has 18 connected components, where the
+component with most nodes has 3125 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+is 191.86, and the node degree mode is 1. The top 5 most central nodes
+are 247639.MGP2080_01391 (degree 1171), 247639.MGP2080_07509 (degree 1069),
+247639.MGP2080_14531 (degree 1041), 247639.MGP2080_03650 (degree 1016)
 and 247639.MGP2080_08274 (degree 1003).
 
 
@@ -107,13 +108,14 @@ def GammaproteobacteriaBacteriumHtcc2080(
 	
 	Datetime: 2021-02-02 20:11:44.972512
 	
-	The undirected graph Gammaproteobacteria bacterium HTCC2080 has 3161 nodes and 303232
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06071 and has 18 connected components, where the component with most nodes has
-	3125 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 154, the mean node degree is 191.86, and the node degree mode is 1. The
-	top 5 most central nodes are 247639.MGP2080_01391 (degree 1171), 247639.MGP2080_07509
-	(degree 1069), 247639.MGP2080_14531 (degree 1041), 247639.MGP2080_03650 (degree 1016)
+	The undirected graph Gammaproteobacteria bacterium HTCC2080 has 3161 nodes
+	and 303232 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06071 and has 18 connected components, where the
+	component with most nodes has 3125 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+	is 191.86, and the node degree mode is 1. The top 5 most central nodes
+	are 247639.MGP2080_01391 (degree 1171), 247639.MGP2080_07509 (degree 1069),
+	247639.MGP2080_14531 (degree 1041), 247639.MGP2080_03650 (degree 1016)
 	and 247639.MGP2080_08274 (degree 1003).
 	
 

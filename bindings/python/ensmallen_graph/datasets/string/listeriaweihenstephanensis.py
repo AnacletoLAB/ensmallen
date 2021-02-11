@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:17.046137
 
-The undirected graph Listeria weihenstephanensis has 3196 nodes and 262574 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05143
-and has 16 connected components, where the component with most nodes has 3153 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 164.31, and the node degree mode is 3. The top 5
-most central nodes are 1265845.PWEIH_06741 (degree 1066), 1265845.PWEIH_05514 (degree
-1054), 1265845.PWEIH_16473 (degree 992), 1265845.PWEIH_13250 (degree 990) and 1265845.PWEIH_11415
-(degree 960).
+The undirected graph Listeria weihenstephanensis has 3196 nodes and 262574
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05143 and has 16 connected components, where the component
+with most nodes has 3153 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 164.31,
+and the node degree mode is 3. The top 5 most central nodes are 1265845.PWEIH_06741
+(degree 1066), 1265845.PWEIH_05514 (degree 1054), 1265845.PWEIH_16473 (degree
+992), 1265845.PWEIH_13250 (degree 990) and 1265845.PWEIH_11415 (degree
+960).
 
 
 References
@@ -107,14 +108,15 @@ def ListeriaWeihenstephanensis(
 	
 	Datetime: 2021-02-02 23:36:17.046137
 	
-	The undirected graph Listeria weihenstephanensis has 3196 nodes and 262574 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05143
-	and has 16 connected components, where the component with most nodes has 3153 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 164.31, and the node degree mode is 3. The top 5
-	most central nodes are 1265845.PWEIH_06741 (degree 1066), 1265845.PWEIH_05514 (degree
-	1054), 1265845.PWEIH_16473 (degree 992), 1265845.PWEIH_13250 (degree 990) and 1265845.PWEIH_11415
-	(degree 960).
+	The undirected graph Listeria weihenstephanensis has 3196 nodes and 262574
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05143 and has 16 connected components, where the component
+	with most nodes has 3153 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 164.31,
+	and the node degree mode is 3. The top 5 most central nodes are 1265845.PWEIH_06741
+	(degree 1066), 1265845.PWEIH_05514 (degree 1054), 1265845.PWEIH_16473 (degree
+	992), 1265845.PWEIH_13250 (degree 990) and 1265845.PWEIH_11415 (degree
+	960).
 	
 
 

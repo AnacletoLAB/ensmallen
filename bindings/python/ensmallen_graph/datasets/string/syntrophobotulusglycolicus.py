@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:08.383362
 
-The undirected graph Syntrophobotulus glycolicus has 3227 nodes and 239005 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04592
-and has 5 connected components, where the component with most nodes has 3219 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 148.13, and the node degree mode is 30. The top 5
-most central nodes are 645991.Sgly_2168 (degree 1195), 645991.Sgly_2230 (degree 1055),
-645991.Sgly_1856 (degree 1006), 645991.Sgly_1379 (degree 951) and 645991.Sgly_0584
-(degree 902).
+The undirected graph Syntrophobotulus glycolicus has 3227 nodes and 239005
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04592 and has 5 connected components, where the component
+with most nodes has 3219 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 148.13,
+and the node degree mode is 30. The top 5 most central nodes are 645991.Sgly_2168
+(degree 1195), 645991.Sgly_2230 (degree 1055), 645991.Sgly_1856 (degree
+1006), 645991.Sgly_1379 (degree 951) and 645991.Sgly_0584 (degree 902).
 
 
 References
@@ -107,14 +107,14 @@ def SyntrophobotulusGlycolicus(
 	
 	Datetime: 2021-02-02 21:25:08.383362
 	
-	The undirected graph Syntrophobotulus glycolicus has 3227 nodes and 239005 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04592
-	and has 5 connected components, where the component with most nodes has 3219 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 148.13, and the node degree mode is 30. The top 5
-	most central nodes are 645991.Sgly_2168 (degree 1195), 645991.Sgly_2230 (degree 1055),
-	645991.Sgly_1856 (degree 1006), 645991.Sgly_1379 (degree 951) and 645991.Sgly_0584
-	(degree 902).
+	The undirected graph Syntrophobotulus glycolicus has 3227 nodes and 239005
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04592 and has 5 connected components, where the component
+	with most nodes has 3219 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 148.13,
+	and the node degree mode is 30. The top 5 most central nodes are 645991.Sgly_2168
+	(degree 1195), 645991.Sgly_2230 (degree 1055), 645991.Sgly_1856 (degree
+	1006), 645991.Sgly_1379 (degree 951) and 645991.Sgly_0584 (degree 902).
 	
 
 

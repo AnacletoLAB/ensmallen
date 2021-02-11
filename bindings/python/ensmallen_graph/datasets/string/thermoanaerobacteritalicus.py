@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:32.674678
 
-The undirected graph Thermoanaerobacter italicus has 2253 nodes and 175455 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06916
-and has 13 connected components, where the component with most nodes has 2218 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 155.75, and the node degree mode is 4. The top 5
-most central nodes are 580331.Thit_0811 (degree 918), 580331.Thit_1727 (degree 858),
-580331.Thit_0566 (degree 747), 580331.Thit_1568 (degree 737) and 580331.Thit_0565
-(degree 728).
+The undirected graph Thermoanaerobacter italicus has 2253 nodes and 175455
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06916 and has 13 connected components, where the component
+with most nodes has 2218 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 155.75,
+and the node degree mode is 4. The top 5 most central nodes are 580331.Thit_0811
+(degree 918), 580331.Thit_1727 (degree 858), 580331.Thit_0566 (degree 747),
+580331.Thit_1568 (degree 737) and 580331.Thit_0565 (degree 728).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoanaerobacterItalicus(
 	
 	Datetime: 2021-02-02 21:15:32.674678
 	
-	The undirected graph Thermoanaerobacter italicus has 2253 nodes and 175455 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06916
-	and has 13 connected components, where the component with most nodes has 2218 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 155.75, and the node degree mode is 4. The top 5
-	most central nodes are 580331.Thit_0811 (degree 918), 580331.Thit_1727 (degree 858),
-	580331.Thit_0566 (degree 747), 580331.Thit_1568 (degree 737) and 580331.Thit_0565
-	(degree 728).
+	The undirected graph Thermoanaerobacter italicus has 2253 nodes and 175455
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06916 and has 13 connected components, where the component
+	with most nodes has 2218 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 155.75,
+	and the node degree mode is 4. The top 5 most central nodes are 580331.Thit_0811
+	(degree 918), 580331.Thit_1727 (degree 858), 580331.Thit_0566 (degree 747),
+	580331.Thit_1568 (degree 737) and 580331.Thit_0565 (degree 728).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:39.055275
 
-The undirected graph bio-diseasome has 516 nodes and 1188 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00894 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 4.60 and the node degree mode is 2. The top 5 most central nodes are 93 (degree
-50), 71 (degree 30), 163 (degree 27), 252 (degree 26) and 457 (degree 26).
+The undirected graph bio-diseasome has 516 nodes and 1188 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00894 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.60 and the node degree mode
+is 2. The top 5 most central nodes are 93 (degree 50), 71 (degree 30),
+163 (degree 27), 252 (degree 26) and 457 (degree 26).
 
 
 References
@@ -114,11 +115,12 @@ def BioDiseasome(
 	
 	Datetime: 2021-02-03 22:30:39.055275
 	
-	The undirected graph bio-diseasome has 516 nodes and 1188 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00894 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 4.60 and the node degree mode is 2. The top 5 most central nodes are 93 (degree
-	50), 71 (degree 30), 163 (degree 27), 252 (degree 26) and 457 (degree 26).
+	The undirected graph bio-diseasome has 516 nodes and 1188 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00894 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.60 and the node degree mode
+	is 2. The top 5 most central nodes are 93 (degree 50), 71 (degree 30),
+	163 (degree 27), 252 (degree 26) and 457 (degree 26).
 	
 
 

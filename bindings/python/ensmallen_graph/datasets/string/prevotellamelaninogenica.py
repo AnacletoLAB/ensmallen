@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:52.581853
 
-The undirected graph Prevotella melaninogenica has 2244 nodes and 147986 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05880
-and has 13 connected components, where the component with most nodes has 2215 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 131.89, and the node degree mode is 4. The top 5
-most central nodes are 553174.HMPREF0659_A5036 (degree 906), 553174.HMPREF0659_A5122
-(degree 872), 553174.HMPREF0659_A6567 (degree 746), 553174.HMPREF0659_A6804 (degree
-722) and 553174.HMPREF0659_A5678 (degree 719).
+The undirected graph Prevotella melaninogenica has 2244 nodes and 147986
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05880 and has 13 connected components, where the component
+with most nodes has 2215 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 131.89,
+and the node degree mode is 4. The top 5 most central nodes are 553174.HMPREF0659_A5036
+(degree 906), 553174.HMPREF0659_A5122 (degree 872), 553174.HMPREF0659_A6567
+(degree 746), 553174.HMPREF0659_A6804 (degree 722) and 553174.HMPREF0659_A5678
+(degree 719).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaMelaninogenica(
 	
 	Datetime: 2021-02-02 21:09:52.581853
 	
-	The undirected graph Prevotella melaninogenica has 2244 nodes and 147986 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05880
-	and has 13 connected components, where the component with most nodes has 2215 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 131.89, and the node degree mode is 4. The top 5
-	most central nodes are 553174.HMPREF0659_A5036 (degree 906), 553174.HMPREF0659_A5122
-	(degree 872), 553174.HMPREF0659_A6567 (degree 746), 553174.HMPREF0659_A6804 (degree
-	722) and 553174.HMPREF0659_A5678 (degree 719).
+	The undirected graph Prevotella melaninogenica has 2244 nodes and 147986
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05880 and has 13 connected components, where the component
+	with most nodes has 2215 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 131.89,
+	and the node degree mode is 4. The top 5 most central nodes are 553174.HMPREF0659_A5036
+	(degree 906), 553174.HMPREF0659_A5122 (degree 872), 553174.HMPREF0659_A6567
+	(degree 746), 553174.HMPREF0659_A6804 (degree 722) and 553174.HMPREF0659_A5678
+	(degree 719).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:49:17.216708
 
-The undirected graph Phaeobacter gallaeciensis has 3651 nodes and 280982 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04217
-and has 8 connected components, where the component with most nodes has 3626 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 153.92, and the node degree mode is 27. The top 5
-most central nodes are 1423144.Gal_00070 (degree 1404), 1423144.Gal_02970 (degree
-1088), 1423144.Gal_01146 (degree 1065), 1423144.Gal_01879 (degree 954) and 1423144.Gal_03678
-(degree 944).
+The undirected graph Phaeobacter gallaeciensis has 3651 nodes and 280982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04217 and has 8 connected components, where the component
+with most nodes has 3626 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 153.92,
+and the node degree mode is 27. The top 5 most central nodes are 1423144.Gal_00070
+(degree 1404), 1423144.Gal_02970 (degree 1088), 1423144.Gal_01146 (degree
+1065), 1423144.Gal_01879 (degree 954) and 1423144.Gal_03678 (degree 944).
 
 
 References
@@ -107,14 +107,14 @@ def PhaeobacterGallaeciensis(
 	
 	Datetime: 2021-02-03 22:49:17.216708
 	
-	The undirected graph Phaeobacter gallaeciensis has 3651 nodes and 280982 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04217
-	and has 8 connected components, where the component with most nodes has 3626 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 153.92, and the node degree mode is 27. The top 5
-	most central nodes are 1423144.Gal_00070 (degree 1404), 1423144.Gal_02970 (degree
-	1088), 1423144.Gal_01146 (degree 1065), 1423144.Gal_01879 (degree 954) and 1423144.Gal_03678
-	(degree 944).
+	The undirected graph Phaeobacter gallaeciensis has 3651 nodes and 280982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04217 and has 8 connected components, where the component
+	with most nodes has 3626 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 153.92,
+	and the node degree mode is 27. The top 5 most central nodes are 1423144.Gal_00070
+	(degree 1404), 1423144.Gal_02970 (degree 1088), 1423144.Gal_01146 (degree
+	1065), 1423144.Gal_01879 (degree 954) and 1423144.Gal_03678 (degree 944).
 	
 
 

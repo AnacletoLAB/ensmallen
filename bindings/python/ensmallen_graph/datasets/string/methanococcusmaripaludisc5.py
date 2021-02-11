@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:10.824404
 
-The undirected graph Methanococcus maripaludis C5 has 1813 nodes and 165326 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10065 and has 15 connected components, where the component with most nodes has
-1769 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 168, the mean node degree is 182.38, and the node degree mode is 3. The
-top 5 most central nodes are 402880.MmarC5_1348 (degree 706), 402880.MmarC5_0060
-(degree 702), 402880.MmarC5_0368 (degree 689), 402880.MmarC5_0988 (degree 674) and
-402880.MmarC5_0384 (degree 673).
+The undirected graph Methanococcus maripaludis C5 has 1813 nodes and 165326
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10065 and has 15 connected components, where the
+component with most nodes has 1769 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+is 182.38, and the node degree mode is 3. The top 5 most central nodes
+are 402880.MmarC5_1348 (degree 706), 402880.MmarC5_0060 (degree 702), 402880.MmarC5_0368
+(degree 689), 402880.MmarC5_0988 (degree 674) and 402880.MmarC5_0384 (degree
+673).
 
 
 References
@@ -107,14 +108,15 @@ def MethanococcusMaripaludisC5(
 	
 	Datetime: 2021-02-02 20:44:10.824404
 	
-	The undirected graph Methanococcus maripaludis C5 has 1813 nodes and 165326 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10065 and has 15 connected components, where the component with most nodes has
-	1769 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 168, the mean node degree is 182.38, and the node degree mode is 3. The
-	top 5 most central nodes are 402880.MmarC5_1348 (degree 706), 402880.MmarC5_0060
-	(degree 702), 402880.MmarC5_0368 (degree 689), 402880.MmarC5_0988 (degree 674) and
-	402880.MmarC5_0384 (degree 673).
+	The undirected graph Methanococcus maripaludis C5 has 1813 nodes and 165326
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10065 and has 15 connected components, where the
+	component with most nodes has 1769 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+	is 182.38, and the node degree mode is 3. The top 5 most central nodes
+	are 402880.MmarC5_1348 (degree 706), 402880.MmarC5_0060 (degree 702), 402880.MmarC5_0368
+	(degree 689), 402880.MmarC5_0988 (degree 674) and 402880.MmarC5_0384 (degree
+	673).
 	
 
 

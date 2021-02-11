@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:33.279241
 
-The undirected graph Streptomyces resistomycificus has 9137 nodes and 1685867 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04039
-and has 51 connected components, where the component with most nodes has 9019 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 306, the mean node degree is 369.02, and the node degree mode is 3. The top 5
-most central nodes are 67356.KL575640_gene6890 (degree 2993), 67356.KL575592_gene2765
-(degree 2822), 67356.KL575625_gene883 (degree 2617), 67356.KL575627_gene3460 (degree
-2592) and 67356.KL575588_gene7157 (degree 2576).
+The undirected graph Streptomyces resistomycificus has 9137 nodes and 1685867
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04039 and has 51 connected components, where the component
+with most nodes has 9019 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 306, the mean node degree is 369.02,
+and the node degree mode is 3. The top 5 most central nodes are 67356.KL575640_gene6890
+(degree 2993), 67356.KL575592_gene2765 (degree 2822), 67356.KL575625_gene883
+(degree 2617), 67356.KL575627_gene3460 (degree 2592) and 67356.KL575588_gene7157
+(degree 2576).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesResistomycificus(
 	
 	Datetime: 2021-02-02 18:27:33.279241
 	
-	The undirected graph Streptomyces resistomycificus has 9137 nodes and 1685867 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04039
-	and has 51 connected components, where the component with most nodes has 9019 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 306, the mean node degree is 369.02, and the node degree mode is 3. The top 5
-	most central nodes are 67356.KL575640_gene6890 (degree 2993), 67356.KL575592_gene2765
-	(degree 2822), 67356.KL575625_gene883 (degree 2617), 67356.KL575627_gene3460 (degree
-	2592) and 67356.KL575588_gene7157 (degree 2576).
+	The undirected graph Streptomyces resistomycificus has 9137 nodes and 1685867
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04039 and has 51 connected components, where the component
+	with most nodes has 9019 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 306, the mean node degree is 369.02,
+	and the node degree mode is 3. The top 5 most central nodes are 67356.KL575640_gene6890
+	(degree 2993), 67356.KL575592_gene2765 (degree 2822), 67356.KL575625_gene883
+	(degree 2617), 67356.KL575627_gene3460 (degree 2592) and 67356.KL575588_gene7157
+	(degree 2576).
 	
 
 

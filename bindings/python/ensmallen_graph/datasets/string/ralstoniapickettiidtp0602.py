@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:25.369391
 
-The undirected graph Ralstonia pickettii DTP0602 has 7377 nodes and 1432494 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05265
-and has 23 connected components, where the component with most nodes has 7324 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 291, the mean node degree is 388.37, and the node degree mode is 2. The top 5
-most central nodes are 1366050.N234_21552 (degree 3262), 1366050.N234_15515 (degree
-3214), 1366050.N234_32165 (degree 2969), 1366050.N234_29515 (degree 2775) and 1366050.N234_28120
-(degree 2758).
+The undirected graph Ralstonia pickettii DTP0602 has 7377 nodes and 1432494
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05265 and has 23 connected components, where the component
+with most nodes has 7324 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 291, the mean node degree is 388.37,
+and the node degree mode is 2. The top 5 most central nodes are 1366050.N234_21552
+(degree 3262), 1366050.N234_15515 (degree 3214), 1366050.N234_32165 (degree
+2969), 1366050.N234_29515 (degree 2775) and 1366050.N234_28120 (degree
+2758).
 
 
 References
@@ -107,14 +108,15 @@ def RalstoniaPickettiiDtp0602(
 	
 	Datetime: 2021-02-03 22:09:25.369391
 	
-	The undirected graph Ralstonia pickettii DTP0602 has 7377 nodes and 1432494 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05265
-	and has 23 connected components, where the component with most nodes has 7324 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 291, the mean node degree is 388.37, and the node degree mode is 2. The top 5
-	most central nodes are 1366050.N234_21552 (degree 3262), 1366050.N234_15515 (degree
-	3214), 1366050.N234_32165 (degree 2969), 1366050.N234_29515 (degree 2775) and 1366050.N234_28120
-	(degree 2758).
+	The undirected graph Ralstonia pickettii DTP0602 has 7377 nodes and 1432494
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05265 and has 23 connected components, where the component
+	with most nodes has 7324 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 291, the mean node degree is 388.37,
+	and the node degree mode is 2. The top 5 most central nodes are 1366050.N234_21552
+	(degree 3262), 1366050.N234_15515 (degree 3214), 1366050.N234_32165 (degree
+	2969), 1366050.N234_29515 (degree 2775) and 1366050.N234_28120 (degree
+	2758).
 	
 
 

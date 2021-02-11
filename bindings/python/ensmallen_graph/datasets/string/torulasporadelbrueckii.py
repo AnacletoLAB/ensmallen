@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:38.833187
 
-The undirected graph Torulaspora delbrueckii has 4755 nodes and 453632 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04014 and
-is connected, as it has a single component. The graph median node degree is 138,
-the mean node degree is 190.80, and the node degree mode is 24. The top 5 most central
-nodes are 4950.XP_003682697.1 (degree 1095), 4950.XP_003681929.1 (degree 1093), 4950.XP_003679087.1
-(degree 1087), 4950.XP_003680147.1 (degree 1031) and 4950.XP_003680332.1 (degree
+The undirected graph Torulaspora delbrueckii has 4755 nodes and 453632
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04014 and is connected, as it has a single component.
+The graph median node degree is 138, the mean node degree is 190.80, and
+the node degree mode is 24. The top 5 most central nodes are 4950.XP_003682697.1
+(degree 1095), 4950.XP_003681929.1 (degree 1093), 4950.XP_003679087.1 (degree
+1087), 4950.XP_003680147.1 (degree 1031) and 4950.XP_003680332.1 (degree
 985).
 
 
@@ -106,12 +107,13 @@ def TorulasporaDelbrueckii(
 	
 	Datetime: 2021-02-02 17:11:38.833187
 	
-	The undirected graph Torulaspora delbrueckii has 4755 nodes and 453632 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04014 and
-	is connected, as it has a single component. The graph median node degree is 138,
-	the mean node degree is 190.80, and the node degree mode is 24. The top 5 most central
-	nodes are 4950.XP_003682697.1 (degree 1095), 4950.XP_003681929.1 (degree 1093), 4950.XP_003679087.1
-	(degree 1087), 4950.XP_003680147.1 (degree 1031) and 4950.XP_003680332.1 (degree
+	The undirected graph Torulaspora delbrueckii has 4755 nodes and 453632
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04014 and is connected, as it has a single component.
+	The graph median node degree is 138, the mean node degree is 190.80, and
+	the node degree mode is 24. The top 5 most central nodes are 4950.XP_003682697.1
+	(degree 1095), 4950.XP_003681929.1 (degree 1093), 4950.XP_003679087.1 (degree
+	1087), 4950.XP_003680147.1 (degree 1031) and 4950.XP_003680332.1 (degree
 	985).
 	
 

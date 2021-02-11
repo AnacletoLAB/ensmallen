@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:35.470475
 
-The undirected graph Aeromicrobium marinum has 3060 nodes and 325609 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06957 and
-has 12 connected components, where the component with most nodes has 3027 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 212.82, and the node degree mode is 4. The top 5 most central
-nodes are 585531.HMPREF0063_11336 (degree 1340), 585531.HMPREF0063_11654 (degree
-1181), 585531.HMPREF0063_12764 (degree 1045), 585531.HMPREF0063_12971 (degree 1021)
-and 585531.HMPREF0063_11160 (degree 1015).
+The undirected graph Aeromicrobium marinum has 3060 nodes and 325609 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06957 and has 12 connected components, where the component with most
+nodes has 3027 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 212.82, and
+the node degree mode is 4. The top 5 most central nodes are 585531.HMPREF0063_11336
+(degree 1340), 585531.HMPREF0063_11654 (degree 1181), 585531.HMPREF0063_12764
+(degree 1045), 585531.HMPREF0063_12971 (degree 1021) and 585531.HMPREF0063_11160
+(degree 1015).
 
 
 References
@@ -107,14 +108,15 @@ def AeromicrobiumMarinum(
 	
 	Datetime: 2021-02-02 21:16:35.470475
 	
-	The undirected graph Aeromicrobium marinum has 3060 nodes and 325609 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06957 and
-	has 12 connected components, where the component with most nodes has 3027 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 212.82, and the node degree mode is 4. The top 5 most central
-	nodes are 585531.HMPREF0063_11336 (degree 1340), 585531.HMPREF0063_11654 (degree
-	1181), 585531.HMPREF0063_12764 (degree 1045), 585531.HMPREF0063_12971 (degree 1021)
-	and 585531.HMPREF0063_11160 (degree 1015).
+	The undirected graph Aeromicrobium marinum has 3060 nodes and 325609 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06957 and has 12 connected components, where the component with most
+	nodes has 3027 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 212.82, and
+	the node degree mode is 4. The top 5 most central nodes are 585531.HMPREF0063_11336
+	(degree 1340), 585531.HMPREF0063_11654 (degree 1181), 585531.HMPREF0063_12764
+	(degree 1045), 585531.HMPREF0063_12971 (degree 1021) and 585531.HMPREF0063_11160
+	(degree 1015).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:28.238417
 
-The undirected graph Kocuria rhizophila DC2201 has 2346 nodes and 227044 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08254
-and has 2 connected components, where the component with most nodes has 2344 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 193.56, and the node degree mode is 2. The top 5
-most central nodes are 378753.KRH_11870 (degree 998), 378753.KRH_11450 (degree 954),
-378753.KRH_06820 (degree 825), 378753.KRH_03980 (degree 809) and 378753.KRH_15600
-(degree 805).
+The undirected graph Kocuria rhizophila DC2201 has 2346 nodes and 227044
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08254 and has 2 connected components, where the component
+with most nodes has 2344 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 193.56,
+and the node degree mode is 2. The top 5 most central nodes are 378753.KRH_11870
+(degree 998), 378753.KRH_11450 (degree 954), 378753.KRH_06820 (degree 825),
+378753.KRH_03980 (degree 809) and 378753.KRH_15600 (degree 805).
 
 
 References
@@ -107,14 +107,14 @@ def KocuriaRhizophilaDc2201(
 	
 	Datetime: 2021-02-02 20:36:28.238417
 	
-	The undirected graph Kocuria rhizophila DC2201 has 2346 nodes and 227044 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08254
-	and has 2 connected components, where the component with most nodes has 2344 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 193.56, and the node degree mode is 2. The top 5
-	most central nodes are 378753.KRH_11870 (degree 998), 378753.KRH_11450 (degree 954),
-	378753.KRH_06820 (degree 825), 378753.KRH_03980 (degree 809) and 378753.KRH_15600
-	(degree 805).
+	The undirected graph Kocuria rhizophila DC2201 has 2346 nodes and 227044
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08254 and has 2 connected components, where the component
+	with most nodes has 2344 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 193.56,
+	and the node degree mode is 2. The top 5 most central nodes are 378753.KRH_11870
+	(degree 998), 378753.KRH_11450 (degree 954), 378753.KRH_06820 (degree 825),
+	378753.KRH_03980 (degree 809) and 378753.KRH_15600 (degree 805).
 	
 
 

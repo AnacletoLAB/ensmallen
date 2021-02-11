@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:06.612837
 
-The undirected graph Clostridium sp. KNHs214 has 3855 nodes and 324258 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04365 and
-has 22 connected components, where the component with most nodes has 3802 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 168.23, and the node degree mode is 1. The top 5 most central
-nodes are 1540257.JQMW01000004_gene573 (degree 1408), 1540257.JQMW01000013_gene779
-(degree 1362), 1540257.JQMW01000004_gene300 (degree 1282), 1540257.JQMW01000011_gene1460
-(degree 1187) and 1540257.JQMW01000011_gene1546 (degree 1157).
+The undirected graph Clostridium sp. KNHs214 has 3855 nodes and 324258
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04365 and has 22 connected components, where the component
+with most nodes has 3802 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 168.23,
+and the node degree mode is 1. The top 5 most central nodes are 1540257.JQMW01000004_gene573
+(degree 1408), 1540257.JQMW01000013_gene779 (degree 1362), 1540257.JQMW01000004_gene300
+(degree 1282), 1540257.JQMW01000011_gene1460 (degree 1187) and 1540257.JQMW01000011_gene1546
+(degree 1157).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Knhs214(
 	
 	Datetime: 2021-02-03 23:20:06.612837
 	
-	The undirected graph Clostridium sp. KNHs214 has 3855 nodes and 324258 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04365 and
-	has 22 connected components, where the component with most nodes has 3802 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 168.23, and the node degree mode is 1. The top 5 most central
-	nodes are 1540257.JQMW01000004_gene573 (degree 1408), 1540257.JQMW01000013_gene779
-	(degree 1362), 1540257.JQMW01000004_gene300 (degree 1282), 1540257.JQMW01000011_gene1460
-	(degree 1187) and 1540257.JQMW01000011_gene1546 (degree 1157).
+	The undirected graph Clostridium sp. KNHs214 has 3855 nodes and 324258
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04365 and has 22 connected components, where the component
+	with most nodes has 3802 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 168.23,
+	and the node degree mode is 1. The top 5 most central nodes are 1540257.JQMW01000004_gene573
+	(degree 1408), 1540257.JQMW01000013_gene779 (degree 1362), 1540257.JQMW01000004_gene300
+	(degree 1282), 1540257.JQMW01000011_gene1460 (degree 1187) and 1540257.JQMW01000011_gene1546
+	(degree 1157).
 	
 
 

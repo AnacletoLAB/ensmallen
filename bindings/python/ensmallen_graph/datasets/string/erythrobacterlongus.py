@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:06.540220
 
-The undirected graph Erythrobacter longus has 3202 nodes and 222512 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04342 and
-has 7 connected components, where the component with most nodes has 3189 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 138.98, and the node degree mode is 2. The top 5 most central
-nodes are 1044.EH31_11760 (degree 1119), 1044.EH31_05455 (degree 940), 1044.EH31_15105
-(degree 932), 1044.EH31_02785 (degree 888) and 1044.EH31_01630 (degree 851).
+The undirected graph Erythrobacter longus has 3202 nodes and 222512 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04342 and has 7 connected components, where the component with most
+nodes has 3189 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 138.98, and
+the node degree mode is 2. The top 5 most central nodes are 1044.EH31_11760
+(degree 1119), 1044.EH31_05455 (degree 940), 1044.EH31_15105 (degree 932),
+1044.EH31_02785 (degree 888) and 1044.EH31_01630 (degree 851).
 
 
 References
@@ -106,13 +107,14 @@ def ErythrobacterLongus(
 	
 	Datetime: 2021-02-02 16:22:06.540220
 	
-	The undirected graph Erythrobacter longus has 3202 nodes and 222512 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04342 and
-	has 7 connected components, where the component with most nodes has 3189 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 138.98, and the node degree mode is 2. The top 5 most central
-	nodes are 1044.EH31_11760 (degree 1119), 1044.EH31_05455 (degree 940), 1044.EH31_15105
-	(degree 932), 1044.EH31_02785 (degree 888) and 1044.EH31_01630 (degree 851).
+	The undirected graph Erythrobacter longus has 3202 nodes and 222512 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04342 and has 7 connected components, where the component with most
+	nodes has 3189 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 138.98, and
+	the node degree mode is 2. The top 5 most central nodes are 1044.EH31_11760
+	(degree 1119), 1044.EH31_05455 (degree 940), 1044.EH31_15105 (degree 932),
+	1044.EH31_02785 (degree 888) and 1044.EH31_01630 (degree 851).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:53.753664
 
-The undirected graph Phytoplasma mali has 462 nodes and 41574 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.39040
-and has 17 connected components, where the component with most nodes has 425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 179.97, and the node degree mode is 1. The top 5
-most central nodes are 37692.ATP_00075 (degree 318), 37692.ATP_00212 (degree 316),
-37692.ATP_00074 (degree 315), 37692.ATP_00177 (degree 312) and 37692.ATP_00226 (degree
-311).
+The undirected graph Phytoplasma mali has 462 nodes and 41574 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.39040 and has 17 connected components, where the component
+with most nodes has 425 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 179.97,
+and the node degree mode is 1. The top 5 most central nodes are 37692.ATP_00075
+(degree 318), 37692.ATP_00212 (degree 316), 37692.ATP_00074 (degree 315),
+37692.ATP_00177 (degree 312) and 37692.ATP_00226 (degree 311).
 
 
 References
@@ -107,14 +107,14 @@ def PhytoplasmaMali(
 	
 	Datetime: 2021-02-02 18:06:53.753664
 	
-	The undirected graph Phytoplasma mali has 462 nodes and 41574 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.39040
-	and has 17 connected components, where the component with most nodes has 425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 179.97, and the node degree mode is 1. The top 5
-	most central nodes are 37692.ATP_00075 (degree 318), 37692.ATP_00212 (degree 316),
-	37692.ATP_00074 (degree 315), 37692.ATP_00177 (degree 312) and 37692.ATP_00226 (degree
-	311).
+	The undirected graph Phytoplasma mali has 462 nodes and 41574 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.39040 and has 17 connected components, where the component
+	with most nodes has 425 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 179.97,
+	and the node degree mode is 1. The top 5 most central nodes are 37692.ATP_00075
+	(degree 318), 37692.ATP_00212 (degree 316), 37692.ATP_00074 (degree 315),
+	37692.ATP_00177 (degree 312) and 37692.ATP_00226 (degree 311).
 	
 
 

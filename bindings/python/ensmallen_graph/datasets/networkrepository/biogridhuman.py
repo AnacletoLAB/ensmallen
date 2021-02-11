@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:46.831147
 
-The undirected graph bio-grid-human has 9436 nodes and 31182 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00070
-and has 111 connected components, where the component with most nodes has 9186 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 6.61 and the node degree mode is 1. The top 5 most
-central nodes are 2035 (degree 308), 455 (degree 266), 105 (degree 166), 8759 (degree
-165) and 31 (degree 157).
+The undirected graph bio-grid-human has 9436 nodes and 31182 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00070 and has 111 connected components, where the component
+with most nodes has 9186 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 3, the mean node degree is 6.61
+and the node degree mode is 1. The top 5 most central nodes are 2035 (degree
+308), 455 (degree 266), 105 (degree 166), 8759 (degree 165) and 31 (degree
+157).
 
 
 References
@@ -103,13 +104,14 @@ def BioGridHuman(
 	
 	Datetime: 2021-02-03 22:30:46.831147
 	
-	The undirected graph bio-grid-human has 9436 nodes and 31182 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00070
-	and has 111 connected components, where the component with most nodes has 9186 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 6.61 and the node degree mode is 1. The top 5 most
-	central nodes are 2035 (degree 308), 455 (degree 266), 105 (degree 166), 8759 (degree
-	165) and 31 (degree 157).
+	The undirected graph bio-grid-human has 9436 nodes and 31182 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00070 and has 111 connected components, where the component
+	with most nodes has 9186 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 3, the mean node degree is 6.61
+	and the node degree mode is 1. The top 5 most central nodes are 2035 (degree
+	308), 455 (degree 266), 105 (degree 166), 8759 (degree 165) and 31 (degree
+	157).
 	
 
 

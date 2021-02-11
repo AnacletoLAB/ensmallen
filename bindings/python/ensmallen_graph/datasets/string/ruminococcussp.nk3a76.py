@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:36.479509
 
-The undirected graph Ruminococcus sp. NK3A76 has 2996 nodes and 159465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03554 and
-has 22 connected components, where the component with most nodes has 2937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 106.45, and the node degree mode is 3. The top 5 most central
-nodes are 877411.JMMA01000002_gene2617 (degree 990), 877411.JMMA01000002_gene2694
-(degree 902), 877411.JMMA01000002_gene1824 (degree 812), 877411.JMMA01000002_gene2231
-(degree 775) and 877411.JMMA01000002_gene1381 (degree 717).
+The undirected graph Ruminococcus sp. NK3A76 has 2996 nodes and 159465
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03554 and has 22 connected components, where the component
+with most nodes has 2937 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 80, the mean node degree is 106.45,
+and the node degree mode is 3. The top 5 most central nodes are 877411.JMMA01000002_gene2617
+(degree 990), 877411.JMMA01000002_gene2694 (degree 902), 877411.JMMA01000002_gene1824
+(degree 812), 877411.JMMA01000002_gene2231 (degree 775) and 877411.JMMA01000002_gene1381
+(degree 717).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusSp.Nk3a76(
 	
 	Datetime: 2021-02-02 21:49:36.479509
 	
-	The undirected graph Ruminococcus sp. NK3A76 has 2996 nodes and 159465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03554 and
-	has 22 connected components, where the component with most nodes has 2937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 106.45, and the node degree mode is 3. The top 5 most central
-	nodes are 877411.JMMA01000002_gene2617 (degree 990), 877411.JMMA01000002_gene2694
-	(degree 902), 877411.JMMA01000002_gene1824 (degree 812), 877411.JMMA01000002_gene2231
-	(degree 775) and 877411.JMMA01000002_gene1381 (degree 717).
+	The undirected graph Ruminococcus sp. NK3A76 has 2996 nodes and 159465
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03554 and has 22 connected components, where the component
+	with most nodes has 2937 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 80, the mean node degree is 106.45,
+	and the node degree mode is 3. The top 5 most central nodes are 877411.JMMA01000002_gene2617
+	(degree 990), 877411.JMMA01000002_gene2694 (degree 902), 877411.JMMA01000002_gene1824
+	(degree 812), 877411.JMMA01000002_gene2231 (degree 775) and 877411.JMMA01000002_gene1381
+	(degree 717).
 	
 
 

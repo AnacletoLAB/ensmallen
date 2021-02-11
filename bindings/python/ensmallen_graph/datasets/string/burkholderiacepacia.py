@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:17:05.271018
 
-The undirected graph Burkholderia cepacia has 7269 nodes and 1202236 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04551 and
-has 15 connected components, where the component with most nodes has 7236 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 297,
-the mean node degree is 330.78, and the node degree mode is 2. The top 5 most central
-nodes are 292.DM42_4183 (degree 2611), 292.DM42_1419 (degree 2174), 292.DM42_3109
-(degree 1922), 292.DM42_5776 (degree 1891) and 292.DM42_881 (degree 1676).
+The undirected graph Burkholderia cepacia has 7269 nodes and 1202236 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04551 and has 15 connected components, where the component with most
+nodes has 7236 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 297, the mean node degree is 330.78, and
+the node degree mode is 2. The top 5 most central nodes are 292.DM42_4183
+(degree 2611), 292.DM42_1419 (degree 2174), 292.DM42_3109 (degree 1922),
+292.DM42_5776 (degree 1891) and 292.DM42_881 (degree 1676).
 
 
 References
@@ -106,13 +107,14 @@ def BurkholderiaCepacia(
 	
 	Datetime: 2021-02-02 16:17:05.271018
 	
-	The undirected graph Burkholderia cepacia has 7269 nodes and 1202236 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04551 and
-	has 15 connected components, where the component with most nodes has 7236 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 297,
-	the mean node degree is 330.78, and the node degree mode is 2. The top 5 most central
-	nodes are 292.DM42_4183 (degree 2611), 292.DM42_1419 (degree 2174), 292.DM42_3109
-	(degree 1922), 292.DM42_5776 (degree 1891) and 292.DM42_881 (degree 1676).
+	The undirected graph Burkholderia cepacia has 7269 nodes and 1202236 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04551 and has 15 connected components, where the component with most
+	nodes has 7236 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 297, the mean node degree is 330.78, and
+	the node degree mode is 2. The top 5 most central nodes are 292.DM42_4183
+	(degree 2611), 292.DM42_1419 (degree 2174), 292.DM42_3109 (degree 1922),
+	292.DM42_5776 (degree 1891) and 292.DM42_881 (degree 1676).
 	
 
 

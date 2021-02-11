@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:18:54.568337
 
-The undirected graph Prevotella bivia DNF00188 has 2037 nodes and 173876 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08385
-and has 16 connected components, where the component with most nodes has 2002 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 170.72, and the node degree mode is 1. The top 5
-most central nodes are 1287476.HMPREF1651_00805 (degree 838), 1287476.HMPREF1651_05290
-(degree 740), 1287476.HMPREF1651_05565 (degree 732), 1287476.HMPREF1651_09585 (degree
-617) and 1287476.HMPREF1651_02580 (degree 600).
+The undirected graph Prevotella bivia DNF00188 has 2037 nodes and 173876
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08385 and has 16 connected components, where the component
+with most nodes has 2002 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 170.72,
+and the node degree mode is 1. The top 5 most central nodes are 1287476.HMPREF1651_00805
+(degree 838), 1287476.HMPREF1651_05290 (degree 740), 1287476.HMPREF1651_05565
+(degree 732), 1287476.HMPREF1651_09585 (degree 617) and 1287476.HMPREF1651_02580
+(degree 600).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaBiviaDnf00188(
 	
 	Datetime: 2021-02-03 21:18:54.568337
 	
-	The undirected graph Prevotella bivia DNF00188 has 2037 nodes and 173876 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08385
-	and has 16 connected components, where the component with most nodes has 2002 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 170.72, and the node degree mode is 1. The top 5
-	most central nodes are 1287476.HMPREF1651_00805 (degree 838), 1287476.HMPREF1651_05290
-	(degree 740), 1287476.HMPREF1651_05565 (degree 732), 1287476.HMPREF1651_09585 (degree
-	617) and 1287476.HMPREF1651_02580 (degree 600).
+	The undirected graph Prevotella bivia DNF00188 has 2037 nodes and 173876
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08385 and has 16 connected components, where the component
+	with most nodes has 2002 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 170.72,
+	and the node degree mode is 1. The top 5 most central nodes are 1287476.HMPREF1651_00805
+	(degree 838), 1287476.HMPREF1651_05290 (degree 740), 1287476.HMPREF1651_05565
+	(degree 732), 1287476.HMPREF1651_09585 (degree 617) and 1287476.HMPREF1651_02580
+	(degree 600).
 	
 
 

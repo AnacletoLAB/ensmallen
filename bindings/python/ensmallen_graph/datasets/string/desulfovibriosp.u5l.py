@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:08.874595
 
-The undirected graph Desulfovibrio sp. U5L has 3961 nodes and 546921 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06974 and
-has 18 connected components, where the component with most nodes has 3898 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 276.15, and the node degree mode is 5. The top 5 most central
-nodes are 596152.DesU5LDRAFT_4110 (degree 1738), 596152.DesU5LDRAFT_3391 (degree
-1490), 596152.DesU5LDRAFT_1640 (degree 1469), 596152.DesU5LDRAFT_4057 (degree 1463)
-and 596152.DesU5LDRAFT_0470 (degree 1380).
+The undirected graph Desulfovibrio sp. U5L has 3961 nodes and 546921 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06974 and has 18 connected components, where the component with most
+nodes has 3898 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 276.15, and
+the node degree mode is 5. The top 5 most central nodes are 596152.DesU5LDRAFT_4110
+(degree 1738), 596152.DesU5LDRAFT_3391 (degree 1490), 596152.DesU5LDRAFT_1640
+(degree 1469), 596152.DesU5LDRAFT_4057 (degree 1463) and 596152.DesU5LDRAFT_0470
+(degree 1380).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioSp.U5l(
 	
 	Datetime: 2021-02-02 21:19:08.874595
 	
-	The undirected graph Desulfovibrio sp. U5L has 3961 nodes and 546921 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06974 and
-	has 18 connected components, where the component with most nodes has 3898 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 276.15, and the node degree mode is 5. The top 5 most central
-	nodes are 596152.DesU5LDRAFT_4110 (degree 1738), 596152.DesU5LDRAFT_3391 (degree
-	1490), 596152.DesU5LDRAFT_1640 (degree 1469), 596152.DesU5LDRAFT_4057 (degree 1463)
-	and 596152.DesU5LDRAFT_0470 (degree 1380).
+	The undirected graph Desulfovibrio sp. U5L has 3961 nodes and 546921 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06974 and has 18 connected components, where the component with most
+	nodes has 3898 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 276.15, and
+	the node degree mode is 5. The top 5 most central nodes are 596152.DesU5LDRAFT_4110
+	(degree 1738), 596152.DesU5LDRAFT_3391 (degree 1490), 596152.DesU5LDRAFT_1640
+	(degree 1469), 596152.DesU5LDRAFT_4057 (degree 1463) and 596152.DesU5LDRAFT_0470
+	(degree 1380).
 	
 
 

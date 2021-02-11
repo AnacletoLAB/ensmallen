@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:04.049617
 
-The undirected graph Abiotrophia defectiva has 1938 nodes and 143942 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07669 and
-has 8 connected components, where the component with most nodes has 1923 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 148.55, and the node degree mode is 10. The top 5 most central
-nodes are 592010.GCWU000182_000338 (degree 832), 592010.GCWU000182_002003 (degree
-783), 592010.GCWU000182_001512 (degree 723), 592010.GCWU000182_000840 (degree 668)
-and 592010.GCWU000182_000258 (degree 592).
+The undirected graph Abiotrophia defectiva has 1938 nodes and 143942 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07669 and has 8 connected components, where the component with most
+nodes has 1923 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 148.55, and
+the node degree mode is 10. The top 5 most central nodes are 592010.GCWU000182_000338
+(degree 832), 592010.GCWU000182_002003 (degree 783), 592010.GCWU000182_001512
+(degree 723), 592010.GCWU000182_000840 (degree 668) and 592010.GCWU000182_000258
+(degree 592).
 
 
 References
@@ -107,14 +108,15 @@ def AbiotrophiaDefectiva(
 	
 	Datetime: 2021-02-02 21:18:04.049617
 	
-	The undirected graph Abiotrophia defectiva has 1938 nodes and 143942 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07669 and
-	has 8 connected components, where the component with most nodes has 1923 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 148.55, and the node degree mode is 10. The top 5 most central
-	nodes are 592010.GCWU000182_000338 (degree 832), 592010.GCWU000182_002003 (degree
-	783), 592010.GCWU000182_001512 (degree 723), 592010.GCWU000182_000840 (degree 668)
-	and 592010.GCWU000182_000258 (degree 592).
+	The undirected graph Abiotrophia defectiva has 1938 nodes and 143942 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07669 and has 8 connected components, where the component with most
+	nodes has 1923 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 148.55, and
+	the node degree mode is 10. The top 5 most central nodes are 592010.GCWU000182_000338
+	(degree 832), 592010.GCWU000182_002003 (degree 783), 592010.GCWU000182_001512
+	(degree 723), 592010.GCWU000182_000840 (degree 668) and 592010.GCWU000182_000258
+	(degree 592).
 	
 
 

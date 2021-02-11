@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:33.375349
 
-The undirected graph Peptostreptococcus sp. MV1 has 1616 nodes and 92257 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07070
-and has 5 connected components, where the component with most nodes has 1605 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 114.18, and the node degree mode is 4. The top 5 most
-central nodes are 1219626.HMPREF1639_03940 (degree 713), 1219626.HMPREF1639_02560
-(degree 669), 1219626.HMPREF1639_01400 (degree 605), 1219626.HMPREF1639_06625 (degree
-595) and 1219626.HMPREF1639_02340 (degree 578).
+The undirected graph Peptostreptococcus sp. MV1 has 1616 nodes and 92257
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07070 and has 5 connected components, where the component
+with most nodes has 1605 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 114.18,
+and the node degree mode is 4. The top 5 most central nodes are 1219626.HMPREF1639_03940
+(degree 713), 1219626.HMPREF1639_02560 (degree 669), 1219626.HMPREF1639_01400
+(degree 605), 1219626.HMPREF1639_06625 (degree 595) and 1219626.HMPREF1639_02340
+(degree 578).
 
 
 References
@@ -107,14 +108,15 @@ def PeptostreptococcusSp.Mv1(
 	
 	Datetime: 2021-02-02 23:23:33.375349
 	
-	The undirected graph Peptostreptococcus sp. MV1 has 1616 nodes and 92257 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07070
-	and has 5 connected components, where the component with most nodes has 1605 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 114.18, and the node degree mode is 4. The top 5 most
-	central nodes are 1219626.HMPREF1639_03940 (degree 713), 1219626.HMPREF1639_02560
-	(degree 669), 1219626.HMPREF1639_01400 (degree 605), 1219626.HMPREF1639_06625 (degree
-	595) and 1219626.HMPREF1639_02340 (degree 578).
+	The undirected graph Peptostreptococcus sp. MV1 has 1616 nodes and 92257
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07070 and has 5 connected components, where the component
+	with most nodes has 1605 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 114.18,
+	and the node degree mode is 4. The top 5 most central nodes are 1219626.HMPREF1639_03940
+	(degree 713), 1219626.HMPREF1639_02560 (degree 669), 1219626.HMPREF1639_01400
+	(degree 605), 1219626.HMPREF1639_06625 (degree 595) and 1219626.HMPREF1639_02340
+	(degree 578).
 	
 
 

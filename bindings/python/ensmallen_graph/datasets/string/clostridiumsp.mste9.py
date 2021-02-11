@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:46.572719
 
-The undirected graph Clostridium sp. MSTE9 has 3436 nodes and 254318 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04310 and
-has 31 connected components, where the component with most nodes has 3365 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 148.03, and the node degree mode is 1. The top 5 most central
-nodes are 1105031.HMPREF1141_1415 (degree 1330), 1105031.HMPREF1141_2959 (degree
-1192), 1105031.HMPREF1141_0252 (degree 1150), 1105031.HMPREF1141_2213 (degree 967)
-and 1105031.HMPREF1141_1729 (degree 950).
+The undirected graph Clostridium sp. MSTE9 has 3436 nodes and 254318 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04310 and has 31 connected components, where the component with most
+nodes has 3365 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 148.03, and
+the node degree mode is 1. The top 5 most central nodes are 1105031.HMPREF1141_1415
+(degree 1330), 1105031.HMPREF1141_2959 (degree 1192), 1105031.HMPREF1141_0252
+(degree 1150), 1105031.HMPREF1141_2213 (degree 967) and 1105031.HMPREF1141_1729
+(degree 950).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Mste9(
 	
 	Datetime: 2021-02-02 22:24:46.572719
 	
-	The undirected graph Clostridium sp. MSTE9 has 3436 nodes and 254318 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04310 and
-	has 31 connected components, where the component with most nodes has 3365 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 148.03, and the node degree mode is 1. The top 5 most central
-	nodes are 1105031.HMPREF1141_1415 (degree 1330), 1105031.HMPREF1141_2959 (degree
-	1192), 1105031.HMPREF1141_0252 (degree 1150), 1105031.HMPREF1141_2213 (degree 967)
-	and 1105031.HMPREF1141_1729 (degree 950).
+	The undirected graph Clostridium sp. MSTE9 has 3436 nodes and 254318 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04310 and has 31 connected components, where the component with most
+	nodes has 3365 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 148.03, and
+	the node degree mode is 1. The top 5 most central nodes are 1105031.HMPREF1141_1415
+	(degree 1330), 1105031.HMPREF1141_2959 (degree 1192), 1105031.HMPREF1141_0252
+	(degree 1150), 1105031.HMPREF1141_2213 (degree 967) and 1105031.HMPREF1141_1729
+	(degree 950).
 	
 
 

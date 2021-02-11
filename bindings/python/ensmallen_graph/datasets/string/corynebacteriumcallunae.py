@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:54.732252
 
-The undirected graph Corynebacterium callunae has 2615 nodes and 168008 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04916
-and has 3 connected components, where the component with most nodes has 2610 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 128.50, and the node degree mode is 2. The top 5 most
-central nodes are 1121353.H924_06225 (degree 1032), 1121353.H924_04030 (degree 907),
-1121353.H924_10500 (degree 903), 1121353.H924_06435 (degree 773) and 1121353.H924_02905
-(degree 770).
+The undirected graph Corynebacterium callunae has 2615 nodes and 168008
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04916 and has 3 connected components, where the component
+with most nodes has 2610 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 128.50,
+and the node degree mode is 2. The top 5 most central nodes are 1121353.H924_06225
+(degree 1032), 1121353.H924_04030 (degree 907), 1121353.H924_10500 (degree
+903), 1121353.H924_06435 (degree 773) and 1121353.H924_02905 (degree 770).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumCallunae(
 	
 	Datetime: 2021-02-02 22:34:54.732252
 	
-	The undirected graph Corynebacterium callunae has 2615 nodes and 168008 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04916
-	and has 3 connected components, where the component with most nodes has 2610 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 128.50, and the node degree mode is 2. The top 5 most
-	central nodes are 1121353.H924_06225 (degree 1032), 1121353.H924_04030 (degree 907),
-	1121353.H924_10500 (degree 903), 1121353.H924_06435 (degree 773) and 1121353.H924_02905
-	(degree 770).
+	The undirected graph Corynebacterium callunae has 2615 nodes and 168008
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04916 and has 3 connected components, where the component
+	with most nodes has 2610 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 128.50,
+	and the node degree mode is 2. The top 5 most central nodes are 1121353.H924_06225
+	(degree 1032), 1121353.H924_04030 (degree 907), 1121353.H924_10500 (degree
+	903), 1121353.H924_06435 (degree 773) and 1121353.H924_02905 (degree 770).
 	
 
 

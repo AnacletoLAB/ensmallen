@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:23.763374
 
-The undirected graph Halomonas alkaliantarctica has 3361 nodes and 444660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07875
-and has 8 connected components, where the component with most nodes has 3339 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 239, the mean node degree is 264.60, and the node degree mode is 3. The top 5
-most central nodes are 232346.JHQL01000007_gene1930 (degree 1478), 232346.JHQL01000004_gene1860
-(degree 1428), 232346.JHQL01000001_gene2517 (degree 1270), 232346.JHQL01000003_gene517
-(degree 1145) and 232346.JHQL01000005_gene3171 (degree 1141).
+The undirected graph Halomonas alkaliantarctica has 3361 nodes and 444660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07875 and has 8 connected components, where the component
+with most nodes has 3339 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 239, the mean node degree is 264.60,
+and the node degree mode is 3. The top 5 most central nodes are 232346.JHQL01000007_gene1930
+(degree 1478), 232346.JHQL01000004_gene1860 (degree 1428), 232346.JHQL01000001_gene2517
+(degree 1270), 232346.JHQL01000003_gene517 (degree 1145) and 232346.JHQL01000005_gene3171
+(degree 1141).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasAlkaliantarctica(
 	
 	Datetime: 2021-02-02 20:07:23.763374
 	
-	The undirected graph Halomonas alkaliantarctica has 3361 nodes and 444660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07875
-	and has 8 connected components, where the component with most nodes has 3339 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 239, the mean node degree is 264.60, and the node degree mode is 3. The top 5
-	most central nodes are 232346.JHQL01000007_gene1930 (degree 1478), 232346.JHQL01000004_gene1860
-	(degree 1428), 232346.JHQL01000001_gene2517 (degree 1270), 232346.JHQL01000003_gene517
-	(degree 1145) and 232346.JHQL01000005_gene3171 (degree 1141).
+	The undirected graph Halomonas alkaliantarctica has 3361 nodes and 444660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07875 and has 8 connected components, where the component
+	with most nodes has 3339 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 239, the mean node degree is 264.60,
+	and the node degree mode is 3. The top 5 most central nodes are 232346.JHQL01000007_gene1930
+	(degree 1478), 232346.JHQL01000004_gene1860 (degree 1428), 232346.JHQL01000001_gene2517
+	(degree 1270), 232346.JHQL01000003_gene517 (degree 1145) and 232346.JHQL01000005_gene3171
+	(degree 1141).
 	
 
 

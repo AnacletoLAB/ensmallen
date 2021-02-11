@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:31.306746
 
-The undirected graph ca-AstroPh has 17903 nodes and 196972 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00123 and is connected,
-as it has a single component. The graph median node degree is 10, the mean node degree
-is 22.00 and the node degree mode is 3. The top 5 most central nodes are 6934 (degree
-504), 4662 (degree 427), 4972 (degree 420), 8318 (degree 418) and 12438 (degree 387).
+The undirected graph ca-AstroPh has 17903 nodes and 196972 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00123 and is connected, as it has a single component. The graph median
+node degree is 10, the mean node degree is 22.00 and the node degree mode
+is 3. The top 5 most central nodes are 6934 (degree 504), 4662 (degree
+427), 4972 (degree 420), 8318 (degree 418) and 12438 (degree 387).
 
 
 References
@@ -101,11 +102,12 @@ def CaAstroph(
 	
 	Datetime: 2021-02-03 22:37:31.306746
 	
-	The undirected graph ca-AstroPh has 17903 nodes and 196972 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00123 and is connected,
-	as it has a single component. The graph median node degree is 10, the mean node degree
-	is 22.00 and the node degree mode is 3. The top 5 most central nodes are 6934 (degree
-	504), 4662 (degree 427), 4972 (degree 420), 8318 (degree 418) and 12438 (degree 387).
+	The undirected graph ca-AstroPh has 17903 nodes and 196972 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00123 and is connected, as it has a single component. The graph median
+	node degree is 10, the mean node degree is 22.00 and the node degree mode
+	is 3. The top 5 most central nodes are 6934 (degree 504), 4662 (degree
+	427), 4972 (degree 420), 8318 (degree 418) and 12438 (degree 387).
 	
 
 

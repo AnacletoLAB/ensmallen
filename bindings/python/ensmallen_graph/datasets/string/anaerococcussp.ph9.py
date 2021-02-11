@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:31.114401
 
-The undirected graph Anaerococcus sp. PH9 has 2080 nodes and 188137 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08701 and
-has 5 connected components, where the component with most nodes has 2069 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 180.90, and the node degree mode is 2. The top 5 most central
-nodes are 1118055.CAGU01000013_gene884 (degree 973), 1118055.CAGU01000032_gene220
-(degree 944), 1118055.CAGU01000032_gene221 (degree 930), 1118055.CAGU01000015_gene1962
-(degree 845) and 1118055.CAGU01000013_gene758 (degree 839).
+The undirected graph Anaerococcus sp. PH9 has 2080 nodes and 188137 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08701 and has 5 connected components, where the component with most
+nodes has 2069 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 180.90, and
+the node degree mode is 2. The top 5 most central nodes are 1118055.CAGU01000013_gene884
+(degree 973), 1118055.CAGU01000032_gene220 (degree 944), 1118055.CAGU01000032_gene221
+(degree 930), 1118055.CAGU01000015_gene1962 (degree 845) and 1118055.CAGU01000013_gene758
+(degree 839).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerococcusSp.Ph9(
 	
 	Datetime: 2021-02-02 22:28:31.114401
 	
-	The undirected graph Anaerococcus sp. PH9 has 2080 nodes and 188137 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08701 and
-	has 5 connected components, where the component with most nodes has 2069 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 180.90, and the node degree mode is 2. The top 5 most central
-	nodes are 1118055.CAGU01000013_gene884 (degree 973), 1118055.CAGU01000032_gene220
-	(degree 944), 1118055.CAGU01000032_gene221 (degree 930), 1118055.CAGU01000015_gene1962
-	(degree 845) and 1118055.CAGU01000013_gene758 (degree 839).
+	The undirected graph Anaerococcus sp. PH9 has 2080 nodes and 188137 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08701 and has 5 connected components, where the component with most
+	nodes has 2069 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 180.90, and
+	the node degree mode is 2. The top 5 most central nodes are 1118055.CAGU01000013_gene884
+	(degree 973), 1118055.CAGU01000032_gene220 (degree 944), 1118055.CAGU01000032_gene221
+	(degree 930), 1118055.CAGU01000015_gene1962 (degree 845) and 1118055.CAGU01000013_gene758
+	(degree 839).
 	
 
 

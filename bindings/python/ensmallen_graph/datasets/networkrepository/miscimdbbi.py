@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:12:37.926593
 
-The undirected graph misc-IMDB-bi has 896305 nodes and 3782453 unweighted edges,
-of which 7 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 8.44, and the node degree mode is 1. The top 5 most central
-nodes are 704908 (degree 1590), 109046 (degree 1336), 21504 (degree 1298), 408682
-(degree 1200) and 404933 (degree 1124).
+The undirected graph misc-IMDB-bi has 896305 nodes and 3782453 unweighted
+edges, of which 7 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 8.44, and the node
+degree mode is 1. The top 5 most central nodes are 704908 (degree 1590),
+109046 (degree 1336), 21504 (degree 1298), 408682 (degree 1200) and 404933
+(degree 1124).
 
 
 References
@@ -110,12 +111,13 @@ def MiscImdbBi(
 	
 	Datetime: 2021-02-06 12:12:37.926593
 	
-	The undirected graph misc-IMDB-bi has 896305 nodes and 3782453 unweighted edges,
-	of which 7 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 8.44, and the node degree mode is 1. The top 5 most central
-	nodes are 704908 (degree 1590), 109046 (degree 1336), 21504 (degree 1298), 408682
-	(degree 1200) and 404933 (degree 1124).
+	The undirected graph misc-IMDB-bi has 896305 nodes and 3782453 unweighted
+	edges, of which 7 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 8.44, and the node
+	degree mode is 1. The top 5 most central nodes are 704908 (degree 1590),
+	109046 (degree 1336), 21504 (degree 1298), 408682 (degree 1200) and 404933
+	(degree 1124).
 	
 
 

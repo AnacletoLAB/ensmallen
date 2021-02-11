@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:26.833089
 
-The undirected graph Nosocomiicoccus sp. NP2 has 1604 nodes and 114718 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08923 and
-has 4 connected components, where the component with most nodes has 1596 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 143.04, and the node degree mode is 2. The top 5 most central
-nodes are 1232430.CAVG010000064_gene657 (degree 707), 1232430.CAVG010000096_gene861
-(degree 631), 1232430.CAVG010000035_gene335 (degree 568), 1232430.CAVG010000080_gene736
-(degree 560) and 1232430.CAVG010000121_gene1174 (degree 503).
+The undirected graph Nosocomiicoccus sp. NP2 has 1604 nodes and 114718
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08923 and has 4 connected components, where the component
+with most nodes has 1596 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 143.04,
+and the node degree mode is 2. The top 5 most central nodes are 1232430.CAVG010000064_gene657
+(degree 707), 1232430.CAVG010000096_gene861 (degree 631), 1232430.CAVG010000035_gene335
+(degree 568), 1232430.CAVG010000080_gene736 (degree 560) and 1232430.CAVG010000121_gene1174
+(degree 503).
 
 
 References
@@ -107,14 +108,15 @@ def NosocomiicoccusSp.Np2(
 	
 	Datetime: 2021-02-02 23:28:26.833089
 	
-	The undirected graph Nosocomiicoccus sp. NP2 has 1604 nodes and 114718 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08923 and
-	has 4 connected components, where the component with most nodes has 1596 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 143.04, and the node degree mode is 2. The top 5 most central
-	nodes are 1232430.CAVG010000064_gene657 (degree 707), 1232430.CAVG010000096_gene861
-	(degree 631), 1232430.CAVG010000035_gene335 (degree 568), 1232430.CAVG010000080_gene736
-	(degree 560) and 1232430.CAVG010000121_gene1174 (degree 503).
+	The undirected graph Nosocomiicoccus sp. NP2 has 1604 nodes and 114718
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08923 and has 4 connected components, where the component
+	with most nodes has 1596 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 143.04,
+	and the node degree mode is 2. The top 5 most central nodes are 1232430.CAVG010000064_gene657
+	(degree 707), 1232430.CAVG010000096_gene861 (degree 631), 1232430.CAVG010000035_gene335
+	(degree 568), 1232430.CAVG010000080_gene736 (degree 560) and 1232430.CAVG010000121_gene1174
+	(degree 503).
 	
 
 

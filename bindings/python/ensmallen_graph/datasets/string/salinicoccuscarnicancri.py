@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:53.019304
 
-The undirected graph Salinicoccus carnicancri has 2540 nodes and 233779 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07250
-and has 6 connected components, where the component with most nodes has 2527 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 184.08, and the node degree mode is 2. The top 5
-most central nodes are 1235755.ANAM01000008_gene1094 (degree 947), 1235755.ANAM01000001_gene53
-(degree 814), 1235755.ANAM01000006_gene2227 (degree 775), 1235755.ANAM01000006_gene2501
-(degree 754) and 1235755.ANAM01000008_gene953 (degree 740).
+The undirected graph Salinicoccus carnicancri has 2540 nodes and 233779
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07250 and has 6 connected components, where the component
+with most nodes has 2527 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 184.08,
+and the node degree mode is 2. The top 5 most central nodes are 1235755.ANAM01000008_gene1094
+(degree 947), 1235755.ANAM01000001_gene53 (degree 814), 1235755.ANAM01000006_gene2227
+(degree 775), 1235755.ANAM01000006_gene2501 (degree 754) and 1235755.ANAM01000008_gene953
+(degree 740).
 
 
 References
@@ -107,14 +108,15 @@ def SalinicoccusCarnicancri(
 	
 	Datetime: 2021-02-02 23:29:53.019304
 	
-	The undirected graph Salinicoccus carnicancri has 2540 nodes and 233779 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07250
-	and has 6 connected components, where the component with most nodes has 2527 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 184.08, and the node degree mode is 2. The top 5
-	most central nodes are 1235755.ANAM01000008_gene1094 (degree 947), 1235755.ANAM01000001_gene53
-	(degree 814), 1235755.ANAM01000006_gene2227 (degree 775), 1235755.ANAM01000006_gene2501
-	(degree 754) and 1235755.ANAM01000008_gene953 (degree 740).
+	The undirected graph Salinicoccus carnicancri has 2540 nodes and 233779
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07250 and has 6 connected components, where the component
+	with most nodes has 2527 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 184.08,
+	and the node degree mode is 2. The top 5 most central nodes are 1235755.ANAM01000008_gene1094
+	(degree 947), 1235755.ANAM01000001_gene53 (degree 814), 1235755.ANAM01000006_gene2227
+	(degree 775), 1235755.ANAM01000006_gene2501 (degree 754) and 1235755.ANAM01000008_gene953
+	(degree 740).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:05.647137
 
-The undirected graph Paracoccus yeei has 3996 nodes and 292503 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03665 and
-has 5 connected components, where the component with most nodes has 3988 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 146.40, and the node degree mode is 1. The top 5 most central
-nodes are 1446473.JHWH01000001_gene1328 (degree 1518), 1446473.JHWH01000007_gene413
-(degree 1166), 1446473.JHWH01000026_gene2027 (degree 1049), 1446473.JHWH01000013_gene2404
-(degree 1012) and 1446473.JHWH01000007_gene411 (degree 958).
+The undirected graph Paracoccus yeei has 3996 nodes and 292503 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03665 and has 5 connected components, where the component with most
+nodes has 3988 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 146.40, and
+the node degree mode is 1. The top 5 most central nodes are 1446473.JHWH01000001_gene1328
+(degree 1518), 1446473.JHWH01000007_gene413 (degree 1166), 1446473.JHWH01000026_gene2027
+(degree 1049), 1446473.JHWH01000013_gene2404 (degree 1012) and 1446473.JHWH01000007_gene411
+(degree 958).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusYeei(
 	
 	Datetime: 2021-02-03 23:03:05.647137
 	
-	The undirected graph Paracoccus yeei has 3996 nodes and 292503 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03665 and
-	has 5 connected components, where the component with most nodes has 3988 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 146.40, and the node degree mode is 1. The top 5 most central
-	nodes are 1446473.JHWH01000001_gene1328 (degree 1518), 1446473.JHWH01000007_gene413
-	(degree 1166), 1446473.JHWH01000026_gene2027 (degree 1049), 1446473.JHWH01000013_gene2404
-	(degree 1012) and 1446473.JHWH01000007_gene411 (degree 958).
+	The undirected graph Paracoccus yeei has 3996 nodes and 292503 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03665 and has 5 connected components, where the component with most
+	nodes has 3988 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 146.40, and
+	the node degree mode is 1. The top 5 most central nodes are 1446473.JHWH01000001_gene1328
+	(degree 1518), 1446473.JHWH01000007_gene413 (degree 1166), 1446473.JHWH01000026_gene2027
+	(degree 1049), 1446473.JHWH01000013_gene2404 (degree 1012) and 1446473.JHWH01000007_gene411
+	(degree 958).
 	
 
 

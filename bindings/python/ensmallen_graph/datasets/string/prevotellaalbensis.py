@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:43.266941
 
-The undirected graph Prevotella albensis has 2199 nodes and 139025 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05753 and
-has 13 connected components, where the component with most nodes has 2163 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 126.44, and the node degree mode is 3. The top 5 most central
-nodes are 1122978.AUFP01000001_gene1139 (degree 818), 1122978.AUFP01000010_gene269
-(degree 761), 1122978.AUFP01000006_gene1780 (degree 680), 1122978.AUFP01000001_gene1029
-(degree 611) and 1122978.AUFP01000006_gene1727 (degree 601).
+The undirected graph Prevotella albensis has 2199 nodes and 139025 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05753 and has 13 connected components, where the component with most
+nodes has 2163 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 126.44, and
+the node degree mode is 3. The top 5 most central nodes are 1122978.AUFP01000001_gene1139
+(degree 818), 1122978.AUFP01000010_gene269 (degree 761), 1122978.AUFP01000006_gene1780
+(degree 680), 1122978.AUFP01000001_gene1029 (degree 611) and 1122978.AUFP01000006_gene1727
+(degree 601).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaAlbensis(
 	
 	Datetime: 2021-02-02 22:45:43.266941
 	
-	The undirected graph Prevotella albensis has 2199 nodes and 139025 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05753 and
-	has 13 connected components, where the component with most nodes has 2163 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 126.44, and the node degree mode is 3. The top 5 most central
-	nodes are 1122978.AUFP01000001_gene1139 (degree 818), 1122978.AUFP01000010_gene269
-	(degree 761), 1122978.AUFP01000006_gene1780 (degree 680), 1122978.AUFP01000001_gene1029
-	(degree 611) and 1122978.AUFP01000006_gene1727 (degree 601).
+	The undirected graph Prevotella albensis has 2199 nodes and 139025 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05753 and has 13 connected components, where the component with most
+	nodes has 2163 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 126.44, and
+	the node degree mode is 3. The top 5 most central nodes are 1122978.AUFP01000001_gene1139
+	(degree 818), 1122978.AUFP01000010_gene269 (degree 761), 1122978.AUFP01000006_gene1780
+	(degree 680), 1122978.AUFP01000001_gene1029 (degree 611) and 1122978.AUFP01000006_gene1727
+	(degree 601).
 	
 
 

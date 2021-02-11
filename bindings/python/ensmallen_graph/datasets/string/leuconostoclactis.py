@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:17.974940
 
-The undirected graph Leuconostoc lactis has 1599 nodes and 98202 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07686 and
-has 2 connected components, where the component with most nodes has 1597 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 122.83, and the node degree mode is 2. The top 5 most central
-nodes are 1246.JMEA01000005_gene1340 (degree 732), 1246.JMEA01000003_gene887 (degree
-589), 1246.JMEA01000010_gene573 (degree 559), 1246.JMEA01000016_gene735 (degree 553)
-and 1246.JMEA01000015_gene390 (degree 499).
+The undirected graph Leuconostoc lactis has 1599 nodes and 98202 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07686 and has 2 connected components, where the component with most
+nodes has 1597 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 122.83, and
+the node degree mode is 2. The top 5 most central nodes are 1246.JMEA01000005_gene1340
+(degree 732), 1246.JMEA01000003_gene887 (degree 589), 1246.JMEA01000010_gene573
+(degree 559), 1246.JMEA01000016_gene735 (degree 553) and 1246.JMEA01000015_gene390
+(degree 499).
 
 
 References
@@ -107,14 +108,15 @@ def LeuconostocLactis(
 	
 	Datetime: 2021-02-02 16:22:17.974940
 	
-	The undirected graph Leuconostoc lactis has 1599 nodes and 98202 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07686 and
-	has 2 connected components, where the component with most nodes has 1597 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 122.83, and the node degree mode is 2. The top 5 most central
-	nodes are 1246.JMEA01000005_gene1340 (degree 732), 1246.JMEA01000003_gene887 (degree
-	589), 1246.JMEA01000010_gene573 (degree 559), 1246.JMEA01000016_gene735 (degree 553)
-	and 1246.JMEA01000015_gene390 (degree 499).
+	The undirected graph Leuconostoc lactis has 1599 nodes and 98202 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07686 and has 2 connected components, where the component with most
+	nodes has 1597 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 122.83, and
+	the node degree mode is 2. The top 5 most central nodes are 1246.JMEA01000005_gene1340
+	(degree 732), 1246.JMEA01000003_gene887 (degree 589), 1246.JMEA01000010_gene573
+	(degree 559), 1246.JMEA01000016_gene735 (degree 553) and 1246.JMEA01000015_gene390
+	(degree 499).
 	
 
 

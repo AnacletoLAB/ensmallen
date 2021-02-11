@@ -11,13 +11,14 @@ had the following characteristics:
 Datetime: 2021-02-06 12:30:09.851245
 
 The undirected graph soc-google-plus has 211187 nodes, of which 1 are singletons
-(all have self-loops), and 1143411 unweighted edges, of which 1761 are self-loops.
-The graph is extremely sparse as it has a density of 0.00005 and has 1706 connected
-components, where the component with most nodes has 201949 nodes and the component
-with the least nodes has a single node. The graph median node degree is 2, the mean
-node degree is 10.82, and the node degree mode is 2. The top 5 most central nodes
-are 136198 (degree 1790), 5381 (degree 1519), 116002 (degree 1499), 145647 (degree
-1400) and 66836 (degree 1363).
+(all have self-loops), and 1143411 unweighted edges, of which 1761 are
+self-loops. The graph is extremely sparse as it has a density of 0.00005
+and has 1706 connected components, where the component with most nodes
+has 201949 nodes and the component with the least nodes has a single node.
+The graph median node degree is 2, the mean node degree is 10.82, and the
+node degree mode is 2. The top 5 most central nodes are 136198 (degree
+1790), 5381 (degree 1519), 116002 (degree 1499), 145647 (degree 1400) and
+66836 (degree 1363).
 
 
 References
@@ -116,13 +117,14 @@ def SocGooglePlus(
 	Datetime: 2021-02-06 12:30:09.851245
 	
 	The undirected graph soc-google-plus has 211187 nodes, of which 1 are singletons
-	(all have self-loops), and 1143411 unweighted edges, of which 1761 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00005 and has 1706 connected
-	components, where the component with most nodes has 201949 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 2, the mean
-	node degree is 10.82, and the node degree mode is 2. The top 5 most central nodes
-	are 136198 (degree 1790), 5381 (degree 1519), 116002 (degree 1499), 145647 (degree
-	1400) and 66836 (degree 1363).
+	(all have self-loops), and 1143411 unweighted edges, of which 1761 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00005
+	and has 1706 connected components, where the component with most nodes
+	has 201949 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 2, the mean node degree is 10.82, and the
+	node degree mode is 2. The top 5 most central nodes are 136198 (degree
+	1790), 5381 (degree 1519), 116002 (degree 1499), 145647 (degree 1400) and
+	66836 (degree 1363).
 	
 
 

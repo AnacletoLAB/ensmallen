@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:37.705409
 
-The undirected graph Ochrobactrum rhizosphaerae has 4935 nodes and 550074 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04518
-and has 23 connected components, where the component with most nodes has 4872 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 175, the mean node degree is 222.93, and the node degree mode is 1. The top 5
-most central nodes are 1437448.AZRT01000047_gene4983 (degree 2264), 1437448.AZRT01000037_gene2993
-(degree 1752), 1437448.AZRT01000012_gene715 (degree 1633), 1437448.AZRT01000029_gene2463
-(degree 1398) and 1437448.AZRT01000028_gene2055 (degree 1349).
+The undirected graph Ochrobactrum rhizosphaerae has 4935 nodes and 550074
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04518 and has 23 connected components, where the component
+with most nodes has 4872 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 175, the mean node degree is 222.93,
+and the node degree mode is 1. The top 5 most central nodes are 1437448.AZRT01000047_gene4983
+(degree 2264), 1437448.AZRT01000037_gene2993 (degree 1752), 1437448.AZRT01000012_gene715
+(degree 1633), 1437448.AZRT01000029_gene2463 (degree 1398) and 1437448.AZRT01000028_gene2055
+(degree 1349).
 
 
 References
@@ -107,14 +108,15 @@ def OchrobactrumRhizosphaerae(
 	
 	Datetime: 2021-02-03 22:55:37.705409
 	
-	The undirected graph Ochrobactrum rhizosphaerae has 4935 nodes and 550074 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04518
-	and has 23 connected components, where the component with most nodes has 4872 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 175, the mean node degree is 222.93, and the node degree mode is 1. The top 5
-	most central nodes are 1437448.AZRT01000047_gene4983 (degree 2264), 1437448.AZRT01000037_gene2993
-	(degree 1752), 1437448.AZRT01000012_gene715 (degree 1633), 1437448.AZRT01000029_gene2463
-	(degree 1398) and 1437448.AZRT01000028_gene2055 (degree 1349).
+	The undirected graph Ochrobactrum rhizosphaerae has 4935 nodes and 550074
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04518 and has 23 connected components, where the component
+	with most nodes has 4872 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 175, the mean node degree is 222.93,
+	and the node degree mode is 1. The top 5 most central nodes are 1437448.AZRT01000047_gene4983
+	(degree 2264), 1437448.AZRT01000037_gene2993 (degree 1752), 1437448.AZRT01000012_gene715
+	(degree 1633), 1437448.AZRT01000029_gene2463 (degree 1398) and 1437448.AZRT01000028_gene2055
+	(degree 1349).
 	
 
 

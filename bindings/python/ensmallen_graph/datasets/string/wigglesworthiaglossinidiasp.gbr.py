@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:19.205140
 
-The undirected graph Wigglesworthia glossinidia sp. Gbr has 611 nodes and 35953 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.19293 and is connected, as it has a single component. The graph median node
-degree is 108, the mean node degree is 117.69, and the node degree mode is 92. The
-top 5 most central nodes are 36870.25166561 (degree 323), 36870.25166255 (degree
-321), 36870.25166213 (degree 294), 36870.25166190 (degree 287) and 36870.25166547
-(degree 286).
+The undirected graph Wigglesworthia glossinidia sp. Gbr has 611 nodes and
+35953 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.19293 and is connected, as it has a single
+component. The graph median node degree is 108, the mean node degree is
+117.69, and the node degree mode is 92. The top 5 most central nodes are
+36870.25166561 (degree 323), 36870.25166255 (degree 321), 36870.25166213
+(degree 294), 36870.25166190 (degree 287) and 36870.25166547 (degree 286).
 
 
 References
@@ -106,13 +106,13 @@ def WigglesworthiaGlossinidiaSp.Gbr(
 	
 	Datetime: 2021-02-02 18:06:19.205140
 	
-	The undirected graph Wigglesworthia glossinidia sp. Gbr has 611 nodes and 35953 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.19293 and is connected, as it has a single component. The graph median node
-	degree is 108, the mean node degree is 117.69, and the node degree mode is 92. The
-	top 5 most central nodes are 36870.25166561 (degree 323), 36870.25166255 (degree
-	321), 36870.25166213 (degree 294), 36870.25166190 (degree 287) and 36870.25166547
-	(degree 286).
+	The undirected graph Wigglesworthia glossinidia sp. Gbr has 611 nodes and
+	35953 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.19293 and is connected, as it has a single
+	component. The graph median node degree is 108, the mean node degree is
+	117.69, and the node degree mode is 92. The top 5 most central nodes are
+	36870.25166561 (degree 323), 36870.25166255 (degree 321), 36870.25166213
+	(degree 294), 36870.25166190 (degree 287) and 36870.25166547 (degree 286).
 	
 
 

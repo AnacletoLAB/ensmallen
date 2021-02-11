@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:55.207040
 
-The undirected graph Streptomyces sp. 142MFCol31 has 8266 nodes and 1237851 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03624
-and has 47 connected components, where the component with most nodes has 8165 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 250, the mean node degree is 299.50, and the node degree mode is 1. The top 5
-most central nodes are 1172179.AUKV01000014_gene3690 (degree 4077), 1172179.AUKV01000008_gene4804
-(degree 2847), 1172179.AUKV01000019_gene2747 (degree 2546), 1172179.AUKV01000019_gene2792
-(degree 2307) and 1172179.AUKV01000031_gene5113 (degree 2179).
+The undirected graph Streptomyces sp. 142MFCol31 has 8266 nodes and 1237851
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03624 and has 47 connected components, where the component
+with most nodes has 8165 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 250, the mean node degree is 299.50,
+and the node degree mode is 1. The top 5 most central nodes are 1172179.AUKV01000014_gene3690
+(degree 4077), 1172179.AUKV01000008_gene4804 (degree 2847), 1172179.AUKV01000019_gene2747
+(degree 2546), 1172179.AUKV01000019_gene2792 (degree 2307) and 1172179.AUKV01000031_gene5113
+(degree 2179).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.142mfcol31(
 	
 	Datetime: 2021-02-02 23:06:55.207040
 	
-	The undirected graph Streptomyces sp. 142MFCol31 has 8266 nodes and 1237851 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03624
-	and has 47 connected components, where the component with most nodes has 8165 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 250, the mean node degree is 299.50, and the node degree mode is 1. The top 5
-	most central nodes are 1172179.AUKV01000014_gene3690 (degree 4077), 1172179.AUKV01000008_gene4804
-	(degree 2847), 1172179.AUKV01000019_gene2747 (degree 2546), 1172179.AUKV01000019_gene2792
-	(degree 2307) and 1172179.AUKV01000031_gene5113 (degree 2179).
+	The undirected graph Streptomyces sp. 142MFCol31 has 8266 nodes and 1237851
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03624 and has 47 connected components, where the component
+	with most nodes has 8165 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 250, the mean node degree is 299.50,
+	and the node degree mode is 1. The top 5 most central nodes are 1172179.AUKV01000014_gene3690
+	(degree 4077), 1172179.AUKV01000008_gene4804 (degree 2847), 1172179.AUKV01000019_gene2747
+	(degree 2546), 1172179.AUKV01000019_gene2792 (degree 2307) and 1172179.AUKV01000031_gene5113
+	(degree 2179).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:20:19.728868
 
-The undirected graph Streptomyces sp. TAA040 has 4573 nodes and 516345 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04939 and
-has 20 connected components, where the component with most nodes has 4525 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 225.82, and the node degree mode is 2. The top 5 most central
-nodes are 1288083.AUKR01000015_gene2750 (degree 2269), 1288083.AUKR01000043_gene1
-(degree 1691), 1288083.AUKR01000001_gene1317 (degree 1518), 1288083.AUKR01000007_gene3296
-(degree 1475) and 1288083.AUKR01000005_gene2279 (degree 1382).
+The undirected graph Streptomyces sp. TAA040 has 4573 nodes and 516345
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04939 and has 20 connected components, where the component
+with most nodes has 4525 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 225.82,
+and the node degree mode is 2. The top 5 most central nodes are 1288083.AUKR01000015_gene2750
+(degree 2269), 1288083.AUKR01000043_gene1 (degree 1691), 1288083.AUKR01000001_gene1317
+(degree 1518), 1288083.AUKR01000007_gene3296 (degree 1475) and 1288083.AUKR01000005_gene2279
+(degree 1382).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Taa040(
 	
 	Datetime: 2021-02-03 21:20:19.728868
 	
-	The undirected graph Streptomyces sp. TAA040 has 4573 nodes and 516345 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04939 and
-	has 20 connected components, where the component with most nodes has 4525 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 225.82, and the node degree mode is 2. The top 5 most central
-	nodes are 1288083.AUKR01000015_gene2750 (degree 2269), 1288083.AUKR01000043_gene1
-	(degree 1691), 1288083.AUKR01000001_gene1317 (degree 1518), 1288083.AUKR01000007_gene3296
-	(degree 1475) and 1288083.AUKR01000005_gene2279 (degree 1382).
+	The undirected graph Streptomyces sp. TAA040 has 4573 nodes and 516345
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04939 and has 20 connected components, where the component
+	with most nodes has 4525 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 225.82,
+	and the node degree mode is 2. The top 5 most central nodes are 1288083.AUKR01000015_gene2750
+	(degree 2269), 1288083.AUKR01000043_gene1 (degree 1691), 1288083.AUKR01000001_gene1317
+	(degree 1518), 1288083.AUKR01000007_gene3296 (degree 1475) and 1288083.AUKR01000005_gene2279
+	(degree 1382).
 	
 
 

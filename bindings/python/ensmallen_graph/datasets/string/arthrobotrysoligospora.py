@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:19.003085
 
-The undirected graph Arthrobotrys oligospora has 6446 nodes and 634621 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03055 and
-has 34 connected components, where the component with most nodes has 6378 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 196.90, and the node degree mode is 1. The top 5 most central
-nodes are 13349.G1X2N5 (degree 1585), 13349.G1XAU0 (degree 1527), 13349.G1XN67 (degree
-1397), 13349.G1XHI1 (degree 1343) and 13349.G1XMF7 (degree 1311).
+The undirected graph Arthrobotrys oligospora has 6446 nodes and 634621
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03055 and has 34 connected components, where the component
+with most nodes has 6378 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 196.90,
+and the node degree mode is 1. The top 5 most central nodes are 13349.G1X2N5
+(degree 1585), 13349.G1XAU0 (degree 1527), 13349.G1XN67 (degree 1397),
+13349.G1XHI1 (degree 1343) and 13349.G1XMF7 (degree 1311).
 
 
 References
@@ -106,13 +107,14 @@ def ArthrobotrysOligospora(
 	
 	Datetime: 2021-02-02 17:53:19.003085
 	
-	The undirected graph Arthrobotrys oligospora has 6446 nodes and 634621 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03055 and
-	has 34 connected components, where the component with most nodes has 6378 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 196.90, and the node degree mode is 1. The top 5 most central
-	nodes are 13349.G1X2N5 (degree 1585), 13349.G1XAU0 (degree 1527), 13349.G1XN67 (degree
-	1397), 13349.G1XHI1 (degree 1343) and 13349.G1XMF7 (degree 1311).
+	The undirected graph Arthrobotrys oligospora has 6446 nodes and 634621
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03055 and has 34 connected components, where the component
+	with most nodes has 6378 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 196.90,
+	and the node degree mode is 1. The top 5 most central nodes are 13349.G1X2N5
+	(degree 1585), 13349.G1XAU0 (degree 1527), 13349.G1XN67 (degree 1397),
+	13349.G1XHI1 (degree 1343) and 13349.G1XMF7 (degree 1311).
 	
 
 

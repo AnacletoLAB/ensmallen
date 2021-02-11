@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:18.726078
 
-The undirected graph Eutrema salsugineum has 22104 nodes and 4264213 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01746 and
-has 9 connected components, where the component with most nodes has 22088 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 385.83, and the node degree mode is 2. The top 5 most central
-nodes are 72664.XP_006408919.1 (degree 6789), 72664.XP_006418731.1 (degree 4227),
-72664.XP_006404610.1 (degree 4111), 72664.XP_006409445.1 (degree 4108) and 72664.XP_006412210.1
+The undirected graph Eutrema salsugineum has 22104 nodes and 4264213 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01746 and has 9 connected components, where the component with most
+nodes has 22088 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 385.83, and
+the node degree mode is 2. The top 5 most central nodes are 72664.XP_006408919.1
+(degree 6789), 72664.XP_006418731.1 (degree 4227), 72664.XP_006404610.1
+(degree 4111), 72664.XP_006409445.1 (degree 4108) and 72664.XP_006412210.1
 (degree 4108).
 
 
@@ -107,13 +108,14 @@ def EutremaSalsugineum(
 	
 	Datetime: 2021-02-02 18:32:18.726078
 	
-	The undirected graph Eutrema salsugineum has 22104 nodes and 4264213 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01746 and
-	has 9 connected components, where the component with most nodes has 22088 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 385.83, and the node degree mode is 2. The top 5 most central
-	nodes are 72664.XP_006408919.1 (degree 6789), 72664.XP_006418731.1 (degree 4227),
-	72664.XP_006404610.1 (degree 4111), 72664.XP_006409445.1 (degree 4108) and 72664.XP_006412210.1
+	The undirected graph Eutrema salsugineum has 22104 nodes and 4264213 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01746 and has 9 connected components, where the component with most
+	nodes has 22088 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 385.83, and
+	the node degree mode is 2. The top 5 most central nodes are 72664.XP_006408919.1
+	(degree 6789), 72664.XP_006418731.1 (degree 4227), 72664.XP_006404610.1
+	(degree 4111), 72664.XP_006409445.1 (degree 4108) and 72664.XP_006412210.1
 	(degree 4108).
 	
 

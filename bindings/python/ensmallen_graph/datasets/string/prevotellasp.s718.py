@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:14:17.930586
 
-The undirected graph Prevotella sp. S718 has 2165 nodes and 128774 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05497 and
-has 24 connected components, where the component with most nodes has 2083 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 118.96, and the node degree mode is 2. The top 5 most central
-nodes are 1284775.HMPREF1640_05790 (degree 803), 1284775.HMPREF1640_10360 (degree
-710), 1284775.HMPREF1640_04125 (degree 687), 1284775.HMPREF1640_09045 (degree 674)
-and 1284775.HMPREF1640_11645 (degree 603).
+The undirected graph Prevotella sp. S718 has 2165 nodes and 128774 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05497 and has 24 connected components, where the component with most
+nodes has 2083 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 118.96, and
+the node degree mode is 2. The top 5 most central nodes are 1284775.HMPREF1640_05790
+(degree 803), 1284775.HMPREF1640_10360 (degree 710), 1284775.HMPREF1640_04125
+(degree 687), 1284775.HMPREF1640_09045 (degree 674) and 1284775.HMPREF1640_11645
+(degree 603).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaSp.S718(
 	
 	Datetime: 2021-02-03 21:14:17.930586
 	
-	The undirected graph Prevotella sp. S718 has 2165 nodes and 128774 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05497 and
-	has 24 connected components, where the component with most nodes has 2083 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 118.96, and the node degree mode is 2. The top 5 most central
-	nodes are 1284775.HMPREF1640_05790 (degree 803), 1284775.HMPREF1640_10360 (degree
-	710), 1284775.HMPREF1640_04125 (degree 687), 1284775.HMPREF1640_09045 (degree 674)
-	and 1284775.HMPREF1640_11645 (degree 603).
+	The undirected graph Prevotella sp. S718 has 2165 nodes and 128774 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05497 and has 24 connected components, where the component with most
+	nodes has 2083 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 118.96, and
+	the node degree mode is 2. The top 5 most central nodes are 1284775.HMPREF1640_05790
+	(degree 803), 1284775.HMPREF1640_10360 (degree 710), 1284775.HMPREF1640_04125
+	(degree 687), 1284775.HMPREF1640_09045 (degree 674) and 1284775.HMPREF1640_11645
+	(degree 603).
 	
 
 

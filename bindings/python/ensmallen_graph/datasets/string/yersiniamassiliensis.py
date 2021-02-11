@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:22.700687
 
-The undirected graph Yersinia massiliensis has 4325 nodes and 527966 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05646 and
-has 8 connected components, where the component with most nodes has 4310 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 244.15, and the node degree mode is 1. The top 5 most central
-nodes are 1205683.CAKR01000042_gene2767 (degree 1584), 1205683.CAKR01000028_gene3857
-(degree 1556), 1205683.CAKR01000009_gene1609 (degree 1411), 1205683.CAKR01000028_gene3858
-(degree 1399) and 1205683.CAKR01000010_gene3390 (degree 1372).
+The undirected graph Yersinia massiliensis has 4325 nodes and 527966 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05646 and has 8 connected components, where the component with most
+nodes has 4310 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 244.15, and
+the node degree mode is 1. The top 5 most central nodes are 1205683.CAKR01000042_gene2767
+(degree 1584), 1205683.CAKR01000028_gene3857 (degree 1556), 1205683.CAKR01000009_gene1609
+(degree 1411), 1205683.CAKR01000028_gene3858 (degree 1399) and 1205683.CAKR01000010_gene3390
+(degree 1372).
 
 
 References
@@ -107,14 +108,15 @@ def YersiniaMassiliensis(
 	
 	Datetime: 2021-02-02 23:15:22.700687
 	
-	The undirected graph Yersinia massiliensis has 4325 nodes and 527966 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05646 and
-	has 8 connected components, where the component with most nodes has 4310 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 244.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1205683.CAKR01000042_gene2767 (degree 1584), 1205683.CAKR01000028_gene3857
-	(degree 1556), 1205683.CAKR01000009_gene1609 (degree 1411), 1205683.CAKR01000028_gene3858
-	(degree 1399) and 1205683.CAKR01000010_gene3390 (degree 1372).
+	The undirected graph Yersinia massiliensis has 4325 nodes and 527966 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05646 and has 8 connected components, where the component with most
+	nodes has 4310 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 244.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1205683.CAKR01000042_gene2767
+	(degree 1584), 1205683.CAKR01000028_gene3857 (degree 1556), 1205683.CAKR01000009_gene1609
+	(degree 1411), 1205683.CAKR01000028_gene3858 (degree 1399) and 1205683.CAKR01000010_gene3390
+	(degree 1372).
 	
 
 

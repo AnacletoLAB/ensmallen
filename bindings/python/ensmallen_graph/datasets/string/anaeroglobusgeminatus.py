@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:37.628771
 
-The undirected graph Anaeroglobus geminatus has 2124 nodes and 173644 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07702 and
-has 6 connected components, where the component with most nodes has 2113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 163.51, and the node degree mode is 5. The top 5 most central
-nodes are 861450.HMPREF0080_01898 (degree 942), 861450.HMPREF0080_01799 (degree 858),
-861450.HMPREF0080_01383 (degree 784), 861450.HMPREF0080_00941 (degree 770) and 861450.HMPREF0080_01614
+The undirected graph Anaeroglobus geminatus has 2124 nodes and 173644 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07702 and has 6 connected components, where the component with most
+nodes has 2113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 163.51, and
+the node degree mode is 5. The top 5 most central nodes are 861450.HMPREF0080_01898
+(degree 942), 861450.HMPREF0080_01799 (degree 858), 861450.HMPREF0080_01383
+(degree 784), 861450.HMPREF0080_00941 (degree 770) and 861450.HMPREF0080_01614
 (degree 726).
 
 
@@ -107,13 +108,14 @@ def AnaeroglobusGeminatus(
 	
 	Datetime: 2021-02-02 21:46:37.628771
 	
-	The undirected graph Anaeroglobus geminatus has 2124 nodes and 173644 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07702 and
-	has 6 connected components, where the component with most nodes has 2113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 163.51, and the node degree mode is 5. The top 5 most central
-	nodes are 861450.HMPREF0080_01898 (degree 942), 861450.HMPREF0080_01799 (degree 858),
-	861450.HMPREF0080_01383 (degree 784), 861450.HMPREF0080_00941 (degree 770) and 861450.HMPREF0080_01614
+	The undirected graph Anaeroglobus geminatus has 2124 nodes and 173644 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07702 and has 6 connected components, where the component with most
+	nodes has 2113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 163.51, and
+	the node degree mode is 5. The top 5 most central nodes are 861450.HMPREF0080_01898
+	(degree 942), 861450.HMPREF0080_01799 (degree 858), 861450.HMPREF0080_01383
+	(degree 784), 861450.HMPREF0080_00941 (degree 770) and 861450.HMPREF0080_01614
 	(degree 726).
 	
 

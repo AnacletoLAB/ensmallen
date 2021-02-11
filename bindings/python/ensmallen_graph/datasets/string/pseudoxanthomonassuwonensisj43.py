@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:09.758586
 
-The undirected graph Pseudoxanthomonas suwonensis J43 has 2902 nodes and 90793 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02157
-and has 7 connected components, where the component with most nodes has 2890 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 50, the mean node degree is 62.57, and the node degree mode is 3. The top 5 most
-central nodes are 935567.JAES01000005_gene510 (degree 305), 935567.JAES01000025_gene1219
+The undirected graph Pseudoxanthomonas suwonensis J43 has 2902 nodes and
+90793 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.02157 and has 7 connected components, where the
+component with most nodes has 2890 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 50, the mean node degree
+is 62.57, and the node degree mode is 3. The top 5 most central nodes are
+935567.JAES01000005_gene510 (degree 305), 935567.JAES01000025_gene1219
 (degree 293), 935567.JAES01000004_gene17 (degree 293), 935567.JAES01000008_gene1940
 (degree 290) and 935567.JAES01000003_gene216 (degree 285).
 
@@ -107,12 +108,13 @@ def PseudoxanthomonasSuwonensisJ43(
 	
 	Datetime: 2021-02-02 21:59:09.758586
 	
-	The undirected graph Pseudoxanthomonas suwonensis J43 has 2902 nodes and 90793 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02157
-	and has 7 connected components, where the component with most nodes has 2890 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 50, the mean node degree is 62.57, and the node degree mode is 3. The top 5 most
-	central nodes are 935567.JAES01000005_gene510 (degree 305), 935567.JAES01000025_gene1219
+	The undirected graph Pseudoxanthomonas suwonensis J43 has 2902 nodes and
+	90793 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.02157 and has 7 connected components, where the
+	component with most nodes has 2890 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 50, the mean node degree
+	is 62.57, and the node degree mode is 3. The top 5 most central nodes are
+	935567.JAES01000005_gene510 (degree 305), 935567.JAES01000025_gene1219
 	(degree 293), 935567.JAES01000004_gene17 (degree 293), 935567.JAES01000008_gene1940
 	(degree 290) and 935567.JAES01000003_gene216 (degree 285).
 	

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:34.682751
 
-The undirected graph Anopheles gambiae has 11078 nodes and 1017006 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01658 and
-has 12 connected components, where the component with most nodes has 11055 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 183.61, and the node degree mode is 1. The top 5
-most central nodes are 7165.AGAP000810-PA (degree 2748), 7165.AGAP008509-PA (degree
-1977), 7165.AGAP009623-PA (degree 1842), 7165.AGAP003715-PA (degree 1749) and 7165.AGAP002945-PA
-(degree 1698).
+The undirected graph Anopheles gambiae has 11078 nodes and 1017006 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01658 and has 12 connected components, where the component with most
+nodes has 11055 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 183.61, and
+the node degree mode is 1. The top 5 most central nodes are 7165.AGAP000810-PA
+(degree 2748), 7165.AGAP008509-PA (degree 1977), 7165.AGAP009623-PA (degree
+1842), 7165.AGAP003715-PA (degree 1749) and 7165.AGAP002945-PA (degree
+1698).
 
 
 References
@@ -107,14 +108,15 @@ def AnophelesGambiae(
 	
 	Datetime: 2021-02-02 17:20:34.682751
 	
-	The undirected graph Anopheles gambiae has 11078 nodes and 1017006 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01658 and
-	has 12 connected components, where the component with most nodes has 11055 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 183.61, and the node degree mode is 1. The top 5
-	most central nodes are 7165.AGAP000810-PA (degree 2748), 7165.AGAP008509-PA (degree
-	1977), 7165.AGAP009623-PA (degree 1842), 7165.AGAP003715-PA (degree 1749) and 7165.AGAP002945-PA
-	(degree 1698).
+	The undirected graph Anopheles gambiae has 11078 nodes and 1017006 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01658 and has 12 connected components, where the component with most
+	nodes has 11055 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 183.61, and
+	the node degree mode is 1. The top 5 most central nodes are 7165.AGAP000810-PA
+	(degree 2748), 7165.AGAP008509-PA (degree 1977), 7165.AGAP009623-PA (degree
+	1842), 7165.AGAP003715-PA (degree 1749) and 7165.AGAP002945-PA (degree
+	1698).
 	
 
 

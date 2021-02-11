@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:18.126799
 
-The undirected graph Clostridiales bacterium 1747FAA has 6171 nodes and 820891 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04312
-and has 31 connected components, where the component with most nodes has 6094 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 266.05, and the node degree mode is 4. The top 5
-most central nodes are 457421.CBFG_03393 (degree 2330), 457421.CBFG_06134 (degree
-2208), 457421.CBFG_02311 (degree 2106), 457421.CBFG_04160 (degree 2055) and 457421.CBFG_00101
-(degree 2043).
+The undirected graph Clostridiales bacterium 1747FAA has 6171 nodes and
+820891 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04312 and has 31 connected components, where the
+component with most nodes has 6094 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 196, the mean node degree
+is 266.05, and the node degree mode is 4. The top 5 most central nodes
+are 457421.CBFG_03393 (degree 2330), 457421.CBFG_06134 (degree 2208), 457421.CBFG_02311
+(degree 2106), 457421.CBFG_04160 (degree 2055) and 457421.CBFG_00101 (degree
+2043).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridialesBacterium1747faa(
 	
 	Datetime: 2021-02-02 20:53:18.126799
 	
-	The undirected graph Clostridiales bacterium 1747FAA has 6171 nodes and 820891 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04312
-	and has 31 connected components, where the component with most nodes has 6094 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 266.05, and the node degree mode is 4. The top 5
-	most central nodes are 457421.CBFG_03393 (degree 2330), 457421.CBFG_06134 (degree
-	2208), 457421.CBFG_02311 (degree 2106), 457421.CBFG_04160 (degree 2055) and 457421.CBFG_00101
-	(degree 2043).
+	The undirected graph Clostridiales bacterium 1747FAA has 6171 nodes and
+	820891 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04312 and has 31 connected components, where the
+	component with most nodes has 6094 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 196, the mean node degree
+	is 266.05, and the node degree mode is 4. The top 5 most central nodes
+	are 457421.CBFG_03393 (degree 2330), 457421.CBFG_06134 (degree 2208), 457421.CBFG_02311
+	(degree 2106), 457421.CBFG_04160 (degree 2055) and 457421.CBFG_00101 (degree
+	2043).
 	
 
 

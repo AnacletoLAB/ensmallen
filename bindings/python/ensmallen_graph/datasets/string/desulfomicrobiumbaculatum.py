@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:40.343740
 
-The undirected graph Desulfomicrobium baculatum has 3409 nodes and 370693 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06381
-and has 4 connected components, where the component with most nodes has 3402 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 217.48, and the node degree mode is 2. The top 5
-most central nodes are 525897.Dbac_3125 (degree 1548), 525897.Dbac_1480 (degree 1393),
-525897.Dbac_0118 (degree 1308), 525897.Dbac_2496 (degree 1129) and 525897.Dbac_1044
-(degree 1121).
+The undirected graph Desulfomicrobium baculatum has 3409 nodes and 370693
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06381 and has 4 connected components, where the component
+with most nodes has 3402 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 217.48,
+and the node degree mode is 2. The top 5 most central nodes are 525897.Dbac_3125
+(degree 1548), 525897.Dbac_1480 (degree 1393), 525897.Dbac_0118 (degree
+1308), 525897.Dbac_2496 (degree 1129) and 525897.Dbac_1044 (degree 1121).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfomicrobiumBaculatum(
 	
 	Datetime: 2021-02-02 21:05:40.343740
 	
-	The undirected graph Desulfomicrobium baculatum has 3409 nodes and 370693 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06381
-	and has 4 connected components, where the component with most nodes has 3402 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 217.48, and the node degree mode is 2. The top 5
-	most central nodes are 525897.Dbac_3125 (degree 1548), 525897.Dbac_1480 (degree 1393),
-	525897.Dbac_0118 (degree 1308), 525897.Dbac_2496 (degree 1129) and 525897.Dbac_1044
-	(degree 1121).
+	The undirected graph Desulfomicrobium baculatum has 3409 nodes and 370693
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06381 and has 4 connected components, where the component
+	with most nodes has 3402 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 217.48,
+	and the node degree mode is 2. The top 5 most central nodes are 525897.Dbac_3125
+	(degree 1548), 525897.Dbac_1480 (degree 1393), 525897.Dbac_0118 (degree
+	1308), 525897.Dbac_2496 (degree 1129) and 525897.Dbac_1044 (degree 1121).
 	
 
 

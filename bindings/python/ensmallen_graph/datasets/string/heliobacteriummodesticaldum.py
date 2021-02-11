@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:07.458912
 
-The undirected graph Heliobacterium modesticaldum has 2954 nodes and 207240 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04751
-and has 13 connected components, where the component with most nodes has 2924 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 140.31, and the node degree mode is 1. The top 5
-most central nodes are 498761.HM1_0196 (degree 1029), 498761.HM1_1881 (degree 1001),
-498761.HM1_1748 (degree 976), 498761.HM1_0559 (degree 969) and 498761.HM1_0057 (degree
-891).
+The undirected graph Heliobacterium modesticaldum has 2954 nodes and 207240
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04751 and has 13 connected components, where the component
+with most nodes has 2924 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 140.31,
+and the node degree mode is 1. The top 5 most central nodes are 498761.HM1_0196
+(degree 1029), 498761.HM1_1881 (degree 1001), 498761.HM1_1748 (degree 976),
+498761.HM1_0559 (degree 969) and 498761.HM1_0057 (degree 891).
 
 
 References
@@ -107,14 +107,14 @@ def HeliobacteriumModesticaldum(
 	
 	Datetime: 2021-02-02 21:01:07.458912
 	
-	The undirected graph Heliobacterium modesticaldum has 2954 nodes and 207240 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04751
-	and has 13 connected components, where the component with most nodes has 2924 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 140.31, and the node degree mode is 1. The top 5
-	most central nodes are 498761.HM1_0196 (degree 1029), 498761.HM1_1881 (degree 1001),
-	498761.HM1_1748 (degree 976), 498761.HM1_0559 (degree 969) and 498761.HM1_0057 (degree
-	891).
+	The undirected graph Heliobacterium modesticaldum has 2954 nodes and 207240
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04751 and has 13 connected components, where the component
+	with most nodes has 2924 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 140.31,
+	and the node degree mode is 1. The top 5 most central nodes are 498761.HM1_0196
+	(degree 1029), 498761.HM1_1881 (degree 1001), 498761.HM1_1748 (degree 976),
+	498761.HM1_0559 (degree 969) and 498761.HM1_0057 (degree 891).
 	
 
 

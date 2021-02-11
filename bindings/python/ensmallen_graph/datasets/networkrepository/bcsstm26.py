@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:06:45.561124
 
-The undirected graph bcsstm26 has 1922 nodes, of which 1922 are singletons (all have
-self-loops), and 1922 weighted edges, of which 1922 are self-loops. The graph is
-quite sparse as it has a density of 0.00052 and has 1922 connected components, where
-the component with most nodes has a single node and the component with the least
-nodes has a single node. The graph median node degree is 1, the mean node degree
-is 1.00, and the node degree mode is 1. The top 5 most central nodes are 1922 (degree
-1), 1921 (degree 1), 1920 (degree 1), 1919 (degree 1) and 1918 (degree 1).
+The undirected graph bcsstm26 has 1922 nodes, of which 1922 are singletons
+(all have self-loops), and 1922 weighted edges, of which 1922 are self-loops.
+The graph is quite sparse as it has a density of 0.00052 and has 1922 connected
+components, where the component with most nodes has a single node and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 1.00, and the node degree mode is
+1. The top 5 most central nodes are 1922 (degree 1), 1921 (degree 1), 1920
+(degree 1), 1919 (degree 1) and 1918 (degree 1).
 
 
 References
@@ -103,13 +104,14 @@ def Bcsstm26(
 	
 	Datetime: 2021-02-06 08:06:45.561124
 	
-	The undirected graph bcsstm26 has 1922 nodes, of which 1922 are singletons (all have
-	self-loops), and 1922 weighted edges, of which 1922 are self-loops. The graph is
-	quite sparse as it has a density of 0.00052 and has 1922 connected components, where
-	the component with most nodes has a single node and the component with the least
-	nodes has a single node. The graph median node degree is 1, the mean node degree
-	is 1.00, and the node degree mode is 1. The top 5 most central nodes are 1922 (degree
-	1), 1921 (degree 1), 1920 (degree 1), 1919 (degree 1) and 1918 (degree 1).
+	The undirected graph bcsstm26 has 1922 nodes, of which 1922 are singletons
+	(all have self-loops), and 1922 weighted edges, of which 1922 are self-loops.
+	The graph is quite sparse as it has a density of 0.00052 and has 1922 connected
+	components, where the component with most nodes has a single node and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 1.00, and the node degree mode is
+	1. The top 5 most central nodes are 1922 (degree 1), 1921 (degree 1), 1920
+	(degree 1), 1919 (degree 1) and 1918 (degree 1).
 	
 
 

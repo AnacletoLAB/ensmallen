@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:40.804258
 
-The undirected graph Streptosporangium amethystogenes has 8227 nodes and 1256281
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03713 and has 52 connected components, where the component with most nodes has
-8105 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 249, the mean node degree is 305.40, and the node degree mode is 1. The
-top 5 most central nodes are 2002.JOEQ01000016_gene7412 (degree 3048), 2002.JOEQ01000024_gene158
+The undirected graph Streptosporangium amethystogenes has 8227 nodes and
+1256281 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03713 and has 52 connected components, where the
+component with most nodes has 8105 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 249, the mean node degree
+is 305.40, and the node degree mode is 1. The top 5 most central nodes
+are 2002.JOEQ01000016_gene7412 (degree 3048), 2002.JOEQ01000024_gene158
 (degree 2353), 2002.JOEQ01000024_gene179 (degree 2324), 2002.JOEQ01000001_gene4638
 (degree 2277) and 2002.JOEQ01000010_gene6302 (degree 2093).
 
@@ -107,12 +108,13 @@ def StreptosporangiumAmethystogenes(
 	
 	Datetime: 2021-02-02 16:24:40.804258
 	
-	The undirected graph Streptosporangium amethystogenes has 8227 nodes and 1256281
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03713 and has 52 connected components, where the component with most nodes has
-	8105 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 249, the mean node degree is 305.40, and the node degree mode is 1. The
-	top 5 most central nodes are 2002.JOEQ01000016_gene7412 (degree 3048), 2002.JOEQ01000024_gene158
+	The undirected graph Streptosporangium amethystogenes has 8227 nodes and
+	1256281 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03713 and has 52 connected components, where the
+	component with most nodes has 8105 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 249, the mean node degree
+	is 305.40, and the node degree mode is 1. The top 5 most central nodes
+	are 2002.JOEQ01000016_gene7412 (degree 3048), 2002.JOEQ01000024_gene158
 	(degree 2353), 2002.JOEQ01000024_gene179 (degree 2324), 2002.JOEQ01000001_gene4638
 	(degree 2277) and 2002.JOEQ01000010_gene6302 (degree 2093).
 	

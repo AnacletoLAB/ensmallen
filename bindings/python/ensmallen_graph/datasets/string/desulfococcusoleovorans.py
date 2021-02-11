@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:39.707509
 
-The undirected graph Desulfococcus oleovorans has 3244 nodes and 296915 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05645
-and has 5 connected components, where the component with most nodes has 3235 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 183.05, and the node degree mode is 4. The top 5
-most central nodes are 96561.Dole_1093 (degree 1349), 96561.Dole_2573 (degree 1336),
-96561.Dole_1676 (degree 1288), 96561.Dole_2982 (degree 1093) and 96561.Dole_2755
-(degree 1080).
+The undirected graph Desulfococcus oleovorans has 3244 nodes and 296915
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05645 and has 5 connected components, where the component
+with most nodes has 3235 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 183.05,
+and the node degree mode is 4. The top 5 most central nodes are 96561.Dole_1093
+(degree 1349), 96561.Dole_2573 (degree 1336), 96561.Dole_1676 (degree 1288),
+96561.Dole_2982 (degree 1093) and 96561.Dole_2755 (degree 1080).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfococcusOleovorans(
 	
 	Datetime: 2021-02-02 19:41:39.707509
 	
-	The undirected graph Desulfococcus oleovorans has 3244 nodes and 296915 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05645
-	and has 5 connected components, where the component with most nodes has 3235 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 183.05, and the node degree mode is 4. The top 5
-	most central nodes are 96561.Dole_1093 (degree 1349), 96561.Dole_2573 (degree 1336),
-	96561.Dole_1676 (degree 1288), 96561.Dole_2982 (degree 1093) and 96561.Dole_2755
-	(degree 1080).
+	The undirected graph Desulfococcus oleovorans has 3244 nodes and 296915
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05645 and has 5 connected components, where the component
+	with most nodes has 3235 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 183.05,
+	and the node degree mode is 4. The top 5 most central nodes are 96561.Dole_1093
+	(degree 1349), 96561.Dole_2573 (degree 1336), 96561.Dole_1676 (degree 1288),
+	96561.Dole_2982 (degree 1093) and 96561.Dole_2755 (degree 1080).
 	
 
 

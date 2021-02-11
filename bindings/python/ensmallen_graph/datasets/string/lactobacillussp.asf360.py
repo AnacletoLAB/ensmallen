@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:47.206587
 
-The undirected graph Lactobacillus sp. ASF360 has 1895 nodes and 116654 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06500
-and has 20 connected components, where the component with most nodes has 1839 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 123.12, and the node degree mode is 2. The top 5 most
-central nodes are 97137.C821_01699 (degree 830), 97137.C821_00346 (degree 643), 97137.C821_00940
-(degree 614), 97137.C821_01209 (degree 562) and 97137.C821_00149 (degree 550).
+The undirected graph Lactobacillus sp. ASF360 has 1895 nodes and 116654
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06500 and has 20 connected components, where the component
+with most nodes has 1839 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 123.12,
+and the node degree mode is 2. The top 5 most central nodes are 97137.C821_01699
+(degree 830), 97137.C821_00346 (degree 643), 97137.C821_00940 (degree 614),
+97137.C821_01209 (degree 562) and 97137.C821_00149 (degree 550).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusSp.Asf360(
 	
 	Datetime: 2021-02-02 19:41:47.206587
 	
-	The undirected graph Lactobacillus sp. ASF360 has 1895 nodes and 116654 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06500
-	and has 20 connected components, where the component with most nodes has 1839 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 123.12, and the node degree mode is 2. The top 5 most
-	central nodes are 97137.C821_01699 (degree 830), 97137.C821_00346 (degree 643), 97137.C821_00940
-	(degree 614), 97137.C821_01209 (degree 562) and 97137.C821_00149 (degree 550).
+	The undirected graph Lactobacillus sp. ASF360 has 1895 nodes and 116654
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06500 and has 20 connected components, where the component
+	with most nodes has 1839 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 123.12,
+	and the node degree mode is 2. The top 5 most central nodes are 97137.C821_01699
+	(degree 830), 97137.C821_00346 (degree 643), 97137.C821_00940 (degree 614),
+	97137.C821_01209 (degree 562) and 97137.C821_00149 (degree 550).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:31.830927
 
-The undirected graph Halorhabdus utahensis has 2974 nodes and 470312 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10638
-and has 19 connected components, where the component with most nodes has 2934 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 337, the mean node degree is 316.28, and the node degree mode is 3. The top 5
-most central nodes are 519442.Huta_0873 (degree 1118), 519442.Huta_2309 (degree 978),
-519442.Huta_1010 (degree 917), 519442.Huta_0370 (degree 889) and 519442.Huta_0879
-(degree 883).
+The undirected graph Halorhabdus utahensis has 2974 nodes and 470312 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10638 and has 19 connected components, where the component
+with most nodes has 2934 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 337, the mean node degree is 316.28,
+and the node degree mode is 3. The top 5 most central nodes are 519442.Huta_0873
+(degree 1118), 519442.Huta_2309 (degree 978), 519442.Huta_1010 (degree
+917), 519442.Huta_0370 (degree 889) and 519442.Huta_0879 (degree 883).
 
 
 References
@@ -107,14 +107,14 @@ def HalorhabdusUtahensis(
 	
 	Datetime: 2021-02-02 21:03:31.830927
 	
-	The undirected graph Halorhabdus utahensis has 2974 nodes and 470312 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10638
-	and has 19 connected components, where the component with most nodes has 2934 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 337, the mean node degree is 316.28, and the node degree mode is 3. The top 5
-	most central nodes are 519442.Huta_0873 (degree 1118), 519442.Huta_2309 (degree 978),
-	519442.Huta_1010 (degree 917), 519442.Huta_0370 (degree 889) and 519442.Huta_0879
-	(degree 883).
+	The undirected graph Halorhabdus utahensis has 2974 nodes and 470312 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10638 and has 19 connected components, where the component
+	with most nodes has 2934 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 337, the mean node degree is 316.28,
+	and the node degree mode is 3. The top 5 most central nodes are 519442.Huta_0873
+	(degree 1118), 519442.Huta_2309 (degree 978), 519442.Huta_1010 (degree
+	917), 519442.Huta_0370 (degree 889) and 519442.Huta_0879 (degree 883).
 	
 
 

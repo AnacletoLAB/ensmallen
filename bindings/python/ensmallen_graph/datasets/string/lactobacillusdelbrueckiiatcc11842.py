@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:49.809192
 
-The undirected graph Lactobacillus delbrueckii ATCC11842 has 1524 nodes and 90890
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07832 and has 16 connected components, where the component with most nodes has
-1487 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 86, the mean node degree is 119.28, and the node degree mode is 4. The
-top 5 most central nodes are 390333.Ldb1512 (degree 744), 390333.Ldb1313 (degree
-565), 390333.Ldb0599 (degree 504), 390333.Ldb1411 (degree 501) and 390333.Ldb0125
-(degree 495).
+The undirected graph Lactobacillus delbrueckii ATCC11842 has 1524 nodes
+and 90890 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07832 and has 16 connected components, where the
+component with most nodes has 1487 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 119.28, and the node degree mode is 4. The top 5 most central nodes
+are 390333.Ldb1512 (degree 744), 390333.Ldb1313 (degree 565), 390333.Ldb0599
+(degree 504), 390333.Ldb1411 (degree 501) and 390333.Ldb0125 (degree 495).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusDelbrueckiiAtcc11842(
 	
 	Datetime: 2021-02-02 20:38:49.809192
 	
-	The undirected graph Lactobacillus delbrueckii ATCC11842 has 1524 nodes and 90890
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07832 and has 16 connected components, where the component with most nodes has
-	1487 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 86, the mean node degree is 119.28, and the node degree mode is 4. The
-	top 5 most central nodes are 390333.Ldb1512 (degree 744), 390333.Ldb1313 (degree
-	565), 390333.Ldb0599 (degree 504), 390333.Ldb1411 (degree 501) and 390333.Ldb0125
-	(degree 495).
+	The undirected graph Lactobacillus delbrueckii ATCC11842 has 1524 nodes
+	and 90890 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07832 and has 16 connected components, where the
+	component with most nodes has 1487 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 119.28, and the node degree mode is 4. The top 5 most central nodes
+	are 390333.Ldb1512 (degree 744), 390333.Ldb1313 (degree 565), 390333.Ldb0599
+	(degree 504), 390333.Ldb1411 (degree 501) and 390333.Ldb0125 (degree 495).
 	
 
 

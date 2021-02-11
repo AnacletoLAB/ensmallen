@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:43.005210
 
-The undirected graph Corynebacterium sp. JCB has 2171 nodes and 144584 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06138 and
-has 12 connected components, where the component with most nodes has 2142 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 133.20, and the node degree mode is 2. The top 5 most central
-nodes are 1414719.CBYN010000002_gene835 (degree 886), 1414719.CBYN010000033_gene542
-(degree 747), 1414719.CBYN010000107_gene1662 (degree 670), 1414719.CBYN010000085_gene2155
-(degree 668) and 1414719.CBYN010000172_gene2057 (degree 647).
+The undirected graph Corynebacterium sp. JCB has 2171 nodes and 144584
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06138 and has 12 connected components, where the component
+with most nodes has 2142 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 133.20,
+and the node degree mode is 2. The top 5 most central nodes are 1414719.CBYN010000002_gene835
+(degree 886), 1414719.CBYN010000033_gene542 (degree 747), 1414719.CBYN010000107_gene1662
+(degree 670), 1414719.CBYN010000085_gene2155 (degree 668) and 1414719.CBYN010000172_gene2057
+(degree 647).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumSp.Jcb(
 	
 	Datetime: 2021-02-03 22:44:43.005210
 	
-	The undirected graph Corynebacterium sp. JCB has 2171 nodes and 144584 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06138 and
-	has 12 connected components, where the component with most nodes has 2142 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 133.20, and the node degree mode is 2. The top 5 most central
-	nodes are 1414719.CBYN010000002_gene835 (degree 886), 1414719.CBYN010000033_gene542
-	(degree 747), 1414719.CBYN010000107_gene1662 (degree 670), 1414719.CBYN010000085_gene2155
-	(degree 668) and 1414719.CBYN010000172_gene2057 (degree 647).
+	The undirected graph Corynebacterium sp. JCB has 2171 nodes and 144584
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06138 and has 12 connected components, where the component
+	with most nodes has 2142 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 133.20,
+	and the node degree mode is 2. The top 5 most central nodes are 1414719.CBYN010000002_gene835
+	(degree 886), 1414719.CBYN010000033_gene542 (degree 747), 1414719.CBYN010000107_gene1662
+	(degree 670), 1414719.CBYN010000085_gene2155 (degree 668) and 1414719.CBYN010000172_gene2057
+	(degree 647).
 	
 
 

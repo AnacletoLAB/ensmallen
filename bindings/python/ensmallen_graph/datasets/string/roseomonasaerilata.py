@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:24.794765
 
-The undirected graph Roseomonas aerilata has 5672 nodes and 608716 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03785 and
-has 25 connected components, where the component with most nodes has 5612 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 214.64, and the node degree mode is 2. The top 5 most central
-nodes are 1123060.JONP01000011_gene3034 (degree 1815), 1123060.JONP01000013_gene4031
-(degree 1788), 1123060.JONP01000018_gene194 (degree 1670), 1123060.JONP01000010_gene2219
-(degree 1627) and 1123060.JONP01000020_gene3216 (degree 1416).
+The undirected graph Roseomonas aerilata has 5672 nodes and 608716 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03785 and has 25 connected components, where the component with most
+nodes has 5612 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 214.64, and
+the node degree mode is 2. The top 5 most central nodes are 1123060.JONP01000011_gene3034
+(degree 1815), 1123060.JONP01000013_gene4031 (degree 1788), 1123060.JONP01000018_gene194
+(degree 1670), 1123060.JONP01000010_gene2219 (degree 1627) and 1123060.JONP01000020_gene3216
+(degree 1416).
 
 
 References
@@ -107,14 +108,15 @@ def RoseomonasAerilata(
 	
 	Datetime: 2021-02-02 22:47:24.794765
 	
-	The undirected graph Roseomonas aerilata has 5672 nodes and 608716 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03785 and
-	has 25 connected components, where the component with most nodes has 5612 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 214.64, and the node degree mode is 2. The top 5 most central
-	nodes are 1123060.JONP01000011_gene3034 (degree 1815), 1123060.JONP01000013_gene4031
-	(degree 1788), 1123060.JONP01000018_gene194 (degree 1670), 1123060.JONP01000010_gene2219
-	(degree 1627) and 1123060.JONP01000020_gene3216 (degree 1416).
+	The undirected graph Roseomonas aerilata has 5672 nodes and 608716 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03785 and has 25 connected components, where the component with most
+	nodes has 5612 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 214.64, and
+	the node degree mode is 2. The top 5 most central nodes are 1123060.JONP01000011_gene3034
+	(degree 1815), 1123060.JONP01000013_gene4031 (degree 1788), 1123060.JONP01000018_gene194
+	(degree 1670), 1123060.JONP01000010_gene2219 (degree 1627) and 1123060.JONP01000020_gene3216
+	(degree 1416).
 	
 
 

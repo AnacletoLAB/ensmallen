@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:56.587759
 
-The undirected graph Desulfovibrio vulgaris Hildenborough has 3342 nodes and 308798
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05531 and has 25 connected components, where the component with most nodes has
-3281 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 150, the mean node degree is 184.80, and the node degree mode is 2. The
-top 5 most central nodes are 882.DVU_0496 (degree 1549), 882.DVU_0449 (degree 1211),
-882.DVU_1563 (degree 1090), 882.DVU_1043 (degree 1005) and 882.DVU_1653 (degree 993).
+The undirected graph Desulfovibrio vulgaris Hildenborough has 3342 nodes
+and 308798 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05531 and has 25 connected components, where the
+component with most nodes has 3281 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 150, the mean node degree
+is 184.80, and the node degree mode is 2. The top 5 most central nodes
+are 882.DVU_0496 (degree 1549), 882.DVU_0449 (degree 1211), 882.DVU_1563
+(degree 1090), 882.DVU_1043 (degree 1005) and 882.DVU_1653 (degree 993).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfovibrioVulgarisHildenborough(
 	
 	Datetime: 2021-02-02 16:21:56.587759
 	
-	The undirected graph Desulfovibrio vulgaris Hildenborough has 3342 nodes and 308798
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05531 and has 25 connected components, where the component with most nodes has
-	3281 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 150, the mean node degree is 184.80, and the node degree mode is 2. The
-	top 5 most central nodes are 882.DVU_0496 (degree 1549), 882.DVU_0449 (degree 1211),
-	882.DVU_1563 (degree 1090), 882.DVU_1043 (degree 1005) and 882.DVU_1653 (degree 993).
+	The undirected graph Desulfovibrio vulgaris Hildenborough has 3342 nodes
+	and 308798 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05531 and has 25 connected components, where the
+	component with most nodes has 3281 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 150, the mean node degree
+	is 184.80, and the node degree mode is 2. The top 5 most central nodes
+	are 882.DVU_0496 (degree 1549), 882.DVU_0449 (degree 1211), 882.DVU_1563
+	(degree 1090), 882.DVU_1043 (degree 1005) and 882.DVU_1653 (degree 993).
 	
 
 

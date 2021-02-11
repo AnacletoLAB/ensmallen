@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:03.358241
 
-The undirected graph Rivularia sp. PCC7116 has 6446 nodes and 616967 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02970 and
-has 31 connected components, where the component with most nodes has 6371 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 191.43, and the node degree mode is 1. The top 5 most central
-nodes are 373994.Riv7116_5757 (degree 2065), 373994.Riv7116_2494 (degree 2056), 373994.Riv7116_1199
-(degree 1828), 373994.Riv7116_3394 (degree 1743) and 373994.Riv7116_4087 (degree
+The undirected graph Rivularia sp. PCC7116 has 6446 nodes and 616967 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02970 and has 31 connected components, where the component with most
+nodes has 6371 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 191.43, and
+the node degree mode is 1. The top 5 most central nodes are 373994.Riv7116_5757
+(degree 2065), 373994.Riv7116_2494 (degree 2056), 373994.Riv7116_1199 (degree
+1828), 373994.Riv7116_3394 (degree 1743) and 373994.Riv7116_4087 (degree
 1731).
 
 
@@ -107,13 +108,14 @@ def RivulariaSp.Pcc7116(
 	
 	Datetime: 2021-02-02 20:36:03.358241
 	
-	The undirected graph Rivularia sp. PCC7116 has 6446 nodes and 616967 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02970 and
-	has 31 connected components, where the component with most nodes has 6371 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 191.43, and the node degree mode is 1. The top 5 most central
-	nodes are 373994.Riv7116_5757 (degree 2065), 373994.Riv7116_2494 (degree 2056), 373994.Riv7116_1199
-	(degree 1828), 373994.Riv7116_3394 (degree 1743) and 373994.Riv7116_4087 (degree
+	The undirected graph Rivularia sp. PCC7116 has 6446 nodes and 616967 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02970 and has 31 connected components, where the component with most
+	nodes has 6371 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 191.43, and
+	the node degree mode is 1. The top 5 most central nodes are 373994.Riv7116_5757
+	(degree 2065), 373994.Riv7116_2494 (degree 2056), 373994.Riv7116_1199 (degree
+	1828), 373994.Riv7116_3394 (degree 1743) and 373994.Riv7116_4087 (degree
 	1731).
 	
 

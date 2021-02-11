@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:07.286552
 
-The undirected graph Pyrococcus abyssi has 1773 nodes and 163260 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10393
-and has 4 connected components, where the component with most nodes has 1767 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 184.16, and the node degree mode is 6. The top 5
-most central nodes are 272844.PAB0257 (degree 663), 272844.PAB1208 (degree 585),
-272844.PAB2341 (degree 583), 272844.PAB1465 (degree 551) and 272844.PAB0423 (degree
-541).
+The undirected graph Pyrococcus abyssi has 1773 nodes and 163260 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10393 and has 4 connected components, where the component
+with most nodes has 1767 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 184.16,
+and the node degree mode is 6. The top 5 most central nodes are 272844.PAB0257
+(degree 663), 272844.PAB1208 (degree 585), 272844.PAB2341 (degree 583),
+272844.PAB1465 (degree 551) and 272844.PAB0423 (degree 541).
 
 
 References
@@ -107,14 +107,14 @@ def PyrococcusAbyssi(
 	
 	Datetime: 2021-02-02 20:17:07.286552
 	
-	The undirected graph Pyrococcus abyssi has 1773 nodes and 163260 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10393
-	and has 4 connected components, where the component with most nodes has 1767 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 184.16, and the node degree mode is 6. The top 5
-	most central nodes are 272844.PAB0257 (degree 663), 272844.PAB1208 (degree 585),
-	272844.PAB2341 (degree 583), 272844.PAB1465 (degree 551) and 272844.PAB0423 (degree
-	541).
+	The undirected graph Pyrococcus abyssi has 1773 nodes and 163260 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10393 and has 4 connected components, where the component
+	with most nodes has 1767 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 184.16,
+	and the node degree mode is 6. The top 5 most central nodes are 272844.PAB0257
+	(degree 663), 272844.PAB1208 (degree 585), 272844.PAB2341 (degree 583),
+	272844.PAB1465 (degree 551) and 272844.PAB0423 (degree 541).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:57.780538
 
-The undirected graph Pelagibaca bermudensis has 5282 nodes and 790242 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05666 and
-has 34 connected components, where the component with most nodes has 5196 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 263,
-the mean node degree is 299.22, and the node degree mode is 1. The top 5 most central
-nodes are 314265.R2601_15447 (degree 2326), 314265.R2601_23318 (degree 1780), 314265.R2601_19327
-(degree 1655), 314265.R2601_12990 (degree 1570) and 314265.R2601_14360 (degree 1566).
+The undirected graph Pelagibaca bermudensis has 5282 nodes and 790242 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05666 and has 34 connected components, where the component with most
+nodes has 5196 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 263, the mean node degree is 299.22, and
+the node degree mode is 1. The top 5 most central nodes are 314265.R2601_15447
+(degree 2326), 314265.R2601_23318 (degree 1780), 314265.R2601_19327 (degree
+1655), 314265.R2601_12990 (degree 1570) and 314265.R2601_14360 (degree
+1566).
 
 
 References
@@ -106,13 +108,15 @@ def PelagibacaBermudensis(
 	
 	Datetime: 2021-02-02 20:24:57.780538
 	
-	The undirected graph Pelagibaca bermudensis has 5282 nodes and 790242 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05666 and
-	has 34 connected components, where the component with most nodes has 5196 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 263,
-	the mean node degree is 299.22, and the node degree mode is 1. The top 5 most central
-	nodes are 314265.R2601_15447 (degree 2326), 314265.R2601_23318 (degree 1780), 314265.R2601_19327
-	(degree 1655), 314265.R2601_12990 (degree 1570) and 314265.R2601_14360 (degree 1566).
+	The undirected graph Pelagibaca bermudensis has 5282 nodes and 790242 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05666 and has 34 connected components, where the component with most
+	nodes has 5196 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 263, the mean node degree is 299.22, and
+	the node degree mode is 1. The top 5 most central nodes are 314265.R2601_15447
+	(degree 2326), 314265.R2601_23318 (degree 1780), 314265.R2601_19327 (degree
+	1655), 314265.R2601_12990 (degree 1570) and 314265.R2601_14360 (degree
+	1566).
 	
 
 

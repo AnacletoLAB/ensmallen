@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:17.743561
 
-The undirected graph Methylomirabilis oxyfera has 3005 nodes and 201071 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04455
-and has 15 connected components, where the component with most nodes has 2970 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 133.82, and the node degree mode is 3. The top 5
-most central nodes are 671143.DAMO_1783 (degree 1202), 671143.DAMO_2253 (degree 1119),
-671143.DAMO_3033 (degree 1044), 671143.DAMO_2850 (degree 873) and 671143.DAMO_2417
-(degree 823).
+The undirected graph Methylomirabilis oxyfera has 3005 nodes and 201071
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04455 and has 15 connected components, where the component
+with most nodes has 2970 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 133.82,
+and the node degree mode is 3. The top 5 most central nodes are 671143.DAMO_1783
+(degree 1202), 671143.DAMO_2253 (degree 1119), 671143.DAMO_3033 (degree
+1044), 671143.DAMO_2850 (degree 873) and 671143.DAMO_2417 (degree 823).
 
 
 References
@@ -107,14 +107,14 @@ def MethylomirabilisOxyfera(
 	
 	Datetime: 2021-02-02 21:29:17.743561
 	
-	The undirected graph Methylomirabilis oxyfera has 3005 nodes and 201071 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04455
-	and has 15 connected components, where the component with most nodes has 2970 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 133.82, and the node degree mode is 3. The top 5
-	most central nodes are 671143.DAMO_1783 (degree 1202), 671143.DAMO_2253 (degree 1119),
-	671143.DAMO_3033 (degree 1044), 671143.DAMO_2850 (degree 873) and 671143.DAMO_2417
-	(degree 823).
+	The undirected graph Methylomirabilis oxyfera has 3005 nodes and 201071
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04455 and has 15 connected components, where the component
+	with most nodes has 2970 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 133.82,
+	and the node degree mode is 3. The top 5 most central nodes are 671143.DAMO_1783
+	(degree 1202), 671143.DAMO_2253 (degree 1119), 671143.DAMO_3033 (degree
+	1044), 671143.DAMO_2850 (degree 873) and 671143.DAMO_2417 (degree 823).
 	
 
 

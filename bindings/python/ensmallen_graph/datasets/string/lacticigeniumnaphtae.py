@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:04.075216
 
-The undirected graph Lacticigenium naphtae has 1950 nodes and 192177 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10113
-and has 3 connected components, where the component with most nodes has 1946 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 197.10, and the node degree mode is 4. The top 5
-most central nodes are 1122143.AUEG01000001_gene343 (degree 938), 1122143.AUEG01000002_gene776
-(degree 843), 1122143.AUEG01000001_gene176 (degree 839), 1122143.AUEG01000002_gene767
-(degree 824) and 1122143.AUEG01000002_gene703 (degree 755).
+The undirected graph Lacticigenium naphtae has 1950 nodes and 192177 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10113 and has 3 connected components, where the component
+with most nodes has 1946 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 197.10,
+and the node degree mode is 4. The top 5 most central nodes are 1122143.AUEG01000001_gene343
+(degree 938), 1122143.AUEG01000002_gene776 (degree 843), 1122143.AUEG01000001_gene176
+(degree 839), 1122143.AUEG01000002_gene767 (degree 824) and 1122143.AUEG01000002_gene703
+(degree 755).
 
 
 References
@@ -107,14 +108,15 @@ def LacticigeniumNaphtae(
 	
 	Datetime: 2021-02-02 22:41:04.075216
 	
-	The undirected graph Lacticigenium naphtae has 1950 nodes and 192177 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10113
-	and has 3 connected components, where the component with most nodes has 1946 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 197.10, and the node degree mode is 4. The top 5
-	most central nodes are 1122143.AUEG01000001_gene343 (degree 938), 1122143.AUEG01000002_gene776
-	(degree 843), 1122143.AUEG01000001_gene176 (degree 839), 1122143.AUEG01000002_gene767
-	(degree 824) and 1122143.AUEG01000002_gene703 (degree 755).
+	The undirected graph Lacticigenium naphtae has 1950 nodes and 192177 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10113 and has 3 connected components, where the component
+	with most nodes has 1946 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 197.10,
+	and the node degree mode is 4. The top 5 most central nodes are 1122143.AUEG01000001_gene343
+	(degree 938), 1122143.AUEG01000002_gene776 (degree 843), 1122143.AUEG01000001_gene176
+	(degree 839), 1122143.AUEG01000002_gene767 (degree 824) and 1122143.AUEG01000002_gene703
+	(degree 755).
 	
 
 

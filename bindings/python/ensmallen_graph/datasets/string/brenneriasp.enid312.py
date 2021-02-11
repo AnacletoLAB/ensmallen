@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:44.579058
 
-The undirected graph Brenneria sp. EniD312 has 4368 nodes and 584350 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06127 and
-has 5 connected components, where the component with most nodes has 4356 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 232,
-the mean node degree is 267.56, and the node degree mode is 1. The top 5 most central
-nodes are 598467.BrE312_2038 (degree 1828), 598467.BrE312_4417 (degree 1531), 598467.BrE312_3695
-(degree 1415), 598467.BrE312_4108 (degree 1354) and 598467.BrE312_4110 (degree 1338).
+The undirected graph Brenneria sp. EniD312 has 4368 nodes and 584350 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06127 and has 5 connected components, where the component with most
+nodes has 4356 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 232, the mean node degree is 267.56, and
+the node degree mode is 1. The top 5 most central nodes are 598467.BrE312_2038
+(degree 1828), 598467.BrE312_4417 (degree 1531), 598467.BrE312_3695 (degree
+1415), 598467.BrE312_4108 (degree 1354) and 598467.BrE312_4110 (degree
+1338).
 
 
 References
@@ -106,13 +108,15 @@ def BrenneriaSp.Enid312(
 	
 	Datetime: 2021-02-02 21:19:44.579058
 	
-	The undirected graph Brenneria sp. EniD312 has 4368 nodes and 584350 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06127 and
-	has 5 connected components, where the component with most nodes has 4356 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 232,
-	the mean node degree is 267.56, and the node degree mode is 1. The top 5 most central
-	nodes are 598467.BrE312_2038 (degree 1828), 598467.BrE312_4417 (degree 1531), 598467.BrE312_3695
-	(degree 1415), 598467.BrE312_4108 (degree 1354) and 598467.BrE312_4110 (degree 1338).
+	The undirected graph Brenneria sp. EniD312 has 4368 nodes and 584350 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06127 and has 5 connected components, where the component with most
+	nodes has 4356 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 232, the mean node degree is 267.56, and
+	the node degree mode is 1. The top 5 most central nodes are 598467.BrE312_2038
+	(degree 1828), 598467.BrE312_4417 (degree 1531), 598467.BrE312_3695 (degree
+	1415), 598467.BrE312_4108 (degree 1354) and 598467.BrE312_4110 (degree
+	1338).
 	
 
 

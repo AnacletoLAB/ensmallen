@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:21.313825
 
-The undirected graph Selenomonas infelix has 2149 nodes and 166799 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07227 and
-has 6 connected components, where the component with most nodes has 2137 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 155.23, and the node degree mode is 19. The top 5 most central
-nodes are 679201.HMPREF9334_01499 (degree 878), 679201.HMPREF9334_01295 (degree 784),
-679201.HMPREF9334_01147 (degree 780), 679201.HMPREF9334_00040 (degree 739) and 679201.HMPREF9334_00531
+The undirected graph Selenomonas infelix has 2149 nodes and 166799 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07227 and has 6 connected components, where the component with most
+nodes has 2137 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 155.23, and
+the node degree mode is 19. The top 5 most central nodes are 679201.HMPREF9334_01499
+(degree 878), 679201.HMPREF9334_01295 (degree 784), 679201.HMPREF9334_01147
+(degree 780), 679201.HMPREF9334_00040 (degree 739) and 679201.HMPREF9334_00531
 (degree 726).
 
 
@@ -107,13 +108,14 @@ def SelenomonasInfelix(
 	
 	Datetime: 2021-02-02 21:30:21.313825
 	
-	The undirected graph Selenomonas infelix has 2149 nodes and 166799 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07227 and
-	has 6 connected components, where the component with most nodes has 2137 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 155.23, and the node degree mode is 19. The top 5 most central
-	nodes are 679201.HMPREF9334_01499 (degree 878), 679201.HMPREF9334_01295 (degree 784),
-	679201.HMPREF9334_01147 (degree 780), 679201.HMPREF9334_00040 (degree 739) and 679201.HMPREF9334_00531
+	The undirected graph Selenomonas infelix has 2149 nodes and 166799 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07227 and has 6 connected components, where the component with most
+	nodes has 2137 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 155.23, and
+	the node degree mode is 19. The top 5 most central nodes are 679201.HMPREF9334_01499
+	(degree 878), 679201.HMPREF9334_01295 (degree 784), 679201.HMPREF9334_01147
+	(degree 780), 679201.HMPREF9334_00040 (degree 739) and 679201.HMPREF9334_00531
 	(degree 726).
 	
 

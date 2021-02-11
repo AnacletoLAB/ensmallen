@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:23.544531
 
-The undirected graph Arthrobacter sp. 162MFSha11 has 3973 nodes and 422295 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05352
-and has 12 connected components, where the component with most nodes has 3945 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 212.58, and the node degree mode is 3. The top 5
-most central nodes are 1151119.KB895490_gene2227 (degree 1379), 1151119.KB895501_gene2844
-(degree 1298), 1151119.KB895489_gene835 (degree 1230), 1151119.KB895490_gene2242
-(degree 1226) and 1151119.KB895499_gene3666 (degree 1194).
+The undirected graph Arthrobacter sp. 162MFSha11 has 3973 nodes and 422295
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05352 and has 12 connected components, where the component
+with most nodes has 3945 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 212.58,
+and the node degree mode is 3. The top 5 most central nodes are 1151119.KB895490_gene2227
+(degree 1379), 1151119.KB895501_gene2844 (degree 1298), 1151119.KB895489_gene835
+(degree 1230), 1151119.KB895490_gene2242 (degree 1226) and 1151119.KB895499_gene3666
+(degree 1194).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.162mfsha11(
 	
 	Datetime: 2021-02-02 23:00:23.544531
 	
-	The undirected graph Arthrobacter sp. 162MFSha11 has 3973 nodes and 422295 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05352
-	and has 12 connected components, where the component with most nodes has 3945 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 212.58, and the node degree mode is 3. The top 5
-	most central nodes are 1151119.KB895490_gene2227 (degree 1379), 1151119.KB895501_gene2844
-	(degree 1298), 1151119.KB895489_gene835 (degree 1230), 1151119.KB895490_gene2242
-	(degree 1226) and 1151119.KB895499_gene3666 (degree 1194).
+	The undirected graph Arthrobacter sp. 162MFSha11 has 3973 nodes and 422295
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05352 and has 12 connected components, where the component
+	with most nodes has 3945 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 212.58,
+	and the node degree mode is 3. The top 5 most central nodes are 1151119.KB895490_gene2227
+	(degree 1379), 1151119.KB895501_gene2844 (degree 1298), 1151119.KB895489_gene835
+	(degree 1230), 1151119.KB895490_gene2242 (degree 1226) and 1151119.KB895499_gene3666
+	(degree 1194).
 	
 
 

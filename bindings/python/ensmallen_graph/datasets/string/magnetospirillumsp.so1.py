@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:11.980554
 
-The undirected graph Magnetospirillum sp. SO1 has 4573 nodes and 864155 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08266
-and has 22 connected components, where the component with most nodes has 4524 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 312, the mean node degree is 377.94, and the node degree mode is 1. The top 5
-most central nodes are 1244869.H261_21386 (degree 2100), 1244869.H261_00445 (degree
-2031), 1244869.H261_16341 (degree 1988), 1244869.H261_08803 (degree 1863) and 1244869.H261_22183
-(degree 1667).
+The undirected graph Magnetospirillum sp. SO1 has 4573 nodes and 864155
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08266 and has 22 connected components, where the component
+with most nodes has 4524 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 312, the mean node degree is 377.94,
+and the node degree mode is 1. The top 5 most central nodes are 1244869.H261_21386
+(degree 2100), 1244869.H261_00445 (degree 2031), 1244869.H261_16341 (degree
+1988), 1244869.H261_08803 (degree 1863) and 1244869.H261_22183 (degree
+1667).
 
 
 References
@@ -107,14 +108,15 @@ def MagnetospirillumSp.So1(
 	
 	Datetime: 2021-02-02 23:33:11.980554
 	
-	The undirected graph Magnetospirillum sp. SO1 has 4573 nodes and 864155 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08266
-	and has 22 connected components, where the component with most nodes has 4524 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 312, the mean node degree is 377.94, and the node degree mode is 1. The top 5
-	most central nodes are 1244869.H261_21386 (degree 2100), 1244869.H261_00445 (degree
-	2031), 1244869.H261_16341 (degree 1988), 1244869.H261_08803 (degree 1863) and 1244869.H261_22183
-	(degree 1667).
+	The undirected graph Magnetospirillum sp. SO1 has 4573 nodes and 864155
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08266 and has 22 connected components, where the component
+	with most nodes has 4524 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 312, the mean node degree is 377.94,
+	and the node degree mode is 1. The top 5 most central nodes are 1244869.H261_21386
+	(degree 2100), 1244869.H261_00445 (degree 2031), 1244869.H261_16341 (degree
+	1988), 1244869.H261_08803 (degree 1863) and 1244869.H261_22183 (degree
+	1667).
 	
 
 

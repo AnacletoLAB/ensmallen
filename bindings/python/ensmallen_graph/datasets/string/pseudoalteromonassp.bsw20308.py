@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:47.533769
 
-The undirected graph Pseudoalteromonas sp. Bsw20308 has 4099 nodes and 418997 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04989
-and has 12 connected components, where the component with most nodes has 4071 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 204.44, and the node degree mode is 2. The top 5
-most central nodes are 283699.D172_2247 (degree 1338), 283699.D172_2721 (degree 1232),
-283699.D172_2806 (degree 1142), 283699.D172_0293 (degree 1063) and 283699.D172_3832
-(degree 991).
+The undirected graph Pseudoalteromonas sp. Bsw20308 has 4099 nodes and
+418997 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04989 and has 12 connected components, where the
+component with most nodes has 4071 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+is 204.44, and the node degree mode is 2. The top 5 most central nodes
+are 283699.D172_2247 (degree 1338), 283699.D172_2721 (degree 1232), 283699.D172_2806
+(degree 1142), 283699.D172_0293 (degree 1063) and 283699.D172_3832 (degree
+991).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasSp.Bsw20308(
 	
 	Datetime: 2021-02-02 20:18:47.533769
 	
-	The undirected graph Pseudoalteromonas sp. Bsw20308 has 4099 nodes and 418997 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04989
-	and has 12 connected components, where the component with most nodes has 4071 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 204.44, and the node degree mode is 2. The top 5
-	most central nodes are 283699.D172_2247 (degree 1338), 283699.D172_2721 (degree 1232),
-	283699.D172_2806 (degree 1142), 283699.D172_0293 (degree 1063) and 283699.D172_3832
-	(degree 991).
+	The undirected graph Pseudoalteromonas sp. Bsw20308 has 4099 nodes and
+	418997 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04989 and has 12 connected components, where the
+	component with most nodes has 4071 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+	is 204.44, and the node degree mode is 2. The top 5 most central nodes
+	are 283699.D172_2247 (degree 1338), 283699.D172_2721 (degree 1232), 283699.D172_2806
+	(degree 1142), 283699.D172_0293 (degree 1063) and 283699.D172_3832 (degree
+	991).
 	
 
 

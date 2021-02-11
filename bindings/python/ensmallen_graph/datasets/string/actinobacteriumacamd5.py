@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:46.471903
 
-The undirected graph actinobacterium acAMD5 has 1257 nodes and 79081 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10018
-and is connected, as it has a single component. The graph median node degree is 110,
-the mean node degree is 125.82, and the node degree mode is 3. The top 5 most central
-nodes are 1504319.GM45_5270 (degree 624), 1504319.GM45_2425 (degree 615), 1504319.GM45_0510
-(degree 542), 1504319.GM45_1565 (degree 537) and 1504319.GM45_1400 (degree 466).
+The undirected graph actinobacterium acAMD5 has 1257 nodes and 79081 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10018 and is connected, as it has a single component. The
+graph median node degree is 110, the mean node degree is 125.82, and the
+node degree mode is 3. The top 5 most central nodes are 1504319.GM45_5270
+(degree 624), 1504319.GM45_2425 (degree 615), 1504319.GM45_0510 (degree
+542), 1504319.GM45_1565 (degree 537) and 1504319.GM45_1400 (degree 466).
 
 
 References
@@ -105,12 +106,13 @@ def ActinobacteriumAcamd5(
 	
 	Datetime: 2021-02-03 23:16:46.471903
 	
-	The undirected graph actinobacterium acAMD5 has 1257 nodes and 79081 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10018
-	and is connected, as it has a single component. The graph median node degree is 110,
-	the mean node degree is 125.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1504319.GM45_5270 (degree 624), 1504319.GM45_2425 (degree 615), 1504319.GM45_0510
-	(degree 542), 1504319.GM45_1565 (degree 537) and 1504319.GM45_1400 (degree 466).
+	The undirected graph actinobacterium acAMD5 has 1257 nodes and 79081 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10018 and is connected, as it has a single component. The
+	graph median node degree is 110, the mean node degree is 125.82, and the
+	node degree mode is 3. The top 5 most central nodes are 1504319.GM45_5270
+	(degree 624), 1504319.GM45_2425 (degree 615), 1504319.GM45_0510 (degree
+	542), 1504319.GM45_1565 (degree 537) and 1504319.GM45_1400 (degree 466).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:16:47.100858
 
-The undirected graph ramage02 has 16830 nodes and 1441591 unweighted edges, of which
-16830 are self-loops. The graph is dense as it has a density of 0.01012 and is connected,
-as it has a single component. The graph median node degree is 171, the mean node
-degree is 170.31, and the node degree mode is 171. The top 5 most central nodes are
-15001 (degree 270), 14995 (degree 270), 14983 (degree 270), 14971 (degree 270) and
-14961 (degree 270).
+The undirected graph ramage02 has 16830 nodes and 1441591 unweighted edges,
+of which 16830 are self-loops. The graph is dense as it has a density of
+0.01012 and is connected, as it has a single component. The graph median
+node degree is 171, the mean node degree is 170.31, and the node degree
+mode is 171. The top 5 most central nodes are 15001 (degree 270), 14995
+(degree 270), 14983 (degree 270), 14971 (degree 270) and 14961 (degree
+270).
 
 
 References
@@ -102,12 +103,13 @@ def Ramage02(
 	
 	Datetime: 2021-02-06 12:16:47.100858
 	
-	The undirected graph ramage02 has 16830 nodes and 1441591 unweighted edges, of which
-	16830 are self-loops. The graph is dense as it has a density of 0.01012 and is connected,
-	as it has a single component. The graph median node degree is 171, the mean node
-	degree is 170.31, and the node degree mode is 171. The top 5 most central nodes are
-	15001 (degree 270), 14995 (degree 270), 14983 (degree 270), 14971 (degree 270) and
-	14961 (degree 270).
+	The undirected graph ramage02 has 16830 nodes and 1441591 unweighted edges,
+	of which 16830 are self-loops. The graph is dense as it has a density of
+	0.01012 and is connected, as it has a single component. The graph median
+	node degree is 171, the mean node degree is 170.31, and the node degree
+	mode is 171. The top 5 most central nodes are 15001 (degree 270), 14995
+	(degree 270), 14983 (degree 270), 14971 (degree 270) and 14961 (degree
+	270).
 	
 
 

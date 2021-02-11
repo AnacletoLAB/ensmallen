@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:00.223764
 
-The undirected graph Segniliparus rotundus has 2980 nodes and 171279 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03859 and
-has 36 connected components, where the component with most nodes has 2861 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 114.95, and the node degree mode is 2. The top 5 most central
-nodes are 640132.Srot_2813 (degree 897), 640132.Srot_2540 (degree 874), 640132.Srot_0828
-(degree 763), 640132.Srot_0133 (degree 761) and 640132.Srot_2940 (degree 754).
+The undirected graph Segniliparus rotundus has 2980 nodes and 171279 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03859 and has 36 connected components, where the component with most
+nodes has 2861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 114.95, and
+the node degree mode is 2. The top 5 most central nodes are 640132.Srot_2813
+(degree 897), 640132.Srot_2540 (degree 874), 640132.Srot_0828 (degree 763),
+640132.Srot_0133 (degree 761) and 640132.Srot_2940 (degree 754).
 
 
 References
@@ -106,13 +107,14 @@ def SegniliparusRotundus(
 	
 	Datetime: 2021-02-02 21:23:00.223764
 	
-	The undirected graph Segniliparus rotundus has 2980 nodes and 171279 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03859 and
-	has 36 connected components, where the component with most nodes has 2861 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 114.95, and the node degree mode is 2. The top 5 most central
-	nodes are 640132.Srot_2813 (degree 897), 640132.Srot_2540 (degree 874), 640132.Srot_0828
-	(degree 763), 640132.Srot_0133 (degree 761) and 640132.Srot_2940 (degree 754).
+	The undirected graph Segniliparus rotundus has 2980 nodes and 171279 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03859 and has 36 connected components, where the component with most
+	nodes has 2861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 114.95, and
+	the node degree mode is 2. The top 5 most central nodes are 640132.Srot_2813
+	(degree 897), 640132.Srot_2540 (degree 874), 640132.Srot_0828 (degree 763),
+	640132.Srot_0133 (degree 761) and 640132.Srot_2940 (degree 754).
 	
 
 

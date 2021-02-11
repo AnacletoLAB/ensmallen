@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:12.664936
 
-The undirected graph Campylobacter rectus has 2834 nodes and 110204 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02745 and
-has 113 connected components, where the component with most nodes has 2531 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 33, the mean node degree is 77.77, and the node degree mode is 1. The top 5 most
-central nodes are 553218.CAMRE0001_0800 (degree 633), 553218.CAMRE0001_3165 (degree
-584), 553218.CAMRE0001_2194 (degree 582), 553218.CAMRE0001_1119 (degree 511) and
-553218.CAMRE0001_1752 (degree 491).
+The undirected graph Campylobacter rectus has 2834 nodes and 110204 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02745 and has 113 connected components, where the component with most
+nodes has 2531 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 33, the mean node degree is 77.77, and
+the node degree mode is 1. The top 5 most central nodes are 553218.CAMRE0001_0800
+(degree 633), 553218.CAMRE0001_3165 (degree 584), 553218.CAMRE0001_2194
+(degree 582), 553218.CAMRE0001_1119 (degree 511) and 553218.CAMRE0001_1752
+(degree 491).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterRectus(
 	
 	Datetime: 2021-02-02 21:10:12.664936
 	
-	The undirected graph Campylobacter rectus has 2834 nodes and 110204 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02745 and
-	has 113 connected components, where the component with most nodes has 2531 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 33, the mean node degree is 77.77, and the node degree mode is 1. The top 5 most
-	central nodes are 553218.CAMRE0001_0800 (degree 633), 553218.CAMRE0001_3165 (degree
-	584), 553218.CAMRE0001_2194 (degree 582), 553218.CAMRE0001_1119 (degree 511) and
-	553218.CAMRE0001_1752 (degree 491).
+	The undirected graph Campylobacter rectus has 2834 nodes and 110204 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02745 and has 113 connected components, where the component with most
+	nodes has 2531 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 33, the mean node degree is 77.77, and
+	the node degree mode is 1. The top 5 most central nodes are 553218.CAMRE0001_0800
+	(degree 633), 553218.CAMRE0001_3165 (degree 584), 553218.CAMRE0001_2194
+	(degree 582), 553218.CAMRE0001_1119 (degree 511) and 553218.CAMRE0001_1752
+	(degree 491).
 	
 
 

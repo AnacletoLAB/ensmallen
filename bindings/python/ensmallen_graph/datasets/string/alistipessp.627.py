@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:23.371669
 
-The undirected graph Alistipes sp. 627 has 1637 nodes and 80553 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06016 and
-has 27 connected components, where the component with most nodes has 1574 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 98.42, and the node degree mode is 1. The top 5 most central
-nodes are 1501391.LG35_00030 (degree 642), 1501391.LG35_01275 (degree 554), 1501391.LG35_07715
-(degree 520), 1501391.LG35_09505 (degree 502) and 1501391.LG35_08035 (degree 493).
+The undirected graph Alistipes sp. 627 has 1637 nodes and 80553 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06016 and has 27 connected components, where the component with most
+nodes has 1574 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 98.42, and
+the node degree mode is 1. The top 5 most central nodes are 1501391.LG35_00030
+(degree 642), 1501391.LG35_01275 (degree 554), 1501391.LG35_07715 (degree
+520), 1501391.LG35_09505 (degree 502) and 1501391.LG35_08035 (degree 493).
 
 
 References
@@ -106,13 +107,14 @@ def AlistipesSp.627(
 	
 	Datetime: 2021-02-03 23:16:23.371669
 	
-	The undirected graph Alistipes sp. 627 has 1637 nodes and 80553 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06016 and
-	has 27 connected components, where the component with most nodes has 1574 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 98.42, and the node degree mode is 1. The top 5 most central
-	nodes are 1501391.LG35_00030 (degree 642), 1501391.LG35_01275 (degree 554), 1501391.LG35_07715
-	(degree 520), 1501391.LG35_09505 (degree 502) and 1501391.LG35_08035 (degree 493).
+	The undirected graph Alistipes sp. 627 has 1637 nodes and 80553 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06016 and has 27 connected components, where the component with most
+	nodes has 1574 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 98.42, and
+	the node degree mode is 1. The top 5 most central nodes are 1501391.LG35_00030
+	(degree 642), 1501391.LG35_01275 (degree 554), 1501391.LG35_07715 (degree
+	520), 1501391.LG35_09505 (degree 502) and 1501391.LG35_08035 (degree 493).
 	
 
 

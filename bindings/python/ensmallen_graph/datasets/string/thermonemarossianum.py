@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:59.512162
 
-The undirected graph Thermonema rossianum has 2496 nodes and 227783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07315 and
-has 8 connected components, where the component with most nodes has 2479 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 182.52, and the node degree mode is 2. The top 5 most central
-nodes are 1313301.AUGC01000011_gene1137 (degree 995), 1313301.AUGC01000004_gene2291
-(degree 838), 1313301.AUGC01000005_gene234 (degree 826), 1313301.AUGC01000004_gene2209
-(degree 826) and 1313301.AUGC01000012_gene1302 (degree 811).
+The undirected graph Thermonema rossianum has 2496 nodes and 227783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07315 and has 8 connected components, where the component with most
+nodes has 2479 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 182.52, and
+the node degree mode is 2. The top 5 most central nodes are 1313301.AUGC01000011_gene1137
+(degree 995), 1313301.AUGC01000004_gene2291 (degree 838), 1313301.AUGC01000005_gene234
+(degree 826), 1313301.AUGC01000004_gene2209 (degree 826) and 1313301.AUGC01000012_gene1302
+(degree 811).
 
 
 References
@@ -107,14 +108,15 @@ def ThermonemaRossianum(
 	
 	Datetime: 2021-02-03 21:46:59.512162
 	
-	The undirected graph Thermonema rossianum has 2496 nodes and 227783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07315 and
-	has 8 connected components, where the component with most nodes has 2479 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 182.52, and the node degree mode is 2. The top 5 most central
-	nodes are 1313301.AUGC01000011_gene1137 (degree 995), 1313301.AUGC01000004_gene2291
-	(degree 838), 1313301.AUGC01000005_gene234 (degree 826), 1313301.AUGC01000004_gene2209
-	(degree 826) and 1313301.AUGC01000012_gene1302 (degree 811).
+	The undirected graph Thermonema rossianum has 2496 nodes and 227783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07315 and has 8 connected components, where the component with most
+	nodes has 2479 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 182.52, and
+	the node degree mode is 2. The top 5 most central nodes are 1313301.AUGC01000011_gene1137
+	(degree 995), 1313301.AUGC01000004_gene2291 (degree 838), 1313301.AUGC01000005_gene234
+	(degree 826), 1313301.AUGC01000004_gene2209 (degree 826) and 1313301.AUGC01000012_gene1302
+	(degree 811).
 	
 
 

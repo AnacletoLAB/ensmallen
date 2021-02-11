@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:06:17.550788
 
-The undirected graph citeulike-ti has 731769 nodes and 2338545 weighted edges, of
-which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 6.39, and the node degree mode is 1. The top 5 most central
-nodes are 4535 (degree 189297), 35 (degree 78914), 10 (degree 8306), 182 (degree
-7573) and 1168 (degree 6037).
+The undirected graph citeulike-ti has 731769 nodes and 2338545 weighted
+edges, of which 5 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 6.39, and the node
+degree mode is 1. The top 5 most central nodes are 4535 (degree 189297),
+35 (degree 78914), 10 (degree 8306), 182 (degree 7573) and 1168 (degree
+6037).
 
 
 References
@@ -102,12 +103,13 @@ def CiteulikeTi(
 	
 	Datetime: 2021-02-06 12:06:17.550788
 	
-	The undirected graph citeulike-ti has 731769 nodes and 2338545 weighted edges, of
-	which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 6.39, and the node degree mode is 1. The top 5 most central
-	nodes are 4535 (degree 189297), 35 (degree 78914), 10 (degree 8306), 182 (degree
-	7573) and 1168 (degree 6037).
+	The undirected graph citeulike-ti has 731769 nodes and 2338545 weighted
+	edges, of which 5 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 6.39, and the node
+	degree mode is 1. The top 5 most central nodes are 4535 (degree 189297),
+	35 (degree 78914), 10 (degree 8306), 182 (degree 7573) and 1168 (degree
+	6037).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:04.220646
 
-The undirected graph Streptomyces sclerotialus has 6026 nodes and 932613 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05137
-and has 27 connected components, where the component with most nodes has 5960 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 309.53, and the node degree mode is 1. The top 5
-most central nodes are 1957.JODX01000022_gene2774 (degree 3067), 1957.JODX01000001_gene5318
-(degree 2019), 1957.JODX01000024_gene3968 (degree 2013), 1957.JODX01000023_gene4124
-(degree 2002) and 1957.JODX01000036_gene242 (degree 1992).
+The undirected graph Streptomyces sclerotialus has 6026 nodes and 932613
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05137 and has 27 connected components, where the component
+with most nodes has 5960 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 309.53,
+and the node degree mode is 1. The top 5 most central nodes are 1957.JODX01000022_gene2774
+(degree 3067), 1957.JODX01000001_gene5318 (degree 2019), 1957.JODX01000024_gene3968
+(degree 2013), 1957.JODX01000023_gene4124 (degree 2002) and 1957.JODX01000036_gene242
+(degree 1992).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSclerotialus(
 	
 	Datetime: 2021-02-02 16:24:04.220646
 	
-	The undirected graph Streptomyces sclerotialus has 6026 nodes and 932613 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05137
-	and has 27 connected components, where the component with most nodes has 5960 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 309.53, and the node degree mode is 1. The top 5
-	most central nodes are 1957.JODX01000022_gene2774 (degree 3067), 1957.JODX01000001_gene5318
-	(degree 2019), 1957.JODX01000024_gene3968 (degree 2013), 1957.JODX01000023_gene4124
-	(degree 2002) and 1957.JODX01000036_gene242 (degree 1992).
+	The undirected graph Streptomyces sclerotialus has 6026 nodes and 932613
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05137 and has 27 connected components, where the component
+	with most nodes has 5960 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 309.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1957.JODX01000022_gene2774
+	(degree 3067), 1957.JODX01000001_gene5318 (degree 2019), 1957.JODX01000024_gene3968
+	(degree 2013), 1957.JODX01000023_gene4124 (degree 2002) and 1957.JODX01000036_gene242
+	(degree 1992).
 	
 
 

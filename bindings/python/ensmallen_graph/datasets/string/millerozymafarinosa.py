@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:16.064036
 
-The undirected graph Millerozyma farinosa has 9408 nodes and 2087376 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04717 and
-has 2 connected components, where the component with most nodes has 9404 nodes and
-the component with the least nodes has 4 nodes. The graph median node degree is 335,
-the mean node degree is 443.74, and the node degree mode is 4. The top 5 most central
-nodes are 4920.XP_004196370.1 (degree 2535), 4920.XP_004195280.1 (degree 2535), 4920.XP_004200487.1
-(degree 2463), 4920.XP_004201118.1 (degree 2463) and 4920.XP_004198602.1 (degree
+The undirected graph Millerozyma farinosa has 9408 nodes and 2087376 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04717 and has 2 connected components, where the component with most
+nodes has 9404 nodes and the component with the least nodes has 4 nodes.
+The graph median node degree is 335, the mean node degree is 443.74, and
+the node degree mode is 4. The top 5 most central nodes are 4920.XP_004196370.1
+(degree 2535), 4920.XP_004195280.1 (degree 2535), 4920.XP_004200487.1 (degree
+2463), 4920.XP_004201118.1 (degree 2463) and 4920.XP_004198602.1 (degree
 2367).
 
 
@@ -107,13 +108,14 @@ def MillerozymaFarinosa(
 	
 	Datetime: 2021-02-02 17:11:16.064036
 	
-	The undirected graph Millerozyma farinosa has 9408 nodes and 2087376 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04717 and
-	has 2 connected components, where the component with most nodes has 9404 nodes and
-	the component with the least nodes has 4 nodes. The graph median node degree is 335,
-	the mean node degree is 443.74, and the node degree mode is 4. The top 5 most central
-	nodes are 4920.XP_004196370.1 (degree 2535), 4920.XP_004195280.1 (degree 2535), 4920.XP_004200487.1
-	(degree 2463), 4920.XP_004201118.1 (degree 2463) and 4920.XP_004198602.1 (degree
+	The undirected graph Millerozyma farinosa has 9408 nodes and 2087376 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04717 and has 2 connected components, where the component with most
+	nodes has 9404 nodes and the component with the least nodes has 4 nodes.
+	The graph median node degree is 335, the mean node degree is 443.74, and
+	the node degree mode is 4. The top 5 most central nodes are 4920.XP_004196370.1
+	(degree 2535), 4920.XP_004195280.1 (degree 2535), 4920.XP_004200487.1 (degree
+	2463), 4920.XP_004201118.1 (degree 2463) and 4920.XP_004198602.1 (degree
 	2367).
 	
 

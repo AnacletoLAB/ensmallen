@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:44.827382
 
-The undirected graph Pseudomonas stutzeri TS44 has 3979 nodes and 440601 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05567
-and has 4 connected components, where the component with most nodes has 3969 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 221.46, and the node degree mode is 5. The top 5
-most central nodes are 477228.YO5_19932 (degree 1552), 477228.YO5_02338 (degree 1318),
-477228.YO5_08023 (degree 1297), 477228.YO5_08018 (degree 1251) and 477228.YO5_02977
-(degree 1193).
+The undirected graph Pseudomonas stutzeri TS44 has 3979 nodes and 440601
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05567 and has 4 connected components, where the component
+with most nodes has 3969 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 221.46,
+and the node degree mode is 5. The top 5 most central nodes are 477228.YO5_19932
+(degree 1552), 477228.YO5_02338 (degree 1318), 477228.YO5_08023 (degree
+1297), 477228.YO5_08018 (degree 1251) and 477228.YO5_02977 (degree 1193).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasStutzeriTs44(
 	
 	Datetime: 2021-02-02 20:56:44.827382
 	
-	The undirected graph Pseudomonas stutzeri TS44 has 3979 nodes and 440601 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05567
-	and has 4 connected components, where the component with most nodes has 3969 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 221.46, and the node degree mode is 5. The top 5
-	most central nodes are 477228.YO5_19932 (degree 1552), 477228.YO5_02338 (degree 1318),
-	477228.YO5_08023 (degree 1297), 477228.YO5_08018 (degree 1251) and 477228.YO5_02977
-	(degree 1193).
+	The undirected graph Pseudomonas stutzeri TS44 has 3979 nodes and 440601
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05567 and has 4 connected components, where the component
+	with most nodes has 3969 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 221.46,
+	and the node degree mode is 5. The top 5 most central nodes are 477228.YO5_19932
+	(degree 1552), 477228.YO5_02338 (degree 1318), 477228.YO5_08023 (degree
+	1297), 477228.YO5_08018 (degree 1251) and 477228.YO5_02977 (degree 1193).
 	
 
 

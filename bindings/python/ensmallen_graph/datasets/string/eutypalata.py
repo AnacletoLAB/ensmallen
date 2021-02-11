@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:45.185503
 
-The undirected graph Eutypa lata has 8313 nodes and 641205 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01856 and has 19
-connected components, where the component with most nodes has 8273 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 79, the
-mean node degree is 154.27, and the node degree mode is 1. The top 5 most central
-nodes are 97096.XP_007796187.1 (degree 2072), 97096.XP_007794429.1 (degree 1527),
-97096.XP_007794254.1 (degree 1508), 97096.XP_007791213.1 (degree 1363) and 97096.XP_007789759.1
+The undirected graph Eutypa lata has 8313 nodes and 641205 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01856 and has 19 connected components, where the component with most
+nodes has 8273 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 79, the mean node degree is 154.27, and
+the node degree mode is 1. The top 5 most central nodes are 97096.XP_007796187.1
+(degree 2072), 97096.XP_007794429.1 (degree 1527), 97096.XP_007794254.1
+(degree 1508), 97096.XP_007791213.1 (degree 1363) and 97096.XP_007789759.1
 (degree 1328).
 
 
@@ -107,13 +108,14 @@ def EutypaLata(
 	
 	Datetime: 2021-02-02 19:41:45.185503
 	
-	The undirected graph Eutypa lata has 8313 nodes and 641205 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01856 and has 19
-	connected components, where the component with most nodes has 8273 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 79, the
-	mean node degree is 154.27, and the node degree mode is 1. The top 5 most central
-	nodes are 97096.XP_007796187.1 (degree 2072), 97096.XP_007794429.1 (degree 1527),
-	97096.XP_007794254.1 (degree 1508), 97096.XP_007791213.1 (degree 1363) and 97096.XP_007789759.1
+	The undirected graph Eutypa lata has 8313 nodes and 641205 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01856 and has 19 connected components, where the component with most
+	nodes has 8273 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 79, the mean node degree is 154.27, and
+	the node degree mode is 1. The top 5 most central nodes are 97096.XP_007796187.1
+	(degree 2072), 97096.XP_007794429.1 (degree 1527), 97096.XP_007794254.1
+	(degree 1508), 97096.XP_007791213.1 (degree 1363) and 97096.XP_007789759.1
 	(degree 1328).
 	
 

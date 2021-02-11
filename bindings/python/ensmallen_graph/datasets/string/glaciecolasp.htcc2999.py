@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:43.909765
 
-The undirected graph Glaciecola sp. HTCC2999 has 2229 nodes and 155470 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06261 and
-has 7 connected components, where the component with most nodes has 2216 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 139.50, and the node degree mode is 1. The top 5 most central
-nodes are 455436.DS989811_gene1571 (degree 904), 455436.DS989810_gene523 (degree
-792), 455436.DS989814_gene939 (degree 788), 455436.DS989812_gene1280 (degree 776)
-and 455436.DS989814_gene940 (degree 722).
+The undirected graph Glaciecola sp. HTCC2999 has 2229 nodes and 155470
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06261 and has 7 connected components, where the component
+with most nodes has 2216 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 139.50,
+and the node degree mode is 1. The top 5 most central nodes are 455436.DS989811_gene1571
+(degree 904), 455436.DS989810_gene523 (degree 792), 455436.DS989814_gene939
+(degree 788), 455436.DS989812_gene1280 (degree 776) and 455436.DS989814_gene940
+(degree 722).
 
 
 References
@@ -107,14 +108,15 @@ def GlaciecolaSp.Htcc2999(
 	
 	Datetime: 2021-02-02 20:52:43.909765
 	
-	The undirected graph Glaciecola sp. HTCC2999 has 2229 nodes and 155470 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06261 and
-	has 7 connected components, where the component with most nodes has 2216 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 139.50, and the node degree mode is 1. The top 5 most central
-	nodes are 455436.DS989811_gene1571 (degree 904), 455436.DS989810_gene523 (degree
-	792), 455436.DS989814_gene939 (degree 788), 455436.DS989812_gene1280 (degree 776)
-	and 455436.DS989814_gene940 (degree 722).
+	The undirected graph Glaciecola sp. HTCC2999 has 2229 nodes and 155470
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06261 and has 7 connected components, where the component
+	with most nodes has 2216 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 139.50,
+	and the node degree mode is 1. The top 5 most central nodes are 455436.DS989811_gene1571
+	(degree 904), 455436.DS989810_gene523 (degree 792), 455436.DS989814_gene939
+	(degree 788), 455436.DS989812_gene1280 (degree 776) and 455436.DS989814_gene940
+	(degree 722).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:33.075960
 
-The undirected graph Clostridium saccharogumia has 2857 nodes and 261899 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06419
-and has 18 connected components, where the component with most nodes has 2818 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 183.34, and the node degree mode is 2. The top 5
-most central nodes are 1121333.JMLH01000017_gene2806 (degree 1236), 1121333.JMLH01000043_gene2585
-(degree 962), 1121333.JMLH01000034_gene2863 (degree 938), 1121333.JMLH01000002_gene166
-(degree 924) and 1121333.JMLH01000126_gene1511 (degree 899).
+The undirected graph Clostridium saccharogumia has 2857 nodes and 261899
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06419 and has 18 connected components, where the component
+with most nodes has 2818 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 183.34,
+and the node degree mode is 2. The top 5 most central nodes are 1121333.JMLH01000017_gene2806
+(degree 1236), 1121333.JMLH01000043_gene2585 (degree 962), 1121333.JMLH01000034_gene2863
+(degree 938), 1121333.JMLH01000002_gene166 (degree 924) and 1121333.JMLH01000126_gene1511
+(degree 899).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSaccharogumia(
 	
 	Datetime: 2021-02-02 22:34:33.075960
 	
-	The undirected graph Clostridium saccharogumia has 2857 nodes and 261899 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06419
-	and has 18 connected components, where the component with most nodes has 2818 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 183.34, and the node degree mode is 2. The top 5
-	most central nodes are 1121333.JMLH01000017_gene2806 (degree 1236), 1121333.JMLH01000043_gene2585
-	(degree 962), 1121333.JMLH01000034_gene2863 (degree 938), 1121333.JMLH01000002_gene166
-	(degree 924) and 1121333.JMLH01000126_gene1511 (degree 899).
+	The undirected graph Clostridium saccharogumia has 2857 nodes and 261899
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06419 and has 18 connected components, where the component
+	with most nodes has 2818 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 183.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1121333.JMLH01000017_gene2806
+	(degree 1236), 1121333.JMLH01000043_gene2585 (degree 962), 1121333.JMLH01000034_gene2863
+	(degree 938), 1121333.JMLH01000002_gene166 (degree 924) and 1121333.JMLH01000126_gene1511
+	(degree 899).
 	
 
 

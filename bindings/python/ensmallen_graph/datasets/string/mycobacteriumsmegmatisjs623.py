@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:13.661612
 
-The undirected graph Mycobacterium smegmatis JS623 has 6130 nodes and 760236 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04047
-and has 26 connected components, where the component with most nodes has 6072 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 248.04, and the node degree mode is 4. The top 5
-most central nodes are 710686.Mycsm_04419 (degree 2858), 710686.Mycsm_03031 (degree
-2451), 710686.Mycsm_06187 (degree 2266), 710686.Mycsm_04200 (degree 2005) and 710686.Mycsm_01137
-(degree 1987).
+The undirected graph Mycobacterium smegmatis JS623 has 6130 nodes and 760236
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04047 and has 26 connected components, where the component
+with most nodes has 6072 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 248.04,
+and the node degree mode is 4. The top 5 most central nodes are 710686.Mycsm_04419
+(degree 2858), 710686.Mycsm_03031 (degree 2451), 710686.Mycsm_06187 (degree
+2266), 710686.Mycsm_04200 (degree 2005) and 710686.Mycsm_01137 (degree
+1987).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSmegmatisJs623(
 	
 	Datetime: 2021-02-02 21:35:13.661612
 	
-	The undirected graph Mycobacterium smegmatis JS623 has 6130 nodes and 760236 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04047
-	and has 26 connected components, where the component with most nodes has 6072 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 248.04, and the node degree mode is 4. The top 5
-	most central nodes are 710686.Mycsm_04419 (degree 2858), 710686.Mycsm_03031 (degree
-	2451), 710686.Mycsm_06187 (degree 2266), 710686.Mycsm_04200 (degree 2005) and 710686.Mycsm_01137
-	(degree 1987).
+	The undirected graph Mycobacterium smegmatis JS623 has 6130 nodes and 760236
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04047 and has 26 connected components, where the component
+	with most nodes has 6072 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 248.04,
+	and the node degree mode is 4. The top 5 most central nodes are 710686.Mycsm_04419
+	(degree 2858), 710686.Mycsm_03031 (degree 2451), 710686.Mycsm_06187 (degree
+	2266), 710686.Mycsm_04200 (degree 2005) and 710686.Mycsm_01137 (degree
+	1987).
 	
 
 

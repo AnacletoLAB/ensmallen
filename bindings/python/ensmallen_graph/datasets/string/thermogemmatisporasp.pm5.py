@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:31.871331
 
-The undirected graph Thermogemmatispora sp. PM5 has 4063 nodes and 358050 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-and has 51 connected components, where the component with most nodes has 3941 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 176.25, and the node degree mode is 1. The top 5
-most central nodes are 1382306.JNIM01000001_gene861 (degree 1327), 1382306.JNIM01000001_gene1224
-(degree 1291), 1382306.JNIM01000001_gene274 (degree 1119), 1382306.JNIM01000001_gene3279
-(degree 1035) and 1382306.JNIM01000001_gene2044 (degree 1033).
+The undirected graph Thermogemmatispora sp. PM5 has 4063 nodes and 358050
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04339 and has 51 connected components, where the component
+with most nodes has 3941 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 176.25,
+and the node degree mode is 1. The top 5 most central nodes are 1382306.JNIM01000001_gene861
+(degree 1327), 1382306.JNIM01000001_gene1224 (degree 1291), 1382306.JNIM01000001_gene274
+(degree 1119), 1382306.JNIM01000001_gene3279 (degree 1035) and 1382306.JNIM01000001_gene2044
+(degree 1033).
 
 
 References
@@ -107,14 +108,15 @@ def ThermogemmatisporaSp.Pm5(
 	
 	Datetime: 2021-02-03 22:18:31.871331
 	
-	The undirected graph Thermogemmatispora sp. PM5 has 4063 nodes and 358050 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-	and has 51 connected components, where the component with most nodes has 3941 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 176.25, and the node degree mode is 1. The top 5
-	most central nodes are 1382306.JNIM01000001_gene861 (degree 1327), 1382306.JNIM01000001_gene1224
-	(degree 1291), 1382306.JNIM01000001_gene274 (degree 1119), 1382306.JNIM01000001_gene3279
-	(degree 1035) and 1382306.JNIM01000001_gene2044 (degree 1033).
+	The undirected graph Thermogemmatispora sp. PM5 has 4063 nodes and 358050
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04339 and has 51 connected components, where the component
+	with most nodes has 3941 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 176.25,
+	and the node degree mode is 1. The top 5 most central nodes are 1382306.JNIM01000001_gene861
+	(degree 1327), 1382306.JNIM01000001_gene1224 (degree 1291), 1382306.JNIM01000001_gene274
+	(degree 1119), 1382306.JNIM01000001_gene3279 (degree 1035) and 1382306.JNIM01000001_gene2044
+	(degree 1033).
 	
 
 

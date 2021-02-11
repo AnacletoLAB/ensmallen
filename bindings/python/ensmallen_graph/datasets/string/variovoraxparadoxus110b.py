@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:31.901194
 
-The undirected graph Variovorax paradoxus 110B has 6590 nodes and 807864 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03721
-and has 16 connected components, where the component with most nodes has 6550 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 245.18, and the node degree mode is 2. The top 5
-most central nodes are 1157708.KB907453_gene4139 (degree 2098), 1157708.KB907457_gene2692
-(degree 2034), 1157708.KB907452_gene3860 (degree 1897), 1157708.KB907450_gene5320
-(degree 1705) and 1157708.KB907450_gene5967 (degree 1597).
+The undirected graph Variovorax paradoxus 110B has 6590 nodes and 807864
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03721 and has 16 connected components, where the component
+with most nodes has 6550 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 245.18,
+and the node degree mode is 2. The top 5 most central nodes are 1157708.KB907453_gene4139
+(degree 2098), 1157708.KB907457_gene2692 (degree 2034), 1157708.KB907452_gene3860
+(degree 1897), 1157708.KB907450_gene5320 (degree 1705) and 1157708.KB907450_gene5967
+(degree 1597).
 
 
 References
@@ -107,14 +108,15 @@ def VariovoraxParadoxus110b(
 	
 	Datetime: 2021-02-02 23:02:31.901194
 	
-	The undirected graph Variovorax paradoxus 110B has 6590 nodes and 807864 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03721
-	and has 16 connected components, where the component with most nodes has 6550 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 245.18, and the node degree mode is 2. The top 5
-	most central nodes are 1157708.KB907453_gene4139 (degree 2098), 1157708.KB907457_gene2692
-	(degree 2034), 1157708.KB907452_gene3860 (degree 1897), 1157708.KB907450_gene5320
-	(degree 1705) and 1157708.KB907450_gene5967 (degree 1597).
+	The undirected graph Variovorax paradoxus 110B has 6590 nodes and 807864
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03721 and has 16 connected components, where the component
+	with most nodes has 6550 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 245.18,
+	and the node degree mode is 2. The top 5 most central nodes are 1157708.KB907453_gene4139
+	(degree 2098), 1157708.KB907457_gene2692 (degree 2034), 1157708.KB907452_gene3860
+	(degree 1897), 1157708.KB907450_gene5320 (degree 1705) and 1157708.KB907450_gene5967
+	(degree 1597).
 	
 
 

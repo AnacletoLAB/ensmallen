@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:02.701911
 
-The undirected graph Rhodococcus equi has 4495 nodes and 790771 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07829 and
-has 4 connected components, where the component with most nodes has 4488 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 321,
-the mean node degree is 351.84, and the node degree mode is 2. The top 5 most central
-nodes are 685727.REQ_30820 (degree 1998), 685727.REQ_34900 (degree 1620), 685727.REQ_25230
-(degree 1607), 685727.REQ_24740 (degree 1450) and 685727.REQ_24270 (degree 1421).
+The undirected graph Rhodococcus equi has 4495 nodes and 790771 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07829 and has 4 connected components, where the component with most
+nodes has 4488 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 321, the mean node degree is 351.84, and
+the node degree mode is 2. The top 5 most central nodes are 685727.REQ_30820
+(degree 1998), 685727.REQ_34900 (degree 1620), 685727.REQ_25230 (degree
+1607), 685727.REQ_24740 (degree 1450) and 685727.REQ_24270 (degree 1421).
 
 
 References
@@ -106,13 +107,14 @@ def RhodococcusEqui(
 	
 	Datetime: 2021-02-02 21:31:02.701911
 	
-	The undirected graph Rhodococcus equi has 4495 nodes and 790771 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07829 and
-	has 4 connected components, where the component with most nodes has 4488 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 321,
-	the mean node degree is 351.84, and the node degree mode is 2. The top 5 most central
-	nodes are 685727.REQ_30820 (degree 1998), 685727.REQ_34900 (degree 1620), 685727.REQ_25230
-	(degree 1607), 685727.REQ_24740 (degree 1450) and 685727.REQ_24270 (degree 1421).
+	The undirected graph Rhodococcus equi has 4495 nodes and 790771 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07829 and has 4 connected components, where the component with most
+	nodes has 4488 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 321, the mean node degree is 351.84, and
+	the node degree mode is 2. The top 5 most central nodes are 685727.REQ_30820
+	(degree 1998), 685727.REQ_34900 (degree 1620), 685727.REQ_25230 (degree
+	1607), 685727.REQ_24740 (degree 1450) and 685727.REQ_24270 (degree 1421).
 	
 
 

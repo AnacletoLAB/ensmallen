@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:57.417417
 
-The undirected graph Gemmata sp. IIL30 has 7488 nodes and 1085314 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03872 and
-has 115 connected components, where the component with most nodes has 7189 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 289.88, and the node degree mode is 2. The top 5
-most central nodes are 1210884.HG799462_gene8348 (degree 2524), 1210884.HG799467_gene13333
-(degree 2207), 1210884.HG799470_gene14360 (degree 2191), 1210884.HG799464_gene11122
-(degree 2176) and 1210884.HG799465_gene11483 (degree 2029).
+The undirected graph Gemmata sp. IIL30 has 7488 nodes and 1085314 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03872 and has 115 connected components, where the component with most
+nodes has 7189 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 289.88, and
+the node degree mode is 2. The top 5 most central nodes are 1210884.HG799462_gene8348
+(degree 2524), 1210884.HG799467_gene13333 (degree 2207), 1210884.HG799470_gene14360
+(degree 2191), 1210884.HG799464_gene11122 (degree 2176) and 1210884.HG799465_gene11483
+(degree 2029).
 
 
 References
@@ -107,14 +108,15 @@ def GemmataSp.Iil30(
 	
 	Datetime: 2021-02-02 23:18:57.417417
 	
-	The undirected graph Gemmata sp. IIL30 has 7488 nodes and 1085314 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03872 and
-	has 115 connected components, where the component with most nodes has 7189 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 289.88, and the node degree mode is 2. The top 5
-	most central nodes are 1210884.HG799462_gene8348 (degree 2524), 1210884.HG799467_gene13333
-	(degree 2207), 1210884.HG799470_gene14360 (degree 2191), 1210884.HG799464_gene11122
-	(degree 2176) and 1210884.HG799465_gene11483 (degree 2029).
+	The undirected graph Gemmata sp. IIL30 has 7488 nodes and 1085314 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03872 and has 115 connected components, where the component with most
+	nodes has 7189 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 289.88, and
+	the node degree mode is 2. The top 5 most central nodes are 1210884.HG799462_gene8348
+	(degree 2524), 1210884.HG799467_gene13333 (degree 2207), 1210884.HG799470_gene14360
+	(degree 2191), 1210884.HG799464_gene11122 (degree 2176) and 1210884.HG799465_gene11483
+	(degree 2029).
 	
 
 

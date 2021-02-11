@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:12.420305
 
-The undirected graph Allofustis seminis has 1386 nodes and 123720 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12890
-and has 4 connected components, where the component with most nodes has 1378 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 178.53, and the node degree mode is 4. The top 5
-most central nodes are 1120978.KB894087_gene447 (degree 710), 1120978.KB894082_gene1047
-(degree 710), 1120978.KB894084_gene311 (degree 659), 1120978.KB894085_gene35 (degree
-628) and 1120978.KB894079_gene728 (degree 621).
+The undirected graph Allofustis seminis has 1386 nodes and 123720 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12890 and has 4 connected components, where the component
+with most nodes has 1378 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 178.53,
+and the node degree mode is 4. The top 5 most central nodes are 1120978.KB894087_gene447
+(degree 710), 1120978.KB894082_gene1047 (degree 710), 1120978.KB894084_gene311
+(degree 659), 1120978.KB894085_gene35 (degree 628) and 1120978.KB894079_gene728
+(degree 621).
 
 
 References
@@ -107,14 +108,15 @@ def AllofustisSeminis(
 	
 	Datetime: 2021-02-02 22:31:12.420305
 	
-	The undirected graph Allofustis seminis has 1386 nodes and 123720 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12890
-	and has 4 connected components, where the component with most nodes has 1378 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 178.53, and the node degree mode is 4. The top 5
-	most central nodes are 1120978.KB894087_gene447 (degree 710), 1120978.KB894082_gene1047
-	(degree 710), 1120978.KB894084_gene311 (degree 659), 1120978.KB894085_gene35 (degree
-	628) and 1120978.KB894079_gene728 (degree 621).
+	The undirected graph Allofustis seminis has 1386 nodes and 123720 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12890 and has 4 connected components, where the component
+	with most nodes has 1378 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 178.53,
+	and the node degree mode is 4. The top 5 most central nodes are 1120978.KB894087_gene447
+	(degree 710), 1120978.KB894082_gene1047 (degree 710), 1120978.KB894084_gene311
+	(degree 659), 1120978.KB894085_gene35 (degree 628) and 1120978.KB894079_gene728
+	(degree 621).
 	
 
 

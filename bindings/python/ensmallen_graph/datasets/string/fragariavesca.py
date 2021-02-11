@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:05.458525
 
-The undirected graph Fragaria vesca has 19469 nodes and 2988402 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01577 and
-has 10 connected components, where the component with most nodes has 19451 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 306.99, and the node degree mode is 1. The top 5
-most central nodes are 57918.XP_004288882.1 (degree 6250), 57918.XP_004289633.1 (degree
-4293), 57918.XP_004297833.1 (degree 3895), 57918.XP_004304337.1 (degree 3721) and
-57918.XP_004306252.1 (degree 3670).
+The undirected graph Fragaria vesca has 19469 nodes and 2988402 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01577 and has 10 connected components, where the component with most
+nodes has 19451 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 306.99, and
+the node degree mode is 1. The top 5 most central nodes are 57918.XP_004288882.1
+(degree 6250), 57918.XP_004289633.1 (degree 4293), 57918.XP_004297833.1
+(degree 3895), 57918.XP_004304337.1 (degree 3721) and 57918.XP_004306252.1
+(degree 3670).
 
 
 References
@@ -107,14 +108,15 @@ def FragariaVesca(
 	
 	Datetime: 2021-02-02 18:19:05.458525
 	
-	The undirected graph Fragaria vesca has 19469 nodes and 2988402 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01577 and
-	has 10 connected components, where the component with most nodes has 19451 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 306.99, and the node degree mode is 1. The top 5
-	most central nodes are 57918.XP_004288882.1 (degree 6250), 57918.XP_004289633.1 (degree
-	4293), 57918.XP_004297833.1 (degree 3895), 57918.XP_004304337.1 (degree 3721) and
-	57918.XP_004306252.1 (degree 3670).
+	The undirected graph Fragaria vesca has 19469 nodes and 2988402 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01577 and has 10 connected components, where the component with most
+	nodes has 19451 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 306.99, and
+	the node degree mode is 1. The top 5 most central nodes are 57918.XP_004288882.1
+	(degree 6250), 57918.XP_004289633.1 (degree 4293), 57918.XP_004297833.1
+	(degree 3895), 57918.XP_004304337.1 (degree 3721) and 57918.XP_004306252.1
+	(degree 3670).
 	
 
 

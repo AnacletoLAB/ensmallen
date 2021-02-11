@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:43.806790
 
-The undirected graph ash85 has 85 nodes and 304 unweighted edges, of which 85 are
-self-loops. The graph is dense as it has a density of 0.07325 and is connected, as
-it has a single component. The graph median node degree is 6, the mean node degree
-is 6.15, and the node degree mode is 6. The top 5 most central nodes are 39 (degree
-10), 61 (degree 9), 34 (degree 9), 59 (degree 8) and 38 (degree 8).
+The undirected graph ash85 has 85 nodes and 304 unweighted edges, of which
+85 are self-loops. The graph is dense as it has a density of 0.07325 and
+is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 6.15, and the node degree mode is 6. The
+top 5 most central nodes are 39 (degree 10), 61 (degree 9), 34 (degree
+9), 59 (degree 8) and 38 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Ash85(
 	
 	Datetime: 2021-02-06 08:02:43.806790
 	
-	The undirected graph ash85 has 85 nodes and 304 unweighted edges, of which 85 are
-	self-loops. The graph is dense as it has a density of 0.07325 and is connected, as
-	it has a single component. The graph median node degree is 6, the mean node degree
-	is 6.15, and the node degree mode is 6. The top 5 most central nodes are 39 (degree
-	10), 61 (degree 9), 34 (degree 9), 59 (degree 8) and 38 (degree 8).
+	The undirected graph ash85 has 85 nodes and 304 unweighted edges, of which
+	85 are self-loops. The graph is dense as it has a density of 0.07325 and
+	is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 6.15, and the node degree mode is 6. The
+	top 5 most central nodes are 39 (degree 10), 61 (degree 9), 34 (degree
+	9), 59 (degree 8) and 38 (degree 8).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:27.194404
 
-The undirected graph Avibacterium paragallinarum 72 has 2310 nodes and 156598 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05872
-and has 3 connected components, where the component with most nodes has 2305 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 135.58, and the node degree mode is 14. The top 5
-most central nodes are 948565.AFFP02000002_gene1366 (degree 877), 948565.AFFP02000003_gene2127
+The undirected graph Avibacterium paragallinarum 72 has 2310 nodes and
+156598 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05872 and has 3 connected components, where the
+component with most nodes has 2305 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+is 135.58, and the node degree mode is 14. The top 5 most central nodes
+are 948565.AFFP02000002_gene1366 (degree 877), 948565.AFFP02000003_gene2127
 (degree 770), 948565.AFFP02000008_gene1732 (degree 757), 948565.AFFP02000015_gene2228
 (degree 635) and 948565.AFFP02000002_gene1230 (degree 635).
 
@@ -107,12 +108,13 @@ def AvibacteriumParagallinarum72(
 	
 	Datetime: 2021-02-02 22:02:27.194404
 	
-	The undirected graph Avibacterium paragallinarum 72 has 2310 nodes and 156598 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05872
-	and has 3 connected components, where the component with most nodes has 2305 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 135.58, and the node degree mode is 14. The top 5
-	most central nodes are 948565.AFFP02000002_gene1366 (degree 877), 948565.AFFP02000003_gene2127
+	The undirected graph Avibacterium paragallinarum 72 has 2310 nodes and
+	156598 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05872 and has 3 connected components, where the
+	component with most nodes has 2305 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+	is 135.58, and the node degree mode is 14. The top 5 most central nodes
+	are 948565.AFFP02000002_gene1366 (degree 877), 948565.AFFP02000003_gene2127
 	(degree 770), 948565.AFFP02000008_gene1732 (degree 757), 948565.AFFP02000015_gene2228
 	(degree 635) and 948565.AFFP02000002_gene1230 (degree 635).
 	

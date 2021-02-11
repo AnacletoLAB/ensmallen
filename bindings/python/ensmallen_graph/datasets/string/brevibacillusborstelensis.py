@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:01:55.645817
 
-The undirected graph Brevibacillus borstelensis has 4922 nodes and 621328 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05130
-and has 22 connected components, where the component with most nodes has 4869 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 252.47, and the node degree mode is 2. The top 5
-most central nodes are 1444309.JAQG01000012_gene2086 (degree 1773), 1444309.JAQG01000087_gene2607
-(degree 1524), 1444309.JAQG01000022_gene1465 (degree 1518), 1444309.JAQG01000055_gene1029
-(degree 1465) and 1444309.JAQG01000100_gene4727 (degree 1412).
+The undirected graph Brevibacillus borstelensis has 4922 nodes and 621328
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05130 and has 22 connected components, where the component
+with most nodes has 4869 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 252.47,
+and the node degree mode is 2. The top 5 most central nodes are 1444309.JAQG01000012_gene2086
+(degree 1773), 1444309.JAQG01000087_gene2607 (degree 1524), 1444309.JAQG01000022_gene1465
+(degree 1518), 1444309.JAQG01000055_gene1029 (degree 1465) and 1444309.JAQG01000100_gene4727
+(degree 1412).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacillusBorstelensis(
 	
 	Datetime: 2021-02-03 23:01:55.645817
 	
-	The undirected graph Brevibacillus borstelensis has 4922 nodes and 621328 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05130
-	and has 22 connected components, where the component with most nodes has 4869 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 252.47, and the node degree mode is 2. The top 5
-	most central nodes are 1444309.JAQG01000012_gene2086 (degree 1773), 1444309.JAQG01000087_gene2607
-	(degree 1524), 1444309.JAQG01000022_gene1465 (degree 1518), 1444309.JAQG01000055_gene1029
-	(degree 1465) and 1444309.JAQG01000100_gene4727 (degree 1412).
+	The undirected graph Brevibacillus borstelensis has 4922 nodes and 621328
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05130 and has 22 connected components, where the component
+	with most nodes has 4869 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 252.47,
+	and the node degree mode is 2. The top 5 most central nodes are 1444309.JAQG01000012_gene2086
+	(degree 1773), 1444309.JAQG01000087_gene2607 (degree 1524), 1444309.JAQG01000022_gene1465
+	(degree 1518), 1444309.JAQG01000055_gene1029 (degree 1465) and 1444309.JAQG01000100_gene4727
+	(degree 1412).
 	
 
 

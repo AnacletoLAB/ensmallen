@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:12.150653
 
-The undirected graph Deferrisoma camini has 3565 nodes and 467889 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07365 and
-has 14 connected components, where the component with most nodes has 3530 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 262.49, and the node degree mode is 1. The top 5 most central
-nodes are 1125863.JAFN01000001_gene3037 (degree 1660), 1125863.JAFN01000001_gene581
-(degree 1572), 1125863.JAFN01000001_gene1391 (degree 1487), 1125863.JAFN01000001_gene1802
-(degree 1393) and 1125863.JAFN01000001_gene1706 (degree 1370).
+The undirected graph Deferrisoma camini has 3565 nodes and 467889 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07365 and has 14 connected components, where the component with most
+nodes has 3530 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 262.49, and
+the node degree mode is 1. The top 5 most central nodes are 1125863.JAFN01000001_gene3037
+(degree 1660), 1125863.JAFN01000001_gene581 (degree 1572), 1125863.JAFN01000001_gene1391
+(degree 1487), 1125863.JAFN01000001_gene1802 (degree 1393) and 1125863.JAFN01000001_gene1706
+(degree 1370).
 
 
 References
@@ -107,14 +108,15 @@ def DeferrisomaCamini(
 	
 	Datetime: 2021-02-02 22:54:12.150653
 	
-	The undirected graph Deferrisoma camini has 3565 nodes and 467889 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07365 and
-	has 14 connected components, where the component with most nodes has 3530 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 262.49, and the node degree mode is 1. The top 5 most central
-	nodes are 1125863.JAFN01000001_gene3037 (degree 1660), 1125863.JAFN01000001_gene581
-	(degree 1572), 1125863.JAFN01000001_gene1391 (degree 1487), 1125863.JAFN01000001_gene1802
-	(degree 1393) and 1125863.JAFN01000001_gene1706 (degree 1370).
+	The undirected graph Deferrisoma camini has 3565 nodes and 467889 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07365 and has 14 connected components, where the component with most
+	nodes has 3530 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 262.49, and
+	the node degree mode is 1. The top 5 most central nodes are 1125863.JAFN01000001_gene3037
+	(degree 1660), 1125863.JAFN01000001_gene581 (degree 1572), 1125863.JAFN01000001_gene1391
+	(degree 1487), 1125863.JAFN01000001_gene1802 (degree 1393) and 1125863.JAFN01000001_gene1706
+	(degree 1370).
 	
 
 

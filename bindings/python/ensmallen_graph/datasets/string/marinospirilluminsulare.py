@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:11.814624
 
-The undirected graph Marinospirillum insulare has 2798 nodes and 265482 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06785
-and has 7 connected components, where the component with most nodes has 2783 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 189.77, and the node degree mode is 11. The top 5
-most central nodes are 1122211.JMLW01000006_gene325 (degree 1224), 1122211.JMLW01000003_gene1855
-(degree 1097), 1122211.JMLW01000049_gene1059 (degree 910), 1122211.JMLW01000024_gene758
-(degree 907) and 1122211.JMLW01000027_gene2407 (degree 904).
+The undirected graph Marinospirillum insulare has 2798 nodes and 265482
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06785 and has 7 connected components, where the component
+with most nodes has 2783 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 189.77,
+and the node degree mode is 11. The top 5 most central nodes are 1122211.JMLW01000006_gene325
+(degree 1224), 1122211.JMLW01000003_gene1855 (degree 1097), 1122211.JMLW01000049_gene1059
+(degree 910), 1122211.JMLW01000024_gene758 (degree 907) and 1122211.JMLW01000027_gene2407
+(degree 904).
 
 
 References
@@ -107,14 +108,15 @@ def MarinospirillumInsulare(
 	
 	Datetime: 2021-02-02 22:42:11.814624
 	
-	The undirected graph Marinospirillum insulare has 2798 nodes and 265482 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06785
-	and has 7 connected components, where the component with most nodes has 2783 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 189.77, and the node degree mode is 11. The top 5
-	most central nodes are 1122211.JMLW01000006_gene325 (degree 1224), 1122211.JMLW01000003_gene1855
-	(degree 1097), 1122211.JMLW01000049_gene1059 (degree 910), 1122211.JMLW01000024_gene758
-	(degree 907) and 1122211.JMLW01000027_gene2407 (degree 904).
+	The undirected graph Marinospirillum insulare has 2798 nodes and 265482
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06785 and has 7 connected components, where the component
+	with most nodes has 2783 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 189.77,
+	and the node degree mode is 11. The top 5 most central nodes are 1122211.JMLW01000006_gene325
+	(degree 1224), 1122211.JMLW01000003_gene1855 (degree 1097), 1122211.JMLW01000049_gene1059
+	(degree 910), 1122211.JMLW01000024_gene758 (degree 907) and 1122211.JMLW01000027_gene2407
+	(degree 904).
 	
 
 

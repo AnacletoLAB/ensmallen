@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:00.219504
 
-The undirected graph Haloarcula hispanica has 3818 nodes and 358587 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04921 and
-has 29 connected components, where the component with most nodes has 3735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 187.84, and the node degree mode is 4. The top 5 most central
-nodes are 634497.HAH_2730 (degree 1215), 634497.HAH_3101 (degree 1069), 634497.HAH_0579
-(degree 1066), 634497.HAH_0375 (degree 1066) and 634497.HAH_4198 (degree 1054).
+The undirected graph Haloarcula hispanica has 3818 nodes and 358587 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04921 and has 29 connected components, where the component with most
+nodes has 3735 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 187.84, and
+the node degree mode is 4. The top 5 most central nodes are 634497.HAH_2730
+(degree 1215), 634497.HAH_3101 (degree 1069), 634497.HAH_0579 (degree 1066),
+634497.HAH_0375 (degree 1066) and 634497.HAH_4198 (degree 1054).
 
 
 References
@@ -106,13 +107,14 @@ def HaloarculaHispanica(
 	
 	Datetime: 2021-02-02 21:22:00.219504
 	
-	The undirected graph Haloarcula hispanica has 3818 nodes and 358587 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04921 and
-	has 29 connected components, where the component with most nodes has 3735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 187.84, and the node degree mode is 4. The top 5 most central
-	nodes are 634497.HAH_2730 (degree 1215), 634497.HAH_3101 (degree 1069), 634497.HAH_0579
-	(degree 1066), 634497.HAH_0375 (degree 1066) and 634497.HAH_4198 (degree 1054).
+	The undirected graph Haloarcula hispanica has 3818 nodes and 358587 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04921 and has 29 connected components, where the component with most
+	nodes has 3735 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 187.84, and
+	the node degree mode is 4. The top 5 most central nodes are 634497.HAH_2730
+	(degree 1215), 634497.HAH_3101 (degree 1069), 634497.HAH_0579 (degree 1066),
+	634497.HAH_0375 (degree 1066) and 634497.HAH_4198 (degree 1054).
 	
 
 

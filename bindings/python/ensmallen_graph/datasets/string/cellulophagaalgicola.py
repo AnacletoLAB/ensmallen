@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:29.528009
 
-The undirected graph Cellulophaga algicola has 4116 nodes and 337321 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03983 and
-has 19 connected components, where the component with most nodes has 4051 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 163.91, and the node degree mode is 4. The top 5 most central
-nodes are 688270.Celal_2048 (degree 1410), 688270.Celal_2387 (degree 1120), 688270.Celal_2627
-(degree 1053), 688270.Celal_0337 (degree 1050) and 688270.Celal_3392 (degree 1020).
+The undirected graph Cellulophaga algicola has 4116 nodes and 337321 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03983 and has 19 connected components, where the component with most
+nodes has 4051 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 163.91, and
+the node degree mode is 4. The top 5 most central nodes are 688270.Celal_2048
+(degree 1410), 688270.Celal_2387 (degree 1120), 688270.Celal_2627 (degree
+1053), 688270.Celal_0337 (degree 1050) and 688270.Celal_3392 (degree 1020).
 
 
 References
@@ -106,13 +107,14 @@ def CellulophagaAlgicola(
 	
 	Datetime: 2021-02-02 21:31:29.528009
 	
-	The undirected graph Cellulophaga algicola has 4116 nodes and 337321 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03983 and
-	has 19 connected components, where the component with most nodes has 4051 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 163.91, and the node degree mode is 4. The top 5 most central
-	nodes are 688270.Celal_2048 (degree 1410), 688270.Celal_2387 (degree 1120), 688270.Celal_2627
-	(degree 1053), 688270.Celal_0337 (degree 1050) and 688270.Celal_3392 (degree 1020).
+	The undirected graph Cellulophaga algicola has 4116 nodes and 337321 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03983 and has 19 connected components, where the component with most
+	nodes has 4051 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 163.91, and
+	the node degree mode is 4. The top 5 most central nodes are 688270.Celal_2048
+	(degree 1410), 688270.Celal_2387 (degree 1120), 688270.Celal_2627 (degree
+	1053), 688270.Celal_0337 (degree 1050) and 688270.Celal_3392 (degree 1020).
 	
 
 

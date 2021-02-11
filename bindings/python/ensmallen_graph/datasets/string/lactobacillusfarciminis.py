@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:12.917149
 
-The undirected graph Lactobacillus farciminis has 2419 nodes and 218612 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07475
-and has 13 connected components, where the component with most nodes has 2388 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 180.75, and the node degree mode is 4. The top 5
-most central nodes are 936140.AEOT01000026_gene851 (degree 1114), 936140.AEOT01000014_gene1404
-(degree 1108), 936140.AEOT01000002_gene2107 (degree 1072), 936140.AEOT01000020_gene1592
-(degree 916) and 936140.AEOT01000026_gene863 (degree 910).
+The undirected graph Lactobacillus farciminis has 2419 nodes and 218612
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07475 and has 13 connected components, where the component
+with most nodes has 2388 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 180.75,
+and the node degree mode is 4. The top 5 most central nodes are 936140.AEOT01000026_gene851
+(degree 1114), 936140.AEOT01000014_gene1404 (degree 1108), 936140.AEOT01000002_gene2107
+(degree 1072), 936140.AEOT01000020_gene1592 (degree 916) and 936140.AEOT01000026_gene863
+(degree 910).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusFarciminis(
 	
 	Datetime: 2021-02-02 22:00:12.917149
 	
-	The undirected graph Lactobacillus farciminis has 2419 nodes and 218612 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07475
-	and has 13 connected components, where the component with most nodes has 2388 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 180.75, and the node degree mode is 4. The top 5
-	most central nodes are 936140.AEOT01000026_gene851 (degree 1114), 936140.AEOT01000014_gene1404
-	(degree 1108), 936140.AEOT01000002_gene2107 (degree 1072), 936140.AEOT01000020_gene1592
-	(degree 916) and 936140.AEOT01000026_gene863 (degree 910).
+	The undirected graph Lactobacillus farciminis has 2419 nodes and 218612
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07475 and has 13 connected components, where the component
+	with most nodes has 2388 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 180.75,
+	and the node degree mode is 4. The top 5 most central nodes are 936140.AEOT01000026_gene851
+	(degree 1114), 936140.AEOT01000014_gene1404 (degree 1108), 936140.AEOT01000002_gene2107
+	(degree 1072), 936140.AEOT01000020_gene1592 (degree 916) and 936140.AEOT01000026_gene863
+	(degree 910).
 	
 
 

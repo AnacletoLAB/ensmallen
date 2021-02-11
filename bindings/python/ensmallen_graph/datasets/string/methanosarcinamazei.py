@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:07.073436
 
-The undirected graph Methanosarcina mazei has 3214 nodes and 310995 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06023 and
-has 38 connected components, where the component with most nodes has 3127 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 193.53, and the node degree mode is 1. The top 5 most central
-nodes are 192952.MM_2782 (degree 967), 192952.MM_2505 (degree 935), 192952.MM_1380
-(degree 884), 192952.MM_1278 (degree 877) and 192952.MM_1369 (degree 833).
+The undirected graph Methanosarcina mazei has 3214 nodes and 310995 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06023 and has 38 connected components, where the component with most
+nodes has 3127 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 193.53, and
+the node degree mode is 1. The top 5 most central nodes are 192952.MM_2782
+(degree 967), 192952.MM_2505 (degree 935), 192952.MM_1380 (degree 884),
+192952.MM_1278 (degree 877) and 192952.MM_1369 (degree 833).
 
 
 References
@@ -106,13 +107,14 @@ def MethanosarcinaMazei(
 	
 	Datetime: 2021-02-02 19:58:07.073436
 	
-	The undirected graph Methanosarcina mazei has 3214 nodes and 310995 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06023 and
-	has 38 connected components, where the component with most nodes has 3127 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 193.53, and the node degree mode is 1. The top 5 most central
-	nodes are 192952.MM_2782 (degree 967), 192952.MM_2505 (degree 935), 192952.MM_1380
-	(degree 884), 192952.MM_1278 (degree 877) and 192952.MM_1369 (degree 833).
+	The undirected graph Methanosarcina mazei has 3214 nodes and 310995 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06023 and has 38 connected components, where the component with most
+	nodes has 3127 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 193.53, and
+	the node degree mode is 1. The top 5 most central nodes are 192952.MM_2782
+	(degree 967), 192952.MM_2505 (degree 935), 192952.MM_1380 (degree 884),
+	192952.MM_1278 (degree 877) and 192952.MM_1369 (degree 833).
 	
 
 

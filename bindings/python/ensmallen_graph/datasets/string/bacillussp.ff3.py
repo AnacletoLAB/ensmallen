@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:41.900800
 
-The undirected graph Bacillus sp. FF3 has 3849 nodes and 340136 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04593 and
-has 22 connected components, where the component with most nodes has 3793 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 176.74, and the node degree mode is 1. The top 5 most central
-nodes are 1347368.HG964405_gene5758 (degree 1290), 1347368.HG964403_gene4506 (degree
-1113), 1347368.HG964413_gene7762 (degree 1100), 1347368.HG964412_gene7663 (degree
-1093) and 1347368.HG964403_gene4638 (degree 925).
+The undirected graph Bacillus sp. FF3 has 3849 nodes and 340136 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04593 and has 22 connected components, where the component with most
+nodes has 3793 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 176.74, and
+the node degree mode is 1. The top 5 most central nodes are 1347368.HG964405_gene5758
+(degree 1290), 1347368.HG964403_gene4506 (degree 1113), 1347368.HG964413_gene7762
+(degree 1100), 1347368.HG964412_gene7663 (degree 1093) and 1347368.HG964403_gene4638
+(degree 925).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Ff3(
 	
 	Datetime: 2021-02-03 22:03:41.900800
 	
-	The undirected graph Bacillus sp. FF3 has 3849 nodes and 340136 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04593 and
-	has 22 connected components, where the component with most nodes has 3793 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 176.74, and the node degree mode is 1. The top 5 most central
-	nodes are 1347368.HG964405_gene5758 (degree 1290), 1347368.HG964403_gene4506 (degree
-	1113), 1347368.HG964413_gene7762 (degree 1100), 1347368.HG964412_gene7663 (degree
-	1093) and 1347368.HG964403_gene4638 (degree 925).
+	The undirected graph Bacillus sp. FF3 has 3849 nodes and 340136 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04593 and has 22 connected components, where the component with most
+	nodes has 3793 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 176.74, and
+	the node degree mode is 1. The top 5 most central nodes are 1347368.HG964405_gene5758
+	(degree 1290), 1347368.HG964403_gene4506 (degree 1113), 1347368.HG964413_gene7762
+	(degree 1100), 1347368.HG964412_gene7663 (degree 1093) and 1347368.HG964403_gene4638
+	(degree 925).
 	
 
 

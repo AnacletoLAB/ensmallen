@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:53.067669
 
-The undirected graph Shewanella amazonensis has 3629 nodes and 285218 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-has 8 connected components, where the component with most nodes has 3611 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 157.19, and the node degree mode is 4. The top 5 most central
-nodes are 326297.Sama_2952 (degree 1527), 326297.Sama_0093 (degree 1189), 326297.Sama_0580
-(degree 1088), 326297.Sama_2358 (degree 1032) and 326297.Sama_2049 (degree 982).
+The undirected graph Shewanella amazonensis has 3629 nodes and 285218 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04333 and has 8 connected components, where the component with most
+nodes has 3611 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 157.19, and
+the node degree mode is 4. The top 5 most central nodes are 326297.Sama_2952
+(degree 1527), 326297.Sama_0093 (degree 1189), 326297.Sama_0580 (degree
+1088), 326297.Sama_2358 (degree 1032) and 326297.Sama_2049 (degree 982).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaAmazonensis(
 	
 	Datetime: 2021-02-02 20:28:53.067669
 	
-	The undirected graph Shewanella amazonensis has 3629 nodes and 285218 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-	has 8 connected components, where the component with most nodes has 3611 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 157.19, and the node degree mode is 4. The top 5 most central
-	nodes are 326297.Sama_2952 (degree 1527), 326297.Sama_0093 (degree 1189), 326297.Sama_0580
-	(degree 1088), 326297.Sama_2358 (degree 1032) and 326297.Sama_2049 (degree 982).
+	The undirected graph Shewanella amazonensis has 3629 nodes and 285218 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04333 and has 8 connected components, where the component with most
+	nodes has 3611 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 157.19, and
+	the node degree mode is 4. The top 5 most central nodes are 326297.Sama_2952
+	(degree 1527), 326297.Sama_0093 (degree 1189), 326297.Sama_0580 (degree
+	1088), 326297.Sama_2358 (degree 1032) and 326297.Sama_2049 (degree 982).
 	
 
 

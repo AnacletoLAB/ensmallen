@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:50.409232
 
-The undirected graph Terriglobus saanensis has 4146 nodes and 383808 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04467 and
-has 10 connected components, where the component with most nodes has 4123 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 185.15, and the node degree mode is 3. The top 5 most central
-nodes are 401053.AciPR4_1268 (degree 1272), 401053.AciPR4_2101 (degree 1123), 401053.AciPR4_2050
-(degree 952), 401053.AciPR4_1494 (degree 945) and 401053.AciPR4_3191 (degree 909).
+The undirected graph Terriglobus saanensis has 4146 nodes and 383808 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04467 and has 10 connected components, where the component with most
+nodes has 4123 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 185.15, and
+the node degree mode is 3. The top 5 most central nodes are 401053.AciPR4_1268
+(degree 1272), 401053.AciPR4_2101 (degree 1123), 401053.AciPR4_2050 (degree
+952), 401053.AciPR4_1494 (degree 945) and 401053.AciPR4_3191 (degree 909).
 
 
 References
@@ -106,13 +107,14 @@ def TerriglobusSaanensis(
 	
 	Datetime: 2021-02-02 20:43:50.409232
 	
-	The undirected graph Terriglobus saanensis has 4146 nodes and 383808 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04467 and
-	has 10 connected components, where the component with most nodes has 4123 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 185.15, and the node degree mode is 3. The top 5 most central
-	nodes are 401053.AciPR4_1268 (degree 1272), 401053.AciPR4_2101 (degree 1123), 401053.AciPR4_2050
-	(degree 952), 401053.AciPR4_1494 (degree 945) and 401053.AciPR4_3191 (degree 909).
+	The undirected graph Terriglobus saanensis has 4146 nodes and 383808 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04467 and has 10 connected components, where the component with most
+	nodes has 4123 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 185.15, and
+	the node degree mode is 3. The top 5 most central nodes are 401053.AciPR4_1268
+	(degree 1272), 401053.AciPR4_2101 (degree 1123), 401053.AciPR4_2050 (degree
+	952), 401053.AciPR4_1494 (degree 945) and 401053.AciPR4_3191 (degree 909).
 	
 
 

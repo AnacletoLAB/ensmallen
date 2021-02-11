@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:35.920110
 
-The undirected graph Pyrobaculum islandicum has 1964 nodes and 124614 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06465 and
-has 16 connected components, where the component with most nodes has 1917 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 126.90, and the node degree mode is 3. The top 5 most central
-nodes are 384616.Pisl_1710 (degree 667), 384616.Pisl_1585 (degree 650), 384616.Pisl_0486
-(degree 618), 384616.Pisl_0713 (degree 618) and 384616.Pisl_0249 (degree 602).
+The undirected graph Pyrobaculum islandicum has 1964 nodes and 124614 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06465 and has 16 connected components, where the component with most
+nodes has 1917 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 126.90, and
+the node degree mode is 3. The top 5 most central nodes are 384616.Pisl_1710
+(degree 667), 384616.Pisl_1585 (degree 650), 384616.Pisl_0486 (degree 618),
+384616.Pisl_0713 (degree 618) and 384616.Pisl_0249 (degree 602).
 
 
 References
@@ -106,13 +107,14 @@ def PyrobaculumIslandicum(
 	
 	Datetime: 2021-02-02 20:37:35.920110
 	
-	The undirected graph Pyrobaculum islandicum has 1964 nodes and 124614 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06465 and
-	has 16 connected components, where the component with most nodes has 1917 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 126.90, and the node degree mode is 3. The top 5 most central
-	nodes are 384616.Pisl_1710 (degree 667), 384616.Pisl_1585 (degree 650), 384616.Pisl_0486
-	(degree 618), 384616.Pisl_0713 (degree 618) and 384616.Pisl_0249 (degree 602).
+	The undirected graph Pyrobaculum islandicum has 1964 nodes and 124614 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06465 and has 16 connected components, where the component with most
+	nodes has 1917 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 126.90, and
+	the node degree mode is 3. The top 5 most central nodes are 384616.Pisl_1710
+	(degree 667), 384616.Pisl_1585 (degree 650), 384616.Pisl_0486 (degree 618),
+	384616.Pisl_0713 (degree 618) and 384616.Pisl_0249 (degree 602).
 	
 
 

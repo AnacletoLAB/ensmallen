@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:54.034525
 
-The undirected graph Clostridiales bacterium 9403326 has 1383 nodes and 96321 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10079 and has 4 connected components, where the component with most nodes has
-1377 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 112, the mean node degree is 139.29, and the node degree mode is 1. The
-top 5 most central nodes are 938289.CAJN020000001_gene1361 (degree 737), 938289.CAJN020000005_gene7
+The undirected graph Clostridiales bacterium 9403326 has 1383 nodes and
+96321 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.10079 and has 4 connected components, where
+the component with most nodes has 1377 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 112, the mean
+node degree is 139.29, and the node degree mode is 1. The top 5 most central
+nodes are 938289.CAJN020000001_gene1361 (degree 737), 938289.CAJN020000005_gene7
 (degree 662), 938289.CAJN020000006_gene463 (degree 610), 938289.CAJN020000002_gene644
 (degree 608) and 938289.CAJN020000003_gene912 (degree 594).
 
@@ -107,12 +108,13 @@ def ClostridialesBacterium9403326(
 	
 	Datetime: 2021-02-02 22:00:54.034525
 	
-	The undirected graph Clostridiales bacterium 9403326 has 1383 nodes and 96321 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10079 and has 4 connected components, where the component with most nodes has
-	1377 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 112, the mean node degree is 139.29, and the node degree mode is 1. The
-	top 5 most central nodes are 938289.CAJN020000001_gene1361 (degree 737), 938289.CAJN020000005_gene7
+	The undirected graph Clostridiales bacterium 9403326 has 1383 nodes and
+	96321 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.10079 and has 4 connected components, where
+	the component with most nodes has 1377 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 112, the mean
+	node degree is 139.29, and the node degree mode is 1. The top 5 most central
+	nodes are 938289.CAJN020000001_gene1361 (degree 737), 938289.CAJN020000005_gene7
 	(degree 662), 938289.CAJN020000006_gene463 (degree 610), 938289.CAJN020000002_gene644
 	(degree 608) and 938289.CAJN020000003_gene912 (degree 594).
 	

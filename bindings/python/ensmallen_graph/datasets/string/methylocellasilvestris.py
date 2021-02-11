@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:39.794692
 
-The undirected graph Methylocella silvestris has 3780 nodes and 349680 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04896 and
-has 14 connected components, where the component with most nodes has 3751 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 185.02, and the node degree mode is 4. The top 5 most central
-nodes are 395965.Msil_2473 (degree 1506), 395965.Msil_1391 (degree 1376), 395965.Msil_2987
-(degree 1242), 395965.Msil_2534 (degree 930) and 395965.Msil_0378 (degree 897).
+The undirected graph Methylocella silvestris has 3780 nodes and 349680
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04896 and has 14 connected components, where the component
+with most nodes has 3751 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 185.02,
+and the node degree mode is 4. The top 5 most central nodes are 395965.Msil_2473
+(degree 1506), 395965.Msil_1391 (degree 1376), 395965.Msil_2987 (degree
+1242), 395965.Msil_2534 (degree 930) and 395965.Msil_0378 (degree 897).
 
 
 References
@@ -106,13 +107,14 @@ def MethylocellaSilvestris(
 	
 	Datetime: 2021-02-02 20:41:39.794692
 	
-	The undirected graph Methylocella silvestris has 3780 nodes and 349680 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04896 and
-	has 14 connected components, where the component with most nodes has 3751 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 185.02, and the node degree mode is 4. The top 5 most central
-	nodes are 395965.Msil_2473 (degree 1506), 395965.Msil_1391 (degree 1376), 395965.Msil_2987
-	(degree 1242), 395965.Msil_2534 (degree 930) and 395965.Msil_0378 (degree 897).
+	The undirected graph Methylocella silvestris has 3780 nodes and 349680
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04896 and has 14 connected components, where the component
+	with most nodes has 3751 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 185.02,
+	and the node degree mode is 4. The top 5 most central nodes are 395965.Msil_2473
+	(degree 1506), 395965.Msil_1391 (degree 1376), 395965.Msil_2987 (degree
+	1242), 395965.Msil_2534 (degree 930) and 395965.Msil_0378 (degree 897).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:36.397438
 
-The undirected graph Fusarium verticillioides has 9941 nodes and 780364 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01579
-and has 105 connected components, where the component with most nodes has 9718 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 69, the mean node degree is 157.00, and the node degree mode is 1. The top 5 most
-central nodes are 117187.FVEG_06956T0 (degree 2432), 117187.FVEG_04927T0 (degree
-1873), 117187.FVEG_07470T0 (degree 1508), 117187.FVEG_10153T0 (degree 1491) and 117187.FVEG_07705T0
-(degree 1421).
+The undirected graph Fusarium verticillioides has 9941 nodes and 780364
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01579 and has 105 connected components, where the component
+with most nodes has 9718 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 69, the mean node degree is 157.00,
+and the node degree mode is 1. The top 5 most central nodes are 117187.FVEG_06956T0
+(degree 2432), 117187.FVEG_04927T0 (degree 1873), 117187.FVEG_07470T0 (degree
+1508), 117187.FVEG_10153T0 (degree 1491) and 117187.FVEG_07705T0 (degree
+1421).
 
 
 References
@@ -107,14 +108,15 @@ def FusariumVerticillioides(
 	
 	Datetime: 2021-02-02 19:47:36.397438
 	
-	The undirected graph Fusarium verticillioides has 9941 nodes and 780364 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01579
-	and has 105 connected components, where the component with most nodes has 9718 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 69, the mean node degree is 157.00, and the node degree mode is 1. The top 5 most
-	central nodes are 117187.FVEG_06956T0 (degree 2432), 117187.FVEG_04927T0 (degree
-	1873), 117187.FVEG_07470T0 (degree 1508), 117187.FVEG_10153T0 (degree 1491) and 117187.FVEG_07705T0
-	(degree 1421).
+	The undirected graph Fusarium verticillioides has 9941 nodes and 780364
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01579 and has 105 connected components, where the component
+	with most nodes has 9718 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 69, the mean node degree is 157.00,
+	and the node degree mode is 1. The top 5 most central nodes are 117187.FVEG_06956T0
+	(degree 2432), 117187.FVEG_04927T0 (degree 1873), 117187.FVEG_07470T0 (degree
+	1508), 117187.FVEG_10153T0 (degree 1491) and 117187.FVEG_07705T0 (degree
+	1421).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:49.513780
 
-The undirected graph Drosophila melanogaster has 13046 nodes and 1981482 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02329
-and has 16 connected components, where the component with most nodes has 13015 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 200, the mean node degree is 303.77, and the node degree mode is 1. The top 5
-most central nodes are 7227.FBpp0111700 (degree 2926), 7227.FBpp0112713 (degree 2646),
-7227.FBpp0084434 (degree 2291), 7227.FBpp0078604 (degree 2263) and 7227.FBpp0079664
-(degree 2252).
+The undirected graph Drosophila melanogaster has 13046 nodes and 1981482
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02329 and has 16 connected components, where the component
+with most nodes has 13015 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 200, the mean node degree
+is 303.77, and the node degree mode is 1. The top 5 most central nodes
+are 7227.FBpp0111700 (degree 2926), 7227.FBpp0112713 (degree 2646), 7227.FBpp0084434
+(degree 2291), 7227.FBpp0078604 (degree 2263) and 7227.FBpp0079664 (degree
+2252).
 
 
 References
@@ -107,14 +108,15 @@ def DrosophilaMelanogaster(
 	
 	Datetime: 2021-02-02 17:21:49.513780
 	
-	The undirected graph Drosophila melanogaster has 13046 nodes and 1981482 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02329
-	and has 16 connected components, where the component with most nodes has 13015 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 200, the mean node degree is 303.77, and the node degree mode is 1. The top 5
-	most central nodes are 7227.FBpp0111700 (degree 2926), 7227.FBpp0112713 (degree 2646),
-	7227.FBpp0084434 (degree 2291), 7227.FBpp0078604 (degree 2263) and 7227.FBpp0079664
-	(degree 2252).
+	The undirected graph Drosophila melanogaster has 13046 nodes and 1981482
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02329 and has 16 connected components, where the component
+	with most nodes has 13015 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 200, the mean node degree
+	is 303.77, and the node degree mode is 1. The top 5 most central nodes
+	are 7227.FBpp0111700 (degree 2926), 7227.FBpp0112713 (degree 2646), 7227.FBpp0084434
+	(degree 2291), 7227.FBpp0078604 (degree 2263) and 7227.FBpp0079664 (degree
+	2252).
 	
 
 

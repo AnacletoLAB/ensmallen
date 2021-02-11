@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:38.248853
 
-The undirected graph Xanthomonas campestris musacearum has 3763 nodes and 450176
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06360 and has 21 connected components, where the component with most nodes has
-3717 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 203, the mean node degree is 239.26, and the node degree mode is 1. The
-top 5 most central nodes are 1094184.KWO_0119795 (degree 1496), 1094184.KWO_0107785
-(degree 1346), 1094184.KWO_0116745 (degree 1318), 1094184.KWO_0115835 (degree 1296)
-and 1094184.KWO_0100130 (degree 1162).
+The undirected graph Xanthomonas campestris musacearum has 3763 nodes and
+450176 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06360 and has 21 connected components, where the
+component with most nodes has 3717 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 203, the mean node degree
+is 239.26, and the node degree mode is 1. The top 5 most central nodes
+are 1094184.KWO_0119795 (degree 1496), 1094184.KWO_0107785 (degree 1346),
+1094184.KWO_0116745 (degree 1318), 1094184.KWO_0115835 (degree 1296) and
+1094184.KWO_0100130 (degree 1162).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasCampestrisMusacearum(
 	
 	Datetime: 2021-02-02 22:22:38.248853
 	
-	The undirected graph Xanthomonas campestris musacearum has 3763 nodes and 450176
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06360 and has 21 connected components, where the component with most nodes has
-	3717 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 203, the mean node degree is 239.26, and the node degree mode is 1. The
-	top 5 most central nodes are 1094184.KWO_0119795 (degree 1496), 1094184.KWO_0107785
-	(degree 1346), 1094184.KWO_0116745 (degree 1318), 1094184.KWO_0115835 (degree 1296)
-	and 1094184.KWO_0100130 (degree 1162).
+	The undirected graph Xanthomonas campestris musacearum has 3763 nodes and
+	450176 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06360 and has 21 connected components, where the
+	component with most nodes has 3717 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 203, the mean node degree
+	is 239.26, and the node degree mode is 1. The top 5 most central nodes
+	are 1094184.KWO_0119795 (degree 1496), 1094184.KWO_0107785 (degree 1346),
+	1094184.KWO_0116745 (degree 1318), 1094184.KWO_0115835 (degree 1296) and
+	1094184.KWO_0100130 (degree 1162).
 	
 
 

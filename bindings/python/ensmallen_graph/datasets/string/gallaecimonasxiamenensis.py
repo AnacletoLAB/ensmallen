@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:06.596537
 
-The undirected graph Gallaecimonas xiamenensis has 3771 nodes and 535527 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07534
-and has 10 connected components, where the component with most nodes has 3746 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 256, the mean node degree is 284.02, and the node degree mode is 2. The top 5
-most central nodes are 745411.B3C1_10357 (degree 1561), 745411.B3C1_04240 (degree
-1512), 745411.B3C1_08716 (degree 1317), 745411.B3C1_08721 (degree 1279) and 745411.B3C1_01115
-(degree 1273).
+The undirected graph Gallaecimonas xiamenensis has 3771 nodes and 535527
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07534 and has 10 connected components, where the component
+with most nodes has 3746 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 256, the mean node degree is 284.02,
+and the node degree mode is 2. The top 5 most central nodes are 745411.B3C1_10357
+(degree 1561), 745411.B3C1_04240 (degree 1512), 745411.B3C1_08716 (degree
+1317), 745411.B3C1_08721 (degree 1279) and 745411.B3C1_01115 (degree 1273).
 
 
 References
@@ -107,14 +107,14 @@ def GallaecimonasXiamenensis(
 	
 	Datetime: 2021-02-02 21:39:06.596537
 	
-	The undirected graph Gallaecimonas xiamenensis has 3771 nodes and 535527 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07534
-	and has 10 connected components, where the component with most nodes has 3746 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 256, the mean node degree is 284.02, and the node degree mode is 2. The top 5
-	most central nodes are 745411.B3C1_10357 (degree 1561), 745411.B3C1_04240 (degree
-	1512), 745411.B3C1_08716 (degree 1317), 745411.B3C1_08721 (degree 1279) and 745411.B3C1_01115
-	(degree 1273).
+	The undirected graph Gallaecimonas xiamenensis has 3771 nodes and 535527
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07534 and has 10 connected components, where the component
+	with most nodes has 3746 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 256, the mean node degree is 284.02,
+	and the node degree mode is 2. The top 5 most central nodes are 745411.B3C1_10357
+	(degree 1561), 745411.B3C1_04240 (degree 1512), 745411.B3C1_08716 (degree
+	1317), 745411.B3C1_08721 (degree 1279) and 745411.B3C1_01115 (degree 1273).
 	
 
 

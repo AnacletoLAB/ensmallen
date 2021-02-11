@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:14.165637
 
-The undirected graph Oregon-2 has 11461 nodes and 32730 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00050 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 5.71, and the node degree mode is 2. The top 5 most central nodes
-are 197 (degree 2432), 278 (degree 1347), 2426 (degree 1049), 965 (degree 898) and
-101 (degree 626).
+The undirected graph Oregon-2 has 11461 nodes and 32730 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00050 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 5.71, and the node degree mode
+is 2. The top 5 most central nodes are 197 (degree 2432), 278 (degree 1347),
+2426 (degree 1049), 965 (degree 898) and 101 (degree 626).
 
 
 References
@@ -102,12 +102,12 @@ def Oregon2(
 	
 	Datetime: 2021-02-06 10:14:14.165637
 	
-	The undirected graph Oregon-2 has 11461 nodes and 32730 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00050 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 5.71, and the node degree mode is 2. The top 5 most central nodes
-	are 197 (degree 2432), 278 (degree 1347), 2426 (degree 1049), 965 (degree 898) and
-	101 (degree 626).
+	The undirected graph Oregon-2 has 11461 nodes and 32730 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00050 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 5.71, and the node degree mode
+	is 2. The top 5 most central nodes are 197 (degree 2432), 278 (degree 1347),
+	2426 (degree 1049), 965 (degree 898) and 101 (degree 626).
 	
 
 

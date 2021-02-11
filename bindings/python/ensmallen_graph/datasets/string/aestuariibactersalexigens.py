@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:21.155379
 
-The undirected graph Aestuariibacter salexigens has 3330 nodes and 381865 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06889
-and has 10 connected components, where the component with most nodes has 3310 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 229.35, and the node degree mode is 3. The top 5
-most central nodes are 1120953.AUBH01000002_gene1453 (degree 1528), 1120953.AUBH01000005_gene2212
-(degree 1298), 1120953.AUBH01000004_gene3074 (degree 1118), 1120953.AUBH01000017_gene2892
-(degree 1073) and 1120953.AUBH01000017_gene2891 (degree 1060).
+The undirected graph Aestuariibacter salexigens has 3330 nodes and 381865
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06889 and has 10 connected components, where the component
+with most nodes has 3310 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 213, the mean node degree is 229.35,
+and the node degree mode is 3. The top 5 most central nodes are 1120953.AUBH01000002_gene1453
+(degree 1528), 1120953.AUBH01000005_gene2212 (degree 1298), 1120953.AUBH01000004_gene3074
+(degree 1118), 1120953.AUBH01000017_gene2892 (degree 1073) and 1120953.AUBH01000017_gene2891
+(degree 1060).
 
 
 References
@@ -107,14 +108,15 @@ def AestuariibacterSalexigens(
 	
 	Datetime: 2021-02-02 22:30:21.155379
 	
-	The undirected graph Aestuariibacter salexigens has 3330 nodes and 381865 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06889
-	and has 10 connected components, where the component with most nodes has 3310 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 229.35, and the node degree mode is 3. The top 5
-	most central nodes are 1120953.AUBH01000002_gene1453 (degree 1528), 1120953.AUBH01000005_gene2212
-	(degree 1298), 1120953.AUBH01000004_gene3074 (degree 1118), 1120953.AUBH01000017_gene2892
-	(degree 1073) and 1120953.AUBH01000017_gene2891 (degree 1060).
+	The undirected graph Aestuariibacter salexigens has 3330 nodes and 381865
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06889 and has 10 connected components, where the component
+	with most nodes has 3310 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 213, the mean node degree is 229.35,
+	and the node degree mode is 3. The top 5 most central nodes are 1120953.AUBH01000002_gene1453
+	(degree 1528), 1120953.AUBH01000005_gene2212 (degree 1298), 1120953.AUBH01000004_gene3074
+	(degree 1118), 1120953.AUBH01000017_gene2892 (degree 1073) and 1120953.AUBH01000017_gene2891
+	(degree 1060).
 	
 
 

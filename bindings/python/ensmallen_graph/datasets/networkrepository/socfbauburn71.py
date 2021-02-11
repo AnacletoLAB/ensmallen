@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:21.326617
 
-The undirected graph socfb-Auburn71 has 18448 nodes and 973918 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00572
-and is connected, as it has a single component. The graph median node degree is 76,
-the mean node degree is 105.59, and the node degree mode is 1. The top 5 most central
-nodes are 5472 (degree 5160), 10626 (degree 3439), 14497 (degree 3267), 12499 (degree
-2857) and 7194 (degree 2495).
+The undirected graph socfb-Auburn71 has 18448 nodes and 973918 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00572 and is connected, as it has a single component. The graph median
+node degree is 76, the mean node degree is 105.59, and the node degree
+mode is 1. The top 5 most central nodes are 5472 (degree 5160), 10626 (degree
+3439), 14497 (degree 3267), 12499 (degree 2857) and 7194 (degree 2495).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbAuburn71(
 	
 	Datetime: 2021-02-06 11:48:21.326617
 	
-	The undirected graph socfb-Auburn71 has 18448 nodes and 973918 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00572
-	and is connected, as it has a single component. The graph median node degree is 76,
-	the mean node degree is 105.59, and the node degree mode is 1. The top 5 most central
-	nodes are 5472 (degree 5160), 10626 (degree 3439), 14497 (degree 3267), 12499 (degree
-	2857) and 7194 (degree 2495).
+	The undirected graph socfb-Auburn71 has 18448 nodes and 973918 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00572 and is connected, as it has a single component. The graph median
+	node degree is 76, the mean node degree is 105.59, and the node degree
+	mode is 1. The top 5 most central nodes are 5472 (degree 5160), 10626 (degree
+	3439), 14497 (degree 3267), 12499 (degree 2857) and 7194 (degree 2495).
 	
 
 

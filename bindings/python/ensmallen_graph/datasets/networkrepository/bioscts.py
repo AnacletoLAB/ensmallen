@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:23.236676
 
-The undirected graph bio-SC-TS has 636 nodes and 3959 weighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01961 and has 81 connected
-components, where the component with most nodes has 67 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-is 12.45 and the node degree mode is 1. The top 5 most central nodes are 70 (degree
-66), 69 (degree 66), 68 (degree 66), 67 (degree 66) and 66 (degree 66).
+The undirected graph bio-SC-TS has 636 nodes and 3959 weighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.01961
+and has 81 connected components, where the component with most nodes has
+67 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 4, the mean node degree is 12.45 and the node degree
+mode is 1. The top 5 most central nodes are 70 (degree 66), 69 (degree
+66), 68 (degree 66), 67 (degree 66) and 66 (degree 66).
 
 
 References
@@ -113,12 +114,13 @@ def BioScTs(
 	
 	Datetime: 2021-02-03 22:30:23.236676
 	
-	The undirected graph bio-SC-TS has 636 nodes and 3959 weighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01961 and has 81 connected
-	components, where the component with most nodes has 67 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 4, the mean node degree
-	is 12.45 and the node degree mode is 1. The top 5 most central nodes are 70 (degree
-	66), 69 (degree 66), 68 (degree 66), 67 (degree 66) and 66 (degree 66).
+	The undirected graph bio-SC-TS has 636 nodes and 3959 weighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.01961
+	and has 81 connected components, where the component with most nodes has
+	67 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 4, the mean node degree is 12.45 and the node degree
+	mode is 1. The top 5 most central nodes are 70 (degree 66), 69 (degree
+	66), 68 (degree 66), 67 (degree 66) and 66 (degree 66).
 	
 
 

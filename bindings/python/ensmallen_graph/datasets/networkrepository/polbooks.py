@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:21:27.536573
 
-The undirected graph polbooks has 105 nodes and 441 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.08077 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 8.40, and the node degree mode is 5. The top 5 most central nodes are 13 (degree
-25), 9 (degree 25), 85 (degree 23), 4 (degree 23) and 73 (degree 22).
+The undirected graph polbooks has 105 nodes and 441 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.08077
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 8.40, and the node degree mode is 5. The
+top 5 most central nodes are 13 (degree 25), 9 (degree 25), 85 (degree
+23), 4 (degree 23) and 73 (degree 22).
 
 
 References
@@ -101,11 +102,12 @@ def Polbooks(
 	
 	Datetime: 2021-02-06 08:21:27.536573
 	
-	The undirected graph polbooks has 105 nodes and 441 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.08077 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 8.40, and the node degree mode is 5. The top 5 most central nodes are 13 (degree
-	25), 9 (degree 25), 85 (degree 23), 4 (degree 23) and 73 (degree 22).
+	The undirected graph polbooks has 105 nodes and 441 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.08077
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 8.40, and the node degree mode is 5. The
+	top 5 most central nodes are 13 (degree 25), 9 (degree 25), 85 (degree
+	23), 4 (degree 23) and 73 (degree 22).
 	
 
 

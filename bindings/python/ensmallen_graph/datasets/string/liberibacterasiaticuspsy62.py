@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:11.711638
 
-The undirected graph Liberibacter asiaticus psy62 has 1071 nodes and 51411 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08972
-and has 12 connected components, where the component with most nodes has 1046 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 96.01, and the node degree mode is 1. The top 5 most
-central nodes are 537021.CLIBASIA_00810 (degree 477), 537021.CLIBASIA_01495 (degree
-442), 537021.CLIBASIA_01005 (degree 406), 537021.CLIBASIA_03930 (degree 403) and
-537021.CLIBASIA_02620 (degree 398).
+The undirected graph Liberibacter asiaticus psy62 has 1071 nodes and 51411
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08972 and has 12 connected components, where the component
+with most nodes has 1046 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 96.01,
+and the node degree mode is 1. The top 5 most central nodes are 537021.CLIBASIA_00810
+(degree 477), 537021.CLIBASIA_01495 (degree 442), 537021.CLIBASIA_01005
+(degree 406), 537021.CLIBASIA_03930 (degree 403) and 537021.CLIBASIA_02620
+(degree 398).
 
 
 References
@@ -107,14 +108,15 @@ def LiberibacterAsiaticusPsy62(
 	
 	Datetime: 2021-02-02 21:07:11.711638
 	
-	The undirected graph Liberibacter asiaticus psy62 has 1071 nodes and 51411 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08972
-	and has 12 connected components, where the component with most nodes has 1046 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 96.01, and the node degree mode is 1. The top 5 most
-	central nodes are 537021.CLIBASIA_00810 (degree 477), 537021.CLIBASIA_01495 (degree
-	442), 537021.CLIBASIA_01005 (degree 406), 537021.CLIBASIA_03930 (degree 403) and
-	537021.CLIBASIA_02620 (degree 398).
+	The undirected graph Liberibacter asiaticus psy62 has 1071 nodes and 51411
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08972 and has 12 connected components, where the component
+	with most nodes has 1046 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 96.01,
+	and the node degree mode is 1. The top 5 most central nodes are 537021.CLIBASIA_00810
+	(degree 477), 537021.CLIBASIA_01495 (degree 442), 537021.CLIBASIA_01005
+	(degree 406), 537021.CLIBASIA_03930 (degree 403) and 537021.CLIBASIA_02620
+	(degree 398).
 	
 
 

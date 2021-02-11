@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:24.646185
 
-The undirected graph Dactylellina haptotyla has 6406 nodes and 622753 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03036 and
-has 24 connected components, where the component with most nodes has 6357 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 194.43, and the node degree mode is 1. The top 5 most central
-nodes are 430498.S8AB81 (degree 2265), 430498.S8ARF5 (degree 1841), 430498.S8AI05
-(degree 1588), 430498.S8BIQ7 (degree 1587) and 430498.S8A220 (degree 1460).
+The undirected graph Dactylellina haptotyla has 6406 nodes and 622753 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03036 and has 24 connected components, where the component with most
+nodes has 6357 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 194.43, and
+the node degree mode is 1. The top 5 most central nodes are 430498.S8AB81
+(degree 2265), 430498.S8ARF5 (degree 1841), 430498.S8AI05 (degree 1588),
+430498.S8BIQ7 (degree 1587) and 430498.S8A220 (degree 1460).
 
 
 References
@@ -106,13 +107,14 @@ def DactylellinaHaptotyla(
 	
 	Datetime: 2021-02-02 20:48:24.646185
 	
-	The undirected graph Dactylellina haptotyla has 6406 nodes and 622753 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03036 and
-	has 24 connected components, where the component with most nodes has 6357 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 194.43, and the node degree mode is 1. The top 5 most central
-	nodes are 430498.S8AB81 (degree 2265), 430498.S8ARF5 (degree 1841), 430498.S8AI05
-	(degree 1588), 430498.S8BIQ7 (degree 1587) and 430498.S8A220 (degree 1460).
+	The undirected graph Dactylellina haptotyla has 6406 nodes and 622753 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03036 and has 24 connected components, where the component with most
+	nodes has 6357 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 194.43, and
+	the node degree mode is 1. The top 5 most central nodes are 430498.S8AB81
+	(degree 2265), 430498.S8ARF5 (degree 1841), 430498.S8AI05 (degree 1588),
+	430498.S8BIQ7 (degree 1587) and 430498.S8A220 (degree 1460).
 	
 
 

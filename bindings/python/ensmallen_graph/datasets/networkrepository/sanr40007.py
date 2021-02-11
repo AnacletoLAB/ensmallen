@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:53.945180
 
-The undirected graph sanr400-0-7 has 400 nodes and 55869 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.70011
-and is connected, as it has a single component. The graph median node degree is 279,
-the mean node degree is 279.35 and the node degree mode is 277. The top 5 most central
-nodes are 173 (degree 310), 223 (degree 307), 321 (degree 305), 278 (degree 303)
-and 297 (degree 300).
+The undirected graph sanr400-0-7 has 400 nodes and 55869 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.70011 and is connected, as it has a single component. The
+graph median node degree is 279, the mean node degree is 279.35 and the
+node degree mode is 277. The top 5 most central nodes are 173 (degree 310),
+223 (degree 307), 321 (degree 305), 278 (degree 303) and 297 (degree 300).
 
 
 References
@@ -115,12 +115,12 @@ def Sanr40007(
 	
 	Datetime: 2021-02-03 22:56:53.945180
 	
-	The undirected graph sanr400-0-7 has 400 nodes and 55869 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.70011
-	and is connected, as it has a single component. The graph median node degree is 279,
-	the mean node degree is 279.35 and the node degree mode is 277. The top 5 most central
-	nodes are 173 (degree 310), 223 (degree 307), 321 (degree 305), 278 (degree 303)
-	and 297 (degree 300).
+	The undirected graph sanr400-0-7 has 400 nodes and 55869 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.70011 and is connected, as it has a single component. The
+	graph median node degree is 279, the mean node degree is 279.35 and the
+	node degree mode is 277. The top 5 most central nodes are 173 (degree 310),
+	223 (degree 307), 321 (degree 305), 278 (degree 303) and 297 (degree 300).
 	
 
 

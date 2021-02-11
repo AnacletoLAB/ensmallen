@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:44.601555
 
-The undirected graph Metascardovia criceti has 1446 nodes and 90484 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08661 and
-has 7 connected components, where the component with most nodes has 1431 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 125.15, and the node degree mode is 1. The top 5 most central
-nodes are 1122228.AQXR01000011_gene254 (degree 717), 1122228.AQXR01000011_gene348
-(degree 667), 1122228.AQXR01000010_gene933 (degree 665), 1122228.AQXR01000010_gene779
-(degree 579) and 1122228.AQXR01000011_gene197 (degree 570).
+The undirected graph Metascardovia criceti has 1446 nodes and 90484 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08661 and has 7 connected components, where the component with most
+nodes has 1431 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 125.15, and
+the node degree mode is 1. The top 5 most central nodes are 1122228.AQXR01000011_gene254
+(degree 717), 1122228.AQXR01000011_gene348 (degree 667), 1122228.AQXR01000010_gene933
+(degree 665), 1122228.AQXR01000010_gene779 (degree 579) and 1122228.AQXR01000011_gene197
+(degree 570).
 
 
 References
@@ -107,14 +108,15 @@ def MetascardoviaCriceti(
 	
 	Datetime: 2021-02-02 22:42:44.601555
 	
-	The undirected graph Metascardovia criceti has 1446 nodes and 90484 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08661 and
-	has 7 connected components, where the component with most nodes has 1431 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 125.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1122228.AQXR01000011_gene254 (degree 717), 1122228.AQXR01000011_gene348
-	(degree 667), 1122228.AQXR01000010_gene933 (degree 665), 1122228.AQXR01000010_gene779
-	(degree 579) and 1122228.AQXR01000011_gene197 (degree 570).
+	The undirected graph Metascardovia criceti has 1446 nodes and 90484 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08661 and has 7 connected components, where the component with most
+	nodes has 1431 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 125.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1122228.AQXR01000011_gene254
+	(degree 717), 1122228.AQXR01000011_gene348 (degree 667), 1122228.AQXR01000010_gene933
+	(degree 665), 1122228.AQXR01000010_gene779 (degree 579) and 1122228.AQXR01000011_gene197
+	(degree 570).
 	
 
 

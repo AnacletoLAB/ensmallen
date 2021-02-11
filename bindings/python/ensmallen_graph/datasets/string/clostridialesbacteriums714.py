@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:14:13.240320
 
-The undirected graph Clostridiales bacterium S714 has 1469 nodes and 94865 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08798
-and has 5 connected components, where the component with most nodes has 1460 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 129.16, and the node degree mode is 6. The top 5
-most central nodes are 1284708.HMPREF1634_03040 (degree 683), 1284708.HMPREF1634_02635
-(degree 668), 1284708.HMPREF1634_02585 (degree 545), 1284708.HMPREF1634_06385 (degree
-532) and 1284708.HMPREF1634_05515 (degree 484).
+The undirected graph Clostridiales bacterium S714 has 1469 nodes and 94865
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08798 and has 5 connected components, where the component
+with most nodes has 1460 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 129.16,
+and the node degree mode is 6. The top 5 most central nodes are 1284708.HMPREF1634_03040
+(degree 683), 1284708.HMPREF1634_02635 (degree 668), 1284708.HMPREF1634_02585
+(degree 545), 1284708.HMPREF1634_06385 (degree 532) and 1284708.HMPREF1634_05515
+(degree 484).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridialesBacteriumS714(
 	
 	Datetime: 2021-02-03 21:14:13.240320
 	
-	The undirected graph Clostridiales bacterium S714 has 1469 nodes and 94865 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08798
-	and has 5 connected components, where the component with most nodes has 1460 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 129.16, and the node degree mode is 6. The top 5
-	most central nodes are 1284708.HMPREF1634_03040 (degree 683), 1284708.HMPREF1634_02635
-	(degree 668), 1284708.HMPREF1634_02585 (degree 545), 1284708.HMPREF1634_06385 (degree
-	532) and 1284708.HMPREF1634_05515 (degree 484).
+	The undirected graph Clostridiales bacterium S714 has 1469 nodes and 94865
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08798 and has 5 connected components, where the component
+	with most nodes has 1460 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 129.16,
+	and the node degree mode is 6. The top 5 most central nodes are 1284708.HMPREF1634_03040
+	(degree 683), 1284708.HMPREF1634_02635 (degree 668), 1284708.HMPREF1634_02585
+	(degree 545), 1284708.HMPREF1634_06385 (degree 532) and 1284708.HMPREF1634_05515
+	(degree 484).
 	
 
 

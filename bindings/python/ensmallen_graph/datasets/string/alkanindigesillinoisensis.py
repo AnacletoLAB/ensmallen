@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:10.247571
 
-The undirected graph Alkanindiges illinoisensis has 2854 nodes and 269381 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06617
-and has 12 connected components, where the component with most nodes has 2817 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 188.77, and the node degree mode is 3. The top 5
-most central nodes are 1120977.JHUX01000008_gene440 (degree 1013), 1120977.JHUX01000007_gene267
-(degree 912), 1120977.JHUX01000007_gene251 (degree 885), 1120977.JHUX01000003_gene621
-(degree 849) and 1120977.JHUX01000003_gene2150 (degree 835).
+The undirected graph Alkanindiges illinoisensis has 2854 nodes and 269381
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06617 and has 12 connected components, where the component
+with most nodes has 2817 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 188.77,
+and the node degree mode is 3. The top 5 most central nodes are 1120977.JHUX01000008_gene440
+(degree 1013), 1120977.JHUX01000007_gene267 (degree 912), 1120977.JHUX01000007_gene251
+(degree 885), 1120977.JHUX01000003_gene621 (degree 849) and 1120977.JHUX01000003_gene2150
+(degree 835).
 
 
 References
@@ -107,14 +108,15 @@ def AlkanindigesIllinoisensis(
 	
 	Datetime: 2021-02-02 22:31:10.247571
 	
-	The undirected graph Alkanindiges illinoisensis has 2854 nodes and 269381 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06617
-	and has 12 connected components, where the component with most nodes has 2817 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 188.77, and the node degree mode is 3. The top 5
-	most central nodes are 1120977.JHUX01000008_gene440 (degree 1013), 1120977.JHUX01000007_gene267
-	(degree 912), 1120977.JHUX01000007_gene251 (degree 885), 1120977.JHUX01000003_gene621
-	(degree 849) and 1120977.JHUX01000003_gene2150 (degree 835).
+	The undirected graph Alkanindiges illinoisensis has 2854 nodes and 269381
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06617 and has 12 connected components, where the component
+	with most nodes has 2817 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 188.77,
+	and the node degree mode is 3. The top 5 most central nodes are 1120977.JHUX01000008_gene440
+	(degree 1013), 1120977.JHUX01000007_gene267 (degree 912), 1120977.JHUX01000007_gene251
+	(degree 885), 1120977.JHUX01000003_gene621 (degree 849) and 1120977.JHUX01000003_gene2150
+	(degree 835).
 	
 
 

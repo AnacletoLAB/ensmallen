@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:19.510846
 
-The undirected graph Ferrimonas balearica has 3761 nodes and 433499 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06131 and
-has 8 connected components, where the component with most nodes has 3746 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 230.52, and the node degree mode is 5. The top 5 most central
-nodes are 550540.Fbal_2970 (degree 2141), 550540.Fbal_3739 (degree 1430), 550540.Fbal_0682
-(degree 1231), 550540.Fbal_3029 (degree 1090) and 550540.Fbal_2738 (degree 1081).
+The undirected graph Ferrimonas balearica has 3761 nodes and 433499 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06131 and has 8 connected components, where the component with most
+nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 230.52, and
+the node degree mode is 5. The top 5 most central nodes are 550540.Fbal_2970
+(degree 2141), 550540.Fbal_3739 (degree 1430), 550540.Fbal_0682 (degree
+1231), 550540.Fbal_3029 (degree 1090) and 550540.Fbal_2738 (degree 1081).
 
 
 References
@@ -106,13 +107,14 @@ def FerrimonasBalearica(
 	
 	Datetime: 2021-02-02 21:09:19.510846
 	
-	The undirected graph Ferrimonas balearica has 3761 nodes and 433499 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06131 and
-	has 8 connected components, where the component with most nodes has 3746 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 230.52, and the node degree mode is 5. The top 5 most central
-	nodes are 550540.Fbal_2970 (degree 2141), 550540.Fbal_3739 (degree 1430), 550540.Fbal_0682
-	(degree 1231), 550540.Fbal_3029 (degree 1090) and 550540.Fbal_2738 (degree 1081).
+	The undirected graph Ferrimonas balearica has 3761 nodes and 433499 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06131 and has 8 connected components, where the component with most
+	nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 230.52, and
+	the node degree mode is 5. The top 5 most central nodes are 550540.Fbal_2970
+	(degree 2141), 550540.Fbal_3739 (degree 1430), 550540.Fbal_0682 (degree
+	1231), 550540.Fbal_3029 (degree 1090) and 550540.Fbal_2738 (degree 1081).
 	
 
 

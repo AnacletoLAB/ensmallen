@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:40:05.291871
 
-The undirected graph Clostridium mangenotii has 3110 nodes and 239616 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04956 and
-has 22 connected components, where the component with most nodes has 3046 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 154.09, and the node degree mode is 2. The top 5 most central
-nodes are 1408823.AXUS01000003_gene596 (degree 1222), 1408823.AXUS01000009_gene2009
-(degree 1072), 1408823.AXUS01000021_gene2439 (degree 914), 1408823.AXUS01000033_gene2809
-(degree 882) and 1408823.AXUS01000017_gene1102 (degree 868).
+The undirected graph Clostridium mangenotii has 3110 nodes and 239616 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04956 and has 22 connected components, where the component with most
+nodes has 3046 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 154.09, and
+the node degree mode is 2. The top 5 most central nodes are 1408823.AXUS01000003_gene596
+(degree 1222), 1408823.AXUS01000009_gene2009 (degree 1072), 1408823.AXUS01000021_gene2439
+(degree 914), 1408823.AXUS01000033_gene2809 (degree 882) and 1408823.AXUS01000017_gene1102
+(degree 868).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumMangenotii(
 	
 	Datetime: 2021-02-03 22:40:05.291871
 	
-	The undirected graph Clostridium mangenotii has 3110 nodes and 239616 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04956 and
-	has 22 connected components, where the component with most nodes has 3046 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 154.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1408823.AXUS01000003_gene596 (degree 1222), 1408823.AXUS01000009_gene2009
-	(degree 1072), 1408823.AXUS01000021_gene2439 (degree 914), 1408823.AXUS01000033_gene2809
-	(degree 882) and 1408823.AXUS01000017_gene1102 (degree 868).
+	The undirected graph Clostridium mangenotii has 3110 nodes and 239616 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04956 and has 22 connected components, where the component with most
+	nodes has 3046 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 154.09, and
+	the node degree mode is 2. The top 5 most central nodes are 1408823.AXUS01000003_gene596
+	(degree 1222), 1408823.AXUS01000009_gene2009 (degree 1072), 1408823.AXUS01000021_gene2439
+	(degree 914), 1408823.AXUS01000033_gene2809 (degree 882) and 1408823.AXUS01000017_gene1102
+	(degree 868).
 	
 
 

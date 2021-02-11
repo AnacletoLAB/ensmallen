@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:11.845855
 
-The undirected graph Deinococcus gobiensis has 3202 nodes and 176295 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03440 and
-has 14 connected components, where the component with most nodes has 3167 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 110.12, and the node degree mode is 6. The top 5 most central
-nodes are 745776.DGo_CA1437 (degree 1207), 745776.DGo_CA1034 (degree 886), 745776.DGo_CA2220
-(degree 864), 745776.DGo_CA2644 (degree 821) and 745776.DGo_CA0189 (degree 788).
+The undirected graph Deinococcus gobiensis has 3202 nodes and 176295 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03440 and has 14 connected components, where the component with most
+nodes has 3167 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 78, the mean node degree is 110.12, and
+the node degree mode is 6. The top 5 most central nodes are 745776.DGo_CA1437
+(degree 1207), 745776.DGo_CA1034 (degree 886), 745776.DGo_CA2220 (degree
+864), 745776.DGo_CA2644 (degree 821) and 745776.DGo_CA0189 (degree 788).
 
 
 References
@@ -106,13 +107,14 @@ def DeinococcusGobiensis(
 	
 	Datetime: 2021-02-02 21:39:11.845855
 	
-	The undirected graph Deinococcus gobiensis has 3202 nodes and 176295 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03440 and
-	has 14 connected components, where the component with most nodes has 3167 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 110.12, and the node degree mode is 6. The top 5 most central
-	nodes are 745776.DGo_CA1437 (degree 1207), 745776.DGo_CA1034 (degree 886), 745776.DGo_CA2220
-	(degree 864), 745776.DGo_CA2644 (degree 821) and 745776.DGo_CA0189 (degree 788).
+	The undirected graph Deinococcus gobiensis has 3202 nodes and 176295 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03440 and has 14 connected components, where the component with most
+	nodes has 3167 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 78, the mean node degree is 110.12, and
+	the node degree mode is 6. The top 5 most central nodes are 745776.DGo_CA1437
+	(degree 1207), 745776.DGo_CA1034 (degree 886), 745776.DGo_CA2220 (degree
+	864), 745776.DGo_CA2644 (degree 821) and 745776.DGo_CA0189 (degree 788).
 	
 
 

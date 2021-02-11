@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:04.517644
 
-The undirected graph Achromobacter piechaudii ATCC43553 has 5702 nodes and 787336
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04844 and has 21 connected components, where the component with most nodes has
-5652 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 219, the mean node degree is 276.16, and the node degree mode is 2. The
-top 5 most central nodes are 742159.HMPREF0004_2229 (degree 2018), 742159.HMPREF0004_5132
-(degree 1688), 742159.HMPREF0004_0905 (degree 1680), 742159.HMPREF0004_0385 (degree
+The undirected graph Achromobacter piechaudii ATCC43553 has 5702 nodes
+and 787336 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04844 and has 21 connected components, where the
+component with most nodes has 5652 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+is 276.16, and the node degree mode is 2. The top 5 most central nodes
+are 742159.HMPREF0004_2229 (degree 2018), 742159.HMPREF0004_5132 (degree
+1688), 742159.HMPREF0004_0905 (degree 1680), 742159.HMPREF0004_0385 (degree
 1647) and 742159.HMPREF0004_3980 (degree 1633).
 
 
@@ -107,13 +108,14 @@ def AchromobacterPiechaudiiAtcc43553(
 	
 	Datetime: 2021-02-02 21:37:04.517644
 	
-	The undirected graph Achromobacter piechaudii ATCC43553 has 5702 nodes and 787336
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04844 and has 21 connected components, where the component with most nodes has
-	5652 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 219, the mean node degree is 276.16, and the node degree mode is 2. The
-	top 5 most central nodes are 742159.HMPREF0004_2229 (degree 2018), 742159.HMPREF0004_5132
-	(degree 1688), 742159.HMPREF0004_0905 (degree 1680), 742159.HMPREF0004_0385 (degree
+	The undirected graph Achromobacter piechaudii ATCC43553 has 5702 nodes
+	and 787336 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04844 and has 21 connected components, where the
+	component with most nodes has 5652 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+	is 276.16, and the node degree mode is 2. The top 5 most central nodes
+	are 742159.HMPREF0004_2229 (degree 2018), 742159.HMPREF0004_5132 (degree
+	1688), 742159.HMPREF0004_0905 (degree 1680), 742159.HMPREF0004_0385 (degree
 	1647) and 742159.HMPREF0004_3980 (degree 1633).
 	
 

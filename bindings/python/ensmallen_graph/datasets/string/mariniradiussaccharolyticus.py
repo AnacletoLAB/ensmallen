@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:32.207276
 
-The undirected graph Mariniradius saccharolyticus has 4525 nodes and 309540 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03024
-and has 41 connected components, where the component with most nodes has 4428 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 136.81, and the node degree mode is 2. The top 5
-most central nodes are 1239962.C943_00084 (degree 1575), 1239962.C943_04510 (degree
-1397), 1239962.C943_01596 (degree 1192), 1239962.C943_02389 (degree 995) and 1239962.C943_03528
-(degree 955).
+The undirected graph Mariniradius saccharolyticus has 4525 nodes and 309540
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03024 and has 41 connected components, where the component
+with most nodes has 4428 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 136.81,
+and the node degree mode is 2. The top 5 most central nodes are 1239962.C943_00084
+(degree 1575), 1239962.C943_04510 (degree 1397), 1239962.C943_01596 (degree
+1192), 1239962.C943_02389 (degree 995) and 1239962.C943_03528 (degree 955).
 
 
 References
@@ -107,14 +107,14 @@ def MariniradiusSaccharolyticus(
 	
 	Datetime: 2021-02-02 23:32:32.207276
 	
-	The undirected graph Mariniradius saccharolyticus has 4525 nodes and 309540 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03024
-	and has 41 connected components, where the component with most nodes has 4428 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 136.81, and the node degree mode is 2. The top 5
-	most central nodes are 1239962.C943_00084 (degree 1575), 1239962.C943_04510 (degree
-	1397), 1239962.C943_01596 (degree 1192), 1239962.C943_02389 (degree 995) and 1239962.C943_03528
-	(degree 955).
+	The undirected graph Mariniradius saccharolyticus has 4525 nodes and 309540
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03024 and has 41 connected components, where the component
+	with most nodes has 4428 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 136.81,
+	and the node degree mode is 2. The top 5 most central nodes are 1239962.C943_00084
+	(degree 1575), 1239962.C943_04510 (degree 1397), 1239962.C943_01596 (degree
+	1192), 1239962.C943_02389 (degree 995) and 1239962.C943_03528 (degree 955).
 	
 
 

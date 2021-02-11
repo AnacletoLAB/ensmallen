@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:16.939460
 
-The undirected graph Rickettsia sibirica has 1208 nodes and 71093 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09752 and
-has 14 connected components, where the component with most nodes has 1173 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 117.70, and the node degree mode is 3. The top 5 most central
-nodes are 272951.rsib_orf901 (degree 523), 272951.rsib_orf117 (degree 446), 272951.rsib_orf1280
-(degree 435), 272951.rsib_orf396 (degree 430) and 272951.rsib_orf782 (degree 423).
+The undirected graph Rickettsia sibirica has 1208 nodes and 71093 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09752 and has 14 connected components, where the component with most
+nodes has 1173 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 117.70, and
+the node degree mode is 3. The top 5 most central nodes are 272951.rsib_orf901
+(degree 523), 272951.rsib_orf117 (degree 446), 272951.rsib_orf1280 (degree
+435), 272951.rsib_orf396 (degree 430) and 272951.rsib_orf782 (degree 423).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaSibirica(
 	
 	Datetime: 2021-02-02 20:17:16.939460
 	
-	The undirected graph Rickettsia sibirica has 1208 nodes and 71093 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09752 and
-	has 14 connected components, where the component with most nodes has 1173 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 117.70, and the node degree mode is 3. The top 5 most central
-	nodes are 272951.rsib_orf901 (degree 523), 272951.rsib_orf117 (degree 446), 272951.rsib_orf1280
-	(degree 435), 272951.rsib_orf396 (degree 430) and 272951.rsib_orf782 (degree 423).
+	The undirected graph Rickettsia sibirica has 1208 nodes and 71093 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09752 and has 14 connected components, where the component with most
+	nodes has 1173 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 117.70, and
+	the node degree mode is 3. The top 5 most central nodes are 272951.rsib_orf901
+	(degree 523), 272951.rsib_orf117 (degree 446), 272951.rsib_orf1280 (degree
+	435), 272951.rsib_orf396 (degree 430) and 272951.rsib_orf782 (degree 423).
 	
 
 

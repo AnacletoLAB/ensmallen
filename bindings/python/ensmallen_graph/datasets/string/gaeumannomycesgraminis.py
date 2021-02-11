@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:00:50.541138
 
-The undirected graph Gaeumannomyces graminis has 7414 nodes and 686571 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02498 and
-has 21 connected components, where the component with most nodes has 7372 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 185.21, and the node degree mode is 1. The top 5 most central
-nodes are 29850.GGTG_08206T0 (degree 1712), 29850.GGTG_00061T0 (degree 1680), 29850.GGTG_06356T0
-(degree 1611), 29850.GGTG_02513T0 (degree 1535) and 29850.GGTG_01428T0 (degree 1507).
+The undirected graph Gaeumannomyces graminis has 7414 nodes and 686571
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02498 and has 21 connected components, where the component
+with most nodes has 7372 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 185.21,
+and the node degree mode is 1. The top 5 most central nodes are 29850.GGTG_08206T0
+(degree 1712), 29850.GGTG_00061T0 (degree 1680), 29850.GGTG_06356T0 (degree
+1611), 29850.GGTG_02513T0 (degree 1535) and 29850.GGTG_01428T0 (degree
+1507).
 
 
 References
@@ -106,13 +108,15 @@ def GaeumannomycesGraminis(
 	
 	Datetime: 2021-02-02 18:00:50.541138
 	
-	The undirected graph Gaeumannomyces graminis has 7414 nodes and 686571 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02498 and
-	has 21 connected components, where the component with most nodes has 7372 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 185.21, and the node degree mode is 1. The top 5 most central
-	nodes are 29850.GGTG_08206T0 (degree 1712), 29850.GGTG_00061T0 (degree 1680), 29850.GGTG_06356T0
-	(degree 1611), 29850.GGTG_02513T0 (degree 1535) and 29850.GGTG_01428T0 (degree 1507).
+	The undirected graph Gaeumannomyces graminis has 7414 nodes and 686571
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02498 and has 21 connected components, where the component
+	with most nodes has 7372 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 185.21,
+	and the node degree mode is 1. The top 5 most central nodes are 29850.GGTG_08206T0
+	(degree 1712), 29850.GGTG_00061T0 (degree 1680), 29850.GGTG_06356T0 (degree
+	1611), 29850.GGTG_02513T0 (degree 1535) and 29850.GGTG_01428T0 (degree
+	1507).
 	
 
 

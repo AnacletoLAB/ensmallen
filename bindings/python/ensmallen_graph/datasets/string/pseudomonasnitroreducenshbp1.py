@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:41.161319
 
-The undirected graph Pseudomonas nitroreducens HBP1 has 6954 nodes and 1270035 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05253
-and has 33 connected components, where the component with most nodes has 6867 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 294, the mean node degree is 365.27, and the node degree mode is 1. The top 5
-most central nodes are 1437882.AZRU01000082_gene6813 (degree 2942), 1437882.AZRU01000028_gene773
+The undirected graph Pseudomonas nitroreducens HBP1 has 6954 nodes and
+1270035 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05253 and has 33 connected components, where the
+component with most nodes has 6867 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 294, the mean node degree
+is 365.27, and the node degree mode is 1. The top 5 most central nodes
+are 1437882.AZRU01000082_gene6813 (degree 2942), 1437882.AZRU01000028_gene773
 (degree 2807), 1437882.AZRU01000019_gene6034 (degree 2506), 1437882.AZRU01000006_gene1600
 (degree 2358) and 1437882.AZRU01000035_gene372 (degree 2306).
 
@@ -107,12 +108,13 @@ def PseudomonasNitroreducensHbp1(
 	
 	Datetime: 2021-02-03 22:56:41.161319
 	
-	The undirected graph Pseudomonas nitroreducens HBP1 has 6954 nodes and 1270035 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05253
-	and has 33 connected components, where the component with most nodes has 6867 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 294, the mean node degree is 365.27, and the node degree mode is 1. The top 5
-	most central nodes are 1437882.AZRU01000082_gene6813 (degree 2942), 1437882.AZRU01000028_gene773
+	The undirected graph Pseudomonas nitroreducens HBP1 has 6954 nodes and
+	1270035 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05253 and has 33 connected components, where the
+	component with most nodes has 6867 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 294, the mean node degree
+	is 365.27, and the node degree mode is 1. The top 5 most central nodes
+	are 1437882.AZRU01000082_gene6813 (degree 2942), 1437882.AZRU01000028_gene773
 	(degree 2807), 1437882.AZRU01000019_gene6034 (degree 2506), 1437882.AZRU01000006_gene1600
 	(degree 2358) and 1437882.AZRU01000035_gene372 (degree 2306).
 	

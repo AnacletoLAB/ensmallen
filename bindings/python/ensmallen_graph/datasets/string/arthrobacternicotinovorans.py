@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:52.556638
 
-The undirected graph Arthrobacter nicotinovorans has 4253 nodes and 404309 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04472
-and has 18 connected components, where the component with most nodes has 4214 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 190.13, and the node degree mode is 2. The top 5
-most central nodes are 1304876.AZVC01000010_gene2273 (degree 1453), 1304876.AZVC01000011_gene3645
-(degree 1368), 1304876.AZVC01000001_gene1384 (degree 1361), 1304876.AZVC01000002_gene595
-(degree 1276) and 1304876.AZVC01000002_gene875 (degree 1264).
+The undirected graph Arthrobacter nicotinovorans has 4253 nodes and 404309
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04472 and has 18 connected components, where the component
+with most nodes has 4214 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 190.13,
+and the node degree mode is 2. The top 5 most central nodes are 1304876.AZVC01000010_gene2273
+(degree 1453), 1304876.AZVC01000011_gene3645 (degree 1368), 1304876.AZVC01000001_gene1384
+(degree 1361), 1304876.AZVC01000002_gene595 (degree 1276) and 1304876.AZVC01000002_gene875
+(degree 1264).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterNicotinovorans(
 	
 	Datetime: 2021-02-03 21:36:52.556638
 	
-	The undirected graph Arthrobacter nicotinovorans has 4253 nodes and 404309 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04472
-	and has 18 connected components, where the component with most nodes has 4214 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 190.13, and the node degree mode is 2. The top 5
-	most central nodes are 1304876.AZVC01000010_gene2273 (degree 1453), 1304876.AZVC01000011_gene3645
-	(degree 1368), 1304876.AZVC01000001_gene1384 (degree 1361), 1304876.AZVC01000002_gene595
-	(degree 1276) and 1304876.AZVC01000002_gene875 (degree 1264).
+	The undirected graph Arthrobacter nicotinovorans has 4253 nodes and 404309
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04472 and has 18 connected components, where the component
+	with most nodes has 4214 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 190.13,
+	and the node degree mode is 2. The top 5 most central nodes are 1304876.AZVC01000010_gene2273
+	(degree 1453), 1304876.AZVC01000011_gene3645 (degree 1368), 1304876.AZVC01000001_gene1384
+	(degree 1361), 1304876.AZVC01000002_gene595 (degree 1276) and 1304876.AZVC01000002_gene875
+	(degree 1264).
 	
 
 

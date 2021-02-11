@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:36.901123
 
-The undirected graph Nematostella vectensis has 17441 nodes and 2188805 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01439
-and has 8 connected components, where the component with most nodes has 17417 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 251.00, and the node degree mode is 21. The top 5
-most central nodes are 45351.EDO45099 (degree 3101), 45351.EDO39330 (degree 2722),
-45351.EDO33252 (degree 2708), 45351.EDO38320 (degree 2600) and 45351.EDO40301 (degree
+The undirected graph Nematostella vectensis has 17441 nodes and 2188805
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01439 and has 8 connected components, where the component
+with most nodes has 17417 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 137, the mean node degree
+is 251.00, and the node degree mode is 21. The top 5 most central nodes
+are 45351.EDO45099 (degree 3101), 45351.EDO39330 (degree 2722), 45351.EDO33252
+(degree 2708), 45351.EDO38320 (degree 2600) and 45351.EDO40301 (degree
 2533).
 
 
@@ -107,13 +108,14 @@ def NematostellaVectensis(
 	
 	Datetime: 2021-02-02 18:15:36.901123
 	
-	The undirected graph Nematostella vectensis has 17441 nodes and 2188805 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01439
-	and has 8 connected components, where the component with most nodes has 17417 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 251.00, and the node degree mode is 21. The top 5
-	most central nodes are 45351.EDO45099 (degree 3101), 45351.EDO39330 (degree 2722),
-	45351.EDO33252 (degree 2708), 45351.EDO38320 (degree 2600) and 45351.EDO40301 (degree
+	The undirected graph Nematostella vectensis has 17441 nodes and 2188805
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01439 and has 8 connected components, where the component
+	with most nodes has 17417 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 137, the mean node degree
+	is 251.00, and the node degree mode is 21. The top 5 most central nodes
+	are 45351.EDO45099 (degree 3101), 45351.EDO39330 (degree 2722), 45351.EDO33252
+	(degree 2708), 45351.EDO38320 (degree 2600) and 45351.EDO40301 (degree
 	2533).
 	
 

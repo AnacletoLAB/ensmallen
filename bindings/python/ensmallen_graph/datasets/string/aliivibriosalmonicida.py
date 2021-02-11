@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:25.265752
 
-The undirected graph Aliivibrio salmonicida has 3785 nodes and 253250 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03536 and
-has 19 connected components, where the component with most nodes has 3747 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 133.82, and the node degree mode is 2. The top 5 most central
-nodes are 316275.VSAL_I0227 (degree 1147), 316275.VSAL_II0307 (degree 1010), 316275.VSAL_I2562
-(degree 916), 316275.VSAL_II0504 (degree 915) and 316275.VSAL_I0738 (degree 909).
+The undirected graph Aliivibrio salmonicida has 3785 nodes and 253250 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03536 and has 19 connected components, where the component with most
+nodes has 3747 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 133.82, and
+the node degree mode is 2. The top 5 most central nodes are 316275.VSAL_I0227
+(degree 1147), 316275.VSAL_II0307 (degree 1010), 316275.VSAL_I2562 (degree
+916), 316275.VSAL_II0504 (degree 915) and 316275.VSAL_I0738 (degree 909).
 
 
 References
@@ -106,13 +107,14 @@ def AliivibrioSalmonicida(
 	
 	Datetime: 2021-02-02 20:26:25.265752
 	
-	The undirected graph Aliivibrio salmonicida has 3785 nodes and 253250 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03536 and
-	has 19 connected components, where the component with most nodes has 3747 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 133.82, and the node degree mode is 2. The top 5 most central
-	nodes are 316275.VSAL_I0227 (degree 1147), 316275.VSAL_II0307 (degree 1010), 316275.VSAL_I2562
-	(degree 916), 316275.VSAL_II0504 (degree 915) and 316275.VSAL_I0738 (degree 909).
+	The undirected graph Aliivibrio salmonicida has 3785 nodes and 253250 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03536 and has 19 connected components, where the component with most
+	nodes has 3747 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 133.82, and
+	the node degree mode is 2. The top 5 most central nodes are 316275.VSAL_I0227
+	(degree 1147), 316275.VSAL_II0307 (degree 1010), 316275.VSAL_I2562 (degree
+	916), 316275.VSAL_II0504 (degree 915) and 316275.VSAL_I0738 (degree 909).
 	
 
 

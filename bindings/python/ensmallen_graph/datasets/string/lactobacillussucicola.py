@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:03.665099
 
-The undirected graph Lactobacillus sucicola has 2382 nodes and 187541 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06613 and
-has 9 connected components, where the component with most nodes has 2363 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 157.47, and the node degree mode is 3. The top 5 most central
-nodes are 1423806.JCM15457_74 (degree 1101), 1423806.JCM15457_324 (degree 804), 1423806.JCM15457_2004
-(degree 801), 1423806.JCM15457_1504 (degree 795) and 1423806.JCM15457_2094 (degree
-737).
+The undirected graph Lactobacillus sucicola has 2382 nodes and 187541 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06613 and has 9 connected components, where the component with most
+nodes has 2363 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 157.47, and
+the node degree mode is 3. The top 5 most central nodes are 1423806.JCM15457_74
+(degree 1101), 1423806.JCM15457_324 (degree 804), 1423806.JCM15457_2004
+(degree 801), 1423806.JCM15457_1504 (degree 795) and 1423806.JCM15457_2094
+(degree 737).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusSucicola(
 	
 	Datetime: 2021-02-03 22:52:03.665099
 	
-	The undirected graph Lactobacillus sucicola has 2382 nodes and 187541 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06613 and
-	has 9 connected components, where the component with most nodes has 2363 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 157.47, and the node degree mode is 3. The top 5 most central
-	nodes are 1423806.JCM15457_74 (degree 1101), 1423806.JCM15457_324 (degree 804), 1423806.JCM15457_2004
-	(degree 801), 1423806.JCM15457_1504 (degree 795) and 1423806.JCM15457_2094 (degree
-	737).
+	The undirected graph Lactobacillus sucicola has 2382 nodes and 187541 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06613 and has 9 connected components, where the component with most
+	nodes has 2363 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 157.47, and
+	the node degree mode is 3. The top 5 most central nodes are 1423806.JCM15457_74
+	(degree 1101), 1423806.JCM15457_324 (degree 804), 1423806.JCM15457_2004
+	(degree 801), 1423806.JCM15457_1504 (degree 795) and 1423806.JCM15457_2094
+	(degree 737).
 	
 
 

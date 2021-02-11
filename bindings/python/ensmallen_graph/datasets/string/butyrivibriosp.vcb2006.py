@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:06:26.403992
 
-The undirected graph Butyrivibrio sp. VCB2006 has 3366 nodes and 366514 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06472
-and has 8 connected components, where the component with most nodes has 3352 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 217.77, and the node degree mode is 1. The top 5
-most central nodes are 1280679.ATVX01000002_gene897 (degree 1765), 1280679.ATVX01000005_gene1240
-(degree 1408), 1280679.ATVX01000003_gene2991 (degree 1231), 1280679.ATVX01000002_gene819
-(degree 1221) and 1280679.ATVX01000014_gene572 (degree 1173).
+The undirected graph Butyrivibrio sp. VCB2006 has 3366 nodes and 366514
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06472 and has 8 connected components, where the component
+with most nodes has 3352 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 217.77,
+and the node degree mode is 1. The top 5 most central nodes are 1280679.ATVX01000002_gene897
+(degree 1765), 1280679.ATVX01000005_gene1240 (degree 1408), 1280679.ATVX01000003_gene2991
+(degree 1231), 1280679.ATVX01000002_gene819 (degree 1221) and 1280679.ATVX01000014_gene572
+(degree 1173).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Vcb2006(
 	
 	Datetime: 2021-02-03 21:06:26.403992
 	
-	The undirected graph Butyrivibrio sp. VCB2006 has 3366 nodes and 366514 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06472
-	and has 8 connected components, where the component with most nodes has 3352 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 217.77, and the node degree mode is 1. The top 5
-	most central nodes are 1280679.ATVX01000002_gene897 (degree 1765), 1280679.ATVX01000005_gene1240
-	(degree 1408), 1280679.ATVX01000003_gene2991 (degree 1231), 1280679.ATVX01000002_gene819
-	(degree 1221) and 1280679.ATVX01000014_gene572 (degree 1173).
+	The undirected graph Butyrivibrio sp. VCB2006 has 3366 nodes and 366514
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06472 and has 8 connected components, where the component
+	with most nodes has 3352 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 217.77,
+	and the node degree mode is 1. The top 5 most central nodes are 1280679.ATVX01000002_gene897
+	(degree 1765), 1280679.ATVX01000005_gene1240 (degree 1408), 1280679.ATVX01000003_gene2991
+	(degree 1231), 1280679.ATVX01000002_gene819 (degree 1221) and 1280679.ATVX01000014_gene572
+	(degree 1173).
 	
 
 

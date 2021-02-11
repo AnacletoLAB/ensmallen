@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:50.476435
 
-The undirected graph L has 956 nodes and 1820 unweighted edges, of which none are
-self-loops. The graph is sparse as it has a density of 0.00399 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 3.81, and the node degree mode is 4. The top 5 most central nodes are 953 (degree
-4), 950 (degree 4), 942 (degree 4), 933 (degree 4) and 930 (degree 4).
+The undirected graph L has 956 nodes and 1820 unweighted edges, of which
+none are self-loops. The graph is sparse as it has a density of 0.00399
+and is connected, as it has a single component. The graph median node degree
+is 4, the mean node degree is 3.81, and the node degree mode is 4. The
+top 5 most central nodes are 953 (degree 4), 950 (degree 4), 942 (degree
+4), 933 (degree 4) and 930 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def L(
 	
 	Datetime: 2021-02-06 07:59:50.476435
 	
-	The undirected graph L has 956 nodes and 1820 unweighted edges, of which none are
-	self-loops. The graph is sparse as it has a density of 0.00399 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 3.81, and the node degree mode is 4. The top 5 most central nodes are 953 (degree
-	4), 950 (degree 4), 942 (degree 4), 933 (degree 4) and 930 (degree 4).
+	The undirected graph L has 956 nodes and 1820 unweighted edges, of which
+	none are self-loops. The graph is sparse as it has a density of 0.00399
+	and is connected, as it has a single component. The graph median node degree
+	is 4, the mean node degree is 3.81, and the node degree mode is 4. The
+	top 5 most central nodes are 953 (degree 4), 950 (degree 4), 942 (degree
+	4), 933 (degree 4) and 930 (degree 4).
 	
 
 

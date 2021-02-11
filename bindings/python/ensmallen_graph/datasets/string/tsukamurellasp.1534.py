@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:08.942044
 
-The undirected graph Tsukamurella sp. 1534 has 4301 nodes and 411187 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04447 and
-has 13 connected components, where the component with most nodes has 4272 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 191.21, and the node degree mode is 2. The top 5 most central
-nodes are 1151061.CAJY01000033_gene2030 (degree 1386), 1151061.CAJY01000040_gene4101
-(degree 1292), 1151061.CAJY01000025_gene3731 (degree 1160), 1151061.CAJY01000030_gene1755
-(degree 1155) and 1151061.CAJY01000028_gene848 (degree 1130).
+The undirected graph Tsukamurella sp. 1534 has 4301 nodes and 411187 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04447 and has 13 connected components, where the component with most
+nodes has 4272 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 191.21, and
+the node degree mode is 2. The top 5 most central nodes are 1151061.CAJY01000033_gene2030
+(degree 1386), 1151061.CAJY01000040_gene4101 (degree 1292), 1151061.CAJY01000025_gene3731
+(degree 1160), 1151061.CAJY01000030_gene1755 (degree 1155) and 1151061.CAJY01000028_gene848
+(degree 1130).
 
 
 References
@@ -107,14 +108,15 @@ def TsukamurellaSp.1534(
 	
 	Datetime: 2021-02-02 23:00:08.942044
 	
-	The undirected graph Tsukamurella sp. 1534 has 4301 nodes and 411187 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04447 and
-	has 13 connected components, where the component with most nodes has 4272 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 191.21, and the node degree mode is 2. The top 5 most central
-	nodes are 1151061.CAJY01000033_gene2030 (degree 1386), 1151061.CAJY01000040_gene4101
-	(degree 1292), 1151061.CAJY01000025_gene3731 (degree 1160), 1151061.CAJY01000030_gene1755
-	(degree 1155) and 1151061.CAJY01000028_gene848 (degree 1130).
+	The undirected graph Tsukamurella sp. 1534 has 4301 nodes and 411187 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04447 and has 13 connected components, where the component with most
+	nodes has 4272 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 191.21, and
+	the node degree mode is 2. The top 5 most central nodes are 1151061.CAJY01000033_gene2030
+	(degree 1386), 1151061.CAJY01000040_gene4101 (degree 1292), 1151061.CAJY01000025_gene3731
+	(degree 1160), 1151061.CAJY01000030_gene1755 (degree 1155) and 1151061.CAJY01000028_gene848
+	(degree 1130).
 	
 
 

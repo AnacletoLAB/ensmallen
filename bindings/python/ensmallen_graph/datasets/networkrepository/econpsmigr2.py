@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:02:31.563770
 
-The undirected graph econ-psmigr2 has 3140 nodes and 410781 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.08335 and is connected,
-as it has a single component. The graph median node degree is 158, the mean node
-degree is 261.64 and the node degree mode is 129. The top 5 most central nodes are
-204 (degree 2744), 222 (degree 2446), 608 (degree 2393), 103 (degree 2058) and 215
-(degree 1929).
+The undirected graph econ-psmigr2 has 3140 nodes and 410781 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.08335 and is connected, as it has a single component. The graph median
+node degree is 158, the mean node degree is 261.64 and the node degree
+mode is 129. The top 5 most central nodes are 204 (degree 2744), 222 (degree
+2446), 608 (degree 2393), 103 (degree 2058) and 215 (degree 1929).
 
 
 References
@@ -102,12 +102,12 @@ def EconPsmigr2(
 	
 	Datetime: 2021-02-04 00:02:31.563770
 	
-	The undirected graph econ-psmigr2 has 3140 nodes and 410781 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.08335 and is connected,
-	as it has a single component. The graph median node degree is 158, the mean node
-	degree is 261.64 and the node degree mode is 129. The top 5 most central nodes are
-	204 (degree 2744), 222 (degree 2446), 608 (degree 2393), 103 (degree 2058) and 215
-	(degree 1929).
+	The undirected graph econ-psmigr2 has 3140 nodes and 410781 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.08335 and is connected, as it has a single component. The graph median
+	node degree is 158, the mean node degree is 261.64 and the node degree
+	mode is 129. The top 5 most central nodes are 204 (degree 2744), 222 (degree
+	2446), 608 (degree 2393), 103 (degree 2058) and 215 (degree 1929).
 	
 
 

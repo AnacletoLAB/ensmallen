@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:24.385717
 
-The undirected graph Streptococcus devriesei has 1950 nodes and 156890 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08256 and
-has 6 connected components, where the component with most nodes has 1939 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 160.91, and the node degree mode is 1. The top 5 most central
-nodes are 1123300.AUIN01000012_gene1805 (degree 899), 1123300.AUIN01000003_gene503
-(degree 819), 1123300.AUIN01000002_gene538 (degree 779), 1123300.AUIN01000014_gene878
-(degree 733) and 1123300.AUIN01000014_gene933 (degree 679).
+The undirected graph Streptococcus devriesei has 1950 nodes and 156890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08256 and has 6 connected components, where the component
+with most nodes has 1939 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 160.91,
+and the node degree mode is 1. The top 5 most central nodes are 1123300.AUIN01000012_gene1805
+(degree 899), 1123300.AUIN01000003_gene503 (degree 819), 1123300.AUIN01000002_gene538
+(degree 779), 1123300.AUIN01000014_gene878 (degree 733) and 1123300.AUIN01000014_gene933
+(degree 679).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusDevriesei(
 	
 	Datetime: 2021-02-02 22:50:24.385717
 	
-	The undirected graph Streptococcus devriesei has 1950 nodes and 156890 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08256 and
-	has 6 connected components, where the component with most nodes has 1939 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 160.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1123300.AUIN01000012_gene1805 (degree 899), 1123300.AUIN01000003_gene503
-	(degree 819), 1123300.AUIN01000002_gene538 (degree 779), 1123300.AUIN01000014_gene878
-	(degree 733) and 1123300.AUIN01000014_gene933 (degree 679).
+	The undirected graph Streptococcus devriesei has 1950 nodes and 156890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08256 and has 6 connected components, where the component
+	with most nodes has 1939 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 160.91,
+	and the node degree mode is 1. The top 5 most central nodes are 1123300.AUIN01000012_gene1805
+	(degree 899), 1123300.AUIN01000003_gene503 (degree 819), 1123300.AUIN01000002_gene538
+	(degree 779), 1123300.AUIN01000014_gene878 (degree 733) and 1123300.AUIN01000014_gene933
+	(degree 679).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:10.103499
 
-The undirected graph Thermus scotoductus has 2455 nodes and 211332 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07016 and
-has 6 connected components, where the component with most nodes has 2438 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 172.16, and the node degree mode is 5. The top 5 most central
-nodes are 743525.TSC_c09390 (degree 1020), 743525.TSC_c15710 (degree 951), 743525.TSC_c19340
-(degree 923), 743525.TSC_c19470 (degree 842) and 743525.TSC_c02320 (degree 814).
+The undirected graph Thermus scotoductus has 2455 nodes and 211332 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07016 and has 6 connected components, where the component with most
+nodes has 2438 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 172.16, and
+the node degree mode is 5. The top 5 most central nodes are 743525.TSC_c09390
+(degree 1020), 743525.TSC_c15710 (degree 951), 743525.TSC_c19340 (degree
+923), 743525.TSC_c19470 (degree 842) and 743525.TSC_c02320 (degree 814).
 
 
 References
@@ -106,13 +107,14 @@ def ThermusScotoductus(
 	
 	Datetime: 2021-02-02 21:38:10.103499
 	
-	The undirected graph Thermus scotoductus has 2455 nodes and 211332 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07016 and
-	has 6 connected components, where the component with most nodes has 2438 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 172.16, and the node degree mode is 5. The top 5 most central
-	nodes are 743525.TSC_c09390 (degree 1020), 743525.TSC_c15710 (degree 951), 743525.TSC_c19340
-	(degree 923), 743525.TSC_c19470 (degree 842) and 743525.TSC_c02320 (degree 814).
+	The undirected graph Thermus scotoductus has 2455 nodes and 211332 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07016 and has 6 connected components, where the component with most
+	nodes has 2438 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 172.16, and
+	the node degree mode is 5. The top 5 most central nodes are 743525.TSC_c09390
+	(degree 1020), 743525.TSC_c15710 (degree 951), 743525.TSC_c19340 (degree
+	923), 743525.TSC_c19470 (degree 842) and 743525.TSC_c02320 (degree 814).
 	
 
 

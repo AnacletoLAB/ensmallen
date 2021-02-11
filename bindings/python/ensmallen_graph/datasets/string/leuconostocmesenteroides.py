@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:52.219717
 
-The undirected graph Leuconostoc mesenteroides has 1996 nodes and 107829 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05416
-and has 13 connected components, where the component with most nodes has 1963 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 108.05, and the node degree mode is 17. The top 5
-most central nodes are 203120.LEUM_0713 (degree 869), 203120.LEUM_0300 (degree 627),
-203120.LEUM_0818 (degree 586), 203120.LEUM_1347 (degree 579) and 203120.LEUM_0800
-(degree 567).
+The undirected graph Leuconostoc mesenteroides has 1996 nodes and 107829
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05416 and has 13 connected components, where the component
+with most nodes has 1963 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 108.05,
+and the node degree mode is 17. The top 5 most central nodes are 203120.LEUM_0713
+(degree 869), 203120.LEUM_0300 (degree 627), 203120.LEUM_0818 (degree 586),
+203120.LEUM_1347 (degree 579) and 203120.LEUM_0800 (degree 567).
 
 
 References
@@ -107,14 +107,14 @@ def LeuconostocMesenteroides(
 	
 	Datetime: 2021-02-02 19:59:52.219717
 	
-	The undirected graph Leuconostoc mesenteroides has 1996 nodes and 107829 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05416
-	and has 13 connected components, where the component with most nodes has 1963 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 108.05, and the node degree mode is 17. The top 5
-	most central nodes are 203120.LEUM_0713 (degree 869), 203120.LEUM_0300 (degree 627),
-	203120.LEUM_0818 (degree 586), 203120.LEUM_1347 (degree 579) and 203120.LEUM_0800
-	(degree 567).
+	The undirected graph Leuconostoc mesenteroides has 1996 nodes and 107829
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05416 and has 13 connected components, where the component
+	with most nodes has 1963 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 108.05,
+	and the node degree mode is 17. The top 5 most central nodes are 203120.LEUM_0713
+	(degree 869), 203120.LEUM_0300 (degree 627), 203120.LEUM_0818 (degree 586),
+	203120.LEUM_1347 (degree 579) and 203120.LEUM_0800 (degree 567).
 	
 
 

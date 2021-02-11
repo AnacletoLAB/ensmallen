@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:31.430455
 
-The undirected graph Thiomicrospira sp. Kp2 has 2460 nodes and 218373 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07220 and
-has 6 connected components, where the component with most nodes has 2450 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 177.54, and the node degree mode is 9. The top 5 most central
-nodes are 1123518.ARWI01000001_gene1450 (degree 1060), 1123518.ARWI01000001_gene446
-(degree 1040), 1123518.ARWI01000001_gene1601 (degree 1016), 1123518.ARWI01000001_gene713
-(degree 927) and 1123518.ARWI01000001_gene354 (degree 920).
+The undirected graph Thiomicrospira sp. Kp2 has 2460 nodes and 218373 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07220 and has 6 connected components, where the component with most
+nodes has 2450 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 177.54, and
+the node degree mode is 9. The top 5 most central nodes are 1123518.ARWI01000001_gene1450
+(degree 1060), 1123518.ARWI01000001_gene446 (degree 1040), 1123518.ARWI01000001_gene1601
+(degree 1016), 1123518.ARWI01000001_gene713 (degree 927) and 1123518.ARWI01000001_gene354
+(degree 920).
 
 
 References
@@ -107,14 +108,15 @@ def ThiomicrospiraSp.Kp2(
 	
 	Datetime: 2021-02-02 22:53:31.430455
 	
-	The undirected graph Thiomicrospira sp. Kp2 has 2460 nodes and 218373 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07220 and
-	has 6 connected components, where the component with most nodes has 2450 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 177.54, and the node degree mode is 9. The top 5 most central
-	nodes are 1123518.ARWI01000001_gene1450 (degree 1060), 1123518.ARWI01000001_gene446
-	(degree 1040), 1123518.ARWI01000001_gene1601 (degree 1016), 1123518.ARWI01000001_gene713
-	(degree 927) and 1123518.ARWI01000001_gene354 (degree 920).
+	The undirected graph Thiomicrospira sp. Kp2 has 2460 nodes and 218373 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07220 and has 6 connected components, where the component with most
+	nodes has 2450 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 177.54, and
+	the node degree mode is 9. The top 5 most central nodes are 1123518.ARWI01000001_gene1450
+	(degree 1060), 1123518.ARWI01000001_gene446 (degree 1040), 1123518.ARWI01000001_gene1601
+	(degree 1016), 1123518.ARWI01000001_gene713 (degree 927) and 1123518.ARWI01000001_gene354
+	(degree 920).
 	
 
 

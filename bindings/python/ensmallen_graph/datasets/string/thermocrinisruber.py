@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:33.508482
 
-The undirected graph Thermocrinis ruber has 1613 nodes and 91097 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07007 and
-has 3 connected components, where the component with most nodes has 1607 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 88,
-the mean node degree is 112.95, and the node degree mode is 2. The top 5 most central
-nodes are 932678.THERU_03555 (degree 709), 932678.THERU_01380 (degree 582), 932678.THERU_05300
-(degree 566), 932678.THERU_01435 (degree 551) and 932678.THERU_05415 (degree 526).
+The undirected graph Thermocrinis ruber has 1613 nodes and 91097 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07007 and has 3 connected components, where the component with most
+nodes has 1607 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 88, the mean node degree is 112.95, and
+the node degree mode is 2. The top 5 most central nodes are 932678.THERU_03555
+(degree 709), 932678.THERU_01380 (degree 582), 932678.THERU_05300 (degree
+566), 932678.THERU_01435 (degree 551) and 932678.THERU_05415 (degree 526).
 
 
 References
@@ -106,13 +107,14 @@ def ThermocrinisRuber(
 	
 	Datetime: 2021-02-02 21:58:33.508482
 	
-	The undirected graph Thermocrinis ruber has 1613 nodes and 91097 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07007 and
-	has 3 connected components, where the component with most nodes has 1607 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 88,
-	the mean node degree is 112.95, and the node degree mode is 2. The top 5 most central
-	nodes are 932678.THERU_03555 (degree 709), 932678.THERU_01380 (degree 582), 932678.THERU_05300
-	(degree 566), 932678.THERU_01435 (degree 551) and 932678.THERU_05415 (degree 526).
+	The undirected graph Thermocrinis ruber has 1613 nodes and 91097 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07007 and has 3 connected components, where the component with most
+	nodes has 1607 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 88, the mean node degree is 112.95, and
+	the node degree mode is 2. The top 5 most central nodes are 932678.THERU_03555
+	(degree 709), 932678.THERU_01380 (degree 582), 932678.THERU_05300 (degree
+	566), 932678.THERU_01435 (degree 551) and 932678.THERU_05415 (degree 526).
 	
 
 

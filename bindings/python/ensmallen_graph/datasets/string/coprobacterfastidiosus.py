@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:06:55.890506
 
-The undirected graph Coprobacter fastidiosus has 2763 nodes and 250680 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06570 and
-has 11 connected components, where the component with most nodes has 2731 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 181.45, and the node degree mode is 4. The top 5 most central
-nodes are 1349822.NSB1T_00890 (degree 1003), 1349822.NSB1T_03560 (degree 974), 1349822.NSB1T_00720
-(degree 865), 1349822.NSB1T_01685 (degree 864) and 1349822.NSB1T_08380 (degree 856).
+The undirected graph Coprobacter fastidiosus has 2763 nodes and 250680
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06570 and has 11 connected components, where the component
+with most nodes has 2731 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 181.45,
+and the node degree mode is 4. The top 5 most central nodes are 1349822.NSB1T_00890
+(degree 1003), 1349822.NSB1T_03560 (degree 974), 1349822.NSB1T_00720 (degree
+865), 1349822.NSB1T_01685 (degree 864) and 1349822.NSB1T_08380 (degree
+856).
 
 
 References
@@ -106,13 +108,15 @@ def CoprobacterFastidiosus(
 	
 	Datetime: 2021-02-03 22:06:55.890506
 	
-	The undirected graph Coprobacter fastidiosus has 2763 nodes and 250680 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06570 and
-	has 11 connected components, where the component with most nodes has 2731 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 181.45, and the node degree mode is 4. The top 5 most central
-	nodes are 1349822.NSB1T_00890 (degree 1003), 1349822.NSB1T_03560 (degree 974), 1349822.NSB1T_00720
-	(degree 865), 1349822.NSB1T_01685 (degree 864) and 1349822.NSB1T_08380 (degree 856).
+	The undirected graph Coprobacter fastidiosus has 2763 nodes and 250680
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06570 and has 11 connected components, where the component
+	with most nodes has 2731 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 181.45,
+	and the node degree mode is 4. The top 5 most central nodes are 1349822.NSB1T_00890
+	(degree 1003), 1349822.NSB1T_03560 (degree 974), 1349822.NSB1T_00720 (degree
+	865), 1349822.NSB1T_01685 (degree 864) and 1349822.NSB1T_08380 (degree
+	856).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:00.004764
 
-The undirected graph Alicyclobacillus contaminans has 3075 nodes and 278982 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05903
-and has 19 connected components, where the component with most nodes has 3034 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 181.45, and the node degree mode is 1. The top 5
-most central nodes are 1120971.AUCA01000021_gene1026 (degree 1070), 1120971.AUCA01000056_gene2665
-(degree 1060), 1120971.AUCA01000016_gene258 (degree 982), 1120971.AUCA01000020_gene980
-(degree 935) and 1120971.AUCA01000028_gene2339 (degree 883).
+The undirected graph Alicyclobacillus contaminans has 3075 nodes and 278982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05903 and has 19 connected components, where the component
+with most nodes has 3034 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 181.45,
+and the node degree mode is 1. The top 5 most central nodes are 1120971.AUCA01000021_gene1026
+(degree 1070), 1120971.AUCA01000056_gene2665 (degree 1060), 1120971.AUCA01000016_gene258
+(degree 982), 1120971.AUCA01000020_gene980 (degree 935) and 1120971.AUCA01000028_gene2339
+(degree 883).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusContaminans(
 	
 	Datetime: 2021-02-02 22:31:00.004764
 	
-	The undirected graph Alicyclobacillus contaminans has 3075 nodes and 278982 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05903
-	and has 19 connected components, where the component with most nodes has 3034 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 181.45, and the node degree mode is 1. The top 5
-	most central nodes are 1120971.AUCA01000021_gene1026 (degree 1070), 1120971.AUCA01000056_gene2665
-	(degree 1060), 1120971.AUCA01000016_gene258 (degree 982), 1120971.AUCA01000020_gene980
-	(degree 935) and 1120971.AUCA01000028_gene2339 (degree 883).
+	The undirected graph Alicyclobacillus contaminans has 3075 nodes and 278982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05903 and has 19 connected components, where the component
+	with most nodes has 3034 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 181.45,
+	and the node degree mode is 1. The top 5 most central nodes are 1120971.AUCA01000021_gene1026
+	(degree 1070), 1120971.AUCA01000056_gene2665 (degree 1060), 1120971.AUCA01000016_gene258
+	(degree 982), 1120971.AUCA01000020_gene980 (degree 935) and 1120971.AUCA01000028_gene2339
+	(degree 883).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:19.128908
 
-The undirected graph Arthromitus sp. SFBmouseJapan has 1481 nodes and 98051 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08947
-and has 3 connected components, where the component with most nodes has 1476 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 132.41, and the node degree mode is 8. The top 5
-most central nodes are 1029718.SFBM_0636 (degree 751), 1029718.SFBM_0266 (degree
-635), 1029718.SFBM_1250 (degree 567), 1029718.SFBM_0640 (degree 533) and 1029718.SFBM_0479
-(degree 529).
+The undirected graph Arthromitus sp. SFBmouseJapan has 1481 nodes and 98051
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08947 and has 3 connected components, where the component
+with most nodes has 1476 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 132.41,
+and the node degree mode is 8. The top 5 most central nodes are 1029718.SFBM_0636
+(degree 751), 1029718.SFBM_0266 (degree 635), 1029718.SFBM_1250 (degree
+567), 1029718.SFBM_0640 (degree 533) and 1029718.SFBM_0479 (degree 529).
 
 
 References
@@ -107,14 +107,14 @@ def ArthromitusSp.Sfbmousejapan(
 	
 	Datetime: 2021-02-02 22:10:19.128908
 	
-	The undirected graph Arthromitus sp. SFBmouseJapan has 1481 nodes and 98051 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08947
-	and has 3 connected components, where the component with most nodes has 1476 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 132.41, and the node degree mode is 8. The top 5
-	most central nodes are 1029718.SFBM_0636 (degree 751), 1029718.SFBM_0266 (degree
-	635), 1029718.SFBM_1250 (degree 567), 1029718.SFBM_0640 (degree 533) and 1029718.SFBM_0479
-	(degree 529).
+	The undirected graph Arthromitus sp. SFBmouseJapan has 1481 nodes and 98051
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08947 and has 3 connected components, where the component
+	with most nodes has 1476 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 132.41,
+	and the node degree mode is 8. The top 5 most central nodes are 1029718.SFBM_0636
+	(degree 751), 1029718.SFBM_0266 (degree 635), 1029718.SFBM_1250 (degree
+	567), 1029718.SFBM_0640 (degree 533) and 1029718.SFBM_0479 (degree 529).
 	
 
 

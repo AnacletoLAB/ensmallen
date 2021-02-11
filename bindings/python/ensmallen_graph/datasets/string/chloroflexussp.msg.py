@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:52.173635
 
-The undirected graph Chloroflexus sp. MSG has 3801 nodes and 357878 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04955 and
-has 27 connected components, where the component with most nodes has 3745 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 188.31, and the node degree mode is 1. The top 5 most central
-nodes are 1521187.JPIM01000005_gene2268 (degree 2173), 1521187.JPIM01000046_gene1482
-(degree 1580), 1521187.JPIM01000010_gene2155 (degree 1511), 1521187.JPIM01000004_gene3043
-(degree 1433) and 1521187.JPIM01000022_gene632 (degree 1315).
+The undirected graph Chloroflexus sp. MSG has 3801 nodes and 357878 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04955 and has 27 connected components, where the component with most
+nodes has 3745 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 188.31, and
+the node degree mode is 1. The top 5 most central nodes are 1521187.JPIM01000005_gene2268
+(degree 2173), 1521187.JPIM01000046_gene1482 (degree 1580), 1521187.JPIM01000010_gene2155
+(degree 1511), 1521187.JPIM01000004_gene3043 (degree 1433) and 1521187.JPIM01000022_gene632
+(degree 1315).
 
 
 References
@@ -107,14 +108,15 @@ def ChloroflexusSp.Msg(
 	
 	Datetime: 2021-02-03 23:17:52.173635
 	
-	The undirected graph Chloroflexus sp. MSG has 3801 nodes and 357878 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04955 and
-	has 27 connected components, where the component with most nodes has 3745 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 188.31, and the node degree mode is 1. The top 5 most central
-	nodes are 1521187.JPIM01000005_gene2268 (degree 2173), 1521187.JPIM01000046_gene1482
-	(degree 1580), 1521187.JPIM01000010_gene2155 (degree 1511), 1521187.JPIM01000004_gene3043
-	(degree 1433) and 1521187.JPIM01000022_gene632 (degree 1315).
+	The undirected graph Chloroflexus sp. MSG has 3801 nodes and 357878 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04955 and has 27 connected components, where the component with most
+	nodes has 3745 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 188.31, and
+	the node degree mode is 1. The top 5 most central nodes are 1521187.JPIM01000005_gene2268
+	(degree 2173), 1521187.JPIM01000046_gene1482 (degree 1580), 1521187.JPIM01000010_gene2155
+	(degree 1511), 1521187.JPIM01000004_gene3043 (degree 1433) and 1521187.JPIM01000022_gene632
+	(degree 1315).
 	
 
 

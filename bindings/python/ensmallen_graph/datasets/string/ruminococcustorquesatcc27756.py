@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:06.104551
 
-The undirected graph Ruminococcus torques ATCC27756 has 2747 nodes and 176802 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04688
-and has 14 connected components, where the component with most nodes has 2716 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 128.72, and the node degree mode is 2. The top 5 most
-central nodes are 411460.RUMTOR_00701 (degree 984), 411460.RUMTOR_00905 (degree 957),
-411460.RUMTOR_01166 (degree 828), 411460.RUMTOR_02610 (degree 798) and 411460.RUMTOR_01421
-(degree 796).
+The undirected graph Ruminococcus torques ATCC27756 has 2747 nodes and
+176802 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04688 and has 14 connected components, where the
+component with most nodes has 2716 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+is 128.72, and the node degree mode is 2. The top 5 most central nodes
+are 411460.RUMTOR_00701 (degree 984), 411460.RUMTOR_00905 (degree 957),
+411460.RUMTOR_01166 (degree 828), 411460.RUMTOR_02610 (degree 798) and
+411460.RUMTOR_01421 (degree 796).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusTorquesAtcc27756(
 	
 	Datetime: 2021-02-02 20:45:06.104551
 	
-	The undirected graph Ruminococcus torques ATCC27756 has 2747 nodes and 176802 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04688
-	and has 14 connected components, where the component with most nodes has 2716 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 128.72, and the node degree mode is 2. The top 5 most
-	central nodes are 411460.RUMTOR_00701 (degree 984), 411460.RUMTOR_00905 (degree 957),
-	411460.RUMTOR_01166 (degree 828), 411460.RUMTOR_02610 (degree 798) and 411460.RUMTOR_01421
-	(degree 796).
+	The undirected graph Ruminococcus torques ATCC27756 has 2747 nodes and
+	176802 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04688 and has 14 connected components, where the
+	component with most nodes has 2716 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 94, the mean node degree
+	is 128.72, and the node degree mode is 2. The top 5 most central nodes
+	are 411460.RUMTOR_00701 (degree 984), 411460.RUMTOR_00905 (degree 957),
+	411460.RUMTOR_01166 (degree 828), 411460.RUMTOR_02610 (degree 798) and
+	411460.RUMTOR_01421 (degree 796).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:04.396727
 
-The undirected graph Micromonospora lupini has 6923 nodes and 879578 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03671 and
-has 38 connected components, where the component with most nodes has 6829 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 254.10, and the node degree mode is 3. The top 5 most central
-nodes are 1150864.MILUP08_41170 (degree 2071), 1150864.MILUP08_41540 (degree 1892),
-1150864.MILUP08_44082 (degree 1685), 1150864.MILUP08_44106 (degree 1598) and 1150864.MILUP08_40917
+The undirected graph Micromonospora lupini has 6923 nodes and 879578 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03671 and has 38 connected components, where the component with most
+nodes has 6829 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 254.10, and
+the node degree mode is 3. The top 5 most central nodes are 1150864.MILUP08_41170
+(degree 2071), 1150864.MILUP08_41540 (degree 1892), 1150864.MILUP08_44082
+(degree 1685), 1150864.MILUP08_44106 (degree 1598) and 1150864.MILUP08_40917
 (degree 1590).
 
 
@@ -107,13 +108,14 @@ def MicromonosporaLupini(
 	
 	Datetime: 2021-02-02 23:00:04.396727
 	
-	The undirected graph Micromonospora lupini has 6923 nodes and 879578 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03671 and
-	has 38 connected components, where the component with most nodes has 6829 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 254.10, and the node degree mode is 3. The top 5 most central
-	nodes are 1150864.MILUP08_41170 (degree 2071), 1150864.MILUP08_41540 (degree 1892),
-	1150864.MILUP08_44082 (degree 1685), 1150864.MILUP08_44106 (degree 1598) and 1150864.MILUP08_40917
+	The undirected graph Micromonospora lupini has 6923 nodes and 879578 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03671 and has 38 connected components, where the component with most
+	nodes has 6829 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 254.10, and
+	the node degree mode is 3. The top 5 most central nodes are 1150864.MILUP08_41170
+	(degree 2071), 1150864.MILUP08_41540 (degree 1892), 1150864.MILUP08_44082
+	(degree 1685), 1150864.MILUP08_44106 (degree 1598) and 1150864.MILUP08_40917
 	(degree 1590).
 	
 

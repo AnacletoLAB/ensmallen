@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:43:50.938383
 
-The undirected graph Balaenoptera acutorostrata has 18088 nodes and 4120504 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02519
-and has 3 connected components, where the component with most nodes has 18083 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 327, the mean node degree is 455.61, and the node degree mode is 223. The top
-5 most central nodes are 9767.XP_007175246.1 (degree 4291), 9767.XP_007172810.1 (degree
-4172), 9767.XP_007184661.1 (degree 3888), 9767.XP_007170320.1 (degree 3814) and 9767.XP_007182064.1
-(degree 3616).
+The undirected graph Balaenoptera acutorostrata has 18088 nodes and 4120504
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02519 and has 3 connected components, where the component
+with most nodes has 18083 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 327, the mean node degree
+is 455.61, and the node degree mode is 223. The top 5 most central nodes
+are 9767.XP_007175246.1 (degree 4291), 9767.XP_007172810.1 (degree 4172),
+9767.XP_007184661.1 (degree 3888), 9767.XP_007170320.1 (degree 3814) and
+9767.XP_007182064.1 (degree 3616).
 
 
 References
@@ -107,14 +108,15 @@ def BalaenopteraAcutorostrata(
 	
 	Datetime: 2021-02-02 17:43:50.938383
 	
-	The undirected graph Balaenoptera acutorostrata has 18088 nodes and 4120504 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02519
-	and has 3 connected components, where the component with most nodes has 18083 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 327, the mean node degree is 455.61, and the node degree mode is 223. The top
-	5 most central nodes are 9767.XP_007175246.1 (degree 4291), 9767.XP_007172810.1 (degree
-	4172), 9767.XP_007184661.1 (degree 3888), 9767.XP_007170320.1 (degree 3814) and 9767.XP_007182064.1
-	(degree 3616).
+	The undirected graph Balaenoptera acutorostrata has 18088 nodes and 4120504
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02519 and has 3 connected components, where the component
+	with most nodes has 18083 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 327, the mean node degree
+	is 455.61, and the node degree mode is 223. The top 5 most central nodes
+	are 9767.XP_007175246.1 (degree 4291), 9767.XP_007172810.1 (degree 4172),
+	9767.XP_007184661.1 (degree 3888), 9767.XP_007170320.1 (degree 3814) and
+	9767.XP_007182064.1 (degree 3616).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:17.777557
 
-The undirected graph Tetrasphaera elongata has 3040 nodes and 278673 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06033 and
-has 10 connected components, where the component with most nodes has 3018 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 183.34, and the node degree mode is 3. The top 5 most central
-nodes are 1193181.BN10_1630003 (degree 1043), 1193181.BN10_660001 (degree 1022),
-1193181.BN10_780001 (degree 999), 1193181.BN10_230006 (degree 992) and 1193181.BN10_820042
-(degree 927).
+The undirected graph Tetrasphaera elongata has 3040 nodes and 278673 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06033 and has 10 connected components, where the component with most
+nodes has 3018 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 183.34, and
+the node degree mode is 3. The top 5 most central nodes are 1193181.BN10_1630003
+(degree 1043), 1193181.BN10_660001 (degree 1022), 1193181.BN10_780001 (degree
+999), 1193181.BN10_230006 (degree 992) and 1193181.BN10_820042 (degree
+927).
 
 
 References
@@ -107,14 +108,15 @@ def TetrasphaeraElongata(
 	
 	Datetime: 2021-02-02 23:12:17.777557
 	
-	The undirected graph Tetrasphaera elongata has 3040 nodes and 278673 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06033 and
-	has 10 connected components, where the component with most nodes has 3018 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 183.34, and the node degree mode is 3. The top 5 most central
-	nodes are 1193181.BN10_1630003 (degree 1043), 1193181.BN10_660001 (degree 1022),
-	1193181.BN10_780001 (degree 999), 1193181.BN10_230006 (degree 992) and 1193181.BN10_820042
-	(degree 927).
+	The undirected graph Tetrasphaera elongata has 3040 nodes and 278673 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06033 and has 10 connected components, where the component with most
+	nodes has 3018 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 183.34, and
+	the node degree mode is 3. The top 5 most central nodes are 1193181.BN10_1630003
+	(degree 1043), 1193181.BN10_660001 (degree 1022), 1193181.BN10_780001 (degree
+	999), 1193181.BN10_230006 (degree 992) and 1193181.BN10_820042 (degree
+	927).
 	
 
 

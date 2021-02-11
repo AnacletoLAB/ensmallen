@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:59.856582
 
-The undirected graph Microcystis aeruginosa has 6233 nodes and 547779 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02820 and
-has 57 connected components, where the component with most nodes has 6091 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 175.77, and the node degree mode is 2. The top 5 most central
-nodes are 449447.MAE_18110 (degree 1353), 449447.MAE_38600 (degree 1336), 449447.MAE_38630
-(degree 1245), 449447.MAE_32190 (degree 1176) and 449447.MAE_38140 (degree 1128).
+The undirected graph Microcystis aeruginosa has 6233 nodes and 547779 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02820 and has 57 connected components, where the component with most
+nodes has 6091 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 175.77, and
+the node degree mode is 2. The top 5 most central nodes are 449447.MAE_18110
+(degree 1353), 449447.MAE_38600 (degree 1336), 449447.MAE_38630 (degree
+1245), 449447.MAE_32190 (degree 1176) and 449447.MAE_38140 (degree 1128).
 
 
 References
@@ -106,13 +107,14 @@ def MicrocystisAeruginosa(
 	
 	Datetime: 2021-02-02 20:51:59.856582
 	
-	The undirected graph Microcystis aeruginosa has 6233 nodes and 547779 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02820 and
-	has 57 connected components, where the component with most nodes has 6091 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 175.77, and the node degree mode is 2. The top 5 most central
-	nodes are 449447.MAE_18110 (degree 1353), 449447.MAE_38600 (degree 1336), 449447.MAE_38630
-	(degree 1245), 449447.MAE_32190 (degree 1176) and 449447.MAE_38140 (degree 1128).
+	The undirected graph Microcystis aeruginosa has 6233 nodes and 547779 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02820 and has 57 connected components, where the component with most
+	nodes has 6091 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 175.77, and
+	the node degree mode is 2. The top 5 most central nodes are 449447.MAE_18110
+	(degree 1353), 449447.MAE_38600 (degree 1336), 449447.MAE_38630 (degree
+	1245), 449447.MAE_32190 (degree 1176) and 449447.MAE_38140 (degree 1128).
 	
 
 

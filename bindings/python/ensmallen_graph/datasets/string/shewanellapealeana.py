@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:51.378774
 
-The undirected graph Shewanella pealeana has 4199 nodes and 412155 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04676 and
-has 16 connected components, where the component with most nodes has 4165 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 196.31, and the node degree mode is 1. The top 5 most central
-nodes are 398579.Spea_0102 (degree 1577), 398579.Spea_0605 (degree 1457), 398579.Spea_0628
-(degree 1359), 398579.Spea_1314 (degree 1244) and 398579.Spea_1917 (degree 1209).
+The undirected graph Shewanella pealeana has 4199 nodes and 412155 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04676 and has 16 connected components, where the component with most
+nodes has 4165 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 196.31, and
+the node degree mode is 1. The top 5 most central nodes are 398579.Spea_0102
+(degree 1577), 398579.Spea_0605 (degree 1457), 398579.Spea_0628 (degree
+1359), 398579.Spea_1314 (degree 1244) and 398579.Spea_1917 (degree 1209).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaPealeana(
 	
 	Datetime: 2021-02-02 20:42:51.378774
 	
-	The undirected graph Shewanella pealeana has 4199 nodes and 412155 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04676 and
-	has 16 connected components, where the component with most nodes has 4165 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 196.31, and the node degree mode is 1. The top 5 most central
-	nodes are 398579.Spea_0102 (degree 1577), 398579.Spea_0605 (degree 1457), 398579.Spea_0628
-	(degree 1359), 398579.Spea_1314 (degree 1244) and 398579.Spea_1917 (degree 1209).
+	The undirected graph Shewanella pealeana has 4199 nodes and 412155 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04676 and has 16 connected components, where the component with most
+	nodes has 4165 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 196.31, and
+	the node degree mode is 1. The top 5 most central nodes are 398579.Spea_0102
+	(degree 1577), 398579.Spea_0605 (degree 1457), 398579.Spea_0628 (degree
+	1359), 398579.Spea_1314 (degree 1244) and 398579.Spea_1917 (degree 1209).
 	
 
 

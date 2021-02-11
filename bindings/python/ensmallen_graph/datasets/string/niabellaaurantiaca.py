@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:27.852913
 
-The undirected graph Niabella aurantiaca has 4494 nodes and 465882 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04615 and
-has 13 connected components, where the component with most nodes has 4454 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 207.34, and the node degree mode is 5. The top 5 most central
-nodes are 1122605.KB893646_gene152 (degree 1347), 1122605.KB893644_gene1367 (degree
-1340), 1122605.KB893643_gene602 (degree 1141), 1122605.KB893625_gene1673 (degree
-1140) and 1122605.KB893644_gene1433 (degree 1120).
+The undirected graph Niabella aurantiaca has 4494 nodes and 465882 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04615 and has 13 connected components, where the component with most
+nodes has 4454 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 207.34, and
+the node degree mode is 5. The top 5 most central nodes are 1122605.KB893646_gene152
+(degree 1347), 1122605.KB893644_gene1367 (degree 1340), 1122605.KB893643_gene602
+(degree 1141), 1122605.KB893625_gene1673 (degree 1140) and 1122605.KB893644_gene1433
+(degree 1120).
 
 
 References
@@ -107,14 +108,15 @@ def NiabellaAurantiaca(
 	
 	Datetime: 2021-02-02 22:43:27.852913
 	
-	The undirected graph Niabella aurantiaca has 4494 nodes and 465882 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04615 and
-	has 13 connected components, where the component with most nodes has 4454 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 207.34, and the node degree mode is 5. The top 5 most central
-	nodes are 1122605.KB893646_gene152 (degree 1347), 1122605.KB893644_gene1367 (degree
-	1340), 1122605.KB893643_gene602 (degree 1141), 1122605.KB893625_gene1673 (degree
-	1140) and 1122605.KB893644_gene1433 (degree 1120).
+	The undirected graph Niabella aurantiaca has 4494 nodes and 465882 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04615 and has 13 connected components, where the component with most
+	nodes has 4454 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 207.34, and
+	the node degree mode is 5. The top 5 most central nodes are 1122605.KB893646_gene152
+	(degree 1347), 1122605.KB893644_gene1367 (degree 1340), 1122605.KB893643_gene602
+	(degree 1141), 1122605.KB893625_gene1673 (degree 1140) and 1122605.KB893644_gene1433
+	(degree 1120).
 	
 
 

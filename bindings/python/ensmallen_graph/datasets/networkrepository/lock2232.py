@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:22:53.738282
 
-The undirected graph lock2232 has 2208 nodes and 41280 unweighted edges, of which
-2208 are self-loops. The graph is dense as it has a density of 0.01648 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 36.39, and the node degree mode is 24. The top 5 most central nodes are 2184 (degree
-48), 2183 (degree 48), 2182 (degree 48), 2181 (degree 48) and 2180 (degree 48).
+The undirected graph lock2232 has 2208 nodes and 41280 unweighted edges,
+of which 2208 are self-loops. The graph is dense as it has a density of
+0.01648 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 36.39, and the node degree mode
+is 24. The top 5 most central nodes are 2184 (degree 48), 2183 (degree
+48), 2182 (degree 48), 2181 (degree 48) and 2180 (degree 48).
 
 
 References
@@ -101,11 +102,12 @@ def Lock2232(
 	
 	Datetime: 2021-02-06 10:22:53.738282
 	
-	The undirected graph lock2232 has 2208 nodes and 41280 unweighted edges, of which
-	2208 are self-loops. The graph is dense as it has a density of 0.01648 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 36.39, and the node degree mode is 24. The top 5 most central nodes are 2184 (degree
-	48), 2183 (degree 48), 2182 (degree 48), 2181 (degree 48) and 2180 (degree 48).
+	The undirected graph lock2232 has 2208 nodes and 41280 unweighted edges,
+	of which 2208 are self-loops. The graph is dense as it has a density of
+	0.01648 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 36.39, and the node degree mode
+	is 24. The top 5 most central nodes are 2184 (degree 48), 2183 (degree
+	48), 2182 (degree 48), 2181 (degree 48) and 2180 (degree 48).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:49.585905
 
-The undirected graph Streptomyces pyridomyceticus has 5412 nodes and 627348 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04285
-and has 21 connected components, where the component with most nodes has 5365 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 231.84, and the node degree mode is 2. The top 5
-most central nodes are 68260.JOAY01000013_gene2879 (degree 2564), 68260.JOAY01000044_gene1405
-(degree 1693), 68260.JOAY01000037_gene2389 (degree 1588), 68260.JOAY01000003_gene4567
-(degree 1540) and 68260.JOAY01000044_gene1386 (degree 1534).
+The undirected graph Streptomyces pyridomyceticus has 5412 nodes and 627348
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04285 and has 21 connected components, where the component
+with most nodes has 5365 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 231.84,
+and the node degree mode is 2. The top 5 most central nodes are 68260.JOAY01000013_gene2879
+(degree 2564), 68260.JOAY01000044_gene1405 (degree 1693), 68260.JOAY01000037_gene2389
+(degree 1588), 68260.JOAY01000003_gene4567 (degree 1540) and 68260.JOAY01000044_gene1386
+(degree 1534).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesPyridomyceticus(
 	
 	Datetime: 2021-02-02 18:28:49.585905
 	
-	The undirected graph Streptomyces pyridomyceticus has 5412 nodes and 627348 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04285
-	and has 21 connected components, where the component with most nodes has 5365 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 231.84, and the node degree mode is 2. The top 5
-	most central nodes are 68260.JOAY01000013_gene2879 (degree 2564), 68260.JOAY01000044_gene1405
-	(degree 1693), 68260.JOAY01000037_gene2389 (degree 1588), 68260.JOAY01000003_gene4567
-	(degree 1540) and 68260.JOAY01000044_gene1386 (degree 1534).
+	The undirected graph Streptomyces pyridomyceticus has 5412 nodes and 627348
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04285 and has 21 connected components, where the component
+	with most nodes has 5365 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 231.84,
+	and the node degree mode is 2. The top 5 most central nodes are 68260.JOAY01000013_gene2879
+	(degree 2564), 68260.JOAY01000044_gene1405 (degree 1693), 68260.JOAY01000037_gene2389
+	(degree 1588), 68260.JOAY01000003_gene4567 (degree 1540) and 68260.JOAY01000044_gene1386
+	(degree 1534).
 	
 
 

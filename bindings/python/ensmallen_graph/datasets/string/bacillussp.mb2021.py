@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:17.180938
 
-The undirected graph Bacillus sp. MB2021 has 4891 nodes and 438221 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-has 36 connected components, where the component with most nodes has 4784 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 179.19, and the node degree mode is 1. The top 5 most central
-nodes are 1408303.JNJJ01000082_gene1995 (degree 1391), 1408303.JNJJ01000002_gene3954
-(degree 1367), 1408303.JNJJ01000018_gene375 (degree 1294), 1408303.JNJJ01000001_gene3702
-(degree 1222) and 1408303.JNJJ01000019_gene4189 (degree 1215).
+The undirected graph Bacillus sp. MB2021 has 4891 nodes and 438221 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03665 and has 36 connected components, where the component with most
+nodes has 4784 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 179.19, and
+the node degree mode is 1. The top 5 most central nodes are 1408303.JNJJ01000082_gene1995
+(degree 1391), 1408303.JNJJ01000002_gene3954 (degree 1367), 1408303.JNJJ01000018_gene375
+(degree 1294), 1408303.JNJJ01000001_gene3702 (degree 1222) and 1408303.JNJJ01000019_gene4189
+(degree 1215).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Mb2021(
 	
 	Datetime: 2021-02-03 22:34:17.180938
 	
-	The undirected graph Bacillus sp. MB2021 has 4891 nodes and 438221 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-	has 36 connected components, where the component with most nodes has 4784 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 179.19, and the node degree mode is 1. The top 5 most central
-	nodes are 1408303.JNJJ01000082_gene1995 (degree 1391), 1408303.JNJJ01000002_gene3954
-	(degree 1367), 1408303.JNJJ01000018_gene375 (degree 1294), 1408303.JNJJ01000001_gene3702
-	(degree 1222) and 1408303.JNJJ01000019_gene4189 (degree 1215).
+	The undirected graph Bacillus sp. MB2021 has 4891 nodes and 438221 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03665 and has 36 connected components, where the component with most
+	nodes has 4784 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 179.19, and
+	the node degree mode is 1. The top 5 most central nodes are 1408303.JNJJ01000082_gene1995
+	(degree 1391), 1408303.JNJJ01000002_gene3954 (degree 1367), 1408303.JNJJ01000018_gene375
+	(degree 1294), 1408303.JNJJ01000001_gene3702 (degree 1222) and 1408303.JNJJ01000019_gene4189
+	(degree 1215).
 	
 
 

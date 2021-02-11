@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:08.619737
 
-The undirected graph Sulfitobacter donghicola has 3388 nodes and 312147 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05440
-and has 2 connected components, where the component with most nodes has 3386 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 184.27, and the node degree mode is 3. The top 5
-most central nodes are 1300350.DSW25_00785 (degree 1383), 1300350.DSW25_09525 (degree
-1224), 1300350.DSW25_12230 (degree 1210), 1300350.DSW25_15345 (degree 1123) and 1300350.DSW25_12830
-(degree 1093).
+The undirected graph Sulfitobacter donghicola has 3388 nodes and 312147
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05440 and has 2 connected components, where the component
+with most nodes has 3386 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 184.27,
+and the node degree mode is 3. The top 5 most central nodes are 1300350.DSW25_00785
+(degree 1383), 1300350.DSW25_09525 (degree 1224), 1300350.DSW25_12230 (degree
+1210), 1300350.DSW25_15345 (degree 1123) and 1300350.DSW25_12830 (degree
+1093).
 
 
 References
@@ -107,14 +108,15 @@ def SulfitobacterDonghicola(
 	
 	Datetime: 2021-02-03 21:35:08.619737
 	
-	The undirected graph Sulfitobacter donghicola has 3388 nodes and 312147 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05440
-	and has 2 connected components, where the component with most nodes has 3386 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 184.27, and the node degree mode is 3. The top 5
-	most central nodes are 1300350.DSW25_00785 (degree 1383), 1300350.DSW25_09525 (degree
-	1224), 1300350.DSW25_12230 (degree 1210), 1300350.DSW25_15345 (degree 1123) and 1300350.DSW25_12830
-	(degree 1093).
+	The undirected graph Sulfitobacter donghicola has 3388 nodes and 312147
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05440 and has 2 connected components, where the component
+	with most nodes has 3386 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 184.27,
+	and the node degree mode is 3. The top 5 most central nodes are 1300350.DSW25_00785
+	(degree 1383), 1300350.DSW25_09525 (degree 1224), 1300350.DSW25_12230 (degree
+	1210), 1300350.DSW25_15345 (degree 1123) and 1300350.DSW25_12830 (degree
+	1093).
 	
 
 

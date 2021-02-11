@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:05.162523
 
-The undirected graph Lactococcus garvieae DCC43 has 2199 nodes and 164368 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06801
-and has 12 connected components, where the component with most nodes has 2162 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 149.49, and the node degree mode is 5. The top 5
-most central nodes are 1231377.C426_1482 (degree 962), 1231377.C426_0623 (degree
-859), 1231377.C426_0148 (degree 824), 1231377.C426_1310 (degree 820) and 1231377.C426_1523
-(degree 803).
+The undirected graph Lactococcus garvieae DCC43 has 2199 nodes and 164368
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06801 and has 12 connected components, where the component
+with most nodes has 2162 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 149.49,
+and the node degree mode is 5. The top 5 most central nodes are 1231377.C426_1482
+(degree 962), 1231377.C426_0623 (degree 859), 1231377.C426_0148 (degree
+824), 1231377.C426_1310 (degree 820) and 1231377.C426_1523 (degree 803).
 
 
 References
@@ -107,14 +107,14 @@ def LactococcusGarvieaeDcc43(
 	
 	Datetime: 2021-02-02 23:28:05.162523
 	
-	The undirected graph Lactococcus garvieae DCC43 has 2199 nodes and 164368 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06801
-	and has 12 connected components, where the component with most nodes has 2162 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 149.49, and the node degree mode is 5. The top 5
-	most central nodes are 1231377.C426_1482 (degree 962), 1231377.C426_0623 (degree
-	859), 1231377.C426_0148 (degree 824), 1231377.C426_1310 (degree 820) and 1231377.C426_1523
-	(degree 803).
+	The undirected graph Lactococcus garvieae DCC43 has 2199 nodes and 164368
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06801 and has 12 connected components, where the component
+	with most nodes has 2162 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 149.49,
+	and the node degree mode is 5. The top 5 most central nodes are 1231377.C426_1482
+	(degree 962), 1231377.C426_0623 (degree 859), 1231377.C426_0148 (degree
+	824), 1231377.C426_1310 (degree 820) and 1231377.C426_1523 (degree 803).
 	
 
 

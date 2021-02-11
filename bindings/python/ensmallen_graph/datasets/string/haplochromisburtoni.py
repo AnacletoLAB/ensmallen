@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:29:15.522114
 
-The undirected graph Haplochromis burtoni has 21699 nodes and 4179416 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01775 and
-has 2 connected components, where the component with most nodes has 21697 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 265,
-the mean node degree is 385.22, and the node degree mode is 110. The top 5 most central
-nodes are 8153.XP_005926858.1 (degree 4695), 8153.XP_005947326.1 (degree 4570), 8153.XP_005948124.1
-(degree 4335), 8153.XP_005917715.1 (degree 4312) and 8153.XP_005952620.1 (degree
+The undirected graph Haplochromis burtoni has 21699 nodes and 4179416 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01775 and has 2 connected components, where the component with most
+nodes has 21697 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 265, the mean node degree is 385.22, and
+the node degree mode is 110. The top 5 most central nodes are 8153.XP_005926858.1
+(degree 4695), 8153.XP_005947326.1 (degree 4570), 8153.XP_005948124.1 (degree
+4335), 8153.XP_005917715.1 (degree 4312) and 8153.XP_005952620.1 (degree
 4231).
 
 
@@ -107,13 +108,14 @@ def HaplochromisBurtoni(
 	
 	Datetime: 2021-02-02 17:29:15.522114
 	
-	The undirected graph Haplochromis burtoni has 21699 nodes and 4179416 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01775 and
-	has 2 connected components, where the component with most nodes has 21697 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 265,
-	the mean node degree is 385.22, and the node degree mode is 110. The top 5 most central
-	nodes are 8153.XP_005926858.1 (degree 4695), 8153.XP_005947326.1 (degree 4570), 8153.XP_005948124.1
-	(degree 4335), 8153.XP_005917715.1 (degree 4312) and 8153.XP_005952620.1 (degree
+	The undirected graph Haplochromis burtoni has 21699 nodes and 4179416 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01775 and has 2 connected components, where the component with most
+	nodes has 21697 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 265, the mean node degree is 385.22, and
+	the node degree mode is 110. The top 5 most central nodes are 8153.XP_005926858.1
+	(degree 4695), 8153.XP_005947326.1 (degree 4570), 8153.XP_005948124.1 (degree
+	4335), 8153.XP_005917715.1 (degree 4312) and 8153.XP_005952620.1 (degree
 	4231).
 	
 

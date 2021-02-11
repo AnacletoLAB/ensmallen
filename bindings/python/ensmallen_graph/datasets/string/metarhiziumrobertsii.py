@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:09.798988
 
-The undirected graph Metarhizium robertsii has 7713 nodes and 577767 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01943 and
-has 18 connected components, where the component with most nodes has 7679 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 149.82, and the node degree mode is 1. The top 5 most central
-nodes are 568076.XP_007819684.1 (degree 1989), 568076.XP_007817038.1 (degree 1554),
-568076.XP_007823864.1 (degree 1470), 568076.XP_007818861.1 (degree 1371) and 568076.XP_007822974.1
+The undirected graph Metarhizium robertsii has 7713 nodes and 577767 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01943 and has 18 connected components, where the component with most
+nodes has 7679 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 149.82, and
+the node degree mode is 1. The top 5 most central nodes are 568076.XP_007819684.1
+(degree 1989), 568076.XP_007817038.1 (degree 1554), 568076.XP_007823864.1
+(degree 1470), 568076.XP_007818861.1 (degree 1371) and 568076.XP_007822974.1
 (degree 1352).
 
 
@@ -107,13 +108,14 @@ def MetarhiziumRobertsii(
 	
 	Datetime: 2021-02-02 21:13:09.798988
 	
-	The undirected graph Metarhizium robertsii has 7713 nodes and 577767 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01943 and
-	has 18 connected components, where the component with most nodes has 7679 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 149.82, and the node degree mode is 1. The top 5 most central
-	nodes are 568076.XP_007819684.1 (degree 1989), 568076.XP_007817038.1 (degree 1554),
-	568076.XP_007823864.1 (degree 1470), 568076.XP_007818861.1 (degree 1371) and 568076.XP_007822974.1
+	The undirected graph Metarhizium robertsii has 7713 nodes and 577767 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01943 and has 18 connected components, where the component with most
+	nodes has 7679 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 149.82, and
+	the node degree mode is 1. The top 5 most central nodes are 568076.XP_007819684.1
+	(degree 1989), 568076.XP_007817038.1 (degree 1554), 568076.XP_007823864.1
+	(degree 1470), 568076.XP_007818861.1 (degree 1371) and 568076.XP_007822974.1
 	(degree 1352).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:00.331642
 
-The undirected graph Capnocytophaga gingivalis has 2569 nodes and 132837 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04027
-and has 14 connected components, where the component with most nodes has 2530 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 81, the mean node degree is 103.42, and the node degree mode is 6. The top 5 most
-central nodes are 553178.CAPGI0001_1058 (degree 844), 553178.CAPGI0001_2023 (degree
-667), 553178.CAPGI0001_0058 (degree 642), 553178.CAPGI0001_2344 (degree 597) and
-553178.CAPGI0001_2356 (degree 586).
+The undirected graph Capnocytophaga gingivalis has 2569 nodes and 132837
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04027 and has 14 connected components, where the component
+with most nodes has 2530 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 81, the mean node degree is 103.42,
+and the node degree mode is 6. The top 5 most central nodes are 553178.CAPGI0001_1058
+(degree 844), 553178.CAPGI0001_2023 (degree 667), 553178.CAPGI0001_0058
+(degree 642), 553178.CAPGI0001_2344 (degree 597) and 553178.CAPGI0001_2356
+(degree 586).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaGingivalis(
 	
 	Datetime: 2021-02-02 21:10:00.331642
 	
-	The undirected graph Capnocytophaga gingivalis has 2569 nodes and 132837 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04027
-	and has 14 connected components, where the component with most nodes has 2530 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 81, the mean node degree is 103.42, and the node degree mode is 6. The top 5 most
-	central nodes are 553178.CAPGI0001_1058 (degree 844), 553178.CAPGI0001_2023 (degree
-	667), 553178.CAPGI0001_0058 (degree 642), 553178.CAPGI0001_2344 (degree 597) and
-	553178.CAPGI0001_2356 (degree 586).
+	The undirected graph Capnocytophaga gingivalis has 2569 nodes and 132837
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04027 and has 14 connected components, where the component
+	with most nodes has 2530 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 81, the mean node degree is 103.42,
+	and the node degree mode is 6. The top 5 most central nodes are 553178.CAPGI0001_1058
+	(degree 844), 553178.CAPGI0001_2023 (degree 667), 553178.CAPGI0001_0058
+	(degree 642), 553178.CAPGI0001_2344 (degree 597) and 553178.CAPGI0001_2356
+	(degree 586).
 	
 
 

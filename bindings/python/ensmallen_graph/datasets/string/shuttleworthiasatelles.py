@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:50.697940
 
-The undirected graph Shuttleworthia satelles has 2216 nodes and 153294 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06246 and
-has 11 connected components, where the component with most nodes has 2188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 138.35, and the node degree mode is 4. The top 5 most central
-nodes are 626523.GCWU000342_00466 (degree 866), 626523.GCWU000342_00981 (degree 849),
-626523.GCWU000342_00250 (degree 838), 626523.GCWU000342_00193 (degree 688) and 626523.GCWU000342_00861
+The undirected graph Shuttleworthia satelles has 2216 nodes and 153294
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06246 and has 11 connected components, where the component
+with most nodes has 2188 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 138.35,
+and the node degree mode is 4. The top 5 most central nodes are 626523.GCWU000342_00466
+(degree 866), 626523.GCWU000342_00981 (degree 849), 626523.GCWU000342_00250
+(degree 838), 626523.GCWU000342_00193 (degree 688) and 626523.GCWU000342_00861
 (degree 666).
 
 
@@ -107,13 +108,14 @@ def ShuttleworthiaSatelles(
 	
 	Datetime: 2021-02-02 21:20:50.697940
 	
-	The undirected graph Shuttleworthia satelles has 2216 nodes and 153294 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06246 and
-	has 11 connected components, where the component with most nodes has 2188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 138.35, and the node degree mode is 4. The top 5 most central
-	nodes are 626523.GCWU000342_00466 (degree 866), 626523.GCWU000342_00981 (degree 849),
-	626523.GCWU000342_00250 (degree 838), 626523.GCWU000342_00193 (degree 688) and 626523.GCWU000342_00861
+	The undirected graph Shuttleworthia satelles has 2216 nodes and 153294
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06246 and has 11 connected components, where the component
+	with most nodes has 2188 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 138.35,
+	and the node degree mode is 4. The top 5 most central nodes are 626523.GCWU000342_00466
+	(degree 866), 626523.GCWU000342_00981 (degree 849), 626523.GCWU000342_00250
+	(degree 838), 626523.GCWU000342_00193 (degree 688) and 626523.GCWU000342_00861
 	(degree 666).
 	
 

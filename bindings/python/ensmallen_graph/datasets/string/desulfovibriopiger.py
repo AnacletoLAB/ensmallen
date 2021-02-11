@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:16.210353
 
-The undirected graph Desulfovibrio piger has 3059 nodes and 117742 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02517 and
-has 45 connected components, where the component with most nodes has 2944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 48,
-the mean node degree is 76.98, and the node degree mode is 1. The top 5 most central
-nodes are 411464.DESPIG_00455 (degree 922), 411464.DESPIG_02496 (degree 735), 411464.DESPIG_00824
-(degree 724), 411464.DESPIG_02469 (degree 664) and 411464.DESPIG_01553 (degree 598).
+The undirected graph Desulfovibrio piger has 3059 nodes and 117742 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02517 and has 45 connected components, where the component with most
+nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 48, the mean node degree is 76.98, and
+the node degree mode is 1. The top 5 most central nodes are 411464.DESPIG_00455
+(degree 922), 411464.DESPIG_02496 (degree 735), 411464.DESPIG_00824 (degree
+724), 411464.DESPIG_02469 (degree 664) and 411464.DESPIG_01553 (degree
+598).
 
 
 References
@@ -106,13 +108,15 @@ def DesulfovibrioPiger(
 	
 	Datetime: 2021-02-02 20:45:16.210353
 	
-	The undirected graph Desulfovibrio piger has 3059 nodes and 117742 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02517 and
-	has 45 connected components, where the component with most nodes has 2944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 48,
-	the mean node degree is 76.98, and the node degree mode is 1. The top 5 most central
-	nodes are 411464.DESPIG_00455 (degree 922), 411464.DESPIG_02496 (degree 735), 411464.DESPIG_00824
-	(degree 724), 411464.DESPIG_02469 (degree 664) and 411464.DESPIG_01553 (degree 598).
+	The undirected graph Desulfovibrio piger has 3059 nodes and 117742 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02517 and has 45 connected components, where the component with most
+	nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 48, the mean node degree is 76.98, and
+	the node degree mode is 1. The top 5 most central nodes are 411464.DESPIG_00455
+	(degree 922), 411464.DESPIG_02496 (degree 735), 411464.DESPIG_00824 (degree
+	724), 411464.DESPIG_02469 (degree 664) and 411464.DESPIG_01553 (degree
+	598).
 	
 
 

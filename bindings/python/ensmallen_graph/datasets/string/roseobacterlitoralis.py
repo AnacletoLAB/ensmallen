@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:33.728771
 
-The undirected graph Roseobacter litoralis has 4327 nodes and 324098 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03463 and
-has 17 connected components, where the component with most nodes has 4293 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 149.80, and the node degree mode is 3. The top 5 most central
-nodes are 391595.RLO149_c042470 (degree 1604), 391595.RLO149_c039490 (degree 1112),
-391595.RLO149_c042400 (degree 1103), 391595.RLO149_c017780 (degree 1089) and 391595.RLO149_c042190
+The undirected graph Roseobacter litoralis has 4327 nodes and 324098 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03463 and has 17 connected components, where the component with most
+nodes has 4293 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 149.80, and
+the node degree mode is 3. The top 5 most central nodes are 391595.RLO149_c042470
+(degree 1604), 391595.RLO149_c039490 (degree 1112), 391595.RLO149_c042400
+(degree 1103), 391595.RLO149_c017780 (degree 1089) and 391595.RLO149_c042190
 (degree 1056).
 
 
@@ -107,13 +108,14 @@ def RoseobacterLitoralis(
 	
 	Datetime: 2021-02-02 20:39:33.728771
 	
-	The undirected graph Roseobacter litoralis has 4327 nodes and 324098 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03463 and
-	has 17 connected components, where the component with most nodes has 4293 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 149.80, and the node degree mode is 3. The top 5 most central
-	nodes are 391595.RLO149_c042470 (degree 1604), 391595.RLO149_c039490 (degree 1112),
-	391595.RLO149_c042400 (degree 1103), 391595.RLO149_c017780 (degree 1089) and 391595.RLO149_c042190
+	The undirected graph Roseobacter litoralis has 4327 nodes and 324098 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03463 and has 17 connected components, where the component with most
+	nodes has 4293 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 149.80, and
+	the node degree mode is 3. The top 5 most central nodes are 391595.RLO149_c042470
+	(degree 1604), 391595.RLO149_c039490 (degree 1112), 391595.RLO149_c042400
+	(degree 1103), 391595.RLO149_c017780 (degree 1089) and 391595.RLO149_c042190
 	(degree 1056).
 	
 

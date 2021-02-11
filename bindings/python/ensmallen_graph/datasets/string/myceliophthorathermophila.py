@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:52.472254
 
-The undirected graph Myceliophthora thermophila has 6395 nodes and 505072 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02470
-and has 21 connected components, where the component with most nodes has 6355 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 157.96, and the node degree mode is 1. The top 5
-most central nodes are 78579.XP_003662671.1 (degree 1467), 78579.XP_003663371.1 (degree
-1272), 78579.XP_003666816.1 (degree 1249), 78579.XP_003658467.1 (degree 1154) and
-78579.XP_003659317.1 (degree 1063).
+The undirected graph Myceliophthora thermophila has 6395 nodes and 505072
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02470 and has 21 connected components, where the component
+with most nodes has 6355 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 157.96,
+and the node degree mode is 1. The top 5 most central nodes are 78579.XP_003662671.1
+(degree 1467), 78579.XP_003663371.1 (degree 1272), 78579.XP_003666816.1
+(degree 1249), 78579.XP_003658467.1 (degree 1154) and 78579.XP_003659317.1
+(degree 1063).
 
 
 References
@@ -107,14 +108,15 @@ def MyceliophthoraThermophila(
 	
 	Datetime: 2021-02-02 18:33:52.472254
 	
-	The undirected graph Myceliophthora thermophila has 6395 nodes and 505072 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02470
-	and has 21 connected components, where the component with most nodes has 6355 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 157.96, and the node degree mode is 1. The top 5
-	most central nodes are 78579.XP_003662671.1 (degree 1467), 78579.XP_003663371.1 (degree
-	1272), 78579.XP_003666816.1 (degree 1249), 78579.XP_003658467.1 (degree 1154) and
-	78579.XP_003659317.1 (degree 1063).
+	The undirected graph Myceliophthora thermophila has 6395 nodes and 505072
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02470 and has 21 connected components, where the component
+	with most nodes has 6355 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 157.96,
+	and the node degree mode is 1. The top 5 most central nodes are 78579.XP_003662671.1
+	(degree 1467), 78579.XP_003663371.1 (degree 1272), 78579.XP_003666816.1
+	(degree 1249), 78579.XP_003658467.1 (degree 1154) and 78579.XP_003659317.1
+	(degree 1063).
 	
 
 

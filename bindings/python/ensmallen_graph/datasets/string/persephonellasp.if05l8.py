@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:03.117560
 
-The undirected graph Persephonella sp. IF05L8 has 1899 nodes and 133587 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07413
-and has 2 connected components, where the component with most nodes has 1897 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 140.69, and the node degree mode is 5. The top 5
-most central nodes are 1158338.JNLJ01000005_gene1534 (degree 845), 1158338.JNLJ01000005_gene1540
-(degree 725), 1158338.JNLJ01000001_gene719 (degree 686), 1158338.JNLJ01000005_gene1620
-(degree 667) and 1158338.JNLJ01000005_gene1627 (degree 628).
+The undirected graph Persephonella sp. IF05L8 has 1899 nodes and 133587
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07413 and has 2 connected components, where the component
+with most nodes has 1897 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 140.69,
+and the node degree mode is 5. The top 5 most central nodes are 1158338.JNLJ01000005_gene1534
+(degree 845), 1158338.JNLJ01000005_gene1540 (degree 725), 1158338.JNLJ01000001_gene719
+(degree 686), 1158338.JNLJ01000005_gene1620 (degree 667) and 1158338.JNLJ01000005_gene1627
+(degree 628).
 
 
 References
@@ -107,14 +108,15 @@ def PersephonellaSp.If05l8(
 	
 	Datetime: 2021-02-02 23:03:03.117560
 	
-	The undirected graph Persephonella sp. IF05L8 has 1899 nodes and 133587 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07413
-	and has 2 connected components, where the component with most nodes has 1897 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 140.69, and the node degree mode is 5. The top 5
-	most central nodes are 1158338.JNLJ01000005_gene1534 (degree 845), 1158338.JNLJ01000005_gene1540
-	(degree 725), 1158338.JNLJ01000001_gene719 (degree 686), 1158338.JNLJ01000005_gene1620
-	(degree 667) and 1158338.JNLJ01000005_gene1627 (degree 628).
+	The undirected graph Persephonella sp. IF05L8 has 1899 nodes and 133587
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07413 and has 2 connected components, where the component
+	with most nodes has 1897 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 140.69,
+	and the node degree mode is 5. The top 5 most central nodes are 1158338.JNLJ01000005_gene1534
+	(degree 845), 1158338.JNLJ01000005_gene1540 (degree 725), 1158338.JNLJ01000001_gene719
+	(degree 686), 1158338.JNLJ01000005_gene1620 (degree 667) and 1158338.JNLJ01000005_gene1627
+	(degree 628).
 	
 
 

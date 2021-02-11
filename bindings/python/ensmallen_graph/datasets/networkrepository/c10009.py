@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:40.368219
 
-The undirected graph C1000-9 has 1000 nodes and 450079 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.90106
-and is connected, as it has a single component. The graph median node degree is 900,
-the mean node degree is 900.16 and the node degree mode is 900. The top 5 most central
-nodes are 628 (degree 925), 247 (degree 924), 148 (degree 924), 669 (degree 923)
-and 656 (degree 923).
+The undirected graph C1000-9 has 1000 nodes and 450079 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.90106 and is connected, as it has a single component. The
+graph median node degree is 900, the mean node degree is 900.16 and the
+node degree mode is 900. The top 5 most central nodes are 628 (degree 925),
+247 (degree 924), 148 (degree 924), 669 (degree 923) and 656 (degree 923).
 
 
 References
@@ -115,12 +115,12 @@ def C10009(
 	
 	Datetime: 2021-02-03 22:51:40.368219
 	
-	The undirected graph C1000-9 has 1000 nodes and 450079 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.90106
-	and is connected, as it has a single component. The graph median node degree is 900,
-	the mean node degree is 900.16 and the node degree mode is 900. The top 5 most central
-	nodes are 628 (degree 925), 247 (degree 924), 148 (degree 924), 669 (degree 923)
-	and 656 (degree 923).
+	The undirected graph C1000-9 has 1000 nodes and 450079 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.90106 and is connected, as it has a single component. The
+	graph median node degree is 900, the mean node degree is 900.16 and the
+	node degree mode is 900. The top 5 most central nodes are 628 (degree 925),
+	247 (degree 924), 148 (degree 924), 669 (degree 923) and 656 (degree 923).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:01.934577
 
-The undirected graph Ferrimonas futtsuensis has 3719 nodes and 497354 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07194 and
-has 8 connected components, where the component with most nodes has 3704 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 225,
-the mean node degree is 267.47, and the node degree mode is 2. The top 5 most central
-nodes are 1121878.AUGL01000024_gene3725 (degree 2164), 1121878.AUGL01000009_gene3419
-(degree 1642), 1121878.AUGL01000001_gene365 (degree 1582), 1121878.AUGL01000006_gene585
-(degree 1496) and 1121878.AUGL01000005_gene2627 (degree 1472).
+The undirected graph Ferrimonas futtsuensis has 3719 nodes and 497354 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07194 and has 8 connected components, where the component with most
+nodes has 3704 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 225, the mean node degree is 267.47, and
+the node degree mode is 2. The top 5 most central nodes are 1121878.AUGL01000024_gene3725
+(degree 2164), 1121878.AUGL01000009_gene3419 (degree 1642), 1121878.AUGL01000001_gene365
+(degree 1582), 1121878.AUGL01000006_gene585 (degree 1496) and 1121878.AUGL01000005_gene2627
+(degree 1472).
 
 
 References
@@ -107,14 +108,15 @@ def FerrimonasFuttsuensis(
 	
 	Datetime: 2021-02-02 22:38:01.934577
 	
-	The undirected graph Ferrimonas futtsuensis has 3719 nodes and 497354 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07194 and
-	has 8 connected components, where the component with most nodes has 3704 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 225,
-	the mean node degree is 267.47, and the node degree mode is 2. The top 5 most central
-	nodes are 1121878.AUGL01000024_gene3725 (degree 2164), 1121878.AUGL01000009_gene3419
-	(degree 1642), 1121878.AUGL01000001_gene365 (degree 1582), 1121878.AUGL01000006_gene585
-	(degree 1496) and 1121878.AUGL01000005_gene2627 (degree 1472).
+	The undirected graph Ferrimonas futtsuensis has 3719 nodes and 497354 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07194 and has 8 connected components, where the component with most
+	nodes has 3704 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 225, the mean node degree is 267.47, and
+	the node degree mode is 2. The top 5 most central nodes are 1121878.AUGL01000024_gene3725
+	(degree 2164), 1121878.AUGL01000009_gene3419 (degree 1642), 1121878.AUGL01000001_gene365
+	(degree 1582), 1121878.AUGL01000006_gene585 (degree 1496) and 1121878.AUGL01000005_gene2627
+	(degree 1472).
 	
 
 

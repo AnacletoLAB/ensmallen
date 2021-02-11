@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:48.802647
 
-The undirected graph Corynebacterium sputi has 2711 nodes and 201557 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05487 and
-has 5 connected components, where the component with most nodes has 2701 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 148.70, and the node degree mode is 2. The top 5 most central
-nodes are 1111729.ATYV01000004_gene995 (degree 1142), 1111729.ATYV01000023_gene1465
-(degree 1028), 1111729.ATYV01000010_gene229 (degree 975), 1111729.ATYV01000009_gene2515
-(degree 764) and 1111729.ATYV01000015_gene1806 (degree 730).
+The undirected graph Corynebacterium sputi has 2711 nodes and 201557 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05487 and has 5 connected components, where the component with most
+nodes has 2701 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 148.70, and
+the node degree mode is 2. The top 5 most central nodes are 1111729.ATYV01000004_gene995
+(degree 1142), 1111729.ATYV01000023_gene1465 (degree 1028), 1111729.ATYV01000010_gene229
+(degree 975), 1111729.ATYV01000009_gene2515 (degree 764) and 1111729.ATYV01000015_gene1806
+(degree 730).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumSputi(
 	
 	Datetime: 2021-02-02 22:25:48.802647
 	
-	The undirected graph Corynebacterium sputi has 2711 nodes and 201557 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05487 and
-	has 5 connected components, where the component with most nodes has 2701 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 148.70, and the node degree mode is 2. The top 5 most central
-	nodes are 1111729.ATYV01000004_gene995 (degree 1142), 1111729.ATYV01000023_gene1465
-	(degree 1028), 1111729.ATYV01000010_gene229 (degree 975), 1111729.ATYV01000009_gene2515
-	(degree 764) and 1111729.ATYV01000015_gene1806 (degree 730).
+	The undirected graph Corynebacterium sputi has 2711 nodes and 201557 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05487 and has 5 connected components, where the component with most
+	nodes has 2701 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 148.70, and
+	the node degree mode is 2. The top 5 most central nodes are 1111729.ATYV01000004_gene995
+	(degree 1142), 1111729.ATYV01000023_gene1465 (degree 1028), 1111729.ATYV01000010_gene229
+	(degree 975), 1111729.ATYV01000009_gene2515 (degree 764) and 1111729.ATYV01000015_gene1806
+	(degree 730).
 	
 
 

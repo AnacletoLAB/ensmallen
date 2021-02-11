@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:53.787780
 
-The undirected graph Rubrivivax gelatinosus has 4669 nodes and 613109 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05626 and
-has 8 connected components, where the component with most nodes has 4652 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 262.63, and the node degree mode is 3. The top 5 most central
-nodes are 983917.RGE_20970 (degree 2623), 983917.RGE_31130 (degree 2232), 983917.RGE_33870
-(degree 2217), 983917.RGE_23260 (degree 2190) and 983917.RGE_22850 (degree 2173).
+The undirected graph Rubrivivax gelatinosus has 4669 nodes and 613109 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05626 and has 8 connected components, where the component with most
+nodes has 4652 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 262.63, and
+the node degree mode is 3. The top 5 most central nodes are 983917.RGE_20970
+(degree 2623), 983917.RGE_31130 (degree 2232), 983917.RGE_33870 (degree
+2217), 983917.RGE_23260 (degree 2190) and 983917.RGE_22850 (degree 2173).
 
 
 References
@@ -106,13 +107,14 @@ def RubrivivaxGelatinosus(
 	
 	Datetime: 2021-02-02 22:03:53.787780
 	
-	The undirected graph Rubrivivax gelatinosus has 4669 nodes and 613109 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05626 and
-	has 8 connected components, where the component with most nodes has 4652 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 262.63, and the node degree mode is 3. The top 5 most central
-	nodes are 983917.RGE_20970 (degree 2623), 983917.RGE_31130 (degree 2232), 983917.RGE_33870
-	(degree 2217), 983917.RGE_23260 (degree 2190) and 983917.RGE_22850 (degree 2173).
+	The undirected graph Rubrivivax gelatinosus has 4669 nodes and 613109 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05626 and has 8 connected components, where the component with most
+	nodes has 4652 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 262.63, and
+	the node degree mode is 3. The top 5 most central nodes are 983917.RGE_20970
+	(degree 2623), 983917.RGE_31130 (degree 2232), 983917.RGE_33870 (degree
+	2217), 983917.RGE_23260 (degree 2190) and 983917.RGE_22850 (degree 2173).
 	
 
 

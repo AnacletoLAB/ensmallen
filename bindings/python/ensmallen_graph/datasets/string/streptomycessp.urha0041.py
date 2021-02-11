@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:12:17.216865
 
-The undirected graph Streptomyces sp. URHA0041 has 6826 nodes and 1153660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04953
-and has 37 connected components, where the component with most nodes has 6721 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 272, the mean node degree is 338.02, and the node degree mode is 2. The top 5
-most central nodes are 1380346.JNIH01000015_gene553 (degree 3121), 1380346.JNIH01000007_gene1833
-(degree 2344), 1380346.JNIH01000036_gene287 (degree 2260), 1380346.JNIH01000037_gene3682
-(degree 2064) and 1380346.JNIH01000037_gene3657 (degree 2018).
+The undirected graph Streptomyces sp. URHA0041 has 6826 nodes and 1153660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04953 and has 37 connected components, where the component
+with most nodes has 6721 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 272, the mean node degree is 338.02,
+and the node degree mode is 2. The top 5 most central nodes are 1380346.JNIH01000015_gene553
+(degree 3121), 1380346.JNIH01000007_gene1833 (degree 2344), 1380346.JNIH01000036_gene287
+(degree 2260), 1380346.JNIH01000037_gene3682 (degree 2064) and 1380346.JNIH01000037_gene3657
+(degree 2018).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Urha0041(
 	
 	Datetime: 2021-02-03 22:12:17.216865
 	
-	The undirected graph Streptomyces sp. URHA0041 has 6826 nodes and 1153660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04953
-	and has 37 connected components, where the component with most nodes has 6721 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 272, the mean node degree is 338.02, and the node degree mode is 2. The top 5
-	most central nodes are 1380346.JNIH01000015_gene553 (degree 3121), 1380346.JNIH01000007_gene1833
-	(degree 2344), 1380346.JNIH01000036_gene287 (degree 2260), 1380346.JNIH01000037_gene3682
-	(degree 2064) and 1380346.JNIH01000037_gene3657 (degree 2018).
+	The undirected graph Streptomyces sp. URHA0041 has 6826 nodes and 1153660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04953 and has 37 connected components, where the component
+	with most nodes has 6721 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 272, the mean node degree is 338.02,
+	and the node degree mode is 2. The top 5 most central nodes are 1380346.JNIH01000015_gene553
+	(degree 3121), 1380346.JNIH01000007_gene1833 (degree 2344), 1380346.JNIH01000036_gene287
+	(degree 2260), 1380346.JNIH01000037_gene3682 (degree 2064) and 1380346.JNIH01000037_gene3657
+	(degree 2018).
 	
 
 

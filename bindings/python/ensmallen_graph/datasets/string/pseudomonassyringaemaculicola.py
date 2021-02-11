@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:07.546978
 
-The undirected graph Pseudomonas syringae maculicola has 5755 nodes and 795837 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04807
-and has 46 connected components, where the component with most nodes has 5614 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 276.57, and the node degree mode is 2. The top 5
-most central nodes are 629265.PMA4326_01150 (degree 2019), 629265.PMA4326_03044 (degree
-1803), 629265.PMA4326_29260 (degree 1746), 629265.PMA4326_08485 (degree 1692) and
-629265.PMA4326_03049 (degree 1606).
+The undirected graph Pseudomonas syringae maculicola has 5755 nodes and
+795837 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04807 and has 46 connected components, where the
+component with most nodes has 5614 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+is 276.57, and the node degree mode is 2. The top 5 most central nodes
+are 629265.PMA4326_01150 (degree 2019), 629265.PMA4326_03044 (degree 1803),
+629265.PMA4326_29260 (degree 1746), 629265.PMA4326_08485 (degree 1692)
+and 629265.PMA4326_03049 (degree 1606).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSyringaeMaculicola(
 	
 	Datetime: 2021-02-02 21:21:07.546978
 	
-	The undirected graph Pseudomonas syringae maculicola has 5755 nodes and 795837 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04807
-	and has 46 connected components, where the component with most nodes has 5614 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 276.57, and the node degree mode is 2. The top 5
-	most central nodes are 629265.PMA4326_01150 (degree 2019), 629265.PMA4326_03044 (degree
-	1803), 629265.PMA4326_29260 (degree 1746), 629265.PMA4326_08485 (degree 1692) and
-	629265.PMA4326_03049 (degree 1606).
+	The undirected graph Pseudomonas syringae maculicola has 5755 nodes and
+	795837 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04807 and has 46 connected components, where the
+	component with most nodes has 5614 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+	is 276.57, and the node degree mode is 2. The top 5 most central nodes
+	are 629265.PMA4326_01150 (degree 2019), 629265.PMA4326_03044 (degree 1803),
+	629265.PMA4326_29260 (degree 1746), 629265.PMA4326_08485 (degree 1692)
+	and 629265.PMA4326_03049 (degree 1606).
 	
 
 

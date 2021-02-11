@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:50.778843
 
-The undirected graph Thioalkalivibrio sp. AKL11 has 2808 nodes and 243291 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06173
-and has 19 connected components, where the component with most nodes has 2750 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 173.28, and the node degree mode is 2. The top 5
-most central nodes are 545264.KB898754_gene1815 (degree 1052), 545264.KB898744_gene2167
-(degree 1035), 545264.KB898749_gene118 (degree 987), 545264.KB898747_gene400 (degree
-946) and 545264.KB898757_gene2485 (degree 912).
+The undirected graph Thioalkalivibrio sp. AKL11 has 2808 nodes and 243291
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06173 and has 19 connected components, where the component
+with most nodes has 2750 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 173.28,
+and the node degree mode is 2. The top 5 most central nodes are 545264.KB898754_gene1815
+(degree 1052), 545264.KB898744_gene2167 (degree 1035), 545264.KB898749_gene118
+(degree 987), 545264.KB898747_gene400 (degree 946) and 545264.KB898757_gene2485
+(degree 912).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Akl11(
 	
 	Datetime: 2021-02-02 21:07:50.778843
 	
-	The undirected graph Thioalkalivibrio sp. AKL11 has 2808 nodes and 243291 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06173
-	and has 19 connected components, where the component with most nodes has 2750 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 173.28, and the node degree mode is 2. The top 5
-	most central nodes are 545264.KB898754_gene1815 (degree 1052), 545264.KB898744_gene2167
-	(degree 1035), 545264.KB898749_gene118 (degree 987), 545264.KB898747_gene400 (degree
-	946) and 545264.KB898757_gene2485 (degree 912).
+	The undirected graph Thioalkalivibrio sp. AKL11 has 2808 nodes and 243291
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06173 and has 19 connected components, where the component
+	with most nodes has 2750 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 173.28,
+	and the node degree mode is 2. The top 5 most central nodes are 545264.KB898754_gene1815
+	(degree 1052), 545264.KB898744_gene2167 (degree 1035), 545264.KB898749_gene118
+	(degree 987), 545264.KB898747_gene400 (degree 946) and 545264.KB898757_gene2485
+	(degree 912).
 	
 
 

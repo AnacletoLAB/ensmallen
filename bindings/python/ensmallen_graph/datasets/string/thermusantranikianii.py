@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:12.036481
 
-The undirected graph Thermus antranikianii has 2202 nodes and 160685 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-has 4 connected components, where the component with most nodes has 2193 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 145.94, and the node degree mode is 4. The top 5 most central
-nodes are 1123386.AUIW01000002_gene1286 (degree 938), 1123386.AUIW01000006_gene1689
-(degree 842), 1123386.AUIW01000012_gene2055 (degree 810), 1123386.AUIW01000026_gene1407
-(degree 768) and 1123386.AUIW01000003_gene884 (degree 718).
+The undirected graph Thermus antranikianii has 2202 nodes and 160685 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06631 and has 4 connected components, where the component with most
+nodes has 2193 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 145.94, and
+the node degree mode is 4. The top 5 most central nodes are 1123386.AUIW01000002_gene1286
+(degree 938), 1123386.AUIW01000006_gene1689 (degree 842), 1123386.AUIW01000012_gene2055
+(degree 810), 1123386.AUIW01000026_gene1407 (degree 768) and 1123386.AUIW01000003_gene884
+(degree 718).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusAntranikianii(
 	
 	Datetime: 2021-02-02 22:52:12.036481
 	
-	The undirected graph Thermus antranikianii has 2202 nodes and 160685 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06631 and
-	has 4 connected components, where the component with most nodes has 2193 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 145.94, and the node degree mode is 4. The top 5 most central
-	nodes are 1123386.AUIW01000002_gene1286 (degree 938), 1123386.AUIW01000006_gene1689
-	(degree 842), 1123386.AUIW01000012_gene2055 (degree 810), 1123386.AUIW01000026_gene1407
-	(degree 768) and 1123386.AUIW01000003_gene884 (degree 718).
+	The undirected graph Thermus antranikianii has 2202 nodes and 160685 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06631 and has 4 connected components, where the component with most
+	nodes has 2193 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 145.94, and
+	the node degree mode is 4. The top 5 most central nodes are 1123386.AUIW01000002_gene1286
+	(degree 938), 1123386.AUIW01000006_gene1689 (degree 842), 1123386.AUIW01000012_gene2055
+	(degree 810), 1123386.AUIW01000026_gene1407 (degree 768) and 1123386.AUIW01000003_gene884
+	(degree 718).
 	
 
 

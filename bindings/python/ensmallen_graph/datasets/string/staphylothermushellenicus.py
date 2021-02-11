@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:31.599291
 
-The undirected graph Staphylothermus hellenicus has 1579 nodes and 84690 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06798
-and has 8 connected components, where the component with most nodes has 1562 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 107.27, and the node degree mode is 3. The top 5 most
-central nodes are 591019.Shell_0576 (degree 535), 591019.Shell_1665 (degree 486),
-591019.Shell_0579 (degree 479), 591019.Shell_1489 (degree 474) and 591019.Shell_0184
-(degree 472).
+The undirected graph Staphylothermus hellenicus has 1579 nodes and 84690
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06798 and has 8 connected components, where the component
+with most nodes has 1562 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 107.27,
+and the node degree mode is 3. The top 5 most central nodes are 591019.Shell_0576
+(degree 535), 591019.Shell_1665 (degree 486), 591019.Shell_0579 (degree
+479), 591019.Shell_1489 (degree 474) and 591019.Shell_0184 (degree 472).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylothermusHellenicus(
 	
 	Datetime: 2021-02-02 21:17:31.599291
 	
-	The undirected graph Staphylothermus hellenicus has 1579 nodes and 84690 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06798
-	and has 8 connected components, where the component with most nodes has 1562 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 107.27, and the node degree mode is 3. The top 5 most
-	central nodes are 591019.Shell_0576 (degree 535), 591019.Shell_1665 (degree 486),
-	591019.Shell_0579 (degree 479), 591019.Shell_1489 (degree 474) and 591019.Shell_0184
-	(degree 472).
+	The undirected graph Staphylothermus hellenicus has 1579 nodes and 84690
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06798 and has 8 connected components, where the component
+	with most nodes has 1562 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 107.27,
+	and the node degree mode is 3. The top 5 most central nodes are 591019.Shell_0576
+	(degree 535), 591019.Shell_1665 (degree 486), 591019.Shell_0579 (degree
+	479), 591019.Shell_1489 (degree 474) and 591019.Shell_0184 (degree 472).
 	
 
 

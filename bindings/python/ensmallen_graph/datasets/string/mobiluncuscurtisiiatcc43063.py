@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:14.398919
 
-The undirected graph Mobiluncus curtisii ATCC43063 has 1895 nodes and 104231 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-and has 6 connected components, where the component with most nodes has 1881 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 110.01, and the node degree mode is 3. The top 5 most
-central nodes are 548479.HMPREF0573_11671 (degree 724), 548479.HMPREF0573_10214 (degree
-611), 548479.HMPREF0573_10902 (degree 598), 548479.HMPREF0573_10030 (degree 594)
-and 548479.HMPREF0573_11133 (degree 564).
+The undirected graph Mobiluncus curtisii ATCC43063 has 1895 nodes and 104231
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05808 and has 6 connected components, where the component
+with most nodes has 1881 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 110.01,
+and the node degree mode is 3. The top 5 most central nodes are 548479.HMPREF0573_11671
+(degree 724), 548479.HMPREF0573_10214 (degree 611), 548479.HMPREF0573_10902
+(degree 598), 548479.HMPREF0573_10030 (degree 594) and 548479.HMPREF0573_11133
+(degree 564).
 
 
 References
@@ -107,14 +108,15 @@ def MobiluncusCurtisiiAtcc43063(
 	
 	Datetime: 2021-02-02 21:09:14.398919
 	
-	The undirected graph Mobiluncus curtisii ATCC43063 has 1895 nodes and 104231 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05808
-	and has 6 connected components, where the component with most nodes has 1881 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 110.01, and the node degree mode is 3. The top 5 most
-	central nodes are 548479.HMPREF0573_11671 (degree 724), 548479.HMPREF0573_10214 (degree
-	611), 548479.HMPREF0573_10902 (degree 598), 548479.HMPREF0573_10030 (degree 594)
-	and 548479.HMPREF0573_11133 (degree 564).
+	The undirected graph Mobiluncus curtisii ATCC43063 has 1895 nodes and 104231
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05808 and has 6 connected components, where the component
+	with most nodes has 1881 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 110.01,
+	and the node degree mode is 3. The top 5 most central nodes are 548479.HMPREF0573_11671
+	(degree 724), 548479.HMPREF0573_10214 (degree 611), 548479.HMPREF0573_10902
+	(degree 598), 548479.HMPREF0573_10030 (degree 594) and 548479.HMPREF0573_11133
+	(degree 564).
 	
 
 

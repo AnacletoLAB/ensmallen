@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:26.511655
 
-The undirected graph Blastomonas sp. AAP53 has 3230 nodes and 296940 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05694 and
-has 5 connected components, where the component with most nodes has 3222 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 183.86, and the node degree mode is 3. The top 5 most central
-nodes are 1248760.ANFZ01000009_gene1227 (degree 1245), 1248760.ANFZ01000006_gene2345
-(degree 1211), 1248760.ANFZ01000013_gene1826 (degree 1146), 1248760.ANFZ01000002_gene3051
-(degree 1109) and 1248760.ANFZ01000018_gene712 (degree 1100).
+The undirected graph Blastomonas sp. AAP53 has 3230 nodes and 296940 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05694 and has 5 connected components, where the component with most
+nodes has 3222 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 183.86, and
+the node degree mode is 3. The top 5 most central nodes are 1248760.ANFZ01000009_gene1227
+(degree 1245), 1248760.ANFZ01000006_gene2345 (degree 1211), 1248760.ANFZ01000013_gene1826
+(degree 1146), 1248760.ANFZ01000002_gene3051 (degree 1109) and 1248760.ANFZ01000018_gene712
+(degree 1100).
 
 
 References
@@ -107,14 +108,15 @@ def BlastomonasSp.Aap53(
 	
 	Datetime: 2021-02-02 23:34:26.511655
 	
-	The undirected graph Blastomonas sp. AAP53 has 3230 nodes and 296940 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05694 and
-	has 5 connected components, where the component with most nodes has 3222 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 183.86, and the node degree mode is 3. The top 5 most central
-	nodes are 1248760.ANFZ01000009_gene1227 (degree 1245), 1248760.ANFZ01000006_gene2345
-	(degree 1211), 1248760.ANFZ01000013_gene1826 (degree 1146), 1248760.ANFZ01000002_gene3051
-	(degree 1109) and 1248760.ANFZ01000018_gene712 (degree 1100).
+	The undirected graph Blastomonas sp. AAP53 has 3230 nodes and 296940 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05694 and has 5 connected components, where the component with most
+	nodes has 3222 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 183.86, and
+	the node degree mode is 3. The top 5 most central nodes are 1248760.ANFZ01000009_gene1227
+	(degree 1245), 1248760.ANFZ01000006_gene2345 (degree 1211), 1248760.ANFZ01000013_gene1826
+	(degree 1146), 1248760.ANFZ01000002_gene3051 (degree 1109) and 1248760.ANFZ01000018_gene712
+	(degree 1100).
 	
 
 

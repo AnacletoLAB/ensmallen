@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:25:29.887912
 
-The undirected graph road-great-britain-osm has 7733822 nodes and 8156517 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 2, the mean node degree is 2.11, and the node degree mode is 2. The top
-5 most central nodes are 7681359 (degree 8), 7496373 (degree 8), 7683064 (degree
-7), 7681378 (degree 7) and 7681348 (degree 7).
+The undirected graph road-great-britain-osm has 7733822 nodes and 8156517
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and is connected, as it has a single
+component. The graph median node degree is 2, the mean node degree is 2.11,
+and the node degree mode is 2. The top 5 most central nodes are 7681359
+(degree 8), 7496373 (degree 8), 7683064 (degree 7), 7681378 (degree 7)
+and 7681348 (degree 7).
 
 
 References
@@ -102,12 +103,13 @@ def RoadGreatBritainOsm(
 	
 	Datetime: 2021-02-06 12:25:29.887912
 	
-	The undirected graph road-great-britain-osm has 7733822 nodes and 8156517 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 2, the mean node degree is 2.11, and the node degree mode is 2. The top
-	5 most central nodes are 7681359 (degree 8), 7496373 (degree 8), 7683064 (degree
-	7), 7681378 (degree 7) and 7681348 (degree 7).
+	The undirected graph road-great-britain-osm has 7733822 nodes and 8156517
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and is connected, as it has a single
+	component. The graph median node degree is 2, the mean node degree is 2.11,
+	and the node degree mode is 2. The top 5 most central nodes are 7681359
+	(degree 8), 7496373 (degree 8), 7683064 (degree 7), 7681378 (degree 7)
+	and 7681348 (degree 7).
 	
 
 

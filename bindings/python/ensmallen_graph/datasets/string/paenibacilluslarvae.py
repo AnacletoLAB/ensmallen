@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:55.408116
 
-The undirected graph Paenibacillus larvae has 3817 nodes and 231058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03173 and
-has 40 connected components, where the component with most nodes has 3716 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 121.07, and the node degree mode is 2. The top 5 most central
-nodes are 697284.ERIC2_c18770 (degree 940), 697284.ERIC2_c07830 (degree 929), 697284.ERIC2_c34020
-(degree 928), 697284.ERIC2_c00120 (degree 910) and 697284.ERIC2_c25640 (degree 883).
+The undirected graph Paenibacillus larvae has 3817 nodes and 231058 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03173 and has 40 connected components, where the component with most
+nodes has 3716 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 95, the mean node degree is 121.07, and
+the node degree mode is 2. The top 5 most central nodes are 697284.ERIC2_c18770
+(degree 940), 697284.ERIC2_c07830 (degree 929), 697284.ERIC2_c34020 (degree
+928), 697284.ERIC2_c00120 (degree 910) and 697284.ERIC2_c25640 (degree
+883).
 
 
 References
@@ -106,13 +108,15 @@ def PaenibacillusLarvae(
 	
 	Datetime: 2021-02-02 21:32:55.408116
 	
-	The undirected graph Paenibacillus larvae has 3817 nodes and 231058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03173 and
-	has 40 connected components, where the component with most nodes has 3716 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 121.07, and the node degree mode is 2. The top 5 most central
-	nodes are 697284.ERIC2_c18770 (degree 940), 697284.ERIC2_c07830 (degree 929), 697284.ERIC2_c34020
-	(degree 928), 697284.ERIC2_c00120 (degree 910) and 697284.ERIC2_c25640 (degree 883).
+	The undirected graph Paenibacillus larvae has 3817 nodes and 231058 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03173 and has 40 connected components, where the component with most
+	nodes has 3716 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 95, the mean node degree is 121.07, and
+	the node degree mode is 2. The top 5 most central nodes are 697284.ERIC2_c18770
+	(degree 940), 697284.ERIC2_c07830 (degree 929), 697284.ERIC2_c34020 (degree
+	928), 697284.ERIC2_c00120 (degree 910) and 697284.ERIC2_c25640 (degree
+	883).
 	
 
 

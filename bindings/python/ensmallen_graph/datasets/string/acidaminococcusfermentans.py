@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:29.958775
 
-The undirected graph Acidaminococcus fermentans has 2021 nodes and 121921 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05973
-and has 3 connected components, where the component with most nodes has 2017 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 120.65, and the node degree mode is 6. The top 5
-most central nodes are 591001.Acfer_0931 (degree 803), 591001.Acfer_0443 (degree
-678), 591001.Acfer_1239 (degree 650), 591001.Acfer_0886 (degree 603) and 591001.Acfer_0481
-(degree 592).
+The undirected graph Acidaminococcus fermentans has 2021 nodes and 121921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05973 and has 3 connected components, where the component
+with most nodes has 2017 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 120.65,
+and the node degree mode is 6. The top 5 most central nodes are 591001.Acfer_0931
+(degree 803), 591001.Acfer_0443 (degree 678), 591001.Acfer_1239 (degree
+650), 591001.Acfer_0886 (degree 603) and 591001.Acfer_0481 (degree 592).
 
 
 References
@@ -107,14 +107,14 @@ def AcidaminococcusFermentans(
 	
 	Datetime: 2021-02-02 21:17:29.958775
 	
-	The undirected graph Acidaminococcus fermentans has 2021 nodes and 121921 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05973
-	and has 3 connected components, where the component with most nodes has 2017 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 120.65, and the node degree mode is 6. The top 5
-	most central nodes are 591001.Acfer_0931 (degree 803), 591001.Acfer_0443 (degree
-	678), 591001.Acfer_1239 (degree 650), 591001.Acfer_0886 (degree 603) and 591001.Acfer_0481
-	(degree 592).
+	The undirected graph Acidaminococcus fermentans has 2021 nodes and 121921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05973 and has 3 connected components, where the component
+	with most nodes has 2017 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 120.65,
+	and the node degree mode is 6. The top 5 most central nodes are 591001.Acfer_0931
+	(degree 803), 591001.Acfer_0443 (degree 678), 591001.Acfer_1239 (degree
+	650), 591001.Acfer_0886 (degree 603) and 591001.Acfer_0481 (degree 592).
 	
 
 

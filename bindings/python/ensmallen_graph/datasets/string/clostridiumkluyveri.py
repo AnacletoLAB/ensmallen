@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:32.289317
 
-The undirected graph Clostridium kluyveri has 3883 nodes and 301465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04000 and
-has 11 connected components, where the component with most nodes has 3861 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 155.27, and the node degree mode is 2. The top 5 most central
-nodes are 431943.CKL_0669 (degree 1380), 431943.CKL_2311 (degree 1366), 431943.CKL_3337
-(degree 1112), 431943.CKL_0465 (degree 1100) and 431943.CKL_2138 (degree 1011).
+The undirected graph Clostridium kluyveri has 3883 nodes and 301465 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04000 and has 11 connected components, where the component with most
+nodes has 3861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 155.27, and
+the node degree mode is 2. The top 5 most central nodes are 431943.CKL_0669
+(degree 1380), 431943.CKL_2311 (degree 1366), 431943.CKL_3337 (degree 1112),
+431943.CKL_0465 (degree 1100) and 431943.CKL_2138 (degree 1011).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumKluyveri(
 	
 	Datetime: 2021-02-02 20:48:32.289317
 	
-	The undirected graph Clostridium kluyveri has 3883 nodes and 301465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04000 and
-	has 11 connected components, where the component with most nodes has 3861 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 155.27, and the node degree mode is 2. The top 5 most central
-	nodes are 431943.CKL_0669 (degree 1380), 431943.CKL_2311 (degree 1366), 431943.CKL_3337
-	(degree 1112), 431943.CKL_0465 (degree 1100) and 431943.CKL_2138 (degree 1011).
+	The undirected graph Clostridium kluyveri has 3883 nodes and 301465 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04000 and has 11 connected components, where the component with most
+	nodes has 3861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 155.27, and
+	the node degree mode is 2. The top 5 most central nodes are 431943.CKL_0669
+	(degree 1380), 431943.CKL_2311 (degree 1366), 431943.CKL_3337 (degree 1112),
+	431943.CKL_0465 (degree 1100) and 431943.CKL_2138 (degree 1011).
 	
 
 

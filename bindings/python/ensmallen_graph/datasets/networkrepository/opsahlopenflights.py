@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:24:39.663705
 
-The undirected graph opsahl-openflights has 2939 nodes and 15677 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00363
-and has 11 connected components, where the component with most nodes has 2905 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 10.67, and the node degree mode is 1. The top 5 most
-central nodes are 53 (degree 242), 65 (degree 218), 59 (degree 211), 56 (degree 172)
-and 259 (degree 170).
+The undirected graph opsahl-openflights has 2939 nodes and 15677 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00363 and has 11 connected components, where the component with most
+nodes has 2905 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 3, the mean node degree is 10.67, and the
+node degree mode is 1. The top 5 most central nodes are 53 (degree 242),
+65 (degree 218), 59 (degree 211), 56 (degree 172) and 259 (degree 170).
 
 
 References
@@ -103,13 +103,13 @@ def OpsahlOpenflights(
 	
 	Datetime: 2021-02-06 10:24:39.663705
 	
-	The undirected graph opsahl-openflights has 2939 nodes and 15677 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00363
-	and has 11 connected components, where the component with most nodes has 2905 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 10.67, and the node degree mode is 1. The top 5 most
-	central nodes are 53 (degree 242), 65 (degree 218), 59 (degree 211), 56 (degree 172)
-	and 259 (degree 170).
+	The undirected graph opsahl-openflights has 2939 nodes and 15677 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00363 and has 11 connected components, where the component with most
+	nodes has 2905 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 3, the mean node degree is 10.67, and the
+	node degree mode is 1. The top 5 most central nodes are 53 (degree 242),
+	65 (degree 218), 59 (degree 211), 56 (degree 172) and 259 (degree 170).
 	
 
 

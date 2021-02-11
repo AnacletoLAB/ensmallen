@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:00.797816
 
-The undirected graph Gramella forsetii has 3559 nodes and 371058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05861 and
-has 13 connected components, where the component with most nodes has 3532 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 208.52, and the node degree mode is 2. The top 5 most central
-nodes are 411154.GFO_0006 (degree 1377), 411154.GFO_2999 (degree 1306), 411154.GFO_0140
-(degree 1277), 411154.GFO_1684 (degree 1115) and 411154.GFO_2705 (degree 1100).
+The undirected graph Gramella forsetii has 3559 nodes and 371058 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05861 and has 13 connected components, where the component with most
+nodes has 3532 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 208.52, and
+the node degree mode is 2. The top 5 most central nodes are 411154.GFO_0006
+(degree 1377), 411154.GFO_2999 (degree 1306), 411154.GFO_0140 (degree 1277),
+411154.GFO_1684 (degree 1115) and 411154.GFO_2705 (degree 1100).
 
 
 References
@@ -106,13 +107,14 @@ def GramellaForsetii(
 	
 	Datetime: 2021-02-02 20:45:00.797816
 	
-	The undirected graph Gramella forsetii has 3559 nodes and 371058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05861 and
-	has 13 connected components, where the component with most nodes has 3532 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 208.52, and the node degree mode is 2. The top 5 most central
-	nodes are 411154.GFO_0006 (degree 1377), 411154.GFO_2999 (degree 1306), 411154.GFO_0140
-	(degree 1277), 411154.GFO_1684 (degree 1115) and 411154.GFO_2705 (degree 1100).
+	The undirected graph Gramella forsetii has 3559 nodes and 371058 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05861 and has 13 connected components, where the component with most
+	nodes has 3532 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 208.52, and
+	the node degree mode is 2. The top 5 most central nodes are 411154.GFO_0006
+	(degree 1377), 411154.GFO_2999 (degree 1306), 411154.GFO_0140 (degree 1277),
+	411154.GFO_1684 (degree 1115) and 411154.GFO_2705 (degree 1100).
 	
 
 

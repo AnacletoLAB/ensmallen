@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:02.829145
 
-The undirected graph Methanobrevibacter ruminantium has 2159 nodes and 213877 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09181
-and has 18 connected components, where the component with most nodes has 2117 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 198.13, and the node degree mode is 3. The top 5
-most central nodes are 634498.mru_1168 (degree 766), 634498.mru_1744 (degree 731),
-634498.mru_0981 (degree 716), 634498.mru_1143 (degree 709) and 634498.mru_2089 (degree
+The undirected graph Methanobrevibacter ruminantium has 2159 nodes and
+213877 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09181 and has 18 connected components, where the
+component with most nodes has 2117 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+is 198.13, and the node degree mode is 3. The top 5 most central nodes
+are 634498.mru_1168 (degree 766), 634498.mru_1744 (degree 731), 634498.mru_0981
+(degree 716), 634498.mru_1143 (degree 709) and 634498.mru_2089 (degree
 700).
 
 
@@ -107,13 +108,14 @@ def MethanobrevibacterRuminantium(
 	
 	Datetime: 2021-02-02 21:22:02.829145
 	
-	The undirected graph Methanobrevibacter ruminantium has 2159 nodes and 213877 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09181
-	and has 18 connected components, where the component with most nodes has 2117 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 198.13, and the node degree mode is 3. The top 5
-	most central nodes are 634498.mru_1168 (degree 766), 634498.mru_1744 (degree 731),
-	634498.mru_0981 (degree 716), 634498.mru_1143 (degree 709) and 634498.mru_2089 (degree
+	The undirected graph Methanobrevibacter ruminantium has 2159 nodes and
+	213877 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09181 and has 18 connected components, where the
+	component with most nodes has 2117 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+	is 198.13, and the node degree mode is 3. The top 5 most central nodes
+	are 634498.mru_1168 (degree 766), 634498.mru_1744 (degree 731), 634498.mru_0981
+	(degree 716), 634498.mru_1143 (degree 709) and 634498.mru_2089 (degree
 	700).
 	
 

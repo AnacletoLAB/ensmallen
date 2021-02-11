@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:28:33.341155
 
-The undirected graph Mesorhizobium sp. STM4661 has 6773 nodes and 809685 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03531
-and has 70 connected components, where the component with most nodes has 6592 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 239.09, and the node degree mode is 2. The top 5
-most central nodes are 1297570.MESS4_210034 (degree 2095), 1297570.MESS4_830462 (degree
-1939), 1297570.MESS4_360071 (degree 1823), 1297570.MESS4_830490 (degree 1724) and
-1297570.MESS4_830308 (degree 1713).
+The undirected graph Mesorhizobium sp. STM4661 has 6773 nodes and 809685
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03531 and has 70 connected components, where the component
+with most nodes has 6592 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 239.09,
+and the node degree mode is 2. The top 5 most central nodes are 1297570.MESS4_210034
+(degree 2095), 1297570.MESS4_830462 (degree 1939), 1297570.MESS4_360071
+(degree 1823), 1297570.MESS4_830490 (degree 1724) and 1297570.MESS4_830308
+(degree 1713).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumSp.Stm4661(
 	
 	Datetime: 2021-02-03 21:28:33.341155
 	
-	The undirected graph Mesorhizobium sp. STM4661 has 6773 nodes and 809685 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03531
-	and has 70 connected components, where the component with most nodes has 6592 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 239.09, and the node degree mode is 2. The top 5
-	most central nodes are 1297570.MESS4_210034 (degree 2095), 1297570.MESS4_830462 (degree
-	1939), 1297570.MESS4_360071 (degree 1823), 1297570.MESS4_830490 (degree 1724) and
-	1297570.MESS4_830308 (degree 1713).
+	The undirected graph Mesorhizobium sp. STM4661 has 6773 nodes and 809685
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03531 and has 70 connected components, where the component
+	with most nodes has 6592 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 239.09,
+	and the node degree mode is 2. The top 5 most central nodes are 1297570.MESS4_210034
+	(degree 2095), 1297570.MESS4_830462 (degree 1939), 1297570.MESS4_360071
+	(degree 1823), 1297570.MESS4_830490 (degree 1724) and 1297570.MESS4_830308
+	(degree 1713).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:09.629014
 
-The undirected graph Brevibacillus panacihumi has 5254 nodes and 655167 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04748
-and has 26 connected components, where the component with most nodes has 5187 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 199, the mean node degree is 249.40, and the node degree mode is 1. The top 5
-most central nodes are 1408254.T458_09275 (degree 1988), 1408254.T458_12610 (degree
-1814), 1408254.T458_13610 (degree 1691), 1408254.T458_11195 (degree 1606) and 1408254.T458_23605
-(degree 1597).
+The undirected graph Brevibacillus panacihumi has 5254 nodes and 655167
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04748 and has 26 connected components, where the component
+with most nodes has 5187 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 249.40,
+and the node degree mode is 1. The top 5 most central nodes are 1408254.T458_09275
+(degree 1988), 1408254.T458_12610 (degree 1814), 1408254.T458_13610 (degree
+1691), 1408254.T458_11195 (degree 1606) and 1408254.T458_23605 (degree
+1597).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacillusPanacihumi(
 	
 	Datetime: 2021-02-03 22:34:09.629014
 	
-	The undirected graph Brevibacillus panacihumi has 5254 nodes and 655167 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04748
-	and has 26 connected components, where the component with most nodes has 5187 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 199, the mean node degree is 249.40, and the node degree mode is 1. The top 5
-	most central nodes are 1408254.T458_09275 (degree 1988), 1408254.T458_12610 (degree
-	1814), 1408254.T458_13610 (degree 1691), 1408254.T458_11195 (degree 1606) and 1408254.T458_23605
-	(degree 1597).
+	The undirected graph Brevibacillus panacihumi has 5254 nodes and 655167
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04748 and has 26 connected components, where the component
+	with most nodes has 5187 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 249.40,
+	and the node degree mode is 1. The top 5 most central nodes are 1408254.T458_09275
+	(degree 1988), 1408254.T458_12610 (degree 1814), 1408254.T458_13610 (degree
+	1691), 1408254.T458_11195 (degree 1606) and 1408254.T458_23605 (degree
+	1597).
 	
 
 

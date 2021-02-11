@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:37:57.124451
 
-The undirected graph soc-dolphins has 62 nodes and 159 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.08408 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 5.13, and the node degree mode is 1. The top 5 most central nodes are 15 (degree
-12), 46 (degree 11), 38 (degree 11), 34 (degree 10) and 52 (degree 10).
+The undirected graph soc-dolphins has 62 nodes and 159 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.08408 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 5.13, and the node degree mode
+is 1. The top 5 most central nodes are 15 (degree 12), 46 (degree 11),
+38 (degree 11), 34 (degree 10) and 52 (degree 10).
 
 
 References
@@ -112,11 +113,12 @@ def SocDolphins(
 	
 	Datetime: 2021-02-06 09:37:57.124451
 	
-	The undirected graph soc-dolphins has 62 nodes and 159 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.08408 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.13, and the node degree mode is 1. The top 5 most central nodes are 15 (degree
-	12), 46 (degree 11), 38 (degree 11), 34 (degree 10) and 52 (degree 10).
+	The undirected graph soc-dolphins has 62 nodes and 159 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.08408 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 5.13, and the node degree mode
+	is 1. The top 5 most central nodes are 15 (degree 12), 46 (degree 11),
+	38 (degree 11), 34 (degree 10) and 52 (degree 10).
 	
 
 

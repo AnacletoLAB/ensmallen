@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:09:43.092111
 
-The undirected graph Hyphomonas polymorpha has 3830 nodes and 386442 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05270 and
-has 10 connected components, where the component with most nodes has 3809 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 201.80, and the node degree mode is 2. The top 5 most central
-nodes are 1280954.HPO_16690 (degree 1415), 1280954.HPO_15823 (degree 1346), 1280954.HPO_07472
-(degree 1308), 1280954.HPO_05607 (degree 1300) and 1280954.HPO_06182 (degree 1294).
+The undirected graph Hyphomonas polymorpha has 3830 nodes and 386442 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05270 and has 10 connected components, where the component with most
+nodes has 3809 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 168, the mean node degree is 201.80, and
+the node degree mode is 2. The top 5 most central nodes are 1280954.HPO_16690
+(degree 1415), 1280954.HPO_15823 (degree 1346), 1280954.HPO_07472 (degree
+1308), 1280954.HPO_05607 (degree 1300) and 1280954.HPO_06182 (degree 1294).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasPolymorpha(
 	
 	Datetime: 2021-02-03 21:09:43.092111
 	
-	The undirected graph Hyphomonas polymorpha has 3830 nodes and 386442 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05270 and
-	has 10 connected components, where the component with most nodes has 3809 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 201.80, and the node degree mode is 2. The top 5 most central
-	nodes are 1280954.HPO_16690 (degree 1415), 1280954.HPO_15823 (degree 1346), 1280954.HPO_07472
-	(degree 1308), 1280954.HPO_05607 (degree 1300) and 1280954.HPO_06182 (degree 1294).
+	The undirected graph Hyphomonas polymorpha has 3830 nodes and 386442 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05270 and has 10 connected components, where the component with most
+	nodes has 3809 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 168, the mean node degree is 201.80, and
+	the node degree mode is 2. The top 5 most central nodes are 1280954.HPO_16690
+	(degree 1415), 1280954.HPO_15823 (degree 1346), 1280954.HPO_07472 (degree
+	1308), 1280954.HPO_05607 (degree 1300) and 1280954.HPO_06182 (degree 1294).
 	
 
 

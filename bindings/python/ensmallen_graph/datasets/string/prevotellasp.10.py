@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:58.852484
 
-The undirected graph Prevotella sp. 10 has 3560 nodes and 264608 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04177 and
-has 27 connected components, where the component with most nodes has 3501 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 148.66, and the node degree mode is 1. The top 5 most central
-nodes are 1158294.JOMI01000002_gene2900 (degree 1119), 1158294.JOMI01000009_gene1144
-(degree 1024), 1158294.JOMI01000002_gene3087 (degree 971), 1158294.JOMI01000007_gene458
-(degree 921) and 1158294.JOMI01000009_gene870 (degree 891).
+The undirected graph Prevotella sp. 10 has 3560 nodes and 264608 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04177 and has 27 connected components, where the component with most
+nodes has 3501 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 148.66, and
+the node degree mode is 1. The top 5 most central nodes are 1158294.JOMI01000002_gene2900
+(degree 1119), 1158294.JOMI01000009_gene1144 (degree 1024), 1158294.JOMI01000002_gene3087
+(degree 971), 1158294.JOMI01000007_gene458 (degree 921) and 1158294.JOMI01000009_gene870
+(degree 891).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaSp.10(
 	
 	Datetime: 2021-02-02 23:02:58.852484
 	
-	The undirected graph Prevotella sp. 10 has 3560 nodes and 264608 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04177 and
-	has 27 connected components, where the component with most nodes has 3501 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 148.66, and the node degree mode is 1. The top 5 most central
-	nodes are 1158294.JOMI01000002_gene2900 (degree 1119), 1158294.JOMI01000009_gene1144
-	(degree 1024), 1158294.JOMI01000002_gene3087 (degree 971), 1158294.JOMI01000007_gene458
-	(degree 921) and 1158294.JOMI01000009_gene870 (degree 891).
+	The undirected graph Prevotella sp. 10 has 3560 nodes and 264608 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04177 and has 27 connected components, where the component with most
+	nodes has 3501 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 148.66, and
+	the node degree mode is 1. The top 5 most central nodes are 1158294.JOMI01000002_gene2900
+	(degree 1119), 1158294.JOMI01000009_gene1144 (degree 1024), 1158294.JOMI01000002_gene3087
+	(degree 971), 1158294.JOMI01000007_gene458 (degree 921) and 1158294.JOMI01000009_gene870
+	(degree 891).
 	
 
 

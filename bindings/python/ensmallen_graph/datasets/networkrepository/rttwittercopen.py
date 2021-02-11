@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:32:36.027479
 
-The undirected graph rt-twitter-copen has 761 nodes and 1029 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00356 and
-is connected, as it has a single component. The graph median node degree is 1, the
-mean node degree is 2.70, and the node degree mode is 1. The top 5 most central nodes
-are 137 (degree 37), 158 (degree 35), 693 (degree 31), 358 (degree 26) and 397 (degree
-25).
+The undirected graph rt-twitter-copen has 761 nodes and 1029 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00356 and is connected, as it has a single component. The graph median
+node degree is 1, the mean node degree is 2.70, and the node degree mode
+is 1. The top 5 most central nodes are 137 (degree 37), 158 (degree 35),
+693 (degree 31), 358 (degree 26) and 397 (degree 25).
 
 
 References
@@ -110,12 +110,12 @@ def RtTwitterCopen(
 	
 	Datetime: 2021-02-06 09:32:36.027479
 	
-	The undirected graph rt-twitter-copen has 761 nodes and 1029 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00356 and
-	is connected, as it has a single component. The graph median node degree is 1, the
-	mean node degree is 2.70, and the node degree mode is 1. The top 5 most central nodes
-	are 137 (degree 37), 158 (degree 35), 693 (degree 31), 358 (degree 26) and 397 (degree
-	25).
+	The undirected graph rt-twitter-copen has 761 nodes and 1029 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00356 and is connected, as it has a single component. The graph median
+	node degree is 1, the mean node degree is 2.70, and the node degree mode
+	is 1. The top 5 most central nodes are 137 (degree 37), 158 (degree 35),
+	693 (degree 31), 358 (degree 26) and 397 (degree 25).
 	
 
 

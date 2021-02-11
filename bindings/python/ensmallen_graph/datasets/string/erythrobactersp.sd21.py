@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:45.419192
 
-The undirected graph Erythrobacter sp. SD21 has 2908 nodes and 304443 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07203 and
-has 15 connected components, where the component with most nodes has 2876 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 209.38, and the node degree mode is 5. The top 5 most central
-nodes are 161528.ED21_20654 (degree 1082), 161528.ED21_30699 (degree 919), 161528.ED21_27693
-(degree 901), 161528.ED21_18422 (degree 880) and 161528.ED21_25076 (degree 865).
+The undirected graph Erythrobacter sp. SD21 has 2908 nodes and 304443 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07203 and has 15 connected components, where the component with most
+nodes has 2876 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 209.38, and
+the node degree mode is 5. The top 5 most central nodes are 161528.ED21_20654
+(degree 1082), 161528.ED21_30699 (degree 919), 161528.ED21_27693 (degree
+901), 161528.ED21_18422 (degree 880) and 161528.ED21_25076 (degree 865).
 
 
 References
@@ -106,13 +107,14 @@ def ErythrobacterSp.Sd21(
 	
 	Datetime: 2021-02-02 19:53:45.419192
 	
-	The undirected graph Erythrobacter sp. SD21 has 2908 nodes and 304443 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07203 and
-	has 15 connected components, where the component with most nodes has 2876 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 209.38, and the node degree mode is 5. The top 5 most central
-	nodes are 161528.ED21_20654 (degree 1082), 161528.ED21_30699 (degree 919), 161528.ED21_27693
-	(degree 901), 161528.ED21_18422 (degree 880) and 161528.ED21_25076 (degree 865).
+	The undirected graph Erythrobacter sp. SD21 has 2908 nodes and 304443 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07203 and has 15 connected components, where the component with most
+	nodes has 2876 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 209.38, and
+	the node degree mode is 5. The top 5 most central nodes are 161528.ED21_20654
+	(degree 1082), 161528.ED21_30699 (degree 919), 161528.ED21_27693 (degree
+	901), 161528.ED21_18422 (degree 880) and 161528.ED21_25076 (degree 865).
 	
 
 

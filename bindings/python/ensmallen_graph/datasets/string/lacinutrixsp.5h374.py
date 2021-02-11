@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:41.646466
 
-The undirected graph Lacinutrix sp. 5H374 has 2961 nodes and 274073 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06254 and
-has 5 connected components, where the component with most nodes has 2952 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 185.12, and the node degree mode is 9. The top 5 most central
-nodes are 983544.Lacal_0528 (degree 1155), 983544.Lacal_0686 (degree 1082), 983544.Lacal_0869
-(degree 919), 983544.Lacal_2813 (degree 891) and 983544.Lacal_1511 (degree 878).
+The undirected graph Lacinutrix sp. 5H374 has 2961 nodes and 274073 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06254 and has 5 connected components, where the component with most
+nodes has 2952 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 185.12, and
+the node degree mode is 9. The top 5 most central nodes are 983544.Lacal_0528
+(degree 1155), 983544.Lacal_0686 (degree 1082), 983544.Lacal_0869 (degree
+919), 983544.Lacal_2813 (degree 891) and 983544.Lacal_1511 (degree 878).
 
 
 References
@@ -106,13 +107,14 @@ def LacinutrixSp.5h374(
 	
 	Datetime: 2021-02-02 22:03:41.646466
 	
-	The undirected graph Lacinutrix sp. 5H374 has 2961 nodes and 274073 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06254 and
-	has 5 connected components, where the component with most nodes has 2952 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 185.12, and the node degree mode is 9. The top 5 most central
-	nodes are 983544.Lacal_0528 (degree 1155), 983544.Lacal_0686 (degree 1082), 983544.Lacal_0869
-	(degree 919), 983544.Lacal_2813 (degree 891) and 983544.Lacal_1511 (degree 878).
+	The undirected graph Lacinutrix sp. 5H374 has 2961 nodes and 274073 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06254 and has 5 connected components, where the component with most
+	nodes has 2952 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 185.12, and
+	the node degree mode is 9. The top 5 most central nodes are 983544.Lacal_0528
+	(degree 1155), 983544.Lacal_0686 (degree 1082), 983544.Lacal_0869 (degree
+	919), 983544.Lacal_2813 (degree 891) and 983544.Lacal_1511 (degree 878).
 	
 
 

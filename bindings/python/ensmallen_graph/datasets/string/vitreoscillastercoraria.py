@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:48.784276
 
-The undirected graph Vitreoscilla stercoraria has 2419 nodes and 185361 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06338
-and has 8 connected components, where the component with most nodes has 2387 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 153.25, and the node degree mode is 7. The top 5
-most central nodes are 1123499.KB908022_gene1107 (degree 963), 1123499.KB908033_gene373
-(degree 814), 1123499.KB908023_gene1204 (degree 793), 1123499.KB908024_gene1471 (degree
-689) and 1123499.KB908023_gene1234 (degree 685).
+The undirected graph Vitreoscilla stercoraria has 2419 nodes and 185361
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06338 and has 8 connected components, where the component
+with most nodes has 2387 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 153.25,
+and the node degree mode is 7. The top 5 most central nodes are 1123499.KB908022_gene1107
+(degree 963), 1123499.KB908033_gene373 (degree 814), 1123499.KB908023_gene1204
+(degree 793), 1123499.KB908024_gene1471 (degree 689) and 1123499.KB908023_gene1234
+(degree 685).
 
 
 References
@@ -107,14 +108,15 @@ def VitreoscillaStercoraria(
 	
 	Datetime: 2021-02-02 22:52:48.784276
 	
-	The undirected graph Vitreoscilla stercoraria has 2419 nodes and 185361 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06338
-	and has 8 connected components, where the component with most nodes has 2387 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 153.25, and the node degree mode is 7. The top 5
-	most central nodes are 1123499.KB908022_gene1107 (degree 963), 1123499.KB908033_gene373
-	(degree 814), 1123499.KB908023_gene1204 (degree 793), 1123499.KB908024_gene1471 (degree
-	689) and 1123499.KB908023_gene1234 (degree 685).
+	The undirected graph Vitreoscilla stercoraria has 2419 nodes and 185361
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06338 and has 8 connected components, where the component
+	with most nodes has 2387 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 153.25,
+	and the node degree mode is 7. The top 5 most central nodes are 1123499.KB908022_gene1107
+	(degree 963), 1123499.KB908033_gene373 (degree 814), 1123499.KB908023_gene1204
+	(degree 793), 1123499.KB908024_gene1471 (degree 689) and 1123499.KB908023_gene1234
+	(degree 685).
 	
 
 

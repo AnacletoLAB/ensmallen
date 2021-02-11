@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:08.164741
 
-The undirected graph Castellaniella defragrans has 3589 nodes and 271459 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04216
-and has 5 connected components, where the component with most nodes has 3580 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 151.27, and the node degree mode is 3. The top 5
-most central nodes are 1437824.BN940_12651 (degree 1344), 1437824.BN940_00311 (degree
-1015), 1437824.BN940_10991 (degree 979), 1437824.BN940_06636 (degree 942) and 1437824.BN940_11006
-(degree 913).
+The undirected graph Castellaniella defragrans has 3589 nodes and 271459
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04216 and has 5 connected components, where the component
+with most nodes has 3580 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 151.27,
+and the node degree mode is 3. The top 5 most central nodes are 1437824.BN940_12651
+(degree 1344), 1437824.BN940_00311 (degree 1015), 1437824.BN940_10991 (degree
+979), 1437824.BN940_06636 (degree 942) and 1437824.BN940_11006 (degree
+913).
 
 
 References
@@ -107,14 +108,15 @@ def CastellaniellaDefragrans(
 	
 	Datetime: 2021-02-03 22:56:08.164741
 	
-	The undirected graph Castellaniella defragrans has 3589 nodes and 271459 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04216
-	and has 5 connected components, where the component with most nodes has 3580 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 151.27, and the node degree mode is 3. The top 5
-	most central nodes are 1437824.BN940_12651 (degree 1344), 1437824.BN940_00311 (degree
-	1015), 1437824.BN940_10991 (degree 979), 1437824.BN940_06636 (degree 942) and 1437824.BN940_11006
-	(degree 913).
+	The undirected graph Castellaniella defragrans has 3589 nodes and 271459
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04216 and has 5 connected components, where the component
+	with most nodes has 3580 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 151.27,
+	and the node degree mode is 3. The top 5 most central nodes are 1437824.BN940_12651
+	(degree 1344), 1437824.BN940_00311 (degree 1015), 1437824.BN940_10991 (degree
+	979), 1437824.BN940_06636 (degree 942) and 1437824.BN940_11006 (degree
+	913).
 	
 
 

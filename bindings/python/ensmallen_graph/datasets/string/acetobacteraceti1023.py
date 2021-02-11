@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:52.044686
 
-The undirected graph Acetobacter aceti 1023 has 2573 nodes and 1397938 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.42248
-and has 12 connected components, where the component with most nodes has 2545 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 1331, the mean node degree is 1086.62, and the node degree mode is 3. The top
-5 most central nodes are 1457393.AZ09_08350 (degree 1973), 1457393.AZ09_10040 (degree
-1950), 1457393.AZ09_02750 (degree 1949), 1457393.AZ09_05795 (degree 1937) and 1457393.AZ09_13125
-(degree 1937).
+The undirected graph Acetobacter aceti 1023 has 2573 nodes and 1397938
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.42248 and has 12 connected components, where the
+component with most nodes has 2545 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 1331, the mean node
+degree is 1086.62, and the node degree mode is 3. The top 5 most central
+nodes are 1457393.AZ09_08350 (degree 1973), 1457393.AZ09_10040 (degree
+1950), 1457393.AZ09_02750 (degree 1949), 1457393.AZ09_05795 (degree 1937)
+and 1457393.AZ09_13125 (degree 1937).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterAceti1023(
 	
 	Datetime: 2021-02-03 23:06:52.044686
 	
-	The undirected graph Acetobacter aceti 1023 has 2573 nodes and 1397938 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.42248
-	and has 12 connected components, where the component with most nodes has 2545 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1331, the mean node degree is 1086.62, and the node degree mode is 3. The top
-	5 most central nodes are 1457393.AZ09_08350 (degree 1973), 1457393.AZ09_10040 (degree
-	1950), 1457393.AZ09_02750 (degree 1949), 1457393.AZ09_05795 (degree 1937) and 1457393.AZ09_13125
-	(degree 1937).
+	The undirected graph Acetobacter aceti 1023 has 2573 nodes and 1397938
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.42248 and has 12 connected components, where the
+	component with most nodes has 2545 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 1331, the mean node
+	degree is 1086.62, and the node degree mode is 3. The top 5 most central
+	nodes are 1457393.AZ09_08350 (degree 1973), 1457393.AZ09_10040 (degree
+	1950), 1457393.AZ09_02750 (degree 1949), 1457393.AZ09_05795 (degree 1937)
+	and 1457393.AZ09_13125 (degree 1937).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:25.939041
 
-The undirected graph Lactobacillus helveticus DPC4571 has 1583 nodes and 90051 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07192
-and has 9 connected components, where the component with most nodes has 1566 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 113.77, and the node degree mode is 1. The top 5 most
-central nodes are 405566.lhv_1617 (degree 741), 405566.lhv_1336 (degree 560), 405566.lhv_1402
-(degree 558), 405566.lhv_0713 (degree 510) and 405566.lhv_1404 (degree 491).
+The undirected graph Lactobacillus helveticus DPC4571 has 1583 nodes and
+90051 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07192 and has 9 connected components, where the
+component with most nodes has 1566 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 113.77, and the node degree mode is 1. The top 5 most central nodes
+are 405566.lhv_1617 (degree 741), 405566.lhv_1336 (degree 560), 405566.lhv_1402
+(degree 558), 405566.lhv_0713 (degree 510) and 405566.lhv_1404 (degree
+491).
 
 
 References
@@ -106,13 +108,15 @@ def LactobacillusHelveticusDpc4571(
 	
 	Datetime: 2021-02-02 20:44:25.939041
 	
-	The undirected graph Lactobacillus helveticus DPC4571 has 1583 nodes and 90051 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07192
-	and has 9 connected components, where the component with most nodes has 1566 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 113.77, and the node degree mode is 1. The top 5 most
-	central nodes are 405566.lhv_1617 (degree 741), 405566.lhv_1336 (degree 560), 405566.lhv_1402
-	(degree 558), 405566.lhv_0713 (degree 510) and 405566.lhv_1404 (degree 491).
+	The undirected graph Lactobacillus helveticus DPC4571 has 1583 nodes and
+	90051 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07192 and has 9 connected components, where the
+	component with most nodes has 1566 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 113.77, and the node degree mode is 1. The top 5 most central nodes
+	are 405566.lhv_1617 (degree 741), 405566.lhv_1336 (degree 560), 405566.lhv_1402
+	(degree 558), 405566.lhv_0713 (degree 510) and 405566.lhv_1404 (degree
+	491).
 	
 
 

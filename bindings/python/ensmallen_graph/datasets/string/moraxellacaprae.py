@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:59.817832
 
-The undirected graph Moraxella caprae has 2371 nodes and 166972 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05943 and
-has 10 connected components, where the component with most nodes has 2350 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 140.85, and the node degree mode is 1. The top 5 most central
-nodes are 1122244.AUGF01000026_gene587 (degree 856), 1122244.AUGF01000001_gene1828
-(degree 808), 1122244.AUGF01000029_gene1701 (degree 769), 1122244.AUGF01000008_gene162
-(degree 750) and 1122244.AUGF01000049_gene1969 (degree 709).
+The undirected graph Moraxella caprae has 2371 nodes and 166972 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05943 and has 10 connected components, where the component with most
+nodes has 2350 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 140.85, and
+the node degree mode is 1. The top 5 most central nodes are 1122244.AUGF01000026_gene587
+(degree 856), 1122244.AUGF01000001_gene1828 (degree 808), 1122244.AUGF01000029_gene1701
+(degree 769), 1122244.AUGF01000008_gene162 (degree 750) and 1122244.AUGF01000049_gene1969
+(degree 709).
 
 
 References
@@ -107,14 +108,15 @@ def MoraxellaCaprae(
 	
 	Datetime: 2021-02-02 22:42:59.817832
 	
-	The undirected graph Moraxella caprae has 2371 nodes and 166972 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05943 and
-	has 10 connected components, where the component with most nodes has 2350 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 140.85, and the node degree mode is 1. The top 5 most central
-	nodes are 1122244.AUGF01000026_gene587 (degree 856), 1122244.AUGF01000001_gene1828
-	(degree 808), 1122244.AUGF01000029_gene1701 (degree 769), 1122244.AUGF01000008_gene162
-	(degree 750) and 1122244.AUGF01000049_gene1969 (degree 709).
+	The undirected graph Moraxella caprae has 2371 nodes and 166972 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05943 and has 10 connected components, where the component with most
+	nodes has 2350 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 140.85, and
+	the node degree mode is 1. The top 5 most central nodes are 1122244.AUGF01000026_gene587
+	(degree 856), 1122244.AUGF01000001_gene1828 (degree 808), 1122244.AUGF01000029_gene1701
+	(degree 769), 1122244.AUGF01000008_gene162 (degree 750) and 1122244.AUGF01000049_gene1969
+	(degree 709).
 	
 
 

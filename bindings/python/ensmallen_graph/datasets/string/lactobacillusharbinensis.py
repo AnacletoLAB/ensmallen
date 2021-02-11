@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:08.764029
 
-The undirected graph Lactobacillus harbinensis has 2927 nodes and 208005 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04857
-and has 11 connected components, where the component with most nodes has 2904 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 142.13, and the node degree mode is 2. The top 5
-most central nodes are 1122147.AUEH01000047_gene2952 (degree 1134), 1122147.AUEH01000003_gene259
-(degree 1013), 1122147.AUEH01000025_gene1936 (degree 976), 1122147.AUEH01000020_gene1170
-(degree 861) and 1122147.AUEH01000013_gene2084 (degree 801).
+The undirected graph Lactobacillus harbinensis has 2927 nodes and 208005
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04857 and has 11 connected components, where the component
+with most nodes has 2904 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 142.13,
+and the node degree mode is 2. The top 5 most central nodes are 1122147.AUEH01000047_gene2952
+(degree 1134), 1122147.AUEH01000003_gene259 (degree 1013), 1122147.AUEH01000025_gene1936
+(degree 976), 1122147.AUEH01000020_gene1170 (degree 861) and 1122147.AUEH01000013_gene2084
+(degree 801).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusHarbinensis(
 	
 	Datetime: 2021-02-02 22:41:08.764029
 	
-	The undirected graph Lactobacillus harbinensis has 2927 nodes and 208005 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04857
-	and has 11 connected components, where the component with most nodes has 2904 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 142.13, and the node degree mode is 2. The top 5
-	most central nodes are 1122147.AUEH01000047_gene2952 (degree 1134), 1122147.AUEH01000003_gene259
-	(degree 1013), 1122147.AUEH01000025_gene1936 (degree 976), 1122147.AUEH01000020_gene1170
-	(degree 861) and 1122147.AUEH01000013_gene2084 (degree 801).
+	The undirected graph Lactobacillus harbinensis has 2927 nodes and 208005
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04857 and has 11 connected components, where the component
+	with most nodes has 2904 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 142.13,
+	and the node degree mode is 2. The top 5 most central nodes are 1122147.AUEH01000047_gene2952
+	(degree 1134), 1122147.AUEH01000003_gene259 (degree 1013), 1122147.AUEH01000025_gene1936
+	(degree 976), 1122147.AUEH01000020_gene1170 (degree 861) and 1122147.AUEH01000013_gene2084
+	(degree 801).
 	
 
 

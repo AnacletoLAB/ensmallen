@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:16.206087
 
-The undirected graph Facklamia sourekii has 1917 nodes and 133881 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07290 and
-has 9 connected components, where the component with most nodes has 1899 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 139.68, and the node degree mode is 1. The top 5 most central
-nodes are 1408438.JADD01000031_gene1308 (degree 831), 1408438.JADD01000002_gene310
-(degree 831), 1408438.JADD01000027_gene899 (degree 786), 1408438.JADD01000003_gene158
-(degree 722) and 1408438.JADD01000023_gene22 (degree 655).
+The undirected graph Facklamia sourekii has 1917 nodes and 133881 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07290 and has 9 connected components, where the component with most
+nodes has 1899 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 139.68, and
+the node degree mode is 1. The top 5 most central nodes are 1408438.JADD01000031_gene1308
+(degree 831), 1408438.JADD01000002_gene310 (degree 831), 1408438.JADD01000027_gene899
+(degree 786), 1408438.JADD01000003_gene158 (degree 722) and 1408438.JADD01000023_gene22
+(degree 655).
 
 
 References
@@ -107,14 +108,15 @@ def FacklamiaSourekii(
 	
 	Datetime: 2021-02-03 22:37:16.206087
 	
-	The undirected graph Facklamia sourekii has 1917 nodes and 133881 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07290 and
-	has 9 connected components, where the component with most nodes has 1899 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 139.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1408438.JADD01000031_gene1308 (degree 831), 1408438.JADD01000002_gene310
-	(degree 831), 1408438.JADD01000027_gene899 (degree 786), 1408438.JADD01000003_gene158
-	(degree 722) and 1408438.JADD01000023_gene22 (degree 655).
+	The undirected graph Facklamia sourekii has 1917 nodes and 133881 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07290 and has 9 connected components, where the component with most
+	nodes has 1899 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 139.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1408438.JADD01000031_gene1308
+	(degree 831), 1408438.JADD01000002_gene310 (degree 831), 1408438.JADD01000027_gene899
+	(degree 786), 1408438.JADD01000003_gene158 (degree 722) and 1408438.JADD01000023_gene22
+	(degree 655).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:02.967315
 
-The undirected graph Vagococcus lutrae has 1733 nodes and 144851 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09652 and
-has 3 connected components, where the component with most nodes has 1729 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 167.17, and the node degree mode is 5. The top 5 most central
-nodes are 1408226.T233_00265 (degree 846), 1408226.T233_01587 (degree 718), 1408226.T233_00840
-(degree 656), 1408226.T233_01299 (degree 654) and 1408226.T233_00984 (degree 617).
+The undirected graph Vagococcus lutrae has 1733 nodes and 144851 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09652 and has 3 connected components, where the component with most
+nodes has 1729 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 167.17, and
+the node degree mode is 5. The top 5 most central nodes are 1408226.T233_00265
+(degree 846), 1408226.T233_01587 (degree 718), 1408226.T233_00840 (degree
+656), 1408226.T233_01299 (degree 654) and 1408226.T233_00984 (degree 617).
 
 
 References
@@ -106,13 +107,14 @@ def VagococcusLutrae(
 	
 	Datetime: 2021-02-03 22:34:02.967315
 	
-	The undirected graph Vagococcus lutrae has 1733 nodes and 144851 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09652 and
-	has 3 connected components, where the component with most nodes has 1729 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 167.17, and the node degree mode is 5. The top 5 most central
-	nodes are 1408226.T233_00265 (degree 846), 1408226.T233_01587 (degree 718), 1408226.T233_00840
-	(degree 656), 1408226.T233_01299 (degree 654) and 1408226.T233_00984 (degree 617).
+	The undirected graph Vagococcus lutrae has 1733 nodes and 144851 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09652 and has 3 connected components, where the component with most
+	nodes has 1729 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 167.17, and
+	the node degree mode is 5. The top 5 most central nodes are 1408226.T233_00265
+	(degree 846), 1408226.T233_01587 (degree 718), 1408226.T233_00840 (degree
+	656), 1408226.T233_01299 (degree 654) and 1408226.T233_00984 (degree 617).
 	
 
 

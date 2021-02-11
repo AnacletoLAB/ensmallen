@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:01.601036
 
-The undirected graph Corynebacterium ciconiae has 2152 nodes and 159179 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06878
-and has 13 connected components, where the component with most nodes has 2123 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 147.94, and the node degree mode is 2. The top 5
-most central nodes are 1121356.AQUW01000001_gene1332 (degree 973), 1121356.AQUW01000005_gene1824
-(degree 857), 1121356.AQUW01000003_gene373 (degree 715), 1121356.AQUW01000001_gene1241
-(degree 694) and 1121356.AQUW01000005_gene1803 (degree 683).
+The undirected graph Corynebacterium ciconiae has 2152 nodes and 159179
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06878 and has 13 connected components, where the component
+with most nodes has 2123 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 147.94,
+and the node degree mode is 2. The top 5 most central nodes are 1121356.AQUW01000001_gene1332
+(degree 973), 1121356.AQUW01000005_gene1824 (degree 857), 1121356.AQUW01000003_gene373
+(degree 715), 1121356.AQUW01000001_gene1241 (degree 694) and 1121356.AQUW01000005_gene1803
+(degree 683).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumCiconiae(
 	
 	Datetime: 2021-02-02 22:35:01.601036
 	
-	The undirected graph Corynebacterium ciconiae has 2152 nodes and 159179 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06878
-	and has 13 connected components, where the component with most nodes has 2123 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 147.94, and the node degree mode is 2. The top 5
-	most central nodes are 1121356.AQUW01000001_gene1332 (degree 973), 1121356.AQUW01000005_gene1824
-	(degree 857), 1121356.AQUW01000003_gene373 (degree 715), 1121356.AQUW01000001_gene1241
-	(degree 694) and 1121356.AQUW01000005_gene1803 (degree 683).
+	The undirected graph Corynebacterium ciconiae has 2152 nodes and 159179
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06878 and has 13 connected components, where the component
+	with most nodes has 2123 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 147.94,
+	and the node degree mode is 2. The top 5 most central nodes are 1121356.AQUW01000001_gene1332
+	(degree 973), 1121356.AQUW01000005_gene1824 (degree 857), 1121356.AQUW01000003_gene373
+	(degree 715), 1121356.AQUW01000001_gene1241 (degree 694) and 1121356.AQUW01000005_gene1803
+	(degree 683).
 	
 
 

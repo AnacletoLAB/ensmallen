@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:08.137636
 
-The undirected graph Acaricomes phytoseiuli has 2133 nodes and 147365 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06481 and
-has 3 connected components, where the component with most nodes has 2129 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 138.18, and the node degree mode is 3. The top 5 most central
-nodes are 1120917.AQXM01000060_gene1105 (degree 817), 1120917.AQXM01000055_gene1645
-(degree 805), 1120917.AQXM01000045_gene162 (degree 787), 1120917.AQXM01000059_gene594
-(degree 731) and 1120917.AQXM01000054_gene1679 (degree 704).
+The undirected graph Acaricomes phytoseiuli has 2133 nodes and 147365 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06481 and has 3 connected components, where the component with most
+nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 138.18, and
+the node degree mode is 3. The top 5 most central nodes are 1120917.AQXM01000060_gene1105
+(degree 817), 1120917.AQXM01000055_gene1645 (degree 805), 1120917.AQXM01000045_gene162
+(degree 787), 1120917.AQXM01000059_gene594 (degree 731) and 1120917.AQXM01000054_gene1679
+(degree 704).
 
 
 References
@@ -107,14 +108,15 @@ def AcaricomesPhytoseiuli(
 	
 	Datetime: 2021-02-02 22:29:08.137636
 	
-	The undirected graph Acaricomes phytoseiuli has 2133 nodes and 147365 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06481 and
-	has 3 connected components, where the component with most nodes has 2129 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 138.18, and the node degree mode is 3. The top 5 most central
-	nodes are 1120917.AQXM01000060_gene1105 (degree 817), 1120917.AQXM01000055_gene1645
-	(degree 805), 1120917.AQXM01000045_gene162 (degree 787), 1120917.AQXM01000059_gene594
-	(degree 731) and 1120917.AQXM01000054_gene1679 (degree 704).
+	The undirected graph Acaricomes phytoseiuli has 2133 nodes and 147365 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06481 and has 3 connected components, where the component with most
+	nodes has 2129 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 138.18, and
+	the node degree mode is 3. The top 5 most central nodes are 1120917.AQXM01000060_gene1105
+	(degree 817), 1120917.AQXM01000055_gene1645 (degree 805), 1120917.AQXM01000045_gene162
+	(degree 787), 1120917.AQXM01000059_gene594 (degree 731) and 1120917.AQXM01000054_gene1679
+	(degree 704).
 	
 
 

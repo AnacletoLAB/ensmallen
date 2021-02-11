@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:14:15.469846
 
-The undirected graph pct20stif has 52329 nodes and 1375396 unweighted edges, of which
-52329 are self-loops. The graph is quite sparse as it has a density of 0.00099 and
-is connected, as it has a single component. The graph median node degree is 54, the
-mean node degree is 51.57, and the node degree mode is 54. The top 5 most central
-nodes are 50489 (degree 207), 50488 (degree 207), 50486 (degree 207), 50485 (degree
-207) and 50484 (degree 207).
+The undirected graph pct20stif has 52329 nodes and 1375396 unweighted edges,
+of which 52329 are self-loops. The graph is quite sparse as it has a density
+of 0.00099 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 51.57, and the node degree mode
+is 54. The top 5 most central nodes are 50489 (degree 207), 50488 (degree
+207), 50486 (degree 207), 50485 (degree 207) and 50484 (degree 207).
 
 
 References
@@ -102,12 +102,12 @@ def Pct20stif(
 	
 	Datetime: 2021-02-06 12:14:15.469846
 	
-	The undirected graph pct20stif has 52329 nodes and 1375396 unweighted edges, of which
-	52329 are self-loops. The graph is quite sparse as it has a density of 0.00099 and
-	is connected, as it has a single component. The graph median node degree is 54, the
-	mean node degree is 51.57, and the node degree mode is 54. The top 5 most central
-	nodes are 50489 (degree 207), 50488 (degree 207), 50486 (degree 207), 50485 (degree
-	207) and 50484 (degree 207).
+	The undirected graph pct20stif has 52329 nodes and 1375396 unweighted edges,
+	of which 52329 are self-loops. The graph is quite sparse as it has a density
+	of 0.00099 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 51.57, and the node degree mode
+	is 54. The top 5 most central nodes are 50489 (degree 207), 50488 (degree
+	207), 50486 (degree 207), 50485 (degree 207) and 50484 (degree 207).
 	
 
 

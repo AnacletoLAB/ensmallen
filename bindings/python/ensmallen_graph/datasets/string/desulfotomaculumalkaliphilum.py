@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:19.988520
 
-The undirected graph Desulfotomaculum alkaliphilum has 2635 nodes and 170460 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04912
-and has 18 connected components, where the component with most nodes has 2589 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 129.38, and the node degree mode is 2. The top 5
-most central nodes are 1121423.JONT01000023_gene274 (degree 1035), 1121423.JONT01000008_gene800
-(degree 954), 1121423.JONT01000022_gene78 (degree 824), 1121423.JONT01000004_gene1665
-(degree 818) and 1121423.JONT01000001_gene1965 (degree 760).
+The undirected graph Desulfotomaculum alkaliphilum has 2635 nodes and 170460
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04912 and has 18 connected components, where the component
+with most nodes has 2589 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 129.38,
+and the node degree mode is 2. The top 5 most central nodes are 1121423.JONT01000023_gene274
+(degree 1035), 1121423.JONT01000008_gene800 (degree 954), 1121423.JONT01000022_gene78
+(degree 824), 1121423.JONT01000004_gene1665 (degree 818) and 1121423.JONT01000001_gene1965
+(degree 760).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfotomaculumAlkaliphilum(
 	
 	Datetime: 2021-02-02 22:36:19.988520
 	
-	The undirected graph Desulfotomaculum alkaliphilum has 2635 nodes and 170460 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04912
-	and has 18 connected components, where the component with most nodes has 2589 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 129.38, and the node degree mode is 2. The top 5
-	most central nodes are 1121423.JONT01000023_gene274 (degree 1035), 1121423.JONT01000008_gene800
-	(degree 954), 1121423.JONT01000022_gene78 (degree 824), 1121423.JONT01000004_gene1665
-	(degree 818) and 1121423.JONT01000001_gene1965 (degree 760).
+	The undirected graph Desulfotomaculum alkaliphilum has 2635 nodes and 170460
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04912 and has 18 connected components, where the component
+	with most nodes has 2589 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 129.38,
+	and the node degree mode is 2. The top 5 most central nodes are 1121423.JONT01000023_gene274
+	(degree 1035), 1121423.JONT01000008_gene800 (degree 954), 1121423.JONT01000022_gene78
+	(degree 824), 1121423.JONT01000004_gene1665 (degree 818) and 1121423.JONT01000001_gene1965
+	(degree 760).
 	
 
 

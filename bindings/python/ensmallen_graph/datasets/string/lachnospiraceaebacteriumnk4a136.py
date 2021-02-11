@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:48.548400
 
-The undirected graph Lachnospiraceae bacterium NK4A136 has 2430 nodes and 180603
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06120 and has 12 connected components, where the component with most nodes has
-2404 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 122, the mean node degree is 148.64, and the node degree mode is 3. The
-top 5 most central nodes are 877420.ATVW01000002_gene1235 (degree 1018), 877420.ATVW01000001_gene2191
+The undirected graph Lachnospiraceae bacterium NK4A136 has 2430 nodes and
+180603 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06120 and has 12 connected components, where the
+component with most nodes has 2404 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 148.64, and the node degree mode is 3. The top 5 most central nodes
+are 877420.ATVW01000002_gene1235 (degree 1018), 877420.ATVW01000001_gene2191
 (degree 993), 877420.ATVW01000010_gene2323 (degree 740), 877420.ATVW01000039_gene51
 (degree 735) and 877420.ATVW01000016_gene2424 (degree 735).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumNk4a136(
 	
 	Datetime: 2021-02-02 21:49:48.548400
 	
-	The undirected graph Lachnospiraceae bacterium NK4A136 has 2430 nodes and 180603
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06120 and has 12 connected components, where the component with most nodes has
-	2404 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 122, the mean node degree is 148.64, and the node degree mode is 3. The
-	top 5 most central nodes are 877420.ATVW01000002_gene1235 (degree 1018), 877420.ATVW01000001_gene2191
+	The undirected graph Lachnospiraceae bacterium NK4A136 has 2430 nodes and
+	180603 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06120 and has 12 connected components, where the
+	component with most nodes has 2404 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 148.64, and the node degree mode is 3. The top 5 most central nodes
+	are 877420.ATVW01000002_gene1235 (degree 1018), 877420.ATVW01000001_gene2191
 	(degree 993), 877420.ATVW01000010_gene2323 (degree 740), 877420.ATVW01000039_gene51
 	(degree 735) and 877420.ATVW01000016_gene2424 (degree 735).
 	

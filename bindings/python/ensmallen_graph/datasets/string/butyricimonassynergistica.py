@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:54.418216
 
-The undirected graph Butyricimonas synergistica has 3602 nodes and 394477 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06083
-and has 15 connected components, where the component with most nodes has 3569 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 219.03, and the node degree mode is 8. The top 5
-most central nodes are 1121129.KB903370_gene132 (degree 1284), 1121129.KB903360_gene3437
-(degree 1098), 1121129.KB903359_gene2042 (degree 966), 1121129.KB903368_gene651 (degree
-898) and 1121129.KB903367_gene2715 (degree 894).
+The undirected graph Butyricimonas synergistica has 3602 nodes and 394477
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06083 and has 15 connected components, where the component
+with most nodes has 3569 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 219.03,
+and the node degree mode is 8. The top 5 most central nodes are 1121129.KB903370_gene132
+(degree 1284), 1121129.KB903360_gene3437 (degree 1098), 1121129.KB903359_gene2042
+(degree 966), 1121129.KB903368_gene651 (degree 898) and 1121129.KB903367_gene2715
+(degree 894).
 
 
 References
@@ -107,14 +108,15 @@ def ButyricimonasSynergistica(
 	
 	Datetime: 2021-02-02 22:33:54.418216
 	
-	The undirected graph Butyricimonas synergistica has 3602 nodes and 394477 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06083
-	and has 15 connected components, where the component with most nodes has 3569 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 219.03, and the node degree mode is 8. The top 5
-	most central nodes are 1121129.KB903370_gene132 (degree 1284), 1121129.KB903360_gene3437
-	(degree 1098), 1121129.KB903359_gene2042 (degree 966), 1121129.KB903368_gene651 (degree
-	898) and 1121129.KB903367_gene2715 (degree 894).
+	The undirected graph Butyricimonas synergistica has 3602 nodes and 394477
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06083 and has 15 connected components, where the component
+	with most nodes has 3569 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 219.03,
+	and the node degree mode is 8. The top 5 most central nodes are 1121129.KB903370_gene132
+	(degree 1284), 1121129.KB903360_gene3437 (degree 1098), 1121129.KB903359_gene2042
+	(degree 966), 1121129.KB903368_gene651 (degree 898) and 1121129.KB903367_gene2715
+	(degree 894).
 	
 
 

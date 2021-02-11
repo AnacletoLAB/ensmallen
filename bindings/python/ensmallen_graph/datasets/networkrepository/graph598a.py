@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:57:12.654339
 
-The undirected graph 598a has 110971 nodes and 741934 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00012 and
-is connected, as it has a single component. The graph median node degree is 14, the
-mean node degree is 13.37 and the node degree mode is 15. The top 5 most central
-nodes are 1238 (degree 26), 42403 (degree 23), 53011 (degree 23), 541 (degree 23)
-and 37678 (degree 22).
+The undirected graph 598a has 110971 nodes and 741934 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00012 and is connected, as it has a single component. The graph median
+node degree is 14, the mean node degree is 13.37 and the node degree mode
+is 15. The top 5 most central nodes are 1238 (degree 26), 42403 (degree
+23), 53011 (degree 23), 541 (degree 23) and 37678 (degree 22).
 
 
 References
@@ -102,12 +102,12 @@ def Graph598a(
 	
 	Datetime: 2021-02-03 22:57:12.654339
 	
-	The undirected graph 598a has 110971 nodes and 741934 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00012 and
-	is connected, as it has a single component. The graph median node degree is 14, the
-	mean node degree is 13.37 and the node degree mode is 15. The top 5 most central
-	nodes are 1238 (degree 26), 42403 (degree 23), 53011 (degree 23), 541 (degree 23)
-	and 37678 (degree 22).
+	The undirected graph 598a has 110971 nodes and 741934 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00012 and is connected, as it has a single component. The graph median
+	node degree is 14, the mean node degree is 13.37 and the node degree mode
+	is 15. The top 5 most central nodes are 1238 (degree 26), 42403 (degree
+	23), 53011 (degree 23), 541 (degree 23) and 37678 (degree 22).
 	
 
 

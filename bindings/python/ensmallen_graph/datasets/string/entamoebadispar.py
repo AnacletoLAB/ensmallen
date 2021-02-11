@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:58.133544
 
-The undirected graph Entamoeba dispar has 4792 nodes and 807761 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07037 and
-has 44 connected components, where the component with most nodes has 4702 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 263,
-the mean node degree is 337.13, and the node degree mode is 1. The top 5 most central
-nodes are 46681.XP_001738125.1 (degree 1953), 46681.XP_001736754.1 (degree 1939),
-46681.XP_001733645.1 (degree 1894), 46681.XP_001741114.1 (degree 1832) and 46681.XP_001735408.1
+The undirected graph Entamoeba dispar has 4792 nodes and 807761 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07037 and has 44 connected components, where the component with most
+nodes has 4702 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 263, the mean node degree is 337.13, and
+the node degree mode is 1. The top 5 most central nodes are 46681.XP_001738125.1
+(degree 1953), 46681.XP_001736754.1 (degree 1939), 46681.XP_001733645.1
+(degree 1894), 46681.XP_001741114.1 (degree 1832) and 46681.XP_001735408.1
 (degree 1788).
 
 
@@ -107,13 +108,14 @@ def EntamoebaDispar(
 	
 	Datetime: 2021-02-02 18:15:58.133544
 	
-	The undirected graph Entamoeba dispar has 4792 nodes and 807761 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07037 and
-	has 44 connected components, where the component with most nodes has 4702 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 263,
-	the mean node degree is 337.13, and the node degree mode is 1. The top 5 most central
-	nodes are 46681.XP_001738125.1 (degree 1953), 46681.XP_001736754.1 (degree 1939),
-	46681.XP_001733645.1 (degree 1894), 46681.XP_001741114.1 (degree 1832) and 46681.XP_001735408.1
+	The undirected graph Entamoeba dispar has 4792 nodes and 807761 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07037 and has 44 connected components, where the component with most
+	nodes has 4702 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 263, the mean node degree is 337.13, and
+	the node degree mode is 1. The top 5 most central nodes are 46681.XP_001738125.1
+	(degree 1953), 46681.XP_001736754.1 (degree 1939), 46681.XP_001733645.1
+	(degree 1894), 46681.XP_001741114.1 (degree 1832) and 46681.XP_001735408.1
 	(degree 1788).
 	
 

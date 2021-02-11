@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:36.549398
 
-The undirected graph Sulfurospirillum barnesii has 2479 nodes and 177367 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-and has 8 connected components, where the component with most nodes has 2461 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 143.10, and the node degree mode is 16. The top 5
-most central nodes are 760154.Sulba_0620 (degree 1054), 760154.Sulba_2551 (degree
-1044), 760154.Sulba_1005 (degree 859), 760154.Sulba_2012 (degree 850) and 760154.Sulba_0649
-(degree 842).
+The undirected graph Sulfurospirillum barnesii has 2479 nodes and 177367
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05775 and has 8 connected components, where the component
+with most nodes has 2461 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 143.10,
+and the node degree mode is 16. The top 5 most central nodes are 760154.Sulba_0620
+(degree 1054), 760154.Sulba_2551 (degree 1044), 760154.Sulba_1005 (degree
+859), 760154.Sulba_2012 (degree 850) and 760154.Sulba_0649 (degree 842).
 
 
 References
@@ -107,14 +107,14 @@ def SulfurospirillumBarnesii(
 	
 	Datetime: 2021-02-02 21:41:36.549398
 	
-	The undirected graph Sulfurospirillum barnesii has 2479 nodes and 177367 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-	and has 8 connected components, where the component with most nodes has 2461 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 143.10, and the node degree mode is 16. The top 5
-	most central nodes are 760154.Sulba_0620 (degree 1054), 760154.Sulba_2551 (degree
-	1044), 760154.Sulba_1005 (degree 859), 760154.Sulba_2012 (degree 850) and 760154.Sulba_0649
-	(degree 842).
+	The undirected graph Sulfurospirillum barnesii has 2479 nodes and 177367
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05775 and has 8 connected components, where the component
+	with most nodes has 2461 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 143.10,
+	and the node degree mode is 16. The top 5 most central nodes are 760154.Sulba_0620
+	(degree 1054), 760154.Sulba_2551 (degree 1044), 760154.Sulba_1005 (degree
+	859), 760154.Sulba_2012 (degree 850) and 760154.Sulba_0649 (degree 842).
 	
 
 

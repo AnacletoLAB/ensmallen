@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:49.797091
 
-The undirected graph Arthrospira platensis C1 has 5926 nodes and 512067 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02917
-and has 55 connected components, where the component with most nodes has 5747 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 172.82, and the node degree mode is 2. The top 5
-most central nodes are 459495.SPLC1_S082010 (degree 2016), 459495.SPLC1_S041070 (degree
-1923), 459495.SPLC1_S360070 (degree 1813), 459495.SPLC1_S011160 (degree 1725) and
-459495.SPLC1_S120250 (degree 1546).
+The undirected graph Arthrospira platensis C1 has 5926 nodes and 512067
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02917 and has 55 connected components, where the component
+with most nodes has 5747 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 172.82,
+and the node degree mode is 2. The top 5 most central nodes are 459495.SPLC1_S082010
+(degree 2016), 459495.SPLC1_S041070 (degree 1923), 459495.SPLC1_S360070
+(degree 1813), 459495.SPLC1_S011160 (degree 1725) and 459495.SPLC1_S120250
+(degree 1546).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrospiraPlatensisC1(
 	
 	Datetime: 2021-02-02 20:53:49.797091
 	
-	The undirected graph Arthrospira platensis C1 has 5926 nodes and 512067 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02917
-	and has 55 connected components, where the component with most nodes has 5747 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 172.82, and the node degree mode is 2. The top 5
-	most central nodes are 459495.SPLC1_S082010 (degree 2016), 459495.SPLC1_S041070 (degree
-	1923), 459495.SPLC1_S360070 (degree 1813), 459495.SPLC1_S011160 (degree 1725) and
-	459495.SPLC1_S120250 (degree 1546).
+	The undirected graph Arthrospira platensis C1 has 5926 nodes and 512067
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02917 and has 55 connected components, where the component
+	with most nodes has 5747 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 172.82,
+	and the node degree mode is 2. The top 5 most central nodes are 459495.SPLC1_S082010
+	(degree 2016), 459495.SPLC1_S041070 (degree 1923), 459495.SPLC1_S360070
+	(degree 1813), 459495.SPLC1_S011160 (degree 1725) and 459495.SPLC1_S120250
+	(degree 1546).
 	
 
 

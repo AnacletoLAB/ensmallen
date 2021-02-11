@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:45.659492
 
-The undirected graph Bifidobacterium animalis has 1616 nodes and 93804 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07188 and
-has 7 connected components, where the component with most nodes has 1600 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 116.09, and the node degree mode is 2. The top 5 most central
-nodes are 552531.BIF_00783 (degree 728), 552531.BIF_00102 (degree 681), 552531.BIF_00769
-(degree 632), 552531.BIF_00495 (degree 606) and 552531.BIF_00705 (degree 582).
+The undirected graph Bifidobacterium animalis has 1616 nodes and 93804
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07188 and has 7 connected components, where the component
+with most nodes has 1600 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 116.09,
+and the node degree mode is 2. The top 5 most central nodes are 552531.BIF_00783
+(degree 728), 552531.BIF_00102 (degree 681), 552531.BIF_00769 (degree 632),
+552531.BIF_00495 (degree 606) and 552531.BIF_00705 (degree 582).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumAnimalis(
 	
 	Datetime: 2021-02-02 21:09:45.659492
 	
-	The undirected graph Bifidobacterium animalis has 1616 nodes and 93804 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07188 and
-	has 7 connected components, where the component with most nodes has 1600 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 116.09, and the node degree mode is 2. The top 5 most central
-	nodes are 552531.BIF_00783 (degree 728), 552531.BIF_00102 (degree 681), 552531.BIF_00769
-	(degree 632), 552531.BIF_00495 (degree 606) and 552531.BIF_00705 (degree 582).
+	The undirected graph Bifidobacterium animalis has 1616 nodes and 93804
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07188 and has 7 connected components, where the component
+	with most nodes has 1600 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 116.09,
+	and the node degree mode is 2. The top 5 most central nodes are 552531.BIF_00783
+	(degree 728), 552531.BIF_00102 (degree 681), 552531.BIF_00769 (degree 632),
+	552531.BIF_00495 (degree 606) and 552531.BIF_00705 (degree 582).
 	
 
 

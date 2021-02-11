@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:32:54.494474
 
-The undirected graph Mycobacterium sp. URHD0025 has 6208 nodes and 780751 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04052
-and has 23 connected components, where the component with most nodes has 6150 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 251.53, and the node degree mode is 2. The top 5
-most central nodes are 1298864.AUEQ01000009_gene2920 (degree 2287), 1298864.AUEQ01000014_gene568
-(degree 2235), 1298864.AUEQ01000011_gene22 (degree 1760), 1298864.AUEQ01000012_gene994
-(degree 1671) and 1298864.AUEQ01000010_gene3413 (degree 1663).
+The undirected graph Mycobacterium sp. URHD0025 has 6208 nodes and 780751
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04052 and has 23 connected components, where the component
+with most nodes has 6150 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 251.53,
+and the node degree mode is 2. The top 5 most central nodes are 1298864.AUEQ01000009_gene2920
+(degree 2287), 1298864.AUEQ01000014_gene568 (degree 2235), 1298864.AUEQ01000011_gene22
+(degree 1760), 1298864.AUEQ01000012_gene994 (degree 1671) and 1298864.AUEQ01000010_gene3413
+(degree 1663).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.Urhd0025(
 	
 	Datetime: 2021-02-03 21:32:54.494474
 	
-	The undirected graph Mycobacterium sp. URHD0025 has 6208 nodes and 780751 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04052
-	and has 23 connected components, where the component with most nodes has 6150 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 251.53, and the node degree mode is 2. The top 5
-	most central nodes are 1298864.AUEQ01000009_gene2920 (degree 2287), 1298864.AUEQ01000014_gene568
-	(degree 2235), 1298864.AUEQ01000011_gene22 (degree 1760), 1298864.AUEQ01000012_gene994
-	(degree 1671) and 1298864.AUEQ01000010_gene3413 (degree 1663).
+	The undirected graph Mycobacterium sp. URHD0025 has 6208 nodes and 780751
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04052 and has 23 connected components, where the component
+	with most nodes has 6150 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 251.53,
+	and the node degree mode is 2. The top 5 most central nodes are 1298864.AUEQ01000009_gene2920
+	(degree 2287), 1298864.AUEQ01000014_gene568 (degree 2235), 1298864.AUEQ01000011_gene22
+	(degree 1760), 1298864.AUEQ01000012_gene994 (degree 1671) and 1298864.AUEQ01000010_gene3413
+	(degree 1663).
 	
 
 

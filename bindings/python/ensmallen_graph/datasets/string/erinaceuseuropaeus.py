@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:33:32.009549
 
-The undirected graph Erinaceus europaeus has 18991 nodes and 3601467 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01997 and
-has 2 connected components, where the component with most nodes has 18989 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 281,
-the mean node degree is 379.28, and the node degree mode is 1. The top 5 most central
-nodes are 9365.XP_007521942.1 (degree 4065), 9365.XP_007525918.1 (degree 3773), 9365.XP_007523999.1
-(degree 3617), 9365.XP_007526554.1 (degree 3341) and 9365.XP_007519775.1 (degree
+The undirected graph Erinaceus europaeus has 18991 nodes and 3601467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01997 and has 2 connected components, where the component with most
+nodes has 18989 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 281, the mean node degree is 379.28, and
+the node degree mode is 1. The top 5 most central nodes are 9365.XP_007521942.1
+(degree 4065), 9365.XP_007525918.1 (degree 3773), 9365.XP_007523999.1 (degree
+3617), 9365.XP_007526554.1 (degree 3341) and 9365.XP_007519775.1 (degree
 3285).
 
 
@@ -107,13 +108,14 @@ def ErinaceusEuropaeus(
 	
 	Datetime: 2021-02-02 17:33:32.009549
 	
-	The undirected graph Erinaceus europaeus has 18991 nodes and 3601467 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01997 and
-	has 2 connected components, where the component with most nodes has 18989 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 281,
-	the mean node degree is 379.28, and the node degree mode is 1. The top 5 most central
-	nodes are 9365.XP_007521942.1 (degree 4065), 9365.XP_007525918.1 (degree 3773), 9365.XP_007523999.1
-	(degree 3617), 9365.XP_007526554.1 (degree 3341) and 9365.XP_007519775.1 (degree
+	The undirected graph Erinaceus europaeus has 18991 nodes and 3601467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01997 and has 2 connected components, where the component with most
+	nodes has 18989 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 281, the mean node degree is 379.28, and
+	the node degree mode is 1. The top 5 most central nodes are 9365.XP_007521942.1
+	(degree 4065), 9365.XP_007525918.1 (degree 3773), 9365.XP_007523999.1 (degree
+	3617), 9365.XP_007526554.1 (degree 3341) and 9365.XP_007519775.1 (degree
 	3285).
 	
 

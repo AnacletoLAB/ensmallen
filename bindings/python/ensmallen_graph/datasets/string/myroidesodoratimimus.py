@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:47:20.118615
 
-The undirected graph Myroides odoratimimus has 3441 nodes and 247721 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04186 and
-has 31 connected components, where the component with most nodes has 3360 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 143.98, and the node degree mode is 2. The top 5 most central
-nodes are 1416760.AYMS01000018_gene1556 (degree 1190), 1416760.AYMS01000076_gene1632
-(degree 984), 1416760.AYMS01000040_gene812 (degree 899), 1416760.AYMS01000076_gene1628
-(degree 848) and 1416760.AYMS01000070_gene422 (degree 831).
+The undirected graph Myroides odoratimimus has 3441 nodes and 247721 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04186 and has 31 connected components, where the component with most
+nodes has 3360 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 143.98, and
+the node degree mode is 2. The top 5 most central nodes are 1416760.AYMS01000018_gene1556
+(degree 1190), 1416760.AYMS01000076_gene1632 (degree 984), 1416760.AYMS01000040_gene812
+(degree 899), 1416760.AYMS01000076_gene1628 (degree 848) and 1416760.AYMS01000070_gene422
+(degree 831).
 
 
 References
@@ -107,14 +108,15 @@ def MyroidesOdoratimimus(
 	
 	Datetime: 2021-02-03 22:47:20.118615
 	
-	The undirected graph Myroides odoratimimus has 3441 nodes and 247721 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04186 and
-	has 31 connected components, where the component with most nodes has 3360 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 143.98, and the node degree mode is 2. The top 5 most central
-	nodes are 1416760.AYMS01000018_gene1556 (degree 1190), 1416760.AYMS01000076_gene1632
-	(degree 984), 1416760.AYMS01000040_gene812 (degree 899), 1416760.AYMS01000076_gene1628
-	(degree 848) and 1416760.AYMS01000070_gene422 (degree 831).
+	The undirected graph Myroides odoratimimus has 3441 nodes and 247721 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04186 and has 31 connected components, where the component with most
+	nodes has 3360 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 143.98, and
+	the node degree mode is 2. The top 5 most central nodes are 1416760.AYMS01000018_gene1556
+	(degree 1190), 1416760.AYMS01000076_gene1632 (degree 984), 1416760.AYMS01000040_gene812
+	(degree 899), 1416760.AYMS01000076_gene1628 (degree 848) and 1416760.AYMS01000070_gene422
+	(degree 831).
 	
 
 

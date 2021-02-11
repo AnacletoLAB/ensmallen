@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:40.689417
 
-The undirected graph Bartonella koehlerae has 1405 nodes and 91551 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09282 and
-has 12 connected components, where the component with most nodes has 1381 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 130.32, and the node degree mode is 1. The top 5 most central
-nodes are 1134510.O9A_00294 (degree 639), 1134510.O9A_00473 (degree 576), 1134510.O9A_00863
-(degree 557), 1134510.O9A_00374 (degree 526) and 1134510.O9A_00356 (degree 520).
+The undirected graph Bartonella koehlerae has 1405 nodes and 91551 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09282 and has 12 connected components, where the component with most
+nodes has 1381 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 130.32, and
+the node degree mode is 1. The top 5 most central nodes are 1134510.O9A_00294
+(degree 639), 1134510.O9A_00473 (degree 576), 1134510.O9A_00863 (degree
+557), 1134510.O9A_00374 (degree 526) and 1134510.O9A_00356 (degree 520).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaKoehlerae(
 	
 	Datetime: 2021-02-02 22:56:40.689417
 	
-	The undirected graph Bartonella koehlerae has 1405 nodes and 91551 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09282 and
-	has 12 connected components, where the component with most nodes has 1381 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 130.32, and the node degree mode is 1. The top 5 most central
-	nodes are 1134510.O9A_00294 (degree 639), 1134510.O9A_00473 (degree 576), 1134510.O9A_00863
-	(degree 557), 1134510.O9A_00374 (degree 526) and 1134510.O9A_00356 (degree 520).
+	The undirected graph Bartonella koehlerae has 1405 nodes and 91551 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09282 and has 12 connected components, where the component with most
+	nodes has 1381 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 130.32, and
+	the node degree mode is 1. The top 5 most central nodes are 1134510.O9A_00294
+	(degree 639), 1134510.O9A_00473 (degree 576), 1134510.O9A_00863 (degree
+	557), 1134510.O9A_00374 (degree 526) and 1134510.O9A_00356 (degree 520).
 	
 
 

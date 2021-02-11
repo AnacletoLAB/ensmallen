@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:06.052255
 
-The undirected graph Lysinimicrobium mangrovi has 2721 nodes and 242048 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06541
-and has 7 connected components, where the component with most nodes has 2702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 177.91, and the node degree mode is 3. The top 5
-most central nodes are 1043493.BBLU01000001_gene1023 (degree 1110), 1043493.BBLU01000003_gene2300
-(degree 977), 1043493.BBLU01000003_gene2489 (degree 849), 1043493.BBLU01000002_gene1617
-(degree 804) and 1043493.BBLU01000006_gene2202 (degree 780).
+The undirected graph Lysinimicrobium mangrovi has 2721 nodes and 242048
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06541 and has 7 connected components, where the component
+with most nodes has 2702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 177.91,
+and the node degree mode is 3. The top 5 most central nodes are 1043493.BBLU01000001_gene1023
+(degree 1110), 1043493.BBLU01000003_gene2300 (degree 977), 1043493.BBLU01000003_gene2489
+(degree 849), 1043493.BBLU01000002_gene1617 (degree 804) and 1043493.BBLU01000006_gene2202
+(degree 780).
 
 
 References
@@ -107,14 +108,15 @@ def LysinimicrobiumMangrovi(
 	
 	Datetime: 2021-02-02 22:16:06.052255
 	
-	The undirected graph Lysinimicrobium mangrovi has 2721 nodes and 242048 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06541
-	and has 7 connected components, where the component with most nodes has 2702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 177.91, and the node degree mode is 3. The top 5
-	most central nodes are 1043493.BBLU01000001_gene1023 (degree 1110), 1043493.BBLU01000003_gene2300
-	(degree 977), 1043493.BBLU01000003_gene2489 (degree 849), 1043493.BBLU01000002_gene1617
-	(degree 804) and 1043493.BBLU01000006_gene2202 (degree 780).
+	The undirected graph Lysinimicrobium mangrovi has 2721 nodes and 242048
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06541 and has 7 connected components, where the component
+	with most nodes has 2702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 177.91,
+	and the node degree mode is 3. The top 5 most central nodes are 1043493.BBLU01000001_gene1023
+	(degree 1110), 1043493.BBLU01000003_gene2300 (degree 977), 1043493.BBLU01000003_gene2489
+	(degree 849), 1043493.BBLU01000002_gene1617 (degree 804) and 1043493.BBLU01000006_gene2202
+	(degree 780).
 	
 
 

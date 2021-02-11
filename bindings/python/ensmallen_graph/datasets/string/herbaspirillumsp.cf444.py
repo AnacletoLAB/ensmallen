@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:40.946571
 
-The undirected graph Herbaspirillum sp. CF444 has 4919 nodes and 834542 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06899
-and has 10 connected components, where the component with most nodes has 4896 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 280, the mean node degree is 339.31, and the node degree mode is 2. The top 5
-most central nodes are 1144319.PMI16_01749 (degree 1885), 1144319.PMI16_02934 (degree
-1833), 1144319.PMI16_02777 (degree 1762), 1144319.PMI16_00336 (degree 1761) and 1144319.PMI16_03268
-(degree 1744).
+The undirected graph Herbaspirillum sp. CF444 has 4919 nodes and 834542
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06899 and has 10 connected components, where the component
+with most nodes has 4896 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 280, the mean node degree is 339.31,
+and the node degree mode is 2. The top 5 most central nodes are 1144319.PMI16_01749
+(degree 1885), 1144319.PMI16_02934 (degree 1833), 1144319.PMI16_02777 (degree
+1762), 1144319.PMI16_00336 (degree 1761) and 1144319.PMI16_03268 (degree
+1744).
 
 
 References
@@ -107,14 +108,15 @@ def HerbaspirillumSp.Cf444(
 	
 	Datetime: 2021-02-02 22:58:40.946571
 	
-	The undirected graph Herbaspirillum sp. CF444 has 4919 nodes and 834542 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06899
-	and has 10 connected components, where the component with most nodes has 4896 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 280, the mean node degree is 339.31, and the node degree mode is 2. The top 5
-	most central nodes are 1144319.PMI16_01749 (degree 1885), 1144319.PMI16_02934 (degree
-	1833), 1144319.PMI16_02777 (degree 1762), 1144319.PMI16_00336 (degree 1761) and 1144319.PMI16_03268
-	(degree 1744).
+	The undirected graph Herbaspirillum sp. CF444 has 4919 nodes and 834542
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06899 and has 10 connected components, where the component
+	with most nodes has 4896 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 280, the mean node degree is 339.31,
+	and the node degree mode is 2. The top 5 most central nodes are 1144319.PMI16_01749
+	(degree 1885), 1144319.PMI16_02934 (degree 1833), 1144319.PMI16_02777 (degree
+	1762), 1144319.PMI16_00336 (degree 1761) and 1144319.PMI16_03268 (degree
+	1744).
 	
 
 

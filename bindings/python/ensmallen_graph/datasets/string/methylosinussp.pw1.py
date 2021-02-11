@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:45:40.821324
 
-The undirected graph Methylosinus sp. PW1 has 4442 nodes and 413802 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04195 and
-has 30 connected components, where the component with most nodes has 4350 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 186.31, and the node degree mode is 2. The top 5 most central
-nodes are 107636.JQNK01000009_gene2339 (degree 1433), 107636.JQNK01000008_gene4003
-(degree 1403), 107636.JQNK01000004_gene829 (degree 1118), 107636.JQNK01000009_gene1210
-(degree 1094) and 107636.JQNK01000009_gene1407 (degree 1047).
+The undirected graph Methylosinus sp. PW1 has 4442 nodes and 413802 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04195 and has 30 connected components, where the component with most
+nodes has 4350 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 186.31, and
+the node degree mode is 2. The top 5 most central nodes are 107636.JQNK01000009_gene2339
+(degree 1433), 107636.JQNK01000008_gene4003 (degree 1403), 107636.JQNK01000004_gene829
+(degree 1118), 107636.JQNK01000009_gene1210 (degree 1094) and 107636.JQNK01000009_gene1407
+(degree 1047).
 
 
 References
@@ -107,14 +108,15 @@ def MethylosinusSp.Pw1(
 	
 	Datetime: 2021-02-02 19:45:40.821324
 	
-	The undirected graph Methylosinus sp. PW1 has 4442 nodes and 413802 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04195 and
-	has 30 connected components, where the component with most nodes has 4350 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 186.31, and the node degree mode is 2. The top 5 most central
-	nodes are 107636.JQNK01000009_gene2339 (degree 1433), 107636.JQNK01000008_gene4003
-	(degree 1403), 107636.JQNK01000004_gene829 (degree 1118), 107636.JQNK01000009_gene1210
-	(degree 1094) and 107636.JQNK01000009_gene1407 (degree 1047).
+	The undirected graph Methylosinus sp. PW1 has 4442 nodes and 413802 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04195 and has 30 connected components, where the component with most
+	nodes has 4350 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 186.31, and
+	the node degree mode is 2. The top 5 most central nodes are 107636.JQNK01000009_gene2339
+	(degree 1433), 107636.JQNK01000008_gene4003 (degree 1403), 107636.JQNK01000004_gene829
+	(degree 1118), 107636.JQNK01000009_gene1210 (degree 1094) and 107636.JQNK01000009_gene1407
+	(degree 1047).
 	
 
 

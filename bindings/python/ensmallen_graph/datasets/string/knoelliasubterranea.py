@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:36.303300
 
-The undirected graph Knoellia subterranea has 3403 nodes and 338023 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05840 and
-has 8 connected components, where the component with most nodes has 3386 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 198.66, and the node degree mode is 5. The top 5 most central
-nodes are 1385521.N803_08825 (degree 1119), 1385521.N803_05170 (degree 1070), 1385521.N803_04255
-(degree 1068), 1385521.N803_11900 (degree 1048) and 1385521.N803_13250 (degree 1048).
+The undirected graph Knoellia subterranea has 3403 nodes and 338023 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05840 and has 8 connected components, where the component with most
+nodes has 3386 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 198.66, and
+the node degree mode is 5. The top 5 most central nodes are 1385521.N803_08825
+(degree 1119), 1385521.N803_05170 (degree 1070), 1385521.N803_04255 (degree
+1068), 1385521.N803_11900 (degree 1048) and 1385521.N803_13250 (degree
+1048).
 
 
 References
@@ -106,13 +108,15 @@ def KnoelliaSubterranea(
 	
 	Datetime: 2021-02-03 22:20:36.303300
 	
-	The undirected graph Knoellia subterranea has 3403 nodes and 338023 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05840 and
-	has 8 connected components, where the component with most nodes has 3386 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 198.66, and the node degree mode is 5. The top 5 most central
-	nodes are 1385521.N803_08825 (degree 1119), 1385521.N803_05170 (degree 1070), 1385521.N803_04255
-	(degree 1068), 1385521.N803_11900 (degree 1048) and 1385521.N803_13250 (degree 1048).
+	The undirected graph Knoellia subterranea has 3403 nodes and 338023 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05840 and has 8 connected components, where the component with most
+	nodes has 3386 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 198.66, and
+	the node degree mode is 5. The top 5 most central nodes are 1385521.N803_08825
+	(degree 1119), 1385521.N803_05170 (degree 1070), 1385521.N803_04255 (degree
+	1068), 1385521.N803_11900 (degree 1048) and 1385521.N803_13250 (degree
+	1048).
 	
 
 

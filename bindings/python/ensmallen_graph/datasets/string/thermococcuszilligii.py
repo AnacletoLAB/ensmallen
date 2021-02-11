@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:14.781438
 
-The undirected graph Thermococcus zilligii has 1816 nodes and 128149 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07776 and
-has 3 connected components, where the component with most nodes has 1810 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 127,
-the mean node degree is 141.13, and the node degree mode is 5. The top 5 most central
-nodes are 1151117.AJLF01000001_gene681 (degree 708), 1151117.AJLF01000001_gene950
-(degree 623), 1151117.AJLF01000002_gene224 (degree 582), 1151117.AJLF01000002_gene429
-(degree 572) and 1151117.AJLF01000002_gene499 (degree 568).
+The undirected graph Thermococcus zilligii has 1816 nodes and 128149 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07776 and has 3 connected components, where the component with most
+nodes has 1810 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 127, the mean node degree is 141.13, and
+the node degree mode is 5. The top 5 most central nodes are 1151117.AJLF01000001_gene681
+(degree 708), 1151117.AJLF01000001_gene950 (degree 623), 1151117.AJLF01000002_gene224
+(degree 582), 1151117.AJLF01000002_gene429 (degree 572) and 1151117.AJLF01000002_gene499
+(degree 568).
 
 
 References
@@ -107,14 +108,15 @@ def ThermococcusZilligii(
 	
 	Datetime: 2021-02-02 23:00:14.781438
 	
-	The undirected graph Thermococcus zilligii has 1816 nodes and 128149 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07776 and
-	has 3 connected components, where the component with most nodes has 1810 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 127,
-	the mean node degree is 141.13, and the node degree mode is 5. The top 5 most central
-	nodes are 1151117.AJLF01000001_gene681 (degree 708), 1151117.AJLF01000001_gene950
-	(degree 623), 1151117.AJLF01000002_gene224 (degree 582), 1151117.AJLF01000002_gene429
-	(degree 572) and 1151117.AJLF01000002_gene499 (degree 568).
+	The undirected graph Thermococcus zilligii has 1816 nodes and 128149 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07776 and has 3 connected components, where the component with most
+	nodes has 1810 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 127, the mean node degree is 141.13, and
+	the node degree mode is 5. The top 5 most central nodes are 1151117.AJLF01000001_gene681
+	(degree 708), 1151117.AJLF01000001_gene950 (degree 623), 1151117.AJLF01000002_gene224
+	(degree 582), 1151117.AJLF01000002_gene429 (degree 572) and 1151117.AJLF01000002_gene499
+	(degree 568).
 	
 
 

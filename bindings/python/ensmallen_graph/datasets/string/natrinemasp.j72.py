@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:42.972560
 
-The undirected graph Natrinema sp. J72 has 4143 nodes and 297968 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-has 82 connected components, where the component with most nodes has 3921 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 143.84, and the node degree mode is 3. The top 5 most central
-nodes are 406552.NJ7G_0220 (degree 1067), 406552.NJ7G_1189 (degree 1056), 406552.NJ7G_0774
-(degree 933), 406552.NJ7G_0318 (degree 893) and 406552.NJ7G_3307 (degree 890).
+The undirected graph Natrinema sp. J72 has 4143 nodes and 297968 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03473 and has 82 connected components, where the component with most
+nodes has 3921 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 143.84, and
+the node degree mode is 3. The top 5 most central nodes are 406552.NJ7G_0220
+(degree 1067), 406552.NJ7G_1189 (degree 1056), 406552.NJ7G_0774 (degree
+933), 406552.NJ7G_0318 (degree 893) and 406552.NJ7G_3307 (degree 890).
 
 
 References
@@ -106,13 +107,14 @@ def NatrinemaSp.J72(
 	
 	Datetime: 2021-02-02 20:44:42.972560
 	
-	The undirected graph Natrinema sp. J72 has 4143 nodes and 297968 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-	has 82 connected components, where the component with most nodes has 3921 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 143.84, and the node degree mode is 3. The top 5 most central
-	nodes are 406552.NJ7G_0220 (degree 1067), 406552.NJ7G_1189 (degree 1056), 406552.NJ7G_0774
-	(degree 933), 406552.NJ7G_0318 (degree 893) and 406552.NJ7G_3307 (degree 890).
+	The undirected graph Natrinema sp. J72 has 4143 nodes and 297968 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03473 and has 82 connected components, where the component with most
+	nodes has 3921 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 143.84, and
+	the node degree mode is 3. The top 5 most central nodes are 406552.NJ7G_0220
+	(degree 1067), 406552.NJ7G_1189 (degree 1056), 406552.NJ7G_0774 (degree
+	933), 406552.NJ7G_0318 (degree 893) and 406552.NJ7G_3307 (degree 890).
 	
 
 

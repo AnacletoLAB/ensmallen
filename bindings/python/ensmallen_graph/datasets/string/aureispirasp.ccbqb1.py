@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:47:37.471529
 
-The undirected graph Aureispira sp. CCBQB1 has 5634 nodes and 407708 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02569 and
-has 101 connected components, where the component with most nodes has 5380 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 144.73, and the node degree mode is 1. The top 5
-most central nodes are 1313421.JHBV01000016_gene5628 (degree 1416), 1313421.JHBV01000038_gene2838
-(degree 1107), 1313421.JHBV01000014_gene3806 (degree 1073), 1313421.JHBV01000030_gene2160
-(degree 1006) and 1313421.JHBV01000013_gene3787 (degree 926).
+The undirected graph Aureispira sp. CCBQB1 has 5634 nodes and 407708 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02569 and has 101 connected components, where the component with most
+nodes has 5380 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 144.73, and
+the node degree mode is 1. The top 5 most central nodes are 1313421.JHBV01000016_gene5628
+(degree 1416), 1313421.JHBV01000038_gene2838 (degree 1107), 1313421.JHBV01000014_gene3806
+(degree 1073), 1313421.JHBV01000030_gene2160 (degree 1006) and 1313421.JHBV01000013_gene3787
+(degree 926).
 
 
 References
@@ -107,14 +108,15 @@ def AureispiraSp.Ccbqb1(
 	
 	Datetime: 2021-02-03 21:47:37.471529
 	
-	The undirected graph Aureispira sp. CCBQB1 has 5634 nodes and 407708 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02569 and
-	has 101 connected components, where the component with most nodes has 5380 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 144.73, and the node degree mode is 1. The top 5
-	most central nodes are 1313421.JHBV01000016_gene5628 (degree 1416), 1313421.JHBV01000038_gene2838
-	(degree 1107), 1313421.JHBV01000014_gene3806 (degree 1073), 1313421.JHBV01000030_gene2160
-	(degree 1006) and 1313421.JHBV01000013_gene3787 (degree 926).
+	The undirected graph Aureispira sp. CCBQB1 has 5634 nodes and 407708 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02569 and has 101 connected components, where the component with most
+	nodes has 5380 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 144.73, and
+	the node degree mode is 1. The top 5 most central nodes are 1313421.JHBV01000016_gene5628
+	(degree 1416), 1313421.JHBV01000038_gene2838 (degree 1107), 1313421.JHBV01000014_gene3806
+	(degree 1073), 1313421.JHBV01000030_gene2160 (degree 1006) and 1313421.JHBV01000013_gene3787
+	(degree 926).
 	
 
 

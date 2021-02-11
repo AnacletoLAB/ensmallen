@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:55.524161
 
-The undirected graph Coraliomargarita akajimensis has 3100 nodes and 213427 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04443
-and has 14 connected components, where the component with most nodes has 3035 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 137.69, and the node degree mode is 5. The top 5
-most central nodes are 583355.Caka_0268 (degree 1092), 583355.Caka_1928 (degree 902),
-583355.Caka_2313 (degree 887), 583355.Caka_1152 (degree 867) and 583355.Caka_2841
-(degree 857).
+The undirected graph Coraliomargarita akajimensis has 3100 nodes and 213427
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04443 and has 14 connected components, where the component
+with most nodes has 3035 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 137.69,
+and the node degree mode is 5. The top 5 most central nodes are 583355.Caka_0268
+(degree 1092), 583355.Caka_1928 (degree 902), 583355.Caka_2313 (degree
+887), 583355.Caka_1152 (degree 867) and 583355.Caka_2841 (degree 857).
 
 
 References
@@ -107,14 +107,14 @@ def CoraliomargaritaAkajimensis(
 	
 	Datetime: 2021-02-02 21:15:55.524161
 	
-	The undirected graph Coraliomargarita akajimensis has 3100 nodes and 213427 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04443
-	and has 14 connected components, where the component with most nodes has 3035 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 137.69, and the node degree mode is 5. The top 5
-	most central nodes are 583355.Caka_0268 (degree 1092), 583355.Caka_1928 (degree 902),
-	583355.Caka_2313 (degree 887), 583355.Caka_1152 (degree 867) and 583355.Caka_2841
-	(degree 857).
+	The undirected graph Coraliomargarita akajimensis has 3100 nodes and 213427
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04443 and has 14 connected components, where the component
+	with most nodes has 3035 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 137.69,
+	and the node degree mode is 5. The top 5 most central nodes are 583355.Caka_0268
+	(degree 1092), 583355.Caka_1928 (degree 902), 583355.Caka_2313 (degree
+	887), 583355.Caka_1152 (degree 867) and 583355.Caka_2841 (degree 857).
 	
 
 

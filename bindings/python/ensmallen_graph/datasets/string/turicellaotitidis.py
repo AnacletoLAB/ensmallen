@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:41.938882
 
-The undirected graph Turicella otitidis has 1837 nodes and 150311 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08913 and
-has 2 connected components, where the component with most nodes has 1834 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 153,
-the mean node degree is 163.65, and the node degree mode is 5. The top 5 most central
-nodes are 883169.HMPREF9719_01627 (degree 807), 883169.HMPREF9719_00806 (degree 791),
-883169.HMPREF9719_01496 (degree 711), 883169.HMPREF9719_00227 (degree 685) and 883169.HMPREF9719_00777
+The undirected graph Turicella otitidis has 1837 nodes and 150311 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08913 and has 2 connected components, where the component with most
+nodes has 1834 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 153, the mean node degree is 163.65, and
+the node degree mode is 5. The top 5 most central nodes are 883169.HMPREF9719_01627
+(degree 807), 883169.HMPREF9719_00806 (degree 791), 883169.HMPREF9719_01496
+(degree 711), 883169.HMPREF9719_00227 (degree 685) and 883169.HMPREF9719_00777
 (degree 617).
 
 
@@ -107,13 +108,14 @@ def TuricellaOtitidis(
 	
 	Datetime: 2021-02-02 21:51:41.938882
 	
-	The undirected graph Turicella otitidis has 1837 nodes and 150311 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08913 and
-	has 2 connected components, where the component with most nodes has 1834 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 153,
-	the mean node degree is 163.65, and the node degree mode is 5. The top 5 most central
-	nodes are 883169.HMPREF9719_01627 (degree 807), 883169.HMPREF9719_00806 (degree 791),
-	883169.HMPREF9719_01496 (degree 711), 883169.HMPREF9719_00227 (degree 685) and 883169.HMPREF9719_00777
+	The undirected graph Turicella otitidis has 1837 nodes and 150311 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08913 and has 2 connected components, where the component with most
+	nodes has 1834 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 153, the mean node degree is 163.65, and
+	the node degree mode is 5. The top 5 most central nodes are 883169.HMPREF9719_01627
+	(degree 807), 883169.HMPREF9719_00806 (degree 791), 883169.HMPREF9719_01496
+	(degree 711), 883169.HMPREF9719_00227 (degree 685) and 883169.HMPREF9719_00777
 	(degree 617).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:41.124507
 
-The undirected graph Herbaspirillum massiliense has 3595 nodes and 345814 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05353
-and has 16 connected components, where the component with most nodes has 3558 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 192.39, and the node degree mode is 1. The top 5
-most central nodes are 1095769.CAHF01000001_gene3510 (degree 1352), 1095769.CAHF01000023_gene507
-(degree 1330), 1095769.CAHF01000011_gene2742 (degree 1320), 1095769.CAHF01000011_gene2214
-(degree 1168) and 1095769.CAHF01000003_gene1017 (degree 1118).
+The undirected graph Herbaspirillum massiliense has 3595 nodes and 345814
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05353 and has 16 connected components, where the component
+with most nodes has 3558 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 192.39,
+and the node degree mode is 1. The top 5 most central nodes are 1095769.CAHF01000001_gene3510
+(degree 1352), 1095769.CAHF01000023_gene507 (degree 1330), 1095769.CAHF01000011_gene2742
+(degree 1320), 1095769.CAHF01000011_gene2214 (degree 1168) and 1095769.CAHF01000003_gene1017
+(degree 1118).
 
 
 References
@@ -107,14 +108,15 @@ def HerbaspirillumMassiliense(
 	
 	Datetime: 2021-02-02 22:23:41.124507
 	
-	The undirected graph Herbaspirillum massiliense has 3595 nodes and 345814 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05353
-	and has 16 connected components, where the component with most nodes has 3558 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 192.39, and the node degree mode is 1. The top 5
-	most central nodes are 1095769.CAHF01000001_gene3510 (degree 1352), 1095769.CAHF01000023_gene507
-	(degree 1330), 1095769.CAHF01000011_gene2742 (degree 1320), 1095769.CAHF01000011_gene2214
-	(degree 1168) and 1095769.CAHF01000003_gene1017 (degree 1118).
+	The undirected graph Herbaspirillum massiliense has 3595 nodes and 345814
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05353 and has 16 connected components, where the component
+	with most nodes has 3558 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 192.39,
+	and the node degree mode is 1. The top 5 most central nodes are 1095769.CAHF01000001_gene3510
+	(degree 1352), 1095769.CAHF01000023_gene507 (degree 1330), 1095769.CAHF01000011_gene2742
+	(degree 1320), 1095769.CAHF01000011_gene2214 (degree 1168) and 1095769.CAHF01000003_gene1017
+	(degree 1118).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:43.920908
 
-The undirected graph Bartonella bovis has 1287 nodes and 82952 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10024
-and has 4 connected components, where the component with most nodes has 1278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 128.91, and the node degree mode is 1. The top 5
-most central nodes are 1094491.BBbe_00060 (degree 624), 1094491.BBbe_03160 (degree
-539), 1094491.BBbe_05640 (degree 515), 1094491.BBbe_00710 (degree 508) and 1094491.BBbe_03190
-(degree 504).
+The undirected graph Bartonella bovis has 1287 nodes and 82952 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10024 and has 4 connected components, where the component
+with most nodes has 1278 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 128.91,
+and the node degree mode is 1. The top 5 most central nodes are 1094491.BBbe_00060
+(degree 624), 1094491.BBbe_03160 (degree 539), 1094491.BBbe_05640 (degree
+515), 1094491.BBbe_00710 (degree 508) and 1094491.BBbe_03190 (degree 504).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaBovis(
 	
 	Datetime: 2021-02-02 22:22:43.920908
 	
-	The undirected graph Bartonella bovis has 1287 nodes and 82952 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10024
-	and has 4 connected components, where the component with most nodes has 1278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 128.91, and the node degree mode is 1. The top 5
-	most central nodes are 1094491.BBbe_00060 (degree 624), 1094491.BBbe_03160 (degree
-	539), 1094491.BBbe_05640 (degree 515), 1094491.BBbe_00710 (degree 508) and 1094491.BBbe_03190
-	(degree 504).
+	The undirected graph Bartonella bovis has 1287 nodes and 82952 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10024 and has 4 connected components, where the component
+	with most nodes has 1278 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 128.91,
+	and the node degree mode is 1. The top 5 most central nodes are 1094491.BBbe_00060
+	(degree 624), 1094491.BBbe_03160 (degree 539), 1094491.BBbe_05640 (degree
+	515), 1094491.BBbe_00710 (degree 508) and 1094491.BBbe_03190 (degree 504).
 	
 
 

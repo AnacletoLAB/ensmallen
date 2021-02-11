@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:34.706175
 
-The undirected graph Desulfovibrio alcoholivorans has 4122 nodes and 651541 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07671
-and has 22 connected components, where the component with most nodes has 4068 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 254, the mean node degree is 316.13, and the node degree mode is 4. The top 5
-most central nodes are 1121438.JNJA01000009_gene4154 (degree 1874), 1121438.JNJA01000004_gene738
-(degree 1597), 1121438.JNJA01000022_gene411 (degree 1544), 1121438.JNJA01000017_gene1451
-(degree 1527) and 1121438.JNJA01000005_gene1264 (degree 1518).
+The undirected graph Desulfovibrio alcoholivorans has 4122 nodes and 651541
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07671 and has 22 connected components, where the component
+with most nodes has 4068 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 254, the mean node degree is 316.13,
+and the node degree mode is 4. The top 5 most central nodes are 1121438.JNJA01000009_gene4154
+(degree 1874), 1121438.JNJA01000004_gene738 (degree 1597), 1121438.JNJA01000022_gene411
+(degree 1544), 1121438.JNJA01000017_gene1451 (degree 1527) and 1121438.JNJA01000005_gene1264
+(degree 1518).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioAlcoholivorans(
 	
 	Datetime: 2021-02-02 22:36:34.706175
 	
-	The undirected graph Desulfovibrio alcoholivorans has 4122 nodes and 651541 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07671
-	and has 22 connected components, where the component with most nodes has 4068 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 254, the mean node degree is 316.13, and the node degree mode is 4. The top 5
-	most central nodes are 1121438.JNJA01000009_gene4154 (degree 1874), 1121438.JNJA01000004_gene738
-	(degree 1597), 1121438.JNJA01000022_gene411 (degree 1544), 1121438.JNJA01000017_gene1451
-	(degree 1527) and 1121438.JNJA01000005_gene1264 (degree 1518).
+	The undirected graph Desulfovibrio alcoholivorans has 4122 nodes and 651541
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07671 and has 22 connected components, where the component
+	with most nodes has 4068 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 254, the mean node degree is 316.13,
+	and the node degree mode is 4. The top 5 most central nodes are 1121438.JNJA01000009_gene4154
+	(degree 1874), 1121438.JNJA01000004_gene738 (degree 1597), 1121438.JNJA01000022_gene411
+	(degree 1544), 1121438.JNJA01000017_gene1451 (degree 1527) and 1121438.JNJA01000005_gene1264
+	(degree 1518).
 	
 
 

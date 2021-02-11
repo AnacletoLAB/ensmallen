@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:37:26.763652
 
-The undirected graph Gorilla gorilla has 19329 nodes and 4678664 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02505 and
-is connected, as it has a single component. The graph median node degree is 344,
-the mean node degree is 484.11, and the node degree mode is 161. The top 5 most central
-nodes are 9593.ENSGGOP00000009561 (degree 4617), 9593.ENSGGOP00000019722 (degree
-4511), 9593.ENSGGOP00000015048 (degree 4317), 9593.ENSGGOP00000008752 (degree 4240)
-and 9593.ENSGGOP00000017521 (degree 4149).
+The undirected graph Gorilla gorilla has 19329 nodes and 4678664 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02505 and is connected, as it has a single component. The graph median
+node degree is 344, the mean node degree is 484.11, and the node degree
+mode is 161. The top 5 most central nodes are 9593.ENSGGOP00000009561 (degree
+4617), 9593.ENSGGOP00000019722 (degree 4511), 9593.ENSGGOP00000015048 (degree
+4317), 9593.ENSGGOP00000008752 (degree 4240) and 9593.ENSGGOP00000017521
+(degree 4149).
 
 
 References
@@ -106,13 +107,14 @@ def GorillaGorilla(
 	
 	Datetime: 2021-02-02 17:37:26.763652
 	
-	The undirected graph Gorilla gorilla has 19329 nodes and 4678664 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02505 and
-	is connected, as it has a single component. The graph median node degree is 344,
-	the mean node degree is 484.11, and the node degree mode is 161. The top 5 most central
-	nodes are 9593.ENSGGOP00000009561 (degree 4617), 9593.ENSGGOP00000019722 (degree
-	4511), 9593.ENSGGOP00000015048 (degree 4317), 9593.ENSGGOP00000008752 (degree 4240)
-	and 9593.ENSGGOP00000017521 (degree 4149).
+	The undirected graph Gorilla gorilla has 19329 nodes and 4678664 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02505 and is connected, as it has a single component. The graph median
+	node degree is 344, the mean node degree is 484.11, and the node degree
+	mode is 161. The top 5 most central nodes are 9593.ENSGGOP00000009561 (degree
+	4617), 9593.ENSGGOP00000019722 (degree 4511), 9593.ENSGGOP00000015048 (degree
+	4317), 9593.ENSGGOP00000008752 (degree 4240) and 9593.ENSGGOP00000017521
+	(degree 4149).
 	
 
 

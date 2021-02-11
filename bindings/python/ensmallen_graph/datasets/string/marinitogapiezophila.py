@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:25.566691
 
-The undirected graph Marinitoga piezophila has 2042 nodes and 183500 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08806 and
-has 7 connected components, where the component with most nodes has 2029 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 179.73, and the node degree mode is 11. The top 5 most central
-nodes are 443254.Marpi_0094 (degree 1057), 443254.Marpi_0112 (degree 1020), 443254.Marpi_0195
-(degree 910), 443254.Marpi_0534 (degree 903) and 443254.Marpi_0535 (degree 851).
+The undirected graph Marinitoga piezophila has 2042 nodes and 183500 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08806 and has 7 connected components, where the component with most
+nodes has 2029 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 179.73, and
+the node degree mode is 11. The top 5 most central nodes are 443254.Marpi_0094
+(degree 1057), 443254.Marpi_0112 (degree 1020), 443254.Marpi_0195 (degree
+910), 443254.Marpi_0534 (degree 903) and 443254.Marpi_0535 (degree 851).
 
 
 References
@@ -106,13 +107,14 @@ def MarinitogaPiezophila(
 	
 	Datetime: 2021-02-02 20:50:25.566691
 	
-	The undirected graph Marinitoga piezophila has 2042 nodes and 183500 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08806 and
-	has 7 connected components, where the component with most nodes has 2029 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 179.73, and the node degree mode is 11. The top 5 most central
-	nodes are 443254.Marpi_0094 (degree 1057), 443254.Marpi_0112 (degree 1020), 443254.Marpi_0195
-	(degree 910), 443254.Marpi_0534 (degree 903) and 443254.Marpi_0535 (degree 851).
+	The undirected graph Marinitoga piezophila has 2042 nodes and 183500 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08806 and has 7 connected components, where the component with most
+	nodes has 2029 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 179.73, and
+	the node degree mode is 11. The top 5 most central nodes are 443254.Marpi_0094
+	(degree 1057), 443254.Marpi_0112 (degree 1020), 443254.Marpi_0195 (degree
+	910), 443254.Marpi_0534 (degree 903) and 443254.Marpi_0535 (degree 851).
 	
 
 

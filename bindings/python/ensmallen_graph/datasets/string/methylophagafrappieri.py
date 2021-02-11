@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:43.671706
 
-The undirected graph Methylophaga frappieri has 2609 nodes and 185932 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05465 and
-has 9 connected components, where the component with most nodes has 2579 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 142.53, and the node degree mode is 4. The top 5 most central
-nodes are 754477.Q7C_2234 (degree 1020), 754477.Q7C_546 (degree 826), 754477.Q7C_253
-(degree 795), 754477.Q7C_1511 (degree 743) and 754477.Q7C_580 (degree 700).
+The undirected graph Methylophaga frappieri has 2609 nodes and 185932 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05465 and has 9 connected components, where the component with most
+nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 142.53, and
+the node degree mode is 4. The top 5 most central nodes are 754477.Q7C_2234
+(degree 1020), 754477.Q7C_546 (degree 826), 754477.Q7C_253 (degree 795),
+754477.Q7C_1511 (degree 743) and 754477.Q7C_580 (degree 700).
 
 
 References
@@ -106,13 +107,14 @@ def MethylophagaFrappieri(
 	
 	Datetime: 2021-02-02 21:40:43.671706
 	
-	The undirected graph Methylophaga frappieri has 2609 nodes and 185932 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05465 and
-	has 9 connected components, where the component with most nodes has 2579 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 142.53, and the node degree mode is 4. The top 5 most central
-	nodes are 754477.Q7C_2234 (degree 1020), 754477.Q7C_546 (degree 826), 754477.Q7C_253
-	(degree 795), 754477.Q7C_1511 (degree 743) and 754477.Q7C_580 (degree 700).
+	The undirected graph Methylophaga frappieri has 2609 nodes and 185932 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05465 and has 9 connected components, where the component with most
+	nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 142.53, and
+	the node degree mode is 4. The top 5 most central nodes are 754477.Q7C_2234
+	(degree 1020), 754477.Q7C_546 (degree 826), 754477.Q7C_253 (degree 795),
+	754477.Q7C_1511 (degree 743) and 754477.Q7C_580 (degree 700).
 	
 
 

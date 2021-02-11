@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:24.074938
 
-The undirected graph Phytophthora ramorum has 9994 nodes and 1630880 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03266 and
-has 93 connected components, where the component with most nodes has 9795 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 326.37, and the node degree mode is 8. The top 5 most central
-nodes are 164328.Phyra76721 (degree 3924), 164328.Phyra81903 (degree 3749), 164328.Phyra80363
-(degree 3568), 164328.Phyra71343 (degree 3497) and 164328.Phyra81252 (degree 3423).
+The undirected graph Phytophthora ramorum has 9994 nodes and 1630880 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03266 and has 93 connected components, where the component with most
+nodes has 9795 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 326.37, and
+the node degree mode is 8. The top 5 most central nodes are 164328.Phyra76721
+(degree 3924), 164328.Phyra81903 (degree 3749), 164328.Phyra80363 (degree
+3568), 164328.Phyra71343 (degree 3497) and 164328.Phyra81252 (degree 3423).
 
 
 References
@@ -106,13 +107,14 @@ def PhytophthoraRamorum(
 	
 	Datetime: 2021-02-02 19:54:24.074938
 	
-	The undirected graph Phytophthora ramorum has 9994 nodes and 1630880 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03266 and
-	has 93 connected components, where the component with most nodes has 9795 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 326.37, and the node degree mode is 8. The top 5 most central
-	nodes are 164328.Phyra76721 (degree 3924), 164328.Phyra81903 (degree 3749), 164328.Phyra80363
-	(degree 3568), 164328.Phyra71343 (degree 3497) and 164328.Phyra81252 (degree 3423).
+	The undirected graph Phytophthora ramorum has 9994 nodes and 1630880 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03266 and has 93 connected components, where the component with most
+	nodes has 9795 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 326.37, and
+	the node degree mode is 8. The top 5 most central nodes are 164328.Phyra76721
+	(degree 3924), 164328.Phyra81903 (degree 3749), 164328.Phyra80363 (degree
+	3568), 164328.Phyra71343 (degree 3497) and 164328.Phyra81252 (degree 3423).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:54.522187
 
-The undirected graph johnson32-2-4 has 496 nodes and 107880 unweighted edges, of
-which none are self-loops. The graph is extremely dense as it has a density of 0.87879
-and is connected, as it has a single component. The graph median node degree is 435,
-the mean node degree is 435.00 and the node degree mode is 435. The top 5 most central
-nodes are 496 (degree 435), 495 (degree 435), 494 (degree 435), 493 (degree 435)
-and 492 (degree 435).
+The undirected graph johnson32-2-4 has 496 nodes and 107880 unweighted
+edges, of which none are self-loops. The graph is extremely dense as it
+has a density of 0.87879 and is connected, as it has a single component.
+The graph median node degree is 435, the mean node degree is 435.00 and
+the node degree mode is 435. The top 5 most central nodes are 496 (degree
+435), 495 (degree 435), 494 (degree 435), 493 (degree 435) and 492 (degree
+435).
 
 
 References
@@ -115,12 +116,13 @@ def Johnson3224(
 	
 	Datetime: 2021-02-03 22:54:54.522187
 	
-	The undirected graph johnson32-2-4 has 496 nodes and 107880 unweighted edges, of
-	which none are self-loops. The graph is extremely dense as it has a density of 0.87879
-	and is connected, as it has a single component. The graph median node degree is 435,
-	the mean node degree is 435.00 and the node degree mode is 435. The top 5 most central
-	nodes are 496 (degree 435), 495 (degree 435), 494 (degree 435), 493 (degree 435)
-	and 492 (degree 435).
+	The undirected graph johnson32-2-4 has 496 nodes and 107880 unweighted
+	edges, of which none are self-loops. The graph is extremely dense as it
+	has a density of 0.87879 and is connected, as it has a single component.
+	The graph median node degree is 435, the mean node degree is 435.00 and
+	the node degree mode is 435. The top 5 most central nodes are 496 (degree
+	435), 495 (degree 435), 494 (degree 435), 493 (degree 435) and 492 (degree
+	435).
 	
 
 

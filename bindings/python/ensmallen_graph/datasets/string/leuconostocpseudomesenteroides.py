@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:43.034203
 
-The undirected graph Leuconostoc pseudomesenteroides has 2050 nodes and 129759 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06178
-and has 11 connected components, where the component with most nodes has 2023 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 126.59, and the node degree mode is 5. The top 5 most
-central nodes are 1154757.Q5C_01760 (degree 873), 1154757.Q5C_02065 (degree 722),
-1154757.Q5C_00190 (degree 701), 1154757.Q5C_07950 (degree 696) and 1154757.Q5C_03210
-(degree 674).
+The undirected graph Leuconostoc pseudomesenteroides has 2050 nodes and
+129759 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06178 and has 11 connected components, where the
+component with most nodes has 2023 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+is 126.59, and the node degree mode is 5. The top 5 most central nodes
+are 1154757.Q5C_01760 (degree 873), 1154757.Q5C_02065 (degree 722), 1154757.Q5C_00190
+(degree 701), 1154757.Q5C_07950 (degree 696) and 1154757.Q5C_03210 (degree
+674).
 
 
 References
@@ -107,14 +108,15 @@ def LeuconostocPseudomesenteroides(
 	
 	Datetime: 2021-02-02 23:00:43.034203
 	
-	The undirected graph Leuconostoc pseudomesenteroides has 2050 nodes and 129759 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06178
-	and has 11 connected components, where the component with most nodes has 2023 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 126.59, and the node degree mode is 5. The top 5 most
-	central nodes are 1154757.Q5C_01760 (degree 873), 1154757.Q5C_02065 (degree 722),
-	1154757.Q5C_00190 (degree 701), 1154757.Q5C_07950 (degree 696) and 1154757.Q5C_03210
-	(degree 674).
+	The undirected graph Leuconostoc pseudomesenteroides has 2050 nodes and
+	129759 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06178 and has 11 connected components, where the
+	component with most nodes has 2023 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+	is 126.59, and the node degree mode is 5. The top 5 most central nodes
+	are 1154757.Q5C_01760 (degree 873), 1154757.Q5C_02065 (degree 722), 1154757.Q5C_00190
+	(degree 701), 1154757.Q5C_07950 (degree 696) and 1154757.Q5C_03210 (degree
+	674).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:19:58.934379
 
-The undirected graph Acyrthosiphon pisum has 14072 nodes and 1565773 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01582 and
-has 8 connected components, where the component with most nodes has 13993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 222.54, and the node degree mode is 6. The top 5 most central
-nodes are 7029.ACYPI065957-PA (degree 3783), 7029.ACYPI007182-PA (degree 2742), 7029.ACYPI071060-PA
-(degree 2704), 7029.ACYPI005127-PA (degree 2567) and 7029.ACYPI088221-PA (degree
+The undirected graph Acyrthosiphon pisum has 14072 nodes and 1565773 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01582 and has 8 connected components, where the component with most
+nodes has 13993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 222.54, and
+the node degree mode is 6. The top 5 most central nodes are 7029.ACYPI065957-PA
+(degree 3783), 7029.ACYPI007182-PA (degree 2742), 7029.ACYPI071060-PA (degree
+2704), 7029.ACYPI005127-PA (degree 2567) and 7029.ACYPI088221-PA (degree
 2334).
 
 
@@ -107,13 +108,14 @@ def AcyrthosiphonPisum(
 	
 	Datetime: 2021-02-02 17:19:58.934379
 	
-	The undirected graph Acyrthosiphon pisum has 14072 nodes and 1565773 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01582 and
-	has 8 connected components, where the component with most nodes has 13993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 222.54, and the node degree mode is 6. The top 5 most central
-	nodes are 7029.ACYPI065957-PA (degree 3783), 7029.ACYPI007182-PA (degree 2742), 7029.ACYPI071060-PA
-	(degree 2704), 7029.ACYPI005127-PA (degree 2567) and 7029.ACYPI088221-PA (degree
+	The undirected graph Acyrthosiphon pisum has 14072 nodes and 1565773 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01582 and has 8 connected components, where the component with most
+	nodes has 13993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 222.54, and
+	the node degree mode is 6. The top 5 most central nodes are 7029.ACYPI065957-PA
+	(degree 3783), 7029.ACYPI007182-PA (degree 2742), 7029.ACYPI071060-PA (degree
+	2704), 7029.ACYPI005127-PA (degree 2567) and 7029.ACYPI088221-PA (degree
 	2334).
 	
 

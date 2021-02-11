@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:34:44.834718
 
-The undirected graph Microtus ochrogaster has 19965 nodes and 6348103 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03185 and
-is connected, as it has a single component. The graph median node degree is 494,
-the mean node degree is 635.92, and the node degree mode is 165. The top 5 most central
-nodes are 79684.XP_005367549.1 (degree 5452), 79684.XP_005363938.1 (degree 5289),
-79684.XP_005370178.1 (degree 5135), 79684.XP_005351990.1 (degree 4849) and 79684.XP_005349834.1
-(degree 4647).
+The undirected graph Microtus ochrogaster has 19965 nodes and 6348103 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03185 and is connected, as it has a single component. The graph median
+node degree is 494, the mean node degree is 635.92, and the node degree
+mode is 165. The top 5 most central nodes are 79684.XP_005367549.1 (degree
+5452), 79684.XP_005363938.1 (degree 5289), 79684.XP_005370178.1 (degree
+5135), 79684.XP_005351990.1 (degree 4849) and 79684.XP_005349834.1 (degree
+4647).
 
 
 References
@@ -106,13 +107,14 @@ def MicrotusOchrogaster(
 	
 	Datetime: 2021-02-02 18:34:44.834718
 	
-	The undirected graph Microtus ochrogaster has 19965 nodes and 6348103 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03185 and
-	is connected, as it has a single component. The graph median node degree is 494,
-	the mean node degree is 635.92, and the node degree mode is 165. The top 5 most central
-	nodes are 79684.XP_005367549.1 (degree 5452), 79684.XP_005363938.1 (degree 5289),
-	79684.XP_005370178.1 (degree 5135), 79684.XP_005351990.1 (degree 4849) and 79684.XP_005349834.1
-	(degree 4647).
+	The undirected graph Microtus ochrogaster has 19965 nodes and 6348103 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03185 and is connected, as it has a single component. The graph median
+	node degree is 494, the mean node degree is 635.92, and the node degree
+	mode is 165. The top 5 most central nodes are 79684.XP_005367549.1 (degree
+	5452), 79684.XP_005363938.1 (degree 5289), 79684.XP_005370178.1 (degree
+	5135), 79684.XP_005351990.1 (degree 4849) and 79684.XP_005349834.1 (degree
+	4647).
 	
 
 

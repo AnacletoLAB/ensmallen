@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:58.283135
 
-The undirected graph Bigelowiella natans has 9606 nodes and 3225885 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06993 and
-has 11 connected components, where the component with most nodes has 9586 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 459,
-the mean node degree is 671.64, and the node degree mode is 1. The top 5 most central
-nodes are 227086.JGI_V11_87196 (degree 4700), 227086.JGI_V11_91185 (degree 4623),
-227086.JGI_V11_145879 (degree 4532), 227086.JGI_V11_87880 (degree 4446) and 227086.JGI_V11_48466
+The undirected graph Bigelowiella natans has 9606 nodes and 3225885 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06993 and has 11 connected components, where the component with most
+nodes has 9586 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 459, the mean node degree is 671.64, and
+the node degree mode is 1. The top 5 most central nodes are 227086.JGI_V11_87196
+(degree 4700), 227086.JGI_V11_91185 (degree 4623), 227086.JGI_V11_145879
+(degree 4532), 227086.JGI_V11_87880 (degree 4446) and 227086.JGI_V11_48466
 (degree 4446).
 
 
@@ -107,13 +108,14 @@ def BigelowiellaNatans(
 	
 	Datetime: 2021-02-02 20:06:58.283135
 	
-	The undirected graph Bigelowiella natans has 9606 nodes and 3225885 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06993 and
-	has 11 connected components, where the component with most nodes has 9586 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 459,
-	the mean node degree is 671.64, and the node degree mode is 1. The top 5 most central
-	nodes are 227086.JGI_V11_87196 (degree 4700), 227086.JGI_V11_91185 (degree 4623),
-	227086.JGI_V11_145879 (degree 4532), 227086.JGI_V11_87880 (degree 4446) and 227086.JGI_V11_48466
+	The undirected graph Bigelowiella natans has 9606 nodes and 3225885 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06993 and has 11 connected components, where the component with most
+	nodes has 9586 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 459, the mean node degree is 671.64, and
+	the node degree mode is 1. The top 5 most central nodes are 227086.JGI_V11_87196
+	(degree 4700), 227086.JGI_V11_91185 (degree 4623), 227086.JGI_V11_145879
+	(degree 4532), 227086.JGI_V11_87880 (degree 4446) and 227086.JGI_V11_48466
 	(degree 4446).
 	
 

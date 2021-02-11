@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:01.058163
 
-The undirected graph Alcanivorax sp. P2S70 has 3298 nodes and 333837 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06140 and
-has 3 connected components, where the component with most nodes has 3290 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 202.45, and the node degree mode is 5. The top 5 most central
-nodes are 1397527.Q670_08645 (degree 1176), 1397527.Q670_16325 (degree 1146), 1397527.Q670_14645
-(degree 1145), 1397527.Q670_00365 (degree 1003) and 1397527.Q670_09150 (degree 984).
+The undirected graph Alcanivorax sp. P2S70 has 3298 nodes and 333837 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06140 and has 3 connected components, where the component with most
+nodes has 3290 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 202.45, and
+the node degree mode is 5. The top 5 most central nodes are 1397527.Q670_08645
+(degree 1176), 1397527.Q670_16325 (degree 1146), 1397527.Q670_14645 (degree
+1145), 1397527.Q670_00365 (degree 1003) and 1397527.Q670_09150 (degree
+984).
 
 
 References
@@ -106,13 +108,15 @@ def AlcanivoraxSp.P2s70(
 	
 	Datetime: 2021-02-03 22:30:01.058163
 	
-	The undirected graph Alcanivorax sp. P2S70 has 3298 nodes and 333837 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06140 and
-	has 3 connected components, where the component with most nodes has 3290 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 202.45, and the node degree mode is 5. The top 5 most central
-	nodes are 1397527.Q670_08645 (degree 1176), 1397527.Q670_16325 (degree 1146), 1397527.Q670_14645
-	(degree 1145), 1397527.Q670_00365 (degree 1003) and 1397527.Q670_09150 (degree 984).
+	The undirected graph Alcanivorax sp. P2S70 has 3298 nodes and 333837 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06140 and has 3 connected components, where the component with most
+	nodes has 3290 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 202.45, and
+	the node degree mode is 5. The top 5 most central nodes are 1397527.Q670_08645
+	(degree 1176), 1397527.Q670_16325 (degree 1146), 1397527.Q670_14645 (degree
+	1145), 1397527.Q670_00365 (degree 1003) and 1397527.Q670_09150 (degree
+	984).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:22.640006
 
-The undirected graph Propionibacterium acnes KPA171202 has 2282 nodes and 203547
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07821 and has 7 connected components, where the component with most nodes has
-2266 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 161, the mean node degree is 178.39, and the node degree mode is 3. The
-top 5 most central nodes are 267747.PPA0774 (degree 995), 267747.PPA2266 (degree
-758), 267747.PPA0162 (degree 753), 267747.PPA1764 (degree 748) and 267747.PPA1408
-(degree 741).
+The undirected graph Propionibacterium acnes KPA171202 has 2282 nodes and
+203547 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07821 and has 7 connected components, where the
+component with most nodes has 2266 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+is 178.39, and the node degree mode is 3. The top 5 most central nodes
+are 267747.PPA0774 (degree 995), 267747.PPA2266 (degree 758), 267747.PPA0162
+(degree 753), 267747.PPA1764 (degree 748) and 267747.PPA1408 (degree 741).
 
 
 References
@@ -107,14 +107,14 @@ def PropionibacteriumAcnesKpa171202(
 	
 	Datetime: 2021-02-02 20:15:22.640006
 	
-	The undirected graph Propionibacterium acnes KPA171202 has 2282 nodes and 203547
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07821 and has 7 connected components, where the component with most nodes has
-	2266 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 161, the mean node degree is 178.39, and the node degree mode is 3. The
-	top 5 most central nodes are 267747.PPA0774 (degree 995), 267747.PPA2266 (degree
-	758), 267747.PPA0162 (degree 753), 267747.PPA1764 (degree 748) and 267747.PPA1408
-	(degree 741).
+	The undirected graph Propionibacterium acnes KPA171202 has 2282 nodes and
+	203547 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07821 and has 7 connected components, where the
+	component with most nodes has 2266 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+	is 178.39, and the node degree mode is 3. The top 5 most central nodes
+	are 267747.PPA0774 (degree 995), 267747.PPA2266 (degree 758), 267747.PPA0162
+	(degree 753), 267747.PPA1764 (degree 748) and 267747.PPA1408 (degree 741).
 	
 
 

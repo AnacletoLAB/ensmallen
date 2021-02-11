@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:32.838099
 
-The undirected graph Prochlorococcus sp. scB241528O2 has 1830 nodes and 105019 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06275
-and has 56 connected components, where the component with most nodes has 1678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 114.77, and the node degree mode is 1. The top 5 most
-central nodes are 1471459.JFLJ01000130_gene1539 (degree 708), 1471459.JFLJ01000156_gene868
+The undirected graph Prochlorococcus sp. scB241528O2 has 1830 nodes and
+105019 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06275 and has 56 connected components, where the
+component with most nodes has 1678 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+is 114.77, and the node degree mode is 1. The top 5 most central nodes
+are 1471459.JFLJ01000130_gene1539 (degree 708), 1471459.JFLJ01000156_gene868
 (degree 542), 1471459.JFLJ01000114_gene653 (degree 536), 1471459.JFLJ01000156_gene1013
 (degree 518) and 1471459.JFLJ01000108_gene1680 (degree 511).
 
@@ -107,12 +108,13 @@ def ProchlorococcusSp.Scb241528o2(
 	
 	Datetime: 2021-02-03 23:12:32.838099
 	
-	The undirected graph Prochlorococcus sp. scB241528O2 has 1830 nodes and 105019 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06275
-	and has 56 connected components, where the component with most nodes has 1678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 114.77, and the node degree mode is 1. The top 5 most
-	central nodes are 1471459.JFLJ01000130_gene1539 (degree 708), 1471459.JFLJ01000156_gene868
+	The undirected graph Prochlorococcus sp. scB241528O2 has 1830 nodes and
+	105019 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06275 and has 56 connected components, where the
+	component with most nodes has 1678 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 98, the mean node degree
+	is 114.77, and the node degree mode is 1. The top 5 most central nodes
+	are 1471459.JFLJ01000130_gene1539 (degree 708), 1471459.JFLJ01000156_gene868
 	(degree 542), 1471459.JFLJ01000114_gene653 (degree 536), 1471459.JFLJ01000156_gene1013
 	(degree 518) and 1471459.JFLJ01000108_gene1680 (degree 511).
 	

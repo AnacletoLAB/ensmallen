@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:40.672006
 
-The undirected graph Aspergillus oryzae has 8845 nodes and 577819 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01477 and
-has 112 connected components, where the component with most nodes has 8604 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 65, the mean node degree is 130.65, and the node degree mode is 1. The top 5 most
-central nodes are 5062.CADAORAP00006025 (degree 2167), 5062.CADAORAP00008930 (degree
-1272), 5062.CADAORAP00001099 (degree 1248), 5062.CADAORAP00008985 (degree 1240) and
-5062.CADAORAP00001088 (degree 1227).
+The undirected graph Aspergillus oryzae has 8845 nodes and 577819 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01477 and has 112 connected components, where the component with most
+nodes has 8604 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 65, the mean node degree is 130.65, and
+the node degree mode is 1. The top 5 most central nodes are 5062.CADAORAP00006025
+(degree 2167), 5062.CADAORAP00008930 (degree 1272), 5062.CADAORAP00001099
+(degree 1248), 5062.CADAORAP00008985 (degree 1240) and 5062.CADAORAP00001088
+(degree 1227).
 
 
 References
@@ -107,14 +108,15 @@ def AspergillusOryzae(
 	
 	Datetime: 2021-02-02 17:12:40.672006
 	
-	The undirected graph Aspergillus oryzae has 8845 nodes and 577819 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01477 and
-	has 112 connected components, where the component with most nodes has 8604 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 65, the mean node degree is 130.65, and the node degree mode is 1. The top 5 most
-	central nodes are 5062.CADAORAP00006025 (degree 2167), 5062.CADAORAP00008930 (degree
-	1272), 5062.CADAORAP00001099 (degree 1248), 5062.CADAORAP00008985 (degree 1240) and
-	5062.CADAORAP00001088 (degree 1227).
+	The undirected graph Aspergillus oryzae has 8845 nodes and 577819 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01477 and has 112 connected components, where the component with most
+	nodes has 8604 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 65, the mean node degree is 130.65, and
+	the node degree mode is 1. The top 5 most central nodes are 5062.CADAORAP00006025
+	(degree 2167), 5062.CADAORAP00008930 (degree 1272), 5062.CADAORAP00001099
+	(degree 1248), 5062.CADAORAP00008985 (degree 1240) and 5062.CADAORAP00001088
+	(degree 1227).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:24.888779
 
-The undirected graph Robinsoniella peoriensis has 5840 nodes and 862159 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05057
-and has 24 connected components, where the component with most nodes has 5788 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 273, the mean node degree is 295.26, and the node degree mode is 1. The top 5
-most central nodes are 180332.JTGN01000002_gene5849 (degree 2252), 180332.JTGN01000024_gene1668
-(degree 2163), 180332.JTGN01000003_gene2099 (degree 2115), 180332.JTGN01000008_gene3914
-(degree 2013) and 180332.JTGN01000003_gene2054 (degree 1940).
+The undirected graph Robinsoniella peoriensis has 5840 nodes and 862159
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05057 and has 24 connected components, where the component
+with most nodes has 5788 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 273, the mean node degree is 295.26,
+and the node degree mode is 1. The top 5 most central nodes are 180332.JTGN01000002_gene5849
+(degree 2252), 180332.JTGN01000024_gene1668 (degree 2163), 180332.JTGN01000003_gene2099
+(degree 2115), 180332.JTGN01000008_gene3914 (degree 2013) and 180332.JTGN01000003_gene2054
+(degree 1940).
 
 
 References
@@ -107,14 +108,15 @@ def RobinsoniellaPeoriensis(
 	
 	Datetime: 2021-02-02 19:56:24.888779
 	
-	The undirected graph Robinsoniella peoriensis has 5840 nodes and 862159 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05057
-	and has 24 connected components, where the component with most nodes has 5788 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 273, the mean node degree is 295.26, and the node degree mode is 1. The top 5
-	most central nodes are 180332.JTGN01000002_gene5849 (degree 2252), 180332.JTGN01000024_gene1668
-	(degree 2163), 180332.JTGN01000003_gene2099 (degree 2115), 180332.JTGN01000008_gene3914
-	(degree 2013) and 180332.JTGN01000003_gene2054 (degree 1940).
+	The undirected graph Robinsoniella peoriensis has 5840 nodes and 862159
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05057 and has 24 connected components, where the component
+	with most nodes has 5788 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 273, the mean node degree is 295.26,
+	and the node degree mode is 1. The top 5 most central nodes are 180332.JTGN01000002_gene5849
+	(degree 2252), 180332.JTGN01000024_gene1668 (degree 2163), 180332.JTGN01000003_gene2099
+	(degree 2115), 180332.JTGN01000008_gene3914 (degree 2013) and 180332.JTGN01000003_gene2054
+	(degree 1940).
 	
 
 

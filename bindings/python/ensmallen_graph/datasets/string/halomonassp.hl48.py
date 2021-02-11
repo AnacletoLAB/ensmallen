@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:08.666005
 
-The undirected graph Halomonas sp. HL48 has 3160 nodes and 340456 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06821 and
-has 4 connected components, where the component with most nodes has 3153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 215.48, and the node degree mode is 2. The top 5 most central
-nodes are 1479235.KK366039_gene1646 (degree 1425), 1479235.KK366039_gene2678 (degree
-1381), 1479235.KK366039_gene3009 (degree 1135), 1479235.KK366039_gene2919 (degree
-1067) and 1479235.KK366039_gene554 (degree 1064).
+The undirected graph Halomonas sp. HL48 has 3160 nodes and 340456 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06821 and has 4 connected components, where the component with most
+nodes has 3153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 215.48, and
+the node degree mode is 2. The top 5 most central nodes are 1479235.KK366039_gene1646
+(degree 1425), 1479235.KK366039_gene2678 (degree 1381), 1479235.KK366039_gene3009
+(degree 1135), 1479235.KK366039_gene2919 (degree 1067) and 1479235.KK366039_gene554
+(degree 1064).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasSp.Hl48(
 	
 	Datetime: 2021-02-03 23:13:08.666005
 	
-	The undirected graph Halomonas sp. HL48 has 3160 nodes and 340456 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06821 and
-	has 4 connected components, where the component with most nodes has 3153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 215.48, and the node degree mode is 2. The top 5 most central
-	nodes are 1479235.KK366039_gene1646 (degree 1425), 1479235.KK366039_gene2678 (degree
-	1381), 1479235.KK366039_gene3009 (degree 1135), 1479235.KK366039_gene2919 (degree
-	1067) and 1479235.KK366039_gene554 (degree 1064).
+	The undirected graph Halomonas sp. HL48 has 3160 nodes and 340456 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06821 and has 4 connected components, where the component with most
+	nodes has 3153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 215.48, and
+	the node degree mode is 2. The top 5 most central nodes are 1479235.KK366039_gene1646
+	(degree 1425), 1479235.KK366039_gene2678 (degree 1381), 1479235.KK366039_gene3009
+	(degree 1135), 1479235.KK366039_gene2919 (degree 1067) and 1479235.KK366039_gene554
+	(degree 1064).
 	
 
 

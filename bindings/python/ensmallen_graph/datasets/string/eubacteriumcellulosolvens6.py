@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:49.626328
 
-The undirected graph Eubacterium cellulosolvens 6 has 2724 nodes and 260025 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07011
-and has 4 connected components, where the component with most nodes has 2714 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 190.91, and the node degree mode is 3. The top 5
-most central nodes are 633697.EubceDRAFT1_0139 (degree 1134), 633697.EubceDRAFT1_1806
-(degree 1076), 633697.EubceDRAFT1_1666 (degree 962), 633697.EubceDRAFT1_1605 (degree
-935) and 633697.EubceDRAFT1_2814 (degree 931).
+The undirected graph Eubacterium cellulosolvens 6 has 2724 nodes and 260025
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07011 and has 4 connected components, where the component
+with most nodes has 2714 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 190.91,
+and the node degree mode is 3. The top 5 most central nodes are 633697.EubceDRAFT1_0139
+(degree 1134), 633697.EubceDRAFT1_1806 (degree 1076), 633697.EubceDRAFT1_1666
+(degree 962), 633697.EubceDRAFT1_1605 (degree 935) and 633697.EubceDRAFT1_2814
+(degree 931).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumCellulosolvens6(
 	
 	Datetime: 2021-02-02 21:21:49.626328
 	
-	The undirected graph Eubacterium cellulosolvens 6 has 2724 nodes and 260025 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07011
-	and has 4 connected components, where the component with most nodes has 2714 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 190.91, and the node degree mode is 3. The top 5
-	most central nodes are 633697.EubceDRAFT1_0139 (degree 1134), 633697.EubceDRAFT1_1806
-	(degree 1076), 633697.EubceDRAFT1_1666 (degree 962), 633697.EubceDRAFT1_1605 (degree
-	935) and 633697.EubceDRAFT1_2814 (degree 931).
+	The undirected graph Eubacterium cellulosolvens 6 has 2724 nodes and 260025
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07011 and has 4 connected components, where the component
+	with most nodes has 2714 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 190.91,
+	and the node degree mode is 3. The top 5 most central nodes are 633697.EubceDRAFT1_0139
+	(degree 1134), 633697.EubceDRAFT1_1806 (degree 1076), 633697.EubceDRAFT1_1666
+	(degree 962), 633697.EubceDRAFT1_1605 (degree 935) and 633697.EubceDRAFT1_2814
+	(degree 931).
 	
 
 

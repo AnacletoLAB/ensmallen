@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:06:39.440435
 
-The undirected graph Butyrivibrio sp. LC3010 has 4024 nodes and 386662 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04777 and
-has 15 connected components, where the component with most nodes has 3994 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 192.18, and the node degree mode is 1. The top 5 most central
-nodes are 1280680.AUJU01000043_gene3549 (degree 1594), 1280680.AUJU01000002_gene872
-(degree 1561), 1280680.AUJU01000028_gene3263 (degree 1259), 1280680.AUJU01000003_gene3250
-(degree 1217) and 1280680.AUJU01000017_gene3904 (degree 1185).
+The undirected graph Butyrivibrio sp. LC3010 has 4024 nodes and 386662
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04777 and has 15 connected components, where the component
+with most nodes has 3994 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 192.18,
+and the node degree mode is 1. The top 5 most central nodes are 1280680.AUJU01000043_gene3549
+(degree 1594), 1280680.AUJU01000002_gene872 (degree 1561), 1280680.AUJU01000028_gene3263
+(degree 1259), 1280680.AUJU01000003_gene3250 (degree 1217) and 1280680.AUJU01000017_gene3904
+(degree 1185).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Lc3010(
 	
 	Datetime: 2021-02-03 21:06:39.440435
 	
-	The undirected graph Butyrivibrio sp. LC3010 has 4024 nodes and 386662 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04777 and
-	has 15 connected components, where the component with most nodes has 3994 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 192.18, and the node degree mode is 1. The top 5 most central
-	nodes are 1280680.AUJU01000043_gene3549 (degree 1594), 1280680.AUJU01000002_gene872
-	(degree 1561), 1280680.AUJU01000028_gene3263 (degree 1259), 1280680.AUJU01000003_gene3250
-	(degree 1217) and 1280680.AUJU01000017_gene3904 (degree 1185).
+	The undirected graph Butyrivibrio sp. LC3010 has 4024 nodes and 386662
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04777 and has 15 connected components, where the component
+	with most nodes has 3994 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 192.18,
+	and the node degree mode is 1. The top 5 most central nodes are 1280680.AUJU01000043_gene3549
+	(degree 1594), 1280680.AUJU01000002_gene872 (degree 1561), 1280680.AUJU01000028_gene3263
+	(degree 1259), 1280680.AUJU01000003_gene3250 (degree 1217) and 1280680.AUJU01000017_gene3904
+	(degree 1185).
 	
 
 

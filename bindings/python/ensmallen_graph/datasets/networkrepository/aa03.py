@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:53.060134
 
-The undirected graph aa03 has 8627 nodes and 70771 unweighted edges, of which 10
-are self-loops. The graph is sparse as it has a density of 0.00190 and is connected,
-as it has a single component. The graph median node degree is 9, the mean node degree
-is 16.41, and the node degree mode is 8. The top 5 most central nodes are 747 (degree
-469), 589 (degree 371), 757 (degree 353), 756 (degree 346) and 351 (degree 343).
+The undirected graph aa03 has 8627 nodes and 70771 unweighted edges, of
+which 10 are self-loops. The graph is sparse as it has a density of 0.00190
+and is connected, as it has a single component. The graph median node degree
+is 9, the mean node degree is 16.41, and the node degree mode is 8. The
+top 5 most central nodes are 747 (degree 469), 589 (degree 371), 757 (degree
+353), 756 (degree 346) and 351 (degree 343).
 
 
 References
@@ -101,11 +102,12 @@ def Aa03(
 	
 	Datetime: 2021-02-06 10:14:53.060134
 	
-	The undirected graph aa03 has 8627 nodes and 70771 unweighted edges, of which 10
-	are self-loops. The graph is sparse as it has a density of 0.00190 and is connected,
-	as it has a single component. The graph median node degree is 9, the mean node degree
-	is 16.41, and the node degree mode is 8. The top 5 most central nodes are 747 (degree
-	469), 589 (degree 371), 757 (degree 353), 756 (degree 346) and 351 (degree 343).
+	The undirected graph aa03 has 8627 nodes and 70771 unweighted edges, of
+	which 10 are self-loops. The graph is sparse as it has a density of 0.00190
+	and is connected, as it has a single component. The graph median node degree
+	is 9, the mean node degree is 16.41, and the node degree mode is 8. The
+	top 5 most central nodes are 747 (degree 469), 589 (degree 371), 757 (degree
+	353), 756 (degree 346) and 351 (degree 343).
 	
 
 

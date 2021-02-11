@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:51.385407
 
-The undirected graph Prevotella marshii has 2281 nodes and 136118 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05235 and
-has 33 connected components, where the component with most nodes has 2200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 119.35, and the node degree mode is 1. The top 5 most central
-nodes are 862515.HMPREF0658_1524 (degree 1050), 862515.HMPREF0658_1658 (degree 850),
-862515.HMPREF0658_0056 (degree 733), 862515.HMPREF0658_0325 (degree 674) and 862515.HMPREF0658_1251
+The undirected graph Prevotella marshii has 2281 nodes and 136118 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05235 and has 33 connected components, where the component with most
+nodes has 2200 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 119.35, and
+the node degree mode is 1. The top 5 most central nodes are 862515.HMPREF0658_1524
+(degree 1050), 862515.HMPREF0658_1658 (degree 850), 862515.HMPREF0658_0056
+(degree 733), 862515.HMPREF0658_0325 (degree 674) and 862515.HMPREF0658_1251
 (degree 644).
 
 
@@ -107,13 +108,14 @@ def PrevotellaMarshii(
 	
 	Datetime: 2021-02-02 21:46:51.385407
 	
-	The undirected graph Prevotella marshii has 2281 nodes and 136118 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05235 and
-	has 33 connected components, where the component with most nodes has 2200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 119.35, and the node degree mode is 1. The top 5 most central
-	nodes are 862515.HMPREF0658_1524 (degree 1050), 862515.HMPREF0658_1658 (degree 850),
-	862515.HMPREF0658_0056 (degree 733), 862515.HMPREF0658_0325 (degree 674) and 862515.HMPREF0658_1251
+	The undirected graph Prevotella marshii has 2281 nodes and 136118 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05235 and has 33 connected components, where the component with most
+	nodes has 2200 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 119.35, and
+	the node degree mode is 1. The top 5 most central nodes are 862515.HMPREF0658_1524
+	(degree 1050), 862515.HMPREF0658_1658 (degree 850), 862515.HMPREF0658_0056
+	(degree 733), 862515.HMPREF0658_0325 (degree 674) and 862515.HMPREF0658_1251
 	(degree 644).
 	
 

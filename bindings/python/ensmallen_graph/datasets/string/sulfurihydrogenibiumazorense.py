@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:13.904360
 
-The undirected graph Sulfurihydrogenibium azorense has 1718 nodes and 120309 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08157
-and has 3 connected components, where the component with most nodes has 1713 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 140.06, and the node degree mode is 9. The top 5
-most central nodes are 204536.SULAZ_1136 (degree 784), 204536.SULAZ_1085 (degree
-652), 204536.SULAZ_1250 (degree 643), 204536.SULAZ_0467 (degree 593) and 204536.SULAZ_0484
-(degree 586).
+The undirected graph Sulfurihydrogenibium azorense has 1718 nodes and 120309
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08157 and has 3 connected components, where the component
+with most nodes has 1713 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 140.06,
+and the node degree mode is 9. The top 5 most central nodes are 204536.SULAZ_1136
+(degree 784), 204536.SULAZ_1085 (degree 652), 204536.SULAZ_1250 (degree
+643), 204536.SULAZ_0467 (degree 593) and 204536.SULAZ_0484 (degree 586).
 
 
 References
@@ -107,14 +107,14 @@ def SulfurihydrogenibiumAzorense(
 	
 	Datetime: 2021-02-02 20:00:13.904360
 	
-	The undirected graph Sulfurihydrogenibium azorense has 1718 nodes and 120309 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08157
-	and has 3 connected components, where the component with most nodes has 1713 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 140.06, and the node degree mode is 9. The top 5
-	most central nodes are 204536.SULAZ_1136 (degree 784), 204536.SULAZ_1085 (degree
-	652), 204536.SULAZ_1250 (degree 643), 204536.SULAZ_0467 (degree 593) and 204536.SULAZ_0484
-	(degree 586).
+	The undirected graph Sulfurihydrogenibium azorense has 1718 nodes and 120309
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08157 and has 3 connected components, where the component
+	with most nodes has 1713 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 140.06,
+	and the node degree mode is 9. The top 5 most central nodes are 204536.SULAZ_1136
+	(degree 784), 204536.SULAZ_1085 (degree 652), 204536.SULAZ_1250 (degree
+	643), 204536.SULAZ_0467 (degree 593) and 204536.SULAZ_0484 (degree 586).
 	
 
 

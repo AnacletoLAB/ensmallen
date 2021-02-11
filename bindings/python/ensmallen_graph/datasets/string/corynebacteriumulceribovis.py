@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:21.007038
 
-The undirected graph Corynebacterium ulceribovis has 2047 nodes and 138883 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06632
-and has 6 connected components, where the component with most nodes has 2032 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 135.69, and the node degree mode is 4. The top 5
-most central nodes are 1121370.AQUY01000004_gene1414 (degree 848), 1121370.AQUY01000002_gene2019
-(degree 822), 1121370.AQUY01000001_gene266 (degree 692), 1121370.AQUY01000004_gene1393
-(degree 640) and 1121370.AQUY01000001_gene269 (degree 628).
+The undirected graph Corynebacterium ulceribovis has 2047 nodes and 138883
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06632 and has 6 connected components, where the component
+with most nodes has 2032 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 135.69,
+and the node degree mode is 4. The top 5 most central nodes are 1121370.AQUY01000004_gene1414
+(degree 848), 1121370.AQUY01000002_gene2019 (degree 822), 1121370.AQUY01000001_gene266
+(degree 692), 1121370.AQUY01000004_gene1393 (degree 640) and 1121370.AQUY01000001_gene269
+(degree 628).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumUlceribovis(
 	
 	Datetime: 2021-02-02 22:35:21.007038
 	
-	The undirected graph Corynebacterium ulceribovis has 2047 nodes and 138883 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06632
-	and has 6 connected components, where the component with most nodes has 2032 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 135.69, and the node degree mode is 4. The top 5
-	most central nodes are 1121370.AQUY01000004_gene1414 (degree 848), 1121370.AQUY01000002_gene2019
-	(degree 822), 1121370.AQUY01000001_gene266 (degree 692), 1121370.AQUY01000004_gene1393
-	(degree 640) and 1121370.AQUY01000001_gene269 (degree 628).
+	The undirected graph Corynebacterium ulceribovis has 2047 nodes and 138883
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06632 and has 6 connected components, where the component
+	with most nodes has 2032 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 135.69,
+	and the node degree mode is 4. The top 5 most central nodes are 1121370.AQUY01000004_gene1414
+	(degree 848), 1121370.AQUY01000002_gene2019 (degree 822), 1121370.AQUY01000001_gene266
+	(degree 692), 1121370.AQUY01000004_gene1393 (degree 640) and 1121370.AQUY01000001_gene269
+	(degree 628).
 	
 
 

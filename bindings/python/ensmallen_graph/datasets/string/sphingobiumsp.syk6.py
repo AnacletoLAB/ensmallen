@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:00.836225
 
-The undirected graph Sphingobium sp. SYK6 has 4035 nodes and 271779 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03339 and
-has 11 connected components, where the component with most nodes has 4004 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 134.71, and the node degree mode is 3. The top 5 most central
-nodes are 627192.SLG_03690 (degree 1427), 627192.SLG_35340 (degree 1089), 627192.SLG_29300
-(degree 993), 627192.SLG_14850 (degree 926) and 627192.SLG_39130 (degree 868).
+The undirected graph Sphingobium sp. SYK6 has 4035 nodes and 271779 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03339 and has 11 connected components, where the component with most
+nodes has 4004 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 134.71, and
+the node degree mode is 3. The top 5 most central nodes are 627192.SLG_03690
+(degree 1427), 627192.SLG_35340 (degree 1089), 627192.SLG_29300 (degree
+993), 627192.SLG_14850 (degree 926) and 627192.SLG_39130 (degree 868).
 
 
 References
@@ -106,13 +107,14 @@ def SphingobiumSp.Syk6(
 	
 	Datetime: 2021-02-02 21:21:00.836225
 	
-	The undirected graph Sphingobium sp. SYK6 has 4035 nodes and 271779 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03339 and
-	has 11 connected components, where the component with most nodes has 4004 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 134.71, and the node degree mode is 3. The top 5 most central
-	nodes are 627192.SLG_03690 (degree 1427), 627192.SLG_35340 (degree 1089), 627192.SLG_29300
-	(degree 993), 627192.SLG_14850 (degree 926) and 627192.SLG_39130 (degree 868).
+	The undirected graph Sphingobium sp. SYK6 has 4035 nodes and 271779 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03339 and has 11 connected components, where the component with most
+	nodes has 4004 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 134.71, and
+	the node degree mode is 3. The top 5 most central nodes are 627192.SLG_03690
+	(degree 1427), 627192.SLG_35340 (degree 1089), 627192.SLG_29300 (degree
+	993), 627192.SLG_14850 (degree 926) and 627192.SLG_39130 (degree 868).
 	
 
 

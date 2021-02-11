@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:44.623402
 
-The undirected graph Niabella soli has 4052 nodes and 280189 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03414 and has 22
-connected components, where the component with most nodes has 3999 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 138.30, and the node degree mode is 4. The top 5 most central
-nodes are 929713.NIASO_14750 (degree 1277), 929713.NIASO_18335 (degree 961), 929713.NIASO_01560
-(degree 943), 929713.NIASO_18895 (degree 882) and 929713.NIASO_18435 (degree 870).
+The undirected graph Niabella soli has 4052 nodes and 280189 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03414 and has 22 connected components, where the component with most
+nodes has 3999 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 138.30, and
+the node degree mode is 4. The top 5 most central nodes are 929713.NIASO_14750
+(degree 1277), 929713.NIASO_18335 (degree 961), 929713.NIASO_01560 (degree
+943), 929713.NIASO_18895 (degree 882) and 929713.NIASO_18435 (degree 870).
 
 
 References
@@ -106,13 +107,14 @@ def NiabellaSoli(
 	
 	Datetime: 2021-02-02 21:57:44.623402
 	
-	The undirected graph Niabella soli has 4052 nodes and 280189 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03414 and has 22
-	connected components, where the component with most nodes has 3999 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 138.30, and the node degree mode is 4. The top 5 most central
-	nodes are 929713.NIASO_14750 (degree 1277), 929713.NIASO_18335 (degree 961), 929713.NIASO_01560
-	(degree 943), 929713.NIASO_18895 (degree 882) and 929713.NIASO_18435 (degree 870).
+	The undirected graph Niabella soli has 4052 nodes and 280189 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03414 and has 22 connected components, where the component with most
+	nodes has 3999 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 138.30, and
+	the node degree mode is 4. The top 5 most central nodes are 929713.NIASO_14750
+	(degree 1277), 929713.NIASO_18335 (degree 961), 929713.NIASO_01560 (degree
+	943), 929713.NIASO_18895 (degree 882) and 929713.NIASO_18435 (degree 870).
 	
 
 

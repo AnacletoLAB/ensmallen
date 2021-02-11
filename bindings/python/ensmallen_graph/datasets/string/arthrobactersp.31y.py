@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:04.313578
 
-The undirected graph Arthrobacter sp. 31Y has 4652 nodes and 446324 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04126 and
-has 26 connected components, where the component with most nodes has 4585 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 191.88, and the node degree mode is 1. The top 5 most central
-nodes are 1115632.JAFW01000001_gene927 (degree 1450), 1115632.JAFW01000001_gene4129
-(degree 1373), 1115632.JAFW01000001_gene3931 (degree 1360), 1115632.JAFW01000001_gene917
-(degree 1328) and 1115632.JAFW01000001_gene4552 (degree 1326).
+The undirected graph Arthrobacter sp. 31Y has 4652 nodes and 446324 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04126 and has 26 connected components, where the component with most
+nodes has 4585 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 191.88, and
+the node degree mode is 1. The top 5 most central nodes are 1115632.JAFW01000001_gene927
+(degree 1450), 1115632.JAFW01000001_gene4129 (degree 1373), 1115632.JAFW01000001_gene3931
+(degree 1360), 1115632.JAFW01000001_gene917 (degree 1328) and 1115632.JAFW01000001_gene4552
+(degree 1326).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.31y(
 	
 	Datetime: 2021-02-02 22:27:04.313578
 	
-	The undirected graph Arthrobacter sp. 31Y has 4652 nodes and 446324 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04126 and
-	has 26 connected components, where the component with most nodes has 4585 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 191.88, and the node degree mode is 1. The top 5 most central
-	nodes are 1115632.JAFW01000001_gene927 (degree 1450), 1115632.JAFW01000001_gene4129
-	(degree 1373), 1115632.JAFW01000001_gene3931 (degree 1360), 1115632.JAFW01000001_gene917
-	(degree 1328) and 1115632.JAFW01000001_gene4552 (degree 1326).
+	The undirected graph Arthrobacter sp. 31Y has 4652 nodes and 446324 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04126 and has 26 connected components, where the component with most
+	nodes has 4585 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 191.88, and
+	the node degree mode is 1. The top 5 most central nodes are 1115632.JAFW01000001_gene927
+	(degree 1450), 1115632.JAFW01000001_gene4129 (degree 1373), 1115632.JAFW01000001_gene3931
+	(degree 1360), 1115632.JAFW01000001_gene917 (degree 1328) and 1115632.JAFW01000001_gene4552
+	(degree 1326).
 	
 
 

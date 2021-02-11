@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:58.370380
 
-The undirected graph Anaerovibrio sp. RM50 has 2444 nodes and 189083 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06334 and
-has 26 connected components, where the component with most nodes has 2381 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 154.73, and the node degree mode is 2. The top 5 most central
-nodes are 1200557.JHWV01000017_gene802 (degree 896), 1200557.JHWV01000006_gene1798
-(degree 795), 1200557.JHWV01000004_gene699 (degree 793), 1200557.JHWV01000006_gene1876
-(degree 777) and 1200557.JHWV01000007_gene2045 (degree 770).
+The undirected graph Anaerovibrio sp. RM50 has 2444 nodes and 189083 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06334 and has 26 connected components, where the component with most
+nodes has 2381 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 154.73, and
+the node degree mode is 2. The top 5 most central nodes are 1200557.JHWV01000017_gene802
+(degree 896), 1200557.JHWV01000006_gene1798 (degree 795), 1200557.JHWV01000004_gene699
+(degree 793), 1200557.JHWV01000006_gene1876 (degree 777) and 1200557.JHWV01000007_gene2045
+(degree 770).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerovibrioSp.Rm50(
 	
 	Datetime: 2021-02-02 23:13:58.370380
 	
-	The undirected graph Anaerovibrio sp. RM50 has 2444 nodes and 189083 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06334 and
-	has 26 connected components, where the component with most nodes has 2381 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 154.73, and the node degree mode is 2. The top 5 most central
-	nodes are 1200557.JHWV01000017_gene802 (degree 896), 1200557.JHWV01000006_gene1798
-	(degree 795), 1200557.JHWV01000004_gene699 (degree 793), 1200557.JHWV01000006_gene1876
-	(degree 777) and 1200557.JHWV01000007_gene2045 (degree 770).
+	The undirected graph Anaerovibrio sp. RM50 has 2444 nodes and 189083 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06334 and has 26 connected components, where the component with most
+	nodes has 2381 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 154.73, and
+	the node degree mode is 2. The top 5 most central nodes are 1200557.JHWV01000017_gene802
+	(degree 896), 1200557.JHWV01000006_gene1798 (degree 795), 1200557.JHWV01000004_gene699
+	(degree 793), 1200557.JHWV01000006_gene1876 (degree 777) and 1200557.JHWV01000007_gene2045
+	(degree 770).
 	
 
 

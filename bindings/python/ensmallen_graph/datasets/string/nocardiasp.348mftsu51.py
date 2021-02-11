@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:21.512251
 
-The undirected graph Nocardia sp. 348MFTsu51 has 5155 nodes and 779420 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05867 and
-has 19 connected components, where the component with most nodes has 5114 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 302.39, and the node degree mode is 3. The top 5 most central
-nodes are 1172185.KB911526_gene740 (degree 2258), 1172185.KB911514_gene4126 (degree
-2191), 1172185.KB911515_gene2303 (degree 1756), 1172185.KB911511_gene3233 (degree
-1544) and 1172185.KB911522_gene1877 (degree 1533).
+The undirected graph Nocardia sp. 348MFTsu51 has 5155 nodes and 779420
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05867 and has 19 connected components, where the component
+with most nodes has 5114 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 251, the mean node degree is 302.39,
+and the node degree mode is 3. The top 5 most central nodes are 1172185.KB911526_gene740
+(degree 2258), 1172185.KB911514_gene4126 (degree 2191), 1172185.KB911515_gene2303
+(degree 1756), 1172185.KB911511_gene3233 (degree 1544) and 1172185.KB911522_gene1877
+(degree 1533).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaSp.348mftsu51(
 	
 	Datetime: 2021-02-02 23:07:21.512251
 	
-	The undirected graph Nocardia sp. 348MFTsu51 has 5155 nodes and 779420 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05867 and
-	has 19 connected components, where the component with most nodes has 5114 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 302.39, and the node degree mode is 3. The top 5 most central
-	nodes are 1172185.KB911526_gene740 (degree 2258), 1172185.KB911514_gene4126 (degree
-	2191), 1172185.KB911515_gene2303 (degree 1756), 1172185.KB911511_gene3233 (degree
-	1544) and 1172185.KB911522_gene1877 (degree 1533).
+	The undirected graph Nocardia sp. 348MFTsu51 has 5155 nodes and 779420
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05867 and has 19 connected components, where the component
+	with most nodes has 5114 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 251, the mean node degree is 302.39,
+	and the node degree mode is 3. The top 5 most central nodes are 1172185.KB911526_gene740
+	(degree 2258), 1172185.KB911514_gene4126 (degree 2191), 1172185.KB911515_gene2303
+	(degree 1756), 1172185.KB911511_gene3233 (degree 1544) and 1172185.KB911522_gene1877
+	(degree 1533).
 	
 
 

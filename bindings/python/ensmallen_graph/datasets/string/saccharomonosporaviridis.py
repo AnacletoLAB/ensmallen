@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:02.211606
 
-The undirected graph Saccharomonospora viridis has 3796 nodes and 323676 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04494
-and has 14 connected components, where the component with most nodes has 3765 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 170.54, and the node degree mode is 2. The top 5
-most central nodes are 471857.Svir_26930 (degree 1180), 471857.Svir_25960 (degree
-1160), 471857.Svir_04770 (degree 1024), 471857.Svir_28040 (degree 1008) and 471857.Svir_37200
-(degree 967).
+The undirected graph Saccharomonospora viridis has 3796 nodes and 323676
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04494 and has 14 connected components, where the component
+with most nodes has 3765 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 170.54,
+and the node degree mode is 2. The top 5 most central nodes are 471857.Svir_26930
+(degree 1180), 471857.Svir_25960 (degree 1160), 471857.Svir_04770 (degree
+1024), 471857.Svir_28040 (degree 1008) and 471857.Svir_37200 (degree 967).
 
 
 References
@@ -107,14 +107,14 @@ def SaccharomonosporaViridis(
 	
 	Datetime: 2021-02-02 20:56:02.211606
 	
-	The undirected graph Saccharomonospora viridis has 3796 nodes and 323676 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04494
-	and has 14 connected components, where the component with most nodes has 3765 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 170.54, and the node degree mode is 2. The top 5
-	most central nodes are 471857.Svir_26930 (degree 1180), 471857.Svir_25960 (degree
-	1160), 471857.Svir_04770 (degree 1024), 471857.Svir_28040 (degree 1008) and 471857.Svir_37200
-	(degree 967).
+	The undirected graph Saccharomonospora viridis has 3796 nodes and 323676
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04494 and has 14 connected components, where the component
+	with most nodes has 3765 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 170.54,
+	and the node degree mode is 2. The top 5 most central nodes are 471857.Svir_26930
+	(degree 1180), 471857.Svir_25960 (degree 1160), 471857.Svir_04770 (degree
+	1024), 471857.Svir_28040 (degree 1008) and 471857.Svir_37200 (degree 967).
 	
 
 

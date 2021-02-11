@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:25.783581
 
-The undirected graph Dyella ginsengisoli has 3821 nodes and 493161 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06757 and
-has 14 connected components, where the component with most nodes has 3786 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 208,
-the mean node degree is 258.13, and the node degree mode is 1. The top 5 most central
-nodes are 1234364.AMSF01000053_gene1330 (degree 1549), 1234364.AMSF01000037_gene186
-(degree 1486), 1234364.AMSF01000025_gene3638 (degree 1459), 1234364.AMSF01000032_gene3376
-(degree 1454) and 1234364.AMSF01000001_gene2396 (degree 1389).
+The undirected graph Dyella ginsengisoli has 3821 nodes and 493161 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06757 and has 14 connected components, where the component with most
+nodes has 3786 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 208, the mean node degree is 258.13, and
+the node degree mode is 1. The top 5 most central nodes are 1234364.AMSF01000053_gene1330
+(degree 1549), 1234364.AMSF01000037_gene186 (degree 1486), 1234364.AMSF01000025_gene3638
+(degree 1459), 1234364.AMSF01000032_gene3376 (degree 1454) and 1234364.AMSF01000001_gene2396
+(degree 1389).
 
 
 References
@@ -107,14 +108,15 @@ def DyellaGinsengisoli(
 	
 	Datetime: 2021-02-02 23:29:25.783581
 	
-	The undirected graph Dyella ginsengisoli has 3821 nodes and 493161 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06757 and
-	has 14 connected components, where the component with most nodes has 3786 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 208,
-	the mean node degree is 258.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1234364.AMSF01000053_gene1330 (degree 1549), 1234364.AMSF01000037_gene186
-	(degree 1486), 1234364.AMSF01000025_gene3638 (degree 1459), 1234364.AMSF01000032_gene3376
-	(degree 1454) and 1234364.AMSF01000001_gene2396 (degree 1389).
+	The undirected graph Dyella ginsengisoli has 3821 nodes and 493161 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06757 and has 14 connected components, where the component with most
+	nodes has 3786 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 208, the mean node degree is 258.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1234364.AMSF01000053_gene1330
+	(degree 1549), 1234364.AMSF01000037_gene186 (degree 1486), 1234364.AMSF01000025_gene3638
+	(degree 1459), 1234364.AMSF01000032_gene3376 (degree 1454) and 1234364.AMSF01000001_gene2396
+	(degree 1389).
 	
 
 

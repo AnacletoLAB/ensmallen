@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:05.184003
 
-The undirected graph Anaerovibrio lipolyticus has 2396 nodes and 256270 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08932
-and has 17 connected components, where the component with most nodes has 2349 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 213.91, and the node degree mode is 3. The top 5
-most central nodes are 1408423.JHYA01000006_gene524 (degree 1218), 1408423.JHYA01000003_gene2143
-(degree 1074), 1408423.JHYA01000006_gene476 (degree 990), 1408423.JHYA01000007_gene194
-(degree 945) and 1408423.JHYA01000005_gene1931 (degree 919).
+The undirected graph Anaerovibrio lipolyticus has 2396 nodes and 256270
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08932 and has 17 connected components, where the component
+with most nodes has 2349 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 213.91,
+and the node degree mode is 3. The top 5 most central nodes are 1408423.JHYA01000006_gene524
+(degree 1218), 1408423.JHYA01000003_gene2143 (degree 1074), 1408423.JHYA01000006_gene476
+(degree 990), 1408423.JHYA01000007_gene194 (degree 945) and 1408423.JHYA01000005_gene1931
+(degree 919).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerovibrioLipolyticus(
 	
 	Datetime: 2021-02-03 22:36:05.184003
 	
-	The undirected graph Anaerovibrio lipolyticus has 2396 nodes and 256270 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08932
-	and has 17 connected components, where the component with most nodes has 2349 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 213.91, and the node degree mode is 3. The top 5
-	most central nodes are 1408423.JHYA01000006_gene524 (degree 1218), 1408423.JHYA01000003_gene2143
-	(degree 1074), 1408423.JHYA01000006_gene476 (degree 990), 1408423.JHYA01000007_gene194
-	(degree 945) and 1408423.JHYA01000005_gene1931 (degree 919).
+	The undirected graph Anaerovibrio lipolyticus has 2396 nodes and 256270
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08932 and has 17 connected components, where the component
+	with most nodes has 2349 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 213.91,
+	and the node degree mode is 3. The top 5 most central nodes are 1408423.JHYA01000006_gene524
+	(degree 1218), 1408423.JHYA01000003_gene2143 (degree 1074), 1408423.JHYA01000006_gene476
+	(degree 990), 1408423.JHYA01000007_gene194 (degree 945) and 1408423.JHYA01000005_gene1931
+	(degree 919).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:19.073950
 
-The undirected graph Proteus mirabilis has 3626 nodes and 280355 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04266 and
-has 14 connected components, where the component with most nodes has 3592 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 154.64, and the node degree mode is 1. The top 5 most central
-nodes are 529507.PMI2600 (degree 1405), 529507.PMI2826 (degree 1179), 529507.PMI1545
-(degree 1018), 529507.PMI3678 (degree 983) and 529507.PMI2101 (degree 965).
+The undirected graph Proteus mirabilis has 3626 nodes and 280355 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04266 and has 14 connected components, where the component with most
+nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 154.64, and
+the node degree mode is 1. The top 5 most central nodes are 529507.PMI2600
+(degree 1405), 529507.PMI2826 (degree 1179), 529507.PMI1545 (degree 1018),
+529507.PMI3678 (degree 983) and 529507.PMI2101 (degree 965).
 
 
 References
@@ -106,13 +107,14 @@ def ProteusMirabilis(
 	
 	Datetime: 2021-02-02 21:06:19.073950
 	
-	The undirected graph Proteus mirabilis has 3626 nodes and 280355 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04266 and
-	has 14 connected components, where the component with most nodes has 3592 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 154.64, and the node degree mode is 1. The top 5 most central
-	nodes are 529507.PMI2600 (degree 1405), 529507.PMI2826 (degree 1179), 529507.PMI1545
-	(degree 1018), 529507.PMI3678 (degree 983) and 529507.PMI2101 (degree 965).
+	The undirected graph Proteus mirabilis has 3626 nodes and 280355 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04266 and has 14 connected components, where the component with most
+	nodes has 3592 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 154.64, and
+	the node degree mode is 1. The top 5 most central nodes are 529507.PMI2600
+	(degree 1405), 529507.PMI2826 (degree 1179), 529507.PMI1545 (degree 1018),
+	529507.PMI3678 (degree 983) and 529507.PMI2101 (degree 965).
 	
 
 

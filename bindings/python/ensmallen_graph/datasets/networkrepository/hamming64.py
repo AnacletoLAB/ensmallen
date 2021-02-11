@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:46.844926
 
-The undirected graph hamming6-4 has 64 nodes and 704 unweighted edges, of which none
-are self-loops. The graph is quite dense as it has a density of 0.34921 and is connected,
-as it has a single component. The graph median node degree is 22, the mean node degree
-is 22.00 and the node degree mode is 22. The top 5 most central nodes are 64 (degree
-22), 63 (degree 22), 62 (degree 22), 61 (degree 22) and 60 (degree 22).
+The undirected graph hamming6-4 has 64 nodes and 704 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.34921 and is connected, as it has a single component. The graph median
+node degree is 22, the mean node degree is 22.00 and the node degree mode
+is 22. The top 5 most central nodes are 64 (degree 22), 63 (degree 22),
+62 (degree 22), 61 (degree 22) and 60 (degree 22).
 
 
 References
@@ -114,11 +115,12 @@ def Hamming64(
 	
 	Datetime: 2021-02-03 22:54:46.844926
 	
-	The undirected graph hamming6-4 has 64 nodes and 704 unweighted edges, of which none
-	are self-loops. The graph is quite dense as it has a density of 0.34921 and is connected,
-	as it has a single component. The graph median node degree is 22, the mean node degree
-	is 22.00 and the node degree mode is 22. The top 5 most central nodes are 64 (degree
-	22), 63 (degree 22), 62 (degree 22), 61 (degree 22) and 60 (degree 22).
+	The undirected graph hamming6-4 has 64 nodes and 704 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.34921 and is connected, as it has a single component. The graph median
+	node degree is 22, the mean node degree is 22.00 and the node degree mode
+	is 22. The top 5 most central nodes are 64 (degree 22), 63 (degree 22),
+	62 (degree 22), 61 (degree 22) and 60 (degree 22).
 	
 
 

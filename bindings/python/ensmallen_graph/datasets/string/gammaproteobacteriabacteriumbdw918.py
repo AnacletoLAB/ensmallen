@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:57.862067
 
-The undirected graph Gammaproteobacteria bacterium BDW918 has 3772 nodes and 543477
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07642 and has 8 connected components, where the component with most nodes has
-3753 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 256, the mean node degree is 288.16, and the node degree mode is 2. The
-top 5 most central nodes are 1168065.DOK_18380 (degree 1332), 1168065.DOK_00727 (degree
-1260), 1168065.DOK_09591 (degree 1225), 1168065.DOK_05330 (degree 1191) and 1168065.DOK_05680
-(degree 1188).
+The undirected graph Gammaproteobacteria bacterium BDW918 has 3772 nodes
+and 543477 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07642 and has 8 connected components, where the
+component with most nodes has 3753 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 256, the mean node degree
+is 288.16, and the node degree mode is 2. The top 5 most central nodes
+are 1168065.DOK_18380 (degree 1332), 1168065.DOK_00727 (degree 1260), 1168065.DOK_09591
+(degree 1225), 1168065.DOK_05330 (degree 1191) and 1168065.DOK_05680 (degree
+1188).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumBdw918(
 	
 	Datetime: 2021-02-02 23:05:57.862067
 	
-	The undirected graph Gammaproteobacteria bacterium BDW918 has 3772 nodes and 543477
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07642 and has 8 connected components, where the component with most nodes has
-	3753 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 256, the mean node degree is 288.16, and the node degree mode is 2. The
-	top 5 most central nodes are 1168065.DOK_18380 (degree 1332), 1168065.DOK_00727 (degree
-	1260), 1168065.DOK_09591 (degree 1225), 1168065.DOK_05330 (degree 1191) and 1168065.DOK_05680
-	(degree 1188).
+	The undirected graph Gammaproteobacteria bacterium BDW918 has 3772 nodes
+	and 543477 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07642 and has 8 connected components, where the
+	component with most nodes has 3753 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 256, the mean node degree
+	is 288.16, and the node degree mode is 2. The top 5 most central nodes
+	are 1168065.DOK_18380 (degree 1332), 1168065.DOK_00727 (degree 1260), 1168065.DOK_09591
+	(degree 1225), 1168065.DOK_05330 (degree 1191) and 1168065.DOK_05680 (degree
+	1188).
 	
 
 

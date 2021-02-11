@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:27:57.531551
 
-The undirected graph web-cc12-PayLevelDomain has 39497204 nodes and 582567291 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and has 56304 connected components, where the component with most nodes
-has 39374588 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 5, the mean node degree is 29.50, and the node degree mode
-is 1. The top 5 most central nodes are 5325333 (degree 4309221), 41718572 (degree
-2551465), 42467638 (degree 2063119), 41410215 (degree 1970528) and 41718621 (degree
+The undirected graph web-cc12-PayLevelDomain has 39497204 nodes and 582567291
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and has 56304 connected components,
+where the component with most nodes has 39374588 nodes and the component
+with the least nodes has 2 nodes. The graph median node degree is 5, the
+mean node degree is 29.50, and the node degree mode is 1. The top 5 most
+central nodes are 5325333 (degree 4309221), 41718572 (degree 2551465),
+42467638 (degree 2063119), 41410215 (degree 1970528) and 41718621 (degree
 1842930).
 
 
@@ -112,13 +113,14 @@ def WebCc12Payleveldomain(
 	
 	Datetime: 2021-02-06 20:27:57.531551
 	
-	The undirected graph web-cc12-PayLevelDomain has 39497204 nodes and 582567291 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and has 56304 connected components, where the component with most nodes
-	has 39374588 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 5, the mean node degree is 29.50, and the node degree mode
-	is 1. The top 5 most central nodes are 5325333 (degree 4309221), 41718572 (degree
-	2551465), 42467638 (degree 2063119), 41410215 (degree 1970528) and 41718621 (degree
+	The undirected graph web-cc12-PayLevelDomain has 39497204 nodes and 582567291
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and has 56304 connected components,
+	where the component with most nodes has 39374588 nodes and the component
+	with the least nodes has 2 nodes. The graph median node degree is 5, the
+	mean node degree is 29.50, and the node degree mode is 1. The top 5 most
+	central nodes are 5325333 (degree 4309221), 41718572 (degree 2551465),
+	42467638 (degree 2063119), 41410215 (degree 1970528) and 41718621 (degree
 	1842930).
 	
 

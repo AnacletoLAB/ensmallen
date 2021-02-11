@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:27.307503
 
-The undirected graph Drosophila erecta has 12304 nodes and 1216785 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01608 and
-has 14 connected components, where the component with most nodes has 12278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 197.79, and the node degree mode is 1. The top 5
-most central nodes are 7220.FBpp0142590 (degree 3004), 7220.FBpp0130733 (degree 2220),
-7220.FBpp0142505 (degree 2160), 7220.FBpp0142103 (degree 1914) and 7220.FBpp0130932
-(degree 1896).
+The undirected graph Drosophila erecta has 12304 nodes and 1216785 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01608 and has 14 connected components, where the component with most
+nodes has 12278 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 197.79, and
+the node degree mode is 1. The top 5 most central nodes are 7220.FBpp0142590
+(degree 3004), 7220.FBpp0130733 (degree 2220), 7220.FBpp0142505 (degree
+2160), 7220.FBpp0142103 (degree 1914) and 7220.FBpp0130932 (degree 1896).
 
 
 References
@@ -107,14 +107,14 @@ def DrosophilaErecta(
 	
 	Datetime: 2021-02-02 17:21:27.307503
 	
-	The undirected graph Drosophila erecta has 12304 nodes and 1216785 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01608 and
-	has 14 connected components, where the component with most nodes has 12278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 197.79, and the node degree mode is 1. The top 5
-	most central nodes are 7220.FBpp0142590 (degree 3004), 7220.FBpp0130733 (degree 2220),
-	7220.FBpp0142505 (degree 2160), 7220.FBpp0142103 (degree 1914) and 7220.FBpp0130932
-	(degree 1896).
+	The undirected graph Drosophila erecta has 12304 nodes and 1216785 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01608 and has 14 connected components, where the component with most
+	nodes has 12278 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 197.79, and
+	the node degree mode is 1. The top 5 most central nodes are 7220.FBpp0142590
+	(degree 3004), 7220.FBpp0130733 (degree 2220), 7220.FBpp0142505 (degree
+	2160), 7220.FBpp0142103 (degree 1914) and 7220.FBpp0130932 (degree 1896).
 	
 
 

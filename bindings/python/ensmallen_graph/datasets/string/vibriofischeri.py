@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:28.782415
 
-The undirected graph Vibrio fischeri has 3797 nodes and 421812 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05853 and
-has 7 connected components, where the component with most nodes has 3784 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 222.18, and the node degree mode is 3. The top 5 most central
-nodes are 312309.VF_0074 (degree 1337), 312309.VF_0638 (degree 1096), 312309.VF_2124
-(degree 1048), 312309.VF_2402 (degree 978) and 312309.VF_2138 (degree 962).
+The undirected graph Vibrio fischeri has 3797 nodes and 421812 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05853 and has 7 connected components, where the component with most
+nodes has 3784 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 222.18, and
+the node degree mode is 3. The top 5 most central nodes are 312309.VF_0074
+(degree 1337), 312309.VF_0638 (degree 1096), 312309.VF_2124 (degree 1048),
+312309.VF_2402 (degree 978) and 312309.VF_2138 (degree 962).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioFischeri(
 	
 	Datetime: 2021-02-02 20:23:28.782415
 	
-	The undirected graph Vibrio fischeri has 3797 nodes and 421812 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05853 and
-	has 7 connected components, where the component with most nodes has 3784 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 222.18, and the node degree mode is 3. The top 5 most central
-	nodes are 312309.VF_0074 (degree 1337), 312309.VF_0638 (degree 1096), 312309.VF_2124
-	(degree 1048), 312309.VF_2402 (degree 978) and 312309.VF_2138 (degree 962).
+	The undirected graph Vibrio fischeri has 3797 nodes and 421812 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05853 and has 7 connected components, where the component with most
+	nodes has 3784 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 222.18, and
+	the node degree mode is 3. The top 5 most central nodes are 312309.VF_0074
+	(degree 1337), 312309.VF_0638 (degree 1096), 312309.VF_2124 (degree 1048),
+	312309.VF_2402 (degree 978) and 312309.VF_2138 (degree 962).
 	
 
 

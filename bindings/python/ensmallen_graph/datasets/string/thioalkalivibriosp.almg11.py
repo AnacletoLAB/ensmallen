@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:48.302002
 
-The undirected graph Thioalkalivibrio sp. ALMg11 has 2731 nodes and 217838 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05844
-and has 9 connected components, where the component with most nodes has 2712 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 159.53, and the node degree mode is 1. The top 5
-most central nodes are 1158165.KB898871_gene2270 (degree 1040), 1158165.KB898872_gene1141
-(degree 952), 1158165.KB898872_gene787 (degree 914), 1158165.KB898872_gene821 (degree
-886) and 1158165.KB898872_gene1135 (degree 879).
+The undirected graph Thioalkalivibrio sp. ALMg11 has 2731 nodes and 217838
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05844 and has 9 connected components, where the component
+with most nodes has 2712 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 159.53,
+and the node degree mode is 1. The top 5 most central nodes are 1158165.KB898871_gene2270
+(degree 1040), 1158165.KB898872_gene1141 (degree 952), 1158165.KB898872_gene787
+(degree 914), 1158165.KB898872_gene821 (degree 886) and 1158165.KB898872_gene1135
+(degree 879).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Almg11(
 	
 	Datetime: 2021-02-02 23:02:48.302002
 	
-	The undirected graph Thioalkalivibrio sp. ALMg11 has 2731 nodes and 217838 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05844
-	and has 9 connected components, where the component with most nodes has 2712 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 159.53, and the node degree mode is 1. The top 5
-	most central nodes are 1158165.KB898871_gene2270 (degree 1040), 1158165.KB898872_gene1141
-	(degree 952), 1158165.KB898872_gene787 (degree 914), 1158165.KB898872_gene821 (degree
-	886) and 1158165.KB898872_gene1135 (degree 879).
+	The undirected graph Thioalkalivibrio sp. ALMg11 has 2731 nodes and 217838
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05844 and has 9 connected components, where the component
+	with most nodes has 2712 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 159.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1158165.KB898871_gene2270
+	(degree 1040), 1158165.KB898872_gene1141 (degree 952), 1158165.KB898872_gene787
+	(degree 914), 1158165.KB898872_gene821 (degree 886) and 1158165.KB898872_gene1135
+	(degree 879).
 	
 
 

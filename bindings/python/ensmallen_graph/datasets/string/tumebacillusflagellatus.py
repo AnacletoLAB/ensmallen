@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:39.301880
 
-The undirected graph Tumebacillus flagellatus has 4402 nodes and 535180 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05525
-and has 21 connected components, where the component with most nodes has 4349 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 224, the mean node degree is 243.15, and the node degree mode is 6. The top 5
-most central nodes are 1157490.EL26_08405 (degree 1568), 1157490.EL26_22435 (degree
-1412), 1157490.EL26_17260 (degree 1352), 1157490.EL26_01270 (degree 1249) and 1157490.EL26_04860
-(degree 1232).
+The undirected graph Tumebacillus flagellatus has 4402 nodes and 535180
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05525 and has 21 connected components, where the component
+with most nodes has 4349 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 224, the mean node degree is 243.15,
+and the node degree mode is 6. The top 5 most central nodes are 1157490.EL26_08405
+(degree 1568), 1157490.EL26_22435 (degree 1412), 1157490.EL26_17260 (degree
+1352), 1157490.EL26_01270 (degree 1249) and 1157490.EL26_04860 (degree
+1232).
 
 
 References
@@ -107,14 +108,15 @@ def TumebacillusFlagellatus(
 	
 	Datetime: 2021-02-02 23:01:39.301880
 	
-	The undirected graph Tumebacillus flagellatus has 4402 nodes and 535180 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05525
-	and has 21 connected components, where the component with most nodes has 4349 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 224, the mean node degree is 243.15, and the node degree mode is 6. The top 5
-	most central nodes are 1157490.EL26_08405 (degree 1568), 1157490.EL26_22435 (degree
-	1412), 1157490.EL26_17260 (degree 1352), 1157490.EL26_01270 (degree 1249) and 1157490.EL26_04860
-	(degree 1232).
+	The undirected graph Tumebacillus flagellatus has 4402 nodes and 535180
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05525 and has 21 connected components, where the component
+	with most nodes has 4349 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 224, the mean node degree is 243.15,
+	and the node degree mode is 6. The top 5 most central nodes are 1157490.EL26_08405
+	(degree 1568), 1157490.EL26_22435 (degree 1412), 1157490.EL26_17260 (degree
+	1352), 1157490.EL26_01270 (degree 1249) and 1157490.EL26_04860 (degree
+	1232).
 	
 
 

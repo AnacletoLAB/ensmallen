@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:44.937764
 
-The undirected graph Leucobacter chromiiresistens has 2766 nodes and 176243 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-and has 12 connected components, where the component with most nodes has 2736 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 127.44, and the node degree mode is 2. The top 5
-most central nodes are 714083.JH370377_gene2305 (degree 882), 714083.JH370377_gene2264
-(degree 781), 714083.JH370377_gene1532 (degree 767), 714083.JH370377_gene1071 (degree
-685) and 714083.JH370377_gene1726 (degree 635).
+The undirected graph Leucobacter chromiiresistens has 2766 nodes and 176243
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04609 and has 12 connected components, where the component
+with most nodes has 2736 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 127.44,
+and the node degree mode is 2. The top 5 most central nodes are 714083.JH370377_gene2305
+(degree 882), 714083.JH370377_gene2264 (degree 781), 714083.JH370377_gene1532
+(degree 767), 714083.JH370377_gene1071 (degree 685) and 714083.JH370377_gene1726
+(degree 635).
 
 
 References
@@ -107,14 +108,15 @@ def LeucobacterChromiiresistens(
 	
 	Datetime: 2021-02-02 21:35:44.937764
 	
-	The undirected graph Leucobacter chromiiresistens has 2766 nodes and 176243 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04609
-	and has 12 connected components, where the component with most nodes has 2736 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 127.44, and the node degree mode is 2. The top 5
-	most central nodes are 714083.JH370377_gene2305 (degree 882), 714083.JH370377_gene2264
-	(degree 781), 714083.JH370377_gene1532 (degree 767), 714083.JH370377_gene1071 (degree
-	685) and 714083.JH370377_gene1726 (degree 635).
+	The undirected graph Leucobacter chromiiresistens has 2766 nodes and 176243
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04609 and has 12 connected components, where the component
+	with most nodes has 2736 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 127.44,
+	and the node degree mode is 2. The top 5 most central nodes are 714083.JH370377_gene2305
+	(degree 882), 714083.JH370377_gene2264 (degree 781), 714083.JH370377_gene1532
+	(degree 767), 714083.JH370377_gene1071 (degree 685) and 714083.JH370377_gene1726
+	(degree 635).
 	
 
 

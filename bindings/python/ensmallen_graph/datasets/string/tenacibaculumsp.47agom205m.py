@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:14:12.854712
 
-The undirected graph Tenacibaculum sp. 47AGOM205m has 2736 nodes and 254648 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06806
-and has 6 connected components, where the component with most nodes has 2721 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 186.15, and the node degree mode is 5. The top 5
-most central nodes are 1380384.JADN01000003_gene479 (degree 999), 1380384.JADN01000004_gene2072
-(degree 990), 1380384.JADN01000004_gene1733 (degree 884), 1380384.JADN01000009_gene193
-(degree 844) and 1380384.JADN01000006_gene2388 (degree 821).
+The undirected graph Tenacibaculum sp. 47AGOM205m has 2736 nodes and 254648
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06806 and has 6 connected components, where the component
+with most nodes has 2721 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 186.15,
+and the node degree mode is 5. The top 5 most central nodes are 1380384.JADN01000003_gene479
+(degree 999), 1380384.JADN01000004_gene2072 (degree 990), 1380384.JADN01000004_gene1733
+(degree 884), 1380384.JADN01000009_gene193 (degree 844) and 1380384.JADN01000006_gene2388
+(degree 821).
 
 
 References
@@ -107,14 +108,15 @@ def TenacibaculumSp.47agom205m(
 	
 	Datetime: 2021-02-03 22:14:12.854712
 	
-	The undirected graph Tenacibaculum sp. 47AGOM205m has 2736 nodes and 254648 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06806
-	and has 6 connected components, where the component with most nodes has 2721 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 186.15, and the node degree mode is 5. The top 5
-	most central nodes are 1380384.JADN01000003_gene479 (degree 999), 1380384.JADN01000004_gene2072
-	(degree 990), 1380384.JADN01000004_gene1733 (degree 884), 1380384.JADN01000009_gene193
-	(degree 844) and 1380384.JADN01000006_gene2388 (degree 821).
+	The undirected graph Tenacibaculum sp. 47AGOM205m has 2736 nodes and 254648
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06806 and has 6 connected components, where the component
+	with most nodes has 2721 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 186.15,
+	and the node degree mode is 5. The top 5 most central nodes are 1380384.JADN01000003_gene479
+	(degree 999), 1380384.JADN01000004_gene2072 (degree 990), 1380384.JADN01000004_gene1733
+	(degree 884), 1380384.JADN01000009_gene193 (degree 844) and 1380384.JADN01000006_gene2388
+	(degree 821).
 	
 
 

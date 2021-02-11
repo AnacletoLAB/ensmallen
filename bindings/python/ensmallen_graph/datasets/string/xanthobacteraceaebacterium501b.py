@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:52.699787
 
-The undirected graph Xanthobacteraceae bacterium 501b has 4466 nodes and 478446 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04799
-and has 11 connected components, where the component with most nodes has 4446 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 214.26, and the node degree mode is 1. The top 5
-most central nodes are 1168059.KB899087_gene3032 (degree 1514), 1168059.KB899087_gene3371
+The undirected graph Xanthobacteraceae bacterium 501b has 4466 nodes and
+478446 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04799 and has 11 connected components, where the
+component with most nodes has 4446 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+is 214.26, and the node degree mode is 1. The top 5 most central nodes
+are 1168059.KB899087_gene3032 (degree 1514), 1168059.KB899087_gene3371
 (degree 1507), 1168059.KB899087_gene2966 (degree 1291), 1168059.KB899087_gene202
 (degree 1202) and 1168059.KB899087_gene1970 (degree 1189).
 
@@ -107,12 +108,13 @@ def XanthobacteraceaeBacterium501b(
 	
 	Datetime: 2021-02-02 23:05:52.699787
 	
-	The undirected graph Xanthobacteraceae bacterium 501b has 4466 nodes and 478446 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04799
-	and has 11 connected components, where the component with most nodes has 4446 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 214.26, and the node degree mode is 1. The top 5
-	most central nodes are 1168059.KB899087_gene3032 (degree 1514), 1168059.KB899087_gene3371
+	The undirected graph Xanthobacteraceae bacterium 501b has 4466 nodes and
+	478446 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04799 and has 11 connected components, where the
+	component with most nodes has 4446 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+	is 214.26, and the node degree mode is 1. The top 5 most central nodes
+	are 1168059.KB899087_gene3032 (degree 1514), 1168059.KB899087_gene3371
 	(degree 1507), 1168059.KB899087_gene2966 (degree 1291), 1168059.KB899087_gene202
 	(degree 1202) and 1168059.KB899087_gene1970 (degree 1189).
 	

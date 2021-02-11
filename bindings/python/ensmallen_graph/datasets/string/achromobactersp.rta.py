@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:32.497219
 
-The undirected graph Achromobacter sp. RTa has 5620 nodes and 1036140 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06562 and
-has 7 connected components, where the component with most nodes has 5606 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 294,
-the mean node degree is 368.73, and the node degree mode is 4. The top 5 most central
-nodes are 1532557.JL37_29810 (degree 2171), 1532557.JL37_12595 (degree 2000), 1532557.JL37_22985
-(degree 1967), 1532557.JL37_15105 (degree 1930) and 1532557.JL37_28870 (degree 1869).
+The undirected graph Achromobacter sp. RTa has 5620 nodes and 1036140 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06562 and has 7 connected components, where the component with most
+nodes has 5606 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 294, the mean node degree is 368.73, and
+the node degree mode is 4. The top 5 most central nodes are 1532557.JL37_29810
+(degree 2171), 1532557.JL37_12595 (degree 2000), 1532557.JL37_22985 (degree
+1967), 1532557.JL37_15105 (degree 1930) and 1532557.JL37_28870 (degree
+1869).
 
 
 References
@@ -106,13 +108,15 @@ def AchromobacterSp.Rta(
 	
 	Datetime: 2021-02-03 23:18:32.497219
 	
-	The undirected graph Achromobacter sp. RTa has 5620 nodes and 1036140 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06562 and
-	has 7 connected components, where the component with most nodes has 5606 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 294,
-	the mean node degree is 368.73, and the node degree mode is 4. The top 5 most central
-	nodes are 1532557.JL37_29810 (degree 2171), 1532557.JL37_12595 (degree 2000), 1532557.JL37_22985
-	(degree 1967), 1532557.JL37_15105 (degree 1930) and 1532557.JL37_28870 (degree 1869).
+	The undirected graph Achromobacter sp. RTa has 5620 nodes and 1036140 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06562 and has 7 connected components, where the component with most
+	nodes has 5606 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 294, the mean node degree is 368.73, and
+	the node degree mode is 4. The top 5 most central nodes are 1532557.JL37_29810
+	(degree 2171), 1532557.JL37_12595 (degree 2000), 1532557.JL37_22985 (degree
+	1967), 1532557.JL37_15105 (degree 1930) and 1532557.JL37_28870 (degree
+	1869).
 	
 
 

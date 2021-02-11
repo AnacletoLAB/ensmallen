@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:46.990212
 
-The undirected graph Burkholderia xenovorans has 8614 nodes and 1358691 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03663
-and has 38 connected components, where the component with most nodes has 8527 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 238, the mean node degree is 315.46, and the node degree mode is 1. The top 5
-most central nodes are 266265.Bxe_B0221 (degree 4219), 266265.Bxe_B1216 (degree 3392),
-266265.Bxe_B2834 (degree 3341), 266265.Bxe_B1520 (degree 3000) and 266265.Bxe_C0521
-(degree 2997).
+The undirected graph Burkholderia xenovorans has 8614 nodes and 1358691
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03663 and has 38 connected components, where the component
+with most nodes has 8527 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 238, the mean node degree is 315.46,
+and the node degree mode is 1. The top 5 most central nodes are 266265.Bxe_B0221
+(degree 4219), 266265.Bxe_B1216 (degree 3392), 266265.Bxe_B2834 (degree
+3341), 266265.Bxe_B1520 (degree 3000) and 266265.Bxe_C0521 (degree 2997).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaXenovorans(
 	
 	Datetime: 2021-02-02 20:14:46.990212
 	
-	The undirected graph Burkholderia xenovorans has 8614 nodes and 1358691 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03663
-	and has 38 connected components, where the component with most nodes has 8527 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 238, the mean node degree is 315.46, and the node degree mode is 1. The top 5
-	most central nodes are 266265.Bxe_B0221 (degree 4219), 266265.Bxe_B1216 (degree 3392),
-	266265.Bxe_B2834 (degree 3341), 266265.Bxe_B1520 (degree 3000) and 266265.Bxe_C0521
-	(degree 2997).
+	The undirected graph Burkholderia xenovorans has 8614 nodes and 1358691
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03663 and has 38 connected components, where the component
+	with most nodes has 8527 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 238, the mean node degree is 315.46,
+	and the node degree mode is 1. The top 5 most central nodes are 266265.Bxe_B0221
+	(degree 4219), 266265.Bxe_B1216 (degree 3392), 266265.Bxe_B2834 (degree
+	3341), 266265.Bxe_B1520 (degree 3000) and 266265.Bxe_C0521 (degree 2997).
 	
 
 

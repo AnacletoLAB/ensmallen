@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:37.008381
 
-The undirected graph alpha proteobacterium L41A has 2939 nodes and 262076 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-and has 11 connected components, where the component with most nodes has 2914 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 178.34, and the node degree mode is 2. The top 5
-most central nodes are 1229204.AMYY01000013_gene268 (degree 1173), 1229204.AMYY01000017_gene1346
-(degree 986), 1229204.AMYY01000005_gene1516 (degree 942), 1229204.AMYY01000002_gene2447
-(degree 900) and 1229204.AMYY01000015_gene2162 (degree 873).
+The undirected graph alpha proteobacterium L41A has 2939 nodes and 262076
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06070 and has 11 connected components, where the component
+with most nodes has 2914 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 178.34,
+and the node degree mode is 2. The top 5 most central nodes are 1229204.AMYY01000013_gene268
+(degree 1173), 1229204.AMYY01000017_gene1346 (degree 986), 1229204.AMYY01000005_gene1516
+(degree 942), 1229204.AMYY01000002_gene2447 (degree 900) and 1229204.AMYY01000015_gene2162
+(degree 873).
 
 
 References
@@ -107,14 +108,15 @@ def AlphaProteobacteriumL41a(
 	
 	Datetime: 2021-02-02 23:26:37.008381
 	
-	The undirected graph alpha proteobacterium L41A has 2939 nodes and 262076 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-	and has 11 connected components, where the component with most nodes has 2914 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 178.34, and the node degree mode is 2. The top 5
-	most central nodes are 1229204.AMYY01000013_gene268 (degree 1173), 1229204.AMYY01000017_gene1346
-	(degree 986), 1229204.AMYY01000005_gene1516 (degree 942), 1229204.AMYY01000002_gene2447
-	(degree 900) and 1229204.AMYY01000015_gene2162 (degree 873).
+	The undirected graph alpha proteobacterium L41A has 2939 nodes and 262076
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06070 and has 11 connected components, where the component
+	with most nodes has 2914 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 178.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1229204.AMYY01000013_gene268
+	(degree 1173), 1229204.AMYY01000017_gene1346 (degree 986), 1229204.AMYY01000005_gene1516
+	(degree 942), 1229204.AMYY01000002_gene2447 (degree 900) and 1229204.AMYY01000015_gene2162
+	(degree 873).
 	
 
 

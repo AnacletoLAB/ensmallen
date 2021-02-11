@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:24:16.068207
 
-The undirected graph Leeuwenhoekiella sp. HelI48 has 3701 nodes and 307093 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04485
-and has 23 connected components, where the component with most nodes has 3647 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 165.95, and the node degree mode is 2. The top 5
-most central nodes are 1392488.JHZY01000004_gene3266 (degree 1212), 1392488.JHZY01000004_gene2135
-(degree 1127), 1392488.JHZY01000004_gene3205 (degree 1078), 1392488.JHZY01000002_gene1188
-(degree 1018) and 1392488.JHZY01000002_gene1178 (degree 981).
+The undirected graph Leeuwenhoekiella sp. HelI48 has 3701 nodes and 307093
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04485 and has 23 connected components, where the component
+with most nodes has 3647 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 165.95,
+and the node degree mode is 2. The top 5 most central nodes are 1392488.JHZY01000004_gene3266
+(degree 1212), 1392488.JHZY01000004_gene2135 (degree 1127), 1392488.JHZY01000004_gene3205
+(degree 1078), 1392488.JHZY01000002_gene1188 (degree 1018) and 1392488.JHZY01000002_gene1178
+(degree 981).
 
 
 References
@@ -107,14 +108,15 @@ def LeeuwenhoekiellaSp.Heli48(
 	
 	Datetime: 2021-02-03 22:24:16.068207
 	
-	The undirected graph Leeuwenhoekiella sp. HelI48 has 3701 nodes and 307093 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04485
-	and has 23 connected components, where the component with most nodes has 3647 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 165.95, and the node degree mode is 2. The top 5
-	most central nodes are 1392488.JHZY01000004_gene3266 (degree 1212), 1392488.JHZY01000004_gene2135
-	(degree 1127), 1392488.JHZY01000004_gene3205 (degree 1078), 1392488.JHZY01000002_gene1188
-	(degree 1018) and 1392488.JHZY01000002_gene1178 (degree 981).
+	The undirected graph Leeuwenhoekiella sp. HelI48 has 3701 nodes and 307093
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04485 and has 23 connected components, where the component
+	with most nodes has 3647 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 165.95,
+	and the node degree mode is 2. The top 5 most central nodes are 1392488.JHZY01000004_gene3266
+	(degree 1212), 1392488.JHZY01000004_gene2135 (degree 1127), 1392488.JHZY01000004_gene3205
+	(degree 1078), 1392488.JHZY01000002_gene1188 (degree 1018) and 1392488.JHZY01000002_gene1178
+	(degree 981).
 	
 
 

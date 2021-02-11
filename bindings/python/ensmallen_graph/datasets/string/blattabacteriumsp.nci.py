@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:47:51.732749
 
-The undirected graph Blattabacterium sp. Nci has 584 nodes and 32858 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19301
-and is connected, as it has a single component. The graph median node degree is 100,
-the mean node degree is 112.53, and the node degree mode is 79. The top 5 most central
-nodes are 1316444.K645_2256 (degree 357), 1316444.K645_2426 (degree 355), 1316444.K645_1441
-(degree 355), 1316444.K645_1086 (degree 331) and 1316444.K645_966 (degree 297).
+The undirected graph Blattabacterium sp. Nci has 584 nodes and 32858 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19301 and is connected, as it has a single component. The
+graph median node degree is 100, the mean node degree is 112.53, and the
+node degree mode is 79. The top 5 most central nodes are 1316444.K645_2256
+(degree 357), 1316444.K645_2426 (degree 355), 1316444.K645_1441 (degree
+355), 1316444.K645_1086 (degree 331) and 1316444.K645_966 (degree 297).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Nci(
 	
 	Datetime: 2021-02-03 21:47:51.732749
 	
-	The undirected graph Blattabacterium sp. Nci has 584 nodes and 32858 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19301
-	and is connected, as it has a single component. The graph median node degree is 100,
-	the mean node degree is 112.53, and the node degree mode is 79. The top 5 most central
-	nodes are 1316444.K645_2256 (degree 357), 1316444.K645_2426 (degree 355), 1316444.K645_1441
-	(degree 355), 1316444.K645_1086 (degree 331) and 1316444.K645_966 (degree 297).
+	The undirected graph Blattabacterium sp. Nci has 584 nodes and 32858 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19301 and is connected, as it has a single component. The
+	graph median node degree is 100, the mean node degree is 112.53, and the
+	node degree mode is 79. The top 5 most central nodes are 1316444.K645_2256
+	(degree 357), 1316444.K645_2426 (degree 355), 1316444.K645_1441 (degree
+	355), 1316444.K645_1086 (degree 331) and 1316444.K645_966 (degree 297).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:49:17.386395
 
-The undirected graph socfb-JMU79 has 14070 nodes and 485564 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00491 and
-is connected, as it has a single component. The graph median node degree is 56, the
-mean node degree is 69.02, and the node degree mode is 1. The top 5 most central
-nodes are 12852 (degree 3274), 3749 (degree 1789), 13697 (degree 715), 1768 (degree
-654) and 3066 (degree 628).
+The undirected graph socfb-JMU79 has 14070 nodes and 485564 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00491 and is connected, as it has a single component. The graph median
+node degree is 56, the mean node degree is 69.02, and the node degree mode
+is 1. The top 5 most central nodes are 12852 (degree 3274), 3749 (degree
+1789), 13697 (degree 715), 1768 (degree 654) and 3066 (degree 628).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbJmu79(
 	
 	Datetime: 2021-02-06 11:49:17.386395
 	
-	The undirected graph socfb-JMU79 has 14070 nodes and 485564 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00491 and
-	is connected, as it has a single component. The graph median node degree is 56, the
-	mean node degree is 69.02, and the node degree mode is 1. The top 5 most central
-	nodes are 12852 (degree 3274), 3749 (degree 1789), 13697 (degree 715), 1768 (degree
-	654) and 3066 (degree 628).
+	The undirected graph socfb-JMU79 has 14070 nodes and 485564 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00491 and is connected, as it has a single component. The graph median
+	node degree is 56, the mean node degree is 69.02, and the node degree mode
+	is 1. The top 5 most central nodes are 12852 (degree 3274), 3749 (degree
+	1789), 13697 (degree 715), 1768 (degree 654) and 3066 (degree 628).
 	
 
 

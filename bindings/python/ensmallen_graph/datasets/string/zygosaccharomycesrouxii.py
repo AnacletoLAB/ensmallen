@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:11:46.923808
 
-The undirected graph Zygosaccharomyces rouxii has 4696 nodes and 439596 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03988
-and is connected, as it has a single component. The graph median node degree is 134,
-the mean node degree is 187.22, and the node degree mode is 22. The top 5 most central
-nodes are 4956.XP_002498511.1 (degree 1063), 4956.XP_002495595.1 (degree 1051), 4956.XP_002494815.1
-(degree 1033), 4956.XP_002497318.1 (degree 1014) and 4956.XP_002497454.1 (degree
+The undirected graph Zygosaccharomyces rouxii has 4696 nodes and 439596
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03988 and is connected, as it has a single component.
+The graph median node degree is 134, the mean node degree is 187.22, and
+the node degree mode is 22. The top 5 most central nodes are 4956.XP_002498511.1
+(degree 1063), 4956.XP_002495595.1 (degree 1051), 4956.XP_002494815.1 (degree
+1033), 4956.XP_002497318.1 (degree 1014) and 4956.XP_002497454.1 (degree
 950).
 
 
@@ -106,12 +107,13 @@ def ZygosaccharomycesRouxii(
 	
 	Datetime: 2021-02-02 17:11:46.923808
 	
-	The undirected graph Zygosaccharomyces rouxii has 4696 nodes and 439596 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03988
-	and is connected, as it has a single component. The graph median node degree is 134,
-	the mean node degree is 187.22, and the node degree mode is 22. The top 5 most central
-	nodes are 4956.XP_002498511.1 (degree 1063), 4956.XP_002495595.1 (degree 1051), 4956.XP_002494815.1
-	(degree 1033), 4956.XP_002497318.1 (degree 1014) and 4956.XP_002497454.1 (degree
+	The undirected graph Zygosaccharomyces rouxii has 4696 nodes and 439596
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03988 and is connected, as it has a single component.
+	The graph median node degree is 134, the mean node degree is 187.22, and
+	the node degree mode is 22. The top 5 most central nodes are 4956.XP_002498511.1
+	(degree 1063), 4956.XP_002495595.1 (degree 1051), 4956.XP_002494815.1 (degree
+	1033), 4956.XP_002497318.1 (degree 1014) and 4956.XP_002497454.1 (degree
 	950).
 	
 

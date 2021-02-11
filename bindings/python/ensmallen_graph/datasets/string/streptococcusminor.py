@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:43.366189
 
-The undirected graph Streptococcus minor has 1883 nodes and 143391 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08092 and
-has 8 connected components, where the component with most nodes has 1865 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 152.30, and the node degree mode is 8. The top 5 most central
-nodes are 1123309.AQYB01000033_gene1577 (degree 880), 1123309.AQYB01000033_gene1216
-(degree 767), 1123309.AQYB01000029_gene927 (degree 764), 1123309.AQYB01000031_gene267
-(degree 749) and 1123309.AQYB01000033_gene1462 (degree 675).
+The undirected graph Streptococcus minor has 1883 nodes and 143391 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08092 and has 8 connected components, where the component with most
+nodes has 1865 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 152.30, and
+the node degree mode is 8. The top 5 most central nodes are 1123309.AQYB01000033_gene1577
+(degree 880), 1123309.AQYB01000033_gene1216 (degree 767), 1123309.AQYB01000029_gene927
+(degree 764), 1123309.AQYB01000031_gene267 (degree 749) and 1123309.AQYB01000033_gene1462
+(degree 675).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMinor(
 	
 	Datetime: 2021-02-02 22:50:43.366189
 	
-	The undirected graph Streptococcus minor has 1883 nodes and 143391 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08092 and
-	has 8 connected components, where the component with most nodes has 1865 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 152.30, and the node degree mode is 8. The top 5 most central
-	nodes are 1123309.AQYB01000033_gene1577 (degree 880), 1123309.AQYB01000033_gene1216
-	(degree 767), 1123309.AQYB01000029_gene927 (degree 764), 1123309.AQYB01000031_gene267
-	(degree 749) and 1123309.AQYB01000033_gene1462 (degree 675).
+	The undirected graph Streptococcus minor has 1883 nodes and 143391 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08092 and has 8 connected components, where the component with most
+	nodes has 1865 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 152.30, and
+	the node degree mode is 8. The top 5 most central nodes are 1123309.AQYB01000033_gene1577
+	(degree 880), 1123309.AQYB01000033_gene1216 (degree 767), 1123309.AQYB01000029_gene927
+	(degree 764), 1123309.AQYB01000031_gene267 (degree 749) and 1123309.AQYB01000033_gene1462
+	(degree 675).
 	
 
 

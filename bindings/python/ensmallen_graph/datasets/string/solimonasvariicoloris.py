@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:04.493458
 
-The undirected graph Solimonas variicoloris has 3571 nodes and 527835 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08281 and
-has 7 connected components, where the component with most nodes has 3558 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 268,
-the mean node degree is 295.62, and the node degree mode is 1. The top 5 most central
-nodes are 1123256.KB907941_gene143 (degree 1584), 1123256.KB907941_gene144 (degree
-1580), 1123256.KB907930_gene3565 (degree 1562), 1123256.KB907928_gene2026 (degree
-1427) and 1123256.KB907942_gene97 (degree 1381).
+The undirected graph Solimonas variicoloris has 3571 nodes and 527835 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08281 and has 7 connected components, where the component with most
+nodes has 3558 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 268, the mean node degree is 295.62, and
+the node degree mode is 1. The top 5 most central nodes are 1123256.KB907941_gene143
+(degree 1584), 1123256.KB907941_gene144 (degree 1580), 1123256.KB907930_gene3565
+(degree 1562), 1123256.KB907928_gene2026 (degree 1427) and 1123256.KB907942_gene97
+(degree 1381).
 
 
 References
@@ -107,14 +108,15 @@ def SolimonasVariicoloris(
 	
 	Datetime: 2021-02-02 22:49:04.493458
 	
-	The undirected graph Solimonas variicoloris has 3571 nodes and 527835 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08281 and
-	has 7 connected components, where the component with most nodes has 3558 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 268,
-	the mean node degree is 295.62, and the node degree mode is 1. The top 5 most central
-	nodes are 1123256.KB907941_gene143 (degree 1584), 1123256.KB907941_gene144 (degree
-	1580), 1123256.KB907930_gene3565 (degree 1562), 1123256.KB907928_gene2026 (degree
-	1427) and 1123256.KB907942_gene97 (degree 1381).
+	The undirected graph Solimonas variicoloris has 3571 nodes and 527835 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08281 and has 7 connected components, where the component with most
+	nodes has 3558 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 268, the mean node degree is 295.62, and
+	the node degree mode is 1. The top 5 most central nodes are 1123256.KB907941_gene143
+	(degree 1584), 1123256.KB907941_gene144 (degree 1580), 1123256.KB907930_gene3565
+	(degree 1562), 1123256.KB907928_gene2026 (degree 1427) and 1123256.KB907942_gene97
+	(degree 1381).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:35.932898
 
-The undirected graph Frankia sp. EAN1pec has 7086 nodes and 1474416 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05874 and
-has 26 connected components, where the component with most nodes has 7021 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 366,
-the mean node degree is 416.15, and the node degree mode is 1. The top 5 most central
-nodes are 298653.Franean1_0666 (degree 2857), 298653.Franean1_3473 (degree 2530),
-298653.Franean1_6707 (degree 2508), 298653.Franean1_3954 (degree 2381) and 298653.Franean1_3472
+The undirected graph Frankia sp. EAN1pec has 7086 nodes and 1474416 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05874 and has 26 connected components, where the component with most
+nodes has 7021 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 366, the mean node degree is 416.15, and
+the node degree mode is 1. The top 5 most central nodes are 298653.Franean1_0666
+(degree 2857), 298653.Franean1_3473 (degree 2530), 298653.Franean1_6707
+(degree 2508), 298653.Franean1_3954 (degree 2381) and 298653.Franean1_3472
 (degree 2337).
 
 
@@ -107,13 +108,14 @@ def FrankiaSp.Ean1pec(
 	
 	Datetime: 2021-02-02 20:21:35.932898
 	
-	The undirected graph Frankia sp. EAN1pec has 7086 nodes and 1474416 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05874 and
-	has 26 connected components, where the component with most nodes has 7021 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 366,
-	the mean node degree is 416.15, and the node degree mode is 1. The top 5 most central
-	nodes are 298653.Franean1_0666 (degree 2857), 298653.Franean1_3473 (degree 2530),
-	298653.Franean1_6707 (degree 2508), 298653.Franean1_3954 (degree 2381) and 298653.Franean1_3472
+	The undirected graph Frankia sp. EAN1pec has 7086 nodes and 1474416 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05874 and has 26 connected components, where the component with most
+	nodes has 7021 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 366, the mean node degree is 416.15, and
+	the node degree mode is 1. The top 5 most central nodes are 298653.Franean1_0666
+	(degree 2857), 298653.Franean1_3473 (degree 2530), 298653.Franean1_6707
+	(degree 2508), 298653.Franean1_3954 (degree 2381) and 298653.Franean1_3472
 	(degree 2337).
 	
 

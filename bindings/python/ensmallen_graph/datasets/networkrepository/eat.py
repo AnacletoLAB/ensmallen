@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:09:47.650888
 
-The undirected multigraph eat has 23132 nodes and 307305 unweighted edges with 9
-different edge types:  the 5 most common are 1, 2, 3, 4 and 5, of which 552 are self-loops
-and 19318 are parallel. The graph is sparse as it has a density of 0.00111 and is
-connected, as it has a single component. The graph median node degree is 5, the mean
-node degree is 26.55, and the node degree mode is 2. The top 5 most central nodes
-are 3980 (degree 1071), 3730 (degree 1035), 9369 (degree 845), 746 (degree 831) and
-3071 (degree 790).
+The undirected multigraph eat has 23132 nodes and 307305 unweighted edges
+with 9 different edge types:  the 5 most common are 1, 2, 3, 4 and 5, of
+which 552 are self-loops and 19318 are parallel. The graph is sparse as
+it has a density of 0.00111 and is connected, as it has a single component.
+The graph median node degree is 5, the mean node degree is 26.55, and the
+node degree mode is 2. The top 5 most central nodes are 3980 (degree 1071),
+3730 (degree 1035), 9369 (degree 845), 746 (degree 831) and 3071 (degree
+790).
 
 
 References
@@ -103,13 +104,14 @@ def Eat(
 	
 	Datetime: 2021-02-06 11:09:47.650888
 	
-	The undirected multigraph eat has 23132 nodes and 307305 unweighted edges with 9
-	different edge types:  the 5 most common are 1, 2, 3, 4 and 5, of which 552 are self-loops
-	and 19318 are parallel. The graph is sparse as it has a density of 0.00111 and is
-	connected, as it has a single component. The graph median node degree is 5, the mean
-	node degree is 26.55, and the node degree mode is 2. The top 5 most central nodes
-	are 3980 (degree 1071), 3730 (degree 1035), 9369 (degree 845), 746 (degree 831) and
-	3071 (degree 790).
+	The undirected multigraph eat has 23132 nodes and 307305 unweighted edges
+	with 9 different edge types:  the 5 most common are 1, 2, 3, 4 and 5, of
+	which 552 are self-loops and 19318 are parallel. The graph is sparse as
+	it has a density of 0.00111 and is connected, as it has a single component.
+	The graph median node degree is 5, the mean node degree is 26.55, and the
+	node degree mode is 2. The top 5 most central nodes are 3980 (degree 1071),
+	3730 (degree 1035), 9369 (degree 845), 746 (degree 831) and 3071 (degree
+	790).
 	
 
 

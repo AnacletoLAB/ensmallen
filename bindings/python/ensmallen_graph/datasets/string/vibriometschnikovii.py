@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:45.260032
 
-The undirected graph Vibrio metschnikovii has 3025 nodes and 345620 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07557 and
-has 6 connected components, where the component with most nodes has 3013 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 228.51, and the node degree mode is 1. The top 5 most central
-nodes are 675813.VIB_000051 (degree 1242), 675813.VIB_001943 (degree 1228), 675813.VIB_000270
-(degree 1185), 675813.VIB_000859 (degree 1170) and 675813.VIB_001846 (degree 1145).
+The undirected graph Vibrio metschnikovii has 3025 nodes and 345620 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07557 and has 6 connected components, where the component with most
+nodes has 3013 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 228.51, and
+the node degree mode is 1. The top 5 most central nodes are 675813.VIB_000051
+(degree 1242), 675813.VIB_001943 (degree 1228), 675813.VIB_000270 (degree
+1185), 675813.VIB_000859 (degree 1170) and 675813.VIB_001846 (degree 1145).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioMetschnikovii(
 	
 	Datetime: 2021-02-02 21:29:45.260032
 	
-	The undirected graph Vibrio metschnikovii has 3025 nodes and 345620 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07557 and
-	has 6 connected components, where the component with most nodes has 3013 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 228.51, and the node degree mode is 1. The top 5 most central
-	nodes are 675813.VIB_000051 (degree 1242), 675813.VIB_001943 (degree 1228), 675813.VIB_000270
-	(degree 1185), 675813.VIB_000859 (degree 1170) and 675813.VIB_001846 (degree 1145).
+	The undirected graph Vibrio metschnikovii has 3025 nodes and 345620 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07557 and has 6 connected components, where the component with most
+	nodes has 3013 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 228.51, and
+	the node degree mode is 1. The top 5 most central nodes are 675813.VIB_000051
+	(degree 1242), 675813.VIB_001943 (degree 1228), 675813.VIB_000270 (degree
+	1185), 675813.VIB_000859 (degree 1170) and 675813.VIB_001846 (degree 1145).
 	
 
 

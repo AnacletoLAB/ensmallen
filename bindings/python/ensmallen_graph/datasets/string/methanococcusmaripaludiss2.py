@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:15.570328
 
-The undirected graph Methanococcus maripaludis S2 has 1708 nodes and 176324 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.12095 and has 5 connected components, where the component with most nodes has
-1690 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 199, the mean node degree is 206.47, and the node degree mode is 11. The
-top 5 most central nodes are 267377.MMP0325 (degree 751), 267377.MMP1515 (degree
-729), 267377.MMP1206 (degree 723), 267377.MMP1067 (degree 710) and 267377.MMP0687
-(degree 701).
+The undirected graph Methanococcus maripaludis S2 has 1708 nodes and 176324
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.12095 and has 5 connected components, where the
+component with most nodes has 1690 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+is 206.47, and the node degree mode is 11. The top 5 most central nodes
+are 267377.MMP0325 (degree 751), 267377.MMP1515 (degree 729), 267377.MMP1206
+(degree 723), 267377.MMP1067 (degree 710) and 267377.MMP0687 (degree 701).
 
 
 References
@@ -107,14 +107,14 @@ def MethanococcusMaripaludisS2(
 	
 	Datetime: 2021-02-02 20:15:15.570328
 	
-	The undirected graph Methanococcus maripaludis S2 has 1708 nodes and 176324 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.12095 and has 5 connected components, where the component with most nodes has
-	1690 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 199, the mean node degree is 206.47, and the node degree mode is 11. The
-	top 5 most central nodes are 267377.MMP0325 (degree 751), 267377.MMP1515 (degree
-	729), 267377.MMP1206 (degree 723), 267377.MMP1067 (degree 710) and 267377.MMP0687
-	(degree 701).
+	The undirected graph Methanococcus maripaludis S2 has 1708 nodes and 176324
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.12095 and has 5 connected components, where the
+	component with most nodes has 1690 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 199, the mean node degree
+	is 206.47, and the node degree mode is 11. The top 5 most central nodes
+	are 267377.MMP0325 (degree 751), 267377.MMP1515 (degree 729), 267377.MMP1206
+	(degree 723), 267377.MMP1067 (degree 710) and 267377.MMP0687 (degree 701).
 	
 
 

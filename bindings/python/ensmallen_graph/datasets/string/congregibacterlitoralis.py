@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:23.539409
 
-The undirected graph Congregibacter litoralis has 3905 nodes and 412248 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05408
-and has 17 connected components, where the component with most nodes has 3865 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 211.14, and the node degree mode is 6. The top 5
-most central nodes are 314285.KT71_18736 (degree 1418), 314285.KT71_04595 (degree
-1338), 314285.KT71_18112 (degree 1095), 314285.KT71_06364 (degree 1095) and 314285.KT71_19652
-(degree 1069).
+The undirected graph Congregibacter litoralis has 3905 nodes and 412248
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05408 and has 17 connected components, where the component
+with most nodes has 3865 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 211.14,
+and the node degree mode is 6. The top 5 most central nodes are 314285.KT71_18736
+(degree 1418), 314285.KT71_04595 (degree 1338), 314285.KT71_18112 (degree
+1095), 314285.KT71_06364 (degree 1095) and 314285.KT71_19652 (degree 1069).
 
 
 References
@@ -107,14 +107,14 @@ def CongregibacterLitoralis(
 	
 	Datetime: 2021-02-02 20:25:23.539409
 	
-	The undirected graph Congregibacter litoralis has 3905 nodes and 412248 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05408
-	and has 17 connected components, where the component with most nodes has 3865 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 211.14, and the node degree mode is 6. The top 5
-	most central nodes are 314285.KT71_18736 (degree 1418), 314285.KT71_04595 (degree
-	1338), 314285.KT71_18112 (degree 1095), 314285.KT71_06364 (degree 1095) and 314285.KT71_19652
-	(degree 1069).
+	The undirected graph Congregibacter litoralis has 3905 nodes and 412248
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05408 and has 17 connected components, where the component
+	with most nodes has 3865 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 211.14,
+	and the node degree mode is 6. The top 5 most central nodes are 314285.KT71_18736
+	(degree 1418), 314285.KT71_04595 (degree 1338), 314285.KT71_18112 (degree
+	1095), 314285.KT71_06364 (degree 1095) and 314285.KT71_19652 (degree 1069).
 	
 
 

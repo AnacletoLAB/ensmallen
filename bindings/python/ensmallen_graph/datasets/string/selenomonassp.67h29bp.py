@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:40.141761
 
-The undirected graph Selenomonas sp. 67H29BP has 2390 nodes and 165035 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-has 6 connected components, where the component with most nodes has 2378 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 138.10, and the node degree mode is 10. The top 5 most central
-nodes are 864563.HMPREF9166_1139 (degree 877), 864563.HMPREF9166_1053 (degree 827),
-864563.HMPREF9166_0380 (degree 824), 864563.HMPREF9166_1934 (degree 789) and 864563.HMPREF9166_0331
+The undirected graph Selenomonas sp. 67H29BP has 2390 nodes and 165035
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05781 and has 6 connected components, where the component
+with most nodes has 2378 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 138.10,
+and the node degree mode is 10. The top 5 most central nodes are 864563.HMPREF9166_1139
+(degree 877), 864563.HMPREF9166_1053 (degree 827), 864563.HMPREF9166_0380
+(degree 824), 864563.HMPREF9166_1934 (degree 789) and 864563.HMPREF9166_0331
 (degree 704).
 
 
@@ -107,13 +108,14 @@ def SelenomonasSp.67h29bp(
 	
 	Datetime: 2021-02-02 21:47:40.141761
 	
-	The undirected graph Selenomonas sp. 67H29BP has 2390 nodes and 165035 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-	has 6 connected components, where the component with most nodes has 2378 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 138.10, and the node degree mode is 10. The top 5 most central
-	nodes are 864563.HMPREF9166_1139 (degree 877), 864563.HMPREF9166_1053 (degree 827),
-	864563.HMPREF9166_0380 (degree 824), 864563.HMPREF9166_1934 (degree 789) and 864563.HMPREF9166_0331
+	The undirected graph Selenomonas sp. 67H29BP has 2390 nodes and 165035
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05781 and has 6 connected components, where the component
+	with most nodes has 2378 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 138.10,
+	and the node degree mode is 10. The top 5 most central nodes are 864563.HMPREF9166_1139
+	(degree 877), 864563.HMPREF9166_1053 (degree 827), 864563.HMPREF9166_0380
+	(degree 824), 864563.HMPREF9166_1934 (degree 789) and 864563.HMPREF9166_0331
 	(degree 704).
 	
 

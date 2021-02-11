@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:49.195911
 
-The undirected graph Bacillus akibai has 4645 nodes and 441946 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04098 and
-has 30 connected components, where the component with most nodes has 4576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 190.29, and the node degree mode is 2. The top 5 most central
-nodes are 1236973.JCM9157_1142 (degree 1733), 1236973.JCM9157_4843 (degree 1566),
-1236973.JCM9157_2540 (degree 1551), 1236973.JCM9157_1703 (degree 1372) and 1236973.JCM9157_4513
+The undirected graph Bacillus akibai has 4645 nodes and 441946 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04098 and has 30 connected components, where the component with most
+nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 190.29, and
+the node degree mode is 2. The top 5 most central nodes are 1236973.JCM9157_1142
+(degree 1733), 1236973.JCM9157_4843 (degree 1566), 1236973.JCM9157_2540
+(degree 1551), 1236973.JCM9157_1703 (degree 1372) and 1236973.JCM9157_4513
 (degree 1352).
 
 
@@ -107,13 +108,14 @@ def BacillusAkibai(
 	
 	Datetime: 2021-02-02 23:31:49.195911
 	
-	The undirected graph Bacillus akibai has 4645 nodes and 441946 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04098 and
-	has 30 connected components, where the component with most nodes has 4576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 190.29, and the node degree mode is 2. The top 5 most central
-	nodes are 1236973.JCM9157_1142 (degree 1733), 1236973.JCM9157_4843 (degree 1566),
-	1236973.JCM9157_2540 (degree 1551), 1236973.JCM9157_1703 (degree 1372) and 1236973.JCM9157_4513
+	The undirected graph Bacillus akibai has 4645 nodes and 441946 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04098 and has 30 connected components, where the component with most
+	nodes has 4576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 190.29, and
+	the node degree mode is 2. The top 5 most central nodes are 1236973.JCM9157_1142
+	(degree 1733), 1236973.JCM9157_4843 (degree 1566), 1236973.JCM9157_2540
+	(degree 1551), 1236973.JCM9157_1703 (degree 1372) and 1236973.JCM9157_4513
 	(degree 1352).
 	
 

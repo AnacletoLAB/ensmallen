@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:20.804466
 
-The undirected graph Thermus sp. YIM77409 has 2258 nodes and 151192 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05933 and
-has 18 connected components, where the component with most nodes has 2208 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 133.92, and the node degree mode is 2. The top 5 most central
-nodes are 1449080.JQMV01000003_gene1388 (degree 851), 1449080.JQMV01000003_gene1613
-(degree 814), 1449080.JQMV01000003_gene485 (degree 771), 1449080.JQMV01000003_gene1021
-(degree 749) and 1449080.JQMV01000003_gene1625 (degree 718).
+The undirected graph Thermus sp. YIM77409 has 2258 nodes and 151192 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05933 and has 18 connected components, where the component with most
+nodes has 2208 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 133.92, and
+the node degree mode is 2. The top 5 most central nodes are 1449080.JQMV01000003_gene1388
+(degree 851), 1449080.JQMV01000003_gene1613 (degree 814), 1449080.JQMV01000003_gene485
+(degree 771), 1449080.JQMV01000003_gene1021 (degree 749) and 1449080.JQMV01000003_gene1625
+(degree 718).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusSp.Yim77409(
 	
 	Datetime: 2021-02-03 23:04:20.804466
 	
-	The undirected graph Thermus sp. YIM77409 has 2258 nodes and 151192 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05933 and
-	has 18 connected components, where the component with most nodes has 2208 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 133.92, and the node degree mode is 2. The top 5 most central
-	nodes are 1449080.JQMV01000003_gene1388 (degree 851), 1449080.JQMV01000003_gene1613
-	(degree 814), 1449080.JQMV01000003_gene485 (degree 771), 1449080.JQMV01000003_gene1021
-	(degree 749) and 1449080.JQMV01000003_gene1625 (degree 718).
+	The undirected graph Thermus sp. YIM77409 has 2258 nodes and 151192 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05933 and has 18 connected components, where the component with most
+	nodes has 2208 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 133.92, and
+	the node degree mode is 2. The top 5 most central nodes are 1449080.JQMV01000003_gene1388
+	(degree 851), 1449080.JQMV01000003_gene1613 (degree 814), 1449080.JQMV01000003_gene485
+	(degree 771), 1449080.JQMV01000003_gene1021 (degree 749) and 1449080.JQMV01000003_gene1625
+	(degree 718).
 	
 
 

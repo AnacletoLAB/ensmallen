@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:44.636599
 
-The undirected graph Pelotomaculum thermopropionicum has 2868 nodes and 224242 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05454
-and has 10 connected components, where the component with most nodes has 2843 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 156.38, and the node degree mode is 4. The top 5
-most central nodes are 370438.PTH_0142 (degree 1579), 370438.PTH_1120 (degree 1241),
-370438.PTH_1236 (degree 1131), 370438.PTH_1976 (degree 1078) and 370438.PTH_1597
-(degree 1041).
+The undirected graph Pelotomaculum thermopropionicum has 2868 nodes and
+224242 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05454 and has 10 connected components, where the
+component with most nodes has 2843 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 156.38, and the node degree mode is 4. The top 5 most central nodes
+are 370438.PTH_0142 (degree 1579), 370438.PTH_1120 (degree 1241), 370438.PTH_1236
+(degree 1131), 370438.PTH_1976 (degree 1078) and 370438.PTH_1597 (degree
+1041).
 
 
 References
@@ -107,14 +108,15 @@ def PelotomaculumThermopropionicum(
 	
 	Datetime: 2021-02-02 20:35:44.636599
 	
-	The undirected graph Pelotomaculum thermopropionicum has 2868 nodes and 224242 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05454
-	and has 10 connected components, where the component with most nodes has 2843 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 156.38, and the node degree mode is 4. The top 5
-	most central nodes are 370438.PTH_0142 (degree 1579), 370438.PTH_1120 (degree 1241),
-	370438.PTH_1236 (degree 1131), 370438.PTH_1976 (degree 1078) and 370438.PTH_1597
-	(degree 1041).
+	The undirected graph Pelotomaculum thermopropionicum has 2868 nodes and
+	224242 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05454 and has 10 connected components, where the
+	component with most nodes has 2843 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 156.38, and the node degree mode is 4. The top 5 most central nodes
+	are 370438.PTH_0142 (degree 1579), 370438.PTH_1120 (degree 1241), 370438.PTH_1236
+	(degree 1131), 370438.PTH_1976 (degree 1078) and 370438.PTH_1597 (degree
+	1041).
 	
 
 

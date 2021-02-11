@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:02.228977
 
-The undirected graph Colwellia piezophila has 4418 nodes and 464180 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04757 and
-has 40 connected components, where the component with most nodes has 4311 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 210.13, and the node degree mode is 1. The top 5 most central
-nodes are 1265503.KB905168_gene1412 (degree 1393), 1265503.KB905163_gene2207 (degree
-1302), 1265503.KB905167_gene1572 (degree 1265), 1265503.KB905167_gene1571 (degree
-1259) and 1265503.KB905161_gene3090 (degree 1233).
+The undirected graph Colwellia piezophila has 4418 nodes and 464180 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04757 and has 40 connected components, where the component with most
+nodes has 4311 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 210.13, and
+the node degree mode is 1. The top 5 most central nodes are 1265503.KB905168_gene1412
+(degree 1393), 1265503.KB905163_gene2207 (degree 1302), 1265503.KB905167_gene1572
+(degree 1265), 1265503.KB905167_gene1571 (degree 1259) and 1265503.KB905161_gene3090
+(degree 1233).
 
 
 References
@@ -107,14 +108,15 @@ def ColwelliaPiezophila(
 	
 	Datetime: 2021-02-02 23:36:02.228977
 	
-	The undirected graph Colwellia piezophila has 4418 nodes and 464180 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04757 and
-	has 40 connected components, where the component with most nodes has 4311 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 210.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1265503.KB905168_gene1412 (degree 1393), 1265503.KB905163_gene2207 (degree
-	1302), 1265503.KB905167_gene1572 (degree 1265), 1265503.KB905167_gene1571 (degree
-	1259) and 1265503.KB905161_gene3090 (degree 1233).
+	The undirected graph Colwellia piezophila has 4418 nodes and 464180 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04757 and has 40 connected components, where the component with most
+	nodes has 4311 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 210.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1265503.KB905168_gene1412
+	(degree 1393), 1265503.KB905163_gene2207 (degree 1302), 1265503.KB905167_gene1572
+	(degree 1265), 1265503.KB905167_gene1571 (degree 1259) and 1265503.KB905161_gene3090
+	(degree 1233).
 	
 
 

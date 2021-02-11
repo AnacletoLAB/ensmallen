@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:54:54.424747
 
-The undirected graph Verticillium dahliae has 7445 nodes and 592613 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02139 and
-has 15 connected components, where the component with most nodes has 7417 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 159.20, and the node degree mode is 1. The top 5 most central
-nodes are 27337.EGY14574 (degree 1823), 27337.EGY18756 (degree 1415), 27337.EGY17572
-(degree 1199), 27337.EGY16641 (degree 1170) and 27337.EGY15260 (degree 1167).
+The undirected graph Verticillium dahliae has 7445 nodes and 592613 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02139 and has 15 connected components, where the component with most
+nodes has 7417 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 159.20, and
+the node degree mode is 1. The top 5 most central nodes are 27337.EGY14574
+(degree 1823), 27337.EGY18756 (degree 1415), 27337.EGY17572 (degree 1199),
+27337.EGY16641 (degree 1170) and 27337.EGY15260 (degree 1167).
 
 
 References
@@ -106,13 +107,14 @@ def VerticilliumDahliae(
 	
 	Datetime: 2021-02-02 17:54:54.424747
 	
-	The undirected graph Verticillium dahliae has 7445 nodes and 592613 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02139 and
-	has 15 connected components, where the component with most nodes has 7417 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 159.20, and the node degree mode is 1. The top 5 most central
-	nodes are 27337.EGY14574 (degree 1823), 27337.EGY18756 (degree 1415), 27337.EGY17572
-	(degree 1199), 27337.EGY16641 (degree 1170) and 27337.EGY15260 (degree 1167).
+	The undirected graph Verticillium dahliae has 7445 nodes and 592613 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02139 and has 15 connected components, where the component with most
+	nodes has 7417 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 159.20, and
+	the node degree mode is 1. The top 5 most central nodes are 27337.EGY14574
+	(degree 1823), 27337.EGY18756 (degree 1415), 27337.EGY17572 (degree 1199),
+	27337.EGY16641 (degree 1170) and 27337.EGY15260 (degree 1167).
 	
 
 

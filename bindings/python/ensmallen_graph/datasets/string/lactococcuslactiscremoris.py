@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:50.675845
 
-The undirected graph Lactococcus lactis cremoris has 2416 nodes and 168293 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05769
-and has 5 connected components, where the component with most nodes has 2407 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 139.32, and the node degree mode is 4. The top 5
-most central nodes are 416870.llmg_2425 (degree 972), 416870.llmg_0447 (degree 783),
-416870.llmg_2432 (degree 744), 416870.llmg_1008 (degree 727) and 416870.llmg_0230
-(degree 666).
+The undirected graph Lactococcus lactis cremoris has 2416 nodes and 168293
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05769 and has 5 connected components, where the component
+with most nodes has 2407 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 139.32,
+and the node degree mode is 4. The top 5 most central nodes are 416870.llmg_2425
+(degree 972), 416870.llmg_0447 (degree 783), 416870.llmg_2432 (degree 744),
+416870.llmg_1008 (degree 727) and 416870.llmg_0230 (degree 666).
 
 
 References
@@ -107,14 +107,14 @@ def LactococcusLactisCremoris(
 	
 	Datetime: 2021-02-02 20:46:50.675845
 	
-	The undirected graph Lactococcus lactis cremoris has 2416 nodes and 168293 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05769
-	and has 5 connected components, where the component with most nodes has 2407 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 139.32, and the node degree mode is 4. The top 5
-	most central nodes are 416870.llmg_2425 (degree 972), 416870.llmg_0447 (degree 783),
-	416870.llmg_2432 (degree 744), 416870.llmg_1008 (degree 727) and 416870.llmg_0230
-	(degree 666).
+	The undirected graph Lactococcus lactis cremoris has 2416 nodes and 168293
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05769 and has 5 connected components, where the component
+	with most nodes has 2407 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 139.32,
+	and the node degree mode is 4. The top 5 most central nodes are 416870.llmg_2425
+	(degree 972), 416870.llmg_0447 (degree 783), 416870.llmg_2432 (degree 744),
+	416870.llmg_1008 (degree 727) and 416870.llmg_0230 (degree 666).
 	
 
 

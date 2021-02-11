@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:41.591493
 
-The undirected graph Flavobacterium beibuense has 3233 nodes and 214114 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04098
-and has 18 connected components, where the component with most nodes has 3163 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 132.46, and the node degree mode is 5. The top 5
-most central nodes are 1406840.Q763_11050 (degree 1093), 1406840.Q763_05765 (degree
-880), 1406840.Q763_05085 (degree 806), 1406840.Q763_01285 (degree 784) and 1406840.Q763_10915
-(degree 723).
+The undirected graph Flavobacterium beibuense has 3233 nodes and 214114
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04098 and has 18 connected components, where the component
+with most nodes has 3163 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 132.46,
+and the node degree mode is 5. The top 5 most central nodes are 1406840.Q763_11050
+(degree 1093), 1406840.Q763_05765 (degree 880), 1406840.Q763_05085 (degree
+806), 1406840.Q763_01285 (degree 784) and 1406840.Q763_10915 (degree 723).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumBeibuense(
 	
 	Datetime: 2021-02-03 22:33:41.591493
 	
-	The undirected graph Flavobacterium beibuense has 3233 nodes and 214114 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04098
-	and has 18 connected components, where the component with most nodes has 3163 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 132.46, and the node degree mode is 5. The top 5
-	most central nodes are 1406840.Q763_11050 (degree 1093), 1406840.Q763_05765 (degree
-	880), 1406840.Q763_05085 (degree 806), 1406840.Q763_01285 (degree 784) and 1406840.Q763_10915
-	(degree 723).
+	The undirected graph Flavobacterium beibuense has 3233 nodes and 214114
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04098 and has 18 connected components, where the component
+	with most nodes has 3163 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 132.46,
+	and the node degree mode is 5. The top 5 most central nodes are 1406840.Q763_11050
+	(degree 1093), 1406840.Q763_05765 (degree 880), 1406840.Q763_05085 (degree
+	806), 1406840.Q763_01285 (degree 784) and 1406840.Q763_10915 (degree 723).
 	
 
 

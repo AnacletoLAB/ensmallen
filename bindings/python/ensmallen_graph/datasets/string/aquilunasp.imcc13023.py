@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:42.679694
 
-The undirected graph Aquiluna sp. IMCC13023 has 1352 nodes and 72276 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07914 and
-has 5 connected components, where the component with most nodes has 1344 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 106.92, and the node degree mode is 1. The top 5 most central
-nodes are 1081644.IMCC13023_08730 (degree 653), 1081644.IMCC13023_07320 (degree 502),
-1081644.IMCC13023_05140 (degree 486), 1081644.IMCC13023_09740 (degree 478) and 1081644.IMCC13023_05120
+The undirected graph Aquiluna sp. IMCC13023 has 1352 nodes and 72276 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07914 and has 5 connected components, where the component with most
+nodes has 1344 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 106.92, and
+the node degree mode is 1. The top 5 most central nodes are 1081644.IMCC13023_08730
+(degree 653), 1081644.IMCC13023_07320 (degree 502), 1081644.IMCC13023_05140
+(degree 486), 1081644.IMCC13023_09740 (degree 478) and 1081644.IMCC13023_05120
 (degree 456).
 
 
@@ -107,13 +108,14 @@ def AquilunaSp.Imcc13023(
 	
 	Datetime: 2021-02-02 22:20:42.679694
 	
-	The undirected graph Aquiluna sp. IMCC13023 has 1352 nodes and 72276 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07914 and
-	has 5 connected components, where the component with most nodes has 1344 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 106.92, and the node degree mode is 1. The top 5 most central
-	nodes are 1081644.IMCC13023_08730 (degree 653), 1081644.IMCC13023_07320 (degree 502),
-	1081644.IMCC13023_05140 (degree 486), 1081644.IMCC13023_09740 (degree 478) and 1081644.IMCC13023_05120
+	The undirected graph Aquiluna sp. IMCC13023 has 1352 nodes and 72276 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07914 and has 5 connected components, where the component with most
+	nodes has 1344 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 106.92, and
+	the node degree mode is 1. The top 5 most central nodes are 1081644.IMCC13023_08730
+	(degree 653), 1081644.IMCC13023_07320 (degree 502), 1081644.IMCC13023_05140
+	(degree 486), 1081644.IMCC13023_09740 (degree 478) and 1081644.IMCC13023_05120
 	(degree 456).
 	
 

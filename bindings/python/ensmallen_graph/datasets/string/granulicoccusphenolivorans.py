@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:22.997817
 
-The undirected graph Granulicoccus phenolivorans has 3635 nodes and 325412 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04927
-and has 11 connected components, where the component with most nodes has 3614 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 179.04, and the node degree mode is 5. The top 5
-most central nodes are 1121933.AUHH01000034_gene66 (degree 1558), 1121933.AUHH01000025_gene3088
-(degree 1296), 1121933.AUHH01000006_gene661 (degree 1164), 1121933.AUHH01000007_gene3305
-(degree 1107) and 1121933.AUHH01000002_gene1811 (degree 1097).
+The undirected graph Granulicoccus phenolivorans has 3635 nodes and 325412
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04927 and has 11 connected components, where the component
+with most nodes has 3614 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 179.04,
+and the node degree mode is 5. The top 5 most central nodes are 1121933.AUHH01000034_gene66
+(degree 1558), 1121933.AUHH01000025_gene3088 (degree 1296), 1121933.AUHH01000006_gene661
+(degree 1164), 1121933.AUHH01000007_gene3305 (degree 1107) and 1121933.AUHH01000002_gene1811
+(degree 1097).
 
 
 References
@@ -107,14 +108,15 @@ def GranulicoccusPhenolivorans(
 	
 	Datetime: 2021-02-02 22:39:22.997817
 	
-	The undirected graph Granulicoccus phenolivorans has 3635 nodes and 325412 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04927
-	and has 11 connected components, where the component with most nodes has 3614 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 179.04, and the node degree mode is 5. The top 5
-	most central nodes are 1121933.AUHH01000034_gene66 (degree 1558), 1121933.AUHH01000025_gene3088
-	(degree 1296), 1121933.AUHH01000006_gene661 (degree 1164), 1121933.AUHH01000007_gene3305
-	(degree 1107) and 1121933.AUHH01000002_gene1811 (degree 1097).
+	The undirected graph Granulicoccus phenolivorans has 3635 nodes and 325412
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04927 and has 11 connected components, where the component
+	with most nodes has 3614 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 179.04,
+	and the node degree mode is 5. The top 5 most central nodes are 1121933.AUHH01000034_gene66
+	(degree 1558), 1121933.AUHH01000025_gene3088 (degree 1296), 1121933.AUHH01000006_gene661
+	(degree 1164), 1121933.AUHH01000007_gene3305 (degree 1107) and 1121933.AUHH01000002_gene1811
+	(degree 1097).
 	
 
 

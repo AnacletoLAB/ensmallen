@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:14.034734
 
-The undirected graph Capronia coronata has 6936 nodes and 681785 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02835 and
-has 17 connected components, where the component with most nodes has 6894 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 196.59, and the node degree mode is 1. The top 5 most central
-nodes are 43229.XP_007720772.1 (degree 1864), 43229.XP_007720666.1 (degree 1645),
-43229.XP_007727175.1 (degree 1491), 43229.XP_007721815.1 (degree 1488) and 43229.XP_007724481.1
+The undirected graph Capronia coronata has 6936 nodes and 681785 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02835 and has 17 connected components, where the component with most
+nodes has 6894 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 196.59, and
+the node degree mode is 1. The top 5 most central nodes are 43229.XP_007720772.1
+(degree 1864), 43229.XP_007720666.1 (degree 1645), 43229.XP_007727175.1
+(degree 1491), 43229.XP_007721815.1 (degree 1488) and 43229.XP_007724481.1
 (degree 1486).
 
 
@@ -107,13 +108,14 @@ def CaproniaCoronata(
 	
 	Datetime: 2021-02-02 18:14:14.034734
 	
-	The undirected graph Capronia coronata has 6936 nodes and 681785 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02835 and
-	has 17 connected components, where the component with most nodes has 6894 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 196.59, and the node degree mode is 1. The top 5 most central
-	nodes are 43229.XP_007720772.1 (degree 1864), 43229.XP_007720666.1 (degree 1645),
-	43229.XP_007727175.1 (degree 1491), 43229.XP_007721815.1 (degree 1488) and 43229.XP_007724481.1
+	The undirected graph Capronia coronata has 6936 nodes and 681785 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02835 and has 17 connected components, where the component with most
+	nodes has 6894 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 196.59, and
+	the node degree mode is 1. The top 5 most central nodes are 43229.XP_007720772.1
+	(degree 1864), 43229.XP_007720666.1 (degree 1645), 43229.XP_007727175.1
+	(degree 1491), 43229.XP_007721815.1 (degree 1488) and 43229.XP_007724481.1
 	(degree 1486).
 	
 

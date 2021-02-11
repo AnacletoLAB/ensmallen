@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:23.413733
 
-The undirected graph Fangia hongkongensis has 2682 nodes and 194328 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05405 and
-has 25 connected components, where the component with most nodes has 2618 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 144.91, and the node degree mode is 3. The top 5 most central
-nodes are 1089439.KB902273_gene2202 (degree 892), 1089439.KB902242_gene1097 (degree
-751), 1089439.KB902271_gene1996 (degree 718), 1089439.KB902240_gene779 (degree 683)
-and 1089439.KB902240_gene926 (degree 662).
+The undirected graph Fangia hongkongensis has 2682 nodes and 194328 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05405 and has 25 connected components, where the component with most
+nodes has 2618 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 144.91, and
+the node degree mode is 3. The top 5 most central nodes are 1089439.KB902273_gene2202
+(degree 892), 1089439.KB902242_gene1097 (degree 751), 1089439.KB902271_gene1996
+(degree 718), 1089439.KB902240_gene779 (degree 683) and 1089439.KB902240_gene926
+(degree 662).
 
 
 References
@@ -107,14 +108,15 @@ def FangiaHongkongensis(
 	
 	Datetime: 2021-02-02 22:21:23.413733
 	
-	The undirected graph Fangia hongkongensis has 2682 nodes and 194328 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05405 and
-	has 25 connected components, where the component with most nodes has 2618 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 144.91, and the node degree mode is 3. The top 5 most central
-	nodes are 1089439.KB902273_gene2202 (degree 892), 1089439.KB902242_gene1097 (degree
-	751), 1089439.KB902271_gene1996 (degree 718), 1089439.KB902240_gene779 (degree 683)
-	and 1089439.KB902240_gene926 (degree 662).
+	The undirected graph Fangia hongkongensis has 2682 nodes and 194328 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05405 and has 25 connected components, where the component with most
+	nodes has 2618 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 144.91, and
+	the node degree mode is 3. The top 5 most central nodes are 1089439.KB902273_gene2202
+	(degree 892), 1089439.KB902242_gene1097 (degree 751), 1089439.KB902271_gene1996
+	(degree 718), 1089439.KB902240_gene779 (degree 683) and 1089439.KB902240_gene926
+	(degree 662).
 	
 
 

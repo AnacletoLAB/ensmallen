@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:39.512010
 
-The undirected graph Pythium ultimum has 9469 nodes and 1542576 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03441 and
-has 201 connected components, where the component with most nodes has 9027 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 190, the mean node degree is 325.82, and the node degree mode is 1. The top 5
-most central nodes are 65071.PYU1_T006217 (degree 2986), 65071.PYU1_T003472 (degree
-2953), 65071.PYU1_T004754 (degree 2932), 65071.PYU1_T009434 (degree 2888) and 65071.PYU1_T007977
-(degree 2803).
+The undirected graph Pythium ultimum has 9469 nodes and 1542576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03441 and has 201 connected components, where the component with most
+nodes has 9027 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 325.82, and
+the node degree mode is 1. The top 5 most central nodes are 65071.PYU1_T006217
+(degree 2986), 65071.PYU1_T003472 (degree 2953), 65071.PYU1_T004754 (degree
+2932), 65071.PYU1_T009434 (degree 2888) and 65071.PYU1_T007977 (degree
+2803).
 
 
 References
@@ -107,14 +108,15 @@ def PythiumUltimum(
 	
 	Datetime: 2021-02-02 18:24:39.512010
 	
-	The undirected graph Pythium ultimum has 9469 nodes and 1542576 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03441 and
-	has 201 connected components, where the component with most nodes has 9027 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 190, the mean node degree is 325.82, and the node degree mode is 1. The top 5
-	most central nodes are 65071.PYU1_T006217 (degree 2986), 65071.PYU1_T003472 (degree
-	2953), 65071.PYU1_T004754 (degree 2932), 65071.PYU1_T009434 (degree 2888) and 65071.PYU1_T007977
-	(degree 2803).
+	The undirected graph Pythium ultimum has 9469 nodes and 1542576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03441 and has 201 connected components, where the component with most
+	nodes has 9027 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 325.82, and
+	the node degree mode is 1. The top 5 most central nodes are 65071.PYU1_T006217
+	(degree 2986), 65071.PYU1_T003472 (degree 2953), 65071.PYU1_T004754 (degree
+	2932), 65071.PYU1_T009434 (degree 2888) and 65071.PYU1_T007977 (degree
+	2803).
 	
 
 

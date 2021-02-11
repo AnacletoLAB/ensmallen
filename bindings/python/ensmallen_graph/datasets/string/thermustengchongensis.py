@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:24.544363
 
-The undirected graph Thermus tengchongensis has 2675 nodes and 206996 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05788 and
-has 18 connected components, where the component with most nodes has 2623 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 154.76, and the node degree mode is 5. The top 5 most central
-nodes are 1449357.JQLK01000001_gene1954 (degree 1110), 1449357.JQLK01000001_gene1415
-(degree 980), 1449357.JQLK01000001_gene1112 (degree 954), 1449357.JQLK01000001_gene127
-(degree 886) and 1449357.JQLK01000001_gene1008 (degree 870).
+The undirected graph Thermus tengchongensis has 2675 nodes and 206996 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05788 and has 18 connected components, where the component with most
+nodes has 2623 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 154.76, and
+the node degree mode is 5. The top 5 most central nodes are 1449357.JQLK01000001_gene1954
+(degree 1110), 1449357.JQLK01000001_gene1415 (degree 980), 1449357.JQLK01000001_gene1112
+(degree 954), 1449357.JQLK01000001_gene127 (degree 886) and 1449357.JQLK01000001_gene1008
+(degree 870).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusTengchongensis(
 	
 	Datetime: 2021-02-03 23:05:24.544363
 	
-	The undirected graph Thermus tengchongensis has 2675 nodes and 206996 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05788 and
-	has 18 connected components, where the component with most nodes has 2623 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 154.76, and the node degree mode is 5. The top 5 most central
-	nodes are 1449357.JQLK01000001_gene1954 (degree 1110), 1449357.JQLK01000001_gene1415
-	(degree 980), 1449357.JQLK01000001_gene1112 (degree 954), 1449357.JQLK01000001_gene127
-	(degree 886) and 1449357.JQLK01000001_gene1008 (degree 870).
+	The undirected graph Thermus tengchongensis has 2675 nodes and 206996 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05788 and has 18 connected components, where the component with most
+	nodes has 2623 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 154.76, and
+	the node degree mode is 5. The top 5 most central nodes are 1449357.JQLK01000001_gene1954
+	(degree 1110), 1449357.JQLK01000001_gene1415 (degree 980), 1449357.JQLK01000001_gene1112
+	(degree 954), 1449357.JQLK01000001_gene127 (degree 886) and 1449357.JQLK01000001_gene1008
+	(degree 870).
 	
 
 

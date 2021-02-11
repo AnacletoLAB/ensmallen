@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:21.890069
 
-The undirected graph Halobacillus halophilus has 4018 nodes and 344738 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04272 and
-has 35 connected components, where the component with most nodes has 3940 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 171.60, and the node degree mode is 1. The top 5 most central
-nodes are 866895.HBHAL_3753 (degree 1517), 866895.HBHAL_4047 (degree 1379), 866895.HBHAL_1583
-(degree 1302), 866895.HBHAL_4983 (degree 1122) and 866895.HBHAL_3573 (degree 1115).
+The undirected graph Halobacillus halophilus has 4018 nodes and 344738
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04272 and has 35 connected components, where the component
+with most nodes has 3940 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 171.60,
+and the node degree mode is 1. The top 5 most central nodes are 866895.HBHAL_3753
+(degree 1517), 866895.HBHAL_4047 (degree 1379), 866895.HBHAL_1583 (degree
+1302), 866895.HBHAL_4983 (degree 1122) and 866895.HBHAL_3573 (degree 1115).
 
 
 References
@@ -106,13 +107,14 @@ def HalobacillusHalophilus(
 	
 	Datetime: 2021-02-02 21:48:21.890069
 	
-	The undirected graph Halobacillus halophilus has 4018 nodes and 344738 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04272 and
-	has 35 connected components, where the component with most nodes has 3940 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 171.60, and the node degree mode is 1. The top 5 most central
-	nodes are 866895.HBHAL_3753 (degree 1517), 866895.HBHAL_4047 (degree 1379), 866895.HBHAL_1583
-	(degree 1302), 866895.HBHAL_4983 (degree 1122) and 866895.HBHAL_3573 (degree 1115).
+	The undirected graph Halobacillus halophilus has 4018 nodes and 344738
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04272 and has 35 connected components, where the component
+	with most nodes has 3940 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 171.60,
+	and the node degree mode is 1. The top 5 most central nodes are 866895.HBHAL_3753
+	(degree 1517), 866895.HBHAL_4047 (degree 1379), 866895.HBHAL_1583 (degree
+	1302), 866895.HBHAL_4983 (degree 1122) and 866895.HBHAL_3573 (degree 1115).
 	
 
 

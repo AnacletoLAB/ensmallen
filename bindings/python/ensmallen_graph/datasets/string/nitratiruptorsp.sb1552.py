@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:01.497802
 
-The undirected graph Nitratiruptor sp. SB1552 has 1840 nodes and 140892 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08328
-and has 4 connected components, where the component with most nodes has 1833 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 153.14, and the node degree mode is 13. The top 5
-most central nodes are 387092.NIS_1188 (degree 881), 387092.NIS_1280 (degree 722),
-387092.NIS_1076 (degree 714), 387092.NIS_1339 (degree 695) and 387092.NIS_0724 (degree
-641).
+The undirected graph Nitratiruptor sp. SB1552 has 1840 nodes and 140892
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08328 and has 4 connected components, where the component
+with most nodes has 1833 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 153.14,
+and the node degree mode is 13. The top 5 most central nodes are 387092.NIS_1188
+(degree 881), 387092.NIS_1280 (degree 722), 387092.NIS_1076 (degree 714),
+387092.NIS_1339 (degree 695) and 387092.NIS_0724 (degree 641).
 
 
 References
@@ -107,14 +107,14 @@ def NitratiruptorSp.Sb1552(
 	
 	Datetime: 2021-02-02 20:38:01.497802
 	
-	The undirected graph Nitratiruptor sp. SB1552 has 1840 nodes and 140892 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08328
-	and has 4 connected components, where the component with most nodes has 1833 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 153.14, and the node degree mode is 13. The top 5
-	most central nodes are 387092.NIS_1188 (degree 881), 387092.NIS_1280 (degree 722),
-	387092.NIS_1076 (degree 714), 387092.NIS_1339 (degree 695) and 387092.NIS_0724 (degree
-	641).
+	The undirected graph Nitratiruptor sp. SB1552 has 1840 nodes and 140892
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08328 and has 4 connected components, where the component
+	with most nodes has 1833 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 153.14,
+	and the node degree mode is 13. The top 5 most central nodes are 387092.NIS_1188
+	(degree 881), 387092.NIS_1280 (degree 722), 387092.NIS_1076 (degree 714),
+	387092.NIS_1339 (degree 695) and 387092.NIS_0724 (degree 641).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:58.275560
 
-The undirected graph Mycobacterium vulneris has 6613 nodes and 1068684 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04888 and
-has 18 connected components, where the component with most nodes has 6567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 264,
-the mean node degree is 323.21, and the node degree mode is 3. The top 5 most central
-nodes are 547163.BN979_00419 (degree 2887), 547163.BN979_05723 (degree 2852), 547163.BN979_06506
-(degree 2113), 547163.BN979_01455 (degree 2045) and 547163.BN979_00516 (degree 2039).
+The undirected graph Mycobacterium vulneris has 6613 nodes and 1068684
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04888 and has 18 connected components, where the component
+with most nodes has 6567 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 264, the mean node degree is 323.21,
+and the node degree mode is 3. The top 5 most central nodes are 547163.BN979_00419
+(degree 2887), 547163.BN979_05723 (degree 2852), 547163.BN979_06506 (degree
+2113), 547163.BN979_01455 (degree 2045) and 547163.BN979_00516 (degree
+2039).
 
 
 References
@@ -106,13 +108,15 @@ def MycobacteriumVulneris(
 	
 	Datetime: 2021-02-02 21:08:58.275560
 	
-	The undirected graph Mycobacterium vulneris has 6613 nodes and 1068684 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04888 and
-	has 18 connected components, where the component with most nodes has 6567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 264,
-	the mean node degree is 323.21, and the node degree mode is 3. The top 5 most central
-	nodes are 547163.BN979_00419 (degree 2887), 547163.BN979_05723 (degree 2852), 547163.BN979_06506
-	(degree 2113), 547163.BN979_01455 (degree 2045) and 547163.BN979_00516 (degree 2039).
+	The undirected graph Mycobacterium vulneris has 6613 nodes and 1068684
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04888 and has 18 connected components, where the component
+	with most nodes has 6567 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 264, the mean node degree is 323.21,
+	and the node degree mode is 3. The top 5 most central nodes are 547163.BN979_00419
+	(degree 2887), 547163.BN979_05723 (degree 2852), 547163.BN979_06506 (degree
+	2113), 547163.BN979_01455 (degree 2045) and 547163.BN979_00516 (degree
+	2039).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:03.547309
 
-The undirected graph Amphibacillus jilinensis has 3462 nodes and 370841 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06190
-and has 18 connected components, where the component with most nodes has 3412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 214.24, and the node degree mode is 1. The top 5
-most central nodes are 562743.JH976441_gene451 (degree 1218), 562743.JH976434_gene1989
-(degree 1199), 562743.JH976434_gene1862 (degree 1067), 562743.JH976435_gene2902 (degree
-1000) and 562743.JH976442_gene725 (degree 984).
+The undirected graph Amphibacillus jilinensis has 3462 nodes and 370841
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06190 and has 18 connected components, where the component
+with most nodes has 3412 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 214.24,
+and the node degree mode is 1. The top 5 most central nodes are 562743.JH976441_gene451
+(degree 1218), 562743.JH976434_gene1989 (degree 1199), 562743.JH976434_gene1862
+(degree 1067), 562743.JH976435_gene2902 (degree 1000) and 562743.JH976442_gene725
+(degree 984).
 
 
 References
@@ -107,14 +108,15 @@ def AmphibacillusJilinensis(
 	
 	Datetime: 2021-02-02 21:12:03.547309
 	
-	The undirected graph Amphibacillus jilinensis has 3462 nodes and 370841 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06190
-	and has 18 connected components, where the component with most nodes has 3412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 214.24, and the node degree mode is 1. The top 5
-	most central nodes are 562743.JH976441_gene451 (degree 1218), 562743.JH976434_gene1989
-	(degree 1199), 562743.JH976434_gene1862 (degree 1067), 562743.JH976435_gene2902 (degree
-	1000) and 562743.JH976442_gene725 (degree 984).
+	The undirected graph Amphibacillus jilinensis has 3462 nodes and 370841
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06190 and has 18 connected components, where the component
+	with most nodes has 3412 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 214.24,
+	and the node degree mode is 1. The top 5 most central nodes are 562743.JH976441_gene451
+	(degree 1218), 562743.JH976434_gene1989 (degree 1199), 562743.JH976434_gene1862
+	(degree 1067), 562743.JH976435_gene2902 (degree 1000) and 562743.JH976442_gene725
+	(degree 984).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:40:48.473154
 
-The undirected graph Camelina sativa has 69083 nodes and 35929371 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01506 and
-has 8 connected components, where the component with most nodes has 69064 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 512,
-the mean node degree is 1040.18, and the node degree mode is 17. The top 5 most central
-nodes are 90675.XP_010467943.1 (degree 19451), 90675.XP_010416371.1 (degree 19451),
-90675.XP_010489104.1 (degree 19451), 90675.XP_010488564.1 (degree 12439) and 90675.XP_010466869.1
+The undirected graph Camelina sativa has 69083 nodes and 35929371 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01506 and has 8 connected components, where the component with most
+nodes has 69064 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 512, the mean node degree is 1040.18, and
+the node degree mode is 17. The top 5 most central nodes are 90675.XP_010467943.1
+(degree 19451), 90675.XP_010416371.1 (degree 19451), 90675.XP_010489104.1
+(degree 19451), 90675.XP_010488564.1 (degree 12439) and 90675.XP_010466869.1
 (degree 12439).
 
 
@@ -107,13 +108,14 @@ def CamelinaSativa(
 	
 	Datetime: 2021-02-02 19:40:48.473154
 	
-	The undirected graph Camelina sativa has 69083 nodes and 35929371 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01506 and
-	has 8 connected components, where the component with most nodes has 69064 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 512,
-	the mean node degree is 1040.18, and the node degree mode is 17. The top 5 most central
-	nodes are 90675.XP_010467943.1 (degree 19451), 90675.XP_010416371.1 (degree 19451),
-	90675.XP_010489104.1 (degree 19451), 90675.XP_010488564.1 (degree 12439) and 90675.XP_010466869.1
+	The undirected graph Camelina sativa has 69083 nodes and 35929371 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01506 and has 8 connected components, where the component with most
+	nodes has 69064 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 512, the mean node degree is 1040.18, and
+	the node degree mode is 17. The top 5 most central nodes are 90675.XP_010467943.1
+	(degree 19451), 90675.XP_010416371.1 (degree 19451), 90675.XP_010489104.1
+	(degree 19451), 90675.XP_010488564.1 (degree 12439) and 90675.XP_010466869.1
 	(degree 12439).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:39.480200
 
-The undirected graph Bacteroides sp. D20 has 3632 nodes and 395912 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06004 and
-has 6 connected components, where the component with most nodes has 3617 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 218.01, and the node degree mode is 3. The top 5 most central
-nodes are 585543.HMPREF0969_01552 (degree 1184), 585543.HMPREF0969_02232 (degree
-1090), 585543.HMPREF0969_02058 (degree 1044), 585543.HMPREF0969_02937 (degree 1041)
-and 585543.HMPREF0969_02533 (degree 1018).
+The undirected graph Bacteroides sp. D20 has 3632 nodes and 395912 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06004 and has 6 connected components, where the component with most
+nodes has 3617 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 218.01, and
+the node degree mode is 3. The top 5 most central nodes are 585543.HMPREF0969_01552
+(degree 1184), 585543.HMPREF0969_02232 (degree 1090), 585543.HMPREF0969_02058
+(degree 1044), 585543.HMPREF0969_02937 (degree 1041) and 585543.HMPREF0969_02533
+(degree 1018).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesSp.D20(
 	
 	Datetime: 2021-02-02 21:16:39.480200
 	
-	The undirected graph Bacteroides sp. D20 has 3632 nodes and 395912 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06004 and
-	has 6 connected components, where the component with most nodes has 3617 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 218.01, and the node degree mode is 3. The top 5 most central
-	nodes are 585543.HMPREF0969_01552 (degree 1184), 585543.HMPREF0969_02232 (degree
-	1090), 585543.HMPREF0969_02058 (degree 1044), 585543.HMPREF0969_02937 (degree 1041)
-	and 585543.HMPREF0969_02533 (degree 1018).
+	The undirected graph Bacteroides sp. D20 has 3632 nodes and 395912 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06004 and has 6 connected components, where the component with most
+	nodes has 3617 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 218.01, and
+	the node degree mode is 3. The top 5 most central nodes are 585543.HMPREF0969_01552
+	(degree 1184), 585543.HMPREF0969_02232 (degree 1090), 585543.HMPREF0969_02058
+	(degree 1044), 585543.HMPREF0969_02937 (degree 1041) and 585543.HMPREF0969_02533
+	(degree 1018).
 	
 
 

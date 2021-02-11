@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:18.802050
 
-The undirected graph Sporosarcina sp. D27 has 3496 nodes and 334267 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05471 and
-has 18 connected components, where the component with most nodes has 3452 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 191.23, and the node degree mode is 1. The top 5 most central
-nodes are 1382305.AZUC01000017_gene2623 (degree 1236), 1382305.AZUC01000047_gene1026
-(degree 1100), 1382305.AZUC01000016_gene2647 (degree 1040), 1382305.AZUC01000047_gene821
-(degree 1015) and 1382305.AZUC01000047_gene740 (degree 1011).
+The undirected graph Sporosarcina sp. D27 has 3496 nodes and 334267 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05471 and has 18 connected components, where the component with most
+nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 191.23, and
+the node degree mode is 1. The top 5 most central nodes are 1382305.AZUC01000017_gene2623
+(degree 1236), 1382305.AZUC01000047_gene1026 (degree 1100), 1382305.AZUC01000016_gene2647
+(degree 1040), 1382305.AZUC01000047_gene821 (degree 1015) and 1382305.AZUC01000047_gene740
+(degree 1011).
 
 
 References
@@ -107,14 +108,15 @@ def SporosarcinaSp.D27(
 	
 	Datetime: 2021-02-03 22:18:18.802050
 	
-	The undirected graph Sporosarcina sp. D27 has 3496 nodes and 334267 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05471 and
-	has 18 connected components, where the component with most nodes has 3452 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 191.23, and the node degree mode is 1. The top 5 most central
-	nodes are 1382305.AZUC01000017_gene2623 (degree 1236), 1382305.AZUC01000047_gene1026
-	(degree 1100), 1382305.AZUC01000016_gene2647 (degree 1040), 1382305.AZUC01000047_gene821
-	(degree 1015) and 1382305.AZUC01000047_gene740 (degree 1011).
+	The undirected graph Sporosarcina sp. D27 has 3496 nodes and 334267 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05471 and has 18 connected components, where the component with most
+	nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 191.23, and
+	the node degree mode is 1. The top 5 most central nodes are 1382305.AZUC01000017_gene2623
+	(degree 1236), 1382305.AZUC01000047_gene1026 (degree 1100), 1382305.AZUC01000016_gene2647
+	(degree 1040), 1382305.AZUC01000047_gene821 (degree 1015) and 1382305.AZUC01000047_gene740
+	(degree 1011).
 	
 
 

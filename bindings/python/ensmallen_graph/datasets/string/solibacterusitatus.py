@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:40.583190
 
-The undirected graph Solibacter usitatus has 7767 nodes and 1245472 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04130 and
-has 22 connected components, where the component with most nodes has 7719 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 273,
-the mean node degree is 320.71, and the node degree mode is 3. The top 5 most central
-nodes are 234267.Acid_6164 (degree 3207), 234267.Acid_2046 (degree 2931), 234267.Acid_0626
-(degree 2638), 234267.Acid_1347 (degree 2380) and 234267.Acid_0587 (degree 2377).
+The undirected graph Solibacter usitatus has 7767 nodes and 1245472 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04130 and has 22 connected components, where the component with most
+nodes has 7719 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 273, the mean node degree is 320.71, and
+the node degree mode is 3. The top 5 most central nodes are 234267.Acid_6164
+(degree 3207), 234267.Acid_2046 (degree 2931), 234267.Acid_0626 (degree
+2638), 234267.Acid_1347 (degree 2380) and 234267.Acid_0587 (degree 2377).
 
 
 References
@@ -106,13 +107,14 @@ def SolibacterUsitatus(
 	
 	Datetime: 2021-02-02 20:07:40.583190
 	
-	The undirected graph Solibacter usitatus has 7767 nodes and 1245472 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04130 and
-	has 22 connected components, where the component with most nodes has 7719 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 273,
-	the mean node degree is 320.71, and the node degree mode is 3. The top 5 most central
-	nodes are 234267.Acid_6164 (degree 3207), 234267.Acid_2046 (degree 2931), 234267.Acid_0626
-	(degree 2638), 234267.Acid_1347 (degree 2380) and 234267.Acid_0587 (degree 2377).
+	The undirected graph Solibacter usitatus has 7767 nodes and 1245472 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04130 and has 22 connected components, where the component with most
+	nodes has 7719 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 273, the mean node degree is 320.71, and
+	the node degree mode is 3. The top 5 most central nodes are 234267.Acid_6164
+	(degree 3207), 234267.Acid_2046 (degree 2931), 234267.Acid_0626 (degree
+	2638), 234267.Acid_1347 (degree 2380) and 234267.Acid_0587 (degree 2377).
 	
 
 

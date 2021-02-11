@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:43:32.380947
 
-The undirected graph cora has 2708 nodes with 7 different node types:  the 5 most
-common are 3 (nodes number 818), 4 (nodes number 426), 2 (nodes number 418), 7 (nodes
-number 351) and 1 (nodes number 298) and 5278 unweighted edges with a single edge
-type: 1, of which none are self-loops. The graph is sparse as it has a density of
-0.00144 and has 78 connected components, where the component with most nodes has
-2485 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 3, the mean node degree is 3.90, and the node degree mode is 2. The top
-5 most central nodes are 164 (degree 168), 566 (degree 78), 748 (degree 74), 428
-(degree 65) and 612 (degree 44).
+The undirected graph cora has 2708 nodes with 7 different node types: 
+the 5 most common are 3 (nodes number 818), 4 (nodes number 426), 2 (nodes
+number 418), 7 (nodes number 351) and 1 (nodes number 298) and 5278 unweighted
+edges with a single edge type: 1, of which none are self-loops. The graph
+is sparse as it has a density of 0.00144 and has 78 connected components,
+where the component with most nodes has 2485 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 3, the mean
+node degree is 3.90, and the node degree mode is 2. The top 5 most central
+nodes are 164 (degree 168), 566 (degree 78), 748 (degree 74), 428 (degree
+65) and 612 (degree 44).
 
 
 References
@@ -105,15 +106,16 @@ def Cora(
 	
 	Datetime: 2021-02-04 08:43:32.380947
 	
-	The undirected graph cora has 2708 nodes with 7 different node types:  the 5 most
-	common are 3 (nodes number 818), 4 (nodes number 426), 2 (nodes number 418), 7 (nodes
-	number 351) and 1 (nodes number 298) and 5278 unweighted edges with a single edge
-	type: 1, of which none are self-loops. The graph is sparse as it has a density of
-	0.00144 and has 78 connected components, where the component with most nodes has
-	2485 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 3, the mean node degree is 3.90, and the node degree mode is 2. The top
-	5 most central nodes are 164 (degree 168), 566 (degree 78), 748 (degree 74), 428
-	(degree 65) and 612 (degree 44).
+	The undirected graph cora has 2708 nodes with 7 different node types: 
+	the 5 most common are 3 (nodes number 818), 4 (nodes number 426), 2 (nodes
+	number 418), 7 (nodes number 351) and 1 (nodes number 298) and 5278 unweighted
+	edges with a single edge type: 1, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00144 and has 78 connected components,
+	where the component with most nodes has 2485 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 3, the mean
+	node degree is 3.90, and the node degree mode is 2. The top 5 most central
+	nodes are 164 (degree 168), 566 (degree 78), 748 (degree 74), 428 (degree
+	65) and 612 (degree 44).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:52.687574
 
-The undirected graph Edwardsiella tarda ATCC15947 has 3229 nodes and 397263 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07623
-and has 8 connected components, where the component with most nodes has 3214 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 246.06, and the node degree mode is 3. The top 5
-most central nodes are 667121.ET1_25_00070 (degree 1161), 667121.ET1_07_00070 (degree
-1058), 667121.ET1_12_00430 (degree 1049), 667121.ET1_12_00420 (degree 1013) and 667121.ET1_09_00870
-(degree 1002).
+The undirected graph Edwardsiella tarda ATCC15947 has 3229 nodes and 397263
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07623 and has 8 connected components, where the component
+with most nodes has 3214 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 246.06,
+and the node degree mode is 3. The top 5 most central nodes are 667121.ET1_25_00070
+(degree 1161), 667121.ET1_07_00070 (degree 1058), 667121.ET1_12_00430 (degree
+1049), 667121.ET1_12_00420 (degree 1013) and 667121.ET1_09_00870 (degree
+1002).
 
 
 References
@@ -107,14 +108,15 @@ def EdwardsiellaTardaAtcc15947(
 	
 	Datetime: 2021-02-02 21:28:52.687574
 	
-	The undirected graph Edwardsiella tarda ATCC15947 has 3229 nodes and 397263 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07623
-	and has 8 connected components, where the component with most nodes has 3214 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 246.06, and the node degree mode is 3. The top 5
-	most central nodes are 667121.ET1_25_00070 (degree 1161), 667121.ET1_07_00070 (degree
-	1058), 667121.ET1_12_00430 (degree 1049), 667121.ET1_12_00420 (degree 1013) and 667121.ET1_09_00870
-	(degree 1002).
+	The undirected graph Edwardsiella tarda ATCC15947 has 3229 nodes and 397263
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07623 and has 8 connected components, where the component
+	with most nodes has 3214 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 246.06,
+	and the node degree mode is 3. The top 5 most central nodes are 667121.ET1_25_00070
+	(degree 1161), 667121.ET1_07_00070 (degree 1058), 667121.ET1_12_00430 (degree
+	1049), 667121.ET1_12_00420 (degree 1013) and 667121.ET1_09_00870 (degree
+	1002).
 	
 
 

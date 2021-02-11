@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:00.250392
 
-The undirected graph Marinobacter daepoensis has 3340 nodes and 376020 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06743 and
-has 8 connected components, where the component with most nodes has 3313 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 225.16, and the node degree mode is 2. The top 5 most central
-nodes are 1122197.ATWI01000010_gene1212 (degree 1325), 1122197.ATWI01000009_gene1382
-(degree 1175), 1122197.ATWI01000009_gene1849 (degree 1081), 1122197.ATWI01000008_gene2992
-(degree 1080) and 1122197.ATWI01000008_gene2416 (degree 1020).
+The undirected graph Marinobacter daepoensis has 3340 nodes and 376020
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06743 and has 8 connected components, where the component
+with most nodes has 3313 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 225.16,
+and the node degree mode is 2. The top 5 most central nodes are 1122197.ATWI01000010_gene1212
+(degree 1325), 1122197.ATWI01000009_gene1382 (degree 1175), 1122197.ATWI01000009_gene1849
+(degree 1081), 1122197.ATWI01000008_gene2992 (degree 1080) and 1122197.ATWI01000008_gene2416
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterDaepoensis(
 	
 	Datetime: 2021-02-02 22:42:00.250392
 	
-	The undirected graph Marinobacter daepoensis has 3340 nodes and 376020 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06743 and
-	has 8 connected components, where the component with most nodes has 3313 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 225.16, and the node degree mode is 2. The top 5 most central
-	nodes are 1122197.ATWI01000010_gene1212 (degree 1325), 1122197.ATWI01000009_gene1382
-	(degree 1175), 1122197.ATWI01000009_gene1849 (degree 1081), 1122197.ATWI01000008_gene2992
-	(degree 1080) and 1122197.ATWI01000008_gene2416 (degree 1020).
+	The undirected graph Marinobacter daepoensis has 3340 nodes and 376020
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06743 and has 8 connected components, where the component
+	with most nodes has 3313 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 225.16,
+	and the node degree mode is 2. The top 5 most central nodes are 1122197.ATWI01000010_gene1212
+	(degree 1325), 1122197.ATWI01000009_gene1382 (degree 1175), 1122197.ATWI01000009_gene1849
+	(degree 1081), 1122197.ATWI01000008_gene2992 (degree 1080) and 1122197.ATWI01000008_gene2416
+	(degree 1020).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:27.233174
 
-The undirected graph Lactobacillus delbrueckii 2038 has 1780 nodes and 122699 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07750
-and has 6 connected components, where the component with most nodes has 1768 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 137.86, and the node degree mode is 8. The top 5
-most central nodes are 353496.LBU_1297 (degree 883), 353496.LBU_1124 (degree 690),
-353496.LBU_0503 (degree 623), 353496.LBU_0089 (degree 597) and 353496.LBU_1378 (degree
+The undirected graph Lactobacillus delbrueckii 2038 has 1780 nodes and
+122699 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07750 and has 6 connected components, where the
+component with most nodes has 1768 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 137.86, and the node degree mode is 8. The top 5 most central nodes
+are 353496.LBU_1297 (degree 883), 353496.LBU_1124 (degree 690), 353496.LBU_0503
+(degree 623), 353496.LBU_0089 (degree 597) and 353496.LBU_1378 (degree
 568).
 
 
@@ -107,13 +108,14 @@ def LactobacillusDelbrueckii2038(
 	
 	Datetime: 2021-02-02 20:33:27.233174
 	
-	The undirected graph Lactobacillus delbrueckii 2038 has 1780 nodes and 122699 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07750
-	and has 6 connected components, where the component with most nodes has 1768 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 137.86, and the node degree mode is 8. The top 5
-	most central nodes are 353496.LBU_1297 (degree 883), 353496.LBU_1124 (degree 690),
-	353496.LBU_0503 (degree 623), 353496.LBU_0089 (degree 597) and 353496.LBU_1378 (degree
+	The undirected graph Lactobacillus delbrueckii 2038 has 1780 nodes and
+	122699 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07750 and has 6 connected components, where the
+	component with most nodes has 1768 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 137.86, and the node degree mode is 8. The top 5 most central nodes
+	are 353496.LBU_1297 (degree 883), 353496.LBU_1124 (degree 690), 353496.LBU_0503
+	(degree 623), 353496.LBU_0089 (degree 597) and 353496.LBU_1378 (degree
 	568).
 	
 

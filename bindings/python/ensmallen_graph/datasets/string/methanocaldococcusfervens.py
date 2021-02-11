@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:12.472964
 
-The undirected graph Methanocaldococcus fervens has 1575 nodes and 161614 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13038 and has 4 connected components, where the component with most nodes has
-1567 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 214, the mean node degree is 205.22, and the node degree mode is 20. The
-top 5 most central nodes are 573064.Mefer_0809 (degree 657), 573064.Mefer_0103 (degree
-646), 573064.Mefer_1227 (degree 632), 573064.Mefer_1530 (degree 625) and 573064.Mefer_0246
-(degree 597).
+The undirected graph Methanocaldococcus fervens has 1575 nodes and 161614
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13038 and has 4 connected components, where the
+component with most nodes has 1567 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 214, the mean node degree
+is 205.22, and the node degree mode is 20. The top 5 most central nodes
+are 573064.Mefer_0809 (degree 657), 573064.Mefer_0103 (degree 646), 573064.Mefer_1227
+(degree 632), 573064.Mefer_1530 (degree 625) and 573064.Mefer_0246 (degree
+597).
 
 
 References
@@ -107,14 +108,15 @@ def MethanocaldococcusFervens(
 	
 	Datetime: 2021-02-02 21:14:12.472964
 	
-	The undirected graph Methanocaldococcus fervens has 1575 nodes and 161614 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13038 and has 4 connected components, where the component with most nodes has
-	1567 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 214, the mean node degree is 205.22, and the node degree mode is 20. The
-	top 5 most central nodes are 573064.Mefer_0809 (degree 657), 573064.Mefer_0103 (degree
-	646), 573064.Mefer_1227 (degree 632), 573064.Mefer_1530 (degree 625) and 573064.Mefer_0246
-	(degree 597).
+	The undirected graph Methanocaldococcus fervens has 1575 nodes and 161614
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13038 and has 4 connected components, where the
+	component with most nodes has 1567 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 214, the mean node degree
+	is 205.22, and the node degree mode is 20. The top 5 most central nodes
+	are 573064.Mefer_0809 (degree 657), 573064.Mefer_0103 (degree 646), 573064.Mefer_1227
+	(degree 632), 573064.Mefer_1530 (degree 625) and 573064.Mefer_0246 (degree
+	597).
 	
 
 

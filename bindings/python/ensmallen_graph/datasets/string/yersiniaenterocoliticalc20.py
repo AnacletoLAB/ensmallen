@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:00:54.617328
 
-The undirected graph Yersinia enterocolitica LC20 has 5315 nodes and 570163 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04037
-and has 31 connected components, where the component with most nodes has 5221 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 214.55, and the node degree mode is 1. The top 5
-most central nodes are 1443113.LC20_05250 (degree 1540), 1443113.LC20_00676 (degree
-1400), 1443113.LC20_00674 (degree 1274), 1443113.LC20_02542 (degree 1257) and 1443113.LC20_04079
-(degree 1257).
+The undirected graph Yersinia enterocolitica LC20 has 5315 nodes and 570163
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04037 and has 31 connected components, where the component
+with most nodes has 5221 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 214.55,
+and the node degree mode is 1. The top 5 most central nodes are 1443113.LC20_05250
+(degree 1540), 1443113.LC20_00676 (degree 1400), 1443113.LC20_00674 (degree
+1274), 1443113.LC20_02542 (degree 1257) and 1443113.LC20_04079 (degree
+1257).
 
 
 References
@@ -107,14 +108,15 @@ def YersiniaEnterocoliticaLc20(
 	
 	Datetime: 2021-02-03 23:00:54.617328
 	
-	The undirected graph Yersinia enterocolitica LC20 has 5315 nodes and 570163 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04037
-	and has 31 connected components, where the component with most nodes has 5221 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 214.55, and the node degree mode is 1. The top 5
-	most central nodes are 1443113.LC20_05250 (degree 1540), 1443113.LC20_00676 (degree
-	1400), 1443113.LC20_00674 (degree 1274), 1443113.LC20_02542 (degree 1257) and 1443113.LC20_04079
-	(degree 1257).
+	The undirected graph Yersinia enterocolitica LC20 has 5315 nodes and 570163
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04037 and has 31 connected components, where the component
+	with most nodes has 5221 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 214.55,
+	and the node degree mode is 1. The top 5 most central nodes are 1443113.LC20_05250
+	(degree 1540), 1443113.LC20_00676 (degree 1400), 1443113.LC20_00674 (degree
+	1274), 1443113.LC20_02542 (degree 1257) and 1443113.LC20_04079 (degree
+	1257).
 	
 
 

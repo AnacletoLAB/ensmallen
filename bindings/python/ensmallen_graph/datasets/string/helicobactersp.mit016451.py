@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:45.077766
 
-The undirected graph Helicobacter sp. MIT016451 has 1776 nodes and 111593 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07080
-and has 15 connected components, where the component with most nodes has 1743 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 125.67, and the node degree mode is 7. The top 5
-most central nodes are 425400.LS65_04285 (degree 819), 425400.LS65_03415 (degree
-772), 425400.LS65_01330 (degree 733), 425400.LS65_00505 (degree 733) and 425400.LS65_01860
-(degree 602).
+The undirected graph Helicobacter sp. MIT016451 has 1776 nodes and 111593
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07080 and has 15 connected components, where the component
+with most nodes has 1743 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 125.67,
+and the node degree mode is 7. The top 5 most central nodes are 425400.LS65_04285
+(degree 819), 425400.LS65_03415 (degree 772), 425400.LS65_01330 (degree
+733), 425400.LS65_00505 (degree 733) and 425400.LS65_01860 (degree 602).
 
 
 References
@@ -107,14 +107,14 @@ def HelicobacterSp.Mit016451(
 	
 	Datetime: 2021-02-02 20:47:45.077766
 	
-	The undirected graph Helicobacter sp. MIT016451 has 1776 nodes and 111593 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07080
-	and has 15 connected components, where the component with most nodes has 1743 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 125.67, and the node degree mode is 7. The top 5
-	most central nodes are 425400.LS65_04285 (degree 819), 425400.LS65_03415 (degree
-	772), 425400.LS65_01330 (degree 733), 425400.LS65_00505 (degree 733) and 425400.LS65_01860
-	(degree 602).
+	The undirected graph Helicobacter sp. MIT016451 has 1776 nodes and 111593
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07080 and has 15 connected components, where the component
+	with most nodes has 1743 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 125.67,
+	and the node degree mode is 7. The top 5 most central nodes are 425400.LS65_04285
+	(degree 819), 425400.LS65_03415 (degree 772), 425400.LS65_01330 (degree
+	733), 425400.LS65_00505 (degree 733) and 425400.LS65_01860 (degree 602).
 	
 
 

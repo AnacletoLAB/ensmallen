@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:27.895946
 
-The undirected graph Oscillibacter ruminantium has 2642 nodes and 212644 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06095
-and has 6 connected components, where the component with most nodes has 2631 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 160.97, and the node degree mode is 4. The top 5
-most central nodes are 1007096.BAGW01000021_gene381 (degree 1119), 1007096.BAGW01000016_gene1007
-(degree 951), 1007096.BAGW01000013_gene2411 (degree 945), 1007096.BAGW01000023_gene239
-(degree 917) and 1007096.BAGW01000015_gene1059 (degree 836).
+The undirected graph Oscillibacter ruminantium has 2642 nodes and 212644
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06095 and has 6 connected components, where the component
+with most nodes has 2631 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 160.97,
+and the node degree mode is 4. The top 5 most central nodes are 1007096.BAGW01000021_gene381
+(degree 1119), 1007096.BAGW01000016_gene1007 (degree 951), 1007096.BAGW01000013_gene2411
+(degree 945), 1007096.BAGW01000023_gene239 (degree 917) and 1007096.BAGW01000015_gene1059
+(degree 836).
 
 
 References
@@ -107,14 +108,15 @@ def OscillibacterRuminantium(
 	
 	Datetime: 2021-02-02 22:08:27.895946
 	
-	The undirected graph Oscillibacter ruminantium has 2642 nodes and 212644 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06095
-	and has 6 connected components, where the component with most nodes has 2631 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 160.97, and the node degree mode is 4. The top 5
-	most central nodes are 1007096.BAGW01000021_gene381 (degree 1119), 1007096.BAGW01000016_gene1007
-	(degree 951), 1007096.BAGW01000013_gene2411 (degree 945), 1007096.BAGW01000023_gene239
-	(degree 917) and 1007096.BAGW01000015_gene1059 (degree 836).
+	The undirected graph Oscillibacter ruminantium has 2642 nodes and 212644
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06095 and has 6 connected components, where the component
+	with most nodes has 2631 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 160.97,
+	and the node degree mode is 4. The top 5 most central nodes are 1007096.BAGW01000021_gene381
+	(degree 1119), 1007096.BAGW01000016_gene1007 (degree 951), 1007096.BAGW01000013_gene2411
+	(degree 945), 1007096.BAGW01000023_gene239 (degree 917) and 1007096.BAGW01000015_gene1059
+	(degree 836).
 	
 
 

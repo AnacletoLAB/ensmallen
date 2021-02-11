@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:09.145229
 
-The undirected graph Vulcanisaeta moutnovskia has 2287 nodes and 186532 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07136
-and has 10 connected components, where the component with most nodes has 2264 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 163.12, and the node degree mode is 3. The top 5
-most central nodes are 985053.VMUT_0389 (degree 904), 985053.VMUT_0235 (degree 801),
-985053.VMUT_2092 (degree 797), 985053.VMUT_0204 (degree 785) and 985053.VMUT_1570
-(degree 774).
+The undirected graph Vulcanisaeta moutnovskia has 2287 nodes and 186532
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07136 and has 10 connected components, where the component
+with most nodes has 2264 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 163.12,
+and the node degree mode is 3. The top 5 most central nodes are 985053.VMUT_0389
+(degree 904), 985053.VMUT_0235 (degree 801), 985053.VMUT_2092 (degree 797),
+985053.VMUT_0204 (degree 785) and 985053.VMUT_1570 (degree 774).
 
 
 References
@@ -107,14 +107,14 @@ def VulcanisaetaMoutnovskia(
 	
 	Datetime: 2021-02-02 22:04:09.145229
 	
-	The undirected graph Vulcanisaeta moutnovskia has 2287 nodes and 186532 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07136
-	and has 10 connected components, where the component with most nodes has 2264 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 163.12, and the node degree mode is 3. The top 5
-	most central nodes are 985053.VMUT_0389 (degree 904), 985053.VMUT_0235 (degree 801),
-	985053.VMUT_2092 (degree 797), 985053.VMUT_0204 (degree 785) and 985053.VMUT_1570
-	(degree 774).
+	The undirected graph Vulcanisaeta moutnovskia has 2287 nodes and 186532
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07136 and has 10 connected components, where the component
+	with most nodes has 2264 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 163.12,
+	and the node degree mode is 3. The top 5 most central nodes are 985053.VMUT_0389
+	(degree 904), 985053.VMUT_0235 (degree 801), 985053.VMUT_2092 (degree 797),
+	985053.VMUT_0204 (degree 785) and 985053.VMUT_1570 (degree 774).
 	
 
 

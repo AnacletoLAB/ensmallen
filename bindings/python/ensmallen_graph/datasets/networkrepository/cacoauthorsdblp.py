@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:40:59.616419
 
-The undirected graph ca-coauthors-dblp has 540486 nodes and 15245729 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00010
-and is connected, as it has a single component. The graph median node degree is 34,
-the mean node degree is 56.41 and the node degree mode is 4. The top 5 most central
-nodes are 27943 (degree 3299), 27968 (degree 1913), 27837 (degree 1913), 28840 (degree
-1687) and 3227 (degree 1683).
+The undirected graph ca-coauthors-dblp has 540486 nodes and 15245729 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00010 and is connected, as it has a single component. The
+graph median node degree is 34, the mean node degree is 56.41 and the node
+degree mode is 4. The top 5 most central nodes are 27943 (degree 3299),
+27968 (degree 1913), 27837 (degree 1913), 28840 (degree 1687) and 3227
+(degree 1683).
 
 
 References
@@ -109,12 +110,13 @@ def CaCoauthorsDblp(
 	
 	Datetime: 2021-02-03 22:40:59.616419
 	
-	The undirected graph ca-coauthors-dblp has 540486 nodes and 15245729 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00010
-	and is connected, as it has a single component. The graph median node degree is 34,
-	the mean node degree is 56.41 and the node degree mode is 4. The top 5 most central
-	nodes are 27943 (degree 3299), 27968 (degree 1913), 27837 (degree 1913), 28840 (degree
-	1687) and 3227 (degree 1683).
+	The undirected graph ca-coauthors-dblp has 540486 nodes and 15245729 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00010 and is connected, as it has a single component. The
+	graph median node degree is 34, the mean node degree is 56.41 and the node
+	degree mode is 4. The top 5 most central nodes are 27943 (degree 3299),
+	27968 (degree 1913), 27837 (degree 1913), 28840 (degree 1687) and 3227
+	(degree 1683).
 	
 
 

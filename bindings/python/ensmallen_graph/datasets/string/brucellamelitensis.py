@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:05:09.129327
 
-The undirected graph Brucella melitensis has 3176 nodes and 326751 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06481 and
-has 5 connected components, where the component with most nodes has 3165 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 205.76, and the node degree mode is 2. The top 5 most central
-nodes are 224914.BMEI1825 (degree 1371), 224914.BMEI1606 (degree 1125), 224914.BMEII0887
-(degree 1048), 224914.BMEII0040 (degree 1033) and 224914.BMEI1436 (degree 944).
+The undirected graph Brucella melitensis has 3176 nodes and 326751 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06481 and has 5 connected components, where the component with most
+nodes has 3165 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 205.76, and
+the node degree mode is 2. The top 5 most central nodes are 224914.BMEI1825
+(degree 1371), 224914.BMEI1606 (degree 1125), 224914.BMEII0887 (degree
+1048), 224914.BMEII0040 (degree 1033) and 224914.BMEI1436 (degree 944).
 
 
 References
@@ -106,13 +107,14 @@ def BrucellaMelitensis(
 	
 	Datetime: 2021-02-02 20:05:09.129327
 	
-	The undirected graph Brucella melitensis has 3176 nodes and 326751 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06481 and
-	has 5 connected components, where the component with most nodes has 3165 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 205.76, and the node degree mode is 2. The top 5 most central
-	nodes are 224914.BMEI1825 (degree 1371), 224914.BMEI1606 (degree 1125), 224914.BMEII0887
-	(degree 1048), 224914.BMEII0040 (degree 1033) and 224914.BMEI1436 (degree 944).
+	The undirected graph Brucella melitensis has 3176 nodes and 326751 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06481 and has 5 connected components, where the component with most
+	nodes has 3165 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 205.76, and
+	the node degree mode is 2. The top 5 most central nodes are 224914.BMEI1825
+	(degree 1371), 224914.BMEI1606 (degree 1125), 224914.BMEII0887 (degree
+	1048), 224914.BMEII0040 (degree 1033) and 224914.BMEI1436 (degree 944).
 	
 
 

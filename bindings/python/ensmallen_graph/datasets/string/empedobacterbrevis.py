@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:36.037465
 
-The undirected graph Empedobacter brevis has 3541 nodes and 322427 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05144 and
-has 21 connected components, where the component with most nodes has 3488 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 182.11, and the node degree mode is 5. The top 5 most central
-nodes are 1218108.KB908294_gene2307 (degree 1134), 1218108.KB908306_gene270 (degree
-997), 1218108.KB908292_gene1570 (degree 895), 1218108.KB908298_gene3477 (degree 838)
-and 1218108.KB908305_gene146 (degree 784).
+The undirected graph Empedobacter brevis has 3541 nodes and 322427 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05144 and has 21 connected components, where the component with most
+nodes has 3488 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 182.11, and
+the node degree mode is 5. The top 5 most central nodes are 1218108.KB908294_gene2307
+(degree 1134), 1218108.KB908306_gene270 (degree 997), 1218108.KB908292_gene1570
+(degree 895), 1218108.KB908298_gene3477 (degree 838) and 1218108.KB908305_gene146
+(degree 784).
 
 
 References
@@ -107,14 +108,15 @@ def EmpedobacterBrevis(
 	
 	Datetime: 2021-02-02 23:22:36.037465
 	
-	The undirected graph Empedobacter brevis has 3541 nodes and 322427 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05144 and
-	has 21 connected components, where the component with most nodes has 3488 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 182.11, and the node degree mode is 5. The top 5 most central
-	nodes are 1218108.KB908294_gene2307 (degree 1134), 1218108.KB908306_gene270 (degree
-	997), 1218108.KB908292_gene1570 (degree 895), 1218108.KB908298_gene3477 (degree 838)
-	and 1218108.KB908305_gene146 (degree 784).
+	The undirected graph Empedobacter brevis has 3541 nodes and 322427 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05144 and has 21 connected components, where the component with most
+	nodes has 3488 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 182.11, and
+	the node degree mode is 5. The top 5 most central nodes are 1218108.KB908294_gene2307
+	(degree 1134), 1218108.KB908306_gene270 (degree 997), 1218108.KB908292_gene1570
+	(degree 895), 1218108.KB908298_gene3477 (degree 838) and 1218108.KB908305_gene146
+	(degree 784).
 	
 
 

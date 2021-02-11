@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:35.984300
 
-The undirected graph Megasphaera sp. BV3C161 has 2182 nodes and 130142 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05469 and
-has 11 connected components, where the component with most nodes has 2155 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 119.29, and the node degree mode is 3. The top 5 most central
-nodes are 1111454.HMPREF1250_1661 (degree 837), 1111454.HMPREF1250_1536 (degree 730),
-1111454.HMPREF1250_0393 (degree 728), 1111454.HMPREF1250_0796 (degree 691) and 1111454.HMPREF1250_0385
+The undirected graph Megasphaera sp. BV3C161 has 2182 nodes and 130142
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05469 and has 11 connected components, where the component
+with most nodes has 2155 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 119.29,
+and the node degree mode is 3. The top 5 most central nodes are 1111454.HMPREF1250_1661
+(degree 837), 1111454.HMPREF1250_1536 (degree 730), 1111454.HMPREF1250_0393
+(degree 728), 1111454.HMPREF1250_0796 (degree 691) and 1111454.HMPREF1250_0385
 (degree 657).
 
 
@@ -107,13 +108,14 @@ def MegasphaeraSp.Bv3c161(
 	
 	Datetime: 2021-02-02 22:25:35.984300
 	
-	The undirected graph Megasphaera sp. BV3C161 has 2182 nodes and 130142 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05469 and
-	has 11 connected components, where the component with most nodes has 2155 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 119.29, and the node degree mode is 3. The top 5 most central
-	nodes are 1111454.HMPREF1250_1661 (degree 837), 1111454.HMPREF1250_1536 (degree 730),
-	1111454.HMPREF1250_0393 (degree 728), 1111454.HMPREF1250_0796 (degree 691) and 1111454.HMPREF1250_0385
+	The undirected graph Megasphaera sp. BV3C161 has 2182 nodes and 130142
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05469 and has 11 connected components, where the component
+	with most nodes has 2155 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 119.29,
+	and the node degree mode is 3. The top 5 most central nodes are 1111454.HMPREF1250_1661
+	(degree 837), 1111454.HMPREF1250_1536 (degree 730), 1111454.HMPREF1250_0393
+	(degree 728), 1111454.HMPREF1250_0796 (degree 691) and 1111454.HMPREF1250_0385
 	(degree 657).
 	
 

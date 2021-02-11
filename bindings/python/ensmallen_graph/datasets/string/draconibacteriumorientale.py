@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:47.714664
 
-The undirected graph Draconibacterium orientale has 3926 nodes and 323034 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04193
-and has 22 connected components, where the component with most nodes has 3874 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 164.56, and the node degree mode is 1. The top 5
-most central nodes are 1168034.FH5T_06525 (degree 1511), 1168034.FH5T_03310 (degree
-1140), 1168034.FH5T_10545 (degree 1098), 1168034.FH5T_03450 (degree 1043) and 1168034.FH5T_00390
-(degree 1039).
+The undirected graph Draconibacterium orientale has 3926 nodes and 323034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04193 and has 22 connected components, where the component
+with most nodes has 3874 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 164.56,
+and the node degree mode is 1. The top 5 most central nodes are 1168034.FH5T_06525
+(degree 1511), 1168034.FH5T_03310 (degree 1140), 1168034.FH5T_10545 (degree
+1098), 1168034.FH5T_03450 (degree 1043) and 1168034.FH5T_00390 (degree
+1039).
 
 
 References
@@ -107,14 +108,15 @@ def DraconibacteriumOrientale(
 	
 	Datetime: 2021-02-02 23:05:47.714664
 	
-	The undirected graph Draconibacterium orientale has 3926 nodes and 323034 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04193
-	and has 22 connected components, where the component with most nodes has 3874 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 164.56, and the node degree mode is 1. The top 5
-	most central nodes are 1168034.FH5T_06525 (degree 1511), 1168034.FH5T_03310 (degree
-	1140), 1168034.FH5T_10545 (degree 1098), 1168034.FH5T_03450 (degree 1043) and 1168034.FH5T_00390
-	(degree 1039).
+	The undirected graph Draconibacterium orientale has 3926 nodes and 323034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04193 and has 22 connected components, where the component
+	with most nodes has 3874 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 164.56,
+	and the node degree mode is 1. The top 5 most central nodes are 1168034.FH5T_06525
+	(degree 1511), 1168034.FH5T_03310 (degree 1140), 1168034.FH5T_10545 (degree
+	1098), 1168034.FH5T_03450 (degree 1043) and 1168034.FH5T_00390 (degree
+	1039).
 	
 
 

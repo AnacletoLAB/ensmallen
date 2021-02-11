@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:10.773160
 
-The undirected graph Chloroherpeton thalassium has 2700 nodes and 228575 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06273
-and has 2 connected components, where the component with most nodes has 2698 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 169.31, and the node degree mode is 6. The top 5
-most central nodes are 517418.Ctha_2636 (degree 1118), 517418.Ctha_0019 (degree 976),
-517418.Ctha_0743 (degree 946), 517418.Ctha_1050 (degree 938) and 517418.Ctha_2310
-(degree 900).
+The undirected graph Chloroherpeton thalassium has 2700 nodes and 228575
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06273 and has 2 connected components, where the component
+with most nodes has 2698 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 169.31,
+and the node degree mode is 6. The top 5 most central nodes are 517418.Ctha_2636
+(degree 1118), 517418.Ctha_0019 (degree 976), 517418.Ctha_0743 (degree
+946), 517418.Ctha_1050 (degree 938) and 517418.Ctha_2310 (degree 900).
 
 
 References
@@ -107,14 +107,14 @@ def ChloroherpetonThalassium(
 	
 	Datetime: 2021-02-02 21:03:10.773160
 	
-	The undirected graph Chloroherpeton thalassium has 2700 nodes and 228575 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06273
-	and has 2 connected components, where the component with most nodes has 2698 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 169.31, and the node degree mode is 6. The top 5
-	most central nodes are 517418.Ctha_2636 (degree 1118), 517418.Ctha_0019 (degree 976),
-	517418.Ctha_0743 (degree 946), 517418.Ctha_1050 (degree 938) and 517418.Ctha_2310
-	(degree 900).
+	The undirected graph Chloroherpeton thalassium has 2700 nodes and 228575
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06273 and has 2 connected components, where the component
+	with most nodes has 2698 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 169.31,
+	and the node degree mode is 6. The top 5 most central nodes are 517418.Ctha_2636
+	(degree 1118), 517418.Ctha_0019 (degree 976), 517418.Ctha_0743 (degree
+	946), 517418.Ctha_1050 (degree 938) and 517418.Ctha_2310 (degree 900).
 	
 
 

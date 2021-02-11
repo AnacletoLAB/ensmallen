@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:06:46.325433
 
-The undirected graph caidaRouterLevel has 192244 nodes and 609066 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00003 and has 308 connected components, where the component with most nodes has
-190914 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 3, the mean node degree is 6.34, and the node degree mode is 2. The
-top 5 most central nodes are 1737 (degree 1071), 8442 (degree 841), 1307 (degree
-802), 7 (degree 780) and 869 (degree 742).
+The undirected graph caidaRouterLevel has 192244 nodes and 609066 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and has 308 connected components, where the component
+with most nodes has 190914 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 3, the mean node degree is
+6.34, and the node degree mode is 2. The top 5 most central nodes are 1737
+(degree 1071), 8442 (degree 841), 1307 (degree 802), 7 (degree 780) and
+869 (degree 742).
 
 
 References
@@ -103,13 +104,14 @@ def Caidarouterlevel(
 	
 	Datetime: 2021-02-06 11:06:46.325433
 	
-	The undirected graph caidaRouterLevel has 192244 nodes and 609066 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00003 and has 308 connected components, where the component with most nodes has
-	190914 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 3, the mean node degree is 6.34, and the node degree mode is 2. The
-	top 5 most central nodes are 1737 (degree 1071), 8442 (degree 841), 1307 (degree
-	802), 7 (degree 780) and 869 (degree 742).
+	The undirected graph caidaRouterLevel has 192244 nodes and 609066 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and has 308 connected components, where the component
+	with most nodes has 190914 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 3, the mean node degree is
+	6.34, and the node degree mode is 2. The top 5 most central nodes are 1737
+	(degree 1071), 8442 (degree 841), 1307 (degree 802), 7 (degree 780) and
+	869 (degree 742).
 	
 
 

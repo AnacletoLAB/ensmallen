@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:32.992612
 
-The undirected graph Porphyromonas uenonis 603 has 1897 nodes and 145921 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08114
-and has 18 connected components, where the component with most nodes has 1859 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 153.84, and the node degree mode is 1. The top 5
-most central nodes are 596327.PORUE0001_0558 (degree 982), 596327.PORUE0001_0489
-(degree 754), 596327.PORUE0001_0015 (degree 748), 596327.PORUE0001_0834 (degree 705)
-and 596327.PORUE0001_0444 (degree 600).
+The undirected graph Porphyromonas uenonis 603 has 1897 nodes and 145921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08114 and has 18 connected components, where the component
+with most nodes has 1859 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 153.84,
+and the node degree mode is 1. The top 5 most central nodes are 596327.PORUE0001_0558
+(degree 982), 596327.PORUE0001_0489 (degree 754), 596327.PORUE0001_0015
+(degree 748), 596327.PORUE0001_0834 (degree 705) and 596327.PORUE0001_0444
+(degree 600).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasUenonis603(
 	
 	Datetime: 2021-02-02 21:19:32.992612
 	
-	The undirected graph Porphyromonas uenonis 603 has 1897 nodes and 145921 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08114
-	and has 18 connected components, where the component with most nodes has 1859 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 153.84, and the node degree mode is 1. The top 5
-	most central nodes are 596327.PORUE0001_0558 (degree 982), 596327.PORUE0001_0489
-	(degree 754), 596327.PORUE0001_0015 (degree 748), 596327.PORUE0001_0834 (degree 705)
-	and 596327.PORUE0001_0444 (degree 600).
+	The undirected graph Porphyromonas uenonis 603 has 1897 nodes and 145921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08114 and has 18 connected components, where the component
+	with most nodes has 1859 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 153.84,
+	and the node degree mode is 1. The top 5 most central nodes are 596327.PORUE0001_0558
+	(degree 982), 596327.PORUE0001_0489 (degree 754), 596327.PORUE0001_0015
+	(degree 748), 596327.PORUE0001_0834 (degree 705) and 596327.PORUE0001_0444
+	(degree 600).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:15.020971
 
-The undirected graph Bacteroides finegoldii has 4441 nodes and 368349 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03736 and
-has 28 connected components, where the component with most nodes has 4366 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 165.89, and the node degree mode is 7. The top 5 most central
-nodes are 483215.BACFIN_08476 (degree 1381), 483215.BACFIN_05845 (degree 1180), 483215.BACFIN_04931
-(degree 1130), 483215.BACFIN_05493 (degree 1103) and 483215.BACFIN_09009 (degree
+The undirected graph Bacteroides finegoldii has 4441 nodes and 368349 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03736 and has 28 connected components, where the component with most
+nodes has 4366 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 165.89, and
+the node degree mode is 7. The top 5 most central nodes are 483215.BACFIN_08476
+(degree 1381), 483215.BACFIN_05845 (degree 1180), 483215.BACFIN_04931 (degree
+1130), 483215.BACFIN_05493 (degree 1103) and 483215.BACFIN_09009 (degree
 1100).
 
 
@@ -107,13 +108,14 @@ def BacteroidesFinegoldii(
 	
 	Datetime: 2021-02-02 20:58:15.020971
 	
-	The undirected graph Bacteroides finegoldii has 4441 nodes and 368349 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03736 and
-	has 28 connected components, where the component with most nodes has 4366 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 165.89, and the node degree mode is 7. The top 5 most central
-	nodes are 483215.BACFIN_08476 (degree 1381), 483215.BACFIN_05845 (degree 1180), 483215.BACFIN_04931
-	(degree 1130), 483215.BACFIN_05493 (degree 1103) and 483215.BACFIN_09009 (degree
+	The undirected graph Bacteroides finegoldii has 4441 nodes and 368349 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03736 and has 28 connected components, where the component with most
+	nodes has 4366 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 165.89, and
+	the node degree mode is 7. The top 5 most central nodes are 483215.BACFIN_08476
+	(degree 1381), 483215.BACFIN_05845 (degree 1180), 483215.BACFIN_04931 (degree
+	1130), 483215.BACFIN_05493 (degree 1103) and 483215.BACFIN_09009 (degree
 	1100).
 	
 

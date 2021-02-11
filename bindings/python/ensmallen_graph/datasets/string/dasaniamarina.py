@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:32.065397
 
-The undirected graph Dasania marina has 3510 nodes and 473410 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07687 and
-has 9 connected components, where the component with most nodes has 3494 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 269.75, and the node degree mode is 1. The top 5 most central
-nodes are 1121374.KB891575_gene1318 (degree 1444), 1121374.KB891586_gene2490 (degree
-1286), 1121374.KB891576_gene661 (degree 1270), 1121374.KB891576_gene521 (degree 1164)
-and 1121374.KB891575_gene1115 (degree 1120).
+The undirected graph Dasania marina has 3510 nodes and 473410 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07687 and has 9 connected components, where the component with most
+nodes has 3494 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 233, the mean node degree is 269.75, and
+the node degree mode is 1. The top 5 most central nodes are 1121374.KB891575_gene1318
+(degree 1444), 1121374.KB891586_gene2490 (degree 1286), 1121374.KB891576_gene661
+(degree 1270), 1121374.KB891576_gene521 (degree 1164) and 1121374.KB891575_gene1115
+(degree 1120).
 
 
 References
@@ -107,14 +108,15 @@ def DasaniaMarina(
 	
 	Datetime: 2021-02-02 22:35:32.065397
 	
-	The undirected graph Dasania marina has 3510 nodes and 473410 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07687 and
-	has 9 connected components, where the component with most nodes has 3494 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 269.75, and the node degree mode is 1. The top 5 most central
-	nodes are 1121374.KB891575_gene1318 (degree 1444), 1121374.KB891586_gene2490 (degree
-	1286), 1121374.KB891576_gene661 (degree 1270), 1121374.KB891576_gene521 (degree 1164)
-	and 1121374.KB891575_gene1115 (degree 1120).
+	The undirected graph Dasania marina has 3510 nodes and 473410 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07687 and has 9 connected components, where the component with most
+	nodes has 3494 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 233, the mean node degree is 269.75, and
+	the node degree mode is 1. The top 5 most central nodes are 1121374.KB891575_gene1318
+	(degree 1444), 1121374.KB891586_gene2490 (degree 1286), 1121374.KB891576_gene661
+	(degree 1270), 1121374.KB891576_gene521 (degree 1164) and 1121374.KB891575_gene1115
+	(degree 1120).
 	
 
 

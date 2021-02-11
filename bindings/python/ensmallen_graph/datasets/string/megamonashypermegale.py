@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:21.976156
 
-The undirected graph Megamonas hypermegale has 2036 nodes and 137559 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06640 and
-has 8 connected components, where the component with most nodes has 2019 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 135.13, and the node degree mode is 3. The top 5 most central
-nodes are 1122216.AUHW01000022_gene1092 (degree 876), 1122216.AUHW01000002_gene1864
-(degree 799), 1122216.AUHW01000008_gene98 (degree 714), 1122216.AUHW01000003_gene615
-(degree 680) and 1122216.AUHW01000002_gene1722 (degree 652).
+The undirected graph Megamonas hypermegale has 2036 nodes and 137559 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06640 and has 8 connected components, where the component with most
+nodes has 2019 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 135.13, and
+the node degree mode is 3. The top 5 most central nodes are 1122216.AUHW01000022_gene1092
+(degree 876), 1122216.AUHW01000002_gene1864 (degree 799), 1122216.AUHW01000008_gene98
+(degree 714), 1122216.AUHW01000003_gene615 (degree 680) and 1122216.AUHW01000002_gene1722
+(degree 652).
 
 
 References
@@ -107,14 +108,15 @@ def MegamonasHypermegale(
 	
 	Datetime: 2021-02-02 22:42:21.976156
 	
-	The undirected graph Megamonas hypermegale has 2036 nodes and 137559 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06640 and
-	has 8 connected components, where the component with most nodes has 2019 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 135.13, and the node degree mode is 3. The top 5 most central
-	nodes are 1122216.AUHW01000022_gene1092 (degree 876), 1122216.AUHW01000002_gene1864
-	(degree 799), 1122216.AUHW01000008_gene98 (degree 714), 1122216.AUHW01000003_gene615
-	(degree 680) and 1122216.AUHW01000002_gene1722 (degree 652).
+	The undirected graph Megamonas hypermegale has 2036 nodes and 137559 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06640 and has 8 connected components, where the component with most
+	nodes has 2019 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 135.13, and
+	the node degree mode is 3. The top 5 most central nodes are 1122216.AUHW01000022_gene1092
+	(degree 876), 1122216.AUHW01000002_gene1864 (degree 799), 1122216.AUHW01000008_gene98
+	(degree 714), 1122216.AUHW01000003_gene615 (degree 680) and 1122216.AUHW01000002_gene1722
+	(degree 652).
 	
 
 

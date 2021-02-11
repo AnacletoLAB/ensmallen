@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:07.002043
 
-The undirected graph Streptococcus mitis SK564 has 1877 nodes and 122516 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06959
-and has 5 connected components, where the component with most nodes has 1868 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 130.54, and the node degree mode is 8. The top 5
-most central nodes are 585203.SMSK564_1347 (degree 813), 585203.SMSK564_1619 (degree
-712), 585203.SMSK564_1199 (degree 702), 585203.SMSK564_0282 (degree 677) and 585203.SMSK564_1842
-(degree 667).
+The undirected graph Streptococcus mitis SK564 has 1877 nodes and 122516
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06959 and has 5 connected components, where the component
+with most nodes has 1868 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 130.54,
+and the node degree mode is 8. The top 5 most central nodes are 585203.SMSK564_1347
+(degree 813), 585203.SMSK564_1619 (degree 712), 585203.SMSK564_1199 (degree
+702), 585203.SMSK564_0282 (degree 677) and 585203.SMSK564_1842 (degree
+667).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitisSk564(
 	
 	Datetime: 2021-02-02 21:16:07.002043
 	
-	The undirected graph Streptococcus mitis SK564 has 1877 nodes and 122516 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06959
-	and has 5 connected components, where the component with most nodes has 1868 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 130.54, and the node degree mode is 8. The top 5
-	most central nodes are 585203.SMSK564_1347 (degree 813), 585203.SMSK564_1619 (degree
-	712), 585203.SMSK564_1199 (degree 702), 585203.SMSK564_0282 (degree 677) and 585203.SMSK564_1842
-	(degree 667).
+	The undirected graph Streptococcus mitis SK564 has 1877 nodes and 122516
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06959 and has 5 connected components, where the component
+	with most nodes has 1868 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 130.54,
+	and the node degree mode is 8. The top 5 most central nodes are 585203.SMSK564_1347
+	(degree 813), 585203.SMSK564_1619 (degree 712), 585203.SMSK564_1199 (degree
+	702), 585203.SMSK564_0282 (degree 677) and 585203.SMSK564_1842 (degree
+	667).
 	
 
 

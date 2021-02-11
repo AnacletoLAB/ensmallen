@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:54.691970
 
-The undirected graph Alcanivorax dieselolei has 4397 nodes and 342148 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03540 and
-has 7 connected components, where the component with most nodes has 4385 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 155.63, and the node degree mode is 3. The top 5 most central
-nodes are 930169.B5T_04329 (degree 1380), 930169.B5T_02206 (degree 1353), 930169.B5T_02577
-(degree 1176), 930169.B5T_03966 (degree 1107) and 930169.B5T_02958 (degree 1049).
+The undirected graph Alcanivorax dieselolei has 4397 nodes and 342148 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03540 and has 7 connected components, where the component with most
+nodes has 4385 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 155.63, and
+the node degree mode is 3. The top 5 most central nodes are 930169.B5T_04329
+(degree 1380), 930169.B5T_02206 (degree 1353), 930169.B5T_02577 (degree
+1176), 930169.B5T_03966 (degree 1107) and 930169.B5T_02958 (degree 1049).
 
 
 References
@@ -106,13 +107,14 @@ def AlcanivoraxDieselolei(
 	
 	Datetime: 2021-02-02 21:57:54.691970
 	
-	The undirected graph Alcanivorax dieselolei has 4397 nodes and 342148 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03540 and
-	has 7 connected components, where the component with most nodes has 4385 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 155.63, and the node degree mode is 3. The top 5 most central
-	nodes are 930169.B5T_04329 (degree 1380), 930169.B5T_02206 (degree 1353), 930169.B5T_02577
-	(degree 1176), 930169.B5T_03966 (degree 1107) and 930169.B5T_02958 (degree 1049).
+	The undirected graph Alcanivorax dieselolei has 4397 nodes and 342148 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03540 and has 7 connected components, where the component with most
+	nodes has 4385 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 155.63, and
+	the node degree mode is 3. The top 5 most central nodes are 930169.B5T_04329
+	(degree 1380), 930169.B5T_02206 (degree 1353), 930169.B5T_02577 (degree
+	1176), 930169.B5T_03966 (degree 1107) and 930169.B5T_02958 (degree 1049).
 	
 
 

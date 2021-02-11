@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:30.721070
 
-The undirected graph Acidovorax sp. JS42 has 4051 nodes and 462224 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05635 and
-has 6 connected components, where the component with most nodes has 4036 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 228.20, and the node degree mode is 5. The top 5 most central
-nodes are 232721.Ajs_3317 (degree 1592), 232721.Ajs_0647 (degree 1208), 232721.Ajs_0010
-(degree 1201), 232721.Ajs_2547 (degree 1195) and 232721.Ajs_0741 (degree 1151).
+The undirected graph Acidovorax sp. JS42 has 4051 nodes and 462224 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05635 and has 6 connected components, where the component with most
+nodes has 4036 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 228.20, and
+the node degree mode is 5. The top 5 most central nodes are 232721.Ajs_3317
+(degree 1592), 232721.Ajs_0647 (degree 1208), 232721.Ajs_0010 (degree 1201),
+232721.Ajs_2547 (degree 1195) and 232721.Ajs_0741 (degree 1151).
 
 
 References
@@ -106,13 +107,14 @@ def AcidovoraxSp.Js42(
 	
 	Datetime: 2021-02-02 20:07:30.721070
 	
-	The undirected graph Acidovorax sp. JS42 has 4051 nodes and 462224 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05635 and
-	has 6 connected components, where the component with most nodes has 4036 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 228.20, and the node degree mode is 5. The top 5 most central
-	nodes are 232721.Ajs_3317 (degree 1592), 232721.Ajs_0647 (degree 1208), 232721.Ajs_0010
-	(degree 1201), 232721.Ajs_2547 (degree 1195) and 232721.Ajs_0741 (degree 1151).
+	The undirected graph Acidovorax sp. JS42 has 4051 nodes and 462224 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05635 and has 6 connected components, where the component with most
+	nodes has 4036 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 228.20, and
+	the node degree mode is 5. The top 5 most central nodes are 232721.Ajs_3317
+	(degree 1592), 232721.Ajs_0647 (degree 1208), 232721.Ajs_0010 (degree 1201),
+	232721.Ajs_2547 (degree 1195) and 232721.Ajs_0741 (degree 1151).
 	
 
 

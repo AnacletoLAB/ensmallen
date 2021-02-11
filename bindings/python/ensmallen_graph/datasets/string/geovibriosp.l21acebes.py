@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:39:28.230399
 
-The undirected graph Geovibrio sp. L21AceBES has 2593 nodes and 277549 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08259 and
-has 4 connected components, where the component with most nodes has 2585 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 214.08, and the node degree mode is 6. The top 5 most central
-nodes are 1304888.ATWF01000002_gene486 (degree 1261), 1304888.ATWF01000001_gene2050
-(degree 1196), 1304888.ATWF01000001_gene1061 (degree 1135), 1304888.ATWF01000002_gene442
-(degree 1026) and 1304888.ATWF01000001_gene2255 (degree 1012).
+The undirected graph Geovibrio sp. L21AceBES has 2593 nodes and 277549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08259 and has 4 connected components, where the component
+with most nodes has 2585 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 214.08,
+and the node degree mode is 6. The top 5 most central nodes are 1304888.ATWF01000002_gene486
+(degree 1261), 1304888.ATWF01000001_gene2050 (degree 1196), 1304888.ATWF01000001_gene1061
+(degree 1135), 1304888.ATWF01000002_gene442 (degree 1026) and 1304888.ATWF01000001_gene2255
+(degree 1012).
 
 
 References
@@ -107,14 +108,15 @@ def GeovibrioSp.L21acebes(
 	
 	Datetime: 2021-02-03 21:39:28.230399
 	
-	The undirected graph Geovibrio sp. L21AceBES has 2593 nodes and 277549 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08259 and
-	has 4 connected components, where the component with most nodes has 2585 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 214.08, and the node degree mode is 6. The top 5 most central
-	nodes are 1304888.ATWF01000002_gene486 (degree 1261), 1304888.ATWF01000001_gene2050
-	(degree 1196), 1304888.ATWF01000001_gene1061 (degree 1135), 1304888.ATWF01000002_gene442
-	(degree 1026) and 1304888.ATWF01000001_gene2255 (degree 1012).
+	The undirected graph Geovibrio sp. L21AceBES has 2593 nodes and 277549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08259 and has 4 connected components, where the component
+	with most nodes has 2585 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 214.08,
+	and the node degree mode is 6. The top 5 most central nodes are 1304888.ATWF01000002_gene486
+	(degree 1261), 1304888.ATWF01000001_gene2050 (degree 1196), 1304888.ATWF01000001_gene1061
+	(degree 1135), 1304888.ATWF01000002_gene442 (degree 1026) and 1304888.ATWF01000001_gene2255
+	(degree 1012).
 	
 
 

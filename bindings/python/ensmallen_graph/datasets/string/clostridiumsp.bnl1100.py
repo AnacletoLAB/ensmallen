@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:50.348312
 
-The undirected graph Clostridium sp. BNL1100 has 3892 nodes and 254383 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03360 and
-has 15 connected components, where the component with most nodes has 3859 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 130.72, and the node degree mode is 4. The top 5 most central
-nodes are 755731.Clo1100_3874 (degree 1319), 755731.Clo1100_2704 (degree 1117), 755731.Clo1100_0422
-(degree 990), 755731.Clo1100_2049 (degree 898) and 755731.Clo1100_0018 (degree 852).
+The undirected graph Clostridium sp. BNL1100 has 3892 nodes and 254383
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03360 and has 15 connected components, where the component
+with most nodes has 3859 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 130.72,
+and the node degree mode is 4. The top 5 most central nodes are 755731.Clo1100_3874
+(degree 1319), 755731.Clo1100_2704 (degree 1117), 755731.Clo1100_0422 (degree
+990), 755731.Clo1100_2049 (degree 898) and 755731.Clo1100_0018 (degree
+852).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumSp.Bnl1100(
 	
 	Datetime: 2021-02-02 21:40:50.348312
 	
-	The undirected graph Clostridium sp. BNL1100 has 3892 nodes and 254383 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03360 and
-	has 15 connected components, where the component with most nodes has 3859 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 130.72, and the node degree mode is 4. The top 5 most central
-	nodes are 755731.Clo1100_3874 (degree 1319), 755731.Clo1100_2704 (degree 1117), 755731.Clo1100_0422
-	(degree 990), 755731.Clo1100_2049 (degree 898) and 755731.Clo1100_0018 (degree 852).
+	The undirected graph Clostridium sp. BNL1100 has 3892 nodes and 254383
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03360 and has 15 connected components, where the component
+	with most nodes has 3859 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 130.72,
+	and the node degree mode is 4. The top 5 most central nodes are 755731.Clo1100_3874
+	(degree 1319), 755731.Clo1100_2704 (degree 1117), 755731.Clo1100_0422 (degree
+	990), 755731.Clo1100_2049 (degree 898) and 755731.Clo1100_0018 (degree
+	852).
 	
 
 

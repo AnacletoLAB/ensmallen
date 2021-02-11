@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:49.796233
 
-The undirected graph Bifidobacterium bohemicum has 1617 nodes and 95967 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07345
-and has 19 connected components, where the component with most nodes has 1565 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 118.70, and the node degree mode is 1. The top 5
-most central nodes are 1437606.BBOH_0415 (degree 700), 1437606.BBOH_1278 (degree
-668), 1437606.BBOH_0305 (degree 652), 1437606.BBOH_1599 (degree 631) and 1437606.BBOH_0148
-(degree 577).
+The undirected graph Bifidobacterium bohemicum has 1617 nodes and 95967
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07345 and has 19 connected components, where the component
+with most nodes has 1565 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 118.70,
+and the node degree mode is 1. The top 5 most central nodes are 1437606.BBOH_0415
+(degree 700), 1437606.BBOH_1278 (degree 668), 1437606.BBOH_0305 (degree
+652), 1437606.BBOH_1599 (degree 631) and 1437606.BBOH_0148 (degree 577).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumBohemicum(
 	
 	Datetime: 2021-02-03 22:55:49.796233
 	
-	The undirected graph Bifidobacterium bohemicum has 1617 nodes and 95967 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07345
-	and has 19 connected components, where the component with most nodes has 1565 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 118.70, and the node degree mode is 1. The top 5
-	most central nodes are 1437606.BBOH_0415 (degree 700), 1437606.BBOH_1278 (degree
-	668), 1437606.BBOH_0305 (degree 652), 1437606.BBOH_1599 (degree 631) and 1437606.BBOH_0148
-	(degree 577).
+	The undirected graph Bifidobacterium bohemicum has 1617 nodes and 95967
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07345 and has 19 connected components, where the component
+	with most nodes has 1565 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 118.70,
+	and the node degree mode is 1. The top 5 most central nodes are 1437606.BBOH_0415
+	(degree 700), 1437606.BBOH_1278 (degree 668), 1437606.BBOH_0305 (degree
+	652), 1437606.BBOH_1599 (degree 631) and 1437606.BBOH_0148 (degree 577).
 	
 
 

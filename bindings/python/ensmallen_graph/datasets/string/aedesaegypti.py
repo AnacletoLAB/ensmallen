@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:26.984206
 
-The undirected graph Aedes aegypti has 14265 nodes and 1820503 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01789 and
-has 25 connected components, where the component with most nodes has 14217 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 255.24, and the node degree mode is 1. The top 5
-most central nodes are 7159.AAEL008398-PA (degree 3316), 7159.AAEL010807-PA (degree
-2523), 7159.AAEL013644-PA (degree 2349), 7159.AAEL005425-PA (degree 2254) and 7159.AAEL013363-PA
-(degree 2252).
+The undirected graph Aedes aegypti has 14265 nodes and 1820503 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01789 and has 25 connected components, where the component with most
+nodes has 14217 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 255.24, and
+the node degree mode is 1. The top 5 most central nodes are 7159.AAEL008398-PA
+(degree 3316), 7159.AAEL010807-PA (degree 2523), 7159.AAEL013644-PA (degree
+2349), 7159.AAEL005425-PA (degree 2254) and 7159.AAEL013363-PA (degree
+2252).
 
 
 References
@@ -107,14 +108,15 @@ def AedesAegypti(
 	
 	Datetime: 2021-02-02 17:20:26.984206
 	
-	The undirected graph Aedes aegypti has 14265 nodes and 1820503 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01789 and
-	has 25 connected components, where the component with most nodes has 14217 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 255.24, and the node degree mode is 1. The top 5
-	most central nodes are 7159.AAEL008398-PA (degree 3316), 7159.AAEL010807-PA (degree
-	2523), 7159.AAEL013644-PA (degree 2349), 7159.AAEL005425-PA (degree 2254) and 7159.AAEL013363-PA
-	(degree 2252).
+	The undirected graph Aedes aegypti has 14265 nodes and 1820503 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01789 and has 25 connected components, where the component with most
+	nodes has 14217 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 255.24, and
+	the node degree mode is 1. The top 5 most central nodes are 7159.AAEL008398-PA
+	(degree 3316), 7159.AAEL010807-PA (degree 2523), 7159.AAEL013644-PA (degree
+	2349), 7159.AAEL005425-PA (degree 2254) and 7159.AAEL013363-PA (degree
+	2252).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:30.154520
 
-The undirected graph Rhodoluna lacicola has 1363 nodes and 70966 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07646 and
-has 2 connected components, where the component with most nodes has 1361 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 104.13, and the node degree mode is 3. The top 5 most central
-nodes are 529884.Rhola_00007680 (degree 663), 529884.Rhola_00011910 (degree 546),
-529884.Rhola_00004970 (degree 524), 529884.Rhola_00007490 (degree 471) and 529884.Rhola_00013610
+The undirected graph Rhodoluna lacicola has 1363 nodes and 70966 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07646 and has 2 connected components, where the component with most
+nodes has 1361 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 104.13, and
+the node degree mode is 3. The top 5 most central nodes are 529884.Rhola_00007680
+(degree 663), 529884.Rhola_00011910 (degree 546), 529884.Rhola_00004970
+(degree 524), 529884.Rhola_00007490 (degree 471) and 529884.Rhola_00013610
 (degree 466).
 
 
@@ -107,13 +108,14 @@ def RhodolunaLacicola(
 	
 	Datetime: 2021-02-02 21:06:30.154520
 	
-	The undirected graph Rhodoluna lacicola has 1363 nodes and 70966 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07646 and
-	has 2 connected components, where the component with most nodes has 1361 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 104.13, and the node degree mode is 3. The top 5 most central
-	nodes are 529884.Rhola_00007680 (degree 663), 529884.Rhola_00011910 (degree 546),
-	529884.Rhola_00004970 (degree 524), 529884.Rhola_00007490 (degree 471) and 529884.Rhola_00013610
+	The undirected graph Rhodoluna lacicola has 1363 nodes and 70966 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07646 and has 2 connected components, where the component with most
+	nodes has 1361 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 104.13, and
+	the node degree mode is 3. The top 5 most central nodes are 529884.Rhola_00007680
+	(degree 663), 529884.Rhola_00011910 (degree 546), 529884.Rhola_00004970
+	(degree 524), 529884.Rhola_00007490 (degree 471) and 529884.Rhola_00013610
 	(degree 466).
 	
 

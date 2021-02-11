@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:17.160559
 
-The undirected graph Polynucleobacter necessarius STIR1 has 1493 nodes and 78068
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07009 and has 9 connected components, where the component with most nodes has
-1475 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 86, the mean node degree is 104.58, and the node degree mode is 1. The
-top 5 most central nodes are 452638.Pnec_1429 (degree 655), 452638.Pnec_0530 (degree
-558), 452638.Pnec_1005 (degree 525), 452638.Pnec_0529 (degree 512) and 452638.Pnec_1165
-(degree 499).
+The undirected graph Polynucleobacter necessarius STIR1 has 1493 nodes
+and 78068 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07009 and has 9 connected components, where the
+component with most nodes has 1475 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 104.58, and the node degree mode is 1. The top 5 most central nodes
+are 452638.Pnec_1429 (degree 655), 452638.Pnec_0530 (degree 558), 452638.Pnec_1005
+(degree 525), 452638.Pnec_0529 (degree 512) and 452638.Pnec_1165 (degree
+499).
 
 
 References
@@ -107,14 +108,15 @@ def PolynucleobacterNecessariusStir1(
 	
 	Datetime: 2021-02-02 20:52:17.160559
 	
-	The undirected graph Polynucleobacter necessarius STIR1 has 1493 nodes and 78068
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07009 and has 9 connected components, where the component with most nodes has
-	1475 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 86, the mean node degree is 104.58, and the node degree mode is 1. The
-	top 5 most central nodes are 452638.Pnec_1429 (degree 655), 452638.Pnec_0530 (degree
-	558), 452638.Pnec_1005 (degree 525), 452638.Pnec_0529 (degree 512) and 452638.Pnec_1165
-	(degree 499).
+	The undirected graph Polynucleobacter necessarius STIR1 has 1493 nodes
+	and 78068 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07009 and has 9 connected components, where the
+	component with most nodes has 1475 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 104.58, and the node degree mode is 1. The top 5 most central nodes
+	are 452638.Pnec_1429 (degree 655), 452638.Pnec_0530 (degree 558), 452638.Pnec_1005
+	(degree 525), 452638.Pnec_0529 (degree 512) and 452638.Pnec_1165 (degree
+	499).
 	
 
 

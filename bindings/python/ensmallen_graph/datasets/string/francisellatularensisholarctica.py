@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:13.627796
 
-The undirected graph Francisella tularensis holarctica has 1741 nodes and 106940
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07060 and has 8 connected components, where the component with most nodes has
-1725 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 105, the mean node degree is 122.85, and the node degree mode is 4. The
-top 5 most central nodes are 376619.FTL_1666 (degree 696), 376619.FTL_1191 (degree
-588), 376619.FTL_1478 (degree 577), 376619.FTL_0444 (degree 574) and 376619.FTL_1071
-(degree 560).
+The undirected graph Francisella tularensis holarctica has 1741 nodes and
+106940 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07060 and has 8 connected components, where the
+component with most nodes has 1725 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 122.85, and the node degree mode is 4. The top 5 most central nodes
+are 376619.FTL_1666 (degree 696), 376619.FTL_1191 (degree 588), 376619.FTL_1478
+(degree 577), 376619.FTL_0444 (degree 574) and 376619.FTL_1071 (degree
+560).
 
 
 References
@@ -107,14 +108,15 @@ def FrancisellaTularensisHolarctica(
 	
 	Datetime: 2021-02-02 20:36:13.627796
 	
-	The undirected graph Francisella tularensis holarctica has 1741 nodes and 106940
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07060 and has 8 connected components, where the component with most nodes has
-	1725 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 105, the mean node degree is 122.85, and the node degree mode is 4. The
-	top 5 most central nodes are 376619.FTL_1666 (degree 696), 376619.FTL_1191 (degree
-	588), 376619.FTL_1478 (degree 577), 376619.FTL_0444 (degree 574) and 376619.FTL_1071
-	(degree 560).
+	The undirected graph Francisella tularensis holarctica has 1741 nodes and
+	106940 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07060 and has 8 connected components, where the
+	component with most nodes has 1725 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 122.85, and the node degree mode is 4. The top 5 most central nodes
+	are 376619.FTL_1666 (degree 696), 376619.FTL_1191 (degree 588), 376619.FTL_1478
+	(degree 577), 376619.FTL_0444 (degree 574) and 376619.FTL_1071 (degree
+	560).
 	
 
 

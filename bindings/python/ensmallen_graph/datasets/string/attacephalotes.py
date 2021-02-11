@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:37.882053
 
-The undirected graph Atta cephalotes has 11012 nodes and 1028351 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01696 and
-has 48 connected components, where the component with most nodes has 10903 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 186.77, and the node degree mode is 1. The top 5
-most central nodes are 12957.ACEP14260-PA (degree 2909), 12957.ACEP21260-PA (degree
-1960), 12957.ACEP12264-PA (degree 1800), 12957.ACEP15156-PA (degree 1747) and 12957.ACEP22084-PA
-(degree 1667).
+The undirected graph Atta cephalotes has 11012 nodes and 1028351 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01696 and has 48 connected components, where the component with most
+nodes has 10903 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 186.77, and
+the node degree mode is 1. The top 5 most central nodes are 12957.ACEP14260-PA
+(degree 2909), 12957.ACEP21260-PA (degree 1960), 12957.ACEP12264-PA (degree
+1800), 12957.ACEP15156-PA (degree 1747) and 12957.ACEP22084-PA (degree
+1667).
 
 
 References
@@ -107,14 +108,15 @@ def AttaCephalotes(
 	
 	Datetime: 2021-02-02 17:52:37.882053
 	
-	The undirected graph Atta cephalotes has 11012 nodes and 1028351 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01696 and
-	has 48 connected components, where the component with most nodes has 10903 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 186.77, and the node degree mode is 1. The top 5
-	most central nodes are 12957.ACEP14260-PA (degree 2909), 12957.ACEP21260-PA (degree
-	1960), 12957.ACEP12264-PA (degree 1800), 12957.ACEP15156-PA (degree 1747) and 12957.ACEP22084-PA
-	(degree 1667).
+	The undirected graph Atta cephalotes has 11012 nodes and 1028351 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01696 and has 48 connected components, where the component with most
+	nodes has 10903 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 186.77, and
+	the node degree mode is 1. The top 5 most central nodes are 12957.ACEP14260-PA
+	(degree 2909), 12957.ACEP21260-PA (degree 1960), 12957.ACEP12264-PA (degree
+	1800), 12957.ACEP15156-PA (degree 1747) and 12957.ACEP22084-PA (degree
+	1667).
 	
 
 

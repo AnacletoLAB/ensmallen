@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:53.459128
 
-The undirected graph Frankia sp. CN3 has 7820 nodes and 1253916 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04101 and
-has 36 connected components, where the component with most nodes has 7744 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 268,
-the mean node degree is 320.69, and the node degree mode is 1. The top 5 most central
-nodes are 298655.KI912266_gene1767 (degree 2468), 298655.KI912266_gene3922 (degree
-2246), 298655.KI912267_gene7076 (degree 2217), 298655.KI912266_gene262 (degree 2213)
-and 298655.KI912266_gene273 (degree 2148).
+The undirected graph Frankia sp. CN3 has 7820 nodes and 1253916 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04101 and has 36 connected components, where the component with most
+nodes has 7744 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 268, the mean node degree is 320.69, and
+the node degree mode is 1. The top 5 most central nodes are 298655.KI912266_gene1767
+(degree 2468), 298655.KI912266_gene3922 (degree 2246), 298655.KI912267_gene7076
+(degree 2217), 298655.KI912266_gene262 (degree 2213) and 298655.KI912266_gene273
+(degree 2148).
 
 
 References
@@ -107,14 +108,15 @@ def FrankiaSp.Cn3(
 	
 	Datetime: 2021-02-02 20:21:53.459128
 	
-	The undirected graph Frankia sp. CN3 has 7820 nodes and 1253916 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04101 and
-	has 36 connected components, where the component with most nodes has 7744 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 268,
-	the mean node degree is 320.69, and the node degree mode is 1. The top 5 most central
-	nodes are 298655.KI912266_gene1767 (degree 2468), 298655.KI912266_gene3922 (degree
-	2246), 298655.KI912267_gene7076 (degree 2217), 298655.KI912266_gene262 (degree 2213)
-	and 298655.KI912266_gene273 (degree 2148).
+	The undirected graph Frankia sp. CN3 has 7820 nodes and 1253916 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04101 and has 36 connected components, where the component with most
+	nodes has 7744 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 268, the mean node degree is 320.69, and
+	the node degree mode is 1. The top 5 most central nodes are 298655.KI912266_gene1767
+	(degree 2468), 298655.KI912266_gene3922 (degree 2246), 298655.KI912267_gene7076
+	(degree 2217), 298655.KI912266_gene262 (degree 2213) and 298655.KI912266_gene273
+	(degree 2148).
 	
 
 

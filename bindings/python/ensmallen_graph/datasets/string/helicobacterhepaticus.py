@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:55.008211
 
-The undirected graph Helicobacter hepaticus has 1850 nodes and 86411 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05052 and
-has 10 connected components, where the component with most nodes has 1820 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 66,
-the mean node degree is 93.42, and the node degree mode is 7. The top 5 most central
-nodes are 235279.HH_1317 (degree 715), 235279.HH_0306 (degree 663), 235279.HH_0361
-(degree 652), 235279.HH_0702 (degree 562) and 235279.HH_0027 (degree 536).
+The undirected graph Helicobacter hepaticus has 1850 nodes and 86411 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05052 and has 10 connected components, where the component with most
+nodes has 1820 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 66, the mean node degree is 93.42, and
+the node degree mode is 7. The top 5 most central nodes are 235279.HH_1317
+(degree 715), 235279.HH_0306 (degree 663), 235279.HH_0361 (degree 652),
+235279.HH_0702 (degree 562) and 235279.HH_0027 (degree 536).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterHepaticus(
 	
 	Datetime: 2021-02-02 20:07:55.008211
 	
-	The undirected graph Helicobacter hepaticus has 1850 nodes and 86411 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05052 and
-	has 10 connected components, where the component with most nodes has 1820 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 66,
-	the mean node degree is 93.42, and the node degree mode is 7. The top 5 most central
-	nodes are 235279.HH_1317 (degree 715), 235279.HH_0306 (degree 663), 235279.HH_0361
-	(degree 652), 235279.HH_0702 (degree 562) and 235279.HH_0027 (degree 536).
+	The undirected graph Helicobacter hepaticus has 1850 nodes and 86411 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05052 and has 10 connected components, where the component with most
+	nodes has 1820 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 66, the mean node degree is 93.42, and
+	the node degree mode is 7. The top 5 most central nodes are 235279.HH_1317
+	(degree 715), 235279.HH_0306 (degree 663), 235279.HH_0361 (degree 652),
+	235279.HH_0702 (degree 562) and 235279.HH_0027 (degree 536).
 	
 
 

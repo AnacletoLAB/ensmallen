@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:44.819937
 
-The undirected graph Bacteroides coprophilus has 3765 nodes and 241291 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03405 and
-has 55 connected components, where the component with most nodes has 3601 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 128.18, and the node degree mode is 3. The top 5 most central
-nodes are 547042.BACCOPRO_00212 (degree 1044), 547042.BACCOPRO_02723 (degree 1038),
-547042.BACCOPRO_01001 (degree 892), 547042.BACCOPRO_02541 (degree 800) and 547042.BACCOPRO_02192
+The undirected graph Bacteroides coprophilus has 3765 nodes and 241291
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03405 and has 55 connected components, where the component
+with most nodes has 3601 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 128.18,
+and the node degree mode is 3. The top 5 most central nodes are 547042.BACCOPRO_00212
+(degree 1044), 547042.BACCOPRO_02723 (degree 1038), 547042.BACCOPRO_01001
+(degree 892), 547042.BACCOPRO_02541 (degree 800) and 547042.BACCOPRO_02192
 (degree 779).
 
 
@@ -107,13 +108,14 @@ def BacteroidesCoprophilus(
 	
 	Datetime: 2021-02-02 21:08:44.819937
 	
-	The undirected graph Bacteroides coprophilus has 3765 nodes and 241291 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03405 and
-	has 55 connected components, where the component with most nodes has 3601 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 128.18, and the node degree mode is 3. The top 5 most central
-	nodes are 547042.BACCOPRO_00212 (degree 1044), 547042.BACCOPRO_02723 (degree 1038),
-	547042.BACCOPRO_01001 (degree 892), 547042.BACCOPRO_02541 (degree 800) and 547042.BACCOPRO_02192
+	The undirected graph Bacteroides coprophilus has 3765 nodes and 241291
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03405 and has 55 connected components, where the component
+	with most nodes has 3601 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 128.18,
+	and the node degree mode is 3. The top 5 most central nodes are 547042.BACCOPRO_00212
+	(degree 1044), 547042.BACCOPRO_02723 (degree 1038), 547042.BACCOPRO_01001
+	(degree 892), 547042.BACCOPRO_02541 (degree 800) and 547042.BACCOPRO_02192
 	(degree 779).
 	
 

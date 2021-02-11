@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:46.781125
 
-The undirected graph Marinobacterium stanieri has 3814 nodes and 522366 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-and has 7 connected components, where the component with most nodes has 3798 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 273.92, and the node degree mode is 3. The top 5
-most central nodes are 1042375.AFPL01000043_gene1317 (degree 1644), 1042375.AFPL01000008_gene3241
-(degree 1577), 1042375.AFPL01000055_gene2296 (degree 1552), 1042375.AFPL01000022_gene2611
-(degree 1512) and 1042375.AFPL01000046_gene1746 (degree 1437).
+The undirected graph Marinobacterium stanieri has 3814 nodes and 522366
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07184 and has 7 connected components, where the component
+with most nodes has 3798 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 273.92,
+and the node degree mode is 3. The top 5 most central nodes are 1042375.AFPL01000043_gene1317
+(degree 1644), 1042375.AFPL01000008_gene3241 (degree 1577), 1042375.AFPL01000055_gene2296
+(degree 1552), 1042375.AFPL01000022_gene2611 (degree 1512) and 1042375.AFPL01000046_gene1746
+(degree 1437).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacteriumStanieri(
 	
 	Datetime: 2021-02-02 22:15:46.781125
 	
-	The undirected graph Marinobacterium stanieri has 3814 nodes and 522366 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-	and has 7 connected components, where the component with most nodes has 3798 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 273.92, and the node degree mode is 3. The top 5
-	most central nodes are 1042375.AFPL01000043_gene1317 (degree 1644), 1042375.AFPL01000008_gene3241
-	(degree 1577), 1042375.AFPL01000055_gene2296 (degree 1552), 1042375.AFPL01000022_gene2611
-	(degree 1512) and 1042375.AFPL01000046_gene1746 (degree 1437).
+	The undirected graph Marinobacterium stanieri has 3814 nodes and 522366
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07184 and has 7 connected components, where the component
+	with most nodes has 3798 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 273.92,
+	and the node degree mode is 3. The top 5 most central nodes are 1042375.AFPL01000043_gene1317
+	(degree 1644), 1042375.AFPL01000008_gene3241 (degree 1577), 1042375.AFPL01000055_gene2296
+	(degree 1552), 1042375.AFPL01000022_gene2611 (degree 1512) and 1042375.AFPL01000046_gene1746
+	(degree 1437).
 	
 
 

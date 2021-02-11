@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:01.074550
 
-The undirected graph Methylopila sp. 73B has 3907 nodes and 491939 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06447 and
-has 12 connected components, where the component with most nodes has 3877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 223,
-the mean node degree is 251.82, and the node degree mode is 3. The top 5 most central
-nodes are 1120792.JAFV01000001_gene3186 (degree 1530), 1120792.JAFV01000001_gene2244
-(degree 1363), 1120792.JAFV01000001_gene3438 (degree 1255), 1120792.JAFV01000001_gene1840
-(degree 1219) and 1120792.JAFV01000001_gene843 (degree 1188).
+The undirected graph Methylopila sp. 73B has 3907 nodes and 491939 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06447 and has 12 connected components, where the component with most
+nodes has 3877 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 223, the mean node degree is 251.82, and
+the node degree mode is 3. The top 5 most central nodes are 1120792.JAFV01000001_gene3186
+(degree 1530), 1120792.JAFV01000001_gene2244 (degree 1363), 1120792.JAFV01000001_gene3438
+(degree 1255), 1120792.JAFV01000001_gene1840 (degree 1219) and 1120792.JAFV01000001_gene843
+(degree 1188).
 
 
 References
@@ -107,14 +108,15 @@ def MethylopilaSp.73b(
 	
 	Datetime: 2021-02-02 22:29:01.074550
 	
-	The undirected graph Methylopila sp. 73B has 3907 nodes and 491939 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06447 and
-	has 12 connected components, where the component with most nodes has 3877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 223,
-	the mean node degree is 251.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1120792.JAFV01000001_gene3186 (degree 1530), 1120792.JAFV01000001_gene2244
-	(degree 1363), 1120792.JAFV01000001_gene3438 (degree 1255), 1120792.JAFV01000001_gene1840
-	(degree 1219) and 1120792.JAFV01000001_gene843 (degree 1188).
+	The undirected graph Methylopila sp. 73B has 3907 nodes and 491939 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06447 and has 12 connected components, where the component with most
+	nodes has 3877 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 223, the mean node degree is 251.82, and
+	the node degree mode is 3. The top 5 most central nodes are 1120792.JAFV01000001_gene3186
+	(degree 1530), 1120792.JAFV01000001_gene2244 (degree 1363), 1120792.JAFV01000001_gene3438
+	(degree 1255), 1120792.JAFV01000001_gene1840 (degree 1219) and 1120792.JAFV01000001_gene843
+	(degree 1188).
 	
 
 

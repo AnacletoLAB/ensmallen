@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:31.761073
 
-The undirected graph Truepera radiovictrix has 2923 nodes and 236818 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05545 and
-has 7 connected components, where the component with most nodes has 2911 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 162.04, and the node degree mode is 5. The top 5 most central
-nodes are 649638.Trad_2368 (degree 1266), 649638.Trad_1525 (degree 998), 649638.Trad_2263
-(degree 969), 649638.Trad_1381 (degree 901) and 649638.Trad_1076 (degree 883).
+The undirected graph Truepera radiovictrix has 2923 nodes and 236818 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05545 and has 7 connected components, where the component with most
+nodes has 2911 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 162.04, and
+the node degree mode is 5. The top 5 most central nodes are 649638.Trad_2368
+(degree 1266), 649638.Trad_1525 (degree 998), 649638.Trad_2263 (degree
+969), 649638.Trad_1381 (degree 901) and 649638.Trad_1076 (degree 883).
 
 
 References
@@ -106,13 +107,14 @@ def TrueperaRadiovictrix(
 	
 	Datetime: 2021-02-02 21:25:31.761073
 	
-	The undirected graph Truepera radiovictrix has 2923 nodes and 236818 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05545 and
-	has 7 connected components, where the component with most nodes has 2911 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 162.04, and the node degree mode is 5. The top 5 most central
-	nodes are 649638.Trad_2368 (degree 1266), 649638.Trad_1525 (degree 998), 649638.Trad_2263
-	(degree 969), 649638.Trad_1381 (degree 901) and 649638.Trad_1076 (degree 883).
+	The undirected graph Truepera radiovictrix has 2923 nodes and 236818 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05545 and has 7 connected components, where the component with most
+	nodes has 2911 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 162.04, and
+	the node degree mode is 5. The top 5 most central nodes are 649638.Trad_2368
+	(degree 1266), 649638.Trad_1525 (degree 998), 649638.Trad_2263 (degree
+	969), 649638.Trad_1381 (degree 901) and 649638.Trad_1076 (degree 883).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:53.169580
 
-The undirected graph Coprothermobacter proteolyticus has 1401 nodes and 87300 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08902
-and has 3 connected components, where the component with most nodes has 1396 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 124.63, and the node degree mode is 6. The top 5 most
-central nodes are 309798.COPRO5265_0117 (degree 624), 309798.COPRO5265_0118 (degree
-622), 309798.COPRO5265_1224 (degree 582), 309798.COPRO5265_1082 (degree 573) and
-309798.COPRO5265_0355 (degree 536).
+The undirected graph Coprothermobacter proteolyticus has 1401 nodes and
+87300 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08902 and has 3 connected components, where the
+component with most nodes has 1396 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+is 124.63, and the node degree mode is 6. The top 5 most central nodes
+are 309798.COPRO5265_0117 (degree 624), 309798.COPRO5265_0118 (degree 622),
+309798.COPRO5265_1224 (degree 582), 309798.COPRO5265_1082 (degree 573)
+and 309798.COPRO5265_0355 (degree 536).
 
 
 References
@@ -107,14 +108,15 @@ def CoprothermobacterProteolyticus(
 	
 	Datetime: 2021-02-02 20:22:53.169580
 	
-	The undirected graph Coprothermobacter proteolyticus has 1401 nodes and 87300 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08902
-	and has 3 connected components, where the component with most nodes has 1396 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 124.63, and the node degree mode is 6. The top 5 most
-	central nodes are 309798.COPRO5265_0117 (degree 624), 309798.COPRO5265_0118 (degree
-	622), 309798.COPRO5265_1224 (degree 582), 309798.COPRO5265_1082 (degree 573) and
-	309798.COPRO5265_0355 (degree 536).
+	The undirected graph Coprothermobacter proteolyticus has 1401 nodes and
+	87300 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08902 and has 3 connected components, where the
+	component with most nodes has 1396 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+	is 124.63, and the node degree mode is 6. The top 5 most central nodes
+	are 309798.COPRO5265_0117 (degree 624), 309798.COPRO5265_0118 (degree 622),
+	309798.COPRO5265_1224 (degree 582), 309798.COPRO5265_1082 (degree 573)
+	and 309798.COPRO5265_0355 (degree 536).
 	
 
 

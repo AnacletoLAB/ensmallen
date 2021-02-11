@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:19:54.844690
 
-The undirected graph Streptomyces sp. CNT318 has 6020 nodes and 744617 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04110 and
-has 31 connected components, where the component with most nodes has 5937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 209,
-the mean node degree is 247.38, and the node degree mode is 2. The top 5 most central
-nodes are 1288079.AUKN01000013_gene1668 (degree 2921), 1288079.AUKN01000021_gene2378
-(degree 1741), 1288079.AUKN01000003_gene3425 (degree 1664), 1288079.AUKN01000012_gene787
-(degree 1537) and 1288079.AUKN01000010_gene2059 (degree 1529).
+The undirected graph Streptomyces sp. CNT318 has 6020 nodes and 744617
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04110 and has 31 connected components, where the component
+with most nodes has 5937 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 209, the mean node degree is 247.38,
+and the node degree mode is 2. The top 5 most central nodes are 1288079.AUKN01000013_gene1668
+(degree 2921), 1288079.AUKN01000021_gene2378 (degree 1741), 1288079.AUKN01000003_gene3425
+(degree 1664), 1288079.AUKN01000012_gene787 (degree 1537) and 1288079.AUKN01000010_gene2059
+(degree 1529).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Cnt318(
 	
 	Datetime: 2021-02-03 21:19:54.844690
 	
-	The undirected graph Streptomyces sp. CNT318 has 6020 nodes and 744617 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04110 and
-	has 31 connected components, where the component with most nodes has 5937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 209,
-	the mean node degree is 247.38, and the node degree mode is 2. The top 5 most central
-	nodes are 1288079.AUKN01000013_gene1668 (degree 2921), 1288079.AUKN01000021_gene2378
-	(degree 1741), 1288079.AUKN01000003_gene3425 (degree 1664), 1288079.AUKN01000012_gene787
-	(degree 1537) and 1288079.AUKN01000010_gene2059 (degree 1529).
+	The undirected graph Streptomyces sp. CNT318 has 6020 nodes and 744617
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04110 and has 31 connected components, where the component
+	with most nodes has 5937 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 209, the mean node degree is 247.38,
+	and the node degree mode is 2. The top 5 most central nodes are 1288079.AUKN01000013_gene1668
+	(degree 2921), 1288079.AUKN01000021_gene2378 (degree 1741), 1288079.AUKN01000003_gene3425
+	(degree 1664), 1288079.AUKN01000012_gene787 (degree 1537) and 1288079.AUKN01000010_gene2059
+	(degree 1529).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:13.753341
 
-The undirected graph Limnohabitans sp. Rim47 has 2739 nodes and 249614 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06657 and
-has 3 connected components, where the component with most nodes has 2735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 182.27, and the node degree mode is 78. The top 5 most central
-nodes are 1100721.ALKO01000035_gene278 (degree 1074), 1100721.ALKO01000003_gene2226
-(degree 896), 1100721.ALKO01000015_gene1057 (degree 835), 1100721.ALKO01000015_gene1109
-(degree 823) and 1100721.ALKO01000018_gene1188 (degree 820).
+The undirected graph Limnohabitans sp. Rim47 has 2739 nodes and 249614
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06657 and has 3 connected components, where the component
+with most nodes has 2735 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 182.27,
+and the node degree mode is 78. The top 5 most central nodes are 1100721.ALKO01000035_gene278
+(degree 1074), 1100721.ALKO01000003_gene2226 (degree 896), 1100721.ALKO01000015_gene1057
+(degree 835), 1100721.ALKO01000015_gene1109 (degree 823) and 1100721.ALKO01000018_gene1188
+(degree 820).
 
 
 References
@@ -107,14 +108,15 @@ def LimnohabitansSp.Rim47(
 	
 	Datetime: 2021-02-02 22:24:13.753341
 	
-	The undirected graph Limnohabitans sp. Rim47 has 2739 nodes and 249614 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06657 and
-	has 3 connected components, where the component with most nodes has 2735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 182.27, and the node degree mode is 78. The top 5 most central
-	nodes are 1100721.ALKO01000035_gene278 (degree 1074), 1100721.ALKO01000003_gene2226
-	(degree 896), 1100721.ALKO01000015_gene1057 (degree 835), 1100721.ALKO01000015_gene1109
-	(degree 823) and 1100721.ALKO01000018_gene1188 (degree 820).
+	The undirected graph Limnohabitans sp. Rim47 has 2739 nodes and 249614
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06657 and has 3 connected components, where the component
+	with most nodes has 2735 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 182.27,
+	and the node degree mode is 78. The top 5 most central nodes are 1100721.ALKO01000035_gene278
+	(degree 1074), 1100721.ALKO01000003_gene2226 (degree 896), 1100721.ALKO01000015_gene1057
+	(degree 835), 1100721.ALKO01000015_gene1109 (degree 823) and 1100721.ALKO01000018_gene1188
+	(degree 820).
 	
 
 

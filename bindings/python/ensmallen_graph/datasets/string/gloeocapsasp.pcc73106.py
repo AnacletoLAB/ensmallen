@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:29.682235
 
-The undirected graph Gloeocapsa sp. PCC73106 has 4041 nodes and 343345 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04206 and
-has 13 connected components, where the component with most nodes has 4011 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 169.93, and the node degree mode is 4. The top 5 most central
-nodes are 102232.GLO73106DRAFT_00021210 (degree 1301), 102232.GLO73106DRAFT_00007700
-(degree 1229), 102232.GLO73106DRAFT_00024960 (degree 1134), 102232.GLO73106DRAFT_00037090
-(degree 1098) and 102232.GLO73106DRAFT_00005870 (degree 1007).
+The undirected graph Gloeocapsa sp. PCC73106 has 4041 nodes and 343345
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04206 and has 13 connected components, where the component
+with most nodes has 4011 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 169.93,
+and the node degree mode is 4. The top 5 most central nodes are 102232.GLO73106DRAFT_00021210
+(degree 1301), 102232.GLO73106DRAFT_00007700 (degree 1229), 102232.GLO73106DRAFT_00024960
+(degree 1134), 102232.GLO73106DRAFT_00037090 (degree 1098) and 102232.GLO73106DRAFT_00005870
+(degree 1007).
 
 
 References
@@ -107,14 +108,15 @@ def GloeocapsaSp.Pcc73106(
 	
 	Datetime: 2021-02-02 19:43:29.682235
 	
-	The undirected graph Gloeocapsa sp. PCC73106 has 4041 nodes and 343345 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04206 and
-	has 13 connected components, where the component with most nodes has 4011 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 169.93, and the node degree mode is 4. The top 5 most central
-	nodes are 102232.GLO73106DRAFT_00021210 (degree 1301), 102232.GLO73106DRAFT_00007700
-	(degree 1229), 102232.GLO73106DRAFT_00024960 (degree 1134), 102232.GLO73106DRAFT_00037090
-	(degree 1098) and 102232.GLO73106DRAFT_00005870 (degree 1007).
+	The undirected graph Gloeocapsa sp. PCC73106 has 4041 nodes and 343345
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04206 and has 13 connected components, where the component
+	with most nodes has 4011 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 169.93,
+	and the node degree mode is 4. The top 5 most central nodes are 102232.GLO73106DRAFT_00021210
+	(degree 1301), 102232.GLO73106DRAFT_00007700 (degree 1229), 102232.GLO73106DRAFT_00024960
+	(degree 1134), 102232.GLO73106DRAFT_00037090 (degree 1098) and 102232.GLO73106DRAFT_00005870
+	(degree 1007).
 	
 
 

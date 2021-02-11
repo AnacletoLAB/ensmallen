@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:52:08.266433
 
-The undirected graph tech-RL-caida has 190914 nodes and 607610 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00003 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 6.37, and the node degree mode is 2. The top 5 most
-central nodes are 1731 (degree 1071), 8414 (degree 841), 1301 (degree 802), 7 (degree
-780) and 867 (degree 742).
+The undirected graph tech-RL-caida has 190914 nodes and 607610 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 6.37, and the
+node degree mode is 2. The top 5 most central nodes are 1731 (degree 1071),
+8414 (degree 841), 1301 (degree 802), 7 (degree 780) and 867 (degree 742).
 
 
 References
@@ -121,12 +121,12 @@ def TechRlCaida(
 	
 	Datetime: 2021-02-06 11:52:08.266433
 	
-	The undirected graph tech-RL-caida has 190914 nodes and 607610 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00003 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 6.37, and the node degree mode is 2. The top 5 most
-	central nodes are 1731 (degree 1071), 8414 (degree 841), 1301 (degree 802), 7 (degree
-	780) and 867 (degree 742).
+	The undirected graph tech-RL-caida has 190914 nodes and 607610 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 6.37, and the
+	node degree mode is 2. The top 5 most central nodes are 1731 (degree 1071),
+	8414 (degree 841), 1301 (degree 802), 7 (degree 780) and 867 (degree 742).
 	
 
 

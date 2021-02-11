@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:39.210358
 
-The undirected graph Corynebacterium resistens has 2156 nodes and 132495 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05703
-and has 10 connected components, where the component with most nodes has 2138 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 122.91, and the node degree mode is 2. The top 5
-most central nodes are 662755.CRES_0914 (degree 795), 662755.CRES_1815 (degree 699),
-662755.CRES_1812 (degree 647), 662755.CRES_1093 (degree 594) and 662755.CRES_0977
-(degree 572).
+The undirected graph Corynebacterium resistens has 2156 nodes and 132495
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05703 and has 10 connected components, where the component
+with most nodes has 2138 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 122.91,
+and the node degree mode is 2. The top 5 most central nodes are 662755.CRES_0914
+(degree 795), 662755.CRES_1815 (degree 699), 662755.CRES_1812 (degree 647),
+662755.CRES_1093 (degree 594) and 662755.CRES_0977 (degree 572).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumResistens(
 	
 	Datetime: 2021-02-02 21:27:39.210358
 	
-	The undirected graph Corynebacterium resistens has 2156 nodes and 132495 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05703
-	and has 10 connected components, where the component with most nodes has 2138 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 122.91, and the node degree mode is 2. The top 5
-	most central nodes are 662755.CRES_0914 (degree 795), 662755.CRES_1815 (degree 699),
-	662755.CRES_1812 (degree 647), 662755.CRES_1093 (degree 594) and 662755.CRES_0977
-	(degree 572).
+	The undirected graph Corynebacterium resistens has 2156 nodes and 132495
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05703 and has 10 connected components, where the component
+	with most nodes has 2138 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 122.91,
+	and the node degree mode is 2. The top 5 most central nodes are 662755.CRES_0914
+	(degree 795), 662755.CRES_1815 (degree 699), 662755.CRES_1812 (degree 647),
+	662755.CRES_1093 (degree 594) and 662755.CRES_0977 (degree 572).
 	
 
 

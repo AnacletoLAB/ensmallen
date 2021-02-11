@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:42.014388
 
-The undirected graph Deinococcus deserti has 2600 nodes and 161420 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04778 and
-has 10 connected components, where the component with most nodes has 2576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 124.17, and the node degree mode is 3. The top 5 most central
-nodes are 546414.Deide_15130 (degree 1065), 546414.Deide_05580 (degree 829), 546414.Deide_06210
-(degree 826), 546414.Deide_21970 (degree 770) and 546414.Deide_09380 (degree 735).
+The undirected graph Deinococcus deserti has 2600 nodes and 161420 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04778 and has 10 connected components, where the component with most
+nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 124.17, and
+the node degree mode is 3. The top 5 most central nodes are 546414.Deide_15130
+(degree 1065), 546414.Deide_05580 (degree 829), 546414.Deide_06210 (degree
+826), 546414.Deide_21970 (degree 770) and 546414.Deide_09380 (degree 735).
 
 
 References
@@ -106,13 +107,14 @@ def DeinococcusDeserti(
 	
 	Datetime: 2021-02-02 21:08:42.014388
 	
-	The undirected graph Deinococcus deserti has 2600 nodes and 161420 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04778 and
-	has 10 connected components, where the component with most nodes has 2576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 124.17, and the node degree mode is 3. The top 5 most central
-	nodes are 546414.Deide_15130 (degree 1065), 546414.Deide_05580 (degree 829), 546414.Deide_06210
-	(degree 826), 546414.Deide_21970 (degree 770) and 546414.Deide_09380 (degree 735).
+	The undirected graph Deinococcus deserti has 2600 nodes and 161420 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04778 and has 10 connected components, where the component with most
+	nodes has 2576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 124.17, and
+	the node degree mode is 3. The top 5 most central nodes are 546414.Deide_15130
+	(degree 1065), 546414.Deide_05580 (degree 829), 546414.Deide_06210 (degree
+	826), 546414.Deide_21970 (degree 770) and 546414.Deide_09380 (degree 735).
 	
 
 

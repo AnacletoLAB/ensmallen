@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:43.050206
 
-The undirected graph Aeromicrobium massiliense has 3239 nodes and 255298 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04868
-and has 15 connected components, where the component with most nodes has 3206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 157.64, and the node degree mode is 3. The top 5
-most central nodes are 1033730.CAHG01000015_gene760 (degree 1308), 1033730.CAHG01000014_gene1502
-(degree 1152), 1033730.CAHG01000008_gene3025 (degree 1003), 1033730.CAHG01000003_gene113
-(degree 994) and 1033730.CAHG01000016_gene288 (degree 902).
+The undirected graph Aeromicrobium massiliense has 3239 nodes and 255298
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04868 and has 15 connected components, where the component
+with most nodes has 3206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 157.64,
+and the node degree mode is 3. The top 5 most central nodes are 1033730.CAHG01000015_gene760
+(degree 1308), 1033730.CAHG01000014_gene1502 (degree 1152), 1033730.CAHG01000008_gene3025
+(degree 1003), 1033730.CAHG01000003_gene113 (degree 994) and 1033730.CAHG01000016_gene288
+(degree 902).
 
 
 References
@@ -107,14 +108,15 @@ def AeromicrobiumMassiliense(
 	
 	Datetime: 2021-02-02 22:10:43.050206
 	
-	The undirected graph Aeromicrobium massiliense has 3239 nodes and 255298 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04868
-	and has 15 connected components, where the component with most nodes has 3206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 157.64, and the node degree mode is 3. The top 5
-	most central nodes are 1033730.CAHG01000015_gene760 (degree 1308), 1033730.CAHG01000014_gene1502
-	(degree 1152), 1033730.CAHG01000008_gene3025 (degree 1003), 1033730.CAHG01000003_gene113
-	(degree 994) and 1033730.CAHG01000016_gene288 (degree 902).
+	The undirected graph Aeromicrobium massiliense has 3239 nodes and 255298
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04868 and has 15 connected components, where the component
+	with most nodes has 3206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 157.64,
+	and the node degree mode is 3. The top 5 most central nodes are 1033730.CAHG01000015_gene760
+	(degree 1308), 1033730.CAHG01000014_gene1502 (degree 1152), 1033730.CAHG01000008_gene3025
+	(degree 1003), 1033730.CAHG01000003_gene113 (degree 994) and 1033730.CAHG01000016_gene288
+	(degree 902).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:58.558089
 
-The undirected graph Achromobacter xylosoxidans NBRC15126 has 6003 nodes and 591711
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03285 and has 21 connected components, where the component with most nodes has
-5960 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 156, the mean node degree is 197.14, and the node degree mode is 3. The
-top 5 most central nodes are 1216976.AX27061_1694 (degree 2015), 1216976.AX27061_0220
-(degree 1713), 1216976.AX27061_1198 (degree 1556), 1216976.AX27061_2800 (degree 1462)
+The undirected graph Achromobacter xylosoxidans NBRC15126 has 6003 nodes
+and 591711 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03285 and has 21 connected components, where the
+component with most nodes has 5960 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 156, the mean node degree
+is 197.14, and the node degree mode is 3. The top 5 most central nodes
+are 1216976.AX27061_1694 (degree 2015), 1216976.AX27061_0220 (degree 1713),
+1216976.AX27061_1198 (degree 1556), 1216976.AX27061_2800 (degree 1462)
 and 1216976.AX27061_5740 (degree 1398).
 
 
@@ -107,13 +108,14 @@ def AchromobacterXylosoxidansNbrc15126(
 	
 	Datetime: 2021-02-02 23:20:58.558089
 	
-	The undirected graph Achromobacter xylosoxidans NBRC15126 has 6003 nodes and 591711
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03285 and has 21 connected components, where the component with most nodes has
-	5960 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 156, the mean node degree is 197.14, and the node degree mode is 3. The
-	top 5 most central nodes are 1216976.AX27061_1694 (degree 2015), 1216976.AX27061_0220
-	(degree 1713), 1216976.AX27061_1198 (degree 1556), 1216976.AX27061_2800 (degree 1462)
+	The undirected graph Achromobacter xylosoxidans NBRC15126 has 6003 nodes
+	and 591711 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03285 and has 21 connected components, where the
+	component with most nodes has 5960 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 156, the mean node degree
+	is 197.14, and the node degree mode is 3. The top 5 most central nodes
+	are 1216976.AX27061_1694 (degree 2015), 1216976.AX27061_0220 (degree 1713),
+	1216976.AX27061_1198 (degree 1556), 1216976.AX27061_2800 (degree 1462)
 	and 1216976.AX27061_5740 (degree 1398).
 	
 

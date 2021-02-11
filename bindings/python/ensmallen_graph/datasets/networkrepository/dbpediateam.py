@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:08:29.746759
 
-The undirected graph dbpedia-team has 901132 nodes and 1366466 unweighted edges,
-of which 2 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 3.03, and the node degree mode is 1. The top 5 most central
-nodes are 68 (degree 2672), 481 (degree 2580), 416 (degree 2508), 369 (degree 2458)
-and 237 (degree 2238).
+The undirected graph dbpedia-team has 901132 nodes and 1366466 unweighted
+edges, of which 2 are self-loops. The graph is extremely sparse as it has
+a density of 0.00000 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 3.03, and the node
+degree mode is 1. The top 5 most central nodes are 68 (degree 2672), 481
+(degree 2580), 416 (degree 2508), 369 (degree 2458) and 237 (degree 2238).
 
 
 References
@@ -102,12 +102,12 @@ def DbpediaTeam(
 	
 	Datetime: 2021-02-06 12:08:29.746759
 	
-	The undirected graph dbpedia-team has 901132 nodes and 1366466 unweighted edges,
-	of which 2 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 3.03, and the node degree mode is 1. The top 5 most central
-	nodes are 68 (degree 2672), 481 (degree 2580), 416 (degree 2508), 369 (degree 2458)
-	and 237 (degree 2238).
+	The undirected graph dbpedia-team has 901132 nodes and 1366466 unweighted
+	edges, of which 2 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00000 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 3.03, and the node
+	degree mode is 1. The top 5 most central nodes are 68 (degree 2672), 481
+	(degree 2580), 416 (degree 2508), 369 (degree 2458) and 237 (degree 2238).
 	
 
 

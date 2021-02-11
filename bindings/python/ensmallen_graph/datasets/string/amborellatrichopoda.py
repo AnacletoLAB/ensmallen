@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:13.817263
 
-The undirected graph Amborella trichopoda has 16290 nodes and 2026452 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01527 and
-has 10 connected components, where the component with most nodes has 16261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 248.80, and the node degree mode is 4. The top 5
-most central nodes are 13333.ERM98706 (degree 4319), 13333.ERN09120 (degree 3807),
-13333.ERM98455 (degree 3288), 13333.ERN08053 (degree 3244) and 13333.ERM95270 (degree
-3133).
+The undirected graph Amborella trichopoda has 16290 nodes and 2026452 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01527 and has 10 connected components, where the component with most
+nodes has 16261 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 248.80, and
+the node degree mode is 4. The top 5 most central nodes are 13333.ERM98706
+(degree 4319), 13333.ERN09120 (degree 3807), 13333.ERM98455 (degree 3288),
+13333.ERN08053 (degree 3244) and 13333.ERM95270 (degree 3133).
 
 
 References
@@ -107,14 +107,14 @@ def AmborellaTrichopoda(
 	
 	Datetime: 2021-02-02 17:53:13.817263
 	
-	The undirected graph Amborella trichopoda has 16290 nodes and 2026452 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01527 and
-	has 10 connected components, where the component with most nodes has 16261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 248.80, and the node degree mode is 4. The top 5
-	most central nodes are 13333.ERM98706 (degree 4319), 13333.ERN09120 (degree 3807),
-	13333.ERM98455 (degree 3288), 13333.ERN08053 (degree 3244) and 13333.ERM95270 (degree
-	3133).
+	The undirected graph Amborella trichopoda has 16290 nodes and 2026452 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01527 and has 10 connected components, where the component with most
+	nodes has 16261 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 248.80, and
+	the node degree mode is 4. The top 5 most central nodes are 13333.ERM98706
+	(degree 4319), 13333.ERN09120 (degree 3807), 13333.ERM98455 (degree 3288),
+	13333.ERN08053 (degree 3244) and 13333.ERM95270 (degree 3133).
 	
 
 

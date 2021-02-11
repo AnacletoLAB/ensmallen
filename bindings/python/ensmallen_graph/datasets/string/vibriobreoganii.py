@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:30.201775
 
-The undirected graph Vibrio breoganii has 3674 nodes and 240573 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03565 and
-has 15 connected components, where the component with most nodes has 3644 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 130.96, and the node degree mode is 1. The top 5 most central
-nodes are 1205908.AKXW01000122_gene336 (degree 1211), 1205908.AKXW01000023_gene845
-(degree 1183), 1205908.AKXW01000139_gene1876 (degree 1000), 1205908.AKXW01000121_gene226
-(degree 969) and 1205908.AKXW01000146_gene1754 (degree 938).
+The undirected graph Vibrio breoganii has 3674 nodes and 240573 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03565 and has 15 connected components, where the component with most
+nodes has 3644 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 130.96, and
+the node degree mode is 1. The top 5 most central nodes are 1205908.AKXW01000122_gene336
+(degree 1211), 1205908.AKXW01000023_gene845 (degree 1183), 1205908.AKXW01000139_gene1876
+(degree 1000), 1205908.AKXW01000121_gene226 (degree 969) and 1205908.AKXW01000146_gene1754
+(degree 938).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioBreoganii(
 	
 	Datetime: 2021-02-02 23:15:30.201775
 	
-	The undirected graph Vibrio breoganii has 3674 nodes and 240573 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03565 and
-	has 15 connected components, where the component with most nodes has 3644 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 130.96, and the node degree mode is 1. The top 5 most central
-	nodes are 1205908.AKXW01000122_gene336 (degree 1211), 1205908.AKXW01000023_gene845
-	(degree 1183), 1205908.AKXW01000139_gene1876 (degree 1000), 1205908.AKXW01000121_gene226
-	(degree 969) and 1205908.AKXW01000146_gene1754 (degree 938).
+	The undirected graph Vibrio breoganii has 3674 nodes and 240573 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03565 and has 15 connected components, where the component with most
+	nodes has 3644 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 130.96, and
+	the node degree mode is 1. The top 5 most central nodes are 1205908.AKXW01000122_gene336
+	(degree 1211), 1205908.AKXW01000023_gene845 (degree 1183), 1205908.AKXW01000139_gene1876
+	(degree 1000), 1205908.AKXW01000121_gene226 (degree 969) and 1205908.AKXW01000146_gene1754
+	(degree 938).
 	
 
 

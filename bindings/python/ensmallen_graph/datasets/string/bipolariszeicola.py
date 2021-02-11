@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:04.863249
 
-The undirected graph Bipolaris zeicola has 7576 nodes and 613277 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02137 and
-has 41 connected components, where the component with most nodes has 7487 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 161.90, and the node degree mode is 1. The top 5 most central
-nodes are 5017.XP_007710031.1 (degree 2076), 5017.XP_007712424.1 (degree 1864), 5017.XP_007709477.1
-(degree 1592), 5017.XP_007707197.1 (degree 1496) and 5017.XP_007708543.1 (degree
+The undirected graph Bipolaris zeicola has 7576 nodes and 613277 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02137 and has 41 connected components, where the component with most
+nodes has 7487 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 161.90, and
+the node degree mode is 1. The top 5 most central nodes are 5017.XP_007710031.1
+(degree 2076), 5017.XP_007712424.1 (degree 1864), 5017.XP_007709477.1 (degree
+1592), 5017.XP_007707197.1 (degree 1496) and 5017.XP_007708543.1 (degree
 1469).
 
 
@@ -107,13 +108,14 @@ def BipolarisZeicola(
 	
 	Datetime: 2021-02-02 17:12:04.863249
 	
-	The undirected graph Bipolaris zeicola has 7576 nodes and 613277 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02137 and
-	has 41 connected components, where the component with most nodes has 7487 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 161.90, and the node degree mode is 1. The top 5 most central
-	nodes are 5017.XP_007710031.1 (degree 2076), 5017.XP_007712424.1 (degree 1864), 5017.XP_007709477.1
-	(degree 1592), 5017.XP_007707197.1 (degree 1496) and 5017.XP_007708543.1 (degree
+	The undirected graph Bipolaris zeicola has 7576 nodes and 613277 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02137 and has 41 connected components, where the component with most
+	nodes has 7487 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 161.90, and
+	the node degree mode is 1. The top 5 most central nodes are 5017.XP_007710031.1
+	(degree 2076), 5017.XP_007712424.1 (degree 1864), 5017.XP_007709477.1 (degree
+	1592), 5017.XP_007707197.1 (degree 1496) and 5017.XP_007708543.1 (degree
 	1469).
 	
 

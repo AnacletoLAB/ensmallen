@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:39.963948
 
-The undirected graph Nocardiopsis baichengensis has 5340 nodes and 579676 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04066
-and has 33 connected components, where the component with most nodes has 5255 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 182, the mean node degree is 217.11, and the node degree mode is 2. The top 5
-most central nodes are 1236902.ANAS01000020_gene1540 (degree 1845), 1236902.ANAS01000018_gene3273
-(degree 1836), 1236902.ANAS01000018_gene3259 (degree 1442), 1236902.ANAS01000019_gene4319
-(degree 1362) and 1236902.ANAS01000005_gene4705 (degree 1339).
+The undirected graph Nocardiopsis baichengensis has 5340 nodes and 579676
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04066 and has 33 connected components, where the component
+with most nodes has 5255 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 217.11,
+and the node degree mode is 2. The top 5 most central nodes are 1236902.ANAS01000020_gene1540
+(degree 1845), 1236902.ANAS01000018_gene3273 (degree 1836), 1236902.ANAS01000018_gene3259
+(degree 1442), 1236902.ANAS01000019_gene4319 (degree 1362) and 1236902.ANAS01000005_gene4705
+(degree 1339).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisBaichengensis(
 	
 	Datetime: 2021-02-02 23:31:39.963948
 	
-	The undirected graph Nocardiopsis baichengensis has 5340 nodes and 579676 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04066
-	and has 33 connected components, where the component with most nodes has 5255 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 182, the mean node degree is 217.11, and the node degree mode is 2. The top 5
-	most central nodes are 1236902.ANAS01000020_gene1540 (degree 1845), 1236902.ANAS01000018_gene3273
-	(degree 1836), 1236902.ANAS01000018_gene3259 (degree 1442), 1236902.ANAS01000019_gene4319
-	(degree 1362) and 1236902.ANAS01000005_gene4705 (degree 1339).
+	The undirected graph Nocardiopsis baichengensis has 5340 nodes and 579676
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04066 and has 33 connected components, where the component
+	with most nodes has 5255 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 217.11,
+	and the node degree mode is 2. The top 5 most central nodes are 1236902.ANAS01000020_gene1540
+	(degree 1845), 1236902.ANAS01000018_gene3273 (degree 1836), 1236902.ANAS01000018_gene3259
+	(degree 1442), 1236902.ANAS01000019_gene4319 (degree 1362) and 1236902.ANAS01000005_gene4705
+	(degree 1339).
 	
 
 

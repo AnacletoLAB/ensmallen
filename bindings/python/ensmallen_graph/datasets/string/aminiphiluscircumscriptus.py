@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:41.554430
 
-The undirected graph Aminiphilus circumscriptus has 2601 nodes and 242117 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07160
-and has 10 connected components, where the component with most nodes has 2580 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 186.17, and the node degree mode is 1. The top 5
-most central nodes are 1304874.JAFY01000002_gene95 (degree 1051), 1304874.JAFY01000007_gene2304
-(degree 1027), 1304874.JAFY01000007_gene2407 (degree 1026), 1304874.JAFY01000007_gene1752
-(degree 885) and 1304874.JAFY01000002_gene1041 (degree 879).
+The undirected graph Aminiphilus circumscriptus has 2601 nodes and 242117
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07160 and has 10 connected components, where the component
+with most nodes has 2580 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 186.17,
+and the node degree mode is 1. The top 5 most central nodes are 1304874.JAFY01000002_gene95
+(degree 1051), 1304874.JAFY01000007_gene2304 (degree 1027), 1304874.JAFY01000007_gene2407
+(degree 1026), 1304874.JAFY01000007_gene1752 (degree 885) and 1304874.JAFY01000002_gene1041
+(degree 879).
 
 
 References
@@ -107,14 +108,15 @@ def AminiphilusCircumscriptus(
 	
 	Datetime: 2021-02-03 21:36:41.554430
 	
-	The undirected graph Aminiphilus circumscriptus has 2601 nodes and 242117 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07160
-	and has 10 connected components, where the component with most nodes has 2580 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 186.17, and the node degree mode is 1. The top 5
-	most central nodes are 1304874.JAFY01000002_gene95 (degree 1051), 1304874.JAFY01000007_gene2304
-	(degree 1027), 1304874.JAFY01000007_gene2407 (degree 1026), 1304874.JAFY01000007_gene1752
-	(degree 885) and 1304874.JAFY01000002_gene1041 (degree 879).
+	The undirected graph Aminiphilus circumscriptus has 2601 nodes and 242117
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07160 and has 10 connected components, where the component
+	with most nodes has 2580 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 186.17,
+	and the node degree mode is 1. The top 5 most central nodes are 1304874.JAFY01000002_gene95
+	(degree 1051), 1304874.JAFY01000007_gene2304 (degree 1027), 1304874.JAFY01000007_gene2407
+	(degree 1026), 1304874.JAFY01000007_gene1752 (degree 885) and 1304874.JAFY01000002_gene1041
+	(degree 879).
 	
 
 

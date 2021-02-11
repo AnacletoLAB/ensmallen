@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:37.251228
 
-The undirected graph Actinobacillus minor NM305 has 2354 nodes and 163029 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-and has 10 connected components, where the component with most nodes has 2334 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 138.51, and the node degree mode is 3. The top 5
-most central nodes are 637911.AM305_10461 (degree 914), 637911.AM305_02806 (degree
-784), 637911.AM305_09036 (degree 761), 637911.AM305_10781 (degree 759) and 637911.AM305_12015
-(degree 717).
+The undirected graph Actinobacillus minor NM305 has 2354 nodes and 163029
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05887 and has 10 connected components, where the component
+with most nodes has 2334 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 138.51,
+and the node degree mode is 3. The top 5 most central nodes are 637911.AM305_10461
+(degree 914), 637911.AM305_02806 (degree 784), 637911.AM305_09036 (degree
+761), 637911.AM305_10781 (degree 759) and 637911.AM305_12015 (degree 717).
 
 
 References
@@ -107,14 +107,14 @@ def ActinobacillusMinorNm305(
 	
 	Datetime: 2021-02-02 21:22:37.251228
 	
-	The undirected graph Actinobacillus minor NM305 has 2354 nodes and 163029 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-	and has 10 connected components, where the component with most nodes has 2334 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 138.51, and the node degree mode is 3. The top 5
-	most central nodes are 637911.AM305_10461 (degree 914), 637911.AM305_02806 (degree
-	784), 637911.AM305_09036 (degree 761), 637911.AM305_10781 (degree 759) and 637911.AM305_12015
-	(degree 717).
+	The undirected graph Actinobacillus minor NM305 has 2354 nodes and 163029
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05887 and has 10 connected components, where the component
+	with most nodes has 2334 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 138.51,
+	and the node degree mode is 3. The top 5 most central nodes are 637911.AM305_10461
+	(degree 914), 637911.AM305_02806 (degree 784), 637911.AM305_09036 (degree
+	761), 637911.AM305_10781 (degree 759) and 637911.AM305_12015 (degree 717).
 	
 
 

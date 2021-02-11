@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:12.134344
 
-The undirected graph Ruminococcus lactaris has 2717 nodes and 162883 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04415 and
-has 8 connected components, where the component with most nodes has 2696 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 119.90, and the node degree mode is 3. The top 5 most central
-nodes are 471875.RUMLAC_02473 (degree 933), 471875.RUMLAC_01936 (degree 895), 471875.RUMLAC_01470
-(degree 795), 471875.RUMLAC_01458 (degree 759) and 471875.RUMLAC_00420 (degree 735).
+The undirected graph Ruminococcus lactaris has 2717 nodes and 162883 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04415 and has 8 connected components, where the component with most
+nodes has 2696 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 119.90, and
+the node degree mode is 3. The top 5 most central nodes are 471875.RUMLAC_02473
+(degree 933), 471875.RUMLAC_01936 (degree 895), 471875.RUMLAC_01470 (degree
+795), 471875.RUMLAC_01458 (degree 759) and 471875.RUMLAC_00420 (degree
+735).
 
 
 References
@@ -106,13 +108,15 @@ def RuminococcusLactaris(
 	
 	Datetime: 2021-02-02 20:56:12.134344
 	
-	The undirected graph Ruminococcus lactaris has 2717 nodes and 162883 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04415 and
-	has 8 connected components, where the component with most nodes has 2696 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 119.90, and the node degree mode is 3. The top 5 most central
-	nodes are 471875.RUMLAC_02473 (degree 933), 471875.RUMLAC_01936 (degree 895), 471875.RUMLAC_01470
-	(degree 795), 471875.RUMLAC_01458 (degree 759) and 471875.RUMLAC_00420 (degree 735).
+	The undirected graph Ruminococcus lactaris has 2717 nodes and 162883 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04415 and has 8 connected components, where the component with most
+	nodes has 2696 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 119.90, and
+	the node degree mode is 3. The top 5 most central nodes are 471875.RUMLAC_02473
+	(degree 933), 471875.RUMLAC_01936 (degree 895), 471875.RUMLAC_01470 (degree
+	795), 471875.RUMLAC_01458 (degree 759) and 471875.RUMLAC_00420 (degree
+	735).
 	
 
 

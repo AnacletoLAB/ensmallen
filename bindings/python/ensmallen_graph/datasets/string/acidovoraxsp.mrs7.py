@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:43.704291
 
-The undirected graph Acidovorax sp. MRS7 has 4740 nodes and 617194 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05495 and
-has 9 connected components, where the component with most nodes has 4723 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 260.42, and the node degree mode is 3. The top 5 most central
-nodes are 1268622.AVS7_00807 (degree 2075), 1268622.AVS7_03835 (degree 1776), 1268622.AVS7_02872
-(degree 1528), 1268622.AVS7_01709 (degree 1398) and 1268622.AVS7_03498 (degree 1354).
+The undirected graph Acidovorax sp. MRS7 has 4740 nodes and 617194 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05495 and has 9 connected components, where the component with most
+nodes has 4723 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 260.42, and
+the node degree mode is 3. The top 5 most central nodes are 1268622.AVS7_00807
+(degree 2075), 1268622.AVS7_03835 (degree 1776), 1268622.AVS7_02872 (degree
+1528), 1268622.AVS7_01709 (degree 1398) and 1268622.AVS7_03498 (degree
+1354).
 
 
 References
@@ -106,13 +108,15 @@ def AcidovoraxSp.Mrs7(
 	
 	Datetime: 2021-02-02 23:37:43.704291
 	
-	The undirected graph Acidovorax sp. MRS7 has 4740 nodes and 617194 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05495 and
-	has 9 connected components, where the component with most nodes has 4723 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 260.42, and the node degree mode is 3. The top 5 most central
-	nodes are 1268622.AVS7_00807 (degree 2075), 1268622.AVS7_03835 (degree 1776), 1268622.AVS7_02872
-	(degree 1528), 1268622.AVS7_01709 (degree 1398) and 1268622.AVS7_03498 (degree 1354).
+	The undirected graph Acidovorax sp. MRS7 has 4740 nodes and 617194 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05495 and has 9 connected components, where the component with most
+	nodes has 4723 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 260.42, and
+	the node degree mode is 3. The top 5 most central nodes are 1268622.AVS7_00807
+	(degree 2075), 1268622.AVS7_03835 (degree 1776), 1268622.AVS7_02872 (degree
+	1528), 1268622.AVS7_01709 (degree 1398) and 1268622.AVS7_03498 (degree
+	1354).
 	
 
 

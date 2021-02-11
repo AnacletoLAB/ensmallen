@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:42.613480
 
-The undirected graph Lactobacillus iners has 1183 nodes and 82974 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11868
-and is connected, as it has a single component. The graph median node degree is 112,
-the mean node degree is 140.28, and the node degree mode is 11. The top 5 most central
-nodes are 713605.ADHG01000002_gene880 (degree 637), 713605.ADHG01000007_gene759 (degree
-517), 713605.ADHG01000002_gene1080 (degree 515), 713605.ADHG01000002_gene834 (degree
-492) and 713605.ADHG01000001_gene133 (degree 476).
+The undirected graph Lactobacillus iners has 1183 nodes and 82974 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11868 and is connected, as it has a single component. The
+graph median node degree is 112, the mean node degree is 140.28, and the
+node degree mode is 11. The top 5 most central nodes are 713605.ADHG01000002_gene880
+(degree 637), 713605.ADHG01000007_gene759 (degree 517), 713605.ADHG01000002_gene1080
+(degree 515), 713605.ADHG01000002_gene834 (degree 492) and 713605.ADHG01000001_gene133
+(degree 476).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusIners(
 	
 	Datetime: 2021-02-02 21:35:42.613480
 	
-	The undirected graph Lactobacillus iners has 1183 nodes and 82974 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11868
-	and is connected, as it has a single component. The graph median node degree is 112,
-	the mean node degree is 140.28, and the node degree mode is 11. The top 5 most central
-	nodes are 713605.ADHG01000002_gene880 (degree 637), 713605.ADHG01000007_gene759 (degree
-	517), 713605.ADHG01000002_gene1080 (degree 515), 713605.ADHG01000002_gene834 (degree
-	492) and 713605.ADHG01000001_gene133 (degree 476).
+	The undirected graph Lactobacillus iners has 1183 nodes and 82974 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11868 and is connected, as it has a single component. The
+	graph median node degree is 112, the mean node degree is 140.28, and the
+	node degree mode is 11. The top 5 most central nodes are 713605.ADHG01000002_gene880
+	(degree 637), 713605.ADHG01000007_gene759 (degree 517), 713605.ADHG01000002_gene1080
+	(degree 515), 713605.ADHG01000002_gene834 (degree 492) and 713605.ADHG01000001_gene133
+	(degree 476).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:28.105559
 
-The undirected graph Streptomyces wedmorensis has 8005 nodes and 1170244 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03653
-and has 36 connected components, where the component with most nodes has 7921 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 292.38, and the node degree mode is 1. The top 5
-most central nodes are 43759.JNWK01000080_gene6200 (degree 2603), 43759.JNWK01000100_gene2769
-(degree 2598), 43759.JNWK01000022_gene3861 (degree 2384), 43759.JNWK01000008_gene5121
-(degree 2104) and 43759.JNWK01000006_gene430 (degree 2022).
+The undirected graph Streptomyces wedmorensis has 8005 nodes and 1170244
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03653 and has 36 connected components, where the component
+with most nodes has 7921 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 292.38,
+and the node degree mode is 1. The top 5 most central nodes are 43759.JNWK01000080_gene6200
+(degree 2603), 43759.JNWK01000100_gene2769 (degree 2598), 43759.JNWK01000022_gene3861
+(degree 2384), 43759.JNWK01000008_gene5121 (degree 2104) and 43759.JNWK01000006_gene430
+(degree 2022).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesWedmorensis(
 	
 	Datetime: 2021-02-02 18:14:28.105559
 	
-	The undirected graph Streptomyces wedmorensis has 8005 nodes and 1170244 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03653
-	and has 36 connected components, where the component with most nodes has 7921 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 292.38, and the node degree mode is 1. The top 5
-	most central nodes are 43759.JNWK01000080_gene6200 (degree 2603), 43759.JNWK01000100_gene2769
-	(degree 2598), 43759.JNWK01000022_gene3861 (degree 2384), 43759.JNWK01000008_gene5121
-	(degree 2104) and 43759.JNWK01000006_gene430 (degree 2022).
+	The undirected graph Streptomyces wedmorensis has 8005 nodes and 1170244
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03653 and has 36 connected components, where the component
+	with most nodes has 7921 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 292.38,
+	and the node degree mode is 1. The top 5 most central nodes are 43759.JNWK01000080_gene6200
+	(degree 2603), 43759.JNWK01000100_gene2769 (degree 2598), 43759.JNWK01000022_gene3861
+	(degree 2384), 43759.JNWK01000008_gene5121 (degree 2104) and 43759.JNWK01000006_gene430
+	(degree 2022).
 	
 
 

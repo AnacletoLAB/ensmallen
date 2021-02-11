@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:53:57.246607
 
-The undirected graph 3elt has 4720 nodes and 13722 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00123 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 5.81, and the node degree mode is 6. The top 5 most central nodes are 2845 (degree
-9), 377 (degree 9), 3404 (degree 8), 2523 (degree 8) and 2554 (degree 8).
+The undirected graph 3elt has 4720 nodes and 13722 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00123
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 5.81, and the node degree mode is 6. The
+top 5 most central nodes are 2845 (degree 9), 377 (degree 9), 3404 (degree
+8), 2523 (degree 8) and 2554 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Graph3elt(
 	
 	Datetime: 2021-02-06 09:53:57.246607
 	
-	The undirected graph 3elt has 4720 nodes and 13722 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00123 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.81, and the node degree mode is 6. The top 5 most central nodes are 2845 (degree
-	9), 377 (degree 9), 3404 (degree 8), 2523 (degree 8) and 2554 (degree 8).
+	The undirected graph 3elt has 4720 nodes and 13722 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00123
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 5.81, and the node degree mode is 6. The
+	top 5 most central nodes are 2845 (degree 9), 377 (degree 9), 3404 (degree
+	8), 2523 (degree 8) and 2554 (degree 8).
 	
 
 

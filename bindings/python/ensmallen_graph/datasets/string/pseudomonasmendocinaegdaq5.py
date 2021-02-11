@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:22:53.401756
 
-The undirected graph Pseudomonas mendocina EGDAQ5 has 4735 nodes and 704605 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06287
-and has 16 connected components, where the component with most nodes has 4692 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 250, the mean node degree is 297.62, and the node degree mode is 2. The top 5
-most central nodes are 1390370.O203_01610 (degree 2065), 1390370.O203_24025 (degree
-1755), 1390370.O203_03670 (degree 1747), 1390370.O203_24020 (degree 1647) and 1390370.O203_04555
-(degree 1562).
+The undirected graph Pseudomonas mendocina EGDAQ5 has 4735 nodes and 704605
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06287 and has 16 connected components, where the component
+with most nodes has 4692 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 250, the mean node degree is 297.62,
+and the node degree mode is 2. The top 5 most central nodes are 1390370.O203_01610
+(degree 2065), 1390370.O203_24025 (degree 1755), 1390370.O203_03670 (degree
+1747), 1390370.O203_24020 (degree 1647) and 1390370.O203_04555 (degree
+1562).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasMendocinaEgdaq5(
 	
 	Datetime: 2021-02-03 22:22:53.401756
 	
-	The undirected graph Pseudomonas mendocina EGDAQ5 has 4735 nodes and 704605 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06287
-	and has 16 connected components, where the component with most nodes has 4692 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 250, the mean node degree is 297.62, and the node degree mode is 2. The top 5
-	most central nodes are 1390370.O203_01610 (degree 2065), 1390370.O203_24025 (degree
-	1755), 1390370.O203_03670 (degree 1747), 1390370.O203_24020 (degree 1647) and 1390370.O203_04555
-	(degree 1562).
+	The undirected graph Pseudomonas mendocina EGDAQ5 has 4735 nodes and 704605
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06287 and has 16 connected components, where the component
+	with most nodes has 4692 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 250, the mean node degree is 297.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1390370.O203_01610
+	(degree 2065), 1390370.O203_24025 (degree 1755), 1390370.O203_03670 (degree
+	1747), 1390370.O203_24020 (degree 1647) and 1390370.O203_04555 (degree
+	1562).
 	
 
 

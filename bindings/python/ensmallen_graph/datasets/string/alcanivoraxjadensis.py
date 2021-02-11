@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:21.891037
 
-The undirected graph Alcanivorax jadensis has 3248 nodes and 268862 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-has 11 connected components, where the component with most nodes has 3222 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 165.56, and the node degree mode is 3. The top 5 most central
-nodes are 1177181.T9A_01169 (degree 1090), 1177181.T9A_00284 (degree 1029), 1177181.T9A_02527
-(degree 928), 1177181.T9A_01824 (degree 909) and 1177181.T9A_02733 (degree 902).
+The undirected graph Alcanivorax jadensis has 3248 nodes and 268862 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05099 and has 11 connected components, where the component with most
+nodes has 3222 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 165.56, and
+the node degree mode is 3. The top 5 most central nodes are 1177181.T9A_01169
+(degree 1090), 1177181.T9A_00284 (degree 1029), 1177181.T9A_02527 (degree
+928), 1177181.T9A_01824 (degree 909) and 1177181.T9A_02733 (degree 902).
 
 
 References
@@ -106,13 +107,14 @@ def AlcanivoraxJadensis(
 	
 	Datetime: 2021-02-02 23:09:21.891037
 	
-	The undirected graph Alcanivorax jadensis has 3248 nodes and 268862 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-	has 11 connected components, where the component with most nodes has 3222 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 165.56, and the node degree mode is 3. The top 5 most central
-	nodes are 1177181.T9A_01169 (degree 1090), 1177181.T9A_00284 (degree 1029), 1177181.T9A_02527
-	(degree 928), 1177181.T9A_01824 (degree 909) and 1177181.T9A_02733 (degree 902).
+	The undirected graph Alcanivorax jadensis has 3248 nodes and 268862 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05099 and has 11 connected components, where the component with most
+	nodes has 3222 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 165.56, and
+	the node degree mode is 3. The top 5 most central nodes are 1177181.T9A_01169
+	(degree 1090), 1177181.T9A_00284 (degree 1029), 1177181.T9A_02527 (degree
+	928), 1177181.T9A_01824 (degree 909) and 1177181.T9A_02733 (degree 902).
 	
 
 

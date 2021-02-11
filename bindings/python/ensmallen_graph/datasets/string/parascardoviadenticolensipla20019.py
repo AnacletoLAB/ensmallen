@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:14.556800
 
-The undirected graph Parascardovia denticolens IPLA20019 has 1593 nodes and 123287
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.09723 and has 16 connected components, where the component with most nodes has
-1554 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 145, the mean node degree is 154.79, and the node degree mode is 1. The
-top 5 most central nodes are 1193128.A200_01811 (degree 723), 1193128.A200_05322
-(degree 706), 1193128.A200_07203 (degree 668), 1193128.A200_02750 (degree 668) and
-1193128.A200_06032 (degree 644).
+The undirected graph Parascardovia denticolens IPLA20019 has 1593 nodes
+and 123287 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09723 and has 16 connected components, where the
+component with most nodes has 1554 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 154.79, and the node degree mode is 1. The top 5 most central nodes
+are 1193128.A200_01811 (degree 723), 1193128.A200_05322 (degree 706), 1193128.A200_07203
+(degree 668), 1193128.A200_02750 (degree 668) and 1193128.A200_06032 (degree
+644).
 
 
 References
@@ -107,14 +108,15 @@ def ParascardoviaDenticolensIpla20019(
 	
 	Datetime: 2021-02-02 23:12:14.556800
 	
-	The undirected graph Parascardovia denticolens IPLA20019 has 1593 nodes and 123287
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.09723 and has 16 connected components, where the component with most nodes has
-	1554 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 145, the mean node degree is 154.79, and the node degree mode is 1. The
-	top 5 most central nodes are 1193128.A200_01811 (degree 723), 1193128.A200_05322
-	(degree 706), 1193128.A200_07203 (degree 668), 1193128.A200_02750 (degree 668) and
-	1193128.A200_06032 (degree 644).
+	The undirected graph Parascardovia denticolens IPLA20019 has 1593 nodes
+	and 123287 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09723 and has 16 connected components, where the
+	component with most nodes has 1554 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 154.79, and the node degree mode is 1. The top 5 most central nodes
+	are 1193128.A200_01811 (degree 723), 1193128.A200_05322 (degree 706), 1193128.A200_07203
+	(degree 668), 1193128.A200_02750 (degree 668) and 1193128.A200_06032 (degree
+	644).
 	
 
 

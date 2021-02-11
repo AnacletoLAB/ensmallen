@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:37.331197
 
-The undirected graph Staphylococcus simulans has 2631 nodes and 184014 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05319 and
-has 12 connected components, where the component with most nodes has 2598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 139.88, and the node degree mode is 3. The top 5 most central
-nodes are 1405498.SSIM_10740 (degree 1022), 1405498.SSIM_11400 (degree 1006), 1405498.SSIM_01290
-(degree 851), 1405498.SSIM_13030 (degree 784) and 1405498.SSIM_01285 (degree 780).
+The undirected graph Staphylococcus simulans has 2631 nodes and 184014
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05319 and has 12 connected components, where the component
+with most nodes has 2598 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 139.88,
+and the node degree mode is 3. The top 5 most central nodes are 1405498.SSIM_10740
+(degree 1022), 1405498.SSIM_11400 (degree 1006), 1405498.SSIM_01290 (degree
+851), 1405498.SSIM_13030 (degree 784) and 1405498.SSIM_01285 (degree 780).
 
 
 References
@@ -106,13 +107,14 @@ def StaphylococcusSimulans(
 	
 	Datetime: 2021-02-03 22:33:37.331197
 	
-	The undirected graph Staphylococcus simulans has 2631 nodes and 184014 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05319 and
-	has 12 connected components, where the component with most nodes has 2598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 139.88, and the node degree mode is 3. The top 5 most central
-	nodes are 1405498.SSIM_10740 (degree 1022), 1405498.SSIM_11400 (degree 1006), 1405498.SSIM_01290
-	(degree 851), 1405498.SSIM_13030 (degree 784) and 1405498.SSIM_01285 (degree 780).
+	The undirected graph Staphylococcus simulans has 2631 nodes and 184014
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05319 and has 12 connected components, where the component
+	with most nodes has 2598 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 139.88,
+	and the node degree mode is 3. The top 5 most central nodes are 1405498.SSIM_10740
+	(degree 1022), 1405498.SSIM_11400 (degree 1006), 1405498.SSIM_01290 (degree
+	851), 1405498.SSIM_13030 (degree 784) and 1405498.SSIM_01285 (degree 780).
 	
 
 

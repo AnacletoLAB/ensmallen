@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:21.882905
 
-The undirected graph Thermobacillus composti has 3834 nodes and 410610 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05588 and
-has 6 connected components, where the component with most nodes has 3819 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 214.19, and the node degree mode is 3. The top 5 most central
-nodes are 717605.Theco_1331 (degree 1344), 717605.Theco_3820 (degree 1155), 717605.Theco_3145
-(degree 948), 717605.Theco_3655 (degree 945) and 717605.Theco_2403 (degree 923).
+The undirected graph Thermobacillus composti has 3834 nodes and 410610
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05588 and has 6 connected components, where the component
+with most nodes has 3819 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 214.19,
+and the node degree mode is 3. The top 5 most central nodes are 717605.Theco_1331
+(degree 1344), 717605.Theco_3820 (degree 1155), 717605.Theco_3145 (degree
+948), 717605.Theco_3655 (degree 945) and 717605.Theco_2403 (degree 923).
 
 
 References
@@ -106,13 +107,14 @@ def ThermobacillusComposti(
 	
 	Datetime: 2021-02-02 21:36:21.882905
 	
-	The undirected graph Thermobacillus composti has 3834 nodes and 410610 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05588 and
-	has 6 connected components, where the component with most nodes has 3819 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 214.19, and the node degree mode is 3. The top 5 most central
-	nodes are 717605.Theco_1331 (degree 1344), 717605.Theco_3820 (degree 1155), 717605.Theco_3145
-	(degree 948), 717605.Theco_3655 (degree 945) and 717605.Theco_2403 (degree 923).
+	The undirected graph Thermobacillus composti has 3834 nodes and 410610
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05588 and has 6 connected components, where the component
+	with most nodes has 3819 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 214.19,
+	and the node degree mode is 3. The top 5 most central nodes are 717605.Theco_1331
+	(degree 1344), 717605.Theco_3820 (degree 1155), 717605.Theco_3145 (degree
+	948), 717605.Theco_3655 (degree 945) and 717605.Theco_2403 (degree 923).
 	
 
 

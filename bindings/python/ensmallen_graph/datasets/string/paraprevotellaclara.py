@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:43.396277
 
-The undirected graph Paraprevotella clara has 3941 nodes and 275971 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03555 and
-has 40 connected components, where the component with most nodes has 3844 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 140.05, and the node degree mode is 6. The top 5 most central
-nodes are 762968.HMPREF9441_01343 (degree 1107), 762968.HMPREF9441_03294 (degree
-984), 762968.HMPREF9441_03011 (degree 925), 762968.HMPREF9441_01132 (degree 855)
-and 762968.HMPREF9441_01867 (degree 836).
+The undirected graph Paraprevotella clara has 3941 nodes and 275971 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03555 and has 40 connected components, where the component with most
+nodes has 3844 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 140.05, and
+the node degree mode is 6. The top 5 most central nodes are 762968.HMPREF9441_01343
+(degree 1107), 762968.HMPREF9441_03294 (degree 984), 762968.HMPREF9441_03011
+(degree 925), 762968.HMPREF9441_01132 (degree 855) and 762968.HMPREF9441_01867
+(degree 836).
 
 
 References
@@ -107,14 +108,15 @@ def ParaprevotellaClara(
 	
 	Datetime: 2021-02-02 21:42:43.396277
 	
-	The undirected graph Paraprevotella clara has 3941 nodes and 275971 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03555 and
-	has 40 connected components, where the component with most nodes has 3844 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 140.05, and the node degree mode is 6. The top 5 most central
-	nodes are 762968.HMPREF9441_01343 (degree 1107), 762968.HMPREF9441_03294 (degree
-	984), 762968.HMPREF9441_03011 (degree 925), 762968.HMPREF9441_01132 (degree 855)
-	and 762968.HMPREF9441_01867 (degree 836).
+	The undirected graph Paraprevotella clara has 3941 nodes and 275971 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03555 and has 40 connected components, where the component with most
+	nodes has 3844 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 140.05, and
+	the node degree mode is 6. The top 5 most central nodes are 762968.HMPREF9441_01343
+	(degree 1107), 762968.HMPREF9441_03294 (degree 984), 762968.HMPREF9441_03011
+	(degree 925), 762968.HMPREF9441_01132 (degree 855) and 762968.HMPREF9441_01867
+	(degree 836).
 	
 
 

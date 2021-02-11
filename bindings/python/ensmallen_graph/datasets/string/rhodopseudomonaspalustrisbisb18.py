@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:03.269693
 
-The undirected graph Rhodopseudomonas palustris BisB18 has 4844 nodes and 558992
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04766 and has 21 connected components, where the component with most nodes has
-4798 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 180, the mean node degree is 230.80, and the node degree mode is 1. The
-top 5 most central nodes are 316056.RPC_4857 (degree 2111), 316056.RPC_0704 (degree
-1938), 316056.RPC_3670 (degree 1842), 316056.RPC_4823 (degree 1698) and 316056.RPC_3938
-(degree 1637).
+The undirected graph Rhodopseudomonas palustris BisB18 has 4844 nodes and
+558992 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04766 and has 21 connected components, where the
+component with most nodes has 4798 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 180, the mean node degree
+is 230.80, and the node degree mode is 1. The top 5 most central nodes
+are 316056.RPC_4857 (degree 2111), 316056.RPC_0704 (degree 1938), 316056.RPC_3670
+(degree 1842), 316056.RPC_4823 (degree 1698) and 316056.RPC_3938 (degree
+1637).
 
 
 References
@@ -107,14 +108,15 @@ def RhodopseudomonasPalustrisBisb18(
 	
 	Datetime: 2021-02-02 20:26:03.269693
 	
-	The undirected graph Rhodopseudomonas palustris BisB18 has 4844 nodes and 558992
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04766 and has 21 connected components, where the component with most nodes has
-	4798 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 180, the mean node degree is 230.80, and the node degree mode is 1. The
-	top 5 most central nodes are 316056.RPC_4857 (degree 2111), 316056.RPC_0704 (degree
-	1938), 316056.RPC_3670 (degree 1842), 316056.RPC_4823 (degree 1698) and 316056.RPC_3938
-	(degree 1637).
+	The undirected graph Rhodopseudomonas palustris BisB18 has 4844 nodes and
+	558992 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04766 and has 21 connected components, where the
+	component with most nodes has 4798 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 180, the mean node degree
+	is 230.80, and the node degree mode is 1. The top 5 most central nodes
+	are 316056.RPC_4857 (degree 2111), 316056.RPC_0704 (degree 1938), 316056.RPC_3670
+	(degree 1842), 316056.RPC_4823 (degree 1698) and 316056.RPC_3938 (degree
+	1637).
 	
 
 

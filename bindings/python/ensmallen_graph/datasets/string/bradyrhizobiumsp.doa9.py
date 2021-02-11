@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:32.319276
 
-The undirected graph Bradyrhizobium sp. DOA9 has 6716 nodes and 898760 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03986 and
-has 40 connected components, where the component with most nodes has 6619 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 267.65, and the node degree mode is 2. The top 5 most central
-nodes are 1126627.BAWE01000004_gene2735 (degree 2925), 1126627.BAWE01000004_gene2523
-(degree 2444), 1126627.BAWE01000002_gene611 (degree 2239), 1126627.BAWE01000002_gene355
-(degree 2080) and 1126627.BAWE01000004_gene3865 (degree 1960).
+The undirected graph Bradyrhizobium sp. DOA9 has 6716 nodes and 898760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03986 and has 40 connected components, where the component
+with most nodes has 6619 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 267.65,
+and the node degree mode is 2. The top 5 most central nodes are 1126627.BAWE01000004_gene2735
+(degree 2925), 1126627.BAWE01000004_gene2523 (degree 2444), 1126627.BAWE01000002_gene611
+(degree 2239), 1126627.BAWE01000002_gene355 (degree 2080) and 1126627.BAWE01000004_gene3865
+(degree 1960).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Doa9(
 	
 	Datetime: 2021-02-02 22:54:32.319276
 	
-	The undirected graph Bradyrhizobium sp. DOA9 has 6716 nodes and 898760 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03986 and
-	has 40 connected components, where the component with most nodes has 6619 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 267.65, and the node degree mode is 2. The top 5 most central
-	nodes are 1126627.BAWE01000004_gene2735 (degree 2925), 1126627.BAWE01000004_gene2523
-	(degree 2444), 1126627.BAWE01000002_gene611 (degree 2239), 1126627.BAWE01000002_gene355
-	(degree 2080) and 1126627.BAWE01000004_gene3865 (degree 1960).
+	The undirected graph Bradyrhizobium sp. DOA9 has 6716 nodes and 898760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03986 and has 40 connected components, where the component
+	with most nodes has 6619 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 267.65,
+	and the node degree mode is 2. The top 5 most central nodes are 1126627.BAWE01000004_gene2735
+	(degree 2925), 1126627.BAWE01000004_gene2523 (degree 2444), 1126627.BAWE01000002_gene611
+	(degree 2239), 1126627.BAWE01000002_gene355 (degree 2080) and 1126627.BAWE01000004_gene3865
+	(degree 1960).
 	
 
 

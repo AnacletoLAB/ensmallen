@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:24.020276
 
-The undirected graph Pseudoflavonifractor capillosus has 4704 nodes and 380866 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03443
-and has 41 connected components, where the component with most nodes has 4593 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 161.93, and the node degree mode is 3. The top 5
-most central nodes are 411467.BACCAP_02250 (degree 1454), 411467.BACCAP_04867 (degree
-1254), 411467.BACCAP_00156 (degree 1160), 411467.BACCAP_00567 (degree 1142) and 411467.BACCAP_00125
-(degree 1133).
+The undirected graph Pseudoflavonifractor capillosus has 4704 nodes and
+380866 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03443 and has 41 connected components, where the
+component with most nodes has 4593 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 161.93, and the node degree mode is 3. The top 5 most central nodes
+are 411467.BACCAP_02250 (degree 1454), 411467.BACCAP_04867 (degree 1254),
+411467.BACCAP_00156 (degree 1160), 411467.BACCAP_00567 (degree 1142) and
+411467.BACCAP_00125 (degree 1133).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoflavonifractorCapillosus(
 	
 	Datetime: 2021-02-02 20:45:24.020276
 	
-	The undirected graph Pseudoflavonifractor capillosus has 4704 nodes and 380866 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03443
-	and has 41 connected components, where the component with most nodes has 4593 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 161.93, and the node degree mode is 3. The top 5
-	most central nodes are 411467.BACCAP_02250 (degree 1454), 411467.BACCAP_04867 (degree
-	1254), 411467.BACCAP_00156 (degree 1160), 411467.BACCAP_00567 (degree 1142) and 411467.BACCAP_00125
-	(degree 1133).
+	The undirected graph Pseudoflavonifractor capillosus has 4704 nodes and
+	380866 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03443 and has 41 connected components, where the
+	component with most nodes has 4593 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 161.93, and the node degree mode is 3. The top 5 most central nodes
+	are 411467.BACCAP_02250 (degree 1454), 411467.BACCAP_04867 (degree 1254),
+	411467.BACCAP_00156 (degree 1160), 411467.BACCAP_00567 (degree 1142) and
+	411467.BACCAP_00125 (degree 1133).
 	
 
 

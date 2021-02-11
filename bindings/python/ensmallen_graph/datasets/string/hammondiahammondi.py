@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:05.883711
 
-The undirected graph Hammondia hammondi has 4357 nodes and 622954 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06565 and
-has 42 connected components, where the component with most nodes has 4266 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 285.96, and the node degree mode is 1. The top 5 most central
-nodes are 99158.XP_008886823.1 (degree 1812), 99158.XP_008883989.1 (degree 1728),
-99158.XP_008886347.1 (degree 1660), 99158.XP_008885058.1 (degree 1506) and 99158.XP_008882675.1
+The undirected graph Hammondia hammondi has 4357 nodes and 622954 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06565 and has 42 connected components, where the component with most
+nodes has 4266 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 285.96, and
+the node degree mode is 1. The top 5 most central nodes are 99158.XP_008886823.1
+(degree 1812), 99158.XP_008883989.1 (degree 1728), 99158.XP_008886347.1
+(degree 1660), 99158.XP_008885058.1 (degree 1506) and 99158.XP_008882675.1
 (degree 1506).
 
 
@@ -107,13 +108,14 @@ def HammondiaHammondi(
 	
 	Datetime: 2021-02-02 19:42:05.883711
 	
-	The undirected graph Hammondia hammondi has 4357 nodes and 622954 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06565 and
-	has 42 connected components, where the component with most nodes has 4266 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 285.96, and the node degree mode is 1. The top 5 most central
-	nodes are 99158.XP_008886823.1 (degree 1812), 99158.XP_008883989.1 (degree 1728),
-	99158.XP_008886347.1 (degree 1660), 99158.XP_008885058.1 (degree 1506) and 99158.XP_008882675.1
+	The undirected graph Hammondia hammondi has 4357 nodes and 622954 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06565 and has 42 connected components, where the component with most
+	nodes has 4266 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 285.96, and
+	the node degree mode is 1. The top 5 most central nodes are 99158.XP_008886823.1
+	(degree 1812), 99158.XP_008883989.1 (degree 1728), 99158.XP_008886347.1
+	(degree 1660), 99158.XP_008885058.1 (degree 1506) and 99158.XP_008882675.1
 	(degree 1506).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:44.711234
 
-The undirected graph Endozoicomonas montiporae has 3984 nodes and 287561 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03624
-and has 64 connected components, where the component with most nodes has 3832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 144.36, and the node degree mode is 2. The top 5
-most central nodes are 1027273.GZ77_25365 (degree 1359), 1027273.GZ77_22515 (degree
-1196), 1027273.GZ77_10265 (degree 1010), 1027273.GZ77_04245 (degree 983) and 1027273.GZ77_08720
-(degree 945).
+The undirected graph Endozoicomonas montiporae has 3984 nodes and 287561
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03624 and has 64 connected components, where the component
+with most nodes has 3832 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 144.36,
+and the node degree mode is 2. The top 5 most central nodes are 1027273.GZ77_25365
+(degree 1359), 1027273.GZ77_22515 (degree 1196), 1027273.GZ77_10265 (degree
+1010), 1027273.GZ77_04245 (degree 983) and 1027273.GZ77_08720 (degree 945).
 
 
 References
@@ -107,14 +107,14 @@ def EndozoicomonasMontiporae(
 	
 	Datetime: 2021-02-02 22:09:44.711234
 	
-	The undirected graph Endozoicomonas montiporae has 3984 nodes and 287561 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03624
-	and has 64 connected components, where the component with most nodes has 3832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 144.36, and the node degree mode is 2. The top 5
-	most central nodes are 1027273.GZ77_25365 (degree 1359), 1027273.GZ77_22515 (degree
-	1196), 1027273.GZ77_10265 (degree 1010), 1027273.GZ77_04245 (degree 983) and 1027273.GZ77_08720
-	(degree 945).
+	The undirected graph Endozoicomonas montiporae has 3984 nodes and 287561
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03624 and has 64 connected components, where the component
+	with most nodes has 3832 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 144.36,
+	and the node degree mode is 2. The top 5 most central nodes are 1027273.GZ77_25365
+	(degree 1359), 1027273.GZ77_22515 (degree 1196), 1027273.GZ77_10265 (degree
+	1010), 1027273.GZ77_04245 (degree 983) and 1027273.GZ77_08720 (degree 945).
 	
 
 

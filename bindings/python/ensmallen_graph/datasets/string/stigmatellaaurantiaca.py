@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:36.690031
 
-The undirected graph Stigmatella aurantiaca has 8303 nodes and 1305778 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03789 and
-has 49 connected components, where the component with most nodes has 8182 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 253,
-the mean node degree is 314.53, and the node degree mode is 2. The top 5 most central
-nodes are 378806.STAUR_7575 (degree 3684), 378806.STAUR_4801 (degree 2629), 378806.STAUR_2302
-(degree 2627), 378806.STAUR_1169 (degree 2399) and 378806.STAUR_4965 (degree 2386).
+The undirected graph Stigmatella aurantiaca has 8303 nodes and 1305778
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03789 and has 49 connected components, where the component
+with most nodes has 8182 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 314.53,
+and the node degree mode is 2. The top 5 most central nodes are 378806.STAUR_7575
+(degree 3684), 378806.STAUR_4801 (degree 2629), 378806.STAUR_2302 (degree
+2627), 378806.STAUR_1169 (degree 2399) and 378806.STAUR_4965 (degree 2386).
 
 
 References
@@ -106,13 +107,14 @@ def StigmatellaAurantiaca(
 	
 	Datetime: 2021-02-02 20:36:36.690031
 	
-	The undirected graph Stigmatella aurantiaca has 8303 nodes and 1305778 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03789 and
-	has 49 connected components, where the component with most nodes has 8182 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 253,
-	the mean node degree is 314.53, and the node degree mode is 2. The top 5 most central
-	nodes are 378806.STAUR_7575 (degree 3684), 378806.STAUR_4801 (degree 2629), 378806.STAUR_2302
-	(degree 2627), 378806.STAUR_1169 (degree 2399) and 378806.STAUR_4965 (degree 2386).
+	The undirected graph Stigmatella aurantiaca has 8303 nodes and 1305778
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03789 and has 49 connected components, where the component
+	with most nodes has 8182 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 314.53,
+	and the node degree mode is 2. The top 5 most central nodes are 378806.STAUR_7575
+	(degree 3684), 378806.STAUR_4801 (degree 2629), 378806.STAUR_2302 (degree
+	2627), 378806.STAUR_1169 (degree 2399) and 378806.STAUR_4965 (degree 2386).
 	
 
 

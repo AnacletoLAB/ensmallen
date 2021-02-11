@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:37.157927
 
-The undirected graph Proteus vulgaris has 3562 nodes and 359093 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05662 and
-has 6 connected components, where the component with most nodes has 3549 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 201.62, and the node degree mode is 2. The top 5 most central
-nodes are 585.DR95_2722 (degree 1172), 585.DR95_1958 (degree 1087), 585.DR95_499
-(degree 997), 585.DR95_498 (degree 933) and 585.DR95_226 (degree 904).
+The undirected graph Proteus vulgaris has 3562 nodes and 359093 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05662 and has 6 connected components, where the component with most
+nodes has 3549 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 201.62, and
+the node degree mode is 2. The top 5 most central nodes are 585.DR95_2722
+(degree 1172), 585.DR95_1958 (degree 1087), 585.DR95_499 (degree 997),
+585.DR95_498 (degree 933) and 585.DR95_226 (degree 904).
 
 
 References
@@ -106,13 +107,14 @@ def ProteusVulgaris(
 	
 	Datetime: 2021-02-02 16:21:37.157927
 	
-	The undirected graph Proteus vulgaris has 3562 nodes and 359093 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05662 and
-	has 6 connected components, where the component with most nodes has 3549 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 201.62, and the node degree mode is 2. The top 5 most central
-	nodes are 585.DR95_2722 (degree 1172), 585.DR95_1958 (degree 1087), 585.DR95_499
-	(degree 997), 585.DR95_498 (degree 933) and 585.DR95_226 (degree 904).
+	The undirected graph Proteus vulgaris has 3562 nodes and 359093 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05662 and has 6 connected components, where the component with most
+	nodes has 3549 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 201.62, and
+	the node degree mode is 2. The top 5 most central nodes are 585.DR95_2722
+	(degree 1172), 585.DR95_1958 (degree 1087), 585.DR95_499 (degree 997),
+	585.DR95_498 (degree 933) and 585.DR95_226 (degree 904).
 	
 
 

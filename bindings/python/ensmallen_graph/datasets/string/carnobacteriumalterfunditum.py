@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:27.318546
 
-The undirected graph Carnobacterium alterfunditum has 2412 nodes and 227469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07823
-and has 10 connected components, where the component with most nodes has 2393 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 188.61, and the node degree mode is 2. The top 5
-most central nodes are 1449335.JQLG01000004_gene1802 (degree 1075), 1449335.JQLG01000004_gene2059
-(degree 925), 1449335.JQLG01000004_gene1155 (degree 900), 1449335.JQLG01000004_gene2184
-(degree 852) and 1449335.JQLG01000004_gene1267 (degree 785).
+The undirected graph Carnobacterium alterfunditum has 2412 nodes and 227469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07823 and has 10 connected components, where the component
+with most nodes has 2393 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 188.61,
+and the node degree mode is 2. The top 5 most central nodes are 1449335.JQLG01000004_gene1802
+(degree 1075), 1449335.JQLG01000004_gene2059 (degree 925), 1449335.JQLG01000004_gene1155
+(degree 900), 1449335.JQLG01000004_gene2184 (degree 852) and 1449335.JQLG01000004_gene1267
+(degree 785).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumAlterfunditum(
 	
 	Datetime: 2021-02-03 23:04:27.318546
 	
-	The undirected graph Carnobacterium alterfunditum has 2412 nodes and 227469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07823
-	and has 10 connected components, where the component with most nodes has 2393 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 188.61, and the node degree mode is 2. The top 5
-	most central nodes are 1449335.JQLG01000004_gene1802 (degree 1075), 1449335.JQLG01000004_gene2059
-	(degree 925), 1449335.JQLG01000004_gene1155 (degree 900), 1449335.JQLG01000004_gene2184
-	(degree 852) and 1449335.JQLG01000004_gene1267 (degree 785).
+	The undirected graph Carnobacterium alterfunditum has 2412 nodes and 227469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07823 and has 10 connected components, where the component
+	with most nodes has 2393 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 188.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1449335.JQLG01000004_gene1802
+	(degree 1075), 1449335.JQLG01000004_gene2059 (degree 925), 1449335.JQLG01000004_gene1155
+	(degree 900), 1449335.JQLG01000004_gene2184 (degree 852) and 1449335.JQLG01000004_gene1267
+	(degree 785).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:40:09.591150
 
-The undirected graph Algoriphagus marincola HL49 has 3648 nodes and 286776 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04311
-and has 14 connected components, where the component with most nodes has 3617 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 157.22, and the node degree mode is 1. The top 5
-most central nodes are 1305737.JAFX01000001_gene2743 (degree 1129), 1305737.JAFX01000001_gene1797
-(degree 965), 1305737.JAFX01000001_gene2953 (degree 964), 1305737.JAFX01000001_gene871
-(degree 933) and 1305737.JAFX01000001_gene2157 (degree 902).
+The undirected graph Algoriphagus marincola HL49 has 3648 nodes and 286776
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04311 and has 14 connected components, where the component
+with most nodes has 3617 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 157.22,
+and the node degree mode is 1. The top 5 most central nodes are 1305737.JAFX01000001_gene2743
+(degree 1129), 1305737.JAFX01000001_gene1797 (degree 965), 1305737.JAFX01000001_gene2953
+(degree 964), 1305737.JAFX01000001_gene871 (degree 933) and 1305737.JAFX01000001_gene2157
+(degree 902).
 
 
 References
@@ -107,14 +108,15 @@ def AlgoriphagusMarincolaHl49(
 	
 	Datetime: 2021-02-03 21:40:09.591150
 	
-	The undirected graph Algoriphagus marincola HL49 has 3648 nodes and 286776 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04311
-	and has 14 connected components, where the component with most nodes has 3617 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 157.22, and the node degree mode is 1. The top 5
-	most central nodes are 1305737.JAFX01000001_gene2743 (degree 1129), 1305737.JAFX01000001_gene1797
-	(degree 965), 1305737.JAFX01000001_gene2953 (degree 964), 1305737.JAFX01000001_gene871
-	(degree 933) and 1305737.JAFX01000001_gene2157 (degree 902).
+	The undirected graph Algoriphagus marincola HL49 has 3648 nodes and 286776
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04311 and has 14 connected components, where the component
+	with most nodes has 3617 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 157.22,
+	and the node degree mode is 1. The top 5 most central nodes are 1305737.JAFX01000001_gene2743
+	(degree 1129), 1305737.JAFX01000001_gene1797 (degree 965), 1305737.JAFX01000001_gene2953
+	(degree 964), 1305737.JAFX01000001_gene871 (degree 933) and 1305737.JAFX01000001_gene2157
+	(degree 902).
 	
 
 

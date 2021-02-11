@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:24.857792
 
-The undirected graph Hippea alviniae has 1762 nodes and 113518 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07317 and
-has 6 connected components, where the component with most nodes has 1751 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 128.85, and the node degree mode is 37. The top 5 most central
-nodes are 944480.ATUV01000001_gene663 (degree 803), 944480.ATUV01000002_gene177 (degree
-721), 944480.ATUV01000002_gene206 (degree 627), 944480.ATUV01000001_gene1386 (degree
-574) and 944480.ATUV01000001_gene1493 (degree 553).
+The undirected graph Hippea alviniae has 1762 nodes and 113518 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07317 and has 6 connected components, where the component with most
+nodes has 1751 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 128.85, and
+the node degree mode is 37. The top 5 most central nodes are 944480.ATUV01000001_gene663
+(degree 803), 944480.ATUV01000002_gene177 (degree 721), 944480.ATUV01000002_gene206
+(degree 627), 944480.ATUV01000001_gene1386 (degree 574) and 944480.ATUV01000001_gene1493
+(degree 553).
 
 
 References
@@ -107,14 +108,15 @@ def HippeaAlviniae(
 	
 	Datetime: 2021-02-02 22:01:24.857792
 	
-	The undirected graph Hippea alviniae has 1762 nodes and 113518 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07317 and
-	has 6 connected components, where the component with most nodes has 1751 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 128.85, and the node degree mode is 37. The top 5 most central
-	nodes are 944480.ATUV01000001_gene663 (degree 803), 944480.ATUV01000002_gene177 (degree
-	721), 944480.ATUV01000002_gene206 (degree 627), 944480.ATUV01000001_gene1386 (degree
-	574) and 944480.ATUV01000001_gene1493 (degree 553).
+	The undirected graph Hippea alviniae has 1762 nodes and 113518 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07317 and has 6 connected components, where the component with most
+	nodes has 1751 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 128.85, and
+	the node degree mode is 37. The top 5 most central nodes are 944480.ATUV01000001_gene663
+	(degree 803), 944480.ATUV01000002_gene177 (degree 721), 944480.ATUV01000002_gene206
+	(degree 627), 944480.ATUV01000001_gene1386 (degree 574) and 944480.ATUV01000001_gene1493
+	(degree 553).
 	
 
 

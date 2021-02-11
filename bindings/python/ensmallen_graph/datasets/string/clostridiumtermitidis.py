@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:35.736040
 
-The undirected graph Clostridium termitidis has 5263 nodes and 575877 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04159 and
-has 17 connected components, where the component with most nodes has 5222 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 218.84, and the node degree mode is 4. The top 5 most central
-nodes are 1195236.CTER_2817 (degree 2078), 1195236.CTER_2496 (degree 1907), 1195236.CTER_4786
-(degree 1650), 1195236.CTER_3181 (degree 1524) and 1195236.CTER_2445 (degree 1504).
+The undirected graph Clostridium termitidis has 5263 nodes and 575877 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04159 and has 17 connected components, where the component with most
+nodes has 5222 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 218.84, and
+the node degree mode is 4. The top 5 most central nodes are 1195236.CTER_2817
+(degree 2078), 1195236.CTER_2496 (degree 1907), 1195236.CTER_4786 (degree
+1650), 1195236.CTER_3181 (degree 1524) and 1195236.CTER_2445 (degree 1504).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumTermitidis(
 	
 	Datetime: 2021-02-02 23:12:35.736040
 	
-	The undirected graph Clostridium termitidis has 5263 nodes and 575877 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04159 and
-	has 17 connected components, where the component with most nodes has 5222 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 218.84, and the node degree mode is 4. The top 5 most central
-	nodes are 1195236.CTER_2817 (degree 2078), 1195236.CTER_2496 (degree 1907), 1195236.CTER_4786
-	(degree 1650), 1195236.CTER_3181 (degree 1524) and 1195236.CTER_2445 (degree 1504).
+	The undirected graph Clostridium termitidis has 5263 nodes and 575877 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04159 and has 17 connected components, where the component with most
+	nodes has 5222 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 218.84, and
+	the node degree mode is 4. The top 5 most central nodes are 1195236.CTER_2817
+	(degree 2078), 1195236.CTER_2496 (degree 1907), 1195236.CTER_4786 (degree
+	1650), 1195236.CTER_3181 (degree 1524) and 1195236.CTER_2445 (degree 1504).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:30.342717
 
-The undirected graph Bacteroides plebeius has 3905 nodes and 295030 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03870 and
-has 25 connected components, where the component with most nodes has 3849 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 151.10, and the node degree mode is 4. The top 5 most central
-nodes are 484018.BACPLE_00233 (degree 1177), 484018.BACPLE_02360 (degree 1122), 484018.BACPLE_00846
-(degree 996), 484018.BACPLE_01390 (degree 988) and 484018.BACPLE_01996 (degree 973).
+The undirected graph Bacteroides plebeius has 3905 nodes and 295030 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03870 and has 25 connected components, where the component with most
+nodes has 3849 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 151.10, and
+the node degree mode is 4. The top 5 most central nodes are 484018.BACPLE_00233
+(degree 1177), 484018.BACPLE_02360 (degree 1122), 484018.BACPLE_00846 (degree
+996), 484018.BACPLE_01390 (degree 988) and 484018.BACPLE_01996 (degree
+973).
 
 
 References
@@ -106,13 +108,15 @@ def BacteroidesPlebeius(
 	
 	Datetime: 2021-02-02 20:58:30.342717
 	
-	The undirected graph Bacteroides plebeius has 3905 nodes and 295030 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03870 and
-	has 25 connected components, where the component with most nodes has 3849 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 151.10, and the node degree mode is 4. The top 5 most central
-	nodes are 484018.BACPLE_00233 (degree 1177), 484018.BACPLE_02360 (degree 1122), 484018.BACPLE_00846
-	(degree 996), 484018.BACPLE_01390 (degree 988) and 484018.BACPLE_01996 (degree 973).
+	The undirected graph Bacteroides plebeius has 3905 nodes and 295030 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03870 and has 25 connected components, where the component with most
+	nodes has 3849 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 151.10, and
+	the node degree mode is 4. The top 5 most central nodes are 484018.BACPLE_00233
+	(degree 1177), 484018.BACPLE_02360 (degree 1122), 484018.BACPLE_00846 (degree
+	996), 484018.BACPLE_01390 (degree 988) and 484018.BACPLE_01996 (degree
+	973).
 	
 
 

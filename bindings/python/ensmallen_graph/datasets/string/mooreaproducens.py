@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:11.857966
 
-The undirected graph Moorea producens has 7159 nodes and 873389 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03409 and
-has 89 connected components, where the component with most nodes has 6948 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 244.00, and the node degree mode is 1. The top 5 most central
-nodes are 489825.LYNGBM3L_08270 (degree 1790), 489825.LYNGBM3L_44400 (degree 1632),
-489825.LYNGBM3L_56550 (degree 1606), 489825.LYNGBM3L_35920 (degree 1428) and 489825.LYNGBM3L_04630
+The undirected graph Moorea producens has 7159 nodes and 873389 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03409 and has 89 connected components, where the component with most
+nodes has 6948 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 221, the mean node degree is 244.00, and
+the node degree mode is 1. The top 5 most central nodes are 489825.LYNGBM3L_08270
+(degree 1790), 489825.LYNGBM3L_44400 (degree 1632), 489825.LYNGBM3L_56550
+(degree 1606), 489825.LYNGBM3L_35920 (degree 1428) and 489825.LYNGBM3L_04630
 (degree 1425).
 
 
@@ -107,13 +108,14 @@ def MooreaProducens(
 	
 	Datetime: 2021-02-02 21:00:11.857966
 	
-	The undirected graph Moorea producens has 7159 nodes and 873389 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03409 and
-	has 89 connected components, where the component with most nodes has 6948 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 244.00, and the node degree mode is 1. The top 5 most central
-	nodes are 489825.LYNGBM3L_08270 (degree 1790), 489825.LYNGBM3L_44400 (degree 1632),
-	489825.LYNGBM3L_56550 (degree 1606), 489825.LYNGBM3L_35920 (degree 1428) and 489825.LYNGBM3L_04630
+	The undirected graph Moorea producens has 7159 nodes and 873389 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03409 and has 89 connected components, where the component with most
+	nodes has 6948 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 221, the mean node degree is 244.00, and
+	the node degree mode is 1. The top 5 most central nodes are 489825.LYNGBM3L_08270
+	(degree 1790), 489825.LYNGBM3L_44400 (degree 1632), 489825.LYNGBM3L_56550
+	(degree 1606), 489825.LYNGBM3L_35920 (degree 1428) and 489825.LYNGBM3L_04630
 	(degree 1425).
 	
 

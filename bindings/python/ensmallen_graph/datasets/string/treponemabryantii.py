@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:45.961454
 
-The undirected graph Treponema bryantii has 2815 nodes and 249957 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06311 and
-has 18 connected components, where the component with most nodes has 2768 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 177.59, and the node degree mode is 4. The top 5 most central
-nodes are 877418.ATWV01000001_gene1554 (degree 1155), 877418.ATWV01000004_gene1849
-(degree 1014), 877418.ATWV01000003_gene479 (degree 962), 877418.ATWV01000003_gene615
-(degree 915) and 877418.ATWV01000010_gene170 (degree 875).
+The undirected graph Treponema bryantii has 2815 nodes and 249957 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06311 and has 18 connected components, where the component with most
+nodes has 2768 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 177.59, and
+the node degree mode is 4. The top 5 most central nodes are 877418.ATWV01000001_gene1554
+(degree 1155), 877418.ATWV01000004_gene1849 (degree 1014), 877418.ATWV01000003_gene479
+(degree 962), 877418.ATWV01000003_gene615 (degree 915) and 877418.ATWV01000010_gene170
+(degree 875).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaBryantii(
 	
 	Datetime: 2021-02-02 21:49:45.961454
 	
-	The undirected graph Treponema bryantii has 2815 nodes and 249957 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06311 and
-	has 18 connected components, where the component with most nodes has 2768 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 177.59, and the node degree mode is 4. The top 5 most central
-	nodes are 877418.ATWV01000001_gene1554 (degree 1155), 877418.ATWV01000004_gene1849
-	(degree 1014), 877418.ATWV01000003_gene479 (degree 962), 877418.ATWV01000003_gene615
-	(degree 915) and 877418.ATWV01000010_gene170 (degree 875).
+	The undirected graph Treponema bryantii has 2815 nodes and 249957 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06311 and has 18 connected components, where the component with most
+	nodes has 2768 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 177.59, and
+	the node degree mode is 4. The top 5 most central nodes are 877418.ATWV01000001_gene1554
+	(degree 1155), 877418.ATWV01000004_gene1849 (degree 1014), 877418.ATWV01000003_gene479
+	(degree 962), 877418.ATWV01000003_gene615 (degree 915) and 877418.ATWV01000010_gene170
+	(degree 875).
 	
 
 

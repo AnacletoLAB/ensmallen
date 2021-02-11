@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:45:42.155219
 
-The undirected graph Buchnera aphidicola APS has 567 nodes and 31296 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19504
-and is connected, as it has a single component. The graph median node degree is 99,
-the mean node degree is 110.39, and the node degree mode is 88. The top 5 most central
-nodes are 107806.10038813 (degree 340), 107806.10038836 (degree 270), 107806.10038876
-(degree 268), 107806.10039019 (degree 267) and 107806.10039137 (degree 259).
+The undirected graph Buchnera aphidicola APS has 567 nodes and 31296 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19504 and is connected, as it has a single component. The
+graph median node degree is 99, the mean node degree is 110.39, and the
+node degree mode is 88. The top 5 most central nodes are 107806.10038813
+(degree 340), 107806.10038836 (degree 270), 107806.10038876 (degree 268),
+107806.10039019 (degree 267) and 107806.10039137 (degree 259).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaAps(
 	
 	Datetime: 2021-02-02 19:45:42.155219
 	
-	The undirected graph Buchnera aphidicola APS has 567 nodes and 31296 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19504
-	and is connected, as it has a single component. The graph median node degree is 99,
-	the mean node degree is 110.39, and the node degree mode is 88. The top 5 most central
-	nodes are 107806.10038813 (degree 340), 107806.10038836 (degree 270), 107806.10038876
-	(degree 268), 107806.10039019 (degree 267) and 107806.10039137 (degree 259).
+	The undirected graph Buchnera aphidicola APS has 567 nodes and 31296 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19504 and is connected, as it has a single component. The
+	graph median node degree is 99, the mean node degree is 110.39, and the
+	node degree mode is 88. The top 5 most central nodes are 107806.10038813
+	(degree 340), 107806.10038836 (degree 270), 107806.10038876 (degree 268),
+	107806.10039019 (degree 267) and 107806.10039137 (degree 259).
 	
 
 

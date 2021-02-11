@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:34.579973
 
-The undirected graph Leisingera aquimarina has 4122 nodes and 573197 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06749 and
-has 8 connected components, where the component with most nodes has 4108 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 278.12, and the node degree mode is 1. The top 5 most central
-nodes are 999611.KI421506_gene4034 (degree 1828), 999611.KI421504_gene3855 (degree
-1724), 999611.KI421504_gene438 (degree 1707), 999611.KI421504_gene3853 (degree 1573)
-and 999611.KI421504_gene2772 (degree 1439).
+The undirected graph Leisingera aquimarina has 4122 nodes and 573197 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06749 and has 8 connected components, where the component with most
+nodes has 4108 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 278.12, and
+the node degree mode is 1. The top 5 most central nodes are 999611.KI421506_gene4034
+(degree 1828), 999611.KI421504_gene3855 (degree 1724), 999611.KI421504_gene438
+(degree 1707), 999611.KI421504_gene3853 (degree 1573) and 999611.KI421504_gene2772
+(degree 1439).
 
 
 References
@@ -107,14 +108,15 @@ def LeisingeraAquimarina(
 	
 	Datetime: 2021-02-02 22:06:34.579973
 	
-	The undirected graph Leisingera aquimarina has 4122 nodes and 573197 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06749 and
-	has 8 connected components, where the component with most nodes has 4108 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 278.12, and the node degree mode is 1. The top 5 most central
-	nodes are 999611.KI421506_gene4034 (degree 1828), 999611.KI421504_gene3855 (degree
-	1724), 999611.KI421504_gene438 (degree 1707), 999611.KI421504_gene3853 (degree 1573)
-	and 999611.KI421504_gene2772 (degree 1439).
+	The undirected graph Leisingera aquimarina has 4122 nodes and 573197 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06749 and has 8 connected components, where the component with most
+	nodes has 4108 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 278.12, and
+	the node degree mode is 1. The top 5 most central nodes are 999611.KI421506_gene4034
+	(degree 1828), 999611.KI421504_gene3855 (degree 1724), 999611.KI421504_gene438
+	(degree 1707), 999611.KI421504_gene3853 (degree 1573) and 999611.KI421504_gene2772
+	(degree 1439).
 	
 
 

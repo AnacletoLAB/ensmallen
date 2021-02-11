@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:16:13.890467
 
-The undirected graph Streptomyces lydicus has 7024 nodes and 869453 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03525 and
-has 25 connected components, where the component with most nodes has 6972 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 247.57, and the node degree mode is 2. The top 5 most central
-nodes are 47763.JNZA01000011_gene6879 (degree 3248), 47763.JNZA01000038_gene1715
-(degree 2328), 47763.JNZA01000058_gene1941 (degree 2124), 47763.JNZA01000066_gene6890
-(degree 1910) and 47763.JNZA01000024_gene7050 (degree 1667).
+The undirected graph Streptomyces lydicus has 7024 nodes and 869453 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03525 and has 25 connected components, where the component with most
+nodes has 6972 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 247.57, and
+the node degree mode is 2. The top 5 most central nodes are 47763.JNZA01000011_gene6879
+(degree 3248), 47763.JNZA01000038_gene1715 (degree 2328), 47763.JNZA01000058_gene1941
+(degree 2124), 47763.JNZA01000066_gene6890 (degree 1910) and 47763.JNZA01000024_gene7050
+(degree 1667).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesLydicus(
 	
 	Datetime: 2021-02-02 18:16:13.890467
 	
-	The undirected graph Streptomyces lydicus has 7024 nodes and 869453 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03525 and
-	has 25 connected components, where the component with most nodes has 6972 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 247.57, and the node degree mode is 2. The top 5 most central
-	nodes are 47763.JNZA01000011_gene6879 (degree 3248), 47763.JNZA01000038_gene1715
-	(degree 2328), 47763.JNZA01000058_gene1941 (degree 2124), 47763.JNZA01000066_gene6890
-	(degree 1910) and 47763.JNZA01000024_gene7050 (degree 1667).
+	The undirected graph Streptomyces lydicus has 7024 nodes and 869453 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03525 and has 25 connected components, where the component with most
+	nodes has 6972 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 247.57, and
+	the node degree mode is 2. The top 5 most central nodes are 47763.JNZA01000011_gene6879
+	(degree 3248), 47763.JNZA01000038_gene1715 (degree 2328), 47763.JNZA01000058_gene1941
+	(degree 2124), 47763.JNZA01000066_gene6890 (degree 1910) and 47763.JNZA01000024_gene7050
+	(degree 1667).
 	
 
 

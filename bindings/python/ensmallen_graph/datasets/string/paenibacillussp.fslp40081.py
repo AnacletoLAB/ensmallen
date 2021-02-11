@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:51.710672
 
-The undirected graph Paenibacillus sp. FSLP40081 has 6323 nodes and 727684 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03641
-and has 27 connected components, where the component with most nodes has 6248 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 230.17, and the node degree mode is 2. The top 5
-most central nodes are 1536769.P40081_22920 (degree 2259), 1536769.P40081_11525 (degree
-2169), 1536769.P40081_04205 (degree 1976), 1536769.P40081_19750 (degree 1883) and
-1536769.P40081_08310 (degree 1656).
+The undirected graph Paenibacillus sp. FSLP40081 has 6323 nodes and 727684
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03641 and has 27 connected components, where the component
+with most nodes has 6248 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 230.17,
+and the node degree mode is 2. The top 5 most central nodes are 1536769.P40081_22920
+(degree 2259), 1536769.P40081_11525 (degree 2169), 1536769.P40081_04205
+(degree 1976), 1536769.P40081_19750 (degree 1883) and 1536769.P40081_08310
+(degree 1656).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Fslp40081(
 	
 	Datetime: 2021-02-03 23:18:51.710672
 	
-	The undirected graph Paenibacillus sp. FSLP40081 has 6323 nodes and 727684 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03641
-	and has 27 connected components, where the component with most nodes has 6248 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 230.17, and the node degree mode is 2. The top 5
-	most central nodes are 1536769.P40081_22920 (degree 2259), 1536769.P40081_11525 (degree
-	2169), 1536769.P40081_04205 (degree 1976), 1536769.P40081_19750 (degree 1883) and
-	1536769.P40081_08310 (degree 1656).
+	The undirected graph Paenibacillus sp. FSLP40081 has 6323 nodes and 727684
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03641 and has 27 connected components, where the component
+	with most nodes has 6248 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 230.17,
+	and the node degree mode is 2. The top 5 most central nodes are 1536769.P40081_22920
+	(degree 2259), 1536769.P40081_11525 (degree 2169), 1536769.P40081_04205
+	(degree 1976), 1536769.P40081_19750 (degree 1883) and 1536769.P40081_08310
+	(degree 1656).
 	
 
 

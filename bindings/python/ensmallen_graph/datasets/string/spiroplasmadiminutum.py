@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:22.335309
 
-The undirected graph Spiroplasma diminutum has 857 nodes and 64464 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.17575
-and has 3 connected components, where the component with most nodes has 852 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 150.44, and the node degree mode is 10. The top 5
-most central nodes are 1276221.SDIMI_v3c02980 (degree 463), 1276221.SDIMI_v3c06390
-(degree 455), 1276221.SDIMI_v3c07080 (degree 453), 1276221.SDIMI_v3c05820 (degree
-420) and 1276221.SDIMI_v3c02610 (degree 416).
+The undirected graph Spiroplasma diminutum has 857 nodes and 64464 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17575 and has 3 connected components, where the component
+with most nodes has 852 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 150.44,
+and the node degree mode is 10. The top 5 most central nodes are 1276221.SDIMI_v3c02980
+(degree 463), 1276221.SDIMI_v3c06390 (degree 455), 1276221.SDIMI_v3c07080
+(degree 453), 1276221.SDIMI_v3c05820 (degree 420) and 1276221.SDIMI_v3c02610
+(degree 416).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaDiminutum(
 	
 	Datetime: 2021-02-02 23:38:22.335309
 	
-	The undirected graph Spiroplasma diminutum has 857 nodes and 64464 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.17575
-	and has 3 connected components, where the component with most nodes has 852 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 150.44, and the node degree mode is 10. The top 5
-	most central nodes are 1276221.SDIMI_v3c02980 (degree 463), 1276221.SDIMI_v3c06390
-	(degree 455), 1276221.SDIMI_v3c07080 (degree 453), 1276221.SDIMI_v3c05820 (degree
-	420) and 1276221.SDIMI_v3c02610 (degree 416).
+	The undirected graph Spiroplasma diminutum has 857 nodes and 64464 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17575 and has 3 connected components, where the component
+	with most nodes has 852 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 150.44,
+	and the node degree mode is 10. The top 5 most central nodes are 1276221.SDIMI_v3c02980
+	(degree 463), 1276221.SDIMI_v3c06390 (degree 455), 1276221.SDIMI_v3c07080
+	(degree 453), 1276221.SDIMI_v3c05820 (degree 420) and 1276221.SDIMI_v3c02610
+	(degree 416).
 	
 
 

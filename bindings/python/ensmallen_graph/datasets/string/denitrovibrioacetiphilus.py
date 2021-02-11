@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:27.340971
 
-The undirected graph Denitrovibrio acetiphilus has 2950 nodes and 292246 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06719
-and has 5 connected components, where the component with most nodes has 2938 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 198.13, and the node degree mode is 7. The top 5
-most central nodes are 522772.Dacet_0407 (degree 1346), 522772.Dacet_2729 (degree
-1059), 522772.Dacet_2256 (degree 1023), 522772.Dacet_2952 (degree 994) and 522772.Dacet_0103
-(degree 987).
+The undirected graph Denitrovibrio acetiphilus has 2950 nodes and 292246
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06719 and has 5 connected components, where the component
+with most nodes has 2938 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 198.13,
+and the node degree mode is 7. The top 5 most central nodes are 522772.Dacet_0407
+(degree 1346), 522772.Dacet_2729 (degree 1059), 522772.Dacet_2256 (degree
+1023), 522772.Dacet_2952 (degree 994) and 522772.Dacet_0103 (degree 987).
 
 
 References
@@ -107,14 +107,14 @@ def DenitrovibrioAcetiphilus(
 	
 	Datetime: 2021-02-02 21:04:27.340971
 	
-	The undirected graph Denitrovibrio acetiphilus has 2950 nodes and 292246 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06719
-	and has 5 connected components, where the component with most nodes has 2938 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 198.13, and the node degree mode is 7. The top 5
-	most central nodes are 522772.Dacet_0407 (degree 1346), 522772.Dacet_2729 (degree
-	1059), 522772.Dacet_2256 (degree 1023), 522772.Dacet_2952 (degree 994) and 522772.Dacet_0103
-	(degree 987).
+	The undirected graph Denitrovibrio acetiphilus has 2950 nodes and 292246
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06719 and has 5 connected components, where the component
+	with most nodes has 2938 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 198.13,
+	and the node degree mode is 7. The top 5 most central nodes are 522772.Dacet_0407
+	(degree 1346), 522772.Dacet_2729 (degree 1059), 522772.Dacet_2256 (degree
+	1023), 522772.Dacet_2952 (degree 994) and 522772.Dacet_0103 (degree 987).
 	
 
 

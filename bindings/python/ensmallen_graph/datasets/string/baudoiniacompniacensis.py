@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:29.237766
 
-The undirected graph Baudoinia compniacensis has 6489 nodes and 493421 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02344 and
-has 13 connected components, where the component with most nodes has 6461 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 152.08, and the node degree mode is 1. The top 5 most central
-nodes are 430998.XP_007673777.1 (degree 1582), 430998.XP_007676646.1 (degree 1261),
-430998.XP_007672267.1 (degree 1110), 430998.XP_007677352.1 (degree 1070) and 430998.XP_007677723.1
+The undirected graph Baudoinia compniacensis has 6489 nodes and 493421
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02344 and has 13 connected components, where the component
+with most nodes has 6461 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 152.08,
+and the node degree mode is 1. The top 5 most central nodes are 430998.XP_007673777.1
+(degree 1582), 430998.XP_007676646.1 (degree 1261), 430998.XP_007672267.1
+(degree 1110), 430998.XP_007677352.1 (degree 1070) and 430998.XP_007677723.1
 (degree 1068).
 
 
@@ -107,13 +108,14 @@ def BaudoiniaCompniacensis(
 	
 	Datetime: 2021-02-02 20:48:29.237766
 	
-	The undirected graph Baudoinia compniacensis has 6489 nodes and 493421 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02344 and
-	has 13 connected components, where the component with most nodes has 6461 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 152.08, and the node degree mode is 1. The top 5 most central
-	nodes are 430998.XP_007673777.1 (degree 1582), 430998.XP_007676646.1 (degree 1261),
-	430998.XP_007672267.1 (degree 1110), 430998.XP_007677352.1 (degree 1070) and 430998.XP_007677723.1
+	The undirected graph Baudoinia compniacensis has 6489 nodes and 493421
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02344 and has 13 connected components, where the component
+	with most nodes has 6461 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 152.08,
+	and the node degree mode is 1. The top 5 most central nodes are 430998.XP_007673777.1
+	(degree 1582), 430998.XP_007676646.1 (degree 1261), 430998.XP_007672267.1
+	(degree 1110), 430998.XP_007677352.1 (degree 1070) and 430998.XP_007677723.1
 	(degree 1068).
 	
 

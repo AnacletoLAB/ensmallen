@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:51:15.206850
 
-The undirected graph Thioclava sp. 13D2W2 has 3746 nodes and 538919 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07683 and
-has 6 connected components, where the component with most nodes has 3736 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 262,
-the mean node degree is 287.73, and the node degree mode is 1. The top 5 most central
-nodes are 1317124.DW2_04780 (degree 1717), 1317124.DW2_09954 (degree 1303), 1317124.DW2_10981
-(degree 1282), 1317124.DW2_09131 (degree 1218) and 1317124.DW2_10464 (degree 1140).
+The undirected graph Thioclava sp. 13D2W2 has 3746 nodes and 538919 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07683 and has 6 connected components, where the component with most
+nodes has 3736 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 262, the mean node degree is 287.73, and
+the node degree mode is 1. The top 5 most central nodes are 1317124.DW2_04780
+(degree 1717), 1317124.DW2_09954 (degree 1303), 1317124.DW2_10981 (degree
+1282), 1317124.DW2_09131 (degree 1218) and 1317124.DW2_10464 (degree 1140).
 
 
 References
@@ -106,13 +107,14 @@ def ThioclavaSp.13d2w2(
 	
 	Datetime: 2021-02-03 21:51:15.206850
 	
-	The undirected graph Thioclava sp. 13D2W2 has 3746 nodes and 538919 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07683 and
-	has 6 connected components, where the component with most nodes has 3736 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 262,
-	the mean node degree is 287.73, and the node degree mode is 1. The top 5 most central
-	nodes are 1317124.DW2_04780 (degree 1717), 1317124.DW2_09954 (degree 1303), 1317124.DW2_10981
-	(degree 1282), 1317124.DW2_09131 (degree 1218) and 1317124.DW2_10464 (degree 1140).
+	The undirected graph Thioclava sp. 13D2W2 has 3746 nodes and 538919 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07683 and has 6 connected components, where the component with most
+	nodes has 3736 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 262, the mean node degree is 287.73, and
+	the node degree mode is 1. The top 5 most central nodes are 1317124.DW2_04780
+	(degree 1717), 1317124.DW2_09954 (degree 1303), 1317124.DW2_10981 (degree
+	1282), 1317124.DW2_09131 (degree 1218) and 1317124.DW2_10464 (degree 1140).
 	
 
 

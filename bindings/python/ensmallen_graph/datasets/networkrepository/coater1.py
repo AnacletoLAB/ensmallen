@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:17.591295
 
-The undirected graph coater1 has 1348 nodes and 13771 weighted edges, of which 257
-are self-loops. The graph is dense as it has a density of 0.01502 and is connected,
-as it has a single component. The graph median node degree is 19, the mean node degree
-is 20.24, and the node degree mode is 20. The top 5 most central nodes are 1332 (degree
-56), 1333 (degree 56), 991 (degree 56), 990 (degree 56) and 320 (degree 56).
+The undirected graph coater1 has 1348 nodes and 13771 weighted edges, of
+which 257 are self-loops. The graph is dense as it has a density of 0.01502
+and is connected, as it has a single component. The graph median node degree
+is 19, the mean node degree is 20.24, and the node degree mode is 20. The
+top 5 most central nodes are 1332 (degree 56), 1333 (degree 56), 991 (degree
+56), 990 (degree 56) and 320 (degree 56).
 
 
 References
@@ -101,11 +102,12 @@ def Coater1(
 	
 	Datetime: 2021-02-06 10:20:17.591295
 	
-	The undirected graph coater1 has 1348 nodes and 13771 weighted edges, of which 257
-	are self-loops. The graph is dense as it has a density of 0.01502 and is connected,
-	as it has a single component. The graph median node degree is 19, the mean node degree
-	is 20.24, and the node degree mode is 20. The top 5 most central nodes are 1332 (degree
-	56), 1333 (degree 56), 991 (degree 56), 990 (degree 56) and 320 (degree 56).
+	The undirected graph coater1 has 1348 nodes and 13771 weighted edges, of
+	which 257 are self-loops. The graph is dense as it has a density of 0.01502
+	and is connected, as it has a single component. The graph median node degree
+	is 19, the mean node degree is 20.24, and the node degree mode is 20. The
+	top 5 most central nodes are 1332 (degree 56), 1333 (degree 56), 991 (degree
+	56), 990 (degree 56) and 320 (degree 56).
 	
 
 

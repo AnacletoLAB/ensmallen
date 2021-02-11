@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:37:31.986835
 
-The undirected graph Serratia grimesii has 4367 nodes and 593792 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06229 and
-has 5 connected components, where the component with most nodes has 4357 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 271.95, and the node degree mode is 1. The top 5 most central
-nodes are 82995.CR62_01920 (degree 1569), 82995.CR62_06785 (degree 1386), 82995.CR62_08465
-(degree 1383), 82995.CR62_05780 (degree 1340) and 82995.CR62_09135 (degree 1339).
+The undirected graph Serratia grimesii has 4367 nodes and 593792 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06229 and has 5 connected components, where the component with most
+nodes has 4357 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 271.95, and
+the node degree mode is 1. The top 5 most central nodes are 82995.CR62_01920
+(degree 1569), 82995.CR62_06785 (degree 1386), 82995.CR62_08465 (degree
+1383), 82995.CR62_05780 (degree 1340) and 82995.CR62_09135 (degree 1339).
 
 
 References
@@ -106,13 +107,14 @@ def SerratiaGrimesii(
 	
 	Datetime: 2021-02-02 18:37:31.986835
 	
-	The undirected graph Serratia grimesii has 4367 nodes and 593792 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06229 and
-	has 5 connected components, where the component with most nodes has 4357 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 271.95, and the node degree mode is 1. The top 5 most central
-	nodes are 82995.CR62_01920 (degree 1569), 82995.CR62_06785 (degree 1386), 82995.CR62_08465
-	(degree 1383), 82995.CR62_05780 (degree 1340) and 82995.CR62_09135 (degree 1339).
+	The undirected graph Serratia grimesii has 4367 nodes and 593792 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06229 and has 5 connected components, where the component with most
+	nodes has 4357 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 271.95, and
+	the node degree mode is 1. The top 5 most central nodes are 82995.CR62_01920
+	(degree 1569), 82995.CR62_06785 (degree 1386), 82995.CR62_08465 (degree
+	1383), 82995.CR62_05780 (degree 1340) and 82995.CR62_09135 (degree 1339).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:37.659293
 
-The undirected graph Moranella endobia has 406 nodes and 23528 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.28618
-and is connected, as it has a single component. The graph median node degree is 116,
-the mean node degree is 115.90, and the node degree mode is 48. The top 5 most central
-nodes are 903503.MEPCIT_203 (degree 278), 903503.MEPCIT_178 (degree 273), 903503.MEPCIT_238
-(degree 260), 903503.MEPCIT_085 (degree 254) and 903503.MEPCIT_416 (degree 240).
+The undirected graph Moranella endobia has 406 nodes and 23528 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.28618 and is connected, as it has a single component. The
+graph median node degree is 116, the mean node degree is 115.90, and the
+node degree mode is 48. The top 5 most central nodes are 903503.MEPCIT_203
+(degree 278), 903503.MEPCIT_178 (degree 273), 903503.MEPCIT_238 (degree
+260), 903503.MEPCIT_085 (degree 254) and 903503.MEPCIT_416 (degree 240).
 
 
 References
@@ -105,12 +106,13 @@ def MoranellaEndobia(
 	
 	Datetime: 2021-02-02 21:53:37.659293
 	
-	The undirected graph Moranella endobia has 406 nodes and 23528 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.28618
-	and is connected, as it has a single component. The graph median node degree is 116,
-	the mean node degree is 115.90, and the node degree mode is 48. The top 5 most central
-	nodes are 903503.MEPCIT_203 (degree 278), 903503.MEPCIT_178 (degree 273), 903503.MEPCIT_238
-	(degree 260), 903503.MEPCIT_085 (degree 254) and 903503.MEPCIT_416 (degree 240).
+	The undirected graph Moranella endobia has 406 nodes and 23528 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.28618 and is connected, as it has a single component. The
+	graph median node degree is 116, the mean node degree is 115.90, and the
+	node degree mode is 48. The top 5 most central nodes are 903503.MEPCIT_203
+	(degree 278), 903503.MEPCIT_178 (degree 273), 903503.MEPCIT_238 (degree
+	260), 903503.MEPCIT_085 (degree 254) and 903503.MEPCIT_416 (degree 240).
 	
 
 

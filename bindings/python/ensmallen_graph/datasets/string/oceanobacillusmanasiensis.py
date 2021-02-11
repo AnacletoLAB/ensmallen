@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:43.671677
 
-The undirected graph Oceanobacillus manasiensis has 3720 nodes and 371229 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05367
-and has 10 connected components, where the component with most nodes has 3699 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 166, the mean node degree is 199.59, and the node degree mode is 3. The top 5
-most central nodes are 586413.CCDL010000002_gene1915 (degree 1367), 586413.CCDL010000002_gene2519
-(degree 1165), 586413.CCDL010000001_gene450 (degree 1139), 586413.CCDL010000001_gene779
-(degree 1094) and 586413.CCDL010000001_gene375 (degree 1014).
+The undirected graph Oceanobacillus manasiensis has 3720 nodes and 371229
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05367 and has 10 connected components, where the component
+with most nodes has 3699 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 199.59,
+and the node degree mode is 3. The top 5 most central nodes are 586413.CCDL010000002_gene1915
+(degree 1367), 586413.CCDL010000002_gene2519 (degree 1165), 586413.CCDL010000001_gene450
+(degree 1139), 586413.CCDL010000001_gene779 (degree 1094) and 586413.CCDL010000001_gene375
+(degree 1014).
 
 
 References
@@ -107,14 +108,15 @@ def OceanobacillusManasiensis(
 	
 	Datetime: 2021-02-02 21:16:43.671677
 	
-	The undirected graph Oceanobacillus manasiensis has 3720 nodes and 371229 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05367
-	and has 10 connected components, where the component with most nodes has 3699 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 166, the mean node degree is 199.59, and the node degree mode is 3. The top 5
-	most central nodes are 586413.CCDL010000002_gene1915 (degree 1367), 586413.CCDL010000002_gene2519
-	(degree 1165), 586413.CCDL010000001_gene450 (degree 1139), 586413.CCDL010000001_gene779
-	(degree 1094) and 586413.CCDL010000001_gene375 (degree 1014).
+	The undirected graph Oceanobacillus manasiensis has 3720 nodes and 371229
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05367 and has 10 connected components, where the component
+	with most nodes has 3699 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 199.59,
+	and the node degree mode is 3. The top 5 most central nodes are 586413.CCDL010000002_gene1915
+	(degree 1367), 586413.CCDL010000002_gene2519 (degree 1165), 586413.CCDL010000001_gene450
+	(degree 1139), 586413.CCDL010000001_gene779 (degree 1094) and 586413.CCDL010000001_gene375
+	(degree 1014).
 	
 
 

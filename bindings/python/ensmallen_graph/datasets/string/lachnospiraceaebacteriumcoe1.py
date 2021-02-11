@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:10.167166
 
-The undirected graph Lachnospiraceae bacterium COE1 has 4610 nodes and 427981 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04029
-and has 40 connected components, where the component with most nodes has 4513 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 185.68, and the node degree mode is 1. The top 5
-most central nodes are 1235793.C809_03560 (degree 1506), 1235793.C809_02823 (degree
-1389), 1235793.C809_02178 (degree 1386), 1235793.C809_01591 (degree 1349) and 1235793.C809_03423
-(degree 1275).
+The undirected graph Lachnospiraceae bacterium COE1 has 4610 nodes and
+427981 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04029 and has 40 connected components, where the
+component with most nodes has 4513 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+is 185.68, and the node degree mode is 1. The top 5 most central nodes
+are 1235793.C809_03560 (degree 1506), 1235793.C809_02823 (degree 1389),
+1235793.C809_02178 (degree 1386), 1235793.C809_01591 (degree 1349) and
+1235793.C809_03423 (degree 1275).
 
 
 References
@@ -107,14 +108,15 @@ def LachnospiraceaeBacteriumCoe1(
 	
 	Datetime: 2021-02-02 23:30:10.167166
 	
-	The undirected graph Lachnospiraceae bacterium COE1 has 4610 nodes and 427981 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04029
-	and has 40 connected components, where the component with most nodes has 4513 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 185.68, and the node degree mode is 1. The top 5
-	most central nodes are 1235793.C809_03560 (degree 1506), 1235793.C809_02823 (degree
-	1389), 1235793.C809_02178 (degree 1386), 1235793.C809_01591 (degree 1349) and 1235793.C809_03423
-	(degree 1275).
+	The undirected graph Lachnospiraceae bacterium COE1 has 4610 nodes and
+	427981 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04029 and has 40 connected components, where the
+	component with most nodes has 4513 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+	is 185.68, and the node degree mode is 1. The top 5 most central nodes
+	are 1235793.C809_03560 (degree 1506), 1235793.C809_02823 (degree 1389),
+	1235793.C809_02178 (degree 1386), 1235793.C809_01591 (degree 1349) and
+	1235793.C809_03423 (degree 1275).
 	
 
 

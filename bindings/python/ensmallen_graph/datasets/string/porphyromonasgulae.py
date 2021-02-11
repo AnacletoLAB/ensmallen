@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:33.779321
 
-The undirected graph Porphyromonas gulae has 1920 nodes and 160710 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08724 and
-has 9 connected components, where the component with most nodes has 1894 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 167.41, and the node degree mode is 6. The top 5 most central
-nodes are 111105.HR09_00375 (degree 1033), 111105.HR09_00645 (degree 811), 111105.HR09_02590
-(degree 729), 111105.HR09_00035 (degree 694) and 111105.HR09_09640 (degree 642).
+The undirected graph Porphyromonas gulae has 1920 nodes and 160710 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08724 and has 9 connected components, where the component with most
+nodes has 1894 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 167.41, and
+the node degree mode is 6. The top 5 most central nodes are 111105.HR09_00375
+(degree 1033), 111105.HR09_00645 (degree 811), 111105.HR09_02590 (degree
+729), 111105.HR09_00035 (degree 694) and 111105.HR09_09640 (degree 642).
 
 
 References
@@ -106,13 +107,14 @@ def PorphyromonasGulae(
 	
 	Datetime: 2021-02-02 19:46:33.779321
 	
-	The undirected graph Porphyromonas gulae has 1920 nodes and 160710 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08724 and
-	has 9 connected components, where the component with most nodes has 1894 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 167.41, and the node degree mode is 6. The top 5 most central
-	nodes are 111105.HR09_00375 (degree 1033), 111105.HR09_00645 (degree 811), 111105.HR09_02590
-	(degree 729), 111105.HR09_00035 (degree 694) and 111105.HR09_09640 (degree 642).
+	The undirected graph Porphyromonas gulae has 1920 nodes and 160710 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08724 and has 9 connected components, where the component with most
+	nodes has 1894 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 167.41, and
+	the node degree mode is 6. The top 5 most central nodes are 111105.HR09_00375
+	(degree 1033), 111105.HR09_00645 (degree 811), 111105.HR09_02590 (degree
+	729), 111105.HR09_00035 (degree 694) and 111105.HR09_09640 (degree 642).
 	
 
 

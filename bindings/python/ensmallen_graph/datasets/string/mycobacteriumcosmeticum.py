@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:40.261517
 
-The undirected graph Mycobacterium cosmeticum has 6247 nodes and 894712 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04586
-and has 21 connected components, where the component with most nodes has 6194 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 236, the mean node degree is 286.45, and the node degree mode is 2. The top 5
-most central nodes are 258533.BN977_00852 (degree 2196), 258533.BN977_01162 (degree
-2002), 258533.BN977_03402 (degree 1721), 258533.BN977_04742 (degree 1699) and 258533.BN977_04906
-(degree 1679).
+The undirected graph Mycobacterium cosmeticum has 6247 nodes and 894712
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04586 and has 21 connected components, where the component
+with most nodes has 6194 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 236, the mean node degree is 286.45,
+and the node degree mode is 2. The top 5 most central nodes are 258533.BN977_00852
+(degree 2196), 258533.BN977_01162 (degree 2002), 258533.BN977_03402 (degree
+1721), 258533.BN977_04742 (degree 1699) and 258533.BN977_04906 (degree
+1679).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumCosmeticum(
 	
 	Datetime: 2021-02-02 20:12:40.261517
 	
-	The undirected graph Mycobacterium cosmeticum has 6247 nodes and 894712 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04586
-	and has 21 connected components, where the component with most nodes has 6194 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 236, the mean node degree is 286.45, and the node degree mode is 2. The top 5
-	most central nodes are 258533.BN977_00852 (degree 2196), 258533.BN977_01162 (degree
-	2002), 258533.BN977_03402 (degree 1721), 258533.BN977_04742 (degree 1699) and 258533.BN977_04906
-	(degree 1679).
+	The undirected graph Mycobacterium cosmeticum has 6247 nodes and 894712
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04586 and has 21 connected components, where the component
+	with most nodes has 6194 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 236, the mean node degree is 286.45,
+	and the node degree mode is 2. The top 5 most central nodes are 258533.BN977_00852
+	(degree 2196), 258533.BN977_01162 (degree 2002), 258533.BN977_03402 (degree
+	1721), 258533.BN977_04742 (degree 1699) and 258533.BN977_04906 (degree
+	1679).
 	
 
 

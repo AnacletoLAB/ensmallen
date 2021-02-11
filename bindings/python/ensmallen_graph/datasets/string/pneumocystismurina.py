@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:20.304208
 
-The undirected graph Pneumocystis murina has 3112 nodes and 413236 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08537 and
-has 2 connected components, where the component with most nodes has 3110 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 265.58, and the node degree mode is 1. The top 5 most central
-nodes are 263815.XP_007872645.1 (degree 1238), 263815.XP_007874591.1 (degree 1081),
-263815.XP_007872781.1 (degree 1076), 263815.XP_007874602.1 (degree 1055) and 263815.XP_007873662.1
+The undirected graph Pneumocystis murina has 3112 nodes and 413236 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08537 and has 2 connected components, where the component with most
+nodes has 3110 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 265.58, and
+the node degree mode is 1. The top 5 most central nodes are 263815.XP_007872645.1
+(degree 1238), 263815.XP_007874591.1 (degree 1081), 263815.XP_007872781.1
+(degree 1076), 263815.XP_007874602.1 (degree 1055) and 263815.XP_007873662.1
 (degree 1050).
 
 
@@ -107,13 +108,14 @@ def PneumocystisMurina(
 	
 	Datetime: 2021-02-02 20:13:20.304208
 	
-	The undirected graph Pneumocystis murina has 3112 nodes and 413236 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08537 and
-	has 2 connected components, where the component with most nodes has 3110 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 265.58, and the node degree mode is 1. The top 5 most central
-	nodes are 263815.XP_007872645.1 (degree 1238), 263815.XP_007874591.1 (degree 1081),
-	263815.XP_007872781.1 (degree 1076), 263815.XP_007874602.1 (degree 1055) and 263815.XP_007873662.1
+	The undirected graph Pneumocystis murina has 3112 nodes and 413236 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08537 and has 2 connected components, where the component with most
+	nodes has 3110 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 265.58, and
+	the node degree mode is 1. The top 5 most central nodes are 263815.XP_007872645.1
+	(degree 1238), 263815.XP_007874591.1 (degree 1081), 263815.XP_007872781.1
+	(degree 1076), 263815.XP_007874602.1 (degree 1055) and 263815.XP_007873662.1
 	(degree 1050).
 	
 

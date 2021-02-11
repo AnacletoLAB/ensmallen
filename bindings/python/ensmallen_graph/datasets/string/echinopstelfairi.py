@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:33:55.681482
 
-The undirected graph Echinops telfairi has 18412 nodes and 4107497 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02423 and
-is connected, as it has a single component. The graph median node degree is 332,
-the mean node degree is 446.18, and the node degree mode is 110. The top 5 most central
-nodes are 9371.XP_004715290.1 (degree 5083), 9371.XP_004706747.1 (degree 4261), 9371.XP_004696975.1
-(degree 4123), 9371.XP_004713581.1 (degree 3852) and 9371.XP_004698552.1 (degree
-3804).
+The undirected graph Echinops telfairi has 18412 nodes and 4107497 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02423 and is connected, as it has a single component. The graph median
+node degree is 332, the mean node degree is 446.18, and the node degree
+mode is 110. The top 5 most central nodes are 9371.XP_004715290.1 (degree
+5083), 9371.XP_004706747.1 (degree 4261), 9371.XP_004696975.1 (degree 4123),
+9371.XP_004713581.1 (degree 3852) and 9371.XP_004698552.1 (degree 3804).
 
 
 References
@@ -106,13 +106,13 @@ def EchinopsTelfairi(
 	
 	Datetime: 2021-02-02 17:33:55.681482
 	
-	The undirected graph Echinops telfairi has 18412 nodes and 4107497 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02423 and
-	is connected, as it has a single component. The graph median node degree is 332,
-	the mean node degree is 446.18, and the node degree mode is 110. The top 5 most central
-	nodes are 9371.XP_004715290.1 (degree 5083), 9371.XP_004706747.1 (degree 4261), 9371.XP_004696975.1
-	(degree 4123), 9371.XP_004713581.1 (degree 3852) and 9371.XP_004698552.1 (degree
-	3804).
+	The undirected graph Echinops telfairi has 18412 nodes and 4107497 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02423 and is connected, as it has a single component. The graph median
+	node degree is 332, the mean node degree is 446.18, and the node degree
+	mode is 110. The top 5 most central nodes are 9371.XP_004715290.1 (degree
+	5083), 9371.XP_004706747.1 (degree 4261), 9371.XP_004696975.1 (degree 4123),
+	9371.XP_004713581.1 (degree 3852) and 9371.XP_004698552.1 (degree 3804).
 	
 
 

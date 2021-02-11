@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:44.791501
 
-The undirected graph Mycetocola saprophilus has 2931 nodes and 200111 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04660 and
-has 21 connected components, where the component with most nodes has 2875 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 136.55, and the node degree mode is 3. The top 5 most central
-nodes are 76636.JOEC01000001_gene617 (degree 923), 76636.JOEC01000002_gene2211 (degree
-921), 76636.JOEC01000002_gene1896 (degree 789), 76636.JOEC01000002_gene1757 (degree
-770) and 76636.JOEC01000001_gene352 (degree 751).
+The undirected graph Mycetocola saprophilus has 2931 nodes and 200111 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04660 and has 21 connected components, where the component with most
+nodes has 2875 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 136.55, and
+the node degree mode is 3. The top 5 most central nodes are 76636.JOEC01000001_gene617
+(degree 923), 76636.JOEC01000002_gene2211 (degree 921), 76636.JOEC01000002_gene1896
+(degree 789), 76636.JOEC01000002_gene1757 (degree 770) and 76636.JOEC01000001_gene352
+(degree 751).
 
 
 References
@@ -107,14 +108,15 @@ def MycetocolaSaprophilus(
 	
 	Datetime: 2021-02-02 18:32:44.791501
 	
-	The undirected graph Mycetocola saprophilus has 2931 nodes and 200111 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04660 and
-	has 21 connected components, where the component with most nodes has 2875 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 136.55, and the node degree mode is 3. The top 5 most central
-	nodes are 76636.JOEC01000001_gene617 (degree 923), 76636.JOEC01000002_gene2211 (degree
-	921), 76636.JOEC01000002_gene1896 (degree 789), 76636.JOEC01000002_gene1757 (degree
-	770) and 76636.JOEC01000001_gene352 (degree 751).
+	The undirected graph Mycetocola saprophilus has 2931 nodes and 200111 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04660 and has 21 connected components, where the component with most
+	nodes has 2875 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 136.55, and
+	the node degree mode is 3. The top 5 most central nodes are 76636.JOEC01000001_gene617
+	(degree 923), 76636.JOEC01000002_gene2211 (degree 921), 76636.JOEC01000002_gene1896
+	(degree 789), 76636.JOEC01000002_gene1757 (degree 770) and 76636.JOEC01000001_gene352
+	(degree 751).
 	
 
 

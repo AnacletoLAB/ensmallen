@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:31:52.998183
 
-The undirected graph Boechera stricta has 22485 nodes and 4804394 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01901 and
-has 5 connected components, where the component with most nodes has 22477 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 427.34, and the node degree mode is 5. The top 5 most central
-nodes are 72658.Bostr.7903s0163.1.p (degree 7534), 72658.Bostr.19424s0168.1.p (degree
-5877), 72658.Bostr.2570s0229.1.p (degree 5238), 72658.Bostr.5022s0076.1.p (degree
-4854) and 72658.Bostr.7867s1317.1.p (degree 4851).
+The undirected graph Boechera stricta has 22485 nodes and 4804394 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01901 and has 5 connected components, where the component with most
+nodes has 22477 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 427.34, and
+the node degree mode is 5. The top 5 most central nodes are 72658.Bostr.7903s0163.1.p
+(degree 7534), 72658.Bostr.19424s0168.1.p (degree 5877), 72658.Bostr.2570s0229.1.p
+(degree 5238), 72658.Bostr.5022s0076.1.p (degree 4854) and 72658.Bostr.7867s1317.1.p
+(degree 4851).
 
 
 References
@@ -107,14 +108,15 @@ def BoecheraStricta(
 	
 	Datetime: 2021-02-02 18:31:52.998183
 	
-	The undirected graph Boechera stricta has 22485 nodes and 4804394 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01901 and
-	has 5 connected components, where the component with most nodes has 22477 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 427.34, and the node degree mode is 5. The top 5 most central
-	nodes are 72658.Bostr.7903s0163.1.p (degree 7534), 72658.Bostr.19424s0168.1.p (degree
-	5877), 72658.Bostr.2570s0229.1.p (degree 5238), 72658.Bostr.5022s0076.1.p (degree
-	4854) and 72658.Bostr.7867s1317.1.p (degree 4851).
+	The undirected graph Boechera stricta has 22485 nodes and 4804394 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01901 and has 5 connected components, where the component with most
+	nodes has 22477 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 427.34, and
+	the node degree mode is 5. The top 5 most central nodes are 72658.Bostr.7903s0163.1.p
+	(degree 7534), 72658.Bostr.19424s0168.1.p (degree 5877), 72658.Bostr.2570s0229.1.p
+	(degree 5238), 72658.Bostr.5022s0076.1.p (degree 4854) and 72658.Bostr.7867s1317.1.p
+	(degree 4851).
 	
 
 

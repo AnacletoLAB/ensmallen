@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:42:06.183486
 
-The undirected graph Erythranthe guttata has 23223 nodes and 4840350 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-has 5 connected components, where the component with most nodes has 23215 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 416.86, and the node degree mode is 1. The top 5 most central
-nodes are 4155.Migut.K00517.1.p (degree 7898), 4155.Migut.N00482.1.p (degree 6390),
-4155.Migut.B01098.1.p (degree 5167), 4155.Migut.D00384.1.p (degree 5146) and 4155.Migut.D00382.1.p
+The undirected graph Erythranthe guttata has 23223 nodes and 4840350 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01795 and has 5 connected components, where the component with most
+nodes has 23215 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 416.86, and
+the node degree mode is 1. The top 5 most central nodes are 4155.Migut.K00517.1.p
+(degree 7898), 4155.Migut.N00482.1.p (degree 6390), 4155.Migut.B01098.1.p
+(degree 5167), 4155.Migut.D00384.1.p (degree 5146) and 4155.Migut.D00382.1.p
 (degree 5146).
 
 
@@ -107,13 +108,14 @@ def ErythrantheGuttata(
 	
 	Datetime: 2021-02-02 16:42:06.183486
 	
-	The undirected graph Erythranthe guttata has 23223 nodes and 4840350 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-	has 5 connected components, where the component with most nodes has 23215 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 416.86, and the node degree mode is 1. The top 5 most central
-	nodes are 4155.Migut.K00517.1.p (degree 7898), 4155.Migut.N00482.1.p (degree 6390),
-	4155.Migut.B01098.1.p (degree 5167), 4155.Migut.D00384.1.p (degree 5146) and 4155.Migut.D00382.1.p
+	The undirected graph Erythranthe guttata has 23223 nodes and 4840350 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01795 and has 5 connected components, where the component with most
+	nodes has 23215 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 416.86, and
+	the node degree mode is 1. The top 5 most central nodes are 4155.Migut.K00517.1.p
+	(degree 7898), 4155.Migut.N00482.1.p (degree 6390), 4155.Migut.B01098.1.p
+	(degree 5167), 4155.Migut.D00384.1.p (degree 5146) and 4155.Migut.D00382.1.p
 	(degree 5146).
 	
 

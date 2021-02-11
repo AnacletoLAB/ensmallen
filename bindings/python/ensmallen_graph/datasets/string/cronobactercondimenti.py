@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:29.473146
 
-The undirected graph Cronobacter condimenti has 4213 nodes and 416714 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-has 22 connected components, where the component with most nodes has 4168 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 197.82, and the node degree mode is 2. The top 5 most central
-nodes are 1073999.BN137_2607 (degree 1324), 1073999.BN137_182 (degree 1163), 1073999.BN137_2179
-(degree 1136), 1073999.BN137_2181 (degree 1123) and 1073999.BN137_2878 (degree 959).
+The undirected graph Cronobacter condimenti has 4213 nodes and 416714 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04697 and has 22 connected components, where the component with most
+nodes has 4168 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 197.82, and
+the node degree mode is 2. The top 5 most central nodes are 1073999.BN137_2607
+(degree 1324), 1073999.BN137_182 (degree 1163), 1073999.BN137_2179 (degree
+1136), 1073999.BN137_2181 (degree 1123) and 1073999.BN137_2878 (degree
+959).
 
 
 References
@@ -106,13 +108,15 @@ def CronobacterCondimenti(
 	
 	Datetime: 2021-02-02 22:19:29.473146
 	
-	The undirected graph Cronobacter condimenti has 4213 nodes and 416714 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04697 and
-	has 22 connected components, where the component with most nodes has 4168 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 197.82, and the node degree mode is 2. The top 5 most central
-	nodes are 1073999.BN137_2607 (degree 1324), 1073999.BN137_182 (degree 1163), 1073999.BN137_2179
-	(degree 1136), 1073999.BN137_2181 (degree 1123) and 1073999.BN137_2878 (degree 959).
+	The undirected graph Cronobacter condimenti has 4213 nodes and 416714 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04697 and has 22 connected components, where the component with most
+	nodes has 4168 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 197.82, and
+	the node degree mode is 2. The top 5 most central nodes are 1073999.BN137_2607
+	(degree 1324), 1073999.BN137_182 (degree 1163), 1073999.BN137_2179 (degree
+	1136), 1073999.BN137_2181 (degree 1123) and 1073999.BN137_2878 (degree
+	959).
 	
 
 

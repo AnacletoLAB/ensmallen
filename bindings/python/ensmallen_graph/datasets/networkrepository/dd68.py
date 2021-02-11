@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:23:20.299839
 
-The undirected graph DD68 has 775 nodes with 20 different node types:  the 5 most
-common are 11 (nodes number 105), 1 (nodes number 82), 7 (nodes number 81), 2 (nodes
-number 74) and 8 (nodes number 70) and 2093 unweighted edges, of which none are self-loops.
-The graph is sparse as it has a density of 0.00698 and is connected, as it has a
-single component. The graph median node degree is 5, the mean node degree is 5.40
-and the node degree mode is 6. The top 5 most central nodes are 7 (degree 13), 391
-(degree 12), 125 (degree 12), 35 (degree 12) and 687 (degree 11).
+The undirected graph DD68 has 775 nodes with 20 different node types: 
+the 5 most common are 11 (nodes number 105), 1 (nodes number 82), 7 (nodes
+number 81), 2 (nodes number 74) and 8 (nodes number 70) and 2093 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00698 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 5.40 and the node degree mode
+is 6. The top 5 most central nodes are 7 (degree 13), 391 (degree 12),
+125 (degree 12), 35 (degree 12) and 687 (degree 11).
 
 
 References
@@ -103,13 +104,14 @@ def Dd68(
 	
 	Datetime: 2021-02-04 08:23:20.299839
 	
-	The undirected graph DD68 has 775 nodes with 20 different node types:  the 5 most
-	common are 11 (nodes number 105), 1 (nodes number 82), 7 (nodes number 81), 2 (nodes
-	number 74) and 8 (nodes number 70) and 2093 unweighted edges, of which none are self-loops.
-	The graph is sparse as it has a density of 0.00698 and is connected, as it has a
-	single component. The graph median node degree is 5, the mean node degree is 5.40
-	and the node degree mode is 6. The top 5 most central nodes are 7 (degree 13), 391
-	(degree 12), 125 (degree 12), 35 (degree 12) and 687 (degree 11).
+	The undirected graph DD68 has 775 nodes with 20 different node types: 
+	the 5 most common are 11 (nodes number 105), 1 (nodes number 82), 7 (nodes
+	number 81), 2 (nodes number 74) and 8 (nodes number 70) and 2093 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00698 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 5.40 and the node degree mode
+	is 6. The top 5 most central nodes are 7 (degree 13), 391 (degree 12),
+	125 (degree 12), 35 (degree 12) and 687 (degree 11).
 	
 
 

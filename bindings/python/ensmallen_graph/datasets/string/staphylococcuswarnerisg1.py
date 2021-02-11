@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:25.054964
 
-The undirected graph Staphylococcus warneri SG1 has 2349 nodes and 210196 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07622
-and has 10 connected components, where the component with most nodes has 2324 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 178.97, and the node degree mode is 4. The top 5
-most central nodes are 1194526.A284_05335 (degree 947), 1194526.A284_11175 (degree
-807), 1194526.A284_10900 (degree 748), 1194526.A284_05970 (degree 737) and 1194526.A284_11180
-(degree 736).
+The undirected graph Staphylococcus warneri SG1 has 2349 nodes and 210196
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07622 and has 10 connected components, where the component
+with most nodes has 2324 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 178.97,
+and the node degree mode is 4. The top 5 most central nodes are 1194526.A284_05335
+(degree 947), 1194526.A284_11175 (degree 807), 1194526.A284_10900 (degree
+748), 1194526.A284_05970 (degree 737) and 1194526.A284_11180 (degree 736).
 
 
 References
@@ -107,14 +107,14 @@ def StaphylococcusWarneriSg1(
 	
 	Datetime: 2021-02-02 23:12:25.054964
 	
-	The undirected graph Staphylococcus warneri SG1 has 2349 nodes and 210196 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07622
-	and has 10 connected components, where the component with most nodes has 2324 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 178.97, and the node degree mode is 4. The top 5
-	most central nodes are 1194526.A284_05335 (degree 947), 1194526.A284_11175 (degree
-	807), 1194526.A284_10900 (degree 748), 1194526.A284_05970 (degree 737) and 1194526.A284_11180
-	(degree 736).
+	The undirected graph Staphylococcus warneri SG1 has 2349 nodes and 210196
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07622 and has 10 connected components, where the component
+	with most nodes has 2324 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 178.97,
+	and the node degree mode is 4. The top 5 most central nodes are 1194526.A284_05335
+	(degree 947), 1194526.A284_11175 (degree 807), 1194526.A284_10900 (degree
+	748), 1194526.A284_05970 (degree 737) and 1194526.A284_11180 (degree 736).
 	
 
 

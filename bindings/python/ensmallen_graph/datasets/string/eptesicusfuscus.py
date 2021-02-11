@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:58:48.906481
 
-The undirected graph Eptesicus fuscus has 18067 nodes and 3411597 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02090 and
-has 2 connected components, where the component with most nodes has 18065 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 377.66, and the node degree mode is 109. The top 5 most central
-nodes are 29078.XP_008151626.1 (degree 5432), 29078.XP_008144268.1 (degree 3944),
-29078.XP_008143912.1 (degree 3878), 29078.XP_008144779.1 (degree 3857) and 29078.XP_008138204.1
+The undirected graph Eptesicus fuscus has 18067 nodes and 3411597 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02090 and has 2 connected components, where the component with most
+nodes has 18065 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 377.66, and
+the node degree mode is 109. The top 5 most central nodes are 29078.XP_008151626.1
+(degree 5432), 29078.XP_008144268.1 (degree 3944), 29078.XP_008143912.1
+(degree 3878), 29078.XP_008144779.1 (degree 3857) and 29078.XP_008138204.1
 (degree 3682).
 
 
@@ -107,13 +108,14 @@ def EptesicusFuscus(
 	
 	Datetime: 2021-02-02 17:58:48.906481
 	
-	The undirected graph Eptesicus fuscus has 18067 nodes and 3411597 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02090 and
-	has 2 connected components, where the component with most nodes has 18065 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 377.66, and the node degree mode is 109. The top 5 most central
-	nodes are 29078.XP_008151626.1 (degree 5432), 29078.XP_008144268.1 (degree 3944),
-	29078.XP_008143912.1 (degree 3878), 29078.XP_008144779.1 (degree 3857) and 29078.XP_008138204.1
+	The undirected graph Eptesicus fuscus has 18067 nodes and 3411597 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02090 and has 2 connected components, where the component with most
+	nodes has 18065 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 377.66, and
+	the node degree mode is 109. The top 5 most central nodes are 29078.XP_008151626.1
+	(degree 5432), 29078.XP_008144268.1 (degree 3944), 29078.XP_008143912.1
+	(degree 3878), 29078.XP_008144779.1 (degree 3857) and 29078.XP_008138204.1
 	(degree 3682).
 	
 

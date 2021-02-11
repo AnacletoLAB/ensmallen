@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:08.727399
 
-The undirected graph Rhodococcus sp. UNC23MFCrub11 has 4273 nodes and 452132 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04954
-and has 12 connected components, where the component with most nodes has 4247 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 176, the mean node degree is 211.62, and the node degree mode is 2. The top 5
-most central nodes are 1449068.JMLQ01000004_gene987 (degree 1587), 1449068.JMLQ01000009_gene3666
-(degree 1381), 1449068.JMLQ01000003_gene2450 (degree 1267), 1449068.JMLQ01000005_gene3387
-(degree 1256) and 1449068.JMLQ01000001_gene116 (degree 1243).
+The undirected graph Rhodococcus sp. UNC23MFCrub11 has 4273 nodes and 452132
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04954 and has 12 connected components, where the component
+with most nodes has 4247 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 176, the mean node degree is 211.62,
+and the node degree mode is 2. The top 5 most central nodes are 1449068.JMLQ01000004_gene987
+(degree 1587), 1449068.JMLQ01000009_gene3666 (degree 1381), 1449068.JMLQ01000003_gene2450
+(degree 1267), 1449068.JMLQ01000005_gene3387 (degree 1256) and 1449068.JMLQ01000001_gene116
+(degree 1243).
 
 
 References
@@ -107,14 +108,15 @@ def RhodococcusSp.Unc23mfcrub11(
 	
 	Datetime: 2021-02-03 23:04:08.727399
 	
-	The undirected graph Rhodococcus sp. UNC23MFCrub11 has 4273 nodes and 452132 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04954
-	and has 12 connected components, where the component with most nodes has 4247 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 176, the mean node degree is 211.62, and the node degree mode is 2. The top 5
-	most central nodes are 1449068.JMLQ01000004_gene987 (degree 1587), 1449068.JMLQ01000009_gene3666
-	(degree 1381), 1449068.JMLQ01000003_gene2450 (degree 1267), 1449068.JMLQ01000005_gene3387
-	(degree 1256) and 1449068.JMLQ01000001_gene116 (degree 1243).
+	The undirected graph Rhodococcus sp. UNC23MFCrub11 has 4273 nodes and 452132
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04954 and has 12 connected components, where the component
+	with most nodes has 4247 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 176, the mean node degree is 211.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1449068.JMLQ01000004_gene987
+	(degree 1587), 1449068.JMLQ01000009_gene3666 (degree 1381), 1449068.JMLQ01000003_gene2450
+	(degree 1267), 1449068.JMLQ01000005_gene3387 (degree 1256) and 1449068.JMLQ01000001_gene116
+	(degree 1243).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:37.726886
 
-The undirected graph Kangiella aquimarina has 2415 nodes and 195131 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06694 and
-has 4 connected components, where the component with most nodes has 2409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 161.60, and the node degree mode is 3. The top 5 most central
-nodes are 1122134.KB893650_gene1653 (degree 956), 1122134.KB893650_gene477 (degree
-935), 1122134.KB893650_gene1103 (degree 853), 1122134.KB893651_gene2166 (degree 807)
-and 1122134.KB893650_gene1104 (degree 806).
+The undirected graph Kangiella aquimarina has 2415 nodes and 195131 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06694 and has 4 connected components, where the component with most
+nodes has 2409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 161.60, and
+the node degree mode is 3. The top 5 most central nodes are 1122134.KB893650_gene1653
+(degree 956), 1122134.KB893650_gene477 (degree 935), 1122134.KB893650_gene1103
+(degree 853), 1122134.KB893651_gene2166 (degree 807) and 1122134.KB893650_gene1104
+(degree 806).
 
 
 References
@@ -107,14 +108,15 @@ def KangiellaAquimarina(
 	
 	Datetime: 2021-02-02 22:40:37.726886
 	
-	The undirected graph Kangiella aquimarina has 2415 nodes and 195131 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06694 and
-	has 4 connected components, where the component with most nodes has 2409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 161.60, and the node degree mode is 3. The top 5 most central
-	nodes are 1122134.KB893650_gene1653 (degree 956), 1122134.KB893650_gene477 (degree
-	935), 1122134.KB893650_gene1103 (degree 853), 1122134.KB893651_gene2166 (degree 807)
-	and 1122134.KB893650_gene1104 (degree 806).
+	The undirected graph Kangiella aquimarina has 2415 nodes and 195131 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06694 and has 4 connected components, where the component with most
+	nodes has 2409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 161.60, and
+	the node degree mode is 3. The top 5 most central nodes are 1122134.KB893650_gene1653
+	(degree 956), 1122134.KB893650_gene477 (degree 935), 1122134.KB893650_gene1103
+	(degree 853), 1122134.KB893651_gene2166 (degree 807) and 1122134.KB893650_gene1104
+	(degree 806).
 	
 
 

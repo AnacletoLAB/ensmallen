@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:16.198332
 
-The undirected graph Mollicutes bacterium HR1 has 1807 nodes and 116856 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07162
-and has 11 connected components, where the component with most nodes has 1784 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 129.34, and the node degree mode is 12. The top 5
-most central nodes are 1541959.KQ51_00599 (degree 659), 1541959.KQ51_01118 (degree
-637), 1541959.KQ51_00808 (degree 630), 1541959.KQ51_01603 (degree 610) and 1541959.KQ51_00401
-(degree 609).
+The undirected graph Mollicutes bacterium HR1 has 1807 nodes and 116856
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07162 and has 11 connected components, where the component
+with most nodes has 1784 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 129.34,
+and the node degree mode is 12. The top 5 most central nodes are 1541959.KQ51_00599
+(degree 659), 1541959.KQ51_01118 (degree 637), 1541959.KQ51_00808 (degree
+630), 1541959.KQ51_01603 (degree 610) and 1541959.KQ51_00401 (degree 609).
 
 
 References
@@ -107,14 +107,14 @@ def MollicutesBacteriumHr1(
 	
 	Datetime: 2021-02-03 23:20:16.198332
 	
-	The undirected graph Mollicutes bacterium HR1 has 1807 nodes and 116856 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07162
-	and has 11 connected components, where the component with most nodes has 1784 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 129.34, and the node degree mode is 12. The top 5
-	most central nodes are 1541959.KQ51_00599 (degree 659), 1541959.KQ51_01118 (degree
-	637), 1541959.KQ51_00808 (degree 630), 1541959.KQ51_01603 (degree 610) and 1541959.KQ51_00401
-	(degree 609).
+	The undirected graph Mollicutes bacterium HR1 has 1807 nodes and 116856
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07162 and has 11 connected components, where the component
+	with most nodes has 1784 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 129.34,
+	and the node degree mode is 12. The top 5 most central nodes are 1541959.KQ51_00599
+	(degree 659), 1541959.KQ51_01118 (degree 637), 1541959.KQ51_00808 (degree
+	630), 1541959.KQ51_01603 (degree 610) and 1541959.KQ51_00401 (degree 609).
 	
 
 

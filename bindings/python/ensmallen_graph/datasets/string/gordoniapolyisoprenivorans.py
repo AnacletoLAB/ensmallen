@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:00.439654
 
-The undirected graph Gordonia polyisoprenivorans has 5083 nodes and 903662 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06997
-and has 13 connected components, where the component with most nodes has 5050 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 322, the mean node degree is 355.56, and the node degree mode is 3. The top 5
-most central nodes are 1112204.GPOL_c38910 (degree 2081), 1112204.GPOL_c18930 (degree
-2012), 1112204.GPOL_c26480 (degree 1850), 1112204.GPOL_c25970 (degree 1659) and 1112204.GPOL_c42990
-(degree 1622).
+The undirected graph Gordonia polyisoprenivorans has 5083 nodes and 903662
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06997 and has 13 connected components, where the component
+with most nodes has 5050 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 322, the mean node degree is 355.56,
+and the node degree mode is 3. The top 5 most central nodes are 1112204.GPOL_c38910
+(degree 2081), 1112204.GPOL_c18930 (degree 2012), 1112204.GPOL_c26480 (degree
+1850), 1112204.GPOL_c25970 (degree 1659) and 1112204.GPOL_c42990 (degree
+1622).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaPolyisoprenivorans(
 	
 	Datetime: 2021-02-02 22:26:00.439654
 	
-	The undirected graph Gordonia polyisoprenivorans has 5083 nodes and 903662 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06997
-	and has 13 connected components, where the component with most nodes has 5050 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 322, the mean node degree is 355.56, and the node degree mode is 3. The top 5
-	most central nodes are 1112204.GPOL_c38910 (degree 2081), 1112204.GPOL_c18930 (degree
-	2012), 1112204.GPOL_c26480 (degree 1850), 1112204.GPOL_c25970 (degree 1659) and 1112204.GPOL_c42990
-	(degree 1622).
+	The undirected graph Gordonia polyisoprenivorans has 5083 nodes and 903662
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06997 and has 13 connected components, where the component
+	with most nodes has 5050 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 322, the mean node degree is 355.56,
+	and the node degree mode is 3. The top 5 most central nodes are 1112204.GPOL_c38910
+	(degree 2081), 1112204.GPOL_c18930 (degree 2012), 1112204.GPOL_c26480 (degree
+	1850), 1112204.GPOL_c25970 (degree 1659) and 1112204.GPOL_c42990 (degree
+	1622).
 	
 
 

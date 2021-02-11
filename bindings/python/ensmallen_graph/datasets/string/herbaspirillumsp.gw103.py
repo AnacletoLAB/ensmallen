@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:08.325992
 
-The undirected graph Herbaspirillum sp. GW103 has 4577 nodes and 741723 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07083
-and has 13 connected components, where the component with most nodes has 4549 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 271, the mean node degree is 324.11, and the node degree mode is 1. The top 5
-most central nodes are 1175306.GWL_31040 (degree 1950), 1175306.GWL_46150 (degree
-1803), 1175306.GWL_38300 (degree 1612), 1175306.GWL_25310 (degree 1599) and 1175306.GWL_32840
-(degree 1586).
+The undirected graph Herbaspirillum sp. GW103 has 4577 nodes and 741723
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07083 and has 13 connected components, where the component
+with most nodes has 4549 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 271, the mean node degree is 324.11,
+and the node degree mode is 1. The top 5 most central nodes are 1175306.GWL_31040
+(degree 1950), 1175306.GWL_46150 (degree 1803), 1175306.GWL_38300 (degree
+1612), 1175306.GWL_25310 (degree 1599) and 1175306.GWL_32840 (degree 1586).
 
 
 References
@@ -107,14 +107,14 @@ def HerbaspirillumSp.Gw103(
 	
 	Datetime: 2021-02-02 23:09:08.325992
 	
-	The undirected graph Herbaspirillum sp. GW103 has 4577 nodes and 741723 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07083
-	and has 13 connected components, where the component with most nodes has 4549 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 271, the mean node degree is 324.11, and the node degree mode is 1. The top 5
-	most central nodes are 1175306.GWL_31040 (degree 1950), 1175306.GWL_46150 (degree
-	1803), 1175306.GWL_38300 (degree 1612), 1175306.GWL_25310 (degree 1599) and 1175306.GWL_32840
-	(degree 1586).
+	The undirected graph Herbaspirillum sp. GW103 has 4577 nodes and 741723
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07083 and has 13 connected components, where the component
+	with most nodes has 4549 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 271, the mean node degree is 324.11,
+	and the node degree mode is 1. The top 5 most central nodes are 1175306.GWL_31040
+	(degree 1950), 1175306.GWL_46150 (degree 1803), 1175306.GWL_38300 (degree
+	1612), 1175306.GWL_25310 (degree 1599) and 1175306.GWL_32840 (degree 1586).
 	
 
 

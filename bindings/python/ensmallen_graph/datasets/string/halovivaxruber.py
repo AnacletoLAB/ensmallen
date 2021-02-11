@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:45.902502
 
-The undirected graph Halovivax ruber has 3059 nodes and 245764 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05254 and
-has 31 connected components, where the component with most nodes has 2986 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 160.68, and the node degree mode is 4. The top 5 most central
-nodes are 797302.Halru_0153 (degree 981), 797302.Halru_1821 (degree 978), 797302.Halru_2084
-(degree 973), 797302.Halru_0450 (degree 929) and 797302.Halru_1701 (degree 824).
+The undirected graph Halovivax ruber has 3059 nodes and 245764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05254 and has 31 connected components, where the component with most
+nodes has 2986 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 160.68, and
+the node degree mode is 4. The top 5 most central nodes are 797302.Halru_0153
+(degree 981), 797302.Halru_1821 (degree 978), 797302.Halru_2084 (degree
+973), 797302.Halru_0450 (degree 929) and 797302.Halru_1701 (degree 824).
 
 
 References
@@ -106,13 +107,14 @@ def HalovivaxRuber(
 	
 	Datetime: 2021-02-02 21:45:45.902502
 	
-	The undirected graph Halovivax ruber has 3059 nodes and 245764 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05254 and
-	has 31 connected components, where the component with most nodes has 2986 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 160.68, and the node degree mode is 4. The top 5 most central
-	nodes are 797302.Halru_0153 (degree 981), 797302.Halru_1821 (degree 978), 797302.Halru_2084
-	(degree 973), 797302.Halru_0450 (degree 929) and 797302.Halru_1701 (degree 824).
+	The undirected graph Halovivax ruber has 3059 nodes and 245764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05254 and has 31 connected components, where the component with most
+	nodes has 2986 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 160.68, and
+	the node degree mode is 4. The top 5 most central nodes are 797302.Halru_0153
+	(degree 981), 797302.Halru_1821 (degree 978), 797302.Halru_2084 (degree
+	973), 797302.Halru_0450 (degree 929) and 797302.Halru_1701 (degree 824).
 	
 
 

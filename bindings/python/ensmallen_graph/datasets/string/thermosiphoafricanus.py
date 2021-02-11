@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:32.491753
 
-The undirected graph Thermosipho africanus has 1945 nodes and 163370 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08641 and
-has 5 connected components, where the component with most nodes has 1937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 167.99, and the node degree mode is 5. The top 5 most central
-nodes are 484019.THA_1742 (degree 954), 484019.THA_211 (degree 923), 484019.THA_1829
-(degree 819), 484019.THA_1351 (degree 814) and 484019.THA_1090 (degree 780).
+The undirected graph Thermosipho africanus has 1945 nodes and 163370 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08641 and has 5 connected components, where the component with most
+nodes has 1937 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 167.99, and
+the node degree mode is 5. The top 5 most central nodes are 484019.THA_1742
+(degree 954), 484019.THA_211 (degree 923), 484019.THA_1829 (degree 819),
+484019.THA_1351 (degree 814) and 484019.THA_1090 (degree 780).
 
 
 References
@@ -106,13 +107,14 @@ def ThermosiphoAfricanus(
 	
 	Datetime: 2021-02-02 20:58:32.491753
 	
-	The undirected graph Thermosipho africanus has 1945 nodes and 163370 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08641 and
-	has 5 connected components, where the component with most nodes has 1937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 167.99, and the node degree mode is 5. The top 5 most central
-	nodes are 484019.THA_1742 (degree 954), 484019.THA_211 (degree 923), 484019.THA_1829
-	(degree 819), 484019.THA_1351 (degree 814) and 484019.THA_1090 (degree 780).
+	The undirected graph Thermosipho africanus has 1945 nodes and 163370 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08641 and has 5 connected components, where the component with most
+	nodes has 1937 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 167.99, and
+	the node degree mode is 5. The top 5 most central nodes are 484019.THA_1742
+	(degree 954), 484019.THA_211 (degree 923), 484019.THA_1829 (degree 819),
+	484019.THA_1351 (degree 814) and 484019.THA_1090 (degree 780).
 	
 
 

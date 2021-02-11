@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:12.183497
 
-The undirected graph Bacillus methanolicus PB1 has 3373 nodes and 296005 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05205
-and has 19 connected components, where the component with most nodes has 3328 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 175.51, and the node degree mode is 1. The top 5
-most central nodes are 997296.PB1_16759 (degree 1182), 997296.PB1_07242 (degree 1029),
-997296.PB1_15274 (degree 977), 997296.PB1_01330 (degree 956) and 997296.PB1_17044
-(degree 936).
+The undirected graph Bacillus methanolicus PB1 has 3373 nodes and 296005
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05205 and has 19 connected components, where the component
+with most nodes has 3328 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 175.51,
+and the node degree mode is 1. The top 5 most central nodes are 997296.PB1_16759
+(degree 1182), 997296.PB1_07242 (degree 1029), 997296.PB1_15274 (degree
+977), 997296.PB1_01330 (degree 956) and 997296.PB1_17044 (degree 936).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusMethanolicusPb1(
 	
 	Datetime: 2021-02-02 22:05:12.183497
 	
-	The undirected graph Bacillus methanolicus PB1 has 3373 nodes and 296005 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05205
-	and has 19 connected components, where the component with most nodes has 3328 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 175.51, and the node degree mode is 1. The top 5
-	most central nodes are 997296.PB1_16759 (degree 1182), 997296.PB1_07242 (degree 1029),
-	997296.PB1_15274 (degree 977), 997296.PB1_01330 (degree 956) and 997296.PB1_17044
-	(degree 936).
+	The undirected graph Bacillus methanolicus PB1 has 3373 nodes and 296005
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05205 and has 19 connected components, where the component
+	with most nodes has 3328 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 175.51,
+	and the node degree mode is 1. The top 5 most central nodes are 997296.PB1_16759
+	(degree 1182), 997296.PB1_07242 (degree 1029), 997296.PB1_15274 (degree
+	977), 997296.PB1_01330 (degree 956) and 997296.PB1_17044 (degree 936).
 	
 
 

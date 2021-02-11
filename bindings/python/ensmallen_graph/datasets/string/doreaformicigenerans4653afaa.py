@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:48.856316
 
-The undirected graph Dorea formicigenerans 4653AFAA has 3807 nodes and 248699 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03433
-and has 7 connected components, where the component with most nodes has 3792 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 130.65, and the node degree mode is 3. The top 5
-most central nodes are 742765.HMPREF9457_00263 (degree 1387), 742765.HMPREF9457_00773
-(degree 1225), 742765.HMPREF9457_00962 (degree 1095), 742765.HMPREF9457_03391 (degree
+The undirected graph Dorea formicigenerans 4653AFAA has 3807 nodes and
+248699 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03433 and has 7 connected components, where the
+component with most nodes has 3792 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 130.65, and the node degree mode is 3. The top 5 most central nodes
+are 742765.HMPREF9457_00263 (degree 1387), 742765.HMPREF9457_00773 (degree
+1225), 742765.HMPREF9457_00962 (degree 1095), 742765.HMPREF9457_03391 (degree
 1002) and 742765.HMPREF9457_00100 (degree 940).
 
 
@@ -107,13 +108,14 @@ def DoreaFormicigenerans4653afaa(
 	
 	Datetime: 2021-02-02 21:37:48.856316
 	
-	The undirected graph Dorea formicigenerans 4653AFAA has 3807 nodes and 248699 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03433
-	and has 7 connected components, where the component with most nodes has 3792 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 130.65, and the node degree mode is 3. The top 5
-	most central nodes are 742765.HMPREF9457_00263 (degree 1387), 742765.HMPREF9457_00773
-	(degree 1225), 742765.HMPREF9457_00962 (degree 1095), 742765.HMPREF9457_03391 (degree
+	The undirected graph Dorea formicigenerans 4653AFAA has 3807 nodes and
+	248699 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03433 and has 7 connected components, where the
+	component with most nodes has 3792 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 130.65, and the node degree mode is 3. The top 5 most central nodes
+	are 742765.HMPREF9457_00263 (degree 1387), 742765.HMPREF9457_00773 (degree
+	1225), 742765.HMPREF9457_00962 (degree 1095), 742765.HMPREF9457_03391 (degree
 	1002) and 742765.HMPREF9457_00100 (degree 940).
 	
 

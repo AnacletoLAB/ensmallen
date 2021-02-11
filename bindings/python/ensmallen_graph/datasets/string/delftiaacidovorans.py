@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:47.691336
 
-The undirected graph Delftia acidovorans has 6006 nodes and 755711 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-has 26 connected components, where the component with most nodes has 5939 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 251.65, and the node degree mode is 2. The top 5 most central
-nodes are 398578.Daci_1508 (degree 2271), 398578.Daci_4352 (degree 1895), 398578.Daci_1576
-(degree 1865), 398578.Daci_5325 (degree 1795) and 398578.Daci_4515 (degree 1679).
+The undirected graph Delftia acidovorans has 6006 nodes and 755711 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04191 and has 26 connected components, where the component with most
+nodes has 5939 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 251.65, and
+the node degree mode is 2. The top 5 most central nodes are 398578.Daci_1508
+(degree 2271), 398578.Daci_4352 (degree 1895), 398578.Daci_1576 (degree
+1865), 398578.Daci_5325 (degree 1795) and 398578.Daci_4515 (degree 1679).
 
 
 References
@@ -106,13 +107,14 @@ def DelftiaAcidovorans(
 	
 	Datetime: 2021-02-02 20:42:47.691336
 	
-	The undirected graph Delftia acidovorans has 6006 nodes and 755711 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-	has 26 connected components, where the component with most nodes has 5939 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 251.65, and the node degree mode is 2. The top 5 most central
-	nodes are 398578.Daci_1508 (degree 2271), 398578.Daci_4352 (degree 1895), 398578.Daci_1576
-	(degree 1865), 398578.Daci_5325 (degree 1795) and 398578.Daci_4515 (degree 1679).
+	The undirected graph Delftia acidovorans has 6006 nodes and 755711 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04191 and has 26 connected components, where the component with most
+	nodes has 5939 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 251.65, and
+	the node degree mode is 2. The top 5 most central nodes are 398578.Daci_1508
+	(degree 2271), 398578.Daci_4352 (degree 1895), 398578.Daci_1576 (degree
+	1865), 398578.Daci_5325 (degree 1795) and 398578.Daci_4515 (degree 1679).
 	
 
 

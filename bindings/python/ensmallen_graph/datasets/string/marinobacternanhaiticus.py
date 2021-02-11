@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:55.789181
 
-The undirected graph Marinobacter nanhaiticus has 4729 nodes and 599985 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05367
-and has 12 connected components, where the component with most nodes has 4701 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 253.75, and the node degree mode is 3. The top 5
-most central nodes are 626887.J057_04796 (degree 1808), 626887.J057_23305 (degree
-1552), 626887.J057_14465 (degree 1501), 626887.J057_23300 (degree 1452) and 626887.J057_22760
-(degree 1423).
+The undirected graph Marinobacter nanhaiticus has 4729 nodes and 599985
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05367 and has 12 connected components, where the component
+with most nodes has 4701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 253.75,
+and the node degree mode is 3. The top 5 most central nodes are 626887.J057_04796
+(degree 1808), 626887.J057_23305 (degree 1552), 626887.J057_14465 (degree
+1501), 626887.J057_23300 (degree 1452) and 626887.J057_22760 (degree 1423).
 
 
 References
@@ -107,14 +107,14 @@ def MarinobacterNanhaiticus(
 	
 	Datetime: 2021-02-02 21:20:55.789181
 	
-	The undirected graph Marinobacter nanhaiticus has 4729 nodes and 599985 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05367
-	and has 12 connected components, where the component with most nodes has 4701 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 253.75, and the node degree mode is 3. The top 5
-	most central nodes are 626887.J057_04796 (degree 1808), 626887.J057_23305 (degree
-	1552), 626887.J057_14465 (degree 1501), 626887.J057_23300 (degree 1452) and 626887.J057_22760
-	(degree 1423).
+	The undirected graph Marinobacter nanhaiticus has 4729 nodes and 599985
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05367 and has 12 connected components, where the component
+	with most nodes has 4701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 253.75,
+	and the node degree mode is 3. The top 5 most central nodes are 626887.J057_04796
+	(degree 1808), 626887.J057_23305 (degree 1552), 626887.J057_14465 (degree
+	1501), 626887.J057_23300 (degree 1452) and 626887.J057_22760 (degree 1423).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:52.442535
 
-The undirected graph Streptomyces griseus has 7113 nodes and 1309842 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05179 and
-has 17 connected components, where the component with most nodes has 7071 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 335,
-the mean node degree is 368.30, and the node degree mode is 2. The top 5 most central
-nodes are 455632.SGR_1773 (degree 3561), 455632.SGR_3601 (degree 2320), 455632.SGR_5527
-(degree 2272), 455632.SGR_3286 (degree 2221) and 455632.SGR_5778 (degree 2212).
+The undirected graph Streptomyces griseus has 7113 nodes and 1309842 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05179 and has 17 connected components, where the component with most
+nodes has 7071 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 335, the mean node degree is 368.30, and
+the node degree mode is 2. The top 5 most central nodes are 455632.SGR_1773
+(degree 3561), 455632.SGR_3601 (degree 2320), 455632.SGR_5527 (degree 2272),
+455632.SGR_3286 (degree 2221) and 455632.SGR_5778 (degree 2212).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesGriseus(
 	
 	Datetime: 2021-02-02 20:52:52.442535
 	
-	The undirected graph Streptomyces griseus has 7113 nodes and 1309842 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05179 and
-	has 17 connected components, where the component with most nodes has 7071 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 335,
-	the mean node degree is 368.30, and the node degree mode is 2. The top 5 most central
-	nodes are 455632.SGR_1773 (degree 3561), 455632.SGR_3601 (degree 2320), 455632.SGR_5527
-	(degree 2272), 455632.SGR_3286 (degree 2221) and 455632.SGR_5778 (degree 2212).
+	The undirected graph Streptomyces griseus has 7113 nodes and 1309842 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05179 and has 17 connected components, where the component with most
+	nodes has 7071 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 335, the mean node degree is 368.30, and
+	the node degree mode is 2. The top 5 most central nodes are 455632.SGR_1773
+	(degree 3561), 455632.SGR_3601 (degree 2320), 455632.SGR_5527 (degree 2272),
+	455632.SGR_3286 (degree 2221) and 455632.SGR_5778 (degree 2212).
 	
 
 

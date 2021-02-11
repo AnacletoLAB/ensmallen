@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:59:06.336999
 
-The undirected graph eco-foodweb-baywet has 128 nodes and 2075 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.25529
-and is connected, as it has a single component. The graph median node degree is 31,
-the mean node degree is 32.42 and the node degree mode is 31. The top 5 most central
-nodes are 57 (degree 110), 18 (degree 89), 85 (degree 75), 21 (degree 72) and 84
-(degree 64).
+The undirected graph eco-foodweb-baywet has 128 nodes and 2075 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.25529 and is connected, as it has a single component. The
+graph median node degree is 31, the mean node degree is 32.42 and the node
+degree mode is 31. The top 5 most central nodes are 57 (degree 110), 18
+(degree 89), 85 (degree 75), 21 (degree 72) and 84 (degree 64).
 
 
 References
@@ -122,12 +122,12 @@ def EcoFoodwebBaywet(
 	
 	Datetime: 2021-02-03 23:59:06.336999
 	
-	The undirected graph eco-foodweb-baywet has 128 nodes and 2075 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.25529
-	and is connected, as it has a single component. The graph median node degree is 31,
-	the mean node degree is 32.42 and the node degree mode is 31. The top 5 most central
-	nodes are 57 (degree 110), 18 (degree 89), 85 (degree 75), 21 (degree 72) and 84
-	(degree 64).
+	The undirected graph eco-foodweb-baywet has 128 nodes and 2075 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.25529 and is connected, as it has a single component. The
+	graph median node degree is 31, the mean node degree is 32.42 and the node
+	degree mode is 31. The top 5 most central nodes are 57 (degree 110), 18
+	(degree 89), 85 (degree 75), 21 (degree 72) and 84 (degree 64).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:50.009451
 
-The undirected graph Thermophagus xiamenensis has 2942 nodes and 294405 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06805
-and has 20 connected components, where the component with most nodes has 2896 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 200.14, and the node degree mode is 1. The top 5
-most central nodes are 385682.AFSL01000065_gene1629 (degree 934), 385682.AFSL01000006_gene2356
-(degree 865), 385682.AFSL01000055_gene394 (degree 835), 385682.AFSL01000024_gene2068
-(degree 789) and 385682.AFSL01000063_gene1540 (degree 760).
+The undirected graph Thermophagus xiamenensis has 2942 nodes and 294405
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06805 and has 20 connected components, where the component
+with most nodes has 2896 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 200.14,
+and the node degree mode is 1. The top 5 most central nodes are 385682.AFSL01000065_gene1629
+(degree 934), 385682.AFSL01000006_gene2356 (degree 865), 385682.AFSL01000055_gene394
+(degree 835), 385682.AFSL01000024_gene2068 (degree 789) and 385682.AFSL01000063_gene1540
+(degree 760).
 
 
 References
@@ -107,14 +108,15 @@ def ThermophagusXiamenensis(
 	
 	Datetime: 2021-02-02 20:37:50.009451
 	
-	The undirected graph Thermophagus xiamenensis has 2942 nodes and 294405 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06805
-	and has 20 connected components, where the component with most nodes has 2896 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 200.14, and the node degree mode is 1. The top 5
-	most central nodes are 385682.AFSL01000065_gene1629 (degree 934), 385682.AFSL01000006_gene2356
-	(degree 865), 385682.AFSL01000055_gene394 (degree 835), 385682.AFSL01000024_gene2068
-	(degree 789) and 385682.AFSL01000063_gene1540 (degree 760).
+	The undirected graph Thermophagus xiamenensis has 2942 nodes and 294405
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06805 and has 20 connected components, where the component
+	with most nodes has 2896 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 200.14,
+	and the node degree mode is 1. The top 5 most central nodes are 385682.AFSL01000065_gene1629
+	(degree 934), 385682.AFSL01000006_gene2356 (degree 865), 385682.AFSL01000055_gene394
+	(degree 835), 385682.AFSL01000024_gene2068 (degree 789) and 385682.AFSL01000063_gene1540
+	(degree 760).
 	
 
 

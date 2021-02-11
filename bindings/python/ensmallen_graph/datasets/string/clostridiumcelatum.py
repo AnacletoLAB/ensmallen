@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:17.209407
 
-The undirected graph Clostridium celatum has 3424 nodes and 275320 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04698 and
-has 14 connected components, where the component with most nodes has 3388 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 160.82, and the node degree mode is 7. The top 5 most central
-nodes are 545697.HMPREF0216_02185 (degree 1310), 545697.HMPREF0216_03364 (degree
-1232), 545697.HMPREF0216_03256 (degree 1180), 545697.HMPREF0216_00968 (degree 1149)
-and 545697.HMPREF0216_02039 (degree 992).
+The undirected graph Clostridium celatum has 3424 nodes and 275320 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04698 and has 14 connected components, where the component with most
+nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 160.82, and
+the node degree mode is 7. The top 5 most central nodes are 545697.HMPREF0216_02185
+(degree 1310), 545697.HMPREF0216_03364 (degree 1232), 545697.HMPREF0216_03256
+(degree 1180), 545697.HMPREF0216_00968 (degree 1149) and 545697.HMPREF0216_02039
+(degree 992).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumCelatum(
 	
 	Datetime: 2021-02-02 21:08:17.209407
 	
-	The undirected graph Clostridium celatum has 3424 nodes and 275320 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04698 and
-	has 14 connected components, where the component with most nodes has 3388 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 160.82, and the node degree mode is 7. The top 5 most central
-	nodes are 545697.HMPREF0216_02185 (degree 1310), 545697.HMPREF0216_03364 (degree
-	1232), 545697.HMPREF0216_03256 (degree 1180), 545697.HMPREF0216_00968 (degree 1149)
-	and 545697.HMPREF0216_02039 (degree 992).
+	The undirected graph Clostridium celatum has 3424 nodes and 275320 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04698 and has 14 connected components, where the component with most
+	nodes has 3388 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 160.82, and
+	the node degree mode is 7. The top 5 most central nodes are 545697.HMPREF0216_02185
+	(degree 1310), 545697.HMPREF0216_03364 (degree 1232), 545697.HMPREF0216_03256
+	(degree 1180), 545697.HMPREF0216_00968 (degree 1149) and 545697.HMPREF0216_02039
+	(degree 992).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:32.009944
 
-The undirected graph Pelagibacter ubique HTCC7214 has 1427 nodes and 96366 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09471
-and has 2 connected components, where the component with most nodes has 1425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 135.06, and the node degree mode is 104. The top
-5 most central nodes are 1400524.KL370779_gene278 (degree 677), 1400524.KL370779_gene446
-(degree 540), 1400524.KL370779_gene700 (degree 538), 1400524.KL370779_gene579 (degree
-531) and 1400524.KL370779_gene1171 (degree 517).
+The undirected graph Pelagibacter ubique HTCC7214 has 1427 nodes and 96366
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09471 and has 2 connected components, where the component
+with most nodes has 1425 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 135.06,
+and the node degree mode is 104. The top 5 most central nodes are 1400524.KL370779_gene278
+(degree 677), 1400524.KL370779_gene446 (degree 540), 1400524.KL370779_gene700
+(degree 538), 1400524.KL370779_gene579 (degree 531) and 1400524.KL370779_gene1171
+(degree 517).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterUbiqueHtcc7214(
 	
 	Datetime: 2021-02-03 22:31:32.009944
 	
-	The undirected graph Pelagibacter ubique HTCC7214 has 1427 nodes and 96366 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09471
-	and has 2 connected components, where the component with most nodes has 1425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 135.06, and the node degree mode is 104. The top
-	5 most central nodes are 1400524.KL370779_gene278 (degree 677), 1400524.KL370779_gene446
-	(degree 540), 1400524.KL370779_gene700 (degree 538), 1400524.KL370779_gene579 (degree
-	531) and 1400524.KL370779_gene1171 (degree 517).
+	The undirected graph Pelagibacter ubique HTCC7214 has 1427 nodes and 96366
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09471 and has 2 connected components, where the component
+	with most nodes has 1425 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 135.06,
+	and the node degree mode is 104. The top 5 most central nodes are 1400524.KL370779_gene278
+	(degree 677), 1400524.KL370779_gene446 (degree 540), 1400524.KL370779_gene700
+	(degree 538), 1400524.KL370779_gene579 (degree 531) and 1400524.KL370779_gene1171
+	(degree 517).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:15.995722
 
-The undirected graph Gracilimonas tropica has 3270 nodes and 245152 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04587 and
-has 24 connected components, where the component with most nodes has 3211 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 149.94, and the node degree mode is 7. The top 5 most central
-nodes are 1121930.AQXG01000002_gene2352 (degree 1435), 1121930.AQXG01000001_gene1459
-(degree 1225), 1121930.AQXG01000012_gene3208 (degree 970), 1121930.AQXG01000001_gene1142
-(degree 906) and 1121930.AQXG01000008_gene177 (degree 849).
+The undirected graph Gracilimonas tropica has 3270 nodes and 245152 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04587 and has 24 connected components, where the component with most
+nodes has 3211 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 149.94, and
+the node degree mode is 7. The top 5 most central nodes are 1121930.AQXG01000002_gene2352
+(degree 1435), 1121930.AQXG01000001_gene1459 (degree 1225), 1121930.AQXG01000012_gene3208
+(degree 970), 1121930.AQXG01000001_gene1142 (degree 906) and 1121930.AQXG01000008_gene177
+(degree 849).
 
 
 References
@@ -107,14 +108,15 @@ def GracilimonasTropica(
 	
 	Datetime: 2021-02-02 22:39:15.995722
 	
-	The undirected graph Gracilimonas tropica has 3270 nodes and 245152 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04587 and
-	has 24 connected components, where the component with most nodes has 3211 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 149.94, and the node degree mode is 7. The top 5 most central
-	nodes are 1121930.AQXG01000002_gene2352 (degree 1435), 1121930.AQXG01000001_gene1459
-	(degree 1225), 1121930.AQXG01000012_gene3208 (degree 970), 1121930.AQXG01000001_gene1142
-	(degree 906) and 1121930.AQXG01000008_gene177 (degree 849).
+	The undirected graph Gracilimonas tropica has 3270 nodes and 245152 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04587 and has 24 connected components, where the component with most
+	nodes has 3211 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 149.94, and
+	the node degree mode is 7. The top 5 most central nodes are 1121930.AQXG01000002_gene2352
+	(degree 1435), 1121930.AQXG01000001_gene1459 (degree 1225), 1121930.AQXG01000012_gene3208
+	(degree 970), 1121930.AQXG01000001_gene1142 (degree 906) and 1121930.AQXG01000008_gene177
+	(degree 849).
 	
 
 

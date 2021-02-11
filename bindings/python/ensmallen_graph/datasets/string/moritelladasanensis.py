@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:23.051082
 
-The undirected graph Moritella dasanensis has 4189 nodes and 470074 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05359 and
-has 15 connected components, where the component with most nodes has 4153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 224.43, and the node degree mode is 1. The top 5 most central
-nodes are 1201293.AKXQ01000028_gene1322 (degree 1779), 1201293.AKXQ01000034_gene955
-(degree 1424), 1201293.AKXQ01000005_gene163 (degree 1326), 1201293.AKXQ01000013_gene3648
-(degree 1232) and 1201293.AKXQ01000013_gene3647 (degree 1154).
+The undirected graph Moritella dasanensis has 4189 nodes and 470074 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05359 and has 15 connected components, where the component with most
+nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 224.43, and
+the node degree mode is 1. The top 5 most central nodes are 1201293.AKXQ01000028_gene1322
+(degree 1779), 1201293.AKXQ01000034_gene955 (degree 1424), 1201293.AKXQ01000005_gene163
+(degree 1326), 1201293.AKXQ01000013_gene3648 (degree 1232) and 1201293.AKXQ01000013_gene3647
+(degree 1154).
 
 
 References
@@ -107,14 +108,15 @@ def MoritellaDasanensis(
 	
 	Datetime: 2021-02-02 23:14:23.051082
 	
-	The undirected graph Moritella dasanensis has 4189 nodes and 470074 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05359 and
-	has 15 connected components, where the component with most nodes has 4153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 224.43, and the node degree mode is 1. The top 5 most central
-	nodes are 1201293.AKXQ01000028_gene1322 (degree 1779), 1201293.AKXQ01000034_gene955
-	(degree 1424), 1201293.AKXQ01000005_gene163 (degree 1326), 1201293.AKXQ01000013_gene3648
-	(degree 1232) and 1201293.AKXQ01000013_gene3647 (degree 1154).
+	The undirected graph Moritella dasanensis has 4189 nodes and 470074 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05359 and has 15 connected components, where the component with most
+	nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 224.43, and
+	the node degree mode is 1. The top 5 most central nodes are 1201293.AKXQ01000028_gene1322
+	(degree 1779), 1201293.AKXQ01000034_gene955 (degree 1424), 1201293.AKXQ01000005_gene163
+	(degree 1326), 1201293.AKXQ01000013_gene3648 (degree 1232) and 1201293.AKXQ01000013_gene3647
+	(degree 1154).
 	
 
 

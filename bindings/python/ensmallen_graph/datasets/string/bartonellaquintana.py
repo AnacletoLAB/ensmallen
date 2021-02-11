@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:41.805350
 
-The undirected graph Bartonella quintana has 1123 nodes and 77267 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12265
-and has 2 connected components, where the component with most nodes has 1120 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 128, the mean node degree is 137.61, and the node degree mode is 5. The top 5
-most central nodes are 283165.BQ00060 (degree 588), 283165.BQ01690 (degree 511),
-283165.BQ00780 (degree 506), 283165.BQ06780 (degree 492) and 283165.BQ08480 (degree
-473).
+The undirected graph Bartonella quintana has 1123 nodes and 77267 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12265 and has 2 connected components, where the component
+with most nodes has 1120 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 128, the mean node degree is 137.61,
+and the node degree mode is 5. The top 5 most central nodes are 283165.BQ00060
+(degree 588), 283165.BQ01690 (degree 511), 283165.BQ00780 (degree 506),
+283165.BQ06780 (degree 492) and 283165.BQ08480 (degree 473).
 
 
 References
@@ -107,14 +107,14 @@ def BartonellaQuintana(
 	
 	Datetime: 2021-02-02 20:18:41.805350
 	
-	The undirected graph Bartonella quintana has 1123 nodes and 77267 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12265
-	and has 2 connected components, where the component with most nodes has 1120 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 128, the mean node degree is 137.61, and the node degree mode is 5. The top 5
-	most central nodes are 283165.BQ00060 (degree 588), 283165.BQ01690 (degree 511),
-	283165.BQ00780 (degree 506), 283165.BQ06780 (degree 492) and 283165.BQ08480 (degree
-	473).
+	The undirected graph Bartonella quintana has 1123 nodes and 77267 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12265 and has 2 connected components, where the component
+	with most nodes has 1120 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 128, the mean node degree is 137.61,
+	and the node degree mode is 5. The top 5 most central nodes are 283165.BQ00060
+	(degree 588), 283165.BQ01690 (degree 511), 283165.BQ00780 (degree 506),
+	283165.BQ06780 (degree 492) and 283165.BQ08480 (degree 473).
 	
 
 

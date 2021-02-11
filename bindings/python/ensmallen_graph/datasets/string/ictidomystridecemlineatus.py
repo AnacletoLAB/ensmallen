@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:02.796560
 
-The undirected graph Ictidomys tridecemlineatus has 18572 nodes and 3848813 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02232
-and has 3 connected components, where the component with most nodes has 18568 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 293, the mean node degree is 414.47, and the node degree mode is 4. The top 5
-most central nodes are 43179.ENSSTOP00000006563 (degree 4314), 43179.ENSSTOP00000023114
-(degree 4153), 43179.ENSSTOP00000000787 (degree 3904), 43179.ENSSTOP00000021453 (degree
-3807) and 43179.ENSSTOP00000002981 (degree 3729).
+The undirected graph Ictidomys tridecemlineatus has 18572 nodes and 3848813
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02232 and has 3 connected components, where the component
+with most nodes has 18568 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 293, the mean node degree
+is 414.47, and the node degree mode is 4. The top 5 most central nodes
+are 43179.ENSSTOP00000006563 (degree 4314), 43179.ENSSTOP00000023114 (degree
+4153), 43179.ENSSTOP00000000787 (degree 3904), 43179.ENSSTOP00000021453
+(degree 3807) and 43179.ENSSTOP00000002981 (degree 3729).
 
 
 References
@@ -107,14 +108,15 @@ def IctidomysTridecemlineatus(
 	
 	Datetime: 2021-02-02 18:14:02.796560
 	
-	The undirected graph Ictidomys tridecemlineatus has 18572 nodes and 3848813 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02232
-	and has 3 connected components, where the component with most nodes has 18568 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 293, the mean node degree is 414.47, and the node degree mode is 4. The top 5
-	most central nodes are 43179.ENSSTOP00000006563 (degree 4314), 43179.ENSSTOP00000023114
-	(degree 4153), 43179.ENSSTOP00000000787 (degree 3904), 43179.ENSSTOP00000021453 (degree
-	3807) and 43179.ENSSTOP00000002981 (degree 3729).
+	The undirected graph Ictidomys tridecemlineatus has 18572 nodes and 3848813
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02232 and has 3 connected components, where the component
+	with most nodes has 18568 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 293, the mean node degree
+	is 414.47, and the node degree mode is 4. The top 5 most central nodes
+	are 43179.ENSSTOP00000006563 (degree 4314), 43179.ENSSTOP00000023114 (degree
+	4153), 43179.ENSSTOP00000000787 (degree 3904), 43179.ENSSTOP00000021453
+	(degree 3807) and 43179.ENSSTOP00000002981 (degree 3729).
 	
 
 

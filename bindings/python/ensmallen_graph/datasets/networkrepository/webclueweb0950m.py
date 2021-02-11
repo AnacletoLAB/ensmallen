@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 13:00:23.005911
 
-The undirected graph web-ClueWeb09-50m has 147925593 nodes and 446766953 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and has 753328 connected components, where the component with most nodes
-has 134873565 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 1, the mean node degree is 6.04, and the node degree mode is
-1. The top 5 most central nodes are 3 (degree 308477), 8 (degree 261425), 6 (degree
-260139), 12 (degree 238363) and 0 (degree 232895).
+The undirected graph web-ClueWeb09-50m has 147925593 nodes and 446766953
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and has 753328 connected components,
+where the component with most nodes has 134873565 nodes and the component
+with the least nodes has 2 nodes. The graph median node degree is 1, the
+mean node degree is 6.04, and the node degree mode is 1. The top 5 most
+central nodes are 3 (degree 308477), 8 (degree 261425), 6 (degree 260139),
+12 (degree 238363) and 0 (degree 232895).
 
 
 References
@@ -110,13 +111,14 @@ def WebClueweb0950m(
 	
 	Datetime: 2021-02-06 13:00:23.005911
 	
-	The undirected graph web-ClueWeb09-50m has 147925593 nodes and 446766953 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and has 753328 connected components, where the component with most nodes
-	has 134873565 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 1, the mean node degree is 6.04, and the node degree mode is
-	1. The top 5 most central nodes are 3 (degree 308477), 8 (degree 261425), 6 (degree
-	260139), 12 (degree 238363) and 0 (degree 232895).
+	The undirected graph web-ClueWeb09-50m has 147925593 nodes and 446766953
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and has 753328 connected components,
+	where the component with most nodes has 134873565 nodes and the component
+	with the least nodes has 2 nodes. The graph median node degree is 1, the
+	mean node degree is 6.04, and the node degree mode is 1. The top 5 most
+	central nodes are 3 (degree 308477), 8 (degree 261425), 6 (degree 260139),
+	12 (degree 238363) and 0 (degree 232895).
 	
 
 

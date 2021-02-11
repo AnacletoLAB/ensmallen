@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:30:42.193730
 
-The undirected graph Alligator mississippiensis has 17566 nodes and 3418021 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02216
-and has 6 connected components, where the component with most nodes has 17556 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 275, the mean node degree is 389.16, and the node degree mode is 181. The top
-5 most central nodes are 8496.XP_006270072.1 (degree 3908), 8496.XP_006274645.1 (degree
-3810), 8496.XP_006258426.1 (degree 3662), 8496.XP_006265782.1 (degree 3446) and 8496.XP_006267179.1
-(degree 3232).
+The undirected graph Alligator mississippiensis has 17566 nodes and 3418021
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02216 and has 6 connected components, where the component
+with most nodes has 17556 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 275, the mean node degree
+is 389.16, and the node degree mode is 181. The top 5 most central nodes
+are 8496.XP_006270072.1 (degree 3908), 8496.XP_006274645.1 (degree 3810),
+8496.XP_006258426.1 (degree 3662), 8496.XP_006265782.1 (degree 3446) and
+8496.XP_006267179.1 (degree 3232).
 
 
 References
@@ -107,14 +108,15 @@ def AlligatorMississippiensis(
 	
 	Datetime: 2021-02-02 17:30:42.193730
 	
-	The undirected graph Alligator mississippiensis has 17566 nodes and 3418021 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02216
-	and has 6 connected components, where the component with most nodes has 17556 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 275, the mean node degree is 389.16, and the node degree mode is 181. The top
-	5 most central nodes are 8496.XP_006270072.1 (degree 3908), 8496.XP_006274645.1 (degree
-	3810), 8496.XP_006258426.1 (degree 3662), 8496.XP_006265782.1 (degree 3446) and 8496.XP_006267179.1
-	(degree 3232).
+	The undirected graph Alligator mississippiensis has 17566 nodes and 3418021
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02216 and has 6 connected components, where the component
+	with most nodes has 17556 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 275, the mean node degree
+	is 389.16, and the node degree mode is 181. The top 5 most central nodes
+	are 8496.XP_006270072.1 (degree 3908), 8496.XP_006274645.1 (degree 3810),
+	8496.XP_006258426.1 (degree 3662), 8496.XP_006265782.1 (degree 3446) and
+	8496.XP_006267179.1 (degree 3232).
 	
 
 

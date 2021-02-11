@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:10.597930
 
-The undirected graph Fervidobacterium nodosum has 1746 nodes and 133124 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08739
-and has 3 connected components, where the component with most nodes has 1738 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 152.49, and the node degree mode is 50. The top 5
-most central nodes are 381764.Fnod_1483 (degree 917), 381764.Fnod_0891 (degree 913),
-381764.Fnod_0360 (degree 885), 381764.Fnod_0796 (degree 775) and 381764.Fnod_1233
-(degree 752).
+The undirected graph Fervidobacterium nodosum has 1746 nodes and 133124
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08739 and has 3 connected components, where the component
+with most nodes has 1738 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 152.49,
+and the node degree mode is 50. The top 5 most central nodes are 381764.Fnod_1483
+(degree 917), 381764.Fnod_0891 (degree 913), 381764.Fnod_0360 (degree 885),
+381764.Fnod_0796 (degree 775) and 381764.Fnod_1233 (degree 752).
 
 
 References
@@ -107,14 +107,14 @@ def FervidobacteriumNodosum(
 	
 	Datetime: 2021-02-02 20:37:10.597930
 	
-	The undirected graph Fervidobacterium nodosum has 1746 nodes and 133124 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08739
-	and has 3 connected components, where the component with most nodes has 1738 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 152.49, and the node degree mode is 50. The top 5
-	most central nodes are 381764.Fnod_1483 (degree 917), 381764.Fnod_0891 (degree 913),
-	381764.Fnod_0360 (degree 885), 381764.Fnod_0796 (degree 775) and 381764.Fnod_1233
-	(degree 752).
+	The undirected graph Fervidobacterium nodosum has 1746 nodes and 133124
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08739 and has 3 connected components, where the component
+	with most nodes has 1738 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 152.49,
+	and the node degree mode is 50. The top 5 most central nodes are 381764.Fnod_1483
+	(degree 917), 381764.Fnod_0891 (degree 913), 381764.Fnod_0360 (degree 885),
+	381764.Fnod_0796 (degree 775) and 381764.Fnod_1233 (degree 752).
 	
 
 

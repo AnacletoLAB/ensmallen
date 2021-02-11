@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:41.882603
 
-The undirected graph Aquaspirillum serpens has 2372 nodes and 304137 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10816
-and has 6 connected components, where the component with most nodes has 2362 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 238, the mean node degree is 256.44, and the node degree mode is 1. The top 5
-most central nodes are 1121004.ATVC01000023_gene272 (degree 1149), 1121004.ATVC01000004_gene1424
-(degree 1082), 1121004.ATVC01000082_gene69 (degree 993), 1121004.ATVC01000007_gene1102
-(degree 979) and 1121004.ATVC01000013_gene2076 (degree 972).
+The undirected graph Aquaspirillum serpens has 2372 nodes and 304137 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10816 and has 6 connected components, where the component
+with most nodes has 2362 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 238, the mean node degree is 256.44,
+and the node degree mode is 1. The top 5 most central nodes are 1121004.ATVC01000023_gene272
+(degree 1149), 1121004.ATVC01000004_gene1424 (degree 1082), 1121004.ATVC01000082_gene69
+(degree 993), 1121004.ATVC01000007_gene1102 (degree 979) and 1121004.ATVC01000013_gene2076
+(degree 972).
 
 
 References
@@ -107,14 +108,15 @@ def AquaspirillumSerpens(
 	
 	Datetime: 2021-02-02 22:31:41.882603
 	
-	The undirected graph Aquaspirillum serpens has 2372 nodes and 304137 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10816
-	and has 6 connected components, where the component with most nodes has 2362 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 238, the mean node degree is 256.44, and the node degree mode is 1. The top 5
-	most central nodes are 1121004.ATVC01000023_gene272 (degree 1149), 1121004.ATVC01000004_gene1424
-	(degree 1082), 1121004.ATVC01000082_gene69 (degree 993), 1121004.ATVC01000007_gene1102
-	(degree 979) and 1121004.ATVC01000013_gene2076 (degree 972).
+	The undirected graph Aquaspirillum serpens has 2372 nodes and 304137 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10816 and has 6 connected components, where the component
+	with most nodes has 2362 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 238, the mean node degree is 256.44,
+	and the node degree mode is 1. The top 5 most central nodes are 1121004.ATVC01000023_gene272
+	(degree 1149), 1121004.ATVC01000004_gene1424 (degree 1082), 1121004.ATVC01000082_gene69
+	(degree 993), 1121004.ATVC01000007_gene1102 (degree 979) and 1121004.ATVC01000013_gene2076
+	(degree 972).
 	
 
 

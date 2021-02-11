@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:55.046866
 
-The undirected graph Lactobacillus parafarraginis has 3127 nodes and 189156 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03870
-and has 37 connected components, where the component with most nodes has 3024 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 120.98, and the node degree mode is 2. The top 5 most
-central nodes are 797515.HMPREF9103_02447 (degree 1176), 797515.HMPREF9103_00079
-(degree 1020), 797515.HMPREF9103_02557 (degree 857), 797515.HMPREF9103_00274 (degree
-776) and 797515.HMPREF9103_00689 (degree 772).
+The undirected graph Lactobacillus parafarraginis has 3127 nodes and 189156
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03870 and has 37 connected components, where the component
+with most nodes has 3024 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 120.98,
+and the node degree mode is 2. The top 5 most central nodes are 797515.HMPREF9103_02447
+(degree 1176), 797515.HMPREF9103_00079 (degree 1020), 797515.HMPREF9103_02557
+(degree 857), 797515.HMPREF9103_00274 (degree 776) and 797515.HMPREF9103_00689
+(degree 772).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusParafarraginis(
 	
 	Datetime: 2021-02-02 21:45:55.046866
 	
-	The undirected graph Lactobacillus parafarraginis has 3127 nodes and 189156 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03870
-	and has 37 connected components, where the component with most nodes has 3024 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 120.98, and the node degree mode is 2. The top 5 most
-	central nodes are 797515.HMPREF9103_02447 (degree 1176), 797515.HMPREF9103_00079
-	(degree 1020), 797515.HMPREF9103_02557 (degree 857), 797515.HMPREF9103_00274 (degree
-	776) and 797515.HMPREF9103_00689 (degree 772).
+	The undirected graph Lactobacillus parafarraginis has 3127 nodes and 189156
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03870 and has 37 connected components, where the component
+	with most nodes has 3024 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 120.98,
+	and the node degree mode is 2. The top 5 most central nodes are 797515.HMPREF9103_02447
+	(degree 1176), 797515.HMPREF9103_00079 (degree 1020), 797515.HMPREF9103_02557
+	(degree 857), 797515.HMPREF9103_00274 (degree 776) and 797515.HMPREF9103_00689
+	(degree 772).
 	
 
 

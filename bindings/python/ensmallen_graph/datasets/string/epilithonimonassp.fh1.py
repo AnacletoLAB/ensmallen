@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:21.148461
 
-The undirected graph Epilithonimonas sp. FH1 has 3342 nodes and 223625 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04006 and
-has 18 connected components, where the component with most nodes has 3295 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 133.83, and the node degree mode is 5. The top 5 most central
-nodes are 1233951.IO90_16015 (degree 1018), 1233951.IO90_13265 (degree 874), 1233951.IO90_14645
-(degree 753), 1233951.IO90_18955 (degree 736) and 1233951.IO90_16770 (degree 706).
+The undirected graph Epilithonimonas sp. FH1 has 3342 nodes and 223625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04006 and has 18 connected components, where the component
+with most nodes has 3295 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 133.83,
+and the node degree mode is 5. The top 5 most central nodes are 1233951.IO90_16015
+(degree 1018), 1233951.IO90_13265 (degree 874), 1233951.IO90_14645 (degree
+753), 1233951.IO90_18955 (degree 736) and 1233951.IO90_16770 (degree 706).
 
 
 References
@@ -106,13 +107,14 @@ def EpilithonimonasSp.Fh1(
 	
 	Datetime: 2021-02-02 23:29:21.148461
 	
-	The undirected graph Epilithonimonas sp. FH1 has 3342 nodes and 223625 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04006 and
-	has 18 connected components, where the component with most nodes has 3295 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 133.83, and the node degree mode is 5. The top 5 most central
-	nodes are 1233951.IO90_16015 (degree 1018), 1233951.IO90_13265 (degree 874), 1233951.IO90_14645
-	(degree 753), 1233951.IO90_18955 (degree 736) and 1233951.IO90_16770 (degree 706).
+	The undirected graph Epilithonimonas sp. FH1 has 3342 nodes and 223625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04006 and has 18 connected components, where the component
+	with most nodes has 3295 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 133.83,
+	and the node degree mode is 5. The top 5 most central nodes are 1233951.IO90_16015
+	(degree 1018), 1233951.IO90_13265 (degree 874), 1233951.IO90_14645 (degree
+	753), 1233951.IO90_18955 (degree 736) and 1233951.IO90_16770 (degree 706).
 	
 
 

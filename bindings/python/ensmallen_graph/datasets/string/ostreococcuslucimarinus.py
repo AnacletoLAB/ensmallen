@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:53.828895
 
-The undirected graph Ostreococcus lucimarinus has 5413 nodes and 583602 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03984
-and has 16 connected components, where the component with most nodes has 5381 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 215.63, and the node degree mode is 1. The top 5
-most central nodes are 242159.ABO96677 (degree 2026), 242159.ABO96071 (degree 1842),
-242159.ABP00501 (degree 1659), 242159.ABO95851 (degree 1233) and 242159.ABO97278
-(degree 1219).
+The undirected graph Ostreococcus lucimarinus has 5413 nodes and 583602
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03984 and has 16 connected components, where the component
+with most nodes has 5381 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 215.63,
+and the node degree mode is 1. The top 5 most central nodes are 242159.ABO96677
+(degree 2026), 242159.ABO96071 (degree 1842), 242159.ABP00501 (degree 1659),
+242159.ABO95851 (degree 1233) and 242159.ABO97278 (degree 1219).
 
 
 References
@@ -107,14 +107,14 @@ def OstreococcusLucimarinus(
 	
 	Datetime: 2021-02-02 20:08:53.828895
 	
-	The undirected graph Ostreococcus lucimarinus has 5413 nodes and 583602 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03984
-	and has 16 connected components, where the component with most nodes has 5381 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 215.63, and the node degree mode is 1. The top 5
-	most central nodes are 242159.ABO96677 (degree 2026), 242159.ABO96071 (degree 1842),
-	242159.ABP00501 (degree 1659), 242159.ABO95851 (degree 1233) and 242159.ABO97278
-	(degree 1219).
+	The undirected graph Ostreococcus lucimarinus has 5413 nodes and 583602
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03984 and has 16 connected components, where the component
+	with most nodes has 5381 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 215.63,
+	and the node degree mode is 1. The top 5 most central nodes are 242159.ABO96677
+	(degree 2026), 242159.ABO96071 (degree 1842), 242159.ABP00501 (degree 1659),
+	242159.ABO95851 (degree 1233) and 242159.ABO97278 (degree 1219).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:19.349723
 
-The undirected graph Pseudozyma hubeiensis has 4798 nodes and 497167 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04320 and
-has 22 connected components, where the component with most nodes has 4752 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 207.24, and the node degree mode is 1. The top 5 most central
-nodes are 327079.R9P7Q7 (degree 1416), 327079.R9P323 (degree 1379), 327079.R9PBP8
-(degree 1320), 327079.R9PDA6 (degree 1267) and 327079.R9NZF9 (degree 1244).
+The undirected graph Pseudozyma hubeiensis has 4798 nodes and 497167 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04320 and has 22 connected components, where the component with most
+nodes has 4752 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 207.24, and
+the node degree mode is 1. The top 5 most central nodes are 327079.R9P7Q7
+(degree 1416), 327079.R9P323 (degree 1379), 327079.R9PBP8 (degree 1320),
+327079.R9PDA6 (degree 1267) and 327079.R9NZF9 (degree 1244).
 
 
 References
@@ -106,13 +107,14 @@ def PseudozymaHubeiensis(
 	
 	Datetime: 2021-02-02 20:29:19.349723
 	
-	The undirected graph Pseudozyma hubeiensis has 4798 nodes and 497167 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04320 and
-	has 22 connected components, where the component with most nodes has 4752 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 207.24, and the node degree mode is 1. The top 5 most central
-	nodes are 327079.R9P7Q7 (degree 1416), 327079.R9P323 (degree 1379), 327079.R9PBP8
-	(degree 1320), 327079.R9PDA6 (degree 1267) and 327079.R9NZF9 (degree 1244).
+	The undirected graph Pseudozyma hubeiensis has 4798 nodes and 497167 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04320 and has 22 connected components, where the component with most
+	nodes has 4752 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 207.24, and
+	the node degree mode is 1. The top 5 most central nodes are 327079.R9P7Q7
+	(degree 1416), 327079.R9P323 (degree 1379), 327079.R9PBP8 (degree 1320),
+	327079.R9PDA6 (degree 1267) and 327079.R9NZF9 (degree 1244).
 	
 
 

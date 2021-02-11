@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:34.705297
 
-The undirected graph Ectothiorhodospira sp. PHS1 has 2761 nodes and 256511 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06732
-and has 2 connected components, where the component with most nodes has 2759 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 185.81, and the node degree mode is 1. The top 5
-most central nodes are 519989.ECTPHS_00600 (degree 1211), 519989.ECTPHS_12014 (degree
-1135), 519989.ECTPHS_08968 (degree 1081), 519989.ECTPHS_09088 (degree 997) and 519989.ECTPHS_00690
-(degree 974).
+The undirected graph Ectothiorhodospira sp. PHS1 has 2761 nodes and 256511
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06732 and has 2 connected components, where the component
+with most nodes has 2759 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 185.81,
+and the node degree mode is 1. The top 5 most central nodes are 519989.ECTPHS_00600
+(degree 1211), 519989.ECTPHS_12014 (degree 1135), 519989.ECTPHS_08968 (degree
+1081), 519989.ECTPHS_09088 (degree 997) and 519989.ECTPHS_00690 (degree
+974).
 
 
 References
@@ -107,14 +108,15 @@ def EctothiorhodospiraSp.Phs1(
 	
 	Datetime: 2021-02-02 21:03:34.705297
 	
-	The undirected graph Ectothiorhodospira sp. PHS1 has 2761 nodes and 256511 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06732
-	and has 2 connected components, where the component with most nodes has 2759 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 185.81, and the node degree mode is 1. The top 5
-	most central nodes are 519989.ECTPHS_00600 (degree 1211), 519989.ECTPHS_12014 (degree
-	1135), 519989.ECTPHS_08968 (degree 1081), 519989.ECTPHS_09088 (degree 997) and 519989.ECTPHS_00690
-	(degree 974).
+	The undirected graph Ectothiorhodospira sp. PHS1 has 2761 nodes and 256511
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06732 and has 2 connected components, where the component
+	with most nodes has 2759 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 185.81,
+	and the node degree mode is 1. The top 5 most central nodes are 519989.ECTPHS_00600
+	(degree 1211), 519989.ECTPHS_12014 (degree 1135), 519989.ECTPHS_08968 (degree
+	1081), 519989.ECTPHS_09088 (degree 997) and 519989.ECTPHS_00690 (degree
+	974).
 	
 
 

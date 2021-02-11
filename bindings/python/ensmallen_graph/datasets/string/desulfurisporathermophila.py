@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:15.329549
 
-The undirected graph Desulfurispora thermophila has 2544 nodes and 234126 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07238
-and has 8 connected components, where the component with most nodes has 2530 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 184.06, and the node degree mode is 1. The top 5
-most central nodes are 1121472.AQWN01000003_gene1614 (degree 1047), 1121472.AQWN01000005_gene2455
-(degree 915), 1121472.AQWN01000010_gene518 (degree 899), 1121472.AQWN01000011_gene1273
-(degree 885) and 1121472.AQWN01000011_gene1225 (degree 858).
+The undirected graph Desulfurispora thermophila has 2544 nodes and 234126
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07238 and has 8 connected components, where the component
+with most nodes has 2530 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 184.06,
+and the node degree mode is 1. The top 5 most central nodes are 1121472.AQWN01000003_gene1614
+(degree 1047), 1121472.AQWN01000005_gene2455 (degree 915), 1121472.AQWN01000010_gene518
+(degree 899), 1121472.AQWN01000011_gene1273 (degree 885) and 1121472.AQWN01000011_gene1225
+(degree 858).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfurisporaThermophila(
 	
 	Datetime: 2021-02-02 22:37:15.329549
 	
-	The undirected graph Desulfurispora thermophila has 2544 nodes and 234126 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07238
-	and has 8 connected components, where the component with most nodes has 2530 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 184.06, and the node degree mode is 1. The top 5
-	most central nodes are 1121472.AQWN01000003_gene1614 (degree 1047), 1121472.AQWN01000005_gene2455
-	(degree 915), 1121472.AQWN01000010_gene518 (degree 899), 1121472.AQWN01000011_gene1273
-	(degree 885) and 1121472.AQWN01000011_gene1225 (degree 858).
+	The undirected graph Desulfurispora thermophila has 2544 nodes and 234126
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07238 and has 8 connected components, where the component
+	with most nodes has 2530 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 184.06,
+	and the node degree mode is 1. The top 5 most central nodes are 1121472.AQWN01000003_gene1614
+	(degree 1047), 1121472.AQWN01000005_gene2455 (degree 915), 1121472.AQWN01000010_gene518
+	(degree 899), 1121472.AQWN01000011_gene1273 (degree 885) and 1121472.AQWN01000011_gene1225
+	(degree 858).
 	
 
 

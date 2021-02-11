@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:53.715854
 
-The undirected graph Gordonia alkanivorans has 4624 nodes and 579389 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05421 and
-has 7 connected components, where the component with most nodes has 4612 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 250.60, and the node degree mode is 4. The top 5 most central
-nodes are 1027371.GOALK_121_00050 (degree 1944), 1027371.GOALK_047_00140 (degree
-1884), 1027371.GOALK_023_00180 (degree 1660), 1027371.GOALK_061_00150 (degree 1649)
-and 1027371.GOALK_048_00750 (degree 1562).
+The undirected graph Gordonia alkanivorans has 4624 nodes and 579389 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05421 and has 7 connected components, where the component with most
+nodes has 4612 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 250.60, and
+the node degree mode is 4. The top 5 most central nodes are 1027371.GOALK_121_00050
+(degree 1944), 1027371.GOALK_047_00140 (degree 1884), 1027371.GOALK_023_00180
+(degree 1660), 1027371.GOALK_061_00150 (degree 1649) and 1027371.GOALK_048_00750
+(degree 1562).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaAlkanivorans(
 	
 	Datetime: 2021-02-02 22:09:53.715854
 	
-	The undirected graph Gordonia alkanivorans has 4624 nodes and 579389 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05421 and
-	has 7 connected components, where the component with most nodes has 4612 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 250.60, and the node degree mode is 4. The top 5 most central
-	nodes are 1027371.GOALK_121_00050 (degree 1944), 1027371.GOALK_047_00140 (degree
-	1884), 1027371.GOALK_023_00180 (degree 1660), 1027371.GOALK_061_00150 (degree 1649)
-	and 1027371.GOALK_048_00750 (degree 1562).
+	The undirected graph Gordonia alkanivorans has 4624 nodes and 579389 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05421 and has 7 connected components, where the component with most
+	nodes has 4612 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 250.60, and
+	the node degree mode is 4. The top 5 most central nodes are 1027371.GOALK_121_00050
+	(degree 1944), 1027371.GOALK_047_00140 (degree 1884), 1027371.GOALK_023_00180
+	(degree 1660), 1027371.GOALK_061_00150 (degree 1649) and 1027371.GOALK_048_00750
+	(degree 1562).
 	
 
 

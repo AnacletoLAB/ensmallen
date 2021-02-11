@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:35.350123
 
-The undirected graph Arthrobacter chlorophenolicus has 4014 nodes and 431524 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05358
-and has 10 connected components, where the component with most nodes has 3996 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 215.01, and the node degree mode is 1. The top 5
-most central nodes are 452863.Achl_1802 (degree 1321), 452863.Achl_0234 (degree 1198),
-452863.Achl_1495 (degree 1176), 452863.Achl_2576 (degree 1175) and 452863.Achl_2587
-(degree 1123).
+The undirected graph Arthrobacter chlorophenolicus has 4014 nodes and 431524
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05358 and has 10 connected components, where the component
+with most nodes has 3996 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 215.01,
+and the node degree mode is 1. The top 5 most central nodes are 452863.Achl_1802
+(degree 1321), 452863.Achl_0234 (degree 1198), 452863.Achl_1495 (degree
+1176), 452863.Achl_2576 (degree 1175) and 452863.Achl_2587 (degree 1123).
 
 
 References
@@ -107,14 +107,14 @@ def ArthrobacterChlorophenolicus(
 	
 	Datetime: 2021-02-02 20:52:35.350123
 	
-	The undirected graph Arthrobacter chlorophenolicus has 4014 nodes and 431524 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05358
-	and has 10 connected components, where the component with most nodes has 3996 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 215.01, and the node degree mode is 1. The top 5
-	most central nodes are 452863.Achl_1802 (degree 1321), 452863.Achl_0234 (degree 1198),
-	452863.Achl_1495 (degree 1176), 452863.Achl_2576 (degree 1175) and 452863.Achl_2587
-	(degree 1123).
+	The undirected graph Arthrobacter chlorophenolicus has 4014 nodes and 431524
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05358 and has 10 connected components, where the component
+	with most nodes has 3996 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 215.01,
+	and the node degree mode is 1. The top 5 most central nodes are 452863.Achl_1802
+	(degree 1321), 452863.Achl_0234 (degree 1198), 452863.Achl_1495 (degree
+	1176), 452863.Achl_2576 (degree 1175) and 452863.Achl_2587 (degree 1123).
 	
 
 

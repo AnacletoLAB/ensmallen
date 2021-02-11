@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:05.023233
 
-The undirected graph Corynebacterium lipophiloflavum has 2322 nodes and 153243 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05687
-and has 11 connected components, where the component with most nodes has 2299 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 131.99, and the node degree mode is 4. The top 5
-most central nodes are 525263.HMPREF0298_0429 (degree 888), 525263.HMPREF0298_2218
-(degree 717), 525263.HMPREF0298_0149 (degree 653), 525263.HMPREF0298_0453 (degree
+The undirected graph Corynebacterium lipophiloflavum has 2322 nodes and
+153243 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05687 and has 11 connected components, where the
+component with most nodes has 2299 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+is 131.99, and the node degree mode is 4. The top 5 most central nodes
+are 525263.HMPREF0298_0429 (degree 888), 525263.HMPREF0298_2218 (degree
+717), 525263.HMPREF0298_0149 (degree 653), 525263.HMPREF0298_0453 (degree
 646) and 525263.HMPREF0298_1780 (degree 641).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumLipophiloflavum(
 	
 	Datetime: 2021-02-02 21:05:05.023233
 	
-	The undirected graph Corynebacterium lipophiloflavum has 2322 nodes and 153243 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05687
-	and has 11 connected components, where the component with most nodes has 2299 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 131.99, and the node degree mode is 4. The top 5
-	most central nodes are 525263.HMPREF0298_0429 (degree 888), 525263.HMPREF0298_2218
-	(degree 717), 525263.HMPREF0298_0149 (degree 653), 525263.HMPREF0298_0453 (degree
+	The undirected graph Corynebacterium lipophiloflavum has 2322 nodes and
+	153243 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05687 and has 11 connected components, where the
+	component with most nodes has 2299 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 113, the mean node degree
+	is 131.99, and the node degree mode is 4. The top 5 most central nodes
+	are 525263.HMPREF0298_0429 (degree 888), 525263.HMPREF0298_2218 (degree
+	717), 525263.HMPREF0298_0149 (degree 653), 525263.HMPREF0298_0453 (degree
 	646) and 525263.HMPREF0298_1780 (degree 641).
 	
 

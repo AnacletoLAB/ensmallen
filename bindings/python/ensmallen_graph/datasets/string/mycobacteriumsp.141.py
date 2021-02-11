@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:05.803511
 
-The undirected graph Mycobacterium sp. 141 has 4180 nodes and 491064 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05622 and
-has 21 connected components, where the component with most nodes has 4132 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 234.96, and the node degree mode is 1. The top 5 most central
-nodes are 1120797.KB908256_gene1940 (degree 1466), 1120797.KB908256_gene2244 (degree
-1423), 1120797.KB908258_gene1181 (degree 1414), 1120797.KB908261_gene49 (degree 1179)
-and 1120797.KB908262_gene2959 (degree 1142).
+The undirected graph Mycobacterium sp. 141 has 4180 nodes and 491064 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05622 and has 21 connected components, where the component with most
+nodes has 4132 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 234.96, and
+the node degree mode is 1. The top 5 most central nodes are 1120797.KB908256_gene1940
+(degree 1466), 1120797.KB908256_gene2244 (degree 1423), 1120797.KB908258_gene1181
+(degree 1414), 1120797.KB908261_gene49 (degree 1179) and 1120797.KB908262_gene2959
+(degree 1142).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.141(
 	
 	Datetime: 2021-02-02 22:29:05.803511
 	
-	The undirected graph Mycobacterium sp. 141 has 4180 nodes and 491064 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05622 and
-	has 21 connected components, where the component with most nodes has 4132 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 234.96, and the node degree mode is 1. The top 5 most central
-	nodes are 1120797.KB908256_gene1940 (degree 1466), 1120797.KB908256_gene2244 (degree
-	1423), 1120797.KB908258_gene1181 (degree 1414), 1120797.KB908261_gene49 (degree 1179)
-	and 1120797.KB908262_gene2959 (degree 1142).
+	The undirected graph Mycobacterium sp. 141 has 4180 nodes and 491064 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05622 and has 21 connected components, where the component with most
+	nodes has 4132 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 234.96, and
+	the node degree mode is 1. The top 5 most central nodes are 1120797.KB908256_gene1940
+	(degree 1466), 1120797.KB908256_gene2244 (degree 1423), 1120797.KB908258_gene1181
+	(degree 1414), 1120797.KB908261_gene49 (degree 1179) and 1120797.KB908262_gene2959
+	(degree 1142).
 	
 
 

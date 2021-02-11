@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:10:59.446039
 
-The undirected graph gupta2 has 62064 nodes and 2155175 unweighted edges, of which
-62064 are self-loops. The graph is sparse as it has a density of 0.00110 and is connected,
-as it has a single component. The graph median node degree is 39, the mean node degree
-is 68.45, and the node degree mode is 44. The top 5 most central nodes are 31914
-(degree 8413), 31902 (degree 8413), 10800 (degree 8413), 10788 (degree 8413) and
-31909 (degree 8412).
+The undirected graph gupta2 has 62064 nodes and 2155175 unweighted edges,
+of which 62064 are self-loops. The graph is sparse as it has a density
+of 0.00110 and is connected, as it has a single component. The graph median
+node degree is 39, the mean node degree is 68.45, and the node degree mode
+is 44. The top 5 most central nodes are 31914 (degree 8413), 31902 (degree
+8413), 10800 (degree 8413), 10788 (degree 8413) and 31909 (degree 8412).
 
 
 References
@@ -102,12 +102,12 @@ def Gupta2(
 	
 	Datetime: 2021-02-06 12:10:59.446039
 	
-	The undirected graph gupta2 has 62064 nodes and 2155175 unweighted edges, of which
-	62064 are self-loops. The graph is sparse as it has a density of 0.00110 and is connected,
-	as it has a single component. The graph median node degree is 39, the mean node degree
-	is 68.45, and the node degree mode is 44. The top 5 most central nodes are 31914
-	(degree 8413), 31902 (degree 8413), 10800 (degree 8413), 10788 (degree 8413) and
-	31909 (degree 8412).
+	The undirected graph gupta2 has 62064 nodes and 2155175 unweighted edges,
+	of which 62064 are self-loops. The graph is sparse as it has a density
+	of 0.00110 and is connected, as it has a single component. The graph median
+	node degree is 39, the mean node degree is 68.45, and the node degree mode
+	is 44. The top 5 most central nodes are 31914 (degree 8413), 31902 (degree
+	8413), 10800 (degree 8413), 10788 (degree 8413) and 31909 (degree 8412).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:46:10.172066
 
-The undirected graph Setaria italica has 24628 nodes and 4036898 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01331 and
-has 11 connected components, where the component with most nodes has 24606 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 327.83, and the node degree mode is 1. The top 5
-most central nodes are 4555.Si016166m (degree 7236), 4555.Si026222m (degree 4748),
-4555.Si029497m (degree 4748), 4555.Si038742m (degree 4435) and 4555.Si017048m (degree
-4210).
+The undirected graph Setaria italica has 24628 nodes and 4036898 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01331 and has 11 connected components, where the component with most
+nodes has 24606 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 327.83, and
+the node degree mode is 1. The top 5 most central nodes are 4555.Si016166m
+(degree 7236), 4555.Si026222m (degree 4748), 4555.Si029497m (degree 4748),
+4555.Si038742m (degree 4435) and 4555.Si017048m (degree 4210).
 
 
 References
@@ -107,14 +107,14 @@ def SetariaItalica(
 	
 	Datetime: 2021-02-02 16:46:10.172066
 	
-	The undirected graph Setaria italica has 24628 nodes and 4036898 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01331 and
-	has 11 connected components, where the component with most nodes has 24606 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 327.83, and the node degree mode is 1. The top 5
-	most central nodes are 4555.Si016166m (degree 7236), 4555.Si026222m (degree 4748),
-	4555.Si029497m (degree 4748), 4555.Si038742m (degree 4435) and 4555.Si017048m (degree
-	4210).
+	The undirected graph Setaria italica has 24628 nodes and 4036898 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01331 and has 11 connected components, where the component with most
+	nodes has 24606 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 327.83, and
+	the node degree mode is 1. The top 5 most central nodes are 4555.Si016166m
+	(degree 7236), 4555.Si026222m (degree 4748), 4555.Si029497m (degree 4748),
+	4555.Si038742m (degree 4435) and 4555.Si017048m (degree 4210).
 	
 
 

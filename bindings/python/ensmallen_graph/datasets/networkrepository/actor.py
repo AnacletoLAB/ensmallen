@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:10:29.047831
 
-The undirected graph actor has 767280 nodes with 2 different node types: 2 (nodes
-number 383640) and 1 (nodes number 383640), of which 1242 are singletons (all have
-self-loops), and 16892127 unweighted edges, of which 383640 are self-loops. The graph
-is extremely sparse as it has a density of 0.00006 and has 2789 connected components,
-where the component with most nodes has 759098 nodes and the component with the least
-nodes has a single node. The graph median node degree is 9, the mean node degree
-is 43.53 and the node degree mode is 1. The top 5 most central nodes are 3459 (degree
-3966), 7275 (degree 3950), 2518 (degree 3932), 131 (degree 3887) and 2363 (degree
-3629).
+The undirected graph actor has 767280 nodes with 2 different node types:
+2 (nodes number 383640) and 1 (nodes number 383640), of which 1242 are
+singletons (all have self-loops), and 16892127 unweighted edges, of which
+383640 are self-loops. The graph is extremely sparse as it has a density
+of 0.00006 and has 2789 connected components, where the component with
+most nodes has 759098 nodes and the component with the least nodes has
+a single node. The graph median node degree is 9, the mean node degree
+is 43.53 and the node degree mode is 1. The top 5 most central nodes are
+3459 (degree 3966), 7275 (degree 3950), 2518 (degree 3932), 131 (degree
+3887) and 2363 (degree 3629).
 
 
 References
@@ -105,15 +106,16 @@ def Actor(
 	
 	Datetime: 2021-02-04 00:10:29.047831
 	
-	The undirected graph actor has 767280 nodes with 2 different node types: 2 (nodes
-	number 383640) and 1 (nodes number 383640), of which 1242 are singletons (all have
-	self-loops), and 16892127 unweighted edges, of which 383640 are self-loops. The graph
-	is extremely sparse as it has a density of 0.00006 and has 2789 connected components,
-	where the component with most nodes has 759098 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 9, the mean node degree
-	is 43.53 and the node degree mode is 1. The top 5 most central nodes are 3459 (degree
-	3966), 7275 (degree 3950), 2518 (degree 3932), 131 (degree 3887) and 2363 (degree
-	3629).
+	The undirected graph actor has 767280 nodes with 2 different node types:
+	2 (nodes number 383640) and 1 (nodes number 383640), of which 1242 are
+	singletons (all have self-loops), and 16892127 unweighted edges, of which
+	383640 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00006 and has 2789 connected components, where the component with
+	most nodes has 759098 nodes and the component with the least nodes has
+	a single node. The graph median node degree is 9, the mean node degree
+	is 43.53 and the node degree mode is 1. The top 5 most central nodes are
+	3459 (degree 3966), 7275 (degree 3950), 2518 (degree 3932), 131 (degree
+	3887) and 2363 (degree 3629).
 	
 
 

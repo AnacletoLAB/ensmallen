@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:58:28.717280
 
-The undirected graph Loktanella cinnabarina has 3731 nodes and 365811 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05257 and
-has 13 connected components, where the component with most nodes has 3701 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 196.09, and the node degree mode is 2. The top 5 most central
-nodes are 1337093.MBE-LCI_1102 (degree 1429), 1337093.MBE-LCI_3204 (degree 1190),
-1337093.MBE-LCI_0822 (degree 1098), 1337093.MBE-LCI_0041 (degree 1066) and 1337093.MBE-LCI_0445
+The undirected graph Loktanella cinnabarina has 3731 nodes and 365811 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05257 and has 13 connected components, where the component with most
+nodes has 3701 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 196.09, and
+the node degree mode is 2. The top 5 most central nodes are 1337093.MBE-LCI_1102
+(degree 1429), 1337093.MBE-LCI_3204 (degree 1190), 1337093.MBE-LCI_0822
+(degree 1098), 1337093.MBE-LCI_0041 (degree 1066) and 1337093.MBE-LCI_0445
 (degree 964).
 
 
@@ -107,13 +108,14 @@ def LoktanellaCinnabarina(
 	
 	Datetime: 2021-02-03 21:58:28.717280
 	
-	The undirected graph Loktanella cinnabarina has 3731 nodes and 365811 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05257 and
-	has 13 connected components, where the component with most nodes has 3701 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 196.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1337093.MBE-LCI_1102 (degree 1429), 1337093.MBE-LCI_3204 (degree 1190),
-	1337093.MBE-LCI_0822 (degree 1098), 1337093.MBE-LCI_0041 (degree 1066) and 1337093.MBE-LCI_0445
+	The undirected graph Loktanella cinnabarina has 3731 nodes and 365811 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05257 and has 13 connected components, where the component with most
+	nodes has 3701 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 196.09, and
+	the node degree mode is 2. The top 5 most central nodes are 1337093.MBE-LCI_1102
+	(degree 1429), 1337093.MBE-LCI_3204 (degree 1190), 1337093.MBE-LCI_0822
+	(degree 1098), 1337093.MBE-LCI_0041 (degree 1066) and 1337093.MBE-LCI_0445
 	(degree 964).
 	
 

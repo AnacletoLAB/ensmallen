@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:52:10.440713
 
-The undirected graph tech-p2p-gnutella has 62561 nodes and 147878 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00008 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 4.73, and the node degree mode is 1. The top 5 most
-central nodes are 5310 (degree 95), 31884 (degree 78), 165 (degree 70), 62074 (degree
-66) and 51244 (degree 62).
+The undirected graph tech-p2p-gnutella has 62561 nodes and 147878 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00008 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 4.73, and the
+node degree mode is 1. The top 5 most central nodes are 5310 (degree 95),
+31884 (degree 78), 165 (degree 70), 62074 (degree 66) and 51244 (degree
+62).
 
 
 References
@@ -112,12 +113,13 @@ def TechP2pGnutella(
 	
 	Datetime: 2021-02-06 11:52:10.440713
 	
-	The undirected graph tech-p2p-gnutella has 62561 nodes and 147878 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00008 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 4.73, and the node degree mode is 1. The top 5 most
-	central nodes are 5310 (degree 95), 31884 (degree 78), 165 (degree 70), 62074 (degree
-	66) and 51244 (degree 62).
+	The undirected graph tech-p2p-gnutella has 62561 nodes and 147878 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00008 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 4.73, and the
+	node degree mode is 1. The top 5 most central nodes are 5310 (degree 95),
+	31884 (degree 78), 165 (degree 70), 62074 (degree 66) and 51244 (degree
+	62).
 	
 
 

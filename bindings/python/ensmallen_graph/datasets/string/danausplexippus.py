@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:48.654975
 
-The undirected graph Danaus plexippus has 11421 nodes and 1170824 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-has 29 connected components, where the component with most nodes has 11362 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 205.03, and the node degree mode is 1. The top 5
-most central nodes are 13037.EHJ73638 (degree 2256), 13037.EHJ76158 (degree 2224),
-13037.EHJ76132 (degree 2058), 13037.EHJ72961 (degree 1978) and 13037.EHJ77748 (degree
-1838).
+The undirected graph Danaus plexippus has 11421 nodes and 1170824 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01795 and has 29 connected components, where the component with most
+nodes has 11362 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 205.03, and
+the node degree mode is 1. The top 5 most central nodes are 13037.EHJ73638
+(degree 2256), 13037.EHJ76158 (degree 2224), 13037.EHJ76132 (degree 2058),
+13037.EHJ72961 (degree 1978) and 13037.EHJ77748 (degree 1838).
 
 
 References
@@ -107,14 +107,14 @@ def DanausPlexippus(
 	
 	Datetime: 2021-02-02 17:52:48.654975
 	
-	The undirected graph Danaus plexippus has 11421 nodes and 1170824 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01795 and
-	has 29 connected components, where the component with most nodes has 11362 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 205.03, and the node degree mode is 1. The top 5
-	most central nodes are 13037.EHJ73638 (degree 2256), 13037.EHJ76158 (degree 2224),
-	13037.EHJ76132 (degree 2058), 13037.EHJ72961 (degree 1978) and 13037.EHJ77748 (degree
-	1838).
+	The undirected graph Danaus plexippus has 11421 nodes and 1170824 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01795 and has 29 connected components, where the component with most
+	nodes has 11362 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 205.03, and
+	the node degree mode is 1. The top 5 most central nodes are 13037.EHJ73638
+	(degree 2256), 13037.EHJ76158 (degree 2224), 13037.EHJ76132 (degree 2058),
+	13037.EHJ72961 (degree 1978) and 13037.EHJ77748 (degree 1838).
 	
 
 

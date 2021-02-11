@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:13:05.878988
 
-The undirected graph Bradyrhizobium japonicum USDA124 has 7503 nodes and 915925 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03254
-and has 69 connected components, where the component with most nodes has 7329 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 190, the mean node degree is 244.15, and the node degree mode is 1. The top 5
-most central nodes are 1038862.KB893917_gene4317 (degree 3563), 1038862.KB893890_gene6607
+The undirected graph Bradyrhizobium japonicum USDA124 has 7503 nodes and
+915925 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03254 and has 69 connected components, where the
+component with most nodes has 7329 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 190, the mean node degree
+is 244.15, and the node degree mode is 1. The top 5 most central nodes
+are 1038862.KB893917_gene4317 (degree 3563), 1038862.KB893890_gene6607
 (degree 2783), 1038862.KB893805_gene3697 (degree 2592), 1038862.KB893895_gene7239
 (degree 2195) and 1038862.KB893906_gene5441 (degree 2134).
 
@@ -107,12 +108,13 @@ def BradyrhizobiumJaponicumUsda124(
 	
 	Datetime: 2021-02-02 22:13:05.878988
 	
-	The undirected graph Bradyrhizobium japonicum USDA124 has 7503 nodes and 915925 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03254
-	and has 69 connected components, where the component with most nodes has 7329 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 190, the mean node degree is 244.15, and the node degree mode is 1. The top 5
-	most central nodes are 1038862.KB893917_gene4317 (degree 3563), 1038862.KB893890_gene6607
+	The undirected graph Bradyrhizobium japonicum USDA124 has 7503 nodes and
+	915925 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03254 and has 69 connected components, where the
+	component with most nodes has 7329 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 190, the mean node degree
+	is 244.15, and the node degree mode is 1. The top 5 most central nodes
+	are 1038862.KB893917_gene4317 (degree 3563), 1038862.KB893890_gene6607
 	(degree 2783), 1038862.KB893805_gene3697 (degree 2592), 1038862.KB893895_gene7239
 	(degree 2195) and 1038862.KB893906_gene5441 (degree 2134).
 	

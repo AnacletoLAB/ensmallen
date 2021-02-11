@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:14:33.745354
 
-The undirected graph Alcanivorax sp. 43BGOM46m has 4129 nodes and 481832 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05654
-and has 13 connected components, where the component with most nodes has 4104 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 182, the mean node degree is 233.39, and the node degree mode is 2. The top 5
-most central nodes are 1380387.JADM01000010_gene3965 (degree 1545), 1380387.JADM01000004_gene2761
-(degree 1299), 1380387.JADM01000031_gene3633 (degree 1279), 1380387.JADM01000002_gene2051
-(degree 1222) and 1380387.JADM01000024_gene1765 (degree 1212).
+The undirected graph Alcanivorax sp. 43BGOM46m has 4129 nodes and 481832
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05654 and has 13 connected components, where the component
+with most nodes has 4104 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 233.39,
+and the node degree mode is 2. The top 5 most central nodes are 1380387.JADM01000010_gene3965
+(degree 1545), 1380387.JADM01000004_gene2761 (degree 1299), 1380387.JADM01000031_gene3633
+(degree 1279), 1380387.JADM01000002_gene2051 (degree 1222) and 1380387.JADM01000024_gene1765
+(degree 1212).
 
 
 References
@@ -107,14 +108,15 @@ def AlcanivoraxSp.43bgom46m(
 	
 	Datetime: 2021-02-03 22:14:33.745354
 	
-	The undirected graph Alcanivorax sp. 43BGOM46m has 4129 nodes and 481832 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05654
-	and has 13 connected components, where the component with most nodes has 4104 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 182, the mean node degree is 233.39, and the node degree mode is 2. The top 5
-	most central nodes are 1380387.JADM01000010_gene3965 (degree 1545), 1380387.JADM01000004_gene2761
-	(degree 1299), 1380387.JADM01000031_gene3633 (degree 1279), 1380387.JADM01000002_gene2051
-	(degree 1222) and 1380387.JADM01000024_gene1765 (degree 1212).
+	The undirected graph Alcanivorax sp. 43BGOM46m has 4129 nodes and 481832
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05654 and has 13 connected components, where the component
+	with most nodes has 4104 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 233.39,
+	and the node degree mode is 2. The top 5 most central nodes are 1380387.JADM01000010_gene3965
+	(degree 1545), 1380387.JADM01000004_gene2761 (degree 1299), 1380387.JADM01000031_gene3633
+	(degree 1279), 1380387.JADM01000002_gene2051 (degree 1222) and 1380387.JADM01000024_gene1765
+	(degree 1212).
 	
 
 

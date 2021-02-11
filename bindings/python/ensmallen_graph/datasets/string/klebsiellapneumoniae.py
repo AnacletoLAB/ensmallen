@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:33.847028
 
-The undirected graph Klebsiella pneumoniae has 5730 nodes and 704738 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04294 and
-has 17 connected components, where the component with most nodes has 5688 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 245.98, and the node degree mode is 1. The top 5 most central
-nodes are 573.JG24_25800 (degree 1759), 573.JG24_22255 (degree 1700), 573.JG24_10255
-(degree 1638), 573.JG24_16630 (degree 1589) and 573.JG24_23010 (degree 1536).
+The undirected graph Klebsiella pneumoniae has 5730 nodes and 704738 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04294 and has 17 connected components, where the component with most
+nodes has 5688 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 245.98, and
+the node degree mode is 1. The top 5 most central nodes are 573.JG24_25800
+(degree 1759), 573.JG24_22255 (degree 1700), 573.JG24_10255 (degree 1638),
+573.JG24_16630 (degree 1589) and 573.JG24_23010 (degree 1536).
 
 
 References
@@ -106,13 +107,14 @@ def KlebsiellaPneumoniae(
 	
 	Datetime: 2021-02-02 16:21:33.847028
 	
-	The undirected graph Klebsiella pneumoniae has 5730 nodes and 704738 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04294 and
-	has 17 connected components, where the component with most nodes has 5688 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 245.98, and the node degree mode is 1. The top 5 most central
-	nodes are 573.JG24_25800 (degree 1759), 573.JG24_22255 (degree 1700), 573.JG24_10255
-	(degree 1638), 573.JG24_16630 (degree 1589) and 573.JG24_23010 (degree 1536).
+	The undirected graph Klebsiella pneumoniae has 5730 nodes and 704738 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04294 and has 17 connected components, where the component with most
+	nodes has 5688 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 245.98, and
+	the node degree mode is 1. The top 5 most central nodes are 573.JG24_25800
+	(degree 1759), 573.JG24_22255 (degree 1700), 573.JG24_10255 (degree 1638),
+	573.JG24_16630 (degree 1589) and 573.JG24_23010 (degree 1536).
 	
 
 

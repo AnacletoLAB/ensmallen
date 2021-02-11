@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:48.737201
 
-The undirected graph Modestobacter marinus has 5399 nodes and 461504 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03167 and
-has 22 connected components, where the component with most nodes has 5349 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 170.96, and the node degree mode is 2. The top 5 most central
-nodes are 477641.MODMU_5283 (degree 1615), 477641.MODMU_3389 (degree 1573), 477641.MODMU_4851
-(degree 1351), 477641.MODMU_2458 (degree 1259) and 477641.MODMU_3403 (degree 1239).
+The undirected graph Modestobacter marinus has 5399 nodes and 461504 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03167 and has 22 connected components, where the component with most
+nodes has 5349 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 170.96, and
+the node degree mode is 2. The top 5 most central nodes are 477641.MODMU_5283
+(degree 1615), 477641.MODMU_3389 (degree 1573), 477641.MODMU_4851 (degree
+1351), 477641.MODMU_2458 (degree 1259) and 477641.MODMU_3403 (degree 1239).
 
 
 References
@@ -106,13 +107,14 @@ def ModestobacterMarinus(
 	
 	Datetime: 2021-02-02 20:56:48.737201
 	
-	The undirected graph Modestobacter marinus has 5399 nodes and 461504 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03167 and
-	has 22 connected components, where the component with most nodes has 5349 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 170.96, and the node degree mode is 2. The top 5 most central
-	nodes are 477641.MODMU_5283 (degree 1615), 477641.MODMU_3389 (degree 1573), 477641.MODMU_4851
-	(degree 1351), 477641.MODMU_2458 (degree 1259) and 477641.MODMU_3403 (degree 1239).
+	The undirected graph Modestobacter marinus has 5399 nodes and 461504 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03167 and has 22 connected components, where the component with most
+	nodes has 5349 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 170.96, and
+	the node degree mode is 2. The top 5 most central nodes are 477641.MODMU_5283
+	(degree 1615), 477641.MODMU_3389 (degree 1573), 477641.MODMU_4851 (degree
+	1351), 477641.MODMU_2458 (degree 1259) and 477641.MODMU_3403 (degree 1239).
 	
 
 

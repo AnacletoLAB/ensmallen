@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:24.014797
 
-The undirected graph Nitrosococcus halophilus has 3755 nodes and 332796 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04722
-and has 18 connected components, where the component with most nodes has 3716 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 177.25, and the node degree mode is 1. The top 5
-most central nodes are 472759.Nhal_3397 (degree 1503), 472759.Nhal_1891 (degree 1273),
-472759.Nhal_2598 (degree 1242), 472759.Nhal_2872 (degree 1174) and 472759.Nhal_3752
-(degree 1115).
+The undirected graph Nitrosococcus halophilus has 3755 nodes and 332796
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04722 and has 18 connected components, where the component
+with most nodes has 3716 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 177.25,
+and the node degree mode is 1. The top 5 most central nodes are 472759.Nhal_3397
+(degree 1503), 472759.Nhal_1891 (degree 1273), 472759.Nhal_2598 (degree
+1242), 472759.Nhal_2872 (degree 1174) and 472759.Nhal_3752 (degree 1115).
 
 
 References
@@ -107,14 +107,14 @@ def NitrosococcusHalophilus(
 	
 	Datetime: 2021-02-02 20:56:24.014797
 	
-	The undirected graph Nitrosococcus halophilus has 3755 nodes and 332796 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04722
-	and has 18 connected components, where the component with most nodes has 3716 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 177.25, and the node degree mode is 1. The top 5
-	most central nodes are 472759.Nhal_3397 (degree 1503), 472759.Nhal_1891 (degree 1273),
-	472759.Nhal_2598 (degree 1242), 472759.Nhal_2872 (degree 1174) and 472759.Nhal_3752
-	(degree 1115).
+	The undirected graph Nitrosococcus halophilus has 3755 nodes and 332796
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04722 and has 18 connected components, where the component
+	with most nodes has 3716 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 177.25,
+	and the node degree mode is 1. The top 5 most central nodes are 472759.Nhal_3397
+	(degree 1503), 472759.Nhal_1891 (degree 1273), 472759.Nhal_2598 (degree
+	1242), 472759.Nhal_2872 (degree 1174) and 472759.Nhal_3752 (degree 1115).
 	
 
 

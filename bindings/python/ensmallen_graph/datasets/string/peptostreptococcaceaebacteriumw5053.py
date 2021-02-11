@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:24.505583
 
-The undirected graph Peptostreptococcaceae bacterium W5053 has 2298 nodes and 108303
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04104 and has 16 connected components, where the component with most nodes has
-2260 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 63, the mean node degree is 94.26, and the node degree mode is 6. The top
-5 most central nodes are 1321784.HMPREF1987_00925 (degree 796), 1321784.HMPREF1987_00368
-(degree 668), 1321784.HMPREF1987_00767 (degree 605), 1321784.HMPREF1987_00620 (degree
+The undirected graph Peptostreptococcaceae bacterium W5053 has 2298 nodes
+and 108303 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04104 and has 16 connected components, where the
+component with most nodes has 2260 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 63, the mean node degree
+is 94.26, and the node degree mode is 6. The top 5 most central nodes are
+1321784.HMPREF1987_00925 (degree 796), 1321784.HMPREF1987_00368 (degree
+668), 1321784.HMPREF1987_00767 (degree 605), 1321784.HMPREF1987_00620 (degree
 587) and 1321784.HMPREF1987_01459 (degree 563).
 
 
@@ -107,13 +108,14 @@ def PeptostreptococcaceaeBacteriumW5053(
 	
 	Datetime: 2021-02-03 21:53:24.505583
 	
-	The undirected graph Peptostreptococcaceae bacterium W5053 has 2298 nodes and 108303
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04104 and has 16 connected components, where the component with most nodes has
-	2260 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 63, the mean node degree is 94.26, and the node degree mode is 6. The top
-	5 most central nodes are 1321784.HMPREF1987_00925 (degree 796), 1321784.HMPREF1987_00368
-	(degree 668), 1321784.HMPREF1987_00767 (degree 605), 1321784.HMPREF1987_00620 (degree
+	The undirected graph Peptostreptococcaceae bacterium W5053 has 2298 nodes
+	and 108303 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04104 and has 16 connected components, where the
+	component with most nodes has 2260 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 63, the mean node degree
+	is 94.26, and the node degree mode is 6. The top 5 most central nodes are
+	1321784.HMPREF1987_00925 (degree 796), 1321784.HMPREF1987_00368 (degree
+	668), 1321784.HMPREF1987_00767 (degree 605), 1321784.HMPREF1987_00620 (degree
 	587) and 1321784.HMPREF1987_01459 (degree 563).
 	
 

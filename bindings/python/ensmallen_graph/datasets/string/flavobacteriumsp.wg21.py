@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:56.736505
 
-The undirected graph Flavobacterium sp. WG21 has 4234 nodes and 519364 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05796 and
-has 18 connected components, where the component with most nodes has 4184 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 234,
-the mean node degree is 245.33, and the node degree mode is 7. The top 5 most central
-nodes are 1229487.AMYW01000010_gene1318 (degree 1493), 1229487.AMYW01000032_gene3005
-(degree 1353), 1229487.AMYW01000007_gene3295 (degree 1313), 1229487.AMYW01000024_gene399
-(degree 1293) and 1229487.AMYW01000002_gene1471 (degree 1289).
+The undirected graph Flavobacterium sp. WG21 has 4234 nodes and 519364
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05796 and has 18 connected components, where the component
+with most nodes has 4184 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 234, the mean node degree is 245.33,
+and the node degree mode is 7. The top 5 most central nodes are 1229487.AMYW01000010_gene1318
+(degree 1493), 1229487.AMYW01000032_gene3005 (degree 1353), 1229487.AMYW01000007_gene3295
+(degree 1313), 1229487.AMYW01000024_gene399 (degree 1293) and 1229487.AMYW01000002_gene1471
+(degree 1289).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Wg21(
 	
 	Datetime: 2021-02-02 23:26:56.736505
 	
-	The undirected graph Flavobacterium sp. WG21 has 4234 nodes and 519364 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05796 and
-	has 18 connected components, where the component with most nodes has 4184 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 234,
-	the mean node degree is 245.33, and the node degree mode is 7. The top 5 most central
-	nodes are 1229487.AMYW01000010_gene1318 (degree 1493), 1229487.AMYW01000032_gene3005
-	(degree 1353), 1229487.AMYW01000007_gene3295 (degree 1313), 1229487.AMYW01000024_gene399
-	(degree 1293) and 1229487.AMYW01000002_gene1471 (degree 1289).
+	The undirected graph Flavobacterium sp. WG21 has 4234 nodes and 519364
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05796 and has 18 connected components, where the component
+	with most nodes has 4184 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 234, the mean node degree is 245.33,
+	and the node degree mode is 7. The top 5 most central nodes are 1229487.AMYW01000010_gene1318
+	(degree 1493), 1229487.AMYW01000032_gene3005 (degree 1353), 1229487.AMYW01000007_gene3295
+	(degree 1313), 1229487.AMYW01000024_gene399 (degree 1293) and 1229487.AMYW01000002_gene1471
+	(degree 1289).
 	
 
 

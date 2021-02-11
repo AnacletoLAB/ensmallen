@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:40.797947
 
-The undirected graph C4000-5 has 4000 nodes and 4000268 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.50016
-and is connected, as it has a single component. The graph median node degree is 2001,
-the mean node degree is 2000.13 and the node degree mode is 2004. The top 5 most
-central nodes are 3185 (degree 2123), 2716 (degree 2107), 1112 (degree 2100), 3955
-(degree 2093) and 1408 (degree 2092).
+The undirected graph C4000-5 has 4000 nodes and 4000268 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.50016 and is connected, as it has a single component. The
+graph median node degree is 2001, the mean node degree is 2000.13 and the
+node degree mode is 2004. The top 5 most central nodes are 3185 (degree
+2123), 2716 (degree 2107), 1112 (degree 2100), 3955 (degree 2093) and 1408
+(degree 2092).
 
 
 References
@@ -115,12 +116,13 @@ def C40005(
 	
 	Datetime: 2021-02-03 22:52:40.797947
 	
-	The undirected graph C4000-5 has 4000 nodes and 4000268 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.50016
-	and is connected, as it has a single component. The graph median node degree is 2001,
-	the mean node degree is 2000.13 and the node degree mode is 2004. The top 5 most
-	central nodes are 3185 (degree 2123), 2716 (degree 2107), 1112 (degree 2100), 3955
-	(degree 2093) and 1408 (degree 2092).
+	The undirected graph C4000-5 has 4000 nodes and 4000268 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.50016 and is connected, as it has a single component. The
+	graph median node degree is 2001, the mean node degree is 2000.13 and the
+	node degree mode is 2004. The top 5 most central nodes are 3185 (degree
+	2123), 2716 (degree 2107), 1112 (degree 2100), 3955 (degree 2093) and 1408
+	(degree 2092).
 	
 
 

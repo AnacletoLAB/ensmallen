@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:37.171646
 
-The undirected graph Rhodospirillum photometricum has 3167 nodes and 301016 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06004
-and has 11 connected components, where the component with most nodes has 3144 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 190.10, and the node degree mode is 1. The top 5
-most central nodes are 1150469.RSPPHO_02435 (degree 1963), 1150469.RSPPHO_02779 (degree
-1416), 1150469.RSPPHO_01069 (degree 1131), 1150469.RSPPHO_02229 (degree 1116) and
-1150469.RSPPHO_01651 (degree 1111).
+The undirected graph Rhodospirillum photometricum has 3167 nodes and 301016
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06004 and has 11 connected components, where the component
+with most nodes has 3144 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 190.10,
+and the node degree mode is 1. The top 5 most central nodes are 1150469.RSPPHO_02435
+(degree 1963), 1150469.RSPPHO_02779 (degree 1416), 1150469.RSPPHO_01069
+(degree 1131), 1150469.RSPPHO_02229 (degree 1116) and 1150469.RSPPHO_01651
+(degree 1111).
 
 
 References
@@ -107,14 +108,15 @@ def RhodospirillumPhotometricum(
 	
 	Datetime: 2021-02-02 22:59:37.171646
 	
-	The undirected graph Rhodospirillum photometricum has 3167 nodes and 301016 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06004
-	and has 11 connected components, where the component with most nodes has 3144 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 190.10, and the node degree mode is 1. The top 5
-	most central nodes are 1150469.RSPPHO_02435 (degree 1963), 1150469.RSPPHO_02779 (degree
-	1416), 1150469.RSPPHO_01069 (degree 1131), 1150469.RSPPHO_02229 (degree 1116) and
-	1150469.RSPPHO_01651 (degree 1111).
+	The undirected graph Rhodospirillum photometricum has 3167 nodes and 301016
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06004 and has 11 connected components, where the component
+	with most nodes has 3144 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 190.10,
+	and the node degree mode is 1. The top 5 most central nodes are 1150469.RSPPHO_02435
+	(degree 1963), 1150469.RSPPHO_02779 (degree 1416), 1150469.RSPPHO_01069
+	(degree 1131), 1150469.RSPPHO_02229 (degree 1116) and 1150469.RSPPHO_01651
+	(degree 1111).
 	
 
 

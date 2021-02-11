@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:56:57.976644
 
-The undirected graph Talaromyces stipitatus has 8347 nodes and 780989 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02242 and
-has 21 connected components, where the component with most nodes has 8305 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 187.13, and the node degree mode is 1. The top 5 most central
-nodes are 28564.XP_002341866.1 (degree 2004), 28564.XP_002478498.1 (degree 1900),
-28564.XP_002480364.1 (degree 1776), 28564.XP_002340924.1 (degree 1732) and 28564.XP_002479354.1
+The undirected graph Talaromyces stipitatus has 8347 nodes and 780989 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02242 and has 21 connected components, where the component with most
+nodes has 8305 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 187.13, and
+the node degree mode is 1. The top 5 most central nodes are 28564.XP_002341866.1
+(degree 2004), 28564.XP_002478498.1 (degree 1900), 28564.XP_002480364.1
+(degree 1776), 28564.XP_002340924.1 (degree 1732) and 28564.XP_002479354.1
 (degree 1673).
 
 
@@ -107,13 +108,14 @@ def TalaromycesStipitatus(
 	
 	Datetime: 2021-02-02 17:56:57.976644
 	
-	The undirected graph Talaromyces stipitatus has 8347 nodes and 780989 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02242 and
-	has 21 connected components, where the component with most nodes has 8305 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 187.13, and the node degree mode is 1. The top 5 most central
-	nodes are 28564.XP_002341866.1 (degree 2004), 28564.XP_002478498.1 (degree 1900),
-	28564.XP_002480364.1 (degree 1776), 28564.XP_002340924.1 (degree 1732) and 28564.XP_002479354.1
+	The undirected graph Talaromyces stipitatus has 8347 nodes and 780989 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02242 and has 21 connected components, where the component with most
+	nodes has 8305 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 187.13, and
+	the node degree mode is 1. The top 5 most central nodes are 28564.XP_002341866.1
+	(degree 2004), 28564.XP_002478498.1 (degree 1900), 28564.XP_002480364.1
+	(degree 1776), 28564.XP_002340924.1 (degree 1732) and 28564.XP_002479354.1
 	(degree 1673).
 	
 

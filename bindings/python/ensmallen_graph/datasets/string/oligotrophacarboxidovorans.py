@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:12.882616
 
-The undirected graph Oligotropha carboxidovorans has 3673 nodes and 353348 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05240
-and has 12 connected components, where the component with most nodes has 3642 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 192.40, and the node degree mode is 2. The top 5
-most central nodes are 504832.OCAR_7567 (degree 1264), 504832.OCAR_5070 (degree 1137),
-504832.OCAR_4038 (degree 1064), 504832.OCAR_4403 (degree 943) and 504832.OCAR_4703
-(degree 932).
+The undirected graph Oligotropha carboxidovorans has 3673 nodes and 353348
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05240 and has 12 connected components, where the component
+with most nodes has 3642 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 192.40,
+and the node degree mode is 2. The top 5 most central nodes are 504832.OCAR_7567
+(degree 1264), 504832.OCAR_5070 (degree 1137), 504832.OCAR_4038 (degree
+1064), 504832.OCAR_4403 (degree 943) and 504832.OCAR_4703 (degree 932).
 
 
 References
@@ -107,14 +107,14 @@ def OligotrophaCarboxidovorans(
 	
 	Datetime: 2021-02-02 21:02:12.882616
 	
-	The undirected graph Oligotropha carboxidovorans has 3673 nodes and 353348 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05240
-	and has 12 connected components, where the component with most nodes has 3642 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 192.40, and the node degree mode is 2. The top 5
-	most central nodes are 504832.OCAR_7567 (degree 1264), 504832.OCAR_5070 (degree 1137),
-	504832.OCAR_4038 (degree 1064), 504832.OCAR_4403 (degree 943) and 504832.OCAR_4703
-	(degree 932).
+	The undirected graph Oligotropha carboxidovorans has 3673 nodes and 353348
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05240 and has 12 connected components, where the component
+	with most nodes has 3642 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 192.40,
+	and the node degree mode is 2. The top 5 most central nodes are 504832.OCAR_7567
+	(degree 1264), 504832.OCAR_5070 (degree 1137), 504832.OCAR_4038 (degree
+	1064), 504832.OCAR_4403 (degree 943) and 504832.OCAR_4703 (degree 932).
 	
 
 

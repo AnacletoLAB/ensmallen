@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:22.493872
 
-The undirected graph Acinetobacter sp. P838 has 3590 nodes and 284574 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-has 25 connected components, where the component with most nodes has 3535 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 158.54, and the node degree mode is 1. The top 5 most central
-nodes are 1029823.AFIE01000060_gene615 (degree 1193), 1029823.AFIE01000004_gene1671
-(degree 1088), 1029823.AFIE01000007_gene1881 (degree 1014), 1029823.AFIE01000004_gene1652
-(degree 1009) and 1029823.AFIE01000005_gene1256 (degree 982).
+The undirected graph Acinetobacter sp. P838 has 3590 nodes and 284574 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04417 and has 25 connected components, where the component with most
+nodes has 3535 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 158.54, and
+the node degree mode is 1. The top 5 most central nodes are 1029823.AFIE01000060_gene615
+(degree 1193), 1029823.AFIE01000004_gene1671 (degree 1088), 1029823.AFIE01000007_gene1881
+(degree 1014), 1029823.AFIE01000004_gene1652 (degree 1009) and 1029823.AFIE01000005_gene1256
+(degree 982).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSp.P838(
 	
 	Datetime: 2021-02-02 22:10:22.493872
 	
-	The undirected graph Acinetobacter sp. P838 has 3590 nodes and 284574 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-	has 25 connected components, where the component with most nodes has 3535 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 158.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1029823.AFIE01000060_gene615 (degree 1193), 1029823.AFIE01000004_gene1671
-	(degree 1088), 1029823.AFIE01000007_gene1881 (degree 1014), 1029823.AFIE01000004_gene1652
-	(degree 1009) and 1029823.AFIE01000005_gene1256 (degree 982).
+	The undirected graph Acinetobacter sp. P838 has 3590 nodes and 284574 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04417 and has 25 connected components, where the component with most
+	nodes has 3535 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 158.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1029823.AFIE01000060_gene615
+	(degree 1193), 1029823.AFIE01000004_gene1671 (degree 1088), 1029823.AFIE01000007_gene1881
+	(degree 1014), 1029823.AFIE01000004_gene1652 (degree 1009) and 1029823.AFIE01000005_gene1256
+	(degree 982).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:32.725146
 
-The undirected graph Bordetella hinzii has 4535 nodes and 488387 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04750 and
-has 5 connected components, where the component with most nodes has 4526 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 215.39, and the node degree mode is 2. The top 5 most central
-nodes are 1392838.AWNM01000030_gene4372 (degree 1740), 1392838.AWNM01000039_gene824
-(degree 1451), 1392838.AWNM01000078_gene1122 (degree 1418), 1392838.AWNM01000009_gene2790
-(degree 1412) and 1392838.AWNM01000070_gene1211 (degree 1398).
+The undirected graph Bordetella hinzii has 4535 nodes and 488387 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04750 and has 5 connected components, where the component with most
+nodes has 4526 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 215.39, and
+the node degree mode is 2. The top 5 most central nodes are 1392838.AWNM01000030_gene4372
+(degree 1740), 1392838.AWNM01000039_gene824 (degree 1451), 1392838.AWNM01000078_gene1122
+(degree 1418), 1392838.AWNM01000009_gene2790 (degree 1412) and 1392838.AWNM01000070_gene1211
+(degree 1398).
 
 
 References
@@ -107,14 +108,15 @@ def BordetellaHinzii(
 	
 	Datetime: 2021-02-03 22:25:32.725146
 	
-	The undirected graph Bordetella hinzii has 4535 nodes and 488387 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04750 and
-	has 5 connected components, where the component with most nodes has 4526 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 215.39, and the node degree mode is 2. The top 5 most central
-	nodes are 1392838.AWNM01000030_gene4372 (degree 1740), 1392838.AWNM01000039_gene824
-	(degree 1451), 1392838.AWNM01000078_gene1122 (degree 1418), 1392838.AWNM01000009_gene2790
-	(degree 1412) and 1392838.AWNM01000070_gene1211 (degree 1398).
+	The undirected graph Bordetella hinzii has 4535 nodes and 488387 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04750 and has 5 connected components, where the component with most
+	nodes has 4526 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 215.39, and
+	the node degree mode is 2. The top 5 most central nodes are 1392838.AWNM01000030_gene4372
+	(degree 1740), 1392838.AWNM01000039_gene824 (degree 1451), 1392838.AWNM01000078_gene1122
+	(degree 1418), 1392838.AWNM01000009_gene2790 (degree 1412) and 1392838.AWNM01000070_gene1211
+	(degree 1398).
 	
 
 

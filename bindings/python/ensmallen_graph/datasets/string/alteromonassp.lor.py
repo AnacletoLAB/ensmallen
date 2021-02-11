@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:48.618114
 
-The undirected graph Alteromonas sp. LOR has 3709 nodes and 437186 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06358 and
-has 20 connected components, where the component with most nodes has 3654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 235.74, and the node degree mode is 1. The top 5 most central
-nodes are 1537994.JQFW01000003_gene3306 (degree 1380), 1537994.JQFW01000031_gene952
-(degree 1357), 1537994.JQFW01000002_gene3494 (degree 1201), 1537994.JQFW01000056_gene823
-(degree 1199) and 1537994.JQFW01000002_gene3492 (degree 1178).
+The undirected graph Alteromonas sp. LOR has 3709 nodes and 437186 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06358 and has 20 connected components, where the component with most
+nodes has 3654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 235.74, and
+the node degree mode is 1. The top 5 most central nodes are 1537994.JQFW01000003_gene3306
+(degree 1380), 1537994.JQFW01000031_gene952 (degree 1357), 1537994.JQFW01000002_gene3494
+(degree 1201), 1537994.JQFW01000056_gene823 (degree 1199) and 1537994.JQFW01000002_gene3492
+(degree 1178).
 
 
 References
@@ -107,14 +108,15 @@ def AlteromonasSp.Lor(
 	
 	Datetime: 2021-02-03 23:19:48.618114
 	
-	The undirected graph Alteromonas sp. LOR has 3709 nodes and 437186 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06358 and
-	has 20 connected components, where the component with most nodes has 3654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 235.74, and the node degree mode is 1. The top 5 most central
-	nodes are 1537994.JQFW01000003_gene3306 (degree 1380), 1537994.JQFW01000031_gene952
-	(degree 1357), 1537994.JQFW01000002_gene3494 (degree 1201), 1537994.JQFW01000056_gene823
-	(degree 1199) and 1537994.JQFW01000002_gene3492 (degree 1178).
+	The undirected graph Alteromonas sp. LOR has 3709 nodes and 437186 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06358 and has 20 connected components, where the component with most
+	nodes has 3654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 235.74, and
+	the node degree mode is 1. The top 5 most central nodes are 1537994.JQFW01000003_gene3306
+	(degree 1380), 1537994.JQFW01000031_gene952 (degree 1357), 1537994.JQFW01000002_gene3494
+	(degree 1201), 1537994.JQFW01000056_gene823 (degree 1199) and 1537994.JQFW01000002_gene3492
+	(degree 1178).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:07:35.405542
 
-The undirected graph citeulike-ut has 153277 nodes and 538586 weighted edges, of
-which 18 are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 7.03, and the node degree mode is 1. The top 5 most central
-nodes are 35 (degree 8880), 16325 (degree 4077), 7347 (degree 3965), 14861 (degree
-3179) and 19718 (degree 3159).
+The undirected graph citeulike-ut has 153277 nodes and 538586 weighted
+edges, of which 18 are self-loops. The graph is extremely sparse as it
+has a density of 0.00005 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 7.03, and the
+node degree mode is 1. The top 5 most central nodes are 35 (degree 8880),
+16325 (degree 4077), 7347 (degree 3965), 14861 (degree 3179) and 19718
+(degree 3159).
 
 
 References
@@ -102,12 +103,13 @@ def CiteulikeUt(
 	
 	Datetime: 2021-02-06 12:07:35.405542
 	
-	The undirected graph citeulike-ut has 153277 nodes and 538586 weighted edges, of
-	which 18 are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 7.03, and the node degree mode is 1. The top 5 most central
-	nodes are 35 (degree 8880), 16325 (degree 4077), 7347 (degree 3965), 14861 (degree
-	3179) and 19718 (degree 3159).
+	The undirected graph citeulike-ut has 153277 nodes and 538586 weighted
+	edges, of which 18 are self-loops. The graph is extremely sparse as it
+	has a density of 0.00005 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 7.03, and the
+	node degree mode is 1. The top 5 most central nodes are 35 (degree 8880),
+	16325 (degree 4077), 7347 (degree 3965), 14861 (degree 3179) and 19718
+	(degree 3159).
 	
 
 

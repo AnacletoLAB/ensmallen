@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:58.760297
 
-The undirected graph Rhodnius prolixus has 10119 nodes and 1549703 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03027 and
-has 4 connected components, where the component with most nodes has 10113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 209,
-the mean node degree is 306.30, and the node degree mode is 1. The top 5 most central
-nodes are 13249.RPRC003907-PA (degree 4184), 13249.RPRC012247-PA (degree 2519), 13249.RPRC008770-PA
-(degree 2461), 13249.RPRC003349-PA (degree 2402) and 13249.RPRC015063-PA (degree
+The undirected graph Rhodnius prolixus has 10119 nodes and 1549703 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03027 and has 4 connected components, where the component with most
+nodes has 10113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 209, the mean node degree is 306.30, and
+the node degree mode is 1. The top 5 most central nodes are 13249.RPRC003907-PA
+(degree 4184), 13249.RPRC012247-PA (degree 2519), 13249.RPRC008770-PA (degree
+2461), 13249.RPRC003349-PA (degree 2402) and 13249.RPRC015063-PA (degree
 2327).
 
 
@@ -107,13 +108,14 @@ def RhodniusProlixus(
 	
 	Datetime: 2021-02-02 17:52:58.760297
 	
-	The undirected graph Rhodnius prolixus has 10119 nodes and 1549703 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03027 and
-	has 4 connected components, where the component with most nodes has 10113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 209,
-	the mean node degree is 306.30, and the node degree mode is 1. The top 5 most central
-	nodes are 13249.RPRC003907-PA (degree 4184), 13249.RPRC012247-PA (degree 2519), 13249.RPRC008770-PA
-	(degree 2461), 13249.RPRC003349-PA (degree 2402) and 13249.RPRC015063-PA (degree
+	The undirected graph Rhodnius prolixus has 10119 nodes and 1549703 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03027 and has 4 connected components, where the component with most
+	nodes has 10113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 209, the mean node degree is 306.30, and
+	the node degree mode is 1. The top 5 most central nodes are 13249.RPRC003907-PA
+	(degree 4184), 13249.RPRC012247-PA (degree 2519), 13249.RPRC008770-PA (degree
+	2461), 13249.RPRC003349-PA (degree 2402) and 13249.RPRC015063-PA (degree
 	2327).
 	
 

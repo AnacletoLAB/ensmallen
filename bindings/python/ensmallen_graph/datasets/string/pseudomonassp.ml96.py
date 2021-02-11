@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:01.581790
 
-The undirected graph Pseudomonas sp. ML96 has 4257 nodes and 667971 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07374 and
-has 8 connected components, where the component with most nodes has 4238 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 259,
-the mean node degree is 313.82, and the node degree mode is 2. The top 5 most central
-nodes are 1523503.JPMY01000010_gene2637 (degree 1991), 1523503.JPMY01000046_gene1315
-(degree 1988), 1523503.JPMY01000010_gene2511 (degree 1733), 1523503.JPMY01000012_gene3359
-(degree 1631) and 1523503.JPMY01000013_gene3551 (degree 1589).
+The undirected graph Pseudomonas sp. ML96 has 4257 nodes and 667971 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07374 and has 8 connected components, where the component with most
+nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 259, the mean node degree is 313.82, and
+the node degree mode is 2. The top 5 most central nodes are 1523503.JPMY01000010_gene2637
+(degree 1991), 1523503.JPMY01000046_gene1315 (degree 1988), 1523503.JPMY01000010_gene2511
+(degree 1733), 1523503.JPMY01000012_gene3359 (degree 1631) and 1523503.JPMY01000013_gene3551
+(degree 1589).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.Ml96(
 	
 	Datetime: 2021-02-03 23:18:01.581790
 	
-	The undirected graph Pseudomonas sp. ML96 has 4257 nodes and 667971 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07374 and
-	has 8 connected components, where the component with most nodes has 4238 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 259,
-	the mean node degree is 313.82, and the node degree mode is 2. The top 5 most central
-	nodes are 1523503.JPMY01000010_gene2637 (degree 1991), 1523503.JPMY01000046_gene1315
-	(degree 1988), 1523503.JPMY01000010_gene2511 (degree 1733), 1523503.JPMY01000012_gene3359
-	(degree 1631) and 1523503.JPMY01000013_gene3551 (degree 1589).
+	The undirected graph Pseudomonas sp. ML96 has 4257 nodes and 667971 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07374 and has 8 connected components, where the component with most
+	nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 259, the mean node degree is 313.82, and
+	the node degree mode is 2. The top 5 most central nodes are 1523503.JPMY01000010_gene2637
+	(degree 1991), 1523503.JPMY01000046_gene1315 (degree 1988), 1523503.JPMY01000010_gene2511
+	(degree 1733), 1523503.JPMY01000012_gene3359 (degree 1631) and 1523503.JPMY01000013_gene3551
+	(degree 1589).
 	
 
 

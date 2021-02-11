@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:06.676471
 
-The undirected graph Lactobacillus helveticus CNRZ32 has 1623 nodes and 90339 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06863
-and has 17 connected components, where the component with most nodes has 1581 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 81, the mean node degree is 111.32, and the node degree mode is 2. The top 5 most
-central nodes are 326425.lhe_1495 (degree 751), 326425.lhe_1265 (degree 577), 326425.lhe_0426
-(degree 565), 326425.lhe_0498 (degree 514) and 326425.lhe_0680 (degree 509).
+The undirected graph Lactobacillus helveticus CNRZ32 has 1623 nodes and
+90339 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06863 and has 17 connected components, where the
+component with most nodes has 1581 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+is 111.32, and the node degree mode is 2. The top 5 most central nodes
+are 326425.lhe_1495 (degree 751), 326425.lhe_1265 (degree 577), 326425.lhe_0426
+(degree 565), 326425.lhe_0498 (degree 514) and 326425.lhe_0680 (degree
+509).
 
 
 References
@@ -106,13 +108,15 @@ def LactobacillusHelveticusCnrz32(
 	
 	Datetime: 2021-02-02 20:29:06.676471
 	
-	The undirected graph Lactobacillus helveticus CNRZ32 has 1623 nodes and 90339 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06863
-	and has 17 connected components, where the component with most nodes has 1581 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 81, the mean node degree is 111.32, and the node degree mode is 2. The top 5 most
-	central nodes are 326425.lhe_1495 (degree 751), 326425.lhe_1265 (degree 577), 326425.lhe_0426
-	(degree 565), 326425.lhe_0498 (degree 514) and 326425.lhe_0680 (degree 509).
+	The undirected graph Lactobacillus helveticus CNRZ32 has 1623 nodes and
+	90339 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06863 and has 17 connected components, where the
+	component with most nodes has 1581 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 81, the mean node degree
+	is 111.32, and the node degree mode is 2. The top 5 most central nodes
+	are 326425.lhe_1495 (degree 751), 326425.lhe_1265 (degree 577), 326425.lhe_0426
+	(degree 565), 326425.lhe_0498 (degree 514) and 326425.lhe_0680 (degree
+	509).
 	
 
 

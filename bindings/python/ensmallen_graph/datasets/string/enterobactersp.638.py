@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:18.047987
 
-The undirected graph Enterobacter sp. 638 has 4208 nodes and 369444 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04174 and
-has 2 connected components, where the component with most nodes has 4206 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 175.59, and the node degree mode is 5. The top 5 most central
-nodes are 399742.Ent638_2136 (degree 1404), 399742.Ent638_4102 (degree 1399), 399742.Ent638_3656
-(degree 1187), 399742.Ent638_3645 (degree 1133) and 399742.Ent638_2998 (degree 1121).
+The undirected graph Enterobacter sp. 638 has 4208 nodes and 369444 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04174 and has 2 connected components, where the component with most
+nodes has 4206 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 175.59, and
+the node degree mode is 5. The top 5 most central nodes are 399742.Ent638_2136
+(degree 1404), 399742.Ent638_4102 (degree 1399), 399742.Ent638_3656 (degree
+1187), 399742.Ent638_3645 (degree 1133) and 399742.Ent638_2998 (degree
+1121).
 
 
 References
@@ -106,13 +108,15 @@ def EnterobacterSp.638(
 	
 	Datetime: 2021-02-02 20:43:18.047987
 	
-	The undirected graph Enterobacter sp. 638 has 4208 nodes and 369444 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04174 and
-	has 2 connected components, where the component with most nodes has 4206 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 175.59, and the node degree mode is 5. The top 5 most central
-	nodes are 399742.Ent638_2136 (degree 1404), 399742.Ent638_4102 (degree 1399), 399742.Ent638_3656
-	(degree 1187), 399742.Ent638_3645 (degree 1133) and 399742.Ent638_2998 (degree 1121).
+	The undirected graph Enterobacter sp. 638 has 4208 nodes and 369444 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04174 and has 2 connected components, where the component with most
+	nodes has 4206 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 175.59, and
+	the node degree mode is 5. The top 5 most central nodes are 399742.Ent638_2136
+	(degree 1404), 399742.Ent638_4102 (degree 1399), 399742.Ent638_3656 (degree
+	1187), 399742.Ent638_3645 (degree 1133) and 399742.Ent638_2998 (degree
+	1121).
 	
 
 

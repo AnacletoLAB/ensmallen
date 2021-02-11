@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:45:32.040853
 
-The undirected graph Sus scrofa has 21284 nodes and 5280910 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02332 and has 3
-connected components, where the component with most nodes has 21278 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 360,
-the mean node degree is 496.23, and the node degree mode is 8. The top 5 most central
-nodes are 9823.ENSSSCP00000000740 (degree 4666), 9823.ENSSSCP00000028154 (degree
-4632), 9823.ENSSSCP00000012865 (degree 4626), 9823.ENSSSCP00000010754 (degree 4596)
-and 9823.ENSSSCP00000019016 (degree 4444).
+The undirected graph Sus scrofa has 21284 nodes and 5280910 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02332 and has 3 connected components, where the component with most nodes
+has 21278 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 360, the mean node degree is 496.23, and the
+node degree mode is 8. The top 5 most central nodes are 9823.ENSSSCP00000000740
+(degree 4666), 9823.ENSSSCP00000028154 (degree 4632), 9823.ENSSSCP00000012865
+(degree 4626), 9823.ENSSSCP00000010754 (degree 4596) and 9823.ENSSSCP00000019016
+(degree 4444).
 
 
 References
@@ -107,14 +108,15 @@ def SusScrofa(
 	
 	Datetime: 2021-02-02 17:45:32.040853
 	
-	The undirected graph Sus scrofa has 21284 nodes and 5280910 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02332 and has 3
-	connected components, where the component with most nodes has 21278 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 360,
-	the mean node degree is 496.23, and the node degree mode is 8. The top 5 most central
-	nodes are 9823.ENSSSCP00000000740 (degree 4666), 9823.ENSSSCP00000028154 (degree
-	4632), 9823.ENSSSCP00000012865 (degree 4626), 9823.ENSSSCP00000010754 (degree 4596)
-	and 9823.ENSSSCP00000019016 (degree 4444).
+	The undirected graph Sus scrofa has 21284 nodes and 5280910 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02332 and has 3 connected components, where the component with most nodes
+	has 21278 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 360, the mean node degree is 496.23, and the
+	node degree mode is 8. The top 5 most central nodes are 9823.ENSSSCP00000000740
+	(degree 4666), 9823.ENSSSCP00000028154 (degree 4632), 9823.ENSSSCP00000012865
+	(degree 4626), 9823.ENSSSCP00000010754 (degree 4596) and 9823.ENSSSCP00000019016
+	(degree 4444).
 	
 
 

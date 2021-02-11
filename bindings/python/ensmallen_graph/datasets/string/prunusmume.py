@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:16.389923
 
-The undirected graph Prunus mume has 20824 nodes and 2768185 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01277 and has 12
-connected components, where the component with most nodes has 20802 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 265.86, and the node degree mode is 1. The top 5 most central
-nodes are 102107.XP_008242557.1 (degree 6306), 102107.XP_008236926.1 (degree 4314),
-102107.XP_008243986.1 (degree 3755), 102107.XP_008244248.1 (degree 3582) and 102107.XP_008242652.1
+The undirected graph Prunus mume has 20824 nodes and 2768185 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01277 and has 12 connected components, where the component with most
+nodes has 20802 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 265.86, and
+the node degree mode is 1. The top 5 most central nodes are 102107.XP_008242557.1
+(degree 6306), 102107.XP_008236926.1 (degree 4314), 102107.XP_008243986.1
+(degree 3755), 102107.XP_008244248.1 (degree 3582) and 102107.XP_008242652.1
 (degree 3556).
 
 
@@ -107,13 +108,14 @@ def PrunusMume(
 	
 	Datetime: 2021-02-05 17:17:16.389923
 	
-	The undirected graph Prunus mume has 20824 nodes and 2768185 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01277 and has 12
-	connected components, where the component with most nodes has 20802 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 265.86, and the node degree mode is 1. The top 5 most central
-	nodes are 102107.XP_008242557.1 (degree 6306), 102107.XP_008236926.1 (degree 4314),
-	102107.XP_008243986.1 (degree 3755), 102107.XP_008244248.1 (degree 3582) and 102107.XP_008242652.1
+	The undirected graph Prunus mume has 20824 nodes and 2768185 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01277 and has 12 connected components, where the component with most
+	nodes has 20802 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 265.86, and
+	the node degree mode is 1. The top 5 most central nodes are 102107.XP_008242557.1
+	(degree 6306), 102107.XP_008236926.1 (degree 4314), 102107.XP_008243986.1
+	(degree 3755), 102107.XP_008244248.1 (degree 3582) and 102107.XP_008242652.1
 	(degree 3556).
 	
 

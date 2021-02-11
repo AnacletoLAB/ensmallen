@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 07:46:06.129577
 
-The undirected graph yahoo-msg has 100058 nodes with 2 different node types: 1 (nodes
-number 100001) and 2 (nodes number 57) and 746840 unweighted edges, of which 7025
-are self-loops. The graph is quite sparse as it has a density of 0.00015 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 14.86 and the node degree mode is 2. The top 5 most central nodes are 100011 (degree
-9374), 100054 (degree 7282), 100005 (degree 7154), 100053 (degree 6949) and 100036
-(degree 5436).
+The undirected graph yahoo-msg has 100058 nodes with 2 different node types:
+1 (nodes number 100001) and 2 (nodes number 57) and 746840 unweighted edges,
+of which 7025 are self-loops. The graph is quite sparse as it has a density
+of 0.00015 and is connected, as it has a single component. The graph median
+node degree is 8, the mean node degree is 14.86 and the node degree mode
+is 2. The top 5 most central nodes are 100011 (degree 9374), 100054 (degree
+7282), 100005 (degree 7154), 100053 (degree 6949) and 100036 (degree 5436).
 
 
 References
@@ -103,13 +103,13 @@ def YahooMsg(
 	
 	Datetime: 2021-02-04 07:46:06.129577
 	
-	The undirected graph yahoo-msg has 100058 nodes with 2 different node types: 1 (nodes
-	number 100001) and 2 (nodes number 57) and 746840 unweighted edges, of which 7025
-	are self-loops. The graph is quite sparse as it has a density of 0.00015 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 14.86 and the node degree mode is 2. The top 5 most central nodes are 100011 (degree
-	9374), 100054 (degree 7282), 100005 (degree 7154), 100053 (degree 6949) and 100036
-	(degree 5436).
+	The undirected graph yahoo-msg has 100058 nodes with 2 different node types:
+	1 (nodes number 100001) and 2 (nodes number 57) and 746840 unweighted edges,
+	of which 7025 are self-loops. The graph is quite sparse as it has a density
+	of 0.00015 and is connected, as it has a single component. The graph median
+	node degree is 8, the mean node degree is 14.86 and the node degree mode
+	is 2. The top 5 most central nodes are 100011 (degree 9374), 100054 (degree
+	7282), 100005 (degree 7154), 100053 (degree 6949) and 100036 (degree 5436).
 	
 
 

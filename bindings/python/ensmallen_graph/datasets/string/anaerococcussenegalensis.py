@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:48.218902
 
-The undirected graph Anaerococcus senegalensis has 1750 nodes and 119642 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07818
-and has 9 connected components, where the component with most nodes has 1725 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 136.73, and the node degree mode is 7. The top 5
-most central nodes are 1033733.CAEK01000007_gene1715 (degree 834), 1033733.CAEK01000013_gene272
-(degree 786), 1033733.CAEK01000013_gene273 (degree 779), 1033733.CAEK01000011_gene1432
-(degree 722) and 1033733.CAEK01000003_gene1095 (degree 676).
+The undirected graph Anaerococcus senegalensis has 1750 nodes and 119642
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07818 and has 9 connected components, where the component
+with most nodes has 1725 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 136.73,
+and the node degree mode is 7. The top 5 most central nodes are 1033733.CAEK01000007_gene1715
+(degree 834), 1033733.CAEK01000013_gene272 (degree 786), 1033733.CAEK01000013_gene273
+(degree 779), 1033733.CAEK01000011_gene1432 (degree 722) and 1033733.CAEK01000003_gene1095
+(degree 676).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerococcusSenegalensis(
 	
 	Datetime: 2021-02-02 22:10:48.218902
 	
-	The undirected graph Anaerococcus senegalensis has 1750 nodes and 119642 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07818
-	and has 9 connected components, where the component with most nodes has 1725 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 136.73, and the node degree mode is 7. The top 5
-	most central nodes are 1033733.CAEK01000007_gene1715 (degree 834), 1033733.CAEK01000013_gene272
-	(degree 786), 1033733.CAEK01000013_gene273 (degree 779), 1033733.CAEK01000011_gene1432
-	(degree 722) and 1033733.CAEK01000003_gene1095 (degree 676).
+	The undirected graph Anaerococcus senegalensis has 1750 nodes and 119642
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07818 and has 9 connected components, where the component
+	with most nodes has 1725 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 136.73,
+	and the node degree mode is 7. The top 5 most central nodes are 1033733.CAEK01000007_gene1715
+	(degree 834), 1033733.CAEK01000013_gene272 (degree 786), 1033733.CAEK01000013_gene273
+	(degree 779), 1033733.CAEK01000011_gene1432 (degree 722) and 1033733.CAEK01000003_gene1095
+	(degree 676).
 	
 
 

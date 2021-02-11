@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:10.853936
 
-The undirected graph lesmis has 77 nodes and 254 weighted edges, of which none are
-self-loops. The graph is dense as it has a density of 0.08681 and is connected, as
-it has a single component. The graph median node degree is 6, the mean node degree
-is 6.60, and the node degree mode is 1. The top 5 most central nodes are 12 (degree
-36), 49 (degree 22), 56 (degree 19), 28 (degree 17) and 26 (degree 16).
+The undirected graph lesmis has 77 nodes and 254 weighted edges, of which
+none are self-loops. The graph is dense as it has a density of 0.08681
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 6.60, and the node degree mode is 1. The
+top 5 most central nodes are 12 (degree 36), 49 (degree 22), 56 (degree
+19), 28 (degree 17) and 26 (degree 16).
 
 
 References
@@ -101,11 +102,12 @@ def Lesmis(
 	
 	Datetime: 2021-02-06 08:13:10.853936
 	
-	The undirected graph lesmis has 77 nodes and 254 weighted edges, of which none are
-	self-loops. The graph is dense as it has a density of 0.08681 and is connected, as
-	it has a single component. The graph median node degree is 6, the mean node degree
-	is 6.60, and the node degree mode is 1. The top 5 most central nodes are 12 (degree
-	36), 49 (degree 22), 56 (degree 19), 28 (degree 17) and 26 (degree 16).
+	The undirected graph lesmis has 77 nodes and 254 weighted edges, of which
+	none are self-loops. The graph is dense as it has a density of 0.08681
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 6.60, and the node degree mode is 1. The
+	top 5 most central nodes are 12 (degree 36), 49 (degree 22), 56 (degree
+	19), 28 (degree 17) and 26 (degree 16).
 	
 
 

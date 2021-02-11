@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:49.723100
 
-The undirected graph Flavobacteriaceae bacterium S85 has 2825 nodes and 207836 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05210
-and has 9 connected components, where the component with most nodes has 2809 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 147.14, and the node degree mode is 1. The top 5
-most central nodes are 1042376.AFPK01000031_gene874 (degree 941), 1042376.AFPK01000044_gene2600
+The undirected graph Flavobacteriaceae bacterium S85 has 2825 nodes and
+207836 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05210 and has 9 connected components, where the
+component with most nodes has 2809 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+is 147.14, and the node degree mode is 1. The top 5 most central nodes
+are 1042376.AFPK01000031_gene874 (degree 941), 1042376.AFPK01000044_gene2600
 (degree 938), 1042376.AFPK01000028_gene2025 (degree 724), 1042376.AFPK01000044_gene2635
 (degree 720) and 1042376.AFPK01000026_gene2248 (degree 691).
 
@@ -107,12 +108,13 @@ def FlavobacteriaceaeBacteriumS85(
 	
 	Datetime: 2021-02-02 22:15:49.723100
 	
-	The undirected graph Flavobacteriaceae bacterium S85 has 2825 nodes and 207836 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05210
-	and has 9 connected components, where the component with most nodes has 2809 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 147.14, and the node degree mode is 1. The top 5
-	most central nodes are 1042376.AFPK01000031_gene874 (degree 941), 1042376.AFPK01000044_gene2600
+	The undirected graph Flavobacteriaceae bacterium S85 has 2825 nodes and
+	207836 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05210 and has 9 connected components, where the
+	component with most nodes has 2809 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+	is 147.14, and the node degree mode is 1. The top 5 most central nodes
+	are 1042376.AFPK01000031_gene874 (degree 941), 1042376.AFPK01000044_gene2600
 	(degree 938), 1042376.AFPK01000028_gene2025 (degree 724), 1042376.AFPK01000044_gene2635
 	(degree 720) and 1042376.AFPK01000026_gene2248 (degree 691).
 	

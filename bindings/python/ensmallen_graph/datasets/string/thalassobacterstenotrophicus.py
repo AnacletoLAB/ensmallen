@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:58.253608
 
-The undirected graph Thalassobacter stenotrophicus has 2973 nodes and 386609 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08751
-and has 9 connected components, where the component with most nodes has 2952 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 226, the mean node degree is 260.08, and the node degree mode is 1. The top 5
-most central nodes are 266809.PM03_07395 (degree 1461), 266809.PM03_01710 (degree
-1236), 266809.PM03_05275 (degree 1225), 266809.PM03_15005 (degree 1214) and 266809.PM03_10295
-(degree 1154).
+The undirected graph Thalassobacter stenotrophicus has 2973 nodes and 386609
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08751 and has 9 connected components, where the component
+with most nodes has 2952 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 226, the mean node degree is 260.08,
+and the node degree mode is 1. The top 5 most central nodes are 266809.PM03_07395
+(degree 1461), 266809.PM03_01710 (degree 1236), 266809.PM03_05275 (degree
+1225), 266809.PM03_15005 (degree 1214) and 266809.PM03_10295 (degree 1154).
 
 
 References
@@ -107,14 +107,14 @@ def ThalassobacterStenotrophicus(
 	
 	Datetime: 2021-02-02 20:14:58.253608
 	
-	The undirected graph Thalassobacter stenotrophicus has 2973 nodes and 386609 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08751
-	and has 9 connected components, where the component with most nodes has 2952 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 226, the mean node degree is 260.08, and the node degree mode is 1. The top 5
-	most central nodes are 266809.PM03_07395 (degree 1461), 266809.PM03_01710 (degree
-	1236), 266809.PM03_05275 (degree 1225), 266809.PM03_15005 (degree 1214) and 266809.PM03_10295
-	(degree 1154).
+	The undirected graph Thalassobacter stenotrophicus has 2973 nodes and 386609
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08751 and has 9 connected components, where the component
+	with most nodes has 2952 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 226, the mean node degree is 260.08,
+	and the node degree mode is 1. The top 5 most central nodes are 266809.PM03_07395
+	(degree 1461), 266809.PM03_01710 (degree 1236), 266809.PM03_05275 (degree
+	1225), 266809.PM03_15005 (degree 1214) and 266809.PM03_10295 (degree 1154).
 	
 
 

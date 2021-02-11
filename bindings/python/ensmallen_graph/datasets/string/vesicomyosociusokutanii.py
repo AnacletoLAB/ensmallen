@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:25.858296
 
-The undirected graph Vesicomyosocius okutanii has 929 nodes and 47669 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11059
-and is connected, as it has a single component. The graph median node degree is 88,
-the mean node degree is 102.62, and the node degree mode is 78. The top 5 most central
-nodes are 412965.COSY_0084 (degree 484), 412965.COSY_0820 (degree 453), 412965.COSY_0590
-(degree 435), 412965.COSY_0427 (degree 411) and 412965.COSY_0477 (degree 388).
+The undirected graph Vesicomyosocius okutanii has 929 nodes and 47669 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11059 and is connected, as it has a single component. The
+graph median node degree is 88, the mean node degree is 102.62, and the
+node degree mode is 78. The top 5 most central nodes are 412965.COSY_0084
+(degree 484), 412965.COSY_0820 (degree 453), 412965.COSY_0590 (degree 435),
+412965.COSY_0427 (degree 411) and 412965.COSY_0477 (degree 388).
 
 
 References
@@ -105,12 +106,13 @@ def VesicomyosociusOkutanii(
 	
 	Datetime: 2021-02-02 20:46:25.858296
 	
-	The undirected graph Vesicomyosocius okutanii has 929 nodes and 47669 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11059
-	and is connected, as it has a single component. The graph median node degree is 88,
-	the mean node degree is 102.62, and the node degree mode is 78. The top 5 most central
-	nodes are 412965.COSY_0084 (degree 484), 412965.COSY_0820 (degree 453), 412965.COSY_0590
-	(degree 435), 412965.COSY_0427 (degree 411) and 412965.COSY_0477 (degree 388).
+	The undirected graph Vesicomyosocius okutanii has 929 nodes and 47669 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11059 and is connected, as it has a single component. The
+	graph median node degree is 88, the mean node degree is 102.62, and the
+	node degree mode is 78. The top 5 most central nodes are 412965.COSY_0084
+	(degree 484), 412965.COSY_0820 (degree 453), 412965.COSY_0590 (degree 435),
+	412965.COSY_0427 (degree 411) and 412965.COSY_0477 (degree 388).
 	
 
 

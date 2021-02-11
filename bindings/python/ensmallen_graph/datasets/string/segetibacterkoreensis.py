@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:42.605846
 
-The undirected graph Segetibacter koreensis has 5065 nodes and 651201 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05078 and
-has 30 connected components, where the component with most nodes has 4993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 240,
-the mean node degree is 257.14, and the node degree mode is 2. The top 5 most central
-nodes are 1123248.KB893337_gene2568 (degree 1817), 1123248.KB893315_gene3201 (degree
-1556), 1123248.KB893315_gene3026 (degree 1506), 1123248.KB893315_gene3124 (degree
-1299) and 1123248.KB893386_gene1953 (degree 1288).
+The undirected graph Segetibacter koreensis has 5065 nodes and 651201 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05078 and has 30 connected components, where the component with most
+nodes has 4993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 240, the mean node degree is 257.14, and
+the node degree mode is 2. The top 5 most central nodes are 1123248.KB893337_gene2568
+(degree 1817), 1123248.KB893315_gene3201 (degree 1556), 1123248.KB893315_gene3026
+(degree 1506), 1123248.KB893315_gene3124 (degree 1299) and 1123248.KB893386_gene1953
+(degree 1288).
 
 
 References
@@ -107,14 +108,15 @@ def SegetibacterKoreensis(
 	
 	Datetime: 2021-02-02 22:48:42.605846
 	
-	The undirected graph Segetibacter koreensis has 5065 nodes and 651201 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05078 and
-	has 30 connected components, where the component with most nodes has 4993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 240,
-	the mean node degree is 257.14, and the node degree mode is 2. The top 5 most central
-	nodes are 1123248.KB893337_gene2568 (degree 1817), 1123248.KB893315_gene3201 (degree
-	1556), 1123248.KB893315_gene3026 (degree 1506), 1123248.KB893315_gene3124 (degree
-	1299) and 1123248.KB893386_gene1953 (degree 1288).
+	The undirected graph Segetibacter koreensis has 5065 nodes and 651201 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05078 and has 30 connected components, where the component with most
+	nodes has 4993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 240, the mean node degree is 257.14, and
+	the node degree mode is 2. The top 5 most central nodes are 1123248.KB893337_gene2568
+	(degree 1817), 1123248.KB893315_gene3201 (degree 1556), 1123248.KB893315_gene3026
+	(degree 1506), 1123248.KB893315_gene3124 (degree 1299) and 1123248.KB893386_gene1953
+	(degree 1288).
 	
 
 

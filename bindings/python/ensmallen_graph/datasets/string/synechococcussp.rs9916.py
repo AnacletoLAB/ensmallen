@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:15.660926
 
-The undirected graph Synechococcus sp. RS9916 has 2850 nodes and 178396 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04394
-and has 69 connected components, where the component with most nodes has 2637 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 125.19, and the node degree mode is 2. The top 5
-most central nodes are 221359.RS9916_31797 (degree 924), 221359.RS9916_37767 (degree
-752), 221359.RS9916_30114 (degree 682), 221359.RS9916_39671 (degree 671) and 221359.RS9916_34532
-(degree 665).
+The undirected graph Synechococcus sp. RS9916 has 2850 nodes and 178396
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04394 and has 69 connected components, where the component
+with most nodes has 2637 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 125.19,
+and the node degree mode is 2. The top 5 most central nodes are 221359.RS9916_31797
+(degree 924), 221359.RS9916_37767 (degree 752), 221359.RS9916_30114 (degree
+682), 221359.RS9916_39671 (degree 671) and 221359.RS9916_34532 (degree
+665).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Rs9916(
 	
 	Datetime: 2021-02-02 20:04:15.660926
 	
-	The undirected graph Synechococcus sp. RS9916 has 2850 nodes and 178396 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04394
-	and has 69 connected components, where the component with most nodes has 2637 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 125.19, and the node degree mode is 2. The top 5
-	most central nodes are 221359.RS9916_31797 (degree 924), 221359.RS9916_37767 (degree
-	752), 221359.RS9916_30114 (degree 682), 221359.RS9916_39671 (degree 671) and 221359.RS9916_34532
-	(degree 665).
+	The undirected graph Synechococcus sp. RS9916 has 2850 nodes and 178396
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04394 and has 69 connected components, where the component
+	with most nodes has 2637 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 125.19,
+	and the node degree mode is 2. The top 5 most central nodes are 221359.RS9916_31797
+	(degree 924), 221359.RS9916_37767 (degree 752), 221359.RS9916_30114 (degree
+	682), 221359.RS9916_39671 (degree 671) and 221359.RS9916_34532 (degree
+	665).
 	
 
 

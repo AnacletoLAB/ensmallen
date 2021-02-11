@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:32.936987
 
-The undirected graph Maricaulis sp. JL2009 has 3051 nodes and 252146 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05419 and
-has 6 connected components, where the component with most nodes has 3038 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 165.29, and the node degree mode is 2. The top 5 most central
-nodes are 1161401.ASJA01000011_gene1502 (degree 1100), 1161401.ASJA01000025_gene218
-(degree 871), 1161401.ASJA01000002_gene2685 (degree 835), 1161401.ASJA01000016_gene1343
-(degree 795) and 1161401.ASJA01000008_gene1719 (degree 773).
+The undirected graph Maricaulis sp. JL2009 has 3051 nodes and 252146 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05419 and has 6 connected components, where the component with most
+nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 165.29, and
+the node degree mode is 2. The top 5 most central nodes are 1161401.ASJA01000011_gene1502
+(degree 1100), 1161401.ASJA01000025_gene218 (degree 871), 1161401.ASJA01000002_gene2685
+(degree 835), 1161401.ASJA01000016_gene1343 (degree 795) and 1161401.ASJA01000008_gene1719
+(degree 773).
 
 
 References
@@ -107,14 +108,15 @@ def MaricaulisSp.Jl2009(
 	
 	Datetime: 2021-02-02 23:04:32.936987
 	
-	The undirected graph Maricaulis sp. JL2009 has 3051 nodes and 252146 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05419 and
-	has 6 connected components, where the component with most nodes has 3038 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 165.29, and the node degree mode is 2. The top 5 most central
-	nodes are 1161401.ASJA01000011_gene1502 (degree 1100), 1161401.ASJA01000025_gene218
-	(degree 871), 1161401.ASJA01000002_gene2685 (degree 835), 1161401.ASJA01000016_gene1343
-	(degree 795) and 1161401.ASJA01000008_gene1719 (degree 773).
+	The undirected graph Maricaulis sp. JL2009 has 3051 nodes and 252146 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05419 and has 6 connected components, where the component with most
+	nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 165.29, and
+	the node degree mode is 2. The top 5 most central nodes are 1161401.ASJA01000011_gene1502
+	(degree 1100), 1161401.ASJA01000025_gene218 (degree 871), 1161401.ASJA01000002_gene2685
+	(degree 835), 1161401.ASJA01000016_gene1343 (degree 795) and 1161401.ASJA01000008_gene1719
+	(degree 773).
 	
 
 

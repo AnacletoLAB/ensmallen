@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:47:24.645590
 
-The undirected graph Borrelia persica has 1806 nodes and 72624 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04456 and
-has 216 connected components, where the component with most nodes has 1096 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 8, the mean node degree is 80.43, and the node degree mode is 1. The top 5 most
-central nodes are 1417230.AYOT01000223_gene712 (degree 580), 1417230.AYOT01000146_gene1839
-(degree 562), 1417230.AYOT01000223_gene886 (degree 481), 1417230.AYOT01000146_gene1800
-(degree 479) and 1417230.AYOT01000225_gene148 (degree 458).
+The undirected graph Borrelia persica has 1806 nodes and 72624 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04456 and has 216 connected components, where the component with most
+nodes has 1096 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 8, the mean node degree is 80.43, and the
+node degree mode is 1. The top 5 most central nodes are 1417230.AYOT01000223_gene712
+(degree 580), 1417230.AYOT01000146_gene1839 (degree 562), 1417230.AYOT01000223_gene886
+(degree 481), 1417230.AYOT01000146_gene1800 (degree 479) and 1417230.AYOT01000225_gene148
+(degree 458).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaPersica(
 	
 	Datetime: 2021-02-03 22:47:24.645590
 	
-	The undirected graph Borrelia persica has 1806 nodes and 72624 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04456 and
-	has 216 connected components, where the component with most nodes has 1096 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 8, the mean node degree is 80.43, and the node degree mode is 1. The top 5 most
-	central nodes are 1417230.AYOT01000223_gene712 (degree 580), 1417230.AYOT01000146_gene1839
-	(degree 562), 1417230.AYOT01000223_gene886 (degree 481), 1417230.AYOT01000146_gene1800
-	(degree 479) and 1417230.AYOT01000225_gene148 (degree 458).
+	The undirected graph Borrelia persica has 1806 nodes and 72624 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04456 and has 216 connected components, where the component with most
+	nodes has 1096 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 8, the mean node degree is 80.43, and the
+	node degree mode is 1. The top 5 most central nodes are 1417230.AYOT01000223_gene712
+	(degree 580), 1417230.AYOT01000146_gene1839 (degree 562), 1417230.AYOT01000223_gene886
+	(degree 481), 1417230.AYOT01000146_gene1800 (degree 479) and 1417230.AYOT01000225_gene148
+	(degree 458).
 	
 
 

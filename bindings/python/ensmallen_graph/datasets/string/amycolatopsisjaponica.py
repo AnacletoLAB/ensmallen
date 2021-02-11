@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:48.458609
 
-The undirected graph Amycolatopsis japonica has 8382 nodes and 965036 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02747 and
-has 32 connected components, where the component with most nodes has 8294 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 230.26, and the node degree mode is 3. The top 5 most central
-nodes are 208439.AJAP_13650 (degree 1803), 208439.AJAP_35800 (degree 1799), 208439.AJAP_23500
-(degree 1655), 208439.AJAP_04620 (degree 1585) and 208439.AJAP_14160 (degree 1569).
+The undirected graph Amycolatopsis japonica has 8382 nodes and 965036 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02747 and has 32 connected components, where the component with most
+nodes has 8294 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 230.26, and
+the node degree mode is 3. The top 5 most central nodes are 208439.AJAP_13650
+(degree 1803), 208439.AJAP_35800 (degree 1799), 208439.AJAP_23500 (degree
+1655), 208439.AJAP_04620 (degree 1585) and 208439.AJAP_14160 (degree 1569).
 
 
 References
@@ -106,13 +107,14 @@ def AmycolatopsisJaponica(
 	
 	Datetime: 2021-02-02 20:00:48.458609
 	
-	The undirected graph Amycolatopsis japonica has 8382 nodes and 965036 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02747 and
-	has 32 connected components, where the component with most nodes has 8294 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 230.26, and the node degree mode is 3. The top 5 most central
-	nodes are 208439.AJAP_13650 (degree 1803), 208439.AJAP_35800 (degree 1799), 208439.AJAP_23500
-	(degree 1655), 208439.AJAP_04620 (degree 1585) and 208439.AJAP_14160 (degree 1569).
+	The undirected graph Amycolatopsis japonica has 8382 nodes and 965036 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02747 and has 32 connected components, where the component with most
+	nodes has 8294 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 230.26, and
+	the node degree mode is 3. The top 5 most central nodes are 208439.AJAP_13650
+	(degree 1803), 208439.AJAP_35800 (degree 1799), 208439.AJAP_23500 (degree
+	1655), 208439.AJAP_04620 (degree 1585) and 208439.AJAP_14160 (degree 1569).
 	
 
 

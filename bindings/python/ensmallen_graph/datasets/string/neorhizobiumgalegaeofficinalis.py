@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:11.126950
 
-The undirected graph Neorhizobium galegae officinalis has 5943 nodes and 534265 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03026
-and has 15 connected components, where the component with most nodes has 5908 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 179.80, and the node degree mode is 3. The top 5
-most central nodes are 1028801.RG1141_PA14940 (degree 2298), 1028801.RG1141_CH42820
-(degree 2151), 1028801.RG1141_CH33670 (degree 2020), 1028801.RG1141_CH30090 (degree
+The undirected graph Neorhizobium galegae officinalis has 5943 nodes and
+534265 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03026 and has 15 connected components, where the
+component with most nodes has 5908 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+is 179.80, and the node degree mode is 3. The top 5 most central nodes
+are 1028801.RG1141_PA14940 (degree 2298), 1028801.RG1141_CH42820 (degree
+2151), 1028801.RG1141_CH33670 (degree 2020), 1028801.RG1141_CH30090 (degree
 1629) and 1028801.RG1141_CH44760 (degree 1622).
 
 
@@ -107,13 +108,14 @@ def NeorhizobiumGalegaeOfficinalis(
 	
 	Datetime: 2021-02-02 22:10:11.126950
 	
-	The undirected graph Neorhizobium galegae officinalis has 5943 nodes and 534265 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03026
-	and has 15 connected components, where the component with most nodes has 5908 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 179.80, and the node degree mode is 3. The top 5
-	most central nodes are 1028801.RG1141_PA14940 (degree 2298), 1028801.RG1141_CH42820
-	(degree 2151), 1028801.RG1141_CH33670 (degree 2020), 1028801.RG1141_CH30090 (degree
+	The undirected graph Neorhizobium galegae officinalis has 5943 nodes and
+	534265 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03026 and has 15 connected components, where the
+	component with most nodes has 5908 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+	is 179.80, and the node degree mode is 3. The top 5 most central nodes
+	are 1028801.RG1141_PA14940 (degree 2298), 1028801.RG1141_CH42820 (degree
+	2151), 1028801.RG1141_CH33670 (degree 2020), 1028801.RG1141_CH30090 (degree
 	1629) and 1028801.RG1141_CH44760 (degree 1622).
 	
 

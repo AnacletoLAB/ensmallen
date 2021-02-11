@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:18.987772
 
-The undirected graph Verrucomicrobiae bacterium DG1235 has 4298 nodes and 429724
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04654 and has 28 connected components, where the component with most nodes has
-4234 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 163, the mean node degree is 199.96, and the node degree mode is 2. The
-top 5 most central nodes are 382464.ABSI01000011_gene2473 (degree 2786), 382464.ABSI01000002_gene4374
+The undirected graph Verrucomicrobiae bacterium DG1235 has 4298 nodes and
+429724 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04654 and has 28 connected components, where the
+component with most nodes has 4234 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 163, the mean node degree
+is 199.96, and the node degree mode is 2. The top 5 most central nodes
+are 382464.ABSI01000011_gene2473 (degree 2786), 382464.ABSI01000002_gene4374
 (degree 1710), 382464.ABSI01000005_gene1410 (degree 1476), 382464.ABSI01000005_gene1296
 (degree 1397) and 382464.ABSI01000010_gene3875 (degree 1201).
 
@@ -107,12 +108,13 @@ def VerrucomicrobiaeBacteriumDg1235(
 	
 	Datetime: 2021-02-02 20:37:18.987772
 	
-	The undirected graph Verrucomicrobiae bacterium DG1235 has 4298 nodes and 429724
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04654 and has 28 connected components, where the component with most nodes has
-	4234 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 163, the mean node degree is 199.96, and the node degree mode is 2. The
-	top 5 most central nodes are 382464.ABSI01000011_gene2473 (degree 2786), 382464.ABSI01000002_gene4374
+	The undirected graph Verrucomicrobiae bacterium DG1235 has 4298 nodes and
+	429724 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04654 and has 28 connected components, where the
+	component with most nodes has 4234 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 163, the mean node degree
+	is 199.96, and the node degree mode is 2. The top 5 most central nodes
+	are 382464.ABSI01000011_gene2473 (degree 2786), 382464.ABSI01000002_gene4374
 	(degree 1710), 382464.ABSI01000005_gene1410 (degree 1476), 382464.ABSI01000005_gene1296
 	(degree 1397) and 382464.ABSI01000010_gene3875 (degree 1201).
 	

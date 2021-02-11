@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:22:41.628574
 
-The undirected graph lasagne-spanishbook has 12643 nodes and 55021 unweighted edges,
-of which 2 are self-loops. The graph is quite sparse as it has a density of 0.00069
-and is connected, as it has a single component. The graph median node degree is 3,
-the mean node degree is 8.70, and the node degree mode is 3. The top 5 most central
-nodes are 2 (degree 5169), 4 (degree 4158), 6 (degree 3469), 12 (degree 3211) and
-8 (degree 2154).
+The undirected graph lasagne-spanishbook has 12643 nodes and 55021 unweighted
+edges, of which 2 are self-loops. The graph is quite sparse as it has a
+density of 0.00069 and is connected, as it has a single component. The
+graph median node degree is 3, the mean node degree is 8.70, and the node
+degree mode is 3. The top 5 most central nodes are 2 (degree 5169), 4 (degree
+4158), 6 (degree 3469), 12 (degree 3211) and 8 (degree 2154).
 
 
 References
@@ -102,12 +102,12 @@ def LasagneSpanishbook(
 	
 	Datetime: 2021-02-06 10:22:41.628574
 	
-	The undirected graph lasagne-spanishbook has 12643 nodes and 55021 unweighted edges,
-	of which 2 are self-loops. The graph is quite sparse as it has a density of 0.00069
-	and is connected, as it has a single component. The graph median node degree is 3,
-	the mean node degree is 8.70, and the node degree mode is 3. The top 5 most central
-	nodes are 2 (degree 5169), 4 (degree 4158), 6 (degree 3469), 12 (degree 3211) and
-	8 (degree 2154).
+	The undirected graph lasagne-spanishbook has 12643 nodes and 55021 unweighted
+	edges, of which 2 are self-loops. The graph is quite sparse as it has a
+	density of 0.00069 and is connected, as it has a single component. The
+	graph median node degree is 3, the mean node degree is 8.70, and the node
+	degree mode is 3. The top 5 most central nodes are 2 (degree 5169), 4 (degree
+	4158), 6 (degree 3469), 12 (degree 3211) and 8 (degree 2154).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:36.583294
 
-The undirected graph Zymomonas mobilis ZM4 has 1722 nodes and 95544 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06448 and
-has 2 connected components, where the component with most nodes has 1720 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 110.97, and the node degree mode is 21. The top 5 most central
-nodes are 264203.ZMO0227 (degree 782), 264203.ZMO1267 (degree 603), 264203.ZMO1321
-(degree 587), 264203.ZMO1513 (degree 581) and 264203.ZMO1117 (degree 541).
+The undirected graph Zymomonas mobilis ZM4 has 1722 nodes and 95544 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06448 and has 2 connected components, where the component with most
+nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 89, the mean node degree is 110.97, and
+the node degree mode is 21. The top 5 most central nodes are 264203.ZMO0227
+(degree 782), 264203.ZMO1267 (degree 603), 264203.ZMO1321 (degree 587),
+264203.ZMO1513 (degree 581) and 264203.ZMO1117 (degree 541).
 
 
 References
@@ -106,13 +107,14 @@ def ZymomonasMobilisZm4(
 	
 	Datetime: 2021-02-02 20:13:36.583294
 	
-	The undirected graph Zymomonas mobilis ZM4 has 1722 nodes and 95544 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06448 and
-	has 2 connected components, where the component with most nodes has 1720 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 110.97, and the node degree mode is 21. The top 5 most central
-	nodes are 264203.ZMO0227 (degree 782), 264203.ZMO1267 (degree 603), 264203.ZMO1321
-	(degree 587), 264203.ZMO1513 (degree 581) and 264203.ZMO1117 (degree 541).
+	The undirected graph Zymomonas mobilis ZM4 has 1722 nodes and 95544 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06448 and has 2 connected components, where the component with most
+	nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 89, the mean node degree is 110.97, and
+	the node degree mode is 21. The top 5 most central nodes are 264203.ZMO0227
+	(degree 782), 264203.ZMO1267 (degree 603), 264203.ZMO1321 (degree 587),
+	264203.ZMO1513 (degree 581) and 264203.ZMO1117 (degree 541).
 	
 
 

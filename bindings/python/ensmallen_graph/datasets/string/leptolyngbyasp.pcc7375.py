@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:25.938313
 
-The undirected graph Leptolyngbya sp. PCC7375 has 7644 nodes and 1212196 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04150
-and has 101 connected components, where the component with most nodes has 7336 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 284, the mean node degree is 317.16, and the node degree mode is 2. The top 5
-most central nodes are 102129.Lepto7375DRAFT_5171 (degree 2411), 102129.Lepto7375DRAFT_6510
-(degree 2182), 102129.Lepto7375DRAFT_3563 (degree 2137), 102129.Lepto7375DRAFT_0366
-(degree 2084) and 102129.Lepto7375DRAFT_4820 (degree 2017).
+The undirected graph Leptolyngbya sp. PCC7375 has 7644 nodes and 1212196
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04150 and has 101 connected components, where the component
+with most nodes has 7336 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 284, the mean node degree is 317.16,
+and the node degree mode is 2. The top 5 most central nodes are 102129.Lepto7375DRAFT_5171
+(degree 2411), 102129.Lepto7375DRAFT_6510 (degree 2182), 102129.Lepto7375DRAFT_3563
+(degree 2137), 102129.Lepto7375DRAFT_0366 (degree 2084) and 102129.Lepto7375DRAFT_4820
+(degree 2017).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaSp.Pcc7375(
 	
 	Datetime: 2021-02-02 19:43:25.938313
 	
-	The undirected graph Leptolyngbya sp. PCC7375 has 7644 nodes and 1212196 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04150
-	and has 101 connected components, where the component with most nodes has 7336 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 284, the mean node degree is 317.16, and the node degree mode is 2. The top 5
-	most central nodes are 102129.Lepto7375DRAFT_5171 (degree 2411), 102129.Lepto7375DRAFT_6510
-	(degree 2182), 102129.Lepto7375DRAFT_3563 (degree 2137), 102129.Lepto7375DRAFT_0366
-	(degree 2084) and 102129.Lepto7375DRAFT_4820 (degree 2017).
+	The undirected graph Leptolyngbya sp. PCC7375 has 7644 nodes and 1212196
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04150 and has 101 connected components, where the component
+	with most nodes has 7336 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 284, the mean node degree is 317.16,
+	and the node degree mode is 2. The top 5 most central nodes are 102129.Lepto7375DRAFT_5171
+	(degree 2411), 102129.Lepto7375DRAFT_6510 (degree 2182), 102129.Lepto7375DRAFT_3563
+	(degree 2137), 102129.Lepto7375DRAFT_0366 (degree 2084) and 102129.Lepto7375DRAFT_4820
+	(degree 2017).
 	
 
 

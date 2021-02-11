@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:20.291936
 
-The undirected graph Pseudoalteromonas haloplanktis TB64 has 4547 nodes and 486765
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04710 and has 33 connected components, where the component with most nodes has
-4448 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 187, the mean node degree is 214.10, and the node degree mode is 1. The
-top 5 most central nodes are 1333507.AUTQ01000187_gene2680 (degree 1590), 1333507.AUTQ01000220_gene698
+The undirected graph Pseudoalteromonas haloplanktis TB64 has 4547 nodes
+and 486765 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04710 and has 33 connected components, where the
+component with most nodes has 4448 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+is 214.10, and the node degree mode is 1. The top 5 most central nodes
+are 1333507.AUTQ01000187_gene2680 (degree 1590), 1333507.AUTQ01000220_gene698
 (degree 1387), 1333507.AUTQ01000220_gene697 (degree 1329), 1333507.AUTQ01000013_gene3070
 (degree 1266) and 1333507.AUTQ01000207_gene1518 (degree 1239).
 
@@ -107,12 +108,13 @@ def PseudoalteromonasHaloplanktisTb64(
 	
 	Datetime: 2021-02-03 21:55:20.291936
 	
-	The undirected graph Pseudoalteromonas haloplanktis TB64 has 4547 nodes and 486765
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04710 and has 33 connected components, where the component with most nodes has
-	4448 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 187, the mean node degree is 214.10, and the node degree mode is 1. The
-	top 5 most central nodes are 1333507.AUTQ01000187_gene2680 (degree 1590), 1333507.AUTQ01000220_gene698
+	The undirected graph Pseudoalteromonas haloplanktis TB64 has 4547 nodes
+	and 486765 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04710 and has 33 connected components, where the
+	component with most nodes has 4448 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 187, the mean node degree
+	is 214.10, and the node degree mode is 1. The top 5 most central nodes
+	are 1333507.AUTQ01000187_gene2680 (degree 1590), 1333507.AUTQ01000220_gene698
 	(degree 1387), 1333507.AUTQ01000220_gene697 (degree 1329), 1333507.AUTQ01000013_gene3070
 	(degree 1266) and 1333507.AUTQ01000207_gene1518 (degree 1239).
 	

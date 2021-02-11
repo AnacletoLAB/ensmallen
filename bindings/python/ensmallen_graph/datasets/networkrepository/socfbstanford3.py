@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:13.732789
 
-The undirected graph socfb-Stanford3 has 11586 nodes and 568309 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00847
-and is connected, as it has a single component. The graph median node degree is 73,
-the mean node degree is 98.10, and the node degree mode is 1. The top 5 most central
-nodes are 2086 (degree 1172), 3836 (degree 1137), 10058 (degree 975), 8891 (degree
-887) and 4734 (degree 822).
+The undirected graph socfb-Stanford3 has 11586 nodes and 568309 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00847 and is connected, as it has a single component. The graph median
+node degree is 73, the mean node degree is 98.10, and the node degree mode
+is 1. The top 5 most central nodes are 2086 (degree 1172), 3836 (degree
+1137), 10058 (degree 975), 8891 (degree 887) and 4734 (degree 822).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbStanford3(
 	
 	Datetime: 2021-02-06 11:50:13.732789
 	
-	The undirected graph socfb-Stanford3 has 11586 nodes and 568309 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00847
-	and is connected, as it has a single component. The graph median node degree is 73,
-	the mean node degree is 98.10, and the node degree mode is 1. The top 5 most central
-	nodes are 2086 (degree 1172), 3836 (degree 1137), 10058 (degree 975), 8891 (degree
-	887) and 4734 (degree 822).
+	The undirected graph socfb-Stanford3 has 11586 nodes and 568309 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00847 and is connected, as it has a single component. The graph median
+	node degree is 73, the mean node degree is 98.10, and the node degree mode
+	is 1. The top 5 most central nodes are 2086 (degree 1172), 3836 (degree
+	1137), 10058 (degree 975), 8891 (degree 887) and 4734 (degree 822).
 	
 
 

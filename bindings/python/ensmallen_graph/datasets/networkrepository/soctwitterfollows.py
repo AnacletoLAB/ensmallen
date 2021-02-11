@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:15.440541
 
-The undirected graph soc-twitter-follows has 404719 nodes and 713319 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00001 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 3.53, and the node degree mode is 1. The top 5 most
-central nodes are 355672 (degree 626), 245697 (degree 566), 163661 (degree 554),
-194116 (degree 544) and 381201 (degree 529).
+The undirected graph soc-twitter-follows has 404719 nodes and 713319 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 3.53, and the
+node degree mode is 1. The top 5 most central nodes are 355672 (degree
+626), 245697 (degree 566), 163661 (degree 554), 194116 (degree 544) and
+381201 (degree 529).
 
 
 References
@@ -112,12 +113,13 @@ def SocTwitterFollows(
 	
 	Datetime: 2021-02-06 11:48:15.440541
 	
-	The undirected graph soc-twitter-follows has 404719 nodes and 713319 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00001 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 3.53, and the node degree mode is 1. The top 5 most
-	central nodes are 355672 (degree 626), 245697 (degree 566), 163661 (degree 554),
-	194116 (degree 544) and 381201 (degree 529).
+	The undirected graph soc-twitter-follows has 404719 nodes and 713319 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 3.53, and the
+	node degree mode is 1. The top 5 most central nodes are 355672 (degree
+	626), 245697 (degree 566), 163661 (degree 554), 194116 (degree 544) and
+	381201 (degree 529).
 	
 
 

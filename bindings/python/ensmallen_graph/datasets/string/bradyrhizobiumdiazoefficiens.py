@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:05:05.864389
 
-The undirected graph Bradyrhizobium diazoefficiens has 8184 nodes and 1127116 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03366
-and has 47 connected components, where the component with most nodes has 8073 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 275.44, and the node degree mode is 1. The top 5
-most central nodes are 224911.27350855 (degree 3991), 224911.27356416 (degree 3406),
-224911.27355038 (degree 2985), 224911.27356027 (degree 2496) and 224911.27351507
-(degree 2458).
+The undirected graph Bradyrhizobium diazoefficiens has 8184 nodes and 1127116
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03366 and has 47 connected components, where the component
+with most nodes has 8073 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 275.44,
+and the node degree mode is 1. The top 5 most central nodes are 224911.27350855
+(degree 3991), 224911.27356416 (degree 3406), 224911.27355038 (degree 2985),
+224911.27356027 (degree 2496) and 224911.27351507 (degree 2458).
 
 
 References
@@ -107,14 +107,14 @@ def BradyrhizobiumDiazoefficiens(
 	
 	Datetime: 2021-02-02 20:05:05.864389
 	
-	The undirected graph Bradyrhizobium diazoefficiens has 8184 nodes and 1127116 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03366
-	and has 47 connected components, where the component with most nodes has 8073 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 275.44, and the node degree mode is 1. The top 5
-	most central nodes are 224911.27350855 (degree 3991), 224911.27356416 (degree 3406),
-	224911.27355038 (degree 2985), 224911.27356027 (degree 2496) and 224911.27351507
-	(degree 2458).
+	The undirected graph Bradyrhizobium diazoefficiens has 8184 nodes and 1127116
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03366 and has 47 connected components, where the component
+	with most nodes has 8073 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 275.44,
+	and the node degree mode is 1. The top 5 most central nodes are 224911.27350855
+	(degree 3991), 224911.27356416 (degree 3406), 224911.27355038 (degree 2985),
+	224911.27356027 (degree 2496) and 224911.27351507 (degree 2458).
 	
 
 

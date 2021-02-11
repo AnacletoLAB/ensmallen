@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:56.416373
 
-The undirected graph Borrelia miyamotoi has 800 nodes and 56139 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.17565
-and has 4 connected components, where the component with most nodes has 794 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 140.35, and the node degree mode is 6. The top 5
-most central nodes are 1302858.I871_02190 (degree 491), 1302858.I871_02875 (degree
-489), 1302858.I871_03050 (degree 428), 1302858.I871_00675 (degree 405) and 1302858.I871_01245
-(degree 401).
+The undirected graph Borrelia miyamotoi has 800 nodes and 56139 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17565 and has 4 connected components, where the component
+with most nodes has 794 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 140.35,
+and the node degree mode is 6. The top 5 most central nodes are 1302858.I871_02190
+(degree 491), 1302858.I871_02875 (degree 489), 1302858.I871_03050 (degree
+428), 1302858.I871_00675 (degree 405) and 1302858.I871_01245 (degree 401).
 
 
 References
@@ -107,14 +107,14 @@ def BorreliaMiyamotoi(
 	
 	Datetime: 2021-02-03 21:35:56.416373
 	
-	The undirected graph Borrelia miyamotoi has 800 nodes and 56139 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.17565
-	and has 4 connected components, where the component with most nodes has 794 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 140.35, and the node degree mode is 6. The top 5
-	most central nodes are 1302858.I871_02190 (degree 491), 1302858.I871_02875 (degree
-	489), 1302858.I871_03050 (degree 428), 1302858.I871_00675 (degree 405) and 1302858.I871_01245
-	(degree 401).
+	The undirected graph Borrelia miyamotoi has 800 nodes and 56139 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17565 and has 4 connected components, where the component
+	with most nodes has 794 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 140.35,
+	and the node degree mode is 6. The top 5 most central nodes are 1302858.I871_02190
+	(degree 491), 1302858.I871_02875 (degree 489), 1302858.I871_03050 (degree
+	428), 1302858.I871_00675 (degree 405) and 1302858.I871_01245 (degree 401).
 	
 
 

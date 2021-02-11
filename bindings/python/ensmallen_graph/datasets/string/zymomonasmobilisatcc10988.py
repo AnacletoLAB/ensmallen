@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:41.557003
 
-The undirected graph Zymomonas mobilis ATCC10988 has 1704 nodes and 124722 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08596
-and has 2 connected components, where the component with most nodes has 1702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 146.39, and the node degree mode is 2. The top 5
-most central nodes are 555217.Zmob_0789 (degree 774), 555217.Zmob_0076 (degree 612),
-555217.Zmob_0029 (degree 610), 555217.Zmob_1003 (degree 536) and 555217.Zmob_0620
-(degree 531).
+The undirected graph Zymomonas mobilis ATCC10988 has 1704 nodes and 124722
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08596 and has 2 connected components, where the component
+with most nodes has 1702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 146.39,
+and the node degree mode is 2. The top 5 most central nodes are 555217.Zmob_0789
+(degree 774), 555217.Zmob_0076 (degree 612), 555217.Zmob_0029 (degree 610),
+555217.Zmob_1003 (degree 536) and 555217.Zmob_0620 (degree 531).
 
 
 References
@@ -107,14 +107,14 @@ def ZymomonasMobilisAtcc10988(
 	
 	Datetime: 2021-02-02 21:10:41.557003
 	
-	The undirected graph Zymomonas mobilis ATCC10988 has 1704 nodes and 124722 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08596
-	and has 2 connected components, where the component with most nodes has 1702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 146.39, and the node degree mode is 2. The top 5
-	most central nodes are 555217.Zmob_0789 (degree 774), 555217.Zmob_0076 (degree 612),
-	555217.Zmob_0029 (degree 610), 555217.Zmob_1003 (degree 536) and 555217.Zmob_0620
-	(degree 531).
+	The undirected graph Zymomonas mobilis ATCC10988 has 1704 nodes and 124722
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08596 and has 2 connected components, where the component
+	with most nodes has 1702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 146.39,
+	and the node degree mode is 2. The top 5 most central nodes are 555217.Zmob_0789
+	(degree 774), 555217.Zmob_0076 (degree 612), 555217.Zmob_0029 (degree 610),
+	555217.Zmob_1003 (degree 536) and 555217.Zmob_0620 (degree 531).
 	
 
 

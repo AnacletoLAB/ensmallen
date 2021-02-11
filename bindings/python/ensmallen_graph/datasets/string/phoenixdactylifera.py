@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:13:21.517329
 
-The undirected graph Phoenix dactylifera has 23532 nodes and 4804329 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01735 and
-has 3 connected components, where the component with most nodes has 23528 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 408.32, and the node degree mode is 5. The top 5 most central
-nodes are 42345.XP_008783229.1 (degree 7453), 42345.XP_008782328.1 (degree 4774),
-42345.XP_008786170.1 (degree 4774), 42345.XP_008809686.1 (degree 4389) and 42345.XP_008802839.1
+The undirected graph Phoenix dactylifera has 23532 nodes and 4804329 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01735 and has 3 connected components, where the component with most
+nodes has 23528 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 408.32, and
+the node degree mode is 5. The top 5 most central nodes are 42345.XP_008783229.1
+(degree 7453), 42345.XP_008782328.1 (degree 4774), 42345.XP_008786170.1
+(degree 4774), 42345.XP_008809686.1 (degree 4389) and 42345.XP_008802839.1
 (degree 4278).
 
 
@@ -107,13 +108,14 @@ def PhoenixDactylifera(
 	
 	Datetime: 2021-02-02 18:13:21.517329
 	
-	The undirected graph Phoenix dactylifera has 23532 nodes and 4804329 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01735 and
-	has 3 connected components, where the component with most nodes has 23528 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 408.32, and the node degree mode is 5. The top 5 most central
-	nodes are 42345.XP_008783229.1 (degree 7453), 42345.XP_008782328.1 (degree 4774),
-	42345.XP_008786170.1 (degree 4774), 42345.XP_008809686.1 (degree 4389) and 42345.XP_008802839.1
+	The undirected graph Phoenix dactylifera has 23532 nodes and 4804329 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01735 and has 3 connected components, where the component with most
+	nodes has 23528 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 408.32, and
+	the node degree mode is 5. The top 5 most central nodes are 42345.XP_008783229.1
+	(degree 7453), 42345.XP_008782328.1 (degree 4774), 42345.XP_008786170.1
+	(degree 4774), 42345.XP_008809686.1 (degree 4389) and 42345.XP_008802839.1
 	(degree 4278).
 	
 

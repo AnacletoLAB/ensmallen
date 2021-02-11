@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:44.316448
 
-The undirected graph Sulfitobacter sp. EE36 has 2951 nodes and 308873 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07096 and
-has 4 connected components, where the component with most nodes has 2944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 209.33, and the node degree mode is 12. The top 5 most central
-nodes are 52598.EE36_06453 (degree 1201), 52598.EE36_14223 (degree 980), 52598.EE36_06393
-(degree 910), 52598.EE36_17132 (degree 898) and 52598.EE36_14937 (degree 862).
+The undirected graph Sulfitobacter sp. EE36 has 2951 nodes and 308873 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07096 and has 4 connected components, where the component with most
+nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 209.33, and
+the node degree mode is 12. The top 5 most central nodes are 52598.EE36_06453
+(degree 1201), 52598.EE36_14223 (degree 980), 52598.EE36_06393 (degree
+910), 52598.EE36_17132 (degree 898) and 52598.EE36_14937 (degree 862).
 
 
 References
@@ -106,13 +107,14 @@ def SulfitobacterSp.Ee36(
 	
 	Datetime: 2021-02-02 18:17:44.316448
 	
-	The undirected graph Sulfitobacter sp. EE36 has 2951 nodes and 308873 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07096 and
-	has 4 connected components, where the component with most nodes has 2944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 209.33, and the node degree mode is 12. The top 5 most central
-	nodes are 52598.EE36_06453 (degree 1201), 52598.EE36_14223 (degree 980), 52598.EE36_06393
-	(degree 910), 52598.EE36_17132 (degree 898) and 52598.EE36_14937 (degree 862).
+	The undirected graph Sulfitobacter sp. EE36 has 2951 nodes and 308873 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07096 and has 4 connected components, where the component with most
+	nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 209.33, and
+	the node degree mode is 12. The top 5 most central nodes are 52598.EE36_06453
+	(degree 1201), 52598.EE36_14223 (degree 980), 52598.EE36_06393 (degree
+	910), 52598.EE36_17132 (degree 898) and 52598.EE36_14937 (degree 862).
 	
 
 

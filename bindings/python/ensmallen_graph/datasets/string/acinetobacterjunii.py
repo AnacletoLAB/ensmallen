@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:35.645711
 
-The undirected graph Acinetobacter junii has 3424 nodes and 205826 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03512 and
-has 27 connected components, where the component with most nodes has 3343 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 120.23, and the node degree mode is 3. The top 5 most central
-nodes are 40215.BBOS01000059_gene197 (degree 1179), 40215.BBOS01000049_gene3371 (degree
-977), 40215.BBOS01000030_gene506 (degree 922), 40215.BBOS01000011_gene3145 (degree
-833) and 40215.BBOS01000084_gene3282 (degree 775).
+The undirected graph Acinetobacter junii has 3424 nodes and 205826 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03512 and has 27 connected components, where the component with most
+nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 120.23, and
+the node degree mode is 3. The top 5 most central nodes are 40215.BBOS01000059_gene197
+(degree 1179), 40215.BBOS01000049_gene3371 (degree 977), 40215.BBOS01000030_gene506
+(degree 922), 40215.BBOS01000011_gene3145 (degree 833) and 40215.BBOS01000084_gene3282
+(degree 775).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterJunii(
 	
 	Datetime: 2021-02-02 18:11:35.645711
 	
-	The undirected graph Acinetobacter junii has 3424 nodes and 205826 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03512 and
-	has 27 connected components, where the component with most nodes has 3343 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 120.23, and the node degree mode is 3. The top 5 most central
-	nodes are 40215.BBOS01000059_gene197 (degree 1179), 40215.BBOS01000049_gene3371 (degree
-	977), 40215.BBOS01000030_gene506 (degree 922), 40215.BBOS01000011_gene3145 (degree
-	833) and 40215.BBOS01000084_gene3282 (degree 775).
+	The undirected graph Acinetobacter junii has 3424 nodes and 205826 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03512 and has 27 connected components, where the component with most
+	nodes has 3343 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 120.23, and
+	the node degree mode is 3. The top 5 most central nodes are 40215.BBOS01000059_gene197
+	(degree 1179), 40215.BBOS01000049_gene3371 (degree 977), 40215.BBOS01000030_gene506
+	(degree 922), 40215.BBOS01000011_gene3145 (degree 833) and 40215.BBOS01000084_gene3282
+	(degree 775).
 	
 
 

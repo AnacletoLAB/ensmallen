@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:40:53.732664
 
-The undirected graph Thiomicrospira sp. MilosT2 has 2316 nodes and 207013 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07722
-and has 5 connected components, where the component with most nodes has 2307 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 178.77, and the node degree mode is 6. The top 5
-most central nodes are 90814.KL370892_gene2243 (degree 1066), 90814.KL370891_gene854
-(degree 928), 90814.KL370891_gene598 (degree 920), 90814.KL370891_gene942 (degree
-881) and 90814.KL370891_gene597 (degree 856).
+The undirected graph Thiomicrospira sp. MilosT2 has 2316 nodes and 207013
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07722 and has 5 connected components, where the component
+with most nodes has 2307 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 178.77,
+and the node degree mode is 6. The top 5 most central nodes are 90814.KL370892_gene2243
+(degree 1066), 90814.KL370891_gene854 (degree 928), 90814.KL370891_gene598
+(degree 920), 90814.KL370891_gene942 (degree 881) and 90814.KL370891_gene597
+(degree 856).
 
 
 References
@@ -107,14 +108,15 @@ def ThiomicrospiraSp.Milost2(
 	
 	Datetime: 2021-02-02 19:40:53.732664
 	
-	The undirected graph Thiomicrospira sp. MilosT2 has 2316 nodes and 207013 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07722
-	and has 5 connected components, where the component with most nodes has 2307 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 178.77, and the node degree mode is 6. The top 5
-	most central nodes are 90814.KL370892_gene2243 (degree 1066), 90814.KL370891_gene854
-	(degree 928), 90814.KL370891_gene598 (degree 920), 90814.KL370891_gene942 (degree
-	881) and 90814.KL370891_gene597 (degree 856).
+	The undirected graph Thiomicrospira sp. MilosT2 has 2316 nodes and 207013
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07722 and has 5 connected components, where the component
+	with most nodes has 2307 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 178.77,
+	and the node degree mode is 6. The top 5 most central nodes are 90814.KL370892_gene2243
+	(degree 1066), 90814.KL370891_gene854 (degree 928), 90814.KL370891_gene598
+	(degree 920), 90814.KL370891_gene942 (degree 881) and 90814.KL370891_gene597
+	(degree 856).
 	
 
 

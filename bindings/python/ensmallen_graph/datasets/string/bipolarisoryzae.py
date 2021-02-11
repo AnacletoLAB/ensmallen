@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:32.418222
 
-The undirected graph Bipolaris oryzae has 7819 nodes and 574308 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01879 and
-has 64 connected components, where the component with most nodes has 7679 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 146.90, and the node degree mode is 1. The top 5 most central
-nodes are 101162.XP_007686631.1 (degree 2080), 101162.XP_007690173.1 (degree 2046),
-101162.XP_007682473.1 (degree 1803), 101162.XP_007689455.1 (degree 1553) and 101162.XP_007684488.1
+The undirected graph Bipolaris oryzae has 7819 nodes and 574308 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01879 and has 64 connected components, where the component with most
+nodes has 7679 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 146.90, and
+the node degree mode is 1. The top 5 most central nodes are 101162.XP_007686631.1
+(degree 2080), 101162.XP_007690173.1 (degree 2046), 101162.XP_007682473.1
+(degree 1803), 101162.XP_007689455.1 (degree 1553) and 101162.XP_007684488.1
 (degree 1481).
 
 
@@ -107,13 +108,14 @@ def BipolarisOryzae(
 	
 	Datetime: 2021-02-02 19:42:32.418222
 	
-	The undirected graph Bipolaris oryzae has 7819 nodes and 574308 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01879 and
-	has 64 connected components, where the component with most nodes has 7679 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 146.90, and the node degree mode is 1. The top 5 most central
-	nodes are 101162.XP_007686631.1 (degree 2080), 101162.XP_007690173.1 (degree 2046),
-	101162.XP_007682473.1 (degree 1803), 101162.XP_007689455.1 (degree 1553) and 101162.XP_007684488.1
+	The undirected graph Bipolaris oryzae has 7819 nodes and 574308 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01879 and has 64 connected components, where the component with most
+	nodes has 7679 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 146.90, and
+	the node degree mode is 1. The top 5 most central nodes are 101162.XP_007686631.1
+	(degree 2080), 101162.XP_007690173.1 (degree 2046), 101162.XP_007682473.1
+	(degree 1803), 101162.XP_007689455.1 (degree 1553) and 101162.XP_007684488.1
 	(degree 1481).
 	
 

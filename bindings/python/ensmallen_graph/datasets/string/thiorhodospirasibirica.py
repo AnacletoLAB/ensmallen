@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:49.686067
 
-The undirected graph Thiorhodospira sibirica has 2912 nodes and 310033 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07315 and
-has 13 connected components, where the component with most nodes has 2887 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 212.93, and the node degree mode is 1. The top 5 most central
-nodes are 765914.ThisiDRAFT_1363 (degree 1144), 765914.ThisiDRAFT_0694 (degree 1128),
-765914.ThisiDRAFT_0975 (degree 1094), 765914.ThisiDRAFT_1928 (degree 1026) and 765914.ThisiDRAFT_1937
+The undirected graph Thiorhodospira sibirica has 2912 nodes and 310033
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07315 and has 13 connected components, where the component
+with most nodes has 2887 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 212.93,
+and the node degree mode is 1. The top 5 most central nodes are 765914.ThisiDRAFT_1363
+(degree 1144), 765914.ThisiDRAFT_0694 (degree 1128), 765914.ThisiDRAFT_0975
+(degree 1094), 765914.ThisiDRAFT_1928 (degree 1026) and 765914.ThisiDRAFT_1937
 (degree 1026).
 
 
@@ -107,13 +108,14 @@ def ThiorhodospiraSibirica(
 	
 	Datetime: 2021-02-02 21:43:49.686067
 	
-	The undirected graph Thiorhodospira sibirica has 2912 nodes and 310033 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07315 and
-	has 13 connected components, where the component with most nodes has 2887 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 212.93, and the node degree mode is 1. The top 5 most central
-	nodes are 765914.ThisiDRAFT_1363 (degree 1144), 765914.ThisiDRAFT_0694 (degree 1128),
-	765914.ThisiDRAFT_0975 (degree 1094), 765914.ThisiDRAFT_1928 (degree 1026) and 765914.ThisiDRAFT_1937
+	The undirected graph Thiorhodospira sibirica has 2912 nodes and 310033
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07315 and has 13 connected components, where the component
+	with most nodes has 2887 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 212.93,
+	and the node degree mode is 1. The top 5 most central nodes are 765914.ThisiDRAFT_1363
+	(degree 1144), 765914.ThisiDRAFT_0694 (degree 1128), 765914.ThisiDRAFT_0975
+	(degree 1094), 765914.ThisiDRAFT_1928 (degree 1026) and 765914.ThisiDRAFT_1937
 	(degree 1026).
 	
 

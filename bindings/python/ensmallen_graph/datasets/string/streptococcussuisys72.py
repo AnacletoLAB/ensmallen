@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:20.648542
 
-The undirected graph Streptococcus suis YS72 has 2181 nodes and 164599 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06924 and
-has 10 connected components, where the component with most nodes has 2156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 150.94, and the node degree mode is 4. The top 5 most central
-nodes are 1214217.ALNF01000011_gene1518 (degree 922), 1214217.ALNF01000036_gene1704
-(degree 808), 1214217.ALNF01000042_gene738 (degree 806), 1214217.ALNF01000016_gene2169
-(degree 774) and 1214217.ALNF01000027_gene1648 (degree 743).
+The undirected graph Streptococcus suis YS72 has 2181 nodes and 164599
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06924 and has 10 connected components, where the component
+with most nodes has 2156 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 150.94,
+and the node degree mode is 4. The top 5 most central nodes are 1214217.ALNF01000011_gene1518
+(degree 922), 1214217.ALNF01000036_gene1704 (degree 808), 1214217.ALNF01000042_gene738
+(degree 806), 1214217.ALNF01000016_gene2169 (degree 774) and 1214217.ALNF01000027_gene1648
+(degree 743).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSuisYs72(
 	
 	Datetime: 2021-02-02 23:20:20.648542
 	
-	The undirected graph Streptococcus suis YS72 has 2181 nodes and 164599 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06924 and
-	has 10 connected components, where the component with most nodes has 2156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 150.94, and the node degree mode is 4. The top 5 most central
-	nodes are 1214217.ALNF01000011_gene1518 (degree 922), 1214217.ALNF01000036_gene1704
-	(degree 808), 1214217.ALNF01000042_gene738 (degree 806), 1214217.ALNF01000016_gene2169
-	(degree 774) and 1214217.ALNF01000027_gene1648 (degree 743).
+	The undirected graph Streptococcus suis YS72 has 2181 nodes and 164599
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06924 and has 10 connected components, where the component
+	with most nodes has 2156 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 150.94,
+	and the node degree mode is 4. The top 5 most central nodes are 1214217.ALNF01000011_gene1518
+	(degree 922), 1214217.ALNF01000036_gene1704 (degree 808), 1214217.ALNF01000042_gene738
+	(degree 806), 1214217.ALNF01000016_gene2169 (degree 774) and 1214217.ALNF01000027_gene1648
+	(degree 743).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:00.849221
 
-The undirected graph Wigglesworthia glossinidia sp. Gmo has 618 nodes and 33720 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.17687 and is connected, as it has a single component. The graph median node
-degree is 99, the mean node degree is 109.13, and the node degree mode is 54. The
-top 5 most central nodes are 1142511.WIGMOR_0673 (degree 337), 1142511.WIGMOR_0090
-(degree 325), 1142511.WIGMOR_0672 (degree 322), 1142511.WIGMOR_0478 (degree 312)
-and 1142511.WIGMOR_0153 (degree 295).
+The undirected graph Wigglesworthia glossinidia sp. Gmo has 618 nodes and
+33720 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.17687 and is connected, as it has a single
+component. The graph median node degree is 99, the mean node degree is
+109.13, and the node degree mode is 54. The top 5 most central nodes are
+1142511.WIGMOR_0673 (degree 337), 1142511.WIGMOR_0090 (degree 325), 1142511.WIGMOR_0672
+(degree 322), 1142511.WIGMOR_0478 (degree 312) and 1142511.WIGMOR_0153
+(degree 295).
 
 
 References
@@ -106,13 +107,14 @@ def WigglesworthiaGlossinidiaSp.Gmo(
 	
 	Datetime: 2021-02-02 22:58:00.849221
 	
-	The undirected graph Wigglesworthia glossinidia sp. Gmo has 618 nodes and 33720 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.17687 and is connected, as it has a single component. The graph median node
-	degree is 99, the mean node degree is 109.13, and the node degree mode is 54. The
-	top 5 most central nodes are 1142511.WIGMOR_0673 (degree 337), 1142511.WIGMOR_0090
-	(degree 325), 1142511.WIGMOR_0672 (degree 322), 1142511.WIGMOR_0478 (degree 312)
-	and 1142511.WIGMOR_0153 (degree 295).
+	The undirected graph Wigglesworthia glossinidia sp. Gmo has 618 nodes and
+	33720 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.17687 and is connected, as it has a single
+	component. The graph median node degree is 99, the mean node degree is
+	109.13, and the node degree mode is 54. The top 5 most central nodes are
+	1142511.WIGMOR_0673 (degree 337), 1142511.WIGMOR_0090 (degree 325), 1142511.WIGMOR_0672
+	(degree 322), 1142511.WIGMOR_0478 (degree 312) and 1142511.WIGMOR_0153
+	(degree 295).
 	
 
 

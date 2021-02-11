@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:46.032872
 
-The undirected graph lshp1561 has 1561 nodes and 6121 unweighted edges, of which
-1561 are self-loops. The graph is sparse as it has a density of 0.00439 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.84, and the node degree mode is 7. The top 5 most central nodes are 1557 (degree
-7), 1554 (degree 7), 1553 (degree 7), 1550 (degree 7) and 1549 (degree 7).
+The undirected graph lshp1561 has 1561 nodes and 6121 unweighted edges,
+of which 1561 are self-loops. The graph is sparse as it has a density of
+0.00439 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.84, and the node degree mode
+is 7. The top 5 most central nodes are 1557 (degree 7), 1554 (degree 7),
+1553 (degree 7), 1550 (degree 7) and 1549 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp1561(
 	
 	Datetime: 2021-02-06 08:13:46.032872
 	
-	The undirected graph lshp1561 has 1561 nodes and 6121 unweighted edges, of which
-	1561 are self-loops. The graph is sparse as it has a density of 0.00439 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.84, and the node degree mode is 7. The top 5 most central nodes are 1557 (degree
-	7), 1554 (degree 7), 1553 (degree 7), 1550 (degree 7) and 1549 (degree 7).
+	The undirected graph lshp1561 has 1561 nodes and 6121 unweighted edges,
+	of which 1561 are self-loops. The graph is sparse as it has a density of
+	0.00439 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.84, and the node degree mode
+	is 7. The top 5 most central nodes are 1557 (degree 7), 1554 (degree 7),
+	1553 (degree 7), 1550 (degree 7) and 1549 (degree 7).
 	
 
 

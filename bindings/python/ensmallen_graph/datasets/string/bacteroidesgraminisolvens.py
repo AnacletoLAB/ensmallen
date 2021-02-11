@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:59.601166
 
-The undirected graph Bacteroides graminisolvens has 3306 nodes and 321892 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05892
-and has 17 connected components, where the component with most nodes has 3253 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 194.73, and the node degree mode is 4. The top 5
-most central nodes are 1121097.JCM15093_135 (degree 1096), 1121097.JCM15093_692 (degree
-1082), 1121097.JCM15093_1272 (degree 1074), 1121097.JCM15093_1491 (degree 1034) and
-1121097.JCM15093_1790 (degree 1015).
+The undirected graph Bacteroides graminisolvens has 3306 nodes and 321892
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05892 and has 17 connected components, where the component
+with most nodes has 3253 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 194.73,
+and the node degree mode is 4. The top 5 most central nodes are 1121097.JCM15093_135
+(degree 1096), 1121097.JCM15093_692 (degree 1082), 1121097.JCM15093_1272
+(degree 1074), 1121097.JCM15093_1491 (degree 1034) and 1121097.JCM15093_1790
+(degree 1015).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesGraminisolvens(
 	
 	Datetime: 2021-02-02 22:32:59.601166
 	
-	The undirected graph Bacteroides graminisolvens has 3306 nodes and 321892 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05892
-	and has 17 connected components, where the component with most nodes has 3253 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 194.73, and the node degree mode is 4. The top 5
-	most central nodes are 1121097.JCM15093_135 (degree 1096), 1121097.JCM15093_692 (degree
-	1082), 1121097.JCM15093_1272 (degree 1074), 1121097.JCM15093_1491 (degree 1034) and
-	1121097.JCM15093_1790 (degree 1015).
+	The undirected graph Bacteroides graminisolvens has 3306 nodes and 321892
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05892 and has 17 connected components, where the component
+	with most nodes has 3253 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 194.73,
+	and the node degree mode is 4. The top 5 most central nodes are 1121097.JCM15093_135
+	(degree 1096), 1121097.JCM15093_692 (degree 1082), 1121097.JCM15093_1272
+	(degree 1074), 1121097.JCM15093_1491 (degree 1034) and 1121097.JCM15093_1790
+	(degree 1015).
 	
 
 

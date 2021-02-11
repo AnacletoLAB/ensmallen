@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:23.360344
 
-The undirected graph Zymophilus raffinosivorans has 3861 nodes and 633735 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08505
-and has 9 connected components, where the component with most nodes has 3839 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 282, the mean node degree is 328.28, and the node degree mode is 2. The top 5
-most central nodes are 1123511.KB905878_gene2425 (degree 1672), 1123511.KB905855_gene1939
-(degree 1667), 1123511.KB905848_gene2973 (degree 1602), 1123511.KB905849_gene3304
-(degree 1537) and 1123511.KB905844_gene1255 (degree 1534).
+The undirected graph Zymophilus raffinosivorans has 3861 nodes and 633735
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08505 and has 9 connected components, where the component
+with most nodes has 3839 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 282, the mean node degree is 328.28,
+and the node degree mode is 2. The top 5 most central nodes are 1123511.KB905878_gene2425
+(degree 1672), 1123511.KB905855_gene1939 (degree 1667), 1123511.KB905848_gene2973
+(degree 1602), 1123511.KB905849_gene3304 (degree 1537) and 1123511.KB905844_gene1255
+(degree 1534).
 
 
 References
@@ -107,14 +108,15 @@ def ZymophilusRaffinosivorans(
 	
 	Datetime: 2021-02-02 22:53:23.360344
 	
-	The undirected graph Zymophilus raffinosivorans has 3861 nodes and 633735 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08505
-	and has 9 connected components, where the component with most nodes has 3839 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 282, the mean node degree is 328.28, and the node degree mode is 2. The top 5
-	most central nodes are 1123511.KB905878_gene2425 (degree 1672), 1123511.KB905855_gene1939
-	(degree 1667), 1123511.KB905848_gene2973 (degree 1602), 1123511.KB905849_gene3304
-	(degree 1537) and 1123511.KB905844_gene1255 (degree 1534).
+	The undirected graph Zymophilus raffinosivorans has 3861 nodes and 633735
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08505 and has 9 connected components, where the component
+	with most nodes has 3839 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 282, the mean node degree is 328.28,
+	and the node degree mode is 2. The top 5 most central nodes are 1123511.KB905878_gene2425
+	(degree 1672), 1123511.KB905855_gene1939 (degree 1667), 1123511.KB905848_gene2973
+	(degree 1602), 1123511.KB905849_gene3304 (degree 1537) and 1123511.KB905844_gene1255
+	(degree 1534).
 	
 
 

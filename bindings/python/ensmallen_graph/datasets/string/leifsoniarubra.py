@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:04:08.904356
 
-The undirected graph Leifsonia rubra has 2632 nodes and 164371 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04747 and
-has 19 connected components, where the component with most nodes has 2590 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 124.90, and the node degree mode is 1. The top 5 most central
-nodes are 1348338.ADILRU_2224 (degree 948), 1348338.ADILRU_1780 (degree 820), 1348338.ADILRU_1267
-(degree 810), 1348338.ADILRU_2717 (degree 741) and 1348338.ADILRU_0231 (degree 736).
+The undirected graph Leifsonia rubra has 2632 nodes and 164371 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04747 and has 19 connected components, where the component with most
+nodes has 2590 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 124.90, and
+the node degree mode is 1. The top 5 most central nodes are 1348338.ADILRU_2224
+(degree 948), 1348338.ADILRU_1780 (degree 820), 1348338.ADILRU_1267 (degree
+810), 1348338.ADILRU_2717 (degree 741) and 1348338.ADILRU_0231 (degree
+736).
 
 
 References
@@ -106,13 +108,15 @@ def LeifsoniaRubra(
 	
 	Datetime: 2021-02-03 22:04:08.904356
 	
-	The undirected graph Leifsonia rubra has 2632 nodes and 164371 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04747 and
-	has 19 connected components, where the component with most nodes has 2590 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 124.90, and the node degree mode is 1. The top 5 most central
-	nodes are 1348338.ADILRU_2224 (degree 948), 1348338.ADILRU_1780 (degree 820), 1348338.ADILRU_1267
-	(degree 810), 1348338.ADILRU_2717 (degree 741) and 1348338.ADILRU_0231 (degree 736).
+	The undirected graph Leifsonia rubra has 2632 nodes and 164371 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04747 and has 19 connected components, where the component with most
+	nodes has 2590 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 124.90, and
+	the node degree mode is 1. The top 5 most central nodes are 1348338.ADILRU_2224
+	(degree 948), 1348338.ADILRU_1780 (degree 820), 1348338.ADILRU_1267 (degree
+	810), 1348338.ADILRU_2717 (degree 741) and 1348338.ADILRU_0231 (degree
+	736).
 	
 
 

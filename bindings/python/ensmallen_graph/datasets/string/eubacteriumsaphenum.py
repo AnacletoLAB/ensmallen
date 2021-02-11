@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:19.205780
 
-The undirected graph Eubacterium saphenum has 949 nodes and 56353 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12528
-and has 2 connected components, where the component with most nodes has 946 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 102, the mean node degree is 118.76, and the node degree mode is 31. The top 5
-most central nodes are 592031.GCWU000322_00341 (degree 470), 592031.GCWU000322_00987
-(degree 454), 592031.GCWU000322_00817 (degree 390), 592031.GCWU000322_00233 (degree
-377) and 592031.GCWU000322_00409 (degree 371).
+The undirected graph Eubacterium saphenum has 949 nodes and 56353 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12528 and has 2 connected components, where the component
+with most nodes has 946 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 102, the mean node degree is 118.76,
+and the node degree mode is 31. The top 5 most central nodes are 592031.GCWU000322_00341
+(degree 470), 592031.GCWU000322_00987 (degree 454), 592031.GCWU000322_00817
+(degree 390), 592031.GCWU000322_00233 (degree 377) and 592031.GCWU000322_00409
+(degree 371).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumSaphenum(
 	
 	Datetime: 2021-02-02 21:18:19.205780
 	
-	The undirected graph Eubacterium saphenum has 949 nodes and 56353 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12528
-	and has 2 connected components, where the component with most nodes has 946 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 102, the mean node degree is 118.76, and the node degree mode is 31. The top 5
-	most central nodes are 592031.GCWU000322_00341 (degree 470), 592031.GCWU000322_00987
-	(degree 454), 592031.GCWU000322_00817 (degree 390), 592031.GCWU000322_00233 (degree
-	377) and 592031.GCWU000322_00409 (degree 371).
+	The undirected graph Eubacterium saphenum has 949 nodes and 56353 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12528 and has 2 connected components, where the component
+	with most nodes has 946 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 102, the mean node degree is 118.76,
+	and the node degree mode is 31. The top 5 most central nodes are 592031.GCWU000322_00341
+	(degree 470), 592031.GCWU000322_00987 (degree 454), 592031.GCWU000322_00817
+	(degree 390), 592031.GCWU000322_00233 (degree 377) and 592031.GCWU000322_00409
+	(degree 371).
 	
 
 

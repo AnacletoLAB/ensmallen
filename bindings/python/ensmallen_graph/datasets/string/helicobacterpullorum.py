@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:17.662836
 
-The undirected graph Helicobacter pullorum has 1984 nodes and 123212 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06264 and
-has 24 connected components, where the component with most nodes has 1918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 124.21, and the node degree mode is 4. The top 5 most central
-nodes are 537972.ABQU01000089_gene1173 (degree 808), 537972.ABQU01000022_gene571
-(degree 732), 537972.ABQU01000013_gene777 (degree 720), 537972.ABQU01000058_gene1841
-(degree 614) and 537972.ABQU01000064_gene1516 (degree 573).
+The undirected graph Helicobacter pullorum has 1984 nodes and 123212 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06264 and has 24 connected components, where the component with most
+nodes has 1918 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 124.21, and
+the node degree mode is 4. The top 5 most central nodes are 537972.ABQU01000089_gene1173
+(degree 808), 537972.ABQU01000022_gene571 (degree 732), 537972.ABQU01000013_gene777
+(degree 720), 537972.ABQU01000058_gene1841 (degree 614) and 537972.ABQU01000064_gene1516
+(degree 573).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterPullorum(
 	
 	Datetime: 2021-02-02 21:07:17.662836
 	
-	The undirected graph Helicobacter pullorum has 1984 nodes and 123212 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06264 and
-	has 24 connected components, where the component with most nodes has 1918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 124.21, and the node degree mode is 4. The top 5 most central
-	nodes are 537972.ABQU01000089_gene1173 (degree 808), 537972.ABQU01000022_gene571
-	(degree 732), 537972.ABQU01000013_gene777 (degree 720), 537972.ABQU01000058_gene1841
-	(degree 614) and 537972.ABQU01000064_gene1516 (degree 573).
+	The undirected graph Helicobacter pullorum has 1984 nodes and 123212 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06264 and has 24 connected components, where the component with most
+	nodes has 1918 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 124.21, and
+	the node degree mode is 4. The top 5 most central nodes are 537972.ABQU01000089_gene1173
+	(degree 808), 537972.ABQU01000022_gene571 (degree 732), 537972.ABQU01000013_gene777
+	(degree 720), 537972.ABQU01000058_gene1841 (degree 614) and 537972.ABQU01000064_gene1516
+	(degree 573).
 	
 
 

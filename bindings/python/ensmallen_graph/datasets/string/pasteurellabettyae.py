@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:29.263356
 
-The undirected graph Pasteurella bettyae has 2164 nodes and 157873 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06746 and
-has 3 connected components, where the component with most nodes has 2157 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 122,
-the mean node degree is 145.91, and the node degree mode is 7. The top 5 most central
-nodes are 1095749.HMPREF1052_1275 (degree 871), 1095749.HMPREF1052_0500 (degree 780),
-1095749.HMPREF1052_1688 (degree 742), 1095749.HMPREF1052_1690 (degree 725) and 1095749.HMPREF1052_1000
+The undirected graph Pasteurella bettyae has 2164 nodes and 157873 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06746 and has 3 connected components, where the component with most
+nodes has 2157 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 122, the mean node degree is 145.91, and
+the node degree mode is 7. The top 5 most central nodes are 1095749.HMPREF1052_1275
+(degree 871), 1095749.HMPREF1052_0500 (degree 780), 1095749.HMPREF1052_1688
+(degree 742), 1095749.HMPREF1052_1690 (degree 725) and 1095749.HMPREF1052_1000
 (degree 607).
 
 
@@ -107,13 +108,14 @@ def PasteurellaBettyae(
 	
 	Datetime: 2021-02-02 22:23:29.263356
 	
-	The undirected graph Pasteurella bettyae has 2164 nodes and 157873 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06746 and
-	has 3 connected components, where the component with most nodes has 2157 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 122,
-	the mean node degree is 145.91, and the node degree mode is 7. The top 5 most central
-	nodes are 1095749.HMPREF1052_1275 (degree 871), 1095749.HMPREF1052_0500 (degree 780),
-	1095749.HMPREF1052_1688 (degree 742), 1095749.HMPREF1052_1690 (degree 725) and 1095749.HMPREF1052_1000
+	The undirected graph Pasteurella bettyae has 2164 nodes and 157873 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06746 and has 3 connected components, where the component with most
+	nodes has 2157 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 122, the mean node degree is 145.91, and
+	the node degree mode is 7. The top 5 most central nodes are 1095749.HMPREF1052_1275
+	(degree 871), 1095749.HMPREF1052_0500 (degree 780), 1095749.HMPREF1052_1688
+	(degree 742), 1095749.HMPREF1052_1690 (degree 725) and 1095749.HMPREF1052_1000
 	(degree 607).
 	
 

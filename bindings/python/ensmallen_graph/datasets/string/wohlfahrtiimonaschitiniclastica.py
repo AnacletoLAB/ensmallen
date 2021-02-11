@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:57.093075
 
-The undirected graph Wohlfahrtiimonas chitiniclastica has 1810 nodes and 112078 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06846
-and has 5 connected components, where the component with most nodes has 1801 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 123.84, and the node degree mode is 45. The top 5
-most central nodes are 1123502.AQXD01000005_gene1678 (degree 669), 1123502.AQXD01000002_gene431
+The undirected graph Wohlfahrtiimonas chitiniclastica has 1810 nodes and
+112078 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06846 and has 5 connected components, where the
+component with most nodes has 1801 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+is 123.84, and the node degree mode is 45. The top 5 most central nodes
+are 1123502.AQXD01000005_gene1678 (degree 669), 1123502.AQXD01000002_gene431
 (degree 629), 1123502.AQXD01000001_gene1371 (degree 588), 1123502.AQXD01000001_gene854
 (degree 567) and 1123502.AQXD01000002_gene408 (degree 551).
 
@@ -107,12 +108,13 @@ def WohlfahrtiimonasChitiniclastica(
 	
 	Datetime: 2021-02-02 22:52:57.093075
 	
-	The undirected graph Wohlfahrtiimonas chitiniclastica has 1810 nodes and 112078 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06846
-	and has 5 connected components, where the component with most nodes has 1801 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 123.84, and the node degree mode is 45. The top 5
-	most central nodes are 1123502.AQXD01000005_gene1678 (degree 669), 1123502.AQXD01000002_gene431
+	The undirected graph Wohlfahrtiimonas chitiniclastica has 1810 nodes and
+	112078 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06846 and has 5 connected components, where the
+	component with most nodes has 1801 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 100, the mean node degree
+	is 123.84, and the node degree mode is 45. The top 5 most central nodes
+	are 1123502.AQXD01000005_gene1678 (degree 669), 1123502.AQXD01000002_gene431
 	(degree 629), 1123502.AQXD01000001_gene1371 (degree 588), 1123502.AQXD01000001_gene854
 	(degree 567) and 1123502.AQXD01000002_gene408 (degree 551).
 	

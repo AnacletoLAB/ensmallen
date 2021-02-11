@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:50.422097
 
-The undirected graph Mycoplasma anatis has 782 nodes and 26509 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08681 and
-has 10 connected components, where the component with most nodes has 758 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 43,
-the mean node degree is 67.80, and the node degree mode is 3. The top 5 most central
-nodes are 1034808.GIG_00320 (degree 257), 1034808.GIG_01605 (degree 241), 1034808.GIG_00230
-(degree 232), 1034808.GIG_00667 (degree 227) and 1034808.GIG_01261 (degree 227).
+The undirected graph Mycoplasma anatis has 782 nodes and 26509 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08681 and has 10 connected components, where the component with most
+nodes has 758 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 43, the mean node degree is 67.80, and
+the node degree mode is 3. The top 5 most central nodes are 1034808.GIG_00320
+(degree 257), 1034808.GIG_01605 (degree 241), 1034808.GIG_00230 (degree
+232), 1034808.GIG_00667 (degree 227) and 1034808.GIG_01261 (degree 227).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaAnatis(
 	
 	Datetime: 2021-02-02 22:11:50.422097
 	
-	The undirected graph Mycoplasma anatis has 782 nodes and 26509 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08681 and
-	has 10 connected components, where the component with most nodes has 758 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 43,
-	the mean node degree is 67.80, and the node degree mode is 3. The top 5 most central
-	nodes are 1034808.GIG_00320 (degree 257), 1034808.GIG_01605 (degree 241), 1034808.GIG_00230
-	(degree 232), 1034808.GIG_00667 (degree 227) and 1034808.GIG_01261 (degree 227).
+	The undirected graph Mycoplasma anatis has 782 nodes and 26509 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08681 and has 10 connected components, where the component with most
+	nodes has 758 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 43, the mean node degree is 67.80, and
+	the node degree mode is 3. The top 5 most central nodes are 1034808.GIG_00320
+	(degree 257), 1034808.GIG_01605 (degree 241), 1034808.GIG_00230 (degree
+	232), 1034808.GIG_00667 (degree 227) and 1034808.GIG_01261 (degree 227).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:18.235642
 
-The undirected graph Alteromonas australica has 3419 nodes and 343132 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05872 and
-has 10 connected components, where the component with most nodes has 3399 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 200.72, and the node degree mode is 3. The top 5 most central
-nodes are 589873.EP13_00070 (degree 1244), 589873.EP13_12910 (degree 997), 589873.EP13_11860
-(degree 979), 589873.EP13_03570 (degree 922) and 589873.EP13_07745 (degree 900).
+The undirected graph Alteromonas australica has 3419 nodes and 343132 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05872 and has 10 connected components, where the component with most
+nodes has 3399 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 200.72, and
+the node degree mode is 3. The top 5 most central nodes are 589873.EP13_00070
+(degree 1244), 589873.EP13_12910 (degree 997), 589873.EP13_11860 (degree
+979), 589873.EP13_03570 (degree 922) and 589873.EP13_07745 (degree 900).
 
 
 References
@@ -106,13 +107,14 @@ def AlteromonasAustralica(
 	
 	Datetime: 2021-02-02 21:17:18.235642
 	
-	The undirected graph Alteromonas australica has 3419 nodes and 343132 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05872 and
-	has 10 connected components, where the component with most nodes has 3399 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 200.72, and the node degree mode is 3. The top 5 most central
-	nodes are 589873.EP13_00070 (degree 1244), 589873.EP13_12910 (degree 997), 589873.EP13_11860
-	(degree 979), 589873.EP13_03570 (degree 922) and 589873.EP13_07745 (degree 900).
+	The undirected graph Alteromonas australica has 3419 nodes and 343132 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05872 and has 10 connected components, where the component with most
+	nodes has 3399 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 200.72, and
+	the node degree mode is 3. The top 5 most central nodes are 589873.EP13_00070
+	(degree 1244), 589873.EP13_12910 (degree 997), 589873.EP13_11860 (degree
+	979), 589873.EP13_03570 (degree 922) and 589873.EP13_07745 (degree 900).
 	
 
 

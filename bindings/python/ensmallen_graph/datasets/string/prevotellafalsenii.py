@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:48.109759
 
-The undirected graph Prevotella falsenii has 2398 nodes and 160511 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05585 and
-has 29 connected components, where the component with most nodes has 2331 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 133.87, and the node degree mode is 2. The top 5 most central
-nodes are 1122983.BAJY01000021_gene1174 (degree 980), 1122983.BAJY01000033_gene2349
-(degree 874), 1122983.BAJY01000018_gene1065 (degree 735), 1122983.BAJY01000013_gene740
-(degree 733) and 1122983.BAJY01000010_gene1378 (degree 707).
+The undirected graph Prevotella falsenii has 2398 nodes and 160511 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05585 and has 29 connected components, where the component with most
+nodes has 2331 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 133.87, and
+the node degree mode is 2. The top 5 most central nodes are 1122983.BAJY01000021_gene1174
+(degree 980), 1122983.BAJY01000033_gene2349 (degree 874), 1122983.BAJY01000018_gene1065
+(degree 735), 1122983.BAJY01000013_gene740 (degree 733) and 1122983.BAJY01000010_gene1378
+(degree 707).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaFalsenii(
 	
 	Datetime: 2021-02-02 22:45:48.109759
 	
-	The undirected graph Prevotella falsenii has 2398 nodes and 160511 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05585 and
-	has 29 connected components, where the component with most nodes has 2331 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 133.87, and the node degree mode is 2. The top 5 most central
-	nodes are 1122983.BAJY01000021_gene1174 (degree 980), 1122983.BAJY01000033_gene2349
-	(degree 874), 1122983.BAJY01000018_gene1065 (degree 735), 1122983.BAJY01000013_gene740
-	(degree 733) and 1122983.BAJY01000010_gene1378 (degree 707).
+	The undirected graph Prevotella falsenii has 2398 nodes and 160511 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05585 and has 29 connected components, where the component with most
+	nodes has 2331 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 133.87, and
+	the node degree mode is 2. The top 5 most central nodes are 1122983.BAJY01000021_gene1174
+	(degree 980), 1122983.BAJY01000033_gene2349 (degree 874), 1122983.BAJY01000018_gene1065
+	(degree 735), 1122983.BAJY01000013_gene740 (degree 733) and 1122983.BAJY01000010_gene1378
+	(degree 707).
 	
 
 

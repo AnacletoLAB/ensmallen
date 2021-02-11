@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:06.746671
 
-The undirected graph Collinsella sp. 4847FAA has 1984 nodes and 147116 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-has 7 connected components, where the component with most nodes has 1972 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 148.30, and the node degree mode is 36. The top 5 most central
-nodes are 742722.HMPREF9463_01450 (degree 900), 742722.HMPREF9463_01353 (degree 870),
-742722.HMPREF9463_00496 (degree 777), 742722.HMPREF9463_01255 (degree 750) and 742722.HMPREF9463_00287
+The undirected graph Collinsella sp. 4847FAA has 1984 nodes and 147116
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07479 and has 7 connected components, where the component
+with most nodes has 1972 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 148.30,
+and the node degree mode is 36. The top 5 most central nodes are 742722.HMPREF9463_01450
+(degree 900), 742722.HMPREF9463_01353 (degree 870), 742722.HMPREF9463_00496
+(degree 777), 742722.HMPREF9463_01255 (degree 750) and 742722.HMPREF9463_00287
 (degree 744).
 
 
@@ -107,13 +108,14 @@ def CollinsellaSp.4847faa(
 	
 	Datetime: 2021-02-02 21:37:06.746671
 	
-	The undirected graph Collinsella sp. 4847FAA has 1984 nodes and 147116 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-	has 7 connected components, where the component with most nodes has 1972 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 148.30, and the node degree mode is 36. The top 5 most central
-	nodes are 742722.HMPREF9463_01450 (degree 900), 742722.HMPREF9463_01353 (degree 870),
-	742722.HMPREF9463_00496 (degree 777), 742722.HMPREF9463_01255 (degree 750) and 742722.HMPREF9463_00287
+	The undirected graph Collinsella sp. 4847FAA has 1984 nodes and 147116
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07479 and has 7 connected components, where the component
+	with most nodes has 1972 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 148.30,
+	and the node degree mode is 36. The top 5 most central nodes are 742722.HMPREF9463_01450
+	(degree 900), 742722.HMPREF9463_01353 (degree 870), 742722.HMPREF9463_00496
+	(degree 777), 742722.HMPREF9463_01255 (degree 750) and 742722.HMPREF9463_00287
 	(degree 744).
 	
 

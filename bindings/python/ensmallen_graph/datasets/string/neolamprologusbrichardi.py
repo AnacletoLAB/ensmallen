@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:29.227692
 
-The undirected graph Neolamprologus brichardi has 21322 nodes and 4498819 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01979
-and has 8 connected components, where the component with most nodes has 21308 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 294, the mean node degree is 421.99, and the node degree mode is 133. The top
-5 most central nodes are 32507.XP_006810392.1 (degree 4906), 32507.XP_006789182.1
-(degree 4892), 32507.XP_006806083.1 (degree 4600), 32507.XP_006806933.1 (degree 4333)
+The undirected graph Neolamprologus brichardi has 21322 nodes and 4498819
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01979 and has 8 connected components, where the component
+with most nodes has 21308 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 294, the mean node degree
+is 421.99, and the node degree mode is 133. The top 5 most central nodes
+are 32507.XP_006810392.1 (degree 4906), 32507.XP_006789182.1 (degree 4892),
+32507.XP_006806083.1 (degree 4600), 32507.XP_006806933.1 (degree 4333)
 and 32507.XP_006793101.1 (degree 4286).
 
 
@@ -107,13 +108,14 @@ def NeolamprologusBrichardi(
 	
 	Datetime: 2021-02-02 18:03:29.227692
 	
-	The undirected graph Neolamprologus brichardi has 21322 nodes and 4498819 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01979
-	and has 8 connected components, where the component with most nodes has 21308 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 294, the mean node degree is 421.99, and the node degree mode is 133. The top
-	5 most central nodes are 32507.XP_006810392.1 (degree 4906), 32507.XP_006789182.1
-	(degree 4892), 32507.XP_006806083.1 (degree 4600), 32507.XP_006806933.1 (degree 4333)
+	The undirected graph Neolamprologus brichardi has 21322 nodes and 4498819
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01979 and has 8 connected components, where the component
+	with most nodes has 21308 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 294, the mean node degree
+	is 421.99, and the node degree mode is 133. The top 5 most central nodes
+	are 32507.XP_006810392.1 (degree 4906), 32507.XP_006789182.1 (degree 4892),
+	32507.XP_006806083.1 (degree 4600), 32507.XP_006806933.1 (degree 4333)
 	and 32507.XP_006793101.1 (degree 4286).
 	
 

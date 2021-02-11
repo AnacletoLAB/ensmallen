@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:47.613545
 
-The undirected graph SW-100-4-0d2-trial1 has 100 nodes and 200 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04040 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
-are 29 (degree 8), 76 (degree 7), 36 (degree 6), 72 (degree 6) and 93 (degree 6).
+The undirected graph SW-100-4-0d2-trial1 has 100 nodes and 200 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04040 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.00, and the node degree mode
+is 4. The top 5 most central nodes are 29 (degree 8), 76 (degree 7), 36
+(degree 6), 72 (degree 6) and 93 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def Sw10040d2Trial1(
 	
 	Datetime: 2021-02-06 09:27:47.613545
 	
-	The undirected graph SW-100-4-0d2-trial1 has 100 nodes and 200 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04040 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
-	are 29 (degree 8), 76 (degree 7), 36 (degree 6), 72 (degree 6) and 93 (degree 6).
+	The undirected graph SW-100-4-0d2-trial1 has 100 nodes and 200 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04040 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.00, and the node degree mode
+	is 4. The top 5 most central nodes are 29 (degree 8), 76 (degree 7), 36
+	(degree 6), 72 (degree 6) and 93 (degree 6).
 	
 
 

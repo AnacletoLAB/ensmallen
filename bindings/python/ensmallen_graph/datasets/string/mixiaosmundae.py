@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:18.578362
 
-The undirected graph Mixia osmundae has 4520 nodes and 469786 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04600 and
-has 2 connected components, where the component with most nodes has 4518 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 207.87, and the node degree mode is 1. The top 5 most central
-nodes are 34349.G7DSR9 (degree 1796), 34349.G7E8A3 (degree 1662), 34349.G7EAP1 (degree
-1352), 34349.G7E9L6 (degree 1351) and 34349.G7E609 (degree 1303).
+The undirected graph Mixia osmundae has 4520 nodes and 469786 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04600 and has 2 connected components, where the component with most
+nodes has 4518 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 207.87, and
+the node degree mode is 1. The top 5 most central nodes are 34349.G7DSR9
+(degree 1796), 34349.G7E8A3 (degree 1662), 34349.G7EAP1 (degree 1352),
+34349.G7E9L6 (degree 1351) and 34349.G7E609 (degree 1303).
 
 
 References
@@ -106,13 +107,14 @@ def MixiaOsmundae(
 	
 	Datetime: 2021-02-02 18:04:18.578362
 	
-	The undirected graph Mixia osmundae has 4520 nodes and 469786 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04600 and
-	has 2 connected components, where the component with most nodes has 4518 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 207.87, and the node degree mode is 1. The top 5 most central
-	nodes are 34349.G7DSR9 (degree 1796), 34349.G7E8A3 (degree 1662), 34349.G7EAP1 (degree
-	1352), 34349.G7E9L6 (degree 1351) and 34349.G7E609 (degree 1303).
+	The undirected graph Mixia osmundae has 4520 nodes and 469786 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04600 and has 2 connected components, where the component with most
+	nodes has 4518 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 207.87, and
+	the node degree mode is 1. The top 5 most central nodes are 34349.G7DSR9
+	(degree 1796), 34349.G7E8A3 (degree 1662), 34349.G7EAP1 (degree 1352),
+	34349.G7E9L6 (degree 1351) and 34349.G7E609 (degree 1303).
 	
 
 

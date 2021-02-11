@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:20.002238
 
-The undirected graph Corynebacterium sp. GD7 has 2055 nodes and 132727 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06289 and
-has 6 connected components, where the component with most nodes has 2031 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 129.17, and the node degree mode is 3. The top 5 most central
-nodes are 1232427.CAVS020000015_gene561 (degree 843), 1232427.CAVS020000035_gene2002
-(degree 820), 1232427.CAVS020000015_gene514 (degree 714), 1232427.CAVS020000035_gene2020
-(degree 645) and 1232427.CAVS020000015_gene517 (degree 614).
+The undirected graph Corynebacterium sp. GD7 has 2055 nodes and 132727
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06289 and has 6 connected components, where the component
+with most nodes has 2031 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 129.17,
+and the node degree mode is 3. The top 5 most central nodes are 1232427.CAVS020000015_gene561
+(degree 843), 1232427.CAVS020000035_gene2002 (degree 820), 1232427.CAVS020000015_gene514
+(degree 714), 1232427.CAVS020000035_gene2020 (degree 645) and 1232427.CAVS020000015_gene517
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumSp.Gd7(
 	
 	Datetime: 2021-02-02 23:28:20.002238
 	
-	The undirected graph Corynebacterium sp. GD7 has 2055 nodes and 132727 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06289 and
-	has 6 connected components, where the component with most nodes has 2031 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 129.17, and the node degree mode is 3. The top 5 most central
-	nodes are 1232427.CAVS020000015_gene561 (degree 843), 1232427.CAVS020000035_gene2002
-	(degree 820), 1232427.CAVS020000015_gene514 (degree 714), 1232427.CAVS020000035_gene2020
-	(degree 645) and 1232427.CAVS020000015_gene517 (degree 614).
+	The undirected graph Corynebacterium sp. GD7 has 2055 nodes and 132727
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06289 and has 6 connected components, where the component
+	with most nodes has 2031 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 129.17,
+	and the node degree mode is 3. The top 5 most central nodes are 1232427.CAVS020000015_gene561
+	(degree 843), 1232427.CAVS020000035_gene2002 (degree 820), 1232427.CAVS020000015_gene514
+	(degree 714), 1232427.CAVS020000035_gene2020 (degree 645) and 1232427.CAVS020000015_gene517
+	(degree 614).
 	
 
 

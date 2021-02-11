@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:19.489822
 
-The undirected graph Pseudomonas psychrotolerans has 4711 nodes and 344010 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03101
-and has 15 connected components, where the component with most nodes has 4674 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 146.05, and the node degree mode is 3. The top 5
-most central nodes are 1112217.PPL19_09441 (degree 1608), 1112217.PPL19_11452 (degree
-1214), 1112217.PPL19_16400 (degree 1203), 1112217.PPL19_22100 (degree 1128) and 1112217.PPL19_11457
-(degree 991).
+The undirected graph Pseudomonas psychrotolerans has 4711 nodes and 344010
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03101 and has 15 connected components, where the component
+with most nodes has 4674 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 146.05,
+and the node degree mode is 3. The top 5 most central nodes are 1112217.PPL19_09441
+(degree 1608), 1112217.PPL19_11452 (degree 1214), 1112217.PPL19_16400 (degree
+1203), 1112217.PPL19_22100 (degree 1128) and 1112217.PPL19_11457 (degree
+991).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPsychrotolerans(
 	
 	Datetime: 2021-02-02 22:26:19.489822
 	
-	The undirected graph Pseudomonas psychrotolerans has 4711 nodes and 344010 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03101
-	and has 15 connected components, where the component with most nodes has 4674 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 146.05, and the node degree mode is 3. The top 5
-	most central nodes are 1112217.PPL19_09441 (degree 1608), 1112217.PPL19_11452 (degree
-	1214), 1112217.PPL19_16400 (degree 1203), 1112217.PPL19_22100 (degree 1128) and 1112217.PPL19_11457
-	(degree 991).
+	The undirected graph Pseudomonas psychrotolerans has 4711 nodes and 344010
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03101 and has 15 connected components, where the component
+	with most nodes has 4674 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 146.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1112217.PPL19_09441
+	(degree 1608), 1112217.PPL19_11452 (degree 1214), 1112217.PPL19_16400 (degree
+	1203), 1112217.PPL19_22100 (degree 1128) and 1112217.PPL19_11457 (degree
+	991).
 	
 
 

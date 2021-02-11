@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:41.064700
 
-The undirected graph Algicola sagamiensis has 3867 nodes and 424287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05676 and
-has 31 connected components, where the component with most nodes has 3791 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 219.44, and the node degree mode is 1. The top 5 most central
-nodes are 1120963.KB894507_gene3778 (degree 1215), 1120963.KB894492_gene1642 (degree
-1126), 1120963.KB894496_gene2637 (degree 1118), 1120963.KB894507_gene3777 (degree
-1082) and 1120963.KB894499_gene488 (degree 1050).
+The undirected graph Algicola sagamiensis has 3867 nodes and 424287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05676 and has 31 connected components, where the component with most
+nodes has 3791 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 219.44, and
+the node degree mode is 1. The top 5 most central nodes are 1120963.KB894507_gene3778
+(degree 1215), 1120963.KB894492_gene1642 (degree 1126), 1120963.KB894496_gene2637
+(degree 1118), 1120963.KB894507_gene3777 (degree 1082) and 1120963.KB894499_gene488
+(degree 1050).
 
 
 References
@@ -107,14 +108,15 @@ def AlgicolaSagamiensis(
 	
 	Datetime: 2021-02-02 22:30:41.064700
 	
-	The undirected graph Algicola sagamiensis has 3867 nodes and 424287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05676 and
-	has 31 connected components, where the component with most nodes has 3791 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 219.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1120963.KB894507_gene3778 (degree 1215), 1120963.KB894492_gene1642 (degree
-	1126), 1120963.KB894496_gene2637 (degree 1118), 1120963.KB894507_gene3777 (degree
-	1082) and 1120963.KB894499_gene488 (degree 1050).
+	The undirected graph Algicola sagamiensis has 3867 nodes and 424287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05676 and has 31 connected components, where the component with most
+	nodes has 3791 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 219.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1120963.KB894507_gene3778
+	(degree 1215), 1120963.KB894492_gene1642 (degree 1126), 1120963.KB894496_gene2637
+	(degree 1118), 1120963.KB894507_gene3777 (degree 1082) and 1120963.KB894499_gene488
+	(degree 1050).
 	
 
 

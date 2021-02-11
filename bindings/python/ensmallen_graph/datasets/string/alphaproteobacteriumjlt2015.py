@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:32.902038
 
-The undirected graph alpha proteobacterium JLT2015 has 3010 nodes and 250245 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-and has 11 connected components, where the component with most nodes has 2985 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 166.28, and the node degree mode is 2. The top 5
-most central nodes are 1234595.C725_2902 (degree 1101), 1234595.C725_0290 (degree
-897), 1234595.C725_0685 (degree 885), 1234595.C725_1603 (degree 879) and 1234595.C725_0641
-(degree 859).
+The undirected graph alpha proteobacterium JLT2015 has 3010 nodes and 250245
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05526 and has 11 connected components, where the component
+with most nodes has 2985 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 166.28,
+and the node degree mode is 2. The top 5 most central nodes are 1234595.C725_2902
+(degree 1101), 1234595.C725_0290 (degree 897), 1234595.C725_0685 (degree
+885), 1234595.C725_1603 (degree 879) and 1234595.C725_0641 (degree 859).
 
 
 References
@@ -107,14 +107,14 @@ def AlphaProteobacteriumJlt2015(
 	
 	Datetime: 2021-02-02 23:29:32.902038
 	
-	The undirected graph alpha proteobacterium JLT2015 has 3010 nodes and 250245 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-	and has 11 connected components, where the component with most nodes has 2985 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 166.28, and the node degree mode is 2. The top 5
-	most central nodes are 1234595.C725_2902 (degree 1101), 1234595.C725_0290 (degree
-	897), 1234595.C725_0685 (degree 885), 1234595.C725_1603 (degree 879) and 1234595.C725_0641
-	(degree 859).
+	The undirected graph alpha proteobacterium JLT2015 has 3010 nodes and 250245
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05526 and has 11 connected components, where the component
+	with most nodes has 2985 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 166.28,
+	and the node degree mode is 2. The top 5 most central nodes are 1234595.C725_2902
+	(degree 1101), 1234595.C725_0290 (degree 897), 1234595.C725_0685 (degree
+	885), 1234595.C725_1603 (degree 879) and 1234595.C725_0641 (degree 859).
 	
 
 

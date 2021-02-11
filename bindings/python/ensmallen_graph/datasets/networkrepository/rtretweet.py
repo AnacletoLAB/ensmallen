@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:32:34.413628
 
-The undirected graph rt-retweet has 96 nodes and 117 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.02566 and is connected,
-as it has a single component. The graph median node degree is 1, the mean node degree
-is 2.44, and the node degree mode is 1. The top 5 most central nodes are 54 (degree
-17), 45 (degree 11), 72 (degree 9), 89 (degree 9) and 93 (degree 8).
+The undirected graph rt-retweet has 96 nodes and 117 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02566 and is connected, as it has a single component. The graph median
+node degree is 1, the mean node degree is 2.44, and the node degree mode
+is 1. The top 5 most central nodes are 54 (degree 17), 45 (degree 11),
+72 (degree 9), 89 (degree 9) and 93 (degree 8).
 
 
 References
@@ -116,11 +117,12 @@ def RtRetweet(
 	
 	Datetime: 2021-02-06 09:32:34.413628
 	
-	The undirected graph rt-retweet has 96 nodes and 117 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.02566 and is connected,
-	as it has a single component. The graph median node degree is 1, the mean node degree
-	is 2.44, and the node degree mode is 1. The top 5 most central nodes are 54 (degree
-	17), 45 (degree 11), 72 (degree 9), 89 (degree 9) and 93 (degree 8).
+	The undirected graph rt-retweet has 96 nodes and 117 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02566 and is connected, as it has a single component. The graph median
+	node degree is 1, the mean node degree is 2.44, and the node degree mode
+	is 1. The top 5 most central nodes are 54 (degree 17), 45 (degree 11),
+	72 (degree 9), 89 (degree 9) and 93 (degree 8).
 	
 
 

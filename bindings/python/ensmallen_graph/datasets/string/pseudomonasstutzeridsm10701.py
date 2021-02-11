@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:34.385427
 
-The undirected graph Pseudomonas stutzeri DSM10701 has 3802 nodes and 236748 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03276
-and has 7 connected components, where the component with most nodes has 3784 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 124.54, and the node degree mode is 1. The top 5
-most central nodes are 1123519.PSJM300_00690 (degree 917), 1123519.PSJM300_15745
-(degree 915), 1123519.PSJM300_13015 (degree 912), 1123519.PSJM300_04910 (degree 844)
-and 1123519.PSJM300_04525 (degree 773).
+The undirected graph Pseudomonas stutzeri DSM10701 has 3802 nodes and 236748
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03276 and has 7 connected components, where the component
+with most nodes has 3784 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 124.54,
+and the node degree mode is 1. The top 5 most central nodes are 1123519.PSJM300_00690
+(degree 917), 1123519.PSJM300_15745 (degree 915), 1123519.PSJM300_13015
+(degree 912), 1123519.PSJM300_04910 (degree 844) and 1123519.PSJM300_04525
+(degree 773).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriDsm10701(
 	
 	Datetime: 2021-02-02 22:53:34.385427
 	
-	The undirected graph Pseudomonas stutzeri DSM10701 has 3802 nodes and 236748 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03276
-	and has 7 connected components, where the component with most nodes has 3784 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 124.54, and the node degree mode is 1. The top 5
-	most central nodes are 1123519.PSJM300_00690 (degree 917), 1123519.PSJM300_15745
-	(degree 915), 1123519.PSJM300_13015 (degree 912), 1123519.PSJM300_04910 (degree 844)
-	and 1123519.PSJM300_04525 (degree 773).
+	The undirected graph Pseudomonas stutzeri DSM10701 has 3802 nodes and 236748
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03276 and has 7 connected components, where the component
+	with most nodes has 3784 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 124.54,
+	and the node degree mode is 1. The top 5 most central nodes are 1123519.PSJM300_00690
+	(degree 917), 1123519.PSJM300_15745 (degree 915), 1123519.PSJM300_13015
+	(degree 912), 1123519.PSJM300_04910 (degree 844) and 1123519.PSJM300_04525
+	(degree 773).
 	
 
 

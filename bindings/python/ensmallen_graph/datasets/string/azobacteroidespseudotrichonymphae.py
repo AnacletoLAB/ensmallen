@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:47.797542
 
-The undirected graph Azobacteroides pseudotrichonymphae has 744 nodes and 37817 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.13682 and has 4 connected components, where the component with most nodes has
-735 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 89, the mean node degree is 101.66, and the node degree mode is 67. The
-top 5 most central nodes are 511995.CFPG_268 (degree 436), 511995.CFPG_572 (degree
-402), 511995.CFPG_580 (degree 400), 511995.CFPG_756 (degree 380) and 511995.CFPG_278
-(degree 343).
+The undirected graph Azobacteroides pseudotrichonymphae has 744 nodes and
+37817 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.13682 and has 4 connected components, where
+the component with most nodes has 735 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 89, the mean node
+degree is 101.66, and the node degree mode is 67. The top 5 most central
+nodes are 511995.CFPG_268 (degree 436), 511995.CFPG_572 (degree 402), 511995.CFPG_580
+(degree 400), 511995.CFPG_756 (degree 380) and 511995.CFPG_278 (degree
+343).
 
 
 References
@@ -107,14 +108,15 @@ def AzobacteroidesPseudotrichonymphae(
 	
 	Datetime: 2021-02-02 21:02:47.797542
 	
-	The undirected graph Azobacteroides pseudotrichonymphae has 744 nodes and 37817 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.13682 and has 4 connected components, where the component with most nodes has
-	735 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 89, the mean node degree is 101.66, and the node degree mode is 67. The
-	top 5 most central nodes are 511995.CFPG_268 (degree 436), 511995.CFPG_572 (degree
-	402), 511995.CFPG_580 (degree 400), 511995.CFPG_756 (degree 380) and 511995.CFPG_278
-	(degree 343).
+	The undirected graph Azobacteroides pseudotrichonymphae has 744 nodes and
+	37817 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.13682 and has 4 connected components, where
+	the component with most nodes has 735 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 89, the mean node
+	degree is 101.66, and the node degree mode is 67. The top 5 most central
+	nodes are 511995.CFPG_268 (degree 436), 511995.CFPG_572 (degree 402), 511995.CFPG_580
+	(degree 400), 511995.CFPG_756 (degree 380) and 511995.CFPG_278 (degree
+	343).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:51.668125
 
-The undirected graph alpha proteobacterium HIMB59 has 1489 nodes and 72283 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06525
-and is connected, as it has a single component. The graph median node degree is 74,
-the mean node degree is 97.09, and the node degree mode is 4. The top 5 most central
-nodes are 744985.HIMB59_00003970 (degree 475), 744985.HIMB59_00014090 (degree 464),
-744985.HIMB59_00014690 (degree 429), 744985.HIMB59_00000990 (degree 422) and 744985.HIMB59_00000650
+The undirected graph alpha proteobacterium HIMB59 has 1489 nodes and 72283
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06525 and is connected, as it has a single component.
+The graph median node degree is 74, the mean node degree is 97.09, and
+the node degree mode is 4. The top 5 most central nodes are 744985.HIMB59_00003970
+(degree 475), 744985.HIMB59_00014090 (degree 464), 744985.HIMB59_00014690
+(degree 429), 744985.HIMB59_00000990 (degree 422) and 744985.HIMB59_00000650
 (degree 420).
 
 
@@ -106,12 +107,13 @@ def AlphaProteobacteriumHimb59(
 	
 	Datetime: 2021-02-02 21:38:51.668125
 	
-	The undirected graph alpha proteobacterium HIMB59 has 1489 nodes and 72283 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06525
-	and is connected, as it has a single component. The graph median node degree is 74,
-	the mean node degree is 97.09, and the node degree mode is 4. The top 5 most central
-	nodes are 744985.HIMB59_00003970 (degree 475), 744985.HIMB59_00014090 (degree 464),
-	744985.HIMB59_00014690 (degree 429), 744985.HIMB59_00000990 (degree 422) and 744985.HIMB59_00000650
+	The undirected graph alpha proteobacterium HIMB59 has 1489 nodes and 72283
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06525 and is connected, as it has a single component.
+	The graph median node degree is 74, the mean node degree is 97.09, and
+	the node degree mode is 4. The top 5 most central nodes are 744985.HIMB59_00003970
+	(degree 475), 744985.HIMB59_00014090 (degree 464), 744985.HIMB59_00014690
+	(degree 429), 744985.HIMB59_00000990 (degree 422) and 744985.HIMB59_00000650
 	(degree 420).
 	
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:17.672099
 
-The undirected graph Cyanobium sp. PCC7001 has 2735 nodes and 279606 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-has 14 connected components, where the component with most nodes has 2704 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 204.47, and the node degree mode is 4. The top 5 most central
-nodes are 180281.CPCC7001_2756 (degree 975), 180281.CPCC7001_1046 (degree 901), 180281.CPCC7001_389
-(degree 830), 180281.CPCC7001_645 (degree 808) and 180281.CPCC7001_257 (degree 803).
+The undirected graph Cyanobium sp. PCC7001 has 2735 nodes and 279606 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07479 and has 14 connected components, where the component with most
+nodes has 2704 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 204.47, and
+the node degree mode is 4. The top 5 most central nodes are 180281.CPCC7001_2756
+(degree 975), 180281.CPCC7001_1046 (degree 901), 180281.CPCC7001_389 (degree
+830), 180281.CPCC7001_645 (degree 808) and 180281.CPCC7001_257 (degree
+803).
 
 
 References
@@ -106,13 +108,15 @@ def CyanobiumSp.Pcc7001(
 	
 	Datetime: 2021-02-02 19:56:17.672099
 	
-	The undirected graph Cyanobium sp. PCC7001 has 2735 nodes and 279606 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07479 and
-	has 14 connected components, where the component with most nodes has 2704 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 204.47, and the node degree mode is 4. The top 5 most central
-	nodes are 180281.CPCC7001_2756 (degree 975), 180281.CPCC7001_1046 (degree 901), 180281.CPCC7001_389
-	(degree 830), 180281.CPCC7001_645 (degree 808) and 180281.CPCC7001_257 (degree 803).
+	The undirected graph Cyanobium sp. PCC7001 has 2735 nodes and 279606 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07479 and has 14 connected components, where the component with most
+	nodes has 2704 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 204.47, and
+	the node degree mode is 4. The top 5 most central nodes are 180281.CPCC7001_2756
+	(degree 975), 180281.CPCC7001_1046 (degree 901), 180281.CPCC7001_389 (degree
+	830), 180281.CPCC7001_645 (degree 808) and 180281.CPCC7001_257 (degree
+	803).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:46.918345
 
-The undirected graph Bifidobacterium actinocoloniiforme has 1458 nodes and 75650
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07122 and has 8 connected components, where the component with most nodes has
-1443 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 79, the mean node degree is 103.77, and the node degree mode is 24. The
-top 5 most central nodes are 1437605.BACT_0158 (degree 654), 1437605.BACT_0597 (degree
-647), 1437605.BACT_0925 (degree 611), 1437605.BACT_1043 (degree 531) and 1437605.BACT_0227
-(degree 519).
+The undirected graph Bifidobacterium actinocoloniiforme has 1458 nodes
+and 75650 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07122 and has 8 connected components, where the
+component with most nodes has 1443 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 79, the mean node degree
+is 103.77, and the node degree mode is 24. The top 5 most central nodes
+are 1437605.BACT_0158 (degree 654), 1437605.BACT_0597 (degree 647), 1437605.BACT_0925
+(degree 611), 1437605.BACT_1043 (degree 531) and 1437605.BACT_0227 (degree
+519).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumActinocoloniiforme(
 	
 	Datetime: 2021-02-03 22:55:46.918345
 	
-	The undirected graph Bifidobacterium actinocoloniiforme has 1458 nodes and 75650
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07122 and has 8 connected components, where the component with most nodes has
-	1443 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 79, the mean node degree is 103.77, and the node degree mode is 24. The
-	top 5 most central nodes are 1437605.BACT_0158 (degree 654), 1437605.BACT_0597 (degree
-	647), 1437605.BACT_0925 (degree 611), 1437605.BACT_1043 (degree 531) and 1437605.BACT_0227
-	(degree 519).
+	The undirected graph Bifidobacterium actinocoloniiforme has 1458 nodes
+	and 75650 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07122 and has 8 connected components, where the
+	component with most nodes has 1443 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 79, the mean node degree
+	is 103.77, and the node degree mode is 24. The top 5 most central nodes
+	are 1437605.BACT_0158 (degree 654), 1437605.BACT_0597 (degree 647), 1437605.BACT_0925
+	(degree 611), 1437605.BACT_1043 (degree 531) and 1437605.BACT_0227 (degree
+	519).
 	
 
 

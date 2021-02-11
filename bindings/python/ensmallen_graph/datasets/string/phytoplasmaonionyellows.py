@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:10.212476
 
-The undirected graph Phytoplasma onion yellows has 725 nodes and 95723 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.36473
-and has 21 connected components, where the component with most nodes has 674 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 334, the mean node degree is 264.06, and the node degree mode is 2. The top 5
-most central nodes are 262768.PAM_252 (degree 527), 262768.PAM_498 (degree 501),
-262768.PAM_703 (degree 501), 262768.PAM_131 (degree 499) and 262768.PAM_121 (degree
-498).
+The undirected graph Phytoplasma onion yellows has 725 nodes and 95723
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.36473 and has 21 connected components, where the
+component with most nodes has 674 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 334, the mean node degree
+is 264.06, and the node degree mode is 2. The top 5 most central nodes
+are 262768.PAM_252 (degree 527), 262768.PAM_498 (degree 501), 262768.PAM_703
+(degree 501), 262768.PAM_131 (degree 499) and 262768.PAM_121 (degree 498).
 
 
 References
@@ -107,14 +107,14 @@ def PhytoplasmaOnionYellows(
 	
 	Datetime: 2021-02-02 20:13:10.212476
 	
-	The undirected graph Phytoplasma onion yellows has 725 nodes and 95723 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.36473
-	and has 21 connected components, where the component with most nodes has 674 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 334, the mean node degree is 264.06, and the node degree mode is 2. The top 5
-	most central nodes are 262768.PAM_252 (degree 527), 262768.PAM_498 (degree 501),
-	262768.PAM_703 (degree 501), 262768.PAM_131 (degree 499) and 262768.PAM_121 (degree
-	498).
+	The undirected graph Phytoplasma onion yellows has 725 nodes and 95723
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.36473 and has 21 connected components, where the
+	component with most nodes has 674 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 334, the mean node degree
+	is 264.06, and the node degree mode is 2. The top 5 most central nodes
+	are 262768.PAM_252 (degree 527), 262768.PAM_498 (degree 501), 262768.PAM_703
+	(degree 501), 262768.PAM_131 (degree 499) and 262768.PAM_121 (degree 498).
 	
 
 

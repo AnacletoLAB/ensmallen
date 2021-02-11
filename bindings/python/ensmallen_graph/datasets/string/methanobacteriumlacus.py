@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:59.182070
 
-The undirected graph Methanobacterium lacus has 2449 nodes and 315178 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10514
-and has 26 connected components, where the component with most nodes has 2392 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 269, the mean node degree is 257.39, and the node degree mode is 1. The top 5
-most central nodes are 877455.Metbo_1025 (degree 1122), 877455.Metbo_0229 (degree
-964), 877455.Metbo_2523 (degree 927), 877455.Metbo_0415 (degree 901) and 877455.Metbo_2379
-(degree 892).
+The undirected graph Methanobacterium lacus has 2449 nodes and 315178 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10514 and has 26 connected components, where the component
+with most nodes has 2392 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 269, the mean node degree is 257.39,
+and the node degree mode is 1. The top 5 most central nodes are 877455.Metbo_1025
+(degree 1122), 877455.Metbo_0229 (degree 964), 877455.Metbo_2523 (degree
+927), 877455.Metbo_0415 (degree 901) and 877455.Metbo_2379 (degree 892).
 
 
 References
@@ -107,14 +107,14 @@ def MethanobacteriumLacus(
 	
 	Datetime: 2021-02-02 21:49:59.182070
 	
-	The undirected graph Methanobacterium lacus has 2449 nodes and 315178 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10514
-	and has 26 connected components, where the component with most nodes has 2392 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 269, the mean node degree is 257.39, and the node degree mode is 1. The top 5
-	most central nodes are 877455.Metbo_1025 (degree 1122), 877455.Metbo_0229 (degree
-	964), 877455.Metbo_2523 (degree 927), 877455.Metbo_0415 (degree 901) and 877455.Metbo_2379
-	(degree 892).
+	The undirected graph Methanobacterium lacus has 2449 nodes and 315178 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10514 and has 26 connected components, where the component
+	with most nodes has 2392 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 269, the mean node degree is 257.39,
+	and the node degree mode is 1. The top 5 most central nodes are 877455.Metbo_1025
+	(degree 1122), 877455.Metbo_0229 (degree 964), 877455.Metbo_2523 (degree
+	927), 877455.Metbo_0415 (degree 901) and 877455.Metbo_2379 (degree 892).
 	
 
 

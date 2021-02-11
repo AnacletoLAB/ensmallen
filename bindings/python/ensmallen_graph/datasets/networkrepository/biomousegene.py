@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:52.126990
 
-The undirected graph bio-mouse-gene has 45101 nodes, of which 1975 are singletons
-(all have self-loops), and 14506196 weighted edges, of which 45101 are self-loops.
-The graph is dense as it has a density of 0.01424 and has 2072 connected components,
-where the component with most nodes has 42923 nodes and the component with the least
-nodes has a single node. The graph median node degree is 235, the mean node degree
-is 642.28 and the node degree mode is 1. The top 5 most central nodes are 26572 (degree
-8032), 34044 (degree 7131), 34642 (degree 6823), 6685 (degree 6790) and 22509 (degree
-6751).
+The undirected graph bio-mouse-gene has 45101 nodes, of which 1975 are
+singletons (all have self-loops), and 14506196 weighted edges, of which
+45101 are self-loops. The graph is dense as it has a density of 0.01424
+and has 2072 connected components, where the component with most nodes
+has 42923 nodes and the component with the least nodes has a single node.
+The graph median node degree is 235, the mean node degree is 642.28 and
+the node degree mode is 1. The top 5 most central nodes are 26572 (degree
+8032), 34044 (degree 7131), 34642 (degree 6823), 6685 (degree 6790) and
+22509 (degree 6751).
 
 
 References
@@ -114,14 +115,15 @@ def BioMouseGene(
 	
 	Datetime: 2021-02-03 22:36:52.126990
 	
-	The undirected graph bio-mouse-gene has 45101 nodes, of which 1975 are singletons
-	(all have self-loops), and 14506196 weighted edges, of which 45101 are self-loops.
-	The graph is dense as it has a density of 0.01424 and has 2072 connected components,
-	where the component with most nodes has 42923 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 235, the mean node degree
-	is 642.28 and the node degree mode is 1. The top 5 most central nodes are 26572 (degree
-	8032), 34044 (degree 7131), 34642 (degree 6823), 6685 (degree 6790) and 22509 (degree
-	6751).
+	The undirected graph bio-mouse-gene has 45101 nodes, of which 1975 are
+	singletons (all have self-loops), and 14506196 weighted edges, of which
+	45101 are self-loops. The graph is dense as it has a density of 0.01424
+	and has 2072 connected components, where the component with most nodes
+	has 42923 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 235, the mean node degree is 642.28 and
+	the node degree mode is 1. The top 5 most central nodes are 26572 (degree
+	8032), 34044 (degree 7131), 34642 (degree 6823), 6685 (degree 6790) and
+	22509 (degree 6751).
 	
 
 

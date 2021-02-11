@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:21:50.704652
 
-The undirected graph flickr has 2406556 nodes with 2 different node types: 1 (nodes
-number 2302925) and 2 (nodes number 103631) and 31383583 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and has 30769 connected components, where the component with most nodes has 2277001
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 26.08 and the node degree mode is 1. The top 5 most
-central nodes are 2302966 (degree 34989), 2302938 (degree 30310), 784 (degree 28184),
+The undirected graph flickr has 2406556 nodes with 2 different node types:
+1 (nodes number 2302925) and 2 (nodes number 103631) and 31383583 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and has 30769 connected components, where the
+component with most nodes has 2277001 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 2, the mean node
+degree is 26.08 and the node degree mode is 1. The top 5 most central nodes
+are 2302966 (degree 34989), 2302938 (degree 30310), 784 (degree 28184),
 2302973 (degree 27543) and 2302948 (degree 22097).
 
 
@@ -104,13 +105,14 @@ def Flickr(
 	
 	Datetime: 2021-02-04 00:21:50.704652
 	
-	The undirected graph flickr has 2406556 nodes with 2 different node types: 1 (nodes
-	number 2302925) and 2 (nodes number 103631) and 31383583 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and has 30769 connected components, where the component with most nodes has 2277001
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 26.08 and the node degree mode is 1. The top 5 most
-	central nodes are 2302966 (degree 34989), 2302938 (degree 30310), 784 (degree 28184),
+	The undirected graph flickr has 2406556 nodes with 2 different node types:
+	1 (nodes number 2302925) and 2 (nodes number 103631) and 31383583 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and has 30769 connected components, where the
+	component with most nodes has 2277001 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 2, the mean node
+	degree is 26.08 and the node degree mode is 1. The top 5 most central nodes
+	are 2302966 (degree 34989), 2302938 (degree 30310), 784 (degree 28184),
 	2302973 (degree 27543) and 2302948 (degree 22097).
 	
 

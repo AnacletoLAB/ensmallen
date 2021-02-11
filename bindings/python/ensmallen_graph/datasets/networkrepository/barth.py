@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:56.151630
 
-The undirected graph barth has 6691 nodes and 26439 unweighted edges, of which 6691
-are self-loops. The graph is sparse as it has a density of 0.00103 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.90, and the node degree mode is 7. The top 5 most central nodes are 2196 (degree
-13), 2755 (degree 13), 1480 (degree 13), 3690 (degree 13) and 2263 (degree 12).
+The undirected graph barth has 6691 nodes and 26439 unweighted edges, of
+which 6691 are self-loops. The graph is sparse as it has a density of 0.00103
+and is connected, as it has a single component. The graph median node degree
+is 7, the mean node degree is 6.90, and the node degree mode is 7. The
+top 5 most central nodes are 2196 (degree 13), 2755 (degree 13), 1480 (degree
+13), 3690 (degree 13) and 2263 (degree 12).
 
 
 References
@@ -101,11 +102,12 @@ def Barth(
 	
 	Datetime: 2021-02-06 10:15:56.151630
 	
-	The undirected graph barth has 6691 nodes and 26439 unweighted edges, of which 6691
-	are self-loops. The graph is sparse as it has a density of 0.00103 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.90, and the node degree mode is 7. The top 5 most central nodes are 2196 (degree
-	13), 2755 (degree 13), 1480 (degree 13), 3690 (degree 13) and 2263 (degree 12).
+	The undirected graph barth has 6691 nodes and 26439 unweighted edges, of
+	which 6691 are self-loops. The graph is sparse as it has a density of 0.00103
+	and is connected, as it has a single component. The graph median node degree
+	is 7, the mean node degree is 6.90, and the node degree mode is 7. The
+	top 5 most central nodes are 2196 (degree 13), 2755 (degree 13), 1480 (degree
+	13), 3690 (degree 13) and 2263 (degree 12).
 	
 
 

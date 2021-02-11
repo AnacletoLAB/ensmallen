@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:39:28.310920
 
-The undirected graph Linum usitatissimum has 34778 nodes and 13769450 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02277 and
-has 5 connected components, where the component with most nodes has 34769 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 410,
-the mean node degree is 791.85, and the node degree mode is 9. The top 5 most central
-nodes are 4006.Lus10012976 (degree 11755), 4006.Lus10034955 (degree 11755), 4006.Lus10040434
-(degree 10264), 4006.Lus10000833 (degree 9699) and 4006.Lus10002098 (degree 9581).
+The undirected graph Linum usitatissimum has 34778 nodes and 13769450 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02277 and has 5 connected components, where the component with most
+nodes has 34769 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 410, the mean node degree is 791.85, and
+the node degree mode is 9. The top 5 most central nodes are 4006.Lus10012976
+(degree 11755), 4006.Lus10034955 (degree 11755), 4006.Lus10040434 (degree
+10264), 4006.Lus10000833 (degree 9699) and 4006.Lus10002098 (degree 9581).
 
 
 References
@@ -106,13 +107,14 @@ def LinumUsitatissimum(
 	
 	Datetime: 2021-02-02 16:39:28.310920
 	
-	The undirected graph Linum usitatissimum has 34778 nodes and 13769450 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02277 and
-	has 5 connected components, where the component with most nodes has 34769 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 410,
-	the mean node degree is 791.85, and the node degree mode is 9. The top 5 most central
-	nodes are 4006.Lus10012976 (degree 11755), 4006.Lus10034955 (degree 11755), 4006.Lus10040434
-	(degree 10264), 4006.Lus10000833 (degree 9699) and 4006.Lus10002098 (degree 9581).
+	The undirected graph Linum usitatissimum has 34778 nodes and 13769450 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02277 and has 5 connected components, where the component with most
+	nodes has 34769 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 410, the mean node degree is 791.85, and
+	the node degree mode is 9. The top 5 most central nodes are 4006.Lus10012976
+	(degree 11755), 4006.Lus10034955 (degree 11755), 4006.Lus10040434 (degree
+	10264), 4006.Lus10000833 (degree 9699) and 4006.Lus10002098 (degree 9581).
 	
 
 

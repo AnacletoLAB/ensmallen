@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:51.718271
 
-The undirected graph MANN-a27 has 378 nodes and 70551 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.99015
-and is connected, as it has a single component. The graph median node degree is 374,
-the mean node degree is 373.29 and the node degree mode is 374. The top 5 most central
-nodes are 378 (degree 374), 377 (degree 374), 376 (degree 374), 375 (degree 374)
-and 374 (degree 374).
+The undirected graph MANN-a27 has 378 nodes and 70551 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.99015 and is connected, as it has a single component. The
+graph median node degree is 374, the mean node degree is 373.29 and the
+node degree mode is 374. The top 5 most central nodes are 378 (degree 374),
+377 (degree 374), 376 (degree 374), 375 (degree 374) and 374 (degree 374).
 
 
 References
@@ -115,12 +115,12 @@ def MannA27(
 	
 	Datetime: 2021-02-03 22:52:51.718271
 	
-	The undirected graph MANN-a27 has 378 nodes and 70551 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.99015
-	and is connected, as it has a single component. The graph median node degree is 374,
-	the mean node degree is 373.29 and the node degree mode is 374. The top 5 most central
-	nodes are 378 (degree 374), 377 (degree 374), 376 (degree 374), 375 (degree 374)
-	and 374 (degree 374).
+	The undirected graph MANN-a27 has 378 nodes and 70551 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.99015 and is connected, as it has a single component. The
+	graph median node degree is 374, the mean node degree is 373.29 and the
+	node degree mode is 374. The top 5 most central nodes are 378 (degree 374),
+	377 (degree 374), 376 (degree 374), 375 (degree 374) and 374 (degree 374).
 	
 
 

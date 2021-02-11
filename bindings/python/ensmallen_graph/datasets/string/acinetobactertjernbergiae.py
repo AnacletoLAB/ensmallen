@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:44.649948
 
-The undirected graph Acinetobacter tjernbergiae has 3354 nodes and 268928 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04783
-and has 23 connected components, where the component with most nodes has 3291 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 160.36, and the node degree mode is 3. The top 5
-most central nodes are 202955.BBND01000005_gene381 (degree 1147), 202955.BBND01000009_gene1946
-(degree 1034), 202955.BBND01000020_gene2565 (degree 959), 202955.BBND01000006_gene2816
-(degree 929) and 202955.BBND01000005_gene341 (degree 924).
+The undirected graph Acinetobacter tjernbergiae has 3354 nodes and 268928
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04783 and has 23 connected components, where the component
+with most nodes has 3291 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 160.36,
+and the node degree mode is 3. The top 5 most central nodes are 202955.BBND01000005_gene381
+(degree 1147), 202955.BBND01000009_gene1946 (degree 1034), 202955.BBND01000020_gene2565
+(degree 959), 202955.BBND01000006_gene2816 (degree 929) and 202955.BBND01000005_gene341
+(degree 924).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterTjernbergiae(
 	
 	Datetime: 2021-02-02 19:59:44.649948
 	
-	The undirected graph Acinetobacter tjernbergiae has 3354 nodes and 268928 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04783
-	and has 23 connected components, where the component with most nodes has 3291 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 160.36, and the node degree mode is 3. The top 5
-	most central nodes are 202955.BBND01000005_gene381 (degree 1147), 202955.BBND01000009_gene1946
-	(degree 1034), 202955.BBND01000020_gene2565 (degree 959), 202955.BBND01000006_gene2816
-	(degree 929) and 202955.BBND01000005_gene341 (degree 924).
+	The undirected graph Acinetobacter tjernbergiae has 3354 nodes and 268928
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04783 and has 23 connected components, where the component
+	with most nodes has 3291 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 160.36,
+	and the node degree mode is 3. The top 5 most central nodes are 202955.BBND01000005_gene381
+	(degree 1147), 202955.BBND01000009_gene1946 (degree 1034), 202955.BBND01000020_gene2565
+	(degree 959), 202955.BBND01000006_gene2816 (degree 929) and 202955.BBND01000005_gene341
+	(degree 924).
 	
 
 

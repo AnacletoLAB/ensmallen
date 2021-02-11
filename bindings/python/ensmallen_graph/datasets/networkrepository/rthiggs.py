@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:43:03.672272
 
-The undirected graph rt-higgs has 425008 nodes and 732827 weighted edges, of which
-37 are self-loops. The graph is extremely sparse as it has a density of 0.00001 and
-has 383 connected components, where the component with most nodes has 424075 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 1, the mean node degree is 3.45, and the node degree mode is 1. The top 5 most
-central nodes are 28423 (degree 31557), 288253 (degree 13064), 45848 (degree 11078),
-56151 (degree 10638) and 4807 (degree 5915).
+The undirected graph rt-higgs has 425008 nodes and 732827 weighted edges,
+of which 37 are self-loops. The graph is extremely sparse as it has a density
+of 0.00001 and has 383 connected components, where the component with most
+nodes has 424075 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 1, the mean node degree is 3.45, and the
+node degree mode is 1. The top 5 most central nodes are 28423 (degree 31557),
+288253 (degree 13064), 45848 (degree 11078), 56151 (degree 10638) and 4807
+(degree 5915).
 
 
 References
@@ -112,13 +113,14 @@ def RtHiggs(
 	
 	Datetime: 2021-02-06 11:43:03.672272
 	
-	The undirected graph rt-higgs has 425008 nodes and 732827 weighted edges, of which
-	37 are self-loops. The graph is extremely sparse as it has a density of 0.00001 and
-	has 383 connected components, where the component with most nodes has 424075 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1, the mean node degree is 3.45, and the node degree mode is 1. The top 5 most
-	central nodes are 28423 (degree 31557), 288253 (degree 13064), 45848 (degree 11078),
-	56151 (degree 10638) and 4807 (degree 5915).
+	The undirected graph rt-higgs has 425008 nodes and 732827 weighted edges,
+	of which 37 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00001 and has 383 connected components, where the component with most
+	nodes has 424075 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 1, the mean node degree is 3.45, and the
+	node degree mode is 1. The top 5 most central nodes are 28423 (degree 31557),
+	288253 (degree 13064), 45848 (degree 11078), 56151 (degree 10638) and 4807
+	(degree 5915).
 	
 
 

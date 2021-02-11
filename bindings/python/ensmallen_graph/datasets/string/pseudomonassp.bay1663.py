@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:18:30.371624
 
-The undirected graph Pseudomonas sp. BAY1663 has 4987 nodes and 873775 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07028 and
-has 11 connected components, where the component with most nodes has 4963 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 294,
-the mean node degree is 350.42, and the node degree mode is 2. The top 5 most central
-nodes are 1439940.BAY1663_03047 (degree 2473), 1439940.BAY1663_04126 (degree 2069),
-1439940.BAY1663_03437 (degree 2007), 1439940.BAY1663_03149 (degree 1916) and 1439940.BAY1663_02381
+The undirected graph Pseudomonas sp. BAY1663 has 4987 nodes and 873775
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07028 and has 11 connected components, where the component
+with most nodes has 4963 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 294, the mean node degree is 350.42,
+and the node degree mode is 2. The top 5 most central nodes are 1439940.BAY1663_03047
+(degree 2473), 1439940.BAY1663_04126 (degree 2069), 1439940.BAY1663_03437
+(degree 2007), 1439940.BAY1663_03149 (degree 1916) and 1439940.BAY1663_02381
 (degree 1830).
 
 
@@ -107,13 +108,14 @@ def PseudomonasSp.Bay1663(
 	
 	Datetime: 2021-02-05 17:18:30.371624
 	
-	The undirected graph Pseudomonas sp. BAY1663 has 4987 nodes and 873775 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07028 and
-	has 11 connected components, where the component with most nodes has 4963 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 294,
-	the mean node degree is 350.42, and the node degree mode is 2. The top 5 most central
-	nodes are 1439940.BAY1663_03047 (degree 2473), 1439940.BAY1663_04126 (degree 2069),
-	1439940.BAY1663_03437 (degree 2007), 1439940.BAY1663_03149 (degree 1916) and 1439940.BAY1663_02381
+	The undirected graph Pseudomonas sp. BAY1663 has 4987 nodes and 873775
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07028 and has 11 connected components, where the component
+	with most nodes has 4963 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 294, the mean node degree is 350.42,
+	and the node degree mode is 2. The top 5 most central nodes are 1439940.BAY1663_03047
+	(degree 2473), 1439940.BAY1663_04126 (degree 2069), 1439940.BAY1663_03437
+	(degree 2007), 1439940.BAY1663_03149 (degree 1916) and 1439940.BAY1663_02381
 	(degree 1830).
 	
 

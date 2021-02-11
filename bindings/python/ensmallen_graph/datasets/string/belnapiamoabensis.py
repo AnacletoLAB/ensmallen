@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:21.224503
 
-The undirected graph Belnapia moabensis has 5947 nodes and 604889 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03421 and
-has 47 connected components, where the component with most nodes has 5842 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 203.43, and the node degree mode is 1. The top 5 most central
-nodes are 1121106.JQKB01000009_gene163 (degree 1942), 1121106.JQKB01000001_gene3125
-(degree 1716), 1121106.JQKB01000120_gene3961 (degree 1654), 1121106.JQKB01000001_gene3185
-(degree 1652) and 1121106.JQKB01000009_gene117 (degree 1450).
+The undirected graph Belnapia moabensis has 5947 nodes and 604889 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03421 and has 47 connected components, where the component with most
+nodes has 5842 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 203.43, and
+the node degree mode is 1. The top 5 most central nodes are 1121106.JQKB01000009_gene163
+(degree 1942), 1121106.JQKB01000001_gene3125 (degree 1716), 1121106.JQKB01000120_gene3961
+(degree 1654), 1121106.JQKB01000001_gene3185 (degree 1652) and 1121106.JQKB01000009_gene117
+(degree 1450).
 
 
 References
@@ -107,14 +108,15 @@ def BelnapiaMoabensis(
 	
 	Datetime: 2021-02-02 22:33:21.224503
 	
-	The undirected graph Belnapia moabensis has 5947 nodes and 604889 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03421 and
-	has 47 connected components, where the component with most nodes has 5842 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 203.43, and the node degree mode is 1. The top 5 most central
-	nodes are 1121106.JQKB01000009_gene163 (degree 1942), 1121106.JQKB01000001_gene3125
-	(degree 1716), 1121106.JQKB01000120_gene3961 (degree 1654), 1121106.JQKB01000001_gene3185
-	(degree 1652) and 1121106.JQKB01000009_gene117 (degree 1450).
+	The undirected graph Belnapia moabensis has 5947 nodes and 604889 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03421 and has 47 connected components, where the component with most
+	nodes has 5842 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 203.43, and
+	the node degree mode is 1. The top 5 most central nodes are 1121106.JQKB01000009_gene163
+	(degree 1942), 1121106.JQKB01000001_gene3125 (degree 1716), 1121106.JQKB01000120_gene3961
+	(degree 1654), 1121106.JQKB01000001_gene3185 (degree 1652) and 1121106.JQKB01000009_gene117
+	(degree 1450).
 	
 
 

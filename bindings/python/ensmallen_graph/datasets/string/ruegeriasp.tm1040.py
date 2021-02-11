@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:39.266810
 
-The undirected graph Ruegeria sp. TM1040 has 3125 nodes and 303648 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06221 and
-has 2 connected components, where the component with most nodes has 3123 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 194.33, and the node degree mode is 3. The top 5 most central
-nodes are 292414.TM1040_2764 (degree 1299), 292414.TM1040_2402 (degree 1176), 292414.TM1040_2678
-(degree 1012), 292414.TM1040_1224 (degree 900) and 292414.TM1040_2309 (degree 882).
+The undirected graph Ruegeria sp. TM1040 has 3125 nodes and 303648 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06221 and has 2 connected components, where the component with most
+nodes has 3123 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 194.33, and
+the node degree mode is 3. The top 5 most central nodes are 292414.TM1040_2764
+(degree 1299), 292414.TM1040_2402 (degree 1176), 292414.TM1040_2678 (degree
+1012), 292414.TM1040_1224 (degree 900) and 292414.TM1040_2309 (degree 882).
 
 
 References
@@ -106,13 +107,14 @@ def RuegeriaSp.Tm1040(
 	
 	Datetime: 2021-02-02 20:20:39.266810
 	
-	The undirected graph Ruegeria sp. TM1040 has 3125 nodes and 303648 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06221 and
-	has 2 connected components, where the component with most nodes has 3123 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 194.33, and the node degree mode is 3. The top 5 most central
-	nodes are 292414.TM1040_2764 (degree 1299), 292414.TM1040_2402 (degree 1176), 292414.TM1040_2678
-	(degree 1012), 292414.TM1040_1224 (degree 900) and 292414.TM1040_2309 (degree 882).
+	The undirected graph Ruegeria sp. TM1040 has 3125 nodes and 303648 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06221 and has 2 connected components, where the component with most
+	nodes has 3123 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 194.33, and
+	the node degree mode is 3. The top 5 most central nodes are 292414.TM1040_2764
+	(degree 1299), 292414.TM1040_2402 (degree 1176), 292414.TM1040_2678 (degree
+	1012), 292414.TM1040_1224 (degree 900) and 292414.TM1040_2309 (degree 882).
 	
 
 

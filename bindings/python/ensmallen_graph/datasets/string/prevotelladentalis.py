@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:03.313279
 
-The undirected graph Prevotella dentalis has 2508 nodes and 155602 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04950 and
-has 15 connected components, where the component with most nodes has 2473 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 124.08, and the node degree mode is 1. The top 5 most central
-nodes are 908937.Prede_1454 (degree 889), 908937.Prede_0043 (degree 800), 908937.Prede_0051
-(degree 722), 908937.Prede_1076 (degree 716) and 908937.Prede_0606 (degree 713).
+The undirected graph Prevotella dentalis has 2508 nodes and 155602 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04950 and has 15 connected components, where the component with most
+nodes has 2473 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 124.08, and
+the node degree mode is 1. The top 5 most central nodes are 908937.Prede_1454
+(degree 889), 908937.Prede_0043 (degree 800), 908937.Prede_0051 (degree
+722), 908937.Prede_1076 (degree 716) and 908937.Prede_0606 (degree 713).
 
 
 References
@@ -106,13 +107,14 @@ def PrevotellaDentalis(
 	
 	Datetime: 2021-02-02 21:55:03.313279
 	
-	The undirected graph Prevotella dentalis has 2508 nodes and 155602 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04950 and
-	has 15 connected components, where the component with most nodes has 2473 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 124.08, and the node degree mode is 1. The top 5 most central
-	nodes are 908937.Prede_1454 (degree 889), 908937.Prede_0043 (degree 800), 908937.Prede_0051
-	(degree 722), 908937.Prede_1076 (degree 716) and 908937.Prede_0606 (degree 713).
+	The undirected graph Prevotella dentalis has 2508 nodes and 155602 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04950 and has 15 connected components, where the component with most
+	nodes has 2473 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 124.08, and
+	the node degree mode is 1. The top 5 most central nodes are 908937.Prede_1454
+	(degree 889), 908937.Prede_0043 (degree 800), 908937.Prede_0051 (degree
+	722), 908937.Prede_1076 (degree 716) and 908937.Prede_0606 (degree 713).
 	
 
 

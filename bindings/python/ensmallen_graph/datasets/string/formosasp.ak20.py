@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:21.408085
 
-The undirected graph Formosa sp. AK20 has 2808 nodes and 270312 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06859 and
-has 10 connected components, where the component with most nodes has 2789 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 192.53, and the node degree mode is 2. The top 5 most central
-nodes are 1137281.D778_02124 (degree 1047), 1137281.D778_00742 (degree 1044), 1137281.D778_00766
-(degree 1011), 1137281.D778_02536 (degree 861) and 1137281.D778_00433 (degree 787).
+The undirected graph Formosa sp. AK20 has 2808 nodes and 270312 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06859 and has 10 connected components, where the component with most
+nodes has 2789 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 192.53, and
+the node degree mode is 2. The top 5 most central nodes are 1137281.D778_02124
+(degree 1047), 1137281.D778_00742 (degree 1044), 1137281.D778_00766 (degree
+1011), 1137281.D778_02536 (degree 861) and 1137281.D778_00433 (degree 787).
 
 
 References
@@ -106,13 +107,14 @@ def FormosaSp.Ak20(
 	
 	Datetime: 2021-02-02 22:57:21.408085
 	
-	The undirected graph Formosa sp. AK20 has 2808 nodes and 270312 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06859 and
-	has 10 connected components, where the component with most nodes has 2789 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 192.53, and the node degree mode is 2. The top 5 most central
-	nodes are 1137281.D778_02124 (degree 1047), 1137281.D778_00742 (degree 1044), 1137281.D778_00766
-	(degree 1011), 1137281.D778_02536 (degree 861) and 1137281.D778_00433 (degree 787).
+	The undirected graph Formosa sp. AK20 has 2808 nodes and 270312 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06859 and has 10 connected components, where the component with most
+	nodes has 2789 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 192.53, and
+	the node degree mode is 2. The top 5 most central nodes are 1137281.D778_02124
+	(degree 1047), 1137281.D778_00742 (degree 1044), 1137281.D778_00766 (degree
+	1011), 1137281.D778_02536 (degree 861) and 1137281.D778_00433 (degree 787).
 	
 
 

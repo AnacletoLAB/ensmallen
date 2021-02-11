@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:48.222566
 
-The undirected graph Xylanimonas cellulosilytica has 3421 nodes and 330548 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05650
-and has 8 connected components, where the component with most nodes has 3407 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 193.25, and the node degree mode is 4. The top 5
-most central nodes are 446471.Xcel_1509 (degree 1134), 446471.Xcel_1899 (degree 987),
-446471.Xcel_0201 (degree 963), 446471.Xcel_0687 (degree 944) and 446471.Xcel_1503
-(degree 930).
+The undirected graph Xylanimonas cellulosilytica has 3421 nodes and 330548
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05650 and has 8 connected components, where the component
+with most nodes has 3407 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 193.25,
+and the node degree mode is 4. The top 5 most central nodes are 446471.Xcel_1509
+(degree 1134), 446471.Xcel_1899 (degree 987), 446471.Xcel_0201 (degree
+963), 446471.Xcel_0687 (degree 944) and 446471.Xcel_1503 (degree 930).
 
 
 References
@@ -107,14 +107,14 @@ def XylanimonasCellulosilytica(
 	
 	Datetime: 2021-02-02 20:51:48.222566
 	
-	The undirected graph Xylanimonas cellulosilytica has 3421 nodes and 330548 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05650
-	and has 8 connected components, where the component with most nodes has 3407 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 193.25, and the node degree mode is 4. The top 5
-	most central nodes are 446471.Xcel_1509 (degree 1134), 446471.Xcel_1899 (degree 987),
-	446471.Xcel_0201 (degree 963), 446471.Xcel_0687 (degree 944) and 446471.Xcel_1503
-	(degree 930).
+	The undirected graph Xylanimonas cellulosilytica has 3421 nodes and 330548
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05650 and has 8 connected components, where the component
+	with most nodes has 3407 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 193.25,
+	and the node degree mode is 4. The top 5 most central nodes are 446471.Xcel_1509
+	(degree 1134), 446471.Xcel_1899 (degree 987), 446471.Xcel_0201 (degree
+	963), 446471.Xcel_0687 (degree 944) and 446471.Xcel_1503 (degree 930).
 	
 
 

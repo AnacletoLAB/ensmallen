@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:39.443245
 
-The undirected graph Dethiobacter alkaliphilus has 3142 nodes and 270364 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05479
-and has 7 connected components, where the component with most nodes has 3127 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 172.10, and the node degree mode is 2. The top 5
-most central nodes are 555088.DealDRAFT_0702 (degree 1302), 555088.DealDRAFT_2557
-(degree 1120), 555088.DealDRAFT_3131 (degree 1075), 555088.DealDRAFT_0082 (degree
-1056) and 555088.DealDRAFT_1584 (degree 1048).
+The undirected graph Dethiobacter alkaliphilus has 3142 nodes and 270364
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05479 and has 7 connected components, where the component
+with most nodes has 3127 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 172.10,
+and the node degree mode is 2. The top 5 most central nodes are 555088.DealDRAFT_0702
+(degree 1302), 555088.DealDRAFT_2557 (degree 1120), 555088.DealDRAFT_3131
+(degree 1075), 555088.DealDRAFT_0082 (degree 1056) and 555088.DealDRAFT_1584
+(degree 1048).
 
 
 References
@@ -107,14 +108,15 @@ def DethiobacterAlkaliphilus(
 	
 	Datetime: 2021-02-02 21:10:39.443245
 	
-	The undirected graph Dethiobacter alkaliphilus has 3142 nodes and 270364 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05479
-	and has 7 connected components, where the component with most nodes has 3127 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 172.10, and the node degree mode is 2. The top 5
-	most central nodes are 555088.DealDRAFT_0702 (degree 1302), 555088.DealDRAFT_2557
-	(degree 1120), 555088.DealDRAFT_3131 (degree 1075), 555088.DealDRAFT_0082 (degree
-	1056) and 555088.DealDRAFT_1584 (degree 1048).
+	The undirected graph Dethiobacter alkaliphilus has 3142 nodes and 270364
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05479 and has 7 connected components, where the component
+	with most nodes has 3127 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 172.10,
+	and the node degree mode is 2. The top 5 most central nodes are 555088.DealDRAFT_0702
+	(degree 1302), 555088.DealDRAFT_2557 (degree 1120), 555088.DealDRAFT_3131
+	(degree 1075), 555088.DealDRAFT_0082 (degree 1056) and 555088.DealDRAFT_1584
+	(degree 1048).
 	
 
 

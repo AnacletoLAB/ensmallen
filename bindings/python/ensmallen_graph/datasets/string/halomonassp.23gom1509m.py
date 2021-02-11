@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:24.499144
 
-The undirected graph Halomonas sp. 23GOM1509m has 4706 nodes and 632938 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05717
-and has 11 connected components, where the component with most nodes has 4672 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 268.99, and the node degree mode is 3. The top 5
-most central nodes are 1380358.JADJ01000017_gene1428 (degree 2068), 1380358.JADJ01000031_gene4161
-(degree 1866), 1380358.JADJ01000025_gene606 (degree 1642), 1380358.JADJ01000007_gene2906
-(degree 1571) and 1380358.JADJ01000001_gene1231 (degree 1392).
+The undirected graph Halomonas sp. 23GOM1509m has 4706 nodes and 632938
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05717 and has 11 connected components, where the component
+with most nodes has 4672 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 210, the mean node degree is 268.99,
+and the node degree mode is 3. The top 5 most central nodes are 1380358.JADJ01000017_gene1428
+(degree 2068), 1380358.JADJ01000031_gene4161 (degree 1866), 1380358.JADJ01000025_gene606
+(degree 1642), 1380358.JADJ01000007_gene2906 (degree 1571) and 1380358.JADJ01000001_gene1231
+(degree 1392).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasSp.23gom1509m(
 	
 	Datetime: 2021-02-03 22:13:24.499144
 	
-	The undirected graph Halomonas sp. 23GOM1509m has 4706 nodes and 632938 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05717
-	and has 11 connected components, where the component with most nodes has 4672 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 268.99, and the node degree mode is 3. The top 5
-	most central nodes are 1380358.JADJ01000017_gene1428 (degree 2068), 1380358.JADJ01000031_gene4161
-	(degree 1866), 1380358.JADJ01000025_gene606 (degree 1642), 1380358.JADJ01000007_gene2906
-	(degree 1571) and 1380358.JADJ01000001_gene1231 (degree 1392).
+	The undirected graph Halomonas sp. 23GOM1509m has 4706 nodes and 632938
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05717 and has 11 connected components, where the component
+	with most nodes has 4672 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 210, the mean node degree is 268.99,
+	and the node degree mode is 3. The top 5 most central nodes are 1380358.JADJ01000017_gene1428
+	(degree 2068), 1380358.JADJ01000031_gene4161 (degree 1866), 1380358.JADJ01000025_gene606
+	(degree 1642), 1380358.JADJ01000007_gene2906 (degree 1571) and 1380358.JADJ01000001_gene1231
+	(degree 1392).
 	
 
 

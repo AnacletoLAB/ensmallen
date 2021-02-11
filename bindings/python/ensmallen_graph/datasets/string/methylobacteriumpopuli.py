@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:57.582928
 
-The undirected graph Methylobacterium populi has 5265 nodes and 444758 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03210 and
-has 28 connected components, where the component with most nodes has 5179 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 168.95, and the node degree mode is 3. The top 5 most central
-nodes are 441620.Mpop_2399 (degree 1957), 441620.Mpop_5018 (degree 1621), 441620.Mpop_3462
-(degree 1373), 441620.Mpop_4452 (degree 1371) and 441620.Mpop_3274 (degree 1344).
+The undirected graph Methylobacterium populi has 5265 nodes and 444758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03210 and has 28 connected components, where the component
+with most nodes has 5179 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 168.95,
+and the node degree mode is 3. The top 5 most central nodes are 441620.Mpop_2399
+(degree 1957), 441620.Mpop_5018 (degree 1621), 441620.Mpop_3462 (degree
+1373), 441620.Mpop_4452 (degree 1371) and 441620.Mpop_3274 (degree 1344).
 
 
 References
@@ -106,13 +107,14 @@ def MethylobacteriumPopuli(
 	
 	Datetime: 2021-02-02 20:49:57.582928
 	
-	The undirected graph Methylobacterium populi has 5265 nodes and 444758 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03210 and
-	has 28 connected components, where the component with most nodes has 5179 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 168.95, and the node degree mode is 3. The top 5 most central
-	nodes are 441620.Mpop_2399 (degree 1957), 441620.Mpop_5018 (degree 1621), 441620.Mpop_3462
-	(degree 1373), 441620.Mpop_4452 (degree 1371) and 441620.Mpop_3274 (degree 1344).
+	The undirected graph Methylobacterium populi has 5265 nodes and 444758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03210 and has 28 connected components, where the component
+	with most nodes has 5179 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 168.95,
+	and the node degree mode is 3. The top 5 most central nodes are 441620.Mpop_2399
+	(degree 1957), 441620.Mpop_5018 (degree 1621), 441620.Mpop_3462 (degree
+	1373), 441620.Mpop_4452 (degree 1371) and 441620.Mpop_3274 (degree 1344).
 	
 
 

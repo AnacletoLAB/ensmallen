@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:27:52.280155
 
-The undirected graph Phytophthora sojae has 10454 nodes and 1217627 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02229 and
-has 80 connected components, where the component with most nodes has 10277 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 232.95, and the node degree mode is 1. The top 5
-most central nodes are 67593.Physo140526 (degree 3331), 67593.Physo109100 (degree
-2899), 67593.Physo157877 (degree 2898), 67593.Physo143782 (degree 2794) and 67593.Physo128466
-(degree 2642).
+The undirected graph Phytophthora sojae has 10454 nodes and 1217627 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02229 and has 80 connected components, where the component with most
+nodes has 10277 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 232.95, and
+the node degree mode is 1. The top 5 most central nodes are 67593.Physo140526
+(degree 3331), 67593.Physo109100 (degree 2899), 67593.Physo157877 (degree
+2898), 67593.Physo143782 (degree 2794) and 67593.Physo128466 (degree 2642).
 
 
 References
@@ -107,14 +107,14 @@ def PhytophthoraSojae(
 	
 	Datetime: 2021-02-02 18:27:52.280155
 	
-	The undirected graph Phytophthora sojae has 10454 nodes and 1217627 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02229 and
-	has 80 connected components, where the component with most nodes has 10277 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 232.95, and the node degree mode is 1. The top 5
-	most central nodes are 67593.Physo140526 (degree 3331), 67593.Physo109100 (degree
-	2899), 67593.Physo157877 (degree 2898), 67593.Physo143782 (degree 2794) and 67593.Physo128466
-	(degree 2642).
+	The undirected graph Phytophthora sojae has 10454 nodes and 1217627 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02229 and has 80 connected components, where the component with most
+	nodes has 10277 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 232.95, and
+	the node degree mode is 1. The top 5 most central nodes are 67593.Physo140526
+	(degree 3331), 67593.Physo109100 (degree 2899), 67593.Physo157877 (degree
+	2898), 67593.Physo143782 (degree 2794) and 67593.Physo128466 (degree 2642).
 	
 
 

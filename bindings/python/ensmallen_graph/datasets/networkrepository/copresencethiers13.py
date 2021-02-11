@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:46:39.039300
 
-The undirected multigraph copresence-Thiers13 has 328 nodes and 18613039 unweighted
-edges with 8938 different edge types:  the 5 most common are 215180, 215160, 214800,
-213220 and 214760, of which none are self-loops and 37139086 are parallel. The graph
-is extremely dense as it has a density of 0.81107 and is connected, as it has a single
-component. The graph median node degree is 118543, the mean node degree is 113494.14
-and the node degree mode is 72694. The top 5 most central nodes are 170 (degree 195938),
-275 (degree 195137), 447 (degree 188712), 285 (degree 183239) and 939 (degree 181945).
+The undirected multigraph copresence-Thiers13 has 328 nodes and 18613039
+unweighted edges with 8938 different edge types:  the 5 most common are
+215180, 215160, 214800, 213220 and 214760, of which none are self-loops
+and 37139086 are parallel. The graph is extremely dense as it has a density
+of 0.81107 and is connected, as it has a single component. The graph median
+node degree is 118543, the mean node degree is 113494.14 and the node degree
+mode is 72694. The top 5 most central nodes are 170 (degree 195938), 275
+(degree 195137), 447 (degree 188712), 285 (degree 183239) and 939 (degree
+181945).
 
 
 References
@@ -108,13 +110,15 @@ def CopresenceThiers13(
 	
 	Datetime: 2021-02-03 23:46:39.039300
 	
-	The undirected multigraph copresence-Thiers13 has 328 nodes and 18613039 unweighted
-	edges with 8938 different edge types:  the 5 most common are 215180, 215160, 214800,
-	213220 and 214760, of which none are self-loops and 37139086 are parallel. The graph
-	is extremely dense as it has a density of 0.81107 and is connected, as it has a single
-	component. The graph median node degree is 118543, the mean node degree is 113494.14
-	and the node degree mode is 72694. The top 5 most central nodes are 170 (degree 195938),
-	275 (degree 195137), 447 (degree 188712), 285 (degree 183239) and 939 (degree 181945).
+	The undirected multigraph copresence-Thiers13 has 328 nodes and 18613039
+	unweighted edges with 8938 different edge types:  the 5 most common are
+	215180, 215160, 214800, 213220 and 214760, of which none are self-loops
+	and 37139086 are parallel. The graph is extremely dense as it has a density
+	of 0.81107 and is connected, as it has a single component. The graph median
+	node degree is 118543, the mean node degree is 113494.14 and the node degree
+	mode is 72694. The top 5 most central nodes are 170 (degree 195938), 275
+	(degree 195137), 447 (degree 188712), 285 (degree 183239) and 939 (degree
+	181945).
 	
 
 

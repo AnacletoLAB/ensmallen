@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:40.845038
 
-The undirected graph Desulfurobacterium thermolithotrophum has 1503 nodes and 104496
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.09258 and is connected, as it has a single component. The graph median node
-degree is 122, the mean node degree is 139.05, and the node degree mode is 8. The
-top 5 most central nodes are 868864.Dester_0345 (degree 720), 868864.Dester_1518
-(degree 613), 868864.Dester_0631 (degree 606), 868864.Dester_0068 (degree 594) and
-868864.Dester_0117 (degree 580).
+The undirected graph Desulfurobacterium thermolithotrophum has 1503 nodes
+and 104496 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09258 and is connected, as it has a single component.
+The graph median node degree is 122, the mean node degree is 139.05, and
+the node degree mode is 8. The top 5 most central nodes are 868864.Dester_0345
+(degree 720), 868864.Dester_1518 (degree 613), 868864.Dester_0631 (degree
+606), 868864.Dester_0068 (degree 594) and 868864.Dester_0117 (degree 580).
 
 
 References
@@ -106,13 +106,13 @@ def DesulfurobacteriumThermolithotrophum(
 	
 	Datetime: 2021-02-02 21:48:40.845038
 	
-	The undirected graph Desulfurobacterium thermolithotrophum has 1503 nodes and 104496
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.09258 and is connected, as it has a single component. The graph median node
-	degree is 122, the mean node degree is 139.05, and the node degree mode is 8. The
-	top 5 most central nodes are 868864.Dester_0345 (degree 720), 868864.Dester_1518
-	(degree 613), 868864.Dester_0631 (degree 606), 868864.Dester_0068 (degree 594) and
-	868864.Dester_0117 (degree 580).
+	The undirected graph Desulfurobacterium thermolithotrophum has 1503 nodes
+	and 104496 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09258 and is connected, as it has a single component.
+	The graph median node degree is 122, the mean node degree is 139.05, and
+	the node degree mode is 8. The top 5 most central nodes are 868864.Dester_0345
+	(degree 720), 868864.Dester_1518 (degree 613), 868864.Dester_0631 (degree
+	606), 868864.Dester_0068 (degree 594) and 868864.Dester_0117 (degree 580).
 	
 
 

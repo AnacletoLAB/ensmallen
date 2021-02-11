@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:02.328670
 
-The undirected graph Sulfurihydrogenibium sp. YO3AOP1 has 1708 nodes and 93358 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06404
-and has 3 connected components, where the component with most nodes has 1704 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 109.32, and the node degree mode is 7. The top 5 most
-central nodes are 436114.SYO3AOP1_1481 (degree 679), 436114.SYO3AOP1_1628 (degree
-634), 436114.SYO3AOP1_1559 (degree 600), 436114.SYO3AOP1_0889 (degree 540) and 436114.SYO3AOP1_0805
-(degree 538).
+The undirected graph Sulfurihydrogenibium sp. YO3AOP1 has 1708 nodes and
+93358 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06404 and has 3 connected components, where the
+component with most nodes has 1704 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+is 109.32, and the node degree mode is 7. The top 5 most central nodes
+are 436114.SYO3AOP1_1481 (degree 679), 436114.SYO3AOP1_1628 (degree 634),
+436114.SYO3AOP1_1559 (degree 600), 436114.SYO3AOP1_0889 (degree 540) and
+436114.SYO3AOP1_0805 (degree 538).
 
 
 References
@@ -107,14 +108,15 @@ def SulfurihydrogenibiumSp.Yo3aop1(
 	
 	Datetime: 2021-02-02 20:49:02.328670
 	
-	The undirected graph Sulfurihydrogenibium sp. YO3AOP1 has 1708 nodes and 93358 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06404
-	and has 3 connected components, where the component with most nodes has 1704 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 109.32, and the node degree mode is 7. The top 5 most
-	central nodes are 436114.SYO3AOP1_1481 (degree 679), 436114.SYO3AOP1_1628 (degree
-	634), 436114.SYO3AOP1_1559 (degree 600), 436114.SYO3AOP1_0889 (degree 540) and 436114.SYO3AOP1_0805
-	(degree 538).
+	The undirected graph Sulfurihydrogenibium sp. YO3AOP1 has 1708 nodes and
+	93358 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06404 and has 3 connected components, where the
+	component with most nodes has 1704 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 86, the mean node degree
+	is 109.32, and the node degree mode is 7. The top 5 most central nodes
+	are 436114.SYO3AOP1_1481 (degree 679), 436114.SYO3AOP1_1628 (degree 634),
+	436114.SYO3AOP1_1559 (degree 600), 436114.SYO3AOP1_0889 (degree 540) and
+	436114.SYO3AOP1_0805 (degree 538).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:11.409694
 
-The undirected graph Kurthia sp. JC8E has 2974 nodes and 261992 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05926 and
-has 14 connected components, where the component with most nodes has 2944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 176.19, and the node degree mode is 3. The top 5 most central
-nodes are 1033740.CAEW01000017_gene300 (degree 1107), 1033740.CAEW01000009_gene2401
-(degree 949), 1033740.CAEW01000004_gene997 (degree 927), 1033740.CAEW01000007_gene171
-(degree 914) and 1033740.CAEW01000041_gene189 (degree 901).
+The undirected graph Kurthia sp. JC8E has 2974 nodes and 261992 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05926 and has 14 connected components, where the component with most
+nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 176.19, and
+the node degree mode is 3. The top 5 most central nodes are 1033740.CAEW01000017_gene300
+(degree 1107), 1033740.CAEW01000009_gene2401 (degree 949), 1033740.CAEW01000004_gene997
+(degree 927), 1033740.CAEW01000007_gene171 (degree 914) and 1033740.CAEW01000041_gene189
+(degree 901).
 
 
 References
@@ -107,14 +108,15 @@ def KurthiaSp.Jc8e(
 	
 	Datetime: 2021-02-02 22:11:11.409694
 	
-	The undirected graph Kurthia sp. JC8E has 2974 nodes and 261992 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05926 and
-	has 14 connected components, where the component with most nodes has 2944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 176.19, and the node degree mode is 3. The top 5 most central
-	nodes are 1033740.CAEW01000017_gene300 (degree 1107), 1033740.CAEW01000009_gene2401
-	(degree 949), 1033740.CAEW01000004_gene997 (degree 927), 1033740.CAEW01000007_gene171
-	(degree 914) and 1033740.CAEW01000041_gene189 (degree 901).
+	The undirected graph Kurthia sp. JC8E has 2974 nodes and 261992 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05926 and has 14 connected components, where the component with most
+	nodes has 2944 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 176.19, and
+	the node degree mode is 3. The top 5 most central nodes are 1033740.CAEW01000017_gene300
+	(degree 1107), 1033740.CAEW01000009_gene2401 (degree 949), 1033740.CAEW01000004_gene997
+	(degree 927), 1033740.CAEW01000007_gene171 (degree 914) and 1033740.CAEW01000041_gene189
+	(degree 901).
 	
 
 

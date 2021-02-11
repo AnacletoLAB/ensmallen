@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:23.267411
 
-The undirected graph Mesorhizobium ciceri biovar has 6192 nodes and 591792 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03088
-and has 40 connected components, where the component with most nodes has 6092 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 191.15, and the node degree mode is 1. The top 5
-most central nodes are 765698.Mesci_1702 (degree 2158), 765698.Mesci_2848 (degree
-1705), 765698.Mesci_1877 (degree 1675), 765698.Mesci_1728 (degree 1517) and 765698.Mesci_6429
-(degree 1449).
+The undirected graph Mesorhizobium ciceri biovar has 6192 nodes and 591792
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03088 and has 40 connected components, where the component
+with most nodes has 6092 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 191.15,
+and the node degree mode is 1. The top 5 most central nodes are 765698.Mesci_1702
+(degree 2158), 765698.Mesci_2848 (degree 1705), 765698.Mesci_1877 (degree
+1675), 765698.Mesci_1728 (degree 1517) and 765698.Mesci_6429 (degree 1449).
 
 
 References
@@ -107,14 +107,14 @@ def MesorhizobiumCiceriBiovar(
 	
 	Datetime: 2021-02-02 21:43:23.267411
 	
-	The undirected graph Mesorhizobium ciceri biovar has 6192 nodes and 591792 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03088
-	and has 40 connected components, where the component with most nodes has 6092 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 191.15, and the node degree mode is 1. The top 5
-	most central nodes are 765698.Mesci_1702 (degree 2158), 765698.Mesci_2848 (degree
-	1705), 765698.Mesci_1877 (degree 1675), 765698.Mesci_1728 (degree 1517) and 765698.Mesci_6429
-	(degree 1449).
+	The undirected graph Mesorhizobium ciceri biovar has 6192 nodes and 591792
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03088 and has 40 connected components, where the component
+	with most nodes has 6092 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 191.15,
+	and the node degree mode is 1. The top 5 most central nodes are 765698.Mesci_1702
+	(degree 2158), 765698.Mesci_2848 (degree 1705), 765698.Mesci_1877 (degree
+	1675), 765698.Mesci_1728 (degree 1517) and 765698.Mesci_6429 (degree 1449).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:44.847331
 
-The undirected graph Stackebrandtia nassauensis has 6348 nodes and 803361 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03988
-and has 24 connected components, where the component with most nodes has 6287 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 253.11, and the node degree mode is 2. The top 5
-most central nodes are 446470.Snas_1053 (degree 2081), 446470.Snas_3769 (degree 1763),
-446470.Snas_3591 (degree 1474), 446470.Snas_5310 (degree 1402) and 446470.Snas_5305
-(degree 1372).
+The undirected graph Stackebrandtia nassauensis has 6348 nodes and 803361
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03988 and has 24 connected components, where the component
+with most nodes has 6287 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 253.11,
+and the node degree mode is 2. The top 5 most central nodes are 446470.Snas_1053
+(degree 2081), 446470.Snas_3769 (degree 1763), 446470.Snas_3591 (degree
+1474), 446470.Snas_5310 (degree 1402) and 446470.Snas_5305 (degree 1372).
 
 
 References
@@ -107,14 +107,14 @@ def StackebrandtiaNassauensis(
 	
 	Datetime: 2021-02-02 20:51:44.847331
 	
-	The undirected graph Stackebrandtia nassauensis has 6348 nodes and 803361 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03988
-	and has 24 connected components, where the component with most nodes has 6287 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 253.11, and the node degree mode is 2. The top 5
-	most central nodes are 446470.Snas_1053 (degree 2081), 446470.Snas_3769 (degree 1763),
-	446470.Snas_3591 (degree 1474), 446470.Snas_5310 (degree 1402) and 446470.Snas_5305
-	(degree 1372).
+	The undirected graph Stackebrandtia nassauensis has 6348 nodes and 803361
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03988 and has 24 connected components, where the component
+	with most nodes has 6287 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 253.11,
+	and the node degree mode is 2. The top 5 most central nodes are 446470.Snas_1053
+	(degree 2081), 446470.Snas_3769 (degree 1763), 446470.Snas_3591 (degree
+	1474), 446470.Snas_5310 (degree 1402) and 446470.Snas_5305 (degree 1372).
 	
 
 

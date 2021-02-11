@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:17.189296
 
-The undirected graph Nitrococcus mobilis has 3409 nodes and 292075 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05028 and
-has 25 connected components, where the component with most nodes has 3352 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 171.36, and the node degree mode is 1. The top 5 most central
-nodes are 314278.NB231_10773 (degree 1141), 314278.NB231_09548 (degree 1048), 314278.NB231_08650
-(degree 1023), 314278.NB231_09418 (degree 939) and 314278.NB231_07712 (degree 931).
+The undirected graph Nitrococcus mobilis has 3409 nodes and 292075 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05028 and has 25 connected components, where the component with most
+nodes has 3352 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 171.36, and
+the node degree mode is 1. The top 5 most central nodes are 314278.NB231_10773
+(degree 1141), 314278.NB231_09548 (degree 1048), 314278.NB231_08650 (degree
+1023), 314278.NB231_09418 (degree 939) and 314278.NB231_07712 (degree 931).
 
 
 References
@@ -106,13 +107,14 @@ def NitrococcusMobilis(
 	
 	Datetime: 2021-02-02 20:25:17.189296
 	
-	The undirected graph Nitrococcus mobilis has 3409 nodes and 292075 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05028 and
-	has 25 connected components, where the component with most nodes has 3352 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 171.36, and the node degree mode is 1. The top 5 most central
-	nodes are 314278.NB231_10773 (degree 1141), 314278.NB231_09548 (degree 1048), 314278.NB231_08650
-	(degree 1023), 314278.NB231_09418 (degree 939) and 314278.NB231_07712 (degree 931).
+	The undirected graph Nitrococcus mobilis has 3409 nodes and 292075 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05028 and has 25 connected components, where the component with most
+	nodes has 3352 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 171.36, and
+	the node degree mode is 1. The top 5 most central nodes are 314278.NB231_10773
+	(degree 1141), 314278.NB231_09548 (degree 1048), 314278.NB231_08650 (degree
+	1023), 314278.NB231_09418 (degree 939) and 314278.NB231_07712 (degree 931).
 	
 
 

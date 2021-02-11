@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:26.955781
 
-The undirected graph Drosophila virilis has 12243 nodes and 1359797 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01815 and
-has 11 connected components, where the component with most nodes has 12222 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 222.13, and the node degree mode is 1. The top 5
-most central nodes are 7244.FBpp0237362 (degree 3210), 7244.FBpp0228572 (degree 2382),
-7244.FBpp0236334 (degree 2318), 7244.FBpp0228378 (degree 2061) and 7244.FBpp0237871
-(degree 1987).
+The undirected graph Drosophila virilis has 12243 nodes and 1359797 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01815 and has 11 connected components, where the component with most
+nodes has 12222 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 222.13, and
+the node degree mode is 1. The top 5 most central nodes are 7244.FBpp0237362
+(degree 3210), 7244.FBpp0228572 (degree 2382), 7244.FBpp0236334 (degree
+2318), 7244.FBpp0228378 (degree 2061) and 7244.FBpp0237871 (degree 1987).
 
 
 References
@@ -107,14 +107,14 @@ def DrosophilaVirilis(
 	
 	Datetime: 2021-02-02 17:22:26.955781
 	
-	The undirected graph Drosophila virilis has 12243 nodes and 1359797 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01815 and
-	has 11 connected components, where the component with most nodes has 12222 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 222.13, and the node degree mode is 1. The top 5
-	most central nodes are 7244.FBpp0237362 (degree 3210), 7244.FBpp0228572 (degree 2382),
-	7244.FBpp0236334 (degree 2318), 7244.FBpp0228378 (degree 2061) and 7244.FBpp0237871
-	(degree 1987).
+	The undirected graph Drosophila virilis has 12243 nodes and 1359797 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01815 and has 11 connected components, where the component with most
+	nodes has 12222 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 222.13, and
+	the node degree mode is 1. The top 5 most central nodes are 7244.FBpp0237362
+	(degree 3210), 7244.FBpp0228572 (degree 2382), 7244.FBpp0236334 (degree
+	2318), 7244.FBpp0228378 (degree 2061) and 7244.FBpp0237871 (degree 1987).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:06.520308
 
-The undirected graph socfb-UConn has 17206 nodes and 604867 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00409 and
-is connected, as it has a single component. The graph median node degree is 55, the
-mean node degree is 70.31, and the node degree mode is 1. The top 5 most central
-nodes are 853 (degree 1709), 14540 (degree 1021), 3313 (degree 822), 2292 (degree
-746) and 10755 (degree 722).
+The undirected graph socfb-UConn has 17206 nodes and 604867 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00409 and is connected, as it has a single component. The graph median
+node degree is 55, the mean node degree is 70.31, and the node degree mode
+is 1. The top 5 most central nodes are 853 (degree 1709), 14540 (degree
+1021), 3313 (degree 822), 2292 (degree 746) and 10755 (degree 722).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbUconn(
 	
 	Datetime: 2021-02-06 11:51:06.520308
 	
-	The undirected graph socfb-UConn has 17206 nodes and 604867 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00409 and
-	is connected, as it has a single component. The graph median node degree is 55, the
-	mean node degree is 70.31, and the node degree mode is 1. The top 5 most central
-	nodes are 853 (degree 1709), 14540 (degree 1021), 3313 (degree 822), 2292 (degree
-	746) and 10755 (degree 722).
+	The undirected graph socfb-UConn has 17206 nodes and 604867 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00409 and is connected, as it has a single component. The graph median
+	node degree is 55, the mean node degree is 70.31, and the node degree mode
+	is 1. The top 5 most central nodes are 853 (degree 1709), 14540 (degree
+	1021), 3313 (degree 822), 2292 (degree 746) and 10755 (degree 722).
 	
 
 

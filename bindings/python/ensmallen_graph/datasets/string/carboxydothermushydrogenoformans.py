@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:29.885415
 
-The undirected graph Carboxydothermus hydrogenoformans has 2578 nodes and 193891
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05837 and has 16 connected components, where the component with most nodes has
-2540 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 125, the mean node degree is 150.42, and the node degree mode is 6. The
-top 5 most central nodes are 246194.CHY_1650 (degree 1052), 246194.CHY_1949 (degree
-974), 246194.CHY_1068 (degree 922), 246194.CHY_1925 (degree 881) and 246194.CHY_0677
-(degree 811).
+The undirected graph Carboxydothermus hydrogenoformans has 2578 nodes and
+193891 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05837 and has 16 connected components, where the
+component with most nodes has 2540 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 150.42, and the node degree mode is 6. The top 5 most central nodes
+are 246194.CHY_1650 (degree 1052), 246194.CHY_1949 (degree 974), 246194.CHY_1068
+(degree 922), 246194.CHY_1925 (degree 881) and 246194.CHY_0677 (degree
+811).
 
 
 References
@@ -107,14 +108,15 @@ def CarboxydothermusHydrogenoformans(
 	
 	Datetime: 2021-02-02 20:10:29.885415
 	
-	The undirected graph Carboxydothermus hydrogenoformans has 2578 nodes and 193891
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05837 and has 16 connected components, where the component with most nodes has
-	2540 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 125, the mean node degree is 150.42, and the node degree mode is 6. The
-	top 5 most central nodes are 246194.CHY_1650 (degree 1052), 246194.CHY_1949 (degree
-	974), 246194.CHY_1068 (degree 922), 246194.CHY_1925 (degree 881) and 246194.CHY_0677
-	(degree 811).
+	The undirected graph Carboxydothermus hydrogenoformans has 2578 nodes and
+	193891 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05837 and has 16 connected components, where the
+	component with most nodes has 2540 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 150.42, and the node degree mode is 6. The top 5 most central nodes
+	are 246194.CHY_1650 (degree 1052), 246194.CHY_1949 (degree 974), 246194.CHY_1068
+	(degree 922), 246194.CHY_1925 (degree 881) and 246194.CHY_0677 (degree
+	811).
 	
 
 

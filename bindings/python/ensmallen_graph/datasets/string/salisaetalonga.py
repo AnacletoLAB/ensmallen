@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:11.224876
 
-The undirected graph Salisaeta longa has 2553 nodes and 237035 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07276 and
-has 15 connected components, where the component with most nodes has 2523 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 185.69, and the node degree mode is 1. The top 5 most central
-nodes are 1089550.ATTH01000001_gene2300 (degree 1083), 1089550.ATTH01000001_gene1136
-(degree 1025), 1089550.ATTH01000001_gene166 (degree 1006), 1089550.ATTH01000001_gene325
-(degree 971) and 1089550.ATTH01000001_gene2437 (degree 944).
+The undirected graph Salisaeta longa has 2553 nodes and 237035 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07276 and has 15 connected components, where the component with most
+nodes has 2523 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 185.69, and
+the node degree mode is 1. The top 5 most central nodes are 1089550.ATTH01000001_gene2300
+(degree 1083), 1089550.ATTH01000001_gene1136 (degree 1025), 1089550.ATTH01000001_gene166
+(degree 1006), 1089550.ATTH01000001_gene325 (degree 971) and 1089550.ATTH01000001_gene2437
+(degree 944).
 
 
 References
@@ -107,14 +108,15 @@ def SalisaetaLonga(
 	
 	Datetime: 2021-02-02 22:22:11.224876
 	
-	The undirected graph Salisaeta longa has 2553 nodes and 237035 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07276 and
-	has 15 connected components, where the component with most nodes has 2523 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 185.69, and the node degree mode is 1. The top 5 most central
-	nodes are 1089550.ATTH01000001_gene2300 (degree 1083), 1089550.ATTH01000001_gene1136
-	(degree 1025), 1089550.ATTH01000001_gene166 (degree 1006), 1089550.ATTH01000001_gene325
-	(degree 971) and 1089550.ATTH01000001_gene2437 (degree 944).
+	The undirected graph Salisaeta longa has 2553 nodes and 237035 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07276 and has 15 connected components, where the component with most
+	nodes has 2523 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 185.69, and
+	the node degree mode is 1. The top 5 most central nodes are 1089550.ATTH01000001_gene2300
+	(degree 1083), 1089550.ATTH01000001_gene1136 (degree 1025), 1089550.ATTH01000001_gene166
+	(degree 1006), 1089550.ATTH01000001_gene325 (degree 971) and 1089550.ATTH01000001_gene2437
+	(degree 944).
 	
 
 

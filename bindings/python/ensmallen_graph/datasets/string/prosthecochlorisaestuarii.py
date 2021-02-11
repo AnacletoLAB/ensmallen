@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:25.864753
 
-The undirected graph Prosthecochloris aestuarii has 2311 nodes and 184898 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-and has 6 connected components, where the component with most nodes has 2298 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 160.02, and the node degree mode is 3. The top 5
-most central nodes are 290512.Paes_0783 (degree 1262), 290512.Paes_0671 (degree 1133),
-290512.Paes_0494 (degree 1030), 290512.Paes_2193 (degree 842) and 290512.Paes_1367
-(degree 783).
+The undirected graph Prosthecochloris aestuarii has 2311 nodes and 184898
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06927 and has 6 connected components, where the component
+with most nodes has 2298 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 160.02,
+and the node degree mode is 3. The top 5 most central nodes are 290512.Paes_0783
+(degree 1262), 290512.Paes_0671 (degree 1133), 290512.Paes_0494 (degree
+1030), 290512.Paes_2193 (degree 842) and 290512.Paes_1367 (degree 783).
 
 
 References
@@ -107,14 +107,14 @@ def ProsthecochlorisAestuarii(
 	
 	Datetime: 2021-02-02 20:20:25.864753
 	
-	The undirected graph Prosthecochloris aestuarii has 2311 nodes and 184898 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-	and has 6 connected components, where the component with most nodes has 2298 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 160.02, and the node degree mode is 3. The top 5
-	most central nodes are 290512.Paes_0783 (degree 1262), 290512.Paes_0671 (degree 1133),
-	290512.Paes_0494 (degree 1030), 290512.Paes_2193 (degree 842) and 290512.Paes_1367
-	(degree 783).
+	The undirected graph Prosthecochloris aestuarii has 2311 nodes and 184898
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06927 and has 6 connected components, where the component
+	with most nodes has 2298 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 160.02,
+	and the node degree mode is 3. The top 5 most central nodes are 290512.Paes_0783
+	(degree 1262), 290512.Paes_0671 (degree 1133), 290512.Paes_0494 (degree
+	1030), 290512.Paes_2193 (degree 842) and 290512.Paes_1367 (degree 783).
 	
 
 

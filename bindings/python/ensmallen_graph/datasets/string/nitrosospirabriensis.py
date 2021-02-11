@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:31.798729
 
-The undirected graph Nitrosospira briensis has 2749 nodes and 258985 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06857 and
-has 17 connected components, where the component with most nodes has 2712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 188.42, and the node degree mode is 2. The top 5 most central
-nodes are 1266925.JHVX01000003_gene555 (degree 1191), 1266925.JHVX01000002_gene897
-(degree 1083), 1266925.JHVX01000001_gene2476 (degree 1033), 1266925.JHVX01000002_gene1024
-(degree 983) and 1266925.JHVX01000012_gene1679 (degree 975).
+The undirected graph Nitrosospira briensis has 2749 nodes and 258985 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06857 and has 17 connected components, where the component with most
+nodes has 2712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 188.42, and
+the node degree mode is 2. The top 5 most central nodes are 1266925.JHVX01000003_gene555
+(degree 1191), 1266925.JHVX01000002_gene897 (degree 1083), 1266925.JHVX01000001_gene2476
+(degree 1033), 1266925.JHVX01000002_gene1024 (degree 983) and 1266925.JHVX01000012_gene1679
+(degree 975).
 
 
 References
@@ -107,14 +108,15 @@ def NitrosospiraBriensis(
 	
 	Datetime: 2021-02-02 23:36:31.798729
 	
-	The undirected graph Nitrosospira briensis has 2749 nodes and 258985 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06857 and
-	has 17 connected components, where the component with most nodes has 2712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 188.42, and the node degree mode is 2. The top 5 most central
-	nodes are 1266925.JHVX01000003_gene555 (degree 1191), 1266925.JHVX01000002_gene897
-	(degree 1083), 1266925.JHVX01000001_gene2476 (degree 1033), 1266925.JHVX01000002_gene1024
-	(degree 983) and 1266925.JHVX01000012_gene1679 (degree 975).
+	The undirected graph Nitrosospira briensis has 2749 nodes and 258985 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06857 and has 17 connected components, where the component with most
+	nodes has 2712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 188.42, and
+	the node degree mode is 2. The top 5 most central nodes are 1266925.JHVX01000003_gene555
+	(degree 1191), 1266925.JHVX01000002_gene897 (degree 1083), 1266925.JHVX01000001_gene2476
+	(degree 1033), 1266925.JHVX01000002_gene1024 (degree 983) and 1266925.JHVX01000012_gene1679
+	(degree 975).
 	
 
 

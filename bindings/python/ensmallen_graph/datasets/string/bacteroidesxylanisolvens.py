@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:51.643831
 
-The undirected graph Bacteroides xylanisolvens has 4367 nodes and 399446 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-and has 24 connected components, where the component with most nodes has 4306 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 182.94, and the node degree mode is 2. The top 5
-most central nodes are 657309.BXY_23900 (degree 1448), 657309.BXY_14280 (degree 1315),
-657309.BXY_43300 (degree 1217), 657309.BXY_48420 (degree 1163) and 657309.BXY_36200
-(degree 1135).
+The undirected graph Bacteroides xylanisolvens has 4367 nodes and 399446
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04190 and has 24 connected components, where the component
+with most nodes has 4306 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 182.94,
+and the node degree mode is 2. The top 5 most central nodes are 657309.BXY_23900
+(degree 1448), 657309.BXY_14280 (degree 1315), 657309.BXY_43300 (degree
+1217), 657309.BXY_48420 (degree 1163) and 657309.BXY_36200 (degree 1135).
 
 
 References
@@ -107,14 +107,14 @@ def BacteroidesXylanisolvens(
 	
 	Datetime: 2021-02-02 21:26:51.643831
 	
-	The undirected graph Bacteroides xylanisolvens has 4367 nodes and 399446 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04190
-	and has 24 connected components, where the component with most nodes has 4306 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 182.94, and the node degree mode is 2. The top 5
-	most central nodes are 657309.BXY_23900 (degree 1448), 657309.BXY_14280 (degree 1315),
-	657309.BXY_43300 (degree 1217), 657309.BXY_48420 (degree 1163) and 657309.BXY_36200
-	(degree 1135).
+	The undirected graph Bacteroides xylanisolvens has 4367 nodes and 399446
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04190 and has 24 connected components, where the component
+	with most nodes has 4306 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 182.94,
+	and the node degree mode is 2. The top 5 most central nodes are 657309.BXY_23900
+	(degree 1448), 657309.BXY_14280 (degree 1315), 657309.BXY_43300 (degree
+	1217), 657309.BXY_48420 (degree 1163) and 657309.BXY_36200 (degree 1135).
 	
 
 

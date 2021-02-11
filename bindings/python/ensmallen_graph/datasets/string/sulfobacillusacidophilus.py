@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:31.490568
 
-The undirected graph Sulfobacillus acidophilus has 3704 nodes and 256243 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03736
-and has 23 connected components, where the component with most nodes has 3655 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 138.36, and the node degree mode is 3. The top 5 most
-central nodes are 1051632.TPY_1056 (degree 1434), 1051632.TPY_1051 (degree 1274),
-1051632.TPY_0969 (degree 1151), 1051632.TPY_2486 (degree 1114) and 1051632.TPY_0955
-(degree 1044).
+The undirected graph Sulfobacillus acidophilus has 3704 nodes and 256243
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03736 and has 23 connected components, where the component
+with most nodes has 3655 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 138.36,
+and the node degree mode is 3. The top 5 most central nodes are 1051632.TPY_1056
+(degree 1434), 1051632.TPY_1051 (degree 1274), 1051632.TPY_0969 (degree
+1151), 1051632.TPY_2486 (degree 1114) and 1051632.TPY_0955 (degree 1044).
 
 
 References
@@ -107,14 +107,14 @@ def SulfobacillusAcidophilus(
 	
 	Datetime: 2021-02-02 22:17:31.490568
 	
-	The undirected graph Sulfobacillus acidophilus has 3704 nodes and 256243 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03736
-	and has 23 connected components, where the component with most nodes has 3655 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 138.36, and the node degree mode is 3. The top 5 most
-	central nodes are 1051632.TPY_1056 (degree 1434), 1051632.TPY_1051 (degree 1274),
-	1051632.TPY_0969 (degree 1151), 1051632.TPY_2486 (degree 1114) and 1051632.TPY_0955
-	(degree 1044).
+	The undirected graph Sulfobacillus acidophilus has 3704 nodes and 256243
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03736 and has 23 connected components, where the component
+	with most nodes has 3655 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 138.36,
+	and the node degree mode is 3. The top 5 most central nodes are 1051632.TPY_1056
+	(degree 1434), 1051632.TPY_1051 (degree 1274), 1051632.TPY_0969 (degree
+	1151), 1051632.TPY_2486 (degree 1114) and 1051632.TPY_0955 (degree 1044).
 	
 
 

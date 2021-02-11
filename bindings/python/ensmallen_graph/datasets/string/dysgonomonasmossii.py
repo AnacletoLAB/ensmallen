@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:55.521912
 
-The undirected graph Dysgonomonas mossii has 3416 nodes and 317613 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05445 and
-has 20 connected components, where the component with most nodes has 3364 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 185.96, and the node degree mode is 1. The top 5 most central
-nodes are 742767.HMPREF9456_00229 (degree 1100), 742767.HMPREF9456_00097 (degree
-974), 742767.HMPREF9456_00683 (degree 917), 742767.HMPREF9456_01065 (degree 871)
-and 742767.HMPREF9456_03297 (degree 862).
+The undirected graph Dysgonomonas mossii has 3416 nodes and 317613 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05445 and has 20 connected components, where the component with most
+nodes has 3364 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 185.96, and
+the node degree mode is 1. The top 5 most central nodes are 742767.HMPREF9456_00229
+(degree 1100), 742767.HMPREF9456_00097 (degree 974), 742767.HMPREF9456_00683
+(degree 917), 742767.HMPREF9456_01065 (degree 871) and 742767.HMPREF9456_03297
+(degree 862).
 
 
 References
@@ -107,14 +108,15 @@ def DysgonomonasMossii(
 	
 	Datetime: 2021-02-02 21:37:55.521912
 	
-	The undirected graph Dysgonomonas mossii has 3416 nodes and 317613 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05445 and
-	has 20 connected components, where the component with most nodes has 3364 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 185.96, and the node degree mode is 1. The top 5 most central
-	nodes are 742767.HMPREF9456_00229 (degree 1100), 742767.HMPREF9456_00097 (degree
-	974), 742767.HMPREF9456_00683 (degree 917), 742767.HMPREF9456_01065 (degree 871)
-	and 742767.HMPREF9456_03297 (degree 862).
+	The undirected graph Dysgonomonas mossii has 3416 nodes and 317613 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05445 and has 20 connected components, where the component with most
+	nodes has 3364 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 185.96, and
+	the node degree mode is 1. The top 5 most central nodes are 742767.HMPREF9456_00229
+	(degree 1100), 742767.HMPREF9456_00097 (degree 974), 742767.HMPREF9456_00683
+	(degree 917), 742767.HMPREF9456_01065 (degree 871) and 742767.HMPREF9456_03297
+	(degree 862).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:43.817136
 
-The undirected graph Thermocrinis albus has 1587 nodes and 96443 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07663 and
-has 4 connected components, where the component with most nodes has 1577 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 121.54, and the node degree mode is 9. The top 5 most central
-nodes are 638303.Thal_0912 (degree 722), 638303.Thal_0603 (degree 640), 638303.Thal_0331
-(degree 615), 638303.Thal_1082 (degree 596) and 638303.Thal_0732 (degree 581).
+The undirected graph Thermocrinis albus has 1587 nodes and 96443 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07663 and has 4 connected components, where the component with most
+nodes has 1577 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 121.54, and
+the node degree mode is 9. The top 5 most central nodes are 638303.Thal_0912
+(degree 722), 638303.Thal_0603 (degree 640), 638303.Thal_0331 (degree 615),
+638303.Thal_1082 (degree 596) and 638303.Thal_0732 (degree 581).
 
 
 References
@@ -106,13 +107,14 @@ def ThermocrinisAlbus(
 	
 	Datetime: 2021-02-02 21:22:43.817136
 	
-	The undirected graph Thermocrinis albus has 1587 nodes and 96443 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07663 and
-	has 4 connected components, where the component with most nodes has 1577 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 121.54, and the node degree mode is 9. The top 5 most central
-	nodes are 638303.Thal_0912 (degree 722), 638303.Thal_0603 (degree 640), 638303.Thal_0331
-	(degree 615), 638303.Thal_1082 (degree 596) and 638303.Thal_0732 (degree 581).
+	The undirected graph Thermocrinis albus has 1587 nodes and 96443 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07663 and has 4 connected components, where the component with most
+	nodes has 1577 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 121.54, and
+	the node degree mode is 9. The top 5 most central nodes are 638303.Thal_0912
+	(degree 722), 638303.Thal_0603 (degree 640), 638303.Thal_0331 (degree 615),
+	638303.Thal_1082 (degree 596) and 638303.Thal_0732 (degree 581).
 	
 
 

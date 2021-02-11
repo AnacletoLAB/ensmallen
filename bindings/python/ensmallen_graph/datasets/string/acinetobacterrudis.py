@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:31.418753
 
-The undirected graph Acinetobacter rudis has 3557 nodes and 333727 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05277 and
-has 25 connected components, where the component with most nodes has 3500 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 187.65, and the node degree mode is 1. The top 5 most central
-nodes are 421052.F945_03067 (degree 1293), 421052.F945_01852 (degree 1233), 421052.F945_03031
-(degree 1149), 421052.F945_00309 (degree 1127) and 421052.F945_00369 (degree 1101).
+The undirected graph Acinetobacter rudis has 3557 nodes and 333727 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05277 and has 25 connected components, where the component with most
+nodes has 3500 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 187.65, and
+the node degree mode is 1. The top 5 most central nodes are 421052.F945_03067
+(degree 1293), 421052.F945_01852 (degree 1233), 421052.F945_03031 (degree
+1149), 421052.F945_00309 (degree 1127) and 421052.F945_00369 (degree 1101).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterRudis(
 	
 	Datetime: 2021-02-02 20:47:31.418753
 	
-	The undirected graph Acinetobacter rudis has 3557 nodes and 333727 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05277 and
-	has 25 connected components, where the component with most nodes has 3500 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 187.65, and the node degree mode is 1. The top 5 most central
-	nodes are 421052.F945_03067 (degree 1293), 421052.F945_01852 (degree 1233), 421052.F945_03031
-	(degree 1149), 421052.F945_00309 (degree 1127) and 421052.F945_00369 (degree 1101).
+	The undirected graph Acinetobacter rudis has 3557 nodes and 333727 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05277 and has 25 connected components, where the component with most
+	nodes has 3500 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 187.65, and
+	the node degree mode is 1. The top 5 most central nodes are 421052.F945_03067
+	(degree 1293), 421052.F945_01852 (degree 1233), 421052.F945_03031 (degree
+	1149), 421052.F945_00309 (degree 1127) and 421052.F945_00369 (degree 1101).
 	
 
 

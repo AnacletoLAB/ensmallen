@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:46.567150
 
-The undirected graph Paenibacillus sp. HW567 has 5457 nodes and 654799 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04399 and
-has 17 connected components, where the component with most nodes has 5422 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 239.98, and the node degree mode is 2. The top 5 most central
-nodes are 1034769.KB910518_gene1516 (degree 2128), 1034769.KB910518_gene116 (degree
-1625), 1034769.KB910518_gene2989 (degree 1595), 1034769.KB910518_gene3592 (degree
-1587) and 1034769.KB910518_gene1108 (degree 1502).
+The undirected graph Paenibacillus sp. HW567 has 5457 nodes and 654799
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04399 and has 17 connected components, where the component
+with most nodes has 5422 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 239.98,
+and the node degree mode is 2. The top 5 most central nodes are 1034769.KB910518_gene1516
+(degree 2128), 1034769.KB910518_gene116 (degree 1625), 1034769.KB910518_gene2989
+(degree 1595), 1034769.KB910518_gene3592 (degree 1587) and 1034769.KB910518_gene1108
+(degree 1502).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Hw567(
 	
 	Datetime: 2021-02-02 22:11:46.567150
 	
-	The undirected graph Paenibacillus sp. HW567 has 5457 nodes and 654799 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04399 and
-	has 17 connected components, where the component with most nodes has 5422 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 239.98, and the node degree mode is 2. The top 5 most central
-	nodes are 1034769.KB910518_gene1516 (degree 2128), 1034769.KB910518_gene116 (degree
-	1625), 1034769.KB910518_gene2989 (degree 1595), 1034769.KB910518_gene3592 (degree
-	1587) and 1034769.KB910518_gene1108 (degree 1502).
+	The undirected graph Paenibacillus sp. HW567 has 5457 nodes and 654799
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04399 and has 17 connected components, where the component
+	with most nodes has 5422 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 239.98,
+	and the node degree mode is 2. The top 5 most central nodes are 1034769.KB910518_gene1516
+	(degree 2128), 1034769.KB910518_gene116 (degree 1625), 1034769.KB910518_gene2989
+	(degree 1595), 1034769.KB910518_gene3592 (degree 1587) and 1034769.KB910518_gene1108
+	(degree 1502).
 	
 
 

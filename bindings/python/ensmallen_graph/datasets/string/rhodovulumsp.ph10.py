@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:01.761943
 
-The undirected graph Rhodovulum sp. PH10 has 4394 nodes and 476193 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04934 and
-has 25 connected components, where the component with most nodes has 4326 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 216.75, and the node degree mode is 3. The top 5 most central
-nodes are 1187851.A33M_0816 (degree 1577), 1187851.A33M_2348 (degree 1518), 1187851.A33M_1391
-(degree 1444), 1187851.A33M_1288 (degree 1430) and 1187851.A33M_2704 (degree 1345).
+The undirected graph Rhodovulum sp. PH10 has 4394 nodes and 476193 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04934 and has 25 connected components, where the component with most
+nodes has 4326 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 216.75, and
+the node degree mode is 3. The top 5 most central nodes are 1187851.A33M_0816
+(degree 1577), 1187851.A33M_2348 (degree 1518), 1187851.A33M_1391 (degree
+1444), 1187851.A33M_1288 (degree 1430) and 1187851.A33M_2704 (degree 1345).
 
 
 References
@@ -106,13 +107,14 @@ def RhodovulumSp.Ph10(
 	
 	Datetime: 2021-02-02 23:11:01.761943
 	
-	The undirected graph Rhodovulum sp. PH10 has 4394 nodes and 476193 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04934 and
-	has 25 connected components, where the component with most nodes has 4326 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 216.75, and the node degree mode is 3. The top 5 most central
-	nodes are 1187851.A33M_0816 (degree 1577), 1187851.A33M_2348 (degree 1518), 1187851.A33M_1391
-	(degree 1444), 1187851.A33M_1288 (degree 1430) and 1187851.A33M_2704 (degree 1345).
+	The undirected graph Rhodovulum sp. PH10 has 4394 nodes and 476193 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04934 and has 25 connected components, where the component with most
+	nodes has 4326 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 216.75, and
+	the node degree mode is 3. The top 5 most central nodes are 1187851.A33M_0816
+	(degree 1577), 1187851.A33M_2348 (degree 1518), 1187851.A33M_1391 (degree
+	1444), 1187851.A33M_1288 (degree 1430) and 1187851.A33M_2704 (degree 1345).
 	
 
 

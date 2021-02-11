@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:24.075030
 
-The undirected graph Kinetoplastibacterium blastocrithidii has 715 nodes and 31450
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.12321 and is connected, as it has a single component. The graph median
-node degree is 73, the mean node degree is 87.97, and the node degree mode is 36.
-The top 5 most central nodes are 1208923.CKBE_00523 (degree 428), 1208923.CKBE_00467
-(degree 352), 1208923.CKBE_00426 (degree 335), 1208923.CKBE_00019 (degree 311) and
-1208923.CKBE_00600 (degree 293).
+The undirected graph Kinetoplastibacterium blastocrithidii has 715 nodes
+and 31450 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.12321 and is connected, as it has a single
+component. The graph median node degree is 73, the mean node degree is
+87.97, and the node degree mode is 36. The top 5 most central nodes are
+1208923.CKBE_00523 (degree 428), 1208923.CKBE_00467 (degree 352), 1208923.CKBE_00426
+(degree 335), 1208923.CKBE_00019 (degree 311) and 1208923.CKBE_00600 (degree
+293).
 
 
 References
@@ -106,13 +107,14 @@ def KinetoplastibacteriumBlastocrithidii(
 	
 	Datetime: 2021-02-02 23:18:24.075030
 	
-	The undirected graph Kinetoplastibacterium blastocrithidii has 715 nodes and 31450
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.12321 and is connected, as it has a single component. The graph median
-	node degree is 73, the mean node degree is 87.97, and the node degree mode is 36.
-	The top 5 most central nodes are 1208923.CKBE_00523 (degree 428), 1208923.CKBE_00467
-	(degree 352), 1208923.CKBE_00426 (degree 335), 1208923.CKBE_00019 (degree 311) and
-	1208923.CKBE_00600 (degree 293).
+	The undirected graph Kinetoplastibacterium blastocrithidii has 715 nodes
+	and 31450 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.12321 and is connected, as it has a single
+	component. The graph median node degree is 73, the mean node degree is
+	87.97, and the node degree mode is 36. The top 5 most central nodes are
+	1208923.CKBE_00523 (degree 428), 1208923.CKBE_00467 (degree 352), 1208923.CKBE_00426
+	(degree 335), 1208923.CKBE_00019 (degree 311) and 1208923.CKBE_00600 (degree
+	293).
 	
 
 

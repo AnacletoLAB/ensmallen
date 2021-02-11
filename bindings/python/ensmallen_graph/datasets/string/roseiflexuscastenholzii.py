@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:27.039630
 
-The undirected graph Roseiflexus castenholzii has 4289 nodes and 473461 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05149
-and has 13 connected components, where the component with most nodes has 4264 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 220.78, and the node degree mode is 3. The top 5
-most central nodes are 383372.Rcas_2879 (degree 2217), 383372.Rcas_1512 (degree 1918),
-383372.Rcas_3135 (degree 1915), 383372.Rcas_2930 (degree 1656) and 383372.Rcas_2466
-(degree 1513).
+The undirected graph Roseiflexus castenholzii has 4289 nodes and 473461
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05149 and has 13 connected components, where the component
+with most nodes has 4264 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 220.78,
+and the node degree mode is 3. The top 5 most central nodes are 383372.Rcas_2879
+(degree 2217), 383372.Rcas_1512 (degree 1918), 383372.Rcas_3135 (degree
+1915), 383372.Rcas_2930 (degree 1656) and 383372.Rcas_2466 (degree 1513).
 
 
 References
@@ -107,14 +107,14 @@ def RoseiflexusCastenholzii(
 	
 	Datetime: 2021-02-02 20:37:27.039630
 	
-	The undirected graph Roseiflexus castenholzii has 4289 nodes and 473461 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05149
-	and has 13 connected components, where the component with most nodes has 4264 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 220.78, and the node degree mode is 3. The top 5
-	most central nodes are 383372.Rcas_2879 (degree 2217), 383372.Rcas_1512 (degree 1918),
-	383372.Rcas_3135 (degree 1915), 383372.Rcas_2930 (degree 1656) and 383372.Rcas_2466
-	(degree 1513).
+	The undirected graph Roseiflexus castenholzii has 4289 nodes and 473461
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05149 and has 13 connected components, where the component
+	with most nodes has 4264 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 220.78,
+	and the node degree mode is 3. The top 5 most central nodes are 383372.Rcas_2879
+	(degree 2217), 383372.Rcas_1512 (degree 1918), 383372.Rcas_3135 (degree
+	1915), 383372.Rcas_2930 (degree 1656) and 383372.Rcas_2466 (degree 1513).
 	
 
 

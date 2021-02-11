@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:52.426689
 
-The undirected graph Aegilops tauschii has 24736 nodes and 4151005 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01357 and
-has 9 connected components, where the component with most nodes has 24717 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 335.62, and the node degree mode is 5. The top 5 most central
-nodes are 37682.EMT25885 (degree 6617), 37682.EMT33404 (degree 5854), 37682.EMT19506
-(degree 5278), 37682.EMT03890 (degree 4990) and 37682.EMT06772 (degree 4983).
+The undirected graph Aegilops tauschii has 24736 nodes and 4151005 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01357 and has 9 connected components, where the component with most
+nodes has 24717 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 335.62, and
+the node degree mode is 5. The top 5 most central nodes are 37682.EMT25885
+(degree 6617), 37682.EMT33404 (degree 5854), 37682.EMT19506 (degree 5278),
+37682.EMT03890 (degree 4990) and 37682.EMT06772 (degree 4983).
 
 
 References
@@ -106,13 +107,14 @@ def AegilopsTauschii(
 	
 	Datetime: 2021-02-02 18:06:52.426689
 	
-	The undirected graph Aegilops tauschii has 24736 nodes and 4151005 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01357 and
-	has 9 connected components, where the component with most nodes has 24717 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 335.62, and the node degree mode is 5. The top 5 most central
-	nodes are 37682.EMT25885 (degree 6617), 37682.EMT33404 (degree 5854), 37682.EMT19506
-	(degree 5278), 37682.EMT03890 (degree 4990) and 37682.EMT06772 (degree 4983).
+	The undirected graph Aegilops tauschii has 24736 nodes and 4151005 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01357 and has 9 connected components, where the component with most
+	nodes has 24717 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 335.62, and
+	the node degree mode is 5. The top 5 most central nodes are 37682.EMT25885
+	(degree 6617), 37682.EMT33404 (degree 5854), 37682.EMT19506 (degree 5278),
+	37682.EMT03890 (degree 4990) and 37682.EMT06772 (degree 4983).
 	
 
 

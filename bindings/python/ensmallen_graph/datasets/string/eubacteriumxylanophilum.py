@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:57:17.220195
 
-The undirected graph Eubacterium xylanophilum has 2167 nodes and 170135 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07249
-and has 4 connected components, where the component with most nodes has 2160 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 157.02, and the node degree mode is 6. The top 5
-most central nodes are 1336241.JAEB01000008_gene1061 (degree 901), 1336241.JAEB01000026_gene898
-(degree 732), 1336241.JAEB01000011_gene2091 (degree 726), 1336241.JAEB01000018_gene1515
-(degree 672) and 1336241.JAEB01000011_gene2097 (degree 652).
+The undirected graph Eubacterium xylanophilum has 2167 nodes and 170135
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07249 and has 4 connected components, where the component
+with most nodes has 2160 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 157.02,
+and the node degree mode is 6. The top 5 most central nodes are 1336241.JAEB01000008_gene1061
+(degree 901), 1336241.JAEB01000026_gene898 (degree 732), 1336241.JAEB01000011_gene2091
+(degree 726), 1336241.JAEB01000018_gene1515 (degree 672) and 1336241.JAEB01000011_gene2097
+(degree 652).
 
 
 References
@@ -107,14 +108,15 @@ def EubacteriumXylanophilum(
 	
 	Datetime: 2021-02-03 21:57:17.220195
 	
-	The undirected graph Eubacterium xylanophilum has 2167 nodes and 170135 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07249
-	and has 4 connected components, where the component with most nodes has 2160 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 157.02, and the node degree mode is 6. The top 5
-	most central nodes are 1336241.JAEB01000008_gene1061 (degree 901), 1336241.JAEB01000026_gene898
-	(degree 732), 1336241.JAEB01000011_gene2091 (degree 726), 1336241.JAEB01000018_gene1515
-	(degree 672) and 1336241.JAEB01000011_gene2097 (degree 652).
+	The undirected graph Eubacterium xylanophilum has 2167 nodes and 170135
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07249 and has 4 connected components, where the component
+	with most nodes has 2160 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 157.02,
+	and the node degree mode is 6. The top 5 most central nodes are 1336241.JAEB01000008_gene1061
+	(degree 901), 1336241.JAEB01000026_gene898 (degree 732), 1336241.JAEB01000011_gene2091
+	(degree 726), 1336241.JAEB01000018_gene1515 (degree 672) and 1336241.JAEB01000011_gene2097
+	(degree 652).
 	
 
 

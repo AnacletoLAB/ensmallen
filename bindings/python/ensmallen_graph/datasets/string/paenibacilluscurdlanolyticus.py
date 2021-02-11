@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:26.511613
 
-The undirected graph Paenibacillus curdlanolyticus has 4796 nodes and 519917 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04522
-and has 19 connected components, where the component with most nodes has 4753 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 216.81, and the node degree mode is 4. The top 5
-most central nodes are 717606.PaecuDRAFT_1090 (degree 1525), 717606.PaecuDRAFT_2098
-(degree 1505), 717606.PaecuDRAFT_4290 (degree 1448), 717606.PaecuDRAFT_0884 (degree
-1426) and 717606.PaecuDRAFT_0244 (degree 1331).
+The undirected graph Paenibacillus curdlanolyticus has 4796 nodes and 519917
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04522 and has 19 connected components, where the component
+with most nodes has 4753 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 216.81,
+and the node degree mode is 4. The top 5 most central nodes are 717606.PaecuDRAFT_1090
+(degree 1525), 717606.PaecuDRAFT_2098 (degree 1505), 717606.PaecuDRAFT_4290
+(degree 1448), 717606.PaecuDRAFT_0884 (degree 1426) and 717606.PaecuDRAFT_0244
+(degree 1331).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusCurdlanolyticus(
 	
 	Datetime: 2021-02-02 21:36:26.511613
 	
-	The undirected graph Paenibacillus curdlanolyticus has 4796 nodes and 519917 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04522
-	and has 19 connected components, where the component with most nodes has 4753 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 216.81, and the node degree mode is 4. The top 5
-	most central nodes are 717606.PaecuDRAFT_1090 (degree 1525), 717606.PaecuDRAFT_2098
-	(degree 1505), 717606.PaecuDRAFT_4290 (degree 1448), 717606.PaecuDRAFT_0884 (degree
-	1426) and 717606.PaecuDRAFT_0244 (degree 1331).
+	The undirected graph Paenibacillus curdlanolyticus has 4796 nodes and 519917
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04522 and has 19 connected components, where the component
+	with most nodes has 4753 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 216.81,
+	and the node degree mode is 4. The top 5 most central nodes are 717606.PaecuDRAFT_1090
+	(degree 1525), 717606.PaecuDRAFT_2098 (degree 1505), 717606.PaecuDRAFT_4290
+	(degree 1448), 717606.PaecuDRAFT_0884 (degree 1426) and 717606.PaecuDRAFT_0244
+	(degree 1331).
 	
 
 

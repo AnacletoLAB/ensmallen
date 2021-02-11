@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:55.989421
 
-The undirected graph Corynebacterium ulcerans has 2312 nodes and 147352 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05516
-and has 9 connected components, where the component with most nodes has 2285 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 127.47, and the node degree mode is 3. The top 5
-most central nodes are 945712.CULC22_01819 (degree 926), 945712.CULC22_00999 (degree
-852), 945712.CULC22_01018 (degree 664), 945712.CULC22_00480 (degree 657) and 945712.CULC22_00614
-(degree 653).
+The undirected graph Corynebacterium ulcerans has 2312 nodes and 147352
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05516 and has 9 connected components, where the component
+with most nodes has 2285 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 127.47,
+and the node degree mode is 3. The top 5 most central nodes are 945712.CULC22_01819
+(degree 926), 945712.CULC22_00999 (degree 852), 945712.CULC22_01018 (degree
+664), 945712.CULC22_00480 (degree 657) and 945712.CULC22_00614 (degree
+653).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumUlcerans(
 	
 	Datetime: 2021-02-02 22:01:55.989421
 	
-	The undirected graph Corynebacterium ulcerans has 2312 nodes and 147352 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05516
-	and has 9 connected components, where the component with most nodes has 2285 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 127.47, and the node degree mode is 3. The top 5
-	most central nodes are 945712.CULC22_01819 (degree 926), 945712.CULC22_00999 (degree
-	852), 945712.CULC22_01018 (degree 664), 945712.CULC22_00480 (degree 657) and 945712.CULC22_00614
-	(degree 653).
+	The undirected graph Corynebacterium ulcerans has 2312 nodes and 147352
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05516 and has 9 connected components, where the component
+	with most nodes has 2285 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 127.47,
+	and the node degree mode is 3. The top 5 most central nodes are 945712.CULC22_01819
+	(degree 926), 945712.CULC22_00999 (degree 852), 945712.CULC22_01018 (degree
+	664), 945712.CULC22_00480 (degree 657) and 945712.CULC22_00614 (degree
+	653).
 	
 
 

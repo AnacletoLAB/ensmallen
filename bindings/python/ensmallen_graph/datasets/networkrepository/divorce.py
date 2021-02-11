@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:08:12.281736
 
-The undirected graph divorce has 50 nodes and 215 unweighted edges, of which 3 are
-self-loops. The graph is quite dense as it has a density of 0.17429 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 8.54, and the node degree mode is 7. The top 5 most central nodes are 1 (degree
-38), 2 (degree 33), 6 (degree 28), 3 (degree 28) and 7 (degree 25).
+The undirected graph divorce has 50 nodes and 215 unweighted edges, of
+which 3 are self-loops. The graph is quite dense as it has a density of
+0.17429 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 8.54, and the node degree mode
+is 7. The top 5 most central nodes are 1 (degree 38), 2 (degree 33), 6
+(degree 28), 3 (degree 28) and 7 (degree 25).
 
 
 References
@@ -101,11 +102,12 @@ def Divorce(
 	
 	Datetime: 2021-02-06 08:08:12.281736
 	
-	The undirected graph divorce has 50 nodes and 215 unweighted edges, of which 3 are
-	self-loops. The graph is quite dense as it has a density of 0.17429 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 8.54, and the node degree mode is 7. The top 5 most central nodes are 1 (degree
-	38), 2 (degree 33), 6 (degree 28), 3 (degree 28) and 7 (degree 25).
+	The undirected graph divorce has 50 nodes and 215 unweighted edges, of
+	which 3 are self-loops. The graph is quite dense as it has a density of
+	0.17429 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 8.54, and the node degree mode
+	is 7. The top 5 most central nodes are 1 (degree 38), 2 (degree 33), 6
+	(degree 28), 3 (degree 28) and 7 (degree 25).
 	
 
 

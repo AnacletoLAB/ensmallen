@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:37.306603
 
-The undirected graph Helicobacter cinaedi PAGU611 has 2078 nodes and 97638 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04524
-and has 10 connected components, where the component with most nodes has 2038 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 66, the mean node degree is 93.97, and the node degree mode is 7. The top 5 most
-central nodes are 1172562.HCN_1971 (degree 808), 1172562.HCN_1516 (degree 701), 1172562.HCN_0554
-(degree 680), 1172562.HCN_0165 (degree 626) and 1172562.HCN_0421 (degree 545).
+The undirected graph Helicobacter cinaedi PAGU611 has 2078 nodes and 97638
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04524 and has 10 connected components, where the component
+with most nodes has 2038 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 66, the mean node degree is 93.97,
+and the node degree mode is 7. The top 5 most central nodes are 1172562.HCN_1971
+(degree 808), 1172562.HCN_1516 (degree 701), 1172562.HCN_0554 (degree 680),
+1172562.HCN_0165 (degree 626) and 1172562.HCN_0421 (degree 545).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterCinaediPagu611(
 	
 	Datetime: 2021-02-02 23:07:37.306603
 	
-	The undirected graph Helicobacter cinaedi PAGU611 has 2078 nodes and 97638 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04524
-	and has 10 connected components, where the component with most nodes has 2038 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 66, the mean node degree is 93.97, and the node degree mode is 7. The top 5 most
-	central nodes are 1172562.HCN_1971 (degree 808), 1172562.HCN_1516 (degree 701), 1172562.HCN_0554
-	(degree 680), 1172562.HCN_0165 (degree 626) and 1172562.HCN_0421 (degree 545).
+	The undirected graph Helicobacter cinaedi PAGU611 has 2078 nodes and 97638
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04524 and has 10 connected components, where the component
+	with most nodes has 2038 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 66, the mean node degree is 93.97,
+	and the node degree mode is 7. The top 5 most central nodes are 1172562.HCN_1971
+	(degree 808), 1172562.HCN_1516 (degree 701), 1172562.HCN_0554 (degree 680),
+	1172562.HCN_0165 (degree 626) and 1172562.HCN_0421 (degree 545).
 	
 
 

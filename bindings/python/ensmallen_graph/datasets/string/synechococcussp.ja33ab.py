@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:47.576302
 
-The undirected graph Synechococcus sp. JA33Ab has 2723 nodes and 258319 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06970
-and has 7 connected components, where the component with most nodes has 2710 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 189.73, and the node degree mode is 2. The top 5
-most central nodes are 321327.CYA_2836 (degree 1006), 321327.CYA_0531 (degree 974),
-321327.CYA_0702 (degree 961), 321327.CYA_1863 (degree 948) and 321327.CYA_2151 (degree
-762).
+The undirected graph Synechococcus sp. JA33Ab has 2723 nodes and 258319
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06970 and has 7 connected components, where the component
+with most nodes has 2710 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 189.73,
+and the node degree mode is 2. The top 5 most central nodes are 321327.CYA_2836
+(degree 1006), 321327.CYA_0531 (degree 974), 321327.CYA_0702 (degree 961),
+321327.CYA_1863 (degree 948) and 321327.CYA_2151 (degree 762).
 
 
 References
@@ -107,14 +107,14 @@ def SynechococcusSp.Ja33ab(
 	
 	Datetime: 2021-02-02 20:27:47.576302
 	
-	The undirected graph Synechococcus sp. JA33Ab has 2723 nodes and 258319 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06970
-	and has 7 connected components, where the component with most nodes has 2710 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 189.73, and the node degree mode is 2. The top 5
-	most central nodes are 321327.CYA_2836 (degree 1006), 321327.CYA_0531 (degree 974),
-	321327.CYA_0702 (degree 961), 321327.CYA_1863 (degree 948) and 321327.CYA_2151 (degree
-	762).
+	The undirected graph Synechococcus sp. JA33Ab has 2723 nodes and 258319
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06970 and has 7 connected components, where the component
+	with most nodes has 2710 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 189.73,
+	and the node degree mode is 2. The top 5 most central nodes are 321327.CYA_2836
+	(degree 1006), 321327.CYA_0531 (degree 974), 321327.CYA_0702 (degree 961),
+	321327.CYA_1863 (degree 948) and 321327.CYA_2151 (degree 762).
 	
 
 

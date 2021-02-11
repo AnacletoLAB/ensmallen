@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:03.023834
 
-The undirected graph Trabulsiella guamensis has 4689 nodes and 706912 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06432 and
-has 20 connected components, where the component with most nodes has 4637 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 277,
-the mean node degree is 301.52, and the node degree mode is 1. The top 5 most central
-nodes are 1005994.GTGU_00690 (degree 1595), 1005994.GTGU_03841 (degree 1571), 1005994.GTGU_03216
-(degree 1449), 1005994.GTGU_04050 (degree 1440) and 1005994.GTGU_02366 (degree 1401).
+The undirected graph Trabulsiella guamensis has 4689 nodes and 706912 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06432 and has 20 connected components, where the component with most
+nodes has 4637 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 277, the mean node degree is 301.52, and
+the node degree mode is 1. The top 5 most central nodes are 1005994.GTGU_00690
+(degree 1595), 1005994.GTGU_03841 (degree 1571), 1005994.GTGU_03216 (degree
+1449), 1005994.GTGU_04050 (degree 1440) and 1005994.GTGU_02366 (degree
+1401).
 
 
 References
@@ -106,13 +108,15 @@ def TrabulsiellaGuamensis(
 	
 	Datetime: 2021-02-02 22:08:03.023834
 	
-	The undirected graph Trabulsiella guamensis has 4689 nodes and 706912 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06432 and
-	has 20 connected components, where the component with most nodes has 4637 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 277,
-	the mean node degree is 301.52, and the node degree mode is 1. The top 5 most central
-	nodes are 1005994.GTGU_00690 (degree 1595), 1005994.GTGU_03841 (degree 1571), 1005994.GTGU_03216
-	(degree 1449), 1005994.GTGU_04050 (degree 1440) and 1005994.GTGU_02366 (degree 1401).
+	The undirected graph Trabulsiella guamensis has 4689 nodes and 706912 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06432 and has 20 connected components, where the component with most
+	nodes has 4637 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 277, the mean node degree is 301.52, and
+	the node degree mode is 1. The top 5 most central nodes are 1005994.GTGU_00690
+	(degree 1595), 1005994.GTGU_03841 (degree 1571), 1005994.GTGU_03216 (degree
+	1449), 1005994.GTGU_04050 (degree 1440) and 1005994.GTGU_02366 (degree
+	1401).
 	
 
 

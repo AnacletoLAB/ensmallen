@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:55.364729
 
-The undirected graph Thermus thermophilus HB8 has 1979 nodes and 131013 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06694
-and has 3 connected components, where the component with most nodes has 1975 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 132.40, and the node degree mode is 12. The top 5
-most central nodes are 300852.55772436 (degree 915), 300852.55772213 (degree 783),
-300852.55772934 (degree 766), 300852.55771814 (degree 662) and 300852.55772850 (degree
-659).
+The undirected graph Thermus thermophilus HB8 has 1979 nodes and 131013
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06694 and has 3 connected components, where the component
+with most nodes has 1975 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 132.40,
+and the node degree mode is 12. The top 5 most central nodes are 300852.55772436
+(degree 915), 300852.55772213 (degree 783), 300852.55772934 (degree 766),
+300852.55771814 (degree 662) and 300852.55772850 (degree 659).
 
 
 References
@@ -107,14 +107,14 @@ def ThermusThermophilusHb8(
 	
 	Datetime: 2021-02-02 20:21:55.364729
 	
-	The undirected graph Thermus thermophilus HB8 has 1979 nodes and 131013 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06694
-	and has 3 connected components, where the component with most nodes has 1975 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 132.40, and the node degree mode is 12. The top 5
-	most central nodes are 300852.55772436 (degree 915), 300852.55772213 (degree 783),
-	300852.55772934 (degree 766), 300852.55771814 (degree 662) and 300852.55772850 (degree
-	659).
+	The undirected graph Thermus thermophilus HB8 has 1979 nodes and 131013
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06694 and has 3 connected components, where the component
+	with most nodes has 1975 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 132.40,
+	and the node degree mode is 12. The top 5 most central nodes are 300852.55772436
+	(degree 915), 300852.55772213 (degree 783), 300852.55772934 (degree 766),
+	300852.55771814 (degree 662) and 300852.55772850 (degree 659).
 	
 
 

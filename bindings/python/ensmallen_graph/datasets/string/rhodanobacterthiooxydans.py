@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:58.961609
 
-The undirected graph Rhodanobacter thiooxydans has 3650 nodes and 398853 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05989
-and has 15 connected components, where the component with most nodes has 3619 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 218.55, and the node degree mode is 1. The top 5
-most central nodes are 1163409.UUA_17567 (degree 1353), 1163409.UUA_05942 (degree
-1297), 1163409.UUA_09466 (degree 1196), 1163409.UUA_16438 (degree 1168) and 1163409.UUA_10386
-(degree 1159).
+The undirected graph Rhodanobacter thiooxydans has 3650 nodes and 398853
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05989 and has 15 connected components, where the component
+with most nodes has 3619 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 218.55,
+and the node degree mode is 1. The top 5 most central nodes are 1163409.UUA_17567
+(degree 1353), 1163409.UUA_05942 (degree 1297), 1163409.UUA_09466 (degree
+1196), 1163409.UUA_16438 (degree 1168) and 1163409.UUA_10386 (degree 1159).
 
 
 References
@@ -107,14 +107,14 @@ def RhodanobacterThiooxydans(
 	
 	Datetime: 2021-02-02 23:04:58.961609
 	
-	The undirected graph Rhodanobacter thiooxydans has 3650 nodes and 398853 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05989
-	and has 15 connected components, where the component with most nodes has 3619 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 218.55, and the node degree mode is 1. The top 5
-	most central nodes are 1163409.UUA_17567 (degree 1353), 1163409.UUA_05942 (degree
-	1297), 1163409.UUA_09466 (degree 1196), 1163409.UUA_16438 (degree 1168) and 1163409.UUA_10386
-	(degree 1159).
+	The undirected graph Rhodanobacter thiooxydans has 3650 nodes and 398853
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05989 and has 15 connected components, where the component
+	with most nodes has 3619 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 218.55,
+	and the node degree mode is 1. The top 5 most central nodes are 1163409.UUA_17567
+	(degree 1353), 1163409.UUA_05942 (degree 1297), 1163409.UUA_09466 (degree
+	1196), 1163409.UUA_16438 (degree 1168) and 1163409.UUA_10386 (degree 1159).
 	
 
 

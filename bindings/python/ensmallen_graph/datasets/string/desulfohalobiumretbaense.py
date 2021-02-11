@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:56.319091
 
-The undirected graph Desulfohalobium retbaense has 2506 nodes and 202115 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06439
-and has 8 connected components, where the component with most nodes has 2490 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 161.30, and the node degree mode is 2. The top 5
-most central nodes are 485915.Dret_2404 (degree 1043), 485915.Dret_1221 (degree 1017),
-485915.Dret_1121 (degree 870), 485915.Dret_1036 (degree 829) and 485915.Dret_0989
-(degree 802).
+The undirected graph Desulfohalobium retbaense has 2506 nodes and 202115
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06439 and has 8 connected components, where the component
+with most nodes has 2490 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 161.30,
+and the node degree mode is 2. The top 5 most central nodes are 485915.Dret_2404
+(degree 1043), 485915.Dret_1221 (degree 1017), 485915.Dret_1121 (degree
+870), 485915.Dret_1036 (degree 829) and 485915.Dret_0989 (degree 802).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfohalobiumRetbaense(
 	
 	Datetime: 2021-02-02 20:58:56.319091
 	
-	The undirected graph Desulfohalobium retbaense has 2506 nodes and 202115 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06439
-	and has 8 connected components, where the component with most nodes has 2490 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 161.30, and the node degree mode is 2. The top 5
-	most central nodes are 485915.Dret_2404 (degree 1043), 485915.Dret_1221 (degree 1017),
-	485915.Dret_1121 (degree 870), 485915.Dret_1036 (degree 829) and 485915.Dret_0989
-	(degree 802).
+	The undirected graph Desulfohalobium retbaense has 2506 nodes and 202115
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06439 and has 8 connected components, where the component
+	with most nodes has 2490 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 161.30,
+	and the node degree mode is 2. The top 5 most central nodes are 485915.Dret_2404
+	(degree 1043), 485915.Dret_1221 (degree 1017), 485915.Dret_1121 (degree
+	870), 485915.Dret_1036 (degree 829) and 485915.Dret_0989 (degree 802).
 	
 
 

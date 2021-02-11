@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:53.416084
 
-The undirected graph Streptococcus pneumoniae R6 has 2027 nodes and 158238 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07706
-and has 4 connected components, where the component with most nodes has 2020 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 156.13, and the node degree mode is 5. The top 5
-most central nodes are 171101.spr0032 (degree 857), 171101.spr1300 (degree 700),
-171101.spr2033 (degree 659), 171101.spr0696 (degree 652) and 171101.spr0455 (degree
-643).
+The undirected graph Streptococcus pneumoniae R6 has 2027 nodes and 158238
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07706 and has 4 connected components, where the component
+with most nodes has 2020 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 156.13,
+and the node degree mode is 5. The top 5 most central nodes are 171101.spr0032
+(degree 857), 171101.spr1300 (degree 700), 171101.spr2033 (degree 659),
+171101.spr0696 (degree 652) and 171101.spr0455 (degree 643).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusPneumoniaeR6(
 	
 	Datetime: 2021-02-02 19:54:53.416084
 	
-	The undirected graph Streptococcus pneumoniae R6 has 2027 nodes and 158238 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07706
-	and has 4 connected components, where the component with most nodes has 2020 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 156.13, and the node degree mode is 5. The top 5
-	most central nodes are 171101.spr0032 (degree 857), 171101.spr1300 (degree 700),
-	171101.spr2033 (degree 659), 171101.spr0696 (degree 652) and 171101.spr0455 (degree
-	643).
+	The undirected graph Streptococcus pneumoniae R6 has 2027 nodes and 158238
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07706 and has 4 connected components, where the component
+	with most nodes has 2020 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 156.13,
+	and the node degree mode is 5. The top 5 most central nodes are 171101.spr0032
+	(degree 857), 171101.spr1300 (degree 700), 171101.spr2033 (degree 659),
+	171101.spr0696 (degree 652) and 171101.spr0455 (degree 643).
 	
 
 

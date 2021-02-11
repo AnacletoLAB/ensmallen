@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:51.512438
 
-The undirected graph Flavobacterium antarcticum has 2727 nodes and 207855 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05592
-and has 10 connected components, where the component with most nodes has 2704 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 152.44, and the node degree mode is 7. The top 5
-most central nodes are 1111730.ATTM01000001_gene1714 (degree 1093), 1111730.ATTM01000001_gene1333
-(degree 1068), 1111730.ATTM01000002_gene1251 (degree 860), 1111730.ATTM01000001_gene1846
-(degree 793) and 1111730.ATTM01000002_gene1237 (degree 757).
+The undirected graph Flavobacterium antarcticum has 2727 nodes and 207855
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05592 and has 10 connected components, where the component
+with most nodes has 2704 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 152.44,
+and the node degree mode is 7. The top 5 most central nodes are 1111730.ATTM01000001_gene1714
+(degree 1093), 1111730.ATTM01000001_gene1333 (degree 1068), 1111730.ATTM01000002_gene1251
+(degree 860), 1111730.ATTM01000001_gene1846 (degree 793) and 1111730.ATTM01000002_gene1237
+(degree 757).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumAntarcticum(
 	
 	Datetime: 2021-02-02 22:25:51.512438
 	
-	The undirected graph Flavobacterium antarcticum has 2727 nodes and 207855 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05592
-	and has 10 connected components, where the component with most nodes has 2704 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 152.44, and the node degree mode is 7. The top 5
-	most central nodes are 1111730.ATTM01000001_gene1714 (degree 1093), 1111730.ATTM01000001_gene1333
-	(degree 1068), 1111730.ATTM01000002_gene1251 (degree 860), 1111730.ATTM01000001_gene1846
-	(degree 793) and 1111730.ATTM01000002_gene1237 (degree 757).
+	The undirected graph Flavobacterium antarcticum has 2727 nodes and 207855
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05592 and has 10 connected components, where the component
+	with most nodes has 2704 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 152.44,
+	and the node degree mode is 7. The top 5 most central nodes are 1111730.ATTM01000001_gene1714
+	(degree 1093), 1111730.ATTM01000001_gene1333 (degree 1068), 1111730.ATTM01000002_gene1251
+	(degree 860), 1111730.ATTM01000001_gene1846 (degree 793) and 1111730.ATTM01000002_gene1237
+	(degree 757).
 	
 
 

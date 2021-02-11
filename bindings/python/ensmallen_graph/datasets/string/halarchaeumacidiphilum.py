@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:28.707892
 
-The undirected graph Halarchaeum acidiphilum has 2644 nodes and 171182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04899 and
-has 32 connected components, where the component with most nodes has 2577 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 129.49, and the node degree mode is 3. The top 5 most central
-nodes are 1261545.MBE-HAL_0558 (degree 738), 1261545.MBE-HAL_1208 (degree 674), 1261545.MBE-HAL_1575
-(degree 666), 1261545.MBE-HAL_0465 (degree 661) and 1261545.MBE-HAL_1874 (degree
+The undirected graph Halarchaeum acidiphilum has 2644 nodes and 171182
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04899 and has 32 connected components, where the component
+with most nodes has 2577 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 129.49,
+and the node degree mode is 3. The top 5 most central nodes are 1261545.MBE-HAL_0558
+(degree 738), 1261545.MBE-HAL_1208 (degree 674), 1261545.MBE-HAL_1575 (degree
+666), 1261545.MBE-HAL_0465 (degree 661) and 1261545.MBE-HAL_1874 (degree
 643).
 
 
@@ -107,13 +108,14 @@ def HalarchaeumAcidiphilum(
 	
 	Datetime: 2021-02-02 23:35:28.707892
 	
-	The undirected graph Halarchaeum acidiphilum has 2644 nodes and 171182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04899 and
-	has 32 connected components, where the component with most nodes has 2577 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 129.49, and the node degree mode is 3. The top 5 most central
-	nodes are 1261545.MBE-HAL_0558 (degree 738), 1261545.MBE-HAL_1208 (degree 674), 1261545.MBE-HAL_1575
-	(degree 666), 1261545.MBE-HAL_0465 (degree 661) and 1261545.MBE-HAL_1874 (degree
+	The undirected graph Halarchaeum acidiphilum has 2644 nodes and 171182
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04899 and has 32 connected components, where the component
+	with most nodes has 2577 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 129.49,
+	and the node degree mode is 3. The top 5 most central nodes are 1261545.MBE-HAL_0558
+	(degree 738), 1261545.MBE-HAL_1208 (degree 674), 1261545.MBE-HAL_1575 (degree
+	666), 1261545.MBE-HAL_0465 (degree 661) and 1261545.MBE-HAL_1874 (degree
 	643).
 	
 

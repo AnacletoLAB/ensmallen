@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:53.475262
 
-The undirected graph Vibrio cyclitrophicus has 4353 nodes and 567829 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05995 and
-has 30 connected components, where the component with most nodes has 4282 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 260.89, and the node degree mode is 1. The top 5 most central
-nodes are 1136163.M565_ctg1P0913 (degree 1593), 1136163.M565_ctg1P0140 (degree 1552),
-1136163.M565_ctg1P1678 (degree 1460), 1136163.M565_ctg4P391 (degree 1455) and 1136163.M565_ctg1P1921
+The undirected graph Vibrio cyclitrophicus has 4353 nodes and 567829 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05995 and has 30 connected components, where the component with most
+nodes has 4282 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 260.89, and
+the node degree mode is 1. The top 5 most central nodes are 1136163.M565_ctg1P0913
+(degree 1593), 1136163.M565_ctg1P0140 (degree 1552), 1136163.M565_ctg1P1678
+(degree 1460), 1136163.M565_ctg4P391 (degree 1455) and 1136163.M565_ctg1P1921
 (degree 1433).
 
 
@@ -107,13 +108,14 @@ def VibrioCyclitrophicus(
 	
 	Datetime: 2021-02-02 22:56:53.475262
 	
-	The undirected graph Vibrio cyclitrophicus has 4353 nodes and 567829 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05995 and
-	has 30 connected components, where the component with most nodes has 4282 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 260.89, and the node degree mode is 1. The top 5 most central
-	nodes are 1136163.M565_ctg1P0913 (degree 1593), 1136163.M565_ctg1P0140 (degree 1552),
-	1136163.M565_ctg1P1678 (degree 1460), 1136163.M565_ctg4P391 (degree 1455) and 1136163.M565_ctg1P1921
+	The undirected graph Vibrio cyclitrophicus has 4353 nodes and 567829 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05995 and has 30 connected components, where the component with most
+	nodes has 4282 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 260.89, and
+	the node degree mode is 1. The top 5 most central nodes are 1136163.M565_ctg1P0913
+	(degree 1593), 1136163.M565_ctg1P0140 (degree 1552), 1136163.M565_ctg1P1678
+	(degree 1460), 1136163.M565_ctg4P391 (degree 1455) and 1136163.M565_ctg1P1921
 	(degree 1433).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:31.655522
 
-The undirected graph Rickettsia bellii OSU85389 has 1440 nodes and 68909 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06651
-and has 28 connected components, where the component with most nodes has 1375 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 67, the mean node degree is 95.71, and the node degree mode is 1. The top 5 most
-central nodes are 391896.A1I_01235 (degree 549), 391896.A1I_06065 (degree 549), 391896.A1I_00915
-(degree 475), 391896.A1I_01755 (degree 462) and 391896.A1I_04380 (degree 459).
+The undirected graph Rickettsia bellii OSU85389 has 1440 nodes and 68909
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06651 and has 28 connected components, where the component
+with most nodes has 1375 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 67, the mean node degree is 95.71,
+and the node degree mode is 1. The top 5 most central nodes are 391896.A1I_01235
+(degree 549), 391896.A1I_06065 (degree 549), 391896.A1I_00915 (degree 475),
+391896.A1I_01755 (degree 462) and 391896.A1I_04380 (degree 459).
 
 
 References
@@ -106,13 +107,14 @@ def RickettsiaBelliiOsu85389(
 	
 	Datetime: 2021-02-02 20:40:31.655522
 	
-	The undirected graph Rickettsia bellii OSU85389 has 1440 nodes and 68909 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06651
-	and has 28 connected components, where the component with most nodes has 1375 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 67, the mean node degree is 95.71, and the node degree mode is 1. The top 5 most
-	central nodes are 391896.A1I_01235 (degree 549), 391896.A1I_06065 (degree 549), 391896.A1I_00915
-	(degree 475), 391896.A1I_01755 (degree 462) and 391896.A1I_04380 (degree 459).
+	The undirected graph Rickettsia bellii OSU85389 has 1440 nodes and 68909
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06651 and has 28 connected components, where the component
+	with most nodes has 1375 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 67, the mean node degree is 95.71,
+	and the node degree mode is 1. The top 5 most central nodes are 391896.A1I_01235
+	(degree 549), 391896.A1I_06065 (degree 549), 391896.A1I_00915 (degree 475),
+	391896.A1I_01755 (degree 462) and 391896.A1I_04380 (degree 459).
 	
 
 

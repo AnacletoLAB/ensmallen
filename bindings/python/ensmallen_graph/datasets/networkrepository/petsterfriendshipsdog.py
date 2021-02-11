@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-06 21:16:19.664939
 
-The undirected graph petster-friendships-dog has 426820 nodes, of which 4 are singletons
-(all have self-loops), and 8546581 unweighted edges, of which 3032 are self-loops.
-The graph is extremely sparse as it has a density of 0.00009 and has 128 connected
-components, where the component with most nodes has 426485 nodes and the component
-with the least nodes has a single node. The graph median node degree is 12, the mean
-node degree is 40.04, and the node degree mode is 1. The top 5 most central nodes
-are 89 (degree 46504), 99 (degree 45857), 102 (degree 45850), 101 (degree 45843)
-and 100 (degree 45797).
+The undirected graph petster-friendships-dog has 426820 nodes, of which
+4 are singletons (all have self-loops), and 8546581 unweighted edges, of
+which 3032 are self-loops. The graph is extremely sparse as it has a density
+of 0.00009 and has 128 connected components, where the component with most
+nodes has 426485 nodes and the component with the least nodes has a single
+node. The graph median node degree is 12, the mean node degree is 40.04,
+and the node degree mode is 1. The top 5 most central nodes are 89 (degree
+46504), 99 (degree 45857), 102 (degree 45850), 101 (degree 45843) and 100
+(degree 45797).
 
 
 References
@@ -104,14 +105,15 @@ def PetsterFriendshipsDog(
 	
 	Datetime: 2021-02-06 21:16:19.664939
 	
-	The undirected graph petster-friendships-dog has 426820 nodes, of which 4 are singletons
-	(all have self-loops), and 8546581 unweighted edges, of which 3032 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00009 and has 128 connected
-	components, where the component with most nodes has 426485 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 12, the mean
-	node degree is 40.04, and the node degree mode is 1. The top 5 most central nodes
-	are 89 (degree 46504), 99 (degree 45857), 102 (degree 45850), 101 (degree 45843)
-	and 100 (degree 45797).
+	The undirected graph petster-friendships-dog has 426820 nodes, of which
+	4 are singletons (all have self-loops), and 8546581 unweighted edges, of
+	which 3032 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00009 and has 128 connected components, where the component with most
+	nodes has 426485 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 12, the mean node degree is 40.04,
+	and the node degree mode is 1. The top 5 most central nodes are 89 (degree
+	46504), 99 (degree 45857), 102 (degree 45850), 101 (degree 45843) and 100
+	(degree 45797).
 	
 
 

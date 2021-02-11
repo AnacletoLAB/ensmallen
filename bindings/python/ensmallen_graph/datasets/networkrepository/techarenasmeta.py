@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:46:51.898176
 
-The undirected graph tech-arenas-meta has 453 nodes and 2040 unweighted edges, of
-which 15 are self-loops. The graph is dense as it has a density of 0.01981 and is
-connected, as it has a single component. The graph median node degree is 5, the mean
-node degree is 8.97, and the node degree mode is 3. The top 5 most central nodes
-are 15 (degree 238), 2 (degree 124), 5 (degree 109), 97 (degree 105) and 9 (degree
-75).
+The undirected graph tech-arenas-meta has 453 nodes and 2040 unweighted
+edges, of which 15 are self-loops. The graph is dense as it has a density
+of 0.01981 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 8.97, and the node degree mode
+is 3. The top 5 most central nodes are 15 (degree 238), 2 (degree 124),
+5 (degree 109), 97 (degree 105) and 9 (degree 75).
 
 
 References
@@ -102,12 +102,12 @@ def TechArenasMeta(
 	
 	Datetime: 2021-02-06 08:46:51.898176
 	
-	The undirected graph tech-arenas-meta has 453 nodes and 2040 unweighted edges, of
-	which 15 are self-loops. The graph is dense as it has a density of 0.01981 and is
-	connected, as it has a single component. The graph median node degree is 5, the mean
-	node degree is 8.97, and the node degree mode is 3. The top 5 most central nodes
-	are 15 (degree 238), 2 (degree 124), 5 (degree 109), 97 (degree 105) and 9 (degree
-	75).
+	The undirected graph tech-arenas-meta has 453 nodes and 2040 unweighted
+	edges, of which 15 are self-loops. The graph is dense as it has a density
+	of 0.01981 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 8.97, and the node degree mode
+	is 3. The top 5 most central nodes are 15 (degree 238), 2 (degree 124),
+	5 (degree 109), 97 (degree 105) and 9 (degree 75).
 	
 
 

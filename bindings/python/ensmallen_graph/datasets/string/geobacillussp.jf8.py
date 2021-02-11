@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:02:48.729727
 
-The undirected graph Geobacillus sp. JF8 has 3525 nodes and 347791 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05600 and
-has 10 connected components, where the component with most nodes has 3503 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 197.33, and the node degree mode is 2. The top 5 most central
-nodes are 1345697.M493_14160 (degree 1354), 1345697.M493_01640 (degree 1112), 1345697.M493_00275
-(degree 1087), 1345697.M493_12990 (degree 1032) and 1345697.M493_07290 (degree 984).
+The undirected graph Geobacillus sp. JF8 has 3525 nodes and 347791 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05600 and has 10 connected components, where the component with most
+nodes has 3503 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 197.33, and
+the node degree mode is 2. The top 5 most central nodes are 1345697.M493_14160
+(degree 1354), 1345697.M493_01640 (degree 1112), 1345697.M493_00275 (degree
+1087), 1345697.M493_12990 (degree 1032) and 1345697.M493_07290 (degree
+984).
 
 
 References
@@ -106,13 +108,15 @@ def GeobacillusSp.Jf8(
 	
 	Datetime: 2021-02-03 22:02:48.729727
 	
-	The undirected graph Geobacillus sp. JF8 has 3525 nodes and 347791 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05600 and
-	has 10 connected components, where the component with most nodes has 3503 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 197.33, and the node degree mode is 2. The top 5 most central
-	nodes are 1345697.M493_14160 (degree 1354), 1345697.M493_01640 (degree 1112), 1345697.M493_00275
-	(degree 1087), 1345697.M493_12990 (degree 1032) and 1345697.M493_07290 (degree 984).
+	The undirected graph Geobacillus sp. JF8 has 3525 nodes and 347791 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05600 and has 10 connected components, where the component with most
+	nodes has 3503 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 197.33, and
+	the node degree mode is 2. The top 5 most central nodes are 1345697.M493_14160
+	(degree 1354), 1345697.M493_01640 (degree 1112), 1345697.M493_00275 (degree
+	1087), 1345697.M493_12990 (degree 1032) and 1345697.M493_07290 (degree
+	984).
 	
 
 

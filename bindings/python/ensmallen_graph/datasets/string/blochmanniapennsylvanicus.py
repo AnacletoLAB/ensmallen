@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:33.537815
 
-The undirected graph Blochmannia pennsylvanicus has 609 nodes and 33512 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.18101 and is connected, as it has a single component. The graph median node
-degree is 99, the mean node degree is 110.06, and the node degree mode is 81. The
-top 5 most central nodes are 291272.BPEN_645 (degree 374), 291272.BPEN_118 (degree
-333), 291272.BPEN_546 (degree 333), 291272.BPEN_367 (degree 317) and 291272.BPEN_547
-(degree 312).
+The undirected graph Blochmannia pennsylvanicus has 609 nodes and 33512
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.18101 and is connected, as it has a single component.
+The graph median node degree is 99, the mean node degree is 110.06, and
+the node degree mode is 81. The top 5 most central nodes are 291272.BPEN_645
+(degree 374), 291272.BPEN_118 (degree 333), 291272.BPEN_546 (degree 333),
+291272.BPEN_367 (degree 317) and 291272.BPEN_547 (degree 312).
 
 
 References
@@ -106,13 +106,13 @@ def BlochmanniaPennsylvanicus(
 	
 	Datetime: 2021-02-02 20:20:33.537815
 	
-	The undirected graph Blochmannia pennsylvanicus has 609 nodes and 33512 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.18101 and is connected, as it has a single component. The graph median node
-	degree is 99, the mean node degree is 110.06, and the node degree mode is 81. The
-	top 5 most central nodes are 291272.BPEN_645 (degree 374), 291272.BPEN_118 (degree
-	333), 291272.BPEN_546 (degree 333), 291272.BPEN_367 (degree 317) and 291272.BPEN_547
-	(degree 312).
+	The undirected graph Blochmannia pennsylvanicus has 609 nodes and 33512
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.18101 and is connected, as it has a single component.
+	The graph median node degree is 99, the mean node degree is 110.06, and
+	the node degree mode is 81. The top 5 most central nodes are 291272.BPEN_645
+	(degree 374), 291272.BPEN_118 (degree 333), 291272.BPEN_546 (degree 333),
+	291272.BPEN_367 (degree 317) and 291272.BPEN_547 (degree 312).
 	
 
 

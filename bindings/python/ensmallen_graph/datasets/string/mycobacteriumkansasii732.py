@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:43.069148
 
-The undirected graph Mycobacterium kansasii 732 has 7182 nodes and 936547 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03632
-and has 77 connected components, where the component with most nodes has 6973 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 260.80, and the node degree mode is 3. The top 5
-most central nodes are 1299327.I546_1844 (degree 2327), 1299327.I546_3522 (degree
-2199), 1299327.I546_0969 (degree 2130), 1299327.I546_6993 (degree 2064) and 1299327.I546_7080
-(degree 1954).
+The undirected graph Mycobacterium kansasii 732 has 7182 nodes and 936547
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03632 and has 77 connected components, where the component
+with most nodes has 6973 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 260.80,
+and the node degree mode is 3. The top 5 most central nodes are 1299327.I546_1844
+(degree 2327), 1299327.I546_3522 (degree 2199), 1299327.I546_0969 (degree
+2130), 1299327.I546_6993 (degree 2064) and 1299327.I546_7080 (degree 1954).
 
 
 References
@@ -107,14 +107,14 @@ def MycobacteriumKansasii732(
 	
 	Datetime: 2021-02-03 21:34:43.069148
 	
-	The undirected graph Mycobacterium kansasii 732 has 7182 nodes and 936547 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03632
-	and has 77 connected components, where the component with most nodes has 6973 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 260.80, and the node degree mode is 3. The top 5
-	most central nodes are 1299327.I546_1844 (degree 2327), 1299327.I546_3522 (degree
-	2199), 1299327.I546_0969 (degree 2130), 1299327.I546_6993 (degree 2064) and 1299327.I546_7080
-	(degree 1954).
+	The undirected graph Mycobacterium kansasii 732 has 7182 nodes and 936547
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03632 and has 77 connected components, where the component
+	with most nodes has 6973 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 260.80,
+	and the node degree mode is 3. The top 5 most central nodes are 1299327.I546_1844
+	(degree 2327), 1299327.I546_3522 (degree 2199), 1299327.I546_0969 (degree
+	2130), 1299327.I546_6993 (degree 2064) and 1299327.I546_7080 (degree 1954).
 	
 
 

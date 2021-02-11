@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:31.334227
 
-The undirected graph Bacteroides coprosuis has 2365 nodes and 166899 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05970 and
-has 25 connected components, where the component with most nodes has 2299 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 141.14, and the node degree mode is 2. The top 5 most central
-nodes are 679937.Bcop_0201 (degree 903), 679937.Bcop_0354 (degree 901), 679937.Bcop_0980
-(degree 754), 679937.Bcop_1264 (degree 743) and 679937.Bcop_2386 (degree 742).
+The undirected graph Bacteroides coprosuis has 2365 nodes and 166899 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05970 and has 25 connected components, where the component with most
+nodes has 2299 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 141.14, and
+the node degree mode is 2. The top 5 most central nodes are 679937.Bcop_0201
+(degree 903), 679937.Bcop_0354 (degree 901), 679937.Bcop_0980 (degree 754),
+679937.Bcop_1264 (degree 743) and 679937.Bcop_2386 (degree 742).
 
 
 References
@@ -106,13 +107,14 @@ def BacteroidesCoprosuis(
 	
 	Datetime: 2021-02-02 21:30:31.334227
 	
-	The undirected graph Bacteroides coprosuis has 2365 nodes and 166899 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05970 and
-	has 25 connected components, where the component with most nodes has 2299 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 141.14, and the node degree mode is 2. The top 5 most central
-	nodes are 679937.Bcop_0201 (degree 903), 679937.Bcop_0354 (degree 901), 679937.Bcop_0980
-	(degree 754), 679937.Bcop_1264 (degree 743) and 679937.Bcop_2386 (degree 742).
+	The undirected graph Bacteroides coprosuis has 2365 nodes and 166899 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05970 and has 25 connected components, where the component with most
+	nodes has 2299 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 141.14, and
+	the node degree mode is 2. The top 5 most central nodes are 679937.Bcop_0201
+	(degree 903), 679937.Bcop_0354 (degree 901), 679937.Bcop_0980 (degree 754),
+	679937.Bcop_1264 (degree 743) and 679937.Bcop_2386 (degree 742).
 	
 
 

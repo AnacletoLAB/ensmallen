@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:53.469999
 
-The undirected graph socfb-UCSB37 has 14917 nodes and 482215 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00433 and
-is connected, as it has a single component. The graph median node degree is 48, the
-mean node degree is 64.65, and the node degree mode is 1. The top 5 most central
-nodes are 5159 (degree 810), 9409 (degree 616), 3331 (degree 580), 8775 (degree 491)
-and 6764 (degree 482).
+The undirected graph socfb-UCSB37 has 14917 nodes and 482215 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00433 and is connected, as it has a single component. The graph median
+node degree is 48, the mean node degree is 64.65, and the node degree mode
+is 1. The top 5 most central nodes are 5159 (degree 810), 9409 (degree
+616), 3331 (degree 580), 8775 (degree 491) and 6764 (degree 482).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbUcsb37(
 	
 	Datetime: 2021-02-06 11:50:53.469999
 	
-	The undirected graph socfb-UCSB37 has 14917 nodes and 482215 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00433 and
-	is connected, as it has a single component. The graph median node degree is 48, the
-	mean node degree is 64.65, and the node degree mode is 1. The top 5 most central
-	nodes are 5159 (degree 810), 9409 (degree 616), 3331 (degree 580), 8775 (degree 491)
-	and 6764 (degree 482).
+	The undirected graph socfb-UCSB37 has 14917 nodes and 482215 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00433 and is connected, as it has a single component. The graph median
+	node degree is 48, the mean node degree is 64.65, and the node degree mode
+	is 1. The top 5 most central nodes are 5159 (degree 810), 9409 (degree
+	616), 3331 (degree 580), 8775 (degree 491) and 6764 (degree 482).
 	
 
 

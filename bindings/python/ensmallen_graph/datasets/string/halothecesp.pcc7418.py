@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:43.302280
 
-The undirected graph Halothece sp. PCC7418 has 3694 nodes and 408021 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05982 and
-has 4 connected components, where the component with most nodes has 3687 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 220.91, and the node degree mode is 3. The top 5 most central
-nodes are 65093.PCC7418_2951 (degree 1687), 65093.PCC7418_1045 (degree 1425), 65093.PCC7418_1732
-(degree 1351), 65093.PCC7418_3687 (degree 1306) and 65093.PCC7418_0566 (degree 1095).
+The undirected graph Halothece sp. PCC7418 has 3694 nodes and 408021 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05982 and has 4 connected components, where the component with most
+nodes has 3687 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 220.91, and
+the node degree mode is 3. The top 5 most central nodes are 65093.PCC7418_2951
+(degree 1687), 65093.PCC7418_1045 (degree 1425), 65093.PCC7418_1732 (degree
+1351), 65093.PCC7418_3687 (degree 1306) and 65093.PCC7418_0566 (degree
+1095).
 
 
 References
@@ -106,13 +108,15 @@ def HalotheceSp.Pcc7418(
 	
 	Datetime: 2021-02-02 18:24:43.302280
 	
-	The undirected graph Halothece sp. PCC7418 has 3694 nodes and 408021 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05982 and
-	has 4 connected components, where the component with most nodes has 3687 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 220.91, and the node degree mode is 3. The top 5 most central
-	nodes are 65093.PCC7418_2951 (degree 1687), 65093.PCC7418_1045 (degree 1425), 65093.PCC7418_1732
-	(degree 1351), 65093.PCC7418_3687 (degree 1306) and 65093.PCC7418_0566 (degree 1095).
+	The undirected graph Halothece sp. PCC7418 has 3694 nodes and 408021 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05982 and has 4 connected components, where the component with most
+	nodes has 3687 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 220.91, and
+	the node degree mode is 3. The top 5 most central nodes are 65093.PCC7418_2951
+	(degree 1687), 65093.PCC7418_1045 (degree 1425), 65093.PCC7418_1732 (degree
+	1351), 65093.PCC7418_3687 (degree 1306) and 65093.PCC7418_0566 (degree
+	1095).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:27.153638
 
-The undirected graph Austwickia chelonae has 3018 nodes and 292159 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06417 and
-has 14 connected components, where the component with most nodes has 2981 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 193.61, and the node degree mode is 1. The top 5 most central
-nodes are 1184607.AUCHE_05_01380 (degree 1150), 1184607.AUCHE_08_01160 (degree 972),
-1184607.AUCHE_17_01360 (degree 941), 1184607.AUCHE_05_01780 (degree 936) and 1184607.AUCHE_03_00900
+The undirected graph Austwickia chelonae has 3018 nodes and 292159 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06417 and has 14 connected components, where the component with most
+nodes has 2981 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 193.61, and
+the node degree mode is 1. The top 5 most central nodes are 1184607.AUCHE_05_01380
+(degree 1150), 1184607.AUCHE_08_01160 (degree 972), 1184607.AUCHE_17_01360
+(degree 941), 1184607.AUCHE_05_01780 (degree 936) and 1184607.AUCHE_03_00900
 (degree 921).
 
 
@@ -107,13 +108,14 @@ def AustwickiaChelonae(
 	
 	Datetime: 2021-02-02 23:10:27.153638
 	
-	The undirected graph Austwickia chelonae has 3018 nodes and 292159 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06417 and
-	has 14 connected components, where the component with most nodes has 2981 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 193.61, and the node degree mode is 1. The top 5 most central
-	nodes are 1184607.AUCHE_05_01380 (degree 1150), 1184607.AUCHE_08_01160 (degree 972),
-	1184607.AUCHE_17_01360 (degree 941), 1184607.AUCHE_05_01780 (degree 936) and 1184607.AUCHE_03_00900
+	The undirected graph Austwickia chelonae has 3018 nodes and 292159 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06417 and has 14 connected components, where the component with most
+	nodes has 2981 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 193.61, and
+	the node degree mode is 1. The top 5 most central nodes are 1184607.AUCHE_05_01380
+	(degree 1150), 1184607.AUCHE_08_01160 (degree 972), 1184607.AUCHE_17_01360
+	(degree 941), 1184607.AUCHE_05_01780 (degree 936) and 1184607.AUCHE_03_00900
 	(degree 921).
 	
 

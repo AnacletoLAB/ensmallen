@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:55.764581
 
-The undirected graph Novosphingobium sp. PP1Y has 4387 nodes and 361769 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03760
-and has 14 connected components, where the component with most nodes has 4361 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 164.93, and the node degree mode is 1. The top 5
-most central nodes are 702113.PP1Y_Mpl2559 (degree 2123), 702113.PP1Y_AT4126 (degree
-1518), 702113.PP1Y_AT22962 (degree 1390), 702113.PP1Y_AT6345 (degree 1374) and 702113.PP1Y_AT9942
-(degree 1339).
+The undirected graph Novosphingobium sp. PP1Y has 4387 nodes and 361769
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03760 and has 14 connected components, where the component
+with most nodes has 4361 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 164.93,
+and the node degree mode is 1. The top 5 most central nodes are 702113.PP1Y_Mpl2559
+(degree 2123), 702113.PP1Y_AT4126 (degree 1518), 702113.PP1Y_AT22962 (degree
+1390), 702113.PP1Y_AT6345 (degree 1374) and 702113.PP1Y_AT9942 (degree
+1339).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumSp.Pp1y(
 	
 	Datetime: 2021-02-02 21:33:55.764581
 	
-	The undirected graph Novosphingobium sp. PP1Y has 4387 nodes and 361769 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03760
-	and has 14 connected components, where the component with most nodes has 4361 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 164.93, and the node degree mode is 1. The top 5
-	most central nodes are 702113.PP1Y_Mpl2559 (degree 2123), 702113.PP1Y_AT4126 (degree
-	1518), 702113.PP1Y_AT22962 (degree 1390), 702113.PP1Y_AT6345 (degree 1374) and 702113.PP1Y_AT9942
-	(degree 1339).
+	The undirected graph Novosphingobium sp. PP1Y has 4387 nodes and 361769
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03760 and has 14 connected components, where the component
+	with most nodes has 4361 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 164.93,
+	and the node degree mode is 1. The top 5 most central nodes are 702113.PP1Y_Mpl2559
+	(degree 2123), 702113.PP1Y_AT4126 (degree 1518), 702113.PP1Y_AT22962 (degree
+	1390), 702113.PP1Y_AT6345 (degree 1374) and 702113.PP1Y_AT9942 (degree
+	1339).
 	
 
 

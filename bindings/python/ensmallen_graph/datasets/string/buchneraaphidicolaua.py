@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:41.384236
 
-The undirected graph Buchnera aphidicola Ua has 528 nodes and 27938 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.20081
-and is connected, as it has a single component. The graph median node degree is 96,
-the mean node degree is 105.83, and the node degree mode is 70. The top 5 most central
-nodes are 1005057.BUAMB_119 (degree 314), 1005057.BUAMB_141 (degree 257), 1005057.BUAMB_019
-(degree 255), 1005057.BUAMB_033 (degree 252) and 1005057.BUAMB_448 (degree 251).
+The undirected graph Buchnera aphidicola Ua has 528 nodes and 27938 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.20081 and is connected, as it has a single component. The
+graph median node degree is 96, the mean node degree is 105.83, and the
+node degree mode is 70. The top 5 most central nodes are 1005057.BUAMB_119
+(degree 314), 1005057.BUAMB_141 (degree 257), 1005057.BUAMB_019 (degree
+255), 1005057.BUAMB_033 (degree 252) and 1005057.BUAMB_448 (degree 251).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaUa(
 	
 	Datetime: 2021-02-02 22:07:41.384236
 	
-	The undirected graph Buchnera aphidicola Ua has 528 nodes and 27938 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.20081
-	and is connected, as it has a single component. The graph median node degree is 96,
-	the mean node degree is 105.83, and the node degree mode is 70. The top 5 most central
-	nodes are 1005057.BUAMB_119 (degree 314), 1005057.BUAMB_141 (degree 257), 1005057.BUAMB_019
-	(degree 255), 1005057.BUAMB_033 (degree 252) and 1005057.BUAMB_448 (degree 251).
+	The undirected graph Buchnera aphidicola Ua has 528 nodes and 27938 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.20081 and is connected, as it has a single component. The
+	graph median node degree is 96, the mean node degree is 105.83, and the
+	node degree mode is 70. The top 5 most central nodes are 1005057.BUAMB_119
+	(degree 314), 1005057.BUAMB_141 (degree 257), 1005057.BUAMB_019 (degree
+	255), 1005057.BUAMB_033 (degree 252) and 1005057.BUAMB_448 (degree 251).
 	
 
 

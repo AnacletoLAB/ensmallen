@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:50.821966
 
-The undirected graph Pediculus humanus has 8733 nodes and 887434 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02327 and
-has 7 connected components, where the component with most nodes has 8721 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 203.24, and the node degree mode is 1. The top 5 most central
-nodes are 121225.PHUM346120-PA (degree 2675), 121225.PHUM319520-PA (degree 1723),
-121225.PHUM047670-PA (degree 1687), 121225.PHUM617680-PA (degree 1637) and 121225.PHUM128020-PA
+The undirected graph Pediculus humanus has 8733 nodes and 887434 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02327 and has 7 connected components, where the component with most
+nodes has 8721 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 203.24, and
+the node degree mode is 1. The top 5 most central nodes are 121225.PHUM346120-PA
+(degree 2675), 121225.PHUM319520-PA (degree 1723), 121225.PHUM047670-PA
+(degree 1687), 121225.PHUM617680-PA (degree 1637) and 121225.PHUM128020-PA
 (degree 1579).
 
 
@@ -107,13 +108,14 @@ def PediculusHumanus(
 	
 	Datetime: 2021-02-02 19:48:50.821966
 	
-	The undirected graph Pediculus humanus has 8733 nodes and 887434 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02327 and
-	has 7 connected components, where the component with most nodes has 8721 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 203.24, and the node degree mode is 1. The top 5 most central
-	nodes are 121225.PHUM346120-PA (degree 2675), 121225.PHUM319520-PA (degree 1723),
-	121225.PHUM047670-PA (degree 1687), 121225.PHUM617680-PA (degree 1637) and 121225.PHUM128020-PA
+	The undirected graph Pediculus humanus has 8733 nodes and 887434 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02327 and has 7 connected components, where the component with most
+	nodes has 8721 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 203.24, and
+	the node degree mode is 1. The top 5 most central nodes are 121225.PHUM346120-PA
+	(degree 2675), 121225.PHUM319520-PA (degree 1723), 121225.PHUM047670-PA
+	(degree 1687), 121225.PHUM617680-PA (degree 1637) and 121225.PHUM128020-PA
 	(degree 1579).
 	
 

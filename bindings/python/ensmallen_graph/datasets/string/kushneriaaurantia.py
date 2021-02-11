@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:01.471763
 
-The undirected graph Kushneria aurantia has 3244 nodes and 323691 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06154 and
-has 13 connected components, where the component with most nodes has 3212 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 199.56, and the node degree mode is 2. The top 5 most central
-nodes are 1122139.KB907873_gene2714 (degree 1494), 1122139.KB907868_gene1223 (degree
-1293), 1122139.KB907881_gene31 (degree 1094), 1122139.KB907871_gene2320 (degree 1093)
-and 1122139.KB907891_gene3260 (degree 1057).
+The undirected graph Kushneria aurantia has 3244 nodes and 323691 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06154 and has 13 connected components, where the component with most
+nodes has 3212 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 199.56, and
+the node degree mode is 2. The top 5 most central nodes are 1122139.KB907873_gene2714
+(degree 1494), 1122139.KB907868_gene1223 (degree 1293), 1122139.KB907881_gene31
+(degree 1094), 1122139.KB907871_gene2320 (degree 1093) and 1122139.KB907891_gene3260
+(degree 1057).
 
 
 References
@@ -107,14 +108,15 @@ def KushneriaAurantia(
 	
 	Datetime: 2021-02-02 22:41:01.471763
 	
-	The undirected graph Kushneria aurantia has 3244 nodes and 323691 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06154 and
-	has 13 connected components, where the component with most nodes has 3212 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 199.56, and the node degree mode is 2. The top 5 most central
-	nodes are 1122139.KB907873_gene2714 (degree 1494), 1122139.KB907868_gene1223 (degree
-	1293), 1122139.KB907881_gene31 (degree 1094), 1122139.KB907871_gene2320 (degree 1093)
-	and 1122139.KB907891_gene3260 (degree 1057).
+	The undirected graph Kushneria aurantia has 3244 nodes and 323691 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06154 and has 13 connected components, where the component with most
+	nodes has 3212 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 199.56, and
+	the node degree mode is 2. The top 5 most central nodes are 1122139.KB907873_gene2714
+	(degree 1494), 1122139.KB907868_gene1223 (degree 1293), 1122139.KB907881_gene31
+	(degree 1094), 1122139.KB907871_gene2320 (degree 1093) and 1122139.KB907891_gene3260
+	(degree 1057).
 	
 
 

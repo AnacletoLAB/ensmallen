@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:37.159630
 
-The undirected graph Actinomyces dentalis has 2641 nodes and 203845 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05847 and
-has 27 connected components, where the component with most nodes has 2569 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 154.37, and the node degree mode is 1. The top 5 most central
-nodes are 1120941.AUBL01000036_gene2237 (degree 1016), 1120941.AUBL01000001_gene1425
-(degree 991), 1120941.AUBL01000039_gene1605 (degree 914), 1120941.AUBL01000004_gene1690
-(degree 910) and 1120941.AUBL01000052_gene1027 (degree 857).
+The undirected graph Actinomyces dentalis has 2641 nodes and 203845 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05847 and has 27 connected components, where the component with most
+nodes has 2569 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 154.37, and
+the node degree mode is 1. The top 5 most central nodes are 1120941.AUBL01000036_gene2237
+(degree 1016), 1120941.AUBL01000001_gene1425 (degree 991), 1120941.AUBL01000039_gene1605
+(degree 914), 1120941.AUBL01000004_gene1690 (degree 910) and 1120941.AUBL01000052_gene1027
+(degree 857).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesDentalis(
 	
 	Datetime: 2021-02-02 22:29:37.159630
 	
-	The undirected graph Actinomyces dentalis has 2641 nodes and 203845 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05847 and
-	has 27 connected components, where the component with most nodes has 2569 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 154.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1120941.AUBL01000036_gene2237 (degree 1016), 1120941.AUBL01000001_gene1425
-	(degree 991), 1120941.AUBL01000039_gene1605 (degree 914), 1120941.AUBL01000004_gene1690
-	(degree 910) and 1120941.AUBL01000052_gene1027 (degree 857).
+	The undirected graph Actinomyces dentalis has 2641 nodes and 203845 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05847 and has 27 connected components, where the component with most
+	nodes has 2569 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 154.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1120941.AUBL01000036_gene2237
+	(degree 1016), 1120941.AUBL01000001_gene1425 (degree 991), 1120941.AUBL01000039_gene1605
+	(degree 914), 1120941.AUBL01000004_gene1690 (degree 910) and 1120941.AUBL01000052_gene1027
+	(degree 857).
 	
 
 

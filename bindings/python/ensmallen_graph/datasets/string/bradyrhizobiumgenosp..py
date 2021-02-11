@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:26.728227
 
-The undirected graph Bradyrhizobium genosp. has 7974 nodes and 1179613 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03711 and
-has 61 connected components, where the component with most nodes has 7827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 238,
-the mean node degree is 295.86, and the node degree mode is 2. The top 5 most central
-nodes are 936455.KI421499_gene4724 (degree 3955), 936455.KI421499_gene6100 (degree
-2805), 936455.KI421499_gene284 (degree 2544), 936455.KI421499_gene4639 (degree 2510)
-and 936455.KI421499_gene7494 (degree 2437).
+The undirected graph Bradyrhizobium genosp. has 7974 nodes and 1179613
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03711 and has 61 connected components, where the component
+with most nodes has 7827 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 238, the mean node degree is 295.86,
+and the node degree mode is 2. The top 5 most central nodes are 936455.KI421499_gene4724
+(degree 3955), 936455.KI421499_gene6100 (degree 2805), 936455.KI421499_gene284
+(degree 2544), 936455.KI421499_gene4639 (degree 2510) and 936455.KI421499_gene7494
+(degree 2437).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumGenosp.(
 	
 	Datetime: 2021-02-02 22:00:26.728227
 	
-	The undirected graph Bradyrhizobium genosp. has 7974 nodes and 1179613 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03711 and
-	has 61 connected components, where the component with most nodes has 7827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 238,
-	the mean node degree is 295.86, and the node degree mode is 2. The top 5 most central
-	nodes are 936455.KI421499_gene4724 (degree 3955), 936455.KI421499_gene6100 (degree
-	2805), 936455.KI421499_gene284 (degree 2544), 936455.KI421499_gene4639 (degree 2510)
-	and 936455.KI421499_gene7494 (degree 2437).
+	The undirected graph Bradyrhizobium genosp. has 7974 nodes and 1179613
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03711 and has 61 connected components, where the component
+	with most nodes has 7827 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 238, the mean node degree is 295.86,
+	and the node degree mode is 2. The top 5 most central nodes are 936455.KI421499_gene4724
+	(degree 3955), 936455.KI421499_gene6100 (degree 2805), 936455.KI421499_gene284
+	(degree 2544), 936455.KI421499_gene4639 (degree 2510) and 936455.KI421499_gene7494
+	(degree 2437).
 	
 
 

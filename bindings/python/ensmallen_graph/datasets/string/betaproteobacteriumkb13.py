@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:37.930661
 
-The undirected graph beta proteobacterium KB13 has 1305 nodes and 74417 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08746
-and has 8 connected components, where the component with most nodes has 1284 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 114.05, and the node degree mode is 8. The top 5 most
-central nodes are 314607.KB13_1229 (degree 653), 314607.KB13_378 (degree 563), 314607.KB13_426
-(degree 528), 314607.KB13_760 (degree 482) and 314607.KB13_11 (degree 447).
+The undirected graph beta proteobacterium KB13 has 1305 nodes and 74417
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08746 and has 8 connected components, where the component
+with most nodes has 1284 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 114.05,
+and the node degree mode is 8. The top 5 most central nodes are 314607.KB13_1229
+(degree 653), 314607.KB13_378 (degree 563), 314607.KB13_426 (degree 528),
+314607.KB13_760 (degree 482) and 314607.KB13_11 (degree 447).
 
 
 References
@@ -106,13 +107,14 @@ def BetaProteobacteriumKb13(
 	
 	Datetime: 2021-02-02 20:25:37.930661
 	
-	The undirected graph beta proteobacterium KB13 has 1305 nodes and 74417 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08746
-	and has 8 connected components, where the component with most nodes has 1284 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 114.05, and the node degree mode is 8. The top 5 most
-	central nodes are 314607.KB13_1229 (degree 653), 314607.KB13_378 (degree 563), 314607.KB13_426
-	(degree 528), 314607.KB13_760 (degree 482) and 314607.KB13_11 (degree 447).
+	The undirected graph beta proteobacterium KB13 has 1305 nodes and 74417
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08746 and has 8 connected components, where the component
+	with most nodes has 1284 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 114.05,
+	and the node degree mode is 8. The top 5 most central nodes are 314607.KB13_1229
+	(degree 653), 314607.KB13_378 (degree 563), 314607.KB13_426 (degree 528),
+	314607.KB13_760 (degree 482) and 314607.KB13_11 (degree 447).
 	
 
 

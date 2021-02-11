@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:58.218495
 
-The undirected graph Clostridium sp. L250 has 2907 nodes and 156468 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03704 and
-has 12 connected components, where the component with most nodes has 2877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 80,
-the mean node degree is 107.65, and the node degree mode is 5. The top 5 most central
-nodes are 411489.CLOL250_00222 (degree 950), 411489.CLOL250_01453 (degree 862), 411489.CLOL250_00148
-(degree 700), 411489.CLOL250_00111 (degree 659) and 411489.CLOL250_02834 (degree
+The undirected graph Clostridium sp. L250 has 2907 nodes and 156468 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03704 and has 12 connected components, where the component with most
+nodes has 2877 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 80, the mean node degree is 107.65, and
+the node degree mode is 5. The top 5 most central nodes are 411489.CLOL250_00222
+(degree 950), 411489.CLOL250_01453 (degree 862), 411489.CLOL250_00148 (degree
+700), 411489.CLOL250_00111 (degree 659) and 411489.CLOL250_02834 (degree
 655).
 
 
@@ -107,13 +108,14 @@ def ClostridiumSp.L250(
 	
 	Datetime: 2021-02-02 20:45:58.218495
 	
-	The undirected graph Clostridium sp. L250 has 2907 nodes and 156468 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03704 and
-	has 12 connected components, where the component with most nodes has 2877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 80,
-	the mean node degree is 107.65, and the node degree mode is 5. The top 5 most central
-	nodes are 411489.CLOL250_00222 (degree 950), 411489.CLOL250_01453 (degree 862), 411489.CLOL250_00148
-	(degree 700), 411489.CLOL250_00111 (degree 659) and 411489.CLOL250_02834 (degree
+	The undirected graph Clostridium sp. L250 has 2907 nodes and 156468 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03704 and has 12 connected components, where the component with most
+	nodes has 2877 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 80, the mean node degree is 107.65, and
+	the node degree mode is 5. The top 5 most central nodes are 411489.CLOL250_00222
+	(degree 950), 411489.CLOL250_01453 (degree 862), 411489.CLOL250_00148 (degree
+	700), 411489.CLOL250_00111 (degree 659) and 411489.CLOL250_02834 (degree
 	655).
 	
 

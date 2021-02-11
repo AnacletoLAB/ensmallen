@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:50.869563
 
-The undirected graph Leishmania infantum has 4355 nodes and 444994 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04694 and
-has 22 connected components, where the component with most nodes has 4302 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 204.36, and the node degree mode is 1. The top 5 most central
-nodes are 5671.XP_001466650.1 (degree 1512), 5671.XP_001463169.2 (degree 1505), 5671.XP_003392526.1
-(degree 1410), 5671.XP_001468582.1 (degree 1223) and 5671.XP_001470245.1 (degree
+The undirected graph Leishmania infantum has 4355 nodes and 444994 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04694 and has 22 connected components, where the component with most
+nodes has 4302 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 204.36, and
+the node degree mode is 1. The top 5 most central nodes are 5671.XP_001466650.1
+(degree 1512), 5671.XP_001463169.2 (degree 1505), 5671.XP_003392526.1 (degree
+1410), 5671.XP_001468582.1 (degree 1223) and 5671.XP_001470245.1 (degree
 1169).
 
 
@@ -107,13 +108,14 @@ def LeishmaniaInfantum(
 	
 	Datetime: 2021-02-02 17:14:50.869563
 	
-	The undirected graph Leishmania infantum has 4355 nodes and 444994 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04694 and
-	has 22 connected components, where the component with most nodes has 4302 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 204.36, and the node degree mode is 1. The top 5 most central
-	nodes are 5671.XP_001466650.1 (degree 1512), 5671.XP_001463169.2 (degree 1505), 5671.XP_003392526.1
-	(degree 1410), 5671.XP_001468582.1 (degree 1223) and 5671.XP_001470245.1 (degree
+	The undirected graph Leishmania infantum has 4355 nodes and 444994 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04694 and has 22 connected components, where the component with most
+	nodes has 4302 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 204.36, and
+	the node degree mode is 1. The top 5 most central nodes are 5671.XP_001466650.1
+	(degree 1512), 5671.XP_001463169.2 (degree 1505), 5671.XP_003392526.1 (degree
+	1410), 5671.XP_001468582.1 (degree 1223) and 5671.XP_001470245.1 (degree
 	1169).
 	
 

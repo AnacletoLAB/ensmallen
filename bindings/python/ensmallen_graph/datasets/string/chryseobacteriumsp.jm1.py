@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:18.528536
 
-The undirected graph Chryseobacterium sp. JM1 has 4320 nodes and 328469 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03521
-and has 26 connected components, where the component with most nodes has 4255 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 152.07, and the node degree mode is 2. The top 5
-most central nodes are 1233950.IW22_16980 (degree 1179), 1233950.IW22_01865 (degree
-1002), 1233950.IW22_21715 (degree 866), 1233950.IW22_08940 (degree 863) and 1233950.IW22_06710
-(degree 835).
+The undirected graph Chryseobacterium sp. JM1 has 4320 nodes and 328469
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03521 and has 26 connected components, where the component
+with most nodes has 4255 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 152.07,
+and the node degree mode is 2. The top 5 most central nodes are 1233950.IW22_16980
+(degree 1179), 1233950.IW22_01865 (degree 1002), 1233950.IW22_21715 (degree
+866), 1233950.IW22_08940 (degree 863) and 1233950.IW22_06710 (degree 835).
 
 
 References
@@ -107,14 +107,14 @@ def ChryseobacteriumSp.Jm1(
 	
 	Datetime: 2021-02-02 23:29:18.528536
 	
-	The undirected graph Chryseobacterium sp. JM1 has 4320 nodes and 328469 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03521
-	and has 26 connected components, where the component with most nodes has 4255 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 152.07, and the node degree mode is 2. The top 5
-	most central nodes are 1233950.IW22_16980 (degree 1179), 1233950.IW22_01865 (degree
-	1002), 1233950.IW22_21715 (degree 866), 1233950.IW22_08940 (degree 863) and 1233950.IW22_06710
-	(degree 835).
+	The undirected graph Chryseobacterium sp. JM1 has 4320 nodes and 328469
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03521 and has 26 connected components, where the component
+	with most nodes has 4255 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 152.07,
+	and the node degree mode is 2. The top 5 most central nodes are 1233950.IW22_16980
+	(degree 1179), 1233950.IW22_01865 (degree 1002), 1233950.IW22_21715 (degree
+	866), 1233950.IW22_08940 (degree 863) and 1233950.IW22_06710 (degree 835).
 	
 
 

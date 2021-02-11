@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:16.416439
 
-The undirected graph Borrelia valaisiana VS116 has 854 nodes and 61043 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.16759
-and has 3 connected components, where the component with most nodes has 849 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 142.96, and the node degree mode is 5. The top 5
-most central nodes are 445987.BVAVS116_0417 (degree 505), 445987.BVAVS116_0556 (degree
-487), 445987.BVAVS116_B0017 (degree 448), 445987.BVAVS116_0236 (degree 444) and 445987.BVAVS116_0597
-(degree 435).
+The undirected graph Borrelia valaisiana VS116 has 854 nodes and 61043
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.16759 and has 3 connected components, where the
+component with most nodes has 849 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+is 142.96, and the node degree mode is 5. The top 5 most central nodes
+are 445987.BVAVS116_0417 (degree 505), 445987.BVAVS116_0556 (degree 487),
+445987.BVAVS116_B0017 (degree 448), 445987.BVAVS116_0236 (degree 444) and
+445987.BVAVS116_0597 (degree 435).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaValaisianaVs116(
 	
 	Datetime: 2021-02-02 20:51:16.416439
 	
-	The undirected graph Borrelia valaisiana VS116 has 854 nodes and 61043 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.16759
-	and has 3 connected components, where the component with most nodes has 849 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 142.96, and the node degree mode is 5. The top 5
-	most central nodes are 445987.BVAVS116_0417 (degree 505), 445987.BVAVS116_0556 (degree
-	487), 445987.BVAVS116_B0017 (degree 448), 445987.BVAVS116_0236 (degree 444) and 445987.BVAVS116_0597
-	(degree 435).
+	The undirected graph Borrelia valaisiana VS116 has 854 nodes and 61043
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.16759 and has 3 connected components, where the
+	component with most nodes has 849 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 142, the mean node degree
+	is 142.96, and the node degree mode is 5. The top 5 most central nodes
+	are 445987.BVAVS116_0417 (degree 505), 445987.BVAVS116_0556 (degree 487),
+	445987.BVAVS116_B0017 (degree 448), 445987.BVAVS116_0236 (degree 444) and
+	445987.BVAVS116_0597 (degree 435).
 	
 
 

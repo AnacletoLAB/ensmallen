@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:25.079005
 
-The undirected graph Pseudoxanthomonas suwonensis 111 has 3051 nodes and 285684 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06140
-and has 8 connected components, where the component with most nodes has 3031 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 187.27, and the node degree mode is 4. The top 5
-most central nodes are 743721.Psesu_2805 (degree 1099), 743721.Psesu_2897 (degree
-1047), 743721.Psesu_0811 (degree 898), 743721.Psesu_1969 (degree 877) and 743721.Psesu_2862
-(degree 871).
+The undirected graph Pseudoxanthomonas suwonensis 111 has 3051 nodes and
+285684 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06140 and has 8 connected components, where the
+component with most nodes has 3031 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 165, the mean node degree
+is 187.27, and the node degree mode is 4. The top 5 most central nodes
+are 743721.Psesu_2805 (degree 1099), 743721.Psesu_2897 (degree 1047), 743721.Psesu_0811
+(degree 898), 743721.Psesu_1969 (degree 877) and 743721.Psesu_2862 (degree
+871).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoxanthomonasSuwonensis111(
 	
 	Datetime: 2021-02-02 21:38:25.079005
 	
-	The undirected graph Pseudoxanthomonas suwonensis 111 has 3051 nodes and 285684 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06140
-	and has 8 connected components, where the component with most nodes has 3031 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 187.27, and the node degree mode is 4. The top 5
-	most central nodes are 743721.Psesu_2805 (degree 1099), 743721.Psesu_2897 (degree
-	1047), 743721.Psesu_0811 (degree 898), 743721.Psesu_1969 (degree 877) and 743721.Psesu_2862
-	(degree 871).
+	The undirected graph Pseudoxanthomonas suwonensis 111 has 3051 nodes and
+	285684 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06140 and has 8 connected components, where the
+	component with most nodes has 3031 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 165, the mean node degree
+	is 187.27, and the node degree mode is 4. The top 5 most central nodes
+	are 743721.Psesu_2805 (degree 1099), 743721.Psesu_2897 (degree 1047), 743721.Psesu_0811
+	(degree 898), 743721.Psesu_1969 (degree 877) and 743721.Psesu_2862 (degree
+	871).
 	
 
 

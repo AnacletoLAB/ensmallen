@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:15.213066
 
-The undirected graph Marinospirillum minutulum has 2616 nodes and 306956 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08974
-and has 6 connected components, where the component with most nodes has 2604 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 234.68, and the node degree mode is 3. The top 5
-most central nodes are 1122212.AULO01000008_gene1365 (degree 1218), 1122212.AULO01000006_gene1609
-(degree 1074), 1122212.AULO01000006_gene1826 (degree 983), 1122212.AULO01000011_gene450
-(degree 978) and 1122212.AULO01000010_gene18 (degree 971).
+The undirected graph Marinospirillum minutulum has 2616 nodes and 306956
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08974 and has 6 connected components, where the component
+with most nodes has 2604 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 219, the mean node degree is 234.68,
+and the node degree mode is 3. The top 5 most central nodes are 1122212.AULO01000008_gene1365
+(degree 1218), 1122212.AULO01000006_gene1609 (degree 1074), 1122212.AULO01000006_gene1826
+(degree 983), 1122212.AULO01000011_gene450 (degree 978) and 1122212.AULO01000010_gene18
+(degree 971).
 
 
 References
@@ -107,14 +108,15 @@ def MarinospirillumMinutulum(
 	
 	Datetime: 2021-02-02 22:42:15.213066
 	
-	The undirected graph Marinospirillum minutulum has 2616 nodes and 306956 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08974
-	and has 6 connected components, where the component with most nodes has 2604 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 234.68, and the node degree mode is 3. The top 5
-	most central nodes are 1122212.AULO01000008_gene1365 (degree 1218), 1122212.AULO01000006_gene1609
-	(degree 1074), 1122212.AULO01000006_gene1826 (degree 983), 1122212.AULO01000011_gene450
-	(degree 978) and 1122212.AULO01000010_gene18 (degree 971).
+	The undirected graph Marinospirillum minutulum has 2616 nodes and 306956
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08974 and has 6 connected components, where the component
+	with most nodes has 2604 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 219, the mean node degree is 234.68,
+	and the node degree mode is 3. The top 5 most central nodes are 1122212.AULO01000008_gene1365
+	(degree 1218), 1122212.AULO01000006_gene1609 (degree 1074), 1122212.AULO01000006_gene1826
+	(degree 983), 1122212.AULO01000011_gene450 (degree 978) and 1122212.AULO01000010_gene18
+	(degree 971).
 	
 
 

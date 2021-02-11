@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:15.842537
 
-The undirected graph Desmospora sp. 8437 has 3992 nodes and 383611 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04816 and
-has 29 connected components, where the component with most nodes has 3928 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 192.19, and the node degree mode is 1. The top 5 most central
-nodes are 997346.HMPREF9374_3969 (degree 1450), 997346.HMPREF9374_2527 (degree 1198),
-997346.HMPREF9374_4026 (degree 1154), 997346.HMPREF9374_2505 (degree 1011) and 997346.HMPREF9374_1277
+The undirected graph Desmospora sp. 8437 has 3992 nodes and 383611 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04816 and has 29 connected components, where the component with most
+nodes has 3928 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 192.19, and
+the node degree mode is 1. The top 5 most central nodes are 997346.HMPREF9374_3969
+(degree 1450), 997346.HMPREF9374_2527 (degree 1198), 997346.HMPREF9374_4026
+(degree 1154), 997346.HMPREF9374_2505 (degree 1011) and 997346.HMPREF9374_1277
 (degree 989).
 
 
@@ -107,13 +108,14 @@ def DesmosporaSp.8437(
 	
 	Datetime: 2021-02-02 22:05:15.842537
 	
-	The undirected graph Desmospora sp. 8437 has 3992 nodes and 383611 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04816 and
-	has 29 connected components, where the component with most nodes has 3928 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 192.19, and the node degree mode is 1. The top 5 most central
-	nodes are 997346.HMPREF9374_3969 (degree 1450), 997346.HMPREF9374_2527 (degree 1198),
-	997346.HMPREF9374_4026 (degree 1154), 997346.HMPREF9374_2505 (degree 1011) and 997346.HMPREF9374_1277
+	The undirected graph Desmospora sp. 8437 has 3992 nodes and 383611 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04816 and has 29 connected components, where the component with most
+	nodes has 3928 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 192.19, and
+	the node degree mode is 1. The top 5 most central nodes are 997346.HMPREF9374_3969
+	(degree 1450), 997346.HMPREF9374_2527 (degree 1198), 997346.HMPREF9374_4026
+	(degree 1154), 997346.HMPREF9374_2505 (degree 1011) and 997346.HMPREF9374_1277
 	(degree 989).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:13:28.742431
 
-The undirected graph Halomonas salina has 2874 nodes and 255921 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06199 and
-has 7 connected components, where the component with most nodes has 2860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 178.09, and the node degree mode is 1. The top 5 most central
-nodes are 42565.FP66_02970 (degree 1248), 42565.FP66_09360 (degree 1149), 42565.FP66_14325
-(degree 944), 42565.FP66_13315 (degree 895) and 42565.FP66_11155 (degree 888).
+The undirected graph Halomonas salina has 2874 nodes and 255921 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06199 and has 7 connected components, where the component with most
+nodes has 2860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 178.09, and
+the node degree mode is 1. The top 5 most central nodes are 42565.FP66_02970
+(degree 1248), 42565.FP66_09360 (degree 1149), 42565.FP66_14325 (degree
+944), 42565.FP66_13315 (degree 895) and 42565.FP66_11155 (degree 888).
 
 
 References
@@ -106,13 +107,14 @@ def HalomonasSalina(
 	
 	Datetime: 2021-02-02 18:13:28.742431
 	
-	The undirected graph Halomonas salina has 2874 nodes and 255921 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06199 and
-	has 7 connected components, where the component with most nodes has 2860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 178.09, and the node degree mode is 1. The top 5 most central
-	nodes are 42565.FP66_02970 (degree 1248), 42565.FP66_09360 (degree 1149), 42565.FP66_14325
-	(degree 944), 42565.FP66_13315 (degree 895) and 42565.FP66_11155 (degree 888).
+	The undirected graph Halomonas salina has 2874 nodes and 255921 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06199 and has 7 connected components, where the component with most
+	nodes has 2860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 178.09, and
+	the node degree mode is 1. The top 5 most central nodes are 42565.FP66_02970
+	(degree 1248), 42565.FP66_09360 (degree 1149), 42565.FP66_14325 (degree
+	944), 42565.FP66_13315 (degree 895) and 42565.FP66_11155 (degree 888).
 	
 
 

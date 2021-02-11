@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:23.053225
 
-The undirected graph Holdemanella biformis has 2505 nodes and 272369 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08685 and
-has 16 connected components, where the component with most nodes has 2461 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 217.46, and the node degree mode is 4. The top 5 most central
-nodes are 518637.EUBIFOR_00178 (degree 1112), 518637.EUBIFOR_02186 (degree 1054),
-518637.EUBIFOR_02226 (degree 1050), 518637.EUBIFOR_00117 (degree 1032) and 518637.EUBIFOR_01657
+The undirected graph Holdemanella biformis has 2505 nodes and 272369 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08685 and has 16 connected components, where the component with most
+nodes has 2461 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 217.46, and
+the node degree mode is 4. The top 5 most central nodes are 518637.EUBIFOR_00178
+(degree 1112), 518637.EUBIFOR_02186 (degree 1054), 518637.EUBIFOR_02226
+(degree 1050), 518637.EUBIFOR_00117 (degree 1032) and 518637.EUBIFOR_01657
 (degree 996).
 
 
@@ -107,13 +108,14 @@ def HoldemanellaBiformis(
 	
 	Datetime: 2021-02-02 21:03:23.053225
 	
-	The undirected graph Holdemanella biformis has 2505 nodes and 272369 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08685 and
-	has 16 connected components, where the component with most nodes has 2461 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 217.46, and the node degree mode is 4. The top 5 most central
-	nodes are 518637.EUBIFOR_00178 (degree 1112), 518637.EUBIFOR_02186 (degree 1054),
-	518637.EUBIFOR_02226 (degree 1050), 518637.EUBIFOR_00117 (degree 1032) and 518637.EUBIFOR_01657
+	The undirected graph Holdemanella biformis has 2505 nodes and 272369 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08685 and has 16 connected components, where the component with most
+	nodes has 2461 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 217.46, and
+	the node degree mode is 4. The top 5 most central nodes are 518637.EUBIFOR_00178
+	(degree 1112), 518637.EUBIFOR_02186 (degree 1054), 518637.EUBIFOR_02226
+	(degree 1050), 518637.EUBIFOR_00117 (degree 1032) and 518637.EUBIFOR_01657
 	(degree 996).
 	
 

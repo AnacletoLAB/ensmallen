@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:57.665453
 
-The undirected graph Drosophila mojavensis has 12008 nodes and 1249774 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01734 and
-has 9 connected components, where the component with most nodes has 11992 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 208.16, and the node degree mode is 1. The top 5 most central
-nodes are 7230.FBpp0159806 (degree 2989), 7230.FBpp0172071 (degree 2226), 7230.FBpp0168641
-(degree 2168), 7230.FBpp0161064 (degree 1960) and 7230.FBpp0172674 (degree 1921).
+The undirected graph Drosophila mojavensis has 12008 nodes and 1249774
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01734 and has 9 connected components, where the component
+with most nodes has 11992 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 130, the mean node degree
+is 208.16, and the node degree mode is 1. The top 5 most central nodes
+are 7230.FBpp0159806 (degree 2989), 7230.FBpp0172071 (degree 2226), 7230.FBpp0168641
+(degree 2168), 7230.FBpp0161064 (degree 1960) and 7230.FBpp0172674 (degree
+1921).
 
 
 References
@@ -106,13 +108,15 @@ def DrosophilaMojavensis(
 	
 	Datetime: 2021-02-02 17:21:57.665453
 	
-	The undirected graph Drosophila mojavensis has 12008 nodes and 1249774 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01734 and
-	has 9 connected components, where the component with most nodes has 11992 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 208.16, and the node degree mode is 1. The top 5 most central
-	nodes are 7230.FBpp0159806 (degree 2989), 7230.FBpp0172071 (degree 2226), 7230.FBpp0168641
-	(degree 2168), 7230.FBpp0161064 (degree 1960) and 7230.FBpp0172674 (degree 1921).
+	The undirected graph Drosophila mojavensis has 12008 nodes and 1249774
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01734 and has 9 connected components, where the component
+	with most nodes has 11992 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 130, the mean node degree
+	is 208.16, and the node degree mode is 1. The top 5 most central nodes
+	are 7230.FBpp0159806 (degree 2989), 7230.FBpp0172071 (degree 2226), 7230.FBpp0168641
+	(degree 2168), 7230.FBpp0161064 (degree 1960) and 7230.FBpp0172674 (degree
+	1921).
 	
 
 

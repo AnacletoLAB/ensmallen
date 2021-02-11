@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:06.624622
 
-The undirected graph Sphingobium xenophagum has 3838 nodes and 379346 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05152 and
-has 12 connected components, where the component with most nodes has 3811 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 197.68, and the node degree mode is 2. The top 5 most central
-nodes are 1192759.AKIB01000028_gene2028 (degree 1605), 1192759.AKIB01000088_gene2218
-(degree 1372), 1192759.AKIB01000028_gene2029 (degree 1067), 1192759.AKIB01000014_gene1712
-(degree 1027) and 1192759.AKIB01000004_gene581 (degree 978).
+The undirected graph Sphingobium xenophagum has 3838 nodes and 379346 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05152 and has 12 connected components, where the component with most
+nodes has 3811 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 197.68, and
+the node degree mode is 2. The top 5 most central nodes are 1192759.AKIB01000028_gene2028
+(degree 1605), 1192759.AKIB01000088_gene2218 (degree 1372), 1192759.AKIB01000028_gene2029
+(degree 1067), 1192759.AKIB01000014_gene1712 (degree 1027) and 1192759.AKIB01000004_gene581
+(degree 978).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobiumXenophagum(
 	
 	Datetime: 2021-02-02 23:12:06.624622
 	
-	The undirected graph Sphingobium xenophagum has 3838 nodes and 379346 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05152 and
-	has 12 connected components, where the component with most nodes has 3811 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 197.68, and the node degree mode is 2. The top 5 most central
-	nodes are 1192759.AKIB01000028_gene2028 (degree 1605), 1192759.AKIB01000088_gene2218
-	(degree 1372), 1192759.AKIB01000028_gene2029 (degree 1067), 1192759.AKIB01000014_gene1712
-	(degree 1027) and 1192759.AKIB01000004_gene581 (degree 978).
+	The undirected graph Sphingobium xenophagum has 3838 nodes and 379346 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05152 and has 12 connected components, where the component with most
+	nodes has 3811 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 197.68, and
+	the node degree mode is 2. The top 5 most central nodes are 1192759.AKIB01000028_gene2028
+	(degree 1605), 1192759.AKIB01000088_gene2218 (degree 1372), 1192759.AKIB01000028_gene2029
+	(degree 1067), 1192759.AKIB01000014_gene1712 (degree 1027) and 1192759.AKIB01000004_gene581
+	(degree 978).
 	
 
 

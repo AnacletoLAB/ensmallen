@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:57.196557
 
-The undirected graph Halomonas lutea has 4007 nodes and 417234 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05199 and
-has 13 connected components, where the component with most nodes has 3975 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 208.25, and the node degree mode is 2. The top 5 most central
-nodes are 1121943.KB900007_gene1926 (degree 1674), 1121943.KB899989_gene3372 (degree
-1561), 1121943.KB899994_gene904 (degree 1403), 1121943.KB899989_gene3525 (degree
-1289) and 1121943.KB899996_gene438 (degree 1256).
+The undirected graph Halomonas lutea has 4007 nodes and 417234 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05199 and has 13 connected components, where the component with most
+nodes has 3975 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 208.25, and
+the node degree mode is 2. The top 5 most central nodes are 1121943.KB900007_gene1926
+(degree 1674), 1121943.KB899989_gene3372 (degree 1561), 1121943.KB899994_gene904
+(degree 1403), 1121943.KB899989_gene3525 (degree 1289) and 1121943.KB899996_gene438
+(degree 1256).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasLutea(
 	
 	Datetime: 2021-02-02 22:39:57.196557
 	
-	The undirected graph Halomonas lutea has 4007 nodes and 417234 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05199 and
-	has 13 connected components, where the component with most nodes has 3975 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 208.25, and the node degree mode is 2. The top 5 most central
-	nodes are 1121943.KB900007_gene1926 (degree 1674), 1121943.KB899989_gene3372 (degree
-	1561), 1121943.KB899994_gene904 (degree 1403), 1121943.KB899989_gene3525 (degree
-	1289) and 1121943.KB899996_gene438 (degree 1256).
+	The undirected graph Halomonas lutea has 4007 nodes and 417234 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05199 and has 13 connected components, where the component with most
+	nodes has 3975 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 208.25, and
+	the node degree mode is 2. The top 5 most central nodes are 1121943.KB900007_gene1926
+	(degree 1674), 1121943.KB899989_gene3372 (degree 1561), 1121943.KB899994_gene904
+	(degree 1403), 1121943.KB899989_gene3525 (degree 1289) and 1121943.KB899996_gene438
+	(degree 1256).
 	
 
 

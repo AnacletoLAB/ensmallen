@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:58.906989
 
-The undirected graph Conexibacter woesei Iso977N has 5327 nodes and 508891 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03587
-and has 18 connected components, where the component with most nodes has 5289 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 191.06, and the node degree mode is 3. The top 5
-most central nodes are 1283299.AUKG01000001_gene1339 (degree 1899), 1283299.AUKG01000004_gene1175
-(degree 1564), 1283299.AUKG01000001_gene1728 (degree 1535), 1283299.AUKG01000001_gene1918
-(degree 1508) and 1283299.AUKG01000002_gene4224 (degree 1296).
+The undirected graph Conexibacter woesei Iso977N has 5327 nodes and 508891
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03587 and has 18 connected components, where the component
+with most nodes has 5289 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 191.06,
+and the node degree mode is 3. The top 5 most central nodes are 1283299.AUKG01000001_gene1339
+(degree 1899), 1283299.AUKG01000004_gene1175 (degree 1564), 1283299.AUKG01000001_gene1728
+(degree 1535), 1283299.AUKG01000001_gene1918 (degree 1508) and 1283299.AUKG01000002_gene4224
+(degree 1296).
 
 
 References
@@ -107,14 +108,15 @@ def ConexibacterWoeseiIso977n(
 	
 	Datetime: 2021-02-03 21:12:58.906989
 	
-	The undirected graph Conexibacter woesei Iso977N has 5327 nodes and 508891 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03587
-	and has 18 connected components, where the component with most nodes has 5289 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 191.06, and the node degree mode is 3. The top 5
-	most central nodes are 1283299.AUKG01000001_gene1339 (degree 1899), 1283299.AUKG01000004_gene1175
-	(degree 1564), 1283299.AUKG01000001_gene1728 (degree 1535), 1283299.AUKG01000001_gene1918
-	(degree 1508) and 1283299.AUKG01000002_gene4224 (degree 1296).
+	The undirected graph Conexibacter woesei Iso977N has 5327 nodes and 508891
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03587 and has 18 connected components, where the component
+	with most nodes has 5289 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 191.06,
+	and the node degree mode is 3. The top 5 most central nodes are 1283299.AUKG01000001_gene1339
+	(degree 1899), 1283299.AUKG01000004_gene1175 (degree 1564), 1283299.AUKG01000001_gene1728
+	(degree 1535), 1283299.AUKG01000001_gene1918 (degree 1508) and 1283299.AUKG01000002_gene4224
+	(degree 1296).
 	
 
 

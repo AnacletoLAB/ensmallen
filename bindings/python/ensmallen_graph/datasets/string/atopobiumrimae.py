@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:02.288749
 
-The undirected graph Atopobium rimae has 1531 nodes and 98087 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08375 and
-has 5 connected components, where the component with most nodes has 1519 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 128.13, and the node degree mode is 7. The top 5 most central
-nodes are 553184.ATORI0001_1058 (degree 774), 553184.ATORI0001_0157 (degree 731),
-553184.ATORI0001_0189 (degree 729), 553184.ATORI0001_1047 (degree 628) and 553184.ATORI0001_0484
+The undirected graph Atopobium rimae has 1531 nodes and 98087 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08375 and has 5 connected components, where the component with most
+nodes has 1519 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 128.13, and
+the node degree mode is 7. The top 5 most central nodes are 553184.ATORI0001_1058
+(degree 774), 553184.ATORI0001_0157 (degree 731), 553184.ATORI0001_0189
+(degree 729), 553184.ATORI0001_1047 (degree 628) and 553184.ATORI0001_0484
 (degree 613).
 
 
@@ -107,13 +108,14 @@ def AtopobiumRimae(
 	
 	Datetime: 2021-02-02 21:10:02.288749
 	
-	The undirected graph Atopobium rimae has 1531 nodes and 98087 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08375 and
-	has 5 connected components, where the component with most nodes has 1519 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 128.13, and the node degree mode is 7. The top 5 most central
-	nodes are 553184.ATORI0001_1058 (degree 774), 553184.ATORI0001_0157 (degree 731),
-	553184.ATORI0001_0189 (degree 729), 553184.ATORI0001_1047 (degree 628) and 553184.ATORI0001_0484
+	The undirected graph Atopobium rimae has 1531 nodes and 98087 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08375 and has 5 connected components, where the component with most
+	nodes has 1519 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 128.13, and
+	the node degree mode is 7. The top 5 most central nodes are 553184.ATORI0001_1058
+	(degree 774), 553184.ATORI0001_0157 (degree 731), 553184.ATORI0001_0189
+	(degree 729), 553184.ATORI0001_1047 (degree 628) and 553184.ATORI0001_0484
 	(degree 613).
 	
 

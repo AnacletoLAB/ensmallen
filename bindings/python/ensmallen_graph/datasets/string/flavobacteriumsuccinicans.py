@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:35.634755
 
-The undirected graph Flavobacterium succinicans has 3120 nodes and 235363 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04837
-and has 11 connected components, where the component with most nodes has 3082 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 150.87, and the node degree mode is 4. The top 5
-most central nodes are 1450525.JATV01000003_gene1789 (degree 1091), 1450525.JATV01000010_gene1666
-(degree 959), 1450525.JATV01000002_gene2100 (degree 920), 1450525.JATV01000007_gene1302
-(degree 872) and 1450525.JATV01000021_gene1478 (degree 759).
+The undirected graph Flavobacterium succinicans has 3120 nodes and 235363
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04837 and has 11 connected components, where the component
+with most nodes has 3082 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 150.87,
+and the node degree mode is 4. The top 5 most central nodes are 1450525.JATV01000003_gene1789
+(degree 1091), 1450525.JATV01000010_gene1666 (degree 959), 1450525.JATV01000002_gene2100
+(degree 920), 1450525.JATV01000007_gene1302 (degree 872) and 1450525.JATV01000021_gene1478
+(degree 759).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSuccinicans(
 	
 	Datetime: 2021-02-03 23:05:35.634755
 	
-	The undirected graph Flavobacterium succinicans has 3120 nodes and 235363 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04837
-	and has 11 connected components, where the component with most nodes has 3082 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 150.87, and the node degree mode is 4. The top 5
-	most central nodes are 1450525.JATV01000003_gene1789 (degree 1091), 1450525.JATV01000010_gene1666
-	(degree 959), 1450525.JATV01000002_gene2100 (degree 920), 1450525.JATV01000007_gene1302
-	(degree 872) and 1450525.JATV01000021_gene1478 (degree 759).
+	The undirected graph Flavobacterium succinicans has 3120 nodes and 235363
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04837 and has 11 connected components, where the component
+	with most nodes has 3082 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 150.87,
+	and the node degree mode is 4. The top 5 most central nodes are 1450525.JATV01000003_gene1789
+	(degree 1091), 1450525.JATV01000010_gene1666 (degree 959), 1450525.JATV01000002_gene2100
+	(degree 920), 1450525.JATV01000007_gene1302 (degree 872) and 1450525.JATV01000021_gene1478
+	(degree 759).
 	
 
 

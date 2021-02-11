@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:56.157661
 
-The undirected graph Marinimicrobium agarilyticum has 3458 nodes and 378977 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06340
-and has 9 connected components, where the component with most nodes has 3436 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 219.19, and the node degree mode is 1. The top 5
-most central nodes are 1122194.AUHU01000003_gene1944 (degree 1138), 1122194.AUHU01000005_gene911
-(degree 1005), 1122194.AUHU01000004_gene1457 (degree 985), 1122194.AUHU01000005_gene912
-(degree 960) and 1122194.AUHU01000006_gene496 (degree 931).
+The undirected graph Marinimicrobium agarilyticum has 3458 nodes and 378977
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06340 and has 9 connected components, where the component
+with most nodes has 3436 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 219.19,
+and the node degree mode is 1. The top 5 most central nodes are 1122194.AUHU01000003_gene1944
+(degree 1138), 1122194.AUHU01000005_gene911 (degree 1005), 1122194.AUHU01000004_gene1457
+(degree 985), 1122194.AUHU01000005_gene912 (degree 960) and 1122194.AUHU01000006_gene496
+(degree 931).
 
 
 References
@@ -107,14 +108,15 @@ def MarinimicrobiumAgarilyticum(
 	
 	Datetime: 2021-02-02 22:41:56.157661
 	
-	The undirected graph Marinimicrobium agarilyticum has 3458 nodes and 378977 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06340
-	and has 9 connected components, where the component with most nodes has 3436 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 219.19, and the node degree mode is 1. The top 5
-	most central nodes are 1122194.AUHU01000003_gene1944 (degree 1138), 1122194.AUHU01000005_gene911
-	(degree 1005), 1122194.AUHU01000004_gene1457 (degree 985), 1122194.AUHU01000005_gene912
-	(degree 960) and 1122194.AUHU01000006_gene496 (degree 931).
+	The undirected graph Marinimicrobium agarilyticum has 3458 nodes and 378977
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06340 and has 9 connected components, where the component
+	with most nodes has 3436 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 219.19,
+	and the node degree mode is 1. The top 5 most central nodes are 1122194.AUHU01000003_gene1944
+	(degree 1138), 1122194.AUHU01000005_gene911 (degree 1005), 1122194.AUHU01000004_gene1457
+	(degree 985), 1122194.AUHU01000005_gene912 (degree 960) and 1122194.AUHU01000006_gene496
+	(degree 931).
 	
 
 

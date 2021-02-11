@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:41.650070
 
-The undirected graph Kocuria polaris has 2971 nodes and 239488 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05428 and
-has 26 connected components, where the component with most nodes has 2911 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 161.22, and the node degree mode is 1. The top 5 most central
-nodes are 136273.GY22_03000 (degree 1183), 136273.GY22_03030 (degree 1011), 136273.GY22_10725
-(degree 912), 136273.GY22_05440 (degree 904) and 136273.GY22_12710 (degree 893).
+The undirected graph Kocuria polaris has 2971 nodes and 239488 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05428 and has 26 connected components, where the component with most
+nodes has 2911 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 161.22, and
+the node degree mode is 1. The top 5 most central nodes are 136273.GY22_03000
+(degree 1183), 136273.GY22_03030 (degree 1011), 136273.GY22_10725 (degree
+912), 136273.GY22_05440 (degree 904) and 136273.GY22_12710 (degree 893).
 
 
 References
@@ -106,13 +107,14 @@ def KocuriaPolaris(
 	
 	Datetime: 2021-02-02 19:50:41.650070
 	
-	The undirected graph Kocuria polaris has 2971 nodes and 239488 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05428 and
-	has 26 connected components, where the component with most nodes has 2911 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 161.22, and the node degree mode is 1. The top 5 most central
-	nodes are 136273.GY22_03000 (degree 1183), 136273.GY22_03030 (degree 1011), 136273.GY22_10725
-	(degree 912), 136273.GY22_05440 (degree 904) and 136273.GY22_12710 (degree 893).
+	The undirected graph Kocuria polaris has 2971 nodes and 239488 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05428 and has 26 connected components, where the component with most
+	nodes has 2911 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 161.22, and
+	the node degree mode is 1. The top 5 most central nodes are 136273.GY22_03000
+	(degree 1183), 136273.GY22_03030 (degree 1011), 136273.GY22_10725 (degree
+	912), 136273.GY22_05440 (degree 904) and 136273.GY22_12710 (degree 893).
 	
 
 

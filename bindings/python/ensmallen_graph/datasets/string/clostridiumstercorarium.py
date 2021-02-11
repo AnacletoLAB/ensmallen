@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:38.030437
 
-The undirected graph Clostridium stercorarium has 2519 nodes and 172606 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05443
-and has 2 connected components, where the component with most nodes has 2517 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 137.04, and the node degree mode is 5. The top 5
-most central nodes are 1121335.Clst_1276 (degree 1216), 1121335.Clst_1097 (degree
-842), 1121335.Clst_1457 (degree 831), 1121335.Clst_1795 (degree 810) and 1121335.Clst_1477
-(degree 806).
+The undirected graph Clostridium stercorarium has 2519 nodes and 172606
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05443 and has 2 connected components, where the component
+with most nodes has 2517 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 137.04,
+and the node degree mode is 5. The top 5 most central nodes are 1121335.Clst_1276
+(degree 1216), 1121335.Clst_1097 (degree 842), 1121335.Clst_1457 (degree
+831), 1121335.Clst_1795 (degree 810) and 1121335.Clst_1477 (degree 806).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumStercorarium(
 	
 	Datetime: 2021-02-02 22:34:38.030437
 	
-	The undirected graph Clostridium stercorarium has 2519 nodes and 172606 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05443
-	and has 2 connected components, where the component with most nodes has 2517 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 137.04, and the node degree mode is 5. The top 5
-	most central nodes are 1121335.Clst_1276 (degree 1216), 1121335.Clst_1097 (degree
-	842), 1121335.Clst_1457 (degree 831), 1121335.Clst_1795 (degree 810) and 1121335.Clst_1477
-	(degree 806).
+	The undirected graph Clostridium stercorarium has 2519 nodes and 172606
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05443 and has 2 connected components, where the component
+	with most nodes has 2517 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 137.04,
+	and the node degree mode is 5. The top 5 most central nodes are 1121335.Clst_1276
+	(degree 1216), 1121335.Clst_1097 (degree 842), 1121335.Clst_1457 (degree
+	831), 1121335.Clst_1795 (degree 810) and 1121335.Clst_1477 (degree 806).
 	
 
 

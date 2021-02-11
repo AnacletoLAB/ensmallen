@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:39:47.388328
 
-The undirected graph Sphingobacterium sp. H1ai has 5562 nodes and 487797 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03154
-and has 32 connected components, where the component with most nodes has 5478 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 175.40, and the node degree mode is 2. The top 5
-most central nodes are 1408813.AYMG01000001_gene3374 (degree 1461), 1408813.AYMG01000008_gene3829
-(degree 1371), 1408813.AYMG01000004_gene4584 (degree 1228), 1408813.AYMG01000009_gene3187
-(degree 1157) and 1408813.AYMG01000002_gene3077 (degree 1065).
+The undirected graph Sphingobacterium sp. H1ai has 5562 nodes and 487797
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03154 and has 32 connected components, where the component
+with most nodes has 5478 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 175.40,
+and the node degree mode is 2. The top 5 most central nodes are 1408813.AYMG01000001_gene3374
+(degree 1461), 1408813.AYMG01000008_gene3829 (degree 1371), 1408813.AYMG01000004_gene4584
+(degree 1228), 1408813.AYMG01000009_gene3187 (degree 1157) and 1408813.AYMG01000002_gene3077
+(degree 1065).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobacteriumSp.H1ai(
 	
 	Datetime: 2021-02-03 22:39:47.388328
 	
-	The undirected graph Sphingobacterium sp. H1ai has 5562 nodes and 487797 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03154
-	and has 32 connected components, where the component with most nodes has 5478 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 175.40, and the node degree mode is 2. The top 5
-	most central nodes are 1408813.AYMG01000001_gene3374 (degree 1461), 1408813.AYMG01000008_gene3829
-	(degree 1371), 1408813.AYMG01000004_gene4584 (degree 1228), 1408813.AYMG01000009_gene3187
-	(degree 1157) and 1408813.AYMG01000002_gene3077 (degree 1065).
+	The undirected graph Sphingobacterium sp. H1ai has 5562 nodes and 487797
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03154 and has 32 connected components, where the component
+	with most nodes has 5478 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 175.40,
+	and the node degree mode is 2. The top 5 most central nodes are 1408813.AYMG01000001_gene3374
+	(degree 1461), 1408813.AYMG01000008_gene3829 (degree 1371), 1408813.AYMG01000004_gene4584
+	(degree 1228), 1408813.AYMG01000009_gene3187 (degree 1157) and 1408813.AYMG01000002_gene3077
+	(degree 1065).
 	
 
 

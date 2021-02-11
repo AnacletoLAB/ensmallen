@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:44.040862
 
-The undirected graph beta proteobacterium CB has 2101 nodes and 162238 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07354 and
-has 4 connected components, where the component with most nodes has 2095 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 154.44, and the node degree mode is 4. The top 5 most central
-nodes are 543913.D521_1700 (degree 897), 543913.D521_1224 (degree 768), 543913.D521_1225
-(degree 686), 543913.D521_0840 (degree 677) and 543913.D521_0548 (degree 667).
+The undirected graph beta proteobacterium CB has 2101 nodes and 162238
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07354 and has 4 connected components, where the component
+with most nodes has 2095 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 154.44,
+and the node degree mode is 4. The top 5 most central nodes are 543913.D521_1700
+(degree 897), 543913.D521_1224 (degree 768), 543913.D521_1225 (degree 686),
+543913.D521_0840 (degree 677) and 543913.D521_0548 (degree 667).
 
 
 References
@@ -106,13 +107,14 @@ def BetaProteobacteriumCb(
 	
 	Datetime: 2021-02-02 21:07:44.040862
 	
-	The undirected graph beta proteobacterium CB has 2101 nodes and 162238 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07354 and
-	has 4 connected components, where the component with most nodes has 2095 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 154.44, and the node degree mode is 4. The top 5 most central
-	nodes are 543913.D521_1700 (degree 897), 543913.D521_1224 (degree 768), 543913.D521_1225
-	(degree 686), 543913.D521_0840 (degree 677) and 543913.D521_0548 (degree 667).
+	The undirected graph beta proteobacterium CB has 2101 nodes and 162238
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07354 and has 4 connected components, where the component
+	with most nodes has 2095 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 154.44,
+	and the node degree mode is 4. The top 5 most central nodes are 543913.D521_1700
+	(degree 897), 543913.D521_1224 (degree 768), 543913.D521_1225 (degree 686),
+	543913.D521_0840 (degree 677) and 543913.D521_0548 (degree 667).
 	
 
 

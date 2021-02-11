@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:19:22.220695
 
-The undirected graph Streptomyces celluloflavus has 6949 nodes and 1156642 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04791
-and has 29 connected components, where the component with most nodes has 6889 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 279, the mean node degree is 332.89, and the node degree mode is 1. The top 5
-most central nodes are 58344.JOEL01000056_gene3354 (degree 3468), 58344.JOEL01000057_gene3821
-(degree 2449), 58344.JOEL01000002_gene2024 (degree 2370), 58344.JOEL01000001_gene396
-(degree 2205) and 58344.JOEL01000006_gene4758 (degree 2126).
+The undirected graph Streptomyces celluloflavus has 6949 nodes and 1156642
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04791 and has 29 connected components, where the component
+with most nodes has 6889 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 279, the mean node degree is 332.89,
+and the node degree mode is 1. The top 5 most central nodes are 58344.JOEL01000056_gene3354
+(degree 3468), 58344.JOEL01000057_gene3821 (degree 2449), 58344.JOEL01000002_gene2024
+(degree 2370), 58344.JOEL01000001_gene396 (degree 2205) and 58344.JOEL01000006_gene4758
+(degree 2126).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesCelluloflavus(
 	
 	Datetime: 2021-02-02 18:19:22.220695
 	
-	The undirected graph Streptomyces celluloflavus has 6949 nodes and 1156642 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04791
-	and has 29 connected components, where the component with most nodes has 6889 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 279, the mean node degree is 332.89, and the node degree mode is 1. The top 5
-	most central nodes are 58344.JOEL01000056_gene3354 (degree 3468), 58344.JOEL01000057_gene3821
-	(degree 2449), 58344.JOEL01000002_gene2024 (degree 2370), 58344.JOEL01000001_gene396
-	(degree 2205) and 58344.JOEL01000006_gene4758 (degree 2126).
+	The undirected graph Streptomyces celluloflavus has 6949 nodes and 1156642
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04791 and has 29 connected components, where the component
+	with most nodes has 6889 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 279, the mean node degree is 332.89,
+	and the node degree mode is 1. The top 5 most central nodes are 58344.JOEL01000056_gene3354
+	(degree 3468), 58344.JOEL01000057_gene3821 (degree 2449), 58344.JOEL01000002_gene2024
+	(degree 2370), 58344.JOEL01000001_gene396 (degree 2205) and 58344.JOEL01000006_gene4758
+	(degree 2126).
 	
 
 

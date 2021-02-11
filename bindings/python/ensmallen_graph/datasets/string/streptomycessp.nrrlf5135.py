@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:09:16.336639
 
-The undirected graph Streptomyces sp. NRRLF5135 has 6725 nodes and 928325 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-and has 42 connected components, where the component with most nodes has 6579 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 230, the mean node degree is 276.08, and the node degree mode is 2. The top 5
-most central nodes are 1463858.JOHR01000006_gene632 (degree 3019), 1463858.JOHR01000007_gene810
-(degree 2203), 1463858.JOHR01000009_gene3418 (degree 2057), 1463858.JOHR01000001_gene6253
-(degree 2003) and 1463858.JOHR01000007_gene639 (degree 1910).
+The undirected graph Streptomyces sp. NRRLF5135 has 6725 nodes and 928325
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04106 and has 42 connected components, where the component
+with most nodes has 6579 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 230, the mean node degree is 276.08,
+and the node degree mode is 2. The top 5 most central nodes are 1463858.JOHR01000006_gene632
+(degree 3019), 1463858.JOHR01000007_gene810 (degree 2203), 1463858.JOHR01000009_gene3418
+(degree 2057), 1463858.JOHR01000001_gene6253 (degree 2003) and 1463858.JOHR01000007_gene639
+(degree 1910).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Nrrlf5135(
 	
 	Datetime: 2021-02-03 23:09:16.336639
 	
-	The undirected graph Streptomyces sp. NRRLF5135 has 6725 nodes and 928325 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-	and has 42 connected components, where the component with most nodes has 6579 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 230, the mean node degree is 276.08, and the node degree mode is 2. The top 5
-	most central nodes are 1463858.JOHR01000006_gene632 (degree 3019), 1463858.JOHR01000007_gene810
-	(degree 2203), 1463858.JOHR01000009_gene3418 (degree 2057), 1463858.JOHR01000001_gene6253
-	(degree 2003) and 1463858.JOHR01000007_gene639 (degree 1910).
+	The undirected graph Streptomyces sp. NRRLF5135 has 6725 nodes and 928325
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04106 and has 42 connected components, where the component
+	with most nodes has 6579 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 230, the mean node degree is 276.08,
+	and the node degree mode is 2. The top 5 most central nodes are 1463858.JOHR01000006_gene632
+	(degree 3019), 1463858.JOHR01000007_gene810 (degree 2203), 1463858.JOHR01000009_gene3418
+	(degree 2057), 1463858.JOHR01000001_gene6253 (degree 2003) and 1463858.JOHR01000007_gene639
+	(degree 1910).
 	
 
 

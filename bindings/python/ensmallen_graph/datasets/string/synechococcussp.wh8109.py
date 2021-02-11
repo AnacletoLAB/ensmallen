@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:32.091376
 
-The undirected graph Synechococcus sp. WH 8109 has 2550 nodes and 111211 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03422
-and has 102 connected components, where the component with most nodes has 2250 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 64, the mean node degree is 87.22, and the node degree mode is 2. The top 5 most
-central nodes are 166314.Syncc8109_2065 (degree 787), 166314.Syncc8109_0052 (degree
-629), 166314.Syncc8109_1323 (degree 580), 166314.Syncc8109_1906 (degree 528) and
-166314.Syncc8109_0331 (degree 512).
+The undirected graph Synechococcus sp. WH 8109 has 2550 nodes and 111211
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03422 and has 102 connected components, where the component
+with most nodes has 2250 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 64, the mean node degree is 87.22,
+and the node degree mode is 2. The top 5 most central nodes are 166314.Syncc8109_2065
+(degree 787), 166314.Syncc8109_0052 (degree 629), 166314.Syncc8109_1323
+(degree 580), 166314.Syncc8109_1906 (degree 528) and 166314.Syncc8109_0331
+(degree 512).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Wh8109(
 	
 	Datetime: 2021-02-02 19:54:32.091376
 	
-	The undirected graph Synechococcus sp. WH 8109 has 2550 nodes and 111211 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03422
-	and has 102 connected components, where the component with most nodes has 2250 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 64, the mean node degree is 87.22, and the node degree mode is 2. The top 5 most
-	central nodes are 166314.Syncc8109_2065 (degree 787), 166314.Syncc8109_0052 (degree
-	629), 166314.Syncc8109_1323 (degree 580), 166314.Syncc8109_1906 (degree 528) and
-	166314.Syncc8109_0331 (degree 512).
+	The undirected graph Synechococcus sp. WH 8109 has 2550 nodes and 111211
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03422 and has 102 connected components, where the component
+	with most nodes has 2250 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 64, the mean node degree is 87.22,
+	and the node degree mode is 2. The top 5 most central nodes are 166314.Syncc8109_2065
+	(degree 787), 166314.Syncc8109_0052 (degree 629), 166314.Syncc8109_1323
+	(degree 580), 166314.Syncc8109_1906 (degree 528) and 166314.Syncc8109_0331
+	(degree 512).
 	
 
 

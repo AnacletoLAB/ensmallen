@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:30.192945
 
-The undirected graph Ensifer sp. TW10 has 5879 nodes and 709722 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04108 and
-has 36 connected components, where the component with most nodes has 5800 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 241.44, and the node degree mode is 1. The top 5 most central
-nodes are 1353531.AZNX01000013_gene470 (degree 2222), 1353531.AZNX01000001_gene2216
-(degree 2119), 1353531.AZNX01000010_gene1235 (degree 1732), 1353531.AZNX01000006_gene5467
-(degree 1608) and 1353531.AZNX01000001_gene2174 (degree 1601).
+The undirected graph Ensifer sp. TW10 has 5879 nodes and 709722 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04108 and has 36 connected components, where the component with most
+nodes has 5800 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 192, the mean node degree is 241.44, and
+the node degree mode is 1. The top 5 most central nodes are 1353531.AZNX01000013_gene470
+(degree 2222), 1353531.AZNX01000001_gene2216 (degree 2119), 1353531.AZNX01000010_gene1235
+(degree 1732), 1353531.AZNX01000006_gene5467 (degree 1608) and 1353531.AZNX01000001_gene2174
+(degree 1601).
 
 
 References
@@ -107,14 +108,15 @@ def EnsiferSp.Tw10(
 	
 	Datetime: 2021-02-03 22:07:30.192945
 	
-	The undirected graph Ensifer sp. TW10 has 5879 nodes and 709722 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04108 and
-	has 36 connected components, where the component with most nodes has 5800 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 241.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1353531.AZNX01000013_gene470 (degree 2222), 1353531.AZNX01000001_gene2216
-	(degree 2119), 1353531.AZNX01000010_gene1235 (degree 1732), 1353531.AZNX01000006_gene5467
-	(degree 1608) and 1353531.AZNX01000001_gene2174 (degree 1601).
+	The undirected graph Ensifer sp. TW10 has 5879 nodes and 709722 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04108 and has 36 connected components, where the component with most
+	nodes has 5800 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 192, the mean node degree is 241.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1353531.AZNX01000013_gene470
+	(degree 2222), 1353531.AZNX01000001_gene2216 (degree 2119), 1353531.AZNX01000010_gene1235
+	(degree 1732), 1353531.AZNX01000006_gene5467 (degree 1608) and 1353531.AZNX01000001_gene2174
+	(degree 1601).
 	
 
 

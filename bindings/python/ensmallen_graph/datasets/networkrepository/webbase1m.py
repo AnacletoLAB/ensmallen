@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:21:35.957690
 
-The undirected graph webbase-1M has 1000005 nodes, of which 2453 are singletons (all
-have self-loops), and 3004970 weighted edges, of which 1000005 are self-loops. The
-graph is extremely sparse as it has a density of 0.00001 and has 2771 connected components,
-where the component with most nodes has 964584 nodes and the component with the least
-nodes has a single node. The graph median node degree is 2, the mean node degree
-is 5.01, and the node degree mode is 2. The top 5 most central nodes are 617597 (degree
-28687), 124384 (degree 13551), 124385 (degree 4842), 23861 (degree 4803) and 122
-(degree 4700).
+The undirected graph webbase-1M has 1000005 nodes, of which 2453 are singletons
+(all have self-loops), and 3004970 weighted edges, of which 1000005 are
+self-loops. The graph is extremely sparse as it has a density of 0.00001
+and has 2771 connected components, where the component with most nodes
+has 964584 nodes and the component with the least nodes has a single node.
+The graph median node degree is 2, the mean node degree is 5.01, and the
+node degree mode is 2. The top 5 most central nodes are 617597 (degree
+28687), 124384 (degree 13551), 124385 (degree 4842), 23861 (degree 4803)
+and 122 (degree 4700).
 
 
 References
@@ -104,14 +105,15 @@ def Webbase1m(
 	
 	Datetime: 2021-02-06 12:21:35.957690
 	
-	The undirected graph webbase-1M has 1000005 nodes, of which 2453 are singletons (all
-	have self-loops), and 3004970 weighted edges, of which 1000005 are self-loops. The
-	graph is extremely sparse as it has a density of 0.00001 and has 2771 connected components,
-	where the component with most nodes has 964584 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 2, the mean node degree
-	is 5.01, and the node degree mode is 2. The top 5 most central nodes are 617597 (degree
-	28687), 124384 (degree 13551), 124385 (degree 4842), 23861 (degree 4803) and 122
-	(degree 4700).
+	The undirected graph webbase-1M has 1000005 nodes, of which 2453 are singletons
+	(all have self-loops), and 3004970 weighted edges, of which 1000005 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00001
+	and has 2771 connected components, where the component with most nodes
+	has 964584 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 2, the mean node degree is 5.01, and the
+	node degree mode is 2. The top 5 most central nodes are 617597 (degree
+	28687), 124384 (degree 13551), 124385 (degree 4842), 23861 (degree 4803)
+	and 122 (degree 4700).
 	
 
 

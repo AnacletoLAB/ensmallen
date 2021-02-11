@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:25.453609
 
-The undirected graph Streptomyces sp. FxanaC1 has 6556 nodes and 974652 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04536
-and has 22 connected components, where the component with most nodes has 6508 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 249, the mean node degree is 297.33, and the node degree mode is 2. The top 5
-most central nodes are 1157640.AQWO01000027_gene6689 (degree 2935), 1157640.AQWO01000037_gene469
-(degree 2208), 1157640.AQWO01000003_gene5936 (degree 2133), 1157640.AQWO01000011_gene3229
-(degree 2064) and 1157640.AQWO01000005_gene2247 (degree 2021).
+The undirected graph Streptomyces sp. FxanaC1 has 6556 nodes and 974652
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04536 and has 22 connected components, where the component
+with most nodes has 6508 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 249, the mean node degree is 297.33,
+and the node degree mode is 2. The top 5 most central nodes are 1157640.AQWO01000027_gene6689
+(degree 2935), 1157640.AQWO01000037_gene469 (degree 2208), 1157640.AQWO01000003_gene5936
+(degree 2133), 1157640.AQWO01000011_gene3229 (degree 2064) and 1157640.AQWO01000005_gene2247
+(degree 2021).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Fxanac1(
 	
 	Datetime: 2021-02-02 23:02:25.453609
 	
-	The undirected graph Streptomyces sp. FxanaC1 has 6556 nodes and 974652 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04536
-	and has 22 connected components, where the component with most nodes has 6508 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 249, the mean node degree is 297.33, and the node degree mode is 2. The top 5
-	most central nodes are 1157640.AQWO01000027_gene6689 (degree 2935), 1157640.AQWO01000037_gene469
-	(degree 2208), 1157640.AQWO01000003_gene5936 (degree 2133), 1157640.AQWO01000011_gene3229
-	(degree 2064) and 1157640.AQWO01000005_gene2247 (degree 2021).
+	The undirected graph Streptomyces sp. FxanaC1 has 6556 nodes and 974652
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04536 and has 22 connected components, where the component
+	with most nodes has 6508 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 249, the mean node degree is 297.33,
+	and the node degree mode is 2. The top 5 most central nodes are 1157640.AQWO01000027_gene6689
+	(degree 2935), 1157640.AQWO01000037_gene469 (degree 2208), 1157640.AQWO01000003_gene5936
+	(degree 2133), 1157640.AQWO01000011_gene3229 (degree 2064) and 1157640.AQWO01000005_gene2247
+	(degree 2021).
 	
 
 

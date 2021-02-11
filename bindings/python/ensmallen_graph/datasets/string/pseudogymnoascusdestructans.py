@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:42.329843
 
-The undirected graph Pseudogymnoascus destructans has 5959 nodes and 590113 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03324
-and has 20 connected components, where the component with most nodes has 5917 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 198.06, and the node degree mode is 1. The top 5
-most central nodes are 655981.L8G786 (degree 1412), 655981.L8GC23 (degree 1380),
-655981.L8FSG6 (degree 1320), 655981.L8G9T8 (degree 1232) and 655981.L8FP22 (degree
-1214).
+The undirected graph Pseudogymnoascus destructans has 5959 nodes and 590113
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03324 and has 20 connected components, where the component
+with most nodes has 5917 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 198.06,
+and the node degree mode is 1. The top 5 most central nodes are 655981.L8G786
+(degree 1412), 655981.L8GC23 (degree 1380), 655981.L8FSG6 (degree 1320),
+655981.L8G9T8 (degree 1232) and 655981.L8FP22 (degree 1214).
 
 
 References
@@ -107,14 +107,14 @@ def PseudogymnoascusDestructans(
 	
 	Datetime: 2021-02-02 21:26:42.329843
 	
-	The undirected graph Pseudogymnoascus destructans has 5959 nodes and 590113 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03324
-	and has 20 connected components, where the component with most nodes has 5917 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 198.06, and the node degree mode is 1. The top 5
-	most central nodes are 655981.L8G786 (degree 1412), 655981.L8GC23 (degree 1380),
-	655981.L8FSG6 (degree 1320), 655981.L8G9T8 (degree 1232) and 655981.L8FP22 (degree
-	1214).
+	The undirected graph Pseudogymnoascus destructans has 5959 nodes and 590113
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03324 and has 20 connected components, where the component
+	with most nodes has 5917 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 198.06,
+	and the node degree mode is 1. The top 5 most central nodes are 655981.L8G786
+	(degree 1412), 655981.L8GC23 (degree 1380), 655981.L8FSG6 (degree 1320),
+	655981.L8G9T8 (degree 1232) and 655981.L8FP22 (degree 1214).
 	
 
 

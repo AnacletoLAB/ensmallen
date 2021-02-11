@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:10.050618
 
-The undirected graph Bradyrhizobium sp. thb2 has 8212 nodes and 1237537 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03671
-and has 71 connected components, where the component with most nodes has 8004 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 238, the mean node degree is 301.40, and the node degree mode is 2. The top 5
-most central nodes are 172088.AUGA01000022_gene560 (degree 3862), 172088.AUGA01000004_gene4113
-(degree 2864), 172088.AUGA01000002_gene6174 (degree 2636), 172088.AUGA01000036_gene3234
-(degree 2500) and 172088.AUGA01000058_gene6182 (degree 2236).
+The undirected graph Bradyrhizobium sp. thb2 has 8212 nodes and 1237537
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03671 and has 71 connected components, where the component
+with most nodes has 8004 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 238, the mean node degree is 301.40,
+and the node degree mode is 2. The top 5 most central nodes are 172088.AUGA01000022_gene560
+(degree 3862), 172088.AUGA01000004_gene4113 (degree 2864), 172088.AUGA01000002_gene6174
+(degree 2636), 172088.AUGA01000036_gene3234 (degree 2500) and 172088.AUGA01000058_gene6182
+(degree 2236).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Thb2(
 	
 	Datetime: 2021-02-02 19:55:10.050618
 	
-	The undirected graph Bradyrhizobium sp. thb2 has 8212 nodes and 1237537 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03671
-	and has 71 connected components, where the component with most nodes has 8004 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 238, the mean node degree is 301.40, and the node degree mode is 2. The top 5
-	most central nodes are 172088.AUGA01000022_gene560 (degree 3862), 172088.AUGA01000004_gene4113
-	(degree 2864), 172088.AUGA01000002_gene6174 (degree 2636), 172088.AUGA01000036_gene3234
-	(degree 2500) and 172088.AUGA01000058_gene6182 (degree 2236).
+	The undirected graph Bradyrhizobium sp. thb2 has 8212 nodes and 1237537
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03671 and has 71 connected components, where the component
+	with most nodes has 8004 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 238, the mean node degree is 301.40,
+	and the node degree mode is 2. The top 5 most central nodes are 172088.AUGA01000022_gene560
+	(degree 3862), 172088.AUGA01000004_gene4113 (degree 2864), 172088.AUGA01000002_gene6174
+	(degree 2636), 172088.AUGA01000036_gene3234 (degree 2500) and 172088.AUGA01000058_gene6182
+	(degree 2236).
 	
 
 

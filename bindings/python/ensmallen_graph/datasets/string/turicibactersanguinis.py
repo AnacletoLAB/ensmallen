@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:02.834709
 
-The undirected graph Turicibacter sanguinis has 2745 nodes and 220575 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05857 and
-has 6 connected components, where the component with most nodes has 2735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 160.71, and the node degree mode is 2. The top 5 most central
-nodes are 702450.CUW_1535 (degree 978), 702450.CUW_0499 (degree 966), 702450.CUW_1094
-(degree 950), 702450.CUW_1700 (degree 775) and 702450.CUW_1668 (degree 770).
+The undirected graph Turicibacter sanguinis has 2745 nodes and 220575 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05857 and has 6 connected components, where the component with most
+nodes has 2735 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 160.71, and
+the node degree mode is 2. The top 5 most central nodes are 702450.CUW_1535
+(degree 978), 702450.CUW_0499 (degree 966), 702450.CUW_1094 (degree 950),
+702450.CUW_1700 (degree 775) and 702450.CUW_1668 (degree 770).
 
 
 References
@@ -106,13 +107,14 @@ def TuricibacterSanguinis(
 	
 	Datetime: 2021-02-02 21:34:02.834709
 	
-	The undirected graph Turicibacter sanguinis has 2745 nodes and 220575 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05857 and
-	has 6 connected components, where the component with most nodes has 2735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 160.71, and the node degree mode is 2. The top 5 most central
-	nodes are 702450.CUW_1535 (degree 978), 702450.CUW_0499 (degree 966), 702450.CUW_1094
-	(degree 950), 702450.CUW_1700 (degree 775) and 702450.CUW_1668 (degree 770).
+	The undirected graph Turicibacter sanguinis has 2745 nodes and 220575 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05857 and has 6 connected components, where the component with most
+	nodes has 2735 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 160.71, and
+	the node degree mode is 2. The top 5 most central nodes are 702450.CUW_1535
+	(degree 978), 702450.CUW_0499 (degree 966), 702450.CUW_1094 (degree 950),
+	702450.CUW_1700 (degree 775) and 702450.CUW_1668 (degree 770).
 	
 
 

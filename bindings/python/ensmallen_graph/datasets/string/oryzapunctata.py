@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:45:08.407586
 
-The undirected graph Oryza punctata has 21903 nodes and 4575968 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01908 and
-has 10 connected components, where the component with most nodes has 21883 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 193, the mean node degree is 417.84, and the node degree mode is 8. The top 5
-most central nodes are 4537.OPUNC02G10990.1 (degree 7161), 4537.OPUNC02G10210.1 (degree
-5348), 4537.OPUNC10G04490.1 (degree 5303), 4537.OPUNC11G11520.1 (degree 5052) and
-4537.OPUNC12G09750.1 (degree 5052).
+The undirected graph Oryza punctata has 21903 nodes and 4575968 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01908 and has 10 connected components, where the component with most
+nodes has 21883 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 417.84, and
+the node degree mode is 8. The top 5 most central nodes are 4537.OPUNC02G10990.1
+(degree 7161), 4537.OPUNC02G10210.1 (degree 5348), 4537.OPUNC10G04490.1
+(degree 5303), 4537.OPUNC11G11520.1 (degree 5052) and 4537.OPUNC12G09750.1
+(degree 5052).
 
 
 References
@@ -107,14 +108,15 @@ def OryzaPunctata(
 	
 	Datetime: 2021-02-02 16:45:08.407586
 	
-	The undirected graph Oryza punctata has 21903 nodes and 4575968 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01908 and
-	has 10 connected components, where the component with most nodes has 21883 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 193, the mean node degree is 417.84, and the node degree mode is 8. The top 5
-	most central nodes are 4537.OPUNC02G10990.1 (degree 7161), 4537.OPUNC02G10210.1 (degree
-	5348), 4537.OPUNC10G04490.1 (degree 5303), 4537.OPUNC11G11520.1 (degree 5052) and
-	4537.OPUNC12G09750.1 (degree 5052).
+	The undirected graph Oryza punctata has 21903 nodes and 4575968 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01908 and has 10 connected components, where the component with most
+	nodes has 21883 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 417.84, and
+	the node degree mode is 8. The top 5 most central nodes are 4537.OPUNC02G10990.1
+	(degree 7161), 4537.OPUNC02G10210.1 (degree 5348), 4537.OPUNC10G04490.1
+	(degree 5303), 4537.OPUNC11G11520.1 (degree 5052) and 4537.OPUNC12G09750.1
+	(degree 5052).
 	
 
 

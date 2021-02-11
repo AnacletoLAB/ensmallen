@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:07.518366
 
-The undirected graph p-hat1500-3 has 1500 nodes and 847244 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.75361
-and is connected, as it has a single component. The graph median node degree is 1133,
-the mean node degree is 1129.66 and the node degree mode is 1027. The top 5 most
-central nodes are 622 (degree 1330), 352 (degree 1330), 738 (degree 1328), 819 (degree
-1325) and 434 (degree 1324).
+The undirected graph p-hat1500-3 has 1500 nodes and 847244 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.75361 and is connected, as it has a single component. The
+graph median node degree is 1133, the mean node degree is 1129.66 and the
+node degree mode is 1027. The top 5 most central nodes are 622 (degree
+1330), 352 (degree 1330), 738 (degree 1328), 819 (degree 1325) and 434
+(degree 1324).
 
 
 References
@@ -115,12 +116,13 @@ def PHat15003(
 	
 	Datetime: 2021-02-03 22:56:07.518366
 	
-	The undirected graph p-hat1500-3 has 1500 nodes and 847244 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.75361
-	and is connected, as it has a single component. The graph median node degree is 1133,
-	the mean node degree is 1129.66 and the node degree mode is 1027. The top 5 most
-	central nodes are 622 (degree 1330), 352 (degree 1330), 738 (degree 1328), 819 (degree
-	1325) and 434 (degree 1324).
+	The undirected graph p-hat1500-3 has 1500 nodes and 847244 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.75361 and is connected, as it has a single component. The
+	graph median node degree is 1133, the mean node degree is 1129.66 and the
+	node degree mode is 1027. The top 5 most central nodes are 622 (degree
+	1330), 352 (degree 1330), 738 (degree 1328), 819 (degree 1325) and 434
+	(degree 1324).
 	
 
 

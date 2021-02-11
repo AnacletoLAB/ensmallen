@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:35.187768
 
-The undirected graph Methyloglobulus morosus has 3659 nodes and 318696 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04762 and
-has 21 connected components, where the component with most nodes has 3613 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 174.20, and the node degree mode is 1. The top 5 most central
-nodes are 1116472.MGMO_178c00020 (degree 1433), 1116472.MGMO_106c00020 (degree 1304),
-1116472.MGMO_54c00150 (degree 1170), 1116472.MGMO_83c00160 (degree 1132) and 1116472.MGMO_83c00110
+The undirected graph Methyloglobulus morosus has 3659 nodes and 318696
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04762 and has 21 connected components, where the component
+with most nodes has 3613 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 174.20,
+and the node degree mode is 1. The top 5 most central nodes are 1116472.MGMO_178c00020
+(degree 1433), 1116472.MGMO_106c00020 (degree 1304), 1116472.MGMO_54c00150
+(degree 1170), 1116472.MGMO_83c00160 (degree 1132) and 1116472.MGMO_83c00110
 (degree 1073).
 
 
@@ -107,13 +108,14 @@ def MethyloglobulusMorosus(
 	
 	Datetime: 2021-02-02 22:27:35.187768
 	
-	The undirected graph Methyloglobulus morosus has 3659 nodes and 318696 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04762 and
-	has 21 connected components, where the component with most nodes has 3613 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 174.20, and the node degree mode is 1. The top 5 most central
-	nodes are 1116472.MGMO_178c00020 (degree 1433), 1116472.MGMO_106c00020 (degree 1304),
-	1116472.MGMO_54c00150 (degree 1170), 1116472.MGMO_83c00160 (degree 1132) and 1116472.MGMO_83c00110
+	The undirected graph Methyloglobulus morosus has 3659 nodes and 318696
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04762 and has 21 connected components, where the component
+	with most nodes has 3613 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 174.20,
+	and the node degree mode is 1. The top 5 most central nodes are 1116472.MGMO_178c00020
+	(degree 1433), 1116472.MGMO_106c00020 (degree 1304), 1116472.MGMO_54c00150
+	(degree 1170), 1116472.MGMO_83c00160 (degree 1132) and 1116472.MGMO_83c00110
 	(degree 1073).
 	
 

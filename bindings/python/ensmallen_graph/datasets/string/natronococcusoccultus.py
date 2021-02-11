@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:23.486095
 
-The undirected graph Natronococcus occultus has 3816 nodes and 343604 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04720 and
-has 36 connected components, where the component with most nodes has 3731 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 180.09, and the node degree mode is 3. The top 5 most central
-nodes are 694430.Natoc_3642 (degree 1219), 694430.Natoc_0189 (degree 1129), 694430.Natoc_3717
-(degree 1115), 694430.Natoc_3971 (degree 1103) and 694430.Natoc_1842 (degree 1084).
+The undirected graph Natronococcus occultus has 3816 nodes and 343604 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04720 and has 36 connected components, where the component with most
+nodes has 3731 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 180.09, and
+the node degree mode is 3. The top 5 most central nodes are 694430.Natoc_3642
+(degree 1219), 694430.Natoc_0189 (degree 1129), 694430.Natoc_3717 (degree
+1115), 694430.Natoc_3971 (degree 1103) and 694430.Natoc_1842 (degree 1084).
 
 
 References
@@ -106,13 +107,14 @@ def NatronococcusOccultus(
 	
 	Datetime: 2021-02-02 21:32:23.486095
 	
-	The undirected graph Natronococcus occultus has 3816 nodes and 343604 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04720 and
-	has 36 connected components, where the component with most nodes has 3731 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 180.09, and the node degree mode is 3. The top 5 most central
-	nodes are 694430.Natoc_3642 (degree 1219), 694430.Natoc_0189 (degree 1129), 694430.Natoc_3717
-	(degree 1115), 694430.Natoc_3971 (degree 1103) and 694430.Natoc_1842 (degree 1084).
+	The undirected graph Natronococcus occultus has 3816 nodes and 343604 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04720 and has 36 connected components, where the component with most
+	nodes has 3731 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 180.09, and
+	the node degree mode is 3. The top 5 most central nodes are 694430.Natoc_3642
+	(degree 1219), 694430.Natoc_0189 (degree 1129), 694430.Natoc_3717 (degree
+	1115), 694430.Natoc_3971 (degree 1103) and 694430.Natoc_1842 (degree 1084).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:11.118355
 
-The undirected graph Streptococcus uberis has 1758 nodes and 125896 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08152 and
-has 2 connected components, where the component with most nodes has 1755 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 110,
-the mean node degree is 143.23, and the node degree mode is 15. The top 5 most central
-nodes are 218495.SUB1716 (degree 868), 218495.SUB0891 (degree 723), 218495.SUB0063
-(degree 698), 218495.SUB1504 (degree 671) and 218495.SUB1862 (degree 646).
+The undirected graph Streptococcus uberis has 1758 nodes and 125896 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08152 and has 2 connected components, where the component with most
+nodes has 1755 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 110, the mean node degree is 143.23, and
+the node degree mode is 15. The top 5 most central nodes are 218495.SUB1716
+(degree 868), 218495.SUB0891 (degree 723), 218495.SUB0063 (degree 698),
+218495.SUB1504 (degree 671) and 218495.SUB1862 (degree 646).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusUberis(
 	
 	Datetime: 2021-02-02 20:03:11.118355
 	
-	The undirected graph Streptococcus uberis has 1758 nodes and 125896 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08152 and
-	has 2 connected components, where the component with most nodes has 1755 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 110,
-	the mean node degree is 143.23, and the node degree mode is 15. The top 5 most central
-	nodes are 218495.SUB1716 (degree 868), 218495.SUB0891 (degree 723), 218495.SUB0063
-	(degree 698), 218495.SUB1504 (degree 671) and 218495.SUB1862 (degree 646).
+	The undirected graph Streptococcus uberis has 1758 nodes and 125896 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08152 and has 2 connected components, where the component with most
+	nodes has 1755 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 110, the mean node degree is 143.23, and
+	the node degree mode is 15. The top 5 most central nodes are 218495.SUB1716
+	(degree 868), 218495.SUB0891 (degree 723), 218495.SUB0063 (degree 698),
+	218495.SUB1504 (degree 671) and 218495.SUB1862 (degree 646).
 	
 
 

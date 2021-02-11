@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:45:53.672858
 
-The undirected graph gene has 1103 nodes with 2 different node types: 1 (nodes number
-613) and 2 (nodes number 490) and 1672 unweighted edges with a single edge type:
-1, of which none are self-loops. The graph is sparse as it has a density of 0.00275
-and has 96 connected components, where the component with most nodes has 814 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 3.03, and the node degree mode is 1. The top 5 most
-central nodes are 847 (degree 29), 383 (degree 21), 693 (degree 19), 230 (degree
-19) and 231 (degree 18).
+The undirected graph gene has 1103 nodes with 2 different node types: 1
+(nodes number 613) and 2 (nodes number 490) and 1672 unweighted edges with
+a single edge type: 1, of which none are self-loops. The graph is sparse
+as it has a density of 0.00275 and has 96 connected components, where the
+component with most nodes has 814 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+is 3.03, and the node degree mode is 1. The top 5 most central nodes are
+847 (degree 29), 383 (degree 21), 693 (degree 19), 230 (degree 19) and
+231 (degree 18).
 
 
 References
@@ -104,14 +105,15 @@ def Gene(
 	
 	Datetime: 2021-02-04 08:45:53.672858
 	
-	The undirected graph gene has 1103 nodes with 2 different node types: 1 (nodes number
-	613) and 2 (nodes number 490) and 1672 unweighted edges with a single edge type:
-	1, of which none are self-loops. The graph is sparse as it has a density of 0.00275
-	and has 96 connected components, where the component with most nodes has 814 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 3.03, and the node degree mode is 1. The top 5 most
-	central nodes are 847 (degree 29), 383 (degree 21), 693 (degree 19), 230 (degree
-	19) and 231 (degree 18).
+	The undirected graph gene has 1103 nodes with 2 different node types: 1
+	(nodes number 613) and 2 (nodes number 490) and 1672 unweighted edges with
+	a single edge type: 1, of which none are self-loops. The graph is sparse
+	as it has a density of 0.00275 and has 96 connected components, where the
+	component with most nodes has 814 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+	is 3.03, and the node degree mode is 1. The top 5 most central nodes are
+	847 (degree 29), 383 (degree 21), 693 (degree 19), 230 (degree 19) and
+	231 (degree 18).
 	
 
 

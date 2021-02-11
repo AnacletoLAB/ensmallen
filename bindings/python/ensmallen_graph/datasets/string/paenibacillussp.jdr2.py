@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:32.064990
 
-The undirected graph Paenibacillus sp. JDR2 has 6185 nodes and 567917 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02970 and
-has 18 connected components, where the component with most nodes has 6141 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 183.64, and the node degree mode is 5. The top 5 most central
-nodes are 324057.Pjdr2_1523 (degree 1573), 324057.Pjdr2_5076 (degree 1414), 324057.Pjdr2_1662
-(degree 1395), 324057.Pjdr2_0836 (degree 1276) and 324057.Pjdr2_0089 (degree 1252).
+The undirected graph Paenibacillus sp. JDR2 has 6185 nodes and 567917 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02970 and has 18 connected components, where the component with most
+nodes has 6141 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 183.64, and
+the node degree mode is 5. The top 5 most central nodes are 324057.Pjdr2_1523
+(degree 1573), 324057.Pjdr2_5076 (degree 1414), 324057.Pjdr2_1662 (degree
+1395), 324057.Pjdr2_0836 (degree 1276) and 324057.Pjdr2_0089 (degree 1252).
 
 
 References
@@ -106,13 +107,14 @@ def PaenibacillusSp.Jdr2(
 	
 	Datetime: 2021-02-02 20:28:32.064990
 	
-	The undirected graph Paenibacillus sp. JDR2 has 6185 nodes and 567917 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02970 and
-	has 18 connected components, where the component with most nodes has 6141 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 183.64, and the node degree mode is 5. The top 5 most central
-	nodes are 324057.Pjdr2_1523 (degree 1573), 324057.Pjdr2_5076 (degree 1414), 324057.Pjdr2_1662
-	(degree 1395), 324057.Pjdr2_0836 (degree 1276) and 324057.Pjdr2_0089 (degree 1252).
+	The undirected graph Paenibacillus sp. JDR2 has 6185 nodes and 567917 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02970 and has 18 connected components, where the component with most
+	nodes has 6141 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 183.64, and
+	the node degree mode is 5. The top 5 most central nodes are 324057.Pjdr2_1523
+	(degree 1573), 324057.Pjdr2_5076 (degree 1414), 324057.Pjdr2_1662 (degree
+	1395), 324057.Pjdr2_0836 (degree 1276) and 324057.Pjdr2_0089 (degree 1252).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:57:34.215640
 
-The undirected graph Stanford has 281903 nodes and 1992636 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-and has 365 connected components, where the component with most nodes has 255265
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 6, the mean node degree is 14.14, and the node degree mode is 6. The top 5 most
-central nodes are 226411 (degree 38625), 234704 (degree 21923), 105607 (degree 19459),
-241454 (degree 19385) and 167295 (degree 19004).
+The undirected graph Stanford has 281903 nodes and 1992636 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00005 and has 365 connected components, where the component
+with most nodes has 255265 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 6, the mean node degree is
+14.14, and the node degree mode is 6. The top 5 most central nodes are
+226411 (degree 38625), 234704 (degree 21923), 105607 (degree 19459), 241454
+(degree 19385) and 167295 (degree 19004).
 
 
 References
@@ -103,13 +104,14 @@ def Stanford(
 	
 	Datetime: 2021-02-06 11:57:34.215640
 	
-	The undirected graph Stanford has 281903 nodes and 1992636 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00005
-	and has 365 connected components, where the component with most nodes has 255265
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 6, the mean node degree is 14.14, and the node degree mode is 6. The top 5 most
-	central nodes are 226411 (degree 38625), 234704 (degree 21923), 105607 (degree 19459),
-	241454 (degree 19385) and 167295 (degree 19004).
+	The undirected graph Stanford has 281903 nodes and 1992636 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00005 and has 365 connected components, where the component
+	with most nodes has 255265 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 6, the mean node degree is
+	14.14, and the node degree mode is 6. The top 5 most central nodes are
+	226411 (degree 38625), 234704 (degree 21923), 105607 (degree 19459), 241454
+	(degree 19385) and 167295 (degree 19004).
 	
 
 

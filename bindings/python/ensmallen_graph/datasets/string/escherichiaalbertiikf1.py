@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:57:39.462913
 
-The undirected graph Escherichia albertii KF1 has 4354 nodes and 377295 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03981
-and has 14 connected components, where the component with most nodes has 4326 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 173.31, and the node degree mode is 1. The top 5
-most central nodes are 1440052.EAKF1_ch0087 (degree 1510), 1440052.EAKF1_ch2083c
-(degree 1410), 1440052.EAKF1_ch3494c (degree 1247), 1440052.EAKF1_ch2727c (degree
-1168) and 1440052.EAKF1_ch2729 (degree 1090).
+The undirected graph Escherichia albertii KF1 has 4354 nodes and 377295
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03981 and has 14 connected components, where the component
+with most nodes has 4326 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 173.31,
+and the node degree mode is 1. The top 5 most central nodes are 1440052.EAKF1_ch0087
+(degree 1510), 1440052.EAKF1_ch2083c (degree 1410), 1440052.EAKF1_ch3494c
+(degree 1247), 1440052.EAKF1_ch2727c (degree 1168) and 1440052.EAKF1_ch2729
+(degree 1090).
 
 
 References
@@ -107,14 +108,15 @@ def EscherichiaAlbertiiKf1(
 	
 	Datetime: 2021-02-03 22:57:39.462913
 	
-	The undirected graph Escherichia albertii KF1 has 4354 nodes and 377295 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03981
-	and has 14 connected components, where the component with most nodes has 4326 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 173.31, and the node degree mode is 1. The top 5
-	most central nodes are 1440052.EAKF1_ch0087 (degree 1510), 1440052.EAKF1_ch2083c
-	(degree 1410), 1440052.EAKF1_ch3494c (degree 1247), 1440052.EAKF1_ch2727c (degree
-	1168) and 1440052.EAKF1_ch2729 (degree 1090).
+	The undirected graph Escherichia albertii KF1 has 4354 nodes and 377295
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03981 and has 14 connected components, where the component
+	with most nodes has 4326 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 173.31,
+	and the node degree mode is 1. The top 5 most central nodes are 1440052.EAKF1_ch0087
+	(degree 1510), 1440052.EAKF1_ch2083c (degree 1410), 1440052.EAKF1_ch3494c
+	(degree 1247), 1440052.EAKF1_ch2727c (degree 1168) and 1440052.EAKF1_ch2729
+	(degree 1090).
 	
 
 

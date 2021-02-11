@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:42.803620
 
-The undirected graph Streptomyces rapamycinicus has 9866 nodes and 1703877 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03501
-and has 51 connected components, where the component with most nodes has 9740 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 278, the mean node degree is 345.40, and the node degree mode is 2. The top 5
-most central nodes are 1343740.M271_15200 (degree 4955), 1343740.M271_37050 (degree
-3914), 1343740.M271_05855 (degree 2986), 1343740.M271_23980 (degree 2893) and 1343740.M271_36415
-(degree 2885).
+The undirected graph Streptomyces rapamycinicus has 9866 nodes and 1703877
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03501 and has 51 connected components, where the component
+with most nodes has 9740 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 278, the mean node degree is 345.40,
+and the node degree mode is 2. The top 5 most central nodes are 1343740.M271_15200
+(degree 4955), 1343740.M271_37050 (degree 3914), 1343740.M271_05855 (degree
+2986), 1343740.M271_23980 (degree 2893) and 1343740.M271_36415 (degree
+2885).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesRapamycinicus(
 	
 	Datetime: 2021-02-03 22:01:42.803620
 	
-	The undirected graph Streptomyces rapamycinicus has 9866 nodes and 1703877 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03501
-	and has 51 connected components, where the component with most nodes has 9740 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 278, the mean node degree is 345.40, and the node degree mode is 2. The top 5
-	most central nodes are 1343740.M271_15200 (degree 4955), 1343740.M271_37050 (degree
-	3914), 1343740.M271_05855 (degree 2986), 1343740.M271_23980 (degree 2893) and 1343740.M271_36415
-	(degree 2885).
+	The undirected graph Streptomyces rapamycinicus has 9866 nodes and 1703877
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03501 and has 51 connected components, where the component
+	with most nodes has 9740 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 278, the mean node degree is 345.40,
+	and the node degree mode is 2. The top 5 most central nodes are 1343740.M271_15200
+	(degree 4955), 1343740.M271_37050 (degree 3914), 1343740.M271_05855 (degree
+	2986), 1343740.M271_23980 (degree 2893) and 1343740.M271_36415 (degree
+	2885).
 	
 
 

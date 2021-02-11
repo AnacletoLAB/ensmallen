@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:01.090779
 
-The undirected graph Mycobacterium leprae has 1553 nodes and 92080 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07641 and
-has 5 connected components, where the component with most nodes has 1545 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 118.58, and the node degree mode is 1. The top 5 most central
-nodes are 272631.ML1381 (degree 675), 272631.ML1191 (degree 627), 272631.ML2703 (degree
-584), 272631.ML0395 (degree 564) and 272631.ML2496 (degree 521).
+The undirected graph Mycobacterium leprae has 1553 nodes and 92080 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07641 and has 5 connected components, where the component with most
+nodes has 1545 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 118.58, and
+the node degree mode is 1. The top 5 most central nodes are 272631.ML1381
+(degree 675), 272631.ML1191 (degree 627), 272631.ML2703 (degree 584), 272631.ML0395
+(degree 564) and 272631.ML2496 (degree 521).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumLeprae(
 	
 	Datetime: 2021-02-02 20:17:01.090779
 	
-	The undirected graph Mycobacterium leprae has 1553 nodes and 92080 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07641 and
-	has 5 connected components, where the component with most nodes has 1545 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 118.58, and the node degree mode is 1. The top 5 most central
-	nodes are 272631.ML1381 (degree 675), 272631.ML1191 (degree 627), 272631.ML2703 (degree
-	584), 272631.ML0395 (degree 564) and 272631.ML2496 (degree 521).
+	The undirected graph Mycobacterium leprae has 1553 nodes and 92080 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07641 and has 5 connected components, where the component with most
+	nodes has 1545 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 118.58, and
+	the node degree mode is 1. The top 5 most central nodes are 272631.ML1381
+	(degree 675), 272631.ML1191 (degree 627), 272631.ML2703 (degree 584), 272631.ML0395
+	(degree 564) and 272631.ML2496 (degree 521).
 	
 
 

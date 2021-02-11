@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:46.657028
 
-The undirected graph Phytophthora kernoviae has 6469 nodes and 746976 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03571 and
-has 43 connected components, where the component with most nodes has 6379 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 230.94, and the node degree mode is 1. The top 5 most central
-nodes are 325452.fgenesh_scip_prom.46568.3716 (degree 2634), 325452.fgenesh_scip_prom.46568.7551
-(degree 2520), 325452.fgenesh_scip_prom.46568.10815 (degree 2231), 325452.fgenesh_scip_prom.46568.10058
-(degree 2048) and 325452.fgenesh_scip_prom.46568.1724 (degree 2010).
+The undirected graph Phytophthora kernoviae has 6469 nodes and 746976 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03571 and has 43 connected components, where the component with most
+nodes has 6379 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 230.94, and
+the node degree mode is 1. The top 5 most central nodes are 325452.fgenesh_scip_prom.46568.3716
+(degree 2634), 325452.fgenesh_scip_prom.46568.7551 (degree 2520), 325452.fgenesh_scip_prom.46568.10815
+(degree 2231), 325452.fgenesh_scip_prom.46568.10058 (degree 2048) and 325452.fgenesh_scip_prom.46568.1724
+(degree 2010).
 
 
 References
@@ -107,14 +108,15 @@ def PhytophthoraKernoviae(
 	
 	Datetime: 2021-02-02 20:28:46.657028
 	
-	The undirected graph Phytophthora kernoviae has 6469 nodes and 746976 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03571 and
-	has 43 connected components, where the component with most nodes has 6379 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 230.94, and the node degree mode is 1. The top 5 most central
-	nodes are 325452.fgenesh_scip_prom.46568.3716 (degree 2634), 325452.fgenesh_scip_prom.46568.7551
-	(degree 2520), 325452.fgenesh_scip_prom.46568.10815 (degree 2231), 325452.fgenesh_scip_prom.46568.10058
-	(degree 2048) and 325452.fgenesh_scip_prom.46568.1724 (degree 2010).
+	The undirected graph Phytophthora kernoviae has 6469 nodes and 746976 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03571 and has 43 connected components, where the component with most
+	nodes has 6379 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 230.94, and
+	the node degree mode is 1. The top 5 most central nodes are 325452.fgenesh_scip_prom.46568.3716
+	(degree 2634), 325452.fgenesh_scip_prom.46568.7551 (degree 2520), 325452.fgenesh_scip_prom.46568.10815
+	(degree 2231), 325452.fgenesh_scip_prom.46568.10058 (degree 2048) and 325452.fgenesh_scip_prom.46568.1724
+	(degree 2010).
 	
 
 

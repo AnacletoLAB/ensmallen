@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:20.994295
 
-The undirected graph Facklamia ignava has 1634 nodes and 109638 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08218 and
-has 6 connected components, where the component with most nodes has 1620 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 134.20, and the node degree mode is 3. The top 5 most central
-nodes are 883112.HMPREF9707_01278 (degree 651), 883112.HMPREF9707_00535 (degree 633),
-883112.HMPREF9707_00698 (degree 562), 883112.HMPREF9707_00471 (degree 547) and 883112.HMPREF9707_01192
+The undirected graph Facklamia ignava has 1634 nodes and 109638 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08218 and has 6 connected components, where the component with most
+nodes has 1620 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 134.20, and
+the node degree mode is 3. The top 5 most central nodes are 883112.HMPREF9707_01278
+(degree 651), 883112.HMPREF9707_00535 (degree 633), 883112.HMPREF9707_00698
+(degree 562), 883112.HMPREF9707_00471 (degree 547) and 883112.HMPREF9707_01192
 (degree 544).
 
 
@@ -107,13 +108,14 @@ def FacklamiaIgnava(
 	
 	Datetime: 2021-02-02 21:51:20.994295
 	
-	The undirected graph Facklamia ignava has 1634 nodes and 109638 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08218 and
-	has 6 connected components, where the component with most nodes has 1620 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 134.20, and the node degree mode is 3. The top 5 most central
-	nodes are 883112.HMPREF9707_01278 (degree 651), 883112.HMPREF9707_00535 (degree 633),
-	883112.HMPREF9707_00698 (degree 562), 883112.HMPREF9707_00471 (degree 547) and 883112.HMPREF9707_01192
+	The undirected graph Facklamia ignava has 1634 nodes and 109638 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08218 and has 6 connected components, where the component with most
+	nodes has 1620 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 134.20, and
+	the node degree mode is 3. The top 5 most central nodes are 883112.HMPREF9707_01278
+	(degree 651), 883112.HMPREF9707_00535 (degree 633), 883112.HMPREF9707_00698
+	(degree 562), 883112.HMPREF9707_00471 (degree 547) and 883112.HMPREF9707_01192
 	(degree 544).
 	
 

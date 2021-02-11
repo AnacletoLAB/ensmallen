@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:09.309297
 
-The undirected graph Clostridium saccharoperbutylacetonicum has 5673 nodes and 886178
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05508 and has 27 connected components, where the component with most nodes has
-5603 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 242, the mean node degree is 312.42, and the node degree mode is 1. The
-top 5 most central nodes are 931276.Cspa_c08810 (degree 2581), 931276.Cspa_c54240
-(degree 2305), 931276.Cspa_c03850 (degree 2101), 931276.Cspa_c04450 (degree 2092)
-and 931276.Cspa_c11310 (degree 2004).
+The undirected graph Clostridium saccharoperbutylacetonicum has 5673 nodes
+and 886178 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05508 and has 27 connected components, where the
+component with most nodes has 5603 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 242, the mean node degree
+is 312.42, and the node degree mode is 1. The top 5 most central nodes
+are 931276.Cspa_c08810 (degree 2581), 931276.Cspa_c54240 (degree 2305),
+931276.Cspa_c03850 (degree 2101), 931276.Cspa_c04450 (degree 2092) and
+931276.Cspa_c11310 (degree 2004).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSaccharoperbutylacetonicum(
 	
 	Datetime: 2021-02-02 21:58:09.309297
 	
-	The undirected graph Clostridium saccharoperbutylacetonicum has 5673 nodes and 886178
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05508 and has 27 connected components, where the component with most nodes has
-	5603 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 242, the mean node degree is 312.42, and the node degree mode is 1. The
-	top 5 most central nodes are 931276.Cspa_c08810 (degree 2581), 931276.Cspa_c54240
-	(degree 2305), 931276.Cspa_c03850 (degree 2101), 931276.Cspa_c04450 (degree 2092)
-	and 931276.Cspa_c11310 (degree 2004).
+	The undirected graph Clostridium saccharoperbutylacetonicum has 5673 nodes
+	and 886178 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05508 and has 27 connected components, where the
+	component with most nodes has 5603 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 242, the mean node degree
+	is 312.42, and the node degree mode is 1. The top 5 most central nodes
+	are 931276.Cspa_c08810 (degree 2581), 931276.Cspa_c54240 (degree 2305),
+	931276.Cspa_c03850 (degree 2101), 931276.Cspa_c04450 (degree 2092) and
+	931276.Cspa_c11310 (degree 2004).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:36.110314
 
-The undirected graph Helicobacter pametensis has 1359 nodes and 83394 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09037 and
-has 2 connected components, where the component with most nodes has 1357 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 122.73, and the node degree mode is 14. The top 5 most central
-nodes are 1408442.JADE01000003_gene715 (degree 664), 1408442.JADE01000008_gene112
-(degree 654), 1408442.JADE01000007_gene927 (degree 635), 1408442.JADE01000007_gene810
-(degree 577) and 1408442.JADE01000005_gene1303 (degree 543).
+The undirected graph Helicobacter pametensis has 1359 nodes and 83394 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09037 and has 2 connected components, where the component with most
+nodes has 1357 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 122.73, and
+the node degree mode is 14. The top 5 most central nodes are 1408442.JADE01000003_gene715
+(degree 664), 1408442.JADE01000008_gene112 (degree 654), 1408442.JADE01000007_gene927
+(degree 635), 1408442.JADE01000007_gene810 (degree 577) and 1408442.JADE01000005_gene1303
+(degree 543).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterPametensis(
 	
 	Datetime: 2021-02-03 22:37:36.110314
 	
-	The undirected graph Helicobacter pametensis has 1359 nodes and 83394 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09037 and
-	has 2 connected components, where the component with most nodes has 1357 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 122.73, and the node degree mode is 14. The top 5 most central
-	nodes are 1408442.JADE01000003_gene715 (degree 664), 1408442.JADE01000008_gene112
-	(degree 654), 1408442.JADE01000007_gene927 (degree 635), 1408442.JADE01000007_gene810
-	(degree 577) and 1408442.JADE01000005_gene1303 (degree 543).
+	The undirected graph Helicobacter pametensis has 1359 nodes and 83394 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09037 and has 2 connected components, where the component with most
+	nodes has 1357 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 122.73, and
+	the node degree mode is 14. The top 5 most central nodes are 1408442.JADE01000003_gene715
+	(degree 664), 1408442.JADE01000008_gene112 (degree 654), 1408442.JADE01000007_gene927
+	(degree 635), 1408442.JADE01000007_gene810 (degree 577) and 1408442.JADE01000005_gene1303
+	(degree 543).
 	
 
 

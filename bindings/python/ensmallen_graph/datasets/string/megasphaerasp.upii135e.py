@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:42.971951
 
-The undirected graph Megasphaera sp. UPII135E has 1503 nodes and 95780 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08485 and
-has 6 connected components, where the component with most nodes has 1491 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 127.45, and the node degree mode is 23. The top 5 most central
-nodes are 1000569.HMPREF1040_0752 (degree 698), 1000569.HMPREF1040_0924 (degree 612),
-1000569.HMPREF1040_1342 (degree 602), 1000569.HMPREF1040_0881 (degree 600) and 1000569.HMPREF1040_1336
+The undirected graph Megasphaera sp. UPII135E has 1503 nodes and 95780
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08485 and has 6 connected components, where the component
+with most nodes has 1491 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 127.45,
+and the node degree mode is 23. The top 5 most central nodes are 1000569.HMPREF1040_0752
+(degree 698), 1000569.HMPREF1040_0924 (degree 612), 1000569.HMPREF1040_1342
+(degree 602), 1000569.HMPREF1040_0881 (degree 600) and 1000569.HMPREF1040_1336
 (degree 596).
 
 
@@ -107,13 +108,14 @@ def MegasphaeraSp.Upii135e(
 	
 	Datetime: 2021-02-02 22:06:42.971951
 	
-	The undirected graph Megasphaera sp. UPII135E has 1503 nodes and 95780 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08485 and
-	has 6 connected components, where the component with most nodes has 1491 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 127.45, and the node degree mode is 23. The top 5 most central
-	nodes are 1000569.HMPREF1040_0752 (degree 698), 1000569.HMPREF1040_0924 (degree 612),
-	1000569.HMPREF1040_1342 (degree 602), 1000569.HMPREF1040_0881 (degree 600) and 1000569.HMPREF1040_1336
+	The undirected graph Megasphaera sp. UPII135E has 1503 nodes and 95780
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08485 and has 6 connected components, where the component
+	with most nodes has 1491 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 127.45,
+	and the node degree mode is 23. The top 5 most central nodes are 1000569.HMPREF1040_0752
+	(degree 698), 1000569.HMPREF1040_0924 (degree 612), 1000569.HMPREF1040_1342
+	(degree 602), 1000569.HMPREF1040_0881 (degree 600) and 1000569.HMPREF1040_1336
 	(degree 596).
 	
 

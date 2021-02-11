@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:55.316779
 
-The undirected graph Sulfurimonas denitrificans has 2093 nodes and 173523 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07926
-and has 3 connected components, where the component with most nodes has 2088 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 165.81, and the node degree mode is 8. The top 5
-most central nodes are 326298.Suden_1244 (degree 935), 326298.Suden_0930 (degree
-849), 326298.Suden_0422 (degree 754), 326298.Suden_0770 (degree 743) and 326298.Suden_1105
-(degree 715).
+The undirected graph Sulfurimonas denitrificans has 2093 nodes and 173523
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07926 and has 3 connected components, where the component
+with most nodes has 2088 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 165.81,
+and the node degree mode is 8. The top 5 most central nodes are 326298.Suden_1244
+(degree 935), 326298.Suden_0930 (degree 849), 326298.Suden_0422 (degree
+754), 326298.Suden_0770 (degree 743) and 326298.Suden_1105 (degree 715).
 
 
 References
@@ -107,14 +107,14 @@ def SulfurimonasDenitrificans(
 	
 	Datetime: 2021-02-02 20:28:55.316779
 	
-	The undirected graph Sulfurimonas denitrificans has 2093 nodes and 173523 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07926
-	and has 3 connected components, where the component with most nodes has 2088 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 165.81, and the node degree mode is 8. The top 5
-	most central nodes are 326298.Suden_1244 (degree 935), 326298.Suden_0930 (degree
-	849), 326298.Suden_0422 (degree 754), 326298.Suden_0770 (degree 743) and 326298.Suden_1105
-	(degree 715).
+	The undirected graph Sulfurimonas denitrificans has 2093 nodes and 173523
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07926 and has 3 connected components, where the component
+	with most nodes has 2088 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 165.81,
+	and the node degree mode is 8. The top 5 most central nodes are 326298.Suden_1244
+	(degree 935), 326298.Suden_0930 (degree 849), 326298.Suden_0422 (degree
+	754), 326298.Suden_0770 (degree 743) and 326298.Suden_1105 (degree 715).
 	
 
 

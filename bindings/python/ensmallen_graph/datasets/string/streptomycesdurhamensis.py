@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:18.310685
 
-The undirected graph Streptomyces durhamensis has 8163 nodes and 1530302 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04594
-and has 37 connected components, where the component with most nodes has 8079 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 304, the mean node degree is 374.94, and the node degree mode is 2. The top 5
-most central nodes are 68194.JNXR01000011_gene6223 (degree 4120), 68194.JNXR01000001_gene6802
-(degree 2781), 68194.JNXR01000002_gene7242 (degree 2584), 68194.JNXR01000012_gene6033
-(degree 2561) and 68194.JNXR01000008_gene1903 (degree 2535).
+The undirected graph Streptomyces durhamensis has 8163 nodes and 1530302
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04594 and has 37 connected components, where the component
+with most nodes has 8079 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 304, the mean node degree is 374.94,
+and the node degree mode is 2. The top 5 most central nodes are 68194.JNXR01000011_gene6223
+(degree 4120), 68194.JNXR01000001_gene6802 (degree 2781), 68194.JNXR01000002_gene7242
+(degree 2584), 68194.JNXR01000012_gene6033 (degree 2561) and 68194.JNXR01000008_gene1903
+(degree 2535).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesDurhamensis(
 	
 	Datetime: 2021-02-02 18:28:18.310685
 	
-	The undirected graph Streptomyces durhamensis has 8163 nodes and 1530302 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04594
-	and has 37 connected components, where the component with most nodes has 8079 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 304, the mean node degree is 374.94, and the node degree mode is 2. The top 5
-	most central nodes are 68194.JNXR01000011_gene6223 (degree 4120), 68194.JNXR01000001_gene6802
-	(degree 2781), 68194.JNXR01000002_gene7242 (degree 2584), 68194.JNXR01000012_gene6033
-	(degree 2561) and 68194.JNXR01000008_gene1903 (degree 2535).
+	The undirected graph Streptomyces durhamensis has 8163 nodes and 1530302
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04594 and has 37 connected components, where the component
+	with most nodes has 8079 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 304, the mean node degree is 374.94,
+	and the node degree mode is 2. The top 5 most central nodes are 68194.JNXR01000011_gene6223
+	(degree 4120), 68194.JNXR01000001_gene6802 (degree 2781), 68194.JNXR01000002_gene7242
+	(degree 2584), 68194.JNXR01000012_gene6033 (degree 2561) and 68194.JNXR01000008_gene1903
+	(degree 2535).
 	
 
 

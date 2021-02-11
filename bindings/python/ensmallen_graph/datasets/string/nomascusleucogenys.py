@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:43.878067
 
-The undirected graph Nomascus leucogenys has 17744 nodes and 3487256 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02215 and
-is connected, as it has a single component. The graph median node degree is 277,
-the mean node degree is 393.06, and the node degree mode is 133. The top 5 most central
-nodes are 61853.ENSNLEP00000021815 (degree 4652), 61853.ENSNLEP00000021881 (degree
-4046), 61853.ENSNLEP00000010617 (degree 3905), 61853.ENSNLEP00000017441 (degree 3695)
-and 61853.ENSNLEP00000002370 (degree 3618).
+The undirected graph Nomascus leucogenys has 17744 nodes and 3487256 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02215 and is connected, as it has a single component. The graph median
+node degree is 277, the mean node degree is 393.06, and the node degree
+mode is 133. The top 5 most central nodes are 61853.ENSNLEP00000021815
+(degree 4652), 61853.ENSNLEP00000021881 (degree 4046), 61853.ENSNLEP00000010617
+(degree 3905), 61853.ENSNLEP00000017441 (degree 3695) and 61853.ENSNLEP00000002370
+(degree 3618).
 
 
 References
@@ -106,13 +107,14 @@ def NomascusLeucogenys(
 	
 	Datetime: 2021-02-02 18:23:43.878067
 	
-	The undirected graph Nomascus leucogenys has 17744 nodes and 3487256 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02215 and
-	is connected, as it has a single component. The graph median node degree is 277,
-	the mean node degree is 393.06, and the node degree mode is 133. The top 5 most central
-	nodes are 61853.ENSNLEP00000021815 (degree 4652), 61853.ENSNLEP00000021881 (degree
-	4046), 61853.ENSNLEP00000010617 (degree 3905), 61853.ENSNLEP00000017441 (degree 3695)
-	and 61853.ENSNLEP00000002370 (degree 3618).
+	The undirected graph Nomascus leucogenys has 17744 nodes and 3487256 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02215 and is connected, as it has a single component. The graph median
+	node degree is 277, the mean node degree is 393.06, and the node degree
+	mode is 133. The top 5 most central nodes are 61853.ENSNLEP00000021815
+	(degree 4652), 61853.ENSNLEP00000021881 (degree 4046), 61853.ENSNLEP00000010617
+	(degree 3905), 61853.ENSNLEP00000017441 (degree 3695) and 61853.ENSNLEP00000002370
+	(degree 3618).
 	
 
 

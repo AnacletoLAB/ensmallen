@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:02:45.325784
 
-The undirected graph Novispirillum itersonii has 3655 nodes and 497455 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07450 and
-has 10 connected components, where the component with most nodes has 3637 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 240,
-the mean node degree is 272.21, and the node degree mode is 1. The top 5 most central
-nodes are 1279038.KB907342_gene2692 (degree 1553), 1279038.KB907337_gene651 (degree
-1375), 1279038.KB907339_gene1281 (degree 1361), 1279038.KB907351_gene2808 (degree
-1322) and 1279038.KB907344_gene3642 (degree 1204).
+The undirected graph Novispirillum itersonii has 3655 nodes and 497455
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07450 and has 10 connected components, where the component
+with most nodes has 3637 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 272.21,
+and the node degree mode is 1. The top 5 most central nodes are 1279038.KB907342_gene2692
+(degree 1553), 1279038.KB907337_gene651 (degree 1375), 1279038.KB907339_gene1281
+(degree 1361), 1279038.KB907351_gene2808 (degree 1322) and 1279038.KB907344_gene3642
+(degree 1204).
 
 
 References
@@ -107,14 +108,15 @@ def NovispirillumItersonii(
 	
 	Datetime: 2021-02-03 21:02:45.325784
 	
-	The undirected graph Novispirillum itersonii has 3655 nodes and 497455 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07450 and
-	has 10 connected components, where the component with most nodes has 3637 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 240,
-	the mean node degree is 272.21, and the node degree mode is 1. The top 5 most central
-	nodes are 1279038.KB907342_gene2692 (degree 1553), 1279038.KB907337_gene651 (degree
-	1375), 1279038.KB907339_gene1281 (degree 1361), 1279038.KB907351_gene2808 (degree
-	1322) and 1279038.KB907344_gene3642 (degree 1204).
+	The undirected graph Novispirillum itersonii has 3655 nodes and 497455
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07450 and has 10 connected components, where the component
+	with most nodes has 3637 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 272.21,
+	and the node degree mode is 1. The top 5 most central nodes are 1279038.KB907342_gene2692
+	(degree 1553), 1279038.KB907337_gene651 (degree 1375), 1279038.KB907339_gene1281
+	(degree 1361), 1279038.KB907351_gene2808 (degree 1322) and 1279038.KB907344_gene3642
+	(degree 1204).
 	
 
 

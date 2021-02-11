@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:16.804256
 
-The undirected graph Campylobacter gracilis has 2764 nodes and 91265 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02390 and
-has 84 connected components, where the component with most nodes has 2537 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 30,
-the mean node degree is 66.04, and the node degree mode is 2. The top 5 most central
-nodes are 553220.CAMGR0001_0524 (degree 736), 553220.CAMGR0001_2165 (degree 705),
-553220.CAMGR0001_1593 (degree 627), 553220.CAMGR0001_2171 (degree 611) and 553220.CAMGR0001_2845
+The undirected graph Campylobacter gracilis has 2764 nodes and 91265 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02390 and has 84 connected components, where the component with most
+nodes has 2537 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 30, the mean node degree is 66.04, and
+the node degree mode is 2. The top 5 most central nodes are 553220.CAMGR0001_0524
+(degree 736), 553220.CAMGR0001_2165 (degree 705), 553220.CAMGR0001_1593
+(degree 627), 553220.CAMGR0001_2171 (degree 611) and 553220.CAMGR0001_2845
 (degree 580).
 
 
@@ -107,13 +108,14 @@ def CampylobacterGracilis(
 	
 	Datetime: 2021-02-02 21:10:16.804256
 	
-	The undirected graph Campylobacter gracilis has 2764 nodes and 91265 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02390 and
-	has 84 connected components, where the component with most nodes has 2537 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 30,
-	the mean node degree is 66.04, and the node degree mode is 2. The top 5 most central
-	nodes are 553220.CAMGR0001_0524 (degree 736), 553220.CAMGR0001_2165 (degree 705),
-	553220.CAMGR0001_1593 (degree 627), 553220.CAMGR0001_2171 (degree 611) and 553220.CAMGR0001_2845
+	The undirected graph Campylobacter gracilis has 2764 nodes and 91265 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02390 and has 84 connected components, where the component with most
+	nodes has 2537 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 30, the mean node degree is 66.04, and
+	the node degree mode is 2. The top 5 most central nodes are 553220.CAMGR0001_0524
+	(degree 736), 553220.CAMGR0001_2165 (degree 705), 553220.CAMGR0001_1593
+	(degree 627), 553220.CAMGR0001_2171 (degree 611) and 553220.CAMGR0001_2845
 	(degree 580).
 	
 

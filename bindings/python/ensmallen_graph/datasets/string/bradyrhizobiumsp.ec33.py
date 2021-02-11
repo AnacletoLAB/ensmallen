@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:42.381672
 
-The undirected graph Bradyrhizobium sp. Ec33 has 8185 nodes and 1351501 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04035
-and has 78 connected components, where the component with most nodes has 7997 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 261, the mean node degree is 330.24, and the node degree mode is 1. The top 5
-most central nodes are 189753.AXAS01000020_gene1699 (degree 3976), 189753.AXAS01000025_gene387
-(degree 3072), 189753.AXAS01000002_gene5194 (degree 2898), 189753.AXAS01000054_gene7730
-(degree 2663) and 189753.AXAS01000054_gene7725 (degree 2653).
+The undirected graph Bradyrhizobium sp. Ec33 has 8185 nodes and 1351501
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04035 and has 78 connected components, where the component
+with most nodes has 7997 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 261, the mean node degree is 330.24,
+and the node degree mode is 1. The top 5 most central nodes are 189753.AXAS01000020_gene1699
+(degree 3976), 189753.AXAS01000025_gene387 (degree 3072), 189753.AXAS01000002_gene5194
+(degree 2898), 189753.AXAS01000054_gene7730 (degree 2663) and 189753.AXAS01000054_gene7725
+(degree 2653).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Ec33(
 	
 	Datetime: 2021-02-02 19:57:42.381672
 	
-	The undirected graph Bradyrhizobium sp. Ec33 has 8185 nodes and 1351501 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04035
-	and has 78 connected components, where the component with most nodes has 7997 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 261, the mean node degree is 330.24, and the node degree mode is 1. The top 5
-	most central nodes are 189753.AXAS01000020_gene1699 (degree 3976), 189753.AXAS01000025_gene387
-	(degree 3072), 189753.AXAS01000002_gene5194 (degree 2898), 189753.AXAS01000054_gene7730
-	(degree 2663) and 189753.AXAS01000054_gene7725 (degree 2653).
+	The undirected graph Bradyrhizobium sp. Ec33 has 8185 nodes and 1351501
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04035 and has 78 connected components, where the component
+	with most nodes has 7997 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 261, the mean node degree is 330.24,
+	and the node degree mode is 1. The top 5 most central nodes are 189753.AXAS01000020_gene1699
+	(degree 3976), 189753.AXAS01000025_gene387 (degree 3072), 189753.AXAS01000002_gene5194
+	(degree 2898), 189753.AXAS01000054_gene7730 (degree 2663) and 189753.AXAS01000054_gene7725
+	(degree 2653).
 	
 
 

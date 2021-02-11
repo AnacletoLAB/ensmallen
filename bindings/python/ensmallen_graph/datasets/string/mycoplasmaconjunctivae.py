@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:38.146729
 
-The undirected graph Mycoplasma conjunctivae has 685 nodes and 28771 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12281
-and has 6 connected components, where the component with most nodes has 675 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 55, the mean node degree is 84.00, and the node degree mode is 5. The top 5 most
-central nodes are 45361.MCJ_005190 (degree 317), 45361.MCJ_006260 (degree 278), 45361.MCJ_006600
-(degree 268), 45361.MCJ_002530 (degree 262) and 45361.MCJ_006700 (degree 260).
+The undirected graph Mycoplasma conjunctivae has 685 nodes and 28771 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12281 and has 6 connected components, where the component
+with most nodes has 675 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 55, the mean node degree is 84.00,
+and the node degree mode is 5. The top 5 most central nodes are 45361.MCJ_005190
+(degree 317), 45361.MCJ_006260 (degree 278), 45361.MCJ_006600 (degree 268),
+45361.MCJ_002530 (degree 262) and 45361.MCJ_006700 (degree 260).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaConjunctivae(
 	
 	Datetime: 2021-02-02 18:15:38.146729
 	
-	The undirected graph Mycoplasma conjunctivae has 685 nodes and 28771 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12281
-	and has 6 connected components, where the component with most nodes has 675 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 55, the mean node degree is 84.00, and the node degree mode is 5. The top 5 most
-	central nodes are 45361.MCJ_005190 (degree 317), 45361.MCJ_006260 (degree 278), 45361.MCJ_006600
-	(degree 268), 45361.MCJ_002530 (degree 262) and 45361.MCJ_006700 (degree 260).
+	The undirected graph Mycoplasma conjunctivae has 685 nodes and 28771 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12281 and has 6 connected components, where the component
+	with most nodes has 675 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 55, the mean node degree is 84.00,
+	and the node degree mode is 5. The top 5 most central nodes are 45361.MCJ_005190
+	(degree 317), 45361.MCJ_006260 (degree 278), 45361.MCJ_006600 (degree 268),
+	45361.MCJ_002530 (degree 262) and 45361.MCJ_006700 (degree 260).
 	
 
 

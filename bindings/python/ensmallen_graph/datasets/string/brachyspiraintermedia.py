@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:24.214733
 
-The undirected graph Brachyspira intermedia has 2830 nodes and 211428 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05282 and
-has 21 connected components, where the component with most nodes has 2771 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 149.42, and the node degree mode is 5. The top 5 most central
-nodes are 1045858.Bint_0812 (degree 1079), 1045858.Bint_0305 (degree 1077), 1045858.Bint_2465
-(degree 831), 1045858.Bint_1190 (degree 815) and 1045858.Bint_0831 (degree 811).
+The undirected graph Brachyspira intermedia has 2830 nodes and 211428 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05282 and has 21 connected components, where the component with most
+nodes has 2771 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 149.42, and
+the node degree mode is 5. The top 5 most central nodes are 1045858.Bint_0812
+(degree 1079), 1045858.Bint_0305 (degree 1077), 1045858.Bint_2465 (degree
+831), 1045858.Bint_1190 (degree 815) and 1045858.Bint_0831 (degree 811).
 
 
 References
@@ -106,13 +107,14 @@ def BrachyspiraIntermedia(
 	
 	Datetime: 2021-02-02 22:16:24.214733
 	
-	The undirected graph Brachyspira intermedia has 2830 nodes and 211428 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05282 and
-	has 21 connected components, where the component with most nodes has 2771 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 149.42, and the node degree mode is 5. The top 5 most central
-	nodes are 1045858.Bint_0812 (degree 1079), 1045858.Bint_0305 (degree 1077), 1045858.Bint_2465
-	(degree 831), 1045858.Bint_1190 (degree 815) and 1045858.Bint_0831 (degree 811).
+	The undirected graph Brachyspira intermedia has 2830 nodes and 211428 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05282 and has 21 connected components, where the component with most
+	nodes has 2771 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 149.42, and
+	the node degree mode is 5. The top 5 most central nodes are 1045858.Bint_0812
+	(degree 1079), 1045858.Bint_0305 (degree 1077), 1045858.Bint_2465 (degree
+	831), 1045858.Bint_1190 (degree 815) and 1045858.Bint_0831 (degree 811).
 	
 
 

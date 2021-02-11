@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:19.085910
 
-The undirected graph Burkholderiales bacterium 1147 has 2338 nodes and 163896 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-and has 9 connected components, where the component with most nodes has 2318 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 140.20, and the node degree mode is 5. The top 5
-most central nodes are 469610.HMPREF0189_01902 (degree 696), 469610.HMPREF0189_00261
-(degree 666), 469610.HMPREF0189_00809 (degree 663), 469610.HMPREF0189_00196 (degree
+The undirected graph Burkholderiales bacterium 1147 has 2338 nodes and
+163896 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05999 and has 9 connected components, where the
+component with most nodes has 2318 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 140.20, and the node degree mode is 5. The top 5 most central nodes
+are 469610.HMPREF0189_01902 (degree 696), 469610.HMPREF0189_00261 (degree
+666), 469610.HMPREF0189_00809 (degree 663), 469610.HMPREF0189_00196 (degree
 659) and 469610.HMPREF0189_01307 (degree 645).
 
 
@@ -107,13 +108,14 @@ def BurkholderialesBacterium1147(
 	
 	Datetime: 2021-02-02 20:55:19.085910
 	
-	The undirected graph Burkholderiales bacterium 1147 has 2338 nodes and 163896 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-	and has 9 connected components, where the component with most nodes has 2318 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 140.20, and the node degree mode is 5. The top 5
-	most central nodes are 469610.HMPREF0189_01902 (degree 696), 469610.HMPREF0189_00261
-	(degree 666), 469610.HMPREF0189_00809 (degree 663), 469610.HMPREF0189_00196 (degree
+	The undirected graph Burkholderiales bacterium 1147 has 2338 nodes and
+	163896 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05999 and has 9 connected components, where the
+	component with most nodes has 2318 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 140.20, and the node degree mode is 5. The top 5 most central nodes
+	are 469610.HMPREF0189_01902 (degree 696), 469610.HMPREF0189_00261 (degree
+	666), 469610.HMPREF0189_00809 (degree 663), 469610.HMPREF0189_00196 (degree
 	659) and 469610.HMPREF0189_01307 (degree 645).
 	
 

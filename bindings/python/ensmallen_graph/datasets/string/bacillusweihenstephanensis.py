@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:46.890618
 
-The undirected graph Bacillus weihenstephanensis has 5343 nodes and 486165 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03407
-and has 35 connected components, where the component with most nodes has 5261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 181.98, and the node degree mode is 1. The top 5
-most central nodes are 315730.BcerKBAB4_4417 (degree 1791), 315730.BcerKBAB4_0247
-(degree 1440), 315730.BcerKBAB4_2027 (degree 1314), 315730.BcerKBAB4_0446 (degree
-1294) and 315730.BcerKBAB4_4120 (degree 1281).
+The undirected graph Bacillus weihenstephanensis has 5343 nodes and 486165
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03407 and has 35 connected components, where the component
+with most nodes has 5261 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 181.98,
+and the node degree mode is 1. The top 5 most central nodes are 315730.BcerKBAB4_4417
+(degree 1791), 315730.BcerKBAB4_0247 (degree 1440), 315730.BcerKBAB4_2027
+(degree 1314), 315730.BcerKBAB4_0446 (degree 1294) and 315730.BcerKBAB4_4120
+(degree 1281).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusWeihenstephanensis(
 	
 	Datetime: 2021-02-02 20:25:46.890618
 	
-	The undirected graph Bacillus weihenstephanensis has 5343 nodes and 486165 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03407
-	and has 35 connected components, where the component with most nodes has 5261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 181.98, and the node degree mode is 1. The top 5
-	most central nodes are 315730.BcerKBAB4_4417 (degree 1791), 315730.BcerKBAB4_0247
-	(degree 1440), 315730.BcerKBAB4_2027 (degree 1314), 315730.BcerKBAB4_0446 (degree
-	1294) and 315730.BcerKBAB4_4120 (degree 1281).
+	The undirected graph Bacillus weihenstephanensis has 5343 nodes and 486165
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03407 and has 35 connected components, where the component
+	with most nodes has 5261 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 181.98,
+	and the node degree mode is 1. The top 5 most central nodes are 315730.BcerKBAB4_4417
+	(degree 1791), 315730.BcerKBAB4_0247 (degree 1440), 315730.BcerKBAB4_2027
+	(degree 1314), 315730.BcerKBAB4_0446 (degree 1294) and 315730.BcerKBAB4_4120
+	(degree 1281).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:06.515647
 
-The undirected graph Pseudomonas luteola has 4128 nodes and 473962 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05564 and
-has 42 connected components, where the component with most nodes has 4021 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 229.63, and the node degree mode is 2. The top 5 most central
-nodes are 1207076.ALAT01000191_gene2970 (degree 1467), 1207076.ALAT01000099_gene2388
-(degree 1378), 1207076.ALAT01000036_gene4158 (degree 1354), 1207076.ALAT01000204_gene1811
-(degree 1265) and 1207076.ALAT01000115_gene3618 (degree 1199).
+The undirected graph Pseudomonas luteola has 4128 nodes and 473962 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05564 and has 42 connected components, where the component with most
+nodes has 4021 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 229.63, and
+the node degree mode is 2. The top 5 most central nodes are 1207076.ALAT01000191_gene2970
+(degree 1467), 1207076.ALAT01000099_gene2388 (degree 1378), 1207076.ALAT01000036_gene4158
+(degree 1354), 1207076.ALAT01000204_gene1811 (degree 1265) and 1207076.ALAT01000115_gene3618
+(degree 1199).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasLuteola(
 	
 	Datetime: 2021-02-02 23:18:06.515647
 	
-	The undirected graph Pseudomonas luteola has 4128 nodes and 473962 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05564 and
-	has 42 connected components, where the component with most nodes has 4021 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 229.63, and the node degree mode is 2. The top 5 most central
-	nodes are 1207076.ALAT01000191_gene2970 (degree 1467), 1207076.ALAT01000099_gene2388
-	(degree 1378), 1207076.ALAT01000036_gene4158 (degree 1354), 1207076.ALAT01000204_gene1811
-	(degree 1265) and 1207076.ALAT01000115_gene3618 (degree 1199).
+	The undirected graph Pseudomonas luteola has 4128 nodes and 473962 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05564 and has 42 connected components, where the component with most
+	nodes has 4021 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 229.63, and
+	the node degree mode is 2. The top 5 most central nodes are 1207076.ALAT01000191_gene2970
+	(degree 1467), 1207076.ALAT01000099_gene2388 (degree 1378), 1207076.ALAT01000036_gene4158
+	(degree 1354), 1207076.ALAT01000204_gene1811 (degree 1265) and 1207076.ALAT01000115_gene3618
+	(degree 1199).
 	
 
 

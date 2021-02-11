@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:19.917248
 
-The undirected graph Vibrio splendidus has 4528 nodes and 618777 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06037 and
-has 15 connected components, where the component with most nodes has 4497 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 229,
-the mean node degree is 273.31, and the node degree mode is 1. The top 5 most central
-nodes are 617140.AJZE01000023_gene66 (degree 1607), 617140.AJZE01000088_gene4438
-(degree 1596), 617140.AJZE01000087_gene271 (degree 1463), 617140.AJZE01000040_gene2154
-(degree 1461) and 617140.AJZE01000057_gene2017 (degree 1434).
+The undirected graph Vibrio splendidus has 4528 nodes and 618777 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06037 and has 15 connected components, where the component with most
+nodes has 4497 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 229, the mean node degree is 273.31, and
+the node degree mode is 1. The top 5 most central nodes are 617140.AJZE01000023_gene66
+(degree 1607), 617140.AJZE01000088_gene4438 (degree 1596), 617140.AJZE01000087_gene271
+(degree 1463), 617140.AJZE01000040_gene2154 (degree 1461) and 617140.AJZE01000057_gene2017
+(degree 1434).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioSplendidus(
 	
 	Datetime: 2021-02-02 21:20:19.917248
 	
-	The undirected graph Vibrio splendidus has 4528 nodes and 618777 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06037 and
-	has 15 connected components, where the component with most nodes has 4497 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 229,
-	the mean node degree is 273.31, and the node degree mode is 1. The top 5 most central
-	nodes are 617140.AJZE01000023_gene66 (degree 1607), 617140.AJZE01000088_gene4438
-	(degree 1596), 617140.AJZE01000087_gene271 (degree 1463), 617140.AJZE01000040_gene2154
-	(degree 1461) and 617140.AJZE01000057_gene2017 (degree 1434).
+	The undirected graph Vibrio splendidus has 4528 nodes and 618777 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06037 and has 15 connected components, where the component with most
+	nodes has 4497 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 229, the mean node degree is 273.31, and
+	the node degree mode is 1. The top 5 most central nodes are 617140.AJZE01000023_gene66
+	(degree 1607), 617140.AJZE01000088_gene4438 (degree 1596), 617140.AJZE01000087_gene271
+	(degree 1463), 617140.AJZE01000040_gene2154 (degree 1461) and 617140.AJZE01000057_gene2017
+	(degree 1434).
 	
 
 

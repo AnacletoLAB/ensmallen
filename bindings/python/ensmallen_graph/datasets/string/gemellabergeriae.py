@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:47.283731
 
-The undirected graph Gemella bergeriae has 1530 nodes and 97562 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08341 and
-has 4 connected components, where the component with most nodes has 1522 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 127.53, and the node degree mode is 3. The top 5 most central
-nodes are 1321820.HMPREF1983_00752 (degree 731), 1321820.HMPREF1983_00095 (degree
-683), 1321820.HMPREF1983_00487 (degree 539), 1321820.HMPREF1983_00407 (degree 539)
-and 1321820.HMPREF1983_01249 (degree 532).
+The undirected graph Gemella bergeriae has 1530 nodes and 97562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08341 and has 4 connected components, where the component with most
+nodes has 1522 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 127.53, and
+the node degree mode is 3. The top 5 most central nodes are 1321820.HMPREF1983_00752
+(degree 731), 1321820.HMPREF1983_00095 (degree 683), 1321820.HMPREF1983_00487
+(degree 539), 1321820.HMPREF1983_00407 (degree 539) and 1321820.HMPREF1983_01249
+(degree 532).
 
 
 References
@@ -107,14 +108,15 @@ def GemellaBergeriae(
 	
 	Datetime: 2021-02-03 21:53:47.283731
 	
-	The undirected graph Gemella bergeriae has 1530 nodes and 97562 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08341 and
-	has 4 connected components, where the component with most nodes has 1522 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 127.53, and the node degree mode is 3. The top 5 most central
-	nodes are 1321820.HMPREF1983_00752 (degree 731), 1321820.HMPREF1983_00095 (degree
-	683), 1321820.HMPREF1983_00487 (degree 539), 1321820.HMPREF1983_00407 (degree 539)
-	and 1321820.HMPREF1983_01249 (degree 532).
+	The undirected graph Gemella bergeriae has 1530 nodes and 97562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08341 and has 4 connected components, where the component with most
+	nodes has 1522 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 127.53, and
+	the node degree mode is 3. The top 5 most central nodes are 1321820.HMPREF1983_00752
+	(degree 731), 1321820.HMPREF1983_00095 (degree 683), 1321820.HMPREF1983_00487
+	(degree 539), 1321820.HMPREF1983_00407 (degree 539) and 1321820.HMPREF1983_01249
+	(degree 532).
 	
 
 

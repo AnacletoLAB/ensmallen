@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:10.841851
 
-The undirected graph Coprobacillus sp. 291 has 3828 nodes and 696682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09511 and
-has 24 connected components, where the component with most nodes has 3763 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 302,
-the mean node degree is 363.99, and the node degree mode is 6. The top 5 most central
-nodes are 469596.HMPREF9488_00356 (degree 2005), 469596.HMPREF9488_02193 (degree
-1889), 469596.HMPREF9488_02967 (degree 1851), 469596.HMPREF9488_01739 (degree 1838)
-and 469596.HMPREF9488_00041 (degree 1683).
+The undirected graph Coprobacillus sp. 291 has 3828 nodes and 696682 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09511 and has 24 connected components, where the component with most
+nodes has 3763 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 302, the mean node degree is 363.99, and
+the node degree mode is 6. The top 5 most central nodes are 469596.HMPREF9488_00356
+(degree 2005), 469596.HMPREF9488_02193 (degree 1889), 469596.HMPREF9488_02967
+(degree 1851), 469596.HMPREF9488_01739 (degree 1838) and 469596.HMPREF9488_00041
+(degree 1683).
 
 
 References
@@ -107,14 +108,15 @@ def CoprobacillusSp.291(
 	
 	Datetime: 2021-02-02 20:55:10.841851
 	
-	The undirected graph Coprobacillus sp. 291 has 3828 nodes and 696682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09511 and
-	has 24 connected components, where the component with most nodes has 3763 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 302,
-	the mean node degree is 363.99, and the node degree mode is 6. The top 5 most central
-	nodes are 469596.HMPREF9488_00356 (degree 2005), 469596.HMPREF9488_02193 (degree
-	1889), 469596.HMPREF9488_02967 (degree 1851), 469596.HMPREF9488_01739 (degree 1838)
-	and 469596.HMPREF9488_00041 (degree 1683).
+	The undirected graph Coprobacillus sp. 291 has 3828 nodes and 696682 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09511 and has 24 connected components, where the component with most
+	nodes has 3763 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 302, the mean node degree is 363.99, and
+	the node degree mode is 6. The top 5 most central nodes are 469596.HMPREF9488_00356
+	(degree 2005), 469596.HMPREF9488_02193 (degree 1889), 469596.HMPREF9488_02967
+	(degree 1851), 469596.HMPREF9488_01739 (degree 1838) and 469596.HMPREF9488_00041
+	(degree 1683).
 	
 
 

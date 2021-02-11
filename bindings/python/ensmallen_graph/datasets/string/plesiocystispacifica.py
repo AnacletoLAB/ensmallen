@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:22.494234
 
-The undirected graph Plesiocystis pacifica has 8259 nodes and 719867 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02111 and
-has 143 connected components, where the component with most nodes has 7866 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 174.32, and the node degree mode is 2. The top 5
-most central nodes are 391625.PPSIR1_12243 (degree 1702), 391625.PPSIR1_28578 (degree
-1518), 391625.PPSIR1_09920 (degree 1489), 391625.PPSIR1_27373 (degree 1445) and 391625.PPSIR1_39605
-(degree 1380).
+The undirected graph Plesiocystis pacifica has 8259 nodes and 719867 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02111 and has 143 connected components, where the component with most
+nodes has 7866 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 174.32, and
+the node degree mode is 2. The top 5 most central nodes are 391625.PPSIR1_12243
+(degree 1702), 391625.PPSIR1_28578 (degree 1518), 391625.PPSIR1_09920 (degree
+1489), 391625.PPSIR1_27373 (degree 1445) and 391625.PPSIR1_39605 (degree
+1380).
 
 
 References
@@ -107,14 +108,15 @@ def PlesiocystisPacifica(
 	
 	Datetime: 2021-02-02 20:40:22.494234
 	
-	The undirected graph Plesiocystis pacifica has 8259 nodes and 719867 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02111 and
-	has 143 connected components, where the component with most nodes has 7866 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 174.32, and the node degree mode is 2. The top 5
-	most central nodes are 391625.PPSIR1_12243 (degree 1702), 391625.PPSIR1_28578 (degree
-	1518), 391625.PPSIR1_09920 (degree 1489), 391625.PPSIR1_27373 (degree 1445) and 391625.PPSIR1_39605
-	(degree 1380).
+	The undirected graph Plesiocystis pacifica has 8259 nodes and 719867 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02111 and has 143 connected components, where the component with most
+	nodes has 7866 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 174.32, and
+	the node degree mode is 2. The top 5 most central nodes are 391625.PPSIR1_12243
+	(degree 1702), 391625.PPSIR1_28578 (degree 1518), 391625.PPSIR1_09920 (degree
+	1489), 391625.PPSIR1_27373 (degree 1445) and 391625.PPSIR1_39605 (degree
+	1380).
 	
 
 

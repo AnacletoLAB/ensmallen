@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:35.669042
 
-The undirected graph Clostridium sporosphaeroides has 2617 nodes and 170413 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04978
-and has 6 connected components, where the component with most nodes has 2604 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 130.24, and the node degree mode is 1. The top 5 most
-central nodes are 1121334.KB911066_gene688 (degree 967), 1121334.KB911071_gene1964
-(degree 961), 1121334.KB911071_gene2058 (degree 907), 1121334.KB911066_gene1084 (degree
-797) and 1121334.KB911066_gene541 (degree 714).
+The undirected graph Clostridium sporosphaeroides has 2617 nodes and 170413
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04978 and has 6 connected components, where the component
+with most nodes has 2604 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 130.24,
+and the node degree mode is 1. The top 5 most central nodes are 1121334.KB911066_gene688
+(degree 967), 1121334.KB911071_gene1964 (degree 961), 1121334.KB911071_gene2058
+(degree 907), 1121334.KB911066_gene1084 (degree 797) and 1121334.KB911066_gene541
+(degree 714).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSporosphaeroides(
 	
 	Datetime: 2021-02-02 22:34:35.669042
 	
-	The undirected graph Clostridium sporosphaeroides has 2617 nodes and 170413 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04978
-	and has 6 connected components, where the component with most nodes has 2604 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 130.24, and the node degree mode is 1. The top 5 most
-	central nodes are 1121334.KB911066_gene688 (degree 967), 1121334.KB911071_gene1964
-	(degree 961), 1121334.KB911071_gene2058 (degree 907), 1121334.KB911066_gene1084 (degree
-	797) and 1121334.KB911066_gene541 (degree 714).
+	The undirected graph Clostridium sporosphaeroides has 2617 nodes and 170413
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04978 and has 6 connected components, where the component
+	with most nodes has 2604 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 130.24,
+	and the node degree mode is 1. The top 5 most central nodes are 1121334.KB911066_gene688
+	(degree 967), 1121334.KB911071_gene1964 (degree 961), 1121334.KB911071_gene2058
+	(degree 907), 1121334.KB911066_gene1084 (degree 797) and 1121334.KB911066_gene541
+	(degree 714).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:20.984873
 
-The undirected graph Streptococcus australis has 2022 nodes and 142499 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06974 and
-has 2 connected components, where the component with most nodes has 2019 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 107,
-the mean node degree is 140.95, and the node degree mode is 10. The top 5 most central
-nodes are 888833.HMPREF9421_0271 (degree 912), 888833.HMPREF9421_0422 (degree 764),
-888833.HMPREF9421_1457 (degree 752), 888833.HMPREF9421_1955 (degree 719) and 888833.HMPREF9421_0725
+The undirected graph Streptococcus australis has 2022 nodes and 142499
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06974 and has 2 connected components, where the component
+with most nodes has 2019 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 107, the mean node degree is 140.95,
+and the node degree mode is 10. The top 5 most central nodes are 888833.HMPREF9421_0271
+(degree 912), 888833.HMPREF9421_0422 (degree 764), 888833.HMPREF9421_1457
+(degree 752), 888833.HMPREF9421_1955 (degree 719) and 888833.HMPREF9421_0725
 (degree 679).
 
 
@@ -107,13 +108,14 @@ def StreptococcusAustralis(
 	
 	Datetime: 2021-02-02 21:53:20.984873
 	
-	The undirected graph Streptococcus australis has 2022 nodes and 142499 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06974 and
-	has 2 connected components, where the component with most nodes has 2019 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 107,
-	the mean node degree is 140.95, and the node degree mode is 10. The top 5 most central
-	nodes are 888833.HMPREF9421_0271 (degree 912), 888833.HMPREF9421_0422 (degree 764),
-	888833.HMPREF9421_1457 (degree 752), 888833.HMPREF9421_1955 (degree 719) and 888833.HMPREF9421_0725
+	The undirected graph Streptococcus australis has 2022 nodes and 142499
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06974 and has 2 connected components, where the component
+	with most nodes has 2019 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 107, the mean node degree is 140.95,
+	and the node degree mode is 10. The top 5 most central nodes are 888833.HMPREF9421_0271
+	(degree 912), 888833.HMPREF9421_0422 (degree 764), 888833.HMPREF9421_1457
+	(degree 752), 888833.HMPREF9421_1955 (degree 719) and 888833.HMPREF9421_0725
 	(degree 679).
 	
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:17:50.920084
 
-The undirected graph cage8 has 1015 nodes and 6009 weighted edges, of which 1015
-are self-loops. The graph is dense as it has a density of 0.01068 and is connected,
-as it has a single component. The graph median node degree is 11, the mean node degree
-is 10.84, and the node degree mode is 8. The top 5 most central nodes are 957 (degree
-18), 956 (degree 18), 958 (degree 18), 955 (degree 18) and 975 (degree 18).
+The undirected graph cage8 has 1015 nodes and 6009 weighted edges, of which
+1015 are self-loops. The graph is dense as it has a density of 0.01068
+and is connected, as it has a single component. The graph median node degree
+is 11, the mean node degree is 10.84, and the node degree mode is 8. The
+top 5 most central nodes are 957 (degree 18), 956 (degree 18), 958 (degree
+18), 955 (degree 18) and 975 (degree 18).
 
 
 References
@@ -101,11 +102,12 @@ def Cage8(
 	
 	Datetime: 2021-02-06 10:17:50.920084
 	
-	The undirected graph cage8 has 1015 nodes and 6009 weighted edges, of which 1015
-	are self-loops. The graph is dense as it has a density of 0.01068 and is connected,
-	as it has a single component. The graph median node degree is 11, the mean node degree
-	is 10.84, and the node degree mode is 8. The top 5 most central nodes are 957 (degree
-	18), 956 (degree 18), 958 (degree 18), 955 (degree 18) and 975 (degree 18).
+	The undirected graph cage8 has 1015 nodes and 6009 weighted edges, of which
+	1015 are self-loops. The graph is dense as it has a density of 0.01068
+	and is connected, as it has a single component. The graph median node degree
+	is 11, the mean node degree is 10.84, and the node degree mode is 8. The
+	top 5 most central nodes are 957 (degree 18), 956 (degree 18), 958 (degree
+	18), 955 (degree 18) and 975 (degree 18).
 	
 
 

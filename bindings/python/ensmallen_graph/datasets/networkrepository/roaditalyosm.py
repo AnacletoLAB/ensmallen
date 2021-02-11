@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:25:57.449678
 
-The undirected graph road-italy-osm has 6686493 nodes and 7013978 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 2.10, and the node degree mode is 2. The top 5 most
-central nodes are 1489103 (degree 9), 4357814 (degree 8), 4003204 (degree 8), 1489100
-(degree 8) and 1108222 (degree 8).
+The undirected graph road-italy-osm has 6686493 nodes and 7013978 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.10, and the
+node degree mode is 2. The top 5 most central nodes are 1489103 (degree
+9), 4357814 (degree 8), 4003204 (degree 8), 1489100 (degree 8) and 1108222
+(degree 8).
 
 
 References
@@ -102,12 +103,13 @@ def RoadItalyOsm(
 	
 	Datetime: 2021-02-06 12:25:57.449678
 	
-	The undirected graph road-italy-osm has 6686493 nodes and 7013978 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 2.10, and the node degree mode is 2. The top 5 most
-	central nodes are 1489103 (degree 9), 4357814 (degree 8), 4003204 (degree 8), 1489100
-	(degree 8) and 1108222 (degree 8).
+	The undirected graph road-italy-osm has 6686493 nodes and 7013978 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.10, and the
+	node degree mode is 2. The top 5 most central nodes are 1489103 (degree
+	9), 4357814 (degree 8), 4003204 (degree 8), 1489100 (degree 8) and 1108222
+	(degree 8).
 	
 
 

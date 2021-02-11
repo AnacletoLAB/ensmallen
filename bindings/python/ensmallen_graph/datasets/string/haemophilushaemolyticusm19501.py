@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:13.097750
 
-The undirected graph Haemophilus haemolyticus M19501 has 1733 nodes and 130614 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08703
-and is connected, as it has a single component. The graph median node degree is 130,
-the mean node degree is 150.74, and the node degree mode is 73. The top 5 most central
-nodes are 1028803.GG9_1215 (degree 813), 1028803.GG9_0392 (degree 767), 1028803.GG9_1195
-(degree 721), 1028803.GG9_0023 (degree 696) and 1028803.GG9_0475 (degree 586).
+The undirected graph Haemophilus haemolyticus M19501 has 1733 nodes and
+130614 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08703 and is connected, as it has a single component.
+The graph median node degree is 130, the mean node degree is 150.74, and
+the node degree mode is 73. The top 5 most central nodes are 1028803.GG9_1215
+(degree 813), 1028803.GG9_0392 (degree 767), 1028803.GG9_1195 (degree 721),
+1028803.GG9_0023 (degree 696) and 1028803.GG9_0475 (degree 586).
 
 
 References
@@ -105,12 +106,13 @@ def HaemophilusHaemolyticusM19501(
 	
 	Datetime: 2021-02-02 22:10:13.097750
 	
-	The undirected graph Haemophilus haemolyticus M19501 has 1733 nodes and 130614 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08703
-	and is connected, as it has a single component. The graph median node degree is 130,
-	the mean node degree is 150.74, and the node degree mode is 73. The top 5 most central
-	nodes are 1028803.GG9_1215 (degree 813), 1028803.GG9_0392 (degree 767), 1028803.GG9_1195
-	(degree 721), 1028803.GG9_0023 (degree 696) and 1028803.GG9_0475 (degree 586).
+	The undirected graph Haemophilus haemolyticus M19501 has 1733 nodes and
+	130614 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08703 and is connected, as it has a single component.
+	The graph median node degree is 130, the mean node degree is 150.74, and
+	the node degree mode is 73. The top 5 most central nodes are 1028803.GG9_1215
+	(degree 813), 1028803.GG9_0392 (degree 767), 1028803.GG9_1195 (degree 721),
+	1028803.GG9_0023 (degree 696) and 1028803.GG9_0475 (degree 586).
 	
 
 

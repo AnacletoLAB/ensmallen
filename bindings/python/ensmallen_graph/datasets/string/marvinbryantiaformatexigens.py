@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:56.404797
 
-The undirected graph Marvinbryantia formatexigens has 4828 nodes and 373421 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03205
-and has 22 connected components, where the component with most nodes has 4773 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 154.69, and the node degree mode is 5. The top 5
-most central nodes are 478749.BRYFOR_06432 (degree 1436), 478749.BRYFOR_05402 (degree
-1239), 478749.BRYFOR_06555 (degree 1075), 478749.BRYFOR_05814 (degree 1034) and 478749.BRYFOR_09611
-(degree 965).
+The undirected graph Marvinbryantia formatexigens has 4828 nodes and 373421
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03205 and has 22 connected components, where the component
+with most nodes has 4773 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 154.69,
+and the node degree mode is 5. The top 5 most central nodes are 478749.BRYFOR_06432
+(degree 1436), 478749.BRYFOR_05402 (degree 1239), 478749.BRYFOR_06555 (degree
+1075), 478749.BRYFOR_05814 (degree 1034) and 478749.BRYFOR_09611 (degree
+965).
 
 
 References
@@ -107,14 +108,15 @@ def MarvinbryantiaFormatexigens(
 	
 	Datetime: 2021-02-02 20:56:56.404797
 	
-	The undirected graph Marvinbryantia formatexigens has 4828 nodes and 373421 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03205
-	and has 22 connected components, where the component with most nodes has 4773 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 154.69, and the node degree mode is 5. The top 5
-	most central nodes are 478749.BRYFOR_06432 (degree 1436), 478749.BRYFOR_05402 (degree
-	1239), 478749.BRYFOR_06555 (degree 1075), 478749.BRYFOR_05814 (degree 1034) and 478749.BRYFOR_09611
-	(degree 965).
+	The undirected graph Marvinbryantia formatexigens has 4828 nodes and 373421
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03205 and has 22 connected components, where the component
+	with most nodes has 4773 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 154.69,
+	and the node degree mode is 5. The top 5 most central nodes are 478749.BRYFOR_06432
+	(degree 1436), 478749.BRYFOR_05402 (degree 1239), 478749.BRYFOR_06555 (degree
+	1075), 478749.BRYFOR_05814 (degree 1034) and 478749.BRYFOR_09611 (degree
+	965).
 	
 
 

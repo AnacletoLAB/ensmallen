@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:40.584202
 
-The undirected graph Borrelia parkeri has 869 nodes and 63701 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.16890
-and has 4 connected components, where the component with most nodes has 861 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 146.61, and the node degree mode is 2. The top 5
-most central nodes are 1313294.BPA_0094500 (degree 520), 1313294.BPA_0076400 (degree
-455), 1313294.BPA_0066400 (degree 419), 1313294.BPA_0093800 (degree 403) and 1313294.BPA_0079500
-(degree 399).
+The undirected graph Borrelia parkeri has 869 nodes and 63701 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.16890 and has 4 connected components, where the component
+with most nodes has 861 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 146.61,
+and the node degree mode is 2. The top 5 most central nodes are 1313294.BPA_0094500
+(degree 520), 1313294.BPA_0076400 (degree 455), 1313294.BPA_0066400 (degree
+419), 1313294.BPA_0093800 (degree 403) and 1313294.BPA_0079500 (degree
+399).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaParkeri(
 	
 	Datetime: 2021-02-03 21:46:40.584202
 	
-	The undirected graph Borrelia parkeri has 869 nodes and 63701 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.16890
-	and has 4 connected components, where the component with most nodes has 861 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 146.61, and the node degree mode is 2. The top 5
-	most central nodes are 1313294.BPA_0094500 (degree 520), 1313294.BPA_0076400 (degree
-	455), 1313294.BPA_0066400 (degree 419), 1313294.BPA_0093800 (degree 403) and 1313294.BPA_0079500
-	(degree 399).
+	The undirected graph Borrelia parkeri has 869 nodes and 63701 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.16890 and has 4 connected components, where the component
+	with most nodes has 861 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 146.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1313294.BPA_0094500
+	(degree 520), 1313294.BPA_0076400 (degree 455), 1313294.BPA_0066400 (degree
+	419), 1313294.BPA_0093800 (degree 403) and 1313294.BPA_0079500 (degree
+	399).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:09:00.659831
 
-The undirected graph dixmaanl has 60000 nodes and 179999 weighted edges, of which
-60000 are self-loops. The graph is extremely sparse as it has a density of 0.00008
-and is connected, as it has a single component. The graph median node degree is 5,
-the mean node degree is 5.00, and the node degree mode is 5. The top 5 most central
-nodes are 40000 (degree 5), 59999 (degree 5), 39999 (degree 5), 20000 (degree 5)
-and 59998 (degree 5).
+The undirected graph dixmaanl has 60000 nodes and 179999 weighted edges,
+of which 60000 are self-loops. The graph is extremely sparse as it has
+a density of 0.00008 and is connected, as it has a single component. The
+graph median node degree is 5, the mean node degree is 5.00, and the node
+degree mode is 5. The top 5 most central nodes are 40000 (degree 5), 59999
+(degree 5), 39999 (degree 5), 20000 (degree 5) and 59998 (degree 5).
 
 
 References
@@ -102,12 +102,12 @@ def Dixmaanl(
 	
 	Datetime: 2021-02-06 11:09:00.659831
 	
-	The undirected graph dixmaanl has 60000 nodes and 179999 weighted edges, of which
-	60000 are self-loops. The graph is extremely sparse as it has a density of 0.00008
-	and is connected, as it has a single component. The graph median node degree is 5,
-	the mean node degree is 5.00, and the node degree mode is 5. The top 5 most central
-	nodes are 40000 (degree 5), 59999 (degree 5), 39999 (degree 5), 20000 (degree 5)
-	and 59998 (degree 5).
+	The undirected graph dixmaanl has 60000 nodes and 179999 weighted edges,
+	of which 60000 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00008 and is connected, as it has a single component. The
+	graph median node degree is 5, the mean node degree is 5.00, and the node
+	degree mode is 5. The top 5 most central nodes are 40000 (degree 5), 59999
+	(degree 5), 39999 (degree 5), 20000 (degree 5) and 59998 (degree 5).
 	
 
 

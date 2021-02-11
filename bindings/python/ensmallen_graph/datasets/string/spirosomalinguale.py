@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:59.779501
 
-The undirected graph Spirosoma linguale has 6455 nodes and 905517 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04347 and
-has 29 connected components, where the component with most nodes has 6396 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 280.56, and the node degree mode is 1. The top 5 most central
-nodes are 504472.Slin_0543 (degree 1871), 504472.Slin_0621 (degree 1848), 504472.Slin_4604
-(degree 1556), 504472.Slin_3312 (degree 1479) and 504472.Slin_0474 (degree 1440).
+The undirected graph Spirosoma linguale has 6455 nodes and 905517 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04347 and has 29 connected components, where the component with most
+nodes has 6396 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 280.56, and
+the node degree mode is 1. The top 5 most central nodes are 504472.Slin_0543
+(degree 1871), 504472.Slin_0621 (degree 1848), 504472.Slin_4604 (degree
+1556), 504472.Slin_3312 (degree 1479) and 504472.Slin_0474 (degree 1440).
 
 
 References
@@ -106,13 +107,14 @@ def SpirosomaLinguale(
 	
 	Datetime: 2021-02-02 21:01:59.779501
 	
-	The undirected graph Spirosoma linguale has 6455 nodes and 905517 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04347 and
-	has 29 connected components, where the component with most nodes has 6396 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 280.56, and the node degree mode is 1. The top 5 most central
-	nodes are 504472.Slin_0543 (degree 1871), 504472.Slin_0621 (degree 1848), 504472.Slin_4604
-	(degree 1556), 504472.Slin_3312 (degree 1479) and 504472.Slin_0474 (degree 1440).
+	The undirected graph Spirosoma linguale has 6455 nodes and 905517 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04347 and has 29 connected components, where the component with most
+	nodes has 6396 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 280.56, and
+	the node degree mode is 1. The top 5 most central nodes are 504472.Slin_0543
+	(degree 1871), 504472.Slin_0621 (degree 1848), 504472.Slin_4604 (degree
+	1556), 504472.Slin_3312 (degree 1479) and 504472.Slin_0474 (degree 1440).
 	
 
 

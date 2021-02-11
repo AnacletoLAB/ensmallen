@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:33.172632
 
-The undirected graph Exiguobacterium sp. AT1b has 3008 nodes and 284123 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06282
-and has 8 connected components, where the component with most nodes has 2991 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 188.91, and the node degree mode is 5. The top 5
-most central nodes are 360911.EAT1b_0662 (degree 962), 360911.EAT1b_0616 (degree
-871), 360911.EAT1b_2867 (degree 855), 360911.EAT1b_1949 (degree 843) and 360911.EAT1b_1723
-(degree 829).
+The undirected graph Exiguobacterium sp. AT1b has 3008 nodes and 284123
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06282 and has 8 connected components, where the component
+with most nodes has 2991 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 188.91,
+and the node degree mode is 5. The top 5 most central nodes are 360911.EAT1b_0662
+(degree 962), 360911.EAT1b_0616 (degree 871), 360911.EAT1b_2867 (degree
+855), 360911.EAT1b_1949 (degree 843) and 360911.EAT1b_1723 (degree 829).
 
 
 References
@@ -107,14 +107,14 @@ def ExiguobacteriumSp.At1b(
 	
 	Datetime: 2021-02-02 20:34:33.172632
 	
-	The undirected graph Exiguobacterium sp. AT1b has 3008 nodes and 284123 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06282
-	and has 8 connected components, where the component with most nodes has 2991 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 188.91, and the node degree mode is 5. The top 5
-	most central nodes are 360911.EAT1b_0662 (degree 962), 360911.EAT1b_0616 (degree
-	871), 360911.EAT1b_2867 (degree 855), 360911.EAT1b_1949 (degree 843) and 360911.EAT1b_1723
-	(degree 829).
+	The undirected graph Exiguobacterium sp. AT1b has 3008 nodes and 284123
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06282 and has 8 connected components, where the component
+	with most nodes has 2991 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 188.91,
+	and the node degree mode is 5. The top 5 most central nodes are 360911.EAT1b_0662
+	(degree 962), 360911.EAT1b_0616 (degree 871), 360911.EAT1b_2867 (degree
+	855), 360911.EAT1b_1949 (degree 843) and 360911.EAT1b_1723 (degree 829).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:23.253624
 
-The undirected graph Thiobacillus thioparus has 2980 nodes and 276563 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06231 and
-has 6 connected components, where the component with most nodes has 2970 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 185.61, and the node degree mode is 3. The top 5 most central
-nodes are 1123393.KB891316_gene1799 (degree 1305), 1123393.KB891316_gene1835 (degree
-1188), 1123393.KB891329_gene936 (degree 1000), 1123393.KB891329_gene938 (degree 989)
-and 1123393.KB891317_gene2314 (degree 988).
+The undirected graph Thiobacillus thioparus has 2980 nodes and 276563 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06231 and has 6 connected components, where the component with most
+nodes has 2970 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 185.61, and
+the node degree mode is 3. The top 5 most central nodes are 1123393.KB891316_gene1799
+(degree 1305), 1123393.KB891316_gene1835 (degree 1188), 1123393.KB891329_gene936
+(degree 1000), 1123393.KB891329_gene938 (degree 989) and 1123393.KB891317_gene2314
+(degree 988).
 
 
 References
@@ -107,14 +108,15 @@ def ThiobacillusThioparus(
 	
 	Datetime: 2021-02-02 22:52:23.253624
 	
-	The undirected graph Thiobacillus thioparus has 2980 nodes and 276563 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06231 and
-	has 6 connected components, where the component with most nodes has 2970 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 185.61, and the node degree mode is 3. The top 5 most central
-	nodes are 1123393.KB891316_gene1799 (degree 1305), 1123393.KB891316_gene1835 (degree
-	1188), 1123393.KB891329_gene936 (degree 1000), 1123393.KB891329_gene938 (degree 989)
-	and 1123393.KB891317_gene2314 (degree 988).
+	The undirected graph Thiobacillus thioparus has 2980 nodes and 276563 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06231 and has 6 connected components, where the component with most
+	nodes has 2970 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 185.61, and
+	the node degree mode is 3. The top 5 most central nodes are 1123393.KB891316_gene1799
+	(degree 1305), 1123393.KB891316_gene1835 (degree 1188), 1123393.KB891329_gene936
+	(degree 1000), 1123393.KB891329_gene938 (degree 989) and 1123393.KB891317_gene2314
+	(degree 988).
 	
 
 

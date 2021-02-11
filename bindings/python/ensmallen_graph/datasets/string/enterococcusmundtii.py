@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:54.354787
 
-The undirected graph Enterococcus mundtii has 2881 nodes and 266815 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06431 and
-has 22 connected components, where the component with most nodes has 2823 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 185.22, and the node degree mode is 4. The top 5 most central
-nodes are 1300150.EMQU_0922 (degree 1169), 1300150.EMQU_1551 (degree 1111), 1300150.EMQU_0059
-(degree 969), 1300150.EMQU_2871 (degree 934) and 1300150.EMQU_1629 (degree 928).
+The undirected graph Enterococcus mundtii has 2881 nodes and 266815 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06431 and has 22 connected components, where the component with most
+nodes has 2823 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 185.22, and
+the node degree mode is 4. The top 5 most central nodes are 1300150.EMQU_0922
+(degree 1169), 1300150.EMQU_1551 (degree 1111), 1300150.EMQU_0059 (degree
+969), 1300150.EMQU_2871 (degree 934) and 1300150.EMQU_1629 (degree 928).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusMundtii(
 	
 	Datetime: 2021-02-03 21:34:54.354787
 	
-	The undirected graph Enterococcus mundtii has 2881 nodes and 266815 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06431 and
-	has 22 connected components, where the component with most nodes has 2823 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 185.22, and the node degree mode is 4. The top 5 most central
-	nodes are 1300150.EMQU_0922 (degree 1169), 1300150.EMQU_1551 (degree 1111), 1300150.EMQU_0059
-	(degree 969), 1300150.EMQU_2871 (degree 934) and 1300150.EMQU_1629 (degree 928).
+	The undirected graph Enterococcus mundtii has 2881 nodes and 266815 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06431 and has 22 connected components, where the component with most
+	nodes has 2823 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 185.22, and
+	the node degree mode is 4. The top 5 most central nodes are 1300150.EMQU_0922
+	(degree 1169), 1300150.EMQU_1551 (degree 1111), 1300150.EMQU_0059 (degree
+	969), 1300150.EMQU_2871 (degree 934) and 1300150.EMQU_1629 (degree 928).
 	
 
 

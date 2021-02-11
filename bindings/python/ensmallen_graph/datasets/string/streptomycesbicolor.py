@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:10.204384
 
-The undirected graph Streptomyces bicolor has 8255 nodes and 1155147 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03391 and
-has 47 connected components, where the component with most nodes has 8153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 240,
-the mean node degree is 279.87, and the node degree mode is 1. The top 5 most central
-nodes are 66874.JOFS01000013_gene4577 (degree 3635), 66874.JOFS01000007_gene3000
-(degree 2854), 66874.JOFS01000065_gene6946 (degree 2309), 66874.JOFS01000012_gene4743
-(degree 2248) and 66874.JOFS01000023_gene1543 (degree 2161).
+The undirected graph Streptomyces bicolor has 8255 nodes and 1155147 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03391 and has 47 connected components, where the component with most
+nodes has 8153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 240, the mean node degree is 279.87, and
+the node degree mode is 1. The top 5 most central nodes are 66874.JOFS01000013_gene4577
+(degree 3635), 66874.JOFS01000007_gene3000 (degree 2854), 66874.JOFS01000065_gene6946
+(degree 2309), 66874.JOFS01000012_gene4743 (degree 2248) and 66874.JOFS01000023_gene1543
+(degree 2161).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesBicolor(
 	
 	Datetime: 2021-02-02 18:26:10.204384
 	
-	The undirected graph Streptomyces bicolor has 8255 nodes and 1155147 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03391 and
-	has 47 connected components, where the component with most nodes has 8153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 240,
-	the mean node degree is 279.87, and the node degree mode is 1. The top 5 most central
-	nodes are 66874.JOFS01000013_gene4577 (degree 3635), 66874.JOFS01000007_gene3000
-	(degree 2854), 66874.JOFS01000065_gene6946 (degree 2309), 66874.JOFS01000012_gene4743
-	(degree 2248) and 66874.JOFS01000023_gene1543 (degree 2161).
+	The undirected graph Streptomyces bicolor has 8255 nodes and 1155147 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03391 and has 47 connected components, where the component with most
+	nodes has 8153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 240, the mean node degree is 279.87, and
+	the node degree mode is 1. The top 5 most central nodes are 66874.JOFS01000013_gene4577
+	(degree 3635), 66874.JOFS01000007_gene3000 (degree 2854), 66874.JOFS01000065_gene6946
+	(degree 2309), 66874.JOFS01000012_gene4743 (degree 2248) and 66874.JOFS01000023_gene1543
+	(degree 2161).
 	
 
 

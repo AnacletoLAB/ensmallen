@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:49.214435
 
-The undirected graph Chryseobacterium antarcticum has 2640 nodes and 159801 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04587
-and has 16 connected components, where the component with most nodes has 2600 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 121.06, and the node degree mode is 7. The top 5
-most central nodes are 266748.HY04_02165 (degree 936), 266748.HY04_12215 (degree
-823), 266748.HY04_12440 (degree 654), 266748.HY04_03105 (degree 631) and 266748.HY04_09305
-(degree 624).
+The undirected graph Chryseobacterium antarcticum has 2640 nodes and 159801
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04587 and has 16 connected components, where the component
+with most nodes has 2600 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 121.06,
+and the node degree mode is 7. The top 5 most central nodes are 266748.HY04_02165
+(degree 936), 266748.HY04_12215 (degree 823), 266748.HY04_12440 (degree
+654), 266748.HY04_03105 (degree 631) and 266748.HY04_09305 (degree 624).
 
 
 References
@@ -107,14 +107,14 @@ def ChryseobacteriumAntarcticum(
 	
 	Datetime: 2021-02-02 20:14:49.214435
 	
-	The undirected graph Chryseobacterium antarcticum has 2640 nodes and 159801 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04587
-	and has 16 connected components, where the component with most nodes has 2600 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 121.06, and the node degree mode is 7. The top 5
-	most central nodes are 266748.HY04_02165 (degree 936), 266748.HY04_12215 (degree
-	823), 266748.HY04_12440 (degree 654), 266748.HY04_03105 (degree 631) and 266748.HY04_09305
-	(degree 624).
+	The undirected graph Chryseobacterium antarcticum has 2640 nodes and 159801
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04587 and has 16 connected components, where the component
+	with most nodes has 2600 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 121.06,
+	and the node degree mode is 7. The top 5 most central nodes are 266748.HY04_02165
+	(degree 936), 266748.HY04_12215 (degree 823), 266748.HY04_12440 (degree
+	654), 266748.HY04_03105 (degree 631) and 266748.HY04_09305 (degree 624).
 	
 
 

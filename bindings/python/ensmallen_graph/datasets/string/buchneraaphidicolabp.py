@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:05:10.328198
 
-The undirected graph Buchnera aphidicola Bp has 506 nodes and 25219 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19739
-and is connected, as it has a single component. The graph median node degree is 92,
-the mean node degree is 99.68, and the node degree mode is 49. The top 5 most central
-nodes are 224915.bbp_021 (degree 246), 224915.bbp_183 (degree 243), 224915.bbp_142
-(degree 238), 224915.bbp_035 (degree 236) and 224915.bbp_470 (degree 225).
+The undirected graph Buchnera aphidicola Bp has 506 nodes and 25219 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19739 and is connected, as it has a single component. The
+graph median node degree is 92, the mean node degree is 99.68, and the
+node degree mode is 49. The top 5 most central nodes are 224915.bbp_021
+(degree 246), 224915.bbp_183 (degree 243), 224915.bbp_142 (degree 238),
+224915.bbp_035 (degree 236) and 224915.bbp_470 (degree 225).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaBp(
 	
 	Datetime: 2021-02-02 20:05:10.328198
 	
-	The undirected graph Buchnera aphidicola Bp has 506 nodes and 25219 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19739
-	and is connected, as it has a single component. The graph median node degree is 92,
-	the mean node degree is 99.68, and the node degree mode is 49. The top 5 most central
-	nodes are 224915.bbp_021 (degree 246), 224915.bbp_183 (degree 243), 224915.bbp_142
-	(degree 238), 224915.bbp_035 (degree 236) and 224915.bbp_470 (degree 225).
+	The undirected graph Buchnera aphidicola Bp has 506 nodes and 25219 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19739 and is connected, as it has a single component. The
+	graph median node degree is 92, the mean node degree is 99.68, and the
+	node degree mode is 49. The top 5 most central nodes are 224915.bbp_021
+	(degree 246), 224915.bbp_183 (degree 243), 224915.bbp_142 (degree 238),
+	224915.bbp_035 (degree 236) and 224915.bbp_470 (degree 225).
 	
 
 

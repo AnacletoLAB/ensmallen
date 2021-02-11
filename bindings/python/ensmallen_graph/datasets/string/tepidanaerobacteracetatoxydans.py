@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:40.351475
 
-The undirected graph Tepidanaerobacter acetatoxydans has 2635 nodes and 213118 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06141
-and has 6 connected components, where the component with most nodes has 2620 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 161.76, and the node degree mode is 7. The top 5
-most central nodes are 1209989.TepiRe1_1736 (degree 1041), 1209989.TepiRe1_1855 (degree
-933), 1209989.TepiRe1_2354 (degree 897), 1209989.TepiRe1_1454 (degree 897) and 1209989.TepiRe1_2484
-(degree 839).
+The undirected graph Tepidanaerobacter acetatoxydans has 2635 nodes and
+213118 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06141 and has 6 connected components, where the
+component with most nodes has 2620 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 161.76, and the node degree mode is 7. The top 5 most central nodes
+are 1209989.TepiRe1_1736 (degree 1041), 1209989.TepiRe1_1855 (degree 933),
+1209989.TepiRe1_2354 (degree 897), 1209989.TepiRe1_1454 (degree 897) and
+1209989.TepiRe1_2484 (degree 839).
 
 
 References
@@ -107,14 +108,15 @@ def TepidanaerobacterAcetatoxydans(
 	
 	Datetime: 2021-02-02 23:18:40.351475
 	
-	The undirected graph Tepidanaerobacter acetatoxydans has 2635 nodes and 213118 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06141
-	and has 6 connected components, where the component with most nodes has 2620 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 161.76, and the node degree mode is 7. The top 5
-	most central nodes are 1209989.TepiRe1_1736 (degree 1041), 1209989.TepiRe1_1855 (degree
-	933), 1209989.TepiRe1_2354 (degree 897), 1209989.TepiRe1_1454 (degree 897) and 1209989.TepiRe1_2484
-	(degree 839).
+	The undirected graph Tepidanaerobacter acetatoxydans has 2635 nodes and
+	213118 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06141 and has 6 connected components, where the
+	component with most nodes has 2620 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 161.76, and the node degree mode is 7. The top 5 most central nodes
+	are 1209989.TepiRe1_1736 (degree 1041), 1209989.TepiRe1_1855 (degree 933),
+	1209989.TepiRe1_2354 (degree 897), 1209989.TepiRe1_1454 (degree 897) and
+	1209989.TepiRe1_2484 (degree 839).
 	
 
 

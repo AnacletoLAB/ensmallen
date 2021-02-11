@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:33:16.166369
 
-The undirected graph web-it-2004 has 509338 nodes and 7178413 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00006
-and is connected, as it has a single component. The graph median node degree is 16,
-the mean node degree is 28.19, and the node degree mode is 16. The top 5 most central
-nodes are 150331 (degree 469), 136272 (degree 469), 135028 (degree 469), 138025 (degree
-468) and 68644 (degree 468).
+The undirected graph web-it-2004 has 509338 nodes and 7178413 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00006 and is connected, as it has a single component.
+The graph median node degree is 16, the mean node degree is 28.19, and
+the node degree mode is 16. The top 5 most central nodes are 150331 (degree
+469), 136272 (degree 469), 135028 (degree 469), 138025 (degree 468) and
+68644 (degree 468).
 
 
 References
@@ -119,12 +120,13 @@ def WebIt2004(
 	
 	Datetime: 2021-02-06 12:33:16.166369
 	
-	The undirected graph web-it-2004 has 509338 nodes and 7178413 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00006
-	and is connected, as it has a single component. The graph median node degree is 16,
-	the mean node degree is 28.19, and the node degree mode is 16. The top 5 most central
-	nodes are 150331 (degree 469), 136272 (degree 469), 135028 (degree 469), 138025 (degree
-	468) and 68644 (degree 468).
+	The undirected graph web-it-2004 has 509338 nodes and 7178413 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00006 and is connected, as it has a single component.
+	The graph median node degree is 16, the mean node degree is 28.19, and
+	the node degree mode is 16. The top 5 most central nodes are 150331 (degree
+	469), 136272 (degree 469), 135028 (degree 469), 138025 (degree 468) and
+	68644 (degree 468).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:41.644535
 
-The undirected graph Anaplasma centrale has 901 nodes and 43660 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10768
-and has 15 connected components, where the component with most nodes has 866 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 96.91, and the node degree mode is 2. The top 5 most
-central nodes are 574556.ACIS_00186 (degree 437), 574556.ACIS_01164 (degree 402),
-574556.ACIS_00424 (degree 396), 574556.ACIS_00394 (degree 355) and 574556.ACIS_00015
-(degree 331).
+The undirected graph Anaplasma centrale has 901 nodes and 43660 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10768 and has 15 connected components, where the component
+with most nodes has 866 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 96.91,
+and the node degree mode is 2. The top 5 most central nodes are 574556.ACIS_00186
+(degree 437), 574556.ACIS_01164 (degree 402), 574556.ACIS_00424 (degree
+396), 574556.ACIS_00394 (degree 355) and 574556.ACIS_00015 (degree 331).
 
 
 References
@@ -107,14 +107,14 @@ def AnaplasmaCentrale(
 	
 	Datetime: 2021-02-02 21:14:41.644535
 	
-	The undirected graph Anaplasma centrale has 901 nodes and 43660 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10768
-	and has 15 connected components, where the component with most nodes has 866 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 96.91, and the node degree mode is 2. The top 5 most
-	central nodes are 574556.ACIS_00186 (degree 437), 574556.ACIS_01164 (degree 402),
-	574556.ACIS_00424 (degree 396), 574556.ACIS_00394 (degree 355) and 574556.ACIS_00015
-	(degree 331).
+	The undirected graph Anaplasma centrale has 901 nodes and 43660 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10768 and has 15 connected components, where the component
+	with most nodes has 866 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 96.91,
+	and the node degree mode is 2. The top 5 most central nodes are 574556.ACIS_00186
+	(degree 437), 574556.ACIS_01164 (degree 402), 574556.ACIS_00424 (degree
+	396), 574556.ACIS_00394 (degree 355) and 574556.ACIS_00015 (degree 331).
 	
 
 

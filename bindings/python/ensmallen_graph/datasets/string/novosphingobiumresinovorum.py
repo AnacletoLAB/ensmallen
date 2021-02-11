@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:48.805053
 
-The undirected graph Novosphingobium resinovorum has 5667 nodes and 706526 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04401
-and has 17 connected components, where the component with most nodes has 5625 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 249.35, and the node degree mode is 2. The top 5
-most central nodes are 158500.BV97_03695 (degree 2088), 158500.BV97_04469 (degree
-1951), 158500.BV97_04210 (degree 1779), 158500.BV97_02199 (degree 1276) and 158500.BV97_03157
-(degree 1245).
+The undirected graph Novosphingobium resinovorum has 5667 nodes and 706526
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04401 and has 17 connected components, where the component
+with most nodes has 5625 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 249.35,
+and the node degree mode is 2. The top 5 most central nodes are 158500.BV97_03695
+(degree 2088), 158500.BV97_04469 (degree 1951), 158500.BV97_04210 (degree
+1779), 158500.BV97_02199 (degree 1276) and 158500.BV97_03157 (degree 1245).
 
 
 References
@@ -107,14 +107,14 @@ def NovosphingobiumResinovorum(
 	
 	Datetime: 2021-02-02 19:52:48.805053
 	
-	The undirected graph Novosphingobium resinovorum has 5667 nodes and 706526 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04401
-	and has 17 connected components, where the component with most nodes has 5625 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 249.35, and the node degree mode is 2. The top 5
-	most central nodes are 158500.BV97_03695 (degree 2088), 158500.BV97_04469 (degree
-	1951), 158500.BV97_04210 (degree 1779), 158500.BV97_02199 (degree 1276) and 158500.BV97_03157
-	(degree 1245).
+	The undirected graph Novosphingobium resinovorum has 5667 nodes and 706526
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04401 and has 17 connected components, where the component
+	with most nodes has 5625 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 249.35,
+	and the node degree mode is 2. The top 5 most central nodes are 158500.BV97_03695
+	(degree 2088), 158500.BV97_04469 (degree 1951), 158500.BV97_04210 (degree
+	1779), 158500.BV97_02199 (degree 1276) and 158500.BV97_03157 (degree 1245).
 	
 
 

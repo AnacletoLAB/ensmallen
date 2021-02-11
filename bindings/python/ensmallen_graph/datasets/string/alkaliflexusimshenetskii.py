@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:57.937803
 
-The undirected graph Alkaliflexus imshenetskii has 3142 nodes and 247237 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05010
-and has 23 connected components, where the component with most nodes has 3087 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 157.38, and the node degree mode is 2. The top 5
-most central nodes are 927658.AJUM01000022_gene1001 (degree 1027), 927658.AJUM01000022_gene1139
-(degree 918), 927658.AJUM01000042_gene1498 (degree 835), 927658.AJUM01000022_gene1155
-(degree 834) and 927658.AJUM01000017_gene3133 (degree 805).
+The undirected graph Alkaliflexus imshenetskii has 3142 nodes and 247237
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05010 and has 23 connected components, where the component
+with most nodes has 3087 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 157.38,
+and the node degree mode is 2. The top 5 most central nodes are 927658.AJUM01000022_gene1001
+(degree 1027), 927658.AJUM01000022_gene1139 (degree 918), 927658.AJUM01000042_gene1498
+(degree 835), 927658.AJUM01000022_gene1155 (degree 834) and 927658.AJUM01000017_gene3133
+(degree 805).
 
 
 References
@@ -107,14 +108,15 @@ def AlkaliflexusImshenetskii(
 	
 	Datetime: 2021-02-02 21:56:57.937803
 	
-	The undirected graph Alkaliflexus imshenetskii has 3142 nodes and 247237 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05010
-	and has 23 connected components, where the component with most nodes has 3087 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 157.38, and the node degree mode is 2. The top 5
-	most central nodes are 927658.AJUM01000022_gene1001 (degree 1027), 927658.AJUM01000022_gene1139
-	(degree 918), 927658.AJUM01000042_gene1498 (degree 835), 927658.AJUM01000022_gene1155
-	(degree 834) and 927658.AJUM01000017_gene3133 (degree 805).
+	The undirected graph Alkaliflexus imshenetskii has 3142 nodes and 247237
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05010 and has 23 connected components, where the component
+	with most nodes has 3087 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 157.38,
+	and the node degree mode is 2. The top 5 most central nodes are 927658.AJUM01000022_gene1001
+	(degree 1027), 927658.AJUM01000022_gene1139 (degree 918), 927658.AJUM01000042_gene1498
+	(degree 835), 927658.AJUM01000022_gene1155 (degree 834) and 927658.AJUM01000017_gene3133
+	(degree 805).
 	
 
 

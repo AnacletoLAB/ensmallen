@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:42.711364
 
-The undirected graph Pseudomonas syringae tomato has 5495 nodes and 654914 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-and has 14 connected components, where the component with most nodes has 5466 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 238.37, and the node degree mode is 3. The top 5
-most central nodes are 223283.PSPTO_0344 (degree 1748), 223283.PSPTO_5123 (degree
-1164), 223283.PSPTO_1450 (degree 1162), 223283.PSPTO_1449 (degree 1141) and 223283.PSPTO_3886
-(degree 1068).
+The undirected graph Pseudomonas syringae tomato has 5495 nodes and 654914
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04339 and has 14 connected components, where the component
+with most nodes has 5466 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 238.37,
+and the node degree mode is 3. The top 5 most central nodes are 223283.PSPTO_0344
+(degree 1748), 223283.PSPTO_5123 (degree 1164), 223283.PSPTO_1450 (degree
+1162), 223283.PSPTO_1449 (degree 1141) and 223283.PSPTO_3886 (degree 1068).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasSyringaeTomato(
 	
 	Datetime: 2021-02-02 20:04:42.711364
 	
-	The undirected graph Pseudomonas syringae tomato has 5495 nodes and 654914 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04339
-	and has 14 connected components, where the component with most nodes has 5466 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 238.37, and the node degree mode is 3. The top 5
-	most central nodes are 223283.PSPTO_0344 (degree 1748), 223283.PSPTO_5123 (degree
-	1164), 223283.PSPTO_1450 (degree 1162), 223283.PSPTO_1449 (degree 1141) and 223283.PSPTO_3886
-	(degree 1068).
+	The undirected graph Pseudomonas syringae tomato has 5495 nodes and 654914
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04339 and has 14 connected components, where the component
+	with most nodes has 5466 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 238.37,
+	and the node degree mode is 3. The top 5 most central nodes are 223283.PSPTO_0344
+	(degree 1748), 223283.PSPTO_5123 (degree 1164), 223283.PSPTO_1450 (degree
+	1162), 223283.PSPTO_1449 (degree 1141) and 223283.PSPTO_3886 (degree 1068).
 	
 
 

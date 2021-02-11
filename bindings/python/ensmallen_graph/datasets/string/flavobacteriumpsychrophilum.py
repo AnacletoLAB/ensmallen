@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:57.499065
 
-The undirected graph Flavobacterium psychrophilum has 2429 nodes and 170214 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05772
-and has 10 connected components, where the component with most nodes has 2408 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 140.15, and the node degree mode is 2. The top 5
-most central nodes are 402612.FP0290 (degree 1027), 402612.FP1894 (degree 800), 402612.FP0864
-(degree 739), 402612.FP1820 (degree 736) and 402612.FP0055 (degree 689).
+The undirected graph Flavobacterium psychrophilum has 2429 nodes and 170214
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05772 and has 10 connected components, where the component
+with most nodes has 2408 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 140.15,
+and the node degree mode is 2. The top 5 most central nodes are 402612.FP0290
+(degree 1027), 402612.FP1894 (degree 800), 402612.FP0864 (degree 739),
+402612.FP1820 (degree 736) and 402612.FP0055 (degree 689).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumPsychrophilum(
 	
 	Datetime: 2021-02-02 20:43:57.499065
 	
-	The undirected graph Flavobacterium psychrophilum has 2429 nodes and 170214 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05772
-	and has 10 connected components, where the component with most nodes has 2408 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 140.15, and the node degree mode is 2. The top 5
-	most central nodes are 402612.FP0290 (degree 1027), 402612.FP1894 (degree 800), 402612.FP0864
-	(degree 739), 402612.FP1820 (degree 736) and 402612.FP0055 (degree 689).
+	The undirected graph Flavobacterium psychrophilum has 2429 nodes and 170214
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05772 and has 10 connected components, where the component
+	with most nodes has 2408 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 140.15,
+	and the node degree mode is 2. The top 5 most central nodes are 402612.FP0290
+	(degree 1027), 402612.FP1894 (degree 800), 402612.FP0864 (degree 739),
+	402612.FP1820 (degree 736) and 402612.FP0055 (degree 689).
 	
 
 

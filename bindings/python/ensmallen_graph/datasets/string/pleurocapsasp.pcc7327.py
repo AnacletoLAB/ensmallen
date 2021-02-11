@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:47:50.536877
 
-The undirected graph Pleurocapsa sp. PCC7327 has 4221 nodes and 384076 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04312 and
-has 10 connected components, where the component with most nodes has 4200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 181.98, and the node degree mode is 2. The top 5 most central
-nodes are 118163.Ple7327_1998 (degree 1921), 118163.Ple7327_1304 (degree 1920), 118163.Ple7327_3888
-(degree 1571), 118163.Ple7327_0790 (degree 1432) and 118163.Ple7327_2008 (degree
+The undirected graph Pleurocapsa sp. PCC7327 has 4221 nodes and 384076
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04312 and has 10 connected components, where the component
+with most nodes has 4200 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 181.98,
+and the node degree mode is 2. The top 5 most central nodes are 118163.Ple7327_1998
+(degree 1921), 118163.Ple7327_1304 (degree 1920), 118163.Ple7327_3888 (degree
+1571), 118163.Ple7327_0790 (degree 1432) and 118163.Ple7327_2008 (degree
 1311).
 
 
@@ -107,13 +108,14 @@ def PleurocapsaSp.Pcc7327(
 	
 	Datetime: 2021-02-02 19:47:50.536877
 	
-	The undirected graph Pleurocapsa sp. PCC7327 has 4221 nodes and 384076 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04312 and
-	has 10 connected components, where the component with most nodes has 4200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 181.98, and the node degree mode is 2. The top 5 most central
-	nodes are 118163.Ple7327_1998 (degree 1921), 118163.Ple7327_1304 (degree 1920), 118163.Ple7327_3888
-	(degree 1571), 118163.Ple7327_0790 (degree 1432) and 118163.Ple7327_2008 (degree
+	The undirected graph Pleurocapsa sp. PCC7327 has 4221 nodes and 384076
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04312 and has 10 connected components, where the component
+	with most nodes has 4200 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 181.98,
+	and the node degree mode is 2. The top 5 most central nodes are 118163.Ple7327_1998
+	(degree 1921), 118163.Ple7327_1304 (degree 1920), 118163.Ple7327_3888 (degree
+	1571), 118163.Ple7327_0790 (degree 1432) and 118163.Ple7327_2008 (degree
 	1311).
 	
 

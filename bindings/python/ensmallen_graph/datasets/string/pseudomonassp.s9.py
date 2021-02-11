@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:17.202197
 
-The undirected graph Pseudomonas sp. S9 has 4323 nodes and 588953 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06304 and
-has 13 connected components, where the component with most nodes has 4296 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 272.47, and the node degree mode is 1. The top 5 most central
-nodes are 686578.AFFX01000006_gene3338 (degree 1754), 686578.AFFX01000003_gene38
-(degree 1597), 686578.AFFX01000005_gene4256 (degree 1510), 686578.AFFX01000002_gene653
-(degree 1436) and 686578.AFFX01000008_gene2763 (degree 1359).
+The undirected graph Pseudomonas sp. S9 has 4323 nodes and 588953 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06304 and has 13 connected components, where the component with most
+nodes has 4296 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 272.47, and
+the node degree mode is 1. The top 5 most central nodes are 686578.AFFX01000006_gene3338
+(degree 1754), 686578.AFFX01000003_gene38 (degree 1597), 686578.AFFX01000005_gene4256
+(degree 1510), 686578.AFFX01000002_gene653 (degree 1436) and 686578.AFFX01000008_gene2763
+(degree 1359).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.S9(
 	
 	Datetime: 2021-02-02 21:31:17.202197
 	
-	The undirected graph Pseudomonas sp. S9 has 4323 nodes and 588953 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06304 and
-	has 13 connected components, where the component with most nodes has 4296 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 272.47, and the node degree mode is 1. The top 5 most central
-	nodes are 686578.AFFX01000006_gene3338 (degree 1754), 686578.AFFX01000003_gene38
-	(degree 1597), 686578.AFFX01000005_gene4256 (degree 1510), 686578.AFFX01000002_gene653
-	(degree 1436) and 686578.AFFX01000008_gene2763 (degree 1359).
+	The undirected graph Pseudomonas sp. S9 has 4323 nodes and 588953 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06304 and has 13 connected components, where the component with most
+	nodes has 4296 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 272.47, and
+	the node degree mode is 1. The top 5 most central nodes are 686578.AFFX01000006_gene3338
+	(degree 1754), 686578.AFFX01000003_gene38 (degree 1597), 686578.AFFX01000005_gene4256
+	(degree 1510), 686578.AFFX01000002_gene653 (degree 1436) and 686578.AFFX01000008_gene2763
+	(degree 1359).
 	
 
 

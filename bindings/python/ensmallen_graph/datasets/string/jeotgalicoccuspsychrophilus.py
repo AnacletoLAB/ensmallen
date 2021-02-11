@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:28.070070
 
-The undirected graph Jeotgalicoccus psychrophilus has 2337 nodes and 168800 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06184
-and has 11 connected components, where the component with most nodes has 2306 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 144.46, and the node degree mode is 7. The top 5
-most central nodes are 1122129.AUEF01000003_gene433 (degree 873), 1122129.AUEF01000010_gene1521
-(degree 734), 1122129.AUEF01000001_gene724 (degree 685), 1122129.AUEF01000021_gene1691
-(degree 646) and 1122129.AUEF01000001_gene602 (degree 639).
+The undirected graph Jeotgalicoccus psychrophilus has 2337 nodes and 168800
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06184 and has 11 connected components, where the component
+with most nodes has 2306 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 144.46,
+and the node degree mode is 7. The top 5 most central nodes are 1122129.AUEF01000003_gene433
+(degree 873), 1122129.AUEF01000010_gene1521 (degree 734), 1122129.AUEF01000001_gene724
+(degree 685), 1122129.AUEF01000021_gene1691 (degree 646) and 1122129.AUEF01000001_gene602
+(degree 639).
 
 
 References
@@ -107,14 +108,15 @@ def JeotgalicoccusPsychrophilus(
 	
 	Datetime: 2021-02-02 22:40:28.070070
 	
-	The undirected graph Jeotgalicoccus psychrophilus has 2337 nodes and 168800 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06184
-	and has 11 connected components, where the component with most nodes has 2306 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 144.46, and the node degree mode is 7. The top 5
-	most central nodes are 1122129.AUEF01000003_gene433 (degree 873), 1122129.AUEF01000010_gene1521
-	(degree 734), 1122129.AUEF01000001_gene724 (degree 685), 1122129.AUEF01000021_gene1691
-	(degree 646) and 1122129.AUEF01000001_gene602 (degree 639).
+	The undirected graph Jeotgalicoccus psychrophilus has 2337 nodes and 168800
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06184 and has 11 connected components, where the component
+	with most nodes has 2306 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 144.46,
+	and the node degree mode is 7. The top 5 most central nodes are 1122129.AUEF01000003_gene433
+	(degree 873), 1122129.AUEF01000010_gene1521 (degree 734), 1122129.AUEF01000001_gene724
+	(degree 685), 1122129.AUEF01000021_gene1691 (degree 646) and 1122129.AUEF01000001_gene602
+	(degree 639).
 	
 
 

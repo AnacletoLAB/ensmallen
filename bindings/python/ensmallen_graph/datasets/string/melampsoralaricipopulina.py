@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:12.024042
 
-The undirected graph Melampsora laricipopulina has 5684 nodes and 611093 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03784
-and has 12 connected components, where the component with most nodes has 5662 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 215.02, and the node degree mode is 1. The top 5
-most central nodes are 203908.EGG04426 (degree 1548), 203908.EGG10841 (degree 1310),
-203908.EGF99854 (degree 1274), 203908.EGG08271 (degree 1210) and 203908.EGG11633
-(degree 1209).
+The undirected graph Melampsora laricipopulina has 5684 nodes and 611093
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03784 and has 12 connected components, where the component
+with most nodes has 5662 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 215.02,
+and the node degree mode is 1. The top 5 most central nodes are 203908.EGG04426
+(degree 1548), 203908.EGG10841 (degree 1310), 203908.EGF99854 (degree 1274),
+203908.EGG08271 (degree 1210) and 203908.EGG11633 (degree 1209).
 
 
 References
@@ -107,14 +107,14 @@ def MelampsoraLaricipopulina(
 	
 	Datetime: 2021-02-02 20:00:12.024042
 	
-	The undirected graph Melampsora laricipopulina has 5684 nodes and 611093 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03784
-	and has 12 connected components, where the component with most nodes has 5662 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 215.02, and the node degree mode is 1. The top 5
-	most central nodes are 203908.EGG04426 (degree 1548), 203908.EGG10841 (degree 1310),
-	203908.EGF99854 (degree 1274), 203908.EGG08271 (degree 1210) and 203908.EGG11633
-	(degree 1209).
+	The undirected graph Melampsora laricipopulina has 5684 nodes and 611093
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03784 and has 12 connected components, where the component
+	with most nodes has 5662 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 215.02,
+	and the node degree mode is 1. The top 5 most central nodes are 203908.EGG04426
+	(degree 1548), 203908.EGG10841 (degree 1310), 203908.EGF99854 (degree 1274),
+	203908.EGG08271 (degree 1210) and 203908.EGG11633 (degree 1209).
 	
 
 

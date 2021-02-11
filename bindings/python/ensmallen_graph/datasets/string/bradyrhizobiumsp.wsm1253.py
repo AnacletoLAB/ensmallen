@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:31.577772
 
-The undirected graph Bradyrhizobium sp. WSM1253 has 7858 nodes and 978720 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03170
-and has 110 connected components, where the component with most nodes has 7582 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 249.10, and the node degree mode is 1. The top 5
-most central nodes are 319003.Bra1253DRAFT_02817 (degree 3534), 319003.Bra1253DRAFT_03255
-(degree 2662), 319003.Bra1253DRAFT_04484 (degree 2640), 319003.Bra1253DRAFT_03060
-(degree 2309) and 319003.Bra1253DRAFT_04123 (degree 2267).
+The undirected graph Bradyrhizobium sp. WSM1253 has 7858 nodes and 978720
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03170 and has 110 connected components, where the component
+with most nodes has 7582 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 249.10,
+and the node degree mode is 1. The top 5 most central nodes are 319003.Bra1253DRAFT_02817
+(degree 3534), 319003.Bra1253DRAFT_03255 (degree 2662), 319003.Bra1253DRAFT_04484
+(degree 2640), 319003.Bra1253DRAFT_03060 (degree 2309) and 319003.Bra1253DRAFT_04123
+(degree 2267).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Wsm1253(
 	
 	Datetime: 2021-02-02 20:27:31.577772
 	
-	The undirected graph Bradyrhizobium sp. WSM1253 has 7858 nodes and 978720 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03170
-	and has 110 connected components, where the component with most nodes has 7582 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 249.10, and the node degree mode is 1. The top 5
-	most central nodes are 319003.Bra1253DRAFT_02817 (degree 3534), 319003.Bra1253DRAFT_03255
-	(degree 2662), 319003.Bra1253DRAFT_04484 (degree 2640), 319003.Bra1253DRAFT_03060
-	(degree 2309) and 319003.Bra1253DRAFT_04123 (degree 2267).
+	The undirected graph Bradyrhizobium sp. WSM1253 has 7858 nodes and 978720
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03170 and has 110 connected components, where the component
+	with most nodes has 7582 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 249.10,
+	and the node degree mode is 1. The top 5 most central nodes are 319003.Bra1253DRAFT_02817
+	(degree 3534), 319003.Bra1253DRAFT_03255 (degree 2662), 319003.Bra1253DRAFT_04484
+	(degree 2640), 319003.Bra1253DRAFT_03060 (degree 2309) and 319003.Bra1253DRAFT_04123
+	(degree 2267).
 	
 
 

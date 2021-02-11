@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:05.526863
 
-The undirected graph Belliella baltica has 3648 nodes and 243875 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03666 and
-has 26 connected components, where the component with most nodes has 3585 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 133.70, and the node degree mode is 2. The top 5 most central
-nodes are 866536.Belba_1431 (degree 1261), 866536.Belba_3250 (degree 928), 866536.Belba_3542
-(degree 919), 866536.Belba_1102 (degree 902) and 866536.Belba_1410 (degree 869).
+The undirected graph Belliella baltica has 3648 nodes and 243875 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03666 and has 26 connected components, where the component with most
+nodes has 3585 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 133.70, and
+the node degree mode is 2. The top 5 most central nodes are 866536.Belba_1431
+(degree 1261), 866536.Belba_3250 (degree 928), 866536.Belba_3542 (degree
+919), 866536.Belba_1102 (degree 902) and 866536.Belba_1410 (degree 869).
 
 
 References
@@ -106,13 +107,14 @@ def BelliellaBaltica(
 	
 	Datetime: 2021-02-02 21:48:05.526863
 	
-	The undirected graph Belliella baltica has 3648 nodes and 243875 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03666 and
-	has 26 connected components, where the component with most nodes has 3585 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 133.70, and the node degree mode is 2. The top 5 most central
-	nodes are 866536.Belba_1431 (degree 1261), 866536.Belba_3250 (degree 928), 866536.Belba_3542
-	(degree 919), 866536.Belba_1102 (degree 902) and 866536.Belba_1410 (degree 869).
+	The undirected graph Belliella baltica has 3648 nodes and 243875 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03666 and has 26 connected components, where the component with most
+	nodes has 3585 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 133.70, and
+	the node degree mode is 2. The top 5 most central nodes are 866536.Belba_1431
+	(degree 1261), 866536.Belba_3250 (degree 928), 866536.Belba_3542 (degree
+	919), 866536.Belba_1102 (degree 902) and 866536.Belba_1410 (degree 869).
 	
 
 

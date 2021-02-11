@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:09.988610
 
-The undirected graph Trichophyton equinum has 5795 nodes and 547306 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03260 and
-has 19 connected components, where the component with most nodes has 5758 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 188.89, and the node degree mode is 1. The top 5 most central
-nodes are 63418.F2PR42 (degree 1438), 63418.F2PN59 (degree 1376), 63418.F2PSX4 (degree
-1336), 63418.F2PXC5 (degree 1258) and 63418.F2PRD9 (degree 1161).
+The undirected graph Trichophyton equinum has 5795 nodes and 547306 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03260 and has 19 connected components, where the component with most
+nodes has 5758 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 188.89, and
+the node degree mode is 1. The top 5 most central nodes are 63418.F2PR42
+(degree 1438), 63418.F2PN59 (degree 1376), 63418.F2PSX4 (degree 1336),
+63418.F2PXC5 (degree 1258) and 63418.F2PRD9 (degree 1161).
 
 
 References
@@ -106,13 +107,14 @@ def TrichophytonEquinum(
 	
 	Datetime: 2021-02-02 18:24:09.988610
 	
-	The undirected graph Trichophyton equinum has 5795 nodes and 547306 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03260 and
-	has 19 connected components, where the component with most nodes has 5758 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 188.89, and the node degree mode is 1. The top 5 most central
-	nodes are 63418.F2PR42 (degree 1438), 63418.F2PN59 (degree 1376), 63418.F2PSX4 (degree
-	1336), 63418.F2PXC5 (degree 1258) and 63418.F2PRD9 (degree 1161).
+	The undirected graph Trichophyton equinum has 5795 nodes and 547306 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03260 and has 19 connected components, where the component with most
+	nodes has 5758 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 188.89, and
+	the node degree mode is 1. The top 5 most central nodes are 63418.F2PR42
+	(degree 1438), 63418.F2PN59 (degree 1376), 63418.F2PSX4 (degree 1336),
+	63418.F2PXC5 (degree 1258) and 63418.F2PRD9 (degree 1161).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:34.429775
 
-The undirected graph Porphyromonas gingivalis ATCC33277 has 2062 nodes and 137907
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06490 and has 11 connected components, where the component with most nodes has
-2037 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 109, the mean node degree is 133.76, and the node degree mode is 1. The
-top 5 most central nodes are 431947.PGN_1768 (degree 1008), 431947.PGN_1771 (degree
-778), 431947.PGN_1449 (degree 637), 431947.PGN_0464 (degree 617) and 431947.PGN_0635
-(degree 593).
+The undirected graph Porphyromonas gingivalis ATCC33277 has 2062 nodes
+and 137907 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06490 and has 11 connected components, where the
+component with most nodes has 2037 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+is 133.76, and the node degree mode is 1. The top 5 most central nodes
+are 431947.PGN_1768 (degree 1008), 431947.PGN_1771 (degree 778), 431947.PGN_1449
+(degree 637), 431947.PGN_0464 (degree 617) and 431947.PGN_0635 (degree
+593).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyromonasGingivalisAtcc33277(
 	
 	Datetime: 2021-02-02 20:48:34.429775
 	
-	The undirected graph Porphyromonas gingivalis ATCC33277 has 2062 nodes and 137907
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06490 and has 11 connected components, where the component with most nodes has
-	2037 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 109, the mean node degree is 133.76, and the node degree mode is 1. The
-	top 5 most central nodes are 431947.PGN_1768 (degree 1008), 431947.PGN_1771 (degree
-	778), 431947.PGN_1449 (degree 637), 431947.PGN_0464 (degree 617) and 431947.PGN_0635
-	(degree 593).
+	The undirected graph Porphyromonas gingivalis ATCC33277 has 2062 nodes
+	and 137907 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06490 and has 11 connected components, where the
+	component with most nodes has 2037 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+	is 133.76, and the node degree mode is 1. The top 5 most central nodes
+	are 431947.PGN_1768 (degree 1008), 431947.PGN_1771 (degree 778), 431947.PGN_1449
+	(degree 637), 431947.PGN_0464 (degree 617) and 431947.PGN_0635 (degree
+	593).
 	
 
 

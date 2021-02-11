@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:45.743479
 
-The undirected graph Halomonas zhanjiangensis has 3557 nodes and 383690 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06067
-and has 9 connected components, where the component with most nodes has 3535 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 215.74, and the node degree mode is 1. The top 5
-most central nodes are 574966.KB898647_gene2169 (degree 1556), 574966.KB898655_gene1583
-(degree 1381), 574966.KB898646_gene3342 (degree 1136), 574966.KB898651_gene1996 (degree
-1129) and 574966.KB898650_gene383 (degree 1091).
+The undirected graph Halomonas zhanjiangensis has 3557 nodes and 383690
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06067 and has 9 connected components, where the component
+with most nodes has 3535 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 215.74,
+and the node degree mode is 1. The top 5 most central nodes are 574966.KB898647_gene2169
+(degree 1556), 574966.KB898655_gene1583 (degree 1381), 574966.KB898646_gene3342
+(degree 1136), 574966.KB898651_gene1996 (degree 1129) and 574966.KB898650_gene383
+(degree 1091).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasZhanjiangensis(
 	
 	Datetime: 2021-02-02 21:14:45.743479
 	
-	The undirected graph Halomonas zhanjiangensis has 3557 nodes and 383690 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06067
-	and has 9 connected components, where the component with most nodes has 3535 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 215.74, and the node degree mode is 1. The top 5
-	most central nodes are 574966.KB898647_gene2169 (degree 1556), 574966.KB898655_gene1583
-	(degree 1381), 574966.KB898646_gene3342 (degree 1136), 574966.KB898651_gene1996 (degree
-	1129) and 574966.KB898650_gene383 (degree 1091).
+	The undirected graph Halomonas zhanjiangensis has 3557 nodes and 383690
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06067 and has 9 connected components, where the component
+	with most nodes has 3535 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 215.74,
+	and the node degree mode is 1. The top 5 most central nodes are 574966.KB898647_gene2169
+	(degree 1556), 574966.KB898655_gene1583 (degree 1381), 574966.KB898646_gene3342
+	(degree 1136), 574966.KB898651_gene1996 (degree 1129) and 574966.KB898650_gene383
+	(degree 1091).
 	
 
 

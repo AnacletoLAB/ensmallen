@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:55:56.438429
 
-The undirected graph zhishi-baidu-internallink has 2141300 nodes, of which 1102 are
-singletons (all have self-loops), and 17026453 unweighted edges, of which 11507 are
-self-loops. The graph is extremely sparse as it has a density of 0.00001 and has
-15561 connected components, where the component with most nodes has 2107689 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 4, the mean node degree is 15.90, and the node degree mode is 1. The top 5 most
-central nodes are 2 (degree 97848), 4 (degree 96983), 184 (degree 90433), 222 (degree
-69955) and 145 (degree 50693).
+The undirected graph zhishi-baidu-internallink has 2141300 nodes, of which
+1102 are singletons (all have self-loops), and 17026453 unweighted edges,
+of which 11507 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and has 15561 connected components, where the component
+with most nodes has 2107689 nodes and the component with the least nodes
+has a single node. The graph median node degree is 4, the mean node degree
+is 15.90, and the node degree mode is 1. The top 5 most central nodes are
+2 (degree 97848), 4 (degree 96983), 184 (degree 90433), 222 (degree 69955)
+and 145 (degree 50693).
 
 
 References
@@ -104,14 +105,15 @@ def ZhishiBaiduInternallink(
 	
 	Datetime: 2021-02-07 15:55:56.438429
 	
-	The undirected graph zhishi-baidu-internallink has 2141300 nodes, of which 1102 are
-	singletons (all have self-loops), and 17026453 unweighted edges, of which 11507 are
-	self-loops. The graph is extremely sparse as it has a density of 0.00001 and has
-	15561 connected components, where the component with most nodes has 2107689 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 4, the mean node degree is 15.90, and the node degree mode is 1. The top 5 most
-	central nodes are 2 (degree 97848), 4 (degree 96983), 184 (degree 90433), 222 (degree
-	69955) and 145 (degree 50693).
+	The undirected graph zhishi-baidu-internallink has 2141300 nodes, of which
+	1102 are singletons (all have self-loops), and 17026453 unweighted edges,
+	of which 11507 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and has 15561 connected components, where the component
+	with most nodes has 2107689 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 4, the mean node degree
+	is 15.90, and the node degree mode is 1. The top 5 most central nodes are
+	2 (degree 97848), 4 (degree 96983), 184 (degree 90433), 222 (degree 69955)
+	and 145 (degree 50693).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:10.036098
 
-The undirected graph Thermus aquaticus has 2520 nodes and 198213 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06245 and
-has 5 connected components, where the component with most nodes has 2507 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 157.31, and the node degree mode is 5. The top 5 most central
-nodes are 498848.TaqDRAFT_3881 (degree 995), 498848.TaqDRAFT_4347 (degree 938), 498848.TaqDRAFT_3177
-(degree 920), 498848.TaqDRAFT_4485 (degree 866) and 498848.TaqDRAFT_4501 (degree
+The undirected graph Thermus aquaticus has 2520 nodes and 198213 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06245 and has 5 connected components, where the component with most
+nodes has 2507 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 157.31, and
+the node degree mode is 5. The top 5 most central nodes are 498848.TaqDRAFT_3881
+(degree 995), 498848.TaqDRAFT_4347 (degree 938), 498848.TaqDRAFT_3177 (degree
+920), 498848.TaqDRAFT_4485 (degree 866) and 498848.TaqDRAFT_4501 (degree
 839).
 
 
@@ -107,13 +108,14 @@ def ThermusAquaticus(
 	
 	Datetime: 2021-02-02 21:01:10.036098
 	
-	The undirected graph Thermus aquaticus has 2520 nodes and 198213 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06245 and
-	has 5 connected components, where the component with most nodes has 2507 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 157.31, and the node degree mode is 5. The top 5 most central
-	nodes are 498848.TaqDRAFT_3881 (degree 995), 498848.TaqDRAFT_4347 (degree 938), 498848.TaqDRAFT_3177
-	(degree 920), 498848.TaqDRAFT_4485 (degree 866) and 498848.TaqDRAFT_4501 (degree
+	The undirected graph Thermus aquaticus has 2520 nodes and 198213 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06245 and has 5 connected components, where the component with most
+	nodes has 2507 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 157.31, and
+	the node degree mode is 5. The top 5 most central nodes are 498848.TaqDRAFT_3881
+	(degree 995), 498848.TaqDRAFT_4347 (degree 938), 498848.TaqDRAFT_3177 (degree
+	920), 498848.TaqDRAFT_4485 (degree 866) and 498848.TaqDRAFT_4501 (degree
 	839).
 	
 

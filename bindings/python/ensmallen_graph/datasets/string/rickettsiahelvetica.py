@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:06.228311
 
-The undirected graph Rickettsia helvetica has 1638 nodes and 84707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06318 and
-has 27 connected components, where the component with most nodes has 1557 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 72,
-the mean node degree is 103.43, and the node degree mode is 3. The top 5 most central
-nodes are 1144888.CM001467_gene345 (degree 618), 1144888.CM001467_gene769 (degree
-499), 1144888.CM001467_gene621 (degree 486), 1144888.CM001467_gene1063 (degree 478)
-and 1144888.CM001467_gene608 (degree 476).
+The undirected graph Rickettsia helvetica has 1638 nodes and 84707 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06318 and has 27 connected components, where the component with most
+nodes has 1557 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 72, the mean node degree is 103.43, and
+the node degree mode is 3. The top 5 most central nodes are 1144888.CM001467_gene345
+(degree 618), 1144888.CM001467_gene769 (degree 499), 1144888.CM001467_gene621
+(degree 486), 1144888.CM001467_gene1063 (degree 478) and 1144888.CM001467_gene608
+(degree 476).
 
 
 References
@@ -107,14 +108,15 @@ def RickettsiaHelvetica(
 	
 	Datetime: 2021-02-02 22:59:06.228311
 	
-	The undirected graph Rickettsia helvetica has 1638 nodes and 84707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06318 and
-	has 27 connected components, where the component with most nodes has 1557 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 72,
-	the mean node degree is 103.43, and the node degree mode is 3. The top 5 most central
-	nodes are 1144888.CM001467_gene345 (degree 618), 1144888.CM001467_gene769 (degree
-	499), 1144888.CM001467_gene621 (degree 486), 1144888.CM001467_gene1063 (degree 478)
-	and 1144888.CM001467_gene608 (degree 476).
+	The undirected graph Rickettsia helvetica has 1638 nodes and 84707 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06318 and has 27 connected components, where the component with most
+	nodes has 1557 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 72, the mean node degree is 103.43, and
+	the node degree mode is 3. The top 5 most central nodes are 1144888.CM001467_gene345
+	(degree 618), 1144888.CM001467_gene769 (degree 499), 1144888.CM001467_gene621
+	(degree 486), 1144888.CM001467_gene1063 (degree 478) and 1144888.CM001467_gene608
+	(degree 476).
 	
 
 

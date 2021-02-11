@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:25.917319
 
-The undirected graph Clostridium hylemonae has 3924 nodes and 352901 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04585 and
-has 14 connected components, where the component with most nodes has 3887 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 179.87, and the node degree mode is 9. The top 5 most central
-nodes are 553973.CLOHYLEM_06146 (degree 1614), 553973.CLOHYLEM_06810 (degree 1495),
-553973.CLOHYLEM_04788 (degree 1473), 553973.CLOHYLEM_07435 (degree 1302) and 553973.CLOHYLEM_04537
+The undirected graph Clostridium hylemonae has 3924 nodes and 352901 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04585 and has 14 connected components, where the component with most
+nodes has 3887 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 179.87, and
+the node degree mode is 9. The top 5 most central nodes are 553973.CLOHYLEM_06146
+(degree 1614), 553973.CLOHYLEM_06810 (degree 1495), 553973.CLOHYLEM_04788
+(degree 1473), 553973.CLOHYLEM_07435 (degree 1302) and 553973.CLOHYLEM_04537
 (degree 1201).
 
 
@@ -107,13 +108,14 @@ def ClostridiumHylemonae(
 	
 	Datetime: 2021-02-02 21:10:25.917319
 	
-	The undirected graph Clostridium hylemonae has 3924 nodes and 352901 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04585 and
-	has 14 connected components, where the component with most nodes has 3887 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 179.87, and the node degree mode is 9. The top 5 most central
-	nodes are 553973.CLOHYLEM_06146 (degree 1614), 553973.CLOHYLEM_06810 (degree 1495),
-	553973.CLOHYLEM_04788 (degree 1473), 553973.CLOHYLEM_07435 (degree 1302) and 553973.CLOHYLEM_04537
+	The undirected graph Clostridium hylemonae has 3924 nodes and 352901 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04585 and has 14 connected components, where the component with most
+	nodes has 3887 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 179.87, and
+	the node degree mode is 9. The top 5 most central nodes are 553973.CLOHYLEM_06146
+	(degree 1614), 553973.CLOHYLEM_06810 (degree 1495), 553973.CLOHYLEM_04788
+	(degree 1473), 553973.CLOHYLEM_07435 (degree 1302) and 553973.CLOHYLEM_04537
 	(degree 1201).
 	
 

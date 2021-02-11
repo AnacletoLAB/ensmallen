@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:51.933506
 
-The undirected graph Prevotella enoeca has 2566 nodes and 164475 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04998 and
-has 34 connected components, where the component with most nodes has 2473 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 128.20, and the node degree mode is 2. The top 5 most central
-nodes are 1235815.BAIX01000002_gene285 (degree 919), 1235815.BAIX01000001_gene148
-(degree 866), 1235815.BAIX01000012_gene1215 (degree 802), 1235815.BAIX01000004_gene496
-(degree 783) and 1235815.BAIX01000001_gene150 (degree 762).
+The undirected graph Prevotella enoeca has 2566 nodes and 164475 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04998 and has 34 connected components, where the component with most
+nodes has 2473 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 128.20, and
+the node degree mode is 2. The top 5 most central nodes are 1235815.BAIX01000002_gene285
+(degree 919), 1235815.BAIX01000001_gene148 (degree 866), 1235815.BAIX01000012_gene1215
+(degree 802), 1235815.BAIX01000004_gene496 (degree 783) and 1235815.BAIX01000001_gene150
+(degree 762).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaEnoeca(
 	
 	Datetime: 2021-02-02 23:30:51.933506
 	
-	The undirected graph Prevotella enoeca has 2566 nodes and 164475 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04998 and
-	has 34 connected components, where the component with most nodes has 2473 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 128.20, and the node degree mode is 2. The top 5 most central
-	nodes are 1235815.BAIX01000002_gene285 (degree 919), 1235815.BAIX01000001_gene148
-	(degree 866), 1235815.BAIX01000012_gene1215 (degree 802), 1235815.BAIX01000004_gene496
-	(degree 783) and 1235815.BAIX01000001_gene150 (degree 762).
+	The undirected graph Prevotella enoeca has 2566 nodes and 164475 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04998 and has 34 connected components, where the component with most
+	nodes has 2473 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 128.20, and
+	the node degree mode is 2. The top 5 most central nodes are 1235815.BAIX01000002_gene285
+	(degree 919), 1235815.BAIX01000001_gene148 (degree 866), 1235815.BAIX01000012_gene1215
+	(degree 802), 1235815.BAIX01000004_gene496 (degree 783) and 1235815.BAIX01000001_gene150
+	(degree 762).
 	
 
 

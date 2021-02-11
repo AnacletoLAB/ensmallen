@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:58.420947
 
-The undirected graph Odoribacter laneus has 3056 nodes and 255256 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05468 and
-has 11 connected components, where the component with most nodes has 3031 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 167.05, and the node degree mode is 5. The top 5 most central
-nodes are 742817.HMPREF9449_00468 (degree 1145), 742817.HMPREF9449_02414 (degree
-1065), 742817.HMPREF9449_01399 (degree 868), 742817.HMPREF9449_00981 (degree 867)
-and 742817.HMPREF9449_01279 (degree 858).
+The undirected graph Odoribacter laneus has 3056 nodes and 255256 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05468 and has 11 connected components, where the component with most
+nodes has 3031 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 167.05, and
+the node degree mode is 5. The top 5 most central nodes are 742817.HMPREF9449_00468
+(degree 1145), 742817.HMPREF9449_02414 (degree 1065), 742817.HMPREF9449_01399
+(degree 868), 742817.HMPREF9449_00981 (degree 867) and 742817.HMPREF9449_01279
+(degree 858).
 
 
 References
@@ -107,14 +108,15 @@ def OdoribacterLaneus(
 	
 	Datetime: 2021-02-02 21:37:58.420947
 	
-	The undirected graph Odoribacter laneus has 3056 nodes and 255256 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05468 and
-	has 11 connected components, where the component with most nodes has 3031 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 167.05, and the node degree mode is 5. The top 5 most central
-	nodes are 742817.HMPREF9449_00468 (degree 1145), 742817.HMPREF9449_02414 (degree
-	1065), 742817.HMPREF9449_01399 (degree 868), 742817.HMPREF9449_00981 (degree 867)
-	and 742817.HMPREF9449_01279 (degree 858).
+	The undirected graph Odoribacter laneus has 3056 nodes and 255256 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05468 and has 11 connected components, where the component with most
+	nodes has 3031 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 167.05, and
+	the node degree mode is 5. The top 5 most central nodes are 742817.HMPREF9449_00468
+	(degree 1145), 742817.HMPREF9449_02414 (degree 1065), 742817.HMPREF9449_01399
+	(degree 868), 742817.HMPREF9449_00981 (degree 867) and 742817.HMPREF9449_01279
+	(degree 858).
 	
 
 

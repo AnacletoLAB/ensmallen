@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:06.614187
 
-The undirected graph Aspergillus nidulans has 7963 nodes and 560014 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01767 and
-has 30 connected components, where the component with most nodes has 7899 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 71,
-the mean node degree is 140.65, and the node degree mode is 1. The top 5 most central
-nodes are 162425.CADANIAP00002028 (degree 1956), 162425.CADANIAP00000445 (degree
-1458), 162425.CADANIAP00001432 (degree 1299), 162425.CADANIAP00001852 (degree 1239)
-and 162425.CADANIAP00006763 (degree 1176).
+The undirected graph Aspergillus nidulans has 7963 nodes and 560014 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01767 and has 30 connected components, where the component with most
+nodes has 7899 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 71, the mean node degree is 140.65, and
+the node degree mode is 1. The top 5 most central nodes are 162425.CADANIAP00002028
+(degree 1956), 162425.CADANIAP00000445 (degree 1458), 162425.CADANIAP00001432
+(degree 1299), 162425.CADANIAP00001852 (degree 1239) and 162425.CADANIAP00006763
+(degree 1176).
 
 
 References
@@ -107,14 +108,15 @@ def AspergillusNidulans(
 	
 	Datetime: 2021-02-02 19:54:06.614187
 	
-	The undirected graph Aspergillus nidulans has 7963 nodes and 560014 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01767 and
-	has 30 connected components, where the component with most nodes has 7899 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 71,
-	the mean node degree is 140.65, and the node degree mode is 1. The top 5 most central
-	nodes are 162425.CADANIAP00002028 (degree 1956), 162425.CADANIAP00000445 (degree
-	1458), 162425.CADANIAP00001432 (degree 1299), 162425.CADANIAP00001852 (degree 1239)
-	and 162425.CADANIAP00006763 (degree 1176).
+	The undirected graph Aspergillus nidulans has 7963 nodes and 560014 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01767 and has 30 connected components, where the component with most
+	nodes has 7899 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 71, the mean node degree is 140.65, and
+	the node degree mode is 1. The top 5 most central nodes are 162425.CADANIAP00002028
+	(degree 1956), 162425.CADANIAP00000445 (degree 1458), 162425.CADANIAP00001432
+	(degree 1299), 162425.CADANIAP00001852 (degree 1239) and 162425.CADANIAP00006763
+	(degree 1176).
 	
 
 

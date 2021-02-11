@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:33.054247
 
-The undirected graph Lachnoanaerobaculum saburreum DSM3986 has 2927 nodes and 233593
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05455 and has 11 connected components, where the component with most nodes has
-2905 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 138, the mean node degree is 159.61, and the node degree mode is 7. The
-top 5 most central nodes are 887325.HMPREF0381_0786 (degree 1065), 887325.HMPREF0381_0969
-(degree 1032), 887325.HMPREF0381_2413 (degree 1013), 887325.HMPREF0381_2169 (degree
+The undirected graph Lachnoanaerobaculum saburreum DSM3986 has 2927 nodes
+and 233593 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05455 and has 11 connected components, where the
+component with most nodes has 2905 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 159.61, and the node degree mode is 7. The top 5 most central nodes
+are 887325.HMPREF0381_0786 (degree 1065), 887325.HMPREF0381_0969 (degree
+1032), 887325.HMPREF0381_2413 (degree 1013), 887325.HMPREF0381_2169 (degree
 803) and 887325.HMPREF0381_1638 (degree 723).
 
 
@@ -107,13 +108,14 @@ def LachnoanaerobaculumSaburreumDsm3986(
 	
 	Datetime: 2021-02-02 21:52:33.054247
 	
-	The undirected graph Lachnoanaerobaculum saburreum DSM3986 has 2927 nodes and 233593
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05455 and has 11 connected components, where the component with most nodes has
-	2905 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 138, the mean node degree is 159.61, and the node degree mode is 7. The
-	top 5 most central nodes are 887325.HMPREF0381_0786 (degree 1065), 887325.HMPREF0381_0969
-	(degree 1032), 887325.HMPREF0381_2413 (degree 1013), 887325.HMPREF0381_2169 (degree
+	The undirected graph Lachnoanaerobaculum saburreum DSM3986 has 2927 nodes
+	and 233593 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05455 and has 11 connected components, where the
+	component with most nodes has 2905 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 159.61, and the node degree mode is 7. The top 5 most central nodes
+	are 887325.HMPREF0381_0786 (degree 1065), 887325.HMPREF0381_0969 (degree
+	1032), 887325.HMPREF0381_2413 (degree 1013), 887325.HMPREF0381_2169 (degree
 	803) and 887325.HMPREF0381_1638 (degree 723).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:35.573001
 
-The undirected graph Corynebacterium efficiens has 2936 nodes and 176637 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04100
-and has 10 connected components, where the component with most nodes has 2918 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 120.32, and the node degree mode is 2. The top 5 most
-central nodes are 196164.23493294 (degree 1058), 196164.23492751 (degree 888), 196164.23494235
-(degree 887), 196164.23492452 (degree 764) and 196164.23491993 (degree 738).
+The undirected graph Corynebacterium efficiens has 2936 nodes and 176637
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04100 and has 10 connected components, where the component
+with most nodes has 2918 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 120.32,
+and the node degree mode is 2. The top 5 most central nodes are 196164.23493294
+(degree 1058), 196164.23492751 (degree 888), 196164.23494235 (degree 887),
+196164.23492452 (degree 764) and 196164.23491993 (degree 738).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumEfficiens(
 	
 	Datetime: 2021-02-02 19:58:35.573001
 	
-	The undirected graph Corynebacterium efficiens has 2936 nodes and 176637 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04100
-	and has 10 connected components, where the component with most nodes has 2918 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 120.32, and the node degree mode is 2. The top 5 most
-	central nodes are 196164.23493294 (degree 1058), 196164.23492751 (degree 888), 196164.23494235
-	(degree 887), 196164.23492452 (degree 764) and 196164.23491993 (degree 738).
+	The undirected graph Corynebacterium efficiens has 2936 nodes and 176637
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04100 and has 10 connected components, where the component
+	with most nodes has 2918 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 120.32,
+	and the node degree mode is 2. The top 5 most central nodes are 196164.23493294
+	(degree 1058), 196164.23492751 (degree 888), 196164.23494235 (degree 887),
+	196164.23492452 (degree 764) and 196164.23491993 (degree 738).
 	
 
 

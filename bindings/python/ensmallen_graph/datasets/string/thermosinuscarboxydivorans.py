@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:55.269717
 
-The undirected graph Thermosinus carboxydivorans has 2730 nodes and 271980 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07301
-and has 3 connected components, where the component with most nodes has 2725 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 174, the mean node degree is 199.25, and the node degree mode is 2. The top 5
-most central nodes are 401526.TcarDRAFT_0254 (degree 1013), 401526.TcarDRAFT_0216
-(degree 997), 401526.TcarDRAFT_0644 (degree 950), 401526.TcarDRAFT_1773 (degree 929)
-and 401526.TcarDRAFT_1809 (degree 831).
+The undirected graph Thermosinus carboxydivorans has 2730 nodes and 271980
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07301 and has 3 connected components, where the component
+with most nodes has 2725 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 199.25,
+and the node degree mode is 2. The top 5 most central nodes are 401526.TcarDRAFT_0254
+(degree 1013), 401526.TcarDRAFT_0216 (degree 997), 401526.TcarDRAFT_0644
+(degree 950), 401526.TcarDRAFT_1773 (degree 929) and 401526.TcarDRAFT_1809
+(degree 831).
 
 
 References
@@ -107,14 +108,15 @@ def ThermosinusCarboxydivorans(
 	
 	Datetime: 2021-02-02 20:43:55.269717
 	
-	The undirected graph Thermosinus carboxydivorans has 2730 nodes and 271980 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07301
-	and has 3 connected components, where the component with most nodes has 2725 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 174, the mean node degree is 199.25, and the node degree mode is 2. The top 5
-	most central nodes are 401526.TcarDRAFT_0254 (degree 1013), 401526.TcarDRAFT_0216
-	(degree 997), 401526.TcarDRAFT_0644 (degree 950), 401526.TcarDRAFT_1773 (degree 929)
-	and 401526.TcarDRAFT_1809 (degree 831).
+	The undirected graph Thermosinus carboxydivorans has 2730 nodes and 271980
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07301 and has 3 connected components, where the component
+	with most nodes has 2725 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 199.25,
+	and the node degree mode is 2. The top 5 most central nodes are 401526.TcarDRAFT_0254
+	(degree 1013), 401526.TcarDRAFT_0216 (degree 997), 401526.TcarDRAFT_0644
+	(degree 950), 401526.TcarDRAFT_1773 (degree 929) and 401526.TcarDRAFT_1809
+	(degree 831).
 	
 
 

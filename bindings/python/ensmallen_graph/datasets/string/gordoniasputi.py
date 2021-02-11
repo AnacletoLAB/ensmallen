@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:30.262029
 
-The undirected graph Gordonia sputi has 4543 nodes and 542142 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05255 and
-has 16 connected components, where the component with most nodes has 4508 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 238.67, and the node degree mode is 3. The top 5 most central
-nodes are 1089453.GOSPT_141_00310 (degree 1903), 1089453.GOSPT_114_00570 (degree
-1796), 1089453.GOSPT_085_01210 (degree 1521), 1089453.GOSPT_129_00080 (degree 1490)
-and 1089453.GOSPT_085_00500 (degree 1465).
+The undirected graph Gordonia sputi has 4543 nodes and 542142 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05255 and has 16 connected components, where the component with most
+nodes has 4508 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 238.67, and
+the node degree mode is 3. The top 5 most central nodes are 1089453.GOSPT_141_00310
+(degree 1903), 1089453.GOSPT_114_00570 (degree 1796), 1089453.GOSPT_085_01210
+(degree 1521), 1089453.GOSPT_129_00080 (degree 1490) and 1089453.GOSPT_085_00500
+(degree 1465).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaSputi(
 	
 	Datetime: 2021-02-02 22:21:30.262029
 	
-	The undirected graph Gordonia sputi has 4543 nodes and 542142 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05255 and
-	has 16 connected components, where the component with most nodes has 4508 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 238.67, and the node degree mode is 3. The top 5 most central
-	nodes are 1089453.GOSPT_141_00310 (degree 1903), 1089453.GOSPT_114_00570 (degree
-	1796), 1089453.GOSPT_085_01210 (degree 1521), 1089453.GOSPT_129_00080 (degree 1490)
-	and 1089453.GOSPT_085_00500 (degree 1465).
+	The undirected graph Gordonia sputi has 4543 nodes and 542142 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05255 and has 16 connected components, where the component with most
+	nodes has 4508 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 238.67, and
+	the node degree mode is 3. The top 5 most central nodes are 1089453.GOSPT_141_00310
+	(degree 1903), 1089453.GOSPT_114_00570 (degree 1796), 1089453.GOSPT_085_01210
+	(degree 1521), 1089453.GOSPT_129_00080 (degree 1490) and 1089453.GOSPT_085_00500
+	(degree 1465).
 	
 
 

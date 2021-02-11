@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:10.136929
 
-The undirected graph Methanocaldococcus infernus has 1431 nodes and 105934 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10354 and is connected, as it has a single component. The graph median node
-degree is 139, the mean node degree is 148.06, and the node degree mode is 10. The
-top 5 most central nodes are 573063.Metin_0953 (degree 547), 573063.Metin_1363 (degree
-527), 573063.Metin_1270 (degree 515), 573063.Metin_1148 (degree 511) and 573063.Metin_0980
-(degree 509).
+The undirected graph Methanocaldococcus infernus has 1431 nodes and 105934
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10354 and is connected, as it has a single component.
+The graph median node degree is 139, the mean node degree is 148.06, and
+the node degree mode is 10. The top 5 most central nodes are 573063.Metin_0953
+(degree 547), 573063.Metin_1363 (degree 527), 573063.Metin_1270 (degree
+515), 573063.Metin_1148 (degree 511) and 573063.Metin_0980 (degree 509).
 
 
 References
@@ -106,13 +106,13 @@ def MethanocaldococcusInfernus(
 	
 	Datetime: 2021-02-02 21:14:10.136929
 	
-	The undirected graph Methanocaldococcus infernus has 1431 nodes and 105934 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10354 and is connected, as it has a single component. The graph median node
-	degree is 139, the mean node degree is 148.06, and the node degree mode is 10. The
-	top 5 most central nodes are 573063.Metin_0953 (degree 547), 573063.Metin_1363 (degree
-	527), 573063.Metin_1270 (degree 515), 573063.Metin_1148 (degree 511) and 573063.Metin_0980
-	(degree 509).
+	The undirected graph Methanocaldococcus infernus has 1431 nodes and 105934
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10354 and is connected, as it has a single component.
+	The graph median node degree is 139, the mean node degree is 148.06, and
+	the node degree mode is 10. The top 5 most central nodes are 573063.Metin_0953
+	(degree 547), 573063.Metin_1363 (degree 527), 573063.Metin_1270 (degree
+	515), 573063.Metin_1148 (degree 511) and 573063.Metin_0980 (degree 509).
 	
 
 

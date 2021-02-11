@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:39.110901
 
-The undirected graph Macrococcus caseolyticus has 1957 nodes and 142342 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07437
-and has 3 connected components, where the component with most nodes has 1953 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 145.47, and the node degree mode is 118. The top
-5 most central nodes are 458233.MCCL_1357 (degree 819), 458233.MCCL_1941 (degree
-668), 458233.MCCL_1942 (degree 641), 458233.MCCL_1922 (degree 617) and 458233.MCCL_0383
-(degree 617).
+The undirected graph Macrococcus caseolyticus has 1957 nodes and 142342
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07437 and has 3 connected components, where the component
+with most nodes has 1953 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 145.47,
+and the node degree mode is 118. The top 5 most central nodes are 458233.MCCL_1357
+(degree 819), 458233.MCCL_1941 (degree 668), 458233.MCCL_1942 (degree 641),
+458233.MCCL_1922 (degree 617) and 458233.MCCL_0383 (degree 617).
 
 
 References
@@ -107,14 +107,14 @@ def MacrococcusCaseolyticus(
 	
 	Datetime: 2021-02-02 20:53:39.110901
 	
-	The undirected graph Macrococcus caseolyticus has 1957 nodes and 142342 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07437
-	and has 3 connected components, where the component with most nodes has 1953 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 145.47, and the node degree mode is 118. The top
-	5 most central nodes are 458233.MCCL_1357 (degree 819), 458233.MCCL_1941 (degree
-	668), 458233.MCCL_1942 (degree 641), 458233.MCCL_1922 (degree 617) and 458233.MCCL_0383
-	(degree 617).
+	The undirected graph Macrococcus caseolyticus has 1957 nodes and 142342
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07437 and has 3 connected components, where the component
+	with most nodes has 1953 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 145.47,
+	and the node degree mode is 118. The top 5 most central nodes are 458233.MCCL_1357
+	(degree 819), 458233.MCCL_1941 (degree 668), 458233.MCCL_1942 (degree 641),
+	458233.MCCL_1922 (degree 617) and 458233.MCCL_0383 (degree 617).
 	
 
 

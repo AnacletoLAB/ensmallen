@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:52.474739
 
-The undirected graph Pseudomonas chlororaphis has 6096 nodes and 611096 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03289
-and has 29 connected components, where the component with most nodes has 6032 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 200.49, and the node degree mode is 1. The top 5
-most central nodes are 587753.EY04_29085 (degree 2289), 587753.EY04_01635 (degree
-1770), 587753.EY04_03415 (degree 1635), 587753.EY04_25145 (degree 1618) and 587753.EY04_24700
-(degree 1528).
+The undirected graph Pseudomonas chlororaphis has 6096 nodes and 611096
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03289 and has 29 connected components, where the component
+with most nodes has 6032 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 200.49,
+and the node degree mode is 1. The top 5 most central nodes are 587753.EY04_29085
+(degree 2289), 587753.EY04_01635 (degree 1770), 587753.EY04_03415 (degree
+1635), 587753.EY04_25145 (degree 1618) and 587753.EY04_24700 (degree 1528).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasChlororaphis(
 	
 	Datetime: 2021-02-02 21:16:52.474739
 	
-	The undirected graph Pseudomonas chlororaphis has 6096 nodes and 611096 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03289
-	and has 29 connected components, where the component with most nodes has 6032 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 200.49, and the node degree mode is 1. The top 5
-	most central nodes are 587753.EY04_29085 (degree 2289), 587753.EY04_01635 (degree
-	1770), 587753.EY04_03415 (degree 1635), 587753.EY04_25145 (degree 1618) and 587753.EY04_24700
-	(degree 1528).
+	The undirected graph Pseudomonas chlororaphis has 6096 nodes and 611096
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03289 and has 29 connected components, where the component
+	with most nodes has 6032 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 200.49,
+	and the node degree mode is 1. The top 5 most central nodes are 587753.EY04_29085
+	(degree 2289), 587753.EY04_01635 (degree 1770), 587753.EY04_03415 (degree
+	1635), 587753.EY04_25145 (degree 1618) and 587753.EY04_24700 (degree 1528).
 	
 
 

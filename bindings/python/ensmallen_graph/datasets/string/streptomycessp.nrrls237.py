@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:10:23.351327
 
-The undirected graph Streptomyces sp. NRRLS237 has 7803 nodes and 1124587 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03694
-and has 54 connected components, where the component with most nodes has 7683 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 288.24, and the node degree mode is 1. The top 5
-most central nodes are 1463895.JODA01000039_gene1687 (degree 3479), 1463895.JODA01000012_gene6725
-(degree 2309), 1463895.JODA01000021_gene7543 (degree 2098), 1463895.JODA01000041_gene2972
-(degree 2063) and 1463895.JODA01000001_gene639 (degree 2010).
+The undirected graph Streptomyces sp. NRRLS237 has 7803 nodes and 1124587
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03694 and has 54 connected components, where the component
+with most nodes has 7683 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 288.24,
+and the node degree mode is 1. The top 5 most central nodes are 1463895.JODA01000039_gene1687
+(degree 3479), 1463895.JODA01000012_gene6725 (degree 2309), 1463895.JODA01000021_gene7543
+(degree 2098), 1463895.JODA01000041_gene2972 (degree 2063) and 1463895.JODA01000001_gene639
+(degree 2010).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Nrrls237(
 	
 	Datetime: 2021-02-03 23:10:23.351327
 	
-	The undirected graph Streptomyces sp. NRRLS237 has 7803 nodes and 1124587 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03694
-	and has 54 connected components, where the component with most nodes has 7683 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 288.24, and the node degree mode is 1. The top 5
-	most central nodes are 1463895.JODA01000039_gene1687 (degree 3479), 1463895.JODA01000012_gene6725
-	(degree 2309), 1463895.JODA01000021_gene7543 (degree 2098), 1463895.JODA01000041_gene2972
-	(degree 2063) and 1463895.JODA01000001_gene639 (degree 2010).
+	The undirected graph Streptomyces sp. NRRLS237 has 7803 nodes and 1124587
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03694 and has 54 connected components, where the component
+	with most nodes has 7683 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 288.24,
+	and the node degree mode is 1. The top 5 most central nodes are 1463895.JODA01000039_gene1687
+	(degree 3479), 1463895.JODA01000012_gene6725 (degree 2309), 1463895.JODA01000021_gene7543
+	(degree 2098), 1463895.JODA01000041_gene2972 (degree 2063) and 1463895.JODA01000001_gene639
+	(degree 2010).
 	
 
 

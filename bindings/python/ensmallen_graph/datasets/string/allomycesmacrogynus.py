@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:57:15.155124
 
-The undirected graph Allomyces macrogynus has 10825 nodes and 2859342 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04881 and
-has 8 connected components, where the component with most nodes has 10791 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 407,
-the mean node degree is 528.28, and the node degree mode is 2. The top 5 most central
-nodes are 28583.AMAG_18154T0 (degree 3751), 28583.AMAG_04963T0 (degree 3751), 28583.AMAG_12701T0
-(degree 3359), 28583.AMAG_14666T0 (degree 3359) and 28583.AMAG_15430T0 (degree 3148).
+The undirected graph Allomyces macrogynus has 10825 nodes and 2859342 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04881 and has 8 connected components, where the component with most
+nodes has 10791 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 407, the mean node degree is 528.28, and
+the node degree mode is 2. The top 5 most central nodes are 28583.AMAG_18154T0
+(degree 3751), 28583.AMAG_04963T0 (degree 3751), 28583.AMAG_12701T0 (degree
+3359), 28583.AMAG_14666T0 (degree 3359) and 28583.AMAG_15430T0 (degree
+3148).
 
 
 References
@@ -106,13 +108,15 @@ def AllomycesMacrogynus(
 	
 	Datetime: 2021-02-02 17:57:15.155124
 	
-	The undirected graph Allomyces macrogynus has 10825 nodes and 2859342 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04881 and
-	has 8 connected components, where the component with most nodes has 10791 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 407,
-	the mean node degree is 528.28, and the node degree mode is 2. The top 5 most central
-	nodes are 28583.AMAG_18154T0 (degree 3751), 28583.AMAG_04963T0 (degree 3751), 28583.AMAG_12701T0
-	(degree 3359), 28583.AMAG_14666T0 (degree 3359) and 28583.AMAG_15430T0 (degree 3148).
+	The undirected graph Allomyces macrogynus has 10825 nodes and 2859342 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04881 and has 8 connected components, where the component with most
+	nodes has 10791 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 407, the mean node degree is 528.28, and
+	the node degree mode is 2. The top 5 most central nodes are 28583.AMAG_18154T0
+	(degree 3751), 28583.AMAG_04963T0 (degree 3751), 28583.AMAG_12701T0 (degree
+	3359), 28583.AMAG_14666T0 (degree 3359) and 28583.AMAG_15430T0 (degree
+	3148).
 	
 
 

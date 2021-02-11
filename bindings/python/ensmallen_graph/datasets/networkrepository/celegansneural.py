@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:07:34.831612
 
-The undirected graph celegansneural has 297 nodes and 2148 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04887 and is connected,
-as it has a single component. The graph median node degree is 12, the mean node degree
-is 14.46, and the node degree mode is 11. The top 5 most central nodes are 45 (degree
-134), 13 (degree 77), 3 (degree 74), 5 (degree 54) and 87 (degree 53).
+The undirected graph celegansneural has 297 nodes and 2148 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04887 and is connected, as it has a single component. The graph median
+node degree is 12, the mean node degree is 14.46, and the node degree mode
+is 11. The top 5 most central nodes are 45 (degree 134), 13 (degree 77),
+3 (degree 74), 5 (degree 54) and 87 (degree 53).
 
 
 References
@@ -101,11 +102,12 @@ def Celegansneural(
 	
 	Datetime: 2021-02-06 08:07:34.831612
 	
-	The undirected graph celegansneural has 297 nodes and 2148 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04887 and is connected,
-	as it has a single component. The graph median node degree is 12, the mean node degree
-	is 14.46, and the node degree mode is 11. The top 5 most central nodes are 45 (degree
-	134), 13 (degree 77), 3 (degree 74), 5 (degree 54) and 87 (degree 53).
+	The undirected graph celegansneural has 297 nodes and 2148 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04887 and is connected, as it has a single component. The graph median
+	node degree is 12, the mean node degree is 14.46, and the node degree mode
+	is 11. The top 5 most central nodes are 45 (degree 134), 13 (degree 77),
+	3 (degree 74), 5 (degree 54) and 87 (degree 53).
 	
 
 

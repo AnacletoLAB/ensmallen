@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:30.010891
 
-The undirected graph Spiroplasma apis has 976 nodes and 59222 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.12447
-and has 13 connected components, where the component with most nodes has 946 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 121.36, and the node degree mode is 3. The top 5 most
-central nodes are 1276258.SAPIS_v1c08560 (degree 456), 1276258.SAPIS_v1c07560 (degree
-446), 1276258.SAPIS_v1c03510 (degree 441), 1276258.SAPIS_v1c02360 (degree 428) and
-1276258.SAPIS_v1c06920 (degree 398).
+The undirected graph Spiroplasma apis has 976 nodes and 59222 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12447 and has 13 connected components, where the component
+with most nodes has 946 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 121.36,
+and the node degree mode is 3. The top 5 most central nodes are 1276258.SAPIS_v1c08560
+(degree 456), 1276258.SAPIS_v1c07560 (degree 446), 1276258.SAPIS_v1c03510
+(degree 441), 1276258.SAPIS_v1c02360 (degree 428) and 1276258.SAPIS_v1c06920
+(degree 398).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaApis(
 	
 	Datetime: 2021-02-02 23:38:30.010891
 	
-	The undirected graph Spiroplasma apis has 976 nodes and 59222 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.12447
-	and has 13 connected components, where the component with most nodes has 946 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 121.36, and the node degree mode is 3. The top 5 most
-	central nodes are 1276258.SAPIS_v1c08560 (degree 456), 1276258.SAPIS_v1c07560 (degree
-	446), 1276258.SAPIS_v1c03510 (degree 441), 1276258.SAPIS_v1c02360 (degree 428) and
-	1276258.SAPIS_v1c06920 (degree 398).
+	The undirected graph Spiroplasma apis has 976 nodes and 59222 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12447 and has 13 connected components, where the component
+	with most nodes has 946 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 121.36,
+	and the node degree mode is 3. The top 5 most central nodes are 1276258.SAPIS_v1c08560
+	(degree 456), 1276258.SAPIS_v1c07560 (degree 446), 1276258.SAPIS_v1c03510
+	(degree 441), 1276258.SAPIS_v1c02360 (degree 428) and 1276258.SAPIS_v1c06920
+	(degree 398).
 	
 
 

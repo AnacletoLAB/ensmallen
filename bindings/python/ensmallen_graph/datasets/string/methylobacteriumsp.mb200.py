@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:23.395041
 
-The undirected graph Methylobacterium sp. MB200 has 4940 nodes and 643384 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05274
-and has 32 connected components, where the component with most nodes has 4842 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 260.48, and the node degree mode is 3. The top 5
-most central nodes are 648885.KB316282_gene301 (degree 2456), 648885.KB316282_gene233
-(degree 2134), 648885.KB316283_gene3627 (degree 2003), 648885.KB316282_gene1026 (degree
-1897) and 648885.KB316283_gene4074 (degree 1711).
+The undirected graph Methylobacterium sp. MB200 has 4940 nodes and 643384
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05274 and has 32 connected components, where the component
+with most nodes has 4842 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 260.48,
+and the node degree mode is 3. The top 5 most central nodes are 648885.KB316282_gene301
+(degree 2456), 648885.KB316282_gene233 (degree 2134), 648885.KB316283_gene3627
+(degree 2003), 648885.KB316282_gene1026 (degree 1897) and 648885.KB316283_gene4074
+(degree 1711).
 
 
 References
@@ -107,14 +108,15 @@ def MethylobacteriumSp.Mb200(
 	
 	Datetime: 2021-02-02 21:25:23.395041
 	
-	The undirected graph Methylobacterium sp. MB200 has 4940 nodes and 643384 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05274
-	and has 32 connected components, where the component with most nodes has 4842 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 260.48, and the node degree mode is 3. The top 5
-	most central nodes are 648885.KB316282_gene301 (degree 2456), 648885.KB316282_gene233
-	(degree 2134), 648885.KB316283_gene3627 (degree 2003), 648885.KB316282_gene1026 (degree
-	1897) and 648885.KB316283_gene4074 (degree 1711).
+	The undirected graph Methylobacterium sp. MB200 has 4940 nodes and 643384
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05274 and has 32 connected components, where the component
+	with most nodes has 4842 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 260.48,
+	and the node degree mode is 3. The top 5 most central nodes are 648885.KB316282_gene301
+	(degree 2456), 648885.KB316282_gene233 (degree 2134), 648885.KB316283_gene3627
+	(degree 2003), 648885.KB316282_gene1026 (degree 1897) and 648885.KB316283_gene4074
+	(degree 1711).
 	
 
 

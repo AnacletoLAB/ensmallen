@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:08.450656
 
-The undirected graph Fervidicoccus fontis has 1376 nodes and 110304 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11660
-and has 7 connected components, where the component with most nodes has 1359 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 160.33, and the node degree mode is 3. The top 5
-most central nodes are 1163730.FFONT_0553 (degree 601), 1163730.FFONT_0242 (degree
-587), 1163730.FFONT_0755 (degree 576), 1163730.FFONT_0900 (degree 571) and 1163730.FFONT_0728
-(degree 548).
+The undirected graph Fervidicoccus fontis has 1376 nodes and 110304 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11660 and has 7 connected components, where the component
+with most nodes has 1359 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 160.33,
+and the node degree mode is 3. The top 5 most central nodes are 1163730.FFONT_0553
+(degree 601), 1163730.FFONT_0242 (degree 587), 1163730.FFONT_0755 (degree
+576), 1163730.FFONT_0900 (degree 571) and 1163730.FFONT_0728 (degree 548).
 
 
 References
@@ -107,14 +107,14 @@ def FervidicoccusFontis(
 	
 	Datetime: 2021-02-02 23:05:08.450656
 	
-	The undirected graph Fervidicoccus fontis has 1376 nodes and 110304 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11660
-	and has 7 connected components, where the component with most nodes has 1359 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 160.33, and the node degree mode is 3. The top 5
-	most central nodes are 1163730.FFONT_0553 (degree 601), 1163730.FFONT_0242 (degree
-	587), 1163730.FFONT_0755 (degree 576), 1163730.FFONT_0900 (degree 571) and 1163730.FFONT_0728
-	(degree 548).
+	The undirected graph Fervidicoccus fontis has 1376 nodes and 110304 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11660 and has 7 connected components, where the component
+	with most nodes has 1359 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 160.33,
+	and the node degree mode is 3. The top 5 most central nodes are 1163730.FFONT_0553
+	(degree 601), 1163730.FFONT_0242 (degree 587), 1163730.FFONT_0755 (degree
+	576), 1163730.FFONT_0900 (degree 571) and 1163730.FFONT_0728 (degree 548).
 	
 
 

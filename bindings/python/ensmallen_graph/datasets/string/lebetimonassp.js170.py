@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:35.388437
 
-The undirected graph Lebetimonas sp. JS170 has 1873 nodes and 121750 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06945 and
-has 5 connected components, where the component with most nodes has 1860 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 130.01, and the node degree mode is 8. The top 5 most central
-nodes are 990073.ATHU01000001_gene571 (degree 804), 990073.ATHU01000001_gene364 (degree
-677), 990073.ATHU01000001_gene1620 (degree 665), 990073.ATHU01000001_gene218 (degree
-658) and 990073.ATHU01000001_gene374 (degree 620).
+The undirected graph Lebetimonas sp. JS170 has 1873 nodes and 121750 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06945 and has 5 connected components, where the component with most
+nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 130.01, and
+the node degree mode is 8. The top 5 most central nodes are 990073.ATHU01000001_gene571
+(degree 804), 990073.ATHU01000001_gene364 (degree 677), 990073.ATHU01000001_gene1620
+(degree 665), 990073.ATHU01000001_gene218 (degree 658) and 990073.ATHU01000001_gene374
+(degree 620).
 
 
 References
@@ -107,14 +108,15 @@ def LebetimonasSp.Js170(
 	
 	Datetime: 2021-02-02 22:04:35.388437
 	
-	The undirected graph Lebetimonas sp. JS170 has 1873 nodes and 121750 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06945 and
-	has 5 connected components, where the component with most nodes has 1860 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 130.01, and the node degree mode is 8. The top 5 most central
-	nodes are 990073.ATHU01000001_gene571 (degree 804), 990073.ATHU01000001_gene364 (degree
-	677), 990073.ATHU01000001_gene1620 (degree 665), 990073.ATHU01000001_gene218 (degree
-	658) and 990073.ATHU01000001_gene374 (degree 620).
+	The undirected graph Lebetimonas sp. JS170 has 1873 nodes and 121750 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06945 and has 5 connected components, where the component with most
+	nodes has 1860 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 130.01, and
+	the node degree mode is 8. The top 5 most central nodes are 990073.ATHU01000001_gene571
+	(degree 804), 990073.ATHU01000001_gene364 (degree 677), 990073.ATHU01000001_gene1620
+	(degree 665), 990073.ATHU01000001_gene218 (degree 658) and 990073.ATHU01000001_gene374
+	(degree 620).
 	
 
 

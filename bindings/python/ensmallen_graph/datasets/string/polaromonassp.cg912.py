@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:50.839908
 
-The undirected graph Polaromonas sp. CG912 has 4889 nodes and 509943 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04268 and
-has 27 connected components, where the component with most nodes has 4827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 208.61, and the node degree mode is 2. The top 5 most central
-nodes are 1504672.669786593 (degree 1603), 1504672.669784858 (degree 1570), 1504672.669786060
-(degree 1347), 1504672.669787298 (degree 1322) and 1504672.669784391 (degree 1319).
+The undirected graph Polaromonas sp. CG912 has 4889 nodes and 509943 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04268 and has 27 connected components, where the component with most
+nodes has 4827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 208.61, and
+the node degree mode is 2. The top 5 most central nodes are 1504672.669786593
+(degree 1603), 1504672.669784858 (degree 1570), 1504672.669786060 (degree
+1347), 1504672.669787298 (degree 1322) and 1504672.669784391 (degree 1319).
 
 
 References
@@ -106,13 +107,14 @@ def PolaromonasSp.Cg912(
 	
 	Datetime: 2021-02-03 23:16:50.839908
 	
-	The undirected graph Polaromonas sp. CG912 has 4889 nodes and 509943 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04268 and
-	has 27 connected components, where the component with most nodes has 4827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 208.61, and the node degree mode is 2. The top 5 most central
-	nodes are 1504672.669786593 (degree 1603), 1504672.669784858 (degree 1570), 1504672.669786060
-	(degree 1347), 1504672.669787298 (degree 1322) and 1504672.669784391 (degree 1319).
+	The undirected graph Polaromonas sp. CG912 has 4889 nodes and 509943 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04268 and has 27 connected components, where the component with most
+	nodes has 4827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 208.61, and
+	the node degree mode is 2. The top 5 most central nodes are 1504672.669786593
+	(degree 1603), 1504672.669784858 (degree 1570), 1504672.669786060 (degree
+	1347), 1504672.669787298 (degree 1322) and 1504672.669784391 (degree 1319).
 	
 
 

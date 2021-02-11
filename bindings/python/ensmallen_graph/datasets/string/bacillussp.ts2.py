@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:39.126644
 
-The undirected graph Bacillus sp. TS2 has 4028 nodes and 374086 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04612 and
-has 22 connected components, where the component with most nodes has 3975 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 185.74, and the node degree mode is 2. The top 5 most central
-nodes are 1450694.BTS2_0876 (degree 1281), 1450694.BTS2_3965 (degree 1239), 1450694.BTS2_2428
-(degree 1157), 1450694.BTS2_3022 (degree 1130) and 1450694.BTS2_3672 (degree 1116).
+The undirected graph Bacillus sp. TS2 has 4028 nodes and 374086 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04612 and has 22 connected components, where the component with most
+nodes has 3975 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 185.74, and
+the node degree mode is 2. The top 5 most central nodes are 1450694.BTS2_0876
+(degree 1281), 1450694.BTS2_3965 (degree 1239), 1450694.BTS2_2428 (degree
+1157), 1450694.BTS2_3022 (degree 1130) and 1450694.BTS2_3672 (degree 1116).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusSp.Ts2(
 	
 	Datetime: 2021-02-03 23:05:39.126644
 	
-	The undirected graph Bacillus sp. TS2 has 4028 nodes and 374086 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04612 and
-	has 22 connected components, where the component with most nodes has 3975 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 185.74, and the node degree mode is 2. The top 5 most central
-	nodes are 1450694.BTS2_0876 (degree 1281), 1450694.BTS2_3965 (degree 1239), 1450694.BTS2_2428
-	(degree 1157), 1450694.BTS2_3022 (degree 1130) and 1450694.BTS2_3672 (degree 1116).
+	The undirected graph Bacillus sp. TS2 has 4028 nodes and 374086 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04612 and has 22 connected components, where the component with most
+	nodes has 3975 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 185.74, and
+	the node degree mode is 2. The top 5 most central nodes are 1450694.BTS2_0876
+	(degree 1281), 1450694.BTS2_3965 (degree 1239), 1450694.BTS2_2428 (degree
+	1157), 1450694.BTS2_3022 (degree 1130) and 1450694.BTS2_3672 (degree 1116).
 	
 
 

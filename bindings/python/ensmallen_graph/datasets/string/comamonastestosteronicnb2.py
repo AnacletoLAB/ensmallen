@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:21.967141
 
-The undirected graph Comamonas testosteroni CNB2 has 4761 nodes and 579451 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05114
-and has 8 connected components, where the component with most nodes has 4743 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 243.42, and the node degree mode is 2. The top 5
-most central nodes are 688245.CtCNB1_1514 (degree 2041), 688245.CtCNB1_0921 (degree
-1726), 688245.CtCNB1_0688 (degree 1345), 688245.CtCNB1_2684 (degree 1314) and 688245.CtCNB1_3985
-(degree 1260).
+The undirected graph Comamonas testosteroni CNB2 has 4761 nodes and 579451
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05114 and has 8 connected components, where the component
+with most nodes has 4743 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 210, the mean node degree is 243.42,
+and the node degree mode is 2. The top 5 most central nodes are 688245.CtCNB1_1514
+(degree 2041), 688245.CtCNB1_0921 (degree 1726), 688245.CtCNB1_0688 (degree
+1345), 688245.CtCNB1_2684 (degree 1314) and 688245.CtCNB1_3985 (degree
+1260).
 
 
 References
@@ -107,14 +108,15 @@ def ComamonasTestosteroniCnb2(
 	
 	Datetime: 2021-02-02 21:31:21.967141
 	
-	The undirected graph Comamonas testosteroni CNB2 has 4761 nodes and 579451 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05114
-	and has 8 connected components, where the component with most nodes has 4743 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 243.42, and the node degree mode is 2. The top 5
-	most central nodes are 688245.CtCNB1_1514 (degree 2041), 688245.CtCNB1_0921 (degree
-	1726), 688245.CtCNB1_0688 (degree 1345), 688245.CtCNB1_2684 (degree 1314) and 688245.CtCNB1_3985
-	(degree 1260).
+	The undirected graph Comamonas testosteroni CNB2 has 4761 nodes and 579451
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05114 and has 8 connected components, where the component
+	with most nodes has 4743 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 210, the mean node degree is 243.42,
+	and the node degree mode is 2. The top 5 most central nodes are 688245.CtCNB1_1514
+	(degree 2041), 688245.CtCNB1_0921 (degree 1726), 688245.CtCNB1_0688 (degree
+	1345), 688245.CtCNB1_2684 (degree 1314) and 688245.CtCNB1_3985 (degree
+	1260).
 	
 
 

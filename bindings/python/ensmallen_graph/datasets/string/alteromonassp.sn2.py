@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:04.564988
 
-The undirected graph Alteromonas sp. SN2 has 4321 nodes and 332805 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03566 and
-has 26 connected components, where the component with most nodes has 4253 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 154.04, and the node degree mode is 1. The top 5 most central
-nodes are 715451.ambt_00065 (degree 1347), 715451.ambt_04010 (degree 1118), 715451.ambt_01690
-(degree 1012), 715451.ambt_15765 (degree 1005) and 715451.ambt_06670 (degree 973).
+The undirected graph Alteromonas sp. SN2 has 4321 nodes and 332805 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03566 and has 26 connected components, where the component with most
+nodes has 4253 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 154.04, and
+the node degree mode is 1. The top 5 most central nodes are 715451.ambt_00065
+(degree 1347), 715451.ambt_04010 (degree 1118), 715451.ambt_01690 (degree
+1012), 715451.ambt_15765 (degree 1005) and 715451.ambt_06670 (degree 973).
 
 
 References
@@ -106,13 +107,14 @@ def AlteromonasSp.Sn2(
 	
 	Datetime: 2021-02-02 21:36:04.564988
 	
-	The undirected graph Alteromonas sp. SN2 has 4321 nodes and 332805 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03566 and
-	has 26 connected components, where the component with most nodes has 4253 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 154.04, and the node degree mode is 1. The top 5 most central
-	nodes are 715451.ambt_00065 (degree 1347), 715451.ambt_04010 (degree 1118), 715451.ambt_01690
-	(degree 1012), 715451.ambt_15765 (degree 1005) and 715451.ambt_06670 (degree 973).
+	The undirected graph Alteromonas sp. SN2 has 4321 nodes and 332805 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03566 and has 26 connected components, where the component with most
+	nodes has 4253 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 154.04, and
+	the node degree mode is 1. The top 5 most central nodes are 715451.ambt_00065
+	(degree 1347), 715451.ambt_04010 (degree 1118), 715451.ambt_01690 (degree
+	1012), 715451.ambt_15765 (degree 1005) and 715451.ambt_06670 (degree 973).
 	
 
 

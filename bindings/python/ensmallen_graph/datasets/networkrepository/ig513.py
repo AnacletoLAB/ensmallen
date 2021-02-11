@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:13:43.002459
 
-The undirected graph IG5-13 has 4731 nodes and 91209 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00815 and is connected,
-as it has a single component. The graph median node degree is 30, the mean node degree
-is 38.56, and the node degree mode is 10. The top 5 most central nodes are 4725 (degree
-403), 4724 (degree 385), 4714 (degree 335), 4708 (degree 310) and 4664 (degree 293).
+The undirected graph IG5-13 has 4731 nodes and 91209 weighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00815
+and is connected, as it has a single component. The graph median node degree
+is 30, the mean node degree is 38.56, and the node degree mode is 10. The
+top 5 most central nodes are 4725 (degree 403), 4724 (degree 385), 4714
+(degree 335), 4708 (degree 310) and 4664 (degree 293).
 
 
 References
@@ -101,11 +102,12 @@ def Ig513(
 	
 	Datetime: 2021-02-06 10:13:43.002459
 	
-	The undirected graph IG5-13 has 4731 nodes and 91209 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00815 and is connected,
-	as it has a single component. The graph median node degree is 30, the mean node degree
-	is 38.56, and the node degree mode is 10. The top 5 most central nodes are 4725 (degree
-	403), 4724 (degree 385), 4714 (degree 335), 4708 (degree 310) and 4664 (degree 293).
+	The undirected graph IG5-13 has 4731 nodes and 91209 weighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00815
+	and is connected, as it has a single component. The graph median node degree
+	is 30, the mean node degree is 38.56, and the node degree mode is 10. The
+	top 5 most central nodes are 4725 (degree 403), 4724 (degree 385), 4714
+	(degree 335), 4708 (degree 310) and 4664 (degree 293).
 	
 
 

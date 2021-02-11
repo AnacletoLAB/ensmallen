@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:16.037391
 
-The undirected graph Marivirga tractuosa has 3729 nodes and 373290 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05370 and
-has 16 connected components, where the component with most nodes has 3693 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 200.21, and the node degree mode is 6. The top 5 most central
-nodes are 643867.Ftrac_3236 (degree 1341), 643867.Ftrac_2983 (degree 1317), 643867.Ftrac_0400
-(degree 1221), 643867.Ftrac_0830 (degree 1119) and 643867.Ftrac_1808 (degree 1110).
+The undirected graph Marivirga tractuosa has 3729 nodes and 373290 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05370 and has 16 connected components, where the component with most
+nodes has 3693 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 200.21, and
+the node degree mode is 6. The top 5 most central nodes are 643867.Ftrac_3236
+(degree 1341), 643867.Ftrac_2983 (degree 1317), 643867.Ftrac_0400 (degree
+1221), 643867.Ftrac_0830 (degree 1119) and 643867.Ftrac_1808 (degree 1110).
 
 
 References
@@ -106,13 +107,14 @@ def MarivirgaTractuosa(
 	
 	Datetime: 2021-02-02 21:24:16.037391
 	
-	The undirected graph Marivirga tractuosa has 3729 nodes and 373290 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05370 and
-	has 16 connected components, where the component with most nodes has 3693 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 200.21, and the node degree mode is 6. The top 5 most central
-	nodes are 643867.Ftrac_3236 (degree 1341), 643867.Ftrac_2983 (degree 1317), 643867.Ftrac_0400
-	(degree 1221), 643867.Ftrac_0830 (degree 1119) and 643867.Ftrac_1808 (degree 1110).
+	The undirected graph Marivirga tractuosa has 3729 nodes and 373290 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05370 and has 16 connected components, where the component with most
+	nodes has 3693 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 200.21, and
+	the node degree mode is 6. The top 5 most central nodes are 643867.Ftrac_3236
+	(degree 1341), 643867.Ftrac_2983 (degree 1317), 643867.Ftrac_0400 (degree
+	1221), 643867.Ftrac_0830 (degree 1119) and 643867.Ftrac_1808 (degree 1110).
 	
 
 

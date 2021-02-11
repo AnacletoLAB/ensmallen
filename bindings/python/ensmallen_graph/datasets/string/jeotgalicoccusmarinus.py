@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:25.584154
 
-The undirected graph Jeotgalicoccus marinus has 2204 nodes and 157626 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06493 and
-has 7 connected components, where the component with most nodes has 2191 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 143.04, and the node degree mode is 9. The top 5 most central
-nodes are 1122128.AUEE01000009_gene1448 (degree 871), 1122128.AUEE01000012_gene121
-(degree 731), 1122128.AUEE01000006_gene1937 (degree 676), 1122128.AUEE01000006_gene1991
-(degree 636) and 1122128.AUEE01000003_gene738 (degree 630).
+The undirected graph Jeotgalicoccus marinus has 2204 nodes and 157626 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06493 and has 7 connected components, where the component with most
+nodes has 2191 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 143.04, and
+the node degree mode is 9. The top 5 most central nodes are 1122128.AUEE01000009_gene1448
+(degree 871), 1122128.AUEE01000012_gene121 (degree 731), 1122128.AUEE01000006_gene1937
+(degree 676), 1122128.AUEE01000006_gene1991 (degree 636) and 1122128.AUEE01000003_gene738
+(degree 630).
 
 
 References
@@ -107,14 +108,15 @@ def JeotgalicoccusMarinus(
 	
 	Datetime: 2021-02-02 22:40:25.584154
 	
-	The undirected graph Jeotgalicoccus marinus has 2204 nodes and 157626 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06493 and
-	has 7 connected components, where the component with most nodes has 2191 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 143.04, and the node degree mode is 9. The top 5 most central
-	nodes are 1122128.AUEE01000009_gene1448 (degree 871), 1122128.AUEE01000012_gene121
-	(degree 731), 1122128.AUEE01000006_gene1937 (degree 676), 1122128.AUEE01000006_gene1991
-	(degree 636) and 1122128.AUEE01000003_gene738 (degree 630).
+	The undirected graph Jeotgalicoccus marinus has 2204 nodes and 157626 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06493 and has 7 connected components, where the component with most
+	nodes has 2191 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 143.04, and
+	the node degree mode is 9. The top 5 most central nodes are 1122128.AUEE01000009_gene1448
+	(degree 871), 1122128.AUEE01000012_gene121 (degree 731), 1122128.AUEE01000006_gene1937
+	(degree 676), 1122128.AUEE01000006_gene1991 (degree 636) and 1122128.AUEE01000003_gene738
+	(degree 630).
 	
 
 

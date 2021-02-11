@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:16.955864
 
-The undirected graph Gillisia sp. CAL575 has 3232 nodes and 271511 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05200 and
-has 12 connected components, where the component with most nodes has 3204 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 168.01, and the node degree mode is 2. The top 5 most central
-nodes are 985255.APHJ01000021_gene1375 (degree 1228), 985255.APHJ01000017_gene2180
-(degree 1127), 985255.APHJ01000040_gene357 (degree 1120), 985255.APHJ01000027_gene810
-(degree 1057) and 985255.APHJ01000027_gene868 (degree 1053).
+The undirected graph Gillisia sp. CAL575 has 3232 nodes and 271511 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05200 and has 12 connected components, where the component with most
+nodes has 3204 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 168.01, and
+the node degree mode is 2. The top 5 most central nodes are 985255.APHJ01000021_gene1375
+(degree 1228), 985255.APHJ01000017_gene2180 (degree 1127), 985255.APHJ01000040_gene357
+(degree 1120), 985255.APHJ01000027_gene810 (degree 1057) and 985255.APHJ01000027_gene868
+(degree 1053).
 
 
 References
@@ -107,14 +108,15 @@ def GillisiaSp.Cal575(
 	
 	Datetime: 2021-02-02 22:04:16.955864
 	
-	The undirected graph Gillisia sp. CAL575 has 3232 nodes and 271511 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05200 and
-	has 12 connected components, where the component with most nodes has 3204 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 168.01, and the node degree mode is 2. The top 5 most central
-	nodes are 985255.APHJ01000021_gene1375 (degree 1228), 985255.APHJ01000017_gene2180
-	(degree 1127), 985255.APHJ01000040_gene357 (degree 1120), 985255.APHJ01000027_gene810
-	(degree 1057) and 985255.APHJ01000027_gene868 (degree 1053).
+	The undirected graph Gillisia sp. CAL575 has 3232 nodes and 271511 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05200 and has 12 connected components, where the component with most
+	nodes has 3204 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 168.01, and
+	the node degree mode is 2. The top 5 most central nodes are 985255.APHJ01000021_gene1375
+	(degree 1228), 985255.APHJ01000017_gene2180 (degree 1127), 985255.APHJ01000040_gene357
+	(degree 1120), 985255.APHJ01000027_gene810 (degree 1057) and 985255.APHJ01000027_gene868
+	(degree 1053).
 	
 
 

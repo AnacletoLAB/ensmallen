@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:45.755582
 
-The undirected graph Mycobacterium phlei has 5385 nodes and 788493 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05439 and
-has 7 connected components, where the component with most nodes has 5373 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 292.85, and the node degree mode is 3. The top 5 most central
-nodes are 1150599.MPHLEI_14679 (degree 1980), 1150599.MPHLEI_23519 (degree 1830),
-1150599.MPHLEI_16361 (degree 1623), 1150599.MPHLEI_01416 (degree 1556) and 1150599.MPHLEI_23114
+The undirected graph Mycobacterium phlei has 5385 nodes and 788493 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05439 and has 7 connected components, where the component with most
+nodes has 5373 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 235, the mean node degree is 292.85, and
+the node degree mode is 3. The top 5 most central nodes are 1150599.MPHLEI_14679
+(degree 1980), 1150599.MPHLEI_23519 (degree 1830), 1150599.MPHLEI_16361
+(degree 1623), 1150599.MPHLEI_01416 (degree 1556) and 1150599.MPHLEI_23114
 (degree 1457).
 
 
@@ -107,13 +108,14 @@ def MycobacteriumPhlei(
 	
 	Datetime: 2021-02-02 22:59:45.755582
 	
-	The undirected graph Mycobacterium phlei has 5385 nodes and 788493 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05439 and
-	has 7 connected components, where the component with most nodes has 5373 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 292.85, and the node degree mode is 3. The top 5 most central
-	nodes are 1150599.MPHLEI_14679 (degree 1980), 1150599.MPHLEI_23519 (degree 1830),
-	1150599.MPHLEI_16361 (degree 1623), 1150599.MPHLEI_01416 (degree 1556) and 1150599.MPHLEI_23114
+	The undirected graph Mycobacterium phlei has 5385 nodes and 788493 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05439 and has 7 connected components, where the component with most
+	nodes has 5373 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 235, the mean node degree is 292.85, and
+	the node degree mode is 3. The top 5 most central nodes are 1150599.MPHLEI_14679
+	(degree 1980), 1150599.MPHLEI_23519 (degree 1830), 1150599.MPHLEI_16361
+	(degree 1623), 1150599.MPHLEI_01416 (degree 1556) and 1150599.MPHLEI_23114
 	(degree 1457).
 	
 

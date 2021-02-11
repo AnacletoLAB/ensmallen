@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:50.960645
 
-The undirected graph socfb-Colgate88 has 3482 nodes and 155043 unweighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02558 and
-is connected, as it has a single component. The graph median node degree is 78, the
-mean node degree is 89.05, and the node degree mode is 1. The top 5 most central
-nodes are 282 (degree 773), 1808 (degree 447), 1029 (degree 428), 3331 (degree 406)
-and 2250 (degree 398).
+The undirected graph socfb-Colgate88 has 3482 nodes and 155043 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02558 and is connected, as it has a single component. The graph median
+node degree is 78, the mean node degree is 89.05, and the node degree mode
+is 1. The top 5 most central nodes are 282 (degree 773), 1808 (degree 447),
+1029 (degree 428), 3331 (degree 406) and 2250 (degree 398).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbColgate88(
 	
 	Datetime: 2021-02-06 11:48:50.960645
 	
-	The undirected graph socfb-Colgate88 has 3482 nodes and 155043 unweighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02558 and
-	is connected, as it has a single component. The graph median node degree is 78, the
-	mean node degree is 89.05, and the node degree mode is 1. The top 5 most central
-	nodes are 282 (degree 773), 1808 (degree 447), 1029 (degree 428), 3331 (degree 406)
-	and 2250 (degree 398).
+	The undirected graph socfb-Colgate88 has 3482 nodes and 155043 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02558 and is connected, as it has a single component. The graph median
+	node degree is 78, the mean node degree is 89.05, and the node degree mode
+	is 1. The top 5 most central nodes are 282 (degree 773), 1808 (degree 447),
+	1029 (degree 428), 3331 (degree 406) and 2250 (degree 398).
 	
 
 

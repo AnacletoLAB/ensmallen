@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:23.980664
 
-The undirected graph Xanthomonas fuscans has 3929 nodes and 307128 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03980 and
-has 16 connected components, where the component with most nodes has 3892 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 156.34, and the node degree mode is 2. The top 5 most central
-nodes are 366649.XFF4834R_chr39790 (degree 1300), 366649.XFF4834R_chr24780 (degree
-1166), 366649.XFF4834R_chr32530 (degree 1121), 366649.XFF4834R_chr22500 (degree 1034)
-and 366649.XFF4834R_chr40630 (degree 1015).
+The undirected graph Xanthomonas fuscans has 3929 nodes and 307128 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03980 and has 16 connected components, where the component with most
+nodes has 3892 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 156.34, and
+the node degree mode is 2. The top 5 most central nodes are 366649.XFF4834R_chr39790
+(degree 1300), 366649.XFF4834R_chr24780 (degree 1166), 366649.XFF4834R_chr32530
+(degree 1121), 366649.XFF4834R_chr22500 (degree 1034) and 366649.XFF4834R_chr40630
+(degree 1015).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasFuscans(
 	
 	Datetime: 2021-02-02 20:35:23.980664
 	
-	The undirected graph Xanthomonas fuscans has 3929 nodes and 307128 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03980 and
-	has 16 connected components, where the component with most nodes has 3892 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 156.34, and the node degree mode is 2. The top 5 most central
-	nodes are 366649.XFF4834R_chr39790 (degree 1300), 366649.XFF4834R_chr24780 (degree
-	1166), 366649.XFF4834R_chr32530 (degree 1121), 366649.XFF4834R_chr22500 (degree 1034)
-	and 366649.XFF4834R_chr40630 (degree 1015).
+	The undirected graph Xanthomonas fuscans has 3929 nodes and 307128 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03980 and has 16 connected components, where the component with most
+	nodes has 3892 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 156.34, and
+	the node degree mode is 2. The top 5 most central nodes are 366649.XFF4834R_chr39790
+	(degree 1300), 366649.XFF4834R_chr24780 (degree 1166), 366649.XFF4834R_chr32530
+	(degree 1121), 366649.XFF4834R_chr22500 (degree 1034) and 366649.XFF4834R_chr40630
+	(degree 1015).
 	
 
 

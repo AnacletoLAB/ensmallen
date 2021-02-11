@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:06.110535
 
-The undirected graph Arthromitus sp. SFBratYit has 1336 nodes and 82220 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09220
-and has 2 connected components, where the component with most nodes has 1333 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 99, the mean node degree is 123.08, and the node degree mode is 7. The top 5 most
-central nodes are 1041504.RATSFB_0531 (degree 725), 1041504.RATSFB_0201 (degree 665),
-1041504.RATSFB_1080 (degree 540), 1041504.RATSFB_0535 (degree 526) and 1041504.RATSFB_0389
-(degree 513).
+The undirected graph Arthromitus sp. SFBratYit has 1336 nodes and 82220
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09220 and has 2 connected components, where the component
+with most nodes has 1333 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 99, the mean node degree is 123.08,
+and the node degree mode is 7. The top 5 most central nodes are 1041504.RATSFB_0531
+(degree 725), 1041504.RATSFB_0201 (degree 665), 1041504.RATSFB_1080 (degree
+540), 1041504.RATSFB_0535 (degree 526) and 1041504.RATSFB_0389 (degree
+513).
 
 
 References
@@ -107,14 +108,15 @@ def ArthromitusSp.Sfbratyit(
 	
 	Datetime: 2021-02-02 22:15:06.110535
 	
-	The undirected graph Arthromitus sp. SFBratYit has 1336 nodes and 82220 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09220
-	and has 2 connected components, where the component with most nodes has 1333 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 99, the mean node degree is 123.08, and the node degree mode is 7. The top 5 most
-	central nodes are 1041504.RATSFB_0531 (degree 725), 1041504.RATSFB_0201 (degree 665),
-	1041504.RATSFB_1080 (degree 540), 1041504.RATSFB_0535 (degree 526) and 1041504.RATSFB_0389
-	(degree 513).
+	The undirected graph Arthromitus sp. SFBratYit has 1336 nodes and 82220
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09220 and has 2 connected components, where the component
+	with most nodes has 1333 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 99, the mean node degree is 123.08,
+	and the node degree mode is 7. The top 5 most central nodes are 1041504.RATSFB_0531
+	(degree 725), 1041504.RATSFB_0201 (degree 665), 1041504.RATSFB_1080 (degree
+	540), 1041504.RATSFB_0535 (degree 526) and 1041504.RATSFB_0389 (degree
+	513).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:30.361564
 
-The undirected graph Thioalkalimicrobium cyclicum has 1660 nodes and 109695 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07966
-and is connected, as it has a single component. The graph median node degree is 118,
-the mean node degree is 132.16, and the node degree mode is 105. The top 5 most central
-nodes are 717773.Thicy_1586 (degree 745), 717773.Thicy_0455 (degree 624), 717773.Thicy_0588
-(degree 590), 717773.Thicy_1125 (degree 565) and 717773.Thicy_0454 (degree 562).
+The undirected graph Thioalkalimicrobium cyclicum has 1660 nodes and 109695
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07966 and is connected, as it has a single component.
+The graph median node degree is 118, the mean node degree is 132.16, and
+the node degree mode is 105. The top 5 most central nodes are 717773.Thicy_1586
+(degree 745), 717773.Thicy_0455 (degree 624), 717773.Thicy_0588 (degree
+590), 717773.Thicy_1125 (degree 565) and 717773.Thicy_0454 (degree 562).
 
 
 References
@@ -105,12 +106,13 @@ def ThioalkalimicrobiumCyclicum(
 	
 	Datetime: 2021-02-02 21:36:30.361564
 	
-	The undirected graph Thioalkalimicrobium cyclicum has 1660 nodes and 109695 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07966
-	and is connected, as it has a single component. The graph median node degree is 118,
-	the mean node degree is 132.16, and the node degree mode is 105. The top 5 most central
-	nodes are 717773.Thicy_1586 (degree 745), 717773.Thicy_0455 (degree 624), 717773.Thicy_0588
-	(degree 590), 717773.Thicy_1125 (degree 565) and 717773.Thicy_0454 (degree 562).
+	The undirected graph Thioalkalimicrobium cyclicum has 1660 nodes and 109695
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07966 and is connected, as it has a single component.
+	The graph median node degree is 118, the mean node degree is 132.16, and
+	the node degree mode is 105. The top 5 most central nodes are 717773.Thicy_1586
+	(degree 745), 717773.Thicy_0455 (degree 624), 717773.Thicy_0588 (degree
+	590), 717773.Thicy_1125 (degree 565) and 717773.Thicy_0454 (degree 562).
 	
 
 

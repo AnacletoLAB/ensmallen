@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:13:41.316767
 
-The undirected graph Paenibacillus sp. A9 has 4517 nodes and 466678 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04576 and
-has 22 connected components, where the component with most nodes has 4467 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 206.63, and the node degree mode is 2. The top 5 most central
-nodes are 1284352.AOIG01000010_gene1975 (degree 1760), 1284352.AOIG01000039_gene3017
-(degree 1555), 1284352.AOIG01000017_gene4440 (degree 1460), 1284352.AOIG01000008_gene2414
-(degree 1192) and 1284352.AOIG01000036_gene3371 (degree 1161).
+The undirected graph Paenibacillus sp. A9 has 4517 nodes and 466678 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04576 and has 22 connected components, where the component with most
+nodes has 4467 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 206.63, and
+the node degree mode is 2. The top 5 most central nodes are 1284352.AOIG01000010_gene1975
+(degree 1760), 1284352.AOIG01000039_gene3017 (degree 1555), 1284352.AOIG01000017_gene4440
+(degree 1460), 1284352.AOIG01000008_gene2414 (degree 1192) and 1284352.AOIG01000036_gene3371
+(degree 1161).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.A9(
 	
 	Datetime: 2021-02-03 21:13:41.316767
 	
-	The undirected graph Paenibacillus sp. A9 has 4517 nodes and 466678 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04576 and
-	has 22 connected components, where the component with most nodes has 4467 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 206.63, and the node degree mode is 2. The top 5 most central
-	nodes are 1284352.AOIG01000010_gene1975 (degree 1760), 1284352.AOIG01000039_gene3017
-	(degree 1555), 1284352.AOIG01000017_gene4440 (degree 1460), 1284352.AOIG01000008_gene2414
-	(degree 1192) and 1284352.AOIG01000036_gene3371 (degree 1161).
+	The undirected graph Paenibacillus sp. A9 has 4517 nodes and 466678 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04576 and has 22 connected components, where the component with most
+	nodes has 4467 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 206.63, and
+	the node degree mode is 2. The top 5 most central nodes are 1284352.AOIG01000010_gene1975
+	(degree 1760), 1284352.AOIG01000039_gene3017 (degree 1555), 1284352.AOIG01000017_gene4440
+	(degree 1460), 1284352.AOIG01000008_gene2414 (degree 1192) and 1284352.AOIG01000036_gene3371
+	(degree 1161).
 	
 
 

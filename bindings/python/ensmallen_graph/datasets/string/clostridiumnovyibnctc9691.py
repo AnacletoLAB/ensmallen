@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:01:10.093021
 
-The undirected graph Clostridium novyi B NCTC9691 has 2307 nodes and 182744 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06870
-and has 14 connected components, where the component with most nodes has 2269 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 158.43, and the node degree mode is 2. The top 5
-most central nodes are 1443122.Z958_08610 (degree 959), 1443122.Z958_06580 (degree
-941), 1443122.Z958_04195 (degree 853), 1443122.Z958_08595 (degree 824) and 1443122.Z958_07265
-(degree 773).
+The undirected graph Clostridium novyi B NCTC9691 has 2307 nodes and 182744
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06870 and has 14 connected components, where the component
+with most nodes has 2269 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 158.43,
+and the node degree mode is 2. The top 5 most central nodes are 1443122.Z958_08610
+(degree 959), 1443122.Z958_06580 (degree 941), 1443122.Z958_04195 (degree
+853), 1443122.Z958_08595 (degree 824) and 1443122.Z958_07265 (degree 773).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumNovyiBNctc9691(
 	
 	Datetime: 2021-02-03 23:01:10.093021
 	
-	The undirected graph Clostridium novyi B NCTC9691 has 2307 nodes and 182744 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06870
-	and has 14 connected components, where the component with most nodes has 2269 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 158.43, and the node degree mode is 2. The top 5
-	most central nodes are 1443122.Z958_08610 (degree 959), 1443122.Z958_06580 (degree
-	941), 1443122.Z958_04195 (degree 853), 1443122.Z958_08595 (degree 824) and 1443122.Z958_07265
-	(degree 773).
+	The undirected graph Clostridium novyi B NCTC9691 has 2307 nodes and 182744
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06870 and has 14 connected components, where the component
+	with most nodes has 2269 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 158.43,
+	and the node degree mode is 2. The top 5 most central nodes are 1443122.Z958_08610
+	(degree 959), 1443122.Z958_06580 (degree 941), 1443122.Z958_04195 (degree
+	853), 1443122.Z958_08595 (degree 824) and 1443122.Z958_07265 (degree 773).
 	
 
 

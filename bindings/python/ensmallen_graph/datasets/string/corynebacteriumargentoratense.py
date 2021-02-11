@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:05:02.257529
 
-The undirected graph Corynebacterium argentoratense has 1853 nodes and 114161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06653
-and has 8 connected components, where the component with most nodes has 1831 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 123.22, and the node degree mode is 5. The top 5
-most central nodes are 1348662.CARG_01600 (degree 833), 1348662.CARG_04245 (degree
-812), 1348662.CARG_08020 (degree 660), 1348662.CARG_04335 (degree 622) and 1348662.CARG_09005
-(degree 594).
+The undirected graph Corynebacterium argentoratense has 1853 nodes and
+114161 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06653 and has 8 connected components, where the
+component with most nodes has 1831 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 123.22, and the node degree mode is 5. The top 5 most central nodes
+are 1348662.CARG_01600 (degree 833), 1348662.CARG_04245 (degree 812), 1348662.CARG_08020
+(degree 660), 1348662.CARG_04335 (degree 622) and 1348662.CARG_09005 (degree
+594).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumArgentoratense(
 	
 	Datetime: 2021-02-03 22:05:02.257529
 	
-	The undirected graph Corynebacterium argentoratense has 1853 nodes and 114161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06653
-	and has 8 connected components, where the component with most nodes has 1831 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 123.22, and the node degree mode is 5. The top 5
-	most central nodes are 1348662.CARG_01600 (degree 833), 1348662.CARG_04245 (degree
-	812), 1348662.CARG_08020 (degree 660), 1348662.CARG_04335 (degree 622) and 1348662.CARG_09005
-	(degree 594).
+	The undirected graph Corynebacterium argentoratense has 1853 nodes and
+	114161 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06653 and has 8 connected components, where the
+	component with most nodes has 1831 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 123.22, and the node degree mode is 5. The top 5 most central nodes
+	are 1348662.CARG_01600 (degree 833), 1348662.CARG_04245 (degree 812), 1348662.CARG_08020
+	(degree 660), 1348662.CARG_04335 (degree 622) and 1348662.CARG_09005 (degree
+	594).
 	
 
 

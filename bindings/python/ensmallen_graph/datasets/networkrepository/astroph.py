@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:52.834353
 
-The undirected graph astro-ph has 16046 nodes and 121251 weighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00094 and
-has 369 connected components, where the component with most nodes has 14845 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 7, the mean node degree is 15.11, and the node degree mode is 2. The top 5 most
-central nodes are 5503 (degree 360), 913 (degree 353), 1232 (degree 329), 5508 (degree
-299) and 6198 (degree 296).
+The undirected graph astro-ph has 16046 nodes and 121251 weighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00094 and has 369 connected components, where the component with most
+nodes has 14845 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 7, the mean node degree is 15.11, and the
+node degree mode is 2. The top 5 most central nodes are 5503 (degree 360),
+913 (degree 353), 1232 (degree 329), 5508 (degree 299) and 6198 (degree
+296).
 
 
 References
@@ -103,13 +104,14 @@ def AstroPh(
 	
 	Datetime: 2021-02-06 11:02:52.834353
 	
-	The undirected graph astro-ph has 16046 nodes and 121251 weighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00094 and
-	has 369 connected components, where the component with most nodes has 14845 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 7, the mean node degree is 15.11, and the node degree mode is 2. The top 5 most
-	central nodes are 5503 (degree 360), 913 (degree 353), 1232 (degree 329), 5508 (degree
-	299) and 6198 (degree 296).
+	The undirected graph astro-ph has 16046 nodes and 121251 weighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00094 and has 369 connected components, where the component with most
+	nodes has 14845 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 7, the mean node degree is 15.11, and the
+	node degree mode is 2. The top 5 most central nodes are 5503 (degree 360),
+	913 (degree 353), 1232 (degree 329), 5508 (degree 299) and 6198 (degree
+	296).
 	
 
 

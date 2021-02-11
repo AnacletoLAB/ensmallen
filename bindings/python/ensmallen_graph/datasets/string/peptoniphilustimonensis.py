@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:43.175404
 
-The undirected graph Peptoniphilus timonensis has 1927 nodes and 110030 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05929
-and has 14 connected components, where the component with most nodes has 1874 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 114.20, and the node degree mode is 9. The top 5 most
-central nodes are 1095770.CAHE01000016_gene283 (degree 761), 1095770.CAHE01000021_gene379
-(degree 753), 1095770.CAHE01000041_gene722 (degree 654), 1095770.CAHE01000034_gene176
-(degree 648) and 1095770.CAHE01000036_gene693 (degree 593).
+The undirected graph Peptoniphilus timonensis has 1927 nodes and 110030
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05929 and has 14 connected components, where the component
+with most nodes has 1874 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 114.20,
+and the node degree mode is 9. The top 5 most central nodes are 1095770.CAHE01000016_gene283
+(degree 761), 1095770.CAHE01000021_gene379 (degree 753), 1095770.CAHE01000041_gene722
+(degree 654), 1095770.CAHE01000034_gene176 (degree 648) and 1095770.CAHE01000036_gene693
+(degree 593).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoniphilusTimonensis(
 	
 	Datetime: 2021-02-02 22:23:43.175404
 	
-	The undirected graph Peptoniphilus timonensis has 1927 nodes and 110030 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05929
-	and has 14 connected components, where the component with most nodes has 1874 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 114.20, and the node degree mode is 9. The top 5 most
-	central nodes are 1095770.CAHE01000016_gene283 (degree 761), 1095770.CAHE01000021_gene379
-	(degree 753), 1095770.CAHE01000041_gene722 (degree 654), 1095770.CAHE01000034_gene176
-	(degree 648) and 1095770.CAHE01000036_gene693 (degree 593).
+	The undirected graph Peptoniphilus timonensis has 1927 nodes and 110030
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05929 and has 14 connected components, where the component
+	with most nodes has 1874 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 114.20,
+	and the node degree mode is 9. The top 5 most central nodes are 1095770.CAHE01000016_gene283
+	(degree 761), 1095770.CAHE01000021_gene379 (degree 753), 1095770.CAHE01000041_gene722
+	(degree 654), 1095770.CAHE01000034_gene176 (degree 648) and 1095770.CAHE01000036_gene693
+	(degree 593).
 	
 
 

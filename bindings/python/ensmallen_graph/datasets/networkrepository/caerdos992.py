@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:36.286442
 
-The undirected graph ca-Erdos992 has 5094 nodes and 7514 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00058 and
-has 17 connected components, where the component with most nodes has 4991 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 1,
-the mean node degree is 2.95 and the node degree mode is 1. The top 5 most central
-nodes are 431 (degree 61), 343 (degree 60), 443 (degree 60), 314 (degree 56) and
-298 (degree 55).
+The undirected graph ca-Erdos992 has 5094 nodes and 7514 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00058 and has 17 connected components, where the component with most
+nodes has 4991 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 1, the mean node degree is 2.95 and the
+node degree mode is 1. The top 5 most central nodes are 431 (degree 61),
+343 (degree 60), 443 (degree 60), 314 (degree 56) and 298 (degree 55).
 
 
 References
@@ -114,13 +114,13 @@ def CaErdos992(
 	
 	Datetime: 2021-02-03 22:37:36.286442
 	
-	The undirected graph ca-Erdos992 has 5094 nodes and 7514 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00058 and
-	has 17 connected components, where the component with most nodes has 4991 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 1,
-	the mean node degree is 2.95 and the node degree mode is 1. The top 5 most central
-	nodes are 431 (degree 61), 343 (degree 60), 443 (degree 60), 314 (degree 56) and
-	298 (degree 55).
+	The undirected graph ca-Erdos992 has 5094 nodes and 7514 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00058 and has 17 connected components, where the component with most
+	nodes has 4991 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 1, the mean node degree is 2.95 and the
+	node degree mode is 1. The top 5 most central nodes are 431 (degree 61),
+	343 (degree 60), 443 (degree 60), 314 (degree 56) and 298 (degree 55).
 	
 
 

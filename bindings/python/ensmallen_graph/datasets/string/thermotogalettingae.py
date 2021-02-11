@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:48.401228
 
-The undirected graph Thermotoga lettingae has 2038 nodes and 168094 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08098 and
-has 3 connected components, where the component with most nodes has 2033 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 164.96, and the node degree mode is 94. The top 5 most central
-nodes are 416591.Tlet_0156 (degree 978), 416591.Tlet_1714 (degree 954), 416591.Tlet_0254
-(degree 925), 416591.Tlet_0466 (degree 757) and 416591.Tlet_1537 (degree 737).
+The undirected graph Thermotoga lettingae has 2038 nodes and 168094 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08098 and has 3 connected components, where the component with most
+nodes has 2033 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 164.96, and
+the node degree mode is 94. The top 5 most central nodes are 416591.Tlet_0156
+(degree 978), 416591.Tlet_1714 (degree 954), 416591.Tlet_0254 (degree 925),
+416591.Tlet_0466 (degree 757) and 416591.Tlet_1537 (degree 737).
 
 
 References
@@ -106,13 +107,14 @@ def ThermotogaLettingae(
 	
 	Datetime: 2021-02-02 20:46:48.401228
 	
-	The undirected graph Thermotoga lettingae has 2038 nodes and 168094 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08098 and
-	has 3 connected components, where the component with most nodes has 2033 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 164.96, and the node degree mode is 94. The top 5 most central
-	nodes are 416591.Tlet_0156 (degree 978), 416591.Tlet_1714 (degree 954), 416591.Tlet_0254
-	(degree 925), 416591.Tlet_0466 (degree 757) and 416591.Tlet_1537 (degree 737).
+	The undirected graph Thermotoga lettingae has 2038 nodes and 168094 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08098 and has 3 connected components, where the component with most
+	nodes has 2033 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 164.96, and
+	the node degree mode is 94. The top 5 most central nodes are 416591.Tlet_0156
+	(degree 978), 416591.Tlet_1714 (degree 954), 416591.Tlet_0254 (degree 925),
+	416591.Tlet_0466 (degree 757) and 416591.Tlet_1537 (degree 737).
 	
 
 

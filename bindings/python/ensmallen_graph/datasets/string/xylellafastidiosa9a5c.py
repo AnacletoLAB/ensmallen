@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:27.218690
 
-The undirected graph Xylella fastidiosa 9a5c has 2784 nodes and 154056 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03977 and
-has 32 connected components, where the component with most nodes has 2701 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 110.67, and the node degree mode is 3. The top 5 most central
-nodes are 160492.XF_1103 (degree 686), 160492.XF_1116 (degree 629), 160492.XF_2429
-(degree 609), 160492.XF_0549 (degree 606) and 160492.XF_2430 (degree 577).
+The undirected graph Xylella fastidiosa 9a5c has 2784 nodes and 154056
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03977 and has 32 connected components, where the component
+with most nodes has 2701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 110.67,
+and the node degree mode is 3. The top 5 most central nodes are 160492.XF_1103
+(degree 686), 160492.XF_1116 (degree 629), 160492.XF_2429 (degree 609),
+160492.XF_0549 (degree 606) and 160492.XF_2430 (degree 577).
 
 
 References
@@ -106,13 +107,14 @@ def XylellaFastidiosa9a5c(
 	
 	Datetime: 2021-02-02 19:53:27.218690
 	
-	The undirected graph Xylella fastidiosa 9a5c has 2784 nodes and 154056 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03977 and
-	has 32 connected components, where the component with most nodes has 2701 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 110.67, and the node degree mode is 3. The top 5 most central
-	nodes are 160492.XF_1103 (degree 686), 160492.XF_1116 (degree 629), 160492.XF_2429
-	(degree 609), 160492.XF_0549 (degree 606) and 160492.XF_2430 (degree 577).
+	The undirected graph Xylella fastidiosa 9a5c has 2784 nodes and 154056
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03977 and has 32 connected components, where the component
+	with most nodes has 2701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 110.67,
+	and the node degree mode is 3. The top 5 most central nodes are 160492.XF_1103
+	(degree 686), 160492.XF_1116 (degree 629), 160492.XF_2429 (degree 609),
+	160492.XF_0549 (degree 606) and 160492.XF_2430 (degree 577).
 	
 
 

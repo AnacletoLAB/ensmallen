@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:19.995198
 
-The undirected graph Mannheimia succiniciproducens has 2293 nodes and 152396 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05799
-and has 2 connected components, where the component with most nodes has 2290 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 116, the mean node degree is 132.92, and the node degree mode is 2. The top 5
-most central nodes are 221988.MS0225 (degree 877), 221988.MS1631 (degree 765), 221988.MS0772
-(degree 684), 221988.MS0774 (degree 664) and 221988.MS1374 (degree 582).
+The undirected graph Mannheimia succiniciproducens has 2293 nodes and 152396
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05799 and has 2 connected components, where the component
+with most nodes has 2290 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 116, the mean node degree is 132.92,
+and the node degree mode is 2. The top 5 most central nodes are 221988.MS0225
+(degree 877), 221988.MS1631 (degree 765), 221988.MS0772 (degree 684), 221988.MS0774
+(degree 664) and 221988.MS1374 (degree 582).
 
 
 References
@@ -106,13 +107,14 @@ def MannheimiaSucciniciproducens(
 	
 	Datetime: 2021-02-02 20:04:19.995198
 	
-	The undirected graph Mannheimia succiniciproducens has 2293 nodes and 152396 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05799
-	and has 2 connected components, where the component with most nodes has 2290 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 116, the mean node degree is 132.92, and the node degree mode is 2. The top 5
-	most central nodes are 221988.MS0225 (degree 877), 221988.MS1631 (degree 765), 221988.MS0772
-	(degree 684), 221988.MS0774 (degree 664) and 221988.MS1374 (degree 582).
+	The undirected graph Mannheimia succiniciproducens has 2293 nodes and 152396
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05799 and has 2 connected components, where the component
+	with most nodes has 2290 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 116, the mean node degree is 132.92,
+	and the node degree mode is 2. The top 5 most central nodes are 221988.MS0225
+	(degree 877), 221988.MS1631 (degree 765), 221988.MS0772 (degree 684), 221988.MS0774
+	(degree 664) and 221988.MS1374 (degree 582).
 	
 
 

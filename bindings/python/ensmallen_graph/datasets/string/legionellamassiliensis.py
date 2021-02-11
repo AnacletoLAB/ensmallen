@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:55.997822
 
-The undirected graph Legionella massiliensis has 3680 nodes and 307900 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04548 and
-has 43 connected components, where the component with most nodes has 3582 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 167.34, and the node degree mode is 2. The top 5 most central
-nodes are 1034943.BN1094_00576 (degree 1301), 1034943.BN1094_02435 (degree 1258),
-1034943.BN1094_03164 (degree 1158), 1034943.BN1094_03390 (degree 1113) and 1034943.BN1094_00480
+The undirected graph Legionella massiliensis has 3680 nodes and 307900
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04548 and has 43 connected components, where the component
+with most nodes has 3582 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 167.34,
+and the node degree mode is 2. The top 5 most central nodes are 1034943.BN1094_00576
+(degree 1301), 1034943.BN1094_02435 (degree 1258), 1034943.BN1094_03164
+(degree 1158), 1034943.BN1094_03390 (degree 1113) and 1034943.BN1094_00480
 (degree 1086).
 
 
@@ -107,13 +108,14 @@ def LegionellaMassiliensis(
 	
 	Datetime: 2021-02-02 22:11:55.997822
 	
-	The undirected graph Legionella massiliensis has 3680 nodes and 307900 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04548 and
-	has 43 connected components, where the component with most nodes has 3582 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 167.34, and the node degree mode is 2. The top 5 most central
-	nodes are 1034943.BN1094_00576 (degree 1301), 1034943.BN1094_02435 (degree 1258),
-	1034943.BN1094_03164 (degree 1158), 1034943.BN1094_03390 (degree 1113) and 1034943.BN1094_00480
+	The undirected graph Legionella massiliensis has 3680 nodes and 307900
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04548 and has 43 connected components, where the component
+	with most nodes has 3582 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 167.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1034943.BN1094_00576
+	(degree 1301), 1034943.BN1094_02435 (degree 1258), 1034943.BN1094_03164
+	(degree 1158), 1034943.BN1094_03390 (degree 1113) and 1034943.BN1094_00480
 	(degree 1086).
 	
 

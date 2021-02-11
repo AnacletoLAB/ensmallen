@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:28.579305
 
-The undirected graph Verticillium alfalfae has 7405 nodes and 588081 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02145 and
-has 27 connected components, where the component with most nodes has 7345 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 158.83, and the node degree mode is 1. The top 5 most central
-nodes are 1051613.XP_003003119.1 (degree 1803), 1051613.XP_003004079.1 (degree 1398),
-1051613.XP_002999919.1 (degree 1215), 1051613.XP_003002835.1 (degree 1171) and 1051613.XP_003006070.1
+The undirected graph Verticillium alfalfae has 7405 nodes and 588081 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02145 and has 27 connected components, where the component with most
+nodes has 7345 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 158.83, and
+the node degree mode is 1. The top 5 most central nodes are 1051613.XP_003003119.1
+(degree 1803), 1051613.XP_003004079.1 (degree 1398), 1051613.XP_002999919.1
+(degree 1215), 1051613.XP_003002835.1 (degree 1171) and 1051613.XP_003006070.1
 (degree 1156).
 
 
@@ -107,13 +108,14 @@ def VerticilliumAlfalfae(
 	
 	Datetime: 2021-02-02 22:17:28.579305
 	
-	The undirected graph Verticillium alfalfae has 7405 nodes and 588081 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02145 and
-	has 27 connected components, where the component with most nodes has 7345 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 158.83, and the node degree mode is 1. The top 5 most central
-	nodes are 1051613.XP_003003119.1 (degree 1803), 1051613.XP_003004079.1 (degree 1398),
-	1051613.XP_002999919.1 (degree 1215), 1051613.XP_003002835.1 (degree 1171) and 1051613.XP_003006070.1
+	The undirected graph Verticillium alfalfae has 7405 nodes and 588081 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02145 and has 27 connected components, where the component with most
+	nodes has 7345 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 158.83, and
+	the node degree mode is 1. The top 5 most central nodes are 1051613.XP_003003119.1
+	(degree 1803), 1051613.XP_003004079.1 (degree 1398), 1051613.XP_002999919.1
+	(degree 1215), 1051613.XP_003002835.1 (degree 1171) and 1051613.XP_003006070.1
 	(degree 1156).
 	
 

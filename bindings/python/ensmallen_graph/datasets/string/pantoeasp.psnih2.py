@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:27.647108
 
-The undirected graph Pantoea sp. PSNIH2 has 4307 nodes and 318862 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03439 and
-has 30 connected components, where the component with most nodes has 4227 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 148.07, and the node degree mode is 1. The top 5 most central
-nodes are 1484157.PSNIH2_17270 (degree 1388), 1484157.PSNIH2_16030 (degree 1161),
-1484157.PSNIH2_03305 (degree 1082), 1484157.PSNIH2_16025 (degree 1018) and 1484157.PSNIH2_04795
+The undirected graph Pantoea sp. PSNIH2 has 4307 nodes and 318862 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03439 and has 30 connected components, where the component with most
+nodes has 4227 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 148.07, and
+the node degree mode is 1. The top 5 most central nodes are 1484157.PSNIH2_17270
+(degree 1388), 1484157.PSNIH2_16030 (degree 1161), 1484157.PSNIH2_03305
+(degree 1082), 1484157.PSNIH2_16025 (degree 1018) and 1484157.PSNIH2_04795
 (degree 982).
 
 
@@ -107,13 +108,14 @@ def PantoeaSp.Psnih2(
 	
 	Datetime: 2021-02-03 23:13:27.647108
 	
-	The undirected graph Pantoea sp. PSNIH2 has 4307 nodes and 318862 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03439 and
-	has 30 connected components, where the component with most nodes has 4227 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 148.07, and the node degree mode is 1. The top 5 most central
-	nodes are 1484157.PSNIH2_17270 (degree 1388), 1484157.PSNIH2_16030 (degree 1161),
-	1484157.PSNIH2_03305 (degree 1082), 1484157.PSNIH2_16025 (degree 1018) and 1484157.PSNIH2_04795
+	The undirected graph Pantoea sp. PSNIH2 has 4307 nodes and 318862 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03439 and has 30 connected components, where the component with most
+	nodes has 4227 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 148.07, and
+	the node degree mode is 1. The top 5 most central nodes are 1484157.PSNIH2_17270
+	(degree 1388), 1484157.PSNIH2_16030 (degree 1161), 1484157.PSNIH2_03305
+	(degree 1082), 1484157.PSNIH2_16025 (degree 1018) and 1484157.PSNIH2_04795
 	(degree 982).
 	
 

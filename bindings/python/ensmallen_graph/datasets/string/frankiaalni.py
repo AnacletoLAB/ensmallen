@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:04.931095
 
-The undirected graph Frankia alni has 6559 nodes and 951648 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04425 and has 50
-connected components, where the component with most nodes has 6424 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 220,
-the mean node degree is 290.18, and the node degree mode is 2. The top 5 most central
-nodes are 326424.FRAAL5018 (degree 2040), 326424.FRAAL4613 (degree 2020), 326424.FRAAL4022
-(degree 1970), 326424.FRAAL6414 (degree 1891) and 326424.FRAAL5907 (degree 1887).
+The undirected graph Frankia alni has 6559 nodes and 951648 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04425 and has 50 connected components, where the component with most
+nodes has 6424 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 220, the mean node degree is 290.18, and
+the node degree mode is 2. The top 5 most central nodes are 326424.FRAAL5018
+(degree 2040), 326424.FRAAL4613 (degree 2020), 326424.FRAAL4022 (degree
+1970), 326424.FRAAL6414 (degree 1891) and 326424.FRAAL5907 (degree 1887).
 
 
 References
@@ -106,13 +107,14 @@ def FrankiaAlni(
 	
 	Datetime: 2021-02-02 20:29:04.931095
 	
-	The undirected graph Frankia alni has 6559 nodes and 951648 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04425 and has 50
-	connected components, where the component with most nodes has 6424 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 220,
-	the mean node degree is 290.18, and the node degree mode is 2. The top 5 most central
-	nodes are 326424.FRAAL5018 (degree 2040), 326424.FRAAL4613 (degree 2020), 326424.FRAAL4022
-	(degree 1970), 326424.FRAAL6414 (degree 1891) and 326424.FRAAL5907 (degree 1887).
+	The undirected graph Frankia alni has 6559 nodes and 951648 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04425 and has 50 connected components, where the component with most
+	nodes has 6424 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 220, the mean node degree is 290.18, and
+	the node degree mode is 2. The top 5 most central nodes are 326424.FRAAL5018
+	(degree 2040), 326424.FRAAL4613 (degree 2020), 326424.FRAAL4022 (degree
+	1970), 326424.FRAAL6414 (degree 1891) and 326424.FRAAL5907 (degree 1887).
 	
 
 

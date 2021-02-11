@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:54.597397
 
-The undirected graph Shewanella denitrificans has 3696 nodes and 381775 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05591
-and has 13 connected components, where the component with most nodes has 3663 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 169, the mean node degree is 206.59, and the node degree mode is 2. The top 5
-most central nodes are 318161.Sden_3620 (degree 1533), 318161.Sden_2962 (degree 1393),
-318161.Sden_1270 (degree 1368), 318161.Sden_2627 (degree 1363) and 318161.Sden_3532
-(degree 1348).
+The undirected graph Shewanella denitrificans has 3696 nodes and 381775
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05591 and has 13 connected components, where the component
+with most nodes has 3663 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 169, the mean node degree is 206.59,
+and the node degree mode is 2. The top 5 most central nodes are 318161.Sden_3620
+(degree 1533), 318161.Sden_2962 (degree 1393), 318161.Sden_1270 (degree
+1368), 318161.Sden_2627 (degree 1363) and 318161.Sden_3532 (degree 1348).
 
 
 References
@@ -107,14 +107,14 @@ def ShewanellaDenitrificans(
 	
 	Datetime: 2021-02-02 20:26:54.597397
 	
-	The undirected graph Shewanella denitrificans has 3696 nodes and 381775 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05591
-	and has 13 connected components, where the component with most nodes has 3663 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 169, the mean node degree is 206.59, and the node degree mode is 2. The top 5
-	most central nodes are 318161.Sden_3620 (degree 1533), 318161.Sden_2962 (degree 1393),
-	318161.Sden_1270 (degree 1368), 318161.Sden_2627 (degree 1363) and 318161.Sden_3532
-	(degree 1348).
+	The undirected graph Shewanella denitrificans has 3696 nodes and 381775
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05591 and has 13 connected components, where the component
+	with most nodes has 3663 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 169, the mean node degree is 206.59,
+	and the node degree mode is 2. The top 5 most central nodes are 318161.Sden_3620
+	(degree 1533), 318161.Sden_2962 (degree 1393), 318161.Sden_1270 (degree
+	1368), 318161.Sden_2627 (degree 1363) and 318161.Sden_3532 (degree 1348).
 	
 
 

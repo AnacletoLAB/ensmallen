@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:23.945591
 
-The undirected graph Bacillus sp. JCM19046 has 4718 nodes and 381956 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03433 and
-has 28 connected components, where the component with most nodes has 4653 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 161.91, and the node degree mode is 2. The top 5 most central
-nodes are 1460640.JCM19046_369 (degree 1371), 1460640.JCM19046_4072 (degree 1297),
-1460640.JCM19046_4501 (degree 1173), 1460640.JCM19046_2516 (degree 1061) and 1460640.JCM19046_3752
+The undirected graph Bacillus sp. JCM19046 has 4718 nodes and 381956 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03433 and has 28 connected components, where the component with most
+nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 161.91, and
+the node degree mode is 2. The top 5 most central nodes are 1460640.JCM19046_369
+(degree 1371), 1460640.JCM19046_4072 (degree 1297), 1460640.JCM19046_4501
+(degree 1173), 1460640.JCM19046_2516 (degree 1061) and 1460640.JCM19046_3752
 (degree 1053).
 
 
@@ -107,13 +108,14 @@ def BacillusSp.Jcm19046(
 	
 	Datetime: 2021-02-03 23:07:23.945591
 	
-	The undirected graph Bacillus sp. JCM19046 has 4718 nodes and 381956 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03433 and
-	has 28 connected components, where the component with most nodes has 4653 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 161.91, and the node degree mode is 2. The top 5 most central
-	nodes are 1460640.JCM19046_369 (degree 1371), 1460640.JCM19046_4072 (degree 1297),
-	1460640.JCM19046_4501 (degree 1173), 1460640.JCM19046_2516 (degree 1061) and 1460640.JCM19046_3752
+	The undirected graph Bacillus sp. JCM19046 has 4718 nodes and 381956 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03433 and has 28 connected components, where the component with most
+	nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 161.91, and
+	the node degree mode is 2. The top 5 most central nodes are 1460640.JCM19046_369
+	(degree 1371), 1460640.JCM19046_4072 (degree 1297), 1460640.JCM19046_4501
+	(degree 1173), 1460640.JCM19046_2516 (degree 1061) and 1460640.JCM19046_3752
 	(degree 1053).
 	
 

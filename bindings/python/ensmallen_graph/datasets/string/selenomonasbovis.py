@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:45.174117
 
-The undirected graph Selenomonas bovis has 2203 nodes and 168998 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06968 and
-has 6 connected components, where the component with most nodes has 2188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 153.43, and the node degree mode is 1. The top 5 most central
-nodes are 1123250.KB908381_gene1777 (degree 849), 1123250.KB908379_gene1095 (degree
-840), 1123250.KB908381_gene1680 (degree 785), 1123250.KB908379_gene994 (degree 776)
-and 1123250.KB908400_gene1546 (degree 751).
+The undirected graph Selenomonas bovis has 2203 nodes and 168998 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06968 and has 6 connected components, where the component with most
+nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 153.43, and
+the node degree mode is 1. The top 5 most central nodes are 1123250.KB908381_gene1777
+(degree 849), 1123250.KB908379_gene1095 (degree 840), 1123250.KB908381_gene1680
+(degree 785), 1123250.KB908379_gene994 (degree 776) and 1123250.KB908400_gene1546
+(degree 751).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasBovis(
 	
 	Datetime: 2021-02-02 22:48:45.174117
 	
-	The undirected graph Selenomonas bovis has 2203 nodes and 168998 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06968 and
-	has 6 connected components, where the component with most nodes has 2188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 153.43, and the node degree mode is 1. The top 5 most central
-	nodes are 1123250.KB908381_gene1777 (degree 849), 1123250.KB908379_gene1095 (degree
-	840), 1123250.KB908381_gene1680 (degree 785), 1123250.KB908379_gene994 (degree 776)
-	and 1123250.KB908400_gene1546 (degree 751).
+	The undirected graph Selenomonas bovis has 2203 nodes and 168998 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06968 and has 6 connected components, where the component with most
+	nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 153.43, and
+	the node degree mode is 1. The top 5 most central nodes are 1123250.KB908381_gene1777
+	(degree 849), 1123250.KB908379_gene1095 (degree 840), 1123250.KB908381_gene1680
+	(degree 785), 1123250.KB908379_gene994 (degree 776) and 1123250.KB908400_gene1546
+	(degree 751).
 	
 
 

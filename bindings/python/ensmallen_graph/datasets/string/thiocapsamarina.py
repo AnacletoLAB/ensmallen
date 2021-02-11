@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:21.654588
 
-The undirected graph Thiocapsa marina has 4864 nodes and 547517 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04629 and
-has 22 connected components, where the component with most nodes has 4814 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 225.13, and the node degree mode is 1. The top 5 most central
-nodes are 768671.ThimaDRAFT_0168 (degree 1716), 768671.ThimaDRAFT_4080 (degree 1659),
-768671.ThimaDRAFT_3828 (degree 1636), 768671.ThimaDRAFT_1304 (degree 1482) and 768671.ThimaDRAFT_3604
+The undirected graph Thiocapsa marina has 4864 nodes and 547517 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04629 and has 22 connected components, where the component with most
+nodes has 4814 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 225.13, and
+the node degree mode is 1. The top 5 most central nodes are 768671.ThimaDRAFT_0168
+(degree 1716), 768671.ThimaDRAFT_4080 (degree 1659), 768671.ThimaDRAFT_3828
+(degree 1636), 768671.ThimaDRAFT_1304 (degree 1482) and 768671.ThimaDRAFT_3604
 (degree 1412).
 
 
@@ -107,13 +108,14 @@ def ThiocapsaMarina(
 	
 	Datetime: 2021-02-02 21:44:21.654588
 	
-	The undirected graph Thiocapsa marina has 4864 nodes and 547517 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04629 and
-	has 22 connected components, where the component with most nodes has 4814 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 225.13, and the node degree mode is 1. The top 5 most central
-	nodes are 768671.ThimaDRAFT_0168 (degree 1716), 768671.ThimaDRAFT_4080 (degree 1659),
-	768671.ThimaDRAFT_3828 (degree 1636), 768671.ThimaDRAFT_1304 (degree 1482) and 768671.ThimaDRAFT_3604
+	The undirected graph Thiocapsa marina has 4864 nodes and 547517 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04629 and has 22 connected components, where the component with most
+	nodes has 4814 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 225.13, and
+	the node degree mode is 1. The top 5 most central nodes are 768671.ThimaDRAFT_0168
+	(degree 1716), 768671.ThimaDRAFT_4080 (degree 1659), 768671.ThimaDRAFT_3828
+	(degree 1636), 768671.ThimaDRAFT_1304 (degree 1482) and 768671.ThimaDRAFT_3604
 	(degree 1412).
 	
 

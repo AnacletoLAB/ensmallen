@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:34.088565
 
-The undirected graph Magnetospirillum gryphiswaldense has 4228 nodes and 410573 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04595
-and has 15 connected components, where the component with most nodes has 4190 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 194.22, and the node degree mode is 9. The top 5
-most central nodes are 1430440.MGMSRv2_0149 (degree 1742), 1430440.MGMSRv2_3112 (degree
-1659), 1430440.MGMSRv2_1583 (degree 1487), 1430440.MGMSRv2_1809 (degree 1258) and
-1430440.MGMSRv2_1016 (degree 1160).
+The undirected graph Magnetospirillum gryphiswaldense has 4228 nodes and
+410573 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04595 and has 15 connected components, where the
+component with most nodes has 4190 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 150, the mean node degree
+is 194.22, and the node degree mode is 9. The top 5 most central nodes
+are 1430440.MGMSRv2_0149 (degree 1742), 1430440.MGMSRv2_3112 (degree 1659),
+1430440.MGMSRv2_1583 (degree 1487), 1430440.MGMSRv2_1809 (degree 1258)
+and 1430440.MGMSRv2_1016 (degree 1160).
 
 
 References
@@ -107,14 +108,15 @@ def MagnetospirillumGryphiswaldense(
 	
 	Datetime: 2021-02-03 22:53:34.088565
 	
-	The undirected graph Magnetospirillum gryphiswaldense has 4228 nodes and 410573 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04595
-	and has 15 connected components, where the component with most nodes has 4190 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 194.22, and the node degree mode is 9. The top 5
-	most central nodes are 1430440.MGMSRv2_0149 (degree 1742), 1430440.MGMSRv2_3112 (degree
-	1659), 1430440.MGMSRv2_1583 (degree 1487), 1430440.MGMSRv2_1809 (degree 1258) and
-	1430440.MGMSRv2_1016 (degree 1160).
+	The undirected graph Magnetospirillum gryphiswaldense has 4228 nodes and
+	410573 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04595 and has 15 connected components, where the
+	component with most nodes has 4190 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 150, the mean node degree
+	is 194.22, and the node degree mode is 9. The top 5 most central nodes
+	are 1430440.MGMSRv2_0149 (degree 1742), 1430440.MGMSRv2_3112 (degree 1659),
+	1430440.MGMSRv2_1583 (degree 1487), 1430440.MGMSRv2_1809 (degree 1258)
+	and 1430440.MGMSRv2_1016 (degree 1160).
 	
 
 

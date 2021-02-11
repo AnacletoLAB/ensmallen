@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:35:20.043469
 
-The undirected multigraph tech-as-caida has 26475 nodes and 102561 unweighted edges
-with 4 different edge types: 1, 3, 2 and 4, of which none are self-loops and 98360
-are parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 7.75, and the node degree mode is 4. The top 5 most central nodes are 233 (degree
-5234), 2562 (degree 4080), 107 (degree 3367), 330 (degree 3331) and 1041 (degree
-3242).
+The undirected multigraph tech-as-caida has 26475 nodes and 102561 unweighted
+edges with 4 different edge types: 1, 3, 2 and 4, of which none are self-loops
+and 98360 are parallel. The graph is quite sparse as it has a density of
+0.00015 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 7.75, and the node degree mode
+is 4. The top 5 most central nodes are 233 (degree 5234), 2562 (degree
+4080), 107 (degree 3367), 330 (degree 3331) and 1041 (degree 3242).
 
 
 References
@@ -103,13 +103,13 @@ def TechAsCaida(
 	
 	Datetime: 2021-02-06 11:35:20.043469
 	
-	The undirected multigraph tech-as-caida has 26475 nodes and 102561 unweighted edges
-	with 4 different edge types: 1, 3, 2 and 4, of which none are self-loops and 98360
-	are parallel. The graph is quite sparse as it has a density of 0.00015 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 7.75, and the node degree mode is 4. The top 5 most central nodes are 233 (degree
-	5234), 2562 (degree 4080), 107 (degree 3367), 330 (degree 3331) and 1041 (degree
-	3242).
+	The undirected multigraph tech-as-caida has 26475 nodes and 102561 unweighted
+	edges with 4 different edge types: 1, 3, 2 and 4, of which none are self-loops
+	and 98360 are parallel. The graph is quite sparse as it has a density of
+	0.00015 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 7.75, and the node degree mode
+	is 4. The top 5 most central nodes are 233 (degree 5234), 2562 (degree
+	4080), 107 (degree 3367), 330 (degree 3331) and 1041 (degree 3242).
 	
 
 

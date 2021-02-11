@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:47.771158
 
-The undirected graph Clostridium sp. JCC has 3469 nodes and 287126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04773 and
-has 17 connected components, where the component with most nodes has 3431 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 165.54, and the node degree mode is 2. The top 5 most central
-nodes are 1414720.CBYM010000006_gene1216 (degree 1342), 1414720.CBYM010000005_gene1331
-(degree 1286), 1414720.CBYM010000019_gene2463 (degree 1248), 1414720.CBYM010000004_gene153
-(degree 1007) and 1414720.CBYM010000032_gene1967 (degree 1001).
+The undirected graph Clostridium sp. JCC has 3469 nodes and 287126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04773 and has 17 connected components, where the component with most
+nodes has 3431 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 165.54, and
+the node degree mode is 2. The top 5 most central nodes are 1414720.CBYM010000006_gene1216
+(degree 1342), 1414720.CBYM010000005_gene1331 (degree 1286), 1414720.CBYM010000019_gene2463
+(degree 1248), 1414720.CBYM010000004_gene153 (degree 1007) and 1414720.CBYM010000032_gene1967
+(degree 1001).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Jcc(
 	
 	Datetime: 2021-02-03 22:44:47.771158
 	
-	The undirected graph Clostridium sp. JCC has 3469 nodes and 287126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04773 and
-	has 17 connected components, where the component with most nodes has 3431 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 165.54, and the node degree mode is 2. The top 5 most central
-	nodes are 1414720.CBYM010000006_gene1216 (degree 1342), 1414720.CBYM010000005_gene1331
-	(degree 1286), 1414720.CBYM010000019_gene2463 (degree 1248), 1414720.CBYM010000004_gene153
-	(degree 1007) and 1414720.CBYM010000032_gene1967 (degree 1001).
+	The undirected graph Clostridium sp. JCC has 3469 nodes and 287126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04773 and has 17 connected components, where the component with most
+	nodes has 3431 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 165.54, and
+	the node degree mode is 2. The top 5 most central nodes are 1414720.CBYM010000006_gene1216
+	(degree 1342), 1414720.CBYM010000005_gene1331 (degree 1286), 1414720.CBYM010000019_gene2463
+	(degree 1248), 1414720.CBYM010000004_gene153 (degree 1007) and 1414720.CBYM010000032_gene1967
+	(degree 1001).
 	
 
 

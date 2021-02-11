@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:10.335022
 
-The undirected graph Staphylococcus sciuri has 2615 nodes and 174979 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05120 and
-has 6 connected components, where the component with most nodes has 2604 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 133.83, and the node degree mode is 2. The top 5 most central
-nodes are 1232666.JANE01000003_gene710 (degree 1038), 1232666.JANE01000073_gene2542
-(degree 870), 1232666.JANE01000010_gene2076 (degree 794), 1232666.JANE01000003_gene603
-(degree 780) and 1232666.JANE01000050_gene1952 (degree 774).
+The undirected graph Staphylococcus sciuri has 2615 nodes and 174979 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05120 and has 6 connected components, where the component with most
+nodes has 2604 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 133.83, and
+the node degree mode is 2. The top 5 most central nodes are 1232666.JANE01000003_gene710
+(degree 1038), 1232666.JANE01000073_gene2542 (degree 870), 1232666.JANE01000010_gene2076
+(degree 794), 1232666.JANE01000003_gene603 (degree 780) and 1232666.JANE01000050_gene1952
+(degree 774).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusSciuri(
 	
 	Datetime: 2021-02-02 23:29:10.335022
 	
-	The undirected graph Staphylococcus sciuri has 2615 nodes and 174979 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05120 and
-	has 6 connected components, where the component with most nodes has 2604 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 133.83, and the node degree mode is 2. The top 5 most central
-	nodes are 1232666.JANE01000003_gene710 (degree 1038), 1232666.JANE01000073_gene2542
-	(degree 870), 1232666.JANE01000010_gene2076 (degree 794), 1232666.JANE01000003_gene603
-	(degree 780) and 1232666.JANE01000050_gene1952 (degree 774).
+	The undirected graph Staphylococcus sciuri has 2615 nodes and 174979 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05120 and has 6 connected components, where the component with most
+	nodes has 2604 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 133.83, and
+	the node degree mode is 2. The top 5 most central nodes are 1232666.JANE01000003_gene710
+	(degree 1038), 1232666.JANE01000073_gene2542 (degree 870), 1232666.JANE01000010_gene2076
+	(degree 794), 1232666.JANE01000003_gene603 (degree 780) and 1232666.JANE01000050_gene1952
+	(degree 774).
 	
 
 

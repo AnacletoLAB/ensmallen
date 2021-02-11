@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:43.212451
 
-The undirected graph Arthrospira platensis NIES39 has 6524 nodes and 690572 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03245
-and has 52 connected components, where the component with most nodes has 6325 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 211.70, and the node degree mode is 4. The top 5
-most central nodes are 696747.NIES39_E02970 (degree 1977), 696747.NIES39_D04330 (degree
-1894), 696747.NIES39_L05760 (degree 1829), 696747.NIES39_R00530 (degree 1688) and
-696747.NIES39_K04620 (degree 1683).
+The undirected graph Arthrospira platensis NIES39 has 6524 nodes and 690572
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03245 and has 52 connected components, where the component
+with most nodes has 6325 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 211.70,
+and the node degree mode is 4. The top 5 most central nodes are 696747.NIES39_E02970
+(degree 1977), 696747.NIES39_D04330 (degree 1894), 696747.NIES39_L05760
+(degree 1829), 696747.NIES39_R00530 (degree 1688) and 696747.NIES39_K04620
+(degree 1683).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrospiraPlatensisNies39(
 	
 	Datetime: 2021-02-02 21:32:43.212451
 	
-	The undirected graph Arthrospira platensis NIES39 has 6524 nodes and 690572 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03245
-	and has 52 connected components, where the component with most nodes has 6325 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 211.70, and the node degree mode is 4. The top 5
-	most central nodes are 696747.NIES39_E02970 (degree 1977), 696747.NIES39_D04330 (degree
-	1894), 696747.NIES39_L05760 (degree 1829), 696747.NIES39_R00530 (degree 1688) and
-	696747.NIES39_K04620 (degree 1683).
+	The undirected graph Arthrospira platensis NIES39 has 6524 nodes and 690572
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03245 and has 52 connected components, where the component
+	with most nodes has 6325 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 211.70,
+	and the node degree mode is 4. The top 5 most central nodes are 696747.NIES39_E02970
+	(degree 1977), 696747.NIES39_D04330 (degree 1894), 696747.NIES39_L05760
+	(degree 1829), 696747.NIES39_R00530 (degree 1688) and 696747.NIES39_K04620
+	(degree 1683).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:09.112948
 
-The undirected graph C2000-9 has 2000 nodes and 1799532 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.90022
-and is connected, as it has a single component. The graph median node degree is 1800,
-the mean node degree is 1799.53 and the node degree mode is 1802. The top 5 most
-central nodes are 578 (degree 1848), 287 (degree 1846), 1999 (degree 1838), 1424
-(degree 1838) and 1740 (degree 1835).
+The undirected graph C2000-9 has 2000 nodes and 1799532 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.90022 and is connected, as it has a single component. The
+graph median node degree is 1800, the mean node degree is 1799.53 and the
+node degree mode is 1802. The top 5 most central nodes are 578 (degree
+1848), 287 (degree 1846), 1999 (degree 1838), 1424 (degree 1838) and 1740
+(degree 1835).
 
 
 References
@@ -115,12 +116,13 @@ def C20009(
 	
 	Datetime: 2021-02-03 22:52:09.112948
 	
-	The undirected graph C2000-9 has 2000 nodes and 1799532 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.90022
-	and is connected, as it has a single component. The graph median node degree is 1800,
-	the mean node degree is 1799.53 and the node degree mode is 1802. The top 5 most
-	central nodes are 578 (degree 1848), 287 (degree 1846), 1999 (degree 1838), 1424
-	(degree 1838) and 1740 (degree 1835).
+	The undirected graph C2000-9 has 2000 nodes and 1799532 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.90022 and is connected, as it has a single component. The
+	graph median node degree is 1800, the mean node degree is 1799.53 and the
+	node degree mode is 1802. The top 5 most central nodes are 578 (degree
+	1848), 287 (degree 1846), 1999 (degree 1838), 1424 (degree 1838) and 1740
+	(degree 1835).
 	
 
 

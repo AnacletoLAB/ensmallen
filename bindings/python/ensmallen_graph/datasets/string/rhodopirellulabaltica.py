@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:00.873549
 
-The undirected graph Rhodopirellula baltica has 7099 nodes and 592653 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02352 and
-has 138 connected components, where the component with most nodes has 6706 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 166.97, and the node degree mode is 3. The top 5 most
-central nodes are 243090.RB3373 (degree 2154), 243090.RB10924 (degree 1874), 243090.RB4511
-(degree 1826), 243090.RB10446 (degree 1755) and 243090.RB12799 (degree 1586).
+The undirected graph Rhodopirellula baltica has 7099 nodes and 592653 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02352 and has 138 connected components, where the component with most
+nodes has 6706 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 166.97, and
+the node degree mode is 3. The top 5 most central nodes are 243090.RB3373
+(degree 2154), 243090.RB10924 (degree 1874), 243090.RB4511 (degree 1826),
+243090.RB10446 (degree 1755) and 243090.RB12799 (degree 1586).
 
 
 References
@@ -106,13 +107,14 @@ def RhodopirellulaBaltica(
 	
 	Datetime: 2021-02-02 20:09:00.873549
 	
-	The undirected graph Rhodopirellula baltica has 7099 nodes and 592653 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02352 and
-	has 138 connected components, where the component with most nodes has 6706 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 166.97, and the node degree mode is 3. The top 5 most
-	central nodes are 243090.RB3373 (degree 2154), 243090.RB10924 (degree 1874), 243090.RB4511
-	(degree 1826), 243090.RB10446 (degree 1755) and 243090.RB12799 (degree 1586).
+	The undirected graph Rhodopirellula baltica has 7099 nodes and 592653 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02352 and has 138 connected components, where the component with most
+	nodes has 6706 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 166.97, and
+	the node degree mode is 3. The top 5 most central nodes are 243090.RB3373
+	(degree 2154), 243090.RB10924 (degree 1874), 243090.RB4511 (degree 1826),
+	243090.RB10446 (degree 1755) and 243090.RB12799 (degree 1586).
 	
 
 

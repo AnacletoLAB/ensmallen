@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:49.299167
 
-The undirected graph Roseomonas sp. B5 has 4204 nodes and 453755 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05136 and
-has 12 connected components, where the component with most nodes has 4176 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 215.87, and the node degree mode is 3. The top 5 most central
-nodes are 1217720.ALOX01000037_gene2870 (degree 1608), 1217720.ALOX01000050_gene54
-(degree 1300), 1217720.ALOX01000027_gene3679 (degree 1153), 1217720.ALOX01000003_gene4016
-(degree 1108) and 1217720.ALOX01000060_gene2818 (degree 1107).
+The undirected graph Roseomonas sp. B5 has 4204 nodes and 453755 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05136 and has 12 connected components, where the component with most
+nodes has 4176 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 215.87, and
+the node degree mode is 3. The top 5 most central nodes are 1217720.ALOX01000037_gene2870
+(degree 1608), 1217720.ALOX01000050_gene54 (degree 1300), 1217720.ALOX01000027_gene3679
+(degree 1153), 1217720.ALOX01000003_gene4016 (degree 1108) and 1217720.ALOX01000060_gene2818
+(degree 1107).
 
 
 References
@@ -107,14 +108,15 @@ def RoseomonasSp.B5(
 	
 	Datetime: 2021-02-02 23:21:49.299167
 	
-	The undirected graph Roseomonas sp. B5 has 4204 nodes and 453755 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05136 and
-	has 12 connected components, where the component with most nodes has 4176 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 215.87, and the node degree mode is 3. The top 5 most central
-	nodes are 1217720.ALOX01000037_gene2870 (degree 1608), 1217720.ALOX01000050_gene54
-	(degree 1300), 1217720.ALOX01000027_gene3679 (degree 1153), 1217720.ALOX01000003_gene4016
-	(degree 1108) and 1217720.ALOX01000060_gene2818 (degree 1107).
+	The undirected graph Roseomonas sp. B5 has 4204 nodes and 453755 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05136 and has 12 connected components, where the component with most
+	nodes has 4176 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 215.87, and
+	the node degree mode is 3. The top 5 most central nodes are 1217720.ALOX01000037_gene2870
+	(degree 1608), 1217720.ALOX01000050_gene54 (degree 1300), 1217720.ALOX01000027_gene3679
+	(degree 1153), 1217720.ALOX01000003_gene4016 (degree 1108) and 1217720.ALOX01000060_gene2818
+	(degree 1107).
 	
 
 

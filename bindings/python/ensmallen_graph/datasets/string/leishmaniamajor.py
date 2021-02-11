@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:46.896544
 
-The undirected graph Leishmania major has 4455 nodes and 427459 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04309 and
-has 12 connected components, where the component with most nodes has 4426 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 191.90, and the node degree mode is 1. The top 5 most central
-nodes are 5664.LmjF.06.0860 (degree 1580), 5664.LmjF.29.1240 (degree 1529), 5664.LmjF.24.0140
-(degree 1350), 5664.LmjF.26.0310 (degree 1315) and 5664.LmjF.34.2340 (degree 1208).
+The undirected graph Leishmania major has 4455 nodes and 427459 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04309 and has 12 connected components, where the component with most
+nodes has 4426 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 191.90, and
+the node degree mode is 1. The top 5 most central nodes are 5664.LmjF.06.0860
+(degree 1580), 5664.LmjF.29.1240 (degree 1529), 5664.LmjF.24.0140 (degree
+1350), 5664.LmjF.26.0310 (degree 1315) and 5664.LmjF.34.2340 (degree 1208).
 
 
 References
@@ -106,13 +107,14 @@ def LeishmaniaMajor(
 	
 	Datetime: 2021-02-02 17:14:46.896544
 	
-	The undirected graph Leishmania major has 4455 nodes and 427459 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04309 and
-	has 12 connected components, where the component with most nodes has 4426 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 191.90, and the node degree mode is 1. The top 5 most central
-	nodes are 5664.LmjF.06.0860 (degree 1580), 5664.LmjF.29.1240 (degree 1529), 5664.LmjF.24.0140
-	(degree 1350), 5664.LmjF.26.0310 (degree 1315) and 5664.LmjF.34.2340 (degree 1208).
+	The undirected graph Leishmania major has 4455 nodes and 427459 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04309 and has 12 connected components, where the component with most
+	nodes has 4426 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 191.90, and
+	the node degree mode is 1. The top 5 most central nodes are 5664.LmjF.06.0860
+	(degree 1580), 5664.LmjF.29.1240 (degree 1529), 5664.LmjF.24.0140 (degree
+	1350), 5664.LmjF.26.0310 (degree 1315) and 5664.LmjF.34.2340 (degree 1208).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:09.993603
 
-The undirected graph Comamonas granuli has 3091 nodes and 320066 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06702 and
-has 3 connected components, where the component with most nodes has 3086 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 169,
-the mean node degree is 207.10, and the node degree mode is 78. The top 5 most central
-nodes are 1223521.BBJX01000011_gene4 (degree 1396), 1223521.BBJX01000008_gene1398
-(degree 1275), 1223521.BBJX01000004_gene2496 (degree 1132), 1223521.BBJX01000001_gene785
-(degree 1079) and 1223521.BBJX01000005_gene2130 (degree 1001).
+The undirected graph Comamonas granuli has 3091 nodes and 320066 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06702 and has 3 connected components, where the component with most
+nodes has 3086 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 169, the mean node degree is 207.10, and
+the node degree mode is 78. The top 5 most central nodes are 1223521.BBJX01000011_gene4
+(degree 1396), 1223521.BBJX01000008_gene1398 (degree 1275), 1223521.BBJX01000004_gene2496
+(degree 1132), 1223521.BBJX01000001_gene785 (degree 1079) and 1223521.BBJX01000005_gene2130
+(degree 1001).
 
 
 References
@@ -107,14 +108,15 @@ def ComamonasGranuli(
 	
 	Datetime: 2021-02-02 23:24:09.993603
 	
-	The undirected graph Comamonas granuli has 3091 nodes and 320066 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06702 and
-	has 3 connected components, where the component with most nodes has 3086 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 169,
-	the mean node degree is 207.10, and the node degree mode is 78. The top 5 most central
-	nodes are 1223521.BBJX01000011_gene4 (degree 1396), 1223521.BBJX01000008_gene1398
-	(degree 1275), 1223521.BBJX01000004_gene2496 (degree 1132), 1223521.BBJX01000001_gene785
-	(degree 1079) and 1223521.BBJX01000005_gene2130 (degree 1001).
+	The undirected graph Comamonas granuli has 3091 nodes and 320066 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06702 and has 3 connected components, where the component with most
+	nodes has 3086 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 169, the mean node degree is 207.10, and
+	the node degree mode is 78. The top 5 most central nodes are 1223521.BBJX01000011_gene4
+	(degree 1396), 1223521.BBJX01000008_gene1398 (degree 1275), 1223521.BBJX01000004_gene2496
+	(degree 1132), 1223521.BBJX01000001_gene785 (degree 1079) and 1223521.BBJX01000005_gene2130
+	(degree 1001).
 	
 
 

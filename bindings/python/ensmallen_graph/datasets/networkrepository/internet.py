@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:15:59.018546
 
-The undirected graph internet has 124651 nodes and 205805 weighted edges, of which
-12185 are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 3.20, and the node degree mode is 1. The top 5 most central
-nodes are 85093 (degree 152), 31225 (degree 146), 96258 (degree 129), 8299 (degree
-117) and 30294 (degree 116).
+The undirected graph internet has 124651 nodes and 205805 weighted edges,
+of which 12185 are self-loops. The graph is extremely sparse as it has
+a density of 0.00003 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 3.20, and the node
+degree mode is 1. The top 5 most central nodes are 85093 (degree 152),
+31225 (degree 146), 96258 (degree 129), 8299 (degree 117) and 30294 (degree
+116).
 
 
 References
@@ -102,12 +103,13 @@ def Internet(
 	
 	Datetime: 2021-02-06 11:15:59.018546
 	
-	The undirected graph internet has 124651 nodes and 205805 weighted edges, of which
-	12185 are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 3.20, and the node degree mode is 1. The top 5 most central
-	nodes are 85093 (degree 152), 31225 (degree 146), 96258 (degree 129), 8299 (degree
-	117) and 30294 (degree 116).
+	The undirected graph internet has 124651 nodes and 205805 weighted edges,
+	of which 12185 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00003 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 3.20, and the node
+	degree mode is 1. The top 5 most central nodes are 85093 (degree 152),
+	31225 (degree 146), 96258 (degree 129), 8299 (degree 117) and 30294 (degree
+	116).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:24.105372
 
-The undirected graph Campylobacter concisus 13826 has 2022 nodes and 103957 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-and has 16 connected components, where the component with most nodes has 1979 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 102.83, and the node degree mode is 5. The top 5 most
-central nodes are 360104.CCC13826_0350 (degree 769), 360104.CCC13826_1923 (degree
-672), 360104.CCC13826_1933 (degree 618), 360104.CCC13826_0276 (degree 614) and 360104.CCC13826_2046
-(degree 587).
+The undirected graph Campylobacter concisus 13826 has 2022 nodes and 103957
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05088 and has 16 connected components, where the component
+with most nodes has 1979 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 102.83,
+and the node degree mode is 5. The top 5 most central nodes are 360104.CCC13826_0350
+(degree 769), 360104.CCC13826_1923 (degree 672), 360104.CCC13826_1933 (degree
+618), 360104.CCC13826_0276 (degree 614) and 360104.CCC13826_2046 (degree
+587).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterConcisus13826(
 	
 	Datetime: 2021-02-02 20:34:24.105372
 	
-	The undirected graph Campylobacter concisus 13826 has 2022 nodes and 103957 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05088
-	and has 16 connected components, where the component with most nodes has 1979 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 102.83, and the node degree mode is 5. The top 5 most
-	central nodes are 360104.CCC13826_0350 (degree 769), 360104.CCC13826_1923 (degree
-	672), 360104.CCC13826_1933 (degree 618), 360104.CCC13826_0276 (degree 614) and 360104.CCC13826_2046
-	(degree 587).
+	The undirected graph Campylobacter concisus 13826 has 2022 nodes and 103957
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05088 and has 16 connected components, where the component
+	with most nodes has 1979 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 102.83,
+	and the node degree mode is 5. The top 5 most central nodes are 360104.CCC13826_0350
+	(degree 769), 360104.CCC13826_1923 (degree 672), 360104.CCC13826_1933 (degree
+	618), 360104.CCC13826_0276 (degree 614) and 360104.CCC13826_2046 (degree
+	587).
 	
 
 

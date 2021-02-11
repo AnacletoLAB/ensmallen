@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:16.264473
 
-The undirected graph Ensifer sojae has 5325 nodes and 530368 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03742 and has 20
-connected components, where the component with most nodes has 5282 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 199.20, and the node degree mode is 1. The top 5 most central
-nodes are 716928.AJQT01000028_gene2291 (degree 2140), 716928.AJQT01000035_gene840
-(degree 1964), 716928.AJQT01000049_gene1996 (degree 1737), 716928.AJQT01000068_gene3422
-(degree 1706) and 716928.AJQT01000053_gene1445 (degree 1631).
+The undirected graph Ensifer sojae has 5325 nodes and 530368 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03742 and has 20 connected components, where the component with most
+nodes has 5282 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 199.20, and
+the node degree mode is 1. The top 5 most central nodes are 716928.AJQT01000028_gene2291
+(degree 2140), 716928.AJQT01000035_gene840 (degree 1964), 716928.AJQT01000049_gene1996
+(degree 1737), 716928.AJQT01000068_gene3422 (degree 1706) and 716928.AJQT01000053_gene1445
+(degree 1631).
 
 
 References
@@ -107,14 +108,15 @@ def EnsiferSojae(
 	
 	Datetime: 2021-02-02 21:36:16.264473
 	
-	The undirected graph Ensifer sojae has 5325 nodes and 530368 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03742 and has 20
-	connected components, where the component with most nodes has 5282 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 199.20, and the node degree mode is 1. The top 5 most central
-	nodes are 716928.AJQT01000028_gene2291 (degree 2140), 716928.AJQT01000035_gene840
-	(degree 1964), 716928.AJQT01000049_gene1996 (degree 1737), 716928.AJQT01000068_gene3422
-	(degree 1706) and 716928.AJQT01000053_gene1445 (degree 1631).
+	The undirected graph Ensifer sojae has 5325 nodes and 530368 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03742 and has 20 connected components, where the component with most
+	nodes has 5282 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 199.20, and
+	the node degree mode is 1. The top 5 most central nodes are 716928.AJQT01000028_gene2291
+	(degree 2140), 716928.AJQT01000035_gene840 (degree 1964), 716928.AJQT01000049_gene1996
+	(degree 1737), 716928.AJQT01000068_gene3422 (degree 1706) and 716928.AJQT01000053_gene1445
+	(degree 1631).
 	
 
 

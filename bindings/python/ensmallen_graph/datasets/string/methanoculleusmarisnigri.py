@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:35.468040
 
-The undirected graph Methanoculleus marisnigri has 2474 nodes and 241499 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07894
-and has 19 connected components, where the component with most nodes has 2433 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 169, the mean node degree is 195.23, and the node degree mode is 4. The top 5
-most central nodes are 368407.Memar_1061 (degree 991), 368407.Memar_2497 (degree
-917), 368407.Memar_1292 (degree 859), 368407.Memar_2159 (degree 834) and 368407.Memar_2346
-(degree 826).
+The undirected graph Methanoculleus marisnigri has 2474 nodes and 241499
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07894 and has 19 connected components, where the component
+with most nodes has 2433 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 169, the mean node degree is 195.23,
+and the node degree mode is 4. The top 5 most central nodes are 368407.Memar_1061
+(degree 991), 368407.Memar_2497 (degree 917), 368407.Memar_1292 (degree
+859), 368407.Memar_2159 (degree 834) and 368407.Memar_2346 (degree 826).
 
 
 References
@@ -107,14 +107,14 @@ def MethanoculleusMarisnigri(
 	
 	Datetime: 2021-02-02 20:35:35.468040
 	
-	The undirected graph Methanoculleus marisnigri has 2474 nodes and 241499 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07894
-	and has 19 connected components, where the component with most nodes has 2433 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 169, the mean node degree is 195.23, and the node degree mode is 4. The top 5
-	most central nodes are 368407.Memar_1061 (degree 991), 368407.Memar_2497 (degree
-	917), 368407.Memar_1292 (degree 859), 368407.Memar_2159 (degree 834) and 368407.Memar_2346
-	(degree 826).
+	The undirected graph Methanoculleus marisnigri has 2474 nodes and 241499
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07894 and has 19 connected components, where the component
+	with most nodes has 2433 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 169, the mean node degree is 195.23,
+	and the node degree mode is 4. The top 5 most central nodes are 368407.Memar_1061
+	(degree 991), 368407.Memar_2497 (degree 917), 368407.Memar_1292 (degree
+	859), 368407.Memar_2159 (degree 834) and 368407.Memar_2346 (degree 826).
 	
 
 

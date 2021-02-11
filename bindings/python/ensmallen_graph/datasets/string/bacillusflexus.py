@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:02:02.758238
 
-The undirected graph Bacillus flexus has 4514 nodes and 316554 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03108 and
-has 33 connected components, where the component with most nodes has 4413 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 140.25, and the node degree mode is 2. The top 5 most central
-nodes are 1444310.JANV01000007_gene3971 (degree 1482), 1444310.JANV01000033_gene749
-(degree 1104), 1444310.JANV01000044_gene3452 (degree 1093), 1444310.JANV01000081_gene1397
-(degree 1062) and 1444310.JANV01000205_gene652 (degree 1038).
+The undirected graph Bacillus flexus has 4514 nodes and 316554 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03108 and has 33 connected components, where the component with most
+nodes has 4413 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 140.25, and
+the node degree mode is 2. The top 5 most central nodes are 1444310.JANV01000007_gene3971
+(degree 1482), 1444310.JANV01000033_gene749 (degree 1104), 1444310.JANV01000044_gene3452
+(degree 1093), 1444310.JANV01000081_gene1397 (degree 1062) and 1444310.JANV01000205_gene652
+(degree 1038).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusFlexus(
 	
 	Datetime: 2021-02-03 23:02:02.758238
 	
-	The undirected graph Bacillus flexus has 4514 nodes and 316554 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03108 and
-	has 33 connected components, where the component with most nodes has 4413 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 140.25, and the node degree mode is 2. The top 5 most central
-	nodes are 1444310.JANV01000007_gene3971 (degree 1482), 1444310.JANV01000033_gene749
-	(degree 1104), 1444310.JANV01000044_gene3452 (degree 1093), 1444310.JANV01000081_gene1397
-	(degree 1062) and 1444310.JANV01000205_gene652 (degree 1038).
+	The undirected graph Bacillus flexus has 4514 nodes and 316554 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03108 and has 33 connected components, where the component with most
+	nodes has 4413 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 140.25, and
+	the node degree mode is 2. The top 5 most central nodes are 1444310.JANV01000007_gene3971
+	(degree 1482), 1444310.JANV01000033_gene749 (degree 1104), 1444310.JANV01000044_gene3452
+	(degree 1093), 1444310.JANV01000081_gene1397 (degree 1062) and 1444310.JANV01000205_gene652
+	(degree 1038).
 	
 
 

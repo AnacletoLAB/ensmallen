@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:49.599122
 
-The undirected graph Deinococcus misasensis has 4662 nodes and 346195 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03186 and
-has 36 connected components, where the component with most nodes has 4553 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 148.52, and the node degree mode is 3. The top 5 most central
-nodes are 1121382.JQKG01000054_gene2127 (degree 1920), 1121382.JQKG01000029_gene2689
-(degree 1312), 1121382.JQKG01000005_gene3356 (degree 1240), 1121382.JQKG01000006_gene3404
-(degree 1199) and 1121382.JQKG01000010_gene4616 (degree 1197).
+The undirected graph Deinococcus misasensis has 4662 nodes and 346195 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03186 and has 36 connected components, where the component with most
+nodes has 4553 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 148.52, and
+the node degree mode is 3. The top 5 most central nodes are 1121382.JQKG01000054_gene2127
+(degree 1920), 1121382.JQKG01000029_gene2689 (degree 1312), 1121382.JQKG01000005_gene3356
+(degree 1240), 1121382.JQKG01000006_gene3404 (degree 1199) and 1121382.JQKG01000010_gene4616
+(degree 1197).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusMisasensis(
 	
 	Datetime: 2021-02-02 22:35:49.599122
 	
-	The undirected graph Deinococcus misasensis has 4662 nodes and 346195 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03186 and
-	has 36 connected components, where the component with most nodes has 4553 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 148.52, and the node degree mode is 3. The top 5 most central
-	nodes are 1121382.JQKG01000054_gene2127 (degree 1920), 1121382.JQKG01000029_gene2689
-	(degree 1312), 1121382.JQKG01000005_gene3356 (degree 1240), 1121382.JQKG01000006_gene3404
-	(degree 1199) and 1121382.JQKG01000010_gene4616 (degree 1197).
+	The undirected graph Deinococcus misasensis has 4662 nodes and 346195 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03186 and has 36 connected components, where the component with most
+	nodes has 4553 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 148.52, and
+	the node degree mode is 3. The top 5 most central nodes are 1121382.JQKG01000054_gene2127
+	(degree 1920), 1121382.JQKG01000029_gene2689 (degree 1312), 1121382.JQKG01000005_gene3356
+	(degree 1240), 1121382.JQKG01000006_gene3404 (degree 1199) and 1121382.JQKG01000010_gene4616
+	(degree 1197).
 	
 
 

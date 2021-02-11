@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:42.008476
 
-The undirected graph Desulfovibrio desulfuricans ATCC27774 has 2335 nodes and 186107
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06830 and has 9 connected components, where the component with most nodes has
-2316 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 132, the mean node degree is 159.41, and the node degree mode is 3. The
-top 5 most central nodes are 525146.Ddes_1059 (degree 981), 525146.Ddes_1184 (degree
-819), 525146.Ddes_0298 (degree 761), 525146.Ddes_0484 (degree 719) and 525146.Ddes_1805
-(degree 711).
+The undirected graph Desulfovibrio desulfuricans ATCC27774 has 2335 nodes
+and 186107 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06830 and has 9 connected components, where the
+component with most nodes has 2316 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 132, the mean node degree
+is 159.41, and the node degree mode is 3. The top 5 most central nodes
+are 525146.Ddes_1059 (degree 981), 525146.Ddes_1184 (degree 819), 525146.Ddes_0298
+(degree 761), 525146.Ddes_0484 (degree 719) and 525146.Ddes_1805 (degree
+711).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioDesulfuricansAtcc27774(
 	
 	Datetime: 2021-02-02 21:04:42.008476
 	
-	The undirected graph Desulfovibrio desulfuricans ATCC27774 has 2335 nodes and 186107
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06830 and has 9 connected components, where the component with most nodes has
-	2316 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 132, the mean node degree is 159.41, and the node degree mode is 3. The
-	top 5 most central nodes are 525146.Ddes_1059 (degree 981), 525146.Ddes_1184 (degree
-	819), 525146.Ddes_0298 (degree 761), 525146.Ddes_0484 (degree 719) and 525146.Ddes_1805
-	(degree 711).
+	The undirected graph Desulfovibrio desulfuricans ATCC27774 has 2335 nodes
+	and 186107 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06830 and has 9 connected components, where the
+	component with most nodes has 2316 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 132, the mean node degree
+	is 159.41, and the node degree mode is 3. The top 5 most central nodes
+	are 525146.Ddes_1059 (degree 981), 525146.Ddes_1184 (degree 819), 525146.Ddes_0298
+	(degree 761), 525146.Ddes_0484 (degree 719) and 525146.Ddes_1805 (degree
+	711).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:32.943347
 
-The undirected graph Trichoderma reesei has 6758 nodes and 526871 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02308 and
-has 19 connected components, where the component with most nodes has 6713 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 155.93, and the node degree mode is 1. The top 5 most central
-nodes are 51453.EGR46054 (degree 1634), 51453.EGR52314 (degree 1320), 51453.EGR46188
-(degree 1246), 51453.EGR51948 (degree 1132) and 51453.EGR52618 (degree 1082).
+The undirected graph Trichoderma reesei has 6758 nodes and 526871 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02308 and has 19 connected components, where the component with most
+nodes has 6713 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 155.93, and
+the node degree mode is 1. The top 5 most central nodes are 51453.EGR46054
+(degree 1634), 51453.EGR52314 (degree 1320), 51453.EGR46188 (degree 1246),
+51453.EGR51948 (degree 1132) and 51453.EGR52618 (degree 1082).
 
 
 References
@@ -106,13 +107,14 @@ def TrichodermaReesei(
 	
 	Datetime: 2021-02-02 18:17:32.943347
 	
-	The undirected graph Trichoderma reesei has 6758 nodes and 526871 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02308 and
-	has 19 connected components, where the component with most nodes has 6713 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 155.93, and the node degree mode is 1. The top 5 most central
-	nodes are 51453.EGR46054 (degree 1634), 51453.EGR52314 (degree 1320), 51453.EGR46188
-	(degree 1246), 51453.EGR51948 (degree 1132) and 51453.EGR52618 (degree 1082).
+	The undirected graph Trichoderma reesei has 6758 nodes and 526871 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02308 and has 19 connected components, where the component with most
+	nodes has 6713 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 155.93, and
+	the node degree mode is 1. The top 5 most central nodes are 51453.EGR46054
+	(degree 1634), 51453.EGR52314 (degree 1320), 51453.EGR46188 (degree 1246),
+	51453.EGR51948 (degree 1132) and 51453.EGR52618 (degree 1082).
 	
 
 

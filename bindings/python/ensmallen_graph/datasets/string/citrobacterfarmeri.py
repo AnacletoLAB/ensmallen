@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:30.121450
 
-The undirected graph Citrobacter farmeri has 4548 nodes and 428207 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04141 and
-has 6 connected components, where the component with most nodes has 4538 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 188.31, and the node degree mode is 109. The top 5 most central
-nodes are 1114922.CIFAM_10_03220 (degree 1754), 1114922.CIFAM_05_00740 (degree 1647),
-1114922.CIFAM_21_00070 (degree 1498), 1114922.CIFAM_19_00630 (degree 1322) and 1114922.CIFAM_01_00830
+The undirected graph Citrobacter farmeri has 4548 nodes and 428207 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04141 and has 6 connected components, where the component with most
+nodes has 4538 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 188.31, and
+the node degree mode is 109. The top 5 most central nodes are 1114922.CIFAM_10_03220
+(degree 1754), 1114922.CIFAM_05_00740 (degree 1647), 1114922.CIFAM_21_00070
+(degree 1498), 1114922.CIFAM_19_00630 (degree 1322) and 1114922.CIFAM_01_00830
 (degree 1241).
 
 
@@ -107,13 +108,14 @@ def CitrobacterFarmeri(
 	
 	Datetime: 2021-02-02 22:26:30.121450
 	
-	The undirected graph Citrobacter farmeri has 4548 nodes and 428207 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04141 and
-	has 6 connected components, where the component with most nodes has 4538 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 188.31, and the node degree mode is 109. The top 5 most central
-	nodes are 1114922.CIFAM_10_03220 (degree 1754), 1114922.CIFAM_05_00740 (degree 1647),
-	1114922.CIFAM_21_00070 (degree 1498), 1114922.CIFAM_19_00630 (degree 1322) and 1114922.CIFAM_01_00830
+	The undirected graph Citrobacter farmeri has 4548 nodes and 428207 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04141 and has 6 connected components, where the component with most
+	nodes has 4538 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 188.31, and
+	the node degree mode is 109. The top 5 most central nodes are 1114922.CIFAM_10_03220
+	(degree 1754), 1114922.CIFAM_05_00740 (degree 1647), 1114922.CIFAM_21_00070
+	(degree 1498), 1114922.CIFAM_19_00630 (degree 1322) and 1114922.CIFAM_01_00830
 	(degree 1241).
 	
 

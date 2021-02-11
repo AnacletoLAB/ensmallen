@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:57:52.065374
 
-The undirected graph Cladophialophora carrionii has 7383 nodes and 659079 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02419
-and has 19 connected components, where the component with most nodes has 7341 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 178.54, and the node degree mode is 1. The top 5
-most central nodes are 86049.XP_008725972.1 (degree 1832), 86049.XP_008725492.1 (degree
-1535), 86049.XP_008728737.1 (degree 1438), 86049.XP_008729672.1 (degree 1388) and
-86049.XP_008722442.1 (degree 1379).
+The undirected graph Cladophialophora carrionii has 7383 nodes and 659079
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02419 and has 19 connected components, where the component
+with most nodes has 7341 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 178.54,
+and the node degree mode is 1. The top 5 most central nodes are 86049.XP_008725972.1
+(degree 1832), 86049.XP_008725492.1 (degree 1535), 86049.XP_008728737.1
+(degree 1438), 86049.XP_008729672.1 (degree 1388) and 86049.XP_008722442.1
+(degree 1379).
 
 
 References
@@ -107,14 +108,15 @@ def CladophialophoraCarrionii(
 	
 	Datetime: 2021-02-02 18:57:52.065374
 	
-	The undirected graph Cladophialophora carrionii has 7383 nodes and 659079 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02419
-	and has 19 connected components, where the component with most nodes has 7341 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 178.54, and the node degree mode is 1. The top 5
-	most central nodes are 86049.XP_008725972.1 (degree 1832), 86049.XP_008725492.1 (degree
-	1535), 86049.XP_008728737.1 (degree 1438), 86049.XP_008729672.1 (degree 1388) and
-	86049.XP_008722442.1 (degree 1379).
+	The undirected graph Cladophialophora carrionii has 7383 nodes and 659079
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02419 and has 19 connected components, where the component
+	with most nodes has 7341 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 178.54,
+	and the node degree mode is 1. The top 5 most central nodes are 86049.XP_008725972.1
+	(degree 1832), 86049.XP_008725492.1 (degree 1535), 86049.XP_008728737.1
+	(degree 1438), 86049.XP_008729672.1 (degree 1388) and 86049.XP_008722442.1
+	(degree 1379).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:44.669291
 
-The undirected graph Methylocystis parvus has 4004 nodes and 393112 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04905 and
-has 19 connected components, where the component with most nodes has 3960 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 196.36, and the node degree mode is 1. The top 5 most central
-nodes are 1134912.AJTV01000023_gene2905 (degree 1837), 1134912.AJTV01000032_gene2190
-(degree 1435), 1134912.AJTV01000004_gene932 (degree 1331), 1134912.AJTV01000017_gene155
-(degree 1326) and 1134912.AJTV01000007_gene1125 (degree 1122).
+The undirected graph Methylocystis parvus has 4004 nodes and 393112 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04905 and has 19 connected components, where the component with most
+nodes has 3960 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 196.36, and
+the node degree mode is 1. The top 5 most central nodes are 1134912.AJTV01000023_gene2905
+(degree 1837), 1134912.AJTV01000032_gene2190 (degree 1435), 1134912.AJTV01000004_gene932
+(degree 1331), 1134912.AJTV01000017_gene155 (degree 1326) and 1134912.AJTV01000007_gene1125
+(degree 1122).
 
 
 References
@@ -107,14 +108,15 @@ def MethylocystisParvus(
 	
 	Datetime: 2021-02-02 22:56:44.669291
 	
-	The undirected graph Methylocystis parvus has 4004 nodes and 393112 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04905 and
-	has 19 connected components, where the component with most nodes has 3960 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 196.36, and the node degree mode is 1. The top 5 most central
-	nodes are 1134912.AJTV01000023_gene2905 (degree 1837), 1134912.AJTV01000032_gene2190
-	(degree 1435), 1134912.AJTV01000004_gene932 (degree 1331), 1134912.AJTV01000017_gene155
-	(degree 1326) and 1134912.AJTV01000007_gene1125 (degree 1122).
+	The undirected graph Methylocystis parvus has 4004 nodes and 393112 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04905 and has 19 connected components, where the component with most
+	nodes has 3960 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 196.36, and
+	the node degree mode is 1. The top 5 most central nodes are 1134912.AJTV01000023_gene2905
+	(degree 1837), 1134912.AJTV01000032_gene2190 (degree 1435), 1134912.AJTV01000004_gene932
+	(degree 1331), 1134912.AJTV01000017_gene155 (degree 1326) and 1134912.AJTV01000007_gene1125
+	(degree 1122).
 	
 
 

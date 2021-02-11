@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:30.339019
 
-The undirected graph Natrinema altunense has 3372 nodes and 285560 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05024 and
-has 25 connected components, where the component with most nodes has 3316 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 169.37, and the node degree mode is 3. The top 5 most central
-nodes are 222984.JNCS01000015_gene2424 (degree 1091), 222984.JNCS01000008_gene794
-(degree 980), 222984.JNCS01000011_gene636 (degree 972), 222984.JNCS01000011_gene547
-(degree 879) and 222984.JNCS01000016_gene3270 (degree 875).
+The undirected graph Natrinema altunense has 3372 nodes and 285560 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05024 and has 25 connected components, where the component with most
+nodes has 3316 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 169.37, and
+the node degree mode is 3. The top 5 most central nodes are 222984.JNCS01000015_gene2424
+(degree 1091), 222984.JNCS01000008_gene794 (degree 980), 222984.JNCS01000011_gene636
+(degree 972), 222984.JNCS01000011_gene547 (degree 879) and 222984.JNCS01000016_gene3270
+(degree 875).
 
 
 References
@@ -107,14 +108,15 @@ def NatrinemaAltunense(
 	
 	Datetime: 2021-02-02 20:04:30.339019
 	
-	The undirected graph Natrinema altunense has 3372 nodes and 285560 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05024 and
-	has 25 connected components, where the component with most nodes has 3316 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 169.37, and the node degree mode is 3. The top 5 most central
-	nodes are 222984.JNCS01000015_gene2424 (degree 1091), 222984.JNCS01000008_gene794
-	(degree 980), 222984.JNCS01000011_gene636 (degree 972), 222984.JNCS01000011_gene547
-	(degree 879) and 222984.JNCS01000016_gene3270 (degree 875).
+	The undirected graph Natrinema altunense has 3372 nodes and 285560 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05024 and has 25 connected components, where the component with most
+	nodes has 3316 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 169.37, and
+	the node degree mode is 3. The top 5 most central nodes are 222984.JNCS01000015_gene2424
+	(degree 1091), 222984.JNCS01000008_gene794 (degree 980), 222984.JNCS01000011_gene636
+	(degree 972), 222984.JNCS01000011_gene547 (degree 879) and 222984.JNCS01000016_gene3270
+	(degree 875).
 	
 
 

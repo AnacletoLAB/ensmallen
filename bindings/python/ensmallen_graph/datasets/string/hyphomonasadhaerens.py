@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:59.941643
 
-The undirected graph Hyphomonas adhaerens has 3467 nodes and 370061 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06159 and
-has 7 connected components, where the component with most nodes has 3452 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 213.48, and the node degree mode is 3. The top 5 most central
-nodes are 1280949.HAD_14367 (degree 1250), 1280949.HAD_13384 (degree 1058), 1280949.HAD_13149
-(degree 1044), 1280949.HAD_05830 (degree 1034) and 1280949.HAD_13109 (degree 990).
+The undirected graph Hyphomonas adhaerens has 3467 nodes and 370061 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06159 and has 7 connected components, where the component with most
+nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 213.48, and
+the node degree mode is 3. The top 5 most central nodes are 1280949.HAD_14367
+(degree 1250), 1280949.HAD_13384 (degree 1058), 1280949.HAD_13149 (degree
+1044), 1280949.HAD_05830 (degree 1034) and 1280949.HAD_13109 (degree 990).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasAdhaerens(
 	
 	Datetime: 2021-02-03 21:08:59.941643
 	
-	The undirected graph Hyphomonas adhaerens has 3467 nodes and 370061 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06159 and
-	has 7 connected components, where the component with most nodes has 3452 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 213.48, and the node degree mode is 3. The top 5 most central
-	nodes are 1280949.HAD_14367 (degree 1250), 1280949.HAD_13384 (degree 1058), 1280949.HAD_13149
-	(degree 1044), 1280949.HAD_05830 (degree 1034) and 1280949.HAD_13109 (degree 990).
+	The undirected graph Hyphomonas adhaerens has 3467 nodes and 370061 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06159 and has 7 connected components, where the component with most
+	nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 213.48, and
+	the node degree mode is 3. The top 5 most central nodes are 1280949.HAD_14367
+	(degree 1250), 1280949.HAD_13384 (degree 1058), 1280949.HAD_13149 (degree
+	1044), 1280949.HAD_05830 (degree 1034) and 1280949.HAD_13109 (degree 990).
 	
 
 

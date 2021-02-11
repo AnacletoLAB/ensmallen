@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:20.339304
 
-The undirected graph Streptococcus mitis SK579 has 1893 nodes and 120968 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06755
-and has 13 connected components, where the component with most nodes has 1861 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 127.81, and the node degree mode is 18. The top 5
-most central nodes are 1095737.HMPREF1110_1924 (degree 799), 1095737.HMPREF1110_0259
-(degree 695), 1095737.HMPREF1110_1263 (degree 686), 1095737.HMPREF1110_0506 (degree
-657) and 1095737.HMPREF1110_1589 (degree 649).
+The undirected graph Streptococcus mitis SK579 has 1893 nodes and 120968
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06755 and has 13 connected components, where the component
+with most nodes has 1861 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 127.81,
+and the node degree mode is 18. The top 5 most central nodes are 1095737.HMPREF1110_1924
+(degree 799), 1095737.HMPREF1110_0259 (degree 695), 1095737.HMPREF1110_1263
+(degree 686), 1095737.HMPREF1110_0506 (degree 657) and 1095737.HMPREF1110_1589
+(degree 649).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitisSk579(
 	
 	Datetime: 2021-02-02 22:23:20.339304
 	
-	The undirected graph Streptococcus mitis SK579 has 1893 nodes and 120968 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06755
-	and has 13 connected components, where the component with most nodes has 1861 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 127.81, and the node degree mode is 18. The top 5
-	most central nodes are 1095737.HMPREF1110_1924 (degree 799), 1095737.HMPREF1110_0259
-	(degree 695), 1095737.HMPREF1110_1263 (degree 686), 1095737.HMPREF1110_0506 (degree
-	657) and 1095737.HMPREF1110_1589 (degree 649).
+	The undirected graph Streptococcus mitis SK579 has 1893 nodes and 120968
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06755 and has 13 connected components, where the component
+	with most nodes has 1861 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 127.81,
+	and the node degree mode is 18. The top 5 most central nodes are 1095737.HMPREF1110_1924
+	(degree 799), 1095737.HMPREF1110_0259 (degree 695), 1095737.HMPREF1110_1263
+	(degree 686), 1095737.HMPREF1110_0506 (degree 657) and 1095737.HMPREF1110_1589
+	(degree 649).
 	
 
 

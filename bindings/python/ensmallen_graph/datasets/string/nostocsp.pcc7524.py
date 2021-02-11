@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:36.471671
 
-The undirected graph Nostoc sp. PCC7524 has 5288 nodes and 494068 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03534 and
-has 22 connected components, where the component with most nodes has 5237 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 186.86, and the node degree mode is 1. The top 5 most central
-nodes are 28072.Nos7524_0537 (degree 1674), 28072.Nos7524_1724 (degree 1631), 28072.Nos7524_2487
-(degree 1537), 28072.Nos7524_1372 (degree 1486) and 28072.Nos7524_3258 (degree 1453).
+The undirected graph Nostoc sp. PCC7524 has 5288 nodes and 494068 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03534 and has 22 connected components, where the component with most
+nodes has 5237 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 186.86, and
+the node degree mode is 1. The top 5 most central nodes are 28072.Nos7524_0537
+(degree 1674), 28072.Nos7524_1724 (degree 1631), 28072.Nos7524_2487 (degree
+1537), 28072.Nos7524_1372 (degree 1486) and 28072.Nos7524_3258 (degree
+1453).
 
 
 References
@@ -106,13 +108,15 @@ def NostocSp.Pcc7524(
 	
 	Datetime: 2021-02-02 17:55:36.471671
 	
-	The undirected graph Nostoc sp. PCC7524 has 5288 nodes and 494068 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03534 and
-	has 22 connected components, where the component with most nodes has 5237 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 186.86, and the node degree mode is 1. The top 5 most central
-	nodes are 28072.Nos7524_0537 (degree 1674), 28072.Nos7524_1724 (degree 1631), 28072.Nos7524_2487
-	(degree 1537), 28072.Nos7524_1372 (degree 1486) and 28072.Nos7524_3258 (degree 1453).
+	The undirected graph Nostoc sp. PCC7524 has 5288 nodes and 494068 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03534 and has 22 connected components, where the component with most
+	nodes has 5237 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 186.86, and
+	the node degree mode is 1. The top 5 most central nodes are 28072.Nos7524_0537
+	(degree 1674), 28072.Nos7524_1724 (degree 1631), 28072.Nos7524_2487 (degree
+	1537), 28072.Nos7524_1372 (degree 1486) and 28072.Nos7524_3258 (degree
+	1453).
 	
 
 

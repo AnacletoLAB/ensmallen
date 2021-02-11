@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:10.732958
 
-The undirected graph Bartonella sp. DB56 has 1896 nodes and 131698 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07331 and
-has 12 connected components, where the component with most nodes has 1859 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 138.92, and the node degree mode is 2. The top 5 most central
-nodes are 1094755.MCO_00371 (degree 723), 1094755.MCO_00083 (degree 653), 1094755.MCO_00116
-(degree 595), 1094755.MCO_00081 (degree 584) and 1094755.MCO_01394 (degree 576).
+The undirected graph Bartonella sp. DB56 has 1896 nodes and 131698 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07331 and has 12 connected components, where the component with most
+nodes has 1859 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 138.92, and
+the node degree mode is 2. The top 5 most central nodes are 1094755.MCO_00371
+(degree 723), 1094755.MCO_00083 (degree 653), 1094755.MCO_00116 (degree
+595), 1094755.MCO_00081 (degree 584) and 1094755.MCO_01394 (degree 576).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaSp.Db56(
 	
 	Datetime: 2021-02-02 22:23:10.732958
 	
-	The undirected graph Bartonella sp. DB56 has 1896 nodes and 131698 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07331 and
-	has 12 connected components, where the component with most nodes has 1859 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 138.92, and the node degree mode is 2. The top 5 most central
-	nodes are 1094755.MCO_00371 (degree 723), 1094755.MCO_00083 (degree 653), 1094755.MCO_00116
-	(degree 595), 1094755.MCO_00081 (degree 584) and 1094755.MCO_01394 (degree 576).
+	The undirected graph Bartonella sp. DB56 has 1896 nodes and 131698 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07331 and has 12 connected components, where the component with most
+	nodes has 1859 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 138.92, and
+	the node degree mode is 2. The top 5 most central nodes are 1094755.MCO_00371
+	(degree 723), 1094755.MCO_00083 (degree 653), 1094755.MCO_00116 (degree
+	595), 1094755.MCO_00081 (degree 584) and 1094755.MCO_01394 (degree 576).
 	
 
 

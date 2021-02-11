@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:00.219777
 
-The undirected graph Propionibacterium sp. F0372 has 2499 nodes and 164310 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05264
-and has 14 connected components, where the component with most nodes has 2468 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 131.50, and the node degree mode is 6. The top 5
-most central nodes are 1203605.HMPREF1531_01940 (degree 953), 1203605.HMPREF1531_01889
-(degree 812), 1203605.HMPREF1531_01660 (degree 804), 1203605.HMPREF1531_01150 (degree
-766) and 1203605.HMPREF1531_02386 (degree 660).
+The undirected graph Propionibacterium sp. F0372 has 2499 nodes and 164310
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05264 and has 14 connected components, where the component
+with most nodes has 2468 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 131.50,
+and the node degree mode is 6. The top 5 most central nodes are 1203605.HMPREF1531_01940
+(degree 953), 1203605.HMPREF1531_01889 (degree 812), 1203605.HMPREF1531_01660
+(degree 804), 1203605.HMPREF1531_01150 (degree 766) and 1203605.HMPREF1531_02386
+(degree 660).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumSp.F0372(
 	
 	Datetime: 2021-02-02 23:15:00.219777
 	
-	The undirected graph Propionibacterium sp. F0372 has 2499 nodes and 164310 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05264
-	and has 14 connected components, where the component with most nodes has 2468 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 131.50, and the node degree mode is 6. The top 5
-	most central nodes are 1203605.HMPREF1531_01940 (degree 953), 1203605.HMPREF1531_01889
-	(degree 812), 1203605.HMPREF1531_01660 (degree 804), 1203605.HMPREF1531_01150 (degree
-	766) and 1203605.HMPREF1531_02386 (degree 660).
+	The undirected graph Propionibacterium sp. F0372 has 2499 nodes and 164310
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05264 and has 14 connected components, where the component
+	with most nodes has 2468 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 131.50,
+	and the node degree mode is 6. The top 5 most central nodes are 1203605.HMPREF1531_01940
+	(degree 953), 1203605.HMPREF1531_01889 (degree 812), 1203605.HMPREF1531_01660
+	(degree 804), 1203605.HMPREF1531_01150 (degree 766) and 1203605.HMPREF1531_02386
+	(degree 660).
 	
 
 

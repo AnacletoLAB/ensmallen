@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:13.072671
 
-The undirected graph Rhodobacter sphaeroides ATCC17025 has 3210 nodes and 370972
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07203 and has 7 connected components, where the component with most nodes has
-3191 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 198, the mean node degree is 231.14, and the node degree mode is 3. The
-top 5 most central nodes are 349102.Rsph17025_0200 (degree 1513), 349102.Rsph17025_1867
-(degree 1236), 349102.Rsph17025_1152 (degree 1173), 349102.Rsph17025_1674 (degree
+The undirected graph Rhodobacter sphaeroides ATCC17025 has 3210 nodes and
+370972 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07203 and has 7 connected components, where the
+component with most nodes has 3191 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+is 231.14, and the node degree mode is 3. The top 5 most central nodes
+are 349102.Rsph17025_0200 (degree 1513), 349102.Rsph17025_1867 (degree
+1236), 349102.Rsph17025_1152 (degree 1173), 349102.Rsph17025_1674 (degree
 1159) and 349102.Rsph17025_2781 (degree 1133).
 
 
@@ -107,13 +108,14 @@ def RhodobacterSphaeroidesAtcc17025(
 	
 	Datetime: 2021-02-02 20:32:13.072671
 	
-	The undirected graph Rhodobacter sphaeroides ATCC17025 has 3210 nodes and 370972
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07203 and has 7 connected components, where the component with most nodes has
-	3191 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 198, the mean node degree is 231.14, and the node degree mode is 3. The
-	top 5 most central nodes are 349102.Rsph17025_0200 (degree 1513), 349102.Rsph17025_1867
-	(degree 1236), 349102.Rsph17025_1152 (degree 1173), 349102.Rsph17025_1674 (degree
+	The undirected graph Rhodobacter sphaeroides ATCC17025 has 3210 nodes and
+	370972 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07203 and has 7 connected components, where the
+	component with most nodes has 3191 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+	is 231.14, and the node degree mode is 3. The top 5 most central nodes
+	are 349102.Rsph17025_0200 (degree 1513), 349102.Rsph17025_1867 (degree
+	1236), 349102.Rsph17025_1152 (degree 1173), 349102.Rsph17025_1674 (degree
 	1159) and 349102.Rsph17025_2781 (degree 1133).
 	
 

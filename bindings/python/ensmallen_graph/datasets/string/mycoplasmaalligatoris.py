@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:23.180201
 
-The undirected graph Mycoplasma alligatoris has 789 nodes and 36379 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11702
-and has 9 connected components, where the component with most nodes has 771 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 65, the mean node degree is 92.22, and the node degree mode is 2. The top 5 most
-central nodes are 747682.MALL_0711 (degree 328), 747682.MALL_0169 (degree 308), 747682.MALL_0314
-(degree 294), 747682.MALL_0220 (degree 286) and 747682.MALL_0334 (degree 283).
+The undirected graph Mycoplasma alligatoris has 789 nodes and 36379 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11702 and has 9 connected components, where the component
+with most nodes has 771 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 65, the mean node degree is 92.22,
+and the node degree mode is 2. The top 5 most central nodes are 747682.MALL_0711
+(degree 328), 747682.MALL_0169 (degree 308), 747682.MALL_0314 (degree 294),
+747682.MALL_0220 (degree 286) and 747682.MALL_0334 (degree 283).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaAlligatoris(
 	
 	Datetime: 2021-02-02 21:39:23.180201
 	
-	The undirected graph Mycoplasma alligatoris has 789 nodes and 36379 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11702
-	and has 9 connected components, where the component with most nodes has 771 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 65, the mean node degree is 92.22, and the node degree mode is 2. The top 5 most
-	central nodes are 747682.MALL_0711 (degree 328), 747682.MALL_0169 (degree 308), 747682.MALL_0314
-	(degree 294), 747682.MALL_0220 (degree 286) and 747682.MALL_0334 (degree 283).
+	The undirected graph Mycoplasma alligatoris has 789 nodes and 36379 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11702 and has 9 connected components, where the component
+	with most nodes has 771 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 65, the mean node degree is 92.22,
+	and the node degree mode is 2. The top 5 most central nodes are 747682.MALL_0711
+	(degree 328), 747682.MALL_0169 (degree 308), 747682.MALL_0314 (degree 294),
+	747682.MALL_0220 (degree 286) and 747682.MALL_0334 (degree 283).
 	
 
 

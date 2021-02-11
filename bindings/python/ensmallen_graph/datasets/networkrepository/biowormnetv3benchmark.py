@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:25.528480
 
-The undirected graph bio-WormNet-v3-benchmark has 2445 nodes and 78736 unweighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02635
-and has 46 connected components, where the component with most nodes has 2274 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 56, the mean node degree is 64.41 and the node degree mode is 85. The top 5 most
-central nodes are 1867 (degree 347), 1866 (degree 347), 1863 (degree 347), 1860 (degree
-347) and 1840 (degree 347).
+The undirected graph bio-WormNet-v3-benchmark has 2445 nodes and 78736
+unweighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02635 and has 46 connected components, where the component
+with most nodes has 2274 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 56, the mean node degree is 64.41
+and the node degree mode is 85. The top 5 most central nodes are 1867 (degree
+347), 1866 (degree 347), 1863 (degree 347), 1860 (degree 347) and 1840
+(degree 347).
 
 
 References
@@ -114,13 +115,14 @@ def BioWormnetV3Benchmark(
 	
 	Datetime: 2021-02-03 22:30:25.528480
 	
-	The undirected graph bio-WormNet-v3-benchmark has 2445 nodes and 78736 unweighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02635
-	and has 46 connected components, where the component with most nodes has 2274 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 56, the mean node degree is 64.41 and the node degree mode is 85. The top 5 most
-	central nodes are 1867 (degree 347), 1866 (degree 347), 1863 (degree 347), 1860 (degree
-	347) and 1840 (degree 347).
+	The undirected graph bio-WormNet-v3-benchmark has 2445 nodes and 78736
+	unweighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02635 and has 46 connected components, where the component
+	with most nodes has 2274 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 56, the mean node degree is 64.41
+	and the node degree mode is 85. The top 5 most central nodes are 1867 (degree
+	347), 1866 (degree 347), 1863 (degree 347), 1860 (degree 347) and 1840
+	(degree 347).
 	
 
 

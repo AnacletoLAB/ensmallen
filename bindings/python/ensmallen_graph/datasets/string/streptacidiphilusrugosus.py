@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:26.185680
 
-The undirected graph Streptacidiphilus rugosus has 7937 nodes and 1197813 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03803
-and has 52 connected components, where the component with most nodes has 7807 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 301.83, and the node degree mode is 2. The top 5
-most central nodes are 981369.JQMJ01000004_gene5542 (degree 2294), 981369.JQMJ01000004_gene1869
-(degree 2169), 981369.JQMJ01000004_gene956 (degree 2088), 981369.JQMJ01000004_gene2580
-(degree 2042) and 981369.JQMJ01000004_gene1886 (degree 2000).
+The undirected graph Streptacidiphilus rugosus has 7937 nodes and 1197813
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03803 and has 52 connected components, where the component
+with most nodes has 7807 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 301.83,
+and the node degree mode is 2. The top 5 most central nodes are 981369.JQMJ01000004_gene5542
+(degree 2294), 981369.JQMJ01000004_gene1869 (degree 2169), 981369.JQMJ01000004_gene956
+(degree 2088), 981369.JQMJ01000004_gene2580 (degree 2042) and 981369.JQMJ01000004_gene1886
+(degree 2000).
 
 
 References
@@ -107,14 +108,15 @@ def StreptacidiphilusRugosus(
 	
 	Datetime: 2021-02-02 22:03:26.185680
 	
-	The undirected graph Streptacidiphilus rugosus has 7937 nodes and 1197813 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03803
-	and has 52 connected components, where the component with most nodes has 7807 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 301.83, and the node degree mode is 2. The top 5
-	most central nodes are 981369.JQMJ01000004_gene5542 (degree 2294), 981369.JQMJ01000004_gene1869
-	(degree 2169), 981369.JQMJ01000004_gene956 (degree 2088), 981369.JQMJ01000004_gene2580
-	(degree 2042) and 981369.JQMJ01000004_gene1886 (degree 2000).
+	The undirected graph Streptacidiphilus rugosus has 7937 nodes and 1197813
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03803 and has 52 connected components, where the component
+	with most nodes has 7807 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 301.83,
+	and the node degree mode is 2. The top 5 most central nodes are 981369.JQMJ01000004_gene5542
+	(degree 2294), 981369.JQMJ01000004_gene1869 (degree 2169), 981369.JQMJ01000004_gene956
+	(degree 2088), 981369.JQMJ01000004_gene2580 (degree 2042) and 981369.JQMJ01000004_gene1886
+	(degree 2000).
 	
 
 

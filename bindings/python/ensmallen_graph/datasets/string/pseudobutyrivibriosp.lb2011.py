@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:52.185448
 
-The undirected graph Pseudobutyrivibrio sp. LB2011 has 2511 nodes and 238818 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07578
-and has 9 connected components, where the component with most nodes has 2491 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 163, the mean node degree is 190.22, and the node degree mode is 6. The top 5
-most central nodes are 1408312.JNJS01000002_gene366 (degree 1131), 1408312.JNJS01000008_gene586
-(degree 1041), 1408312.JNJS01000004_gene2491 (degree 977), 1408312.JNJS01000006_gene903
-(degree 963) and 1408312.JNJS01000005_gene674 (degree 962).
+The undirected graph Pseudobutyrivibrio sp. LB2011 has 2511 nodes and 238818
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07578 and has 9 connected components, where the component
+with most nodes has 2491 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 163, the mean node degree is 190.22,
+and the node degree mode is 6. The top 5 most central nodes are 1408312.JNJS01000002_gene366
+(degree 1131), 1408312.JNJS01000008_gene586 (degree 1041), 1408312.JNJS01000004_gene2491
+(degree 977), 1408312.JNJS01000006_gene903 (degree 963) and 1408312.JNJS01000005_gene674
+(degree 962).
 
 
 References
@@ -107,14 +108,15 @@ def PseudobutyrivibrioSp.Lb2011(
 	
 	Datetime: 2021-02-03 22:34:52.185448
 	
-	The undirected graph Pseudobutyrivibrio sp. LB2011 has 2511 nodes and 238818 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07578
-	and has 9 connected components, where the component with most nodes has 2491 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 163, the mean node degree is 190.22, and the node degree mode is 6. The top 5
-	most central nodes are 1408312.JNJS01000002_gene366 (degree 1131), 1408312.JNJS01000008_gene586
-	(degree 1041), 1408312.JNJS01000004_gene2491 (degree 977), 1408312.JNJS01000006_gene903
-	(degree 963) and 1408312.JNJS01000005_gene674 (degree 962).
+	The undirected graph Pseudobutyrivibrio sp. LB2011 has 2511 nodes and 238818
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07578 and has 9 connected components, where the component
+	with most nodes has 2491 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 163, the mean node degree is 190.22,
+	and the node degree mode is 6. The top 5 most central nodes are 1408312.JNJS01000002_gene366
+	(degree 1131), 1408312.JNJS01000008_gene586 (degree 1041), 1408312.JNJS01000004_gene2491
+	(degree 977), 1408312.JNJS01000006_gene903 (degree 963) and 1408312.JNJS01000005_gene674
+	(degree 962).
 	
 
 

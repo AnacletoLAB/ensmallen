@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:45:58.558326
 
-The undirected graph Oceanicola sp. MCTG156 has 3694 nodes and 334243 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04900 and
-has 3 connected components, where the component with most nodes has 3690 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 180.97, and the node degree mode is 4. The top 5 most central
-nodes are 1415756.JQMY01000001_gene1274 (degree 1481), 1415756.JQMY01000001_gene2408
-(degree 1229), 1415756.JQMY01000001_gene3021 (degree 1079), 1415756.JQMY01000001_gene1520
-(degree 1065) and 1415756.JQMY01000001_gene1660 (degree 1061).
+The undirected graph Oceanicola sp. MCTG156 has 3694 nodes and 334243 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04900 and has 3 connected components, where the component with most
+nodes has 3690 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 180.97, and
+the node degree mode is 4. The top 5 most central nodes are 1415756.JQMY01000001_gene1274
+(degree 1481), 1415756.JQMY01000001_gene2408 (degree 1229), 1415756.JQMY01000001_gene3021
+(degree 1079), 1415756.JQMY01000001_gene1520 (degree 1065) and 1415756.JQMY01000001_gene1660
+(degree 1061).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicolaSp.Mctg156(
 	
 	Datetime: 2021-02-03 22:45:58.558326
 	
-	The undirected graph Oceanicola sp. MCTG156 has 3694 nodes and 334243 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04900 and
-	has 3 connected components, where the component with most nodes has 3690 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 180.97, and the node degree mode is 4. The top 5 most central
-	nodes are 1415756.JQMY01000001_gene1274 (degree 1481), 1415756.JQMY01000001_gene2408
-	(degree 1229), 1415756.JQMY01000001_gene3021 (degree 1079), 1415756.JQMY01000001_gene1520
-	(degree 1065) and 1415756.JQMY01000001_gene1660 (degree 1061).
+	The undirected graph Oceanicola sp. MCTG156 has 3694 nodes and 334243 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04900 and has 3 connected components, where the component with most
+	nodes has 3690 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 180.97, and
+	the node degree mode is 4. The top 5 most central nodes are 1415756.JQMY01000001_gene1274
+	(degree 1481), 1415756.JQMY01000001_gene2408 (degree 1229), 1415756.JQMY01000001_gene3021
+	(degree 1079), 1415756.JQMY01000001_gene1520 (degree 1065) and 1415756.JQMY01000001_gene1660
+	(degree 1061).
 	
 
 

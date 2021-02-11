@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:31:13.399082
 
-The undirected graph stufe-10 has 24010 nodes and 46414 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00016 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 3.87, and the node degree mode is 4. The top 5 most central nodes
-are 23998 (degree 4), 23994 (degree 4), 23990 (degree 4), 23989 (degree 4) and 23988
-(degree 4).
+The undirected graph stufe-10 has 24010 nodes and 46414 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00016 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 3.87, and the node degree mode
+is 4. The top 5 most central nodes are 23998 (degree 4), 23994 (degree
+4), 23990 (degree 4), 23989 (degree 4) and 23988 (degree 4).
 
 
 References
@@ -102,12 +102,12 @@ def Stufe10(
 	
 	Datetime: 2021-02-06 10:31:13.399082
 	
-	The undirected graph stufe-10 has 24010 nodes and 46414 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00016 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 3.87, and the node degree mode is 4. The top 5 most central nodes
-	are 23998 (degree 4), 23994 (degree 4), 23990 (degree 4), 23989 (degree 4) and 23988
-	(degree 4).
+	The undirected graph stufe-10 has 24010 nodes and 46414 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00016 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 3.87, and the node degree mode
+	is 4. The top 5 most central nodes are 23998 (degree 4), 23994 (degree
+	4), 23990 (degree 4), 23989 (degree 4) and 23988 (degree 4).
 	
 
 

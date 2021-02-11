@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:53.662274
 
-The undirected graph Anaerococcus tetradius has 2054 nodes and 136576 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06478 and
-has 10 connected components, where the component with most nodes has 2033 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 132.99, and the node degree mode is 5. The top 5 most central
-nodes are 525255.HMPREF0077_0685 (degree 931), 525255.HMPREF0077_0103 (degree 875),
-525255.HMPREF0077_1392 (degree 872), 525255.HMPREF0077_0104 (degree 830) and 525255.HMPREF0077_0820
+The undirected graph Anaerococcus tetradius has 2054 nodes and 136576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06478 and has 10 connected components, where the component with most
+nodes has 2033 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 132.99, and
+the node degree mode is 5. The top 5 most central nodes are 525255.HMPREF0077_0685
+(degree 931), 525255.HMPREF0077_0103 (degree 875), 525255.HMPREF0077_1392
+(degree 872), 525255.HMPREF0077_0104 (degree 830) and 525255.HMPREF0077_0820
 (degree 725).
 
 
@@ -107,13 +108,14 @@ def AnaerococcusTetradius(
 	
 	Datetime: 2021-02-02 21:04:53.662274
 	
-	The undirected graph Anaerococcus tetradius has 2054 nodes and 136576 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06478 and
-	has 10 connected components, where the component with most nodes has 2033 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 132.99, and the node degree mode is 5. The top 5 most central
-	nodes are 525255.HMPREF0077_0685 (degree 931), 525255.HMPREF0077_0103 (degree 875),
-	525255.HMPREF0077_1392 (degree 872), 525255.HMPREF0077_0104 (degree 830) and 525255.HMPREF0077_0820
+	The undirected graph Anaerococcus tetradius has 2054 nodes and 136576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06478 and has 10 connected components, where the component with most
+	nodes has 2033 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 132.99, and
+	the node degree mode is 5. The top 5 most central nodes are 525255.HMPREF0077_0685
+	(degree 931), 525255.HMPREF0077_0103 (degree 875), 525255.HMPREF0077_1392
+	(degree 872), 525255.HMPREF0077_0104 (degree 830) and 525255.HMPREF0077_0820
 	(degree 725).
 	
 

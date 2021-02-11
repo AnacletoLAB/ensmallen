@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:23.084403
 
-The undirected graph Flavobacterium subsaxonicum has 3739 nodes and 299549 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04287
-and has 21 connected components, where the component with most nodes has 3684 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 160.23, and the node degree mode is 3. The top 5
-most central nodes are 1121898.Q766_03700 (degree 1244), 1121898.Q766_07225 (degree
-1033), 1121898.Q766_18945 (degree 964), 1121898.Q766_12365 (degree 938) and 1121898.Q766_02970
-(degree 928).
+The undirected graph Flavobacterium subsaxonicum has 3739 nodes and 299549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04287 and has 21 connected components, where the component
+with most nodes has 3684 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 160.23,
+and the node degree mode is 3. The top 5 most central nodes are 1121898.Q766_03700
+(degree 1244), 1121898.Q766_07225 (degree 1033), 1121898.Q766_18945 (degree
+964), 1121898.Q766_12365 (degree 938) and 1121898.Q766_02970 (degree 928).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumSubsaxonicum(
 	
 	Datetime: 2021-02-02 22:38:23.084403
 	
-	The undirected graph Flavobacterium subsaxonicum has 3739 nodes and 299549 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04287
-	and has 21 connected components, where the component with most nodes has 3684 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 160.23, and the node degree mode is 3. The top 5
-	most central nodes are 1121898.Q766_03700 (degree 1244), 1121898.Q766_07225 (degree
-	1033), 1121898.Q766_18945 (degree 964), 1121898.Q766_12365 (degree 938) and 1121898.Q766_02970
-	(degree 928).
+	The undirected graph Flavobacterium subsaxonicum has 3739 nodes and 299549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04287 and has 21 connected components, where the component
+	with most nodes has 3684 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 160.23,
+	and the node degree mode is 3. The top 5 most central nodes are 1121898.Q766_03700
+	(degree 1244), 1121898.Q766_07225 (degree 1033), 1121898.Q766_18945 (degree
+	964), 1121898.Q766_12365 (degree 938) and 1121898.Q766_02970 (degree 928).
 	
 
 

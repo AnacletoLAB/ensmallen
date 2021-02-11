@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:17.448175
 
-The undirected graph Pseudomonas nitroreducens TX1 has 5718 nodes and 872082 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05335
-and has 30 connected components, where the component with most nodes has 5643 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 305.03, and the node degree mode is 1. The top 5
-most central nodes are 1226994.AMZB01000134_gene4509 (degree 2376), 1226994.AMZB01000108_gene1862
-(degree 2213), 1226994.AMZB01000111_gene1970 (degree 2194), 1226994.AMZB01000124_gene3063
-(degree 2026) and 1226994.AMZB01000117_gene2623 (degree 2024).
+The undirected graph Pseudomonas nitroreducens TX1 has 5718 nodes and 872082
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05335 and has 30 connected components, where the component
+with most nodes has 5643 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 247, the mean node degree is 305.03,
+and the node degree mode is 1. The top 5 most central nodes are 1226994.AMZB01000134_gene4509
+(degree 2376), 1226994.AMZB01000108_gene1862 (degree 2213), 1226994.AMZB01000111_gene1970
+(degree 2194), 1226994.AMZB01000124_gene3063 (degree 2026) and 1226994.AMZB01000117_gene2623
+(degree 2024).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasNitroreducensTx1(
 	
 	Datetime: 2021-02-02 23:25:17.448175
 	
-	The undirected graph Pseudomonas nitroreducens TX1 has 5718 nodes and 872082 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05335
-	and has 30 connected components, where the component with most nodes has 5643 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 305.03, and the node degree mode is 1. The top 5
-	most central nodes are 1226994.AMZB01000134_gene4509 (degree 2376), 1226994.AMZB01000108_gene1862
-	(degree 2213), 1226994.AMZB01000111_gene1970 (degree 2194), 1226994.AMZB01000124_gene3063
-	(degree 2026) and 1226994.AMZB01000117_gene2623 (degree 2024).
+	The undirected graph Pseudomonas nitroreducens TX1 has 5718 nodes and 872082
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05335 and has 30 connected components, where the component
+	with most nodes has 5643 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 247, the mean node degree is 305.03,
+	and the node degree mode is 1. The top 5 most central nodes are 1226994.AMZB01000134_gene4509
+	(degree 2376), 1226994.AMZB01000108_gene1862 (degree 2213), 1226994.AMZB01000111_gene1970
+	(degree 2194), 1226994.AMZB01000124_gene3063 (degree 2026) and 1226994.AMZB01000117_gene2623
+	(degree 2024).
 	
 
 

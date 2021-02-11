@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:32.868385
 
-The undirected graph Bacteroides thetaiotaomicron has 4786 nodes and 714738 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06242
-and has 19 connected components, where the component with most nodes has 4736 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 274, the mean node degree is 298.68, and the node degree mode is 3. The top 5
-most central nodes are 226186.BT_1833 (degree 1669), 226186.BT_3260 (degree 1589),
-226186.BT_2826 (degree 1555), 226186.BT_4602 (degree 1489) and 226186.BT_3805 (degree
-1476).
+The undirected graph Bacteroides thetaiotaomicron has 4786 nodes and 714738
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06242 and has 19 connected components, where the component
+with most nodes has 4736 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 274, the mean node degree is 298.68,
+and the node degree mode is 3. The top 5 most central nodes are 226186.BT_1833
+(degree 1669), 226186.BT_3260 (degree 1589), 226186.BT_2826 (degree 1555),
+226186.BT_4602 (degree 1489) and 226186.BT_3805 (degree 1476).
 
 
 References
@@ -107,14 +107,14 @@ def BacteroidesThetaiotaomicron(
 	
 	Datetime: 2021-02-02 20:06:32.868385
 	
-	The undirected graph Bacteroides thetaiotaomicron has 4786 nodes and 714738 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06242
-	and has 19 connected components, where the component with most nodes has 4736 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 274, the mean node degree is 298.68, and the node degree mode is 3. The top 5
-	most central nodes are 226186.BT_1833 (degree 1669), 226186.BT_3260 (degree 1589),
-	226186.BT_2826 (degree 1555), 226186.BT_4602 (degree 1489) and 226186.BT_3805 (degree
-	1476).
+	The undirected graph Bacteroides thetaiotaomicron has 4786 nodes and 714738
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06242 and has 19 connected components, where the component
+	with most nodes has 4736 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 274, the mean node degree is 298.68,
+	and the node degree mode is 3. The top 5 most central nodes are 226186.BT_1833
+	(degree 1669), 226186.BT_3260 (degree 1589), 226186.BT_2826 (degree 1555),
+	226186.BT_4602 (degree 1489) and 226186.BT_3805 (degree 1476).
 	
 
 

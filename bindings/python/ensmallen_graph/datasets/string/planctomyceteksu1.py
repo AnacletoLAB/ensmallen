@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:32.993754
 
-The undirected graph planctomycete KSU1 has 3538 nodes and 275282 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04400 and
-has 31 connected components, where the component with most nodes has 3460 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 155.61, and the node degree mode is 1. The top 5 most central
-nodes are 247490.KSU1_C0988 (degree 1034), 247490.KSU1_C1633 (degree 1009), 247490.KSU1_B0668
-(degree 984), 247490.KSU1_C0753 (degree 883) and 247490.KSU1_C1631 (degree 824).
+The undirected graph planctomycete KSU1 has 3538 nodes and 275282 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04400 and has 31 connected components, where the component with most
+nodes has 3460 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 155.61, and
+the node degree mode is 1. The top 5 most central nodes are 247490.KSU1_C0988
+(degree 1034), 247490.KSU1_C1633 (degree 1009), 247490.KSU1_B0668 (degree
+984), 247490.KSU1_C0753 (degree 883) and 247490.KSU1_C1631 (degree 824).
 
 
 References
@@ -106,13 +107,14 @@ def PlanctomyceteKsu1(
 	
 	Datetime: 2021-02-02 20:11:32.993754
 	
-	The undirected graph planctomycete KSU1 has 3538 nodes and 275282 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04400 and
-	has 31 connected components, where the component with most nodes has 3460 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 155.61, and the node degree mode is 1. The top 5 most central
-	nodes are 247490.KSU1_C0988 (degree 1034), 247490.KSU1_C1633 (degree 1009), 247490.KSU1_B0668
-	(degree 984), 247490.KSU1_C0753 (degree 883) and 247490.KSU1_C1631 (degree 824).
+	The undirected graph planctomycete KSU1 has 3538 nodes and 275282 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04400 and has 31 connected components, where the component with most
+	nodes has 3460 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 155.61, and
+	the node degree mode is 1. The top 5 most central nodes are 247490.KSU1_C0988
+	(degree 1034), 247490.KSU1_C1633 (degree 1009), 247490.KSU1_B0668 (degree
+	984), 247490.KSU1_C0753 (degree 883) and 247490.KSU1_C1631 (degree 824).
 	
 
 

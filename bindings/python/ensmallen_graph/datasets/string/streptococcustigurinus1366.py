@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:11:43.197239
 
-The undirected graph Streptococcus tigurinus 1366 has 1819 nodes and 133480 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08073
-and has 7 connected components, where the component with most nodes has 1805 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 146.76, and the node degree mode is 13. The top 5
-most central nodes are 1282665.H353_03395 (degree 867), 1282665.H353_03585 (degree
-745), 1282665.H353_06013 (degree 714), 1282665.H353_09158 (degree 704) and 1282665.H353_01490
-(degree 663).
+The undirected graph Streptococcus tigurinus 1366 has 1819 nodes and 133480
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08073 and has 7 connected components, where the component
+with most nodes has 1805 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 146.76,
+and the node degree mode is 13. The top 5 most central nodes are 1282665.H353_03395
+(degree 867), 1282665.H353_03585 (degree 745), 1282665.H353_06013 (degree
+714), 1282665.H353_09158 (degree 704) and 1282665.H353_01490 (degree 663).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusTigurinus1366(
 	
 	Datetime: 2021-02-03 21:11:43.197239
 	
-	The undirected graph Streptococcus tigurinus 1366 has 1819 nodes and 133480 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08073
-	and has 7 connected components, where the component with most nodes has 1805 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 146.76, and the node degree mode is 13. The top 5
-	most central nodes are 1282665.H353_03395 (degree 867), 1282665.H353_03585 (degree
-	745), 1282665.H353_06013 (degree 714), 1282665.H353_09158 (degree 704) and 1282665.H353_01490
-	(degree 663).
+	The undirected graph Streptococcus tigurinus 1366 has 1819 nodes and 133480
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08073 and has 7 connected components, where the component
+	with most nodes has 1805 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 146.76,
+	and the node degree mode is 13. The top 5 most central nodes are 1282665.H353_03395
+	(degree 867), 1282665.H353_03585 (degree 745), 1282665.H353_06013 (degree
+	714), 1282665.H353_09158 (degree 704) and 1282665.H353_01490 (degree 663).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:30.077480
 
-The undirected graph Shewanella violacea has 4262 nodes and 312198 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03438 and
-has 33 connected components, where the component with most nodes has 4186 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 146.50, and the node degree mode is 1. The top 5 most central
-nodes are 637905.SVI_0088 (degree 1263), 637905.SVI_1329 (degree 1177), 637905.SVI_3681
-(degree 1069), 637905.SVI_2579 (degree 1002) and 637905.SVI_1384 (degree 973).
+The undirected graph Shewanella violacea has 4262 nodes and 312198 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03438 and has 33 connected components, where the component with most
+nodes has 4186 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 146.50, and
+the node degree mode is 1. The top 5 most central nodes are 637905.SVI_0088
+(degree 1263), 637905.SVI_1329 (degree 1177), 637905.SVI_3681 (degree 1069),
+637905.SVI_2579 (degree 1002) and 637905.SVI_1384 (degree 973).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaViolacea(
 	
 	Datetime: 2021-02-02 21:22:30.077480
 	
-	The undirected graph Shewanella violacea has 4262 nodes and 312198 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03438 and
-	has 33 connected components, where the component with most nodes has 4186 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 146.50, and the node degree mode is 1. The top 5 most central
-	nodes are 637905.SVI_0088 (degree 1263), 637905.SVI_1329 (degree 1177), 637905.SVI_3681
-	(degree 1069), 637905.SVI_2579 (degree 1002) and 637905.SVI_1384 (degree 973).
+	The undirected graph Shewanella violacea has 4262 nodes and 312198 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03438 and has 33 connected components, where the component with most
+	nodes has 4186 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 146.50, and
+	the node degree mode is 1. The top 5 most central nodes are 637905.SVI_0088
+	(degree 1263), 637905.SVI_1329 (degree 1177), 637905.SVI_3681 (degree 1069),
+	637905.SVI_2579 (degree 1002) and 637905.SVI_1384 (degree 973).
 	
 
 

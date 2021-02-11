@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:39.627903
 
-The undirected graph MANN-a81 has 3321 nodes and 5506380 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.99882
-and is connected, as it has a single component. The graph median node degree is 3317,
-the mean node degree is 3316.10 and the node degree mode is 3317. The top 5 most
-central nodes are 3321 (degree 3317), 3320 (degree 3317), 3319 (degree 3317), 3318
-(degree 3317) and 3317 (degree 3317).
+The undirected graph MANN-a81 has 3321 nodes and 5506380 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.99882 and is connected, as it has a single component. The
+graph median node degree is 3317, the mean node degree is 3316.10 and the
+node degree mode is 3317. The top 5 most central nodes are 3321 (degree
+3317), 3320 (degree 3317), 3319 (degree 3317), 3318 (degree 3317) and 3317
+(degree 3317).
 
 
 References
@@ -115,12 +116,13 @@ def MannA81(
 	
 	Datetime: 2021-02-03 22:53:39.627903
 	
-	The undirected graph MANN-a81 has 3321 nodes and 5506380 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.99882
-	and is connected, as it has a single component. The graph median node degree is 3317,
-	the mean node degree is 3316.10 and the node degree mode is 3317. The top 5 most
-	central nodes are 3321 (degree 3317), 3320 (degree 3317), 3319 (degree 3317), 3318
-	(degree 3317) and 3317 (degree 3317).
+	The undirected graph MANN-a81 has 3321 nodes and 5506380 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.99882 and is connected, as it has a single component. The
+	graph median node degree is 3317, the mean node degree is 3316.10 and the
+	node degree mode is 3317. The top 5 most central nodes are 3321 (degree
+	3317), 3320 (degree 3317), 3319 (degree 3317), 3318 (degree 3317) and 3317
+	(degree 3317).
 	
 
 

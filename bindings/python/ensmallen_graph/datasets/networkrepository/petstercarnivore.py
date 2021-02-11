@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:14:51.802455
 
-The undirected graph petster-carnivore has 623766 nodes, of which 18 are singletons
-(all have self-loops), and 15699276 unweighted edges, of which 4110 are self-loops.
-The graph is extremely sparse as it has a density of 0.00008 and has 8492 connected
-components, where the component with most nodes has 601213 nodes and the component
-with the least nodes has a single node. The graph median node degree is 15, the mean
-node degree is 50.33, and the node degree mode is 1. The top 5 most central nodes
-are 121863 (degree 80637), 121864 (degree 80470), 121862 (degree 80443), 57589 (degree
-78660) and 57593 (degree 78517).
+The undirected graph petster-carnivore has 623766 nodes, of which 18 are
+singletons (all have self-loops), and 15699276 unweighted edges, of which
+4110 are self-loops. The graph is extremely sparse as it has a density
+of 0.00008 and has 8492 connected components, where the component with
+most nodes has 601213 nodes and the component with the least nodes has
+a single node. The graph median node degree is 15, the mean node degree
+is 50.33, and the node degree mode is 1. The top 5 most central nodes are
+121863 (degree 80637), 121864 (degree 80470), 121862 (degree 80443), 57589
+(degree 78660) and 57593 (degree 78517).
 
 
 References
@@ -104,14 +105,15 @@ def PetsterCarnivore(
 	
 	Datetime: 2021-02-06 12:14:51.802455
 	
-	The undirected graph petster-carnivore has 623766 nodes, of which 18 are singletons
-	(all have self-loops), and 15699276 unweighted edges, of which 4110 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00008 and has 8492 connected
-	components, where the component with most nodes has 601213 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 15, the mean
-	node degree is 50.33, and the node degree mode is 1. The top 5 most central nodes
-	are 121863 (degree 80637), 121864 (degree 80470), 121862 (degree 80443), 57589 (degree
-	78660) and 57593 (degree 78517).
+	The undirected graph petster-carnivore has 623766 nodes, of which 18 are
+	singletons (all have self-loops), and 15699276 unweighted edges, of which
+	4110 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00008 and has 8492 connected components, where the component with
+	most nodes has 601213 nodes and the component with the least nodes has
+	a single node. The graph median node degree is 15, the mean node degree
+	is 50.33, and the node degree mode is 1. The top 5 most central nodes are
+	121863 (degree 80637), 121864 (degree 80470), 121862 (degree 80443), 57589
+	(degree 78660) and 57593 (degree 78517).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:59.568662
 
-The undirected graph Haliaeetus leucocephalus has 15008 nodes and 2333426 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02072
-and is connected, as it has a single component. The graph median node degree is 226,
-the mean node degree is 310.96, and the node degree mode is 1. The top 5 most central
-nodes are 52644.XP_010560609.1 (degree 3163), 52644.XP_010578917.1 (degree 3016),
-52644.XP_010578612.1 (degree 2938), 52644.XP_010571680.1 (degree 2854) and 52644.XP_010568963.1
+The undirected graph Haliaeetus leucocephalus has 15008 nodes and 2333426
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02072 and is connected, as it has a single component.
+The graph median node degree is 226, the mean node degree is 310.96, and
+the node degree mode is 1. The top 5 most central nodes are 52644.XP_010560609.1
+(degree 3163), 52644.XP_010578917.1 (degree 3016), 52644.XP_010578612.1
+(degree 2938), 52644.XP_010571680.1 (degree 2854) and 52644.XP_010568963.1
 (degree 2834).
 
 
@@ -106,12 +107,13 @@ def HaliaeetusLeucocephalus(
 	
 	Datetime: 2021-02-02 18:17:59.568662
 	
-	The undirected graph Haliaeetus leucocephalus has 15008 nodes and 2333426 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02072
-	and is connected, as it has a single component. The graph median node degree is 226,
-	the mean node degree is 310.96, and the node degree mode is 1. The top 5 most central
-	nodes are 52644.XP_010560609.1 (degree 3163), 52644.XP_010578917.1 (degree 3016),
-	52644.XP_010578612.1 (degree 2938), 52644.XP_010571680.1 (degree 2854) and 52644.XP_010568963.1
+	The undirected graph Haliaeetus leucocephalus has 15008 nodes and 2333426
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02072 and is connected, as it has a single component.
+	The graph median node degree is 226, the mean node degree is 310.96, and
+	the node degree mode is 1. The top 5 most central nodes are 52644.XP_010560609.1
+	(degree 3163), 52644.XP_010578917.1 (degree 3016), 52644.XP_010578612.1
+	(degree 2938), 52644.XP_010571680.1 (degree 2854) and 52644.XP_010568963.1
 	(degree 2834).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:23.963409
 
-The undirected graph Enhygromyxa salina has 8741 nodes and 1465137 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03836 and
-has 78 connected components, where the component with most nodes has 8561 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 255,
-the mean node degree is 335.23, and the node degree mode is 2. The top 5 most central
-nodes are 215803.DB30_8694 (degree 3795), 215803.DB30_4749 (degree 3411), 215803.DB30_3423
-(degree 3313), 215803.DB30_0846 (degree 3247) and 215803.DB30_1197 (degree 3045).
+The undirected graph Enhygromyxa salina has 8741 nodes and 1465137 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03836 and has 78 connected components, where the component with most
+nodes has 8561 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 255, the mean node degree is 335.23, and
+the node degree mode is 2. The top 5 most central nodes are 215803.DB30_8694
+(degree 3795), 215803.DB30_4749 (degree 3411), 215803.DB30_3423 (degree
+3313), 215803.DB30_0846 (degree 3247) and 215803.DB30_1197 (degree 3045).
 
 
 References
@@ -106,13 +107,14 @@ def EnhygromyxaSalina(
 	
 	Datetime: 2021-02-02 20:02:23.963409
 	
-	The undirected graph Enhygromyxa salina has 8741 nodes and 1465137 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03836 and
-	has 78 connected components, where the component with most nodes has 8561 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 255,
-	the mean node degree is 335.23, and the node degree mode is 2. The top 5 most central
-	nodes are 215803.DB30_8694 (degree 3795), 215803.DB30_4749 (degree 3411), 215803.DB30_3423
-	(degree 3313), 215803.DB30_0846 (degree 3247) and 215803.DB30_1197 (degree 3045).
+	The undirected graph Enhygromyxa salina has 8741 nodes and 1465137 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03836 and has 78 connected components, where the component with most
+	nodes has 8561 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 255, the mean node degree is 335.23, and
+	the node degree mode is 2. The top 5 most central nodes are 215803.DB30_8694
+	(degree 3795), 215803.DB30_4749 (degree 3411), 215803.DB30_3423 (degree
+	3313), 215803.DB30_0846 (degree 3247) and 215803.DB30_1197 (degree 3045).
 	
 
 

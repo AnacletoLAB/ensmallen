@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:09.171164
 
-The undirected graph Chlorobium tepidum has 2209 nodes and 138718 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05688 and
-has 13 connected components, where the component with most nodes has 2182 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 125.59, and the node degree mode is 3. The top 5 most central
-nodes are 194439.CT1667 (degree 883), 194439.CT0175 (degree 685), 194439.CT1628 (degree
-675), 194439.CT0969 (degree 655) and 194439.CT2009 (degree 624).
+The undirected graph Chlorobium tepidum has 2209 nodes and 138718 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05688 and has 13 connected components, where the component with most
+nodes has 2182 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 125.59, and
+the node degree mode is 3. The top 5 most central nodes are 194439.CT1667
+(degree 883), 194439.CT0175 (degree 685), 194439.CT1628 (degree 675), 194439.CT0969
+(degree 655) and 194439.CT2009 (degree 624).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorobiumTepidum(
 	
 	Datetime: 2021-02-02 19:58:09.171164
 	
-	The undirected graph Chlorobium tepidum has 2209 nodes and 138718 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05688 and
-	has 13 connected components, where the component with most nodes has 2182 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 125.59, and the node degree mode is 3. The top 5 most central
-	nodes are 194439.CT1667 (degree 883), 194439.CT0175 (degree 685), 194439.CT1628 (degree
-	675), 194439.CT0969 (degree 655) and 194439.CT2009 (degree 624).
+	The undirected graph Chlorobium tepidum has 2209 nodes and 138718 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05688 and has 13 connected components, where the component with most
+	nodes has 2182 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 125.59, and
+	the node degree mode is 3. The top 5 most central nodes are 194439.CT1667
+	(degree 883), 194439.CT0175 (degree 685), 194439.CT1628 (degree 675), 194439.CT0969
+	(degree 655) and 194439.CT2009 (degree 624).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:14.243076
 
-The undirected graph Histoplasma capsulatum has 5748 nodes and 476141 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02883 and
-has 26 connected components, where the component with most nodes has 5697 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 165.67, and the node degree mode is 1. The top 5 most central
-nodes are 5037.XP_001543702.1 (degree 1389), 5037.XP_001543467.1 (degree 1371), 5037.XP_001542257.1
-(degree 1214), 5037.XP_001540601.1 (degree 1158) and 5037.XP_001539443.1 (degree
+The undirected graph Histoplasma capsulatum has 5748 nodes and 476141 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02883 and has 26 connected components, where the component with most
+nodes has 5697 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 165.67, and
+the node degree mode is 1. The top 5 most central nodes are 5037.XP_001543702.1
+(degree 1389), 5037.XP_001543467.1 (degree 1371), 5037.XP_001542257.1 (degree
+1214), 5037.XP_001540601.1 (degree 1158) and 5037.XP_001539443.1 (degree
 1150).
 
 
@@ -107,13 +108,14 @@ def HistoplasmaCapsulatum(
 	
 	Datetime: 2021-02-02 17:12:14.243076
 	
-	The undirected graph Histoplasma capsulatum has 5748 nodes and 476141 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02883 and
-	has 26 connected components, where the component with most nodes has 5697 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 165.67, and the node degree mode is 1. The top 5 most central
-	nodes are 5037.XP_001543702.1 (degree 1389), 5037.XP_001543467.1 (degree 1371), 5037.XP_001542257.1
-	(degree 1214), 5037.XP_001540601.1 (degree 1158) and 5037.XP_001539443.1 (degree
+	The undirected graph Histoplasma capsulatum has 5748 nodes and 476141 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02883 and has 26 connected components, where the component with most
+	nodes has 5697 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 165.67, and
+	the node degree mode is 1. The top 5 most central nodes are 5037.XP_001543702.1
+	(degree 1389), 5037.XP_001543467.1 (degree 1371), 5037.XP_001542257.1 (degree
+	1214), 5037.XP_001540601.1 (degree 1158) and 5037.XP_001539443.1 (degree
 	1150).
 	
 

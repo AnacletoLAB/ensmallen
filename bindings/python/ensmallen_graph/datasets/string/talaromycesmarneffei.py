@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:59.792023
 
-The undirected graph Talaromyces marneffei has 7521 nodes and 746856 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02641 and
-has 21 connected components, where the component with most nodes has 7475 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 198.61, and the node degree mode is 1. The top 5 most central
-nodes are 37727.XP_002146213.1 (degree 1834), 37727.XP_002151173.1 (degree 1715),
-37727.XP_002148836.1 (degree 1595), 37727.XP_002143991.1 (degree 1544) and 37727.XP_002151104.1
+The undirected graph Talaromyces marneffei has 7521 nodes and 746856 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02641 and has 21 connected components, where the component with most
+nodes has 7475 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 198.61, and
+the node degree mode is 1. The top 5 most central nodes are 37727.XP_002146213.1
+(degree 1834), 37727.XP_002151173.1 (degree 1715), 37727.XP_002148836.1
+(degree 1595), 37727.XP_002143991.1 (degree 1544) and 37727.XP_002151104.1
 (degree 1518).
 
 
@@ -107,13 +108,14 @@ def TalaromycesMarneffei(
 	
 	Datetime: 2021-02-02 18:06:59.792023
 	
-	The undirected graph Talaromyces marneffei has 7521 nodes and 746856 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02641 and
-	has 21 connected components, where the component with most nodes has 7475 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 198.61, and the node degree mode is 1. The top 5 most central
-	nodes are 37727.XP_002146213.1 (degree 1834), 37727.XP_002151173.1 (degree 1715),
-	37727.XP_002148836.1 (degree 1595), 37727.XP_002143991.1 (degree 1544) and 37727.XP_002151104.1
+	The undirected graph Talaromyces marneffei has 7521 nodes and 746856 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02641 and has 21 connected components, where the component with most
+	nodes has 7475 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 198.61, and
+	the node degree mode is 1. The top 5 most central nodes are 37727.XP_002146213.1
+	(degree 1834), 37727.XP_002151173.1 (degree 1715), 37727.XP_002148836.1
+	(degree 1595), 37727.XP_002143991.1 (degree 1544) and 37727.XP_002151104.1
 	(degree 1518).
 	
 

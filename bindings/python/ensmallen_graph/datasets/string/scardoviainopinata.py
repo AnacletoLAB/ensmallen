@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:36.851771
 
-The undirected graph Scardovia inopinata has 1476 nodes and 107068 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09836 and
-has 7 connected components, where the component with most nodes has 1460 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 145.08, and the node degree mode is 10. The top 5 most central
-nodes are 641146.HMPREF9020_00364 (degree 725), 641146.HMPREF9020_00637 (degree 669),
-641146.HMPREF9020_00546 (degree 651), 641146.HMPREF9020_00083 (degree 646) and 641146.HMPREF9020_01386
+The undirected graph Scardovia inopinata has 1476 nodes and 107068 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09836 and has 7 connected components, where the component with most
+nodes has 1460 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 145.08, and
+the node degree mode is 10. The top 5 most central nodes are 641146.HMPREF9020_00364
+(degree 725), 641146.HMPREF9020_00637 (degree 669), 641146.HMPREF9020_00546
+(degree 651), 641146.HMPREF9020_00083 (degree 646) and 641146.HMPREF9020_01386
 (degree 636).
 
 
@@ -107,13 +108,14 @@ def ScardoviaInopinata(
 	
 	Datetime: 2021-02-02 21:23:36.851771
 	
-	The undirected graph Scardovia inopinata has 1476 nodes and 107068 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09836 and
-	has 7 connected components, where the component with most nodes has 1460 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 145.08, and the node degree mode is 10. The top 5 most central
-	nodes are 641146.HMPREF9020_00364 (degree 725), 641146.HMPREF9020_00637 (degree 669),
-	641146.HMPREF9020_00546 (degree 651), 641146.HMPREF9020_00083 (degree 646) and 641146.HMPREF9020_01386
+	The undirected graph Scardovia inopinata has 1476 nodes and 107068 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09836 and has 7 connected components, where the component with most
+	nodes has 1460 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 145.08, and
+	the node degree mode is 10. The top 5 most central nodes are 641146.HMPREF9020_00364
+	(degree 725), 641146.HMPREF9020_00637 (degree 669), 641146.HMPREF9020_00546
+	(degree 651), 641146.HMPREF9020_00083 (degree 646) and 641146.HMPREF9020_01386
 	(degree 636).
 	
 

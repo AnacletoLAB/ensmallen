@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:26.809479
 
-The undirected graph Pseudomonas rhizosphaerae has 3861 nodes and 270904 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03635
-and has 5 connected components, where the component with most nodes has 3851 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 113, the mean node degree is 140.33, and the node degree mode is 3. The top 5
-most central nodes are 216142.LT40_15960 (degree 1407), 216142.LT40_14450 (degree
-1116), 216142.LT40_05440 (degree 986), 216142.LT40_20540 (degree 961) and 216142.LT40_20535
-(degree 930).
+The undirected graph Pseudomonas rhizosphaerae has 3861 nodes and 270904
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03635 and has 5 connected components, where the component
+with most nodes has 3851 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 140.33,
+and the node degree mode is 3. The top 5 most central nodes are 216142.LT40_15960
+(degree 1407), 216142.LT40_14450 (degree 1116), 216142.LT40_05440 (degree
+986), 216142.LT40_20540 (degree 961) and 216142.LT40_20535 (degree 930).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasRhizosphaerae(
 	
 	Datetime: 2021-02-02 20:02:26.809479
 	
-	The undirected graph Pseudomonas rhizosphaerae has 3861 nodes and 270904 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03635
-	and has 5 connected components, where the component with most nodes has 3851 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 113, the mean node degree is 140.33, and the node degree mode is 3. The top 5
-	most central nodes are 216142.LT40_15960 (degree 1407), 216142.LT40_14450 (degree
-	1116), 216142.LT40_05440 (degree 986), 216142.LT40_20540 (degree 961) and 216142.LT40_20535
-	(degree 930).
+	The undirected graph Pseudomonas rhizosphaerae has 3861 nodes and 270904
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03635 and has 5 connected components, where the component
+	with most nodes has 3851 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 140.33,
+	and the node degree mode is 3. The top 5 most central nodes are 216142.LT40_15960
+	(degree 1407), 216142.LT40_14450 (degree 1116), 216142.LT40_05440 (degree
+	986), 216142.LT40_20540 (degree 961) and 216142.LT40_20535 (degree 930).
 	
 
 

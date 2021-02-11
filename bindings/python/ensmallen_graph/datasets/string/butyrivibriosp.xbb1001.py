@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:06:53.939174
 
-The undirected graph Butyrivibrio sp. XBB1001 has 3285 nodes and 399255 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07402
-and has 7 connected components, where the component with most nodes has 3267 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 222, the mean node degree is 243.08, and the node degree mode is 8. The top 5
-most central nodes are 1280682.AUKA01000002_gene847 (degree 1809), 1280682.AUKA01000006_gene2862
-(degree 1285), 1280682.AUKA01000002_gene899 (degree 1218), 1280682.AUKA01000015_gene2081
-(degree 1190) and 1280682.AUKA01000011_gene28 (degree 1186).
+The undirected graph Butyrivibrio sp. XBB1001 has 3285 nodes and 399255
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07402 and has 7 connected components, where the component
+with most nodes has 3267 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 222, the mean node degree is 243.08,
+and the node degree mode is 8. The top 5 most central nodes are 1280682.AUKA01000002_gene847
+(degree 1809), 1280682.AUKA01000006_gene2862 (degree 1285), 1280682.AUKA01000002_gene899
+(degree 1218), 1280682.AUKA01000015_gene2081 (degree 1190) and 1280682.AUKA01000011_gene28
+(degree 1186).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Xbb1001(
 	
 	Datetime: 2021-02-03 21:06:53.939174
 	
-	The undirected graph Butyrivibrio sp. XBB1001 has 3285 nodes and 399255 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07402
-	and has 7 connected components, where the component with most nodes has 3267 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 222, the mean node degree is 243.08, and the node degree mode is 8. The top 5
-	most central nodes are 1280682.AUKA01000002_gene847 (degree 1809), 1280682.AUKA01000006_gene2862
-	(degree 1285), 1280682.AUKA01000002_gene899 (degree 1218), 1280682.AUKA01000015_gene2081
-	(degree 1190) and 1280682.AUKA01000011_gene28 (degree 1186).
+	The undirected graph Butyrivibrio sp. XBB1001 has 3285 nodes and 399255
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07402 and has 7 connected components, where the component
+	with most nodes has 3267 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 222, the mean node degree is 243.08,
+	and the node degree mode is 8. The top 5 most central nodes are 1280682.AUKA01000002_gene847
+	(degree 1809), 1280682.AUKA01000006_gene2862 (degree 1285), 1280682.AUKA01000002_gene899
+	(degree 1218), 1280682.AUKA01000015_gene2081 (degree 1190) and 1280682.AUKA01000011_gene28
+	(degree 1186).
 	
 
 

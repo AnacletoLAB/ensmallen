@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:07.903202
 
-The undirected graph Deinococcus proteolyticus has 2073 nodes and 148800 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06929
-and has 7 connected components, where the component with most nodes has 2061 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 143.56, and the node degree mode is 3. The top 5
-most central nodes are 693977.Deipr_1042 (degree 865), 693977.Deipr_1562 (degree
-736), 693977.Deipr_0439 (degree 736), 693977.Deipr_1026 (degree 725) and 693977.Deipr_0177
-(degree 721).
+The undirected graph Deinococcus proteolyticus has 2073 nodes and 148800
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06929 and has 7 connected components, where the component
+with most nodes has 2061 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 143.56,
+and the node degree mode is 3. The top 5 most central nodes are 693977.Deipr_1042
+(degree 865), 693977.Deipr_1562 (degree 736), 693977.Deipr_0439 (degree
+736), 693977.Deipr_1026 (degree 725) and 693977.Deipr_0177 (degree 721).
 
 
 References
@@ -107,14 +107,14 @@ def DeinococcusProteolyticus(
 	
 	Datetime: 2021-02-02 21:32:07.903202
 	
-	The undirected graph Deinococcus proteolyticus has 2073 nodes and 148800 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06929
-	and has 7 connected components, where the component with most nodes has 2061 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 143.56, and the node degree mode is 3. The top 5
-	most central nodes are 693977.Deipr_1042 (degree 865), 693977.Deipr_1562 (degree
-	736), 693977.Deipr_0439 (degree 736), 693977.Deipr_1026 (degree 725) and 693977.Deipr_0177
-	(degree 721).
+	The undirected graph Deinococcus proteolyticus has 2073 nodes and 148800
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06929 and has 7 connected components, where the component
+	with most nodes has 2061 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 143.56,
+	and the node degree mode is 3. The top 5 most central nodes are 693977.Deipr_1042
+	(degree 865), 693977.Deipr_1562 (degree 736), 693977.Deipr_0439 (degree
+	736), 693977.Deipr_1026 (degree 725) and 693977.Deipr_0177 (degree 721).
 	
 
 

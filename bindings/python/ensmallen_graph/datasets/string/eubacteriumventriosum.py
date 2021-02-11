@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:14.294843
 
-The undirected graph Eubacterium ventriosum has 2700 nodes and 186320 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05114 and
-has 20 connected components, where the component with most nodes has 2644 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 138.01, and the node degree mode is 6. The top 5 most central
-nodes are 411463.EUBVEN_00621 (degree 987), 411463.EUBVEN_00328 (degree 939), 411463.EUBVEN_01043
-(degree 794), 411463.EUBVEN_01997 (degree 754) and 411463.EUBVEN_00242 (degree 705).
+The undirected graph Eubacterium ventriosum has 2700 nodes and 186320 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05114 and has 20 connected components, where the component with most
+nodes has 2644 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 138.01, and
+the node degree mode is 6. The top 5 most central nodes are 411463.EUBVEN_00621
+(degree 987), 411463.EUBVEN_00328 (degree 939), 411463.EUBVEN_01043 (degree
+794), 411463.EUBVEN_01997 (degree 754) and 411463.EUBVEN_00242 (degree
+705).
 
 
 References
@@ -106,13 +108,15 @@ def EubacteriumVentriosum(
 	
 	Datetime: 2021-02-02 20:45:14.294843
 	
-	The undirected graph Eubacterium ventriosum has 2700 nodes and 186320 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05114 and
-	has 20 connected components, where the component with most nodes has 2644 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 138.01, and the node degree mode is 6. The top 5 most central
-	nodes are 411463.EUBVEN_00621 (degree 987), 411463.EUBVEN_00328 (degree 939), 411463.EUBVEN_01043
-	(degree 794), 411463.EUBVEN_01997 (degree 754) and 411463.EUBVEN_00242 (degree 705).
+	The undirected graph Eubacterium ventriosum has 2700 nodes and 186320 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05114 and has 20 connected components, where the component with most
+	nodes has 2644 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 138.01, and
+	the node degree mode is 6. The top 5 most central nodes are 411463.EUBVEN_00621
+	(degree 987), 411463.EUBVEN_00328 (degree 939), 411463.EUBVEN_01043 (degree
+	794), 411463.EUBVEN_01997 (degree 754) and 411463.EUBVEN_00242 (degree
+	705).
 	
 
 

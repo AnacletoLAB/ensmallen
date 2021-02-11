@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:29.803249
 
-The undirected graph bio-human-gene1 has 22283 nodes, of which 393 are singletons
-(all have self-loops), and 12345963 weighted edges, of which 22283 are self-loops.
-The graph is dense as it has a density of 0.04969 and has 410 connected components,
-where the component with most nodes has 21853 nodes and the component with the least
-nodes has a single node. The graph median node degree is 537, the mean node degree
-is 1107.11 and the node degree mode is 1. The top 5 most central nodes are 20435
-(degree 7939), 15280 (degree 7724), 7206 (degree 7587), 8022 (degree 7579) and 16204
-(degree 7571).
+The undirected graph bio-human-gene1 has 22283 nodes, of which 393 are
+singletons (all have self-loops), and 12345963 weighted edges, of which
+22283 are self-loops. The graph is dense as it has a density of 0.04969
+and has 410 connected components, where the component with most nodes has
+21853 nodes and the component with the least nodes has a single node. The
+graph median node degree is 537, the mean node degree is 1107.11 and the
+node degree mode is 1. The top 5 most central nodes are 20435 (degree 7939),
+15280 (degree 7724), 7206 (degree 7587), 8022 (degree 7579) and 16204 (degree
+7571).
 
 
 References
@@ -114,14 +115,15 @@ def BioHumanGene1(
 	
 	Datetime: 2021-02-03 22:33:29.803249
 	
-	The undirected graph bio-human-gene1 has 22283 nodes, of which 393 are singletons
-	(all have self-loops), and 12345963 weighted edges, of which 22283 are self-loops.
-	The graph is dense as it has a density of 0.04969 and has 410 connected components,
-	where the component with most nodes has 21853 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 537, the mean node degree
-	is 1107.11 and the node degree mode is 1. The top 5 most central nodes are 20435
-	(degree 7939), 15280 (degree 7724), 7206 (degree 7587), 8022 (degree 7579) and 16204
-	(degree 7571).
+	The undirected graph bio-human-gene1 has 22283 nodes, of which 393 are
+	singletons (all have self-loops), and 12345963 weighted edges, of which
+	22283 are self-loops. The graph is dense as it has a density of 0.04969
+	and has 410 connected components, where the component with most nodes has
+	21853 nodes and the component with the least nodes has a single node. The
+	graph median node degree is 537, the mean node degree is 1107.11 and the
+	node degree mode is 1. The top 5 most central nodes are 20435 (degree 7939),
+	15280 (degree 7724), 7206 (degree 7587), 8022 (degree 7579) and 16204 (degree
+	7571).
 	
 
 

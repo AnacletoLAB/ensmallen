@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:54.172911
 
-The undirected graph Oscillatoriales cyanobacterium has 4713 nodes and 654993 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05899
-and has 18 connected components, where the component with most nodes has 4670 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 259, the mean node degree is 277.95, and the node degree mode is 2. The top 5
-most central nodes are 864702.OsccyDRAFT_4456 (degree 1633), 864702.OsccyDRAFT_3780
-(degree 1611), 864702.OsccyDRAFT_1245 (degree 1482), 864702.OsccyDRAFT_0068 (degree
+The undirected graph Oscillatoriales cyanobacterium has 4713 nodes and
+654993 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05899 and has 18 connected components, where the
+component with most nodes has 4670 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 259, the mean node degree
+is 277.95, and the node degree mode is 2. The top 5 most central nodes
+are 864702.OsccyDRAFT_4456 (degree 1633), 864702.OsccyDRAFT_3780 (degree
+1611), 864702.OsccyDRAFT_1245 (degree 1482), 864702.OsccyDRAFT_0068 (degree
 1361) and 864702.OsccyDRAFT_0871 (degree 1314).
 
 
@@ -107,13 +108,14 @@ def OscillatorialesCyanobacterium(
 	
 	Datetime: 2021-02-02 21:47:54.172911
 	
-	The undirected graph Oscillatoriales cyanobacterium has 4713 nodes and 654993 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05899
-	and has 18 connected components, where the component with most nodes has 4670 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 259, the mean node degree is 277.95, and the node degree mode is 2. The top 5
-	most central nodes are 864702.OsccyDRAFT_4456 (degree 1633), 864702.OsccyDRAFT_3780
-	(degree 1611), 864702.OsccyDRAFT_1245 (degree 1482), 864702.OsccyDRAFT_0068 (degree
+	The undirected graph Oscillatoriales cyanobacterium has 4713 nodes and
+	654993 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05899 and has 18 connected components, where the
+	component with most nodes has 4670 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 259, the mean node degree
+	is 277.95, and the node degree mode is 2. The top 5 most central nodes
+	are 864702.OsccyDRAFT_4456 (degree 1633), 864702.OsccyDRAFT_3780 (degree
+	1611), 864702.OsccyDRAFT_1245 (degree 1482), 864702.OsccyDRAFT_0068 (degree
 	1361) and 864702.OsccyDRAFT_0871 (degree 1314).
 	
 

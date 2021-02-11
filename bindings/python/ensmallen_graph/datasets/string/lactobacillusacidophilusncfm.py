@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:46.716106
 
-The undirected graph Lactobacillus acidophilus NCFM has 1845 nodes and 139831 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08220
-and has 5 connected components, where the component with most nodes has 1837 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 151.58, and the node degree mode is 6. The top 5
-most central nodes are 272621.LBA1550 (degree 916), 272621.LBA0461 (degree 789),
-272621.LBA1247 (degree 733), 272621.LBA0666 (degree 651) and 272621.LBA1164 (degree
-637).
+The undirected graph Lactobacillus acidophilus NCFM has 1845 nodes and
+139831 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08220 and has 5 connected components, where the
+component with most nodes has 1837 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+is 151.58, and the node degree mode is 6. The top 5 most central nodes
+are 272621.LBA1550 (degree 916), 272621.LBA0461 (degree 789), 272621.LBA1247
+(degree 733), 272621.LBA0666 (degree 651) and 272621.LBA1164 (degree 637).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusAcidophilusNcfm(
 	
 	Datetime: 2021-02-02 20:16:46.716106
 	
-	The undirected graph Lactobacillus acidophilus NCFM has 1845 nodes and 139831 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08220
-	and has 5 connected components, where the component with most nodes has 1837 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 151.58, and the node degree mode is 6. The top 5
-	most central nodes are 272621.LBA1550 (degree 916), 272621.LBA0461 (degree 789),
-	272621.LBA1247 (degree 733), 272621.LBA0666 (degree 651) and 272621.LBA1164 (degree
-	637).
+	The undirected graph Lactobacillus acidophilus NCFM has 1845 nodes and
+	139831 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08220 and has 5 connected components, where the
+	component with most nodes has 1837 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 116, the mean node degree
+	is 151.58, and the node degree mode is 6. The top 5 most central nodes
+	are 272621.LBA1550 (degree 916), 272621.LBA0461 (degree 789), 272621.LBA1247
+	(degree 733), 272621.LBA0666 (degree 651) and 272621.LBA1164 (degree 637).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:32.809947
 
-The undirected graph Cyanothece sp. ATCC51142 has 5143 nodes and 629479 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04761
-and has 17 connected components, where the component with most nodes has 5102 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 224, the mean node degree is 244.79, and the node degree mode is 3. The top 5
-most central nodes are 43989.cce_2255 (degree 1556), 43989.cce_4207 (degree 1418),
-43989.cce_0953 (degree 1357), 43989.cce_3558 (degree 1322) and 43989.cce_0726 (degree
-1289).
+The undirected graph Cyanothece sp. ATCC51142 has 5143 nodes and 629479
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04761 and has 17 connected components, where the component
+with most nodes has 5102 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 224, the mean node degree is 244.79,
+and the node degree mode is 3. The top 5 most central nodes are 43989.cce_2255
+(degree 1556), 43989.cce_4207 (degree 1418), 43989.cce_0953 (degree 1357),
+43989.cce_3558 (degree 1322) and 43989.cce_0726 (degree 1289).
 
 
 References
@@ -107,14 +107,14 @@ def CyanotheceSp.Atcc51142(
 	
 	Datetime: 2021-02-02 18:14:32.809947
 	
-	The undirected graph Cyanothece sp. ATCC51142 has 5143 nodes and 629479 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04761
-	and has 17 connected components, where the component with most nodes has 5102 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 224, the mean node degree is 244.79, and the node degree mode is 3. The top 5
-	most central nodes are 43989.cce_2255 (degree 1556), 43989.cce_4207 (degree 1418),
-	43989.cce_0953 (degree 1357), 43989.cce_3558 (degree 1322) and 43989.cce_0726 (degree
-	1289).
+	The undirected graph Cyanothece sp. ATCC51142 has 5143 nodes and 629479
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04761 and has 17 connected components, where the component
+	with most nodes has 5102 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 224, the mean node degree is 244.79,
+	and the node degree mode is 3. The top 5 most central nodes are 43989.cce_2255
+	(degree 1556), 43989.cce_4207 (degree 1418), 43989.cce_0953 (degree 1357),
+	43989.cce_3558 (degree 1322) and 43989.cce_0726 (degree 1289).
 	
 
 

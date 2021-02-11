@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:39.988591
 
-The undirected graph Methanococcus vannielii has 1669 nodes and 193972 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13935
-and has 3 connected components, where the component with most nodes has 1663 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 240, the mean node degree is 232.44, and the node degree mode is 6. The top 5
-most central nodes are 406327.Mevan_0093 (degree 735), 406327.Mevan_0091 (degree
-728), 406327.Mevan_1505 (degree 707), 406327.Mevan_0390 (degree 706) and 406327.Mevan_0643
-(degree 696).
+The undirected graph Methanococcus vannielii has 1669 nodes and 193972
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.13935 and has 3 connected components, where the
+component with most nodes has 1663 nodes and the component with the least
+nodes has 3 nodes. The graph median node degree is 240, the mean node degree
+is 232.44, and the node degree mode is 6. The top 5 most central nodes
+are 406327.Mevan_0093 (degree 735), 406327.Mevan_0091 (degree 728), 406327.Mevan_1505
+(degree 707), 406327.Mevan_0390 (degree 706) and 406327.Mevan_0643 (degree
+696).
 
 
 References
@@ -107,14 +108,15 @@ def MethanococcusVannielii(
 	
 	Datetime: 2021-02-02 20:44:39.988591
 	
-	The undirected graph Methanococcus vannielii has 1669 nodes and 193972 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13935
-	and has 3 connected components, where the component with most nodes has 1663 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 240, the mean node degree is 232.44, and the node degree mode is 6. The top 5
-	most central nodes are 406327.Mevan_0093 (degree 735), 406327.Mevan_0091 (degree
-	728), 406327.Mevan_1505 (degree 707), 406327.Mevan_0390 (degree 706) and 406327.Mevan_0643
-	(degree 696).
+	The undirected graph Methanococcus vannielii has 1669 nodes and 193972
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.13935 and has 3 connected components, where the
+	component with most nodes has 1663 nodes and the component with the least
+	nodes has 3 nodes. The graph median node degree is 240, the mean node degree
+	is 232.44, and the node degree mode is 6. The top 5 most central nodes
+	are 406327.Mevan_0093 (degree 735), 406327.Mevan_0091 (degree 728), 406327.Mevan_1505
+	(degree 707), 406327.Mevan_0390 (degree 706) and 406327.Mevan_0643 (degree
+	696).
 	
 
 

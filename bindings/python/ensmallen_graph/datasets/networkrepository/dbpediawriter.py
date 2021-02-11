@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:48.792091
 
-The undirected graph dbpedia-writer has 89356 nodes and 144338 unweighted edges,
-of which 8 are self-loops. The graph is extremely sparse as it has a density of 0.00004
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 3.23, and the node degree mode is 2. The top 5 most central
-nodes are 1618 (degree 247), 630 (degree 237), 996 (degree 215), 1064 (degree 180)
-and 2667 (degree 143).
+The undirected graph dbpedia-writer has 89356 nodes and 144338 unweighted
+edges, of which 8 are self-loops. The graph is extremely sparse as it has
+a density of 0.00004 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 3.23, and the node
+degree mode is 2. The top 5 most central nodes are 1618 (degree 247), 630
+(degree 237), 996 (degree 215), 1064 (degree 180) and 2667 (degree 143).
 
 
 References
@@ -102,12 +102,12 @@ def DbpediaWriter(
 	
 	Datetime: 2021-02-06 11:08:48.792091
 	
-	The undirected graph dbpedia-writer has 89356 nodes and 144338 unweighted edges,
-	of which 8 are self-loops. The graph is extremely sparse as it has a density of 0.00004
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 3.23, and the node degree mode is 2. The top 5 most central
-	nodes are 1618 (degree 247), 630 (degree 237), 996 (degree 215), 1064 (degree 180)
-	and 2667 (degree 143).
+	The undirected graph dbpedia-writer has 89356 nodes and 144338 unweighted
+	edges, of which 8 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00004 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 3.23, and the node
+	degree mode is 2. The top 5 most central nodes are 1618 (degree 247), 630
+	(degree 237), 996 (degree 215), 1064 (degree 180) and 2667 (degree 143).
 	
 
 

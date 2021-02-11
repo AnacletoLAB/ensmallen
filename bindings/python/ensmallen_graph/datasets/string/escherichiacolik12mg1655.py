@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:41.927635
 
-The undirected graph Escherichia coli K12 MG1655 has 4125 nodes and 530427 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06236
-and is connected, as it has a single component. The graph median node degree is 237,
-the mean node degree is 257.18, and the node degree mode is 176. The top 5 most central
-nodes are 511145.b2370 (degree 1419), 511145.b1378 (degree 1393), 511145.b3863 (degree
-1353), 511145.b2507 (degree 1204) and 511145.b3212 (degree 1110).
+The undirected graph Escherichia coli K12 MG1655 has 4125 nodes and 530427
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06236 and is connected, as it has a single component.
+The graph median node degree is 237, the mean node degree is 257.18, and
+the node degree mode is 176. The top 5 most central nodes are 511145.b2370
+(degree 1419), 511145.b1378 (degree 1393), 511145.b3863 (degree 1353),
+511145.b2507 (degree 1204) and 511145.b3212 (degree 1110).
 
 
 References
@@ -105,12 +106,13 @@ def EscherichiaColiK12Mg1655(
 	
 	Datetime: 2021-02-02 21:02:41.927635
 	
-	The undirected graph Escherichia coli K12 MG1655 has 4125 nodes and 530427 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06236
-	and is connected, as it has a single component. The graph median node degree is 237,
-	the mean node degree is 257.18, and the node degree mode is 176. The top 5 most central
-	nodes are 511145.b2370 (degree 1419), 511145.b1378 (degree 1393), 511145.b3863 (degree
-	1353), 511145.b2507 (degree 1204) and 511145.b3212 (degree 1110).
+	The undirected graph Escherichia coli K12 MG1655 has 4125 nodes and 530427
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06236 and is connected, as it has a single component.
+	The graph median node degree is 237, the mean node degree is 257.18, and
+	the node degree mode is 176. The top 5 most central nodes are 511145.b2370
+	(degree 1419), 511145.b1378 (degree 1393), 511145.b3863 (degree 1353),
+	511145.b2507 (degree 1204) and 511145.b3212 (degree 1110).
 	
 
 

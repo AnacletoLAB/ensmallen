@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:59:00.661071
 
-The undirected graph Streptomyces griseoluteus has 7267 nodes and 882096 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03341
-and has 60 connected components, where the component with most nodes has 7109 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 242.77, and the node degree mode is 2. The top 5
-most central nodes are 29306.JOBE01000039_gene3107 (degree 3148), 29306.JOBE01000005_gene3846
-(degree 1899), 29306.JOBE01000003_gene4167 (degree 1855), 29306.JOBE01000018_gene1628
-(degree 1805) and 29306.JOBE01000017_gene1290 (degree 1761).
+The undirected graph Streptomyces griseoluteus has 7267 nodes and 882096
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03341 and has 60 connected components, where the component
+with most nodes has 7109 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 242.77,
+and the node degree mode is 2. The top 5 most central nodes are 29306.JOBE01000039_gene3107
+(degree 3148), 29306.JOBE01000005_gene3846 (degree 1899), 29306.JOBE01000003_gene4167
+(degree 1855), 29306.JOBE01000018_gene1628 (degree 1805) and 29306.JOBE01000017_gene1290
+(degree 1761).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesGriseoluteus(
 	
 	Datetime: 2021-02-02 17:59:00.661071
 	
-	The undirected graph Streptomyces griseoluteus has 7267 nodes and 882096 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03341
-	and has 60 connected components, where the component with most nodes has 7109 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 242.77, and the node degree mode is 2. The top 5
-	most central nodes are 29306.JOBE01000039_gene3107 (degree 3148), 29306.JOBE01000005_gene3846
-	(degree 1899), 29306.JOBE01000003_gene4167 (degree 1855), 29306.JOBE01000018_gene1628
-	(degree 1805) and 29306.JOBE01000017_gene1290 (degree 1761).
+	The undirected graph Streptomyces griseoluteus has 7267 nodes and 882096
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03341 and has 60 connected components, where the component
+	with most nodes has 7109 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 242.77,
+	and the node degree mode is 2. The top 5 most central nodes are 29306.JOBE01000039_gene3107
+	(degree 3148), 29306.JOBE01000005_gene3846 (degree 1899), 29306.JOBE01000003_gene4167
+	(degree 1855), 29306.JOBE01000018_gene1628 (degree 1805) and 29306.JOBE01000017_gene1290
+	(degree 1761).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:30.314187
 
-The undirected graph Pythium vexans has 7617 nodes and 1137713 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03922 and
-has 85 connected components, where the component with most nodes has 7435 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 298.73, and the node degree mode is 1. The top 5 most central
-nodes are 42099.EPrPV00000022905 (degree 2590), 42099.EPrPV00000013162 (degree 2564),
-42099.EPrPV00000016242 (degree 2535), 42099.EPrPV00000014226 (degree 2381) and 42099.EPrPV00000020826
+The undirected graph Pythium vexans has 7617 nodes and 1137713 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03922 and has 85 connected components, where the component with most
+nodes has 7435 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 298.73, and
+the node degree mode is 1. The top 5 most central nodes are 42099.EPrPV00000022905
+(degree 2590), 42099.EPrPV00000013162 (degree 2564), 42099.EPrPV00000016242
+(degree 2535), 42099.EPrPV00000014226 (degree 2381) and 42099.EPrPV00000020826
 (degree 2336).
 
 
@@ -107,13 +108,14 @@ def PythiumVexans(
 	
 	Datetime: 2021-02-02 18:12:30.314187
 	
-	The undirected graph Pythium vexans has 7617 nodes and 1137713 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03922 and
-	has 85 connected components, where the component with most nodes has 7435 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 298.73, and the node degree mode is 1. The top 5 most central
-	nodes are 42099.EPrPV00000022905 (degree 2590), 42099.EPrPV00000013162 (degree 2564),
-	42099.EPrPV00000016242 (degree 2535), 42099.EPrPV00000014226 (degree 2381) and 42099.EPrPV00000020826
+	The undirected graph Pythium vexans has 7617 nodes and 1137713 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03922 and has 85 connected components, where the component with most
+	nodes has 7435 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 298.73, and
+	the node degree mode is 1. The top 5 most central nodes are 42099.EPrPV00000022905
+	(degree 2590), 42099.EPrPV00000013162 (degree 2564), 42099.EPrPV00000016242
+	(degree 2535), 42099.EPrPV00000014226 (degree 2381) and 42099.EPrPV00000020826
 	(degree 2336).
 	
 

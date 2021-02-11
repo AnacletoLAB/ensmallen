@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:10.584886
 
-The undirected graph Limnohabitans sp. Rim28 has 3060 nodes and 228603 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04884 and
-has 10 connected components, where the component with most nodes has 3042 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 149.41, and the node degree mode is 1. The top 5 most central
-nodes are 1100720.ALKN01000044_gene1976 (degree 1072), 1100720.ALKN01000045_gene114
-(degree 889), 1100720.ALKN01000007_gene2873 (degree 872), 1100720.ALKN01000040_gene2307
-(degree 835) and 1100720.ALKN01000045_gene288 (degree 811).
+The undirected graph Limnohabitans sp. Rim28 has 3060 nodes and 228603
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04884 and has 10 connected components, where the component
+with most nodes has 3042 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 149.41,
+and the node degree mode is 1. The top 5 most central nodes are 1100720.ALKN01000044_gene1976
+(degree 1072), 1100720.ALKN01000045_gene114 (degree 889), 1100720.ALKN01000007_gene2873
+(degree 872), 1100720.ALKN01000040_gene2307 (degree 835) and 1100720.ALKN01000045_gene288
+(degree 811).
 
 
 References
@@ -107,14 +108,15 @@ def LimnohabitansSp.Rim28(
 	
 	Datetime: 2021-02-02 22:24:10.584886
 	
-	The undirected graph Limnohabitans sp. Rim28 has 3060 nodes and 228603 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04884 and
-	has 10 connected components, where the component with most nodes has 3042 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 149.41, and the node degree mode is 1. The top 5 most central
-	nodes are 1100720.ALKN01000044_gene1976 (degree 1072), 1100720.ALKN01000045_gene114
-	(degree 889), 1100720.ALKN01000007_gene2873 (degree 872), 1100720.ALKN01000040_gene2307
-	(degree 835) and 1100720.ALKN01000045_gene288 (degree 811).
+	The undirected graph Limnohabitans sp. Rim28 has 3060 nodes and 228603
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04884 and has 10 connected components, where the component
+	with most nodes has 3042 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 149.41,
+	and the node degree mode is 1. The top 5 most central nodes are 1100720.ALKN01000044_gene1976
+	(degree 1072), 1100720.ALKN01000045_gene114 (degree 889), 1100720.ALKN01000007_gene2873
+	(degree 872), 1100720.ALKN01000040_gene2307 (degree 835) and 1100720.ALKN01000045_gene288
+	(degree 811).
 	
 
 

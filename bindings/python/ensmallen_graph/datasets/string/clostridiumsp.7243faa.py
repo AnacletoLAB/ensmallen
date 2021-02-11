@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:00.935734
 
-The undirected graph Clostridium sp. 7243FAA has 3360 nodes and 373326 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06616 and
-has 8 connected components, where the component with most nodes has 3339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 222.22, and the node degree mode is 2. The top 5 most central
-nodes are 457396.CSBG_00229 (degree 1508), 457396.CSBG_01005 (degree 1484), 457396.CSBG_02322
-(degree 1388), 457396.CSBG_00169 (degree 1286) and 457396.CSBG_01867 (degree 1224).
+The undirected graph Clostridium sp. 7243FAA has 3360 nodes and 373326
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06616 and has 8 connected components, where the component
+with most nodes has 3339 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 222.22,
+and the node degree mode is 2. The top 5 most central nodes are 457396.CSBG_00229
+(degree 1508), 457396.CSBG_01005 (degree 1484), 457396.CSBG_02322 (degree
+1388), 457396.CSBG_00169 (degree 1286) and 457396.CSBG_01867 (degree 1224).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSp.7243faa(
 	
 	Datetime: 2021-02-02 20:53:00.935734
 	
-	The undirected graph Clostridium sp. 7243FAA has 3360 nodes and 373326 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06616 and
-	has 8 connected components, where the component with most nodes has 3339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 222.22, and the node degree mode is 2. The top 5 most central
-	nodes are 457396.CSBG_00229 (degree 1508), 457396.CSBG_01005 (degree 1484), 457396.CSBG_02322
-	(degree 1388), 457396.CSBG_00169 (degree 1286) and 457396.CSBG_01867 (degree 1224).
+	The undirected graph Clostridium sp. 7243FAA has 3360 nodes and 373326
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06616 and has 8 connected components, where the component
+	with most nodes has 3339 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 222.22,
+	and the node degree mode is 2. The top 5 most central nodes are 457396.CSBG_00229
+	(degree 1508), 457396.CSBG_01005 (degree 1484), 457396.CSBG_02322 (degree
+	1388), 457396.CSBG_00169 (degree 1286) and 457396.CSBG_01867 (degree 1224).
 	
 
 

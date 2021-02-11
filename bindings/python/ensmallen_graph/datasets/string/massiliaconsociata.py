@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:32.022343
 
-The undirected graph Massilia consociata has 4005 nodes and 452764 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05647 and
-has 16 connected components, where the component with most nodes has 3966 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 226.10, and the node degree mode is 2. The top 5 most central
-nodes are 760117.JN27_04915 (degree 1783), 760117.JN27_10685 (degree 1677), 760117.JN27_05760
-(degree 1445), 760117.JN27_05755 (degree 1406) and 760117.JN27_23180 (degree 1355).
+The undirected graph Massilia consociata has 4005 nodes and 452764 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05647 and has 16 connected components, where the component with most
+nodes has 3966 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 226.10, and
+the node degree mode is 2. The top 5 most central nodes are 760117.JN27_04915
+(degree 1783), 760117.JN27_10685 (degree 1677), 760117.JN27_05760 (degree
+1445), 760117.JN27_05755 (degree 1406) and 760117.JN27_23180 (degree 1355).
 
 
 References
@@ -106,13 +107,14 @@ def MassiliaConsociata(
 	
 	Datetime: 2021-02-02 21:41:32.022343
 	
-	The undirected graph Massilia consociata has 4005 nodes and 452764 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05647 and
-	has 16 connected components, where the component with most nodes has 3966 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 226.10, and the node degree mode is 2. The top 5 most central
-	nodes are 760117.JN27_04915 (degree 1783), 760117.JN27_10685 (degree 1677), 760117.JN27_05760
-	(degree 1445), 760117.JN27_05755 (degree 1406) and 760117.JN27_23180 (degree 1355).
+	The undirected graph Massilia consociata has 4005 nodes and 452764 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05647 and has 16 connected components, where the component with most
+	nodes has 3966 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 226.10, and
+	the node degree mode is 2. The top 5 most central nodes are 760117.JN27_04915
+	(degree 1783), 760117.JN27_10685 (degree 1677), 760117.JN27_05760 (degree
+	1445), 760117.JN27_05755 (degree 1406) and 760117.JN27_23180 (degree 1355).
 	
 
 

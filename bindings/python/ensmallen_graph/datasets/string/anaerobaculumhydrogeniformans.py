@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:06.890113
 
-The undirected graph Anaerobaculum hydrogeniformans has 2487 nodes and 217558 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07038
-and has 11 connected components, where the component with most nodes has 2461 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 174.96, and the node degree mode is 1. The top 5
-most central nodes are 592015.HMPREF1705_00310 (degree 1070), 592015.HMPREF1705_00929
-(degree 971), 592015.HMPREF1705_01315 (degree 891), 592015.HMPREF1705_00079 (degree
+The undirected graph Anaerobaculum hydrogeniformans has 2487 nodes and
+217558 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07038 and has 11 connected components, where the
+component with most nodes has 2461 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 174.96, and the node degree mode is 1. The top 5 most central nodes
+are 592015.HMPREF1705_00310 (degree 1070), 592015.HMPREF1705_00929 (degree
+971), 592015.HMPREF1705_01315 (degree 891), 592015.HMPREF1705_00079 (degree
 889) and 592015.HMPREF1705_02001 (degree 870).
 
 
@@ -107,13 +108,14 @@ def AnaerobaculumHydrogeniformans(
 	
 	Datetime: 2021-02-02 21:18:06.890113
 	
-	The undirected graph Anaerobaculum hydrogeniformans has 2487 nodes and 217558 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07038
-	and has 11 connected components, where the component with most nodes has 2461 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 174.96, and the node degree mode is 1. The top 5
-	most central nodes are 592015.HMPREF1705_00310 (degree 1070), 592015.HMPREF1705_00929
-	(degree 971), 592015.HMPREF1705_01315 (degree 891), 592015.HMPREF1705_00079 (degree
+	The undirected graph Anaerobaculum hydrogeniformans has 2487 nodes and
+	217558 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07038 and has 11 connected components, where the
+	component with most nodes has 2461 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 174.96, and the node degree mode is 1. The top 5 most central nodes
+	are 592015.HMPREF1705_00310 (degree 1070), 592015.HMPREF1705_00929 (degree
+	971), 592015.HMPREF1705_01315 (degree 891), 592015.HMPREF1705_00079 (degree
 	889) and 592015.HMPREF1705_02001 (degree 870).
 	
 

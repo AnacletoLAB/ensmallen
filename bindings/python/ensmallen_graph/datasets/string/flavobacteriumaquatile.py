@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:06:01.850489
 
-The undirected graph Flavobacterium aquatile has 2975 nodes and 220344 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04981 and
-has 13 connected components, where the component with most nodes has 2936 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 148.13, and the node degree mode is 2. The top 5 most central
-nodes are 1453498.LG45_05850 (degree 1076), 1453498.LG45_15105 (degree 960), 1453498.LG45_08230
-(degree 874), 1453498.LG45_08300 (degree 817) and 1453498.LG45_15335 (degree 761).
+The undirected graph Flavobacterium aquatile has 2975 nodes and 220344
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04981 and has 13 connected components, where the component
+with most nodes has 2936 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 148.13,
+and the node degree mode is 2. The top 5 most central nodes are 1453498.LG45_05850
+(degree 1076), 1453498.LG45_15105 (degree 960), 1453498.LG45_08230 (degree
+874), 1453498.LG45_08300 (degree 817) and 1453498.LG45_15335 (degree 761).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumAquatile(
 	
 	Datetime: 2021-02-03 23:06:01.850489
 	
-	The undirected graph Flavobacterium aquatile has 2975 nodes and 220344 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04981 and
-	has 13 connected components, where the component with most nodes has 2936 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 148.13, and the node degree mode is 2. The top 5 most central
-	nodes are 1453498.LG45_05850 (degree 1076), 1453498.LG45_15105 (degree 960), 1453498.LG45_08230
-	(degree 874), 1453498.LG45_08300 (degree 817) and 1453498.LG45_15335 (degree 761).
+	The undirected graph Flavobacterium aquatile has 2975 nodes and 220344
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04981 and has 13 connected components, where the component
+	with most nodes has 2936 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 148.13,
+	and the node degree mode is 2. The top 5 most central nodes are 1453498.LG45_05850
+	(degree 1076), 1453498.LG45_15105 (degree 960), 1453498.LG45_08230 (degree
+	874), 1453498.LG45_08300 (degree 817) and 1453498.LG45_15335 (degree 761).
 	
 
 

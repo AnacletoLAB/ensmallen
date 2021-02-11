@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:24:24.864053
 
-The undirected graph nasa4704 has 4704 nodes and 54730 unweighted edges, of which
-4704 are self-loops. The graph is sparse as it has a density of 0.00473 and is connected,
-as it has a single component. The graph median node degree is 18, the mean node degree
-is 22.27, and the node degree mode is 27. The top 5 most central nodes are 4675 (degree
-42), 4637 (degree 42), 4580 (degree 42), 4456 (degree 42) and 4379 (degree 42).
+The undirected graph nasa4704 has 4704 nodes and 54730 unweighted edges,
+of which 4704 are self-loops. The graph is sparse as it has a density of
+0.00473 and is connected, as it has a single component. The graph median
+node degree is 18, the mean node degree is 22.27, and the node degree mode
+is 27. The top 5 most central nodes are 4675 (degree 42), 4637 (degree
+42), 4580 (degree 42), 4456 (degree 42) and 4379 (degree 42).
 
 
 References
@@ -101,11 +102,12 @@ def Nasa4704(
 	
 	Datetime: 2021-02-06 10:24:24.864053
 	
-	The undirected graph nasa4704 has 4704 nodes and 54730 unweighted edges, of which
-	4704 are self-loops. The graph is sparse as it has a density of 0.00473 and is connected,
-	as it has a single component. The graph median node degree is 18, the mean node degree
-	is 22.27, and the node degree mode is 27. The top 5 most central nodes are 4675 (degree
-	42), 4637 (degree 42), 4580 (degree 42), 4456 (degree 42) and 4379 (degree 42).
+	The undirected graph nasa4704 has 4704 nodes and 54730 unweighted edges,
+	of which 4704 are self-loops. The graph is sparse as it has a density of
+	0.00473 and is connected, as it has a single component. The graph median
+	node degree is 18, the mean node degree is 22.27, and the node degree mode
+	is 27. The top 5 most central nodes are 4675 (degree 42), 4637 (degree
+	42), 4580 (degree 42), 4456 (degree 42) and 4379 (degree 42).
 	
 
 

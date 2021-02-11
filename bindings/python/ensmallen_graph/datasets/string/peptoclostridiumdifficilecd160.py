@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:40.928229
 
-The undirected graph Peptoclostridium difficile CD160 has 4631 nodes and 373438 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03483
-and has 26 connected components, where the component with most nodes has 4559 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 161.28, and the node degree mode is 2. The top 5
-most central nodes are 1151292.QEW_1506 (degree 1626), 1151292.QEW_0224 (degree 1442),
-1151292.QEW_2865 (degree 1332), 1151292.QEW_2682 (degree 1244) and 1151292.QEW_4167
-(degree 1184).
+The undirected graph Peptoclostridium difficile CD160 has 4631 nodes and
+373438 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03483 and has 26 connected components, where the
+component with most nodes has 4559 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 161.28, and the node degree mode is 2. The top 5 most central nodes
+are 1151292.QEW_1506 (degree 1626), 1151292.QEW_0224 (degree 1442), 1151292.QEW_2865
+(degree 1332), 1151292.QEW_2682 (degree 1244) and 1151292.QEW_4167 (degree
+1184).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoclostridiumDifficileCd160(
 	
 	Datetime: 2021-02-02 23:00:40.928229
 	
-	The undirected graph Peptoclostridium difficile CD160 has 4631 nodes and 373438 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03483
-	and has 26 connected components, where the component with most nodes has 4559 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 161.28, and the node degree mode is 2. The top 5
-	most central nodes are 1151292.QEW_1506 (degree 1626), 1151292.QEW_0224 (degree 1442),
-	1151292.QEW_2865 (degree 1332), 1151292.QEW_2682 (degree 1244) and 1151292.QEW_4167
-	(degree 1184).
+	The undirected graph Peptoclostridium difficile CD160 has 4631 nodes and
+	373438 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03483 and has 26 connected components, where the
+	component with most nodes has 4559 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 161.28, and the node degree mode is 2. The top 5 most central nodes
+	are 1151292.QEW_1506 (degree 1626), 1151292.QEW_0224 (degree 1442), 1151292.QEW_2865
+	(degree 1332), 1151292.QEW_2682 (degree 1244) and 1151292.QEW_4167 (degree
+	1184).
 	
 
 

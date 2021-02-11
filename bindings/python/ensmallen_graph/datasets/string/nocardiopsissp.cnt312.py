@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:06.058602
 
-The undirected graph Nocardiopsis sp. CNT312 has 4056 nodes and 371787 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04521 and
-has 17 connected components, where the component with most nodes has 4021 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 183.33, and the node degree mode is 1. The top 5 most central
-nodes are 1137268.AZXF01000016_gene1117 (degree 1330), 1137268.AZXF01000042_gene3337
-(degree 1315), 1137268.AZXF01000005_gene3250 (degree 1153), 1137268.AZXF01000030_gene456
-(degree 1104) and 1137268.AZXF01000006_gene1950 (degree 1083).
+The undirected graph Nocardiopsis sp. CNT312 has 4056 nodes and 371787
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04521 and has 17 connected components, where the component
+with most nodes has 4021 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 183.33,
+and the node degree mode is 1. The top 5 most central nodes are 1137268.AZXF01000016_gene1117
+(degree 1330), 1137268.AZXF01000042_gene3337 (degree 1315), 1137268.AZXF01000005_gene3250
+(degree 1153), 1137268.AZXF01000030_gene456 (degree 1104) and 1137268.AZXF01000006_gene1950
+(degree 1083).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisSp.Cnt312(
 	
 	Datetime: 2021-02-02 22:57:06.058602
 	
-	The undirected graph Nocardiopsis sp. CNT312 has 4056 nodes and 371787 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04521 and
-	has 17 connected components, where the component with most nodes has 4021 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 183.33, and the node degree mode is 1. The top 5 most central
-	nodes are 1137268.AZXF01000016_gene1117 (degree 1330), 1137268.AZXF01000042_gene3337
-	(degree 1315), 1137268.AZXF01000005_gene3250 (degree 1153), 1137268.AZXF01000030_gene456
-	(degree 1104) and 1137268.AZXF01000006_gene1950 (degree 1083).
+	The undirected graph Nocardiopsis sp. CNT312 has 4056 nodes and 371787
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04521 and has 17 connected components, where the component
+	with most nodes has 4021 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 183.33,
+	and the node degree mode is 1. The top 5 most central nodes are 1137268.AZXF01000016_gene1117
+	(degree 1330), 1137268.AZXF01000042_gene3337 (degree 1315), 1137268.AZXF01000005_gene3250
+	(degree 1153), 1137268.AZXF01000030_gene456 (degree 1104) and 1137268.AZXF01000006_gene1950
+	(degree 1083).
 	
 
 

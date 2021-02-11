@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:59.187199
 
-The undirected graph Lachancea thermotolerans has 4757 nodes and 460277 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04069
-and has 2 connected components, where the component with most nodes has 4755 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 193.52, and the node degree mode is 19. The top 5
-most central nodes are 381046.XP_002552299.1 (degree 1096), 381046.XP_002554082.1
-(degree 1088), 381046.XP_002555845.1 (degree 1059), 381046.XP_002555968.1 (degree
-1006) and 381046.XP_002556010.1 (degree 932).
+The undirected graph Lachancea thermotolerans has 4757 nodes and 460277
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04069 and has 2 connected components, where the component
+with most nodes has 4755 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 193.52,
+and the node degree mode is 19. The top 5 most central nodes are 381046.XP_002552299.1
+(degree 1096), 381046.XP_002554082.1 (degree 1088), 381046.XP_002555845.1
+(degree 1059), 381046.XP_002555968.1 (degree 1006) and 381046.XP_002556010.1
+(degree 932).
 
 
 References
@@ -107,14 +108,15 @@ def LachanceaThermotolerans(
 	
 	Datetime: 2021-02-02 20:36:59.187199
 	
-	The undirected graph Lachancea thermotolerans has 4757 nodes and 460277 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04069
-	and has 2 connected components, where the component with most nodes has 4755 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 193.52, and the node degree mode is 19. The top 5
-	most central nodes are 381046.XP_002552299.1 (degree 1096), 381046.XP_002554082.1
-	(degree 1088), 381046.XP_002555845.1 (degree 1059), 381046.XP_002555968.1 (degree
-	1006) and 381046.XP_002556010.1 (degree 932).
+	The undirected graph Lachancea thermotolerans has 4757 nodes and 460277
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04069 and has 2 connected components, where the component
+	with most nodes has 4755 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 193.52,
+	and the node degree mode is 19. The top 5 most central nodes are 381046.XP_002552299.1
+	(degree 1096), 381046.XP_002554082.1 (degree 1088), 381046.XP_002555845.1
+	(degree 1059), 381046.XP_002555968.1 (degree 1006) and 381046.XP_002556010.1
+	(degree 932).
 	
 
 

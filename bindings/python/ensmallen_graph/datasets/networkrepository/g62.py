@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:11:20.811934
 
-The undirected graph G62 has 7000 nodes and 14000 unweighted edges with 2 different
-edge types: -1 and 1, of which none are self-loops. The graph is quite sparse as
-it has a density of 0.00057 and is connected, as it has a single component. The graph
-median node degree is 4, the mean node degree is 4.00, and the node degree mode is
-4. The top 5 most central nodes are 6930 (degree 4), 6929 (degree 4), 6928 (degree
-4), 6927 (degree 4) and 6926 (degree 4).
+The undirected graph G62 has 7000 nodes and 14000 unweighted edges with
+2 different edge types: -1 and 1, of which none are self-loops. The graph
+is quite sparse as it has a density of 0.00057 and is connected, as it
+has a single component. The graph median node degree is 4, the mean node
+degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
+are 6930 (degree 4), 6929 (degree 4), 6928 (degree 4), 6927 (degree 4)
+and 6926 (degree 4).
 
 
 References
@@ -102,12 +103,13 @@ def G62(
 	
 	Datetime: 2021-02-06 10:11:20.811934
 	
-	The undirected graph G62 has 7000 nodes and 14000 unweighted edges with 2 different
-	edge types: -1 and 1, of which none are self-loops. The graph is quite sparse as
-	it has a density of 0.00057 and is connected, as it has a single component. The graph
-	median node degree is 4, the mean node degree is 4.00, and the node degree mode is
-	4. The top 5 most central nodes are 6930 (degree 4), 6929 (degree 4), 6928 (degree
-	4), 6927 (degree 4) and 6926 (degree 4).
+	The undirected graph G62 has 7000 nodes and 14000 unweighted edges with
+	2 different edge types: -1 and 1, of which none are self-loops. The graph
+	is quite sparse as it has a density of 0.00057 and is connected, as it
+	has a single component. The graph median node degree is 4, the mean node
+	degree is 4.00, and the node degree mode is 4. The top 5 most central nodes
+	are 6930 (degree 4), 6929 (degree 4), 6928 (degree 4), 6927 (degree 4)
+	and 6926 (degree 4).
 	
 
 

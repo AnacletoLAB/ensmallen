@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:11:33.391501
 
-The undirected graph Streptococcus tigurinus AZ3a has 2109 nodes and 147959 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06656
-and has 7 connected components, where the component with most nodes has 2091 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 107, the mean node degree is 140.31, and the node degree mode is 7. The top 5
-most central nodes are 1282664.H354_04720 (degree 907), 1282664.H354_04870 (degree
-753), 1282664.H354_09481 (degree 740), 1282664.H354_03764 (degree 707) and 1282664.H354_08145
-(degree 685).
+The undirected graph Streptococcus tigurinus AZ3a has 2109 nodes and 147959
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06656 and has 7 connected components, where the component
+with most nodes has 2091 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 140.31,
+and the node degree mode is 7. The top 5 most central nodes are 1282664.H354_04720
+(degree 907), 1282664.H354_04870 (degree 753), 1282664.H354_09481 (degree
+740), 1282664.H354_03764 (degree 707) and 1282664.H354_08145 (degree 685).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusTigurinusAz3a(
 	
 	Datetime: 2021-02-03 21:11:33.391501
 	
-	The undirected graph Streptococcus tigurinus AZ3a has 2109 nodes and 147959 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06656
-	and has 7 connected components, where the component with most nodes has 2091 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 107, the mean node degree is 140.31, and the node degree mode is 7. The top 5
-	most central nodes are 1282664.H354_04720 (degree 907), 1282664.H354_04870 (degree
-	753), 1282664.H354_09481 (degree 740), 1282664.H354_03764 (degree 707) and 1282664.H354_08145
-	(degree 685).
+	The undirected graph Streptococcus tigurinus AZ3a has 2109 nodes and 147959
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06656 and has 7 connected components, where the component
+	with most nodes has 2091 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 140.31,
+	and the node degree mode is 7. The top 5 most central nodes are 1282664.H354_04720
+	(degree 907), 1282664.H354_04870 (degree 753), 1282664.H354_09481 (degree
+	740), 1282664.H354_03764 (degree 707) and 1282664.H354_08145 (degree 685).
 	
 
 

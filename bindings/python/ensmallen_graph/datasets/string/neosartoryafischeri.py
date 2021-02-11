@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:08.134439
 
-The undirected graph Neosartorya fischeri has 8245 nodes and 613430 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01805 and
-has 40 connected components, where the component with most nodes has 8158 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 79,
-the mean node degree is 148.80, and the node degree mode is 1. The top 5 most central
-nodes are 36630.CADNFIAP00000920 (degree 2006), 36630.CADNFIAP00000754 (degree 1329),
-36630.CADNFIAP00004731 (degree 1292), 36630.CADNFIAP00001366 (degree 1267) and 36630.CADNFIAP00001033
+The undirected graph Neosartorya fischeri has 8245 nodes and 613430 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01805 and has 40 connected components, where the component with most
+nodes has 8158 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 79, the mean node degree is 148.80, and
+the node degree mode is 1. The top 5 most central nodes are 36630.CADNFIAP00000920
+(degree 2006), 36630.CADNFIAP00000754 (degree 1329), 36630.CADNFIAP00004731
+(degree 1292), 36630.CADNFIAP00001366 (degree 1267) and 36630.CADNFIAP00001033
 (degree 1227).
 
 
@@ -107,13 +108,14 @@ def NeosartoryaFischeri(
 	
 	Datetime: 2021-02-02 18:06:08.134439
 	
-	The undirected graph Neosartorya fischeri has 8245 nodes and 613430 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01805 and
-	has 40 connected components, where the component with most nodes has 8158 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 79,
-	the mean node degree is 148.80, and the node degree mode is 1. The top 5 most central
-	nodes are 36630.CADNFIAP00000920 (degree 2006), 36630.CADNFIAP00000754 (degree 1329),
-	36630.CADNFIAP00004731 (degree 1292), 36630.CADNFIAP00001366 (degree 1267) and 36630.CADNFIAP00001033
+	The undirected graph Neosartorya fischeri has 8245 nodes and 613430 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01805 and has 40 connected components, where the component with most
+	nodes has 8158 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 79, the mean node degree is 148.80, and
+	the node degree mode is 1. The top 5 most central nodes are 36630.CADNFIAP00000920
+	(degree 2006), 36630.CADNFIAP00000754 (degree 1329), 36630.CADNFIAP00004731
+	(degree 1292), 36630.CADNFIAP00001366 (degree 1267) and 36630.CADNFIAP00001033
 	(degree 1227).
 	
 

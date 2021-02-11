@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:38:36.753485
 
-The undirected graph Cities has 55 nodes and 1072 weighted edges, of which 28 are
-self-loops. The graph is extremely dense as it has a density of 0.71246 and is connected,
-as it has a single component. The graph median node degree is 40, the mean node degree
-is 38.47, and the node degree mode is 44. The top 5 most central nodes are 5 (degree
-55), 4 (degree 55), 3 (degree 55), 2 (degree 55) and 1 (degree 55).
+The undirected graph Cities has 55 nodes and 1072 weighted edges, of which
+28 are self-loops. The graph is extremely dense as it has a density of
+0.71246 and is connected, as it has a single component. The graph median
+node degree is 40, the mean node degree is 38.47, and the node degree mode
+is 44. The top 5 most central nodes are 5 (degree 55), 4 (degree 55), 3
+(degree 55), 2 (degree 55) and 1 (degree 55).
 
 
 References
@@ -101,11 +102,12 @@ def Cities(
 	
 	Datetime: 2021-02-06 06:38:36.753485
 	
-	The undirected graph Cities has 55 nodes and 1072 weighted edges, of which 28 are
-	self-loops. The graph is extremely dense as it has a density of 0.71246 and is connected,
-	as it has a single component. The graph median node degree is 40, the mean node degree
-	is 38.47, and the node degree mode is 44. The top 5 most central nodes are 5 (degree
-	55), 4 (degree 55), 3 (degree 55), 2 (degree 55) and 1 (degree 55).
+	The undirected graph Cities has 55 nodes and 1072 weighted edges, of which
+	28 are self-loops. The graph is extremely dense as it has a density of
+	0.71246 and is connected, as it has a single component. The graph median
+	node degree is 40, the mean node degree is 38.47, and the node degree mode
+	is 44. The top 5 most central nodes are 5 (degree 55), 4 (degree 55), 3
+	(degree 55), 2 (degree 55) and 1 (degree 55).
 	
 
 

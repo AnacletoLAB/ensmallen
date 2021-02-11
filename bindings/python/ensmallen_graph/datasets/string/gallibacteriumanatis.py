@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:43.402415
 
-The undirected graph Gallibacterium anatis has 2488 nodes and 127429 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-has 4 connected components, where the component with most nodes has 2480 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 102.43, and the node degree mode is 14. The top 5 most central
-nodes are 1005058.UMN179_00831 (degree 921), 1005058.UMN179_02420 (degree 723), 1005058.UMN179_00769
-(degree 717), 1005058.UMN179_02123 (degree 669) and 1005058.UMN179_02422 (degree
+The undirected graph Gallibacterium anatis has 2488 nodes and 127429 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04119 and has 4 connected components, where the component with most
+nodes has 2480 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 78, the mean node degree is 102.43, and
+the node degree mode is 14. The top 5 most central nodes are 1005058.UMN179_00831
+(degree 921), 1005058.UMN179_02420 (degree 723), 1005058.UMN179_00769 (degree
+717), 1005058.UMN179_02123 (degree 669) and 1005058.UMN179_02422 (degree
 647).
 
 
@@ -107,13 +108,14 @@ def GallibacteriumAnatis(
 	
 	Datetime: 2021-02-02 22:07:43.402415
 	
-	The undirected graph Gallibacterium anatis has 2488 nodes and 127429 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-	has 4 connected components, where the component with most nodes has 2480 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 102.43, and the node degree mode is 14. The top 5 most central
-	nodes are 1005058.UMN179_00831 (degree 921), 1005058.UMN179_02420 (degree 723), 1005058.UMN179_00769
-	(degree 717), 1005058.UMN179_02123 (degree 669) and 1005058.UMN179_02422 (degree
+	The undirected graph Gallibacterium anatis has 2488 nodes and 127429 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04119 and has 4 connected components, where the component with most
+	nodes has 2480 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 78, the mean node degree is 102.43, and
+	the node degree mode is 14. The top 5 most central nodes are 1005058.UMN179_00831
+	(degree 921), 1005058.UMN179_02420 (degree 723), 1005058.UMN179_00769 (degree
+	717), 1005058.UMN179_02123 (degree 669) and 1005058.UMN179_02422 (degree
 	647).
 	
 

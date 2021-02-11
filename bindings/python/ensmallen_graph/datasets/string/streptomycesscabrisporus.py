@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:16.599702
 
-The undirected graph Streptomyces scabrisporus has 9449 nodes and 1416794 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03174
-and has 83 connected components, where the component with most nodes has 9261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 299.88, and the node degree mode is 1. The top 5
-most central nodes are 1123320.KB889675_gene3991 (degree 2714), 1123320.KB889675_gene3789
-(degree 2511), 1123320.KB889713_gene8090 (degree 2215), 1123320.KB889688_gene439
-(degree 2078) and 1123320.KB889686_gene837 (degree 2075).
+The undirected graph Streptomyces scabrisporus has 9449 nodes and 1416794
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03174 and has 83 connected components, where the component
+with most nodes has 9261 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 299.88,
+and the node degree mode is 1. The top 5 most central nodes are 1123320.KB889675_gene3991
+(degree 2714), 1123320.KB889675_gene3789 (degree 2511), 1123320.KB889713_gene8090
+(degree 2215), 1123320.KB889688_gene439 (degree 2078) and 1123320.KB889686_gene837
+(degree 2075).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesScabrisporus(
 	
 	Datetime: 2021-02-02 22:51:16.599702
 	
-	The undirected graph Streptomyces scabrisporus has 9449 nodes and 1416794 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03174
-	and has 83 connected components, where the component with most nodes has 9261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 299.88, and the node degree mode is 1. The top 5
-	most central nodes are 1123320.KB889675_gene3991 (degree 2714), 1123320.KB889675_gene3789
-	(degree 2511), 1123320.KB889713_gene8090 (degree 2215), 1123320.KB889688_gene439
-	(degree 2078) and 1123320.KB889686_gene837 (degree 2075).
+	The undirected graph Streptomyces scabrisporus has 9449 nodes and 1416794
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03174 and has 83 connected components, where the component
+	with most nodes has 9261 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 299.88,
+	and the node degree mode is 1. The top 5 most central nodes are 1123320.KB889675_gene3991
+	(degree 2714), 1123320.KB889675_gene3789 (degree 2511), 1123320.KB889713_gene8090
+	(degree 2215), 1123320.KB889688_gene439 (degree 2078) and 1123320.KB889686_gene837
+	(degree 2075).
 	
 
 

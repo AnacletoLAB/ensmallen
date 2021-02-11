@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:33.958752
 
-The undirected graph Clostridium cadaveris has 3394 nodes and 282762 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-has 9 connected components, where the component with most nodes has 3375 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 166.62, and the node degree mode is 5. The top 5 most central
-nodes are 1280692.AUJL01000009_gene2910 (degree 1388), 1280692.AUJL01000002_gene2536
-(degree 1308), 1280692.AUJL01000007_gene1255 (degree 1059), 1280692.AUJL01000005_gene1680
-(degree 1029) and 1280692.AUJL01000005_gene1698 (degree 983).
+The undirected graph Clostridium cadaveris has 3394 nodes and 282762 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04911 and has 9 connected components, where the component with most
+nodes has 3375 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 166.62, and
+the node degree mode is 5. The top 5 most central nodes are 1280692.AUJL01000009_gene2910
+(degree 1388), 1280692.AUJL01000002_gene2536 (degree 1308), 1280692.AUJL01000007_gene1255
+(degree 1059), 1280692.AUJL01000005_gene1680 (degree 1029) and 1280692.AUJL01000005_gene1698
+(degree 983).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumCadaveris(
 	
 	Datetime: 2021-02-03 21:07:33.958752
 	
-	The undirected graph Clostridium cadaveris has 3394 nodes and 282762 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-	has 9 connected components, where the component with most nodes has 3375 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 166.62, and the node degree mode is 5. The top 5 most central
-	nodes are 1280692.AUJL01000009_gene2910 (degree 1388), 1280692.AUJL01000002_gene2536
-	(degree 1308), 1280692.AUJL01000007_gene1255 (degree 1059), 1280692.AUJL01000005_gene1680
-	(degree 1029) and 1280692.AUJL01000005_gene1698 (degree 983).
+	The undirected graph Clostridium cadaveris has 3394 nodes and 282762 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04911 and has 9 connected components, where the component with most
+	nodes has 3375 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 166.62, and
+	the node degree mode is 5. The top 5 most central nodes are 1280692.AUJL01000009_gene2910
+	(degree 1388), 1280692.AUJL01000002_gene2536 (degree 1308), 1280692.AUJL01000007_gene1255
+	(degree 1059), 1280692.AUJL01000005_gene1680 (degree 1029) and 1280692.AUJL01000005_gene1698
+	(degree 983).
 	
 
 

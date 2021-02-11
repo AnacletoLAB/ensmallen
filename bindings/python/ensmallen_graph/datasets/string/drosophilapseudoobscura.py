@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:18.103683
 
-The undirected graph Drosophila pseudoobscura has 12603 nodes and 1334490 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01680
-and has 11 connected components, where the component with most nodes has 12582 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 211.77, and the node degree mode is 1. The top 5
-most central nodes are 7237.FBpp0283442 (degree 3162), 7237.FBpp0281325 (degree 2389),
-7237.FBpp0285259 (degree 2280), 7237.FBpp0282015 (degree 2146) and 7237.FBpp0279413
-(degree 2103).
+The undirected graph Drosophila pseudoobscura has 12603 nodes and 1334490
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01680 and has 11 connected components, where the component
+with most nodes has 12582 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 131, the mean node degree
+is 211.77, and the node degree mode is 1. The top 5 most central nodes
+are 7237.FBpp0283442 (degree 3162), 7237.FBpp0281325 (degree 2389), 7237.FBpp0285259
+(degree 2280), 7237.FBpp0282015 (degree 2146) and 7237.FBpp0279413 (degree
+2103).
 
 
 References
@@ -107,14 +108,15 @@ def DrosophilaPseudoobscura(
 	
 	Datetime: 2021-02-02 17:22:18.103683
 	
-	The undirected graph Drosophila pseudoobscura has 12603 nodes and 1334490 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01680
-	and has 11 connected components, where the component with most nodes has 12582 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 211.77, and the node degree mode is 1. The top 5
-	most central nodes are 7237.FBpp0283442 (degree 3162), 7237.FBpp0281325 (degree 2389),
-	7237.FBpp0285259 (degree 2280), 7237.FBpp0282015 (degree 2146) and 7237.FBpp0279413
-	(degree 2103).
+	The undirected graph Drosophila pseudoobscura has 12603 nodes and 1334490
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01680 and has 11 connected components, where the component
+	with most nodes has 12582 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 211.77, and the node degree mode is 1. The top 5 most central nodes
+	are 7237.FBpp0283442 (degree 3162), 7237.FBpp0281325 (degree 2389), 7237.FBpp0285259
+	(degree 2280), 7237.FBpp0282015 (degree 2146) and 7237.FBpp0279413 (degree
+	2103).
 	
 
 

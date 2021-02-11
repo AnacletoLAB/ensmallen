@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:35.854744
 
-The undirected graph Acromyrmex echinatior has 8951 nodes and 869678 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02171 and
-has 16 connected components, where the component with most nodes has 8920 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 194.32, and the node degree mode is 1. The top 5 most central
-nodes are 103372.F4WG42 (degree 2528), 103372.F4X1E4 (degree 2152), 103372.F4WRE4
-(degree 1670), 103372.F4WI50 (degree 1622) and 103372.F4WZJ9 (degree 1605).
+The undirected graph Acromyrmex echinatior has 8951 nodes and 869678 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02171 and has 16 connected components, where the component with most
+nodes has 8920 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 194.32, and
+the node degree mode is 1. The top 5 most central nodes are 103372.F4WG42
+(degree 2528), 103372.F4X1E4 (degree 2152), 103372.F4WRE4 (degree 1670),
+103372.F4WI50 (degree 1622) and 103372.F4WZJ9 (degree 1605).
 
 
 References
@@ -106,13 +107,14 @@ def AcromyrmexEchinatior(
 	
 	Datetime: 2021-02-02 19:43:35.854744
 	
-	The undirected graph Acromyrmex echinatior has 8951 nodes and 869678 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02171 and
-	has 16 connected components, where the component with most nodes has 8920 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 194.32, and the node degree mode is 1. The top 5 most central
-	nodes are 103372.F4WG42 (degree 2528), 103372.F4X1E4 (degree 2152), 103372.F4WRE4
-	(degree 1670), 103372.F4WI50 (degree 1622) and 103372.F4WZJ9 (degree 1605).
+	The undirected graph Acromyrmex echinatior has 8951 nodes and 869678 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02171 and has 16 connected components, where the component with most
+	nodes has 8920 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 194.32, and
+	the node degree mode is 1. The top 5 most central nodes are 103372.F4WG42
+	(degree 2528), 103372.F4X1E4 (degree 2152), 103372.F4WRE4 (degree 1670),
+	103372.F4WI50 (degree 1622) and 103372.F4WZJ9 (degree 1605).
 	
 
 

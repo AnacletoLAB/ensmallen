@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:52:07.071338
 
-The undirected graph wb-edu has 38402 nodes, of which 51 are singletons (all have
-self-loops), and 134453 unweighted edges, of which 4882 are self-loops. The graph
-is quite sparse as it has a density of 0.00018 and has 279 connected components,
-where the component with most nodes has 5425 nodes and the component with the least
-nodes has a single node. The graph median node degree is 4, the mean node degree
-is 6.88, and the node degree mode is 1. The top 5 most central nodes are 9816192
-(degree 1777), 9816191 (degree 1777), 9816190 (degree 1777), 9814417 (degree 1777)
-and 9844919 (degree 793).
+The undirected graph wb-edu has 38402 nodes, of which 51 are singletons
+(all have self-loops), and 134453 unweighted edges, of which 4882 are self-loops.
+The graph is quite sparse as it has a density of 0.00018 and has 279 connected
+components, where the component with most nodes has 5425 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 4, the mean node degree is 6.88, and the node degree mode is
+1. The top 5 most central nodes are 9816192 (degree 1777), 9816191 (degree
+1777), 9816190 (degree 1777), 9814417 (degree 1777) and 9844919 (degree
+793).
 
 
 References
@@ -104,14 +105,15 @@ def WbEdu(
 	
 	Datetime: 2021-02-07 15:52:07.071338
 	
-	The undirected graph wb-edu has 38402 nodes, of which 51 are singletons (all have
-	self-loops), and 134453 unweighted edges, of which 4882 are self-loops. The graph
-	is quite sparse as it has a density of 0.00018 and has 279 connected components,
-	where the component with most nodes has 5425 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 4, the mean node degree
-	is 6.88, and the node degree mode is 1. The top 5 most central nodes are 9816192
-	(degree 1777), 9816191 (degree 1777), 9816190 (degree 1777), 9814417 (degree 1777)
-	and 9844919 (degree 793).
+	The undirected graph wb-edu has 38402 nodes, of which 51 are singletons
+	(all have self-loops), and 134453 unweighted edges, of which 4882 are self-loops.
+	The graph is quite sparse as it has a density of 0.00018 and has 279 connected
+	components, where the component with most nodes has 5425 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 4, the mean node degree is 6.88, and the node degree mode is
+	1. The top 5 most central nodes are 9816192 (degree 1777), 9816191 (degree
+	1777), 9816190 (degree 1777), 9814417 (degree 1777) and 9844919 (degree
+	793).
 	
 
 

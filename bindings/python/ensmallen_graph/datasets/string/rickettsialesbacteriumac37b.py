@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:15.717403
 
-The undirected graph Rickettsiales bacterium Ac37b has 1749 nodes and 86917 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05686
-and has 21 connected components, where the component with most nodes has 1702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 80, the mean node degree is 99.39, and the node degree mode is 1. The top 5 most
-central nodes are 1528098.NOVO_05185 (degree 535), 1528098.NOVO_08195 (degree 493),
-1528098.NOVO_07385 (degree 480), 1528098.NOVO_08010 (degree 448) and 1528098.NOVO_07960
-(degree 433).
+The undirected graph Rickettsiales bacterium Ac37b has 1749 nodes and 86917
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05686 and has 21 connected components, where the component
+with most nodes has 1702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 80, the mean node degree is 99.39,
+and the node degree mode is 1. The top 5 most central nodes are 1528098.NOVO_05185
+(degree 535), 1528098.NOVO_08195 (degree 493), 1528098.NOVO_07385 (degree
+480), 1528098.NOVO_08010 (degree 448) and 1528098.NOVO_07960 (degree 433).
 
 
 References
@@ -107,14 +107,14 @@ def RickettsialesBacteriumAc37b(
 	
 	Datetime: 2021-02-03 23:18:15.717403
 	
-	The undirected graph Rickettsiales bacterium Ac37b has 1749 nodes and 86917 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05686
-	and has 21 connected components, where the component with most nodes has 1702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 80, the mean node degree is 99.39, and the node degree mode is 1. The top 5 most
-	central nodes are 1528098.NOVO_05185 (degree 535), 1528098.NOVO_08195 (degree 493),
-	1528098.NOVO_07385 (degree 480), 1528098.NOVO_08010 (degree 448) and 1528098.NOVO_07960
-	(degree 433).
+	The undirected graph Rickettsiales bacterium Ac37b has 1749 nodes and 86917
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05686 and has 21 connected components, where the component
+	with most nodes has 1702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 80, the mean node degree is 99.39,
+	and the node degree mode is 1. The top 5 most central nodes are 1528098.NOVO_05185
+	(degree 535), 1528098.NOVO_08195 (degree 493), 1528098.NOVO_07385 (degree
+	480), 1528098.NOVO_08010 (degree 448) and 1528098.NOVO_07960 (degree 433).
 	
 
 

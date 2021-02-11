@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:38:18.091920
 
-The undirected graph SW-10000-6-0d3-L5 has 10000 nodes with 5 different node types:
-1 (nodes number 2000), 5 (nodes number 2000), 4 (nodes number 2000), 3 (nodes number
-2000) and 2 (nodes number 2000) and 30000 unweighted edges, of which none are self-loops.
-The graph is quite sparse as it has a density of 0.00060 and is connected, as it
-has a single component. The graph median node degree is 6, the mean node degree is
-6.00, and the node degree mode is 6. The top 5 most central nodes are 2895 (degree
-12), 9933 (degree 11), 9631 (degree 11), 9476 (degree 11) and 7235 (degree 11).
+The undirected graph SW-10000-6-0d3-L5 has 10000 nodes with 5 different
+node types: 1 (nodes number 2000), 5 (nodes number 2000), 4 (nodes number
+2000), 3 (nodes number 2000) and 2 (nodes number 2000) and 30000 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00060 and is connected, as it has a single component. The
+graph median node degree is 6, the mean node degree is 6.00, and the node
+degree mode is 6. The top 5 most central nodes are 2895 (degree 12), 9933
+(degree 11), 9631 (degree 11), 9476 (degree 11) and 7235 (degree 11).
 
 
 References
@@ -103,13 +104,14 @@ def Sw1000060d3L5(
 	
 	Datetime: 2021-02-04 08:38:18.091920
 	
-	The undirected graph SW-10000-6-0d3-L5 has 10000 nodes with 5 different node types:
-	1 (nodes number 2000), 5 (nodes number 2000), 4 (nodes number 2000), 3 (nodes number
-	2000) and 2 (nodes number 2000) and 30000 unweighted edges, of which none are self-loops.
-	The graph is quite sparse as it has a density of 0.00060 and is connected, as it
-	has a single component. The graph median node degree is 6, the mean node degree is
-	6.00, and the node degree mode is 6. The top 5 most central nodes are 2895 (degree
-	12), 9933 (degree 11), 9631 (degree 11), 9476 (degree 11) and 7235 (degree 11).
+	The undirected graph SW-10000-6-0d3-L5 has 10000 nodes with 5 different
+	node types: 1 (nodes number 2000), 5 (nodes number 2000), 4 (nodes number
+	2000), 3 (nodes number 2000) and 2 (nodes number 2000) and 30000 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00060 and is connected, as it has a single component. The
+	graph median node degree is 6, the mean node degree is 6.00, and the node
+	degree mode is 6. The top 5 most central nodes are 2895 (degree 12), 9933
+	(degree 11), 9631 (degree 11), 9476 (degree 11) and 7235 (degree 11).
 	
 
 

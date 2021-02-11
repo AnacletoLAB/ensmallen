@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:06:21.014247
 
-The undirected graph Porphyromonas cangingivalis has 1694 nodes and 93726 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06536
-and has 7 connected components, where the component with most nodes has 1675 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 110.66, and the node degree mode is 4. The top 5 most
-central nodes are 36874.HQ34_01520 (degree 695), 36874.HQ34_04395 (degree 650), 36874.HQ34_07560
-(degree 553), 36874.HQ34_01965 (degree 529) and 36874.HQ34_07410 (degree 500).
+The undirected graph Porphyromonas cangingivalis has 1694 nodes and 93726
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06536 and has 7 connected components, where the component
+with most nodes has 1675 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 110.66,
+and the node degree mode is 4. The top 5 most central nodes are 36874.HQ34_01520
+(degree 695), 36874.HQ34_04395 (degree 650), 36874.HQ34_07560 (degree 553),
+36874.HQ34_01965 (degree 529) and 36874.HQ34_07410 (degree 500).
 
 
 References
@@ -106,13 +107,14 @@ def PorphyromonasCangingivalis(
 	
 	Datetime: 2021-02-02 18:06:21.014247
 	
-	The undirected graph Porphyromonas cangingivalis has 1694 nodes and 93726 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06536
-	and has 7 connected components, where the component with most nodes has 1675 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 110.66, and the node degree mode is 4. The top 5 most
-	central nodes are 36874.HQ34_01520 (degree 695), 36874.HQ34_04395 (degree 650), 36874.HQ34_07560
-	(degree 553), 36874.HQ34_01965 (degree 529) and 36874.HQ34_07410 (degree 500).
+	The undirected graph Porphyromonas cangingivalis has 1694 nodes and 93726
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06536 and has 7 connected components, where the component
+	with most nodes has 1675 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 110.66,
+	and the node degree mode is 4. The top 5 most central nodes are 36874.HQ34_01520
+	(degree 695), 36874.HQ34_04395 (degree 650), 36874.HQ34_07560 (degree 553),
+	36874.HQ34_01965 (degree 529) and 36874.HQ34_07410 (degree 500).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:35.372980
 
-The undirected graph Sulfurimonas sp. AST10 has 2275 nodes and 178627 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06906 and
-has 7 connected components, where the component with most nodes has 2262 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 157.03, and the node degree mode is 9. The top 5 most central
-nodes are 1172190.M947_00010 (degree 985), 1172190.M947_05190 (degree 908), 1172190.M947_06525
-(degree 825), 1172190.M947_02395 (degree 742) and 1172190.M947_03510 (degree 739).
+The undirected graph Sulfurimonas sp. AST10 has 2275 nodes and 178627 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06906 and has 7 connected components, where the component with most
+nodes has 2262 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 157.03, and
+the node degree mode is 9. The top 5 most central nodes are 1172190.M947_00010
+(degree 985), 1172190.M947_05190 (degree 908), 1172190.M947_06525 (degree
+825), 1172190.M947_02395 (degree 742) and 1172190.M947_03510 (degree 739).
 
 
 References
@@ -106,13 +107,14 @@ def SulfurimonasSp.Ast10(
 	
 	Datetime: 2021-02-02 23:07:35.372980
 	
-	The undirected graph Sulfurimonas sp. AST10 has 2275 nodes and 178627 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06906 and
-	has 7 connected components, where the component with most nodes has 2262 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 157.03, and the node degree mode is 9. The top 5 most central
-	nodes are 1172190.M947_00010 (degree 985), 1172190.M947_05190 (degree 908), 1172190.M947_06525
-	(degree 825), 1172190.M947_02395 (degree 742) and 1172190.M947_03510 (degree 739).
+	The undirected graph Sulfurimonas sp. AST10 has 2275 nodes and 178627 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06906 and has 7 connected components, where the component with most
+	nodes has 2262 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 157.03, and
+	the node degree mode is 9. The top 5 most central nodes are 1172190.M947_00010
+	(degree 985), 1172190.M947_05190 (degree 908), 1172190.M947_06525 (degree
+	825), 1172190.M947_02395 (degree 742) and 1172190.M947_03510 (degree 739).
 	
 
 

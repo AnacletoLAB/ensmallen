@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:11.125804
 
-The undirected graph Spiroplasma melliferum has 908 nodes and 42635 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10354
-and has 15 connected components, where the component with most nodes has 859 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 71, the mean node degree is 93.91, and the node degree mode is 2. The top 5 most
-central nodes are 1129368.SMIPMB4A_v3c2780 (degree 436), 1129368.SMIPMB4A_v3c3050
-(degree 415), 1129368.SMIPMB4A_v3c3210 (degree 410), 1129368.SMIPMB4A_v3c0290 (degree
-381) and 1129368.SMIPMB4A_v3c1920 (degree 347).
+The undirected graph Spiroplasma melliferum has 908 nodes and 42635 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10354 and has 15 connected components, where the component
+with most nodes has 859 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 71, the mean node degree is 93.91,
+and the node degree mode is 2. The top 5 most central nodes are 1129368.SMIPMB4A_v3c2780
+(degree 436), 1129368.SMIPMB4A_v3c3050 (degree 415), 1129368.SMIPMB4A_v3c3210
+(degree 410), 1129368.SMIPMB4A_v3c0290 (degree 381) and 1129368.SMIPMB4A_v3c1920
+(degree 347).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaMelliferum(
 	
 	Datetime: 2021-02-02 22:55:11.125804
 	
-	The undirected graph Spiroplasma melliferum has 908 nodes and 42635 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10354
-	and has 15 connected components, where the component with most nodes has 859 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 71, the mean node degree is 93.91, and the node degree mode is 2. The top 5 most
-	central nodes are 1129368.SMIPMB4A_v3c2780 (degree 436), 1129368.SMIPMB4A_v3c3050
-	(degree 415), 1129368.SMIPMB4A_v3c3210 (degree 410), 1129368.SMIPMB4A_v3c0290 (degree
-	381) and 1129368.SMIPMB4A_v3c1920 (degree 347).
+	The undirected graph Spiroplasma melliferum has 908 nodes and 42635 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10354 and has 15 connected components, where the component
+	with most nodes has 859 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 71, the mean node degree is 93.91,
+	and the node degree mode is 2. The top 5 most central nodes are 1129368.SMIPMB4A_v3c2780
+	(degree 436), 1129368.SMIPMB4A_v3c3050 (degree 415), 1129368.SMIPMB4A_v3c3210
+	(degree 410), 1129368.SMIPMB4A_v3c0290 (degree 381) and 1129368.SMIPMB4A_v3c1920
+	(degree 347).
 	
 
 

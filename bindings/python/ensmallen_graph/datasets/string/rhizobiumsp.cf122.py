@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:31.133094
 
-The undirected graph Rhizobium sp. CF122 has 5922 nodes and 872855 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04979 and
-has 31 connected components, where the component with most nodes has 5849 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 294.78, and the node degree mode is 1. The top 5 most central
-nodes are 1144312.PMI09_04139 (degree 2204), 1144312.PMI09_03418 (degree 2123), 1144312.PMI09_03424
-(degree 1778), 1144312.PMI09_03891 (degree 1771) and 1144312.PMI09_01450 (degree
+The undirected graph Rhizobium sp. CF122 has 5922 nodes and 872855 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04979 and has 31 connected components, where the component with most
+nodes has 5849 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 294.78, and
+the node degree mode is 1. The top 5 most central nodes are 1144312.PMI09_04139
+(degree 2204), 1144312.PMI09_03418 (degree 2123), 1144312.PMI09_03424 (degree
+1778), 1144312.PMI09_03891 (degree 1771) and 1144312.PMI09_01450 (degree
 1585).
 
 
@@ -107,13 +108,14 @@ def RhizobiumSp.Cf122(
 	
 	Datetime: 2021-02-02 22:58:31.133094
 	
-	The undirected graph Rhizobium sp. CF122 has 5922 nodes and 872855 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04979 and
-	has 31 connected components, where the component with most nodes has 5849 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 294.78, and the node degree mode is 1. The top 5 most central
-	nodes are 1144312.PMI09_04139 (degree 2204), 1144312.PMI09_03418 (degree 2123), 1144312.PMI09_03424
-	(degree 1778), 1144312.PMI09_03891 (degree 1771) and 1144312.PMI09_01450 (degree
+	The undirected graph Rhizobium sp. CF122 has 5922 nodes and 872855 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04979 and has 31 connected components, where the component with most
+	nodes has 5849 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 294.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1144312.PMI09_04139
+	(degree 2204), 1144312.PMI09_03418 (degree 2123), 1144312.PMI09_03424 (degree
+	1778), 1144312.PMI09_03891 (degree 1771) and 1144312.PMI09_01450 (degree
 	1585).
 	
 

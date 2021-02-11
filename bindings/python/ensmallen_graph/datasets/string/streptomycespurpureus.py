@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:57.798458
 
-The undirected graph Streptomyces purpureus has 6611 nodes and 839895 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03844 and
-has 29 connected components, where the component with most nodes has 6544 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 254.09, and the node degree mode is 2. The top 5 most central
-nodes are 1054860.KB913030_gene4965 (degree 2746), 1054860.KB913030_gene1397 (degree
-2002), 1054860.KB913030_gene1443 (degree 1900), 1054860.KB913030_gene4032 (degree
-1858) and 1054860.KB913030_gene849 (degree 1752).
+The undirected graph Streptomyces purpureus has 6611 nodes and 839895 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03844 and has 29 connected components, where the component with most
+nodes has 6544 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 214, the mean node degree is 254.09, and
+the node degree mode is 2. The top 5 most central nodes are 1054860.KB913030_gene4965
+(degree 2746), 1054860.KB913030_gene1397 (degree 2002), 1054860.KB913030_gene1443
+(degree 1900), 1054860.KB913030_gene4032 (degree 1858) and 1054860.KB913030_gene849
+(degree 1752).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesPurpureus(
 	
 	Datetime: 2021-02-02 22:17:57.798458
 	
-	The undirected graph Streptomyces purpureus has 6611 nodes and 839895 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03844 and
-	has 29 connected components, where the component with most nodes has 6544 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 254.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1054860.KB913030_gene4965 (degree 2746), 1054860.KB913030_gene1397 (degree
-	2002), 1054860.KB913030_gene1443 (degree 1900), 1054860.KB913030_gene4032 (degree
-	1858) and 1054860.KB913030_gene849 (degree 1752).
+	The undirected graph Streptomyces purpureus has 6611 nodes and 839895 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03844 and has 29 connected components, where the component with most
+	nodes has 6544 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 214, the mean node degree is 254.09, and
+	the node degree mode is 2. The top 5 most central nodes are 1054860.KB913030_gene4965
+	(degree 2746), 1054860.KB913030_gene1397 (degree 2002), 1054860.KB913030_gene1443
+	(degree 1900), 1054860.KB913030_gene4032 (degree 1858) and 1054860.KB913030_gene849
+	(degree 1752).
 	
 
 

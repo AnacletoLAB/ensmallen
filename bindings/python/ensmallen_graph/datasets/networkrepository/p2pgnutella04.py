@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:28:46.203588
 
-The undirected graph p2p-Gnutella04 has 10876 nodes and 39994 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00068
-and is connected, as it has a single component. The graph median node degree is 5,
-the mean node degree is 7.35, and the node degree mode is 1. The top 5 most central
-nodes are 3110 (degree 103), 1055 (degree 82), 9135 (degree 66), 1057 (degree 65)
-and 408 (degree 65).
+The undirected graph p2p-Gnutella04 has 10876 nodes and 39994 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00068 and is connected, as it has a single component. The
+graph median node degree is 5, the mean node degree is 7.35, and the node
+degree mode is 1. The top 5 most central nodes are 3110 (degree 103), 1055
+(degree 82), 9135 (degree 66), 1057 (degree 65) and 408 (degree 65).
 
 
 References
@@ -102,12 +102,12 @@ def P2pGnutella04(
 	
 	Datetime: 2021-02-06 10:28:46.203588
 	
-	The undirected graph p2p-Gnutella04 has 10876 nodes and 39994 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00068
-	and is connected, as it has a single component. The graph median node degree is 5,
-	the mean node degree is 7.35, and the node degree mode is 1. The top 5 most central
-	nodes are 3110 (degree 103), 1055 (degree 82), 9135 (degree 66), 1057 (degree 65)
-	and 408 (degree 65).
+	The undirected graph p2p-Gnutella04 has 10876 nodes and 39994 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00068 and is connected, as it has a single component. The
+	graph median node degree is 5, the mean node degree is 7.35, and the node
+	degree mode is 1. The top 5 most central nodes are 3110 (degree 103), 1055
+	(degree 82), 9135 (degree 66), 1057 (degree 65) and 408 (degree 65).
 	
 
 

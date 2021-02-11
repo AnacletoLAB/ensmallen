@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:12.211790
 
-The undirected graph Lactobacillus fermentum IFO3956 has 1830 nodes and 93852 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05608
-and has 5 connected components, where the component with most nodes has 1821 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 75, the mean node degree is 102.57, and the node degree mode is 2. The top 5 most
-central nodes are 334390.LAF_1317 (degree 781), 334390.LAF_0751 (degree 564), 334390.LAF_0776
-(degree 530), 334390.LAF_0277 (degree 528) and 334390.LAF_0511 (degree 524).
+The undirected graph Lactobacillus fermentum IFO3956 has 1830 nodes and
+93852 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05608 and has 5 connected components, where the
+component with most nodes has 1821 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 75, the mean node degree
+is 102.57, and the node degree mode is 2. The top 5 most central nodes
+are 334390.LAF_1317 (degree 781), 334390.LAF_0751 (degree 564), 334390.LAF_0776
+(degree 530), 334390.LAF_0277 (degree 528) and 334390.LAF_0511 (degree
+524).
 
 
 References
@@ -106,13 +108,15 @@ def LactobacillusFermentumIfo3956(
 	
 	Datetime: 2021-02-02 20:30:12.211790
 	
-	The undirected graph Lactobacillus fermentum IFO3956 has 1830 nodes and 93852 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05608
-	and has 5 connected components, where the component with most nodes has 1821 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 75, the mean node degree is 102.57, and the node degree mode is 2. The top 5 most
-	central nodes are 334390.LAF_1317 (degree 781), 334390.LAF_0751 (degree 564), 334390.LAF_0776
-	(degree 530), 334390.LAF_0277 (degree 528) and 334390.LAF_0511 (degree 524).
+	The undirected graph Lactobacillus fermentum IFO3956 has 1830 nodes and
+	93852 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05608 and has 5 connected components, where the
+	component with most nodes has 1821 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 75, the mean node degree
+	is 102.57, and the node degree mode is 2. The top 5 most central nodes
+	are 334390.LAF_1317 (degree 781), 334390.LAF_0751 (degree 564), 334390.LAF_0776
+	(degree 530), 334390.LAF_0277 (degree 528) and 334390.LAF_0511 (degree
+	524).
 	
 
 

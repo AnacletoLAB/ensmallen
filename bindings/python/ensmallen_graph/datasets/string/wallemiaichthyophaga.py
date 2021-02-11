@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:27.599116
 
-The undirected graph Wallemia ichthyophaga has 3724 nodes and 358735 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05175 and
-has 2 connected components, where the component with most nodes has 3722 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 192.66, and the node degree mode is 1. The top 5 most central
-nodes are 245174.XP_009270235.1 (degree 1720), 245174.XP_009267170.1 (degree 1319),
-245174.XP_009266417.1 (degree 1100), 245174.XP_009266505.1 (degree 1066) and 245174.XP_009268159.1
+The undirected graph Wallemia ichthyophaga has 3724 nodes and 358735 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05175 and has 2 connected components, where the component with most
+nodes has 3722 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 192.66, and
+the node degree mode is 1. The top 5 most central nodes are 245174.XP_009270235.1
+(degree 1720), 245174.XP_009267170.1 (degree 1319), 245174.XP_009266417.1
+(degree 1100), 245174.XP_009266505.1 (degree 1066) and 245174.XP_009268159.1
 (degree 1047).
 
 
@@ -107,13 +108,14 @@ def WallemiaIchthyophaga(
 	
 	Datetime: 2021-02-02 20:10:27.599116
 	
-	The undirected graph Wallemia ichthyophaga has 3724 nodes and 358735 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05175 and
-	has 2 connected components, where the component with most nodes has 3722 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 192.66, and the node degree mode is 1. The top 5 most central
-	nodes are 245174.XP_009270235.1 (degree 1720), 245174.XP_009267170.1 (degree 1319),
-	245174.XP_009266417.1 (degree 1100), 245174.XP_009266505.1 (degree 1066) and 245174.XP_009268159.1
+	The undirected graph Wallemia ichthyophaga has 3724 nodes and 358735 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05175 and has 2 connected components, where the component with most
+	nodes has 3722 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 192.66, and
+	the node degree mode is 1. The top 5 most central nodes are 245174.XP_009270235.1
+	(degree 1720), 245174.XP_009267170.1 (degree 1319), 245174.XP_009266417.1
+	(degree 1100), 245174.XP_009266505.1 (degree 1066) and 245174.XP_009268159.1
 	(degree 1047).
 	
 

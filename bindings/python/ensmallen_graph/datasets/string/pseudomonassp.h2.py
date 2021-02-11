@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:13.653378
 
-The undirected graph Pseudomonas sp. H2 has 4937 nodes and 759465 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06233 and
-has 15 connected components, where the component with most nodes has 4903 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 307.66, and the node degree mode is 1. The top 5 most central
-nodes are 658612.MD26_10370 (degree 2197), 658612.MD26_23025 (degree 1926), 658612.MD26_14905
-(degree 1712), 658612.MD26_22345 (degree 1672) and 658612.MD26_02915 (degree 1547).
+The undirected graph Pseudomonas sp. H2 has 4937 nodes and 759465 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06233 and has 15 connected components, where the component with most
+nodes has 4903 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 307.66, and
+the node degree mode is 1. The top 5 most central nodes are 658612.MD26_10370
+(degree 2197), 658612.MD26_23025 (degree 1926), 658612.MD26_14905 (degree
+1712), 658612.MD26_22345 (degree 1672) and 658612.MD26_02915 (degree 1547).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasSp.H2(
 	
 	Datetime: 2021-02-02 21:27:13.653378
 	
-	The undirected graph Pseudomonas sp. H2 has 4937 nodes and 759465 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06233 and
-	has 15 connected components, where the component with most nodes has 4903 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 307.66, and the node degree mode is 1. The top 5 most central
-	nodes are 658612.MD26_10370 (degree 2197), 658612.MD26_23025 (degree 1926), 658612.MD26_14905
-	(degree 1712), 658612.MD26_22345 (degree 1672) and 658612.MD26_02915 (degree 1547).
+	The undirected graph Pseudomonas sp. H2 has 4937 nodes and 759465 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06233 and has 15 connected components, where the component with most
+	nodes has 4903 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 307.66, and
+	the node degree mode is 1. The top 5 most central nodes are 658612.MD26_10370
+	(degree 2197), 658612.MD26_23025 (degree 1926), 658612.MD26_14905 (degree
+	1712), 658612.MD26_22345 (degree 1672) and 658612.MD26_02915 (degree 1547).
 	
 
 

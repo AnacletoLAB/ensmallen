@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:29.852138
 
-The undirected graph Carnobacterium divergens has 2443 nodes and 175613 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-and has 11 connected components, where the component with most nodes has 2413 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 143.77, and the node degree mode is 8. The top 5
-most central nodes are 1449336.JQLO01000001_gene1269 (degree 1033), 1449336.JQLO01000001_gene2220
-(degree 895), 1449336.JQLO01000001_gene128 (degree 880), 1449336.JQLO01000001_gene109
-(degree 827) and 1449336.JQLO01000001_gene544 (degree 798).
+The undirected graph Carnobacterium divergens has 2443 nodes and 175613
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05887 and has 11 connected components, where the component
+with most nodes has 2413 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 143.77,
+and the node degree mode is 8. The top 5 most central nodes are 1449336.JQLO01000001_gene1269
+(degree 1033), 1449336.JQLO01000001_gene2220 (degree 895), 1449336.JQLO01000001_gene128
+(degree 880), 1449336.JQLO01000001_gene109 (degree 827) and 1449336.JQLO01000001_gene544
+(degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumDivergens(
 	
 	Datetime: 2021-02-03 23:04:29.852138
 	
-	The undirected graph Carnobacterium divergens has 2443 nodes and 175613 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-	and has 11 connected components, where the component with most nodes has 2413 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 143.77, and the node degree mode is 8. The top 5
-	most central nodes are 1449336.JQLO01000001_gene1269 (degree 1033), 1449336.JQLO01000001_gene2220
-	(degree 895), 1449336.JQLO01000001_gene128 (degree 880), 1449336.JQLO01000001_gene109
-	(degree 827) and 1449336.JQLO01000001_gene544 (degree 798).
+	The undirected graph Carnobacterium divergens has 2443 nodes and 175613
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05887 and has 11 connected components, where the component
+	with most nodes has 2413 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 143.77,
+	and the node degree mode is 8. The top 5 most central nodes are 1449336.JQLO01000001_gene1269
+	(degree 1033), 1449336.JQLO01000001_gene2220 (degree 895), 1449336.JQLO01000001_gene128
+	(degree 880), 1449336.JQLO01000001_gene109 (degree 827) and 1449336.JQLO01000001_gene544
+	(degree 798).
 	
 
 

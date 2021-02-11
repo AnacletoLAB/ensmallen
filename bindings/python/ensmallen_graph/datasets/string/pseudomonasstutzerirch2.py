@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:45.480293
 
-The undirected graph Pseudomonas stutzeri RCH2 has 4215 nodes and 419013 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04718
-and has 7 connected components, where the component with most nodes has 4198 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 198.82, and the node degree mode is 8. The top 5
-most central nodes are 644801.Psest_4219 (degree 1823), 644801.Psest_1287 (degree
-1455), 644801.Psest_3711 (degree 1386), 644801.Psest_1286 (degree 1373) and 644801.Psest_0951
-(degree 1349).
+The undirected graph Pseudomonas stutzeri RCH2 has 4215 nodes and 419013
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04718 and has 7 connected components, where the component
+with most nodes has 4198 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 198.82,
+and the node degree mode is 8. The top 5 most central nodes are 644801.Psest_4219
+(degree 1823), 644801.Psest_1287 (degree 1455), 644801.Psest_3711 (degree
+1386), 644801.Psest_1286 (degree 1373) and 644801.Psest_0951 (degree 1349).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasStutzeriRch2(
 	
 	Datetime: 2021-02-02 21:24:45.480293
 	
-	The undirected graph Pseudomonas stutzeri RCH2 has 4215 nodes and 419013 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04718
-	and has 7 connected components, where the component with most nodes has 4198 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 198.82, and the node degree mode is 8. The top 5
-	most central nodes are 644801.Psest_4219 (degree 1823), 644801.Psest_1287 (degree
-	1455), 644801.Psest_3711 (degree 1386), 644801.Psest_1286 (degree 1373) and 644801.Psest_0951
-	(degree 1349).
+	The undirected graph Pseudomonas stutzeri RCH2 has 4215 nodes and 419013
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04718 and has 7 connected components, where the component
+	with most nodes has 4198 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 198.82,
+	and the node degree mode is 8. The top 5 most central nodes are 644801.Psest_4219
+	(degree 1823), 644801.Psest_1287 (degree 1455), 644801.Psest_3711 (degree
+	1386), 644801.Psest_1286 (degree 1373) and 644801.Psest_0951 (degree 1349).
 	
 
 

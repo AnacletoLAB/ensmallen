@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:06.261009
 
-The undirected graph Pseudomonas sp. Ant303 has 5244 nodes and 586090 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04263 and
-has 19 connected components, where the component with most nodes has 5198 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 223.53, and the node degree mode is 1. The top 5 most central
-nodes are 1488328.JMCL01000001_gene2981 (degree 1909), 1488328.JMCL01000039_gene2070
-(degree 1625), 1488328.JMCL01000154_gene60 (degree 1611), 1488328.JMCL01000137_gene1766
-(degree 1547) and 1488328.JMCL01000137_gene1767 (degree 1470).
+The undirected graph Pseudomonas sp. Ant303 has 5244 nodes and 586090 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04263 and has 19 connected components, where the component with most
+nodes has 5198 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 223.53, and
+the node degree mode is 1. The top 5 most central nodes are 1488328.JMCL01000001_gene2981
+(degree 1909), 1488328.JMCL01000039_gene2070 (degree 1625), 1488328.JMCL01000154_gene60
+(degree 1611), 1488328.JMCL01000137_gene1766 (degree 1547) and 1488328.JMCL01000137_gene1767
+(degree 1470).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasSp.Ant303(
 	
 	Datetime: 2021-02-03 23:14:06.261009
 	
-	The undirected graph Pseudomonas sp. Ant303 has 5244 nodes and 586090 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04263 and
-	has 19 connected components, where the component with most nodes has 5198 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 223.53, and the node degree mode is 1. The top 5 most central
-	nodes are 1488328.JMCL01000001_gene2981 (degree 1909), 1488328.JMCL01000039_gene2070
-	(degree 1625), 1488328.JMCL01000154_gene60 (degree 1611), 1488328.JMCL01000137_gene1766
-	(degree 1547) and 1488328.JMCL01000137_gene1767 (degree 1470).
+	The undirected graph Pseudomonas sp. Ant303 has 5244 nodes and 586090 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04263 and has 19 connected components, where the component with most
+	nodes has 5198 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 223.53, and
+	the node degree mode is 1. The top 5 most central nodes are 1488328.JMCL01000001_gene2981
+	(degree 1909), 1488328.JMCL01000039_gene2070 (degree 1625), 1488328.JMCL01000154_gene60
+	(degree 1611), 1488328.JMCL01000137_gene1766 (degree 1547) and 1488328.JMCL01000137_gene1767
+	(degree 1470).
 	
 
 

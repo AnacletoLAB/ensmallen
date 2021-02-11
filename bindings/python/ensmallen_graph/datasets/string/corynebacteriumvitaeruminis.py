@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:44.177345
 
-The undirected graph Corynebacterium vitaeruminis has 2558 nodes and 188475 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05763
-and has 2 connected components, where the component with most nodes has 2556 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 147.36, and the node degree mode is 6. The top 5
-most central nodes are 1224164.B843_06405 (degree 979), 1224164.B843_10505 (degree
-940), 1224164.B843_03170 (degree 937), 1224164.B843_06575 (degree 812) and 1224164.B843_04230
-(degree 794).
+The undirected graph Corynebacterium vitaeruminis has 2558 nodes and 188475
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05763 and has 2 connected components, where the component
+with most nodes has 2556 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 147.36,
+and the node degree mode is 6. The top 5 most central nodes are 1224164.B843_06405
+(degree 979), 1224164.B843_10505 (degree 940), 1224164.B843_03170 (degree
+937), 1224164.B843_06575 (degree 812) and 1224164.B843_04230 (degree 794).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumVitaeruminis(
 	
 	Datetime: 2021-02-02 23:24:44.177345
 	
-	The undirected graph Corynebacterium vitaeruminis has 2558 nodes and 188475 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05763
-	and has 2 connected components, where the component with most nodes has 2556 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 147.36, and the node degree mode is 6. The top 5
-	most central nodes are 1224164.B843_06405 (degree 979), 1224164.B843_10505 (degree
-	940), 1224164.B843_03170 (degree 937), 1224164.B843_06575 (degree 812) and 1224164.B843_04230
-	(degree 794).
+	The undirected graph Corynebacterium vitaeruminis has 2558 nodes and 188475
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05763 and has 2 connected components, where the component
+	with most nodes has 2556 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 147.36,
+	and the node degree mode is 6. The top 5 most central nodes are 1224164.B843_06405
+	(degree 979), 1224164.B843_10505 (degree 940), 1224164.B843_03170 (degree
+	937), 1224164.B843_06575 (degree 812) and 1224164.B843_04230 (degree 794).
 	
 
 

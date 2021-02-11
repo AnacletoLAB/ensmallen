@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:15.680262
 
-The undirected graph Acholeplasma equifetale has 1197 nodes and 65349 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09129 and
-has 4 connected components, where the component with most nodes has 1188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 81,
-the mean node degree is 109.19, and the node degree mode is 4. The top 5 most central
-nodes are 1408415.JHXL01000006_gene97 (degree 589), 1408415.JHXL01000006_gene68 (degree
-509), 1408415.JHXL01000002_gene338 (degree 493), 1408415.JHXL01000001_gene524 (degree
-481) and 1408415.JHXL01000006_gene96 (degree 458).
+The undirected graph Acholeplasma equifetale has 1197 nodes and 65349 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09129 and has 4 connected components, where the component with most
+nodes has 1188 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 81, the mean node degree is 109.19, and
+the node degree mode is 4. The top 5 most central nodes are 1408415.JHXL01000006_gene97
+(degree 589), 1408415.JHXL01000006_gene68 (degree 509), 1408415.JHXL01000002_gene338
+(degree 493), 1408415.JHXL01000001_gene524 (degree 481) and 1408415.JHXL01000006_gene96
+(degree 458).
 
 
 References
@@ -107,14 +108,15 @@ def AcholeplasmaEquifetale(
 	
 	Datetime: 2021-02-03 22:35:15.680262
 	
-	The undirected graph Acholeplasma equifetale has 1197 nodes and 65349 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09129 and
-	has 4 connected components, where the component with most nodes has 1188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 81,
-	the mean node degree is 109.19, and the node degree mode is 4. The top 5 most central
-	nodes are 1408415.JHXL01000006_gene97 (degree 589), 1408415.JHXL01000006_gene68 (degree
-	509), 1408415.JHXL01000002_gene338 (degree 493), 1408415.JHXL01000001_gene524 (degree
-	481) and 1408415.JHXL01000006_gene96 (degree 458).
+	The undirected graph Acholeplasma equifetale has 1197 nodes and 65349 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09129 and has 4 connected components, where the component with most
+	nodes has 1188 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 81, the mean node degree is 109.19, and
+	the node degree mode is 4. The top 5 most central nodes are 1408415.JHXL01000006_gene97
+	(degree 589), 1408415.JHXL01000006_gene68 (degree 509), 1408415.JHXL01000002_gene338
+	(degree 493), 1408415.JHXL01000001_gene524 (degree 481) and 1408415.JHXL01000006_gene96
+	(degree 458).
 	
 
 

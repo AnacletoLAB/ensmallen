@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:58.526233
 
-The undirected graph Haloferax volcanii has 3805 nodes and 304896 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04213 and
-has 27 connected components, where the component with most nodes has 3751 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 160.26, and the node degree mode is 4. The top 5 most central
-nodes are 309800.C498_03315 (degree 1031), 309800.C498_04620 (degree 995), 309800.C498_08025
-(degree 891), 309800.C498_16289 (degree 860) and 309800.C498_19454 (degree 852).
+The undirected graph Haloferax volcanii has 3805 nodes and 304896 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04213 and has 27 connected components, where the component with most
+nodes has 3751 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 160.26, and
+the node degree mode is 4. The top 5 most central nodes are 309800.C498_03315
+(degree 1031), 309800.C498_04620 (degree 995), 309800.C498_08025 (degree
+891), 309800.C498_16289 (degree 860) and 309800.C498_19454 (degree 852).
 
 
 References
@@ -106,13 +107,14 @@ def HaloferaxVolcanii(
 	
 	Datetime: 2021-02-02 20:22:58.526233
 	
-	The undirected graph Haloferax volcanii has 3805 nodes and 304896 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04213 and
-	has 27 connected components, where the component with most nodes has 3751 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 160.26, and the node degree mode is 4. The top 5 most central
-	nodes are 309800.C498_03315 (degree 1031), 309800.C498_04620 (degree 995), 309800.C498_08025
-	(degree 891), 309800.C498_16289 (degree 860) and 309800.C498_19454 (degree 852).
+	The undirected graph Haloferax volcanii has 3805 nodes and 304896 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04213 and has 27 connected components, where the component with most
+	nodes has 3751 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 160.26, and
+	the node degree mode is 4. The top 5 most central nodes are 309800.C498_03315
+	(degree 1031), 309800.C498_04620 (degree 995), 309800.C498_08025 (degree
+	891), 309800.C498_16289 (degree 860) and 309800.C498_19454 (degree 852).
 	
 
 

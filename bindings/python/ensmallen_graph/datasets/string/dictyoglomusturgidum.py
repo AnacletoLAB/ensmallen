@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:06.157094
 
-The undirected graph Dictyoglomus turgidum has 1742 nodes and 106481 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07022 and
-is connected, as it has a single component. The graph median node degree is 91, the
-mean node degree is 122.25, and the node degree mode is 47. The top 5 most central
-nodes are 515635.Dtur_0882 (degree 819), 515635.Dtur_1497 (degree 815), 515635.Dtur_0256
-(degree 705), 515635.Dtur_1543 (degree 630) and 515635.Dtur_0749 (degree 629).
+The undirected graph Dictyoglomus turgidum has 1742 nodes and 106481 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07022 and is connected, as it has a single component. The graph median
+node degree is 91, the mean node degree is 122.25, and the node degree
+mode is 47. The top 5 most central nodes are 515635.Dtur_0882 (degree 819),
+515635.Dtur_1497 (degree 815), 515635.Dtur_0256 (degree 705), 515635.Dtur_1543
+(degree 630) and 515635.Dtur_0749 (degree 629).
 
 
 References
@@ -105,12 +106,13 @@ def DictyoglomusTurgidum(
 	
 	Datetime: 2021-02-02 21:03:06.157094
 	
-	The undirected graph Dictyoglomus turgidum has 1742 nodes and 106481 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07022 and
-	is connected, as it has a single component. The graph median node degree is 91, the
-	mean node degree is 122.25, and the node degree mode is 47. The top 5 most central
-	nodes are 515635.Dtur_0882 (degree 819), 515635.Dtur_1497 (degree 815), 515635.Dtur_0256
-	(degree 705), 515635.Dtur_1543 (degree 630) and 515635.Dtur_0749 (degree 629).
+	The undirected graph Dictyoglomus turgidum has 1742 nodes and 106481 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07022 and is connected, as it has a single component. The graph median
+	node degree is 91, the mean node degree is 122.25, and the node degree
+	mode is 47. The top 5 most central nodes are 515635.Dtur_0882 (degree 819),
+	515635.Dtur_1497 (degree 815), 515635.Dtur_0256 (degree 705), 515635.Dtur_1543
+	(degree 630) and 515635.Dtur_0749 (degree 629).
 	
 
 

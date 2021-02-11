@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:19.672078
 
-The undirected graph Martelella mediterranea has 5000 nodes and 431708 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03454 and
-has 8 connected components, where the component with most nodes has 4986 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 172.68, and the node degree mode is 1. The top 5 most central
-nodes are 1122214.AQWH01000008_gene1569 (degree 1804), 1122214.AQWH01000007_gene1716
-(degree 1342), 1122214.AQWH01000009_gene1978 (degree 1305), 1122214.AQWH01000026_gene4812
-(degree 1271) and 1122214.AQWH01000003_gene4123 (degree 1195).
+The undirected graph Martelella mediterranea has 5000 nodes and 431708
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03454 and has 8 connected components, where the component
+with most nodes has 4986 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 172.68,
+and the node degree mode is 1. The top 5 most central nodes are 1122214.AQWH01000008_gene1569
+(degree 1804), 1122214.AQWH01000007_gene1716 (degree 1342), 1122214.AQWH01000009_gene1978
+(degree 1305), 1122214.AQWH01000026_gene4812 (degree 1271) and 1122214.AQWH01000003_gene4123
+(degree 1195).
 
 
 References
@@ -107,14 +108,15 @@ def MartelellaMediterranea(
 	
 	Datetime: 2021-02-02 22:42:19.672078
 	
-	The undirected graph Martelella mediterranea has 5000 nodes and 431708 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03454 and
-	has 8 connected components, where the component with most nodes has 4986 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 172.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1122214.AQWH01000008_gene1569 (degree 1804), 1122214.AQWH01000007_gene1716
-	(degree 1342), 1122214.AQWH01000009_gene1978 (degree 1305), 1122214.AQWH01000026_gene4812
-	(degree 1271) and 1122214.AQWH01000003_gene4123 (degree 1195).
+	The undirected graph Martelella mediterranea has 5000 nodes and 431708
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03454 and has 8 connected components, where the component
+	with most nodes has 4986 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 172.68,
+	and the node degree mode is 1. The top 5 most central nodes are 1122214.AQWH01000008_gene1569
+	(degree 1804), 1122214.AQWH01000007_gene1716 (degree 1342), 1122214.AQWH01000009_gene1978
+	(degree 1305), 1122214.AQWH01000026_gene4812 (degree 1271) and 1122214.AQWH01000003_gene4123
+	(degree 1195).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:53:11.033039
 
-The undirected graph Mitsuokella sp. W9106 has 2278 nodes and 173897 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06705 and
-has 3 connected components, where the component with most nodes has 2274 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 152.68, and the node degree mode is 10. The top 5 most central
-nodes are 1321781.HMPREF1985_00871 (degree 853), 1321781.HMPREF1985_00247 (degree
-846), 1321781.HMPREF1985_02027 (degree 775), 1321781.HMPREF1985_00309 (degree 767)
-and 1321781.HMPREF1985_00475 (degree 742).
+The undirected graph Mitsuokella sp. W9106 has 2278 nodes and 173897 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06705 and has 3 connected components, where the component with most
+nodes has 2274 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 152.68, and
+the node degree mode is 10. The top 5 most central nodes are 1321781.HMPREF1985_00871
+(degree 853), 1321781.HMPREF1985_00247 (degree 846), 1321781.HMPREF1985_02027
+(degree 775), 1321781.HMPREF1985_00309 (degree 767) and 1321781.HMPREF1985_00475
+(degree 742).
 
 
 References
@@ -107,14 +108,15 @@ def MitsuokellaSp.W9106(
 	
 	Datetime: 2021-02-03 21:53:11.033039
 	
-	The undirected graph Mitsuokella sp. W9106 has 2278 nodes and 173897 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06705 and
-	has 3 connected components, where the component with most nodes has 2274 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 152.68, and the node degree mode is 10. The top 5 most central
-	nodes are 1321781.HMPREF1985_00871 (degree 853), 1321781.HMPREF1985_00247 (degree
-	846), 1321781.HMPREF1985_02027 (degree 775), 1321781.HMPREF1985_00309 (degree 767)
-	and 1321781.HMPREF1985_00475 (degree 742).
+	The undirected graph Mitsuokella sp. W9106 has 2278 nodes and 173897 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06705 and has 3 connected components, where the component with most
+	nodes has 2274 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 152.68, and
+	the node degree mode is 10. The top 5 most central nodes are 1321781.HMPREF1985_00871
+	(degree 853), 1321781.HMPREF1985_00247 (degree 846), 1321781.HMPREF1985_02027
+	(degree 775), 1321781.HMPREF1985_00309 (degree 767) and 1321781.HMPREF1985_00475
+	(degree 742).
 	
 
 

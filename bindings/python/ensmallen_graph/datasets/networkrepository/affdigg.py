@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:33:11.690200
 
-The undirected graph aff-digg has 872622 nodes and 22502224 unweighted edges, of
-which 524 are self-loops. The graph is extremely sparse as it has a density of 0.00006
-and is connected, as it has a single component. The graph median node degree is 3,
-the mean node degree is 51.57, and the node degree mode is 1. The top 5 most central
-nodes are 128 (degree 75588), 6267 (degree 72898), 533 (degree 64446), 5311 (degree
-62755) and 4982 (degree 60219).
+The undirected graph aff-digg has 872622 nodes and 22502224 unweighted
+edges, of which 524 are self-loops. The graph is extremely sparse as it
+has a density of 0.00006 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 51.57, and the
+node degree mode is 1. The top 5 most central nodes are 128 (degree 75588),
+6267 (degree 72898), 533 (degree 64446), 5311 (degree 62755) and 4982 (degree
+60219).
 
 
 References
@@ -102,12 +103,13 @@ def AffDigg(
 	
 	Datetime: 2021-02-06 20:33:11.690200
 	
-	The undirected graph aff-digg has 872622 nodes and 22502224 unweighted edges, of
-	which 524 are self-loops. The graph is extremely sparse as it has a density of 0.00006
-	and is connected, as it has a single component. The graph median node degree is 3,
-	the mean node degree is 51.57, and the node degree mode is 1. The top 5 most central
-	nodes are 128 (degree 75588), 6267 (degree 72898), 533 (degree 64446), 5311 (degree
-	62755) and 4982 (degree 60219).
+	The undirected graph aff-digg has 872622 nodes and 22502224 unweighted
+	edges, of which 524 are self-loops. The graph is extremely sparse as it
+	has a density of 0.00006 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 51.57, and the
+	node degree mode is 1. The top 5 most central nodes are 128 (degree 75588),
+	6267 (degree 72898), 533 (degree 64446), 5311 (degree 62755) and 4982 (degree
+	60219).
 	
 
 

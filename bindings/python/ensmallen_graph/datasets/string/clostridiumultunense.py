@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:57.582741
 
-The undirected graph Clostridium ultunense has 3147 nodes and 294171 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05943 and
-has 7 connected components, where the component with most nodes has 3134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 186.95, and the node degree mode is 2. The top 5 most central
-nodes are 865861.AZSU01000002_gene3116 (degree 1276), 865861.AZSU01000003_gene1776
-(degree 1076), 865861.AZSU01000001_gene517 (degree 971), 865861.AZSU01000002_gene2409
-(degree 954) and 865861.AZSU01000003_gene1876 (degree 948).
+The undirected graph Clostridium ultunense has 3147 nodes and 294171 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05943 and has 7 connected components, where the component with most
+nodes has 3134 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 186.95, and
+the node degree mode is 2. The top 5 most central nodes are 865861.AZSU01000002_gene3116
+(degree 1276), 865861.AZSU01000003_gene1776 (degree 1076), 865861.AZSU01000001_gene517
+(degree 971), 865861.AZSU01000002_gene2409 (degree 954) and 865861.AZSU01000003_gene1876
+(degree 948).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumUltunense(
 	
 	Datetime: 2021-02-02 21:47:57.582741
 	
-	The undirected graph Clostridium ultunense has 3147 nodes and 294171 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05943 and
-	has 7 connected components, where the component with most nodes has 3134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 186.95, and the node degree mode is 2. The top 5 most central
-	nodes are 865861.AZSU01000002_gene3116 (degree 1276), 865861.AZSU01000003_gene1776
-	(degree 1076), 865861.AZSU01000001_gene517 (degree 971), 865861.AZSU01000002_gene2409
-	(degree 954) and 865861.AZSU01000003_gene1876 (degree 948).
+	The undirected graph Clostridium ultunense has 3147 nodes and 294171 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05943 and has 7 connected components, where the component with most
+	nodes has 3134 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 186.95, and
+	the node degree mode is 2. The top 5 most central nodes are 865861.AZSU01000002_gene3116
+	(degree 1276), 865861.AZSU01000003_gene1776 (degree 1076), 865861.AZSU01000001_gene517
+	(degree 971), 865861.AZSU01000002_gene2409 (degree 954) and 865861.AZSU01000003_gene1876
+	(degree 948).
 	
 
 

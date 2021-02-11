@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:04.404472
 
-The undirected graph Leuconostoc gelidum JB7 has 1778 nodes and 93997 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05950 and
-has 6 connected components, where the component with most nodes has 1768 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 81,
-the mean node degree is 105.73, and the node degree mode is 7. The top 5 most central
-nodes are 1229756.C269_03740 (degree 811), 1229756.C269_06055 (degree 644), 1229756.C269_07525
-(degree 594), 1229756.C269_00950 (degree 563) and 1229756.C269_03920 (degree 539).
+The undirected graph Leuconostoc gelidum JB7 has 1778 nodes and 93997 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05950 and has 6 connected components, where the component with most
+nodes has 1768 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 81, the mean node degree is 105.73, and
+the node degree mode is 7. The top 5 most central nodes are 1229756.C269_03740
+(degree 811), 1229756.C269_06055 (degree 644), 1229756.C269_07525 (degree
+594), 1229756.C269_00950 (degree 563) and 1229756.C269_03920 (degree 539).
 
 
 References
@@ -106,13 +107,14 @@ def LeuconostocGelidumJb7(
 	
 	Datetime: 2021-02-02 23:27:04.404472
 	
-	The undirected graph Leuconostoc gelidum JB7 has 1778 nodes and 93997 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05950 and
-	has 6 connected components, where the component with most nodes has 1768 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 81,
-	the mean node degree is 105.73, and the node degree mode is 7. The top 5 most central
-	nodes are 1229756.C269_03740 (degree 811), 1229756.C269_06055 (degree 644), 1229756.C269_07525
-	(degree 594), 1229756.C269_00950 (degree 563) and 1229756.C269_03920 (degree 539).
+	The undirected graph Leuconostoc gelidum JB7 has 1778 nodes and 93997 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05950 and has 6 connected components, where the component with most
+	nodes has 1768 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 81, the mean node degree is 105.73, and
+	the node degree mode is 7. The top 5 most central nodes are 1229756.C269_03740
+	(degree 811), 1229756.C269_06055 (degree 644), 1229756.C269_07525 (degree
+	594), 1229756.C269_00950 (degree 563) and 1229756.C269_03920 (degree 539).
 	
 
 

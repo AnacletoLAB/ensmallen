@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:21:11.721047
 
-The undirected graph Intrasporangium oryzae has 4056 nodes and 400509 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04870 and
-has 18 connected components, where the component with most nodes has 4014 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 197.49, and the node degree mode is 3. The top 5 most central
-nodes are 1386089.N865_08475 (degree 1449), 1386089.N865_00735 (degree 1291), 1386089.N865_00675
-(degree 1256), 1386089.N865_05950 (degree 1161) and 1386089.N865_18420 (degree 1159).
+The undirected graph Intrasporangium oryzae has 4056 nodes and 400509 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04870 and has 18 connected components, where the component with most
+nodes has 4014 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 197.49, and
+the node degree mode is 3. The top 5 most central nodes are 1386089.N865_08475
+(degree 1449), 1386089.N865_00735 (degree 1291), 1386089.N865_00675 (degree
+1256), 1386089.N865_05950 (degree 1161) and 1386089.N865_18420 (degree
+1159).
 
 
 References
@@ -106,13 +108,15 @@ def IntrasporangiumOryzae(
 	
 	Datetime: 2021-02-03 22:21:11.721047
 	
-	The undirected graph Intrasporangium oryzae has 4056 nodes and 400509 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04870 and
-	has 18 connected components, where the component with most nodes has 4014 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 197.49, and the node degree mode is 3. The top 5 most central
-	nodes are 1386089.N865_08475 (degree 1449), 1386089.N865_00735 (degree 1291), 1386089.N865_00675
-	(degree 1256), 1386089.N865_05950 (degree 1161) and 1386089.N865_18420 (degree 1159).
+	The undirected graph Intrasporangium oryzae has 4056 nodes and 400509 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04870 and has 18 connected components, where the component with most
+	nodes has 4014 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 197.49, and
+	the node degree mode is 3. The top 5 most central nodes are 1386089.N865_08475
+	(degree 1449), 1386089.N865_00735 (degree 1291), 1386089.N865_00675 (degree
+	1256), 1386089.N865_05950 (degree 1161) and 1386089.N865_18420 (degree
+	1159).
 	
 
 

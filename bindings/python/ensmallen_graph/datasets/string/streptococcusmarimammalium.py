@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:35.577770
 
-The undirected graph Streptococcus marimammalium has 1427 nodes and 103702 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10192 and has 8 connected components, where the component with most nodes has
-1411 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 124, the mean node degree is 145.34, and the node degree mode is 1. The
-top 5 most central nodes are 1123306.KB904358_gene846 (degree 713), 1123306.KB904359_gene923
-(degree 664), 1123306.KB904351_gene1327 (degree 588), 1123306.KB904341_gene12 (degree
+The undirected graph Streptococcus marimammalium has 1427 nodes and 103702
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10192 and has 8 connected components, where the
+component with most nodes has 1411 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 145.34, and the node degree mode is 1. The top 5 most central nodes
+are 1123306.KB904358_gene846 (degree 713), 1123306.KB904359_gene923 (degree
+664), 1123306.KB904351_gene1327 (degree 588), 1123306.KB904341_gene12 (degree
 564) and 1123306.KB904358_gene826 (degree 561).
 
 
@@ -107,13 +108,14 @@ def StreptococcusMarimammalium(
 	
 	Datetime: 2021-02-02 22:50:35.577770
 	
-	The undirected graph Streptococcus marimammalium has 1427 nodes and 103702 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10192 and has 8 connected components, where the component with most nodes has
-	1411 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 124, the mean node degree is 145.34, and the node degree mode is 1. The
-	top 5 most central nodes are 1123306.KB904358_gene846 (degree 713), 1123306.KB904359_gene923
-	(degree 664), 1123306.KB904351_gene1327 (degree 588), 1123306.KB904341_gene12 (degree
+	The undirected graph Streptococcus marimammalium has 1427 nodes and 103702
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10192 and has 8 connected components, where the
+	component with most nodes has 1411 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 145.34, and the node degree mode is 1. The top 5 most central nodes
+	are 1123306.KB904358_gene846 (degree 713), 1123306.KB904359_gene923 (degree
+	664), 1123306.KB904351_gene1327 (degree 588), 1123306.KB904341_gene12 (degree
 	564) and 1123306.KB904358_gene826 (degree 561).
 	
 

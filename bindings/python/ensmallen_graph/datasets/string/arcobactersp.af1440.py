@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:08:15.489980
 
-The undirected graph Arcobacter sp. AF1440 has 2257 nodes and 200230 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-has 6 connected components, where the component with most nodes has 2242 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 177.43, and the node degree mode is 5. The top 5 most central
-nodes are 1355374.JARU01000004_gene1651 (degree 961), 1355374.JARU01000001_gene276
-(degree 937), 1355374.JARU01000004_gene1603 (degree 852), 1355374.JARU01000006_gene1755
-(degree 841) and 1355374.JARU01000001_gene89 (degree 817).
+The undirected graph Arcobacter sp. AF1440 has 2257 nodes and 200230 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07865 and has 6 connected components, where the component with most
+nodes has 2242 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 177.43, and
+the node degree mode is 5. The top 5 most central nodes are 1355374.JARU01000004_gene1651
+(degree 961), 1355374.JARU01000001_gene276 (degree 937), 1355374.JARU01000004_gene1603
+(degree 852), 1355374.JARU01000006_gene1755 (degree 841) and 1355374.JARU01000001_gene89
+(degree 817).
 
 
 References
@@ -107,14 +108,15 @@ def ArcobacterSp.Af1440(
 	
 	Datetime: 2021-02-03 22:08:15.489980
 	
-	The undirected graph Arcobacter sp. AF1440 has 2257 nodes and 200230 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-	has 6 connected components, where the component with most nodes has 2242 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 177.43, and the node degree mode is 5. The top 5 most central
-	nodes are 1355374.JARU01000004_gene1651 (degree 961), 1355374.JARU01000001_gene276
-	(degree 937), 1355374.JARU01000004_gene1603 (degree 852), 1355374.JARU01000006_gene1755
-	(degree 841) and 1355374.JARU01000001_gene89 (degree 817).
+	The undirected graph Arcobacter sp. AF1440 has 2257 nodes and 200230 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07865 and has 6 connected components, where the component with most
+	nodes has 2242 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 177.43, and
+	the node degree mode is 5. The top 5 most central nodes are 1355374.JARU01000004_gene1651
+	(degree 961), 1355374.JARU01000001_gene276 (degree 937), 1355374.JARU01000004_gene1603
+	(degree 852), 1355374.JARU01000006_gene1755 (degree 841) and 1355374.JARU01000001_gene89
+	(degree 817).
 	
 
 

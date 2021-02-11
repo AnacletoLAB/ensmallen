@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:28.802407
 
-The undirected graph Borrelia coriaceae has 909 nodes and 59166 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.14337
-and has 6 connected components, where the component with most nodes has 897 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 130.18, and the node degree mode is 5. The top 5
-most central nodes are 1313292.BCO_0073400 (degree 508), 1313292.BCO_0060400 (degree
-506), 1313292.BCO_0091900 (degree 445), 1313292.BCO_0056200 (degree 433) and 1313292.BCO_0101900
-(degree 402).
+The undirected graph Borrelia coriaceae has 909 nodes and 59166 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14337 and has 6 connected components, where the component
+with most nodes has 897 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 130.18,
+and the node degree mode is 5. The top 5 most central nodes are 1313292.BCO_0073400
+(degree 508), 1313292.BCO_0060400 (degree 506), 1313292.BCO_0091900 (degree
+445), 1313292.BCO_0056200 (degree 433) and 1313292.BCO_0101900 (degree
+402).
 
 
 References
@@ -107,14 +108,15 @@ def BorreliaCoriaceae(
 	
 	Datetime: 2021-02-03 21:46:28.802407
 	
-	The undirected graph Borrelia coriaceae has 909 nodes and 59166 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.14337
-	and has 6 connected components, where the component with most nodes has 897 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 130.18, and the node degree mode is 5. The top 5
-	most central nodes are 1313292.BCO_0073400 (degree 508), 1313292.BCO_0060400 (degree
-	506), 1313292.BCO_0091900 (degree 445), 1313292.BCO_0056200 (degree 433) and 1313292.BCO_0101900
-	(degree 402).
+	The undirected graph Borrelia coriaceae has 909 nodes and 59166 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14337 and has 6 connected components, where the component
+	with most nodes has 897 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 130.18,
+	and the node degree mode is 5. The top 5 most central nodes are 1313292.BCO_0073400
+	(degree 508), 1313292.BCO_0060400 (degree 506), 1313292.BCO_0091900 (degree
+	445), 1313292.BCO_0056200 (degree 433) and 1313292.BCO_0101900 (degree
+	402).
 	
 
 

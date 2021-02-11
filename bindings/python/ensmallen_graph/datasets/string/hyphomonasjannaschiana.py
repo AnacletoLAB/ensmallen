@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:09:27.137944
 
-The undirected graph Hyphomonas jannaschiana has 3485 nodes and 353387 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05821 and
-has 8 connected components, where the component with most nodes has 3469 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 202.80, and the node degree mode is 3. The top 5 most central
-nodes are 1280952.HJA_04641 (degree 1245), 1280952.HJA_12249 (degree 1089), 1280952.HJA_12009
-(degree 1072), 1280952.HJA_16415 (degree 1051) and 1280952.HJA_12274 (degree 990).
+The undirected graph Hyphomonas jannaschiana has 3485 nodes and 353387
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05821 and has 8 connected components, where the component
+with most nodes has 3469 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 202.80,
+and the node degree mode is 3. The top 5 most central nodes are 1280952.HJA_04641
+(degree 1245), 1280952.HJA_12249 (degree 1089), 1280952.HJA_12009 (degree
+1072), 1280952.HJA_16415 (degree 1051) and 1280952.HJA_12274 (degree 990).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasJannaschiana(
 	
 	Datetime: 2021-02-03 21:09:27.137944
 	
-	The undirected graph Hyphomonas jannaschiana has 3485 nodes and 353387 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05821 and
-	has 8 connected components, where the component with most nodes has 3469 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 202.80, and the node degree mode is 3. The top 5 most central
-	nodes are 1280952.HJA_04641 (degree 1245), 1280952.HJA_12249 (degree 1089), 1280952.HJA_12009
-	(degree 1072), 1280952.HJA_16415 (degree 1051) and 1280952.HJA_12274 (degree 990).
+	The undirected graph Hyphomonas jannaschiana has 3485 nodes and 353387
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05821 and has 8 connected components, where the component
+	with most nodes has 3469 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 202.80,
+	and the node degree mode is 3. The top 5 most central nodes are 1280952.HJA_04641
+	(degree 1245), 1280952.HJA_12249 (degree 1089), 1280952.HJA_12009 (degree
+	1072), 1280952.HJA_16415 (degree 1051) and 1280952.HJA_12274 (degree 990).
 	
 
 

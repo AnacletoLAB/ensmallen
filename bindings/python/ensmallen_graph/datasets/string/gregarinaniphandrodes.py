@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:26.698420
 
-The undirected graph Gregarina niphandrodes has 2328 nodes and 400557 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.14788
-and has 5 connected components, where the component with most nodes has 2313 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 308, the mean node degree is 344.12, and the node degree mode is 32. The top 5
-most central nodes are 110365.A0A023B4I2 (degree 1385), 110365.A0A023AXZ2 (degree
-1334), 110365.A0A023BAK1 (degree 1311), 110365.A0A023B8H5 (degree 1288) and 110365.A0A023B9W9
-(degree 1264).
+The undirected graph Gregarina niphandrodes has 2328 nodes and 400557 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.14788 and has 5 connected components, where the component
+with most nodes has 2313 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 308, the mean node degree is 344.12,
+and the node degree mode is 32. The top 5 most central nodes are 110365.A0A023B4I2
+(degree 1385), 110365.A0A023AXZ2 (degree 1334), 110365.A0A023BAK1 (degree
+1311), 110365.A0A023B8H5 (degree 1288) and 110365.A0A023B9W9 (degree 1264).
 
 
 References
@@ -107,14 +107,14 @@ def GregarinaNiphandrodes(
 	
 	Datetime: 2021-02-02 19:46:26.698420
 	
-	The undirected graph Gregarina niphandrodes has 2328 nodes and 400557 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.14788
-	and has 5 connected components, where the component with most nodes has 2313 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 308, the mean node degree is 344.12, and the node degree mode is 32. The top 5
-	most central nodes are 110365.A0A023B4I2 (degree 1385), 110365.A0A023AXZ2 (degree
-	1334), 110365.A0A023BAK1 (degree 1311), 110365.A0A023B8H5 (degree 1288) and 110365.A0A023B9W9
-	(degree 1264).
+	The undirected graph Gregarina niphandrodes has 2328 nodes and 400557 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.14788 and has 5 connected components, where the component
+	with most nodes has 2313 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 308, the mean node degree is 344.12,
+	and the node degree mode is 32. The top 5 most central nodes are 110365.A0A023B4I2
+	(degree 1385), 110365.A0A023AXZ2 (degree 1334), 110365.A0A023BAK1 (degree
+	1311), 110365.A0A023B8H5 (degree 1288) and 110365.A0A023B9W9 (degree 1264).
 	
 
 

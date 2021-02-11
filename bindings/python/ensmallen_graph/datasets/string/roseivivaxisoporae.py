@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:08.327382
 
-The undirected graph Roseivivax isoporae has 4579 nodes and 474942 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04531 and
-has 13 connected components, where the component with most nodes has 4548 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 207.44, and the node degree mode is 1. The top 5 most central
-nodes are 1449351.RISW2_21020 (degree 2505), 1449351.RISW2_06505 (degree 1888), 1449351.RISW2_23490
-(degree 1486), 1449351.RISW2_12455 (degree 1432) and 1449351.RISW2_21145 (degree
+The undirected graph Roseivivax isoporae has 4579 nodes and 474942 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04531 and has 13 connected components, where the component with most
+nodes has 4548 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 207.44, and
+the node degree mode is 1. The top 5 most central nodes are 1449351.RISW2_21020
+(degree 2505), 1449351.RISW2_06505 (degree 1888), 1449351.RISW2_23490 (degree
+1486), 1449351.RISW2_12455 (degree 1432) and 1449351.RISW2_21145 (degree
 1393).
 
 
@@ -107,13 +108,14 @@ def RoseivivaxIsoporae(
 	
 	Datetime: 2021-02-03 23:05:08.327382
 	
-	The undirected graph Roseivivax isoporae has 4579 nodes and 474942 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04531 and
-	has 13 connected components, where the component with most nodes has 4548 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 207.44, and the node degree mode is 1. The top 5 most central
-	nodes are 1449351.RISW2_21020 (degree 2505), 1449351.RISW2_06505 (degree 1888), 1449351.RISW2_23490
-	(degree 1486), 1449351.RISW2_12455 (degree 1432) and 1449351.RISW2_21145 (degree
+	The undirected graph Roseivivax isoporae has 4579 nodes and 474942 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04531 and has 13 connected components, where the component with most
+	nodes has 4548 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 207.44, and
+	the node degree mode is 1. The top 5 most central nodes are 1449351.RISW2_21020
+	(degree 2505), 1449351.RISW2_06505 (degree 1888), 1449351.RISW2_23490 (degree
+	1486), 1449351.RISW2_12455 (degree 1432) and 1449351.RISW2_21145 (degree
 	1393).
 	
 

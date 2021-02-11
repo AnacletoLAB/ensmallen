@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:13:40.312538
 
-The undirected graph Pseudomonas fluorescens Q287 has 5546 nodes and 486817 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03166
-and has 17 connected components, where the component with most nodes has 5509 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 175.56, and the node degree mode is 1. The top 5
-most central nodes are 1038922.PflQ2_0055 (degree 1816), 1038922.PflQ2_5275 (degree
-1453), 1038922.PflQ2_0692 (degree 1319), 1038922.PflQ2_1176 (degree 1298) and 1038922.PflQ2_4469
-(degree 1294).
+The undirected graph Pseudomonas fluorescens Q287 has 5546 nodes and 486817
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03166 and has 17 connected components, where the component
+with most nodes has 5509 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 175.56,
+and the node degree mode is 1. The top 5 most central nodes are 1038922.PflQ2_0055
+(degree 1816), 1038922.PflQ2_5275 (degree 1453), 1038922.PflQ2_0692 (degree
+1319), 1038922.PflQ2_1176 (degree 1298) and 1038922.PflQ2_4469 (degree
+1294).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFluorescensQ287(
 	
 	Datetime: 2021-02-02 22:13:40.312538
 	
-	The undirected graph Pseudomonas fluorescens Q287 has 5546 nodes and 486817 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03166
-	and has 17 connected components, where the component with most nodes has 5509 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 175.56, and the node degree mode is 1. The top 5
-	most central nodes are 1038922.PflQ2_0055 (degree 1816), 1038922.PflQ2_5275 (degree
-	1453), 1038922.PflQ2_0692 (degree 1319), 1038922.PflQ2_1176 (degree 1298) and 1038922.PflQ2_4469
-	(degree 1294).
+	The undirected graph Pseudomonas fluorescens Q287 has 5546 nodes and 486817
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03166 and has 17 connected components, where the component
+	with most nodes has 5509 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 175.56,
+	and the node degree mode is 1. The top 5 most central nodes are 1038922.PflQ2_0055
+	(degree 1816), 1038922.PflQ2_5275 (degree 1453), 1038922.PflQ2_0692 (degree
+	1319), 1038922.PflQ2_1176 (degree 1298) and 1038922.PflQ2_4469 (degree
+	1294).
 	
 
 

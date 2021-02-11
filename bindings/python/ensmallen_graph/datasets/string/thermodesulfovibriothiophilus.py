@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:06.450708
 
-The undirected graph Thermodesulfovibrio thiophilus has 1910 nodes and 150273 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08243
-and has 5 connected components, where the component with most nodes has 1902 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 157.35, and the node degree mode is 44. The top 5
-most central nodes are 1123376.AUIU01000001_gene767 (degree 884), 1123376.AUIU01000015_gene457
+The undirected graph Thermodesulfovibrio thiophilus has 1910 nodes and
+150273 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08243 and has 5 connected components, where the
+component with most nodes has 1902 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+is 157.35, and the node degree mode is 44. The top 5 most central nodes
+are 1123376.AUIU01000001_gene767 (degree 884), 1123376.AUIU01000015_gene457
 (degree 872), 1123376.AUIU01000016_gene274 (degree 806), 1123376.AUIU01000011_gene814
 (degree 777) and 1123376.AUIU01000007_gene1179 (degree 769).
 
@@ -107,12 +108,13 @@ def ThermodesulfovibrioThiophilus(
 	
 	Datetime: 2021-02-02 22:52:06.450708
 	
-	The undirected graph Thermodesulfovibrio thiophilus has 1910 nodes and 150273 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08243
-	and has 5 connected components, where the component with most nodes has 1902 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 157.35, and the node degree mode is 44. The top 5
-	most central nodes are 1123376.AUIU01000001_gene767 (degree 884), 1123376.AUIU01000015_gene457
+	The undirected graph Thermodesulfovibrio thiophilus has 1910 nodes and
+	150273 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08243 and has 5 connected components, where the
+	component with most nodes has 1902 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 131, the mean node degree
+	is 157.35, and the node degree mode is 44. The top 5 most central nodes
+	are 1123376.AUIU01000001_gene767 (degree 884), 1123376.AUIU01000015_gene457
 	(degree 872), 1123376.AUIU01000016_gene274 (degree 806), 1123376.AUIU01000011_gene814
 	(degree 777) and 1123376.AUIU01000007_gene1179 (degree 769).
 	

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:17.203488
 
-The undirected graph Aequorivita capsosiphonis has 3600 nodes and 283348 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04374
-and has 18 connected components, where the component with most nodes has 3560 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 157.42, and the node degree mode is 3. The top 5
-most central nodes are 1120951.AUBG01000007_gene90 (degree 1160), 1120951.AUBG01000010_gene1988
-(degree 1155), 1120951.AUBG01000012_gene1515 (degree 1118), 1120951.AUBG01000007_gene261
-(degree 997) and 1120951.AUBG01000014_gene3152 (degree 934).
+The undirected graph Aequorivita capsosiphonis has 3600 nodes and 283348
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04374 and has 18 connected components, where the component
+with most nodes has 3560 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 157.42,
+and the node degree mode is 3. The top 5 most central nodes are 1120951.AUBG01000007_gene90
+(degree 1160), 1120951.AUBG01000010_gene1988 (degree 1155), 1120951.AUBG01000012_gene1515
+(degree 1118), 1120951.AUBG01000007_gene261 (degree 997) and 1120951.AUBG01000014_gene3152
+(degree 934).
 
 
 References
@@ -107,14 +108,15 @@ def AequorivitaCapsosiphonis(
 	
 	Datetime: 2021-02-02 22:30:17.203488
 	
-	The undirected graph Aequorivita capsosiphonis has 3600 nodes and 283348 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04374
-	and has 18 connected components, where the component with most nodes has 3560 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 157.42, and the node degree mode is 3. The top 5
-	most central nodes are 1120951.AUBG01000007_gene90 (degree 1160), 1120951.AUBG01000010_gene1988
-	(degree 1155), 1120951.AUBG01000012_gene1515 (degree 1118), 1120951.AUBG01000007_gene261
-	(degree 997) and 1120951.AUBG01000014_gene3152 (degree 934).
+	The undirected graph Aequorivita capsosiphonis has 3600 nodes and 283348
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04374 and has 18 connected components, where the component
+	with most nodes has 3560 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 157.42,
+	and the node degree mode is 3. The top 5 most central nodes are 1120951.AUBG01000007_gene90
+	(degree 1160), 1120951.AUBG01000010_gene1988 (degree 1155), 1120951.AUBG01000012_gene1515
+	(degree 1118), 1120951.AUBG01000007_gene261 (degree 997) and 1120951.AUBG01000014_gene3152
+	(degree 934).
 	
 
 

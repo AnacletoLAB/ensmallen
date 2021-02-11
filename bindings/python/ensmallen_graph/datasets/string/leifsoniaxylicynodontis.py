@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:22:10.107008
 
-The undirected graph Leifsonia xyli cynodontis has 2429 nodes and 120441 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04084
-and has 19 connected components, where the component with most nodes has 2386 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 99.17, and the node degree mode is 1. The top 5 most
-central nodes are 1389489.O159_12520 (degree 901), 1389489.O159_22160 (degree 822),
-1389489.O159_05510 (degree 703), 1389489.O159_21650 (degree 631) and 1389489.O159_12410
-(degree 618).
+The undirected graph Leifsonia xyli cynodontis has 2429 nodes and 120441
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04084 and has 19 connected components, where the component
+with most nodes has 2386 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 99.17,
+and the node degree mode is 1. The top 5 most central nodes are 1389489.O159_12520
+(degree 901), 1389489.O159_22160 (degree 822), 1389489.O159_05510 (degree
+703), 1389489.O159_21650 (degree 631) and 1389489.O159_12410 (degree 618).
 
 
 References
@@ -107,14 +107,14 @@ def LeifsoniaXyliCynodontis(
 	
 	Datetime: 2021-02-03 22:22:10.107008
 	
-	The undirected graph Leifsonia xyli cynodontis has 2429 nodes and 120441 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04084
-	and has 19 connected components, where the component with most nodes has 2386 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 99.17, and the node degree mode is 1. The top 5 most
-	central nodes are 1389489.O159_12520 (degree 901), 1389489.O159_22160 (degree 822),
-	1389489.O159_05510 (degree 703), 1389489.O159_21650 (degree 631) and 1389489.O159_12410
-	(degree 618).
+	The undirected graph Leifsonia xyli cynodontis has 2429 nodes and 120441
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04084 and has 19 connected components, where the component
+	with most nodes has 2386 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 99.17,
+	and the node degree mode is 1. The top 5 most central nodes are 1389489.O159_12520
+	(degree 901), 1389489.O159_22160 (degree 822), 1389489.O159_05510 (degree
+	703), 1389489.O159_21650 (degree 631) and 1389489.O159_12410 (degree 618).
 	
 
 

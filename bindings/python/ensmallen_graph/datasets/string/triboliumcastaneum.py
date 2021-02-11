@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:06.578320
 
-The undirected graph Tribolium castaneum has 10758 nodes and 1123576 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01942 and
-has 5 connected components, where the component with most nodes has 10748 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 208.88, and the node degree mode is 2. The top 5 most central
-nodes are 7070.TC001087-PA (degree 2864), 7070.TC004698-PA (degree 2077), 7070.TC012067-PA
-(degree 2077), 7070.TC007712-PA (degree 2055) and 7070.TC011884-PA (degree 1956).
+The undirected graph Tribolium castaneum has 10758 nodes and 1123576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01942 and has 5 connected components, where the component with most
+nodes has 10748 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 208.88, and
+the node degree mode is 2. The top 5 most central nodes are 7070.TC001087-PA
+(degree 2864), 7070.TC004698-PA (degree 2077), 7070.TC012067-PA (degree
+2077), 7070.TC007712-PA (degree 2055) and 7070.TC011884-PA (degree 1956).
 
 
 References
@@ -106,13 +107,14 @@ def TriboliumCastaneum(
 	
 	Datetime: 2021-02-02 17:20:06.578320
 	
-	The undirected graph Tribolium castaneum has 10758 nodes and 1123576 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01942 and
-	has 5 connected components, where the component with most nodes has 10748 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 208.88, and the node degree mode is 2. The top 5 most central
-	nodes are 7070.TC001087-PA (degree 2864), 7070.TC004698-PA (degree 2077), 7070.TC012067-PA
-	(degree 2077), 7070.TC007712-PA (degree 2055) and 7070.TC011884-PA (degree 1956).
+	The undirected graph Tribolium castaneum has 10758 nodes and 1123576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01942 and has 5 connected components, where the component with most
+	nodes has 10748 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 208.88, and
+	the node degree mode is 2. The top 5 most central nodes are 7070.TC001087-PA
+	(degree 2864), 7070.TC004698-PA (degree 2077), 7070.TC012067-PA (degree
+	2077), 7070.TC007712-PA (degree 2055) and 7070.TC011884-PA (degree 1956).
 	
 
 

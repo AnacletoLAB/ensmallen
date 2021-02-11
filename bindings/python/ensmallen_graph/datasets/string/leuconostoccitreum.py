@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:27.589887
 
-The undirected graph Leuconostoc citreum has 1707 nodes and 94568 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06495 and
-has 3 connected components, where the component with most nodes has 1702 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 110.80, and the node degree mode is 26. The top 5 most central
-nodes are 349519.LCK_01127 (degree 768), 349519.LCK_00589 (degree 612), 349519.LCK_00295
-(degree 607), 349519.LCK_00119 (degree 555) and 349519.LCK_01218 (degree 501).
+The undirected graph Leuconostoc citreum has 1707 nodes and 94568 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06495 and has 3 connected components, where the component with most
+nodes has 1702 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 88, the mean node degree is 110.80, and
+the node degree mode is 26. The top 5 most central nodes are 349519.LCK_01127
+(degree 768), 349519.LCK_00589 (degree 612), 349519.LCK_00295 (degree 607),
+349519.LCK_00119 (degree 555) and 349519.LCK_01218 (degree 501).
 
 
 References
@@ -106,13 +107,14 @@ def LeuconostocCitreum(
 	
 	Datetime: 2021-02-02 20:32:27.589887
 	
-	The undirected graph Leuconostoc citreum has 1707 nodes and 94568 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06495 and
-	has 3 connected components, where the component with most nodes has 1702 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 110.80, and the node degree mode is 26. The top 5 most central
-	nodes are 349519.LCK_01127 (degree 768), 349519.LCK_00589 (degree 612), 349519.LCK_00295
-	(degree 607), 349519.LCK_00119 (degree 555) and 349519.LCK_01218 (degree 501).
+	The undirected graph Leuconostoc citreum has 1707 nodes and 94568 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06495 and has 3 connected components, where the component with most
+	nodes has 1702 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 88, the mean node degree is 110.80, and
+	the node degree mode is 26. The top 5 most central nodes are 349519.LCK_01127
+	(degree 768), 349519.LCK_00589 (degree 612), 349519.LCK_00295 (degree 607),
+	349519.LCK_00119 (degree 555) and 349519.LCK_01218 (degree 501).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:46:34.826537
 
-The undirected graph Ovis aries has 20243 nodes and 4773654 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02330 and has 4
-connected components, where the component with most nodes has 20236 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 338,
-the mean node degree is 471.64, and the node degree mode is 1. The top 5 most central
-nodes are 9940.ENSOARP00000008476 (degree 4439), 9940.ENSOARP00000003967 (degree
-4340), 9940.ENSOARP00000016707 (degree 4338), 9940.ENSOARP00000020380 (degree 4326)
-and 9940.ENSOARP00000008914 (degree 4144).
+The undirected graph Ovis aries has 20243 nodes and 4773654 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02330 and has 4 connected components, where the component with most nodes
+has 20236 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 338, the mean node degree is 471.64, and the
+node degree mode is 1. The top 5 most central nodes are 9940.ENSOARP00000008476
+(degree 4439), 9940.ENSOARP00000003967 (degree 4340), 9940.ENSOARP00000016707
+(degree 4338), 9940.ENSOARP00000020380 (degree 4326) and 9940.ENSOARP00000008914
+(degree 4144).
 
 
 References
@@ -107,14 +108,15 @@ def OvisAries(
 	
 	Datetime: 2021-02-02 17:46:34.826537
 	
-	The undirected graph Ovis aries has 20243 nodes and 4773654 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02330 and has 4
-	connected components, where the component with most nodes has 20236 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 338,
-	the mean node degree is 471.64, and the node degree mode is 1. The top 5 most central
-	nodes are 9940.ENSOARP00000008476 (degree 4439), 9940.ENSOARP00000003967 (degree
-	4340), 9940.ENSOARP00000016707 (degree 4338), 9940.ENSOARP00000020380 (degree 4326)
-	and 9940.ENSOARP00000008914 (degree 4144).
+	The undirected graph Ovis aries has 20243 nodes and 4773654 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02330 and has 4 connected components, where the component with most nodes
+	has 20236 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 338, the mean node degree is 471.64, and the
+	node degree mode is 1. The top 5 most central nodes are 9940.ENSOARP00000008476
+	(degree 4439), 9940.ENSOARP00000003967 (degree 4340), 9940.ENSOARP00000016707
+	(degree 4338), 9940.ENSOARP00000020380 (degree 4326) and 9940.ENSOARP00000008914
+	(degree 4144).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:00.946950
 
-The undirected graph Paracaedibacter acanthamoebae has 1734 nodes and 86341 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05746
-and has 31 connected components, where the component with most nodes has 1653 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 99.59, and the node degree mode is 2. The top 5 most
-central nodes are 91604.ID47_02320 (degree 636), 91604.ID47_02635 (degree 482), 91604.ID47_00420
-(degree 462), 91604.ID47_06795 (degree 444) and 91604.ID47_01760 (degree 435).
+The undirected graph Paracaedibacter acanthamoebae has 1734 nodes and 86341
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05746 and has 31 connected components, where the component
+with most nodes has 1653 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 99.59,
+and the node degree mode is 2. The top 5 most central nodes are 91604.ID47_02320
+(degree 636), 91604.ID47_02635 (degree 482), 91604.ID47_00420 (degree 462),
+91604.ID47_06795 (degree 444) and 91604.ID47_01760 (degree 435).
 
 
 References
@@ -106,13 +107,14 @@ def ParacaedibacterAcanthamoebae(
 	
 	Datetime: 2021-02-02 19:41:00.946950
 	
-	The undirected graph Paracaedibacter acanthamoebae has 1734 nodes and 86341 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05746
-	and has 31 connected components, where the component with most nodes has 1653 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 99.59, and the node degree mode is 2. The top 5 most
-	central nodes are 91604.ID47_02320 (degree 636), 91604.ID47_02635 (degree 482), 91604.ID47_00420
-	(degree 462), 91604.ID47_06795 (degree 444) and 91604.ID47_01760 (degree 435).
+	The undirected graph Paracaedibacter acanthamoebae has 1734 nodes and 86341
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05746 and has 31 connected components, where the component
+	with most nodes has 1653 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 99.59,
+	and the node degree mode is 2. The top 5 most central nodes are 91604.ID47_02320
+	(degree 636), 91604.ID47_02635 (degree 482), 91604.ID47_00420 (degree 462),
+	91604.ID47_06795 (degree 444) and 91604.ID47_01760 (degree 435).
 	
 
 

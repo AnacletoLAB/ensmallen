@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:15.014313
 
-The undirected graph Firmicutes bacterium M102 has 2242 nodes and 230297 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09167
-and has 9 connected components, where the component with most nodes has 2220 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 205.44, and the node degree mode is 11. The top 5
-most central nodes are 1235796.C815_00022 (degree 1091), 1235796.C815_01297 (degree
-1064), 1235796.C815_00616 (degree 1039), 1235796.C815_01233 (degree 951) and 1235796.C815_02077
-(degree 858).
+The undirected graph Firmicutes bacterium M102 has 2242 nodes and 230297
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09167 and has 9 connected components, where the component
+with most nodes has 2220 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 205.44,
+and the node degree mode is 11. The top 5 most central nodes are 1235796.C815_00022
+(degree 1091), 1235796.C815_01297 (degree 1064), 1235796.C815_00616 (degree
+1039), 1235796.C815_01233 (degree 951) and 1235796.C815_02077 (degree 858).
 
 
 References
@@ -107,14 +107,14 @@ def FirmicutesBacteriumM102(
 	
 	Datetime: 2021-02-02 23:30:15.014313
 	
-	The undirected graph Firmicutes bacterium M102 has 2242 nodes and 230297 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09167
-	and has 9 connected components, where the component with most nodes has 2220 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 205.44, and the node degree mode is 11. The top 5
-	most central nodes are 1235796.C815_00022 (degree 1091), 1235796.C815_01297 (degree
-	1064), 1235796.C815_00616 (degree 1039), 1235796.C815_01233 (degree 951) and 1235796.C815_02077
-	(degree 858).
+	The undirected graph Firmicutes bacterium M102 has 2242 nodes and 230297
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09167 and has 9 connected components, where the component
+	with most nodes has 2220 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 205.44,
+	and the node degree mode is 11. The top 5 most central nodes are 1235796.C815_00022
+	(degree 1091), 1235796.C815_01297 (degree 1064), 1235796.C815_00616 (degree
+	1039), 1235796.C815_01233 (degree 951) and 1235796.C815_02077 (degree 858).
 	
 
 

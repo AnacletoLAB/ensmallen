@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:33.201217
 
-The undirected graph Brevibacillus laterosporus DSM25 has 4753 nodes and 580719 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05142
-and has 41 connected components, where the component with most nodes has 4642 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 244.36, and the node degree mode is 1. The top 5
-most central nodes are 1121121.KB894316_gene2093 (degree 1936), 1121121.KB894291_gene1506
+The undirected graph Brevibacillus laterosporus DSM25 has 4753 nodes and
+580719 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05142 and has 41 connected components, where the
+component with most nodes has 4642 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+is 244.36, and the node degree mode is 1. The top 5 most central nodes
+are 1121121.KB894316_gene2093 (degree 1936), 1121121.KB894291_gene1506
 (degree 1608), 1121121.KB894301_gene2256 (degree 1491), 1121121.KB894294_gene4726
 (degree 1422) and 1121121.KB894291_gene1507 (degree 1416).
 
@@ -107,12 +108,13 @@ def BrevibacillusLaterosporusDsm25(
 	
 	Datetime: 2021-02-02 22:33:33.201217
 	
-	The undirected graph Brevibacillus laterosporus DSM25 has 4753 nodes and 580719 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05142
-	and has 41 connected components, where the component with most nodes has 4642 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 244.36, and the node degree mode is 1. The top 5
-	most central nodes are 1121121.KB894316_gene2093 (degree 1936), 1121121.KB894291_gene1506
+	The undirected graph Brevibacillus laterosporus DSM25 has 4753 nodes and
+	580719 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05142 and has 41 connected components, where the
+	component with most nodes has 4642 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 198, the mean node degree
+	is 244.36, and the node degree mode is 1. The top 5 most central nodes
+	are 1121121.KB894316_gene2093 (degree 1936), 1121121.KB894291_gene1506
 	(degree 1608), 1121121.KB894301_gene2256 (degree 1491), 1121121.KB894294_gene4726
 	(degree 1422) and 1121121.KB894291_gene1507 (degree 1416).
 	

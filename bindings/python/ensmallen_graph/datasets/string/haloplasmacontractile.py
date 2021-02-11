@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:27.546436
 
-The undirected graph Haloplasma contractile has 2974 nodes and 214282 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-has 25 connected components, where the component with most nodes has 2906 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 144.10, and the node degree mode is 3. The top 5 most central
-nodes are 1033810.HLPCO_000370 (degree 1039), 1033810.HLPCO_000305 (degree 898),
-1033810.HLPCO_000002 (degree 880), 1033810.HLPCO_000001 (degree 880) and 1033810.HLPCO_000075
+The undirected graph Haloplasma contractile has 2974 nodes and 214282 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04847 and has 25 connected components, where the component with most
+nodes has 2906 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 144.10, and
+the node degree mode is 3. The top 5 most central nodes are 1033810.HLPCO_000370
+(degree 1039), 1033810.HLPCO_000305 (degree 898), 1033810.HLPCO_000002
+(degree 880), 1033810.HLPCO_000001 (degree 880) and 1033810.HLPCO_000075
 (degree 751).
 
 
@@ -107,13 +108,14 @@ def HaloplasmaContractile(
 	
 	Datetime: 2021-02-02 22:11:27.546436
 	
-	The undirected graph Haloplasma contractile has 2974 nodes and 214282 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04847 and
-	has 25 connected components, where the component with most nodes has 2906 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 144.10, and the node degree mode is 3. The top 5 most central
-	nodes are 1033810.HLPCO_000370 (degree 1039), 1033810.HLPCO_000305 (degree 898),
-	1033810.HLPCO_000002 (degree 880), 1033810.HLPCO_000001 (degree 880) and 1033810.HLPCO_000075
+	The undirected graph Haloplasma contractile has 2974 nodes and 214282 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04847 and has 25 connected components, where the component with most
+	nodes has 2906 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 144.10, and
+	the node degree mode is 3. The top 5 most central nodes are 1033810.HLPCO_000370
+	(degree 1039), 1033810.HLPCO_000305 (degree 898), 1033810.HLPCO_000002
+	(degree 880), 1033810.HLPCO_000001 (degree 880) and 1033810.HLPCO_000075
 	(degree 751).
 	
 

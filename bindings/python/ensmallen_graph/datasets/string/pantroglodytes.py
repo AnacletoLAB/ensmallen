@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:38:18.820568
 
-The undirected graph Pan troglodytes has 17984 nodes and 4053636 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02507 and
-has 2 connected components, where the component with most nodes has 17981 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 314,
-the mean node degree is 450.80, and the node degree mode is 173. The top 5 most central
-nodes are 9598.ENSPTRP00000007822 (degree 4855), 9598.ENSPTRP00000002931 (degree
-4558), 9598.ENSPTRP00000011569 (degree 4258), 9598.ENSPTRP00000053615 (degree 4257)
-and 9598.ENSPTRP00000023967 (degree 4124).
+The undirected graph Pan troglodytes has 17984 nodes and 4053636 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02507 and has 2 connected components, where the component with most
+nodes has 17981 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 314, the mean node degree is 450.80, and
+the node degree mode is 173. The top 5 most central nodes are 9598.ENSPTRP00000007822
+(degree 4855), 9598.ENSPTRP00000002931 (degree 4558), 9598.ENSPTRP00000011569
+(degree 4258), 9598.ENSPTRP00000053615 (degree 4257) and 9598.ENSPTRP00000023967
+(degree 4124).
 
 
 References
@@ -107,14 +108,15 @@ def PanTroglodytes(
 	
 	Datetime: 2021-02-02 17:38:18.820568
 	
-	The undirected graph Pan troglodytes has 17984 nodes and 4053636 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02507 and
-	has 2 connected components, where the component with most nodes has 17981 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 314,
-	the mean node degree is 450.80, and the node degree mode is 173. The top 5 most central
-	nodes are 9598.ENSPTRP00000007822 (degree 4855), 9598.ENSPTRP00000002931 (degree
-	4558), 9598.ENSPTRP00000011569 (degree 4258), 9598.ENSPTRP00000053615 (degree 4257)
-	and 9598.ENSPTRP00000023967 (degree 4124).
+	The undirected graph Pan troglodytes has 17984 nodes and 4053636 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02507 and has 2 connected components, where the component with most
+	nodes has 17981 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 314, the mean node degree is 450.80, and
+	the node degree mode is 173. The top 5 most central nodes are 9598.ENSPTRP00000007822
+	(degree 4855), 9598.ENSPTRP00000002931 (degree 4558), 9598.ENSPTRP00000011569
+	(degree 4258), 9598.ENSPTRP00000053615 (degree 4257) and 9598.ENSPTRP00000023967
+	(degree 4124).
 	
 
 

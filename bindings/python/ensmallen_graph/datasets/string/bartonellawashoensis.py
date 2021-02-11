@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:05.288880
 
-The undirected graph Bartonella washoensis has 1628 nodes and 102929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07772 and
-has 23 connected components, where the component with most nodes has 1573 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 126.45, and the node degree mode is 1. The top 5 most central
-nodes are 1094563.MCQ_00781 (degree 673), 1094563.MCQ_00031 (degree 618), 1094563.MCQ_00430
-(degree 586), 1094563.MCQ_00034 (degree 549) and 1094563.MCQ_00858 (degree 544).
+The undirected graph Bartonella washoensis has 1628 nodes and 102929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07772 and has 23 connected components, where the component with most
+nodes has 1573 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 126.45, and
+the node degree mode is 1. The top 5 most central nodes are 1094563.MCQ_00781
+(degree 673), 1094563.MCQ_00031 (degree 618), 1094563.MCQ_00430 (degree
+586), 1094563.MCQ_00034 (degree 549) and 1094563.MCQ_00858 (degree 544).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaWashoensis(
 	
 	Datetime: 2021-02-02 22:23:05.288880
 	
-	The undirected graph Bartonella washoensis has 1628 nodes and 102929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07772 and
-	has 23 connected components, where the component with most nodes has 1573 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 126.45, and the node degree mode is 1. The top 5 most central
-	nodes are 1094563.MCQ_00781 (degree 673), 1094563.MCQ_00031 (degree 618), 1094563.MCQ_00430
-	(degree 586), 1094563.MCQ_00034 (degree 549) and 1094563.MCQ_00858 (degree 544).
+	The undirected graph Bartonella washoensis has 1628 nodes and 102929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07772 and has 23 connected components, where the component with most
+	nodes has 1573 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 126.45, and
+	the node degree mode is 1. The top 5 most central nodes are 1094563.MCQ_00781
+	(degree 673), 1094563.MCQ_00031 (degree 618), 1094563.MCQ_00430 (degree
+	586), 1094563.MCQ_00034 (degree 549) and 1094563.MCQ_00858 (degree 544).
 	
 
 

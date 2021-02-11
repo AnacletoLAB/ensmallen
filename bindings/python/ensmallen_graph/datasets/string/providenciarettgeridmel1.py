@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:56.879052
 
-The undirected graph Providencia rettgeri Dmel1 has 3815 nodes and 303333 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04169
-and has 7 connected components, where the component with most nodes has 3800 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 159.02, and the node degree mode is 2. The top 5
-most central nodes are 1141663.OOC_00270 (degree 1217), 1141663.OOC_12356 (degree
-1090), 1141663.OOC_05757 (degree 1032), 1141663.OOC_12361 (degree 1007) and 1141663.OOC_07653
-(degree 928).
+The undirected graph Providencia rettgeri Dmel1 has 3815 nodes and 303333
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04169 and has 7 connected components, where the component
+with most nodes has 3800 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 159.02,
+and the node degree mode is 2. The top 5 most central nodes are 1141663.OOC_00270
+(degree 1217), 1141663.OOC_12356 (degree 1090), 1141663.OOC_05757 (degree
+1032), 1141663.OOC_12361 (degree 1007) and 1141663.OOC_07653 (degree 928).
 
 
 References
@@ -107,14 +107,14 @@ def ProvidenciaRettgeriDmel1(
 	
 	Datetime: 2021-02-02 22:57:56.879052
 	
-	The undirected graph Providencia rettgeri Dmel1 has 3815 nodes and 303333 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04169
-	and has 7 connected components, where the component with most nodes has 3800 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 159.02, and the node degree mode is 2. The top 5
-	most central nodes are 1141663.OOC_00270 (degree 1217), 1141663.OOC_12356 (degree
-	1090), 1141663.OOC_05757 (degree 1032), 1141663.OOC_12361 (degree 1007) and 1141663.OOC_07653
-	(degree 928).
+	The undirected graph Providencia rettgeri Dmel1 has 3815 nodes and 303333
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04169 and has 7 connected components, where the component
+	with most nodes has 3800 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 159.02,
+	and the node degree mode is 2. The top 5 most central nodes are 1141663.OOC_00270
+	(degree 1217), 1141663.OOC_12356 (degree 1090), 1141663.OOC_05757 (degree
+	1032), 1141663.OOC_12361 (degree 1007) and 1141663.OOC_07653 (degree 928).
 	
 
 

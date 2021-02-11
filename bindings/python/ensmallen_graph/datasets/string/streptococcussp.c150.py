@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:58.133642
 
-The undirected graph Streptococcus sp. C150 has 1959 nodes and 124361 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06484 and
-has 4 connected components, where the component with most nodes has 1952 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 126.96, and the node degree mode is 4. The top 5 most central
-nodes are 435842.HMPREF0848_01419 (degree 845), 435842.HMPREF0848_01693 (degree 792),
-435842.HMPREF0848_01062 (degree 683), 435842.HMPREF0848_00767 (degree 674) and 435842.HMPREF0848_00068
+The undirected graph Streptococcus sp. C150 has 1959 nodes and 124361 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06484 and has 4 connected components, where the component with most
+nodes has 1952 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 126.96, and
+the node degree mode is 4. The top 5 most central nodes are 435842.HMPREF0848_01419
+(degree 845), 435842.HMPREF0848_01693 (degree 792), 435842.HMPREF0848_01062
+(degree 683), 435842.HMPREF0848_00767 (degree 674) and 435842.HMPREF0848_00068
 (degree 635).
 
 
@@ -107,13 +108,14 @@ def StreptococcusSp.C150(
 	
 	Datetime: 2021-02-02 20:48:58.133642
 	
-	The undirected graph Streptococcus sp. C150 has 1959 nodes and 124361 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06484 and
-	has 4 connected components, where the component with most nodes has 1952 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 126.96, and the node degree mode is 4. The top 5 most central
-	nodes are 435842.HMPREF0848_01419 (degree 845), 435842.HMPREF0848_01693 (degree 792),
-	435842.HMPREF0848_01062 (degree 683), 435842.HMPREF0848_00767 (degree 674) and 435842.HMPREF0848_00068
+	The undirected graph Streptococcus sp. C150 has 1959 nodes and 124361 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06484 and has 4 connected components, where the component with most
+	nodes has 1952 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 126.96, and
+	the node degree mode is 4. The top 5 most central nodes are 435842.HMPREF0848_01419
+	(degree 845), 435842.HMPREF0848_01693 (degree 792), 435842.HMPREF0848_01062
+	(degree 683), 435842.HMPREF0848_00767 (degree 674) and 435842.HMPREF0848_00068
 	(degree 635).
 	
 

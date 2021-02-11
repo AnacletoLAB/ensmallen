@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:13.538674
 
-The undirected graph Desulfurococcus kamchatkensis has 1445 nodes and 85314 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08177
-and has 10 connected components, where the component with most nodes has 1425 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 118.08, and the node degree mode is 5. The top 5 most
-central nodes are 490899.DKAM_0479 (degree 549), 490899.DKAM_0185 (degree 526), 490899.DKAM_0147
-(degree 519), 490899.DKAM_1215 (degree 484) and 490899.DKAM_1375 (degree 479).
+The undirected graph Desulfurococcus kamchatkensis has 1445 nodes and 85314
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08177 and has 10 connected components, where the component
+with most nodes has 1425 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 118.08,
+and the node degree mode is 5. The top 5 most central nodes are 490899.DKAM_0479
+(degree 549), 490899.DKAM_0185 (degree 526), 490899.DKAM_0147 (degree 519),
+490899.DKAM_1215 (degree 484) and 490899.DKAM_1375 (degree 479).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfurococcusKamchatkensis(
 	
 	Datetime: 2021-02-02 21:00:13.538674
 	
-	The undirected graph Desulfurococcus kamchatkensis has 1445 nodes and 85314 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08177
-	and has 10 connected components, where the component with most nodes has 1425 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 118.08, and the node degree mode is 5. The top 5 most
-	central nodes are 490899.DKAM_0479 (degree 549), 490899.DKAM_0185 (degree 526), 490899.DKAM_0147
-	(degree 519), 490899.DKAM_1215 (degree 484) and 490899.DKAM_1375 (degree 479).
+	The undirected graph Desulfurococcus kamchatkensis has 1445 nodes and 85314
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08177 and has 10 connected components, where the component
+	with most nodes has 1425 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 118.08,
+	and the node degree mode is 5. The top 5 most central nodes are 490899.DKAM_0479
+	(degree 549), 490899.DKAM_0185 (degree 526), 490899.DKAM_0147 (degree 519),
+	490899.DKAM_1215 (degree 484) and 490899.DKAM_1375 (degree 479).
 	
 
 

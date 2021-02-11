@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:52.802758
 
-The undirected graph Crocinitomix catalasitica has 4017 nodes and 300796 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03729
-and has 21 connected components, where the component with most nodes has 3970 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 149.76, and the node degree mode is 6. The top 5
-most central nodes are 1408433.JHXV01000007_gene2865 (degree 1195), 1408433.JHXV01000002_gene358
-(degree 1141), 1408433.JHXV01000033_gene1155 (degree 1115), 1408433.JHXV01000043_gene3002
-(degree 1081) and 1408433.JHXV01000005_gene2266 (degree 1026).
+The undirected graph Crocinitomix catalasitica has 4017 nodes and 300796
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03729 and has 21 connected components, where the component
+with most nodes has 3970 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 149.76,
+and the node degree mode is 6. The top 5 most central nodes are 1408433.JHXV01000007_gene2865
+(degree 1195), 1408433.JHXV01000002_gene358 (degree 1141), 1408433.JHXV01000033_gene1155
+(degree 1115), 1408433.JHXV01000043_gene3002 (degree 1081) and 1408433.JHXV01000005_gene2266
+(degree 1026).
 
 
 References
@@ -107,14 +108,15 @@ def CrocinitomixCatalasitica(
 	
 	Datetime: 2021-02-03 22:36:52.802758
 	
-	The undirected graph Crocinitomix catalasitica has 4017 nodes and 300796 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03729
-	and has 21 connected components, where the component with most nodes has 3970 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 149.76, and the node degree mode is 6. The top 5
-	most central nodes are 1408433.JHXV01000007_gene2865 (degree 1195), 1408433.JHXV01000002_gene358
-	(degree 1141), 1408433.JHXV01000033_gene1155 (degree 1115), 1408433.JHXV01000043_gene3002
-	(degree 1081) and 1408433.JHXV01000005_gene2266 (degree 1026).
+	The undirected graph Crocinitomix catalasitica has 4017 nodes and 300796
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03729 and has 21 connected components, where the component
+	with most nodes has 3970 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 149.76,
+	and the node degree mode is 6. The top 5 most central nodes are 1408433.JHXV01000007_gene2865
+	(degree 1195), 1408433.JHXV01000002_gene358 (degree 1141), 1408433.JHXV01000033_gene1155
+	(degree 1115), 1408433.JHXV01000043_gene3002 (degree 1081) and 1408433.JHXV01000005_gene2266
+	(degree 1026).
 	
 
 

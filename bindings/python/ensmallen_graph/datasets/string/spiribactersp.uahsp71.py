@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:06.264982
 
-The undirected graph Spiribacter sp. UAHSP71 has 1858 nodes and 108027 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06262 and
-has 2 connected components, where the component with most nodes has 1856 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 95,
-the mean node degree is 116.28, and the node degree mode is 37. The top 5 most central
-nodes are 1335757.SPICUR_08130 (degree 871), 1335757.SPICUR_09400 (degree 847), 1335757.SPICUR_06155
-(degree 643), 1335757.SPICUR_06160 (degree 608) and 1335757.SPICUR_05990 (degree
+The undirected graph Spiribacter sp. UAHSP71 has 1858 nodes and 108027
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06262 and has 2 connected components, where the component
+with most nodes has 1856 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 116.28,
+and the node degree mode is 37. The top 5 most central nodes are 1335757.SPICUR_08130
+(degree 871), 1335757.SPICUR_09400 (degree 847), 1335757.SPICUR_06155 (degree
+643), 1335757.SPICUR_06160 (degree 608) and 1335757.SPICUR_05990 (degree
 604).
 
 
@@ -107,13 +108,14 @@ def SpiribacterSp.Uahsp71(
 	
 	Datetime: 2021-02-03 21:56:06.264982
 	
-	The undirected graph Spiribacter sp. UAHSP71 has 1858 nodes and 108027 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06262 and
-	has 2 connected components, where the component with most nodes has 1856 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 95,
-	the mean node degree is 116.28, and the node degree mode is 37. The top 5 most central
-	nodes are 1335757.SPICUR_08130 (degree 871), 1335757.SPICUR_09400 (degree 847), 1335757.SPICUR_06155
-	(degree 643), 1335757.SPICUR_06160 (degree 608) and 1335757.SPICUR_05990 (degree
+	The undirected graph Spiribacter sp. UAHSP71 has 1858 nodes and 108027
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06262 and has 2 connected components, where the component
+	with most nodes has 1856 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 116.28,
+	and the node degree mode is 37. The top 5 most central nodes are 1335757.SPICUR_08130
+	(degree 871), 1335757.SPICUR_09400 (degree 847), 1335757.SPICUR_06155 (degree
+	643), 1335757.SPICUR_06160 (degree 608) and 1335757.SPICUR_05990 (degree
 	604).
 	
 

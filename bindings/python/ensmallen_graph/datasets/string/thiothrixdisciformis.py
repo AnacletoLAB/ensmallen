@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:27.016231
 
-The undirected graph Thiothrix disciformis has 3660 nodes and 333080 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04974 and
-has 21 connected components, where the component with most nodes has 3612 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 182.01, and the node degree mode is 1. The top 5 most central
-nodes are 1123399.AQVE01000001_gene731 (degree 1201), 1123399.AQVE01000001_gene476
-(degree 1193), 1123399.AQVE01000023_gene413 (degree 1186), 1123399.AQVE01000030_gene1365
-(degree 1144) and 1123399.AQVE01000020_gene1693 (degree 1086).
+The undirected graph Thiothrix disciformis has 3660 nodes and 333080 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04974 and has 21 connected components, where the component with most
+nodes has 3612 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 182.01, and
+the node degree mode is 1. The top 5 most central nodes are 1123399.AQVE01000001_gene731
+(degree 1201), 1123399.AQVE01000001_gene476 (degree 1193), 1123399.AQVE01000023_gene413
+(degree 1186), 1123399.AQVE01000030_gene1365 (degree 1144) and 1123399.AQVE01000020_gene1693
+(degree 1086).
 
 
 References
@@ -107,14 +108,15 @@ def ThiothrixDisciformis(
 	
 	Datetime: 2021-02-02 22:52:27.016231
 	
-	The undirected graph Thiothrix disciformis has 3660 nodes and 333080 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04974 and
-	has 21 connected components, where the component with most nodes has 3612 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 182.01, and the node degree mode is 1. The top 5 most central
-	nodes are 1123399.AQVE01000001_gene731 (degree 1201), 1123399.AQVE01000001_gene476
-	(degree 1193), 1123399.AQVE01000023_gene413 (degree 1186), 1123399.AQVE01000030_gene1365
-	(degree 1144) and 1123399.AQVE01000020_gene1693 (degree 1086).
+	The undirected graph Thiothrix disciformis has 3660 nodes and 333080 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04974 and has 21 connected components, where the component with most
+	nodes has 3612 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 182.01, and
+	the node degree mode is 1. The top 5 most central nodes are 1123399.AQVE01000001_gene731
+	(degree 1201), 1123399.AQVE01000001_gene476 (degree 1193), 1123399.AQVE01000023_gene413
+	(degree 1186), 1123399.AQVE01000030_gene1365 (degree 1144) and 1123399.AQVE01000020_gene1693
+	(degree 1086).
 	
 
 

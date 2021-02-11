@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:58.239612
 
-The undirected graph Arthrobacter globiformis has 4498 nodes and 502205 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04966
-and has 19 connected components, where the component with most nodes has 4443 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 223.30, and the node degree mode is 3. The top 5
-most central nodes are 1077972.ARGLB_113_00070 (degree 1873), 1077972.ARGLB_085_02960
-(degree 1499), 1077972.ARGLB_091_00550 (degree 1414), 1077972.ARGLB_016_00180 (degree
-1398) and 1077972.ARGLB_040_00090 (degree 1350).
+The undirected graph Arthrobacter globiformis has 4498 nodes and 502205
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04966 and has 19 connected components, where the component
+with most nodes has 4443 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 223.30,
+and the node degree mode is 3. The top 5 most central nodes are 1077972.ARGLB_113_00070
+(degree 1873), 1077972.ARGLB_085_02960 (degree 1499), 1077972.ARGLB_091_00550
+(degree 1414), 1077972.ARGLB_016_00180 (degree 1398) and 1077972.ARGLB_040_00090
+(degree 1350).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterGlobiformis(
 	
 	Datetime: 2021-02-02 22:19:58.239612
 	
-	The undirected graph Arthrobacter globiformis has 4498 nodes and 502205 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04966
-	and has 19 connected components, where the component with most nodes has 4443 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 223.30, and the node degree mode is 3. The top 5
-	most central nodes are 1077972.ARGLB_113_00070 (degree 1873), 1077972.ARGLB_085_02960
-	(degree 1499), 1077972.ARGLB_091_00550 (degree 1414), 1077972.ARGLB_016_00180 (degree
-	1398) and 1077972.ARGLB_040_00090 (degree 1350).
+	The undirected graph Arthrobacter globiformis has 4498 nodes and 502205
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04966 and has 19 connected components, where the component
+	with most nodes has 4443 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 223.30,
+	and the node degree mode is 3. The top 5 most central nodes are 1077972.ARGLB_113_00070
+	(degree 1873), 1077972.ARGLB_085_02960 (degree 1499), 1077972.ARGLB_091_00550
+	(degree 1414), 1077972.ARGLB_016_00180 (degree 1398) and 1077972.ARGLB_040_00090
+	(degree 1350).
 	
 
 

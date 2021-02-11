@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:35:27.917842
 
-The undirected graph Capsella rubella has 22336 nodes and 4125227 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01654 and
-has 6 connected components, where the component with most nodes has 22326 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 369.38, and the node degree mode is 2. The top 5 most central
-nodes are 81985.XP_006300027.1 (degree 6895), 81985.XP_006297563.1 (degree 4303),
-81985.XP_006294113.1 (degree 4139), 81985.XP_006297321.1 (degree 4136) and 81985.XP_006283329.1
+The undirected graph Capsella rubella has 22336 nodes and 4125227 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01654 and has 6 connected components, where the component with most
+nodes has 22326 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 369.38, and
+the node degree mode is 2. The top 5 most central nodes are 81985.XP_006300027.1
+(degree 6895), 81985.XP_006297563.1 (degree 4303), 81985.XP_006294113.1
+(degree 4139), 81985.XP_006297321.1 (degree 4136) and 81985.XP_006283329.1
 (degree 4136).
 
 
@@ -107,13 +108,14 @@ def CapsellaRubella(
 	
 	Datetime: 2021-02-02 18:35:27.917842
 	
-	The undirected graph Capsella rubella has 22336 nodes and 4125227 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01654 and
-	has 6 connected components, where the component with most nodes has 22326 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 369.38, and the node degree mode is 2. The top 5 most central
-	nodes are 81985.XP_006300027.1 (degree 6895), 81985.XP_006297563.1 (degree 4303),
-	81985.XP_006294113.1 (degree 4139), 81985.XP_006297321.1 (degree 4136) and 81985.XP_006283329.1
+	The undirected graph Capsella rubella has 22336 nodes and 4125227 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01654 and has 6 connected components, where the component with most
+	nodes has 22326 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 369.38, and
+	the node degree mode is 2. The top 5 most central nodes are 81985.XP_006300027.1
+	(degree 6895), 81985.XP_006297563.1 (degree 4303), 81985.XP_006294113.1
+	(degree 4139), 81985.XP_006297321.1 (degree 4136) and 81985.XP_006283329.1
 	(degree 4136).
 	
 

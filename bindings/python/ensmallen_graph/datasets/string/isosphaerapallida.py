@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:49.382497
 
-The undirected graph Isosphaera pallida has 3634 nodes and 351847 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05330 and
-has 27 connected components, where the component with most nodes has 3574 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 193.64, and the node degree mode is 1. The top 5 most central
-nodes are 575540.Isop_2003 (degree 1361), 575540.Isop_1922 (degree 1252), 575540.Isop_1972
-(degree 1077), 575540.Isop_1658 (degree 1075) and 575540.Isop_3023 (degree 992).
+The undirected graph Isosphaera pallida has 3634 nodes and 351847 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05330 and has 27 connected components, where the component with most
+nodes has 3574 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 193.64, and
+the node degree mode is 1. The top 5 most central nodes are 575540.Isop_2003
+(degree 1361), 575540.Isop_1922 (degree 1252), 575540.Isop_1972 (degree
+1077), 575540.Isop_1658 (degree 1075) and 575540.Isop_3023 (degree 992).
 
 
 References
@@ -106,13 +107,14 @@ def IsosphaeraPallida(
 	
 	Datetime: 2021-02-02 21:14:49.382497
 	
-	The undirected graph Isosphaera pallida has 3634 nodes and 351847 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05330 and
-	has 27 connected components, where the component with most nodes has 3574 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 193.64, and the node degree mode is 1. The top 5 most central
-	nodes are 575540.Isop_2003 (degree 1361), 575540.Isop_1922 (degree 1252), 575540.Isop_1972
-	(degree 1077), 575540.Isop_1658 (degree 1075) and 575540.Isop_3023 (degree 992).
+	The undirected graph Isosphaera pallida has 3634 nodes and 351847 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05330 and has 27 connected components, where the component with most
+	nodes has 3574 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 193.64, and
+	the node degree mode is 1. The top 5 most central nodes are 575540.Isop_2003
+	(degree 1361), 575540.Isop_1922 (degree 1252), 575540.Isop_1972 (degree
+	1077), 575540.Isop_1658 (degree 1075) and 575540.Isop_3023 (degree 992).
 	
 
 

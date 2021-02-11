@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:22.638624
 
-The undirected graph Desulfotomaculum hydrothermale has 2619 nodes and 181433 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05292
-and has 8 connected components, where the component with most nodes has 2602 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 138.55, and the node degree mode is 5. The top 5
-most central nodes are 1121428.DESHY_60166___1 (degree 996), 1121428.DESHY_110225___1
-(degree 969), 1121428.DESHY_80042___1 (degree 868), 1121428.DESHY_60191___1 (degree
+The undirected graph Desulfotomaculum hydrothermale has 2619 nodes and
+181433 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05292 and has 8 connected components, where the
+component with most nodes has 2602 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+is 138.55, and the node degree mode is 5. The top 5 most central nodes
+are 1121428.DESHY_60166___1 (degree 996), 1121428.DESHY_110225___1 (degree
+969), 1121428.DESHY_80042___1 (degree 868), 1121428.DESHY_60191___1 (degree
 824) and 1121428.DESHY_160145___1 (degree 765).
 
 
@@ -107,13 +108,14 @@ def DesulfotomaculumHydrothermale(
 	
 	Datetime: 2021-02-02 22:36:22.638624
 	
-	The undirected graph Desulfotomaculum hydrothermale has 2619 nodes and 181433 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05292
-	and has 8 connected components, where the component with most nodes has 2602 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 138.55, and the node degree mode is 5. The top 5
-	most central nodes are 1121428.DESHY_60166___1 (degree 996), 1121428.DESHY_110225___1
-	(degree 969), 1121428.DESHY_80042___1 (degree 868), 1121428.DESHY_60191___1 (degree
+	The undirected graph Desulfotomaculum hydrothermale has 2619 nodes and
+	181433 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05292 and has 8 connected components, where the
+	component with most nodes has 2602 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 109, the mean node degree
+	is 138.55, and the node degree mode is 5. The top 5 most central nodes
+	are 1121428.DESHY_60166___1 (degree 996), 1121428.DESHY_110225___1 (degree
+	969), 1121428.DESHY_80042___1 (degree 868), 1121428.DESHY_60191___1 (degree
 	824) and 1121428.DESHY_160145___1 (degree 765).
 	
 

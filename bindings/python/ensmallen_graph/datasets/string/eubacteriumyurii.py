@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:43.969249
 
-The undirected graph Eubacterium yurii has 2108 nodes and 126654 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05703 and
-has 20 connected components, where the component with most nodes has 2048 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 120.17, and the node degree mode is 2. The top 5 most central
-nodes are 864565.HMPREF0379_1849 (degree 876), 864565.HMPREF0379_0957 (degree 851),
-864565.HMPREF0379_0662 (degree 675), 864565.HMPREF0379_0136 (degree 614) and 864565.HMPREF0379_0146
+The undirected graph Eubacterium yurii has 2108 nodes and 126654 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05703 and has 20 connected components, where the component with most
+nodes has 2048 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 120.17, and
+the node degree mode is 2. The top 5 most central nodes are 864565.HMPREF0379_1849
+(degree 876), 864565.HMPREF0379_0957 (degree 851), 864565.HMPREF0379_0662
+(degree 675), 864565.HMPREF0379_0136 (degree 614) and 864565.HMPREF0379_0146
 (degree 582).
 
 
@@ -107,13 +108,14 @@ def EubacteriumYurii(
 	
 	Datetime: 2021-02-02 21:47:43.969249
 	
-	The undirected graph Eubacterium yurii has 2108 nodes and 126654 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05703 and
-	has 20 connected components, where the component with most nodes has 2048 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 120.17, and the node degree mode is 2. The top 5 most central
-	nodes are 864565.HMPREF0379_1849 (degree 876), 864565.HMPREF0379_0957 (degree 851),
-	864565.HMPREF0379_0662 (degree 675), 864565.HMPREF0379_0136 (degree 614) and 864565.HMPREF0379_0146
+	The undirected graph Eubacterium yurii has 2108 nodes and 126654 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05703 and has 20 connected components, where the component with most
+	nodes has 2048 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 120.17, and
+	the node degree mode is 2. The top 5 most central nodes are 864565.HMPREF0379_1849
+	(degree 876), 864565.HMPREF0379_0957 (degree 851), 864565.HMPREF0379_0662
+	(degree 675), 864565.HMPREF0379_0136 (degree 614) and 864565.HMPREF0379_0146
 	(degree 582).
 	
 

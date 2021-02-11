@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:54.272024
 
-The undirected graph Anaerosalibacter sp. ND1 has 3265 nodes and 345238 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06479
-and has 11 connected components, where the component with most nodes has 3238 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 211.48, and the node degree mode is 3. The top 5
-most central nodes are 1347392.CCEZ01000007_gene1992 (degree 1278), 1347392.CCEZ01000049_gene1606
-(degree 1079), 1347392.CCEZ01000074_gene1784 (degree 1071), 1347392.CCEZ01000043_gene427
-(degree 1052) and 1347392.CCEZ01000049_gene1628 (degree 1029).
+The undirected graph Anaerosalibacter sp. ND1 has 3265 nodes and 345238
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06479 and has 11 connected components, where the component
+with most nodes has 3238 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 211.48,
+and the node degree mode is 3. The top 5 most central nodes are 1347392.CCEZ01000007_gene1992
+(degree 1278), 1347392.CCEZ01000049_gene1606 (degree 1079), 1347392.CCEZ01000074_gene1784
+(degree 1071), 1347392.CCEZ01000043_gene427 (degree 1052) and 1347392.CCEZ01000049_gene1628
+(degree 1029).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerosalibacterSp.Nd1(
 	
 	Datetime: 2021-02-03 22:03:54.272024
 	
-	The undirected graph Anaerosalibacter sp. ND1 has 3265 nodes and 345238 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06479
-	and has 11 connected components, where the component with most nodes has 3238 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 211.48, and the node degree mode is 3. The top 5
-	most central nodes are 1347392.CCEZ01000007_gene1992 (degree 1278), 1347392.CCEZ01000049_gene1606
-	(degree 1079), 1347392.CCEZ01000074_gene1784 (degree 1071), 1347392.CCEZ01000043_gene427
-	(degree 1052) and 1347392.CCEZ01000049_gene1628 (degree 1029).
+	The undirected graph Anaerosalibacter sp. ND1 has 3265 nodes and 345238
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06479 and has 11 connected components, where the component
+	with most nodes has 3238 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 211.48,
+	and the node degree mode is 3. The top 5 most central nodes are 1347392.CCEZ01000007_gene1992
+	(degree 1278), 1347392.CCEZ01000049_gene1606 (degree 1079), 1347392.CCEZ01000074_gene1784
+	(degree 1071), 1347392.CCEZ01000043_gene427 (degree 1052) and 1347392.CCEZ01000049_gene1628
+	(degree 1029).
 	
 
 

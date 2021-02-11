@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:37.572473
 
-The undirected graph Arthrobacter gangotriensis has 3969 nodes and 320517 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04070
-and has 15 connected components, where the component with most nodes has 3936 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 161.51, and the node degree mode is 3. The top 5
-most central nodes are 1276920.ADIAG_03550 (degree 1246), 1276920.ADIAG_03299 (degree
-1199), 1276920.ADIAG_02099 (degree 1039), 1276920.ADIAG_00672 (degree 1021) and 1276920.ADIAG_00693
-(degree 1011).
+The undirected graph Arthrobacter gangotriensis has 3969 nodes and 320517
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04070 and has 15 connected components, where the component
+with most nodes has 3936 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 161.51,
+and the node degree mode is 3. The top 5 most central nodes are 1276920.ADIAG_03550
+(degree 1246), 1276920.ADIAG_03299 (degree 1199), 1276920.ADIAG_02099 (degree
+1039), 1276920.ADIAG_00672 (degree 1021) and 1276920.ADIAG_00693 (degree
+1011).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterGangotriensis(
 	
 	Datetime: 2021-02-02 23:38:37.572473
 	
-	The undirected graph Arthrobacter gangotriensis has 3969 nodes and 320517 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04070
-	and has 15 connected components, where the component with most nodes has 3936 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 161.51, and the node degree mode is 3. The top 5
-	most central nodes are 1276920.ADIAG_03550 (degree 1246), 1276920.ADIAG_03299 (degree
-	1199), 1276920.ADIAG_02099 (degree 1039), 1276920.ADIAG_00672 (degree 1021) and 1276920.ADIAG_00693
-	(degree 1011).
+	The undirected graph Arthrobacter gangotriensis has 3969 nodes and 320517
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04070 and has 15 connected components, where the component
+	with most nodes has 3936 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 161.51,
+	and the node degree mode is 3. The top 5 most central nodes are 1276920.ADIAG_03550
+	(degree 1246), 1276920.ADIAG_03299 (degree 1199), 1276920.ADIAG_02099 (degree
+	1039), 1276920.ADIAG_00672 (degree 1021) and 1276920.ADIAG_00693 (degree
+	1011).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:14.532661
 
-The undirected graph Serratia proteamaculans has 4919 nodes and 563243 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04657 and
-has 8 connected components, where the component with most nodes has 4902 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 229.01, and the node degree mode is 2. The top 5 most central
-nodes are 399741.Spro_1285 (degree 1729), 399741.Spro_2604 (degree 1607), 399741.Spro_4887
-(degree 1559), 399741.Spro_4344 (degree 1252) and 399741.Spro_4342 (degree 1220).
+The undirected graph Serratia proteamaculans has 4919 nodes and 563243
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04657 and has 8 connected components, where the component
+with most nodes has 4902 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 229.01,
+and the node degree mode is 2. The top 5 most central nodes are 399741.Spro_1285
+(degree 1729), 399741.Spro_2604 (degree 1607), 399741.Spro_4887 (degree
+1559), 399741.Spro_4344 (degree 1252) and 399741.Spro_4342 (degree 1220).
 
 
 References
@@ -106,13 +107,14 @@ def SerratiaProteamaculans(
 	
 	Datetime: 2021-02-02 20:43:14.532661
 	
-	The undirected graph Serratia proteamaculans has 4919 nodes and 563243 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04657 and
-	has 8 connected components, where the component with most nodes has 4902 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 229.01, and the node degree mode is 2. The top 5 most central
-	nodes are 399741.Spro_1285 (degree 1729), 399741.Spro_2604 (degree 1607), 399741.Spro_4887
-	(degree 1559), 399741.Spro_4344 (degree 1252) and 399741.Spro_4342 (degree 1220).
+	The undirected graph Serratia proteamaculans has 4919 nodes and 563243
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04657 and has 8 connected components, where the component
+	with most nodes has 4902 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 229.01,
+	and the node degree mode is 2. The top 5 most central nodes are 399741.Spro_1285
+	(degree 1729), 399741.Spro_2604 (degree 1607), 399741.Spro_4887 (degree
+	1559), 399741.Spro_4344 (degree 1252) and 399741.Spro_4342 (degree 1220).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:50.901969
 
-The undirected graph Chlorobium limicola has 2412 nodes and 158101 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05437 and
-has 6 connected components, where the component with most nodes has 2402 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 131.10, and the node degree mode is 2. The top 5 most central
-nodes are 290315.Clim_0473 (degree 1023), 290315.Clim_0484 (degree 983), 290315.Clim_1949
-(degree 789), 290315.Clim_0430 (degree 756) and 290315.Clim_1190 (degree 754).
+The undirected graph Chlorobium limicola has 2412 nodes and 158101 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05437 and has 6 connected components, where the component with most
+nodes has 2402 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 131.10, and
+the node degree mode is 2. The top 5 most central nodes are 290315.Clim_0473
+(degree 1023), 290315.Clim_0484 (degree 983), 290315.Clim_1949 (degree
+789), 290315.Clim_0430 (degree 756) and 290315.Clim_1190 (degree 754).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorobiumLimicola(
 	
 	Datetime: 2021-02-02 20:19:50.901969
 	
-	The undirected graph Chlorobium limicola has 2412 nodes and 158101 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05437 and
-	has 6 connected components, where the component with most nodes has 2402 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 131.10, and the node degree mode is 2. The top 5 most central
-	nodes are 290315.Clim_0473 (degree 1023), 290315.Clim_0484 (degree 983), 290315.Clim_1949
-	(degree 789), 290315.Clim_0430 (degree 756) and 290315.Clim_1190 (degree 754).
+	The undirected graph Chlorobium limicola has 2412 nodes and 158101 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05437 and has 6 connected components, where the component with most
+	nodes has 2402 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 131.10, and
+	the node degree mode is 2. The top 5 most central nodes are 290315.Clim_0473
+	(degree 1023), 290315.Clim_0484 (degree 983), 290315.Clim_1949 (degree
+	789), 290315.Clim_0430 (degree 756) and 290315.Clim_1190 (degree 754).
 	
 
 

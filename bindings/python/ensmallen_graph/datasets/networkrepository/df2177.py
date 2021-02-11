@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:58.592913
 
-The undirected graph df2177 has 10358 nodes and 22336 unweighted edges, of which
-630 are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 4.25, and the node degree mode is 2. The top 5 most central nodes
-are 627 (degree 38), 621 (degree 38), 620 (degree 38), 613 (degree 38) and 611 (degree
-38).
+The undirected graph df2177 has 10358 nodes and 22336 unweighted edges,
+of which 630 are self-loops. The graph is quite sparse as it has a density
+of 0.00041 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.25, and the node degree mode
+is 2. The top 5 most central nodes are 627 (degree 38), 621 (degree 38),
+620 (degree 38), 613 (degree 38) and 611 (degree 38).
 
 
 References
@@ -102,12 +102,12 @@ def Df2177(
 	
 	Datetime: 2021-02-06 10:20:58.592913
 	
-	The undirected graph df2177 has 10358 nodes and 22336 unweighted edges, of which
-	630 are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 4.25, and the node degree mode is 2. The top 5 most central nodes
-	are 627 (degree 38), 621 (degree 38), 620 (degree 38), 613 (degree 38) and 611 (degree
-	38).
+	The undirected graph df2177 has 10358 nodes and 22336 unweighted edges,
+	of which 630 are self-loops. The graph is quite sparse as it has a density
+	of 0.00041 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.25, and the node degree mode
+	is 2. The top 5 most central nodes are 627 (degree 38), 621 (degree 38),
+	620 (degree 38), 613 (degree 38) and 611 (degree 38).
 	
 
 

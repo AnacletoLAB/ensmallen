@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:21.622256
 
-The undirected graph Thaumarchaeota sp. SCGC AB629I23 has 1572 nodes and 105109 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08512
-and has 38 connected components, where the component with most nodes has 1467 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 133.73, and the node degree mode is 3. The top 5
-most central nodes are 1131266.ARWQ01000002_gene549 (degree 573), 1131266.ARWQ01000001_gene1259
+The undirected graph Thaumarchaeota sp. SCGC AB629I23 has 1572 nodes and
+105109 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08512 and has 38 connected components, where the
+component with most nodes has 1467 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 133.73, and the node degree mode is 3. The top 5 most central nodes
+are 1131266.ARWQ01000002_gene549 (degree 573), 1131266.ARWQ01000001_gene1259
 (degree 549), 1131266.ARWQ01000002_gene462 (degree 532), 1131266.ARWQ01000012_gene1623
 (degree 518) and 1131266.ARWQ01000005_gene855 (degree 515).
 
@@ -107,12 +108,13 @@ def ThaumarchaeotaSp.ScgcAb629i23(
 	
 	Datetime: 2021-02-02 22:55:21.622256
 	
-	The undirected graph Thaumarchaeota sp. SCGC AB629I23 has 1572 nodes and 105109 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08512
-	and has 38 connected components, where the component with most nodes has 1467 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 133.73, and the node degree mode is 3. The top 5
-	most central nodes are 1131266.ARWQ01000002_gene549 (degree 573), 1131266.ARWQ01000001_gene1259
+	The undirected graph Thaumarchaeota sp. SCGC AB629I23 has 1572 nodes and
+	105109 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08512 and has 38 connected components, where the
+	component with most nodes has 1467 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 133.73, and the node degree mode is 3. The top 5 most central nodes
+	are 1131266.ARWQ01000002_gene549 (degree 573), 1131266.ARWQ01000001_gene1259
 	(degree 549), 1131266.ARWQ01000002_gene462 (degree 532), 1131266.ARWQ01000012_gene1623
 	(degree 518) and 1131266.ARWQ01000005_gene855 (degree 515).
 	

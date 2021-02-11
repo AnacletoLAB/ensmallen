@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:46.162695
 
-The undirected graph com-amazon has 334863 nodes and 925872 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 4,
-the mean node degree is 5.53, and the node degree mode is 4. The top 5 most central
-nodes are 953 (degree 549), 5034 (degree 324), 6735 (degree 257), 1792 (degree 230)
-and 31337 (degree 228).
+The undirected graph com-amazon has 334863 nodes and 925872 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 5.53, and the
+node degree mode is 4. The top 5 most central nodes are 953 (degree 549),
+5034 (degree 324), 6735 (degree 257), 1792 (degree 230) and 31337 (degree
+228).
 
 
 References
@@ -102,12 +103,13 @@ def ComAmazon(
 	
 	Datetime: 2021-02-06 11:07:46.162695
 	
-	The undirected graph com-amazon has 334863 nodes and 925872 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 4,
-	the mean node degree is 5.53, and the node degree mode is 4. The top 5 most central
-	nodes are 953 (degree 549), 5034 (degree 324), 6735 (degree 257), 1792 (degree 230)
-	and 31337 (degree 228).
+	The undirected graph com-amazon has 334863 nodes and 925872 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 5.53, and the
+	node degree mode is 4. The top 5 most central nodes are 953 (degree 549),
+	5034 (degree 324), 6735 (degree 257), 1792 (degree 230) and 31337 (degree
+	228).
 	
 
 

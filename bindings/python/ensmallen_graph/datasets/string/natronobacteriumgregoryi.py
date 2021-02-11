@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:52.481475
 
-The undirected graph Natronobacterium gregoryi has 3581 nodes and 285022 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04447
-and has 23 connected components, where the component with most nodes has 3523 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 159.19, and the node degree mode is 4. The top 5
-most central nodes are 797304.Natgr_3398 (degree 1066), 797304.Natgr_3218 (degree
-1002), 797304.Natgr_1664 (degree 982), 797304.Natgr_3595 (degree 912) and 797304.Natgr_3586
-(degree 908).
+The undirected graph Natronobacterium gregoryi has 3581 nodes and 285022
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04447 and has 23 connected components, where the component
+with most nodes has 3523 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 159.19,
+and the node degree mode is 4. The top 5 most central nodes are 797304.Natgr_3398
+(degree 1066), 797304.Natgr_3218 (degree 1002), 797304.Natgr_1664 (degree
+982), 797304.Natgr_3595 (degree 912) and 797304.Natgr_3586 (degree 908).
 
 
 References
@@ -107,14 +107,14 @@ def NatronobacteriumGregoryi(
 	
 	Datetime: 2021-02-02 21:45:52.481475
 	
-	The undirected graph Natronobacterium gregoryi has 3581 nodes and 285022 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04447
-	and has 23 connected components, where the component with most nodes has 3523 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 159.19, and the node degree mode is 4. The top 5
-	most central nodes are 797304.Natgr_3398 (degree 1066), 797304.Natgr_3218 (degree
-	1002), 797304.Natgr_1664 (degree 982), 797304.Natgr_3595 (degree 912) and 797304.Natgr_3586
-	(degree 908).
+	The undirected graph Natronobacterium gregoryi has 3581 nodes and 285022
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04447 and has 23 connected components, where the component
+	with most nodes has 3523 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 159.19,
+	and the node degree mode is 4. The top 5 most central nodes are 797304.Natgr_3398
+	(degree 1066), 797304.Natgr_3218 (degree 1002), 797304.Natgr_1664 (degree
+	982), 797304.Natgr_3595 (degree 912) and 797304.Natgr_3586 (degree 908).
 	
 
 

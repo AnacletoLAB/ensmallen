@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:03.663022
 
-The undirected graph Oceanicola batsensis has 3350 nodes and 399639 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07124 and
-has 9 connected components, where the component with most nodes has 3325 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 238.59, and the node degree mode is 2. The top 5 most central
-nodes are 252305.OB2597_13603 (degree 1294), 252305.OB2597_01437 (degree 1092), 252305.OB2597_16030
-(degree 1051), 252305.OB2597_06990 (degree 979) and 252305.OB2597_06475 (degree 960).
+The undirected graph Oceanicola batsensis has 3350 nodes and 399639 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07124 and has 9 connected components, where the component with most
+nodes has 3325 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 238.59, and
+the node degree mode is 2. The top 5 most central nodes are 252305.OB2597_13603
+(degree 1294), 252305.OB2597_01437 (degree 1092), 252305.OB2597_16030 (degree
+1051), 252305.OB2597_06990 (degree 979) and 252305.OB2597_06475 (degree
+960).
 
 
 References
@@ -106,13 +108,15 @@ def OceanicolaBatsensis(
 	
 	Datetime: 2021-02-02 20:12:03.663022
 	
-	The undirected graph Oceanicola batsensis has 3350 nodes and 399639 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07124 and
-	has 9 connected components, where the component with most nodes has 3325 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 238.59, and the node degree mode is 2. The top 5 most central
-	nodes are 252305.OB2597_13603 (degree 1294), 252305.OB2597_01437 (degree 1092), 252305.OB2597_16030
-	(degree 1051), 252305.OB2597_06990 (degree 979) and 252305.OB2597_06475 (degree 960).
+	The undirected graph Oceanicola batsensis has 3350 nodes and 399639 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07124 and has 9 connected components, where the component with most
+	nodes has 3325 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 238.59, and
+	the node degree mode is 2. The top 5 most central nodes are 252305.OB2597_13603
+	(degree 1294), 252305.OB2597_01437 (degree 1092), 252305.OB2597_16030 (degree
+	1051), 252305.OB2597_06990 (degree 979) and 252305.OB2597_06475 (degree
+	960).
 	
 
 

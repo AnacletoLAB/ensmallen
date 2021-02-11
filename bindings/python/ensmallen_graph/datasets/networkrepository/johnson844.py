@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:57.447666
 
-The undirected graph johnson8-4-4 has 70 nodes and 1855 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.76812
-and is connected, as it has a single component. The graph median node degree is 53,
-the mean node degree is 53.00 and the node degree mode is 53. The top 5 most central
-nodes are 70 (degree 53), 69 (degree 53), 68 (degree 53), 67 (degree 53) and 66 (degree
-53).
+The undirected graph johnson8-4-4 has 70 nodes and 1855 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.76812 and is connected, as it has a single component. The
+graph median node degree is 53, the mean node degree is 53.00 and the node
+degree mode is 53. The top 5 most central nodes are 70 (degree 53), 69
+(degree 53), 68 (degree 53), 67 (degree 53) and 66 (degree 53).
 
 
 References
@@ -115,12 +115,12 @@ def Johnson844(
 	
 	Datetime: 2021-02-03 22:54:57.447666
 	
-	The undirected graph johnson8-4-4 has 70 nodes and 1855 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.76812
-	and is connected, as it has a single component. The graph median node degree is 53,
-	the mean node degree is 53.00 and the node degree mode is 53. The top 5 most central
-	nodes are 70 (degree 53), 69 (degree 53), 68 (degree 53), 67 (degree 53) and 66 (degree
-	53).
+	The undirected graph johnson8-4-4 has 70 nodes and 1855 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.76812 and is connected, as it has a single component. The
+	graph median node degree is 53, the mean node degree is 53.00 and the node
+	degree mode is 53. The top 5 most central nodes are 70 (degree 53), 69
+	(degree 53), 68 (degree 53), 67 (degree 53) and 66 (degree 53).
 	
 
 

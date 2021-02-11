@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:03:54.400677
 
-The undirected graph bcsstm02 has 66 nodes, of which 66 are singletons (all have
-self-loops), and 66 weighted edges, of which 66 are self-loops. The graph is dense
-as it has a density of 0.01538 and has 66 connected components, where the component
-with most nodes has a single node and the component with the least nodes has a single
-node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-degree mode is 1. The top 5 most central nodes are 66 (degree 1), 65 (degree 1),
-64 (degree 1), 63 (degree 1) and 62 (degree 1).
+The undirected graph bcsstm02 has 66 nodes, of which 66 are singletons
+(all have self-loops), and 66 weighted edges, of which 66 are self-loops.
+The graph is dense as it has a density of 0.01538 and has 66 connected
+components, where the component with most nodes has a single node and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 1.00, and the node degree mode is
+1. The top 5 most central nodes are 66 (degree 1), 65 (degree 1), 64 (degree
+1), 63 (degree 1) and 62 (degree 1).
 
 
 References
@@ -103,13 +104,14 @@ def Bcsstm02(
 	
 	Datetime: 2021-02-06 08:03:54.400677
 	
-	The undirected graph bcsstm02 has 66 nodes, of which 66 are singletons (all have
-	self-loops), and 66 weighted edges, of which 66 are self-loops. The graph is dense
-	as it has a density of 0.01538 and has 66 connected components, where the component
-	with most nodes has a single node and the component with the least nodes has a single
-	node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-	degree mode is 1. The top 5 most central nodes are 66 (degree 1), 65 (degree 1),
-	64 (degree 1), 63 (degree 1) and 62 (degree 1).
+	The undirected graph bcsstm02 has 66 nodes, of which 66 are singletons
+	(all have self-loops), and 66 weighted edges, of which 66 are self-loops.
+	The graph is dense as it has a density of 0.01538 and has 66 connected
+	components, where the component with most nodes has a single node and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 1.00, and the node degree mode is
+	1. The top 5 most central nodes are 66 (degree 1), 65 (degree 1), 64 (degree
+	1), 63 (degree 1) and 62 (degree 1).
 	
 
 

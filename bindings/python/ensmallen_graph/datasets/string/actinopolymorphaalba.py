@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:13.884890
 
-The undirected graph Actinopolymorpha alba has 7073 nodes and 886824 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03546 and
-has 46 connected components, where the component with most nodes has 6973 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 250.76, and the node degree mode is 1. The top 5 most central
-nodes are 1120950.KB892767_gene5139 (degree 2053), 1120950.KB892783_gene327 (degree
-1939), 1120950.KB892707_gene4992 (degree 1828), 1120950.KB892746_gene3574 (degree
-1795) and 1120950.KB892830_gene5048 (degree 1786).
+The undirected graph Actinopolymorpha alba has 7073 nodes and 886824 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03546 and has 46 connected components, where the component with most
+nodes has 6973 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 250.76, and
+the node degree mode is 1. The top 5 most central nodes are 1120950.KB892767_gene5139
+(degree 2053), 1120950.KB892783_gene327 (degree 1939), 1120950.KB892707_gene4992
+(degree 1828), 1120950.KB892746_gene3574 (degree 1795) and 1120950.KB892830_gene5048
+(degree 1786).
 
 
 References
@@ -107,14 +108,15 @@ def ActinopolymorphaAlba(
 	
 	Datetime: 2021-02-02 22:30:13.884890
 	
-	The undirected graph Actinopolymorpha alba has 7073 nodes and 886824 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03546 and
-	has 46 connected components, where the component with most nodes has 6973 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 250.76, and the node degree mode is 1. The top 5 most central
-	nodes are 1120950.KB892767_gene5139 (degree 2053), 1120950.KB892783_gene327 (degree
-	1939), 1120950.KB892707_gene4992 (degree 1828), 1120950.KB892746_gene3574 (degree
-	1795) and 1120950.KB892830_gene5048 (degree 1786).
+	The undirected graph Actinopolymorpha alba has 7073 nodes and 886824 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03546 and has 46 connected components, where the component with most
+	nodes has 6973 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 250.76, and
+	the node degree mode is 1. The top 5 most central nodes are 1120950.KB892767_gene5139
+	(degree 2053), 1120950.KB892783_gene327 (degree 1939), 1120950.KB892707_gene4992
+	(degree 1828), 1120950.KB892746_gene3574 (degree 1795) and 1120950.KB892830_gene5048
+	(degree 1786).
 	
 
 

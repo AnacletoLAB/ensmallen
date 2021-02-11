@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:05.123106
 
-The undirected graph Marinobacterium litorale has 3995 nodes and 499481 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06261
-and has 16 connected components, where the component with most nodes has 3943 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 202, the mean node degree is 250.05, and the node degree mode is 3. The top 5
-most central nodes are 1122201.AUAZ01000003_gene1821 (degree 1573), 1122201.AUAZ01000016_gene54
-(degree 1515), 1122201.AUAZ01000018_gene1678 (degree 1445), 1122201.AUAZ01000024_gene794
-(degree 1438) and 1122201.AUAZ01000005_gene556 (degree 1437).
+The undirected graph Marinobacterium litorale has 3995 nodes and 499481
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06261 and has 16 connected components, where the component
+with most nodes has 3943 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 250.05,
+and the node degree mode is 3. The top 5 most central nodes are 1122201.AUAZ01000003_gene1821
+(degree 1573), 1122201.AUAZ01000016_gene54 (degree 1515), 1122201.AUAZ01000018_gene1678
+(degree 1445), 1122201.AUAZ01000024_gene794 (degree 1438) and 1122201.AUAZ01000005_gene556
+(degree 1437).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacteriumLitorale(
 	
 	Datetime: 2021-02-02 22:42:05.123106
 	
-	The undirected graph Marinobacterium litorale has 3995 nodes and 499481 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06261
-	and has 16 connected components, where the component with most nodes has 3943 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 202, the mean node degree is 250.05, and the node degree mode is 3. The top 5
-	most central nodes are 1122201.AUAZ01000003_gene1821 (degree 1573), 1122201.AUAZ01000016_gene54
-	(degree 1515), 1122201.AUAZ01000018_gene1678 (degree 1445), 1122201.AUAZ01000024_gene794
-	(degree 1438) and 1122201.AUAZ01000005_gene556 (degree 1437).
+	The undirected graph Marinobacterium litorale has 3995 nodes and 499481
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06261 and has 16 connected components, where the component
+	with most nodes has 3943 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 250.05,
+	and the node degree mode is 3. The top 5 most central nodes are 1122201.AUAZ01000003_gene1821
+	(degree 1573), 1122201.AUAZ01000016_gene54 (degree 1515), 1122201.AUAZ01000018_gene1678
+	(degree 1445), 1122201.AUAZ01000024_gene794 (degree 1438) and 1122201.AUAZ01000005_gene556
+	(degree 1437).
 	
 
 

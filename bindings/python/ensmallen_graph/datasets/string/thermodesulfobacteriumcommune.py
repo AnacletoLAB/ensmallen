@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:47.490418
 
-The undirected graph Thermodesulfobacterium commune has 1434 nodes and 79846 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07771
-and has 7 connected components, where the component with most nodes has 1415 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 111.36, and the node degree mode is 3. The top 5 most
-central nodes are 289377.HL41_07435 (degree 595), 289377.HL41_03970 (degree 552),
-289377.HL41_06665 (degree 544), 289377.HL41_08030 (degree 497) and 289377.HL41_02845
-(degree 497).
+The undirected graph Thermodesulfobacterium commune has 1434 nodes and
+79846 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07771 and has 7 connected components, where the
+component with most nodes has 1415 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 89, the mean node degree
+is 111.36, and the node degree mode is 3. The top 5 most central nodes
+are 289377.HL41_07435 (degree 595), 289377.HL41_03970 (degree 552), 289377.HL41_06665
+(degree 544), 289377.HL41_08030 (degree 497) and 289377.HL41_02845 (degree
+497).
 
 
 References
@@ -107,14 +108,15 @@ def ThermodesulfobacteriumCommune(
 	
 	Datetime: 2021-02-02 20:19:47.490418
 	
-	The undirected graph Thermodesulfobacterium commune has 1434 nodes and 79846 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07771
-	and has 7 connected components, where the component with most nodes has 1415 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 111.36, and the node degree mode is 3. The top 5 most
-	central nodes are 289377.HL41_07435 (degree 595), 289377.HL41_03970 (degree 552),
-	289377.HL41_06665 (degree 544), 289377.HL41_08030 (degree 497) and 289377.HL41_02845
-	(degree 497).
+	The undirected graph Thermodesulfobacterium commune has 1434 nodes and
+	79846 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07771 and has 7 connected components, where the
+	component with most nodes has 1415 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 89, the mean node degree
+	is 111.36, and the node degree mode is 3. The top 5 most central nodes
+	are 289377.HL41_07435 (degree 595), 289377.HL41_03970 (degree 552), 289377.HL41_06665
+	(degree 544), 289377.HL41_08030 (degree 497) and 289377.HL41_02845 (degree
+	497).
 	
 
 

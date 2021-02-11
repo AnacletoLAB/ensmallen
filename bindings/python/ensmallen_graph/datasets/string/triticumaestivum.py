@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:07:44.007862
 
-The undirected graph Triticum aestivum has 80231 nodes and 204981467 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06369 and
-has 6 connected components, where the component with most nodes has 80205 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 3736,
-the mean node degree is 5109.78, and the node degree mode is 297. The top 5 most
-central nodes are 4565.Traes_6BL_DFDCD5B11.1 (degree 42595), 4565.Traes_2BL_0021AA419.1
-(degree 36012), 4565.Traes_2AL_44B0F2E5E.1 (degree 36012), 4565.Traes_2DL_4C7EBA068.2
-(degree 36012) and 4565.Traes_3B_5DAEC6587.1 (degree 33909).
+The undirected graph Triticum aestivum has 80231 nodes and 204981467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06369 and has 6 connected components, where the component with most
+nodes has 80205 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 3736, the mean node degree is 5109.78,
+and the node degree mode is 297. The top 5 most central nodes are 4565.Traes_6BL_DFDCD5B11.1
+(degree 42595), 4565.Traes_2BL_0021AA419.1 (degree 36012), 4565.Traes_2AL_44B0F2E5E.1
+(degree 36012), 4565.Traes_2DL_4C7EBA068.2 (degree 36012) and 4565.Traes_3B_5DAEC6587.1
+(degree 33909).
 
 
 References
@@ -107,14 +108,15 @@ def TriticumAestivum(
 	
 	Datetime: 2021-02-02 17:07:44.007862
 	
-	The undirected graph Triticum aestivum has 80231 nodes and 204981467 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06369 and
-	has 6 connected components, where the component with most nodes has 80205 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 3736,
-	the mean node degree is 5109.78, and the node degree mode is 297. The top 5 most
-	central nodes are 4565.Traes_6BL_DFDCD5B11.1 (degree 42595), 4565.Traes_2BL_0021AA419.1
-	(degree 36012), 4565.Traes_2AL_44B0F2E5E.1 (degree 36012), 4565.Traes_2DL_4C7EBA068.2
-	(degree 36012) and 4565.Traes_3B_5DAEC6587.1 (degree 33909).
+	The undirected graph Triticum aestivum has 80231 nodes and 204981467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06369 and has 6 connected components, where the component with most
+	nodes has 80205 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 3736, the mean node degree is 5109.78,
+	and the node degree mode is 297. The top 5 most central nodes are 4565.Traes_6BL_DFDCD5B11.1
+	(degree 42595), 4565.Traes_2BL_0021AA419.1 (degree 36012), 4565.Traes_2AL_44B0F2E5E.1
+	(degree 36012), 4565.Traes_2DL_4C7EBA068.2 (degree 36012) and 4565.Traes_3B_5DAEC6587.1
+	(degree 33909).
 	
 
 

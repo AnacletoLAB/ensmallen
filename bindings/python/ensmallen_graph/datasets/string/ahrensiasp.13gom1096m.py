@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:59.967789
 
-The undirected graph Ahrensia sp. 13GOM1096m has 3233 nodes and 268939 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05148 and
-has 8 connected components, where the component with most nodes has 3217 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 166.37, and the node degree mode is 5. The top 5 most central
-nodes are 1380380.JIAX01000006_gene948 (degree 1334), 1380380.JIAX01000011_gene2604
-(degree 1235), 1380380.JIAX01000010_gene285 (degree 996), 1380380.JIAX01000012_gene416
-(degree 973) and 1380380.JIAX01000010_gene117 (degree 923).
+The undirected graph Ahrensia sp. 13GOM1096m has 3233 nodes and 268939
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05148 and has 8 connected components, where the component
+with most nodes has 3217 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 166.37,
+and the node degree mode is 5. The top 5 most central nodes are 1380380.JIAX01000006_gene948
+(degree 1334), 1380380.JIAX01000011_gene2604 (degree 1235), 1380380.JIAX01000010_gene285
+(degree 996), 1380380.JIAX01000012_gene416 (degree 973) and 1380380.JIAX01000010_gene117
+(degree 923).
 
 
 References
@@ -107,14 +108,15 @@ def AhrensiaSp.13gom1096m(
 	
 	Datetime: 2021-02-03 22:13:59.967789
 	
-	The undirected graph Ahrensia sp. 13GOM1096m has 3233 nodes and 268939 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05148 and
-	has 8 connected components, where the component with most nodes has 3217 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 166.37, and the node degree mode is 5. The top 5 most central
-	nodes are 1380380.JIAX01000006_gene948 (degree 1334), 1380380.JIAX01000011_gene2604
-	(degree 1235), 1380380.JIAX01000010_gene285 (degree 996), 1380380.JIAX01000012_gene416
-	(degree 973) and 1380380.JIAX01000010_gene117 (degree 923).
+	The undirected graph Ahrensia sp. 13GOM1096m has 3233 nodes and 268939
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05148 and has 8 connected components, where the component
+	with most nodes has 3217 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 166.37,
+	and the node degree mode is 5. The top 5 most central nodes are 1380380.JIAX01000006_gene948
+	(degree 1334), 1380380.JIAX01000011_gene2604 (degree 1235), 1380380.JIAX01000010_gene285
+	(degree 996), 1380380.JIAX01000012_gene416 (degree 973) and 1380380.JIAX01000010_gene117
+	(degree 923).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:12.380455
 
-The undirected graph Enterorhabdus caecimuris has 2437 nodes and 148946 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05018
-and has 8 connected components, where the component with most nodes has 2409 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 91, the mean node degree is 122.24, and the node degree mode is 4. The top 5 most
-central nodes are 1235794.C811_01139 (degree 1001), 1235794.C811_00832 (degree 867),
-1235794.C811_01426 (degree 790), 1235794.C811_00395 (degree 707) and 1235794.C811_02045
-(degree 688).
+The undirected graph Enterorhabdus caecimuris has 2437 nodes and 148946
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05018 and has 8 connected components, where the component
+with most nodes has 2409 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 91, the mean node degree is 122.24,
+and the node degree mode is 4. The top 5 most central nodes are 1235794.C811_01139
+(degree 1001), 1235794.C811_00832 (degree 867), 1235794.C811_01426 (degree
+790), 1235794.C811_00395 (degree 707) and 1235794.C811_02045 (degree 688).
 
 
 References
@@ -107,14 +107,14 @@ def EnterorhabdusCaecimuris(
 	
 	Datetime: 2021-02-02 23:30:12.380455
 	
-	The undirected graph Enterorhabdus caecimuris has 2437 nodes and 148946 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05018
-	and has 8 connected components, where the component with most nodes has 2409 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 91, the mean node degree is 122.24, and the node degree mode is 4. The top 5 most
-	central nodes are 1235794.C811_01139 (degree 1001), 1235794.C811_00832 (degree 867),
-	1235794.C811_01426 (degree 790), 1235794.C811_00395 (degree 707) and 1235794.C811_02045
-	(degree 688).
+	The undirected graph Enterorhabdus caecimuris has 2437 nodes and 148946
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05018 and has 8 connected components, where the component
+	with most nodes has 2409 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 91, the mean node degree is 122.24,
+	and the node degree mode is 4. The top 5 most central nodes are 1235794.C811_01139
+	(degree 1001), 1235794.C811_00832 (degree 867), 1235794.C811_01426 (degree
+	790), 1235794.C811_00395 (degree 707) and 1235794.C811_02045 (degree 688).
 	
 
 

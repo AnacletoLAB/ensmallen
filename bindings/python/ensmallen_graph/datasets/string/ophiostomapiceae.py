@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:22:35.423124
 
-The undirected graph Ophiostoma piceae has 6472 nodes and 614393 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02934 and
-has 11 connected components, where the component with most nodes has 6449 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 189.86, and the node degree mode is 1. The top 5 most central
-nodes are 61273.S3CDI4 (degree 1704), 61273.S3CRL9 (degree 1540), 61273.S3CST2 (degree
-1437), 61273.S3CK02 (degree 1437) and 61273.S3BS06 (degree 1274).
+The undirected graph Ophiostoma piceae has 6472 nodes and 614393 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02934 and has 11 connected components, where the component with most
+nodes has 6449 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 189.86, and
+the node degree mode is 1. The top 5 most central nodes are 61273.S3CDI4
+(degree 1704), 61273.S3CRL9 (degree 1540), 61273.S3CST2 (degree 1437),
+61273.S3CK02 (degree 1437) and 61273.S3BS06 (degree 1274).
 
 
 References
@@ -106,13 +107,14 @@ def OphiostomaPiceae(
 	
 	Datetime: 2021-02-02 18:22:35.423124
 	
-	The undirected graph Ophiostoma piceae has 6472 nodes and 614393 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02934 and
-	has 11 connected components, where the component with most nodes has 6449 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 189.86, and the node degree mode is 1. The top 5 most central
-	nodes are 61273.S3CDI4 (degree 1704), 61273.S3CRL9 (degree 1540), 61273.S3CST2 (degree
-	1437), 61273.S3CK02 (degree 1437) and 61273.S3BS06 (degree 1274).
+	The undirected graph Ophiostoma piceae has 6472 nodes and 614393 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02934 and has 11 connected components, where the component with most
+	nodes has 6449 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 189.86, and
+	the node degree mode is 1. The top 5 most central nodes are 61273.S3CDI4
+	(degree 1704), 61273.S3CRL9 (degree 1540), 61273.S3CST2 (degree 1437),
+	61273.S3CK02 (degree 1437) and 61273.S3BS06 (degree 1274).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:37:02.655200
 
-The undirected graph cage14 has 276696 nodes and 1483638 weighted edges, of which
-107406 are self-loops. The graph is extremely sparse as it has a density of 0.00004
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 10.34, and the node degree mode is 2. The top 5 most central
-nodes are 1457613 (degree 41), 1457612 (degree 41), 1457603 (degree 41), 1457602
-(degree 41) and 1457443 (degree 41).
+The undirected graph cage14 has 276696 nodes and 1483638 weighted edges,
+of which 107406 are self-loops. The graph is extremely sparse as it has
+a density of 0.00004 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 10.34, and the node
+degree mode is 2. The top 5 most central nodes are 1457613 (degree 41),
+1457612 (degree 41), 1457603 (degree 41), 1457602 (degree 41) and 1457443
+(degree 41).
 
 
 References
@@ -102,12 +103,13 @@ def Cage14(
 	
 	Datetime: 2021-02-06 20:37:02.655200
 	
-	The undirected graph cage14 has 276696 nodes and 1483638 weighted edges, of which
-	107406 are self-loops. The graph is extremely sparse as it has a density of 0.00004
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 10.34, and the node degree mode is 2. The top 5 most central
-	nodes are 1457613 (degree 41), 1457612 (degree 41), 1457603 (degree 41), 1457602
-	(degree 41) and 1457443 (degree 41).
+	The undirected graph cage14 has 276696 nodes and 1483638 weighted edges,
+	of which 107406 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00004 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 10.34, and the node
+	degree mode is 2. The top 5 most central nodes are 1457613 (degree 41),
+	1457612 (degree 41), 1457603 (degree 41), 1457602 (degree 41) and 1457443
+	(degree 41).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:54.172460
 
-The undirected graph Fluviicola taffensis has 4009 nodes and 381210 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04745 and
-has 16 connected components, where the component with most nodes has 3972 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 190.18, and the node degree mode is 5. The top 5 most central
-nodes are 755732.Fluta_3917 (degree 1489), 755732.Fluta_3349 (degree 1327), 755732.Fluta_3754
-(degree 1323), 755732.Fluta_3173 (degree 1309) and 755732.Fluta_1208 (degree 1243).
+The undirected graph Fluviicola taffensis has 4009 nodes and 381210 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04745 and has 16 connected components, where the component with most
+nodes has 3972 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 190.18, and
+the node degree mode is 5. The top 5 most central nodes are 755732.Fluta_3917
+(degree 1489), 755732.Fluta_3349 (degree 1327), 755732.Fluta_3754 (degree
+1323), 755732.Fluta_3173 (degree 1309) and 755732.Fluta_1208 (degree 1243).
 
 
 References
@@ -106,13 +107,14 @@ def FluviicolaTaffensis(
 	
 	Datetime: 2021-02-02 21:40:54.172460
 	
-	The undirected graph Fluviicola taffensis has 4009 nodes and 381210 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04745 and
-	has 16 connected components, where the component with most nodes has 3972 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 190.18, and the node degree mode is 5. The top 5 most central
-	nodes are 755732.Fluta_3917 (degree 1489), 755732.Fluta_3349 (degree 1327), 755732.Fluta_3754
-	(degree 1323), 755732.Fluta_3173 (degree 1309) and 755732.Fluta_1208 (degree 1243).
+	The undirected graph Fluviicola taffensis has 4009 nodes and 381210 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04745 and has 16 connected components, where the component with most
+	nodes has 3972 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 190.18, and
+	the node degree mode is 5. The top 5 most central nodes are 755732.Fluta_3917
+	(degree 1489), 755732.Fluta_3349 (degree 1327), 755732.Fluta_3754 (degree
+	1323), 755732.Fluta_3173 (degree 1309) and 755732.Fluta_1208 (degree 1243).
 	
 
 

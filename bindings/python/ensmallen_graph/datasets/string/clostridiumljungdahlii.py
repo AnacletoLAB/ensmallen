@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:45.820186
 
-The undirected graph Clostridium ljungdahlii has 4148 nodes and 307643 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-has 14 connected components, where the component with most nodes has 4117 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 148.33, and the node degree mode is 3. The top 5 most central
-nodes are 748727.CLJU_c33610 (degree 1388), 748727.CLJU_c29340 (degree 1333), 748727.CLJU_c16810
-(degree 1280), 748727.CLJU_c09340 (degree 1253) and 748727.CLJU_c37180 (degree 1123).
+The undirected graph Clostridium ljungdahlii has 4148 nodes and 307643
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03577 and has 14 connected components, where the component
+with most nodes has 4117 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 113, the mean node degree is 148.33,
+and the node degree mode is 3. The top 5 most central nodes are 748727.CLJU_c33610
+(degree 1388), 748727.CLJU_c29340 (degree 1333), 748727.CLJU_c16810 (degree
+1280), 748727.CLJU_c09340 (degree 1253) and 748727.CLJU_c37180 (degree
+1123).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumLjungdahlii(
 	
 	Datetime: 2021-02-02 21:39:45.820186
 	
-	The undirected graph Clostridium ljungdahlii has 4148 nodes and 307643 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-	has 14 connected components, where the component with most nodes has 4117 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 148.33, and the node degree mode is 3. The top 5 most central
-	nodes are 748727.CLJU_c33610 (degree 1388), 748727.CLJU_c29340 (degree 1333), 748727.CLJU_c16810
-	(degree 1280), 748727.CLJU_c09340 (degree 1253) and 748727.CLJU_c37180 (degree 1123).
+	The undirected graph Clostridium ljungdahlii has 4148 nodes and 307643
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03577 and has 14 connected components, where the component
+	with most nodes has 4117 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 113, the mean node degree is 148.33,
+	and the node degree mode is 3. The top 5 most central nodes are 748727.CLJU_c33610
+	(degree 1388), 748727.CLJU_c29340 (degree 1333), 748727.CLJU_c16810 (degree
+	1280), 748727.CLJU_c09340 (degree 1253) and 748727.CLJU_c37180 (degree
+	1123).
 	
 
 

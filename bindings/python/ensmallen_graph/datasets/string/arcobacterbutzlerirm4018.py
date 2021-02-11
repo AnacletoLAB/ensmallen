@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:32.857521
 
-The undirected graph Arcobacter butzleri RM4018 has 2255 nodes and 199443 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07848
-and has 5 connected components, where the component with most nodes has 2237 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 176.89, and the node degree mode is 6. The top 5
-most central nodes are 367737.Abu_1270 (degree 952), 367737.Abu_0193 (degree 828),
-367737.Abu_2317 (degree 809), 367737.Abu_1023 (degree 731) and 367737.Abu_1011 (degree
-700).
+The undirected graph Arcobacter butzleri RM4018 has 2255 nodes and 199443
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07848 and has 5 connected components, where the component
+with most nodes has 2237 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 176.89,
+and the node degree mode is 6. The top 5 most central nodes are 367737.Abu_1270
+(degree 952), 367737.Abu_0193 (degree 828), 367737.Abu_2317 (degree 809),
+367737.Abu_1023 (degree 731) and 367737.Abu_1011 (degree 700).
 
 
 References
@@ -107,14 +107,14 @@ def ArcobacterButzleriRm4018(
 	
 	Datetime: 2021-02-02 20:35:32.857521
 	
-	The undirected graph Arcobacter butzleri RM4018 has 2255 nodes and 199443 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07848
-	and has 5 connected components, where the component with most nodes has 2237 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 176.89, and the node degree mode is 6. The top 5
-	most central nodes are 367737.Abu_1270 (degree 952), 367737.Abu_0193 (degree 828),
-	367737.Abu_2317 (degree 809), 367737.Abu_1023 (degree 731) and 367737.Abu_1011 (degree
-	700).
+	The undirected graph Arcobacter butzleri RM4018 has 2255 nodes and 199443
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07848 and has 5 connected components, where the component
+	with most nodes has 2237 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 176.89,
+	and the node degree mode is 6. The top 5 most central nodes are 367737.Abu_1270
+	(degree 952), 367737.Abu_0193 (degree 828), 367737.Abu_2317 (degree 809),
+	367737.Abu_1023 (degree 731) and 367737.Abu_1011 (degree 700).
 	
 
 

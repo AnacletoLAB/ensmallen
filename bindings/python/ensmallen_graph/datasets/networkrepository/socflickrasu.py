@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:50:57.832848
 
-The undirected graph soc-Flickr-ASU has 80513 nodes with 195 different node types:
- the 5 most common are 149 (nodes number 9802), 84 (nodes number 4857), 134 (nodes
-number 2836), 114 (nodes number 2561) and 57 (nodes number 2057) and 5899882 unweighted
-edges, of which none are self-loops. The graph is sparse as it has a density of 0.00182
-and is connected, as it has a single component. The graph median node degree is 46,
-the mean node degree is 146.56, and the node degree mode is 2. The top 5 most central
-nodes are 11061 (degree 5706), 5793 (degree 5416), 26505 (degree 5283), 25534 (degree
-5053) and 11976 (degree 4996).
+The undirected graph soc-Flickr-ASU has 80513 nodes with 195 different
+node types:  the 5 most common are 149 (nodes number 9802), 84 (nodes number
+4857), 134 (nodes number 2836), 114 (nodes number 2561) and 57 (nodes number
+2057) and 5899882 unweighted edges, of which none are self-loops. The graph
+is sparse as it has a density of 0.00182 and is connected, as it has a
+single component. The graph median node degree is 46, the mean node degree
+is 146.56, and the node degree mode is 2. The top 5 most central nodes
+are 11061 (degree 5706), 5793 (degree 5416), 26505 (degree 5283), 25534
+(degree 5053) and 11976 (degree 4996).
 
 
 References
@@ -104,14 +105,15 @@ def SocFlickrAsu(
 	
 	Datetime: 2021-02-04 08:50:57.832848
 	
-	The undirected graph soc-Flickr-ASU has 80513 nodes with 195 different node types:
-	 the 5 most common are 149 (nodes number 9802), 84 (nodes number 4857), 134 (nodes
-	number 2836), 114 (nodes number 2561) and 57 (nodes number 2057) and 5899882 unweighted
-	edges, of which none are self-loops. The graph is sparse as it has a density of 0.00182
-	and is connected, as it has a single component. The graph median node degree is 46,
-	the mean node degree is 146.56, and the node degree mode is 2. The top 5 most central
-	nodes are 11061 (degree 5706), 5793 (degree 5416), 26505 (degree 5283), 25534 (degree
-	5053) and 11976 (degree 4996).
+	The undirected graph soc-Flickr-ASU has 80513 nodes with 195 different
+	node types:  the 5 most common are 149 (nodes number 9802), 84 (nodes number
+	4857), 134 (nodes number 2836), 114 (nodes number 2561) and 57 (nodes number
+	2057) and 5899882 unweighted edges, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00182 and is connected, as it has a
+	single component. The graph median node degree is 46, the mean node degree
+	is 146.56, and the node degree mode is 2. The top 5 most central nodes
+	are 11061 (degree 5706), 5793 (degree 5416), 26505 (degree 5283), 25534
+	(degree 5053) and 11976 (degree 4996).
 	
 
 

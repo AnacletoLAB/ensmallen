@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:59.673664
 
-The undirected graph Liberibacter asiaticus gxpsy has 1099 nodes and 56405 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09349
-and has 18 connected components, where the component with most nodes has 1054 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 102.65, and the node degree mode is 1. The top 5 most
-central nodes are 1174529.WSI_00725 (degree 484), 1174529.WSI_01405 (degree 460),
-1174529.WSI_00920 (degree 438), 1174529.WSI_03765 (degree 430) and 1174529.WSI_02775
-(degree 423).
+The undirected graph Liberibacter asiaticus gxpsy has 1099 nodes and 56405
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09349 and has 18 connected components, where the component
+with most nodes has 1054 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 102.65,
+and the node degree mode is 1. The top 5 most central nodes are 1174529.WSI_00725
+(degree 484), 1174529.WSI_01405 (degree 460), 1174529.WSI_00920 (degree
+438), 1174529.WSI_03765 (degree 430) and 1174529.WSI_02775 (degree 423).
 
 
 References
@@ -107,14 +107,14 @@ def LiberibacterAsiaticusGxpsy(
 	
 	Datetime: 2021-02-02 23:08:59.673664
 	
-	The undirected graph Liberibacter asiaticus gxpsy has 1099 nodes and 56405 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09349
-	and has 18 connected components, where the component with most nodes has 1054 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 102.65, and the node degree mode is 1. The top 5 most
-	central nodes are 1174529.WSI_00725 (degree 484), 1174529.WSI_01405 (degree 460),
-	1174529.WSI_00920 (degree 438), 1174529.WSI_03765 (degree 430) and 1174529.WSI_02775
-	(degree 423).
+	The undirected graph Liberibacter asiaticus gxpsy has 1099 nodes and 56405
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09349 and has 18 connected components, where the component
+	with most nodes has 1054 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 102.65,
+	and the node degree mode is 1. The top 5 most central nodes are 1174529.WSI_00725
+	(degree 484), 1174529.WSI_01405 (degree 460), 1174529.WSI_00920 (degree
+	438), 1174529.WSI_03765 (degree 430) and 1174529.WSI_02775 (degree 423).
 	
 
 

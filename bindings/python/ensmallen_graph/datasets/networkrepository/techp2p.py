@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-04 12:35:53.197023
 
-The undirected graph tech-p2p has 5792297 nodes and 147829887 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 8,
-the mean node degree is 51.04, and the node degree mode is 2. The top 5 most central
-nodes are 1 (degree 675078), 2 (degree 493183), 0 (degree 412229), 3 (degree 383342)
-and 4 (degree 314705).
+The undirected graph tech-p2p has 5792297 nodes and 147829887 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 8, the mean node degree is 51.04, and the
+node degree mode is 2. The top 5 most central nodes are 1 (degree 675078),
+2 (degree 493183), 0 (degree 412229), 3 (degree 383342) and 4 (degree 314705).
 
 
 References
@@ -113,12 +113,12 @@ def TechP2p(
 	
 	Datetime: 2021-02-04 12:35:53.197023
 	
-	The undirected graph tech-p2p has 5792297 nodes and 147829887 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 8,
-	the mean node degree is 51.04, and the node degree mode is 2. The top 5 most central
-	nodes are 1 (degree 675078), 2 (degree 493183), 0 (degree 412229), 3 (degree 383342)
-	and 4 (degree 314705).
+	The undirected graph tech-p2p has 5792297 nodes and 147829887 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 8, the mean node degree is 51.04, and the
+	node degree mode is 2. The top 5 most central nodes are 1 (degree 675078),
+	2 (degree 493183), 0 (degree 412229), 3 (degree 383342) and 4 (degree 314705).
 	
 
 

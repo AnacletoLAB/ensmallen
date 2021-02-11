@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:32.783562
 
-The undirected graph Treponema denticola has 2734 nodes and 202222 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05413 and
-has 15 connected components, where the component with most nodes has 2700 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 147.93, and the node degree mode is 3. The top 5 most central
-nodes are 243275.TDE_2665 (degree 838), 243275.TDE_2080 (degree 773), 243275.TDE_1063
-(degree 768), 243275.TDE_0628 (degree 756) and 243275.TDE_1971 (degree 755).
+The undirected graph Treponema denticola has 2734 nodes and 202222 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05413 and has 15 connected components, where the component with most
+nodes has 2700 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 147.93, and
+the node degree mode is 3. The top 5 most central nodes are 243275.TDE_2665
+(degree 838), 243275.TDE_2080 (degree 773), 243275.TDE_1063 (degree 768),
+243275.TDE_0628 (degree 756) and 243275.TDE_1971 (degree 755).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaDenticola(
 	
 	Datetime: 2021-02-02 20:09:32.783562
 	
-	The undirected graph Treponema denticola has 2734 nodes and 202222 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05413 and
-	has 15 connected components, where the component with most nodes has 2700 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 147.93, and the node degree mode is 3. The top 5 most central
-	nodes are 243275.TDE_2665 (degree 838), 243275.TDE_2080 (degree 773), 243275.TDE_1063
-	(degree 768), 243275.TDE_0628 (degree 756) and 243275.TDE_1971 (degree 755).
+	The undirected graph Treponema denticola has 2734 nodes and 202222 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05413 and has 15 connected components, where the component with most
+	nodes has 2700 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 147.93, and
+	the node degree mode is 3. The top 5 most central nodes are 243275.TDE_2665
+	(degree 838), 243275.TDE_2080 (degree 773), 243275.TDE_1063 (degree 768),
+	243275.TDE_0628 (degree 756) and 243275.TDE_1971 (degree 755).
 	
 
 

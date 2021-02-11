@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:02.521110
 
-The undirected graph Profftella armatura has 366 nodes and 31333 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.46909
-and has 2 connected components, where the component with most nodes has 364 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 171.22, and the node degree mode is 240. The top
-5 most central nodes are 669502.SSDC_00650 (degree 342), 669502.SSDC_00985 (degree
-336), 669502.SSDC_00385 (degree 297), 669502.SSDC_00655 (degree 287) and 669502.SSDC_00455
-(degree 287).
+The undirected graph Profftella armatura has 366 nodes and 31333 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.46909 and has 2 connected components, where the component
+with most nodes has 364 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 171.22,
+and the node degree mode is 240. The top 5 most central nodes are 669502.SSDC_00650
+(degree 342), 669502.SSDC_00985 (degree 336), 669502.SSDC_00385 (degree
+297), 669502.SSDC_00655 (degree 287) and 669502.SSDC_00455 (degree 287).
 
 
 References
@@ -107,14 +107,14 @@ def ProfftellaArmatura(
 	
 	Datetime: 2021-02-02 21:29:02.521110
 	
-	The undirected graph Profftella armatura has 366 nodes and 31333 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.46909
-	and has 2 connected components, where the component with most nodes has 364 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 171.22, and the node degree mode is 240. The top
-	5 most central nodes are 669502.SSDC_00650 (degree 342), 669502.SSDC_00985 (degree
-	336), 669502.SSDC_00385 (degree 297), 669502.SSDC_00655 (degree 287) and 669502.SSDC_00455
-	(degree 287).
+	The undirected graph Profftella armatura has 366 nodes and 31333 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.46909 and has 2 connected components, where the component
+	with most nodes has 364 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 171.22,
+	and the node degree mode is 240. The top 5 most central nodes are 669502.SSDC_00650
+	(degree 342), 669502.SSDC_00985 (degree 336), 669502.SSDC_00385 (degree
+	297), 669502.SSDC_00655 (degree 287) and 669502.SSDC_00455 (degree 287).
 	
 
 

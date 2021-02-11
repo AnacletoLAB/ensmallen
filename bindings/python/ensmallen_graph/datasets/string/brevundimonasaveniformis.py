@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:35.917675
 
-The undirected graph Brevundimonas aveniformis has 2517 nodes and 179989 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05684
-and has 5 connected components, where the component with most nodes has 2507 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 143.02, and the node degree mode is 4. The top 5
-most central nodes are 1121123.AUAO01000002_gene166 (degree 1005), 1121123.AUAO01000002_gene223
-(degree 923), 1121123.AUAO01000003_gene2029 (degree 855), 1121123.AUAO01000001_gene1592
-(degree 738) and 1121123.AUAO01000003_gene2499 (degree 716).
+The undirected graph Brevundimonas aveniformis has 2517 nodes and 179989
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05684 and has 5 connected components, where the component
+with most nodes has 2507 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 143.02,
+and the node degree mode is 4. The top 5 most central nodes are 1121123.AUAO01000002_gene166
+(degree 1005), 1121123.AUAO01000002_gene223 (degree 923), 1121123.AUAO01000003_gene2029
+(degree 855), 1121123.AUAO01000001_gene1592 (degree 738) and 1121123.AUAO01000003_gene2499
+(degree 716).
 
 
 References
@@ -107,14 +108,15 @@ def BrevundimonasAveniformis(
 	
 	Datetime: 2021-02-02 22:33:35.917675
 	
-	The undirected graph Brevundimonas aveniformis has 2517 nodes and 179989 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05684
-	and has 5 connected components, where the component with most nodes has 2507 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 143.02, and the node degree mode is 4. The top 5
-	most central nodes are 1121123.AUAO01000002_gene166 (degree 1005), 1121123.AUAO01000002_gene223
-	(degree 923), 1121123.AUAO01000003_gene2029 (degree 855), 1121123.AUAO01000001_gene1592
-	(degree 738) and 1121123.AUAO01000003_gene2499 (degree 716).
+	The undirected graph Brevundimonas aveniformis has 2517 nodes and 179989
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05684 and has 5 connected components, where the component
+	with most nodes has 2507 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 143.02,
+	and the node degree mode is 4. The top 5 most central nodes are 1121123.AUAO01000002_gene166
+	(degree 1005), 1121123.AUAO01000002_gene223 (degree 923), 1121123.AUAO01000003_gene2029
+	(degree 855), 1121123.AUAO01000001_gene1592 (degree 738) and 1121123.AUAO01000003_gene2499
+	(degree 716).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:53.966566
 
-The undirected graph Bartonella doshiae has 1543 nodes and 93562 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-has 11 connected components, where the component with most nodes has 1517 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 121.27, and the node degree mode is 1. The top 5 most central
-nodes are 1094553.MCS_01038 (degree 643), 1094553.MCS_00492 (degree 637), 1094553.MCS_00215
-(degree 552), 1094553.MCS_00966 (degree 519) and 1094553.MCS_00714 (degree 508).
+The undirected graph Bartonella doshiae has 1543 nodes and 93562 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07865 and has 11 connected components, where the component with most
+nodes has 1517 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 121.27, and
+the node degree mode is 1. The top 5 most central nodes are 1094553.MCS_01038
+(degree 643), 1094553.MCS_00492 (degree 637), 1094553.MCS_00215 (degree
+552), 1094553.MCS_00966 (degree 519) and 1094553.MCS_00714 (degree 508).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaDoshiae(
 	
 	Datetime: 2021-02-02 22:22:53.966566
 	
-	The undirected graph Bartonella doshiae has 1543 nodes and 93562 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07865 and
-	has 11 connected components, where the component with most nodes has 1517 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 121.27, and the node degree mode is 1. The top 5 most central
-	nodes are 1094553.MCS_01038 (degree 643), 1094553.MCS_00492 (degree 637), 1094553.MCS_00215
-	(degree 552), 1094553.MCS_00966 (degree 519) and 1094553.MCS_00714 (degree 508).
+	The undirected graph Bartonella doshiae has 1543 nodes and 93562 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07865 and has 11 connected components, where the component with most
+	nodes has 1517 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 121.27, and
+	the node degree mode is 1. The top 5 most central nodes are 1094553.MCS_01038
+	(degree 643), 1094553.MCS_00492 (degree 637), 1094553.MCS_00215 (degree
+	552), 1094553.MCS_00966 (degree 519) and 1094553.MCS_00714 (degree 508).
 	
 
 

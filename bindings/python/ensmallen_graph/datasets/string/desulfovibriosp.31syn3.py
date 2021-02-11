@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:03.544498
 
-The undirected graph Desulfovibrio sp. 31syn3 has 3035 nodes and 207116 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04499
-and has 20 connected components, where the component with most nodes has 2991 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 136.49, and the node degree mode is 1. The top 5
-most central nodes are 457398.HMPREF0326_02055 (degree 1119), 457398.HMPREF0326_01399
-(degree 1050), 457398.HMPREF0326_05808 (degree 999), 457398.HMPREF0326_02607 (degree
-966) and 457398.HMPREF0326_00360 (degree 955).
+The undirected graph Desulfovibrio sp. 31syn3 has 3035 nodes and 207116
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04499 and has 20 connected components, where the component
+with most nodes has 2991 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 136.49,
+and the node degree mode is 1. The top 5 most central nodes are 457398.HMPREF0326_02055
+(degree 1119), 457398.HMPREF0326_01399 (degree 1050), 457398.HMPREF0326_05808
+(degree 999), 457398.HMPREF0326_02607 (degree 966) and 457398.HMPREF0326_00360
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioSp.31syn3(
 	
 	Datetime: 2021-02-02 20:53:03.544498
 	
-	The undirected graph Desulfovibrio sp. 31syn3 has 3035 nodes and 207116 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04499
-	and has 20 connected components, where the component with most nodes has 2991 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 136.49, and the node degree mode is 1. The top 5
-	most central nodes are 457398.HMPREF0326_02055 (degree 1119), 457398.HMPREF0326_01399
-	(degree 1050), 457398.HMPREF0326_05808 (degree 999), 457398.HMPREF0326_02607 (degree
-	966) and 457398.HMPREF0326_00360 (degree 955).
+	The undirected graph Desulfovibrio sp. 31syn3 has 3035 nodes and 207116
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04499 and has 20 connected components, where the component
+	with most nodes has 2991 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 136.49,
+	and the node degree mode is 1. The top 5 most central nodes are 457398.HMPREF0326_02055
+	(degree 1119), 457398.HMPREF0326_01399 (degree 1050), 457398.HMPREF0326_05808
+	(degree 999), 457398.HMPREF0326_02607 (degree 966) and 457398.HMPREF0326_00360
+	(degree 955).
 	
 
 

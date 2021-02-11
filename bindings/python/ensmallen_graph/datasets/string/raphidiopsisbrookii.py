@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:43.481866
 
-The undirected graph Raphidiopsis brookii has 2983 nodes and 347157 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07805 and
-has 5 connected components, where the component with most nodes has 2975 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 219,
-the mean node degree is 232.76, and the node degree mode is 2. The top 5 most central
-nodes are 533247.CRD_00257 (degree 1250), 533247.CRD_01599 (degree 1216), 533247.CRD_01046
-(degree 1173), 533247.CRD_02195 (degree 1066) and 533247.CRD_00391 (degree 1000).
+The undirected graph Raphidiopsis brookii has 2983 nodes and 347157 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07805 and has 5 connected components, where the component with most
+nodes has 2975 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 219, the mean node degree is 232.76, and
+the node degree mode is 2. The top 5 most central nodes are 533247.CRD_00257
+(degree 1250), 533247.CRD_01599 (degree 1216), 533247.CRD_01046 (degree
+1173), 533247.CRD_02195 (degree 1066) and 533247.CRD_00391 (degree 1000).
 
 
 References
@@ -106,13 +107,14 @@ def RaphidiopsisBrookii(
 	
 	Datetime: 2021-02-02 21:06:43.481866
 	
-	The undirected graph Raphidiopsis brookii has 2983 nodes and 347157 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07805 and
-	has 5 connected components, where the component with most nodes has 2975 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 219,
-	the mean node degree is 232.76, and the node degree mode is 2. The top 5 most central
-	nodes are 533247.CRD_00257 (degree 1250), 533247.CRD_01599 (degree 1216), 533247.CRD_01046
-	(degree 1173), 533247.CRD_02195 (degree 1066) and 533247.CRD_00391 (degree 1000).
+	The undirected graph Raphidiopsis brookii has 2983 nodes and 347157 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07805 and has 5 connected components, where the component with most
+	nodes has 2975 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 219, the mean node degree is 232.76, and
+	the node degree mode is 2. The top 5 most central nodes are 533247.CRD_00257
+	(degree 1250), 533247.CRD_01599 (degree 1216), 533247.CRD_01046 (degree
+	1173), 533247.CRD_02195 (degree 1066) and 533247.CRD_00391 (degree 1000).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:10.537165
 
-The undirected graph Paenibacillus sp. TCA20 has 5191 nodes and 496024 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03682 and
-has 13 connected components, where the component with most nodes has 5134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 191.11, and the node degree mode is 7. The top 5 most central
-nodes are 1499968.TCA2_5842 (degree 1580), 1499968.TCA2_5707 (degree 1536), 1499968.TCA2_0455
-(degree 1525), 1499968.TCA2_4649 (degree 1253) and 1499968.TCA2_1989 (degree 1245).
+The undirected graph Paenibacillus sp. TCA20 has 5191 nodes and 496024
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03682 and has 13 connected components, where the component
+with most nodes has 5134 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 191.11,
+and the node degree mode is 7. The top 5 most central nodes are 1499968.TCA2_5842
+(degree 1580), 1499968.TCA2_5707 (degree 1536), 1499968.TCA2_0455 (degree
+1525), 1499968.TCA2_4649 (degree 1253) and 1499968.TCA2_1989 (degree 1245).
 
 
 References
@@ -106,13 +107,14 @@ def PaenibacillusSp.Tca20(
 	
 	Datetime: 2021-02-03 23:15:10.537165
 	
-	The undirected graph Paenibacillus sp. TCA20 has 5191 nodes and 496024 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03682 and
-	has 13 connected components, where the component with most nodes has 5134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 191.11, and the node degree mode is 7. The top 5 most central
-	nodes are 1499968.TCA2_5842 (degree 1580), 1499968.TCA2_5707 (degree 1536), 1499968.TCA2_0455
-	(degree 1525), 1499968.TCA2_4649 (degree 1253) and 1499968.TCA2_1989 (degree 1245).
+	The undirected graph Paenibacillus sp. TCA20 has 5191 nodes and 496024
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03682 and has 13 connected components, where the component
+	with most nodes has 5134 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 191.11,
+	and the node degree mode is 7. The top 5 most central nodes are 1499968.TCA2_5842
+	(degree 1580), 1499968.TCA2_5707 (degree 1536), 1499968.TCA2_0455 (degree
+	1525), 1499968.TCA2_4649 (degree 1253) and 1499968.TCA2_1989 (degree 1245).
 	
 
 

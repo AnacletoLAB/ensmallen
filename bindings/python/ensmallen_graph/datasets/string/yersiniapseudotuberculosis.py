@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:41.088355
 
-The undirected graph Yersinia pseudotuberculosis has 4069 nodes and 450809 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05447
-and has 8 connected components, where the component with most nodes has 4051 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 200, the mean node degree is 221.58, and the node degree mode is 2. The top 5
-most central nodes are 633.DJ40_1622 (degree 1330), 633.DJ40_3710 (degree 1272),
-633.DJ40_2404 (degree 1264), 633.DJ40_3144 (degree 1216) and 633.DJ40_3145 (degree
-1166).
+The undirected graph Yersinia pseudotuberculosis has 4069 nodes and 450809
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05447 and has 8 connected components, where the component
+with most nodes has 4051 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 200, the mean node degree is 221.58,
+and the node degree mode is 2. The top 5 most central nodes are 633.DJ40_1622
+(degree 1330), 633.DJ40_3710 (degree 1272), 633.DJ40_2404 (degree 1264),
+633.DJ40_3144 (degree 1216) and 633.DJ40_3145 (degree 1166).
 
 
 References
@@ -107,14 +107,14 @@ def YersiniaPseudotuberculosis(
 	
 	Datetime: 2021-02-02 16:21:41.088355
 	
-	The undirected graph Yersinia pseudotuberculosis has 4069 nodes and 450809 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05447
-	and has 8 connected components, where the component with most nodes has 4051 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 200, the mean node degree is 221.58, and the node degree mode is 2. The top 5
-	most central nodes are 633.DJ40_1622 (degree 1330), 633.DJ40_3710 (degree 1272),
-	633.DJ40_2404 (degree 1264), 633.DJ40_3144 (degree 1216) and 633.DJ40_3145 (degree
-	1166).
+	The undirected graph Yersinia pseudotuberculosis has 4069 nodes and 450809
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05447 and has 8 connected components, where the component
+	with most nodes has 4051 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 200, the mean node degree is 221.58,
+	and the node degree mode is 2. The top 5 most central nodes are 633.DJ40_1622
+	(degree 1330), 633.DJ40_3710 (degree 1272), 633.DJ40_2404 (degree 1264),
+	633.DJ40_3144 (degree 1216) and 633.DJ40_3145 (degree 1166).
 	
 
 

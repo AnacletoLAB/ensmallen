@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:10:30.618382
 
-The undirected graph Micromonas pusilla has 6252 nodes and 698967 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-has 29 connected components, where the component with most nodes has 6195 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 223.60, and the node degree mode is 1. The top 5 most central
-nodes are 38833.XP_003064665.1 (degree 2389), 38833.XP_003056897.1 (degree 2006),
-38833.XP_003064472.1 (degree 1797), 38833.XP_003062074.1 (degree 1574) and 38833.XP_003056737.1
+The undirected graph Micromonas pusilla has 6252 nodes and 698967 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03577 and has 29 connected components, where the component with most
+nodes has 6195 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 223.60, and
+the node degree mode is 1. The top 5 most central nodes are 38833.XP_003064665.1
+(degree 2389), 38833.XP_003056897.1 (degree 2006), 38833.XP_003064472.1
+(degree 1797), 38833.XP_003062074.1 (degree 1574) and 38833.XP_003056737.1
 (degree 1411).
 
 
@@ -107,13 +108,14 @@ def MicromonasPusilla(
 	
 	Datetime: 2021-02-02 18:10:30.618382
 	
-	The undirected graph Micromonas pusilla has 6252 nodes and 698967 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-	has 29 connected components, where the component with most nodes has 6195 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 223.60, and the node degree mode is 1. The top 5 most central
-	nodes are 38833.XP_003064665.1 (degree 2389), 38833.XP_003056897.1 (degree 2006),
-	38833.XP_003064472.1 (degree 1797), 38833.XP_003062074.1 (degree 1574) and 38833.XP_003056737.1
+	The undirected graph Micromonas pusilla has 6252 nodes and 698967 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03577 and has 29 connected components, where the component with most
+	nodes has 6195 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 223.60, and
+	the node degree mode is 1. The top 5 most central nodes are 38833.XP_003064665.1
+	(degree 2389), 38833.XP_003056897.1 (degree 2006), 38833.XP_003064472.1
+	(degree 1797), 38833.XP_003062074.1 (degree 1574) and 38833.XP_003056737.1
 	(degree 1411).
 	
 

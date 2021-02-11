@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:16:50.670799
 
-The undirected graph linux has 30837 nodes, of which 3 are singletons (all have self-loops),
-and 213747 unweighted edges, of which 530 are self-loops. The graph is quite sparse
-as it has a density of 0.00045 and has 12 connected components, where the component
-with most nodes has 30817 nodes and the component with the least nodes has a single
-node. The graph median node degree is 7, the mean node degree is 13.85, and the node
-degree mode is 1. The top 5 most central nodes are 5 (degree 9339), 9 (degree 6924),
-4 (degree 6735), 3 (degree 5796) and 67 (degree 4259).
+The undirected graph linux has 30837 nodes, of which 3 are singletons (all
+have self-loops), and 213747 unweighted edges, of which 530 are self-loops.
+The graph is quite sparse as it has a density of 0.00045 and has 12 connected
+components, where the component with most nodes has 30817 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 7, the mean node degree is 13.85, and the node degree mode is
+1. The top 5 most central nodes are 5 (degree 9339), 9 (degree 6924), 4
+(degree 6735), 3 (degree 5796) and 67 (degree 4259).
 
 
 References
@@ -103,13 +104,14 @@ def Linux(
 	
 	Datetime: 2021-02-06 11:16:50.670799
 	
-	The undirected graph linux has 30837 nodes, of which 3 are singletons (all have self-loops),
-	and 213747 unweighted edges, of which 530 are self-loops. The graph is quite sparse
-	as it has a density of 0.00045 and has 12 connected components, where the component
-	with most nodes has 30817 nodes and the component with the least nodes has a single
-	node. The graph median node degree is 7, the mean node degree is 13.85, and the node
-	degree mode is 1. The top 5 most central nodes are 5 (degree 9339), 9 (degree 6924),
-	4 (degree 6735), 3 (degree 5796) and 67 (degree 4259).
+	The undirected graph linux has 30837 nodes, of which 3 are singletons (all
+	have self-loops), and 213747 unweighted edges, of which 530 are self-loops.
+	The graph is quite sparse as it has a density of 0.00045 and has 12 connected
+	components, where the component with most nodes has 30817 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 7, the mean node degree is 13.85, and the node degree mode is
+	1. The top 5 most central nodes are 5 (degree 9339), 9 (degree 6924), 4
+	(degree 6735), 3 (degree 5796) and 67 (degree 4259).
 	
 
 

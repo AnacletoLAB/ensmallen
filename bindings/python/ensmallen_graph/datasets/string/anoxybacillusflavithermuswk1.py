@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:19.682160
 
-The undirected graph Anoxybacillus flavithermus WK1 has 2814 nodes and 280383 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07084
-and has 3 connected components, where the component with most nodes has 2810 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 199.28, and the node degree mode is 4. The top 5
-most central nodes are 491915.Aflv_0510 (degree 1110), 491915.Aflv_0225 (degree 969),
-491915.Aflv_1921 (degree 893), 491915.Aflv_1926 (degree 864) and 491915.Aflv_0009
-(degree 830).
+The undirected graph Anoxybacillus flavithermus WK1 has 2814 nodes and
+280383 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07084 and has 3 connected components, where the
+component with most nodes has 2810 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 185, the mean node degree
+is 199.28, and the node degree mode is 4. The top 5 most central nodes
+are 491915.Aflv_0510 (degree 1110), 491915.Aflv_0225 (degree 969), 491915.Aflv_1921
+(degree 893), 491915.Aflv_1926 (degree 864) and 491915.Aflv_0009 (degree
+830).
 
 
 References
@@ -107,14 +108,15 @@ def AnoxybacillusFlavithermusWk1(
 	
 	Datetime: 2021-02-02 21:00:19.682160
 	
-	The undirected graph Anoxybacillus flavithermus WK1 has 2814 nodes and 280383 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07084
-	and has 3 connected components, where the component with most nodes has 2810 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 199.28, and the node degree mode is 4. The top 5
-	most central nodes are 491915.Aflv_0510 (degree 1110), 491915.Aflv_0225 (degree 969),
-	491915.Aflv_1921 (degree 893), 491915.Aflv_1926 (degree 864) and 491915.Aflv_0009
-	(degree 830).
+	The undirected graph Anoxybacillus flavithermus WK1 has 2814 nodes and
+	280383 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07084 and has 3 connected components, where the
+	component with most nodes has 2810 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 185, the mean node degree
+	is 199.28, and the node degree mode is 4. The top 5 most central nodes
+	are 491915.Aflv_0510 (degree 1110), 491915.Aflv_0225 (degree 969), 491915.Aflv_1921
+	(degree 893), 491915.Aflv_1926 (degree 864) and 491915.Aflv_0009 (degree
+	830).
 	
 
 

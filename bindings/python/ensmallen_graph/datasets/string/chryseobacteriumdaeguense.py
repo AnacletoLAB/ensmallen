@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:14.164460
 
-The undirected graph Chryseobacterium daeguense has 4020 nodes and 285704 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-and has 21 connected components, where the component with most nodes has 3971 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 142.14, and the node degree mode is 3. The top 5
-most central nodes are 1121286.AUMT01000003_gene2179 (degree 1172), 1121286.AUMT01000014_gene2463
-(degree 928), 1121286.AUMT01000008_gene594 (degree 808), 1121286.AUMT01000009_gene1072
-(degree 800) and 1121286.AUMT01000005_gene3117 (degree 794).
+The undirected graph Chryseobacterium daeguense has 4020 nodes and 285704
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03537 and has 21 connected components, where the component
+with most nodes has 3971 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 142.14,
+and the node degree mode is 3. The top 5 most central nodes are 1121286.AUMT01000003_gene2179
+(degree 1172), 1121286.AUMT01000014_gene2463 (degree 928), 1121286.AUMT01000008_gene594
+(degree 808), 1121286.AUMT01000009_gene1072 (degree 800) and 1121286.AUMT01000005_gene3117
+(degree 794).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumDaeguense(
 	
 	Datetime: 2021-02-02 22:34:14.164460
 	
-	The undirected graph Chryseobacterium daeguense has 4020 nodes and 285704 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-	and has 21 connected components, where the component with most nodes has 3971 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 142.14, and the node degree mode is 3. The top 5
-	most central nodes are 1121286.AUMT01000003_gene2179 (degree 1172), 1121286.AUMT01000014_gene2463
-	(degree 928), 1121286.AUMT01000008_gene594 (degree 808), 1121286.AUMT01000009_gene1072
-	(degree 800) and 1121286.AUMT01000005_gene3117 (degree 794).
+	The undirected graph Chryseobacterium daeguense has 4020 nodes and 285704
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03537 and has 21 connected components, where the component
+	with most nodes has 3971 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 142.14,
+	and the node degree mode is 3. The top 5 most central nodes are 1121286.AUMT01000003_gene2179
+	(degree 1172), 1121286.AUMT01000014_gene2463 (degree 928), 1121286.AUMT01000008_gene594
+	(degree 808), 1121286.AUMT01000009_gene1072 (degree 800) and 1121286.AUMT01000005_gene3117
+	(degree 794).
 	
 
 

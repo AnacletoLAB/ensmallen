@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:53.225631
 
-The undirected graph Eggerthella sp. YY7918 has 2668 nodes and 165317 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04647 and
-has 14 connected components, where the component with most nodes has 2638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 123.93, and the node degree mode is 5. The top 5 most central
-nodes are 502558.EGYY_26550 (degree 1166), 502558.EGYY_19930 (degree 1011), 502558.EGYY_10020
-(degree 818), 502558.EGYY_23240 (degree 783) and 502558.EGYY_24800 (degree 733).
+The undirected graph Eggerthella sp. YY7918 has 2668 nodes and 165317 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04647 and has 14 connected components, where the component with most
+nodes has 2638 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 123.93, and
+the node degree mode is 5. The top 5 most central nodes are 502558.EGYY_26550
+(degree 1166), 502558.EGYY_19930 (degree 1011), 502558.EGYY_10020 (degree
+818), 502558.EGYY_23240 (degree 783) and 502558.EGYY_24800 (degree 733).
 
 
 References
@@ -106,13 +107,14 @@ def EggerthellaSp.Yy7918(
 	
 	Datetime: 2021-02-02 21:01:53.225631
 	
-	The undirected graph Eggerthella sp. YY7918 has 2668 nodes and 165317 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04647 and
-	has 14 connected components, where the component with most nodes has 2638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 123.93, and the node degree mode is 5. The top 5 most central
-	nodes are 502558.EGYY_26550 (degree 1166), 502558.EGYY_19930 (degree 1011), 502558.EGYY_10020
-	(degree 818), 502558.EGYY_23240 (degree 783) and 502558.EGYY_24800 (degree 733).
+	The undirected graph Eggerthella sp. YY7918 has 2668 nodes and 165317 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04647 and has 14 connected components, where the component with most
+	nodes has 2638 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 123.93, and
+	the node degree mode is 5. The top 5 most central nodes are 502558.EGYY_26550
+	(degree 1166), 502558.EGYY_19930 (degree 1011), 502558.EGYY_10020 (degree
+	818), 502558.EGYY_23240 (degree 783) and 502558.EGYY_24800 (degree 733).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:45.763153
 
-The undirected graph Lysobacter arseniciresistens has 2314 nodes and 183209 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06846
-and has 14 connected components, where the component with most nodes has 2278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 158.35, and the node degree mode is 1. The top 5
-most central nodes are 913325.N799_09995 (degree 1238), 913325.N799_06895 (degree
-918), 913325.N799_05975 (degree 821), 913325.N799_07495 (degree 813) and 913325.N799_00115
-(degree 772).
+The undirected graph Lysobacter arseniciresistens has 2314 nodes and 183209
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06846 and has 14 connected components, where the component
+with most nodes has 2278 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 158.35,
+and the node degree mode is 1. The top 5 most central nodes are 913325.N799_09995
+(degree 1238), 913325.N799_06895 (degree 918), 913325.N799_05975 (degree
+821), 913325.N799_07495 (degree 813) and 913325.N799_00115 (degree 772).
 
 
 References
@@ -107,14 +107,14 @@ def LysobacterArseniciresistens(
 	
 	Datetime: 2021-02-02 21:55:45.763153
 	
-	The undirected graph Lysobacter arseniciresistens has 2314 nodes and 183209 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06846
-	and has 14 connected components, where the component with most nodes has 2278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 158.35, and the node degree mode is 1. The top 5
-	most central nodes are 913325.N799_09995 (degree 1238), 913325.N799_06895 (degree
-	918), 913325.N799_05975 (degree 821), 913325.N799_07495 (degree 813) and 913325.N799_00115
-	(degree 772).
+	The undirected graph Lysobacter arseniciresistens has 2314 nodes and 183209
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06846 and has 14 connected components, where the component
+	with most nodes has 2278 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 158.35,
+	and the node degree mode is 1. The top 5 most central nodes are 913325.N799_09995
+	(degree 1238), 913325.N799_06895 (degree 918), 913325.N799_05975 (degree
+	821), 913325.N799_07495 (degree 813) and 913325.N799_00115 (degree 772).
 	
 
 

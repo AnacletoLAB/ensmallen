@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:14.527221
 
-The undirected graph Alkalilimnicola ehrlichii has 2859 nodes and 247517 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06058
-and has 4 connected components, where the component with most nodes has 2853 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 173.15, and the node degree mode is 5. The top 5
-most central nodes are 187272.Mlg_2860 (degree 1244), 187272.Mlg_0817 (degree 882),
-187272.Mlg_1900 (degree 878), 187272.Mlg_1016 (degree 867) and 187272.Mlg_1638 (degree
-855).
+The undirected graph Alkalilimnicola ehrlichii has 2859 nodes and 247517
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06058 and has 4 connected components, where the component
+with most nodes has 2853 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 173.15,
+and the node degree mode is 5. The top 5 most central nodes are 187272.Mlg_2860
+(degree 1244), 187272.Mlg_0817 (degree 882), 187272.Mlg_1900 (degree 878),
+187272.Mlg_1016 (degree 867) and 187272.Mlg_1638 (degree 855).
 
 
 References
@@ -107,14 +107,14 @@ def AlkalilimnicolaEhrlichii(
 	
 	Datetime: 2021-02-02 19:57:14.527221
 	
-	The undirected graph Alkalilimnicola ehrlichii has 2859 nodes and 247517 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06058
-	and has 4 connected components, where the component with most nodes has 2853 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 173.15, and the node degree mode is 5. The top 5
-	most central nodes are 187272.Mlg_2860 (degree 1244), 187272.Mlg_0817 (degree 882),
-	187272.Mlg_1900 (degree 878), 187272.Mlg_1016 (degree 867) and 187272.Mlg_1638 (degree
-	855).
+	The undirected graph Alkalilimnicola ehrlichii has 2859 nodes and 247517
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06058 and has 4 connected components, where the component
+	with most nodes has 2853 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 173.15,
+	and the node degree mode is 5. The top 5 most central nodes are 187272.Mlg_2860
+	(degree 1244), 187272.Mlg_0817 (degree 882), 187272.Mlg_1900 (degree 878),
+	187272.Mlg_1016 (degree 867) and 187272.Mlg_1638 (degree 855).
 	
 
 

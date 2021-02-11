@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:58.981818
 
-The undirected graph keller4 has 171 nodes and 9435 unweighted edges, of which none
-are self-loops. The graph is extremely dense as it has a density of 0.64912 and is
-connected, as it has a single component. The graph median node degree is 110, the
-mean node degree is 110.35 and the node degree mode is 112. The top 5 most central
-nodes are 149 (degree 124), 137 (degree 124), 135 (degree 124), 119 (degree 124)
-and 103 (degree 124).
+The undirected graph keller4 has 171 nodes and 9435 unweighted edges, of
+which none are self-loops. The graph is extremely dense as it has a density
+of 0.64912 and is connected, as it has a single component. The graph median
+node degree is 110, the mean node degree is 110.35 and the node degree
+mode is 112. The top 5 most central nodes are 149 (degree 124), 137 (degree
+124), 135 (degree 124), 119 (degree 124) and 103 (degree 124).
 
 
 References
@@ -115,12 +115,12 @@ def Keller4(
 	
 	Datetime: 2021-02-03 22:54:58.981818
 	
-	The undirected graph keller4 has 171 nodes and 9435 unweighted edges, of which none
-	are self-loops. The graph is extremely dense as it has a density of 0.64912 and is
-	connected, as it has a single component. The graph median node degree is 110, the
-	mean node degree is 110.35 and the node degree mode is 112. The top 5 most central
-	nodes are 149 (degree 124), 137 (degree 124), 135 (degree 124), 119 (degree 124)
-	and 103 (degree 124).
+	The undirected graph keller4 has 171 nodes and 9435 unweighted edges, of
+	which none are self-loops. The graph is extremely dense as it has a density
+	of 0.64912 and is connected, as it has a single component. The graph median
+	node degree is 110, the mean node degree is 110.35 and the node degree
+	mode is 112. The top 5 most central nodes are 149 (degree 124), 137 (degree
+	124), 135 (degree 124), 119 (degree 124) and 103 (degree 124).
 	
 
 

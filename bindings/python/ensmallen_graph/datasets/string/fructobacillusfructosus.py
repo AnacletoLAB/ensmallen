@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:02.614318
 
-The undirected graph Fructobacillus fructosus has 1432 nodes and 87625 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08552 and
-has 14 connected components, where the component with most nodes has 1397 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 122.38, and the node degree mode is 8. The top 5 most central
-nodes are 930946.AEOP01000030_gene474 (degree 614), 930946.AEOP01000019_gene964 (degree
-482), 930946.AEOP01000031_gene686 (degree 460), 930946.AEOP01000030_gene498 (degree
-459) and 930946.AEOP01000010_gene255 (degree 453).
+The undirected graph Fructobacillus fructosus has 1432 nodes and 87625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08552 and has 14 connected components, where the component
+with most nodes has 1397 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 122.38,
+and the node degree mode is 8. The top 5 most central nodes are 930946.AEOP01000030_gene474
+(degree 614), 930946.AEOP01000019_gene964 (degree 482), 930946.AEOP01000031_gene686
+(degree 460), 930946.AEOP01000030_gene498 (degree 459) and 930946.AEOP01000010_gene255
+(degree 453).
 
 
 References
@@ -107,14 +108,15 @@ def FructobacillusFructosus(
 	
 	Datetime: 2021-02-02 21:58:02.614318
 	
-	The undirected graph Fructobacillus fructosus has 1432 nodes and 87625 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08552 and
-	has 14 connected components, where the component with most nodes has 1397 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 122.38, and the node degree mode is 8. The top 5 most central
-	nodes are 930946.AEOP01000030_gene474 (degree 614), 930946.AEOP01000019_gene964 (degree
-	482), 930946.AEOP01000031_gene686 (degree 460), 930946.AEOP01000030_gene498 (degree
-	459) and 930946.AEOP01000010_gene255 (degree 453).
+	The undirected graph Fructobacillus fructosus has 1432 nodes and 87625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08552 and has 14 connected components, where the component
+	with most nodes has 1397 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 122.38,
+	and the node degree mode is 8. The top 5 most central nodes are 930946.AEOP01000030_gene474
+	(degree 614), 930946.AEOP01000019_gene964 (degree 482), 930946.AEOP01000031_gene686
+	(degree 460), 930946.AEOP01000030_gene498 (degree 459) and 930946.AEOP01000010_gene255
+	(degree 453).
 	
 
 

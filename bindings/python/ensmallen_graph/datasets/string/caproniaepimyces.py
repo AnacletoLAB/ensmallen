@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:08.543133
 
-The undirected graph Capronia epimyces has 7616 nodes and 745946 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02572 and
-has 16 connected components, where the component with most nodes has 7581 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 195.89, and the node degree mode is 1. The top 5 most central
-nodes are 43228.XP_007736678.1 (degree 2028), 43228.XP_007737919.1 (degree 1637),
-43228.XP_007737540.1 (degree 1634), 43228.XP_007733612.1 (degree 1566) and 43228.XP_007728583.1
+The undirected graph Capronia epimyces has 7616 nodes and 745946 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02572 and has 16 connected components, where the component with most
+nodes has 7581 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 195.89, and
+the node degree mode is 1. The top 5 most central nodes are 43228.XP_007736678.1
+(degree 2028), 43228.XP_007737919.1 (degree 1637), 43228.XP_007737540.1
+(degree 1634), 43228.XP_007733612.1 (degree 1566) and 43228.XP_007728583.1
 (degree 1496).
 
 
@@ -107,13 +108,14 @@ def CaproniaEpimyces(
 	
 	Datetime: 2021-02-02 18:14:08.543133
 	
-	The undirected graph Capronia epimyces has 7616 nodes and 745946 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02572 and
-	has 16 connected components, where the component with most nodes has 7581 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 195.89, and the node degree mode is 1. The top 5 most central
-	nodes are 43228.XP_007736678.1 (degree 2028), 43228.XP_007737919.1 (degree 1637),
-	43228.XP_007737540.1 (degree 1634), 43228.XP_007733612.1 (degree 1566) and 43228.XP_007728583.1
+	The undirected graph Capronia epimyces has 7616 nodes and 745946 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02572 and has 16 connected components, where the component with most
+	nodes has 7581 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 195.89, and
+	the node degree mode is 1. The top 5 most central nodes are 43228.XP_007736678.1
+	(degree 2028), 43228.XP_007737919.1 (degree 1637), 43228.XP_007737540.1
+	(degree 1634), 43228.XP_007733612.1 (degree 1566) and 43228.XP_007728583.1
 	(degree 1496).
 	
 

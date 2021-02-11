@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:55.137306
 
-The undirected graph Sorangium cellulosum So ce56 has 9145 nodes and 933377 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02232
-and has 84 connected components, where the component with most nodes has 8939 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 204.13, and the node degree mode is 2. The top 5
-most central nodes are 448385.sce3193 (degree 3165), 448385.sce7807 (degree 2175),
-448385.sce8363 (degree 2067), 448385.sce8671 (degree 2033) and 448385.sce3221 (degree
-2027).
+The undirected graph Sorangium cellulosum So ce56 has 9145 nodes and 933377
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02232 and has 84 connected components, where the component
+with most nodes has 8939 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 204.13,
+and the node degree mode is 2. The top 5 most central nodes are 448385.sce3193
+(degree 3165), 448385.sce7807 (degree 2175), 448385.sce8363 (degree 2067),
+448385.sce8671 (degree 2033) and 448385.sce3221 (degree 2027).
 
 
 References
@@ -107,14 +107,14 @@ def SorangiumCellulosumSoCe56(
 	
 	Datetime: 2021-02-02 20:51:55.137306
 	
-	The undirected graph Sorangium cellulosum So ce56 has 9145 nodes and 933377 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02232
-	and has 84 connected components, where the component with most nodes has 8939 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 204.13, and the node degree mode is 2. The top 5
-	most central nodes are 448385.sce3193 (degree 3165), 448385.sce7807 (degree 2175),
-	448385.sce8363 (degree 2067), 448385.sce8671 (degree 2033) and 448385.sce3221 (degree
-	2027).
+	The undirected graph Sorangium cellulosum So ce56 has 9145 nodes and 933377
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02232 and has 84 connected components, where the component
+	with most nodes has 8939 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 204.13,
+	and the node degree mode is 2. The top 5 most central nodes are 448385.sce3193
+	(degree 3165), 448385.sce7807 (degree 2175), 448385.sce8363 (degree 2067),
+	448385.sce8671 (degree 2033) and 448385.sce3221 (degree 2027).
 	
 
 

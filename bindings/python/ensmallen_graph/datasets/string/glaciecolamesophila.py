@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:09.549856
 
-The undirected graph Glaciecola mesophila has 4501 nodes and 594004 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05865 and
-has 27 connected components, where the component with most nodes has 4441 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 263.94, and the node degree mode is 1. The top 5 most central
-nodes are 1128912.GMES_1708 (degree 1577), 1128912.GMES_4470 (degree 1541), 1128912.GMES_1078
-(degree 1511), 1128912.GMES_2149 (degree 1376) and 1128912.GMES_2655 (degree 1265).
+The undirected graph Glaciecola mesophila has 4501 nodes and 594004 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05865 and has 27 connected components, where the component with most
+nodes has 4441 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 241, the mean node degree is 263.94, and
+the node degree mode is 1. The top 5 most central nodes are 1128912.GMES_1708
+(degree 1577), 1128912.GMES_4470 (degree 1541), 1128912.GMES_1078 (degree
+1511), 1128912.GMES_2149 (degree 1376) and 1128912.GMES_2655 (degree 1265).
 
 
 References
@@ -106,13 +107,14 @@ def GlaciecolaMesophila(
 	
 	Datetime: 2021-02-02 22:55:09.549856
 	
-	The undirected graph Glaciecola mesophila has 4501 nodes and 594004 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05865 and
-	has 27 connected components, where the component with most nodes has 4441 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 263.94, and the node degree mode is 1. The top 5 most central
-	nodes are 1128912.GMES_1708 (degree 1577), 1128912.GMES_4470 (degree 1541), 1128912.GMES_1078
-	(degree 1511), 1128912.GMES_2149 (degree 1376) and 1128912.GMES_2655 (degree 1265).
+	The undirected graph Glaciecola mesophila has 4501 nodes and 594004 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05865 and has 27 connected components, where the component with most
+	nodes has 4441 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 241, the mean node degree is 263.94, and
+	the node degree mode is 1. The top 5 most central nodes are 1128912.GMES_1708
+	(degree 1577), 1128912.GMES_4470 (degree 1541), 1128912.GMES_1078 (degree
+	1511), 1128912.GMES_2149 (degree 1376) and 1128912.GMES_2655 (degree 1265).
 	
 
 

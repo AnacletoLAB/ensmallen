@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:22.920548
 
-The undirected graph Pectobacterium sp. SCC3193 has 4642 nodes and 566600 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05260
-and has 31 connected components, where the component with most nodes has 4567 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 244.12, and the node degree mode is 1. The top 5
-most central nodes are 1166016.W5S_0824 (degree 1528), 1166016.W5S_4699 (degree 1467),
-1166016.W5S_3687 (degree 1454), 1166016.W5S_0321 (degree 1295) and 1166016.W5S_0319
-(degree 1260).
+The undirected graph Pectobacterium sp. SCC3193 has 4642 nodes and 566600
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05260 and has 31 connected components, where the component
+with most nodes has 4567 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 244.12,
+and the node degree mode is 1. The top 5 most central nodes are 1166016.W5S_0824
+(degree 1528), 1166016.W5S_4699 (degree 1467), 1166016.W5S_3687 (degree
+1454), 1166016.W5S_0321 (degree 1295) and 1166016.W5S_0319 (degree 1260).
 
 
 References
@@ -107,14 +107,14 @@ def PectobacteriumSp.Scc3193(
 	
 	Datetime: 2021-02-02 23:05:22.920548
 	
-	The undirected graph Pectobacterium sp. SCC3193 has 4642 nodes and 566600 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05260
-	and has 31 connected components, where the component with most nodes has 4567 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 244.12, and the node degree mode is 1. The top 5
-	most central nodes are 1166016.W5S_0824 (degree 1528), 1166016.W5S_4699 (degree 1467),
-	1166016.W5S_3687 (degree 1454), 1166016.W5S_0321 (degree 1295) and 1166016.W5S_0319
-	(degree 1260).
+	The undirected graph Pectobacterium sp. SCC3193 has 4642 nodes and 566600
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05260 and has 31 connected components, where the component
+	with most nodes has 4567 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 244.12,
+	and the node degree mode is 1. The top 5 most central nodes are 1166016.W5S_0824
+	(degree 1528), 1166016.W5S_4699 (degree 1467), 1166016.W5S_3687 (degree
+	1454), 1166016.W5S_0321 (degree 1295) and 1166016.W5S_0319 (degree 1260).
 	
 
 

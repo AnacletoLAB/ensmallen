@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:11.909720
 
-The undirected graph Sporomusa ovata has 5042 nodes and 681310 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05361 and
-has 24 connected components, where the component with most nodes has 4980 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 270.25, and the node degree mode is 3. The top 5 most central
-nodes are 1123288.SOV_3c08100 (degree 1797), 1123288.SOV_4c06230 (degree 1657), 1123288.SOV_3c04600
-(degree 1622), 1123288.SOV_3c04630 (degree 1620) and 1123288.SOV_2c04410 (degree
+The undirected graph Sporomusa ovata has 5042 nodes and 681310 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05361 and has 24 connected components, where the component with most
+nodes has 4980 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 233, the mean node degree is 270.25, and
+the node degree mode is 3. The top 5 most central nodes are 1123288.SOV_3c08100
+(degree 1797), 1123288.SOV_4c06230 (degree 1657), 1123288.SOV_3c04600 (degree
+1622), 1123288.SOV_3c04630 (degree 1620) and 1123288.SOV_2c04410 (degree
 1561).
 
 
@@ -107,13 +108,14 @@ def SporomusaOvata(
 	
 	Datetime: 2021-02-02 22:50:11.909720
 	
-	The undirected graph Sporomusa ovata has 5042 nodes and 681310 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05361 and
-	has 24 connected components, where the component with most nodes has 4980 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 270.25, and the node degree mode is 3. The top 5 most central
-	nodes are 1123288.SOV_3c08100 (degree 1797), 1123288.SOV_4c06230 (degree 1657), 1123288.SOV_3c04600
-	(degree 1622), 1123288.SOV_3c04630 (degree 1620) and 1123288.SOV_2c04410 (degree
+	The undirected graph Sporomusa ovata has 5042 nodes and 681310 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05361 and has 24 connected components, where the component with most
+	nodes has 4980 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 233, the mean node degree is 270.25, and
+	the node degree mode is 3. The top 5 most central nodes are 1123288.SOV_3c08100
+	(degree 1797), 1123288.SOV_4c06230 (degree 1657), 1123288.SOV_3c04600 (degree
+	1622), 1123288.SOV_3c04630 (degree 1620) and 1123288.SOV_2c04410 (degree
 	1561).
 	
 

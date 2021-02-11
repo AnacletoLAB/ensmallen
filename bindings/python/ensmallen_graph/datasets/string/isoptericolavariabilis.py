@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:12.969581
 
-The undirected graph Isoptericola variabilis has 2869 nodes and 271130 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06590 and
-has 3 connected components, where the component with most nodes has 2864 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 189.01, and the node degree mode is 3. The top 5 most central
-nodes are 743718.Isova_1470 (degree 1057), 743718.Isova_1765 (degree 896), 743718.Isova_1464
-(degree 895), 743718.Isova_0740 (degree 879) and 743718.Isova_1331 (degree 871).
+The undirected graph Isoptericola variabilis has 2869 nodes and 271130
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06590 and has 3 connected components, where the component
+with most nodes has 2864 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 189.01,
+and the node degree mode is 3. The top 5 most central nodes are 743718.Isova_1470
+(degree 1057), 743718.Isova_1765 (degree 896), 743718.Isova_1464 (degree
+895), 743718.Isova_0740 (degree 879) and 743718.Isova_1331 (degree 871).
 
 
 References
@@ -106,13 +107,14 @@ def IsoptericolaVariabilis(
 	
 	Datetime: 2021-02-02 21:38:12.969581
 	
-	The undirected graph Isoptericola variabilis has 2869 nodes and 271130 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06590 and
-	has 3 connected components, where the component with most nodes has 2864 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 189.01, and the node degree mode is 3. The top 5 most central
-	nodes are 743718.Isova_1470 (degree 1057), 743718.Isova_1765 (degree 896), 743718.Isova_1464
-	(degree 895), 743718.Isova_0740 (degree 879) and 743718.Isova_1331 (degree 871).
+	The undirected graph Isoptericola variabilis has 2869 nodes and 271130
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06590 and has 3 connected components, where the component
+	with most nodes has 2864 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 189.01,
+	and the node degree mode is 3. The top 5 most central nodes are 743718.Isova_1470
+	(degree 1057), 743718.Isova_1765 (degree 896), 743718.Isova_1464 (degree
+	895), 743718.Isova_0740 (degree 879) and 743718.Isova_1331 (degree 871).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:08:10.881206
 
-The undirected graph crystm02 has 13965 nodes and 168435 weighted edges, of which
-13965 are self-loops. The graph is sparse as it has a density of 0.00166 and has
-3 connected components, where the component with most nodes has 4655 nodes and the
-component with the least nodes has 4655 nodes. The graph median node degree is 27,
-the mean node degree is 23.12, and the node degree mode is 27. The top 5 most central
-nodes are 13506 (degree 27), 13505 (degree 27), 13504 (degree 27), 13503 (degree
-27) and 13502 (degree 27).
+The undirected graph crystm02 has 13965 nodes and 168435 weighted edges,
+of which 13965 are self-loops. The graph is sparse as it has a density
+of 0.00166 and has 3 connected components, where the component with most
+nodes has 4655 nodes and the component with the least nodes has 4655 nodes.
+The graph median node degree is 27, the mean node degree is 23.12, and
+the node degree mode is 27. The top 5 most central nodes are 13506 (degree
+27), 13505 (degree 27), 13504 (degree 27), 13503 (degree 27) and 13502
+(degree 27).
 
 
 References
@@ -103,13 +104,14 @@ def Crystm02(
 	
 	Datetime: 2021-02-06 11:08:10.881206
 	
-	The undirected graph crystm02 has 13965 nodes and 168435 weighted edges, of which
-	13965 are self-loops. The graph is sparse as it has a density of 0.00166 and has
-	3 connected components, where the component with most nodes has 4655 nodes and the
-	component with the least nodes has 4655 nodes. The graph median node degree is 27,
-	the mean node degree is 23.12, and the node degree mode is 27. The top 5 most central
-	nodes are 13506 (degree 27), 13505 (degree 27), 13504 (degree 27), 13503 (degree
-	27) and 13502 (degree 27).
+	The undirected graph crystm02 has 13965 nodes and 168435 weighted edges,
+	of which 13965 are self-loops. The graph is sparse as it has a density
+	of 0.00166 and has 3 connected components, where the component with most
+	nodes has 4655 nodes and the component with the least nodes has 4655 nodes.
+	The graph median node degree is 27, the mean node degree is 23.12, and
+	the node degree mode is 27. The top 5 most central nodes are 13506 (degree
+	27), 13505 (degree 27), 13504 (degree 27), 13503 (degree 27) and 13502
+	(degree 27).
 	
 
 

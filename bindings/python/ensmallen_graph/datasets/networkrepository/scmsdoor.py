@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:26:55.570531
 
-The undirected graph sc-msdoor has 404785 nodes and 9378650 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00011
-and is connected, as it has a single component. The graph median node degree is 47,
-the mean node degree is 46.34, and the node degree mode is 34. The top 5 most central
-nodes are 202439 (degree 76), 202438 (degree 76), 202437 (degree 76), 156872 (degree
-76) and 156871 (degree 76).
+The undirected graph sc-msdoor has 404785 nodes and 9378650 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00011 and is connected, as it has a single component. The
+graph median node degree is 47, the mean node degree is 46.34, and the
+node degree mode is 34. The top 5 most central nodes are 202439 (degree
+76), 202438 (degree 76), 202437 (degree 76), 156872 (degree 76) and 156871
+(degree 76).
 
 
 References
@@ -109,12 +110,13 @@ def ScMsdoor(
 	
 	Datetime: 2021-02-06 12:26:55.570531
 	
-	The undirected graph sc-msdoor has 404785 nodes and 9378650 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00011
-	and is connected, as it has a single component. The graph median node degree is 47,
-	the mean node degree is 46.34, and the node degree mode is 34. The top 5 most central
-	nodes are 202439 (degree 76), 202438 (degree 76), 202437 (degree 76), 156872 (degree
-	76) and 156871 (degree 76).
+	The undirected graph sc-msdoor has 404785 nodes and 9378650 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00011 and is connected, as it has a single component. The
+	graph median node degree is 47, the mean node degree is 46.34, and the
+	node degree mode is 34. The top 5 most central nodes are 202439 (degree
+	76), 202438 (degree 76), 202437 (degree 76), 156872 (degree 76) and 156871
+	(degree 76).
 	
 
 

@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-05 19:39:20.173292
 
-The undirected graph dbpedia has 495936 nodes with 4 different node types: 3 (nodes
-number 258851), 1 (nodes number 127572), 2 (nodes number 101730) and 4 (nodes number
-7783) and 921710 unweighted edges, of which none are self-loops. The graph is extremely
-sparse as it has a density of 0.00001 and has 26083 connected components, where the
-component with most nodes has 439422 nodes and the component with the least nodes
-has 2 nodes. The graph median node degree is 2, the mean node degree is 3.72, and
-the node degree mode is 1. The top 5 most central nodes are 488248 (degree 24821),
-488345 (degree 22124), 127632 (degree 17997), 488243 (degree 16718) and 488325 (degree
-11779).
+The undirected graph dbpedia has 495936 nodes with 4 different node types:
+3 (nodes number 258851), 1 (nodes number 127572), 2 (nodes number 101730)
+and 4 (nodes number 7783) and 921710 unweighted edges, of which none are
+self-loops. The graph is extremely sparse as it has a density of 0.00001
+and has 26083 connected components, where the component with most nodes
+has 439422 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 2, the mean node degree is 3.72, and the node
+degree mode is 1. The top 5 most central nodes are 488248 (degree 24821),
+488345 (degree 22124), 127632 (degree 17997), 488243 (degree 16718) and
+488325 (degree 11779).
 
 
 References
@@ -105,15 +106,16 @@ def Dbpedia(
 	
 	Datetime: 2021-02-05 19:39:20.173292
 	
-	The undirected graph dbpedia has 495936 nodes with 4 different node types: 3 (nodes
-	number 258851), 1 (nodes number 127572), 2 (nodes number 101730) and 4 (nodes number
-	7783) and 921710 unweighted edges, of which none are self-loops. The graph is extremely
-	sparse as it has a density of 0.00001 and has 26083 connected components, where the
-	component with most nodes has 439422 nodes and the component with the least nodes
-	has 2 nodes. The graph median node degree is 2, the mean node degree is 3.72, and
-	the node degree mode is 1. The top 5 most central nodes are 488248 (degree 24821),
-	488345 (degree 22124), 127632 (degree 17997), 488243 (degree 16718) and 488325 (degree
-	11779).
+	The undirected graph dbpedia has 495936 nodes with 4 different node types:
+	3 (nodes number 258851), 1 (nodes number 127572), 2 (nodes number 101730)
+	and 4 (nodes number 7783) and 921710 unweighted edges, of which none are
+	self-loops. The graph is extremely sparse as it has a density of 0.00001
+	and has 26083 connected components, where the component with most nodes
+	has 439422 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 2, the mean node degree is 3.72, and the node
+	degree mode is 1. The top 5 most central nodes are 488248 (degree 24821),
+	488345 (degree 22124), 127632 (degree 17997), 488243 (degree 16718) and
+	488325 (degree 11779).
 	
 
 

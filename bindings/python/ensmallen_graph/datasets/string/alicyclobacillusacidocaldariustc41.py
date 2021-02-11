@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:02.067582
 
-The undirected graph Alicyclobacillus acidocaldarius Tc41 has 3174 nodes and 201339
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03998 and has 14 connected components, where the component with most nodes has
-3142 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 97, the mean node degree is 126.87, and the node degree mode is 2. The
-top 5 most central nodes are 1048834.TC41_2629 (degree 1114), 1048834.TC41_2851 (degree
-928), 1048834.TC41_0519 (degree 916), 1048834.TC41_0168 (degree 784) and 1048834.TC41_1135
-(degree 782).
+The undirected graph Alicyclobacillus acidocaldarius Tc41 has 3174 nodes
+and 201339 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03998 and has 14 connected components, where the
+component with most nodes has 3142 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+is 126.87, and the node degree mode is 2. The top 5 most central nodes
+are 1048834.TC41_2629 (degree 1114), 1048834.TC41_2851 (degree 928), 1048834.TC41_0519
+(degree 916), 1048834.TC41_0168 (degree 784) and 1048834.TC41_1135 (degree
+782).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusAcidocaldariusTc41(
 	
 	Datetime: 2021-02-02 22:17:02.067582
 	
-	The undirected graph Alicyclobacillus acidocaldarius Tc41 has 3174 nodes and 201339
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03998 and has 14 connected components, where the component with most nodes has
-	3142 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 97, the mean node degree is 126.87, and the node degree mode is 2. The
-	top 5 most central nodes are 1048834.TC41_2629 (degree 1114), 1048834.TC41_2851 (degree
-	928), 1048834.TC41_0519 (degree 916), 1048834.TC41_0168 (degree 784) and 1048834.TC41_1135
-	(degree 782).
+	The undirected graph Alicyclobacillus acidocaldarius Tc41 has 3174 nodes
+	and 201339 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03998 and has 14 connected components, where the
+	component with most nodes has 3142 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 97, the mean node degree
+	is 126.87, and the node degree mode is 2. The top 5 most central nodes
+	are 1048834.TC41_2629 (degree 1114), 1048834.TC41_2851 (degree 928), 1048834.TC41_0519
+	(degree 916), 1048834.TC41_0168 (degree 784) and 1048834.TC41_1135 (degree
+	782).
 	
 
 

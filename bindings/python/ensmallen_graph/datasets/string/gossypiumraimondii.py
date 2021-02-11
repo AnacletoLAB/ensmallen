@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:00:14.620468
 
-The undirected graph Gossypium raimondii has 31105 nodes and 8388935 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01734 and
-has 8 connected components, where the component with most nodes has 31089 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 267,
-the mean node degree is 539.39, and the node degree mode is 6. The top 5 most central
-nodes are 29730.Gorai.010G074600.1 (degree 9565), 29730.Gorai.001G007600.1 (degree
-9565), 29730.Gorai.003G091100.1 (degree 7497), 29730.Gorai.006G164700.1 (degree 7052)
-and 29730.Gorai.005G245400.1 (degree 6326).
+The undirected graph Gossypium raimondii has 31105 nodes and 8388935 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01734 and has 8 connected components, where the component with most
+nodes has 31089 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 267, the mean node degree is 539.39, and
+the node degree mode is 6. The top 5 most central nodes are 29730.Gorai.010G074600.1
+(degree 9565), 29730.Gorai.001G007600.1 (degree 9565), 29730.Gorai.003G091100.1
+(degree 7497), 29730.Gorai.006G164700.1 (degree 7052) and 29730.Gorai.005G245400.1
+(degree 6326).
 
 
 References
@@ -107,14 +108,15 @@ def GossypiumRaimondii(
 	
 	Datetime: 2021-02-02 18:00:14.620468
 	
-	The undirected graph Gossypium raimondii has 31105 nodes and 8388935 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01734 and
-	has 8 connected components, where the component with most nodes has 31089 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 267,
-	the mean node degree is 539.39, and the node degree mode is 6. The top 5 most central
-	nodes are 29730.Gorai.010G074600.1 (degree 9565), 29730.Gorai.001G007600.1 (degree
-	9565), 29730.Gorai.003G091100.1 (degree 7497), 29730.Gorai.006G164700.1 (degree 7052)
-	and 29730.Gorai.005G245400.1 (degree 6326).
+	The undirected graph Gossypium raimondii has 31105 nodes and 8388935 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01734 and has 8 connected components, where the component with most
+	nodes has 31089 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 267, the mean node degree is 539.39, and
+	the node degree mode is 6. The top 5 most central nodes are 29730.Gorai.010G074600.1
+	(degree 9565), 29730.Gorai.001G007600.1 (degree 9565), 29730.Gorai.003G091100.1
+	(degree 7497), 29730.Gorai.006G164700.1 (degree 7052) and 29730.Gorai.005G245400.1
+	(degree 6326).
 	
 
 

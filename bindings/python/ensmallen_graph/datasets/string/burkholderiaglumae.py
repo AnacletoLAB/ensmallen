@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:46.208627
 
-The undirected graph Burkholderia glumae has 5377 nodes and 492488 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03407 and
-has 12 connected components, where the component with most nodes has 5351 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 183.18, and the node degree mode is 2. The top 5 most central
-nodes are 626418.bglu_2g16010 (degree 2042), 626418.bglu_1g03130 (degree 1563), 626418.bglu_2g10750
-(degree 1495), 626418.bglu_1g13000 (degree 1415) and 626418.bglu_2g22590 (degree
+The undirected graph Burkholderia glumae has 5377 nodes and 492488 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03407 and has 12 connected components, where the component with most
+nodes has 5351 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 183.18, and
+the node degree mode is 2. The top 5 most central nodes are 626418.bglu_2g16010
+(degree 2042), 626418.bglu_1g03130 (degree 1563), 626418.bglu_2g10750 (degree
+1495), 626418.bglu_1g13000 (degree 1415) and 626418.bglu_2g22590 (degree
 1359).
 
 
@@ -107,13 +108,14 @@ def BurkholderiaGlumae(
 	
 	Datetime: 2021-02-02 21:20:46.208627
 	
-	The undirected graph Burkholderia glumae has 5377 nodes and 492488 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03407 and
-	has 12 connected components, where the component with most nodes has 5351 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 183.18, and the node degree mode is 2. The top 5 most central
-	nodes are 626418.bglu_2g16010 (degree 2042), 626418.bglu_1g03130 (degree 1563), 626418.bglu_2g10750
-	(degree 1495), 626418.bglu_1g13000 (degree 1415) and 626418.bglu_2g22590 (degree
+	The undirected graph Burkholderia glumae has 5377 nodes and 492488 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03407 and has 12 connected components, where the component with most
+	nodes has 5351 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 183.18, and
+	the node degree mode is 2. The top 5 most central nodes are 626418.bglu_2g16010
+	(degree 2042), 626418.bglu_1g03130 (degree 1563), 626418.bglu_2g10750 (degree
+	1495), 626418.bglu_1g13000 (degree 1415) and 626418.bglu_2g22590 (degree
 	1359).
 	
 

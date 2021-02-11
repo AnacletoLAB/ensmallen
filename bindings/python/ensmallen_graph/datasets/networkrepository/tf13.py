@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:28.068835
 
-The undirected graph TF13 has 1302 nodes and 11073 weighted edges, of which 29 are
-self-loops. The graph is dense as it has a density of 0.01305 and is connected, as
-it has a single component. The graph median node degree is 17, the mean node degree
-is 16.99, and the node degree mode is 18. The top 5 most central nodes are 1002 (degree
-41), 857 (degree 40), 763 (degree 40), 750 (degree 40) and 1040 (degree 37).
+The undirected graph TF13 has 1302 nodes and 11073 weighted edges, of which
+29 are self-loops. The graph is dense as it has a density of 0.01305 and
+is connected, as it has a single component. The graph median node degree
+is 17, the mean node degree is 16.99, and the node degree mode is 18. The
+top 5 most central nodes are 1002 (degree 41), 857 (degree 40), 763 (degree
+40), 750 (degree 40) and 1040 (degree 37).
 
 
 References
@@ -101,11 +102,12 @@ def Tf13(
 	
 	Datetime: 2021-02-06 10:14:28.068835
 	
-	The undirected graph TF13 has 1302 nodes and 11073 weighted edges, of which 29 are
-	self-loops. The graph is dense as it has a density of 0.01305 and is connected, as
-	it has a single component. The graph median node degree is 17, the mean node degree
-	is 16.99, and the node degree mode is 18. The top 5 most central nodes are 1002 (degree
-	41), 857 (degree 40), 763 (degree 40), 750 (degree 40) and 1040 (degree 37).
+	The undirected graph TF13 has 1302 nodes and 11073 weighted edges, of which
+	29 are self-loops. The graph is dense as it has a density of 0.01305 and
+	is connected, as it has a single component. The graph median node degree
+	is 17, the mean node degree is 16.99, and the node degree mode is 18. The
+	top 5 most central nodes are 1002 (degree 41), 857 (degree 40), 763 (degree
+	40), 750 (degree 40) and 1040 (degree 37).
 	
 
 

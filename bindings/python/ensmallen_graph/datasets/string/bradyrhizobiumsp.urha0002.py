@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:34:03.637590
 
-The undirected graph Bradyrhizobium sp. URHA0002 has 5859 nodes and 700518 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04082
-and has 50 connected components, where the component with most nodes has 5752 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 239.13, and the node degree mode is 1. The top 5
-most central nodes are 1298867.AUES01000023_gene2749 (degree 2870), 1298867.AUES01000024_gene2914
-(degree 2078), 1298867.AUES01000049_gene4598 (degree 1755), 1298867.AUES01000060_gene4732
-(degree 1664) and 1298867.AUES01000023_gene2741 (degree 1617).
+The undirected graph Bradyrhizobium sp. URHA0002 has 5859 nodes and 700518
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04082 and has 50 connected components, where the component
+with most nodes has 5752 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 239.13,
+and the node degree mode is 1. The top 5 most central nodes are 1298867.AUES01000023_gene2749
+(degree 2870), 1298867.AUES01000024_gene2914 (degree 2078), 1298867.AUES01000049_gene4598
+(degree 1755), 1298867.AUES01000060_gene4732 (degree 1664) and 1298867.AUES01000023_gene2741
+(degree 1617).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Urha0002(
 	
 	Datetime: 2021-02-03 21:34:03.637590
 	
-	The undirected graph Bradyrhizobium sp. URHA0002 has 5859 nodes and 700518 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04082
-	and has 50 connected components, where the component with most nodes has 5752 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 239.13, and the node degree mode is 1. The top 5
-	most central nodes are 1298867.AUES01000023_gene2749 (degree 2870), 1298867.AUES01000024_gene2914
-	(degree 2078), 1298867.AUES01000049_gene4598 (degree 1755), 1298867.AUES01000060_gene4732
-	(degree 1664) and 1298867.AUES01000023_gene2741 (degree 1617).
+	The undirected graph Bradyrhizobium sp. URHA0002 has 5859 nodes and 700518
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04082 and has 50 connected components, where the component
+	with most nodes has 5752 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 239.13,
+	and the node degree mode is 1. The top 5 most central nodes are 1298867.AUES01000023_gene2749
+	(degree 2870), 1298867.AUES01000024_gene2914 (degree 2078), 1298867.AUES01000049_gene4598
+	(degree 1755), 1298867.AUES01000060_gene4732 (degree 1664) and 1298867.AUES01000023_gene2741
+	(degree 1617).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:34.808785
 
-The undirected graph web-webbase-2001 has 16062 nodes and 25593 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00020
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 3.19, and the node degree mode is 1. The top 5 most central
-nodes are 6105 (degree 1679), 5075 (degree 608), 2526 (degree 531), 9534 (degree
-485) and 9544 (degree 354).
+The undirected graph web-webbase-2001 has 16062 nodes and 25593 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00020 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 3.19, and the node
+degree mode is 1. The top 5 most central nodes are 6105 (degree 1679),
+5075 (degree 608), 2526 (degree 531), 9534 (degree 485) and 9544 (degree
+354).
 
 
 References
@@ -119,12 +120,13 @@ def WebWebbase2001(
 	
 	Datetime: 2021-02-06 10:55:34.808785
 	
-	The undirected graph web-webbase-2001 has 16062 nodes and 25593 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00020
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 3.19, and the node degree mode is 1. The top 5 most central
-	nodes are 6105 (degree 1679), 5075 (degree 608), 2526 (degree 531), 9534 (degree
-	485) and 9544 (degree 354).
+	The undirected graph web-webbase-2001 has 16062 nodes and 25593 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00020 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 3.19, and the node
+	degree mode is 1. The top 5 most central nodes are 6105 (degree 1679),
+	5075 (degree 608), 2526 (degree 531), 9534 (degree 485) and 9544 (degree
+	354).
 	
 
 

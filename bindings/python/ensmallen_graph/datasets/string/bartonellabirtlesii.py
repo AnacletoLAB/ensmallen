@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:09.921869
 
-The undirected graph Bartonella birtlesii has 1666 nodes and 128588 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09271 and
-has 13 connected components, where the component with most nodes has 1638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 154.37, and the node degree mode is 1. The top 5 most central
-nodes are 1201035.KE007210_gene1018 (degree 824), 1201035.KE007211_gene38 (degree
-725), 1201035.KE007211_gene355 (degree 693), 1201035.KE007210_gene1094 (degree 657)
-and 1201035.KE007212_gene1372 (degree 656).
+The undirected graph Bartonella birtlesii has 1666 nodes and 128588 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09271 and has 13 connected components, where the component with most
+nodes has 1638 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 154.37, and
+the node degree mode is 1. The top 5 most central nodes are 1201035.KE007210_gene1018
+(degree 824), 1201035.KE007211_gene38 (degree 725), 1201035.KE007211_gene355
+(degree 693), 1201035.KE007210_gene1094 (degree 657) and 1201035.KE007212_gene1372
+(degree 656).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaBirtlesii(
 	
 	Datetime: 2021-02-02 23:14:09.921869
 	
-	The undirected graph Bartonella birtlesii has 1666 nodes and 128588 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09271 and
-	has 13 connected components, where the component with most nodes has 1638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 154.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1201035.KE007210_gene1018 (degree 824), 1201035.KE007211_gene38 (degree
-	725), 1201035.KE007211_gene355 (degree 693), 1201035.KE007210_gene1094 (degree 657)
-	and 1201035.KE007212_gene1372 (degree 656).
+	The undirected graph Bartonella birtlesii has 1666 nodes and 128588 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09271 and has 13 connected components, where the component with most
+	nodes has 1638 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 154.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1201035.KE007210_gene1018
+	(degree 824), 1201035.KE007211_gene38 (degree 725), 1201035.KE007211_gene355
+	(degree 693), 1201035.KE007210_gene1094 (degree 657) and 1201035.KE007212_gene1372
+	(degree 656).
 	
 
 

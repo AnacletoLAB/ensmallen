@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:53.015645
 
-The undirected graph Demetria terragena has 3373 nodes and 295506 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05196 and
-has 7 connected components, where the component with most nodes has 3361 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 175.22, and the node degree mode is 6. The top 5 most central
-nodes are 1121385.AQXW01000004_gene905 (degree 1065), 1121385.AQXW01000004_gene2039
-(degree 1006), 1121385.AQXW01000002_gene132 (degree 997), 1121385.AQXW01000001_gene735
-(degree 984) and 1121385.AQXW01000004_gene3075 (degree 941).
+The undirected graph Demetria terragena has 3373 nodes and 295506 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05196 and has 7 connected components, where the component with most
+nodes has 3361 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 175.22, and
+the node degree mode is 6. The top 5 most central nodes are 1121385.AQXW01000004_gene905
+(degree 1065), 1121385.AQXW01000004_gene2039 (degree 1006), 1121385.AQXW01000002_gene132
+(degree 997), 1121385.AQXW01000001_gene735 (degree 984) and 1121385.AQXW01000004_gene3075
+(degree 941).
 
 
 References
@@ -107,14 +108,15 @@ def DemetriaTerragena(
 	
 	Datetime: 2021-02-02 22:35:53.015645
 	
-	The undirected graph Demetria terragena has 3373 nodes and 295506 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05196 and
-	has 7 connected components, where the component with most nodes has 3361 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 175.22, and the node degree mode is 6. The top 5 most central
-	nodes are 1121385.AQXW01000004_gene905 (degree 1065), 1121385.AQXW01000004_gene2039
-	(degree 1006), 1121385.AQXW01000002_gene132 (degree 997), 1121385.AQXW01000001_gene735
-	(degree 984) and 1121385.AQXW01000004_gene3075 (degree 941).
+	The undirected graph Demetria terragena has 3373 nodes and 295506 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05196 and has 7 connected components, where the component with most
+	nodes has 3361 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 175.22, and
+	the node degree mode is 6. The top 5 most central nodes are 1121385.AQXW01000004_gene905
+	(degree 1065), 1121385.AQXW01000004_gene2039 (degree 1006), 1121385.AQXW01000002_gene132
+	(degree 997), 1121385.AQXW01000001_gene735 (degree 984) and 1121385.AQXW01000004_gene3075
+	(degree 941).
 	
 
 

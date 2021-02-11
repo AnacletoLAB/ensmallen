@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:26.550315
 
-The undirected graph Pythium iwayamai has 8883 nodes and 1301216 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03298 and
-has 180 connected components, where the component with most nodes has 8497 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 292.97, and the node degree mode is 1. The top 5
-most central nodes are 115417.EPrPW00000017745 (degree 2829), 115417.EPrPW00000015887
-(degree 2818), 115417.EPrPW00000025114 (degree 2768), 115417.EPrPW00000015318 (degree
-2568) and 115417.EPrPW00000022297 (degree 2546).
+The undirected graph Pythium iwayamai has 8883 nodes and 1301216 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03298 and has 180 connected components, where the component with most
+nodes has 8497 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 292.97, and
+the node degree mode is 1. The top 5 most central nodes are 115417.EPrPW00000017745
+(degree 2829), 115417.EPrPW00000015887 (degree 2818), 115417.EPrPW00000025114
+(degree 2768), 115417.EPrPW00000015318 (degree 2568) and 115417.EPrPW00000022297
+(degree 2546).
 
 
 References
@@ -107,14 +108,15 @@ def PythiumIwayamai(
 	
 	Datetime: 2021-02-05 17:17:26.550315
 	
-	The undirected graph Pythium iwayamai has 8883 nodes and 1301216 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03298 and
-	has 180 connected components, where the component with most nodes has 8497 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 292.97, and the node degree mode is 1. The top 5
-	most central nodes are 115417.EPrPW00000017745 (degree 2829), 115417.EPrPW00000015887
-	(degree 2818), 115417.EPrPW00000025114 (degree 2768), 115417.EPrPW00000015318 (degree
-	2568) and 115417.EPrPW00000022297 (degree 2546).
+	The undirected graph Pythium iwayamai has 8883 nodes and 1301216 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03298 and has 180 connected components, where the component with most
+	nodes has 8497 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 292.97, and
+	the node degree mode is 1. The top 5 most central nodes are 115417.EPrPW00000017745
+	(degree 2829), 115417.EPrPW00000015887 (degree 2818), 115417.EPrPW00000025114
+	(degree 2768), 115417.EPrPW00000015318 (degree 2568) and 115417.EPrPW00000022297
+	(degree 2546).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:54.525326
 
-The undirected graph Anaerotruncus sp. G3 has 3396 nodes and 226041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03921 and
-has 21 connected components, where the component with most nodes has 3339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 133.12, and the node degree mode is 1. The top 5 most central
-nodes are 1235835.C814_00268 (degree 1267), 1235835.C814_01872 (degree 1131), 1235835.C814_00197
-(degree 953), 1235835.C814_02169 (degree 950) and 1235835.C814_03302 (degree 821).
+The undirected graph Anaerotruncus sp. G3 has 3396 nodes and 226041 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03921 and has 21 connected components, where the component with most
+nodes has 3339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 133.12, and
+the node degree mode is 1. The top 5 most central nodes are 1235835.C814_00268
+(degree 1267), 1235835.C814_01872 (degree 1131), 1235835.C814_00197 (degree
+953), 1235835.C814_02169 (degree 950) and 1235835.C814_03302 (degree 821).
 
 
 References
@@ -106,13 +107,14 @@ def AnaerotruncusSp.G3(
 	
 	Datetime: 2021-02-02 23:30:54.525326
 	
-	The undirected graph Anaerotruncus sp. G3 has 3396 nodes and 226041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03921 and
-	has 21 connected components, where the component with most nodes has 3339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 133.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1235835.C814_00268 (degree 1267), 1235835.C814_01872 (degree 1131), 1235835.C814_00197
-	(degree 953), 1235835.C814_02169 (degree 950) and 1235835.C814_03302 (degree 821).
+	The undirected graph Anaerotruncus sp. G3 has 3396 nodes and 226041 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03921 and has 21 connected components, where the component with most
+	nodes has 3339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 133.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1235835.C814_00268
+	(degree 1267), 1235835.C814_01872 (degree 1131), 1235835.C814_00197 (degree
+	953), 1235835.C814_02169 (degree 950) and 1235835.C814_03302 (degree 821).
 	
 
 

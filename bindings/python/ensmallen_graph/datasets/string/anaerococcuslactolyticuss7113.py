@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:14:09.151324
 
-The undirected graph Anaerococcus lactolyticus S7113 has 1709 nodes and 138378 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09481
-and is connected, as it has a single component. The graph median node degree is 128,
-the mean node degree is 161.94, and the node degree mode is 3. The top 5 most central
-nodes are 1284686.HMPREF1630_01920 (degree 865), 1284686.HMPREF1630_07195 (degree
-863), 1284686.HMPREF1630_07790 (degree 782), 1284686.HMPREF1630_08005 (degree 741)
-and 1284686.HMPREF1630_05055 (degree 701).
+The undirected graph Anaerococcus lactolyticus S7113 has 1709 nodes and
+138378 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09481 and is connected, as it has a single component.
+The graph median node degree is 128, the mean node degree is 161.94, and
+the node degree mode is 3. The top 5 most central nodes are 1284686.HMPREF1630_01920
+(degree 865), 1284686.HMPREF1630_07195 (degree 863), 1284686.HMPREF1630_07790
+(degree 782), 1284686.HMPREF1630_08005 (degree 741) and 1284686.HMPREF1630_05055
+(degree 701).
 
 
 References
@@ -106,13 +107,14 @@ def AnaerococcusLactolyticusS7113(
 	
 	Datetime: 2021-02-03 21:14:09.151324
 	
-	The undirected graph Anaerococcus lactolyticus S7113 has 1709 nodes and 138378 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09481
-	and is connected, as it has a single component. The graph median node degree is 128,
-	the mean node degree is 161.94, and the node degree mode is 3. The top 5 most central
-	nodes are 1284686.HMPREF1630_01920 (degree 865), 1284686.HMPREF1630_07195 (degree
-	863), 1284686.HMPREF1630_07790 (degree 782), 1284686.HMPREF1630_08005 (degree 741)
-	and 1284686.HMPREF1630_05055 (degree 701).
+	The undirected graph Anaerococcus lactolyticus S7113 has 1709 nodes and
+	138378 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09481 and is connected, as it has a single component.
+	The graph median node degree is 128, the mean node degree is 161.94, and
+	the node degree mode is 3. The top 5 most central nodes are 1284686.HMPREF1630_01920
+	(degree 865), 1284686.HMPREF1630_07195 (degree 863), 1284686.HMPREF1630_07790
+	(degree 782), 1284686.HMPREF1630_08005 (degree 741) and 1284686.HMPREF1630_05055
+	(degree 701).
 	
 
 

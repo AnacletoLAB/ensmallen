@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:48.521054
 
-The undirected graph Bacillus fordii has 4282 nodes and 387763 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04231 and
-has 21 connected components, where the component with most nodes has 4235 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 181.11, and the node degree mode is 1. The top 5 most central
-nodes are 1121090.KB894706_gene977 (degree 1415), 1121090.KB894705_gene1099 (degree
-1305), 1121090.KB894685_gene3721 (degree 1169), 1121090.KB894687_gene804 (degree
-1053) and 1121090.KB894712_gene2784 (degree 1042).
+The undirected graph Bacillus fordii has 4282 nodes and 387763 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04231 and has 21 connected components, where the component with most
+nodes has 4235 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 181.11, and
+the node degree mode is 1. The top 5 most central nodes are 1121090.KB894706_gene977
+(degree 1415), 1121090.KB894705_gene1099 (degree 1305), 1121090.KB894685_gene3721
+(degree 1169), 1121090.KB894687_gene804 (degree 1053) and 1121090.KB894712_gene2784
+(degree 1042).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusFordii(
 	
 	Datetime: 2021-02-02 22:32:48.521054
 	
-	The undirected graph Bacillus fordii has 4282 nodes and 387763 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04231 and
-	has 21 connected components, where the component with most nodes has 4235 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 181.11, and the node degree mode is 1. The top 5 most central
-	nodes are 1121090.KB894706_gene977 (degree 1415), 1121090.KB894705_gene1099 (degree
-	1305), 1121090.KB894685_gene3721 (degree 1169), 1121090.KB894687_gene804 (degree
-	1053) and 1121090.KB894712_gene2784 (degree 1042).
+	The undirected graph Bacillus fordii has 4282 nodes and 387763 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04231 and has 21 connected components, where the component with most
+	nodes has 4235 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 181.11, and
+	the node degree mode is 1. The top 5 most central nodes are 1121090.KB894706_gene977
+	(degree 1415), 1121090.KB894705_gene1099 (degree 1305), 1121090.KB894685_gene3721
+	(degree 1169), 1121090.KB894687_gene804 (degree 1053) and 1121090.KB894712_gene2784
+	(degree 1042).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:13.287238
 
-The undirected graph Sodalis pierantonius has 2205 nodes and 121279 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04991 and
-has 10 connected components, where the component with most nodes has 2183 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 110.00, and the node degree mode is 3. The top 5 most central
-nodes are 2342.SOPEG_3358 (degree 756), 2342.SOPEG_2730 (degree 650), 2342.SOPEG_2407
-(degree 588), 2342.SOPEG_3080 (degree 584) and 2342.SOPEG_0181 (degree 578).
+The undirected graph Sodalis pierantonius has 2205 nodes and 121279 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04991 and has 10 connected components, where the component with most
+nodes has 2183 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 110.00, and
+the node degree mode is 3. The top 5 most central nodes are 2342.SOPEG_3358
+(degree 756), 2342.SOPEG_2730 (degree 650), 2342.SOPEG_2407 (degree 588),
+2342.SOPEG_3080 (degree 584) and 2342.SOPEG_0181 (degree 578).
 
 
 References
@@ -106,13 +107,14 @@ def SodalisPierantonius(
 	
 	Datetime: 2021-02-02 16:25:13.287238
 	
-	The undirected graph Sodalis pierantonius has 2205 nodes and 121279 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04991 and
-	has 10 connected components, where the component with most nodes has 2183 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 110.00, and the node degree mode is 3. The top 5 most central
-	nodes are 2342.SOPEG_3358 (degree 756), 2342.SOPEG_2730 (degree 650), 2342.SOPEG_2407
-	(degree 588), 2342.SOPEG_3080 (degree 584) and 2342.SOPEG_0181 (degree 578).
+	The undirected graph Sodalis pierantonius has 2205 nodes and 121279 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04991 and has 10 connected components, where the component with most
+	nodes has 2183 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 110.00, and
+	the node degree mode is 3. The top 5 most central nodes are 2342.SOPEG_3358
+	(degree 756), 2342.SOPEG_2730 (degree 650), 2342.SOPEG_2407 (degree 588),
+	2342.SOPEG_3080 (degree 584) and 2342.SOPEG_0181 (degree 578).
 	
 
 

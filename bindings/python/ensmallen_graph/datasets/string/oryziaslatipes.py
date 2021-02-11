@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:28:26.855698
 
-The undirected graph Oryzias latipes has 17773 nodes and 4167519 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02639 and
-has 17 connected components, where the component with most nodes has 17740 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 334, the mean node degree is 468.97, and the node degree mode is 1. The top 5
-most central nodes are 8090.ENSORLP00000015653 (degree 4367), 8090.ENSORLP00000015300
-(degree 4184), 8090.ENSORLP00000015020 (degree 3891), 8090.ENSORLP00000005141 (degree
-3635) and 8090.ENSORLP00000022515 (degree 3489).
+The undirected graph Oryzias latipes has 17773 nodes and 4167519 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02639 and has 17 connected components, where the component with most
+nodes has 17740 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 334, the mean node degree is 468.97, and
+the node degree mode is 1. The top 5 most central nodes are 8090.ENSORLP00000015653
+(degree 4367), 8090.ENSORLP00000015300 (degree 4184), 8090.ENSORLP00000015020
+(degree 3891), 8090.ENSORLP00000005141 (degree 3635) and 8090.ENSORLP00000022515
+(degree 3489).
 
 
 References
@@ -107,14 +108,15 @@ def OryziasLatipes(
 	
 	Datetime: 2021-02-02 17:28:26.855698
 	
-	The undirected graph Oryzias latipes has 17773 nodes and 4167519 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02639 and
-	has 17 connected components, where the component with most nodes has 17740 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 334, the mean node degree is 468.97, and the node degree mode is 1. The top 5
-	most central nodes are 8090.ENSORLP00000015653 (degree 4367), 8090.ENSORLP00000015300
-	(degree 4184), 8090.ENSORLP00000015020 (degree 3891), 8090.ENSORLP00000005141 (degree
-	3635) and 8090.ENSORLP00000022515 (degree 3489).
+	The undirected graph Oryzias latipes has 17773 nodes and 4167519 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02639 and has 17 connected components, where the component with most
+	nodes has 17740 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 334, the mean node degree is 468.97, and
+	the node degree mode is 1. The top 5 most central nodes are 8090.ENSORLP00000015653
+	(degree 4367), 8090.ENSORLP00000015300 (degree 4184), 8090.ENSORLP00000015020
+	(degree 3891), 8090.ENSORLP00000005141 (degree 3635) and 8090.ENSORLP00000022515
+	(degree 3489).
 	
 
 

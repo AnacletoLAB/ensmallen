@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:50.630128
 
-The undirected graph Fomitopsis pinicola has 6747 nodes and 732538 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03219 and
-has 20 connected components, where the component with most nodes has 6695 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 217.14, and the node degree mode is 1. The top 5 most central
-nodes are 40483.S8FAK3 (degree 2226), 40483.S8E5T4 (degree 1587), 40483.S8EEM3 (degree
-1514), 40483.S8FQB4 (degree 1447) and 40483.S8G6Y1 (degree 1405).
+The undirected graph Fomitopsis pinicola has 6747 nodes and 732538 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03219 and has 20 connected components, where the component with most
+nodes has 6695 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 217.14, and
+the node degree mode is 1. The top 5 most central nodes are 40483.S8FAK3
+(degree 2226), 40483.S8E5T4 (degree 1587), 40483.S8EEM3 (degree 1514),
+40483.S8FQB4 (degree 1447) and 40483.S8G6Y1 (degree 1405).
 
 
 References
@@ -106,13 +107,14 @@ def FomitopsisPinicola(
 	
 	Datetime: 2021-02-02 18:11:50.630128
 	
-	The undirected graph Fomitopsis pinicola has 6747 nodes and 732538 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03219 and
-	has 20 connected components, where the component with most nodes has 6695 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 217.14, and the node degree mode is 1. The top 5 most central
-	nodes are 40483.S8FAK3 (degree 2226), 40483.S8E5T4 (degree 1587), 40483.S8EEM3 (degree
-	1514), 40483.S8FQB4 (degree 1447) and 40483.S8G6Y1 (degree 1405).
+	The undirected graph Fomitopsis pinicola has 6747 nodes and 732538 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03219 and has 20 connected components, where the component with most
+	nodes has 6695 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 217.14, and
+	the node degree mode is 1. The top 5 most central nodes are 40483.S8FAK3
+	(degree 2226), 40483.S8E5T4 (degree 1587), 40483.S8EEM3 (degree 1514),
+	40483.S8FQB4 (degree 1447) and 40483.S8G6Y1 (degree 1405).
 	
 
 

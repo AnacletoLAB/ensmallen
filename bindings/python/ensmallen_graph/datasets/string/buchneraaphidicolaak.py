@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:44.678758
 
-The undirected graph Buchnera aphidicola Ak has 559 nodes and 29265 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.18764
-and is connected, as it has a single component. The graph median node degree is 95,
-the mean node degree is 104.70, and the node degree mode is 52. The top 5 most central
-nodes are 1005090.BAKON_129 (degree 332), 1005090.BAKON_195 (degree 261), 1005090.BAKON_034
-(degree 258), 1005090.BAKON_019 (degree 257) and 1005090.BAKON_152 (degree 256).
+The undirected graph Buchnera aphidicola Ak has 559 nodes and 29265 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.18764 and is connected, as it has a single component. The
+graph median node degree is 95, the mean node degree is 104.70, and the
+node degree mode is 52. The top 5 most central nodes are 1005090.BAKON_129
+(degree 332), 1005090.BAKON_195 (degree 261), 1005090.BAKON_034 (degree
+258), 1005090.BAKON_019 (degree 257) and 1005090.BAKON_152 (degree 256).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaAk(
 	
 	Datetime: 2021-02-02 22:07:44.678758
 	
-	The undirected graph Buchnera aphidicola Ak has 559 nodes and 29265 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.18764
-	and is connected, as it has a single component. The graph median node degree is 95,
-	the mean node degree is 104.70, and the node degree mode is 52. The top 5 most central
-	nodes are 1005090.BAKON_129 (degree 332), 1005090.BAKON_195 (degree 261), 1005090.BAKON_034
-	(degree 258), 1005090.BAKON_019 (degree 257) and 1005090.BAKON_152 (degree 256).
+	The undirected graph Buchnera aphidicola Ak has 559 nodes and 29265 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.18764 and is connected, as it has a single component. The
+	graph median node degree is 95, the mean node degree is 104.70, and the
+	node degree mode is 52. The top 5 most central nodes are 1005090.BAKON_129
+	(degree 332), 1005090.BAKON_195 (degree 261), 1005090.BAKON_034 (degree
+	258), 1005090.BAKON_019 (degree 257) and 1005090.BAKON_152 (degree 256).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:47.512893
 
-The undirected graph Collinsella intestinalis has 1757 nodes and 168701 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10936 and has 6 connected components, where the component with most nodes has
-1743 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 160, the mean node degree is 192.03, and the node degree mode is 5. The
-top 5 most central nodes are 521003.COLINT_03670 (degree 1000), 521003.COLINT_02292
-(degree 918), 521003.COLINT_02206 (degree 906), 521003.COLINT_02017 (degree 842)
-and 521003.COLINT_01976 (degree 774).
+The undirected graph Collinsella intestinalis has 1757 nodes and 168701
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10936 and has 6 connected components, where the
+component with most nodes has 1743 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 160, the mean node degree
+is 192.03, and the node degree mode is 5. The top 5 most central nodes
+are 521003.COLINT_03670 (degree 1000), 521003.COLINT_02292 (degree 918),
+521003.COLINT_02206 (degree 906), 521003.COLINT_02017 (degree 842) and
+521003.COLINT_01976 (degree 774).
 
 
 References
@@ -107,14 +108,15 @@ def CollinsellaIntestinalis(
 	
 	Datetime: 2021-02-02 21:03:47.512893
 	
-	The undirected graph Collinsella intestinalis has 1757 nodes and 168701 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10936 and has 6 connected components, where the component with most nodes has
-	1743 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 160, the mean node degree is 192.03, and the node degree mode is 5. The
-	top 5 most central nodes are 521003.COLINT_03670 (degree 1000), 521003.COLINT_02292
-	(degree 918), 521003.COLINT_02206 (degree 906), 521003.COLINT_02017 (degree 842)
-	and 521003.COLINT_01976 (degree 774).
+	The undirected graph Collinsella intestinalis has 1757 nodes and 168701
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10936 and has 6 connected components, where the
+	component with most nodes has 1743 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 160, the mean node degree
+	is 192.03, and the node degree mode is 5. The top 5 most central nodes
+	are 521003.COLINT_03670 (degree 1000), 521003.COLINT_02292 (degree 918),
+	521003.COLINT_02206 (degree 906), 521003.COLINT_02017 (degree 842) and
+	521003.COLINT_01976 (degree 774).
 	
 
 

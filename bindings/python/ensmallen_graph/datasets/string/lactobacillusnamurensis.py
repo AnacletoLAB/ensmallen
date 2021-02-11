@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:54.717597
 
-The undirected graph Lactobacillus namurensis has 2190 nodes and 137931 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05754
-and has 10 connected components, where the component with most nodes has 2167 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 125.96, and the node degree mode is 2. The top 5
-most central nodes are 1302286.BAOT01000004_gene522 (degree 867), 1302286.BAOT01000003_gene452
-(degree 789), 1302286.BAOT01000002_gene185 (degree 659), 1302286.BAOT01000057_gene1953
-(degree 624) and 1302286.BAOT01000002_gene154 (degree 606).
+The undirected graph Lactobacillus namurensis has 2190 nodes and 137931
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05754 and has 10 connected components, where the component
+with most nodes has 2167 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 125.96,
+and the node degree mode is 2. The top 5 most central nodes are 1302286.BAOT01000004_gene522
+(degree 867), 1302286.BAOT01000003_gene452 (degree 789), 1302286.BAOT01000002_gene185
+(degree 659), 1302286.BAOT01000057_gene1953 (degree 624) and 1302286.BAOT01000002_gene154
+(degree 606).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusNamurensis(
 	
 	Datetime: 2021-02-03 21:35:54.717597
 	
-	The undirected graph Lactobacillus namurensis has 2190 nodes and 137931 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05754
-	and has 10 connected components, where the component with most nodes has 2167 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 125.96, and the node degree mode is 2. The top 5
-	most central nodes are 1302286.BAOT01000004_gene522 (degree 867), 1302286.BAOT01000003_gene452
-	(degree 789), 1302286.BAOT01000002_gene185 (degree 659), 1302286.BAOT01000057_gene1953
-	(degree 624) and 1302286.BAOT01000002_gene154 (degree 606).
+	The undirected graph Lactobacillus namurensis has 2190 nodes and 137931
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05754 and has 10 connected components, where the component
+	with most nodes has 2167 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 125.96,
+	and the node degree mode is 2. The top 5 most central nodes are 1302286.BAOT01000004_gene522
+	(degree 867), 1302286.BAOT01000003_gene452 (degree 789), 1302286.BAOT01000002_gene185
+	(degree 659), 1302286.BAOT01000057_gene1953 (degree 624) and 1302286.BAOT01000002_gene154
+	(degree 606).
 	
 
 

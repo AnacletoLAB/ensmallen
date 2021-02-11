@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:48:47.355922
 
-The undirected graph hugebubbles-00000 has 3249556 nodes and 3396491 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and has 725344 connected components, where the component with most nodes
-has 3000 nodes and the component with the least nodes has 2 nodes. The graph median
-node degree is 2, the mean node degree is 2.09, and the node degree mode is 2. The
-top 5 most central nodes are 18316750 (degree 3), 18316403 (degree 3), 18313925 (degree
-3), 18313922 (degree 3) and 18316401 (degree 3).
+The undirected graph hugebubbles-00000 has 3249556 nodes and 3396491 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and has 725344 connected components, where the
+component with most nodes has 3000 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+is 2.09, and the node degree mode is 2. The top 5 most central nodes are
+18316750 (degree 3), 18316403 (degree 3), 18313925 (degree 3), 18313922
+(degree 3) and 18316401 (degree 3).
 
 
 References
@@ -103,13 +104,14 @@ def Hugebubbles00000(
 	
 	Datetime: 2021-02-06 20:48:47.355922
 	
-	The undirected graph hugebubbles-00000 has 3249556 nodes and 3396491 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and has 725344 connected components, where the component with most nodes
-	has 3000 nodes and the component with the least nodes has 2 nodes. The graph median
-	node degree is 2, the mean node degree is 2.09, and the node degree mode is 2. The
-	top 5 most central nodes are 18316750 (degree 3), 18316403 (degree 3), 18313925 (degree
-	3), 18313922 (degree 3) and 18316401 (degree 3).
+	The undirected graph hugebubbles-00000 has 3249556 nodes and 3396491 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and has 725344 connected components, where the
+	component with most nodes has 3000 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 2, the mean node degree
+	is 2.09, and the node degree mode is 2. The top 5 most central nodes are
+	18316750 (degree 3), 18316403 (degree 3), 18313925 (degree 3), 18313922
+	(degree 3) and 18316401 (degree 3).
 	
 
 

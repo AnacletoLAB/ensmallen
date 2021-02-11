@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:14.104419
 
-The undirected graph Propionibacterium thoenii has 2501 nodes and 197830 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06328
-and has 9 connected components, where the component with most nodes has 2483 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 158.20, and the node degree mode is 1. The top 5
-most central nodes are 1122998.AUHZ01000002_gene2328 (degree 1153), 1122998.AUHZ01000004_gene1048
-(degree 922), 1122998.AUHZ01000002_gene2203 (degree 914), 1122998.AUHZ01000010_gene1518
-(degree 889) and 1122998.AUHZ01000006_gene659 (degree 802).
+The undirected graph Propionibacterium thoenii has 2501 nodes and 197830
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06328 and has 9 connected components, where the component
+with most nodes has 2483 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 158.20,
+and the node degree mode is 1. The top 5 most central nodes are 1122998.AUHZ01000002_gene2328
+(degree 1153), 1122998.AUHZ01000004_gene1048 (degree 922), 1122998.AUHZ01000002_gene2203
+(degree 914), 1122998.AUHZ01000010_gene1518 (degree 889) and 1122998.AUHZ01000006_gene659
+(degree 802).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumThoenii(
 	
 	Datetime: 2021-02-02 22:46:14.104419
 	
-	The undirected graph Propionibacterium thoenii has 2501 nodes and 197830 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06328
-	and has 9 connected components, where the component with most nodes has 2483 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 158.20, and the node degree mode is 1. The top 5
-	most central nodes are 1122998.AUHZ01000002_gene2328 (degree 1153), 1122998.AUHZ01000004_gene1048
-	(degree 922), 1122998.AUHZ01000002_gene2203 (degree 914), 1122998.AUHZ01000010_gene1518
-	(degree 889) and 1122998.AUHZ01000006_gene659 (degree 802).
+	The undirected graph Propionibacterium thoenii has 2501 nodes and 197830
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06328 and has 9 connected components, where the component
+	with most nodes has 2483 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 158.20,
+	and the node degree mode is 1. The top 5 most central nodes are 1122998.AUHZ01000002_gene2328
+	(degree 1153), 1122998.AUHZ01000004_gene1048 (degree 922), 1122998.AUHZ01000002_gene2203
+	(degree 914), 1122998.AUHZ01000010_gene1518 (degree 889) and 1122998.AUHZ01000006_gene659
+	(degree 802).
 	
 
 

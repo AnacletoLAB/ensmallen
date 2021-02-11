@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:15.619681
 
-The undirected graph Streptacidiphilus oryzae has 6709 nodes and 928916 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04128
-and has 20 connected components, where the component with most nodes has 6656 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 276.92, and the node degree mode is 4. The top 5
-most central nodes are 1449353.JQMQ01000005_gene1917 (degree 2498), 1449353.JQMQ01000005_gene4899
-(degree 1883), 1449353.JQMQ01000005_gene4883 (degree 1834), 1449353.JQMQ01000005_gene1839
-(degree 1803) and 1449353.JQMQ01000004_gene6320 (degree 1783).
+The undirected graph Streptacidiphilus oryzae has 6709 nodes and 928916
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04128 and has 20 connected components, where the component
+with most nodes has 6656 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 276.92,
+and the node degree mode is 4. The top 5 most central nodes are 1449353.JQMQ01000005_gene1917
+(degree 2498), 1449353.JQMQ01000005_gene4899 (degree 1883), 1449353.JQMQ01000005_gene4883
+(degree 1834), 1449353.JQMQ01000005_gene1839 (degree 1803) and 1449353.JQMQ01000004_gene6320
+(degree 1783).
 
 
 References
@@ -107,14 +108,15 @@ def StreptacidiphilusOryzae(
 	
 	Datetime: 2021-02-03 23:05:15.619681
 	
-	The undirected graph Streptacidiphilus oryzae has 6709 nodes and 928916 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04128
-	and has 20 connected components, where the component with most nodes has 6656 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 276.92, and the node degree mode is 4. The top 5
-	most central nodes are 1449353.JQMQ01000005_gene1917 (degree 2498), 1449353.JQMQ01000005_gene4899
-	(degree 1883), 1449353.JQMQ01000005_gene4883 (degree 1834), 1449353.JQMQ01000005_gene1839
-	(degree 1803) and 1449353.JQMQ01000004_gene6320 (degree 1783).
+	The undirected graph Streptacidiphilus oryzae has 6709 nodes and 928916
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04128 and has 20 connected components, where the component
+	with most nodes has 6656 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 276.92,
+	and the node degree mode is 4. The top 5 most central nodes are 1449353.JQMQ01000005_gene1917
+	(degree 2498), 1449353.JQMQ01000005_gene4899 (degree 1883), 1449353.JQMQ01000005_gene4883
+	(degree 1834), 1449353.JQMQ01000005_gene1839 (degree 1803) and 1449353.JQMQ01000004_gene6320
+	(degree 1783).
 	
 
 

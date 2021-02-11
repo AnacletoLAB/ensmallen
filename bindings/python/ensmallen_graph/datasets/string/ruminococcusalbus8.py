@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:10:48.585760
 
-The undirected graph Ruminococcus albus 8 has 3774 nodes and 275026 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-has 21 connected components, where the component with most nodes has 3723 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 145.75, and the node degree mode is 4. The top 5 most central
-nodes are 246199.CUS_6380 (degree 1155), 246199.CUS_7408 (degree 1065), 246199.CUS_6517
-(degree 945), 246199.CUS_6755 (degree 943) and 246199.CUS_7773 (degree 803).
+The undirected graph Ruminococcus albus 8 has 3774 nodes and 275026 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03863 and has 21 connected components, where the component with most
+nodes has 3723 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 145.75, and
+the node degree mode is 4. The top 5 most central nodes are 246199.CUS_6380
+(degree 1155), 246199.CUS_7408 (degree 1065), 246199.CUS_6517 (degree 945),
+246199.CUS_6755 (degree 943) and 246199.CUS_7773 (degree 803).
 
 
 References
@@ -106,13 +107,14 @@ def RuminococcusAlbus8(
 	
 	Datetime: 2021-02-02 20:10:48.585760
 	
-	The undirected graph Ruminococcus albus 8 has 3774 nodes and 275026 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-	has 21 connected components, where the component with most nodes has 3723 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 145.75, and the node degree mode is 4. The top 5 most central
-	nodes are 246199.CUS_6380 (degree 1155), 246199.CUS_7408 (degree 1065), 246199.CUS_6517
-	(degree 945), 246199.CUS_6755 (degree 943) and 246199.CUS_7773 (degree 803).
+	The undirected graph Ruminococcus albus 8 has 3774 nodes and 275026 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03863 and has 21 connected components, where the component with most
+	nodes has 3723 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 145.75, and
+	the node degree mode is 4. The top 5 most central nodes are 246199.CUS_6380
+	(degree 1155), 246199.CUS_7408 (degree 1065), 246199.CUS_6517 (degree 945),
+	246199.CUS_6755 (degree 943) and 246199.CUS_7773 (degree 803).
 	
 
 

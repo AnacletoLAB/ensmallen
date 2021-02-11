@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:05:55.018005
 
-The undirected graph Pyrus x bretschneideri has 31015 nodes and 7811693 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01624
-and has 11 connected components, where the component with most nodes has 30993 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 244, the mean node degree is 503.74, and the node degree mode is 31. The top 5
-most central nodes are 225117.XP_009352518.1 (degree 10345), 225117.XP_009378647.1
-(degree 7663), 225117.XP_009350076.1 (degree 6247), 225117.XP_009365018.1 (degree
+The undirected graph Pyrus x bretschneideri has 31015 nodes and 7811693
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01624 and has 11 connected components, where the component
+with most nodes has 30993 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 244, the mean node degree
+is 503.74, and the node degree mode is 31. The top 5 most central nodes
+are 225117.XP_009352518.1 (degree 10345), 225117.XP_009378647.1 (degree
+7663), 225117.XP_009350076.1 (degree 6247), 225117.XP_009365018.1 (degree
 5942) and 225117.XP_009350216.1 (degree 5645).
 
 
@@ -107,13 +108,14 @@ def PyrusXBretschneideri(
 	
 	Datetime: 2021-02-02 20:05:55.018005
 	
-	The undirected graph Pyrus x bretschneideri has 31015 nodes and 7811693 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01624
-	and has 11 connected components, where the component with most nodes has 30993 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 244, the mean node degree is 503.74, and the node degree mode is 31. The top 5
-	most central nodes are 225117.XP_009352518.1 (degree 10345), 225117.XP_009378647.1
-	(degree 7663), 225117.XP_009350076.1 (degree 6247), 225117.XP_009365018.1 (degree
+	The undirected graph Pyrus x bretschneideri has 31015 nodes and 7811693
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01624 and has 11 connected components, where the component
+	with most nodes has 30993 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 244, the mean node degree
+	is 503.74, and the node degree mode is 31. The top 5 most central nodes
+	are 225117.XP_009352518.1 (degree 10345), 225117.XP_009378647.1 (degree
+	7663), 225117.XP_009350076.1 (degree 6247), 225117.XP_009365018.1 (degree
 	5942) and 225117.XP_009350216.1 (degree 5645).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:44.802828
 
-The undirected graph Babesia equi has 2790 nodes and 354548 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.09113 and has 30
-connected components, where the component with most nodes has 2731 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 254.16, and the node degree mode is 1. The top 5 most central
-nodes are 5872.XP_004829660.1 (degree 1321), 5872.XP_004829874.1 (degree 1206), 5872.XP_004831073.1
-(degree 1166), 5872.XP_004833299.1 (degree 1134) and 5872.XP_004828697.1 (degree
+The undirected graph Babesia equi has 2790 nodes and 354548 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.09113 and has 30 connected components, where the component with most
+nodes has 2731 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 254.16, and
+the node degree mode is 1. The top 5 most central nodes are 5872.XP_004829660.1
+(degree 1321), 5872.XP_004829874.1 (degree 1206), 5872.XP_004831073.1 (degree
+1166), 5872.XP_004833299.1 (degree 1134) and 5872.XP_004828697.1 (degree
 1128).
 
 
@@ -107,13 +108,14 @@ def BabesiaEqui(
 	
 	Datetime: 2021-02-02 17:16:44.802828
 	
-	The undirected graph Babesia equi has 2790 nodes and 354548 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.09113 and has 30
-	connected components, where the component with most nodes has 2731 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 254.16, and the node degree mode is 1. The top 5 most central
-	nodes are 5872.XP_004829660.1 (degree 1321), 5872.XP_004829874.1 (degree 1206), 5872.XP_004831073.1
-	(degree 1166), 5872.XP_004833299.1 (degree 1134) and 5872.XP_004828697.1 (degree
+	The undirected graph Babesia equi has 2790 nodes and 354548 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.09113 and has 30 connected components, where the component with most
+	nodes has 2731 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 254.16, and
+	the node degree mode is 1. The top 5 most central nodes are 5872.XP_004829660.1
+	(degree 1321), 5872.XP_004829874.1 (degree 1206), 5872.XP_004831073.1 (degree
+	1166), 5872.XP_004833299.1 (degree 1134) and 5872.XP_004828697.1 (degree
 	1128).
 	
 

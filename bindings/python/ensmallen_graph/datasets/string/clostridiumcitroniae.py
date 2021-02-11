@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:24.843664
 
-The undirected graph Clostridium citroniae has 6036 nodes and 776227 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04262 and
-has 30 connected components, where the component with most nodes has 5940 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 257.20, and the node degree mode is 4. The top 5 most central
-nodes are 742733.HMPREF9469_04388 (degree 2253), 742733.HMPREF9469_05722 (degree
-2190), 742733.HMPREF9469_04313 (degree 2087), 742733.HMPREF9469_05750 (degree 1937)
-and 742733.HMPREF9469_02574 (degree 1902).
+The undirected graph Clostridium citroniae has 6036 nodes and 776227 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04262 and has 30 connected components, where the component with most
+nodes has 5940 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 257.20, and
+the node degree mode is 4. The top 5 most central nodes are 742733.HMPREF9469_04388
+(degree 2253), 742733.HMPREF9469_05722 (degree 2190), 742733.HMPREF9469_04313
+(degree 2087), 742733.HMPREF9469_05750 (degree 1937) and 742733.HMPREF9469_02574
+(degree 1902).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumCitroniae(
 	
 	Datetime: 2021-02-02 21:37:24.843664
 	
-	The undirected graph Clostridium citroniae has 6036 nodes and 776227 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04262 and
-	has 30 connected components, where the component with most nodes has 5940 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 257.20, and the node degree mode is 4. The top 5 most central
-	nodes are 742733.HMPREF9469_04388 (degree 2253), 742733.HMPREF9469_05722 (degree
-	2190), 742733.HMPREF9469_04313 (degree 2087), 742733.HMPREF9469_05750 (degree 1937)
-	and 742733.HMPREF9469_02574 (degree 1902).
+	The undirected graph Clostridium citroniae has 6036 nodes and 776227 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04262 and has 30 connected components, where the component with most
+	nodes has 5940 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 257.20, and
+	the node degree mode is 4. The top 5 most central nodes are 742733.HMPREF9469_04388
+	(degree 2253), 742733.HMPREF9469_05722 (degree 2190), 742733.HMPREF9469_04313
+	(degree 2087), 742733.HMPREF9469_05750 (degree 1937) and 742733.HMPREF9469_02574
+	(degree 1902).
 	
 
 

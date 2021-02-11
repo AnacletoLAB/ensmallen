@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:53.239554
 
-The undirected graph Pseudoalteromonas sp. SM9913 has 3682 nodes and 421733 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06223
-and has 15 connected components, where the component with most nodes has 3649 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 229.08, and the node degree mode is 2. The top 5
-most central nodes are 234831.PSM_A0268 (degree 1515), 234831.PSM_A2411 (degree 1196),
-234831.PSM_A1673 (degree 1181), 234831.PSM_A2412 (degree 1093) and 234831.PSM_B0636
-(degree 1055).
+The undirected graph Pseudoalteromonas sp. SM9913 has 3682 nodes and 421733
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06223 and has 15 connected components, where the component
+with most nodes has 3649 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 229.08,
+and the node degree mode is 2. The top 5 most central nodes are 234831.PSM_A0268
+(degree 1515), 234831.PSM_A2411 (degree 1196), 234831.PSM_A1673 (degree
+1181), 234831.PSM_A2412 (degree 1093) and 234831.PSM_B0636 (degree 1055).
 
 
 References
@@ -107,14 +107,14 @@ def PseudoalteromonasSp.Sm9913(
 	
 	Datetime: 2021-02-02 20:07:53.239554
 	
-	The undirected graph Pseudoalteromonas sp. SM9913 has 3682 nodes and 421733 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06223
-	and has 15 connected components, where the component with most nodes has 3649 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 229.08, and the node degree mode is 2. The top 5
-	most central nodes are 234831.PSM_A0268 (degree 1515), 234831.PSM_A2411 (degree 1196),
-	234831.PSM_A1673 (degree 1181), 234831.PSM_A2412 (degree 1093) and 234831.PSM_B0636
-	(degree 1055).
+	The undirected graph Pseudoalteromonas sp. SM9913 has 3682 nodes and 421733
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06223 and has 15 connected components, where the component
+	with most nodes has 3649 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 229.08,
+	and the node degree mode is 2. The top 5 most central nodes are 234831.PSM_A0268
+	(degree 1515), 234831.PSM_A2411 (degree 1196), 234831.PSM_A1673 (degree
+	1181), 234831.PSM_A2412 (degree 1093) and 234831.PSM_B0636 (degree 1055).
 	
 
 

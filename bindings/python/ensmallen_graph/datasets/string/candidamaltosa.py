@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:11.479166
 
-The undirected graph Candida maltosa has 4825 nodes and 474830 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04080 and
-has 6 connected components, where the component with most nodes has 4812 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 196.82, and the node degree mode is 1. The top 5 most central
-nodes are 5479.M3JAP3 (degree 1366), 5479.M3JEA4 (degree 1254), 5479.M3J5Y7 (degree
-1203), 5479.M3K310 (degree 1191) and 5479.M3HKM4 (degree 1186).
+The undirected graph Candida maltosa has 4825 nodes and 474830 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04080 and has 6 connected components, where the component with most
+nodes has 4812 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 196.82, and
+the node degree mode is 1. The top 5 most central nodes are 5479.M3JAP3
+(degree 1366), 5479.M3JEA4 (degree 1254), 5479.M3J5Y7 (degree 1203), 5479.M3K310
+(degree 1191) and 5479.M3HKM4 (degree 1186).
 
 
 References
@@ -106,13 +107,14 @@ def CandidaMaltosa(
 	
 	Datetime: 2021-02-02 17:14:11.479166
 	
-	The undirected graph Candida maltosa has 4825 nodes and 474830 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04080 and
-	has 6 connected components, where the component with most nodes has 4812 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 196.82, and the node degree mode is 1. The top 5 most central
-	nodes are 5479.M3JAP3 (degree 1366), 5479.M3JEA4 (degree 1254), 5479.M3J5Y7 (degree
-	1203), 5479.M3K310 (degree 1191) and 5479.M3HKM4 (degree 1186).
+	The undirected graph Candida maltosa has 4825 nodes and 474830 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04080 and has 6 connected components, where the component with most
+	nodes has 4812 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 196.82, and
+	the node degree mode is 1. The top 5 most central nodes are 5479.M3JAP3
+	(degree 1366), 5479.M3JEA4 (degree 1254), 5479.M3J5Y7 (degree 1203), 5479.M3K310
+	(degree 1191) and 5479.M3HKM4 (degree 1186).
 	
 
 

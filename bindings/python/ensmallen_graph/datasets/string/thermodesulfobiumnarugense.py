@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:21.897027
 
-The undirected graph Thermodesulfobium narugense has 1801 nodes and 113405 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06996
-and is connected, as it has a single component. The graph median node degree is 101,
-the mean node degree is 125.94, and the node degree mode is 105. The top 5 most central
-nodes are 747365.Thena_1291 (degree 627), 747365.Thena_1490 (degree 608), 747365.Thena_0693
-(degree 587), 747365.Thena_0780 (degree 569) and 747365.Thena_0396 (degree 563).
+The undirected graph Thermodesulfobium narugense has 1801 nodes and 113405
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06996 and is connected, as it has a single component.
+The graph median node degree is 101, the mean node degree is 125.94, and
+the node degree mode is 105. The top 5 most central nodes are 747365.Thena_1291
+(degree 627), 747365.Thena_1490 (degree 608), 747365.Thena_0693 (degree
+587), 747365.Thena_0780 (degree 569) and 747365.Thena_0396 (degree 563).
 
 
 References
@@ -105,12 +106,13 @@ def ThermodesulfobiumNarugense(
 	
 	Datetime: 2021-02-02 21:39:21.897027
 	
-	The undirected graph Thermodesulfobium narugense has 1801 nodes and 113405 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06996
-	and is connected, as it has a single component. The graph median node degree is 101,
-	the mean node degree is 125.94, and the node degree mode is 105. The top 5 most central
-	nodes are 747365.Thena_1291 (degree 627), 747365.Thena_1490 (degree 608), 747365.Thena_0693
-	(degree 587), 747365.Thena_0780 (degree 569) and 747365.Thena_0396 (degree 563).
+	The undirected graph Thermodesulfobium narugense has 1801 nodes and 113405
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06996 and is connected, as it has a single component.
+	The graph median node degree is 101, the mean node degree is 125.94, and
+	the node degree mode is 105. The top 5 most central nodes are 747365.Thena_1291
+	(degree 627), 747365.Thena_1490 (degree 608), 747365.Thena_0693 (degree
+	587), 747365.Thena_0780 (degree 569) and 747365.Thena_0396 (degree 563).
 	
 
 

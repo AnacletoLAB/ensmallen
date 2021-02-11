@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:03.058299
 
-The undirected graph Bacteroides massiliensis B84634 has 3896 nodes and 323920 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04269
-and has 19 connected components, where the component with most nodes has 3849 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 166.28, and the node degree mode is 4. The top 5
-most central nodes are 1121098.HMPREF1534_03844 (degree 1263), 1121098.HMPREF1534_02392
-(degree 1193), 1121098.HMPREF1534_01553 (degree 1061), 1121098.HMPREF1534_00484 (degree
-1051) and 1121098.HMPREF1534_01543 (degree 1042).
+The undirected graph Bacteroides massiliensis B84634 has 3896 nodes and
+323920 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04269 and has 19 connected components, where the
+component with most nodes has 3849 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+is 166.28, and the node degree mode is 4. The top 5 most central nodes
+are 1121098.HMPREF1534_03844 (degree 1263), 1121098.HMPREF1534_02392 (degree
+1193), 1121098.HMPREF1534_01553 (degree 1061), 1121098.HMPREF1534_00484
+(degree 1051) and 1121098.HMPREF1534_01543 (degree 1042).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesMassiliensisB84634(
 	
 	Datetime: 2021-02-02 22:33:03.058299
 	
-	The undirected graph Bacteroides massiliensis B84634 has 3896 nodes and 323920 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04269
-	and has 19 connected components, where the component with most nodes has 3849 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 166.28, and the node degree mode is 4. The top 5
-	most central nodes are 1121098.HMPREF1534_03844 (degree 1263), 1121098.HMPREF1534_02392
-	(degree 1193), 1121098.HMPREF1534_01553 (degree 1061), 1121098.HMPREF1534_00484 (degree
-	1051) and 1121098.HMPREF1534_01543 (degree 1042).
+	The undirected graph Bacteroides massiliensis B84634 has 3896 nodes and
+	323920 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04269 and has 19 connected components, where the
+	component with most nodes has 3849 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+	is 166.28, and the node degree mode is 4. The top 5 most central nodes
+	are 1121098.HMPREF1534_03844 (degree 1263), 1121098.HMPREF1534_02392 (degree
+	1193), 1121098.HMPREF1534_01553 (degree 1061), 1121098.HMPREF1534_00484
+	(degree 1051) and 1121098.HMPREF1534_01543 (degree 1042).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:47.407879
 
-The undirected graph Acinetobacter towneri has 2579 nodes and 208187 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06263 and
-has 6 connected components, where the component with most nodes has 2568 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 161.45, and the node degree mode is 1. The top 5 most central
-nodes are 202956.BBNL01000006_gene1942 (degree 1001), 202956.BBNL01000017_gene383
-(degree 897), 202956.BBNL01000004_gene1484 (degree 848), 202956.BBNL01000001_gene1504
-(degree 831) and 202956.BBNL01000005_gene2047 (degree 826).
+The undirected graph Acinetobacter towneri has 2579 nodes and 208187 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06263 and has 6 connected components, where the component with most
+nodes has 2568 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 161.45, and
+the node degree mode is 1. The top 5 most central nodes are 202956.BBNL01000006_gene1942
+(degree 1001), 202956.BBNL01000017_gene383 (degree 897), 202956.BBNL01000004_gene1484
+(degree 848), 202956.BBNL01000001_gene1504 (degree 831) and 202956.BBNL01000005_gene2047
+(degree 826).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterTowneri(
 	
 	Datetime: 2021-02-02 19:59:47.407879
 	
-	The undirected graph Acinetobacter towneri has 2579 nodes and 208187 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06263 and
-	has 6 connected components, where the component with most nodes has 2568 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 161.45, and the node degree mode is 1. The top 5 most central
-	nodes are 202956.BBNL01000006_gene1942 (degree 1001), 202956.BBNL01000017_gene383
-	(degree 897), 202956.BBNL01000004_gene1484 (degree 848), 202956.BBNL01000001_gene1504
-	(degree 831) and 202956.BBNL01000005_gene2047 (degree 826).
+	The undirected graph Acinetobacter towneri has 2579 nodes and 208187 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06263 and has 6 connected components, where the component with most
+	nodes has 2568 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 161.45, and
+	the node degree mode is 1. The top 5 most central nodes are 202956.BBNL01000006_gene1942
+	(degree 1001), 202956.BBNL01000017_gene383 (degree 897), 202956.BBNL01000004_gene1484
+	(degree 848), 202956.BBNL01000001_gene1504 (degree 831) and 202956.BBNL01000005_gene2047
+	(degree 826).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:32:48.541447
 
-The undirected graph Bacillus simplex has 5263 nodes and 456844 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03299 and
-has 24 connected components, where the component with most nodes has 5212 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 173.61, and the node degree mode is 1. The top 5 most central
-nodes are 1403313.AXBR01000009_gene888 (degree 1689), 1403313.AXBR01000003_gene3987
-(degree 1475), 1403313.AXBR01000013_gene1467 (degree 1169), 1403313.AXBR01000029_gene5122
-(degree 1122) and 1403313.AXBR01000021_gene3124 (degree 1108).
+The undirected graph Bacillus simplex has 5263 nodes and 456844 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03299 and has 24 connected components, where the component with most
+nodes has 5212 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 173.61, and
+the node degree mode is 1. The top 5 most central nodes are 1403313.AXBR01000009_gene888
+(degree 1689), 1403313.AXBR01000003_gene3987 (degree 1475), 1403313.AXBR01000013_gene1467
+(degree 1169), 1403313.AXBR01000029_gene5122 (degree 1122) and 1403313.AXBR01000021_gene3124
+(degree 1108).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSimplex(
 	
 	Datetime: 2021-02-03 22:32:48.541447
 	
-	The undirected graph Bacillus simplex has 5263 nodes and 456844 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03299 and
-	has 24 connected components, where the component with most nodes has 5212 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 173.61, and the node degree mode is 1. The top 5 most central
-	nodes are 1403313.AXBR01000009_gene888 (degree 1689), 1403313.AXBR01000003_gene3987
-	(degree 1475), 1403313.AXBR01000013_gene1467 (degree 1169), 1403313.AXBR01000029_gene5122
-	(degree 1122) and 1403313.AXBR01000021_gene3124 (degree 1108).
+	The undirected graph Bacillus simplex has 5263 nodes and 456844 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03299 and has 24 connected components, where the component with most
+	nodes has 5212 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 173.61, and
+	the node degree mode is 1. The top 5 most central nodes are 1403313.AXBR01000009_gene888
+	(degree 1689), 1403313.AXBR01000003_gene3987 (degree 1475), 1403313.AXBR01000013_gene1467
+	(degree 1169), 1403313.AXBR01000029_gene5122 (degree 1122) and 1403313.AXBR01000021_gene3124
+	(degree 1108).
 	
 
 

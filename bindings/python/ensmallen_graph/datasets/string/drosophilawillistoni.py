@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:44.468082
 
-The undirected graph Drosophila willistoni has 12379 nodes and 1311137 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01711 and
-has 8 connected components, where the component with most nodes has 12365 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 211.83, and the node degree mode is 1. The top 5 most central
-nodes are 7260.FBpp0251604 (degree 2996), 7260.FBpp0240121 (degree 2653), 7260.FBpp0241213
-(degree 2299), 7260.FBpp0252678 (degree 2120) and 7260.FBpp0244005 (degree 2048).
+The undirected graph Drosophila willistoni has 12379 nodes and 1311137
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01711 and has 8 connected components, where the component
+with most nodes has 12365 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 127, the mean node degree
+is 211.83, and the node degree mode is 1. The top 5 most central nodes
+are 7260.FBpp0251604 (degree 2996), 7260.FBpp0240121 (degree 2653), 7260.FBpp0241213
+(degree 2299), 7260.FBpp0252678 (degree 2120) and 7260.FBpp0244005 (degree
+2048).
 
 
 References
@@ -106,13 +108,15 @@ def DrosophilaWillistoni(
 	
 	Datetime: 2021-02-02 17:22:44.468082
 	
-	The undirected graph Drosophila willistoni has 12379 nodes and 1311137 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01711 and
-	has 8 connected components, where the component with most nodes has 12365 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 211.83, and the node degree mode is 1. The top 5 most central
-	nodes are 7260.FBpp0251604 (degree 2996), 7260.FBpp0240121 (degree 2653), 7260.FBpp0241213
-	(degree 2299), 7260.FBpp0252678 (degree 2120) and 7260.FBpp0244005 (degree 2048).
+	The undirected graph Drosophila willistoni has 12379 nodes and 1311137
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01711 and has 8 connected components, where the component
+	with most nodes has 12365 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 211.83, and the node degree mode is 1. The top 5 most central nodes
+	are 7260.FBpp0251604 (degree 2996), 7260.FBpp0240121 (degree 2653), 7260.FBpp0241213
+	(degree 2299), 7260.FBpp0252678 (degree 2120) and 7260.FBpp0244005 (degree
+	2048).
 	
 
 

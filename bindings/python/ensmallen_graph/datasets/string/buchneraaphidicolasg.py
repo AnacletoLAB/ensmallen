@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:17.886365
 
-The undirected graph Buchnera aphidicola Sg has 545 nodes and 28225 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.19040
-and is connected, as it has a single component. The graph median node degree is 93,
-the mean node degree is 103.58, and the node degree mode is 49. The top 5 most central
-nodes are 198804.BUsg_122 (degree 313), 198804.BUsg_146 (degree 261), 198804.BUsg_019
-(degree 256), 198804.BUsg_188 (degree 255) and 198804.BUsg_035 (degree 250).
+The undirected graph Buchnera aphidicola Sg has 545 nodes and 28225 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.19040 and is connected, as it has a single component. The
+graph median node degree is 93, the mean node degree is 103.58, and the
+node degree mode is 49. The top 5 most central nodes are 198804.BUsg_122
+(degree 313), 198804.BUsg_146 (degree 261), 198804.BUsg_019 (degree 256),
+198804.BUsg_188 (degree 255) and 198804.BUsg_035 (degree 250).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaSg(
 	
 	Datetime: 2021-02-02 19:59:17.886365
 	
-	The undirected graph Buchnera aphidicola Sg has 545 nodes and 28225 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.19040
-	and is connected, as it has a single component. The graph median node degree is 93,
-	the mean node degree is 103.58, and the node degree mode is 49. The top 5 most central
-	nodes are 198804.BUsg_122 (degree 313), 198804.BUsg_146 (degree 261), 198804.BUsg_019
-	(degree 256), 198804.BUsg_188 (degree 255) and 198804.BUsg_035 (degree 250).
+	The undirected graph Buchnera aphidicola Sg has 545 nodes and 28225 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.19040 and is connected, as it has a single component. The
+	graph median node degree is 93, the mean node degree is 103.58, and the
+	node degree mode is 49. The top 5 most central nodes are 198804.BUsg_122
+	(degree 313), 198804.BUsg_146 (degree 261), 198804.BUsg_019 (degree 256),
+	198804.BUsg_188 (degree 255) and 198804.BUsg_035 (degree 250).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:48.225523
 
-The undirected graph Bacillus sp. KW12 has 3756 nodes and 367182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05207 and
-has 21 connected components, where the component with most nodes has 3713 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 195.52, and the node degree mode is 1. The top 5 most central
-nodes are 1499685.CCFJ01000046_gene3216 (degree 1211), 1499685.CCFJ01000036_gene1249
-(degree 1187), 1499685.CCFJ01000056_gene247 (degree 1082), 1499685.CCFJ01000011_gene2055
-(degree 1029) and 1499685.CCFJ01000017_gene1572 (degree 1024).
+The undirected graph Bacillus sp. KW12 has 3756 nodes and 367182 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05207 and has 21 connected components, where the component with most
+nodes has 3713 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 195.52, and
+the node degree mode is 1. The top 5 most central nodes are 1499685.CCFJ01000046_gene3216
+(degree 1211), 1499685.CCFJ01000036_gene1249 (degree 1187), 1499685.CCFJ01000056_gene247
+(degree 1082), 1499685.CCFJ01000011_gene2055 (degree 1029) and 1499685.CCFJ01000017_gene1572
+(degree 1024).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Kw12(
 	
 	Datetime: 2021-02-03 23:14:48.225523
 	
-	The undirected graph Bacillus sp. KW12 has 3756 nodes and 367182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05207 and
-	has 21 connected components, where the component with most nodes has 3713 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 195.52, and the node degree mode is 1. The top 5 most central
-	nodes are 1499685.CCFJ01000046_gene3216 (degree 1211), 1499685.CCFJ01000036_gene1249
-	(degree 1187), 1499685.CCFJ01000056_gene247 (degree 1082), 1499685.CCFJ01000011_gene2055
-	(degree 1029) and 1499685.CCFJ01000017_gene1572 (degree 1024).
+	The undirected graph Bacillus sp. KW12 has 3756 nodes and 367182 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05207 and has 21 connected components, where the component with most
+	nodes has 3713 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 195.52, and
+	the node degree mode is 1. The top 5 most central nodes are 1499685.CCFJ01000046_gene3216
+	(degree 1211), 1499685.CCFJ01000036_gene1249 (degree 1187), 1499685.CCFJ01000056_gene247
+	(degree 1082), 1499685.CCFJ01000011_gene2055 (degree 1029) and 1499685.CCFJ01000017_gene1572
+	(degree 1024).
 	
 
 

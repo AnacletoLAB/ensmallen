@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:56.545471
 
-The undirected graph Streptomyces albulus has 7953 nodes and 1069418 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03382 and
-has 51 connected components, where the component with most nodes has 7831 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 268.93, and the node degree mode is 2. The top 5 most central
-nodes are 68570.DC74_5832 (degree 4041), 68570.DC74_4351 (degree 2818), 68570.DC74_2471
-(degree 2422), 68570.DC74_4890 (degree 2388) and 68570.DC74_2507 (degree 1968).
+The undirected graph Streptomyces albulus has 7953 nodes and 1069418 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03382 and has 51 connected components, where the component with most
+nodes has 7831 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 268.93, and
+the node degree mode is 2. The top 5 most central nodes are 68570.DC74_5832
+(degree 4041), 68570.DC74_4351 (degree 2818), 68570.DC74_2471 (degree 2422),
+68570.DC74_4890 (degree 2388) and 68570.DC74_2507 (degree 1968).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesAlbulus(
 	
 	Datetime: 2021-02-02 18:28:56.545471
 	
-	The undirected graph Streptomyces albulus has 7953 nodes and 1069418 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03382 and
-	has 51 connected components, where the component with most nodes has 7831 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 268.93, and the node degree mode is 2. The top 5 most central
-	nodes are 68570.DC74_5832 (degree 4041), 68570.DC74_4351 (degree 2818), 68570.DC74_2471
-	(degree 2422), 68570.DC74_4890 (degree 2388) and 68570.DC74_2507 (degree 1968).
+	The undirected graph Streptomyces albulus has 7953 nodes and 1069418 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03382 and has 51 connected components, where the component with most
+	nodes has 7831 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 268.93, and
+	the node degree mode is 2. The top 5 most central nodes are 68570.DC74_5832
+	(degree 4041), 68570.DC74_4351 (degree 2818), 68570.DC74_2471 (degree 2422),
+	68570.DC74_4890 (degree 2388) and 68570.DC74_2507 (degree 1968).
 	
 
 

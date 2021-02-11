@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:37.616668
 
-The undirected graph Zunongwangia profunda has 4590 nodes and 514929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04889 and
-has 18 connected components, where the component with most nodes has 4546 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 224.37, and the node degree mode is 4. The top 5 most central
-nodes are 655815.ZPR_3198 (degree 1635), 655815.ZPR_0517 (degree 1514), 655815.ZPR_0902
-(degree 1341), 655815.ZPR_2293 (degree 1318) and 655815.ZPR_3751 (degree 1316).
+The undirected graph Zunongwangia profunda has 4590 nodes and 514929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04889 and has 18 connected components, where the component with most
+nodes has 4546 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 224.37, and
+the node degree mode is 4. The top 5 most central nodes are 655815.ZPR_3198
+(degree 1635), 655815.ZPR_0517 (degree 1514), 655815.ZPR_0902 (degree 1341),
+655815.ZPR_2293 (degree 1318) and 655815.ZPR_3751 (degree 1316).
 
 
 References
@@ -106,13 +107,14 @@ def ZunongwangiaProfunda(
 	
 	Datetime: 2021-02-02 21:26:37.616668
 	
-	The undirected graph Zunongwangia profunda has 4590 nodes and 514929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04889 and
-	has 18 connected components, where the component with most nodes has 4546 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 224.37, and the node degree mode is 4. The top 5 most central
-	nodes are 655815.ZPR_3198 (degree 1635), 655815.ZPR_0517 (degree 1514), 655815.ZPR_0902
-	(degree 1341), 655815.ZPR_2293 (degree 1318) and 655815.ZPR_3751 (degree 1316).
+	The undirected graph Zunongwangia profunda has 4590 nodes and 514929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04889 and has 18 connected components, where the component with most
+	nodes has 4546 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 224.37, and
+	the node degree mode is 4. The top 5 most central nodes are 655815.ZPR_3198
+	(degree 1635), 655815.ZPR_0517 (degree 1514), 655815.ZPR_0902 (degree 1341),
+	655815.ZPR_2293 (degree 1318) and 655815.ZPR_3751 (degree 1316).
 	
 
 

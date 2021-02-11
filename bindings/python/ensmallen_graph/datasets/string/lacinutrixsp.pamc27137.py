@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:06.983255
 
-The undirected graph Lacinutrix sp. PAMC27137 has 3530 nodes and 293915 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04719
-and has 16 connected components, where the component with most nodes has 3489 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 166.52, and the node degree mode is 3. The top 5
-most central nodes are 1469557.JSWF01000035_gene1072 (degree 1127), 1469557.JSWF01000031_gene2030
-(degree 1106), 1469557.JSWF01000014_gene2680 (degree 1052), 1469557.JSWF01000014_gene2656
-(degree 942) and 1469557.JSWF01000014_gene2521 (degree 942).
+The undirected graph Lacinutrix sp. PAMC27137 has 3530 nodes and 293915
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04719 and has 16 connected components, where the component
+with most nodes has 3489 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 166.52,
+and the node degree mode is 3. The top 5 most central nodes are 1469557.JSWF01000035_gene1072
+(degree 1127), 1469557.JSWF01000031_gene2030 (degree 1106), 1469557.JSWF01000014_gene2680
+(degree 1052), 1469557.JSWF01000014_gene2656 (degree 942) and 1469557.JSWF01000014_gene2521
+(degree 942).
 
 
 References
@@ -107,14 +108,15 @@ def LacinutrixSp.Pamc27137(
 	
 	Datetime: 2021-02-03 23:12:06.983255
 	
-	The undirected graph Lacinutrix sp. PAMC27137 has 3530 nodes and 293915 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04719
-	and has 16 connected components, where the component with most nodes has 3489 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 166.52, and the node degree mode is 3. The top 5
-	most central nodes are 1469557.JSWF01000035_gene1072 (degree 1127), 1469557.JSWF01000031_gene2030
-	(degree 1106), 1469557.JSWF01000014_gene2680 (degree 1052), 1469557.JSWF01000014_gene2656
-	(degree 942) and 1469557.JSWF01000014_gene2521 (degree 942).
+	The undirected graph Lacinutrix sp. PAMC27137 has 3530 nodes and 293915
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04719 and has 16 connected components, where the component
+	with most nodes has 3489 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 166.52,
+	and the node degree mode is 3. The top 5 most central nodes are 1469557.JSWF01000035_gene1072
+	(degree 1127), 1469557.JSWF01000031_gene2030 (degree 1106), 1469557.JSWF01000014_gene2680
+	(degree 1052), 1469557.JSWF01000014_gene2656 (degree 942) and 1469557.JSWF01000014_gene2521
+	(degree 942).
 	
 
 

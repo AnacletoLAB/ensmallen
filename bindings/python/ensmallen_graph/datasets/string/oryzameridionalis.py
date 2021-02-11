@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:11:32.994594
 
-The undirected graph Oryza meridionalis has 19772 nodes and 3550754 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01817 and
-has 8 connected components, where the component with most nodes has 19739 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 359.17, and the node degree mode is 1. The top 5 most central
-nodes are 40149.OMERI02G13040.1 (degree 6363), 40149.OMERI05G14800.1 (degree 4799),
-40149.OMERI12G14860.2 (degree 4779), 40149.OMERI02G12030.1 (degree 4768) and 40149.OMERI12G14820.1
+The undirected graph Oryza meridionalis has 19772 nodes and 3550754 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01817 and has 8 connected components, where the component with most
+nodes has 19739 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 359.17, and
+the node degree mode is 1. The top 5 most central nodes are 40149.OMERI02G13040.1
+(degree 6363), 40149.OMERI05G14800.1 (degree 4799), 40149.OMERI12G14860.2
+(degree 4779), 40149.OMERI02G12030.1 (degree 4768) and 40149.OMERI12G14820.1
 (degree 4709).
 
 
@@ -107,13 +108,14 @@ def OryzaMeridionalis(
 	
 	Datetime: 2021-02-02 18:11:32.994594
 	
-	The undirected graph Oryza meridionalis has 19772 nodes and 3550754 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01817 and
-	has 8 connected components, where the component with most nodes has 19739 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 359.17, and the node degree mode is 1. The top 5 most central
-	nodes are 40149.OMERI02G13040.1 (degree 6363), 40149.OMERI05G14800.1 (degree 4799),
-	40149.OMERI12G14860.2 (degree 4779), 40149.OMERI02G12030.1 (degree 4768) and 40149.OMERI12G14820.1
+	The undirected graph Oryza meridionalis has 19772 nodes and 3550754 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01817 and has 8 connected components, where the component with most
+	nodes has 19739 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 359.17, and
+	the node degree mode is 1. The top 5 most central nodes are 40149.OMERI02G13040.1
+	(degree 6363), 40149.OMERI05G14800.1 (degree 4799), 40149.OMERI12G14860.2
+	(degree 4779), 40149.OMERI02G12030.1 (degree 4768) and 40149.OMERI12G14820.1
 	(degree 4709).
 	
 

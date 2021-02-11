@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 08:12:13.044596
 
-The undirected graph web-uk-2002-all has 18484117 nodes, of which 931 are singletons
-(all have self-loops), and 267657357 unweighted edges, of which 5870099 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 1990 connected
-components, where the component with most nodes has 18459128 nodes and the component
-with the least nodes has a single node. The graph median node degree is 11, the mean
-node degree is 28.64, and the node degree mode is 1. The top 5 most central nodes
-are 17159800 (degree 194955), 13118356 (degree 102239), 15237350 (degree 83861),
+The undirected graph web-uk-2002-all has 18484117 nodes, of which 931 are
+singletons (all have self-loops), and 267657357 unweighted edges, of which
+5870099 are self-loops. The graph is extremely sparse as it has a density
+of 0.00000 and has 1990 connected components, where the component with
+most nodes has 18459128 nodes and the component with the least nodes has
+a single node. The graph median node degree is 11, the mean node degree
+is 28.64, and the node degree mode is 1. The top 5 most central nodes are
+17159800 (degree 194955), 13118356 (degree 102239), 15237350 (degree 83861),
 8504955 (degree 73231) and 6748292 (degree 41933).
 
 
@@ -121,13 +122,14 @@ def WebUk2002All(
 	
 	Datetime: 2021-02-05 08:12:13.044596
 	
-	The undirected graph web-uk-2002-all has 18484117 nodes, of which 931 are singletons
-	(all have self-loops), and 267657357 unweighted edges, of which 5870099 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 1990 connected
-	components, where the component with most nodes has 18459128 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 11, the mean
-	node degree is 28.64, and the node degree mode is 1. The top 5 most central nodes
-	are 17159800 (degree 194955), 13118356 (degree 102239), 15237350 (degree 83861),
+	The undirected graph web-uk-2002-all has 18484117 nodes, of which 931 are
+	singletons (all have self-loops), and 267657357 unweighted edges, of which
+	5870099 are self-loops. The graph is extremely sparse as it has a density
+	of 0.00000 and has 1990 connected components, where the component with
+	most nodes has 18459128 nodes and the component with the least nodes has
+	a single node. The graph median node degree is 11, the mean node degree
+	is 28.64, and the node degree mode is 1. The top 5 most central nodes are
+	17159800 (degree 194955), 13118356 (degree 102239), 15237350 (degree 83861),
 	8504955 (degree 73231) and 6748292 (degree 41933).
 	
 

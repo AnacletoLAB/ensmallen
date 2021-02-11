@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:52.390616
 
-The undirected graph Dickeya zeae has 4137 nodes and 412444 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04821 and has 11
-connected components, where the component with most nodes has 4115 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 199.39, and the node degree mode is 3. The top 5 most central
-nodes are 561229.Dd1591_4164 (degree 1296), 561229.Dd1591_3355 (degree 1086), 561229.Dd1591_3791
-(degree 1042), 561229.Dd1591_1128 (degree 1027) and 561229.Dd1591_3789 (degree 996).
+The undirected graph Dickeya zeae has 4137 nodes and 412444 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04821 and has 11 connected components, where the component with most
+nodes has 4115 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 199.39, and
+the node degree mode is 3. The top 5 most central nodes are 561229.Dd1591_4164
+(degree 1296), 561229.Dd1591_3355 (degree 1086), 561229.Dd1591_3791 (degree
+1042), 561229.Dd1591_1128 (degree 1027) and 561229.Dd1591_3789 (degree
+996).
 
 
 References
@@ -106,13 +108,15 @@ def DickeyaZeae(
 	
 	Datetime: 2021-02-02 21:11:52.390616
 	
-	The undirected graph Dickeya zeae has 4137 nodes and 412444 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04821 and has 11
-	connected components, where the component with most nodes has 4115 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 199.39, and the node degree mode is 3. The top 5 most central
-	nodes are 561229.Dd1591_4164 (degree 1296), 561229.Dd1591_3355 (degree 1086), 561229.Dd1591_3791
-	(degree 1042), 561229.Dd1591_1128 (degree 1027) and 561229.Dd1591_3789 (degree 996).
+	The undirected graph Dickeya zeae has 4137 nodes and 412444 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04821 and has 11 connected components, where the component with most
+	nodes has 4115 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 199.39, and
+	the node degree mode is 3. The top 5 most central nodes are 561229.Dd1591_4164
+	(degree 1296), 561229.Dd1591_3355 (degree 1086), 561229.Dd1591_3791 (degree
+	1042), 561229.Dd1591_1128 (degree 1027) and 561229.Dd1591_3789 (degree
+	996).
 	
 
 

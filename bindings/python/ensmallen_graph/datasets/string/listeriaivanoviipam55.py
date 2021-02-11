@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:35.909960
 
-The undirected graph Listeria ivanovii PAM55 has 2624 nodes and 204424 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05940 and
-has 11 connected components, where the component with most nodes has 2599 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 155.81, and the node degree mode is 1. The top 5 most central
-nodes are 881621.LIV_1521 (degree 1079), 881621.LIV_0767 (degree 1065), 881621.LIV_1037
-(degree 881), 881621.LIV_1430 (degree 808) and 881621.LIV_1412 (degree 805).
+The undirected graph Listeria ivanovii PAM55 has 2624 nodes and 204424
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05940 and has 11 connected components, where the component
+with most nodes has 2599 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 155.81,
+and the node degree mode is 1. The top 5 most central nodes are 881621.LIV_1521
+(degree 1079), 881621.LIV_0767 (degree 1065), 881621.LIV_1037 (degree 881),
+881621.LIV_1430 (degree 808) and 881621.LIV_1412 (degree 805).
 
 
 References
@@ -106,13 +107,14 @@ def ListeriaIvanoviiPam55(
 	
 	Datetime: 2021-02-02 21:50:35.909960
 	
-	The undirected graph Listeria ivanovii PAM55 has 2624 nodes and 204424 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05940 and
-	has 11 connected components, where the component with most nodes has 2599 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 155.81, and the node degree mode is 1. The top 5 most central
-	nodes are 881621.LIV_1521 (degree 1079), 881621.LIV_0767 (degree 1065), 881621.LIV_1037
-	(degree 881), 881621.LIV_1430 (degree 808) and 881621.LIV_1412 (degree 805).
+	The undirected graph Listeria ivanovii PAM55 has 2624 nodes and 204424
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05940 and has 11 connected components, where the component
+	with most nodes has 2599 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 155.81,
+	and the node degree mode is 1. The top 5 most central nodes are 881621.LIV_1521
+	(degree 1079), 881621.LIV_0767 (degree 1065), 881621.LIV_1037 (degree 881),
+	881621.LIV_1430 (degree 808) and 881621.LIV_1412 (degree 805).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:22.206985
 
-The undirected graph Methylobacillus flagellatus has 2738 nodes and 223367 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05961
-and has 2 connected components, where the component with most nodes has 2735 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 143, the mean node degree is 163.16, and the node degree mode is 12. The top 5
-most central nodes are 265072.Mfla_0358 (degree 1148), 265072.Mfla_2587 (degree 950),
-265072.Mfla_2656 (degree 851), 265072.Mfla_1139 (degree 774) and 265072.Mfla_1141
-(degree 762).
+The undirected graph Methylobacillus flagellatus has 2738 nodes and 223367
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05961 and has 2 connected components, where the component
+with most nodes has 2735 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 143, the mean node degree is 163.16,
+and the node degree mode is 12. The top 5 most central nodes are 265072.Mfla_0358
+(degree 1148), 265072.Mfla_2587 (degree 950), 265072.Mfla_2656 (degree
+851), 265072.Mfla_1139 (degree 774) and 265072.Mfla_1141 (degree 762).
 
 
 References
@@ -107,14 +107,14 @@ def MethylobacillusFlagellatus(
 	
 	Datetime: 2021-02-02 20:14:22.206985
 	
-	The undirected graph Methylobacillus flagellatus has 2738 nodes and 223367 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05961
-	and has 2 connected components, where the component with most nodes has 2735 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 143, the mean node degree is 163.16, and the node degree mode is 12. The top 5
-	most central nodes are 265072.Mfla_0358 (degree 1148), 265072.Mfla_2587 (degree 950),
-	265072.Mfla_2656 (degree 851), 265072.Mfla_1139 (degree 774) and 265072.Mfla_1141
-	(degree 762).
+	The undirected graph Methylobacillus flagellatus has 2738 nodes and 223367
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05961 and has 2 connected components, where the component
+	with most nodes has 2735 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 143, the mean node degree is 163.16,
+	and the node degree mode is 12. The top 5 most central nodes are 265072.Mfla_0358
+	(degree 1148), 265072.Mfla_2587 (degree 950), 265072.Mfla_2656 (degree
+	851), 265072.Mfla_1139 (degree 774) and 265072.Mfla_1141 (degree 762).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:28.672662
 
-The undirected graph Desulfovibrio acrylicus has 2878 nodes and 238964 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05772 and
-has 12 connected components, where the component with most nodes has 2853 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 166.06, and the node degree mode is 1. The top 5 most central
-nodes are 1121434.AULY01000013_gene82 (degree 1261), 1121434.AULY01000006_gene356
-(degree 1090), 1121434.AULY01000009_gene1884 (degree 1038), 1121434.AULY01000006_gene383
-(degree 976) and 1121434.AULY01000013_gene50 (degree 963).
+The undirected graph Desulfovibrio acrylicus has 2878 nodes and 238964
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05772 and has 12 connected components, where the component
+with most nodes has 2853 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 166.06,
+and the node degree mode is 1. The top 5 most central nodes are 1121434.AULY01000013_gene82
+(degree 1261), 1121434.AULY01000006_gene356 (degree 1090), 1121434.AULY01000009_gene1884
+(degree 1038), 1121434.AULY01000006_gene383 (degree 976) and 1121434.AULY01000013_gene50
+(degree 963).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioAcrylicus(
 	
 	Datetime: 2021-02-02 22:36:28.672662
 	
-	The undirected graph Desulfovibrio acrylicus has 2878 nodes and 238964 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05772 and
-	has 12 connected components, where the component with most nodes has 2853 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 166.06, and the node degree mode is 1. The top 5 most central
-	nodes are 1121434.AULY01000013_gene82 (degree 1261), 1121434.AULY01000006_gene356
-	(degree 1090), 1121434.AULY01000009_gene1884 (degree 1038), 1121434.AULY01000006_gene383
-	(degree 976) and 1121434.AULY01000013_gene50 (degree 963).
+	The undirected graph Desulfovibrio acrylicus has 2878 nodes and 238964
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05772 and has 12 connected components, where the component
+	with most nodes has 2853 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 166.06,
+	and the node degree mode is 1. The top 5 most central nodes are 1121434.AULY01000013_gene82
+	(degree 1261), 1121434.AULY01000006_gene356 (degree 1090), 1121434.AULY01000009_gene1884
+	(degree 1038), 1121434.AULY01000006_gene383 (degree 976) and 1121434.AULY01000013_gene50
+	(degree 963).
 	
 
 

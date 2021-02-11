@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:01.477777
 
-The undirected graph Eubacterium sp. 142 has 3748 nodes and 455974 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06494 and
-has 19 connected components, where the component with most nodes has 3679 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 243.32, and the node degree mode is 4. The top 5 most central
-nodes are 1235790.C805_00672 (degree 1297), 1235790.C805_02442 (degree 1223), 1235790.C805_00173
-(degree 1168), 1235790.C805_02375 (degree 1159) and 1235790.C805_02509 (degree 1152).
+The undirected graph Eubacterium sp. 142 has 3748 nodes and 455974 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06494 and has 19 connected components, where the component with most
+nodes has 3679 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 243.32, and
+the node degree mode is 4. The top 5 most central nodes are 1235790.C805_00672
+(degree 1297), 1235790.C805_02442 (degree 1223), 1235790.C805_00173 (degree
+1168), 1235790.C805_02375 (degree 1159) and 1235790.C805_02509 (degree
+1152).
 
 
 References
@@ -106,13 +108,15 @@ def EubacteriumSp.142(
 	
 	Datetime: 2021-02-02 23:30:01.477777
 	
-	The undirected graph Eubacterium sp. 142 has 3748 nodes and 455974 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06494 and
-	has 19 connected components, where the component with most nodes has 3679 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 243.32, and the node degree mode is 4. The top 5 most central
-	nodes are 1235790.C805_00672 (degree 1297), 1235790.C805_02442 (degree 1223), 1235790.C805_00173
-	(degree 1168), 1235790.C805_02375 (degree 1159) and 1235790.C805_02509 (degree 1152).
+	The undirected graph Eubacterium sp. 142 has 3748 nodes and 455974 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06494 and has 19 connected components, where the component with most
+	nodes has 3679 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 243.32, and
+	the node degree mode is 4. The top 5 most central nodes are 1235790.C805_00672
+	(degree 1297), 1235790.C805_02442 (degree 1223), 1235790.C805_00173 (degree
+	1168), 1235790.C805_02375 (degree 1159) and 1235790.C805_02509 (degree
+	1152).
 	
 
 

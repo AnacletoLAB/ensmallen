@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:43:33.407405
 
-The undirected graph Bacillus firmus has 4875 nodes and 559807 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04712 and
-has 22 connected components, where the component with most nodes has 4827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 229.66, and the node degree mode is 3. The top 5 most central
-nodes are 1307436.PBF_13294 (degree 1698), 1307436.PBF_24186 (degree 1542), 1307436.PBF_07211
-(degree 1440), 1307436.PBF_16839 (degree 1363) and 1307436.PBF_23148 (degree 1353).
+The undirected graph Bacillus firmus has 4875 nodes and 559807 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04712 and has 22 connected components, where the component with most
+nodes has 4827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 229.66, and
+the node degree mode is 3. The top 5 most central nodes are 1307436.PBF_13294
+(degree 1698), 1307436.PBF_24186 (degree 1542), 1307436.PBF_07211 (degree
+1440), 1307436.PBF_16839 (degree 1363) and 1307436.PBF_23148 (degree 1353).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusFirmus(
 	
 	Datetime: 2021-02-03 21:43:33.407405
 	
-	The undirected graph Bacillus firmus has 4875 nodes and 559807 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04712 and
-	has 22 connected components, where the component with most nodes has 4827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 229.66, and the node degree mode is 3. The top 5 most central
-	nodes are 1307436.PBF_13294 (degree 1698), 1307436.PBF_24186 (degree 1542), 1307436.PBF_07211
-	(degree 1440), 1307436.PBF_16839 (degree 1363) and 1307436.PBF_23148 (degree 1353).
+	The undirected graph Bacillus firmus has 4875 nodes and 559807 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04712 and has 22 connected components, where the component with most
+	nodes has 4827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 229.66, and
+	the node degree mode is 3. The top 5 most central nodes are 1307436.PBF_13294
+	(degree 1698), 1307436.PBF_24186 (degree 1542), 1307436.PBF_07211 (degree
+	1440), 1307436.PBF_16839 (degree 1363) and 1307436.PBF_23148 (degree 1353).
 	
 
 

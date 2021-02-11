@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:25.063416
 
-The undirected graph tech-as-caida2007 has 26475 nodes and 53381 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00015
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 4.03, and the node degree mode is 2. The top 5 most central
-nodes are 195 (degree 2628), 2137 (degree 2052), 96 (degree 1699), 276 (degree 1677)
-and 882 (degree 1631).
+The undirected graph tech-as-caida2007 has 26475 nodes and 53381 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00015 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 4.03, and the node
+degree mode is 2. The top 5 most central nodes are 195 (degree 2628), 2137
+(degree 2052), 96 (degree 1699), 276 (degree 1677) and 882 (degree 1631).
 
 
 References
@@ -115,12 +115,12 @@ def TechAsCaida2007(
 	
 	Datetime: 2021-02-06 10:55:25.063416
 	
-	The undirected graph tech-as-caida2007 has 26475 nodes and 53381 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00015
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 4.03, and the node degree mode is 2. The top 5 most central
-	nodes are 195 (degree 2628), 2137 (degree 2052), 96 (degree 1699), 276 (degree 1677)
-	and 882 (degree 1631).
+	The undirected graph tech-as-caida2007 has 26475 nodes and 53381 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00015 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 4.03, and the node
+	degree mode is 2. The top 5 most central nodes are 195 (degree 2628), 2137
+	(degree 2052), 96 (degree 1699), 276 (degree 1677) and 882 (degree 1631).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:58:46.086095
 
-The undirected graph Elizabethkingia anophelis has 4044 nodes and 291590 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03567
-and has 27 connected components, where the component with most nodes has 3984 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 144.21, and the node degree mode is 6. The top 5
-most central nodes are 1338011.BD94_1400 (degree 1298), 1338011.BD94_0783 (degree
-1013), 1338011.BD94_0771 (degree 886), 1338011.BD94_2431 (degree 867) and 1338011.BD94_1022
-(degree 855).
+The undirected graph Elizabethkingia anophelis has 4044 nodes and 291590
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03567 and has 27 connected components, where the component
+with most nodes has 3984 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 144.21,
+and the node degree mode is 6. The top 5 most central nodes are 1338011.BD94_1400
+(degree 1298), 1338011.BD94_0783 (degree 1013), 1338011.BD94_0771 (degree
+886), 1338011.BD94_2431 (degree 867) and 1338011.BD94_1022 (degree 855).
 
 
 References
@@ -107,14 +107,14 @@ def ElizabethkingiaAnophelis(
 	
 	Datetime: 2021-02-03 21:58:46.086095
 	
-	The undirected graph Elizabethkingia anophelis has 4044 nodes and 291590 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03567
-	and has 27 connected components, where the component with most nodes has 3984 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 144.21, and the node degree mode is 6. The top 5
-	most central nodes are 1338011.BD94_1400 (degree 1298), 1338011.BD94_0783 (degree
-	1013), 1338011.BD94_0771 (degree 886), 1338011.BD94_2431 (degree 867) and 1338011.BD94_1022
-	(degree 855).
+	The undirected graph Elizabethkingia anophelis has 4044 nodes and 291590
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03567 and has 27 connected components, where the component
+	with most nodes has 3984 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 144.21,
+	and the node degree mode is 6. The top 5 most central nodes are 1338011.BD94_1400
+	(degree 1298), 1338011.BD94_0783 (degree 1013), 1338011.BD94_0771 (degree
+	886), 1338011.BD94_2431 (degree 867) and 1338011.BD94_1022 (degree 855).
 	
 
 

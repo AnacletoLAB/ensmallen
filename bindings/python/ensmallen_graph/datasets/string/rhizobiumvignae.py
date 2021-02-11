@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:39.788331
 
-The undirected graph Rhizobium vignae has 5711 nodes and 842259 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05166 and
-has 16 connected components, where the component with most nodes has 5672 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 239,
-the mean node degree is 294.96, and the node degree mode is 1. The top 5 most central
-nodes are 690585.JNNU01000013_gene3511 (degree 2368), 690585.JNNU01000004_gene4341
-(degree 2112), 690585.JNNU01000002_gene5038 (degree 1839), 690585.JNNU01000002_gene4749
-(degree 1775) and 690585.JNNU01000014_gene119 (degree 1768).
+The undirected graph Rhizobium vignae has 5711 nodes and 842259 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05166 and has 16 connected components, where the component with most
+nodes has 5672 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 239, the mean node degree is 294.96, and
+the node degree mode is 1. The top 5 most central nodes are 690585.JNNU01000013_gene3511
+(degree 2368), 690585.JNNU01000004_gene4341 (degree 2112), 690585.JNNU01000002_gene5038
+(degree 1839), 690585.JNNU01000002_gene4749 (degree 1775) and 690585.JNNU01000014_gene119
+(degree 1768).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumVignae(
 	
 	Datetime: 2021-02-02 21:31:39.788331
 	
-	The undirected graph Rhizobium vignae has 5711 nodes and 842259 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05166 and
-	has 16 connected components, where the component with most nodes has 5672 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 239,
-	the mean node degree is 294.96, and the node degree mode is 1. The top 5 most central
-	nodes are 690585.JNNU01000013_gene3511 (degree 2368), 690585.JNNU01000004_gene4341
-	(degree 2112), 690585.JNNU01000002_gene5038 (degree 1839), 690585.JNNU01000002_gene4749
-	(degree 1775) and 690585.JNNU01000014_gene119 (degree 1768).
+	The undirected graph Rhizobium vignae has 5711 nodes and 842259 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05166 and has 16 connected components, where the component with most
+	nodes has 5672 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 239, the mean node degree is 294.96, and
+	the node degree mode is 1. The top 5 most central nodes are 690585.JNNU01000013_gene3511
+	(degree 2368), 690585.JNNU01000004_gene4341 (degree 2112), 690585.JNNU01000002_gene5038
+	(degree 1839), 690585.JNNU01000002_gene4749 (degree 1775) and 690585.JNNU01000014_gene119
+	(degree 1768).
 	
 
 

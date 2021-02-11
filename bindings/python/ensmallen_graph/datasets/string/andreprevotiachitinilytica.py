@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:38.322085
 
-The undirected graph Andreprevotia chitinilytica has 4174 nodes and 593457 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06814
-and has 16 connected components, where the component with most nodes has 4138 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 244, the mean node degree is 284.36, and the node degree mode is 1. The top 5
-most central nodes are 1120999.JONM01000012_gene2242 (degree 1932), 1120999.JONM01000027_gene471
-(degree 1699), 1120999.JONM01000001_gene1306 (degree 1511), 1120999.JONM01000024_gene3059
-(degree 1396) and 1120999.JONM01000046_gene2988 (degree 1387).
+The undirected graph Andreprevotia chitinilytica has 4174 nodes and 593457
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06814 and has 16 connected components, where the component
+with most nodes has 4138 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 244, the mean node degree is 284.36,
+and the node degree mode is 1. The top 5 most central nodes are 1120999.JONM01000012_gene2242
+(degree 1932), 1120999.JONM01000027_gene471 (degree 1699), 1120999.JONM01000001_gene1306
+(degree 1511), 1120999.JONM01000024_gene3059 (degree 1396) and 1120999.JONM01000046_gene2988
+(degree 1387).
 
 
 References
@@ -107,14 +108,15 @@ def AndreprevotiaChitinilytica(
 	
 	Datetime: 2021-02-02 22:31:38.322085
 	
-	The undirected graph Andreprevotia chitinilytica has 4174 nodes and 593457 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06814
-	and has 16 connected components, where the component with most nodes has 4138 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 244, the mean node degree is 284.36, and the node degree mode is 1. The top 5
-	most central nodes are 1120999.JONM01000012_gene2242 (degree 1932), 1120999.JONM01000027_gene471
-	(degree 1699), 1120999.JONM01000001_gene1306 (degree 1511), 1120999.JONM01000024_gene3059
-	(degree 1396) and 1120999.JONM01000046_gene2988 (degree 1387).
+	The undirected graph Andreprevotia chitinilytica has 4174 nodes and 593457
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06814 and has 16 connected components, where the component
+	with most nodes has 4138 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 244, the mean node degree is 284.36,
+	and the node degree mode is 1. The top 5 most central nodes are 1120999.JONM01000012_gene2242
+	(degree 1932), 1120999.JONM01000027_gene471 (degree 1699), 1120999.JONM01000001_gene1306
+	(degree 1511), 1120999.JONM01000024_gene3059 (degree 1396) and 1120999.JONM01000046_gene2988
+	(degree 1387).
 	
 
 

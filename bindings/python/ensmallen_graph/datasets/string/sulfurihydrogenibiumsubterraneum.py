@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:30.549892
 
-The undirected graph Sulfurihydrogenibium subterraneum has 1694 nodes and 112738
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07862 and has 2 connected components, where the component with most nodes has
-1692 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 112, the mean node degree is 133.10, and the node degree mode is 18. The
-top 5 most central nodes are 1123325.JHUV01000010_gene1332 (degree 755), 1123325.JHUV01000008_gene882
+The undirected graph Sulfurihydrogenibium subterraneum has 1694 nodes and
+112738 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07862 and has 2 connected components, where the
+component with most nodes has 1692 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 133.10, and the node degree mode is 18. The top 5 most central nodes
+are 1123325.JHUV01000010_gene1332 (degree 755), 1123325.JHUV01000008_gene882
 (degree 649), 1123325.JHUV01000010_gene1187 (degree 645), 1123325.JHUV01000013_gene1626
 (degree 636) and 1123325.JHUV01000008_gene709 (degree 600).
 
@@ -107,12 +108,13 @@ def SulfurihydrogenibiumSubterraneum(
 	
 	Datetime: 2021-02-02 22:51:30.549892
 	
-	The undirected graph Sulfurihydrogenibium subterraneum has 1694 nodes and 112738
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07862 and has 2 connected components, where the component with most nodes has
-	1692 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 112, the mean node degree is 133.10, and the node degree mode is 18. The
-	top 5 most central nodes are 1123325.JHUV01000010_gene1332 (degree 755), 1123325.JHUV01000008_gene882
+	The undirected graph Sulfurihydrogenibium subterraneum has 1694 nodes and
+	112738 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07862 and has 2 connected components, where the
+	component with most nodes has 1692 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 133.10, and the node degree mode is 18. The top 5 most central nodes
+	are 1123325.JHUV01000010_gene1332 (degree 755), 1123325.JHUV01000008_gene882
 	(degree 649), 1123325.JHUV01000010_gene1187 (degree 645), 1123325.JHUV01000013_gene1626
 	(degree 636) and 1123325.JHUV01000008_gene709 (degree 600).
 	

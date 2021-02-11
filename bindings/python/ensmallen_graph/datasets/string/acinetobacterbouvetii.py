@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:14.749758
 
-The undirected graph Acinetobacter bouvetii has 3075 nodes and 273651 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05790 and
-has 9 connected components, where the component with most nodes has 3055 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 177.98, and the node degree mode is 3. The top 5 most central
-nodes are 1120925.F941_00565 (degree 1119), 1120925.F941_00174 (degree 1036), 1120925.F941_02796
-(degree 939), 1120925.F941_00152 (degree 927) and 1120925.F941_02316 (degree 913).
+The undirected graph Acinetobacter bouvetii has 3075 nodes and 273651 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05790 and has 9 connected components, where the component with most
+nodes has 3055 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 177.98, and
+the node degree mode is 3. The top 5 most central nodes are 1120925.F941_00565
+(degree 1119), 1120925.F941_00174 (degree 1036), 1120925.F941_02796 (degree
+939), 1120925.F941_00152 (degree 927) and 1120925.F941_02316 (degree 913).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterBouvetii(
 	
 	Datetime: 2021-02-02 22:29:14.749758
 	
-	The undirected graph Acinetobacter bouvetii has 3075 nodes and 273651 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05790 and
-	has 9 connected components, where the component with most nodes has 3055 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 177.98, and the node degree mode is 3. The top 5 most central
-	nodes are 1120925.F941_00565 (degree 1119), 1120925.F941_00174 (degree 1036), 1120925.F941_02796
-	(degree 939), 1120925.F941_00152 (degree 927) and 1120925.F941_02316 (degree 913).
+	The undirected graph Acinetobacter bouvetii has 3075 nodes and 273651 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05790 and has 9 connected components, where the component with most
+	nodes has 3055 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 177.98, and
+	the node degree mode is 3. The top 5 most central nodes are 1120925.F941_00565
+	(degree 1119), 1120925.F941_00174 (degree 1036), 1120925.F941_02796 (degree
+	939), 1120925.F941_00152 (degree 927) and 1120925.F941_02316 (degree 913).
 	
 
 

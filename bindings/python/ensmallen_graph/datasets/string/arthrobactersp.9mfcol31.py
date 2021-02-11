@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:30.382240
 
-The undirected graph Arthrobacter sp. 9MFCol31 has 3894 nodes and 474754 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06264
-and has 14 connected components, where the component with most nodes has 3865 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 199, the mean node degree is 243.84, and the node degree mode is 1. The top 5
-most central nodes are 1150398.JIBJ01000002_gene1252 (degree 1347), 1150398.JIBJ01000004_gene3005
-(degree 1336), 1150398.JIBJ01000010_gene596 (degree 1326), 1150398.JIBJ01000003_gene1842
-(degree 1324) and 1150398.JIBJ01000005_gene3380 (degree 1311).
+The undirected graph Arthrobacter sp. 9MFCol31 has 3894 nodes and 474754
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06264 and has 14 connected components, where the component
+with most nodes has 3865 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 243.84,
+and the node degree mode is 1. The top 5 most central nodes are 1150398.JIBJ01000002_gene1252
+(degree 1347), 1150398.JIBJ01000004_gene3005 (degree 1336), 1150398.JIBJ01000010_gene596
+(degree 1326), 1150398.JIBJ01000003_gene1842 (degree 1324) and 1150398.JIBJ01000005_gene3380
+(degree 1311).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.9mfcol31(
 	
 	Datetime: 2021-02-02 22:59:30.382240
 	
-	The undirected graph Arthrobacter sp. 9MFCol31 has 3894 nodes and 474754 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06264
-	and has 14 connected components, where the component with most nodes has 3865 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 199, the mean node degree is 243.84, and the node degree mode is 1. The top 5
-	most central nodes are 1150398.JIBJ01000002_gene1252 (degree 1347), 1150398.JIBJ01000004_gene3005
-	(degree 1336), 1150398.JIBJ01000010_gene596 (degree 1326), 1150398.JIBJ01000003_gene1842
-	(degree 1324) and 1150398.JIBJ01000005_gene3380 (degree 1311).
+	The undirected graph Arthrobacter sp. 9MFCol31 has 3894 nodes and 474754
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06264 and has 14 connected components, where the component
+	with most nodes has 3865 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 243.84,
+	and the node degree mode is 1. The top 5 most central nodes are 1150398.JIBJ01000002_gene1252
+	(degree 1347), 1150398.JIBJ01000004_gene3005 (degree 1336), 1150398.JIBJ01000010_gene596
+	(degree 1326), 1150398.JIBJ01000003_gene1842 (degree 1324) and 1150398.JIBJ01000005_gene3380
+	(degree 1311).
 	
 
 

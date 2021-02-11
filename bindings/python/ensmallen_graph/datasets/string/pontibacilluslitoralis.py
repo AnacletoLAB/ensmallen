@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:56.019339
 
-The undirected graph Pontibacillus litoralis has 3172 nodes and 280352 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05574 and
-has 18 connected components, where the component with most nodes has 3126 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 176.77, and the node degree mode is 2. The top 5 most central
-nodes are 1385512.N784_01800 (degree 1063), 1385512.N784_08380 (degree 926), 1385512.N784_07455
-(degree 923), 1385512.N784_00910 (degree 908) and 1385512.N784_02070 (degree 832).
+The undirected graph Pontibacillus litoralis has 3172 nodes and 280352
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05574 and has 18 connected components, where the component
+with most nodes has 3126 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 176.77,
+and the node degree mode is 2. The top 5 most central nodes are 1385512.N784_01800
+(degree 1063), 1385512.N784_08380 (degree 926), 1385512.N784_07455 (degree
+923), 1385512.N784_00910 (degree 908) and 1385512.N784_02070 (degree 832).
 
 
 References
@@ -106,13 +107,14 @@ def PontibacillusLitoralis(
 	
 	Datetime: 2021-02-03 22:19:56.019339
 	
-	The undirected graph Pontibacillus litoralis has 3172 nodes and 280352 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05574 and
-	has 18 connected components, where the component with most nodes has 3126 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 176.77, and the node degree mode is 2. The top 5 most central
-	nodes are 1385512.N784_01800 (degree 1063), 1385512.N784_08380 (degree 926), 1385512.N784_07455
-	(degree 923), 1385512.N784_00910 (degree 908) and 1385512.N784_02070 (degree 832).
+	The undirected graph Pontibacillus litoralis has 3172 nodes and 280352
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05574 and has 18 connected components, where the component
+	with most nodes has 3126 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 176.77,
+	and the node degree mode is 2. The top 5 most central nodes are 1385512.N784_01800
+	(degree 1063), 1385512.N784_08380 (degree 926), 1385512.N784_07455 (degree
+	923), 1385512.N784_00910 (degree 908) and 1385512.N784_02070 (degree 832).
 	
 
 

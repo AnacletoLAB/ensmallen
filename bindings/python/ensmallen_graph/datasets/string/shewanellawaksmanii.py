@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:36.381264
 
-The undirected graph Shewanella waksmanii has 4297 nodes and 515849 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-has 13 connected components, where the component with most nodes has 4271 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 240.10, and the node degree mode is 1. The top 5 most central
-nodes are 1336233.JAEH01000005_gene1876 (degree 1649), 1336233.JAEH01000006_gene2286
-(degree 1559), 1336233.JAEH01000054_gene4155 (degree 1461), 1336233.JAEH01000002_gene1218
-(degree 1427) and 1336233.JAEH01000002_gene1219 (degree 1375).
+The undirected graph Shewanella waksmanii has 4297 nodes and 515849 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05589 and has 13 connected components, where the component with most
+nodes has 4271 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 240.10, and
+the node degree mode is 1. The top 5 most central nodes are 1336233.JAEH01000005_gene1876
+(degree 1649), 1336233.JAEH01000006_gene2286 (degree 1559), 1336233.JAEH01000054_gene4155
+(degree 1461), 1336233.JAEH01000002_gene1218 (degree 1427) and 1336233.JAEH01000002_gene1219
+(degree 1375).
 
 
 References
@@ -107,14 +108,15 @@ def ShewanellaWaksmanii(
 	
 	Datetime: 2021-02-03 21:56:36.381264
 	
-	The undirected graph Shewanella waksmanii has 4297 nodes and 515849 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-	has 13 connected components, where the component with most nodes has 4271 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 240.10, and the node degree mode is 1. The top 5 most central
-	nodes are 1336233.JAEH01000005_gene1876 (degree 1649), 1336233.JAEH01000006_gene2286
-	(degree 1559), 1336233.JAEH01000054_gene4155 (degree 1461), 1336233.JAEH01000002_gene1218
-	(degree 1427) and 1336233.JAEH01000002_gene1219 (degree 1375).
+	The undirected graph Shewanella waksmanii has 4297 nodes and 515849 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05589 and has 13 connected components, where the component with most
+	nodes has 4271 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 240.10, and
+	the node degree mode is 1. The top 5 most central nodes are 1336233.JAEH01000005_gene1876
+	(degree 1649), 1336233.JAEH01000006_gene2286 (degree 1559), 1336233.JAEH01000054_gene4155
+	(degree 1461), 1336233.JAEH01000002_gene1218 (degree 1427) and 1336233.JAEH01000002_gene1219
+	(degree 1375).
 	
 
 

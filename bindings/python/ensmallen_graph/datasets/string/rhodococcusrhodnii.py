@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:03.602411
 
-The undirected graph Rhodococcus rhodnii has 4352 nodes and 386792 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04085 and
-has 35 connected components, where the component with most nodes has 4259 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 177.75, and the node degree mode is 1. The top 5 most central
-nodes are 1273125.Rrhod_3503 (degree 1420), 1273125.Rrhod_2021 (degree 1320), 1273125.Rrhod_0070
-(degree 1260), 1273125.Rrhod_3337 (degree 1153) and 1273125.Rrhod_3654 (degree 1133).
+The undirected graph Rhodococcus rhodnii has 4352 nodes and 386792 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04085 and has 35 connected components, where the component with most
+nodes has 4259 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 177.75, and
+the node degree mode is 1. The top 5 most central nodes are 1273125.Rrhod_3503
+(degree 1420), 1273125.Rrhod_2021 (degree 1320), 1273125.Rrhod_0070 (degree
+1260), 1273125.Rrhod_3337 (degree 1153) and 1273125.Rrhod_3654 (degree
+1133).
 
 
 References
@@ -106,13 +108,15 @@ def RhodococcusRhodnii(
 	
 	Datetime: 2021-02-02 23:38:03.602411
 	
-	The undirected graph Rhodococcus rhodnii has 4352 nodes and 386792 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04085 and
-	has 35 connected components, where the component with most nodes has 4259 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 177.75, and the node degree mode is 1. The top 5 most central
-	nodes are 1273125.Rrhod_3503 (degree 1420), 1273125.Rrhod_2021 (degree 1320), 1273125.Rrhod_0070
-	(degree 1260), 1273125.Rrhod_3337 (degree 1153) and 1273125.Rrhod_3654 (degree 1133).
+	The undirected graph Rhodococcus rhodnii has 4352 nodes and 386792 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04085 and has 35 connected components, where the component with most
+	nodes has 4259 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 177.75, and
+	the node degree mode is 1. The top 5 most central nodes are 1273125.Rrhod_3503
+	(degree 1420), 1273125.Rrhod_2021 (degree 1320), 1273125.Rrhod_0070 (degree
+	1260), 1273125.Rrhod_3337 (degree 1153) and 1273125.Rrhod_3654 (degree
+	1133).
 	
 
 

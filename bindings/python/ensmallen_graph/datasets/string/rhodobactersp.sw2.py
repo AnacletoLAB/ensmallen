@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:52.841560
 
-The undirected graph Rhodobacter sp. SW2 has 3392 nodes and 351010 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06103 and
-has 5 connected components, where the component with most nodes has 3382 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 206.96, and the node degree mode is 3. The top 5 most central
-nodes are 371731.Rsw2DRAFT_2921 (degree 1351), 371731.Rsw2DRAFT_1580 (degree 1162),
-371731.Rsw2DRAFT_3264 (degree 1048), 371731.Rsw2DRAFT_2582 (degree 1017) and 371731.Rsw2DRAFT_1029
+The undirected graph Rhodobacter sp. SW2 has 3392 nodes and 351010 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06103 and has 5 connected components, where the component with most
+nodes has 3382 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 206.96, and
+the node degree mode is 3. The top 5 most central nodes are 371731.Rsw2DRAFT_2921
+(degree 1351), 371731.Rsw2DRAFT_1580 (degree 1162), 371731.Rsw2DRAFT_3264
+(degree 1048), 371731.Rsw2DRAFT_2582 (degree 1017) and 371731.Rsw2DRAFT_1029
 (degree 962).
 
 
@@ -107,13 +108,14 @@ def RhodobacterSp.Sw2(
 	
 	Datetime: 2021-02-02 20:35:52.841560
 	
-	The undirected graph Rhodobacter sp. SW2 has 3392 nodes and 351010 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06103 and
-	has 5 connected components, where the component with most nodes has 3382 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 206.96, and the node degree mode is 3. The top 5 most central
-	nodes are 371731.Rsw2DRAFT_2921 (degree 1351), 371731.Rsw2DRAFT_1580 (degree 1162),
-	371731.Rsw2DRAFT_3264 (degree 1048), 371731.Rsw2DRAFT_2582 (degree 1017) and 371731.Rsw2DRAFT_1029
+	The undirected graph Rhodobacter sp. SW2 has 3392 nodes and 351010 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06103 and has 5 connected components, where the component with most
+	nodes has 3382 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 206.96, and
+	the node degree mode is 3. The top 5 most central nodes are 371731.Rsw2DRAFT_2921
+	(degree 1351), 371731.Rsw2DRAFT_1580 (degree 1162), 371731.Rsw2DRAFT_3264
+	(degree 1048), 371731.Rsw2DRAFT_2582 (degree 1017) and 371731.Rsw2DRAFT_1029
 	(degree 962).
 	
 

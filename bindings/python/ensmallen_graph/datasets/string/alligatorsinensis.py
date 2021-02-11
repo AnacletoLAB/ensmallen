@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:07:37.398972
 
-The undirected graph Alligator sinensis has 17579 nodes and 3178273 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02057 and
-has 5 connected components, where the component with most nodes has 17571 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 250,
-the mean node degree is 361.60, and the node degree mode is 136. The top 5 most central
-nodes are 38654.XP_006028380.1 (degree 4194), 38654.XP_006025446.1 (degree 3792),
-38654.XP_006033658.1 (degree 3761), 38654.XP_006037632.1 (degree 3406) and 38654.XP_006030382.1
+The undirected graph Alligator sinensis has 17579 nodes and 3178273 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02057 and has 5 connected components, where the component with most
+nodes has 17571 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 250, the mean node degree is 361.60, and
+the node degree mode is 136. The top 5 most central nodes are 38654.XP_006028380.1
+(degree 4194), 38654.XP_006025446.1 (degree 3792), 38654.XP_006033658.1
+(degree 3761), 38654.XP_006037632.1 (degree 3406) and 38654.XP_006030382.1
 (degree 3192).
 
 
@@ -107,13 +108,14 @@ def AlligatorSinensis(
 	
 	Datetime: 2021-02-02 18:07:37.398972
 	
-	The undirected graph Alligator sinensis has 17579 nodes and 3178273 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02057 and
-	has 5 connected components, where the component with most nodes has 17571 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 250,
-	the mean node degree is 361.60, and the node degree mode is 136. The top 5 most central
-	nodes are 38654.XP_006028380.1 (degree 4194), 38654.XP_006025446.1 (degree 3792),
-	38654.XP_006033658.1 (degree 3761), 38654.XP_006037632.1 (degree 3406) and 38654.XP_006030382.1
+	The undirected graph Alligator sinensis has 17579 nodes and 3178273 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02057 and has 5 connected components, where the component with most
+	nodes has 17571 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 250, the mean node degree is 361.60, and
+	the node degree mode is 136. The top 5 most central nodes are 38654.XP_006028380.1
+	(degree 4194), 38654.XP_006025446.1 (degree 3792), 38654.XP_006033658.1
+	(degree 3761), 38654.XP_006037632.1 (degree 3406) and 38654.XP_006030382.1
 	(degree 3192).
 	
 

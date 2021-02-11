@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:56.918438
 
-The undirected graph Bacillus lehensis has 3998 nodes and 285776 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-has 9 connected components, where the component with most nodes has 3979 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 142.96, and the node degree mode is 4. The top 5 most central
-nodes are 1246626.BleG1_2702 (degree 1333), 1246626.BleG1_2539 (degree 1140), 1246626.BleG1_1463
-(degree 912), 1246626.BleG1_3868 (degree 897) and 1246626.BleG1_4051 (degree 892).
+The undirected graph Bacillus lehensis has 3998 nodes and 285776 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03577 and has 9 connected components, where the component with most
+nodes has 3979 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 142.96, and
+the node degree mode is 4. The top 5 most central nodes are 1246626.BleG1_2702
+(degree 1333), 1246626.BleG1_2539 (degree 1140), 1246626.BleG1_1463 (degree
+912), 1246626.BleG1_3868 (degree 897) and 1246626.BleG1_4051 (degree 892).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusLehensis(
 	
 	Datetime: 2021-02-02 23:33:56.918438
 	
-	The undirected graph Bacillus lehensis has 3998 nodes and 285776 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03577 and
-	has 9 connected components, where the component with most nodes has 3979 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 142.96, and the node degree mode is 4. The top 5 most central
-	nodes are 1246626.BleG1_2702 (degree 1333), 1246626.BleG1_2539 (degree 1140), 1246626.BleG1_1463
-	(degree 912), 1246626.BleG1_3868 (degree 897) and 1246626.BleG1_4051 (degree 892).
+	The undirected graph Bacillus lehensis has 3998 nodes and 285776 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03577 and has 9 connected components, where the component with most
+	nodes has 3979 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 142.96, and
+	the node degree mode is 4. The top 5 most central nodes are 1246626.BleG1_2702
+	(degree 1333), 1246626.BleG1_2539 (degree 1140), 1246626.BleG1_1463 (degree
+	912), 1246626.BleG1_3868 (degree 897) and 1246626.BleG1_4051 (degree 892).
 	
 
 

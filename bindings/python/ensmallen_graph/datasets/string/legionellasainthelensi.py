@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:58.167234
 
-The undirected graph Legionella sainthelensi has 3491 nodes and 192067 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03153 and
-has 58 connected components, where the component with most nodes has 3359 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 79,
-the mean node degree is 110.04, and the node degree mode is 1. The top 5 most central
-nodes are 1408445.JHXP01000009_gene2797 (degree 1112), 1408445.JHXP01000020_gene1912
-(degree 927), 1408445.JHXP01000019_gene3024 (degree 849), 1408445.JHXP01000022_gene40
-(degree 768) and 1408445.JHXP01000021_gene2031 (degree 757).
+The undirected graph Legionella sainthelensi has 3491 nodes and 192067
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03153 and has 58 connected components, where the component
+with most nodes has 3359 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 110.04,
+and the node degree mode is 1. The top 5 most central nodes are 1408445.JHXP01000009_gene2797
+(degree 1112), 1408445.JHXP01000020_gene1912 (degree 927), 1408445.JHXP01000019_gene3024
+(degree 849), 1408445.JHXP01000022_gene40 (degree 768) and 1408445.JHXP01000021_gene2031
+(degree 757).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaSainthelensi(
 	
 	Datetime: 2021-02-03 22:37:58.167234
 	
-	The undirected graph Legionella sainthelensi has 3491 nodes and 192067 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03153 and
-	has 58 connected components, where the component with most nodes has 3359 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 79,
-	the mean node degree is 110.04, and the node degree mode is 1. The top 5 most central
-	nodes are 1408445.JHXP01000009_gene2797 (degree 1112), 1408445.JHXP01000020_gene1912
-	(degree 927), 1408445.JHXP01000019_gene3024 (degree 849), 1408445.JHXP01000022_gene40
-	(degree 768) and 1408445.JHXP01000021_gene2031 (degree 757).
+	The undirected graph Legionella sainthelensi has 3491 nodes and 192067
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03153 and has 58 connected components, where the component
+	with most nodes has 3359 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 110.04,
+	and the node degree mode is 1. The top 5 most central nodes are 1408445.JHXP01000009_gene2797
+	(degree 1112), 1408445.JHXP01000020_gene1912 (degree 927), 1408445.JHXP01000019_gene3024
+	(degree 849), 1408445.JHXP01000022_gene40 (degree 768) and 1408445.JHXP01000021_gene2031
+	(degree 757).
 	
 
 

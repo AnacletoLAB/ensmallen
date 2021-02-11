@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:38.801087
 
-The undirected graph Blastococcus massiliensis has 3695 nodes and 373816 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05477
-and has 7 connected components, where the component with most nodes has 3681 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 166, the mean node degree is 202.34, and the node degree mode is 2. The top 5
-most central nodes are 1211815.CBYP010000006_gene289 (degree 1120), 1211815.CBYP010000050_gene629
-(degree 1092), 1211815.CBYP010000012_gene461 (degree 1084), 1211815.CBYP010000056_gene3330
-(degree 1077) and 1211815.CBYP010000055_gene1921 (degree 1062).
+The undirected graph Blastococcus massiliensis has 3695 nodes and 373816
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05477 and has 7 connected components, where the component
+with most nodes has 3681 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 202.34,
+and the node degree mode is 2. The top 5 most central nodes are 1211815.CBYP010000006_gene289
+(degree 1120), 1211815.CBYP010000050_gene629 (degree 1092), 1211815.CBYP010000012_gene461
+(degree 1084), 1211815.CBYP010000056_gene3330 (degree 1077) and 1211815.CBYP010000055_gene1921
+(degree 1062).
 
 
 References
@@ -107,14 +108,15 @@ def BlastococcusMassiliensis(
 	
 	Datetime: 2021-02-02 23:19:38.801087
 	
-	The undirected graph Blastococcus massiliensis has 3695 nodes and 373816 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05477
-	and has 7 connected components, where the component with most nodes has 3681 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 166, the mean node degree is 202.34, and the node degree mode is 2. The top 5
-	most central nodes are 1211815.CBYP010000006_gene289 (degree 1120), 1211815.CBYP010000050_gene629
-	(degree 1092), 1211815.CBYP010000012_gene461 (degree 1084), 1211815.CBYP010000056_gene3330
-	(degree 1077) and 1211815.CBYP010000055_gene1921 (degree 1062).
+	The undirected graph Blastococcus massiliensis has 3695 nodes and 373816
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05477 and has 7 connected components, where the component
+	with most nodes has 3681 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 202.34,
+	and the node degree mode is 2. The top 5 most central nodes are 1211815.CBYP010000006_gene289
+	(degree 1120), 1211815.CBYP010000050_gene629 (degree 1092), 1211815.CBYP010000012_gene461
+	(degree 1084), 1211815.CBYP010000056_gene3330 (degree 1077) and 1211815.CBYP010000055_gene1921
+	(degree 1062).
 	
 
 

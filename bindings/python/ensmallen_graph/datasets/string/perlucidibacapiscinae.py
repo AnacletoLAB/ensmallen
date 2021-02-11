@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:14.319475
 
-The undirected graph Perlucidibaca piscinae has 2242 nodes and 175366 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06981 and
-has 3 connected components, where the component with most nodes has 2238 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 156.44, and the node degree mode is 122. The top 5 most central
-nodes are 1122951.ATUE01000005_gene1881 (degree 879), 1122951.ATUE01000008_gene233
-(degree 755), 1122951.ATUE01000008_gene117 (degree 742), 1122951.ATUE01000005_gene1577
-(degree 690) and 1122951.ATUE01000006_gene1305 (degree 666).
+The undirected graph Perlucidibaca piscinae has 2242 nodes and 175366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06981 and has 3 connected components, where the component with most
+nodes has 2238 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 156.44, and
+the node degree mode is 122. The top 5 most central nodes are 1122951.ATUE01000005_gene1881
+(degree 879), 1122951.ATUE01000008_gene233 (degree 755), 1122951.ATUE01000008_gene117
+(degree 742), 1122951.ATUE01000005_gene1577 (degree 690) and 1122951.ATUE01000006_gene1305
+(degree 666).
 
 
 References
@@ -107,14 +108,15 @@ def PerlucidibacaPiscinae(
 	
 	Datetime: 2021-02-02 22:45:14.319475
 	
-	The undirected graph Perlucidibaca piscinae has 2242 nodes and 175366 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06981 and
-	has 3 connected components, where the component with most nodes has 2238 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 156.44, and the node degree mode is 122. The top 5 most central
-	nodes are 1122951.ATUE01000005_gene1881 (degree 879), 1122951.ATUE01000008_gene233
-	(degree 755), 1122951.ATUE01000008_gene117 (degree 742), 1122951.ATUE01000005_gene1577
-	(degree 690) and 1122951.ATUE01000006_gene1305 (degree 666).
+	The undirected graph Perlucidibaca piscinae has 2242 nodes and 175366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06981 and has 3 connected components, where the component with most
+	nodes has 2238 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 156.44, and
+	the node degree mode is 122. The top 5 most central nodes are 1122951.ATUE01000005_gene1881
+	(degree 879), 1122951.ATUE01000008_gene233 (degree 755), 1122951.ATUE01000008_gene117
+	(degree 742), 1122951.ATUE01000005_gene1577 (degree 690) and 1122951.ATUE01000006_gene1305
+	(degree 666).
 	
 
 

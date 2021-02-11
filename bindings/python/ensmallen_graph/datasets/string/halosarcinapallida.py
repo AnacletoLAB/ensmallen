@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:01.899480
 
-The undirected graph Halosarcina pallida has 4175 nodes and 391535 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04494 and
-has 30 connected components, where the component with most nodes has 4109 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 187.56, and the node degree mode is 3. The top 5 most central
-nodes are 1227487.C474_02541 (degree 1156), 1227487.C474_10059 (degree 1065), 1227487.C474_20676
-(degree 1042), 1227487.C474_12386 (degree 994) and 1227487.C474_12396 (degree 985).
+The undirected graph Halosarcina pallida has 4175 nodes and 391535 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04494 and has 30 connected components, where the component with most
+nodes has 4109 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 187.56, and
+the node degree mode is 3. The top 5 most central nodes are 1227487.C474_02541
+(degree 1156), 1227487.C474_10059 (degree 1065), 1227487.C474_20676 (degree
+1042), 1227487.C474_12386 (degree 994) and 1227487.C474_12396 (degree 985).
 
 
 References
@@ -106,13 +107,14 @@ def HalosarcinaPallida(
 	
 	Datetime: 2021-02-02 23:26:01.899480
 	
-	The undirected graph Halosarcina pallida has 4175 nodes and 391535 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04494 and
-	has 30 connected components, where the component with most nodes has 4109 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 187.56, and the node degree mode is 3. The top 5 most central
-	nodes are 1227487.C474_02541 (degree 1156), 1227487.C474_10059 (degree 1065), 1227487.C474_20676
-	(degree 1042), 1227487.C474_12386 (degree 994) and 1227487.C474_12396 (degree 985).
+	The undirected graph Halosarcina pallida has 4175 nodes and 391535 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04494 and has 30 connected components, where the component with most
+	nodes has 4109 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 187.56, and
+	the node degree mode is 3. The top 5 most central nodes are 1227487.C474_02541
+	(degree 1156), 1227487.C474_10059 (degree 1065), 1227487.C474_20676 (degree
+	1042), 1227487.C474_12386 (degree 994) and 1227487.C474_12396 (degree 985).
 	
 
 

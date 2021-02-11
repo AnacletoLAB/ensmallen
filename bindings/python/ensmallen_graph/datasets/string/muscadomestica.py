@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:52.432296
 
-The undirected graph Musca domestica has 12314 nodes and 1158916 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01529 and
-has 9 connected components, where the component with most nodes has 12297 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 188.23, and the node degree mode is 1. The top 5 most central
-nodes are 7370.XP_005178021.1 (degree 3081), 7370.XP_005185870.1 (degree 1997), 7370.XP_005176169.1
-(degree 1977), 7370.XP_005178644.1 (degree 1877) and 7370.XP_005178042.1 (degree
+The undirected graph Musca domestica has 12314 nodes and 1158916 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01529 and has 9 connected components, where the component with most
+nodes has 12297 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 188.23, and
+the node degree mode is 1. The top 5 most central nodes are 7370.XP_005178021.1
+(degree 3081), 7370.XP_005185870.1 (degree 1997), 7370.XP_005176169.1 (degree
+1977), 7370.XP_005178644.1 (degree 1877) and 7370.XP_005178042.1 (degree
 1825).
 
 
@@ -107,13 +108,14 @@ def MuscaDomestica(
 	
 	Datetime: 2021-02-02 17:22:52.432296
 	
-	The undirected graph Musca domestica has 12314 nodes and 1158916 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01529 and
-	has 9 connected components, where the component with most nodes has 12297 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 188.23, and the node degree mode is 1. The top 5 most central
-	nodes are 7370.XP_005178021.1 (degree 3081), 7370.XP_005185870.1 (degree 1997), 7370.XP_005176169.1
-	(degree 1977), 7370.XP_005178644.1 (degree 1877) and 7370.XP_005178042.1 (degree
+	The undirected graph Musca domestica has 12314 nodes and 1158916 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01529 and has 9 connected components, where the component with most
+	nodes has 12297 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 188.23, and
+	the node degree mode is 1. The top 5 most central nodes are 7370.XP_005178021.1
+	(degree 3081), 7370.XP_005185870.1 (degree 1997), 7370.XP_005176169.1 (degree
+	1977), 7370.XP_005178644.1 (degree 1877) and 7370.XP_005178042.1 (degree
 	1825).
 	
 

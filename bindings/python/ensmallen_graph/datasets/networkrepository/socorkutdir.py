@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 10:39:30.260114
 
-The undirected graph soc-orkut-dir has 3072441 nodes and 117185083 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 45, the mean node degree is 76.28, and the node degree mode is 1. The top 5 most
-central nodes are 47991 (degree 33313), 46169 (degree 29657), 46170 (degree 27317),
-48302 (degree 25795) and 95064 (degree 25423).
+The undirected graph soc-orkut-dir has 3072441 nodes and 117185083 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 45, the mean node degree is 76.28, and
+the node degree mode is 1. The top 5 most central nodes are 47991 (degree
+33313), 46169 (degree 29657), 46170 (degree 27317), 48302 (degree 25795)
+and 95064 (degree 25423).
 
 
 References
@@ -110,12 +111,13 @@ def SocOrkutDir(
 	
 	Datetime: 2021-02-04 10:39:30.260114
 	
-	The undirected graph soc-orkut-dir has 3072441 nodes and 117185083 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 45, the mean node degree is 76.28, and the node degree mode is 1. The top 5 most
-	central nodes are 47991 (degree 33313), 46169 (degree 29657), 46170 (degree 27317),
-	48302 (degree 25795) and 95064 (degree 25423).
+	The undirected graph soc-orkut-dir has 3072441 nodes and 117185083 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 45, the mean node degree is 76.28, and
+	the node degree mode is 1. The top 5 most central nodes are 47991 (degree
+	33313), 46169 (degree 29657), 46170 (degree 27317), 48302 (degree 25795)
+	and 95064 (degree 25423).
 	
 
 

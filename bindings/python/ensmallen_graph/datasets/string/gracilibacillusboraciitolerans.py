@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:30:32.650438
 
-The undirected graph Gracilibacillus boraciitolerans has 4397 nodes and 585040 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06053
-and has 13 connected components, where the component with most nodes has 4367 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 220, the mean node degree is 266.11, and the node degree mode is 3. The top 5
-most central nodes are 1298598.JCM21714_2028 (degree 1692), 1298598.JCM21714_2929
-(degree 1380), 1298598.JCM21714_494 (degree 1343), 1298598.JCM21714_635 (degree 1333)
-and 1298598.JCM21714_378 (degree 1321).
+The undirected graph Gracilibacillus boraciitolerans has 4397 nodes and
+585040 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06053 and has 13 connected components, where the
+component with most nodes has 4367 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 220, the mean node degree
+is 266.11, and the node degree mode is 3. The top 5 most central nodes
+are 1298598.JCM21714_2028 (degree 1692), 1298598.JCM21714_2929 (degree
+1380), 1298598.JCM21714_494 (degree 1343), 1298598.JCM21714_635 (degree
+1333) and 1298598.JCM21714_378 (degree 1321).
 
 
 References
@@ -107,14 +108,15 @@ def GracilibacillusBoraciitolerans(
 	
 	Datetime: 2021-02-03 21:30:32.650438
 	
-	The undirected graph Gracilibacillus boraciitolerans has 4397 nodes and 585040 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06053
-	and has 13 connected components, where the component with most nodes has 4367 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 220, the mean node degree is 266.11, and the node degree mode is 3. The top 5
-	most central nodes are 1298598.JCM21714_2028 (degree 1692), 1298598.JCM21714_2929
-	(degree 1380), 1298598.JCM21714_494 (degree 1343), 1298598.JCM21714_635 (degree 1333)
-	and 1298598.JCM21714_378 (degree 1321).
+	The undirected graph Gracilibacillus boraciitolerans has 4397 nodes and
+	585040 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06053 and has 13 connected components, where the
+	component with most nodes has 4367 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 220, the mean node degree
+	is 266.11, and the node degree mode is 3. The top 5 most central nodes
+	are 1298598.JCM21714_2028 (degree 1692), 1298598.JCM21714_2929 (degree
+	1380), 1298598.JCM21714_494 (degree 1343), 1298598.JCM21714_635 (degree
+	1333) and 1298598.JCM21714_378 (degree 1321).
 	
 
 

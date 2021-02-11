@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:45.856033
 
-The undirected graph Thermodesulfovibrio yellowstonii has 2023 nodes and 166337 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08133
-and has 8 connected components, where the component with most nodes has 1991 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 164.45, and the node degree mode is 12. The top 5
-most central nodes are 289376.THEYE_A1487 (degree 967), 289376.THEYE_A1552 (degree
-885), 289376.THEYE_A1741 (degree 849), 289376.THEYE_A1688 (degree 814) and 289376.THEYE_A0317
-(degree 810).
+The undirected graph Thermodesulfovibrio yellowstonii has 2023 nodes and
+166337 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08133 and has 8 connected components, where the
+component with most nodes has 1991 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 164.45, and the node degree mode is 12. The top 5 most central nodes
+are 289376.THEYE_A1487 (degree 967), 289376.THEYE_A1552 (degree 885), 289376.THEYE_A1741
+(degree 849), 289376.THEYE_A1688 (degree 814) and 289376.THEYE_A0317 (degree
+810).
 
 
 References
@@ -107,14 +108,15 @@ def ThermodesulfovibrioYellowstonii(
 	
 	Datetime: 2021-02-02 20:19:45.856033
 	
-	The undirected graph Thermodesulfovibrio yellowstonii has 2023 nodes and 166337 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08133
-	and has 8 connected components, where the component with most nodes has 1991 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 164.45, and the node degree mode is 12. The top 5
-	most central nodes are 289376.THEYE_A1487 (degree 967), 289376.THEYE_A1552 (degree
-	885), 289376.THEYE_A1741 (degree 849), 289376.THEYE_A1688 (degree 814) and 289376.THEYE_A0317
-	(degree 810).
+	The undirected graph Thermodesulfovibrio yellowstonii has 2023 nodes and
+	166337 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08133 and has 8 connected components, where the
+	component with most nodes has 1991 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 164.45, and the node degree mode is 12. The top 5 most central nodes
+	are 289376.THEYE_A1487 (degree 967), 289376.THEYE_A1552 (degree 885), 289376.THEYE_A1741
+	(degree 849), 289376.THEYE_A1688 (degree 814) and 289376.THEYE_A0317 (degree
+	810).
 	
 
 

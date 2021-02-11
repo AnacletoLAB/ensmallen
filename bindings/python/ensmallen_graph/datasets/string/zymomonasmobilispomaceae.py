@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:24.397116
 
-The undirected graph Zymomonas mobilis pomaceae has 1708 nodes and 92760 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06363
-and has 3 connected components, where the component with most nodes has 1701 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 89, the mean node degree is 108.62, and the node degree mode is 8. The top 5 most
-central nodes are 579138.Zymop_0942 (degree 791), 579138.Zymop_0058 (degree 637),
-579138.Zymop_0023 (degree 573), 579138.Zymop_1583 (degree 570) and 579138.Zymop_0177
-(degree 534).
+The undirected graph Zymomonas mobilis pomaceae has 1708 nodes and 92760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06363 and has 3 connected components, where the component
+with most nodes has 1701 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 89, the mean node degree is 108.62,
+and the node degree mode is 8. The top 5 most central nodes are 579138.Zymop_0942
+(degree 791), 579138.Zymop_0058 (degree 637), 579138.Zymop_0023 (degree
+573), 579138.Zymop_1583 (degree 570) and 579138.Zymop_0177 (degree 534).
 
 
 References
@@ -107,14 +107,14 @@ def ZymomonasMobilisPomaceae(
 	
 	Datetime: 2021-02-02 21:15:24.397116
 	
-	The undirected graph Zymomonas mobilis pomaceae has 1708 nodes and 92760 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06363
-	and has 3 connected components, where the component with most nodes has 1701 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 89, the mean node degree is 108.62, and the node degree mode is 8. The top 5 most
-	central nodes are 579138.Zymop_0942 (degree 791), 579138.Zymop_0058 (degree 637),
-	579138.Zymop_0023 (degree 573), 579138.Zymop_1583 (degree 570) and 579138.Zymop_0177
-	(degree 534).
+	The undirected graph Zymomonas mobilis pomaceae has 1708 nodes and 92760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06363 and has 3 connected components, where the component
+	with most nodes has 1701 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 89, the mean node degree is 108.62,
+	and the node degree mode is 8. The top 5 most central nodes are 579138.Zymop_0942
+	(degree 791), 579138.Zymop_0058 (degree 637), 579138.Zymop_0023 (degree
+	573), 579138.Zymop_1583 (degree 570) and 579138.Zymop_0177 (degree 534).
 	
 
 

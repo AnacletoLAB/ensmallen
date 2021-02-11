@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:41:06.638524
 
-The undirected graph ca-dblp-2010 has 226413 nodes and 716460 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 4,
-the mean node degree is 6.33 and the node degree mode is 2. The top 5 most central
-nodes are 217584 (degree 238), 218356 (degree 237), 217610 (degree 234), 30076 (degree
-225) and 218353 (degree 224).
+The undirected graph ca-dblp-2010 has 226413 nodes and 716460 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 6.33 and the
+node degree mode is 2. The top 5 most central nodes are 217584 (degree
+238), 218356 (degree 237), 217610 (degree 234), 30076 (degree 225) and
+218353 (degree 224).
 
 
 References
@@ -112,12 +113,13 @@ def CaDblp2010(
 	
 	Datetime: 2021-02-03 22:41:06.638524
 	
-	The undirected graph ca-dblp-2010 has 226413 nodes and 716460 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 4,
-	the mean node degree is 6.33 and the node degree mode is 2. The top 5 most central
-	nodes are 217584 (degree 238), 218356 (degree 237), 217610 (degree 234), 30076 (degree
-	225) and 218353 (degree 224).
+	The undirected graph ca-dblp-2010 has 226413 nodes and 716460 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 6.33 and the
+	node degree mode is 2. The top 5 most central nodes are 217584 (degree
+	238), 218356 (degree 237), 217610 (degree 234), 30076 (degree 225) and
+	218353 (degree 224).
 	
 
 

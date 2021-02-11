@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:06.590198
 
-The undirected graph Corynebacterium halotolerans has 2849 nodes and 178522 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04400
-and has 5 connected components, where the component with most nodes has 2841 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 125.32, and the node degree mode is 2. The top 5 most
-central nodes are 1121362.A605_06720 (degree 1095), 1121362.A605_11525 (degree 1041),
-1121362.A605_02995 (degree 801), 1121362.A605_09865 (degree 756) and 1121362.A605_06840
-(degree 733).
+The undirected graph Corynebacterium halotolerans has 2849 nodes and 178522
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04400 and has 5 connected components, where the component
+with most nodes has 2841 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 125.32,
+and the node degree mode is 2. The top 5 most central nodes are 1121362.A605_06720
+(degree 1095), 1121362.A605_11525 (degree 1041), 1121362.A605_02995 (degree
+801), 1121362.A605_09865 (degree 756) and 1121362.A605_06840 (degree 733).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumHalotolerans(
 	
 	Datetime: 2021-02-02 22:35:06.590198
 	
-	The undirected graph Corynebacterium halotolerans has 2849 nodes and 178522 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04400
-	and has 5 connected components, where the component with most nodes has 2841 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 125.32, and the node degree mode is 2. The top 5 most
-	central nodes are 1121362.A605_06720 (degree 1095), 1121362.A605_11525 (degree 1041),
-	1121362.A605_02995 (degree 801), 1121362.A605_09865 (degree 756) and 1121362.A605_06840
-	(degree 733).
+	The undirected graph Corynebacterium halotolerans has 2849 nodes and 178522
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04400 and has 5 connected components, where the component
+	with most nodes has 2841 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 125.32,
+	and the node degree mode is 2. The top 5 most central nodes are 1121362.A605_06720
+	(degree 1095), 1121362.A605_11525 (degree 1041), 1121362.A605_02995 (degree
+	801), 1121362.A605_09865 (degree 756) and 1121362.A605_06840 (degree 733).
 	
 
 

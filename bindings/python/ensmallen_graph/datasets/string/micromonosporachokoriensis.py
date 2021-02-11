@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:37.523854
 
-The undirected graph Micromonospora chokoriensis has 6112 nodes and 752647 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04030
-and has 44 connected components, where the component with most nodes has 6004 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 246.29, and the node degree mode is 4. The top 5
-most central nodes are 356851.JOAN01000012_gene5201 (degree 1721), 356851.JOAN01000010_gene4766
-(degree 1698), 356851.JOAN01000001_gene3779 (degree 1695), 356851.JOAN01000032_gene2759
-(degree 1667) and 356851.JOAN01000027_gene1225 (degree 1589).
+The undirected graph Micromonospora chokoriensis has 6112 nodes and 752647
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04030 and has 44 connected components, where the component
+with most nodes has 6004 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 246.29,
+and the node degree mode is 4. The top 5 most central nodes are 356851.JOAN01000012_gene5201
+(degree 1721), 356851.JOAN01000010_gene4766 (degree 1698), 356851.JOAN01000001_gene3779
+(degree 1695), 356851.JOAN01000032_gene2759 (degree 1667) and 356851.JOAN01000027_gene1225
+(degree 1589).
 
 
 References
@@ -107,14 +108,15 @@ def MicromonosporaChokoriensis(
 	
 	Datetime: 2021-02-02 20:33:37.523854
 	
-	The undirected graph Micromonospora chokoriensis has 6112 nodes and 752647 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04030
-	and has 44 connected components, where the component with most nodes has 6004 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 246.29, and the node degree mode is 4. The top 5
-	most central nodes are 356851.JOAN01000012_gene5201 (degree 1721), 356851.JOAN01000010_gene4766
-	(degree 1698), 356851.JOAN01000001_gene3779 (degree 1695), 356851.JOAN01000032_gene2759
-	(degree 1667) and 356851.JOAN01000027_gene1225 (degree 1589).
+	The undirected graph Micromonospora chokoriensis has 6112 nodes and 752647
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04030 and has 44 connected components, where the component
+	with most nodes has 6004 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 246.29,
+	and the node degree mode is 4. The top 5 most central nodes are 356851.JOAN01000012_gene5201
+	(degree 1721), 356851.JOAN01000010_gene4766 (degree 1698), 356851.JOAN01000001_gene3779
+	(degree 1695), 356851.JOAN01000032_gene2759 (degree 1667) and 356851.JOAN01000027_gene1225
+	(degree 1589).
 	
 
 

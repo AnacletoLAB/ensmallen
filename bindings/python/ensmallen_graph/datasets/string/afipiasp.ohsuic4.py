@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:29:33.778022
 
-The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04627 and
-has 16 connected components, where the component with most nodes has 4513 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 210.62, and the node degree mode is 2. The top 5 most central
-nodes are 1297863.APJF01000019_gene2437 (degree 1529), 1297863.APJF01000025_gene3006
-(degree 1520), 1297863.APJF01000010_gene3466 (degree 1518), 1297863.APJF01000018_gene3071
-(degree 1490) and 1297863.APJF01000001_gene2016 (degree 1321).
+The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04627 and has 16 connected components, where the component with most
+nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 210.62, and
+the node degree mode is 2. The top 5 most central nodes are 1297863.APJF01000019_gene2437
+(degree 1529), 1297863.APJF01000025_gene3006 (degree 1520), 1297863.APJF01000010_gene3466
+(degree 1518), 1297863.APJF01000018_gene3071 (degree 1490) and 1297863.APJF01000001_gene2016
+(degree 1321).
 
 
 References
@@ -107,14 +108,15 @@ def AfipiaSp.Ohsuic4(
 	
 	Datetime: 2021-02-03 21:29:33.778022
 	
-	The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04627 and
-	has 16 connected components, where the component with most nodes has 4513 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 210.62, and the node degree mode is 2. The top 5 most central
-	nodes are 1297863.APJF01000019_gene2437 (degree 1529), 1297863.APJF01000025_gene3006
-	(degree 1520), 1297863.APJF01000010_gene3466 (degree 1518), 1297863.APJF01000018_gene3071
-	(degree 1490) and 1297863.APJF01000001_gene2016 (degree 1321).
+	The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04627 and has 16 connected components, where the component with most
+	nodes has 4513 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 210.62, and
+	the node degree mode is 2. The top 5 most central nodes are 1297863.APJF01000019_gene2437
+	(degree 1529), 1297863.APJF01000025_gene3006 (degree 1520), 1297863.APJF01000010_gene3466
+	(degree 1518), 1297863.APJF01000018_gene3071 (degree 1490) and 1297863.APJF01000001_gene2016
+	(degree 1321).
 	
 
 

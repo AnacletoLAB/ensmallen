@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:56.167852
 
-The undirected graph Archaeoglobus fulgidus has 2395 nodes and 292054 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10187
-and has 8 connected components, where the component with most nodes has 2380 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 243.89, and the node degree mode is 2. The top 5
-most central nodes are 224325.AF_1732 (degree 961), 224325.AF_1304 (degree 919),
-224325.AF_0949 (degree 880), 224325.AF_0007 (degree 867) and 224325.AF_0012 (degree
-865).
+The undirected graph Archaeoglobus fulgidus has 2395 nodes and 292054 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10187 and has 8 connected components, where the component
+with most nodes has 2380 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 248, the mean node degree is 243.89,
+and the node degree mode is 2. The top 5 most central nodes are 224325.AF_1732
+(degree 961), 224325.AF_1304 (degree 919), 224325.AF_0949 (degree 880),
+224325.AF_0007 (degree 867) and 224325.AF_0012 (degree 865).
 
 
 References
@@ -107,14 +107,14 @@ def ArchaeoglobusFulgidus(
 	
 	Datetime: 2021-02-02 20:04:56.167852
 	
-	The undirected graph Archaeoglobus fulgidus has 2395 nodes and 292054 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10187
-	and has 8 connected components, where the component with most nodes has 2380 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 243.89, and the node degree mode is 2. The top 5
-	most central nodes are 224325.AF_1732 (degree 961), 224325.AF_1304 (degree 919),
-	224325.AF_0949 (degree 880), 224325.AF_0007 (degree 867) and 224325.AF_0012 (degree
-	865).
+	The undirected graph Archaeoglobus fulgidus has 2395 nodes and 292054 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10187 and has 8 connected components, where the component
+	with most nodes has 2380 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 248, the mean node degree is 243.89,
+	and the node degree mode is 2. The top 5 most central nodes are 224325.AF_1732
+	(degree 961), 224325.AF_1304 (degree 919), 224325.AF_0949 (degree 880),
+	224325.AF_0007 (degree 867) and 224325.AF_0012 (degree 865).
 	
 
 

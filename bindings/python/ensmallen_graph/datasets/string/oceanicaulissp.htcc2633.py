@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:34.211777
 
-The undirected graph Oceanicaulis sp. HTCC2633 has 2997 nodes and 328507 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07317
-and has 8 connected components, where the component with most nodes has 2982 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 204, the mean node degree is 219.22, and the node degree mode is 5. The top 5
-most central nodes are 314254.OA2633_11545 (degree 1085), 314254.OA2633_06104 (degree
-930), 314254.OA2633_11630 (degree 910), 314254.OA2633_07109 (degree 896) and 314254.OA2633_14621
-(degree 876).
+The undirected graph Oceanicaulis sp. HTCC2633 has 2997 nodes and 328507
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07317 and has 8 connected components, where the component
+with most nodes has 2982 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 204, the mean node degree is 219.22,
+and the node degree mode is 5. The top 5 most central nodes are 314254.OA2633_11545
+(degree 1085), 314254.OA2633_06104 (degree 930), 314254.OA2633_11630 (degree
+910), 314254.OA2633_07109 (degree 896) and 314254.OA2633_14621 (degree
+876).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicaulisSp.Htcc2633(
 	
 	Datetime: 2021-02-02 20:24:34.211777
 	
-	The undirected graph Oceanicaulis sp. HTCC2633 has 2997 nodes and 328507 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07317
-	and has 8 connected components, where the component with most nodes has 2982 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 204, the mean node degree is 219.22, and the node degree mode is 5. The top 5
-	most central nodes are 314254.OA2633_11545 (degree 1085), 314254.OA2633_06104 (degree
-	930), 314254.OA2633_11630 (degree 910), 314254.OA2633_07109 (degree 896) and 314254.OA2633_14621
-	(degree 876).
+	The undirected graph Oceanicaulis sp. HTCC2633 has 2997 nodes and 328507
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07317 and has 8 connected components, where the component
+	with most nodes has 2982 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 204, the mean node degree is 219.22,
+	and the node degree mode is 5. The top 5 most central nodes are 314254.OA2633_11545
+	(degree 1085), 314254.OA2633_06104 (degree 930), 314254.OA2633_11630 (degree
+	910), 314254.OA2633_07109 (degree 896) and 314254.OA2633_14621 (degree
+	876).
 	
 
 

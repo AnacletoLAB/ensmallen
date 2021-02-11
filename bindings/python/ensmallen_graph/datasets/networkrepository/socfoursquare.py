@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:28:16.924685
 
-The undirected graph soc-FourSquare has 639014 nodes and 3214986 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00002 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 10.06, and the node degree mode is 1. The top 5 most
-central nodes are 106224 (degree 106218), 89303 (degree 46823), 76518 (degree 46494),
-67000 (degree 46400) and 102996 (degree 46291).
+The undirected graph soc-FourSquare has 639014 nodes and 3214986 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 10.06, and the
+node degree mode is 1. The top 5 most central nodes are 106224 (degree
+106218), 89303 (degree 46823), 76518 (degree 46494), 67000 (degree 46400)
+and 102996 (degree 46291).
 
 
 References
@@ -109,12 +110,13 @@ def SocFoursquare(
 	
 	Datetime: 2021-02-06 12:28:16.924685
 	
-	The undirected graph soc-FourSquare has 639014 nodes and 3214986 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00002 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 10.06, and the node degree mode is 1. The top 5 most
-	central nodes are 106224 (degree 106218), 89303 (degree 46823), 76518 (degree 46494),
-	67000 (degree 46400) and 102996 (degree 46291).
+	The undirected graph soc-FourSquare has 639014 nodes and 3214986 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 10.06, and the
+	node degree mode is 1. The top 5 most central nodes are 106224 (degree
+	106218), 89303 (degree 46823), 76518 (degree 46494), 67000 (degree 46400)
+	and 102996 (degree 46291).
 	
 
 

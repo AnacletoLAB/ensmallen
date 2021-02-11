@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:09.020682
 
-The undirected graph Kazachstania naganishii has 4882 nodes and 577041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04843 and
-is connected, as it has a single component. The graph median node degree is 176,
-the mean node degree is 236.40, and the node degree mode is 32. The top 5 most central
-nodes are 588726.J7QZF0 (degree 1514), 588726.J7RRY7 (degree 1339), 588726.J7RTD2
-(degree 1213), 588726.J7S636 (degree 1212) and 588726.J7S320 (degree 1197).
+The undirected graph Kazachstania naganishii has 4882 nodes and 577041
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04843 and is connected, as it has a single component.
+The graph median node degree is 176, the mean node degree is 236.40, and
+the node degree mode is 32. The top 5 most central nodes are 588726.J7QZF0
+(degree 1514), 588726.J7RRY7 (degree 1339), 588726.J7RTD2 (degree 1213),
+588726.J7S636 (degree 1212) and 588726.J7S320 (degree 1197).
 
 
 References
@@ -105,12 +106,13 @@ def KazachstaniaNaganishii(
 	
 	Datetime: 2021-02-02 21:17:09.020682
 	
-	The undirected graph Kazachstania naganishii has 4882 nodes and 577041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04843 and
-	is connected, as it has a single component. The graph median node degree is 176,
-	the mean node degree is 236.40, and the node degree mode is 32. The top 5 most central
-	nodes are 588726.J7QZF0 (degree 1514), 588726.J7RRY7 (degree 1339), 588726.J7RTD2
-	(degree 1213), 588726.J7S636 (degree 1212) and 588726.J7S320 (degree 1197).
+	The undirected graph Kazachstania naganishii has 4882 nodes and 577041
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04843 and is connected, as it has a single component.
+	The graph median node degree is 176, the mean node degree is 236.40, and
+	the node degree mode is 32. The top 5 most central nodes are 588726.J7QZF0
+	(degree 1514), 588726.J7RRY7 (degree 1339), 588726.J7RTD2 (degree 1213),
+	588726.J7S636 (degree 1212) and 588726.J7S320 (degree 1197).
 	
 
 

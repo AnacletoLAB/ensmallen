@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:48.683156
 
-The undirected graph Pseudomonas fragi has 4364 nodes and 423858 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04452 and
-has 9 connected components, where the component with most nodes has 4342 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 194.25, and the node degree mode is 1. The top 5 most central
-nodes are 1136138.JH604624_gene4180 (degree 1732), 1136138.JH604622_gene877 (degree
-1232), 1136138.JH604626_gene118 (degree 1232), 1136138.JH604625_gene3602 (degree
-1221) and 1136138.JH604622_gene665 (degree 1218).
+The undirected graph Pseudomonas fragi has 4364 nodes and 423858 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04452 and has 9 connected components, where the component with most
+nodes has 4342 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 194.25, and
+the node degree mode is 1. The top 5 most central nodes are 1136138.JH604624_gene4180
+(degree 1732), 1136138.JH604622_gene877 (degree 1232), 1136138.JH604626_gene118
+(degree 1232), 1136138.JH604625_gene3602 (degree 1221) and 1136138.JH604622_gene665
+(degree 1218).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFragi(
 	
 	Datetime: 2021-02-02 22:56:48.683156
 	
-	The undirected graph Pseudomonas fragi has 4364 nodes and 423858 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04452 and
-	has 9 connected components, where the component with most nodes has 4342 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 194.25, and the node degree mode is 1. The top 5 most central
-	nodes are 1136138.JH604624_gene4180 (degree 1732), 1136138.JH604622_gene877 (degree
-	1232), 1136138.JH604626_gene118 (degree 1232), 1136138.JH604625_gene3602 (degree
-	1221) and 1136138.JH604622_gene665 (degree 1218).
+	The undirected graph Pseudomonas fragi has 4364 nodes and 423858 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04452 and has 9 connected components, where the component with most
+	nodes has 4342 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 194.25, and
+	the node degree mode is 1. The top 5 most central nodes are 1136138.JH604624_gene4180
+	(degree 1732), 1136138.JH604622_gene877 (degree 1232), 1136138.JH604626_gene118
+	(degree 1232), 1136138.JH604625_gene3602 (degree 1221) and 1136138.JH604622_gene665
+	(degree 1218).
 	
 
 

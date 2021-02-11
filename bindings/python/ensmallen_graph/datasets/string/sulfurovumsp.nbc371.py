@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:04.076397
 
-The undirected graph Sulfurovum sp. NBC371 has 2434 nodes and 215089 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07264 and
-has 5 connected components, where the component with most nodes has 2426 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 176.74, and the node degree mode is 6. The top 5 most central
-nodes are 387093.SUN_1164 (degree 1142), 387093.SUN_1315 (degree 1111), 387093.SUN_1489
-(degree 899), 387093.SUN_1897 (degree 887) and 387093.SUN_1794 (degree 882).
+The undirected graph Sulfurovum sp. NBC371 has 2434 nodes and 215089 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07264 and has 5 connected components, where the component with most
+nodes has 2426 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 176.74, and
+the node degree mode is 6. The top 5 most central nodes are 387093.SUN_1164
+(degree 1142), 387093.SUN_1315 (degree 1111), 387093.SUN_1489 (degree 899),
+387093.SUN_1897 (degree 887) and 387093.SUN_1794 (degree 882).
 
 
 References
@@ -106,13 +107,14 @@ def SulfurovumSp.Nbc371(
 	
 	Datetime: 2021-02-02 20:38:04.076397
 	
-	The undirected graph Sulfurovum sp. NBC371 has 2434 nodes and 215089 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07264 and
-	has 5 connected components, where the component with most nodes has 2426 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 176.74, and the node degree mode is 6. The top 5 most central
-	nodes are 387093.SUN_1164 (degree 1142), 387093.SUN_1315 (degree 1111), 387093.SUN_1489
-	(degree 899), 387093.SUN_1897 (degree 887) and 387093.SUN_1794 (degree 882).
+	The undirected graph Sulfurovum sp. NBC371 has 2434 nodes and 215089 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07264 and has 5 connected components, where the component with most
+	nodes has 2426 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 176.74, and
+	the node degree mode is 6. The top 5 most central nodes are 387093.SUN_1164
+	(degree 1142), 387093.SUN_1315 (degree 1111), 387093.SUN_1489 (degree 899),
+	387093.SUN_1897 (degree 887) and 387093.SUN_1794 (degree 882).
 	
 
 

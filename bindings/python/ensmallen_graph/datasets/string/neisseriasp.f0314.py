@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:41.272333
 
-The undirected graph Neisseria sp. F0314 has 2277 nodes and 137371 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-has 6 connected components, where the component with most nodes has 2261 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 120.66, and the node degree mode is 3. The top 5 most central
-nodes are 641149.HMPREF9016_02032 (degree 911), 641149.HMPREF9016_00108 (degree 893),
-641149.HMPREF9016_02155 (degree 878), 641149.HMPREF9016_00054 (degree 753) and 641149.HMPREF9016_01846
+The undirected graph Neisseria sp. F0314 has 2277 nodes and 137371 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05301 and has 6 connected components, where the component with most
+nodes has 2261 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 120.66, and
+the node degree mode is 3. The top 5 most central nodes are 641149.HMPREF9016_02032
+(degree 911), 641149.HMPREF9016_00108 (degree 893), 641149.HMPREF9016_02155
+(degree 878), 641149.HMPREF9016_00054 (degree 753) and 641149.HMPREF9016_01846
 (degree 677).
 
 
@@ -107,13 +108,14 @@ def NeisseriaSp.F0314(
 	
 	Datetime: 2021-02-02 21:23:41.272333
 	
-	The undirected graph Neisseria sp. F0314 has 2277 nodes and 137371 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-	has 6 connected components, where the component with most nodes has 2261 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 120.66, and the node degree mode is 3. The top 5 most central
-	nodes are 641149.HMPREF9016_02032 (degree 911), 641149.HMPREF9016_00108 (degree 893),
-	641149.HMPREF9016_02155 (degree 878), 641149.HMPREF9016_00054 (degree 753) and 641149.HMPREF9016_01846
+	The undirected graph Neisseria sp. F0314 has 2277 nodes and 137371 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05301 and has 6 connected components, where the component with most
+	nodes has 2261 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 120.66, and
+	the node degree mode is 3. The top 5 most central nodes are 641149.HMPREF9016_02032
+	(degree 911), 641149.HMPREF9016_00108 (degree 893), 641149.HMPREF9016_02155
+	(degree 878), 641149.HMPREF9016_00054 (degree 753) and 641149.HMPREF9016_01846
 	(degree 677).
 	
 

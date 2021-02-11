@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:01:54.741867
 
-The undirected graph Streptomyces sp. Amel2xE9 has 6838 nodes and 930435 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03980
-and has 40 connected components, where the component with most nodes has 6745 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 272.14, and the node degree mode is 1. The top 5
-most central nodes are 1157634.KB912953_gene6017 (degree 3027), 1157634.KB912972_gene3625
-(degree 1949), 1157634.KB912949_gene2710 (degree 1826), 1157634.KB912977_gene8 (degree
-1823) and 1157634.KB912968_gene6552 (degree 1749).
+The undirected graph Streptomyces sp. Amel2xE9 has 6838 nodes and 930435
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03980 and has 40 connected components, where the component
+with most nodes has 6745 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 272.14,
+and the node degree mode is 1. The top 5 most central nodes are 1157634.KB912953_gene6017
+(degree 3027), 1157634.KB912972_gene3625 (degree 1949), 1157634.KB912949_gene2710
+(degree 1826), 1157634.KB912977_gene8 (degree 1823) and 1157634.KB912968_gene6552
+(degree 1749).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Amel2xe9(
 	
 	Datetime: 2021-02-02 23:01:54.741867
 	
-	The undirected graph Streptomyces sp. Amel2xE9 has 6838 nodes and 930435 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03980
-	and has 40 connected components, where the component with most nodes has 6745 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 272.14, and the node degree mode is 1. The top 5
-	most central nodes are 1157634.KB912953_gene6017 (degree 3027), 1157634.KB912972_gene3625
-	(degree 1949), 1157634.KB912949_gene2710 (degree 1826), 1157634.KB912977_gene8 (degree
-	1823) and 1157634.KB912968_gene6552 (degree 1749).
+	The undirected graph Streptomyces sp. Amel2xE9 has 6838 nodes and 930435
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03980 and has 40 connected components, where the component
+	with most nodes has 6745 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 272.14,
+	and the node degree mode is 1. The top 5 most central nodes are 1157634.KB912953_gene6017
+	(degree 3027), 1157634.KB912972_gene3625 (degree 1949), 1157634.KB912949_gene2710
+	(degree 1826), 1157634.KB912977_gene8 (degree 1823) and 1157634.KB912968_gene6552
+	(degree 1749).
 	
 
 

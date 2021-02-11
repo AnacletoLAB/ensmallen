@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:36.021569
 
-The undirected graph Bacillus xiamenensis has 3659 nodes and 276896 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04138 and
-has 13 connected components, where the component with most nodes has 3621 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 151.35, and the node degree mode is 6. The top 5 most central
-nodes are 1178537.BA1_04150 (degree 1111), 1178537.BA1_03330 (degree 1054), 1178537.BA1_12024
-(degree 1035), 1178537.BA1_18422 (degree 959) and 1178537.BA1_04632 (degree 943).
+The undirected graph Bacillus xiamenensis has 3659 nodes and 276896 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04138 and has 13 connected components, where the component with most
+nodes has 3621 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 151.35, and
+the node degree mode is 6. The top 5 most central nodes are 1178537.BA1_04150
+(degree 1111), 1178537.BA1_03330 (degree 1054), 1178537.BA1_12024 (degree
+1035), 1178537.BA1_18422 (degree 959) and 1178537.BA1_04632 (degree 943).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusXiamenensis(
 	
 	Datetime: 2021-02-02 23:09:36.021569
 	
-	The undirected graph Bacillus xiamenensis has 3659 nodes and 276896 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04138 and
-	has 13 connected components, where the component with most nodes has 3621 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 151.35, and the node degree mode is 6. The top 5 most central
-	nodes are 1178537.BA1_04150 (degree 1111), 1178537.BA1_03330 (degree 1054), 1178537.BA1_12024
-	(degree 1035), 1178537.BA1_18422 (degree 959) and 1178537.BA1_04632 (degree 943).
+	The undirected graph Bacillus xiamenensis has 3659 nodes and 276896 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04138 and has 13 connected components, where the component with most
+	nodes has 3621 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 151.35, and
+	the node degree mode is 6. The top 5 most central nodes are 1178537.BA1_04150
+	(degree 1111), 1178537.BA1_03330 (degree 1054), 1178537.BA1_12024 (degree
+	1035), 1178537.BA1_18422 (degree 959) and 1178537.BA1_04632 (degree 943).
 	
 
 

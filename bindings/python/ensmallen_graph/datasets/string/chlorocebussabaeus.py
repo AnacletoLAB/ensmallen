@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:22:30.863001
 
-The undirected graph Chlorocebus sabaeus has 18742 nodes and 4198295 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02391 and
-is connected, as it has a single component. The graph median node degree is 317,
-the mean node degree is 448.01, and the node degree mode is 173. The top 5 most central
-nodes are 60711.ENSCSAP00000003518 (degree 4919), 60711.ENSCSAP00000008696 (degree
-4450), 60711.ENSCSAP00000002490 (degree 4274), 60711.ENSCSAP00000004481 (degree 4233)
-and 60711.ENSCSAP00000005949 (degree 4006).
+The undirected graph Chlorocebus sabaeus has 18742 nodes and 4198295 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02391 and is connected, as it has a single component. The graph median
+node degree is 317, the mean node degree is 448.01, and the node degree
+mode is 173. The top 5 most central nodes are 60711.ENSCSAP00000003518
+(degree 4919), 60711.ENSCSAP00000008696 (degree 4450), 60711.ENSCSAP00000002490
+(degree 4274), 60711.ENSCSAP00000004481 (degree 4233) and 60711.ENSCSAP00000005949
+(degree 4006).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorocebusSabaeus(
 	
 	Datetime: 2021-02-02 18:22:30.863001
 	
-	The undirected graph Chlorocebus sabaeus has 18742 nodes and 4198295 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02391 and
-	is connected, as it has a single component. The graph median node degree is 317,
-	the mean node degree is 448.01, and the node degree mode is 173. The top 5 most central
-	nodes are 60711.ENSCSAP00000003518 (degree 4919), 60711.ENSCSAP00000008696 (degree
-	4450), 60711.ENSCSAP00000002490 (degree 4274), 60711.ENSCSAP00000004481 (degree 4233)
-	and 60711.ENSCSAP00000005949 (degree 4006).
+	The undirected graph Chlorocebus sabaeus has 18742 nodes and 4198295 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02391 and is connected, as it has a single component. The graph median
+	node degree is 317, the mean node degree is 448.01, and the node degree
+	mode is 173. The top 5 most central nodes are 60711.ENSCSAP00000003518
+	(degree 4919), 60711.ENSCSAP00000008696 (degree 4450), 60711.ENSCSAP00000002490
+	(degree 4274), 60711.ENSCSAP00000004481 (degree 4233) and 60711.ENSCSAP00000005949
+	(degree 4006).
 	
 
 

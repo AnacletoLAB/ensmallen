@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:27.822729
 
-The undirected graph Agrobacterium sp. H133 has 5312 nodes and 627957 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04452 and
-has 15 connected components, where the component with most nodes has 5274 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 236.43, and the node degree mode is 5. The top 5 most central
-nodes are 861208.AGROH133_02965 (degree 1810), 861208.AGROH133_03800 (degree 1315),
-861208.AGROH133_10197 (degree 1251), 861208.AGROH133_03892 (degree 1227) and 861208.AGROH133_08031
+The undirected graph Agrobacterium sp. H133 has 5312 nodes and 627957 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04452 and has 15 connected components, where the component with most
+nodes has 5274 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 236.43, and
+the node degree mode is 5. The top 5 most central nodes are 861208.AGROH133_02965
+(degree 1810), 861208.AGROH133_03800 (degree 1315), 861208.AGROH133_10197
+(degree 1251), 861208.AGROH133_03892 (degree 1227) and 861208.AGROH133_08031
 (degree 1220).
 
 
@@ -107,13 +108,14 @@ def AgrobacteriumSp.H133(
 	
 	Datetime: 2021-02-02 21:46:27.822729
 	
-	The undirected graph Agrobacterium sp. H133 has 5312 nodes and 627957 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04452 and
-	has 15 connected components, where the component with most nodes has 5274 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 236.43, and the node degree mode is 5. The top 5 most central
-	nodes are 861208.AGROH133_02965 (degree 1810), 861208.AGROH133_03800 (degree 1315),
-	861208.AGROH133_10197 (degree 1251), 861208.AGROH133_03892 (degree 1227) and 861208.AGROH133_08031
+	The undirected graph Agrobacterium sp. H133 has 5312 nodes and 627957 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04452 and has 15 connected components, where the component with most
+	nodes has 5274 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 236.43, and
+	the node degree mode is 5. The top 5 most central nodes are 861208.AGROH133_02965
+	(degree 1810), 861208.AGROH133_03800 (degree 1315), 861208.AGROH133_10197
+	(degree 1251), 861208.AGROH133_03892 (degree 1227) and 861208.AGROH133_08031
 	(degree 1220).
 	
 

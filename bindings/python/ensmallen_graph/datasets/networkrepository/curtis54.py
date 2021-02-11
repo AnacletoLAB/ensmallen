@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:08:05.024811
 
-The undirected graph curtis54 has 54 nodes and 178 unweighted edges, of which 54
-are self-loops. The graph is quite dense as it has a density of 0.10552 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 5.59, and the node degree mode is 5. The top 5 most central nodes are 7 (degree
-16), 21 (degree 10), 4 (degree 10), 36 (degree 9) and 37 (degree 8).
+The undirected graph curtis54 has 54 nodes and 178 unweighted edges, of
+which 54 are self-loops. The graph is quite dense as it has a density of
+0.10552 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 5.59, and the node degree mode
+is 5. The top 5 most central nodes are 7 (degree 16), 21 (degree 10), 4
+(degree 10), 36 (degree 9) and 37 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Curtis54(
 	
 	Datetime: 2021-02-06 08:08:05.024811
 	
-	The undirected graph curtis54 has 54 nodes and 178 unweighted edges, of which 54
-	are self-loops. The graph is quite dense as it has a density of 0.10552 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.59, and the node degree mode is 5. The top 5 most central nodes are 7 (degree
-	16), 21 (degree 10), 4 (degree 10), 36 (degree 9) and 37 (degree 8).
+	The undirected graph curtis54 has 54 nodes and 178 unweighted edges, of
+	which 54 are self-loops. The graph is quite dense as it has a density of
+	0.10552 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 5.59, and the node degree mode
+	is 5. The top 5 most central nodes are 7 (degree 16), 21 (degree 10), 4
+	(degree 10), 36 (degree 9) and 37 (degree 8).
 	
 
 

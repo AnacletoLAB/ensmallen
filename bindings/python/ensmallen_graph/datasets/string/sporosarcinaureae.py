@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:15.110811
 
-The undirected graph Sporosarcina ureae has 3201 nodes and 264287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05160 and
-has 8 connected components, where the component with most nodes has 3185 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 165.13, and the node degree mode is 1. The top 5 most central
-nodes are 1123290.AUDQ01000002_gene2445 (degree 1175), 1123290.AUDQ01000012_gene1753
-(degree 1061), 1123290.AUDQ01000009_gene1413 (degree 990), 1123290.AUDQ01000017_gene1021
-(degree 913) and 1123290.AUDQ01000001_gene2570 (degree 888).
+The undirected graph Sporosarcina ureae has 3201 nodes and 264287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05160 and has 8 connected components, where the component with most
+nodes has 3185 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 139, the mean node degree is 165.13, and
+the node degree mode is 1. The top 5 most central nodes are 1123290.AUDQ01000002_gene2445
+(degree 1175), 1123290.AUDQ01000012_gene1753 (degree 1061), 1123290.AUDQ01000009_gene1413
+(degree 990), 1123290.AUDQ01000017_gene1021 (degree 913) and 1123290.AUDQ01000001_gene2570
+(degree 888).
 
 
 References
@@ -107,14 +108,15 @@ def SporosarcinaUreae(
 	
 	Datetime: 2021-02-02 22:50:15.110811
 	
-	The undirected graph Sporosarcina ureae has 3201 nodes and 264287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05160 and
-	has 8 connected components, where the component with most nodes has 3185 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 165.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1123290.AUDQ01000002_gene2445 (degree 1175), 1123290.AUDQ01000012_gene1753
-	(degree 1061), 1123290.AUDQ01000009_gene1413 (degree 990), 1123290.AUDQ01000017_gene1021
-	(degree 913) and 1123290.AUDQ01000001_gene2570 (degree 888).
+	The undirected graph Sporosarcina ureae has 3201 nodes and 264287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05160 and has 8 connected components, where the component with most
+	nodes has 3185 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 139, the mean node degree is 165.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1123290.AUDQ01000002_gene2445
+	(degree 1175), 1123290.AUDQ01000012_gene1753 (degree 1061), 1123290.AUDQ01000009_gene1413
+	(degree 990), 1123290.AUDQ01000017_gene1021 (degree 913) and 1123290.AUDQ01000001_gene2570
+	(degree 888).
 	
 
 

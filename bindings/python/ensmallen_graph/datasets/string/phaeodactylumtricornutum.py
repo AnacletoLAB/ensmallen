@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:40.559833
 
-The undirected graph Phaeodactylum tricornutum has 5983 nodes and 630959 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03526
-and has 12 connected components, where the component with most nodes has 5961 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 210.92, and the node degree mode is 1. The top 5
-most central nodes are 2850.Phatr1690 (degree 2065), 2850.Phatr25308 (degree 2059),
-2850.Phatr45431 (degree 1732), 2850.Phatr47067 (degree 1638) and 2850.Phatr31781
-(degree 1531).
+The undirected graph Phaeodactylum tricornutum has 5983 nodes and 630959
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03526 and has 12 connected components, where the component
+with most nodes has 5961 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 210.92,
+and the node degree mode is 1. The top 5 most central nodes are 2850.Phatr1690
+(degree 2065), 2850.Phatr25308 (degree 2059), 2850.Phatr45431 (degree 1732),
+2850.Phatr47067 (degree 1638) and 2850.Phatr31781 (degree 1531).
 
 
 References
@@ -107,14 +107,14 @@ def PhaeodactylumTricornutum(
 	
 	Datetime: 2021-02-02 16:25:40.559833
 	
-	The undirected graph Phaeodactylum tricornutum has 5983 nodes and 630959 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03526
-	and has 12 connected components, where the component with most nodes has 5961 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 210.92, and the node degree mode is 1. The top 5
-	most central nodes are 2850.Phatr1690 (degree 2065), 2850.Phatr25308 (degree 2059),
-	2850.Phatr45431 (degree 1732), 2850.Phatr47067 (degree 1638) and 2850.Phatr31781
-	(degree 1531).
+	The undirected graph Phaeodactylum tricornutum has 5983 nodes and 630959
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03526 and has 12 connected components, where the component
+	with most nodes has 5961 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 210.92,
+	and the node degree mode is 1. The top 5 most central nodes are 2850.Phatr1690
+	(degree 2065), 2850.Phatr25308 (degree 2059), 2850.Phatr45431 (degree 1732),
+	2850.Phatr47067 (degree 1638) and 2850.Phatr31781 (degree 1531).
 	
 
 

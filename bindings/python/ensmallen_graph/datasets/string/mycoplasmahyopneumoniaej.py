@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:04.758220
 
-The undirected graph Mycoplasma hyopneumoniae J has 661 nodes and 33767 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.15480 and has 15 connected components, where the component with most nodes has
-619 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 83, the mean node degree is 102.17, and the node degree mode is 3. The
-top 5 most central nodes are 262719.MHJ_0266 (degree 340), 262719.MHJ_0063 (degree
-295), 262719.MHJ_0009 (degree 294), 262719.MHJ_0008 (degree 289) and 262719.MHJ_0053
-(degree 288).
+The undirected graph Mycoplasma hyopneumoniae J has 661 nodes and 33767
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.15480 and has 15 connected components, where the
+component with most nodes has 619 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 83, the mean node degree
+is 102.17, and the node degree mode is 3. The top 5 most central nodes
+are 262719.MHJ_0266 (degree 340), 262719.MHJ_0063 (degree 295), 262719.MHJ_0009
+(degree 294), 262719.MHJ_0008 (degree 289) and 262719.MHJ_0053 (degree
+288).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaHyopneumoniaeJ(
 	
 	Datetime: 2021-02-02 20:13:04.758220
 	
-	The undirected graph Mycoplasma hyopneumoniae J has 661 nodes and 33767 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.15480 and has 15 connected components, where the component with most nodes has
-	619 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 83, the mean node degree is 102.17, and the node degree mode is 3. The
-	top 5 most central nodes are 262719.MHJ_0266 (degree 340), 262719.MHJ_0063 (degree
-	295), 262719.MHJ_0009 (degree 294), 262719.MHJ_0008 (degree 289) and 262719.MHJ_0053
-	(degree 288).
+	The undirected graph Mycoplasma hyopneumoniae J has 661 nodes and 33767
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.15480 and has 15 connected components, where the
+	component with most nodes has 619 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 83, the mean node degree
+	is 102.17, and the node degree mode is 3. The top 5 most central nodes
+	are 262719.MHJ_0266 (degree 340), 262719.MHJ_0063 (degree 295), 262719.MHJ_0009
+	(degree 294), 262719.MHJ_0008 (degree 289) and 262719.MHJ_0053 (degree
+	288).
 	
 
 

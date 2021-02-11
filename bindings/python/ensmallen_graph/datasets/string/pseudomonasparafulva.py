@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:34.525960
 
-The undirected graph Pseudomonas parafulva has 4255 nodes and 349614 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-has 10 connected components, where the component with most nodes has 4233 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 164.33, and the node degree mode is 2. The top 5 most central
-nodes are 1215114.BBIU01000003_gene328 (degree 1502), 1215114.BBIU01000024_gene3050
-(degree 1160), 1215114.BBIU01000039_gene3866 (degree 1118), 1215114.BBIU01000016_gene2269
-(degree 1100) and 1215114.BBIU01000013_gene1846 (degree 1082).
+The undirected graph Pseudomonas parafulva has 4255 nodes and 349614 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03863 and has 10 connected components, where the component with most
+nodes has 4233 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 164.33, and
+the node degree mode is 2. The top 5 most central nodes are 1215114.BBIU01000003_gene328
+(degree 1502), 1215114.BBIU01000024_gene3050 (degree 1160), 1215114.BBIU01000039_gene3866
+(degree 1118), 1215114.BBIU01000016_gene2269 (degree 1100) and 1215114.BBIU01000013_gene1846
+(degree 1082).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasParafulva(
 	
 	Datetime: 2021-02-02 23:20:34.525960
 	
-	The undirected graph Pseudomonas parafulva has 4255 nodes and 349614 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-	has 10 connected components, where the component with most nodes has 4233 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 164.33, and the node degree mode is 2. The top 5 most central
-	nodes are 1215114.BBIU01000003_gene328 (degree 1502), 1215114.BBIU01000024_gene3050
-	(degree 1160), 1215114.BBIU01000039_gene3866 (degree 1118), 1215114.BBIU01000016_gene2269
-	(degree 1100) and 1215114.BBIU01000013_gene1846 (degree 1082).
+	The undirected graph Pseudomonas parafulva has 4255 nodes and 349614 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03863 and has 10 connected components, where the component with most
+	nodes has 4233 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 164.33, and
+	the node degree mode is 2. The top 5 most central nodes are 1215114.BBIU01000003_gene328
+	(degree 1502), 1215114.BBIU01000024_gene3050 (degree 1160), 1215114.BBIU01000039_gene3866
+	(degree 1118), 1215114.BBIU01000016_gene2269 (degree 1100) and 1215114.BBIU01000013_gene1846
+	(degree 1082).
 	
 
 

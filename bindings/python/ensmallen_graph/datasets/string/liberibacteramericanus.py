@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:26.350524
 
-The undirected graph Liberibacter americanus has 953 nodes and 51518 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11357
-and has 8 connected components, where the component with most nodes has 934 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 108.12, and the node degree mode is 1. The top 5 most
-central nodes are 1261131.lam_869 (degree 470), 1261131.lam_042 (degree 448), 1261131.lam_527
-(degree 443), 1261131.lam_010 (degree 411) and 1261131.lam_602 (degree 388).
+The undirected graph Liberibacter americanus has 953 nodes and 51518 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11357 and has 8 connected components, where the component
+with most nodes has 934 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 108.12,
+and the node degree mode is 1. The top 5 most central nodes are 1261131.lam_869
+(degree 470), 1261131.lam_042 (degree 448), 1261131.lam_527 (degree 443),
+1261131.lam_010 (degree 411) and 1261131.lam_602 (degree 388).
 
 
 References
@@ -106,13 +107,14 @@ def LiberibacterAmericanus(
 	
 	Datetime: 2021-02-02 23:35:26.350524
 	
-	The undirected graph Liberibacter americanus has 953 nodes and 51518 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11357
-	and has 8 connected components, where the component with most nodes has 934 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 108.12, and the node degree mode is 1. The top 5 most
-	central nodes are 1261131.lam_869 (degree 470), 1261131.lam_042 (degree 448), 1261131.lam_527
-	(degree 443), 1261131.lam_010 (degree 411) and 1261131.lam_602 (degree 388).
+	The undirected graph Liberibacter americanus has 953 nodes and 51518 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11357 and has 8 connected components, where the component
+	with most nodes has 934 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 108.12,
+	and the node degree mode is 1. The top 5 most central nodes are 1261131.lam_869
+	(degree 470), 1261131.lam_042 (degree 448), 1261131.lam_527 (degree 443),
+	1261131.lam_010 (degree 411) and 1261131.lam_602 (degree 388).
 	
 
 

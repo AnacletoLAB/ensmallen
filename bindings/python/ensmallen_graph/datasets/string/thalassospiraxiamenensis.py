@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:50.842839
 
-The undirected graph Thalassospira xiamenensis has 4307 nodes and 330692 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03566
-and has 25 connected components, where the component with most nodes has 4239 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 153.56, and the node degree mode is 2. The top 5
-most central nodes are 1123366.TH3_01745 (degree 1668), 1123366.TH3_19887 (degree
-1312), 1123366.TH3_17237 (degree 1193), 1123366.TH3_12820 (degree 1145) and 1123366.TH3_01305
-(degree 993).
+The undirected graph Thalassospira xiamenensis has 4307 nodes and 330692
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03566 and has 25 connected components, where the component
+with most nodes has 4239 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 153.56,
+and the node degree mode is 2. The top 5 most central nodes are 1123366.TH3_01745
+(degree 1668), 1123366.TH3_19887 (degree 1312), 1123366.TH3_17237 (degree
+1193), 1123366.TH3_12820 (degree 1145) and 1123366.TH3_01305 (degree 993).
 
 
 References
@@ -107,14 +107,14 @@ def ThalassospiraXiamenensis(
 	
 	Datetime: 2021-02-02 22:51:50.842839
 	
-	The undirected graph Thalassospira xiamenensis has 4307 nodes and 330692 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03566
-	and has 25 connected components, where the component with most nodes has 4239 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 153.56, and the node degree mode is 2. The top 5
-	most central nodes are 1123366.TH3_01745 (degree 1668), 1123366.TH3_19887 (degree
-	1312), 1123366.TH3_17237 (degree 1193), 1123366.TH3_12820 (degree 1145) and 1123366.TH3_01305
-	(degree 993).
+	The undirected graph Thalassospira xiamenensis has 4307 nodes and 330692
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03566 and has 25 connected components, where the component
+	with most nodes has 4239 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 153.56,
+	and the node degree mode is 2. The top 5 most central nodes are 1123366.TH3_01745
+	(degree 1668), 1123366.TH3_19887 (degree 1312), 1123366.TH3_17237 (degree
+	1193), 1123366.TH3_12820 (degree 1145) and 1123366.TH3_01305 (degree 993).
 	
 
 

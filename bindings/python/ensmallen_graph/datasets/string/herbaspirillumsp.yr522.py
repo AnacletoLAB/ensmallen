@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:52.579371
 
-The undirected graph Herbaspirillum sp. YR522 has 4555 nodes and 716837 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06911
-and has 20 connected components, where the component with most nodes has 4506 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 314.75, and the node degree mode is 1. The top 5
-most central nodes are 1144342.PMI40_03953 (degree 1903), 1144342.PMI40_03475 (degree
-1837), 1144342.PMI40_01129 (degree 1828), 1144342.PMI40_04775 (degree 1596) and 1144342.PMI40_03563
-(degree 1595).
+The undirected graph Herbaspirillum sp. YR522 has 4555 nodes and 716837
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06911 and has 20 connected components, where the component
+with most nodes has 4506 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 314.75,
+and the node degree mode is 1. The top 5 most central nodes are 1144342.PMI40_03953
+(degree 1903), 1144342.PMI40_03475 (degree 1837), 1144342.PMI40_01129 (degree
+1828), 1144342.PMI40_04775 (degree 1596) and 1144342.PMI40_03563 (degree
+1595).
 
 
 References
@@ -107,14 +108,15 @@ def HerbaspirillumSp.Yr522(
 	
 	Datetime: 2021-02-02 22:58:52.579371
 	
-	The undirected graph Herbaspirillum sp. YR522 has 4555 nodes and 716837 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06911
-	and has 20 connected components, where the component with most nodes has 4506 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 314.75, and the node degree mode is 1. The top 5
-	most central nodes are 1144342.PMI40_03953 (degree 1903), 1144342.PMI40_03475 (degree
-	1837), 1144342.PMI40_01129 (degree 1828), 1144342.PMI40_04775 (degree 1596) and 1144342.PMI40_03563
-	(degree 1595).
+	The undirected graph Herbaspirillum sp. YR522 has 4555 nodes and 716837
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06911 and has 20 connected components, where the component
+	with most nodes has 4506 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 314.75,
+	and the node degree mode is 1. The top 5 most central nodes are 1144342.PMI40_03953
+	(degree 1903), 1144342.PMI40_03475 (degree 1837), 1144342.PMI40_01129 (degree
+	1828), 1144342.PMI40_04775 (degree 1596) and 1144342.PMI40_03563 (degree
+	1595).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:46.133257
 
-The undirected graph Bradyrhizobium elkanii WSM1741 has 6757 nodes and 914184 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04005
-and has 49 connected components, where the component with most nodes has 6651 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 270.59, and the node degree mode is 1. The top 5
-most central nodes are 1038859.AXAU01000016_gene6858 (degree 3526), 1038859.AXAU01000002_gene595
+The undirected graph Bradyrhizobium elkanii WSM1741 has 6757 nodes and
+914184 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04005 and has 49 connected components, where the
+component with most nodes has 6651 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 213, the mean node degree
+is 270.59, and the node degree mode is 1. The top 5 most central nodes
+are 1038859.AXAU01000016_gene6858 (degree 3526), 1038859.AXAU01000002_gene595
 (degree 2575), 1038859.AXAU01000026_gene2284 (degree 2393), 1038859.AXAU01000002_gene262
 (degree 2087) and 1038859.AXAU01000013_gene6519 (degree 2017).
 
@@ -107,12 +108,13 @@ def BradyrhizobiumElkaniiWsm1741(
 	
 	Datetime: 2021-02-02 22:12:46.133257
 	
-	The undirected graph Bradyrhizobium elkanii WSM1741 has 6757 nodes and 914184 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04005
-	and has 49 connected components, where the component with most nodes has 6651 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 270.59, and the node degree mode is 1. The top 5
-	most central nodes are 1038859.AXAU01000016_gene6858 (degree 3526), 1038859.AXAU01000002_gene595
+	The undirected graph Bradyrhizobium elkanii WSM1741 has 6757 nodes and
+	914184 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04005 and has 49 connected components, where the
+	component with most nodes has 6651 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 213, the mean node degree
+	is 270.59, and the node degree mode is 1. The top 5 most central nodes
+	are 1038859.AXAU01000016_gene6858 (degree 3526), 1038859.AXAU01000002_gene595
 	(degree 2575), 1038859.AXAU01000026_gene2284 (degree 2393), 1038859.AXAU01000002_gene262
 	(degree 2087) and 1038859.AXAU01000013_gene6519 (degree 2017).
 	

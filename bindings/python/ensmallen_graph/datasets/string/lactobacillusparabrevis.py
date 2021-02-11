@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:37.312059
 
-The undirected graph Lactobacillus parabrevis has 2257 nodes and 148078 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05816
-and has 10 connected components, where the component with most nodes has 2237 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 131.22, and the node degree mode is 2. The top 5
-most central nodes are 1267003.KB911400_gene2007 (degree 855), 1267003.KB911374_gene855
-(degree 815), 1267003.KB911368_gene181 (degree 683), 1267003.KB911385_gene1926 (degree
-666) and 1267003.KB911377_gene1802 (degree 637).
+The undirected graph Lactobacillus parabrevis has 2257 nodes and 148078
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05816 and has 10 connected components, where the component
+with most nodes has 2237 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 131.22,
+and the node degree mode is 2. The top 5 most central nodes are 1267003.KB911400_gene2007
+(degree 855), 1267003.KB911374_gene855 (degree 815), 1267003.KB911368_gene181
+(degree 683), 1267003.KB911385_gene1926 (degree 666) and 1267003.KB911377_gene1802
+(degree 637).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusParabrevis(
 	
 	Datetime: 2021-02-02 23:36:37.312059
 	
-	The undirected graph Lactobacillus parabrevis has 2257 nodes and 148078 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05816
-	and has 10 connected components, where the component with most nodes has 2237 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 131.22, and the node degree mode is 2. The top 5
-	most central nodes are 1267003.KB911400_gene2007 (degree 855), 1267003.KB911374_gene855
-	(degree 815), 1267003.KB911368_gene181 (degree 683), 1267003.KB911385_gene1926 (degree
-	666) and 1267003.KB911377_gene1802 (degree 637).
+	The undirected graph Lactobacillus parabrevis has 2257 nodes and 148078
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05816 and has 10 connected components, where the component
+	with most nodes has 2237 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 131.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1267003.KB911400_gene2007
+	(degree 855), 1267003.KB911374_gene855 (degree 815), 1267003.KB911368_gene181
+	(degree 683), 1267003.KB911385_gene1926 (degree 666) and 1267003.KB911377_gene1802
+	(degree 637).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:40:12.053099
 
-The undirected graph Bacteroides sp. Ga6A2 has 2772 nodes and 187911 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04893 and
-has 18 connected components, where the component with most nodes has 2725 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 135.58, and the node degree mode is 3. The top 5 most central
-nodes are 1410608.JNKX01000041_gene1713 (degree 919), 1410608.JNKX01000001_gene1572
-(degree 901), 1410608.JNKX01000010_gene267 (degree 893), 1410608.JNKX01000039_gene1461
-(degree 761) and 1410608.JNKX01000025_gene538 (degree 756).
+The undirected graph Bacteroides sp. Ga6A2 has 2772 nodes and 187911 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04893 and has 18 connected components, where the component with most
+nodes has 2725 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 135.58, and
+the node degree mode is 3. The top 5 most central nodes are 1410608.JNKX01000041_gene1713
+(degree 919), 1410608.JNKX01000001_gene1572 (degree 901), 1410608.JNKX01000010_gene267
+(degree 893), 1410608.JNKX01000039_gene1461 (degree 761) and 1410608.JNKX01000025_gene538
+(degree 756).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesSp.Ga6a2(
 	
 	Datetime: 2021-02-03 22:40:12.053099
 	
-	The undirected graph Bacteroides sp. Ga6A2 has 2772 nodes and 187911 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04893 and
-	has 18 connected components, where the component with most nodes has 2725 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 135.58, and the node degree mode is 3. The top 5 most central
-	nodes are 1410608.JNKX01000041_gene1713 (degree 919), 1410608.JNKX01000001_gene1572
-	(degree 901), 1410608.JNKX01000010_gene267 (degree 893), 1410608.JNKX01000039_gene1461
-	(degree 761) and 1410608.JNKX01000025_gene538 (degree 756).
+	The undirected graph Bacteroides sp. Ga6A2 has 2772 nodes and 187911 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04893 and has 18 connected components, where the component with most
+	nodes has 2725 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 135.58, and
+	the node degree mode is 3. The top 5 most central nodes are 1410608.JNKX01000041_gene1713
+	(degree 919), 1410608.JNKX01000001_gene1572 (degree 901), 1410608.JNKX01000010_gene267
+	(degree 893), 1410608.JNKX01000039_gene1461 (degree 761) and 1410608.JNKX01000025_gene538
+	(degree 756).
 	
 
 

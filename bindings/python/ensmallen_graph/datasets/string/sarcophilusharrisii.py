@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:32:10.582635
 
-The undirected graph Sarcophilus harrisii has 17721 nodes and 3591783 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02288 and
-is connected, as it has a single component. The graph median node degree is 281,
-the mean node degree is 405.37, and the node degree mode is 236. The top 5 most central
-nodes are 9305.ENSSHAP00000001747 (degree 4080), 9305.ENSSHAP00000012745 (degree
-3445), 9305.ENSSHAP00000019620 (degree 3385), 9305.ENSSHAP00000008915 (degree 3376)
-and 9305.ENSSHAP00000017285 (degree 3316).
+The undirected graph Sarcophilus harrisii has 17721 nodes and 3591783 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02288 and is connected, as it has a single component. The graph median
+node degree is 281, the mean node degree is 405.37, and the node degree
+mode is 236. The top 5 most central nodes are 9305.ENSSHAP00000001747 (degree
+4080), 9305.ENSSHAP00000012745 (degree 3445), 9305.ENSSHAP00000019620 (degree
+3385), 9305.ENSSHAP00000008915 (degree 3376) and 9305.ENSSHAP00000017285
+(degree 3316).
 
 
 References
@@ -106,13 +107,14 @@ def SarcophilusHarrisii(
 	
 	Datetime: 2021-02-02 17:32:10.582635
 	
-	The undirected graph Sarcophilus harrisii has 17721 nodes and 3591783 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02288 and
-	is connected, as it has a single component. The graph median node degree is 281,
-	the mean node degree is 405.37, and the node degree mode is 236. The top 5 most central
-	nodes are 9305.ENSSHAP00000001747 (degree 4080), 9305.ENSSHAP00000012745 (degree
-	3445), 9305.ENSSHAP00000019620 (degree 3385), 9305.ENSSHAP00000008915 (degree 3376)
-	and 9305.ENSSHAP00000017285 (degree 3316).
+	The undirected graph Sarcophilus harrisii has 17721 nodes and 3591783 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02288 and is connected, as it has a single component. The graph median
+	node degree is 281, the mean node degree is 405.37, and the node degree
+	mode is 236. The top 5 most central nodes are 9305.ENSSHAP00000001747 (degree
+	4080), 9305.ENSSHAP00000012745 (degree 3445), 9305.ENSSHAP00000019620 (degree
+	3385), 9305.ENSSHAP00000008915 (degree 3376) and 9305.ENSSHAP00000017285
+	(degree 3316).
 	
 
 

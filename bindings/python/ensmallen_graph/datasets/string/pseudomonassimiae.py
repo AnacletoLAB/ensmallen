@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:55.947537
 
-The undirected graph Pseudomonas simiae has 5476 nodes and 748380 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04992 and
-has 13 connected components, where the component with most nodes has 5443 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 273.33, and the node degree mode is 3. The top 5 most central
-nodes are 321846.PS417_00405 (degree 2123), 321846.PS417_24110 (degree 2116), 321846.PS417_02000
-(degree 1750), 321846.PS417_23075 (degree 1696) and 321846.PS417_16370 (degree 1676).
+The undirected graph Pseudomonas simiae has 5476 nodes and 748380 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04992 and has 13 connected components, where the component with most
+nodes has 5443 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 273.33, and
+the node degree mode is 3. The top 5 most central nodes are 321846.PS417_00405
+(degree 2123), 321846.PS417_24110 (degree 2116), 321846.PS417_02000 (degree
+1750), 321846.PS417_23075 (degree 1696) and 321846.PS417_16370 (degree
+1676).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasSimiae(
 	
 	Datetime: 2021-02-02 20:27:55.947537
 	
-	The undirected graph Pseudomonas simiae has 5476 nodes and 748380 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04992 and
-	has 13 connected components, where the component with most nodes has 5443 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 273.33, and the node degree mode is 3. The top 5 most central
-	nodes are 321846.PS417_00405 (degree 2123), 321846.PS417_24110 (degree 2116), 321846.PS417_02000
-	(degree 1750), 321846.PS417_23075 (degree 1696) and 321846.PS417_16370 (degree 1676).
+	The undirected graph Pseudomonas simiae has 5476 nodes and 748380 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04992 and has 13 connected components, where the component with most
+	nodes has 5443 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 273.33, and
+	the node degree mode is 3. The top 5 most central nodes are 321846.PS417_00405
+	(degree 2123), 321846.PS417_24110 (degree 2116), 321846.PS417_02000 (degree
+	1750), 321846.PS417_23075 (degree 1696) and 321846.PS417_16370 (degree
+	1676).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:00.953033
 
-The undirected graph Helicobacter macacae has 1902 nodes and 93965 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05198 and
-has 19 connected components, where the component with most nodes has 1859 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 72,
-the mean node degree is 98.81, and the node degree mode is 5. The top 5 most central
-nodes are 1357400.HMPREF2086_00310 (degree 759), 1357400.HMPREF2086_01534 (degree
-757), 1357400.HMPREF2086_01628 (degree 678), 1357400.HMPREF2086_01838 (degree 646)
-and 1357400.HMPREF2086_00458 (degree 549).
+The undirected graph Helicobacter macacae has 1902 nodes and 93965 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05198 and has 19 connected components, where the component with most
+nodes has 1859 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 72, the mean node degree is 98.81, and
+the node degree mode is 5. The top 5 most central nodes are 1357400.HMPREF2086_00310
+(degree 759), 1357400.HMPREF2086_01534 (degree 757), 1357400.HMPREF2086_01628
+(degree 678), 1357400.HMPREF2086_01838 (degree 646) and 1357400.HMPREF2086_00458
+(degree 549).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterMacacae(
 	
 	Datetime: 2021-02-03 22:09:00.953033
 	
-	The undirected graph Helicobacter macacae has 1902 nodes and 93965 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05198 and
-	has 19 connected components, where the component with most nodes has 1859 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 72,
-	the mean node degree is 98.81, and the node degree mode is 5. The top 5 most central
-	nodes are 1357400.HMPREF2086_00310 (degree 759), 1357400.HMPREF2086_01534 (degree
-	757), 1357400.HMPREF2086_01628 (degree 678), 1357400.HMPREF2086_01838 (degree 646)
-	and 1357400.HMPREF2086_00458 (degree 549).
+	The undirected graph Helicobacter macacae has 1902 nodes and 93965 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05198 and has 19 connected components, where the component with most
+	nodes has 1859 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 72, the mean node degree is 98.81, and
+	the node degree mode is 5. The top 5 most central nodes are 1357400.HMPREF2086_00310
+	(degree 759), 1357400.HMPREF2086_01534 (degree 757), 1357400.HMPREF2086_01628
+	(degree 678), 1357400.HMPREF2086_01838 (degree 646) and 1357400.HMPREF2086_00458
+	(degree 549).
 	
 
 

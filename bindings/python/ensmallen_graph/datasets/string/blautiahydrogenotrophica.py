@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:35.450422
 
-The undirected graph Blautia hydrogenotrophica has 3839 nodes and 438144 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05947
-and has 11 connected components, where the component with most nodes has 3818 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 186, the mean node degree is 228.26, and the node degree mode is 1. The top 5
-most central nodes are 476272.RUMHYD_02975 (degree 1526), 476272.RUMHYD_00233 (degree
-1438), 476272.RUMHYD_03620 (degree 1309), 476272.RUMHYD_02726 (degree 1253) and 476272.RUMHYD_01114
-(degree 1253).
+The undirected graph Blautia hydrogenotrophica has 3839 nodes and 438144
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05947 and has 11 connected components, where the component
+with most nodes has 3818 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 186, the mean node degree is 228.26,
+and the node degree mode is 1. The top 5 most central nodes are 476272.RUMHYD_02975
+(degree 1526), 476272.RUMHYD_00233 (degree 1438), 476272.RUMHYD_03620 (degree
+1309), 476272.RUMHYD_02726 (degree 1253) and 476272.RUMHYD_01114 (degree
+1253).
 
 
 References
@@ -107,14 +108,15 @@ def BlautiaHydrogenotrophica(
 	
 	Datetime: 2021-02-02 20:56:35.450422
 	
-	The undirected graph Blautia hydrogenotrophica has 3839 nodes and 438144 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05947
-	and has 11 connected components, where the component with most nodes has 3818 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 186, the mean node degree is 228.26, and the node degree mode is 1. The top 5
-	most central nodes are 476272.RUMHYD_02975 (degree 1526), 476272.RUMHYD_00233 (degree
-	1438), 476272.RUMHYD_03620 (degree 1309), 476272.RUMHYD_02726 (degree 1253) and 476272.RUMHYD_01114
-	(degree 1253).
+	The undirected graph Blautia hydrogenotrophica has 3839 nodes and 438144
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05947 and has 11 connected components, where the component
+	with most nodes has 3818 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 186, the mean node degree is 228.26,
+	and the node degree mode is 1. The top 5 most central nodes are 476272.RUMHYD_02975
+	(degree 1526), 476272.RUMHYD_00233 (degree 1438), 476272.RUMHYD_03620 (degree
+	1309), 476272.RUMHYD_02726 (degree 1253) and 476272.RUMHYD_01114 (degree
+	1253).
 	
 
 

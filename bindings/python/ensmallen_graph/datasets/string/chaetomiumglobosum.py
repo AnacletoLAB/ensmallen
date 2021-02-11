@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:07:18.814573
 
-The undirected graph Chaetomium globosum has 6963 nodes and 624974 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02578 and
-has 11 connected components, where the component with most nodes has 6942 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 179.51, and the node degree mode is 1. The top 5 most central
-nodes are 38033.XP_001221698.1 (degree 1608), 38033.XP_001227036.1 (degree 1578),
-38033.XP_001229886.1 (degree 1346), 38033.XP_001221049.1 (degree 1319) and 38033.XP_001225636.1
+The undirected graph Chaetomium globosum has 6963 nodes and 624974 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02578 and has 11 connected components, where the component with most
+nodes has 6942 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 179.51, and
+the node degree mode is 1. The top 5 most central nodes are 38033.XP_001221698.1
+(degree 1608), 38033.XP_001227036.1 (degree 1578), 38033.XP_001229886.1
+(degree 1346), 38033.XP_001221049.1 (degree 1319) and 38033.XP_001225636.1
 (degree 1302).
 
 
@@ -107,13 +108,14 @@ def ChaetomiumGlobosum(
 	
 	Datetime: 2021-02-02 18:07:18.814573
 	
-	The undirected graph Chaetomium globosum has 6963 nodes and 624974 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02578 and
-	has 11 connected components, where the component with most nodes has 6942 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 179.51, and the node degree mode is 1. The top 5 most central
-	nodes are 38033.XP_001221698.1 (degree 1608), 38033.XP_001227036.1 (degree 1578),
-	38033.XP_001229886.1 (degree 1346), 38033.XP_001221049.1 (degree 1319) and 38033.XP_001225636.1
+	The undirected graph Chaetomium globosum has 6963 nodes and 624974 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02578 and has 11 connected components, where the component with most
+	nodes has 6942 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 179.51, and
+	the node degree mode is 1. The top 5 most central nodes are 38033.XP_001221698.1
+	(degree 1608), 38033.XP_001227036.1 (degree 1578), 38033.XP_001229886.1
+	(degree 1346), 38033.XP_001221049.1 (degree 1319) and 38033.XP_001225636.1
 	(degree 1302).
 	
 

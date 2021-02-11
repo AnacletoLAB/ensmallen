@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:39.438703
 
-The undirected graph Clostridium sp. CL6 has 4126 nodes and 361713 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04251 and
-has 18 connected components, where the component with most nodes has 4077 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 175.33, and the node degree mode is 6. The top 5 most central
-nodes are 1499683.CCFF01000017_gene1815 (degree 1441), 1499683.CCFF01000015_gene3314
-(degree 1403), 1499683.CCFF01000017_gene2878 (degree 1185), 1499683.CCFF01000017_gene2897
-(degree 1148) and 1499683.CCFF01000016_gene847 (degree 1080).
+The undirected graph Clostridium sp. CL6 has 4126 nodes and 361713 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04251 and has 18 connected components, where the component with most
+nodes has 4077 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 175.33, and
+the node degree mode is 6. The top 5 most central nodes are 1499683.CCFF01000017_gene1815
+(degree 1441), 1499683.CCFF01000015_gene3314 (degree 1403), 1499683.CCFF01000017_gene2878
+(degree 1185), 1499683.CCFF01000017_gene2897 (degree 1148) and 1499683.CCFF01000016_gene847
+(degree 1080).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Cl6(
 	
 	Datetime: 2021-02-03 23:14:39.438703
 	
-	The undirected graph Clostridium sp. CL6 has 4126 nodes and 361713 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04251 and
-	has 18 connected components, where the component with most nodes has 4077 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 175.33, and the node degree mode is 6. The top 5 most central
-	nodes are 1499683.CCFF01000017_gene1815 (degree 1441), 1499683.CCFF01000015_gene3314
-	(degree 1403), 1499683.CCFF01000017_gene2878 (degree 1185), 1499683.CCFF01000017_gene2897
-	(degree 1148) and 1499683.CCFF01000016_gene847 (degree 1080).
+	The undirected graph Clostridium sp. CL6 has 4126 nodes and 361713 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04251 and has 18 connected components, where the component with most
+	nodes has 4077 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 175.33, and
+	the node degree mode is 6. The top 5 most central nodes are 1499683.CCFF01000017_gene1815
+	(degree 1441), 1499683.CCFF01000015_gene3314 (degree 1403), 1499683.CCFF01000017_gene2878
+	(degree 1185), 1499683.CCFF01000017_gene2897 (degree 1148) and 1499683.CCFF01000016_gene847
+	(degree 1080).
 	
 
 

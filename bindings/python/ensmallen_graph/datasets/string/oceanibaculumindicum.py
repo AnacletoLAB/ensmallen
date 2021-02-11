@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:57.267530
 
-The undirected graph Oceanibaculum indicum has 3741 nodes and 439987 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06289 and
-has 4 connected components, where the component with most nodes has 3734 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 235.22, and the node degree mode is 4. The top 5 most central
-nodes are 1207063.P24_05542 (degree 1481), 1207063.P24_05987 (degree 1410), 1207063.P24_08926
-(degree 1180), 1207063.P24_06761 (degree 1149) and 1207063.P24_02521 (degree 1125).
+The undirected graph Oceanibaculum indicum has 3741 nodes and 439987 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06289 and has 4 connected components, where the component with most
+nodes has 3734 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 235.22, and
+the node degree mode is 4. The top 5 most central nodes are 1207063.P24_05542
+(degree 1481), 1207063.P24_05987 (degree 1410), 1207063.P24_08926 (degree
+1180), 1207063.P24_06761 (degree 1149) and 1207063.P24_02521 (degree 1125).
 
 
 References
@@ -106,13 +107,14 @@ def OceanibaculumIndicum(
 	
 	Datetime: 2021-02-02 23:17:57.267530
 	
-	The undirected graph Oceanibaculum indicum has 3741 nodes and 439987 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06289 and
-	has 4 connected components, where the component with most nodes has 3734 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 235.22, and the node degree mode is 4. The top 5 most central
-	nodes are 1207063.P24_05542 (degree 1481), 1207063.P24_05987 (degree 1410), 1207063.P24_08926
-	(degree 1180), 1207063.P24_06761 (degree 1149) and 1207063.P24_02521 (degree 1125).
+	The undirected graph Oceanibaculum indicum has 3741 nodes and 439987 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06289 and has 4 connected components, where the component with most
+	nodes has 3734 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 235.22, and
+	the node degree mode is 4. The top 5 most central nodes are 1207063.P24_05542
+	(degree 1481), 1207063.P24_05987 (degree 1410), 1207063.P24_08926 (degree
+	1180), 1207063.P24_06761 (degree 1149) and 1207063.P24_02521 (degree 1125).
 	
 
 

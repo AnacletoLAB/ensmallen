@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:44:14.920184
 
-The undirected graph Streptacidiphilus neutrinimicus has 7557 nodes and 1671264 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05854
-and has 26 connected components, where the component with most nodes has 7498 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 406, the mean node degree is 442.31, and the node degree mode is 1. The top 5
-most central nodes are 105420.BBPO01000133_gene3549 (degree 2555), 105420.BBPO01000046_gene1021
+The undirected graph Streptacidiphilus neutrinimicus has 7557 nodes and
+1671264 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05854 and has 26 connected components, where the
+component with most nodes has 7498 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 406, the mean node degree
+is 442.31, and the node degree mode is 1. The top 5 most central nodes
+are 105420.BBPO01000133_gene3549 (degree 2555), 105420.BBPO01000046_gene1021
 (degree 2349), 105420.BBPO01000084_gene4788 (degree 2346), 105420.BBPO01000010_gene2320
 (degree 2272) and 105420.BBPO01000019_gene5478 (degree 2232).
 
@@ -107,12 +108,13 @@ def StreptacidiphilusNeutrinimicus(
 	
 	Datetime: 2021-02-02 19:44:14.920184
 	
-	The undirected graph Streptacidiphilus neutrinimicus has 7557 nodes and 1671264 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05854
-	and has 26 connected components, where the component with most nodes has 7498 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 406, the mean node degree is 442.31, and the node degree mode is 1. The top 5
-	most central nodes are 105420.BBPO01000133_gene3549 (degree 2555), 105420.BBPO01000046_gene1021
+	The undirected graph Streptacidiphilus neutrinimicus has 7557 nodes and
+	1671264 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05854 and has 26 connected components, where the
+	component with most nodes has 7498 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 406, the mean node degree
+	is 442.31, and the node degree mode is 1. The top 5 most central nodes
+	are 105420.BBPO01000133_gene3549 (degree 2555), 105420.BBPO01000046_gene1021
 	(degree 2349), 105420.BBPO01000084_gene4788 (degree 2346), 105420.BBPO01000010_gene2320
 	(degree 2272) and 105420.BBPO01000019_gene5478 (degree 2232).
 	

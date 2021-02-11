@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:57.261474
 
-The undirected graph Fusobacterium nucleatum polymorphum has 2336 nodes and 167923
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06157 and has 9 connected components, where the component with most nodes has
-2315 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 117, the mean node degree is 143.77, and the node degree mode is 9. The
-top 5 most central nodes are 393480.FNP_1194 (degree 943), 393480.FNP_1356 (degree
-899), 393480.FNP_1485 (degree 789), 393480.FNP_2072 (degree 730) and 393480.FNP_0118
-(degree 704).
+The undirected graph Fusobacterium nucleatum polymorphum has 2336 nodes
+and 167923 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06157 and has 9 connected components, where the
+component with most nodes has 2315 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 117, the mean node degree
+is 143.77, and the node degree mode is 9. The top 5 most central nodes
+are 393480.FNP_1194 (degree 943), 393480.FNP_1356 (degree 899), 393480.FNP_1485
+(degree 789), 393480.FNP_2072 (degree 730) and 393480.FNP_0118 (degree
+704).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumNucleatumPolymorphum(
 	
 	Datetime: 2021-02-02 20:40:57.261474
 	
-	The undirected graph Fusobacterium nucleatum polymorphum has 2336 nodes and 167923
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06157 and has 9 connected components, where the component with most nodes has
-	2315 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 117, the mean node degree is 143.77, and the node degree mode is 9. The
-	top 5 most central nodes are 393480.FNP_1194 (degree 943), 393480.FNP_1356 (degree
-	899), 393480.FNP_1485 (degree 789), 393480.FNP_2072 (degree 730) and 393480.FNP_0118
-	(degree 704).
+	The undirected graph Fusobacterium nucleatum polymorphum has 2336 nodes
+	and 167923 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06157 and has 9 connected components, where the
+	component with most nodes has 2315 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 117, the mean node degree
+	is 143.77, and the node degree mode is 9. The top 5 most central nodes
+	are 393480.FNP_1194 (degree 943), 393480.FNP_1356 (degree 899), 393480.FNP_1485
+	(degree 789), 393480.FNP_2072 (degree 730) and 393480.FNP_0118 (degree
+	704).
 	
 
 

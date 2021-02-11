@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:10.661862
 
-The undirected graph Lactobacillus jensenii 1153CHN has 1497 nodes and 104591 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09341
-and has 4 connected components, where the component with most nodes has 1482 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 139.73, and the node degree mode is 3. The top 5
-most central nodes are 575605.ACQN01000014_gene1324 (degree 786), 575605.ACQN01000014_gene1380
+The undirected graph Lactobacillus jensenii 1153CHN has 1497 nodes and
+104591 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09341 and has 4 connected components, where the
+component with most nodes has 1482 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+is 139.73, and the node degree mode is 3. The top 5 most central nodes
+are 575605.ACQN01000014_gene1324 (degree 786), 575605.ACQN01000014_gene1380
 (degree 758), 575605.ACQN01000003_gene517 (degree 593), 575605.ACQN01000003_gene583
 (degree 561) and 575605.ACQN01000004_gene271 (degree 558).
 
@@ -107,12 +108,13 @@ def LactobacillusJensenii1153chn(
 	
 	Datetime: 2021-02-02 21:15:10.661862
 	
-	The undirected graph Lactobacillus jensenii 1153CHN has 1497 nodes and 104591 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09341
-	and has 4 connected components, where the component with most nodes has 1482 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 139.73, and the node degree mode is 3. The top 5
-	most central nodes are 575605.ACQN01000014_gene1324 (degree 786), 575605.ACQN01000014_gene1380
+	The undirected graph Lactobacillus jensenii 1153CHN has 1497 nodes and
+	104591 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09341 and has 4 connected components, where the
+	component with most nodes has 1482 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+	is 139.73, and the node degree mode is 3. The top 5 most central nodes
+	are 575605.ACQN01000014_gene1324 (degree 786), 575605.ACQN01000014_gene1380
 	(degree 758), 575605.ACQN01000003_gene517 (degree 593), 575605.ACQN01000003_gene583
 	(degree 561) and 575605.ACQN01000004_gene271 (degree 558).
 	

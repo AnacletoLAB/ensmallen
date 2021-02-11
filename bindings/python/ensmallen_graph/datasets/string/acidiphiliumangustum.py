@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:32.407010
 
-The undirected graph Acidiphilium angustum has 3624 nodes and 352696 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05372 and
-has 24 connected components, where the component with most nodes has 3567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 155,
-the mean node degree is 194.64, and the node degree mode is 2. The top 5 most central
-nodes are 1408418.JNJH01000020_gene963 (degree 1341), 1408418.JNJH01000038_gene1090
-(degree 1335), 1408418.JNJH01000020_gene923 (degree 1135), 1408418.JNJH01000020_gene919
-(degree 1067) and 1408418.JNJH01000059_gene357 (degree 1032).
+The undirected graph Acidiphilium angustum has 3624 nodes and 352696 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05372 and has 24 connected components, where the component with most
+nodes has 3567 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 155, the mean node degree is 194.64, and
+the node degree mode is 2. The top 5 most central nodes are 1408418.JNJH01000020_gene963
+(degree 1341), 1408418.JNJH01000038_gene1090 (degree 1335), 1408418.JNJH01000020_gene923
+(degree 1135), 1408418.JNJH01000020_gene919 (degree 1067) and 1408418.JNJH01000059_gene357
+(degree 1032).
 
 
 References
@@ -107,14 +108,15 @@ def AcidiphiliumAngustum(
 	
 	Datetime: 2021-02-03 22:35:32.407010
 	
-	The undirected graph Acidiphilium angustum has 3624 nodes and 352696 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05372 and
-	has 24 connected components, where the component with most nodes has 3567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 155,
-	the mean node degree is 194.64, and the node degree mode is 2. The top 5 most central
-	nodes are 1408418.JNJH01000020_gene963 (degree 1341), 1408418.JNJH01000038_gene1090
-	(degree 1335), 1408418.JNJH01000020_gene923 (degree 1135), 1408418.JNJH01000020_gene919
-	(degree 1067) and 1408418.JNJH01000059_gene357 (degree 1032).
+	The undirected graph Acidiphilium angustum has 3624 nodes and 352696 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05372 and has 24 connected components, where the component with most
+	nodes has 3567 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 155, the mean node degree is 194.64, and
+	the node degree mode is 2. The top 5 most central nodes are 1408418.JNJH01000020_gene963
+	(degree 1341), 1408418.JNJH01000038_gene1090 (degree 1335), 1408418.JNJH01000020_gene923
+	(degree 1135), 1408418.JNJH01000020_gene919 (degree 1067) and 1408418.JNJH01000059_gene357
+	(degree 1032).
 	
 
 

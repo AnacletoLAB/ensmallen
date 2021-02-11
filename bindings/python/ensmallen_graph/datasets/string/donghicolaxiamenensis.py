@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:21.653312
 
-The undirected graph Donghicola xiamenensis has 4320 nodes and 682747 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07319 and
-has 5 connected components, where the component with most nodes has 4305 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 279,
-the mean node degree is 316.09, and the node degree mode is 2. The top 5 most central
-nodes are 1121479.AUBS01000050_gene700 (degree 1918), 1121479.AUBS01000002_gene3630
-(degree 1829), 1121479.AUBS01000012_gene1413 (degree 1729), 1121479.AUBS01000016_gene1808
-(degree 1497) and 1121479.AUBS01000005_gene2655 (degree 1388).
+The undirected graph Donghicola xiamenensis has 4320 nodes and 682747 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07319 and has 5 connected components, where the component with most
+nodes has 4305 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 279, the mean node degree is 316.09, and
+the node degree mode is 2. The top 5 most central nodes are 1121479.AUBS01000050_gene700
+(degree 1918), 1121479.AUBS01000002_gene3630 (degree 1829), 1121479.AUBS01000012_gene1413
+(degree 1729), 1121479.AUBS01000016_gene1808 (degree 1497) and 1121479.AUBS01000005_gene2655
+(degree 1388).
 
 
 References
@@ -107,14 +108,15 @@ def DonghicolaXiamenensis(
 	
 	Datetime: 2021-02-02 22:37:21.653312
 	
-	The undirected graph Donghicola xiamenensis has 4320 nodes and 682747 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07319 and
-	has 5 connected components, where the component with most nodes has 4305 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 279,
-	the mean node degree is 316.09, and the node degree mode is 2. The top 5 most central
-	nodes are 1121479.AUBS01000050_gene700 (degree 1918), 1121479.AUBS01000002_gene3630
-	(degree 1829), 1121479.AUBS01000012_gene1413 (degree 1729), 1121479.AUBS01000016_gene1808
-	(degree 1497) and 1121479.AUBS01000005_gene2655 (degree 1388).
+	The undirected graph Donghicola xiamenensis has 4320 nodes and 682747 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07319 and has 5 connected components, where the component with most
+	nodes has 4305 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 279, the mean node degree is 316.09, and
+	the node degree mode is 2. The top 5 most central nodes are 1121479.AUBS01000050_gene700
+	(degree 1918), 1121479.AUBS01000002_gene3630 (degree 1829), 1121479.AUBS01000012_gene1413
+	(degree 1729), 1121479.AUBS01000016_gene1808 (degree 1497) and 1121479.AUBS01000005_gene2655
+	(degree 1388).
 	
 
 

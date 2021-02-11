@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:56.992304
 
-The undirected graph Clostridium carboxidivorans has 5419 nodes and 520353 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03545
-and has 19 connected components, where the component with most nodes has 5374 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 192.05, and the node degree mode is 2. The top 5
-most central nodes are 536227.CcarbDRAFT_1916 (degree 2059), 536227.CcarbDRAFT_1287
-(degree 1681), 536227.CcarbDRAFT_3360 (degree 1545), 536227.CcarbDRAFT_1804 (degree
-1446) and 536227.CcarbDRAFT_0316 (degree 1430).
+The undirected graph Clostridium carboxidivorans has 5419 nodes and 520353
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03545 and has 19 connected components, where the component
+with most nodes has 5374 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 192.05,
+and the node degree mode is 2. The top 5 most central nodes are 536227.CcarbDRAFT_1916
+(degree 2059), 536227.CcarbDRAFT_1287 (degree 1681), 536227.CcarbDRAFT_3360
+(degree 1545), 536227.CcarbDRAFT_1804 (degree 1446) and 536227.CcarbDRAFT_0316
+(degree 1430).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumCarboxidivorans(
 	
 	Datetime: 2021-02-02 21:06:56.992304
 	
-	The undirected graph Clostridium carboxidivorans has 5419 nodes and 520353 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03545
-	and has 19 connected components, where the component with most nodes has 5374 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 192.05, and the node degree mode is 2. The top 5
-	most central nodes are 536227.CcarbDRAFT_1916 (degree 2059), 536227.CcarbDRAFT_1287
-	(degree 1681), 536227.CcarbDRAFT_3360 (degree 1545), 536227.CcarbDRAFT_1804 (degree
-	1446) and 536227.CcarbDRAFT_0316 (degree 1430).
+	The undirected graph Clostridium carboxidivorans has 5419 nodes and 520353
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03545 and has 19 connected components, where the component
+	with most nodes has 5374 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 192.05,
+	and the node degree mode is 2. The top 5 most central nodes are 536227.CcarbDRAFT_1916
+	(degree 2059), 536227.CcarbDRAFT_1287 (degree 1681), 536227.CcarbDRAFT_3360
+	(degree 1545), 536227.CcarbDRAFT_1804 (degree 1446) and 536227.CcarbDRAFT_0316
+	(degree 1430).
 	
 
 

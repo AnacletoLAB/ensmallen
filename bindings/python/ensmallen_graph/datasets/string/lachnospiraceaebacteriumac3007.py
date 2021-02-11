@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:59.899284
 
-The undirected graph Lachnospiraceae bacterium AC3007 has 2415 nodes and 203369 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06977
-and has 12 connected components, where the component with most nodes has 2391 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 168.42, and the node degree mode is 1. The top 5
-most central nodes are 1408322.JHYK01000015_gene1939 (degree 1052), 1408322.JHYK01000004_gene833
+The undirected graph Lachnospiraceae bacterium AC3007 has 2415 nodes and
+203369 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06977 and has 12 connected components, where the
+component with most nodes has 2391 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 168.42, and the node degree mode is 1. The top 5 most central nodes
+are 1408322.JHYK01000015_gene1939 (degree 1052), 1408322.JHYK01000004_gene833
 (degree 1024), 1408322.JHYK01000002_gene1250 (degree 927), 1408322.JHYK01000014_gene1853
 (degree 871) and 1408322.JHYK01000003_gene1235 (degree 834).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumAc3007(
 	
 	Datetime: 2021-02-03 22:34:59.899284
 	
-	The undirected graph Lachnospiraceae bacterium AC3007 has 2415 nodes and 203369 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06977
-	and has 12 connected components, where the component with most nodes has 2391 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 168.42, and the node degree mode is 1. The top 5
-	most central nodes are 1408322.JHYK01000015_gene1939 (degree 1052), 1408322.JHYK01000004_gene833
+	The undirected graph Lachnospiraceae bacterium AC3007 has 2415 nodes and
+	203369 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06977 and has 12 connected components, where the
+	component with most nodes has 2391 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 168.42, and the node degree mode is 1. The top 5 most central nodes
+	are 1408322.JHYK01000015_gene1939 (degree 1052), 1408322.JHYK01000004_gene833
 	(degree 1024), 1408322.JHYK01000002_gene1250 (degree 927), 1408322.JHYK01000014_gene1853
 	(degree 871) and 1408322.JHYK01000003_gene1235 (degree 834).
 	

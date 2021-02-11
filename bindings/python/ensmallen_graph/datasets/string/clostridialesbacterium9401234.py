@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:52.129792
 
-The undirected graph Clostridiales bacterium 9401234 has 1664 nodes and 99029 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07157
-and has 3 connected components, where the component with most nodes has 1660 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 119.03, and the node degree mode is 37. The top 5
-most central nodes are 938288.HG326226_gene779 (degree 702), 938288.HG326227_gene501
-(degree 694), 938288.HG326224_gene1423 (degree 576), 938288.HG326224_gene1614 (degree
+The undirected graph Clostridiales bacterium 9401234 has 1664 nodes and
+99029 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07157 and has 3 connected components, where the
+component with most nodes has 1660 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 90, the mean node degree
+is 119.03, and the node degree mode is 37. The top 5 most central nodes
+are 938288.HG326226_gene779 (degree 702), 938288.HG326227_gene501 (degree
+694), 938288.HG326224_gene1423 (degree 576), 938288.HG326224_gene1614 (degree
 545) and 938288.HG326225_gene1191 (degree 507).
 
 
@@ -107,13 +108,14 @@ def ClostridialesBacterium9401234(
 	
 	Datetime: 2021-02-02 22:00:52.129792
 	
-	The undirected graph Clostridiales bacterium 9401234 has 1664 nodes and 99029 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07157
-	and has 3 connected components, where the component with most nodes has 1660 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 119.03, and the node degree mode is 37. The top 5
-	most central nodes are 938288.HG326226_gene779 (degree 702), 938288.HG326227_gene501
-	(degree 694), 938288.HG326224_gene1423 (degree 576), 938288.HG326224_gene1614 (degree
+	The undirected graph Clostridiales bacterium 9401234 has 1664 nodes and
+	99029 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07157 and has 3 connected components, where the
+	component with most nodes has 1660 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 90, the mean node degree
+	is 119.03, and the node degree mode is 37. The top 5 most central nodes
+	are 938288.HG326226_gene779 (degree 702), 938288.HG326227_gene501 (degree
+	694), 938288.HG326224_gene1423 (degree 576), 938288.HG326224_gene1614 (degree
 	545) and 938288.HG326225_gene1191 (degree 507).
 	
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:45.283331
 
-The undirected graph ash958 has 958 nodes and 1914 unweighted edges, of which 2 are
-self-loops. The graph is sparse as it has a density of 0.00417 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 3.99, and the node degree mode is 2. The top 5 most central nodes are 165 (degree
-15), 183 (degree 14), 162 (degree 14), 114 (degree 14) and 187 (degree 13).
+The undirected graph ash958 has 958 nodes and 1914 unweighted edges, of
+which 2 are self-loops. The graph is sparse as it has a density of 0.00417
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 3.99, and the node degree mode is 2. The
+top 5 most central nodes are 165 (degree 15), 183 (degree 14), 162 (degree
+14), 114 (degree 14) and 187 (degree 13).
 
 
 References
@@ -101,11 +102,12 @@ def Ash958(
 	
 	Datetime: 2021-02-06 08:02:45.283331
 	
-	The undirected graph ash958 has 958 nodes and 1914 unweighted edges, of which 2 are
-	self-loops. The graph is sparse as it has a density of 0.00417 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 3.99, and the node degree mode is 2. The top 5 most central nodes are 165 (degree
-	15), 183 (degree 14), 162 (degree 14), 114 (degree 14) and 187 (degree 13).
+	The undirected graph ash958 has 958 nodes and 1914 unweighted edges, of
+	which 2 are self-loops. The graph is sparse as it has a density of 0.00417
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 3.99, and the node degree mode is 2. The
+	top 5 most central nodes are 165 (degree 15), 183 (degree 14), 162 (degree
+	14), 114 (degree 14) and 187 (degree 13).
 	
 
 

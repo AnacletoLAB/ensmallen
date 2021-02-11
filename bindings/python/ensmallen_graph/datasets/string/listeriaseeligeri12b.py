@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:48.251144
 
-The undirected graph Listeria seeligeri 12b has 2698 nodes and 196951 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05413 and
-has 4 connected components, where the component with most nodes has 2691 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 146.00, and the node degree mode is 37. The top 5 most central
-nodes are 683837.lse_1480 (degree 1062), 683837.lse_0729 (degree 1000), 683837.lse_0986
-(degree 858), 683837.lse_0205 (degree 834) and 683837.lse_1372 (degree 760).
+The undirected graph Listeria seeligeri 12b has 2698 nodes and 196951 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05413 and has 4 connected components, where the component with most
+nodes has 2691 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 146.00, and
+the node degree mode is 37. The top 5 most central nodes are 683837.lse_1480
+(degree 1062), 683837.lse_0729 (degree 1000), 683837.lse_0986 (degree 858),
+683837.lse_0205 (degree 834) and 683837.lse_1372 (degree 760).
 
 
 References
@@ -106,13 +107,14 @@ def ListeriaSeeligeri12b(
 	
 	Datetime: 2021-02-02 21:30:48.251144
 	
-	The undirected graph Listeria seeligeri 12b has 2698 nodes and 196951 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05413 and
-	has 4 connected components, where the component with most nodes has 2691 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 146.00, and the node degree mode is 37. The top 5 most central
-	nodes are 683837.lse_1480 (degree 1062), 683837.lse_0729 (degree 1000), 683837.lse_0986
-	(degree 858), 683837.lse_0205 (degree 834) and 683837.lse_1372 (degree 760).
+	The undirected graph Listeria seeligeri 12b has 2698 nodes and 196951 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05413 and has 4 connected components, where the component with most
+	nodes has 2691 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 146.00, and
+	the node degree mode is 37. The top 5 most central nodes are 683837.lse_1480
+	(degree 1062), 683837.lse_0729 (degree 1000), 683837.lse_0986 (degree 858),
+	683837.lse_0205 (degree 834) and 683837.lse_1372 (degree 760).
 	
 
 

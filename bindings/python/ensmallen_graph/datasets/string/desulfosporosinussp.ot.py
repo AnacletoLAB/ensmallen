@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:53.857039
 
-The undirected graph Desulfosporosinus sp. OT has 6074 nodes and 636081 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03449
-and has 71 connected components, where the component with most nodes has 5895 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 209.44, and the node degree mode is 3. The top 5
-most central nodes are 913865.DOT_3234 (degree 2105), 913865.DOT_5274 (degree 1918),
-913865.DOT_1366 (degree 1858), 913865.DOT_6228 (degree 1834) and 913865.DOT_1468
-(degree 1681).
+The undirected graph Desulfosporosinus sp. OT has 6074 nodes and 636081
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03449 and has 71 connected components, where the component
+with most nodes has 5895 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 209.44,
+and the node degree mode is 3. The top 5 most central nodes are 913865.DOT_3234
+(degree 2105), 913865.DOT_5274 (degree 1918), 913865.DOT_1366 (degree 1858),
+913865.DOT_6228 (degree 1834) and 913865.DOT_1468 (degree 1681).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfosporosinusSp.Ot(
 	
 	Datetime: 2021-02-02 21:55:53.857039
 	
-	The undirected graph Desulfosporosinus sp. OT has 6074 nodes and 636081 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03449
-	and has 71 connected components, where the component with most nodes has 5895 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 209.44, and the node degree mode is 3. The top 5
-	most central nodes are 913865.DOT_3234 (degree 2105), 913865.DOT_5274 (degree 1918),
-	913865.DOT_1366 (degree 1858), 913865.DOT_6228 (degree 1834) and 913865.DOT_1468
-	(degree 1681).
+	The undirected graph Desulfosporosinus sp. OT has 6074 nodes and 636081
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03449 and has 71 connected components, where the component
+	with most nodes has 5895 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 209.44,
+	and the node degree mode is 3. The top 5 most central nodes are 913865.DOT_3234
+	(degree 2105), 913865.DOT_5274 (degree 1918), 913865.DOT_1366 (degree 1858),
+	913865.DOT_6228 (degree 1834) and 913865.DOT_1468 (degree 1681).
 	
 
 

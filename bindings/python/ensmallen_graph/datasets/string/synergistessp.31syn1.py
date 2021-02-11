@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:12.132679
 
-The undirected graph Synergistes sp. 31syn1 has 2934 nodes and 278667 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06477 and
-has 6 connected components, where the component with most nodes has 2923 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 189.96, and the node degree mode is 3. The top 5 most central
-nodes are 457415.HMPREF1006_00506 (degree 1140), 457415.HMPREF1006_02669 (degree
-1098), 457415.HMPREF1006_01750 (degree 1054), 457415.HMPREF1006_01786 (degree 913)
-and 457415.HMPREF1006_02646 (degree 875).
+The undirected graph Synergistes sp. 31syn1 has 2934 nodes and 278667 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06477 and has 6 connected components, where the component with most
+nodes has 2923 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 189.96, and
+the node degree mode is 3. The top 5 most central nodes are 457415.HMPREF1006_00506
+(degree 1140), 457415.HMPREF1006_02669 (degree 1098), 457415.HMPREF1006_01750
+(degree 1054), 457415.HMPREF1006_01786 (degree 913) and 457415.HMPREF1006_02646
+(degree 875).
 
 
 References
@@ -107,14 +108,15 @@ def SynergistesSp.31syn1(
 	
 	Datetime: 2021-02-02 20:53:12.132679
 	
-	The undirected graph Synergistes sp. 31syn1 has 2934 nodes and 278667 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06477 and
-	has 6 connected components, where the component with most nodes has 2923 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 189.96, and the node degree mode is 3. The top 5 most central
-	nodes are 457415.HMPREF1006_00506 (degree 1140), 457415.HMPREF1006_02669 (degree
-	1098), 457415.HMPREF1006_01750 (degree 1054), 457415.HMPREF1006_01786 (degree 913)
-	and 457415.HMPREF1006_02646 (degree 875).
+	The undirected graph Synergistes sp. 31syn1 has 2934 nodes and 278667 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06477 and has 6 connected components, where the component with most
+	nodes has 2923 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 189.96, and
+	the node degree mode is 3. The top 5 most central nodes are 457415.HMPREF1006_00506
+	(degree 1140), 457415.HMPREF1006_02669 (degree 1098), 457415.HMPREF1006_01750
+	(degree 1054), 457415.HMPREF1006_01786 (degree 913) and 457415.HMPREF1006_02646
+	(degree 875).
 	
 
 

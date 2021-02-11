@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:18:24.791054
 
-The undirected graph Caenorhabditis briggsae has 13915 nodes and 1672139 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01727
-and has 15 connected components, where the component with most nodes has 13886 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 240.34, and the node degree mode is 1. The top 5
-most central nodes are 6238.CBG22800 (degree 2434), 6238.CBG20587 (degree 2303),
-6238.CBG04560 (degree 2288), 6238.CBG02840 (degree 2286) and 6238.CBG04405 (degree
-2152).
+The undirected graph Caenorhabditis briggsae has 13915 nodes and 1672139
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01727 and has 15 connected components, where the component
+with most nodes has 13886 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 129, the mean node degree
+is 240.34, and the node degree mode is 1. The top 5 most central nodes
+are 6238.CBG22800 (degree 2434), 6238.CBG20587 (degree 2303), 6238.CBG04560
+(degree 2288), 6238.CBG02840 (degree 2286) and 6238.CBG04405 (degree 2152).
 
 
 References
@@ -107,14 +107,14 @@ def CaenorhabditisBriggsae(
 	
 	Datetime: 2021-02-02 17:18:24.791054
 	
-	The undirected graph Caenorhabditis briggsae has 13915 nodes and 1672139 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01727
-	and has 15 connected components, where the component with most nodes has 13886 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 240.34, and the node degree mode is 1. The top 5
-	most central nodes are 6238.CBG22800 (degree 2434), 6238.CBG20587 (degree 2303),
-	6238.CBG04560 (degree 2288), 6238.CBG02840 (degree 2286) and 6238.CBG04405 (degree
-	2152).
+	The undirected graph Caenorhabditis briggsae has 13915 nodes and 1672139
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01727 and has 15 connected components, where the component
+	with most nodes has 13886 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 129, the mean node degree
+	is 240.34, and the node degree mode is 1. The top 5 most central nodes
+	are 6238.CBG22800 (degree 2434), 6238.CBG20587 (degree 2303), 6238.CBG04560
+	(degree 2288), 6238.CBG02840 (degree 2286) and 6238.CBG04405 (degree 2152).
 	
 
 

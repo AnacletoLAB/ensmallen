@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:47:30.784250
 
-The undirected graph Oryctolagus cuniculus has 18898 nodes and 4901260 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02745 and
-has 2 connected components, where the component with most nodes has 18896 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 382,
-the mean node degree is 518.71, and the node degree mode is 7. The top 5 most central
-nodes are 9986.ENSOCUP00000017094 (degree 6119), 9986.ENSOCUP00000022125 (degree
-6112), 9986.ENSOCUP00000011800 (degree 4754), 9986.ENSOCUP00000013680 (degree 4395)
-and 9986.ENSOCUP00000014006 (degree 4191).
+The undirected graph Oryctolagus cuniculus has 18898 nodes and 4901260
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02745 and has 2 connected components, where the component
+with most nodes has 18896 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 382, the mean node degree
+is 518.71, and the node degree mode is 7. The top 5 most central nodes
+are 9986.ENSOCUP00000017094 (degree 6119), 9986.ENSOCUP00000022125 (degree
+6112), 9986.ENSOCUP00000011800 (degree 4754), 9986.ENSOCUP00000013680 (degree
+4395) and 9986.ENSOCUP00000014006 (degree 4191).
 
 
 References
@@ -107,14 +108,15 @@ def OryctolagusCuniculus(
 	
 	Datetime: 2021-02-02 17:47:30.784250
 	
-	The undirected graph Oryctolagus cuniculus has 18898 nodes and 4901260 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02745 and
-	has 2 connected components, where the component with most nodes has 18896 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 382,
-	the mean node degree is 518.71, and the node degree mode is 7. The top 5 most central
-	nodes are 9986.ENSOCUP00000017094 (degree 6119), 9986.ENSOCUP00000022125 (degree
-	6112), 9986.ENSOCUP00000011800 (degree 4754), 9986.ENSOCUP00000013680 (degree 4395)
-	and 9986.ENSOCUP00000014006 (degree 4191).
+	The undirected graph Oryctolagus cuniculus has 18898 nodes and 4901260
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02745 and has 2 connected components, where the component
+	with most nodes has 18896 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 382, the mean node degree
+	is 518.71, and the node degree mode is 7. The top 5 most central nodes
+	are 9986.ENSOCUP00000017094 (degree 6119), 9986.ENSOCUP00000022125 (degree
+	6112), 9986.ENSOCUP00000011800 (degree 4754), 9986.ENSOCUP00000013680 (degree
+	4395) and 9986.ENSOCUP00000014006 (degree 4191).
 	
 
 

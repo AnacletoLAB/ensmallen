@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:12.028366
 
-The undirected graph Streptococcus sinensis has 1965 nodes and 122751 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06361 and
-has 11 connected components, where the component with most nodes has 1933 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 124.94, and the node degree mode is 9. The top 5 most central
-nodes are 176090.SSIN_1030 (degree 813), 176090.SSIN_0355 (degree 686), 176090.SSIN_1976
-(degree 684), 176090.SSIN_1611 (degree 626) and 176090.SSIN_0511 (degree 611).
+The undirected graph Streptococcus sinensis has 1965 nodes and 122751 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06361 and has 11 connected components, where the component with most
+nodes has 1933 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 124.94, and
+the node degree mode is 9. The top 5 most central nodes are 176090.SSIN_1030
+(degree 813), 176090.SSIN_0355 (degree 686), 176090.SSIN_1976 (degree 684),
+176090.SSIN_1611 (degree 626) and 176090.SSIN_0511 (degree 611).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusSinensis(
 	
 	Datetime: 2021-02-02 19:55:12.028366
 	
-	The undirected graph Streptococcus sinensis has 1965 nodes and 122751 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06361 and
-	has 11 connected components, where the component with most nodes has 1933 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 124.94, and the node degree mode is 9. The top 5 most central
-	nodes are 176090.SSIN_1030 (degree 813), 176090.SSIN_0355 (degree 686), 176090.SSIN_1976
-	(degree 684), 176090.SSIN_1611 (degree 626) and 176090.SSIN_0511 (degree 611).
+	The undirected graph Streptococcus sinensis has 1965 nodes and 122751 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06361 and has 11 connected components, where the component with most
+	nodes has 1933 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 124.94, and
+	the node degree mode is 9. The top 5 most central nodes are 176090.SSIN_1030
+	(degree 813), 176090.SSIN_0355 (degree 686), 176090.SSIN_1976 (degree 684),
+	176090.SSIN_1611 (degree 626) and 176090.SSIN_0511 (degree 611).
 	
 
 

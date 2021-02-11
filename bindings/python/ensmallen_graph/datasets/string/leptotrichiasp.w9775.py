@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:59.865920
 
-The undirected graph Leptotrichia sp. W9775 has 2245 nodes and 134750 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05350 and
-has 7 connected components, where the component with most nodes has 2228 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 120.04, and the node degree mode is 9. The top 5 most central
-nodes are 1321779.HMPREF1984_00660 (degree 847), 1321779.HMPREF1984_01378 (degree
-792), 1321779.HMPREF1984_01465 (degree 773), 1321779.HMPREF1984_00961 (degree 770)
-and 1321779.HMPREF1984_01890 (degree 629).
+The undirected graph Leptotrichia sp. W9775 has 2245 nodes and 134750 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05350 and has 7 connected components, where the component with most
+nodes has 2228 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 120.04, and
+the node degree mode is 9. The top 5 most central nodes are 1321779.HMPREF1984_00660
+(degree 847), 1321779.HMPREF1984_01378 (degree 792), 1321779.HMPREF1984_01465
+(degree 773), 1321779.HMPREF1984_00961 (degree 770) and 1321779.HMPREF1984_01890
+(degree 629).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaSp.W9775(
 	
 	Datetime: 2021-02-03 21:52:59.865920
 	
-	The undirected graph Leptotrichia sp. W9775 has 2245 nodes and 134750 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05350 and
-	has 7 connected components, where the component with most nodes has 2228 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 120.04, and the node degree mode is 9. The top 5 most central
-	nodes are 1321779.HMPREF1984_00660 (degree 847), 1321779.HMPREF1984_01378 (degree
-	792), 1321779.HMPREF1984_01465 (degree 773), 1321779.HMPREF1984_00961 (degree 770)
-	and 1321779.HMPREF1984_01890 (degree 629).
+	The undirected graph Leptotrichia sp. W9775 has 2245 nodes and 134750 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05350 and has 7 connected components, where the component with most
+	nodes has 2228 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 120.04, and
+	the node degree mode is 9. The top 5 most central nodes are 1321779.HMPREF1984_00660
+	(degree 847), 1321779.HMPREF1984_01378 (degree 792), 1321779.HMPREF1984_01465
+	(degree 773), 1321779.HMPREF1984_00961 (degree 770) and 1321779.HMPREF1984_01890
+	(degree 629).
 	
 
 

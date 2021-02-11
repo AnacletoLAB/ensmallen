@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:47.596854
 
-The undirected graph Butyrivibrio fibrisolvens ND3005 has 3619 nodes and 288306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04404
-and has 29 connected components, where the component with most nodes has 3546 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 159.33, and the node degree mode is 1. The top 5
-most central nodes are 1280696.ATVY01000042_gene1523 (degree 1332), 1280696.ATVY01000024_gene1034
+The undirected graph Butyrivibrio fibrisolvens ND3005 has 3619 nodes and
+288306 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04404 and has 29 connected components, where the
+component with most nodes has 3546 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 159.33, and the node degree mode is 1. The top 5 most central nodes
+are 1280696.ATVY01000042_gene1523 (degree 1332), 1280696.ATVY01000024_gene1034
 (degree 1100), 1280696.ATVY01000044_gene1068 (degree 997), 1280696.ATVY01000053_gene3014
 (degree 982) and 1280696.ATVY01000067_gene2473 (degree 961).
 
@@ -107,12 +108,13 @@ def ButyrivibrioFibrisolvensNd3005(
 	
 	Datetime: 2021-02-03 21:07:47.596854
 	
-	The undirected graph Butyrivibrio fibrisolvens ND3005 has 3619 nodes and 288306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04404
-	and has 29 connected components, where the component with most nodes has 3546 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 159.33, and the node degree mode is 1. The top 5
-	most central nodes are 1280696.ATVY01000042_gene1523 (degree 1332), 1280696.ATVY01000024_gene1034
+	The undirected graph Butyrivibrio fibrisolvens ND3005 has 3619 nodes and
+	288306 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04404 and has 29 connected components, where the
+	component with most nodes has 3546 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 159.33, and the node degree mode is 1. The top 5 most central nodes
+	are 1280696.ATVY01000042_gene1523 (degree 1332), 1280696.ATVY01000024_gene1034
 	(degree 1100), 1280696.ATVY01000044_gene1068 (degree 997), 1280696.ATVY01000053_gene3014
 	(degree 982) and 1280696.ATVY01000067_gene2473 (degree 961).
 	

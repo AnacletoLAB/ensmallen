@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:06:07.601303
 
-The undirected graph email-univ has 1133 nodes and 5451 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00850 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 9.62 and the node degree mode is 1. The top 5 most central nodes are 105 (degree
-71), 333 (degree 52), 42 (degree 51), 23 (degree 51) and 16 (degree 51).
+The undirected graph email-univ has 1133 nodes and 5451 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00850 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 9.62 and the node degree mode
+is 1. The top 5 most central nodes are 105 (degree 71), 333 (degree 52),
+42 (degree 51), 23 (degree 51) and 16 (degree 51).
 
 
 References
@@ -101,11 +102,12 @@ def EmailUniv(
 	
 	Datetime: 2021-02-04 00:06:07.601303
 	
-	The undirected graph email-univ has 1133 nodes and 5451 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00850 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 9.62 and the node degree mode is 1. The top 5 most central nodes are 105 (degree
-	71), 333 (degree 52), 42 (degree 51), 23 (degree 51) and 16 (degree 51).
+	The undirected graph email-univ has 1133 nodes and 5451 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00850 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 9.62 and the node degree mode
+	is 1. The top 5 most central nodes are 105 (degree 71), 333 (degree 52),
+	42 (degree 51), 23 (degree 51) and 16 (degree 51).
 	
 
 

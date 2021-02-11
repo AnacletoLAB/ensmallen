@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:17.471139
 
-The undirected graph Cupriavidus sp. amp6 has 6063 nodes and 1075484 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05852 and
-has 19 connected components, where the component with most nodes has 6024 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 277,
-the mean node degree is 354.77, and the node degree mode is 1. The top 5 most central
-nodes are 388051.AUFE01000005_gene1114 (degree 2488), 388051.AUFE01000004_gene939
-(degree 2301), 388051.AUFE01000050_gene2970 (degree 2233), 388051.AUFE01000022_gene4784
-(degree 2145) and 388051.AUFE01000006_gene1337 (degree 1995).
+The undirected graph Cupriavidus sp. amp6 has 6063 nodes and 1075484 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05852 and has 19 connected components, where the component with most
+nodes has 6024 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 277, the mean node degree is 354.77, and
+the node degree mode is 1. The top 5 most central nodes are 388051.AUFE01000005_gene1114
+(degree 2488), 388051.AUFE01000004_gene939 (degree 2301), 388051.AUFE01000050_gene2970
+(degree 2233), 388051.AUFE01000022_gene4784 (degree 2145) and 388051.AUFE01000006_gene1337
+(degree 1995).
 
 
 References
@@ -107,14 +108,15 @@ def CupriavidusSp.Amp6(
 	
 	Datetime: 2021-02-02 20:38:17.471139
 	
-	The undirected graph Cupriavidus sp. amp6 has 6063 nodes and 1075484 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05852 and
-	has 19 connected components, where the component with most nodes has 6024 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 277,
-	the mean node degree is 354.77, and the node degree mode is 1. The top 5 most central
-	nodes are 388051.AUFE01000005_gene1114 (degree 2488), 388051.AUFE01000004_gene939
-	(degree 2301), 388051.AUFE01000050_gene2970 (degree 2233), 388051.AUFE01000022_gene4784
-	(degree 2145) and 388051.AUFE01000006_gene1337 (degree 1995).
+	The undirected graph Cupriavidus sp. amp6 has 6063 nodes and 1075484 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05852 and has 19 connected components, where the component with most
+	nodes has 6024 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 277, the mean node degree is 354.77, and
+	the node degree mode is 1. The top 5 most central nodes are 388051.AUFE01000005_gene1114
+	(degree 2488), 388051.AUFE01000004_gene939 (degree 2301), 388051.AUFE01000050_gene2970
+	(degree 2233), 388051.AUFE01000022_gene4784 (degree 2145) and 388051.AUFE01000006_gene1337
+	(degree 1995).
 	
 
 

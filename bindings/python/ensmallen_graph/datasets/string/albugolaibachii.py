@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:26.635411
 
-The undirected graph Albugo laibachii has 6594 nodes and 1481788 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06817 and
-has 28 connected components, where the component with most nodes has 6519 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 317,
-the mean node degree is 449.44, and the node degree mode is 33. The top 5 most central
-nodes are 653948.CCA20828 (degree 3192), 653948.CCA15910 (degree 3110), 653948.CCA15933
-(degree 3077), 653948.CCA15919 (degree 3077) and 653948.CCA15932 (degree 3077).
+The undirected graph Albugo laibachii has 6594 nodes and 1481788 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06817 and has 28 connected components, where the component with most
+nodes has 6519 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 317, the mean node degree is 449.44, and
+the node degree mode is 33. The top 5 most central nodes are 653948.CCA20828
+(degree 3192), 653948.CCA15910 (degree 3110), 653948.CCA15933 (degree 3077),
+653948.CCA15919 (degree 3077) and 653948.CCA15932 (degree 3077).
 
 
 References
@@ -106,13 +107,14 @@ def AlbugoLaibachii(
 	
 	Datetime: 2021-02-02 21:26:26.635411
 	
-	The undirected graph Albugo laibachii has 6594 nodes and 1481788 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06817 and
-	has 28 connected components, where the component with most nodes has 6519 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 317,
-	the mean node degree is 449.44, and the node degree mode is 33. The top 5 most central
-	nodes are 653948.CCA20828 (degree 3192), 653948.CCA15910 (degree 3110), 653948.CCA15933
-	(degree 3077), 653948.CCA15919 (degree 3077) and 653948.CCA15932 (degree 3077).
+	The undirected graph Albugo laibachii has 6594 nodes and 1481788 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06817 and has 28 connected components, where the component with most
+	nodes has 6519 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 317, the mean node degree is 449.44, and
+	the node degree mode is 33. The top 5 most central nodes are 653948.CCA20828
+	(degree 3192), 653948.CCA15910 (degree 3110), 653948.CCA15933 (degree 3077),
+	653948.CCA15919 (degree 3077) and 653948.CCA15932 (degree 3077).
 	
 
 

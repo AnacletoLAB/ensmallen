@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:37.194891
 
-The undirected graph Bacillus vireti has 5030 nodes and 557615 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04409 and
-has 35 connected components, where the component with most nodes has 4939 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 221.72, and the node degree mode is 1. The top 5 most central
-nodes are 1131730.BAVI_11949 (degree 1805), 1131730.BAVI_07124 (degree 1597), 1131730.BAVI_18744
-(degree 1387), 1131730.BAVI_04609 (degree 1375) and 1131730.BAVI_20144 (degree 1361).
+The undirected graph Bacillus vireti has 5030 nodes and 557615 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04409 and has 35 connected components, where the component with most
+nodes has 4939 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 221.72, and
+the node degree mode is 1. The top 5 most central nodes are 1131730.BAVI_11949
+(degree 1805), 1131730.BAVI_07124 (degree 1597), 1131730.BAVI_18744 (degree
+1387), 1131730.BAVI_04609 (degree 1375) and 1131730.BAVI_20144 (degree
+1361).
 
 
 References
@@ -106,13 +108,15 @@ def BacillusVireti(
 	
 	Datetime: 2021-02-02 22:55:37.194891
 	
-	The undirected graph Bacillus vireti has 5030 nodes and 557615 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04409 and
-	has 35 connected components, where the component with most nodes has 4939 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 221.72, and the node degree mode is 1. The top 5 most central
-	nodes are 1131730.BAVI_11949 (degree 1805), 1131730.BAVI_07124 (degree 1597), 1131730.BAVI_18744
-	(degree 1387), 1131730.BAVI_04609 (degree 1375) and 1131730.BAVI_20144 (degree 1361).
+	The undirected graph Bacillus vireti has 5030 nodes and 557615 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04409 and has 35 connected components, where the component with most
+	nodes has 4939 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 221.72, and
+	the node degree mode is 1. The top 5 most central nodes are 1131730.BAVI_11949
+	(degree 1805), 1131730.BAVI_07124 (degree 1597), 1131730.BAVI_18744 (degree
+	1387), 1131730.BAVI_04609 (degree 1375) and 1131730.BAVI_20144 (degree
+	1361).
 	
 
 

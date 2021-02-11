@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:01:39.010955
 
-The undirected graph Sporolactobacillus terrae has 2981 nodes and 234647 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05283
-and has 20 connected components, where the component with most nodes has 2940 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 157.43, and the node degree mode is 1. The top 5
-most central nodes are 1444306.JFZC01000040_gene433 (degree 1115), 1444306.JFZC01000101_gene1256
-(degree 1018), 1444306.JFZC01000038_gene2852 (degree 808), 1444306.JFZC01000015_gene2149
-(degree 790) and 1444306.JFZC01000038_gene2821 (degree 780).
+The undirected graph Sporolactobacillus terrae has 2981 nodes and 234647
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05283 and has 20 connected components, where the component
+with most nodes has 2940 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 157.43,
+and the node degree mode is 1. The top 5 most central nodes are 1444306.JFZC01000040_gene433
+(degree 1115), 1444306.JFZC01000101_gene1256 (degree 1018), 1444306.JFZC01000038_gene2852
+(degree 808), 1444306.JFZC01000015_gene2149 (degree 790) and 1444306.JFZC01000038_gene2821
+(degree 780).
 
 
 References
@@ -107,14 +108,15 @@ def SporolactobacillusTerrae(
 	
 	Datetime: 2021-02-03 23:01:39.010955
 	
-	The undirected graph Sporolactobacillus terrae has 2981 nodes and 234647 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05283
-	and has 20 connected components, where the component with most nodes has 2940 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 157.43, and the node degree mode is 1. The top 5
-	most central nodes are 1444306.JFZC01000040_gene433 (degree 1115), 1444306.JFZC01000101_gene1256
-	(degree 1018), 1444306.JFZC01000038_gene2852 (degree 808), 1444306.JFZC01000015_gene2149
-	(degree 790) and 1444306.JFZC01000038_gene2821 (degree 780).
+	The undirected graph Sporolactobacillus terrae has 2981 nodes and 234647
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05283 and has 20 connected components, where the component
+	with most nodes has 2940 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 157.43,
+	and the node degree mode is 1. The top 5 most central nodes are 1444306.JFZC01000040_gene433
+	(degree 1115), 1444306.JFZC01000101_gene1256 (degree 1018), 1444306.JFZC01000038_gene2852
+	(degree 808), 1444306.JFZC01000015_gene2149 (degree 790) and 1444306.JFZC01000038_gene2821
+	(degree 780).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:47.728390
 
-The undirected graph Zymoseptoria tritici has 7089 nodes and 530262 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02111 and
-has 22 connected components, where the component with most nodes has 7046 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 149.60, and the node degree mode is 1. The top 5 most central
-nodes are 1047171.Mycgr3P65952 (degree 1798), 1047171.Mycgr3P99044 (degree 1306),
-1047171.Mycgr3P102581 (degree 1216), 1047171.Mycgr3P67374 (degree 1210) and 1047171.Mycgr3P102990
+The undirected graph Zymoseptoria tritici has 7089 nodes and 530262 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02111 and has 22 connected components, where the component with most
+nodes has 7046 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 149.60, and
+the node degree mode is 1. The top 5 most central nodes are 1047171.Mycgr3P65952
+(degree 1798), 1047171.Mycgr3P99044 (degree 1306), 1047171.Mycgr3P102581
+(degree 1216), 1047171.Mycgr3P67374 (degree 1210) and 1047171.Mycgr3P102990
 (degree 1098).
 
 
@@ -107,13 +108,14 @@ def ZymoseptoriaTritici(
 	
 	Datetime: 2021-02-02 22:16:47.728390
 	
-	The undirected graph Zymoseptoria tritici has 7089 nodes and 530262 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02111 and
-	has 22 connected components, where the component with most nodes has 7046 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 149.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1047171.Mycgr3P65952 (degree 1798), 1047171.Mycgr3P99044 (degree 1306),
-	1047171.Mycgr3P102581 (degree 1216), 1047171.Mycgr3P67374 (degree 1210) and 1047171.Mycgr3P102990
+	The undirected graph Zymoseptoria tritici has 7089 nodes and 530262 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02111 and has 22 connected components, where the component with most
+	nodes has 7046 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 149.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1047171.Mycgr3P65952
+	(degree 1798), 1047171.Mycgr3P99044 (degree 1306), 1047171.Mycgr3P102581
+	(degree 1216), 1047171.Mycgr3P67374 (degree 1210) and 1047171.Mycgr3P102990
 	(degree 1098).
 	
 

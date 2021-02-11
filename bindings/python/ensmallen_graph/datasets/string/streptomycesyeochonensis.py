@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:21.796032
 
-The undirected graph Streptomyces yeochonensis has 6112 nodes and 732885 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03924
-and has 49 connected components, where the component with most nodes has 5953 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 239.82, and the node degree mode is 1. The top 5
-most central nodes are 1449355.JQNR01000003_gene464 (degree 2278), 1449355.JQNR01000005_gene4781
-(degree 1868), 1449355.JQNR01000005_gene4707 (degree 1809), 1449355.JQNR01000003_gene798
-(degree 1735) and 1449355.JQNR01000005_gene5541 (degree 1682).
+The undirected graph Streptomyces yeochonensis has 6112 nodes and 732885
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03924 and has 49 connected components, where the component
+with most nodes has 5953 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 239.82,
+and the node degree mode is 1. The top 5 most central nodes are 1449355.JQNR01000003_gene464
+(degree 2278), 1449355.JQNR01000005_gene4781 (degree 1868), 1449355.JQNR01000005_gene4707
+(degree 1809), 1449355.JQNR01000003_gene798 (degree 1735) and 1449355.JQNR01000005_gene5541
+(degree 1682).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesYeochonensis(
 	
 	Datetime: 2021-02-03 23:05:21.796032
 	
-	The undirected graph Streptomyces yeochonensis has 6112 nodes and 732885 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03924
-	and has 49 connected components, where the component with most nodes has 5953 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 239.82, and the node degree mode is 1. The top 5
-	most central nodes are 1449355.JQNR01000003_gene464 (degree 2278), 1449355.JQNR01000005_gene4781
-	(degree 1868), 1449355.JQNR01000005_gene4707 (degree 1809), 1449355.JQNR01000003_gene798
-	(degree 1735) and 1449355.JQNR01000005_gene5541 (degree 1682).
+	The undirected graph Streptomyces yeochonensis has 6112 nodes and 732885
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03924 and has 49 connected components, where the component
+	with most nodes has 5953 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 239.82,
+	and the node degree mode is 1. The top 5 most central nodes are 1449355.JQNR01000003_gene464
+	(degree 2278), 1449355.JQNR01000005_gene4781 (degree 1868), 1449355.JQNR01000005_gene4707
+	(degree 1809), 1449355.JQNR01000003_gene798 (degree 1735) and 1449355.JQNR01000005_gene5541
+	(degree 1682).
 	
 
 

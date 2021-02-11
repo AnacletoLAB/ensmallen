@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:47.942115
 
-The undirected graph Deinococcus peraridilitoris has 3593 nodes and 212738 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03297
-and has 19 connected components, where the component with most nodes has 3549 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 118.42, and the node degree mode is 2. The top 5 most
-central nodes are 937777.Deipe_3162 (degree 1211), 937777.Deipe_2415 (degree 1205),
-937777.Deipe_0334 (degree 1004), 937777.Deipe_2173 (degree 986) and 937777.Deipe_0072
-(degree 921).
+The undirected graph Deinococcus peraridilitoris has 3593 nodes and 212738
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03297 and has 19 connected components, where the component
+with most nodes has 3549 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 118.42,
+and the node degree mode is 2. The top 5 most central nodes are 937777.Deipe_3162
+(degree 1211), 937777.Deipe_2415 (degree 1205), 937777.Deipe_0334 (degree
+1004), 937777.Deipe_2173 (degree 986) and 937777.Deipe_0072 (degree 921).
 
 
 References
@@ -107,14 +107,14 @@ def DeinococcusPeraridilitoris(
 	
 	Datetime: 2021-02-02 22:00:47.942115
 	
-	The undirected graph Deinococcus peraridilitoris has 3593 nodes and 212738 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03297
-	and has 19 connected components, where the component with most nodes has 3549 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 118.42, and the node degree mode is 2. The top 5 most
-	central nodes are 937777.Deipe_3162 (degree 1211), 937777.Deipe_2415 (degree 1205),
-	937777.Deipe_0334 (degree 1004), 937777.Deipe_2173 (degree 986) and 937777.Deipe_0072
-	(degree 921).
+	The undirected graph Deinococcus peraridilitoris has 3593 nodes and 212738
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03297 and has 19 connected components, where the component
+	with most nodes has 3549 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 118.42,
+	and the node degree mode is 2. The top 5 most central nodes are 937777.Deipe_3162
+	(degree 1211), 937777.Deipe_2415 (degree 1205), 937777.Deipe_0334 (degree
+	1004), 937777.Deipe_2173 (degree 986) and 937777.Deipe_0072 (degree 921).
 	
 
 

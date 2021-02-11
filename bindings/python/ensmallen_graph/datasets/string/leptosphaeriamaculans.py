@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:09.873362
 
-The undirected graph Leptosphaeria maculans has 7032 nodes and 647930 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02621 and
-has 55 connected components, where the component with most nodes has 6918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 184.28, and the node degree mode is 1. The top 5 most central
-nodes are 5022.CBX94255 (degree 1801), 5022.CBX98846 (degree 1668), 5022.CBX96595
-(degree 1656), 5022.CBX94238 (degree 1546) and 5022.CBX99872 (degree 1499).
+The undirected graph Leptosphaeria maculans has 7032 nodes and 647930 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02621 and has 55 connected components, where the component with most
+nodes has 6918 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 184.28, and
+the node degree mode is 1. The top 5 most central nodes are 5022.CBX94255
+(degree 1801), 5022.CBX98846 (degree 1668), 5022.CBX96595 (degree 1656),
+5022.CBX94238 (degree 1546) and 5022.CBX99872 (degree 1499).
 
 
 References
@@ -106,13 +107,14 @@ def LeptosphaeriaMaculans(
 	
 	Datetime: 2021-02-02 17:12:09.873362
 	
-	The undirected graph Leptosphaeria maculans has 7032 nodes and 647930 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02621 and
-	has 55 connected components, where the component with most nodes has 6918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 184.28, and the node degree mode is 1. The top 5 most central
-	nodes are 5022.CBX94255 (degree 1801), 5022.CBX98846 (degree 1668), 5022.CBX96595
-	(degree 1656), 5022.CBX94238 (degree 1546) and 5022.CBX99872 (degree 1499).
+	The undirected graph Leptosphaeria maculans has 7032 nodes and 647930 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02621 and has 55 connected components, where the component with most
+	nodes has 6918 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 184.28, and
+	the node degree mode is 1. The top 5 most central nodes are 5022.CBX94255
+	(degree 1801), 5022.CBX98846 (degree 1668), 5022.CBX96595 (degree 1656),
+	5022.CBX94238 (degree 1546) and 5022.CBX99872 (degree 1499).
 	
 
 

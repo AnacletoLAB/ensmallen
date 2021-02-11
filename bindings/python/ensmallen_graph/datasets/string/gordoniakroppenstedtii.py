@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:42.519667
 
-The undirected graph Gordonia kroppenstedtii has 3891 nodes and 391447 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05172 and
-has 6 connected components, where the component with most nodes has 3880 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 201.21, and the node degree mode is 2. The top 5 most central
-nodes are 468556.AQYG01000048_gene570 (degree 1472), 468556.AQYG01000033_gene3495
-(degree 1412), 468556.AQYG01000048_gene784 (degree 1146), 468556.AQYG01000035_gene311
-(degree 1063) and 468556.AQYG01000051_gene2463 (degree 1046).
+The undirected graph Gordonia kroppenstedtii has 3891 nodes and 391447
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05172 and has 6 connected components, where the component
+with most nodes has 3880 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 201.21,
+and the node degree mode is 2. The top 5 most central nodes are 468556.AQYG01000048_gene570
+(degree 1472), 468556.AQYG01000033_gene3495 (degree 1412), 468556.AQYG01000048_gene784
+(degree 1146), 468556.AQYG01000035_gene311 (degree 1063) and 468556.AQYG01000051_gene2463
+(degree 1046).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaKroppenstedtii(
 	
 	Datetime: 2021-02-02 20:54:42.519667
 	
-	The undirected graph Gordonia kroppenstedtii has 3891 nodes and 391447 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05172 and
-	has 6 connected components, where the component with most nodes has 3880 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 201.21, and the node degree mode is 2. The top 5 most central
-	nodes are 468556.AQYG01000048_gene570 (degree 1472), 468556.AQYG01000033_gene3495
-	(degree 1412), 468556.AQYG01000048_gene784 (degree 1146), 468556.AQYG01000035_gene311
-	(degree 1063) and 468556.AQYG01000051_gene2463 (degree 1046).
+	The undirected graph Gordonia kroppenstedtii has 3891 nodes and 391447
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05172 and has 6 connected components, where the component
+	with most nodes has 3880 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 201.21,
+	and the node degree mode is 2. The top 5 most central nodes are 468556.AQYG01000048_gene570
+	(degree 1472), 468556.AQYG01000033_gene3495 (degree 1412), 468556.AQYG01000048_gene784
+	(degree 1146), 468556.AQYG01000035_gene311 (degree 1063) and 468556.AQYG01000051_gene2463
+	(degree 1046).
 	
 
 

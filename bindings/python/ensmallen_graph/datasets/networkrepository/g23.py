@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:58:27.987568
 
-The undirected graph G23 has 2000 nodes and 19990 unweighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01000 and is connected,
-as it has a single component. The graph median node degree is 20, the mean node degree
-is 19.99, and the node degree mode is 19. The top 5 most central nodes are 322 (degree
-36), 254 (degree 34), 1762 (degree 33), 1834 (degree 33) and 840 (degree 33).
+The undirected graph G23 has 2000 nodes and 19990 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.01000
+and is connected, as it has a single component. The graph median node degree
+is 20, the mean node degree is 19.99, and the node degree mode is 19. The
+top 5 most central nodes are 322 (degree 36), 254 (degree 34), 1762 (degree
+33), 1834 (degree 33) and 840 (degree 33).
 
 
 References
@@ -101,11 +102,12 @@ def G23(
 	
 	Datetime: 2021-02-06 09:58:27.987568
 	
-	The undirected graph G23 has 2000 nodes and 19990 unweighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01000 and is connected,
-	as it has a single component. The graph median node degree is 20, the mean node degree
-	is 19.99, and the node degree mode is 19. The top 5 most central nodes are 322 (degree
-	36), 254 (degree 34), 1762 (degree 33), 1834 (degree 33) and 840 (degree 33).
+	The undirected graph G23 has 2000 nodes and 19990 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.01000
+	and is connected, as it has a single component. The graph median node degree
+	is 20, the mean node degree is 19.99, and the node degree mode is 19. The
+	top 5 most central nodes are 322 (degree 36), 254 (degree 34), 1762 (degree
+	33), 1834 (degree 33) and 840 (degree 33).
 	
 
 

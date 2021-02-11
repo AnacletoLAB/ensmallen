@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:23.137495
 
-The undirected graph Streptococcus cristatus has 1951 nodes and 126759 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06664 and
-has 6 connected components, where the component with most nodes has 1937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 129.94, and the node degree mode is 8. The top 5 most central
-nodes are 889201.HMPREF9422_1360 (degree 822), 889201.HMPREF9422_1445 (degree 705),
-889201.HMPREF9422_0518 (degree 698), 889201.HMPREF9422_1008 (degree 640) and 889201.HMPREF9422_1049
+The undirected graph Streptococcus cristatus has 1951 nodes and 126759
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06664 and has 6 connected components, where the component
+with most nodes has 1937 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 129.94,
+and the node degree mode is 8. The top 5 most central nodes are 889201.HMPREF9422_1360
+(degree 822), 889201.HMPREF9422_1445 (degree 705), 889201.HMPREF9422_0518
+(degree 698), 889201.HMPREF9422_1008 (degree 640) and 889201.HMPREF9422_1049
 (degree 622).
 
 
@@ -107,13 +108,14 @@ def StreptococcusCristatus(
 	
 	Datetime: 2021-02-02 21:53:23.137495
 	
-	The undirected graph Streptococcus cristatus has 1951 nodes and 126759 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06664 and
-	has 6 connected components, where the component with most nodes has 1937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 129.94, and the node degree mode is 8. The top 5 most central
-	nodes are 889201.HMPREF9422_1360 (degree 822), 889201.HMPREF9422_1445 (degree 705),
-	889201.HMPREF9422_0518 (degree 698), 889201.HMPREF9422_1008 (degree 640) and 889201.HMPREF9422_1049
+	The undirected graph Streptococcus cristatus has 1951 nodes and 126759
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06664 and has 6 connected components, where the component
+	with most nodes has 1937 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 129.94,
+	and the node degree mode is 8. The top 5 most central nodes are 889201.HMPREF9422_1360
+	(degree 822), 889201.HMPREF9422_1445 (degree 705), 889201.HMPREF9422_0518
+	(degree 698), 889201.HMPREF9422_1008 (degree 640) and 889201.HMPREF9422_1049
 	(degree 622).
 	
 

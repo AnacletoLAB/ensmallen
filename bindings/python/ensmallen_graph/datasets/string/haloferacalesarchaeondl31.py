@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:13.904497
 
-The undirected graph Haloferacales archaeon DL31 has 3392 nodes and 532677 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09262
-and has 19 connected components, where the component with most nodes has 3343 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 327, the mean node degree is 314.08, and the node degree mode is 2. The top 5
-most central nodes are 756883.Halar_2700 (degree 1209), 756883.Halar_0122 (degree
-1125), 756883.Halar_2346 (degree 1096), 756883.Halar_3698 (degree 1058) and 756883.Halar_2629
-(degree 1033).
+The undirected graph Haloferacales archaeon DL31 has 3392 nodes and 532677
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09262 and has 19 connected components, where the component
+with most nodes has 3343 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 327, the mean node degree is 314.08,
+and the node degree mode is 2. The top 5 most central nodes are 756883.Halar_2700
+(degree 1209), 756883.Halar_0122 (degree 1125), 756883.Halar_2346 (degree
+1096), 756883.Halar_3698 (degree 1058) and 756883.Halar_2629 (degree 1033).
 
 
 References
@@ -107,14 +107,14 @@ def HaloferacalesArchaeonDl31(
 	
 	Datetime: 2021-02-02 21:41:13.904497
 	
-	The undirected graph Haloferacales archaeon DL31 has 3392 nodes and 532677 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09262
-	and has 19 connected components, where the component with most nodes has 3343 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 327, the mean node degree is 314.08, and the node degree mode is 2. The top 5
-	most central nodes are 756883.Halar_2700 (degree 1209), 756883.Halar_0122 (degree
-	1125), 756883.Halar_2346 (degree 1096), 756883.Halar_3698 (degree 1058) and 756883.Halar_2629
-	(degree 1033).
+	The undirected graph Haloferacales archaeon DL31 has 3392 nodes and 532677
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09262 and has 19 connected components, where the component
+	with most nodes has 3343 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 327, the mean node degree is 314.08,
+	and the node degree mode is 2. The top 5 most central nodes are 756883.Halar_2700
+	(degree 1209), 756883.Halar_0122 (degree 1125), 756883.Halar_2346 (degree
+	1096), 756883.Halar_3698 (degree 1058) and 756883.Halar_2629 (degree 1033).
 	
 
 

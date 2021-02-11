@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:26:10.222415
 
-The undirected graph road-netherlands-osm has 2216688 nodes and 2441238 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 2, the mean node degree is 2.20, and the node degree mode is 2. The top
-5 most central nodes are 577333 (degree 7), 295038 (degree 7), 261723 (degree 7),
-597783 (degree 6) and 592600 (degree 6).
+The undirected graph road-netherlands-osm has 2216688 nodes and 2441238
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and is connected, as it has a single
+component. The graph median node degree is 2, the mean node degree is 2.20,
+and the node degree mode is 2. The top 5 most central nodes are 577333
+(degree 7), 295038 (degree 7), 261723 (degree 7), 597783 (degree 6) and
+592600 (degree 6).
 
 
 References
@@ -102,12 +103,13 @@ def RoadNetherlandsOsm(
 	
 	Datetime: 2021-02-06 12:26:10.222415
 	
-	The undirected graph road-netherlands-osm has 2216688 nodes and 2441238 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 2, the mean node degree is 2.20, and the node degree mode is 2. The top
-	5 most central nodes are 577333 (degree 7), 295038 (degree 7), 261723 (degree 7),
-	597783 (degree 6) and 592600 (degree 6).
+	The undirected graph road-netherlands-osm has 2216688 nodes and 2441238
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and is connected, as it has a single
+	component. The graph median node degree is 2, the mean node degree is 2.20,
+	and the node degree mode is 2. The top 5 most central nodes are 577333
+	(degree 7), 295038 (degree 7), 261723 (degree 7), 597783 (degree 6) and
+	592600 (degree 6).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:39.396818
 
-The undirected graph Enterobacteriaceae bacterium LSJC7 has 3861 nodes and 455684
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06115 and has 5 connected components, where the component with most nodes has
-3851 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 205, the mean node degree is 236.04, and the node degree mode is 2. The
-top 5 most central nodes are 1224136.AMFN01000022_gene2093 (degree 1278), 1224136.AMFN01000005_gene1343
+The undirected graph Enterobacteriaceae bacterium LSJC7 has 3861 nodes
+and 455684 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06115 and has 5 connected components, where the
+component with most nodes has 3851 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 205, the mean node degree
+is 236.04, and the node degree mode is 2. The top 5 most central nodes
+are 1224136.AMFN01000022_gene2093 (degree 1278), 1224136.AMFN01000005_gene1343
 (degree 1255), 1224136.AMFN01000002_gene880 (degree 1242), 1224136.AMFN01000015_gene2140
 (degree 1133) and 1224136.AMFN01000003_gene3534 (degree 1126).
 
@@ -107,12 +108,13 @@ def EnterobacteriaceaeBacteriumLsjc7(
 	
 	Datetime: 2021-02-02 23:24:39.396818
 	
-	The undirected graph Enterobacteriaceae bacterium LSJC7 has 3861 nodes and 455684
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06115 and has 5 connected components, where the component with most nodes has
-	3851 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 205, the mean node degree is 236.04, and the node degree mode is 2. The
-	top 5 most central nodes are 1224136.AMFN01000022_gene2093 (degree 1278), 1224136.AMFN01000005_gene1343
+	The undirected graph Enterobacteriaceae bacterium LSJC7 has 3861 nodes
+	and 455684 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06115 and has 5 connected components, where the
+	component with most nodes has 3851 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 205, the mean node degree
+	is 236.04, and the node degree mode is 2. The top 5 most central nodes
+	are 1224136.AMFN01000022_gene2093 (degree 1278), 1224136.AMFN01000005_gene1343
 	(degree 1255), 1224136.AMFN01000002_gene880 (degree 1242), 1224136.AMFN01000015_gene2140
 	(degree 1133) and 1224136.AMFN01000003_gene3534 (degree 1126).
 	

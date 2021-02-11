@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:05.311466
 
-The undirected graph Vibrio proteolyticus has 4333 nodes and 653412 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06962 and
-has 18 connected components, where the component with most nodes has 4288 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 254,
-the mean node degree is 301.60, and the node degree mode is 2. The top 5 most central
-nodes are 1219065.VPR01S_27_00160 (degree 1864), 1219065.VPR01S_06_02180 (degree
-1828), 1219065.VPR01S_09_00790 (degree 1717), 1219065.VPR01S_09_01110 (degree 1715)
-and 1219065.VPR01S_01_04550 (degree 1694).
+The undirected graph Vibrio proteolyticus has 4333 nodes and 653412 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06962 and has 18 connected components, where the component with most
+nodes has 4288 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 254, the mean node degree is 301.60, and
+the node degree mode is 2. The top 5 most central nodes are 1219065.VPR01S_27_00160
+(degree 1864), 1219065.VPR01S_06_02180 (degree 1828), 1219065.VPR01S_09_00790
+(degree 1717), 1219065.VPR01S_09_01110 (degree 1715) and 1219065.VPR01S_01_04550
+(degree 1694).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioProteolyticus(
 	
 	Datetime: 2021-02-02 23:23:05.311466
 	
-	The undirected graph Vibrio proteolyticus has 4333 nodes and 653412 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06962 and
-	has 18 connected components, where the component with most nodes has 4288 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 254,
-	the mean node degree is 301.60, and the node degree mode is 2. The top 5 most central
-	nodes are 1219065.VPR01S_27_00160 (degree 1864), 1219065.VPR01S_06_02180 (degree
-	1828), 1219065.VPR01S_09_00790 (degree 1717), 1219065.VPR01S_09_01110 (degree 1715)
-	and 1219065.VPR01S_01_04550 (degree 1694).
+	The undirected graph Vibrio proteolyticus has 4333 nodes and 653412 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06962 and has 18 connected components, where the component with most
+	nodes has 4288 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 254, the mean node degree is 301.60, and
+	the node degree mode is 2. The top 5 most central nodes are 1219065.VPR01S_27_00160
+	(degree 1864), 1219065.VPR01S_06_02180 (degree 1828), 1219065.VPR01S_09_00790
+	(degree 1717), 1219065.VPR01S_09_01110 (degree 1715) and 1219065.VPR01S_01_04550
+	(degree 1694).
 	
 
 

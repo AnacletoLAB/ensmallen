@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:24.381373
 
-The undirected graph Sulfurimonas gotlandica has 2860 nodes and 338735 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08285 and
-has 9 connected components, where the component with most nodes has 2841 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 236.88, and the node degree mode is 2. The top 5 most central
-nodes are 929558.SMGD1_2447 (degree 1289), 929558.SMGD1_2603 (degree 1239), 929558.SMGD1_0627
-(degree 1164), 929558.SMGD1_0318 (degree 1152) and 929558.SMGD1_0802 (degree 1067).
+The undirected graph Sulfurimonas gotlandica has 2860 nodes and 338735
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08285 and has 9 connected components, where the component
+with most nodes has 2841 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 236.88,
+and the node degree mode is 2. The top 5 most central nodes are 929558.SMGD1_2447
+(degree 1289), 929558.SMGD1_2603 (degree 1239), 929558.SMGD1_0627 (degree
+1164), 929558.SMGD1_0318 (degree 1152) and 929558.SMGD1_0802 (degree 1067).
 
 
 References
@@ -106,13 +107,14 @@ def SulfurimonasGotlandica(
 	
 	Datetime: 2021-02-02 21:57:24.381373
 	
-	The undirected graph Sulfurimonas gotlandica has 2860 nodes and 338735 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08285 and
-	has 9 connected components, where the component with most nodes has 2841 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 236.88, and the node degree mode is 2. The top 5 most central
-	nodes are 929558.SMGD1_2447 (degree 1289), 929558.SMGD1_2603 (degree 1239), 929558.SMGD1_0627
-	(degree 1164), 929558.SMGD1_0318 (degree 1152) and 929558.SMGD1_0802 (degree 1067).
+	The undirected graph Sulfurimonas gotlandica has 2860 nodes and 338735
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08285 and has 9 connected components, where the component
+	with most nodes has 2841 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 236.88,
+	and the node degree mode is 2. The top 5 most central nodes are 929558.SMGD1_2447
+	(degree 1289), 929558.SMGD1_2603 (degree 1239), 929558.SMGD1_0627 (degree
+	1164), 929558.SMGD1_0318 (degree 1152) and 929558.SMGD1_0802 (degree 1067).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:09.495980
 
-The undirected graph Shigella flexneri has 4423 nodes and 428771 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04384 and
-has 6 connected components, where the component with most nodes has 4408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 193.88, and the node degree mode is 2. The top 5 most central
-nodes are 198214.SF1822 (degree 1281), 198214.SF2437 (degree 1266), 198214.SF3934
-(degree 1249), 198214.SF2553 (degree 1065) and 198214.SF3252 (degree 991).
+The undirected graph Shigella flexneri has 4423 nodes and 428771 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04384 and has 6 connected components, where the component with most
+nodes has 4408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 193.88, and
+the node degree mode is 2. The top 5 most central nodes are 198214.SF1822
+(degree 1281), 198214.SF2437 (degree 1266), 198214.SF3934 (degree 1249),
+198214.SF2553 (degree 1065) and 198214.SF3252 (degree 991).
 
 
 References
@@ -106,13 +107,14 @@ def ShigellaFlexneri(
 	
 	Datetime: 2021-02-02 19:59:09.495980
 	
-	The undirected graph Shigella flexneri has 4423 nodes and 428771 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04384 and
-	has 6 connected components, where the component with most nodes has 4408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 193.88, and the node degree mode is 2. The top 5 most central
-	nodes are 198214.SF1822 (degree 1281), 198214.SF2437 (degree 1266), 198214.SF3934
-	(degree 1249), 198214.SF2553 (degree 1065) and 198214.SF3252 (degree 991).
+	The undirected graph Shigella flexneri has 4423 nodes and 428771 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04384 and has 6 connected components, where the component with most
+	nodes has 4408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 193.88, and
+	the node degree mode is 2. The top 5 most central nodes are 198214.SF1822
+	(degree 1281), 198214.SF2437 (degree 1266), 198214.SF3934 (degree 1249),
+	198214.SF2553 (degree 1065) and 198214.SF3252 (degree 991).
 	
 
 

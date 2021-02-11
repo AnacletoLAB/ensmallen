@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:43:57.885931
 
-The undirected graph Pseudoalteromonas agarivorans has 3957 nodes and 512375 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06546
-and has 14 connected components, where the component with most nodes has 3924 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 258.97, and the node degree mode is 2. The top 5
-most central nodes are 1307437.J139_18466 (degree 1421), 1307437.J139_02126 (degree
-1217), 1307437.J139_02121 (degree 1200), 1307437.J139_10442 (degree 1164) and 1307437.J139_10502
-(degree 1152).
+The undirected graph Pseudoalteromonas agarivorans has 3957 nodes and 512375
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06546 and has 14 connected components, where the component
+with most nodes has 3924 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 258.97,
+and the node degree mode is 2. The top 5 most central nodes are 1307437.J139_18466
+(degree 1421), 1307437.J139_02126 (degree 1217), 1307437.J139_02121 (degree
+1200), 1307437.J139_10442 (degree 1164) and 1307437.J139_10502 (degree
+1152).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasAgarivorans(
 	
 	Datetime: 2021-02-03 21:43:57.885931
 	
-	The undirected graph Pseudoalteromonas agarivorans has 3957 nodes and 512375 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06546
-	and has 14 connected components, where the component with most nodes has 3924 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 258.97, and the node degree mode is 2. The top 5
-	most central nodes are 1307437.J139_18466 (degree 1421), 1307437.J139_02126 (degree
-	1217), 1307437.J139_02121 (degree 1200), 1307437.J139_10442 (degree 1164) and 1307437.J139_10502
-	(degree 1152).
+	The undirected graph Pseudoalteromonas agarivorans has 3957 nodes and 512375
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06546 and has 14 connected components, where the component
+	with most nodes has 3924 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 258.97,
+	and the node degree mode is 2. The top 5 most central nodes are 1307437.J139_18466
+	(degree 1421), 1307437.J139_02126 (degree 1217), 1307437.J139_02121 (degree
+	1200), 1307437.J139_10442 (degree 1164) and 1307437.J139_10502 (degree
+	1152).
 	
 
 

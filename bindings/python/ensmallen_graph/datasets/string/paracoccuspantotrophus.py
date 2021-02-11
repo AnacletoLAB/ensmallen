@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:07.895247
 
-The undirected graph Paracoccus pantotrophus has 4347 nodes and 555591 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05882 and
-has 14 connected components, where the component with most nodes has 4309 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 255.62, and the node degree mode is 1. The top 5 most central
-nodes are 935565.JAEM01000003_gene3377 (degree 1660), 935565.JAEM01000015_gene2729
-(degree 1499), 935565.JAEM01000004_gene3222 (degree 1418), 935565.JAEM01000004_gene3117
-(degree 1394) and 935565.JAEM01000015_gene2731 (degree 1332).
+The undirected graph Paracoccus pantotrophus has 4347 nodes and 555591
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05882 and has 14 connected components, where the component
+with most nodes has 4309 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 255.62,
+and the node degree mode is 1. The top 5 most central nodes are 935565.JAEM01000003_gene3377
+(degree 1660), 935565.JAEM01000015_gene2729 (degree 1499), 935565.JAEM01000004_gene3222
+(degree 1418), 935565.JAEM01000004_gene3117 (degree 1394) and 935565.JAEM01000015_gene2731
+(degree 1332).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusPantotrophus(
 	
 	Datetime: 2021-02-02 21:59:07.895247
 	
-	The undirected graph Paracoccus pantotrophus has 4347 nodes and 555591 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05882 and
-	has 14 connected components, where the component with most nodes has 4309 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 255.62, and the node degree mode is 1. The top 5 most central
-	nodes are 935565.JAEM01000003_gene3377 (degree 1660), 935565.JAEM01000015_gene2729
-	(degree 1499), 935565.JAEM01000004_gene3222 (degree 1418), 935565.JAEM01000004_gene3117
-	(degree 1394) and 935565.JAEM01000015_gene2731 (degree 1332).
+	The undirected graph Paracoccus pantotrophus has 4347 nodes and 555591
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05882 and has 14 connected components, where the component
+	with most nodes has 4309 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 255.62,
+	and the node degree mode is 1. The top 5 most central nodes are 935565.JAEM01000003_gene3377
+	(degree 1660), 935565.JAEM01000015_gene2729 (degree 1499), 935565.JAEM01000004_gene3222
+	(degree 1418), 935565.JAEM01000004_gene3117 (degree 1394) and 935565.JAEM01000015_gene2731
+	(degree 1332).
 	
 
 

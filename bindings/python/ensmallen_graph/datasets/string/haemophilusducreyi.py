@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:32.353603
 
-The undirected graph Haemophilus ducreyi has 1670 nodes and 84813 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06086 and
-has 4 connected components, where the component with most nodes has 1663 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 82,
-the mean node degree is 101.57, and the node degree mode is 5. The top 5 most central
-nodes are 233412.HD_1236 (degree 658), 233412.HD_1054 (degree 599), 233412.HD_1504
-(degree 530), 233412.HD_1503 (degree 507) and 233412.HD_1161 (degree 439).
+The undirected graph Haemophilus ducreyi has 1670 nodes and 84813 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06086 and has 4 connected components, where the component with most
+nodes has 1663 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 82, the mean node degree is 101.57, and
+the node degree mode is 5. The top 5 most central nodes are 233412.HD_1236
+(degree 658), 233412.HD_1054 (degree 599), 233412.HD_1504 (degree 530),
+233412.HD_1503 (degree 507) and 233412.HD_1161 (degree 439).
 
 
 References
@@ -106,13 +107,14 @@ def HaemophilusDucreyi(
 	
 	Datetime: 2021-02-02 20:07:32.353603
 	
-	The undirected graph Haemophilus ducreyi has 1670 nodes and 84813 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06086 and
-	has 4 connected components, where the component with most nodes has 1663 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 82,
-	the mean node degree is 101.57, and the node degree mode is 5. The top 5 most central
-	nodes are 233412.HD_1236 (degree 658), 233412.HD_1054 (degree 599), 233412.HD_1504
-	(degree 530), 233412.HD_1503 (degree 507) and 233412.HD_1161 (degree 439).
+	The undirected graph Haemophilus ducreyi has 1670 nodes and 84813 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06086 and has 4 connected components, where the component with most
+	nodes has 1663 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 82, the mean node degree is 101.57, and
+	the node degree mode is 5. The top 5 most central nodes are 233412.HD_1236
+	(degree 658), 233412.HD_1054 (degree 599), 233412.HD_1504 (degree 530),
+	233412.HD_1503 (degree 507) and 233412.HD_1161 (degree 439).
 	
 
 

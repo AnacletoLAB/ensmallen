@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:54.866257
 
-The undirected graph Variovorax paradoxus EPS has 5928 nodes and 782779 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04456
-and has 14 connected components, where the component with most nodes has 5895 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 233, the mean node degree is 264.10, and the node degree mode is 4. The top 5
-most central nodes are 595537.Varpa_2026 (degree 2329), 595537.Varpa_1682 (degree
-2084), 595537.Varpa_1238 (degree 1606), 595537.Varpa_5223 (degree 1483) and 595537.Varpa_5378
-(degree 1455).
+The undirected graph Variovorax paradoxus EPS has 5928 nodes and 782779
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04456 and has 14 connected components, where the component
+with most nodes has 5895 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 233, the mean node degree is 264.10,
+and the node degree mode is 4. The top 5 most central nodes are 595537.Varpa_2026
+(degree 2329), 595537.Varpa_1682 (degree 2084), 595537.Varpa_1238 (degree
+1606), 595537.Varpa_5223 (degree 1483) and 595537.Varpa_5378 (degree 1455).
 
 
 References
@@ -107,14 +107,14 @@ def VariovoraxParadoxusEps(
 	
 	Datetime: 2021-02-02 21:18:54.866257
 	
-	The undirected graph Variovorax paradoxus EPS has 5928 nodes and 782779 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04456
-	and has 14 connected components, where the component with most nodes has 5895 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 233, the mean node degree is 264.10, and the node degree mode is 4. The top 5
-	most central nodes are 595537.Varpa_2026 (degree 2329), 595537.Varpa_1682 (degree
-	2084), 595537.Varpa_1238 (degree 1606), 595537.Varpa_5223 (degree 1483) and 595537.Varpa_5378
-	(degree 1455).
+	The undirected graph Variovorax paradoxus EPS has 5928 nodes and 782779
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04456 and has 14 connected components, where the component
+	with most nodes has 5895 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 233, the mean node degree is 264.10,
+	and the node degree mode is 4. The top 5 most central nodes are 595537.Varpa_2026
+	(degree 2329), 595537.Varpa_1682 (degree 2084), 595537.Varpa_1238 (degree
+	1606), 595537.Varpa_5223 (degree 1483) and 595537.Varpa_5378 (degree 1455).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:15.212688
 
-The undirected graph Bombyx mori has 10960 nodes and 1042701 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01736 and has 37
-connected components, where the component with most nodes has 10885 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 190.27, and the node degree mode is 1. The top 5 most central
-nodes are 7091.BGIBMGA012186-TA (degree 2999), 7091.BGIBMGA001415-TA (degree 1955),
-7091.BGIBMGA002611-TA (degree 1836), 7091.BGIBMGA013531-TA (degree 1798) and 7091.BGIBMGA004993-TA
+The undirected graph Bombyx mori has 10960 nodes and 1042701 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01736 and has 37 connected components, where the component with most
+nodes has 10885 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 190.27, and
+the node degree mode is 1. The top 5 most central nodes are 7091.BGIBMGA012186-TA
+(degree 2999), 7091.BGIBMGA001415-TA (degree 1955), 7091.BGIBMGA002611-TA
+(degree 1836), 7091.BGIBMGA013531-TA (degree 1798) and 7091.BGIBMGA004993-TA
 (degree 1789).
 
 
@@ -107,13 +108,14 @@ def BombyxMori(
 	
 	Datetime: 2021-02-02 17:20:15.212688
 	
-	The undirected graph Bombyx mori has 10960 nodes and 1042701 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01736 and has 37
-	connected components, where the component with most nodes has 10885 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 190.27, and the node degree mode is 1. The top 5 most central
-	nodes are 7091.BGIBMGA012186-TA (degree 2999), 7091.BGIBMGA001415-TA (degree 1955),
-	7091.BGIBMGA002611-TA (degree 1836), 7091.BGIBMGA013531-TA (degree 1798) and 7091.BGIBMGA004993-TA
+	The undirected graph Bombyx mori has 10960 nodes and 1042701 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01736 and has 37 connected components, where the component with most
+	nodes has 10885 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 190.27, and
+	the node degree mode is 1. The top 5 most central nodes are 7091.BGIBMGA012186-TA
+	(degree 2999), 7091.BGIBMGA001415-TA (degree 1955), 7091.BGIBMGA002611-TA
+	(degree 1836), 7091.BGIBMGA013531-TA (degree 1798) and 7091.BGIBMGA004993-TA
 	(degree 1789).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:51.288591
 
-The undirected graph Bacillus psychrosaccharolyticus has 4749 nodes and 557180 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04942
-and has 28 connected components, where the component with most nodes has 4686 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 234.65, and the node degree mode is 1. The top 5
-most central nodes are 1174504.AJTN02000257_gene1531 (degree 1638), 1174504.AJTN02000173_gene3994
+The undirected graph Bacillus psychrosaccharolyticus has 4749 nodes and
+557180 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04942 and has 28 connected components, where the
+component with most nodes has 4686 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+is 234.65, and the node degree mode is 1. The top 5 most central nodes
+are 1174504.AJTN02000257_gene1531 (degree 1638), 1174504.AJTN02000173_gene3994
 (degree 1381), 1174504.AJTN02000162_gene1587 (degree 1333), 1174504.AJTN02000155_gene1993
 (degree 1309) and 1174504.AJTN02000241_gene4330 (degree 1296).
 
@@ -107,12 +108,13 @@ def BacillusPsychrosaccharolyticus(
 	
 	Datetime: 2021-02-02 23:08:51.288591
 	
-	The undirected graph Bacillus psychrosaccharolyticus has 4749 nodes and 557180 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04942
-	and has 28 connected components, where the component with most nodes has 4686 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 234.65, and the node degree mode is 1. The top 5
-	most central nodes are 1174504.AJTN02000257_gene1531 (degree 1638), 1174504.AJTN02000173_gene3994
+	The undirected graph Bacillus psychrosaccharolyticus has 4749 nodes and
+	557180 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04942 and has 28 connected components, where the
+	component with most nodes has 4686 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+	is 234.65, and the node degree mode is 1. The top 5 most central nodes
+	are 1174504.AJTN02000257_gene1531 (degree 1638), 1174504.AJTN02000173_gene3994
 	(degree 1381), 1174504.AJTN02000162_gene1587 (degree 1333), 1174504.AJTN02000155_gene1993
 	(degree 1309) and 1174504.AJTN02000241_gene4330 (degree 1296).
 	

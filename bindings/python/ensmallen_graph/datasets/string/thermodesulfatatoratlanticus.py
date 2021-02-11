@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:59.609702
 
-The undirected graph Thermodesulfatator atlanticus has 2142 nodes and 145135 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06329
-and has 5 connected components, where the component with most nodes has 2131 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 135.51, and the node degree mode is 4. The top 5
-most central nodes are 1123371.ATXH01000021_gene1117 (degree 940), 1123371.ATXH01000020_gene488
-(degree 789), 1123371.ATXH01000010_gene743 (degree 764), 1123371.ATXH01000003_gene1960
-(degree 756) and 1123371.ATXH01000005_gene2102 (degree 716).
+The undirected graph Thermodesulfatator atlanticus has 2142 nodes and 145135
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06329 and has 5 connected components, where the component
+with most nodes has 2131 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 135.51,
+and the node degree mode is 4. The top 5 most central nodes are 1123371.ATXH01000021_gene1117
+(degree 940), 1123371.ATXH01000020_gene488 (degree 789), 1123371.ATXH01000010_gene743
+(degree 764), 1123371.ATXH01000003_gene1960 (degree 756) and 1123371.ATXH01000005_gene2102
+(degree 716).
 
 
 References
@@ -107,14 +108,15 @@ def ThermodesulfatatorAtlanticus(
 	
 	Datetime: 2021-02-02 22:51:59.609702
 	
-	The undirected graph Thermodesulfatator atlanticus has 2142 nodes and 145135 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06329
-	and has 5 connected components, where the component with most nodes has 2131 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 135.51, and the node degree mode is 4. The top 5
-	most central nodes are 1123371.ATXH01000021_gene1117 (degree 940), 1123371.ATXH01000020_gene488
-	(degree 789), 1123371.ATXH01000010_gene743 (degree 764), 1123371.ATXH01000003_gene1960
-	(degree 756) and 1123371.ATXH01000005_gene2102 (degree 716).
+	The undirected graph Thermodesulfatator atlanticus has 2142 nodes and 145135
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06329 and has 5 connected components, where the component
+	with most nodes has 2131 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 135.51,
+	and the node degree mode is 4. The top 5 most central nodes are 1123371.ATXH01000021_gene1117
+	(degree 940), 1123371.ATXH01000020_gene488 (degree 789), 1123371.ATXH01000010_gene743
+	(degree 764), 1123371.ATXH01000003_gene1960 (degree 756) and 1123371.ATXH01000005_gene2102
+	(degree 716).
 	
 
 

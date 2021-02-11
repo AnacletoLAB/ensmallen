@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:36.965597
 
-The undirected graph Geobacillus caldoxylosilyticus has 3677 nodes and 393259 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05819
-and has 14 connected components, where the component with most nodes has 3646 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 213.90, and the node degree mode is 1. The top 5
-most central nodes are 1234664.AMRO01000074_gene2887 (degree 1374), 1234664.AMRO01000006_gene798
+The undirected graph Geobacillus caldoxylosilyticus has 3677 nodes and
+393259 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05819 and has 14 connected components, where the
+component with most nodes has 3646 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 179, the mean node degree
+is 213.90, and the node degree mode is 1. The top 5 most central nodes
+are 1234664.AMRO01000074_gene2887 (degree 1374), 1234664.AMRO01000006_gene798
 (degree 1213), 1234664.AMRO01000008_gene764 (degree 1157), 1234664.AMRO01000038_gene3190
 (degree 1128) and 1234664.AMRO01000027_gene1415 (degree 1126).
 
@@ -107,12 +108,13 @@ def GeobacillusCaldoxylosilyticus(
 	
 	Datetime: 2021-02-02 23:29:36.965597
 	
-	The undirected graph Geobacillus caldoxylosilyticus has 3677 nodes and 393259 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05819
-	and has 14 connected components, where the component with most nodes has 3646 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 213.90, and the node degree mode is 1. The top 5
-	most central nodes are 1234664.AMRO01000074_gene2887 (degree 1374), 1234664.AMRO01000006_gene798
+	The undirected graph Geobacillus caldoxylosilyticus has 3677 nodes and
+	393259 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05819 and has 14 connected components, where the
+	component with most nodes has 3646 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 179, the mean node degree
+	is 213.90, and the node degree mode is 1. The top 5 most central nodes
+	are 1234664.AMRO01000074_gene2887 (degree 1374), 1234664.AMRO01000006_gene798
 	(degree 1213), 1234664.AMRO01000008_gene764 (degree 1157), 1234664.AMRO01000038_gene3190
 	(degree 1128) and 1234664.AMRO01000027_gene1415 (degree 1126).
 	

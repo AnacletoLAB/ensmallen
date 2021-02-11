@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:52.250714
 
-The undirected graph Mycoplasma pneumoniae has 608 nodes and 24376 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13210
-and has 15 connected components, where the component with most nodes has 571 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 80.18, and the node degree mode is 1. The top 5 most
-central nodes are 722438.MPNE_0122 (degree 293), 722438.MPNE_0508 (degree 271), 722438.MPNE_0421
-(degree 266), 722438.MPNE_0570 (degree 264) and 722438.MPNE_0408 (degree 248).
+The undirected graph Mycoplasma pneumoniae has 608 nodes and 24376 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13210 and has 15 connected components, where the component
+with most nodes has 571 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 80.18,
+and the node degree mode is 1. The top 5 most central nodes are 722438.MPNE_0122
+(degree 293), 722438.MPNE_0508 (degree 271), 722438.MPNE_0421 (degree 266),
+722438.MPNE_0570 (degree 264) and 722438.MPNE_0408 (degree 248).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaPneumoniae(
 	
 	Datetime: 2021-02-02 21:36:52.250714
 	
-	The undirected graph Mycoplasma pneumoniae has 608 nodes and 24376 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13210
-	and has 15 connected components, where the component with most nodes has 571 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 80.18, and the node degree mode is 1. The top 5 most
-	central nodes are 722438.MPNE_0122 (degree 293), 722438.MPNE_0508 (degree 271), 722438.MPNE_0421
-	(degree 266), 722438.MPNE_0570 (degree 264) and 722438.MPNE_0408 (degree 248).
+	The undirected graph Mycoplasma pneumoniae has 608 nodes and 24376 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13210 and has 15 connected components, where the component
+	with most nodes has 571 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 80.18,
+	and the node degree mode is 1. The top 5 most central nodes are 722438.MPNE_0122
+	(degree 293), 722438.MPNE_0508 (degree 271), 722438.MPNE_0421 (degree 266),
+	722438.MPNE_0570 (degree 264) and 722438.MPNE_0408 (degree 248).
 	
 
 

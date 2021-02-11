@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:07.187637
 
-The undirected graph soc-slashdot has 70068 nodes and 358647 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00015
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 10.24, and the node degree mode is 1. The top 5 most central
-nodes are 2479 (degree 2507), 4669 (degree 2208), 395 (degree 2195), 378 (degree
-1732) and 226 (degree 1696).
+The undirected graph soc-slashdot has 70068 nodes and 358647 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00015 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 10.24, and the node
+degree mode is 1. The top 5 most central nodes are 2479 (degree 2507),
+4669 (degree 2208), 395 (degree 2195), 378 (degree 1732) and 226 (degree
+1696).
 
 
 References
@@ -113,12 +114,13 @@ def SocSlashdot(
 	
 	Datetime: 2021-02-06 11:48:07.187637
 	
-	The undirected graph soc-slashdot has 70068 nodes and 358647 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00015
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 10.24, and the node degree mode is 1. The top 5 most central
-	nodes are 2479 (degree 2507), 4669 (degree 2208), 395 (degree 2195), 378 (degree
-	1732) and 226 (degree 1696).
+	The undirected graph soc-slashdot has 70068 nodes and 358647 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00015 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 10.24, and the node
+	degree mode is 1. The top 5 most central nodes are 2479 (degree 2507),
+	4669 (degree 2208), 395 (degree 2195), 378 (degree 1732) and 226 (degree
+	1696).
 	
 
 

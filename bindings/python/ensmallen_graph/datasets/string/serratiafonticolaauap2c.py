@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:12.986008
 
-The undirected graph Serratia fonticola AUAP2C has 4403 nodes and 300637 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03102
-and has 22 connected components, where the component with most nodes has 4355 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 136.56, and the node degree mode is 1. The top 5
-most central nodes are 1332071.L581_3898 (degree 1173), 1332071.L581_4434 (degree
-1120), 1332071.L581_0605 (degree 1024), 1332071.L581_0606 (degree 967) and 1332071.L581_1850
-(degree 967).
+The undirected graph Serratia fonticola AUAP2C has 4403 nodes and 300637
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03102 and has 22 connected components, where the component
+with most nodes has 4355 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 136.56,
+and the node degree mode is 1. The top 5 most central nodes are 1332071.L581_3898
+(degree 1173), 1332071.L581_4434 (degree 1120), 1332071.L581_0605 (degree
+1024), 1332071.L581_0606 (degree 967) and 1332071.L581_1850 (degree 967).
 
 
 References
@@ -107,14 +107,14 @@ def SerratiaFonticolaAuap2c(
 	
 	Datetime: 2021-02-03 21:55:12.986008
 	
-	The undirected graph Serratia fonticola AUAP2C has 4403 nodes and 300637 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03102
-	and has 22 connected components, where the component with most nodes has 4355 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 136.56, and the node degree mode is 1. The top 5
-	most central nodes are 1332071.L581_3898 (degree 1173), 1332071.L581_4434 (degree
-	1120), 1332071.L581_0605 (degree 1024), 1332071.L581_0606 (degree 967) and 1332071.L581_1850
-	(degree 967).
+	The undirected graph Serratia fonticola AUAP2C has 4403 nodes and 300637
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03102 and has 22 connected components, where the component
+	with most nodes has 4355 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 136.56,
+	and the node degree mode is 1. The top 5 most central nodes are 1332071.L581_3898
+	(degree 1173), 1332071.L581_4434 (degree 1120), 1332071.L581_0605 (degree
+	1024), 1332071.L581_0606 (degree 967) and 1332071.L581_1850 (degree 967).
 	
 
 

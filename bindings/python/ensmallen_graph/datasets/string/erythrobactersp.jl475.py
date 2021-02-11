@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:29.985343
 
-The undirected graph Erythrobacter sp. JL475 has 3023 nodes and 253461 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05549 and
-has 7 connected components, where the component with most nodes has 3011 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 167.69, and the node degree mode is 3. The top 5 most central
-nodes are 383381.EH30_12090 (degree 1096), 383381.EH30_13625 (degree 967), 383381.EH30_10045
-(degree 949), 383381.EH30_06950 (degree 947) and 383381.EH30_12210 (degree 903).
+The undirected graph Erythrobacter sp. JL475 has 3023 nodes and 253461
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05549 and has 7 connected components, where the component
+with most nodes has 3011 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 167.69,
+and the node degree mode is 3. The top 5 most central nodes are 383381.EH30_12090
+(degree 1096), 383381.EH30_13625 (degree 967), 383381.EH30_10045 (degree
+949), 383381.EH30_06950 (degree 947) and 383381.EH30_12210 (degree 903).
 
 
 References
@@ -106,13 +107,14 @@ def ErythrobacterSp.Jl475(
 	
 	Datetime: 2021-02-02 20:37:29.985343
 	
-	The undirected graph Erythrobacter sp. JL475 has 3023 nodes and 253461 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05549 and
-	has 7 connected components, where the component with most nodes has 3011 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 167.69, and the node degree mode is 3. The top 5 most central
-	nodes are 383381.EH30_12090 (degree 1096), 383381.EH30_13625 (degree 967), 383381.EH30_10045
-	(degree 949), 383381.EH30_06950 (degree 947) and 383381.EH30_12210 (degree 903).
+	The undirected graph Erythrobacter sp. JL475 has 3023 nodes and 253461
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05549 and has 7 connected components, where the component
+	with most nodes has 3011 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 167.69,
+	and the node degree mode is 3. The top 5 most central nodes are 383381.EH30_12090
+	(degree 1096), 383381.EH30_13625 (degree 967), 383381.EH30_10045 (degree
+	949), 383381.EH30_06950 (degree 947) and 383381.EH30_12210 (degree 903).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:12.307048
 
-The undirected graph Burkholderia multivorans has 6206 nodes and 589230 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03060
-and has 28 connected components, where the component with most nodes has 6142 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 189.89, and the node degree mode is 1. The top 5
-most central nodes are 395019.Bmul_4827 (degree 2108), 395019.Bmul_0305 (degree 1650),
-395019.Bmul_3638 (degree 1596), 395019.Bmul_1287 (degree 1425) and 395019.Bmul_0516
-(degree 1308).
+The undirected graph Burkholderia multivorans has 6206 nodes and 589230
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03060 and has 28 connected components, where the component
+with most nodes has 6142 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 189.89,
+and the node degree mode is 1. The top 5 most central nodes are 395019.Bmul_4827
+(degree 2108), 395019.Bmul_0305 (degree 1650), 395019.Bmul_3638 (degree
+1596), 395019.Bmul_1287 (degree 1425) and 395019.Bmul_0516 (degree 1308).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaMultivorans(
 	
 	Datetime: 2021-02-02 20:41:12.307048
 	
-	The undirected graph Burkholderia multivorans has 6206 nodes and 589230 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03060
-	and has 28 connected components, where the component with most nodes has 6142 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 189.89, and the node degree mode is 1. The top 5
-	most central nodes are 395019.Bmul_4827 (degree 2108), 395019.Bmul_0305 (degree 1650),
-	395019.Bmul_3638 (degree 1596), 395019.Bmul_1287 (degree 1425) and 395019.Bmul_0516
-	(degree 1308).
+	The undirected graph Burkholderia multivorans has 6206 nodes and 589230
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03060 and has 28 connected components, where the component
+	with most nodes has 6142 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 189.89,
+	and the node degree mode is 1. The top 5 most central nodes are 395019.Bmul_4827
+	(degree 2108), 395019.Bmul_0305 (degree 1650), 395019.Bmul_3638 (degree
+	1596), 395019.Bmul_1287 (degree 1425) and 395019.Bmul_0516 (degree 1308).
 	
 
 

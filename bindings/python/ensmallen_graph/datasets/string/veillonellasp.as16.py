@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:41.434136
 
-The undirected graph Veillonella sp. AS16 has 1723 nodes and 116808 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07874 and
-has 5 connected components, where the component with most nodes has 1713 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 135.59, and the node degree mode is 55. The top 5 most central
-nodes are 936589.HMPREF1521_0155 (degree 809), 936589.HMPREF1521_1351 (degree 660),
-936589.HMPREF1521_0213 (degree 658), 936589.HMPREF1521_1628 (degree 648) and 936589.HMPREF1521_0432
+The undirected graph Veillonella sp. AS16 has 1723 nodes and 116808 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07874 and has 5 connected components, where the component with most
+nodes has 1713 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 135.59, and
+the node degree mode is 55. The top 5 most central nodes are 936589.HMPREF1521_0155
+(degree 809), 936589.HMPREF1521_1351 (degree 660), 936589.HMPREF1521_0213
+(degree 658), 936589.HMPREF1521_1628 (degree 648) and 936589.HMPREF1521_0432
 (degree 629).
 
 
@@ -107,13 +108,14 @@ def VeillonellaSp.As16(
 	
 	Datetime: 2021-02-02 22:00:41.434136
 	
-	The undirected graph Veillonella sp. AS16 has 1723 nodes and 116808 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07874 and
-	has 5 connected components, where the component with most nodes has 1713 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 135.59, and the node degree mode is 55. The top 5 most central
-	nodes are 936589.HMPREF1521_0155 (degree 809), 936589.HMPREF1521_1351 (degree 660),
-	936589.HMPREF1521_0213 (degree 658), 936589.HMPREF1521_1628 (degree 648) and 936589.HMPREF1521_0432
+	The undirected graph Veillonella sp. AS16 has 1723 nodes and 116808 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07874 and has 5 connected components, where the component with most
+	nodes has 1713 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 135.59, and
+	the node degree mode is 55. The top 5 most central nodes are 936589.HMPREF1521_0155
+	(degree 809), 936589.HMPREF1521_1351 (degree 660), 936589.HMPREF1521_0213
+	(degree 658), 936589.HMPREF1521_1628 (degree 648) and 936589.HMPREF1521_0432
 	(degree 629).
 	
 

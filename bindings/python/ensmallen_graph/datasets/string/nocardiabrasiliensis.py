@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:17.729314
 
-The undirected graph Nocardia brasiliensis has 8334 nodes and 1221792 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03519 and
-has 30 connected components, where the component with most nodes has 8262 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 293.21, and the node degree mode is 2. The top 5 most central
-nodes are 1133849.O3I_023120 (degree 3724), 1133849.O3I_020245 (degree 3201), 1133849.O3I_004610
-(degree 2492), 1133849.O3I_012555 (degree 2368) and 1133849.O3I_007715 (degree 2287).
+The undirected graph Nocardia brasiliensis has 8334 nodes and 1221792 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03519 and has 30 connected components, where the component with most
+nodes has 8262 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 293.21, and
+the node degree mode is 2. The top 5 most central nodes are 1133849.O3I_023120
+(degree 3724), 1133849.O3I_020245 (degree 3201), 1133849.O3I_004610 (degree
+2492), 1133849.O3I_012555 (degree 2368) and 1133849.O3I_007715 (degree
+2287).
 
 
 References
@@ -106,13 +108,15 @@ def NocardiaBrasiliensis(
 	
 	Datetime: 2021-02-02 22:56:17.729314
 	
-	The undirected graph Nocardia brasiliensis has 8334 nodes and 1221792 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03519 and
-	has 30 connected components, where the component with most nodes has 8262 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 293.21, and the node degree mode is 2. The top 5 most central
-	nodes are 1133849.O3I_023120 (degree 3724), 1133849.O3I_020245 (degree 3201), 1133849.O3I_004610
-	(degree 2492), 1133849.O3I_012555 (degree 2368) and 1133849.O3I_007715 (degree 2287).
+	The undirected graph Nocardia brasiliensis has 8334 nodes and 1221792 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03519 and has 30 connected components, where the component with most
+	nodes has 8262 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 293.21, and
+	the node degree mode is 2. The top 5 most central nodes are 1133849.O3I_023120
+	(degree 3724), 1133849.O3I_020245 (degree 3201), 1133849.O3I_004610 (degree
+	2492), 1133849.O3I_012555 (degree 2368) and 1133849.O3I_007715 (degree
+	2287).
 	
 
 

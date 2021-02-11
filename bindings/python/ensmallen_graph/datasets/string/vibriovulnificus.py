@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:45.641750
 
-The undirected graph Vibrio vulnificus has 4479 nodes and 552281 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05507 and
-has 10 connected components, where the component with most nodes has 4451 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 225,
-the mean node degree is 246.61, and the node degree mode is 5. The top 5 most central
-nodes are 672.VV93_v1c01730 (degree 1549), 672.VV93_v1c24460 (degree 1483), 672.VV93_v1c07220
-(degree 1333), 672.VV93_v1c43720 (degree 1198) and 672.VV93_v1c13610 (degree 1174).
+The undirected graph Vibrio vulnificus has 4479 nodes and 552281 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05507 and has 10 connected components, where the component with most
+nodes has 4451 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 225, the mean node degree is 246.61, and
+the node degree mode is 5. The top 5 most central nodes are 672.VV93_v1c01730
+(degree 1549), 672.VV93_v1c24460 (degree 1483), 672.VV93_v1c07220 (degree
+1333), 672.VV93_v1c43720 (degree 1198) and 672.VV93_v1c13610 (degree 1174).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioVulnificus(
 	
 	Datetime: 2021-02-02 16:21:45.641750
 	
-	The undirected graph Vibrio vulnificus has 4479 nodes and 552281 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05507 and
-	has 10 connected components, where the component with most nodes has 4451 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 225,
-	the mean node degree is 246.61, and the node degree mode is 5. The top 5 most central
-	nodes are 672.VV93_v1c01730 (degree 1549), 672.VV93_v1c24460 (degree 1483), 672.VV93_v1c07220
-	(degree 1333), 672.VV93_v1c43720 (degree 1198) and 672.VV93_v1c13610 (degree 1174).
+	The undirected graph Vibrio vulnificus has 4479 nodes and 552281 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05507 and has 10 connected components, where the component with most
+	nodes has 4451 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 225, the mean node degree is 246.61, and
+	the node degree mode is 5. The top 5 most central nodes are 672.VV93_v1c01730
+	(degree 1549), 672.VV93_v1c24460 (degree 1483), 672.VV93_v1c07220 (degree
+	1333), 672.VV93_v1c43720 (degree 1198) and 672.VV93_v1c13610 (degree 1174).
 	
 
 

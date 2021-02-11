@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:55.439635
 
-The undirected graph Novosphingobium sp. Rr 217 has 4234 nodes and 357102 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03985
-and has 25 connected components, where the component with most nodes has 4173 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 168.68, and the node degree mode is 1. The top 5
-most central nodes are 555793.WSK_3384 (degree 1354), 555793.WSK_0054 (degree 1052),
-555793.WSK_3218 (degree 1049), 555793.WSK_3032 (degree 1044) and 555793.WSK_2712
-(degree 1037).
+The undirected graph Novosphingobium sp. Rr 217 has 4234 nodes and 357102
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03985 and has 25 connected components, where the component
+with most nodes has 4173 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 168.68,
+and the node degree mode is 1. The top 5 most central nodes are 555793.WSK_3384
+(degree 1354), 555793.WSK_0054 (degree 1052), 555793.WSK_3218 (degree 1049),
+555793.WSK_3032 (degree 1044) and 555793.WSK_2712 (degree 1037).
 
 
 References
@@ -107,14 +107,14 @@ def NovosphingobiumSp.Rr217(
 	
 	Datetime: 2021-02-02 21:10:55.439635
 	
-	The undirected graph Novosphingobium sp. Rr 217 has 4234 nodes and 357102 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03985
-	and has 25 connected components, where the component with most nodes has 4173 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 168.68, and the node degree mode is 1. The top 5
-	most central nodes are 555793.WSK_3384 (degree 1354), 555793.WSK_0054 (degree 1052),
-	555793.WSK_3218 (degree 1049), 555793.WSK_3032 (degree 1044) and 555793.WSK_2712
-	(degree 1037).
+	The undirected graph Novosphingobium sp. Rr 217 has 4234 nodes and 357102
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03985 and has 25 connected components, where the component
+	with most nodes has 4173 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 168.68,
+	and the node degree mode is 1. The top 5 most central nodes are 555793.WSK_3384
+	(degree 1354), 555793.WSK_0054 (degree 1052), 555793.WSK_3218 (degree 1049),
+	555793.WSK_3032 (degree 1044) and 555793.WSK_2712 (degree 1037).
 	
 
 

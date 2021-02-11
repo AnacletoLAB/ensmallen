@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:47.250683
 
-The undirected graph Methylophilus methylotrophus has 2558 nodes and 196207 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-and has 11 connected components, where the component with most nodes has 2536 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 153.41, and the node degree mode is 1. The top 5
-most central nodes are 1122236.KB905141_gene1791 (degree 1061), 1122236.KB905141_gene1334
-(degree 893), 1122236.KB905141_gene1116 (degree 849), 1122236.KB905141_gene1117 (degree
-846) and 1122236.KB905141_gene1184 (degree 798).
+The undirected graph Methylophilus methylotrophus has 2558 nodes and 196207
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05999 and has 11 connected components, where the component
+with most nodes has 2536 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 153.41,
+and the node degree mode is 1. The top 5 most central nodes are 1122236.KB905141_gene1791
+(degree 1061), 1122236.KB905141_gene1334 (degree 893), 1122236.KB905141_gene1116
+(degree 849), 1122236.KB905141_gene1117 (degree 846) and 1122236.KB905141_gene1184
+(degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def MethylophilusMethylotrophus(
 	
 	Datetime: 2021-02-02 22:42:47.250683
 	
-	The undirected graph Methylophilus methylotrophus has 2558 nodes and 196207 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05999
-	and has 11 connected components, where the component with most nodes has 2536 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 153.41, and the node degree mode is 1. The top 5
-	most central nodes are 1122236.KB905141_gene1791 (degree 1061), 1122236.KB905141_gene1334
-	(degree 893), 1122236.KB905141_gene1116 (degree 849), 1122236.KB905141_gene1117 (degree
-	846) and 1122236.KB905141_gene1184 (degree 798).
+	The undirected graph Methylophilus methylotrophus has 2558 nodes and 196207
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05999 and has 11 connected components, where the component
+	with most nodes has 2536 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 153.41,
+	and the node degree mode is 1. The top 5 most central nodes are 1122236.KB905141_gene1791
+	(degree 1061), 1122236.KB905141_gene1334 (degree 893), 1122236.KB905141_gene1116
+	(degree 849), 1122236.KB905141_gene1117 (degree 846) and 1122236.KB905141_gene1184
+	(degree 798).
 	
 
 

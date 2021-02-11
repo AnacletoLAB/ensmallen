@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:35.864426
 
-The undirected graph Vibrio tubiashii has 5157 nodes and 438597 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03299 and
-has 27 connected components, where the component with most nodes has 5081 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 170.10, and the node degree mode is 1. The top 5 most central
-nodes are 1051646.VITU9109_19772 (degree 1676), 1051646.VITU9109_06800 (degree 1183),
-1051646.VITU9109_06785 (degree 1179), 1051646.VITU9109_13027 (degree 1144) and 1051646.VITU9109_20571
+The undirected graph Vibrio tubiashii has 5157 nodes and 438597 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03299 and has 27 connected components, where the component with most
+nodes has 5081 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 170.10, and
+the node degree mode is 1. The top 5 most central nodes are 1051646.VITU9109_19772
+(degree 1676), 1051646.VITU9109_06800 (degree 1183), 1051646.VITU9109_06785
+(degree 1179), 1051646.VITU9109_13027 (degree 1144) and 1051646.VITU9109_20571
 (degree 1138).
 
 
@@ -107,13 +108,14 @@ def VibrioTubiashii(
 	
 	Datetime: 2021-02-02 22:17:35.864426
 	
-	The undirected graph Vibrio tubiashii has 5157 nodes and 438597 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03299 and
-	has 27 connected components, where the component with most nodes has 5081 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 170.10, and the node degree mode is 1. The top 5 most central
-	nodes are 1051646.VITU9109_19772 (degree 1676), 1051646.VITU9109_06800 (degree 1183),
-	1051646.VITU9109_06785 (degree 1179), 1051646.VITU9109_13027 (degree 1144) and 1051646.VITU9109_20571
+	The undirected graph Vibrio tubiashii has 5157 nodes and 438597 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03299 and has 27 connected components, where the component with most
+	nodes has 5081 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 170.10, and
+	the node degree mode is 1. The top 5 most central nodes are 1051646.VITU9109_19772
+	(degree 1676), 1051646.VITU9109_06800 (degree 1183), 1051646.VITU9109_06785
+	(degree 1179), 1051646.VITU9109_13027 (degree 1144) and 1051646.VITU9109_20571
 	(degree 1138).
 	
 

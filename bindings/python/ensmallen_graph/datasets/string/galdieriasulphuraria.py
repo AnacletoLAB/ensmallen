@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:49:36.058002
 
-The undirected graph Galdieria sulphuraria has 4308 nodes and 500631 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05396 and
-has 3 connected components, where the component with most nodes has 4304 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 232.42, and the node degree mode is 1. The top 5 most central
-nodes are 130081.XP_005709089.1 (degree 1710), 130081.XP_005703091.1 (degree 1503),
-130081.XP_005704995.1 (degree 1488), 130081.XP_005705576.1 (degree 1479) and 130081.XP_005707894.1
+The undirected graph Galdieria sulphuraria has 4308 nodes and 500631 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05396 and has 3 connected components, where the component with most
+nodes has 4304 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 232.42, and
+the node degree mode is 1. The top 5 most central nodes are 130081.XP_005709089.1
+(degree 1710), 130081.XP_005703091.1 (degree 1503), 130081.XP_005704995.1
+(degree 1488), 130081.XP_005705576.1 (degree 1479) and 130081.XP_005707894.1
 (degree 1418).
 
 
@@ -107,13 +108,14 @@ def GaldieriaSulphuraria(
 	
 	Datetime: 2021-02-02 19:49:36.058002
 	
-	The undirected graph Galdieria sulphuraria has 4308 nodes and 500631 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05396 and
-	has 3 connected components, where the component with most nodes has 4304 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 232.42, and the node degree mode is 1. The top 5 most central
-	nodes are 130081.XP_005709089.1 (degree 1710), 130081.XP_005703091.1 (degree 1503),
-	130081.XP_005704995.1 (degree 1488), 130081.XP_005705576.1 (degree 1479) and 130081.XP_005707894.1
+	The undirected graph Galdieria sulphuraria has 4308 nodes and 500631 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05396 and has 3 connected components, where the component with most
+	nodes has 4304 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 232.42, and
+	the node degree mode is 1. The top 5 most central nodes are 130081.XP_005709089.1
+	(degree 1710), 130081.XP_005703091.1 (degree 1503), 130081.XP_005704995.1
+	(degree 1488), 130081.XP_005705576.1 (degree 1479) and 130081.XP_005707894.1
 	(degree 1418).
 	
 

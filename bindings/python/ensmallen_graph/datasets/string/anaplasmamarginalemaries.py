@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:49.642196
 
-The undirected graph Anaplasma marginale Maries has 927 nodes and 47263 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11012 and has 13 connected components, where the component with most nodes has
-899 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 88, the mean node degree is 101.97, and the node degree mode is 1. The
-top 5 most central nodes are 234826.AM1214 (degree 453), 234826.AM105 (degree 411),
-234826.AM917 (degree 408), 234826.AM944 (degree 378) and 234826.AM085 (degree 346).
+The undirected graph Anaplasma marginale Maries has 927 nodes and 47263
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11012 and has 13 connected components, where the
+component with most nodes has 899 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+is 101.97, and the node degree mode is 1. The top 5 most central nodes
+are 234826.AM1214 (degree 453), 234826.AM105 (degree 411), 234826.AM917
+(degree 408), 234826.AM944 (degree 378) and 234826.AM085 (degree 346).
 
 
 References
@@ -106,13 +107,14 @@ def AnaplasmaMarginaleMaries(
 	
 	Datetime: 2021-02-02 20:07:49.642196
 	
-	The undirected graph Anaplasma marginale Maries has 927 nodes and 47263 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11012 and has 13 connected components, where the component with most nodes has
-	899 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 88, the mean node degree is 101.97, and the node degree mode is 1. The
-	top 5 most central nodes are 234826.AM1214 (degree 453), 234826.AM105 (degree 411),
-	234826.AM917 (degree 408), 234826.AM944 (degree 378) and 234826.AM085 (degree 346).
+	The undirected graph Anaplasma marginale Maries has 927 nodes and 47263
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11012 and has 13 connected components, where the
+	component with most nodes has 899 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+	is 101.97, and the node degree mode is 1. The top 5 most central nodes
+	are 234826.AM1214 (degree 453), 234826.AM105 (degree 411), 234826.AM917
+	(degree 408), 234826.AM944 (degree 378) and 234826.AM085 (degree 346).
 	
 
 

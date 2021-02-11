@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:30.446543
 
-The undirected graph Sphingomonas sanxanigenens has 5796 nodes and 427979 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02548
-and has 26 connected components, where the component with most nodes has 5717 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 147.68, and the node degree mode is 2. The top 5
-most central nodes are 1123269.NX02_24580 (degree 1708), 1123269.NX02_25745 (degree
-1663), 1123269.NX02_10990 (degree 1289), 1123269.NX02_01685 (degree 1171) and 1123269.NX02_23090
-(degree 1146).
+The undirected graph Sphingomonas sanxanigenens has 5796 nodes and 427979
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02548 and has 26 connected components, where the component
+with most nodes has 5717 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 147.68,
+and the node degree mode is 2. The top 5 most central nodes are 1123269.NX02_24580
+(degree 1708), 1123269.NX02_25745 (degree 1663), 1123269.NX02_10990 (degree
+1289), 1123269.NX02_01685 (degree 1171) and 1123269.NX02_23090 (degree
+1146).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSanxanigenens(
 	
 	Datetime: 2021-02-02 22:49:30.446543
 	
-	The undirected graph Sphingomonas sanxanigenens has 5796 nodes and 427979 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02548
-	and has 26 connected components, where the component with most nodes has 5717 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 147.68, and the node degree mode is 2. The top 5
-	most central nodes are 1123269.NX02_24580 (degree 1708), 1123269.NX02_25745 (degree
-	1663), 1123269.NX02_10990 (degree 1289), 1123269.NX02_01685 (degree 1171) and 1123269.NX02_23090
-	(degree 1146).
+	The undirected graph Sphingomonas sanxanigenens has 5796 nodes and 427979
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02548 and has 26 connected components, where the component
+	with most nodes has 5717 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 147.68,
+	and the node degree mode is 2. The top 5 most central nodes are 1123269.NX02_24580
+	(degree 1708), 1123269.NX02_25745 (degree 1663), 1123269.NX02_10990 (degree
+	1289), 1123269.NX02_01685 (degree 1171) and 1123269.NX02_23090 (degree
+	1146).
 	
 
 

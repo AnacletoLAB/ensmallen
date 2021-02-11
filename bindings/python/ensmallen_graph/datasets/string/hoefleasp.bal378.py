@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:33.987003
 
-The undirected graph Hoeflea sp. BAL378 has 4606 nodes and 473755 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04467 and
-has 19 connected components, where the component with most nodes has 4570 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 205.71, and the node degree mode is 1. The top 5 most central
-nodes are 1547437.LL06_25595 (degree 1886), 1547437.LL06_16060 (degree 1746), 1547437.LL06_10195
-(degree 1519), 1547437.LL06_06600 (degree 1408) and 1547437.LL06_16615 (degree 1375).
+The undirected graph Hoeflea sp. BAL378 has 4606 nodes and 473755 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04467 and has 19 connected components, where the component with most
+nodes has 4570 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 205.71, and
+the node degree mode is 1. The top 5 most central nodes are 1547437.LL06_25595
+(degree 1886), 1547437.LL06_16060 (degree 1746), 1547437.LL06_10195 (degree
+1519), 1547437.LL06_06600 (degree 1408) and 1547437.LL06_16615 (degree
+1375).
 
 
 References
@@ -106,13 +108,15 @@ def HoefleaSp.Bal378(
 	
 	Datetime: 2021-02-03 23:20:33.987003
 	
-	The undirected graph Hoeflea sp. BAL378 has 4606 nodes and 473755 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04467 and
-	has 19 connected components, where the component with most nodes has 4570 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 205.71, and the node degree mode is 1. The top 5 most central
-	nodes are 1547437.LL06_25595 (degree 1886), 1547437.LL06_16060 (degree 1746), 1547437.LL06_10195
-	(degree 1519), 1547437.LL06_06600 (degree 1408) and 1547437.LL06_16615 (degree 1375).
+	The undirected graph Hoeflea sp. BAL378 has 4606 nodes and 473755 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04467 and has 19 connected components, where the component with most
+	nodes has 4570 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 205.71, and
+	the node degree mode is 1. The top 5 most central nodes are 1547437.LL06_25595
+	(degree 1886), 1547437.LL06_16060 (degree 1746), 1547437.LL06_10195 (degree
+	1519), 1547437.LL06_06600 (degree 1408) and 1547437.LL06_16615 (degree
+	1375).
 	
 
 

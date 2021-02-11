@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:26.284989
 
-The undirected graph Leptothrix cholodnii has 4350 nodes and 503206 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05320 and
-has 6 connected components, where the component with most nodes has 4337 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 231.36, and the node degree mode is 5. The top 5 most central
-nodes are 395495.Lcho_4069 (degree 2362), 395495.Lcho_1062 (degree 1779), 395495.Lcho_3543
-(degree 1515), 395495.Lcho_3174 (degree 1470) and 395495.Lcho_1464 (degree 1449).
+The undirected graph Leptothrix cholodnii has 4350 nodes and 503206 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05320 and has 6 connected components, where the component with most
+nodes has 4337 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 231.36, and
+the node degree mode is 5. The top 5 most central nodes are 395495.Lcho_4069
+(degree 2362), 395495.Lcho_1062 (degree 1779), 395495.Lcho_3543 (degree
+1515), 395495.Lcho_3174 (degree 1470) and 395495.Lcho_1464 (degree 1449).
 
 
 References
@@ -106,13 +107,14 @@ def LeptothrixCholodnii(
 	
 	Datetime: 2021-02-02 20:41:26.284989
 	
-	The undirected graph Leptothrix cholodnii has 4350 nodes and 503206 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05320 and
-	has 6 connected components, where the component with most nodes has 4337 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 231.36, and the node degree mode is 5. The top 5 most central
-	nodes are 395495.Lcho_4069 (degree 2362), 395495.Lcho_1062 (degree 1779), 395495.Lcho_3543
-	(degree 1515), 395495.Lcho_3174 (degree 1470) and 395495.Lcho_1464 (degree 1449).
+	The undirected graph Leptothrix cholodnii has 4350 nodes and 503206 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05320 and has 6 connected components, where the component with most
+	nodes has 4337 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 231.36, and
+	the node degree mode is 5. The top 5 most central nodes are 395495.Lcho_4069
+	(degree 2362), 395495.Lcho_1062 (degree 1779), 395495.Lcho_3543 (degree
+	1515), 395495.Lcho_3174 (degree 1470) and 395495.Lcho_1464 (degree 1449).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:01.761677
 
-The undirected graph Thermococcus kodakarensis has 2297 nodes and 139281 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05282
-and has 8 connected components, where the component with most nodes has 2275 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 121.27, and the node degree mode is 5. The top 5 most
-central nodes are 69014.TK0765 (degree 679), 69014.TK2129 (degree 606), 69014.TK1899
-(degree 579), 69014.TK0528 (degree 553) and 69014.TK2303 (degree 547).
+The undirected graph Thermococcus kodakarensis has 2297 nodes and 139281
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05282 and has 8 connected components, where the component
+with most nodes has 2275 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 121.27,
+and the node degree mode is 5. The top 5 most central nodes are 69014.TK0765
+(degree 679), 69014.TK2129 (degree 606), 69014.TK1899 (degree 579), 69014.TK0528
+(degree 553) and 69014.TK2303 (degree 547).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusKodakarensis(
 	
 	Datetime: 2021-02-02 18:29:01.761677
 	
-	The undirected graph Thermococcus kodakarensis has 2297 nodes and 139281 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05282
-	and has 8 connected components, where the component with most nodes has 2275 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 121.27, and the node degree mode is 5. The top 5 most
-	central nodes are 69014.TK0765 (degree 679), 69014.TK2129 (degree 606), 69014.TK1899
-	(degree 579), 69014.TK0528 (degree 553) and 69014.TK2303 (degree 547).
+	The undirected graph Thermococcus kodakarensis has 2297 nodes and 139281
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05282 and has 8 connected components, where the component
+	with most nodes has 2275 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 121.27,
+	and the node degree mode is 5. The top 5 most central nodes are 69014.TK0765
+	(degree 679), 69014.TK2129 (degree 606), 69014.TK1899 (degree 579), 69014.TK0528
+	(degree 553) and 69014.TK2303 (degree 547).
 	
 
 

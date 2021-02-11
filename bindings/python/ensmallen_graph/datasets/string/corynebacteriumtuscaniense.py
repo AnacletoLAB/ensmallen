@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:45.028149
 
-The undirected graph Corynebacterium tuscaniense has 1760 nodes and 109034 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07044
-and has 9 connected components, where the component with most nodes has 1742 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 123.90, and the node degree mode is 2. The top 5
-most central nodes are 1401064.HMPREF2129_03120 (degree 763), 1401064.HMPREF2129_08330
-(degree 649), 1401064.HMPREF2129_02980 (degree 619), 1401064.HMPREF2129_08365 (degree
-573) and 1401064.HMPREF2129_02695 (degree 570).
+The undirected graph Corynebacterium tuscaniense has 1760 nodes and 109034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07044 and has 9 connected components, where the component
+with most nodes has 1742 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 123.90,
+and the node degree mode is 2. The top 5 most central nodes are 1401064.HMPREF2129_03120
+(degree 763), 1401064.HMPREF2129_08330 (degree 649), 1401064.HMPREF2129_02980
+(degree 619), 1401064.HMPREF2129_08365 (degree 573) and 1401064.HMPREF2129_02695
+(degree 570).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumTuscaniense(
 	
 	Datetime: 2021-02-03 22:31:45.028149
 	
-	The undirected graph Corynebacterium tuscaniense has 1760 nodes and 109034 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07044
-	and has 9 connected components, where the component with most nodes has 1742 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 123.90, and the node degree mode is 2. The top 5
-	most central nodes are 1401064.HMPREF2129_03120 (degree 763), 1401064.HMPREF2129_08330
-	(degree 649), 1401064.HMPREF2129_02980 (degree 619), 1401064.HMPREF2129_08365 (degree
-	573) and 1401064.HMPREF2129_02695 (degree 570).
+	The undirected graph Corynebacterium tuscaniense has 1760 nodes and 109034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07044 and has 9 connected components, where the component
+	with most nodes has 1742 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 123.90,
+	and the node degree mode is 2. The top 5 most central nodes are 1401064.HMPREF2129_03120
+	(degree 763), 1401064.HMPREF2129_08330 (degree 649), 1401064.HMPREF2129_02980
+	(degree 619), 1401064.HMPREF2129_08365 (degree 573) and 1401064.HMPREF2129_02695
+	(degree 570).
 	
 
 

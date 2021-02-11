@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:37.659875
 
-The undirected graph Halobacteroides halobius has 2459 nodes and 177944 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05888
-and has 10 connected components, where the component with most nodes has 2433 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 144.73, and the node degree mode is 2. The top 5
-most central nodes are 748449.Halha_0427 (degree 1078), 748449.Halha_0606 (degree
-935), 748449.Halha_0309 (degree 880), 748449.Halha_0978 (degree 860) and 748449.Halha_0072
-(degree 821).
+The undirected graph Halobacteroides halobius has 2459 nodes and 177944
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05888 and has 10 connected components, where the component
+with most nodes has 2433 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 144.73,
+and the node degree mode is 2. The top 5 most central nodes are 748449.Halha_0427
+(degree 1078), 748449.Halha_0606 (degree 935), 748449.Halha_0309 (degree
+880), 748449.Halha_0978 (degree 860) and 748449.Halha_0072 (degree 821).
 
 
 References
@@ -107,14 +107,14 @@ def HalobacteroidesHalobius(
 	
 	Datetime: 2021-02-02 21:39:37.659875
 	
-	The undirected graph Halobacteroides halobius has 2459 nodes and 177944 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05888
-	and has 10 connected components, where the component with most nodes has 2433 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 144.73, and the node degree mode is 2. The top 5
-	most central nodes are 748449.Halha_0427 (degree 1078), 748449.Halha_0606 (degree
-	935), 748449.Halha_0309 (degree 880), 748449.Halha_0978 (degree 860) and 748449.Halha_0072
-	(degree 821).
+	The undirected graph Halobacteroides halobius has 2459 nodes and 177944
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05888 and has 10 connected components, where the component
+	with most nodes has 2433 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 144.73,
+	and the node degree mode is 2. The top 5 most central nodes are 748449.Halha_0427
+	(degree 1078), 748449.Halha_0606 (degree 935), 748449.Halha_0309 (degree
+	880), 748449.Halha_0978 (degree 860) and 748449.Halha_0072 (degree 821).
 	
 
 

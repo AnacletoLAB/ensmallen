@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:39:19.800198
 
-The undirected graph ENZYMES8 has 88 nodes with 2 different node types: 2 (nodes
-number 72) and 1 (nodes number 16) and 133 unweighted edges, of which none are self-loops.
-The graph is dense as it has a density of 0.03474 and is connected, as it has a single
-component. The graph median node degree is 3, the mean node degree is 3.02 and the
-node degree mode is 2. The top 5 most central nodes are 23 (degree 8), 8 (degree
-7), 88 (degree 5), 42 (degree 5) and 41 (degree 5).
+The undirected graph ENZYMES8 has 88 nodes with 2 different node types:
+2 (nodes number 72) and 1 (nodes number 16) and 133 unweighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.03474
+and is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 3.02 and the node degree mode is 2. The top
+5 most central nodes are 23 (degree 8), 8 (degree 7), 88 (degree 5), 42
+(degree 5) and 41 (degree 5).
 
 
 References
@@ -102,12 +103,13 @@ def Enzymes8(
 	
 	Datetime: 2021-02-04 08:39:19.800198
 	
-	The undirected graph ENZYMES8 has 88 nodes with 2 different node types: 2 (nodes
-	number 72) and 1 (nodes number 16) and 133 unweighted edges, of which none are self-loops.
-	The graph is dense as it has a density of 0.03474 and is connected, as it has a single
-	component. The graph median node degree is 3, the mean node degree is 3.02 and the
-	node degree mode is 2. The top 5 most central nodes are 23 (degree 8), 8 (degree
-	7), 88 (degree 5), 42 (degree 5) and 41 (degree 5).
+	The undirected graph ENZYMES8 has 88 nodes with 2 different node types:
+	2 (nodes number 72) and 1 (nodes number 16) and 133 unweighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.03474
+	and is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 3.02 and the node degree mode is 2. The top
+	5 most central nodes are 23 (degree 8), 8 (degree 7), 88 (degree 5), 42
+	(degree 5) and 41 (degree 5).
 	
 
 

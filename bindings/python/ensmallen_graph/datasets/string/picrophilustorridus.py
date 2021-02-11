@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:22.370969
 
-The undirected graph Picrophilus torridus has 1526 nodes and 140849 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12105
-and has 8 connected components, where the component with most nodes has 1511 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 184.60, and the node degree mode is 3. The top 5
-most central nodes are 263820.PTO0742 (degree 706), 263820.PTO0840 (degree 663),
-263820.PTO0348 (degree 639), 263820.PTO0229 (degree 561) and 263820.PTO1514 (degree
-558).
+The undirected graph Picrophilus torridus has 1526 nodes and 140849 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12105 and has 8 connected components, where the component
+with most nodes has 1511 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 184.60,
+and the node degree mode is 3. The top 5 most central nodes are 263820.PTO0742
+(degree 706), 263820.PTO0840 (degree 663), 263820.PTO0348 (degree 639),
+263820.PTO0229 (degree 561) and 263820.PTO1514 (degree 558).
 
 
 References
@@ -107,14 +107,14 @@ def PicrophilusTorridus(
 	
 	Datetime: 2021-02-02 20:13:22.370969
 	
-	The undirected graph Picrophilus torridus has 1526 nodes and 140849 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12105
-	and has 8 connected components, where the component with most nodes has 1511 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 184.60, and the node degree mode is 3. The top 5
-	most central nodes are 263820.PTO0742 (degree 706), 263820.PTO0840 (degree 663),
-	263820.PTO0348 (degree 639), 263820.PTO0229 (degree 561) and 263820.PTO1514 (degree
-	558).
+	The undirected graph Picrophilus torridus has 1526 nodes and 140849 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12105 and has 8 connected components, where the component
+	with most nodes has 1511 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 184.60,
+	and the node degree mode is 3. The top 5 most central nodes are 263820.PTO0742
+	(degree 706), 263820.PTO0840 (degree 663), 263820.PTO0348 (degree 639),
+	263820.PTO0229 (degree 561) and 263820.PTO1514 (degree 558).
 	
 
 

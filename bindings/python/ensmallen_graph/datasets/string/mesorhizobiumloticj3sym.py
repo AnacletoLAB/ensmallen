@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:13:49.100496
 
-The undirected graph Mesorhizobium loti CJ3sym has 6732 nodes and 1044463 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04610
-and has 37 connected components, where the component with most nodes has 6647 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 310.30, and the node degree mode is 1. The top 5
-most central nodes are 1040982.AXAL01000031_gene655 (degree 2423), 1040982.AXAL01000013_gene4606
-(degree 2341), 1040982.AXAL01000017_gene5141 (degree 2197), 1040982.AXAL01000011_gene1314
-(degree 2170) and 1040982.AXAL01000013_gene4579 (degree 2143).
+The undirected graph Mesorhizobium loti CJ3sym has 6732 nodes and 1044463
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04610 and has 37 connected components, where the component
+with most nodes has 6647 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 245, the mean node degree is 310.30,
+and the node degree mode is 1. The top 5 most central nodes are 1040982.AXAL01000031_gene655
+(degree 2423), 1040982.AXAL01000013_gene4606 (degree 2341), 1040982.AXAL01000017_gene5141
+(degree 2197), 1040982.AXAL01000011_gene1314 (degree 2170) and 1040982.AXAL01000013_gene4579
+(degree 2143).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumLotiCj3sym(
 	
 	Datetime: 2021-02-02 22:13:49.100496
 	
-	The undirected graph Mesorhizobium loti CJ3sym has 6732 nodes and 1044463 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04610
-	and has 37 connected components, where the component with most nodes has 6647 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 310.30, and the node degree mode is 1. The top 5
-	most central nodes are 1040982.AXAL01000031_gene655 (degree 2423), 1040982.AXAL01000013_gene4606
-	(degree 2341), 1040982.AXAL01000017_gene5141 (degree 2197), 1040982.AXAL01000011_gene1314
-	(degree 2170) and 1040982.AXAL01000013_gene4579 (degree 2143).
+	The undirected graph Mesorhizobium loti CJ3sym has 6732 nodes and 1044463
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04610 and has 37 connected components, where the component
+	with most nodes has 6647 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 245, the mean node degree is 310.30,
+	and the node degree mode is 1. The top 5 most central nodes are 1040982.AXAL01000031_gene655
+	(degree 2423), 1040982.AXAL01000013_gene4606 (degree 2341), 1040982.AXAL01000017_gene5141
+	(degree 2197), 1040982.AXAL01000011_gene1314 (degree 2170) and 1040982.AXAL01000013_gene4579
+	(degree 2143).
 	
 
 

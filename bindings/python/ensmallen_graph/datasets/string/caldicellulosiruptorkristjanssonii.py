@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:33.610076
 
-The undirected graph Caldicellulosiruptor kristjanssonii has 2457 nodes and 143196
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04746 and has 19 connected components, where the component with most nodes has
-2410 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 91, the mean node degree is 116.56, and the node degree mode is 2. The
-top 5 most central nodes are 632335.Calkr_1674 (degree 1029), 632335.Calkr_1426 (degree
-906), 632335.Calkr_1391 (degree 896), 632335.Calkr_0268 (degree 767) and 632335.Calkr_1651
-(degree 725).
+The undirected graph Caldicellulosiruptor kristjanssonii has 2457 nodes
+and 143196 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04746 and has 19 connected components, where the
+component with most nodes has 2410 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+is 116.56, and the node degree mode is 2. The top 5 most central nodes
+are 632335.Calkr_1674 (degree 1029), 632335.Calkr_1426 (degree 906), 632335.Calkr_1391
+(degree 896), 632335.Calkr_0268 (degree 767) and 632335.Calkr_1651 (degree
+725).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicellulosiruptorKristjanssonii(
 	
 	Datetime: 2021-02-02 21:21:33.610076
 	
-	The undirected graph Caldicellulosiruptor kristjanssonii has 2457 nodes and 143196
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04746 and has 19 connected components, where the component with most nodes has
-	2410 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 91, the mean node degree is 116.56, and the node degree mode is 2. The
-	top 5 most central nodes are 632335.Calkr_1674 (degree 1029), 632335.Calkr_1426 (degree
-	906), 632335.Calkr_1391 (degree 896), 632335.Calkr_0268 (degree 767) and 632335.Calkr_1651
-	(degree 725).
+	The undirected graph Caldicellulosiruptor kristjanssonii has 2457 nodes
+	and 143196 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04746 and has 19 connected components, where the
+	component with most nodes has 2410 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+	is 116.56, and the node degree mode is 2. The top 5 most central nodes
+	are 632335.Calkr_1674 (degree 1029), 632335.Calkr_1426 (degree 906), 632335.Calkr_1391
+	(degree 896), 632335.Calkr_0268 (degree 767) and 632335.Calkr_1651 (degree
+	725).
 	
 
 

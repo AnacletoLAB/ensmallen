@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:50.889209
 
-The undirected graph Desulforudis audaxviator has 2143 nodes and 149922 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06532
-and has 9 connected components, where the component with most nodes has 2126 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 139.92, and the node degree mode is 1. The top 5
-most central nodes are 477974.Daud_1203 (degree 898), 477974.Daud_1403 (degree 862),
-477974.Daud_1278 (degree 805), 477974.Daud_1178 (degree 781) and 477974.Daud_1635
-(degree 768).
+The undirected graph Desulforudis audaxviator has 2143 nodes and 149922
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06532 and has 9 connected components, where the component
+with most nodes has 2126 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 139.92,
+and the node degree mode is 1. The top 5 most central nodes are 477974.Daud_1203
+(degree 898), 477974.Daud_1403 (degree 862), 477974.Daud_1278 (degree 805),
+477974.Daud_1178 (degree 781) and 477974.Daud_1635 (degree 768).
 
 
 References
@@ -107,14 +107,14 @@ def DesulforudisAudaxviator(
 	
 	Datetime: 2021-02-02 20:56:50.889209
 	
-	The undirected graph Desulforudis audaxviator has 2143 nodes and 149922 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06532
-	and has 9 connected components, where the component with most nodes has 2126 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 139.92, and the node degree mode is 1. The top 5
-	most central nodes are 477974.Daud_1203 (degree 898), 477974.Daud_1403 (degree 862),
-	477974.Daud_1278 (degree 805), 477974.Daud_1178 (degree 781) and 477974.Daud_1635
-	(degree 768).
+	The undirected graph Desulforudis audaxviator has 2143 nodes and 149922
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06532 and has 9 connected components, where the component
+	with most nodes has 2126 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 139.92,
+	and the node degree mode is 1. The top 5 most central nodes are 477974.Daud_1203
+	(degree 898), 477974.Daud_1403 (degree 862), 477974.Daud_1278 (degree 805),
+	477974.Daud_1178 (degree 781) and 477974.Daud_1635 (degree 768).
 	
 
 

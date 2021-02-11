@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:37.576415
 
-The undirected graph Streptomyces bikiniensis has 6387 nodes and 991408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04861
-and has 33 connected components, where the component with most nodes has 6309 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 310.45, and the node degree mode is 1. The top 5
-most central nodes are 1896.JOAU01000035_gene5369 (degree 3042), 1896.JOAU01000007_gene5893
-(degree 2187), 1896.JOAU01000004_gene256 (degree 2102), 1896.JOAU01000009_gene6289
-(degree 2066) and 1896.JOAU01000010_gene397 (degree 1903).
+The undirected graph Streptomyces bikiniensis has 6387 nodes and 991408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04861 and has 33 connected components, where the component
+with most nodes has 6309 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 310.45,
+and the node degree mode is 1. The top 5 most central nodes are 1896.JOAU01000035_gene5369
+(degree 3042), 1896.JOAU01000007_gene5893 (degree 2187), 1896.JOAU01000004_gene256
+(degree 2102), 1896.JOAU01000009_gene6289 (degree 2066) and 1896.JOAU01000010_gene397
+(degree 1903).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesBikiniensis(
 	
 	Datetime: 2021-02-02 16:23:37.576415
 	
-	The undirected graph Streptomyces bikiniensis has 6387 nodes and 991408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04861
-	and has 33 connected components, where the component with most nodes has 6309 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 310.45, and the node degree mode is 1. The top 5
-	most central nodes are 1896.JOAU01000035_gene5369 (degree 3042), 1896.JOAU01000007_gene5893
-	(degree 2187), 1896.JOAU01000004_gene256 (degree 2102), 1896.JOAU01000009_gene6289
-	(degree 2066) and 1896.JOAU01000010_gene397 (degree 1903).
+	The undirected graph Streptomyces bikiniensis has 6387 nodes and 991408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04861 and has 33 connected components, where the component
+	with most nodes has 6309 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 310.45,
+	and the node degree mode is 1. The top 5 most central nodes are 1896.JOAU01000035_gene5369
+	(degree 3042), 1896.JOAU01000007_gene5893 (degree 2187), 1896.JOAU01000004_gene256
+	(degree 2102), 1896.JOAU01000009_gene6289 (degree 2066) and 1896.JOAU01000010_gene397
+	(degree 1903).
 	
 
 

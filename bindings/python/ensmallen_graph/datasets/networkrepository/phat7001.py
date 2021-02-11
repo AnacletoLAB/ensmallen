@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:18.145217
 
-The undirected graph p-hat700-1 has 700 nodes and 60999 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.24933 and
-is connected, as it has a single component. The graph median node degree is 175,
-the mean node degree is 174.28 and the node degree mode is 194. The top 5 most central
-nodes are 350 (degree 286), 678 (degree 281), 292 (degree 278), 576 (degree 276)
-and 465 (degree 274).
+The undirected graph p-hat700-1 has 700 nodes and 60999 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.24933 and is connected, as it has a single component. The graph median
+node degree is 175, the mean node degree is 174.28 and the node degree
+mode is 194. The top 5 most central nodes are 350 (degree 286), 678 (degree
+281), 292 (degree 278), 576 (degree 276) and 465 (degree 274).
 
 
 References
@@ -115,12 +115,12 @@ def PHat7001(
 	
 	Datetime: 2021-02-03 22:56:18.145217
 	
-	The undirected graph p-hat700-1 has 700 nodes and 60999 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.24933 and
-	is connected, as it has a single component. The graph median node degree is 175,
-	the mean node degree is 174.28 and the node degree mode is 194. The top 5 most central
-	nodes are 350 (degree 286), 678 (degree 281), 292 (degree 278), 576 (degree 276)
-	and 465 (degree 274).
+	The undirected graph p-hat700-1 has 700 nodes and 60999 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.24933 and is connected, as it has a single component. The graph median
+	node degree is 175, the mean node degree is 174.28 and the node degree
+	mode is 194. The top 5 most central nodes are 350 (degree 286), 678 (degree
+	281), 292 (degree 278), 576 (degree 276) and 465 (degree 274).
 	
 
 

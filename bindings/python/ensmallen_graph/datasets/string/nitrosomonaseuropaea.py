@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:15.801818
 
-The undirected graph Nitrosomonas europaea has 2441 nodes and 149488 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05020 and
-has 3 connected components, where the component with most nodes has 2436 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 122.48, and the node degree mode is 4. The top 5 most central
-nodes are 228410.NE1701 (degree 912), 228410.NE1468 (degree 911), 228410.NE0625 (degree
-772), 228410.NE0901 (degree 698) and 228410.NE0095 (degree 636).
+The undirected graph Nitrosomonas europaea has 2441 nodes and 149488 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05020 and has 3 connected components, where the component with most
+nodes has 2436 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 122.48, and
+the node degree mode is 4. The top 5 most central nodes are 228410.NE1701
+(degree 912), 228410.NE1468 (degree 911), 228410.NE0625 (degree 772), 228410.NE0901
+(degree 698) and 228410.NE0095 (degree 636).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosomonasEuropaea(
 	
 	Datetime: 2021-02-02 20:07:15.801818
 	
-	The undirected graph Nitrosomonas europaea has 2441 nodes and 149488 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05020 and
-	has 3 connected components, where the component with most nodes has 2436 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 122.48, and the node degree mode is 4. The top 5 most central
-	nodes are 228410.NE1701 (degree 912), 228410.NE1468 (degree 911), 228410.NE0625 (degree
-	772), 228410.NE0901 (degree 698) and 228410.NE0095 (degree 636).
+	The undirected graph Nitrosomonas europaea has 2441 nodes and 149488 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05020 and has 3 connected components, where the component with most
+	nodes has 2436 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 122.48, and
+	the node degree mode is 4. The top 5 most central nodes are 228410.NE1701
+	(degree 912), 228410.NE1468 (degree 911), 228410.NE0625 (degree 772), 228410.NE0901
+	(degree 698) and 228410.NE0095 (degree 636).
 	
 
 

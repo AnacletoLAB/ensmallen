@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:30.243146
 
-The undirected graph Cyanothece sp. PCC7425 has 5074 nodes and 442207 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03436 and
-has 32 connected components, where the component with most nodes has 5003 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 174.30, and the node degree mode is 2. The top 5 most central
-nodes are 395961.Cyan7425_0850 (degree 1614), 395961.Cyan7425_4369 (degree 1344),
-395961.Cyan7425_3768 (degree 1266), 395961.Cyan7425_3613 (degree 1154) and 395961.Cyan7425_0526
+The undirected graph Cyanothece sp. PCC7425 has 5074 nodes and 442207 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03436 and has 32 connected components, where the component with most
+nodes has 5003 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 174.30, and
+the node degree mode is 2. The top 5 most central nodes are 395961.Cyan7425_0850
+(degree 1614), 395961.Cyan7425_4369 (degree 1344), 395961.Cyan7425_3768
+(degree 1266), 395961.Cyan7425_3613 (degree 1154) and 395961.Cyan7425_0526
 (degree 1098).
 
 
@@ -107,13 +108,14 @@ def CyanotheceSp.Pcc7425(
 	
 	Datetime: 2021-02-02 20:41:30.243146
 	
-	The undirected graph Cyanothece sp. PCC7425 has 5074 nodes and 442207 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03436 and
-	has 32 connected components, where the component with most nodes has 5003 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 174.30, and the node degree mode is 2. The top 5 most central
-	nodes are 395961.Cyan7425_0850 (degree 1614), 395961.Cyan7425_4369 (degree 1344),
-	395961.Cyan7425_3768 (degree 1266), 395961.Cyan7425_3613 (degree 1154) and 395961.Cyan7425_0526
+	The undirected graph Cyanothece sp. PCC7425 has 5074 nodes and 442207 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03436 and has 32 connected components, where the component with most
+	nodes has 5003 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 174.30, and
+	the node degree mode is 2. The top 5 most central nodes are 395961.Cyan7425_0850
+	(degree 1614), 395961.Cyan7425_4369 (degree 1344), 395961.Cyan7425_3768
+	(degree 1266), 395961.Cyan7425_3613 (degree 1154) and 395961.Cyan7425_0526
 	(degree 1098).
 	
 

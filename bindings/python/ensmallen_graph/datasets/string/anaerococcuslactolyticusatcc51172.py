@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:51.502164
 
-The undirected graph Anaerococcus lactolyticus ATCC51172 has 2194 nodes and 179414
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07458 and has 4 connected components, where the component with most nodes has
-2186 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 120, the mean node degree is 163.55, and the node degree mode is 2. The
-top 5 most central nodes are 525254.HMPREF0072_0015 (degree 1038), 525254.HMPREF0072_1210
-(degree 990), 525254.HMPREF0072_1807 (degree 921), 525254.HMPREF0072_2179 (degree
+The undirected graph Anaerococcus lactolyticus ATCC51172 has 2194 nodes
+and 179414 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07458 and has 4 connected components, where the
+component with most nodes has 2186 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+is 163.55, and the node degree mode is 2. The top 5 most central nodes
+are 525254.HMPREF0072_0015 (degree 1038), 525254.HMPREF0072_1210 (degree
+990), 525254.HMPREF0072_1807 (degree 921), 525254.HMPREF0072_2179 (degree
 875) and 525254.HMPREF0072_0477 (degree 813).
 
 
@@ -107,13 +108,14 @@ def AnaerococcusLactolyticusAtcc51172(
 	
 	Datetime: 2021-02-02 21:04:51.502164
 	
-	The undirected graph Anaerococcus lactolyticus ATCC51172 has 2194 nodes and 179414
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07458 and has 4 connected components, where the component with most nodes has
-	2186 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 120, the mean node degree is 163.55, and the node degree mode is 2. The
-	top 5 most central nodes are 525254.HMPREF0072_0015 (degree 1038), 525254.HMPREF0072_1210
-	(degree 990), 525254.HMPREF0072_1807 (degree 921), 525254.HMPREF0072_2179 (degree
+	The undirected graph Anaerococcus lactolyticus ATCC51172 has 2194 nodes
+	and 179414 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07458 and has 4 connected components, where the
+	component with most nodes has 2186 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+	is 163.55, and the node degree mode is 2. The top 5 most central nodes
+	are 525254.HMPREF0072_0015 (degree 1038), 525254.HMPREF0072_1210 (degree
+	990), 525254.HMPREF0072_1807 (degree 921), 525254.HMPREF0072_2179 (degree
 	875) and 525254.HMPREF0072_0477 (degree 813).
 	
 

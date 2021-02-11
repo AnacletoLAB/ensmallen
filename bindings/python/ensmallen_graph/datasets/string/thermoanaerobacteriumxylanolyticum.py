@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:10.446002
 
-The undirected graph Thermoanaerobacterium xylanolyticum has 2334 nodes and 161985
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05950 and has 4 connected components, where the component with most nodes has
-2327 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 110, the mean node degree is 138.80, and the node degree mode is 9. The
-top 5 most central nodes are 858215.Thexy_1599 (degree 947), 858215.Thexy_0706 (degree
-826), 858215.Thexy_0707 (degree 824), 858215.Thexy_1818 (degree 742) and 858215.Thexy_0799
-(degree 731).
+The undirected graph Thermoanaerobacterium xylanolyticum has 2334 nodes
+and 161985 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05950 and has 4 connected components, where the
+component with most nodes has 2327 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 138.80, and the node degree mode is 9. The top 5 most central nodes
+are 858215.Thexy_1599 (degree 947), 858215.Thexy_0706 (degree 826), 858215.Thexy_0707
+(degree 824), 858215.Thexy_1818 (degree 742) and 858215.Thexy_0799 (degree
+731).
 
 
 References
@@ -107,14 +108,15 @@ def ThermoanaerobacteriumXylanolyticum(
 	
 	Datetime: 2021-02-02 21:46:10.446002
 	
-	The undirected graph Thermoanaerobacterium xylanolyticum has 2334 nodes and 161985
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05950 and has 4 connected components, where the component with most nodes has
-	2327 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 110, the mean node degree is 138.80, and the node degree mode is 9. The
-	top 5 most central nodes are 858215.Thexy_1599 (degree 947), 858215.Thexy_0706 (degree
-	826), 858215.Thexy_0707 (degree 824), 858215.Thexy_1818 (degree 742) and 858215.Thexy_0799
-	(degree 731).
+	The undirected graph Thermoanaerobacterium xylanolyticum has 2334 nodes
+	and 161985 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05950 and has 4 connected components, where the
+	component with most nodes has 2327 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 138.80, and the node degree mode is 9. The top 5 most central nodes
+	are 858215.Thexy_1599 (degree 947), 858215.Thexy_0706 (degree 826), 858215.Thexy_0707
+	(degree 824), 858215.Thexy_1818 (degree 742) and 858215.Thexy_0799 (degree
+	731).
 	
 
 

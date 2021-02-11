@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:17.448021
 
-The undirected graph Caldicellulosiruptor saccharolyticus has 2667 nodes and 142714
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04014 and has 10 connected components, where the component with most nodes has
-2649 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 82, the mean node degree is 107.02, and the node degree mode is 2. The
-top 5 most central nodes are 351627.Csac_1988 (degree 924), 351627.Csac_1952 (degree
-907), 351627.Csac_1978 (degree 761), 351627.Csac_1713 (degree 727) and 351627.Csac_1682
-(degree 723).
+The undirected graph Caldicellulosiruptor saccharolyticus has 2667 nodes
+and 142714 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04014 and has 10 connected components, where the
+component with most nodes has 2649 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+is 107.02, and the node degree mode is 2. The top 5 most central nodes
+are 351627.Csac_1988 (degree 924), 351627.Csac_1952 (degree 907), 351627.Csac_1978
+(degree 761), 351627.Csac_1713 (degree 727) and 351627.Csac_1682 (degree
+723).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicellulosiruptorSaccharolyticus(
 	
 	Datetime: 2021-02-02 20:33:17.448021
 	
-	The undirected graph Caldicellulosiruptor saccharolyticus has 2667 nodes and 142714
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04014 and has 10 connected components, where the component with most nodes has
-	2649 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 82, the mean node degree is 107.02, and the node degree mode is 2. The
-	top 5 most central nodes are 351627.Csac_1988 (degree 924), 351627.Csac_1952 (degree
-	907), 351627.Csac_1978 (degree 761), 351627.Csac_1713 (degree 727) and 351627.Csac_1682
-	(degree 723).
+	The undirected graph Caldicellulosiruptor saccharolyticus has 2667 nodes
+	and 142714 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04014 and has 10 connected components, where the
+	component with most nodes has 2649 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+	is 107.02, and the node degree mode is 2. The top 5 most central nodes
+	are 351627.Csac_1988 (degree 924), 351627.Csac_1952 (degree 907), 351627.Csac_1978
+	(degree 761), 351627.Csac_1713 (degree 727) and 351627.Csac_1682 (degree
+	723).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:57.211459
 
-The undirected graph Novosphingobium nitrogenifigens has 3768 nodes and 354018 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-and has 7 connected components, where the component with most nodes has 3756 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 187.91, and the node degree mode is 2. The top 5
-most central nodes are 983920.Y88_2475 (degree 1499), 983920.Y88_1877 (degree 1278),
-983920.Y88_3461 (degree 1218), 983920.Y88_0545 (degree 1103) and 983920.Y88_3004
-(degree 1089).
+The undirected graph Novosphingobium nitrogenifigens has 3768 nodes and
+354018 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04988 and has 7 connected components, where the
+component with most nodes has 3756 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 155, the mean node degree
+is 187.91, and the node degree mode is 2. The top 5 most central nodes
+are 983920.Y88_2475 (degree 1499), 983920.Y88_1877 (degree 1278), 983920.Y88_3461
+(degree 1218), 983920.Y88_0545 (degree 1103) and 983920.Y88_3004 (degree
+1089).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumNitrogenifigens(
 	
 	Datetime: 2021-02-02 22:03:57.211459
 	
-	The undirected graph Novosphingobium nitrogenifigens has 3768 nodes and 354018 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-	and has 7 connected components, where the component with most nodes has 3756 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 187.91, and the node degree mode is 2. The top 5
-	most central nodes are 983920.Y88_2475 (degree 1499), 983920.Y88_1877 (degree 1278),
-	983920.Y88_3461 (degree 1218), 983920.Y88_0545 (degree 1103) and 983920.Y88_3004
-	(degree 1089).
+	The undirected graph Novosphingobium nitrogenifigens has 3768 nodes and
+	354018 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04988 and has 7 connected components, where the
+	component with most nodes has 3756 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 155, the mean node degree
+	is 187.91, and the node degree mode is 2. The top 5 most central nodes
+	are 983920.Y88_2475 (degree 1499), 983920.Y88_1877 (degree 1278), 983920.Y88_3461
+	(degree 1218), 983920.Y88_0545 (degree 1103) and 983920.Y88_3004 (degree
+	1089).
 	
 
 

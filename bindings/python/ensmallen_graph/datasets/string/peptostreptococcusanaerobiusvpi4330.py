@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:14.057656
 
-The undirected graph Peptostreptococcus anaerobius VPI4330 has 1923 nodes and 117809
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06375 and has 4 connected components, where the component with most nodes has
-1916 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 96, the mean node degree is 122.53, and the node degree mode is 40. The
-top 5 most central nodes are 1035196.HMPREF9998_00325 (degree 843), 1035196.HMPREF9998_01477
-(degree 747), 1035196.HMPREF9998_00020 (degree 670), 1035196.HMPREF9998_00768 (degree
+The undirected graph Peptostreptococcus anaerobius VPI4330 has 1923 nodes
+and 117809 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06375 and has 4 connected components, where the
+component with most nodes has 1916 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+is 122.53, and the node degree mode is 40. The top 5 most central nodes
+are 1035196.HMPREF9998_00325 (degree 843), 1035196.HMPREF9998_01477 (degree
+747), 1035196.HMPREF9998_00020 (degree 670), 1035196.HMPREF9998_00768 (degree
 626) and 1035196.HMPREF9998_01843 (degree 615).
 
 
@@ -107,13 +108,14 @@ def PeptostreptococcusAnaerobiusVpi4330(
 	
 	Datetime: 2021-02-02 22:12:14.057656
 	
-	The undirected graph Peptostreptococcus anaerobius VPI4330 has 1923 nodes and 117809
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06375 and has 4 connected components, where the component with most nodes has
-	1916 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 96, the mean node degree is 122.53, and the node degree mode is 40. The
-	top 5 most central nodes are 1035196.HMPREF9998_00325 (degree 843), 1035196.HMPREF9998_01477
-	(degree 747), 1035196.HMPREF9998_00020 (degree 670), 1035196.HMPREF9998_00768 (degree
+	The undirected graph Peptostreptococcus anaerobius VPI4330 has 1923 nodes
+	and 117809 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06375 and has 4 connected components, where the
+	component with most nodes has 1916 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+	is 122.53, and the node degree mode is 40. The top 5 most central nodes
+	are 1035196.HMPREF9998_00325 (degree 843), 1035196.HMPREF9998_01477 (degree
+	747), 1035196.HMPREF9998_00020 (degree 670), 1035196.HMPREF9998_00768 (degree
 	626) and 1035196.HMPREF9998_01843 (degree 615).
 	
 

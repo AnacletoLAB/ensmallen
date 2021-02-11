@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:36.892624
 
-The undirected graph Weissella cibaria has 2076 nodes and 137729 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06395 and
-has 11 connected components, where the component with most nodes has 2053 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 132.69, and the node degree mode is 2. The top 5 most central
-nodes are 911104.AEKT01000035_gene1953 (degree 901), 911104.AEKT01000039_gene818
-(degree 658), 911104.AEKT01000028_gene1576 (degree 618), 911104.AEKT01000020_gene1800
-(degree 605) and 911104.AEKT01000012_gene455 (degree 600).
+The undirected graph Weissella cibaria has 2076 nodes and 137729 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06395 and has 11 connected components, where the component with most
+nodes has 2053 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 132.69, and
+the node degree mode is 2. The top 5 most central nodes are 911104.AEKT01000035_gene1953
+(degree 901), 911104.AEKT01000039_gene818 (degree 658), 911104.AEKT01000028_gene1576
+(degree 618), 911104.AEKT01000020_gene1800 (degree 605) and 911104.AEKT01000012_gene455
+(degree 600).
 
 
 References
@@ -107,14 +108,15 @@ def WeissellaCibaria(
 	
 	Datetime: 2021-02-02 21:55:36.892624
 	
-	The undirected graph Weissella cibaria has 2076 nodes and 137729 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06395 and
-	has 11 connected components, where the component with most nodes has 2053 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 132.69, and the node degree mode is 2. The top 5 most central
-	nodes are 911104.AEKT01000035_gene1953 (degree 901), 911104.AEKT01000039_gene818
-	(degree 658), 911104.AEKT01000028_gene1576 (degree 618), 911104.AEKT01000020_gene1800
-	(degree 605) and 911104.AEKT01000012_gene455 (degree 600).
+	The undirected graph Weissella cibaria has 2076 nodes and 137729 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06395 and has 11 connected components, where the component with most
+	nodes has 2053 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 132.69, and
+	the node degree mode is 2. The top 5 most central nodes are 911104.AEKT01000035_gene1953
+	(degree 901), 911104.AEKT01000039_gene818 (degree 658), 911104.AEKT01000028_gene1576
+	(degree 618), 911104.AEKT01000020_gene1800 (degree 605) and 911104.AEKT01000012_gene455
+	(degree 600).
 	
 
 

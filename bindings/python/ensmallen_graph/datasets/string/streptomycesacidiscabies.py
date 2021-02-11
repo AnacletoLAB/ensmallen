@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:20.955948
 
-The undirected graph Streptomyces acidiscabies has 9458 nodes and 1701287 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03804
-and has 57 connected components, where the component with most nodes has 9297 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 298, the mean node degree is 359.76, and the node degree mode is 2. The top 5
-most central nodes are 1116232.AHBF01000051_gene2558 (degree 3105), 1116232.AHBF01000155_gene4102
-(degree 2964), 1116232.AHBF01000113_gene4584 (degree 2906), 1116232.AHBF01000066_gene8690
-(degree 2736) and 1116232.AHBF01000044_gene2849 (degree 2704).
+The undirected graph Streptomyces acidiscabies has 9458 nodes and 1701287
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03804 and has 57 connected components, where the component
+with most nodes has 9297 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 298, the mean node degree is 359.76,
+and the node degree mode is 2. The top 5 most central nodes are 1116232.AHBF01000051_gene2558
+(degree 3105), 1116232.AHBF01000155_gene4102 (degree 2964), 1116232.AHBF01000113_gene4584
+(degree 2906), 1116232.AHBF01000066_gene8690 (degree 2736) and 1116232.AHBF01000044_gene2849
+(degree 2704).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAcidiscabies(
 	
 	Datetime: 2021-02-02 22:27:20.955948
 	
-	The undirected graph Streptomyces acidiscabies has 9458 nodes and 1701287 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03804
-	and has 57 connected components, where the component with most nodes has 9297 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 298, the mean node degree is 359.76, and the node degree mode is 2. The top 5
-	most central nodes are 1116232.AHBF01000051_gene2558 (degree 3105), 1116232.AHBF01000155_gene4102
-	(degree 2964), 1116232.AHBF01000113_gene4584 (degree 2906), 1116232.AHBF01000066_gene8690
-	(degree 2736) and 1116232.AHBF01000044_gene2849 (degree 2704).
+	The undirected graph Streptomyces acidiscabies has 9458 nodes and 1701287
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03804 and has 57 connected components, where the component
+	with most nodes has 9297 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 298, the mean node degree is 359.76,
+	and the node degree mode is 2. The top 5 most central nodes are 1116232.AHBF01000051_gene2558
+	(degree 3105), 1116232.AHBF01000155_gene4102 (degree 2964), 1116232.AHBF01000113_gene4584
+	(degree 2906), 1116232.AHBF01000066_gene8690 (degree 2736) and 1116232.AHBF01000044_gene2849
+	(degree 2704).
 	
 
 

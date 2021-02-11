@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:54:10.946021
 
-The undirected graph FA has 10617 nodes and 63792 weighted edges, of which 4 are
-self-loops. The graph is sparse as it has a density of 0.00113 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 12.02, and the node degree mode is 1. The top 5 most central nodes are 3677 (degree
-332), 5956 (degree 305), 10292 (degree 277), 1396 (degree 264) and 4036 (degree 257).
+The undirected graph FA has 10617 nodes and 63792 weighted edges, of which
+4 are self-loops. The graph is sparse as it has a density of 0.00113 and
+is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 12.02, and the node degree mode is 1. The
+top 5 most central nodes are 3677 (degree 332), 5956 (degree 305), 10292
+(degree 277), 1396 (degree 264) and 4036 (degree 257).
 
 
 References
@@ -101,11 +102,12 @@ def Fa(
 	
 	Datetime: 2021-02-06 09:54:10.946021
 	
-	The undirected graph FA has 10617 nodes and 63792 weighted edges, of which 4 are
-	self-loops. The graph is sparse as it has a density of 0.00113 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 12.02, and the node degree mode is 1. The top 5 most central nodes are 3677 (degree
-	332), 5956 (degree 305), 10292 (degree 277), 1396 (degree 264) and 4036 (degree 257).
+	The undirected graph FA has 10617 nodes and 63792 weighted edges, of which
+	4 are self-loops. The graph is sparse as it has a density of 0.00113 and
+	is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 12.02, and the node degree mode is 1. The
+	top 5 most central nodes are 3677 (degree 332), 5956 (degree 305), 10292
+	(degree 277), 1396 (degree 264) and 4036 (degree 257).
 	
 
 

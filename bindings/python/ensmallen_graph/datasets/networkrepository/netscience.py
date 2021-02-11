@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:45:29.958523
 
-The undirected graph netscience has 1461 nodes and 2742 weighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00257 and has 268
-connected components, where the component with most nodes has 379 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 3, the mean node
-degree is 3.75, and the node degree mode is 2. The top 5 most central nodes are 34
-(degree 34), 79 (degree 27), 35 (degree 27), 55 (degree 21) and 1432 (degree 20).
+The undirected graph netscience has 1461 nodes and 2742 weighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00257 and has 268 connected components, where the component with most
+nodes has 379 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 3, the mean node degree is 3.75, and the
+node degree mode is 2. The top 5 most central nodes are 34 (degree 34),
+79 (degree 27), 35 (degree 27), 55 (degree 21) and 1432 (degree 20).
 
 
 References
@@ -102,12 +103,13 @@ def Netscience(
 	
 	Datetime: 2021-02-06 08:45:29.958523
 	
-	The undirected graph netscience has 1461 nodes and 2742 weighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00257 and has 268
-	connected components, where the component with most nodes has 379 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 3, the mean node
-	degree is 3.75, and the node degree mode is 2. The top 5 most central nodes are 34
-	(degree 34), 79 (degree 27), 35 (degree 27), 55 (degree 21) and 1432 (degree 20).
+	The undirected graph netscience has 1461 nodes and 2742 weighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00257 and has 268 connected components, where the component with most
+	nodes has 379 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 3, the mean node degree is 3.75, and the
+	node degree mode is 2. The top 5 most central nodes are 34 (degree 34),
+	79 (degree 27), 35 (degree 27), 55 (degree 21) and 1432 (degree 20).
 	
 
 

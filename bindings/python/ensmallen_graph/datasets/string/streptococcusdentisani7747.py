@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:29:26.162683
 
-The undirected graph Streptococcus dentisani 7747 has 1725 nodes and 118233 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07951
-and has 6 connected components, where the component with most nodes has 1713 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 137.08, and the node degree mode is 7. The top 5
-most central nodes are 1297857.CAUK01000003_gene475 (degree 803), 1297857.CAUK01000003_gene501
-(degree 698), 1297857.CAUK01000004_gene1049 (degree 634), 1297857.CAUK01000004_gene772
-(degree 632) and 1297857.CAUK01000004_gene1464 (degree 608).
+The undirected graph Streptococcus dentisani 7747 has 1725 nodes and 118233
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07951 and has 6 connected components, where the component
+with most nodes has 1713 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 137.08,
+and the node degree mode is 7. The top 5 most central nodes are 1297857.CAUK01000003_gene475
+(degree 803), 1297857.CAUK01000003_gene501 (degree 698), 1297857.CAUK01000004_gene1049
+(degree 634), 1297857.CAUK01000004_gene772 (degree 632) and 1297857.CAUK01000004_gene1464
+(degree 608).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusDentisani7747(
 	
 	Datetime: 2021-02-03 21:29:26.162683
 	
-	The undirected graph Streptococcus dentisani 7747 has 1725 nodes and 118233 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07951
-	and has 6 connected components, where the component with most nodes has 1713 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 137.08, and the node degree mode is 7. The top 5
-	most central nodes are 1297857.CAUK01000003_gene475 (degree 803), 1297857.CAUK01000003_gene501
-	(degree 698), 1297857.CAUK01000004_gene1049 (degree 634), 1297857.CAUK01000004_gene772
-	(degree 632) and 1297857.CAUK01000004_gene1464 (degree 608).
+	The undirected graph Streptococcus dentisani 7747 has 1725 nodes and 118233
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07951 and has 6 connected components, where the component
+	with most nodes has 1713 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 137.08,
+	and the node degree mode is 7. The top 5 most central nodes are 1297857.CAUK01000003_gene475
+	(degree 803), 1297857.CAUK01000003_gene501 (degree 698), 1297857.CAUK01000004_gene1049
+	(degree 634), 1297857.CAUK01000004_gene772 (degree 632) and 1297857.CAUK01000004_gene1464
+	(degree 608).
 	
 
 

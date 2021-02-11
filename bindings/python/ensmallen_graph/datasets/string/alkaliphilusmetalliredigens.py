@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:05.202477
 
-The undirected graph Alkaliphilus metalliredigens has 4582 nodes and 465714 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04437
-and has 22 connected components, where the component with most nodes has 4529 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 203.28, and the node degree mode is 2. The top 5
-most central nodes are 293826.Amet_3125 (degree 1662), 293826.Amet_1773 (degree 1655),
-293826.Amet_2144 (degree 1493), 293826.Amet_2529 (degree 1458) and 293826.Amet_0287
-(degree 1398).
+The undirected graph Alkaliphilus metalliredigens has 4582 nodes and 465714
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04437 and has 22 connected components, where the component
+with most nodes has 4529 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 203.28,
+and the node degree mode is 2. The top 5 most central nodes are 293826.Amet_3125
+(degree 1662), 293826.Amet_1773 (degree 1655), 293826.Amet_2144 (degree
+1493), 293826.Amet_2529 (degree 1458) and 293826.Amet_0287 (degree 1398).
 
 
 References
@@ -107,14 +107,14 @@ def AlkaliphilusMetalliredigens(
 	
 	Datetime: 2021-02-02 20:21:05.202477
 	
-	The undirected graph Alkaliphilus metalliredigens has 4582 nodes and 465714 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04437
-	and has 22 connected components, where the component with most nodes has 4529 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 203.28, and the node degree mode is 2. The top 5
-	most central nodes are 293826.Amet_3125 (degree 1662), 293826.Amet_1773 (degree 1655),
-	293826.Amet_2144 (degree 1493), 293826.Amet_2529 (degree 1458) and 293826.Amet_0287
-	(degree 1398).
+	The undirected graph Alkaliphilus metalliredigens has 4582 nodes and 465714
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04437 and has 22 connected components, where the component
+	with most nodes has 4529 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 203.28,
+	and the node degree mode is 2. The top 5 most central nodes are 293826.Amet_3125
+	(degree 1662), 293826.Amet_1773 (degree 1655), 293826.Amet_2144 (degree
+	1493), 293826.Amet_2529 (degree 1458) and 293826.Amet_0287 (degree 1398).
 	
 
 

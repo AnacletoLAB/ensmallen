@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:56.286968
 
-The undirected graph Desulfotomaculum kuznetsovii has 3356 nodes and 373470 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06634
-and has 14 connected components, where the component with most nodes has 3321 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 222.57, and the node degree mode is 9. The top 5
-most central nodes are 760568.Desku_0593 (degree 1363), 760568.Desku_2450 (degree
-1276), 760568.Desku_1871 (degree 1270), 760568.Desku_2381 (degree 1066) and 760568.Desku_1196
-(degree 1058).
+The undirected graph Desulfotomaculum kuznetsovii has 3356 nodes and 373470
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06634 and has 14 connected components, where the component
+with most nodes has 3321 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 222.57,
+and the node degree mode is 9. The top 5 most central nodes are 760568.Desku_0593
+(degree 1363), 760568.Desku_2450 (degree 1276), 760568.Desku_1871 (degree
+1270), 760568.Desku_2381 (degree 1066) and 760568.Desku_1196 (degree 1058).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotomaculumKuznetsovii(
 	
 	Datetime: 2021-02-02 21:41:56.286968
 	
-	The undirected graph Desulfotomaculum kuznetsovii has 3356 nodes and 373470 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06634
-	and has 14 connected components, where the component with most nodes has 3321 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 222.57, and the node degree mode is 9. The top 5
-	most central nodes are 760568.Desku_0593 (degree 1363), 760568.Desku_2450 (degree
-	1276), 760568.Desku_1871 (degree 1270), 760568.Desku_2381 (degree 1066) and 760568.Desku_1196
-	(degree 1058).
+	The undirected graph Desulfotomaculum kuznetsovii has 3356 nodes and 373470
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06634 and has 14 connected components, where the component
+	with most nodes has 3321 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 222.57,
+	and the node degree mode is 9. The top 5 most central nodes are 760568.Desku_0593
+	(degree 1363), 760568.Desku_2450 (degree 1276), 760568.Desku_1871 (degree
+	1270), 760568.Desku_2381 (degree 1066) and 760568.Desku_1196 (degree 1058).
 	
 
 

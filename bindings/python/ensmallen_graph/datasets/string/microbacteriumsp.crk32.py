@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:46.954705
 
-The undirected graph Microbacterium sp. CrK32 has 3589 nodes and 279810 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04346
-and has 8 connected components, where the component with most nodes has 3573 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 155.93, and the node degree mode is 5. The top 5
-most central nodes are 1452535.JARD01000012_gene120 (degree 1050), 1452535.JARD01000012_gene112
-(degree 1035), 1452535.JARD01000026_gene470 (degree 962), 1452535.JARD01000022_gene3403
-(degree 936) and 1452535.JARD01000026_gene490 (degree 920).
+The undirected graph Microbacterium sp. CrK32 has 3589 nodes and 279810
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04346 and has 8 connected components, where the component
+with most nodes has 3573 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 155.93,
+and the node degree mode is 5. The top 5 most central nodes are 1452535.JARD01000012_gene120
+(degree 1050), 1452535.JARD01000012_gene112 (degree 1035), 1452535.JARD01000026_gene470
+(degree 962), 1452535.JARD01000022_gene3403 (degree 936) and 1452535.JARD01000026_gene490
+(degree 920).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.Crk32(
 	
 	Datetime: 2021-02-03 23:05:46.954705
 	
-	The undirected graph Microbacterium sp. CrK32 has 3589 nodes and 279810 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04346
-	and has 8 connected components, where the component with most nodes has 3573 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 155.93, and the node degree mode is 5. The top 5
-	most central nodes are 1452535.JARD01000012_gene120 (degree 1050), 1452535.JARD01000012_gene112
-	(degree 1035), 1452535.JARD01000026_gene470 (degree 962), 1452535.JARD01000022_gene3403
-	(degree 936) and 1452535.JARD01000026_gene490 (degree 920).
+	The undirected graph Microbacterium sp. CrK32 has 3589 nodes and 279810
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04346 and has 8 connected components, where the component
+	with most nodes has 3573 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 155.93,
+	and the node degree mode is 5. The top 5 most central nodes are 1452535.JARD01000012_gene120
+	(degree 1050), 1452535.JARD01000012_gene112 (degree 1035), 1452535.JARD01000026_gene470
+	(degree 962), 1452535.JARD01000022_gene3403 (degree 936) and 1452535.JARD01000026_gene490
+	(degree 920).
 	
 
 

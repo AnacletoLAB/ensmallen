@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:29.848750
 
-The undirected graph Agrococcus lahaulensis has 2529 nodes and 162098 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05071 and
-has 6 connected components, where the component with most nodes has 2518 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 128.19, and the node degree mode is 3. The top 5 most central
-nodes are 1120958.AULD01000014_gene927 (degree 905), 1120958.AULD01000006_gene240
-(degree 780), 1120958.AULD01000010_gene2473 (degree 770), 1120958.AULD01000006_gene441
-(degree 729) and 1120958.AULD01000005_gene1876 (degree 704).
+The undirected graph Agrococcus lahaulensis has 2529 nodes and 162098 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05071 and has 6 connected components, where the component with most
+nodes has 2518 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 128.19, and
+the node degree mode is 3. The top 5 most central nodes are 1120958.AULD01000014_gene927
+(degree 905), 1120958.AULD01000006_gene240 (degree 780), 1120958.AULD01000010_gene2473
+(degree 770), 1120958.AULD01000006_gene441 (degree 729) and 1120958.AULD01000005_gene1876
+(degree 704).
 
 
 References
@@ -107,14 +108,15 @@ def AgrococcusLahaulensis(
 	
 	Datetime: 2021-02-02 22:30:29.848750
 	
-	The undirected graph Agrococcus lahaulensis has 2529 nodes and 162098 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05071 and
-	has 6 connected components, where the component with most nodes has 2518 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 128.19, and the node degree mode is 3. The top 5 most central
-	nodes are 1120958.AULD01000014_gene927 (degree 905), 1120958.AULD01000006_gene240
-	(degree 780), 1120958.AULD01000010_gene2473 (degree 770), 1120958.AULD01000006_gene441
-	(degree 729) and 1120958.AULD01000005_gene1876 (degree 704).
+	The undirected graph Agrococcus lahaulensis has 2529 nodes and 162098 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05071 and has 6 connected components, where the component with most
+	nodes has 2518 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 128.19, and
+	the node degree mode is 3. The top 5 most central nodes are 1120958.AULD01000014_gene927
+	(degree 905), 1120958.AULD01000006_gene240 (degree 780), 1120958.AULD01000010_gene2473
+	(degree 770), 1120958.AULD01000006_gene441 (degree 729) and 1120958.AULD01000005_gene1876
+	(degree 704).
 	
 
 

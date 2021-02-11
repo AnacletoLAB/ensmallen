@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:06.878062
 
-The undirected graph Oxalobacter formigenes HOxBLS has 2202 nodes and 170921 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07053
-and has 19 connected components, where the component with most nodes has 2156 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 155.24, and the node degree mode is 3. The top 5
-most central nodes are 556268.OFAG_01771 (degree 1033), 556268.OFAG_01244 (degree
-884), 556268.OFAG_00426 (degree 878), 556268.OFAG_00420 (degree 866) and 556268.OFAG_00189
-(degree 829).
+The undirected graph Oxalobacter formigenes HOxBLS has 2202 nodes and 170921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07053 and has 19 connected components, where the component
+with most nodes has 2156 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 155.24,
+and the node degree mode is 3. The top 5 most central nodes are 556268.OFAG_01771
+(degree 1033), 556268.OFAG_01244 (degree 884), 556268.OFAG_00426 (degree
+878), 556268.OFAG_00420 (degree 866) and 556268.OFAG_00189 (degree 829).
 
 
 References
@@ -107,14 +107,14 @@ def OxalobacterFormigenesHoxbls(
 	
 	Datetime: 2021-02-02 21:11:06.878062
 	
-	The undirected graph Oxalobacter formigenes HOxBLS has 2202 nodes and 170921 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07053
-	and has 19 connected components, where the component with most nodes has 2156 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 155.24, and the node degree mode is 3. The top 5
-	most central nodes are 556268.OFAG_01771 (degree 1033), 556268.OFAG_01244 (degree
-	884), 556268.OFAG_00426 (degree 878), 556268.OFAG_00420 (degree 866) and 556268.OFAG_00189
-	(degree 829).
+	The undirected graph Oxalobacter formigenes HOxBLS has 2202 nodes and 170921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07053 and has 19 connected components, where the component
+	with most nodes has 2156 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 155.24,
+	and the node degree mode is 3. The top 5 most central nodes are 556268.OFAG_01771
+	(degree 1033), 556268.OFAG_01244 (degree 884), 556268.OFAG_00426 (degree
+	878), 556268.OFAG_00420 (degree 866) and 556268.OFAG_00189 (degree 829).
 	
 
 

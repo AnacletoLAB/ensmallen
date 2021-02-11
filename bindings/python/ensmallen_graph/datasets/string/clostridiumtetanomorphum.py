@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:29.096472
 
-The undirected graph Clostridium tetanomorphum has 5207 nodes and 791181 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05837
-and has 23 connected components, where the component with most nodes has 5151 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 303.89, and the node degree mode is 2. The top 5
-most central nodes are 1230342.CTM_20276 (degree 2072), 1230342.CTM_00880 (degree
-2022), 1230342.CTM_25100 (degree 2022), 1230342.CTM_01564 (degree 2019) and 1230342.CTM_24703
-(degree 2011).
+The undirected graph Clostridium tetanomorphum has 5207 nodes and 791181
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05837 and has 23 connected components, where the component
+with most nodes has 5151 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 303.89,
+and the node degree mode is 2. The top 5 most central nodes are 1230342.CTM_20276
+(degree 2072), 1230342.CTM_00880 (degree 2022), 1230342.CTM_25100 (degree
+2022), 1230342.CTM_01564 (degree 2019) and 1230342.CTM_24703 (degree 2011).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumTetanomorphum(
 	
 	Datetime: 2021-02-02 23:27:29.096472
 	
-	The undirected graph Clostridium tetanomorphum has 5207 nodes and 791181 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05837
-	and has 23 connected components, where the component with most nodes has 5151 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 303.89, and the node degree mode is 2. The top 5
-	most central nodes are 1230342.CTM_20276 (degree 2072), 1230342.CTM_00880 (degree
-	2022), 1230342.CTM_25100 (degree 2022), 1230342.CTM_01564 (degree 2019) and 1230342.CTM_24703
-	(degree 2011).
+	The undirected graph Clostridium tetanomorphum has 5207 nodes and 791181
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05837 and has 23 connected components, where the component
+	with most nodes has 5151 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 303.89,
+	and the node degree mode is 2. The top 5 most central nodes are 1230342.CTM_20276
+	(degree 2072), 1230342.CTM_00880 (degree 2022), 1230342.CTM_25100 (degree
+	2022), 1230342.CTM_01564 (degree 2019) and 1230342.CTM_24703 (degree 2011).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:42.739998
 
-The undirected graph Exiguobacterium undae has 3052 nodes and 273359 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05871 and
-has 12 connected components, where the component with most nodes has 3020 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 179.13, and the node degree mode is 4. The top 5 most central
-nodes are 1397693.KK211187_gene902 (degree 1204), 1397693.KK211187_gene2674 (degree
-1019), 1397693.KK211187_gene1173 (degree 979), 1397693.KK211187_gene59 (degree 928)
-and 1397693.KK211187_gene1371 (degree 888).
+The undirected graph Exiguobacterium undae has 3052 nodes and 273359 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05871 and has 12 connected components, where the component with most
+nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 179.13, and
+the node degree mode is 4. The top 5 most central nodes are 1397693.KK211187_gene902
+(degree 1204), 1397693.KK211187_gene2674 (degree 1019), 1397693.KK211187_gene1173
+(degree 979), 1397693.KK211187_gene59 (degree 928) and 1397693.KK211187_gene1371
+(degree 888).
 
 
 References
@@ -107,14 +108,15 @@ def ExiguobacteriumUndae(
 	
 	Datetime: 2021-02-03 22:30:42.739998
 	
-	The undirected graph Exiguobacterium undae has 3052 nodes and 273359 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05871 and
-	has 12 connected components, where the component with most nodes has 3020 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 179.13, and the node degree mode is 4. The top 5 most central
-	nodes are 1397693.KK211187_gene902 (degree 1204), 1397693.KK211187_gene2674 (degree
-	1019), 1397693.KK211187_gene1173 (degree 979), 1397693.KK211187_gene59 (degree 928)
-	and 1397693.KK211187_gene1371 (degree 888).
+	The undirected graph Exiguobacterium undae has 3052 nodes and 273359 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05871 and has 12 connected components, where the component with most
+	nodes has 3020 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 179.13, and
+	the node degree mode is 4. The top 5 most central nodes are 1397693.KK211187_gene902
+	(degree 1204), 1397693.KK211187_gene2674 (degree 1019), 1397693.KK211187_gene1173
+	(degree 979), 1397693.KK211187_gene59 (degree 928) and 1397693.KK211187_gene1371
+	(degree 888).
 	
 
 

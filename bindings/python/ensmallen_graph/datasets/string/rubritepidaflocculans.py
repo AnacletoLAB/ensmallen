@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:35.309365
 
-The undirected graph Rubritepida flocculans has 3662 nodes and 289988 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04326 and
-has 3 connected components, where the component with most nodes has 3657 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 158.38, and the node degree mode is 8. The top 5 most central
-nodes are 1123072.AUDH01000001_gene3114 (degree 1301), 1123072.AUDH01000018_gene2679
-(degree 1002), 1123072.AUDH01000003_gene946 (degree 974), 1123072.AUDH01000005_gene1687
-(degree 946) and 1123072.AUDH01000001_gene3177 (degree 941).
+The undirected graph Rubritepida flocculans has 3662 nodes and 289988 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04326 and has 3 connected components, where the component with most
+nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 158.38, and
+the node degree mode is 8. The top 5 most central nodes are 1123072.AUDH01000001_gene3114
+(degree 1301), 1123072.AUDH01000018_gene2679 (degree 1002), 1123072.AUDH01000003_gene946
+(degree 974), 1123072.AUDH01000005_gene1687 (degree 946) and 1123072.AUDH01000001_gene3177
+(degree 941).
 
 
 References
@@ -107,14 +108,15 @@ def RubritepidaFlocculans(
 	
 	Datetime: 2021-02-02 22:47:35.309365
 	
-	The undirected graph Rubritepida flocculans has 3662 nodes and 289988 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04326 and
-	has 3 connected components, where the component with most nodes has 3657 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 158.38, and the node degree mode is 8. The top 5 most central
-	nodes are 1123072.AUDH01000001_gene3114 (degree 1301), 1123072.AUDH01000018_gene2679
-	(degree 1002), 1123072.AUDH01000003_gene946 (degree 974), 1123072.AUDH01000005_gene1687
-	(degree 946) and 1123072.AUDH01000001_gene3177 (degree 941).
+	The undirected graph Rubritepida flocculans has 3662 nodes and 289988 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04326 and has 3 connected components, where the component with most
+	nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 158.38, and
+	the node degree mode is 8. The top 5 most central nodes are 1123072.AUDH01000001_gene3114
+	(degree 1301), 1123072.AUDH01000018_gene2679 (degree 1002), 1123072.AUDH01000003_gene946
+	(degree 974), 1123072.AUDH01000005_gene1687 (degree 946) and 1123072.AUDH01000001_gene3177
+	(degree 941).
 	
 
 

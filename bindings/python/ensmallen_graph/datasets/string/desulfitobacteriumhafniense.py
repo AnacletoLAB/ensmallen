@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:50.244418
 
-The undirected graph Desulfitobacterium hafniense has 5004 nodes and 608632 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04862
-and has 14 connected components, where the component with most nodes has 4974 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 217, the mean node degree is 243.26, and the node degree mode is 1. The top 5
-most central nodes are 138119.DSY0115 (degree 1662), 138119.DSY4888 (degree 1657),
-138119.DSY1340 (degree 1636), 138119.DSY2291 (degree 1468) and 138119.DSY2685 (degree
-1397).
+The undirected graph Desulfitobacterium hafniense has 5004 nodes and 608632
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04862 and has 14 connected components, where the component
+with most nodes has 4974 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 243.26,
+and the node degree mode is 1. The top 5 most central nodes are 138119.DSY0115
+(degree 1662), 138119.DSY4888 (degree 1657), 138119.DSY1340 (degree 1636),
+138119.DSY2291 (degree 1468) and 138119.DSY2685 (degree 1397).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfitobacteriumHafniense(
 	
 	Datetime: 2021-02-02 19:50:50.244418
 	
-	The undirected graph Desulfitobacterium hafniense has 5004 nodes and 608632 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04862
-	and has 14 connected components, where the component with most nodes has 4974 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 217, the mean node degree is 243.26, and the node degree mode is 1. The top 5
-	most central nodes are 138119.DSY0115 (degree 1662), 138119.DSY4888 (degree 1657),
-	138119.DSY1340 (degree 1636), 138119.DSY2291 (degree 1468) and 138119.DSY2685 (degree
-	1397).
+	The undirected graph Desulfitobacterium hafniense has 5004 nodes and 608632
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04862 and has 14 connected components, where the component
+	with most nodes has 4974 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 243.26,
+	and the node degree mode is 1. The top 5 most central nodes are 138119.DSY0115
+	(degree 1662), 138119.DSY4888 (degree 1657), 138119.DSY1340 (degree 1636),
+	138119.DSY2291 (degree 1468) and 138119.DSY2685 (degree 1397).
 	
 
 

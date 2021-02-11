@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:00.153614
 
-The undirected graph Bacterium sp. JKG1 has 3700 nodes and 385843 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05638 and
-has 14 connected components, where the component with most nodes has 3670 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 208.56, and the node degree mode is 2. The top 5 most central
-nodes are 1128421.JAGA01000002_gene928 (degree 1571), 1128421.JAGA01000003_gene3015
-(degree 1377), 1128421.JAGA01000002_gene1473 (degree 1339), 1128421.JAGA01000002_gene779
-(degree 1322) and 1128421.JAGA01000002_gene126 (degree 1273).
+The undirected graph Bacterium sp. JKG1 has 3700 nodes and 385843 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05638 and has 14 connected components, where the component with most
+nodes has 3670 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 208.56, and
+the node degree mode is 2. The top 5 most central nodes are 1128421.JAGA01000002_gene928
+(degree 1571), 1128421.JAGA01000003_gene3015 (degree 1377), 1128421.JAGA01000002_gene1473
+(degree 1339), 1128421.JAGA01000002_gene779 (degree 1322) and 1128421.JAGA01000002_gene126
+(degree 1273).
 
 
 References
@@ -107,14 +108,15 @@ def BacteriumSp.Jkg1(
 	
 	Datetime: 2021-02-02 22:55:00.153614
 	
-	The undirected graph Bacterium sp. JKG1 has 3700 nodes and 385843 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05638 and
-	has 14 connected components, where the component with most nodes has 3670 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 208.56, and the node degree mode is 2. The top 5 most central
-	nodes are 1128421.JAGA01000002_gene928 (degree 1571), 1128421.JAGA01000003_gene3015
-	(degree 1377), 1128421.JAGA01000002_gene1473 (degree 1339), 1128421.JAGA01000002_gene779
-	(degree 1322) and 1128421.JAGA01000002_gene126 (degree 1273).
+	The undirected graph Bacterium sp. JKG1 has 3700 nodes and 385843 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05638 and has 14 connected components, where the component with most
+	nodes has 3670 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 208.56, and
+	the node degree mode is 2. The top 5 most central nodes are 1128421.JAGA01000002_gene928
+	(degree 1571), 1128421.JAGA01000003_gene3015 (degree 1377), 1128421.JAGA01000002_gene1473
+	(degree 1339), 1128421.JAGA01000002_gene779 (degree 1322) and 1128421.JAGA01000002_gene126
+	(degree 1273).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:11.053260
 
-The undirected graph Calothrix sp. PCC7507 has 5851 nodes and 551234 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03221 and
-has 29 connected components, where the component with most nodes has 5776 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 188.42, and the node degree mode is 2. The top 5 most central
-nodes are 99598.Cal7507_4921 (degree 2163), 99598.Cal7507_0251 (degree 1994), 99598.Cal7507_4977
-(degree 1843), 99598.Cal7507_1922 (degree 1761) and 99598.Cal7507_5555 (degree 1572).
+The undirected graph Calothrix sp. PCC7507 has 5851 nodes and 551234 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03221 and has 29 connected components, where the component with most
+nodes has 5776 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 188.42, and
+the node degree mode is 2. The top 5 most central nodes are 99598.Cal7507_4921
+(degree 2163), 99598.Cal7507_0251 (degree 1994), 99598.Cal7507_4977 (degree
+1843), 99598.Cal7507_1922 (degree 1761) and 99598.Cal7507_5555 (degree
+1572).
 
 
 References
@@ -106,13 +108,15 @@ def CalothrixSp.Pcc7507(
 	
 	Datetime: 2021-02-02 19:42:11.053260
 	
-	The undirected graph Calothrix sp. PCC7507 has 5851 nodes and 551234 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03221 and
-	has 29 connected components, where the component with most nodes has 5776 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 188.42, and the node degree mode is 2. The top 5 most central
-	nodes are 99598.Cal7507_4921 (degree 2163), 99598.Cal7507_0251 (degree 1994), 99598.Cal7507_4977
-	(degree 1843), 99598.Cal7507_1922 (degree 1761) and 99598.Cal7507_5555 (degree 1572).
+	The undirected graph Calothrix sp. PCC7507 has 5851 nodes and 551234 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03221 and has 29 connected components, where the component with most
+	nodes has 5776 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 188.42, and
+	the node degree mode is 2. The top 5 most central nodes are 99598.Cal7507_4921
+	(degree 2163), 99598.Cal7507_0251 (degree 1994), 99598.Cal7507_4977 (degree
+	1843), 99598.Cal7507_1922 (degree 1761) and 99598.Cal7507_5555 (degree
+	1572).
 	
 
 

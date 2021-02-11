@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:07.777360
 
-The undirected graph Burkholderia sp. YI23 has 6019 nodes and 825445 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04558 and
-has 28 connected components, where the component with most nodes has 5921 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 237,
-the mean node degree is 274.28, and the node degree mode is 3. The top 5 most central
-nodes are 1097668.BYI23_B011220 (degree 1909), 1097668.BYI23_A023920 (degree 1826),
-1097668.BYI23_C006220 (degree 1717), 1097668.BYI23_C008280 (degree 1567) and 1097668.BYI23_A010850
+The undirected graph Burkholderia sp. YI23 has 6019 nodes and 825445 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04558 and has 28 connected components, where the component with most
+nodes has 5921 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 237, the mean node degree is 274.28, and
+the node degree mode is 3. The top 5 most central nodes are 1097668.BYI23_B011220
+(degree 1909), 1097668.BYI23_A023920 (degree 1826), 1097668.BYI23_C006220
+(degree 1717), 1097668.BYI23_C008280 (degree 1567) and 1097668.BYI23_A010850
 (degree 1519).
 
 
@@ -107,13 +108,14 @@ def BurkholderiaSp.Yi23(
 	
 	Datetime: 2021-02-02 22:24:07.777360
 	
-	The undirected graph Burkholderia sp. YI23 has 6019 nodes and 825445 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04558 and
-	has 28 connected components, where the component with most nodes has 5921 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 237,
-	the mean node degree is 274.28, and the node degree mode is 3. The top 5 most central
-	nodes are 1097668.BYI23_B011220 (degree 1909), 1097668.BYI23_A023920 (degree 1826),
-	1097668.BYI23_C006220 (degree 1717), 1097668.BYI23_C008280 (degree 1567) and 1097668.BYI23_A010850
+	The undirected graph Burkholderia sp. YI23 has 6019 nodes and 825445 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04558 and has 28 connected components, where the component with most
+	nodes has 5921 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 237, the mean node degree is 274.28, and
+	the node degree mode is 3. The top 5 most central nodes are 1097668.BYI23_B011220
+	(degree 1909), 1097668.BYI23_A023920 (degree 1826), 1097668.BYI23_C006220
+	(degree 1717), 1097668.BYI23_C008280 (degree 1567) and 1097668.BYI23_A010850
 	(degree 1519).
 	
 

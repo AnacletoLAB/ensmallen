@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:19.677106
 
-The undirected graph Staphylococcus pettenkoferi has 2311 nodes and 142878 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05353
-and has 17 connected components, where the component with most nodes has 2268 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 123.65, and the node degree mode is 1. The top 5 most
-central nodes are 904314.SEVCU012_0560 (degree 926), 904314.SEVCU012_0624 (degree
-790), 904314.SEVCU012_2372 (degree 718), 904314.SEVCU012_0623 (degree 705) and 904314.SEVCU012_1590
-(degree 677).
+The undirected graph Staphylococcus pettenkoferi has 2311 nodes and 142878
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05353 and has 17 connected components, where the component
+with most nodes has 2268 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 123.65,
+and the node degree mode is 1. The top 5 most central nodes are 904314.SEVCU012_0560
+(degree 926), 904314.SEVCU012_0624 (degree 790), 904314.SEVCU012_2372 (degree
+718), 904314.SEVCU012_0623 (degree 705) and 904314.SEVCU012_1590 (degree
+677).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusPettenkoferi(
 	
 	Datetime: 2021-02-02 21:54:19.677106
 	
-	The undirected graph Staphylococcus pettenkoferi has 2311 nodes and 142878 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05353
-	and has 17 connected components, where the component with most nodes has 2268 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 123.65, and the node degree mode is 1. The top 5 most
-	central nodes are 904314.SEVCU012_0560 (degree 926), 904314.SEVCU012_0624 (degree
-	790), 904314.SEVCU012_2372 (degree 718), 904314.SEVCU012_0623 (degree 705) and 904314.SEVCU012_1590
-	(degree 677).
+	The undirected graph Staphylococcus pettenkoferi has 2311 nodes and 142878
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05353 and has 17 connected components, where the component
+	with most nodes has 2268 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 123.65,
+	and the node degree mode is 1. The top 5 most central nodes are 904314.SEVCU012_0560
+	(degree 926), 904314.SEVCU012_0624 (degree 790), 904314.SEVCU012_2372 (degree
+	718), 904314.SEVCU012_0623 (degree 705) and 904314.SEVCU012_1590 (degree
+	677).
 	
 
 

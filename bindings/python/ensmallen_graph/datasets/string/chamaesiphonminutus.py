@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:42.937806
 
-The undirected graph Chamaesiphon minutus has 5834 nodes and 691216 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04062 and
-has 30 connected components, where the component with most nodes has 5763 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 236.96, and the node degree mode is 3. The top 5 most central
-nodes are 1173020.Cha6605_3467 (degree 1815), 1173020.Cha6605_2829 (degree 1737),
-1173020.Cha6605_0410 (degree 1720), 1173020.Cha6605_0897 (degree 1606) and 1173020.Cha6605_5233
+The undirected graph Chamaesiphon minutus has 5834 nodes and 691216 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04062 and has 30 connected components, where the component with most
+nodes has 5763 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 236.96, and
+the node degree mode is 3. The top 5 most central nodes are 1173020.Cha6605_3467
+(degree 1815), 1173020.Cha6605_2829 (degree 1737), 1173020.Cha6605_0410
+(degree 1720), 1173020.Cha6605_0897 (degree 1606) and 1173020.Cha6605_5233
 (degree 1357).
 
 
@@ -107,13 +108,14 @@ def ChamaesiphonMinutus(
 	
 	Datetime: 2021-02-02 23:07:42.937806
 	
-	The undirected graph Chamaesiphon minutus has 5834 nodes and 691216 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04062 and
-	has 30 connected components, where the component with most nodes has 5763 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 236.96, and the node degree mode is 3. The top 5 most central
-	nodes are 1173020.Cha6605_3467 (degree 1815), 1173020.Cha6605_2829 (degree 1737),
-	1173020.Cha6605_0410 (degree 1720), 1173020.Cha6605_0897 (degree 1606) and 1173020.Cha6605_5233
+	The undirected graph Chamaesiphon minutus has 5834 nodes and 691216 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04062 and has 30 connected components, where the component with most
+	nodes has 5763 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 236.96, and
+	the node degree mode is 3. The top 5 most central nodes are 1173020.Cha6605_3467
+	(degree 1815), 1173020.Cha6605_2829 (degree 1737), 1173020.Cha6605_0410
+	(degree 1720), 1173020.Cha6605_0897 (degree 1606) and 1173020.Cha6605_5233
 	(degree 1357).
 	
 

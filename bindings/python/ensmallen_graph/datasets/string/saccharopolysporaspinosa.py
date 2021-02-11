@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:54.852665
 
-The undirected graph Saccharopolyspora spinosa has 7429 nodes and 976038 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-and has 74 connected components, where the component with most nodes has 7250 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 262.76, and the node degree mode is 1. The top 5
-most central nodes are 994479.GL877881_gene6427 (degree 2997), 994479.GL877880_gene4046
-(degree 2654), 994479.GL877878_gene2152 (degree 2251), 994479.GL877878_gene2020 (degree
-1943) and 994479.GL877883_gene7527 (degree 1926).
+The undirected graph Saccharopolyspora spinosa has 7429 nodes and 976038
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03537 and has 74 connected components, where the component
+with most nodes has 7250 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 216, the mean node degree is 262.76,
+and the node degree mode is 1. The top 5 most central nodes are 994479.GL877881_gene6427
+(degree 2997), 994479.GL877880_gene4046 (degree 2654), 994479.GL877878_gene2152
+(degree 2251), 994479.GL877878_gene2020 (degree 1943) and 994479.GL877883_gene7527
+(degree 1926).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharopolysporaSpinosa(
 	
 	Datetime: 2021-02-02 22:04:54.852665
 	
-	The undirected graph Saccharopolyspora spinosa has 7429 nodes and 976038 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-	and has 74 connected components, where the component with most nodes has 7250 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 262.76, and the node degree mode is 1. The top 5
-	most central nodes are 994479.GL877881_gene6427 (degree 2997), 994479.GL877880_gene4046
-	(degree 2654), 994479.GL877878_gene2152 (degree 2251), 994479.GL877878_gene2020 (degree
-	1943) and 994479.GL877883_gene7527 (degree 1926).
+	The undirected graph Saccharopolyspora spinosa has 7429 nodes and 976038
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03537 and has 74 connected components, where the component
+	with most nodes has 7250 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 216, the mean node degree is 262.76,
+	and the node degree mode is 1. The top 5 most central nodes are 994479.GL877881_gene6427
+	(degree 2997), 994479.GL877880_gene4046 (degree 2654), 994479.GL877878_gene2152
+	(degree 2251), 994479.GL877878_gene2020 (degree 1943) and 994479.GL877883_gene7527
+	(degree 1926).
 	
 
 

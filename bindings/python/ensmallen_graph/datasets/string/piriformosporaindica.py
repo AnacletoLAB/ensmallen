@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:25:24.479447
 
-The undirected graph Piriformospora indica has 6034 nodes and 713047 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03918 and
-has 7 connected components, where the component with most nodes has 6018 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 236.34, and the node degree mode is 1. The top 5 most central
-nodes are 65672.G4TKG8 (degree 1682), 65672.G4TG81 (degree 1529), 65672.G4TDP0 (degree
-1529), 65672.G4TB02 (degree 1524) and 65672.G4T5J6 (degree 1510).
+The undirected graph Piriformospora indica has 6034 nodes and 713047 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03918 and has 7 connected components, where the component with most
+nodes has 6018 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 236.34, and
+the node degree mode is 1. The top 5 most central nodes are 65672.G4TKG8
+(degree 1682), 65672.G4TG81 (degree 1529), 65672.G4TDP0 (degree 1529),
+65672.G4TB02 (degree 1524) and 65672.G4T5J6 (degree 1510).
 
 
 References
@@ -106,13 +107,14 @@ def PiriformosporaIndica(
 	
 	Datetime: 2021-02-02 18:25:24.479447
 	
-	The undirected graph Piriformospora indica has 6034 nodes and 713047 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03918 and
-	has 7 connected components, where the component with most nodes has 6018 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 236.34, and the node degree mode is 1. The top 5 most central
-	nodes are 65672.G4TKG8 (degree 1682), 65672.G4TG81 (degree 1529), 65672.G4TDP0 (degree
-	1529), 65672.G4TB02 (degree 1524) and 65672.G4T5J6 (degree 1510).
+	The undirected graph Piriformospora indica has 6034 nodes and 713047 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03918 and has 7 connected components, where the component with most
+	nodes has 6018 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 236.34, and
+	the node degree mode is 1. The top 5 most central nodes are 65672.G4TKG8
+	(degree 1682), 65672.G4TG81 (degree 1529), 65672.G4TDP0 (degree 1529),
+	65672.G4TB02 (degree 1524) and 65672.G4T5J6 (degree 1510).
 	
 
 

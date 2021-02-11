@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:21.527382
 
-The undirected graph Paenibacillus terrae has 5463 nodes and 529662 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03550 and
-has 26 connected components, where the component with most nodes has 5398 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 193.91, and the node degree mode is 3. The top 5 most central
-nodes are 985665.HPL003_22320 (degree 2288), 985665.HPL003_16285 (degree 1872), 985665.HPL003_24200
-(degree 1419), 985665.HPL003_16070 (degree 1413) and 985665.HPL003_07875 (degree
+The undirected graph Paenibacillus terrae has 5463 nodes and 529662 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03550 and has 26 connected components, where the component with most
+nodes has 5398 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 193.91, and
+the node degree mode is 3. The top 5 most central nodes are 985665.HPL003_22320
+(degree 2288), 985665.HPL003_16285 (degree 1872), 985665.HPL003_24200 (degree
+1419), 985665.HPL003_16070 (degree 1413) and 985665.HPL003_07875 (degree
 1401).
 
 
@@ -107,13 +108,14 @@ def PaenibacillusTerrae(
 	
 	Datetime: 2021-02-02 22:04:21.527382
 	
-	The undirected graph Paenibacillus terrae has 5463 nodes and 529662 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03550 and
-	has 26 connected components, where the component with most nodes has 5398 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 193.91, and the node degree mode is 3. The top 5 most central
-	nodes are 985665.HPL003_22320 (degree 2288), 985665.HPL003_16285 (degree 1872), 985665.HPL003_24200
-	(degree 1419), 985665.HPL003_16070 (degree 1413) and 985665.HPL003_07875 (degree
+	The undirected graph Paenibacillus terrae has 5463 nodes and 529662 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03550 and has 26 connected components, where the component with most
+	nodes has 5398 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 193.91, and
+	the node degree mode is 3. The top 5 most central nodes are 985665.HPL003_22320
+	(degree 2288), 985665.HPL003_16285 (degree 1872), 985665.HPL003_24200 (degree
+	1419), 985665.HPL003_16070 (degree 1413) and 985665.HPL003_07875 (degree
 	1401).
 	
 

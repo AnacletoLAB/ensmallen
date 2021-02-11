@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:30.010707
 
-The undirected graph Microbacterium paraoxydans 77MFTsu32 has 3420 nodes and 226679
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03877 and has 23 connected components, where the component with most nodes has
-3326 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 103, the mean node degree is 132.56, and the node degree mode is 3. The
-top 5 most central nodes are 1151126.AQYI01000004_gene1244 (degree 1109), 1151126.AQYI01000007_gene2039
+The undirected graph Microbacterium paraoxydans 77MFTsu32 has 3420 nodes
+and 226679 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03877 and has 23 connected components, where the
+component with most nodes has 3326 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+is 132.56, and the node degree mode is 3. The top 5 most central nodes
+are 1151126.AQYI01000004_gene1244 (degree 1109), 1151126.AQYI01000007_gene2039
 (degree 943), 1151126.AQYI01000006_gene2723 (degree 942), 1151126.AQYI01000004_gene1294
 (degree 940) and 1151126.AQYI01000007_gene2265 (degree 890).
 
@@ -107,12 +108,13 @@ def MicrobacteriumParaoxydans77mftsu32(
 	
 	Datetime: 2021-02-02 23:00:30.010707
 	
-	The undirected graph Microbacterium paraoxydans 77MFTsu32 has 3420 nodes and 226679
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03877 and has 23 connected components, where the component with most nodes has
-	3326 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 103, the mean node degree is 132.56, and the node degree mode is 3. The
-	top 5 most central nodes are 1151126.AQYI01000004_gene1244 (degree 1109), 1151126.AQYI01000007_gene2039
+	The undirected graph Microbacterium paraoxydans 77MFTsu32 has 3420 nodes
+	and 226679 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03877 and has 23 connected components, where the
+	component with most nodes has 3326 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+	is 132.56, and the node degree mode is 3. The top 5 most central nodes
+	are 1151126.AQYI01000004_gene1244 (degree 1109), 1151126.AQYI01000007_gene2039
 	(degree 943), 1151126.AQYI01000006_gene2723 (degree 942), 1151126.AQYI01000004_gene1294
 	(degree 940) and 1151126.AQYI01000007_gene2265 (degree 890).
 	

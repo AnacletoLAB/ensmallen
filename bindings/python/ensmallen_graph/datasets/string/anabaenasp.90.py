@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:45.213826
 
-The undirected graph Anabaena sp. 90 has 4309 nodes and 363294 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03914 and
-has 12 connected components, where the component with most nodes has 4281 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 168.62, and the node degree mode is 4. The top 5 most central
-nodes are 46234.ANA_C10984 (degree 1440), 46234.ANA_C13204 (degree 1355), 46234.ANA_C11279
-(degree 1053), 46234.ANA_C13684 (degree 1036) and 46234.ANA_C13770 (degree 1033).
+The undirected graph Anabaena sp. 90 has 4309 nodes and 363294 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03914 and has 12 connected components, where the component with most
+nodes has 4281 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 168.62, and
+the node degree mode is 4. The top 5 most central nodes are 46234.ANA_C10984
+(degree 1440), 46234.ANA_C13204 (degree 1355), 46234.ANA_C11279 (degree
+1053), 46234.ANA_C13684 (degree 1036) and 46234.ANA_C13770 (degree 1033).
 
 
 References
@@ -106,13 +107,14 @@ def AnabaenaSp.90(
 	
 	Datetime: 2021-02-02 18:15:45.213826
 	
-	The undirected graph Anabaena sp. 90 has 4309 nodes and 363294 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03914 and
-	has 12 connected components, where the component with most nodes has 4281 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 168.62, and the node degree mode is 4. The top 5 most central
-	nodes are 46234.ANA_C10984 (degree 1440), 46234.ANA_C13204 (degree 1355), 46234.ANA_C11279
-	(degree 1053), 46234.ANA_C13684 (degree 1036) and 46234.ANA_C13770 (degree 1033).
+	The undirected graph Anabaena sp. 90 has 4309 nodes and 363294 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03914 and has 12 connected components, where the component with most
+	nodes has 4281 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 168.62, and
+	the node degree mode is 4. The top 5 most central nodes are 46234.ANA_C10984
+	(degree 1440), 46234.ANA_C13204 (degree 1355), 46234.ANA_C11279 (degree
+	1053), 46234.ANA_C13684 (degree 1036) and 46234.ANA_C13770 (degree 1033).
 	
 
 

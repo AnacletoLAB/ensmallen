@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:34.163829
 
-The undirected graph Pseudomonas fluorescens Pf01 has 5681 nodes and 706725 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04380
-and has 20 connected components, where the component with most nodes has 5635 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 248.80, and the node degree mode is 4. The top 5
-most central nodes are 205922.Pfl01_0056 (degree 2038), 205922.Pfl01_0749 (degree
-1858), 205922.Pfl01_0413 (degree 1757), 205922.Pfl01_4588 (degree 1709) and 205922.Pfl01_4587
-(degree 1665).
+The undirected graph Pseudomonas fluorescens Pf01 has 5681 nodes and 706725
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04380 and has 20 connected components, where the component
+with most nodes has 5635 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 248.80,
+and the node degree mode is 4. The top 5 most central nodes are 205922.Pfl01_0056
+(degree 2038), 205922.Pfl01_0749 (degree 1858), 205922.Pfl01_0413 (degree
+1757), 205922.Pfl01_4588 (degree 1709) and 205922.Pfl01_4587 (degree 1665).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasFluorescensPf01(
 	
 	Datetime: 2021-02-02 20:00:34.163829
 	
-	The undirected graph Pseudomonas fluorescens Pf01 has 5681 nodes and 706725 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04380
-	and has 20 connected components, where the component with most nodes has 5635 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 248.80, and the node degree mode is 4. The top 5
-	most central nodes are 205922.Pfl01_0056 (degree 2038), 205922.Pfl01_0749 (degree
-	1858), 205922.Pfl01_0413 (degree 1757), 205922.Pfl01_4588 (degree 1709) and 205922.Pfl01_4587
-	(degree 1665).
+	The undirected graph Pseudomonas fluorescens Pf01 has 5681 nodes and 706725
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04380 and has 20 connected components, where the component
+	with most nodes has 5635 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 248.80,
+	and the node degree mode is 4. The top 5 most central nodes are 205922.Pfl01_0056
+	(degree 2038), 205922.Pfl01_0749 (degree 1858), 205922.Pfl01_0413 (degree
+	1757), 205922.Pfl01_4588 (degree 1709) and 205922.Pfl01_4587 (degree 1665).
 	
 
 

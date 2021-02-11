@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:18.151818
 
-The undirected graph Bradyrhizobium oligotrophicum has 7131 nodes and 834100 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03281
-and has 36 connected components, where the component with most nodes has 7045 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 233.94, and the node degree mode is 2. The top 5
-most central nodes are 1245469.S58_39770 (degree 3351), 1245469.S58_68650 (degree
-2608), 1245469.S58_18100 (degree 2441), 1245469.S58_23810 (degree 2212) and 1245469.S58_64110
-(degree 2007).
+The undirected graph Bradyrhizobium oligotrophicum has 7131 nodes and 834100
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03281 and has 36 connected components, where the component
+with most nodes has 7045 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 233.94,
+and the node degree mode is 2. The top 5 most central nodes are 1245469.S58_39770
+(degree 3351), 1245469.S58_68650 (degree 2608), 1245469.S58_18100 (degree
+2441), 1245469.S58_23810 (degree 2212) and 1245469.S58_64110 (degree 2007).
 
 
 References
@@ -107,14 +107,14 @@ def BradyrhizobiumOligotrophicum(
 	
 	Datetime: 2021-02-02 23:33:18.151818
 	
-	The undirected graph Bradyrhizobium oligotrophicum has 7131 nodes and 834100 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03281
-	and has 36 connected components, where the component with most nodes has 7045 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 233.94, and the node degree mode is 2. The top 5
-	most central nodes are 1245469.S58_39770 (degree 3351), 1245469.S58_68650 (degree
-	2608), 1245469.S58_18100 (degree 2441), 1245469.S58_23810 (degree 2212) and 1245469.S58_64110
-	(degree 2007).
+	The undirected graph Bradyrhizobium oligotrophicum has 7131 nodes and 834100
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03281 and has 36 connected components, where the component
+	with most nodes has 7045 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 233.94,
+	and the node degree mode is 2. The top 5 most central nodes are 1245469.S58_39770
+	(degree 3351), 1245469.S58_68650 (degree 2608), 1245469.S58_18100 (degree
+	2441), 1245469.S58_23810 (degree 2212) and 1245469.S58_64110 (degree 2007).
 	
 
 

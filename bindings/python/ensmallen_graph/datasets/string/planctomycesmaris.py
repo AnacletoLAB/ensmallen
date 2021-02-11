@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:39.927261
 
-The undirected graph Planctomyces maris has 6298 nodes and 700287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03532 and
-has 95 connected components, where the component with most nodes has 6056 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 222.38, and the node degree mode is 2. The top 5 most central
-nodes are 344747.PM8797T_00729 (degree 2074), 344747.PM8797T_31438 (degree 1987),
-344747.PM8797T_21028 (degree 1954), 344747.PM8797T_13947 (degree 1939) and 344747.PM8797T_02909
+The undirected graph Planctomyces maris has 6298 nodes and 700287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03532 and has 95 connected components, where the component with most
+nodes has 6056 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 222.38, and
+the node degree mode is 2. The top 5 most central nodes are 344747.PM8797T_00729
+(degree 2074), 344747.PM8797T_31438 (degree 1987), 344747.PM8797T_21028
+(degree 1954), 344747.PM8797T_13947 (degree 1939) and 344747.PM8797T_02909
 (degree 1847).
 
 
@@ -107,13 +108,14 @@ def PlanctomycesMaris(
 	
 	Datetime: 2021-02-02 20:31:39.927261
 	
-	The undirected graph Planctomyces maris has 6298 nodes and 700287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03532 and
-	has 95 connected components, where the component with most nodes has 6056 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 222.38, and the node degree mode is 2. The top 5 most central
-	nodes are 344747.PM8797T_00729 (degree 2074), 344747.PM8797T_31438 (degree 1987),
-	344747.PM8797T_21028 (degree 1954), 344747.PM8797T_13947 (degree 1939) and 344747.PM8797T_02909
+	The undirected graph Planctomyces maris has 6298 nodes and 700287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03532 and has 95 connected components, where the component with most
+	nodes has 6056 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 222.38, and
+	the node degree mode is 2. The top 5 most central nodes are 344747.PM8797T_00729
+	(degree 2074), 344747.PM8797T_31438 (degree 1987), 344747.PM8797T_21028
+	(degree 1954), 344747.PM8797T_13947 (degree 1939) and 344747.PM8797T_02909
 	(degree 1847).
 	
 

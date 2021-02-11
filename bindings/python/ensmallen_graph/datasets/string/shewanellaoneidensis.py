@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:35.739982
 
-The undirected graph Shewanella oneidensis has 3995 nodes and 488245 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06120 and
-has 9 connected components, where the component with most nodes has 3976 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 222,
-the mean node degree is 244.43, and the node degree mode is 1. The top 5 most central
-nodes are 211586.SO_0859 (degree 1896), 211586.SO_4002 (degree 1496), 211586.SO_4669
-(degree 1431), 211586.SO_0840 (degree 1412) and 211586.SO_1602 (degree 1288).
+The undirected graph Shewanella oneidensis has 3995 nodes and 488245 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06120 and has 9 connected components, where the component with most
+nodes has 3976 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 222, the mean node degree is 244.43, and
+the node degree mode is 1. The top 5 most central nodes are 211586.SO_0859
+(degree 1896), 211586.SO_4002 (degree 1496), 211586.SO_4669 (degree 1431),
+211586.SO_0840 (degree 1412) and 211586.SO_1602 (degree 1288).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaOneidensis(
 	
 	Datetime: 2021-02-02 20:01:35.739982
 	
-	The undirected graph Shewanella oneidensis has 3995 nodes and 488245 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06120 and
-	has 9 connected components, where the component with most nodes has 3976 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 222,
-	the mean node degree is 244.43, and the node degree mode is 1. The top 5 most central
-	nodes are 211586.SO_0859 (degree 1896), 211586.SO_4002 (degree 1496), 211586.SO_4669
-	(degree 1431), 211586.SO_0840 (degree 1412) and 211586.SO_1602 (degree 1288).
+	The undirected graph Shewanella oneidensis has 3995 nodes and 488245 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06120 and has 9 connected components, where the component with most
+	nodes has 3976 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 222, the mean node degree is 244.43, and
+	the node degree mode is 1. The top 5 most central nodes are 211586.SO_0859
+	(degree 1896), 211586.SO_4002 (degree 1496), 211586.SO_4669 (degree 1431),
+	211586.SO_0840 (degree 1412) and 211586.SO_1602 (degree 1288).
 	
 
 

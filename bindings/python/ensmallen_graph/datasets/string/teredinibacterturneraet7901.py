@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:25.648753
 
-The undirected graph Teredinibacter turnerae T7901 has 4157 nodes and 463369 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05364
-and has 42 connected components, where the component with most nodes has 4052 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 222.93, and the node degree mode is 2. The top 5
-most central nodes are 377629.TERTU_0011 (degree 1655), 377629.TERTU_2203 (degree
-1540), 377629.TERTU_1990 (degree 1362), 377629.TERTU_2204 (degree 1341) and 377629.TERTU_3478
-(degree 1328).
+The undirected graph Teredinibacter turnerae T7901 has 4157 nodes and 463369
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05364 and has 42 connected components, where the component
+with most nodes has 4052 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 222.93,
+and the node degree mode is 2. The top 5 most central nodes are 377629.TERTU_0011
+(degree 1655), 377629.TERTU_2203 (degree 1540), 377629.TERTU_1990 (degree
+1362), 377629.TERTU_2204 (degree 1341) and 377629.TERTU_3478 (degree 1328).
 
 
 References
@@ -107,14 +107,14 @@ def TeredinibacterTurneraeT7901(
 	
 	Datetime: 2021-02-02 20:36:25.648753
 	
-	The undirected graph Teredinibacter turnerae T7901 has 4157 nodes and 463369 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05364
-	and has 42 connected components, where the component with most nodes has 4052 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 222.93, and the node degree mode is 2. The top 5
-	most central nodes are 377629.TERTU_0011 (degree 1655), 377629.TERTU_2203 (degree
-	1540), 377629.TERTU_1990 (degree 1362), 377629.TERTU_2204 (degree 1341) and 377629.TERTU_3478
-	(degree 1328).
+	The undirected graph Teredinibacter turnerae T7901 has 4157 nodes and 463369
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05364 and has 42 connected components, where the component
+	with most nodes has 4052 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 222.93,
+	and the node degree mode is 2. The top 5 most central nodes are 377629.TERTU_0011
+	(degree 1655), 377629.TERTU_2203 (degree 1540), 377629.TERTU_1990 (degree
+	1362), 377629.TERTU_2204 (degree 1341) and 377629.TERTU_3478 (degree 1328).
 	
 
 

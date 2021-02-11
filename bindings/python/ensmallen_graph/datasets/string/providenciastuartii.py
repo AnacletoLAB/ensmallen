@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:09.930192
 
-The undirected graph Providencia stuartii has 4660 nodes and 390910 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03601 and
-has 37 connected components, where the component with most nodes has 4559 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 167.77, and the node degree mode is 3. The top 5 most central
-nodes are 471874.PROSTU_00309 (degree 1218), 471874.PROSTU_01283 (degree 1024), 471874.PROSTU_02837
-(degree 1016), 471874.PROSTU_02838 (degree 945) and 471874.PROSTU_01002 (degree 935).
+The undirected graph Providencia stuartii has 4660 nodes and 390910 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03601 and has 37 connected components, where the component with most
+nodes has 4559 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 154, the mean node degree is 167.77, and
+the node degree mode is 3. The top 5 most central nodes are 471874.PROSTU_00309
+(degree 1218), 471874.PROSTU_01283 (degree 1024), 471874.PROSTU_02837 (degree
+1016), 471874.PROSTU_02838 (degree 945) and 471874.PROSTU_01002 (degree
+935).
 
 
 References
@@ -106,13 +108,15 @@ def ProvidenciaStuartii(
 	
 	Datetime: 2021-02-02 20:56:09.930192
 	
-	The undirected graph Providencia stuartii has 4660 nodes and 390910 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03601 and
-	has 37 connected components, where the component with most nodes has 4559 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 167.77, and the node degree mode is 3. The top 5 most central
-	nodes are 471874.PROSTU_00309 (degree 1218), 471874.PROSTU_01283 (degree 1024), 471874.PROSTU_02837
-	(degree 1016), 471874.PROSTU_02838 (degree 945) and 471874.PROSTU_01002 (degree 935).
+	The undirected graph Providencia stuartii has 4660 nodes and 390910 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03601 and has 37 connected components, where the component with most
+	nodes has 4559 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 154, the mean node degree is 167.77, and
+	the node degree mode is 3. The top 5 most central nodes are 471874.PROSTU_00309
+	(degree 1218), 471874.PROSTU_01283 (degree 1024), 471874.PROSTU_02837 (degree
+	1016), 471874.PROSTU_02838 (degree 945) and 471874.PROSTU_01002 (degree
+	935).
 	
 
 

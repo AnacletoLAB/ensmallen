@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:21.289160
 
-The undirected graph Haloterrigena turkmenica has 3845 nodes and 356254 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04821
-and has 28 connected components, where the component with most nodes has 3780 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 185.31, and the node degree mode is 2. The top 5
-most central nodes are 543526.Htur_1719 (degree 1259), 543526.Htur_0284 (degree 1217),
-543526.Htur_2013 (degree 1199), 543526.Htur_1904 (degree 1072) and 543526.Htur_3728
-(degree 1040).
+The undirected graph Haloterrigena turkmenica has 3845 nodes and 356254
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04821 and has 28 connected components, where the component
+with most nodes has 3780 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 185.31,
+and the node degree mode is 2. The top 5 most central nodes are 543526.Htur_1719
+(degree 1259), 543526.Htur_0284 (degree 1217), 543526.Htur_2013 (degree
+1199), 543526.Htur_1904 (degree 1072) and 543526.Htur_3728 (degree 1040).
 
 
 References
@@ -107,14 +107,14 @@ def HaloterrigenaTurkmenica(
 	
 	Datetime: 2021-02-02 21:07:21.289160
 	
-	The undirected graph Haloterrigena turkmenica has 3845 nodes and 356254 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04821
-	and has 28 connected components, where the component with most nodes has 3780 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 185.31, and the node degree mode is 2. The top 5
-	most central nodes are 543526.Htur_1719 (degree 1259), 543526.Htur_0284 (degree 1217),
-	543526.Htur_2013 (degree 1199), 543526.Htur_1904 (degree 1072) and 543526.Htur_3728
-	(degree 1040).
+	The undirected graph Haloterrigena turkmenica has 3845 nodes and 356254
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04821 and has 28 connected components, where the component
+	with most nodes has 3780 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 185.31,
+	and the node degree mode is 2. The top 5 most central nodes are 543526.Htur_1719
+	(degree 1259), 543526.Htur_0284 (degree 1217), 543526.Htur_2013 (degree
+	1199), 543526.Htur_1904 (degree 1072) and 543526.Htur_3728 (degree 1040).
 	
 
 

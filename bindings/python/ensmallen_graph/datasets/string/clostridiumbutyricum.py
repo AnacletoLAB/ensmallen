@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:29.297199
 
-The undirected graph Clostridium butyricum has 4258 nodes and 363252 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04008 and
-has 12 connected components, where the component with most nodes has 4229 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 170.62, and the node degree mode is 5. The top 5 most central
-nodes are 632245.CLP_1057 (degree 1300), 632245.CLP_3023 (degree 1252), 632245.CLP_3841
-(degree 1237), 632245.CLP_2802 (degree 1175) and 632245.CLP_3392 (degree 1166).
+The undirected graph Clostridium butyricum has 4258 nodes and 363252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04008 and has 12 connected components, where the component with most
+nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 170.62, and
+the node degree mode is 5. The top 5 most central nodes are 632245.CLP_1057
+(degree 1300), 632245.CLP_3023 (degree 1252), 632245.CLP_3841 (degree 1237),
+632245.CLP_2802 (degree 1175) and 632245.CLP_3392 (degree 1166).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumButyricum(
 	
 	Datetime: 2021-02-02 21:21:29.297199
 	
-	The undirected graph Clostridium butyricum has 4258 nodes and 363252 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04008 and
-	has 12 connected components, where the component with most nodes has 4229 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 170.62, and the node degree mode is 5. The top 5 most central
-	nodes are 632245.CLP_1057 (degree 1300), 632245.CLP_3023 (degree 1252), 632245.CLP_3841
-	(degree 1237), 632245.CLP_2802 (degree 1175) and 632245.CLP_3392 (degree 1166).
+	The undirected graph Clostridium butyricum has 4258 nodes and 363252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04008 and has 12 connected components, where the component with most
+	nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 170.62, and
+	the node degree mode is 5. The top 5 most central nodes are 632245.CLP_1057
+	(degree 1300), 632245.CLP_3023 (degree 1252), 632245.CLP_3841 (degree 1237),
+	632245.CLP_2802 (degree 1175) and 632245.CLP_3392 (degree 1166).
 	
 
 

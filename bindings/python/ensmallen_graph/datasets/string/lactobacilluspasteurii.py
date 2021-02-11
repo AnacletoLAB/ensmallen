@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:58.980312
 
-The undirected graph Lactobacillus pasteurii has 1827 nodes and 133908 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08028 and
-has 9 connected components, where the component with most nodes has 1803 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 146.59, and the node degree mode is 4. The top 5 most central
-nodes are 1423790.BN53_06875 (degree 831), 1423790.BN53_09755 (degree 738), 1423790.BN53_06240
-(degree 665), 1423790.BN53_02080 (degree 639) and 1423790.BN53_07525 (degree 615).
+The undirected graph Lactobacillus pasteurii has 1827 nodes and 133908
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08028 and has 9 connected components, where the component
+with most nodes has 1803 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 146.59,
+and the node degree mode is 4. The top 5 most central nodes are 1423790.BN53_06875
+(degree 831), 1423790.BN53_09755 (degree 738), 1423790.BN53_06240 (degree
+665), 1423790.BN53_02080 (degree 639) and 1423790.BN53_07525 (degree 615).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusPasteurii(
 	
 	Datetime: 2021-02-03 22:51:58.980312
 	
-	The undirected graph Lactobacillus pasteurii has 1827 nodes and 133908 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08028 and
-	has 9 connected components, where the component with most nodes has 1803 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 146.59, and the node degree mode is 4. The top 5 most central
-	nodes are 1423790.BN53_06875 (degree 831), 1423790.BN53_09755 (degree 738), 1423790.BN53_06240
-	(degree 665), 1423790.BN53_02080 (degree 639) and 1423790.BN53_07525 (degree 615).
+	The undirected graph Lactobacillus pasteurii has 1827 nodes and 133908
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08028 and has 9 connected components, where the component
+	with most nodes has 1803 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 146.59,
+	and the node degree mode is 4. The top 5 most central nodes are 1423790.BN53_06875
+	(degree 831), 1423790.BN53_09755 (degree 738), 1423790.BN53_06240 (degree
+	665), 1423790.BN53_02080 (degree 639) and 1423790.BN53_07525 (degree 615).
 	
 
 

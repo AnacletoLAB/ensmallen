@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:56.220311
 
-The undirected graph Mesorhizobium amorphae has 6961 nodes and 695782 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02872 and
-has 39 connected components, where the component with most nodes has 6872 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 199.91, and the node degree mode is 2. The top 5 most central
-nodes are 1082933.MEA186_04961 (degree 2383), 1082933.MEA186_04274 (degree 2193),
-1082933.MEA186_04831 (degree 2039), 1082933.MEA186_00395 (degree 1746) and 1082933.MEA186_17913
+The undirected graph Mesorhizobium amorphae has 6961 nodes and 695782 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02872 and has 39 connected components, where the component with most
+nodes has 6872 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 199.91, and
+the node degree mode is 2. The top 5 most central nodes are 1082933.MEA186_04961
+(degree 2383), 1082933.MEA186_04274 (degree 2193), 1082933.MEA186_04831
+(degree 2039), 1082933.MEA186_00395 (degree 1746) and 1082933.MEA186_17913
 (degree 1664).
 
 
@@ -107,13 +108,14 @@ def MesorhizobiumAmorphae(
 	
 	Datetime: 2021-02-05 17:17:56.220311
 	
-	The undirected graph Mesorhizobium amorphae has 6961 nodes and 695782 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02872 and
-	has 39 connected components, where the component with most nodes has 6872 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 199.91, and the node degree mode is 2. The top 5 most central
-	nodes are 1082933.MEA186_04961 (degree 2383), 1082933.MEA186_04274 (degree 2193),
-	1082933.MEA186_04831 (degree 2039), 1082933.MEA186_00395 (degree 1746) and 1082933.MEA186_17913
+	The undirected graph Mesorhizobium amorphae has 6961 nodes and 695782 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02872 and has 39 connected components, where the component with most
+	nodes has 6872 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 199.91, and
+	the node degree mode is 2. The top 5 most central nodes are 1082933.MEA186_04961
+	(degree 2383), 1082933.MEA186_04274 (degree 2193), 1082933.MEA186_04831
+	(degree 2039), 1082933.MEA186_00395 (degree 1746) and 1082933.MEA186_17913
 	(degree 1664).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:42.741153
 
-The undirected graph Prevotella oralis HGA0225 has 2323 nodes and 155467 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05764
-and has 12 connected components, where the component with most nodes has 2298 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 133.85, and the node degree mode is 3. The top 5
-most central nodes are 1203550.HMPREF1475_01570 (degree 872), 1203550.HMPREF1475_01205
-(degree 779), 1203550.HMPREF1475_01297 (degree 760), 1203550.HMPREF1475_02009 (degree
-696) and 1203550.HMPREF1475_00006 (degree 658).
+The undirected graph Prevotella oralis HGA0225 has 2323 nodes and 155467
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05764 and has 12 connected components, where the component
+with most nodes has 2298 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 133.85,
+and the node degree mode is 3. The top 5 most central nodes are 1203550.HMPREF1475_01570
+(degree 872), 1203550.HMPREF1475_01205 (degree 779), 1203550.HMPREF1475_01297
+(degree 760), 1203550.HMPREF1475_02009 (degree 696) and 1203550.HMPREF1475_00006
+(degree 658).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaOralisHga0225(
 	
 	Datetime: 2021-02-02 23:14:42.741153
 	
-	The undirected graph Prevotella oralis HGA0225 has 2323 nodes and 155467 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05764
-	and has 12 connected components, where the component with most nodes has 2298 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 133.85, and the node degree mode is 3. The top 5
-	most central nodes are 1203550.HMPREF1475_01570 (degree 872), 1203550.HMPREF1475_01205
-	(degree 779), 1203550.HMPREF1475_01297 (degree 760), 1203550.HMPREF1475_02009 (degree
-	696) and 1203550.HMPREF1475_00006 (degree 658).
+	The undirected graph Prevotella oralis HGA0225 has 2323 nodes and 155467
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05764 and has 12 connected components, where the component
+	with most nodes has 2298 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 133.85,
+	and the node degree mode is 3. The top 5 most central nodes are 1203550.HMPREF1475_01570
+	(degree 872), 1203550.HMPREF1475_01205 (degree 779), 1203550.HMPREF1475_01297
+	(degree 760), 1203550.HMPREF1475_02009 (degree 696) and 1203550.HMPREF1475_00006
+	(degree 658).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:45.201514
 
-The undirected graph Aminobacterium mobile has 1973 nodes and 133376 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06856 and
-has 9 connected components, where the component with most nodes has 1956 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 135.20, and the node degree mode is 1. The top 5 most central
-nodes are 1304875.JAFZ01000001_gene1546 (degree 893), 1304875.JAFZ01000001_gene1642
-(degree 875), 1304875.JAFZ01000001_gene1793 (degree 734), 1304875.JAFZ01000002_gene169
-(degree 732) and 1304875.JAFZ01000001_gene1692 (degree 709).
+The undirected graph Aminobacterium mobile has 1973 nodes and 133376 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06856 and has 9 connected components, where the component with most
+nodes has 1956 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 135.20, and
+the node degree mode is 1. The top 5 most central nodes are 1304875.JAFZ01000001_gene1546
+(degree 893), 1304875.JAFZ01000001_gene1642 (degree 875), 1304875.JAFZ01000001_gene1793
+(degree 734), 1304875.JAFZ01000002_gene169 (degree 732) and 1304875.JAFZ01000001_gene1692
+(degree 709).
 
 
 References
@@ -107,14 +108,15 @@ def AminobacteriumMobile(
 	
 	Datetime: 2021-02-03 21:36:45.201514
 	
-	The undirected graph Aminobacterium mobile has 1973 nodes and 133376 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06856 and
-	has 9 connected components, where the component with most nodes has 1956 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 135.20, and the node degree mode is 1. The top 5 most central
-	nodes are 1304875.JAFZ01000001_gene1546 (degree 893), 1304875.JAFZ01000001_gene1642
-	(degree 875), 1304875.JAFZ01000001_gene1793 (degree 734), 1304875.JAFZ01000002_gene169
-	(degree 732) and 1304875.JAFZ01000001_gene1692 (degree 709).
+	The undirected graph Aminobacterium mobile has 1973 nodes and 133376 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06856 and has 9 connected components, where the component with most
+	nodes has 1956 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 135.20, and
+	the node degree mode is 1. The top 5 most central nodes are 1304875.JAFZ01000001_gene1546
+	(degree 893), 1304875.JAFZ01000001_gene1642 (degree 875), 1304875.JAFZ01000001_gene1793
+	(degree 734), 1304875.JAFZ01000002_gene169 (degree 732) and 1304875.JAFZ01000001_gene1692
+	(degree 709).
 	
 
 

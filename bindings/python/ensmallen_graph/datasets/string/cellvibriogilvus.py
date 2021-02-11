@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:35.532724
 
-The undirected graph Cellvibrio gilvus has 3154 nodes and 253085 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05090 and
-has 6 connected components, where the component with most nodes has 3144 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 160.49, and the node degree mode is 9. The top 5 most central
-nodes are 593907.Celgi_2705 (degree 1100), 593907.Celgi_1619 (degree 1095), 593907.Celgi_2939
-(degree 945), 593907.Celgi_1477 (degree 925) and 593907.Celgi_1960 (degree 912).
+The undirected graph Cellvibrio gilvus has 3154 nodes and 253085 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05090 and has 6 connected components, where the component with most
+nodes has 3144 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 160.49, and
+the node degree mode is 9. The top 5 most central nodes are 593907.Celgi_2705
+(degree 1100), 593907.Celgi_1619 (degree 1095), 593907.Celgi_2939 (degree
+945), 593907.Celgi_1477 (degree 925) and 593907.Celgi_1960 (degree 912).
 
 
 References
@@ -106,13 +107,14 @@ def CellvibrioGilvus(
 	
 	Datetime: 2021-02-02 21:18:35.532724
 	
-	The undirected graph Cellvibrio gilvus has 3154 nodes and 253085 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05090 and
-	has 6 connected components, where the component with most nodes has 3144 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 160.49, and the node degree mode is 9. The top 5 most central
-	nodes are 593907.Celgi_2705 (degree 1100), 593907.Celgi_1619 (degree 1095), 593907.Celgi_2939
-	(degree 945), 593907.Celgi_1477 (degree 925) and 593907.Celgi_1960 (degree 912).
+	The undirected graph Cellvibrio gilvus has 3154 nodes and 253085 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05090 and has 6 connected components, where the component with most
+	nodes has 3144 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 160.49, and
+	the node degree mode is 9. The top 5 most central nodes are 593907.Celgi_2705
+	(degree 1100), 593907.Celgi_1619 (degree 1095), 593907.Celgi_2939 (degree
+	945), 593907.Celgi_1477 (degree 925) and 593907.Celgi_1960 (degree 912).
 	
 
 

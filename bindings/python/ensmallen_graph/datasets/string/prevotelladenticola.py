@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:01.393407
 
-The undirected graph Prevotella denticola has 2333 nodes and 147412 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05419 and
-has 17 connected components, where the component with most nodes has 2298 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 126.37, and the node degree mode is 2. The top 5 most central
-nodes are 767031.HMPREF9137_0578 (degree 893), 767031.HMPREF9137_0661 (degree 818),
-767031.HMPREF9137_0247 (degree 740), 767031.HMPREF9137_1266 (degree 712) and 767031.HMPREF9137_1206
+The undirected graph Prevotella denticola has 2333 nodes and 147412 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05419 and has 17 connected components, where the component with most
+nodes has 2298 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 126.37, and
+the node degree mode is 2. The top 5 most central nodes are 767031.HMPREF9137_0578
+(degree 893), 767031.HMPREF9137_0661 (degree 818), 767031.HMPREF9137_0247
+(degree 740), 767031.HMPREF9137_1266 (degree 712) and 767031.HMPREF9137_1206
 (degree 709).
 
 
@@ -107,13 +108,14 @@ def PrevotellaDenticola(
 	
 	Datetime: 2021-02-02 21:44:01.393407
 	
-	The undirected graph Prevotella denticola has 2333 nodes and 147412 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05419 and
-	has 17 connected components, where the component with most nodes has 2298 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 126.37, and the node degree mode is 2. The top 5 most central
-	nodes are 767031.HMPREF9137_0578 (degree 893), 767031.HMPREF9137_0661 (degree 818),
-	767031.HMPREF9137_0247 (degree 740), 767031.HMPREF9137_1266 (degree 712) and 767031.HMPREF9137_1206
+	The undirected graph Prevotella denticola has 2333 nodes and 147412 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05419 and has 17 connected components, where the component with most
+	nodes has 2298 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 126.37, and
+	the node degree mode is 2. The top 5 most central nodes are 767031.HMPREF9137_0578
+	(degree 893), 767031.HMPREF9137_0661 (degree 818), 767031.HMPREF9137_0247
+	(degree 740), 767031.HMPREF9137_1266 (degree 712) and 767031.HMPREF9137_1206
 	(degree 709).
 	
 

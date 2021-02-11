@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:44.683568
 
-The undirected graph Weissella oryzae has 2174 nodes and 115998 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04911 and
-has 20 connected components, where the component with most nodes has 2123 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 106.71, and the node degree mode is 10. The top 5 most central
-nodes are 1329250.WOSG25_070630 (degree 818), 1329250.WOSG25_060550 (degree 661),
-1329250.WOSG25_030560 (degree 606), 1329250.WOSG25_150360 (degree 584) and 1329250.WOSG25_150150
+The undirected graph Weissella oryzae has 2174 nodes and 115998 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04911 and has 20 connected components, where the component with most
+nodes has 2123 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 83, the mean node degree is 106.71, and
+the node degree mode is 10. The top 5 most central nodes are 1329250.WOSG25_070630
+(degree 818), 1329250.WOSG25_060550 (degree 661), 1329250.WOSG25_030560
+(degree 606), 1329250.WOSG25_150360 (degree 584) and 1329250.WOSG25_150150
 (degree 545).
 
 
@@ -107,13 +108,14 @@ def WeissellaOryzae(
 	
 	Datetime: 2021-02-03 21:54:44.683568
 	
-	The undirected graph Weissella oryzae has 2174 nodes and 115998 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04911 and
-	has 20 connected components, where the component with most nodes has 2123 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 106.71, and the node degree mode is 10. The top 5 most central
-	nodes are 1329250.WOSG25_070630 (degree 818), 1329250.WOSG25_060550 (degree 661),
-	1329250.WOSG25_030560 (degree 606), 1329250.WOSG25_150360 (degree 584) and 1329250.WOSG25_150150
+	The undirected graph Weissella oryzae has 2174 nodes and 115998 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04911 and has 20 connected components, where the component with most
+	nodes has 2123 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 83, the mean node degree is 106.71, and
+	the node degree mode is 10. The top 5 most central nodes are 1329250.WOSG25_070630
+	(degree 818), 1329250.WOSG25_060550 (degree 661), 1329250.WOSG25_030560
+	(degree 606), 1329250.WOSG25_150360 (degree 584) and 1329250.WOSG25_150150
 	(degree 545).
 	
 

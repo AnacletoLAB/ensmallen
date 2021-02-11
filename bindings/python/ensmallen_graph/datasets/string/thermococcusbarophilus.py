@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:12.128387
 
-The undirected graph Thermococcus barophilus has 2255 nodes and 142409 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05604 and
-has 8 connected components, where the component with most nodes has 2238 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 126.31, and the node degree mode is 6. The top 5 most central
-nodes are 391623.TERMP_00454 (degree 687), 391623.TERMP_02183 (degree 608), 391623.TERMP_01834
-(degree 602), 391623.TERMP_00827 (degree 586) and 391623.TERMP_01876 (degree 529).
+The undirected graph Thermococcus barophilus has 2255 nodes and 142409
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05604 and has 8 connected components, where the component
+with most nodes has 2238 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 126.31,
+and the node degree mode is 6. The top 5 most central nodes are 391623.TERMP_00454
+(degree 687), 391623.TERMP_02183 (degree 608), 391623.TERMP_01834 (degree
+602), 391623.TERMP_00827 (degree 586) and 391623.TERMP_01876 (degree 529).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusBarophilus(
 	
 	Datetime: 2021-02-02 20:40:12.128387
 	
-	The undirected graph Thermococcus barophilus has 2255 nodes and 142409 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05604 and
-	has 8 connected components, where the component with most nodes has 2238 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 126.31, and the node degree mode is 6. The top 5 most central
-	nodes are 391623.TERMP_00454 (degree 687), 391623.TERMP_02183 (degree 608), 391623.TERMP_01834
-	(degree 602), 391623.TERMP_00827 (degree 586) and 391623.TERMP_01876 (degree 529).
+	The undirected graph Thermococcus barophilus has 2255 nodes and 142409
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05604 and has 8 connected components, where the component
+	with most nodes has 2238 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 126.31,
+	and the node degree mode is 6. The top 5 most central nodes are 391623.TERMP_00454
+	(degree 687), 391623.TERMP_02183 (degree 608), 391623.TERMP_01834 (degree
+	602), 391623.TERMP_00827 (degree 586) and 391623.TERMP_01876 (degree 529).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:53.074900
 
-The undirected graph lshp3025 has 3025 nodes and 11929 unweighted edges, of which
-3025 are self-loops. The graph is sparse as it has a density of 0.00228 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.89, and the node degree mode is 7. The top 5 most central nodes are 3021 (degree
-7), 3018 (degree 7), 3017 (degree 7), 3014 (degree 7) and 3013 (degree 7).
+The undirected graph lshp3025 has 3025 nodes and 11929 unweighted edges,
+of which 3025 are self-loops. The graph is sparse as it has a density of
+0.00228 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.89, and the node degree mode
+is 7. The top 5 most central nodes are 3021 (degree 7), 3018 (degree 7),
+3017 (degree 7), 3014 (degree 7) and 3013 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp3025(
 	
 	Datetime: 2021-02-06 08:13:53.074900
 	
-	The undirected graph lshp3025 has 3025 nodes and 11929 unweighted edges, of which
-	3025 are self-loops. The graph is sparse as it has a density of 0.00228 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.89, and the node degree mode is 7. The top 5 most central nodes are 3021 (degree
-	7), 3018 (degree 7), 3017 (degree 7), 3014 (degree 7) and 3013 (degree 7).
+	The undirected graph lshp3025 has 3025 nodes and 11929 unweighted edges,
+	of which 3025 are self-loops. The graph is sparse as it has a density of
+	0.00228 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.89, and the node degree mode
+	is 7. The top 5 most central nodes are 3021 (degree 7), 3018 (degree 7),
+	3017 (degree 7), 3014 (degree 7) and 3013 (degree 7).
 	
 
 

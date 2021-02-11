@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:29.275660
 
-The undirected graph Butyrivibrio sp. FCS014 has 3498 nodes and 458738 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07500 and
-has 13 connected components, where the component with most nodes has 3462 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 262.29, and the node degree mode is 2. The top 5 most central
-nodes are 1408304.JAHA01000019_gene2416 (degree 1616), 1408304.JAHA01000010_gene147
-(degree 1592), 1408304.JAHA01000008_gene1698 (degree 1442), 1408304.JAHA01000020_gene10
-(degree 1393) and 1408304.JAHA01000007_gene1547 (degree 1386).
+The undirected graph Butyrivibrio sp. FCS014 has 3498 nodes and 458738
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07500 and has 13 connected components, where the component
+with most nodes has 3462 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 262.29,
+and the node degree mode is 2. The top 5 most central nodes are 1408304.JAHA01000019_gene2416
+(degree 1616), 1408304.JAHA01000010_gene147 (degree 1592), 1408304.JAHA01000008_gene1698
+(degree 1442), 1408304.JAHA01000020_gene10 (degree 1393) and 1408304.JAHA01000007_gene1547
+(degree 1386).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Fcs014(
 	
 	Datetime: 2021-02-03 22:34:29.275660
 	
-	The undirected graph Butyrivibrio sp. FCS014 has 3498 nodes and 458738 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07500 and
-	has 13 connected components, where the component with most nodes has 3462 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 262.29, and the node degree mode is 2. The top 5 most central
-	nodes are 1408304.JAHA01000019_gene2416 (degree 1616), 1408304.JAHA01000010_gene147
-	(degree 1592), 1408304.JAHA01000008_gene1698 (degree 1442), 1408304.JAHA01000020_gene10
-	(degree 1393) and 1408304.JAHA01000007_gene1547 (degree 1386).
+	The undirected graph Butyrivibrio sp. FCS014 has 3498 nodes and 458738
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07500 and has 13 connected components, where the component
+	with most nodes has 3462 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 262.29,
+	and the node degree mode is 2. The top 5 most central nodes are 1408304.JAHA01000019_gene2416
+	(degree 1616), 1408304.JAHA01000010_gene147 (degree 1592), 1408304.JAHA01000008_gene1698
+	(degree 1442), 1408304.JAHA01000020_gene10 (degree 1393) and 1408304.JAHA01000007_gene1547
+	(degree 1386).
 	
 
 

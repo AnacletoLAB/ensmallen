@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:17.944788
 
-The undirected graph Bartonella rattaustraliani has 1826 nodes and 111264 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06678
-and has 17 connected components, where the component with most nodes has 1791 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 121.87, and the node degree mode is 2. The top 5 most
-central nodes are 1205681.CALW02000031_gene788 (degree 752), 1205681.CALW02000005_gene404
-(degree 672), 1205681.CALW02000061_gene1771 (degree 617), 1205681.CALW02000012_gene1728
-(degree 584) and 1205681.CALW02000005_gene406 (degree 582).
+The undirected graph Bartonella rattaustraliani has 1826 nodes and 111264
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06678 and has 17 connected components, where the component
+with most nodes has 1791 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 121.87,
+and the node degree mode is 2. The top 5 most central nodes are 1205681.CALW02000031_gene788
+(degree 752), 1205681.CALW02000005_gene404 (degree 672), 1205681.CALW02000061_gene1771
+(degree 617), 1205681.CALW02000012_gene1728 (degree 584) and 1205681.CALW02000005_gene406
+(degree 582).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaRattaustraliani(
 	
 	Datetime: 2021-02-02 23:15:17.944788
 	
-	The undirected graph Bartonella rattaustraliani has 1826 nodes and 111264 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06678
-	and has 17 connected components, where the component with most nodes has 1791 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 121.87, and the node degree mode is 2. The top 5 most
-	central nodes are 1205681.CALW02000031_gene788 (degree 752), 1205681.CALW02000005_gene404
-	(degree 672), 1205681.CALW02000061_gene1771 (degree 617), 1205681.CALW02000012_gene1728
-	(degree 584) and 1205681.CALW02000005_gene406 (degree 582).
+	The undirected graph Bartonella rattaustraliani has 1826 nodes and 111264
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06678 and has 17 connected components, where the component
+	with most nodes has 1791 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 121.87,
+	and the node degree mode is 2. The top 5 most central nodes are 1205681.CALW02000031_gene788
+	(degree 752), 1205681.CALW02000005_gene404 (degree 672), 1205681.CALW02000061_gene1771
+	(degree 617), 1205681.CALW02000012_gene1728 (degree 584) and 1205681.CALW02000005_gene406
+	(degree 582).
 	
 
 

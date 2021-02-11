@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:45.552197
 
-The undirected graph Prevotella corporis has 2215 nodes and 132749 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05414 and
-has 18 connected components, where the component with most nodes has 2177 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 119.86, and the node degree mode is 1. The top 5 most central
-nodes are 1122981.AUME01000002_gene2232 (degree 874), 1122981.AUME01000001_gene1767
-(degree 710), 1122981.AUME01000003_gene1993 (degree 664), 1122981.AUME01000045_gene1573
-(degree 628) and 1122981.AUME01000007_gene1166 (degree 623).
+The undirected graph Prevotella corporis has 2215 nodes and 132749 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05414 and has 18 connected components, where the component with most
+nodes has 2177 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 119.86, and
+the node degree mode is 1. The top 5 most central nodes are 1122981.AUME01000002_gene2232
+(degree 874), 1122981.AUME01000001_gene1767 (degree 710), 1122981.AUME01000003_gene1993
+(degree 664), 1122981.AUME01000045_gene1573 (degree 628) and 1122981.AUME01000007_gene1166
+(degree 623).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaCorporis(
 	
 	Datetime: 2021-02-02 22:45:45.552197
 	
-	The undirected graph Prevotella corporis has 2215 nodes and 132749 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05414 and
-	has 18 connected components, where the component with most nodes has 2177 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 119.86, and the node degree mode is 1. The top 5 most central
-	nodes are 1122981.AUME01000002_gene2232 (degree 874), 1122981.AUME01000001_gene1767
-	(degree 710), 1122981.AUME01000003_gene1993 (degree 664), 1122981.AUME01000045_gene1573
-	(degree 628) and 1122981.AUME01000007_gene1166 (degree 623).
+	The undirected graph Prevotella corporis has 2215 nodes and 132749 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05414 and has 18 connected components, where the component with most
+	nodes has 2177 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 119.86, and
+	the node degree mode is 1. The top 5 most central nodes are 1122981.AUME01000002_gene2232
+	(degree 874), 1122981.AUME01000001_gene1767 (degree 710), 1122981.AUME01000003_gene1993
+	(degree 664), 1122981.AUME01000045_gene1573 (degree 628) and 1122981.AUME01000007_gene1166
+	(degree 623).
 	
 
 

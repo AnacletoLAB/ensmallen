@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:33.735770
 
-The undirected graph Plasmodium vivax has 4045 nodes and 423996 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05184 and
-has 13 connected components, where the component with most nodes has 4014 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 209.64, and the node degree mode is 1. The top 5 most central
-nodes are 5855.PVX_111040 (degree 1305), 5855.PVX_113910 (degree 1284), 5855.PVX_114510
-(degree 1263), 5855.PVX_089425 (degree 1233) and 5855.PVX_092535 (degree 1160).
+The undirected graph Plasmodium vivax has 4045 nodes and 423996 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05184 and has 13 connected components, where the component with most
+nodes has 4014 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 209.64, and
+the node degree mode is 1. The top 5 most central nodes are 5855.PVX_111040
+(degree 1305), 5855.PVX_113910 (degree 1284), 5855.PVX_114510 (degree 1263),
+5855.PVX_089425 (degree 1233) and 5855.PVX_092535 (degree 1160).
 
 
 References
@@ -106,13 +107,14 @@ def PlasmodiumVivax(
 	
 	Datetime: 2021-02-02 17:16:33.735770
 	
-	The undirected graph Plasmodium vivax has 4045 nodes and 423996 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05184 and
-	has 13 connected components, where the component with most nodes has 4014 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 209.64, and the node degree mode is 1. The top 5 most central
-	nodes are 5855.PVX_111040 (degree 1305), 5855.PVX_113910 (degree 1284), 5855.PVX_114510
-	(degree 1263), 5855.PVX_089425 (degree 1233) and 5855.PVX_092535 (degree 1160).
+	The undirected graph Plasmodium vivax has 4045 nodes and 423996 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05184 and has 13 connected components, where the component with most
+	nodes has 4014 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 209.64, and
+	the node degree mode is 1. The top 5 most central nodes are 5855.PVX_111040
+	(degree 1305), 5855.PVX_113910 (degree 1284), 5855.PVX_114510 (degree 1263),
+	5855.PVX_089425 (degree 1233) and 5855.PVX_092535 (degree 1160).
 	
 
 

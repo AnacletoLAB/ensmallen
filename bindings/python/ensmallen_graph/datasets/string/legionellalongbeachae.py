@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:31.700456
 
-The undirected graph Legionella longbeachae has 3361 nodes and 261961 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04639 and
-has 43 connected components, where the component with most nodes has 3265 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 155.88, and the node degree mode is 1. The top 5 most central
-nodes are 661367.LLO_3316 (degree 1223), 661367.LLO_0722 (degree 1067), 661367.LLO_1235
-(degree 986), 661367.LLO_1101 (degree 980) and 661367.LLO_2505 (degree 900).
+The undirected graph Legionella longbeachae has 3361 nodes and 261961 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04639 and has 43 connected components, where the component with most
+nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 155.88, and
+the node degree mode is 1. The top 5 most central nodes are 661367.LLO_3316
+(degree 1223), 661367.LLO_0722 (degree 1067), 661367.LLO_1235 (degree 986),
+661367.LLO_1101 (degree 980) and 661367.LLO_2505 (degree 900).
 
 
 References
@@ -106,13 +107,14 @@ def LegionellaLongbeachae(
 	
 	Datetime: 2021-02-02 21:27:31.700456
 	
-	The undirected graph Legionella longbeachae has 3361 nodes and 261961 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04639 and
-	has 43 connected components, where the component with most nodes has 3265 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 155.88, and the node degree mode is 1. The top 5 most central
-	nodes are 661367.LLO_3316 (degree 1223), 661367.LLO_0722 (degree 1067), 661367.LLO_1235
-	(degree 986), 661367.LLO_1101 (degree 980) and 661367.LLO_2505 (degree 900).
+	The undirected graph Legionella longbeachae has 3361 nodes and 261961 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04639 and has 43 connected components, where the component with most
+	nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 155.88, and
+	the node degree mode is 1. The top 5 most central nodes are 661367.LLO_3316
+	(degree 1223), 661367.LLO_0722 (degree 1067), 661367.LLO_1235 (degree 986),
+	661367.LLO_1101 (degree 980) and 661367.LLO_2505 (degree 900).
 	
 
 

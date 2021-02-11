@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:51.018075
 
-The undirected graph Pseudoalteromonas haloplanktis ANT505 has 4070 nodes and 522164
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06306 and has 15 connected components, where the component with most nodes has
-4038 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 243, the mean node degree is 256.59, and the node degree mode is 1. The
-top 5 most central nodes are 722419.PH505_au00260 (degree 1352), 722419.PH505_ah00870
-(degree 1241), 722419.PH505_ah00880 (degree 1197), 722419.PH505_as00350 (degree 1152)
+The undirected graph Pseudoalteromonas haloplanktis ANT505 has 4070 nodes
+and 522164 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06306 and has 15 connected components, where the
+component with most nodes has 4038 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 243, the mean node degree
+is 256.59, and the node degree mode is 1. The top 5 most central nodes
+are 722419.PH505_au00260 (degree 1352), 722419.PH505_ah00870 (degree 1241),
+722419.PH505_ah00880 (degree 1197), 722419.PH505_as00350 (degree 1152)
 and 722419.PH505_ar00020 (degree 1129).
 
 
@@ -107,13 +108,14 @@ def PseudoalteromonasHaloplanktisAnt505(
 	
 	Datetime: 2021-02-02 21:36:51.018075
 	
-	The undirected graph Pseudoalteromonas haloplanktis ANT505 has 4070 nodes and 522164
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06306 and has 15 connected components, where the component with most nodes has
-	4038 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 243, the mean node degree is 256.59, and the node degree mode is 1. The
-	top 5 most central nodes are 722419.PH505_au00260 (degree 1352), 722419.PH505_ah00870
-	(degree 1241), 722419.PH505_ah00880 (degree 1197), 722419.PH505_as00350 (degree 1152)
+	The undirected graph Pseudoalteromonas haloplanktis ANT505 has 4070 nodes
+	and 522164 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06306 and has 15 connected components, where the
+	component with most nodes has 4038 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 243, the mean node degree
+	is 256.59, and the node degree mode is 1. The top 5 most central nodes
+	are 722419.PH505_au00260 (degree 1352), 722419.PH505_ah00870 (degree 1241),
+	722419.PH505_ah00880 (degree 1197), 722419.PH505_as00350 (degree 1152)
 	and 722419.PH505_ar00020 (degree 1129).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:34:46.392139
 
-The undirected graph Tarsius syrichta has 20174 nodes and 4582042 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02252 and
-has 2 connected components, where the component with most nodes has 20171 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 323,
-the mean node degree is 454.25, and the node degree mode is 140. The top 5 most central
-nodes are 9478.XP_008056371.1 (degree 4908), 9478.XP_008072596.1 (degree 4898), 9478.XP_008069838.1
-(degree 4594), 9478.XP_008061292.1 (degree 4420) and 9478.XP_008065246.1 (degree
+The undirected graph Tarsius syrichta has 20174 nodes and 4582042 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02252 and has 2 connected components, where the component with most
+nodes has 20171 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 323, the mean node degree is 454.25, and
+the node degree mode is 140. The top 5 most central nodes are 9478.XP_008056371.1
+(degree 4908), 9478.XP_008072596.1 (degree 4898), 9478.XP_008069838.1 (degree
+4594), 9478.XP_008061292.1 (degree 4420) and 9478.XP_008065246.1 (degree
 4394).
 
 
@@ -107,13 +108,14 @@ def TarsiusSyrichta(
 	
 	Datetime: 2021-02-02 17:34:46.392139
 	
-	The undirected graph Tarsius syrichta has 20174 nodes and 4582042 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02252 and
-	has 2 connected components, where the component with most nodes has 20171 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 323,
-	the mean node degree is 454.25, and the node degree mode is 140. The top 5 most central
-	nodes are 9478.XP_008056371.1 (degree 4908), 9478.XP_008072596.1 (degree 4898), 9478.XP_008069838.1
-	(degree 4594), 9478.XP_008061292.1 (degree 4420) and 9478.XP_008065246.1 (degree
+	The undirected graph Tarsius syrichta has 20174 nodes and 4582042 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02252 and has 2 connected components, where the component with most
+	nodes has 20171 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 323, the mean node degree is 454.25, and
+	the node degree mode is 140. The top 5 most central nodes are 9478.XP_008056371.1
+	(degree 4908), 9478.XP_008072596.1 (degree 4898), 9478.XP_008069838.1 (degree
+	4594), 9478.XP_008061292.1 (degree 4420) and 9478.XP_008065246.1 (degree
 	4394).
 	
 

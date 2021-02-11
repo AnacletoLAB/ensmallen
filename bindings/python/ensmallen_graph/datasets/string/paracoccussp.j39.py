@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:41.073082
 
-The undirected graph Paracoccus sp. J39 has 4106 nodes and 648808 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07699 and
-has 7 connected components, where the component with most nodes has 4091 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 282,
-the mean node degree is 316.03, and the node degree mode is 2. The top 5 most central
-nodes are 935848.JAEN01000004_gene1207 (degree 1865), 935848.JAEN01000014_gene1766
-(degree 1621), 935848.JAEN01000022_gene2671 (degree 1565), 935848.JAEN01000012_gene3893
-(degree 1469) and 935848.JAEN01000014_gene1764 (degree 1469).
+The undirected graph Paracoccus sp. J39 has 4106 nodes and 648808 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07699 and has 7 connected components, where the component with most
+nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 282, the mean node degree is 316.03, and
+the node degree mode is 2. The top 5 most central nodes are 935848.JAEN01000004_gene1207
+(degree 1865), 935848.JAEN01000014_gene1766 (degree 1621), 935848.JAEN01000022_gene2671
+(degree 1565), 935848.JAEN01000012_gene3893 (degree 1469) and 935848.JAEN01000014_gene1764
+(degree 1469).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusSp.J39(
 	
 	Datetime: 2021-02-02 21:59:41.073082
 	
-	The undirected graph Paracoccus sp. J39 has 4106 nodes and 648808 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07699 and
-	has 7 connected components, where the component with most nodes has 4091 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 282,
-	the mean node degree is 316.03, and the node degree mode is 2. The top 5 most central
-	nodes are 935848.JAEN01000004_gene1207 (degree 1865), 935848.JAEN01000014_gene1766
-	(degree 1621), 935848.JAEN01000022_gene2671 (degree 1565), 935848.JAEN01000012_gene3893
-	(degree 1469) and 935848.JAEN01000014_gene1764 (degree 1469).
+	The undirected graph Paracoccus sp. J39 has 4106 nodes and 648808 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07699 and has 7 connected components, where the component with most
+	nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 282, the mean node degree is 316.03, and
+	the node degree mode is 2. The top 5 most central nodes are 935848.JAEN01000004_gene1207
+	(degree 1865), 935848.JAEN01000014_gene1766 (degree 1621), 935848.JAEN01000022_gene2671
+	(degree 1565), 935848.JAEN01000012_gene3893 (degree 1469) and 935848.JAEN01000014_gene1764
+	(degree 1469).
 	
 
 

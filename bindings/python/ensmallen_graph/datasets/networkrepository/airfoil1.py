@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:34.094447
 
-The undirected graph airfoil1 has 4253 nodes and 12289 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00136 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 5.78, and the node degree mode is 6. The top 5 most central nodes are 2574 (degree
-9), 138 (degree 9), 3135 (degree 8), 2248 (degree 8) and 2279 (degree 8).
+The undirected graph airfoil1 has 4253 nodes and 12289 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00136 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 5.78, and the node degree mode
+is 6. The top 5 most central nodes are 2574 (degree 9), 138 (degree 9),
+3135 (degree 8), 2248 (degree 8) and 2279 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Airfoil1(
 	
 	Datetime: 2021-02-06 10:15:34.094447
 	
-	The undirected graph airfoil1 has 4253 nodes and 12289 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00136 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.78, and the node degree mode is 6. The top 5 most central nodes are 2574 (degree
-	9), 138 (degree 9), 3135 (degree 8), 2248 (degree 8) and 2279 (degree 8).
+	The undirected graph airfoil1 has 4253 nodes and 12289 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00136 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 5.78, and the node degree mode
+	is 6. The top 5 most central nodes are 2574 (degree 9), 138 (degree 9),
+	3135 (degree 8), 2248 (degree 8) and 2279 (degree 8).
 	
 
 

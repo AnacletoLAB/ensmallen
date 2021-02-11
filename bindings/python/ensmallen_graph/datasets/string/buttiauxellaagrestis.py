@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:21.551505
 
-The undirected graph Buttiauxella agrestis has 4315 nodes and 708348 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07611 and
-has 3 connected components, where the component with most nodes has 4310 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 298,
-the mean node degree is 328.32, and the node degree mode is 3. The top 5 most central
-nodes are 1006004.GBAG_0234 (degree 1798), 1006004.GBAG_2084 (degree 1698), 1006004.GBAG_1845
-(degree 1669), 1006004.GBAG_4198 (degree 1576) and 1006004.GBAG_3692 (degree 1449).
+The undirected graph Buttiauxella agrestis has 4315 nodes and 708348 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07611 and has 3 connected components, where the component with most
+nodes has 4310 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 298, the mean node degree is 328.32, and
+the node degree mode is 3. The top 5 most central nodes are 1006004.GBAG_0234
+(degree 1798), 1006004.GBAG_2084 (degree 1698), 1006004.GBAG_1845 (degree
+1669), 1006004.GBAG_4198 (degree 1576) and 1006004.GBAG_3692 (degree 1449).
 
 
 References
@@ -106,13 +107,14 @@ def ButtiauxellaAgrestis(
 	
 	Datetime: 2021-02-02 22:08:21.551505
 	
-	The undirected graph Buttiauxella agrestis has 4315 nodes and 708348 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07611 and
-	has 3 connected components, where the component with most nodes has 4310 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 298,
-	the mean node degree is 328.32, and the node degree mode is 3. The top 5 most central
-	nodes are 1006004.GBAG_0234 (degree 1798), 1006004.GBAG_2084 (degree 1698), 1006004.GBAG_1845
-	(degree 1669), 1006004.GBAG_4198 (degree 1576) and 1006004.GBAG_3692 (degree 1449).
+	The undirected graph Buttiauxella agrestis has 4315 nodes and 708348 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07611 and has 3 connected components, where the component with most
+	nodes has 4310 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 298, the mean node degree is 328.32, and
+	the node degree mode is 3. The top 5 most central nodes are 1006004.GBAG_0234
+	(degree 1798), 1006004.GBAG_2084 (degree 1698), 1006004.GBAG_1845 (degree
+	1669), 1006004.GBAG_4198 (degree 1576) and 1006004.GBAG_3692 (degree 1449).
 	
 
 

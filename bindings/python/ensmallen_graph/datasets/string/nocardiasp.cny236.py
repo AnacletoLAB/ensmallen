@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:22.445265
 
-The undirected graph Nocardia sp. CNY236 has 4677 nodes and 496299 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04539 and
-has 40 connected components, where the component with most nodes has 4563 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 212.23, and the node degree mode is 3. The top 5 most central
-nodes are 1169152.AXVD01000013_gene1666 (degree 1584), 1169152.AXVD01000020_gene332
-(degree 1451), 1169152.AXVD01000015_gene1119 (degree 1388), 1169152.AXVD01000017_gene4091
-(degree 1353) and 1169152.AXVD01000021_gene3082 (degree 1230).
+The undirected graph Nocardia sp. CNY236 has 4677 nodes and 496299 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04539 and has 40 connected components, where the component with most
+nodes has 4563 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 212.23, and
+the node degree mode is 3. The top 5 most central nodes are 1169152.AXVD01000013_gene1666
+(degree 1584), 1169152.AXVD01000020_gene332 (degree 1451), 1169152.AXVD01000015_gene1119
+(degree 1388), 1169152.AXVD01000017_gene4091 (degree 1353) and 1169152.AXVD01000021_gene3082
+(degree 1230).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaSp.Cny236(
 	
 	Datetime: 2021-02-02 23:06:22.445265
 	
-	The undirected graph Nocardia sp. CNY236 has 4677 nodes and 496299 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04539 and
-	has 40 connected components, where the component with most nodes has 4563 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 212.23, and the node degree mode is 3. The top 5 most central
-	nodes are 1169152.AXVD01000013_gene1666 (degree 1584), 1169152.AXVD01000020_gene332
-	(degree 1451), 1169152.AXVD01000015_gene1119 (degree 1388), 1169152.AXVD01000017_gene4091
-	(degree 1353) and 1169152.AXVD01000021_gene3082 (degree 1230).
+	The undirected graph Nocardia sp. CNY236 has 4677 nodes and 496299 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04539 and has 40 connected components, where the component with most
+	nodes has 4563 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 212.23, and
+	the node degree mode is 3. The top 5 most central nodes are 1169152.AXVD01000013_gene1666
+	(degree 1584), 1169152.AXVD01000020_gene332 (degree 1451), 1169152.AXVD01000015_gene1119
+	(degree 1388), 1169152.AXVD01000017_gene4091 (degree 1353) and 1169152.AXVD01000021_gene3082
+	(degree 1230).
 	
 
 

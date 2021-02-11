@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:59.373850
 
-The undirected graph Ignavibacterium album has 3169 nodes and 355141 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07075 and
-has 5 connected components, where the component with most nodes has 3152 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 224.13, and the node degree mode is 5. The top 5 most central
-nodes are 945713.IALB_0237 (degree 1426), 945713.IALB_1530 (degree 1413), 945713.IALB_0562
-(degree 1335), 945713.IALB_2949 (degree 1161) and 945713.IALB_0460 (degree 1061).
+The undirected graph Ignavibacterium album has 3169 nodes and 355141 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07075 and has 5 connected components, where the component with most
+nodes has 3152 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 224.13, and
+the node degree mode is 5. The top 5 most central nodes are 945713.IALB_0237
+(degree 1426), 945713.IALB_1530 (degree 1413), 945713.IALB_0562 (degree
+1335), 945713.IALB_2949 (degree 1161) and 945713.IALB_0460 (degree 1061).
 
 
 References
@@ -106,13 +107,14 @@ def IgnavibacteriumAlbum(
 	
 	Datetime: 2021-02-02 22:01:59.373850
 	
-	The undirected graph Ignavibacterium album has 3169 nodes and 355141 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07075 and
-	has 5 connected components, where the component with most nodes has 3152 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 224.13, and the node degree mode is 5. The top 5 most central
-	nodes are 945713.IALB_0237 (degree 1426), 945713.IALB_1530 (degree 1413), 945713.IALB_0562
-	(degree 1335), 945713.IALB_2949 (degree 1161) and 945713.IALB_0460 (degree 1061).
+	The undirected graph Ignavibacterium album has 3169 nodes and 355141 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07075 and has 5 connected components, where the component with most
+	nodes has 3152 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 224.13, and
+	the node degree mode is 5. The top 5 most central nodes are 945713.IALB_0237
+	(degree 1426), 945713.IALB_1530 (degree 1413), 945713.IALB_0562 (degree
+	1335), 945713.IALB_2949 (degree 1161) and 945713.IALB_0460 (degree 1061).
 	
 
 

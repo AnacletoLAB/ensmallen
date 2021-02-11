@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:48.378633
 
-The undirected graph Dictyostelium purpureum has 7408 nodes and 739904 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02697 and
-has 22 connected components, where the component with most nodes has 7362 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 199.76, and the node degree mode is 1. The top 5 most central
-nodes are 5786.XP_003290740.1 (degree 2421), 5786.XP_003289922.1 (degree 1879), 5786.XP_003286088.1
-(degree 1648), 5786.XP_003285647.1 (degree 1421) and 5786.XP_003294084.1 (degree
+The undirected graph Dictyostelium purpureum has 7408 nodes and 739904
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02697 and has 22 connected components, where the component
+with most nodes has 7362 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 199.76,
+and the node degree mode is 1. The top 5 most central nodes are 5786.XP_003290740.1
+(degree 2421), 5786.XP_003289922.1 (degree 1879), 5786.XP_003286088.1 (degree
+1648), 5786.XP_003285647.1 (degree 1421) and 5786.XP_003294084.1 (degree
 1420).
 
 
@@ -107,13 +108,14 @@ def DictyosteliumPurpureum(
 	
 	Datetime: 2021-02-02 17:15:48.378633
 	
-	The undirected graph Dictyostelium purpureum has 7408 nodes and 739904 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02697 and
-	has 22 connected components, where the component with most nodes has 7362 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 199.76, and the node degree mode is 1. The top 5 most central
-	nodes are 5786.XP_003290740.1 (degree 2421), 5786.XP_003289922.1 (degree 1879), 5786.XP_003286088.1
-	(degree 1648), 5786.XP_003285647.1 (degree 1421) and 5786.XP_003294084.1 (degree
+	The undirected graph Dictyostelium purpureum has 7408 nodes and 739904
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02697 and has 22 connected components, where the component
+	with most nodes has 7362 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 199.76,
+	and the node degree mode is 1. The top 5 most central nodes are 5786.XP_003290740.1
+	(degree 2421), 5786.XP_003289922.1 (degree 1879), 5786.XP_003286088.1 (degree
+	1648), 5786.XP_003285647.1 (degree 1421) and 5786.XP_003294084.1 (degree
 	1420).
 	
 

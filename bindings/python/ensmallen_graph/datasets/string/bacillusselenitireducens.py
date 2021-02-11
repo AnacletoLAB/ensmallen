@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:30.885869
 
-The undirected graph Bacillus selenitireducens has 3237 nodes and 300869 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05745
-and has 9 connected components, where the component with most nodes has 3221 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 185.89, and the node degree mode is 3. The top 5
-most central nodes are 439292.Bsel_2398 (degree 1180), 439292.Bsel_1359 (degree 1116),
-439292.Bsel_0872 (degree 1036), 439292.Bsel_2723 (degree 1035) and 439292.Bsel_2368
-(degree 980).
+The undirected graph Bacillus selenitireducens has 3237 nodes and 300869
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05745 and has 9 connected components, where the component
+with most nodes has 3221 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 185.89,
+and the node degree mode is 3. The top 5 most central nodes are 439292.Bsel_2398
+(degree 1180), 439292.Bsel_1359 (degree 1116), 439292.Bsel_0872 (degree
+1036), 439292.Bsel_2723 (degree 1035) and 439292.Bsel_2368 (degree 980).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusSelenitireducens(
 	
 	Datetime: 2021-02-02 20:49:30.885869
 	
-	The undirected graph Bacillus selenitireducens has 3237 nodes and 300869 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05745
-	and has 9 connected components, where the component with most nodes has 3221 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 185.89, and the node degree mode is 3. The top 5
-	most central nodes are 439292.Bsel_2398 (degree 1180), 439292.Bsel_1359 (degree 1116),
-	439292.Bsel_0872 (degree 1036), 439292.Bsel_2723 (degree 1035) and 439292.Bsel_2368
-	(degree 980).
+	The undirected graph Bacillus selenitireducens has 3237 nodes and 300869
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05745 and has 9 connected components, where the component
+	with most nodes has 3221 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 185.89,
+	and the node degree mode is 3. The top 5 most central nodes are 439292.Bsel_2398
+	(degree 1180), 439292.Bsel_1359 (degree 1116), 439292.Bsel_0872 (degree
+	1036), 439292.Bsel_2723 (degree 1035) and 439292.Bsel_2368 (degree 980).
 	
 
 

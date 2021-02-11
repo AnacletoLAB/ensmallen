@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:07.438383
 
-The undirected graph Comamonadaceae bacterium H1 has 2218 nodes and 225033 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09153
-and is connected, as it has a single component. The graph median node degree is 184,
-the mean node degree is 202.92, and the node degree mode is 75. The top 5 most central
-nodes are 1458427.BAWN01000013_gene771 (degree 1036), 1458427.BAWN01000005_gene328
-(degree 887), 1458427.BAWN01000005_gene325 (degree 850), 1458427.BAWN01000032_gene1783
-(degree 842) and 1458427.BAWN01000013_gene860 (degree 787).
+The undirected graph Comamonadaceae bacterium H1 has 2218 nodes and 225033
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09153 and is connected, as it has a single component.
+The graph median node degree is 184, the mean node degree is 202.92, and
+the node degree mode is 75. The top 5 most central nodes are 1458427.BAWN01000013_gene771
+(degree 1036), 1458427.BAWN01000005_gene328 (degree 887), 1458427.BAWN01000005_gene325
+(degree 850), 1458427.BAWN01000032_gene1783 (degree 842) and 1458427.BAWN01000013_gene860
+(degree 787).
 
 
 References
@@ -106,13 +107,14 @@ def ComamonadaceaeBacteriumH1(
 	
 	Datetime: 2021-02-03 23:07:07.438383
 	
-	The undirected graph Comamonadaceae bacterium H1 has 2218 nodes and 225033 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09153
-	and is connected, as it has a single component. The graph median node degree is 184,
-	the mean node degree is 202.92, and the node degree mode is 75. The top 5 most central
-	nodes are 1458427.BAWN01000013_gene771 (degree 1036), 1458427.BAWN01000005_gene328
-	(degree 887), 1458427.BAWN01000005_gene325 (degree 850), 1458427.BAWN01000032_gene1783
-	(degree 842) and 1458427.BAWN01000013_gene860 (degree 787).
+	The undirected graph Comamonadaceae bacterium H1 has 2218 nodes and 225033
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09153 and is connected, as it has a single component.
+	The graph median node degree is 184, the mean node degree is 202.92, and
+	the node degree mode is 75. The top 5 most central nodes are 1458427.BAWN01000013_gene771
+	(degree 1036), 1458427.BAWN01000005_gene328 (degree 887), 1458427.BAWN01000005_gene325
+	(degree 850), 1458427.BAWN01000032_gene1783 (degree 842) and 1458427.BAWN01000013_gene860
+	(degree 787).
 	
 
 

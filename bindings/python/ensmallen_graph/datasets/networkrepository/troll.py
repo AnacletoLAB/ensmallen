@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:19:51.051356
 
-The undirected graph troll has 213453 nodes and 6099282 unweighted edges, of which
-213453 are self-loops. The graph is quite sparse as it has a density of 0.00026 and
-is connected, as it has a single component. The graph median node degree is 54, the
-mean node degree is 56.15, and the node degree mode is 54. The top 5 most central
-nodes are 106263 (degree 387), 106262 (degree 387), 106261 (degree 387), 52680 (degree
-387) and 52679 (degree 387).
+The undirected graph troll has 213453 nodes and 6099282 unweighted edges,
+of which 213453 are self-loops. The graph is quite sparse as it has a density
+of 0.00026 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 56.15, and the node degree mode
+is 54. The top 5 most central nodes are 106263 (degree 387), 106262 (degree
+387), 106261 (degree 387), 52680 (degree 387) and 52679 (degree 387).
 
 
 References
@@ -102,12 +102,12 @@ def Troll(
 	
 	Datetime: 2021-02-06 12:19:51.051356
 	
-	The undirected graph troll has 213453 nodes and 6099282 unweighted edges, of which
-	213453 are self-loops. The graph is quite sparse as it has a density of 0.00026 and
-	is connected, as it has a single component. The graph median node degree is 54, the
-	mean node degree is 56.15, and the node degree mode is 54. The top 5 most central
-	nodes are 106263 (degree 387), 106262 (degree 387), 106261 (degree 387), 52680 (degree
-	387) and 52679 (degree 387).
+	The undirected graph troll has 213453 nodes and 6099282 unweighted edges,
+	of which 213453 are self-loops. The graph is quite sparse as it has a density
+	of 0.00026 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 56.15, and the node degree mode
+	is 54. The top 5 most central nodes are 106263 (degree 387), 106262 (degree
+	387), 106261 (degree 387), 52680 (degree 387) and 52679 (degree 387).
 	
 
 

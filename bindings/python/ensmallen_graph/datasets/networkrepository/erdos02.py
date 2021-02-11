@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:38:47.485045
 
-The undirected graph Erdos02 has 5534 nodes and 8472 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00055 and is connected,
-as it has a single component. The graph median node degree is 1, the mean node degree
-is 3.06, and the node degree mode is 1. The top 5 most central nodes are 6927 (degree
-507), 458 (degree 63), 475 (degree 61), 445 (degree 60) and 157 (degree 50).
+The undirected graph Erdos02 has 5534 nodes and 8472 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00055 and is connected, as it has a single component. The graph median
+node degree is 1, the mean node degree is 3.06, and the node degree mode
+is 1. The top 5 most central nodes are 6927 (degree 507), 458 (degree 63),
+475 (degree 61), 445 (degree 60) and 157 (degree 50).
 
 
 References
@@ -101,11 +102,12 @@ def Erdos02(
 	
 	Datetime: 2021-02-06 06:38:47.485045
 	
-	The undirected graph Erdos02 has 5534 nodes and 8472 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00055 and is connected,
-	as it has a single component. The graph median node degree is 1, the mean node degree
-	is 3.06, and the node degree mode is 1. The top 5 most central nodes are 6927 (degree
-	507), 458 (degree 63), 475 (degree 61), 445 (degree 60) and 157 (degree 50).
+	The undirected graph Erdos02 has 5534 nodes and 8472 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00055 and is connected, as it has a single component. The graph median
+	node degree is 1, the mean node degree is 3.06, and the node degree mode
+	is 1. The top 5 most central nodes are 6927 (degree 507), 458 (degree 63),
+	475 (degree 61), 445 (degree 60) and 157 (degree 50).
 	
 
 

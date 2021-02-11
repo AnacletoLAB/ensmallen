@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:09.572139
 
-The undirected graph Synechococcus elongatus PCC7942 has 2653 nodes and 285279 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08109
-and has 2 connected components, where the component with most nodes has 2651 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 215.06, and the node degree mode is 3. The top 5
-most central nodes are 1140.Synpcc7942_0976 (degree 1058), 1140.Synpcc7942_0194 (degree
-1023), 1140.Synpcc7942_1357 (degree 849), 1140.Synpcc7942_0047 (degree 790) and 1140.Synpcc7942_0189
-(degree 790).
+The undirected graph Synechococcus elongatus PCC7942 has 2653 nodes and
+285279 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08109 and has 2 connected components, where the
+component with most nodes has 2651 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+is 215.06, and the node degree mode is 3. The top 5 most central nodes
+are 1140.Synpcc7942_0976 (degree 1058), 1140.Synpcc7942_0194 (degree 1023),
+1140.Synpcc7942_1357 (degree 849), 1140.Synpcc7942_0047 (degree 790) and
+1140.Synpcc7942_0189 (degree 790).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusElongatusPcc7942(
 	
 	Datetime: 2021-02-02 16:22:09.572139
 	
-	The undirected graph Synechococcus elongatus PCC7942 has 2653 nodes and 285279 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08109
-	and has 2 connected components, where the component with most nodes has 2651 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 215.06, and the node degree mode is 3. The top 5
-	most central nodes are 1140.Synpcc7942_0976 (degree 1058), 1140.Synpcc7942_0194 (degree
-	1023), 1140.Synpcc7942_1357 (degree 849), 1140.Synpcc7942_0047 (degree 790) and 1140.Synpcc7942_0189
-	(degree 790).
+	The undirected graph Synechococcus elongatus PCC7942 has 2653 nodes and
+	285279 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08109 and has 2 connected components, where the
+	component with most nodes has 2651 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 189, the mean node degree
+	is 215.06, and the node degree mode is 3. The top 5 most central nodes
+	are 1140.Synpcc7942_0976 (degree 1058), 1140.Synpcc7942_0194 (degree 1023),
+	1140.Synpcc7942_1357 (degree 849), 1140.Synpcc7942_0047 (degree 790) and
+	1140.Synpcc7942_0189 (degree 790).
 	
 
 

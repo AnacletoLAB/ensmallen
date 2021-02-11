@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:29.572382
 
-The undirected graph Propionimicrobium sp. BV2F7 has 1820 nodes and 112167 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06776
-and has 4 connected components, where the component with most nodes has 1814 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 123.26, and the node degree mode is 7. The top 5 most
-central nodes are 1111131.HMPREF1255_1079 (degree 770), 1111131.HMPREF1255_1201 (degree
-668), 1111131.HMPREF1255_0222 (degree 666), 1111131.HMPREF1255_0279 (degree 655)
-and 1111131.HMPREF1255_0381 (degree 646).
+The undirected graph Propionimicrobium sp. BV2F7 has 1820 nodes and 112167
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06776 and has 4 connected components, where the component
+with most nodes has 1814 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 123.26,
+and the node degree mode is 7. The top 5 most central nodes are 1111131.HMPREF1255_1079
+(degree 770), 1111131.HMPREF1255_1201 (degree 668), 1111131.HMPREF1255_0222
+(degree 666), 1111131.HMPREF1255_0279 (degree 655) and 1111131.HMPREF1255_0381
+(degree 646).
 
 
 References
@@ -107,14 +108,15 @@ def PropionimicrobiumSp.Bv2f7(
 	
 	Datetime: 2021-02-02 22:25:29.572382
 	
-	The undirected graph Propionimicrobium sp. BV2F7 has 1820 nodes and 112167 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06776
-	and has 4 connected components, where the component with most nodes has 1814 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 123.26, and the node degree mode is 7. The top 5 most
-	central nodes are 1111131.HMPREF1255_1079 (degree 770), 1111131.HMPREF1255_1201 (degree
-	668), 1111131.HMPREF1255_0222 (degree 666), 1111131.HMPREF1255_0279 (degree 655)
-	and 1111131.HMPREF1255_0381 (degree 646).
+	The undirected graph Propionimicrobium sp. BV2F7 has 1820 nodes and 112167
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06776 and has 4 connected components, where the component
+	with most nodes has 1814 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 123.26,
+	and the node degree mode is 7. The top 5 most central nodes are 1111131.HMPREF1255_1079
+	(degree 770), 1111131.HMPREF1255_1201 (degree 668), 1111131.HMPREF1255_0222
+	(degree 666), 1111131.HMPREF1255_0279 (degree 655) and 1111131.HMPREF1255_0381
+	(degree 646).
 	
 
 

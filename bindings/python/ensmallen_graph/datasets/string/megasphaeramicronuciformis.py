@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:13.301337
 
-The undirected graph Megasphaera micronuciformis has 1767 nodes and 105501 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06762
-and has 7 connected components, where the component with most nodes has 1744 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 119.41, and the node degree mode is 3. The top 5 most
-central nodes are 706434.HMPREF9429_00999 (degree 705), 706434.HMPREF9429_00418 (degree
-666), 706434.HMPREF9429_01619 (degree 644), 706434.HMPREF9429_00576 (degree 629)
-and 706434.HMPREF9429_01281 (degree 581).
+The undirected graph Megasphaera micronuciformis has 1767 nodes and 105501
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06762 and has 7 connected components, where the component
+with most nodes has 1744 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 119.41,
+and the node degree mode is 3. The top 5 most central nodes are 706434.HMPREF9429_00999
+(degree 705), 706434.HMPREF9429_00418 (degree 666), 706434.HMPREF9429_01619
+(degree 644), 706434.HMPREF9429_00576 (degree 629) and 706434.HMPREF9429_01281
+(degree 581).
 
 
 References
@@ -107,14 +108,15 @@ def MegasphaeraMicronuciformis(
 	
 	Datetime: 2021-02-02 21:34:13.301337
 	
-	The undirected graph Megasphaera micronuciformis has 1767 nodes and 105501 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06762
-	and has 7 connected components, where the component with most nodes has 1744 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 119.41, and the node degree mode is 3. The top 5 most
-	central nodes are 706434.HMPREF9429_00999 (degree 705), 706434.HMPREF9429_00418 (degree
-	666), 706434.HMPREF9429_01619 (degree 644), 706434.HMPREF9429_00576 (degree 629)
-	and 706434.HMPREF9429_01281 (degree 581).
+	The undirected graph Megasphaera micronuciformis has 1767 nodes and 105501
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06762 and has 7 connected components, where the component
+	with most nodes has 1744 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 119.41,
+	and the node degree mode is 3. The top 5 most central nodes are 706434.HMPREF9429_00999
+	(degree 705), 706434.HMPREF9429_00418 (degree 666), 706434.HMPREF9429_01619
+	(degree 644), 706434.HMPREF9429_00576 (degree 629) and 706434.HMPREF9429_01281
+	(degree 581).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:31.639036
 
-The undirected graph Azoarcus sp. KH32C has 5162 nodes and 825523 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06197 and
-has 11 connected components, where the component with most nodes has 5138 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 319.85, and the node degree mode is 2. The top 5 most central
-nodes are 748247.AZKH_3960 (degree 2485), 748247.AZKH_0590 (degree 2417), 748247.AZKH_3316
-(degree 2362), 748247.AZKH_1499 (degree 2333) and 748247.AZKH_3325 (degree 2115).
+The undirected graph Azoarcus sp. KH32C has 5162 nodes and 825523 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06197 and has 11 connected components, where the component with most
+nodes has 5138 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 319.85, and
+the node degree mode is 2. The top 5 most central nodes are 748247.AZKH_3960
+(degree 2485), 748247.AZKH_0590 (degree 2417), 748247.AZKH_3316 (degree
+2362), 748247.AZKH_1499 (degree 2333) and 748247.AZKH_3325 (degree 2115).
 
 
 References
@@ -106,13 +107,14 @@ def AzoarcusSp.Kh32c(
 	
 	Datetime: 2021-02-02 21:39:31.639036
 	
-	The undirected graph Azoarcus sp. KH32C has 5162 nodes and 825523 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06197 and
-	has 11 connected components, where the component with most nodes has 5138 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 319.85, and the node degree mode is 2. The top 5 most central
-	nodes are 748247.AZKH_3960 (degree 2485), 748247.AZKH_0590 (degree 2417), 748247.AZKH_3316
-	(degree 2362), 748247.AZKH_1499 (degree 2333) and 748247.AZKH_3325 (degree 2115).
+	The undirected graph Azoarcus sp. KH32C has 5162 nodes and 825523 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06197 and has 11 connected components, where the component with most
+	nodes has 5138 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 319.85, and
+	the node degree mode is 2. The top 5 most central nodes are 748247.AZKH_3960
+	(degree 2485), 748247.AZKH_0590 (degree 2417), 748247.AZKH_3316 (degree
+	2362), 748247.AZKH_1499 (degree 2333) and 748247.AZKH_3325 (degree 2115).
 	
 
 

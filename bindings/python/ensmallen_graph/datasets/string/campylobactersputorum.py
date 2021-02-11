@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:02:35.040470
 
-The undirected graph Campylobacter sputorum has 1898 nodes and 119510 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06639 and
-has 17 connected components, where the component with most nodes has 1843 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 101,
-the mean node degree is 125.93, and the node degree mode is 7. The top 5 most central
-nodes are 32024.JMTI01000043_gene1465 (degree 783), 32024.JMTI01000029_gene10 (degree
-692), 32024.JMTI01000029_gene19 (degree 692), 32024.JMTI01000041_gene773 (degree
-621) and 32024.JMTI01000004_gene1742 (degree 614).
+The undirected graph Campylobacter sputorum has 1898 nodes and 119510 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06639 and has 17 connected components, where the component with most
+nodes has 1843 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 101, the mean node degree is 125.93, and
+the node degree mode is 7. The top 5 most central nodes are 32024.JMTI01000043_gene1465
+(degree 783), 32024.JMTI01000029_gene10 (degree 692), 32024.JMTI01000029_gene19
+(degree 692), 32024.JMTI01000041_gene773 (degree 621) and 32024.JMTI01000004_gene1742
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterSputorum(
 	
 	Datetime: 2021-02-02 18:02:35.040470
 	
-	The undirected graph Campylobacter sputorum has 1898 nodes and 119510 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06639 and
-	has 17 connected components, where the component with most nodes has 1843 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 101,
-	the mean node degree is 125.93, and the node degree mode is 7. The top 5 most central
-	nodes are 32024.JMTI01000043_gene1465 (degree 783), 32024.JMTI01000029_gene10 (degree
-	692), 32024.JMTI01000029_gene19 (degree 692), 32024.JMTI01000041_gene773 (degree
-	621) and 32024.JMTI01000004_gene1742 (degree 614).
+	The undirected graph Campylobacter sputorum has 1898 nodes and 119510 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06639 and has 17 connected components, where the component with most
+	nodes has 1843 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 101, the mean node degree is 125.93, and
+	the node degree mode is 7. The top 5 most central nodes are 32024.JMTI01000043_gene1465
+	(degree 783), 32024.JMTI01000029_gene10 (degree 692), 32024.JMTI01000029_gene19
+	(degree 692), 32024.JMTI01000041_gene773 (degree 621) and 32024.JMTI01000004_gene1742
+	(degree 614).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:56.825295
 
-The undirected graph Streptococcus infantarius has 1891 nodes and 99152 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05549
-and has 10 connected components, where the component with most nodes has 1869 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 79, the mean node degree is 104.87, and the node degree mode is 3. The top 5 most
-central nodes are 1069533.Sinf_1851 (degree 839), 1069533.Sinf_1955 (degree 629),
-1069533.Sinf_0865 (degree 616), 1069533.Sinf_1468 (degree 576) and 1069533.Sinf_0404
-(degree 574).
+The undirected graph Streptococcus infantarius has 1891 nodes and 99152
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05549 and has 10 connected components, where the component
+with most nodes has 1869 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 104.87,
+and the node degree mode is 3. The top 5 most central nodes are 1069533.Sinf_1851
+(degree 839), 1069533.Sinf_1955 (degree 629), 1069533.Sinf_0865 (degree
+616), 1069533.Sinf_1468 (degree 576) and 1069533.Sinf_0404 (degree 574).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusInfantarius(
 	
 	Datetime: 2021-02-02 22:18:56.825295
 	
-	The undirected graph Streptococcus infantarius has 1891 nodes and 99152 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05549
-	and has 10 connected components, where the component with most nodes has 1869 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 79, the mean node degree is 104.87, and the node degree mode is 3. The top 5 most
-	central nodes are 1069533.Sinf_1851 (degree 839), 1069533.Sinf_1955 (degree 629),
-	1069533.Sinf_0865 (degree 616), 1069533.Sinf_1468 (degree 576) and 1069533.Sinf_0404
-	(degree 574).
+	The undirected graph Streptococcus infantarius has 1891 nodes and 99152
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05549 and has 10 connected components, where the component
+	with most nodes has 1869 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 104.87,
+	and the node degree mode is 3. The top 5 most central nodes are 1069533.Sinf_1851
+	(degree 839), 1069533.Sinf_1955 (degree 629), 1069533.Sinf_0865 (degree
+	616), 1069533.Sinf_1468 (degree 576) and 1069533.Sinf_0404 (degree 574).
 	
 
 

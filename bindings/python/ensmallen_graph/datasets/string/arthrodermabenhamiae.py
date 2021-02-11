@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:55.298967
 
-The undirected graph Arthroderma benhamiae has 5732 nodes and 427929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02605 and
-has 36 connected components, where the component with most nodes has 5661 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 149.31, and the node degree mode is 1. The top 5 most central
-nodes are 63400.XP_003014928.1 (degree 1375), 63400.XP_003012948.1 (degree 1063),
-63400.XP_003011580.1 (degree 1029), 63400.XP_003016515.1 (degree 952) and 63400.XP_003010942.1
+The undirected graph Arthroderma benhamiae has 5732 nodes and 427929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02605 and has 36 connected components, where the component with most
+nodes has 5661 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 149.31, and
+the node degree mode is 1. The top 5 most central nodes are 63400.XP_003014928.1
+(degree 1375), 63400.XP_003012948.1 (degree 1063), 63400.XP_003011580.1
+(degree 1029), 63400.XP_003016515.1 (degree 952) and 63400.XP_003010942.1
 (degree 933).
 
 
@@ -107,13 +108,14 @@ def ArthrodermaBenhamiae(
 	
 	Datetime: 2021-02-02 18:23:55.298967
 	
-	The undirected graph Arthroderma benhamiae has 5732 nodes and 427929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02605 and
-	has 36 connected components, where the component with most nodes has 5661 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 149.31, and the node degree mode is 1. The top 5 most central
-	nodes are 63400.XP_003014928.1 (degree 1375), 63400.XP_003012948.1 (degree 1063),
-	63400.XP_003011580.1 (degree 1029), 63400.XP_003016515.1 (degree 952) and 63400.XP_003010942.1
+	The undirected graph Arthroderma benhamiae has 5732 nodes and 427929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02605 and has 36 connected components, where the component with most
+	nodes has 5661 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 149.31, and
+	the node degree mode is 1. The top 5 most central nodes are 63400.XP_003014928.1
+	(degree 1375), 63400.XP_003012948.1 (degree 1063), 63400.XP_003011580.1
+	(degree 1029), 63400.XP_003016515.1 (degree 952) and 63400.XP_003010942.1
 	(degree 933).
 	
 

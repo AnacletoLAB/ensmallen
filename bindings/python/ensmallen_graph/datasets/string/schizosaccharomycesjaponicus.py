@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:52.764899
 
-The undirected graph Schizosaccharomyces japonicus has 4148 nodes and 623653 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07251
-and is connected, as it has a single component. The graph median node degree is 250,
-the mean node degree is 300.70, and the node degree mode is 1. The top 5 most central
-nodes are 4897.EEB05603 (degree 1461), 4897.EEB06413 (degree 1389), 4897.EEB09423
-(degree 1314), 4897.EEB06666 (degree 1263) and 4897.EEB05438 (degree 1207).
+The undirected graph Schizosaccharomyces japonicus has 4148 nodes and 623653
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07251 and is connected, as it has a single component.
+The graph median node degree is 250, the mean node degree is 300.70, and
+the node degree mode is 1. The top 5 most central nodes are 4897.EEB05603
+(degree 1461), 4897.EEB06413 (degree 1389), 4897.EEB09423 (degree 1314),
+4897.EEB06666 (degree 1263) and 4897.EEB05438 (degree 1207).
 
 
 References
@@ -105,12 +106,13 @@ def SchizosaccharomycesJaponicus(
 	
 	Datetime: 2021-02-02 17:10:52.764899
 	
-	The undirected graph Schizosaccharomyces japonicus has 4148 nodes and 623653 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07251
-	and is connected, as it has a single component. The graph median node degree is 250,
-	the mean node degree is 300.70, and the node degree mode is 1. The top 5 most central
-	nodes are 4897.EEB05603 (degree 1461), 4897.EEB06413 (degree 1389), 4897.EEB09423
-	(degree 1314), 4897.EEB06666 (degree 1263) and 4897.EEB05438 (degree 1207).
+	The undirected graph Schizosaccharomyces japonicus has 4148 nodes and 623653
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07251 and is connected, as it has a single component.
+	The graph median node degree is 250, the mean node degree is 300.70, and
+	the node degree mode is 1. The top 5 most central nodes are 4897.EEB05603
+	(degree 1461), 4897.EEB06413 (degree 1389), 4897.EEB09423 (degree 1314),
+	4897.EEB06666 (degree 1263) and 4897.EEB05438 (degree 1207).
 	
 
 

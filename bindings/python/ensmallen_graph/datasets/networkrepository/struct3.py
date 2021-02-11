@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:29:49.815099
 
-The undirected graph struct3 has 53570 nodes and 613632 unweighted edges, of which
-53570 are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-has 2 connected components, where the component with most nodes has 32142 nodes and
-the component with the least nodes has 21428 nodes. The graph median node degree
-is 23, the mean node degree is 21.91, and the node degree mode is 27. The top 5 most
-central nodes are 53105 (degree 27), 53103 (degree 27), 53099 (degree 27), 53098
-(degree 27) and 53095 (degree 27).
+The undirected graph struct3 has 53570 nodes and 613632 unweighted edges,
+of which 53570 are self-loops. The graph is quite sparse as it has a density
+of 0.00041 and has 2 connected components, where the component with most
+nodes has 32142 nodes and the component with the least nodes has 21428
+nodes. The graph median node degree is 23, the mean node degree is 21.91,
+and the node degree mode is 27. The top 5 most central nodes are 53105
+(degree 27), 53103 (degree 27), 53099 (degree 27), 53098 (degree 27) and
+53095 (degree 27).
 
 
 References
@@ -103,13 +104,14 @@ def Struct3(
 	
 	Datetime: 2021-02-06 11:29:49.815099
 	
-	The undirected graph struct3 has 53570 nodes and 613632 unweighted edges, of which
-	53570 are self-loops. The graph is quite sparse as it has a density of 0.00041 and
-	has 2 connected components, where the component with most nodes has 32142 nodes and
-	the component with the least nodes has 21428 nodes. The graph median node degree
-	is 23, the mean node degree is 21.91, and the node degree mode is 27. The top 5 most
-	central nodes are 53105 (degree 27), 53103 (degree 27), 53099 (degree 27), 53098
-	(degree 27) and 53095 (degree 27).
+	The undirected graph struct3 has 53570 nodes and 613632 unweighted edges,
+	of which 53570 are self-loops. The graph is quite sparse as it has a density
+	of 0.00041 and has 2 connected components, where the component with most
+	nodes has 32142 nodes and the component with the least nodes has 21428
+	nodes. The graph median node degree is 23, the mean node degree is 21.91,
+	and the node degree mode is 27. The top 5 most central nodes are 53105
+	(degree 27), 53103 (degree 27), 53099 (degree 27), 53098 (degree 27) and
+	53095 (degree 27).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:26:41.906175
 
-The undirected graph socfb-A-anon has 3097165 nodes and 23667394 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 15.28, and the node degree mode is 1. The top 5 most
-central nodes are 18636 (degree 4915), 77400 (degree 4895), 1104 (degree 4866), 104833
-(degree 4533) and 43620 (degree 4047).
+The undirected graph socfb-A-anon has 3097165 nodes and 23667394 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 15.28, and the
+node degree mode is 1. The top 5 most central nodes are 18636 (degree 4915),
+77400 (degree 4895), 1104 (degree 4866), 104833 (degree 4533) and 43620
+(degree 4047).
 
 
 References
@@ -123,12 +124,13 @@ def SocfbAAnon(
 	
 	Datetime: 2021-02-07 16:26:41.906175
 	
-	The undirected graph socfb-A-anon has 3097165 nodes and 23667394 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 15.28, and the node degree mode is 1. The top 5 most
-	central nodes are 18636 (degree 4915), 77400 (degree 4895), 1104 (degree 4866), 104833
-	(degree 4533) and 43620 (degree 4047).
+	The undirected graph socfb-A-anon has 3097165 nodes and 23667394 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 15.28, and the
+	node degree mode is 1. The top 5 most central nodes are 18636 (degree 4915),
+	77400 (degree 4895), 1104 (degree 4866), 104833 (degree 4533) and 43620
+	(degree 4047).
 	
 
 

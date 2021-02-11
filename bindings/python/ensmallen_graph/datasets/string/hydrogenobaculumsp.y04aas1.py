@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:54.771083
 
-The undirected graph Hydrogenobaculum sp. Y04AAS1 has 1620 nodes and 96954 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07393
-and is connected, as it has a single component. The graph median node degree is 92,
-the mean node degree is 119.70, and the node degree mode is 13. The top 5 most central
-nodes are 380749.HY04AAS1_0614 (degree 644), 380749.HY04AAS1_1532 (degree 623), 380749.HY04AAS1_0645
-(degree 619), 380749.HY04AAS1_1409 (degree 618) and 380749.HY04AAS1_0967 (degree
+The undirected graph Hydrogenobaculum sp. Y04AAS1 has 1620 nodes and 96954
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07393 and is connected, as it has a single component.
+The graph median node degree is 92, the mean node degree is 119.70, and
+the node degree mode is 13. The top 5 most central nodes are 380749.HY04AAS1_0614
+(degree 644), 380749.HY04AAS1_1532 (degree 623), 380749.HY04AAS1_0645 (degree
+619), 380749.HY04AAS1_1409 (degree 618) and 380749.HY04AAS1_0967 (degree
 584).
 
 
@@ -106,12 +107,13 @@ def HydrogenobaculumSp.Y04aas1(
 	
 	Datetime: 2021-02-02 20:36:54.771083
 	
-	The undirected graph Hydrogenobaculum sp. Y04AAS1 has 1620 nodes and 96954 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07393
-	and is connected, as it has a single component. The graph median node degree is 92,
-	the mean node degree is 119.70, and the node degree mode is 13. The top 5 most central
-	nodes are 380749.HY04AAS1_0614 (degree 644), 380749.HY04AAS1_1532 (degree 623), 380749.HY04AAS1_0645
-	(degree 619), 380749.HY04AAS1_1409 (degree 618) and 380749.HY04AAS1_0967 (degree
+	The undirected graph Hydrogenobaculum sp. Y04AAS1 has 1620 nodes and 96954
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07393 and is connected, as it has a single component.
+	The graph median node degree is 92, the mean node degree is 119.70, and
+	the node degree mode is 13. The top 5 most central nodes are 380749.HY04AAS1_0614
+	(degree 644), 380749.HY04AAS1_1532 (degree 623), 380749.HY04AAS1_0645 (degree
+	619), 380749.HY04AAS1_1409 (degree 618) and 380749.HY04AAS1_0967 (degree
 	584).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:54:49.728376
 
-The undirected graph Naumovozyma dairenensis has 5161 nodes and 591193 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04440 and
-is connected, as it has a single component. The graph median node degree is 172,
-the mean node degree is 229.10, and the node degree mode is 23. The top 5 most central
-nodes are 27289.XP_003670314.1 (degree 1357), 27289.XP_003669812.1 (degree 1354),
-27289.XP_003671324.2 (degree 1292), 27289.XP_003667614.1 (degree 1154) and 27289.XP_003671915.1
+The undirected graph Naumovozyma dairenensis has 5161 nodes and 591193
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04440 and is connected, as it has a single component.
+The graph median node degree is 172, the mean node degree is 229.10, and
+the node degree mode is 23. The top 5 most central nodes are 27289.XP_003670314.1
+(degree 1357), 27289.XP_003669812.1 (degree 1354), 27289.XP_003671324.2
+(degree 1292), 27289.XP_003667614.1 (degree 1154) and 27289.XP_003671915.1
 (degree 1150).
 
 
@@ -106,12 +107,13 @@ def NaumovozymaDairenensis(
 	
 	Datetime: 2021-02-02 17:54:49.728376
 	
-	The undirected graph Naumovozyma dairenensis has 5161 nodes and 591193 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04440 and
-	is connected, as it has a single component. The graph median node degree is 172,
-	the mean node degree is 229.10, and the node degree mode is 23. The top 5 most central
-	nodes are 27289.XP_003670314.1 (degree 1357), 27289.XP_003669812.1 (degree 1354),
-	27289.XP_003671324.2 (degree 1292), 27289.XP_003667614.1 (degree 1154) and 27289.XP_003671915.1
+	The undirected graph Naumovozyma dairenensis has 5161 nodes and 591193
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04440 and is connected, as it has a single component.
+	The graph median node degree is 172, the mean node degree is 229.10, and
+	the node degree mode is 23. The top 5 most central nodes are 27289.XP_003670314.1
+	(degree 1357), 27289.XP_003669812.1 (degree 1354), 27289.XP_003671324.2
+	(degree 1292), 27289.XP_003667614.1 (degree 1154) and 27289.XP_003671915.1
 	(degree 1150).
 	
 

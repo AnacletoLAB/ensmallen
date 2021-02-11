@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:39.033288
 
-The undirected graph Clostridiales bacterium NK3B98 has 2457 nodes and 185885 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06161
-and has 10 connected components, where the component with most nodes has 2438 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 151.31, and the node degree mode is 1. The top 5
-most central nodes are 877414.ATWA01000009_gene2458 (degree 994), 877414.ATWA01000025_gene315
+The undirected graph Clostridiales bacterium NK3B98 has 2457 nodes and
+185885 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06161 and has 10 connected components, where the
+component with most nodes has 2438 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 151.31, and the node degree mode is 1. The top 5 most central nodes
+are 877414.ATWA01000009_gene2458 (degree 994), 877414.ATWA01000025_gene315
 (degree 935), 877414.ATWA01000004_gene603 (degree 806), 877414.ATWA01000002_gene1108
 (degree 770) and 877414.ATWA01000023_gene1647 (degree 751).
 
@@ -107,12 +108,13 @@ def ClostridialesBacteriumNk3b98(
 	
 	Datetime: 2021-02-02 21:49:39.033288
 	
-	The undirected graph Clostridiales bacterium NK3B98 has 2457 nodes and 185885 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06161
-	and has 10 connected components, where the component with most nodes has 2438 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 151.31, and the node degree mode is 1. The top 5
-	most central nodes are 877414.ATWA01000009_gene2458 (degree 994), 877414.ATWA01000025_gene315
+	The undirected graph Clostridiales bacterium NK3B98 has 2457 nodes and
+	185885 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06161 and has 10 connected components, where the
+	component with most nodes has 2438 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 151.31, and the node degree mode is 1. The top 5 most central nodes
+	are 877414.ATWA01000009_gene2458 (degree 994), 877414.ATWA01000025_gene315
 	(degree 935), 877414.ATWA01000004_gene603 (degree 806), 877414.ATWA01000002_gene1108
 	(degree 770) and 877414.ATWA01000023_gene1647 (degree 751).
 	

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:02.479093
 
-The undirected graph Acetobacter pasteurianus 3P3 has 2724 nodes and 217917 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05876
-and has 18 connected components, where the component with most nodes has 2678 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 160.00, and the node degree mode is 3. The top 5
-most central nodes are 940282.CADQ01000003_gene497 (degree 1053), 940282.CADQ01000004_gene263
-(degree 940), 940282.CADQ01000013_gene2568 (degree 925), 940282.CADQ01000016_gene2325
-(degree 863) and 940282.CADQ01000001_gene518 (degree 850).
+The undirected graph Acetobacter pasteurianus 3P3 has 2724 nodes and 217917
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05876 and has 18 connected components, where the component
+with most nodes has 2678 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 160.00,
+and the node degree mode is 3. The top 5 most central nodes are 940282.CADQ01000003_gene497
+(degree 1053), 940282.CADQ01000004_gene263 (degree 940), 940282.CADQ01000013_gene2568
+(degree 925), 940282.CADQ01000016_gene2325 (degree 863) and 940282.CADQ01000001_gene518
+(degree 850).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterPasteurianus3p3(
 	
 	Datetime: 2021-02-02 22:01:02.479093
 	
-	The undirected graph Acetobacter pasteurianus 3P3 has 2724 nodes and 217917 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05876
-	and has 18 connected components, where the component with most nodes has 2678 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 160.00, and the node degree mode is 3. The top 5
-	most central nodes are 940282.CADQ01000003_gene497 (degree 1053), 940282.CADQ01000004_gene263
-	(degree 940), 940282.CADQ01000013_gene2568 (degree 925), 940282.CADQ01000016_gene2325
-	(degree 863) and 940282.CADQ01000001_gene518 (degree 850).
+	The undirected graph Acetobacter pasteurianus 3P3 has 2724 nodes and 217917
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05876 and has 18 connected components, where the component
+	with most nodes has 2678 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 160.00,
+	and the node degree mode is 3. The top 5 most central nodes are 940282.CADQ01000003_gene497
+	(degree 1053), 940282.CADQ01000004_gene263 (degree 940), 940282.CADQ01000013_gene2568
+	(degree 925), 940282.CADQ01000016_gene2325 (degree 863) and 940282.CADQ01000001_gene518
+	(degree 850).
 	
 
 

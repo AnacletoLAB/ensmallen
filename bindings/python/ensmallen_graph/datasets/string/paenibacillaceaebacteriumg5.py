@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:03:54.720709
 
-The undirected graph Paenibacillaceae bacterium G5 has 4748 nodes and 755000 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06700
-and has 7 connected components, where the component with most nodes has 4735 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 284, the mean node degree is 318.03, and the node degree mode is 2. The top 5
-most central nodes are 1280390.CBQR020000149_gene3832 (degree 1598), 1280390.CBQR020000162_gene4317
-(degree 1581), 1280390.CBQR020000005_gene115 (degree 1442), 1280390.CBQR020000151_gene4018
-(degree 1376) and 1280390.CBQR020000071_gene1479 (degree 1376).
+The undirected graph Paenibacillaceae bacterium G5 has 4748 nodes and 755000
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06700 and has 7 connected components, where the component
+with most nodes has 4735 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 284, the mean node degree is 318.03,
+and the node degree mode is 2. The top 5 most central nodes are 1280390.CBQR020000149_gene3832
+(degree 1598), 1280390.CBQR020000162_gene4317 (degree 1581), 1280390.CBQR020000005_gene115
+(degree 1442), 1280390.CBQR020000151_gene4018 (degree 1376) and 1280390.CBQR020000071_gene1479
+(degree 1376).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillaceaeBacteriumG5(
 	
 	Datetime: 2021-02-03 21:03:54.720709
 	
-	The undirected graph Paenibacillaceae bacterium G5 has 4748 nodes and 755000 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06700
-	and has 7 connected components, where the component with most nodes has 4735 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 284, the mean node degree is 318.03, and the node degree mode is 2. The top 5
-	most central nodes are 1280390.CBQR020000149_gene3832 (degree 1598), 1280390.CBQR020000162_gene4317
-	(degree 1581), 1280390.CBQR020000005_gene115 (degree 1442), 1280390.CBQR020000151_gene4018
-	(degree 1376) and 1280390.CBQR020000071_gene1479 (degree 1376).
+	The undirected graph Paenibacillaceae bacterium G5 has 4748 nodes and 755000
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06700 and has 7 connected components, where the component
+	with most nodes has 4735 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 284, the mean node degree is 318.03,
+	and the node degree mode is 2. The top 5 most central nodes are 1280390.CBQR020000149_gene3832
+	(degree 1598), 1280390.CBQR020000162_gene4317 (degree 1581), 1280390.CBQR020000005_gene115
+	(degree 1442), 1280390.CBQR020000151_gene4018 (degree 1376) and 1280390.CBQR020000071_gene1479
+	(degree 1376).
 	
 
 

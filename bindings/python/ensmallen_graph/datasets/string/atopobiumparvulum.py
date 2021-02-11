@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:56.250316
 
-The undirected graph Atopobium parvulum has 1348 nodes and 83019 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09144 and
-has 2 connected components, where the component with most nodes has 1346 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 123.17, and the node degree mode is 26. The top 5 most central
-nodes are 521095.Apar_0181 (degree 754), 521095.Apar_1104 (degree 702), 521095.Apar_0834
-(degree 670), 521095.Apar_0189 (degree 585) and 521095.Apar_0725 (degree 565).
+The undirected graph Atopobium parvulum has 1348 nodes and 83019 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09144 and has 2 connected components, where the component with most
+nodes has 1346 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 123.17, and
+the node degree mode is 26. The top 5 most central nodes are 521095.Apar_0181
+(degree 754), 521095.Apar_1104 (degree 702), 521095.Apar_0834 (degree 670),
+521095.Apar_0189 (degree 585) and 521095.Apar_0725 (degree 565).
 
 
 References
@@ -106,13 +107,14 @@ def AtopobiumParvulum(
 	
 	Datetime: 2021-02-02 21:03:56.250316
 	
-	The undirected graph Atopobium parvulum has 1348 nodes and 83019 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09144 and
-	has 2 connected components, where the component with most nodes has 1346 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 123.17, and the node degree mode is 26. The top 5 most central
-	nodes are 521095.Apar_0181 (degree 754), 521095.Apar_1104 (degree 702), 521095.Apar_0834
-	(degree 670), 521095.Apar_0189 (degree 585) and 521095.Apar_0725 (degree 565).
+	The undirected graph Atopobium parvulum has 1348 nodes and 83019 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09144 and has 2 connected components, where the component with most
+	nodes has 1346 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 123.17, and
+	the node degree mode is 26. The top 5 most central nodes are 521095.Apar_0181
+	(degree 754), 521095.Apar_1104 (degree 702), 521095.Apar_0834 (degree 670),
+	521095.Apar_0189 (degree 585) and 521095.Apar_0725 (degree 565).
 	
 
 

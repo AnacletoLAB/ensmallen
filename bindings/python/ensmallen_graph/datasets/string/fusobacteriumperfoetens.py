@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:28.080830
 
-The undirected graph Fusobacterium perfoetens has 1935 nodes and 140729 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07521
-and has 5 connected components, where the component with most nodes has 1927 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 145.46, and the node degree mode is 1. The top 5
-most central nodes are 1408439.JHXW01000003_gene1638 (degree 864), 1408439.JHXW01000001_gene1827
-(degree 837), 1408439.JHXW01000006_gene963 (degree 719), 1408439.JHXW01000002_gene788
-(degree 648) and 1408439.JHXW01000001_gene1854 (degree 610).
+The undirected graph Fusobacterium perfoetens has 1935 nodes and 140729
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07521 and has 5 connected components, where the component
+with most nodes has 1927 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 145.46,
+and the node degree mode is 1. The top 5 most central nodes are 1408439.JHXW01000003_gene1638
+(degree 864), 1408439.JHXW01000001_gene1827 (degree 837), 1408439.JHXW01000006_gene963
+(degree 719), 1408439.JHXW01000002_gene788 (degree 648) and 1408439.JHXW01000001_gene1854
+(degree 610).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumPerfoetens(
 	
 	Datetime: 2021-02-03 22:37:28.080830
 	
-	The undirected graph Fusobacterium perfoetens has 1935 nodes and 140729 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07521
-	and has 5 connected components, where the component with most nodes has 1927 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 145.46, and the node degree mode is 1. The top 5
-	most central nodes are 1408439.JHXW01000003_gene1638 (degree 864), 1408439.JHXW01000001_gene1827
-	(degree 837), 1408439.JHXW01000006_gene963 (degree 719), 1408439.JHXW01000002_gene788
-	(degree 648) and 1408439.JHXW01000001_gene1854 (degree 610).
+	The undirected graph Fusobacterium perfoetens has 1935 nodes and 140729
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07521 and has 5 connected components, where the component
+	with most nodes has 1927 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 145.46,
+	and the node degree mode is 1. The top 5 most central nodes are 1408439.JHXW01000003_gene1638
+	(degree 864), 1408439.JHXW01000001_gene1827 (degree 837), 1408439.JHXW01000006_gene963
+	(degree 719), 1408439.JHXW01000002_gene788 (degree 648) and 1408439.JHXW01000001_gene1854
+	(degree 610).
 	
 
 

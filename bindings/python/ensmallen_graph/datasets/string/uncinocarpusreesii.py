@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:48.710957
 
-The undirected graph Uncinocarpus reesii has 5497 nodes and 437397 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02896 and
-has 22 connected components, where the component with most nodes has 5453 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 159.14, and the node degree mode is 1. The top 5 most central
-nodes are 33188.XP_002542695.1 (degree 1938), 33188.XP_002544133.1 (degree 1377),
-33188.XP_002544483.1 (degree 1091), 33188.XP_002585238.1 (degree 960) and 33188.XP_002582322.1
+The undirected graph Uncinocarpus reesii has 5497 nodes and 437397 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02896 and has 22 connected components, where the component with most
+nodes has 5453 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 159.14, and
+the node degree mode is 1. The top 5 most central nodes are 33188.XP_002542695.1
+(degree 1938), 33188.XP_002544133.1 (degree 1377), 33188.XP_002544483.1
+(degree 1091), 33188.XP_002585238.1 (degree 960) and 33188.XP_002582322.1
 (degree 942).
 
 
@@ -107,13 +108,14 @@ def UncinocarpusReesii(
 	
 	Datetime: 2021-02-02 18:03:48.710957
 	
-	The undirected graph Uncinocarpus reesii has 5497 nodes and 437397 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02896 and
-	has 22 connected components, where the component with most nodes has 5453 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 159.14, and the node degree mode is 1. The top 5 most central
-	nodes are 33188.XP_002542695.1 (degree 1938), 33188.XP_002544133.1 (degree 1377),
-	33188.XP_002544483.1 (degree 1091), 33188.XP_002585238.1 (degree 960) and 33188.XP_002582322.1
+	The undirected graph Uncinocarpus reesii has 5497 nodes and 437397 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02896 and has 22 connected components, where the component with most
+	nodes has 5453 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 159.14, and
+	the node degree mode is 1. The top 5 most central nodes are 33188.XP_002542695.1
+	(degree 1938), 33188.XP_002544133.1 (degree 1377), 33188.XP_002544483.1
+	(degree 1091), 33188.XP_002585238.1 (degree 960) and 33188.XP_002582322.1
 	(degree 942).
 	
 

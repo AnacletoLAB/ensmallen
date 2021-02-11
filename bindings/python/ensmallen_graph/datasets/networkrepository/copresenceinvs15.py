@@ -11,12 +11,13 @@ had the following characteristics:
 Datetime: 2021-02-03 23:41:38.737094
 
 The undirected multigraph copresence-InVS15 has 219 nodes and 1283194 unweighted
-edges with 21536 different edge types:  the 5 most common are 733120, 734620, 733080,
-733100 and 733520, of which none are self-loops and 2532938 are parallel. The graph
-is extremely dense as it has a density of 0.70064 and is connected, as it has a single
-component. The graph median node degree is 11140, the mean node degree is 11718.67
-and the node degree mode is 14370. The top 5 most central nodes are 219 (degree 39888),
-889 (degree 39463), 845 (degree 35968), 753 (degree 33828) and 466 (degree 31011).
+edges with 21536 different edge types:  the 5 most common are 733120, 734620,
+733080, 733100 and 733520, of which none are self-loops and 2532938 are
+parallel. The graph is extremely dense as it has a density of 0.70064 and
+is connected, as it has a single component. The graph median node degree
+is 11140, the mean node degree is 11718.67 and the node degree mode is
+14370. The top 5 most central nodes are 219 (degree 39888), 889 (degree
+39463), 845 (degree 35968), 753 (degree 33828) and 466 (degree 31011).
 
 
 References
@@ -109,12 +110,13 @@ def CopresenceInvs15(
 	Datetime: 2021-02-03 23:41:38.737094
 	
 	The undirected multigraph copresence-InVS15 has 219 nodes and 1283194 unweighted
-	edges with 21536 different edge types:  the 5 most common are 733120, 734620, 733080,
-	733100 and 733520, of which none are self-loops and 2532938 are parallel. The graph
-	is extremely dense as it has a density of 0.70064 and is connected, as it has a single
-	component. The graph median node degree is 11140, the mean node degree is 11718.67
-	and the node degree mode is 14370. The top 5 most central nodes are 219 (degree 39888),
-	889 (degree 39463), 845 (degree 35968), 753 (degree 33828) and 466 (degree 31011).
+	edges with 21536 different edge types:  the 5 most common are 733120, 734620,
+	733080, 733100 and 733520, of which none are self-loops and 2532938 are
+	parallel. The graph is extremely dense as it has a density of 0.70064 and
+	is connected, as it has a single component. The graph median node degree
+	is 11140, the mean node degree is 11718.67 and the node degree mode is
+	14370. The top 5 most central nodes are 219 (degree 39888), 889 (degree
+	39463), 845 (degree 35968), 753 (degree 33828) and 466 (degree 31011).
 	
 
 

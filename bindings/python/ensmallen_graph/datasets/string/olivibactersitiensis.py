@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:04.119214
 
-The undirected graph Olivibacter sitiensis has 4266 nodes and 537027 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05903 and
-has 22 connected components, where the component with most nodes has 4210 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 251.77, and the node degree mode is 4. The top 5 most central
-nodes are 1122621.ATZA01000004_gene1247 (degree 1353), 1122621.ATZA01000008_gene900
-(degree 1314), 1122621.ATZA01000016_gene3756 (degree 1314), 1122621.ATZA01000016_gene3755
-(degree 1296) and 1122621.ATZA01000047_gene3386 (degree 1241).
+The undirected graph Olivibacter sitiensis has 4266 nodes and 537027 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05903 and has 22 connected components, where the component with most
+nodes has 4210 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 251.77, and
+the node degree mode is 4. The top 5 most central nodes are 1122621.ATZA01000004_gene1247
+(degree 1353), 1122621.ATZA01000008_gene900 (degree 1314), 1122621.ATZA01000016_gene3756
+(degree 1314), 1122621.ATZA01000016_gene3755 (degree 1296) and 1122621.ATZA01000047_gene3386
+(degree 1241).
 
 
 References
@@ -107,14 +108,15 @@ def OlivibacterSitiensis(
 	
 	Datetime: 2021-02-02 22:44:04.119214
 	
-	The undirected graph Olivibacter sitiensis has 4266 nodes and 537027 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05903 and
-	has 22 connected components, where the component with most nodes has 4210 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 251.77, and the node degree mode is 4. The top 5 most central
-	nodes are 1122621.ATZA01000004_gene1247 (degree 1353), 1122621.ATZA01000008_gene900
-	(degree 1314), 1122621.ATZA01000016_gene3756 (degree 1314), 1122621.ATZA01000016_gene3755
-	(degree 1296) and 1122621.ATZA01000047_gene3386 (degree 1241).
+	The undirected graph Olivibacter sitiensis has 4266 nodes and 537027 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05903 and has 22 connected components, where the component with most
+	nodes has 4210 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 251.77, and
+	the node degree mode is 4. The top 5 most central nodes are 1122621.ATZA01000004_gene1247
+	(degree 1353), 1122621.ATZA01000008_gene900 (degree 1314), 1122621.ATZA01000016_gene3756
+	(degree 1314), 1122621.ATZA01000016_gene3755 (degree 1296) and 1122621.ATZA01000047_gene3386
+	(degree 1241).
 	
 
 

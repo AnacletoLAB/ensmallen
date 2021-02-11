@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:00.880158
 
-The undirected graph Glycomyces arizonensis has 4368 nodes and 389399 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04083 and
-has 40 connected components, where the component with most nodes has 4265 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 178.30, and the node degree mode is 1. The top 5 most central
-nodes are 1121926.AXWO01000001_gene3508 (degree 1299), 1121926.AXWO01000001_gene3421
-(degree 1131), 1121926.AXWO01000018_gene2466 (degree 1124), 1121926.AXWO01000028_gene3939
-(degree 1111) and 1121926.AXWO01000013_gene2190 (degree 1080).
+The undirected graph Glycomyces arizonensis has 4368 nodes and 389399 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04083 and has 40 connected components, where the component with most
+nodes has 4265 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 178.30, and
+the node degree mode is 1. The top 5 most central nodes are 1121926.AXWO01000001_gene3508
+(degree 1299), 1121926.AXWO01000001_gene3421 (degree 1131), 1121926.AXWO01000018_gene2466
+(degree 1124), 1121926.AXWO01000028_gene3939 (degree 1111) and 1121926.AXWO01000013_gene2190
+(degree 1080).
 
 
 References
@@ -107,14 +108,15 @@ def GlycomycesArizonensis(
 	
 	Datetime: 2021-02-02 22:39:00.880158
 	
-	The undirected graph Glycomyces arizonensis has 4368 nodes and 389399 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04083 and
-	has 40 connected components, where the component with most nodes has 4265 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 178.30, and the node degree mode is 1. The top 5 most central
-	nodes are 1121926.AXWO01000001_gene3508 (degree 1299), 1121926.AXWO01000001_gene3421
-	(degree 1131), 1121926.AXWO01000018_gene2466 (degree 1124), 1121926.AXWO01000028_gene3939
-	(degree 1111) and 1121926.AXWO01000013_gene2190 (degree 1080).
+	The undirected graph Glycomyces arizonensis has 4368 nodes and 389399 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04083 and has 40 connected components, where the component with most
+	nodes has 4265 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 178.30, and
+	the node degree mode is 1. The top 5 most central nodes are 1121926.AXWO01000001_gene3508
+	(degree 1299), 1121926.AXWO01000001_gene3421 (degree 1131), 1121926.AXWO01000018_gene2466
+	(degree 1124), 1121926.AXWO01000028_gene3939 (degree 1111) and 1121926.AXWO01000013_gene2190
+	(degree 1080).
 	
 
 

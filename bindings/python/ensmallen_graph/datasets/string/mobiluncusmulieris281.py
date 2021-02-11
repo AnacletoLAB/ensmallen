@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:35.507982
 
-The undirected graph Mobiluncus mulieris 281 has 2278 nodes and 199495 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07692 and
-has 24 connected components, where the component with most nodes has 2228 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 175.15, and the node degree mode is 1. The top 5 most central
-nodes are 596328.HMPREF0578_2352 (degree 853), 596328.HMPREF0578_2317 (degree 843),
-596328.HMPREF0578_1927 (degree 774), 596328.HMPREF0578_1527 (degree 769) and 596328.HMPREF0578_1603
+The undirected graph Mobiluncus mulieris 281 has 2278 nodes and 199495
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07692 and has 24 connected components, where the component
+with most nodes has 2228 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 175.15,
+and the node degree mode is 1. The top 5 most central nodes are 596328.HMPREF0578_2352
+(degree 853), 596328.HMPREF0578_2317 (degree 843), 596328.HMPREF0578_1927
+(degree 774), 596328.HMPREF0578_1527 (degree 769) and 596328.HMPREF0578_1603
 (degree 757).
 
 
@@ -107,13 +108,14 @@ def MobiluncusMulieris281(
 	
 	Datetime: 2021-02-02 21:19:35.507982
 	
-	The undirected graph Mobiluncus mulieris 281 has 2278 nodes and 199495 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07692 and
-	has 24 connected components, where the component with most nodes has 2228 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 175.15, and the node degree mode is 1. The top 5 most central
-	nodes are 596328.HMPREF0578_2352 (degree 853), 596328.HMPREF0578_2317 (degree 843),
-	596328.HMPREF0578_1927 (degree 774), 596328.HMPREF0578_1527 (degree 769) and 596328.HMPREF0578_1603
+	The undirected graph Mobiluncus mulieris 281 has 2278 nodes and 199495
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07692 and has 24 connected components, where the component
+	with most nodes has 2228 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 175.15,
+	and the node degree mode is 1. The top 5 most central nodes are 596328.HMPREF0578_2352
+	(degree 853), 596328.HMPREF0578_2317 (degree 843), 596328.HMPREF0578_1927
+	(degree 774), 596328.HMPREF0578_1527 (degree 769) and 596328.HMPREF0578_1603
 	(degree 757).
 	
 

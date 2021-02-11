@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:45.405204
 
-The undirected graph Actinobacillus suis has 2245 nodes and 137784 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05470 and
-is connected, as it has a single component. The graph median node degree is 98, the
-mean node degree is 122.75, and the node degree mode is 8. The top 5 most central
-nodes are 696748.ASU2_04500 (degree 937), 696748.ASU2_01955 (degree 846), 696748.ASU2_04090
-(degree 721), 696748.ASU2_02245 (degree 684) and 696748.ASU2_04085 (degree 682).
+The undirected graph Actinobacillus suis has 2245 nodes and 137784 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05470 and is connected, as it has a single component. The graph median
+node degree is 98, the mean node degree is 122.75, and the node degree
+mode is 8. The top 5 most central nodes are 696748.ASU2_04500 (degree 937),
+696748.ASU2_01955 (degree 846), 696748.ASU2_04090 (degree 721), 696748.ASU2_02245
+(degree 684) and 696748.ASU2_04085 (degree 682).
 
 
 References
@@ -105,12 +106,13 @@ def ActinobacillusSuis(
 	
 	Datetime: 2021-02-02 21:32:45.405204
 	
-	The undirected graph Actinobacillus suis has 2245 nodes and 137784 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05470 and
-	is connected, as it has a single component. The graph median node degree is 98, the
-	mean node degree is 122.75, and the node degree mode is 8. The top 5 most central
-	nodes are 696748.ASU2_04500 (degree 937), 696748.ASU2_01955 (degree 846), 696748.ASU2_04090
-	(degree 721), 696748.ASU2_02245 (degree 684) and 696748.ASU2_04085 (degree 682).
+	The undirected graph Actinobacillus suis has 2245 nodes and 137784 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05470 and is connected, as it has a single component. The graph median
+	node degree is 98, the mean node degree is 122.75, and the node degree
+	mode is 8. The top 5 most central nodes are 696748.ASU2_04500 (degree 937),
+	696748.ASU2_01955 (degree 846), 696748.ASU2_04090 (degree 721), 696748.ASU2_02245
+	(degree 684) and 696748.ASU2_04085 (degree 682).
 	
 
 

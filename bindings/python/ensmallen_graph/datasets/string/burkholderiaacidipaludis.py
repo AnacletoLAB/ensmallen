@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:56.578412
 
-The undirected graph Burkholderia acidipaludis has 5405 nodes and 892124 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06109
-and has 16 connected components, where the component with most nodes has 5369 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 269, the mean node degree is 330.11, and the node degree mode is 3. The top 5
-most central nodes are 1218074.BAXZ01000017_gene3558 (degree 2100), 1218074.BAXZ01000018_gene3738
-(degree 2042), 1218074.BAXZ01000015_gene3202 (degree 1875), 1218074.BAXZ01000027_gene4700
-(degree 1781) and 1218074.BAXZ01000005_gene1492 (degree 1668).
+The undirected graph Burkholderia acidipaludis has 5405 nodes and 892124
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06109 and has 16 connected components, where the component
+with most nodes has 5369 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 269, the mean node degree is 330.11,
+and the node degree mode is 3. The top 5 most central nodes are 1218074.BAXZ01000017_gene3558
+(degree 2100), 1218074.BAXZ01000018_gene3738 (degree 2042), 1218074.BAXZ01000015_gene3202
+(degree 1875), 1218074.BAXZ01000027_gene4700 (degree 1781) and 1218074.BAXZ01000005_gene1492
+(degree 1668).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaAcidipaludis(
 	
 	Datetime: 2021-02-02 23:21:56.578412
 	
-	The undirected graph Burkholderia acidipaludis has 5405 nodes and 892124 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06109
-	and has 16 connected components, where the component with most nodes has 5369 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 269, the mean node degree is 330.11, and the node degree mode is 3. The top 5
-	most central nodes are 1218074.BAXZ01000017_gene3558 (degree 2100), 1218074.BAXZ01000018_gene3738
-	(degree 2042), 1218074.BAXZ01000015_gene3202 (degree 1875), 1218074.BAXZ01000027_gene4700
-	(degree 1781) and 1218074.BAXZ01000005_gene1492 (degree 1668).
+	The undirected graph Burkholderia acidipaludis has 5405 nodes and 892124
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06109 and has 16 connected components, where the component
+	with most nodes has 5369 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 269, the mean node degree is 330.11,
+	and the node degree mode is 3. The top 5 most central nodes are 1218074.BAXZ01000017_gene3558
+	(degree 2100), 1218074.BAXZ01000018_gene3738 (degree 2042), 1218074.BAXZ01000015_gene3202
+	(degree 1875), 1218074.BAXZ01000027_gene4700 (degree 1781) and 1218074.BAXZ01000005_gene1492
+	(degree 1668).
 	
 
 

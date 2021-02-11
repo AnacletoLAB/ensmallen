@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:52.134502
 
-The undirected graph Holdemania massiliensis has 3157 nodes and 1223502 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.24560 and has 6 connected components, where the component with most nodes has
-3146 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 812, the mean node degree is 775.10, and the node degree mode is 7. The
-top 5 most central nodes are 1211819.CALK01000021_gene718 (degree 2208), 1211819.CALK01000033_gene1286
+The undirected graph Holdemania massiliensis has 3157 nodes and 1223502
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.24560 and has 6 connected components, where the
+component with most nodes has 3146 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 812, the mean node degree
+is 775.10, and the node degree mode is 7. The top 5 most central nodes
+are 1211819.CALK01000021_gene718 (degree 2208), 1211819.CALK01000033_gene1286
 (degree 2205), 1211819.CALK01000007_gene2610 (degree 2199), 1211819.CALK01000005_gene2409
 (degree 2161) and 1211819.CALK01000015_gene1222 (degree 2158).
 
@@ -107,12 +108,13 @@ def HoldemaniaMassiliensis(
 	
 	Datetime: 2021-02-02 23:19:52.134502
 	
-	The undirected graph Holdemania massiliensis has 3157 nodes and 1223502 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.24560 and has 6 connected components, where the component with most nodes has
-	3146 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 812, the mean node degree is 775.10, and the node degree mode is 7. The
-	top 5 most central nodes are 1211819.CALK01000021_gene718 (degree 2208), 1211819.CALK01000033_gene1286
+	The undirected graph Holdemania massiliensis has 3157 nodes and 1223502
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.24560 and has 6 connected components, where the
+	component with most nodes has 3146 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 812, the mean node degree
+	is 775.10, and the node degree mode is 7. The top 5 most central nodes
+	are 1211819.CALK01000021_gene718 (degree 2208), 1211819.CALK01000033_gene1286
 	(degree 2205), 1211819.CALK01000007_gene2610 (degree 2199), 1211819.CALK01000005_gene2409
 	(degree 2161) and 1211819.CALK01000015_gene1222 (degree 2158).
 	

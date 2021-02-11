@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:26.647993
 
-The undirected graph Streptococcus didelphis has 1799 nodes and 138129 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08541 and
-has 5 connected components, where the component with most nodes has 1788 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 153.56, and the node degree mode is 5. The top 5 most central
-nodes are 1123301.KB904189_gene1450 (degree 832), 1123301.KB904189_gene1571 (degree
-757), 1123301.KB904188_gene871 (degree 709), 1123301.KB904195_gene192 (degree 707)
-and 1123301.KB904201_gene1752 (degree 689).
+The undirected graph Streptococcus didelphis has 1799 nodes and 138129
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08541 and has 5 connected components, where the component
+with most nodes has 1788 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 153.56,
+and the node degree mode is 5. The top 5 most central nodes are 1123301.KB904189_gene1450
+(degree 832), 1123301.KB904189_gene1571 (degree 757), 1123301.KB904188_gene871
+(degree 709), 1123301.KB904195_gene192 (degree 707) and 1123301.KB904201_gene1752
+(degree 689).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusDidelphis(
 	
 	Datetime: 2021-02-02 22:50:26.647993
 	
-	The undirected graph Streptococcus didelphis has 1799 nodes and 138129 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08541 and
-	has 5 connected components, where the component with most nodes has 1788 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 153.56, and the node degree mode is 5. The top 5 most central
-	nodes are 1123301.KB904189_gene1450 (degree 832), 1123301.KB904189_gene1571 (degree
-	757), 1123301.KB904188_gene871 (degree 709), 1123301.KB904195_gene192 (degree 707)
-	and 1123301.KB904201_gene1752 (degree 689).
+	The undirected graph Streptococcus didelphis has 1799 nodes and 138129
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08541 and has 5 connected components, where the component
+	with most nodes has 1788 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 153.56,
+	and the node degree mode is 5. The top 5 most central nodes are 1123301.KB904189_gene1450
+	(degree 832), 1123301.KB904189_gene1571 (degree 757), 1123301.KB904188_gene871
+	(degree 709), 1123301.KB904195_gene192 (degree 707) and 1123301.KB904201_gene1752
+	(degree 689).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:10.355511
 
-The undirected graph Pseudanabaena sp. PCC6802 has 5107 nodes and 622050 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04771
-and has 17 connected components, where the component with most nodes has 5069 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 220, the mean node degree is 243.61, and the node degree mode is 4. The top 5
-most central nodes are 118173.KB235914_gene2577 (degree 1668), 118173.KB235910_gene5038
-(degree 1522), 118173.KB235914_gene1122 (degree 1499), 118173.KB235910_gene4739 (degree
-1380) and 118173.KB235910_gene5154 (degree 1262).
+The undirected graph Pseudanabaena sp. PCC6802 has 5107 nodes and 622050
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04771 and has 17 connected components, where the component
+with most nodes has 5069 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 220, the mean node degree is 243.61,
+and the node degree mode is 4. The top 5 most central nodes are 118173.KB235914_gene2577
+(degree 1668), 118173.KB235910_gene5038 (degree 1522), 118173.KB235914_gene1122
+(degree 1499), 118173.KB235910_gene4739 (degree 1380) and 118173.KB235910_gene5154
+(degree 1262).
 
 
 References
@@ -107,14 +108,15 @@ def PseudanabaenaSp.Pcc6802(
 	
 	Datetime: 2021-02-02 19:48:10.355511
 	
-	The undirected graph Pseudanabaena sp. PCC6802 has 5107 nodes and 622050 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04771
-	and has 17 connected components, where the component with most nodes has 5069 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 220, the mean node degree is 243.61, and the node degree mode is 4. The top 5
-	most central nodes are 118173.KB235914_gene2577 (degree 1668), 118173.KB235910_gene5038
-	(degree 1522), 118173.KB235914_gene1122 (degree 1499), 118173.KB235910_gene4739 (degree
-	1380) and 118173.KB235910_gene5154 (degree 1262).
+	The undirected graph Pseudanabaena sp. PCC6802 has 5107 nodes and 622050
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04771 and has 17 connected components, where the component
+	with most nodes has 5069 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 220, the mean node degree is 243.61,
+	and the node degree mode is 4. The top 5 most central nodes are 118173.KB235914_gene2577
+	(degree 1668), 118173.KB235910_gene5038 (degree 1522), 118173.KB235914_gene1122
+	(degree 1499), 118173.KB235910_gene4739 (degree 1380) and 118173.KB235910_gene5154
+	(degree 1262).
 	
 
 

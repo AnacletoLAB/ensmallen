@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:02:24.600713
 
-The undirected graph Burkholderia dilworthii has 6304 nodes and 1079918 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05436
-and has 30 connected components, where the component with most nodes has 6235 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 277, the mean node degree is 342.61, and the node degree mode is 1. The top 5
-most central nodes are 948106.AWZT01000001_gene5396 (degree 2647), 948106.AWZT01000048_gene436
-(degree 2247), 948106.AWZT01000002_gene6187 (degree 2208), 948106.AWZT01000057_gene465
-(degree 2167) and 948106.AWZT01000020_gene4153 (degree 1999).
+The undirected graph Burkholderia dilworthii has 6304 nodes and 1079918
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05436 and has 30 connected components, where the component
+with most nodes has 6235 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 277, the mean node degree is 342.61,
+and the node degree mode is 1. The top 5 most central nodes are 948106.AWZT01000001_gene5396
+(degree 2647), 948106.AWZT01000048_gene436 (degree 2247), 948106.AWZT01000002_gene6187
+(degree 2208), 948106.AWZT01000057_gene465 (degree 2167) and 948106.AWZT01000020_gene4153
+(degree 1999).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaDilworthii(
 	
 	Datetime: 2021-02-02 22:02:24.600713
 	
-	The undirected graph Burkholderia dilworthii has 6304 nodes and 1079918 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05436
-	and has 30 connected components, where the component with most nodes has 6235 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 277, the mean node degree is 342.61, and the node degree mode is 1. The top 5
-	most central nodes are 948106.AWZT01000001_gene5396 (degree 2647), 948106.AWZT01000048_gene436
-	(degree 2247), 948106.AWZT01000002_gene6187 (degree 2208), 948106.AWZT01000057_gene465
-	(degree 2167) and 948106.AWZT01000020_gene4153 (degree 1999).
+	The undirected graph Burkholderia dilworthii has 6304 nodes and 1079918
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05436 and has 30 connected components, where the component
+	with most nodes has 6235 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 277, the mean node degree is 342.61,
+	and the node degree mode is 1. The top 5 most central nodes are 948106.AWZT01000001_gene5396
+	(degree 2647), 948106.AWZT01000048_gene436 (degree 2247), 948106.AWZT01000002_gene6187
+	(degree 2208), 948106.AWZT01000057_gene465 (degree 2167) and 948106.AWZT01000020_gene4153
+	(degree 1999).
 	
 
 

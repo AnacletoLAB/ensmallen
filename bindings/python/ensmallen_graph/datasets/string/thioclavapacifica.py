@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:39.650095
 
-The undirected graph Thioclava pacifica has 3549 nodes and 447014 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07100 and
-has 5 connected components, where the component with most nodes has 3541 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 251.91, and the node degree mode is 4. The top 5 most central
-nodes are 1353537.TP2_09185 (degree 1449), 1353537.TP2_11550 (degree 1166), 1353537.TP2_06235
-(degree 1115), 1353537.TP2_02210 (degree 1111) and 1353537.TP2_05610 (degree 1047).
+The undirected graph Thioclava pacifica has 3549 nodes and 447014 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07100 and has 5 connected components, where the component with most
+nodes has 3541 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 251.91, and
+the node degree mode is 4. The top 5 most central nodes are 1353537.TP2_09185
+(degree 1449), 1353537.TP2_11550 (degree 1166), 1353537.TP2_06235 (degree
+1115), 1353537.TP2_02210 (degree 1111) and 1353537.TP2_05610 (degree 1047).
 
 
 References
@@ -106,13 +107,14 @@ def ThioclavaPacifica(
 	
 	Datetime: 2021-02-03 22:07:39.650095
 	
-	The undirected graph Thioclava pacifica has 3549 nodes and 447014 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07100 and
-	has 5 connected components, where the component with most nodes has 3541 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 251.91, and the node degree mode is 4. The top 5 most central
-	nodes are 1353537.TP2_09185 (degree 1449), 1353537.TP2_11550 (degree 1166), 1353537.TP2_06235
-	(degree 1115), 1353537.TP2_02210 (degree 1111) and 1353537.TP2_05610 (degree 1047).
+	The undirected graph Thioclava pacifica has 3549 nodes and 447014 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07100 and has 5 connected components, where the component with most
+	nodes has 3541 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 251.91, and
+	the node degree mode is 4. The top 5 most central nodes are 1353537.TP2_09185
+	(degree 1449), 1353537.TP2_11550 (degree 1166), 1353537.TP2_06235 (degree
+	1115), 1353537.TP2_02210 (degree 1111) and 1353537.TP2_05610 (degree 1047).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:22.778371
 
-The undirected graph Cellulomonas sp. KRMCY2 has 3964 nodes and 357586 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04553 and
-has 25 connected components, where the component with most nodes has 3912 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 180.42, and the node degree mode is 1. The top 5 most central
-nodes are 1304865.JAGF01000001_gene2477 (degree 1364), 1304865.JAGF01000001_gene1308
-(degree 1349), 1304865.JAGF01000001_gene3073 (degree 1323), 1304865.JAGF01000001_gene1987
-(degree 1298) and 1304865.JAGF01000001_gene3469 (degree 1217).
+The undirected graph Cellulomonas sp. KRMCY2 has 3964 nodes and 357586
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04553 and has 25 connected components, where the component
+with most nodes has 3912 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 180.42,
+and the node degree mode is 1. The top 5 most central nodes are 1304865.JAGF01000001_gene2477
+(degree 1364), 1304865.JAGF01000001_gene1308 (degree 1349), 1304865.JAGF01000001_gene3073
+(degree 1323), 1304865.JAGF01000001_gene1987 (degree 1298) and 1304865.JAGF01000001_gene3469
+(degree 1217).
 
 
 References
@@ -107,14 +108,15 @@ def CellulomonasSp.Krmcy2(
 	
 	Datetime: 2021-02-03 21:36:22.778371
 	
-	The undirected graph Cellulomonas sp. KRMCY2 has 3964 nodes and 357586 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04553 and
-	has 25 connected components, where the component with most nodes has 3912 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 180.42, and the node degree mode is 1. The top 5 most central
-	nodes are 1304865.JAGF01000001_gene2477 (degree 1364), 1304865.JAGF01000001_gene1308
-	(degree 1349), 1304865.JAGF01000001_gene3073 (degree 1323), 1304865.JAGF01000001_gene1987
-	(degree 1298) and 1304865.JAGF01000001_gene3469 (degree 1217).
+	The undirected graph Cellulomonas sp. KRMCY2 has 3964 nodes and 357586
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04553 and has 25 connected components, where the component
+	with most nodes has 3912 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 180.42,
+	and the node degree mode is 1. The top 5 most central nodes are 1304865.JAGF01000001_gene2477
+	(degree 1364), 1304865.JAGF01000001_gene1308 (degree 1349), 1304865.JAGF01000001_gene3073
+	(degree 1323), 1304865.JAGF01000001_gene1987 (degree 1298) and 1304865.JAGF01000001_gene3469
+	(degree 1217).
 	
 
 

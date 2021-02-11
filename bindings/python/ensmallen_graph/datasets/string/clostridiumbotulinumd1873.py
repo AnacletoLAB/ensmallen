@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:12.642089
 
-The undirected graph Clostridium botulinum D 1873 has 2093 nodes and 202805 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09264
-and has 6 connected components, where the component with most nodes has 2077 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 193.79, and the node degree mode is 3. The top 5
-most central nodes are 592027.CLG_B1426 (degree 895), 592027.CLG_B0369 (degree 864),
-592027.CLG_B0598 (degree 801), 592027.CLG_B1010 (degree 757) and 592027.CLG_B1377
-(degree 724).
+The undirected graph Clostridium botulinum D 1873 has 2093 nodes and 202805
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09264 and has 6 connected components, where the component
+with most nodes has 2077 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 193.79,
+and the node degree mode is 3. The top 5 most central nodes are 592027.CLG_B1426
+(degree 895), 592027.CLG_B0369 (degree 864), 592027.CLG_B0598 (degree 801),
+592027.CLG_B1010 (degree 757) and 592027.CLG_B1377 (degree 724).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumBotulinumD1873(
 	
 	Datetime: 2021-02-02 21:18:12.642089
 	
-	The undirected graph Clostridium botulinum D 1873 has 2093 nodes and 202805 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09264
-	and has 6 connected components, where the component with most nodes has 2077 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 193.79, and the node degree mode is 3. The top 5
-	most central nodes are 592027.CLG_B1426 (degree 895), 592027.CLG_B0369 (degree 864),
-	592027.CLG_B0598 (degree 801), 592027.CLG_B1010 (degree 757) and 592027.CLG_B1377
-	(degree 724).
+	The undirected graph Clostridium botulinum D 1873 has 2093 nodes and 202805
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09264 and has 6 connected components, where the component
+	with most nodes has 2077 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 193.79,
+	and the node degree mode is 3. The top 5 most central nodes are 592027.CLG_B1426
+	(degree 895), 592027.CLG_B0369 (degree 864), 592027.CLG_B0598 (degree 801),
+	592027.CLG_B1010 (degree 757) and 592027.CLG_B1377 (degree 724).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:36.797622
 
-The undirected graph Dactylosporangium aurantiacum has 9925 nodes and 1686115 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03424
-and has 44 connected components, where the component with most nodes has 9832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 284, the mean node degree is 339.77, and the node degree mode is 3. The top 5
-most central nodes are 35754.JNYJ01000001_gene7332 (degree 2861), 35754.JNYJ01000007_gene2933
-(degree 2818), 35754.JNYJ01000043_gene4481 (degree 2547), 35754.JNYJ01000016_gene9301
-(degree 2544) and 35754.JNYJ01000024_gene9173 (degree 2539).
+The undirected graph Dactylosporangium aurantiacum has 9925 nodes and 1686115
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03424 and has 44 connected components, where the component
+with most nodes has 9832 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 284, the mean node degree is 339.77,
+and the node degree mode is 3. The top 5 most central nodes are 35754.JNYJ01000001_gene7332
+(degree 2861), 35754.JNYJ01000007_gene2933 (degree 2818), 35754.JNYJ01000043_gene4481
+(degree 2547), 35754.JNYJ01000016_gene9301 (degree 2544) and 35754.JNYJ01000024_gene9173
+(degree 2539).
 
 
 References
@@ -107,14 +108,15 @@ def DactylosporangiumAurantiacum(
 	
 	Datetime: 2021-02-02 18:05:36.797622
 	
-	The undirected graph Dactylosporangium aurantiacum has 9925 nodes and 1686115 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03424
-	and has 44 connected components, where the component with most nodes has 9832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 284, the mean node degree is 339.77, and the node degree mode is 3. The top 5
-	most central nodes are 35754.JNYJ01000001_gene7332 (degree 2861), 35754.JNYJ01000007_gene2933
-	(degree 2818), 35754.JNYJ01000043_gene4481 (degree 2547), 35754.JNYJ01000016_gene9301
-	(degree 2544) and 35754.JNYJ01000024_gene9173 (degree 2539).
+	The undirected graph Dactylosporangium aurantiacum has 9925 nodes and 1686115
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03424 and has 44 connected components, where the component
+	with most nodes has 9832 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 284, the mean node degree is 339.77,
+	and the node degree mode is 3. The top 5 most central nodes are 35754.JNYJ01000001_gene7332
+	(degree 2861), 35754.JNYJ01000007_gene2933 (degree 2818), 35754.JNYJ01000043_gene4481
+	(degree 2547), 35754.JNYJ01000016_gene9301 (degree 2544) and 35754.JNYJ01000024_gene9173
+	(degree 2539).
 	
 
 

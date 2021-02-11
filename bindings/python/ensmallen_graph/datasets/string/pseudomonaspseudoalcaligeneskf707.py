@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:25.790572
 
-The undirected graph Pseudomonas pseudoalcaligenes KF707 has 6024 nodes and 1096456
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06044 and has 17 connected components, where the component with most nodes has
-5984 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 289, the mean node degree is 364.03, and the node degree mode is 1. The
-top 5 most central nodes are 1149133.ppKF707_5528 (degree 2378), 1149133.ppKF707_6180
-(degree 2320), 1149133.ppKF707_3179 (degree 2281), 1149133.ppKF707_1559 (degree 2119)
-and 1149133.ppKF707_0796 (degree 2050).
+The undirected graph Pseudomonas pseudoalcaligenes KF707 has 6024 nodes
+and 1096456 weighted edges, of which none are self-loops. The graph is
+dense as it has a density of 0.06044 and has 17 connected components, where
+the component with most nodes has 5984 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 289, the mean
+node degree is 364.03, and the node degree mode is 1. The top 5 most central
+nodes are 1149133.ppKF707_5528 (degree 2378), 1149133.ppKF707_6180 (degree
+2320), 1149133.ppKF707_3179 (degree 2281), 1149133.ppKF707_1559 (degree
+2119) and 1149133.ppKF707_0796 (degree 2050).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPseudoalcaligenesKf707(
 	
 	Datetime: 2021-02-02 22:59:25.790572
 	
-	The undirected graph Pseudomonas pseudoalcaligenes KF707 has 6024 nodes and 1096456
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06044 and has 17 connected components, where the component with most nodes has
-	5984 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 289, the mean node degree is 364.03, and the node degree mode is 1. The
-	top 5 most central nodes are 1149133.ppKF707_5528 (degree 2378), 1149133.ppKF707_6180
-	(degree 2320), 1149133.ppKF707_3179 (degree 2281), 1149133.ppKF707_1559 (degree 2119)
-	and 1149133.ppKF707_0796 (degree 2050).
+	The undirected graph Pseudomonas pseudoalcaligenes KF707 has 6024 nodes
+	and 1096456 weighted edges, of which none are self-loops. The graph is
+	dense as it has a density of 0.06044 and has 17 connected components, where
+	the component with most nodes has 5984 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 289, the mean
+	node degree is 364.03, and the node degree mode is 1. The top 5 most central
+	nodes are 1149133.ppKF707_5528 (degree 2378), 1149133.ppKF707_6180 (degree
+	2320), 1149133.ppKF707_3179 (degree 2281), 1149133.ppKF707_1559 (degree
+	2119) and 1149133.ppKF707_0796 (degree 2050).
 	
 
 

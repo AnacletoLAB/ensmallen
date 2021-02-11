@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:32:37.832417
 
-The undirected multigraph polblogs has 1224 nodes and 16729 unweighted edges with
-2 different edge types: 1 and 2, of which 3 are self-loops and 22 are parallel. The
-graph is dense as it has a density of 0.02233 and has 2 connected components, where
-the component with most nodes has 1222 nodes and the component with the least nodes
-has 2 nodes. The graph median node degree is 13, the mean node degree is 27.33 and
-the node degree mode is 1. The top 5 most central nodes are 155 (degree 351), 1051
-(degree 306), 855 (degree 302), 55 (degree 278) and 641 (degree 274).
+The undirected multigraph polblogs has 1224 nodes and 16729 unweighted
+edges with 2 different edge types: 1 and 2, of which 3 are self-loops and
+22 are parallel. The graph is dense as it has a density of 0.02233 and
+has 2 connected components, where the component with most nodes has 1222
+nodes and the component with the least nodes has 2 nodes. The graph median
+node degree is 13, the mean node degree is 27.33 and the node degree mode
+is 1. The top 5 most central nodes are 155 (degree 351), 1051 (degree 306),
+855 (degree 302), 55 (degree 278) and 641 (degree 274).
 
 
 References
@@ -103,13 +104,14 @@ def Polblogs(
 	
 	Datetime: 2021-02-03 23:32:37.832417
 	
-	The undirected multigraph polblogs has 1224 nodes and 16729 unweighted edges with
-	2 different edge types: 1 and 2, of which 3 are self-loops and 22 are parallel. The
-	graph is dense as it has a density of 0.02233 and has 2 connected components, where
-	the component with most nodes has 1222 nodes and the component with the least nodes
-	has 2 nodes. The graph median node degree is 13, the mean node degree is 27.33 and
-	the node degree mode is 1. The top 5 most central nodes are 155 (degree 351), 1051
-	(degree 306), 855 (degree 302), 55 (degree 278) and 641 (degree 274).
+	The undirected multigraph polblogs has 1224 nodes and 16729 unweighted
+	edges with 2 different edge types: 1 and 2, of which 3 are self-loops and
+	22 are parallel. The graph is dense as it has a density of 0.02233 and
+	has 2 connected components, where the component with most nodes has 1222
+	nodes and the component with the least nodes has 2 nodes. The graph median
+	node degree is 13, the mean node degree is 27.33 and the node degree mode
+	is 1. The top 5 most central nodes are 155 (degree 351), 1051 (degree 306),
+	855 (degree 302), 55 (degree 278) and 641 (degree 274).
 	
 
 

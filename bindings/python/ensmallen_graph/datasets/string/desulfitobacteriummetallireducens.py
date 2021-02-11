@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:05.651881
 
-The undirected graph Desulfitobacterium metallireducens has 3030 nodes and 185214
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04036 and has 8 connected components, where the component with most nodes has
-3014 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 93, the mean node degree is 122.25, and the node degree mode is 8. The
-top 5 most central nodes are 871968.DESME_05440 (degree 1181), 871968.DESME_09955
-(degree 931), 871968.DESME_04365 (degree 908), 871968.DESME_13670 (degree 848) and
-871968.DESME_00120 (degree 847).
+The undirected graph Desulfitobacterium metallireducens has 3030 nodes
+and 185214 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04036 and has 8 connected components, where the
+component with most nodes has 3014 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 93, the mean node degree
+is 122.25, and the node degree mode is 8. The top 5 most central nodes
+are 871968.DESME_05440 (degree 1181), 871968.DESME_09955 (degree 931),
+871968.DESME_04365 (degree 908), 871968.DESME_13670 (degree 848) and 871968.DESME_00120
+(degree 847).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfitobacteriumMetallireducens(
 	
 	Datetime: 2021-02-02 21:49:05.651881
 	
-	The undirected graph Desulfitobacterium metallireducens has 3030 nodes and 185214
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04036 and has 8 connected components, where the component with most nodes has
-	3014 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 93, the mean node degree is 122.25, and the node degree mode is 8. The
-	top 5 most central nodes are 871968.DESME_05440 (degree 1181), 871968.DESME_09955
-	(degree 931), 871968.DESME_04365 (degree 908), 871968.DESME_13670 (degree 848) and
-	871968.DESME_00120 (degree 847).
+	The undirected graph Desulfitobacterium metallireducens has 3030 nodes
+	and 185214 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04036 and has 8 connected components, where the
+	component with most nodes has 3014 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 93, the mean node degree
+	is 122.25, and the node degree mode is 8. The top 5 most central nodes
+	are 871968.DESME_05440 (degree 1181), 871968.DESME_09955 (degree 931),
+	871968.DESME_04365 (degree 908), 871968.DESME_13670 (degree 848) and 871968.DESME_00120
+	(degree 847).
 	
 
 

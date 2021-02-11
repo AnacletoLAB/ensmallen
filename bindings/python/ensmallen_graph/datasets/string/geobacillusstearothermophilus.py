@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:26:05.082986
 
-The undirected graph Geobacillus stearothermophilus has 3625 nodes and 350414 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05335
-and has 8 connected components, where the component with most nodes has 3608 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 193.33, and the node degree mode is 1. The top 5
-most central nodes are 1295642.H839_14224 (degree 1347), 1295642.H839_00760 (degree
-1199), 1295642.H839_18210 (degree 1158), 1295642.H839_04619 (degree 1088) and 1295642.H839_13054
-(degree 1072).
+The undirected graph Geobacillus stearothermophilus has 3625 nodes and
+350414 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05335 and has 8 connected components, where the
+component with most nodes has 3608 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+is 193.33, and the node degree mode is 1. The top 5 most central nodes
+are 1295642.H839_14224 (degree 1347), 1295642.H839_00760 (degree 1199),
+1295642.H839_18210 (degree 1158), 1295642.H839_04619 (degree 1088) and
+1295642.H839_13054 (degree 1072).
 
 
 References
@@ -107,14 +108,15 @@ def GeobacillusStearothermophilus(
 	
 	Datetime: 2021-02-03 21:26:05.082986
 	
-	The undirected graph Geobacillus stearothermophilus has 3625 nodes and 350414 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05335
-	and has 8 connected components, where the component with most nodes has 3608 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 193.33, and the node degree mode is 1. The top 5
-	most central nodes are 1295642.H839_14224 (degree 1347), 1295642.H839_00760 (degree
-	1199), 1295642.H839_18210 (degree 1158), 1295642.H839_04619 (degree 1088) and 1295642.H839_13054
-	(degree 1072).
+	The undirected graph Geobacillus stearothermophilus has 3625 nodes and
+	350414 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05335 and has 8 connected components, where the
+	component with most nodes has 3608 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+	is 193.33, and the node degree mode is 1. The top 5 most central nodes
+	are 1295642.H839_14224 (degree 1347), 1295642.H839_00760 (degree 1199),
+	1295642.H839_18210 (degree 1158), 1295642.H839_04619 (degree 1088) and
+	1295642.H839_13054 (degree 1072).
 	
 
 

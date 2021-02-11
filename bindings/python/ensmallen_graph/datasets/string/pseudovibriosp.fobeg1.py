@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:34.652359
 
-The undirected graph Pseudovibrio sp. FOBEG1 has 5379 nodes and 628663 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04346 and
-has 26 connected components, where the component with most nodes has 5325 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 233.75, and the node degree mode is 1. The top 5 most central
-nodes are 911045.PSE_p0217 (degree 2344), 911045.PSE_0356 (degree 2037), 911045.PSE_3336
-(degree 1795), 911045.PSE_1753 (degree 1478) and 911045.PSE_2688 (degree 1451).
+The undirected graph Pseudovibrio sp. FOBEG1 has 5379 nodes and 628663
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04346 and has 26 connected components, where the component
+with most nodes has 5325 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 233.75,
+and the node degree mode is 1. The top 5 most central nodes are 911045.PSE_p0217
+(degree 2344), 911045.PSE_0356 (degree 2037), 911045.PSE_3336 (degree 1795),
+911045.PSE_1753 (degree 1478) and 911045.PSE_2688 (degree 1451).
 
 
 References
@@ -106,13 +107,14 @@ def PseudovibrioSp.Fobeg1(
 	
 	Datetime: 2021-02-02 21:55:34.652359
 	
-	The undirected graph Pseudovibrio sp. FOBEG1 has 5379 nodes and 628663 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04346 and
-	has 26 connected components, where the component with most nodes has 5325 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 233.75, and the node degree mode is 1. The top 5 most central
-	nodes are 911045.PSE_p0217 (degree 2344), 911045.PSE_0356 (degree 2037), 911045.PSE_3336
-	(degree 1795), 911045.PSE_1753 (degree 1478) and 911045.PSE_2688 (degree 1451).
+	The undirected graph Pseudovibrio sp. FOBEG1 has 5379 nodes and 628663
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04346 and has 26 connected components, where the component
+	with most nodes has 5325 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 233.75,
+	and the node degree mode is 1. The top 5 most central nodes are 911045.PSE_p0217
+	(degree 2344), 911045.PSE_0356 (degree 2037), 911045.PSE_3336 (degree 1795),
+	911045.PSE_1753 (degree 1478) and 911045.PSE_2688 (degree 1451).
 	
 
 

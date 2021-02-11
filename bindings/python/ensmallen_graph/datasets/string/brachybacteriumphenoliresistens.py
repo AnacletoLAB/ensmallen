@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:43.377750
 
-The undirected graph Brachybacterium phenoliresistens has 3576 nodes and 375006 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05867
-and has 4 connected components, where the component with most nodes has 3570 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 184, the mean node degree is 209.73, and the node degree mode is 3. The top 5
-most central nodes are 396014.BF93_07305 (degree 1136), 396014.BF93_18150 (degree
-1061), 396014.BF93_13780 (degree 1016), 396014.BF93_15220 (degree 971) and 396014.BF93_13835
-(degree 966).
+The undirected graph Brachybacterium phenoliresistens has 3576 nodes and
+375006 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05867 and has 4 connected components, where the
+component with most nodes has 3570 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 184, the mean node degree
+is 209.73, and the node degree mode is 3. The top 5 most central nodes
+are 396014.BF93_07305 (degree 1136), 396014.BF93_18150 (degree 1061), 396014.BF93_13780
+(degree 1016), 396014.BF93_15220 (degree 971) and 396014.BF93_13835 (degree
+966).
 
 
 References
@@ -107,14 +108,15 @@ def BrachybacteriumPhenoliresistens(
 	
 	Datetime: 2021-02-02 20:41:43.377750
 	
-	The undirected graph Brachybacterium phenoliresistens has 3576 nodes and 375006 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05867
-	and has 4 connected components, where the component with most nodes has 3570 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 184, the mean node degree is 209.73, and the node degree mode is 3. The top 5
-	most central nodes are 396014.BF93_07305 (degree 1136), 396014.BF93_18150 (degree
-	1061), 396014.BF93_13780 (degree 1016), 396014.BF93_15220 (degree 971) and 396014.BF93_13835
-	(degree 966).
+	The undirected graph Brachybacterium phenoliresistens has 3576 nodes and
+	375006 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05867 and has 4 connected components, where the
+	component with most nodes has 3570 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 184, the mean node degree
+	is 209.73, and the node degree mode is 3. The top 5 most central nodes
+	are 396014.BF93_07305 (degree 1136), 396014.BF93_18150 (degree 1061), 396014.BF93_13780
+	(degree 1016), 396014.BF93_15220 (degree 971) and 396014.BF93_13835 (degree
+	966).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:48.165437
 
-The undirected graph Cardinium endosymbiont cBtQ1 has 685 nodes and 39644 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.16922 and has 3 connected components, where the component with most nodes has
-680 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 105, the mean node degree is 115.75, and the node degree mode is 1. The
-top 5 most central nodes are 1354314.CHV_a0405 (degree 373), 1354314.CHV_a0182 (degree
-351), 1354314.CHV_a0376 (degree 343), 1354314.CHV_c0063 (degree 342) and 1354314.CHV_d0020
-(degree 341).
+The undirected graph Cardinium endosymbiont cBtQ1 has 685 nodes and 39644
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.16922 and has 3 connected components, where the
+component with most nodes has 680 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 115.75, and the node degree mode is 1. The top 5 most central nodes
+are 1354314.CHV_a0405 (degree 373), 1354314.CHV_a0182 (degree 351), 1354314.CHV_a0376
+(degree 343), 1354314.CHV_c0063 (degree 342) and 1354314.CHV_d0020 (degree
+341).
 
 
 References
@@ -107,14 +108,15 @@ def CardiniumEndosymbiontCbtq1(
 	
 	Datetime: 2021-02-03 22:07:48.165437
 	
-	The undirected graph Cardinium endosymbiont cBtQ1 has 685 nodes and 39644 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.16922 and has 3 connected components, where the component with most nodes has
-	680 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 105, the mean node degree is 115.75, and the node degree mode is 1. The
-	top 5 most central nodes are 1354314.CHV_a0405 (degree 373), 1354314.CHV_a0182 (degree
-	351), 1354314.CHV_a0376 (degree 343), 1354314.CHV_c0063 (degree 342) and 1354314.CHV_d0020
-	(degree 341).
+	The undirected graph Cardinium endosymbiont cBtQ1 has 685 nodes and 39644
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.16922 and has 3 connected components, where the
+	component with most nodes has 680 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 115.75, and the node degree mode is 1. The top 5 most central nodes
+	are 1354314.CHV_a0405 (degree 373), 1354314.CHV_a0182 (degree 351), 1354314.CHV_a0376
+	(degree 343), 1354314.CHV_c0063 (degree 342) and 1354314.CHV_d0020 (degree
+	341).
 	
 
 

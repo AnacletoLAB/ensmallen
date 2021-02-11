@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:42.353557
 
-The undirected graph Clostridium sp. ATCC29733 has 3628 nodes and 177993 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02705
-and has 34 connected components, where the component with most nodes has 3538 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 63, the mean node degree is 98.12, and the node degree mode is 4. The top 5 most
-central nodes are 1507.HMPREF0262_03240 (degree 1271), 1507.HMPREF0262_00336 (degree
-1140), 1507.HMPREF0262_02449 (degree 1122), 1507.HMPREF0262_02733 (degree 788) and
-1507.HMPREF0262_01334 (degree 765).
+The undirected graph Clostridium sp. ATCC29733 has 3628 nodes and 177993
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02705 and has 34 connected components, where the component
+with most nodes has 3538 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 63, the mean node degree is 98.12,
+and the node degree mode is 4. The top 5 most central nodes are 1507.HMPREF0262_03240
+(degree 1271), 1507.HMPREF0262_00336 (degree 1140), 1507.HMPREF0262_02449
+(degree 1122), 1507.HMPREF0262_02733 (degree 788) and 1507.HMPREF0262_01334
+(degree 765).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Atcc29733(
 	
 	Datetime: 2021-02-02 16:22:42.353557
 	
-	The undirected graph Clostridium sp. ATCC29733 has 3628 nodes and 177993 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02705
-	and has 34 connected components, where the component with most nodes has 3538 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 63, the mean node degree is 98.12, and the node degree mode is 4. The top 5 most
-	central nodes are 1507.HMPREF0262_03240 (degree 1271), 1507.HMPREF0262_00336 (degree
-	1140), 1507.HMPREF0262_02449 (degree 1122), 1507.HMPREF0262_02733 (degree 788) and
-	1507.HMPREF0262_01334 (degree 765).
+	The undirected graph Clostridium sp. ATCC29733 has 3628 nodes and 177993
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02705 and has 34 connected components, where the component
+	with most nodes has 3538 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 63, the mean node degree is 98.12,
+	and the node degree mode is 4. The top 5 most central nodes are 1507.HMPREF0262_03240
+	(degree 1271), 1507.HMPREF0262_00336 (degree 1140), 1507.HMPREF0262_02449
+	(degree 1122), 1507.HMPREF0262_02733 (degree 788) and 1507.HMPREF0262_01334
+	(degree 765).
 	
 
 

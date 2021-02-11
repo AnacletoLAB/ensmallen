@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:16.539207
 
-The undirected graph Paenibacillus alginolyticus has 7738 nodes and 1038250 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03468
-and has 40 connected components, where the component with most nodes has 7641 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 268.35, and the node degree mode is 1. The top 5
-most central nodes are 1122915.AUGY01000031_gene7563 (degree 2211), 1122915.AUGY01000009_gene4948
-(degree 2094), 1122915.AUGY01000009_gene4950 (degree 1994), 1122915.AUGY01000005_gene5655
-(degree 1919) and 1122915.AUGY01000014_gene2693 (degree 1911).
+The undirected graph Paenibacillus alginolyticus has 7738 nodes and 1038250
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03468 and has 40 connected components, where the component
+with most nodes has 7641 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 229, the mean node degree is 268.35,
+and the node degree mode is 1. The top 5 most central nodes are 1122915.AUGY01000031_gene7563
+(degree 2211), 1122915.AUGY01000009_gene4948 (degree 2094), 1122915.AUGY01000009_gene4950
+(degree 1994), 1122915.AUGY01000005_gene5655 (degree 1919) and 1122915.AUGY01000014_gene2693
+(degree 1911).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusAlginolyticus(
 	
 	Datetime: 2021-02-02 22:44:16.539207
 	
-	The undirected graph Paenibacillus alginolyticus has 7738 nodes and 1038250 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03468
-	and has 40 connected components, where the component with most nodes has 7641 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 268.35, and the node degree mode is 1. The top 5
-	most central nodes are 1122915.AUGY01000031_gene7563 (degree 2211), 1122915.AUGY01000009_gene4948
-	(degree 2094), 1122915.AUGY01000009_gene4950 (degree 1994), 1122915.AUGY01000005_gene5655
-	(degree 1919) and 1122915.AUGY01000014_gene2693 (degree 1911).
+	The undirected graph Paenibacillus alginolyticus has 7738 nodes and 1038250
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03468 and has 40 connected components, where the component
+	with most nodes has 7641 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 229, the mean node degree is 268.35,
+	and the node degree mode is 1. The top 5 most central nodes are 1122915.AUGY01000031_gene7563
+	(degree 2211), 1122915.AUGY01000009_gene4948 (degree 2094), 1122915.AUGY01000009_gene4950
+	(degree 1994), 1122915.AUGY01000005_gene5655 (degree 1919) and 1122915.AUGY01000014_gene2693
+	(degree 1911).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:26.360720
 
-The undirected graph Clostridium aminophilum has 2314 nodes and 166947 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06238 and
-has 8 connected components, where the component with most nodes has 2300 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 144.29, and the node degree mode is 1. The top 5 most central
-nodes are 1121296.JONJ01000009_gene677 (degree 1052), 1121296.JONJ01000008_gene462
-(degree 958), 1121296.JONJ01000005_gene1234 (degree 914), 1121296.JONJ01000001_gene1597
-(degree 830) and 1121296.JONJ01000001_gene1696 (degree 817).
+The undirected graph Clostridium aminophilum has 2314 nodes and 166947
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06238 and has 8 connected components, where the component
+with most nodes has 2300 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 144.29,
+and the node degree mode is 1. The top 5 most central nodes are 1121296.JONJ01000009_gene677
+(degree 1052), 1121296.JONJ01000008_gene462 (degree 958), 1121296.JONJ01000005_gene1234
+(degree 914), 1121296.JONJ01000001_gene1597 (degree 830) and 1121296.JONJ01000001_gene1696
+(degree 817).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumAminophilum(
 	
 	Datetime: 2021-02-02 22:34:26.360720
 	
-	The undirected graph Clostridium aminophilum has 2314 nodes and 166947 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06238 and
-	has 8 connected components, where the component with most nodes has 2300 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 144.29, and the node degree mode is 1. The top 5 most central
-	nodes are 1121296.JONJ01000009_gene677 (degree 1052), 1121296.JONJ01000008_gene462
-	(degree 958), 1121296.JONJ01000005_gene1234 (degree 914), 1121296.JONJ01000001_gene1597
-	(degree 830) and 1121296.JONJ01000001_gene1696 (degree 817).
+	The undirected graph Clostridium aminophilum has 2314 nodes and 166947
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06238 and has 8 connected components, where the component
+	with most nodes has 2300 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 144.29,
+	and the node degree mode is 1. The top 5 most central nodes are 1121296.JONJ01000009_gene677
+	(degree 1052), 1121296.JONJ01000008_gene462 (degree 958), 1121296.JONJ01000005_gene1234
+	(degree 914), 1121296.JONJ01000001_gene1597 (degree 830) and 1121296.JONJ01000001_gene1696
+	(degree 817).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:44.852305
 
-The undirected graph Acinetobacter sp. ATCC27244 has 3275 nodes and 248711 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04639
-and has 21 connected components, where the component with most nodes has 3230 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 151.88, and the node degree mode is 1. The top 5
-most central nodes are 525244.HMPREF0023_3117 (degree 1064), 525244.HMPREF0023_1002
-(degree 984), 525244.HMPREF0023_0105 (degree 933), 525244.HMPREF0023_3157 (degree
-912) and 525244.HMPREF0023_2229 (degree 900).
+The undirected graph Acinetobacter sp. ATCC27244 has 3275 nodes and 248711
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04639 and has 21 connected components, where the component
+with most nodes has 3230 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 151.88,
+and the node degree mode is 1. The top 5 most central nodes are 525244.HMPREF0023_3117
+(degree 1064), 525244.HMPREF0023_1002 (degree 984), 525244.HMPREF0023_0105
+(degree 933), 525244.HMPREF0023_3157 (degree 912) and 525244.HMPREF0023_2229
+(degree 900).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterSp.Atcc27244(
 	
 	Datetime: 2021-02-02 21:04:44.852305
 	
-	The undirected graph Acinetobacter sp. ATCC27244 has 3275 nodes and 248711 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04639
-	and has 21 connected components, where the component with most nodes has 3230 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 151.88, and the node degree mode is 1. The top 5
-	most central nodes are 525244.HMPREF0023_3117 (degree 1064), 525244.HMPREF0023_1002
-	(degree 984), 525244.HMPREF0023_0105 (degree 933), 525244.HMPREF0023_3157 (degree
-	912) and 525244.HMPREF0023_2229 (degree 900).
+	The undirected graph Acinetobacter sp. ATCC27244 has 3275 nodes and 248711
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04639 and has 21 connected components, where the component
+	with most nodes has 3230 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 151.88,
+	and the node degree mode is 1. The top 5 most central nodes are 525244.HMPREF0023_3117
+	(degree 1064), 525244.HMPREF0023_1002 (degree 984), 525244.HMPREF0023_0105
+	(degree 933), 525244.HMPREF0023_3157 (degree 912) and 525244.HMPREF0023_2229
+	(degree 900).
 	
 
 

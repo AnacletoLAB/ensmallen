@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:05.473921
 
-The undirected graph Streptomyces sp. 351MFTsu51 has 8146 nodes and 1230201 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-and has 25 connected components, where the component with most nodes has 8094 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 260, the mean node degree is 302.04, and the node degree mode is 2. The top 5
-most central nodes are 1172180.KB911790_gene1197 (degree 3729), 1172180.KB911808_gene7442
-(degree 2368), 1172180.KB911783_gene2334 (degree 2360), 1172180.KB911783_gene2308
-(degree 2284) and 1172180.KB911779_gene5406 (degree 2183).
+The undirected graph Streptomyces sp. 351MFTsu51 has 8146 nodes and 1230201
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03708 and has 25 connected components, where the component
+with most nodes has 8094 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 260, the mean node degree is 302.04,
+and the node degree mode is 2. The top 5 most central nodes are 1172180.KB911790_gene1197
+(degree 3729), 1172180.KB911808_gene7442 (degree 2368), 1172180.KB911783_gene2334
+(degree 2360), 1172180.KB911783_gene2308 (degree 2284) and 1172180.KB911779_gene5406
+(degree 2183).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.351mftsu51(
 	
 	Datetime: 2021-02-02 23:07:05.473921
 	
-	The undirected graph Streptomyces sp. 351MFTsu51 has 8146 nodes and 1230201 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-	and has 25 connected components, where the component with most nodes has 8094 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 260, the mean node degree is 302.04, and the node degree mode is 2. The top 5
-	most central nodes are 1172180.KB911790_gene1197 (degree 3729), 1172180.KB911808_gene7442
-	(degree 2368), 1172180.KB911783_gene2334 (degree 2360), 1172180.KB911783_gene2308
-	(degree 2284) and 1172180.KB911779_gene5406 (degree 2183).
+	The undirected graph Streptomyces sp. 351MFTsu51 has 8146 nodes and 1230201
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03708 and has 25 connected components, where the component
+	with most nodes has 8094 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 260, the mean node degree is 302.04,
+	and the node degree mode is 2. The top 5 most central nodes are 1172180.KB911790_gene1197
+	(degree 3729), 1172180.KB911808_gene7442 (degree 2368), 1172180.KB911783_gene2334
+	(degree 2360), 1172180.KB911783_gene2308 (degree 2284) and 1172180.KB911779_gene5406
+	(degree 2183).
 	
 
 

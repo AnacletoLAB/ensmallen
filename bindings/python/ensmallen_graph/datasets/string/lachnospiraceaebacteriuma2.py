@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:06.520493
 
-The undirected graph Lachnospiraceae bacterium A2 has 5172 nodes and 443277 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03315
-and has 21 connected components, where the component with most nodes has 5101 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 171.41, and the node degree mode is 4. The top 5
-most central nodes are 397290.C810_01905 (degree 1641), 397290.C810_00555 (degree
-1616), 397290.C810_04425 (degree 1492), 397290.C810_05124 (degree 1224) and 397290.C810_03264
-(degree 1204).
+The undirected graph Lachnospiraceae bacterium A2 has 5172 nodes and 443277
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03315 and has 21 connected components, where the component
+with most nodes has 5101 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 171.41,
+and the node degree mode is 4. The top 5 most central nodes are 397290.C810_01905
+(degree 1641), 397290.C810_00555 (degree 1616), 397290.C810_04425 (degree
+1492), 397290.C810_05124 (degree 1224) and 397290.C810_03264 (degree 1204).
 
 
 References
@@ -107,14 +107,14 @@ def LachnospiraceaeBacteriumA2(
 	
 	Datetime: 2021-02-02 20:42:06.520493
 	
-	The undirected graph Lachnospiraceae bacterium A2 has 5172 nodes and 443277 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03315
-	and has 21 connected components, where the component with most nodes has 5101 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 171.41, and the node degree mode is 4. The top 5
-	most central nodes are 397290.C810_01905 (degree 1641), 397290.C810_00555 (degree
-	1616), 397290.C810_04425 (degree 1492), 397290.C810_05124 (degree 1224) and 397290.C810_03264
-	(degree 1204).
+	The undirected graph Lachnospiraceae bacterium A2 has 5172 nodes and 443277
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03315 and has 21 connected components, where the component
+	with most nodes has 5101 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 171.41,
+	and the node degree mode is 4. The top 5 most central nodes are 397290.C810_01905
+	(degree 1641), 397290.C810_00555 (degree 1616), 397290.C810_04425 (degree
+	1492), 397290.C810_05124 (degree 1224) and 397290.C810_03264 (degree 1204).
 	
 
 

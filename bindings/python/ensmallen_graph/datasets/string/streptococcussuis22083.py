@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:18.223783
 
-The undirected graph Streptococcus suis 22083 has 1855 nodes and 119872 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06971
-and has 5 connected components, where the component with most nodes has 1846 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 129.24, and the node degree mode is 9. The top 5
-most central nodes are 1214184.ALKY01000021_gene560 (degree 847), 1214184.ALKY01000010_gene832
-(degree 698), 1214184.ALKY01000038_gene325 (degree 693), 1214184.ALKY01000024_gene1811
-(degree 659) and 1214184.ALKY01000027_gene1443 (degree 653).
+The undirected graph Streptococcus suis 22083 has 1855 nodes and 119872
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06971 and has 5 connected components, where the component
+with most nodes has 1846 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 129.24,
+and the node degree mode is 9. The top 5 most central nodes are 1214184.ALKY01000021_gene560
+(degree 847), 1214184.ALKY01000010_gene832 (degree 698), 1214184.ALKY01000038_gene325
+(degree 693), 1214184.ALKY01000024_gene1811 (degree 659) and 1214184.ALKY01000027_gene1443
+(degree 653).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSuis22083(
 	
 	Datetime: 2021-02-02 23:20:18.223783
 	
-	The undirected graph Streptococcus suis 22083 has 1855 nodes and 119872 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06971
-	and has 5 connected components, where the component with most nodes has 1846 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 129.24, and the node degree mode is 9. The top 5
-	most central nodes are 1214184.ALKY01000021_gene560 (degree 847), 1214184.ALKY01000010_gene832
-	(degree 698), 1214184.ALKY01000038_gene325 (degree 693), 1214184.ALKY01000024_gene1811
-	(degree 659) and 1214184.ALKY01000027_gene1443 (degree 653).
+	The undirected graph Streptococcus suis 22083 has 1855 nodes and 119872
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06971 and has 5 connected components, where the component
+	with most nodes has 1846 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 129.24,
+	and the node degree mode is 9. The top 5 most central nodes are 1214184.ALKY01000021_gene560
+	(degree 847), 1214184.ALKY01000010_gene832 (degree 698), 1214184.ALKY01000038_gene325
+	(degree 693), 1214184.ALKY01000024_gene1811 (degree 659) and 1214184.ALKY01000027_gene1443
+	(degree 653).
 	
 
 

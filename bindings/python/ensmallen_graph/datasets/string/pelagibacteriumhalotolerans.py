@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:49.707723
 
-The undirected graph Pelagibacterium halotolerans has 3860 nodes and 313965 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04216
-and has 10 connected components, where the component with most nodes has 3841 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 162.68, and the node degree mode is 1. The top 5
-most central nodes are 1082931.KKY_3719 (degree 1379), 1082931.KKY_978 (degree 939),
-1082931.KKY_2291 (degree 888), 1082931.KKY_968 (degree 876) and 1082931.KKY_1579
-(degree 825).
+The undirected graph Pelagibacterium halotolerans has 3860 nodes and 313965
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04216 and has 10 connected components, where the component
+with most nodes has 3841 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 162.68,
+and the node degree mode is 1. The top 5 most central nodes are 1082931.KKY_3719
+(degree 1379), 1082931.KKY_978 (degree 939), 1082931.KKY_2291 (degree 888),
+1082931.KKY_968 (degree 876) and 1082931.KKY_1579 (degree 825).
 
 
 References
@@ -107,14 +107,14 @@ def PelagibacteriumHalotolerans(
 	
 	Datetime: 2021-02-02 22:20:49.707723
 	
-	The undirected graph Pelagibacterium halotolerans has 3860 nodes and 313965 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04216
-	and has 10 connected components, where the component with most nodes has 3841 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 162.68, and the node degree mode is 1. The top 5
-	most central nodes are 1082931.KKY_3719 (degree 1379), 1082931.KKY_978 (degree 939),
-	1082931.KKY_2291 (degree 888), 1082931.KKY_968 (degree 876) and 1082931.KKY_1579
-	(degree 825).
+	The undirected graph Pelagibacterium halotolerans has 3860 nodes and 313965
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04216 and has 10 connected components, where the component
+	with most nodes has 3841 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 162.68,
+	and the node degree mode is 1. The top 5 most central nodes are 1082931.KKY_3719
+	(degree 1379), 1082931.KKY_978 (degree 939), 1082931.KKY_2291 (degree 888),
+	1082931.KKY_968 (degree 876) and 1082931.KKY_1579 (degree 825).
 	
 
 

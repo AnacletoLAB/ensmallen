@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:34.538525
 
-The undirected graph Entamoeba histolytica has 4509 nodes and 838606 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08251 and
-has 20 connected components, where the component with most nodes has 4469 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 306,
-the mean node degree is 371.97, and the node degree mode is 1. The top 5 most central
-nodes are 5759.rna_EHI_037230-1 (degree 1839), 5759.rna_EHI_151300-1 (degree 1801),
-5759.rna_EHI_047810-1 (degree 1788), 5759.rna_EHI_048610-1 (degree 1692) and 5759.rna_EHI_176800-1
+The undirected graph Entamoeba histolytica has 4509 nodes and 838606 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08251 and has 20 connected components, where the component with most
+nodes has 4469 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 306, the mean node degree is 371.97, and
+the node degree mode is 1. The top 5 most central nodes are 5759.rna_EHI_037230-1
+(degree 1839), 5759.rna_EHI_151300-1 (degree 1801), 5759.rna_EHI_047810-1
+(degree 1788), 5759.rna_EHI_048610-1 (degree 1692) and 5759.rna_EHI_176800-1
 (degree 1684).
 
 
@@ -107,13 +108,14 @@ def EntamoebaHistolytica(
 	
 	Datetime: 2021-02-02 17:15:34.538525
 	
-	The undirected graph Entamoeba histolytica has 4509 nodes and 838606 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08251 and
-	has 20 connected components, where the component with most nodes has 4469 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 306,
-	the mean node degree is 371.97, and the node degree mode is 1. The top 5 most central
-	nodes are 5759.rna_EHI_037230-1 (degree 1839), 5759.rna_EHI_151300-1 (degree 1801),
-	5759.rna_EHI_047810-1 (degree 1788), 5759.rna_EHI_048610-1 (degree 1692) and 5759.rna_EHI_176800-1
+	The undirected graph Entamoeba histolytica has 4509 nodes and 838606 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08251 and has 20 connected components, where the component with most
+	nodes has 4469 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 306, the mean node degree is 371.97, and
+	the node degree mode is 1. The top 5 most central nodes are 5759.rna_EHI_037230-1
+	(degree 1839), 5759.rna_EHI_151300-1 (degree 1801), 5759.rna_EHI_047810-1
+	(degree 1788), 5759.rna_EHI_048610-1 (degree 1692) and 5759.rna_EHI_176800-1
 	(degree 1684).
 	
 

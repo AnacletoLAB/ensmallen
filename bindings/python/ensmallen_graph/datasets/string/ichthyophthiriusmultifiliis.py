@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:17:41.258413
 
-The undirected graph Ichthyophthirius multifiliis has 5269 nodes and 1174834 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08465
-and has 27 connected components, where the component with most nodes has 5214 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 362, the mean node degree is 445.94, and the node degree mode is 1. The top 5
-most central nodes are 5932.XP_004035496.1 (degree 2852), 5932.XP_004032216.1 (degree
-2599), 5932.XP_004027218.1 (degree 2554), 5932.XP_004035371.1 (degree 2441) and 5932.XP_004029734.1
-(degree 2431).
+The undirected graph Ichthyophthirius multifiliis has 5269 nodes and 1174834
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08465 and has 27 connected components, where the component
+with most nodes has 5214 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 362, the mean node degree is 445.94,
+and the node degree mode is 1. The top 5 most central nodes are 5932.XP_004035496.1
+(degree 2852), 5932.XP_004032216.1 (degree 2599), 5932.XP_004027218.1 (degree
+2554), 5932.XP_004035371.1 (degree 2441) and 5932.XP_004029734.1 (degree
+2431).
 
 
 References
@@ -107,14 +108,15 @@ def IchthyophthiriusMultifiliis(
 	
 	Datetime: 2021-02-02 17:17:41.258413
 	
-	The undirected graph Ichthyophthirius multifiliis has 5269 nodes and 1174834 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08465
-	and has 27 connected components, where the component with most nodes has 5214 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 362, the mean node degree is 445.94, and the node degree mode is 1. The top 5
-	most central nodes are 5932.XP_004035496.1 (degree 2852), 5932.XP_004032216.1 (degree
-	2599), 5932.XP_004027218.1 (degree 2554), 5932.XP_004035371.1 (degree 2441) and 5932.XP_004029734.1
-	(degree 2431).
+	The undirected graph Ichthyophthirius multifiliis has 5269 nodes and 1174834
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08465 and has 27 connected components, where the component
+	with most nodes has 5214 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 362, the mean node degree is 445.94,
+	and the node degree mode is 1. The top 5 most central nodes are 5932.XP_004035496.1
+	(degree 2852), 5932.XP_004032216.1 (degree 2599), 5932.XP_004027218.1 (degree
+	2554), 5932.XP_004035371.1 (degree 2441) and 5932.XP_004029734.1 (degree
+	2431).
 	
 
 

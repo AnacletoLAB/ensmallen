@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:18.588038
 
-The undirected graph Humibacter albus has 3178 nodes and 241575 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04785 and
-has 10 connected components, where the component with most nodes has 3156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 152.03, and the node degree mode is 3. The top 5 most central
-nodes are 1121952.ATXT01000011_gene2793 (degree 934), 1121952.ATXT01000015_gene153
-(degree 930), 1121952.ATXT01000011_gene2782 (degree 930), 1121952.ATXT01000011_gene2883
-(degree 922) and 1121952.ATXT01000016_gene646 (degree 899).
+The undirected graph Humibacter albus has 3178 nodes and 241575 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04785 and has 10 connected components, where the component with most
+nodes has 3156 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 152.03, and
+the node degree mode is 3. The top 5 most central nodes are 1121952.ATXT01000011_gene2793
+(degree 934), 1121952.ATXT01000015_gene153 (degree 930), 1121952.ATXT01000011_gene2782
+(degree 930), 1121952.ATXT01000011_gene2883 (degree 922) and 1121952.ATXT01000016_gene646
+(degree 899).
 
 
 References
@@ -107,14 +108,15 @@ def HumibacterAlbus(
 	
 	Datetime: 2021-02-02 22:40:18.588038
 	
-	The undirected graph Humibacter albus has 3178 nodes and 241575 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04785 and
-	has 10 connected components, where the component with most nodes has 3156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 152.03, and the node degree mode is 3. The top 5 most central
-	nodes are 1121952.ATXT01000011_gene2793 (degree 934), 1121952.ATXT01000015_gene153
-	(degree 930), 1121952.ATXT01000011_gene2782 (degree 930), 1121952.ATXT01000011_gene2883
-	(degree 922) and 1121952.ATXT01000016_gene646 (degree 899).
+	The undirected graph Humibacter albus has 3178 nodes and 241575 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04785 and has 10 connected components, where the component with most
+	nodes has 3156 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 152.03, and
+	the node degree mode is 3. The top 5 most central nodes are 1121952.ATXT01000011_gene2793
+	(degree 934), 1121952.ATXT01000015_gene153 (degree 930), 1121952.ATXT01000011_gene2782
+	(degree 930), 1121952.ATXT01000011_gene2883 (degree 922) and 1121952.ATXT01000016_gene646
+	(degree 899).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:44.252247
 
-The undirected graph Clostridium sp. CL2 has 3816 nodes and 482759 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06632 and
-has 5 connected components, where the component with most nodes has 3801 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 253.02, and the node degree mode is 3. The top 5 most central
-nodes are 1499684.CCNP01000023_gene3336 (degree 1857), 1499684.CCNP01000015_gene487
-(degree 1719), 1499684.CCNP01000020_gene2572 (degree 1693), 1499684.CCNP01000023_gene3200
-(degree 1536) and 1499684.CCNP01000018_gene1509 (degree 1451).
+The undirected graph Clostridium sp. CL2 has 3816 nodes and 482759 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06632 and has 5 connected components, where the component with most
+nodes has 3801 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 253.02, and
+the node degree mode is 3. The top 5 most central nodes are 1499684.CCNP01000023_gene3336
+(degree 1857), 1499684.CCNP01000015_gene487 (degree 1719), 1499684.CCNP01000020_gene2572
+(degree 1693), 1499684.CCNP01000023_gene3200 (degree 1536) and 1499684.CCNP01000018_gene1509
+(degree 1451).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Cl2(
 	
 	Datetime: 2021-02-03 23:14:44.252247
 	
-	The undirected graph Clostridium sp. CL2 has 3816 nodes and 482759 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06632 and
-	has 5 connected components, where the component with most nodes has 3801 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 253.02, and the node degree mode is 3. The top 5 most central
-	nodes are 1499684.CCNP01000023_gene3336 (degree 1857), 1499684.CCNP01000015_gene487
-	(degree 1719), 1499684.CCNP01000020_gene2572 (degree 1693), 1499684.CCNP01000023_gene3200
-	(degree 1536) and 1499684.CCNP01000018_gene1509 (degree 1451).
+	The undirected graph Clostridium sp. CL2 has 3816 nodes and 482759 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06632 and has 5 connected components, where the component with most
+	nodes has 3801 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 253.02, and
+	the node degree mode is 3. The top 5 most central nodes are 1499684.CCNP01000023_gene3336
+	(degree 1857), 1499684.CCNP01000015_gene487 (degree 1719), 1499684.CCNP01000020_gene2572
+	(degree 1693), 1499684.CCNP01000023_gene3200 (degree 1536) and 1499684.CCNP01000018_gene1509
+	(degree 1451).
 	
 
 

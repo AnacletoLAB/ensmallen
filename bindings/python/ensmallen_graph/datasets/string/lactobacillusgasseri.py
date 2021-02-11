@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:37.648141
 
-The undirected graph Lactobacillus gasseri has 1745 nodes and 126888 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08339 and
-has 5 connected components, where the component with most nodes has 1735 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 145.43, and the node degree mode is 3. The top 5 most central
-nodes are 324831.LGAS_1421 (degree 826), 324831.LGAS_1137 (degree 722), 324831.LGAS_1561
-(degree 682), 324831.LGAS_0822 (degree 674) and 324831.LGAS_1338 (degree 634).
+The undirected graph Lactobacillus gasseri has 1745 nodes and 126888 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08339 and has 5 connected components, where the component with most
+nodes has 1735 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 145.43, and
+the node degree mode is 3. The top 5 most central nodes are 324831.LGAS_1421
+(degree 826), 324831.LGAS_1137 (degree 722), 324831.LGAS_1561 (degree 682),
+324831.LGAS_0822 (degree 674) and 324831.LGAS_1338 (degree 634).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusGasseri(
 	
 	Datetime: 2021-02-02 20:28:37.648141
 	
-	The undirected graph Lactobacillus gasseri has 1745 nodes and 126888 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08339 and
-	has 5 connected components, where the component with most nodes has 1735 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 145.43, and the node degree mode is 3. The top 5 most central
-	nodes are 324831.LGAS_1421 (degree 826), 324831.LGAS_1137 (degree 722), 324831.LGAS_1561
-	(degree 682), 324831.LGAS_0822 (degree 674) and 324831.LGAS_1338 (degree 634).
+	The undirected graph Lactobacillus gasseri has 1745 nodes and 126888 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08339 and has 5 connected components, where the component with most
+	nodes has 1735 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 145.43, and
+	the node degree mode is 3. The top 5 most central nodes are 324831.LGAS_1421
+	(degree 826), 324831.LGAS_1137 (degree 722), 324831.LGAS_1561 (degree 682),
+	324831.LGAS_0822 (degree 674) and 324831.LGAS_1338 (degree 634).
 	
 
 

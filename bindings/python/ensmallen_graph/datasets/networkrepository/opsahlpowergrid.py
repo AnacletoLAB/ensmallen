@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:20:20.394819
 
-The undirected graph opsahl-powergrid has 4941 nodes and 6594 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00054
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 2.67, and the node degree mode is 2. The top 5 most central
-nodes are 2847 (degree 19), 602 (degree 18), 4436 (degree 14), 3411 (degree 14) and
-932 (degree 14).
+The undirected graph opsahl-powergrid has 4941 nodes and 6594 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00054 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 2.67, and the node
+degree mode is 2. The top 5 most central nodes are 2847 (degree 19), 602
+(degree 18), 4436 (degree 14), 3411 (degree 14) and 932 (degree 14).
 
 
 References
@@ -102,12 +102,12 @@ def OpsahlPowergrid(
 	
 	Datetime: 2021-02-06 08:20:20.394819
 	
-	The undirected graph opsahl-powergrid has 4941 nodes and 6594 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00054
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 2.67, and the node degree mode is 2. The top 5 most central
-	nodes are 2847 (degree 19), 602 (degree 18), 4436 (degree 14), 3411 (degree 14) and
-	932 (degree 14).
+	The undirected graph opsahl-powergrid has 4941 nodes and 6594 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00054 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 2.67, and the node
+	degree mode is 2. The top 5 most central nodes are 2847 (degree 19), 602
+	(degree 18), 4436 (degree 14), 3411 (degree 14) and 932 (degree 14).
 	
 
 

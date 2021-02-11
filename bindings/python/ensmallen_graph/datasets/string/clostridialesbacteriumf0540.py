@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:54.502698
 
-The undirected graph Clostridiales bacterium F0540 has 4669 nodes and 580065 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05323
-and has 19 connected components, where the component with most nodes has 4628 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 248.48, and the node degree mode is 3. The top 5
-most central nodes are 1321778.HMPREF1982_03589 (degree 1701), 1321778.HMPREF1982_01173
-(degree 1633), 1321778.HMPREF1982_03514 (degree 1627), 1321778.HMPREF1982_02528 (degree
-1625) and 1321778.HMPREF1982_01187 (degree 1607).
+The undirected graph Clostridiales bacterium F0540 has 4669 nodes and 580065
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05323 and has 19 connected components, where the component
+with most nodes has 4628 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 183, the mean node degree is 248.48,
+and the node degree mode is 3. The top 5 most central nodes are 1321778.HMPREF1982_03589
+(degree 1701), 1321778.HMPREF1982_01173 (degree 1633), 1321778.HMPREF1982_03514
+(degree 1627), 1321778.HMPREF1982_02528 (degree 1625) and 1321778.HMPREF1982_01187
+(degree 1607).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridialesBacteriumF0540(
 	
 	Datetime: 2021-02-03 21:52:54.502698
 	
-	The undirected graph Clostridiales bacterium F0540 has 4669 nodes and 580065 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05323
-	and has 19 connected components, where the component with most nodes has 4628 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 248.48, and the node degree mode is 3. The top 5
-	most central nodes are 1321778.HMPREF1982_03589 (degree 1701), 1321778.HMPREF1982_01173
-	(degree 1633), 1321778.HMPREF1982_03514 (degree 1627), 1321778.HMPREF1982_02528 (degree
-	1625) and 1321778.HMPREF1982_01187 (degree 1607).
+	The undirected graph Clostridiales bacterium F0540 has 4669 nodes and 580065
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05323 and has 19 connected components, where the component
+	with most nodes has 4628 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 183, the mean node degree is 248.48,
+	and the node degree mode is 3. The top 5 most central nodes are 1321778.HMPREF1982_03589
+	(degree 1701), 1321778.HMPREF1982_01173 (degree 1633), 1321778.HMPREF1982_03514
+	(degree 1627), 1321778.HMPREF1982_02528 (degree 1625) and 1321778.HMPREF1982_01187
+	(degree 1607).
 	
 
 

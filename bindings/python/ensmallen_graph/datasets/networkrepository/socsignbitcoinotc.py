@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:55:34.927611
 
-The undirected multigraph soc-sign-bitcoinotc has 5881 nodes and 25467 weighted edges
-with 20 different edge types:  the 5 most common are 1, 2, -10, 3 and 5, of which
-none are self-loops and 7950 are parallel. The graph is sparse as it has a density
-of 0.00124 and has 4 connected components, where the component with most nodes has
-5875 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 2, the mean node degree is 8.66 and the node degree mode is 1. The top
-5 most central nodes are 35 (degree 941), 2642 (degree 594), 1810 (degree 533), 2125
-(degree 523) and 2028 (degree 429).
+The undirected multigraph soc-sign-bitcoinotc has 5881 nodes and 25467
+weighted edges with 20 different edge types:  the 5 most common are 1,
+2, -10, 3 and 5, of which none are self-loops and 7950 are parallel. The
+graph is sparse as it has a density of 0.00124 and has 4 connected components,
+where the component with most nodes has 5875 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 2, the mean
+node degree is 8.66 and the node degree mode is 1. The top 5 most central
+nodes are 35 (degree 941), 2642 (degree 594), 1810 (degree 533), 2125 (degree
+523) and 2028 (degree 429).
 
 
 References
@@ -104,14 +105,15 @@ def SocSignBitcoinotc(
 	
 	Datetime: 2021-02-03 23:55:34.927611
 	
-	The undirected multigraph soc-sign-bitcoinotc has 5881 nodes and 25467 weighted edges
-	with 20 different edge types:  the 5 most common are 1, 2, -10, 3 and 5, of which
-	none are self-loops and 7950 are parallel. The graph is sparse as it has a density
-	of 0.00124 and has 4 connected components, where the component with most nodes has
-	5875 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 2, the mean node degree is 8.66 and the node degree mode is 1. The top
-	5 most central nodes are 35 (degree 941), 2642 (degree 594), 1810 (degree 533), 2125
-	(degree 523) and 2028 (degree 429).
+	The undirected multigraph soc-sign-bitcoinotc has 5881 nodes and 25467
+	weighted edges with 20 different edge types:  the 5 most common are 1,
+	2, -10, 3 and 5, of which none are self-loops and 7950 are parallel. The
+	graph is sparse as it has a density of 0.00124 and has 4 connected components,
+	where the component with most nodes has 5875 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 2, the mean
+	node degree is 8.66 and the node degree mode is 1. The top 5 most central
+	nodes are 35 (degree 941), 2642 (degree 594), 1810 (degree 533), 2125 (degree
+	523) and 2028 (degree 429).
 	
 
 

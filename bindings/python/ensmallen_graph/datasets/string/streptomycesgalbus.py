@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:07.453055
 
-The undirected graph Streptomyces galbus has 8494 nodes and 1175413 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03259 and
-has 45 connected components, where the component with most nodes has 8384 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 236,
-the mean node degree is 276.76, and the node degree mode is 2. The top 5 most central
-nodes are 33898.JRHJ01000006_gene1983 (degree 3621), 33898.JRHJ01000038_gene4434
-(degree 2270), 33898.JRHJ01000012_gene3832 (degree 2221), 33898.JRHJ01000007_gene4637
-(degree 2195) and 33898.JRHJ01000087_gene2434 (degree 2035).
+The undirected graph Streptomyces galbus has 8494 nodes and 1175413 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03259 and has 45 connected components, where the component with most
+nodes has 8384 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 236, the mean node degree is 276.76, and
+the node degree mode is 2. The top 5 most central nodes are 33898.JRHJ01000006_gene1983
+(degree 3621), 33898.JRHJ01000038_gene4434 (degree 2270), 33898.JRHJ01000012_gene3832
+(degree 2221), 33898.JRHJ01000007_gene4637 (degree 2195) and 33898.JRHJ01000087_gene2434
+(degree 2035).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesGalbus(
 	
 	Datetime: 2021-02-02 18:04:07.453055
 	
-	The undirected graph Streptomyces galbus has 8494 nodes and 1175413 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03259 and
-	has 45 connected components, where the component with most nodes has 8384 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 236,
-	the mean node degree is 276.76, and the node degree mode is 2. The top 5 most central
-	nodes are 33898.JRHJ01000006_gene1983 (degree 3621), 33898.JRHJ01000038_gene4434
-	(degree 2270), 33898.JRHJ01000012_gene3832 (degree 2221), 33898.JRHJ01000007_gene4637
-	(degree 2195) and 33898.JRHJ01000087_gene2434 (degree 2035).
+	The undirected graph Streptomyces galbus has 8494 nodes and 1175413 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03259 and has 45 connected components, where the component with most
+	nodes has 8384 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 236, the mean node degree is 276.76, and
+	the node degree mode is 2. The top 5 most central nodes are 33898.JRHJ01000006_gene1983
+	(degree 3621), 33898.JRHJ01000038_gene4434 (degree 2270), 33898.JRHJ01000012_gene3832
+	(degree 2221), 33898.JRHJ01000007_gene4637 (degree 2195) and 33898.JRHJ01000087_gene2434
+	(degree 2035).
 	
 
 

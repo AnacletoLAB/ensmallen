@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:39.369069
 
-The undirected graph Nocardiopsis valliformis has 5980 nodes and 680182 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03805
-and has 47 connected components, where the component with most nodes has 5871 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 227.49, and the node degree mode is 1. The top 5
-most central nodes are 1246448.ANAZ01000035_gene117 (degree 2171), 1246448.ANAZ01000004_gene5014
-(degree 1708), 1246448.ANAZ01000002_gene3899 (degree 1688), 1246448.ANAZ01000024_gene2928
-(degree 1521) and 1246448.ANAZ01000027_gene3478 (degree 1509).
+The undirected graph Nocardiopsis valliformis has 5980 nodes and 680182
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03805 and has 47 connected components, where the component
+with most nodes has 5871 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 227.49,
+and the node degree mode is 1. The top 5 most central nodes are 1246448.ANAZ01000035_gene117
+(degree 2171), 1246448.ANAZ01000004_gene5014 (degree 1708), 1246448.ANAZ01000002_gene3899
+(degree 1688), 1246448.ANAZ01000024_gene2928 (degree 1521) and 1246448.ANAZ01000027_gene3478
+(degree 1509).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisValliformis(
 	
 	Datetime: 2021-02-02 23:33:39.369069
 	
-	The undirected graph Nocardiopsis valliformis has 5980 nodes and 680182 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03805
-	and has 47 connected components, where the component with most nodes has 5871 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 227.49, and the node degree mode is 1. The top 5
-	most central nodes are 1246448.ANAZ01000035_gene117 (degree 2171), 1246448.ANAZ01000004_gene5014
-	(degree 1708), 1246448.ANAZ01000002_gene3899 (degree 1688), 1246448.ANAZ01000024_gene2928
-	(degree 1521) and 1246448.ANAZ01000027_gene3478 (degree 1509).
+	The undirected graph Nocardiopsis valliformis has 5980 nodes and 680182
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03805 and has 47 connected components, where the component
+	with most nodes has 5871 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 227.49,
+	and the node degree mode is 1. The top 5 most central nodes are 1246448.ANAZ01000035_gene117
+	(degree 2171), 1246448.ANAZ01000004_gene5014 (degree 1708), 1246448.ANAZ01000002_gene3899
+	(degree 1688), 1246448.ANAZ01000024_gene2928 (degree 1521) and 1246448.ANAZ01000027_gene3478
+	(degree 1509).
 	
 
 

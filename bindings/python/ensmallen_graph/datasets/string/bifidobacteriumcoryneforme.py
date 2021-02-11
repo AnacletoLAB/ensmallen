@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:50.158201
 
-The undirected graph Bifidobacterium coryneforme has 1350 nodes and 77840 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08548
-and has 3 connected components, where the component with most nodes has 1346 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 115.32, and the node degree mode is 18. The top 5
-most central nodes are 1687.BCOR_0787 (degree 621), 1687.BCOR_1064 (degree 541),
-1687.BCOR_0893 (degree 536), 1687.BCOR_0779 (degree 509) and 1687.BCOR_0156 (degree
-508).
+The undirected graph Bifidobacterium coryneforme has 1350 nodes and 77840
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08548 and has 3 connected components, where the component
+with most nodes has 1346 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 115.32,
+and the node degree mode is 18. The top 5 most central nodes are 1687.BCOR_0787
+(degree 621), 1687.BCOR_1064 (degree 541), 1687.BCOR_0893 (degree 536),
+1687.BCOR_0779 (degree 509) and 1687.BCOR_0156 (degree 508).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumCoryneforme(
 	
 	Datetime: 2021-02-02 16:22:50.158201
 	
-	The undirected graph Bifidobacterium coryneforme has 1350 nodes and 77840 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08548
-	and has 3 connected components, where the component with most nodes has 1346 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 115.32, and the node degree mode is 18. The top 5
-	most central nodes are 1687.BCOR_0787 (degree 621), 1687.BCOR_1064 (degree 541),
-	1687.BCOR_0893 (degree 536), 1687.BCOR_0779 (degree 509) and 1687.BCOR_0156 (degree
-	508).
+	The undirected graph Bifidobacterium coryneforme has 1350 nodes and 77840
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08548 and has 3 connected components, where the component
+	with most nodes has 1346 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 115.32,
+	and the node degree mode is 18. The top 5 most central nodes are 1687.BCOR_0787
+	(degree 621), 1687.BCOR_1064 (degree 541), 1687.BCOR_0893 (degree 536),
+	1687.BCOR_0779 (degree 509) and 1687.BCOR_0156 (degree 508).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:42.247316
 
-The undirected graph Bartonella australis has 1235 nodes and 73430 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09637 and
-has 10 connected components, where the component with most nodes has 1217 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 118.91, and the node degree mode is 1. The top 5 most central
-nodes are 1094489.BAnh1_00060 (degree 632), 1094489.BAnh1_03060 (degree 516), 1094489.BAnh1_00890
-(degree 485), 1094489.BAnh1_00710 (degree 475) and 1094489.BAnh1_03080 (degree 471).
+The undirected graph Bartonella australis has 1235 nodes and 73430 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09637 and has 10 connected components, where the component with most
+nodes has 1217 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 118.91, and
+the node degree mode is 1. The top 5 most central nodes are 1094489.BAnh1_00060
+(degree 632), 1094489.BAnh1_03060 (degree 516), 1094489.BAnh1_00890 (degree
+485), 1094489.BAnh1_00710 (degree 475) and 1094489.BAnh1_03080 (degree
+471).
 
 
 References
@@ -106,13 +108,15 @@ def BartonellaAustralis(
 	
 	Datetime: 2021-02-02 22:22:42.247316
 	
-	The undirected graph Bartonella australis has 1235 nodes and 73430 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09637 and
-	has 10 connected components, where the component with most nodes has 1217 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 118.91, and the node degree mode is 1. The top 5 most central
-	nodes are 1094489.BAnh1_00060 (degree 632), 1094489.BAnh1_03060 (degree 516), 1094489.BAnh1_00890
-	(degree 485), 1094489.BAnh1_00710 (degree 475) and 1094489.BAnh1_03080 (degree 471).
+	The undirected graph Bartonella australis has 1235 nodes and 73430 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09637 and has 10 connected components, where the component with most
+	nodes has 1217 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 118.91, and
+	the node degree mode is 1. The top 5 most central nodes are 1094489.BAnh1_00060
+	(degree 632), 1094489.BAnh1_03060 (degree 516), 1094489.BAnh1_00890 (degree
+	485), 1094489.BAnh1_00710 (degree 475) and 1094489.BAnh1_03080 (degree
+	471).
 	
 
 

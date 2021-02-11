@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:23:56.388206
 
-The undirected graph Branchiostoma floridae has 20992 nodes and 2879544 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01307
-and has 6 connected components, where the component with most nodes has 20982 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 274.35, and the node degree mode is 68. The top 5
-most central nodes are 7739.XP_002606124.1 (degree 5170), 7739.XP_002590561.1 (degree
-4911), 7739.XP_002610240.1 (degree 4402), 7739.XP_002592843.1 (degree 4210) and 7739.XP_002608371.1
-(degree 4072).
+The undirected graph Branchiostoma floridae has 20992 nodes and 2879544
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01307 and has 6 connected components, where the component
+with most nodes has 20982 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 142, the mean node degree
+is 274.35, and the node degree mode is 68. The top 5 most central nodes
+are 7739.XP_002606124.1 (degree 5170), 7739.XP_002590561.1 (degree 4911),
+7739.XP_002610240.1 (degree 4402), 7739.XP_002592843.1 (degree 4210) and
+7739.XP_002608371.1 (degree 4072).
 
 
 References
@@ -107,14 +108,15 @@ def BranchiostomaFloridae(
 	
 	Datetime: 2021-02-02 17:23:56.388206
 	
-	The undirected graph Branchiostoma floridae has 20992 nodes and 2879544 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01307
-	and has 6 connected components, where the component with most nodes has 20982 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 274.35, and the node degree mode is 68. The top 5
-	most central nodes are 7739.XP_002606124.1 (degree 5170), 7739.XP_002590561.1 (degree
-	4911), 7739.XP_002610240.1 (degree 4402), 7739.XP_002592843.1 (degree 4210) and 7739.XP_002608371.1
-	(degree 4072).
+	The undirected graph Branchiostoma floridae has 20992 nodes and 2879544
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01307 and has 6 connected components, where the component
+	with most nodes has 20982 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 142, the mean node degree
+	is 274.35, and the node degree mode is 68. The top 5 most central nodes
+	are 7739.XP_002606124.1 (degree 5170), 7739.XP_002590561.1 (degree 4911),
+	7739.XP_002610240.1 (degree 4402), 7739.XP_002592843.1 (degree 4210) and
+	7739.XP_002608371.1 (degree 4072).
 	
 
 

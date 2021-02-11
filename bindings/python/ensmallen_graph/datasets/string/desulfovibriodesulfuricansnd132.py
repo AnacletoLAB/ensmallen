@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:44.855796
 
-The undirected graph Desulfovibrio desulfuricans ND132 has 3437 nodes and 354160
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05998 and has 8 connected components, where the component with most nodes has
-3422 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 152, the mean node degree is 206.09, and the node degree mode is 2. The
-top 5 most central nodes are 641491.DND132_1146 (degree 1657), 641491.DND132_2425
-(degree 1286), 641491.DND132_0633 (degree 1251), 641491.DND132_3315 (degree 1189)
-and 641491.DND132_2367 (degree 1186).
+The undirected graph Desulfovibrio desulfuricans ND132 has 3437 nodes and
+354160 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05998 and has 8 connected components, where the
+component with most nodes has 3422 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+is 206.09, and the node degree mode is 2. The top 5 most central nodes
+are 641491.DND132_1146 (degree 1657), 641491.DND132_2425 (degree 1286),
+641491.DND132_0633 (degree 1251), 641491.DND132_3315 (degree 1189) and
+641491.DND132_2367 (degree 1186).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioDesulfuricansNd132(
 	
 	Datetime: 2021-02-02 21:23:44.855796
 	
-	The undirected graph Desulfovibrio desulfuricans ND132 has 3437 nodes and 354160
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05998 and has 8 connected components, where the component with most nodes has
-	3422 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 152, the mean node degree is 206.09, and the node degree mode is 2. The
-	top 5 most central nodes are 641491.DND132_1146 (degree 1657), 641491.DND132_2425
-	(degree 1286), 641491.DND132_0633 (degree 1251), 641491.DND132_3315 (degree 1189)
-	and 641491.DND132_2367 (degree 1186).
+	The undirected graph Desulfovibrio desulfuricans ND132 has 3437 nodes and
+	354160 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05998 and has 8 connected components, where the
+	component with most nodes has 3422 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+	is 206.09, and the node degree mode is 2. The top 5 most central nodes
+	are 641491.DND132_1146 (degree 1657), 641491.DND132_2425 (degree 1286),
+	641491.DND132_0633 (degree 1251), 641491.DND132_3315 (degree 1189) and
+	641491.DND132_2367 (degree 1186).
 	
 
 

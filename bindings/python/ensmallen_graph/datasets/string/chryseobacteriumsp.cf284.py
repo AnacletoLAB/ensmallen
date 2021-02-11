@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:26.227478
 
-The undirected graph Chryseobacterium sp. CF284 has 4119 nodes and 320381 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03778
-and has 15 connected components, where the component with most nodes has 4084 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 155.56, and the node degree mode is 2. The top 5
-most central nodes are 1500281.JQKZ01000001_gene1311 (degree 1166), 1500281.JQKZ01000012_gene779
-(degree 985), 1500281.JQKZ01000007_gene3896 (degree 880), 1500281.JQKZ01000053_gene2643
-(degree 876) and 1500281.JQKZ01000027_gene793 (degree 864).
+The undirected graph Chryseobacterium sp. CF284 has 4119 nodes and 320381
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03778 and has 15 connected components, where the component
+with most nodes has 4084 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 155.56,
+and the node degree mode is 2. The top 5 most central nodes are 1500281.JQKZ01000001_gene1311
+(degree 1166), 1500281.JQKZ01000012_gene779 (degree 985), 1500281.JQKZ01000007_gene3896
+(degree 880), 1500281.JQKZ01000053_gene2643 (degree 876) and 1500281.JQKZ01000027_gene793
+(degree 864).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumSp.Cf284(
 	
 	Datetime: 2021-02-03 23:15:26.227478
 	
-	The undirected graph Chryseobacterium sp. CF284 has 4119 nodes and 320381 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03778
-	and has 15 connected components, where the component with most nodes has 4084 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 155.56, and the node degree mode is 2. The top 5
-	most central nodes are 1500281.JQKZ01000001_gene1311 (degree 1166), 1500281.JQKZ01000012_gene779
-	(degree 985), 1500281.JQKZ01000007_gene3896 (degree 880), 1500281.JQKZ01000053_gene2643
-	(degree 876) and 1500281.JQKZ01000027_gene793 (degree 864).
+	The undirected graph Chryseobacterium sp. CF284 has 4119 nodes and 320381
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03778 and has 15 connected components, where the component
+	with most nodes has 4084 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 155.56,
+	and the node degree mode is 2. The top 5 most central nodes are 1500281.JQKZ01000001_gene1311
+	(degree 1166), 1500281.JQKZ01000012_gene779 (degree 985), 1500281.JQKZ01000007_gene3896
+	(degree 880), 1500281.JQKZ01000053_gene2643 (degree 876) and 1500281.JQKZ01000027_gene793
+	(degree 864).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:47.083102
 
-The undirected graph Psychromonas ingrahamii has 3471 nodes and 343407 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05702 and
-has 10 connected components, where the component with most nodes has 3453 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 197.87, and the node degree mode is 1. The top 5 most central
-nodes are 357804.Ping_3719 (degree 1647), 357804.Ping_3185 (degree 1363), 357804.Ping_2837
-(degree 1296), 357804.Ping_0528 (degree 1213) and 357804.Ping_2949 (degree 1182).
+The undirected graph Psychromonas ingrahamii has 3471 nodes and 343407
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05702 and has 10 connected components, where the component
+with most nodes has 3453 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 197.87,
+and the node degree mode is 1. The top 5 most central nodes are 357804.Ping_3719
+(degree 1647), 357804.Ping_3185 (degree 1363), 357804.Ping_2837 (degree
+1296), 357804.Ping_0528 (degree 1213) and 357804.Ping_2949 (degree 1182).
 
 
 References
@@ -106,13 +107,14 @@ def PsychromonasIngrahamii(
 	
 	Datetime: 2021-02-02 20:33:47.083102
 	
-	The undirected graph Psychromonas ingrahamii has 3471 nodes and 343407 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05702 and
-	has 10 connected components, where the component with most nodes has 3453 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 197.87, and the node degree mode is 1. The top 5 most central
-	nodes are 357804.Ping_3719 (degree 1647), 357804.Ping_3185 (degree 1363), 357804.Ping_2837
-	(degree 1296), 357804.Ping_0528 (degree 1213) and 357804.Ping_2949 (degree 1182).
+	The undirected graph Psychromonas ingrahamii has 3471 nodes and 343407
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05702 and has 10 connected components, where the component
+	with most nodes has 3453 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 197.87,
+	and the node degree mode is 1. The top 5 most central nodes are 357804.Ping_3719
+	(degree 1647), 357804.Ping_3185 (degree 1363), 357804.Ping_2837 (degree
+	1296), 357804.Ping_0528 (degree 1213) and 357804.Ping_2949 (degree 1182).
 	
 
 

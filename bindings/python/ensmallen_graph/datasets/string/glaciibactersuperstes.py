@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:56.705661
 
-The undirected graph Glaciibacter superstes has 4460 nodes and 358492 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03605 and
-has 14 connected components, where the component with most nodes has 4427 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 160.76, and the node degree mode is 2. The top 5 most central
-nodes are 1121924.ATWH01000006_gene1823 (degree 1175), 1121924.ATWH01000010_gene871
-(degree 1159), 1121924.ATWH01000003_gene1664 (degree 1155), 1121924.ATWH01000010_gene856
-(degree 1144) and 1121924.ATWH01000006_gene1815 (degree 1081).
+The undirected graph Glaciibacter superstes has 4460 nodes and 358492 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03605 and has 14 connected components, where the component with most
+nodes has 4427 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 160.76, and
+the node degree mode is 2. The top 5 most central nodes are 1121924.ATWH01000006_gene1823
+(degree 1175), 1121924.ATWH01000010_gene871 (degree 1159), 1121924.ATWH01000003_gene1664
+(degree 1155), 1121924.ATWH01000010_gene856 (degree 1144) and 1121924.ATWH01000006_gene1815
+(degree 1081).
 
 
 References
@@ -107,14 +108,15 @@ def GlaciibacterSuperstes(
 	
 	Datetime: 2021-02-02 22:38:56.705661
 	
-	The undirected graph Glaciibacter superstes has 4460 nodes and 358492 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03605 and
-	has 14 connected components, where the component with most nodes has 4427 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 160.76, and the node degree mode is 2. The top 5 most central
-	nodes are 1121924.ATWH01000006_gene1823 (degree 1175), 1121924.ATWH01000010_gene871
-	(degree 1159), 1121924.ATWH01000003_gene1664 (degree 1155), 1121924.ATWH01000010_gene856
-	(degree 1144) and 1121924.ATWH01000006_gene1815 (degree 1081).
+	The undirected graph Glaciibacter superstes has 4460 nodes and 358492 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03605 and has 14 connected components, where the component with most
+	nodes has 4427 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 160.76, and
+	the node degree mode is 2. The top 5 most central nodes are 1121924.ATWH01000006_gene1823
+	(degree 1175), 1121924.ATWH01000010_gene871 (degree 1159), 1121924.ATWH01000003_gene1664
+	(degree 1155), 1121924.ATWH01000010_gene856 (degree 1144) and 1121924.ATWH01000006_gene1815
+	(degree 1081).
 	
 
 

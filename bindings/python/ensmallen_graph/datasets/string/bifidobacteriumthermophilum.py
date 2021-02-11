@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:04:09.235688
 
-The undirected graph Bifidobacterium thermophilum has 1688 nodes and 87020 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06112
-and has 14 connected components, where the component with most nodes has 1652 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 103.10, and the node degree mode is 2. The top 5 most
-central nodes are 33905.BTHE_1127 (degree 710), 33905.BTHE_0065 (degree 603), 33905.BTHE_1114
-(degree 545), 33905.BTHE_0308 (degree 543) and 33905.BTHE_0965 (degree 510).
+The undirected graph Bifidobacterium thermophilum has 1688 nodes and 87020
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06112 and has 14 connected components, where the component
+with most nodes has 1652 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 103.10,
+and the node degree mode is 2. The top 5 most central nodes are 33905.BTHE_1127
+(degree 710), 33905.BTHE_0065 (degree 603), 33905.BTHE_1114 (degree 545),
+33905.BTHE_0308 (degree 543) and 33905.BTHE_0965 (degree 510).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumThermophilum(
 	
 	Datetime: 2021-02-02 18:04:09.235688
 	
-	The undirected graph Bifidobacterium thermophilum has 1688 nodes and 87020 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06112
-	and has 14 connected components, where the component with most nodes has 1652 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 103.10, and the node degree mode is 2. The top 5 most
-	central nodes are 33905.BTHE_1127 (degree 710), 33905.BTHE_0065 (degree 603), 33905.BTHE_1114
-	(degree 545), 33905.BTHE_0308 (degree 543) and 33905.BTHE_0965 (degree 510).
+	The undirected graph Bifidobacterium thermophilum has 1688 nodes and 87020
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06112 and has 14 connected components, where the component
+	with most nodes has 1652 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 103.10,
+	and the node degree mode is 2. The top 5 most central nodes are 33905.BTHE_1127
+	(degree 710), 33905.BTHE_0065 (degree 603), 33905.BTHE_1114 (degree 545),
+	33905.BTHE_0308 (degree 543) and 33905.BTHE_0965 (degree 510).
 	
 
 

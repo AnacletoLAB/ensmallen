@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:32.077599
 
-The undirected graph Nocardia veterana has 5884 nodes and 671125 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03878 and
-has 26 connected components, where the component with most nodes has 5830 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 190,
-the mean node degree is 228.12, and the node degree mode is 1. The top 5 most central
-nodes are 1206743.BAGM01000198_gene1005 (degree 1839), 1206743.BAGM01000023_gene1902
-(degree 1838), 1206743.BAGM01000035_gene96 (degree 1807), 1206743.BAGM01000056_gene5273
-(degree 1607) and 1206743.BAGM01000117_gene1663 (degree 1450).
+The undirected graph Nocardia veterana has 5884 nodes and 671125 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03878 and has 26 connected components, where the component with most
+nodes has 5830 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 190, the mean node degree is 228.12, and
+the node degree mode is 1. The top 5 most central nodes are 1206743.BAGM01000198_gene1005
+(degree 1839), 1206743.BAGM01000023_gene1902 (degree 1838), 1206743.BAGM01000035_gene96
+(degree 1807), 1206743.BAGM01000056_gene5273 (degree 1607) and 1206743.BAGM01000117_gene1663
+(degree 1450).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaVeterana(
 	
 	Datetime: 2021-02-02 23:17:32.077599
 	
-	The undirected graph Nocardia veterana has 5884 nodes and 671125 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03878 and
-	has 26 connected components, where the component with most nodes has 5830 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 190,
-	the mean node degree is 228.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1206743.BAGM01000198_gene1005 (degree 1839), 1206743.BAGM01000023_gene1902
-	(degree 1838), 1206743.BAGM01000035_gene96 (degree 1807), 1206743.BAGM01000056_gene5273
-	(degree 1607) and 1206743.BAGM01000117_gene1663 (degree 1450).
+	The undirected graph Nocardia veterana has 5884 nodes and 671125 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03878 and has 26 connected components, where the component with most
+	nodes has 5830 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 190, the mean node degree is 228.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1206743.BAGM01000198_gene1005
+	(degree 1839), 1206743.BAGM01000023_gene1902 (degree 1838), 1206743.BAGM01000035_gene96
+	(degree 1807), 1206743.BAGM01000056_gene5273 (degree 1607) and 1206743.BAGM01000117_gene1663
+	(degree 1450).
 	
 
 

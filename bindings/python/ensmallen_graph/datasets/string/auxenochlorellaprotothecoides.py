@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:26:35.727313
 
-The undirected graph Auxenochlorella protothecoides has 4774 nodes and 505643 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04438
-and has 3 connected components, where the component with most nodes has 4770 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 211.83, and the node degree mode is 1. The top 5
-most central nodes are 3075.A0A087SBN0 (degree 2184), 3075.A0A087SIG7 (degree 1827),
-3075.A0A087SIP3 (degree 1702), 3075.A0A087SI34 (degree 1685) and 3075.A0A087SBQ6
-(degree 1450).
+The undirected graph Auxenochlorella protothecoides has 4774 nodes and
+505643 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04438 and has 3 connected components, where the
+component with most nodes has 4770 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+is 211.83, and the node degree mode is 1. The top 5 most central nodes
+are 3075.A0A087SBN0 (degree 2184), 3075.A0A087SIG7 (degree 1827), 3075.A0A087SIP3
+(degree 1702), 3075.A0A087SI34 (degree 1685) and 3075.A0A087SBQ6 (degree
+1450).
 
 
 References
@@ -107,14 +108,15 @@ def AuxenochlorellaProtothecoides(
 	
 	Datetime: 2021-02-02 16:26:35.727313
 	
-	The undirected graph Auxenochlorella protothecoides has 4774 nodes and 505643 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04438
-	and has 3 connected components, where the component with most nodes has 4770 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 211.83, and the node degree mode is 1. The top 5
-	most central nodes are 3075.A0A087SBN0 (degree 2184), 3075.A0A087SIG7 (degree 1827),
-	3075.A0A087SIP3 (degree 1702), 3075.A0A087SI34 (degree 1685) and 3075.A0A087SBQ6
-	(degree 1450).
+	The undirected graph Auxenochlorella protothecoides has 4774 nodes and
+	505643 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04438 and has 3 connected components, where the
+	component with most nodes has 4770 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 151, the mean node degree
+	is 211.83, and the node degree mode is 1. The top 5 most central nodes
+	are 3075.A0A087SBN0 (degree 2184), 3075.A0A087SIG7 (degree 1827), 3075.A0A087SIP3
+	(degree 1702), 3075.A0A087SI34 (degree 1685) and 3075.A0A087SBQ6 (degree
+	1450).
 	
 
 

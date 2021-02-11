@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:15.622575
 
-The undirected graph Jannaschia sp. CCS1 has 4265 nodes and 432446 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04756 and
-has 5 connected components, where the component with most nodes has 4255 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 202.79, and the node degree mode is 3. The top 5 most central
-nodes are 290400.Jann_1683 (degree 1606), 290400.Jann_2730 (degree 1142), 290400.Jann_2988
-(degree 1093), 290400.Jann_1982 (degree 1087) and 290400.Jann_2221 (degree 1058).
+The undirected graph Jannaschia sp. CCS1 has 4265 nodes and 432446 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04756 and has 5 connected components, where the component with most
+nodes has 4255 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 202.79, and
+the node degree mode is 3. The top 5 most central nodes are 290400.Jann_1683
+(degree 1606), 290400.Jann_2730 (degree 1142), 290400.Jann_2988 (degree
+1093), 290400.Jann_1982 (degree 1087) and 290400.Jann_2221 (degree 1058).
 
 
 References
@@ -106,13 +107,14 @@ def JannaschiaSp.Ccs1(
 	
 	Datetime: 2021-02-02 20:20:15.622575
 	
-	The undirected graph Jannaschia sp. CCS1 has 4265 nodes and 432446 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04756 and
-	has 5 connected components, where the component with most nodes has 4255 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 202.79, and the node degree mode is 3. The top 5 most central
-	nodes are 290400.Jann_1683 (degree 1606), 290400.Jann_2730 (degree 1142), 290400.Jann_2988
-	(degree 1093), 290400.Jann_1982 (degree 1087) and 290400.Jann_2221 (degree 1058).
+	The undirected graph Jannaschia sp. CCS1 has 4265 nodes and 432446 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04756 and has 5 connected components, where the component with most
+	nodes has 4255 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 202.79, and
+	the node degree mode is 3. The top 5 most central nodes are 290400.Jann_1683
+	(degree 1606), 290400.Jann_2730 (degree 1142), 290400.Jann_2988 (degree
+	1093), 290400.Jann_1982 (degree 1087) and 290400.Jann_2221 (degree 1058).
 	
 
 

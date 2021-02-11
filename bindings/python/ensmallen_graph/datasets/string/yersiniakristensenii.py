@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:41.915147
 
-The undirected graph Yersinia kristensenii has 3891 nodes and 352573 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04659 and
-has 5 connected components, where the component with most nodes has 3881 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 181.22, and the node degree mode is 2. The top 5 most central
-nodes are 28152.DJ57_3423 (degree 1403), 28152.DJ57_2287 (degree 1300), 28152.DJ57_3852
-(degree 1148), 28152.DJ57_1210 (degree 1142) and 28152.DJ57_3854 (degree 1078).
+The undirected graph Yersinia kristensenii has 3891 nodes and 352573 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04659 and has 5 connected components, where the component with most
+nodes has 3881 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 181.22, and
+the node degree mode is 2. The top 5 most central nodes are 28152.DJ57_3423
+(degree 1403), 28152.DJ57_2287 (degree 1300), 28152.DJ57_3852 (degree 1148),
+28152.DJ57_1210 (degree 1142) and 28152.DJ57_3854 (degree 1078).
 
 
 References
@@ -106,13 +107,14 @@ def YersiniaKristensenii(
 	
 	Datetime: 2021-02-02 17:55:41.915147
 	
-	The undirected graph Yersinia kristensenii has 3891 nodes and 352573 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04659 and
-	has 5 connected components, where the component with most nodes has 3881 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 181.22, and the node degree mode is 2. The top 5 most central
-	nodes are 28152.DJ57_3423 (degree 1403), 28152.DJ57_2287 (degree 1300), 28152.DJ57_3852
-	(degree 1148), 28152.DJ57_1210 (degree 1142) and 28152.DJ57_3854 (degree 1078).
+	The undirected graph Yersinia kristensenii has 3891 nodes and 352573 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04659 and has 5 connected components, where the component with most
+	nodes has 3881 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 181.22, and
+	the node degree mode is 2. The top 5 most central nodes are 28152.DJ57_3423
+	(degree 1403), 28152.DJ57_2287 (degree 1300), 28152.DJ57_3852 (degree 1148),
+	28152.DJ57_1210 (degree 1142) and 28152.DJ57_3854 (degree 1078).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:54:56.353181
 
-The undirected graph soc-anybeat has 12645 nodes and 49132 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00061 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 7.77, and the node degree mode is 1. The top 5 most central nodes
-are 4152 (degree 4800), 9088 (degree 1582), 10037 (degree 1580), 1622 (degree 963)
-and 9975 (degree 893).
+The undirected graph soc-anybeat has 12645 nodes and 49132 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00061 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 7.77, and the node degree mode
+is 1. The top 5 most central nodes are 4152 (degree 4800), 9088 (degree
+1582), 10037 (degree 1580), 1622 (degree 963) and 9975 (degree 893).
 
 
 References
@@ -109,12 +109,12 @@ def SocAnybeat(
 	
 	Datetime: 2021-02-06 10:54:56.353181
 	
-	The undirected graph soc-anybeat has 12645 nodes and 49132 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00061 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 7.77, and the node degree mode is 1. The top 5 most central nodes
-	are 4152 (degree 4800), 9088 (degree 1582), 10037 (degree 1580), 1622 (degree 963)
-	and 9975 (degree 893).
+	The undirected graph soc-anybeat has 12645 nodes and 49132 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00061 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 7.77, and the node degree mode
+	is 1. The top 5 most central nodes are 4152 (degree 4800), 9088 (degree
+	1582), 10037 (degree 1580), 1622 (degree 963) and 9975 (degree 893).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:00.286209
 
-The undirected graph Slackia piriformis has 1780 nodes and 105348 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06654 and
-has 4 connected components, where the component with most nodes has 1773 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 118.37, and the node degree mode is 8. The top 5 most central
-nodes are 742818.HMPREF9451_01480 (degree 884), 742818.HMPREF9451_01018 (degree 789),
-742818.HMPREF9451_00148 (degree 681), 742818.HMPREF9451_01130 (degree 644) and 742818.HMPREF9451_00619
+The undirected graph Slackia piriformis has 1780 nodes and 105348 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06654 and has 4 connected components, where the component with most
+nodes has 1773 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 118.37, and
+the node degree mode is 8. The top 5 most central nodes are 742818.HMPREF9451_01480
+(degree 884), 742818.HMPREF9451_01018 (degree 789), 742818.HMPREF9451_00148
+(degree 681), 742818.HMPREF9451_01130 (degree 644) and 742818.HMPREF9451_00619
 (degree 585).
 
 
@@ -107,13 +108,14 @@ def SlackiaPiriformis(
 	
 	Datetime: 2021-02-02 21:38:00.286209
 	
-	The undirected graph Slackia piriformis has 1780 nodes and 105348 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06654 and
-	has 4 connected components, where the component with most nodes has 1773 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 118.37, and the node degree mode is 8. The top 5 most central
-	nodes are 742818.HMPREF9451_01480 (degree 884), 742818.HMPREF9451_01018 (degree 789),
-	742818.HMPREF9451_00148 (degree 681), 742818.HMPREF9451_01130 (degree 644) and 742818.HMPREF9451_00619
+	The undirected graph Slackia piriformis has 1780 nodes and 105348 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06654 and has 4 connected components, where the component with most
+	nodes has 1773 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 118.37, and
+	the node degree mode is 8. The top 5 most central nodes are 742818.HMPREF9451_01480
+	(degree 884), 742818.HMPREF9451_01018 (degree 789), 742818.HMPREF9451_00148
+	(degree 681), 742818.HMPREF9451_01130 (degree 644) and 742818.HMPREF9451_00619
 	(degree 585).
 	
 

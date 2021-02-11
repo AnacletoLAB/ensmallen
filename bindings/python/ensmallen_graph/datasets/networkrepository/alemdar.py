@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:53:59.182999
 
-The undirected graph Alemdar has 6245 nodes, of which 5 are singletons (all have
-self-loops), and 24413 weighted edges, of which 6245 are self-loops. The graph is
-sparse as it has a density of 0.00109 and has 6 connected components, where the component
-with most nodes has 6240 nodes and the component with the least nodes has a single
-node. The graph median node degree is 8, the mean node degree is 6.82, and the node
-degree mode is 9. The top 5 most central nodes are 3790 (degree 10), 4982 (degree
-10), 3422 (degree 10), 4906 (degree 10) and 6143 (degree 10).
+The undirected graph Alemdar has 6245 nodes, of which 5 are singletons
+(all have self-loops), and 24413 weighted edges, of which 6245 are self-loops.
+The graph is sparse as it has a density of 0.00109 and has 6 connected
+components, where the component with most nodes has 6240 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 8, the mean node degree is 6.82, and the node degree mode is
+9. The top 5 most central nodes are 3790 (degree 10), 4982 (degree 10),
+3422 (degree 10), 4906 (degree 10) and 6143 (degree 10).
 
 
 References
@@ -103,13 +104,14 @@ def Alemdar(
 	
 	Datetime: 2021-02-06 09:53:59.182999
 	
-	The undirected graph Alemdar has 6245 nodes, of which 5 are singletons (all have
-	self-loops), and 24413 weighted edges, of which 6245 are self-loops. The graph is
-	sparse as it has a density of 0.00109 and has 6 connected components, where the component
-	with most nodes has 6240 nodes and the component with the least nodes has a single
-	node. The graph median node degree is 8, the mean node degree is 6.82, and the node
-	degree mode is 9. The top 5 most central nodes are 3790 (degree 10), 4982 (degree
-	10), 3422 (degree 10), 4906 (degree 10) and 6143 (degree 10).
+	The undirected graph Alemdar has 6245 nodes, of which 5 are singletons
+	(all have self-loops), and 24413 weighted edges, of which 6245 are self-loops.
+	The graph is sparse as it has a density of 0.00109 and has 6 connected
+	components, where the component with most nodes has 6240 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 8, the mean node degree is 6.82, and the node degree mode is
+	9. The top 5 most central nodes are 3790 (degree 10), 4982 (degree 10),
+	3422 (degree 10), 4906 (degree 10) and 6143 (degree 10).
 	
 
 

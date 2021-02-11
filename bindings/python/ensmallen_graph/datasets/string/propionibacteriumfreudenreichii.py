@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:25.406514
 
-The undirected graph Propionibacterium freudenreichii has 2291 nodes and 129686 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04944
-and has 14 connected components, where the component with most nodes has 2254 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 87, the mean node degree is 113.21, and the node degree mode is 3. The top 5 most
-central nodes are 754252.PFREUD_15360 (degree 926), 754252.PFREUD_07070 (degree 671),
-754252.PFREUD_14640 (degree 626), 754252.PFREUD_22890 (degree 622) and 754252.PFREUD_21470
-(degree 605).
+The undirected graph Propionibacterium freudenreichii has 2291 nodes and
+129686 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04944 and has 14 connected components, where the
+component with most nodes has 2254 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 87, the mean node degree
+is 113.21, and the node degree mode is 3. The top 5 most central nodes
+are 754252.PFREUD_15360 (degree 926), 754252.PFREUD_07070 (degree 671),
+754252.PFREUD_14640 (degree 626), 754252.PFREUD_22890 (degree 622) and
+754252.PFREUD_21470 (degree 605).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumFreudenreichii(
 	
 	Datetime: 2021-02-02 21:40:25.406514
 	
-	The undirected graph Propionibacterium freudenreichii has 2291 nodes and 129686 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04944
-	and has 14 connected components, where the component with most nodes has 2254 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 87, the mean node degree is 113.21, and the node degree mode is 3. The top 5 most
-	central nodes are 754252.PFREUD_15360 (degree 926), 754252.PFREUD_07070 (degree 671),
-	754252.PFREUD_14640 (degree 626), 754252.PFREUD_22890 (degree 622) and 754252.PFREUD_21470
-	(degree 605).
+	The undirected graph Propionibacterium freudenreichii has 2291 nodes and
+	129686 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04944 and has 14 connected components, where the
+	component with most nodes has 2254 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 87, the mean node degree
+	is 113.21, and the node degree mode is 3. The top 5 most central nodes
+	are 754252.PFREUD_15360 (degree 926), 754252.PFREUD_07070 (degree 671),
+	754252.PFREUD_14640 (degree 626), 754252.PFREUD_22890 (degree 622) and
+	754252.PFREUD_21470 (degree 605).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:20.329800
 
-The undirected graph Xanthomonas oryzae PXO99A has 4840 nodes and 303583 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02592
-and has 27 connected components, where the component with most nodes has 4780 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 125.45, and the node degree mode is 2. The top 5 most
-central nodes are 360094.PXO_03934 (degree 1307), 360094.PXO_00475 (degree 1169),
-360094.PXO_03553 (degree 1124), 360094.PXO_00906 (degree 976) and 360094.PXO_03319
-(degree 958).
+The undirected graph Xanthomonas oryzae PXO99A has 4840 nodes and 303583
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02592 and has 27 connected components, where the component
+with most nodes has 4780 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 125.45,
+and the node degree mode is 2. The top 5 most central nodes are 360094.PXO_03934
+(degree 1307), 360094.PXO_00475 (degree 1169), 360094.PXO_03553 (degree
+1124), 360094.PXO_00906 (degree 976) and 360094.PXO_03319 (degree 958).
 
 
 References
@@ -107,14 +107,14 @@ def XanthomonasOryzaePxo99a(
 	
 	Datetime: 2021-02-02 20:34:20.329800
 	
-	The undirected graph Xanthomonas oryzae PXO99A has 4840 nodes and 303583 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02592
-	and has 27 connected components, where the component with most nodes has 4780 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 125.45, and the node degree mode is 2. The top 5 most
-	central nodes are 360094.PXO_03934 (degree 1307), 360094.PXO_00475 (degree 1169),
-	360094.PXO_03553 (degree 1124), 360094.PXO_00906 (degree 976) and 360094.PXO_03319
-	(degree 958).
+	The undirected graph Xanthomonas oryzae PXO99A has 4840 nodes and 303583
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02592 and has 27 connected components, where the component
+	with most nodes has 4780 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 125.45,
+	and the node degree mode is 2. The top 5 most central nodes are 360094.PXO_03934
+	(degree 1307), 360094.PXO_00475 (degree 1169), 360094.PXO_03553 (degree
+	1124), 360094.PXO_00906 (degree 976) and 360094.PXO_03319 (degree 958).
 	
 
 

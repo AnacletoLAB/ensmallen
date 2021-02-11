@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:50.741358
 
-The undirected graph Edwardsiella hoshinae has 3102 nodes and 228176 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04744 and
-has 8 connected components, where the component with most nodes has 3087 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 147.12, and the node degree mode is 1. The top 5 most central
-nodes are 1216966.BAUC01000039_gene2925 (degree 1063), 1216966.BAUC01000021_gene1128
-(degree 950), 1216966.BAUC01000017_gene692 (degree 929), 1216966.BAUC01000016_gene585
-(degree 928) and 1216966.BAUC01000011_gene2256 (degree 896).
+The undirected graph Edwardsiella hoshinae has 3102 nodes and 228176 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04744 and has 8 connected components, where the component with most
+nodes has 3087 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 147.12, and
+the node degree mode is 1. The top 5 most central nodes are 1216966.BAUC01000039_gene2925
+(degree 1063), 1216966.BAUC01000021_gene1128 (degree 950), 1216966.BAUC01000017_gene692
+(degree 929), 1216966.BAUC01000016_gene585 (degree 928) and 1216966.BAUC01000011_gene2256
+(degree 896).
 
 
 References
@@ -107,14 +108,15 @@ def EdwardsiellaHoshinae(
 	
 	Datetime: 2021-02-02 23:20:50.741358
 	
-	The undirected graph Edwardsiella hoshinae has 3102 nodes and 228176 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04744 and
-	has 8 connected components, where the component with most nodes has 3087 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 147.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1216966.BAUC01000039_gene2925 (degree 1063), 1216966.BAUC01000021_gene1128
-	(degree 950), 1216966.BAUC01000017_gene692 (degree 929), 1216966.BAUC01000016_gene585
-	(degree 928) and 1216966.BAUC01000011_gene2256 (degree 896).
+	The undirected graph Edwardsiella hoshinae has 3102 nodes and 228176 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04744 and has 8 connected components, where the component with most
+	nodes has 3087 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 147.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1216966.BAUC01000039_gene2925
+	(degree 1063), 1216966.BAUC01000021_gene1128 (degree 950), 1216966.BAUC01000017_gene692
+	(degree 929), 1216966.BAUC01000016_gene585 (degree 928) and 1216966.BAUC01000011_gene2256
+	(degree 896).
 	
 
 

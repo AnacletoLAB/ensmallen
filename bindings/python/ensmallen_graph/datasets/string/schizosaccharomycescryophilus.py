@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:10.718829
 
-The undirected graph Schizosaccharomyces cryophilus has 4325 nodes and 647079 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06920
-and has 2 connected components, where the component with most nodes has 4323 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 245, the mean node degree is 299.23, and the node degree mode is 1. The top 5
-most central nodes are 866546.EPY49354 (degree 1517), 866546.EPY52524 (degree 1468),
-866546.EPY52036 (degree 1462), 866546.EPY53016 (degree 1380) and 866546.EPY49167
-(degree 1282).
+The undirected graph Schizosaccharomyces cryophilus has 4325 nodes and
+647079 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06920 and has 2 connected components, where the
+component with most nodes has 4323 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 245, the mean node degree
+is 299.23, and the node degree mode is 1. The top 5 most central nodes
+are 866546.EPY49354 (degree 1517), 866546.EPY52524 (degree 1468), 866546.EPY52036
+(degree 1462), 866546.EPY53016 (degree 1380) and 866546.EPY49167 (degree
+1282).
 
 
 References
@@ -107,14 +108,15 @@ def SchizosaccharomycesCryophilus(
 	
 	Datetime: 2021-02-02 21:48:10.718829
 	
-	The undirected graph Schizosaccharomyces cryophilus has 4325 nodes and 647079 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06920
-	and has 2 connected components, where the component with most nodes has 4323 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 245, the mean node degree is 299.23, and the node degree mode is 1. The top 5
-	most central nodes are 866546.EPY49354 (degree 1517), 866546.EPY52524 (degree 1468),
-	866546.EPY52036 (degree 1462), 866546.EPY53016 (degree 1380) and 866546.EPY49167
-	(degree 1282).
+	The undirected graph Schizosaccharomyces cryophilus has 4325 nodes and
+	647079 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06920 and has 2 connected components, where the
+	component with most nodes has 4323 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 245, the mean node degree
+	is 299.23, and the node degree mode is 1. The top 5 most central nodes
+	are 866546.EPY49354 (degree 1517), 866546.EPY52524 (degree 1468), 866546.EPY52036
+	(degree 1462), 866546.EPY53016 (degree 1380) and 866546.EPY49167 (degree
+	1282).
 	
 
 

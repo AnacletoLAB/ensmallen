@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:56.506254
 
-The undirected graph Bacterium sp. MS4 has 3263 nodes and 456742 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08582 and
-has 8 connected components, where the component with most nodes has 3246 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 279.95, and the node degree mode is 1. The top 5 most central
-nodes are 1120746.CCNL01000017_gene2396 (degree 1589), 1120746.CCNL01000004_gene63
-(degree 1576), 1120746.CCNL01000007_gene458 (degree 1519), 1120746.CCNL01000004_gene76
-(degree 1508) and 1120746.CCNL01000017_gene2421 (degree 1330).
+The undirected graph Bacterium sp. MS4 has 3263 nodes and 456742 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08582 and has 8 connected components, where the component with most
+nodes has 3246 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 279.95, and
+the node degree mode is 1. The top 5 most central nodes are 1120746.CCNL01000017_gene2396
+(degree 1589), 1120746.CCNL01000004_gene63 (degree 1576), 1120746.CCNL01000007_gene458
+(degree 1519), 1120746.CCNL01000004_gene76 (degree 1508) and 1120746.CCNL01000017_gene2421
+(degree 1330).
 
 
 References
@@ -107,14 +108,15 @@ def BacteriumSp.Ms4(
 	
 	Datetime: 2021-02-02 22:28:56.506254
 	
-	The undirected graph Bacterium sp. MS4 has 3263 nodes and 456742 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08582 and
-	has 8 connected components, where the component with most nodes has 3246 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 279.95, and the node degree mode is 1. The top 5 most central
-	nodes are 1120746.CCNL01000017_gene2396 (degree 1589), 1120746.CCNL01000004_gene63
-	(degree 1576), 1120746.CCNL01000007_gene458 (degree 1519), 1120746.CCNL01000004_gene76
-	(degree 1508) and 1120746.CCNL01000017_gene2421 (degree 1330).
+	The undirected graph Bacterium sp. MS4 has 3263 nodes and 456742 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08582 and has 8 connected components, where the component with most
+	nodes has 3246 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 279.95, and
+	the node degree mode is 1. The top 5 most central nodes are 1120746.CCNL01000017_gene2396
+	(degree 1589), 1120746.CCNL01000004_gene63 (degree 1576), 1120746.CCNL01000007_gene458
+	(degree 1519), 1120746.CCNL01000004_gene76 (degree 1508) and 1120746.CCNL01000017_gene2421
+	(degree 1330).
 	
 
 

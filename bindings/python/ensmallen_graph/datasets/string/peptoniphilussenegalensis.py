@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:18.493164
 
-The undirected graph Peptoniphilus senegalensis has 1729 nodes and 109156 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07307
-and has 5 connected components, where the component with most nodes has 1720 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 126.26, and the node degree mode is 12. The top 5
-most central nodes are 1033744.CAEL01000001_gene422 (degree 773), 1033744.CAEL01000001_gene418
-(degree 654), 1033744.CAEL01000009_gene1162 (degree 604), 1033744.CAEL01000009_gene1147
-(degree 585) and 1033744.CAEL01000003_gene481 (degree 581).
+The undirected graph Peptoniphilus senegalensis has 1729 nodes and 109156
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07307 and has 5 connected components, where the component
+with most nodes has 1720 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 126.26,
+and the node degree mode is 12. The top 5 most central nodes are 1033744.CAEL01000001_gene422
+(degree 773), 1033744.CAEL01000001_gene418 (degree 654), 1033744.CAEL01000009_gene1162
+(degree 604), 1033744.CAEL01000009_gene1147 (degree 585) and 1033744.CAEL01000003_gene481
+(degree 581).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoniphilusSenegalensis(
 	
 	Datetime: 2021-02-02 22:11:18.493164
 	
-	The undirected graph Peptoniphilus senegalensis has 1729 nodes and 109156 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07307
-	and has 5 connected components, where the component with most nodes has 1720 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 126.26, and the node degree mode is 12. The top 5
-	most central nodes are 1033744.CAEL01000001_gene422 (degree 773), 1033744.CAEL01000001_gene418
-	(degree 654), 1033744.CAEL01000009_gene1162 (degree 604), 1033744.CAEL01000009_gene1147
-	(degree 585) and 1033744.CAEL01000003_gene481 (degree 581).
+	The undirected graph Peptoniphilus senegalensis has 1729 nodes and 109156
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07307 and has 5 connected components, where the component
+	with most nodes has 1720 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 126.26,
+	and the node degree mode is 12. The top 5 most central nodes are 1033744.CAEL01000001_gene422
+	(degree 773), 1033744.CAEL01000001_gene418 (degree 654), 1033744.CAEL01000009_gene1162
+	(degree 604), 1033744.CAEL01000009_gene1147 (degree 585) and 1033744.CAEL01000003_gene481
+	(degree 581).
 	
 
 

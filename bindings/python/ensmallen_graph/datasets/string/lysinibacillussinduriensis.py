@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:16.765974
 
-The undirected graph Lysinibacillus sinduriensis has 3484 nodes and 281934 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04647
-and has 20 connected components, where the component with most nodes has 3444 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 161.85, and the node degree mode is 1. The top 5
-most central nodes are 1384057.CD33_05025 (degree 1247), 1384057.CD33_03700 (degree
-1110), 1384057.CD33_01760 (degree 1028), 1384057.CD33_12620 (degree 988) and 1384057.CD33_17700
-(degree 907).
+The undirected graph Lysinibacillus sinduriensis has 3484 nodes and 281934
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04647 and has 20 connected components, where the component
+with most nodes has 3444 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 161.85,
+and the node degree mode is 1. The top 5 most central nodes are 1384057.CD33_05025
+(degree 1247), 1384057.CD33_03700 (degree 1110), 1384057.CD33_01760 (degree
+1028), 1384057.CD33_12620 (degree 988) and 1384057.CD33_17700 (degree 907).
 
 
 References
@@ -107,14 +107,14 @@ def LysinibacillusSinduriensis(
 	
 	Datetime: 2021-02-03 22:19:16.765974
 	
-	The undirected graph Lysinibacillus sinduriensis has 3484 nodes and 281934 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04647
-	and has 20 connected components, where the component with most nodes has 3444 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 161.85, and the node degree mode is 1. The top 5
-	most central nodes are 1384057.CD33_05025 (degree 1247), 1384057.CD33_03700 (degree
-	1110), 1384057.CD33_01760 (degree 1028), 1384057.CD33_12620 (degree 988) and 1384057.CD33_17700
-	(degree 907).
+	The undirected graph Lysinibacillus sinduriensis has 3484 nodes and 281934
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04647 and has 20 connected components, where the component
+	with most nodes has 3444 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 161.85,
+	and the node degree mode is 1. The top 5 most central nodes are 1384057.CD33_05025
+	(degree 1247), 1384057.CD33_03700 (degree 1110), 1384057.CD33_01760 (degree
+	1028), 1384057.CD33_12620 (degree 988) and 1384057.CD33_17700 (degree 907).
 	
 
 

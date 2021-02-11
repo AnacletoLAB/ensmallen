@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:13.425504
 
-The undirected graph Mastigocladopsis repens has 5652 nodes and 611239 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03827 and
-has 37 connected components, where the component with most nodes has 5560 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 216.29, and the node degree mode is 1. The top 5 most central
-nodes are 221288.JH992901_gene2234 (degree 2021), 221288.JH992901_gene848 (degree
-1981), 221288.JH992901_gene1236 (degree 1831), 221288.JH992901_gene3608 (degree 1583)
-and 221288.JH992901_gene5507 (degree 1472).
+The undirected graph Mastigocladopsis repens has 5652 nodes and 611239
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03827 and has 37 connected components, where the component
+with most nodes has 5560 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 216.29,
+and the node degree mode is 1. The top 5 most central nodes are 221288.JH992901_gene2234
+(degree 2021), 221288.JH992901_gene848 (degree 1981), 221288.JH992901_gene1236
+(degree 1831), 221288.JH992901_gene3608 (degree 1583) and 221288.JH992901_gene5507
+(degree 1472).
 
 
 References
@@ -107,14 +108,15 @@ def MastigocladopsisRepens(
 	
 	Datetime: 2021-02-02 20:04:13.425504
 	
-	The undirected graph Mastigocladopsis repens has 5652 nodes and 611239 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03827 and
-	has 37 connected components, where the component with most nodes has 5560 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 216.29, and the node degree mode is 1. The top 5 most central
-	nodes are 221288.JH992901_gene2234 (degree 2021), 221288.JH992901_gene848 (degree
-	1981), 221288.JH992901_gene1236 (degree 1831), 221288.JH992901_gene3608 (degree 1583)
-	and 221288.JH992901_gene5507 (degree 1472).
+	The undirected graph Mastigocladopsis repens has 5652 nodes and 611239
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03827 and has 37 connected components, where the component
+	with most nodes has 5560 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 216.29,
+	and the node degree mode is 1. The top 5 most central nodes are 221288.JH992901_gene2234
+	(degree 2021), 221288.JH992901_gene848 (degree 1981), 221288.JH992901_gene1236
+	(degree 1831), 221288.JH992901_gene3608 (degree 1583) and 221288.JH992901_gene5507
+	(degree 1472).
 	
 
 

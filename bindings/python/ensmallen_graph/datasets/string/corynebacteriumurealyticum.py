@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:01.648693
 
-The undirected graph Corynebacterium urealyticum has 2017 nodes and 118981 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05852
-and has 9 connected components, where the component with most nodes has 1996 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 117.98, and the node degree mode is 4. The top 5
-most central nodes are 504474.cu1143 (degree 835), 504474.cu1118 (degree 674), 504474.cu0401
-(degree 665), 504474.cu0396 (degree 638) and 504474.cu1815 (degree 597).
+The undirected graph Corynebacterium urealyticum has 2017 nodes and 118981
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05852 and has 9 connected components, where the component
+with most nodes has 1996 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 117.98,
+and the node degree mode is 4. The top 5 most central nodes are 504474.cu1143
+(degree 835), 504474.cu1118 (degree 674), 504474.cu0401 (degree 665), 504474.cu0396
+(degree 638) and 504474.cu1815 (degree 597).
 
 
 References
@@ -106,13 +107,14 @@ def CorynebacteriumUrealyticum(
 	
 	Datetime: 2021-02-02 21:02:01.648693
 	
-	The undirected graph Corynebacterium urealyticum has 2017 nodes and 118981 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05852
-	and has 9 connected components, where the component with most nodes has 1996 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 117.98, and the node degree mode is 4. The top 5
-	most central nodes are 504474.cu1143 (degree 835), 504474.cu1118 (degree 674), 504474.cu0401
-	(degree 665), 504474.cu0396 (degree 638) and 504474.cu1815 (degree 597).
+	The undirected graph Corynebacterium urealyticum has 2017 nodes and 118981
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05852 and has 9 connected components, where the component
+	with most nodes has 1996 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 117.98,
+	and the node degree mode is 4. The top 5 most central nodes are 504474.cu1143
+	(degree 835), 504474.cu1118 (degree 674), 504474.cu0401 (degree 665), 504474.cu0396
+	(degree 638) and 504474.cu1815 (degree 597).
 	
 
 

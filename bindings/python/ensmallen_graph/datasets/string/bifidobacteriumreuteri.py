@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:02.591878
 
-The undirected graph Bifidobacterium reuteri has 2126 nodes and 146281 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06476 and
-has 6 connected components, where the component with most nodes has 2112 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 137.61, and the node degree mode is 2. The top 5 most central
-nodes are 1437610.BREU_1851 (degree 951), 1437610.BREU_1097 (degree 870), 1437610.BREU_1274
-(degree 834), 1437610.BREU_0269 (degree 774) and 1437610.BREU_1116 (degree 720).
+The undirected graph Bifidobacterium reuteri has 2126 nodes and 146281
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06476 and has 6 connected components, where the component
+with most nodes has 2112 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 137.61,
+and the node degree mode is 2. The top 5 most central nodes are 1437610.BREU_1851
+(degree 951), 1437610.BREU_1097 (degree 870), 1437610.BREU_1274 (degree
+834), 1437610.BREU_0269 (degree 774) and 1437610.BREU_1116 (degree 720).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumReuteri(
 	
 	Datetime: 2021-02-03 22:56:02.591878
 	
-	The undirected graph Bifidobacterium reuteri has 2126 nodes and 146281 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06476 and
-	has 6 connected components, where the component with most nodes has 2112 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 137.61, and the node degree mode is 2. The top 5 most central
-	nodes are 1437610.BREU_1851 (degree 951), 1437610.BREU_1097 (degree 870), 1437610.BREU_1274
-	(degree 834), 1437610.BREU_0269 (degree 774) and 1437610.BREU_1116 (degree 720).
+	The undirected graph Bifidobacterium reuteri has 2126 nodes and 146281
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06476 and has 6 connected components, where the component
+	with most nodes has 2112 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 137.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1437610.BREU_1851
+	(degree 951), 1437610.BREU_1097 (degree 870), 1437610.BREU_1274 (degree
+	834), 1437610.BREU_0269 (degree 774) and 1437610.BREU_1116 (degree 720).
 	
 
 

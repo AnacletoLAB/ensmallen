@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:13:39.341424
 
-The undirected graph soc-livejournal07 has 5204176 nodes, of which 412 are singletons
-(all have self-loops), and 49174620 unweighted edges, of which 464847 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 4945 connected
-components, where the component with most nodes has 5189809 nodes and the component
-with the least nodes has a single node. The graph median node degree is 6, the mean
-node degree is 18.81, and the node degree mode is 1. The top 5 most central nodes
-are 2385 (degree 15017), 286988 (degree 13858), 25371 (degree 13634), 126590 (degree
-10364) and 189029 (degree 10044).
+The undirected graph soc-livejournal07 has 5204176 nodes, of which 412
+are singletons (all have self-loops), and 49174620 unweighted edges, of
+which 464847 are self-loops. The graph is extremely sparse as it has a
+density of 0.00000 and has 4945 connected components, where the component
+with most nodes has 5189809 nodes and the component with the least nodes
+has a single node. The graph median node degree is 6, the mean node degree
+is 18.81, and the node degree mode is 1. The top 5 most central nodes are
+2385 (degree 15017), 286988 (degree 13858), 25371 (degree 13634), 126590
+(degree 10364) and 189029 (degree 10044).
 
 
 References
@@ -104,14 +105,15 @@ def SocLivejournal07(
 	
 	Datetime: 2021-02-07 16:13:39.341424
 	
-	The undirected graph soc-livejournal07 has 5204176 nodes, of which 412 are singletons
-	(all have self-loops), and 49174620 unweighted edges, of which 464847 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 4945 connected
-	components, where the component with most nodes has 5189809 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 6, the mean
-	node degree is 18.81, and the node degree mode is 1. The top 5 most central nodes
-	are 2385 (degree 15017), 286988 (degree 13858), 25371 (degree 13634), 126590 (degree
-	10364) and 189029 (degree 10044).
+	The undirected graph soc-livejournal07 has 5204176 nodes, of which 412
+	are singletons (all have self-loops), and 49174620 unweighted edges, of
+	which 464847 are self-loops. The graph is extremely sparse as it has a
+	density of 0.00000 and has 4945 connected components, where the component
+	with most nodes has 5189809 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 6, the mean node degree
+	is 18.81, and the node degree mode is 1. The top 5 most central nodes are
+	2385 (degree 15017), 286988 (degree 13858), 25371 (degree 13634), 126590
+	(degree 10364) and 189029 (degree 10044).
 	
 
 

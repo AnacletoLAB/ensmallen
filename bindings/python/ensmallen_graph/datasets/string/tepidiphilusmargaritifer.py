@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:36.363272
 
-The undirected graph Tepidiphilus margaritifer has 2036 nodes and 167963 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08108
-and has 5 connected components, where the component with most nodes has 2027 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 164.99, and the node degree mode is 184. The top
-5 most central nodes are 1123354.AUDR01000001_gene2016 (degree 921), 1123354.AUDR01000013_gene829
-(degree 766), 1123354.AUDR01000018_gene1133 (degree 724), 1123354.AUDR01000017_gene85
-(degree 671) and 1123354.AUDR01000018_gene1200 (degree 661).
+The undirected graph Tepidiphilus margaritifer has 2036 nodes and 167963
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08108 and has 5 connected components, where the component
+with most nodes has 2027 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 164.99,
+and the node degree mode is 184. The top 5 most central nodes are 1123354.AUDR01000001_gene2016
+(degree 921), 1123354.AUDR01000013_gene829 (degree 766), 1123354.AUDR01000018_gene1133
+(degree 724), 1123354.AUDR01000017_gene85 (degree 671) and 1123354.AUDR01000018_gene1200
+(degree 661).
 
 
 References
@@ -107,14 +108,15 @@ def TepidiphilusMargaritifer(
 	
 	Datetime: 2021-02-02 22:51:36.363272
 	
-	The undirected graph Tepidiphilus margaritifer has 2036 nodes and 167963 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08108
-	and has 5 connected components, where the component with most nodes has 2027 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 164.99, and the node degree mode is 184. The top
-	5 most central nodes are 1123354.AUDR01000001_gene2016 (degree 921), 1123354.AUDR01000013_gene829
-	(degree 766), 1123354.AUDR01000018_gene1133 (degree 724), 1123354.AUDR01000017_gene85
-	(degree 671) and 1123354.AUDR01000018_gene1200 (degree 661).
+	The undirected graph Tepidiphilus margaritifer has 2036 nodes and 167963
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08108 and has 5 connected components, where the component
+	with most nodes has 2027 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 164.99,
+	and the node degree mode is 184. The top 5 most central nodes are 1123354.AUDR01000001_gene2016
+	(degree 921), 1123354.AUDR01000013_gene829 (degree 766), 1123354.AUDR01000018_gene1133
+	(degree 724), 1123354.AUDR01000017_gene85 (degree 671) and 1123354.AUDR01000018_gene1200
+	(degree 661).
 	
 
 

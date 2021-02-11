@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:00.341518
 
-The undirected graph Actinomyces turicensis has 1704 nodes and 105241 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07253 and
-has 5 connected components, where the component with most nodes has 1696 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 123.52, and the node degree mode is 28. The top 5 most central
-nodes are 883077.HMPREF9241_01240 (degree 719), 883077.HMPREF9241_00869 (degree 689),
-883077.HMPREF9241_01341 (degree 673), 883077.HMPREF9241_01228 (degree 600) and 883077.HMPREF9241_01361
+The undirected graph Actinomyces turicensis has 1704 nodes and 105241 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07253 and has 5 connected components, where the component with most
+nodes has 1696 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 123.52, and
+the node degree mode is 28. The top 5 most central nodes are 883077.HMPREF9241_01240
+(degree 719), 883077.HMPREF9241_00869 (degree 689), 883077.HMPREF9241_01341
+(degree 673), 883077.HMPREF9241_01228 (degree 600) and 883077.HMPREF9241_01361
 (degree 575).
 
 
@@ -107,13 +108,14 @@ def ActinomycesTuricensis(
 	
 	Datetime: 2021-02-02 21:51:00.341518
 	
-	The undirected graph Actinomyces turicensis has 1704 nodes and 105241 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07253 and
-	has 5 connected components, where the component with most nodes has 1696 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 123.52, and the node degree mode is 28. The top 5 most central
-	nodes are 883077.HMPREF9241_01240 (degree 719), 883077.HMPREF9241_00869 (degree 689),
-	883077.HMPREF9241_01341 (degree 673), 883077.HMPREF9241_01228 (degree 600) and 883077.HMPREF9241_01361
+	The undirected graph Actinomyces turicensis has 1704 nodes and 105241 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07253 and has 5 connected components, where the component with most
+	nodes has 1696 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 123.52, and
+	the node degree mode is 28. The top 5 most central nodes are 883077.HMPREF9241_01240
+	(degree 719), 883077.HMPREF9241_00869 (degree 689), 883077.HMPREF9241_01341
+	(degree 673), 883077.HMPREF9241_01228 (degree 600) and 883077.HMPREF9241_01361
 	(degree 575).
 	
 

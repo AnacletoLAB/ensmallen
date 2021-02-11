@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:47.691596
 
-The undirected graph Hamiltonella defensa has 2074 nodes and 90707 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04220 and
-has 40 connected components, where the component with most nodes has 1980 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 63,
-the mean node degree is 87.47, and the node degree mode is 1. The top 5 most central
-nodes are 572265.HDEF_0080 (degree 724), 572265.HDEF_0863 (degree 611), 572265.HDEF_0187
-(degree 545), 572265.HDEF_1926 (degree 544) and 572265.HDEF_1830 (degree 533).
+The undirected graph Hamiltonella defensa has 2074 nodes and 90707 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04220 and has 40 connected components, where the component with most
+nodes has 1980 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 63, the mean node degree is 87.47, and
+the node degree mode is 1. The top 5 most central nodes are 572265.HDEF_0080
+(degree 724), 572265.HDEF_0863 (degree 611), 572265.HDEF_0187 (degree 545),
+572265.HDEF_1926 (degree 544) and 572265.HDEF_1830 (degree 533).
 
 
 References
@@ -106,13 +107,14 @@ def HamiltonellaDefensa(
 	
 	Datetime: 2021-02-02 21:13:47.691596
 	
-	The undirected graph Hamiltonella defensa has 2074 nodes and 90707 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04220 and
-	has 40 connected components, where the component with most nodes has 1980 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 63,
-	the mean node degree is 87.47, and the node degree mode is 1. The top 5 most central
-	nodes are 572265.HDEF_0080 (degree 724), 572265.HDEF_0863 (degree 611), 572265.HDEF_0187
-	(degree 545), 572265.HDEF_1926 (degree 544) and 572265.HDEF_1830 (degree 533).
+	The undirected graph Hamiltonella defensa has 2074 nodes and 90707 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04220 and has 40 connected components, where the component with most
+	nodes has 1980 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 63, the mean node degree is 87.47, and
+	the node degree mode is 1. The top 5 most central nodes are 572265.HDEF_0080
+	(degree 724), 572265.HDEF_0863 (degree 611), 572265.HDEF_0187 (degree 545),
+	572265.HDEF_1926 (degree 544) and 572265.HDEF_1830 (degree 533).
 	
 
 

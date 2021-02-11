@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:23.647042
 
-The undirected graph Acidithiobacillus caldus has 2843 nodes and 236024 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05842
-and has 15 connected components, where the component with most nodes has 2807 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 166.04, and the node degree mode is 3. The top 5
-most central nodes are 637389.Acaty_c2560 (degree 1102), 637389.Acaty_m0193 (degree
-923), 637389.Acaty_c0439 (degree 923), 637389.Acaty_c1283 (degree 902) and 637389.Acaty_c1243
-(degree 826).
+The undirected graph Acidithiobacillus caldus has 2843 nodes and 236024
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05842 and has 15 connected components, where the component
+with most nodes has 2807 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 166.04,
+and the node degree mode is 3. The top 5 most central nodes are 637389.Acaty_c2560
+(degree 1102), 637389.Acaty_m0193 (degree 923), 637389.Acaty_c0439 (degree
+923), 637389.Acaty_c1283 (degree 902) and 637389.Acaty_c1243 (degree 826).
 
 
 References
@@ -107,14 +107,14 @@ def AcidithiobacillusCaldus(
 	
 	Datetime: 2021-02-02 21:22:23.647042
 	
-	The undirected graph Acidithiobacillus caldus has 2843 nodes and 236024 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05842
-	and has 15 connected components, where the component with most nodes has 2807 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 166.04, and the node degree mode is 3. The top 5
-	most central nodes are 637389.Acaty_c2560 (degree 1102), 637389.Acaty_m0193 (degree
-	923), 637389.Acaty_c0439 (degree 923), 637389.Acaty_c1283 (degree 902) and 637389.Acaty_c1243
-	(degree 826).
+	The undirected graph Acidithiobacillus caldus has 2843 nodes and 236024
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05842 and has 15 connected components, where the component
+	with most nodes has 2807 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 166.04,
+	and the node degree mode is 3. The top 5 most central nodes are 637389.Acaty_c2560
+	(degree 1102), 637389.Acaty_m0193 (degree 923), 637389.Acaty_c0439 (degree
+	923), 637389.Acaty_c1283 (degree 902) and 637389.Acaty_c1243 (degree 826).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:13.784010
 
-The undirected graph Ruegeria halocynthiae has 3904 nodes and 485847 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06377 and
-has 5 connected components, where the component with most nodes has 3894 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 248.90, and the node degree mode is 2. The top 5 most central
-nodes are 985054.JQEZ01000002_gene3597 (degree 1699), 985054.JQEZ01000003_gene1701
-(degree 1677), 985054.JQEZ01000005_gene227 (degree 1307), 985054.JQEZ01000007_gene539
-(degree 1275) and 985054.JQEZ01000004_gene776 (degree 1258).
+The undirected graph Ruegeria halocynthiae has 3904 nodes and 485847 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06377 and has 5 connected components, where the component with most
+nodes has 3894 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 248.90, and
+the node degree mode is 2. The top 5 most central nodes are 985054.JQEZ01000002_gene3597
+(degree 1699), 985054.JQEZ01000003_gene1701 (degree 1677), 985054.JQEZ01000005_gene227
+(degree 1307), 985054.JQEZ01000007_gene539 (degree 1275) and 985054.JQEZ01000004_gene776
+(degree 1258).
 
 
 References
@@ -107,14 +108,15 @@ def RuegeriaHalocynthiae(
 	
 	Datetime: 2021-02-02 22:04:13.784010
 	
-	The undirected graph Ruegeria halocynthiae has 3904 nodes and 485847 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06377 and
-	has 5 connected components, where the component with most nodes has 3894 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 248.90, and the node degree mode is 2. The top 5 most central
-	nodes are 985054.JQEZ01000002_gene3597 (degree 1699), 985054.JQEZ01000003_gene1701
-	(degree 1677), 985054.JQEZ01000005_gene227 (degree 1307), 985054.JQEZ01000007_gene539
-	(degree 1275) and 985054.JQEZ01000004_gene776 (degree 1258).
+	The undirected graph Ruegeria halocynthiae has 3904 nodes and 485847 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06377 and has 5 connected components, where the component with most
+	nodes has 3894 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 248.90, and
+	the node degree mode is 2. The top 5 most central nodes are 985054.JQEZ01000002_gene3597
+	(degree 1699), 985054.JQEZ01000003_gene1701 (degree 1677), 985054.JQEZ01000005_gene227
+	(degree 1307), 985054.JQEZ01000007_gene539 (degree 1275) and 985054.JQEZ01000004_gene776
+	(degree 1258).
 	
 
 

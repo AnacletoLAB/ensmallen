@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:39:58.094406
 
-The undirected graph tech-ip has 2250498 nodes and 21643497 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 19.23, and the node degree mode is 2. The top 5 most central
-nodes are 1 (degree 1833161), 77 (degree 259983), 4289 (degree 254891), 66 (degree
-204754) and 2 (degree 195191).
+The undirected graph tech-ip has 2250498 nodes and 21643497 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 19.23, and the
+node degree mode is 2. The top 5 most central nodes are 1 (degree 1833161),
+77 (degree 259983), 4289 (degree 254891), 66 (degree 204754) and 2 (degree
+195191).
 
 
 References
@@ -102,12 +103,13 @@ def TechIp(
 	
 	Datetime: 2021-02-07 16:39:58.094406
 	
-	The undirected graph tech-ip has 2250498 nodes and 21643497 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 19.23, and the node degree mode is 2. The top 5 most central
-	nodes are 1 (degree 1833161), 77 (degree 259983), 4289 (degree 254891), 66 (degree
-	204754) and 2 (degree 195191).
+	The undirected graph tech-ip has 2250498 nodes and 21643497 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 19.23, and the
+	node degree mode is 2. The top 5 most central nodes are 1 (degree 1833161),
+	77 (degree 259983), 4289 (degree 254891), 66 (degree 204754) and 2 (degree
+	195191).
 	
 
 

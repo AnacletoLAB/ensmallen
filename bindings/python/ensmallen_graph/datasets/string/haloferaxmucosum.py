@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:37.133602
 
-The undirected graph Haloferax mucosum has 3336 nodes and 245215 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04408 and
-has 32 connected components, where the component with most nodes has 3252 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 147.01, and the node degree mode is 2. The top 5 most central
-nodes are 662479.C440_12329 (degree 885), 662479.C440_00710 (degree 881), 662479.C440_13169
-(degree 792), 662479.C440_09442 (degree 742) and 662479.C440_06972 (degree 735).
+The undirected graph Haloferax mucosum has 3336 nodes and 245215 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04408 and has 32 connected components, where the component with most
+nodes has 3252 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 147.01, and
+the node degree mode is 2. The top 5 most central nodes are 662479.C440_12329
+(degree 885), 662479.C440_00710 (degree 881), 662479.C440_13169 (degree
+792), 662479.C440_09442 (degree 742) and 662479.C440_06972 (degree 735).
 
 
 References
@@ -106,13 +107,14 @@ def HaloferaxMucosum(
 	
 	Datetime: 2021-02-02 21:27:37.133602
 	
-	The undirected graph Haloferax mucosum has 3336 nodes and 245215 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04408 and
-	has 32 connected components, where the component with most nodes has 3252 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 147.01, and the node degree mode is 2. The top 5 most central
-	nodes are 662479.C440_12329 (degree 885), 662479.C440_00710 (degree 881), 662479.C440_13169
-	(degree 792), 662479.C440_09442 (degree 742) and 662479.C440_06972 (degree 735).
+	The undirected graph Haloferax mucosum has 3336 nodes and 245215 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04408 and has 32 connected components, where the component with most
+	nodes has 3252 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 147.01, and
+	the node degree mode is 2. The top 5 most central nodes are 662479.C440_12329
+	(degree 885), 662479.C440_00710 (degree 881), 662479.C440_13169 (degree
+	792), 662479.C440_09442 (degree 742) and 662479.C440_06972 (degree 735).
 	
 
 

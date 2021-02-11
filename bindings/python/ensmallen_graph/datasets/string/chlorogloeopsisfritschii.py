@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:31.961752
 
-The undirected graph Chlorogloeopsis fritschii has 6714 nodes and 1167063 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05179
-and has 33 connected components, where the component with most nodes has 6624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 332, the mean node degree is 347.65, and the node degree mode is 2. The top 5
-most central nodes are 211165.AJLN01000040_gene6401 (degree 2838), 211165.AJLN01000116_gene3370
-(degree 2267), 211165.AJLN01000085_gene1682 (degree 2180), 211165.AJLN01000083_gene1469
-(degree 2103) and 211165.AJLN01000109_gene140 (degree 1964).
+The undirected graph Chlorogloeopsis fritschii has 6714 nodes and 1167063
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05179 and has 33 connected components, where the component
+with most nodes has 6624 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 332, the mean node degree is 347.65,
+and the node degree mode is 2. The top 5 most central nodes are 211165.AJLN01000040_gene6401
+(degree 2838), 211165.AJLN01000116_gene3370 (degree 2267), 211165.AJLN01000085_gene1682
+(degree 2180), 211165.AJLN01000083_gene1469 (degree 2103) and 211165.AJLN01000109_gene140
+(degree 1964).
 
 
 References
@@ -107,14 +108,15 @@ def ChlorogloeopsisFritschii(
 	
 	Datetime: 2021-02-02 20:01:31.961752
 	
-	The undirected graph Chlorogloeopsis fritschii has 6714 nodes and 1167063 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05179
-	and has 33 connected components, where the component with most nodes has 6624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 332, the mean node degree is 347.65, and the node degree mode is 2. The top 5
-	most central nodes are 211165.AJLN01000040_gene6401 (degree 2838), 211165.AJLN01000116_gene3370
-	(degree 2267), 211165.AJLN01000085_gene1682 (degree 2180), 211165.AJLN01000083_gene1469
-	(degree 2103) and 211165.AJLN01000109_gene140 (degree 1964).
+	The undirected graph Chlorogloeopsis fritschii has 6714 nodes and 1167063
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05179 and has 33 connected components, where the component
+	with most nodes has 6624 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 332, the mean node degree is 347.65,
+	and the node degree mode is 2. The top 5 most central nodes are 211165.AJLN01000040_gene6401
+	(degree 2838), 211165.AJLN01000116_gene3370 (degree 2267), 211165.AJLN01000085_gene1682
+	(degree 2180), 211165.AJLN01000083_gene1469 (degree 2103) and 211165.AJLN01000109_gene140
+	(degree 1964).
 	
 
 

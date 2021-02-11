@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:21:54.845830
 
-The undirected graph Prochlorococcus marinus pastoris has 1927 nodes and 91522 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04932
-and has 30 connected components, where the component with most nodes has 1820 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 94.99, and the node degree mode is 5. The top 5 most
-central nodes are 59919.PMM1140 (degree 696), 59919.PMM0426 (degree 486), 59919.PMM1280
-(degree 483), 59919.PMM1590 (degree 480) and 59919.PMM1512 (degree 473).
+The undirected graph Prochlorococcus marinus pastoris has 1927 nodes and
+91522 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04932 and has 30 connected components, where the
+component with most nodes has 1820 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+is 94.99, and the node degree mode is 5. The top 5 most central nodes are
+59919.PMM1140 (degree 696), 59919.PMM0426 (degree 486), 59919.PMM1280 (degree
+483), 59919.PMM1590 (degree 480) and 59919.PMM1512 (degree 473).
 
 
 References
@@ -106,13 +107,14 @@ def ProchlorococcusMarinusPastoris(
 	
 	Datetime: 2021-02-02 18:21:54.845830
 	
-	The undirected graph Prochlorococcus marinus pastoris has 1927 nodes and 91522 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04932
-	and has 30 connected components, where the component with most nodes has 1820 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 94.99, and the node degree mode is 5. The top 5 most
-	central nodes are 59919.PMM1140 (degree 696), 59919.PMM0426 (degree 486), 59919.PMM1280
-	(degree 483), 59919.PMM1590 (degree 480) and 59919.PMM1512 (degree 473).
+	The undirected graph Prochlorococcus marinus pastoris has 1927 nodes and
+	91522 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04932 and has 30 connected components, where the
+	component with most nodes has 1820 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+	is 94.99, and the node degree mode is 5. The top 5 most central nodes are
+	59919.PMM1140 (degree 696), 59919.PMM0426 (degree 486), 59919.PMM1280 (degree
+	483), 59919.PMM1590 (degree 480) and 59919.PMM1512 (degree 473).
 	
 
 

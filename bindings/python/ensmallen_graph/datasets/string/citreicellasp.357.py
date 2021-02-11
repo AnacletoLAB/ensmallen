@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:56.411493
 
-The undirected graph Citreicella sp. 357 has 4510 nodes and 456406 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04489 and
-has 19 connected components, where the component with most nodes has 4471 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 202.40, and the node degree mode is 2. The top 5 most central
-nodes are 766499.C357_14706 (degree 1234), 766499.C357_06142 (degree 1151), 766499.C357_09154
-(degree 1078), 766499.C357_09204 (degree 1076) and 766499.C357_02244 (degree 1018).
+The undirected graph Citreicella sp. 357 has 4510 nodes and 456406 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04489 and has 19 connected components, where the component with most
+nodes has 4471 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 202.40, and
+the node degree mode is 2. The top 5 most central nodes are 766499.C357_14706
+(degree 1234), 766499.C357_06142 (degree 1151), 766499.C357_09154 (degree
+1078), 766499.C357_09204 (degree 1076) and 766499.C357_02244 (degree 1018).
 
 
 References
@@ -106,13 +107,14 @@ def CitreicellaSp.357(
 	
 	Datetime: 2021-02-02 21:43:56.411493
 	
-	The undirected graph Citreicella sp. 357 has 4510 nodes and 456406 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04489 and
-	has 19 connected components, where the component with most nodes has 4471 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 202.40, and the node degree mode is 2. The top 5 most central
-	nodes are 766499.C357_14706 (degree 1234), 766499.C357_06142 (degree 1151), 766499.C357_09154
-	(degree 1078), 766499.C357_09204 (degree 1076) and 766499.C357_02244 (degree 1018).
+	The undirected graph Citreicella sp. 357 has 4510 nodes and 456406 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04489 and has 19 connected components, where the component with most
+	nodes has 4471 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 202.40, and
+	the node degree mode is 2. The top 5 most central nodes are 766499.C357_14706
+	(degree 1234), 766499.C357_06142 (degree 1151), 766499.C357_09154 (degree
+	1078), 766499.C357_09204 (degree 1076) and 766499.C357_02244 (degree 1018).
 	
 
 

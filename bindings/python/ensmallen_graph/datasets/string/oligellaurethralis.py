@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:59.341528
 
-The undirected graph Oligella urethralis has 2074 nodes and 122061 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05678 and
-has 19 connected components, where the component with most nodes has 2030 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 117.71, and the node degree mode is 2. The top 5 most central
-nodes are 1401065.HMPREF2130_10160 (degree 868), 1401065.HMPREF2130_06420 (degree
-840), 1401065.HMPREF2130_00030 (degree 828), 1401065.HMPREF2130_03455 (degree 713)
-and 1401065.HMPREF2130_08800 (degree 694).
+The undirected graph Oligella urethralis has 2074 nodes and 122061 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05678 and has 19 connected components, where the component with most
+nodes has 2030 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 117.71, and
+the node degree mode is 2. The top 5 most central nodes are 1401065.HMPREF2130_10160
+(degree 868), 1401065.HMPREF2130_06420 (degree 840), 1401065.HMPREF2130_00030
+(degree 828), 1401065.HMPREF2130_03455 (degree 713) and 1401065.HMPREF2130_08800
+(degree 694).
 
 
 References
@@ -107,14 +108,15 @@ def OligellaUrethralis(
 	
 	Datetime: 2021-02-03 22:31:59.341528
 	
-	The undirected graph Oligella urethralis has 2074 nodes and 122061 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05678 and
-	has 19 connected components, where the component with most nodes has 2030 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 117.71, and the node degree mode is 2. The top 5 most central
-	nodes are 1401065.HMPREF2130_10160 (degree 868), 1401065.HMPREF2130_06420 (degree
-	840), 1401065.HMPREF2130_00030 (degree 828), 1401065.HMPREF2130_03455 (degree 713)
-	and 1401065.HMPREF2130_08800 (degree 694).
+	The undirected graph Oligella urethralis has 2074 nodes and 122061 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05678 and has 19 connected components, where the component with most
+	nodes has 2030 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 117.71, and
+	the node degree mode is 2. The top 5 most central nodes are 1401065.HMPREF2130_10160
+	(degree 868), 1401065.HMPREF2130_06420 (degree 840), 1401065.HMPREF2130_00030
+	(degree 828), 1401065.HMPREF2130_03455 (degree 713) and 1401065.HMPREF2130_08800
+	(degree 694).
 	
 
 

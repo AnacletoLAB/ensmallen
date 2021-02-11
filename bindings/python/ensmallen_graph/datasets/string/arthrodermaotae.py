@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:05.383266
 
-The undirected graph Arthroderma otae has 6342 nodes and 581688 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02893 and
-has 38 connected components, where the component with most nodes has 6261 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 183.44, and the node degree mode is 1. The top 5 most central
-nodes are 63405.XP_002848726.1 (degree 1465), 63405.XP_002844500.1 (degree 1392),
-63405.XP_002850573.1 (degree 1292), 63405.XP_002844809.1 (degree 1253) and 63405.XP_002850330.1
+The undirected graph Arthroderma otae has 6342 nodes and 581688 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02893 and has 38 connected components, where the component with most
+nodes has 6261 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 183.44, and
+the node degree mode is 1. The top 5 most central nodes are 63405.XP_002848726.1
+(degree 1465), 63405.XP_002844500.1 (degree 1392), 63405.XP_002850573.1
+(degree 1292), 63405.XP_002844809.1 (degree 1253) and 63405.XP_002850330.1
 (degree 1182).
 
 
@@ -107,13 +108,14 @@ def ArthrodermaOtae(
 	
 	Datetime: 2021-02-02 18:24:05.383266
 	
-	The undirected graph Arthroderma otae has 6342 nodes and 581688 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02893 and
-	has 38 connected components, where the component with most nodes has 6261 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 183.44, and the node degree mode is 1. The top 5 most central
-	nodes are 63405.XP_002848726.1 (degree 1465), 63405.XP_002844500.1 (degree 1392),
-	63405.XP_002850573.1 (degree 1292), 63405.XP_002844809.1 (degree 1253) and 63405.XP_002850330.1
+	The undirected graph Arthroderma otae has 6342 nodes and 581688 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02893 and has 38 connected components, where the component with most
+	nodes has 6261 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 183.44, and
+	the node degree mode is 1. The top 5 most central nodes are 63405.XP_002848726.1
+	(degree 1465), 63405.XP_002844500.1 (degree 1392), 63405.XP_002850573.1
+	(degree 1292), 63405.XP_002844809.1 (degree 1253) and 63405.XP_002850330.1
 	(degree 1182).
 	
 

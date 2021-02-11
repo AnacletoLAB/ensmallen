@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:51.916831
 
-The undirected graph Wolbachia sp. Bma has 773 nodes and 45249 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.15165
-and has 13 connected components, where the component with most nodes has 744 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 117.07, and the node degree mode is 1. The top 5
-most central nodes are 292805.Wbm0647 (degree 426), 292805.Wbm0725 (degree 420),
-292805.Wbm0527 (degree 396), 292805.Wbm0350 (degree 377) and 292805.Wbm0461 (degree
-377).
+The undirected graph Wolbachia sp. Bma has 773 nodes and 45249 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15165 and has 13 connected components, where the component
+with most nodes has 744 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 117.07,
+and the node degree mode is 1. The top 5 most central nodes are 292805.Wbm0647
+(degree 426), 292805.Wbm0725 (degree 420), 292805.Wbm0527 (degree 396),
+292805.Wbm0350 (degree 377) and 292805.Wbm0461 (degree 377).
 
 
 References
@@ -107,14 +107,14 @@ def WolbachiaSp.Bma(
 	
 	Datetime: 2021-02-02 20:20:51.916831
 	
-	The undirected graph Wolbachia sp. Bma has 773 nodes and 45249 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.15165
-	and has 13 connected components, where the component with most nodes has 744 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 117.07, and the node degree mode is 1. The top 5
-	most central nodes are 292805.Wbm0647 (degree 426), 292805.Wbm0725 (degree 420),
-	292805.Wbm0527 (degree 396), 292805.Wbm0350 (degree 377) and 292805.Wbm0461 (degree
-	377).
+	The undirected graph Wolbachia sp. Bma has 773 nodes and 45249 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15165 and has 13 connected components, where the component
+	with most nodes has 744 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 117.07,
+	and the node degree mode is 1. The top 5 most central nodes are 292805.Wbm0647
+	(degree 426), 292805.Wbm0725 (degree 420), 292805.Wbm0527 (degree 396),
+	292805.Wbm0350 (degree 377) and 292805.Wbm0461 (degree 377).
 	
 
 

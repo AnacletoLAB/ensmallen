@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:32.369440
 
-The undirected graph Sphingobacterium spiritivorum has 4435 nodes and 554345 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05638
-and has 14 connected components, where the component with most nodes has 4394 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 237, the mean node degree is 249.99, and the node degree mode is 2. The top 5
-most central nodes are 525373.HMPREF0766_11917 (degree 1440), 525373.HMPREF0766_12858
-(degree 1194), 525373.HMPREF0766_12964 (degree 1189), 525373.HMPREF0766_10579 (degree
-1152) and 525373.HMPREF0766_10468 (degree 1070).
+The undirected graph Sphingobacterium spiritivorum has 4435 nodes and 554345
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05638 and has 14 connected components, where the component
+with most nodes has 4394 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 249.99,
+and the node degree mode is 2. The top 5 most central nodes are 525373.HMPREF0766_11917
+(degree 1440), 525373.HMPREF0766_12858 (degree 1194), 525373.HMPREF0766_12964
+(degree 1189), 525373.HMPREF0766_10579 (degree 1152) and 525373.HMPREF0766_10468
+(degree 1070).
 
 
 References
@@ -107,14 +108,15 @@ def SphingobacteriumSpiritivorum(
 	
 	Datetime: 2021-02-02 21:05:32.369440
 	
-	The undirected graph Sphingobacterium spiritivorum has 4435 nodes and 554345 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05638
-	and has 14 connected components, where the component with most nodes has 4394 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 237, the mean node degree is 249.99, and the node degree mode is 2. The top 5
-	most central nodes are 525373.HMPREF0766_11917 (degree 1440), 525373.HMPREF0766_12858
-	(degree 1194), 525373.HMPREF0766_12964 (degree 1189), 525373.HMPREF0766_10579 (degree
-	1152) and 525373.HMPREF0766_10468 (degree 1070).
+	The undirected graph Sphingobacterium spiritivorum has 4435 nodes and 554345
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05638 and has 14 connected components, where the component
+	with most nodes has 4394 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 249.99,
+	and the node degree mode is 2. The top 5 most central nodes are 525373.HMPREF0766_11917
+	(degree 1440), 525373.HMPREF0766_12858 (degree 1194), 525373.HMPREF0766_12964
+	(degree 1189), 525373.HMPREF0766_10579 (degree 1152) and 525373.HMPREF0766_10468
+	(degree 1070).
 	
 
 

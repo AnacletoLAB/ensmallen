@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:35.028398
 
-The undirected graph Blautia producta has 5146 nodes and 638697 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04825 and
-has 19 connected components, where the component with most nodes has 5096 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 248.23, and the node degree mode is 3. The top 5 most central
-nodes are 33035.JPJF01000003_gene1856 (degree 1816), 33035.JPJF01000077_gene57 (degree
-1634), 33035.JPJF01000049_gene603 (degree 1606), 33035.JPJF01000080_gene206 (degree
-1589) and 33035.JPJF01000094_gene2139 (degree 1539).
+The undirected graph Blautia producta has 5146 nodes and 638697 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04825 and has 19 connected components, where the component with most
+nodes has 5096 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 248.23, and
+the node degree mode is 3. The top 5 most central nodes are 33035.JPJF01000003_gene1856
+(degree 1816), 33035.JPJF01000077_gene57 (degree 1634), 33035.JPJF01000049_gene603
+(degree 1606), 33035.JPJF01000080_gene206 (degree 1589) and 33035.JPJF01000094_gene2139
+(degree 1539).
 
 
 References
@@ -107,14 +108,15 @@ def BlautiaProducta(
 	
 	Datetime: 2021-02-02 18:03:35.028398
 	
-	The undirected graph Blautia producta has 5146 nodes and 638697 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04825 and
-	has 19 connected components, where the component with most nodes has 5096 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 248.23, and the node degree mode is 3. The top 5 most central
-	nodes are 33035.JPJF01000003_gene1856 (degree 1816), 33035.JPJF01000077_gene57 (degree
-	1634), 33035.JPJF01000049_gene603 (degree 1606), 33035.JPJF01000080_gene206 (degree
-	1589) and 33035.JPJF01000094_gene2139 (degree 1539).
+	The undirected graph Blautia producta has 5146 nodes and 638697 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04825 and has 19 connected components, where the component with most
+	nodes has 5096 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 248.23, and
+	the node degree mode is 3. The top 5 most central nodes are 33035.JPJF01000003_gene1856
+	(degree 1816), 33035.JPJF01000077_gene57 (degree 1634), 33035.JPJF01000049_gene603
+	(degree 1606), 33035.JPJF01000080_gene206 (degree 1589) and 33035.JPJF01000094_gene2139
+	(degree 1539).
 	
 
 

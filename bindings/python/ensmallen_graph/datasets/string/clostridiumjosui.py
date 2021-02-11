@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:22:19.433637
 
-The undirected graph Clostridium josui has 3919 nodes and 325655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04242 and
-has 15 connected components, where the component with most nodes has 3882 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 166.19, and the node degree mode is 9. The top 5 most central
-nodes are 1291050.JAGE01000001_gene2622 (degree 1326), 1291050.JAGE01000001_gene2078
-(degree 1313), 1291050.JAGE01000002_gene3677 (degree 1236), 1291050.JAGE01000001_gene1382
-(degree 1127) and 1291050.JAGE01000001_gene2490 (degree 1011).
+The undirected graph Clostridium josui has 3919 nodes and 325655 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04242 and has 15 connected components, where the component with most
+nodes has 3882 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 166.19, and
+the node degree mode is 9. The top 5 most central nodes are 1291050.JAGE01000001_gene2622
+(degree 1326), 1291050.JAGE01000001_gene2078 (degree 1313), 1291050.JAGE01000002_gene3677
+(degree 1236), 1291050.JAGE01000001_gene1382 (degree 1127) and 1291050.JAGE01000001_gene2490
+(degree 1011).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumJosui(
 	
 	Datetime: 2021-02-03 21:22:19.433637
 	
-	The undirected graph Clostridium josui has 3919 nodes and 325655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04242 and
-	has 15 connected components, where the component with most nodes has 3882 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 166.19, and the node degree mode is 9. The top 5 most central
-	nodes are 1291050.JAGE01000001_gene2622 (degree 1326), 1291050.JAGE01000001_gene2078
-	(degree 1313), 1291050.JAGE01000002_gene3677 (degree 1236), 1291050.JAGE01000001_gene1382
-	(degree 1127) and 1291050.JAGE01000001_gene2490 (degree 1011).
+	The undirected graph Clostridium josui has 3919 nodes and 325655 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04242 and has 15 connected components, where the component with most
+	nodes has 3882 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 166.19, and
+	the node degree mode is 9. The top 5 most central nodes are 1291050.JAGE01000001_gene2622
+	(degree 1326), 1291050.JAGE01000001_gene2078 (degree 1313), 1291050.JAGE01000002_gene3677
+	(degree 1236), 1291050.JAGE01000001_gene1382 (degree 1127) and 1291050.JAGE01000001_gene2490
+	(degree 1011).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:27.683784
 
-The undirected graph Shewanella haliotis has 5048 nodes and 778238 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06109 and
-has 9 connected components, where the component with most nodes has 5030 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 257,
-the mean node degree is 308.34, and the node degree mode is 2. The top 5 most central
-nodes are 1236541.BALL01000049_gene4221 (degree 2135), 1236541.BALL01000010_gene1633
-(degree 1932), 1236541.BALL01000008_gene1440 (degree 1876), 1236541.BALL01000011_gene1798
-(degree 1758) and 1236541.BALL01000008_gene1438 (degree 1738).
+The undirected graph Shewanella haliotis has 5048 nodes and 778238 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06109 and has 9 connected components, where the component with most
+nodes has 5030 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 257, the mean node degree is 308.34, and
+the node degree mode is 2. The top 5 most central nodes are 1236541.BALL01000049_gene4221
+(degree 2135), 1236541.BALL01000010_gene1633 (degree 1932), 1236541.BALL01000008_gene1440
+(degree 1876), 1236541.BALL01000011_gene1798 (degree 1758) and 1236541.BALL01000008_gene1438
+(degree 1738).
 
 
 References
@@ -107,14 +108,15 @@ def ShewanellaHaliotis(
 	
 	Datetime: 2021-02-02 23:31:27.683784
 	
-	The undirected graph Shewanella haliotis has 5048 nodes and 778238 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06109 and
-	has 9 connected components, where the component with most nodes has 5030 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 257,
-	the mean node degree is 308.34, and the node degree mode is 2. The top 5 most central
-	nodes are 1236541.BALL01000049_gene4221 (degree 2135), 1236541.BALL01000010_gene1633
-	(degree 1932), 1236541.BALL01000008_gene1440 (degree 1876), 1236541.BALL01000011_gene1798
-	(degree 1758) and 1236541.BALL01000008_gene1438 (degree 1738).
+	The undirected graph Shewanella haliotis has 5048 nodes and 778238 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06109 and has 9 connected components, where the component with most
+	nodes has 5030 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 257, the mean node degree is 308.34, and
+	the node degree mode is 2. The top 5 most central nodes are 1236541.BALL01000049_gene4221
+	(degree 2135), 1236541.BALL01000010_gene1633 (degree 1932), 1236541.BALL01000008_gene1440
+	(degree 1876), 1236541.BALL01000011_gene1798 (degree 1758) and 1236541.BALL01000008_gene1438
+	(degree 1738).
 	
 
 

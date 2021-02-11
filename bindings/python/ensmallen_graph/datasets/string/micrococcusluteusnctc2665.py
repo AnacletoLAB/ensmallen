@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:04.694146
 
-The undirected graph Micrococcus luteus NCTC 2665 has 2221 nodes and 205630 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08341
-and has 4 connected components, where the component with most nodes has 2215 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 185.17, and the node degree mode is 4. The top 5
-most central nodes are 465515.Mlut_01090 (degree 1058), 465515.Mlut_11120 (degree
-1009), 465515.Mlut_14440 (degree 873), 465515.Mlut_08390 (degree 809) and 465515.Mlut_16470
-(degree 808).
+The undirected graph Micrococcus luteus NCTC 2665 has 2221 nodes and 205630
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08341 and has 4 connected components, where the component
+with most nodes has 2215 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 185.17,
+and the node degree mode is 4. The top 5 most central nodes are 465515.Mlut_01090
+(degree 1058), 465515.Mlut_11120 (degree 1009), 465515.Mlut_14440 (degree
+873), 465515.Mlut_08390 (degree 809) and 465515.Mlut_16470 (degree 808).
 
 
 References
@@ -107,14 +107,14 @@ def MicrococcusLuteusNctc2665(
 	
 	Datetime: 2021-02-02 20:54:04.694146
 	
-	The undirected graph Micrococcus luteus NCTC 2665 has 2221 nodes and 205630 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08341
-	and has 4 connected components, where the component with most nodes has 2215 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 185.17, and the node degree mode is 4. The top 5
-	most central nodes are 465515.Mlut_01090 (degree 1058), 465515.Mlut_11120 (degree
-	1009), 465515.Mlut_14440 (degree 873), 465515.Mlut_08390 (degree 809) and 465515.Mlut_16470
-	(degree 808).
+	The undirected graph Micrococcus luteus NCTC 2665 has 2221 nodes and 205630
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08341 and has 4 connected components, where the component
+	with most nodes has 2215 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 185.17,
+	and the node degree mode is 4. The top 5 most central nodes are 465515.Mlut_01090
+	(degree 1058), 465515.Mlut_11120 (degree 1009), 465515.Mlut_14440 (degree
+	873), 465515.Mlut_08390 (degree 809) and 465515.Mlut_16470 (degree 808).
 	
 
 

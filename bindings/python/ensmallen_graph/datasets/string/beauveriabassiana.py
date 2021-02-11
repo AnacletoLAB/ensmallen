@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:17.228456
 
-The undirected graph Beauveria bassiana has 7261 nodes and 661532 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02510 and
-has 17 connected components, where the component with most nodes has 7220 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 182.22, and the node degree mode is 1. The top 5 most central
-nodes are 176275.XP_008600171.1 (degree 1900), 176275.XP_008595217.1 (degree 1766),
-176275.XP_008597200.1 (degree 1575), 176275.XP_008598444.1 (degree 1468) and 176275.XP_008601208.1
+The undirected graph Beauveria bassiana has 7261 nodes and 661532 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02510 and has 17 connected components, where the component with most
+nodes has 7220 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 182.22, and
+the node degree mode is 1. The top 5 most central nodes are 176275.XP_008600171.1
+(degree 1900), 176275.XP_008595217.1 (degree 1766), 176275.XP_008597200.1
+(degree 1575), 176275.XP_008598444.1 (degree 1468) and 176275.XP_008601208.1
 (degree 1395).
 
 
@@ -107,13 +108,14 @@ def BeauveriaBassiana(
 	
 	Datetime: 2021-02-02 19:55:17.228456
 	
-	The undirected graph Beauveria bassiana has 7261 nodes and 661532 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02510 and
-	has 17 connected components, where the component with most nodes has 7220 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 182.22, and the node degree mode is 1. The top 5 most central
-	nodes are 176275.XP_008600171.1 (degree 1900), 176275.XP_008595217.1 (degree 1766),
-	176275.XP_008597200.1 (degree 1575), 176275.XP_008598444.1 (degree 1468) and 176275.XP_008601208.1
+	The undirected graph Beauveria bassiana has 7261 nodes and 661532 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02510 and has 17 connected components, where the component with most
+	nodes has 7220 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 182.22, and
+	the node degree mode is 1. The top 5 most central nodes are 176275.XP_008600171.1
+	(degree 1900), 176275.XP_008595217.1 (degree 1766), 176275.XP_008597200.1
+	(degree 1575), 176275.XP_008598444.1 (degree 1468) and 176275.XP_008601208.1
 	(degree 1395).
 	
 

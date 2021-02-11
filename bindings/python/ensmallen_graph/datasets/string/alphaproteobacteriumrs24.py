@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:31.644939
 
-The undirected graph alpha proteobacterium RS24 has 1897 nodes and 126112 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07013
-and has 4 connected components, where the component with most nodes has 1891 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 132.96, and the node degree mode is 8. The top 5
-most central nodes are 1397666.RS24_01745 (degree 764), 1397666.RS24_01300 (degree
-611), 1397666.RS24_00580 (degree 609), 1397666.RS24_01667 (degree 586) and 1397666.RS24_00590
-(degree 557).
+The undirected graph alpha proteobacterium RS24 has 1897 nodes and 126112
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07013 and has 4 connected components, where the component
+with most nodes has 1891 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 132.96,
+and the node degree mode is 8. The top 5 most central nodes are 1397666.RS24_01745
+(degree 764), 1397666.RS24_01300 (degree 611), 1397666.RS24_00580 (degree
+609), 1397666.RS24_01667 (degree 586) and 1397666.RS24_00590 (degree 557).
 
 
 References
@@ -107,14 +107,14 @@ def AlphaProteobacteriumRs24(
 	
 	Datetime: 2021-02-03 22:30:31.644939
 	
-	The undirected graph alpha proteobacterium RS24 has 1897 nodes and 126112 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07013
-	and has 4 connected components, where the component with most nodes has 1891 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 132.96, and the node degree mode is 8. The top 5
-	most central nodes are 1397666.RS24_01745 (degree 764), 1397666.RS24_01300 (degree
-	611), 1397666.RS24_00580 (degree 609), 1397666.RS24_01667 (degree 586) and 1397666.RS24_00590
-	(degree 557).
+	The undirected graph alpha proteobacterium RS24 has 1897 nodes and 126112
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07013 and has 4 connected components, where the component
+	with most nodes has 1891 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 132.96,
+	and the node degree mode is 8. The top 5 most central nodes are 1397666.RS24_01745
+	(degree 764), 1397666.RS24_01300 (degree 611), 1397666.RS24_00580 (degree
+	609), 1397666.RS24_01667 (degree 586) and 1397666.RS24_00590 (degree 557).
 	
 
 

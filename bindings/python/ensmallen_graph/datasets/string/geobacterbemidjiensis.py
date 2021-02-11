@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:20.169590
 
-The undirected graph Geobacter bemidjiensis has 4026 nodes and 401779 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04959 and
-has 15 connected components, where the component with most nodes has 3979 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 199.59, and the node degree mode is 4. The top 5 most central
-nodes are 404380.Gbem_3740 (degree 1714), 404380.Gbem_0365 (degree 1651), 404380.Gbem_2105
-(degree 1593), 404380.Gbem_0302 (degree 1443) and 404380.Gbem_0209 (degree 1371).
+The undirected graph Geobacter bemidjiensis has 4026 nodes and 401779 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04959 and has 15 connected components, where the component with most
+nodes has 3979 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 199.59, and
+the node degree mode is 4. The top 5 most central nodes are 404380.Gbem_3740
+(degree 1714), 404380.Gbem_0365 (degree 1651), 404380.Gbem_2105 (degree
+1593), 404380.Gbem_0302 (degree 1443) and 404380.Gbem_0209 (degree 1371).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacterBemidjiensis(
 	
 	Datetime: 2021-02-02 20:44:20.169590
 	
-	The undirected graph Geobacter bemidjiensis has 4026 nodes and 401779 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04959 and
-	has 15 connected components, where the component with most nodes has 3979 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 199.59, and the node degree mode is 4. The top 5 most central
-	nodes are 404380.Gbem_3740 (degree 1714), 404380.Gbem_0365 (degree 1651), 404380.Gbem_2105
-	(degree 1593), 404380.Gbem_0302 (degree 1443) and 404380.Gbem_0209 (degree 1371).
+	The undirected graph Geobacter bemidjiensis has 4026 nodes and 401779 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04959 and has 15 connected components, where the component with most
+	nodes has 3979 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 199.59, and
+	the node degree mode is 4. The top 5 most central nodes are 404380.Gbem_3740
+	(degree 1714), 404380.Gbem_0365 (degree 1651), 404380.Gbem_2105 (degree
+	1593), 404380.Gbem_0302 (degree 1443) and 404380.Gbem_0209 (degree 1371).
 	
 
 

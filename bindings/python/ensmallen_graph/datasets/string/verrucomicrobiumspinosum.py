@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:38.514045
 
-The undirected graph Verrucomicrobium spinosum has 5852 nodes and 652927 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03814
-and has 64 connected components, where the component with most nodes has 5666 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 223.15, and the node degree mode is 2. The top 5
-most central nodes are 240016.ABIZ01000001_gene4349 (degree 2124), 240016.ABIZ01000001_gene1823
-(degree 1942), 240016.ABIZ01000001_gene117 (degree 1770), 240016.ABIZ01000001_gene2250
-(degree 1626) and 240016.ABIZ01000001_gene2571 (degree 1555).
+The undirected graph Verrucomicrobium spinosum has 5852 nodes and 652927
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03814 and has 64 connected components, where the component
+with most nodes has 5666 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 223.15,
+and the node degree mode is 2. The top 5 most central nodes are 240016.ABIZ01000001_gene4349
+(degree 2124), 240016.ABIZ01000001_gene1823 (degree 1942), 240016.ABIZ01000001_gene117
+(degree 1770), 240016.ABIZ01000001_gene2250 (degree 1626) and 240016.ABIZ01000001_gene2571
+(degree 1555).
 
 
 References
@@ -107,14 +108,15 @@ def VerrucomicrobiumSpinosum(
 	
 	Datetime: 2021-02-02 20:08:38.514045
 	
-	The undirected graph Verrucomicrobium spinosum has 5852 nodes and 652927 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03814
-	and has 64 connected components, where the component with most nodes has 5666 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 223.15, and the node degree mode is 2. The top 5
-	most central nodes are 240016.ABIZ01000001_gene4349 (degree 2124), 240016.ABIZ01000001_gene1823
-	(degree 1942), 240016.ABIZ01000001_gene117 (degree 1770), 240016.ABIZ01000001_gene2250
-	(degree 1626) and 240016.ABIZ01000001_gene2571 (degree 1555).
+	The undirected graph Verrucomicrobium spinosum has 5852 nodes and 652927
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03814 and has 64 connected components, where the component
+	with most nodes has 5666 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 223.15,
+	and the node degree mode is 2. The top 5 most central nodes are 240016.ABIZ01000001_gene4349
+	(degree 2124), 240016.ABIZ01000001_gene1823 (degree 1942), 240016.ABIZ01000001_gene117
+	(degree 1770), 240016.ABIZ01000001_gene2250 (degree 1626) and 240016.ABIZ01000001_gene2571
+	(degree 1555).
 	
 
 

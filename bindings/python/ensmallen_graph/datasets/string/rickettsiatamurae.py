@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:15.992742
 
-The undirected graph Rickettsia tamurae has 1598 nodes and 92488 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-has 18 connected components, where the component with most nodes has 1538 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 115.75, and the node degree mode is 4. The top 5 most central
-nodes are 334545.CCMG01000007_gene242 (degree 658), 334545.CCMG01000008_gene738 (degree
-610), 334545.CCMG01000002_gene39 (degree 508), 334545.CCMG01000008_gene476 (degree
-490) and 334545.CCMG01000015_gene1242 (degree 489).
+The undirected graph Rickettsia tamurae has 1598 nodes and 92488 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07248 and has 18 connected components, where the component with most
+nodes has 1538 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 115.75, and
+the node degree mode is 4. The top 5 most central nodes are 334545.CCMG01000007_gene242
+(degree 658), 334545.CCMG01000008_gene738 (degree 610), 334545.CCMG01000002_gene39
+(degree 508), 334545.CCMG01000008_gene476 (degree 490) and 334545.CCMG01000015_gene1242
+(degree 489).
 
 
 References
@@ -107,14 +108,15 @@ def RickettsiaTamurae(
 	
 	Datetime: 2021-02-02 20:30:15.992742
 	
-	The undirected graph Rickettsia tamurae has 1598 nodes and 92488 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07248 and
-	has 18 connected components, where the component with most nodes has 1538 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 115.75, and the node degree mode is 4. The top 5 most central
-	nodes are 334545.CCMG01000007_gene242 (degree 658), 334545.CCMG01000008_gene738 (degree
-	610), 334545.CCMG01000002_gene39 (degree 508), 334545.CCMG01000008_gene476 (degree
-	490) and 334545.CCMG01000015_gene1242 (degree 489).
+	The undirected graph Rickettsia tamurae has 1598 nodes and 92488 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07248 and has 18 connected components, where the component with most
+	nodes has 1538 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 115.75, and
+	the node degree mode is 4. The top 5 most central nodes are 334545.CCMG01000007_gene242
+	(degree 658), 334545.CCMG01000008_gene738 (degree 610), 334545.CCMG01000002_gene39
+	(degree 508), 334545.CCMG01000008_gene476 (degree 490) and 334545.CCMG01000015_gene1242
+	(degree 489).
 	
 
 

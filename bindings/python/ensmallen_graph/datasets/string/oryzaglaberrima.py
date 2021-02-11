@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:45:44.980457
 
-The undirected graph Oryza glaberrima has 22708 nodes and 6255532 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02426 and
-has 13 connected components, where the component with most nodes has 22679 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 268, the mean node degree is 550.95, and the node degree mode is 1. The top 5
-most central nodes are 4538.ORGLA02G0110200.1 (degree 7973), 4538.ORGLA11G0116900.1
-(degree 6322), 4538.ORGLA12G0101900.1 (degree 6322), 4538.ORGLA02G0104000.1 (degree
-6063) and 4538.ORGLA01G0065200.1 (degree 5366).
+The undirected graph Oryza glaberrima has 22708 nodes and 6255532 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02426 and has 13 connected components, where the component with most
+nodes has 22679 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 268, the mean node degree is 550.95, and
+the node degree mode is 1. The top 5 most central nodes are 4538.ORGLA02G0110200.1
+(degree 7973), 4538.ORGLA11G0116900.1 (degree 6322), 4538.ORGLA12G0101900.1
+(degree 6322), 4538.ORGLA02G0104000.1 (degree 6063) and 4538.ORGLA01G0065200.1
+(degree 5366).
 
 
 References
@@ -107,14 +108,15 @@ def OryzaGlaberrima(
 	
 	Datetime: 2021-02-02 16:45:44.980457
 	
-	The undirected graph Oryza glaberrima has 22708 nodes and 6255532 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02426 and
-	has 13 connected components, where the component with most nodes has 22679 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 268, the mean node degree is 550.95, and the node degree mode is 1. The top 5
-	most central nodes are 4538.ORGLA02G0110200.1 (degree 7973), 4538.ORGLA11G0116900.1
-	(degree 6322), 4538.ORGLA12G0101900.1 (degree 6322), 4538.ORGLA02G0104000.1 (degree
-	6063) and 4538.ORGLA01G0065200.1 (degree 5366).
+	The undirected graph Oryza glaberrima has 22708 nodes and 6255532 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02426 and has 13 connected components, where the component with most
+	nodes has 22679 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 268, the mean node degree is 550.95, and
+	the node degree mode is 1. The top 5 most central nodes are 4538.ORGLA02G0110200.1
+	(degree 7973), 4538.ORGLA11G0116900.1 (degree 6322), 4538.ORGLA12G0101900.1
+	(degree 6322), 4538.ORGLA02G0104000.1 (degree 6063) and 4538.ORGLA01G0065200.1
+	(degree 5366).
 	
 
 

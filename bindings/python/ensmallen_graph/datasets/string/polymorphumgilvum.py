@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:45.386152
 
-The undirected graph Polymorphum gilvum has 4377 nodes and 547207 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05714 and
-has 11 connected components, where the component with most nodes has 4355 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 250.04, and the node degree mode is 1. The top 5 most central
-nodes are 991905.SL003B_2786 (degree 2087), 991905.SL003B_4256 (degree 1967), 991905.SL003B_3222
-(degree 1693), 991905.SL003B_1612 (degree 1397) and 991905.SL003B_2430 (degree 1389).
+The undirected graph Polymorphum gilvum has 4377 nodes and 547207 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05714 and has 11 connected components, where the component with most
+nodes has 4355 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 207, the mean node degree is 250.04, and
+the node degree mode is 1. The top 5 most central nodes are 991905.SL003B_2786
+(degree 2087), 991905.SL003B_4256 (degree 1967), 991905.SL003B_3222 (degree
+1693), 991905.SL003B_1612 (degree 1397) and 991905.SL003B_2430 (degree
+1389).
 
 
 References
@@ -106,13 +108,15 @@ def PolymorphumGilvum(
 	
 	Datetime: 2021-02-02 22:04:45.386152
 	
-	The undirected graph Polymorphum gilvum has 4377 nodes and 547207 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05714 and
-	has 11 connected components, where the component with most nodes has 4355 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 250.04, and the node degree mode is 1. The top 5 most central
-	nodes are 991905.SL003B_2786 (degree 2087), 991905.SL003B_4256 (degree 1967), 991905.SL003B_3222
-	(degree 1693), 991905.SL003B_1612 (degree 1397) and 991905.SL003B_2430 (degree 1389).
+	The undirected graph Polymorphum gilvum has 4377 nodes and 547207 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05714 and has 11 connected components, where the component with most
+	nodes has 4355 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 207, the mean node degree is 250.04, and
+	the node degree mode is 1. The top 5 most central nodes are 991905.SL003B_2786
+	(degree 2087), 991905.SL003B_4256 (degree 1967), 991905.SL003B_3222 (degree
+	1693), 991905.SL003B_1612 (degree 1397) and 991905.SL003B_2430 (degree
+	1389).
 	
 
 

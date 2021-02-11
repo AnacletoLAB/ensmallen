@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:40.996710
 
-The undirected graph Pseudopodoces humilis has 15008 nodes and 2700710 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02398 and
-is connected, as it has a single component. The graph median node degree is 260,
-the mean node degree is 359.90, and the node degree mode is 97. The top 5 most central
-nodes are 181119.XP_005523906.1 (degree 3332), 181119.XP_005528795.1 (degree 3253),
-181119.XP_005526603.1 (degree 3159), 181119.XP_005524442.1 (degree 2861) and 181119.XP_005520046.1
+The undirected graph Pseudopodoces humilis has 15008 nodes and 2700710
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02398 and is connected, as it has a single component.
+The graph median node degree is 260, the mean node degree is 359.90, and
+the node degree mode is 97. The top 5 most central nodes are 181119.XP_005523906.1
+(degree 3332), 181119.XP_005528795.1 (degree 3253), 181119.XP_005526603.1
+(degree 3159), 181119.XP_005524442.1 (degree 2861) and 181119.XP_005520046.1
 (degree 2771).
 
 
@@ -106,12 +107,13 @@ def PseudopodocesHumilis(
 	
 	Datetime: 2021-02-02 19:56:40.996710
 	
-	The undirected graph Pseudopodoces humilis has 15008 nodes and 2700710 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02398 and
-	is connected, as it has a single component. The graph median node degree is 260,
-	the mean node degree is 359.90, and the node degree mode is 97. The top 5 most central
-	nodes are 181119.XP_005523906.1 (degree 3332), 181119.XP_005528795.1 (degree 3253),
-	181119.XP_005526603.1 (degree 3159), 181119.XP_005524442.1 (degree 2861) and 181119.XP_005520046.1
+	The undirected graph Pseudopodoces humilis has 15008 nodes and 2700710
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02398 and is connected, as it has a single component.
+	The graph median node degree is 260, the mean node degree is 359.90, and
+	the node degree mode is 97. The top 5 most central nodes are 181119.XP_005523906.1
+	(degree 3332), 181119.XP_005528795.1 (degree 3253), 181119.XP_005526603.1
+	(degree 3159), 181119.XP_005524442.1 (degree 2861) and 181119.XP_005520046.1
 	(degree 2771).
 	
 

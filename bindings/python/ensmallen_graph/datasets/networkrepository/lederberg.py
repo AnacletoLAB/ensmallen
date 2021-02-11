@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:14:02.381894
 
-The undirected graph Lederberg has 8324 nodes and 41538 weighted edges, of which
-6 are self-loops. The graph is sparse as it has a density of 0.00120 and has 35 connected
-components, where the component with most nodes has 8212 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 5, the mean node
-degree is 9.98, and the node degree mode is 1. The top 5 most central nodes are 232
-(degree 1103), 1122 (degree 491), 129 (degree 452), 239 (degree 445) and 121 (degree
-406).
+The undirected graph Lederberg has 8324 nodes and 41538 weighted edges,
+of which 6 are self-loops. The graph is sparse as it has a density of 0.00120
+and has 35 connected components, where the component with most nodes has
+8212 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 5, the mean node degree is 9.98, and the node degree
+mode is 1. The top 5 most central nodes are 232 (degree 1103), 1122 (degree
+491), 129 (degree 452), 239 (degree 445) and 121 (degree 406).
 
 
 References
@@ -103,13 +103,13 @@ def Lederberg(
 	
 	Datetime: 2021-02-06 10:14:02.381894
 	
-	The undirected graph Lederberg has 8324 nodes and 41538 weighted edges, of which
-	6 are self-loops. The graph is sparse as it has a density of 0.00120 and has 35 connected
-	components, where the component with most nodes has 8212 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 5, the mean node
-	degree is 9.98, and the node degree mode is 1. The top 5 most central nodes are 232
-	(degree 1103), 1122 (degree 491), 129 (degree 452), 239 (degree 445) and 121 (degree
-	406).
+	The undirected graph Lederberg has 8324 nodes and 41538 weighted edges,
+	of which 6 are self-loops. The graph is sparse as it has a density of 0.00120
+	and has 35 connected components, where the component with most nodes has
+	8212 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 5, the mean node degree is 9.98, and the node degree
+	mode is 1. The top 5 most central nodes are 232 (degree 1103), 1122 (degree
+	491), 129 (degree 452), 239 (degree 445) and 121 (degree 406).
 	
 
 

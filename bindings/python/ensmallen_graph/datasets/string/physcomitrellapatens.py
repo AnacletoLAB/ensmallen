@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:27:08.623662
 
-The undirected graph Physcomitrella patens has 18099 nodes and 5722872 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03494 and
-has 5 connected components, where the component with most nodes has 18091 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 388,
-the mean node degree is 632.40, and the node degree mode is 1. The top 5 most central
-nodes are 3218.PP1S34_360V6.1 (degree 6050), 3218.PP1S88_186V6.1 (degree 5854), 3218.PP1S81_123V6.1
-(degree 5852), 3218.PP1S22_40V6.1 (degree 5608) and 3218.PP1S6_158V6.2 (degree 5282).
+The undirected graph Physcomitrella patens has 18099 nodes and 5722872
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03494 and has 5 connected components, where the component
+with most nodes has 18091 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 388, the mean node degree
+is 632.40, and the node degree mode is 1. The top 5 most central nodes
+are 3218.PP1S34_360V6.1 (degree 6050), 3218.PP1S88_186V6.1 (degree 5854),
+3218.PP1S81_123V6.1 (degree 5852), 3218.PP1S22_40V6.1 (degree 5608) and
+3218.PP1S6_158V6.2 (degree 5282).
 
 
 References
@@ -106,13 +108,15 @@ def PhyscomitrellaPatens(
 	
 	Datetime: 2021-02-02 16:27:08.623662
 	
-	The undirected graph Physcomitrella patens has 18099 nodes and 5722872 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03494 and
-	has 5 connected components, where the component with most nodes has 18091 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 388,
-	the mean node degree is 632.40, and the node degree mode is 1. The top 5 most central
-	nodes are 3218.PP1S34_360V6.1 (degree 6050), 3218.PP1S88_186V6.1 (degree 5854), 3218.PP1S81_123V6.1
-	(degree 5852), 3218.PP1S22_40V6.1 (degree 5608) and 3218.PP1S6_158V6.2 (degree 5282).
+	The undirected graph Physcomitrella patens has 18099 nodes and 5722872
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03494 and has 5 connected components, where the component
+	with most nodes has 18091 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 388, the mean node degree
+	is 632.40, and the node degree mode is 1. The top 5 most central nodes
+	are 3218.PP1S34_360V6.1 (degree 6050), 3218.PP1S88_186V6.1 (degree 5854),
+	3218.PP1S81_123V6.1 (degree 5852), 3218.PP1S22_40V6.1 (degree 5608) and
+	3218.PP1S6_158V6.2 (degree 5282).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:12.087440
 
-The undirected graph Halobacterium sp. DL1 has 3228 nodes and 270486 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05193 and
-has 38 connected components, where the component with most nodes has 3136 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 167.59, and the node degree mode is 4. The top 5 most central
-nodes are 751944.HALDL1_06600 (degree 1069), 751944.HALDL1_03425 (degree 1035), 751944.HALDL1_15330
-(degree 923), 751944.HALDL1_16470 (degree 919) and 751944.HALDL1_11180 (degree 912).
+The undirected graph Halobacterium sp. DL1 has 3228 nodes and 270486 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05193 and has 38 connected components, where the component with most
+nodes has 3136 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 167.59, and
+the node degree mode is 4. The top 5 most central nodes are 751944.HALDL1_06600
+(degree 1069), 751944.HALDL1_03425 (degree 1035), 751944.HALDL1_15330 (degree
+923), 751944.HALDL1_16470 (degree 919) and 751944.HALDL1_11180 (degree
+912).
 
 
 References
@@ -106,13 +108,15 @@ def HalobacteriumSp.Dl1(
 	
 	Datetime: 2021-02-02 21:40:12.087440
 	
-	The undirected graph Halobacterium sp. DL1 has 3228 nodes and 270486 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05193 and
-	has 38 connected components, where the component with most nodes has 3136 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 167.59, and the node degree mode is 4. The top 5 most central
-	nodes are 751944.HALDL1_06600 (degree 1069), 751944.HALDL1_03425 (degree 1035), 751944.HALDL1_15330
-	(degree 923), 751944.HALDL1_16470 (degree 919) and 751944.HALDL1_11180 (degree 912).
+	The undirected graph Halobacterium sp. DL1 has 3228 nodes and 270486 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05193 and has 38 connected components, where the component with most
+	nodes has 3136 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 167.59, and
+	the node degree mode is 4. The top 5 most central nodes are 751944.HALDL1_06600
+	(degree 1069), 751944.HALDL1_03425 (degree 1035), 751944.HALDL1_15330 (degree
+	923), 751944.HALDL1_16470 (degree 919) and 751944.HALDL1_11180 (degree
+	912).
 	
 
 

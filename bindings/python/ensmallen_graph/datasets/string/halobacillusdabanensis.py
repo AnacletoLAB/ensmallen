@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:48.838381
 
-The undirected graph Halobacillus dabanensis has 4004 nodes and 465728 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05811 and
-has 20 connected components, where the component with most nodes has 3962 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 232.63, and the node degree mode is 1. The top 5 most central
-nodes are 240302.BN982_02985 (degree 1291), 240302.BN982_00652 (degree 1158), 240302.BN982_00531
-(degree 1150), 240302.BN982_00940 (degree 1127) and 240302.BN982_00296 (degree 1118).
+The undirected graph Halobacillus dabanensis has 4004 nodes and 465728
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05811 and has 20 connected components, where the component
+with most nodes has 3962 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 217, the mean node degree is 232.63,
+and the node degree mode is 1. The top 5 most central nodes are 240302.BN982_02985
+(degree 1291), 240302.BN982_00652 (degree 1158), 240302.BN982_00531 (degree
+1150), 240302.BN982_00940 (degree 1127) and 240302.BN982_00296 (degree
+1118).
 
 
 References
@@ -106,13 +108,15 @@ def HalobacillusDabanensis(
 	
 	Datetime: 2021-02-02 20:08:48.838381
 	
-	The undirected graph Halobacillus dabanensis has 4004 nodes and 465728 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05811 and
-	has 20 connected components, where the component with most nodes has 3962 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 232.63, and the node degree mode is 1. The top 5 most central
-	nodes are 240302.BN982_02985 (degree 1291), 240302.BN982_00652 (degree 1158), 240302.BN982_00531
-	(degree 1150), 240302.BN982_00940 (degree 1127) and 240302.BN982_00296 (degree 1118).
+	The undirected graph Halobacillus dabanensis has 4004 nodes and 465728
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05811 and has 20 connected components, where the component
+	with most nodes has 3962 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 217, the mean node degree is 232.63,
+	and the node degree mode is 1. The top 5 most central nodes are 240302.BN982_02985
+	(degree 1291), 240302.BN982_00652 (degree 1158), 240302.BN982_00531 (degree
+	1150), 240302.BN982_00940 (degree 1127) and 240302.BN982_00296 (degree
+	1118).
 	
 
 

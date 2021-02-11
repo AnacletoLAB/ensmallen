@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:47.404904
 
-The undirected graph Pyrobaculum neutrophilum has 1937 nodes and 103766 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05534
-and has 16 connected components, where the component with most nodes has 1895 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 107.14, and the node degree mode is 3. The top 5 most
-central nodes are 444157.Tneu_0730 (degree 592), 444157.Tneu_0616 (degree 586), 444157.Tneu_1963
-(degree 531), 444157.Tneu_1323 (degree 525) and 444157.Tneu_1525 (degree 514).
+The undirected graph Pyrobaculum neutrophilum has 1937 nodes and 103766
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05534 and has 16 connected components, where the component
+with most nodes has 1895 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 107.14,
+and the node degree mode is 3. The top 5 most central nodes are 444157.Tneu_0730
+(degree 592), 444157.Tneu_0616 (degree 586), 444157.Tneu_1963 (degree 531),
+444157.Tneu_1323 (degree 525) and 444157.Tneu_1525 (degree 514).
 
 
 References
@@ -106,13 +107,14 @@ def PyrobaculumNeutrophilum(
 	
 	Datetime: 2021-02-02 20:50:47.404904
 	
-	The undirected graph Pyrobaculum neutrophilum has 1937 nodes and 103766 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05534
-	and has 16 connected components, where the component with most nodes has 1895 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 107.14, and the node degree mode is 3. The top 5 most
-	central nodes are 444157.Tneu_0730 (degree 592), 444157.Tneu_0616 (degree 586), 444157.Tneu_1963
-	(degree 531), 444157.Tneu_1323 (degree 525) and 444157.Tneu_1525 (degree 514).
+	The undirected graph Pyrobaculum neutrophilum has 1937 nodes and 103766
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05534 and has 16 connected components, where the component
+	with most nodes has 1895 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 107.14,
+	and the node degree mode is 3. The top 5 most central nodes are 444157.Tneu_0730
+	(degree 592), 444157.Tneu_0616 (degree 586), 444157.Tneu_1963 (degree 531),
+	444157.Tneu_1323 (degree 525) and 444157.Tneu_1525 (degree 514).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:45.327029
 
-The undirected graph Galbibacter marinus has 3073 nodes and 330328 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06998 and
-has 4 connected components, where the component with most nodes has 3067 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 214.99, and the node degree mode is 6. The top 5 most central
-nodes are 555500.I215_11105 (degree 1214), 555500.I215_06542 (degree 1141), 555500.I215_08466
-(degree 999), 555500.I215_06767 (degree 948) and 555500.I215_07691 (degree 936).
+The undirected graph Galbibacter marinus has 3073 nodes and 330328 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06998 and has 4 connected components, where the component with most
+nodes has 3067 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 214.99, and
+the node degree mode is 6. The top 5 most central nodes are 555500.I215_11105
+(degree 1214), 555500.I215_06542 (degree 1141), 555500.I215_08466 (degree
+999), 555500.I215_06767 (degree 948) and 555500.I215_07691 (degree 936).
 
 
 References
@@ -106,13 +107,14 @@ def GalbibacterMarinus(
 	
 	Datetime: 2021-02-02 21:10:45.327029
 	
-	The undirected graph Galbibacter marinus has 3073 nodes and 330328 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06998 and
-	has 4 connected components, where the component with most nodes has 3067 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 214.99, and the node degree mode is 6. The top 5 most central
-	nodes are 555500.I215_11105 (degree 1214), 555500.I215_06542 (degree 1141), 555500.I215_08466
-	(degree 999), 555500.I215_06767 (degree 948) and 555500.I215_07691 (degree 936).
+	The undirected graph Galbibacter marinus has 3073 nodes and 330328 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06998 and has 4 connected components, where the component with most
+	nodes has 3067 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 214.99, and
+	the node degree mode is 6. The top 5 most central nodes are 555500.I215_11105
+	(degree 1214), 555500.I215_06542 (degree 1141), 555500.I215_08466 (degree
+	999), 555500.I215_06767 (degree 948) and 555500.I215_07691 (degree 936).
 	
 
 

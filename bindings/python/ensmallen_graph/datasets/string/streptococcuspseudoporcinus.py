@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:17.591099
 
-The undirected graph Streptococcus pseudoporcinus has 2016 nodes and 141763 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06980
-and has 4 connected components, where the component with most nodes has 2010 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 140.64, and the node degree mode is 1. The top 5
-most central nodes are 910313.HMPREF9320_0941 (degree 959), 910313.HMPREF9320_1471
-(degree 749), 910313.HMPREF9320_1550 (degree 749), 910313.HMPREF9320_0087 (degree
-746) and 910313.HMPREF9320_0032 (degree 693).
+The undirected graph Streptococcus pseudoporcinus has 2016 nodes and 141763
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06980 and has 4 connected components, where the component
+with most nodes has 2010 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 140.64,
+and the node degree mode is 1. The top 5 most central nodes are 910313.HMPREF9320_0941
+(degree 959), 910313.HMPREF9320_1471 (degree 749), 910313.HMPREF9320_1550
+(degree 749), 910313.HMPREF9320_0087 (degree 746) and 910313.HMPREF9320_0032
+(degree 693).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusPseudoporcinus(
 	
 	Datetime: 2021-02-02 21:55:17.591099
 	
-	The undirected graph Streptococcus pseudoporcinus has 2016 nodes and 141763 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06980
-	and has 4 connected components, where the component with most nodes has 2010 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 140.64, and the node degree mode is 1. The top 5
-	most central nodes are 910313.HMPREF9320_0941 (degree 959), 910313.HMPREF9320_1471
-	(degree 749), 910313.HMPREF9320_1550 (degree 749), 910313.HMPREF9320_0087 (degree
-	746) and 910313.HMPREF9320_0032 (degree 693).
+	The undirected graph Streptococcus pseudoporcinus has 2016 nodes and 141763
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06980 and has 4 connected components, where the component
+	with most nodes has 2010 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 140.64,
+	and the node degree mode is 1. The top 5 most central nodes are 910313.HMPREF9320_0941
+	(degree 959), 910313.HMPREF9320_1471 (degree 749), 910313.HMPREF9320_1550
+	(degree 749), 910313.HMPREF9320_0087 (degree 746) and 910313.HMPREF9320_0032
+	(degree 693).
 	
 
 

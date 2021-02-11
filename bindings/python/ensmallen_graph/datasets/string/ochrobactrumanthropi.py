@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:34.382633
 
-The undirected graph Ochrobactrum anthropi has 4436 nodes and 341556 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03472 and
-has 8 connected components, where the component with most nodes has 4419 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 153.99, and the node degree mode is 2. The top 5 most central
-nodes are 439375.Oant_4037 (degree 1782), 439375.Oant_0137 (degree 1616), 439375.Oant_4277
-(degree 1173), 439375.Oant_0409 (degree 1118) and 439375.Oant_3058 (degree 1095).
+The undirected graph Ochrobactrum anthropi has 4436 nodes and 341556 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03472 and has 8 connected components, where the component with most
+nodes has 4419 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 153.99, and
+the node degree mode is 2. The top 5 most central nodes are 439375.Oant_4037
+(degree 1782), 439375.Oant_0137 (degree 1616), 439375.Oant_4277 (degree
+1173), 439375.Oant_0409 (degree 1118) and 439375.Oant_3058 (degree 1095).
 
 
 References
@@ -106,13 +107,14 @@ def OchrobactrumAnthropi(
 	
 	Datetime: 2021-02-02 20:49:34.382633
 	
-	The undirected graph Ochrobactrum anthropi has 4436 nodes and 341556 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03472 and
-	has 8 connected components, where the component with most nodes has 4419 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 153.99, and the node degree mode is 2. The top 5 most central
-	nodes are 439375.Oant_4037 (degree 1782), 439375.Oant_0137 (degree 1616), 439375.Oant_4277
-	(degree 1173), 439375.Oant_0409 (degree 1118) and 439375.Oant_3058 (degree 1095).
+	The undirected graph Ochrobactrum anthropi has 4436 nodes and 341556 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03472 and has 8 connected components, where the component with most
+	nodes has 4419 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 153.99, and
+	the node degree mode is 2. The top 5 most central nodes are 439375.Oant_4037
+	(degree 1782), 439375.Oant_0137 (degree 1616), 439375.Oant_4277 (degree
+	1173), 439375.Oant_0409 (degree 1118) and 439375.Oant_3058 (degree 1095).
 	
 
 

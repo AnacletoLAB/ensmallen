@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:43.976962
 
-The undirected graph Collinsella tanakaei has 2186 nodes and 210739 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08824 and
-has 5 connected components, where the component with most nodes has 2174 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 192.81, and the node degree mode is 7. The top 5 most central
-nodes are 742742.HMPREF9452_01029 (degree 1186), 742742.HMPREF9452_00531 (degree
-1088), 742742.HMPREF9452_01631 (degree 1026), 742742.HMPREF9452_01547 (degree 962)
-and 742742.HMPREF9452_01153 (degree 941).
+The undirected graph Collinsella tanakaei has 2186 nodes and 210739 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08824 and has 5 connected components, where the component with most
+nodes has 2174 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 192.81, and
+the node degree mode is 7. The top 5 most central nodes are 742742.HMPREF9452_01029
+(degree 1186), 742742.HMPREF9452_00531 (degree 1088), 742742.HMPREF9452_01631
+(degree 1026), 742742.HMPREF9452_01547 (degree 962) and 742742.HMPREF9452_01153
+(degree 941).
 
 
 References
@@ -107,14 +108,15 @@ def CollinsellaTanakaei(
 	
 	Datetime: 2021-02-02 21:37:43.976962
 	
-	The undirected graph Collinsella tanakaei has 2186 nodes and 210739 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08824 and
-	has 5 connected components, where the component with most nodes has 2174 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 192.81, and the node degree mode is 7. The top 5 most central
-	nodes are 742742.HMPREF9452_01029 (degree 1186), 742742.HMPREF9452_00531 (degree
-	1088), 742742.HMPREF9452_01631 (degree 1026), 742742.HMPREF9452_01547 (degree 962)
-	and 742742.HMPREF9452_01153 (degree 941).
+	The undirected graph Collinsella tanakaei has 2186 nodes and 210739 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08824 and has 5 connected components, where the component with most
+	nodes has 2174 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 192.81, and
+	the node degree mode is 7. The top 5 most central nodes are 742742.HMPREF9452_01029
+	(degree 1186), 742742.HMPREF9452_00531 (degree 1088), 742742.HMPREF9452_01631
+	(degree 1026), 742742.HMPREF9452_01547 (degree 962) and 742742.HMPREF9452_01153
+	(degree 941).
 	
 
 

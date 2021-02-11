@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:27.582996
 
-The undirected graph Fulvimarina pelagi has 3685 nodes and 376478 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05546 and
-has 21 connected components, where the component with most nodes has 3633 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 204.33, and the node degree mode is 1. The top 5 most central
-nodes are 314231.FP2506_14164 (degree 1352), 314231.FP2506_12904 (degree 1041), 314231.FP2506_10911
-(degree 1019), 314231.FP2506_17709 (degree 1018) and 314231.FP2506_02420 (degree
+The undirected graph Fulvimarina pelagi has 3685 nodes and 376478 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05546 and has 21 connected components, where the component with most
+nodes has 3633 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 174, the mean node degree is 204.33, and
+the node degree mode is 1. The top 5 most central nodes are 314231.FP2506_14164
+(degree 1352), 314231.FP2506_12904 (degree 1041), 314231.FP2506_10911 (degree
+1019), 314231.FP2506_17709 (degree 1018) and 314231.FP2506_02420 (degree
 1004).
 
 
@@ -107,13 +108,14 @@ def FulvimarinaPelagi(
 	
 	Datetime: 2021-02-02 20:24:27.582996
 	
-	The undirected graph Fulvimarina pelagi has 3685 nodes and 376478 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05546 and
-	has 21 connected components, where the component with most nodes has 3633 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 204.33, and the node degree mode is 1. The top 5 most central
-	nodes are 314231.FP2506_14164 (degree 1352), 314231.FP2506_12904 (degree 1041), 314231.FP2506_10911
-	(degree 1019), 314231.FP2506_17709 (degree 1018) and 314231.FP2506_02420 (degree
+	The undirected graph Fulvimarina pelagi has 3685 nodes and 376478 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05546 and has 21 connected components, where the component with most
+	nodes has 3633 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 174, the mean node degree is 204.33, and
+	the node degree mode is 1. The top 5 most central nodes are 314231.FP2506_14164
+	(degree 1352), 314231.FP2506_12904 (degree 1041), 314231.FP2506_10911 (degree
+	1019), 314231.FP2506_17709 (degree 1018) and 314231.FP2506_02420 (degree
 	1004).
 	
 

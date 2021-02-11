@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:09.774215
 
-The undirected graph Caldilinea aerophila has 4092 nodes and 485956 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05806 and
-has 4 connected components, where the component with most nodes has 4086 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 237.52, and the node degree mode is 3. The top 5 most central
-nodes are 926550.CLDAP_24460 (degree 2457), 926550.CLDAP_07620 (degree 2132), 926550.CLDAP_19500
-(degree 1833), 926550.CLDAP_00570 (degree 1755) and 926550.CLDAP_22220 (degree 1722).
+The undirected graph Caldilinea aerophila has 4092 nodes and 485956 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05806 and has 4 connected components, where the component with most
+nodes has 4086 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 237.52, and
+the node degree mode is 3. The top 5 most central nodes are 926550.CLDAP_24460
+(degree 2457), 926550.CLDAP_07620 (degree 2132), 926550.CLDAP_19500 (degree
+1833), 926550.CLDAP_00570 (degree 1755) and 926550.CLDAP_22220 (degree
+1722).
 
 
 References
@@ -106,13 +108,15 @@ def CaldilineaAerophila(
 	
 	Datetime: 2021-02-02 21:56:09.774215
 	
-	The undirected graph Caldilinea aerophila has 4092 nodes and 485956 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05806 and
-	has 4 connected components, where the component with most nodes has 4086 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 237.52, and the node degree mode is 3. The top 5 most central
-	nodes are 926550.CLDAP_24460 (degree 2457), 926550.CLDAP_07620 (degree 2132), 926550.CLDAP_19500
-	(degree 1833), 926550.CLDAP_00570 (degree 1755) and 926550.CLDAP_22220 (degree 1722).
+	The undirected graph Caldilinea aerophila has 4092 nodes and 485956 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05806 and has 4 connected components, where the component with most
+	nodes has 4086 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 237.52, and
+	the node degree mode is 3. The top 5 most central nodes are 926550.CLDAP_24460
+	(degree 2457), 926550.CLDAP_07620 (degree 2132), 926550.CLDAP_19500 (degree
+	1833), 926550.CLDAP_00570 (degree 1755) and 926550.CLDAP_22220 (degree
+	1722).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:48:05.206991
 
-The undirected graph Coleofasciculus chthonoplastes has 8114 nodes and 1123499 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03413
-and has 92 connected components, where the component with most nodes has 7896 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 252, the mean node degree is 276.93, and the node degree mode is 2. The top 5
-most central nodes are 118168.MC7420_7722 (degree 2446), 118168.MC7420_4451 (degree
-2183), 118168.MC7420_4043 (degree 1995), 118168.MC7420_1426 (degree 1970) and 118168.MC7420_716
-(degree 1875).
+The undirected graph Coleofasciculus chthonoplastes has 8114 nodes and
+1123499 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03413 and has 92 connected components, where the
+component with most nodes has 7896 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+is 276.93, and the node degree mode is 2. The top 5 most central nodes
+are 118168.MC7420_7722 (degree 2446), 118168.MC7420_4451 (degree 2183),
+118168.MC7420_4043 (degree 1995), 118168.MC7420_1426 (degree 1970) and
+118168.MC7420_716 (degree 1875).
 
 
 References
@@ -107,14 +108,15 @@ def ColeofasciculusChthonoplastes(
 	
 	Datetime: 2021-02-02 19:48:05.206991
 	
-	The undirected graph Coleofasciculus chthonoplastes has 8114 nodes and 1123499 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03413
-	and has 92 connected components, where the component with most nodes has 7896 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 252, the mean node degree is 276.93, and the node degree mode is 2. The top 5
-	most central nodes are 118168.MC7420_7722 (degree 2446), 118168.MC7420_4451 (degree
-	2183), 118168.MC7420_4043 (degree 1995), 118168.MC7420_1426 (degree 1970) and 118168.MC7420_716
-	(degree 1875).
+	The undirected graph Coleofasciculus chthonoplastes has 8114 nodes and
+	1123499 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03413 and has 92 connected components, where the
+	component with most nodes has 7896 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 252, the mean node degree
+	is 276.93, and the node degree mode is 2. The top 5 most central nodes
+	are 118168.MC7420_7722 (degree 2446), 118168.MC7420_4451 (degree 2183),
+	118168.MC7420_4043 (degree 1995), 118168.MC7420_1426 (degree 1970) and
+	118168.MC7420_716 (degree 1875).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:40.867572
 
-The undirected graph Eubacterium limosum has 4491 nodes and 325775 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03231 and
-has 20 connected components, where the component with most nodes has 4435 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 145.08, and the node degree mode is 4. The top 5 most central
-nodes are 903814.ELI_3708 (degree 1431), 903814.ELI_0933 (degree 1407), 903814.ELI_0771
-(degree 1202), 903814.ELI_1527 (degree 981) and 903814.ELI_3414 (degree 976).
+The undirected graph Eubacterium limosum has 4491 nodes and 325775 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03231 and has 20 connected components, where the component with most
+nodes has 4435 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 145.08, and
+the node degree mode is 4. The top 5 most central nodes are 903814.ELI_3708
+(degree 1431), 903814.ELI_0933 (degree 1407), 903814.ELI_0771 (degree 1202),
+903814.ELI_1527 (degree 981) and 903814.ELI_3414 (degree 976).
 
 
 References
@@ -106,13 +107,14 @@ def EubacteriumLimosum(
 	
 	Datetime: 2021-02-02 21:53:40.867572
 	
-	The undirected graph Eubacterium limosum has 4491 nodes and 325775 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03231 and
-	has 20 connected components, where the component with most nodes has 4435 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 145.08, and the node degree mode is 4. The top 5 most central
-	nodes are 903814.ELI_3708 (degree 1431), 903814.ELI_0933 (degree 1407), 903814.ELI_0771
-	(degree 1202), 903814.ELI_1527 (degree 981) and 903814.ELI_3414 (degree 976).
+	The undirected graph Eubacterium limosum has 4491 nodes and 325775 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03231 and has 20 connected components, where the component with most
+	nodes has 4435 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 145.08, and
+	the node degree mode is 4. The top 5 most central nodes are 903814.ELI_3708
+	(degree 1431), 903814.ELI_0933 (degree 1407), 903814.ELI_0771 (degree 1202),
+	903814.ELI_1527 (degree 981) and 903814.ELI_3414 (degree 976).
 	
 
 

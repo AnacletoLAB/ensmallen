@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:34.336669
 
-The undirected graph Desulfotomaculum ruminis has 3761 nodes and 334576 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04732
-and has 21 connected components, where the component with most nodes has 3717 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 177.92, and the node degree mode is 1. The top 5
-most central nodes are 696281.Desru_2499 (degree 1272), 696281.Desru_2975 (degree
-1221), 696281.Desru_1651 (degree 1211), 696281.Desru_1117 (degree 1069) and 696281.Desru_2762
-(degree 1054).
+The undirected graph Desulfotomaculum ruminis has 3761 nodes and 334576
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04732 and has 21 connected components, where the component
+with most nodes has 3717 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 177.92,
+and the node degree mode is 1. The top 5 most central nodes are 696281.Desru_2499
+(degree 1272), 696281.Desru_2975 (degree 1221), 696281.Desru_1651 (degree
+1211), 696281.Desru_1117 (degree 1069) and 696281.Desru_2762 (degree 1054).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfotomaculumRuminis(
 	
 	Datetime: 2021-02-02 21:32:34.336669
 	
-	The undirected graph Desulfotomaculum ruminis has 3761 nodes and 334576 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04732
-	and has 21 connected components, where the component with most nodes has 3717 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 177.92, and the node degree mode is 1. The top 5
-	most central nodes are 696281.Desru_2499 (degree 1272), 696281.Desru_2975 (degree
-	1221), 696281.Desru_1651 (degree 1211), 696281.Desru_1117 (degree 1069) and 696281.Desru_2762
-	(degree 1054).
+	The undirected graph Desulfotomaculum ruminis has 3761 nodes and 334576
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04732 and has 21 connected components, where the component
+	with most nodes has 3717 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 177.92,
+	and the node degree mode is 1. The top 5 most central nodes are 696281.Desru_2499
+	(degree 1272), 696281.Desru_2975 (degree 1221), 696281.Desru_1651 (degree
+	1211), 696281.Desru_1117 (degree 1069) and 696281.Desru_2762 (degree 1054).
 	
 
 

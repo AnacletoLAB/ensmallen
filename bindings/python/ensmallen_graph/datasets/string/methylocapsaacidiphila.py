@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:36.465557
 
-The undirected graph Methylocapsa acidiphila has 3228 nodes and 278732 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05352 and
-has 15 connected components, where the component with most nodes has 3196 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 172.70, and the node degree mode is 1. The top 5 most central
-nodes are 395964.KE386496_gene1212 (degree 1248), 395964.KE386496_gene1770 (degree
-1041), 395964.KE386496_gene2893 (degree 911), 395964.KE386496_gene2048 (degree 888)
-and 395964.KE386496_gene2833 (degree 882).
+The undirected graph Methylocapsa acidiphila has 3228 nodes and 278732
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05352 and has 15 connected components, where the component
+with most nodes has 3196 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 172.70,
+and the node degree mode is 1. The top 5 most central nodes are 395964.KE386496_gene1212
+(degree 1248), 395964.KE386496_gene1770 (degree 1041), 395964.KE386496_gene2893
+(degree 911), 395964.KE386496_gene2048 (degree 888) and 395964.KE386496_gene2833
+(degree 882).
 
 
 References
@@ -107,14 +108,15 @@ def MethylocapsaAcidiphila(
 	
 	Datetime: 2021-02-02 20:41:36.465557
 	
-	The undirected graph Methylocapsa acidiphila has 3228 nodes and 278732 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05352 and
-	has 15 connected components, where the component with most nodes has 3196 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 172.70, and the node degree mode is 1. The top 5 most central
-	nodes are 395964.KE386496_gene1212 (degree 1248), 395964.KE386496_gene1770 (degree
-	1041), 395964.KE386496_gene2893 (degree 911), 395964.KE386496_gene2048 (degree 888)
-	and 395964.KE386496_gene2833 (degree 882).
+	The undirected graph Methylocapsa acidiphila has 3228 nodes and 278732
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05352 and has 15 connected components, where the component
+	with most nodes has 3196 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 172.70,
+	and the node degree mode is 1. The top 5 most central nodes are 395964.KE386496_gene1212
+	(degree 1248), 395964.KE386496_gene1770 (degree 1041), 395964.KE386496_gene2893
+	(degree 911), 395964.KE386496_gene2048 (degree 888) and 395964.KE386496_gene2833
+	(degree 882).
 	
 
 

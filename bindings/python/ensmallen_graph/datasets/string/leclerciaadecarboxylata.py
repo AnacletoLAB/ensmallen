@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:29.513824
 
-The undirected graph Leclercia adecarboxylata has 4596 nodes and 497011 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04707
-and has 5 connected components, where the component with most nodes has 4587 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 216.28, and the node degree mode is 1. The top 5
-most central nodes are 911008.GLAD_01280 (degree 1618), 911008.GLAD_00191 (degree
-1500), 911008.GLAD_02400 (degree 1454), 911008.GLAD_02940 (degree 1291) and 911008.GLAD_01165
-(degree 1263).
+The undirected graph Leclercia adecarboxylata has 4596 nodes and 497011
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04707 and has 5 connected components, where the component
+with most nodes has 4587 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 216.28,
+and the node degree mode is 1. The top 5 most central nodes are 911008.GLAD_01280
+(degree 1618), 911008.GLAD_00191 (degree 1500), 911008.GLAD_02400 (degree
+1454), 911008.GLAD_02940 (degree 1291) and 911008.GLAD_01165 (degree 1263).
 
 
 References
@@ -107,14 +107,14 @@ def LeclerciaAdecarboxylata(
 	
 	Datetime: 2021-02-02 21:55:29.513824
 	
-	The undirected graph Leclercia adecarboxylata has 4596 nodes and 497011 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04707
-	and has 5 connected components, where the component with most nodes has 4587 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 216.28, and the node degree mode is 1. The top 5
-	most central nodes are 911008.GLAD_01280 (degree 1618), 911008.GLAD_00191 (degree
-	1500), 911008.GLAD_02400 (degree 1454), 911008.GLAD_02940 (degree 1291) and 911008.GLAD_01165
-	(degree 1263).
+	The undirected graph Leclercia adecarboxylata has 4596 nodes and 497011
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04707 and has 5 connected components, where the component
+	with most nodes has 4587 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 216.28,
+	and the node degree mode is 1. The top 5 most central nodes are 911008.GLAD_01280
+	(degree 1618), 911008.GLAD_00191 (degree 1500), 911008.GLAD_02400 (degree
+	1454), 911008.GLAD_02940 (degree 1291) and 911008.GLAD_01165 (degree 1263).
 	
 
 

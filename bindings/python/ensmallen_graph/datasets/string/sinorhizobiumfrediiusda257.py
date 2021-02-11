@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:36.769359
 
-The undirected graph Sinorhizobium fredii USDA257 has 6034 nodes and 620768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03411
-and has 36 connected components, where the component with most nodes has 5954 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 205.76, and the node degree mode is 1. The top 5
-most central nodes are 1185652.USDA257_c60150 (degree 2295), 1185652.USDA257_c01500
-(degree 2076), 1185652.USDA257_c52820 (degree 1826), 1185652.USDA257_c61600 (degree
-1682) and 1185652.USDA257_c59480 (degree 1676).
+The undirected graph Sinorhizobium fredii USDA257 has 6034 nodes and 620768
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03411 and has 36 connected components, where the component
+with most nodes has 5954 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 205.76,
+and the node degree mode is 1. The top 5 most central nodes are 1185652.USDA257_c60150
+(degree 2295), 1185652.USDA257_c01500 (degree 2076), 1185652.USDA257_c52820
+(degree 1826), 1185652.USDA257_c61600 (degree 1682) and 1185652.USDA257_c59480
+(degree 1676).
 
 
 References
@@ -107,14 +108,15 @@ def SinorhizobiumFrediiUsda257(
 	
 	Datetime: 2021-02-02 23:10:36.769359
 	
-	The undirected graph Sinorhizobium fredii USDA257 has 6034 nodes and 620768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03411
-	and has 36 connected components, where the component with most nodes has 5954 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 205.76, and the node degree mode is 1. The top 5
-	most central nodes are 1185652.USDA257_c60150 (degree 2295), 1185652.USDA257_c01500
-	(degree 2076), 1185652.USDA257_c52820 (degree 1826), 1185652.USDA257_c61600 (degree
-	1682) and 1185652.USDA257_c59480 (degree 1676).
+	The undirected graph Sinorhizobium fredii USDA257 has 6034 nodes and 620768
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03411 and has 36 connected components, where the component
+	with most nodes has 5954 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 205.76,
+	and the node degree mode is 1. The top 5 most central nodes are 1185652.USDA257_c60150
+	(degree 2295), 1185652.USDA257_c01500 (degree 2076), 1185652.USDA257_c52820
+	(degree 1826), 1185652.USDA257_c61600 (degree 1682) and 1185652.USDA257_c59480
+	(degree 1676).
 	
 
 

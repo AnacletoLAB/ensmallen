@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:26.377538
 
-The undirected graph Sphingomonas astaxanthinifaciens has 2454 nodes and 160783 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05342
-and has 6 connected components, where the component with most nodes has 2443 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 131.04, and the node degree mode is 4. The top 5
-most central nodes are 1123267.JONN01000001_gene2193 (degree 895), 1123267.JONN01000001_gene925
+The undirected graph Sphingomonas astaxanthinifaciens has 2454 nodes and
+160783 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05342 and has 6 connected components, where the
+component with most nodes has 2443 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+is 131.04, and the node degree mode is 4. The top 5 most central nodes
+are 1123267.JONN01000001_gene2193 (degree 895), 1123267.JONN01000001_gene925
 (degree 794), 1123267.JONN01000002_gene202 (degree 724), 1123267.JONN01000002_gene279
 (degree 717) and 1123267.JONN01000001_gene2133 (degree 700).
 
@@ -107,12 +108,13 @@ def SphingomonasAstaxanthinifaciens(
 	
 	Datetime: 2021-02-02 22:49:26.377538
 	
-	The undirected graph Sphingomonas astaxanthinifaciens has 2454 nodes and 160783 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05342
-	and has 6 connected components, where the component with most nodes has 2443 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 131.04, and the node degree mode is 4. The top 5
-	most central nodes are 1123267.JONN01000001_gene2193 (degree 895), 1123267.JONN01000001_gene925
+	The undirected graph Sphingomonas astaxanthinifaciens has 2454 nodes and
+	160783 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05342 and has 6 connected components, where the
+	component with most nodes has 2443 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 110, the mean node degree
+	is 131.04, and the node degree mode is 4. The top 5 most central nodes
+	are 1123267.JONN01000001_gene2193 (degree 895), 1123267.JONN01000001_gene925
 	(degree 794), 1123267.JONN01000002_gene202 (degree 724), 1123267.JONN01000002_gene279
 	(degree 717) and 1123267.JONN01000001_gene2133 (degree 700).
 	

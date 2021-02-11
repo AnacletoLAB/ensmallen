@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:39.956879
 
-The undirected graph Actibacterium atlanticum has 3114 nodes and 326980 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06746
-and has 3 connected components, where the component with most nodes has 3110 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 210.01, and the node degree mode is 2. The top 5
-most central nodes are 1461693.ATO10_12449 (degree 1344), 1461693.ATO10_10485 (degree
-1234), 1461693.ATO10_03485 (degree 1073), 1461693.ATO10_09368 (degree 979) and 1461693.ATO10_08683
-(degree 943).
+The undirected graph Actibacterium atlanticum has 3114 nodes and 326980
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06746 and has 3 connected components, where the component
+with most nodes has 3110 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 210.01,
+and the node degree mode is 2. The top 5 most central nodes are 1461693.ATO10_12449
+(degree 1344), 1461693.ATO10_10485 (degree 1234), 1461693.ATO10_03485 (degree
+1073), 1461693.ATO10_09368 (degree 979) and 1461693.ATO10_08683 (degree
+943).
 
 
 References
@@ -107,14 +108,15 @@ def ActibacteriumAtlanticum(
 	
 	Datetime: 2021-02-03 23:07:39.956879
 	
-	The undirected graph Actibacterium atlanticum has 3114 nodes and 326980 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06746
-	and has 3 connected components, where the component with most nodes has 3110 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 210.01, and the node degree mode is 2. The top 5
-	most central nodes are 1461693.ATO10_12449 (degree 1344), 1461693.ATO10_10485 (degree
-	1234), 1461693.ATO10_03485 (degree 1073), 1461693.ATO10_09368 (degree 979) and 1461693.ATO10_08683
-	(degree 943).
+	The undirected graph Actibacterium atlanticum has 3114 nodes and 326980
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06746 and has 3 connected components, where the component
+	with most nodes has 3110 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 210.01,
+	and the node degree mode is 2. The top 5 most central nodes are 1461693.ATO10_12449
+	(degree 1344), 1461693.ATO10_10485 (degree 1234), 1461693.ATO10_03485 (degree
+	1073), 1461693.ATO10_09368 (degree 979) and 1461693.ATO10_08683 (degree
+	943).
 	
 
 

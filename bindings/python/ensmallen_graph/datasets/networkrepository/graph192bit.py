@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-05 12:51:19.147269
 
-The undirected graph 192bit has 13691 nodes and 154242 unweighted edges, of which
-7 are self-loops. The graph is sparse as it has a density of 0.00165 and is connected,
-as it has a single component. The graph median node degree is 15, the mean node degree
-is 22.53, and the node degree mode is 14. The top 5 most central nodes are 1 (degree
-6898), 3 (degree 5523), 4 (degree 4662), 5 (degree 3583) and 6 (degree 3227).
+The undirected graph 192bit has 13691 nodes and 154242 unweighted edges,
+of which 7 are self-loops. The graph is sparse as it has a density of 0.00165
+and is connected, as it has a single component. The graph median node degree
+is 15, the mean node degree is 22.53, and the node degree mode is 14. The
+top 5 most central nodes are 1 (degree 6898), 3 (degree 5523), 4 (degree
+4662), 5 (degree 3583) and 6 (degree 3227).
 
 
 References
@@ -101,11 +102,12 @@ def Graph192bit(
 	
 	Datetime: 2021-02-05 12:51:19.147269
 	
-	The undirected graph 192bit has 13691 nodes and 154242 unweighted edges, of which
-	7 are self-loops. The graph is sparse as it has a density of 0.00165 and is connected,
-	as it has a single component. The graph median node degree is 15, the mean node degree
-	is 22.53, and the node degree mode is 14. The top 5 most central nodes are 1 (degree
-	6898), 3 (degree 5523), 4 (degree 4662), 5 (degree 3583) and 6 (degree 3227).
+	The undirected graph 192bit has 13691 nodes and 154242 unweighted edges,
+	of which 7 are self-loops. The graph is sparse as it has a density of 0.00165
+	and is connected, as it has a single component. The graph median node degree
+	is 15, the mean node degree is 22.53, and the node degree mode is 14. The
+	top 5 most central nodes are 1 (degree 6898), 3 (degree 5523), 4 (degree
+	4662), 5 (degree 3583) and 6 (degree 3227).
 	
 
 

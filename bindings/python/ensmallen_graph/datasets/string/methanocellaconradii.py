@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:21.792008
 
-The undirected graph Methanocella conradii has 2432 nodes and 291903 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09875 and
-has 14 connected components, where the component with most nodes has 2396 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 249,
-the mean node degree is 240.05, and the node degree mode is 4. The top 5 most central
-nodes are 1041930.Mtc_0348 (degree 1047), 1041930.Mtc_1154 (degree 915), 1041930.Mtc_0774
-(degree 872), 1041930.Mtc_0299 (degree 854) and 1041930.Mtc_0382 (degree 770).
+The undirected graph Methanocella conradii has 2432 nodes and 291903 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09875 and has 14 connected components, where the component with most
+nodes has 2396 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 249, the mean node degree is 240.05, and
+the node degree mode is 4. The top 5 most central nodes are 1041930.Mtc_0348
+(degree 1047), 1041930.Mtc_1154 (degree 915), 1041930.Mtc_0774 (degree
+872), 1041930.Mtc_0299 (degree 854) and 1041930.Mtc_0382 (degree 770).
 
 
 References
@@ -106,13 +107,14 @@ def MethanocellaConradii(
 	
 	Datetime: 2021-02-02 22:15:21.792008
 	
-	The undirected graph Methanocella conradii has 2432 nodes and 291903 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09875 and
-	has 14 connected components, where the component with most nodes has 2396 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 249,
-	the mean node degree is 240.05, and the node degree mode is 4. The top 5 most central
-	nodes are 1041930.Mtc_0348 (degree 1047), 1041930.Mtc_1154 (degree 915), 1041930.Mtc_0774
-	(degree 872), 1041930.Mtc_0299 (degree 854) and 1041930.Mtc_0382 (degree 770).
+	The undirected graph Methanocella conradii has 2432 nodes and 291903 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09875 and has 14 connected components, where the component with most
+	nodes has 2396 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 249, the mean node degree is 240.05, and
+	the node degree mode is 4. The top 5 most central nodes are 1041930.Mtc_0348
+	(degree 1047), 1041930.Mtc_1154 (degree 915), 1041930.Mtc_0774 (degree
+	872), 1041930.Mtc_0299 (degree 854) and 1041930.Mtc_0382 (degree 770).
 	
 
 

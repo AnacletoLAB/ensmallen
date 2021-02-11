@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:20.053553
 
-The undirected graph Bifidobacterium angulatum has 1728 nodes and 93030 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-and has 5 connected components, where the component with most nodes has 1717 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 107.67, and the node degree mode is 2. The top 5 most
-central nodes are 518635.BIFANG_03130 (degree 709), 518635.BIFANG_03239 (degree 606),
-518635.BIFANG_03102 (degree 574), 518635.BIFANG_03798 (degree 548) and 518635.BIFANG_02292
-(degree 534).
+The undirected graph Bifidobacterium angulatum has 1728 nodes and 93030
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06235 and has 5 connected components, where the component
+with most nodes has 1717 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 107.67,
+and the node degree mode is 2. The top 5 most central nodes are 518635.BIFANG_03130
+(degree 709), 518635.BIFANG_03239 (degree 606), 518635.BIFANG_03102 (degree
+574), 518635.BIFANG_03798 (degree 548) and 518635.BIFANG_02292 (degree
+534).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumAngulatum(
 	
 	Datetime: 2021-02-02 21:03:20.053553
 	
-	The undirected graph Bifidobacterium angulatum has 1728 nodes and 93030 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06235
-	and has 5 connected components, where the component with most nodes has 1717 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 107.67, and the node degree mode is 2. The top 5 most
-	central nodes are 518635.BIFANG_03130 (degree 709), 518635.BIFANG_03239 (degree 606),
-	518635.BIFANG_03102 (degree 574), 518635.BIFANG_03798 (degree 548) and 518635.BIFANG_02292
-	(degree 534).
+	The undirected graph Bifidobacterium angulatum has 1728 nodes and 93030
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06235 and has 5 connected components, where the component
+	with most nodes has 1717 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 107.67,
+	and the node degree mode is 2. The top 5 most central nodes are 518635.BIFANG_03130
+	(degree 709), 518635.BIFANG_03239 (degree 606), 518635.BIFANG_03102 (degree
+	574), 518635.BIFANG_03798 (degree 548) and 518635.BIFANG_02292 (degree
+	534).
 	
 
 

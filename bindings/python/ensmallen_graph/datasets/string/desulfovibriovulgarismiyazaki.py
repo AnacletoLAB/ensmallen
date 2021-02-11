@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:59.406333
 
-The undirected graph Desulfovibrio vulgaris Miyazaki has 3139 nodes and 258112 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05241
-and has 7 connected components, where the component with most nodes has 3124 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 164.45, and the node degree mode is 2. The top 5
-most central nodes are 883.DvMF_1713 (degree 1368), 883.DvMF_0358 (degree 1079),
-883.DvMF_1096 (degree 1036), 883.DvMF_3125 (degree 1033) and 883.DvMF_1860 (degree
-988).
+The undirected graph Desulfovibrio vulgaris Miyazaki has 3139 nodes and
+258112 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05241 and has 7 connected components, where the
+component with most nodes has 3124 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+is 164.45, and the node degree mode is 2. The top 5 most central nodes
+are 883.DvMF_1713 (degree 1368), 883.DvMF_0358 (degree 1079), 883.DvMF_1096
+(degree 1036), 883.DvMF_3125 (degree 1033) and 883.DvMF_1860 (degree 988).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioVulgarisMiyazaki(
 	
 	Datetime: 2021-02-02 16:21:59.406333
 	
-	The undirected graph Desulfovibrio vulgaris Miyazaki has 3139 nodes and 258112 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05241
-	and has 7 connected components, where the component with most nodes has 3124 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 164.45, and the node degree mode is 2. The top 5
-	most central nodes are 883.DvMF_1713 (degree 1368), 883.DvMF_0358 (degree 1079),
-	883.DvMF_1096 (degree 1036), 883.DvMF_3125 (degree 1033) and 883.DvMF_1860 (degree
-	988).
+	The undirected graph Desulfovibrio vulgaris Miyazaki has 3139 nodes and
+	258112 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05241 and has 7 connected components, where the
+	component with most nodes has 3124 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+	is 164.45, and the node degree mode is 2. The top 5 most central nodes
+	are 883.DvMF_1713 (degree 1368), 883.DvMF_0358 (degree 1079), 883.DvMF_1096
+	(degree 1036), 883.DvMF_3125 (degree 1033) and 883.DvMF_1860 (degree 988).
 	
 
 

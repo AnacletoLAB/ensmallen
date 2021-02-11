@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:31.727371
 
-The undirected graph Vibrio sp. EJY3 has 4752 nodes and 426130 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03775 and
-has 15 connected components, where the component with most nodes has 4711 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 179.35, and the node degree mode is 1. The top 5 most central
-nodes are 1116375.VEJY3_00490 (degree 1701), 1116375.VEJY3_02200 (degree 1304), 1116375.VEJY3_06010
-(degree 1261), 1116375.VEJY3_02825 (degree 1261) and 1116375.VEJY3_12810 (degree
+The undirected graph Vibrio sp. EJY3 has 4752 nodes and 426130 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03775 and has 15 connected components, where the component with most
+nodes has 4711 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 179.35, and
+the node degree mode is 1. The top 5 most central nodes are 1116375.VEJY3_00490
+(degree 1701), 1116375.VEJY3_02200 (degree 1304), 1116375.VEJY3_06010 (degree
+1261), 1116375.VEJY3_02825 (degree 1261) and 1116375.VEJY3_12810 (degree
 1220).
 
 
@@ -107,13 +108,14 @@ def VibrioSp.Ejy3(
 	
 	Datetime: 2021-02-02 22:27:31.727371
 	
-	The undirected graph Vibrio sp. EJY3 has 4752 nodes and 426130 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03775 and
-	has 15 connected components, where the component with most nodes has 4711 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 179.35, and the node degree mode is 1. The top 5 most central
-	nodes are 1116375.VEJY3_00490 (degree 1701), 1116375.VEJY3_02200 (degree 1304), 1116375.VEJY3_06010
-	(degree 1261), 1116375.VEJY3_02825 (degree 1261) and 1116375.VEJY3_12810 (degree
+	The undirected graph Vibrio sp. EJY3 has 4752 nodes and 426130 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03775 and has 15 connected components, where the component with most
+	nodes has 4711 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 179.35, and
+	the node degree mode is 1. The top 5 most central nodes are 1116375.VEJY3_00490
+	(degree 1701), 1116375.VEJY3_02200 (degree 1304), 1116375.VEJY3_06010 (degree
+	1261), 1116375.VEJY3_02825 (degree 1261) and 1116375.VEJY3_12810 (degree
 	1220).
 	
 

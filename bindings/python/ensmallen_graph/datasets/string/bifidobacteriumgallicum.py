@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:48.305345
 
-The undirected graph Bifidobacterium gallicum has 1883 nodes and 97969 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05529 and
-has 16 connected components, where the component with most nodes has 1844 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 79,
-the mean node degree is 104.06, and the node degree mode is 1. The top 5 most central
-nodes are 561180.BIFGAL_03905 (degree 707), 561180.BIFGAL_02619 (degree 704), 561180.BIFGAL_03637
-(degree 669), 561180.BIFGAL_03307 (degree 607) and 561180.BIFGAL_02645 (degree 596).
+The undirected graph Bifidobacterium gallicum has 1883 nodes and 97969
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05529 and has 16 connected components, where the component
+with most nodes has 1844 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 104.06,
+and the node degree mode is 1. The top 5 most central nodes are 561180.BIFGAL_03905
+(degree 707), 561180.BIFGAL_02619 (degree 704), 561180.BIFGAL_03637 (degree
+669), 561180.BIFGAL_03307 (degree 607) and 561180.BIFGAL_02645 (degree
+596).
 
 
 References
@@ -106,13 +108,15 @@ def BifidobacteriumGallicum(
 	
 	Datetime: 2021-02-02 21:11:48.305345
 	
-	The undirected graph Bifidobacterium gallicum has 1883 nodes and 97969 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05529 and
-	has 16 connected components, where the component with most nodes has 1844 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 79,
-	the mean node degree is 104.06, and the node degree mode is 1. The top 5 most central
-	nodes are 561180.BIFGAL_03905 (degree 707), 561180.BIFGAL_02619 (degree 704), 561180.BIFGAL_03637
-	(degree 669), 561180.BIFGAL_03307 (degree 607) and 561180.BIFGAL_02645 (degree 596).
+	The undirected graph Bifidobacterium gallicum has 1883 nodes and 97969
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05529 and has 16 connected components, where the component
+	with most nodes has 1844 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 104.06,
+	and the node degree mode is 1. The top 5 most central nodes are 561180.BIFGAL_03905
+	(degree 707), 561180.BIFGAL_02619 (degree 704), 561180.BIFGAL_03637 (degree
+	669), 561180.BIFGAL_03307 (degree 607) and 561180.BIFGAL_02645 (degree
+	596).
 	
 
 

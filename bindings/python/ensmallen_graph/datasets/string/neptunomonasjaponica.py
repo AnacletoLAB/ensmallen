@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:10.530502
 
-The undirected graph Neptunomonas japonica has 4170 nodes and 578943 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06660 and
-has 8 connected components, where the component with most nodes has 4150 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 239,
-the mean node degree is 277.67, and the node degree mode is 3. The top 5 most central
-nodes are 1122599.AUGR01000007_gene1211 (degree 1716), 1122599.AUGR01000002_gene3267
-(degree 1715), 1122599.AUGR01000020_gene1536 (degree 1552), 1122599.AUGR01000016_gene2832
-(degree 1370) and 1122599.AUGR01000014_gene572 (degree 1365).
+The undirected graph Neptunomonas japonica has 4170 nodes and 578943 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06660 and has 8 connected components, where the component with most
+nodes has 4150 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 239, the mean node degree is 277.67, and
+the node degree mode is 3. The top 5 most central nodes are 1122599.AUGR01000007_gene1211
+(degree 1716), 1122599.AUGR01000002_gene3267 (degree 1715), 1122599.AUGR01000020_gene1536
+(degree 1552), 1122599.AUGR01000016_gene2832 (degree 1370) and 1122599.AUGR01000014_gene572
+(degree 1365).
 
 
 References
@@ -107,14 +108,15 @@ def NeptunomonasJaponica(
 	
 	Datetime: 2021-02-02 22:43:10.530502
 	
-	The undirected graph Neptunomonas japonica has 4170 nodes and 578943 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06660 and
-	has 8 connected components, where the component with most nodes has 4150 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 239,
-	the mean node degree is 277.67, and the node degree mode is 3. The top 5 most central
-	nodes are 1122599.AUGR01000007_gene1211 (degree 1716), 1122599.AUGR01000002_gene3267
-	(degree 1715), 1122599.AUGR01000020_gene1536 (degree 1552), 1122599.AUGR01000016_gene2832
-	(degree 1370) and 1122599.AUGR01000014_gene572 (degree 1365).
+	The undirected graph Neptunomonas japonica has 4170 nodes and 578943 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06660 and has 8 connected components, where the component with most
+	nodes has 4150 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 239, the mean node degree is 277.67, and
+	the node degree mode is 3. The top 5 most central nodes are 1122599.AUGR01000007_gene1211
+	(degree 1716), 1122599.AUGR01000002_gene3267 (degree 1715), 1122599.AUGR01000020_gene1536
+	(degree 1552), 1122599.AUGR01000016_gene2832 (degree 1370) and 1122599.AUGR01000014_gene572
+	(degree 1365).
 	
 
 

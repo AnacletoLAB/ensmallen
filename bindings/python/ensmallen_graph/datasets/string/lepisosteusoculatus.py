@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:24:38.067294
 
-The undirected graph Lepisosteus oculatus has 17494 nodes and 2663949 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01741 and
-has 3 connected components, where the component with most nodes has 17490 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 304.56, and the node degree mode is 1. The top 5 most central
-nodes are 7918.ENSLOCP00000008955 (degree 3808), 7918.ENSLOCP00000016741 (degree
-3333), 7918.ENSLOCP00000005472 (degree 3236), 7918.ENSLOCP00000020427 (degree 3219)
-and 7918.ENSLOCP00000010570 (degree 3154).
+The undirected graph Lepisosteus oculatus has 17494 nodes and 2663949 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01741 and has 3 connected components, where the component with most
+nodes has 17490 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 304.56, and
+the node degree mode is 1. The top 5 most central nodes are 7918.ENSLOCP00000008955
+(degree 3808), 7918.ENSLOCP00000016741 (degree 3333), 7918.ENSLOCP00000005472
+(degree 3236), 7918.ENSLOCP00000020427 (degree 3219) and 7918.ENSLOCP00000010570
+(degree 3154).
 
 
 References
@@ -107,14 +108,15 @@ def LepisosteusOculatus(
 	
 	Datetime: 2021-02-02 17:24:38.067294
 	
-	The undirected graph Lepisosteus oculatus has 17494 nodes and 2663949 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01741 and
-	has 3 connected components, where the component with most nodes has 17490 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 304.56, and the node degree mode is 1. The top 5 most central
-	nodes are 7918.ENSLOCP00000008955 (degree 3808), 7918.ENSLOCP00000016741 (degree
-	3333), 7918.ENSLOCP00000005472 (degree 3236), 7918.ENSLOCP00000020427 (degree 3219)
-	and 7918.ENSLOCP00000010570 (degree 3154).
+	The undirected graph Lepisosteus oculatus has 17494 nodes and 2663949 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01741 and has 3 connected components, where the component with most
+	nodes has 17490 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 304.56, and
+	the node degree mode is 1. The top 5 most central nodes are 7918.ENSLOCP00000008955
+	(degree 3808), 7918.ENSLOCP00000016741 (degree 3333), 7918.ENSLOCP00000005472
+	(degree 3236), 7918.ENSLOCP00000020427 (degree 3219) and 7918.ENSLOCP00000010570
+	(degree 3154).
 	
 
 

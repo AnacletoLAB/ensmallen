@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:57.486657
 
-The undirected graph Ogataea parapolymorpha has 4566 nodes and 501299 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04810 and
-is connected, as it has a single component. The graph median node degree is 168,
-the mean node degree is 219.58, and the node degree mode is 1. The top 5 most central
-nodes are 1005962.W1QLV2 (degree 1208), 1005962.W1QG13 (degree 1193), 1005962.W1Q8J4
-(degree 1180), 1005962.W1QLS6 (degree 1136) and 1005962.O59841 (degree 1135).
+The undirected graph Ogataea parapolymorpha has 4566 nodes and 501299 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04810 and is connected, as it has a single component. The graph median
+node degree is 168, the mean node degree is 219.58, and the node degree
+mode is 1. The top 5 most central nodes are 1005962.W1QLV2 (degree 1208),
+1005962.W1QG13 (degree 1193), 1005962.W1Q8J4 (degree 1180), 1005962.W1QLS6
+(degree 1136) and 1005962.O59841 (degree 1135).
 
 
 References
@@ -105,12 +106,13 @@ def OgataeaParapolymorpha(
 	
 	Datetime: 2021-02-02 22:07:57.486657
 	
-	The undirected graph Ogataea parapolymorpha has 4566 nodes and 501299 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04810 and
-	is connected, as it has a single component. The graph median node degree is 168,
-	the mean node degree is 219.58, and the node degree mode is 1. The top 5 most central
-	nodes are 1005962.W1QLV2 (degree 1208), 1005962.W1QG13 (degree 1193), 1005962.W1Q8J4
-	(degree 1180), 1005962.W1QLS6 (degree 1136) and 1005962.O59841 (degree 1135).
+	The undirected graph Ogataea parapolymorpha has 4566 nodes and 501299 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04810 and is connected, as it has a single component. The graph median
+	node degree is 168, the mean node degree is 219.58, and the node degree
+	mode is 1. The top 5 most central nodes are 1005962.W1QLV2 (degree 1208),
+	1005962.W1QG13 (degree 1193), 1005962.W1Q8J4 (degree 1180), 1005962.W1QLS6
+	(degree 1136) and 1005962.O59841 (degree 1135).
 	
 
 

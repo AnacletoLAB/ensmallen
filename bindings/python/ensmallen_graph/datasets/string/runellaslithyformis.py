@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:07.157209
 
-The undirected graph Runella slithyformis has 5495 nodes and 690670 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04576 and
-has 20 connected components, where the component with most nodes has 5445 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 251.38, and the node degree mode is 2. The top 5 most central
-nodes are 761193.Runsl_5095 (degree 2046), 761193.Runsl_3277 (degree 1934), 761193.Runsl_2071
-(degree 1765), 761193.Runsl_3391 (degree 1716) and 761193.Runsl_3110 (degree 1666).
+The undirected graph Runella slithyformis has 5495 nodes and 690670 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04576 and has 20 connected components, where the component with most
+nodes has 5445 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 251.38, and
+the node degree mode is 2. The top 5 most central nodes are 761193.Runsl_5095
+(degree 2046), 761193.Runsl_3277 (degree 1934), 761193.Runsl_2071 (degree
+1765), 761193.Runsl_3391 (degree 1716) and 761193.Runsl_3110 (degree 1666).
 
 
 References
@@ -106,13 +107,14 @@ def RunellaSlithyformis(
 	
 	Datetime: 2021-02-02 21:42:07.157209
 	
-	The undirected graph Runella slithyformis has 5495 nodes and 690670 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04576 and
-	has 20 connected components, where the component with most nodes has 5445 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 251.38, and the node degree mode is 2. The top 5 most central
-	nodes are 761193.Runsl_5095 (degree 2046), 761193.Runsl_3277 (degree 1934), 761193.Runsl_2071
-	(degree 1765), 761193.Runsl_3391 (degree 1716) and 761193.Runsl_3110 (degree 1666).
+	The undirected graph Runella slithyformis has 5495 nodes and 690670 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04576 and has 20 connected components, where the component with most
+	nodes has 5445 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 251.38, and
+	the node degree mode is 2. The top 5 most central nodes are 761193.Runsl_5095
+	(degree 2046), 761193.Runsl_3277 (degree 1934), 761193.Runsl_2071 (degree
+	1765), 761193.Runsl_3391 (degree 1716) and 761193.Runsl_3110 (degree 1666).
 	
 
 

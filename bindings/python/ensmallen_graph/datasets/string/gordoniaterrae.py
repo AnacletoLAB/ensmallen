@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:54.692800
 
-The undirected graph Gordonia terrae has 4948 nodes and 1127503 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.09212 and
-has 6 connected components, where the component with most nodes has 4936 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 416,
-the mean node degree is 455.74, and the node degree mode is 2. The top 5 most central
-nodes are 2055.JNXA01000010_gene1298 (degree 2570), 2055.JNXA01000017_gene1623 (degree
-2435), 2055.JNXA01000009_gene1314 (degree 2312), 2055.JNXA01000001_gene2139 (degree
-2250) and 2055.JNXA01000008_gene1566 (degree 2195).
+The undirected graph Gordonia terrae has 4948 nodes and 1127503 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09212 and has 6 connected components, where the component with most
+nodes has 4936 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 416, the mean node degree is 455.74, and
+the node degree mode is 2. The top 5 most central nodes are 2055.JNXA01000010_gene1298
+(degree 2570), 2055.JNXA01000017_gene1623 (degree 2435), 2055.JNXA01000009_gene1314
+(degree 2312), 2055.JNXA01000001_gene2139 (degree 2250) and 2055.JNXA01000008_gene1566
+(degree 2195).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaTerrae(
 	
 	Datetime: 2021-02-02 16:24:54.692800
 	
-	The undirected graph Gordonia terrae has 4948 nodes and 1127503 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.09212 and
-	has 6 connected components, where the component with most nodes has 4936 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 416,
-	the mean node degree is 455.74, and the node degree mode is 2. The top 5 most central
-	nodes are 2055.JNXA01000010_gene1298 (degree 2570), 2055.JNXA01000017_gene1623 (degree
-	2435), 2055.JNXA01000009_gene1314 (degree 2312), 2055.JNXA01000001_gene2139 (degree
-	2250) and 2055.JNXA01000008_gene1566 (degree 2195).
+	The undirected graph Gordonia terrae has 4948 nodes and 1127503 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09212 and has 6 connected components, where the component with most
+	nodes has 4936 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 416, the mean node degree is 455.74, and
+	the node degree mode is 2. The top 5 most central nodes are 2055.JNXA01000010_gene1298
+	(degree 2570), 2055.JNXA01000017_gene1623 (degree 2435), 2055.JNXA01000009_gene1314
+	(degree 2312), 2055.JNXA01000001_gene2139 (degree 2250) and 2055.JNXA01000008_gene1566
+	(degree 2195).
 	
 
 

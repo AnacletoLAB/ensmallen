@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:37.120793
 
-The undirected graph inf-contiguous-usa has 49 nodes and 107 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.09099 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 4.37, and the node degree mode is 4. The top 5 most central nodes
-are 8 (degree 8), 5 (degree 8), 42 (degree 7), 38 (degree 6) and 36 (degree 6).
+The undirected graph inf-contiguous-usa has 49 nodes and 107 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09099 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 4.37, and the node degree mode
+is 4. The top 5 most central nodes are 8 (degree 8), 5 (degree 8), 42 (degree
+7), 38 (degree 6) and 36 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def InfContiguousUsa(
 	
 	Datetime: 2021-02-06 08:12:37.120793
 	
-	The undirected graph inf-contiguous-usa has 49 nodes and 107 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.09099 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 4.37, and the node degree mode is 4. The top 5 most central nodes
-	are 8 (degree 8), 5 (degree 8), 42 (degree 7), 38 (degree 6) and 36 (degree 6).
+	The undirected graph inf-contiguous-usa has 49 nodes and 107 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09099 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 4.37, and the node degree mode
+	is 4. The top 5 most central nodes are 8 (degree 8), 5 (degree 8), 42 (degree
+	7), 38 (degree 6) and 36 (degree 6).
 	
 
 

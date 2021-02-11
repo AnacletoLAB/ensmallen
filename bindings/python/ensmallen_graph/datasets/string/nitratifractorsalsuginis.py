@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:48.020711
 
-The undirected graph Nitratifractor salsuginis has 2083 nodes and 161189 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07434
-and has 8 connected components, where the component with most nodes has 2065 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 154.77, and the node degree mode is 24. The top 5
-most central nodes are 749222.Nitsa_1386 (degree 907), 749222.Nitsa_0776 (degree
-899), 749222.Nitsa_0425 (degree 717), 749222.Nitsa_1549 (degree 686) and 749222.Nitsa_1429
-(degree 672).
+The undirected graph Nitratifractor salsuginis has 2083 nodes and 161189
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07434 and has 8 connected components, where the component
+with most nodes has 2065 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 154.77,
+and the node degree mode is 24. The top 5 most central nodes are 749222.Nitsa_1386
+(degree 907), 749222.Nitsa_0776 (degree 899), 749222.Nitsa_0425 (degree
+717), 749222.Nitsa_1549 (degree 686) and 749222.Nitsa_1429 (degree 672).
 
 
 References
@@ -107,14 +107,14 @@ def NitratifractorSalsuginis(
 	
 	Datetime: 2021-02-02 21:39:48.020711
 	
-	The undirected graph Nitratifractor salsuginis has 2083 nodes and 161189 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07434
-	and has 8 connected components, where the component with most nodes has 2065 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 154.77, and the node degree mode is 24. The top 5
-	most central nodes are 749222.Nitsa_1386 (degree 907), 749222.Nitsa_0776 (degree
-	899), 749222.Nitsa_0425 (degree 717), 749222.Nitsa_1549 (degree 686) and 749222.Nitsa_1429
-	(degree 672).
+	The undirected graph Nitratifractor salsuginis has 2083 nodes and 161189
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07434 and has 8 connected components, where the component
+	with most nodes has 2065 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 154.77,
+	and the node degree mode is 24. The top 5 most central nodes are 749222.Nitsa_1386
+	(degree 907), 749222.Nitsa_0776 (degree 899), 749222.Nitsa_0425 (degree
+	717), 749222.Nitsa_1549 (degree 686) and 749222.Nitsa_1429 (degree 672).
 	
 
 

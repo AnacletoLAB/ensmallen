@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:28.866584
 
-The undirected graph Fibrella aestuarina has 5542 nodes and 679881 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04428 and
-has 28 connected components, where the component with most nodes has 5460 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 245.36, and the node degree mode is 2. The top 5 most central
-nodes are 1166018.FAES_0706 (degree 2242), 1166018.FAES_3194 (degree 1932), 1166018.FAES_3710
-(degree 1755), 1166018.FAES_3100 (degree 1711) and 1166018.FAES_4764 (degree 1601).
+The undirected graph Fibrella aestuarina has 5542 nodes and 679881 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04428 and has 28 connected components, where the component with most
+nodes has 5460 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 245.36, and
+the node degree mode is 2. The top 5 most central nodes are 1166018.FAES_0706
+(degree 2242), 1166018.FAES_3194 (degree 1932), 1166018.FAES_3710 (degree
+1755), 1166018.FAES_3100 (degree 1711) and 1166018.FAES_4764 (degree 1601).
 
 
 References
@@ -106,13 +107,14 @@ def FibrellaAestuarina(
 	
 	Datetime: 2021-02-02 23:05:28.866584
 	
-	The undirected graph Fibrella aestuarina has 5542 nodes and 679881 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04428 and
-	has 28 connected components, where the component with most nodes has 5460 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 245.36, and the node degree mode is 2. The top 5 most central
-	nodes are 1166018.FAES_0706 (degree 2242), 1166018.FAES_3194 (degree 1932), 1166018.FAES_3710
-	(degree 1755), 1166018.FAES_3100 (degree 1711) and 1166018.FAES_4764 (degree 1601).
+	The undirected graph Fibrella aestuarina has 5542 nodes and 679881 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04428 and has 28 connected components, where the component with most
+	nodes has 5460 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 245.36, and
+	the node degree mode is 2. The top 5 most central nodes are 1166018.FAES_0706
+	(degree 2242), 1166018.FAES_3194 (degree 1932), 1166018.FAES_3710 (degree
+	1755), 1166018.FAES_3100 (degree 1711) and 1166018.FAES_4764 (degree 1601).
 	
 
 

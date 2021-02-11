@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:27.999340
 
-The undirected graph Porphyrobacter cryptus has 2786 nodes and 206746 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05329 and
-has 3 connected components, where the component with most nodes has 2782 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 148.42, and the node degree mode is 3. The top 5 most central
-nodes are 1122970.AUHC01000002_gene1265 (degree 1053), 1122970.AUHC01000002_gene1292
-(degree 947), 1122970.AUHC01000007_gene1740 (degree 943), 1122970.AUHC01000001_gene655
-(degree 882) and 1122970.AUHC01000005_gene2018 (degree 880).
+The undirected graph Porphyrobacter cryptus has 2786 nodes and 206746 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05329 and has 3 connected components, where the component with most
+nodes has 2782 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 148.42, and
+the node degree mode is 3. The top 5 most central nodes are 1122970.AUHC01000002_gene1265
+(degree 1053), 1122970.AUHC01000002_gene1292 (degree 947), 1122970.AUHC01000007_gene1740
+(degree 943), 1122970.AUHC01000001_gene655 (degree 882) and 1122970.AUHC01000005_gene2018
+(degree 880).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyrobacterCryptus(
 	
 	Datetime: 2021-02-02 22:45:27.999340
 	
-	The undirected graph Porphyrobacter cryptus has 2786 nodes and 206746 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05329 and
-	has 3 connected components, where the component with most nodes has 2782 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 148.42, and the node degree mode is 3. The top 5 most central
-	nodes are 1122970.AUHC01000002_gene1265 (degree 1053), 1122970.AUHC01000002_gene1292
-	(degree 947), 1122970.AUHC01000007_gene1740 (degree 943), 1122970.AUHC01000001_gene655
-	(degree 882) and 1122970.AUHC01000005_gene2018 (degree 880).
+	The undirected graph Porphyrobacter cryptus has 2786 nodes and 206746 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05329 and has 3 connected components, where the component with most
+	nodes has 2782 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 148.42, and
+	the node degree mode is 3. The top 5 most central nodes are 1122970.AUHC01000002_gene1265
+	(degree 1053), 1122970.AUHC01000002_gene1292 (degree 947), 1122970.AUHC01000007_gene1740
+	(degree 943), 1122970.AUHC01000001_gene655 (degree 882) and 1122970.AUHC01000005_gene2018
+	(degree 880).
 	
 
 

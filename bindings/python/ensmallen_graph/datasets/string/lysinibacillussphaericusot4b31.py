@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:15:08.780764
 
-The undirected graph Lysinibacillus sphaericus OT4b31 has 4460 nodes and 499317 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05022
-and has 47 connected components, where the component with most nodes has 4354 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 223.91, and the node degree mode is 1. The top 5
-most central nodes are 1285586.H131_16188 (degree 1517), 1285586.H131_00771 (degree
-1403), 1285586.H131_00005 (degree 1279), 1285586.H131_07158 (degree 1245) and 1285586.H131_12773
-(degree 1206).
+The undirected graph Lysinibacillus sphaericus OT4b31 has 4460 nodes and
+499317 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05022 and has 47 connected components, where the
+component with most nodes has 4354 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 185, the mean node degree
+is 223.91, and the node degree mode is 1. The top 5 most central nodes
+are 1285586.H131_16188 (degree 1517), 1285586.H131_00771 (degree 1403),
+1285586.H131_00005 (degree 1279), 1285586.H131_07158 (degree 1245) and
+1285586.H131_12773 (degree 1206).
 
 
 References
@@ -107,14 +108,15 @@ def LysinibacillusSphaericusOt4b31(
 	
 	Datetime: 2021-02-03 21:15:08.780764
 	
-	The undirected graph Lysinibacillus sphaericus OT4b31 has 4460 nodes and 499317 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05022
-	and has 47 connected components, where the component with most nodes has 4354 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 223.91, and the node degree mode is 1. The top 5
-	most central nodes are 1285586.H131_16188 (degree 1517), 1285586.H131_00771 (degree
-	1403), 1285586.H131_00005 (degree 1279), 1285586.H131_07158 (degree 1245) and 1285586.H131_12773
-	(degree 1206).
+	The undirected graph Lysinibacillus sphaericus OT4b31 has 4460 nodes and
+	499317 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05022 and has 47 connected components, where the
+	component with most nodes has 4354 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 185, the mean node degree
+	is 223.91, and the node degree mode is 1. The top 5 most central nodes
+	are 1285586.H131_16188 (degree 1517), 1285586.H131_00771 (degree 1403),
+	1285586.H131_00005 (degree 1279), 1285586.H131_07158 (degree 1245) and
+	1285586.H131_12773 (degree 1206).
 	
 
 

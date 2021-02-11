@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:08.806200
 
-The undirected graph Agrobacterium rhizogenes has 6367 nodes and 1677198 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08276
-and has 19 connected components, where the component with most nodes has 6309 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 448, the mean node degree is 526.84, and the node degree mode is 2. The top 5
-most central nodes are 359.CN09_15290 (degree 4014), 359.CN09_13050 (degree 3532),
-359.CN09_23555 (degree 3455), 359.CN09_03380 (degree 3256) and 359.CN09_14055 (degree
-3149).
+The undirected graph Agrobacterium rhizogenes has 6367 nodes and 1677198
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08276 and has 19 connected components, where the component
+with most nodes has 6309 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 448, the mean node degree is 526.84,
+and the node degree mode is 2. The top 5 most central nodes are 359.CN09_15290
+(degree 4014), 359.CN09_13050 (degree 3532), 359.CN09_23555 (degree 3455),
+359.CN09_03380 (degree 3256) and 359.CN09_14055 (degree 3149).
 
 
 References
@@ -107,14 +107,14 @@ def AgrobacteriumRhizogenes(
 	
 	Datetime: 2021-02-02 16:21:08.806200
 	
-	The undirected graph Agrobacterium rhizogenes has 6367 nodes and 1677198 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08276
-	and has 19 connected components, where the component with most nodes has 6309 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 448, the mean node degree is 526.84, and the node degree mode is 2. The top 5
-	most central nodes are 359.CN09_15290 (degree 4014), 359.CN09_13050 (degree 3532),
-	359.CN09_23555 (degree 3455), 359.CN09_03380 (degree 3256) and 359.CN09_14055 (degree
-	3149).
+	The undirected graph Agrobacterium rhizogenes has 6367 nodes and 1677198
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08276 and has 19 connected components, where the component
+	with most nodes has 6309 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 448, the mean node degree is 526.84,
+	and the node degree mode is 2. The top 5 most central nodes are 359.CN09_15290
+	(degree 4014), 359.CN09_13050 (degree 3532), 359.CN09_23555 (degree 3455),
+	359.CN09_03380 (degree 3256) and 359.CN09_14055 (degree 3149).
 	
 
 

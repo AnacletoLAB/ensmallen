@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:58.989290
 
-The undirected graph Rhodoferax ferrireducens has 4387 nodes and 587374 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06105
-and has 14 connected components, where the component with most nodes has 4333 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 225, the mean node degree is 267.78, and the node degree mode is 1. The top 5
-most central nodes are 338969.Rfer_3209 (degree 1773), 338969.Rfer_1325 (degree 1684),
-338969.Rfer_2145 (degree 1617), 338969.Rfer_2287 (degree 1384) and 338969.Rfer_2728
-(degree 1361).
+The undirected graph Rhodoferax ferrireducens has 4387 nodes and 587374
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06105 and has 14 connected components, where the component
+with most nodes has 4333 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 225, the mean node degree is 267.78,
+and the node degree mode is 1. The top 5 most central nodes are 338969.Rfer_3209
+(degree 1773), 338969.Rfer_1325 (degree 1684), 338969.Rfer_2145 (degree
+1617), 338969.Rfer_2287 (degree 1384) and 338969.Rfer_2728 (degree 1361).
 
 
 References
@@ -107,14 +107,14 @@ def RhodoferaxFerrireducens(
 	
 	Datetime: 2021-02-02 20:30:58.989290
 	
-	The undirected graph Rhodoferax ferrireducens has 4387 nodes and 587374 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06105
-	and has 14 connected components, where the component with most nodes has 4333 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 225, the mean node degree is 267.78, and the node degree mode is 1. The top 5
-	most central nodes are 338969.Rfer_3209 (degree 1773), 338969.Rfer_1325 (degree 1684),
-	338969.Rfer_2145 (degree 1617), 338969.Rfer_2287 (degree 1384) and 338969.Rfer_2728
-	(degree 1361).
+	The undirected graph Rhodoferax ferrireducens has 4387 nodes and 587374
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06105 and has 14 connected components, where the component
+	with most nodes has 4333 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 225, the mean node degree is 267.78,
+	and the node degree mode is 1. The top 5 most central nodes are 338969.Rfer_3209
+	(degree 1773), 338969.Rfer_1325 (degree 1684), 338969.Rfer_2145 (degree
+	1617), 338969.Rfer_2287 (degree 1384) and 338969.Rfer_2728 (degree 1361).
 	
 
 

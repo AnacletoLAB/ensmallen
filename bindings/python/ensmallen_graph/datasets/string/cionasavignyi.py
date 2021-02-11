@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:16:40.733476
 
-The undirected graph Ciona savignyi has 8753 nodes and 960185 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02507 and
-has 124 connected components, where the component with most nodes has 8474 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 219.40, and the node degree mode is 1. The top 5
-most central nodes are 51511.ENSCSAVP00000012392 (degree 2123), 51511.ENSCSAVP00000014501
-(degree 1969), 51511.ENSCSAVP00000002260 (degree 1908), 51511.ENSCSAVP00000014988
-(degree 1799) and 51511.ENSCSAVP00000002910 (degree 1792).
+The undirected graph Ciona savignyi has 8753 nodes and 960185 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02507 and has 124 connected components, where the component with most
+nodes has 8474 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 219.40, and
+the node degree mode is 1. The top 5 most central nodes are 51511.ENSCSAVP00000012392
+(degree 2123), 51511.ENSCSAVP00000014501 (degree 1969), 51511.ENSCSAVP00000002260
+(degree 1908), 51511.ENSCSAVP00000014988 (degree 1799) and 51511.ENSCSAVP00000002910
+(degree 1792).
 
 
 References
@@ -107,14 +108,15 @@ def CionaSavignyi(
 	
 	Datetime: 2021-02-05 17:16:40.733476
 	
-	The undirected graph Ciona savignyi has 8753 nodes and 960185 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02507 and
-	has 124 connected components, where the component with most nodes has 8474 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 219.40, and the node degree mode is 1. The top 5
-	most central nodes are 51511.ENSCSAVP00000012392 (degree 2123), 51511.ENSCSAVP00000014501
-	(degree 1969), 51511.ENSCSAVP00000002260 (degree 1908), 51511.ENSCSAVP00000014988
-	(degree 1799) and 51511.ENSCSAVP00000002910 (degree 1792).
+	The undirected graph Ciona savignyi has 8753 nodes and 960185 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02507 and has 124 connected components, where the component with most
+	nodes has 8474 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 219.40, and
+	the node degree mode is 1. The top 5 most central nodes are 51511.ENSCSAVP00000012392
+	(degree 2123), 51511.ENSCSAVP00000014501 (degree 1969), 51511.ENSCSAVP00000002260
+	(degree 1908), 51511.ENSCSAVP00000014988 (degree 1799) and 51511.ENSCSAVP00000002910
+	(degree 1792).
 	
 
 

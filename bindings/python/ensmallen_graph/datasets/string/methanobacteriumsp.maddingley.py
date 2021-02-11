@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:36.397464
 
-The undirected graph Methanobacterium sp. Maddingley has 2369 nodes and 281304 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10029 and has 13 connected components, where the component with most nodes has
-2339 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 219, the mean node degree is 237.49, and the node degree mode is 3. The
-top 5 most central nodes are 1220534.B655_1045 (degree 1098), 1220534.B655_0307 (degree
-995), 1220534.B655_0124 (degree 991), 1220534.B655_1283 (degree 989) and 1220534.B655_2411
+The undirected graph Methanobacterium sp. Maddingley has 2369 nodes and
+281304 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.10029 and has 13 connected components, where
+the component with most nodes has 2339 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 219, the mean
+node degree is 237.49, and the node degree mode is 3. The top 5 most central
+nodes are 1220534.B655_1045 (degree 1098), 1220534.B655_0307 (degree 995),
+1220534.B655_0124 (degree 991), 1220534.B655_1283 (degree 989) and 1220534.B655_2411
 (degree 989).
 
 
@@ -107,13 +108,14 @@ def MethanobacteriumSp.Maddingley(
 	
 	Datetime: 2021-02-02 23:23:36.397464
 	
-	The undirected graph Methanobacterium sp. Maddingley has 2369 nodes and 281304 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10029 and has 13 connected components, where the component with most nodes has
-	2339 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 219, the mean node degree is 237.49, and the node degree mode is 3. The
-	top 5 most central nodes are 1220534.B655_1045 (degree 1098), 1220534.B655_0307 (degree
-	995), 1220534.B655_0124 (degree 991), 1220534.B655_1283 (degree 989) and 1220534.B655_2411
+	The undirected graph Methanobacterium sp. Maddingley has 2369 nodes and
+	281304 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.10029 and has 13 connected components, where
+	the component with most nodes has 2339 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 219, the mean
+	node degree is 237.49, and the node degree mode is 3. The top 5 most central
+	nodes are 1220534.B655_1045 (degree 1098), 1220534.B655_0307 (degree 995),
+	1220534.B655_0124 (degree 991), 1220534.B655_1283 (degree 989) and 1220534.B655_2411
 	(degree 989).
 	
 

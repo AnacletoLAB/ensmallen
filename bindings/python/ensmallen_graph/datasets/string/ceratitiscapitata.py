@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:21:09.673105
 
-The undirected graph Ceratitis capitata has 13602 nodes and 2169366 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02345 and
-has 6 connected components, where the component with most nodes has 13586 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 202,
-the mean node degree is 318.98, and the node degree mode is 1. The top 5 most central
-nodes are 7213.XP_004523565.1 (degree 4972), 7213.XP_004532339.1 (degree 4342), 7213.XP_004518950.1
-(degree 3110), 7213.XP_004529138.1 (degree 3034) and 7213.XP_004522757.1 (degree
+The undirected graph Ceratitis capitata has 13602 nodes and 2169366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02345 and has 6 connected components, where the component with most
+nodes has 13586 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 202, the mean node degree is 318.98, and
+the node degree mode is 1. The top 5 most central nodes are 7213.XP_004523565.1
+(degree 4972), 7213.XP_004532339.1 (degree 4342), 7213.XP_004518950.1 (degree
+3110), 7213.XP_004529138.1 (degree 3034) and 7213.XP_004522757.1 (degree
 2963).
 
 
@@ -107,13 +108,14 @@ def CeratitisCapitata(
 	
 	Datetime: 2021-02-02 17:21:09.673105
 	
-	The undirected graph Ceratitis capitata has 13602 nodes and 2169366 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02345 and
-	has 6 connected components, where the component with most nodes has 13586 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 202,
-	the mean node degree is 318.98, and the node degree mode is 1. The top 5 most central
-	nodes are 7213.XP_004523565.1 (degree 4972), 7213.XP_004532339.1 (degree 4342), 7213.XP_004518950.1
-	(degree 3110), 7213.XP_004529138.1 (degree 3034) and 7213.XP_004522757.1 (degree
+	The undirected graph Ceratitis capitata has 13602 nodes and 2169366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02345 and has 6 connected components, where the component with most
+	nodes has 13586 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 202, the mean node degree is 318.98, and
+	the node degree mode is 1. The top 5 most central nodes are 7213.XP_004523565.1
+	(degree 4972), 7213.XP_004532339.1 (degree 4342), 7213.XP_004518950.1 (degree
+	3110), 7213.XP_004529138.1 (degree 3034) and 7213.XP_004522757.1 (degree
 	2963).
 	
 

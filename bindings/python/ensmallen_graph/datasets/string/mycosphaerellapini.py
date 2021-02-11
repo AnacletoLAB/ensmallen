@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:24:27.462989
 
-The undirected graph Mycosphaerella pini has 7173 nodes and 663123 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02578 and
-has 11 connected components, where the component with most nodes has 7149 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 184.89, and the node degree mode is 1. The top 5 most central
-nodes are 64363.EME48811 (degree 1795), 64363.EME48312 (degree 1451), 64363.EME49553
-(degree 1443), 64363.EME49050 (degree 1380) and 64363.EME48849 (degree 1293).
+The undirected graph Mycosphaerella pini has 7173 nodes and 663123 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02578 and has 11 connected components, where the component with most
+nodes has 7149 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 184.89, and
+the node degree mode is 1. The top 5 most central nodes are 64363.EME48811
+(degree 1795), 64363.EME48312 (degree 1451), 64363.EME49553 (degree 1443),
+64363.EME49050 (degree 1380) and 64363.EME48849 (degree 1293).
 
 
 References
@@ -106,13 +107,14 @@ def MycosphaerellaPini(
 	
 	Datetime: 2021-02-02 18:24:27.462989
 	
-	The undirected graph Mycosphaerella pini has 7173 nodes and 663123 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02578 and
-	has 11 connected components, where the component with most nodes has 7149 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 184.89, and the node degree mode is 1. The top 5 most central
-	nodes are 64363.EME48811 (degree 1795), 64363.EME48312 (degree 1451), 64363.EME49553
-	(degree 1443), 64363.EME49050 (degree 1380) and 64363.EME48849 (degree 1293).
+	The undirected graph Mycosphaerella pini has 7173 nodes and 663123 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02578 and has 11 connected components, where the component with most
+	nodes has 7149 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 184.89, and
+	the node degree mode is 1. The top 5 most central nodes are 64363.EME48811
+	(degree 1795), 64363.EME48312 (degree 1451), 64363.EME49553 (degree 1443),
+	64363.EME49050 (degree 1380) and 64363.EME48849 (degree 1293).
 	
 
 

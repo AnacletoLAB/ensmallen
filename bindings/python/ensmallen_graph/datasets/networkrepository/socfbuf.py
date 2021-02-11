@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:44.116782
 
-The undirected graph socfb-UF has 35111 nodes and 1465654 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00238 and is connected,
-as it has a single component. The graph median node degree is 59, the mean node degree
-is 83.49, and the node degree mode is 1. The top 5 most central nodes are 28892 (degree
-8246), 871 (degree 5281), 26194 (degree 4192), 29932 (degree 2694) and 553 (degree
-2345).
+The undirected graph socfb-UF has 35111 nodes and 1465654 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00238 and is connected, as it has a single component. The graph median
+node degree is 59, the mean node degree is 83.49, and the node degree mode
+is 1. The top 5 most central nodes are 28892 (degree 8246), 871 (degree
+5281), 26194 (degree 4192), 29932 (degree 2694) and 553 (degree 2345).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbUf(
 	
 	Datetime: 2021-02-06 12:31:44.116782
 	
-	The undirected graph socfb-UF has 35111 nodes and 1465654 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00238 and is connected,
-	as it has a single component. The graph median node degree is 59, the mean node degree
-	is 83.49, and the node degree mode is 1. The top 5 most central nodes are 28892 (degree
-	8246), 871 (degree 5281), 26194 (degree 4192), 29932 (degree 2694) and 553 (degree
-	2345).
+	The undirected graph socfb-UF has 35111 nodes and 1465654 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00238 and is connected, as it has a single component. The graph median
+	node degree is 59, the mean node degree is 83.49, and the node degree mode
+	is 1. The top 5 most central nodes are 28892 (degree 8246), 871 (degree
+	5281), 26194 (degree 4192), 29932 (degree 2694) and 553 (degree 2345).
 	
 
 

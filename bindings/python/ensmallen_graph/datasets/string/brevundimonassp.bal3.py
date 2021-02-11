@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:45.776462
 
-The undirected graph Brevundimonas sp. BAL3 has 3407 nodes and 415384 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07159 and
-has 8 connected components, where the component with most nodes has 3392 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 225,
-the mean node degree is 243.84, and the node degree mode is 3. The top 5 most central
-nodes are 391600.ABRU01000008_gene2760 (degree 1347), 391600.ABRU01000054_gene627
-(degree 1201), 391600.ABRU01000025_gene1068 (degree 1176), 391600.ABRU01000025_gene1109
-(degree 1091) and 391600.ABRU01000040_gene1700 (degree 1078).
+The undirected graph Brevundimonas sp. BAL3 has 3407 nodes and 415384 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07159 and has 8 connected components, where the component with most
+nodes has 3392 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 225, the mean node degree is 243.84, and
+the node degree mode is 3. The top 5 most central nodes are 391600.ABRU01000008_gene2760
+(degree 1347), 391600.ABRU01000054_gene627 (degree 1201), 391600.ABRU01000025_gene1068
+(degree 1176), 391600.ABRU01000025_gene1109 (degree 1091) and 391600.ABRU01000040_gene1700
+(degree 1078).
 
 
 References
@@ -107,14 +108,15 @@ def BrevundimonasSp.Bal3(
 	
 	Datetime: 2021-02-02 20:39:45.776462
 	
-	The undirected graph Brevundimonas sp. BAL3 has 3407 nodes and 415384 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07159 and
-	has 8 connected components, where the component with most nodes has 3392 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 225,
-	the mean node degree is 243.84, and the node degree mode is 3. The top 5 most central
-	nodes are 391600.ABRU01000008_gene2760 (degree 1347), 391600.ABRU01000054_gene627
-	(degree 1201), 391600.ABRU01000025_gene1068 (degree 1176), 391600.ABRU01000025_gene1109
-	(degree 1091) and 391600.ABRU01000040_gene1700 (degree 1078).
+	The undirected graph Brevundimonas sp. BAL3 has 3407 nodes and 415384 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07159 and has 8 connected components, where the component with most
+	nodes has 3392 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 225, the mean node degree is 243.84, and
+	the node degree mode is 3. The top 5 most central nodes are 391600.ABRU01000008_gene2760
+	(degree 1347), 391600.ABRU01000054_gene627 (degree 1201), 391600.ABRU01000025_gene1068
+	(degree 1176), 391600.ABRU01000025_gene1109 (degree 1091) and 391600.ABRU01000040_gene1700
+	(degree 1078).
 	
 
 

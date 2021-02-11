@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:37.824849
 
-The undirected graph Chlorobium luteolum has 2078 nodes and 130801 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06061 and
-has 6 connected components, where the component with most nodes has 2067 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 125.89, and the node degree mode is 3. The top 5 most central
-nodes are 319225.Plut_0367 (degree 1371), 319225.Plut_1645 (degree 944), 319225.Plut_1186
-(degree 703), 319225.Plut_1946 (degree 697) and 319225.Plut_1617 (degree 693).
+The undirected graph Chlorobium luteolum has 2078 nodes and 130801 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06061 and has 6 connected components, where the component with most
+nodes has 2067 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 125.89, and
+the node degree mode is 3. The top 5 most central nodes are 319225.Plut_0367
+(degree 1371), 319225.Plut_1645 (degree 944), 319225.Plut_1186 (degree
+703), 319225.Plut_1946 (degree 697) and 319225.Plut_1617 (degree 693).
 
 
 References
@@ -106,13 +107,14 @@ def ChlorobiumLuteolum(
 	
 	Datetime: 2021-02-02 20:27:37.824849
 	
-	The undirected graph Chlorobium luteolum has 2078 nodes and 130801 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06061 and
-	has 6 connected components, where the component with most nodes has 2067 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 125.89, and the node degree mode is 3. The top 5 most central
-	nodes are 319225.Plut_0367 (degree 1371), 319225.Plut_1645 (degree 944), 319225.Plut_1186
-	(degree 703), 319225.Plut_1946 (degree 697) and 319225.Plut_1617 (degree 693).
+	The undirected graph Chlorobium luteolum has 2078 nodes and 130801 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06061 and has 6 connected components, where the component with most
+	nodes has 2067 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 125.89, and
+	the node degree mode is 3. The top 5 most central nodes are 319225.Plut_0367
+	(degree 1371), 319225.Plut_1645 (degree 944), 319225.Plut_1186 (degree
+	703), 319225.Plut_1946 (degree 697) and 319225.Plut_1617 (degree 693).
 	
 
 

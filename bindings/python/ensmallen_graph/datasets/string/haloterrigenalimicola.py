@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:35.782802
 
-The undirected graph Haloterrigena limicola has 3418 nodes and 257942 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-has 41 connected components, where the component with most nodes has 3304 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 150.93, and the node degree mode is 2. The top 5 most central
-nodes are 1230457.C476_09878 (degree 962), 1230457.C476_03668 (degree 916), 1230457.C476_00227
-(degree 903), 1230457.C476_16535 (degree 859) and 1230457.C476_12406 (degree 815).
+The undirected graph Haloterrigena limicola has 3418 nodes and 257942 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04417 and has 41 connected components, where the component with most
+nodes has 3304 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 150.93, and
+the node degree mode is 2. The top 5 most central nodes are 1230457.C476_09878
+(degree 962), 1230457.C476_03668 (degree 916), 1230457.C476_00227 (degree
+903), 1230457.C476_16535 (degree 859) and 1230457.C476_12406 (degree 815).
 
 
 References
@@ -106,13 +107,14 @@ def HaloterrigenaLimicola(
 	
 	Datetime: 2021-02-02 23:27:35.782802
 	
-	The undirected graph Haloterrigena limicola has 3418 nodes and 257942 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04417 and
-	has 41 connected components, where the component with most nodes has 3304 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 150.93, and the node degree mode is 2. The top 5 most central
-	nodes are 1230457.C476_09878 (degree 962), 1230457.C476_03668 (degree 916), 1230457.C476_00227
-	(degree 903), 1230457.C476_16535 (degree 859) and 1230457.C476_12406 (degree 815).
+	The undirected graph Haloterrigena limicola has 3418 nodes and 257942 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04417 and has 41 connected components, where the component with most
+	nodes has 3304 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 150.93, and
+	the node degree mode is 2. The top 5 most central nodes are 1230457.C476_09878
+	(degree 962), 1230457.C476_03668 (degree 916), 1230457.C476_00227 (degree
+	903), 1230457.C476_16535 (degree 859) and 1230457.C476_12406 (degree 815).
 	
 
 

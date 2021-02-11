@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:41.435141
 
-The undirected graph Hyphomicrobium zavarzinii has 4011 nodes and 423644 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05268
-and has 24 connected components, where the component with most nodes has 3953 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 211.24, and the node degree mode is 3. The top 5
-most central nodes are 1267005.KB911257_gene807 (degree 1967), 1267005.KB911257_gene984
-(degree 1583), 1267005.KB911256_gene1714 (degree 1370), 1267005.KB911256_gene1919
-(degree 1205) and 1267005.KB911255_gene2869 (degree 1202).
+The undirected graph Hyphomicrobium zavarzinii has 4011 nodes and 423644
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05268 and has 24 connected components, where the component
+with most nodes has 3953 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 211.24,
+and the node degree mode is 3. The top 5 most central nodes are 1267005.KB911257_gene807
+(degree 1967), 1267005.KB911257_gene984 (degree 1583), 1267005.KB911256_gene1714
+(degree 1370), 1267005.KB911256_gene1919 (degree 1205) and 1267005.KB911255_gene2869
+(degree 1202).
 
 
 References
@@ -107,14 +108,15 @@ def HyphomicrobiumZavarzinii(
 	
 	Datetime: 2021-02-02 23:36:41.435141
 	
-	The undirected graph Hyphomicrobium zavarzinii has 4011 nodes and 423644 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05268
-	and has 24 connected components, where the component with most nodes has 3953 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 211.24, and the node degree mode is 3. The top 5
-	most central nodes are 1267005.KB911257_gene807 (degree 1967), 1267005.KB911257_gene984
-	(degree 1583), 1267005.KB911256_gene1714 (degree 1370), 1267005.KB911256_gene1919
-	(degree 1205) and 1267005.KB911255_gene2869 (degree 1202).
+	The undirected graph Hyphomicrobium zavarzinii has 4011 nodes and 423644
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05268 and has 24 connected components, where the component
+	with most nodes has 3953 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 211.24,
+	and the node degree mode is 3. The top 5 most central nodes are 1267005.KB911257_gene807
+	(degree 1967), 1267005.KB911257_gene984 (degree 1583), 1267005.KB911256_gene1714
+	(degree 1370), 1267005.KB911256_gene1919 (degree 1205) and 1267005.KB911255_gene2869
+	(degree 1202).
 	
 
 

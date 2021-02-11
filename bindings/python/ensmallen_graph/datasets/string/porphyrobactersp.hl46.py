@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:19.389715
 
-The undirected graph Porphyrobacter sp. HL46 has 2841 nodes and 246038 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06099 and
-has 5 connected components, where the component with most nodes has 2832 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 173.21, and the node degree mode is 3. The top 5 most central
-nodes are 1479239.JQMU01000001_gene1664 (degree 1082), 1479239.JQMU01000001_gene2326
-(degree 919), 1479239.JQMU01000001_gene1127 (degree 909), 1479239.JQMU01000001_gene2208
-(degree 879) and 1479239.JQMU01000001_gene151 (degree 848).
+The undirected graph Porphyrobacter sp. HL46 has 2841 nodes and 246038
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06099 and has 5 connected components, where the component
+with most nodes has 2832 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 173.21,
+and the node degree mode is 3. The top 5 most central nodes are 1479239.JQMU01000001_gene1664
+(degree 1082), 1479239.JQMU01000001_gene2326 (degree 919), 1479239.JQMU01000001_gene1127
+(degree 909), 1479239.JQMU01000001_gene2208 (degree 879) and 1479239.JQMU01000001_gene151
+(degree 848).
 
 
 References
@@ -107,14 +108,15 @@ def PorphyrobacterSp.Hl46(
 	
 	Datetime: 2021-02-03 23:13:19.389715
 	
-	The undirected graph Porphyrobacter sp. HL46 has 2841 nodes and 246038 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06099 and
-	has 5 connected components, where the component with most nodes has 2832 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 173.21, and the node degree mode is 3. The top 5 most central
-	nodes are 1479239.JQMU01000001_gene1664 (degree 1082), 1479239.JQMU01000001_gene2326
-	(degree 919), 1479239.JQMU01000001_gene1127 (degree 909), 1479239.JQMU01000001_gene2208
-	(degree 879) and 1479239.JQMU01000001_gene151 (degree 848).
+	The undirected graph Porphyrobacter sp. HL46 has 2841 nodes and 246038
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06099 and has 5 connected components, where the component
+	with most nodes has 2832 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 173.21,
+	and the node degree mode is 3. The top 5 most central nodes are 1479239.JQMU01000001_gene1664
+	(degree 1082), 1479239.JQMU01000001_gene2326 (degree 919), 1479239.JQMU01000001_gene1127
+	(degree 909), 1479239.JQMU01000001_gene2208 (degree 879) and 1479239.JQMU01000001_gene151
+	(degree 848).
 	
 
 

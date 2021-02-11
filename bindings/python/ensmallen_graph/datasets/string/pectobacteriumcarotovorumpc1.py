@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:55.922639
 
-The undirected graph Pectobacterium carotovorum PC1 has 4227 nodes and 340956 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03817
-and has 10 connected components, where the component with most nodes has 4208 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 161.32, and the node degree mode is 1. The top 5
-most central nodes are 561230.PC1_0698 (degree 1406), 561230.PC1_4227 (degree 1349),
-561230.PC1_0299 (degree 1171), 561230.PC1_0301 (degree 1088) and 561230.PC1_3003
-(degree 1066).
+The undirected graph Pectobacterium carotovorum PC1 has 4227 nodes and
+340956 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03817 and has 10 connected components, where the
+component with most nodes has 4208 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+is 161.32, and the node degree mode is 1. The top 5 most central nodes
+are 561230.PC1_0698 (degree 1406), 561230.PC1_4227 (degree 1349), 561230.PC1_0299
+(degree 1171), 561230.PC1_0301 (degree 1088) and 561230.PC1_3003 (degree
+1066).
 
 
 References
@@ -107,14 +108,15 @@ def PectobacteriumCarotovorumPc1(
 	
 	Datetime: 2021-02-02 21:11:55.922639
 	
-	The undirected graph Pectobacterium carotovorum PC1 has 4227 nodes and 340956 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03817
-	and has 10 connected components, where the component with most nodes has 4208 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 161.32, and the node degree mode is 1. The top 5
-	most central nodes are 561230.PC1_0698 (degree 1406), 561230.PC1_4227 (degree 1349),
-	561230.PC1_0299 (degree 1171), 561230.PC1_0301 (degree 1088) and 561230.PC1_3003
-	(degree 1066).
+	The undirected graph Pectobacterium carotovorum PC1 has 4227 nodes and
+	340956 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03817 and has 10 connected components, where the
+	component with most nodes has 4208 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+	is 161.32, and the node degree mode is 1. The top 5 most central nodes
+	are 561230.PC1_0698 (degree 1406), 561230.PC1_4227 (degree 1349), 561230.PC1_0299
+	(degree 1171), 561230.PC1_0301 (degree 1088) and 561230.PC1_3003 (degree
+	1066).
 	
 
 

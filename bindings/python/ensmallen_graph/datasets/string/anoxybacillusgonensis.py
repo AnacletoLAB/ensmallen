@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:12.583112
 
-The undirected graph Anoxybacillus gonensis has 2765 nodes and 289354 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07572 and
-has 5 connected components, where the component with most nodes has 2755 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 209.30, and the node degree mode is 3. The top 5 most central
-nodes are 198467.NP92_05075 (degree 1139), 198467.NP92_14035 (degree 997), 198467.NP92_01245
-(degree 921), 198467.NP92_09665 (degree 900) and 198467.NP92_09945 (degree 878).
+The undirected graph Anoxybacillus gonensis has 2765 nodes and 289354 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07572 and has 5 connected components, where the component with most
+nodes has 2755 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 209.30, and
+the node degree mode is 3. The top 5 most central nodes are 198467.NP92_05075
+(degree 1139), 198467.NP92_14035 (degree 997), 198467.NP92_01245 (degree
+921), 198467.NP92_09665 (degree 900) and 198467.NP92_09945 (degree 878).
 
 
 References
@@ -106,13 +107,14 @@ def AnoxybacillusGonensis(
 	
 	Datetime: 2021-02-02 19:59:12.583112
 	
-	The undirected graph Anoxybacillus gonensis has 2765 nodes and 289354 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07572 and
-	has 5 connected components, where the component with most nodes has 2755 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 209.30, and the node degree mode is 3. The top 5 most central
-	nodes are 198467.NP92_05075 (degree 1139), 198467.NP92_14035 (degree 997), 198467.NP92_01245
-	(degree 921), 198467.NP92_09665 (degree 900) and 198467.NP92_09945 (degree 878).
+	The undirected graph Anoxybacillus gonensis has 2765 nodes and 289354 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07572 and has 5 connected components, where the component with most
+	nodes has 2755 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 209.30, and
+	the node degree mode is 3. The top 5 most central nodes are 198467.NP92_05075
+	(degree 1139), 198467.NP92_14035 (degree 997), 198467.NP92_01245 (degree
+	921), 198467.NP92_09665 (degree 900) and 198467.NP92_09945 (degree 878).
 	
 
 

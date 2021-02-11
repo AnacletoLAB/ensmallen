@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:45.254507
 
-The undirected graph Rhizobium sp. 2MFCol31 has 5567 nodes and 700100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04519 and
-has 25 connected components, where the component with most nodes has 5497 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 251.52, and the node degree mode is 2. The top 5 most central
-nodes are 1246459.KB898358_gene3809 (degree 2014), 1246459.KB898356_gene1993 (degree
-1946), 1246459.KB898353_gene347 (degree 1567), 1246459.KB898356_gene2006 (degree
-1547) and 1246459.KB898356_gene2175 (degree 1480).
+The undirected graph Rhizobium sp. 2MFCol31 has 5567 nodes and 700100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04519 and has 25 connected components, where the component with most
+nodes has 5497 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 251.52, and
+the node degree mode is 2. The top 5 most central nodes are 1246459.KB898358_gene3809
+(degree 2014), 1246459.KB898356_gene1993 (degree 1946), 1246459.KB898353_gene347
+(degree 1567), 1246459.KB898356_gene2006 (degree 1547) and 1246459.KB898356_gene2175
+(degree 1480).
 
 
 References
@@ -107,14 +108,15 @@ def RhizobiumSp.2mfcol31(
 	
 	Datetime: 2021-02-02 23:33:45.254507
 	
-	The undirected graph Rhizobium sp. 2MFCol31 has 5567 nodes and 700100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04519 and
-	has 25 connected components, where the component with most nodes has 5497 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 251.52, and the node degree mode is 2. The top 5 most central
-	nodes are 1246459.KB898358_gene3809 (degree 2014), 1246459.KB898356_gene1993 (degree
-	1946), 1246459.KB898353_gene347 (degree 1567), 1246459.KB898356_gene2006 (degree
-	1547) and 1246459.KB898356_gene2175 (degree 1480).
+	The undirected graph Rhizobium sp. 2MFCol31 has 5567 nodes and 700100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04519 and has 25 connected components, where the component with most
+	nodes has 5497 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 251.52, and
+	the node degree mode is 2. The top 5 most central nodes are 1246459.KB898358_gene3809
+	(degree 2014), 1246459.KB898356_gene1993 (degree 1946), 1246459.KB898353_gene347
+	(degree 1567), 1246459.KB898356_gene2006 (degree 1547) and 1246459.KB898356_gene2175
+	(degree 1480).
 	
 
 

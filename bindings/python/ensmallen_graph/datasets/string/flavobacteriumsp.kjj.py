@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:53.440865
 
-The undirected graph Flavobacterium sp. KJJ has 3924 nodes and 451402 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05865 and
-has 8 connected components, where the component with most nodes has 3907 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 230.07, and the node degree mode is 5. The top 5 most central
-nodes are 1270193.JARP01000004_gene1402 (degree 1763), 1270193.JARP01000002_gene1097
-(degree 1256), 1270193.JARP01000001_gene2966 (degree 1214), 1270193.JARP01000006_gene1618
-(degree 1156) and 1270193.JARP01000006_gene1784 (degree 1114).
+The undirected graph Flavobacterium sp. KJJ has 3924 nodes and 451402 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05865 and has 8 connected components, where the component with most
+nodes has 3907 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 230.07, and
+the node degree mode is 5. The top 5 most central nodes are 1270193.JARP01000004_gene1402
+(degree 1763), 1270193.JARP01000002_gene1097 (degree 1256), 1270193.JARP01000001_gene2966
+(degree 1214), 1270193.JARP01000006_gene1618 (degree 1156) and 1270193.JARP01000006_gene1784
+(degree 1114).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSp.Kjj(
 	
 	Datetime: 2021-02-02 23:37:53.440865
 	
-	The undirected graph Flavobacterium sp. KJJ has 3924 nodes and 451402 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05865 and
-	has 8 connected components, where the component with most nodes has 3907 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 230.07, and the node degree mode is 5. The top 5 most central
-	nodes are 1270193.JARP01000004_gene1402 (degree 1763), 1270193.JARP01000002_gene1097
-	(degree 1256), 1270193.JARP01000001_gene2966 (degree 1214), 1270193.JARP01000006_gene1618
-	(degree 1156) and 1270193.JARP01000006_gene1784 (degree 1114).
+	The undirected graph Flavobacterium sp. KJJ has 3924 nodes and 451402 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05865 and has 8 connected components, where the component with most
+	nodes has 3907 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 230.07, and
+	the node degree mode is 5. The top 5 most central nodes are 1270193.JARP01000004_gene1402
+	(degree 1763), 1270193.JARP01000002_gene1097 (degree 1256), 1270193.JARP01000001_gene2966
+	(degree 1214), 1270193.JARP01000006_gene1618 (degree 1156) and 1270193.JARP01000006_gene1784
+	(degree 1114).
 	
 
 

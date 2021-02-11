@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:43:03.412315
 
-The undirected graph Orcinus orca has 17461 nodes and 4029288 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02643 and
-has 2 connected components, where the component with most nodes has 17458 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 334,
-the mean node degree is 461.52, and the node degree mode is 212. The top 5 most central
-nodes are 9733.XP_004279084.1 (degree 4759), 9733.XP_004275358.1 (degree 4157), 9733.XP_004264626.1
-(degree 4034), 9733.XP_004277797.1 (degree 3628) and 9733.XP_004283443.1 (degree
+The undirected graph Orcinus orca has 17461 nodes and 4029288 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02643 and has 2 connected components, where the component with most
+nodes has 17458 nodes and the component with the least nodes has 3 nodes.
+The graph median node degree is 334, the mean node degree is 461.52, and
+the node degree mode is 212. The top 5 most central nodes are 9733.XP_004279084.1
+(degree 4759), 9733.XP_004275358.1 (degree 4157), 9733.XP_004264626.1 (degree
+4034), 9733.XP_004277797.1 (degree 3628) and 9733.XP_004283443.1 (degree
 3521).
 
 
@@ -107,13 +108,14 @@ def OrcinusOrca(
 	
 	Datetime: 2021-02-02 17:43:03.412315
 	
-	The undirected graph Orcinus orca has 17461 nodes and 4029288 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02643 and
-	has 2 connected components, where the component with most nodes has 17458 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 334,
-	the mean node degree is 461.52, and the node degree mode is 212. The top 5 most central
-	nodes are 9733.XP_004279084.1 (degree 4759), 9733.XP_004275358.1 (degree 4157), 9733.XP_004264626.1
-	(degree 4034), 9733.XP_004277797.1 (degree 3628) and 9733.XP_004283443.1 (degree
+	The undirected graph Orcinus orca has 17461 nodes and 4029288 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02643 and has 2 connected components, where the component with most
+	nodes has 17458 nodes and the component with the least nodes has 3 nodes.
+	The graph median node degree is 334, the mean node degree is 461.52, and
+	the node degree mode is 212. The top 5 most central nodes are 9733.XP_004279084.1
+	(degree 4759), 9733.XP_004275358.1 (degree 4157), 9733.XP_004264626.1 (degree
+	4034), 9733.XP_004277797.1 (degree 3628) and 9733.XP_004283443.1 (degree
 	3521).
 	
 

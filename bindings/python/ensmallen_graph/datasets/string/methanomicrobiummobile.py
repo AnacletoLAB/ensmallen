@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:27.608039
 
-The undirected graph Methanomicrobium mobile has 1510 nodes and 109660 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09625 and
-has 16 connected components, where the component with most nodes has 1474 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 145.25, and the node degree mode is 3. The top 5 most central
-nodes are 694440.JOMF01000004_gene1124 (degree 609), 694440.JOMF01000005_gene66 (degree
-546), 694440.JOMF01000004_gene1460 (degree 537), 694440.JOMF01000007_gene833 (degree
-534) and 694440.JOMF01000006_gene551 (degree 516).
+The undirected graph Methanomicrobium mobile has 1510 nodes and 109660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09625 and has 16 connected components, where the component
+with most nodes has 1474 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 145.25,
+and the node degree mode is 3. The top 5 most central nodes are 694440.JOMF01000004_gene1124
+(degree 609), 694440.JOMF01000005_gene66 (degree 546), 694440.JOMF01000004_gene1460
+(degree 537), 694440.JOMF01000007_gene833 (degree 534) and 694440.JOMF01000006_gene551
+(degree 516).
 
 
 References
@@ -107,14 +108,15 @@ def MethanomicrobiumMobile(
 	
 	Datetime: 2021-02-02 21:32:27.608039
 	
-	The undirected graph Methanomicrobium mobile has 1510 nodes and 109660 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09625 and
-	has 16 connected components, where the component with most nodes has 1474 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 145.25, and the node degree mode is 3. The top 5 most central
-	nodes are 694440.JOMF01000004_gene1124 (degree 609), 694440.JOMF01000005_gene66 (degree
-	546), 694440.JOMF01000004_gene1460 (degree 537), 694440.JOMF01000007_gene833 (degree
-	534) and 694440.JOMF01000006_gene551 (degree 516).
+	The undirected graph Methanomicrobium mobile has 1510 nodes and 109660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09625 and has 16 connected components, where the component
+	with most nodes has 1474 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 145.25,
+	and the node degree mode is 3. The top 5 most central nodes are 694440.JOMF01000004_gene1124
+	(degree 609), 694440.JOMF01000005_gene66 (degree 546), 694440.JOMF01000004_gene1460
+	(degree 537), 694440.JOMF01000007_gene833 (degree 534) and 694440.JOMF01000006_gene551
+	(degree 516).
 	
 
 

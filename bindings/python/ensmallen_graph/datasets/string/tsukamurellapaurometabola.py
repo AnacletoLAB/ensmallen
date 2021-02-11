@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:59.734650
 
-The undirected graph Tsukamurella paurometabola has 4218 nodes and 364398 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04097
-and has 5 connected components, where the component with most nodes has 4206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 143, the mean node degree is 172.78, and the node degree mode is 3. The top 5
-most central nodes are 521096.Tpau_2445 (degree 1330), 521096.Tpau_1315 (degree 1304),
-521096.Tpau_0910 (degree 1138), 521096.Tpau_0486 (degree 1061) and 521096.Tpau_0107
-(degree 1042).
+The undirected graph Tsukamurella paurometabola has 4218 nodes and 364398
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04097 and has 5 connected components, where the component
+with most nodes has 4206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 172.78,
+and the node degree mode is 3. The top 5 most central nodes are 521096.Tpau_2445
+(degree 1330), 521096.Tpau_1315 (degree 1304), 521096.Tpau_0910 (degree
+1138), 521096.Tpau_0486 (degree 1061) and 521096.Tpau_0107 (degree 1042).
 
 
 References
@@ -107,14 +107,14 @@ def TsukamurellaPaurometabola(
 	
 	Datetime: 2021-02-02 21:03:59.734650
 	
-	The undirected graph Tsukamurella paurometabola has 4218 nodes and 364398 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04097
-	and has 5 connected components, where the component with most nodes has 4206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 143, the mean node degree is 172.78, and the node degree mode is 3. The top 5
-	most central nodes are 521096.Tpau_2445 (degree 1330), 521096.Tpau_1315 (degree 1304),
-	521096.Tpau_0910 (degree 1138), 521096.Tpau_0486 (degree 1061) and 521096.Tpau_0107
-	(degree 1042).
+	The undirected graph Tsukamurella paurometabola has 4218 nodes and 364398
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04097 and has 5 connected components, where the component
+	with most nodes has 4206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 172.78,
+	and the node degree mode is 3. The top 5 most central nodes are 521096.Tpau_2445
+	(degree 1330), 521096.Tpau_1315 (degree 1304), 521096.Tpau_0910 (degree
+	1138), 521096.Tpau_0486 (degree 1061) and 521096.Tpau_0107 (degree 1042).
 	
 
 

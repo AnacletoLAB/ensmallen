@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:40.587279
 
-The undirected graph ash331 has 331 nodes and 662 unweighted edges, of which 2 are
-self-loops. The graph is dense as it has a density of 0.01210 and is connected, as
-it has a single component. The graph median node degree is 2, the mean node degree
-is 3.99, and the node degree mode is 2. The top 5 most central nodes are 8 (degree
-14), 4 (degree 14), 12 (degree 13), 10 (degree 12) and 42 (degree 11).
+The undirected graph ash331 has 331 nodes and 662 unweighted edges, of
+which 2 are self-loops. The graph is dense as it has a density of 0.01210
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 3.99, and the node degree mode is 2. The
+top 5 most central nodes are 8 (degree 14), 4 (degree 14), 12 (degree 13),
+10 (degree 12) and 42 (degree 11).
 
 
 References
@@ -101,11 +102,12 @@ def Ash331(
 	
 	Datetime: 2021-02-06 08:02:40.587279
 	
-	The undirected graph ash331 has 331 nodes and 662 unweighted edges, of which 2 are
-	self-loops. The graph is dense as it has a density of 0.01210 and is connected, as
-	it has a single component. The graph median node degree is 2, the mean node degree
-	is 3.99, and the node degree mode is 2. The top 5 most central nodes are 8 (degree
-	14), 4 (degree 14), 12 (degree 13), 10 (degree 12) and 42 (degree 11).
+	The undirected graph ash331 has 331 nodes and 662 unweighted edges, of
+	which 2 are self-loops. The graph is dense as it has a density of 0.01210
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 3.99, and the node degree mode is 2. The
+	top 5 most central nodes are 8 (degree 14), 4 (degree 14), 12 (degree 13),
+	10 (degree 12) and 42 (degree 11).
 	
 
 

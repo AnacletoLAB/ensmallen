@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:40:59.143795
 
-The undirected graph Synechococcus sp. PCC7335 has 5481 nodes and 725569 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04831
-and has 63 connected components, where the component with most nodes has 5316 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 264.76, and the node degree mode is 2. The top 5
-most central nodes are 91464.S7335_3550 (degree 1842), 91464.S7335_4625 (degree 1792),
-91464.S7335_4107 (degree 1532), 91464.S7335_421 (degree 1480) and 91464.S7335_1608
-(degree 1476).
+The undirected graph Synechococcus sp. PCC7335 has 5481 nodes and 725569
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04831 and has 63 connected components, where the component
+with most nodes has 5316 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 234, the mean node degree is 264.76,
+and the node degree mode is 2. The top 5 most central nodes are 91464.S7335_3550
+(degree 1842), 91464.S7335_4625 (degree 1792), 91464.S7335_4107 (degree
+1532), 91464.S7335_421 (degree 1480) and 91464.S7335_1608 (degree 1476).
 
 
 References
@@ -107,14 +107,14 @@ def SynechococcusSp.Pcc7335(
 	
 	Datetime: 2021-02-02 19:40:59.143795
 	
-	The undirected graph Synechococcus sp. PCC7335 has 5481 nodes and 725569 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04831
-	and has 63 connected components, where the component with most nodes has 5316 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 264.76, and the node degree mode is 2. The top 5
-	most central nodes are 91464.S7335_3550 (degree 1842), 91464.S7335_4625 (degree 1792),
-	91464.S7335_4107 (degree 1532), 91464.S7335_421 (degree 1480) and 91464.S7335_1608
-	(degree 1476).
+	The undirected graph Synechococcus sp. PCC7335 has 5481 nodes and 725569
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04831 and has 63 connected components, where the component
+	with most nodes has 5316 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 234, the mean node degree is 264.76,
+	and the node degree mode is 2. The top 5 most central nodes are 91464.S7335_3550
+	(degree 1842), 91464.S7335_4625 (degree 1792), 91464.S7335_4107 (degree
+	1532), 91464.S7335_421 (degree 1480) and 91464.S7335_1608 (degree 1476).
 	
 
 

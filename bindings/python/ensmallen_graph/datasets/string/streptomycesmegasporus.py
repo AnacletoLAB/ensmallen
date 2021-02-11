@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:14:46.222657
 
-The undirected graph Streptomyces megasporus has 5178 nodes and 730109 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-has 24 connected components, where the component with most nodes has 5125 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 235,
-the mean node degree is 282.00, and the node degree mode is 3. The top 5 most central
-nodes are 44060.JODL01000012_gene3448 (degree 2475), 44060.JODL01000005_gene773 (degree
-1797), 44060.JODL01000003_gene2822 (degree 1596), 44060.JODL01000016_gene4364 (degree
-1568) and 44060.JODL01000006_gene1510 (degree 1512).
+The undirected graph Streptomyces megasporus has 5178 nodes and 730109
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05447 and has 24 connected components, where the component
+with most nodes has 5125 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 282.00,
+and the node degree mode is 3. The top 5 most central nodes are 44060.JODL01000012_gene3448
+(degree 2475), 44060.JODL01000005_gene773 (degree 1797), 44060.JODL01000003_gene2822
+(degree 1596), 44060.JODL01000016_gene4364 (degree 1568) and 44060.JODL01000006_gene1510
+(degree 1512).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesMegasporus(
 	
 	Datetime: 2021-02-02 18:14:46.222657
 	
-	The undirected graph Streptomyces megasporus has 5178 nodes and 730109 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-	has 24 connected components, where the component with most nodes has 5125 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 235,
-	the mean node degree is 282.00, and the node degree mode is 3. The top 5 most central
-	nodes are 44060.JODL01000012_gene3448 (degree 2475), 44060.JODL01000005_gene773 (degree
-	1797), 44060.JODL01000003_gene2822 (degree 1596), 44060.JODL01000016_gene4364 (degree
-	1568) and 44060.JODL01000006_gene1510 (degree 1512).
+	The undirected graph Streptomyces megasporus has 5178 nodes and 730109
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05447 and has 24 connected components, where the component
+	with most nodes has 5125 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 282.00,
+	and the node degree mode is 3. The top 5 most central nodes are 44060.JODL01000012_gene3448
+	(degree 2475), 44060.JODL01000005_gene773 (degree 1797), 44060.JODL01000003_gene2822
+	(degree 1596), 44060.JODL01000016_gene4364 (degree 1568) and 44060.JODL01000006_gene1510
+	(degree 1512).
 	
 
 

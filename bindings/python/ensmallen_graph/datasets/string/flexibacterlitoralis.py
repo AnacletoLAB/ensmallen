@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:21.388929
 
-The undirected graph Flexibacter litoralis has 3826 nodes and 338425 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04625 and
-has 34 connected components, where the component with most nodes has 3737 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 176.91, and the node degree mode is 2. The top 5 most central
-nodes are 880071.Fleli_2488 (degree 1242), 880071.Fleli_1897 (degree 1221), 880071.Fleli_3785
-(degree 1213), 880071.Fleli_3467 (degree 1076) and 880071.Fleli_0295 (degree 1023).
+The undirected graph Flexibacter litoralis has 3826 nodes and 338425 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04625 and has 34 connected components, where the component with most
+nodes has 3737 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 176.91, and
+the node degree mode is 2. The top 5 most central nodes are 880071.Fleli_2488
+(degree 1242), 880071.Fleli_1897 (degree 1221), 880071.Fleli_3785 (degree
+1213), 880071.Fleli_3467 (degree 1076) and 880071.Fleli_0295 (degree 1023).
 
 
 References
@@ -106,13 +107,14 @@ def FlexibacterLitoralis(
 	
 	Datetime: 2021-02-02 21:50:21.388929
 	
-	The undirected graph Flexibacter litoralis has 3826 nodes and 338425 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04625 and
-	has 34 connected components, where the component with most nodes has 3737 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 176.91, and the node degree mode is 2. The top 5 most central
-	nodes are 880071.Fleli_2488 (degree 1242), 880071.Fleli_1897 (degree 1221), 880071.Fleli_3785
-	(degree 1213), 880071.Fleli_3467 (degree 1076) and 880071.Fleli_0295 (degree 1023).
+	The undirected graph Flexibacter litoralis has 3826 nodes and 338425 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04625 and has 34 connected components, where the component with most
+	nodes has 3737 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 176.91, and
+	the node degree mode is 2. The top 5 most central nodes are 880071.Fleli_2488
+	(degree 1242), 880071.Fleli_1897 (degree 1221), 880071.Fleli_3785 (degree
+	1213), 880071.Fleli_3467 (degree 1076) and 880071.Fleli_0295 (degree 1023).
 	
 
 

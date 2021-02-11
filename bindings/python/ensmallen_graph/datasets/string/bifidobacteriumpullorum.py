@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:41.041898
 
-The undirected graph Bifidobacterium pullorum has 1579 nodes and 116102 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09319
-and is connected, as it has a single component. The graph median node degree is 125,
-the mean node degree is 147.06, and the node degree mode is 2. The top 5 most central
-nodes are 1437600.JDUI01000015_gene1060 (degree 768), 1437600.JDUI01000002_gene1365
-(degree 745), 1437600.JDUI01000001_gene447 (degree 653), 1437600.JDUI01000002_gene1355
-(degree 635) and 1437600.JDUI01000006_gene991 (degree 594).
+The undirected graph Bifidobacterium pullorum has 1579 nodes and 116102
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09319 and is connected, as it has a single component.
+The graph median node degree is 125, the mean node degree is 147.06, and
+the node degree mode is 2. The top 5 most central nodes are 1437600.JDUI01000015_gene1060
+(degree 768), 1437600.JDUI01000002_gene1365 (degree 745), 1437600.JDUI01000001_gene447
+(degree 653), 1437600.JDUI01000002_gene1355 (degree 635) and 1437600.JDUI01000006_gene991
+(degree 594).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumPullorum(
 	
 	Datetime: 2021-02-03 22:55:41.041898
 	
-	The undirected graph Bifidobacterium pullorum has 1579 nodes and 116102 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09319
-	and is connected, as it has a single component. The graph median node degree is 125,
-	the mean node degree is 147.06, and the node degree mode is 2. The top 5 most central
-	nodes are 1437600.JDUI01000015_gene1060 (degree 768), 1437600.JDUI01000002_gene1365
-	(degree 745), 1437600.JDUI01000001_gene447 (degree 653), 1437600.JDUI01000002_gene1355
-	(degree 635) and 1437600.JDUI01000006_gene991 (degree 594).
+	The undirected graph Bifidobacterium pullorum has 1579 nodes and 116102
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09319 and is connected, as it has a single component.
+	The graph median node degree is 125, the mean node degree is 147.06, and
+	the node degree mode is 2. The top 5 most central nodes are 1437600.JDUI01000015_gene1060
+	(degree 768), 1437600.JDUI01000002_gene1365 (degree 745), 1437600.JDUI01000001_gene447
+	(degree 653), 1437600.JDUI01000002_gene1355 (degree 635) and 1437600.JDUI01000006_gene991
+	(degree 594).
 	
 
 

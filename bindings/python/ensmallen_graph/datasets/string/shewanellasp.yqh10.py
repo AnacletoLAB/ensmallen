@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:33.705637
 
-The undirected graph Shewanella sp. YQH10 has 3349 nodes and 429629 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07663 and
-has 13 connected components, where the component with most nodes has 3322 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 216,
-the mean node degree is 256.57, and the node degree mode is 2. The top 5 most central
-nodes are 1515746.HR45_01660 (degree 1511), 1515746.HR45_17190 (degree 1458), 1515746.HR45_01040
-(degree 1436), 1515746.HR45_03610 (degree 1332) and 1515746.HR45_06410 (degree 1269).
+The undirected graph Shewanella sp. YQH10 has 3349 nodes and 429629 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07663 and has 13 connected components, where the component with most
+nodes has 3322 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 216, the mean node degree is 256.57, and
+the node degree mode is 2. The top 5 most central nodes are 1515746.HR45_01660
+(degree 1511), 1515746.HR45_17190 (degree 1458), 1515746.HR45_01040 (degree
+1436), 1515746.HR45_03610 (degree 1332) and 1515746.HR45_06410 (degree
+1269).
 
 
 References
@@ -106,13 +108,15 @@ def ShewanellaSp.Yqh10(
 	
 	Datetime: 2021-02-03 23:17:33.705637
 	
-	The undirected graph Shewanella sp. YQH10 has 3349 nodes and 429629 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07663 and
-	has 13 connected components, where the component with most nodes has 3322 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 216,
-	the mean node degree is 256.57, and the node degree mode is 2. The top 5 most central
-	nodes are 1515746.HR45_01660 (degree 1511), 1515746.HR45_17190 (degree 1458), 1515746.HR45_01040
-	(degree 1436), 1515746.HR45_03610 (degree 1332) and 1515746.HR45_06410 (degree 1269).
+	The undirected graph Shewanella sp. YQH10 has 3349 nodes and 429629 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07663 and has 13 connected components, where the component with most
+	nodes has 3322 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 216, the mean node degree is 256.57, and
+	the node degree mode is 2. The top 5 most central nodes are 1515746.HR45_01660
+	(degree 1511), 1515746.HR45_17190 (degree 1458), 1515746.HR45_01040 (degree
+	1436), 1515746.HR45_03610 (degree 1332) and 1515746.HR45_06410 (degree
+	1269).
 	
 
 

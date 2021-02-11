@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:32.738483
 
-The undirected graph Shewanella marina has 4202 nodes and 523192 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05928 and
-has 10 connected components, where the component with most nodes has 4180 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 249.02, and the node degree mode is 1. The top 5 most central
-nodes are 1236542.BALM01000005_gene2561 (degree 1675), 1236542.BALM01000006_gene3265
-(degree 1607), 1236542.BALM01000019_gene1468 (degree 1575), 1236542.BALM01000024_gene2795
-(degree 1415) and 1236542.BALM01000021_gene1614 (degree 1389).
+The undirected graph Shewanella marina has 4202 nodes and 523192 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05928 and has 10 connected components, where the component with most
+nodes has 4180 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 249.02, and
+the node degree mode is 1. The top 5 most central nodes are 1236542.BALM01000005_gene2561
+(degree 1675), 1236542.BALM01000006_gene3265 (degree 1607), 1236542.BALM01000019_gene1468
+(degree 1575), 1236542.BALM01000024_gene2795 (degree 1415) and 1236542.BALM01000021_gene1614
+(degree 1389).
 
 
 References
@@ -107,14 +108,15 @@ def ShewanellaMarina(
 	
 	Datetime: 2021-02-02 23:31:32.738483
 	
-	The undirected graph Shewanella marina has 4202 nodes and 523192 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05928 and
-	has 10 connected components, where the component with most nodes has 4180 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 249.02, and the node degree mode is 1. The top 5 most central
-	nodes are 1236542.BALM01000005_gene2561 (degree 1675), 1236542.BALM01000006_gene3265
-	(degree 1607), 1236542.BALM01000019_gene1468 (degree 1575), 1236542.BALM01000024_gene2795
-	(degree 1415) and 1236542.BALM01000021_gene1614 (degree 1389).
+	The undirected graph Shewanella marina has 4202 nodes and 523192 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05928 and has 10 connected components, where the component with most
+	nodes has 4180 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 249.02, and
+	the node degree mode is 1. The top 5 most central nodes are 1236542.BALM01000005_gene2561
+	(degree 1675), 1236542.BALM01000006_gene3265 (degree 1607), 1236542.BALM01000019_gene1468
+	(degree 1575), 1236542.BALM01000024_gene2795 (degree 1415) and 1236542.BALM01000021_gene1614
+	(degree 1389).
 	
 
 

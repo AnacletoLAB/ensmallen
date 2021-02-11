@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:22.588094
 
-The undirected graph Thermocrinis sp. GBS has 1420 nodes and 95177 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09447 and
-is connected, as it has a single component. The graph median node degree is 113,
-the mean node degree is 134.05, and the node degree mode is 11. The top 5 most central
-nodes are 1313265.JNIE01000004_gene476 (degree 700), 1313265.JNIE01000002_gene709
-(degree 680), 1313265.JNIE01000002_gene946 (degree 589), 1313265.JNIE01000002_gene746
-(degree 579) and 1313265.JNIE01000003_gene1291 (degree 556).
+The undirected graph Thermocrinis sp. GBS has 1420 nodes and 95177 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09447 and is connected, as it has a single component. The graph median
+node degree is 113, the mean node degree is 134.05, and the node degree
+mode is 11. The top 5 most central nodes are 1313265.JNIE01000004_gene476
+(degree 700), 1313265.JNIE01000002_gene709 (degree 680), 1313265.JNIE01000002_gene946
+(degree 589), 1313265.JNIE01000002_gene746 (degree 579) and 1313265.JNIE01000003_gene1291
+(degree 556).
 
 
 References
@@ -106,13 +107,14 @@ def ThermocrinisSp.Gbs(
 	
 	Datetime: 2021-02-03 21:46:22.588094
 	
-	The undirected graph Thermocrinis sp. GBS has 1420 nodes and 95177 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09447 and
-	is connected, as it has a single component. The graph median node degree is 113,
-	the mean node degree is 134.05, and the node degree mode is 11. The top 5 most central
-	nodes are 1313265.JNIE01000004_gene476 (degree 700), 1313265.JNIE01000002_gene709
-	(degree 680), 1313265.JNIE01000002_gene946 (degree 589), 1313265.JNIE01000002_gene746
-	(degree 579) and 1313265.JNIE01000003_gene1291 (degree 556).
+	The undirected graph Thermocrinis sp. GBS has 1420 nodes and 95177 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09447 and is connected, as it has a single component. The graph median
+	node degree is 113, the mean node degree is 134.05, and the node degree
+	mode is 11. The top 5 most central nodes are 1313265.JNIE01000004_gene476
+	(degree 700), 1313265.JNIE01000002_gene709 (degree 680), 1313265.JNIE01000002_gene946
+	(degree 589), 1313265.JNIE01000002_gene746 (degree 579) and 1313265.JNIE01000003_gene1291
+	(degree 556).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:40.545676
 
-The undirected graph Rhodococcus rhodochrous has 5967 nodes and 850711 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04779 and
-has 32 connected components, where the component with most nodes has 5882 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 285.14, and the node degree mode is 2. The top 5 most central
-nodes are 1429046.RR21198_2662 (degree 2315), 1429046.RR21198_1620 (degree 2170),
-1429046.RR21198_4561 (degree 1750), 1429046.RR21198_0034 (degree 1746) and 1429046.RR21198_4793
+The undirected graph Rhodococcus rhodochrous has 5967 nodes and 850711
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04779 and has 32 connected components, where the component
+with most nodes has 5882 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 228, the mean node degree is 285.14,
+and the node degree mode is 2. The top 5 most central nodes are 1429046.RR21198_2662
+(degree 2315), 1429046.RR21198_1620 (degree 2170), 1429046.RR21198_4561
+(degree 1750), 1429046.RR21198_0034 (degree 1746) and 1429046.RR21198_4793
 (degree 1738).
 
 
@@ -107,13 +108,14 @@ def RhodococcusRhodochrous(
 	
 	Datetime: 2021-02-03 22:52:40.545676
 	
-	The undirected graph Rhodococcus rhodochrous has 5967 nodes and 850711 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04779 and
-	has 32 connected components, where the component with most nodes has 5882 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 285.14, and the node degree mode is 2. The top 5 most central
-	nodes are 1429046.RR21198_2662 (degree 2315), 1429046.RR21198_1620 (degree 2170),
-	1429046.RR21198_4561 (degree 1750), 1429046.RR21198_0034 (degree 1746) and 1429046.RR21198_4793
+	The undirected graph Rhodococcus rhodochrous has 5967 nodes and 850711
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04779 and has 32 connected components, where the component
+	with most nodes has 5882 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 228, the mean node degree is 285.14,
+	and the node degree mode is 2. The top 5 most central nodes are 1429046.RR21198_2662
+	(degree 2315), 1429046.RR21198_1620 (degree 2170), 1429046.RR21198_4561
+	(degree 1750), 1429046.RR21198_0034 (degree 1746) and 1429046.RR21198_4793
 	(degree 1738).
 	
 

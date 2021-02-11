@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:17:00.833138
 
-The undirected graph Chem97ZtZ has 2541 nodes and 4951 weighted edges, of which 2541
-are self-loops. The graph is sparse as it has a density of 0.00114 and has 131 connected
-components, where the component with most nodes has 101 nodes and the component with
-the least nodes has a single node. The graph median node degree is 2, the mean node
-degree is 2.90, and the node degree mode is 2. The top 5 most central nodes are 2526
-(degree 101), 2528 (degree 91), 2539 (degree 65), 2523 (degree 65) and 2517 (degree
+The undirected graph Chem97ZtZ has 2541 nodes and 4951 weighted edges,
+of which 2541 are self-loops. The graph is sparse as it has a density of
+0.00114 and has 131 connected components, where the component with most
+nodes has 101 nodes and the component with the least nodes has a single
+node. The graph median node degree is 2, the mean node degree is 2.90,
+and the node degree mode is 2. The top 5 most central nodes are 2526 (degree
+101), 2528 (degree 91), 2539 (degree 65), 2523 (degree 65) and 2517 (degree
 64).
 
 
@@ -103,12 +104,13 @@ def Chem97ztz(
 	
 	Datetime: 2021-02-06 06:17:00.833138
 	
-	The undirected graph Chem97ZtZ has 2541 nodes and 4951 weighted edges, of which 2541
-	are self-loops. The graph is sparse as it has a density of 0.00114 and has 131 connected
-	components, where the component with most nodes has 101 nodes and the component with
-	the least nodes has a single node. The graph median node degree is 2, the mean node
-	degree is 2.90, and the node degree mode is 2. The top 5 most central nodes are 2526
-	(degree 101), 2528 (degree 91), 2539 (degree 65), 2523 (degree 65) and 2517 (degree
+	The undirected graph Chem97ZtZ has 2541 nodes and 4951 weighted edges,
+	of which 2541 are self-loops. The graph is sparse as it has a density of
+	0.00114 and has 131 connected components, where the component with most
+	nodes has 101 nodes and the component with the least nodes has a single
+	node. The graph median node degree is 2, the mean node degree is 2.90,
+	and the node degree mode is 2. The top 5 most central nodes are 2526 (degree
+	101), 2528 (degree 91), 2539 (degree 65), 2523 (degree 65) and 2517 (degree
 	64).
 	
 

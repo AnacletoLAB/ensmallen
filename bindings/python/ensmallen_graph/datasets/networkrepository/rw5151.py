@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:30:39.692279
 
-The undirected graph rw5151 has 5151 nodes and 15248 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00115 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 5.92, and the node degree mode is 6. The top 5 most central nodes are 5144 (degree
-7), 5140 (degree 7), 5135 (degree 7), 5129 (degree 7) and 5122 (degree 7).
+The undirected graph rw5151 has 5151 nodes and 15248 weighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00115
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 5.92, and the node degree mode is 6. The
+top 5 most central nodes are 5144 (degree 7), 5140 (degree 7), 5135 (degree
+7), 5129 (degree 7) and 5122 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Rw5151(
 	
 	Datetime: 2021-02-06 10:30:39.692279
 	
-	The undirected graph rw5151 has 5151 nodes and 15248 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00115 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.92, and the node degree mode is 6. The top 5 most central nodes are 5144 (degree
-	7), 5140 (degree 7), 5135 (degree 7), 5129 (degree 7) and 5122 (degree 7).
+	The undirected graph rw5151 has 5151 nodes and 15248 weighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00115
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 5.92, and the node degree mode is 6. The
+	top 5 most central nodes are 5144 (degree 7), 5140 (degree 7), 5135 (degree
+	7), 5129 (degree 7) and 5122 (degree 7).
 	
 
 

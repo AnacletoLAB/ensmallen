@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:13:03.273565
 
-The undirected graph Methylohalobius crimeensis has 3180 nodes and 331152 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-and has 11 connected components, where the component with most nodes has 3154 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 180, the mean node degree is 208.27, and the node degree mode is 1. The top 5
-most central nodes are 1283300.ATXB01000001_gene1162 (degree 1345), 1283300.ATXB01000001_gene650
-(degree 1233), 1283300.ATXB01000001_gene1742 (degree 1089), 1283300.ATXB01000001_gene53
-(degree 1086) and 1283300.ATXB01000001_gene1225 (degree 1062).
+The undirected graph Methylohalobius crimeensis has 3180 nodes and 331152
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06551 and has 11 connected components, where the component
+with most nodes has 3154 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 208.27,
+and the node degree mode is 1. The top 5 most central nodes are 1283300.ATXB01000001_gene1162
+(degree 1345), 1283300.ATXB01000001_gene650 (degree 1233), 1283300.ATXB01000001_gene1742
+(degree 1089), 1283300.ATXB01000001_gene53 (degree 1086) and 1283300.ATXB01000001_gene1225
+(degree 1062).
 
 
 References
@@ -107,14 +108,15 @@ def MethylohalobiusCrimeensis(
 	
 	Datetime: 2021-02-03 21:13:03.273565
 	
-	The undirected graph Methylohalobius crimeensis has 3180 nodes and 331152 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06551
-	and has 11 connected components, where the component with most nodes has 3154 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 180, the mean node degree is 208.27, and the node degree mode is 1. The top 5
-	most central nodes are 1283300.ATXB01000001_gene1162 (degree 1345), 1283300.ATXB01000001_gene650
-	(degree 1233), 1283300.ATXB01000001_gene1742 (degree 1089), 1283300.ATXB01000001_gene53
-	(degree 1086) and 1283300.ATXB01000001_gene1225 (degree 1062).
+	The undirected graph Methylohalobius crimeensis has 3180 nodes and 331152
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06551 and has 11 connected components, where the component
+	with most nodes has 3154 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 208.27,
+	and the node degree mode is 1. The top 5 most central nodes are 1283300.ATXB01000001_gene1162
+	(degree 1345), 1283300.ATXB01000001_gene650 (degree 1233), 1283300.ATXB01000001_gene1742
+	(degree 1089), 1283300.ATXB01000001_gene53 (degree 1086) and 1283300.ATXB01000001_gene1225
+	(degree 1062).
 	
 
 

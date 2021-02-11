@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:42:44.650822
 
-The undirected graph citeseer has 3264 nodes with 6 different node types:  the 5
-most common are 3 (nodes number 681), 5 (nodes number 666), 2 (nodes number 590),
-6 (nodes number 585) and 4 (nodes number 502) and 4536 unweighted edges with a single
-edge type: 1, of which none are self-loops. The graph is quite sparse as it has a
-density of 0.00085 and has 390 connected components, where the component with most
-nodes has 2110 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 2, the mean node degree is 2.78, and the node degree mode is
-1. The top 5 most central nodes are 2907 (degree 99), 870 (degree 51), 2039 (degree
-35), 181 (degree 34) and 2041 (degree 30).
+The undirected graph citeseer has 3264 nodes with 6 different node types:
+ the 5 most common are 3 (nodes number 681), 5 (nodes number 666), 2 (nodes
+number 590), 6 (nodes number 585) and 4 (nodes number 502) and 4536 unweighted
+edges with a single edge type: 1, of which none are self-loops. The graph
+is quite sparse as it has a density of 0.00085 and has 390 connected components,
+where the component with most nodes has 2110 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 2, the mean
+node degree is 2.78, and the node degree mode is 1. The top 5 most central
+nodes are 2907 (degree 99), 870 (degree 51), 2039 (degree 35), 181 (degree
+34) and 2041 (degree 30).
 
 
 References
@@ -105,15 +106,16 @@ def Citeseer(
 	
 	Datetime: 2021-02-04 08:42:44.650822
 	
-	The undirected graph citeseer has 3264 nodes with 6 different node types:  the 5
-	most common are 3 (nodes number 681), 5 (nodes number 666), 2 (nodes number 590),
-	6 (nodes number 585) and 4 (nodes number 502) and 4536 unweighted edges with a single
-	edge type: 1, of which none are self-loops. The graph is quite sparse as it has a
-	density of 0.00085 and has 390 connected components, where the component with most
-	nodes has 2110 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 2, the mean node degree is 2.78, and the node degree mode is
-	1. The top 5 most central nodes are 2907 (degree 99), 870 (degree 51), 2039 (degree
-	35), 181 (degree 34) and 2041 (degree 30).
+	The undirected graph citeseer has 3264 nodes with 6 different node types:
+	 the 5 most common are 3 (nodes number 681), 5 (nodes number 666), 2 (nodes
+	number 590), 6 (nodes number 585) and 4 (nodes number 502) and 4536 unweighted
+	edges with a single edge type: 1, of which none are self-loops. The graph
+	is quite sparse as it has a density of 0.00085 and has 390 connected components,
+	where the component with most nodes has 2110 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 2, the mean
+	node degree is 2.78, and the node degree mode is 1. The top 5 most central
+	nodes are 2907 (degree 99), 870 (degree 51), 2039 (degree 35), 181 (degree
+	34) and 2041 (degree 30).
 	
 
 

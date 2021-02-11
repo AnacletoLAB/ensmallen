@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:49.853841
 
-The undirected graph Microbacterium gubbeenense has 2703 nodes and 168741 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04621
-and has 14 connected components, where the component with most nodes has 2672 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 124.85, and the node degree mode is 1. The top 5 most
-central nodes are 1122237.AUGQ01000002_gene1945 (degree 956), 1122237.AUGQ01000001_gene866
-(degree 878), 1122237.AUGQ01000002_gene1927 (degree 819), 1122237.AUGQ01000025_gene658
-(degree 717) and 1122237.AUGQ01000001_gene872 (degree 709).
+The undirected graph Microbacterium gubbeenense has 2703 nodes and 168741
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04621 and has 14 connected components, where the component
+with most nodes has 2672 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 124.85,
+and the node degree mode is 1. The top 5 most central nodes are 1122237.AUGQ01000002_gene1945
+(degree 956), 1122237.AUGQ01000001_gene866 (degree 878), 1122237.AUGQ01000002_gene1927
+(degree 819), 1122237.AUGQ01000025_gene658 (degree 717) and 1122237.AUGQ01000001_gene872
+(degree 709).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumGubbeenense(
 	
 	Datetime: 2021-02-02 22:42:49.853841
 	
-	The undirected graph Microbacterium gubbeenense has 2703 nodes and 168741 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04621
-	and has 14 connected components, where the component with most nodes has 2672 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 124.85, and the node degree mode is 1. The top 5 most
-	central nodes are 1122237.AUGQ01000002_gene1945 (degree 956), 1122237.AUGQ01000001_gene866
-	(degree 878), 1122237.AUGQ01000002_gene1927 (degree 819), 1122237.AUGQ01000025_gene658
-	(degree 717) and 1122237.AUGQ01000001_gene872 (degree 709).
+	The undirected graph Microbacterium gubbeenense has 2703 nodes and 168741
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04621 and has 14 connected components, where the component
+	with most nodes has 2672 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 124.85,
+	and the node degree mode is 1. The top 5 most central nodes are 1122237.AUGQ01000002_gene1945
+	(degree 956), 1122237.AUGQ01000001_gene866 (degree 878), 1122237.AUGQ01000002_gene1927
+	(degree 819), 1122237.AUGQ01000025_gene658 (degree 717) and 1122237.AUGQ01000001_gene872
+	(degree 709).
 	
 
 

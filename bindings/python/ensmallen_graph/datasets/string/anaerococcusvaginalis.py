@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:26:28.687490
 
-The undirected graph Anaerococcus vaginalis has 1758 nodes and 117844 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07630 and
-has 5 connected components, where the component with most nodes has 1747 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 134.07, and the node degree mode is 6. The top 5 most central
-nodes are 655811.HMPREF0078_0495 (degree 843), 655811.HMPREF0078_0209 (degree 805),
-655811.HMPREF0078_0208 (degree 780), 655811.HMPREF0078_0275 (degree 716) and 655811.HMPREF0078_0864
+The undirected graph Anaerococcus vaginalis has 1758 nodes and 117844 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07630 and has 5 connected components, where the component with most
+nodes has 1747 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 134.07, and
+the node degree mode is 6. The top 5 most central nodes are 655811.HMPREF0078_0495
+(degree 843), 655811.HMPREF0078_0209 (degree 805), 655811.HMPREF0078_0208
+(degree 780), 655811.HMPREF0078_0275 (degree 716) and 655811.HMPREF0078_0864
 (degree 682).
 
 
@@ -107,13 +108,14 @@ def AnaerococcusVaginalis(
 	
 	Datetime: 2021-02-02 21:26:28.687490
 	
-	The undirected graph Anaerococcus vaginalis has 1758 nodes and 117844 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07630 and
-	has 5 connected components, where the component with most nodes has 1747 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 134.07, and the node degree mode is 6. The top 5 most central
-	nodes are 655811.HMPREF0078_0495 (degree 843), 655811.HMPREF0078_0209 (degree 805),
-	655811.HMPREF0078_0208 (degree 780), 655811.HMPREF0078_0275 (degree 716) and 655811.HMPREF0078_0864
+	The undirected graph Anaerococcus vaginalis has 1758 nodes and 117844 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07630 and has 5 connected components, where the component with most
+	nodes has 1747 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 134.07, and
+	the node degree mode is 6. The top 5 most central nodes are 655811.HMPREF0078_0495
+	(degree 843), 655811.HMPREF0078_0209 (degree 805), 655811.HMPREF0078_0208
+	(degree 780), 655811.HMPREF0078_0275 (degree 716) and 655811.HMPREF0078_0864
 	(degree 682).
 	
 

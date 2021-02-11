@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:02:14.956006
 
-The undirected graph Microbulbifer variabilis has 3849 nodes and 328530 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04436
-and has 49 connected components, where the component with most nodes has 3730 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 170.71, and the node degree mode is 1. The top 5
-most central nodes are 1279017.AQYJ01000027_gene1740 (degree 1119), 1279017.AQYJ01000026_gene374
-(degree 1074), 1279017.AQYJ01000022_gene2637 (degree 1011), 1279017.AQYJ01000027_gene1669
-(degree 987) and 1279017.AQYJ01000019_gene1515 (degree 974).
+The undirected graph Microbulbifer variabilis has 3849 nodes and 328530
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04436 and has 49 connected components, where the component
+with most nodes has 3730 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 170.71,
+and the node degree mode is 1. The top 5 most central nodes are 1279017.AQYJ01000027_gene1740
+(degree 1119), 1279017.AQYJ01000026_gene374 (degree 1074), 1279017.AQYJ01000022_gene2637
+(degree 1011), 1279017.AQYJ01000027_gene1669 (degree 987) and 1279017.AQYJ01000019_gene1515
+(degree 974).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobulbiferVariabilis(
 	
 	Datetime: 2021-02-03 21:02:14.956006
 	
-	The undirected graph Microbulbifer variabilis has 3849 nodes and 328530 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04436
-	and has 49 connected components, where the component with most nodes has 3730 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 170.71, and the node degree mode is 1. The top 5
-	most central nodes are 1279017.AQYJ01000027_gene1740 (degree 1119), 1279017.AQYJ01000026_gene374
-	(degree 1074), 1279017.AQYJ01000022_gene2637 (degree 1011), 1279017.AQYJ01000027_gene1669
-	(degree 987) and 1279017.AQYJ01000019_gene1515 (degree 974).
+	The undirected graph Microbulbifer variabilis has 3849 nodes and 328530
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04436 and has 49 connected components, where the component
+	with most nodes has 3730 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 170.71,
+	and the node degree mode is 1. The top 5 most central nodes are 1279017.AQYJ01000027_gene1740
+	(degree 1119), 1279017.AQYJ01000026_gene374 (degree 1074), 1279017.AQYJ01000022_gene2637
+	(degree 1011), 1279017.AQYJ01000027_gene1669 (degree 987) and 1279017.AQYJ01000019_gene1515
+	(degree 974).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:11.357287
 
-The undirected graph Waddlia chondrophila has 1939 nodes and 110679 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05891 and
-has 9 connected components, where the component with most nodes has 1917 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 114.16, and the node degree mode is 3. The top 5 most central
-nodes are 716544.wcw_1370 (degree 839), 716544.wcw_0702 (degree 837), 716544.wcw_1654
-(degree 821), 716544.wcw_1645 (degree 775) and 716544.wcw_1680 (degree 747).
+The undirected graph Waddlia chondrophila has 1939 nodes and 110679 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05891 and has 9 connected components, where the component with most
+nodes has 1917 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 114.16, and
+the node degree mode is 3. The top 5 most central nodes are 716544.wcw_1370
+(degree 839), 716544.wcw_0702 (degree 837), 716544.wcw_1654 (degree 821),
+716544.wcw_1645 (degree 775) and 716544.wcw_1680 (degree 747).
 
 
 References
@@ -106,13 +107,14 @@ def WaddliaChondrophila(
 	
 	Datetime: 2021-02-02 21:36:11.357287
 	
-	The undirected graph Waddlia chondrophila has 1939 nodes and 110679 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05891 and
-	has 9 connected components, where the component with most nodes has 1917 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 114.16, and the node degree mode is 3. The top 5 most central
-	nodes are 716544.wcw_1370 (degree 839), 716544.wcw_0702 (degree 837), 716544.wcw_1654
-	(degree 821), 716544.wcw_1645 (degree 775) and 716544.wcw_1680 (degree 747).
+	The undirected graph Waddlia chondrophila has 1939 nodes and 110679 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05891 and has 9 connected components, where the component with most
+	nodes has 1917 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 114.16, and
+	the node degree mode is 3. The top 5 most central nodes are 716544.wcw_1370
+	(degree 839), 716544.wcw_0702 (degree 837), 716544.wcw_1654 (degree 821),
+	716544.wcw_1645 (degree 775) and 716544.wcw_1680 (degree 747).
 	
 
 

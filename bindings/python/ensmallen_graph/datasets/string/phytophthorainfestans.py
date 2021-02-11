@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:31.341383
 
-The undirected graph Phytophthora infestans has 10240 nodes and 1410949 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02691
-and has 210 connected components, where the component with most nodes has 9744 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 150, the mean node degree is 275.58, and the node degree mode is 1. The top 5
-most central nodes are 4787.PITG_03401T0 (degree 3135), 4787.PITG_11913T0 (degree
-2880), 4787.PITG_02259T0 (degree 2875), 4787.PITG_06749T0 (degree 2673) and 4787.PITG_20502T0
-(degree 2449).
+The undirected graph Phytophthora infestans has 10240 nodes and 1410949
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02691 and has 210 connected components, where the component
+with most nodes has 9744 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 150, the mean node degree is 275.58,
+and the node degree mode is 1. The top 5 most central nodes are 4787.PITG_03401T0
+(degree 3135), 4787.PITG_11913T0 (degree 2880), 4787.PITG_02259T0 (degree
+2875), 4787.PITG_06749T0 (degree 2673) and 4787.PITG_20502T0 (degree 2449).
 
 
 References
@@ -107,14 +107,14 @@ def PhytophthoraInfestans(
 	
 	Datetime: 2021-02-02 17:10:31.341383
 	
-	The undirected graph Phytophthora infestans has 10240 nodes and 1410949 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02691
-	and has 210 connected components, where the component with most nodes has 9744 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 150, the mean node degree is 275.58, and the node degree mode is 1. The top 5
-	most central nodes are 4787.PITG_03401T0 (degree 3135), 4787.PITG_11913T0 (degree
-	2880), 4787.PITG_02259T0 (degree 2875), 4787.PITG_06749T0 (degree 2673) and 4787.PITG_20502T0
-	(degree 2449).
+	The undirected graph Phytophthora infestans has 10240 nodes and 1410949
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02691 and has 210 connected components, where the component
+	with most nodes has 9744 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 150, the mean node degree is 275.58,
+	and the node degree mode is 1. The top 5 most central nodes are 4787.PITG_03401T0
+	(degree 3135), 4787.PITG_11913T0 (degree 2880), 4787.PITG_02259T0 (degree
+	2875), 4787.PITG_06749T0 (degree 2673) and 4787.PITG_20502T0 (degree 2449).
 	
 
 

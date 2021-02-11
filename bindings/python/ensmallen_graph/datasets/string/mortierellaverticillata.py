@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:34:02.088939
 
-The undirected graph Mortierella verticillata has 7722 nodes and 1124856 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03773
-and has 6 connected components, where the component with most nodes has 7710 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 291.34, and the node degree mode is 8. The top 5
-most central nodes are 78898.MVEG_00739T0 (degree 2164), 78898.MVEG_03480T0 (degree
-1981), 78898.MVEG_09781T0 (degree 1831), 78898.MVEG_01108T0 (degree 1761) and 78898.MVEG_09235T0
-(degree 1741).
+The undirected graph Mortierella verticillata has 7722 nodes and 1124856
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03773 and has 6 connected components, where the component
+with most nodes has 7710 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 291.34,
+and the node degree mode is 8. The top 5 most central nodes are 78898.MVEG_00739T0
+(degree 2164), 78898.MVEG_03480T0 (degree 1981), 78898.MVEG_09781T0 (degree
+1831), 78898.MVEG_01108T0 (degree 1761) and 78898.MVEG_09235T0 (degree
+1741).
 
 
 References
@@ -107,14 +108,15 @@ def MortierellaVerticillata(
 	
 	Datetime: 2021-02-02 18:34:02.088939
 	
-	The undirected graph Mortierella verticillata has 7722 nodes and 1124856 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03773
-	and has 6 connected components, where the component with most nodes has 7710 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 291.34, and the node degree mode is 8. The top 5
-	most central nodes are 78898.MVEG_00739T0 (degree 2164), 78898.MVEG_03480T0 (degree
-	1981), 78898.MVEG_09781T0 (degree 1831), 78898.MVEG_01108T0 (degree 1761) and 78898.MVEG_09235T0
-	(degree 1741).
+	The undirected graph Mortierella verticillata has 7722 nodes and 1124856
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03773 and has 6 connected components, where the component
+	with most nodes has 7710 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 291.34,
+	and the node degree mode is 8. The top 5 most central nodes are 78898.MVEG_00739T0
+	(degree 2164), 78898.MVEG_03480T0 (degree 1981), 78898.MVEG_09781T0 (degree
+	1831), 78898.MVEG_01108T0 (degree 1761) and 78898.MVEG_09235T0 (degree
+	1741).
 	
 
 

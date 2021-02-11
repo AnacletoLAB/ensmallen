@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:14:23.140068
 
-The undirected graph Corynebacterium casei has 2769 nodes and 173333 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04523 and
-has 14 connected components, where the component with most nodes has 2737 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 125.20, and the node degree mode is 2. The top 5 most central
-nodes are 1285583.CCASEI_07945 (degree 1029), 1285583.CCASEI_11355 (degree 857),
-1285583.CCASEI_02190 (degree 855), 1285583.CCASEI_12955 (degree 745) and 1285583.CCASEI_03150
+The undirected graph Corynebacterium casei has 2769 nodes and 173333 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04523 and has 14 connected components, where the component with most
+nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 125.20, and
+the node degree mode is 2. The top 5 most central nodes are 1285583.CCASEI_07945
+(degree 1029), 1285583.CCASEI_11355 (degree 857), 1285583.CCASEI_02190
+(degree 855), 1285583.CCASEI_12955 (degree 745) and 1285583.CCASEI_03150
 (degree 708).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumCasei(
 	
 	Datetime: 2021-02-03 21:14:23.140068
 	
-	The undirected graph Corynebacterium casei has 2769 nodes and 173333 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04523 and
-	has 14 connected components, where the component with most nodes has 2737 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 125.20, and the node degree mode is 2. The top 5 most central
-	nodes are 1285583.CCASEI_07945 (degree 1029), 1285583.CCASEI_11355 (degree 857),
-	1285583.CCASEI_02190 (degree 855), 1285583.CCASEI_12955 (degree 745) and 1285583.CCASEI_03150
+	The undirected graph Corynebacterium casei has 2769 nodes and 173333 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04523 and has 14 connected components, where the component with most
+	nodes has 2737 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 125.20, and
+	the node degree mode is 2. The top 5 most central nodes are 1285583.CCASEI_07945
+	(degree 1029), 1285583.CCASEI_11355 (degree 857), 1285583.CCASEI_02190
+	(degree 855), 1285583.CCASEI_12955 (degree 745) and 1285583.CCASEI_03150
 	(degree 708).
 	
 

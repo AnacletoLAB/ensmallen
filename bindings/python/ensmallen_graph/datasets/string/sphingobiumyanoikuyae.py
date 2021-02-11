@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:59.823826
 
-The undirected graph Sphingobium yanoikuyae has 5264 nodes and 399610 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02885 and
-has 21 connected components, where the component with most nodes has 5213 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 151.83, and the node degree mode is 2. The top 5 most central
-nodes are 13690.CP98_01080 (degree 1597), 13690.CP98_02872 (degree 1488), 13690.CP98_04528
-(degree 1442), 13690.CP98_01619 (degree 1182) and 13690.CP98_01592 (degree 1072).
+The undirected graph Sphingobium yanoikuyae has 5264 nodes and 399610 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02885 and has 21 connected components, where the component with most
+nodes has 5213 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 151.83, and
+the node degree mode is 2. The top 5 most central nodes are 13690.CP98_01080
+(degree 1597), 13690.CP98_02872 (degree 1488), 13690.CP98_04528 (degree
+1442), 13690.CP98_01619 (degree 1182) and 13690.CP98_01592 (degree 1072).
 
 
 References
@@ -106,13 +107,14 @@ def SphingobiumYanoikuyae(
 	
 	Datetime: 2021-02-02 17:53:59.823826
 	
-	The undirected graph Sphingobium yanoikuyae has 5264 nodes and 399610 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02885 and
-	has 21 connected components, where the component with most nodes has 5213 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 151.83, and the node degree mode is 2. The top 5 most central
-	nodes are 13690.CP98_01080 (degree 1597), 13690.CP98_02872 (degree 1488), 13690.CP98_04528
-	(degree 1442), 13690.CP98_01619 (degree 1182) and 13690.CP98_01592 (degree 1072).
+	The undirected graph Sphingobium yanoikuyae has 5264 nodes and 399610 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02885 and has 21 connected components, where the component with most
+	nodes has 5213 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 151.83, and
+	the node degree mode is 2. The top 5 most central nodes are 13690.CP98_01080
+	(degree 1597), 13690.CP98_02872 (degree 1488), 13690.CP98_04528 (degree
+	1442), 13690.CP98_01619 (degree 1182) and 13690.CP98_01592 (degree 1072).
 	
 
 

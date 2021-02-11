@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:28:06.962017
 
-The undirected graph Lechevalieria aerocolonigenes has 11388 nodes and 2234124 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03446
-and has 38 connected components, where the component with most nodes has 11258 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 333, the mean node degree is 392.36, and the node degree mode is 4. The top 5
-most central nodes are 68170.KL590519_gene8188 (degree 3113), 68170.KL590524_gene3528
-(degree 3085), 68170.KL590491_gene4786 (degree 2976), 68170.KL590477_gene2074 (degree
+The undirected graph Lechevalieria aerocolonigenes has 11388 nodes and
+2234124 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03446 and has 38 connected components, where the
+component with most nodes has 11258 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 333, the mean node degree
+is 392.36, and the node degree mode is 4. The top 5 most central nodes
+are 68170.KL590519_gene8188 (degree 3113), 68170.KL590524_gene3528 (degree
+3085), 68170.KL590491_gene4786 (degree 2976), 68170.KL590477_gene2074 (degree
 2902) and 68170.KL590481_gene1373 (degree 2883).
 
 
@@ -107,13 +108,14 @@ def LechevalieriaAerocolonigenes(
 	
 	Datetime: 2021-02-02 18:28:06.962017
 	
-	The undirected graph Lechevalieria aerocolonigenes has 11388 nodes and 2234124 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03446
-	and has 38 connected components, where the component with most nodes has 11258 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 333, the mean node degree is 392.36, and the node degree mode is 4. The top 5
-	most central nodes are 68170.KL590519_gene8188 (degree 3113), 68170.KL590524_gene3528
-	(degree 3085), 68170.KL590491_gene4786 (degree 2976), 68170.KL590477_gene2074 (degree
+	The undirected graph Lechevalieria aerocolonigenes has 11388 nodes and
+	2234124 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03446 and has 38 connected components, where the
+	component with most nodes has 11258 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 333, the mean node degree
+	is 392.36, and the node degree mode is 4. The top 5 most central nodes
+	are 68170.KL590519_gene8188 (degree 3113), 68170.KL590524_gene3528 (degree
+	3085), 68170.KL590491_gene4786 (degree 2976), 68170.KL590477_gene2074 (degree
 	2902) and 68170.KL590481_gene1373 (degree 2883).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:02:21.306990
 
-The undirected graph Helicobacter pylori SA213A has 1506 nodes and 77112 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06804
-and has 9 connected components, where the component with most nodes has 1488 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 80, the mean node degree is 102.41, and the node degree mode is 6. The top 5 most
-central nodes are 1345592.CBOM010000009_gene877 (degree 645), 1345592.CBOM010000008_gene801
-(degree 582), 1345592.CBOM010000013_gene1085 (degree 526), 1345592.CBOM010000013_gene1075
-(degree 499) and 1345592.CBOM010000011_gene974 (degree 495).
+The undirected graph Helicobacter pylori SA213A has 1506 nodes and 77112
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06804 and has 9 connected components, where the component
+with most nodes has 1488 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 80, the mean node degree is 102.41,
+and the node degree mode is 6. The top 5 most central nodes are 1345592.CBOM010000009_gene877
+(degree 645), 1345592.CBOM010000008_gene801 (degree 582), 1345592.CBOM010000013_gene1085
+(degree 526), 1345592.CBOM010000013_gene1075 (degree 499) and 1345592.CBOM010000011_gene974
+(degree 495).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterPyloriSa213a(
 	
 	Datetime: 2021-02-03 22:02:21.306990
 	
-	The undirected graph Helicobacter pylori SA213A has 1506 nodes and 77112 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06804
-	and has 9 connected components, where the component with most nodes has 1488 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 80, the mean node degree is 102.41, and the node degree mode is 6. The top 5 most
-	central nodes are 1345592.CBOM010000009_gene877 (degree 645), 1345592.CBOM010000008_gene801
-	(degree 582), 1345592.CBOM010000013_gene1085 (degree 526), 1345592.CBOM010000013_gene1075
-	(degree 499) and 1345592.CBOM010000011_gene974 (degree 495).
+	The undirected graph Helicobacter pylori SA213A has 1506 nodes and 77112
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06804 and has 9 connected components, where the component
+	with most nodes has 1488 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 80, the mean node degree is 102.41,
+	and the node degree mode is 6. The top 5 most central nodes are 1345592.CBOM010000009_gene877
+	(degree 645), 1345592.CBOM010000008_gene801 (degree 582), 1345592.CBOM010000013_gene1085
+	(degree 526), 1345592.CBOM010000013_gene1075 (degree 499) and 1345592.CBOM010000011_gene974
+	(degree 495).
 	
 
 

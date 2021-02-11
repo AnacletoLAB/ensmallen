@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:42.602037
 
-The undirected graph Pseudonocardia acaciae has 9154 nodes and 1678411 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04006 and
-has 26 connected components, where the component with most nodes has 9097 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 293,
-the mean node degree is 366.71, and the node degree mode is 2. The top 5 most central
-nodes are 1123023.JIAI01000025_gene4374 (degree 3982), 1123023.JIAI01000010_gene8689
-(degree 3024), 1123023.JIAI01000020_gene2159 (degree 2614), 1123023.JIAI01000022_gene2321
-(degree 2540) and 1123023.JIAI01000002_gene4995 (degree 2500).
+The undirected graph Pseudonocardia acaciae has 9154 nodes and 1678411
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04006 and has 26 connected components, where the component
+with most nodes has 9097 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 293, the mean node degree is 366.71,
+and the node degree mode is 2. The top 5 most central nodes are 1123023.JIAI01000025_gene4374
+(degree 3982), 1123023.JIAI01000010_gene8689 (degree 3024), 1123023.JIAI01000020_gene2159
+(degree 2614), 1123023.JIAI01000022_gene2321 (degree 2540) and 1123023.JIAI01000002_gene4995
+(degree 2500).
 
 
 References
@@ -107,14 +108,15 @@ def PseudonocardiaAcaciae(
 	
 	Datetime: 2021-02-02 22:46:42.602037
 	
-	The undirected graph Pseudonocardia acaciae has 9154 nodes and 1678411 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04006 and
-	has 26 connected components, where the component with most nodes has 9097 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 293,
-	the mean node degree is 366.71, and the node degree mode is 2. The top 5 most central
-	nodes are 1123023.JIAI01000025_gene4374 (degree 3982), 1123023.JIAI01000010_gene8689
-	(degree 3024), 1123023.JIAI01000020_gene2159 (degree 2614), 1123023.JIAI01000022_gene2321
-	(degree 2540) and 1123023.JIAI01000002_gene4995 (degree 2500).
+	The undirected graph Pseudonocardia acaciae has 9154 nodes and 1678411
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04006 and has 26 connected components, where the component
+	with most nodes has 9097 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 293, the mean node degree is 366.71,
+	and the node degree mode is 2. The top 5 most central nodes are 1123023.JIAI01000025_gene4374
+	(degree 3982), 1123023.JIAI01000010_gene8689 (degree 3024), 1123023.JIAI01000020_gene2159
+	(degree 2614), 1123023.JIAI01000022_gene2321 (degree 2540) and 1123023.JIAI01000002_gene4995
+	(degree 2500).
 	
 
 

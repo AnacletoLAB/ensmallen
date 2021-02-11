@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph coPapersDBLP.
+This file offers the methods to automatically retrieve the graph co-papers-dblp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -8,15 +8,15 @@ Report
 At the time of rendering these methods (please see datetime below), the graph
 had the following characteristics:
 
-Datetime: 2021-02-10 13:02:18.601946
+Datetime: 2021-02-10 13:02:08.520463
 
-The undirected graph coPapersDBLP has 26836 nodes and 45646 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-and has 7136 connected components, where the component with most nodes has 39 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 3.40, and the node degree mode is 1. The top 5 most
-central nodes are 509304 (degree 27), 509290 (degree 27), 509288 (degree 27), 509286
-(degree 27) and 519398 (degree 26).
+The undirected graph co-papers-dblp has 540486 nodes and 15245729 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00010 and is connected, as it has a single component. The
+graph median node degree is 34, the mean node degree is 56.41, and the
+node degree mode is 4. The top 5 most central nodes are 27943 (degree 3299),
+27968 (degree 1913), 27837 (degree 1913), 28840 (degree 1687) and 3227
+(degree 1683).
 
 
 References
@@ -31,6 +31,15 @@ Please cite the following if you use the data:
     year={2015}
 }
 
+@inproceedings{geisberger2008better,
+        title={Better Approximation of Betweenness Centrality.},
+        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+        booktitle={ALENEX},
+        pages={90--100},
+        year={2008},
+        organization={SIAM}
+}
+
 
 Usage example
 ----------------------
@@ -39,10 +48,10 @@ The usage of this graph is relatively straightforward:
 .. code:: python
 
     # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import Copapersdblp
+    from ensmallen_graph.datasets.networkrepository import CoPapersDblp
 
     # Then load the graph
-    graph = Copapersdblp()
+    graph = CoPapersDblp()
 
     # Finally, you can do anything with it, for instance, compute its report:
     print(graph)
@@ -72,12 +81,12 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Copapersdblp(
+def CoPapersDblp(
     directed: bool = False,
     verbose: int = 2,
     cache_path: str = "graphs/networkrepository"
 ) -> EnsmallenGraph:
-    """Return new instance of the coPapersDBLP graph.
+    """Return new instance of the co-papers-dblp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -94,22 +103,22 @@ def Copapersdblp(
 
     Returns
     -----------------------
-    Instace of coPapersDBLP graph.
+    Instace of co-papers-dblp graph.
 
 	Report
 	---------------------
 	At the time of rendering these methods (please see datetime below), the graph
 	had the following characteristics:
 	
-	Datetime: 2021-02-10 13:02:18.601946
+	Datetime: 2021-02-10 13:02:08.520463
 	
-	The undirected graph coPapersDBLP has 26836 nodes and 45646 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00013
-	and has 7136 connected components, where the component with most nodes has 39 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 3.40, and the node degree mode is 1. The top 5 most
-	central nodes are 509304 (degree 27), 509290 (degree 27), 509288 (degree 27), 509286
-	(degree 27) and 519398 (degree 26).
+	The undirected graph co-papers-dblp has 540486 nodes and 15245729 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00010 and is connected, as it has a single component. The
+	graph median node degree is 34, the mean node degree is 56.41, and the
+	node degree mode is 4. The top 5 most central nodes are 27943 (degree 3299),
+	27968 (degree 1913), 27837 (degree 1913), 28840 (degree 1687) and 3227
+	(degree 1683).
 	
 
 
@@ -125,6 +134,15 @@ def Copapersdblp(
 	    year={2015}
 	}
 	
+	@inproceedings{geisberger2008better,
+	        title={Better Approximation of Betweenness Centrality.},
+	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+	        booktitle={ALENEX},
+	        pages={90--100},
+	        year={2008},
+	        organization={SIAM}
+	}
+	
 
 
 	Usage example
@@ -134,10 +152,10 @@ def Copapersdblp(
 	.. code:: python
 	
 	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import Copapersdblp
+	    from ensmallen_graph.datasets.networkrepository import CoPapersDblp
 	
 	    # Then load the graph
-	    graph = Copapersdblp()
+	    graph = CoPapersDblp()
 	
 	    # Finally, you can do anything with it, for instance, compute its report:
 	    print(graph)
@@ -165,7 +183,7 @@ def Copapersdblp(
 
     """
     return AutomaticallyRetrievedGraph(
-        "Copapersdblp",
+        "CoPapersDblp",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,

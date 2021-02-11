@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:42.351234
 
-The undirected graph Caulobacter sp. UNC358MFTsu51 has 4775 nodes and 526285 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04617
-and has 12 connected components, where the component with most nodes has 4752 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 220.43, and the node degree mode is 4. The top 5
-most central nodes are 1449049.JONW01000011_gene2380 (degree 1839), 1449049.JONW01000007_gene4077
-(degree 1648), 1449049.JONW01000006_gene2946 (degree 1627), 1449049.JONW01000005_gene1573
-(degree 1434) and 1449049.JONW01000009_gene4340 (degree 1365).
+The undirected graph Caulobacter sp. UNC358MFTsu51 has 4775 nodes and 526285
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04617 and has 12 connected components, where the component
+with most nodes has 4752 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 220.43,
+and the node degree mode is 4. The top 5 most central nodes are 1449049.JONW01000011_gene2380
+(degree 1839), 1449049.JONW01000007_gene4077 (degree 1648), 1449049.JONW01000006_gene2946
+(degree 1627), 1449049.JONW01000005_gene1573 (degree 1434) and 1449049.JONW01000009_gene4340
+(degree 1365).
 
 
 References
@@ -107,14 +108,15 @@ def CaulobacterSp.Unc358mftsu51(
 	
 	Datetime: 2021-02-03 23:03:42.351234
 	
-	The undirected graph Caulobacter sp. UNC358MFTsu51 has 4775 nodes and 526285 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04617
-	and has 12 connected components, where the component with most nodes has 4752 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 220.43, and the node degree mode is 4. The top 5
-	most central nodes are 1449049.JONW01000011_gene2380 (degree 1839), 1449049.JONW01000007_gene4077
-	(degree 1648), 1449049.JONW01000006_gene2946 (degree 1627), 1449049.JONW01000005_gene1573
-	(degree 1434) and 1449049.JONW01000009_gene4340 (degree 1365).
+	The undirected graph Caulobacter sp. UNC358MFTsu51 has 4775 nodes and 526285
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04617 and has 12 connected components, where the component
+	with most nodes has 4752 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 220.43,
+	and the node degree mode is 4. The top 5 most central nodes are 1449049.JONW01000011_gene2380
+	(degree 1839), 1449049.JONW01000007_gene4077 (degree 1648), 1449049.JONW01000006_gene2946
+	(degree 1627), 1449049.JONW01000005_gene1573 (degree 1434) and 1449049.JONW01000009_gene4340
+	(degree 1365).
 	
 
 

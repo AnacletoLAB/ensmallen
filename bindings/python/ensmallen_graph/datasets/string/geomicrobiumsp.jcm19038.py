@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:20.259233
 
-The undirected graph Geomicrobium sp. JCM19038 has 4067 nodes and 440978 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05333
-and has 11 connected components, where the component with most nodes has 4043 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 216.86, and the node degree mode is 3. The top 5
-most central nodes are 1460635.JCM19038_3558 (degree 1318), 1460635.JCM19038_4012
-(degree 1235), 1460635.JCM19038_615 (degree 1203), 1460635.JCM19038_1980 (degree
-1009) and 1460635.JCM19038_120 (degree 1004).
+The undirected graph Geomicrobium sp. JCM19038 has 4067 nodes and 440978
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05333 and has 11 connected components, where the component
+with most nodes has 4043 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 216.86,
+and the node degree mode is 3. The top 5 most central nodes are 1460635.JCM19038_3558
+(degree 1318), 1460635.JCM19038_4012 (degree 1235), 1460635.JCM19038_615
+(degree 1203), 1460635.JCM19038_1980 (degree 1009) and 1460635.JCM19038_120
+(degree 1004).
 
 
 References
@@ -107,14 +108,15 @@ def GeomicrobiumSp.Jcm19038(
 	
 	Datetime: 2021-02-03 23:07:20.259233
 	
-	The undirected graph Geomicrobium sp. JCM19038 has 4067 nodes and 440978 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05333
-	and has 11 connected components, where the component with most nodes has 4043 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 216.86, and the node degree mode is 3. The top 5
-	most central nodes are 1460635.JCM19038_3558 (degree 1318), 1460635.JCM19038_4012
-	(degree 1235), 1460635.JCM19038_615 (degree 1203), 1460635.JCM19038_1980 (degree
-	1009) and 1460635.JCM19038_120 (degree 1004).
+	The undirected graph Geomicrobium sp. JCM19038 has 4067 nodes and 440978
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05333 and has 11 connected components, where the component
+	with most nodes has 4043 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 216.86,
+	and the node degree mode is 3. The top 5 most central nodes are 1460635.JCM19038_3558
+	(degree 1318), 1460635.JCM19038_4012 (degree 1235), 1460635.JCM19038_615
+	(degree 1203), 1460635.JCM19038_1980 (degree 1009) and 1460635.JCM19038_120
+	(degree 1004).
 	
 
 

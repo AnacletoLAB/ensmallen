@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:16:21.507176
 
-The undirected graph Mycobacterium triplex has 5843 nodes and 992066 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05813 and
-has 27 connected components, where the component with most nodes has 5779 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 339.57, and the node degree mode is 2. The top 5 most central
-nodes are 47839.CCAU010000013_gene4860 (degree 2561), 47839.CCAU010000011_gene5239
-(degree 2264), 47839.CCAU010000011_gene5461 (degree 2179), 47839.CCAU010000011_gene5812
-(degree 2140) and 47839.CCAU010000013_gene4774 (degree 2112).
+The undirected graph Mycobacterium triplex has 5843 nodes and 992066 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05813 and has 27 connected components, where the component with most
+nodes has 5779 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 339.57, and
+the node degree mode is 2. The top 5 most central nodes are 47839.CCAU010000013_gene4860
+(degree 2561), 47839.CCAU010000011_gene5239 (degree 2264), 47839.CCAU010000011_gene5461
+(degree 2179), 47839.CCAU010000011_gene5812 (degree 2140) and 47839.CCAU010000013_gene4774
+(degree 2112).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumTriplex(
 	
 	Datetime: 2021-02-02 18:16:21.507176
 	
-	The undirected graph Mycobacterium triplex has 5843 nodes and 992066 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05813 and
-	has 27 connected components, where the component with most nodes has 5779 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 339.57, and the node degree mode is 2. The top 5 most central
-	nodes are 47839.CCAU010000013_gene4860 (degree 2561), 47839.CCAU010000011_gene5239
-	(degree 2264), 47839.CCAU010000011_gene5461 (degree 2179), 47839.CCAU010000011_gene5812
-	(degree 2140) and 47839.CCAU010000013_gene4774 (degree 2112).
+	The undirected graph Mycobacterium triplex has 5843 nodes and 992066 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05813 and has 27 connected components, where the component with most
+	nodes has 5779 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 339.57, and
+	the node degree mode is 2. The top 5 most central nodes are 47839.CCAU010000013_gene4860
+	(degree 2561), 47839.CCAU010000011_gene5239 (degree 2264), 47839.CCAU010000011_gene5461
+	(degree 2179), 47839.CCAU010000011_gene5812 (degree 2140) and 47839.CCAU010000013_gene4774
+	(degree 2112).
 	
 
 

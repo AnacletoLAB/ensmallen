@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:55.155665
 
-The undirected graph Francisella tularensis SCHUS4 has 1590 nodes and 102097 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08082
-and has 6 connected components, where the component with most nodes has 1579 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 128.42, and the node degree mode is 2. The top 5
-most central nodes are 177416.FTT_0111 (degree 675), 177416.FTT_1269c (degree 576),
-177416.FTT_1317c (degree 554), 177416.FTT_1290 (degree 554) and 177416.FTT_1019c
-(degree 552).
+The undirected graph Francisella tularensis SCHUS4 has 1590 nodes and 102097
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08082 and has 6 connected components, where the component
+with most nodes has 1579 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 128.42,
+and the node degree mode is 2. The top 5 most central nodes are 177416.FTT_0111
+(degree 675), 177416.FTT_1269c (degree 576), 177416.FTT_1317c (degree 554),
+177416.FTT_1290 (degree 554) and 177416.FTT_1019c (degree 552).
 
 
 References
@@ -107,14 +107,14 @@ def FrancisellaTularensisSchus4(
 	
 	Datetime: 2021-02-02 19:55:55.155665
 	
-	The undirected graph Francisella tularensis SCHUS4 has 1590 nodes and 102097 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08082
-	and has 6 connected components, where the component with most nodes has 1579 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 128.42, and the node degree mode is 2. The top 5
-	most central nodes are 177416.FTT_0111 (degree 675), 177416.FTT_1269c (degree 576),
-	177416.FTT_1317c (degree 554), 177416.FTT_1290 (degree 554) and 177416.FTT_1019c
-	(degree 552).
+	The undirected graph Francisella tularensis SCHUS4 has 1590 nodes and 102097
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08082 and has 6 connected components, where the component
+	with most nodes has 1579 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 128.42,
+	and the node degree mode is 2. The top 5 most central nodes are 177416.FTT_0111
+	(degree 675), 177416.FTT_1269c (degree 576), 177416.FTT_1317c (degree 554),
+	177416.FTT_1290 (degree 554) and 177416.FTT_1019c (degree 552).
 	
 
 

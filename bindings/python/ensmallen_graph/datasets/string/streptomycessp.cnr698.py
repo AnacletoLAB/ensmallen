@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:41.669069
 
-The undirected graph Streptomyces sp. CNR698 has 6154 nodes and 852794 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04504 and
-has 26 connected components, where the component with most nodes has 6097 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 277.15, and the node degree mode is 2. The top 5 most central
-nodes are 1206101.AZXC01000043_gene865 (degree 3000), 1206101.AZXC01000002_gene6086
-(degree 1986), 1206101.AZXC01000001_gene4593 (degree 1876), 1206101.AZXC01000009_gene526
-(degree 1851) and 1206101.AZXC01000002_gene6046 (degree 1768).
+The undirected graph Streptomyces sp. CNR698 has 6154 nodes and 852794
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04504 and has 26 connected components, where the component
+with most nodes has 6097 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 233, the mean node degree is 277.15,
+and the node degree mode is 2. The top 5 most central nodes are 1206101.AZXC01000043_gene865
+(degree 3000), 1206101.AZXC01000002_gene6086 (degree 1986), 1206101.AZXC01000001_gene4593
+(degree 1876), 1206101.AZXC01000009_gene526 (degree 1851) and 1206101.AZXC01000002_gene6046
+(degree 1768).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Cnr698(
 	
 	Datetime: 2021-02-02 23:15:41.669069
 	
-	The undirected graph Streptomyces sp. CNR698 has 6154 nodes and 852794 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04504 and
-	has 26 connected components, where the component with most nodes has 6097 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 277.15, and the node degree mode is 2. The top 5 most central
-	nodes are 1206101.AZXC01000043_gene865 (degree 3000), 1206101.AZXC01000002_gene6086
-	(degree 1986), 1206101.AZXC01000001_gene4593 (degree 1876), 1206101.AZXC01000009_gene526
-	(degree 1851) and 1206101.AZXC01000002_gene6046 (degree 1768).
+	The undirected graph Streptomyces sp. CNR698 has 6154 nodes and 852794
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04504 and has 26 connected components, where the component
+	with most nodes has 6097 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 233, the mean node degree is 277.15,
+	and the node degree mode is 2. The top 5 most central nodes are 1206101.AZXC01000043_gene865
+	(degree 3000), 1206101.AZXC01000002_gene6086 (degree 1986), 1206101.AZXC01000001_gene4593
+	(degree 1876), 1206101.AZXC01000009_gene526 (degree 1851) and 1206101.AZXC01000002_gene6046
+	(degree 1768).
 	
 
 

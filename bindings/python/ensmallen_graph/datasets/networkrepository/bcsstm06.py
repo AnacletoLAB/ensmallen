@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:06:24.834155
 
-The undirected graph bcsstm06 has 420 nodes, of which 420 are singletons (all have
-self-loops), and 420 weighted edges, of which 420 are self-loops. The graph is sparse
-as it has a density of 0.00239 and has 420 connected components, where the component
-with most nodes has a single node and the component with the least nodes has a single
-node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-degree mode is 1. The top 5 most central nodes are 420 (degree 1), 419 (degree 1),
-418 (degree 1), 417 (degree 1) and 416 (degree 1).
+The undirected graph bcsstm06 has 420 nodes, of which 420 are singletons
+(all have self-loops), and 420 weighted edges, of which 420 are self-loops.
+The graph is sparse as it has a density of 0.00239 and has 420 connected
+components, where the component with most nodes has a single node and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 1.00, and the node degree mode is
+1. The top 5 most central nodes are 420 (degree 1), 419 (degree 1), 418
+(degree 1), 417 (degree 1) and 416 (degree 1).
 
 
 References
@@ -103,13 +104,14 @@ def Bcsstm06(
 	
 	Datetime: 2021-02-06 08:06:24.834155
 	
-	The undirected graph bcsstm06 has 420 nodes, of which 420 are singletons (all have
-	self-loops), and 420 weighted edges, of which 420 are self-loops. The graph is sparse
-	as it has a density of 0.00239 and has 420 connected components, where the component
-	with most nodes has a single node and the component with the least nodes has a single
-	node. The graph median node degree is 1, the mean node degree is 1.00, and the node
-	degree mode is 1. The top 5 most central nodes are 420 (degree 1), 419 (degree 1),
-	418 (degree 1), 417 (degree 1) and 416 (degree 1).
+	The undirected graph bcsstm06 has 420 nodes, of which 420 are singletons
+	(all have self-loops), and 420 weighted edges, of which 420 are self-loops.
+	The graph is sparse as it has a density of 0.00239 and has 420 connected
+	components, where the component with most nodes has a single node and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 1.00, and the node degree mode is
+	1. The top 5 most central nodes are 420 (degree 1), 419 (degree 1), 418
+	(degree 1), 417 (degree 1) and 416 (degree 1).
 	
 
 

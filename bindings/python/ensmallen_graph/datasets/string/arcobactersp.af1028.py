@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:08:09.594879
 
-The undirected graph Arcobacter sp. AF1028 has 2366 nodes and 202647 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07243 and
-has 10 connected components, where the component with most nodes has 2337 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 171.30, and the node degree mode is 5. The top 5 most central
-nodes are 1355368.JART01000014_gene657 (degree 1001), 1355368.JART01000002_gene2116
-(degree 952), 1355368.JART01000025_gene305 (degree 923), 1355368.JART01000019_gene893
-(degree 874) and 1355368.JART01000001_gene701 (degree 825).
+The undirected graph Arcobacter sp. AF1028 has 2366 nodes and 202647 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07243 and has 10 connected components, where the component with most
+nodes has 2337 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 171.30, and
+the node degree mode is 5. The top 5 most central nodes are 1355368.JART01000014_gene657
+(degree 1001), 1355368.JART01000002_gene2116 (degree 952), 1355368.JART01000025_gene305
+(degree 923), 1355368.JART01000019_gene893 (degree 874) and 1355368.JART01000001_gene701
+(degree 825).
 
 
 References
@@ -107,14 +108,15 @@ def ArcobacterSp.Af1028(
 	
 	Datetime: 2021-02-03 22:08:09.594879
 	
-	The undirected graph Arcobacter sp. AF1028 has 2366 nodes and 202647 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07243 and
-	has 10 connected components, where the component with most nodes has 2337 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 171.30, and the node degree mode is 5. The top 5 most central
-	nodes are 1355368.JART01000014_gene657 (degree 1001), 1355368.JART01000002_gene2116
-	(degree 952), 1355368.JART01000025_gene305 (degree 923), 1355368.JART01000019_gene893
-	(degree 874) and 1355368.JART01000001_gene701 (degree 825).
+	The undirected graph Arcobacter sp. AF1028 has 2366 nodes and 202647 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07243 and has 10 connected components, where the component with most
+	nodes has 2337 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 171.30, and
+	the node degree mode is 5. The top 5 most central nodes are 1355368.JART01000014_gene657
+	(degree 1001), 1355368.JART01000002_gene2116 (degree 952), 1355368.JART01000025_gene305
+	(degree 923), 1355368.JART01000019_gene893 (degree 874) and 1355368.JART01000001_gene701
+	(degree 825).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:02.097537
 
-The undirected graph Archaeoglobus veneficus has 2069 nodes and 222822 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10415
-and has 11 connected components, where the component with most nodes has 2037 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 216, the mean node degree is 215.39, and the node degree mode is 5. The top 5
-most central nodes are 693661.Arcve_0098 (degree 791), 693661.Arcve_1325 (degree
-744), 693661.Arcve_1091 (degree 741), 693661.Arcve_1410 (degree 714) and 693661.Arcve_2104
-(degree 703).
+The undirected graph Archaeoglobus veneficus has 2069 nodes and 222822
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10415 and has 11 connected components, where the
+component with most nodes has 2037 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 216, the mean node degree
+is 215.39, and the node degree mode is 5. The top 5 most central nodes
+are 693661.Arcve_0098 (degree 791), 693661.Arcve_1325 (degree 744), 693661.Arcve_1091
+(degree 741), 693661.Arcve_1410 (degree 714) and 693661.Arcve_2104 (degree
+703).
 
 
 References
@@ -107,14 +108,15 @@ def ArchaeoglobusVeneficus(
 	
 	Datetime: 2021-02-02 21:32:02.097537
 	
-	The undirected graph Archaeoglobus veneficus has 2069 nodes and 222822 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10415
-	and has 11 connected components, where the component with most nodes has 2037 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 216, the mean node degree is 215.39, and the node degree mode is 5. The top 5
-	most central nodes are 693661.Arcve_0098 (degree 791), 693661.Arcve_1325 (degree
-	744), 693661.Arcve_1091 (degree 741), 693661.Arcve_1410 (degree 714) and 693661.Arcve_2104
-	(degree 703).
+	The undirected graph Archaeoglobus veneficus has 2069 nodes and 222822
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10415 and has 11 connected components, where the
+	component with most nodes has 2037 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 216, the mean node degree
+	is 215.39, and the node degree mode is 5. The top 5 most central nodes
+	are 693661.Arcve_0098 (degree 791), 693661.Arcve_1325 (degree 744), 693661.Arcve_1091
+	(degree 741), 693661.Arcve_1410 (degree 714) and 693661.Arcve_2104 (degree
+	703).
 	
 
 

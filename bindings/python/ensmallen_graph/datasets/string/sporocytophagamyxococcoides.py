@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:04.885209
 
-The undirected graph Sporocytophaga myxococcoides has 4958 nodes and 604720 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04921
-and has 45 connected components, where the component with most nodes has 4855 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 221, the mean node degree is 243.94, and the node degree mode is 1. The top 5
-most central nodes are 153721.MYP_289 (degree 1807), 153721.MYP_1628 (degree 1666),
-153721.MYP_163 (degree 1628), 153721.MYP_4397 (degree 1544) and 153721.MYP_244 (degree
-1353).
+The undirected graph Sporocytophaga myxococcoides has 4958 nodes and 604720
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04921 and has 45 connected components, where the component
+with most nodes has 4855 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 221, the mean node degree is 243.94,
+and the node degree mode is 1. The top 5 most central nodes are 153721.MYP_289
+(degree 1807), 153721.MYP_1628 (degree 1666), 153721.MYP_163 (degree 1628),
+153721.MYP_4397 (degree 1544) and 153721.MYP_244 (degree 1353).
 
 
 References
@@ -107,14 +107,14 @@ def SporocytophagaMyxococcoides(
 	
 	Datetime: 2021-02-02 19:52:04.885209
 	
-	The undirected graph Sporocytophaga myxococcoides has 4958 nodes and 604720 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04921
-	and has 45 connected components, where the component with most nodes has 4855 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 221, the mean node degree is 243.94, and the node degree mode is 1. The top 5
-	most central nodes are 153721.MYP_289 (degree 1807), 153721.MYP_1628 (degree 1666),
-	153721.MYP_163 (degree 1628), 153721.MYP_4397 (degree 1544) and 153721.MYP_244 (degree
-	1353).
+	The undirected graph Sporocytophaga myxococcoides has 4958 nodes and 604720
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04921 and has 45 connected components, where the component
+	with most nodes has 4855 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 221, the mean node degree is 243.94,
+	and the node degree mode is 1. The top 5 most central nodes are 153721.MYP_289
+	(degree 1807), 153721.MYP_1628 (degree 1666), 153721.MYP_163 (degree 1628),
+	153721.MYP_4397 (degree 1544) and 153721.MYP_244 (degree 1353).
 	
 
 

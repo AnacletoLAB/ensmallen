@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:03:38.962639
 
-The undirected graph Eremothecium gossypii has 4463 nodes and 425468 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04273 and
-has 2 connected components, where the component with most nodes has 4461 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 190.66, and the node degree mode is 31. The top 5 most central
-nodes are 33169.AAS54713 (degree 1013), 33169.AAS51777 (degree 1013), 33169.AAS52715
-(degree 1012), 33169.AAS50995 (degree 979) and 33169.AAS52006 (degree 946).
+The undirected graph Eremothecium gossypii has 4463 nodes and 425468 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04273 and has 2 connected components, where the component with most
+nodes has 4461 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 190.66, and
+the node degree mode is 31. The top 5 most central nodes are 33169.AAS54713
+(degree 1013), 33169.AAS51777 (degree 1013), 33169.AAS52715 (degree 1012),
+33169.AAS50995 (degree 979) and 33169.AAS52006 (degree 946).
 
 
 References
@@ -106,13 +107,14 @@ def EremotheciumGossypii(
 	
 	Datetime: 2021-02-02 18:03:38.962639
 	
-	The undirected graph Eremothecium gossypii has 4463 nodes and 425468 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04273 and
-	has 2 connected components, where the component with most nodes has 4461 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 190.66, and the node degree mode is 31. The top 5 most central
-	nodes are 33169.AAS54713 (degree 1013), 33169.AAS51777 (degree 1013), 33169.AAS52715
-	(degree 1012), 33169.AAS50995 (degree 979) and 33169.AAS52006 (degree 946).
+	The undirected graph Eremothecium gossypii has 4463 nodes and 425468 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04273 and has 2 connected components, where the component with most
+	nodes has 4461 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 190.66, and
+	the node degree mode is 31. The top 5 most central nodes are 33169.AAS54713
+	(degree 1013), 33169.AAS51777 (degree 1013), 33169.AAS52715 (degree 1012),
+	33169.AAS50995 (degree 979) and 33169.AAS52006 (degree 946).
 	
 
 

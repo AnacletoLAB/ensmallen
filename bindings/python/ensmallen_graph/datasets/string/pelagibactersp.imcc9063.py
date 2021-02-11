@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:07:11.687513
 
-The undirected graph Pelagibacter sp. IMCC9063 has 1435 nodes and 73878 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07180
-and has 2 connected components, where the component with most nodes has 1432 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 79, the mean node degree is 102.97, and the node degree mode is 6. The top 5 most
-central nodes are 1002672.SAR11G3_00310 (degree 649), 1002672.SAR11G3_00612 (degree
-534), 1002672.SAR11G3_00367 (degree 504), 1002672.SAR11G3_00912 (degree 475) and
-1002672.SAR11G3_01156 (degree 473).
+The undirected graph Pelagibacter sp. IMCC9063 has 1435 nodes and 73878
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07180 and has 2 connected components, where the component
+with most nodes has 1432 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 79, the mean node degree is 102.97,
+and the node degree mode is 6. The top 5 most central nodes are 1002672.SAR11G3_00310
+(degree 649), 1002672.SAR11G3_00612 (degree 534), 1002672.SAR11G3_00367
+(degree 504), 1002672.SAR11G3_00912 (degree 475) and 1002672.SAR11G3_01156
+(degree 473).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterSp.Imcc9063(
 	
 	Datetime: 2021-02-02 22:07:11.687513
 	
-	The undirected graph Pelagibacter sp. IMCC9063 has 1435 nodes and 73878 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07180
-	and has 2 connected components, where the component with most nodes has 1432 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 79, the mean node degree is 102.97, and the node degree mode is 6. The top 5 most
-	central nodes are 1002672.SAR11G3_00310 (degree 649), 1002672.SAR11G3_00612 (degree
-	534), 1002672.SAR11G3_00367 (degree 504), 1002672.SAR11G3_00912 (degree 475) and
-	1002672.SAR11G3_01156 (degree 473).
+	The undirected graph Pelagibacter sp. IMCC9063 has 1435 nodes and 73878
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07180 and has 2 connected components, where the component
+	with most nodes has 1432 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 79, the mean node degree is 102.97,
+	and the node degree mode is 6. The top 5 most central nodes are 1002672.SAR11G3_00310
+	(degree 649), 1002672.SAR11G3_00612 (degree 534), 1002672.SAR11G3_00367
+	(degree 504), 1002672.SAR11G3_00912 (degree 475) and 1002672.SAR11G3_01156
+	(degree 473).
 	
 
 

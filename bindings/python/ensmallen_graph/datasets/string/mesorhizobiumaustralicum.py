@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:23.350696
 
-The undirected graph Mesorhizobium australicum has 5737 nodes and 516182 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03137
-and has 35 connected components, where the component with most nodes has 5649 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 179.95, and the node degree mode is 3. The top 5
-most central nodes are 754035.Mesau_01773 (degree 2018), 754035.Mesau_03110 (degree
-1597), 754035.Mesau_00090 (degree 1588), 754035.Mesau_01795 (degree 1572) and 754035.Mesau_01936
-(degree 1473).
+The undirected graph Mesorhizobium australicum has 5737 nodes and 516182
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03137 and has 35 connected components, where the component
+with most nodes has 5649 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 179.95,
+and the node degree mode is 3. The top 5 most central nodes are 754035.Mesau_01773
+(degree 2018), 754035.Mesau_03110 (degree 1597), 754035.Mesau_00090 (degree
+1588), 754035.Mesau_01795 (degree 1572) and 754035.Mesau_01936 (degree
+1473).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumAustralicum(
 	
 	Datetime: 2021-02-02 21:40:23.350696
 	
-	The undirected graph Mesorhizobium australicum has 5737 nodes and 516182 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03137
-	and has 35 connected components, where the component with most nodes has 5649 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 179.95, and the node degree mode is 3. The top 5
-	most central nodes are 754035.Mesau_01773 (degree 2018), 754035.Mesau_03110 (degree
-	1597), 754035.Mesau_00090 (degree 1588), 754035.Mesau_01795 (degree 1572) and 754035.Mesau_01936
-	(degree 1473).
+	The undirected graph Mesorhizobium australicum has 5737 nodes and 516182
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03137 and has 35 connected components, where the component
+	with most nodes has 5649 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 179.95,
+	and the node degree mode is 3. The top 5 most central nodes are 754035.Mesau_01773
+	(degree 2018), 754035.Mesau_03110 (degree 1597), 754035.Mesau_00090 (degree
+	1588), 754035.Mesau_01795 (degree 1572) and 754035.Mesau_01936 (degree
+	1473).
 	
 
 

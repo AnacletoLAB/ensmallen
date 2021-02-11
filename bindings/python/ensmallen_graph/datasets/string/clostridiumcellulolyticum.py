@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:07.506086
 
-The undirected graph Clostridium cellulolyticum has 3360 nodes and 281463 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-and has 11 connected components, where the component with most nodes has 3336 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 167.54, and the node degree mode is 8. The top 5
-most central nodes are 394503.Ccel_2260 (degree 1168), 394503.Ccel_0394 (degree 952),
-394503.Ccel_1728 (degree 922), 394503.Ccel_1098 (degree 829) and 394503.Ccel_1798
-(degree 776).
+The undirected graph Clostridium cellulolyticum has 3360 nodes and 281463
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04988 and has 11 connected components, where the component
+with most nodes has 3336 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 167.54,
+and the node degree mode is 8. The top 5 most central nodes are 394503.Ccel_2260
+(degree 1168), 394503.Ccel_0394 (degree 952), 394503.Ccel_1728 (degree
+922), 394503.Ccel_1098 (degree 829) and 394503.Ccel_1798 (degree 776).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumCellulolyticum(
 	
 	Datetime: 2021-02-02 20:41:07.506086
 	
-	The undirected graph Clostridium cellulolyticum has 3360 nodes and 281463 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04988
-	and has 11 connected components, where the component with most nodes has 3336 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 167.54, and the node degree mode is 8. The top 5
-	most central nodes are 394503.Ccel_2260 (degree 1168), 394503.Ccel_0394 (degree 952),
-	394503.Ccel_1728 (degree 922), 394503.Ccel_1098 (degree 829) and 394503.Ccel_1798
-	(degree 776).
+	The undirected graph Clostridium cellulolyticum has 3360 nodes and 281463
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04988 and has 11 connected components, where the component
+	with most nodes has 3336 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 167.54,
+	and the node degree mode is 8. The top 5 most central nodes are 394503.Ccel_2260
+	(degree 1168), 394503.Ccel_0394 (degree 952), 394503.Ccel_1728 (degree
+	922), 394503.Ccel_1098 (degree 829) and 394503.Ccel_1798 (degree 776).
 	
 
 

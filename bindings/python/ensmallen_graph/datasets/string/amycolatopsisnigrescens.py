@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:52.798973
 
-The undirected graph Amycolatopsis nigrescens has 8322 nodes and 1588453 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04588
-and has 33 connected components, where the component with most nodes has 8234 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 325, the mean node degree is 381.75, and the node degree mode is 3. The top 5
-most central nodes are 1068980.ARVW01000001_gene3643 (degree 2968), 1068980.ARVW01000001_gene1022
-(degree 2967), 1068980.ARVW01000001_gene3061 (degree 2912), 1068980.ARVW01000001_gene8275
-(degree 2508) and 1068980.ARVW01000001_gene651 (degree 2396).
+The undirected graph Amycolatopsis nigrescens has 8322 nodes and 1588453
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04588 and has 33 connected components, where the component
+with most nodes has 8234 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 325, the mean node degree is 381.75,
+and the node degree mode is 3. The top 5 most central nodes are 1068980.ARVW01000001_gene3643
+(degree 2968), 1068980.ARVW01000001_gene1022 (degree 2967), 1068980.ARVW01000001_gene3061
+(degree 2912), 1068980.ARVW01000001_gene8275 (degree 2508) and 1068980.ARVW01000001_gene651
+(degree 2396).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisNigrescens(
 	
 	Datetime: 2021-02-02 22:18:52.798973
 	
-	The undirected graph Amycolatopsis nigrescens has 8322 nodes and 1588453 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04588
-	and has 33 connected components, where the component with most nodes has 8234 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 325, the mean node degree is 381.75, and the node degree mode is 3. The top 5
-	most central nodes are 1068980.ARVW01000001_gene3643 (degree 2968), 1068980.ARVW01000001_gene1022
-	(degree 2967), 1068980.ARVW01000001_gene3061 (degree 2912), 1068980.ARVW01000001_gene8275
-	(degree 2508) and 1068980.ARVW01000001_gene651 (degree 2396).
+	The undirected graph Amycolatopsis nigrescens has 8322 nodes and 1588453
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04588 and has 33 connected components, where the component
+	with most nodes has 8234 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 325, the mean node degree is 381.75,
+	and the node degree mode is 3. The top 5 most central nodes are 1068980.ARVW01000001_gene3643
+	(degree 2968), 1068980.ARVW01000001_gene1022 (degree 2967), 1068980.ARVW01000001_gene3061
+	(degree 2912), 1068980.ARVW01000001_gene8275 (degree 2508) and 1068980.ARVW01000001_gene651
+	(degree 2396).
 	
 
 

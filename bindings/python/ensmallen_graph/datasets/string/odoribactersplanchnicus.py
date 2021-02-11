@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:40.043444
 
-The undirected graph Odoribacter splanchnicus has 3471 nodes and 332912 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05528
-and has 9 connected components, where the component with most nodes has 3452 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 191.82, and the node degree mode is 3. The top 5
-most central nodes are 709991.Odosp_0244 (degree 1337), 709991.Odosp_2723 (degree
-1237), 709991.Odosp_0167 (degree 991), 709991.Odosp_0874 (degree 928) and 709991.Odosp_0653
-(degree 920).
+The undirected graph Odoribacter splanchnicus has 3471 nodes and 332912
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05528 and has 9 connected components, where the component
+with most nodes has 3452 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 191.82,
+and the node degree mode is 3. The top 5 most central nodes are 709991.Odosp_0244
+(degree 1337), 709991.Odosp_2723 (degree 1237), 709991.Odosp_0167 (degree
+991), 709991.Odosp_0874 (degree 928) and 709991.Odosp_0653 (degree 920).
 
 
 References
@@ -107,14 +107,14 @@ def OdoribacterSplanchnicus(
 	
 	Datetime: 2021-02-02 21:34:40.043444
 	
-	The undirected graph Odoribacter splanchnicus has 3471 nodes and 332912 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05528
-	and has 9 connected components, where the component with most nodes has 3452 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 191.82, and the node degree mode is 3. The top 5
-	most central nodes are 709991.Odosp_0244 (degree 1337), 709991.Odosp_2723 (degree
-	1237), 709991.Odosp_0167 (degree 991), 709991.Odosp_0874 (degree 928) and 709991.Odosp_0653
-	(degree 920).
+	The undirected graph Odoribacter splanchnicus has 3471 nodes and 332912
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05528 and has 9 connected components, where the component
+	with most nodes has 3452 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 191.82,
+	and the node degree mode is 3. The top 5 most central nodes are 709991.Odosp_0244
+	(degree 1337), 709991.Odosp_2723 (degree 1237), 709991.Odosp_0167 (degree
+	991), 709991.Odosp_0874 (degree 928) and 709991.Odosp_0653 (degree 920).
 	
 
 

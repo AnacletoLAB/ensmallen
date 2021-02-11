@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:47.662504
 
-The undirected graph Haliea rubra has 2828 nodes and 229457 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.05740 and has 9
-connected components, where the component with most nodes has 2810 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 162.28, and the node degree mode is 1. The top 5 most central
-nodes are 1265313.HRUBRA_02441 (degree 1109), 1265313.HRUBRA_00577 (degree 1058),
-1265313.HRUBRA_02406 (degree 916), 1265313.HRUBRA_01742 (degree 889) and 1265313.HRUBRA_00495
+The undirected graph Haliea rubra has 2828 nodes and 229457 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.05740 and has 9 connected components, where the component with most nodes
+has 2810 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 136, the mean node degree is 162.28, and the
+node degree mode is 1. The top 5 most central nodes are 1265313.HRUBRA_02441
+(degree 1109), 1265313.HRUBRA_00577 (degree 1058), 1265313.HRUBRA_02406
+(degree 916), 1265313.HRUBRA_01742 (degree 889) and 1265313.HRUBRA_00495
 (degree 874).
 
 
@@ -107,13 +108,14 @@ def HalieaRubra(
 	
 	Datetime: 2021-02-02 23:35:47.662504
 	
-	The undirected graph Haliea rubra has 2828 nodes and 229457 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.05740 and has 9
-	connected components, where the component with most nodes has 2810 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 162.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1265313.HRUBRA_02441 (degree 1109), 1265313.HRUBRA_00577 (degree 1058),
-	1265313.HRUBRA_02406 (degree 916), 1265313.HRUBRA_01742 (degree 889) and 1265313.HRUBRA_00495
+	The undirected graph Haliea rubra has 2828 nodes and 229457 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.05740 and has 9 connected components, where the component with most nodes
+	has 2810 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 136, the mean node degree is 162.28, and the
+	node degree mode is 1. The top 5 most central nodes are 1265313.HRUBRA_02441
+	(degree 1109), 1265313.HRUBRA_00577 (degree 1058), 1265313.HRUBRA_02406
+	(degree 916), 1265313.HRUBRA_01742 (degree 889) and 1265313.HRUBRA_00495
 	(degree 874).
 	
 

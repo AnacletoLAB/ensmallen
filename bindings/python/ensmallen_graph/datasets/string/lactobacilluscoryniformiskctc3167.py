@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:48.590114
 
-The undirected graph Lactobacillus coryniformis KCTC3167 has 2680 nodes and 204222
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05689 and has 13 connected components, where the component with most nodes has
-2645 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 117, the mean node degree is 152.40, and the node degree mode is 3. The
-top 5 most central nodes are 913848.AELK01000178_gene2080 (degree 1053), 913848.AELK01000194_gene143
+The undirected graph Lactobacillus coryniformis KCTC3167 has 2680 nodes
+and 204222 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05689 and has 13 connected components, where the
+component with most nodes has 2645 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 117, the mean node degree
+is 152.40, and the node degree mode is 3. The top 5 most central nodes
+are 913848.AELK01000178_gene2080 (degree 1053), 913848.AELK01000194_gene143
 (degree 932), 913848.AELK01000125_gene1790 (degree 901), 913848.AELK01000061_gene2226
 (degree 817) and 913848.AELK01000053_gene2568 (degree 742).
 
@@ -107,12 +108,13 @@ def LactobacillusCoryniformisKctc3167(
 	
 	Datetime: 2021-02-02 21:55:48.590114
 	
-	The undirected graph Lactobacillus coryniformis KCTC3167 has 2680 nodes and 204222
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05689 and has 13 connected components, where the component with most nodes has
-	2645 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 117, the mean node degree is 152.40, and the node degree mode is 3. The
-	top 5 most central nodes are 913848.AELK01000178_gene2080 (degree 1053), 913848.AELK01000194_gene143
+	The undirected graph Lactobacillus coryniformis KCTC3167 has 2680 nodes
+	and 204222 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05689 and has 13 connected components, where the
+	component with most nodes has 2645 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 117, the mean node degree
+	is 152.40, and the node degree mode is 3. The top 5 most central nodes
+	are 913848.AELK01000178_gene2080 (degree 1053), 913848.AELK01000194_gene143
 	(degree 932), 913848.AELK01000125_gene1790 (degree 901), 913848.AELK01000061_gene2226
 	(degree 817) and 913848.AELK01000053_gene2568 (degree 742).
 	

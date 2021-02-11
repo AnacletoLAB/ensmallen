@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:55.922582
 
-The undirected graph Lactobacillus pentosus has 2936 nodes and 186317 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04324 and
-has 15 connected components, where the component with most nodes has 2904 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 126.92, and the node degree mode is 2. The top 5 most central
-nodes are 1136177.KCA1_1281 (degree 1130), 1136177.KCA1_1717 (degree 858), 1136177.KCA1_0729
-(degree 853), 1136177.KCA1_1385 (degree 804) and 1136177.KCA1_3001 (degree 795).
+The undirected graph Lactobacillus pentosus has 2936 nodes and 186317 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04324 and has 15 connected components, where the component with most
+nodes has 2904 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 126.92, and
+the node degree mode is 2. The top 5 most central nodes are 1136177.KCA1_1281
+(degree 1130), 1136177.KCA1_1717 (degree 858), 1136177.KCA1_0729 (degree
+853), 1136177.KCA1_1385 (degree 804) and 1136177.KCA1_3001 (degree 795).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusPentosus(
 	
 	Datetime: 2021-02-02 22:56:55.922582
 	
-	The undirected graph Lactobacillus pentosus has 2936 nodes and 186317 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04324 and
-	has 15 connected components, where the component with most nodes has 2904 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 126.92, and the node degree mode is 2. The top 5 most central
-	nodes are 1136177.KCA1_1281 (degree 1130), 1136177.KCA1_1717 (degree 858), 1136177.KCA1_0729
-	(degree 853), 1136177.KCA1_1385 (degree 804) and 1136177.KCA1_3001 (degree 795).
+	The undirected graph Lactobacillus pentosus has 2936 nodes and 186317 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04324 and has 15 connected components, where the component with most
+	nodes has 2904 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 126.92, and
+	the node degree mode is 2. The top 5 most central nodes are 1136177.KCA1_1281
+	(degree 1130), 1136177.KCA1_1717 (degree 858), 1136177.KCA1_0729 (degree
+	853), 1136177.KCA1_1385 (degree 804) and 1136177.KCA1_3001 (degree 795).
 	
 
 

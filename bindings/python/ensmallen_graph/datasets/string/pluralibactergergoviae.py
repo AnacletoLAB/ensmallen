@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:23:19.622354
 
-The undirected graph Pluralibacter gergoviae has 4652 nodes and 573564 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05302 and
-has 8 connected components, where the component with most nodes has 4636 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 246.59, and the node degree mode is 3. The top 5 most central
-nodes are 61647.LG71_04435 (degree 1813), 61647.LG71_17940 (degree 1544), 61647.LG71_14900
-(degree 1535), 61647.LG71_11020 (degree 1518) and 61647.LG71_01270 (degree 1458).
+The undirected graph Pluralibacter gergoviae has 4652 nodes and 573564
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05302 and has 8 connected components, where the component
+with most nodes has 4636 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 246.59,
+and the node degree mode is 3. The top 5 most central nodes are 61647.LG71_04435
+(degree 1813), 61647.LG71_17940 (degree 1544), 61647.LG71_14900 (degree
+1535), 61647.LG71_11020 (degree 1518) and 61647.LG71_01270 (degree 1458).
 
 
 References
@@ -106,13 +107,14 @@ def PluralibacterGergoviae(
 	
 	Datetime: 2021-02-02 18:23:19.622354
 	
-	The undirected graph Pluralibacter gergoviae has 4652 nodes and 573564 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05302 and
-	has 8 connected components, where the component with most nodes has 4636 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 246.59, and the node degree mode is 3. The top 5 most central
-	nodes are 61647.LG71_04435 (degree 1813), 61647.LG71_17940 (degree 1544), 61647.LG71_14900
-	(degree 1535), 61647.LG71_11020 (degree 1518) and 61647.LG71_01270 (degree 1458).
+	The undirected graph Pluralibacter gergoviae has 4652 nodes and 573564
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05302 and has 8 connected components, where the component
+	with most nodes has 4636 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 246.59,
+	and the node degree mode is 3. The top 5 most central nodes are 61647.LG71_04435
+	(degree 1813), 61647.LG71_17940 (degree 1544), 61647.LG71_14900 (degree
+	1535), 61647.LG71_11020 (degree 1518) and 61647.LG71_01270 (degree 1458).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:49:30.423703
 
-The undirected multigraph ip-trace has 43823 nodes and 82790 unweighted edges with
-910 different edge types:  the 5 most common are http, smtp, XXX, https and ssc-agent,
-of which none are self-loops and 13286 are parallel. The graph is extremely sparse
-as it has a density of 0.00008 and is connected, as it has a single component. The
-graph median node degree is 1, the mean node degree is 3.78, and the node degree
-mode is 1. The top 5 most central nodes are 128.210.141.0 (degree 18156), 128.210.141.28
-(degree 9615), 128.210.141.150 (degree 2175), 128.210.141.236 (degree 1739) and 128.210.141.80
-(degree 1699).
+The undirected multigraph ip-trace has 43823 nodes and 82790 unweighted
+edges with 910 different edge types:  the 5 most common are http, smtp,
+XXX, https and ssc-agent, of which none are self-loops and 13286 are parallel.
+The graph is extremely sparse as it has a density of 0.00008 and is connected,
+as it has a single component. The graph median node degree is 1, the mean
+node degree is 3.78, and the node degree mode is 1. The top 5 most central
+nodes are 128.210.141.0 (degree 18156), 128.210.141.28 (degree 9615), 128.210.141.150
+(degree 2175), 128.210.141.236 (degree 1739) and 128.210.141.80 (degree
+1699).
 
 
 References
@@ -104,14 +105,15 @@ def IpTrace(
 	
 	Datetime: 2021-02-04 08:49:30.423703
 	
-	The undirected multigraph ip-trace has 43823 nodes and 82790 unweighted edges with
-	910 different edge types:  the 5 most common are http, smtp, XXX, https and ssc-agent,
-	of which none are self-loops and 13286 are parallel. The graph is extremely sparse
-	as it has a density of 0.00008 and is connected, as it has a single component. The
-	graph median node degree is 1, the mean node degree is 3.78, and the node degree
-	mode is 1. The top 5 most central nodes are 128.210.141.0 (degree 18156), 128.210.141.28
-	(degree 9615), 128.210.141.150 (degree 2175), 128.210.141.236 (degree 1739) and 128.210.141.80
-	(degree 1699).
+	The undirected multigraph ip-trace has 43823 nodes and 82790 unweighted
+	edges with 910 different edge types:  the 5 most common are http, smtp,
+	XXX, https and ssc-agent, of which none are self-loops and 13286 are parallel.
+	The graph is extremely sparse as it has a density of 0.00008 and is connected,
+	as it has a single component. The graph median node degree is 1, the mean
+	node degree is 3.78, and the node degree mode is 1. The top 5 most central
+	nodes are 128.210.141.0 (degree 18156), 128.210.141.28 (degree 9615), 128.210.141.150
+	(degree 2175), 128.210.141.236 (degree 1739) and 128.210.141.80 (degree
+	1699).
 	
 
 

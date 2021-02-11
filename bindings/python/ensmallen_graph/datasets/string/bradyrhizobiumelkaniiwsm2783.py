@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:58.751745
 
-The undirected graph Bradyrhizobium elkanii WSM2783 has 8417 nodes and 1643620 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04641
-and has 100 connected components, where the component with most nodes has 8177 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 300, the mean node degree is 390.55, and the node degree mode is 1. The top 5
-most central nodes are 1038860.AXAP01000042_gene71 (degree 4271), 1038860.AXAP01000056_gene3517
+The undirected graph Bradyrhizobium elkanii WSM2783 has 8417 nodes and
+1643620 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04641 and has 100 connected components, where
+the component with most nodes has 8177 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 300, the mean
+node degree is 390.55, and the node degree mode is 1. The top 5 most central
+nodes are 1038860.AXAP01000042_gene71 (degree 4271), 1038860.AXAP01000056_gene3517
 (degree 3335), 1038860.AXAP01000081_gene1567 (degree 3033), 1038860.AXAP01000044_gene7650
 (degree 2774) and 1038860.AXAP01000037_gene3229 (degree 2529).
 
@@ -107,12 +108,13 @@ def BradyrhizobiumElkaniiWsm2783(
 	
 	Datetime: 2021-02-02 22:12:58.751745
 	
-	The undirected graph Bradyrhizobium elkanii WSM2783 has 8417 nodes and 1643620 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04641
-	and has 100 connected components, where the component with most nodes has 8177 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 300, the mean node degree is 390.55, and the node degree mode is 1. The top 5
-	most central nodes are 1038860.AXAP01000042_gene71 (degree 4271), 1038860.AXAP01000056_gene3517
+	The undirected graph Bradyrhizobium elkanii WSM2783 has 8417 nodes and
+	1643620 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04641 and has 100 connected components, where
+	the component with most nodes has 8177 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 300, the mean
+	node degree is 390.55, and the node degree mode is 1. The top 5 most central
+	nodes are 1038860.AXAP01000042_gene71 (degree 4271), 1038860.AXAP01000056_gene3517
 	(degree 3335), 1038860.AXAP01000081_gene1567 (degree 3033), 1038860.AXAP01000044_gene7650
 	(degree 2774) and 1038860.AXAP01000037_gene3229 (degree 2529).
 	

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:24:59.031051
 
-The undirected graph road-belgium-osm has 1441295 nodes and 1549970 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 2.15, and the node degree mode is 2. The top 5 most
-central nodes are 120989 (degree 10), 122166 (degree 8), 55709 (degree 8), 412423
-(degree 7) and 588356 (degree 7).
+The undirected graph road-belgium-osm has 1441295 nodes and 1549970 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.15, and the
+node degree mode is 2. The top 5 most central nodes are 120989 (degree
+10), 122166 (degree 8), 55709 (degree 8), 412423 (degree 7) and 588356
+(degree 7).
 
 
 References
@@ -102,12 +103,13 @@ def RoadBelgiumOsm(
 	
 	Datetime: 2021-02-06 12:24:59.031051
 	
-	The undirected graph road-belgium-osm has 1441295 nodes and 1549970 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 2.15, and the node degree mode is 2. The top 5 most
-	central nodes are 120989 (degree 10), 122166 (degree 8), 55709 (degree 8), 412423
-	(degree 7) and 588356 (degree 7).
+	The undirected graph road-belgium-osm has 1441295 nodes and 1549970 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.15, and the
+	node degree mode is 2. The top 5 most central nodes are 120989 (degree
+	10), 122166 (degree 8), 55709 (degree 8), 412423 (degree 7) and 588356
+	(degree 7).
 	
 
 

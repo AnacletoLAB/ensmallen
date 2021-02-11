@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:39.751270
 
-The undirected graph Hyphomonas sp. 25B141 has 3579 nodes and 331166 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05172 and
-has 17 connected components, where the component with most nodes has 3527 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 185.06, and the node degree mode is 2. The top 5 most central
-nodes are 1280946.HY29_11835 (degree 1209), 1280946.HY29_16955 (degree 1203), 1280946.HY29_15960
-(degree 1195), 1280946.HY29_06995 (degree 1018) and 1280946.HY29_00055 (degree 1015).
+The undirected graph Hyphomonas sp. 25B141 has 3579 nodes and 331166 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05172 and has 17 connected components, where the component with most
+nodes has 3527 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 185.06, and
+the node degree mode is 2. The top 5 most central nodes are 1280946.HY29_11835
+(degree 1209), 1280946.HY29_16955 (degree 1203), 1280946.HY29_15960 (degree
+1195), 1280946.HY29_06995 (degree 1018) and 1280946.HY29_00055 (degree
+1015).
 
 
 References
@@ -106,13 +108,15 @@ def HyphomonasSp.25b141(
 	
 	Datetime: 2021-02-03 21:08:39.751270
 	
-	The undirected graph Hyphomonas sp. 25B141 has 3579 nodes and 331166 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05172 and
-	has 17 connected components, where the component with most nodes has 3527 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 185.06, and the node degree mode is 2. The top 5 most central
-	nodes are 1280946.HY29_11835 (degree 1209), 1280946.HY29_16955 (degree 1203), 1280946.HY29_15960
-	(degree 1195), 1280946.HY29_06995 (degree 1018) and 1280946.HY29_00055 (degree 1015).
+	The undirected graph Hyphomonas sp. 25B141 has 3579 nodes and 331166 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05172 and has 17 connected components, where the component with most
+	nodes has 3527 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 185.06, and
+	the node degree mode is 2. The top 5 most central nodes are 1280946.HY29_11835
+	(degree 1209), 1280946.HY29_16955 (degree 1203), 1280946.HY29_15960 (degree
+	1195), 1280946.HY29_06995 (degree 1018) and 1280946.HY29_00055 (degree
+	1015).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:02.621893
 
-The undirected graph keller5 has 776 nodes and 225990 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.75155
-and is connected, as it has a single component. The graph median node degree is 578,
-the mean node degree is 582.45 and the node degree mode is 576. The top 5 most central
-nodes are 676 (degree 638), 616 (degree 638), 604 (degree 638), 602 (degree 638)
-and 538 (degree 638).
+The undirected graph keller5 has 776 nodes and 225990 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.75155 and is connected, as it has a single component. The
+graph median node degree is 578, the mean node degree is 582.45 and the
+node degree mode is 576. The top 5 most central nodes are 676 (degree 638),
+616 (degree 638), 604 (degree 638), 602 (degree 638) and 538 (degree 638).
 
 
 References
@@ -115,12 +115,12 @@ def Keller5(
 	
 	Datetime: 2021-02-03 22:55:02.621893
 	
-	The undirected graph keller5 has 776 nodes and 225990 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.75155
-	and is connected, as it has a single component. The graph median node degree is 578,
-	the mean node degree is 582.45 and the node degree mode is 576. The top 5 most central
-	nodes are 676 (degree 638), 616 (degree 638), 604 (degree 638), 602 (degree 638)
-	and 538 (degree 638).
+	The undirected graph keller5 has 776 nodes and 225990 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.75155 and is connected, as it has a single component. The
+	graph median node degree is 578, the mean node degree is 582.45 and the
+	node degree mode is 576. The top 5 most central nodes are 676 (degree 638),
+	616 (degree 638), 604 (degree 638), 602 (degree 638) and 538 (degree 638).
 	
 
 

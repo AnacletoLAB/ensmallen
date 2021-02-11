@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:14.983164
 
-The undirected graph Burkholderia gladioli has 6766 nodes and 746497 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03262 and
-has 23 connected components, where the component with most nodes has 6714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 220.66, and the node degree mode is 3. The top 5 most central
-nodes are 999541.bgla_2g21370 (degree 2447), 999541.bgla_2g29730 (degree 2205), 999541.bgla_1g03580
-(degree 2075), 999541.bgla_1g25420 (degree 1840) and 999541.bgla_2g20130 (degree
+The undirected graph Burkholderia gladioli has 6766 nodes and 746497 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03262 and has 23 connected components, where the component with most
+nodes has 6714 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 220.66, and
+the node degree mode is 3. The top 5 most central nodes are 999541.bgla_2g21370
+(degree 2447), 999541.bgla_2g29730 (degree 2205), 999541.bgla_1g03580 (degree
+2075), 999541.bgla_1g25420 (degree 1840) and 999541.bgla_2g20130 (degree
 1694).
 
 
@@ -107,13 +108,14 @@ def BurkholderiaGladioli(
 	
 	Datetime: 2021-02-02 22:06:14.983164
 	
-	The undirected graph Burkholderia gladioli has 6766 nodes and 746497 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03262 and
-	has 23 connected components, where the component with most nodes has 6714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 220.66, and the node degree mode is 3. The top 5 most central
-	nodes are 999541.bgla_2g21370 (degree 2447), 999541.bgla_2g29730 (degree 2205), 999541.bgla_1g03580
-	(degree 2075), 999541.bgla_1g25420 (degree 1840) and 999541.bgla_2g20130 (degree
+	The undirected graph Burkholderia gladioli has 6766 nodes and 746497 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03262 and has 23 connected components, where the component with most
+	nodes has 6714 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 220.66, and
+	the node degree mode is 3. The top 5 most central nodes are 999541.bgla_2g21370
+	(degree 2447), 999541.bgla_2g29730 (degree 2205), 999541.bgla_1g03580 (degree
+	2075), 999541.bgla_1g25420 (degree 1840) and 999541.bgla_2g20130 (degree
 	1694).
 	
 

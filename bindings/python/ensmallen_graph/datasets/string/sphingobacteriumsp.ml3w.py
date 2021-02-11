@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:19:56.916052
 
-The undirected graph Sphingobacterium sp. ML3W has 4008 nodes and 309458 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03854
-and has 39 connected components, where the component with most nodes has 3903 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 154.42, and the node degree mode is 3. The top 5
-most central nodes are 1538644.KO02_23360 (degree 1403), 1538644.KO02_14795 (degree
-988), 1538644.KO02_20705 (degree 978), 1538644.KO02_10660 (degree 889) and 1538644.KO02_06880
-(degree 884).
+The undirected graph Sphingobacterium sp. ML3W has 4008 nodes and 309458
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03854 and has 39 connected components, where the component
+with most nodes has 3903 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 154.42,
+and the node degree mode is 3. The top 5 most central nodes are 1538644.KO02_23360
+(degree 1403), 1538644.KO02_14795 (degree 988), 1538644.KO02_20705 (degree
+978), 1538644.KO02_10660 (degree 889) and 1538644.KO02_06880 (degree 884).
 
 
 References
@@ -107,14 +107,14 @@ def SphingobacteriumSp.Ml3w(
 	
 	Datetime: 2021-02-03 23:19:56.916052
 	
-	The undirected graph Sphingobacterium sp. ML3W has 4008 nodes and 309458 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03854
-	and has 39 connected components, where the component with most nodes has 3903 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 154.42, and the node degree mode is 3. The top 5
-	most central nodes are 1538644.KO02_23360 (degree 1403), 1538644.KO02_14795 (degree
-	988), 1538644.KO02_20705 (degree 978), 1538644.KO02_10660 (degree 889) and 1538644.KO02_06880
-	(degree 884).
+	The undirected graph Sphingobacterium sp. ML3W has 4008 nodes and 309458
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03854 and has 39 connected components, where the component
+	with most nodes has 3903 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 154.42,
+	and the node degree mode is 3. The top 5 most central nodes are 1538644.KO02_23360
+	(degree 1403), 1538644.KO02_14795 (degree 988), 1538644.KO02_20705 (degree
+	978), 1538644.KO02_10660 (degree 889) and 1538644.KO02_06880 (degree 884).
 	
 
 

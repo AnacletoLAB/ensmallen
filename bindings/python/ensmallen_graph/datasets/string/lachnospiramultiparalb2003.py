@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:44:03.418549
 
-The undirected graph Lachnospira multipara LB2003 has 2244 nodes and 200572 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07970
-and has 5 connected components, where the component with most nodes has 2234 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 178.76, and the node degree mode is 9. The top 5
-most central nodes are 1410661.JNKW01000005_gene86 (degree 986), 1410661.JNKW01000012_gene1210
-(degree 938), 1410661.JNKW01000010_gene999 (degree 851), 1410661.JNKW01000006_gene250
-(degree 760) and 1410661.JNKW01000016_gene1131 (degree 718).
+The undirected graph Lachnospira multipara LB2003 has 2244 nodes and 200572
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07970 and has 5 connected components, where the component
+with most nodes has 2234 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 178.76,
+and the node degree mode is 9. The top 5 most central nodes are 1410661.JNKW01000005_gene86
+(degree 986), 1410661.JNKW01000012_gene1210 (degree 938), 1410661.JNKW01000010_gene999
+(degree 851), 1410661.JNKW01000006_gene250 (degree 760) and 1410661.JNKW01000016_gene1131
+(degree 718).
 
 
 References
@@ -107,14 +108,15 @@ def LachnospiraMultiparaLb2003(
 	
 	Datetime: 2021-02-03 22:44:03.418549
 	
-	The undirected graph Lachnospira multipara LB2003 has 2244 nodes and 200572 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07970
-	and has 5 connected components, where the component with most nodes has 2234 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 178.76, and the node degree mode is 9. The top 5
-	most central nodes are 1410661.JNKW01000005_gene86 (degree 986), 1410661.JNKW01000012_gene1210
-	(degree 938), 1410661.JNKW01000010_gene999 (degree 851), 1410661.JNKW01000006_gene250
-	(degree 760) and 1410661.JNKW01000016_gene1131 (degree 718).
+	The undirected graph Lachnospira multipara LB2003 has 2244 nodes and 200572
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07970 and has 5 connected components, where the component
+	with most nodes has 2234 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 178.76,
+	and the node degree mode is 9. The top 5 most central nodes are 1410661.JNKW01000005_gene86
+	(degree 986), 1410661.JNKW01000012_gene1210 (degree 938), 1410661.JNKW01000010_gene999
+	(degree 851), 1410661.JNKW01000006_gene250 (degree 760) and 1410661.JNKW01000016_gene1131
+	(degree 718).
 	
 
 

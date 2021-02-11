@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:46:46.157336
 
-The undirected graph stufe has 1036 nodes and 1868 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00348 and is connected,
-as it has a single component. The graph median node degree is 4, the mean node degree
-is 3.61, and the node degree mode is 4. The top 5 most central nodes are 1033 (degree
-4), 1028 (degree 4), 1023 (degree 4), 1015 (degree 4) and 1026 (degree 4).
+The undirected graph stufe has 1036 nodes and 1868 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00348
+and is connected, as it has a single component. The graph median node degree
+is 4, the mean node degree is 3.61, and the node degree mode is 4. The
+top 5 most central nodes are 1033 (degree 4), 1028 (degree 4), 1023 (degree
+4), 1015 (degree 4) and 1026 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def Stufe(
 	
 	Datetime: 2021-02-06 08:46:46.157336
 	
-	The undirected graph stufe has 1036 nodes and 1868 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00348 and is connected,
-	as it has a single component. The graph median node degree is 4, the mean node degree
-	is 3.61, and the node degree mode is 4. The top 5 most central nodes are 1033 (degree
-	4), 1028 (degree 4), 1023 (degree 4), 1015 (degree 4) and 1026 (degree 4).
+	The undirected graph stufe has 1036 nodes and 1868 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00348
+	and is connected, as it has a single component. The graph median node degree
+	is 4, the mean node degree is 3.61, and the node degree mode is 4. The
+	top 5 most central nodes are 1033 (degree 4), 1028 (degree 4), 1023 (degree
+	4), 1015 (degree 4) and 1026 (degree 4).
 	
 
 

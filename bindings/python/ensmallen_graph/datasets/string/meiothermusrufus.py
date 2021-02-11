@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:50.439685
 
-The undirected graph Meiothermus rufus has 2748 nodes and 172484 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04570 and
-has 4 connected components, where the component with most nodes has 2742 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 125.53, and the node degree mode is 7. The top 5 most central
-nodes are 604331.AUHY01000010_gene287 (degree 950), 604331.AUHY01000006_gene816 (degree
-857), 604331.AUHY01000030_gene965 (degree 846), 604331.AUHY01000046_gene1823 (degree
-837) and 604331.AUHY01000008_gene424 (degree 796).
+The undirected graph Meiothermus rufus has 2748 nodes and 172484 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04570 and has 4 connected components, where the component with most
+nodes has 2742 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 125.53, and
+the node degree mode is 7. The top 5 most central nodes are 604331.AUHY01000010_gene287
+(degree 950), 604331.AUHY01000006_gene816 (degree 857), 604331.AUHY01000030_gene965
+(degree 846), 604331.AUHY01000046_gene1823 (degree 837) and 604331.AUHY01000008_gene424
+(degree 796).
 
 
 References
@@ -107,14 +108,15 @@ def MeiothermusRufus(
 	
 	Datetime: 2021-02-02 21:19:50.439685
 	
-	The undirected graph Meiothermus rufus has 2748 nodes and 172484 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04570 and
-	has 4 connected components, where the component with most nodes has 2742 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 125.53, and the node degree mode is 7. The top 5 most central
-	nodes are 604331.AUHY01000010_gene287 (degree 950), 604331.AUHY01000006_gene816 (degree
-	857), 604331.AUHY01000030_gene965 (degree 846), 604331.AUHY01000046_gene1823 (degree
-	837) and 604331.AUHY01000008_gene424 (degree 796).
+	The undirected graph Meiothermus rufus has 2748 nodes and 172484 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04570 and has 4 connected components, where the component with most
+	nodes has 2742 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 125.53, and
+	the node degree mode is 7. The top 5 most central nodes are 604331.AUHY01000010_gene287
+	(degree 950), 604331.AUHY01000006_gene816 (degree 857), 604331.AUHY01000030_gene965
+	(degree 846), 604331.AUHY01000046_gene1823 (degree 837) and 604331.AUHY01000008_gene424
+	(degree 796).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:34.745519
 
-The undirected graph Prochlorococcus sp. scB245a520K10 has 1765 nodes and 103409
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06643 and has 35 connected components, where the component with most nodes has
-1666 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 102, the mean node degree is 117.18, and the node degree mode is 1. The
-top 5 most central nodes are 1471522.JFNU01000169_gene898 (degree 731), 1471522.JFNU01000202_gene1013
+The undirected graph Prochlorococcus sp. scB245a520K10 has 1765 nodes and
+103409 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06643 and has 35 connected components, where the
+component with most nodes has 1666 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 102, the mean node degree
+is 117.18, and the node degree mode is 1. The top 5 most central nodes
+are 1471522.JFNU01000169_gene898 (degree 731), 1471522.JFNU01000202_gene1013
 (degree 538), 1471522.JFNU01000202_gene1155 (degree 520), 1471522.JFNU01000004_gene377
 (degree 515) and 1471522.JFNU01000202_gene1078 (degree 506).
 
@@ -107,12 +108,13 @@ def ProchlorococcusSp.Scb245a520k10(
 	
 	Datetime: 2021-02-03 23:12:34.745519
 	
-	The undirected graph Prochlorococcus sp. scB245a520K10 has 1765 nodes and 103409
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06643 and has 35 connected components, where the component with most nodes has
-	1666 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 102, the mean node degree is 117.18, and the node degree mode is 1. The
-	top 5 most central nodes are 1471522.JFNU01000169_gene898 (degree 731), 1471522.JFNU01000202_gene1013
+	The undirected graph Prochlorococcus sp. scB245a520K10 has 1765 nodes and
+	103409 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06643 and has 35 connected components, where the
+	component with most nodes has 1666 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 102, the mean node degree
+	is 117.18, and the node degree mode is 1. The top 5 most central nodes
+	are 1471522.JFNU01000169_gene898 (degree 731), 1471522.JFNU01000202_gene1013
 	(degree 538), 1471522.JFNU01000202_gene1155 (degree 520), 1471522.JFNU01000004_gene377
 	(degree 515) and 1471522.JFNU01000202_gene1078 (degree 506).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:05.451857
 
-The undirected graph Mycoplasma agalactiae has 804 nodes and 33583 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10403
-and has 5 connected components, where the component with most nodes has 789 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 61, the mean node degree is 83.54, and the node degree mode is 8. The top 5 most
-central nodes are 2110.MAGa5250 (degree 311), 2110.MAGa2410 (degree 291), 2110.MAGa3530
-(degree 286), 2110.MAGa1500 (degree 285) and 2110.MAGa6140 (degree 273).
+The undirected graph Mycoplasma agalactiae has 804 nodes and 33583 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10403 and has 5 connected components, where the component
+with most nodes has 789 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 61, the mean node degree is 83.54,
+and the node degree mode is 8. The top 5 most central nodes are 2110.MAGa5250
+(degree 311), 2110.MAGa2410 (degree 291), 2110.MAGa3530 (degree 286), 2110.MAGa1500
+(degree 285) and 2110.MAGa6140 (degree 273).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaAgalactiae(
 	
 	Datetime: 2021-02-02 16:25:05.451857
 	
-	The undirected graph Mycoplasma agalactiae has 804 nodes and 33583 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10403
-	and has 5 connected components, where the component with most nodes has 789 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 61, the mean node degree is 83.54, and the node degree mode is 8. The top 5 most
-	central nodes are 2110.MAGa5250 (degree 311), 2110.MAGa2410 (degree 291), 2110.MAGa3530
-	(degree 286), 2110.MAGa1500 (degree 285) and 2110.MAGa6140 (degree 273).
+	The undirected graph Mycoplasma agalactiae has 804 nodes and 33583 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10403 and has 5 connected components, where the component
+	with most nodes has 789 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 61, the mean node degree is 83.54,
+	and the node degree mode is 8. The top 5 most central nodes are 2110.MAGa5250
+	(degree 311), 2110.MAGa2410 (degree 291), 2110.MAGa3530 (degree 286), 2110.MAGa1500
+	(degree 285) and 2110.MAGa6140 (degree 273).
 	
 
 

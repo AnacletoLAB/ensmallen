@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:35.588229
 
-The undirected graph Aspergillus niger has 8729 nodes and 633880 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01664 and
-has 46 connected components, where the component with most nodes has 8634 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 75,
-the mean node degree is 145.24, and the node degree mode is 1. The top 5 most central
-nodes are 5061.CADANGAP00006800 (degree 2182), 5061.CADANGAP00012414 (degree 1579),
-5061.CADANGAP00012192 (degree 1458), 5061.CADANGAP00006420 (degree 1314) and 5061.CADANGAP00008053
+The undirected graph Aspergillus niger has 8729 nodes and 633880 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01664 and has 46 connected components, where the component with most
+nodes has 8634 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 75, the mean node degree is 145.24, and
+the node degree mode is 1. The top 5 most central nodes are 5061.CADANGAP00006800
+(degree 2182), 5061.CADANGAP00012414 (degree 1579), 5061.CADANGAP00012192
+(degree 1458), 5061.CADANGAP00006420 (degree 1314) and 5061.CADANGAP00008053
 (degree 1261).
 
 
@@ -107,13 +108,14 @@ def AspergillusNiger(
 	
 	Datetime: 2021-02-02 17:12:35.588229
 	
-	The undirected graph Aspergillus niger has 8729 nodes and 633880 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01664 and
-	has 46 connected components, where the component with most nodes has 8634 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 75,
-	the mean node degree is 145.24, and the node degree mode is 1. The top 5 most central
-	nodes are 5061.CADANGAP00006800 (degree 2182), 5061.CADANGAP00012414 (degree 1579),
-	5061.CADANGAP00012192 (degree 1458), 5061.CADANGAP00006420 (degree 1314) and 5061.CADANGAP00008053
+	The undirected graph Aspergillus niger has 8729 nodes and 633880 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01664 and has 46 connected components, where the component with most
+	nodes has 8634 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 75, the mean node degree is 145.24, and
+	the node degree mode is 1. The top 5 most central nodes are 5061.CADANGAP00006800
+	(degree 2182), 5061.CADANGAP00012414 (degree 1579), 5061.CADANGAP00012192
+	(degree 1458), 5061.CADANGAP00006420 (degree 1314) and 5061.CADANGAP00008053
 	(degree 1261).
 	
 

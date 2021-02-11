@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:10.458269
 
-The undirected graph Sphingobium ummariense has 4592 nodes and 387655 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03678 and
-has 24 connected components, where the component with most nodes has 4532 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 168.84, and the node degree mode is 3. The top 5 most central
-nodes are 1346791.M529_19275 (degree 1472), 1346791.M529_00795 (degree 1145), 1346791.M529_07065
-(degree 1130), 1346791.M529_15520 (degree 1124) and 1346791.M529_12495 (degree 1101).
+The undirected graph Sphingobium ummariense has 4592 nodes and 387655 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03678 and has 24 connected components, where the component with most
+nodes has 4532 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 168.84, and
+the node degree mode is 3. The top 5 most central nodes are 1346791.M529_19275
+(degree 1472), 1346791.M529_00795 (degree 1145), 1346791.M529_07065 (degree
+1130), 1346791.M529_15520 (degree 1124) and 1346791.M529_12495 (degree
+1101).
 
 
 References
@@ -106,13 +108,15 @@ def SphingobiumUmmariense(
 	
 	Datetime: 2021-02-03 22:03:10.458269
 	
-	The undirected graph Sphingobium ummariense has 4592 nodes and 387655 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03678 and
-	has 24 connected components, where the component with most nodes has 4532 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 168.84, and the node degree mode is 3. The top 5 most central
-	nodes are 1346791.M529_19275 (degree 1472), 1346791.M529_00795 (degree 1145), 1346791.M529_07065
-	(degree 1130), 1346791.M529_15520 (degree 1124) and 1346791.M529_12495 (degree 1101).
+	The undirected graph Sphingobium ummariense has 4592 nodes and 387655 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03678 and has 24 connected components, where the component with most
+	nodes has 4532 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 168.84, and
+	the node degree mode is 3. The top 5 most central nodes are 1346791.M529_19275
+	(degree 1472), 1346791.M529_00795 (degree 1145), 1346791.M529_07065 (degree
+	1130), 1346791.M529_15520 (degree 1124) and 1346791.M529_12495 (degree
+	1101).
 	
 
 

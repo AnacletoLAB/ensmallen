@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:52.544203
 
-The undirected graph Fusarium fujikuroi has 9771 nodes and 1030263 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02158 and
-has 47 connected components, where the component with most nodes has 9668 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 210.88, and the node degree mode is 1. The top 5 most central
-nodes are 5127.CCT71269 (degree 2502), 5127.CCT70325 (degree 2059), 5127.CCT74314
-(degree 2037), 5127.CCT67290 (degree 2021) and 5127.CCT72246 (degree 1877).
+The undirected graph Fusarium fujikuroi has 9771 nodes and 1030263 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02158 and has 47 connected components, where the component with most
+nodes has 9668 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 210.88, and
+the node degree mode is 1. The top 5 most central nodes are 5127.CCT71269
+(degree 2502), 5127.CCT70325 (degree 2059), 5127.CCT74314 (degree 2037),
+5127.CCT67290 (degree 2021) and 5127.CCT72246 (degree 1877).
 
 
 References
@@ -106,13 +107,14 @@ def FusariumFujikuroi(
 	
 	Datetime: 2021-02-02 17:12:52.544203
 	
-	The undirected graph Fusarium fujikuroi has 9771 nodes and 1030263 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02158 and
-	has 47 connected components, where the component with most nodes has 9668 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 210.88, and the node degree mode is 1. The top 5 most central
-	nodes are 5127.CCT71269 (degree 2502), 5127.CCT70325 (degree 2059), 5127.CCT74314
-	(degree 2037), 5127.CCT67290 (degree 2021) and 5127.CCT72246 (degree 1877).
+	The undirected graph Fusarium fujikuroi has 9771 nodes and 1030263 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02158 and has 47 connected components, where the component with most
+	nodes has 9668 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 210.88, and
+	the node degree mode is 1. The top 5 most central nodes are 5127.CCT71269
+	(degree 2502), 5127.CCT70325 (degree 2059), 5127.CCT74314 (degree 2037),
+	5127.CCT67290 (degree 2021) and 5127.CCT72246 (degree 1877).
 	
 
 

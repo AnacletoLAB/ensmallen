@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:28.452014
 
-The undirected graph Thioalkalimicrobium aerophilum has 2061 nodes and 129705 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06110
-and has 4 connected components, where the component with most nodes has 2052 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 125.87, and the node degree mode is 2. The top 5
-most central nodes are 717772.THIAE_10085 (degree 897), 717772.THIAE_07710 (degree
-770), 717772.THIAE_06645 (degree 732), 717772.THIAE_03260 (degree 679) and 717772.THIAE_09745
-(degree 623).
+The undirected graph Thioalkalimicrobium aerophilum has 2061 nodes and
+129705 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06110 and has 4 connected components, where the
+component with most nodes has 2052 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 104, the mean node degree
+is 125.87, and the node degree mode is 2. The top 5 most central nodes
+are 717772.THIAE_10085 (degree 897), 717772.THIAE_07710 (degree 770), 717772.THIAE_06645
+(degree 732), 717772.THIAE_03260 (degree 679) and 717772.THIAE_09745 (degree
+623).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalimicrobiumAerophilum(
 	
 	Datetime: 2021-02-02 21:36:28.452014
 	
-	The undirected graph Thioalkalimicrobium aerophilum has 2061 nodes and 129705 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06110
-	and has 4 connected components, where the component with most nodes has 2052 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 125.87, and the node degree mode is 2. The top 5
-	most central nodes are 717772.THIAE_10085 (degree 897), 717772.THIAE_07710 (degree
-	770), 717772.THIAE_06645 (degree 732), 717772.THIAE_03260 (degree 679) and 717772.THIAE_09745
-	(degree 623).
+	The undirected graph Thioalkalimicrobium aerophilum has 2061 nodes and
+	129705 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06110 and has 4 connected components, where the
+	component with most nodes has 2052 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 104, the mean node degree
+	is 125.87, and the node degree mode is 2. The top 5 most central nodes
+	are 717772.THIAE_10085 (degree 897), 717772.THIAE_07710 (degree 770), 717772.THIAE_06645
+	(degree 732), 717772.THIAE_03260 (degree 679) and 717772.THIAE_09745 (degree
+	623).
 	
 
 

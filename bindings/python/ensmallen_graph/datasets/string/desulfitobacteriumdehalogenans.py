@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:08.932210
 
-The undirected graph Desulfitobacterium dehalogenans has 3976 nodes and 435474 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05511
-and has 21 connected components, where the component with most nodes has 3925 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 219.05, and the node degree mode is 4. The top 5
-most central nodes are 756499.Desde_1951 (degree 1542), 756499.Desde_2867 (degree
-1367), 756499.Desde_2450 (degree 1334), 756499.Desde_4078 (degree 1257) and 756499.Desde_1363
-(degree 1253).
+The undirected graph Desulfitobacterium dehalogenans has 3976 nodes and
+435474 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05511 and has 21 connected components, where the
+component with most nodes has 3925 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+is 219.05, and the node degree mode is 4. The top 5 most central nodes
+are 756499.Desde_1951 (degree 1542), 756499.Desde_2867 (degree 1367), 756499.Desde_2450
+(degree 1334), 756499.Desde_4078 (degree 1257) and 756499.Desde_1363 (degree
+1253).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfitobacteriumDehalogenans(
 	
 	Datetime: 2021-02-02 21:41:08.932210
 	
-	The undirected graph Desulfitobacterium dehalogenans has 3976 nodes and 435474 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05511
-	and has 21 connected components, where the component with most nodes has 3925 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 219.05, and the node degree mode is 4. The top 5
-	most central nodes are 756499.Desde_1951 (degree 1542), 756499.Desde_2867 (degree
-	1367), 756499.Desde_2450 (degree 1334), 756499.Desde_4078 (degree 1257) and 756499.Desde_1363
-	(degree 1253).
+	The undirected graph Desulfitobacterium dehalogenans has 3976 nodes and
+	435474 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05511 and has 21 connected components, where the
+	component with most nodes has 3925 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+	is 219.05, and the node degree mode is 4. The top 5 most central nodes
+	are 756499.Desde_1951 (degree 1542), 756499.Desde_2867 (degree 1367), 756499.Desde_2450
+	(degree 1334), 756499.Desde_4078 (degree 1257) and 756499.Desde_1363 (degree
+	1253).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:05.075100
 
-The undirected graph Treponema socranskii VPIDR56BR1116 has 2593 nodes and 153006
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04553 and has 10 connected components, where the component with most nodes has
-2572 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 82, the mean node degree is 118.01, and the node degree mode is 2. The
-top 5 most central nodes are 1125725.HMPREF1325_1882 (degree 900), 1125725.HMPREF1325_0101
-(degree 807), 1125725.HMPREF1325_1279 (degree 768), 1125725.HMPREF1325_1104 (degree
+The undirected graph Treponema socranskii VPIDR56BR1116 has 2593 nodes
+and 153006 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04553 and has 10 connected components, where the
+component with most nodes has 2572 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+is 118.01, and the node degree mode is 2. The top 5 most central nodes
+are 1125725.HMPREF1325_1882 (degree 900), 1125725.HMPREF1325_0101 (degree
+807), 1125725.HMPREF1325_1279 (degree 768), 1125725.HMPREF1325_1104 (degree
 754) and 1125725.HMPREF1325_1558 (degree 750).
 
 
@@ -107,13 +108,14 @@ def TreponemaSocranskiiVpidr56br1116(
 	
 	Datetime: 2021-02-02 22:54:05.075100
 	
-	The undirected graph Treponema socranskii VPIDR56BR1116 has 2593 nodes and 153006
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04553 and has 10 connected components, where the component with most nodes has
-	2572 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 82, the mean node degree is 118.01, and the node degree mode is 2. The
-	top 5 most central nodes are 1125725.HMPREF1325_1882 (degree 900), 1125725.HMPREF1325_0101
-	(degree 807), 1125725.HMPREF1325_1279 (degree 768), 1125725.HMPREF1325_1104 (degree
+	The undirected graph Treponema socranskii VPIDR56BR1116 has 2593 nodes
+	and 153006 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04553 and has 10 connected components, where the
+	component with most nodes has 2572 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 82, the mean node degree
+	is 118.01, and the node degree mode is 2. The top 5 most central nodes
+	are 1125725.HMPREF1325_1882 (degree 900), 1125725.HMPREF1325_0101 (degree
+	807), 1125725.HMPREF1325_1279 (degree 768), 1125725.HMPREF1325_1104 (degree
 	754) and 1125725.HMPREF1325_1558 (degree 750).
 	
 

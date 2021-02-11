@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:27.792214
 
-The undirected graph Marinomonas sp. MWYL1 has 4426 nodes and 451077 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04606 and
-has 8 connected components, where the component with most nodes has 4409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 203.83, and the node degree mode is 157. The top 5 most central
-nodes are 400668.Mmwyl1_0280 (degree 1507), 400668.Mmwyl1_2022 (degree 1473), 400668.Mmwyl1_3028
-(degree 1319), 400668.Mmwyl1_0357 (degree 1175) and 400668.Mmwyl1_4147 (degree 1125).
+The undirected graph Marinomonas sp. MWYL1 has 4426 nodes and 451077 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04606 and has 8 connected components, where the component with most
+nodes has 4409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 203.83, and
+the node degree mode is 157. The top 5 most central nodes are 400668.Mmwyl1_0280
+(degree 1507), 400668.Mmwyl1_2022 (degree 1473), 400668.Mmwyl1_3028 (degree
+1319), 400668.Mmwyl1_0357 (degree 1175) and 400668.Mmwyl1_4147 (degree
+1125).
 
 
 References
@@ -106,13 +108,15 @@ def MarinomonasSp.Mwyl1(
 	
 	Datetime: 2021-02-02 20:43:27.792214
 	
-	The undirected graph Marinomonas sp. MWYL1 has 4426 nodes and 451077 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04606 and
-	has 8 connected components, where the component with most nodes has 4409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 203.83, and the node degree mode is 157. The top 5 most central
-	nodes are 400668.Mmwyl1_0280 (degree 1507), 400668.Mmwyl1_2022 (degree 1473), 400668.Mmwyl1_3028
-	(degree 1319), 400668.Mmwyl1_0357 (degree 1175) and 400668.Mmwyl1_4147 (degree 1125).
+	The undirected graph Marinomonas sp. MWYL1 has 4426 nodes and 451077 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04606 and has 8 connected components, where the component with most
+	nodes has 4409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 203.83, and
+	the node degree mode is 157. The top 5 most central nodes are 400668.Mmwyl1_0280
+	(degree 1507), 400668.Mmwyl1_2022 (degree 1473), 400668.Mmwyl1_3028 (degree
+	1319), 400668.Mmwyl1_0357 (degree 1175) and 400668.Mmwyl1_4147 (degree
+	1125).
 	
 
 

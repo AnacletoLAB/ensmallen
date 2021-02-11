@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:45.214914
 
-The undirected graph Bradyrhizobium sp. DFCI1 has 7032 nodes and 906831 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03668
-and has 43 connected components, where the component with most nodes has 6935 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 209, the mean node degree is 257.92, and the node degree mode is 1. The top 5
-most central nodes are 1230476.C207_06942 (degree 2900), 1230476.C207_02523 (degree
-2502), 1230476.C207_04934 (degree 2449), 1230476.C207_04935 (degree 2449) and 1230476.C207_06312
-(degree 2412).
+The undirected graph Bradyrhizobium sp. DFCI1 has 7032 nodes and 906831
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03668 and has 43 connected components, where the component
+with most nodes has 6935 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 209, the mean node degree is 257.92,
+and the node degree mode is 1. The top 5 most central nodes are 1230476.C207_06942
+(degree 2900), 1230476.C207_02523 (degree 2502), 1230476.C207_04934 (degree
+2449), 1230476.C207_04935 (degree 2449) and 1230476.C207_06312 (degree
+2412).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Dfci1(
 	
 	Datetime: 2021-02-02 23:27:45.214914
 	
-	The undirected graph Bradyrhizobium sp. DFCI1 has 7032 nodes and 906831 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03668
-	and has 43 connected components, where the component with most nodes has 6935 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 209, the mean node degree is 257.92, and the node degree mode is 1. The top 5
-	most central nodes are 1230476.C207_06942 (degree 2900), 1230476.C207_02523 (degree
-	2502), 1230476.C207_04934 (degree 2449), 1230476.C207_04935 (degree 2449) and 1230476.C207_06312
-	(degree 2412).
+	The undirected graph Bradyrhizobium sp. DFCI1 has 7032 nodes and 906831
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03668 and has 43 connected components, where the component
+	with most nodes has 6935 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 209, the mean node degree is 257.92,
+	and the node degree mode is 1. The top 5 most central nodes are 1230476.C207_06942
+	(degree 2900), 1230476.C207_02523 (degree 2502), 1230476.C207_04934 (degree
+	2449), 1230476.C207_04935 (degree 2449) and 1230476.C207_06312 (degree
+	2412).
 	
 
 

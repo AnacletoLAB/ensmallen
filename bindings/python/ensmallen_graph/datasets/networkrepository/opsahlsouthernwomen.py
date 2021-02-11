@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:20:21.959003
 
-The undirected graph opsahl-southernwomen has 18 nodes and 78 unweighted edges, of
-which 14 are self-loops. The graph is quite dense as it has a density of 0.46405
-and is connected, as it has a single component. The graph median node degree is 8,
-the mean node degree is 7.89, and the node degree mode is 8. The top 5 most central
-nodes are 7 (degree 15), 8 (degree 14), 14 (degree 11), 9 (degree 11) and 10 (degree
-9).
+The undirected graph opsahl-southernwomen has 18 nodes and 78 unweighted
+edges, of which 14 are self-loops. The graph is quite dense as it has a
+density of 0.46405 and is connected, as it has a single component. The
+graph median node degree is 8, the mean node degree is 7.89, and the node
+degree mode is 8. The top 5 most central nodes are 7 (degree 15), 8 (degree
+14), 14 (degree 11), 9 (degree 11) and 10 (degree 9).
 
 
 References
@@ -102,12 +102,12 @@ def OpsahlSouthernwomen(
 	
 	Datetime: 2021-02-06 08:20:21.959003
 	
-	The undirected graph opsahl-southernwomen has 18 nodes and 78 unweighted edges, of
-	which 14 are self-loops. The graph is quite dense as it has a density of 0.46405
-	and is connected, as it has a single component. The graph median node degree is 8,
-	the mean node degree is 7.89, and the node degree mode is 8. The top 5 most central
-	nodes are 7 (degree 15), 8 (degree 14), 14 (degree 11), 9 (degree 11) and 10 (degree
-	9).
+	The undirected graph opsahl-southernwomen has 18 nodes and 78 unweighted
+	edges, of which 14 are self-loops. The graph is quite dense as it has a
+	density of 0.46405 and is connected, as it has a single component. The
+	graph median node degree is 8, the mean node degree is 7.89, and the node
+	degree mode is 8. The top 5 most central nodes are 7 (degree 15), 8 (degree
+	14), 14 (degree 11), 9 (degree 11) and 10 (degree 9).
 	
 
 

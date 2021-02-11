@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:46.605865
 
-The undirected graph Agaricus bisporus has 5788 nodes and 565097 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03374 and
-has 17 connected components, where the component with most nodes has 5756 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 195.27, and the node degree mode is 1. The top 5 most central
-nodes are 5341.XP_007328063.1 (degree 1527), 5341.XP_007325685.1 (degree 1516), 5341.XP_007324924.1
-(degree 1309), 5341.XP_007329485.1 (degree 1219) and 5341.XP_007324949.1 (degree
+The undirected graph Agaricus bisporus has 5788 nodes and 565097 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03374 and has 17 connected components, where the component with most
+nodes has 5756 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 195.27, and
+the node degree mode is 1. The top 5 most central nodes are 5341.XP_007328063.1
+(degree 1527), 5341.XP_007325685.1 (degree 1516), 5341.XP_007324924.1 (degree
+1309), 5341.XP_007329485.1 (degree 1219) and 5341.XP_007324949.1 (degree
 1161).
 
 
@@ -107,13 +108,14 @@ def AgaricusBisporus(
 	
 	Datetime: 2021-02-02 17:13:46.605865
 	
-	The undirected graph Agaricus bisporus has 5788 nodes and 565097 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03374 and
-	has 17 connected components, where the component with most nodes has 5756 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 195.27, and the node degree mode is 1. The top 5 most central
-	nodes are 5341.XP_007328063.1 (degree 1527), 5341.XP_007325685.1 (degree 1516), 5341.XP_007324924.1
-	(degree 1309), 5341.XP_007329485.1 (degree 1219) and 5341.XP_007324949.1 (degree
+	The undirected graph Agaricus bisporus has 5788 nodes and 565097 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03374 and has 17 connected components, where the component with most
+	nodes has 5756 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 195.27, and
+	the node degree mode is 1. The top 5 most central nodes are 5341.XP_007328063.1
+	(degree 1527), 5341.XP_007325685.1 (degree 1516), 5341.XP_007324924.1 (degree
+	1309), 5341.XP_007329485.1 (degree 1219) and 5341.XP_007324949.1 (degree
 	1161).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:42.270740
 
-The undirected graph Blattabacterium sp. Cpu has 548 nodes and 30041 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.20044
-and is connected, as it has a single component. The graph median node degree is 99,
-the mean node degree is 109.64, and the node degree mode is 89. The top 5 most central
-nodes are 1075399.BLBCPU_447 (degree 325), 1075399.BLBCPU_480 (degree 321), 1075399.BLBCPU_217
-(degree 311), 1075399.BLBCPU_192 (degree 289) and 1075399.BLBCPU_087 (degree 277).
+The undirected graph Blattabacterium sp. Cpu has 548 nodes and 30041 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.20044 and is connected, as it has a single component. The
+graph median node degree is 99, the mean node degree is 109.64, and the
+node degree mode is 89. The top 5 most central nodes are 1075399.BLBCPU_447
+(degree 325), 1075399.BLBCPU_480 (degree 321), 1075399.BLBCPU_217 (degree
+311), 1075399.BLBCPU_192 (degree 289) and 1075399.BLBCPU_087 (degree 277).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Cpu(
 	
 	Datetime: 2021-02-02 22:19:42.270740
 	
-	The undirected graph Blattabacterium sp. Cpu has 548 nodes and 30041 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.20044
-	and is connected, as it has a single component. The graph median node degree is 99,
-	the mean node degree is 109.64, and the node degree mode is 89. The top 5 most central
-	nodes are 1075399.BLBCPU_447 (degree 325), 1075399.BLBCPU_480 (degree 321), 1075399.BLBCPU_217
-	(degree 311), 1075399.BLBCPU_192 (degree 289) and 1075399.BLBCPU_087 (degree 277).
+	The undirected graph Blattabacterium sp. Cpu has 548 nodes and 30041 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.20044 and is connected, as it has a single component. The
+	graph median node degree is 99, the mean node degree is 109.64, and the
+	node degree mode is 89. The top 5 most central nodes are 1075399.BLBCPU_447
+	(degree 325), 1075399.BLBCPU_480 (degree 321), 1075399.BLBCPU_217 (degree
+	311), 1075399.BLBCPU_192 (degree 289) and 1075399.BLBCPU_087 (degree 277).
 	
 
 

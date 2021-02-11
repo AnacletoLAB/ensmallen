@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:13.216868
 
-The undirected graph advogato has 6539 nodes, of which 1384 are singletons (all have
-self-loops), and 43277 weighted edges, of which 3992 are self-loops. The graph is
-sparse as it has a density of 0.00193 and has 1441 connected components, where the
-component with most nodes has 5042 nodes and the component with the least nodes has
-a single node. The graph median node degree is 3, the mean node degree is 12.63,
-and the node degree mode is 1. The top 5 most central nodes are 157 (degree 804),
-46 (degree 758), 597 (degree 550), 30 (degree 522) and 328 (degree 406).
+The undirected graph advogato has 6539 nodes, of which 1384 are singletons
+(all have self-loops), and 43277 weighted edges, of which 3992 are self-loops.
+The graph is sparse as it has a density of 0.00193 and has 1441 connected
+components, where the component with most nodes has 5042 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 3, the mean node degree is 12.63, and the node degree mode is
+1. The top 5 most central nodes are 157 (degree 804), 46 (degree 758),
+597 (degree 550), 30 (degree 522) and 328 (degree 406).
 
 
 References
@@ -103,13 +104,14 @@ def Advogato(
 	
 	Datetime: 2021-02-06 10:15:13.216868
 	
-	The undirected graph advogato has 6539 nodes, of which 1384 are singletons (all have
-	self-loops), and 43277 weighted edges, of which 3992 are self-loops. The graph is
-	sparse as it has a density of 0.00193 and has 1441 connected components, where the
-	component with most nodes has 5042 nodes and the component with the least nodes has
-	a single node. The graph median node degree is 3, the mean node degree is 12.63,
-	and the node degree mode is 1. The top 5 most central nodes are 157 (degree 804),
-	46 (degree 758), 597 (degree 550), 30 (degree 522) and 328 (degree 406).
+	The undirected graph advogato has 6539 nodes, of which 1384 are singletons
+	(all have self-loops), and 43277 weighted edges, of which 3992 are self-loops.
+	The graph is sparse as it has a density of 0.00193 and has 1441 connected
+	components, where the component with most nodes has 5042 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 3, the mean node degree is 12.63, and the node degree mode is
+	1. The top 5 most central nodes are 157 (degree 804), 46 (degree 758),
+	597 (degree 550), 30 (degree 522) and 328 (degree 406).
 	
 
 

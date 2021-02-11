@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:50.250761
 
-The undirected graph Clostridiales bacterium 9400853 has 2244 nodes and 145949 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05799
-and has 4 connected components, where the component with most nodes has 2237 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 130.08, and the node degree mode is 6. The top 5 most
-central nodes are 938278.CAJO01000078_gene1130 (degree 936), 938278.CAJO01000064_gene870
+The undirected graph Clostridiales bacterium 9400853 has 2244 nodes and
+145949 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05799 and has 4 connected components, where the
+component with most nodes has 2237 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 95, the mean node degree
+is 130.08, and the node degree mode is 6. The top 5 most central nodes
+are 938278.CAJO01000078_gene1130 (degree 936), 938278.CAJO01000064_gene870
 (degree 927), 938278.CAJO01000003_gene588 (degree 786), 938278.CAJO01000048_gene468
 (degree 753) and 938278.CAJO01000055_gene680 (degree 735).
 
@@ -107,12 +108,13 @@ def ClostridialesBacterium9400853(
 	
 	Datetime: 2021-02-02 22:00:50.250761
 	
-	The undirected graph Clostridiales bacterium 9400853 has 2244 nodes and 145949 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05799
-	and has 4 connected components, where the component with most nodes has 2237 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 130.08, and the node degree mode is 6. The top 5 most
-	central nodes are 938278.CAJO01000078_gene1130 (degree 936), 938278.CAJO01000064_gene870
+	The undirected graph Clostridiales bacterium 9400853 has 2244 nodes and
+	145949 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05799 and has 4 connected components, where the
+	component with most nodes has 2237 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 95, the mean node degree
+	is 130.08, and the node degree mode is 6. The top 5 most central nodes
+	are 938278.CAJO01000078_gene1130 (degree 936), 938278.CAJO01000064_gene870
 	(degree 927), 938278.CAJO01000003_gene588 (degree 786), 938278.CAJO01000048_gene468
 	(degree 753) and 938278.CAJO01000055_gene680 (degree 735).
 	

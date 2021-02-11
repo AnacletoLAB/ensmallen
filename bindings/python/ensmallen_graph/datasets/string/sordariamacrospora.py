@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:10.138443
 
-The undirected graph Sordaria macrospora has 7775 nodes and 643615 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02130 and
-has 74 connected components, where the component with most nodes has 7613 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 165.56, and the node degree mode is 1. The top 5 most central
-nodes are 5147.XP_003350516.1 (degree 1843), 5147.XP_003352805.1 (degree 1326), 5147.XP_003344206.1
-(degree 1260), 5147.XP_003346944.1 (degree 1222) and 5147.XP_003343787.1 (degree
+The undirected graph Sordaria macrospora has 7775 nodes and 643615 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02130 and has 74 connected components, where the component with most
+nodes has 7613 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 165.56, and
+the node degree mode is 1. The top 5 most central nodes are 5147.XP_003350516.1
+(degree 1843), 5147.XP_003352805.1 (degree 1326), 5147.XP_003344206.1 (degree
+1260), 5147.XP_003346944.1 (degree 1222) and 5147.XP_003343787.1 (degree
 1155).
 
 
@@ -107,13 +108,14 @@ def SordariaMacrospora(
 	
 	Datetime: 2021-02-02 17:13:10.138443
 	
-	The undirected graph Sordaria macrospora has 7775 nodes and 643615 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02130 and
-	has 74 connected components, where the component with most nodes has 7613 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 165.56, and the node degree mode is 1. The top 5 most central
-	nodes are 5147.XP_003350516.1 (degree 1843), 5147.XP_003352805.1 (degree 1326), 5147.XP_003344206.1
-	(degree 1260), 5147.XP_003346944.1 (degree 1222) and 5147.XP_003343787.1 (degree
+	The undirected graph Sordaria macrospora has 7775 nodes and 643615 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02130 and has 74 connected components, where the component with most
+	nodes has 7613 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 165.56, and
+	the node degree mode is 1. The top 5 most central nodes are 5147.XP_003350516.1
+	(degree 1843), 5147.XP_003352805.1 (degree 1326), 5147.XP_003344206.1 (degree
+	1260), 5147.XP_003346944.1 (degree 1222) and 5147.XP_003343787.1 (degree
 	1155).
 	
 

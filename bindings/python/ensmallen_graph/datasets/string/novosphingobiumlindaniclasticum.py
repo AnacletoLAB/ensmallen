@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:01.319159
 
-The undirected graph Novosphingobium lindaniclasticum has 4515 nodes and 553402 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05431
-and has 20 connected components, where the component with most nodes has 4464 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 245.14, and the node degree mode is 2. The top 5
-most central nodes are 1096930.L284_04625 (degree 1532), 1096930.L284_21900 (degree
-1410), 1096930.L284_22825 (degree 1345), 1096930.L284_16925 (degree 1337) and 1096930.L284_10270
-(degree 1336).
+The undirected graph Novosphingobium lindaniclasticum has 4515 nodes and
+553402 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05431 and has 20 connected components, where the
+component with most nodes has 4464 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+is 245.14, and the node degree mode is 2. The top 5 most central nodes
+are 1096930.L284_04625 (degree 1532), 1096930.L284_21900 (degree 1410),
+1096930.L284_22825 (degree 1345), 1096930.L284_16925 (degree 1337) and
+1096930.L284_10270 (degree 1336).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumLindaniclasticum(
 	
 	Datetime: 2021-02-02 22:24:01.319159
 	
-	The undirected graph Novosphingobium lindaniclasticum has 4515 nodes and 553402 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05431
-	and has 20 connected components, where the component with most nodes has 4464 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 245.14, and the node degree mode is 2. The top 5
-	most central nodes are 1096930.L284_04625 (degree 1532), 1096930.L284_21900 (degree
-	1410), 1096930.L284_22825 (degree 1345), 1096930.L284_16925 (degree 1337) and 1096930.L284_10270
-	(degree 1336).
+	The undirected graph Novosphingobium lindaniclasticum has 4515 nodes and
+	553402 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05431 and has 20 connected components, where the
+	component with most nodes has 4464 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+	is 245.14, and the node degree mode is 2. The top 5 most central nodes
+	are 1096930.L284_04625 (degree 1532), 1096930.L284_21900 (degree 1410),
+	1096930.L284_22825 (degree 1345), 1096930.L284_16925 (degree 1337) and
+	1096930.L284_10270 (degree 1336).
 	
 
 

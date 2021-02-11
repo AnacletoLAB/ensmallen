@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:09.487553
 
-The undirected graph Meiothermus ruber has 3044 nodes and 264864 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05719 and
-has 12 connected components, where the component with most nodes has 3008 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 174.02, and the node degree mode is 4. The top 5 most central
-nodes are 504728.K649_11105 (degree 1217), 504728.K649_04660 (degree 1001), 504728.K649_01245
-(degree 959), 504728.K649_13545 (degree 919) and 504728.K649_12875 (degree 907).
+The undirected graph Meiothermus ruber has 3044 nodes and 264864 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05719 and has 12 connected components, where the component with most
+nodes has 3008 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 174.02, and
+the node degree mode is 4. The top 5 most central nodes are 504728.K649_11105
+(degree 1217), 504728.K649_04660 (degree 1001), 504728.K649_01245 (degree
+959), 504728.K649_13545 (degree 919) and 504728.K649_12875 (degree 907).
 
 
 References
@@ -106,13 +107,14 @@ def MeiothermusRuber(
 	
 	Datetime: 2021-02-02 21:02:09.487553
 	
-	The undirected graph Meiothermus ruber has 3044 nodes and 264864 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05719 and
-	has 12 connected components, where the component with most nodes has 3008 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 174.02, and the node degree mode is 4. The top 5 most central
-	nodes are 504728.K649_11105 (degree 1217), 504728.K649_04660 (degree 1001), 504728.K649_01245
-	(degree 959), 504728.K649_13545 (degree 919) and 504728.K649_12875 (degree 907).
+	The undirected graph Meiothermus ruber has 3044 nodes and 264864 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05719 and has 12 connected components, where the component with most
+	nodes has 3008 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 174.02, and
+	the node degree mode is 4. The top 5 most central nodes are 504728.K649_11105
+	(degree 1217), 504728.K649_04660 (degree 1001), 504728.K649_01245 (degree
+	959), 504728.K649_13545 (degree 919) and 504728.K649_12875 (degree 907).
 	
 
 

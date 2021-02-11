@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:47.182474
 
-The undirected graph Streptomyces griseofuscus has 7820 nodes and 1352273 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04423
-and has 45 connected components, where the component with most nodes has 7697 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 286, the mean node degree is 345.85, and the node degree mode is 2. The top 5
-most central nodes are 146922.JOFU01000058_gene870 (degree 3870), 146922.JOFU01000003_gene6953
-(degree 2570), 146922.JOFU01000006_gene2920 (degree 2406), 146922.JOFU01000001_gene490
-(degree 2403) and 146922.JOFU01000010_gene1488 (degree 2316).
+The undirected graph Streptomyces griseofuscus has 7820 nodes and 1352273
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04423 and has 45 connected components, where the component
+with most nodes has 7697 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 286, the mean node degree is 345.85,
+and the node degree mode is 2. The top 5 most central nodes are 146922.JOFU01000058_gene870
+(degree 3870), 146922.JOFU01000003_gene6953 (degree 2570), 146922.JOFU01000006_gene2920
+(degree 2406), 146922.JOFU01000001_gene490 (degree 2403) and 146922.JOFU01000010_gene1488
+(degree 2316).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesGriseofuscus(
 	
 	Datetime: 2021-02-02 19:51:47.182474
 	
-	The undirected graph Streptomyces griseofuscus has 7820 nodes and 1352273 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04423
-	and has 45 connected components, where the component with most nodes has 7697 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 286, the mean node degree is 345.85, and the node degree mode is 2. The top 5
-	most central nodes are 146922.JOFU01000058_gene870 (degree 3870), 146922.JOFU01000003_gene6953
-	(degree 2570), 146922.JOFU01000006_gene2920 (degree 2406), 146922.JOFU01000001_gene490
-	(degree 2403) and 146922.JOFU01000010_gene1488 (degree 2316).
+	The undirected graph Streptomyces griseofuscus has 7820 nodes and 1352273
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04423 and has 45 connected components, where the component
+	with most nodes has 7697 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 286, the mean node degree is 345.85,
+	and the node degree mode is 2. The top 5 most central nodes are 146922.JOFU01000058_gene870
+	(degree 3870), 146922.JOFU01000003_gene6953 (degree 2570), 146922.JOFU01000006_gene2920
+	(degree 2406), 146922.JOFU01000001_gene490 (degree 2403) and 146922.JOFU01000010_gene1488
+	(degree 2316).
 	
 
 

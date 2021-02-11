@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:31.946894
 
-The undirected graph Streptomyces sp. GXT6 has 6135 nodes and 1065803 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05664 and
-has 24 connected components, where the component with most nodes has 6077 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 290,
-the mean node degree is 347.45, and the node degree mode is 2. The top 5 most central
-nodes are 711393.AYRX01000080_gene4505 (degree 3158), 711393.AYRX01000022_gene911
-(degree 2649), 711393.AYRX01000021_gene1304 (degree 2243), 711393.AYRX01000013_gene3422
-(degree 2136) and 711393.AYRX01000079_gene5422 (degree 2076).
+The undirected graph Streptomyces sp. GXT6 has 6135 nodes and 1065803 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05664 and has 24 connected components, where the component with most
+nodes has 6077 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 290, the mean node degree is 347.45, and
+the node degree mode is 2. The top 5 most central nodes are 711393.AYRX01000080_gene4505
+(degree 3158), 711393.AYRX01000022_gene911 (degree 2649), 711393.AYRX01000021_gene1304
+(degree 2243), 711393.AYRX01000013_gene3422 (degree 2136) and 711393.AYRX01000079_gene5422
+(degree 2076).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Gxt6(
 	
 	Datetime: 2021-02-02 21:35:31.946894
 	
-	The undirected graph Streptomyces sp. GXT6 has 6135 nodes and 1065803 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05664 and
-	has 24 connected components, where the component with most nodes has 6077 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 290,
-	the mean node degree is 347.45, and the node degree mode is 2. The top 5 most central
-	nodes are 711393.AYRX01000080_gene4505 (degree 3158), 711393.AYRX01000022_gene911
-	(degree 2649), 711393.AYRX01000021_gene1304 (degree 2243), 711393.AYRX01000013_gene3422
-	(degree 2136) and 711393.AYRX01000079_gene5422 (degree 2076).
+	The undirected graph Streptomyces sp. GXT6 has 6135 nodes and 1065803 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05664 and has 24 connected components, where the component with most
+	nodes has 6077 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 290, the mean node degree is 347.45, and
+	the node degree mode is 2. The top 5 most central nodes are 711393.AYRX01000080_gene4505
+	(degree 3158), 711393.AYRX01000022_gene911 (degree 2649), 711393.AYRX01000021_gene1304
+	(degree 2243), 711393.AYRX01000013_gene3422 (degree 2136) and 711393.AYRX01000079_gene5422
+	(degree 2076).
 	
 
 

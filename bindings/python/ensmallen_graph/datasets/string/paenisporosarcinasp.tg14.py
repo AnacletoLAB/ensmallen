@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:48.590362
 
-The undirected graph Paenisporosarcina sp. TG14 has 3568 nodes and 289180 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04544
-and has 18 connected components, where the component with most nodes has 3529 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 162.10, and the node degree mode is 2. The top 5
-most central nodes are 1231057.AMGD01000020_gene3319 (degree 1296), 1231057.AMGD01000084_gene933
-(degree 1084), 1231057.AMGD01000039_gene465 (degree 1027), 1231057.AMGD01000028_gene1939
-(degree 956) and 1231057.AMGD01000021_gene3207 (degree 934).
+The undirected graph Paenisporosarcina sp. TG14 has 3568 nodes and 289180
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04544 and has 18 connected components, where the component
+with most nodes has 3529 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 162.10,
+and the node degree mode is 2. The top 5 most central nodes are 1231057.AMGD01000020_gene3319
+(degree 1296), 1231057.AMGD01000084_gene933 (degree 1084), 1231057.AMGD01000039_gene465
+(degree 1027), 1231057.AMGD01000028_gene1939 (degree 956) and 1231057.AMGD01000021_gene3207
+(degree 934).
 
 
 References
@@ -107,14 +108,15 @@ def PaenisporosarcinaSp.Tg14(
 	
 	Datetime: 2021-02-02 23:27:48.590362
 	
-	The undirected graph Paenisporosarcina sp. TG14 has 3568 nodes and 289180 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04544
-	and has 18 connected components, where the component with most nodes has 3529 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 162.10, and the node degree mode is 2. The top 5
-	most central nodes are 1231057.AMGD01000020_gene3319 (degree 1296), 1231057.AMGD01000084_gene933
-	(degree 1084), 1231057.AMGD01000039_gene465 (degree 1027), 1231057.AMGD01000028_gene1939
-	(degree 956) and 1231057.AMGD01000021_gene3207 (degree 934).
+	The undirected graph Paenisporosarcina sp. TG14 has 3568 nodes and 289180
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04544 and has 18 connected components, where the component
+	with most nodes has 3529 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 162.10,
+	and the node degree mode is 2. The top 5 most central nodes are 1231057.AMGD01000020_gene3319
+	(degree 1296), 1231057.AMGD01000084_gene933 (degree 1084), 1231057.AMGD01000039_gene465
+	(degree 1027), 1231057.AMGD01000028_gene1939 (degree 956) and 1231057.AMGD01000021_gene3207
+	(degree 934).
 	
 
 

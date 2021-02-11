@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:56.333152
 
-The undirected graph Brevibacterium senegalense has 2929 nodes and 280660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06545
-and has 6 connected components, where the component with most nodes has 2919 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 191.64, and the node degree mode is 3. The top 5
-most central nodes are 1033736.CAHK01000046_gene1263 (degree 1061), 1033736.CAHK01000003_gene2726
-(degree 1040), 1033736.CAHK01000003_gene2629 (degree 895), 1033736.CAHK01000009_gene2260
-(degree 894) and 1033736.CAHK01000012_gene2165 (degree 862).
+The undirected graph Brevibacterium senegalense has 2929 nodes and 280660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06545 and has 6 connected components, where the component
+with most nodes has 2919 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 191.64,
+and the node degree mode is 3. The top 5 most central nodes are 1033736.CAHK01000046_gene1263
+(degree 1061), 1033736.CAHK01000003_gene2726 (degree 1040), 1033736.CAHK01000003_gene2629
+(degree 895), 1033736.CAHK01000009_gene2260 (degree 894) and 1033736.CAHK01000012_gene2165
+(degree 862).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacteriumSenegalense(
 	
 	Datetime: 2021-02-02 22:10:56.333152
 	
-	The undirected graph Brevibacterium senegalense has 2929 nodes and 280660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06545
-	and has 6 connected components, where the component with most nodes has 2919 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 191.64, and the node degree mode is 3. The top 5
-	most central nodes are 1033736.CAHK01000046_gene1263 (degree 1061), 1033736.CAHK01000003_gene2726
-	(degree 1040), 1033736.CAHK01000003_gene2629 (degree 895), 1033736.CAHK01000009_gene2260
-	(degree 894) and 1033736.CAHK01000012_gene2165 (degree 862).
+	The undirected graph Brevibacterium senegalense has 2929 nodes and 280660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06545 and has 6 connected components, where the component
+	with most nodes has 2919 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 191.64,
+	and the node degree mode is 3. The top 5 most central nodes are 1033736.CAHK01000046_gene1263
+	(degree 1061), 1033736.CAHK01000003_gene2726 (degree 1040), 1033736.CAHK01000003_gene2629
+	(degree 895), 1033736.CAHK01000009_gene2260 (degree 894) and 1033736.CAHK01000012_gene2165
+	(degree 862).
 	
 
 

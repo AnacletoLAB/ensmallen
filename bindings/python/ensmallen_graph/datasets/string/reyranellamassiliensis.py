@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:15.943318
 
-The undirected graph Reyranella massiliensis has 5484 nodes and 598916 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03984 and
-has 21 connected components, where the component with most nodes has 5428 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 218.42, and the node degree mode is 2. The top 5 most central
-nodes are 1205680.CAKO01000006_gene3395 (degree 1502), 1205680.CAKO01000042_gene5415
-(degree 1484), 1205680.CAKO01000037_gene1298 (degree 1438), 1205680.CAKO01000029_gene5134
-(degree 1305) and 1205680.CAKO01000040_gene531 (degree 1277).
+The undirected graph Reyranella massiliensis has 5484 nodes and 598916
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03984 and has 21 connected components, where the component
+with most nodes has 5428 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 218.42,
+and the node degree mode is 2. The top 5 most central nodes are 1205680.CAKO01000006_gene3395
+(degree 1502), 1205680.CAKO01000042_gene5415 (degree 1484), 1205680.CAKO01000037_gene1298
+(degree 1438), 1205680.CAKO01000029_gene5134 (degree 1305) and 1205680.CAKO01000040_gene531
+(degree 1277).
 
 
 References
@@ -107,14 +108,15 @@ def ReyranellaMassiliensis(
 	
 	Datetime: 2021-02-02 23:15:15.943318
 	
-	The undirected graph Reyranella massiliensis has 5484 nodes and 598916 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03984 and
-	has 21 connected components, where the component with most nodes has 5428 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 218.42, and the node degree mode is 2. The top 5 most central
-	nodes are 1205680.CAKO01000006_gene3395 (degree 1502), 1205680.CAKO01000042_gene5415
-	(degree 1484), 1205680.CAKO01000037_gene1298 (degree 1438), 1205680.CAKO01000029_gene5134
-	(degree 1305) and 1205680.CAKO01000040_gene531 (degree 1277).
+	The undirected graph Reyranella massiliensis has 5484 nodes and 598916
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03984 and has 21 connected components, where the component
+	with most nodes has 5428 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 218.42,
+	and the node degree mode is 2. The top 5 most central nodes are 1205680.CAKO01000006_gene3395
+	(degree 1502), 1205680.CAKO01000042_gene5415 (degree 1484), 1205680.CAKO01000037_gene1298
+	(degree 1438), 1205680.CAKO01000029_gene5134 (degree 1305) and 1205680.CAKO01000040_gene531
+	(degree 1277).
 	
 
 

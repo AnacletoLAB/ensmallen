@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:23.690444
 
-The undirected graph Staphylococcus agnetis has 2317 nodes and 143409 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05345 and
-has 7 connected components, where the component with most nodes has 2301 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 123.79, and the node degree mode is 4. The top 5 most central
-nodes are 985762.SAGN_03495 (degree 925), 985762.SAGN_01962 (degree 754), 985762.SAGN_11726
-(degree 698), 985762.SAGN_01967 (degree 688) and 985762.SAGN_01325 (degree 668).
+The undirected graph Staphylococcus agnetis has 2317 nodes and 143409 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05345 and has 7 connected components, where the component with most
+nodes has 2301 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 123.79, and
+the node degree mode is 4. The top 5 most central nodes are 985762.SAGN_03495
+(degree 925), 985762.SAGN_01962 (degree 754), 985762.SAGN_11726 (degree
+698), 985762.SAGN_01967 (degree 688) and 985762.SAGN_01325 (degree 668).
 
 
 References
@@ -106,13 +107,14 @@ def StaphylococcusAgnetis(
 	
 	Datetime: 2021-02-02 22:04:23.690444
 	
-	The undirected graph Staphylococcus agnetis has 2317 nodes and 143409 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05345 and
-	has 7 connected components, where the component with most nodes has 2301 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 123.79, and the node degree mode is 4. The top 5 most central
-	nodes are 985762.SAGN_03495 (degree 925), 985762.SAGN_01962 (degree 754), 985762.SAGN_11726
-	(degree 698), 985762.SAGN_01967 (degree 688) and 985762.SAGN_01325 (degree 668).
+	The undirected graph Staphylococcus agnetis has 2317 nodes and 143409 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05345 and has 7 connected components, where the component with most
+	nodes has 2301 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 123.79, and
+	the node degree mode is 4. The top 5 most central nodes are 985762.SAGN_03495
+	(degree 925), 985762.SAGN_01962 (degree 754), 985762.SAGN_11726 (degree
+	698), 985762.SAGN_01967 (degree 688) and 985762.SAGN_01325 (degree 668).
 	
 
 

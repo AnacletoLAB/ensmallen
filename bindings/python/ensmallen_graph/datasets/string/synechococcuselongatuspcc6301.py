@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:33.237561
 
-The undirected graph Synechococcus elongatus PCC6301 has 2516 nodes and 279119 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08822
-and has 4 connected components, where the component with most nodes has 2510 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 221.88, and the node degree mode is 3. The top 5
-most central nodes are 269084.syc0568_c (degree 1020), 269084.syc1317_d (degree 1010),
-269084.syc1322_d (degree 774), 269084.syc1728_c (degree 773) and 269084.syc1721_c
-(degree 759).
+The undirected graph Synechococcus elongatus PCC6301 has 2516 nodes and
+279119 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08822 and has 4 connected components, where the
+component with most nodes has 2510 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+is 221.88, and the node degree mode is 3. The top 5 most central nodes
+are 269084.syc0568_c (degree 1020), 269084.syc1317_d (degree 1010), 269084.syc1322_d
+(degree 774), 269084.syc1728_c (degree 773) and 269084.syc1721_c (degree
+759).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusElongatusPcc6301(
 	
 	Datetime: 2021-02-02 20:15:33.237561
 	
-	The undirected graph Synechococcus elongatus PCC6301 has 2516 nodes and 279119 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08822
-	and has 4 connected components, where the component with most nodes has 2510 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 221.88, and the node degree mode is 3. The top 5
-	most central nodes are 269084.syc0568_c (degree 1020), 269084.syc1317_d (degree 1010),
-	269084.syc1322_d (degree 774), 269084.syc1728_c (degree 773) and 269084.syc1721_c
-	(degree 759).
+	The undirected graph Synechococcus elongatus PCC6301 has 2516 nodes and
+	279119 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08822 and has 4 connected components, where the
+	component with most nodes has 2510 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+	is 221.88, and the node degree mode is 3. The top 5 most central nodes
+	are 269084.syc0568_c (degree 1020), 269084.syc1317_d (degree 1010), 269084.syc1322_d
+	(degree 774), 269084.syc1728_c (degree 773) and 269084.syc1721_c (degree
+	759).
 	
 
 

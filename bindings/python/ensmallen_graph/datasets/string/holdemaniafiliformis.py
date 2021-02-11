@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:14.179895
 
-The undirected graph Holdemania filiformis has 4148 nodes and 1532797 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.17821
-and has 22 connected components, where the component with most nodes has 4103 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 685, the mean node degree is 739.05, and the node degree mode is 2. The top 5
-most central nodes are 545696.HOLDEFILI_02546 (degree 2561), 545696.HOLDEFILI_00033
-(degree 2465), 545696.HOLDEFILI_03637 (degree 2388), 545696.HOLDEFILI_02610 (degree
-2380) and 545696.HOLDEFILI_03271 (degree 2369).
+The undirected graph Holdemania filiformis has 4148 nodes and 1532797 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17821 and has 22 connected components, where the component
+with most nodes has 4103 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 685, the mean node degree is 739.05,
+and the node degree mode is 2. The top 5 most central nodes are 545696.HOLDEFILI_02546
+(degree 2561), 545696.HOLDEFILI_00033 (degree 2465), 545696.HOLDEFILI_03637
+(degree 2388), 545696.HOLDEFILI_02610 (degree 2380) and 545696.HOLDEFILI_03271
+(degree 2369).
 
 
 References
@@ -107,14 +108,15 @@ def HoldemaniaFiliformis(
 	
 	Datetime: 2021-02-02 21:08:14.179895
 	
-	The undirected graph Holdemania filiformis has 4148 nodes and 1532797 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.17821
-	and has 22 connected components, where the component with most nodes has 4103 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 685, the mean node degree is 739.05, and the node degree mode is 2. The top 5
-	most central nodes are 545696.HOLDEFILI_02546 (degree 2561), 545696.HOLDEFILI_00033
-	(degree 2465), 545696.HOLDEFILI_03637 (degree 2388), 545696.HOLDEFILI_02610 (degree
-	2380) and 545696.HOLDEFILI_03271 (degree 2369).
+	The undirected graph Holdemania filiformis has 4148 nodes and 1532797 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17821 and has 22 connected components, where the component
+	with most nodes has 4103 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 685, the mean node degree is 739.05,
+	and the node degree mode is 2. The top 5 most central nodes are 545696.HOLDEFILI_02546
+	(degree 2561), 545696.HOLDEFILI_00033 (degree 2465), 545696.HOLDEFILI_03637
+	(degree 2388), 545696.HOLDEFILI_02610 (degree 2380) and 545696.HOLDEFILI_03271
+	(degree 2369).
 	
 
 

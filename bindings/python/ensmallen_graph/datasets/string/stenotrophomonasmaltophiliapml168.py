@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:47.178610
 
-The undirected graph Stenotrophomonas maltophilia PML168 has 3703 nodes and 356455
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05200 and has 8 connected components, where the component with most nodes has
-3688 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 164, the mean node degree is 192.52, and the node degree mode is 6. The
-top 5 most central nodes are 1118235.CAJH01000023_gene1661 (degree 1275), 1118235.CAJH01000052_gene3089
+The undirected graph Stenotrophomonas maltophilia PML168 has 3703 nodes
+and 356455 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05200 and has 8 connected components, where the
+component with most nodes has 3688 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+is 192.52, and the node degree mode is 6. The top 5 most central nodes
+are 1118235.CAJH01000023_gene1661 (degree 1275), 1118235.CAJH01000052_gene3089
 (degree 1252), 1118235.CAJH01000024_gene1713 (degree 1156), 1118235.CAJH01000038_gene2374
 (degree 1106) and 1118235.CAJH01000010_gene659 (degree 1101).
 
@@ -107,12 +108,13 @@ def StenotrophomonasMaltophiliaPml168(
 	
 	Datetime: 2021-02-02 22:28:47.178610
 	
-	The undirected graph Stenotrophomonas maltophilia PML168 has 3703 nodes and 356455
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05200 and has 8 connected components, where the component with most nodes has
-	3688 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 164, the mean node degree is 192.52, and the node degree mode is 6. The
-	top 5 most central nodes are 1118235.CAJH01000023_gene1661 (degree 1275), 1118235.CAJH01000052_gene3089
+	The undirected graph Stenotrophomonas maltophilia PML168 has 3703 nodes
+	and 356455 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05200 and has 8 connected components, where the
+	component with most nodes has 3688 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 164, the mean node degree
+	is 192.52, and the node degree mode is 6. The top 5 most central nodes
+	are 1118235.CAJH01000023_gene1661 (degree 1275), 1118235.CAJH01000052_gene3089
 	(degree 1252), 1118235.CAJH01000024_gene1713 (degree 1156), 1118235.CAJH01000038_gene2374
 	(degree 1106) and 1118235.CAJH01000010_gene659 (degree 1101).
 	

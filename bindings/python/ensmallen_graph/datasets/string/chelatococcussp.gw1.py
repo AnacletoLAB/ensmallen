@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:17.519102
 
-The undirected graph Chelatococcus sp. GW1 has 4794 nodes and 707893 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06162 and
-has 6 connected components, where the component with most nodes has 4783 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 250,
-the mean node degree is 295.32, and the node degree mode is 3. The top 5 most central
-nodes are 1211115.ALIQ01000011_gene3932 (degree 1579), 1211115.ALIQ01000049_gene3001
-(degree 1507), 1211115.ALIQ01000214_gene145 (degree 1399), 1211115.ALIQ01000031_gene2254
-(degree 1312) and 1211115.ALIQ01000121_gene4216 (degree 1308).
+The undirected graph Chelatococcus sp. GW1 has 4794 nodes and 707893 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06162 and has 6 connected components, where the component with most
+nodes has 4783 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 250, the mean node degree is 295.32, and
+the node degree mode is 3. The top 5 most central nodes are 1211115.ALIQ01000011_gene3932
+(degree 1579), 1211115.ALIQ01000049_gene3001 (degree 1507), 1211115.ALIQ01000214_gene145
+(degree 1399), 1211115.ALIQ01000031_gene2254 (degree 1312) and 1211115.ALIQ01000121_gene4216
+(degree 1308).
 
 
 References
@@ -107,14 +108,15 @@ def ChelatococcusSp.Gw1(
 	
 	Datetime: 2021-02-02 23:19:17.519102
 	
-	The undirected graph Chelatococcus sp. GW1 has 4794 nodes and 707893 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06162 and
-	has 6 connected components, where the component with most nodes has 4783 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 250,
-	the mean node degree is 295.32, and the node degree mode is 3. The top 5 most central
-	nodes are 1211115.ALIQ01000011_gene3932 (degree 1579), 1211115.ALIQ01000049_gene3001
-	(degree 1507), 1211115.ALIQ01000214_gene145 (degree 1399), 1211115.ALIQ01000031_gene2254
-	(degree 1312) and 1211115.ALIQ01000121_gene4216 (degree 1308).
+	The undirected graph Chelatococcus sp. GW1 has 4794 nodes and 707893 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06162 and has 6 connected components, where the component with most
+	nodes has 4783 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 250, the mean node degree is 295.32, and
+	the node degree mode is 3. The top 5 most central nodes are 1211115.ALIQ01000011_gene3932
+	(degree 1579), 1211115.ALIQ01000049_gene3001 (degree 1507), 1211115.ALIQ01000214_gene145
+	(degree 1399), 1211115.ALIQ01000031_gene2254 (degree 1312) and 1211115.ALIQ01000121_gene4216
+	(degree 1308).
 	
 
 

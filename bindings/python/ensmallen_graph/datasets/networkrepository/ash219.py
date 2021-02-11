@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:37.385473
 
-The undirected graph ash219 has 219 nodes and 435 unweighted edges, of which 4 are
-self-loops. The graph is dense as it has a density of 0.01814 and is connected, as
-it has a single component. The graph median node degree is 2, the mean node degree
-is 3.95, and the node degree mode is 2. The top 5 most central nodes are 39 (degree
-11), 61 (degree 10), 34 (degree 10), 59 (degree 9) and 45 (degree 9).
+The undirected graph ash219 has 219 nodes and 435 unweighted edges, of
+which 4 are self-loops. The graph is dense as it has a density of 0.01814
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 3.95, and the node degree mode is 2. The
+top 5 most central nodes are 39 (degree 11), 61 (degree 10), 34 (degree
+10), 59 (degree 9) and 45 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Ash219(
 	
 	Datetime: 2021-02-06 08:02:37.385473
 	
-	The undirected graph ash219 has 219 nodes and 435 unweighted edges, of which 4 are
-	self-loops. The graph is dense as it has a density of 0.01814 and is connected, as
-	it has a single component. The graph median node degree is 2, the mean node degree
-	is 3.95, and the node degree mode is 2. The top 5 most central nodes are 39 (degree
-	11), 61 (degree 10), 34 (degree 10), 59 (degree 9) and 45 (degree 9).
+	The undirected graph ash219 has 219 nodes and 435 unweighted edges, of
+	which 4 are self-loops. The graph is dense as it has a density of 0.01814
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 3.95, and the node degree mode is 2. The
+	top 5 most central nodes are 39 (degree 11), 61 (degree 10), 34 (degree
+	10), 59 (degree 9) and 45 (degree 9).
 	
 
 

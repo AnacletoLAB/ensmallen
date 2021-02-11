@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:49.005142
 
-The undirected graph Actinomyces urogenitalis DSM15434 has 2371 nodes and 173702
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06182 and has 15 connected components, where the component with most nodes has
-2334 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 122, the mean node degree is 146.52, and the node degree mode is 1. The
-top 5 most central nodes are 525246.HMPREF0058_0716 (degree 836), 525246.HMPREF0058_0360
-(degree 836), 525246.HMPREF0058_0450 (degree 831), 525246.HMPREF0058_1477 (degree
+The undirected graph Actinomyces urogenitalis DSM15434 has 2371 nodes and
+173702 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06182 and has 15 connected components, where the
+component with most nodes has 2334 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 146.52, and the node degree mode is 1. The top 5 most central nodes
+are 525246.HMPREF0058_0716 (degree 836), 525246.HMPREF0058_0360 (degree
+836), 525246.HMPREF0058_0450 (degree 831), 525246.HMPREF0058_1477 (degree
 822) and 525246.HMPREF0058_0259 (degree 771).
 
 
@@ -107,13 +108,14 @@ def ActinomycesUrogenitalisDsm15434(
 	
 	Datetime: 2021-02-02 21:04:49.005142
 	
-	The undirected graph Actinomyces urogenitalis DSM15434 has 2371 nodes and 173702
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06182 and has 15 connected components, where the component with most nodes has
-	2334 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 122, the mean node degree is 146.52, and the node degree mode is 1. The
-	top 5 most central nodes are 525246.HMPREF0058_0716 (degree 836), 525246.HMPREF0058_0360
-	(degree 836), 525246.HMPREF0058_0450 (degree 831), 525246.HMPREF0058_1477 (degree
+	The undirected graph Actinomyces urogenitalis DSM15434 has 2371 nodes and
+	173702 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06182 and has 15 connected components, where the
+	component with most nodes has 2334 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 146.52, and the node degree mode is 1. The top 5 most central nodes
+	are 525246.HMPREF0058_0716 (degree 836), 525246.HMPREF0058_0360 (degree
+	836), 525246.HMPREF0058_0450 (degree 831), 525246.HMPREF0058_1477 (degree
 	822) and 525246.HMPREF0058_0259 (degree 771).
 	
 

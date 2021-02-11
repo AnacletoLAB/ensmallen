@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:34.877229
 
-The undirected graph Staphylococcus caprae has 2545 nodes and 187169 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05782 and
-has 11 connected components, where the component with most nodes has 2513 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 147.09, and the node degree mode is 4. The top 5 most central
-nodes are 525378.HMPREF0793_2423 (degree 944), 525378.HMPREF0793_1123 (degree 863),
-525378.HMPREF0793_1950 (degree 840), 525378.HMPREF0793_1124 (degree 833) and 525378.HMPREF0793_2327
+The undirected graph Staphylococcus caprae has 2545 nodes and 187169 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05782 and has 11 connected components, where the component with most
+nodes has 2513 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 147.09, and
+the node degree mode is 4. The top 5 most central nodes are 525378.HMPREF0793_2423
+(degree 944), 525378.HMPREF0793_1123 (degree 863), 525378.HMPREF0793_1950
+(degree 840), 525378.HMPREF0793_1124 (degree 833) and 525378.HMPREF0793_2327
 (degree 747).
 
 
@@ -107,13 +108,14 @@ def StaphylococcusCaprae(
 	
 	Datetime: 2021-02-02 21:05:34.877229
 	
-	The undirected graph Staphylococcus caprae has 2545 nodes and 187169 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05782 and
-	has 11 connected components, where the component with most nodes has 2513 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 147.09, and the node degree mode is 4. The top 5 most central
-	nodes are 525378.HMPREF0793_2423 (degree 944), 525378.HMPREF0793_1123 (degree 863),
-	525378.HMPREF0793_1950 (degree 840), 525378.HMPREF0793_1124 (degree 833) and 525378.HMPREF0793_2327
+	The undirected graph Staphylococcus caprae has 2545 nodes and 187169 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05782 and has 11 connected components, where the component with most
+	nodes has 2513 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 147.09, and
+	the node degree mode is 4. The top 5 most central nodes are 525378.HMPREF0793_2423
+	(degree 944), 525378.HMPREF0793_1123 (degree 863), 525378.HMPREF0793_1950
+	(degree 840), 525378.HMPREF0793_1124 (degree 833) and 525378.HMPREF0793_2327
 	(degree 747).
 	
 

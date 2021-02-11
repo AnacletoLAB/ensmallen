@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:14.574352
 
-The undirected graph Leucobacter salsicius has 2687 nodes and 158566 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04394 and
-has 16 connected components, where the component with most nodes has 2637 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 118.02, and the node degree mode is 1. The top 5 most central
-nodes are 1238186.AOCN01000027_gene2251 (degree 908), 1238186.AOCN01000019_gene563
-(degree 863), 1238186.AOCN01000009_gene1552 (degree 781), 1238186.AOCN01000019_gene567
-(degree 702) and 1238186.AOCN01000022_gene2526 (degree 690).
+The undirected graph Leucobacter salsicius has 2687 nodes and 158566 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04394 and has 16 connected components, where the component with most
+nodes has 2637 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 118.02, and
+the node degree mode is 1. The top 5 most central nodes are 1238186.AOCN01000027_gene2251
+(degree 908), 1238186.AOCN01000019_gene563 (degree 863), 1238186.AOCN01000009_gene1552
+(degree 781), 1238186.AOCN01000019_gene567 (degree 702) and 1238186.AOCN01000022_gene2526
+(degree 690).
 
 
 References
@@ -107,14 +108,15 @@ def LeucobacterSalsicius(
 	
 	Datetime: 2021-02-02 23:32:14.574352
 	
-	The undirected graph Leucobacter salsicius has 2687 nodes and 158566 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04394 and
-	has 16 connected components, where the component with most nodes has 2637 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 118.02, and the node degree mode is 1. The top 5 most central
-	nodes are 1238186.AOCN01000027_gene2251 (degree 908), 1238186.AOCN01000019_gene563
-	(degree 863), 1238186.AOCN01000009_gene1552 (degree 781), 1238186.AOCN01000019_gene567
-	(degree 702) and 1238186.AOCN01000022_gene2526 (degree 690).
+	The undirected graph Leucobacter salsicius has 2687 nodes and 158566 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04394 and has 16 connected components, where the component with most
+	nodes has 2637 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 118.02, and
+	the node degree mode is 1. The top 5 most central nodes are 1238186.AOCN01000027_gene2251
+	(degree 908), 1238186.AOCN01000019_gene563 (degree 863), 1238186.AOCN01000009_gene1552
+	(degree 781), 1238186.AOCN01000019_gene567 (degree 702) and 1238186.AOCN01000022_gene2526
+	(degree 690).
 	
 
 

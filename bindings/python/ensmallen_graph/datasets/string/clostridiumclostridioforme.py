@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:29.701883
 
-The undirected graph Clostridium clostridioforme has 5194 nodes and 583459 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04326
-and has 20 connected components, where the component with most nodes has 5140 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 224.67, and the node degree mode is 2. The top 5
-most central nodes are 742735.HMPREF9467_01695 (degree 1678), 742735.HMPREF9467_04052
-(degree 1593), 742735.HMPREF9467_02258 (degree 1573), 742735.HMPREF9467_03586 (degree
-1531) and 742735.HMPREF9467_03346 (degree 1476).
+The undirected graph Clostridium clostridioforme has 5194 nodes and 583459
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04326 and has 20 connected components, where the component
+with most nodes has 5140 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 224.67,
+and the node degree mode is 2. The top 5 most central nodes are 742735.HMPREF9467_01695
+(degree 1678), 742735.HMPREF9467_04052 (degree 1593), 742735.HMPREF9467_02258
+(degree 1573), 742735.HMPREF9467_03586 (degree 1531) and 742735.HMPREF9467_03346
+(degree 1476).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumClostridioforme(
 	
 	Datetime: 2021-02-02 21:37:29.701883
 	
-	The undirected graph Clostridium clostridioforme has 5194 nodes and 583459 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04326
-	and has 20 connected components, where the component with most nodes has 5140 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 224.67, and the node degree mode is 2. The top 5
-	most central nodes are 742735.HMPREF9467_01695 (degree 1678), 742735.HMPREF9467_04052
-	(degree 1593), 742735.HMPREF9467_02258 (degree 1573), 742735.HMPREF9467_03586 (degree
-	1531) and 742735.HMPREF9467_03346 (degree 1476).
+	The undirected graph Clostridium clostridioforme has 5194 nodes and 583459
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04326 and has 20 connected components, where the component
+	with most nodes has 5140 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 224.67,
+	and the node degree mode is 2. The top 5 most central nodes are 742735.HMPREF9467_01695
+	(degree 1678), 742735.HMPREF9467_04052 (degree 1593), 742735.HMPREF9467_02258
+	(degree 1573), 742735.HMPREF9467_03586 (degree 1531) and 742735.HMPREF9467_03346
+	(degree 1476).
 	
 
 

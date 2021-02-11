@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:08.803520
 
-The undirected graph Brevibacillus brevis NBRC100599 has 5883 nodes and 809817 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04681
-and has 19 connected components, where the component with most nodes has 5843 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 247, the mean node degree is 275.31, and the node degree mode is 2. The top 5
-most central nodes are 358681.BBR47_39860 (degree 2640), 358681.BBR47_39850 (degree
-2458), 358681.BBR47_50780 (degree 2018), 358681.BBR47_14050 (degree 2012) and 358681.BBR47_39880
-(degree 1868).
+The undirected graph Brevibacillus brevis NBRC100599 has 5883 nodes and
+809817 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04681 and has 19 connected components, where the
+component with most nodes has 5843 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 247, the mean node degree
+is 275.31, and the node degree mode is 2. The top 5 most central nodes
+are 358681.BBR47_39860 (degree 2640), 358681.BBR47_39850 (degree 2458),
+358681.BBR47_50780 (degree 2018), 358681.BBR47_14050 (degree 2012) and
+358681.BBR47_39880 (degree 1868).
 
 
 References
@@ -107,14 +108,15 @@ def BrevibacillusBrevisNbrc100599(
 	
 	Datetime: 2021-02-02 20:34:08.803520
 	
-	The undirected graph Brevibacillus brevis NBRC100599 has 5883 nodes and 809817 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04681
-	and has 19 connected components, where the component with most nodes has 5843 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 247, the mean node degree is 275.31, and the node degree mode is 2. The top 5
-	most central nodes are 358681.BBR47_39860 (degree 2640), 358681.BBR47_39850 (degree
-	2458), 358681.BBR47_50780 (degree 2018), 358681.BBR47_14050 (degree 2012) and 358681.BBR47_39880
-	(degree 1868).
+	The undirected graph Brevibacillus brevis NBRC100599 has 5883 nodes and
+	809817 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04681 and has 19 connected components, where the
+	component with most nodes has 5843 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 247, the mean node degree
+	is 275.31, and the node degree mode is 2. The top 5 most central nodes
+	are 358681.BBR47_39860 (degree 2640), 358681.BBR47_39850 (degree 2458),
+	358681.BBR47_50780 (degree 2018), 358681.BBR47_14050 (degree 2012) and
+	358681.BBR47_39880 (degree 1868).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:41.500183
 
-The undirected graph Neptuniibacter caesariensis has 3660 nodes and 521897 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07794
-and has 13 connected components, where the component with most nodes has 3635 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 285.19, and the node degree mode is 3. The top 5
-most central nodes are 207954.MED92_17015 (degree 1632), 207954.MED92_05243 (degree
-1552), 207954.MED92_12941 (degree 1424), 207954.MED92_14433 (degree 1415) and 207954.MED92_13463
-(degree 1361).
+The undirected graph Neptuniibacter caesariensis has 3660 nodes and 521897
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07794 and has 13 connected components, where the component
+with most nodes has 3635 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 248, the mean node degree is 285.19,
+and the node degree mode is 3. The top 5 most central nodes are 207954.MED92_17015
+(degree 1632), 207954.MED92_05243 (degree 1552), 207954.MED92_12941 (degree
+1424), 207954.MED92_14433 (degree 1415) and 207954.MED92_13463 (degree
+1361).
 
 
 References
@@ -107,14 +108,15 @@ def NeptuniibacterCaesariensis(
 	
 	Datetime: 2021-02-02 20:00:41.500183
 	
-	The undirected graph Neptuniibacter caesariensis has 3660 nodes and 521897 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07794
-	and has 13 connected components, where the component with most nodes has 3635 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 285.19, and the node degree mode is 3. The top 5
-	most central nodes are 207954.MED92_17015 (degree 1632), 207954.MED92_05243 (degree
-	1552), 207954.MED92_12941 (degree 1424), 207954.MED92_14433 (degree 1415) and 207954.MED92_13463
-	(degree 1361).
+	The undirected graph Neptuniibacter caesariensis has 3660 nodes and 521897
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07794 and has 13 connected components, where the component
+	with most nodes has 3635 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 248, the mean node degree is 285.19,
+	and the node degree mode is 3. The top 5 most central nodes are 207954.MED92_17015
+	(degree 1632), 207954.MED92_05243 (degree 1552), 207954.MED92_12941 (degree
+	1424), 207954.MED92_14433 (degree 1415) and 207954.MED92_13463 (degree
+	1361).
 	
 
 

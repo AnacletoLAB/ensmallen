@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:34.623235
 
-The undirected graph Gordonia soli has 4874 nodes and 529013 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04455 and has 29
-connected components, where the component with most nodes has 4789 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 217.08, and the node degree mode is 3. The top 5 most central
-nodes are 1223545.GS4_20_01720 (degree 1613), 1223545.GS4_27_00300 (degree 1419),
-1223545.GS4_29_00160 (degree 1368), 1223545.GS4_26_01300 (degree 1319) and 1223545.GS4_28_01340
+The undirected graph Gordonia soli has 4874 nodes and 529013 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04455 and has 29 connected components, where the component with most
+nodes has 4789 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 184, the mean node degree is 217.08, and
+the node degree mode is 3. The top 5 most central nodes are 1223545.GS4_20_01720
+(degree 1613), 1223545.GS4_27_00300 (degree 1419), 1223545.GS4_29_00160
+(degree 1368), 1223545.GS4_26_01300 (degree 1319) and 1223545.GS4_28_01340
 (degree 1295).
 
 
@@ -107,13 +108,14 @@ def GordoniaSoli(
 	
 	Datetime: 2021-02-02 23:24:34.623235
 	
-	The undirected graph Gordonia soli has 4874 nodes and 529013 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04455 and has 29
-	connected components, where the component with most nodes has 4789 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 217.08, and the node degree mode is 3. The top 5 most central
-	nodes are 1223545.GS4_20_01720 (degree 1613), 1223545.GS4_27_00300 (degree 1419),
-	1223545.GS4_29_00160 (degree 1368), 1223545.GS4_26_01300 (degree 1319) and 1223545.GS4_28_01340
+	The undirected graph Gordonia soli has 4874 nodes and 529013 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04455 and has 29 connected components, where the component with most
+	nodes has 4789 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 184, the mean node degree is 217.08, and
+	the node degree mode is 3. The top 5 most central nodes are 1223545.GS4_20_01720
+	(degree 1613), 1223545.GS4_27_00300 (degree 1419), 1223545.GS4_29_00160
+	(degree 1368), 1223545.GS4_26_01300 (degree 1319) and 1223545.GS4_28_01340
 	(degree 1295).
 	
 

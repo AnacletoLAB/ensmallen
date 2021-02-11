@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:30.595405
 
-The undirected graph Meiothermus cerbereus has 2823 nodes and 177678 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04461 and
-has 7 connected components, where the component with most nodes has 2810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 125.88, and the node degree mode is 4. The top 5 most central
-nodes are 1122221.JHVI01000025_gene16 (degree 1045), 1122221.JHVI01000004_gene206
-(degree 853), 1122221.JHVI01000021_gene2407 (degree 844), 1122221.JHVI01000010_gene2537
-(degree 839) and 1122221.JHVI01000001_gene1886 (degree 788).
+The undirected graph Meiothermus cerbereus has 2823 nodes and 177678 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04461 and has 7 connected components, where the component with most
+nodes has 2810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 125.88, and
+the node degree mode is 4. The top 5 most central nodes are 1122221.JHVI01000025_gene16
+(degree 1045), 1122221.JHVI01000004_gene206 (degree 853), 1122221.JHVI01000021_gene2407
+(degree 844), 1122221.JHVI01000010_gene2537 (degree 839) and 1122221.JHVI01000001_gene1886
+(degree 788).
 
 
 References
@@ -107,14 +108,15 @@ def MeiothermusCerbereus(
 	
 	Datetime: 2021-02-02 22:42:30.595405
 	
-	The undirected graph Meiothermus cerbereus has 2823 nodes and 177678 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04461 and
-	has 7 connected components, where the component with most nodes has 2810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 125.88, and the node degree mode is 4. The top 5 most central
-	nodes are 1122221.JHVI01000025_gene16 (degree 1045), 1122221.JHVI01000004_gene206
-	(degree 853), 1122221.JHVI01000021_gene2407 (degree 844), 1122221.JHVI01000010_gene2537
-	(degree 839) and 1122221.JHVI01000001_gene1886 (degree 788).
+	The undirected graph Meiothermus cerbereus has 2823 nodes and 177678 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04461 and has 7 connected components, where the component with most
+	nodes has 2810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 125.88, and
+	the node degree mode is 4. The top 5 most central nodes are 1122221.JHVI01000025_gene16
+	(degree 1045), 1122221.JHVI01000004_gene206 (degree 853), 1122221.JHVI01000021_gene2407
+	(degree 844), 1122221.JHVI01000010_gene2537 (degree 839) and 1122221.JHVI01000001_gene1886
+	(degree 788).
 	
 
 

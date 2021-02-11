@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:20.335005
 
-The undirected graph Moraxella macacae has 1821 nodes and 104100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06282 and
-has 6 connected components, where the component with most nodes has 1804 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 114.33, and the node degree mode is 3. The top 5 most central
-nodes are 1230338.MOMA_07811 (degree 771), 1230338.MOMA_01165 (degree 741), 1230338.MOMA_00685
-(degree 636), 1230338.MOMA_07471 (degree 636) and 1230338.MOMA_00760 (degree 553).
+The undirected graph Moraxella macacae has 1821 nodes and 104100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06282 and has 6 connected components, where the component with most
+nodes has 1804 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 114.33, and
+the node degree mode is 3. The top 5 most central nodes are 1230338.MOMA_07811
+(degree 771), 1230338.MOMA_01165 (degree 741), 1230338.MOMA_00685 (degree
+636), 1230338.MOMA_07471 (degree 636) and 1230338.MOMA_00760 (degree 553).
 
 
 References
@@ -106,13 +107,14 @@ def MoraxellaMacacae(
 	
 	Datetime: 2021-02-02 23:27:20.335005
 	
-	The undirected graph Moraxella macacae has 1821 nodes and 104100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06282 and
-	has 6 connected components, where the component with most nodes has 1804 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 114.33, and the node degree mode is 3. The top 5 most central
-	nodes are 1230338.MOMA_07811 (degree 771), 1230338.MOMA_01165 (degree 741), 1230338.MOMA_00685
-	(degree 636), 1230338.MOMA_07471 (degree 636) and 1230338.MOMA_00760 (degree 553).
+	The undirected graph Moraxella macacae has 1821 nodes and 104100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06282 and has 6 connected components, where the component with most
+	nodes has 1804 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 114.33, and
+	the node degree mode is 3. The top 5 most central nodes are 1230338.MOMA_07811
+	(degree 771), 1230338.MOMA_01165 (degree 741), 1230338.MOMA_00685 (degree
+	636), 1230338.MOMA_07471 (degree 636) and 1230338.MOMA_00760 (degree 553).
 	
 
 

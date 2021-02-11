@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:26.624743
 
-The undirected graph Rhodobacteraceae bacterium HTCC2150 has 3622 nodes and 345126
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05263 and has 13 connected components, where the component with most nodes has
-3591 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 147, the mean node degree is 190.57, and the node degree mode is 2. The
-top 5 most central nodes are 388401.RB2150_14031 (degree 1368), 388401.RB2150_14301
-(degree 1353), 388401.RB2150_02699 (degree 1274), 388401.RB2150_13391 (degree 1265)
-and 388401.RB2150_13091 (degree 1114).
+The undirected graph Rhodobacteraceae bacterium HTCC2150 has 3622 nodes
+and 345126 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05263 and has 13 connected components, where the
+component with most nodes has 3591 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 147, the mean node degree
+is 190.57, and the node degree mode is 2. The top 5 most central nodes
+are 388401.RB2150_14031 (degree 1368), 388401.RB2150_14301 (degree 1353),
+388401.RB2150_02699 (degree 1274), 388401.RB2150_13391 (degree 1265) and
+388401.RB2150_13091 (degree 1114).
 
 
 References
@@ -107,14 +108,15 @@ def RhodobacteraceaeBacteriumHtcc2150(
 	
 	Datetime: 2021-02-02 20:38:26.624743
 	
-	The undirected graph Rhodobacteraceae bacterium HTCC2150 has 3622 nodes and 345126
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05263 and has 13 connected components, where the component with most nodes has
-	3591 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 147, the mean node degree is 190.57, and the node degree mode is 2. The
-	top 5 most central nodes are 388401.RB2150_14031 (degree 1368), 388401.RB2150_14301
-	(degree 1353), 388401.RB2150_02699 (degree 1274), 388401.RB2150_13391 (degree 1265)
-	and 388401.RB2150_13091 (degree 1114).
+	The undirected graph Rhodobacteraceae bacterium HTCC2150 has 3622 nodes
+	and 345126 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05263 and has 13 connected components, where the
+	component with most nodes has 3591 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 147, the mean node degree
+	is 190.57, and the node degree mode is 2. The top 5 most central nodes
+	are 388401.RB2150_14031 (degree 1368), 388401.RB2150_14301 (degree 1353),
+	388401.RB2150_02699 (degree 1274), 388401.RB2150_13391 (degree 1265) and
+	388401.RB2150_13091 (degree 1114).
 	
 
 

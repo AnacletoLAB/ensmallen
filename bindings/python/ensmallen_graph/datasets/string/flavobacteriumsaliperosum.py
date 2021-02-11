@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:59:22.401773
 
-The undirected graph Flavobacterium saliperosum has 2595 nodes and 184530 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05483
-and has 23 connected components, where the component with most nodes has 2537 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 142.22, and the node degree mode is 2. The top 5
-most central nodes are 1341155.FSS13T_05060 (degree 978), 1341155.FSS13T_18450 (degree
-928), 1341155.FSS13T_12690 (degree 805), 1341155.FSS13T_06960 (degree 799) and 1341155.FSS13T_16410
-(degree 726).
+The undirected graph Flavobacterium saliperosum has 2595 nodes and 184530
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05483 and has 23 connected components, where the component
+with most nodes has 2537 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 142.22,
+and the node degree mode is 2. The top 5 most central nodes are 1341155.FSS13T_05060
+(degree 978), 1341155.FSS13T_18450 (degree 928), 1341155.FSS13T_12690 (degree
+805), 1341155.FSS13T_06960 (degree 799) and 1341155.FSS13T_16410 (degree
+726).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSaliperosum(
 	
 	Datetime: 2021-02-03 21:59:22.401773
 	
-	The undirected graph Flavobacterium saliperosum has 2595 nodes and 184530 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05483
-	and has 23 connected components, where the component with most nodes has 2537 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 142.22, and the node degree mode is 2. The top 5
-	most central nodes are 1341155.FSS13T_05060 (degree 978), 1341155.FSS13T_18450 (degree
-	928), 1341155.FSS13T_12690 (degree 805), 1341155.FSS13T_06960 (degree 799) and 1341155.FSS13T_16410
-	(degree 726).
+	The undirected graph Flavobacterium saliperosum has 2595 nodes and 184530
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05483 and has 23 connected components, where the component
+	with most nodes has 2537 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 142.22,
+	and the node degree mode is 2. The top 5 most central nodes are 1341155.FSS13T_05060
+	(degree 978), 1341155.FSS13T_18450 (degree 928), 1341155.FSS13T_12690 (degree
+	805), 1341155.FSS13T_06960 (degree 799) and 1341155.FSS13T_16410 (degree
+	726).
 	
 
 

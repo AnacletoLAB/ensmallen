@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:42.867254
 
-The undirected graph Chromobacterium violaceum has 4385 nodes and 535139 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05567
-and has 15 connected components, where the component with most nodes has 4348 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 244.08, and the node degree mode is 1. The top 5
-most central nodes are 243365.CV_1621 (degree 2341), 243365.CV_0779 (degree 1838),
-243365.CV_3503 (degree 1805), 243365.CV_2643 (degree 1544) and 243365.CV_1190 (degree
-1528).
+The undirected graph Chromobacterium violaceum has 4385 nodes and 535139
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05567 and has 15 connected components, where the component
+with most nodes has 4348 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 244.08,
+and the node degree mode is 1. The top 5 most central nodes are 243365.CV_1621
+(degree 2341), 243365.CV_0779 (degree 1838), 243365.CV_3503 (degree 1805),
+243365.CV_2643 (degree 1544) and 243365.CV_1190 (degree 1528).
 
 
 References
@@ -107,14 +107,14 @@ def ChromobacteriumViolaceum(
 	
 	Datetime: 2021-02-02 20:09:42.867254
 	
-	The undirected graph Chromobacterium violaceum has 4385 nodes and 535139 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05567
-	and has 15 connected components, where the component with most nodes has 4348 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 244.08, and the node degree mode is 1. The top 5
-	most central nodes are 243365.CV_1621 (degree 2341), 243365.CV_0779 (degree 1838),
-	243365.CV_3503 (degree 1805), 243365.CV_2643 (degree 1544) and 243365.CV_1190 (degree
-	1528).
+	The undirected graph Chromobacterium violaceum has 4385 nodes and 535139
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05567 and has 15 connected components, where the component
+	with most nodes has 4348 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 244.08,
+	and the node degree mode is 1. The top 5 most central nodes are 243365.CV_1621
+	(degree 2341), 243365.CV_0779 (degree 1838), 243365.CV_3503 (degree 1805),
+	243365.CV_2643 (degree 1544) and 243365.CV_1190 (degree 1528).
 	
 
 

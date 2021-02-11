@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:36.343693
 
-The undirected graph Flavobacteriaceae bacterium 351910 has 2496 nodes and 168942
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05426 and has 11 connected components, where the component with most nodes has
-2462 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 112, the mean node degree is 135.37, and the node degree mode is 3. The
-top 5 most central nodes are 531844.FIC_00724 (degree 986), 531844.FIC_01694 (degree
-868), 531844.FIC_01779 (degree 845), 531844.FIC_00540 (degree 771) and 531844.FIC_01278
-(degree 727).
+The undirected graph Flavobacteriaceae bacterium 351910 has 2496 nodes
+and 168942 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05426 and has 11 connected components, where the
+component with most nodes has 2462 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+is 135.37, and the node degree mode is 3. The top 5 most central nodes
+are 531844.FIC_00724 (degree 986), 531844.FIC_01694 (degree 868), 531844.FIC_01779
+(degree 845), 531844.FIC_00540 (degree 771) and 531844.FIC_01278 (degree
+727).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriaceaeBacterium351910(
 	
 	Datetime: 2021-02-02 21:06:36.343693
 	
-	The undirected graph Flavobacteriaceae bacterium 351910 has 2496 nodes and 168942
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05426 and has 11 connected components, where the component with most nodes has
-	2462 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 112, the mean node degree is 135.37, and the node degree mode is 3. The
-	top 5 most central nodes are 531844.FIC_00724 (degree 986), 531844.FIC_01694 (degree
-	868), 531844.FIC_01779 (degree 845), 531844.FIC_00540 (degree 771) and 531844.FIC_01278
-	(degree 727).
+	The undirected graph Flavobacteriaceae bacterium 351910 has 2496 nodes
+	and 168942 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05426 and has 11 connected components, where the
+	component with most nodes has 2462 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 112, the mean node degree
+	is 135.37, and the node degree mode is 3. The top 5 most central nodes
+	are 531844.FIC_00724 (degree 986), 531844.FIC_01694 (degree 868), 531844.FIC_01779
+	(degree 845), 531844.FIC_00540 (degree 771) and 531844.FIC_01278 (degree
+	727).
 	
 
 

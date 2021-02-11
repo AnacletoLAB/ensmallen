@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:23:00.492030
 
-The undirected graph Nasonia vitripennis has 10755 nodes and 1015140 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01755 and
-has 17 connected components, where the component with most nodes has 10719 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 188.78, and the node degree mode is 1. The top 5
-most central nodes are 7425.NV18414-PA (degree 2871), 7425.NV10322-PA (degree 2065),
-7425.NV12466-PA (degree 1851), 7425.NV13733-PA (degree 1839) and 7425.NV13505-PA
-(degree 1822).
+The undirected graph Nasonia vitripennis has 10755 nodes and 1015140 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01755 and has 17 connected components, where the component with most
+nodes has 10719 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 188.78, and
+the node degree mode is 1. The top 5 most central nodes are 7425.NV18414-PA
+(degree 2871), 7425.NV10322-PA (degree 2065), 7425.NV12466-PA (degree 1851),
+7425.NV13733-PA (degree 1839) and 7425.NV13505-PA (degree 1822).
 
 
 References
@@ -107,14 +107,14 @@ def NasoniaVitripennis(
 	
 	Datetime: 2021-02-02 17:23:00.492030
 	
-	The undirected graph Nasonia vitripennis has 10755 nodes and 1015140 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01755 and
-	has 17 connected components, where the component with most nodes has 10719 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 188.78, and the node degree mode is 1. The top 5
-	most central nodes are 7425.NV18414-PA (degree 2871), 7425.NV10322-PA (degree 2065),
-	7425.NV12466-PA (degree 1851), 7425.NV13733-PA (degree 1839) and 7425.NV13505-PA
-	(degree 1822).
+	The undirected graph Nasonia vitripennis has 10755 nodes and 1015140 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01755 and has 17 connected components, where the component with most
+	nodes has 10719 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 188.78, and
+	the node degree mode is 1. The top 5 most central nodes are 7425.NV18414-PA
+	(degree 2871), 7425.NV10322-PA (degree 2065), 7425.NV12466-PA (degree 1851),
+	7425.NV13733-PA (degree 1839) and 7425.NV13505-PA (degree 1822).
 	
 
 

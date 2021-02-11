@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:18.055003
 
-The undirected graph Parvimonas micra has 1664 nodes and 111842 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08083 and
-has 5 connected components, where the component with most nodes has 1654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 134.43, and the node degree mode is 4. The top 5 most central
-nodes are 411465.PEPMIC_00320 (degree 658), 411465.PEPMIC_01321 (degree 637), 411465.PEPMIC_01588
-(degree 572), 411465.PEPMIC_01033 (degree 547) and 411465.PEPMIC_01655 (degree 542).
+The undirected graph Parvimonas micra has 1664 nodes and 111842 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08083 and has 5 connected components, where the component with most
+nodes has 1654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 134.43, and
+the node degree mode is 4. The top 5 most central nodes are 411465.PEPMIC_00320
+(degree 658), 411465.PEPMIC_01321 (degree 637), 411465.PEPMIC_01588 (degree
+572), 411465.PEPMIC_01033 (degree 547) and 411465.PEPMIC_01655 (degree
+542).
 
 
 References
@@ -106,13 +108,15 @@ def ParvimonasMicra(
 	
 	Datetime: 2021-02-02 20:45:18.055003
 	
-	The undirected graph Parvimonas micra has 1664 nodes and 111842 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08083 and
-	has 5 connected components, where the component with most nodes has 1654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 134.43, and the node degree mode is 4. The top 5 most central
-	nodes are 411465.PEPMIC_00320 (degree 658), 411465.PEPMIC_01321 (degree 637), 411465.PEPMIC_01588
-	(degree 572), 411465.PEPMIC_01033 (degree 547) and 411465.PEPMIC_01655 (degree 542).
+	The undirected graph Parvimonas micra has 1664 nodes and 111842 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08083 and has 5 connected components, where the component with most
+	nodes has 1654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 134.43, and
+	the node degree mode is 4. The top 5 most central nodes are 411465.PEPMIC_00320
+	(degree 658), 411465.PEPMIC_01321 (degree 637), 411465.PEPMIC_01588 (degree
+	572), 411465.PEPMIC_01033 (degree 547) and 411465.PEPMIC_01655 (degree
+	542).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:20.829714
 
-The undirected graph Atopobium sp. F0209 has 1880 nodes and 149180 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08446 and
-has 18 connected components, where the component with most nodes has 1839 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 158.70, and the node degree mode is 2. The top 5 most central
-nodes are 1321773.HMPREF9069_00883 (degree 973), 1321773.HMPREF9069_01841 (degree
-890), 1321773.HMPREF9069_00743 (degree 836), 1321773.HMPREF9069_01885 (degree 794)
-and 1321773.HMPREF9069_01306 (degree 768).
+The undirected graph Atopobium sp. F0209 has 1880 nodes and 149180 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08446 and has 18 connected components, where the component with most
+nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 158.70, and
+the node degree mode is 2. The top 5 most central nodes are 1321773.HMPREF9069_00883
+(degree 973), 1321773.HMPREF9069_01841 (degree 890), 1321773.HMPREF9069_00743
+(degree 836), 1321773.HMPREF9069_01885 (degree 794) and 1321773.HMPREF9069_01306
+(degree 768).
 
 
 References
@@ -107,14 +108,15 @@ def AtopobiumSp.F0209(
 	
 	Datetime: 2021-02-03 21:52:20.829714
 	
-	The undirected graph Atopobium sp. F0209 has 1880 nodes and 149180 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08446 and
-	has 18 connected components, where the component with most nodes has 1839 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 158.70, and the node degree mode is 2. The top 5 most central
-	nodes are 1321773.HMPREF9069_00883 (degree 973), 1321773.HMPREF9069_01841 (degree
-	890), 1321773.HMPREF9069_00743 (degree 836), 1321773.HMPREF9069_01885 (degree 794)
-	and 1321773.HMPREF9069_01306 (degree 768).
+	The undirected graph Atopobium sp. F0209 has 1880 nodes and 149180 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08446 and has 18 connected components, where the component with most
+	nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 158.70, and
+	the node degree mode is 2. The top 5 most central nodes are 1321773.HMPREF9069_00883
+	(degree 973), 1321773.HMPREF9069_01841 (degree 890), 1321773.HMPREF9069_00743
+	(degree 836), 1321773.HMPREF9069_01885 (degree 794) and 1321773.HMPREF9069_01306
+	(degree 768).
 	
 
 

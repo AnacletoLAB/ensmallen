@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:28.927441
 
-The undirected graph Leucobacter chironomi has 2582 nodes and 158582 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04759 and
-has 9 connected components, where the component with most nodes has 2560 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 122.84, and the node degree mode is 2. The top 5 most central
-nodes are 1122175.ATXU01000002_gene1223 (degree 924), 1122175.ATXU01000012_gene1682
-(degree 752), 1122175.ATXU01000006_gene2056 (degree 742), 1122175.ATXU01000004_gene2227
-(degree 732) and 1122175.ATXU01000002_gene1297 (degree 726).
+The undirected graph Leucobacter chironomi has 2582 nodes and 158582 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04759 and has 9 connected components, where the component with most
+nodes has 2560 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 122.84, and
+the node degree mode is 2. The top 5 most central nodes are 1122175.ATXU01000002_gene1223
+(degree 924), 1122175.ATXU01000012_gene1682 (degree 752), 1122175.ATXU01000006_gene2056
+(degree 742), 1122175.ATXU01000004_gene2227 (degree 732) and 1122175.ATXU01000002_gene1297
+(degree 726).
 
 
 References
@@ -107,14 +108,15 @@ def LeucobacterChironomi(
 	
 	Datetime: 2021-02-02 22:41:28.927441
 	
-	The undirected graph Leucobacter chironomi has 2582 nodes and 158582 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04759 and
-	has 9 connected components, where the component with most nodes has 2560 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 122.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1122175.ATXU01000002_gene1223 (degree 924), 1122175.ATXU01000012_gene1682
-	(degree 752), 1122175.ATXU01000006_gene2056 (degree 742), 1122175.ATXU01000004_gene2227
-	(degree 732) and 1122175.ATXU01000002_gene1297 (degree 726).
+	The undirected graph Leucobacter chironomi has 2582 nodes and 158582 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04759 and has 9 connected components, where the component with most
+	nodes has 2560 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 122.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1122175.ATXU01000002_gene1223
+	(degree 924), 1122175.ATXU01000012_gene1682 (degree 752), 1122175.ATXU01000006_gene2056
+	(degree 742), 1122175.ATXU01000004_gene2227 (degree 732) and 1122175.ATXU01000002_gene1297
+	(degree 726).
 	
 
 

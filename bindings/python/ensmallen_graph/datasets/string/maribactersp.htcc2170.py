@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:52.354087
 
-The undirected graph Maribacter sp. HTCC2170 has 3387 nodes and 383598 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06690 and
-has 6 connected components, where the component with most nodes has 3375 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 226.51, and the node degree mode is 3. The top 5 most central
-nodes are 313603.FB2170_16521 (degree 1344), 313603.FB2170_03150 (degree 1281), 313603.FB2170_02655
-(degree 1113), 313603.FB2170_16371 (degree 1082) and 313603.FB2170_01881 (degree
+The undirected graph Maribacter sp. HTCC2170 has 3387 nodes and 383598
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06690 and has 6 connected components, where the component
+with most nodes has 3375 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 226.51,
+and the node degree mode is 3. The top 5 most central nodes are 313603.FB2170_16521
+(degree 1344), 313603.FB2170_03150 (degree 1281), 313603.FB2170_02655 (degree
+1113), 313603.FB2170_16371 (degree 1082) and 313603.FB2170_01881 (degree
 988).
 
 
@@ -107,13 +108,14 @@ def MaribacterSp.Htcc2170(
 	
 	Datetime: 2021-02-02 20:23:52.354087
 	
-	The undirected graph Maribacter sp. HTCC2170 has 3387 nodes and 383598 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06690 and
-	has 6 connected components, where the component with most nodes has 3375 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 226.51, and the node degree mode is 3. The top 5 most central
-	nodes are 313603.FB2170_16521 (degree 1344), 313603.FB2170_03150 (degree 1281), 313603.FB2170_02655
-	(degree 1113), 313603.FB2170_16371 (degree 1082) and 313603.FB2170_01881 (degree
+	The undirected graph Maribacter sp. HTCC2170 has 3387 nodes and 383598
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06690 and has 6 connected components, where the component
+	with most nodes has 3375 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 226.51,
+	and the node degree mode is 3. The top 5 most central nodes are 313603.FB2170_16521
+	(degree 1344), 313603.FB2170_03150 (degree 1281), 313603.FB2170_02655 (degree
+	1113), 313603.FB2170_16371 (degree 1082) and 313603.FB2170_01881 (degree
 	988).
 	
 

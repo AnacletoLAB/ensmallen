@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:55.332892
 
-The undirected graph Capnocytophaga sp. F0234 has 2430 nodes and 136712 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04632
-and has 23 connected components, where the component with most nodes has 2359 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 112.52, and the node degree mode is 10. The top 5
-most central nodes are 888059.HMPREF9071_0792 (degree 824), 888059.HMPREF9071_0758
-(degree 703), 888059.HMPREF9071_1049 (degree 597), 888059.HMPREF9071_1037 (degree
-595) and 888059.HMPREF9071_1163 (degree 575).
+The undirected graph Capnocytophaga sp. F0234 has 2430 nodes and 136712
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04632 and has 23 connected components, where the component
+with most nodes has 2359 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 112.52,
+and the node degree mode is 10. The top 5 most central nodes are 888059.HMPREF9071_0792
+(degree 824), 888059.HMPREF9071_0758 (degree 703), 888059.HMPREF9071_1049
+(degree 597), 888059.HMPREF9071_1037 (degree 595) and 888059.HMPREF9071_1163
+(degree 575).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaSp.F0234(
 	
 	Datetime: 2021-02-02 21:52:55.332892
 	
-	The undirected graph Capnocytophaga sp. F0234 has 2430 nodes and 136712 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04632
-	and has 23 connected components, where the component with most nodes has 2359 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 112.52, and the node degree mode is 10. The top 5
-	most central nodes are 888059.HMPREF9071_0792 (degree 824), 888059.HMPREF9071_0758
-	(degree 703), 888059.HMPREF9071_1049 (degree 597), 888059.HMPREF9071_1037 (degree
-	595) and 888059.HMPREF9071_1163 (degree 575).
+	The undirected graph Capnocytophaga sp. F0234 has 2430 nodes and 136712
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04632 and has 23 connected components, where the component
+	with most nodes has 2359 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 112.52,
+	and the node degree mode is 10. The top 5 most central nodes are 888059.HMPREF9071_0792
+	(degree 824), 888059.HMPREF9071_0758 (degree 703), 888059.HMPREF9071_1049
+	(degree 597), 888059.HMPREF9071_1037 (degree 595) and 888059.HMPREF9071_1163
+	(degree 575).
 	
 
 

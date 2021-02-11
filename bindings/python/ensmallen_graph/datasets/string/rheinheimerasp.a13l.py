@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:17.548139
 
-The undirected graph Rheinheimera sp. A13L has 3923 nodes and 577652 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07509 and
-has 14 connected components, where the component with most nodes has 3890 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 274,
-the mean node degree is 294.50, and the node degree mode is 8. The top 5 most central
-nodes are 506534.Rhein_1033 (degree 1500), 506534.Rhein_0069 (degree 1491), 506534.Rhein_3691
-(degree 1298), 506534.Rhein_3752 (degree 1278) and 506534.Rhein_3690 (degree 1243).
+The undirected graph Rheinheimera sp. A13L has 3923 nodes and 577652 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07509 and has 14 connected components, where the component with most
+nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 274, the mean node degree is 294.50, and
+the node degree mode is 8. The top 5 most central nodes are 506534.Rhein_1033
+(degree 1500), 506534.Rhein_0069 (degree 1491), 506534.Rhein_3691 (degree
+1298), 506534.Rhein_3752 (degree 1278) and 506534.Rhein_3690 (degree 1243).
 
 
 References
@@ -106,13 +107,14 @@ def RheinheimeraSp.A13l(
 	
 	Datetime: 2021-02-02 21:02:17.548139
 	
-	The undirected graph Rheinheimera sp. A13L has 3923 nodes and 577652 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07509 and
-	has 14 connected components, where the component with most nodes has 3890 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 274,
-	the mean node degree is 294.50, and the node degree mode is 8. The top 5 most central
-	nodes are 506534.Rhein_1033 (degree 1500), 506534.Rhein_0069 (degree 1491), 506534.Rhein_3691
-	(degree 1298), 506534.Rhein_3752 (degree 1278) and 506534.Rhein_3690 (degree 1243).
+	The undirected graph Rheinheimera sp. A13L has 3923 nodes and 577652 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07509 and has 14 connected components, where the component with most
+	nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 274, the mean node degree is 294.50, and
+	the node degree mode is 8. The top 5 most central nodes are 506534.Rhein_1033
+	(degree 1500), 506534.Rhein_0069 (degree 1491), 506534.Rhein_3691 (degree
+	1298), 506534.Rhein_3752 (degree 1278) and 506534.Rhein_3690 (degree 1243).
 	
 
 

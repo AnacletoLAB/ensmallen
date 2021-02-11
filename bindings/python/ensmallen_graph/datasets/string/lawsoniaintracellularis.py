@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:49.293523
 
-The undirected graph Lawsonia intracellularis has 1197 nodes and 76393 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10672
-and has 6 connected components, where the component with most nodes has 1181 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 127.64, and the node degree mode is 2. The top 5
-most central nodes are 363253.LI0102 (degree 625), 363253.LI0025 (degree 548), 363253.LI0813
+The undirected graph Lawsonia intracellularis has 1197 nodes and 76393
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10672 and has 6 connected components, where the
+component with most nodes has 1181 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+is 127.64, and the node degree mode is 2. The top 5 most central nodes
+are 363253.LI0102 (degree 625), 363253.LI0025 (degree 548), 363253.LI0813
 (degree 542), 363253.LI0238 (degree 498) and 363253.LI0590 (degree 487).
 
 
@@ -106,12 +107,13 @@ def LawsoniaIntracellularis(
 	
 	Datetime: 2021-02-02 20:34:49.293523
 	
-	The undirected graph Lawsonia intracellularis has 1197 nodes and 76393 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10672
-	and has 6 connected components, where the component with most nodes has 1181 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 127.64, and the node degree mode is 2. The top 5
-	most central nodes are 363253.LI0102 (degree 625), 363253.LI0025 (degree 548), 363253.LI0813
+	The undirected graph Lawsonia intracellularis has 1197 nodes and 76393
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10672 and has 6 connected components, where the
+	component with most nodes has 1181 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 114, the mean node degree
+	is 127.64, and the node degree mode is 2. The top 5 most central nodes
+	are 363253.LI0102 (degree 625), 363253.LI0025 (degree 548), 363253.LI0813
 	(degree 542), 363253.LI0238 (degree 498) and 363253.LI0590 (degree 487).
 	
 

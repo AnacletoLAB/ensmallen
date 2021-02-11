@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:39:51.305862
 
-The undirected graph Canis lupus has 19076 nodes and 4651275 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02557 and has 3
-connected components, where the component with most nodes has 19071 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 351,
-the mean node degree is 487.66, and the node degree mode is 10. The top 5 most central
-nodes are 9612.ENSCAFP00000019342 (degree 4474), 9612.ENSCAFP00000014998 (degree
-4302), 9612.ENSCAFP00000014627 (degree 3950), 9612.ENSCAFP00000021603 (degree 3848)
-and 9612.ENSCAFP00000031353 (degree 3755).
+The undirected graph Canis lupus has 19076 nodes and 4651275 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02557 and has 3 connected components, where the component with most nodes
+has 19071 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 351, the mean node degree is 487.66, and the
+node degree mode is 10. The top 5 most central nodes are 9612.ENSCAFP00000019342
+(degree 4474), 9612.ENSCAFP00000014998 (degree 4302), 9612.ENSCAFP00000014627
+(degree 3950), 9612.ENSCAFP00000021603 (degree 3848) and 9612.ENSCAFP00000031353
+(degree 3755).
 
 
 References
@@ -107,14 +108,15 @@ def CanisLupus(
 	
 	Datetime: 2021-02-02 17:39:51.305862
 	
-	The undirected graph Canis lupus has 19076 nodes and 4651275 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02557 and has 3
-	connected components, where the component with most nodes has 19071 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 351,
-	the mean node degree is 487.66, and the node degree mode is 10. The top 5 most central
-	nodes are 9612.ENSCAFP00000019342 (degree 4474), 9612.ENSCAFP00000014998 (degree
-	4302), 9612.ENSCAFP00000014627 (degree 3950), 9612.ENSCAFP00000021603 (degree 3848)
-	and 9612.ENSCAFP00000031353 (degree 3755).
+	The undirected graph Canis lupus has 19076 nodes and 4651275 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02557 and has 3 connected components, where the component with most nodes
+	has 19071 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 351, the mean node degree is 487.66, and the
+	node degree mode is 10. The top 5 most central nodes are 9612.ENSCAFP00000019342
+	(degree 4474), 9612.ENSCAFP00000014998 (degree 4302), 9612.ENSCAFP00000014627
+	(degree 3950), 9612.ENSCAFP00000021603 (degree 3848) and 9612.ENSCAFP00000031353
+	(degree 3755).
 	
 
 

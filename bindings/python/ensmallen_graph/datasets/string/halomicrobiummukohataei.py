@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:53.997647
 
-The undirected graph Halomicrobium mukohataei has 3319 nodes and 563152 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10228 and has 14 connected components, where the component with most nodes has
-3286 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 373, the mean node degree is 339.35, and the node degree mode is 3. The
-top 5 most central nodes are 485914.Hmuk_3067 (degree 1340), 485914.Hmuk_3239 (degree
-1163), 485914.Hmuk_1240 (degree 1147), 485914.Hmuk_0529 (degree 1057) and 485914.Hmuk_2510
-(degree 982).
+The undirected graph Halomicrobium mukohataei has 3319 nodes and 563152
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10228 and has 14 connected components, where the
+component with most nodes has 3286 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 373, the mean node degree
+is 339.35, and the node degree mode is 3. The top 5 most central nodes
+are 485914.Hmuk_3067 (degree 1340), 485914.Hmuk_3239 (degree 1163), 485914.Hmuk_1240
+(degree 1147), 485914.Hmuk_0529 (degree 1057) and 485914.Hmuk_2510 (degree
+982).
 
 
 References
@@ -107,14 +108,15 @@ def HalomicrobiumMukohataei(
 	
 	Datetime: 2021-02-02 20:58:53.997647
 	
-	The undirected graph Halomicrobium mukohataei has 3319 nodes and 563152 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10228 and has 14 connected components, where the component with most nodes has
-	3286 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 373, the mean node degree is 339.35, and the node degree mode is 3. The
-	top 5 most central nodes are 485914.Hmuk_3067 (degree 1340), 485914.Hmuk_3239 (degree
-	1163), 485914.Hmuk_1240 (degree 1147), 485914.Hmuk_0529 (degree 1057) and 485914.Hmuk_2510
-	(degree 982).
+	The undirected graph Halomicrobium mukohataei has 3319 nodes and 563152
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10228 and has 14 connected components, where the
+	component with most nodes has 3286 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 373, the mean node degree
+	is 339.35, and the node degree mode is 3. The top 5 most central nodes
+	are 485914.Hmuk_3067 (degree 1340), 485914.Hmuk_3239 (degree 1163), 485914.Hmuk_1240
+	(degree 1147), 485914.Hmuk_0529 (degree 1057) and 485914.Hmuk_2510 (degree
+	982).
 	
 
 

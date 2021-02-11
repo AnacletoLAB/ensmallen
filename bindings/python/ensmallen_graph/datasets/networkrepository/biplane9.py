@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:16:47.245697
 
-The undirected graph biplane-9 has 21701 nodes and 42038 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00018 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 3.87, and the node degree mode is 4. The top 5 most central nodes
-are 21691 (degree 4), 21689 (degree 4), 21687 (degree 4), 21685 (degree 4) and 21675
-(degree 4).
+The undirected graph biplane-9 has 21701 nodes and 42038 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00018 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 3.87, and the node degree mode
+is 4. The top 5 most central nodes are 21691 (degree 4), 21689 (degree
+4), 21687 (degree 4), 21685 (degree 4) and 21675 (degree 4).
 
 
 References
@@ -102,12 +102,12 @@ def Biplane9(
 	
 	Datetime: 2021-02-06 10:16:47.245697
 	
-	The undirected graph biplane-9 has 21701 nodes and 42038 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00018 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 3.87, and the node degree mode is 4. The top 5 most central nodes
-	are 21691 (degree 4), 21689 (degree 4), 21687 (degree 4), 21685 (degree 4) and 21675
-	(degree 4).
+	The undirected graph biplane-9 has 21701 nodes and 42038 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00018 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 3.87, and the node degree mode
+	is 4. The top 5 most central nodes are 21691 (degree 4), 21689 (degree
+	4), 21687 (degree 4), 21685 (degree 4) and 21675 (degree 4).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:18.437771
 
-The undirected graph Nitrosopumilus sp. AR2 has 1951 nodes and 89182 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04688 and
-has 45 connected components, where the component with most nodes has 1839 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 62,
-the mean node degree is 91.42, and the node degree mode is 3. The top 5 most central
-nodes are 1229909.NSED_00180 (degree 522), 1229909.NSED_05415 (degree 502), 1229909.NSED_08340
-(degree 500), 1229909.NSED_01670 (degree 460) and 1229909.NSED_02765 (degree 453).
+The undirected graph Nitrosopumilus sp. AR2 has 1951 nodes and 89182 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04688 and has 45 connected components, where the component with most
+nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 62, the mean node degree is 91.42, and
+the node degree mode is 3. The top 5 most central nodes are 1229909.NSED_00180
+(degree 522), 1229909.NSED_05415 (degree 502), 1229909.NSED_08340 (degree
+500), 1229909.NSED_01670 (degree 460) and 1229909.NSED_02765 (degree 453).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosopumilusSp.Ar2(
 	
 	Datetime: 2021-02-02 23:27:18.437771
 	
-	The undirected graph Nitrosopumilus sp. AR2 has 1951 nodes and 89182 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04688 and
-	has 45 connected components, where the component with most nodes has 1839 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 62,
-	the mean node degree is 91.42, and the node degree mode is 3. The top 5 most central
-	nodes are 1229909.NSED_00180 (degree 522), 1229909.NSED_05415 (degree 502), 1229909.NSED_08340
-	(degree 500), 1229909.NSED_01670 (degree 460) and 1229909.NSED_02765 (degree 453).
+	The undirected graph Nitrosopumilus sp. AR2 has 1951 nodes and 89182 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04688 and has 45 connected components, where the component with most
+	nodes has 1839 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 62, the mean node degree is 91.42, and
+	the node degree mode is 3. The top 5 most central nodes are 1229909.NSED_00180
+	(degree 522), 1229909.NSED_05415 (degree 502), 1229909.NSED_08340 (degree
+	500), 1229909.NSED_01670 (degree 460) and 1229909.NSED_02765 (degree 453).
 	
 
 

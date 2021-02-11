@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:54.755391
 
-The undirected graph Arthrobacter sp. PAO19 has 3115 nodes and 229976 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04742 and
-has 17 connected components, where the component with most nodes has 3077 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 147.66, and the node degree mode is 1. The top 5 most central
-nodes are 1096756.ATKN01000011_gene401 (degree 1066), 1096756.ATKN01000001_gene2091
-(degree 990), 1096756.ATKN01000001_gene2099 (degree 970), 1096756.ATKN01000008_gene1153
-(degree 865) and 1096756.ATKN01000001_gene2350 (degree 833).
+The undirected graph Arthrobacter sp. PAO19 has 3115 nodes and 229976 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04742 and has 17 connected components, where the component with most
+nodes has 3077 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 147.66, and
+the node degree mode is 1. The top 5 most central nodes are 1096756.ATKN01000011_gene401
+(degree 1066), 1096756.ATKN01000001_gene2091 (degree 990), 1096756.ATKN01000001_gene2099
+(degree 970), 1096756.ATKN01000008_gene1153 (degree 865) and 1096756.ATKN01000001_gene2350
+(degree 833).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.Pao19(
 	
 	Datetime: 2021-02-02 22:23:54.755391
 	
-	The undirected graph Arthrobacter sp. PAO19 has 3115 nodes and 229976 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04742 and
-	has 17 connected components, where the component with most nodes has 3077 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 147.66, and the node degree mode is 1. The top 5 most central
-	nodes are 1096756.ATKN01000011_gene401 (degree 1066), 1096756.ATKN01000001_gene2091
-	(degree 990), 1096756.ATKN01000001_gene2099 (degree 970), 1096756.ATKN01000008_gene1153
-	(degree 865) and 1096756.ATKN01000001_gene2350 (degree 833).
+	The undirected graph Arthrobacter sp. PAO19 has 3115 nodes and 229976 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04742 and has 17 connected components, where the component with most
+	nodes has 3077 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 147.66, and
+	the node degree mode is 1. The top 5 most central nodes are 1096756.ATKN01000011_gene401
+	(degree 1066), 1096756.ATKN01000001_gene2091 (degree 990), 1096756.ATKN01000001_gene2099
+	(degree 970), 1096756.ATKN01000008_gene1153 (degree 865) and 1096756.ATKN01000001_gene2350
+	(degree 833).
 	
 
 

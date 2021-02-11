@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:37.941878
 
-The undirected graph Halomonas xinjiangensis has 3352 nodes and 360843 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06425 and
-has 8 connected components, where the component with most nodes has 3335 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 215.30, and the node degree mode is 1. The top 5 most central
-nodes are 1166948.JPZL01000002_gene1451 (degree 1801), 1166948.JPZL01000001_gene3109
-(degree 1530), 1166948.JPZL01000001_gene3282 (degree 1440), 1166948.JPZL01000003_gene470
-(degree 1139) and 1166948.JPZL01000001_gene3186 (degree 1091).
+The undirected graph Halomonas xinjiangensis has 3352 nodes and 360843
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06425 and has 8 connected components, where the component
+with most nodes has 3335 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 215.30,
+and the node degree mode is 1. The top 5 most central nodes are 1166948.JPZL01000002_gene1451
+(degree 1801), 1166948.JPZL01000001_gene3109 (degree 1530), 1166948.JPZL01000001_gene3282
+(degree 1440), 1166948.JPZL01000003_gene470 (degree 1139) and 1166948.JPZL01000001_gene3186
+(degree 1091).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasXinjiangensis(
 	
 	Datetime: 2021-02-02 23:05:37.941878
 	
-	The undirected graph Halomonas xinjiangensis has 3352 nodes and 360843 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06425 and
-	has 8 connected components, where the component with most nodes has 3335 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 215.30, and the node degree mode is 1. The top 5 most central
-	nodes are 1166948.JPZL01000002_gene1451 (degree 1801), 1166948.JPZL01000001_gene3109
-	(degree 1530), 1166948.JPZL01000001_gene3282 (degree 1440), 1166948.JPZL01000003_gene470
-	(degree 1139) and 1166948.JPZL01000001_gene3186 (degree 1091).
+	The undirected graph Halomonas xinjiangensis has 3352 nodes and 360843
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06425 and has 8 connected components, where the component
+	with most nodes has 3335 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 215.30,
+	and the node degree mode is 1. The top 5 most central nodes are 1166948.JPZL01000002_gene1451
+	(degree 1801), 1166948.JPZL01000001_gene3109 (degree 1530), 1166948.JPZL01000001_gene3282
+	(degree 1440), 1166948.JPZL01000003_gene470 (degree 1139) and 1166948.JPZL01000001_gene3186
+	(degree 1091).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:33:20.613599
 
-The undirected graph Streptococcus anginosus DORA7 has 2223 nodes and 191277 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07745
-and has 18 connected components, where the component with most nodes has 2180 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 172.09, and the node degree mode is 1. The top 5
-most central nodes are 1403946.Q615_SPAC00137G0039 (degree 995), 1403946.Q615_SPAC00027G0030
-(degree 931), 1403946.Q615_SPAC00120G0017 (degree 904), 1403946.Q615_SPAC00113G0435
-(degree 847) and 1403946.Q615_SPAC00130G0031 (degree 832).
+The undirected graph Streptococcus anginosus DORA7 has 2223 nodes and 191277
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07745 and has 18 connected components, where the component
+with most nodes has 2180 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 172.09,
+and the node degree mode is 1. The top 5 most central nodes are 1403946.Q615_SPAC00137G0039
+(degree 995), 1403946.Q615_SPAC00027G0030 (degree 931), 1403946.Q615_SPAC00120G0017
+(degree 904), 1403946.Q615_SPAC00113G0435 (degree 847) and 1403946.Q615_SPAC00130G0031
+(degree 832).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusAnginosusDora7(
 	
 	Datetime: 2021-02-03 22:33:20.613599
 	
-	The undirected graph Streptococcus anginosus DORA7 has 2223 nodes and 191277 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07745
-	and has 18 connected components, where the component with most nodes has 2180 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 172.09, and the node degree mode is 1. The top 5
-	most central nodes are 1403946.Q615_SPAC00137G0039 (degree 995), 1403946.Q615_SPAC00027G0030
-	(degree 931), 1403946.Q615_SPAC00120G0017 (degree 904), 1403946.Q615_SPAC00113G0435
-	(degree 847) and 1403946.Q615_SPAC00130G0031 (degree 832).
+	The undirected graph Streptococcus anginosus DORA7 has 2223 nodes and 191277
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07745 and has 18 connected components, where the component
+	with most nodes has 2180 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 172.09,
+	and the node degree mode is 1. The top 5 most central nodes are 1403946.Q615_SPAC00137G0039
+	(degree 995), 1403946.Q615_SPAC00027G0030 (degree 931), 1403946.Q615_SPAC00120G0017
+	(degree 904), 1403946.Q615_SPAC00113G0435 (degree 847) and 1403946.Q615_SPAC00130G0031
+	(degree 832).
 	
 
 

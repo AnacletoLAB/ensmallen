@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:38.701774
 
-The undirected graph Campylobacter fetus venerealis has 2096 nodes and 136489 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06217
-and has 13 connected components, where the component with most nodes has 2056 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 130.24, and the node degree mode is 3. The top 5
-most central nodes are 983328.AFGH01000004_gene1040 (degree 840), 983328.AFGH01000017_gene1897
+The undirected graph Campylobacter fetus venerealis has 2096 nodes and
+136489 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06217 and has 13 connected components, where the
+component with most nodes has 2056 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 130.24, and the node degree mode is 3. The top 5 most central nodes
+are 983328.AFGH01000004_gene1040 (degree 840), 983328.AFGH01000017_gene1897
 (degree 828), 983328.AFGH01000004_gene1216 (degree 736), 983328.AFGH01000027_gene713
 (degree 673) and 983328.AFGH01000033_gene836 (degree 622).
 
@@ -107,12 +108,13 @@ def CampylobacterFetusVenerealis(
 	
 	Datetime: 2021-02-02 22:03:38.701774
 	
-	The undirected graph Campylobacter fetus venerealis has 2096 nodes and 136489 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06217
-	and has 13 connected components, where the component with most nodes has 2056 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 130.24, and the node degree mode is 3. The top 5
-	most central nodes are 983328.AFGH01000004_gene1040 (degree 840), 983328.AFGH01000017_gene1897
+	The undirected graph Campylobacter fetus venerealis has 2096 nodes and
+	136489 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06217 and has 13 connected components, where the
+	component with most nodes has 2056 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 130.24, and the node degree mode is 3. The top 5 most central nodes
+	are 983328.AFGH01000004_gene1040 (degree 840), 983328.AFGH01000017_gene1897
 	(degree 828), 983328.AFGH01000004_gene1216 (degree 736), 983328.AFGH01000027_gene713
 	(degree 673) and 983328.AFGH01000033_gene836 (degree 622).
 	

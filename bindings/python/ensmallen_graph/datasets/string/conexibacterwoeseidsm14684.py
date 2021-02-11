@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:01.258186
 
-The undirected graph Conexibacter woesei DSM14684 has 5885 nodes and 848975 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-and has 10 connected components, where the component with most nodes has 5861 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 255, the mean node degree is 288.52, and the node degree mode is 3. The top 5
-most central nodes are 469383.Cwoe_5052 (degree 2394), 469383.Cwoe_2867 (degree 2179),
-469383.Cwoe_4691 (degree 2173), 469383.Cwoe_1875 (degree 1908) and 469383.Cwoe_1761
-(degree 1827).
+The undirected graph Conexibacter woesei DSM14684 has 5885 nodes and 848975
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04903 and has 10 connected components, where the component
+with most nodes has 5861 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 255, the mean node degree is 288.52,
+and the node degree mode is 3. The top 5 most central nodes are 469383.Cwoe_5052
+(degree 2394), 469383.Cwoe_2867 (degree 2179), 469383.Cwoe_4691 (degree
+2173), 469383.Cwoe_1875 (degree 1908) and 469383.Cwoe_1761 (degree 1827).
 
 
 References
@@ -107,14 +107,14 @@ def ConexibacterWoeseiDsm14684(
 	
 	Datetime: 2021-02-02 20:55:01.258186
 	
-	The undirected graph Conexibacter woesei DSM14684 has 5885 nodes and 848975 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04903
-	and has 10 connected components, where the component with most nodes has 5861 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 255, the mean node degree is 288.52, and the node degree mode is 3. The top 5
-	most central nodes are 469383.Cwoe_5052 (degree 2394), 469383.Cwoe_2867 (degree 2179),
-	469383.Cwoe_4691 (degree 2173), 469383.Cwoe_1875 (degree 1908) and 469383.Cwoe_1761
-	(degree 1827).
+	The undirected graph Conexibacter woesei DSM14684 has 5885 nodes and 848975
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04903 and has 10 connected components, where the component
+	with most nodes has 5861 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 255, the mean node degree is 288.52,
+	and the node degree mode is 3. The top 5 most central nodes are 469383.Cwoe_5052
+	(degree 2394), 469383.Cwoe_2867 (degree 2179), 469383.Cwoe_4691 (degree
+	2173), 469383.Cwoe_1875 (degree 1908) and 469383.Cwoe_1761 (degree 1827).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:14.039412
 
-The undirected graph Rhodonellum psychrophilum has 4810 nodes and 506417 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04379
-and has 44 connected components, where the component with most nodes has 4704 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 191, the mean node degree is 210.57, and the node degree mode is 2. The top 5
-most central nodes are 1123057.P872_12685 (degree 2057), 1123057.P872_19745 (degree
-1588), 1123057.P872_10685 (degree 1375), 1123057.P872_00220 (degree 1288) and 1123057.P872_00010
-(degree 1178).
+The undirected graph Rhodonellum psychrophilum has 4810 nodes and 506417
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04379 and has 44 connected components, where the component
+with most nodes has 4704 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 210.57,
+and the node degree mode is 2. The top 5 most central nodes are 1123057.P872_12685
+(degree 2057), 1123057.P872_19745 (degree 1588), 1123057.P872_10685 (degree
+1375), 1123057.P872_00220 (degree 1288) and 1123057.P872_00010 (degree
+1178).
 
 
 References
@@ -107,14 +108,15 @@ def RhodonellumPsychrophilum(
 	
 	Datetime: 2021-02-02 22:47:14.039412
 	
-	The undirected graph Rhodonellum psychrophilum has 4810 nodes and 506417 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04379
-	and has 44 connected components, where the component with most nodes has 4704 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 191, the mean node degree is 210.57, and the node degree mode is 2. The top 5
-	most central nodes are 1123057.P872_12685 (degree 2057), 1123057.P872_19745 (degree
-	1588), 1123057.P872_10685 (degree 1375), 1123057.P872_00220 (degree 1288) and 1123057.P872_00010
-	(degree 1178).
+	The undirected graph Rhodonellum psychrophilum has 4810 nodes and 506417
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04379 and has 44 connected components, where the component
+	with most nodes has 4704 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 210.57,
+	and the node degree mode is 2. The top 5 most central nodes are 1123057.P872_12685
+	(degree 2057), 1123057.P872_19745 (degree 1588), 1123057.P872_10685 (degree
+	1375), 1123057.P872_00220 (degree 1288) and 1123057.P872_00010 (degree
+	1178).
 	
 
 

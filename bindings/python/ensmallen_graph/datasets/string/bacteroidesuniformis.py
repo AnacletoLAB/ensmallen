@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:53.209150
 
-The undirected graph Bacteroides uniformis has 4502 nodes and 330595 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03263 and
-has 44 connected components, where the component with most nodes has 4384 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 146.87, and the node degree mode is 3. The top 5 most central
-nodes are 411479.BACUNI_01102 (degree 1224), 411479.BACUNI_03018 (degree 1125), 411479.BACUNI_01614
-(degree 1014), 411479.BACUNI_01165 (degree 1004) and 411479.BACUNI_04375 (degree
+The undirected graph Bacteroides uniformis has 4502 nodes and 330595 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03263 and has 44 connected components, where the component with most
+nodes has 4384 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 146.87, and
+the node degree mode is 3. The top 5 most central nodes are 411479.BACUNI_01102
+(degree 1224), 411479.BACUNI_03018 (degree 1125), 411479.BACUNI_01614 (degree
+1014), 411479.BACUNI_01165 (degree 1004) and 411479.BACUNI_04375 (degree
 963).
 
 
@@ -107,13 +108,14 @@ def BacteroidesUniformis(
 	
 	Datetime: 2021-02-02 20:45:53.209150
 	
-	The undirected graph Bacteroides uniformis has 4502 nodes and 330595 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03263 and
-	has 44 connected components, where the component with most nodes has 4384 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 146.87, and the node degree mode is 3. The top 5 most central
-	nodes are 411479.BACUNI_01102 (degree 1224), 411479.BACUNI_03018 (degree 1125), 411479.BACUNI_01614
-	(degree 1014), 411479.BACUNI_01165 (degree 1004) and 411479.BACUNI_04375 (degree
+	The undirected graph Bacteroides uniformis has 4502 nodes and 330595 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03263 and has 44 connected components, where the component with most
+	nodes has 4384 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 146.87, and
+	the node degree mode is 3. The top 5 most central nodes are 411479.BACUNI_01102
+	(degree 1224), 411479.BACUNI_03018 (degree 1125), 411479.BACUNI_01614 (degree
+	1014), 411479.BACUNI_01165 (degree 1004) and 411479.BACUNI_04375 (degree
 	963).
 	
 

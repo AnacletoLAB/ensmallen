@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:49.022200
 
-The undirected graph Borrelia bissettii has 837 nodes and 55226 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.15785
-and has 3 connected components, where the component with most nodes has 832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 131.96, and the node degree mode is 5. The top 5
-most central nodes are 521010.BbiDN127_0416 (degree 495), 521010.BbiDN127_0550 (degree
-487), 521010.BbiDN127_B0018 (degree 437), 521010.BbiDN127_0591 (degree 433) and 521010.BbiDN127_0723
+The undirected graph Borrelia bissettii has 837 nodes and 55226 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15785 and has 3 connected components, where the component
+with most nodes has 832 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 131.96,
+and the node degree mode is 5. The top 5 most central nodes are 521010.BbiDN127_0416
+(degree 495), 521010.BbiDN127_0550 (degree 487), 521010.BbiDN127_B0018
+(degree 437), 521010.BbiDN127_0591 (degree 433) and 521010.BbiDN127_0723
 (degree 414).
 
 
@@ -107,13 +108,14 @@ def BorreliaBissettii(
 	
 	Datetime: 2021-02-02 21:03:49.022200
 	
-	The undirected graph Borrelia bissettii has 837 nodes and 55226 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.15785
-	and has 3 connected components, where the component with most nodes has 832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 131.96, and the node degree mode is 5. The top 5
-	most central nodes are 521010.BbiDN127_0416 (degree 495), 521010.BbiDN127_0550 (degree
-	487), 521010.BbiDN127_B0018 (degree 437), 521010.BbiDN127_0591 (degree 433) and 521010.BbiDN127_0723
+	The undirected graph Borrelia bissettii has 837 nodes and 55226 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15785 and has 3 connected components, where the component
+	with most nodes has 832 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 131.96,
+	and the node degree mode is 5. The top 5 most central nodes are 521010.BbiDN127_0416
+	(degree 495), 521010.BbiDN127_0550 (degree 487), 521010.BbiDN127_B0018
+	(degree 437), 521010.BbiDN127_0591 (degree 433) and 521010.BbiDN127_0723
 	(degree 414).
 	
 

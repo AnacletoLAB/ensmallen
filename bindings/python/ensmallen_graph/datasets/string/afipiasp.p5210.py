@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:20.849727
 
-The undirected graph Afipia sp. P5210 has 4716 nodes and 513674 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04620 and
-has 21 connected components, where the component with most nodes has 4665 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 217.84, and the node degree mode is 2. The top 5 most central
-nodes are 1429916.X566_11610 (degree 1564), 1429916.X566_19285 (degree 1414), 1429916.X566_05795
-(degree 1408), 1429916.X566_18305 (degree 1287) and 1429916.X566_18635 (degree 1268).
+The undirected graph Afipia sp. P5210 has 4716 nodes and 513674 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04620 and has 21 connected components, where the component with most
+nodes has 4665 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 217.84, and
+the node degree mode is 2. The top 5 most central nodes are 1429916.X566_11610
+(degree 1564), 1429916.X566_19285 (degree 1414), 1429916.X566_05795 (degree
+1408), 1429916.X566_18305 (degree 1287) and 1429916.X566_18635 (degree
+1268).
 
 
 References
@@ -106,13 +108,15 @@ def AfipiaSp.P5210(
 	
 	Datetime: 2021-02-03 22:53:20.849727
 	
-	The undirected graph Afipia sp. P5210 has 4716 nodes and 513674 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04620 and
-	has 21 connected components, where the component with most nodes has 4665 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 217.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1429916.X566_11610 (degree 1564), 1429916.X566_19285 (degree 1414), 1429916.X566_05795
-	(degree 1408), 1429916.X566_18305 (degree 1287) and 1429916.X566_18635 (degree 1268).
+	The undirected graph Afipia sp. P5210 has 4716 nodes and 513674 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04620 and has 21 connected components, where the component with most
+	nodes has 4665 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 217.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1429916.X566_11610
+	(degree 1564), 1429916.X566_19285 (degree 1414), 1429916.X566_05795 (degree
+	1408), 1429916.X566_18305 (degree 1287) and 1429916.X566_18635 (degree
+	1268).
 	
 
 

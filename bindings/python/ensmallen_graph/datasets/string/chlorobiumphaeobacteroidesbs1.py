@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:53.507376
 
-The undirected graph Chlorobium phaeobacteroides BS1 has 2439 nodes and 132132 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04444
-and has 10 connected components, where the component with most nodes has 2420 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 79, the mean node degree is 108.35, and the node degree mode is 1. The top 5 most
-central nodes are 331678.Cphamn1_0540 (degree 951), 331678.Cphamn1_0924 (degree 778),
-331678.Cphamn1_1113 (degree 752), 331678.Cphamn1_0589 (degree 684) and 331678.Cphamn1_0342
-(degree 677).
+The undirected graph Chlorobium phaeobacteroides BS1 has 2439 nodes and
+132132 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04444 and has 10 connected components, where the
+component with most nodes has 2420 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 79, the mean node degree
+is 108.35, and the node degree mode is 1. The top 5 most central nodes
+are 331678.Cphamn1_0540 (degree 951), 331678.Cphamn1_0924 (degree 778),
+331678.Cphamn1_1113 (degree 752), 331678.Cphamn1_0589 (degree 684) and
+331678.Cphamn1_0342 (degree 677).
 
 
 References
@@ -107,14 +108,15 @@ def ChlorobiumPhaeobacteroidesBs1(
 	
 	Datetime: 2021-02-02 20:29:53.507376
 	
-	The undirected graph Chlorobium phaeobacteroides BS1 has 2439 nodes and 132132 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04444
-	and has 10 connected components, where the component with most nodes has 2420 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 79, the mean node degree is 108.35, and the node degree mode is 1. The top 5 most
-	central nodes are 331678.Cphamn1_0540 (degree 951), 331678.Cphamn1_0924 (degree 778),
-	331678.Cphamn1_1113 (degree 752), 331678.Cphamn1_0589 (degree 684) and 331678.Cphamn1_0342
-	(degree 677).
+	The undirected graph Chlorobium phaeobacteroides BS1 has 2439 nodes and
+	132132 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04444 and has 10 connected components, where the
+	component with most nodes has 2420 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 79, the mean node degree
+	is 108.35, and the node degree mode is 1. The top 5 most central nodes
+	are 331678.Cphamn1_0540 (degree 951), 331678.Cphamn1_0924 (degree 778),
+	331678.Cphamn1_1113 (degree 752), 331678.Cphamn1_0589 (degree 684) and
+	331678.Cphamn1_0342 (degree 677).
 	
 
 

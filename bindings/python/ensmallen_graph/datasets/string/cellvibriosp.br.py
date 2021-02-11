@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:38.775253
 
-The undirected graph Cellvibrio sp. BR has 4235 nodes and 593164 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06616 and
-has 18 connected components, where the component with most nodes has 4201 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 242,
-the mean node degree is 280.12, and the node degree mode is 1. The top 5 most central
-nodes are 1134474.O59_000677 (degree 1810), 1134474.O59_001308 (degree 1545), 1134474.O59_001710
-(degree 1528), 1134474.O59_001307 (degree 1510) and 1134474.O59_000065 (degree 1491).
+The undirected graph Cellvibrio sp. BR has 4235 nodes and 593164 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06616 and has 18 connected components, where the component with most
+nodes has 4201 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 242, the mean node degree is 280.12, and
+the node degree mode is 1. The top 5 most central nodes are 1134474.O59_000677
+(degree 1810), 1134474.O59_001308 (degree 1545), 1134474.O59_001710 (degree
+1528), 1134474.O59_001307 (degree 1510) and 1134474.O59_000065 (degree
+1491).
 
 
 References
@@ -106,13 +108,15 @@ def CellvibrioSp.Br(
 	
 	Datetime: 2021-02-02 22:56:38.775253
 	
-	The undirected graph Cellvibrio sp. BR has 4235 nodes and 593164 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06616 and
-	has 18 connected components, where the component with most nodes has 4201 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 242,
-	the mean node degree is 280.12, and the node degree mode is 1. The top 5 most central
-	nodes are 1134474.O59_000677 (degree 1810), 1134474.O59_001308 (degree 1545), 1134474.O59_001710
-	(degree 1528), 1134474.O59_001307 (degree 1510) and 1134474.O59_000065 (degree 1491).
+	The undirected graph Cellvibrio sp. BR has 4235 nodes and 593164 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06616 and has 18 connected components, where the component with most
+	nodes has 4201 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 242, the mean node degree is 280.12, and
+	the node degree mode is 1. The top 5 most central nodes are 1134474.O59_000677
+	(degree 1810), 1134474.O59_001308 (degree 1545), 1134474.O59_001710 (degree
+	1528), 1134474.O59_001307 (degree 1510) and 1134474.O59_000065 (degree
+	1491).
 	
 
 

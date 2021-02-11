@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:56:34.022905
 
-The undirected graph Streptomyces somaliensis has 4468 nodes and 502289 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05033
-and has 31 connected components, where the component with most nodes has 4398 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 224.84, and the node degree mode is 1. The top 5
-most central nodes are 1134445.AJJM01000149_gene1894 (degree 2285), 1134445.AJJM01000102_gene4013
-(degree 1431), 1134445.AJJM01000001_gene2753 (degree 1419), 1134445.AJJM01000092_gene3761
-(degree 1394) and 1134445.AJJM01000031_gene1415 (degree 1354).
+The undirected graph Streptomyces somaliensis has 4468 nodes and 502289
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05033 and has 31 connected components, where the component
+with most nodes has 4398 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 224.84,
+and the node degree mode is 1. The top 5 most central nodes are 1134445.AJJM01000149_gene1894
+(degree 2285), 1134445.AJJM01000102_gene4013 (degree 1431), 1134445.AJJM01000001_gene2753
+(degree 1419), 1134445.AJJM01000092_gene3761 (degree 1394) and 1134445.AJJM01000031_gene1415
+(degree 1354).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSomaliensis(
 	
 	Datetime: 2021-02-02 22:56:34.022905
 	
-	The undirected graph Streptomyces somaliensis has 4468 nodes and 502289 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05033
-	and has 31 connected components, where the component with most nodes has 4398 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 224.84, and the node degree mode is 1. The top 5
-	most central nodes are 1134445.AJJM01000149_gene1894 (degree 2285), 1134445.AJJM01000102_gene4013
-	(degree 1431), 1134445.AJJM01000001_gene2753 (degree 1419), 1134445.AJJM01000092_gene3761
-	(degree 1394) and 1134445.AJJM01000031_gene1415 (degree 1354).
+	The undirected graph Streptomyces somaliensis has 4468 nodes and 502289
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05033 and has 31 connected components, where the component
+	with most nodes has 4398 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 224.84,
+	and the node degree mode is 1. The top 5 most central nodes are 1134445.AJJM01000149_gene1894
+	(degree 2285), 1134445.AJJM01000102_gene4013 (degree 1431), 1134445.AJJM01000001_gene2753
+	(degree 1419), 1134445.AJJM01000092_gene3761 (degree 1394) and 1134445.AJJM01000031_gene1415
+	(degree 1354).
 	
 
 

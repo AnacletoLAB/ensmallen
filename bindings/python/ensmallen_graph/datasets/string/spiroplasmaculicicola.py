@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:26.963703
 
-The undirected graph Spiroplasma culicicola has 1070 nodes and 71886 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12569
-and has 5 connected components, where the component with most nodes has 1059 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 134.37, and the node degree mode is 9. The top 5
-most central nodes are 1276246.SCULI_v1c08760 (degree 508), 1276246.SCULI_v1c03710
-(degree 486), 1276246.SCULI_v1c07920 (degree 482), 1276246.SCULI_v1c08580 (degree
-465) and 1276246.SCULI_v1c07270 (degree 438).
+The undirected graph Spiroplasma culicicola has 1070 nodes and 71886 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12569 and has 5 connected components, where the component
+with most nodes has 1059 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 134.37,
+and the node degree mode is 9. The top 5 most central nodes are 1276246.SCULI_v1c08760
+(degree 508), 1276246.SCULI_v1c03710 (degree 486), 1276246.SCULI_v1c07920
+(degree 482), 1276246.SCULI_v1c08580 (degree 465) and 1276246.SCULI_v1c07270
+(degree 438).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaCulicicola(
 	
 	Datetime: 2021-02-02 23:38:26.963703
 	
-	The undirected graph Spiroplasma culicicola has 1070 nodes and 71886 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12569
-	and has 5 connected components, where the component with most nodes has 1059 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 134.37, and the node degree mode is 9. The top 5
-	most central nodes are 1276246.SCULI_v1c08760 (degree 508), 1276246.SCULI_v1c03710
-	(degree 486), 1276246.SCULI_v1c07920 (degree 482), 1276246.SCULI_v1c08580 (degree
-	465) and 1276246.SCULI_v1c07270 (degree 438).
+	The undirected graph Spiroplasma culicicola has 1070 nodes and 71886 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12569 and has 5 connected components, where the component
+	with most nodes has 1059 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 134.37,
+	and the node degree mode is 9. The top 5 most central nodes are 1276246.SCULI_v1c08760
+	(degree 508), 1276246.SCULI_v1c03710 (degree 486), 1276246.SCULI_v1c07920
+	(degree 482), 1276246.SCULI_v1c08580 (degree 465) and 1276246.SCULI_v1c07270
+	(degree 438).
 	
 
 

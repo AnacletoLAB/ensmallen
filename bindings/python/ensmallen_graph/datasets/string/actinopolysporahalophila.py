@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:55.147337
 
-The undirected graph Actinopolyspora halophila has 4653 nodes and 463827 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04286
-and has 36 connected components, where the component with most nodes has 4563 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 199.37, and the node degree mode is 2. The top 5
-most central nodes are 1089546.AQUI01000002_gene337 (degree 1664), 1089546.AQUI01000002_gene1987
-(degree 1568), 1089546.AQUI01000002_gene2205 (degree 1273), 1089546.AQUI01000002_gene4223
-(degree 1273) and 1089546.AQUI01000002_gene1530 (degree 1179).
+The undirected graph Actinopolyspora halophila has 4653 nodes and 463827
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04286 and has 36 connected components, where the component
+with most nodes has 4563 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 199.37,
+and the node degree mode is 2. The top 5 most central nodes are 1089546.AQUI01000002_gene337
+(degree 1664), 1089546.AQUI01000002_gene1987 (degree 1568), 1089546.AQUI01000002_gene2205
+(degree 1273), 1089546.AQUI01000002_gene4223 (degree 1273) and 1089546.AQUI01000002_gene1530
+(degree 1179).
 
 
 References
@@ -107,14 +108,15 @@ def ActinopolysporaHalophila(
 	
 	Datetime: 2021-02-02 22:21:55.147337
 	
-	The undirected graph Actinopolyspora halophila has 4653 nodes and 463827 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04286
-	and has 36 connected components, where the component with most nodes has 4563 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 199.37, and the node degree mode is 2. The top 5
-	most central nodes are 1089546.AQUI01000002_gene337 (degree 1664), 1089546.AQUI01000002_gene1987
-	(degree 1568), 1089546.AQUI01000002_gene2205 (degree 1273), 1089546.AQUI01000002_gene4223
-	(degree 1273) and 1089546.AQUI01000002_gene1530 (degree 1179).
+	The undirected graph Actinopolyspora halophila has 4653 nodes and 463827
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04286 and has 36 connected components, where the component
+	with most nodes has 4563 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 199.37,
+	and the node degree mode is 2. The top 5 most central nodes are 1089546.AQUI01000002_gene337
+	(degree 1664), 1089546.AQUI01000002_gene1987 (degree 1568), 1089546.AQUI01000002_gene2205
+	(degree 1273), 1089546.AQUI01000002_gene4223 (degree 1273) and 1089546.AQUI01000002_gene1530
+	(degree 1179).
 	
 
 

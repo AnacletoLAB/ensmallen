@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:28:04.851006
 
-The undirected graph soc-BlogCatalog has 88784 nodes and 2093195 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00053
-and is connected, as it has a single component. The graph median node degree is 5,
-the mean node degree is 47.15, and the node degree mode is 1. The top 5 most central
-nodes are 32 (degree 9444), 94 (degree 9417), 35 (degree 9192), 1082 (degree 9162)
-and 1140 (degree 9131).
+The undirected graph soc-BlogCatalog has 88784 nodes and 2093195 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00053 and is connected, as it has a single component. The
+graph median node degree is 5, the mean node degree is 47.15, and the node
+degree mode is 1. The top 5 most central nodes are 32 (degree 9444), 94
+(degree 9417), 35 (degree 9192), 1082 (degree 9162) and 1140 (degree 9131).
 
 
 References
@@ -109,12 +109,12 @@ def SocBlogcatalog(
 	
 	Datetime: 2021-02-06 12:28:04.851006
 	
-	The undirected graph soc-BlogCatalog has 88784 nodes and 2093195 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00053
-	and is connected, as it has a single component. The graph median node degree is 5,
-	the mean node degree is 47.15, and the node degree mode is 1. The top 5 most central
-	nodes are 32 (degree 9444), 94 (degree 9417), 35 (degree 9192), 1082 (degree 9162)
-	and 1140 (degree 9131).
+	The undirected graph soc-BlogCatalog has 88784 nodes and 2093195 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00053 and is connected, as it has a single component. The
+	graph median node degree is 5, the mean node degree is 47.15, and the node
+	degree mode is 1. The top 5 most central nodes are 32 (degree 9444), 94
+	(degree 9417), 35 (degree 9192), 1082 (degree 9162) and 1140 (degree 9131).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:03.776724
 
-The undirected graph Bacteroidetes F0058 has 1837 nodes and 110443 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06549 and
-has 7 connected components, where the component with most nodes has 1807 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 120.24, and the node degree mode is 9. The top 5 most central
-nodes are 575590.HMPREF0156_00660 (degree 702), 575590.HMPREF0156_01115 (degree 583),
-575590.HMPREF0156_00664 (degree 573), 575590.HMPREF0156_01791 (degree 533) and 575590.HMPREF0156_01079
+The undirected graph Bacteroidetes F0058 has 1837 nodes and 110443 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06549 and has 7 connected components, where the component with most
+nodes has 1807 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 120.24, and
+the node degree mode is 9. The top 5 most central nodes are 575590.HMPREF0156_00660
+(degree 702), 575590.HMPREF0156_01115 (degree 583), 575590.HMPREF0156_00664
+(degree 573), 575590.HMPREF0156_01791 (degree 533) and 575590.HMPREF0156_01079
 (degree 525).
 
 
@@ -107,13 +108,14 @@ def BacteroidetesF0058(
 	
 	Datetime: 2021-02-02 21:15:03.776724
 	
-	The undirected graph Bacteroidetes F0058 has 1837 nodes and 110443 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06549 and
-	has 7 connected components, where the component with most nodes has 1807 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 120.24, and the node degree mode is 9. The top 5 most central
-	nodes are 575590.HMPREF0156_00660 (degree 702), 575590.HMPREF0156_01115 (degree 583),
-	575590.HMPREF0156_00664 (degree 573), 575590.HMPREF0156_01791 (degree 533) and 575590.HMPREF0156_01079
+	The undirected graph Bacteroidetes F0058 has 1837 nodes and 110443 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06549 and has 7 connected components, where the component with most
+	nodes has 1807 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 120.24, and
+	the node degree mode is 9. The top 5 most central nodes are 575590.HMPREF0156_00660
+	(degree 702), 575590.HMPREF0156_01115 (degree 583), 575590.HMPREF0156_00664
+	(degree 573), 575590.HMPREF0156_01791 (degree 533) and 575590.HMPREF0156_01079
 	(degree 525).
 	
 

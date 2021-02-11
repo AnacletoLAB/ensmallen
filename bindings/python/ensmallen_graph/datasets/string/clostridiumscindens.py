@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:27.178623
 
-The undirected graph Clostridium scindens has 3950 nodes and 295441 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03788 and
-has 20 connected components, where the component with most nodes has 3895 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 149.59, and the node degree mode is 3. The top 5 most central
-nodes are 411468.CLOSCI_00644 (degree 1224), 411468.CLOSCI_02937 (degree 1162), 411468.CLOSCI_00052
-(degree 1138), 411468.CLOSCI_02188 (degree 1091) and 411468.CLOSCI_02692 (degree
+The undirected graph Clostridium scindens has 3950 nodes and 295441 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03788 and has 20 connected components, where the component with most
+nodes has 3895 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 149.59, and
+the node degree mode is 3. The top 5 most central nodes are 411468.CLOSCI_00644
+(degree 1224), 411468.CLOSCI_02937 (degree 1162), 411468.CLOSCI_00052 (degree
+1138), 411468.CLOSCI_02188 (degree 1091) and 411468.CLOSCI_02692 (degree
 1029).
 
 
@@ -107,13 +108,14 @@ def ClostridiumScindens(
 	
 	Datetime: 2021-02-02 20:45:27.178623
 	
-	The undirected graph Clostridium scindens has 3950 nodes and 295441 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03788 and
-	has 20 connected components, where the component with most nodes has 3895 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 149.59, and the node degree mode is 3. The top 5 most central
-	nodes are 411468.CLOSCI_00644 (degree 1224), 411468.CLOSCI_02937 (degree 1162), 411468.CLOSCI_00052
-	(degree 1138), 411468.CLOSCI_02188 (degree 1091) and 411468.CLOSCI_02692 (degree
+	The undirected graph Clostridium scindens has 3950 nodes and 295441 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03788 and has 20 connected components, where the component with most
+	nodes has 3895 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 149.59, and
+	the node degree mode is 3. The top 5 most central nodes are 411468.CLOSCI_00644
+	(degree 1224), 411468.CLOSCI_02937 (degree 1162), 411468.CLOSCI_00052 (degree
+	1138), 411468.CLOSCI_02188 (degree 1091) and 411468.CLOSCI_02692 (degree
 	1029).
 	
 

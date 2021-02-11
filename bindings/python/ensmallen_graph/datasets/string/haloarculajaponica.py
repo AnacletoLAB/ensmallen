@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:49.423145
 
-The undirected graph Haloarcula japonica has 4130 nodes and 343199 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04025 and
-has 45 connected components, where the component with most nodes has 4016 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 166.20, and the node degree mode is 3. The top 5 most central
-nodes are 1227453.C444_02997 (degree 1076), 1227453.C444_15308 (degree 1057), 1227453.C444_12672
-(degree 956), 1227453.C444_01187 (degree 949) and 1227453.C444_16343 (degree 948).
+The undirected graph Haloarcula japonica has 4130 nodes and 343199 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04025 and has 45 connected components, where the component with most
+nodes has 4016 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 166.20, and
+the node degree mode is 3. The top 5 most central nodes are 1227453.C444_02997
+(degree 1076), 1227453.C444_15308 (degree 1057), 1227453.C444_12672 (degree
+956), 1227453.C444_01187 (degree 949) and 1227453.C444_16343 (degree 948).
 
 
 References
@@ -106,13 +107,14 @@ def HaloarculaJaponica(
 	
 	Datetime: 2021-02-02 23:25:49.423145
 	
-	The undirected graph Haloarcula japonica has 4130 nodes and 343199 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04025 and
-	has 45 connected components, where the component with most nodes has 4016 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 166.20, and the node degree mode is 3. The top 5 most central
-	nodes are 1227453.C444_02997 (degree 1076), 1227453.C444_15308 (degree 1057), 1227453.C444_12672
-	(degree 956), 1227453.C444_01187 (degree 949) and 1227453.C444_16343 (degree 948).
+	The undirected graph Haloarcula japonica has 4130 nodes and 343199 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04025 and has 45 connected components, where the component with most
+	nodes has 4016 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 166.20, and
+	the node degree mode is 3. The top 5 most central nodes are 1227453.C444_02997
+	(degree 1076), 1227453.C444_15308 (degree 1057), 1227453.C444_12672 (degree
+	956), 1227453.C444_01187 (degree 949) and 1227453.C444_16343 (degree 948).
 	
 
 

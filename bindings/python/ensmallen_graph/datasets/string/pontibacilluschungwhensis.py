@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:01.449903
 
-The undirected graph Pontibacillus chungwhensis has 3645 nodes and 340392 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05125
-and has 19 connected components, where the component with most nodes has 3605 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 160, the mean node degree is 186.77, and the node degree mode is 2. The top 5
-most central nodes are 1385513.N780_02330 (degree 1310), 1385513.N780_16785 (degree
-1054), 1385513.N780_15115 (degree 1027), 1385513.N780_10690 (degree 1013) and 1385513.N780_04910
-(degree 992).
+The undirected graph Pontibacillus chungwhensis has 3645 nodes and 340392
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05125 and has 19 connected components, where the component
+with most nodes has 3605 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 160, the mean node degree is 186.77,
+and the node degree mode is 2. The top 5 most central nodes are 1385513.N780_02330
+(degree 1310), 1385513.N780_16785 (degree 1054), 1385513.N780_15115 (degree
+1027), 1385513.N780_10690 (degree 1013) and 1385513.N780_04910 (degree
+992).
 
 
 References
@@ -107,14 +108,15 @@ def PontibacillusChungwhensis(
 	
 	Datetime: 2021-02-03 22:20:01.449903
 	
-	The undirected graph Pontibacillus chungwhensis has 3645 nodes and 340392 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05125
-	and has 19 connected components, where the component with most nodes has 3605 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 160, the mean node degree is 186.77, and the node degree mode is 2. The top 5
-	most central nodes are 1385513.N780_02330 (degree 1310), 1385513.N780_16785 (degree
-	1054), 1385513.N780_15115 (degree 1027), 1385513.N780_10690 (degree 1013) and 1385513.N780_04910
-	(degree 992).
+	The undirected graph Pontibacillus chungwhensis has 3645 nodes and 340392
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05125 and has 19 connected components, where the component
+	with most nodes has 3605 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 160, the mean node degree is 186.77,
+	and the node degree mode is 2. The top 5 most central nodes are 1385513.N780_02330
+	(degree 1310), 1385513.N780_16785 (degree 1054), 1385513.N780_15115 (degree
+	1027), 1385513.N780_10690 (degree 1013) and 1385513.N780_04910 (degree
+	992).
 	
 
 

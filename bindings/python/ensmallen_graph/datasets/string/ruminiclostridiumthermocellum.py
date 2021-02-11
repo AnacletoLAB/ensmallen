@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:50.372827
 
-The undirected graph Ruminiclostridium thermocellum has 3136 nodes and 273271 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05559
-and has 8 connected components, where the component with most nodes has 3120 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 153, the mean node degree is 174.28, and the node degree mode is 2. The top 5
-most central nodes are 203119.Cthe_1235 (degree 1730), 203119.Cthe_0684 (degree 1120),
-203119.Cthe_0714 (degree 955), 203119.Cthe_0681 (degree 910) and 203119.Cthe_3120
-(degree 831).
+The undirected graph Ruminiclostridium thermocellum has 3136 nodes and
+273271 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05559 and has 8 connected components, where the
+component with most nodes has 3120 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 153, the mean node degree
+is 174.28, and the node degree mode is 2. The top 5 most central nodes
+are 203119.Cthe_1235 (degree 1730), 203119.Cthe_0684 (degree 1120), 203119.Cthe_0714
+(degree 955), 203119.Cthe_0681 (degree 910) and 203119.Cthe_3120 (degree
+831).
 
 
 References
@@ -107,14 +108,15 @@ def RuminiclostridiumThermocellum(
 	
 	Datetime: 2021-02-02 19:59:50.372827
 	
-	The undirected graph Ruminiclostridium thermocellum has 3136 nodes and 273271 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05559
-	and has 8 connected components, where the component with most nodes has 3120 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 153, the mean node degree is 174.28, and the node degree mode is 2. The top 5
-	most central nodes are 203119.Cthe_1235 (degree 1730), 203119.Cthe_0684 (degree 1120),
-	203119.Cthe_0714 (degree 955), 203119.Cthe_0681 (degree 910) and 203119.Cthe_3120
-	(degree 831).
+	The undirected graph Ruminiclostridium thermocellum has 3136 nodes and
+	273271 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05559 and has 8 connected components, where the
+	component with most nodes has 3120 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 153, the mean node degree
+	is 174.28, and the node degree mode is 2. The top 5 most central nodes
+	are 203119.Cthe_1235 (degree 1730), 203119.Cthe_0684 (degree 1120), 203119.Cthe_0714
+	(degree 955), 203119.Cthe_0681 (degree 910) and 203119.Cthe_3120 (degree
+	831).
 	
 
 

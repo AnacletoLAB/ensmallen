@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:51.172682
 
-The undirected graph Theileria parva has 2566 nodes and 309281 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.09398 and
-has 26 connected components, where the component with most nodes has 2516 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 241.06, and the node degree mode is 1. The top 5 most central
-nodes are 5875.XP_766024.1 (degree 1273), 5875.XP_765913.1 (degree 1089), 5875.XP_766305.1
-(degree 1066), 5875.XP_764717.1 (degree 1054) and 5875.XP_765469.1 (degree 1048).
+The undirected graph Theileria parva has 2566 nodes and 309281 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09398 and has 26 connected components, where the component with most
+nodes has 2516 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 241.06, and
+the node degree mode is 1. The top 5 most central nodes are 5875.XP_766024.1
+(degree 1273), 5875.XP_765913.1 (degree 1089), 5875.XP_766305.1 (degree
+1066), 5875.XP_764717.1 (degree 1054) and 5875.XP_765469.1 (degree 1048).
 
 
 References
@@ -106,13 +107,14 @@ def TheileriaParva(
 	
 	Datetime: 2021-02-02 17:16:51.172682
 	
-	The undirected graph Theileria parva has 2566 nodes and 309281 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.09398 and
-	has 26 connected components, where the component with most nodes has 2516 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 241.06, and the node degree mode is 1. The top 5 most central
-	nodes are 5875.XP_766024.1 (degree 1273), 5875.XP_765913.1 (degree 1089), 5875.XP_766305.1
-	(degree 1066), 5875.XP_764717.1 (degree 1054) and 5875.XP_765469.1 (degree 1048).
+	The undirected graph Theileria parva has 2566 nodes and 309281 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09398 and has 26 connected components, where the component with most
+	nodes has 2516 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 241.06, and
+	the node degree mode is 1. The top 5 most central nodes are 5875.XP_766024.1
+	(degree 1273), 5875.XP_765913.1 (degree 1089), 5875.XP_766305.1 (degree
+	1066), 5875.XP_764717.1 (degree 1054) and 5875.XP_765469.1 (degree 1048).
 	
 
 

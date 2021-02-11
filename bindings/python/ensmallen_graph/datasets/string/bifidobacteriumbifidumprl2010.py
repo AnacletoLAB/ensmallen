@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:04.658919
 
-The undirected graph Bifidobacterium bifidum PRL2010 has 1682 nodes and 107109 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07576
-and has 3 connected components, where the component with most nodes has 1676 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 127.36, and the node degree mode is 3. The top 5
-most central nodes are 702459.BBPR_0750 (degree 787), 702459.BBPR_1638 (degree 760),
-702459.BBPR_1286 (degree 651), 702459.BBPR_1163 (degree 642) and 702459.BBPR_0767
-(degree 624).
+The undirected graph Bifidobacterium bifidum PRL2010 has 1682 nodes and
+107109 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07576 and has 3 connected components, where the
+component with most nodes has 1676 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+is 127.36, and the node degree mode is 3. The top 5 most central nodes
+are 702459.BBPR_0750 (degree 787), 702459.BBPR_1638 (degree 760), 702459.BBPR_1286
+(degree 651), 702459.BBPR_1163 (degree 642) and 702459.BBPR_0767 (degree
+624).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumBifidumPrl2010(
 	
 	Datetime: 2021-02-02 21:34:04.658919
 	
-	The undirected graph Bifidobacterium bifidum PRL2010 has 1682 nodes and 107109 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07576
-	and has 3 connected components, where the component with most nodes has 1676 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 127.36, and the node degree mode is 3. The top 5
-	most central nodes are 702459.BBPR_0750 (degree 787), 702459.BBPR_1638 (degree 760),
-	702459.BBPR_1286 (degree 651), 702459.BBPR_1163 (degree 642) and 702459.BBPR_0767
-	(degree 624).
+	The undirected graph Bifidobacterium bifidum PRL2010 has 1682 nodes and
+	107109 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07576 and has 3 connected components, where the
+	component with most nodes has 1676 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 105, the mean node degree
+	is 127.36, and the node degree mode is 3. The top 5 most central nodes
+	are 702459.BBPR_0750 (degree 787), 702459.BBPR_1638 (degree 760), 702459.BBPR_1286
+	(degree 651), 702459.BBPR_1163 (degree 642) and 702459.BBPR_0767 (degree
+	624).
 	
 
 

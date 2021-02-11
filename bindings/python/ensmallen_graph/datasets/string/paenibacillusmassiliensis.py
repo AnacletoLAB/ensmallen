@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:39.713779
 
-The undirected graph Paenibacillus massiliensis has 5176 nodes and 678327 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05065
-and has 15 connected components, where the component with most nodes has 5144 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 209, the mean node degree is 262.10, and the node degree mode is 1. The top 5
-most central nodes are 1122921.KB898207_gene3359 (degree 1829), 1122921.KB898193_gene2391
-(degree 1754), 1122921.KB898191_gene1945 (degree 1648), 1122921.KB898201_gene3209
-(degree 1582) and 1122921.KB898192_gene2315 (degree 1548).
+The undirected graph Paenibacillus massiliensis has 5176 nodes and 678327
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05065 and has 15 connected components, where the component
+with most nodes has 5144 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 209, the mean node degree is 262.10,
+and the node degree mode is 1. The top 5 most central nodes are 1122921.KB898207_gene3359
+(degree 1829), 1122921.KB898193_gene2391 (degree 1754), 1122921.KB898191_gene1945
+(degree 1648), 1122921.KB898201_gene3209 (degree 1582) and 1122921.KB898192_gene2315
+(degree 1548).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusMassiliensis(
 	
 	Datetime: 2021-02-02 22:44:39.713779
 	
-	The undirected graph Paenibacillus massiliensis has 5176 nodes and 678327 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05065
-	and has 15 connected components, where the component with most nodes has 5144 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 209, the mean node degree is 262.10, and the node degree mode is 1. The top 5
-	most central nodes are 1122921.KB898207_gene3359 (degree 1829), 1122921.KB898193_gene2391
-	(degree 1754), 1122921.KB898191_gene1945 (degree 1648), 1122921.KB898201_gene3209
-	(degree 1582) and 1122921.KB898192_gene2315 (degree 1548).
+	The undirected graph Paenibacillus massiliensis has 5176 nodes and 678327
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05065 and has 15 connected components, where the component
+	with most nodes has 5144 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 209, the mean node degree is 262.10,
+	and the node degree mode is 1. The top 5 most central nodes are 1122921.KB898207_gene3359
+	(degree 1829), 1122921.KB898193_gene2391 (degree 1754), 1122921.KB898191_gene1945
+	(degree 1648), 1122921.KB898201_gene3209 (degree 1582) and 1122921.KB898192_gene2315
+	(degree 1548).
 	
 
 

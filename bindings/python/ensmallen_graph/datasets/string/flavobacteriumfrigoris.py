@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:05.309340
 
-The undirected graph Flavobacterium frigoris has 3536 nodes and 268921 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-has 13 connected components, where the component with most nodes has 3509 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 152.10, and the node degree mode is 2. The top 5 most central
-nodes are 1086011.HJ01_01276 (degree 1178), 1086011.HJ01_02261 (degree 974), 1086011.HJ01_02858
-(degree 956), 1086011.HJ01_01885 (degree 954) and 1086011.HJ01_00205 (degree 941).
+The undirected graph Flavobacterium frigoris has 3536 nodes and 268921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04303 and has 13 connected components, where the component
+with most nodes has 3509 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 152.10,
+and the node degree mode is 2. The top 5 most central nodes are 1086011.HJ01_01276
+(degree 1178), 1086011.HJ01_02261 (degree 974), 1086011.HJ01_02858 (degree
+956), 1086011.HJ01_01885 (degree 954) and 1086011.HJ01_00205 (degree 941).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumFrigoris(
 	
 	Datetime: 2021-02-02 22:21:05.309340
 	
-	The undirected graph Flavobacterium frigoris has 3536 nodes and 268921 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04303 and
-	has 13 connected components, where the component with most nodes has 3509 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 152.10, and the node degree mode is 2. The top 5 most central
-	nodes are 1086011.HJ01_01276 (degree 1178), 1086011.HJ01_02261 (degree 974), 1086011.HJ01_02858
-	(degree 956), 1086011.HJ01_01885 (degree 954) and 1086011.HJ01_00205 (degree 941).
+	The undirected graph Flavobacterium frigoris has 3536 nodes and 268921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04303 and has 13 connected components, where the component
+	with most nodes has 3509 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 152.10,
+	and the node degree mode is 2. The top 5 most central nodes are 1086011.HJ01_01276
+	(degree 1178), 1086011.HJ01_02261 (degree 974), 1086011.HJ01_02858 (degree
+	956), 1086011.HJ01_01885 (degree 954) and 1086011.HJ01_00205 (degree 941).
 	
 
 

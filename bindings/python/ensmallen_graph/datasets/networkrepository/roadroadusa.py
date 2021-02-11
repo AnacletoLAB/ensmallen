@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:00:36.326416
 
-The undirected graph road-road-usa has 23947347 nodes and 28854312 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 2.41, and the node degree mode is 3. The top 5 most
-central nodes are 22009824 (degree 9), 18944627 (degree 9), 23060281 (degree 8),
-21204382 (degree 8) and 17686182 (degree 8).
+The undirected graph road-road-usa has 23947347 nodes and 28854312 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 2.41, and the
+node degree mode is 3. The top 5 most central nodes are 22009824 (degree
+9), 18944627 (degree 9), 23060281 (degree 8), 21204382 (degree 8) and 17686182
+(degree 8).
 
 
 References
@@ -102,12 +103,13 @@ def RoadRoadUsa(
 	
 	Datetime: 2021-02-07 16:00:36.326416
 	
-	The undirected graph road-road-usa has 23947347 nodes and 28854312 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 2.41, and the node degree mode is 3. The top 5 most
-	central nodes are 22009824 (degree 9), 18944627 (degree 9), 23060281 (degree 8),
-	21204382 (degree 8) and 17686182 (degree 8).
+	The undirected graph road-road-usa has 23947347 nodes and 28854312 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 2.41, and the
+	node degree mode is 3. The top 5 most central nodes are 22009824 (degree
+	9), 18944627 (degree 9), 23060281 (degree 8), 21204382 (degree 8) and 17686182
+	(degree 8).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:43.375599
 
-The undirected graph Nitrospira defluvii has 4241 nodes and 348026 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03871 and
-has 39 connected components, where the component with most nodes has 4144 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 164.12, and the node degree mode is 4. The top 5 most central
-nodes are 330214.NIDE2334 (degree 1880), 330214.NIDE0815 (degree 1685), 330214.NIDE3430
-(degree 1601), 330214.NIDE4158 (degree 1497) and 330214.NIDE1587 (degree 1478).
+The undirected graph Nitrospira defluvii has 4241 nodes and 348026 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03871 and has 39 connected components, where the component with most
+nodes has 4144 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 164.12, and
+the node degree mode is 4. The top 5 most central nodes are 330214.NIDE2334
+(degree 1880), 330214.NIDE0815 (degree 1685), 330214.NIDE3430 (degree 1601),
+330214.NIDE4158 (degree 1497) and 330214.NIDE1587 (degree 1478).
 
 
 References
@@ -106,13 +107,14 @@ def NitrospiraDefluvii(
 	
 	Datetime: 2021-02-02 20:29:43.375599
 	
-	The undirected graph Nitrospira defluvii has 4241 nodes and 348026 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03871 and
-	has 39 connected components, where the component with most nodes has 4144 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 164.12, and the node degree mode is 4. The top 5 most central
-	nodes are 330214.NIDE2334 (degree 1880), 330214.NIDE0815 (degree 1685), 330214.NIDE3430
-	(degree 1601), 330214.NIDE4158 (degree 1497) and 330214.NIDE1587 (degree 1478).
+	The undirected graph Nitrospira defluvii has 4241 nodes and 348026 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03871 and has 39 connected components, where the component with most
+	nodes has 4144 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 164.12, and
+	the node degree mode is 4. The top 5 most central nodes are 330214.NIDE2334
+	(degree 1880), 330214.NIDE0815 (degree 1685), 330214.NIDE3430 (degree 1601),
+	330214.NIDE4158 (degree 1497) and 330214.NIDE1587 (degree 1478).
 	
 
 

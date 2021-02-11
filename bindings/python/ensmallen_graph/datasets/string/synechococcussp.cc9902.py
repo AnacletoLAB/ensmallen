@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:29.417823
 
-The undirected graph Synechococcus sp. CC9902 has 2277 nodes and 130164 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-and has 31 connected components, where the component with most nodes has 2208 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 114.33, and the node degree mode is 1. The top 5 most
-central nodes are 316279.Syncc9902_0693 (degree 839), 316279.Syncc9902_0042 (degree
-739), 316279.Syncc9902_1508 (degree 600), 316279.Syncc9902_1575 (degree 585) and
-316279.Syncc9902_2016 (degree 577).
+The undirected graph Synechococcus sp. CC9902 has 2277 nodes and 130164
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05023 and has 31 connected components, where the component
+with most nodes has 2208 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 114.33,
+and the node degree mode is 1. The top 5 most central nodes are 316279.Syncc9902_0693
+(degree 839), 316279.Syncc9902_0042 (degree 739), 316279.Syncc9902_1508
+(degree 600), 316279.Syncc9902_1575 (degree 585) and 316279.Syncc9902_2016
+(degree 577).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Cc9902(
 	
 	Datetime: 2021-02-02 20:26:29.417823
 	
-	The undirected graph Synechococcus sp. CC9902 has 2277 nodes and 130164 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-	and has 31 connected components, where the component with most nodes has 2208 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 114.33, and the node degree mode is 1. The top 5 most
-	central nodes are 316279.Syncc9902_0693 (degree 839), 316279.Syncc9902_0042 (degree
-	739), 316279.Syncc9902_1508 (degree 600), 316279.Syncc9902_1575 (degree 585) and
-	316279.Syncc9902_2016 (degree 577).
+	The undirected graph Synechococcus sp. CC9902 has 2277 nodes and 130164
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05023 and has 31 connected components, where the component
+	with most nodes has 2208 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 114.33,
+	and the node degree mode is 1. The top 5 most central nodes are 316279.Syncc9902_0693
+	(degree 839), 316279.Syncc9902_0042 (degree 739), 316279.Syncc9902_1508
+	(degree 600), 316279.Syncc9902_1575 (degree 585) and 316279.Syncc9902_2016
+	(degree 577).
 	
 
 

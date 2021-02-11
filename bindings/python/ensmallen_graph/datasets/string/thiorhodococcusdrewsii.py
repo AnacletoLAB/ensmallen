@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:46.112282
 
-The undirected graph Thiorhodococcus drewsii has 4670 nodes and 840727 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07712 and
-has 18 connected components, where the component with most nodes has 4626 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 283,
-the mean node degree is 360.05, and the node degree mode is 3. The top 5 most central
-nodes are 765913.ThidrDRAFT_3878 (degree 2326), 765913.ThidrDRAFT_1962 (degree 2211),
-765913.ThidrDRAFT_0152 (degree 2131), 765913.ThidrDRAFT_1806 (degree 1963) and 765913.ThidrDRAFT_3757
+The undirected graph Thiorhodococcus drewsii has 4670 nodes and 840727
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07712 and has 18 connected components, where the component
+with most nodes has 4626 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 283, the mean node degree is 360.05,
+and the node degree mode is 3. The top 5 most central nodes are 765913.ThidrDRAFT_3878
+(degree 2326), 765913.ThidrDRAFT_1962 (degree 2211), 765913.ThidrDRAFT_0152
+(degree 2131), 765913.ThidrDRAFT_1806 (degree 1963) and 765913.ThidrDRAFT_3757
 (degree 1960).
 
 
@@ -107,13 +108,14 @@ def ThiorhodococcusDrewsii(
 	
 	Datetime: 2021-02-02 21:43:46.112282
 	
-	The undirected graph Thiorhodococcus drewsii has 4670 nodes and 840727 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07712 and
-	has 18 connected components, where the component with most nodes has 4626 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 283,
-	the mean node degree is 360.05, and the node degree mode is 3. The top 5 most central
-	nodes are 765913.ThidrDRAFT_3878 (degree 2326), 765913.ThidrDRAFT_1962 (degree 2211),
-	765913.ThidrDRAFT_0152 (degree 2131), 765913.ThidrDRAFT_1806 (degree 1963) and 765913.ThidrDRAFT_3757
+	The undirected graph Thiorhodococcus drewsii has 4670 nodes and 840727
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07712 and has 18 connected components, where the component
+	with most nodes has 4626 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 283, the mean node degree is 360.05,
+	and the node degree mode is 3. The top 5 most central nodes are 765913.ThidrDRAFT_3878
+	(degree 2326), 765913.ThidrDRAFT_1962 (degree 2211), 765913.ThidrDRAFT_0152
+	(degree 2131), 765913.ThidrDRAFT_1806 (degree 1963) and 765913.ThidrDRAFT_3757
 	(degree 1960).
 	
 

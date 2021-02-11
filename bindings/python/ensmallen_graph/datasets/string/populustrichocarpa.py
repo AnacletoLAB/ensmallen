@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:29:30.689278
 
-The undirected graph Populus trichocarpa has 33732 nodes and 9291978 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01633 and
-has 89 connected components, where the component with most nodes has 33529 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 273, the mean node degree is 550.93, and the node degree mode is 1. The top 5
-most central nodes are 3694.POPTR_0018s12280.1 (degree 12383), 3694.POPTR_0019s15130.1
-(degree 12338), 3694.POPTR_0019s08710.1 (degree 12147), 3694.POPTR_0018s09020.1 (degree
-11927) and 3694.POPTR_0019s10660.1 (degree 11899).
+The undirected graph Populus trichocarpa has 33732 nodes and 9291978 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01633 and has 89 connected components, where the component with most
+nodes has 33529 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 273, the mean node degree is 550.93, and
+the node degree mode is 1. The top 5 most central nodes are 3694.POPTR_0018s12280.1
+(degree 12383), 3694.POPTR_0019s15130.1 (degree 12338), 3694.POPTR_0019s08710.1
+(degree 12147), 3694.POPTR_0018s09020.1 (degree 11927) and 3694.POPTR_0019s10660.1
+(degree 11899).
 
 
 References
@@ -107,14 +108,15 @@ def PopulusTrichocarpa(
 	
 	Datetime: 2021-02-02 16:29:30.689278
 	
-	The undirected graph Populus trichocarpa has 33732 nodes and 9291978 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01633 and
-	has 89 connected components, where the component with most nodes has 33529 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 273, the mean node degree is 550.93, and the node degree mode is 1. The top 5
-	most central nodes are 3694.POPTR_0018s12280.1 (degree 12383), 3694.POPTR_0019s15130.1
-	(degree 12338), 3694.POPTR_0019s08710.1 (degree 12147), 3694.POPTR_0018s09020.1 (degree
-	11927) and 3694.POPTR_0019s10660.1 (degree 11899).
+	The undirected graph Populus trichocarpa has 33732 nodes and 9291978 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01633 and has 89 connected components, where the component with most
+	nodes has 33529 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 273, the mean node degree is 550.93, and
+	the node degree mode is 1. The top 5 most central nodes are 3694.POPTR_0018s12280.1
+	(degree 12383), 3694.POPTR_0019s15130.1 (degree 12338), 3694.POPTR_0019s08710.1
+	(degree 12147), 3694.POPTR_0018s09020.1 (degree 11927) and 3694.POPTR_0019s10660.1
+	(degree 11899).
 	
 
 

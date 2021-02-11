@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:53.304552
 
-The undirected graph Sulfurospirillum multivorans has 3228 nodes and 253343 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04864
-and has 13 connected components, where the component with most nodes has 3181 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 156.97, and the node degree mode is 4. The top 5
-most central nodes are 1150621.SMUL_0733 (degree 1250), 1150621.SMUL_2630 (degree
-1028), 1150621.SMUL_3285 (degree 1006), 1150621.SMUL_0701 (degree 992) and 1150621.SMUL_0774
-(degree 977).
+The undirected graph Sulfurospirillum multivorans has 3228 nodes and 253343
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04864 and has 13 connected components, where the component
+with most nodes has 3181 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 156.97,
+and the node degree mode is 4. The top 5 most central nodes are 1150621.SMUL_0733
+(degree 1250), 1150621.SMUL_2630 (degree 1028), 1150621.SMUL_3285 (degree
+1006), 1150621.SMUL_0701 (degree 992) and 1150621.SMUL_0774 (degree 977).
 
 
 References
@@ -107,14 +107,14 @@ def SulfurospirillumMultivorans(
 	
 	Datetime: 2021-02-02 22:59:53.304552
 	
-	The undirected graph Sulfurospirillum multivorans has 3228 nodes and 253343 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04864
-	and has 13 connected components, where the component with most nodes has 3181 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 156.97, and the node degree mode is 4. The top 5
-	most central nodes are 1150621.SMUL_0733 (degree 1250), 1150621.SMUL_2630 (degree
-	1028), 1150621.SMUL_3285 (degree 1006), 1150621.SMUL_0701 (degree 992) and 1150621.SMUL_0774
-	(degree 977).
+	The undirected graph Sulfurospirillum multivorans has 3228 nodes and 253343
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04864 and has 13 connected components, where the component
+	with most nodes has 3181 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 156.97,
+	and the node degree mode is 4. The top 5 most central nodes are 1150621.SMUL_0733
+	(degree 1250), 1150621.SMUL_2630 (degree 1028), 1150621.SMUL_3285 (degree
+	1006), 1150621.SMUL_0701 (degree 992) and 1150621.SMUL_0774 (degree 977).
 	
 
 

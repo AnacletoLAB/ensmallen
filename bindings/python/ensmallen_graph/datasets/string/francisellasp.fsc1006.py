@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:35.965579
 
-The undirected graph Francisella sp. FSC1006 has 1818 nodes and 100582 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-has 13 connected components, where the component with most nodes has 1769 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 110.65, and the node degree mode is 4. The top 5 most central
-nodes are 1547445.LO80_05300 (degree 716), 1547445.LO80_03035 (degree 589), 1547445.LO80_04180
-(degree 584), 1547445.LO80_00875 (degree 570) and 1547445.LO80_06475 (degree 538).
+The undirected graph Francisella sp. FSC1006 has 1818 nodes and 100582
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06090 and has 13 connected components, where the component
+with most nodes has 1769 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 110.65,
+and the node degree mode is 4. The top 5 most central nodes are 1547445.LO80_05300
+(degree 716), 1547445.LO80_03035 (degree 589), 1547445.LO80_04180 (degree
+584), 1547445.LO80_00875 (degree 570) and 1547445.LO80_06475 (degree 538).
 
 
 References
@@ -106,13 +107,14 @@ def FrancisellaSp.Fsc1006(
 	
 	Datetime: 2021-02-03 23:20:35.965579
 	
-	The undirected graph Francisella sp. FSC1006 has 1818 nodes and 100582 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06090 and
-	has 13 connected components, where the component with most nodes has 1769 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 110.65, and the node degree mode is 4. The top 5 most central
-	nodes are 1547445.LO80_05300 (degree 716), 1547445.LO80_03035 (degree 589), 1547445.LO80_04180
-	(degree 584), 1547445.LO80_00875 (degree 570) and 1547445.LO80_06475 (degree 538).
+	The undirected graph Francisella sp. FSC1006 has 1818 nodes and 100582
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06090 and has 13 connected components, where the component
+	with most nodes has 1769 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 110.65,
+	and the node degree mode is 4. The top 5 most central nodes are 1547445.LO80_05300
+	(degree 716), 1547445.LO80_03035 (degree 589), 1547445.LO80_04180 (degree
+	584), 1547445.LO80_00875 (degree 570) and 1547445.LO80_06475 (degree 538).
 	
 
 

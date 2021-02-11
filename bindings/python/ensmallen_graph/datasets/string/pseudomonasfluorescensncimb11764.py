@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:01.407491
 
-The undirected graph Pseudomonas fluorescens NCIMB11764 has 6384 nodes and 791330
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03884 and has 38 connected components, where the component with most nodes has
-6296 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 207, the mean node degree is 247.91, and the node degree mode is 2. The
-top 5 most central nodes are 1221522.B723_32680 (degree 2158), 1221522.B723_03650
-(degree 1989), 1221522.B723_01870 (degree 1898), 1221522.B723_24325 (degree 1817)
-and 1221522.B723_24320 (degree 1710).
+The undirected graph Pseudomonas fluorescens NCIMB11764 has 6384 nodes
+and 791330 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03884 and has 38 connected components, where the
+component with most nodes has 6296 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 207, the mean node degree
+is 247.91, and the node degree mode is 2. The top 5 most central nodes
+are 1221522.B723_32680 (degree 2158), 1221522.B723_03650 (degree 1989),
+1221522.B723_01870 (degree 1898), 1221522.B723_24325 (degree 1817) and
+1221522.B723_24320 (degree 1710).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFluorescensNcimb11764(
 	
 	Datetime: 2021-02-02 23:24:01.407491
 	
-	The undirected graph Pseudomonas fluorescens NCIMB11764 has 6384 nodes and 791330
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03884 and has 38 connected components, where the component with most nodes has
-	6296 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 207, the mean node degree is 247.91, and the node degree mode is 2. The
-	top 5 most central nodes are 1221522.B723_32680 (degree 2158), 1221522.B723_03650
-	(degree 1989), 1221522.B723_01870 (degree 1898), 1221522.B723_24325 (degree 1817)
-	and 1221522.B723_24320 (degree 1710).
+	The undirected graph Pseudomonas fluorescens NCIMB11764 has 6384 nodes
+	and 791330 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03884 and has 38 connected components, where the
+	component with most nodes has 6296 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 207, the mean node degree
+	is 247.91, and the node degree mode is 2. The top 5 most central nodes
+	are 1221522.B723_32680 (degree 2158), 1221522.B723_03650 (degree 1989),
+	1221522.B723_01870 (degree 1898), 1221522.B723_24325 (degree 1817) and
+	1221522.B723_24320 (degree 1710).
 	
 
 

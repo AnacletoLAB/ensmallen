@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:50.426525
 
-The undirected graph Melioribacter roseus has 2829 nodes and 267200 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06680 and
-has 3 connected components, where the component with most nodes has 2825 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 188.90, and the node degree mode is 10. The top 5 most central
-nodes are 1191523.MROS_2183 (degree 1397), 1191523.MROS_2574 (degree 1341), 1191523.MROS_0244
-(degree 1081), 1191523.MROS_2663 (degree 1036) and 1191523.MROS_2577 (degree 1017).
+The undirected graph Melioribacter roseus has 2829 nodes and 267200 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06680 and has 3 connected components, where the component with most
+nodes has 2825 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 188.90, and
+the node degree mode is 10. The top 5 most central nodes are 1191523.MROS_2183
+(degree 1397), 1191523.MROS_2574 (degree 1341), 1191523.MROS_0244 (degree
+1081), 1191523.MROS_2663 (degree 1036) and 1191523.MROS_2577 (degree 1017).
 
 
 References
@@ -106,13 +107,14 @@ def MelioribacterRoseus(
 	
 	Datetime: 2021-02-02 23:11:50.426525
 	
-	The undirected graph Melioribacter roseus has 2829 nodes and 267200 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06680 and
-	has 3 connected components, where the component with most nodes has 2825 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 188.90, and the node degree mode is 10. The top 5 most central
-	nodes are 1191523.MROS_2183 (degree 1397), 1191523.MROS_2574 (degree 1341), 1191523.MROS_0244
-	(degree 1081), 1191523.MROS_2663 (degree 1036) and 1191523.MROS_2577 (degree 1017).
+	The undirected graph Melioribacter roseus has 2829 nodes and 267200 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06680 and has 3 connected components, where the component with most
+	nodes has 2825 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 188.90, and
+	the node degree mode is 10. The top 5 most central nodes are 1191523.MROS_2183
+	(degree 1397), 1191523.MROS_2574 (degree 1341), 1191523.MROS_0244 (degree
+	1081), 1191523.MROS_2663 (degree 1036) and 1191523.MROS_2577 (degree 1017).
 	
 
 

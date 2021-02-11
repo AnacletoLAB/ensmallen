@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:42.375788
 
-The undirected graph Escherichia coli ATCC8739 has 4190 nodes and 409238 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04663
-and has 3 connected components, where the component with most nodes has 4185 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 195.34, and the node degree mode is 117. The top
-5 most central nodes are 481805.EcolC_1299 (degree 1697), 481805.EcolC_2278 (degree
-1548), 481805.EcolC_4152 (degree 1512), 481805.EcolC_1170 (degree 1298) and 481805.EcolC_0488
-(degree 1232).
+The undirected graph Escherichia coli ATCC8739 has 4190 nodes and 409238
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04663 and has 3 connected components, where the component
+with most nodes has 4185 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 195.34,
+and the node degree mode is 117. The top 5 most central nodes are 481805.EcolC_1299
+(degree 1697), 481805.EcolC_2278 (degree 1548), 481805.EcolC_4152 (degree
+1512), 481805.EcolC_1170 (degree 1298) and 481805.EcolC_0488 (degree 1232).
 
 
 References
@@ -107,14 +107,14 @@ def EscherichiaColiAtcc8739(
 	
 	Datetime: 2021-02-02 20:57:42.375788
 	
-	The undirected graph Escherichia coli ATCC8739 has 4190 nodes and 409238 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04663
-	and has 3 connected components, where the component with most nodes has 4185 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 195.34, and the node degree mode is 117. The top
-	5 most central nodes are 481805.EcolC_1299 (degree 1697), 481805.EcolC_2278 (degree
-	1548), 481805.EcolC_4152 (degree 1512), 481805.EcolC_1170 (degree 1298) and 481805.EcolC_0488
-	(degree 1232).
+	The undirected graph Escherichia coli ATCC8739 has 4190 nodes and 409238
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04663 and has 3 connected components, where the component
+	with most nodes has 4185 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 195.34,
+	and the node degree mode is 117. The top 5 most central nodes are 481805.EcolC_1299
+	(degree 1697), 481805.EcolC_2278 (degree 1548), 481805.EcolC_4152 (degree
+	1512), 481805.EcolC_1170 (degree 1298) and 481805.EcolC_0488 (degree 1232).
 	
 
 

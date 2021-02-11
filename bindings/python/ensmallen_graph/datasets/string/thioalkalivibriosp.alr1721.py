@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:49.060224
 
-The undirected graph Thioalkalivibrio sp. ALR1721 has 2751 nodes and 249220 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06589
-and has 6 connected components, where the component with most nodes has 2736 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 181.19, and the node degree mode is 2. The top 5
-most central nodes are 1269813.ATUL01000003_gene2388 (degree 1565), 1269813.ATUL01000004_gene2288
-(degree 1119), 1269813.ATUL01000009_gene1662 (degree 1019), 1269813.ATUL01000004_gene2187
-(degree 962) and 1269813.ATUL01000003_gene2448 (degree 947).
+The undirected graph Thioalkalivibrio sp. ALR1721 has 2751 nodes and 249220
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06589 and has 6 connected components, where the component
+with most nodes has 2736 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 181.19,
+and the node degree mode is 2. The top 5 most central nodes are 1269813.ATUL01000003_gene2388
+(degree 1565), 1269813.ATUL01000004_gene2288 (degree 1119), 1269813.ATUL01000009_gene1662
+(degree 1019), 1269813.ATUL01000004_gene2187 (degree 962) and 1269813.ATUL01000003_gene2448
+(degree 947).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Alr1721(
 	
 	Datetime: 2021-02-02 23:37:49.060224
 	
-	The undirected graph Thioalkalivibrio sp. ALR1721 has 2751 nodes and 249220 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06589
-	and has 6 connected components, where the component with most nodes has 2736 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 181.19, and the node degree mode is 2. The top 5
-	most central nodes are 1269813.ATUL01000003_gene2388 (degree 1565), 1269813.ATUL01000004_gene2288
-	(degree 1119), 1269813.ATUL01000009_gene1662 (degree 1019), 1269813.ATUL01000004_gene2187
-	(degree 962) and 1269813.ATUL01000003_gene2448 (degree 947).
+	The undirected graph Thioalkalivibrio sp. ALR1721 has 2751 nodes and 249220
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06589 and has 6 connected components, where the component
+	with most nodes has 2736 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 181.19,
+	and the node degree mode is 2. The top 5 most central nodes are 1269813.ATUL01000003_gene2388
+	(degree 1565), 1269813.ATUL01000004_gene2288 (degree 1119), 1269813.ATUL01000009_gene1662
+	(degree 1019), 1269813.ATUL01000004_gene2187 (degree 962) and 1269813.ATUL01000003_gene2448
+	(degree 947).
 	
 
 

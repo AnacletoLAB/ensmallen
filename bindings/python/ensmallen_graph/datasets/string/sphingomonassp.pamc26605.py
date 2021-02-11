@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:26:11.585922
 
-The undirected graph Sphingomonas sp. PAMC26605 has 3994 nodes and 405796 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05089
-and has 14 connected components, where the component with most nodes has 3967 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 203.20, and the node degree mode is 3. The top 5
-most central nodes are 1112214.AHIS01000047_gene2099 (degree 1440), 1112214.AHIS01000006_gene296
-(degree 1069), 1112214.AHIS01000078_gene3457 (degree 1066), 1112214.AHIS01000039_gene1889
-(degree 1066) and 1112214.AHIS01000094_gene531 (degree 1063).
+The undirected graph Sphingomonas sp. PAMC26605 has 3994 nodes and 405796
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05089 and has 14 connected components, where the component
+with most nodes has 3967 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 203.20,
+and the node degree mode is 3. The top 5 most central nodes are 1112214.AHIS01000047_gene2099
+(degree 1440), 1112214.AHIS01000006_gene296 (degree 1069), 1112214.AHIS01000078_gene3457
+(degree 1066), 1112214.AHIS01000039_gene1889 (degree 1066) and 1112214.AHIS01000094_gene531
+(degree 1063).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.Pamc26605(
 	
 	Datetime: 2021-02-02 22:26:11.585922
 	
-	The undirected graph Sphingomonas sp. PAMC26605 has 3994 nodes and 405796 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05089
-	and has 14 connected components, where the component with most nodes has 3967 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 203.20, and the node degree mode is 3. The top 5
-	most central nodes are 1112214.AHIS01000047_gene2099 (degree 1440), 1112214.AHIS01000006_gene296
-	(degree 1069), 1112214.AHIS01000078_gene3457 (degree 1066), 1112214.AHIS01000039_gene1889
-	(degree 1066) and 1112214.AHIS01000094_gene531 (degree 1063).
+	The undirected graph Sphingomonas sp. PAMC26605 has 3994 nodes and 405796
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05089 and has 14 connected components, where the component
+	with most nodes has 3967 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 203.20,
+	and the node degree mode is 3. The top 5 most central nodes are 1112214.AHIS01000047_gene2099
+	(degree 1440), 1112214.AHIS01000006_gene296 (degree 1069), 1112214.AHIS01000078_gene3457
+	(degree 1066), 1112214.AHIS01000039_gene1889 (degree 1066) and 1112214.AHIS01000094_gene531
+	(degree 1063).
 	
 
 

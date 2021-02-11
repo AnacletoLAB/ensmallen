@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:05.729714
 
-The undirected graph Lyngbya sp. PCC8106 has 6026 nodes and 902442 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04971 and
-has 42 connected components, where the component with most nodes has 5907 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 279,
-the mean node degree is 299.52, and the node degree mode is 1. The top 5 most central
-nodes are 313612.L8106_24910 (degree 1929), 313612.L8106_10612 (degree 1883), 313612.L8106_01312
-(degree 1859), 313612.L8106_12395 (degree 1785) and 313612.L8106_07471 (degree 1738).
+The undirected graph Lyngbya sp. PCC8106 has 6026 nodes and 902442 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04971 and has 42 connected components, where the component with most
+nodes has 5907 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 279, the mean node degree is 299.52, and
+the node degree mode is 1. The top 5 most central nodes are 313612.L8106_24910
+(degree 1929), 313612.L8106_10612 (degree 1883), 313612.L8106_01312 (degree
+1859), 313612.L8106_12395 (degree 1785) and 313612.L8106_07471 (degree
+1738).
 
 
 References
@@ -106,13 +108,15 @@ def LyngbyaSp.Pcc8106(
 	
 	Datetime: 2021-02-02 20:24:05.729714
 	
-	The undirected graph Lyngbya sp. PCC8106 has 6026 nodes and 902442 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04971 and
-	has 42 connected components, where the component with most nodes has 5907 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 279,
-	the mean node degree is 299.52, and the node degree mode is 1. The top 5 most central
-	nodes are 313612.L8106_24910 (degree 1929), 313612.L8106_10612 (degree 1883), 313612.L8106_01312
-	(degree 1859), 313612.L8106_12395 (degree 1785) and 313612.L8106_07471 (degree 1738).
+	The undirected graph Lyngbya sp. PCC8106 has 6026 nodes and 902442 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04971 and has 42 connected components, where the component with most
+	nodes has 5907 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 279, the mean node degree is 299.52, and
+	the node degree mode is 1. The top 5 most central nodes are 313612.L8106_24910
+	(degree 1929), 313612.L8106_10612 (degree 1883), 313612.L8106_01312 (degree
+	1859), 313612.L8106_12395 (degree 1785) and 313612.L8106_07471 (degree
+	1738).
 	
 
 

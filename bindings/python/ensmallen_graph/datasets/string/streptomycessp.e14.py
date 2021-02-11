@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:03.762573
 
-The undirected graph Streptomyces sp. e14 has 6304 nodes and 939538 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04729 and
-has 29 connected components, where the component with most nodes has 6245 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 298.08, and the node degree mode is 1. The top 5 most central
-nodes are 645465.ACUR01000375_gene4802 (degree 3221), 645465.ACUR01000184_gene3622
-(degree 2013), 645465.ACUR01000121_gene4881 (degree 1949), 645465.ACUR01000300_gene4552
-(degree 1742) and 645465.ACUR01000138_gene2186 (degree 1659).
+The undirected graph Streptomyces sp. e14 has 6304 nodes and 939538 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04729 and has 29 connected components, where the component with most
+nodes has 6245 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 298.08, and
+the node degree mode is 1. The top 5 most central nodes are 645465.ACUR01000375_gene4802
+(degree 3221), 645465.ACUR01000184_gene3622 (degree 2013), 645465.ACUR01000121_gene4881
+(degree 1949), 645465.ACUR01000300_gene4552 (degree 1742) and 645465.ACUR01000138_gene2186
+(degree 1659).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.E14(
 	
 	Datetime: 2021-02-02 21:25:03.762573
 	
-	The undirected graph Streptomyces sp. e14 has 6304 nodes and 939538 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04729 and
-	has 29 connected components, where the component with most nodes has 6245 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 298.08, and the node degree mode is 1. The top 5 most central
-	nodes are 645465.ACUR01000375_gene4802 (degree 3221), 645465.ACUR01000184_gene3622
-	(degree 2013), 645465.ACUR01000121_gene4881 (degree 1949), 645465.ACUR01000300_gene4552
-	(degree 1742) and 645465.ACUR01000138_gene2186 (degree 1659).
+	The undirected graph Streptomyces sp. e14 has 6304 nodes and 939538 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04729 and has 29 connected components, where the component with most
+	nodes has 6245 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 298.08, and
+	the node degree mode is 1. The top 5 most central nodes are 645465.ACUR01000375_gene4802
+	(degree 3221), 645465.ACUR01000184_gene3622 (degree 2013), 645465.ACUR01000121_gene4881
+	(degree 1949), 645465.ACUR01000300_gene4552 (degree 1742) and 645465.ACUR01000138_gene2186
+	(degree 1659).
 	
 
 

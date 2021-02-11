@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:21:46.144936
 
-The undirected graph rajat02 has 1960 nodes and 6566 unweighted edges, of which 1945
-are self-loops. The graph is sparse as it has a density of 0.00291 and has 10 connected
-components, where the component with most nodes has 1941 nodes and the component
-with the least nodes has 2 nodes. The graph median node degree is 4, the mean node
-degree is 5.71, and the node degree mode is 4. The top 5 most central nodes are 88
-(degree 541), 357 (degree 415), 380 (degree 274), 11 (degree 130) and 1 (degree 100).
+The undirected graph rajat02 has 1960 nodes and 6566 unweighted edges,
+of which 1945 are self-loops. The graph is sparse as it has a density of
+0.00291 and has 10 connected components, where the component with most
+nodes has 1941 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 4, the mean node degree is 5.71, and the
+node degree mode is 4. The top 5 most central nodes are 88 (degree 541),
+357 (degree 415), 380 (degree 274), 11 (degree 130) and 1 (degree 100).
 
 
 References
@@ -102,12 +103,13 @@ def Rajat02(
 	
 	Datetime: 2021-02-06 08:21:46.144936
 	
-	The undirected graph rajat02 has 1960 nodes and 6566 unweighted edges, of which 1945
-	are self-loops. The graph is sparse as it has a density of 0.00291 and has 10 connected
-	components, where the component with most nodes has 1941 nodes and the component
-	with the least nodes has 2 nodes. The graph median node degree is 4, the mean node
-	degree is 5.71, and the node degree mode is 4. The top 5 most central nodes are 88
-	(degree 541), 357 (degree 415), 380 (degree 274), 11 (degree 130) and 1 (degree 100).
+	The undirected graph rajat02 has 1960 nodes and 6566 unweighted edges,
+	of which 1945 are self-loops. The graph is sparse as it has a density of
+	0.00291 and has 10 connected components, where the component with most
+	nodes has 1941 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 4, the mean node degree is 5.71, and the
+	node degree mode is 4. The top 5 most central nodes are 88 (degree 541),
+	357 (degree 415), 380 (degree 274), 11 (degree 130) and 1 (degree 100).
 	
 
 

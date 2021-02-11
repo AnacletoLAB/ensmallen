@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:38:54.388507
 
-The undirected multigraph aves-sparrow-social has 52 nodes and 516 weighted edges
-with 2 different edge types: 2010 and 2009, of which none are self-loops and 124
-are parallel. The graph is quite dense as it has a density of 0.34238 and is connected,
-as it has a single component. The graph median node degree is 17, the mean node degree
-is 19.85 and the node degree mode is 36. The top 5 most central nodes are 13 (degree
-43), 15 (degree 41), 10 (degree 41), 4 (degree 41) and 9 (degree 37).
+The undirected multigraph aves-sparrow-social has 52 nodes and 516 weighted
+edges with 2 different edge types: 2010 and 2009, of which none are self-loops
+and 124 are parallel. The graph is quite dense as it has a density of 0.34238
+and is connected, as it has a single component. The graph median node degree
+is 17, the mean node degree is 19.85 and the node degree mode is 36. The
+top 5 most central nodes are 13 (degree 43), 15 (degree 41), 10 (degree
+41), 4 (degree 41) and 9 (degree 37).
 
 
 References
@@ -102,12 +103,13 @@ def AvesSparrowSocial(
 	
 	Datetime: 2021-02-03 23:38:54.388507
 	
-	The undirected multigraph aves-sparrow-social has 52 nodes and 516 weighted edges
-	with 2 different edge types: 2010 and 2009, of which none are self-loops and 124
-	are parallel. The graph is quite dense as it has a density of 0.34238 and is connected,
-	as it has a single component. The graph median node degree is 17, the mean node degree
-	is 19.85 and the node degree mode is 36. The top 5 most central nodes are 13 (degree
-	43), 15 (degree 41), 10 (degree 41), 4 (degree 41) and 9 (degree 37).
+	The undirected multigraph aves-sparrow-social has 52 nodes and 516 weighted
+	edges with 2 different edge types: 2010 and 2009, of which none are self-loops
+	and 124 are parallel. The graph is quite dense as it has a density of 0.34238
+	and is connected, as it has a single component. The graph median node degree
+	is 17, the mean node degree is 19.85 and the node degree mode is 36. The
+	top 5 most central nodes are 13 (degree 43), 15 (degree 41), 10 (degree
+	41), 4 (degree 41) and 9 (degree 37).
 	
 
 

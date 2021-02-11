@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:13:37.027071
 
-The undirected graph Anopheles darlingi has 9353 nodes and 1106633 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02530 and
-has 8 connected components, where the component with most nodes has 9339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 236.64, and the node degree mode is 1. The top 5 most central
-nodes are 43151.ADAC000661-PA (degree 3581), 43151.ADAC009492-PA (degree 2399), 43151.ADAC006725-PA
-(degree 2278), 43151.ADAC001541-PA (degree 2049) and 43151.ADAC004796-PA (degree
+The undirected graph Anopheles darlingi has 9353 nodes and 1106633 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02530 and has 8 connected components, where the component with most
+nodes has 9339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 236.64, and
+the node degree mode is 1. The top 5 most central nodes are 43151.ADAC000661-PA
+(degree 3581), 43151.ADAC009492-PA (degree 2399), 43151.ADAC006725-PA (degree
+2278), 43151.ADAC001541-PA (degree 2049) and 43151.ADAC004796-PA (degree
 2003).
 
 
@@ -107,13 +108,14 @@ def AnophelesDarlingi(
 	
 	Datetime: 2021-02-02 18:13:37.027071
 	
-	The undirected graph Anopheles darlingi has 9353 nodes and 1106633 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02530 and
-	has 8 connected components, where the component with most nodes has 9339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 236.64, and the node degree mode is 1. The top 5 most central
-	nodes are 43151.ADAC000661-PA (degree 3581), 43151.ADAC009492-PA (degree 2399), 43151.ADAC006725-PA
-	(degree 2278), 43151.ADAC001541-PA (degree 2049) and 43151.ADAC004796-PA (degree
+	The undirected graph Anopheles darlingi has 9353 nodes and 1106633 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02530 and has 8 connected components, where the component with most
+	nodes has 9339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 236.64, and
+	the node degree mode is 1. The top 5 most central nodes are 43151.ADAC000661-PA
+	(degree 3581), 43151.ADAC009492-PA (degree 2399), 43151.ADAC006725-PA (degree
+	2278), 43151.ADAC001541-PA (degree 2049) and 43151.ADAC004796-PA (degree
 	2003).
 	
 

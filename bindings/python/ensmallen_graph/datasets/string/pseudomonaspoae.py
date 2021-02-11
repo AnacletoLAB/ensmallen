@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:10:08.895110
 
-The undirected graph Pseudomonas poae has 4764 nodes and 395813 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03489 and
-has 17 connected components, where the component with most nodes has 4730 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 166.17, and the node degree mode is 1. The top 5 most central
-nodes are 1282356.H045_21470 (degree 1709), 1282356.H045_22950 (degree 1364), 1282356.H045_16940
-(degree 1289), 1282356.H045_16085 (degree 1252) and 1282356.H045_02695 (degree 1157).
+The undirected graph Pseudomonas poae has 4764 nodes and 395813 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03489 and has 17 connected components, where the component with most
+nodes has 4730 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 166.17, and
+the node degree mode is 1. The top 5 most central nodes are 1282356.H045_21470
+(degree 1709), 1282356.H045_22950 (degree 1364), 1282356.H045_16940 (degree
+1289), 1282356.H045_16085 (degree 1252) and 1282356.H045_02695 (degree
+1157).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasPoae(
 	
 	Datetime: 2021-02-03 21:10:08.895110
 	
-	The undirected graph Pseudomonas poae has 4764 nodes and 395813 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03489 and
-	has 17 connected components, where the component with most nodes has 4730 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 166.17, and the node degree mode is 1. The top 5 most central
-	nodes are 1282356.H045_21470 (degree 1709), 1282356.H045_22950 (degree 1364), 1282356.H045_16940
-	(degree 1289), 1282356.H045_16085 (degree 1252) and 1282356.H045_02695 (degree 1157).
+	The undirected graph Pseudomonas poae has 4764 nodes and 395813 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03489 and has 17 connected components, where the component with most
+	nodes has 4730 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 166.17, and
+	the node degree mode is 1. The top 5 most central nodes are 1282356.H045_21470
+	(degree 1709), 1282356.H045_22950 (degree 1364), 1282356.H045_16940 (degree
+	1289), 1282356.H045_16085 (degree 1252) and 1282356.H045_02695 (degree
+	1157).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:05.021880
 
-The undirected graph USAir97 has 332 nodes and 2126 weighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.03869 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 12.81, and the node degree mode is 1. The top 5 most central nodes are 118 (degree
-139), 261 (degree 118), 255 (degree 101), 182 (degree 94) and 152 (degree 94).
+The undirected graph USAir97 has 332 nodes and 2126 weighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.03869
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 12.81, and the node degree mode is 1. The
+top 5 most central nodes are 118 (degree 139), 261 (degree 118), 255 (degree
+101), 182 (degree 94) and 152 (degree 94).
 
 
 References
@@ -101,11 +102,12 @@ def Usair97(
 	
 	Datetime: 2021-02-06 08:02:05.021880
 	
-	The undirected graph USAir97 has 332 nodes and 2126 weighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.03869 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 12.81, and the node degree mode is 1. The top 5 most central nodes are 118 (degree
-	139), 261 (degree 118), 255 (degree 101), 182 (degree 94) and 152 (degree 94).
+	The undirected graph USAir97 has 332 nodes and 2126 weighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.03869
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 12.81, and the node degree mode is 1. The
+	top 5 most central nodes are 118 (degree 139), 261 (degree 118), 255 (degree
+	101), 182 (degree 94) and 152 (degree 94).
 	
 
 

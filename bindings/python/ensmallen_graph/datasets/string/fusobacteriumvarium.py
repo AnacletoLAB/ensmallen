@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:29.068699
 
-The undirected graph Fusobacterium varium has 2983 nodes and 232675 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05231 and
-has 13 connected components, where the component with most nodes has 2942 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 156.00, and the node degree mode is 5. The top 5 most central
-nodes are 469618.FVAG_01195 (degree 1143), 469618.FVAG_00570 (degree 939), 469618.FVAG_02253
-(degree 851), 469618.FVAG_01872 (degree 844) and 469618.FVAG_01930 (degree 776).
+The undirected graph Fusobacterium varium has 2983 nodes and 232675 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05231 and has 13 connected components, where the component with most
+nodes has 2942 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 156.00, and
+the node degree mode is 5. The top 5 most central nodes are 469618.FVAG_01195
+(degree 1143), 469618.FVAG_00570 (degree 939), 469618.FVAG_02253 (degree
+851), 469618.FVAG_01872 (degree 844) and 469618.FVAG_01930 (degree 776).
 
 
 References
@@ -106,13 +107,14 @@ def FusobacteriumVarium(
 	
 	Datetime: 2021-02-02 20:55:29.068699
 	
-	The undirected graph Fusobacterium varium has 2983 nodes and 232675 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05231 and
-	has 13 connected components, where the component with most nodes has 2942 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 156.00, and the node degree mode is 5. The top 5 most central
-	nodes are 469618.FVAG_01195 (degree 1143), 469618.FVAG_00570 (degree 939), 469618.FVAG_02253
-	(degree 851), 469618.FVAG_01872 (degree 844) and 469618.FVAG_01930 (degree 776).
+	The undirected graph Fusobacterium varium has 2983 nodes and 232675 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05231 and has 13 connected components, where the component with most
+	nodes has 2942 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 156.00, and
+	the node degree mode is 5. The top 5 most central nodes are 469618.FVAG_01195
+	(degree 1143), 469618.FVAG_00570 (degree 939), 469618.FVAG_02253 (degree
+	851), 469618.FVAG_01872 (degree 844) and 469618.FVAG_01930 (degree 776).
 	
 
 

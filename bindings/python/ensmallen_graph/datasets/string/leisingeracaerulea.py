@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:24.627472
 
-The undirected graph Leisingera caerulea has 3656 nodes and 440127 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06587 and
-has 11 connected components, where the component with most nodes has 3631 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 196,
-the mean node degree is 240.77, and the node degree mode is 2. The top 5 most central
-nodes are 999549.KI421513_gene1948 (degree 1542), 999549.KI421513_gene2516 (degree
-1452), 999549.KI421513_gene2518 (degree 1351), 999549.KI421513_gene3410 (degree 1263)
-and 999549.KI421513_gene2268 (degree 1205).
+The undirected graph Leisingera caerulea has 3656 nodes and 440127 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06587 and has 11 connected components, where the component with most
+nodes has 3631 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 196, the mean node degree is 240.77, and
+the node degree mode is 2. The top 5 most central nodes are 999549.KI421513_gene1948
+(degree 1542), 999549.KI421513_gene2516 (degree 1452), 999549.KI421513_gene2518
+(degree 1351), 999549.KI421513_gene3410 (degree 1263) and 999549.KI421513_gene2268
+(degree 1205).
 
 
 References
@@ -107,14 +108,15 @@ def LeisingeraCaerulea(
 	
 	Datetime: 2021-02-02 22:06:24.627472
 	
-	The undirected graph Leisingera caerulea has 3656 nodes and 440127 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06587 and
-	has 11 connected components, where the component with most nodes has 3631 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 196,
-	the mean node degree is 240.77, and the node degree mode is 2. The top 5 most central
-	nodes are 999549.KI421513_gene1948 (degree 1542), 999549.KI421513_gene2516 (degree
-	1452), 999549.KI421513_gene2518 (degree 1351), 999549.KI421513_gene3410 (degree 1263)
-	and 999549.KI421513_gene2268 (degree 1205).
+	The undirected graph Leisingera caerulea has 3656 nodes and 440127 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06587 and has 11 connected components, where the component with most
+	nodes has 3631 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 196, the mean node degree is 240.77, and
+	the node degree mode is 2. The top 5 most central nodes are 999549.KI421513_gene1948
+	(degree 1542), 999549.KI421513_gene2516 (degree 1452), 999549.KI421513_gene2518
+	(degree 1351), 999549.KI421513_gene3410 (degree 1263) and 999549.KI421513_gene2268
+	(degree 1205).
 	
 
 

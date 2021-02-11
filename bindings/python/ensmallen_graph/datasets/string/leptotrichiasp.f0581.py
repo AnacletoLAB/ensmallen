@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:31.430685
 
-The undirected graph Leptotrichia sp. F0581 has 2336 nodes and 146751 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05381 and
-has 8 connected components, where the component with most nodes has 2320 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 125.64, and the node degree mode is 4. The top 5 most central
-nodes are 1321774.HMPREF9108_01603 (degree 1078), 1321774.HMPREF9108_01250 (degree
-783), 1321774.HMPREF9108_01987 (degree 699), 1321774.HMPREF9108_01843 (degree 687)
-and 1321774.HMPREF9108_02222 (degree 649).
+The undirected graph Leptotrichia sp. F0581 has 2336 nodes and 146751 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05381 and has 8 connected components, where the component with most
+nodes has 2320 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 125.64, and
+the node degree mode is 4. The top 5 most central nodes are 1321774.HMPREF9108_01603
+(degree 1078), 1321774.HMPREF9108_01250 (degree 783), 1321774.HMPREF9108_01987
+(degree 699), 1321774.HMPREF9108_01843 (degree 687) and 1321774.HMPREF9108_02222
+(degree 649).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaSp.F0581(
 	
 	Datetime: 2021-02-03 21:52:31.430685
 	
-	The undirected graph Leptotrichia sp. F0581 has 2336 nodes and 146751 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05381 and
-	has 8 connected components, where the component with most nodes has 2320 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 125.64, and the node degree mode is 4. The top 5 most central
-	nodes are 1321774.HMPREF9108_01603 (degree 1078), 1321774.HMPREF9108_01250 (degree
-	783), 1321774.HMPREF9108_01987 (degree 699), 1321774.HMPREF9108_01843 (degree 687)
-	and 1321774.HMPREF9108_02222 (degree 649).
+	The undirected graph Leptotrichia sp. F0581 has 2336 nodes and 146751 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05381 and has 8 connected components, where the component with most
+	nodes has 2320 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 125.64, and
+	the node degree mode is 4. The top 5 most central nodes are 1321774.HMPREF9108_01603
+	(degree 1078), 1321774.HMPREF9108_01250 (degree 783), 1321774.HMPREF9108_01987
+	(degree 699), 1321774.HMPREF9108_01843 (degree 687) and 1321774.HMPREF9108_02222
+	(degree 649).
 	
 
 

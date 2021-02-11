@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:49:44.173513
 
-The undirected graph Bombus impatiens has 8711 nodes and 1038589 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02738 and
-has 14 connected components, where the component with most nodes has 8683 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 238.45, and the node degree mode is 1. The top 5 most central
-nodes are 132113.XP_003494224.1 (degree 2687), 132113.XP_003494680.1 (degree 2231),
-132113.XP_003493466.1 (degree 2050), 132113.XP_003494260.1 (degree 1964) and 132113.XP_003494439.1
+The undirected graph Bombus impatiens has 8711 nodes and 1038589 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02738 and has 14 connected components, where the component with most
+nodes has 8683 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 238.45, and
+the node degree mode is 1. The top 5 most central nodes are 132113.XP_003494224.1
+(degree 2687), 132113.XP_003494680.1 (degree 2231), 132113.XP_003493466.1
+(degree 2050), 132113.XP_003494260.1 (degree 1964) and 132113.XP_003494439.1
 (degree 1940).
 
 
@@ -107,13 +108,14 @@ def BombusImpatiens(
 	
 	Datetime: 2021-02-02 19:49:44.173513
 	
-	The undirected graph Bombus impatiens has 8711 nodes and 1038589 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02738 and
-	has 14 connected components, where the component with most nodes has 8683 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 238.45, and the node degree mode is 1. The top 5 most central
-	nodes are 132113.XP_003494224.1 (degree 2687), 132113.XP_003494680.1 (degree 2231),
-	132113.XP_003493466.1 (degree 2050), 132113.XP_003494260.1 (degree 1964) and 132113.XP_003494439.1
+	The undirected graph Bombus impatiens has 8711 nodes and 1038589 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02738 and has 14 connected components, where the component with most
+	nodes has 8683 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 238.45, and
+	the node degree mode is 1. The top 5 most central nodes are 132113.XP_003494224.1
+	(degree 2687), 132113.XP_003494680.1 (degree 2231), 132113.XP_003493466.1
+	(degree 2050), 132113.XP_003494260.1 (degree 1964) and 132113.XP_003494439.1
 	(degree 1940).
 	
 

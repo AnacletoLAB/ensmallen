@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:35.652088
 
-The undirected graph Bacillus gaemokensis has 4956 nodes and 532654 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04338 and
-has 36 connected components, where the component with most nodes has 4870 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 214.95, and the node degree mode is 1. The top 5 most central
-nodes are 574375.BAGA_29205 (degree 1870), 574375.BAGA_24785 (degree 1467), 574375.BAGA_25015
-(degree 1447), 574375.BAGA_04445 (degree 1413) and 574375.BAGA_00715 (degree 1278).
+The undirected graph Bacillus gaemokensis has 4956 nodes and 532654 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04338 and has 36 connected components, where the component with most
+nodes has 4870 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 214.95, and
+the node degree mode is 1. The top 5 most central nodes are 574375.BAGA_29205
+(degree 1870), 574375.BAGA_24785 (degree 1467), 574375.BAGA_25015 (degree
+1447), 574375.BAGA_04445 (degree 1413) and 574375.BAGA_00715 (degree 1278).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusGaemokensis(
 	
 	Datetime: 2021-02-02 21:14:35.652088
 	
-	The undirected graph Bacillus gaemokensis has 4956 nodes and 532654 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04338 and
-	has 36 connected components, where the component with most nodes has 4870 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 214.95, and the node degree mode is 1. The top 5 most central
-	nodes are 574375.BAGA_29205 (degree 1870), 574375.BAGA_24785 (degree 1467), 574375.BAGA_25015
-	(degree 1447), 574375.BAGA_04445 (degree 1413) and 574375.BAGA_00715 (degree 1278).
+	The undirected graph Bacillus gaemokensis has 4956 nodes and 532654 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04338 and has 36 connected components, where the component with most
+	nodes has 4870 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 214.95, and
+	the node degree mode is 1. The top 5 most central nodes are 574375.BAGA_29205
+	(degree 1870), 574375.BAGA_24785 (degree 1467), 574375.BAGA_25015 (degree
+	1447), 574375.BAGA_04445 (degree 1413) and 574375.BAGA_00715 (degree 1278).
 	
 
 

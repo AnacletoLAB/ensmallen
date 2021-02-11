@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:02:08.715079
 
-The undirected graph Chlamydia sp. Rubis has 2424 nodes and 104214 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03549 and
-has 27 connected components, where the component with most nodes has 2341 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 54,
-the mean node degree is 85.99, and the node degree mode is 5. The top 5 most central
-nodes are 1444712.BN1013_01177 (degree 917), 1444712.BN1013_00548 (degree 758), 1444712.BN1013_00187
-(degree 649), 1444712.BN1013_00851 (degree 535) and 1444712.BN1013_01874 (degree
+The undirected graph Chlamydia sp. Rubis has 2424 nodes and 104214 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03549 and has 27 connected components, where the component with most
+nodes has 2341 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 54, the mean node degree is 85.99, and
+the node degree mode is 5. The top 5 most central nodes are 1444712.BN1013_01177
+(degree 917), 1444712.BN1013_00548 (degree 758), 1444712.BN1013_00187 (degree
+649), 1444712.BN1013_00851 (degree 535) and 1444712.BN1013_01874 (degree
 535).
 
 
@@ -107,13 +108,14 @@ def ChlamydiaSp.Rubis(
 	
 	Datetime: 2021-02-03 23:02:08.715079
 	
-	The undirected graph Chlamydia sp. Rubis has 2424 nodes and 104214 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03549 and
-	has 27 connected components, where the component with most nodes has 2341 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 54,
-	the mean node degree is 85.99, and the node degree mode is 5. The top 5 most central
-	nodes are 1444712.BN1013_01177 (degree 917), 1444712.BN1013_00548 (degree 758), 1444712.BN1013_00187
-	(degree 649), 1444712.BN1013_00851 (degree 535) and 1444712.BN1013_01874 (degree
+	The undirected graph Chlamydia sp. Rubis has 2424 nodes and 104214 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03549 and has 27 connected components, where the component with most
+	nodes has 2341 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 54, the mean node degree is 85.99, and
+	the node degree mode is 5. The top 5 most central nodes are 1444712.BN1013_01177
+	(degree 917), 1444712.BN1013_00548 (degree 758), 1444712.BN1013_00187 (degree
+	649), 1444712.BN1013_00851 (degree 535) and 1444712.BN1013_01874 (degree
 	535).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:45.687778
 
-The undirected graph Methylosinus sp. LW4 has 4109 nodes and 447774 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05305 and
-has 16 connected components, where the component with most nodes has 4073 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 217.95, and the node degree mode is 2. The top 5 most central
-nodes are 136993.KB900627_gene67 (degree 1387), 136993.KB900626_gene4147 (degree
-1345), 136993.KB900626_gene3006 (degree 1088), 136993.KB900626_gene1781 (degree 1088)
-and 136993.KB900626_gene1695 (degree 1087).
+The undirected graph Methylosinus sp. LW4 has 4109 nodes and 447774 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05305 and has 16 connected components, where the component with most
+nodes has 4073 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 217.95, and
+the node degree mode is 2. The top 5 most central nodes are 136993.KB900627_gene67
+(degree 1387), 136993.KB900626_gene4147 (degree 1345), 136993.KB900626_gene3006
+(degree 1088), 136993.KB900626_gene1781 (degree 1088) and 136993.KB900626_gene1695
+(degree 1087).
 
 
 References
@@ -107,14 +108,15 @@ def MethylosinusSp.Lw4(
 	
 	Datetime: 2021-02-02 19:50:45.687778
 	
-	The undirected graph Methylosinus sp. LW4 has 4109 nodes and 447774 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05305 and
-	has 16 connected components, where the component with most nodes has 4073 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 217.95, and the node degree mode is 2. The top 5 most central
-	nodes are 136993.KB900627_gene67 (degree 1387), 136993.KB900626_gene4147 (degree
-	1345), 136993.KB900626_gene3006 (degree 1088), 136993.KB900626_gene1781 (degree 1088)
-	and 136993.KB900626_gene1695 (degree 1087).
+	The undirected graph Methylosinus sp. LW4 has 4109 nodes and 447774 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05305 and has 16 connected components, where the component with most
+	nodes has 4073 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 217.95, and
+	the node degree mode is 2. The top 5 most central nodes are 136993.KB900627_gene67
+	(degree 1387), 136993.KB900626_gene4147 (degree 1345), 136993.KB900626_gene3006
+	(degree 1088), 136993.KB900626_gene1781 (degree 1088) and 136993.KB900626_gene1695
+	(degree 1087).
 	
 
 

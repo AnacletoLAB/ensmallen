@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:28.889744
 
-The undirected graph Synechococcus sp. CC9605 has 2567 nodes and 132245 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04015
-and has 60 connected components, where the component with most nodes has 2416 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 103.03, and the node degree mode is 2. The top 5 most
-central nodes are 110662.Syncc9605_1966 (degree 858), 110662.Syncc9605_0046 (degree
-648), 110662.Syncc9605_0326 (degree 576), 110662.Syncc9605_0804 (degree 557) and
-110662.Syncc9605_0890 (degree 546).
+The undirected graph Synechococcus sp. CC9605 has 2567 nodes and 132245
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04015 and has 60 connected components, where the component
+with most nodes has 2416 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 103.03,
+and the node degree mode is 2. The top 5 most central nodes are 110662.Syncc9605_1966
+(degree 858), 110662.Syncc9605_0046 (degree 648), 110662.Syncc9605_0326
+(degree 576), 110662.Syncc9605_0804 (degree 557) and 110662.Syncc9605_0890
+(degree 546).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Cc9605(
 	
 	Datetime: 2021-02-02 19:46:28.889744
 	
-	The undirected graph Synechococcus sp. CC9605 has 2567 nodes and 132245 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04015
-	and has 60 connected components, where the component with most nodes has 2416 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 103.03, and the node degree mode is 2. The top 5 most
-	central nodes are 110662.Syncc9605_1966 (degree 858), 110662.Syncc9605_0046 (degree
-	648), 110662.Syncc9605_0326 (degree 576), 110662.Syncc9605_0804 (degree 557) and
-	110662.Syncc9605_0890 (degree 546).
+	The undirected graph Synechococcus sp. CC9605 has 2567 nodes and 132245
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04015 and has 60 connected components, where the component
+	with most nodes has 2416 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 103.03,
+	and the node degree mode is 2. The top 5 most central nodes are 110662.Syncc9605_1966
+	(degree 858), 110662.Syncc9605_0046 (degree 648), 110662.Syncc9605_0326
+	(degree 576), 110662.Syncc9605_0804 (degree 557) and 110662.Syncc9605_0890
+	(degree 546).
 	
 
 

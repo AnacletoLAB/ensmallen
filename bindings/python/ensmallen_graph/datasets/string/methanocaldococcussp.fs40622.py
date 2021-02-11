@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:27.031814
 
-The undirected graph Methanocaldococcus sp. FS40622 has 1809 nodes and 169227 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10348 and has 3 connected components, where the component with most nodes has
-1797 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 172, the mean node degree is 187.09, and the node degree mode is 2. The
-top 5 most central nodes are 644281.MFS40622_0492 (degree 728), 644281.MFS40622_1614
-(degree 707), 644281.MFS40622_0779 (degree 698), 644281.MFS40622_1291 (degree 684)
+The undirected graph Methanocaldococcus sp. FS40622 has 1809 nodes and
+169227 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.10348 and has 3 connected components, where
+the component with most nodes has 1797 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 172, the mean
+node degree is 187.09, and the node degree mode is 2. The top 5 most central
+nodes are 644281.MFS40622_0492 (degree 728), 644281.MFS40622_1614 (degree
+707), 644281.MFS40622_0779 (degree 698), 644281.MFS40622_1291 (degree 684)
 and 644281.MFS40622_0227 (degree 681).
 
 
@@ -107,13 +108,14 @@ def MethanocaldococcusSp.Fs40622(
 	
 	Datetime: 2021-02-02 21:24:27.031814
 	
-	The undirected graph Methanocaldococcus sp. FS40622 has 1809 nodes and 169227 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10348 and has 3 connected components, where the component with most nodes has
-	1797 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 172, the mean node degree is 187.09, and the node degree mode is 2. The
-	top 5 most central nodes are 644281.MFS40622_0492 (degree 728), 644281.MFS40622_1614
-	(degree 707), 644281.MFS40622_0779 (degree 698), 644281.MFS40622_1291 (degree 684)
+	The undirected graph Methanocaldococcus sp. FS40622 has 1809 nodes and
+	169227 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.10348 and has 3 connected components, where
+	the component with most nodes has 1797 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 172, the mean
+	node degree is 187.09, and the node degree mode is 2. The top 5 most central
+	nodes are 644281.MFS40622_0492 (degree 728), 644281.MFS40622_1614 (degree
+	707), 644281.MFS40622_0779 (degree 698), 644281.MFS40622_1291 (degree 684)
 	and 644281.MFS40622_0227 (degree 681).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:12.833327
 
-The undirected graph Weissella koreensis has 1346 nodes and 77462 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08558 and
-has 3 connected components, where the component with most nodes has 1338 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 88,
-the mean node degree is 115.10, and the node degree mode is 11. The top 5 most central
-nodes are 1045854.WKK_00380 (degree 673), 1045854.WKK_03455 (degree 529), 1045854.WKK_04280
-(degree 512), 1045854.WKK_03905 (degree 506) and 1045854.WKK_00690 (degree 500).
+The undirected graph Weissella koreensis has 1346 nodes and 77462 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08558 and has 3 connected components, where the component with most
+nodes has 1338 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 88, the mean node degree is 115.10, and
+the node degree mode is 11. The top 5 most central nodes are 1045854.WKK_00380
+(degree 673), 1045854.WKK_03455 (degree 529), 1045854.WKK_04280 (degree
+512), 1045854.WKK_03905 (degree 506) and 1045854.WKK_00690 (degree 500).
 
 
 References
@@ -106,13 +107,14 @@ def WeissellaKoreensis(
 	
 	Datetime: 2021-02-02 22:16:12.833327
 	
-	The undirected graph Weissella koreensis has 1346 nodes and 77462 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08558 and
-	has 3 connected components, where the component with most nodes has 1338 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 88,
-	the mean node degree is 115.10, and the node degree mode is 11. The top 5 most central
-	nodes are 1045854.WKK_00380 (degree 673), 1045854.WKK_03455 (degree 529), 1045854.WKK_04280
-	(degree 512), 1045854.WKK_03905 (degree 506) and 1045854.WKK_00690 (degree 500).
+	The undirected graph Weissella koreensis has 1346 nodes and 77462 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08558 and has 3 connected components, where the component with most
+	nodes has 1338 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 88, the mean node degree is 115.10, and
+	the node degree mode is 11. The top 5 most central nodes are 1045854.WKK_00380
+	(degree 673), 1045854.WKK_03455 (degree 529), 1045854.WKK_04280 (degree
+	512), 1045854.WKK_03905 (degree 506) and 1045854.WKK_00690 (degree 500).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:27.285298
 
-The undirected graph Streptomyces collinus has 6980 nodes and 839856 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03448 and
-has 40 connected components, where the component with most nodes has 6889 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 240.65, and the node degree mode is 2. The top 5 most central
-nodes are 1214242.B446_26885 (degree 3411), 1214242.B446_01690 (degree 3322), 1214242.B446_33600
-(degree 3322), 1214242.B446_01680 (degree 3277) and 1214242.B446_33610 (degree 3277).
+The undirected graph Streptomyces collinus has 6980 nodes and 839856 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03448 and has 40 connected components, where the component with most
+nodes has 6889 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 240.65, and
+the node degree mode is 2. The top 5 most central nodes are 1214242.B446_26885
+(degree 3411), 1214242.B446_01690 (degree 3322), 1214242.B446_33600 (degree
+3322), 1214242.B446_01680 (degree 3277) and 1214242.B446_33610 (degree
+3277).
 
 
 References
@@ -106,13 +108,15 @@ def StreptomycesCollinus(
 	
 	Datetime: 2021-02-02 23:20:27.285298
 	
-	The undirected graph Streptomyces collinus has 6980 nodes and 839856 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03448 and
-	has 40 connected components, where the component with most nodes has 6889 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 240.65, and the node degree mode is 2. The top 5 most central
-	nodes are 1214242.B446_26885 (degree 3411), 1214242.B446_01690 (degree 3322), 1214242.B446_33600
-	(degree 3322), 1214242.B446_01680 (degree 3277) and 1214242.B446_33610 (degree 3277).
+	The undirected graph Streptomyces collinus has 6980 nodes and 839856 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03448 and has 40 connected components, where the component with most
+	nodes has 6889 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 240.65, and
+	the node degree mode is 2. The top 5 most central nodes are 1214242.B446_26885
+	(degree 3411), 1214242.B446_01690 (degree 3322), 1214242.B446_33600 (degree
+	3322), 1214242.B446_01680 (degree 3277) and 1214242.B446_33610 (degree
+	3277).
 	
 
 

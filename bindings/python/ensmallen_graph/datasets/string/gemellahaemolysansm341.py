@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:11.291082
 
-The undirected graph Gemella haemolysans M341 has 1915 nodes and 132771 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07245
-and has 10 connected components, where the component with most nodes has 1896 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 138.66, and the node degree mode is 6. The top 5
-most central nodes are 562981.HMPREF0428_00647 (degree 798), 562981.HMPREF0428_01742
-(degree 767), 562981.HMPREF0428_00240 (degree 568), 562981.HMPREF0428_00037 (degree
-558) and 562981.HMPREF0428_01166 (degree 550).
+The undirected graph Gemella haemolysans M341 has 1915 nodes and 132771
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07245 and has 10 connected components, where the component
+with most nodes has 1896 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 138.66,
+and the node degree mode is 6. The top 5 most central nodes are 562981.HMPREF0428_00647
+(degree 798), 562981.HMPREF0428_01742 (degree 767), 562981.HMPREF0428_00240
+(degree 568), 562981.HMPREF0428_00037 (degree 558) and 562981.HMPREF0428_01166
+(degree 550).
 
 
 References
@@ -107,14 +108,15 @@ def GemellaHaemolysansM341(
 	
 	Datetime: 2021-02-02 21:12:11.291082
 	
-	The undirected graph Gemella haemolysans M341 has 1915 nodes and 132771 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07245
-	and has 10 connected components, where the component with most nodes has 1896 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 138.66, and the node degree mode is 6. The top 5
-	most central nodes are 562981.HMPREF0428_00647 (degree 798), 562981.HMPREF0428_01742
-	(degree 767), 562981.HMPREF0428_00240 (degree 568), 562981.HMPREF0428_00037 (degree
-	558) and 562981.HMPREF0428_01166 (degree 550).
+	The undirected graph Gemella haemolysans M341 has 1915 nodes and 132771
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07245 and has 10 connected components, where the component
+	with most nodes has 1896 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 138.66,
+	and the node degree mode is 6. The top 5 most central nodes are 562981.HMPREF0428_00647
+	(degree 798), 562981.HMPREF0428_01742 (degree 767), 562981.HMPREF0428_00240
+	(degree 568), 562981.HMPREF0428_00037 (degree 558) and 562981.HMPREF0428_01166
+	(degree 550).
 	
 
 

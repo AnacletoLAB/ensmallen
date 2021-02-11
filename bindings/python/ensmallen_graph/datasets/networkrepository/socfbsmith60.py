@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:15.926618
 
-The undirected graph socfb-Smith60 has 2970 nodes and 97133 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02203 and
-is connected, as it has a single component. The graph median node degree is 56, the
-mean node degree is 65.41, and the node degree mode is 1. The top 5 most central
-nodes are 1425 (degree 349), 711 (degree 329), 2817 (degree 326), 2379 (degree 315)
-and 156 (degree 306).
+The undirected graph socfb-Smith60 has 2970 nodes and 97133 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02203 and is connected, as it has a single component. The graph median
+node degree is 56, the mean node degree is 65.41, and the node degree mode
+is 1. The top 5 most central nodes are 1425 (degree 349), 711 (degree 329),
+2817 (degree 326), 2379 (degree 315) and 156 (degree 306).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbSmith60(
 	
 	Datetime: 2021-02-06 10:55:15.926618
 	
-	The undirected graph socfb-Smith60 has 2970 nodes and 97133 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02203 and
-	is connected, as it has a single component. The graph median node degree is 56, the
-	mean node degree is 65.41, and the node degree mode is 1. The top 5 most central
-	nodes are 1425 (degree 349), 711 (degree 329), 2817 (degree 326), 2379 (degree 315)
-	and 156 (degree 306).
+	The undirected graph socfb-Smith60 has 2970 nodes and 97133 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02203 and is connected, as it has a single component. The graph median
+	node degree is 56, the mean node degree is 65.41, and the node degree mode
+	is 1. The top 5 most central nodes are 1425 (degree 349), 711 (degree 329),
+	2817 (degree 326), 2379 (degree 315) and 156 (degree 306).
 	
 
 

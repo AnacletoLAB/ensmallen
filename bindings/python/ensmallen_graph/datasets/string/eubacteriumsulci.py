@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:05.860082
 
-The undirected graph Eubacterium sulci has 1578 nodes and 98260 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07897 and
-has 2 connected components, where the component with most nodes has 1576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 124.54, and the node degree mode is 4. The top 5 most central
-nodes are 888727.HMPREF9092_0042 (degree 701), 888727.HMPREF9092_1070 (degree 625),
-888727.HMPREF9092_1470 (degree 599), 888727.HMPREF9092_1301 (degree 501) and 888727.HMPREF9092_0048
+The undirected graph Eubacterium sulci has 1578 nodes and 98260 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07897 and has 2 connected components, where the component with most
+nodes has 1576 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 124.54, and
+the node degree mode is 4. The top 5 most central nodes are 888727.HMPREF9092_0042
+(degree 701), 888727.HMPREF9092_1070 (degree 625), 888727.HMPREF9092_1470
+(degree 599), 888727.HMPREF9092_1301 (degree 501) and 888727.HMPREF9092_0048
 (degree 497).
 
 
@@ -107,13 +108,14 @@ def EubacteriumSulci(
 	
 	Datetime: 2021-02-02 21:53:05.860082
 	
-	The undirected graph Eubacterium sulci has 1578 nodes and 98260 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07897 and
-	has 2 connected components, where the component with most nodes has 1576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 124.54, and the node degree mode is 4. The top 5 most central
-	nodes are 888727.HMPREF9092_0042 (degree 701), 888727.HMPREF9092_1070 (degree 625),
-	888727.HMPREF9092_1470 (degree 599), 888727.HMPREF9092_1301 (degree 501) and 888727.HMPREF9092_0048
+	The undirected graph Eubacterium sulci has 1578 nodes and 98260 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07897 and has 2 connected components, where the component with most
+	nodes has 1576 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 124.54, and
+	the node degree mode is 4. The top 5 most central nodes are 888727.HMPREF9092_0042
+	(degree 701), 888727.HMPREF9092_1070 (degree 625), 888727.HMPREF9092_1470
+	(degree 599), 888727.HMPREF9092_1301 (degree 501) and 888727.HMPREF9092_0048
 	(degree 497).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:55.282932
 
-The undirected graph Halogeometricum borinquense has 2894 nodes and 191932 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04585
-and has 23 connected components, where the component with most nodes has 2840 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 132.64, and the node degree mode is 3. The top 5
-most central nodes are 469382.Hbor_16250 (degree 809), 469382.Hbor_19250 (degree
-713), 469382.Hbor_09150 (degree 678), 469382.Hbor_26990 (degree 649) and 469382.Hbor_27010
-(degree 640).
+The undirected graph Halogeometricum borinquense has 2894 nodes and 191932
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04585 and has 23 connected components, where the component
+with most nodes has 2840 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 132.64,
+and the node degree mode is 3. The top 5 most central nodes are 469382.Hbor_16250
+(degree 809), 469382.Hbor_19250 (degree 713), 469382.Hbor_09150 (degree
+678), 469382.Hbor_26990 (degree 649) and 469382.Hbor_27010 (degree 640).
 
 
 References
@@ -107,14 +107,14 @@ def HalogeometricumBorinquense(
 	
 	Datetime: 2021-02-02 20:54:55.282932
 	
-	The undirected graph Halogeometricum borinquense has 2894 nodes and 191932 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04585
-	and has 23 connected components, where the component with most nodes has 2840 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 132.64, and the node degree mode is 3. The top 5
-	most central nodes are 469382.Hbor_16250 (degree 809), 469382.Hbor_19250 (degree
-	713), 469382.Hbor_09150 (degree 678), 469382.Hbor_26990 (degree 649) and 469382.Hbor_27010
-	(degree 640).
+	The undirected graph Halogeometricum borinquense has 2894 nodes and 191932
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04585 and has 23 connected components, where the component
+	with most nodes has 2840 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 132.64,
+	and the node degree mode is 3. The top 5 most central nodes are 469382.Hbor_16250
+	(degree 809), 469382.Hbor_19250 (degree 713), 469382.Hbor_09150 (degree
+	678), 469382.Hbor_26990 (degree 649) and 469382.Hbor_27010 (degree 640).
 	
 
 

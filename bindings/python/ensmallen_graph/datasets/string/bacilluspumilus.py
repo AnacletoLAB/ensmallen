@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:53.851059
 
-The undirected graph Bacillus pumilus has 3660 nodes and 393309 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05874 and
-has 14 connected components, where the component with most nodes has 3630 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 214.92, and the node degree mode is 1. The top 5 most central
-nodes are 315750.BPUM_2551 (degree 1257), 315750.BPUM_0548 (degree 1108), 315750.BPUM_0504
-(degree 998), 315750.BPUM_2280 (degree 993) and 315750.BPUM_1814 (degree 903).
+The undirected graph Bacillus pumilus has 3660 nodes and 393309 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05874 and has 14 connected components, where the component with most
+nodes has 3630 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 214.92, and
+the node degree mode is 1. The top 5 most central nodes are 315750.BPUM_2551
+(degree 1257), 315750.BPUM_0548 (degree 1108), 315750.BPUM_0504 (degree
+998), 315750.BPUM_2280 (degree 993) and 315750.BPUM_1814 (degree 903).
 
 
 References
@@ -106,13 +107,14 @@ def BacillusPumilus(
 	
 	Datetime: 2021-02-02 20:25:53.851059
 	
-	The undirected graph Bacillus pumilus has 3660 nodes and 393309 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05874 and
-	has 14 connected components, where the component with most nodes has 3630 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 214.92, and the node degree mode is 1. The top 5 most central
-	nodes are 315750.BPUM_2551 (degree 1257), 315750.BPUM_0548 (degree 1108), 315750.BPUM_0504
-	(degree 998), 315750.BPUM_2280 (degree 993) and 315750.BPUM_1814 (degree 903).
+	The undirected graph Bacillus pumilus has 3660 nodes and 393309 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05874 and has 14 connected components, where the component with most
+	nodes has 3630 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 214.92, and
+	the node degree mode is 1. The top 5 most central nodes are 315750.BPUM_2551
+	(degree 1257), 315750.BPUM_0548 (degree 1108), 315750.BPUM_0504 (degree
+	998), 315750.BPUM_2280 (degree 993) and 315750.BPUM_1814 (degree 903).
 	
 
 

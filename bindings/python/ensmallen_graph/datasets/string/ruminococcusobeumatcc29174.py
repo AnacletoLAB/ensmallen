@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:03.836642
 
-The undirected graph Ruminococcus obeum ATCC29174 has 4016 nodes and 301768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03743
-and has 18 connected components, where the component with most nodes has 3975 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 109, the mean node degree is 150.28, and the node degree mode is 2. The top 5
-most central nodes are 411459.RUMOBE_01343 (degree 1243), 411459.RUMOBE_03299 (degree
-1073), 411459.RUMOBE_02384 (degree 1009), 411459.RUMOBE_03094 (degree 984) and 411459.RUMOBE_00710
-(degree 931).
+The undirected graph Ruminococcus obeum ATCC29174 has 4016 nodes and 301768
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03743 and has 18 connected components, where the component
+with most nodes has 3975 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 109, the mean node degree is 150.28,
+and the node degree mode is 2. The top 5 most central nodes are 411459.RUMOBE_01343
+(degree 1243), 411459.RUMOBE_03299 (degree 1073), 411459.RUMOBE_02384 (degree
+1009), 411459.RUMOBE_03094 (degree 984) and 411459.RUMOBE_00710 (degree
+931).
 
 
 References
@@ -107,14 +108,15 @@ def RuminococcusObeumAtcc29174(
 	
 	Datetime: 2021-02-02 20:45:03.836642
 	
-	The undirected graph Ruminococcus obeum ATCC29174 has 4016 nodes and 301768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03743
-	and has 18 connected components, where the component with most nodes has 3975 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 109, the mean node degree is 150.28, and the node degree mode is 2. The top 5
-	most central nodes are 411459.RUMOBE_01343 (degree 1243), 411459.RUMOBE_03299 (degree
-	1073), 411459.RUMOBE_02384 (degree 1009), 411459.RUMOBE_03094 (degree 984) and 411459.RUMOBE_00710
-	(degree 931).
+	The undirected graph Ruminococcus obeum ATCC29174 has 4016 nodes and 301768
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03743 and has 18 connected components, where the component
+	with most nodes has 3975 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 109, the mean node degree is 150.28,
+	and the node degree mode is 2. The top 5 most central nodes are 411459.RUMOBE_01343
+	(degree 1243), 411459.RUMOBE_03299 (degree 1073), 411459.RUMOBE_02384 (degree
+	1009), 411459.RUMOBE_03094 (degree 984) and 411459.RUMOBE_00710 (degree
+	931).
 	
 
 

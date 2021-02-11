@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:22.186575
 
-The undirected graph Bartonella bacilliformis has 1248 nodes and 89915 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11555
-and has 16 connected components, where the component with most nodes has 1215 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 144.09, and the node degree mode is 1. The top 5
-most central nodes are 360095.BARBAKC583_0002 (degree 611), 360095.BARBAKC583_1312
-(degree 540), 360095.BARBAKC583_0341 (degree 532), 360095.BARBAKC583_0344 (degree
+The undirected graph Bartonella bacilliformis has 1248 nodes and 89915
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11555 and has 16 connected components, where the
+component with most nodes has 1215 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 144.09, and the node degree mode is 1. The top 5 most central nodes
+are 360095.BARBAKC583_0002 (degree 611), 360095.BARBAKC583_1312 (degree
+540), 360095.BARBAKC583_0341 (degree 532), 360095.BARBAKC583_0344 (degree
 513) and 360095.BARBAKC583_0878 (degree 511).
 
 
@@ -107,13 +108,14 @@ def BartonellaBacilliformis(
 	
 	Datetime: 2021-02-02 20:34:22.186575
 	
-	The undirected graph Bartonella bacilliformis has 1248 nodes and 89915 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11555
-	and has 16 connected components, where the component with most nodes has 1215 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 144.09, and the node degree mode is 1. The top 5
-	most central nodes are 360095.BARBAKC583_0002 (degree 611), 360095.BARBAKC583_1312
-	(degree 540), 360095.BARBAKC583_0341 (degree 532), 360095.BARBAKC583_0344 (degree
+	The undirected graph Bartonella bacilliformis has 1248 nodes and 89915
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11555 and has 16 connected components, where the
+	component with most nodes has 1215 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 144.09, and the node degree mode is 1. The top 5 most central nodes
+	are 360095.BARBAKC583_0002 (degree 611), 360095.BARBAKC583_1312 (degree
+	540), 360095.BARBAKC583_0341 (degree 532), 360095.BARBAKC583_0344 (degree
 	513) and 360095.BARBAKC583_0878 (degree 511).
 	
 

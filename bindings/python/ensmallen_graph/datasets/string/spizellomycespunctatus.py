@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:13.536801
 
-The undirected graph Spizellomyces punctatus has 6110 nodes and 759148 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04068 and
-has 3 connected components, where the component with most nodes has 6105 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 248.49, and the node degree mode is 1. The top 5 most central
-nodes are 109760.SPPG_06597T0 (degree 1587), 109760.SPPG_00371T0 (degree 1543), 109760.SPPG_06227T0
-(degree 1509), 109760.SPPG_03613T0 (degree 1498) and 109760.SPPG_02786T0 (degree
+The undirected graph Spizellomyces punctatus has 6110 nodes and 759148
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04068 and has 3 connected components, where the component
+with most nodes has 6105 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 248.49,
+and the node degree mode is 1. The top 5 most central nodes are 109760.SPPG_06597T0
+(degree 1587), 109760.SPPG_00371T0 (degree 1543), 109760.SPPG_06227T0 (degree
+1509), 109760.SPPG_03613T0 (degree 1498) and 109760.SPPG_02786T0 (degree
 1459).
 
 
@@ -107,13 +108,14 @@ def SpizellomycesPunctatus(
 	
 	Datetime: 2021-02-02 19:46:13.536801
 	
-	The undirected graph Spizellomyces punctatus has 6110 nodes and 759148 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04068 and
-	has 3 connected components, where the component with most nodes has 6105 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 248.49, and the node degree mode is 1. The top 5 most central
-	nodes are 109760.SPPG_06597T0 (degree 1587), 109760.SPPG_00371T0 (degree 1543), 109760.SPPG_06227T0
-	(degree 1509), 109760.SPPG_03613T0 (degree 1498) and 109760.SPPG_02786T0 (degree
+	The undirected graph Spizellomyces punctatus has 6110 nodes and 759148
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04068 and has 3 connected components, where the component
+	with most nodes has 6105 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 248.49,
+	and the node degree mode is 1. The top 5 most central nodes are 109760.SPPG_06597T0
+	(degree 1587), 109760.SPPG_00371T0 (degree 1543), 109760.SPPG_06227T0 (degree
+	1509), 109760.SPPG_03613T0 (degree 1498) and 109760.SPPG_02786T0 (degree
 	1459).
 	
 

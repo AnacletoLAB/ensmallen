@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:17:33.253774
 
-The undirected graph Tetrahymena thermophila has 9083 nodes and 1237897 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03001
-and has 19 connected components, where the component with most nodes has 9025 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 272.57, and the node degree mode is 84. The top 5
-most central nodes are 5911.EAS05262 (degree 3059), 5911.EAR96888 (degree 3045),
-5911.EAR83549 (degree 3033), 5911.EAR86074 (degree 2946) and 5911.EAR86395 (degree
-2851).
+The undirected graph Tetrahymena thermophila has 9083 nodes and 1237897
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03001 and has 19 connected components, where the component
+with most nodes has 9025 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 272.57,
+and the node degree mode is 84. The top 5 most central nodes are 5911.EAS05262
+(degree 3059), 5911.EAR96888 (degree 3045), 5911.EAR83549 (degree 3033),
+5911.EAR86074 (degree 2946) and 5911.EAR86395 (degree 2851).
 
 
 References
@@ -107,14 +107,14 @@ def TetrahymenaThermophila(
 	
 	Datetime: 2021-02-02 17:17:33.253774
 	
-	The undirected graph Tetrahymena thermophila has 9083 nodes and 1237897 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03001
-	and has 19 connected components, where the component with most nodes has 9025 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 272.57, and the node degree mode is 84. The top 5
-	most central nodes are 5911.EAS05262 (degree 3059), 5911.EAR96888 (degree 3045),
-	5911.EAR83549 (degree 3033), 5911.EAR86074 (degree 2946) and 5911.EAR86395 (degree
-	2851).
+	The undirected graph Tetrahymena thermophila has 9083 nodes and 1237897
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03001 and has 19 connected components, where the component
+	with most nodes has 9025 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 272.57,
+	and the node degree mode is 84. The top 5 most central nodes are 5911.EAS05262
+	(degree 3059), 5911.EAR96888 (degree 3045), 5911.EAR83549 (degree 3033),
+	5911.EAR86074 (degree 2946) and 5911.EAR86395 (degree 2851).
 	
 
 

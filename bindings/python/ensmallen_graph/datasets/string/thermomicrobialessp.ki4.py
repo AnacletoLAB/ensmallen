@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:18:45.351479
 
-The undirected graph Thermomicrobiales sp. KI4 has 2615 nodes and 188156 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05505
-and has 18 connected components, where the component with most nodes has 2570 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 143.91, and the node degree mode is 2. The top 5
-most central nodes are 1382356.JQMP01000004_gene63 (degree 1168), 1382356.JQMP01000003_gene1989
-(degree 1133), 1382356.JQMP01000003_gene1431 (degree 922), 1382356.JQMP01000004_gene568
-(degree 867) and 1382356.JQMP01000003_gene2322 (degree 853).
+The undirected graph Thermomicrobiales sp. KI4 has 2615 nodes and 188156
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05505 and has 18 connected components, where the component
+with most nodes has 2570 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 143.91,
+and the node degree mode is 2. The top 5 most central nodes are 1382356.JQMP01000004_gene63
+(degree 1168), 1382356.JQMP01000003_gene1989 (degree 1133), 1382356.JQMP01000003_gene1431
+(degree 922), 1382356.JQMP01000004_gene568 (degree 867) and 1382356.JQMP01000003_gene2322
+(degree 853).
 
 
 References
@@ -107,14 +108,15 @@ def ThermomicrobialesSp.Ki4(
 	
 	Datetime: 2021-02-03 22:18:45.351479
 	
-	The undirected graph Thermomicrobiales sp. KI4 has 2615 nodes and 188156 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05505
-	and has 18 connected components, where the component with most nodes has 2570 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 143.91, and the node degree mode is 2. The top 5
-	most central nodes are 1382356.JQMP01000004_gene63 (degree 1168), 1382356.JQMP01000003_gene1989
-	(degree 1133), 1382356.JQMP01000003_gene1431 (degree 922), 1382356.JQMP01000004_gene568
-	(degree 867) and 1382356.JQMP01000003_gene2322 (degree 853).
+	The undirected graph Thermomicrobiales sp. KI4 has 2615 nodes and 188156
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05505 and has 18 connected components, where the component
+	with most nodes has 2570 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 143.91,
+	and the node degree mode is 2. The top 5 most central nodes are 1382356.JQMP01000004_gene63
+	(degree 1168), 1382356.JQMP01000003_gene1989 (degree 1133), 1382356.JQMP01000003_gene1431
+	(degree 922), 1382356.JQMP01000004_gene568 (degree 867) and 1382356.JQMP01000003_gene2322
+	(degree 853).
 	
 
 

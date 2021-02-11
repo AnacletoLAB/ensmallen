@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:50.730501
 
-The undirected graph Weissella halotolerans has 1309 nodes and 92620 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10819
-and has 4 connected components, where the component with most nodes has 1301 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 141.51, and the node degree mode is 2. The top 5
-most central nodes are 1123500.ATUU01000001_gene95 (degree 683), 1123500.ATUU01000002_gene811
-(degree 569), 1123500.ATUU01000001_gene352 (degree 534), 1123500.ATUU01000004_gene1065
-(degree 509) and 1123500.ATUU01000001_gene371 (degree 492).
+The undirected graph Weissella halotolerans has 1309 nodes and 92620 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10819 and has 4 connected components, where the component
+with most nodes has 1301 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 141.51,
+and the node degree mode is 2. The top 5 most central nodes are 1123500.ATUU01000001_gene95
+(degree 683), 1123500.ATUU01000002_gene811 (degree 569), 1123500.ATUU01000001_gene352
+(degree 534), 1123500.ATUU01000004_gene1065 (degree 509) and 1123500.ATUU01000001_gene371
+(degree 492).
 
 
 References
@@ -107,14 +108,15 @@ def WeissellaHalotolerans(
 	
 	Datetime: 2021-02-02 22:52:50.730501
 	
-	The undirected graph Weissella halotolerans has 1309 nodes and 92620 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10819
-	and has 4 connected components, where the component with most nodes has 1301 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 141.51, and the node degree mode is 2. The top 5
-	most central nodes are 1123500.ATUU01000001_gene95 (degree 683), 1123500.ATUU01000002_gene811
-	(degree 569), 1123500.ATUU01000001_gene352 (degree 534), 1123500.ATUU01000004_gene1065
-	(degree 509) and 1123500.ATUU01000001_gene371 (degree 492).
+	The undirected graph Weissella halotolerans has 1309 nodes and 92620 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10819 and has 4 connected components, where the component
+	with most nodes has 1301 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 141.51,
+	and the node degree mode is 2. The top 5 most central nodes are 1123500.ATUU01000001_gene95
+	(degree 683), 1123500.ATUU01000002_gene811 (degree 569), 1123500.ATUU01000001_gene352
+	(degree 534), 1123500.ATUU01000004_gene1065 (degree 509) and 1123500.ATUU01000001_gene371
+	(degree 492).
 	
 
 

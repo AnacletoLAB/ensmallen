@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:54.106610
 
-The undirected graph Starkeya novella has 4415 nodes and 338457 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03474 and
-has 18 connected components, where the component with most nodes has 4374 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 153.32, and the node degree mode is 2. The top 5 most central
-nodes are 639283.Snov_1759 (degree 1730), 639283.Snov_1992 (degree 1604), 639283.Snov_3875
-(degree 1538), 639283.Snov_4473 (degree 1360) and 639283.Snov_2232 (degree 1244).
+The undirected graph Starkeya novella has 4415 nodes and 338457 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03474 and has 18 connected components, where the component with most
+nodes has 4374 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 153.32, and
+the node degree mode is 2. The top 5 most central nodes are 639283.Snov_1759
+(degree 1730), 639283.Snov_1992 (degree 1604), 639283.Snov_3875 (degree
+1538), 639283.Snov_4473 (degree 1360) and 639283.Snov_2232 (degree 1244).
 
 
 References
@@ -106,13 +107,14 @@ def StarkeyaNovella(
 	
 	Datetime: 2021-02-02 21:22:54.106610
 	
-	The undirected graph Starkeya novella has 4415 nodes and 338457 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03474 and
-	has 18 connected components, where the component with most nodes has 4374 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 153.32, and the node degree mode is 2. The top 5 most central
-	nodes are 639283.Snov_1759 (degree 1730), 639283.Snov_1992 (degree 1604), 639283.Snov_3875
-	(degree 1538), 639283.Snov_4473 (degree 1360) and 639283.Snov_2232 (degree 1244).
+	The undirected graph Starkeya novella has 4415 nodes and 338457 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03474 and has 18 connected components, where the component with most
+	nodes has 4374 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 153.32, and
+	the node degree mode is 2. The top 5 most central nodes are 639283.Snov_1759
+	(degree 1730), 639283.Snov_1992 (degree 1604), 639283.Snov_3875 (degree
+	1538), 639283.Snov_4473 (degree 1360) and 639283.Snov_2232 (degree 1244).
 	
 
 

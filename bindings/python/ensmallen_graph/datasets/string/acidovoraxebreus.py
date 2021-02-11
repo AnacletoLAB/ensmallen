@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:47.243561
 
-The undirected graph Acidovorax ebreus has 3465 nodes and 415479 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06923 and
-has 5 connected components, where the component with most nodes has 3455 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 239.81, and the node degree mode is 5. The top 5 most central
-nodes are 535289.Dtpsy_0961 (degree 1547), 535289.Dtpsy_2669 (degree 1447), 535289.Dtpsy_0626
-(degree 1135), 535289.Dtpsy_0028 (degree 1125) and 535289.Dtpsy_1261 (degree 1087).
+The undirected graph Acidovorax ebreus has 3465 nodes and 415479 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06923 and has 5 connected components, where the component with most
+nodes has 3455 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 239.81, and
+the node degree mode is 5. The top 5 most central nodes are 535289.Dtpsy_0961
+(degree 1547), 535289.Dtpsy_2669 (degree 1447), 535289.Dtpsy_0626 (degree
+1135), 535289.Dtpsy_0028 (degree 1125) and 535289.Dtpsy_1261 (degree 1087).
 
 
 References
@@ -106,13 +107,14 @@ def AcidovoraxEbreus(
 	
 	Datetime: 2021-02-02 21:06:47.243561
 	
-	The undirected graph Acidovorax ebreus has 3465 nodes and 415479 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06923 and
-	has 5 connected components, where the component with most nodes has 3455 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 239.81, and the node degree mode is 5. The top 5 most central
-	nodes are 535289.Dtpsy_0961 (degree 1547), 535289.Dtpsy_2669 (degree 1447), 535289.Dtpsy_0626
-	(degree 1135), 535289.Dtpsy_0028 (degree 1125) and 535289.Dtpsy_1261 (degree 1087).
+	The undirected graph Acidovorax ebreus has 3465 nodes and 415479 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06923 and has 5 connected components, where the component with most
+	nodes has 3455 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 239.81, and
+	the node degree mode is 5. The top 5 most central nodes are 535289.Dtpsy_0961
+	(degree 1547), 535289.Dtpsy_2669 (degree 1447), 535289.Dtpsy_0626 (degree
+	1135), 535289.Dtpsy_0028 (degree 1125) and 535289.Dtpsy_1261 (degree 1087).
 	
 
 

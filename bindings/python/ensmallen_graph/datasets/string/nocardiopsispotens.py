@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:30.035134
 
-The undirected graph Nocardiopsis potens has 5754 nodes and 657986 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-has 24 connected components, where the component with most nodes has 5696 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 228.71, and the node degree mode is 1. The top 5 most central
-nodes are 570268.ANBB01000015_gene3771 (degree 2030), 570268.ANBB01000067_gene2520
-(degree 1799), 570268.ANBB01000003_gene462 (degree 1763), 570268.ANBB01000003_gene448
-(degree 1476) and 570268.ANBB01000045_gene1219 (degree 1437).
+The undirected graph Nocardiopsis potens has 5754 nodes and 657986 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03975 and has 24 connected components, where the component with most
+nodes has 5696 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 228.71, and
+the node degree mode is 1. The top 5 most central nodes are 570268.ANBB01000015_gene3771
+(degree 2030), 570268.ANBB01000067_gene2520 (degree 1799), 570268.ANBB01000003_gene462
+(degree 1763), 570268.ANBB01000003_gene448 (degree 1476) and 570268.ANBB01000045_gene1219
+(degree 1437).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisPotens(
 	
 	Datetime: 2021-02-02 21:13:30.035134
 	
-	The undirected graph Nocardiopsis potens has 5754 nodes and 657986 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03975 and
-	has 24 connected components, where the component with most nodes has 5696 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 228.71, and the node degree mode is 1. The top 5 most central
-	nodes are 570268.ANBB01000015_gene3771 (degree 2030), 570268.ANBB01000067_gene2520
-	(degree 1799), 570268.ANBB01000003_gene462 (degree 1763), 570268.ANBB01000003_gene448
-	(degree 1476) and 570268.ANBB01000045_gene1219 (degree 1437).
+	The undirected graph Nocardiopsis potens has 5754 nodes and 657986 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03975 and has 24 connected components, where the component with most
+	nodes has 5696 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 228.71, and
+	the node degree mode is 1. The top 5 most central nodes are 570268.ANBB01000015_gene3771
+	(degree 2030), 570268.ANBB01000067_gene2520 (degree 1799), 570268.ANBB01000003_gene462
+	(degree 1763), 570268.ANBB01000003_gene448 (degree 1476) and 570268.ANBB01000045_gene1219
+	(degree 1437).
 	
 
 

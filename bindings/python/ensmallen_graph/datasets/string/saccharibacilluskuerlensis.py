@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:47.817159
 
-The undirected graph Saccharibacillus kuerlensis has 3884 nodes and 536309 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07112
-and has 11 connected components, where the component with most nodes has 3859 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 251, the mean node degree is 276.16, and the node degree mode is 1. The top 5
-most central nodes are 1123226.KB899312_gene1878 (degree 1419), 1123226.KB899298_gene3322
-(degree 1364), 1123226.KB899290_gene293 (degree 1299), 1123226.KB899282_gene3047
-(degree 1257) and 1123226.KB899288_gene1046 (degree 1248).
+The undirected graph Saccharibacillus kuerlensis has 3884 nodes and 536309
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07112 and has 11 connected components, where the component
+with most nodes has 3859 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 251, the mean node degree is 276.16,
+and the node degree mode is 1. The top 5 most central nodes are 1123226.KB899312_gene1878
+(degree 1419), 1123226.KB899298_gene3322 (degree 1364), 1123226.KB899290_gene293
+(degree 1299), 1123226.KB899282_gene3047 (degree 1257) and 1123226.KB899288_gene1046
+(degree 1248).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharibacillusKuerlensis(
 	
 	Datetime: 2021-02-02 22:47:47.817159
 	
-	The undirected graph Saccharibacillus kuerlensis has 3884 nodes and 536309 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07112
-	and has 11 connected components, where the component with most nodes has 3859 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 251, the mean node degree is 276.16, and the node degree mode is 1. The top 5
-	most central nodes are 1123226.KB899312_gene1878 (degree 1419), 1123226.KB899298_gene3322
-	(degree 1364), 1123226.KB899290_gene293 (degree 1299), 1123226.KB899282_gene3047
-	(degree 1257) and 1123226.KB899288_gene1046 (degree 1248).
+	The undirected graph Saccharibacillus kuerlensis has 3884 nodes and 536309
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07112 and has 11 connected components, where the component
+	with most nodes has 3859 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 251, the mean node degree is 276.16,
+	and the node degree mode is 1. The top 5 most central nodes are 1123226.KB899312_gene1878
+	(degree 1419), 1123226.KB899298_gene3322 (degree 1364), 1123226.KB899290_gene293
+	(degree 1299), 1123226.KB899282_gene3047 (degree 1257) and 1123226.KB899288_gene1046
+	(degree 1248).
 	
 
 

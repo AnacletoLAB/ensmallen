@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:27.347446
 
-The undirected graph Ruthia magnifica has 966 nodes and 55069 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.11815
-and is connected, as it has a single component. The graph median node degree is 99,
-the mean node degree is 114.01, and the node degree mode is 62. The top 5 most central
-nodes are 413404.Rmag_0078 (degree 520), 413404.Rmag_0251 (degree 508), 413404.Rmag_0914
-(degree 473), 413404.Rmag_0642 (degree 448) and 413404.Rmag_0462 (degree 415).
+The undirected graph Ruthia magnifica has 966 nodes and 55069 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11815 and is connected, as it has a single component. The
+graph median node degree is 99, the mean node degree is 114.01, and the
+node degree mode is 62. The top 5 most central nodes are 413404.Rmag_0078
+(degree 520), 413404.Rmag_0251 (degree 508), 413404.Rmag_0914 (degree 473),
+413404.Rmag_0642 (degree 448) and 413404.Rmag_0462 (degree 415).
 
 
 References
@@ -105,12 +106,13 @@ def RuthiaMagnifica(
 	
 	Datetime: 2021-02-02 20:46:27.347446
 	
-	The undirected graph Ruthia magnifica has 966 nodes and 55069 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.11815
-	and is connected, as it has a single component. The graph median node degree is 99,
-	the mean node degree is 114.01, and the node degree mode is 62. The top 5 most central
-	nodes are 413404.Rmag_0078 (degree 520), 413404.Rmag_0251 (degree 508), 413404.Rmag_0914
-	(degree 473), 413404.Rmag_0642 (degree 448) and 413404.Rmag_0462 (degree 415).
+	The undirected graph Ruthia magnifica has 966 nodes and 55069 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11815 and is connected, as it has a single component. The
+	graph median node degree is 99, the mean node degree is 114.01, and the
+	node degree mode is 62. The top 5 most central nodes are 413404.Rmag_0078
+	(degree 520), 413404.Rmag_0251 (degree 508), 413404.Rmag_0914 (degree 473),
+	413404.Rmag_0642 (degree 448) and 413404.Rmag_0462 (degree 415).
 	
 
 

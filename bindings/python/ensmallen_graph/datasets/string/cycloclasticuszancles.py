@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:41.229945
 
-The undirected graph Cycloclasticus zancles has 2576 nodes and 188246 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05676 and
-has 2 connected components, where the component with most nodes has 2572 nodes and
-the component with the least nodes has 4 nodes. The graph median node degree is 127,
-the mean node degree is 146.15, and the node degree mode is 11. The top 5 most central
-nodes are 1198232.CYCME_1758 (degree 1070), 1198232.CYCME_2492 (degree 1047), 1198232.CYCME_0522
-(degree 856), 1198232.CYCME_1985 (degree 821) and 1198232.CYCME_0163 (degree 750).
+The undirected graph Cycloclasticus zancles has 2576 nodes and 188246 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05676 and has 2 connected components, where the component with most
+nodes has 2572 nodes and the component with the least nodes has 4 nodes.
+The graph median node degree is 127, the mean node degree is 146.15, and
+the node degree mode is 11. The top 5 most central nodes are 1198232.CYCME_1758
+(degree 1070), 1198232.CYCME_2492 (degree 1047), 1198232.CYCME_0522 (degree
+856), 1198232.CYCME_1985 (degree 821) and 1198232.CYCME_0163 (degree 750).
 
 
 References
@@ -106,13 +107,14 @@ def CycloclasticusZancles(
 	
 	Datetime: 2021-02-02 23:13:41.229945
 	
-	The undirected graph Cycloclasticus zancles has 2576 nodes and 188246 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05676 and
-	has 2 connected components, where the component with most nodes has 2572 nodes and
-	the component with the least nodes has 4 nodes. The graph median node degree is 127,
-	the mean node degree is 146.15, and the node degree mode is 11. The top 5 most central
-	nodes are 1198232.CYCME_1758 (degree 1070), 1198232.CYCME_2492 (degree 1047), 1198232.CYCME_0522
-	(degree 856), 1198232.CYCME_1985 (degree 821) and 1198232.CYCME_0163 (degree 750).
+	The undirected graph Cycloclasticus zancles has 2576 nodes and 188246 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05676 and has 2 connected components, where the component with most
+	nodes has 2572 nodes and the component with the least nodes has 4 nodes.
+	The graph median node degree is 127, the mean node degree is 146.15, and
+	the node degree mode is 11. The top 5 most central nodes are 1198232.CYCME_1758
+	(degree 1070), 1198232.CYCME_2492 (degree 1047), 1198232.CYCME_0522 (degree
+	856), 1198232.CYCME_1985 (degree 821) and 1198232.CYCME_0163 (degree 750).
 	
 
 

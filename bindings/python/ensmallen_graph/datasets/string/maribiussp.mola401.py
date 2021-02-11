@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:25.196498
 
-The undirected graph Maribius sp. MOLA401 has 3621 nodes and 408268 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06229 and
-has 8 connected components, where the component with most nodes has 3606 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 225.50, and the node degree mode is 1. The top 5 most central
-nodes are 1530186.JQEY01000004_gene1958 (degree 1343), 1530186.JQEY01000009_gene2857
-(degree 1201), 1530186.JQEY01000001_gene1169 (degree 1067), 1530186.JQEY01000007_gene3224
-(degree 1039) and 1530186.JQEY01000002_gene1754 (degree 1002).
+The undirected graph Maribius sp. MOLA401 has 3621 nodes and 408268 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06229 and has 8 connected components, where the component with most
+nodes has 3606 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 225.50, and
+the node degree mode is 1. The top 5 most central nodes are 1530186.JQEY01000004_gene1958
+(degree 1343), 1530186.JQEY01000009_gene2857 (degree 1201), 1530186.JQEY01000001_gene1169
+(degree 1067), 1530186.JQEY01000007_gene3224 (degree 1039) and 1530186.JQEY01000002_gene1754
+(degree 1002).
 
 
 References
@@ -107,14 +108,15 @@ def MaribiusSp.Mola401(
 	
 	Datetime: 2021-02-03 23:18:25.196498
 	
-	The undirected graph Maribius sp. MOLA401 has 3621 nodes and 408268 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06229 and
-	has 8 connected components, where the component with most nodes has 3606 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 225.50, and the node degree mode is 1. The top 5 most central
-	nodes are 1530186.JQEY01000004_gene1958 (degree 1343), 1530186.JQEY01000009_gene2857
-	(degree 1201), 1530186.JQEY01000001_gene1169 (degree 1067), 1530186.JQEY01000007_gene3224
-	(degree 1039) and 1530186.JQEY01000002_gene1754 (degree 1002).
+	The undirected graph Maribius sp. MOLA401 has 3621 nodes and 408268 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06229 and has 8 connected components, where the component with most
+	nodes has 3606 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 225.50, and
+	the node degree mode is 1. The top 5 most central nodes are 1530186.JQEY01000004_gene1958
+	(degree 1343), 1530186.JQEY01000009_gene2857 (degree 1201), 1530186.JQEY01000001_gene1169
+	(degree 1067), 1530186.JQEY01000007_gene3224 (degree 1039) and 1530186.JQEY01000002_gene1754
+	(degree 1002).
 	
 
 

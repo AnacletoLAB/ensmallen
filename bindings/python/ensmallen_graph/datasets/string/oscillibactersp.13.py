@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:18.225382
 
-The undirected graph Oscillibacter sp. 13 has 4220 nodes and 307585 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03455 and
-has 23 connected components, where the component with most nodes has 4168 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 145.77, and the node degree mode is 1. The top 5 most central
-nodes are 1235797.C816_02019 (degree 1405), 1235797.C816_04038 (degree 1379), 1235797.C816_02309
-(degree 1303), 1235797.C816_00952 (degree 1280) and 1235797.C816_02051 (degree 1060).
+The undirected graph Oscillibacter sp. 13 has 4220 nodes and 307585 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03455 and has 23 connected components, where the component with most
+nodes has 4168 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 145.77, and
+the node degree mode is 1. The top 5 most central nodes are 1235797.C816_02019
+(degree 1405), 1235797.C816_04038 (degree 1379), 1235797.C816_02309 (degree
+1303), 1235797.C816_00952 (degree 1280) and 1235797.C816_02051 (degree
+1060).
 
 
 References
@@ -106,13 +108,15 @@ def OscillibacterSp.13(
 	
 	Datetime: 2021-02-02 23:30:18.225382
 	
-	The undirected graph Oscillibacter sp. 13 has 4220 nodes and 307585 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03455 and
-	has 23 connected components, where the component with most nodes has 4168 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 145.77, and the node degree mode is 1. The top 5 most central
-	nodes are 1235797.C816_02019 (degree 1405), 1235797.C816_04038 (degree 1379), 1235797.C816_02309
-	(degree 1303), 1235797.C816_00952 (degree 1280) and 1235797.C816_02051 (degree 1060).
+	The undirected graph Oscillibacter sp. 13 has 4220 nodes and 307585 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03455 and has 23 connected components, where the component with most
+	nodes has 4168 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 145.77, and
+	the node degree mode is 1. The top 5 most central nodes are 1235797.C816_02019
+	(degree 1405), 1235797.C816_04038 (degree 1379), 1235797.C816_02309 (degree
+	1303), 1235797.C816_00952 (degree 1280) and 1235797.C816_02051 (degree
+	1060).
 	
 
 

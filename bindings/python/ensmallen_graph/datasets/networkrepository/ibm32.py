@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:31.096427
 
-The undirected graph ibm32 has 32 nodes and 122 unweighted edges, of which 32 are
-self-loops. The graph is quite dense as it has a density of 0.21371 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 6.62, and the node degree mode is 6. The top 5 most central nodes are 3 (degree
-12), 9 (degree 10), 1 (degree 10), 10 (degree 9) and 2 (degree 9).
+The undirected graph ibm32 has 32 nodes and 122 unweighted edges, of which
+32 are self-loops. The graph is quite dense as it has a density of 0.21371
+and is connected, as it has a single component. The graph median node degree
+is 6, the mean node degree is 6.62, and the node degree mode is 6. The
+top 5 most central nodes are 3 (degree 12), 9 (degree 10), 1 (degree 10),
+10 (degree 9) and 2 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Ibm32(
 	
 	Datetime: 2021-02-06 08:12:31.096427
 	
-	The undirected graph ibm32 has 32 nodes and 122 unweighted edges, of which 32 are
-	self-loops. The graph is quite dense as it has a density of 0.21371 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 6.62, and the node degree mode is 6. The top 5 most central nodes are 3 (degree
-	12), 9 (degree 10), 1 (degree 10), 10 (degree 9) and 2 (degree 9).
+	The undirected graph ibm32 has 32 nodes and 122 unweighted edges, of which
+	32 are self-loops. The graph is quite dense as it has a density of 0.21371
+	and is connected, as it has a single component. The graph median node degree
+	is 6, the mean node degree is 6.62, and the node degree mode is 6. The
+	top 5 most central nodes are 3 (degree 12), 9 (degree 10), 1 (degree 10),
+	10 (degree 9) and 2 (degree 9).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:46.523660
 
-The undirected graph Lactobacillus sanfranciscensis has 1253 nodes and 68908 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08785
-and has 5 connected components, where the component with most nodes has 1243 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 109.99, and the node degree mode is 7. The top 5 most
-central nodes are 714313.LSA_06120 (degree 610), 714313.LSA_08120 (degree 459), 714313.LSA_02080
-(degree 456), 714313.LSA_06680 (degree 442) and 714313.LSA_01160 (degree 442).
+The undirected graph Lactobacillus sanfranciscensis has 1253 nodes and
+68908 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08785 and has 5 connected components, where the
+component with most nodes has 1243 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 84, the mean node degree
+is 109.99, and the node degree mode is 7. The top 5 most central nodes
+are 714313.LSA_06120 (degree 610), 714313.LSA_08120 (degree 459), 714313.LSA_02080
+(degree 456), 714313.LSA_06680 (degree 442) and 714313.LSA_01160 (degree
+442).
 
 
 References
@@ -106,13 +108,15 @@ def LactobacillusSanfranciscensis(
 	
 	Datetime: 2021-02-02 21:35:46.523660
 	
-	The undirected graph Lactobacillus sanfranciscensis has 1253 nodes and 68908 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08785
-	and has 5 connected components, where the component with most nodes has 1243 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 109.99, and the node degree mode is 7. The top 5 most
-	central nodes are 714313.LSA_06120 (degree 610), 714313.LSA_08120 (degree 459), 714313.LSA_02080
-	(degree 456), 714313.LSA_06680 (degree 442) and 714313.LSA_01160 (degree 442).
+	The undirected graph Lactobacillus sanfranciscensis has 1253 nodes and
+	68908 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08785 and has 5 connected components, where the
+	component with most nodes has 1243 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 84, the mean node degree
+	is 109.99, and the node degree mode is 7. The top 5 most central nodes
+	are 714313.LSA_06120 (degree 610), 714313.LSA_08120 (degree 459), 714313.LSA_02080
+	(degree 456), 714313.LSA_06680 (degree 442) and 714313.LSA_01160 (degree
+	442).
 	
 
 

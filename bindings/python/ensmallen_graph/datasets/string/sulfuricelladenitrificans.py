@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:01.725488
 
-The undirected graph Sulfuricella denitrificans has 2972 nodes and 253982 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05753
-and has 7 connected components, where the component with most nodes has 2958 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 170.92, and the node degree mode is 2. The top 5
-most central nodes are 1163617.SCD_n00221 (degree 1293), 1163617.SCD_n00044 (degree
-1264), 1163617.SCD_n01765 (degree 1155), 1163617.SCD_n02228 (degree 1095) and 1163617.SCD_n01281
-(degree 906).
+The undirected graph Sulfuricella denitrificans has 2972 nodes and 253982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05753 and has 7 connected components, where the component
+with most nodes has 2958 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 170.92,
+and the node degree mode is 2. The top 5 most central nodes are 1163617.SCD_n00221
+(degree 1293), 1163617.SCD_n00044 (degree 1264), 1163617.SCD_n01765 (degree
+1155), 1163617.SCD_n02228 (degree 1095) and 1163617.SCD_n01281 (degree
+906).
 
 
 References
@@ -107,14 +108,15 @@ def SulfuricellaDenitrificans(
 	
 	Datetime: 2021-02-02 23:05:01.725488
 	
-	The undirected graph Sulfuricella denitrificans has 2972 nodes and 253982 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05753
-	and has 7 connected components, where the component with most nodes has 2958 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 170.92, and the node degree mode is 2. The top 5
-	most central nodes are 1163617.SCD_n00221 (degree 1293), 1163617.SCD_n00044 (degree
-	1264), 1163617.SCD_n01765 (degree 1155), 1163617.SCD_n02228 (degree 1095) and 1163617.SCD_n01281
-	(degree 906).
+	The undirected graph Sulfuricella denitrificans has 2972 nodes and 253982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05753 and has 7 connected components, where the component
+	with most nodes has 2958 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 170.92,
+	and the node degree mode is 2. The top 5 most central nodes are 1163617.SCD_n00221
+	(degree 1293), 1163617.SCD_n00044 (degree 1264), 1163617.SCD_n01765 (degree
+	1155), 1163617.SCD_n02228 (degree 1095) and 1163617.SCD_n01281 (degree
+	906).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:28.583734
 
-The undirected graph Bifidobacterium bifidum NCIMB41171 has 1825 nodes and 112817
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06778 and has 17 connected components, where the component with most nodes has
-1790 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 103, the mean node degree is 123.64, and the node degree mode is 1. The
-top 5 most central nodes are 398513.BBNG_01467 (degree 814), 398513.BBNG_00680 (degree
-768), 398513.BBNG_01700 (degree 688), 398513.BBNG_01089 (degree 656) and 398513.BBNG_00708
-(degree 634).
+The undirected graph Bifidobacterium bifidum NCIMB41171 has 1825 nodes
+and 112817 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06778 and has 17 connected components, where the
+component with most nodes has 1790 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+is 123.64, and the node degree mode is 1. The top 5 most central nodes
+are 398513.BBNG_01467 (degree 814), 398513.BBNG_00680 (degree 768), 398513.BBNG_01700
+(degree 688), 398513.BBNG_01089 (degree 656) and 398513.BBNG_00708 (degree
+634).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumBifidumNcimb41171(
 	
 	Datetime: 2021-02-02 20:42:28.583734
 	
-	The undirected graph Bifidobacterium bifidum NCIMB41171 has 1825 nodes and 112817
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06778 and has 17 connected components, where the component with most nodes has
-	1790 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 103, the mean node degree is 123.64, and the node degree mode is 1. The
-	top 5 most central nodes are 398513.BBNG_01467 (degree 814), 398513.BBNG_00680 (degree
-	768), 398513.BBNG_01700 (degree 688), 398513.BBNG_01089 (degree 656) and 398513.BBNG_00708
-	(degree 634).
+	The undirected graph Bifidobacterium bifidum NCIMB41171 has 1825 nodes
+	and 112817 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06778 and has 17 connected components, where the
+	component with most nodes has 1790 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 103, the mean node degree
+	is 123.64, and the node degree mode is 1. The top 5 most central nodes
+	are 398513.BBNG_01467 (degree 814), 398513.BBNG_00680 (degree 768), 398513.BBNG_01700
+	(degree 688), 398513.BBNG_01089 (degree 656) and 398513.BBNG_00708 (degree
+	634).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:49.110634
 
-The undirected graph Acidithiobacillus ferrooxidans ATCC53993 has 2804 nodes and
-170310 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04334 and has 15 connected components, where the component with most
-nodes has 2771 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 96, the mean node degree is 121.48, and the node degree mode
-is 2. The top 5 most central nodes are 380394.Lferr_2692 (degree 1026), 380394.Lferr_2296
-(degree 750), 380394.Lferr_1453 (degree 749), 380394.Lferr_1454 (degree 724) and
-380394.Lferr_0878 (degree 697).
+The undirected graph Acidithiobacillus ferrooxidans ATCC53993 has 2804
+nodes and 170310 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04334 and has 15 connected components,
+where the component with most nodes has 2771 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 96, the mean
+node degree is 121.48, and the node degree mode is 2. The top 5 most central
+nodes are 380394.Lferr_2692 (degree 1026), 380394.Lferr_2296 (degree 750),
+380394.Lferr_1453 (degree 749), 380394.Lferr_1454 (degree 724) and 380394.Lferr_0878
+(degree 697).
 
 
 References
@@ -107,14 +108,15 @@ def AcidithiobacillusFerrooxidansAtcc53993(
 	
 	Datetime: 2021-02-02 20:36:49.110634
 	
-	The undirected graph Acidithiobacillus ferrooxidans ATCC53993 has 2804 nodes and
-	170310 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04334 and has 15 connected components, where the component with most
-	nodes has 2771 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 96, the mean node degree is 121.48, and the node degree mode
-	is 2. The top 5 most central nodes are 380394.Lferr_2692 (degree 1026), 380394.Lferr_2296
-	(degree 750), 380394.Lferr_1453 (degree 749), 380394.Lferr_1454 (degree 724) and
-	380394.Lferr_0878 (degree 697).
+	The undirected graph Acidithiobacillus ferrooxidans ATCC53993 has 2804
+	nodes and 170310 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04334 and has 15 connected components,
+	where the component with most nodes has 2771 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 96, the mean
+	node degree is 121.48, and the node degree mode is 2. The top 5 most central
+	nodes are 380394.Lferr_2692 (degree 1026), 380394.Lferr_2296 (degree 750),
+	380394.Lferr_1453 (degree 749), 380394.Lferr_1454 (degree 724) and 380394.Lferr_0878
+	(degree 697).
 	
 
 

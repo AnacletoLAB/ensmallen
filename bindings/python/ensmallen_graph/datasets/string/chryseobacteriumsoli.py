@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:57.082428
 
-The undirected graph Chryseobacterium soli has 4019 nodes and 418646 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05185 and
-has 26 connected components, where the component with most nodes has 3942 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 208.33, and the node degree mode is 2. The top 5 most central
-nodes are 445961.IW15_08820 (degree 1166), 445961.IW15_20900 (degree 1029), 445961.IW15_20350
-(degree 976), 445961.IW15_13020 (degree 946) and 445961.IW15_20480 (degree 915).
+The undirected graph Chryseobacterium soli has 4019 nodes and 418646 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05185 and has 26 connected components, where the component with most
+nodes has 3942 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 208.33, and
+the node degree mode is 2. The top 5 most central nodes are 445961.IW15_08820
+(degree 1166), 445961.IW15_20900 (degree 1029), 445961.IW15_20350 (degree
+976), 445961.IW15_13020 (degree 946) and 445961.IW15_20480 (degree 915).
 
 
 References
@@ -106,13 +107,14 @@ def ChryseobacteriumSoli(
 	
 	Datetime: 2021-02-02 20:50:57.082428
 	
-	The undirected graph Chryseobacterium soli has 4019 nodes and 418646 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05185 and
-	has 26 connected components, where the component with most nodes has 3942 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 208.33, and the node degree mode is 2. The top 5 most central
-	nodes are 445961.IW15_08820 (degree 1166), 445961.IW15_20900 (degree 1029), 445961.IW15_20350
-	(degree 976), 445961.IW15_13020 (degree 946) and 445961.IW15_20480 (degree 915).
+	The undirected graph Chryseobacterium soli has 4019 nodes and 418646 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05185 and has 26 connected components, where the component with most
+	nodes has 3942 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 208.33, and
+	the node degree mode is 2. The top 5 most central nodes are 445961.IW15_08820
+	(degree 1166), 445961.IW15_20900 (degree 1029), 445961.IW15_20350 (degree
+	976), 445961.IW15_13020 (degree 946) and 445961.IW15_20480 (degree 915).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:56.727911
 
-The undirected graph Actinomycetospora chiangmaiensis has 5549 nodes and 782085 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05081
-and has 31 connected components, where the component with most nodes has 5475 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 229, the mean node degree is 281.88, and the node degree mode is 2. The top 5
-most central nodes are 1120948.KB903218_gene2194 (degree 1722), 1120948.KB903240_gene4066
+The undirected graph Actinomycetospora chiangmaiensis has 5549 nodes and
+782085 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05081 and has 31 connected components, where the
+component with most nodes has 5475 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+is 281.88, and the node degree mode is 2. The top 5 most central nodes
+are 1120948.KB903218_gene2194 (degree 1722), 1120948.KB903240_gene4066
 (degree 1722), 1120948.KB903217_gene1000 (degree 1605), 1120948.KB903245_gene3674
 (degree 1581) and 1120948.KB903221_gene412 (degree 1558).
 
@@ -107,12 +108,13 @@ def ActinomycetosporaChiangmaiensis(
 	
 	Datetime: 2021-02-02 22:29:56.727911
 	
-	The undirected graph Actinomycetospora chiangmaiensis has 5549 nodes and 782085 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05081
-	and has 31 connected components, where the component with most nodes has 5475 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 229, the mean node degree is 281.88, and the node degree mode is 2. The top 5
-	most central nodes are 1120948.KB903218_gene2194 (degree 1722), 1120948.KB903240_gene4066
+	The undirected graph Actinomycetospora chiangmaiensis has 5549 nodes and
+	782085 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05081 and has 31 connected components, where the
+	component with most nodes has 5475 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 229, the mean node degree
+	is 281.88, and the node degree mode is 2. The top 5 most central nodes
+	are 1120948.KB903218_gene2194 (degree 1722), 1120948.KB903240_gene4066
 	(degree 1722), 1120948.KB903217_gene1000 (degree 1605), 1120948.KB903245_gene3674
 	(degree 1581) and 1120948.KB903221_gene412 (degree 1558).
 	

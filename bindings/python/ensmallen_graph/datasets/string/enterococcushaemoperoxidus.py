@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:38.425489
 
-The undirected graph Enterococcus haemoperoxidus has 3174 nodes and 261249 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05188
-and has 14 connected components, where the component with most nodes has 3136 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 164.62, and the node degree mode is 6. The top 5
-most central nodes are 1158608.I583_01561 (degree 1264), 1158608.I583_00199 (degree
-1053), 1158608.I583_02942 (degree 1041), 1158608.I583_02502 (degree 1032) and 1158608.I583_00871
-(degree 964).
+The undirected graph Enterococcus haemoperoxidus has 3174 nodes and 261249
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05188 and has 14 connected components, where the component
+with most nodes has 3136 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 164.62,
+and the node degree mode is 6. The top 5 most central nodes are 1158608.I583_01561
+(degree 1264), 1158608.I583_00199 (degree 1053), 1158608.I583_02942 (degree
+1041), 1158608.I583_02502 (degree 1032) and 1158608.I583_00871 (degree
+964).
 
 
 References
@@ -107,14 +108,15 @@ def EnterococcusHaemoperoxidus(
 	
 	Datetime: 2021-02-02 23:03:38.425489
 	
-	The undirected graph Enterococcus haemoperoxidus has 3174 nodes and 261249 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05188
-	and has 14 connected components, where the component with most nodes has 3136 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 164.62, and the node degree mode is 6. The top 5
-	most central nodes are 1158608.I583_01561 (degree 1264), 1158608.I583_00199 (degree
-	1053), 1158608.I583_02942 (degree 1041), 1158608.I583_02502 (degree 1032) and 1158608.I583_00871
-	(degree 964).
+	The undirected graph Enterococcus haemoperoxidus has 3174 nodes and 261249
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05188 and has 14 connected components, where the component
+	with most nodes has 3136 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 164.62,
+	and the node degree mode is 6. The top 5 most central nodes are 1158608.I583_01561
+	(degree 1264), 1158608.I583_00199 (degree 1053), 1158608.I583_02942 (degree
+	1041), 1158608.I583_02502 (degree 1032) and 1158608.I583_00871 (degree
+	964).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:38.638941
 
-The undirected graph Natronorubrum sulfidifaciens has 3370 nodes and 242484 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04272
-and has 34 connected components, where the component with most nodes has 3268 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 143.91, and the node degree mode is 2. The top 5
-most central nodes are 1230460.C495_14357 (degree 921), 1230460.C495_05998 (degree
-866), 1230460.C495_14382 (degree 847), 1230460.C495_06518 (degree 752) and 1230460.C495_13801
-(degree 751).
+The undirected graph Natronorubrum sulfidifaciens has 3370 nodes and 242484
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04272 and has 34 connected components, where the component
+with most nodes has 3268 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 143.91,
+and the node degree mode is 2. The top 5 most central nodes are 1230460.C495_14357
+(degree 921), 1230460.C495_05998 (degree 866), 1230460.C495_14382 (degree
+847), 1230460.C495_06518 (degree 752) and 1230460.C495_13801 (degree 751).
 
 
 References
@@ -107,14 +107,14 @@ def NatronorubrumSulfidifaciens(
 	
 	Datetime: 2021-02-02 23:27:38.638941
 	
-	The undirected graph Natronorubrum sulfidifaciens has 3370 nodes and 242484 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04272
-	and has 34 connected components, where the component with most nodes has 3268 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 143.91, and the node degree mode is 2. The top 5
-	most central nodes are 1230460.C495_14357 (degree 921), 1230460.C495_05998 (degree
-	866), 1230460.C495_14382 (degree 847), 1230460.C495_06518 (degree 752) and 1230460.C495_13801
-	(degree 751).
+	The undirected graph Natronorubrum sulfidifaciens has 3370 nodes and 242484
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04272 and has 34 connected components, where the component
+	with most nodes has 3268 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 143.91,
+	and the node degree mode is 2. The top 5 most central nodes are 1230460.C495_14357
+	(degree 921), 1230460.C495_05998 (degree 866), 1230460.C495_14382 (degree
+	847), 1230460.C495_06518 (degree 752) and 1230460.C495_13801 (degree 751).
 	
 
 

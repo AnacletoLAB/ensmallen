@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:53.426234
 
-The undirected graph Desulfovibrio frigidus has 3692 nodes and 426096 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06254 and
-has 11 connected components, where the component with most nodes has 3660 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 230.82, and the node degree mode is 3. The top 5 most central
-nodes are 1121447.JONL01000001_gene982 (degree 1634), 1121447.JONL01000007_gene1266
-(degree 1412), 1121447.JONL01000001_gene682 (degree 1372), 1121447.JONL01000001_gene378
-(degree 1346) and 1121447.JONL01000003_gene3236 (degree 1340).
+The undirected graph Desulfovibrio frigidus has 3692 nodes and 426096 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06254 and has 11 connected components, where the component with most
+nodes has 3660 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 230.82, and
+the node degree mode is 3. The top 5 most central nodes are 1121447.JONL01000001_gene982
+(degree 1634), 1121447.JONL01000007_gene1266 (degree 1412), 1121447.JONL01000001_gene682
+(degree 1372), 1121447.JONL01000001_gene378 (degree 1346) and 1121447.JONL01000003_gene3236
+(degree 1340).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioFrigidus(
 	
 	Datetime: 2021-02-02 22:36:53.426234
 	
-	The undirected graph Desulfovibrio frigidus has 3692 nodes and 426096 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06254 and
-	has 11 connected components, where the component with most nodes has 3660 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 230.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1121447.JONL01000001_gene982 (degree 1634), 1121447.JONL01000007_gene1266
-	(degree 1412), 1121447.JONL01000001_gene682 (degree 1372), 1121447.JONL01000001_gene378
-	(degree 1346) and 1121447.JONL01000003_gene3236 (degree 1340).
+	The undirected graph Desulfovibrio frigidus has 3692 nodes and 426096 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06254 and has 11 connected components, where the component with most
+	nodes has 3660 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 230.82, and
+	the node degree mode is 3. The top 5 most central nodes are 1121447.JONL01000001_gene982
+	(degree 1634), 1121447.JONL01000007_gene1266 (degree 1412), 1121447.JONL01000001_gene682
+	(degree 1372), 1121447.JONL01000001_gene378 (degree 1346) and 1121447.JONL01000003_gene3236
+	(degree 1340).
 	
 
 

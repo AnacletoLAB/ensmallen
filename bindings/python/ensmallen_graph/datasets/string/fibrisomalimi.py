@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:51.538757
 
-The undirected graph Fibrisoma limi has 6092 nodes and 1147807 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06187 and
-has 26 connected components, where the component with most nodes has 6033 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 346,
-the mean node degree is 376.82, and the node degree mode is 4. The top 5 most central
-nodes are 1185876.BN8_04302 (degree 1918), 1185876.BN8_05757 (degree 1877), 1185876.BN8_03088
-(degree 1851), 1185876.BN8_01731 (degree 1826) and 1185876.BN8_00785 (degree 1821).
+The undirected graph Fibrisoma limi has 6092 nodes and 1147807 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06187 and has 26 connected components, where the component with most
+nodes has 6033 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 346, the mean node degree is 376.82, and
+the node degree mode is 4. The top 5 most central nodes are 1185876.BN8_04302
+(degree 1918), 1185876.BN8_05757 (degree 1877), 1185876.BN8_03088 (degree
+1851), 1185876.BN8_01731 (degree 1826) and 1185876.BN8_00785 (degree 1821).
 
 
 References
@@ -106,13 +107,14 @@ def FibrisomaLimi(
 	
 	Datetime: 2021-02-02 23:10:51.538757
 	
-	The undirected graph Fibrisoma limi has 6092 nodes and 1147807 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06187 and
-	has 26 connected components, where the component with most nodes has 6033 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 346,
-	the mean node degree is 376.82, and the node degree mode is 4. The top 5 most central
-	nodes are 1185876.BN8_04302 (degree 1918), 1185876.BN8_05757 (degree 1877), 1185876.BN8_03088
-	(degree 1851), 1185876.BN8_01731 (degree 1826) and 1185876.BN8_00785 (degree 1821).
+	The undirected graph Fibrisoma limi has 6092 nodes and 1147807 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06187 and has 26 connected components, where the component with most
+	nodes has 6033 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 346, the mean node degree is 376.82, and
+	the node degree mode is 4. The top 5 most central nodes are 1185876.BN8_04302
+	(degree 1918), 1185876.BN8_05757 (degree 1877), 1185876.BN8_03088 (degree
+	1851), 1185876.BN8_01731 (degree 1826) and 1185876.BN8_00785 (degree 1821).
 	
 
 

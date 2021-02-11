@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:17:34.418845
 
-The undirected graph misc-jung-code-dep has 6120 nodes and 50290 weighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00269
-and is connected, as it has a single component. The graph median node degree is 7,
-the mean node degree is 16.43, and the node degree mode is 4. The top 5 most central
-nodes are 5 (degree 5655), 13 (degree 5557), 21 (degree 5380), 15 (degree 643) and
-14 (degree 625).
+The undirected graph misc-jung-code-dep has 6120 nodes and 50290 weighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00269 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 16.43, and the node degree mode
+is 4. The top 5 most central nodes are 5 (degree 5655), 13 (degree 5557),
+21 (degree 5380), 15 (degree 643) and 14 (degree 625).
 
 
 References
@@ -112,12 +112,12 @@ def MiscJungCodeDep(
 	
 	Datetime: 2021-02-06 11:17:34.418845
 	
-	The undirected graph misc-jung-code-dep has 6120 nodes and 50290 weighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00269
-	and is connected, as it has a single component. The graph median node degree is 7,
-	the mean node degree is 16.43, and the node degree mode is 4. The top 5 most central
-	nodes are 5 (degree 5655), 13 (degree 5557), 21 (degree 5380), 15 (degree 643) and
-	14 (degree 625).
+	The undirected graph misc-jung-code-dep has 6120 nodes and 50290 weighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00269 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 16.43, and the node degree mode
+	is 4. The top 5 most central nodes are 5 (degree 5655), 13 (degree 5557),
+	21 (degree 5380), 15 (degree 643) and 14 (degree 625).
 	
 
 

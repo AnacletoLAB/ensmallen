@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:08.700209
 
-The undirected graph Pantoea ananatis LMG20103 has 4207 nodes and 465671 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05263
-and has 11 connected components, where the component with most nodes has 4187 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 221.38, and the node degree mode is 1. The top 5
-most central nodes are 706191.PANA_3955 (degree 1419), 706191.PANA_0646 (degree 1371),
-706191.PANA_0418 (degree 1342), 706191.PANA_2848 (degree 1129) and 706191.PANA_1196
-(degree 1080).
+The undirected graph Pantoea ananatis LMG20103 has 4207 nodes and 465671
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05263 and has 11 connected components, where the component
+with most nodes has 4187 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 221.38,
+and the node degree mode is 1. The top 5 most central nodes are 706191.PANA_3955
+(degree 1419), 706191.PANA_0646 (degree 1371), 706191.PANA_0418 (degree
+1342), 706191.PANA_2848 (degree 1129) and 706191.PANA_1196 (degree 1080).
 
 
 References
@@ -107,14 +107,14 @@ def PantoeaAnanatisLmg20103(
 	
 	Datetime: 2021-02-02 21:34:08.700209
 	
-	The undirected graph Pantoea ananatis LMG20103 has 4207 nodes and 465671 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05263
-	and has 11 connected components, where the component with most nodes has 4187 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 221.38, and the node degree mode is 1. The top 5
-	most central nodes are 706191.PANA_3955 (degree 1419), 706191.PANA_0646 (degree 1371),
-	706191.PANA_0418 (degree 1342), 706191.PANA_2848 (degree 1129) and 706191.PANA_1196
-	(degree 1080).
+	The undirected graph Pantoea ananatis LMG20103 has 4207 nodes and 465671
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05263 and has 11 connected components, where the component
+	with most nodes has 4187 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 221.38,
+	and the node degree mode is 1. The top 5 most central nodes are 706191.PANA_3955
+	(degree 1419), 706191.PANA_0646 (degree 1371), 706191.PANA_0418 (degree
+	1342), 706191.PANA_2848 (degree 1129) and 706191.PANA_1196 (degree 1080).
 	
 
 

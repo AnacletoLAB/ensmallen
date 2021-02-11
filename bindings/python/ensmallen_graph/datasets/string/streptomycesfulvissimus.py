@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:36:10.654383
 
-The undirected graph Streptomyces fulvissimus has 6892 nodes and 917873 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03865
-and has 30 connected components, where the component with most nodes has 6809 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 221, the mean node degree is 266.36, and the node degree mode is 3. The top 5
-most central nodes are 1303692.SFUL_5668 (degree 3282), 1303692.SFUL_1267 (degree
-2289), 1303692.SFUL_1548 (degree 2143), 1303692.SFUL_7017 (degree 2129) and 1303692.SFUL_1255
-(degree 1945).
+The undirected graph Streptomyces fulvissimus has 6892 nodes and 917873
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03865 and has 30 connected components, where the component
+with most nodes has 6809 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 221, the mean node degree is 266.36,
+and the node degree mode is 3. The top 5 most central nodes are 1303692.SFUL_5668
+(degree 3282), 1303692.SFUL_1267 (degree 2289), 1303692.SFUL_1548 (degree
+2143), 1303692.SFUL_7017 (degree 2129) and 1303692.SFUL_1255 (degree 1945).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesFulvissimus(
 	
 	Datetime: 2021-02-03 21:36:10.654383
 	
-	The undirected graph Streptomyces fulvissimus has 6892 nodes and 917873 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03865
-	and has 30 connected components, where the component with most nodes has 6809 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 221, the mean node degree is 266.36, and the node degree mode is 3. The top 5
-	most central nodes are 1303692.SFUL_5668 (degree 3282), 1303692.SFUL_1267 (degree
-	2289), 1303692.SFUL_1548 (degree 2143), 1303692.SFUL_7017 (degree 2129) and 1303692.SFUL_1255
-	(degree 1945).
+	The undirected graph Streptomyces fulvissimus has 6892 nodes and 917873
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03865 and has 30 connected components, where the component
+	with most nodes has 6809 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 221, the mean node degree is 266.36,
+	and the node degree mode is 3. The top 5 most central nodes are 1303692.SFUL_5668
+	(degree 3282), 1303692.SFUL_1267 (degree 2289), 1303692.SFUL_1548 (degree
+	2143), 1303692.SFUL_7017 (degree 2129) and 1303692.SFUL_1255 (degree 1945).
 	
 
 

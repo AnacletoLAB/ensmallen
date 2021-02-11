@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:41.589514
 
-The undirected graph Sphingomonas sp. S17 has 3975 nodes and 408909 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05177 and
-has 10 connected components, where the component with most nodes has 3955 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 205.74, and the node degree mode is 2. The top 5 most central
-nodes are 1007104.SUS17_3332 (degree 1479), 1007104.SUS17_277 (degree 1290), 1007104.SUS17_2328
-(degree 1225), 1007104.SUS17_3413 (degree 1128) and 1007104.SUS17_232 (degree 1036).
+The undirected graph Sphingomonas sp. S17 has 3975 nodes and 408909 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05177 and has 10 connected components, where the component with most
+nodes has 3955 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 205.74, and
+the node degree mode is 2. The top 5 most central nodes are 1007104.SUS17_3332
+(degree 1479), 1007104.SUS17_277 (degree 1290), 1007104.SUS17_2328 (degree
+1225), 1007104.SUS17_3413 (degree 1128) and 1007104.SUS17_232 (degree 1036).
 
 
 References
@@ -106,13 +107,14 @@ def SphingomonasSp.S17(
 	
 	Datetime: 2021-02-02 22:08:41.589514
 	
-	The undirected graph Sphingomonas sp. S17 has 3975 nodes and 408909 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05177 and
-	has 10 connected components, where the component with most nodes has 3955 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 205.74, and the node degree mode is 2. The top 5 most central
-	nodes are 1007104.SUS17_3332 (degree 1479), 1007104.SUS17_277 (degree 1290), 1007104.SUS17_2328
-	(degree 1225), 1007104.SUS17_3413 (degree 1128) and 1007104.SUS17_232 (degree 1036).
+	The undirected graph Sphingomonas sp. S17 has 3975 nodes and 408909 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05177 and has 10 connected components, where the component with most
+	nodes has 3955 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 205.74, and
+	the node degree mode is 2. The top 5 most central nodes are 1007104.SUS17_3332
+	(degree 1479), 1007104.SUS17_277 (degree 1290), 1007104.SUS17_2328 (degree
+	1225), 1007104.SUS17_3413 (degree 1128) and 1007104.SUS17_232 (degree 1036).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:54.607385
 
-The undirected graph Nitrosomonas sp. Is79A3 has 3300 nodes and 194376 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03571 and
-has 23 connected components, where the component with most nodes has 3250 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 89,
-the mean node degree is 117.80, and the node degree mode is 1. The top 5 most central
-nodes are 261292.Nit79A3_1314 (degree 1153), 261292.Nit79A3_1918 (degree 1130), 261292.Nit79A3_1371
-(degree 848), 261292.Nit79A3_1360 (degree 826) and 261292.Nit79A3_1370 (degree 818).
+The undirected graph Nitrosomonas sp. Is79A3 has 3300 nodes and 194376
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03571 and has 23 connected components, where the component
+with most nodes has 3250 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 117.80,
+and the node degree mode is 1. The top 5 most central nodes are 261292.Nit79A3_1314
+(degree 1153), 261292.Nit79A3_1918 (degree 1130), 261292.Nit79A3_1371 (degree
+848), 261292.Nit79A3_1360 (degree 826) and 261292.Nit79A3_1370 (degree
+818).
 
 
 References
@@ -106,13 +108,15 @@ def NitrosomonasSp.Is79a3(
 	
 	Datetime: 2021-02-02 20:12:54.607385
 	
-	The undirected graph Nitrosomonas sp. Is79A3 has 3300 nodes and 194376 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03571 and
-	has 23 connected components, where the component with most nodes has 3250 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 89,
-	the mean node degree is 117.80, and the node degree mode is 1. The top 5 most central
-	nodes are 261292.Nit79A3_1314 (degree 1153), 261292.Nit79A3_1918 (degree 1130), 261292.Nit79A3_1371
-	(degree 848), 261292.Nit79A3_1360 (degree 826) and 261292.Nit79A3_1370 (degree 818).
+	The undirected graph Nitrosomonas sp. Is79A3 has 3300 nodes and 194376
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03571 and has 23 connected components, where the component
+	with most nodes has 3250 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 117.80,
+	and the node degree mode is 1. The top 5 most central nodes are 261292.Nit79A3_1314
+	(degree 1153), 261292.Nit79A3_1918 (degree 1130), 261292.Nit79A3_1371 (degree
+	848), 261292.Nit79A3_1360 (degree 826) and 261292.Nit79A3_1370 (degree
+	818).
 	
 
 

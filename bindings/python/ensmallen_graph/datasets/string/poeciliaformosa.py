@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:16:47.169368
 
-The undirected graph Poecilia formosa has 21726 nodes and 4303835 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01824 and
-has 8 connected components, where the component with most nodes has 21711 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 271,
-the mean node degree is 396.19, and the node degree mode is 114. The top 5 most central
-nodes are 48698.ENSPFOP00000014221 (degree 5000), 48698.ENSPFOP00000006945 (degree
-4809), 48698.ENSPFOP00000013174 (degree 4651), 48698.ENSPFOP00000003766 (degree 4535)
-and 48698.ENSPFOP00000003837 (degree 4462).
+The undirected graph Poecilia formosa has 21726 nodes and 4303835 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01824 and has 8 connected components, where the component with most
+nodes has 21711 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 271, the mean node degree is 396.19, and
+the node degree mode is 114. The top 5 most central nodes are 48698.ENSPFOP00000014221
+(degree 5000), 48698.ENSPFOP00000006945 (degree 4809), 48698.ENSPFOP00000013174
+(degree 4651), 48698.ENSPFOP00000003766 (degree 4535) and 48698.ENSPFOP00000003837
+(degree 4462).
 
 
 References
@@ -107,14 +108,15 @@ def PoeciliaFormosa(
 	
 	Datetime: 2021-02-02 18:16:47.169368
 	
-	The undirected graph Poecilia formosa has 21726 nodes and 4303835 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01824 and
-	has 8 connected components, where the component with most nodes has 21711 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 271,
-	the mean node degree is 396.19, and the node degree mode is 114. The top 5 most central
-	nodes are 48698.ENSPFOP00000014221 (degree 5000), 48698.ENSPFOP00000006945 (degree
-	4809), 48698.ENSPFOP00000013174 (degree 4651), 48698.ENSPFOP00000003766 (degree 4535)
-	and 48698.ENSPFOP00000003837 (degree 4462).
+	The undirected graph Poecilia formosa has 21726 nodes and 4303835 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01824 and has 8 connected components, where the component with most
+	nodes has 21711 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 271, the mean node degree is 396.19, and
+	the node degree mode is 114. The top 5 most central nodes are 48698.ENSPFOP00000014221
+	(degree 5000), 48698.ENSPFOP00000006945 (degree 4809), 48698.ENSPFOP00000013174
+	(degree 4651), 48698.ENSPFOP00000003766 (degree 4535) and 48698.ENSPFOP00000003837
+	(degree 4462).
 	
 
 

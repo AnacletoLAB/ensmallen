@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:52.295337
 
-The undirected graph Cystobacter fuscus has 10278 nodes and 1013392 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01919 and
-has 134 connected components, where the component with most nodes has 9939 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 137, the mean node degree is 197.20, and the node degree mode is 2. The top 5
-most central nodes are 1242864.D187_008379 (degree 2743), 1242864.D187_003021 (degree
-2550), 1242864.D187_006889 (degree 2430), 1242864.D187_004769 (degree 2197) and 1242864.D187_006656
-(degree 2139).
+The undirected graph Cystobacter fuscus has 10278 nodes and 1013392 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01919 and has 134 connected components, where the component with most
+nodes has 9939 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 197.20, and
+the node degree mode is 2. The top 5 most central nodes are 1242864.D187_008379
+(degree 2743), 1242864.D187_003021 (degree 2550), 1242864.D187_006889 (degree
+2430), 1242864.D187_004769 (degree 2197) and 1242864.D187_006656 (degree
+2139).
 
 
 References
@@ -107,14 +108,15 @@ def CystobacterFuscus(
 	
 	Datetime: 2021-02-02 23:32:52.295337
 	
-	The undirected graph Cystobacter fuscus has 10278 nodes and 1013392 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01919 and
-	has 134 connected components, where the component with most nodes has 9939 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 137, the mean node degree is 197.20, and the node degree mode is 2. The top 5
-	most central nodes are 1242864.D187_008379 (degree 2743), 1242864.D187_003021 (degree
-	2550), 1242864.D187_006889 (degree 2430), 1242864.D187_004769 (degree 2197) and 1242864.D187_006656
-	(degree 2139).
+	The undirected graph Cystobacter fuscus has 10278 nodes and 1013392 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01919 and has 134 connected components, where the component with most
+	nodes has 9939 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 197.20, and
+	the node degree mode is 2. The top 5 most central nodes are 1242864.D187_008379
+	(degree 2743), 1242864.D187_003021 (degree 2550), 1242864.D187_006889 (degree
+	2430), 1242864.D187_004769 (degree 2197) and 1242864.D187_006656 (degree
+	2139).
 	
 
 

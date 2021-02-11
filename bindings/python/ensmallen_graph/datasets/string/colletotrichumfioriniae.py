@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:52.783196
 
-The undirected graph Colletotrichum fioriniae has 9337 nodes and 724760 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01663
-and has 23 connected components, where the component with most nodes has 9290 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 155.24, and the node degree mode is 1. The top 5 most
-central nodes are 710243.XP_007603314.1 (degree 2283), 710243.XP_007589715.1 (degree
-1675), 710243.XP_007589743.1 (degree 1621), 710243.XP_007598803.1 (degree 1511) and
-710243.XP_007592690.1 (degree 1477).
+The undirected graph Colletotrichum fioriniae has 9337 nodes and 724760
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01663 and has 23 connected components, where the component
+with most nodes has 9290 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 155.24,
+and the node degree mode is 1. The top 5 most central nodes are 710243.XP_007603314.1
+(degree 2283), 710243.XP_007589715.1 (degree 1675), 710243.XP_007589743.1
+(degree 1621), 710243.XP_007598803.1 (degree 1511) and 710243.XP_007592690.1
+(degree 1477).
 
 
 References
@@ -107,14 +108,15 @@ def ColletotrichumFioriniae(
 	
 	Datetime: 2021-02-02 21:34:52.783196
 	
-	The undirected graph Colletotrichum fioriniae has 9337 nodes and 724760 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01663
-	and has 23 connected components, where the component with most nodes has 9290 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 155.24, and the node degree mode is 1. The top 5 most
-	central nodes are 710243.XP_007603314.1 (degree 2283), 710243.XP_007589715.1 (degree
-	1675), 710243.XP_007589743.1 (degree 1621), 710243.XP_007598803.1 (degree 1511) and
-	710243.XP_007592690.1 (degree 1477).
+	The undirected graph Colletotrichum fioriniae has 9337 nodes and 724760
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01663 and has 23 connected components, where the component
+	with most nodes has 9290 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 155.24,
+	and the node degree mode is 1. The top 5 most central nodes are 710243.XP_007603314.1
+	(degree 2283), 710243.XP_007589715.1 (degree 1675), 710243.XP_007589743.1
+	(degree 1621), 710243.XP_007598803.1 (degree 1511) and 710243.XP_007592690.1
+	(degree 1477).
 	
 
 

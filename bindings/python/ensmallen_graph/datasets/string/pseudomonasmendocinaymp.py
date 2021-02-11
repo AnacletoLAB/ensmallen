@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:10.084648
 
-The undirected graph Pseudomonas mendocina ymp has 4584 nodes and 491069 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04675
-and has 4 connected components, where the component with most nodes has 4578 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 214.25, and the node degree mode is 4. The top 5
-most central nodes are 399739.Pmen_0154 (degree 1955), 399739.Pmen_3485 (degree 1425),
-399739.Pmen_0550 (degree 1409), 399739.Pmen_3414 (degree 1372) and 399739.Pmen_2468
-(degree 1364).
+The undirected graph Pseudomonas mendocina ymp has 4584 nodes and 491069
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04675 and has 4 connected components, where the component
+with most nodes has 4578 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 214.25,
+and the node degree mode is 4. The top 5 most central nodes are 399739.Pmen_0154
+(degree 1955), 399739.Pmen_3485 (degree 1425), 399739.Pmen_0550 (degree
+1409), 399739.Pmen_3414 (degree 1372) and 399739.Pmen_2468 (degree 1364).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasMendocinaYmp(
 	
 	Datetime: 2021-02-02 20:43:10.084648
 	
-	The undirected graph Pseudomonas mendocina ymp has 4584 nodes and 491069 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04675
-	and has 4 connected components, where the component with most nodes has 4578 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 214.25, and the node degree mode is 4. The top 5
-	most central nodes are 399739.Pmen_0154 (degree 1955), 399739.Pmen_3485 (degree 1425),
-	399739.Pmen_0550 (degree 1409), 399739.Pmen_3414 (degree 1372) and 399739.Pmen_2468
-	(degree 1364).
+	The undirected graph Pseudomonas mendocina ymp has 4584 nodes and 491069
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04675 and has 4 connected components, where the component
+	with most nodes has 4578 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 214.25,
+	and the node degree mode is 4. The top 5 most central nodes are 399739.Pmen_0154
+	(degree 1955), 399739.Pmen_3485 (degree 1425), 399739.Pmen_0550 (degree
+	1409), 399739.Pmen_3414 (degree 1372) and 399739.Pmen_2468 (degree 1364).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:10:12.390174
 
-The undirected graph flickr-links has 243600 nodes and 1817934 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00006 and is connected, as it has a single component. The graph median node degree
-is 2, the mean node degree is 14.93, and the node degree mode is 1. The top 5 most
-central nodes are 406 (degree 27234), 622 (degree 19574), 453 (degree 16338), 415
-(degree 14480) and 306 (degree 13521).
+The undirected graph flickr-links has 243600 nodes and 1817934 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00006 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 14.93, and the
+node degree mode is 1. The top 5 most central nodes are 406 (degree 27234),
+622 (degree 19574), 453 (degree 16338), 415 (degree 14480) and 306 (degree
+13521).
 
 
 References
@@ -102,12 +103,13 @@ def FlickrLinks(
 	
 	Datetime: 2021-02-06 12:10:12.390174
 	
-	The undirected graph flickr-links has 243600 nodes and 1817934 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00006 and is connected, as it has a single component. The graph median node degree
-	is 2, the mean node degree is 14.93, and the node degree mode is 1. The top 5 most
-	central nodes are 406 (degree 27234), 622 (degree 19574), 453 (degree 16338), 415
-	(degree 14480) and 306 (degree 13521).
+	The undirected graph flickr-links has 243600 nodes and 1817934 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00006 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 14.93, and the
+	node degree mode is 1. The top 5 most central nodes are 406 (degree 27234),
+	622 (degree 19574), 453 (degree 16338), 415 (degree 14480) and 306 (degree
+	13521).
 	
 
 

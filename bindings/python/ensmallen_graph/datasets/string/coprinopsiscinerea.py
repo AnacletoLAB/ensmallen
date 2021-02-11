@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:52.051939
 
-The undirected graph Coprinopsis cinerea has 6463 nodes and 620970 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02974 and
-has 22 connected components, where the component with most nodes has 6405 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 192.16, and the node degree mode is 1. The top 5 most central
-nodes are 5346.XP_001830370.1 (degree 1484), 5346.XP_001837408.2 (degree 1329), 5346.XP_002912189.1
-(degree 1280), 5346.XP_001839645.2 (degree 1246) and 5346.XP_002911240.1 (degree
+The undirected graph Coprinopsis cinerea has 6463 nodes and 620970 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02974 and has 22 connected components, where the component with most
+nodes has 6405 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 192.16, and
+the node degree mode is 1. The top 5 most central nodes are 5346.XP_001830370.1
+(degree 1484), 5346.XP_001837408.2 (degree 1329), 5346.XP_002912189.1 (degree
+1280), 5346.XP_001839645.2 (degree 1246) and 5346.XP_002911240.1 (degree
 1210).
 
 
@@ -107,13 +108,14 @@ def CoprinopsisCinerea(
 	
 	Datetime: 2021-02-02 17:13:52.051939
 	
-	The undirected graph Coprinopsis cinerea has 6463 nodes and 620970 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02974 and
-	has 22 connected components, where the component with most nodes has 6405 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 192.16, and the node degree mode is 1. The top 5 most central
-	nodes are 5346.XP_001830370.1 (degree 1484), 5346.XP_001837408.2 (degree 1329), 5346.XP_002912189.1
-	(degree 1280), 5346.XP_001839645.2 (degree 1246) and 5346.XP_002911240.1 (degree
+	The undirected graph Coprinopsis cinerea has 6463 nodes and 620970 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02974 and has 22 connected components, where the component with most
+	nodes has 6405 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 192.16, and
+	the node degree mode is 1. The top 5 most central nodes are 5346.XP_001830370.1
+	(degree 1484), 5346.XP_001837408.2 (degree 1329), 5346.XP_002912189.1 (degree
+	1280), 5346.XP_001839645.2 (degree 1246) and 5346.XP_002911240.1 (degree
 	1210).
 	
 

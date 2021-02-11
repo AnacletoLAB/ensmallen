@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:47:47.306483
 
-The undirected graph Streptococcus sp. HSISM1 has 2196 nodes and 172847 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07172
-and has 15 connected components, where the component with most nodes has 2159 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 157.42, and the node degree mode is 1. The top 5
-most central nodes are 1316408.HSISM1_190 (degree 920), 1316408.HSISM1_707 (degree
-889), 1316408.HSISM1_655 (degree 835), 1316408.HSISM1_1280 (degree 798) and 1316408.HSISM1_84
-(degree 753).
+The undirected graph Streptococcus sp. HSISM1 has 2196 nodes and 172847
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07172 and has 15 connected components, where the component
+with most nodes has 2159 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 157.42,
+and the node degree mode is 1. The top 5 most central nodes are 1316408.HSISM1_190
+(degree 920), 1316408.HSISM1_707 (degree 889), 1316408.HSISM1_655 (degree
+835), 1316408.HSISM1_1280 (degree 798) and 1316408.HSISM1_84 (degree 753).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusSp.Hsism1(
 	
 	Datetime: 2021-02-03 21:47:47.306483
 	
-	The undirected graph Streptococcus sp. HSISM1 has 2196 nodes and 172847 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07172
-	and has 15 connected components, where the component with most nodes has 2159 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 157.42, and the node degree mode is 1. The top 5
-	most central nodes are 1316408.HSISM1_190 (degree 920), 1316408.HSISM1_707 (degree
-	889), 1316408.HSISM1_655 (degree 835), 1316408.HSISM1_1280 (degree 798) and 1316408.HSISM1_84
-	(degree 753).
+	The undirected graph Streptococcus sp. HSISM1 has 2196 nodes and 172847
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07172 and has 15 connected components, where the component
+	with most nodes has 2159 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 157.42,
+	and the node degree mode is 1. The top 5 most central nodes are 1316408.HSISM1_190
+	(degree 920), 1316408.HSISM1_707 (degree 889), 1316408.HSISM1_655 (degree
+	835), 1316408.HSISM1_1280 (degree 798) and 1316408.HSISM1_84 (degree 753).
 	
 
 

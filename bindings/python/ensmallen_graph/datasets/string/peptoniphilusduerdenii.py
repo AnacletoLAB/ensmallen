@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:53.566087
 
-The undirected graph Peptoniphilus duerdenii has 1959 nodes and 139237 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07260 and
-has 7 connected components, where the component with most nodes has 1944 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 142.15, and the node degree mode is 4. The top 5 most central
-nodes are 862517.HMPREF9225_1493 (degree 862), 862517.HMPREF9225_0370 (degree 840),
-862517.HMPREF9225_1498 (degree 713), 862517.HMPREF9225_1581 (degree 702) and 862517.HMPREF9225_1840
+The undirected graph Peptoniphilus duerdenii has 1959 nodes and 139237
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07260 and has 7 connected components, where the component
+with most nodes has 1944 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 142.15,
+and the node degree mode is 4. The top 5 most central nodes are 862517.HMPREF9225_1493
+(degree 862), 862517.HMPREF9225_0370 (degree 840), 862517.HMPREF9225_1498
+(degree 713), 862517.HMPREF9225_1581 (degree 702) and 862517.HMPREF9225_1840
 (degree 666).
 
 
@@ -107,13 +108,14 @@ def PeptoniphilusDuerdenii(
 	
 	Datetime: 2021-02-02 21:46:53.566087
 	
-	The undirected graph Peptoniphilus duerdenii has 1959 nodes and 139237 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07260 and
-	has 7 connected components, where the component with most nodes has 1944 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 142.15, and the node degree mode is 4. The top 5 most central
-	nodes are 862517.HMPREF9225_1493 (degree 862), 862517.HMPREF9225_0370 (degree 840),
-	862517.HMPREF9225_1498 (degree 713), 862517.HMPREF9225_1581 (degree 702) and 862517.HMPREF9225_1840
+	The undirected graph Peptoniphilus duerdenii has 1959 nodes and 139237
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07260 and has 7 connected components, where the component
+	with most nodes has 1944 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 142.15,
+	and the node degree mode is 4. The top 5 most central nodes are 862517.HMPREF9225_1493
+	(degree 862), 862517.HMPREF9225_0370 (degree 840), 862517.HMPREF9225_1498
+	(degree 713), 862517.HMPREF9225_1581 (degree 702) and 862517.HMPREF9225_1840
 	(degree 666).
 	
 

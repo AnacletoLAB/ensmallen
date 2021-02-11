@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:42.176310
 
-The undirected graph Aromatoleum aromaticum has 4298 nodes and 405979 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-has 16 connected components, where the component with most nodes has 4260 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 188.92, and the node degree mode is 3. The top 5 most central
-nodes are 76114.ebA791 (degree 1641), 76114.ebA3982 (degree 1630), 76114.ebA6051
-(degree 1332), 76114.ebA6645 (degree 1207) and 76114.ebA2252 (degree 1164).
+The undirected graph Aromatoleum aromaticum has 4298 nodes and 405979 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04396 and has 16 connected components, where the component with most
+nodes has 4260 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 188.92, and
+the node degree mode is 3. The top 5 most central nodes are 76114.ebA791
+(degree 1641), 76114.ebA3982 (degree 1630), 76114.ebA6051 (degree 1332),
+76114.ebA6645 (degree 1207) and 76114.ebA2252 (degree 1164).
 
 
 References
@@ -106,13 +107,14 @@ def AromatoleumAromaticum(
 	
 	Datetime: 2021-02-02 18:32:42.176310
 	
-	The undirected graph Aromatoleum aromaticum has 4298 nodes and 405979 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04396 and
-	has 16 connected components, where the component with most nodes has 4260 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 188.92, and the node degree mode is 3. The top 5 most central
-	nodes are 76114.ebA791 (degree 1641), 76114.ebA3982 (degree 1630), 76114.ebA6051
-	(degree 1332), 76114.ebA6645 (degree 1207) and 76114.ebA2252 (degree 1164).
+	The undirected graph Aromatoleum aromaticum has 4298 nodes and 405979 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04396 and has 16 connected components, where the component with most
+	nodes has 4260 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 188.92, and
+	the node degree mode is 3. The top 5 most central nodes are 76114.ebA791
+	(degree 1641), 76114.ebA3982 (degree 1630), 76114.ebA6051 (degree 1332),
+	76114.ebA6645 (degree 1207) and 76114.ebA2252 (degree 1164).
 	
 
 

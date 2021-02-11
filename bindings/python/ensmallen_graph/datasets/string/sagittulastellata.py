@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:23.066217
 
-The undirected graph Sagittula stellata has 5020 nodes and 668175 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05304 and
-has 11 connected components, where the component with most nodes has 4992 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 266.21, and the node degree mode is 4. The top 5 most central
-nodes are 388399.SSE37_18265 (degree 1729), 388399.SSE37_04965 (degree 1536), 388399.SSE37_13698
-(degree 1340), 388399.SSE37_08748 (degree 1299) and 388399.SSE37_17955 (degree 1279).
+The undirected graph Sagittula stellata has 5020 nodes and 668175 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05304 and has 11 connected components, where the component with most
+nodes has 4992 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 266.21, and
+the node degree mode is 4. The top 5 most central nodes are 388399.SSE37_18265
+(degree 1729), 388399.SSE37_04965 (degree 1536), 388399.SSE37_13698 (degree
+1340), 388399.SSE37_08748 (degree 1299) and 388399.SSE37_17955 (degree
+1279).
 
 
 References
@@ -106,13 +108,15 @@ def SagittulaStellata(
 	
 	Datetime: 2021-02-02 20:38:23.066217
 	
-	The undirected graph Sagittula stellata has 5020 nodes and 668175 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05304 and
-	has 11 connected components, where the component with most nodes has 4992 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 266.21, and the node degree mode is 4. The top 5 most central
-	nodes are 388399.SSE37_18265 (degree 1729), 388399.SSE37_04965 (degree 1536), 388399.SSE37_13698
-	(degree 1340), 388399.SSE37_08748 (degree 1299) and 388399.SSE37_17955 (degree 1279).
+	The undirected graph Sagittula stellata has 5020 nodes and 668175 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05304 and has 11 connected components, where the component with most
+	nodes has 4992 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 266.21, and
+	the node degree mode is 4. The top 5 most central nodes are 388399.SSE37_18265
+	(degree 1729), 388399.SSE37_04965 (degree 1536), 388399.SSE37_13698 (degree
+	1340), 388399.SSE37_08748 (degree 1299) and 388399.SSE37_17955 (degree
+	1279).
 	
 
 

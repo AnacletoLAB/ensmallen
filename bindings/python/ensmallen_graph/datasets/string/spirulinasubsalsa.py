@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:33.068651
 
-The undirected graph Spirulina subsalsa has 4245 nodes and 589158 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06540 and
-has 19 connected components, where the component with most nodes has 4202 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 265,
-the mean node degree is 277.58, and the node degree mode is 1. The top 5 most central
-nodes are 1173029.JH980292_gene1177 (degree 1747), 1173029.JH980292_gene1191 (degree
-1542), 1173029.JH980292_gene229 (degree 1526), 1173029.JH980292_gene3045 (degree
-1479) and 1173029.JH980292_gene806 (degree 1431).
+The undirected graph Spirulina subsalsa has 4245 nodes and 589158 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06540 and has 19 connected components, where the component with most
+nodes has 4202 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 265, the mean node degree is 277.58, and
+the node degree mode is 1. The top 5 most central nodes are 1173029.JH980292_gene1177
+(degree 1747), 1173029.JH980292_gene1191 (degree 1542), 1173029.JH980292_gene229
+(degree 1526), 1173029.JH980292_gene3045 (degree 1479) and 1173029.JH980292_gene806
+(degree 1431).
 
 
 References
@@ -107,14 +108,15 @@ def SpirulinaSubsalsa(
 	
 	Datetime: 2021-02-02 23:08:33.068651
 	
-	The undirected graph Spirulina subsalsa has 4245 nodes and 589158 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06540 and
-	has 19 connected components, where the component with most nodes has 4202 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 265,
-	the mean node degree is 277.58, and the node degree mode is 1. The top 5 most central
-	nodes are 1173029.JH980292_gene1177 (degree 1747), 1173029.JH980292_gene1191 (degree
-	1542), 1173029.JH980292_gene229 (degree 1526), 1173029.JH980292_gene3045 (degree
-	1479) and 1173029.JH980292_gene806 (degree 1431).
+	The undirected graph Spirulina subsalsa has 4245 nodes and 589158 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06540 and has 19 connected components, where the component with most
+	nodes has 4202 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 265, the mean node degree is 277.58, and
+	the node degree mode is 1. The top 5 most central nodes are 1173029.JH980292_gene1177
+	(degree 1747), 1173029.JH980292_gene1191 (degree 1542), 1173029.JH980292_gene229
+	(degree 1526), 1173029.JH980292_gene3045 (degree 1479) and 1173029.JH980292_gene806
+	(degree 1431).
 	
 
 

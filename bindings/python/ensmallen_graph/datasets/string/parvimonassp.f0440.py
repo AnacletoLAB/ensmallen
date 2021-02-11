@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:40.094746
 
-The undirected graph Parvimonas sp. F0440 has 1603 nodes and 125929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09808 and
-has 6 connected components, where the component with most nodes has 1591 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 157.12, and the node degree mode is 7. The top 5 most central
-nodes are 944565.HMPREF9127_1265 (degree 671), 944565.HMPREF9127_0456 (degree 662),
-944565.HMPREF9127_0416 (degree 662), 944565.HMPREF9127_0997 (degree 636) and 944565.HMPREF9127_1055
+The undirected graph Parvimonas sp. F0440 has 1603 nodes and 125929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09808 and has 6 connected components, where the component with most
+nodes has 1591 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 157.12, and
+the node degree mode is 7. The top 5 most central nodes are 944565.HMPREF9127_1265
+(degree 671), 944565.HMPREF9127_0456 (degree 662), 944565.HMPREF9127_0416
+(degree 662), 944565.HMPREF9127_0997 (degree 636) and 944565.HMPREF9127_1055
 (degree 598).
 
 
@@ -107,13 +108,14 @@ def ParvimonasSp.F0440(
 	
 	Datetime: 2021-02-02 22:01:40.094746
 	
-	The undirected graph Parvimonas sp. F0440 has 1603 nodes and 125929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09808 and
-	has 6 connected components, where the component with most nodes has 1591 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 157.12, and the node degree mode is 7. The top 5 most central
-	nodes are 944565.HMPREF9127_1265 (degree 671), 944565.HMPREF9127_0456 (degree 662),
-	944565.HMPREF9127_0416 (degree 662), 944565.HMPREF9127_0997 (degree 636) and 944565.HMPREF9127_1055
+	The undirected graph Parvimonas sp. F0440 has 1603 nodes and 125929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09808 and has 6 connected components, where the component with most
+	nodes has 1591 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 157.12, and
+	the node degree mode is 7. The top 5 most central nodes are 944565.HMPREF9127_1265
+	(degree 671), 944565.HMPREF9127_0456 (degree 662), 944565.HMPREF9127_0416
+	(degree 662), 944565.HMPREF9127_0997 (degree 636) and 944565.HMPREF9127_1055
 	(degree 598).
 	
 

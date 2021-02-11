@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:20.992280
 
-The undirected graph Clostridium sp. KNHs209 has 4081 nodes and 474620 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05701 and
-has 14 connected components, where the component with most nodes has 4045 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 232.60, and the node degree mode is 3. The top 5 most central
-nodes are 1469948.JPNB01000001_gene2427 (degree 1798), 1469948.JPNB01000001_gene503
-(degree 1652), 1469948.JPNB01000001_gene1495 (degree 1505), 1469948.JPNB01000001_gene2259
-(degree 1465) and 1469948.JPNB01000002_gene3292 (degree 1350).
+The undirected graph Clostridium sp. KNHs209 has 4081 nodes and 474620
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05701 and has 14 connected components, where the component
+with most nodes has 4045 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 184, the mean node degree is 232.60,
+and the node degree mode is 3. The top 5 most central nodes are 1469948.JPNB01000001_gene2427
+(degree 1798), 1469948.JPNB01000001_gene503 (degree 1652), 1469948.JPNB01000001_gene1495
+(degree 1505), 1469948.JPNB01000001_gene2259 (degree 1465) and 1469948.JPNB01000002_gene3292
+(degree 1350).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Knhs209(
 	
 	Datetime: 2021-02-03 23:12:20.992280
 	
-	The undirected graph Clostridium sp. KNHs209 has 4081 nodes and 474620 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05701 and
-	has 14 connected components, where the component with most nodes has 4045 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 232.60, and the node degree mode is 3. The top 5 most central
-	nodes are 1469948.JPNB01000001_gene2427 (degree 1798), 1469948.JPNB01000001_gene503
-	(degree 1652), 1469948.JPNB01000001_gene1495 (degree 1505), 1469948.JPNB01000001_gene2259
-	(degree 1465) and 1469948.JPNB01000002_gene3292 (degree 1350).
+	The undirected graph Clostridium sp. KNHs209 has 4081 nodes and 474620
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05701 and has 14 connected components, where the component
+	with most nodes has 4045 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 184, the mean node degree is 232.60,
+	and the node degree mode is 3. The top 5 most central nodes are 1469948.JPNB01000001_gene2427
+	(degree 1798), 1469948.JPNB01000001_gene503 (degree 1652), 1469948.JPNB01000001_gene1495
+	(degree 1505), 1469948.JPNB01000001_gene2259 (degree 1465) and 1469948.JPNB01000002_gene3292
+	(degree 1350).
 	
 
 

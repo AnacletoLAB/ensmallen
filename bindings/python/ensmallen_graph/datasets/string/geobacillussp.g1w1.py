@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:27.783185
 
-The undirected graph Geobacillus sp. G1w1 has 3090 nodes and 275839 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-has 16 connected components, where the component with most nodes has 3058 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 178.54, and the node degree mode is 1. The top 5 most central
-nodes are 1430331.EP10_07250 (degree 1179), 1430331.EP10_08745 (degree 1000), 1430331.EP10_02670
-(degree 956), 1430331.EP10_16735 (degree 858) and 1430331.EP10_05360 (degree 857).
+The undirected graph Geobacillus sp. G1w1 has 3090 nodes and 275839 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05780 and has 16 connected components, where the component with most
+nodes has 3058 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 178.54, and
+the node degree mode is 1. The top 5 most central nodes are 1430331.EP10_07250
+(degree 1179), 1430331.EP10_08745 (degree 1000), 1430331.EP10_02670 (degree
+956), 1430331.EP10_16735 (degree 858) and 1430331.EP10_05360 (degree 857).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacillusSp.G1w1(
 	
 	Datetime: 2021-02-03 22:53:27.783185
 	
-	The undirected graph Geobacillus sp. G1w1 has 3090 nodes and 275839 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05780 and
-	has 16 connected components, where the component with most nodes has 3058 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 178.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1430331.EP10_07250 (degree 1179), 1430331.EP10_08745 (degree 1000), 1430331.EP10_02670
-	(degree 956), 1430331.EP10_16735 (degree 858) and 1430331.EP10_05360 (degree 857).
+	The undirected graph Geobacillus sp. G1w1 has 3090 nodes and 275839 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05780 and has 16 connected components, where the component with most
+	nodes has 3058 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 178.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1430331.EP10_07250
+	(degree 1179), 1430331.EP10_08745 (degree 1000), 1430331.EP10_02670 (degree
+	956), 1430331.EP10_16735 (degree 858) and 1430331.EP10_05360 (degree 857).
 	
 
 

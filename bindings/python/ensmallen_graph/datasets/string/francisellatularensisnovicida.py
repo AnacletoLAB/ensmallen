@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:02.462380
 
-The undirected graph Francisella tularensis novicida has 1837 nodes and 107096 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06351
-and has 5 connected components, where the component with most nodes has 1825 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 116.60, and the node degree mode is 11. The top 5
-most central nodes are 676032.FN3523_1668 (degree 742), 676032.FN3523_0610 (degree
-608), 676032.FN3523_0427 (degree 607), 676032.FN3523_0880 (degree 605) and 676032.FN3523_1354
-(degree 604).
+The undirected graph Francisella tularensis novicida has 1837 nodes and
+107096 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06351 and has 5 connected components, where the
+component with most nodes has 1825 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+is 116.60, and the node degree mode is 11. The top 5 most central nodes
+are 676032.FN3523_1668 (degree 742), 676032.FN3523_0610 (degree 608), 676032.FN3523_0427
+(degree 607), 676032.FN3523_0880 (degree 605) and 676032.FN3523_1354 (degree
+604).
 
 
 References
@@ -107,14 +108,15 @@ def FrancisellaTularensisNovicida(
 	
 	Datetime: 2021-02-02 21:30:02.462380
 	
-	The undirected graph Francisella tularensis novicida has 1837 nodes and 107096 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06351
-	and has 5 connected components, where the component with most nodes has 1825 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 116.60, and the node degree mode is 11. The top 5
-	most central nodes are 676032.FN3523_1668 (degree 742), 676032.FN3523_0610 (degree
-	608), 676032.FN3523_0427 (degree 607), 676032.FN3523_0880 (degree 605) and 676032.FN3523_1354
-	(degree 604).
+	The undirected graph Francisella tularensis novicida has 1837 nodes and
+	107096 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06351 and has 5 connected components, where the
+	component with most nodes has 1825 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+	is 116.60, and the node degree mode is 11. The top 5 most central nodes
+	are 676032.FN3523_1668 (degree 742), 676032.FN3523_0610 (degree 608), 676032.FN3523_0427
+	(degree 607), 676032.FN3523_0880 (degree 605) and 676032.FN3523_1354 (degree
+	604).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:48.200442
 
-The undirected graph Xanthomonas axonopodis citri has 4312 nodes and 366316 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03941
-and has 17 connected components, where the component with most nodes has 4271 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 169.91, and the node degree mode is 4. The top 5
-most central nodes are 190486.XAC4110 (degree 1445), 190486.XAC2492 (degree 1332),
-190486.XAC1283 (degree 1278), 190486.XAC4193 (degree 1153) and 190486.XAC2054 (degree
-1094).
+The undirected graph Xanthomonas axonopodis citri has 4312 nodes and 366316
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03941 and has 17 connected components, where the component
+with most nodes has 4271 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 169.91,
+and the node degree mode is 4. The top 5 most central nodes are 190486.XAC4110
+(degree 1445), 190486.XAC2492 (degree 1332), 190486.XAC1283 (degree 1278),
+190486.XAC4193 (degree 1153) and 190486.XAC2054 (degree 1094).
 
 
 References
@@ -107,14 +107,14 @@ def XanthomonasAxonopodisCitri(
 	
 	Datetime: 2021-02-02 19:57:48.200442
 	
-	The undirected graph Xanthomonas axonopodis citri has 4312 nodes and 366316 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03941
-	and has 17 connected components, where the component with most nodes has 4271 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 169.91, and the node degree mode is 4. The top 5
-	most central nodes are 190486.XAC4110 (degree 1445), 190486.XAC2492 (degree 1332),
-	190486.XAC1283 (degree 1278), 190486.XAC4193 (degree 1153) and 190486.XAC2054 (degree
-	1094).
+	The undirected graph Xanthomonas axonopodis citri has 4312 nodes and 366316
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03941 and has 17 connected components, where the component
+	with most nodes has 4271 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 169.91,
+	and the node degree mode is 4. The top 5 most central nodes are 190486.XAC4110
+	(degree 1445), 190486.XAC2492 (degree 1332), 190486.XAC1283 (degree 1278),
+	190486.XAC4193 (degree 1153) and 190486.XAC2054 (degree 1094).
 	
 
 

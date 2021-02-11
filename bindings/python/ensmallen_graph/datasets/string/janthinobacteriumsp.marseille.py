@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:08.746700
 
-The undirected graph Janthinobacterium sp. Marseille has 3684 nodes and 356443 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05254
-and has 6 connected components, where the component with most nodes has 3671 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 193.51, and the node degree mode is 2. The top 5
-most central nodes are 375286.mma_0323 (degree 1207), 375286.mma_0863 (degree 1132),
-375286.mma_3114 (degree 1015), 375286.mma_3301 (degree 934) and 375286.mma_2032 (degree
+The undirected graph Janthinobacterium sp. Marseille has 3684 nodes and
+356443 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05254 and has 6 connected components, where the
+component with most nodes has 3671 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+is 193.51, and the node degree mode is 2. The top 5 most central nodes
+are 375286.mma_0323 (degree 1207), 375286.mma_0863 (degree 1132), 375286.mma_3114
+(degree 1015), 375286.mma_3301 (degree 934) and 375286.mma_2032 (degree
 929).
 
 
@@ -107,13 +108,14 @@ def JanthinobacteriumSp.Marseille(
 	
 	Datetime: 2021-02-02 20:36:08.746700
 	
-	The undirected graph Janthinobacterium sp. Marseille has 3684 nodes and 356443 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05254
-	and has 6 connected components, where the component with most nodes has 3671 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 193.51, and the node degree mode is 2. The top 5
-	most central nodes are 375286.mma_0323 (degree 1207), 375286.mma_0863 (degree 1132),
-	375286.mma_3114 (degree 1015), 375286.mma_3301 (degree 934) and 375286.mma_2032 (degree
+	The undirected graph Janthinobacterium sp. Marseille has 3684 nodes and
+	356443 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05254 and has 6 connected components, where the
+	component with most nodes has 3671 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 170, the mean node degree
+	is 193.51, and the node degree mode is 2. The top 5 most central nodes
+	are 375286.mma_0323 (degree 1207), 375286.mma_0863 (degree 1132), 375286.mma_3114
+	(degree 1015), 375286.mma_3301 (degree 934) and 375286.mma_2032 (degree
 	929).
 	
 

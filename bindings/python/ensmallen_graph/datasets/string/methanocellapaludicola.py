@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:25.578567
 
-The undirected graph Methanocella paludicola has 2972 nodes and 293471 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06647 and
-has 15 connected components, where the component with most nodes has 2916 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 197.49, and the node degree mode is 3. The top 5 most central
-nodes are 304371.MCP_2698 (degree 1166), 304371.MCP_0244 (degree 1100), 304371.MCP_2019
-(degree 1067), 304371.MCP_1524 (degree 979) and 304371.MCP_0233 (degree 927).
+The undirected graph Methanocella paludicola has 2972 nodes and 293471
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06647 and has 15 connected components, where the component
+with most nodes has 2916 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 197.49,
+and the node degree mode is 3. The top 5 most central nodes are 304371.MCP_2698
+(degree 1166), 304371.MCP_0244 (degree 1100), 304371.MCP_2019 (degree 1067),
+304371.MCP_1524 (degree 979) and 304371.MCP_0233 (degree 927).
 
 
 References
@@ -106,13 +107,14 @@ def MethanocellaPaludicola(
 	
 	Datetime: 2021-02-02 20:22:25.578567
 	
-	The undirected graph Methanocella paludicola has 2972 nodes and 293471 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06647 and
-	has 15 connected components, where the component with most nodes has 2916 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 197.49, and the node degree mode is 3. The top 5 most central
-	nodes are 304371.MCP_2698 (degree 1166), 304371.MCP_0244 (degree 1100), 304371.MCP_2019
-	(degree 1067), 304371.MCP_1524 (degree 979) and 304371.MCP_0233 (degree 927).
+	The undirected graph Methanocella paludicola has 2972 nodes and 293471
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06647 and has 15 connected components, where the component
+	with most nodes has 2916 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 197.49,
+	and the node degree mode is 3. The top 5 most central nodes are 304371.MCP_2698
+	(degree 1166), 304371.MCP_0244 (degree 1100), 304371.MCP_2019 (degree 1067),
+	304371.MCP_1524 (degree 979) and 304371.MCP_0233 (degree 927).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:52.839448
 
-The undirected graph Methylotenera mobilis JLW8 has 2328 nodes and 142215 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05250
-and has 6 connected components, where the component with most nodes has 2318 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 122.18, and the node degree mode is 87. The top 5
-most central nodes are 583345.Mmol_0409 (degree 932), 583345.Mmol_1047 (degree 771),
-583345.Mmol_1524 (degree 724), 583345.Mmol_0958 (degree 679) and 583345.Mmol_2309
-(degree 668).
+The undirected graph Methylotenera mobilis JLW8 has 2328 nodes and 142215
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05250 and has 6 connected components, where the component
+with most nodes has 2318 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 122.18,
+and the node degree mode is 87. The top 5 most central nodes are 583345.Mmol_0409
+(degree 932), 583345.Mmol_1047 (degree 771), 583345.Mmol_1524 (degree 724),
+583345.Mmol_0958 (degree 679) and 583345.Mmol_2309 (degree 668).
 
 
 References
@@ -107,14 +107,14 @@ def MethyloteneraMobilisJlw8(
 	
 	Datetime: 2021-02-02 21:15:52.839448
 	
-	The undirected graph Methylotenera mobilis JLW8 has 2328 nodes and 142215 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05250
-	and has 6 connected components, where the component with most nodes has 2318 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 122.18, and the node degree mode is 87. The top 5
-	most central nodes are 583345.Mmol_0409 (degree 932), 583345.Mmol_1047 (degree 771),
-	583345.Mmol_1524 (degree 724), 583345.Mmol_0958 (degree 679) and 583345.Mmol_2309
-	(degree 668).
+	The undirected graph Methylotenera mobilis JLW8 has 2328 nodes and 142215
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05250 and has 6 connected components, where the component
+	with most nodes has 2318 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 122.18,
+	and the node degree mode is 87. The top 5 most central nodes are 583345.Mmol_0409
+	(degree 932), 583345.Mmol_1047 (degree 771), 583345.Mmol_1524 (degree 724),
+	583345.Mmol_0958 (degree 679) and 583345.Mmol_2309 (degree 668).
 	
 
 

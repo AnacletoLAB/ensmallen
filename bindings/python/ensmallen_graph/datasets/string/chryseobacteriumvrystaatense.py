@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:51.358558
 
-The undirected graph Chryseobacterium vrystaatense has 4667 nodes and 472905 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04343
-and has 51 connected components, where the component with most nodes has 4541 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 202.66, and the node degree mode is 1. The top 5
-most central nodes are 307480.IW16_07725 (degree 1239), 307480.IW16_21770 (degree
-1081), 307480.IW16_18530 (degree 948), 307480.IW16_00025 (degree 930) and 307480.IW16_14670
-(degree 916).
+The undirected graph Chryseobacterium vrystaatense has 4667 nodes and 472905
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04343 and has 51 connected components, where the component
+with most nodes has 4541 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 202.66,
+and the node degree mode is 1. The top 5 most central nodes are 307480.IW16_07725
+(degree 1239), 307480.IW16_21770 (degree 1081), 307480.IW16_18530 (degree
+948), 307480.IW16_00025 (degree 930) and 307480.IW16_14670 (degree 916).
 
 
 References
@@ -107,14 +107,14 @@ def ChryseobacteriumVrystaatense(
 	
 	Datetime: 2021-02-02 20:22:51.358558
 	
-	The undirected graph Chryseobacterium vrystaatense has 4667 nodes and 472905 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04343
-	and has 51 connected components, where the component with most nodes has 4541 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 202.66, and the node degree mode is 1. The top 5
-	most central nodes are 307480.IW16_07725 (degree 1239), 307480.IW16_21770 (degree
-	1081), 307480.IW16_18530 (degree 948), 307480.IW16_00025 (degree 930) and 307480.IW16_14670
-	(degree 916).
+	The undirected graph Chryseobacterium vrystaatense has 4667 nodes and 472905
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04343 and has 51 connected components, where the component
+	with most nodes has 4541 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 202.66,
+	and the node degree mode is 1. The top 5 most central nodes are 307480.IW16_07725
+	(degree 1239), 307480.IW16_21770 (degree 1081), 307480.IW16_18530 (degree
+	948), 307480.IW16_00025 (degree 930) and 307480.IW16_14670 (degree 916).
 	
 
 

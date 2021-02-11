@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:20:47.023136
 
-The undirected graph Pantholops hodgsonii has 25193 nodes and 8641851 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02723 and
-has 2 connected components, where the component with most nodes has 25191 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 492,
-the mean node degree is 686.05, and the node degree mode is 10. The top 5 most central
-nodes are 59538.XP_005974531.1 (degree 8319), 59538.XP_005976883.1 (degree 7952),
-59538.XP_005978136.1 (degree 7812), 59538.XP_005957864.1 (degree 7557) and 59538.XP_005955893.1
+The undirected graph Pantholops hodgsonii has 25193 nodes and 8641851 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02723 and has 2 connected components, where the component with most
+nodes has 25191 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 492, the mean node degree is 686.05, and
+the node degree mode is 10. The top 5 most central nodes are 59538.XP_005974531.1
+(degree 8319), 59538.XP_005976883.1 (degree 7952), 59538.XP_005978136.1
+(degree 7812), 59538.XP_005957864.1 (degree 7557) and 59538.XP_005955893.1
 (degree 6822).
 
 
@@ -107,13 +108,14 @@ def PantholopsHodgsonii(
 	
 	Datetime: 2021-02-02 18:20:47.023136
 	
-	The undirected graph Pantholops hodgsonii has 25193 nodes and 8641851 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02723 and
-	has 2 connected components, where the component with most nodes has 25191 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 492,
-	the mean node degree is 686.05, and the node degree mode is 10. The top 5 most central
-	nodes are 59538.XP_005974531.1 (degree 8319), 59538.XP_005976883.1 (degree 7952),
-	59538.XP_005978136.1 (degree 7812), 59538.XP_005957864.1 (degree 7557) and 59538.XP_005955893.1
+	The undirected graph Pantholops hodgsonii has 25193 nodes and 8641851 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02723 and has 2 connected components, where the component with most
+	nodes has 25191 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 492, the mean node degree is 686.05, and
+	the node degree mode is 10. The top 5 most central nodes are 59538.XP_005974531.1
+	(degree 8319), 59538.XP_005976883.1 (degree 7952), 59538.XP_005978136.1
+	(degree 7812), 59538.XP_005957864.1 (degree 7557) and 59538.XP_005955893.1
 	(degree 6822).
 	
 

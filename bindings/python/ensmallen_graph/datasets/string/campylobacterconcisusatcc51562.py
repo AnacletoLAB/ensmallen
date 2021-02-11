@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:54.151584
 
-The undirected graph Campylobacter concisus ATCC51562 has 1825 nodes and 93486 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05617
-and has 8 connected components, where the component with most nodes has 1809 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 102.45, and the node degree mode is 23. The top 5
-most central nodes are 1242969.ATCC51562_263 (degree 756), 1242969.ATCC51562_745
-(degree 644), 1242969.ATCC51562_974 (degree 592), 1242969.ATCC51562_587 (degree 579)
+The undirected graph Campylobacter concisus ATCC51562 has 1825 nodes and
+93486 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05617 and has 8 connected components, where the
+component with most nodes has 1809 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+is 102.45, and the node degree mode is 23. The top 5 most central nodes
+are 1242969.ATCC51562_263 (degree 756), 1242969.ATCC51562_745 (degree 644),
+1242969.ATCC51562_974 (degree 592), 1242969.ATCC51562_587 (degree 579)
 and 1242969.ATCC51562_394 (degree 547).
 
 
@@ -107,13 +108,14 @@ def CampylobacterConcisusAtcc51562(
 	
 	Datetime: 2021-02-02 23:32:54.151584
 	
-	The undirected graph Campylobacter concisus ATCC51562 has 1825 nodes and 93486 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05617
-	and has 8 connected components, where the component with most nodes has 1809 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 102.45, and the node degree mode is 23. The top 5
-	most central nodes are 1242969.ATCC51562_263 (degree 756), 1242969.ATCC51562_745
-	(degree 644), 1242969.ATCC51562_974 (degree 592), 1242969.ATCC51562_587 (degree 579)
+	The undirected graph Campylobacter concisus ATCC51562 has 1825 nodes and
+	93486 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05617 and has 8 connected components, where the
+	component with most nodes has 1809 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 78, the mean node degree
+	is 102.45, and the node degree mode is 23. The top 5 most central nodes
+	are 1242969.ATCC51562_263 (degree 756), 1242969.ATCC51562_745 (degree 644),
+	1242969.ATCC51562_974 (degree 592), 1242969.ATCC51562_587 (degree 579)
 	and 1242969.ATCC51562_394 (degree 547).
 	
 

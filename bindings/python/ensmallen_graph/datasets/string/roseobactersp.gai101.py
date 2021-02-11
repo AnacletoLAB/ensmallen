@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:27.077134
 
-The undirected graph Roseobacter sp. GAI101 has 4163 nodes and 497921 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05748 and
-has 9 connected components, where the component with most nodes has 4146 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 239.21, and the node degree mode is 3. The top 5 most central
-nodes are 391589.RGAI101_2484 (degree 1663), 391589.RGAI101_2824 (degree 1267), 391589.RGAI101_400
-(degree 1232), 391589.RGAI101_2176 (degree 1226) and 391589.RGAI101_3460 (degree
+The undirected graph Roseobacter sp. GAI101 has 4163 nodes and 497921 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05748 and has 9 connected components, where the component with most
+nodes has 4146 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 193, the mean node degree is 239.21, and
+the node degree mode is 3. The top 5 most central nodes are 391589.RGAI101_2484
+(degree 1663), 391589.RGAI101_2824 (degree 1267), 391589.RGAI101_400 (degree
+1232), 391589.RGAI101_2176 (degree 1226) and 391589.RGAI101_3460 (degree
 1200).
 
 
@@ -107,13 +108,14 @@ def RoseobacterSp.Gai101(
 	
 	Datetime: 2021-02-02 20:39:27.077134
 	
-	The undirected graph Roseobacter sp. GAI101 has 4163 nodes and 497921 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05748 and
-	has 9 connected components, where the component with most nodes has 4146 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 239.21, and the node degree mode is 3. The top 5 most central
-	nodes are 391589.RGAI101_2484 (degree 1663), 391589.RGAI101_2824 (degree 1267), 391589.RGAI101_400
-	(degree 1232), 391589.RGAI101_2176 (degree 1226) and 391589.RGAI101_3460 (degree
+	The undirected graph Roseobacter sp. GAI101 has 4163 nodes and 497921 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05748 and has 9 connected components, where the component with most
+	nodes has 4146 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 193, the mean node degree is 239.21, and
+	the node degree mode is 3. The top 5 most central nodes are 391589.RGAI101_2484
+	(degree 1663), 391589.RGAI101_2824 (degree 1267), 391589.RGAI101_400 (degree
+	1232), 391589.RGAI101_2176 (degree 1226) and 391589.RGAI101_3460 (degree
 	1200).
 	
 

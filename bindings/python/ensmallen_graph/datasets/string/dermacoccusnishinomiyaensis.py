@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:20.400054
 
-The undirected graph Dermacoccus nishinomiyaensis has 2230 nodes and 189190 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07612
-and has 17 connected components, where the component with most nodes has 2194 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 169.68, and the node degree mode is 2. The top 5
-most central nodes are 1274.HX89_08110 (degree 928), 1274.HX89_03060 (degree 731),
-1274.HX89_08825 (degree 692), 1274.HX89_13450 (degree 687) and 1274.HX89_08285 (degree
-684).
+The undirected graph Dermacoccus nishinomiyaensis has 2230 nodes and 189190
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07612 and has 17 connected components, where the component
+with most nodes has 2194 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 169.68,
+and the node degree mode is 2. The top 5 most central nodes are 1274.HX89_08110
+(degree 928), 1274.HX89_03060 (degree 731), 1274.HX89_08825 (degree 692),
+1274.HX89_13450 (degree 687) and 1274.HX89_08285 (degree 684).
 
 
 References
@@ -107,14 +107,14 @@ def DermacoccusNishinomiyaensis(
 	
 	Datetime: 2021-02-02 16:22:20.400054
 	
-	The undirected graph Dermacoccus nishinomiyaensis has 2230 nodes and 189190 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07612
-	and has 17 connected components, where the component with most nodes has 2194 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 169.68, and the node degree mode is 2. The top 5
-	most central nodes are 1274.HX89_08110 (degree 928), 1274.HX89_03060 (degree 731),
-	1274.HX89_08825 (degree 692), 1274.HX89_13450 (degree 687) and 1274.HX89_08285 (degree
-	684).
+	The undirected graph Dermacoccus nishinomiyaensis has 2230 nodes and 189190
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07612 and has 17 connected components, where the component
+	with most nodes has 2194 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 169.68,
+	and the node degree mode is 2. The top 5 most central nodes are 1274.HX89_08110
+	(degree 928), 1274.HX89_03060 (degree 731), 1274.HX89_08825 (degree 692),
+	1274.HX89_13450 (degree 687) and 1274.HX89_08285 (degree 684).
 	
 
 

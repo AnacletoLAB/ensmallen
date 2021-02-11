@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:42.085306
 
-The undirected graph Burkholderia phytofirmans has 7163 nodes and 763857 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02978
-and has 29 connected components, where the component with most nodes has 7089 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 166, the mean node degree is 213.28, and the node degree mode is 2. The top 5
-most central nodes are 398527.Bphyt_7104 (degree 3170), 398527.Bphyt_6788 (degree
-2552), 398527.Bphyt_5390 (degree 2398), 398527.Bphyt_3591 (degree 2150) and 398527.Bphyt_0633
-(degree 2009).
+The undirected graph Burkholderia phytofirmans has 7163 nodes and 763857
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02978 and has 29 connected components, where the component
+with most nodes has 7089 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 166, the mean node degree is 213.28,
+and the node degree mode is 2. The top 5 most central nodes are 398527.Bphyt_7104
+(degree 3170), 398527.Bphyt_6788 (degree 2552), 398527.Bphyt_5390 (degree
+2398), 398527.Bphyt_3591 (degree 2150) and 398527.Bphyt_0633 (degree 2009).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaPhytofirmans(
 	
 	Datetime: 2021-02-02 20:42:42.085306
 	
-	The undirected graph Burkholderia phytofirmans has 7163 nodes and 763857 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02978
-	and has 29 connected components, where the component with most nodes has 7089 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 166, the mean node degree is 213.28, and the node degree mode is 2. The top 5
-	most central nodes are 398527.Bphyt_7104 (degree 3170), 398527.Bphyt_6788 (degree
-	2552), 398527.Bphyt_5390 (degree 2398), 398527.Bphyt_3591 (degree 2150) and 398527.Bphyt_0633
-	(degree 2009).
+	The undirected graph Burkholderia phytofirmans has 7163 nodes and 763857
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02978 and has 29 connected components, where the component
+	with most nodes has 7089 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 166, the mean node degree is 213.28,
+	and the node degree mode is 2. The top 5 most central nodes are 398527.Bphyt_7104
+	(degree 3170), 398527.Bphyt_6788 (degree 2552), 398527.Bphyt_5390 (degree
+	2398), 398527.Bphyt_3591 (degree 2150) and 398527.Bphyt_0633 (degree 2009).
 	
 
 

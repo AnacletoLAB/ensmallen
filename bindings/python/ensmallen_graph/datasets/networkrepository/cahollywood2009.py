@@ -11,11 +11,12 @@ had the following characteristics:
 Datetime: 2021-02-03 22:48:35.178528
 
 The undirected graph ca-hollywood-2009 has 1069126 nodes and 56306653 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00010 and is connected, as it has a single component. The graph median node
-degree is 31, the mean node degree is 105.33 and the node degree mode is 9. The top
-5 most central nodes are 601226 (degree 11467), 599865 (degree 10022), 601227 (degree
-9065), 600691 (degree 8293) and 791344 (degree 8191).
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00010 and is connected, as it has a single component.
+The graph median node degree is 31, the mean node degree is 105.33 and
+the node degree mode is 9. The top 5 most central nodes are 601226 (degree
+11467), 599865 (degree 10022), 601227 (degree 9065), 600691 (degree 8293)
+and 791344 (degree 8191).
 
 
 References
@@ -113,11 +114,12 @@ def CaHollywood2009(
 	Datetime: 2021-02-03 22:48:35.178528
 	
 	The undirected graph ca-hollywood-2009 has 1069126 nodes and 56306653 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00010 and is connected, as it has a single component. The graph median node
-	degree is 31, the mean node degree is 105.33 and the node degree mode is 9. The top
-	5 most central nodes are 601226 (degree 11467), 599865 (degree 10022), 601227 (degree
-	9065), 600691 (degree 8293) and 791344 (degree 8191).
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00010 and is connected, as it has a single component.
+	The graph median node degree is 31, the mean node degree is 105.33 and
+	the node degree mode is 9. The top 5 most central nodes are 601226 (degree
+	11467), 599865 (degree 10022), 601227 (degree 9065), 600691 (degree 8293)
+	and 791344 (degree 8191).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:35.172187
 
-The undirected graph Arthrobacter arilaitensis has 3365 nodes and 235924 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04168
-and has 10 connected components, where the component with most nodes has 3342 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 140.22, and the node degree mode is 1. The top 5
-most central nodes are 861360.AARI_19350 (degree 1210), 861360.AARI_22600 (degree
-1031), 861360.AARI_22540 (degree 1010), 861360.AARI_11410 (degree 942) and 861360.AARI_25330
-(degree 913).
+The undirected graph Arthrobacter arilaitensis has 3365 nodes and 235924
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04168 and has 10 connected components, where the component
+with most nodes has 3342 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 140.22,
+and the node degree mode is 1. The top 5 most central nodes are 861360.AARI_19350
+(degree 1210), 861360.AARI_22600 (degree 1031), 861360.AARI_22540 (degree
+1010), 861360.AARI_11410 (degree 942) and 861360.AARI_25330 (degree 913).
 
 
 References
@@ -107,14 +107,14 @@ def ArthrobacterArilaitensis(
 	
 	Datetime: 2021-02-02 21:46:35.172187
 	
-	The undirected graph Arthrobacter arilaitensis has 3365 nodes and 235924 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04168
-	and has 10 connected components, where the component with most nodes has 3342 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 140.22, and the node degree mode is 1. The top 5
-	most central nodes are 861360.AARI_19350 (degree 1210), 861360.AARI_22600 (degree
-	1031), 861360.AARI_22540 (degree 1010), 861360.AARI_11410 (degree 942) and 861360.AARI_25330
-	(degree 913).
+	The undirected graph Arthrobacter arilaitensis has 3365 nodes and 235924
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04168 and has 10 connected components, where the component
+	with most nodes has 3342 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 140.22,
+	and the node degree mode is 1. The top 5 most central nodes are 861360.AARI_19350
+	(degree 1210), 861360.AARI_22600 (degree 1031), 861360.AARI_22540 (degree
+	1010), 861360.AARI_11410 (degree 942) and 861360.AARI_25330 (degree 913).
 	
 
 

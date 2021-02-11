@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:22:05.743087
 
-The undirected graph Pseudomonas mosselii has 5348 nodes and 491548 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03438 and
-has 25 connected components, where the component with most nodes has 5290 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 183.82, and the node degree mode is 1. The top 5 most central
-nodes are 1388763.O165_024460 (degree 1966), 1388763.O165_021220 (degree 1441), 1388763.O165_019830
-(degree 1401), 1388763.O165_017795 (degree 1327) and 1388763.O165_016880 (degree
+The undirected graph Pseudomonas mosselii has 5348 nodes and 491548 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03438 and has 25 connected components, where the component with most
+nodes has 5290 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 183.82, and
+the node degree mode is 1. The top 5 most central nodes are 1388763.O165_024460
+(degree 1966), 1388763.O165_021220 (degree 1441), 1388763.O165_019830 (degree
+1401), 1388763.O165_017795 (degree 1327) and 1388763.O165_016880 (degree
 1313).
 
 
@@ -107,13 +108,14 @@ def PseudomonasMosselii(
 	
 	Datetime: 2021-02-03 22:22:05.743087
 	
-	The undirected graph Pseudomonas mosselii has 5348 nodes and 491548 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03438 and
-	has 25 connected components, where the component with most nodes has 5290 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 183.82, and the node degree mode is 1. The top 5 most central
-	nodes are 1388763.O165_024460 (degree 1966), 1388763.O165_021220 (degree 1441), 1388763.O165_019830
-	(degree 1401), 1388763.O165_017795 (degree 1327) and 1388763.O165_016880 (degree
+	The undirected graph Pseudomonas mosselii has 5348 nodes and 491548 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03438 and has 25 connected components, where the component with most
+	nodes has 5290 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 183.82, and
+	the node degree mode is 1. The top 5 most central nodes are 1388763.O165_024460
+	(degree 1966), 1388763.O165_021220 (degree 1441), 1388763.O165_019830 (degree
+	1401), 1388763.O165_017795 (degree 1327) and 1388763.O165_016880 (degree
 	1313).
 	
 

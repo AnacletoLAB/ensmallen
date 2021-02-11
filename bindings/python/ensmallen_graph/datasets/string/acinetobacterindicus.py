@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:00:56.367131
 
-The undirected graph Acinetobacter indicus has 2972 nodes and 258511 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05855 and
-has 9 connected components, where the component with most nodes has 2955 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 173.96, and the node degree mode is 4. The top 5 most central
-nodes are 1341679.P253_02905 (degree 1089), 1341679.P253_01844 (degree 972), 1341679.P253_01826
-(degree 948), 1341679.P253_01476 (degree 932) and 1341679.P253_00822 (degree 905).
+The undirected graph Acinetobacter indicus has 2972 nodes and 258511 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05855 and has 9 connected components, where the component with most
+nodes has 2955 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 173.96, and
+the node degree mode is 4. The top 5 most central nodes are 1341679.P253_02905
+(degree 1089), 1341679.P253_01844 (degree 972), 1341679.P253_01826 (degree
+948), 1341679.P253_01476 (degree 932) and 1341679.P253_00822 (degree 905).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterIndicus(
 	
 	Datetime: 2021-02-03 22:00:56.367131
 	
-	The undirected graph Acinetobacter indicus has 2972 nodes and 258511 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05855 and
-	has 9 connected components, where the component with most nodes has 2955 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 173.96, and the node degree mode is 4. The top 5 most central
-	nodes are 1341679.P253_02905 (degree 1089), 1341679.P253_01844 (degree 972), 1341679.P253_01826
-	(degree 948), 1341679.P253_01476 (degree 932) and 1341679.P253_00822 (degree 905).
+	The undirected graph Acinetobacter indicus has 2972 nodes and 258511 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05855 and has 9 connected components, where the component with most
+	nodes has 2955 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 173.96, and
+	the node degree mode is 4. The top 5 most central nodes are 1341679.P253_02905
+	(degree 1089), 1341679.P253_01844 (degree 972), 1341679.P253_01826 (degree
+	948), 1341679.P253_01476 (degree 932) and 1341679.P253_00822 (degree 905).
 	
 
 

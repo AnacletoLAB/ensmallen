@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:42.378685
 
-The undirected graph Niastella koreensis has 7067 nodes and 1014214 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04062 and
-has 42 connected components, where the component with most nodes has 6977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 287.03, and the node degree mode is 1. The top 5 most central
-nodes are 700598.Niako_3964 (degree 2338), 700598.Niako_3715 (degree 2248), 700598.Niako_6289
-(degree 2018), 700598.Niako_7087 (degree 1841) and 700598.Niako_1259 (degree 1618).
+The undirected graph Niastella koreensis has 7067 nodes and 1014214 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04062 and has 42 connected components, where the component with most
+nodes has 6977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 287.03, and
+the node degree mode is 1. The top 5 most central nodes are 700598.Niako_3964
+(degree 2338), 700598.Niako_3715 (degree 2248), 700598.Niako_6289 (degree
+2018), 700598.Niako_7087 (degree 1841) and 700598.Niako_1259 (degree 1618).
 
 
 References
@@ -106,13 +107,14 @@ def NiastellaKoreensis(
 	
 	Datetime: 2021-02-02 21:33:42.378685
 	
-	The undirected graph Niastella koreensis has 7067 nodes and 1014214 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04062 and
-	has 42 connected components, where the component with most nodes has 6977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 287.03, and the node degree mode is 1. The top 5 most central
-	nodes are 700598.Niako_3964 (degree 2338), 700598.Niako_3715 (degree 2248), 700598.Niako_6289
-	(degree 2018), 700598.Niako_7087 (degree 1841) and 700598.Niako_1259 (degree 1618).
+	The undirected graph Niastella koreensis has 7067 nodes and 1014214 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04062 and has 42 connected components, where the component with most
+	nodes has 6977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 287.03, and
+	the node degree mode is 1. The top 5 most central nodes are 700598.Niako_3964
+	(degree 2338), 700598.Niako_3715 (degree 2248), 700598.Niako_6289 (degree
+	2018), 700598.Niako_7087 (degree 1841) and 700598.Niako_1259 (degree 1618).
 	
 
 

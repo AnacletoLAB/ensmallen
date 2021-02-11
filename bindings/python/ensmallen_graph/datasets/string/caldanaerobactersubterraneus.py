@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:33.205451
 
-The undirected graph Caldanaerobacter subterraneus has 2568 nodes and 207620 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06299
-and has 10 connected components, where the component with most nodes has 2547 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 161.70, and the node degree mode is 4. The top 5
-most central nodes are 273068.TTE0874 (degree 1022), 273068.TTE0583 (degree 832),
-273068.TTE0582 (degree 820), 273068.TTE1778 (degree 793) and 273068.TTE0640 (degree
-788).
+The undirected graph Caldanaerobacter subterraneus has 2568 nodes and 207620
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06299 and has 10 connected components, where the component
+with most nodes has 2547 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 161.70,
+and the node degree mode is 4. The top 5 most central nodes are 273068.TTE0874
+(degree 1022), 273068.TTE0583 (degree 832), 273068.TTE0582 (degree 820),
+273068.TTE1778 (degree 793) and 273068.TTE0640 (degree 788).
 
 
 References
@@ -107,14 +107,14 @@ def CaldanaerobacterSubterraneus(
 	
 	Datetime: 2021-02-02 20:17:33.205451
 	
-	The undirected graph Caldanaerobacter subterraneus has 2568 nodes and 207620 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06299
-	and has 10 connected components, where the component with most nodes has 2547 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 161.70, and the node degree mode is 4. The top 5
-	most central nodes are 273068.TTE0874 (degree 1022), 273068.TTE0583 (degree 832),
-	273068.TTE0582 (degree 820), 273068.TTE1778 (degree 793) and 273068.TTE0640 (degree
-	788).
+	The undirected graph Caldanaerobacter subterraneus has 2568 nodes and 207620
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06299 and has 10 connected components, where the component
+	with most nodes has 2547 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 161.70,
+	and the node degree mode is 4. The top 5 most central nodes are 273068.TTE0874
+	(degree 1022), 273068.TTE0583 (degree 832), 273068.TTE0582 (degree 820),
+	273068.TTE1778 (degree 793) and 273068.TTE0640 (degree 788).
 	
 
 

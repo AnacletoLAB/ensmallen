@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:15.598100
 
-The undirected graph Pseudomonas caeni has 2679 nodes and 270964 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07554 and
-has 3 connected components, where the component with most nodes has 2675 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 202.29, and the node degree mode is 1. The top 5 most central
-nodes are 521719.ATXQ01000003_gene2168 (degree 1225), 521719.ATXQ01000010_gene62
-(degree 1067), 521719.ATXQ01000004_gene1739 (degree 1060), 521719.ATXQ01000008_gene967
-(degree 988) and 521719.ATXQ01000001_gene314 (degree 884).
+The undirected graph Pseudomonas caeni has 2679 nodes and 270964 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07554 and has 3 connected components, where the component with most
+nodes has 2675 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 202.29, and
+the node degree mode is 1. The top 5 most central nodes are 521719.ATXQ01000003_gene2168
+(degree 1225), 521719.ATXQ01000010_gene62 (degree 1067), 521719.ATXQ01000004_gene1739
+(degree 1060), 521719.ATXQ01000008_gene967 (degree 988) and 521719.ATXQ01000001_gene314
+(degree 884).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasCaeni(
 	
 	Datetime: 2021-02-02 21:04:15.598100
 	
-	The undirected graph Pseudomonas caeni has 2679 nodes and 270964 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07554 and
-	has 3 connected components, where the component with most nodes has 2675 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 202.29, and the node degree mode is 1. The top 5 most central
-	nodes are 521719.ATXQ01000003_gene2168 (degree 1225), 521719.ATXQ01000010_gene62
-	(degree 1067), 521719.ATXQ01000004_gene1739 (degree 1060), 521719.ATXQ01000008_gene967
-	(degree 988) and 521719.ATXQ01000001_gene314 (degree 884).
+	The undirected graph Pseudomonas caeni has 2679 nodes and 270964 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07554 and has 3 connected components, where the component with most
+	nodes has 2675 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 202.29, and
+	the node degree mode is 1. The top 5 most central nodes are 521719.ATXQ01000003_gene2168
+	(degree 1225), 521719.ATXQ01000010_gene62 (degree 1067), 521719.ATXQ01000004_gene1739
+	(degree 1060), 521719.ATXQ01000008_gene967 (degree 988) and 521719.ATXQ01000001_gene314
+	(degree 884).
 	
 
 

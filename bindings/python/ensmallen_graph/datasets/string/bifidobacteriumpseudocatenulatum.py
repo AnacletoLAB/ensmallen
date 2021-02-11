@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:46.741285
 
-The undirected graph Bifidobacterium pseudocatenulatum has 2109 nodes and 106672
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04799 and has 14 connected components, where the component with most nodes has
-2083 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 72, the mean node degree is 101.16, and the node degree mode is 1. The
-top 5 most central nodes are 547043.BIFPSEUDO_02712 (degree 759), 547043.BIFPSEUDO_03488
-(degree 708), 547043.BIFPSEUDO_03823 (degree 650), 547043.BIFPSEUDO_03510 (degree
+The undirected graph Bifidobacterium pseudocatenulatum has 2109 nodes and
+106672 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04799 and has 14 connected components, where the
+component with most nodes has 2083 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 72, the mean node degree
+is 101.16, and the node degree mode is 1. The top 5 most central nodes
+are 547043.BIFPSEUDO_02712 (degree 759), 547043.BIFPSEUDO_03488 (degree
+708), 547043.BIFPSEUDO_03823 (degree 650), 547043.BIFPSEUDO_03510 (degree
 594) and 547043.BIFPSEUDO_02452 (degree 561).
 
 
@@ -107,13 +108,14 @@ def BifidobacteriumPseudocatenulatum(
 	
 	Datetime: 2021-02-02 21:08:46.741285
 	
-	The undirected graph Bifidobacterium pseudocatenulatum has 2109 nodes and 106672
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04799 and has 14 connected components, where the component with most nodes has
-	2083 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 72, the mean node degree is 101.16, and the node degree mode is 1. The
-	top 5 most central nodes are 547043.BIFPSEUDO_02712 (degree 759), 547043.BIFPSEUDO_03488
-	(degree 708), 547043.BIFPSEUDO_03823 (degree 650), 547043.BIFPSEUDO_03510 (degree
+	The undirected graph Bifidobacterium pseudocatenulatum has 2109 nodes and
+	106672 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04799 and has 14 connected components, where the
+	component with most nodes has 2083 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 72, the mean node degree
+	is 101.16, and the node degree mode is 1. The top 5 most central nodes
+	are 547043.BIFPSEUDO_02712 (degree 759), 547043.BIFPSEUDO_03488 (degree
+	708), 547043.BIFPSEUDO_03823 (degree 650), 547043.BIFPSEUDO_03510 (degree
 	594) and 547043.BIFPSEUDO_02452 (degree 561).
 	
 

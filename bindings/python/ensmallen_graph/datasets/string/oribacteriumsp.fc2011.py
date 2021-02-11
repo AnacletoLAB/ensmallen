@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:47.516089
 
-The undirected graph Oribacterium sp. FC2011 has 3458 nodes and 263434 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04407 and
-has 13 connected components, where the component with most nodes has 3431 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 152.36, and the node degree mode is 4. The top 5 most central
-nodes are 1408311.JNJM01000022_gene2684 (degree 1158), 1408311.JNJM01000012_gene1745
-(degree 1151), 1408311.JNJM01000007_gene872 (degree 1136), 1408311.JNJM01000005_gene1577
-(degree 1088) and 1408311.JNJM01000009_gene2183 (degree 1038).
+The undirected graph Oribacterium sp. FC2011 has 3458 nodes and 263434
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04407 and has 13 connected components, where the component
+with most nodes has 3431 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 152.36,
+and the node degree mode is 4. The top 5 most central nodes are 1408311.JNJM01000022_gene2684
+(degree 1158), 1408311.JNJM01000012_gene1745 (degree 1151), 1408311.JNJM01000007_gene872
+(degree 1136), 1408311.JNJM01000005_gene1577 (degree 1088) and 1408311.JNJM01000009_gene2183
+(degree 1038).
 
 
 References
@@ -107,14 +108,15 @@ def OribacteriumSp.Fc2011(
 	
 	Datetime: 2021-02-03 22:34:47.516089
 	
-	The undirected graph Oribacterium sp. FC2011 has 3458 nodes and 263434 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04407 and
-	has 13 connected components, where the component with most nodes has 3431 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 152.36, and the node degree mode is 4. The top 5 most central
-	nodes are 1408311.JNJM01000022_gene2684 (degree 1158), 1408311.JNJM01000012_gene1745
-	(degree 1151), 1408311.JNJM01000007_gene872 (degree 1136), 1408311.JNJM01000005_gene1577
-	(degree 1088) and 1408311.JNJM01000009_gene2183 (degree 1038).
+	The undirected graph Oribacterium sp. FC2011 has 3458 nodes and 263434
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04407 and has 13 connected components, where the component
+	with most nodes has 3431 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 152.36,
+	and the node degree mode is 4. The top 5 most central nodes are 1408311.JNJM01000022_gene2684
+	(degree 1158), 1408311.JNJM01000012_gene1745 (degree 1151), 1408311.JNJM01000007_gene872
+	(degree 1136), 1408311.JNJM01000005_gene1577 (degree 1088) and 1408311.JNJM01000009_gene2183
+	(degree 1038).
 	
 
 

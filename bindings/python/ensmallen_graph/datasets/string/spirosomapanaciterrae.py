@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:51.129230
 
-The undirected graph Spirosoma panaciterrae has 6362 nodes and 824657 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04076 and
-has 27 connected components, where the component with most nodes has 6302 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 217,
-the mean node degree is 259.24, and the node degree mode is 2. The top 5 most central
-nodes are 1123277.KB893243_gene358 (degree 1919), 1123277.KB893172_gene920 (degree
-1767), 1123277.KB893173_gene1554 (degree 1752), 1123277.KB893172_gene1007 (degree
-1696) and 1123277.KB893182_gene4808 (degree 1668).
+The undirected graph Spirosoma panaciterrae has 6362 nodes and 824657 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04076 and has 27 connected components, where the component with most
+nodes has 6302 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 217, the mean node degree is 259.24, and
+the node degree mode is 2. The top 5 most central nodes are 1123277.KB893243_gene358
+(degree 1919), 1123277.KB893172_gene920 (degree 1767), 1123277.KB893173_gene1554
+(degree 1752), 1123277.KB893172_gene1007 (degree 1696) and 1123277.KB893182_gene4808
+(degree 1668).
 
 
 References
@@ -107,14 +108,15 @@ def SpirosomaPanaciterrae(
 	
 	Datetime: 2021-02-02 22:49:51.129230
 	
-	The undirected graph Spirosoma panaciterrae has 6362 nodes and 824657 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04076 and
-	has 27 connected components, where the component with most nodes has 6302 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 217,
-	the mean node degree is 259.24, and the node degree mode is 2. The top 5 most central
-	nodes are 1123277.KB893243_gene358 (degree 1919), 1123277.KB893172_gene920 (degree
-	1767), 1123277.KB893173_gene1554 (degree 1752), 1123277.KB893172_gene1007 (degree
-	1696) and 1123277.KB893182_gene4808 (degree 1668).
+	The undirected graph Spirosoma panaciterrae has 6362 nodes and 824657 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04076 and has 27 connected components, where the component with most
+	nodes has 6302 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 217, the mean node degree is 259.24, and
+	the node degree mode is 2. The top 5 most central nodes are 1123277.KB893243_gene358
+	(degree 1919), 1123277.KB893172_gene920 (degree 1767), 1123277.KB893173_gene1554
+	(degree 1752), 1123277.KB893172_gene1007 (degree 1696) and 1123277.KB893182_gene4808
+	(degree 1668).
 	
 
 

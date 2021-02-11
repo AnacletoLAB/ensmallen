@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:35:00.041542
 
-The undirected graph Lysobacter dokdonensis has 3109 nodes and 247624 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05125 and
-has 21 connected components, where the component with most nodes has 3056 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 159.29, and the node degree mode is 2. The top 5 most central
-nodes are 1300345.LF41_1551 (degree 1378), 1300345.LF41_3162 (degree 1161), 1300345.LF41_610
-(degree 1030), 1300345.LF41_48 (degree 966) and 1300345.LF41_2870 (degree 926).
+The undirected graph Lysobacter dokdonensis has 3109 nodes and 247624 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05125 and has 21 connected components, where the component with most
+nodes has 3056 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 159.29, and
+the node degree mode is 2. The top 5 most central nodes are 1300345.LF41_1551
+(degree 1378), 1300345.LF41_3162 (degree 1161), 1300345.LF41_610 (degree
+1030), 1300345.LF41_48 (degree 966) and 1300345.LF41_2870 (degree 926).
 
 
 References
@@ -106,13 +107,14 @@ def LysobacterDokdonensis(
 	
 	Datetime: 2021-02-03 21:35:00.041542
 	
-	The undirected graph Lysobacter dokdonensis has 3109 nodes and 247624 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05125 and
-	has 21 connected components, where the component with most nodes has 3056 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 159.29, and the node degree mode is 2. The top 5 most central
-	nodes are 1300345.LF41_1551 (degree 1378), 1300345.LF41_3162 (degree 1161), 1300345.LF41_610
-	(degree 1030), 1300345.LF41_48 (degree 966) and 1300345.LF41_2870 (degree 926).
+	The undirected graph Lysobacter dokdonensis has 3109 nodes and 247624 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05125 and has 21 connected components, where the component with most
+	nodes has 3056 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 159.29, and
+	the node degree mode is 2. The top 5 most central nodes are 1300345.LF41_1551
+	(degree 1378), 1300345.LF41_3162 (degree 1161), 1300345.LF41_610 (degree
+	1030), 1300345.LF41_48 (degree 966) and 1300345.LF41_2870 (degree 926).
 	
 
 

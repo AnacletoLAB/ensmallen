@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:27.485521
 
-The undirected graph Nonlabens ulvanivorans has 3692 nodes and 517152 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07590 and
-has 4 connected components, where the component with most nodes has 3684 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 272,
-the mean node degree is 280.15, and the node degree mode is 8. The top 5 most central
-nodes are 906888.JCM19314_3267 (degree 1451), 906888.JCM19314_3359 (degree 1345),
-906888.JCM19314_292 (degree 1294), 906888.JCM19314_1095 (degree 1195) and 906888.JCM19314_2673
+The undirected graph Nonlabens ulvanivorans has 3692 nodes and 517152 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07590 and has 4 connected components, where the component with most
+nodes has 3684 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 272, the mean node degree is 280.15, and
+the node degree mode is 8. The top 5 most central nodes are 906888.JCM19314_3267
+(degree 1451), 906888.JCM19314_3359 (degree 1345), 906888.JCM19314_292
+(degree 1294), 906888.JCM19314_1095 (degree 1195) and 906888.JCM19314_2673
 (degree 1169).
 
 
@@ -107,13 +108,14 @@ def NonlabensUlvanivorans(
 	
 	Datetime: 2021-02-02 21:54:27.485521
 	
-	The undirected graph Nonlabens ulvanivorans has 3692 nodes and 517152 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07590 and
-	has 4 connected components, where the component with most nodes has 3684 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 272,
-	the mean node degree is 280.15, and the node degree mode is 8. The top 5 most central
-	nodes are 906888.JCM19314_3267 (degree 1451), 906888.JCM19314_3359 (degree 1345),
-	906888.JCM19314_292 (degree 1294), 906888.JCM19314_1095 (degree 1195) and 906888.JCM19314_2673
+	The undirected graph Nonlabens ulvanivorans has 3692 nodes and 517152 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07590 and has 4 connected components, where the component with most
+	nodes has 3684 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 272, the mean node degree is 280.15, and
+	the node degree mode is 8. The top 5 most central nodes are 906888.JCM19314_3267
+	(degree 1451), 906888.JCM19314_3359 (degree 1345), 906888.JCM19314_292
+	(degree 1294), 906888.JCM19314_1095 (degree 1195) and 906888.JCM19314_2673
 	(degree 1169).
 	
 

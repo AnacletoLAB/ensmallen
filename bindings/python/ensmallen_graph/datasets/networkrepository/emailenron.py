@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:18.981665
 
-The undirected graph email-enron has 69244 nodes, of which 227 are singletons (all
-have self-loops), and 255984 unweighted edges, of which 1535 are self-loops. The
-graph is quite sparse as it has a density of 0.00011 and has 781 connected components,
-where the component with most nodes has 67521 nodes and the component with the least
-nodes has a single node. The graph median node degree is 1, the mean node degree
-is 7.37 and the node degree mode is 1. The top 5 most central nodes are 46050 (degree
-1635), 30335 (degree 1604), 45536 (degree 1488), 46022 (degree 1458) and 30043 (degree
-1400).
+The undirected graph email-enron has 69244 nodes, of which 227 are singletons
+(all have self-loops), and 255984 unweighted edges, of which 1535 are self-loops.
+The graph is quite sparse as it has a density of 0.00011 and has 781 connected
+components, where the component with most nodes has 67521 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 7.37 and the node degree mode is 1.
+The top 5 most central nodes are 46050 (degree 1635), 30335 (degree 1604),
+45536 (degree 1488), 46022 (degree 1458) and 30043 (degree 1400).
 
 
 References
@@ -120,14 +120,14 @@ def EmailEnron(
 	
 	Datetime: 2021-02-03 23:12:18.981665
 	
-	The undirected graph email-enron has 69244 nodes, of which 227 are singletons (all
-	have self-loops), and 255984 unweighted edges, of which 1535 are self-loops. The
-	graph is quite sparse as it has a density of 0.00011 and has 781 connected components,
-	where the component with most nodes has 67521 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 1, the mean node degree
-	is 7.37 and the node degree mode is 1. The top 5 most central nodes are 46050 (degree
-	1635), 30335 (degree 1604), 45536 (degree 1488), 46022 (degree 1458) and 30043 (degree
-	1400).
+	The undirected graph email-enron has 69244 nodes, of which 227 are singletons
+	(all have self-loops), and 255984 unweighted edges, of which 1535 are self-loops.
+	The graph is quite sparse as it has a density of 0.00011 and has 781 connected
+	components, where the component with most nodes has 67521 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 7.37 and the node degree mode is 1.
+	The top 5 most central nodes are 46050 (degree 1635), 30335 (degree 1604),
+	45536 (degree 1488), 46022 (degree 1458) and 30043 (degree 1400).
 	
 
 

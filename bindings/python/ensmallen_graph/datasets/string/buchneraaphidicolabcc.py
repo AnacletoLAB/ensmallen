@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:53.917957
 
-The undirected graph Buchnera aphidicola BCc has 361 nodes and 18621 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.28657
-and is connected, as it has a single component. The graph median node degree is 101,
-the mean node degree is 103.16, and the node degree mode is 27. The top 5 most central
-nodes are 372461.BCc_011 (degree 211), 372461.BCc_165 (degree 207), 372461.BCc_142
-(degree 206), 372461.BCc_344 (degree 206) and 372461.BCc_096 (degree 205).
+The undirected graph Buchnera aphidicola BCc has 361 nodes and 18621 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.28657 and is connected, as it has a single component. The
+graph median node degree is 101, the mean node degree is 103.16, and the
+node degree mode is 27. The top 5 most central nodes are 372461.BCc_011
+(degree 211), 372461.BCc_165 (degree 207), 372461.BCc_142 (degree 206),
+372461.BCc_344 (degree 206) and 372461.BCc_096 (degree 205).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaBcc(
 	
 	Datetime: 2021-02-02 20:35:53.917957
 	
-	The undirected graph Buchnera aphidicola BCc has 361 nodes and 18621 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.28657
-	and is connected, as it has a single component. The graph median node degree is 101,
-	the mean node degree is 103.16, and the node degree mode is 27. The top 5 most central
-	nodes are 372461.BCc_011 (degree 211), 372461.BCc_165 (degree 207), 372461.BCc_142
-	(degree 206), 372461.BCc_344 (degree 206) and 372461.BCc_096 (degree 205).
+	The undirected graph Buchnera aphidicola BCc has 361 nodes and 18621 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.28657 and is connected, as it has a single component. The
+	graph median node degree is 101, the mean node degree is 103.16, and the
+	node degree mode is 27. The top 5 most central nodes are 372461.BCc_011
+	(degree 211), 372461.BCc_165 (degree 207), 372461.BCc_142 (degree 206),
+	372461.BCc_344 (degree 206) and 372461.BCc_096 (degree 205).
 	
 
 

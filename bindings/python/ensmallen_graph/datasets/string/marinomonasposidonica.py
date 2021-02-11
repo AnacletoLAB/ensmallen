@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:26.457270
 
-The undirected graph Marinomonas posidonica has 3480 nodes and 227234 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03754 and
-has 6 connected components, where the component with most nodes has 3468 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 130.59, and the node degree mode is 84. The top 5 most central
-nodes are 491952.Mar181_1916 (degree 1148), 491952.Mar181_0156 (degree 1143), 491952.Mar181_3258
-(degree 890), 491952.Mar181_2232 (degree 885) and 491952.Mar181_2434 (degree 873).
+The undirected graph Marinomonas posidonica has 3480 nodes and 227234 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03754 and has 6 connected components, where the component with most
+nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 130.59, and
+the node degree mode is 84. The top 5 most central nodes are 491952.Mar181_1916
+(degree 1148), 491952.Mar181_0156 (degree 1143), 491952.Mar181_3258 (degree
+890), 491952.Mar181_2232 (degree 885) and 491952.Mar181_2434 (degree 873).
 
 
 References
@@ -106,13 +107,14 @@ def MarinomonasPosidonica(
 	
 	Datetime: 2021-02-02 21:00:26.457270
 	
-	The undirected graph Marinomonas posidonica has 3480 nodes and 227234 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03754 and
-	has 6 connected components, where the component with most nodes has 3468 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 130.59, and the node degree mode is 84. The top 5 most central
-	nodes are 491952.Mar181_1916 (degree 1148), 491952.Mar181_0156 (degree 1143), 491952.Mar181_3258
-	(degree 890), 491952.Mar181_2232 (degree 885) and 491952.Mar181_2434 (degree 873).
+	The undirected graph Marinomonas posidonica has 3480 nodes and 227234 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03754 and has 6 connected components, where the component with most
+	nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 130.59, and
+	the node degree mode is 84. The top 5 most central nodes are 491952.Mar181_1916
+	(degree 1148), 491952.Mar181_0156 (degree 1143), 491952.Mar181_3258 (degree
+	890), 491952.Mar181_2232 (degree 885) and 491952.Mar181_2434 (degree 873).
 	
 
 

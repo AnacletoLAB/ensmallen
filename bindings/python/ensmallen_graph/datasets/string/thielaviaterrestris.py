@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:19.075855
 
-The undirected graph Thielavia terrestris has 6641 nodes and 518846 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02353 and
-has 24 connected components, where the component with most nodes has 6594 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 156.26, and the node degree mode is 1. The top 5 most central
-nodes are 35720.XP_003655957.1 (degree 1498), 35720.XP_003657665.1 (degree 1268),
-35720.XP_003655340.1 (degree 1267), 35720.XP_003656434.1 (degree 1253) and 35720.XP_003652025.1
+The undirected graph Thielavia terrestris has 6641 nodes and 518846 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02353 and has 24 connected components, where the component with most
+nodes has 6594 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 156.26, and
+the node degree mode is 1. The top 5 most central nodes are 35720.XP_003655957.1
+(degree 1498), 35720.XP_003657665.1 (degree 1268), 35720.XP_003655340.1
+(degree 1267), 35720.XP_003656434.1 (degree 1253) and 35720.XP_003652025.1
 (degree 1157).
 
 
@@ -107,13 +108,14 @@ def ThielaviaTerrestris(
 	
 	Datetime: 2021-02-02 18:05:19.075855
 	
-	The undirected graph Thielavia terrestris has 6641 nodes and 518846 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02353 and
-	has 24 connected components, where the component with most nodes has 6594 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 156.26, and the node degree mode is 1. The top 5 most central
-	nodes are 35720.XP_003655957.1 (degree 1498), 35720.XP_003657665.1 (degree 1268),
-	35720.XP_003655340.1 (degree 1267), 35720.XP_003656434.1 (degree 1253) and 35720.XP_003652025.1
+	The undirected graph Thielavia terrestris has 6641 nodes and 518846 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02353 and has 24 connected components, where the component with most
+	nodes has 6594 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 156.26, and
+	the node degree mode is 1. The top 5 most central nodes are 35720.XP_003655957.1
+	(degree 1498), 35720.XP_003657665.1 (degree 1268), 35720.XP_003655340.1
+	(degree 1267), 35720.XP_003656434.1 (degree 1253) and 35720.XP_003652025.1
 	(degree 1157).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:00:58.452888
 
-The undirected graph Bifidobacterium bombi has 1431 nodes and 87002 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08503 and
-has 24 connected components, where the component with most nodes has 1360 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 121.60, and the node degree mode is 1. The top 5 most central
-nodes are 1341695.BBOMB_0522 (degree 656), 1341695.BBOMB_0529 (degree 637), 1341695.BBOMB_0386
-(degree 616), 1341695.BBOMB_1534 (degree 573) and 1341695.BBOMB_1120 (degree 530).
+The undirected graph Bifidobacterium bombi has 1431 nodes and 87002 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08503 and has 24 connected components, where the component with most
+nodes has 1360 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 121.60, and
+the node degree mode is 1. The top 5 most central nodes are 1341695.BBOMB_0522
+(degree 656), 1341695.BBOMB_0529 (degree 637), 1341695.BBOMB_0386 (degree
+616), 1341695.BBOMB_1534 (degree 573) and 1341695.BBOMB_1120 (degree 530).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumBombi(
 	
 	Datetime: 2021-02-03 22:00:58.452888
 	
-	The undirected graph Bifidobacterium bombi has 1431 nodes and 87002 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08503 and
-	has 24 connected components, where the component with most nodes has 1360 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 121.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1341695.BBOMB_0522 (degree 656), 1341695.BBOMB_0529 (degree 637), 1341695.BBOMB_0386
-	(degree 616), 1341695.BBOMB_1534 (degree 573) and 1341695.BBOMB_1120 (degree 530).
+	The undirected graph Bifidobacterium bombi has 1431 nodes and 87002 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08503 and has 24 connected components, where the component with most
+	nodes has 1360 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 121.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1341695.BBOMB_0522
+	(degree 656), 1341695.BBOMB_0529 (degree 637), 1341695.BBOMB_0386 (degree
+	616), 1341695.BBOMB_1534 (degree 573) and 1341695.BBOMB_1120 (degree 530).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:17:12.199350
 
-The undirected graph Sphaerotilus natans has 4125 nodes and 523228 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06151 and
-has 13 connected components, where the component with most nodes has 4089 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 253.69, and the node degree mode is 3. The top 5 most central
-nodes are 1286631.X805_11360 (degree 1605), 1286631.X805_34090 (degree 1381), 1286631.X805_33300
-(degree 1315), 1286631.X805_28970 (degree 1212) and 1286631.X805_18740 (degree 1209).
+The undirected graph Sphaerotilus natans has 4125 nodes and 523228 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06151 and has 13 connected components, where the component with most
+nodes has 4089 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 253.69, and
+the node degree mode is 3. The top 5 most central nodes are 1286631.X805_11360
+(degree 1605), 1286631.X805_34090 (degree 1381), 1286631.X805_33300 (degree
+1315), 1286631.X805_28970 (degree 1212) and 1286631.X805_18740 (degree
+1209).
 
 
 References
@@ -106,13 +108,15 @@ def SphaerotilusNatans(
 	
 	Datetime: 2021-02-03 21:17:12.199350
 	
-	The undirected graph Sphaerotilus natans has 4125 nodes and 523228 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06151 and
-	has 13 connected components, where the component with most nodes has 4089 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 253.69, and the node degree mode is 3. The top 5 most central
-	nodes are 1286631.X805_11360 (degree 1605), 1286631.X805_34090 (degree 1381), 1286631.X805_33300
-	(degree 1315), 1286631.X805_28970 (degree 1212) and 1286631.X805_18740 (degree 1209).
+	The undirected graph Sphaerotilus natans has 4125 nodes and 523228 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06151 and has 13 connected components, where the component with most
+	nodes has 4089 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 253.69, and
+	the node degree mode is 3. The top 5 most central nodes are 1286631.X805_11360
+	(degree 1605), 1286631.X805_34090 (degree 1381), 1286631.X805_33300 (degree
+	1315), 1286631.X805_28970 (degree 1212) and 1286631.X805_18740 (degree
+	1209).
 	
 
 

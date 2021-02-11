@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:38.416751
 
-The undirected graph Spirochaeta bajacaliforniensis has 4069 nodes and 505170 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06104
-and has 19 connected components, where the component with most nodes has 4025 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 248.30, and the node degree mode is 2. The top 5
-most central nodes are 1123274.KB899426_gene2792 (degree 1579), 1123274.KB899408_gene3798
+The undirected graph Spirochaeta bajacaliforniensis has 4069 nodes and
+505170 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06104 and has 19 connected components, where the
+component with most nodes has 4025 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+is 248.30, and the node degree mode is 2. The top 5 most central nodes
+are 1123274.KB899426_gene2792 (degree 1579), 1123274.KB899408_gene3798
 (degree 1515), 1123274.KB899409_gene541 (degree 1478), 1123274.KB899419_gene2001
 (degree 1448) and 1123274.KB899413_gene732 (degree 1379).
 
@@ -107,12 +108,13 @@ def SpirochaetaBajacaliforniensis(
 	
 	Datetime: 2021-02-02 22:49:38.416751
 	
-	The undirected graph Spirochaeta bajacaliforniensis has 4069 nodes and 505170 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06104
-	and has 19 connected components, where the component with most nodes has 4025 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 248.30, and the node degree mode is 2. The top 5
-	most central nodes are 1123274.KB899426_gene2792 (degree 1579), 1123274.KB899408_gene3798
+	The undirected graph Spirochaeta bajacaliforniensis has 4069 nodes and
+	505170 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06104 and has 19 connected components, where the
+	component with most nodes has 4025 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+	is 248.30, and the node degree mode is 2. The top 5 most central nodes
+	are 1123274.KB899426_gene2792 (degree 1579), 1123274.KB899408_gene3798
 	(degree 1515), 1123274.KB899409_gene541 (degree 1478), 1123274.KB899419_gene2001
 	(degree 1448) and 1123274.KB899413_gene732 (degree 1379).
 	

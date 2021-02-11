@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:14.903252
 
-The undirected graph Acidovorax citrulli has 4689 nodes and 370976 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03375 and
-has 11 connected components, where the component with most nodes has 4661 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 158.23, and the node degree mode is 5. The top 5 most central
-nodes are 397945.Aave_2417 (degree 2070), 397945.Aave_2063 (degree 1939), 397945.Aave_1930
-(degree 1623), 397945.Aave_1008 (degree 1294) and 397945.Aave_3367 (degree 1138).
+The undirected graph Acidovorax citrulli has 4689 nodes and 370976 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03375 and has 11 connected components, where the component with most
+nodes has 4661 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 158.23, and
+the node degree mode is 5. The top 5 most central nodes are 397945.Aave_2417
+(degree 2070), 397945.Aave_2063 (degree 1939), 397945.Aave_1930 (degree
+1623), 397945.Aave_1008 (degree 1294) and 397945.Aave_3367 (degree 1138).
 
 
 References
@@ -106,13 +107,14 @@ def AcidovoraxCitrulli(
 	
 	Datetime: 2021-02-02 20:42:14.903252
 	
-	The undirected graph Acidovorax citrulli has 4689 nodes and 370976 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03375 and
-	has 11 connected components, where the component with most nodes has 4661 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 158.23, and the node degree mode is 5. The top 5 most central
-	nodes are 397945.Aave_2417 (degree 2070), 397945.Aave_2063 (degree 1939), 397945.Aave_1930
-	(degree 1623), 397945.Aave_1008 (degree 1294) and 397945.Aave_3367 (degree 1138).
+	The undirected graph Acidovorax citrulli has 4689 nodes and 370976 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03375 and has 11 connected components, where the component with most
+	nodes has 4661 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 158.23, and
+	the node degree mode is 5. The top 5 most central nodes are 397945.Aave_2417
+	(degree 2070), 397945.Aave_2063 (degree 1939), 397945.Aave_1930 (degree
+	1623), 397945.Aave_1008 (degree 1294) and 397945.Aave_3367 (degree 1138).
 	
 
 

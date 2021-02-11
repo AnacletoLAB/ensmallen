@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:11:15.204680
 
-The undirected graph candidate division ZIXI has 1894 nodes and 160329 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08944 and
-has 6 connected components, where the component with most nodes has 1877 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 169.30, and the node degree mode is 10. The top 5 most central
-nodes are 1379698.RBG1_1C00001G1479 (degree 845), 1379698.RBG1_1C00001G0584 (degree
-748), 1379698.RBG1_1C00001G0143 (degree 696), 1379698.RBG1_1C00001G0698 (degree 695)
-and 1379698.RBG1_1C00001G0755 (degree 687).
+The undirected graph candidate division ZIXI has 1894 nodes and 160329
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08944 and has 6 connected components, where the component
+with most nodes has 1877 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 169.30,
+and the node degree mode is 10. The top 5 most central nodes are 1379698.RBG1_1C00001G1479
+(degree 845), 1379698.RBG1_1C00001G0584 (degree 748), 1379698.RBG1_1C00001G0143
+(degree 696), 1379698.RBG1_1C00001G0698 (degree 695) and 1379698.RBG1_1C00001G0755
+(degree 687).
 
 
 References
@@ -107,14 +108,15 @@ def CandidateDivisionZixi(
 	
 	Datetime: 2021-02-03 22:11:15.204680
 	
-	The undirected graph candidate division ZIXI has 1894 nodes and 160329 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08944 and
-	has 6 connected components, where the component with most nodes has 1877 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 169.30, and the node degree mode is 10. The top 5 most central
-	nodes are 1379698.RBG1_1C00001G1479 (degree 845), 1379698.RBG1_1C00001G0584 (degree
-	748), 1379698.RBG1_1C00001G0143 (degree 696), 1379698.RBG1_1C00001G0698 (degree 695)
-	and 1379698.RBG1_1C00001G0755 (degree 687).
+	The undirected graph candidate division ZIXI has 1894 nodes and 160329
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08944 and has 6 connected components, where the component
+	with most nodes has 1877 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 169.30,
+	and the node degree mode is 10. The top 5 most central nodes are 1379698.RBG1_1C00001G1479
+	(degree 845), 1379698.RBG1_1C00001G0584 (degree 748), 1379698.RBG1_1C00001G0143
+	(degree 696), 1379698.RBG1_1C00001G0698 (degree 695) and 1379698.RBG1_1C00001G0755
+	(degree 687).
 	
 
 

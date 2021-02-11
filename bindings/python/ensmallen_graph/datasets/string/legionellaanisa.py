@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:32.899417
 
-The undirected graph Legionella anisa has 3817 nodes and 353343 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04852 and
-has 42 connected components, where the component with most nodes has 3722 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 185.14, and the node degree mode is 1. The top 5 most central
-nodes are 1230343.CANP01000007_gene639 (degree 1333), 1230343.CANP01000014_gene1136
-(degree 1077), 1230343.CANP01000031_gene2456 (degree 1075), 1230343.CANP01000008_gene867
-(degree 1018) and 1230343.CANP01000016_gene1314 (degree 1004).
+The undirected graph Legionella anisa has 3817 nodes and 353343 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04852 and has 42 connected components, where the component with most
+nodes has 3722 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 185.14, and
+the node degree mode is 1. The top 5 most central nodes are 1230343.CANP01000007_gene639
+(degree 1333), 1230343.CANP01000014_gene1136 (degree 1077), 1230343.CANP01000031_gene2456
+(degree 1075), 1230343.CANP01000008_gene867 (degree 1018) and 1230343.CANP01000016_gene1314
+(degree 1004).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaAnisa(
 	
 	Datetime: 2021-02-02 23:27:32.899417
 	
-	The undirected graph Legionella anisa has 3817 nodes and 353343 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04852 and
-	has 42 connected components, where the component with most nodes has 3722 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 185.14, and the node degree mode is 1. The top 5 most central
-	nodes are 1230343.CANP01000007_gene639 (degree 1333), 1230343.CANP01000014_gene1136
-	(degree 1077), 1230343.CANP01000031_gene2456 (degree 1075), 1230343.CANP01000008_gene867
-	(degree 1018) and 1230343.CANP01000016_gene1314 (degree 1004).
+	The undirected graph Legionella anisa has 3817 nodes and 353343 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04852 and has 42 connected components, where the component with most
+	nodes has 3722 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 185.14, and
+	the node degree mode is 1. The top 5 most central nodes are 1230343.CANP01000007_gene639
+	(degree 1333), 1230343.CANP01000014_gene1136 (degree 1077), 1230343.CANP01000031_gene2456
+	(degree 1075), 1230343.CANP01000008_gene867 (degree 1018) and 1230343.CANP01000016_gene1314
+	(degree 1004).
 	
 
 

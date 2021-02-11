@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:29.531855
 
-The undirected graph Thermococcus gammatolerans has 2152 nodes and 184236 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07960
-and has 5 connected components, where the component with most nodes has 2138 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 171.22, and the node degree mode is 5. The top 5
-most central nodes are 593117.TGAM_1667 (degree 731), 593117.TGAM_1855 (degree 695),
-593117.TGAM_0313 (degree 663), 593117.TGAM_0130 (degree 605) and 593117.TGAM_2074
-(degree 595).
+The undirected graph Thermococcus gammatolerans has 2152 nodes and 184236
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07960 and has 5 connected components, where the component
+with most nodes has 2138 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 171.22,
+and the node degree mode is 5. The top 5 most central nodes are 593117.TGAM_1667
+(degree 731), 593117.TGAM_1855 (degree 695), 593117.TGAM_0313 (degree 663),
+593117.TGAM_0130 (degree 605) and 593117.TGAM_2074 (degree 595).
 
 
 References
@@ -107,14 +107,14 @@ def ThermococcusGammatolerans(
 	
 	Datetime: 2021-02-02 21:18:29.531855
 	
-	The undirected graph Thermococcus gammatolerans has 2152 nodes and 184236 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07960
-	and has 5 connected components, where the component with most nodes has 2138 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 171.22, and the node degree mode is 5. The top 5
-	most central nodes are 593117.TGAM_1667 (degree 731), 593117.TGAM_1855 (degree 695),
-	593117.TGAM_0313 (degree 663), 593117.TGAM_0130 (degree 605) and 593117.TGAM_2074
-	(degree 595).
+	The undirected graph Thermococcus gammatolerans has 2152 nodes and 184236
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07960 and has 5 connected components, where the component
+	with most nodes has 2138 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 171.22,
+	and the node degree mode is 5. The top 5 most central nodes are 593117.TGAM_1667
+	(degree 731), 593117.TGAM_1855 (degree 695), 593117.TGAM_0313 (degree 663),
+	593117.TGAM_0130 (degree 605) and 593117.TGAM_2074 (degree 595).
 	
 
 

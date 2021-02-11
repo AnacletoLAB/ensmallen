@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:14.968497
 
-The undirected graph Cyanothece sp. PCC8801 has 4277 nodes and 486100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05316 and
-has 5 connected components, where the component with most nodes has 4264 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 208,
-the mean node degree is 227.31, and the node degree mode is 3. The top 5 most central
-nodes are 41431.PCC8801_3109 (degree 1410), 41431.PCC8801_1349 (degree 1337), 41431.PCC8801_3742
-(degree 1288), 41431.PCC8801_3918 (degree 1280) and 41431.PCC8801_0694 (degree 1097).
+The undirected graph Cyanothece sp. PCC8801 has 4277 nodes and 486100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05316 and has 5 connected components, where the component with most
+nodes has 4264 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 208, the mean node degree is 227.31, and
+the node degree mode is 3. The top 5 most central nodes are 41431.PCC8801_3109
+(degree 1410), 41431.PCC8801_1349 (degree 1337), 41431.PCC8801_3742 (degree
+1288), 41431.PCC8801_3918 (degree 1280) and 41431.PCC8801_0694 (degree
+1097).
 
 
 References
@@ -106,13 +108,15 @@ def CyanotheceSp.Pcc8801(
 	
 	Datetime: 2021-02-02 18:12:14.968497
 	
-	The undirected graph Cyanothece sp. PCC8801 has 4277 nodes and 486100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05316 and
-	has 5 connected components, where the component with most nodes has 4264 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 208,
-	the mean node degree is 227.31, and the node degree mode is 3. The top 5 most central
-	nodes are 41431.PCC8801_3109 (degree 1410), 41431.PCC8801_1349 (degree 1337), 41431.PCC8801_3742
-	(degree 1288), 41431.PCC8801_3918 (degree 1280) and 41431.PCC8801_0694 (degree 1097).
+	The undirected graph Cyanothece sp. PCC8801 has 4277 nodes and 486100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05316 and has 5 connected components, where the component with most
+	nodes has 4264 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 208, the mean node degree is 227.31, and
+	the node degree mode is 3. The top 5 most central nodes are 41431.PCC8801_3109
+	(degree 1410), 41431.PCC8801_1349 (degree 1337), 41431.PCC8801_3742 (degree
+	1288), 41431.PCC8801_3918 (degree 1280) and 41431.PCC8801_0694 (degree
+	1097).
 	
 
 

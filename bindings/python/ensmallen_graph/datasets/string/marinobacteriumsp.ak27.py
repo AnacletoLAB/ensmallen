@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:15.243965
 
-The undirected graph Marinobacterium sp. AK27 has 4107 nodes and 613443 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07275
-and has 5 connected components, where the component with most nodes has 4099 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 298.73, and the node degree mode is 3. The top 5
-most central nodes are 1232683.ADIMK_3299 (degree 1728), 1232683.ADIMK_1555 (degree
-1716), 1232683.ADIMK_0021 (degree 1585), 1232683.ADIMK_4201 (degree 1578) and 1232683.ADIMK_1896
-(degree 1546).
+The undirected graph Marinobacterium sp. AK27 has 4107 nodes and 613443
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07275 and has 5 connected components, where the component
+with most nodes has 4099 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 298.73,
+and the node degree mode is 3. The top 5 most central nodes are 1232683.ADIMK_3299
+(degree 1728), 1232683.ADIMK_1555 (degree 1716), 1232683.ADIMK_0021 (degree
+1585), 1232683.ADIMK_4201 (degree 1578) and 1232683.ADIMK_1896 (degree
+1546).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacteriumSp.Ak27(
 	
 	Datetime: 2021-02-02 23:29:15.243965
 	
-	The undirected graph Marinobacterium sp. AK27 has 4107 nodes and 613443 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07275
-	and has 5 connected components, where the component with most nodes has 4099 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 298.73, and the node degree mode is 3. The top 5
-	most central nodes are 1232683.ADIMK_3299 (degree 1728), 1232683.ADIMK_1555 (degree
-	1716), 1232683.ADIMK_0021 (degree 1585), 1232683.ADIMK_4201 (degree 1578) and 1232683.ADIMK_1896
-	(degree 1546).
+	The undirected graph Marinobacterium sp. AK27 has 4107 nodes and 613443
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07275 and has 5 connected components, where the component
+	with most nodes has 4099 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 298.73,
+	and the node degree mode is 3. The top 5 most central nodes are 1232683.ADIMK_3299
+	(degree 1728), 1232683.ADIMK_1555 (degree 1716), 1232683.ADIMK_0021 (degree
+	1585), 1232683.ADIMK_4201 (degree 1578) and 1232683.ADIMK_1896 (degree
+	1546).
 	
 
 

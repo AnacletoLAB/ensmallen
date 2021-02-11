@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:34:20.254848
 
-The undirected graph Pteropus alecto has 17887 nodes and 3921432 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02451 and
-is connected, as it has a single component. The graph median node degree is 314,
-the mean node degree is 438.47, and the node degree mode is 10. The top 5 most central
-nodes are 9402.XP_006907824.1 (degree 4222), 9402.XP_006921370.1 (degree 4095), 9402.XP_006916831.1
-(degree 3998), 9402.XP_006914684.1 (degree 3690) and 9402.XP_006916242.1 (degree
-3681).
+The undirected graph Pteropus alecto has 17887 nodes and 3921432 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02451 and is connected, as it has a single component. The graph median
+node degree is 314, the mean node degree is 438.47, and the node degree
+mode is 10. The top 5 most central nodes are 9402.XP_006907824.1 (degree
+4222), 9402.XP_006921370.1 (degree 4095), 9402.XP_006916831.1 (degree 3998),
+9402.XP_006914684.1 (degree 3690) and 9402.XP_006916242.1 (degree 3681).
 
 
 References
@@ -106,13 +106,13 @@ def PteropusAlecto(
 	
 	Datetime: 2021-02-02 17:34:20.254848
 	
-	The undirected graph Pteropus alecto has 17887 nodes and 3921432 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02451 and
-	is connected, as it has a single component. The graph median node degree is 314,
-	the mean node degree is 438.47, and the node degree mode is 10. The top 5 most central
-	nodes are 9402.XP_006907824.1 (degree 4222), 9402.XP_006921370.1 (degree 4095), 9402.XP_006916831.1
-	(degree 3998), 9402.XP_006914684.1 (degree 3690) and 9402.XP_006916242.1 (degree
-	3681).
+	The undirected graph Pteropus alecto has 17887 nodes and 3921432 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02451 and is connected, as it has a single component. The graph median
+	node degree is 314, the mean node degree is 438.47, and the node degree
+	mode is 10. The top 5 most central nodes are 9402.XP_006907824.1 (degree
+	4222), 9402.XP_006921370.1 (degree 4095), 9402.XP_006916831.1 (degree 3998),
+	9402.XP_006914684.1 (degree 3690) and 9402.XP_006916242.1 (degree 3681).
 	
 
 

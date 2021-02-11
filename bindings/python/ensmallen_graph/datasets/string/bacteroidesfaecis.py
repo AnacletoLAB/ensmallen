@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:53.517849
 
-The undirected graph Bacteroides faecis has 4585 nodes and 489569 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04659 and
-has 21 connected components, where the component with most nodes has 4529 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 213.55, and the node degree mode is 3. The top 5 most central
-nodes are 1077285.AGDG01000009_gene2471 (degree 1443), 1077285.AGDG01000004_gene2339
-(degree 1289), 1077285.AGDG01000016_gene521 (degree 1242), 1077285.AGDG01000043_gene3379
-(degree 1219) and 1077285.AGDG01000033_gene4583 (degree 1216).
+The undirected graph Bacteroides faecis has 4585 nodes and 489569 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04659 and has 21 connected components, where the component with most
+nodes has 4529 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 213.55, and
+the node degree mode is 3. The top 5 most central nodes are 1077285.AGDG01000009_gene2471
+(degree 1443), 1077285.AGDG01000004_gene2339 (degree 1289), 1077285.AGDG01000016_gene521
+(degree 1242), 1077285.AGDG01000043_gene3379 (degree 1219) and 1077285.AGDG01000033_gene4583
+(degree 1216).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesFaecis(
 	
 	Datetime: 2021-02-02 22:19:53.517849
 	
-	The undirected graph Bacteroides faecis has 4585 nodes and 489569 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04659 and
-	has 21 connected components, where the component with most nodes has 4529 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 213.55, and the node degree mode is 3. The top 5 most central
-	nodes are 1077285.AGDG01000009_gene2471 (degree 1443), 1077285.AGDG01000004_gene2339
-	(degree 1289), 1077285.AGDG01000016_gene521 (degree 1242), 1077285.AGDG01000043_gene3379
-	(degree 1219) and 1077285.AGDG01000033_gene4583 (degree 1216).
+	The undirected graph Bacteroides faecis has 4585 nodes and 489569 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04659 and has 21 connected components, where the component with most
+	nodes has 4529 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 213.55, and
+	the node degree mode is 3. The top 5 most central nodes are 1077285.AGDG01000009_gene2471
+	(degree 1443), 1077285.AGDG01000004_gene2339 (degree 1289), 1077285.AGDG01000016_gene521
+	(degree 1242), 1077285.AGDG01000043_gene3379 (degree 1219) and 1077285.AGDG01000033_gene4583
+	(degree 1216).
 	
 
 

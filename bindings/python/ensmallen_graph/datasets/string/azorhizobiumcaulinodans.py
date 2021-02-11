@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:22.048133
 
-The undirected graph Azorhizobium caulinodans has 4699 nodes and 553585 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05015
-and has 3 connected components, where the component with most nodes has 4694 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 235.62, and the node degree mode is 3. The top 5
-most central nodes are 438753.AZC_2218 (degree 1472), 438753.AZC_4464 (degree 1402),
-438753.AZC_3923 (degree 1327), 438753.AZC_1344 (degree 1255) and 438753.AZC_3098
-(degree 1255).
+The undirected graph Azorhizobium caulinodans has 4699 nodes and 553585
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05015 and has 3 connected components, where the component
+with most nodes has 4694 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 235.62,
+and the node degree mode is 3. The top 5 most central nodes are 438753.AZC_2218
+(degree 1472), 438753.AZC_4464 (degree 1402), 438753.AZC_3923 (degree 1327),
+438753.AZC_1344 (degree 1255) and 438753.AZC_3098 (degree 1255).
 
 
 References
@@ -107,14 +107,14 @@ def AzorhizobiumCaulinodans(
 	
 	Datetime: 2021-02-02 20:49:22.048133
 	
-	The undirected graph Azorhizobium caulinodans has 4699 nodes and 553585 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05015
-	and has 3 connected components, where the component with most nodes has 4694 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 235.62, and the node degree mode is 3. The top 5
-	most central nodes are 438753.AZC_2218 (degree 1472), 438753.AZC_4464 (degree 1402),
-	438753.AZC_3923 (degree 1327), 438753.AZC_1344 (degree 1255) and 438753.AZC_3098
-	(degree 1255).
+	The undirected graph Azorhizobium caulinodans has 4699 nodes and 553585
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05015 and has 3 connected components, where the component
+	with most nodes has 4694 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 235.62,
+	and the node degree mode is 3. The top 5 most central nodes are 438753.AZC_2218
+	(degree 1472), 438753.AZC_4464 (degree 1402), 438753.AZC_3923 (degree 1327),
+	438753.AZC_1344 (degree 1255) and 438753.AZC_3098 (degree 1255).
 	
 
 

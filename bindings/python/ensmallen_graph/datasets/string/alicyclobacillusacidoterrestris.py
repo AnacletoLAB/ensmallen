@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:08:32.925280
 
-The undirected graph Alicyclobacillus acidoterrestris has 4036 nodes and 344333 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-and has 32 connected components, where the component with most nodes has 3939 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 133, the mean node degree is 170.63, and the node degree mode is 1. The top 5
-most central nodes are 1356854.N007_05875 (degree 1412), 1356854.N007_20975 (degree
-1241), 1356854.N007_03105 (degree 1123), 1356854.N007_00235 (degree 1027) and 1356854.N007_16725
-(degree 1005).
+The undirected graph Alicyclobacillus acidoterrestris has 4036 nodes and
+344333 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04229 and has 32 connected components, where the
+component with most nodes has 3939 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 133, the mean node degree
+is 170.63, and the node degree mode is 1. The top 5 most central nodes
+are 1356854.N007_05875 (degree 1412), 1356854.N007_20975 (degree 1241),
+1356854.N007_03105 (degree 1123), 1356854.N007_00235 (degree 1027) and
+1356854.N007_16725 (degree 1005).
 
 
 References
@@ -107,14 +108,15 @@ def AlicyclobacillusAcidoterrestris(
 	
 	Datetime: 2021-02-03 22:08:32.925280
 	
-	The undirected graph Alicyclobacillus acidoterrestris has 4036 nodes and 344333 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-	and has 32 connected components, where the component with most nodes has 3939 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 133, the mean node degree is 170.63, and the node degree mode is 1. The top 5
-	most central nodes are 1356854.N007_05875 (degree 1412), 1356854.N007_20975 (degree
-	1241), 1356854.N007_03105 (degree 1123), 1356854.N007_00235 (degree 1027) and 1356854.N007_16725
-	(degree 1005).
+	The undirected graph Alicyclobacillus acidoterrestris has 4036 nodes and
+	344333 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04229 and has 32 connected components, where the
+	component with most nodes has 3939 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 133, the mean node degree
+	is 170.63, and the node degree mode is 1. The top 5 most central nodes
+	are 1356854.N007_05875 (degree 1412), 1356854.N007_20975 (degree 1241),
+	1356854.N007_03105 (degree 1123), 1356854.N007_00235 (degree 1027) and
+	1356854.N007_16725 (degree 1005).
 	
 
 

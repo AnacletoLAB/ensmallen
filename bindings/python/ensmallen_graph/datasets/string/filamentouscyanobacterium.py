@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:04.606809
 
-The undirected graph filamentous cyanobacterium has 4605 nodes and 479285 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04521
-and has 9 connected components, where the component with most nodes has 4587 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 208.16, and the node degree mode is 2. The top 5
-most central nodes are 1128427.KB904823_gene11 (degree 1423), 1128427.KB904821_gene3970
-(degree 1421), 1128427.KB904821_gene2670 (degree 1395), 1128427.KB904821_gene3338
-(degree 1244) and 1128427.KB904821_gene1055 (degree 1226).
+The undirected graph filamentous cyanobacterium has 4605 nodes and 479285
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04521 and has 9 connected components, where the component
+with most nodes has 4587 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 208.16,
+and the node degree mode is 2. The top 5 most central nodes are 1128427.KB904823_gene11
+(degree 1423), 1128427.KB904821_gene3970 (degree 1421), 1128427.KB904821_gene2670
+(degree 1395), 1128427.KB904821_gene3338 (degree 1244) and 1128427.KB904821_gene1055
+(degree 1226).
 
 
 References
@@ -107,14 +108,15 @@ def FilamentousCyanobacterium(
 	
 	Datetime: 2021-02-02 22:55:04.606809
 	
-	The undirected graph filamentous cyanobacterium has 4605 nodes and 479285 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04521
-	and has 9 connected components, where the component with most nodes has 4587 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 208.16, and the node degree mode is 2. The top 5
-	most central nodes are 1128427.KB904823_gene11 (degree 1423), 1128427.KB904821_gene3970
-	(degree 1421), 1128427.KB904821_gene2670 (degree 1395), 1128427.KB904821_gene3338
-	(degree 1244) and 1128427.KB904821_gene1055 (degree 1226).
+	The undirected graph filamentous cyanobacterium has 4605 nodes and 479285
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04521 and has 9 connected components, where the component
+	with most nodes has 4587 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 208.16,
+	and the node degree mode is 2. The top 5 most central nodes are 1128427.KB904823_gene11
+	(degree 1423), 1128427.KB904821_gene3970 (degree 1421), 1128427.KB904821_gene2670
+	(degree 1395), 1128427.KB904821_gene3338 (degree 1244) and 1128427.KB904821_gene1055
+	(degree 1226).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:43.813834
 
-The undirected graph Microbacterium sp. MRS1 has 2893 nodes and 201885 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04826 and
-has 16 connected components, where the component with most nodes has 2857 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 139.57, and the node degree mode is 5. The top 5 most central
-nodes are 1451261.AS96_10900 (degree 884), 1451261.AS96_03770 (degree 860), 1451261.AS96_00005
-(degree 847), 1451261.AS96_10870 (degree 795) and 1451261.AS96_03290 (degree 772).
+The undirected graph Microbacterium sp. MRS1 has 2893 nodes and 201885
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04826 and has 16 connected components, where the component
+with most nodes has 2857 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 139.57,
+and the node degree mode is 5. The top 5 most central nodes are 1451261.AS96_10900
+(degree 884), 1451261.AS96_03770 (degree 860), 1451261.AS96_00005 (degree
+847), 1451261.AS96_10870 (degree 795) and 1451261.AS96_03290 (degree 772).
 
 
 References
@@ -106,13 +107,14 @@ def MicrobacteriumSp.Mrs1(
 	
 	Datetime: 2021-02-03 23:05:43.813834
 	
-	The undirected graph Microbacterium sp. MRS1 has 2893 nodes and 201885 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04826 and
-	has 16 connected components, where the component with most nodes has 2857 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 139.57, and the node degree mode is 5. The top 5 most central
-	nodes are 1451261.AS96_10900 (degree 884), 1451261.AS96_03770 (degree 860), 1451261.AS96_00005
-	(degree 847), 1451261.AS96_10870 (degree 795) and 1451261.AS96_03290 (degree 772).
+	The undirected graph Microbacterium sp. MRS1 has 2893 nodes and 201885
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04826 and has 16 connected components, where the component
+	with most nodes has 2857 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 139.57,
+	and the node degree mode is 5. The top 5 most central nodes are 1451261.AS96_10900
+	(degree 884), 1451261.AS96_03770 (degree 860), 1451261.AS96_00005 (degree
+	847), 1451261.AS96_10870 (degree 795) and 1451261.AS96_03290 (degree 772).
 	
 
 

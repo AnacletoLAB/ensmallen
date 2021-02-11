@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:22:48.569263
 
-The undirected graph Bifidobacterium adolescentis has 1715 nodes and 130700 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08893
-and has 4 connected components, where the component with most nodes has 1705 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 152.42, and the node degree mode is 3. The top 5
-most central nodes are 1680.BADO_0264 (degree 768), 1680.BADO_0724 (degree 728),
-1680.BADO_0992 (degree 622), 1680.BADO_0731 (degree 597) and 1680.BADO_1461 (degree
-577).
+The undirected graph Bifidobacterium adolescentis has 1715 nodes and 130700
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08893 and has 4 connected components, where the component
+with most nodes has 1705 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 152.42,
+and the node degree mode is 3. The top 5 most central nodes are 1680.BADO_0264
+(degree 768), 1680.BADO_0724 (degree 728), 1680.BADO_0992 (degree 622),
+1680.BADO_0731 (degree 597) and 1680.BADO_1461 (degree 577).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumAdolescentis(
 	
 	Datetime: 2021-02-02 16:22:48.569263
 	
-	The undirected graph Bifidobacterium adolescentis has 1715 nodes and 130700 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08893
-	and has 4 connected components, where the component with most nodes has 1705 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 152.42, and the node degree mode is 3. The top 5
-	most central nodes are 1680.BADO_0264 (degree 768), 1680.BADO_0724 (degree 728),
-	1680.BADO_0992 (degree 622), 1680.BADO_0731 (degree 597) and 1680.BADO_1461 (degree
-	577).
+	The undirected graph Bifidobacterium adolescentis has 1715 nodes and 130700
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08893 and has 4 connected components, where the component
+	with most nodes has 1705 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 152.42,
+	and the node degree mode is 3. The top 5 most central nodes are 1680.BADO_0264
+	(degree 768), 1680.BADO_0724 (degree 728), 1680.BADO_0992 (degree 622),
+	1680.BADO_0731 (degree 597) and 1680.BADO_1461 (degree 577).
 	
 
 

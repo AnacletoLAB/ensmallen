@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:51.179265
 
-The undirected graph Hyphomonas sp. 22II122F38 has 3498 nodes and 290064 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04743
-and has 12 connected components, where the component with most nodes has 3472 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 165.85, and the node degree mode is 2. The top 5
-most central nodes are 1280948.HY36_14160 (degree 1211), 1280948.HY36_07385 (degree
-1003), 1280948.HY36_01775 (degree 945), 1280948.HY36_07355 (degree 915) and 1280948.HY36_08735
-(degree 900).
+The undirected graph Hyphomonas sp. 22II122F38 has 3498 nodes and 290064
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04743 and has 12 connected components, where the component
+with most nodes has 3472 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 165.85,
+and the node degree mode is 2. The top 5 most central nodes are 1280948.HY36_14160
+(degree 1211), 1280948.HY36_07385 (degree 1003), 1280948.HY36_01775 (degree
+945), 1280948.HY36_07355 (degree 915) and 1280948.HY36_08735 (degree 900).
 
 
 References
@@ -107,14 +107,14 @@ def HyphomonasSp.22ii122f38(
 	
 	Datetime: 2021-02-03 21:08:51.179265
 	
-	The undirected graph Hyphomonas sp. 22II122F38 has 3498 nodes and 290064 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04743
-	and has 12 connected components, where the component with most nodes has 3472 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 165.85, and the node degree mode is 2. The top 5
-	most central nodes are 1280948.HY36_14160 (degree 1211), 1280948.HY36_07385 (degree
-	1003), 1280948.HY36_01775 (degree 945), 1280948.HY36_07355 (degree 915) and 1280948.HY36_08735
-	(degree 900).
+	The undirected graph Hyphomonas sp. 22II122F38 has 3498 nodes and 290064
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04743 and has 12 connected components, where the component
+	with most nodes has 3472 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 165.85,
+	and the node degree mode is 2. The top 5 most central nodes are 1280948.HY36_14160
+	(degree 1211), 1280948.HY36_07385 (degree 1003), 1280948.HY36_01775 (degree
+	945), 1280948.HY36_07355 (degree 915) and 1280948.HY36_08735 (degree 900).
 	
 
 

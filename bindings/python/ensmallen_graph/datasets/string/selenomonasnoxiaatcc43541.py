@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:23.179885
 
-The undirected graph Selenomonas noxia ATCC43541 has 2002 nodes and 140175 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06998
-and has 7 connected components, where the component with most nodes has 1982 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 140.03, and the node degree mode is 3. The top 5
-most central nodes are 585503.HMPREF7545_0845 (degree 851), 585503.HMPREF7545_1113
-(degree 718), 585503.HMPREF7545_0979 (degree 687), 585503.HMPREF7545_0621 (degree
-674) and 585503.HMPREF7545_1852 (degree 648).
+The undirected graph Selenomonas noxia ATCC43541 has 2002 nodes and 140175
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06998 and has 7 connected components, where the component
+with most nodes has 1982 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 140.03,
+and the node degree mode is 3. The top 5 most central nodes are 585503.HMPREF7545_0845
+(degree 851), 585503.HMPREF7545_1113 (degree 718), 585503.HMPREF7545_0979
+(degree 687), 585503.HMPREF7545_0621 (degree 674) and 585503.HMPREF7545_1852
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasNoxiaAtcc43541(
 	
 	Datetime: 2021-02-02 21:16:23.179885
 	
-	The undirected graph Selenomonas noxia ATCC43541 has 2002 nodes and 140175 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06998
-	and has 7 connected components, where the component with most nodes has 1982 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 140.03, and the node degree mode is 3. The top 5
-	most central nodes are 585503.HMPREF7545_0845 (degree 851), 585503.HMPREF7545_1113
-	(degree 718), 585503.HMPREF7545_0979 (degree 687), 585503.HMPREF7545_0621 (degree
-	674) and 585503.HMPREF7545_1852 (degree 648).
+	The undirected graph Selenomonas noxia ATCC43541 has 2002 nodes and 140175
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06998 and has 7 connected components, where the component
+	with most nodes has 1982 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 140.03,
+	and the node degree mode is 3. The top 5 most central nodes are 585503.HMPREF7545_0845
+	(degree 851), 585503.HMPREF7545_1113 (degree 718), 585503.HMPREF7545_0979
+	(degree 687), 585503.HMPREF7545_0621 (degree 674) and 585503.HMPREF7545_1852
+	(degree 648).
 	
 
 

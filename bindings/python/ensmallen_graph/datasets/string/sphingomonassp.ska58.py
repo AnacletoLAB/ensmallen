@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:01.569479
 
-The undirected graph Sphingomonas sp. SKA58 has 3780 nodes and 381041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05335 and
-has 12 connected components, where the component with most nodes has 3749 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 201.61, and the node degree mode is 3. The top 5 most central
-nodes are 314266.SKA58_14682 (degree 1420), 314266.SKA58_16978 (degree 1280), 314266.SKA58_00230
-(degree 1170), 314266.SKA58_03930 (degree 1152) and 314266.SKA58_12682 (degree 1118).
+The undirected graph Sphingomonas sp. SKA58 has 3780 nodes and 381041 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05335 and has 12 connected components, where the component with most
+nodes has 3749 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 201.61, and
+the node degree mode is 3. The top 5 most central nodes are 314266.SKA58_14682
+(degree 1420), 314266.SKA58_16978 (degree 1280), 314266.SKA58_00230 (degree
+1170), 314266.SKA58_03930 (degree 1152) and 314266.SKA58_12682 (degree
+1118).
 
 
 References
@@ -106,13 +108,15 @@ def SphingomonasSp.Ska58(
 	
 	Datetime: 2021-02-02 20:25:01.569479
 	
-	The undirected graph Sphingomonas sp. SKA58 has 3780 nodes and 381041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05335 and
-	has 12 connected components, where the component with most nodes has 3749 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 201.61, and the node degree mode is 3. The top 5 most central
-	nodes are 314266.SKA58_14682 (degree 1420), 314266.SKA58_16978 (degree 1280), 314266.SKA58_00230
-	(degree 1170), 314266.SKA58_03930 (degree 1152) and 314266.SKA58_12682 (degree 1118).
+	The undirected graph Sphingomonas sp. SKA58 has 3780 nodes and 381041 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05335 and has 12 connected components, where the component with most
+	nodes has 3749 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 201.61, and
+	the node degree mode is 3. The top 5 most central nodes are 314266.SKA58_14682
+	(degree 1420), 314266.SKA58_16978 (degree 1280), 314266.SKA58_00230 (degree
+	1170), 314266.SKA58_03930 (degree 1152) and 314266.SKA58_12682 (degree
+	1118).
 	
 
 

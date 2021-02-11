@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:37:59.995795
 
-The undirected graph CL-100000-1d8-trial3 has 92402 nodes and 435799 unweighted edges,
-of which 18 are self-loops. The graph is quite sparse as it has a density of 0.00010
-and has 169 connected components, where the component with most nodes has 92060 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 3, the mean node degree is 9.43, and the node degree mode is 2. The top 5 most
-central nodes are 49463 (degree 237), 46719 (degree 235), 78243 (degree 229), 41192
-(degree 227) and 13427 (degree 220).
+The undirected graph CL-100000-1d8-trial3 has 92402 nodes and 435799 unweighted
+edges, of which 18 are self-loops. The graph is quite sparse as it has
+a density of 0.00010 and has 169 connected components, where the component
+with most nodes has 92060 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 3, the mean node degree is
+9.43, and the node degree mode is 2. The top 5 most central nodes are 49463
+(degree 237), 46719 (degree 235), 78243 (degree 229), 41192 (degree 227)
+and 13427 (degree 220).
 
 
 References
@@ -103,13 +104,14 @@ def Cl1000001d8Trial3(
 	
 	Datetime: 2021-02-06 11:37:59.995795
 	
-	The undirected graph CL-100000-1d8-trial3 has 92402 nodes and 435799 unweighted edges,
-	of which 18 are self-loops. The graph is quite sparse as it has a density of 0.00010
-	and has 169 connected components, where the component with most nodes has 92060 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 3, the mean node degree is 9.43, and the node degree mode is 2. The top 5 most
-	central nodes are 49463 (degree 237), 46719 (degree 235), 78243 (degree 229), 41192
-	(degree 227) and 13427 (degree 220).
+	The undirected graph CL-100000-1d8-trial3 has 92402 nodes and 435799 unweighted
+	edges, of which 18 are self-loops. The graph is quite sparse as it has
+	a density of 0.00010 and has 169 connected components, where the component
+	with most nodes has 92060 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 3, the mean node degree is
+	9.43, and the node degree mode is 2. The top 5 most central nodes are 49463
+	(degree 237), 46719 (degree 235), 78243 (degree 229), 41192 (degree 227)
+	and 13427 (degree 220).
 	
 
 

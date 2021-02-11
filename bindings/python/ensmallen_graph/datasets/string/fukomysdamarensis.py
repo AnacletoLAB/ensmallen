@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:08.792557
 
-The undirected graph Fukomys damarensis has 18983 nodes and 3996604 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02218 and
-has 2 connected components, where the component with most nodes has 18981 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 291,
-the mean node degree is 421.07, and the node degree mode is 2. The top 5 most central
-nodes are 885580.XP_010606574.1 (degree 4563), 885580.XP_010634903.1 (degree 4372),
-885580.XP_010605487.1 (degree 4062), 885580.XP_010615757.1 (degree 4050) and 885580.XP_010614144.1
+The undirected graph Fukomys damarensis has 18983 nodes and 3996604 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02218 and has 2 connected components, where the component with most
+nodes has 18981 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 291, the mean node degree is 421.07, and
+the node degree mode is 2. The top 5 most central nodes are 885580.XP_010606574.1
+(degree 4563), 885580.XP_010634903.1 (degree 4372), 885580.XP_010605487.1
+(degree 4062), 885580.XP_010615757.1 (degree 4050) and 885580.XP_010614144.1
 (degree 3935).
 
 
@@ -107,13 +108,14 @@ def FukomysDamarensis(
 	
 	Datetime: 2021-02-02 21:52:08.792557
 	
-	The undirected graph Fukomys damarensis has 18983 nodes and 3996604 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02218 and
-	has 2 connected components, where the component with most nodes has 18981 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 291,
-	the mean node degree is 421.07, and the node degree mode is 2. The top 5 most central
-	nodes are 885580.XP_010606574.1 (degree 4563), 885580.XP_010634903.1 (degree 4372),
-	885580.XP_010605487.1 (degree 4062), 885580.XP_010615757.1 (degree 4050) and 885580.XP_010614144.1
+	The undirected graph Fukomys damarensis has 18983 nodes and 3996604 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02218 and has 2 connected components, where the component with most
+	nodes has 18981 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 291, the mean node degree is 421.07, and
+	the node degree mode is 2. The top 5 most central nodes are 885580.XP_010606574.1
+	(degree 4563), 885580.XP_010634903.1 (degree 4372), 885580.XP_010605487.1
+	(degree 4062), 885580.XP_010615757.1 (degree 4050) and 885580.XP_010614144.1
 	(degree 3935).
 	
 

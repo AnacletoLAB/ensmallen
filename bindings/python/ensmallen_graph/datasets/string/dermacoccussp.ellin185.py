@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:19.899220
 
-The undirected graph Dermacoccus sp. Ellin185 has 2872 nodes and 220115 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05339
-and has 22 connected components, where the component with most nodes has 2818 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 153.28, and the node degree mode is 1. The top 5
-most central nodes are 188626.HMPREF0321_1943 (degree 1064), 188626.HMPREF0321_1448
-(degree 981), 188626.HMPREF0321_1313 (degree 867), 188626.HMPREF0321_1642 (degree
-852) and 188626.HMPREF0321_0533 (degree 839).
+The undirected graph Dermacoccus sp. Ellin185 has 2872 nodes and 220115
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05339 and has 22 connected components, where the component
+with most nodes has 2818 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 153.28,
+and the node degree mode is 1. The top 5 most central nodes are 188626.HMPREF0321_1943
+(degree 1064), 188626.HMPREF0321_1448 (degree 981), 188626.HMPREF0321_1313
+(degree 867), 188626.HMPREF0321_1642 (degree 852) and 188626.HMPREF0321_0533
+(degree 839).
 
 
 References
@@ -107,14 +108,15 @@ def DermacoccusSp.Ellin185(
 	
 	Datetime: 2021-02-02 19:57:19.899220
 	
-	The undirected graph Dermacoccus sp. Ellin185 has 2872 nodes and 220115 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05339
-	and has 22 connected components, where the component with most nodes has 2818 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 153.28, and the node degree mode is 1. The top 5
-	most central nodes are 188626.HMPREF0321_1943 (degree 1064), 188626.HMPREF0321_1448
-	(degree 981), 188626.HMPREF0321_1313 (degree 867), 188626.HMPREF0321_1642 (degree
-	852) and 188626.HMPREF0321_0533 (degree 839).
+	The undirected graph Dermacoccus sp. Ellin185 has 2872 nodes and 220115
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05339 and has 22 connected components, where the component
+	with most nodes has 2818 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 153.28,
+	and the node degree mode is 1. The top 5 most central nodes are 188626.HMPREF0321_1943
+	(degree 1064), 188626.HMPREF0321_1448 (degree 981), 188626.HMPREF0321_1313
+	(degree 867), 188626.HMPREF0321_1642 (degree 852) and 188626.HMPREF0321_0533
+	(degree 839).
 	
 
 

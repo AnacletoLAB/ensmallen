@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:15.363058
 
-The undirected graph Erwinia tasmaniensis has 3434 nodes and 321060 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-has 11 connected components, where the component with most nodes has 3411 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 186.99, and the node degree mode is 1. The top 5 most central
-nodes are 465817.ETA_00240 (degree 1171), 465817.ETA_10360 (degree 1032), 465817.ETA_03080
-(degree 1013), 465817.ETA_03090 (degree 887) and 465817.ETA_12990 (degree 870).
+The undirected graph Erwinia tasmaniensis has 3434 nodes and 321060 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05447 and has 11 connected components, where the component with most
+nodes has 3411 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 186.99, and
+the node degree mode is 1. The top 5 most central nodes are 465817.ETA_00240
+(degree 1171), 465817.ETA_10360 (degree 1032), 465817.ETA_03080 (degree
+1013), 465817.ETA_03090 (degree 887) and 465817.ETA_12990 (degree 870).
 
 
 References
@@ -106,13 +107,14 @@ def ErwiniaTasmaniensis(
 	
 	Datetime: 2021-02-02 20:54:15.363058
 	
-	The undirected graph Erwinia tasmaniensis has 3434 nodes and 321060 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05447 and
-	has 11 connected components, where the component with most nodes has 3411 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 186.99, and the node degree mode is 1. The top 5 most central
-	nodes are 465817.ETA_00240 (degree 1171), 465817.ETA_10360 (degree 1032), 465817.ETA_03080
-	(degree 1013), 465817.ETA_03090 (degree 887) and 465817.ETA_12990 (degree 870).
+	The undirected graph Erwinia tasmaniensis has 3434 nodes and 321060 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05447 and has 11 connected components, where the component with most
+	nodes has 3411 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 186.99, and
+	the node degree mode is 1. The top 5 most central nodes are 465817.ETA_00240
+	(degree 1171), 465817.ETA_10360 (degree 1032), 465817.ETA_03080 (degree
+	1013), 465817.ETA_03090 (degree 887) and 465817.ETA_12990 (degree 870).
 	
 
 

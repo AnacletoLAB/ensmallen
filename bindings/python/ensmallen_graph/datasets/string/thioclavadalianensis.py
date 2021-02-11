@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:43.583691
 
-The undirected graph Thioclava dalianensis has 3990 nodes and 350593 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04406 and
-has 7 connected components, where the component with most nodes has 3971 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 175.74, and the node degree mode is 2. The top 5 most central
-nodes are 1185766.DL1_09450 (degree 1472), 1185766.DL1_19720 (degree 1156), 1185766.DL1_13915
-(degree 1091), 1185766.DL1_07940 (degree 1071) and 1185766.DL1_08435 (degree 1032).
+The undirected graph Thioclava dalianensis has 3990 nodes and 350593 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04406 and has 7 connected components, where the component with most
+nodes has 3971 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 175.74, and
+the node degree mode is 2. The top 5 most central nodes are 1185766.DL1_09450
+(degree 1472), 1185766.DL1_19720 (degree 1156), 1185766.DL1_13915 (degree
+1091), 1185766.DL1_07940 (degree 1071) and 1185766.DL1_08435 (degree 1032).
 
 
 References
@@ -106,13 +107,14 @@ def ThioclavaDalianensis(
 	
 	Datetime: 2021-02-02 23:10:43.583691
 	
-	The undirected graph Thioclava dalianensis has 3990 nodes and 350593 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04406 and
-	has 7 connected components, where the component with most nodes has 3971 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 175.74, and the node degree mode is 2. The top 5 most central
-	nodes are 1185766.DL1_09450 (degree 1472), 1185766.DL1_19720 (degree 1156), 1185766.DL1_13915
-	(degree 1091), 1185766.DL1_07940 (degree 1071) and 1185766.DL1_08435 (degree 1032).
+	The undirected graph Thioclava dalianensis has 3990 nodes and 350593 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04406 and has 7 connected components, where the component with most
+	nodes has 3971 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 175.74, and
+	the node degree mode is 2. The top 5 most central nodes are 1185766.DL1_09450
+	(degree 1472), 1185766.DL1_19720 (degree 1156), 1185766.DL1_13915 (degree
+	1091), 1185766.DL1_07940 (degree 1071) and 1185766.DL1_08435 (degree 1032).
 	
 
 

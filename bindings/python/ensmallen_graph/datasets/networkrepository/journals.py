@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 07:59:48.731163
 
-The undirected graph Journals has 124 nodes and 6096 weighted edges, of which 124
-are self-loops. The graph is extremely dense as it has a density of 0.79124 and is
-connected, as it has a single component. The graph median node degree is 104, the
-mean node degree is 97.32, and the node degree mode is 124. The top 5 most central
-nodes are 119 (degree 124), 113 (degree 124), 42 (degree 124), 39 (degree 124) and
-27 (degree 124).
+The undirected graph Journals has 124 nodes and 6096 weighted edges, of
+which 124 are self-loops. The graph is extremely dense as it has a density
+of 0.79124 and is connected, as it has a single component. The graph median
+node degree is 104, the mean node degree is 97.32, and the node degree
+mode is 124. The top 5 most central nodes are 119 (degree 124), 113 (degree
+124), 42 (degree 124), 39 (degree 124) and 27 (degree 124).
 
 
 References
@@ -102,12 +102,12 @@ def Journals(
 	
 	Datetime: 2021-02-06 07:59:48.731163
 	
-	The undirected graph Journals has 124 nodes and 6096 weighted edges, of which 124
-	are self-loops. The graph is extremely dense as it has a density of 0.79124 and is
-	connected, as it has a single component. The graph median node degree is 104, the
-	mean node degree is 97.32, and the node degree mode is 124. The top 5 most central
-	nodes are 119 (degree 124), 113 (degree 124), 42 (degree 124), 39 (degree 124) and
-	27 (degree 124).
+	The undirected graph Journals has 124 nodes and 6096 weighted edges, of
+	which 124 are self-loops. The graph is extremely dense as it has a density
+	of 0.79124 and is connected, as it has a single component. The graph median
+	node degree is 104, the mean node degree is 97.32, and the node degree
+	mode is 124. The top 5 most central nodes are 119 (degree 124), 113 (degree
+	124), 42 (degree 124), 39 (degree 124) and 27 (degree 124).
 	
 
 

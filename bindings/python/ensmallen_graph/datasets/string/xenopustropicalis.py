@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:29:39.391527
 
-The undirected graph Xenopus tropicalis has 17286 nodes and 3693186 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02472 and
-has 12 connected components, where the component with most nodes has 17250 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 321, the mean node degree is 427.30, and the node degree mode is 163. The top
-5 most central nodes are 8364.ENSXETP00000055696 (degree 4615), 8364.ENSXETP00000063518
-(degree 3925), 8364.ENSXETP00000000115 (degree 3769), 8364.ENSXETP00000015779 (degree
-3620) and 8364.ENSXETP00000053759 (degree 3457).
+The undirected graph Xenopus tropicalis has 17286 nodes and 3693186 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02472 and has 12 connected components, where the component with most
+nodes has 17250 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 321, the mean node degree is 427.30, and
+the node degree mode is 163. The top 5 most central nodes are 8364.ENSXETP00000055696
+(degree 4615), 8364.ENSXETP00000063518 (degree 3925), 8364.ENSXETP00000000115
+(degree 3769), 8364.ENSXETP00000015779 (degree 3620) and 8364.ENSXETP00000053759
+(degree 3457).
 
 
 References
@@ -107,14 +108,15 @@ def XenopusTropicalis(
 	
 	Datetime: 2021-02-02 17:29:39.391527
 	
-	The undirected graph Xenopus tropicalis has 17286 nodes and 3693186 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02472 and
-	has 12 connected components, where the component with most nodes has 17250 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 321, the mean node degree is 427.30, and the node degree mode is 163. The top
-	5 most central nodes are 8364.ENSXETP00000055696 (degree 4615), 8364.ENSXETP00000063518
-	(degree 3925), 8364.ENSXETP00000000115 (degree 3769), 8364.ENSXETP00000015779 (degree
-	3620) and 8364.ENSXETP00000053759 (degree 3457).
+	The undirected graph Xenopus tropicalis has 17286 nodes and 3693186 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02472 and has 12 connected components, where the component with most
+	nodes has 17250 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 321, the mean node degree is 427.30, and
+	the node degree mode is 163. The top 5 most central nodes are 8364.ENSXETP00000055696
+	(degree 4615), 8364.ENSXETP00000063518 (degree 3925), 8364.ENSXETP00000000115
+	(degree 3769), 8364.ENSXETP00000015779 (degree 3620) and 8364.ENSXETP00000053759
+	(degree 3457).
 	
 
 

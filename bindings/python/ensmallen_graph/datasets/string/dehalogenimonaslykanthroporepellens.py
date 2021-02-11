@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:47.577863
 
-The undirected graph Dehalogenimonas lykanthroporepellens has 1635 nodes and 87002
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06513 and has 10 connected components, where the component with most nodes has
-1612 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 80, the mean node degree is 106.42, and the node degree mode is 3. The
-top 5 most central nodes are 552811.Dehly_0095 (degree 730), 552811.Dehly_0662 (degree
-606), 552811.Dehly_1677 (degree 591), 552811.Dehly_0790 (degree 555) and 552811.Dehly_1235
-(degree 536).
+The undirected graph Dehalogenimonas lykanthroporepellens has 1635 nodes
+and 87002 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06513 and has 10 connected components, where the
+component with most nodes has 1612 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 80, the mean node degree
+is 106.42, and the node degree mode is 3. The top 5 most central nodes
+are 552811.Dehly_0095 (degree 730), 552811.Dehly_0662 (degree 606), 552811.Dehly_1677
+(degree 591), 552811.Dehly_0790 (degree 555) and 552811.Dehly_1235 (degree
+536).
 
 
 References
@@ -107,14 +108,15 @@ def DehalogenimonasLykanthroporepellens(
 	
 	Datetime: 2021-02-02 21:09:47.577863
 	
-	The undirected graph Dehalogenimonas lykanthroporepellens has 1635 nodes and 87002
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06513 and has 10 connected components, where the component with most nodes has
-	1612 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 80, the mean node degree is 106.42, and the node degree mode is 3. The
-	top 5 most central nodes are 552811.Dehly_0095 (degree 730), 552811.Dehly_0662 (degree
-	606), 552811.Dehly_1677 (degree 591), 552811.Dehly_0790 (degree 555) and 552811.Dehly_1235
-	(degree 536).
+	The undirected graph Dehalogenimonas lykanthroporepellens has 1635 nodes
+	and 87002 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06513 and has 10 connected components, where the
+	component with most nodes has 1612 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 80, the mean node degree
+	is 106.42, and the node degree mode is 3. The top 5 most central nodes
+	are 552811.Dehly_0095 (degree 730), 552811.Dehly_0662 (degree 606), 552811.Dehly_1677
+	(degree 591), 552811.Dehly_0790 (degree 555) and 552811.Dehly_1235 (degree
+	536).
 	
 
 

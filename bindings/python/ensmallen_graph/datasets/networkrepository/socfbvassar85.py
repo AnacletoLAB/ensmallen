@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:51:37.108862
 
-The undirected graph socfb-Vassar85 has 3068 nodes and 119161 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02533 and
-is connected, as it has a single component. The graph median node degree is 67, the
-mean node degree is 77.68, and the node degree mode is 24. The top 5 most central
-nodes are 1192 (degree 482), 2094 (degree 455), 45 (degree 411), 806 (degree 386)
-and 2920 (degree 376).
+The undirected graph socfb-Vassar85 has 3068 nodes and 119161 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02533 and is connected, as it has a single component. The graph median
+node degree is 67, the mean node degree is 77.68, and the node degree mode
+is 24. The top 5 most central nodes are 1192 (degree 482), 2094 (degree
+455), 45 (degree 411), 806 (degree 386) and 2920 (degree 376).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbVassar85(
 	
 	Datetime: 2021-02-06 11:51:37.108862
 	
-	The undirected graph socfb-Vassar85 has 3068 nodes and 119161 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02533 and
-	is connected, as it has a single component. The graph median node degree is 67, the
-	mean node degree is 77.68, and the node degree mode is 24. The top 5 most central
-	nodes are 1192 (degree 482), 2094 (degree 455), 45 (degree 411), 806 (degree 386)
-	and 2920 (degree 376).
+	The undirected graph socfb-Vassar85 has 3068 nodes and 119161 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02533 and is connected, as it has a single component. The graph median
+	node degree is 67, the mean node degree is 77.68, and the node degree mode
+	is 24. The top 5 most central nodes are 1192 (degree 482), 2094 (degree
+	455), 45 (degree 411), 806 (degree 386) and 2920 (degree 376).
 	
 
 

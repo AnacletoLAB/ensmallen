@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:21.493363
 
-The undirected graph Mycobacterium kansasii ATCC12478 has 5792 nodes and 846448 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05047
-and has 38 connected components, where the component with most nodes has 5697 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 292.28, and the node degree mode is 2. The top 5
-most central nodes are 557599.MKAN_16515 (degree 2336), 557599.MKAN_05770 (degree
-2175), 557599.MKAN_17955 (degree 2051), 557599.MKAN_03715 (degree 1866) and 557599.MKAN_28025
-(degree 1828).
+The undirected graph Mycobacterium kansasii ATCC12478 has 5792 nodes and
+846448 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05047 and has 38 connected components, where the
+component with most nodes has 5697 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 228, the mean node degree
+is 292.28, and the node degree mode is 2. The top 5 most central nodes
+are 557599.MKAN_16515 (degree 2336), 557599.MKAN_05770 (degree 2175), 557599.MKAN_17955
+(degree 2051), 557599.MKAN_03715 (degree 1866) and 557599.MKAN_28025 (degree
+1828).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumKansasiiAtcc12478(
 	
 	Datetime: 2021-02-02 21:11:21.493363
 	
-	The undirected graph Mycobacterium kansasii ATCC12478 has 5792 nodes and 846448 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05047
-	and has 38 connected components, where the component with most nodes has 5697 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 292.28, and the node degree mode is 2. The top 5
-	most central nodes are 557599.MKAN_16515 (degree 2336), 557599.MKAN_05770 (degree
-	2175), 557599.MKAN_17955 (degree 2051), 557599.MKAN_03715 (degree 1866) and 557599.MKAN_28025
-	(degree 1828).
+	The undirected graph Mycobacterium kansasii ATCC12478 has 5792 nodes and
+	846448 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05047 and has 38 connected components, where the
+	component with most nodes has 5697 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 228, the mean node degree
+	is 292.28, and the node degree mode is 2. The top 5 most central nodes
+	are 557599.MKAN_16515 (degree 2336), 557599.MKAN_05770 (degree 2175), 557599.MKAN_17955
+	(degree 2051), 557599.MKAN_03715 (degree 1866) and 557599.MKAN_28025 (degree
+	1828).
 	
 
 

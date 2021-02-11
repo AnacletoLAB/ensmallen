@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:34.208108
 
-The undirected graph Clostridium acetobutylicum has 3650 nodes and 353963 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05315
-and has 14 connected components, where the component with most nodes has 3607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 193.95, and the node degree mode is 4. The top 5
-most central nodes are 272562.CA_C2623 (degree 1806), 272562.CA_C1098 (degree 1435),
-272562.CA_C2700 (degree 1122), 272562.CA_C0473 (degree 1111) and 272562.CA_C2499
-(degree 1095).
+The undirected graph Clostridium acetobutylicum has 3650 nodes and 353963
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05315 and has 14 connected components, where the component
+with most nodes has 3607 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 172, the mean node degree is 193.95,
+and the node degree mode is 4. The top 5 most central nodes are 272562.CA_C2623
+(degree 1806), 272562.CA_C1098 (degree 1435), 272562.CA_C2700 (degree 1122),
+272562.CA_C0473 (degree 1111) and 272562.CA_C2499 (degree 1095).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumAcetobutylicum(
 	
 	Datetime: 2021-02-02 20:16:34.208108
 	
-	The undirected graph Clostridium acetobutylicum has 3650 nodes and 353963 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05315
-	and has 14 connected components, where the component with most nodes has 3607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 193.95, and the node degree mode is 4. The top 5
-	most central nodes are 272562.CA_C2623 (degree 1806), 272562.CA_C1098 (degree 1435),
-	272562.CA_C2700 (degree 1122), 272562.CA_C0473 (degree 1111) and 272562.CA_C2499
-	(degree 1095).
+	The undirected graph Clostridium acetobutylicum has 3650 nodes and 353963
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05315 and has 14 connected components, where the component
+	with most nodes has 3607 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 172, the mean node degree is 193.95,
+	and the node degree mode is 4. The top 5 most central nodes are 272562.CA_C2623
+	(degree 1806), 272562.CA_C1098 (degree 1435), 272562.CA_C2700 (degree 1122),
+	272562.CA_C0473 (degree 1111) and 272562.CA_C2499 (degree 1095).
 	
 
 

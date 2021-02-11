@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:49.664269
 
-The undirected graph Vibrio coralliilyticus has 4963 nodes and 529664 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04302 and
-has 31 connected components, where the component with most nodes has 4892 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 172,
-the mean node degree is 213.45, and the node degree mode is 1. The top 5 most central
-nodes are 675814.VIC_000437 (degree 1909), 675814.VIC_002009 (degree 1735), 675814.VIC_001229
-(degree 1604), 675814.VIC_000773 (degree 1512) and 675814.VIC_001960 (degree 1451).
+The undirected graph Vibrio coralliilyticus has 4963 nodes and 529664 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04302 and has 31 connected components, where the component with most
+nodes has 4892 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 172, the mean node degree is 213.45, and
+the node degree mode is 1. The top 5 most central nodes are 675814.VIC_000437
+(degree 1909), 675814.VIC_002009 (degree 1735), 675814.VIC_001229 (degree
+1604), 675814.VIC_000773 (degree 1512) and 675814.VIC_001960 (degree 1451).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioCoralliilyticus(
 	
 	Datetime: 2021-02-02 21:29:49.664269
 	
-	The undirected graph Vibrio coralliilyticus has 4963 nodes and 529664 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04302 and
-	has 31 connected components, where the component with most nodes has 4892 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 172,
-	the mean node degree is 213.45, and the node degree mode is 1. The top 5 most central
-	nodes are 675814.VIC_000437 (degree 1909), 675814.VIC_002009 (degree 1735), 675814.VIC_001229
-	(degree 1604), 675814.VIC_000773 (degree 1512) and 675814.VIC_001960 (degree 1451).
+	The undirected graph Vibrio coralliilyticus has 4963 nodes and 529664 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04302 and has 31 connected components, where the component with most
+	nodes has 4892 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 172, the mean node degree is 213.45, and
+	the node degree mode is 1. The top 5 most central nodes are 675814.VIC_000437
+	(degree 1909), 675814.VIC_002009 (degree 1735), 675814.VIC_001229 (degree
+	1604), 675814.VIC_000773 (degree 1512) and 675814.VIC_001960 (degree 1451).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:11.921088
 
-The undirected graph Mycobacterium colombiense has 5157 nodes and 728067 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05476
-and has 16 connected components, where the component with most nodes has 5119 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 282.36, and the node degree mode is 2. The top 5
-most central nodes are 1041522.MCOL_V218258 (degree 2195), 1041522.MCOL_V211335 (degree
-1790), 1041522.MCOL_V207580 (degree 1678), 1041522.MCOL_V216988 (degree 1675) and
-1041522.MCOL_V224287 (degree 1655).
+The undirected graph Mycobacterium colombiense has 5157 nodes and 728067
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05476 and has 16 connected components, where the component
+with most nodes has 5119 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 282.36,
+and the node degree mode is 2. The top 5 most central nodes are 1041522.MCOL_V218258
+(degree 2195), 1041522.MCOL_V211335 (degree 1790), 1041522.MCOL_V207580
+(degree 1678), 1041522.MCOL_V216988 (degree 1675) and 1041522.MCOL_V224287
+(degree 1655).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumColombiense(
 	
 	Datetime: 2021-02-02 22:15:11.921088
 	
-	The undirected graph Mycobacterium colombiense has 5157 nodes and 728067 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05476
-	and has 16 connected components, where the component with most nodes has 5119 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 282.36, and the node degree mode is 2. The top 5
-	most central nodes are 1041522.MCOL_V218258 (degree 2195), 1041522.MCOL_V211335 (degree
-	1790), 1041522.MCOL_V207580 (degree 1678), 1041522.MCOL_V216988 (degree 1675) and
-	1041522.MCOL_V224287 (degree 1655).
+	The undirected graph Mycobacterium colombiense has 5157 nodes and 728067
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05476 and has 16 connected components, where the component
+	with most nodes has 5119 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 282.36,
+	and the node degree mode is 2. The top 5 most central nodes are 1041522.MCOL_V218258
+	(degree 2195), 1041522.MCOL_V211335 (degree 1790), 1041522.MCOL_V207580
+	(degree 1678), 1041522.MCOL_V216988 (degree 1675) and 1041522.MCOL_V224287
+	(degree 1655).
 	
 
 

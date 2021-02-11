@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:34.918201
 
-The undirected graph Ralstonia solanacearum Po82 has 3270 nodes and 206200 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03858
-and has 12 connected components, where the component with most nodes has 3236 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 102, the mean node degree is 126.12, and the node degree mode is 4. The top 5
-most central nodes are 1031711.RSPO_c01200 (degree 1145), 1031711.RSPO_c01918 (degree
-830), 1031711.RSPO_c00535 (degree 802), 1031711.RSPO_c02698 (degree 771) and 1031711.RSPO_c01066
-(degree 762).
+The undirected graph Ralstonia solanacearum Po82 has 3270 nodes and 206200
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03858 and has 12 connected components, where the component
+with most nodes has 3236 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 102, the mean node degree is 126.12,
+and the node degree mode is 4. The top 5 most central nodes are 1031711.RSPO_c01200
+(degree 1145), 1031711.RSPO_c01918 (degree 830), 1031711.RSPO_c00535 (degree
+802), 1031711.RSPO_c02698 (degree 771) and 1031711.RSPO_c01066 (degree
+762).
 
 
 References
@@ -107,14 +108,15 @@ def RalstoniaSolanacearumPo82(
 	
 	Datetime: 2021-02-02 22:10:34.918201
 	
-	The undirected graph Ralstonia solanacearum Po82 has 3270 nodes and 206200 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03858
-	and has 12 connected components, where the component with most nodes has 3236 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 102, the mean node degree is 126.12, and the node degree mode is 4. The top 5
-	most central nodes are 1031711.RSPO_c01200 (degree 1145), 1031711.RSPO_c01918 (degree
-	830), 1031711.RSPO_c00535 (degree 802), 1031711.RSPO_c02698 (degree 771) and 1031711.RSPO_c01066
-	(degree 762).
+	The undirected graph Ralstonia solanacearum Po82 has 3270 nodes and 206200
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03858 and has 12 connected components, where the component
+	with most nodes has 3236 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 102, the mean node degree is 126.12,
+	and the node degree mode is 4. The top 5 most central nodes are 1031711.RSPO_c01200
+	(degree 1145), 1031711.RSPO_c01918 (degree 830), 1031711.RSPO_c00535 (degree
+	802), 1031711.RSPO_c02698 (degree 771) and 1031711.RSPO_c01066 (degree
+	762).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:25.504040
 
-The undirected graph Thermus sp. CCBUS3UF1 has 2258 nodes and 153603 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06028 and
-has 8 connected components, where the component with most nodes has 2241 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 136.05, and the node degree mode is 3. The top 5 most central
-nodes are 1111069.TCCBUS3UF1_14310 (degree 1012), 1111069.TCCBUS3UF1_1220 (degree
-865), 1111069.TCCBUS3UF1_7080 (degree 839), 1111069.TCCBUS3UF1_15340 (degree 836)
-and 1111069.TCCBUS3UF1_18400 (degree 752).
+The undirected graph Thermus sp. CCBUS3UF1 has 2258 nodes and 153603 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06028 and has 8 connected components, where the component with most
+nodes has 2241 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 136.05, and
+the node degree mode is 3. The top 5 most central nodes are 1111069.TCCBUS3UF1_14310
+(degree 1012), 1111069.TCCBUS3UF1_1220 (degree 865), 1111069.TCCBUS3UF1_7080
+(degree 839), 1111069.TCCBUS3UF1_15340 (degree 836) and 1111069.TCCBUS3UF1_18400
+(degree 752).
 
 
 References
@@ -107,14 +108,15 @@ def ThermusSp.Ccbus3uf1(
 	
 	Datetime: 2021-02-02 22:25:25.504040
 	
-	The undirected graph Thermus sp. CCBUS3UF1 has 2258 nodes and 153603 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06028 and
-	has 8 connected components, where the component with most nodes has 2241 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 136.05, and the node degree mode is 3. The top 5 most central
-	nodes are 1111069.TCCBUS3UF1_14310 (degree 1012), 1111069.TCCBUS3UF1_1220 (degree
-	865), 1111069.TCCBUS3UF1_7080 (degree 839), 1111069.TCCBUS3UF1_15340 (degree 836)
-	and 1111069.TCCBUS3UF1_18400 (degree 752).
+	The undirected graph Thermus sp. CCBUS3UF1 has 2258 nodes and 153603 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06028 and has 8 connected components, where the component with most
+	nodes has 2241 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 136.05, and
+	the node degree mode is 3. The top 5 most central nodes are 1111069.TCCBUS3UF1_14310
+	(degree 1012), 1111069.TCCBUS3UF1_1220 (degree 865), 1111069.TCCBUS3UF1_7080
+	(degree 839), 1111069.TCCBUS3UF1_15340 (degree 836) and 1111069.TCCBUS3UF1_18400
+	(degree 752).
 	
 
 

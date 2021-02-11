@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:20:48.598599
 
-The undirected graph DD21 has 5748 nodes with 21 different node types:  the 5 most
-common are 1 (nodes number 600), 11 (nodes number 468), 20 (nodes number 456), 8
-(nodes number 456) and 7 (nodes number 440) and 14267 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00086 and
-has 2 connected components, where the component with most nodes has 5736 nodes and
-the component with the least nodes has 12 nodes. The graph median node degree is
-5, the mean node degree is 4.96 and the node degree mode is 5. The top 5 most central
-nodes are 782 (degree 11), 168 (degree 11), 106 (degree 11), 5371 (degree 10) and
+The undirected graph DD21 has 5748 nodes with 21 different node types:
+ the 5 most common are 1 (nodes number 600), 11 (nodes number 468), 20
+(nodes number 456), 8 (nodes number 456) and 7 (nodes number 440) and 14267
+unweighted edges, of which none are self-loops. The graph is quite sparse
+as it has a density of 0.00086 and has 2 connected components, where the
+component with most nodes has 5736 nodes and the component with the least
+nodes has 12 nodes. The graph median node degree is 5, the mean node degree
+is 4.96 and the node degree mode is 5. The top 5 most central nodes are
+782 (degree 11), 168 (degree 11), 106 (degree 11), 5371 (degree 10) and
 4121 (degree 10).
 
 
@@ -105,14 +106,15 @@ def Dd21(
 	
 	Datetime: 2021-02-04 08:20:48.598599
 	
-	The undirected graph DD21 has 5748 nodes with 21 different node types:  the 5 most
-	common are 1 (nodes number 600), 11 (nodes number 468), 20 (nodes number 456), 8
-	(nodes number 456) and 7 (nodes number 440) and 14267 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00086 and
-	has 2 connected components, where the component with most nodes has 5736 nodes and
-	the component with the least nodes has 12 nodes. The graph median node degree is
-	5, the mean node degree is 4.96 and the node degree mode is 5. The top 5 most central
-	nodes are 782 (degree 11), 168 (degree 11), 106 (degree 11), 5371 (degree 10) and
+	The undirected graph DD21 has 5748 nodes with 21 different node types:
+	 the 5 most common are 1 (nodes number 600), 11 (nodes number 468), 20
+	(nodes number 456), 8 (nodes number 456) and 7 (nodes number 440) and 14267
+	unweighted edges, of which none are self-loops. The graph is quite sparse
+	as it has a density of 0.00086 and has 2 connected components, where the
+	component with most nodes has 5736 nodes and the component with the least
+	nodes has 12 nodes. The graph median node degree is 5, the mean node degree
+	is 4.96 and the node degree mode is 5. The top 5 most central nodes are
+	782 (degree 11), 168 (degree 11), 106 (degree 11), 5371 (degree 10) and
 	4121 (degree 10).
 	
 

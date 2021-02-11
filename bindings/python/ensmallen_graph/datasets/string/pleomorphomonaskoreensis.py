@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:19.206697
 
-The undirected graph Pleomorphomonas koreensis has 3955 nodes and 501857 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06418
-and has 5 connected components, where the component with most nodes has 3944 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 218, the mean node degree is 253.78, and the node degree mode is 3. The top 5
-most central nodes are 1122962.AULH01000002_gene3502 (degree 1706), 1122962.AULH01000001_gene1482
-(degree 1573), 1122962.AULH01000008_gene2117 (degree 1459), 1122962.AULH01000018_gene413
-(degree 1386) and 1122962.AULH01000001_gene1570 (degree 1165).
+The undirected graph Pleomorphomonas koreensis has 3955 nodes and 501857
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06418 and has 5 connected components, where the component
+with most nodes has 3944 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 218, the mean node degree is 253.78,
+and the node degree mode is 3. The top 5 most central nodes are 1122962.AULH01000002_gene3502
+(degree 1706), 1122962.AULH01000001_gene1482 (degree 1573), 1122962.AULH01000008_gene2117
+(degree 1459), 1122962.AULH01000018_gene413 (degree 1386) and 1122962.AULH01000001_gene1570
+(degree 1165).
 
 
 References
@@ -107,14 +108,15 @@ def PleomorphomonasKoreensis(
 	
 	Datetime: 2021-02-02 22:45:19.206697
 	
-	The undirected graph Pleomorphomonas koreensis has 3955 nodes and 501857 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06418
-	and has 5 connected components, where the component with most nodes has 3944 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 218, the mean node degree is 253.78, and the node degree mode is 3. The top 5
-	most central nodes are 1122962.AULH01000002_gene3502 (degree 1706), 1122962.AULH01000001_gene1482
-	(degree 1573), 1122962.AULH01000008_gene2117 (degree 1459), 1122962.AULH01000018_gene413
-	(degree 1386) and 1122962.AULH01000001_gene1570 (degree 1165).
+	The undirected graph Pleomorphomonas koreensis has 3955 nodes and 501857
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06418 and has 5 connected components, where the component
+	with most nodes has 3944 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 218, the mean node degree is 253.78,
+	and the node degree mode is 3. The top 5 most central nodes are 1122962.AULH01000002_gene3502
+	(degree 1706), 1122962.AULH01000001_gene1482 (degree 1573), 1122962.AULH01000008_gene2117
+	(degree 1459), 1122962.AULH01000018_gene413 (degree 1386) and 1122962.AULH01000001_gene1570
+	(degree 1165).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:20:09.351782
 
-The undirected graph Pontibacillus yanchengensis has 3916 nodes and 507017 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06614
-and has 22 connected components, where the component with most nodes has 3867 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 241, the mean node degree is 258.95, and the node degree mode is 1. The top 5
-most central nodes are 1385514.N782_16845 (degree 1437), 1385514.N782_06990 (degree
-1180), 1385514.N782_18740 (degree 1150), 1385514.N782_16130 (degree 1135) and 1385514.N782_07180
-(degree 1133).
+The undirected graph Pontibacillus yanchengensis has 3916 nodes and 507017
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06614 and has 22 connected components, where the component
+with most nodes has 3867 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 258.95,
+and the node degree mode is 1. The top 5 most central nodes are 1385514.N782_16845
+(degree 1437), 1385514.N782_06990 (degree 1180), 1385514.N782_18740 (degree
+1150), 1385514.N782_16130 (degree 1135) and 1385514.N782_07180 (degree
+1133).
 
 
 References
@@ -107,14 +108,15 @@ def PontibacillusYanchengensis(
 	
 	Datetime: 2021-02-03 22:20:09.351782
 	
-	The undirected graph Pontibacillus yanchengensis has 3916 nodes and 507017 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06614
-	and has 22 connected components, where the component with most nodes has 3867 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 241, the mean node degree is 258.95, and the node degree mode is 1. The top 5
-	most central nodes are 1385514.N782_16845 (degree 1437), 1385514.N782_06990 (degree
-	1180), 1385514.N782_18740 (degree 1150), 1385514.N782_16130 (degree 1135) and 1385514.N782_07180
-	(degree 1133).
+	The undirected graph Pontibacillus yanchengensis has 3916 nodes and 507017
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06614 and has 22 connected components, where the component
+	with most nodes has 3867 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 258.95,
+	and the node degree mode is 1. The top 5 most central nodes are 1385514.N782_16845
+	(degree 1437), 1385514.N782_06990 (degree 1180), 1385514.N782_18740 (degree
+	1150), 1385514.N782_16130 (degree 1135) and 1385514.N782_07180 (degree
+	1133).
 	
 
 

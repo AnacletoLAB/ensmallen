@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:28.962897
 
-The undirected graph Leadbetterella byssophila has 3436 nodes and 354625 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06009
-and has 11 connected components, where the component with most nodes has 3412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 185, the mean node degree is 206.42, and the node degree mode is 3. The top 5
-most central nodes are 649349.Lbys_1292 (degree 1598), 649349.Lbys_0657 (degree 1315),
-649349.Lbys_0503 (degree 1277), 649349.Lbys_1881 (degree 1047) and 649349.Lbys_2125
-(degree 1043).
+The undirected graph Leadbetterella byssophila has 3436 nodes and 354625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06009 and has 11 connected components, where the component
+with most nodes has 3412 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 206.42,
+and the node degree mode is 3. The top 5 most central nodes are 649349.Lbys_1292
+(degree 1598), 649349.Lbys_0657 (degree 1315), 649349.Lbys_0503 (degree
+1277), 649349.Lbys_1881 (degree 1047) and 649349.Lbys_2125 (degree 1043).
 
 
 References
@@ -107,14 +107,14 @@ def LeadbetterellaByssophila(
 	
 	Datetime: 2021-02-02 21:25:28.962897
 	
-	The undirected graph Leadbetterella byssophila has 3436 nodes and 354625 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06009
-	and has 11 connected components, where the component with most nodes has 3412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 185, the mean node degree is 206.42, and the node degree mode is 3. The top 5
-	most central nodes are 649349.Lbys_1292 (degree 1598), 649349.Lbys_0657 (degree 1315),
-	649349.Lbys_0503 (degree 1277), 649349.Lbys_1881 (degree 1047) and 649349.Lbys_2125
-	(degree 1043).
+	The undirected graph Leadbetterella byssophila has 3436 nodes and 354625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06009 and has 11 connected components, where the component
+	with most nodes has 3412 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 206.42,
+	and the node degree mode is 3. The top 5 most central nodes are 649349.Lbys_1292
+	(degree 1598), 649349.Lbys_0657 (degree 1315), 649349.Lbys_0503 (degree
+	1277), 649349.Lbys_1881 (degree 1047) and 649349.Lbys_2125 (degree 1043).
 	
 
 

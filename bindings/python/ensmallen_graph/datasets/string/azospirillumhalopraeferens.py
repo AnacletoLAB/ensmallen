@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:32.756570
 
-The undirected graph Azospirillum halopraeferens has 5843 nodes and 1455902 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08530
-and has 10 connected components, where the component with most nodes has 5821 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 413, the mean node degree is 498.34, and the node degree mode is 3. The top 5
-most central nodes are 1121033.AUCF01000011_gene1708 (degree 3056), 1121033.AUCF01000001_gene2570
-(degree 2902), 1121033.AUCF01000009_gene996 (degree 2648), 1121033.AUCF01000028_gene389
-(degree 2494) and 1121033.AUCF01000001_gene2085 (degree 2385).
+The undirected graph Azospirillum halopraeferens has 5843 nodes and 1455902
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08530 and has 10 connected components, where the component
+with most nodes has 5821 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 413, the mean node degree is 498.34,
+and the node degree mode is 3. The top 5 most central nodes are 1121033.AUCF01000011_gene1708
+(degree 3056), 1121033.AUCF01000001_gene2570 (degree 2902), 1121033.AUCF01000009_gene996
+(degree 2648), 1121033.AUCF01000028_gene389 (degree 2494) and 1121033.AUCF01000001_gene2085
+(degree 2385).
 
 
 References
@@ -107,14 +108,15 @@ def AzospirillumHalopraeferens(
 	
 	Datetime: 2021-02-02 22:32:32.756570
 	
-	The undirected graph Azospirillum halopraeferens has 5843 nodes and 1455902 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08530
-	and has 10 connected components, where the component with most nodes has 5821 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 413, the mean node degree is 498.34, and the node degree mode is 3. The top 5
-	most central nodes are 1121033.AUCF01000011_gene1708 (degree 3056), 1121033.AUCF01000001_gene2570
-	(degree 2902), 1121033.AUCF01000009_gene996 (degree 2648), 1121033.AUCF01000028_gene389
-	(degree 2494) and 1121033.AUCF01000001_gene2085 (degree 2385).
+	The undirected graph Azospirillum halopraeferens has 5843 nodes and 1455902
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08530 and has 10 connected components, where the component
+	with most nodes has 5821 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 413, the mean node degree is 498.34,
+	and the node degree mode is 3. The top 5 most central nodes are 1121033.AUCF01000011_gene1708
+	(degree 3056), 1121033.AUCF01000001_gene2570 (degree 2902), 1121033.AUCF01000009_gene996
+	(degree 2648), 1121033.AUCF01000028_gene389 (degree 2494) and 1121033.AUCF01000001_gene2085
+	(degree 2385).
 	
 
 

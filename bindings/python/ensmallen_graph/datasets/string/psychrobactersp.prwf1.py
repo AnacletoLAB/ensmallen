@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:15.285606
 
-The undirected graph Psychrobacter sp. PRwf1 has 2374 nodes and 129684 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04604 and
-has 5 connected components, where the component with most nodes has 2366 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 109.25, and the node degree mode is 3. The top 5 most central
-nodes are 349106.PsycPRwf_2048 (degree 894), 349106.PsycPRwf_1374 (degree 885), 349106.PsycPRwf_1709
-(degree 750), 349106.PsycPRwf_0015 (degree 727) and 349106.PsycPRwf_1261 (degree
+The undirected graph Psychrobacter sp. PRwf1 has 2374 nodes and 129684
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04604 and has 5 connected components, where the component
+with most nodes has 2366 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 109.25,
+and the node degree mode is 3. The top 5 most central nodes are 349106.PsycPRwf_2048
+(degree 894), 349106.PsycPRwf_1374 (degree 885), 349106.PsycPRwf_1709 (degree
+750), 349106.PsycPRwf_0015 (degree 727) and 349106.PsycPRwf_1261 (degree
 669).
 
 
@@ -107,13 +108,14 @@ def PsychrobacterSp.Prwf1(
 	
 	Datetime: 2021-02-02 20:32:15.285606
 	
-	The undirected graph Psychrobacter sp. PRwf1 has 2374 nodes and 129684 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04604 and
-	has 5 connected components, where the component with most nodes has 2366 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 109.25, and the node degree mode is 3. The top 5 most central
-	nodes are 349106.PsycPRwf_2048 (degree 894), 349106.PsycPRwf_1374 (degree 885), 349106.PsycPRwf_1709
-	(degree 750), 349106.PsycPRwf_0015 (degree 727) and 349106.PsycPRwf_1261 (degree
+	The undirected graph Psychrobacter sp. PRwf1 has 2374 nodes and 129684
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04604 and has 5 connected components, where the component
+	with most nodes has 2366 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 109.25,
+	and the node degree mode is 3. The top 5 most central nodes are 349106.PsycPRwf_2048
+	(degree 894), 349106.PsycPRwf_1374 (degree 885), 349106.PsycPRwf_1709 (degree
+	750), 349106.PsycPRwf_0015 (degree 727) and 349106.PsycPRwf_1261 (degree
 	669).
 	
 

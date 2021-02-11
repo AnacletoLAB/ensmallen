@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:19:11.718204
 
-The undirected graph Streptomyces xylophagus has 9989 nodes and 2044775 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04099
-and has 68 connected components, where the component with most nodes has 9818 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 335, the mean node degree is 409.41, and the node degree mode is 2. The top 5
-most central nodes are 285514.JNWO01000015_gene9101 (degree 4486), 285514.JNWO01000015_gene9350
-(degree 3511), 285514.JNWO01000006_gene1646 (degree 3143), 285514.JNWO01000003_gene6857
-(degree 3054) and 285514.JNWO01000001_gene4608 (degree 2939).
+The undirected graph Streptomyces xylophagus has 9989 nodes and 2044775
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04099 and has 68 connected components, where the component
+with most nodes has 9818 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 335, the mean node degree is 409.41,
+and the node degree mode is 2. The top 5 most central nodes are 285514.JNWO01000015_gene9101
+(degree 4486), 285514.JNWO01000015_gene9350 (degree 3511), 285514.JNWO01000006_gene1646
+(degree 3143), 285514.JNWO01000003_gene6857 (degree 3054) and 285514.JNWO01000001_gene4608
+(degree 2939).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesXylophagus(
 	
 	Datetime: 2021-02-02 20:19:11.718204
 	
-	The undirected graph Streptomyces xylophagus has 9989 nodes and 2044775 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04099
-	and has 68 connected components, where the component with most nodes has 9818 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 335, the mean node degree is 409.41, and the node degree mode is 2. The top 5
-	most central nodes are 285514.JNWO01000015_gene9101 (degree 4486), 285514.JNWO01000015_gene9350
-	(degree 3511), 285514.JNWO01000006_gene1646 (degree 3143), 285514.JNWO01000003_gene6857
-	(degree 3054) and 285514.JNWO01000001_gene4608 (degree 2939).
+	The undirected graph Streptomyces xylophagus has 9989 nodes and 2044775
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04099 and has 68 connected components, where the component
+	with most nodes has 9818 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 335, the mean node degree is 409.41,
+	and the node degree mode is 2. The top 5 most central nodes are 285514.JNWO01000015_gene9101
+	(degree 4486), 285514.JNWO01000015_gene9350 (degree 3511), 285514.JNWO01000006_gene1646
+	(degree 3143), 285514.JNWO01000003_gene6857 (degree 3054) and 285514.JNWO01000001_gene4608
+	(degree 2939).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:39.771080
 
-The undirected graph Marinobacter lipolyticus BF04CF4 has 3374 nodes and 258739 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04547
-and has 11 connected components, where the component with most nodes has 3350 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 153.37, and the node degree mode is 3. The top 5
-most central nodes are 1046724.KB889828_gene2884 (degree 1262), 1046724.KB889875_gene1651
-(degree 945), 1046724.KB889875_gene1615 (degree 939), 1046724.KB889915_gene273 (degree
-881) and 1046724.KB889873_gene2105 (degree 869).
+The undirected graph Marinobacter lipolyticus BF04CF4 has 3374 nodes and
+258739 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04547 and has 11 connected components, where the
+component with most nodes has 3350 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 153.37, and the node degree mode is 3. The top 5 most central nodes
+are 1046724.KB889828_gene2884 (degree 1262), 1046724.KB889875_gene1651
+(degree 945), 1046724.KB889875_gene1615 (degree 939), 1046724.KB889915_gene273
+(degree 881) and 1046724.KB889873_gene2105 (degree 869).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterLipolyticusBf04cf4(
 	
 	Datetime: 2021-02-02 22:16:39.771080
 	
-	The undirected graph Marinobacter lipolyticus BF04CF4 has 3374 nodes and 258739 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04547
-	and has 11 connected components, where the component with most nodes has 3350 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 153.37, and the node degree mode is 3. The top 5
-	most central nodes are 1046724.KB889828_gene2884 (degree 1262), 1046724.KB889875_gene1651
-	(degree 945), 1046724.KB889875_gene1615 (degree 939), 1046724.KB889915_gene273 (degree
-	881) and 1046724.KB889873_gene2105 (degree 869).
+	The undirected graph Marinobacter lipolyticus BF04CF4 has 3374 nodes and
+	258739 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04547 and has 11 connected components, where the
+	component with most nodes has 3350 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 153.37, and the node degree mode is 3. The top 5 most central nodes
+	are 1046724.KB889828_gene2884 (degree 1262), 1046724.KB889875_gene1651
+	(degree 945), 1046724.KB889875_gene1615 (degree 939), 1046724.KB889915_gene273
+	(degree 881) and 1046724.KB889873_gene2105 (degree 869).
 	
 
 

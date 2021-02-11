@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:54.747234
 
-The undirected graph Actinobaculum massiliae has 1682 nodes and 108354 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07664 and
-has 7 connected components, where the component with most nodes has 1666 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 128.84, and the node degree mode is 2. The top 5 most central
-nodes are 883066.HMPREF9233_01364 (degree 759), 883066.HMPREF9233_01529 (degree 728),
-883066.HMPREF9233_01318 (degree 638), 883066.HMPREF9233_01687 (degree 637) and 883066.HMPREF9233_01322
+The undirected graph Actinobaculum massiliae has 1682 nodes and 108354
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07664 and has 7 connected components, where the component
+with most nodes has 1666 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 128.84,
+and the node degree mode is 2. The top 5 most central nodes are 883066.HMPREF9233_01364
+(degree 759), 883066.HMPREF9233_01529 (degree 728), 883066.HMPREF9233_01318
+(degree 638), 883066.HMPREF9233_01687 (degree 637) and 883066.HMPREF9233_01322
 (degree 625).
 
 
@@ -107,13 +108,14 @@ def ActinobaculumMassiliae(
 	
 	Datetime: 2021-02-02 21:50:54.747234
 	
-	The undirected graph Actinobaculum massiliae has 1682 nodes and 108354 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07664 and
-	has 7 connected components, where the component with most nodes has 1666 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 128.84, and the node degree mode is 2. The top 5 most central
-	nodes are 883066.HMPREF9233_01364 (degree 759), 883066.HMPREF9233_01529 (degree 728),
-	883066.HMPREF9233_01318 (degree 638), 883066.HMPREF9233_01687 (degree 637) and 883066.HMPREF9233_01322
+	The undirected graph Actinobaculum massiliae has 1682 nodes and 108354
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07664 and has 7 connected components, where the component
+	with most nodes has 1666 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 128.84,
+	and the node degree mode is 2. The top 5 most central nodes are 883066.HMPREF9233_01364
+	(degree 759), 883066.HMPREF9233_01529 (degree 728), 883066.HMPREF9233_01318
+	(degree 638), 883066.HMPREF9233_01687 (degree 637) and 883066.HMPREF9233_01322
 	(degree 625).
 	
 

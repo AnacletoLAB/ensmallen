@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:52.921338
 
-The undirected graph Deinococcus sp. 2009 has 3589 nodes and 240036 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03728 and
-has 25 connected components, where the component with most nodes has 3526 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 133.76, and the node degree mode is 2. The top 5 most central
-nodes are 684949.ATTJ01000001_gene484 (degree 1220), 684949.ATTJ01000001_gene2038
-(degree 1100), 684949.ATTJ01000001_gene813 (degree 1001), 684949.ATTJ01000001_gene3000
-(degree 988) and 684949.ATTJ01000001_gene1071 (degree 894).
+The undirected graph Deinococcus sp. 2009 has 3589 nodes and 240036 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03728 and has 25 connected components, where the component with most
+nodes has 3526 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 133.76, and
+the node degree mode is 2. The top 5 most central nodes are 684949.ATTJ01000001_gene484
+(degree 1220), 684949.ATTJ01000001_gene2038 (degree 1100), 684949.ATTJ01000001_gene813
+(degree 1001), 684949.ATTJ01000001_gene3000 (degree 988) and 684949.ATTJ01000001_gene1071
+(degree 894).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusSp.2009(
 	
 	Datetime: 2021-02-02 21:30:52.921338
 	
-	The undirected graph Deinococcus sp. 2009 has 3589 nodes and 240036 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03728 and
-	has 25 connected components, where the component with most nodes has 3526 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 133.76, and the node degree mode is 2. The top 5 most central
-	nodes are 684949.ATTJ01000001_gene484 (degree 1220), 684949.ATTJ01000001_gene2038
-	(degree 1100), 684949.ATTJ01000001_gene813 (degree 1001), 684949.ATTJ01000001_gene3000
-	(degree 988) and 684949.ATTJ01000001_gene1071 (degree 894).
+	The undirected graph Deinococcus sp. 2009 has 3589 nodes and 240036 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03728 and has 25 connected components, where the component with most
+	nodes has 3526 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 133.76, and
+	the node degree mode is 2. The top 5 most central nodes are 684949.ATTJ01000001_gene484
+	(degree 1220), 684949.ATTJ01000001_gene2038 (degree 1100), 684949.ATTJ01000001_gene813
+	(degree 1001), 684949.ATTJ01000001_gene3000 (degree 988) and 684949.ATTJ01000001_gene1071
+	(degree 894).
 	
 
 

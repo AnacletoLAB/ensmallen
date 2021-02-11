@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:49:12.746791
 
-The undirected graph Strigamia maritima has 10450 nodes and 1741813 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03190 and
-is connected, as it has a single component. The graph median node degree is 219,
-the mean node degree is 333.36, and the node degree mode is 4. The top 5 most central
-nodes are 126957.SMAR002682-PA (degree 4913), 126957.SMAR005198-PA (degree 4612),
-126957.SMAR004399-PA (degree 4080), 126957.SMAR011666-PA (degree 3922) and 126957.SMAR008447-PA
-(degree 3866).
+The undirected graph Strigamia maritima has 10450 nodes and 1741813 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03190 and is connected, as it has a single component. The graph median
+node degree is 219, the mean node degree is 333.36, and the node degree
+mode is 4. The top 5 most central nodes are 126957.SMAR002682-PA (degree
+4913), 126957.SMAR005198-PA (degree 4612), 126957.SMAR004399-PA (degree
+4080), 126957.SMAR011666-PA (degree 3922) and 126957.SMAR008447-PA (degree
+3866).
 
 
 References
@@ -106,13 +107,14 @@ def StrigamiaMaritima(
 	
 	Datetime: 2021-02-02 19:49:12.746791
 	
-	The undirected graph Strigamia maritima has 10450 nodes and 1741813 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03190 and
-	is connected, as it has a single component. The graph median node degree is 219,
-	the mean node degree is 333.36, and the node degree mode is 4. The top 5 most central
-	nodes are 126957.SMAR002682-PA (degree 4913), 126957.SMAR005198-PA (degree 4612),
-	126957.SMAR004399-PA (degree 4080), 126957.SMAR011666-PA (degree 3922) and 126957.SMAR008447-PA
-	(degree 3866).
+	The undirected graph Strigamia maritima has 10450 nodes and 1741813 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03190 and is connected, as it has a single component. The graph median
+	node degree is 219, the mean node degree is 333.36, and the node degree
+	mode is 4. The top 5 most central nodes are 126957.SMAR002682-PA (degree
+	4913), 126957.SMAR005198-PA (degree 4612), 126957.SMAR004399-PA (degree
+	4080), 126957.SMAR011666-PA (degree 3922) and 126957.SMAR008447-PA (degree
+	3866).
 	
 
 

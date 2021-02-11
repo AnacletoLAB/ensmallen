@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:33.641108
 
-The undirected graph Halobonum tyrrellensis has 3378 nodes and 236358 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04144 and
-has 21 connected components, where the component with most nodes has 3331 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 139.94, and the node degree mode is 3. The top 5 most central
-nodes are 1324957.K933_07443 (degree 822), 1324957.K933_05258 (degree 776), 1324957.K933_07142
-(degree 688), 1324957.K933_03270 (degree 668) and 1324957.K933_04486 (degree 661).
+The undirected graph Halobonum tyrrellensis has 3378 nodes and 236358 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04144 and has 21 connected components, where the component with most
+nodes has 3331 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 139.94, and
+the node degree mode is 3. The top 5 most central nodes are 1324957.K933_07443
+(degree 822), 1324957.K933_05258 (degree 776), 1324957.K933_07142 (degree
+688), 1324957.K933_03270 (degree 668) and 1324957.K933_04486 (degree 661).
 
 
 References
@@ -106,13 +107,14 @@ def HalobonumTyrrellensis(
 	
 	Datetime: 2021-02-03 21:54:33.641108
 	
-	The undirected graph Halobonum tyrrellensis has 3378 nodes and 236358 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04144 and
-	has 21 connected components, where the component with most nodes has 3331 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 139.94, and the node degree mode is 3. The top 5 most central
-	nodes are 1324957.K933_07443 (degree 822), 1324957.K933_05258 (degree 776), 1324957.K933_07142
-	(degree 688), 1324957.K933_03270 (degree 668) and 1324957.K933_04486 (degree 661).
+	The undirected graph Halobonum tyrrellensis has 3378 nodes and 236358 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04144 and has 21 connected components, where the component with most
+	nodes has 3331 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 139.94, and
+	the node degree mode is 3. The top 5 most central nodes are 1324957.K933_07443
+	(degree 822), 1324957.K933_05258 (degree 776), 1324957.K933_07142 (degree
+	688), 1324957.K933_03270 (degree 668) and 1324957.K933_04486 (degree 661).
 	
 
 

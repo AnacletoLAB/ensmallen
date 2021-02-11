@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:24.659810
 
-The undirected graph Silicibacter lacuscaerulensis has 3577 nodes and 369325 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-and has 9 connected components, where the component with most nodes has 3559 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 165, the mean node degree is 206.50, and the node degree mode is 2. The top 5
-most central nodes are 644107.SL1157_1215 (degree 1461), 644107.SL1157_0293 (degree
-1364), 644107.SL1157_2909 (degree 1162), 644107.SL1157_1128 (degree 1098) and 644107.SL1157_1033
-(degree 1086).
+The undirected graph Silicibacter lacuscaerulensis has 3577 nodes and 369325
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05775 and has 9 connected components, where the component
+with most nodes has 3559 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 165, the mean node degree is 206.50,
+and the node degree mode is 2. The top 5 most central nodes are 644107.SL1157_1215
+(degree 1461), 644107.SL1157_0293 (degree 1364), 644107.SL1157_2909 (degree
+1162), 644107.SL1157_1128 (degree 1098) and 644107.SL1157_1033 (degree
+1086).
 
 
 References
@@ -107,14 +108,15 @@ def SilicibacterLacuscaerulensis(
 	
 	Datetime: 2021-02-02 21:24:24.659810
 	
-	The undirected graph Silicibacter lacuscaerulensis has 3577 nodes and 369325 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05775
-	and has 9 connected components, where the component with most nodes has 3559 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 165, the mean node degree is 206.50, and the node degree mode is 2. The top 5
-	most central nodes are 644107.SL1157_1215 (degree 1461), 644107.SL1157_0293 (degree
-	1364), 644107.SL1157_2909 (degree 1162), 644107.SL1157_1128 (degree 1098) and 644107.SL1157_1033
-	(degree 1086).
+	The undirected graph Silicibacter lacuscaerulensis has 3577 nodes and 369325
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05775 and has 9 connected components, where the component
+	with most nodes has 3559 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 165, the mean node degree is 206.50,
+	and the node degree mode is 2. The top 5 most central nodes are 644107.SL1157_1215
+	(degree 1461), 644107.SL1157_0293 (degree 1364), 644107.SL1157_2909 (degree
+	1162), 644107.SL1157_1128 (degree 1098) and 644107.SL1157_1033 (degree
+	1086).
 	
 
 

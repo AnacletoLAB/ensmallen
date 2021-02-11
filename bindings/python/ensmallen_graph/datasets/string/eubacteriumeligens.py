@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:00.526951
 
-The undirected graph Eubacterium eligens has 2660 nodes and 183500 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05189 and
-has 4 connected components, where the component with most nodes has 2650 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 137.97, and the node degree mode is 12. The top 5 most central
-nodes are 515620.EUBELI_01072 (degree 1040), 515620.EUBELI_00522 (degree 838), 515620.EUBELI_01806
-(degree 790), 515620.EUBELI_02012 (degree 652) and 515620.EUBELI_01390 (degree 628).
+The undirected graph Eubacterium eligens has 2660 nodes and 183500 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05189 and has 4 connected components, where the component with most
+nodes has 2650 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 137.97, and
+the node degree mode is 12. The top 5 most central nodes are 515620.EUBELI_01072
+(degree 1040), 515620.EUBELI_00522 (degree 838), 515620.EUBELI_01806 (degree
+790), 515620.EUBELI_02012 (degree 652) and 515620.EUBELI_01390 (degree
+628).
 
 
 References
@@ -106,13 +108,15 @@ def EubacteriumEligens(
 	
 	Datetime: 2021-02-02 21:03:00.526951
 	
-	The undirected graph Eubacterium eligens has 2660 nodes and 183500 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05189 and
-	has 4 connected components, where the component with most nodes has 2650 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 137.97, and the node degree mode is 12. The top 5 most central
-	nodes are 515620.EUBELI_01072 (degree 1040), 515620.EUBELI_00522 (degree 838), 515620.EUBELI_01806
-	(degree 790), 515620.EUBELI_02012 (degree 652) and 515620.EUBELI_01390 (degree 628).
+	The undirected graph Eubacterium eligens has 2660 nodes and 183500 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05189 and has 4 connected components, where the component with most
+	nodes has 2650 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 137.97, and
+	the node degree mode is 12. The top 5 most central nodes are 515620.EUBELI_01072
+	(degree 1040), 515620.EUBELI_00522 (degree 838), 515620.EUBELI_01806 (degree
+	790), 515620.EUBELI_02012 (degree 652) and 515620.EUBELI_01390 (degree
+	628).
 	
 
 

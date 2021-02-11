@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:32:34.602572
 
-The undirected graph Sulfitobacter sp. H3 has 4652 nodes and 479906 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04436 and
-has 9 connected components, where the component with most nodes has 4631 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 206.32, and the node degree mode is 6. The top 5 most central
-nodes are 1402135.SUH3_10475 (degree 1719), 1402135.SUH3_03680 (degree 1510), 1402135.SUH3_10530
-(degree 1472), 1402135.SUH3_21490 (degree 1436) and 1402135.SUH3_00255 (degree 1311).
+The undirected graph Sulfitobacter sp. H3 has 4652 nodes and 479906 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04436 and has 9 connected components, where the component with most
+nodes has 4631 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 206.32, and
+the node degree mode is 6. The top 5 most central nodes are 1402135.SUH3_10475
+(degree 1719), 1402135.SUH3_03680 (degree 1510), 1402135.SUH3_10530 (degree
+1472), 1402135.SUH3_21490 (degree 1436) and 1402135.SUH3_00255 (degree
+1311).
 
 
 References
@@ -106,13 +108,15 @@ def SulfitobacterSp.H3(
 	
 	Datetime: 2021-02-03 22:32:34.602572
 	
-	The undirected graph Sulfitobacter sp. H3 has 4652 nodes and 479906 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04436 and
-	has 9 connected components, where the component with most nodes has 4631 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 206.32, and the node degree mode is 6. The top 5 most central
-	nodes are 1402135.SUH3_10475 (degree 1719), 1402135.SUH3_03680 (degree 1510), 1402135.SUH3_10530
-	(degree 1472), 1402135.SUH3_21490 (degree 1436) and 1402135.SUH3_00255 (degree 1311).
+	The undirected graph Sulfitobacter sp. H3 has 4652 nodes and 479906 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04436 and has 9 connected components, where the component with most
+	nodes has 4631 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 206.32, and
+	the node degree mode is 6. The top 5 most central nodes are 1402135.SUH3_10475
+	(degree 1719), 1402135.SUH3_03680 (degree 1510), 1402135.SUH3_10530 (degree
+	1472), 1402135.SUH3_21490 (degree 1436) and 1402135.SUH3_00255 (degree
+	1311).
 	
 
 

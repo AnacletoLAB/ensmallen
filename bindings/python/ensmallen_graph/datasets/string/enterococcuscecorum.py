@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:37.679980
 
-The undirected graph Enterococcus cecorum has 2375 nodes and 185454 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06578 and
-has 4 connected components, where the component with most nodes has 2365 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 156.17, and the node degree mode is 12. The top 5 most central
-nodes are 1121864.OMO_00474 (degree 1034), 1121864.OMO_02193 (degree 986), 1121864.OMO_01733
-(degree 872), 1121864.OMO_00289 (degree 828) and 1121864.OMO_00271 (degree 791).
+The undirected graph Enterococcus cecorum has 2375 nodes and 185454 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06578 and has 4 connected components, where the component with most
+nodes has 2365 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 156.17, and
+the node degree mode is 12. The top 5 most central nodes are 1121864.OMO_00474
+(degree 1034), 1121864.OMO_02193 (degree 986), 1121864.OMO_01733 (degree
+872), 1121864.OMO_00289 (degree 828) and 1121864.OMO_00271 (degree 791).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusCecorum(
 	
 	Datetime: 2021-02-02 22:37:37.679980
 	
-	The undirected graph Enterococcus cecorum has 2375 nodes and 185454 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06578 and
-	has 4 connected components, where the component with most nodes has 2365 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 156.17, and the node degree mode is 12. The top 5 most central
-	nodes are 1121864.OMO_00474 (degree 1034), 1121864.OMO_02193 (degree 986), 1121864.OMO_01733
-	(degree 872), 1121864.OMO_00289 (degree 828) and 1121864.OMO_00271 (degree 791).
+	The undirected graph Enterococcus cecorum has 2375 nodes and 185454 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06578 and has 4 connected components, where the component with most
+	nodes has 2365 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 156.17, and
+	the node degree mode is 12. The top 5 most central nodes are 1121864.OMO_00474
+	(degree 1034), 1121864.OMO_02193 (degree 986), 1121864.OMO_01733 (degree
+	872), 1121864.OMO_00289 (degree 828) and 1121864.OMO_00271 (degree 791).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:14:04.956727
 
-The undirected graph Mesorhizobium sp. WSM3224 has 6276 nodes and 922961 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04687
-and has 30 connected components, where the component with most nodes has 6202 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 294.12, and the node degree mode is 1. The top 5
-most central nodes are 1040986.ATYO01000002_gene4320 (degree 2400), 1040986.ATYO01000017_gene855
-(degree 2121), 1040986.ATYO01000002_gene4298 (degree 2096), 1040986.ATYO01000001_gene1683
-(degree 2062) and 1040986.ATYO01000002_gene4104 (degree 1966).
+The undirected graph Mesorhizobium sp. WSM3224 has 6276 nodes and 922961
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04687 and has 30 connected components, where the component
+with most nodes has 6202 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 294.12,
+and the node degree mode is 1. The top 5 most central nodes are 1040986.ATYO01000002_gene4320
+(degree 2400), 1040986.ATYO01000017_gene855 (degree 2121), 1040986.ATYO01000002_gene4298
+(degree 2096), 1040986.ATYO01000001_gene1683 (degree 2062) and 1040986.ATYO01000002_gene4104
+(degree 1966).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumSp.Wsm3224(
 	
 	Datetime: 2021-02-02 22:14:04.956727
 	
-	The undirected graph Mesorhizobium sp. WSM3224 has 6276 nodes and 922961 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04687
-	and has 30 connected components, where the component with most nodes has 6202 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 294.12, and the node degree mode is 1. The top 5
-	most central nodes are 1040986.ATYO01000002_gene4320 (degree 2400), 1040986.ATYO01000017_gene855
-	(degree 2121), 1040986.ATYO01000002_gene4298 (degree 2096), 1040986.ATYO01000001_gene1683
-	(degree 2062) and 1040986.ATYO01000002_gene4104 (degree 1966).
+	The undirected graph Mesorhizobium sp. WSM3224 has 6276 nodes and 922961
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04687 and has 30 connected components, where the component
+	with most nodes has 6202 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 294.12,
+	and the node degree mode is 1. The top 5 most central nodes are 1040986.ATYO01000002_gene4320
+	(degree 2400), 1040986.ATYO01000017_gene855 (degree 2121), 1040986.ATYO01000002_gene4298
+	(degree 2096), 1040986.ATYO01000001_gene1683 (degree 2062) and 1040986.ATYO01000002_gene4104
+	(degree 1966).
 	
 
 

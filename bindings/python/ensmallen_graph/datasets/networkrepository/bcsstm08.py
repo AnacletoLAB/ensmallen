@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:06:28.468104
 
-The undirected graph bcsstm08 has 1074 nodes, of which 1074 are singletons (all have
-self-loops), and 1074 weighted edges, of which 1074 are self-loops. The graph is
-quite sparse as it has a density of 0.00093 and has 1074 connected components, where
-the component with most nodes has a single node and the component with the least
-nodes has a single node. The graph median node degree is 1, the mean node degree
-is 1.00, and the node degree mode is 1. The top 5 most central nodes are 1074 (degree
-1), 1073 (degree 1), 1072 (degree 1), 1071 (degree 1) and 1070 (degree 1).
+The undirected graph bcsstm08 has 1074 nodes, of which 1074 are singletons
+(all have self-loops), and 1074 weighted edges, of which 1074 are self-loops.
+The graph is quite sparse as it has a density of 0.00093 and has 1074 connected
+components, where the component with most nodes has a single node and the
+component with the least nodes has a single node. The graph median node
+degree is 1, the mean node degree is 1.00, and the node degree mode is
+1. The top 5 most central nodes are 1074 (degree 1), 1073 (degree 1), 1072
+(degree 1), 1071 (degree 1) and 1070 (degree 1).
 
 
 References
@@ -103,13 +104,14 @@ def Bcsstm08(
 	
 	Datetime: 2021-02-06 08:06:28.468104
 	
-	The undirected graph bcsstm08 has 1074 nodes, of which 1074 are singletons (all have
-	self-loops), and 1074 weighted edges, of which 1074 are self-loops. The graph is
-	quite sparse as it has a density of 0.00093 and has 1074 connected components, where
-	the component with most nodes has a single node and the component with the least
-	nodes has a single node. The graph median node degree is 1, the mean node degree
-	is 1.00, and the node degree mode is 1. The top 5 most central nodes are 1074 (degree
-	1), 1073 (degree 1), 1072 (degree 1), 1071 (degree 1) and 1070 (degree 1).
+	The undirected graph bcsstm08 has 1074 nodes, of which 1074 are singletons
+	(all have self-loops), and 1074 weighted edges, of which 1074 are self-loops.
+	The graph is quite sparse as it has a density of 0.00093 and has 1074 connected
+	components, where the component with most nodes has a single node and the
+	component with the least nodes has a single node. The graph median node
+	degree is 1, the mean node degree is 1.00, and the node degree mode is
+	1. The top 5 most central nodes are 1074 (degree 1), 1073 (degree 1), 1072
+	(degree 1), 1071 (degree 1) and 1070 (degree 1).
 	
 
 

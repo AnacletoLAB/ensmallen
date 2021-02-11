@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:34.068434
 
-The undirected graph Hippea maritima has 1670 nodes and 125347 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08994 and
-is connected, as it has a single component. The graph median node degree is 129,
-the mean node degree is 150.12, and the node degree mode is 2. The top 5 most central
-nodes are 760142.Hipma_1228 (degree 836), 760142.Hipma_0104 (degree 747), 760142.Hipma_0022
-(degree 661), 760142.Hipma_0043 (degree 610) and 760142.Hipma_0300 (degree 587).
+The undirected graph Hippea maritima has 1670 nodes and 125347 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08994 and is connected, as it has a single component. The graph median
+node degree is 129, the mean node degree is 150.12, and the node degree
+mode is 2. The top 5 most central nodes are 760142.Hipma_1228 (degree 836),
+760142.Hipma_0104 (degree 747), 760142.Hipma_0022 (degree 661), 760142.Hipma_0043
+(degree 610) and 760142.Hipma_0300 (degree 587).
 
 
 References
@@ -105,12 +106,13 @@ def HippeaMaritima(
 	
 	Datetime: 2021-02-02 21:41:34.068434
 	
-	The undirected graph Hippea maritima has 1670 nodes and 125347 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08994 and
-	is connected, as it has a single component. The graph median node degree is 129,
-	the mean node degree is 150.12, and the node degree mode is 2. The top 5 most central
-	nodes are 760142.Hipma_1228 (degree 836), 760142.Hipma_0104 (degree 747), 760142.Hipma_0022
-	(degree 661), 760142.Hipma_0043 (degree 610) and 760142.Hipma_0300 (degree 587).
+	The undirected graph Hippea maritima has 1670 nodes and 125347 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08994 and is connected, as it has a single component. The graph median
+	node degree is 129, the mean node degree is 150.12, and the node degree
+	mode is 2. The top 5 most central nodes are 760142.Hipma_1228 (degree 836),
+	760142.Hipma_0104 (degree 747), 760142.Hipma_0022 (degree 661), 760142.Hipma_0043
+	(degree 610) and 760142.Hipma_0300 (degree 587).
 	
 
 

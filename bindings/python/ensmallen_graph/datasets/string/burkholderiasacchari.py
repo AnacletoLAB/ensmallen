@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:09.003717
 
-The undirected graph Burkholderia sacchari has 5622 nodes and 778143 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04925 and
-has 34 connected components, where the component with most nodes has 5549 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 276.82, and the node degree mode is 1. The top 5 most central
-nodes are 159450.NH14_22140 (degree 2217), 159450.NH14_26465 (degree 1994), 159450.NH14_22710
-(degree 1942), 159450.NH14_20780 (degree 1747) and 159450.NH14_04750 (degree 1714).
+The undirected graph Burkholderia sacchari has 5622 nodes and 778143 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04925 and has 34 connected components, where the component with most
+nodes has 5549 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 276.82, and
+the node degree mode is 1. The top 5 most central nodes are 159450.NH14_22140
+(degree 2217), 159450.NH14_26465 (degree 1994), 159450.NH14_22710 (degree
+1942), 159450.NH14_20780 (degree 1747) and 159450.NH14_04750 (degree 1714).
 
 
 References
@@ -106,13 +107,14 @@ def BurkholderiaSacchari(
 	
 	Datetime: 2021-02-02 19:53:09.003717
 	
-	The undirected graph Burkholderia sacchari has 5622 nodes and 778143 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04925 and
-	has 34 connected components, where the component with most nodes has 5549 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 276.82, and the node degree mode is 1. The top 5 most central
-	nodes are 159450.NH14_22140 (degree 2217), 159450.NH14_26465 (degree 1994), 159450.NH14_22710
-	(degree 1942), 159450.NH14_20780 (degree 1747) and 159450.NH14_04750 (degree 1714).
+	The undirected graph Burkholderia sacchari has 5622 nodes and 778143 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04925 and has 34 connected components, where the component with most
+	nodes has 5549 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 276.82, and
+	the node degree mode is 1. The top 5 most central nodes are 159450.NH14_22140
+	(degree 2217), 159450.NH14_26465 (degree 1994), 159450.NH14_22710 (degree
+	1942), 159450.NH14_20780 (degree 1747) and 159450.NH14_04750 (degree 1714).
 	
 
 

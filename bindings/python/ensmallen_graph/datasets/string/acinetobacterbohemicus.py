@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:21:38.033024
 
-The undirected graph Acinetobacter bohemicus has 3290 nodes and 276861 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05117 and
-has 16 connected components, where the component with most nodes has 3256 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 168.30, and the node degree mode is 1. The top 5 most central
-nodes are 1217715.F994_03082 (degree 1168), 1217715.F994_00498 (degree 1112), 1217715.F994_00089
-(degree 984), 1217715.F994_00960 (degree 955) and 1217715.F994_01630 (degree 949).
+The undirected graph Acinetobacter bohemicus has 3290 nodes and 276861
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05117 and has 16 connected components, where the component
+with most nodes has 3256 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 168.30,
+and the node degree mode is 1. The top 5 most central nodes are 1217715.F994_03082
+(degree 1168), 1217715.F994_00498 (degree 1112), 1217715.F994_00089 (degree
+984), 1217715.F994_00960 (degree 955) and 1217715.F994_01630 (degree 949).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterBohemicus(
 	
 	Datetime: 2021-02-02 23:21:38.033024
 	
-	The undirected graph Acinetobacter bohemicus has 3290 nodes and 276861 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05117 and
-	has 16 connected components, where the component with most nodes has 3256 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 168.30, and the node degree mode is 1. The top 5 most central
-	nodes are 1217715.F994_03082 (degree 1168), 1217715.F994_00498 (degree 1112), 1217715.F994_00089
-	(degree 984), 1217715.F994_00960 (degree 955) and 1217715.F994_01630 (degree 949).
+	The undirected graph Acinetobacter bohemicus has 3290 nodes and 276861
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05117 and has 16 connected components, where the component
+	with most nodes has 3256 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 168.30,
+	and the node degree mode is 1. The top 5 most central nodes are 1217715.F994_03082
+	(degree 1168), 1217715.F994_00498 (degree 1112), 1217715.F994_00089 (degree
+	984), 1217715.F994_00960 (degree 955) and 1217715.F994_01630 (degree 949).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:04.491721
 
-The undirected graph Podospora anserina has 7366 nodes and 546882 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02016 and
-has 28 connected components, where the component with most nodes has 7307 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 148.49, and the node degree mode is 1. The top 5 most central
-nodes are 5145.XP_001908459.1 (degree 1776), 5145.XP_001909301.1 (degree 1337), 5145.XP_001903494.1
-(degree 1139), 5145.XP_001911127.1 (degree 1127) and 5145.XP_001912461.1 (degree
+The undirected graph Podospora anserina has 7366 nodes and 546882 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02016 and has 28 connected components, where the component with most
+nodes has 7307 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 148.49, and
+the node degree mode is 1. The top 5 most central nodes are 5145.XP_001908459.1
+(degree 1776), 5145.XP_001909301.1 (degree 1337), 5145.XP_001903494.1 (degree
+1139), 5145.XP_001911127.1 (degree 1127) and 5145.XP_001912461.1 (degree
 1123).
 
 
@@ -107,13 +108,14 @@ def PodosporaAnserina(
 	
 	Datetime: 2021-02-02 17:13:04.491721
 	
-	The undirected graph Podospora anserina has 7366 nodes and 546882 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02016 and
-	has 28 connected components, where the component with most nodes has 7307 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 148.49, and the node degree mode is 1. The top 5 most central
-	nodes are 5145.XP_001908459.1 (degree 1776), 5145.XP_001909301.1 (degree 1337), 5145.XP_001903494.1
-	(degree 1139), 5145.XP_001911127.1 (degree 1127) and 5145.XP_001912461.1 (degree
+	The undirected graph Podospora anserina has 7366 nodes and 546882 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02016 and has 28 connected components, where the component with most
+	nodes has 7307 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 148.49, and
+	the node degree mode is 1. The top 5 most central nodes are 5145.XP_001908459.1
+	(degree 1776), 5145.XP_001909301.1 (degree 1337), 5145.XP_001903494.1 (degree
+	1139), 5145.XP_001911127.1 (degree 1127) and 5145.XP_001912461.1 (degree
 	1123).
 	
 

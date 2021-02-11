@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:10.784591
 
-The undirected graph Lentzea albidocapillata has 7980 nodes and 1372567 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04311
-and has 24 connected components, where the component with most nodes has 7922 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 291, the mean node degree is 344.00, and the node degree mode is 3. The top 5
-most central nodes are 40571.JOEA01000009_gene3319 (degree 2727), 40571.JOEA01000014_gene1925
-(degree 2647), 40571.JOEA01000004_gene6433 (degree 2459), 40571.JOEA01000008_gene2608
-(degree 2366) and 40571.JOEA01000024_gene7488 (degree 2248).
+The undirected graph Lentzea albidocapillata has 7980 nodes and 1372567
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04311 and has 24 connected components, where the component
+with most nodes has 7922 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 291, the mean node degree is 344.00,
+and the node degree mode is 3. The top 5 most central nodes are 40571.JOEA01000009_gene3319
+(degree 2727), 40571.JOEA01000014_gene1925 (degree 2647), 40571.JOEA01000004_gene6433
+(degree 2459), 40571.JOEA01000008_gene2608 (degree 2366) and 40571.JOEA01000024_gene7488
+(degree 2248).
 
 
 References
@@ -107,14 +108,15 @@ def LentzeaAlbidocapillata(
 	
 	Datetime: 2021-02-02 18:12:10.784591
 	
-	The undirected graph Lentzea albidocapillata has 7980 nodes and 1372567 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04311
-	and has 24 connected components, where the component with most nodes has 7922 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 291, the mean node degree is 344.00, and the node degree mode is 3. The top 5
-	most central nodes are 40571.JOEA01000009_gene3319 (degree 2727), 40571.JOEA01000014_gene1925
-	(degree 2647), 40571.JOEA01000004_gene6433 (degree 2459), 40571.JOEA01000008_gene2608
-	(degree 2366) and 40571.JOEA01000024_gene7488 (degree 2248).
+	The undirected graph Lentzea albidocapillata has 7980 nodes and 1372567
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04311 and has 24 connected components, where the component
+	with most nodes has 7922 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 291, the mean node degree is 344.00,
+	and the node degree mode is 3. The top 5 most central nodes are 40571.JOEA01000009_gene3319
+	(degree 2727), 40571.JOEA01000014_gene1925 (degree 2647), 40571.JOEA01000004_gene6433
+	(degree 2459), 40571.JOEA01000008_gene2608 (degree 2366) and 40571.JOEA01000024_gene7488
+	(degree 2248).
 	
 
 

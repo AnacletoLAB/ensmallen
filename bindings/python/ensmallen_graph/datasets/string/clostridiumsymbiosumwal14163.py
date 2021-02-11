@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:36.736946
 
-The undirected graph Clostridium symbiosum WAL14163 has 4663 nodes and 391682 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03604
-and has 15 connected components, where the component with most nodes has 4624 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 168.00, and the node degree mode is 1. The top 5
-most central nodes are 742740.HMPREF9474_01366 (degree 1647), 742740.HMPREF9474_04607
-(degree 1398), 742740.HMPREF9474_04596 (degree 1322), 742740.HMPREF9474_01009 (degree
+The undirected graph Clostridium symbiosum WAL14163 has 4663 nodes and
+391682 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03604 and has 15 connected components, where the
+component with most nodes has 4624 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 168.00, and the node degree mode is 1. The top 5 most central nodes
+are 742740.HMPREF9474_01366 (degree 1647), 742740.HMPREF9474_04607 (degree
+1398), 742740.HMPREF9474_04596 (degree 1322), 742740.HMPREF9474_01009 (degree
 1298) and 742740.HMPREF9474_01937 (degree 1279).
 
 
@@ -107,13 +108,14 @@ def ClostridiumSymbiosumWal14163(
 	
 	Datetime: 2021-02-02 21:37:36.736946
 	
-	The undirected graph Clostridium symbiosum WAL14163 has 4663 nodes and 391682 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03604
-	and has 15 connected components, where the component with most nodes has 4624 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 168.00, and the node degree mode is 1. The top 5
-	most central nodes are 742740.HMPREF9474_01366 (degree 1647), 742740.HMPREF9474_04607
-	(degree 1398), 742740.HMPREF9474_04596 (degree 1322), 742740.HMPREF9474_01009 (degree
+	The undirected graph Clostridium symbiosum WAL14163 has 4663 nodes and
+	391682 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03604 and has 15 connected components, where the
+	component with most nodes has 4624 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 168.00, and the node degree mode is 1. The top 5 most central nodes
+	are 742740.HMPREF9474_01366 (degree 1647), 742740.HMPREF9474_04607 (degree
+	1398), 742740.HMPREF9474_04596 (degree 1322), 742740.HMPREF9474_01009 (degree
 	1298) and 742740.HMPREF9474_01937 (degree 1279).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:13:50.738080
 
-The undirected graph Actinomyces urogenitalis S6C4 has 1909 nodes and 191254 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10502 and has 3 connected components, where the component with most nodes has
-1902 nodes and the component with the least nodes has 3 nodes. The graph median node
-degree is 184, the mean node degree is 200.37, and the node degree mode is 2. The
-top 5 most central nodes are 1284679.HMPREF1626_02905 (degree 922), 1284679.HMPREF1626_03955
-(degree 839), 1284679.HMPREF1626_00055 (degree 838), 1284679.HMPREF1626_05535 (degree
+The undirected graph Actinomyces urogenitalis S6C4 has 1909 nodes and 191254
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10502 and has 3 connected components, where the
+component with most nodes has 1902 nodes and the component with the least
+nodes has 3 nodes. The graph median node degree is 184, the mean node degree
+is 200.37, and the node degree mode is 2. The top 5 most central nodes
+are 1284679.HMPREF1626_02905 (degree 922), 1284679.HMPREF1626_03955 (degree
+839), 1284679.HMPREF1626_00055 (degree 838), 1284679.HMPREF1626_05535 (degree
 812) and 1284679.HMPREF1626_00280 (degree 774).
 
 
@@ -107,13 +108,14 @@ def ActinomycesUrogenitalisS6c4(
 	
 	Datetime: 2021-02-03 21:13:50.738080
 	
-	The undirected graph Actinomyces urogenitalis S6C4 has 1909 nodes and 191254 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10502 and has 3 connected components, where the component with most nodes has
-	1902 nodes and the component with the least nodes has 3 nodes. The graph median node
-	degree is 184, the mean node degree is 200.37, and the node degree mode is 2. The
-	top 5 most central nodes are 1284679.HMPREF1626_02905 (degree 922), 1284679.HMPREF1626_03955
-	(degree 839), 1284679.HMPREF1626_00055 (degree 838), 1284679.HMPREF1626_05535 (degree
+	The undirected graph Actinomyces urogenitalis S6C4 has 1909 nodes and 191254
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10502 and has 3 connected components, where the
+	component with most nodes has 1902 nodes and the component with the least
+	nodes has 3 nodes. The graph median node degree is 184, the mean node degree
+	is 200.37, and the node degree mode is 2. The top 5 most central nodes
+	are 1284679.HMPREF1626_02905 (degree 922), 1284679.HMPREF1626_03955 (degree
+	839), 1284679.HMPREF1626_00055 (degree 838), 1284679.HMPREF1626_05535 (degree
 	812) and 1284679.HMPREF1626_00280 (degree 774).
 	
 

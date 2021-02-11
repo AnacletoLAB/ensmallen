@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:43:55.084479
 
-The undirected graph Saccharothrix syringae has 8993 nodes and 1964731 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-has 26 connected components, where the component with most nodes has 8928 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 406,
-the mean node degree is 436.95, and the node degree mode is 2. The top 5 most central
-nodes are 103733.JNYO01000042_gene6121 (degree 2912), 103733.JNYO01000039_gene4422
-(degree 2904), 103733.JNYO01000020_gene1910 (degree 2896), 103733.JNYO01000013_gene4225
-(degree 2568) and 103733.JNYO01000012_gene2782 (degree 2546).
+The undirected graph Saccharothrix syringae has 8993 nodes and 1964731
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04859 and has 26 connected components, where the component
+with most nodes has 8928 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 406, the mean node degree is 436.95,
+and the node degree mode is 2. The top 5 most central nodes are 103733.JNYO01000042_gene6121
+(degree 2912), 103733.JNYO01000039_gene4422 (degree 2904), 103733.JNYO01000020_gene1910
+(degree 2896), 103733.JNYO01000013_gene4225 (degree 2568) and 103733.JNYO01000012_gene2782
+(degree 2546).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharothrixSyringae(
 	
 	Datetime: 2021-02-02 19:43:55.084479
 	
-	The undirected graph Saccharothrix syringae has 8993 nodes and 1964731 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04859 and
-	has 26 connected components, where the component with most nodes has 8928 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 406,
-	the mean node degree is 436.95, and the node degree mode is 2. The top 5 most central
-	nodes are 103733.JNYO01000042_gene6121 (degree 2912), 103733.JNYO01000039_gene4422
-	(degree 2904), 103733.JNYO01000020_gene1910 (degree 2896), 103733.JNYO01000013_gene4225
-	(degree 2568) and 103733.JNYO01000012_gene2782 (degree 2546).
+	The undirected graph Saccharothrix syringae has 8993 nodes and 1964731
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04859 and has 26 connected components, where the component
+	with most nodes has 8928 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 406, the mean node degree is 436.95,
+	and the node degree mode is 2. The top 5 most central nodes are 103733.JNYO01000042_gene6121
+	(degree 2912), 103733.JNYO01000039_gene4422 (degree 2904), 103733.JNYO01000020_gene1910
+	(degree 2896), 103733.JNYO01000013_gene4225 (degree 2568) and 103733.JNYO01000012_gene2782
+	(degree 2546).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:48.088337
 
-The undirected graph Methanosarcina barkeri has 3416 nodes and 542362 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09298 and
-has 42 connected components, where the component with most nodes has 3308 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 327,
-the mean node degree is 317.54, and the node degree mode is 1. The top 5 most central
-nodes are 269797.Mbar_A3433 (degree 1210), 269797.Mbar_A0266 (degree 1068), 269797.Mbar_A0934
-(degree 987), 269797.Mbar_A3564 (degree 982) and 269797.Mbar_A1039 (degree 980).
+The undirected graph Methanosarcina barkeri has 3416 nodes and 542362 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09298 and has 42 connected components, where the component with most
+nodes has 3308 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 327, the mean node degree is 317.54, and
+the node degree mode is 1. The top 5 most central nodes are 269797.Mbar_A3433
+(degree 1210), 269797.Mbar_A0266 (degree 1068), 269797.Mbar_A0934 (degree
+987), 269797.Mbar_A3564 (degree 982) and 269797.Mbar_A1039 (degree 980).
 
 
 References
@@ -106,13 +107,14 @@ def MethanosarcinaBarkeri(
 	
 	Datetime: 2021-02-02 20:15:48.088337
 	
-	The undirected graph Methanosarcina barkeri has 3416 nodes and 542362 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09298 and
-	has 42 connected components, where the component with most nodes has 3308 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 327,
-	the mean node degree is 317.54, and the node degree mode is 1. The top 5 most central
-	nodes are 269797.Mbar_A3433 (degree 1210), 269797.Mbar_A0266 (degree 1068), 269797.Mbar_A0934
-	(degree 987), 269797.Mbar_A3564 (degree 982) and 269797.Mbar_A1039 (degree 980).
+	The undirected graph Methanosarcina barkeri has 3416 nodes and 542362 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09298 and has 42 connected components, where the component with most
+	nodes has 3308 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 327, the mean node degree is 317.54, and
+	the node degree mode is 1. The top 5 most central nodes are 269797.Mbar_A3433
+	(degree 1210), 269797.Mbar_A0266 (degree 1068), 269797.Mbar_A0934 (degree
+	987), 269797.Mbar_A3564 (degree 982) and 269797.Mbar_A1039 (degree 980).
 	
 
 

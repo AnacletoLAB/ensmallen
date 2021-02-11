@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:27.485651
 
-The undirected graph Shewanella loihica has 3838 nodes and 303275 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-has 13 connected components, where the component with most nodes has 3810 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 158.04, and the node degree mode is 2. The top 5 most central
-nodes are 323850.Shew_3714 (degree 1256), 323850.Shew_3200 (degree 1192), 323850.Shew_3218
-(degree 1114), 323850.Shew_1298 (degree 1038) and 323850.Shew_1573 (degree 985).
+The undirected graph Shewanella loihica has 3838 nodes and 303275 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04119 and has 13 connected components, where the component with most
+nodes has 3810 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 158.04, and
+the node degree mode is 2. The top 5 most central nodes are 323850.Shew_3714
+(degree 1256), 323850.Shew_3200 (degree 1192), 323850.Shew_3218 (degree
+1114), 323850.Shew_1298 (degree 1038) and 323850.Shew_1573 (degree 985).
 
 
 References
@@ -106,13 +107,14 @@ def ShewanellaLoihica(
 	
 	Datetime: 2021-02-02 20:28:27.485651
 	
-	The undirected graph Shewanella loihica has 3838 nodes and 303275 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04119 and
-	has 13 connected components, where the component with most nodes has 3810 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 158.04, and the node degree mode is 2. The top 5 most central
-	nodes are 323850.Shew_3714 (degree 1256), 323850.Shew_3200 (degree 1192), 323850.Shew_3218
-	(degree 1114), 323850.Shew_1298 (degree 1038) and 323850.Shew_1573 (degree 985).
+	The undirected graph Shewanella loihica has 3838 nodes and 303275 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04119 and has 13 connected components, where the component with most
+	nodes has 3810 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 158.04, and
+	the node degree mode is 2. The top 5 most central nodes are 323850.Shew_3714
+	(degree 1256), 323850.Shew_3200 (degree 1192), 323850.Shew_3218 (degree
+	1114), 323850.Shew_1298 (degree 1038) and 323850.Shew_1573 (degree 985).
 	
 
 

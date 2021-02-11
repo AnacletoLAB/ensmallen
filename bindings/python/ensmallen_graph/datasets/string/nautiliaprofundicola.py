@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:46.653434
 
-The undirected graph Nautilia profundicola has 1724 nodes and 129874 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08744 and
-has 3 connected components, where the component with most nodes has 1720 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 150.67, and the node degree mode is 13. The top 5 most central
-nodes are 598659.NAMH_0372 (degree 801), 598659.NAMH_0983 (degree 663), 598659.NAMH_0615
-(degree 622), 598659.NAMH_0699 (degree 619) and 598659.NAMH_0908 (degree 612).
+The undirected graph Nautilia profundicola has 1724 nodes and 129874 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08744 and has 3 connected components, where the component with most
+nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 150.67, and
+the node degree mode is 13. The top 5 most central nodes are 598659.NAMH_0372
+(degree 801), 598659.NAMH_0983 (degree 663), 598659.NAMH_0615 (degree 622),
+598659.NAMH_0699 (degree 619) and 598659.NAMH_0908 (degree 612).
 
 
 References
@@ -106,13 +107,14 @@ def NautiliaProfundicola(
 	
 	Datetime: 2021-02-02 21:19:46.653434
 	
-	The undirected graph Nautilia profundicola has 1724 nodes and 129874 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08744 and
-	has 3 connected components, where the component with most nodes has 1720 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 150.67, and the node degree mode is 13. The top 5 most central
-	nodes are 598659.NAMH_0372 (degree 801), 598659.NAMH_0983 (degree 663), 598659.NAMH_0615
-	(degree 622), 598659.NAMH_0699 (degree 619) and 598659.NAMH_0908 (degree 612).
+	The undirected graph Nautilia profundicola has 1724 nodes and 129874 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08744 and has 3 connected components, where the component with most
+	nodes has 1720 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 150.67, and
+	the node degree mode is 13. The top 5 most central nodes are 598659.NAMH_0372
+	(degree 801), 598659.NAMH_0983 (degree 663), 598659.NAMH_0615 (degree 622),
+	598659.NAMH_0699 (degree 619) and 598659.NAMH_0908 (degree 612).
 	
 
 

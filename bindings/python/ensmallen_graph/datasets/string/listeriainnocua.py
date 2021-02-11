@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:54.430440
 
-The undirected graph Listeria innocua has 3031 nodes and 274509 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05978 and
-has 6 connected components, where the component with most nodes has 3017 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 181.13, and the node degree mode is 37. The top 5 most central
-nodes are 272626.lin1600 (degree 1123), 272626.lin0824 (degree 1064), 272626.lin0251
-(degree 954), 272626.lin1081 (degree 914) and 272626.lin1492 (degree 863).
+The undirected graph Listeria innocua has 3031 nodes and 274509 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05978 and has 6 connected components, where the component with most
+nodes has 3017 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 181.13, and
+the node degree mode is 37. The top 5 most central nodes are 272626.lin1600
+(degree 1123), 272626.lin0824 (degree 1064), 272626.lin0251 (degree 954),
+272626.lin1081 (degree 914) and 272626.lin1492 (degree 863).
 
 
 References
@@ -106,13 +107,14 @@ def ListeriaInnocua(
 	
 	Datetime: 2021-02-02 20:16:54.430440
 	
-	The undirected graph Listeria innocua has 3031 nodes and 274509 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05978 and
-	has 6 connected components, where the component with most nodes has 3017 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 181.13, and the node degree mode is 37. The top 5 most central
-	nodes are 272626.lin1600 (degree 1123), 272626.lin0824 (degree 1064), 272626.lin0251
-	(degree 954), 272626.lin1081 (degree 914) and 272626.lin1492 (degree 863).
+	The undirected graph Listeria innocua has 3031 nodes and 274509 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05978 and has 6 connected components, where the component with most
+	nodes has 3017 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 181.13, and
+	the node degree mode is 37. The top 5 most central nodes are 272626.lin1600
+	(degree 1123), 272626.lin0824 (degree 1064), 272626.lin0251 (degree 954),
+	272626.lin1081 (degree 914) and 272626.lin1492 (degree 863).
 	
 
 

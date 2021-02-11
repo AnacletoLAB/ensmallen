@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:29.879806
 
-The undirected graph Ruminococcus bicirculans has 2551 nodes and 116583 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03584
-and has 11 connected components, where the component with most nodes has 2526 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 67, the mean node degree is 91.40, and the node degree mode is 3. The top 5 most
-central nodes are 1160721.RBI_I02039 (degree 922), 1160721.RBI_I02058 (degree 743),
-1160721.RBI_I01848 (degree 736), 1160721.RBI_I00014 (degree 644) and 1160721.RBI_I01468
-(degree 628).
+The undirected graph Ruminococcus bicirculans has 2551 nodes and 116583
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03584 and has 11 connected components, where the component
+with most nodes has 2526 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 67, the mean node degree is 91.40,
+and the node degree mode is 3. The top 5 most central nodes are 1160721.RBI_I02039
+(degree 922), 1160721.RBI_I02058 (degree 743), 1160721.RBI_I01848 (degree
+736), 1160721.RBI_I00014 (degree 644) and 1160721.RBI_I01468 (degree 628).
 
 
 References
@@ -107,14 +107,14 @@ def RuminococcusBicirculans(
 	
 	Datetime: 2021-02-02 23:04:29.879806
 	
-	The undirected graph Ruminococcus bicirculans has 2551 nodes and 116583 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03584
-	and has 11 connected components, where the component with most nodes has 2526 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 67, the mean node degree is 91.40, and the node degree mode is 3. The top 5 most
-	central nodes are 1160721.RBI_I02039 (degree 922), 1160721.RBI_I02058 (degree 743),
-	1160721.RBI_I01848 (degree 736), 1160721.RBI_I00014 (degree 644) and 1160721.RBI_I01468
-	(degree 628).
+	The undirected graph Ruminococcus bicirculans has 2551 nodes and 116583
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03584 and has 11 connected components, where the component
+	with most nodes has 2526 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 67, the mean node degree is 91.40,
+	and the node degree mode is 3. The top 5 most central nodes are 1160721.RBI_I02039
+	(degree 922), 1160721.RBI_I02058 (degree 743), 1160721.RBI_I01848 (degree
+	736), 1160721.RBI_I00014 (degree 644) and 1160721.RBI_I01468 (degree 628).
 	
 
 

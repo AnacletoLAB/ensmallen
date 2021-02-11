@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:36.615099
 
-The undirected graph Citrobacter sp. S77 has 4570 nodes and 704755 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-has 12 connected components, where the component with most nodes has 4544 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 263,
-the mean node degree is 308.43, and the node degree mode is 1. The top 5 most central
-nodes are 1080067.BAZH01000017_gene585 (degree 2094), 1080067.BAZH01000019_gene2715
-(degree 1992), 1080067.BAZH01000038_gene3707 (degree 1785), 1080067.BAZH01000026_gene3302
-(degree 1598) and 1080067.BAZH01000028_gene1311 (degree 1560).
+The undirected graph Citrobacter sp. S77 has 4570 nodes and 704755 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06750 and has 12 connected components, where the component with most
+nodes has 4544 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 263, the mean node degree is 308.43, and
+the node degree mode is 1. The top 5 most central nodes are 1080067.BAZH01000017_gene585
+(degree 2094), 1080067.BAZH01000019_gene2715 (degree 1992), 1080067.BAZH01000038_gene3707
+(degree 1785), 1080067.BAZH01000026_gene3302 (degree 1598) and 1080067.BAZH01000028_gene1311
+(degree 1560).
 
 
 References
@@ -107,14 +108,15 @@ def CitrobacterSp.S77(
 	
 	Datetime: 2021-02-02 22:20:36.615099
 	
-	The undirected graph Citrobacter sp. S77 has 4570 nodes and 704755 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06750 and
-	has 12 connected components, where the component with most nodes has 4544 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 263,
-	the mean node degree is 308.43, and the node degree mode is 1. The top 5 most central
-	nodes are 1080067.BAZH01000017_gene585 (degree 2094), 1080067.BAZH01000019_gene2715
-	(degree 1992), 1080067.BAZH01000038_gene3707 (degree 1785), 1080067.BAZH01000026_gene3302
-	(degree 1598) and 1080067.BAZH01000028_gene1311 (degree 1560).
+	The undirected graph Citrobacter sp. S77 has 4570 nodes and 704755 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06750 and has 12 connected components, where the component with most
+	nodes has 4544 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 263, the mean node degree is 308.43, and
+	the node degree mode is 1. The top 5 most central nodes are 1080067.BAZH01000017_gene585
+	(degree 2094), 1080067.BAZH01000019_gene2715 (degree 1992), 1080067.BAZH01000038_gene3707
+	(degree 1785), 1080067.BAZH01000026_gene3302 (degree 1598) and 1080067.BAZH01000028_gene1311
+	(degree 1560).
 	
 
 

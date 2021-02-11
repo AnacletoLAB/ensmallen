@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:19.979337
 
-The undirected graph Acholeplasma hippikon has 1358 nodes and 75998 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08248 and
-has 4 connected components, where the component with most nodes has 1349 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 83,
-the mean node degree is 111.93, and the node degree mode is 8. The top 5 most central
-nodes are 1408416.JNJT01000012_gene751 (degree 633), 1408416.JNJT01000010_gene919
-(degree 585), 1408416.JNJT01000012_gene780 (degree 503), 1408416.JNJT01000014_gene311
-(degree 492) and 1408416.JNJT01000017_gene204 (degree 468).
+The undirected graph Acholeplasma hippikon has 1358 nodes and 75998 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08248 and has 4 connected components, where the component with most
+nodes has 1349 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 83, the mean node degree is 111.93, and
+the node degree mode is 8. The top 5 most central nodes are 1408416.JNJT01000012_gene751
+(degree 633), 1408416.JNJT01000010_gene919 (degree 585), 1408416.JNJT01000012_gene780
+(degree 503), 1408416.JNJT01000014_gene311 (degree 492) and 1408416.JNJT01000017_gene204
+(degree 468).
 
 
 References
@@ -107,14 +108,15 @@ def AcholeplasmaHippikon(
 	
 	Datetime: 2021-02-03 22:35:19.979337
 	
-	The undirected graph Acholeplasma hippikon has 1358 nodes and 75998 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08248 and
-	has 4 connected components, where the component with most nodes has 1349 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 83,
-	the mean node degree is 111.93, and the node degree mode is 8. The top 5 most central
-	nodes are 1408416.JNJT01000012_gene751 (degree 633), 1408416.JNJT01000010_gene919
-	(degree 585), 1408416.JNJT01000012_gene780 (degree 503), 1408416.JNJT01000014_gene311
-	(degree 492) and 1408416.JNJT01000017_gene204 (degree 468).
+	The undirected graph Acholeplasma hippikon has 1358 nodes and 75998 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08248 and has 4 connected components, where the component with most
+	nodes has 1349 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 83, the mean node degree is 111.93, and
+	the node degree mode is 8. The top 5 most central nodes are 1408416.JNJT01000012_gene751
+	(degree 633), 1408416.JNJT01000010_gene919 (degree 585), 1408416.JNJT01000012_gene780
+	(degree 503), 1408416.JNJT01000014_gene311 (degree 492) and 1408416.JNJT01000017_gene204
+	(degree 468).
 	
 
 

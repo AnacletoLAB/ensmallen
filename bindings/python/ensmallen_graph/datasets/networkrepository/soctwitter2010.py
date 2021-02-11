@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-04 11:19:24.013907
 
-The undirected graph soc-twitter-2010 has 21297772 nodes and 265025809 weighted edges,
-of which 264 are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 3, the mean node degree is 24.89, and the node degree mode is 1. The top 5 most
-central nodes are 10119001 (degree 698112), 11977289 (degree 442427), 11977292 (degree
-418083), 11977350 (degree 384210) and 11980205 (degree 358469).
+The undirected graph soc-twitter-2010 has 21297772 nodes and 265025809
+weighted edges, of which 264 are self-loops. The graph is extremely sparse
+as it has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 24.89, and the
+node degree mode is 1. The top 5 most central nodes are 10119001 (degree
+698112), 11977289 (degree 442427), 11977292 (degree 418083), 11977350 (degree
+384210) and 11980205 (degree 358469).
 
 
 References
@@ -112,12 +113,13 @@ def SocTwitter2010(
 	
 	Datetime: 2021-02-04 11:19:24.013907
 	
-	The undirected graph soc-twitter-2010 has 21297772 nodes and 265025809 weighted edges,
-	of which 264 are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 3, the mean node degree is 24.89, and the node degree mode is 1. The top 5 most
-	central nodes are 10119001 (degree 698112), 11977289 (degree 442427), 11977292 (degree
-	418083), 11977350 (degree 384210) and 11980205 (degree 358469).
+	The undirected graph soc-twitter-2010 has 21297772 nodes and 265025809
+	weighted edges, of which 264 are self-loops. The graph is extremely sparse
+	as it has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 24.89, and the
+	node degree mode is 1. The top 5 most central nodes are 10119001 (degree
+	698112), 11977289 (degree 442427), 11977292 (degree 418083), 11977350 (degree
+	384210) and 11980205 (degree 358469).
 	
 
 

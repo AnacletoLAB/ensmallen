@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:41.059496
 
-The undirected graph Nocardia cyriacigeorgica has 5409 nodes and 925508 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06328
-and has 10 connected components, where the component with most nodes has 5388 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 315, the mean node degree is 342.21, and the node degree mode is 2. The top 5
-most central nodes are 1127134.NOCYR_0836 (degree 3044), 1127134.NOCYR_4710 (degree
-1811), 1127134.NOCYR_2089 (degree 1757), 1127134.NOCYR_1266 (degree 1705) and 1127134.NOCYR_5267
-(degree 1508).
+The undirected graph Nocardia cyriacigeorgica has 5409 nodes and 925508
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06328 and has 10 connected components, where the component
+with most nodes has 5388 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 315, the mean node degree is 342.21,
+and the node degree mode is 2. The top 5 most central nodes are 1127134.NOCYR_0836
+(degree 3044), 1127134.NOCYR_4710 (degree 1811), 1127134.NOCYR_2089 (degree
+1757), 1127134.NOCYR_1266 (degree 1705) and 1127134.NOCYR_5267 (degree
+1508).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaCyriacigeorgica(
 	
 	Datetime: 2021-02-02 22:54:41.059496
 	
-	The undirected graph Nocardia cyriacigeorgica has 5409 nodes and 925508 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06328
-	and has 10 connected components, where the component with most nodes has 5388 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 315, the mean node degree is 342.21, and the node degree mode is 2. The top 5
-	most central nodes are 1127134.NOCYR_0836 (degree 3044), 1127134.NOCYR_4710 (degree
-	1811), 1127134.NOCYR_2089 (degree 1757), 1127134.NOCYR_1266 (degree 1705) and 1127134.NOCYR_5267
-	(degree 1508).
+	The undirected graph Nocardia cyriacigeorgica has 5409 nodes and 925508
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06328 and has 10 connected components, where the component
+	with most nodes has 5388 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 315, the mean node degree is 342.21,
+	and the node degree mode is 2. The top 5 most central nodes are 1127134.NOCYR_0836
+	(degree 3044), 1127134.NOCYR_4710 (degree 1811), 1127134.NOCYR_2089 (degree
+	1757), 1127134.NOCYR_1266 (degree 1705) and 1127134.NOCYR_5267 (degree
+	1508).
 	
 
 

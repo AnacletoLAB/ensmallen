@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:05.711439
 
-The undirected graph Leuconostoc gelidum KCTC3527 has 1864 nodes and 109296 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06295
-and has 7 connected components, where the component with most nodes has 1851 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 117.27, and the node degree mode is 21. The top 5
-most central nodes are 927691.AEMI01000038_gene650 (degree 819), 927691.AEMI01000036_gene413
-(degree 659), 927691.AEMI01000011_gene19 (degree 653), 927691.AEMI01000002_gene1831
-(degree 618) and 927691.AEMI01000038_gene686 (degree 555).
+The undirected graph Leuconostoc gelidum KCTC3527 has 1864 nodes and 109296
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06295 and has 7 connected components, where the component
+with most nodes has 1851 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 117.27,
+and the node degree mode is 21. The top 5 most central nodes are 927691.AEMI01000038_gene650
+(degree 819), 927691.AEMI01000036_gene413 (degree 659), 927691.AEMI01000011_gene19
+(degree 653), 927691.AEMI01000002_gene1831 (degree 618) and 927691.AEMI01000038_gene686
+(degree 555).
 
 
 References
@@ -107,14 +108,15 @@ def LeuconostocGelidumKctc3527(
 	
 	Datetime: 2021-02-02 21:57:05.711439
 	
-	The undirected graph Leuconostoc gelidum KCTC3527 has 1864 nodes and 109296 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06295
-	and has 7 connected components, where the component with most nodes has 1851 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 117.27, and the node degree mode is 21. The top 5
-	most central nodes are 927691.AEMI01000038_gene650 (degree 819), 927691.AEMI01000036_gene413
-	(degree 659), 927691.AEMI01000011_gene19 (degree 653), 927691.AEMI01000002_gene1831
-	(degree 618) and 927691.AEMI01000038_gene686 (degree 555).
+	The undirected graph Leuconostoc gelidum KCTC3527 has 1864 nodes and 109296
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06295 and has 7 connected components, where the component
+	with most nodes has 1851 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 117.27,
+	and the node degree mode is 21. The top 5 most central nodes are 927691.AEMI01000038_gene650
+	(degree 819), 927691.AEMI01000036_gene413 (degree 659), 927691.AEMI01000011_gene19
+	(degree 653), 927691.AEMI01000002_gene1831 (degree 618) and 927691.AEMI01000038_gene686
+	(degree 555).
 	
 
 

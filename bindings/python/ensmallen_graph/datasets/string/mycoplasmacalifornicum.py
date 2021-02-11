@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:06.685695
 
-The undirected graph Mycoplasma californicum has 605 nodes and 30892 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.16908
-and has 5 connected components, where the component with most nodes has 591 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 87, the mean node degree is 102.12, and the node degree mode is 5. The top 5 most
-central nodes are 2113.MCFN_02545 (degree 275), 2113.MCFN_02840 (degree 268), 2113.MCFN_01325
-(degree 268), 2113.MCFN_02170 (degree 261) and 2113.MCFN_02655 (degree 261).
+The undirected graph Mycoplasma californicum has 605 nodes and 30892 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.16908 and has 5 connected components, where the component
+with most nodes has 591 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 87, the mean node degree is 102.12,
+and the node degree mode is 5. The top 5 most central nodes are 2113.MCFN_02545
+(degree 275), 2113.MCFN_02840 (degree 268), 2113.MCFN_01325 (degree 268),
+2113.MCFN_02170 (degree 261) and 2113.MCFN_02655 (degree 261).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaCalifornicum(
 	
 	Datetime: 2021-02-02 16:25:06.685695
 	
-	The undirected graph Mycoplasma californicum has 605 nodes and 30892 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.16908
-	and has 5 connected components, where the component with most nodes has 591 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 87, the mean node degree is 102.12, and the node degree mode is 5. The top 5 most
-	central nodes are 2113.MCFN_02545 (degree 275), 2113.MCFN_02840 (degree 268), 2113.MCFN_01325
-	(degree 268), 2113.MCFN_02170 (degree 261) and 2113.MCFN_02655 (degree 261).
+	The undirected graph Mycoplasma californicum has 605 nodes and 30892 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.16908 and has 5 connected components, where the component
+	with most nodes has 591 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 87, the mean node degree is 102.12,
+	and the node degree mode is 5. The top 5 most central nodes are 2113.MCFN_02545
+	(degree 275), 2113.MCFN_02840 (degree 268), 2113.MCFN_01325 (degree 268),
+	2113.MCFN_02170 (degree 261) and 2113.MCFN_02655 (degree 261).
 	
 
 

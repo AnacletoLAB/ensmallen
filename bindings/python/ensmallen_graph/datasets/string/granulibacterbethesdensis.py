@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:16.928789
 
-The undirected graph Granulibacter bethesdensis has 2422 nodes and 159963 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05456
-and has 5 connected components, where the component with most nodes has 2412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 132.09, and the node degree mode is 2. The top 5
-most central nodes are 391165.GbCGDNIH1_1965 (degree 950), 391165.GbCGDNIH1_0855
-(degree 775), 391165.GbCGDNIH1_2359 (degree 764), 391165.GbCGDNIH1_1150 (degree 714)
-and 391165.GbCGDNIH1_0223 (degree 684).
+The undirected graph Granulibacter bethesdensis has 2422 nodes and 159963
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05456 and has 5 connected components, where the component
+with most nodes has 2412 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 132.09,
+and the node degree mode is 2. The top 5 most central nodes are 391165.GbCGDNIH1_1965
+(degree 950), 391165.GbCGDNIH1_0855 (degree 775), 391165.GbCGDNIH1_2359
+(degree 764), 391165.GbCGDNIH1_1150 (degree 714) and 391165.GbCGDNIH1_0223
+(degree 684).
 
 
 References
@@ -107,14 +108,15 @@ def GranulibacterBethesdensis(
 	
 	Datetime: 2021-02-02 20:39:16.928789
 	
-	The undirected graph Granulibacter bethesdensis has 2422 nodes and 159963 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05456
-	and has 5 connected components, where the component with most nodes has 2412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 132.09, and the node degree mode is 2. The top 5
-	most central nodes are 391165.GbCGDNIH1_1965 (degree 950), 391165.GbCGDNIH1_0855
-	(degree 775), 391165.GbCGDNIH1_2359 (degree 764), 391165.GbCGDNIH1_1150 (degree 714)
-	and 391165.GbCGDNIH1_0223 (degree 684).
+	The undirected graph Granulibacter bethesdensis has 2422 nodes and 159963
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05456 and has 5 connected components, where the component
+	with most nodes has 2412 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 132.09,
+	and the node degree mode is 2. The top 5 most central nodes are 391165.GbCGDNIH1_1965
+	(degree 950), 391165.GbCGDNIH1_0855 (degree 775), 391165.GbCGDNIH1_2359
+	(degree 764), 391165.GbCGDNIH1_1150 (degree 714) and 391165.GbCGDNIH1_0223
+	(degree 684).
 	
 
 

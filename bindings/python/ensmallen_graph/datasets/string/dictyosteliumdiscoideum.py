@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:15:05.559120
 
-The undirected graph Dictyostelium discoideum has 10127 nodes and 1406097 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02742
-and has 103 connected components, where the component with most nodes has 9898 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 167, the mean node degree is 277.69, and the node degree mode is 1. The top 5
-most central nodes are 44689.DDB0232950 (degree 2470), 44689.DDB0219986 (degree 2400),
-44689.DDB0235316 (degree 2050), 44689.DDB0191503 (degree 2034) and 44689.DDB0235320
-(degree 2018).
+The undirected graph Dictyostelium discoideum has 10127 nodes and 1406097
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02742 and has 103 connected components, where the component
+with most nodes has 9898 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 167, the mean node degree is 277.69,
+and the node degree mode is 1. The top 5 most central nodes are 44689.DDB0232950
+(degree 2470), 44689.DDB0219986 (degree 2400), 44689.DDB0235316 (degree
+2050), 44689.DDB0191503 (degree 2034) and 44689.DDB0235320 (degree 2018).
 
 
 References
@@ -107,14 +107,14 @@ def DictyosteliumDiscoideum(
 	
 	Datetime: 2021-02-02 18:15:05.559120
 	
-	The undirected graph Dictyostelium discoideum has 10127 nodes and 1406097 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02742
-	and has 103 connected components, where the component with most nodes has 9898 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 167, the mean node degree is 277.69, and the node degree mode is 1. The top 5
-	most central nodes are 44689.DDB0232950 (degree 2470), 44689.DDB0219986 (degree 2400),
-	44689.DDB0235316 (degree 2050), 44689.DDB0191503 (degree 2034) and 44689.DDB0235320
-	(degree 2018).
+	The undirected graph Dictyostelium discoideum has 10127 nodes and 1406097
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02742 and has 103 connected components, where the component
+	with most nodes has 9898 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 167, the mean node degree is 277.69,
+	and the node degree mode is 1. The top 5 most central nodes are 44689.DDB0232950
+	(degree 2470), 44689.DDB0219986 (degree 2400), 44689.DDB0235316 (degree
+	2050), 44689.DDB0191503 (degree 2034) and 44689.DDB0235320 (degree 2018).
 	
 
 

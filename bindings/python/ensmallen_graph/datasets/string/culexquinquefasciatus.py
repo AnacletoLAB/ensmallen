@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:20:47.347824
 
-The undirected graph Culex quinquefasciatus has 15397 nodes and 1951140 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01646
-and has 26 connected components, where the component with most nodes has 15332 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 253.44, and the node degree mode is 1. The top 5
-most central nodes are 7176.CPIJ012560-PA (degree 4091), 7176.CPIJ018084-PA (degree
-3222), 7176.CPIJ005597-PA (degree 2988), 7176.CPIJ003589-PA (degree 2857) and 7176.CPIJ008013-PA
-(degree 2613).
+The undirected graph Culex quinquefasciatus has 15397 nodes and 1951140
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01646 and has 26 connected components, where the component
+with most nodes has 15332 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 147, the mean node degree
+is 253.44, and the node degree mode is 1. The top 5 most central nodes
+are 7176.CPIJ012560-PA (degree 4091), 7176.CPIJ018084-PA (degree 3222),
+7176.CPIJ005597-PA (degree 2988), 7176.CPIJ003589-PA (degree 2857) and
+7176.CPIJ008013-PA (degree 2613).
 
 
 References
@@ -107,14 +108,15 @@ def CulexQuinquefasciatus(
 	
 	Datetime: 2021-02-02 17:20:47.347824
 	
-	The undirected graph Culex quinquefasciatus has 15397 nodes and 1951140 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01646
-	and has 26 connected components, where the component with most nodes has 15332 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 253.44, and the node degree mode is 1. The top 5
-	most central nodes are 7176.CPIJ012560-PA (degree 4091), 7176.CPIJ018084-PA (degree
-	3222), 7176.CPIJ005597-PA (degree 2988), 7176.CPIJ003589-PA (degree 2857) and 7176.CPIJ008013-PA
-	(degree 2613).
+	The undirected graph Culex quinquefasciatus has 15397 nodes and 1951140
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01646 and has 26 connected components, where the component
+	with most nodes has 15332 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 147, the mean node degree
+	is 253.44, and the node degree mode is 1. The top 5 most central nodes
+	are 7176.CPIJ012560-PA (degree 4091), 7176.CPIJ018084-PA (degree 3222),
+	7176.CPIJ005597-PA (degree 2988), 7176.CPIJ003589-PA (degree 2857) and
+	7176.CPIJ008013-PA (degree 2613).
 	
 
 

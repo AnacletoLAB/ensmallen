@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:33.209136
 
-The undirected graph Nocardioides sp. JS614 has 4892 nodes and 532240 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04449 and
-has 14 connected components, where the component with most nodes has 4861 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 217.60, and the node degree mode is 4. The top 5 most central
-nodes are 196162.Noca_3006 (degree 1782), 196162.Noca_4311 (degree 1775), 196162.Noca_1977
-(degree 1773), 196162.Noca_1670 (degree 1614) and 196162.Noca_4363 (degree 1493).
+The undirected graph Nocardioides sp. JS614 has 4892 nodes and 532240 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04449 and has 14 connected components, where the component with most
+nodes has 4861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 217.60, and
+the node degree mode is 4. The top 5 most central nodes are 196162.Noca_3006
+(degree 1782), 196162.Noca_4311 (degree 1775), 196162.Noca_1977 (degree
+1773), 196162.Noca_1670 (degree 1614) and 196162.Noca_4363 (degree 1493).
 
 
 References
@@ -106,13 +107,14 @@ def NocardioidesSp.Js614(
 	
 	Datetime: 2021-02-02 19:58:33.209136
 	
-	The undirected graph Nocardioides sp. JS614 has 4892 nodes and 532240 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04449 and
-	has 14 connected components, where the component with most nodes has 4861 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 217.60, and the node degree mode is 4. The top 5 most central
-	nodes are 196162.Noca_3006 (degree 1782), 196162.Noca_4311 (degree 1775), 196162.Noca_1977
-	(degree 1773), 196162.Noca_1670 (degree 1614) and 196162.Noca_4363 (degree 1493).
+	The undirected graph Nocardioides sp. JS614 has 4892 nodes and 532240 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04449 and has 14 connected components, where the component with most
+	nodes has 4861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 217.60, and
+	the node degree mode is 4. The top 5 most central nodes are 196162.Noca_3006
+	(degree 1782), 196162.Noca_4311 (degree 1775), 196162.Noca_1977 (degree
+	1773), 196162.Noca_1670 (degree 1614) and 196162.Noca_4363 (degree 1493).
 	
 
 

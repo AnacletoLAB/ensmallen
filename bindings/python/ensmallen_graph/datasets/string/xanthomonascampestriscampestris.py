@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:17:16.447517
 
-The undirected graph Xanthomonas campestris campestris has 4435 nodes and 471843
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04799 and has 32 connected components, where the component with most nodes has
-4355 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 192, the mean node degree is 212.78, and the node degree mode is 2. The
-top 5 most central nodes are 340.xcc-b100_4213 (degree 1409), 340.xcc-b100_1812 (degree
-1279), 340.xcc-b100_3154 (degree 1175), 340.xcc-b100_3748 (degree 1161) and 340.xcc-b100_2028
-(degree 1113).
+The undirected graph Xanthomonas campestris campestris has 4435 nodes and
+471843 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04799 and has 32 connected components, where the
+component with most nodes has 4355 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+is 212.78, and the node degree mode is 2. The top 5 most central nodes
+are 340.xcc-b100_4213 (degree 1409), 340.xcc-b100_1812 (degree 1279), 340.xcc-b100_3154
+(degree 1175), 340.xcc-b100_3748 (degree 1161) and 340.xcc-b100_2028 (degree
+1113).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasCampestrisCampestris(
 	
 	Datetime: 2021-02-02 16:17:16.447517
 	
-	The undirected graph Xanthomonas campestris campestris has 4435 nodes and 471843
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04799 and has 32 connected components, where the component with most nodes has
-	4355 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 192, the mean node degree is 212.78, and the node degree mode is 2. The
-	top 5 most central nodes are 340.xcc-b100_4213 (degree 1409), 340.xcc-b100_1812 (degree
-	1279), 340.xcc-b100_3154 (degree 1175), 340.xcc-b100_3748 (degree 1161) and 340.xcc-b100_2028
-	(degree 1113).
+	The undirected graph Xanthomonas campestris campestris has 4435 nodes and
+	471843 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04799 and has 32 connected components, where the
+	component with most nodes has 4355 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 192, the mean node degree
+	is 212.78, and the node degree mode is 2. The top 5 most central nodes
+	are 340.xcc-b100_4213 (degree 1409), 340.xcc-b100_1812 (degree 1279), 340.xcc-b100_3154
+	(degree 1175), 340.xcc-b100_3748 (degree 1161) and 340.xcc-b100_2028 (degree
+	1113).
 	
 
 

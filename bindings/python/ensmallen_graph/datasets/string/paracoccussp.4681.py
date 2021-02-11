@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:18:09.207353
 
-The undirected graph Paracoccus sp. 4681 has 2680 nodes and 217712 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06065 and
-has 12 connected components, where the component with most nodes has 2654 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 130,
-the mean node degree is 162.47, and the node degree mode is 1. The top 5 most central
-nodes are 1525715.IX54_13760 (degree 1124), 1525715.IX54_11775 (degree 903), 1525715.IX54_03570
-(degree 899), 1525715.IX54_11260 (degree 869) and 1525715.IX54_06995 (degree 861).
+The undirected graph Paracoccus sp. 4681 has 2680 nodes and 217712 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06065 and has 12 connected components, where the component with most
+nodes has 2654 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 130, the mean node degree is 162.47, and
+the node degree mode is 1. The top 5 most central nodes are 1525715.IX54_13760
+(degree 1124), 1525715.IX54_11775 (degree 903), 1525715.IX54_03570 (degree
+899), 1525715.IX54_11260 (degree 869) and 1525715.IX54_06995 (degree 861).
 
 
 References
@@ -106,13 +107,14 @@ def ParacoccusSp.4681(
 	
 	Datetime: 2021-02-03 23:18:09.207353
 	
-	The undirected graph Paracoccus sp. 4681 has 2680 nodes and 217712 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06065 and
-	has 12 connected components, where the component with most nodes has 2654 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 130,
-	the mean node degree is 162.47, and the node degree mode is 1. The top 5 most central
-	nodes are 1525715.IX54_13760 (degree 1124), 1525715.IX54_11775 (degree 903), 1525715.IX54_03570
-	(degree 899), 1525715.IX54_11260 (degree 869) and 1525715.IX54_06995 (degree 861).
+	The undirected graph Paracoccus sp. 4681 has 2680 nodes and 217712 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06065 and has 12 connected components, where the component with most
+	nodes has 2654 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 130, the mean node degree is 162.47, and
+	the node degree mode is 1. The top 5 most central nodes are 1525715.IX54_13760
+	(degree 1124), 1525715.IX54_11775 (degree 903), 1525715.IX54_03570 (degree
+	899), 1525715.IX54_11260 (degree 869) and 1525715.IX54_06995 (degree 861).
 	
 
 

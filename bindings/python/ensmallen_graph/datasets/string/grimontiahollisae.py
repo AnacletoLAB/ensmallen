@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:41.987495
 
-The undirected graph Grimontia hollisae has 3522 nodes and 422161 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06809 and
-has 4 connected components, where the component with most nodes has 3515 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 218,
-the mean node degree is 239.73, and the node degree mode is 2. The top 5 most central
-nodes are 675812.VHA_000169 (degree 1450), 675812.VHA_003483 (degree 1253), 675812.VHA_001472
-(degree 1176), 675812.VHA_002975 (degree 1122) and 675812.VHA_002689 (degree 1062).
+The undirected graph Grimontia hollisae has 3522 nodes and 422161 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06809 and has 4 connected components, where the component with most
+nodes has 3515 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 218, the mean node degree is 239.73, and
+the node degree mode is 2. The top 5 most central nodes are 675812.VHA_000169
+(degree 1450), 675812.VHA_003483 (degree 1253), 675812.VHA_001472 (degree
+1176), 675812.VHA_002975 (degree 1122) and 675812.VHA_002689 (degree 1062).
 
 
 References
@@ -106,13 +107,14 @@ def GrimontiaHollisae(
 	
 	Datetime: 2021-02-02 21:29:41.987495
 	
-	The undirected graph Grimontia hollisae has 3522 nodes and 422161 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06809 and
-	has 4 connected components, where the component with most nodes has 3515 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 218,
-	the mean node degree is 239.73, and the node degree mode is 2. The top 5 most central
-	nodes are 675812.VHA_000169 (degree 1450), 675812.VHA_003483 (degree 1253), 675812.VHA_001472
-	(degree 1176), 675812.VHA_002975 (degree 1122) and 675812.VHA_002689 (degree 1062).
+	The undirected graph Grimontia hollisae has 3522 nodes and 422161 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06809 and has 4 connected components, where the component with most
+	nodes has 3515 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 218, the mean node degree is 239.73, and
+	the node degree mode is 2. The top 5 most central nodes are 675812.VHA_000169
+	(degree 1450), 675812.VHA_003483 (degree 1253), 675812.VHA_001472 (degree
+	1176), 675812.VHA_002975 (degree 1122) and 675812.VHA_002689 (degree 1062).
 	
 
 

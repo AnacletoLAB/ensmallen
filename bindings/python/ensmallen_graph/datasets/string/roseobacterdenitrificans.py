@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:11.718898
 
-The undirected graph Roseobacter denitrificans has 3956 nodes and 293296 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03749
-and has 9 connected components, where the component with most nodes has 3940 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 148.28, and the node degree mode is 1. The top 5
-most central nodes are 375451.RD1_0349 (degree 1514), 375451.RD1_1948 (degree 1093),
-375451.RD1_2778 (degree 1088), 375451.RD1_0060 (degree 1047) and 375451.RD1_2713
-(degree 1044).
+The undirected graph Roseobacter denitrificans has 3956 nodes and 293296
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03749 and has 9 connected components, where the component
+with most nodes has 3940 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 148.28,
+and the node degree mode is 1. The top 5 most central nodes are 375451.RD1_0349
+(degree 1514), 375451.RD1_1948 (degree 1093), 375451.RD1_2778 (degree 1088),
+375451.RD1_0060 (degree 1047) and 375451.RD1_2713 (degree 1044).
 
 
 References
@@ -107,14 +107,14 @@ def RoseobacterDenitrificans(
 	
 	Datetime: 2021-02-02 20:36:11.718898
 	
-	The undirected graph Roseobacter denitrificans has 3956 nodes and 293296 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03749
-	and has 9 connected components, where the component with most nodes has 3940 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 148.28, and the node degree mode is 1. The top 5
-	most central nodes are 375451.RD1_0349 (degree 1514), 375451.RD1_1948 (degree 1093),
-	375451.RD1_2778 (degree 1088), 375451.RD1_0060 (degree 1047) and 375451.RD1_2713
-	(degree 1044).
+	The undirected graph Roseobacter denitrificans has 3956 nodes and 293296
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03749 and has 9 connected components, where the component
+	with most nodes has 3940 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 148.28,
+	and the node degree mode is 1. The top 5 most central nodes are 375451.RD1_0349
+	(degree 1514), 375451.RD1_1948 (degree 1093), 375451.RD1_2778 (degree 1088),
+	375451.RD1_0060 (degree 1047) and 375451.RD1_2713 (degree 1044).
 	
 
 

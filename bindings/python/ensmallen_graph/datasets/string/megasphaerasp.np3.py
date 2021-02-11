@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:22.439708
 
-The undirected graph Megasphaera sp. NP3 has 2301 nodes and 172154 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06506 and
-has 9 connected components, where the component with most nodes has 2279 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 149.63, and the node degree mode is 1. The top 5 most central
-nodes are 1232428.CAVO010000035_gene1393 (degree 960), 1232428.CAVO010000022_gene831
-(degree 834), 1232428.CAVO010000018_gene942 (degree 833), 1232428.CAVO010000063_gene320
-(degree 807) and 1232428.CAVO010000036_gene1468 (degree 804).
+The undirected graph Megasphaera sp. NP3 has 2301 nodes and 172154 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06506 and has 9 connected components, where the component with most
+nodes has 2279 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 149.63, and
+the node degree mode is 1. The top 5 most central nodes are 1232428.CAVO010000035_gene1393
+(degree 960), 1232428.CAVO010000022_gene831 (degree 834), 1232428.CAVO010000018_gene942
+(degree 833), 1232428.CAVO010000063_gene320 (degree 807) and 1232428.CAVO010000036_gene1468
+(degree 804).
 
 
 References
@@ -107,14 +108,15 @@ def MegasphaeraSp.Np3(
 	
 	Datetime: 2021-02-02 23:28:22.439708
 	
-	The undirected graph Megasphaera sp. NP3 has 2301 nodes and 172154 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06506 and
-	has 9 connected components, where the component with most nodes has 2279 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 149.63, and the node degree mode is 1. The top 5 most central
-	nodes are 1232428.CAVO010000035_gene1393 (degree 960), 1232428.CAVO010000022_gene831
-	(degree 834), 1232428.CAVO010000018_gene942 (degree 833), 1232428.CAVO010000063_gene320
-	(degree 807) and 1232428.CAVO010000036_gene1468 (degree 804).
+	The undirected graph Megasphaera sp. NP3 has 2301 nodes and 172154 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06506 and has 9 connected components, where the component with most
+	nodes has 2279 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 149.63, and
+	the node degree mode is 1. The top 5 most central nodes are 1232428.CAVO010000035_gene1393
+	(degree 960), 1232428.CAVO010000022_gene831 (degree 834), 1232428.CAVO010000018_gene942
+	(degree 833), 1232428.CAVO010000063_gene320 (degree 807) and 1232428.CAVO010000036_gene1468
+	(degree 804).
 	
 
 

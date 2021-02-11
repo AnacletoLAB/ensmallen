@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:43.059705
 
-The undirected graph Aeropyrum camini has 1632 nodes and 100616 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07560 and
-has 12 connected components, where the component with most nodes has 1599 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 123.30, and the node degree mode is 6. The top 5 most central
-nodes are 1198449.ACAM_0134 (degree 575), 1198449.ACAM_0966 (degree 529), 1198449.ACAM_0595
-(degree 499), 1198449.ACAM_1165 (degree 498) and 1198449.ACAM_1294 (degree 493).
+The undirected graph Aeropyrum camini has 1632 nodes and 100616 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07560 and has 12 connected components, where the component with most
+nodes has 1599 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 123.30, and
+the node degree mode is 6. The top 5 most central nodes are 1198449.ACAM_0134
+(degree 575), 1198449.ACAM_0966 (degree 529), 1198449.ACAM_0595 (degree
+499), 1198449.ACAM_1165 (degree 498) and 1198449.ACAM_1294 (degree 493).
 
 
 References
@@ -106,13 +107,14 @@ def AeropyrumCamini(
 	
 	Datetime: 2021-02-02 23:13:43.059705
 	
-	The undirected graph Aeropyrum camini has 1632 nodes and 100616 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07560 and
-	has 12 connected components, where the component with most nodes has 1599 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 123.30, and the node degree mode is 6. The top 5 most central
-	nodes are 1198449.ACAM_0134 (degree 575), 1198449.ACAM_0966 (degree 529), 1198449.ACAM_0595
-	(degree 499), 1198449.ACAM_1165 (degree 498) and 1198449.ACAM_1294 (degree 493).
+	The undirected graph Aeropyrum camini has 1632 nodes and 100616 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07560 and has 12 connected components, where the component with most
+	nodes has 1599 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 123.30, and
+	the node degree mode is 6. The top 5 most central nodes are 1198449.ACAM_0134
+	(degree 575), 1198449.ACAM_0966 (degree 529), 1198449.ACAM_0595 (degree
+	499), 1198449.ACAM_1165 (degree 498) and 1198449.ACAM_1294 (degree 493).
 	
 
 

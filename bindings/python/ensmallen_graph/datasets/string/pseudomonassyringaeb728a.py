@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:00:27.071409
 
-The undirected graph Pseudomonas syringae B728a has 5054 nodes and 405375 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03175
-and has 23 connected components, where the component with most nodes has 5005 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 160.42, and the node degree mode is 1. The top 5
-most central nodes are 205918.Psyr_0270 (degree 1704), 205918.Psyr_1262 (degree 1150),
-205918.Psyr_0411 (degree 1144), 205918.Psyr_1261 (degree 1066) and 205918.Psyr_1029
-(degree 1011).
+The undirected graph Pseudomonas syringae B728a has 5054 nodes and 405375
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03175 and has 23 connected components, where the component
+with most nodes has 5005 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 160.42,
+and the node degree mode is 1. The top 5 most central nodes are 205918.Psyr_0270
+(degree 1704), 205918.Psyr_1262 (degree 1150), 205918.Psyr_0411 (degree
+1144), 205918.Psyr_1261 (degree 1066) and 205918.Psyr_1029 (degree 1011).
 
 
 References
@@ -107,14 +107,14 @@ def PseudomonasSyringaeB728a(
 	
 	Datetime: 2021-02-02 20:00:27.071409
 	
-	The undirected graph Pseudomonas syringae B728a has 5054 nodes and 405375 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03175
-	and has 23 connected components, where the component with most nodes has 5005 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 160.42, and the node degree mode is 1. The top 5
-	most central nodes are 205918.Psyr_0270 (degree 1704), 205918.Psyr_1262 (degree 1150),
-	205918.Psyr_0411 (degree 1144), 205918.Psyr_1261 (degree 1066) and 205918.Psyr_1029
-	(degree 1011).
+	The undirected graph Pseudomonas syringae B728a has 5054 nodes and 405375
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03175 and has 23 connected components, where the component
+	with most nodes has 5005 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 160.42,
+	and the node degree mode is 1. The top 5 most central nodes are 205918.Psyr_0270
+	(degree 1704), 205918.Psyr_1262 (degree 1150), 205918.Psyr_0411 (degree
+	1144), 205918.Psyr_1261 (degree 1066) and 205918.Psyr_1029 (degree 1011).
 	
 
 

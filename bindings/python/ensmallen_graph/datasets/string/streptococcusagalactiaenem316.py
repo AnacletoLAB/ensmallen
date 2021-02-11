@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:14.746218
 
-The undirected graph Streptococcus agalactiae NEM316 has 2086 nodes and 168438 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07746
-and has 8 connected components, where the component with most nodes has 2068 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 161.49, and the node degree mode is 18. The top 5
-most central nodes are 211110.gbs0425 (degree 967), 211110.gbs2118 (degree 847),
-211110.gbs0953 (degree 831), 211110.gbs0053 (degree 813) and 211110.gbs0307 (degree
-781).
+The undirected graph Streptococcus agalactiae NEM316 has 2086 nodes and
+168438 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07746 and has 8 connected components, where the
+component with most nodes has 2068 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+is 161.49, and the node degree mode is 18. The top 5 most central nodes
+are 211110.gbs0425 (degree 967), 211110.gbs2118 (degree 847), 211110.gbs0953
+(degree 831), 211110.gbs0053 (degree 813) and 211110.gbs0307 (degree 781).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusAgalactiaeNem316(
 	
 	Datetime: 2021-02-02 20:01:14.746218
 	
-	The undirected graph Streptococcus agalactiae NEM316 has 2086 nodes and 168438 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07746
-	and has 8 connected components, where the component with most nodes has 2068 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 161.49, and the node degree mode is 18. The top 5
-	most central nodes are 211110.gbs0425 (degree 967), 211110.gbs2118 (degree 847),
-	211110.gbs0953 (degree 831), 211110.gbs0053 (degree 813) and 211110.gbs0307 (degree
-	781).
+	The undirected graph Streptococcus agalactiae NEM316 has 2086 nodes and
+	168438 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07746 and has 8 connected components, where the
+	component with most nodes has 2068 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 125, the mean node degree
+	is 161.49, and the node degree mode is 18. The top 5 most central nodes
+	are 211110.gbs0425 (degree 967), 211110.gbs2118 (degree 847), 211110.gbs0953
+	(degree 831), 211110.gbs0053 (degree 813) and 211110.gbs0307 (degree 781).
 	
 
 

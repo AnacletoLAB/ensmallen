@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:04.733241
 
-The undirected graph Actinoplanes friuliensis has 8508 nodes and 893772 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02470
-and has 28 connected components, where the component with most nodes has 8445 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 179, the mean node degree is 210.10, and the node degree mode is 3. The top 5
-most central nodes are 1246995.AFR_25845 (degree 2002), 1246995.AFR_15525 (degree
-1988), 1246995.AFR_10430 (degree 1961), 1246995.AFR_04980 (degree 1852) and 1246995.AFR_10335
-(degree 1830).
+The undirected graph Actinoplanes friuliensis has 8508 nodes and 893772
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02470 and has 28 connected components, where the component
+with most nodes has 8445 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 179, the mean node degree is 210.10,
+and the node degree mode is 3. The top 5 most central nodes are 1246995.AFR_25845
+(degree 2002), 1246995.AFR_15525 (degree 1988), 1246995.AFR_10430 (degree
+1961), 1246995.AFR_04980 (degree 1852) and 1246995.AFR_10335 (degree 1830).
 
 
 References
@@ -107,14 +107,14 @@ def ActinoplanesFriuliensis(
 	
 	Datetime: 2021-02-02 23:34:04.733241
 	
-	The undirected graph Actinoplanes friuliensis has 8508 nodes and 893772 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02470
-	and has 28 connected components, where the component with most nodes has 8445 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 179, the mean node degree is 210.10, and the node degree mode is 3. The top 5
-	most central nodes are 1246995.AFR_25845 (degree 2002), 1246995.AFR_15525 (degree
-	1988), 1246995.AFR_10430 (degree 1961), 1246995.AFR_04980 (degree 1852) and 1246995.AFR_10335
-	(degree 1830).
+	The undirected graph Actinoplanes friuliensis has 8508 nodes and 893772
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02470 and has 28 connected components, where the component
+	with most nodes has 8445 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 179, the mean node degree is 210.10,
+	and the node degree mode is 3. The top 5 most central nodes are 1246995.AFR_25845
+	(degree 2002), 1246995.AFR_15525 (degree 1988), 1246995.AFR_10430 (degree
+	1961), 1246995.AFR_04980 (degree 1852) and 1246995.AFR_10335 (degree 1830).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:55:13.012529
 
-The undirected graph Syntrophorhabdus aromaticivorans has 3425 nodes and 311802 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05318
-and has 19 connected components, where the component with most nodes has 3381 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 154, the mean node degree is 182.07, and the node degree mode is 2. The top 5
-most central nodes are 909663.KI867150_gene1972 (degree 1802), 909663.KI867150_gene1768
-(degree 1373), 909663.KI867150_gene2155 (degree 1041), 909663.KI867150_gene2159 (degree
-1040) and 909663.KI867150_gene1321 (degree 1019).
+The undirected graph Syntrophorhabdus aromaticivorans has 3425 nodes and
+311802 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05318 and has 19 connected components, where the
+component with most nodes has 3381 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+is 182.07, and the node degree mode is 2. The top 5 most central nodes
+are 909663.KI867150_gene1972 (degree 1802), 909663.KI867150_gene1768 (degree
+1373), 909663.KI867150_gene2155 (degree 1041), 909663.KI867150_gene2159
+(degree 1040) and 909663.KI867150_gene1321 (degree 1019).
 
 
 References
@@ -107,14 +108,15 @@ def SyntrophorhabdusAromaticivorans(
 	
 	Datetime: 2021-02-02 21:55:13.012529
 	
-	The undirected graph Syntrophorhabdus aromaticivorans has 3425 nodes and 311802 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05318
-	and has 19 connected components, where the component with most nodes has 3381 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 154, the mean node degree is 182.07, and the node degree mode is 2. The top 5
-	most central nodes are 909663.KI867150_gene1972 (degree 1802), 909663.KI867150_gene1768
-	(degree 1373), 909663.KI867150_gene2155 (degree 1041), 909663.KI867150_gene2159 (degree
-	1040) and 909663.KI867150_gene1321 (degree 1019).
+	The undirected graph Syntrophorhabdus aromaticivorans has 3425 nodes and
+	311802 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05318 and has 19 connected components, where the
+	component with most nodes has 3381 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 154, the mean node degree
+	is 182.07, and the node degree mode is 2. The top 5 most central nodes
+	are 909663.KI867150_gene1972 (degree 1802), 909663.KI867150_gene1768 (degree
+	1373), 909663.KI867150_gene2155 (degree 1041), 909663.KI867150_gene2159
+	(degree 1040) and 909663.KI867150_gene1321 (degree 1019).
 	
 
 

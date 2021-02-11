@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:21.924504
 
-The undirected graph Thiorhodovibrio sp. 970 has 4627 nodes and 535411 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05003 and
-has 21 connected components, where the component with most nodes has 4576 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 193,
-the mean node degree is 231.43, and the node degree mode is 4. The top 5 most central
-nodes are 631362.Thi970DRAFT_02969 (degree 1653), 631362.Thi970DRAFT_01601 (degree
-1578), 631362.Thi970DRAFT_02651 (degree 1411), 631362.Thi970DRAFT_03631 (degree 1287)
-and 631362.Thi970DRAFT_00162 (degree 1280).
+The undirected graph Thiorhodovibrio sp. 970 has 4627 nodes and 535411
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05003 and has 21 connected components, where the component
+with most nodes has 4576 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 193, the mean node degree is 231.43,
+and the node degree mode is 4. The top 5 most central nodes are 631362.Thi970DRAFT_02969
+(degree 1653), 631362.Thi970DRAFT_01601 (degree 1578), 631362.Thi970DRAFT_02651
+(degree 1411), 631362.Thi970DRAFT_03631 (degree 1287) and 631362.Thi970DRAFT_00162
+(degree 1280).
 
 
 References
@@ -107,14 +108,15 @@ def ThiorhodovibrioSp.970(
 	
 	Datetime: 2021-02-02 21:21:21.924504
 	
-	The undirected graph Thiorhodovibrio sp. 970 has 4627 nodes and 535411 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05003 and
-	has 21 connected components, where the component with most nodes has 4576 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 193,
-	the mean node degree is 231.43, and the node degree mode is 4. The top 5 most central
-	nodes are 631362.Thi970DRAFT_02969 (degree 1653), 631362.Thi970DRAFT_01601 (degree
-	1578), 631362.Thi970DRAFT_02651 (degree 1411), 631362.Thi970DRAFT_03631 (degree 1287)
-	and 631362.Thi970DRAFT_00162 (degree 1280).
+	The undirected graph Thiorhodovibrio sp. 970 has 4627 nodes and 535411
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05003 and has 21 connected components, where the component
+	with most nodes has 4576 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 193, the mean node degree is 231.43,
+	and the node degree mode is 4. The top 5 most central nodes are 631362.Thi970DRAFT_02969
+	(degree 1653), 631362.Thi970DRAFT_01601 (degree 1578), 631362.Thi970DRAFT_02651
+	(degree 1411), 631362.Thi970DRAFT_03631 (degree 1287) and 631362.Thi970DRAFT_00162
+	(degree 1280).
 	
 
 

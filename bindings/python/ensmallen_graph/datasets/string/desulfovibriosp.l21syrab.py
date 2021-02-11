@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:44:24.139949
 
-The undirected graph Desulfovibrio sp. L21SyrAB has 3125 nodes and 326037 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06679
-and has 5 connected components, where the component with most nodes has 3114 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 169, the mean node degree is 208.66, and the node degree mode is 4. The top 5
-most central nodes are 1307759.JOMJ01000004_gene2597 (degree 1414), 1307759.JOMJ01000003_gene544
-(degree 1229), 1307759.JOMJ01000003_gene1649 (degree 1181), 1307759.JOMJ01000003_gene211
-(degree 1161) and 1307759.JOMJ01000004_gene2529 (degree 1116).
+The undirected graph Desulfovibrio sp. L21SyrAB has 3125 nodes and 326037
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06679 and has 5 connected components, where the component
+with most nodes has 3114 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 169, the mean node degree is 208.66,
+and the node degree mode is 4. The top 5 most central nodes are 1307759.JOMJ01000004_gene2597
+(degree 1414), 1307759.JOMJ01000003_gene544 (degree 1229), 1307759.JOMJ01000003_gene1649
+(degree 1181), 1307759.JOMJ01000003_gene211 (degree 1161) and 1307759.JOMJ01000004_gene2529
+(degree 1116).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioSp.L21syrab(
 	
 	Datetime: 2021-02-03 21:44:24.139949
 	
-	The undirected graph Desulfovibrio sp. L21SyrAB has 3125 nodes and 326037 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06679
-	and has 5 connected components, where the component with most nodes has 3114 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 169, the mean node degree is 208.66, and the node degree mode is 4. The top 5
-	most central nodes are 1307759.JOMJ01000004_gene2597 (degree 1414), 1307759.JOMJ01000003_gene544
-	(degree 1229), 1307759.JOMJ01000003_gene1649 (degree 1181), 1307759.JOMJ01000003_gene211
-	(degree 1161) and 1307759.JOMJ01000004_gene2529 (degree 1116).
+	The undirected graph Desulfovibrio sp. L21SyrAB has 3125 nodes and 326037
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06679 and has 5 connected components, where the component
+	with most nodes has 3114 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 169, the mean node degree is 208.66,
+	and the node degree mode is 4. The top 5 most central nodes are 1307759.JOMJ01000004_gene2597
+	(degree 1414), 1307759.JOMJ01000003_gene544 (degree 1229), 1307759.JOMJ01000003_gene1649
+	(degree 1181), 1307759.JOMJ01000003_gene211 (degree 1161) and 1307759.JOMJ01000004_gene2529
+	(degree 1116).
 	
 
 

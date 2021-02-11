@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:09.072758
 
-The undirected graph Amycolatopsis mediterranei has 9183 nodes and 1980475 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04698
-and has 13 connected components, where the component with most nodes has 9149 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 397, the mean node degree is 431.34, and the node degree mode is 3. The top 5
-most central nodes are 749927.AMED_5891 (degree 3003), 749927.AMED_0617 (degree 2792),
-749927.AMED_6787 (degree 2635), 749927.AMED_4526 (degree 2322) and 749927.AMED_6138
-(degree 2277).
+The undirected graph Amycolatopsis mediterranei has 9183 nodes and 1980475
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04698 and has 13 connected components, where the component
+with most nodes has 9149 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 397, the mean node degree is 431.34,
+and the node degree mode is 3. The top 5 most central nodes are 749927.AMED_5891
+(degree 3003), 749927.AMED_0617 (degree 2792), 749927.AMED_6787 (degree
+2635), 749927.AMED_4526 (degree 2322) and 749927.AMED_6138 (degree 2277).
 
 
 References
@@ -107,14 +107,14 @@ def AmycolatopsisMediterranei(
 	
 	Datetime: 2021-02-02 21:40:09.072758
 	
-	The undirected graph Amycolatopsis mediterranei has 9183 nodes and 1980475 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04698
-	and has 13 connected components, where the component with most nodes has 9149 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 397, the mean node degree is 431.34, and the node degree mode is 3. The top 5
-	most central nodes are 749927.AMED_5891 (degree 3003), 749927.AMED_0617 (degree 2792),
-	749927.AMED_6787 (degree 2635), 749927.AMED_4526 (degree 2322) and 749927.AMED_6138
-	(degree 2277).
+	The undirected graph Amycolatopsis mediterranei has 9183 nodes and 1980475
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04698 and has 13 connected components, where the component
+	with most nodes has 9149 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 397, the mean node degree is 431.34,
+	and the node degree mode is 3. The top 5 most central nodes are 749927.AMED_5891
+	(degree 3003), 749927.AMED_0617 (degree 2792), 749927.AMED_6787 (degree
+	2635), 749927.AMED_4526 (degree 2322) and 749927.AMED_6138 (degree 2277).
 	
 
 

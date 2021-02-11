@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:30:03.207274
 
-The undirected graph soc-flixster has 2523386 nodes and 7918801 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 6.28, and the node degree mode is 1. The top 5 most
-central nodes are 46246 (degree 1474), 83355 (degree 1323), 75807 (degree 1252),
-15792 (degree 1237) and 38223 (degree 1208).
+The undirected graph soc-flixster has 2523386 nodes and 7918801 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 6.28, and the
+node degree mode is 1. The top 5 most central nodes are 46246 (degree 1474),
+83355 (degree 1323), 75807 (degree 1252), 15792 (degree 1237) and 38223
+(degree 1208).
 
 
 References
@@ -109,12 +110,13 @@ def SocFlixster(
 	
 	Datetime: 2021-02-06 12:30:03.207274
 	
-	The undirected graph soc-flixster has 2523386 nodes and 7918801 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 6.28, and the node degree mode is 1. The top 5 most
-	central nodes are 46246 (degree 1474), 83355 (degree 1323), 75807 (degree 1252),
-	15792 (degree 1237) and 38223 (degree 1208).
+	The undirected graph soc-flixster has 2523386 nodes and 7918801 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 6.28, and the
+	node degree mode is 1. The top 5 most central nodes are 46246 (degree 1474),
+	83355 (degree 1323), 75807 (degree 1252), 15792 (degree 1237) and 38223
+	(degree 1208).
 	
 
 

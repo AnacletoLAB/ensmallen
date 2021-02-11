@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:21.552800
 
-The undirected graph Magnetococcus marinus has 3677 nodes and 335435 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04963 and
-has 12 connected components, where the component with most nodes has 3649 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 182.45, and the node degree mode is 2. The top 5 most central
-nodes are 156889.Mmc1_3261 (degree 1502), 156889.Mmc1_3271 (degree 1456), 156889.Mmc1_2394
-(degree 1212), 156889.Mmc1_1538 (degree 1157) and 156889.Mmc1_3409 (degree 1130).
+The undirected graph Magnetococcus marinus has 3677 nodes and 335435 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04963 and has 12 connected components, where the component with most
+nodes has 3649 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 182.45, and
+the node degree mode is 2. The top 5 most central nodes are 156889.Mmc1_3261
+(degree 1502), 156889.Mmc1_3271 (degree 1456), 156889.Mmc1_2394 (degree
+1212), 156889.Mmc1_1538 (degree 1157) and 156889.Mmc1_3409 (degree 1130).
 
 
 References
@@ -106,13 +107,14 @@ def MagnetococcusMarinus(
 	
 	Datetime: 2021-02-02 19:52:21.552800
 	
-	The undirected graph Magnetococcus marinus has 3677 nodes and 335435 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04963 and
-	has 12 connected components, where the component with most nodes has 3649 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 182.45, and the node degree mode is 2. The top 5 most central
-	nodes are 156889.Mmc1_3261 (degree 1502), 156889.Mmc1_3271 (degree 1456), 156889.Mmc1_2394
-	(degree 1212), 156889.Mmc1_1538 (degree 1157) and 156889.Mmc1_3409 (degree 1130).
+	The undirected graph Magnetococcus marinus has 3677 nodes and 335435 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04963 and has 12 connected components, where the component with most
+	nodes has 3649 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 182.45, and
+	the node degree mode is 2. The top 5 most central nodes are 156889.Mmc1_3261
+	(degree 1502), 156889.Mmc1_3271 (degree 1456), 156889.Mmc1_2394 (degree
+	1212), 156889.Mmc1_1538 (degree 1157) and 156889.Mmc1_3409 (degree 1130).
 	
 
 

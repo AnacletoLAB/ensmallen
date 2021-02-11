@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:28.834928
 
-The undirected graph TF12 has 552 nodes and 4151 weighted edges, of which 25 are
-self-loops. The graph is dense as it has a density of 0.02721 and is connected, as
-it has a single component. The graph median node degree is 15, the mean node degree
-is 14.99, and the node degree mode is 18. The top 5 most central nodes are 392 (degree
-35), 352 (degree 31), 351 (degree 30), 444 (degree 28) and 195 (degree 28).
+The undirected graph TF12 has 552 nodes and 4151 weighted edges, of which
+25 are self-loops. The graph is dense as it has a density of 0.02721 and
+is connected, as it has a single component. The graph median node degree
+is 15, the mean node degree is 14.99, and the node degree mode is 18. The
+top 5 most central nodes are 392 (degree 35), 352 (degree 31), 351 (degree
+30), 444 (degree 28) and 195 (degree 28).
 
 
 References
@@ -101,11 +102,12 @@ def Tf12(
 	
 	Datetime: 2021-02-06 08:00:28.834928
 	
-	The undirected graph TF12 has 552 nodes and 4151 weighted edges, of which 25 are
-	self-loops. The graph is dense as it has a density of 0.02721 and is connected, as
-	it has a single component. The graph median node degree is 15, the mean node degree
-	is 14.99, and the node degree mode is 18. The top 5 most central nodes are 392 (degree
-	35), 352 (degree 31), 351 (degree 30), 444 (degree 28) and 195 (degree 28).
+	The undirected graph TF12 has 552 nodes and 4151 weighted edges, of which
+	25 are self-loops. The graph is dense as it has a density of 0.02721 and
+	is connected, as it has a single component. The graph median node degree
+	is 15, the mean node degree is 14.99, and the node degree mode is 18. The
+	top 5 most central nodes are 392 (degree 35), 352 (degree 31), 351 (degree
+	30), 444 (degree 28) and 195 (degree 28).
 	
 
 

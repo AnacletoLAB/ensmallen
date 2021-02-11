@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:55:17.459601
 
-The undirected graph Helicobacter pylori J99 has 1480 nodes and 72150 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06592 and
-has 4 connected components, where the component with most nodes has 1473 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 97.50, and the node degree mode is 8. The top 5 most central
-nodes are 85963.jhp_1363 (degree 624), 85963.jhp_1121 (degree 568), 85963.jhp_0972
-(degree 520), 85963.jhp_0982 (degree 496) and 85963.jhp_0967 (degree 482).
+The undirected graph Helicobacter pylori J99 has 1480 nodes and 72150 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06592 and has 4 connected components, where the component with most
+nodes has 1473 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 97.50, and
+the node degree mode is 8. The top 5 most central nodes are 85963.jhp_1363
+(degree 624), 85963.jhp_1121 (degree 568), 85963.jhp_0972 (degree 520),
+85963.jhp_0982 (degree 496) and 85963.jhp_0967 (degree 482).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterPyloriJ99(
 	
 	Datetime: 2021-02-02 18:55:17.459601
 	
-	The undirected graph Helicobacter pylori J99 has 1480 nodes and 72150 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06592 and
-	has 4 connected components, where the component with most nodes has 1473 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 97.50, and the node degree mode is 8. The top 5 most central
-	nodes are 85963.jhp_1363 (degree 624), 85963.jhp_1121 (degree 568), 85963.jhp_0972
-	(degree 520), 85963.jhp_0982 (degree 496) and 85963.jhp_0967 (degree 482).
+	The undirected graph Helicobacter pylori J99 has 1480 nodes and 72150 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06592 and has 4 connected components, where the component with most
+	nodes has 1473 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 97.50, and
+	the node degree mode is 8. The top 5 most central nodes are 85963.jhp_1363
+	(degree 624), 85963.jhp_1121 (degree 568), 85963.jhp_0972 (degree 520),
+	85963.jhp_0982 (degree 496) and 85963.jhp_0967 (degree 482).
 	
 
 

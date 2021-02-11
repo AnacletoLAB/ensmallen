@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:23.779963
 
-The undirected graph Clostridiisalibacter paucivorans has 3175 nodes and 329416 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06538
-and has 8 connected components, where the component with most nodes has 3156 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 172, the mean node degree is 207.51, and the node degree mode is 2. The top 5
-most central nodes are 1121289.JHVL01000009_gene1487 (degree 1135), 1121289.JHVL01000027_gene215
+The undirected graph Clostridiisalibacter paucivorans has 3175 nodes and
+329416 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06538 and has 8 connected components, where the
+component with most nodes has 3156 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 172, the mean node degree
+is 207.51, and the node degree mode is 2. The top 5 most central nodes
+are 1121289.JHVL01000009_gene1487 (degree 1135), 1121289.JHVL01000027_gene215
 (degree 1054), 1121289.JHVL01000010_gene1359 (degree 1044), 1121289.JHVL01000013_gene1628
 (degree 1024) and 1121289.JHVL01000002_gene2355 (degree 992).
 
@@ -107,12 +108,13 @@ def ClostridiisalibacterPaucivorans(
 	
 	Datetime: 2021-02-02 22:34:23.779963
 	
-	The undirected graph Clostridiisalibacter paucivorans has 3175 nodes and 329416 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06538
-	and has 8 connected components, where the component with most nodes has 3156 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 172, the mean node degree is 207.51, and the node degree mode is 2. The top 5
-	most central nodes are 1121289.JHVL01000009_gene1487 (degree 1135), 1121289.JHVL01000027_gene215
+	The undirected graph Clostridiisalibacter paucivorans has 3175 nodes and
+	329416 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06538 and has 8 connected components, where the
+	component with most nodes has 3156 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 172, the mean node degree
+	is 207.51, and the node degree mode is 2. The top 5 most central nodes
+	are 1121289.JHVL01000009_gene1487 (degree 1135), 1121289.JHVL01000027_gene215
 	(degree 1054), 1121289.JHVL01000010_gene1359 (degree 1044), 1121289.JHVL01000013_gene1628
 	(degree 1024) and 1121289.JHVL01000002_gene2355 (degree 992).
 	

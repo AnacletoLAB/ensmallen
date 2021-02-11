@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:53.602978
 
-The undirected graph Oceanobacillus sp. S5 has 5092 nodes and 550856 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04250 and
-has 23 connected components, where the component with most nodes has 5037 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 216.36, and the node degree mode is 1. The top 5 most central
-nodes are 1462527.CCDM010000003_gene4165 (degree 1745), 1462527.CCDM010000006_gene4419
-(degree 1613), 1462527.CCDM010000001_gene1789 (degree 1564), 1462527.CCDM010000007_gene26
-(degree 1456) and 1462527.CCDM010000002_gene1323 (degree 1381).
+The undirected graph Oceanobacillus sp. S5 has 5092 nodes and 550856 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04250 and has 23 connected components, where the component with most
+nodes has 5037 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 216.36, and
+the node degree mode is 1. The top 5 most central nodes are 1462527.CCDM010000003_gene4165
+(degree 1745), 1462527.CCDM010000006_gene4419 (degree 1613), 1462527.CCDM010000001_gene1789
+(degree 1564), 1462527.CCDM010000007_gene26 (degree 1456) and 1462527.CCDM010000002_gene1323
+(degree 1381).
 
 
 References
@@ -107,14 +108,15 @@ def OceanobacillusSp.S5(
 	
 	Datetime: 2021-02-03 23:07:53.602978
 	
-	The undirected graph Oceanobacillus sp. S5 has 5092 nodes and 550856 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04250 and
-	has 23 connected components, where the component with most nodes has 5037 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 216.36, and the node degree mode is 1. The top 5 most central
-	nodes are 1462527.CCDM010000003_gene4165 (degree 1745), 1462527.CCDM010000006_gene4419
-	(degree 1613), 1462527.CCDM010000001_gene1789 (degree 1564), 1462527.CCDM010000007_gene26
-	(degree 1456) and 1462527.CCDM010000002_gene1323 (degree 1381).
+	The undirected graph Oceanobacillus sp. S5 has 5092 nodes and 550856 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04250 and has 23 connected components, where the component with most
+	nodes has 5037 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 216.36, and
+	the node degree mode is 1. The top 5 most central nodes are 1462527.CCDM010000003_gene4165
+	(degree 1745), 1462527.CCDM010000006_gene4419 (degree 1613), 1462527.CCDM010000001_gene1789
+	(degree 1564), 1462527.CCDM010000007_gene26 (degree 1456) and 1462527.CCDM010000002_gene1323
+	(degree 1381).
 	
 
 

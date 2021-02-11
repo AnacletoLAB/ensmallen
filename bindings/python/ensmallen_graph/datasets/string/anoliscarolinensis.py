@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:56:11.666514
 
-The undirected graph Anolis carolinensis has 17618 nodes and 3274318 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02110 and
-has 3 connected components, where the component with most nodes has 17613 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 255,
-the mean node degree is 371.70, and the node degree mode is 102. The top 5 most central
-nodes are 28377.ENSACAP00000004834 (degree 4253), 28377.ENSACAP00000005303 (degree
-4139), 28377.ENSACAP00000014825 (degree 3580), 28377.ENSACAP00000006417 (degree 3579)
-and 28377.ENSACAP00000001346 (degree 3544).
+The undirected graph Anolis carolinensis has 17618 nodes and 3274318 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02110 and has 3 connected components, where the component with most
+nodes has 17613 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 255, the mean node degree is 371.70, and
+the node degree mode is 102. The top 5 most central nodes are 28377.ENSACAP00000004834
+(degree 4253), 28377.ENSACAP00000005303 (degree 4139), 28377.ENSACAP00000014825
+(degree 3580), 28377.ENSACAP00000006417 (degree 3579) and 28377.ENSACAP00000001346
+(degree 3544).
 
 
 References
@@ -107,14 +108,15 @@ def AnolisCarolinensis(
 	
 	Datetime: 2021-02-02 17:56:11.666514
 	
-	The undirected graph Anolis carolinensis has 17618 nodes and 3274318 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02110 and
-	has 3 connected components, where the component with most nodes has 17613 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 255,
-	the mean node degree is 371.70, and the node degree mode is 102. The top 5 most central
-	nodes are 28377.ENSACAP00000004834 (degree 4253), 28377.ENSACAP00000005303 (degree
-	4139), 28377.ENSACAP00000014825 (degree 3580), 28377.ENSACAP00000006417 (degree 3579)
-	and 28377.ENSACAP00000001346 (degree 3544).
+	The undirected graph Anolis carolinensis has 17618 nodes and 3274318 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02110 and has 3 connected components, where the component with most
+	nodes has 17613 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 255, the mean node degree is 371.70, and
+	the node degree mode is 102. The top 5 most central nodes are 28377.ENSACAP00000004834
+	(degree 4253), 28377.ENSACAP00000005303 (degree 4139), 28377.ENSACAP00000014825
+	(degree 3580), 28377.ENSACAP00000006417 (degree 3579) and 28377.ENSACAP00000001346
+	(degree 3544).
 	
 
 

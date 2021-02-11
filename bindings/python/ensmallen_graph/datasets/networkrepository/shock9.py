@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:30:55.813637
 
-The undirected graph shock-9 has 36476 nodes and 71290 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00011 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 3.91, and the node degree mode is 4. The top 5 most central nodes
-are 36410 (degree 4), 36409 (degree 4), 36408 (degree 4), 36407 (degree 4) and 36406
-(degree 4).
+The undirected graph shock-9 has 36476 nodes and 71290 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00011 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 3.91, and the node degree mode
+is 4. The top 5 most central nodes are 36410 (degree 4), 36409 (degree
+4), 36408 (degree 4), 36407 (degree 4) and 36406 (degree 4).
 
 
 References
@@ -102,12 +102,12 @@ def Shock9(
 	
 	Datetime: 2021-02-06 10:30:55.813637
 	
-	The undirected graph shock-9 has 36476 nodes and 71290 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00011 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 3.91, and the node degree mode is 4. The top 5 most central nodes
-	are 36410 (degree 4), 36409 (degree 4), 36408 (degree 4), 36407 (degree 4) and 36406
-	(degree 4).
+	The undirected graph shock-9 has 36476 nodes and 71290 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00011 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 3.91, and the node degree mode
+	is 4. The top 5 most central nodes are 36410 (degree 4), 36409 (degree
+	4), 36408 (degree 4), 36407 (degree 4) and 36406 (degree 4).
 	
 
 

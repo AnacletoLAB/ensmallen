@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 07:45:14.828036
 
-The undirected graph visualize-us has 594559 nodes with 3 different node types: 2
-(nodes number 495402), 3 (nodes number 82035) and 1 (nodes number 17122) and 3247673
-unweighted edges with 680 different edge types:  the 5 most common are 1, 2, 3, 4
-and 5, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00002 and has 7 connected components, where the component with most nodes has
-594506 nodes and the component with the least nodes has 3 nodes. The graph median
-node degree is 3, the mean node degree is 10.92 and the node degree mode is 2. The
-top 5 most central nodes are 512767 (degree 237308), 512741 (degree 51646), 512613
-(degree 34008), 512903 (degree 28437) and 512859 (degree 27288).
+The undirected graph visualize-us has 594559 nodes with 3 different node
+types: 2 (nodes number 495402), 3 (nodes number 82035) and 1 (nodes number
+17122) and 3247673 unweighted edges with 680 different edge types:  the
+5 most common are 1, 2, 3, 4 and 5, of which none are self-loops. The graph
+is extremely sparse as it has a density of 0.00002 and has 7 connected
+components, where the component with most nodes has 594506 nodes and the
+component with the least nodes has 3 nodes. The graph median node degree
+is 3, the mean node degree is 10.92 and the node degree mode is 2. The
+top 5 most central nodes are 512767 (degree 237308), 512741 (degree 51646),
+512613 (degree 34008), 512903 (degree 28437) and 512859 (degree 27288).
 
 
 References
@@ -105,15 +106,16 @@ def VisualizeUs(
 	
 	Datetime: 2021-02-04 07:45:14.828036
 	
-	The undirected graph visualize-us has 594559 nodes with 3 different node types: 2
-	(nodes number 495402), 3 (nodes number 82035) and 1 (nodes number 17122) and 3247673
-	unweighted edges with 680 different edge types:  the 5 most common are 1, 2, 3, 4
-	and 5, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00002 and has 7 connected components, where the component with most nodes has
-	594506 nodes and the component with the least nodes has 3 nodes. The graph median
-	node degree is 3, the mean node degree is 10.92 and the node degree mode is 2. The
-	top 5 most central nodes are 512767 (degree 237308), 512741 (degree 51646), 512613
-	(degree 34008), 512903 (degree 28437) and 512859 (degree 27288).
+	The undirected graph visualize-us has 594559 nodes with 3 different node
+	types: 2 (nodes number 495402), 3 (nodes number 82035) and 1 (nodes number
+	17122) and 3247673 unweighted edges with 680 different edge types:  the
+	5 most common are 1, 2, 3, 4 and 5, of which none are self-loops. The graph
+	is extremely sparse as it has a density of 0.00002 and has 7 connected
+	components, where the component with most nodes has 594506 nodes and the
+	component with the least nodes has 3 nodes. The graph median node degree
+	is 3, the mean node degree is 10.92 and the node degree mode is 2. The
+	top 5 most central nodes are 512767 (degree 237308), 512741 (degree 51646),
+	512613 (degree 34008), 512903 (degree 28437) and 512859 (degree 27288).
 	
 
 

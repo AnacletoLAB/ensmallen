@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:29.508782
 
-The undirected graph Lactobacillus kefiranofaciens has 2065 nodes and 116925 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05487
-and has 18 connected components, where the component with most nodes has 2020 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 75, the mean node degree is 113.24, and the node degree mode is 2. The top 5 most
-central nodes are 1033837.WANG_0240 (degree 857), 1033837.WANG_0448 (degree 661),
-1033837.WANG_1197 (degree 622), 1033837.WANG_0984 (degree 602) and 1033837.WANG_0394
-(degree 589).
+The undirected graph Lactobacillus kefiranofaciens has 2065 nodes and 116925
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05487 and has 18 connected components, where the component
+with most nodes has 2020 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 75, the mean node degree is 113.24,
+and the node degree mode is 2. The top 5 most central nodes are 1033837.WANG_0240
+(degree 857), 1033837.WANG_0448 (degree 661), 1033837.WANG_1197 (degree
+622), 1033837.WANG_0984 (degree 602) and 1033837.WANG_0394 (degree 589).
 
 
 References
@@ -107,14 +107,14 @@ def LactobacillusKefiranofaciens(
 	
 	Datetime: 2021-02-02 22:11:29.508782
 	
-	The undirected graph Lactobacillus kefiranofaciens has 2065 nodes and 116925 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05487
-	and has 18 connected components, where the component with most nodes has 2020 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 75, the mean node degree is 113.24, and the node degree mode is 2. The top 5 most
-	central nodes are 1033837.WANG_0240 (degree 857), 1033837.WANG_0448 (degree 661),
-	1033837.WANG_1197 (degree 622), 1033837.WANG_0984 (degree 602) and 1033837.WANG_0394
-	(degree 589).
+	The undirected graph Lactobacillus kefiranofaciens has 2065 nodes and 116925
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05487 and has 18 connected components, where the component
+	with most nodes has 2020 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 75, the mean node degree is 113.24,
+	and the node degree mode is 2. The top 5 most central nodes are 1033837.WANG_0240
+	(degree 857), 1033837.WANG_0448 (degree 661), 1033837.WANG_1197 (degree
+	622), 1033837.WANG_0984 (degree 602) and 1033837.WANG_0394 (degree 589).
 	
 
 

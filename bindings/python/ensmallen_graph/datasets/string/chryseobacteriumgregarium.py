@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:17.257468
 
-The undirected graph Chryseobacterium gregarium has 3830 nodes and 257324 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03509
-and has 44 connected components, where the component with most nodes has 3726 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 134.37, and the node degree mode is 1. The top 5
-most central nodes are 1121287.AUMU01000019_gene2621 (degree 1088), 1121287.AUMU01000014_gene382
-(degree 876), 1121287.AUMU01000007_gene3557 (degree 791), 1121287.AUMU01000009_gene2157
-(degree 788) and 1121287.AUMU01000005_gene3157 (degree 766).
+The undirected graph Chryseobacterium gregarium has 3830 nodes and 257324
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03509 and has 44 connected components, where the component
+with most nodes has 3726 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 134.37,
+and the node degree mode is 1. The top 5 most central nodes are 1121287.AUMU01000019_gene2621
+(degree 1088), 1121287.AUMU01000014_gene382 (degree 876), 1121287.AUMU01000007_gene3557
+(degree 791), 1121287.AUMU01000009_gene2157 (degree 788) and 1121287.AUMU01000005_gene3157
+(degree 766).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumGregarium(
 	
 	Datetime: 2021-02-02 22:34:17.257468
 	
-	The undirected graph Chryseobacterium gregarium has 3830 nodes and 257324 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03509
-	and has 44 connected components, where the component with most nodes has 3726 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 134.37, and the node degree mode is 1. The top 5
-	most central nodes are 1121287.AUMU01000019_gene2621 (degree 1088), 1121287.AUMU01000014_gene382
-	(degree 876), 1121287.AUMU01000007_gene3557 (degree 791), 1121287.AUMU01000009_gene2157
-	(degree 788) and 1121287.AUMU01000005_gene3157 (degree 766).
+	The undirected graph Chryseobacterium gregarium has 3830 nodes and 257324
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03509 and has 44 connected components, where the component
+	with most nodes has 3726 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 134.37,
+	and the node degree mode is 1. The top 5 most central nodes are 1121287.AUMU01000019_gene2621
+	(degree 1088), 1121287.AUMU01000014_gene382 (degree 876), 1121287.AUMU01000007_gene3557
+	(degree 791), 1121287.AUMU01000009_gene2157 (degree 788) and 1121287.AUMU01000005_gene3157
+	(degree 766).
 	
 
 

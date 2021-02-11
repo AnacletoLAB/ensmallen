@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:06.318690
 
-The undirected graph Bacteroides pyogenes DSM20611 has 3336 nodes and 309382 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05562
-and has 21 connected components, where the component with most nodes has 3283 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 185.48, and the node degree mode is 3. The top 5
-most central nodes are 1121100.JCM6294_753 (degree 1147), 1121100.JCM6294_2992 (degree
-1133), 1121100.JCM6294_3302 (degree 1126), 1121100.JCM6294_1518 (degree 1056) and
-1121100.JCM6294_2254 (degree 1032).
+The undirected graph Bacteroides pyogenes DSM20611 has 3336 nodes and 309382
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05562 and has 21 connected components, where the component
+with most nodes has 3283 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 185.48,
+and the node degree mode is 3. The top 5 most central nodes are 1121100.JCM6294_753
+(degree 1147), 1121100.JCM6294_2992 (degree 1133), 1121100.JCM6294_3302
+(degree 1126), 1121100.JCM6294_1518 (degree 1056) and 1121100.JCM6294_2254
+(degree 1032).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesPyogenesDsm20611(
 	
 	Datetime: 2021-02-02 22:33:06.318690
 	
-	The undirected graph Bacteroides pyogenes DSM20611 has 3336 nodes and 309382 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05562
-	and has 21 connected components, where the component with most nodes has 3283 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 185.48, and the node degree mode is 3. The top 5
-	most central nodes are 1121100.JCM6294_753 (degree 1147), 1121100.JCM6294_2992 (degree
-	1133), 1121100.JCM6294_3302 (degree 1126), 1121100.JCM6294_1518 (degree 1056) and
-	1121100.JCM6294_2254 (degree 1032).
+	The undirected graph Bacteroides pyogenes DSM20611 has 3336 nodes and 309382
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05562 and has 21 connected components, where the component
+	with most nodes has 3283 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 185.48,
+	and the node degree mode is 3. The top 5 most central nodes are 1121100.JCM6294_753
+	(degree 1147), 1121100.JCM6294_2992 (degree 1133), 1121100.JCM6294_3302
+	(degree 1126), 1121100.JCM6294_1518 (degree 1056) and 1121100.JCM6294_2254
+	(degree 1032).
 	
 
 

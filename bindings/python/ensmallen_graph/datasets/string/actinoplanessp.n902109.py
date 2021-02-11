@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:56.257836
 
-The undirected graph Actinoplanes sp. N902109 has 8116 nodes and 745832 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02265
-and has 37 connected components, where the component with most nodes has 8028 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 155, the mean node degree is 183.79, and the node degree mode is 3. The top 5
-most central nodes are 649831.L083_3562 (degree 2179), 649831.L083_2116 (degree 1839),
-649831.L083_2092 (degree 1783), 649831.L083_0304 (degree 1722) and 649831.L083_1025
-(degree 1692).
+The undirected graph Actinoplanes sp. N902109 has 8116 nodes and 745832
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02265 and has 37 connected components, where the component
+with most nodes has 8028 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 155, the mean node degree is 183.79,
+and the node degree mode is 3. The top 5 most central nodes are 649831.L083_3562
+(degree 2179), 649831.L083_2116 (degree 1839), 649831.L083_2092 (degree
+1783), 649831.L083_0304 (degree 1722) and 649831.L083_1025 (degree 1692).
 
 
 References
@@ -107,14 +107,14 @@ def ActinoplanesSp.N902109(
 	
 	Datetime: 2021-02-02 21:25:56.257836
 	
-	The undirected graph Actinoplanes sp. N902109 has 8116 nodes and 745832 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02265
-	and has 37 connected components, where the component with most nodes has 8028 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 155, the mean node degree is 183.79, and the node degree mode is 3. The top 5
-	most central nodes are 649831.L083_3562 (degree 2179), 649831.L083_2116 (degree 1839),
-	649831.L083_2092 (degree 1783), 649831.L083_0304 (degree 1722) and 649831.L083_1025
-	(degree 1692).
+	The undirected graph Actinoplanes sp. N902109 has 8116 nodes and 745832
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02265 and has 37 connected components, where the component
+	with most nodes has 8028 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 155, the mean node degree is 183.79,
+	and the node degree mode is 3. The top 5 most central nodes are 649831.L083_3562
+	(degree 2179), 649831.L083_2116 (degree 1839), 649831.L083_2092 (degree
+	1783), 649831.L083_0304 (degree 1722) and 649831.L083_1025 (degree 1692).
 	
 
 

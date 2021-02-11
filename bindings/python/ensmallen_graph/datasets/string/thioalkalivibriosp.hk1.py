@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:03.730536
 
-The undirected graph Thioalkalivibrio sp. HK1 has 2430 nodes and 198993 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-and has 11 connected components, where the component with most nodes has 2409 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 163.78, and the node degree mode is 1. The top 5
-most central nodes are 1469245.JFBG01000030_gene1548 (degree 963), 1469245.JFBG01000008_gene727
-(degree 908), 1469245.JFBG01000084_gene195 (degree 823), 1469245.JFBG01000063_gene2351
-(degree 818) and 1469245.JFBG01000027_gene1462 (degree 737).
+The undirected graph Thioalkalivibrio sp. HK1 has 2430 nodes and 198993
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06743 and has 11 connected components, where the component
+with most nodes has 2409 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 163.78,
+and the node degree mode is 1. The top 5 most central nodes are 1469245.JFBG01000030_gene1548
+(degree 963), 1469245.JFBG01000008_gene727 (degree 908), 1469245.JFBG01000084_gene195
+(degree 823), 1469245.JFBG01000063_gene2351 (degree 818) and 1469245.JFBG01000027_gene1462
+(degree 737).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Hk1(
 	
 	Datetime: 2021-02-03 23:12:03.730536
 	
-	The undirected graph Thioalkalivibrio sp. HK1 has 2430 nodes and 198993 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06743
-	and has 11 connected components, where the component with most nodes has 2409 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 163.78, and the node degree mode is 1. The top 5
-	most central nodes are 1469245.JFBG01000030_gene1548 (degree 963), 1469245.JFBG01000008_gene727
-	(degree 908), 1469245.JFBG01000084_gene195 (degree 823), 1469245.JFBG01000063_gene2351
-	(degree 818) and 1469245.JFBG01000027_gene1462 (degree 737).
+	The undirected graph Thioalkalivibrio sp. HK1 has 2430 nodes and 198993
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06743 and has 11 connected components, where the component
+	with most nodes has 2409 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 163.78,
+	and the node degree mode is 1. The top 5 most central nodes are 1469245.JFBG01000030_gene1548
+	(degree 963), 1469245.JFBG01000008_gene727 (degree 908), 1469245.JFBG01000084_gene195
+	(degree 823), 1469245.JFBG01000063_gene2351 (degree 818) and 1469245.JFBG01000027_gene1462
+	(degree 737).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:16.241026
 
-The undirected graph Acinetobacter baumannii has 4105 nodes and 428862 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05091 and
-has 12 connected components, where the component with most nodes has 4078 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 208.95, and the node degree mode is 2. The top 5 most central
-nodes are 470.IX87_17560 (degree 1252), 470.IX87_13525 (degree 1188), 470.IX87_17370
-(degree 1135), 470.IX87_15245 (degree 948) and 470.IX87_18510 (degree 905).
+The undirected graph Acinetobacter baumannii has 4105 nodes and 428862
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05091 and has 12 connected components, where the component
+with most nodes has 4078 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 208.95,
+and the node degree mode is 2. The top 5 most central nodes are 470.IX87_17560
+(degree 1252), 470.IX87_13525 (degree 1188), 470.IX87_17370 (degree 1135),
+470.IX87_15245 (degree 948) and 470.IX87_18510 (degree 905).
 
 
 References
@@ -106,13 +107,14 @@ def AcinetobacterBaumannii(
 	
 	Datetime: 2021-02-02 16:21:16.241026
 	
-	The undirected graph Acinetobacter baumannii has 4105 nodes and 428862 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05091 and
-	has 12 connected components, where the component with most nodes has 4078 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 208.95, and the node degree mode is 2. The top 5 most central
-	nodes are 470.IX87_17560 (degree 1252), 470.IX87_13525 (degree 1188), 470.IX87_17370
-	(degree 1135), 470.IX87_15245 (degree 948) and 470.IX87_18510 (degree 905).
+	The undirected graph Acinetobacter baumannii has 4105 nodes and 428862
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05091 and has 12 connected components, where the component
+	with most nodes has 4078 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 208.95,
+	and the node degree mode is 2. The top 5 most central nodes are 470.IX87_17560
+	(degree 1252), 470.IX87_13525 (degree 1188), 470.IX87_17370 (degree 1135),
+	470.IX87_15245 (degree 948) and 470.IX87_18510 (degree 905).
 	
 
 

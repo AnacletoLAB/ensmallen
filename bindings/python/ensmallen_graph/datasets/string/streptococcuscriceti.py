@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:12.357962
 
-The undirected graph Streptococcus criceti has 2245 nodes and 146539 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05818 and
-has 12 connected components, where the component with most nodes has 2222 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 130.55, and the node degree mode is 1. The top 5 most central
-nodes are 873449.STRCR_0619 (degree 872), 873449.STRCR_0387 (degree 811), 873449.STRCR_1865
-(degree 757), 873449.STRCR_0013 (degree 757) and 873449.STRCR_0106 (degree 741).
+The undirected graph Streptococcus criceti has 2245 nodes and 146539 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05818 and has 12 connected components, where the component with most
+nodes has 2222 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 130.55, and
+the node degree mode is 1. The top 5 most central nodes are 873449.STRCR_0619
+(degree 872), 873449.STRCR_0387 (degree 811), 873449.STRCR_1865 (degree
+757), 873449.STRCR_0013 (degree 757) and 873449.STRCR_0106 (degree 741).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusCriceti(
 	
 	Datetime: 2021-02-02 21:49:12.357962
 	
-	The undirected graph Streptococcus criceti has 2245 nodes and 146539 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05818 and
-	has 12 connected components, where the component with most nodes has 2222 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 130.55, and the node degree mode is 1. The top 5 most central
-	nodes are 873449.STRCR_0619 (degree 872), 873449.STRCR_0387 (degree 811), 873449.STRCR_1865
-	(degree 757), 873449.STRCR_0013 (degree 757) and 873449.STRCR_0106 (degree 741).
+	The undirected graph Streptococcus criceti has 2245 nodes and 146539 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05818 and has 12 connected components, where the component with most
+	nodes has 2222 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 130.55, and
+	the node degree mode is 1. The top 5 most central nodes are 873449.STRCR_0619
+	(degree 872), 873449.STRCR_0387 (degree 811), 873449.STRCR_1865 (degree
+	757), 873449.STRCR_0013 (degree 757) and 873449.STRCR_0106 (degree 741).
 	
 
 

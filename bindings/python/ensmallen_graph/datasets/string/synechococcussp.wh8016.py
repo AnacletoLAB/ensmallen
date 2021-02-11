@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:34.615339
 
-The undirected graph Synechococcus sp. WH 8016 has 2942 nodes and 187474 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04333
-and has 50 connected components, where the component with most nodes has 2770 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 127.45, and the node degree mode is 2. The top 5
-most central nodes are 166318.Syn8016DRAFT_0084 (degree 816), 166318.Syn8016DRAFT_2868
-(degree 745), 166318.Syn8016DRAFT_2432 (degree 685), 166318.Syn8016DRAFT_0699 (degree
-684) and 166318.Syn8016DRAFT_2648 (degree 671).
+The undirected graph Synechococcus sp. WH 8016 has 2942 nodes and 187474
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04333 and has 50 connected components, where the component
+with most nodes has 2770 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 127.45,
+and the node degree mode is 2. The top 5 most central nodes are 166318.Syn8016DRAFT_0084
+(degree 816), 166318.Syn8016DRAFT_2868 (degree 745), 166318.Syn8016DRAFT_2432
+(degree 685), 166318.Syn8016DRAFT_0699 (degree 684) and 166318.Syn8016DRAFT_2648
+(degree 671).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Wh8016(
 	
 	Datetime: 2021-02-02 19:54:34.615339
 	
-	The undirected graph Synechococcus sp. WH 8016 has 2942 nodes and 187474 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04333
-	and has 50 connected components, where the component with most nodes has 2770 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 127.45, and the node degree mode is 2. The top 5
-	most central nodes are 166318.Syn8016DRAFT_0084 (degree 816), 166318.Syn8016DRAFT_2868
-	(degree 745), 166318.Syn8016DRAFT_2432 (degree 685), 166318.Syn8016DRAFT_0699 (degree
-	684) and 166318.Syn8016DRAFT_2648 (degree 671).
+	The undirected graph Synechococcus sp. WH 8016 has 2942 nodes and 187474
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04333 and has 50 connected components, where the component
+	with most nodes has 2770 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 127.45,
+	and the node degree mode is 2. The top 5 most central nodes are 166318.Syn8016DRAFT_0084
+	(degree 816), 166318.Syn8016DRAFT_2868 (degree 745), 166318.Syn8016DRAFT_2432
+	(degree 685), 166318.Syn8016DRAFT_0699 (degree 684) and 166318.Syn8016DRAFT_2648
+	(degree 671).
 	
 
 

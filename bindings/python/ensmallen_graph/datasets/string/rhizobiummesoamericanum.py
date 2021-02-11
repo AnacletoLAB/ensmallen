@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:28.242237
 
-The undirected graph Rhizobium mesoamericanum has 6256 nodes and 861344 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04402
-and has 47 connected components, where the component with most nodes has 6141 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 214, the mean node degree is 275.37, and the node degree mode is 2. The top 5
-most central nodes are 1211777.BN77_1107 (degree 2062), 1211777.BN77_p10892 (degree
-2037), 1211777.BN77_4342 (degree 2034), 1211777.BN77_1461 (degree 1979) and 1211777.BN77_0205
-(degree 1696).
+The undirected graph Rhizobium mesoamericanum has 6256 nodes and 861344
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04402 and has 47 connected components, where the component
+with most nodes has 6141 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 275.37,
+and the node degree mode is 2. The top 5 most central nodes are 1211777.BN77_1107
+(degree 2062), 1211777.BN77_p10892 (degree 2037), 1211777.BN77_4342 (degree
+2034), 1211777.BN77_1461 (degree 1979) and 1211777.BN77_0205 (degree 1696).
 
 
 References
@@ -107,14 +107,14 @@ def RhizobiumMesoamericanum(
 	
 	Datetime: 2021-02-02 23:19:28.242237
 	
-	The undirected graph Rhizobium mesoamericanum has 6256 nodes and 861344 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04402
-	and has 47 connected components, where the component with most nodes has 6141 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 214, the mean node degree is 275.37, and the node degree mode is 2. The top 5
-	most central nodes are 1211777.BN77_1107 (degree 2062), 1211777.BN77_p10892 (degree
-	2037), 1211777.BN77_4342 (degree 2034), 1211777.BN77_1461 (degree 1979) and 1211777.BN77_0205
-	(degree 1696).
+	The undirected graph Rhizobium mesoamericanum has 6256 nodes and 861344
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04402 and has 47 connected components, where the component
+	with most nodes has 6141 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 275.37,
+	and the node degree mode is 2. The top 5 most central nodes are 1211777.BN77_1107
+	(degree 2062), 1211777.BN77_p10892 (degree 2037), 1211777.BN77_4342 (degree
+	2034), 1211777.BN77_1461 (degree 1979) and 1211777.BN77_0205 (degree 1696).
 	
 
 

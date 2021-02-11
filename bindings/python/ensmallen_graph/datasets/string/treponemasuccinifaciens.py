@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:42.778396
 
-The undirected graph Treponema succinifaciens has 2584 nodes and 127781 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03829
-and has 14 connected components, where the component with most nodes has 2546 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 98.90, and the node degree mode is 7. The top 5 most
-central nodes are 869209.Tresu_2042 (degree 715), 869209.Tresu_2151 (degree 704),
-869209.Tresu_0611 (degree 665), 869209.Tresu_1337 (degree 664) and 869209.Tresu_1801
-(degree 663).
+The undirected graph Treponema succinifaciens has 2584 nodes and 127781
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03829 and has 14 connected components, where the component
+with most nodes has 2546 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 98.90,
+and the node degree mode is 7. The top 5 most central nodes are 869209.Tresu_2042
+(degree 715), 869209.Tresu_2151 (degree 704), 869209.Tresu_0611 (degree
+665), 869209.Tresu_1337 (degree 664) and 869209.Tresu_1801 (degree 663).
 
 
 References
@@ -107,14 +107,14 @@ def TreponemaSuccinifaciens(
 	
 	Datetime: 2021-02-02 21:48:42.778396
 	
-	The undirected graph Treponema succinifaciens has 2584 nodes and 127781 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03829
-	and has 14 connected components, where the component with most nodes has 2546 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 98.90, and the node degree mode is 7. The top 5 most
-	central nodes are 869209.Tresu_2042 (degree 715), 869209.Tresu_2151 (degree 704),
-	869209.Tresu_0611 (degree 665), 869209.Tresu_1337 (degree 664) and 869209.Tresu_1801
-	(degree 663).
+	The undirected graph Treponema succinifaciens has 2584 nodes and 127781
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03829 and has 14 connected components, where the component
+	with most nodes has 2546 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 98.90,
+	and the node degree mode is 7. The top 5 most central nodes are 869209.Tresu_2042
+	(degree 715), 869209.Tresu_2151 (degree 704), 869209.Tresu_0611 (degree
+	665), 869209.Tresu_1337 (degree 664) and 869209.Tresu_1801 (degree 663).
 	
 
 

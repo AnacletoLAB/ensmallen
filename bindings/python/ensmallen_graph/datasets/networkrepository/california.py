@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:54:01.010510
 
-The undirected graph California has 6175 nodes and 15969 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00084 and
-has 74 connected components, where the component with most nodes has 5925 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 2,
-the mean node degree is 5.17, and the node degree mode is 1. The top 5 most central
-nodes are 1806 (degree 199), 1079 (degree 172), 235 (degree 168), 9 (degree 155)
-and 9664 (degree 139).
+The undirected graph California has 6175 nodes and 15969 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00084 and has 74 connected components, where the component with most
+nodes has 5925 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 2, the mean node degree is 5.17, and the
+node degree mode is 1. The top 5 most central nodes are 1806 (degree 199),
+1079 (degree 172), 235 (degree 168), 9 (degree 155) and 9664 (degree 139).
 
 
 References
@@ -103,13 +103,13 @@ def California(
 	
 	Datetime: 2021-02-06 09:54:01.010510
 	
-	The undirected graph California has 6175 nodes and 15969 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00084 and
-	has 74 connected components, where the component with most nodes has 5925 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 2,
-	the mean node degree is 5.17, and the node degree mode is 1. The top 5 most central
-	nodes are 1806 (degree 199), 1079 (degree 172), 235 (degree 168), 9 (degree 155)
-	and 9664 (degree 139).
+	The undirected graph California has 6175 nodes and 15969 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00084 and has 74 connected components, where the component with most
+	nodes has 5925 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 2, the mean node degree is 5.17, and the
+	node degree mode is 1. The top 5 most central nodes are 1806 (degree 199),
+	1079 (degree 172), 235 (degree 168), 9 (degree 155) and 9664 (degree 139).
 	
 
 

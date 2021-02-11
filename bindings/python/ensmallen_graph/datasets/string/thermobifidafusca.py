@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:58.761760
 
-The undirected graph Thermobifida fusca has 3087 nodes and 310711 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06523 and
-has 9 connected components, where the component with most nodes has 3063 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 201.30, and the node degree mode is 2. The top 5 most central
-nodes are 269800.Tfu_1189 (degree 1279), 269800.Tfu_0286 (degree 1166), 269800.Tfu_2589
-(degree 945), 269800.Tfu_0196 (degree 893) and 269800.Tfu_0803 (degree 892).
+The undirected graph Thermobifida fusca has 3087 nodes and 310711 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06523 and has 9 connected components, where the component with most
+nodes has 3063 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 201.30, and
+the node degree mode is 2. The top 5 most central nodes are 269800.Tfu_1189
+(degree 1279), 269800.Tfu_0286 (degree 1166), 269800.Tfu_2589 (degree 945),
+269800.Tfu_0196 (degree 893) and 269800.Tfu_0803 (degree 892).
 
 
 References
@@ -106,13 +107,14 @@ def ThermobifidaFusca(
 	
 	Datetime: 2021-02-02 20:15:58.761760
 	
-	The undirected graph Thermobifida fusca has 3087 nodes and 310711 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06523 and
-	has 9 connected components, where the component with most nodes has 3063 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 201.30, and the node degree mode is 2. The top 5 most central
-	nodes are 269800.Tfu_1189 (degree 1279), 269800.Tfu_0286 (degree 1166), 269800.Tfu_2589
-	(degree 945), 269800.Tfu_0196 (degree 893) and 269800.Tfu_0803 (degree 892).
+	The undirected graph Thermobifida fusca has 3087 nodes and 310711 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06523 and has 9 connected components, where the component with most
+	nodes has 3063 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 201.30, and
+	the node degree mode is 2. The top 5 most central nodes are 269800.Tfu_1189
+	(degree 1279), 269800.Tfu_0286 (degree 1166), 269800.Tfu_2589 (degree 945),
+	269800.Tfu_0196 (degree 893) and 269800.Tfu_0803 (degree 892).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:23:03.648155
 
-The undirected graph Corynebacterium pseudotuberculosis has 2213 nodes and 200088
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08175 and has 12 connected components, where the component with most nodes has
-2184 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 171, the mean node degree is 180.83, and the node degree mode is 1. The
-top 5 most central nodes are 1719.CPTC_01487 (degree 901), 1719.CPTC_00910 (degree
-714), 1719.CPTC_01505 (degree 698), 1719.CPTC_00225 (degree 698) and 1719.CPTC_01947
-(degree 694).
+The undirected graph Corynebacterium pseudotuberculosis has 2213 nodes
+and 200088 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08175 and has 12 connected components, where the
+component with most nodes has 2184 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 171, the mean node degree
+is 180.83, and the node degree mode is 1. The top 5 most central nodes
+are 1719.CPTC_01487 (degree 901), 1719.CPTC_00910 (degree 714), 1719.CPTC_01505
+(degree 698), 1719.CPTC_00225 (degree 698) and 1719.CPTC_01947 (degree
+694).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumPseudotuberculosis(
 	
 	Datetime: 2021-02-02 16:23:03.648155
 	
-	The undirected graph Corynebacterium pseudotuberculosis has 2213 nodes and 200088
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08175 and has 12 connected components, where the component with most nodes has
-	2184 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 171, the mean node degree is 180.83, and the node degree mode is 1. The
-	top 5 most central nodes are 1719.CPTC_01487 (degree 901), 1719.CPTC_00910 (degree
-	714), 1719.CPTC_01505 (degree 698), 1719.CPTC_00225 (degree 698) and 1719.CPTC_01947
-	(degree 694).
+	The undirected graph Corynebacterium pseudotuberculosis has 2213 nodes
+	and 200088 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08175 and has 12 connected components, where the
+	component with most nodes has 2184 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 171, the mean node degree
+	is 180.83, and the node degree mode is 1. The top 5 most central nodes
+	are 1719.CPTC_01487 (degree 901), 1719.CPTC_00910 (degree 714), 1719.CPTC_01505
+	(degree 698), 1719.CPTC_00225 (degree 698) and 1719.CPTC_01947 (degree
+	694).
 	
 
 

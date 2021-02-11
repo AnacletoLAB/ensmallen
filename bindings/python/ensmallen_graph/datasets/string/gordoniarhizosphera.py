@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:25:03.074311
 
-The undirected graph Gordonia rhizosphera has 5884 nodes and 1000973 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05783 and
-has 26 connected components, where the component with most nodes has 5819 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 269,
-the mean node degree is 340.24, and the node degree mode is 3. The top 5 most central
-nodes are 1108045.GORHZ_062_00810 (degree 2645), 1108045.GORHZ_073_00030 (degree
-2428), 1108045.GORHZ_106_00080 (degree 2163), 1108045.GORHZ_104_00330 (degree 2049)
-and 1108045.GORHZ_189_00090 (degree 2022).
+The undirected graph Gordonia rhizosphera has 5884 nodes and 1000973 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05783 and has 26 connected components, where the component with most
+nodes has 5819 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 269, the mean node degree is 340.24, and
+the node degree mode is 3. The top 5 most central nodes are 1108045.GORHZ_062_00810
+(degree 2645), 1108045.GORHZ_073_00030 (degree 2428), 1108045.GORHZ_106_00080
+(degree 2163), 1108045.GORHZ_104_00330 (degree 2049) and 1108045.GORHZ_189_00090
+(degree 2022).
 
 
 References
@@ -107,14 +108,15 @@ def GordoniaRhizosphera(
 	
 	Datetime: 2021-02-02 22:25:03.074311
 	
-	The undirected graph Gordonia rhizosphera has 5884 nodes and 1000973 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05783 and
-	has 26 connected components, where the component with most nodes has 5819 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 269,
-	the mean node degree is 340.24, and the node degree mode is 3. The top 5 most central
-	nodes are 1108045.GORHZ_062_00810 (degree 2645), 1108045.GORHZ_073_00030 (degree
-	2428), 1108045.GORHZ_106_00080 (degree 2163), 1108045.GORHZ_104_00330 (degree 2049)
-	and 1108045.GORHZ_189_00090 (degree 2022).
+	The undirected graph Gordonia rhizosphera has 5884 nodes and 1000973 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05783 and has 26 connected components, where the component with most
+	nodes has 5819 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 269, the mean node degree is 340.24, and
+	the node degree mode is 3. The top 5 most central nodes are 1108045.GORHZ_062_00810
+	(degree 2645), 1108045.GORHZ_073_00030 (degree 2428), 1108045.GORHZ_106_00080
+	(degree 2163), 1108045.GORHZ_104_00330 (degree 2049) and 1108045.GORHZ_189_00090
+	(degree 2022).
 	
 
 

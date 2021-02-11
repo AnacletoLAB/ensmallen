@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:48.238482
 
-The undirected graph Streptococcus sp. 73H25AP has 1917 nodes and 139890 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07617
-and has 7 connected components, where the component with most nodes has 1904 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 145.95, and the node degree mode is 7. The top 5
-most central nodes are 864570.HMPREF9189_1697 (degree 873), 864570.HMPREF9189_1733
-(degree 753), 864570.HMPREF9189_0903 (degree 691), 864570.HMPREF9189_0142 (degree
-673) and 864570.HMPREF9189_0608 (degree 668).
+The undirected graph Streptococcus sp. 73H25AP has 1917 nodes and 139890
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07617 and has 7 connected components, where the component
+with most nodes has 1904 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 145.95,
+and the node degree mode is 7. The top 5 most central nodes are 864570.HMPREF9189_1697
+(degree 873), 864570.HMPREF9189_1733 (degree 753), 864570.HMPREF9189_0903
+(degree 691), 864570.HMPREF9189_0142 (degree 673) and 864570.HMPREF9189_0608
+(degree 668).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSp.73h25ap(
 	
 	Datetime: 2021-02-02 21:47:48.238482
 	
-	The undirected graph Streptococcus sp. 73H25AP has 1917 nodes and 139890 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07617
-	and has 7 connected components, where the component with most nodes has 1904 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 145.95, and the node degree mode is 7. The top 5
-	most central nodes are 864570.HMPREF9189_1697 (degree 873), 864570.HMPREF9189_1733
-	(degree 753), 864570.HMPREF9189_0903 (degree 691), 864570.HMPREF9189_0142 (degree
-	673) and 864570.HMPREF9189_0608 (degree 668).
+	The undirected graph Streptococcus sp. 73H25AP has 1917 nodes and 139890
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07617 and has 7 connected components, where the component
+	with most nodes has 1904 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 145.95,
+	and the node degree mode is 7. The top 5 most central nodes are 864570.HMPREF9189_1697
+	(degree 873), 864570.HMPREF9189_1733 (degree 753), 864570.HMPREF9189_0903
+	(degree 691), 864570.HMPREF9189_0142 (degree 673) and 864570.HMPREF9189_0608
+	(degree 668).
 	
 
 

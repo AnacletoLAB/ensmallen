@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:52.045980
 
-The undirected graph Acholeplasma granularum has 1335 nodes and 83622 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09391 and
-has 7 connected components, where the component with most nodes has 1321 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 125.28, and the node degree mode is 1. The top 5 most central
-nodes are 1278304.JAFR01000006_gene377 (degree 699), 1278304.JAFR01000007_gene210
-(degree 587), 1278304.JAFR01000009_gene1285 (degree 571), 1278304.JAFR01000008_gene1062
-(degree 563) and 1278304.JAFR01000006_gene406 (degree 545).
+The undirected graph Acholeplasma granularum has 1335 nodes and 83622 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09391 and has 7 connected components, where the component with most
+nodes has 1321 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 125.28, and
+the node degree mode is 1. The top 5 most central nodes are 1278304.JAFR01000006_gene377
+(degree 699), 1278304.JAFR01000007_gene210 (degree 587), 1278304.JAFR01000009_gene1285
+(degree 571), 1278304.JAFR01000008_gene1062 (degree 563) and 1278304.JAFR01000006_gene406
+(degree 545).
 
 
 References
@@ -107,14 +108,15 @@ def AcholeplasmaGranularum(
 	
 	Datetime: 2021-02-02 23:38:52.045980
 	
-	The undirected graph Acholeplasma granularum has 1335 nodes and 83622 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09391 and
-	has 7 connected components, where the component with most nodes has 1321 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 125.28, and the node degree mode is 1. The top 5 most central
-	nodes are 1278304.JAFR01000006_gene377 (degree 699), 1278304.JAFR01000007_gene210
-	(degree 587), 1278304.JAFR01000009_gene1285 (degree 571), 1278304.JAFR01000008_gene1062
-	(degree 563) and 1278304.JAFR01000006_gene406 (degree 545).
+	The undirected graph Acholeplasma granularum has 1335 nodes and 83622 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09391 and has 7 connected components, where the component with most
+	nodes has 1321 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 125.28, and
+	the node degree mode is 1. The top 5 most central nodes are 1278304.JAFR01000006_gene377
+	(degree 699), 1278304.JAFR01000007_gene210 (degree 587), 1278304.JAFR01000009_gene1285
+	(degree 571), 1278304.JAFR01000008_gene1062 (degree 563) and 1278304.JAFR01000006_gene406
+	(degree 545).
 	
 
 

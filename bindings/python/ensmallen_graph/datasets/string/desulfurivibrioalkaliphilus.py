@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:14.791893
 
-The undirected graph Desulfurivibrio alkaliphilus has 2604 nodes and 195859 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05779
-and has 5 connected components, where the component with most nodes has 2595 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 150.43, and the node degree mode is 7. The top 5
-most central nodes are 589865.DaAHT2_0638 (degree 1124), 589865.DaAHT2_1946 (degree
-1114), 589865.DaAHT2_1333 (degree 945), 589865.DaAHT2_0906 (degree 939) and 589865.DaAHT2_1544
-(degree 756).
+The undirected graph Desulfurivibrio alkaliphilus has 2604 nodes and 195859
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05779 and has 5 connected components, where the component
+with most nodes has 2595 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 150.43,
+and the node degree mode is 7. The top 5 most central nodes are 589865.DaAHT2_0638
+(degree 1124), 589865.DaAHT2_1946 (degree 1114), 589865.DaAHT2_1333 (degree
+945), 589865.DaAHT2_0906 (degree 939) and 589865.DaAHT2_1544 (degree 756).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfurivibrioAlkaliphilus(
 	
 	Datetime: 2021-02-02 21:17:14.791893
 	
-	The undirected graph Desulfurivibrio alkaliphilus has 2604 nodes and 195859 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05779
-	and has 5 connected components, where the component with most nodes has 2595 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 150.43, and the node degree mode is 7. The top 5
-	most central nodes are 589865.DaAHT2_0638 (degree 1124), 589865.DaAHT2_1946 (degree
-	1114), 589865.DaAHT2_1333 (degree 945), 589865.DaAHT2_0906 (degree 939) and 589865.DaAHT2_1544
-	(degree 756).
+	The undirected graph Desulfurivibrio alkaliphilus has 2604 nodes and 195859
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05779 and has 5 connected components, where the component
+	with most nodes has 2595 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 150.43,
+	and the node degree mode is 7. The top 5 most central nodes are 589865.DaAHT2_0638
+	(degree 1124), 589865.DaAHT2_1946 (degree 1114), 589865.DaAHT2_1333 (degree
+	945), 589865.DaAHT2_0906 (degree 939) and 589865.DaAHT2_1544 (degree 756).
 	
 
 

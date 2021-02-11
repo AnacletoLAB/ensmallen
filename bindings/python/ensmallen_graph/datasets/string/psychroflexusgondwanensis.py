@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:24.300351
 
-The undirected graph Psychroflexus gondwanensis has 2874 nodes and 217451 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05267
-and has 15 connected components, where the component with most nodes has 2838 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 151.32, and the node degree mode is 2. The top 5
-most central nodes are 1189619.pgond44_03483 (degree 1190), 1189619.pgond44_07645
-(degree 1016), 1189619.pgond44_03638 (degree 933), 1189619.pgond44_10664 (degree
-858) and 1189619.pgond44_10191 (degree 856).
+The undirected graph Psychroflexus gondwanensis has 2874 nodes and 217451
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05267 and has 15 connected components, where the component
+with most nodes has 2838 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 151.32,
+and the node degree mode is 2. The top 5 most central nodes are 1189619.pgond44_03483
+(degree 1190), 1189619.pgond44_07645 (degree 1016), 1189619.pgond44_03638
+(degree 933), 1189619.pgond44_10664 (degree 858) and 1189619.pgond44_10191
+(degree 856).
 
 
 References
@@ -107,14 +108,15 @@ def PsychroflexusGondwanensis(
 	
 	Datetime: 2021-02-02 23:11:24.300351
 	
-	The undirected graph Psychroflexus gondwanensis has 2874 nodes and 217451 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05267
-	and has 15 connected components, where the component with most nodes has 2838 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 151.32, and the node degree mode is 2. The top 5
-	most central nodes are 1189619.pgond44_03483 (degree 1190), 1189619.pgond44_07645
-	(degree 1016), 1189619.pgond44_03638 (degree 933), 1189619.pgond44_10664 (degree
-	858) and 1189619.pgond44_10191 (degree 856).
+	The undirected graph Psychroflexus gondwanensis has 2874 nodes and 217451
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05267 and has 15 connected components, where the component
+	with most nodes has 2838 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 151.32,
+	and the node degree mode is 2. The top 5 most central nodes are 1189619.pgond44_03483
+	(degree 1190), 1189619.pgond44_07645 (degree 1016), 1189619.pgond44_03638
+	(degree 933), 1189619.pgond44_10664 (degree 858) and 1189619.pgond44_10191
+	(degree 856).
 	
 
 

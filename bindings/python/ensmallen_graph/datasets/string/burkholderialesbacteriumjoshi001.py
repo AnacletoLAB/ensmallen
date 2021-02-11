@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:23.426129
 
-The undirected graph Burkholderiales bacterium JOSHI001 has 4871 nodes and 677657
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05713 and has 12 connected components, where the component with most nodes has
-4846 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 242, the mean node degree is 278.24, and the node degree mode is 2. The
-top 5 most central nodes are 864051.BurJ1DRAFT_3700 (degree 2275), 864051.BurJ1DRAFT_3037
-(degree 2012), 864051.BurJ1DRAFT_3753 (degree 1892), 864051.BurJ1DRAFT_0927 (degree
+The undirected graph Burkholderiales bacterium JOSHI001 has 4871 nodes
+and 677657 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05713 and has 12 connected components, where the
+component with most nodes has 4846 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 242, the mean node degree
+is 278.24, and the node degree mode is 2. The top 5 most central nodes
+are 864051.BurJ1DRAFT_3700 (degree 2275), 864051.BurJ1DRAFT_3037 (degree
+2012), 864051.BurJ1DRAFT_3753 (degree 1892), 864051.BurJ1DRAFT_0927 (degree
 1638) and 864051.BurJ1DRAFT_3572 (degree 1564).
 
 
@@ -107,13 +108,14 @@ def BurkholderialesBacteriumJoshi001(
 	
 	Datetime: 2021-02-02 21:47:23.426129
 	
-	The undirected graph Burkholderiales bacterium JOSHI001 has 4871 nodes and 677657
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05713 and has 12 connected components, where the component with most nodes has
-	4846 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 242, the mean node degree is 278.24, and the node degree mode is 2. The
-	top 5 most central nodes are 864051.BurJ1DRAFT_3700 (degree 2275), 864051.BurJ1DRAFT_3037
-	(degree 2012), 864051.BurJ1DRAFT_3753 (degree 1892), 864051.BurJ1DRAFT_0927 (degree
+	The undirected graph Burkholderiales bacterium JOSHI001 has 4871 nodes
+	and 677657 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05713 and has 12 connected components, where the
+	component with most nodes has 4846 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 242, the mean node degree
+	is 278.24, and the node degree mode is 2. The top 5 most central nodes
+	are 864051.BurJ1DRAFT_3700 (degree 2275), 864051.BurJ1DRAFT_3037 (degree
+	2012), 864051.BurJ1DRAFT_3753 (degree 1892), 864051.BurJ1DRAFT_0927 (degree
 	1638) and 864051.BurJ1DRAFT_3572 (degree 1564).
 	
 

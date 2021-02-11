@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:03.846157
 
-The undirected graph Nocardiopsis ganjiahuensis has 6196 nodes and 651136 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03393
-and has 36 connected components, where the component with most nodes has 6103 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 210.18, and the node degree mode is 1. The top 5
-most central nodes are 1237500.ANBA01000009_gene1154 (degree 1679), 1237500.ANBA01000003_gene4633
-(degree 1471), 1237500.ANBA01000009_gene1176 (degree 1427), 1237500.ANBA01000027_gene2000
-(degree 1403) and 1237500.ANBA01000028_gene4953 (degree 1394).
+The undirected graph Nocardiopsis ganjiahuensis has 6196 nodes and 651136
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03393 and has 36 connected components, where the component
+with most nodes has 6103 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 210.18,
+and the node degree mode is 1. The top 5 most central nodes are 1237500.ANBA01000009_gene1154
+(degree 1679), 1237500.ANBA01000003_gene4633 (degree 1471), 1237500.ANBA01000009_gene1176
+(degree 1427), 1237500.ANBA01000027_gene2000 (degree 1403) and 1237500.ANBA01000028_gene4953
+(degree 1394).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisGanjiahuensis(
 	
 	Datetime: 2021-02-02 23:32:03.846157
 	
-	The undirected graph Nocardiopsis ganjiahuensis has 6196 nodes and 651136 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03393
-	and has 36 connected components, where the component with most nodes has 6103 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 210.18, and the node degree mode is 1. The top 5
-	most central nodes are 1237500.ANBA01000009_gene1154 (degree 1679), 1237500.ANBA01000003_gene4633
-	(degree 1471), 1237500.ANBA01000009_gene1176 (degree 1427), 1237500.ANBA01000027_gene2000
-	(degree 1403) and 1237500.ANBA01000028_gene4953 (degree 1394).
+	The undirected graph Nocardiopsis ganjiahuensis has 6196 nodes and 651136
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03393 and has 36 connected components, where the component
+	with most nodes has 6103 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 210.18,
+	and the node degree mode is 1. The top 5 most central nodes are 1237500.ANBA01000009_gene1154
+	(degree 1679), 1237500.ANBA01000003_gene4633 (degree 1471), 1237500.ANBA01000009_gene1176
+	(degree 1427), 1237500.ANBA01000027_gene2000 (degree 1403) and 1237500.ANBA01000028_gene4953
+	(degree 1394).
 	
 
 

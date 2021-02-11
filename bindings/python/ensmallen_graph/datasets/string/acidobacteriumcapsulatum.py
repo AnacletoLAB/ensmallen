@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:32.453400
 
-The undirected graph Acidobacterium capsulatum has 3309 nodes and 277755 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05075
-and has 14 connected components, where the component with most nodes has 3274 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 167.88, and the node degree mode is 2. The top 5
-most central nodes are 240015.ACP_1738 (degree 1255), 240015.ACP_0447 (degree 1009),
-240015.ACP_2686 (degree 968), 240015.ACP_3315 (degree 957) and 240015.ACP_2997 (degree
-855).
+The undirected graph Acidobacterium capsulatum has 3309 nodes and 277755
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05075 and has 14 connected components, where the component
+with most nodes has 3274 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 167.88,
+and the node degree mode is 2. The top 5 most central nodes are 240015.ACP_1738
+(degree 1255), 240015.ACP_0447 (degree 1009), 240015.ACP_2686 (degree 968),
+240015.ACP_3315 (degree 957) and 240015.ACP_2997 (degree 855).
 
 
 References
@@ -107,14 +107,14 @@ def AcidobacteriumCapsulatum(
 	
 	Datetime: 2021-02-02 20:08:32.453400
 	
-	The undirected graph Acidobacterium capsulatum has 3309 nodes and 277755 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05075
-	and has 14 connected components, where the component with most nodes has 3274 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 167.88, and the node degree mode is 2. The top 5
-	most central nodes are 240015.ACP_1738 (degree 1255), 240015.ACP_0447 (degree 1009),
-	240015.ACP_2686 (degree 968), 240015.ACP_3315 (degree 957) and 240015.ACP_2997 (degree
-	855).
+	The undirected graph Acidobacterium capsulatum has 3309 nodes and 277755
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05075 and has 14 connected components, where the component
+	with most nodes has 3274 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 167.88,
+	and the node degree mode is 2. The top 5 most central nodes are 240015.ACP_1738
+	(degree 1255), 240015.ACP_0447 (degree 1009), 240015.ACP_2686 (degree 968),
+	240015.ACP_3315 (degree 957) and 240015.ACP_2997 (degree 855).
 	
 
 

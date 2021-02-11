@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:49.933294
 
-The undirected graph alpha proteobacterium HIMB114 has 1313 nodes and 79262 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09202
-and has 3 connected components, where the component with most nodes has 1308 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 120.73, and the node degree mode is 5. The top 5
-most central nodes are 684719.HIMB114_00010520 (degree 592), 684719.HIMB114_00011010
-(degree 464), 684719.HIMB114_00007500 (degree 455), 684719.HIMB114_00004760 (degree
-442) and 684719.HIMB114_00000370 (degree 430).
+The undirected graph alpha proteobacterium HIMB114 has 1313 nodes and 79262
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09202 and has 3 connected components, where the component
+with most nodes has 1308 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 120.73,
+and the node degree mode is 5. The top 5 most central nodes are 684719.HIMB114_00010520
+(degree 592), 684719.HIMB114_00011010 (degree 464), 684719.HIMB114_00007500
+(degree 455), 684719.HIMB114_00004760 (degree 442) and 684719.HIMB114_00000370
+(degree 430).
 
 
 References
@@ -107,14 +108,15 @@ def AlphaProteobacteriumHimb114(
 	
 	Datetime: 2021-02-02 21:30:49.933294
 	
-	The undirected graph alpha proteobacterium HIMB114 has 1313 nodes and 79262 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09202
-	and has 3 connected components, where the component with most nodes has 1308 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 120.73, and the node degree mode is 5. The top 5
-	most central nodes are 684719.HIMB114_00010520 (degree 592), 684719.HIMB114_00011010
-	(degree 464), 684719.HIMB114_00007500 (degree 455), 684719.HIMB114_00004760 (degree
-	442) and 684719.HIMB114_00000370 (degree 430).
+	The undirected graph alpha proteobacterium HIMB114 has 1313 nodes and 79262
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09202 and has 3 connected components, where the component
+	with most nodes has 1308 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 120.73,
+	and the node degree mode is 5. The top 5 most central nodes are 684719.HIMB114_00010520
+	(degree 592), 684719.HIMB114_00011010 (degree 464), 684719.HIMB114_00007500
+	(degree 455), 684719.HIMB114_00004760 (degree 442) and 684719.HIMB114_00000370
+	(degree 430).
 	
 
 

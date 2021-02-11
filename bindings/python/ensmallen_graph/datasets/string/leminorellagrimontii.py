@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:10.282385
 
-The undirected graph Leminorella grimontii has 3724 nodes and 429675 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06198 and
-has 9 connected components, where the component with most nodes has 3707 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 211,
-the mean node degree is 230.76, and the node degree mode is 4. The top 5 most central
-nodes are 1005999.GLGR_3347 (degree 1165), 1005999.GLGR_1028 (degree 1155), 1005999.GLGR_3048
-(degree 1152), 1005999.GLGR_2453 (degree 1120) and 1005999.GLGR_1424 (degree 1094).
+The undirected graph Leminorella grimontii has 3724 nodes and 429675 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06198 and has 9 connected components, where the component with most
+nodes has 3707 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 211, the mean node degree is 230.76, and
+the node degree mode is 4. The top 5 most central nodes are 1005999.GLGR_3347
+(degree 1165), 1005999.GLGR_1028 (degree 1155), 1005999.GLGR_3048 (degree
+1152), 1005999.GLGR_2453 (degree 1120) and 1005999.GLGR_1424 (degree 1094).
 
 
 References
@@ -106,13 +107,14 @@ def LeminorellaGrimontii(
 	
 	Datetime: 2021-02-02 22:08:10.282385
 	
-	The undirected graph Leminorella grimontii has 3724 nodes and 429675 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06198 and
-	has 9 connected components, where the component with most nodes has 3707 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 211,
-	the mean node degree is 230.76, and the node degree mode is 4. The top 5 most central
-	nodes are 1005999.GLGR_3347 (degree 1165), 1005999.GLGR_1028 (degree 1155), 1005999.GLGR_3048
-	(degree 1152), 1005999.GLGR_2453 (degree 1120) and 1005999.GLGR_1424 (degree 1094).
+	The undirected graph Leminorella grimontii has 3724 nodes and 429675 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06198 and has 9 connected components, where the component with most
+	nodes has 3707 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 211, the mean node degree is 230.76, and
+	the node degree mode is 4. The top 5 most central nodes are 1005999.GLGR_3347
+	(degree 1165), 1005999.GLGR_1028 (degree 1155), 1005999.GLGR_3048 (degree
+	1152), 1005999.GLGR_2453 (degree 1120) and 1005999.GLGR_1424 (degree 1094).
 	
 
 

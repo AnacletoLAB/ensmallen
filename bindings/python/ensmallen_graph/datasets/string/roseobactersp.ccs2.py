@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:30.441408
 
-The undirected graph Roseobacter sp. CCS2 has 3625 nodes and 338501 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05153 and
-has 12 connected components, where the component with most nodes has 3598 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 186.76, and the node degree mode is 4. The top 5 most central
-nodes are 391593.RCCS2_13804 (degree 1376), 391593.RCCS2_17831 (degree 1151), 391593.RCCS2_06059
-(degree 1048), 391593.RCCS2_16124 (degree 1037) and 391593.RCCS2_00894 (degree 1002).
+The undirected graph Roseobacter sp. CCS2 has 3625 nodes and 338501 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05153 and has 12 connected components, where the component with most
+nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 186.76, and
+the node degree mode is 4. The top 5 most central nodes are 391593.RCCS2_13804
+(degree 1376), 391593.RCCS2_17831 (degree 1151), 391593.RCCS2_06059 (degree
+1048), 391593.RCCS2_16124 (degree 1037) and 391593.RCCS2_00894 (degree
+1002).
 
 
 References
@@ -106,13 +108,15 @@ def RoseobacterSp.Ccs2(
 	
 	Datetime: 2021-02-02 20:39:30.441408
 	
-	The undirected graph Roseobacter sp. CCS2 has 3625 nodes and 338501 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05153 and
-	has 12 connected components, where the component with most nodes has 3598 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 186.76, and the node degree mode is 4. The top 5 most central
-	nodes are 391593.RCCS2_13804 (degree 1376), 391593.RCCS2_17831 (degree 1151), 391593.RCCS2_06059
-	(degree 1048), 391593.RCCS2_16124 (degree 1037) and 391593.RCCS2_00894 (degree 1002).
+	The undirected graph Roseobacter sp. CCS2 has 3625 nodes and 338501 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05153 and has 12 connected components, where the component with most
+	nodes has 3598 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 186.76, and
+	the node degree mode is 4. The top 5 most central nodes are 391593.RCCS2_13804
+	(degree 1376), 391593.RCCS2_17831 (degree 1151), 391593.RCCS2_06059 (degree
+	1048), 391593.RCCS2_16124 (degree 1037) and 391593.RCCS2_00894 (degree
+	1002).
 	
 
 

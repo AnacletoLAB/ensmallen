@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:51:24.273203
 
-The undirected graph Lactobacillus hayakitensis has 1677 nodes and 103417 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07359
-and has 23 connected components, where the component with most nodes has 1607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 97, the mean node degree is 123.34, and the node degree mode is 3. The top 5 most
-central nodes are 1423755.BAML01000010_gene831 (degree 770), 1423755.BAML01000002_gene183
-(degree 704), 1423755.BAML01000008_gene725 (degree 640), 1423755.BAML01000007_gene658
-(degree 627) and 1423755.BAML01000019_gene1214 (degree 616).
+The undirected graph Lactobacillus hayakitensis has 1677 nodes and 103417
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07359 and has 23 connected components, where the component
+with most nodes has 1607 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 123.34,
+and the node degree mode is 3. The top 5 most central nodes are 1423755.BAML01000010_gene831
+(degree 770), 1423755.BAML01000002_gene183 (degree 704), 1423755.BAML01000008_gene725
+(degree 640), 1423755.BAML01000007_gene658 (degree 627) and 1423755.BAML01000019_gene1214
+(degree 616).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusHayakitensis(
 	
 	Datetime: 2021-02-03 22:51:24.273203
 	
-	The undirected graph Lactobacillus hayakitensis has 1677 nodes and 103417 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07359
-	and has 23 connected components, where the component with most nodes has 1607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 97, the mean node degree is 123.34, and the node degree mode is 3. The top 5 most
-	central nodes are 1423755.BAML01000010_gene831 (degree 770), 1423755.BAML01000002_gene183
-	(degree 704), 1423755.BAML01000008_gene725 (degree 640), 1423755.BAML01000007_gene658
-	(degree 627) and 1423755.BAML01000019_gene1214 (degree 616).
+	The undirected graph Lactobacillus hayakitensis has 1677 nodes and 103417
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07359 and has 23 connected components, where the component
+	with most nodes has 1607 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 123.34,
+	and the node degree mode is 3. The top 5 most central nodes are 1423755.BAML01000010_gene831
+	(degree 770), 1423755.BAML01000002_gene183 (degree 704), 1423755.BAML01000008_gene725
+	(degree 640), 1423755.BAML01000007_gene658 (degree 627) and 1423755.BAML01000019_gene1214
+	(degree 616).
 	
 
 

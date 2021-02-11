@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:10.137442
 
-The undirected graph CL-1000-1d7-trial1 has 928 nodes and 4653 unweighted edges,
-of which 27 are self-loops. The graph is dense as it has a density of 0.01077 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 10.00, and the node degree mode is 2. The top 5 most central
-nodes are 716 (degree 133), 767 (degree 129), 823 (degree 123), 15 (degree 121) and
-17 (degree 118).
+The undirected graph CL-1000-1d7-trial1 has 928 nodes and 4653 unweighted
+edges, of which 27 are self-loops. The graph is dense as it has a density
+of 0.01077 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 10.00, and the node degree mode
+is 2. The top 5 most central nodes are 716 (degree 133), 767 (degree 129),
+823 (degree 123), 15 (degree 121) and 17 (degree 118).
 
 
 References
@@ -102,12 +102,12 @@ def Cl10001d7Trial1(
 	
 	Datetime: 2021-02-06 09:27:10.137442
 	
-	The undirected graph CL-1000-1d7-trial1 has 928 nodes and 4653 unweighted edges,
-	of which 27 are self-loops. The graph is dense as it has a density of 0.01077 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 10.00, and the node degree mode is 2. The top 5 most central
-	nodes are 716 (degree 133), 767 (degree 129), 823 (degree 123), 15 (degree 121) and
-	17 (degree 118).
+	The undirected graph CL-1000-1d7-trial1 has 928 nodes and 4653 unweighted
+	edges, of which 27 are self-loops. The graph is dense as it has a density
+	of 0.01077 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 10.00, and the node degree mode
+	is 2. The top 5 most central nodes are 716 (degree 133), 767 (degree 129),
+	823 (degree 123), 15 (degree 121) and 17 (degree 118).
 	
 
 

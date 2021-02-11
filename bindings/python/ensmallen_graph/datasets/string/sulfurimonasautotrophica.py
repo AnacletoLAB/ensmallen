@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:26.951565
 
-The undirected graph Sulfurimonas autotrophica has 2155 nodes and 146401 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06308
-and is connected, as it has a single component. The graph median node degree is 109,
-the mean node degree is 135.87, and the node degree mode is 9. The top 5 most central
-nodes are 563040.Saut_1353 (degree 968), 563040.Saut_0792 (degree 826), 563040.Saut_1786
-(degree 758), 563040.Saut_1301 (degree 727) and 563040.Saut_1217 (degree 718).
+The undirected graph Sulfurimonas autotrophica has 2155 nodes and 146401
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06308 and is connected, as it has a single component.
+The graph median node degree is 109, the mean node degree is 135.87, and
+the node degree mode is 9. The top 5 most central nodes are 563040.Saut_1353
+(degree 968), 563040.Saut_0792 (degree 826), 563040.Saut_1786 (degree 758),
+563040.Saut_1301 (degree 727) and 563040.Saut_1217 (degree 718).
 
 
 References
@@ -105,12 +106,13 @@ def SulfurimonasAutotrophica(
 	
 	Datetime: 2021-02-02 21:12:26.951565
 	
-	The undirected graph Sulfurimonas autotrophica has 2155 nodes and 146401 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06308
-	and is connected, as it has a single component. The graph median node degree is 109,
-	the mean node degree is 135.87, and the node degree mode is 9. The top 5 most central
-	nodes are 563040.Saut_1353 (degree 968), 563040.Saut_0792 (degree 826), 563040.Saut_1786
-	(degree 758), 563040.Saut_1301 (degree 727) and 563040.Saut_1217 (degree 718).
+	The undirected graph Sulfurimonas autotrophica has 2155 nodes and 146401
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06308 and is connected, as it has a single component.
+	The graph median node degree is 109, the mean node degree is 135.87, and
+	the node degree mode is 9. The top 5 most central nodes are 563040.Saut_1353
+	(degree 968), 563040.Saut_0792 (degree 826), 563040.Saut_1786 (degree 758),
+	563040.Saut_1301 (degree 727) and 563040.Saut_1217 (degree 718).
 	
 
 

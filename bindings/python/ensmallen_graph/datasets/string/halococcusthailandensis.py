@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:55.346285
 
-The undirected graph Halococcus thailandensis has 3873 nodes and 281453 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03754
-and has 70 connected components, where the component with most nodes has 3672 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 145.34, and the node degree mode is 1. The top 5
-most central nodes are 1227457.C451_16425 (degree 927), 1227457.C451_10205 (degree
-843), 1227457.C451_14375 (degree 821), 1227457.C451_10032 (degree 819) and 1227457.C451_10905
-(degree 800).
+The undirected graph Halococcus thailandensis has 3873 nodes and 281453
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03754 and has 70 connected components, where the component
+with most nodes has 3672 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 145.34,
+and the node degree mode is 1. The top 5 most central nodes are 1227457.C451_16425
+(degree 927), 1227457.C451_10205 (degree 843), 1227457.C451_14375 (degree
+821), 1227457.C451_10032 (degree 819) and 1227457.C451_10905 (degree 800).
 
 
 References
@@ -107,14 +107,14 @@ def HalococcusThailandensis(
 	
 	Datetime: 2021-02-02 23:25:55.346285
 	
-	The undirected graph Halococcus thailandensis has 3873 nodes and 281453 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03754
-	and has 70 connected components, where the component with most nodes has 3672 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 145.34, and the node degree mode is 1. The top 5
-	most central nodes are 1227457.C451_16425 (degree 927), 1227457.C451_10205 (degree
-	843), 1227457.C451_14375 (degree 821), 1227457.C451_10032 (degree 819) and 1227457.C451_10905
-	(degree 800).
+	The undirected graph Halococcus thailandensis has 3873 nodes and 281453
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03754 and has 70 connected components, where the component
+	with most nodes has 3672 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 145.34,
+	and the node degree mode is 1. The top 5 most central nodes are 1227457.C451_16425
+	(degree 927), 1227457.C451_10205 (degree 843), 1227457.C451_14375 (degree
+	821), 1227457.C451_10032 (degree 819) and 1227457.C451_10905 (degree 800).
 	
 
 

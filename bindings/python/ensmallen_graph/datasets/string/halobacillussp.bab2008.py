@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:53.974022
 
-The undirected graph Halobacillus sp. BAB2008 has 3912 nodes and 478531 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06255
-and has 13 connected components, where the component with most nodes has 3884 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 244.65, and the node degree mode is 3. The top 5
-most central nodes are 1246484.D479_07492 (degree 1416), 1246484.D479_03353 (degree
-1312), 1246484.D479_09467 (degree 1201), 1246484.D479_15292 (degree 1152) and 1246484.D479_18679
-(degree 1116).
+The undirected graph Halobacillus sp. BAB2008 has 3912 nodes and 478531
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06255 and has 13 connected components, where the component
+with most nodes has 3884 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 244.65,
+and the node degree mode is 3. The top 5 most central nodes are 1246484.D479_07492
+(degree 1416), 1246484.D479_03353 (degree 1312), 1246484.D479_09467 (degree
+1201), 1246484.D479_15292 (degree 1152) and 1246484.D479_18679 (degree
+1116).
 
 
 References
@@ -107,14 +108,15 @@ def HalobacillusSp.Bab2008(
 	
 	Datetime: 2021-02-02 23:33:53.974022
 	
-	The undirected graph Halobacillus sp. BAB2008 has 3912 nodes and 478531 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06255
-	and has 13 connected components, where the component with most nodes has 3884 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 244.65, and the node degree mode is 3. The top 5
-	most central nodes are 1246484.D479_07492 (degree 1416), 1246484.D479_03353 (degree
-	1312), 1246484.D479_09467 (degree 1201), 1246484.D479_15292 (degree 1152) and 1246484.D479_18679
-	(degree 1116).
+	The undirected graph Halobacillus sp. BAB2008 has 3912 nodes and 478531
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06255 and has 13 connected components, where the component
+	with most nodes has 3884 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 244.65,
+	and the node degree mode is 3. The top 5 most central nodes are 1246484.D479_07492
+	(degree 1416), 1246484.D479_03353 (degree 1312), 1246484.D479_09467 (degree
+	1201), 1246484.D479_15292 (degree 1152) and 1246484.D479_18679 (degree
+	1116).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:56:27.703868
 
-The undirected graph san1000 has 1000 nodes and 250500 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.50150
-and is connected, as it has a single component. The graph median node degree is 515,
-the mean node degree is 501.00 and the node degree mode is 470. The top 5 most central
-nodes are 165 (degree 550), 828 (degree 548), 17 (degree 548), 455 (degree 547) and
-273 (degree 547).
+The undirected graph san1000 has 1000 nodes and 250500 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.50150 and is connected, as it has a single component. The
+graph median node degree is 515, the mean node degree is 501.00 and the
+node degree mode is 470. The top 5 most central nodes are 165 (degree 550),
+828 (degree 548), 17 (degree 548), 455 (degree 547) and 273 (degree 547).
 
 
 References
@@ -115,12 +115,12 @@ def San1000(
 	
 	Datetime: 2021-02-03 22:56:27.703868
 	
-	The undirected graph san1000 has 1000 nodes and 250500 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.50150
-	and is connected, as it has a single component. The graph median node degree is 515,
-	the mean node degree is 501.00 and the node degree mode is 470. The top 5 most central
-	nodes are 165 (degree 550), 828 (degree 548), 17 (degree 548), 455 (degree 547) and
-	273 (degree 547).
+	The undirected graph san1000 has 1000 nodes and 250500 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.50150 and is connected, as it has a single component. The
+	graph median node degree is 515, the mean node degree is 501.00 and the
+	node degree mode is 470. The top 5 most central nodes are 165 (degree 550),
+	828 (degree 548), 17 (degree 548), 455 (degree 547) and 273 (degree 547).
 	
 
 

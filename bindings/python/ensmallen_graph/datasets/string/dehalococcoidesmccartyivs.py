@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:20.393462
 
-The undirected graph Dehalococcoides mccartyi VS has 1433 nodes and 70457 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06867
-and has 3 connected components, where the component with most nodes has 1429 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 72, the mean node degree is 98.33, and the node degree mode is 5. The top 5 most
-central nodes are 311424.DhcVS_1172 (degree 660), 311424.DhcVS_1405 (degree 629),
-311424.DhcVS_740 (degree 544), 311424.DhcVS_310 (degree 518) and 311424.DhcVS_494
-(degree 499).
+The undirected graph Dehalococcoides mccartyi VS has 1433 nodes and 70457
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06867 and has 3 connected components, where the component
+with most nodes has 1429 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 72, the mean node degree is 98.33,
+and the node degree mode is 5. The top 5 most central nodes are 311424.DhcVS_1172
+(degree 660), 311424.DhcVS_1405 (degree 629), 311424.DhcVS_740 (degree
+544), 311424.DhcVS_310 (degree 518) and 311424.DhcVS_494 (degree 499).
 
 
 References
@@ -107,14 +107,14 @@ def DehalococcoidesMccartyiVs(
 	
 	Datetime: 2021-02-02 20:23:20.393462
 	
-	The undirected graph Dehalococcoides mccartyi VS has 1433 nodes and 70457 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06867
-	and has 3 connected components, where the component with most nodes has 1429 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 72, the mean node degree is 98.33, and the node degree mode is 5. The top 5 most
-	central nodes are 311424.DhcVS_1172 (degree 660), 311424.DhcVS_1405 (degree 629),
-	311424.DhcVS_740 (degree 544), 311424.DhcVS_310 (degree 518) and 311424.DhcVS_494
-	(degree 499).
+	The undirected graph Dehalococcoides mccartyi VS has 1433 nodes and 70457
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06867 and has 3 connected components, where the component
+	with most nodes has 1429 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 72, the mean node degree is 98.33,
+	and the node degree mode is 5. The top 5 most central nodes are 311424.DhcVS_1172
+	(degree 660), 311424.DhcVS_1405 (degree 629), 311424.DhcVS_740 (degree
+	544), 311424.DhcVS_310 (degree 518) and 311424.DhcVS_494 (degree 499).
 	
 
 

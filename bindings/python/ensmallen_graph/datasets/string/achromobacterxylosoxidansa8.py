@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:25.237545
 
-The undirected graph Achromobacter xylosoxidans A8 has 6693 nodes and 1104221 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-and has 9 connected components, where the component with most nodes has 6670 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 284, the mean node degree is 329.96, and the node degree mode is 3. The top 5
-most central nodes are 762376.AXYL_01805 (degree 2521), 762376.AXYL_06121 (degree
-2321), 762376.AXYL_00207 (degree 1979), 762376.AXYL_01873 (degree 1955) and 762376.AXYL_06491
-(degree 1914).
+The undirected graph Achromobacter xylosoxidans A8 has 6693 nodes and 1104221
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04931 and has 9 connected components, where the component
+with most nodes has 6670 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 284, the mean node degree is 329.96,
+and the node degree mode is 3. The top 5 most central nodes are 762376.AXYL_01805
+(degree 2521), 762376.AXYL_06121 (degree 2321), 762376.AXYL_00207 (degree
+1979), 762376.AXYL_01873 (degree 1955) and 762376.AXYL_06491 (degree 1914).
 
 
 References
@@ -107,14 +107,14 @@ def AchromobacterXylosoxidansA8(
 	
 	Datetime: 2021-02-02 21:42:25.237545
 	
-	The undirected graph Achromobacter xylosoxidans A8 has 6693 nodes and 1104221 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04931
-	and has 9 connected components, where the component with most nodes has 6670 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 284, the mean node degree is 329.96, and the node degree mode is 3. The top 5
-	most central nodes are 762376.AXYL_01805 (degree 2521), 762376.AXYL_06121 (degree
-	2321), 762376.AXYL_00207 (degree 1979), 762376.AXYL_01873 (degree 1955) and 762376.AXYL_06491
-	(degree 1914).
+	The undirected graph Achromobacter xylosoxidans A8 has 6693 nodes and 1104221
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04931 and has 9 connected components, where the component
+	with most nodes has 6670 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 284, the mean node degree is 329.96,
+	and the node degree mode is 3. The top 5 most central nodes are 762376.AXYL_01805
+	(degree 2521), 762376.AXYL_06121 (degree 2321), 762376.AXYL_00207 (degree
+	1979), 762376.AXYL_01873 (degree 1955) and 762376.AXYL_06491 (degree 1914).
 	
 
 

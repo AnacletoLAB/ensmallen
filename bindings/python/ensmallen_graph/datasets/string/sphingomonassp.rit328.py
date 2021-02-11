@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:25.057905
 
-The undirected graph Sphingomonas sp. RIT328 has 3952 nodes and 481651 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06169 and
-has 17 connected components, where the component with most nodes has 3917 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 243.75, and the node degree mode is 2. The top 5 most central
-nodes are 1470591.BW41_02997 (degree 1692), 1470591.BW41_04016 (degree 1491), 1470591.BW41_03750
-(degree 1463), 1470591.BW41_02756 (degree 1339) and 1470591.BW41_01231 (degree 1310).
+The undirected graph Sphingomonas sp. RIT328 has 3952 nodes and 481651
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06169 and has 17 connected components, where the component
+with most nodes has 3917 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 201, the mean node degree is 243.75,
+and the node degree mode is 2. The top 5 most central nodes are 1470591.BW41_02997
+(degree 1692), 1470591.BW41_04016 (degree 1491), 1470591.BW41_03750 (degree
+1463), 1470591.BW41_02756 (degree 1339) and 1470591.BW41_01231 (degree
+1310).
 
 
 References
@@ -106,13 +108,15 @@ def SphingomonasSp.Rit328(
 	
 	Datetime: 2021-02-03 23:12:25.057905
 	
-	The undirected graph Sphingomonas sp. RIT328 has 3952 nodes and 481651 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06169 and
-	has 17 connected components, where the component with most nodes has 3917 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 243.75, and the node degree mode is 2. The top 5 most central
-	nodes are 1470591.BW41_02997 (degree 1692), 1470591.BW41_04016 (degree 1491), 1470591.BW41_03750
-	(degree 1463), 1470591.BW41_02756 (degree 1339) and 1470591.BW41_01231 (degree 1310).
+	The undirected graph Sphingomonas sp. RIT328 has 3952 nodes and 481651
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06169 and has 17 connected components, where the component
+	with most nodes has 3917 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 201, the mean node degree is 243.75,
+	and the node degree mode is 2. The top 5 most central nodes are 1470591.BW41_02997
+	(degree 1692), 1470591.BW41_04016 (degree 1491), 1470591.BW41_03750 (degree
+	1463), 1470591.BW41_02756 (degree 1339) and 1470591.BW41_01231 (degree
+	1310).
 	
 
 

@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 06:38:42.561287
 
-The undirected graph EVA has 7253 nodes and 6713 unweighted edges, of which 2 are
-self-loops. The graph is quite sparse as it has a density of 0.00026 and has 723
-connected components, where the component with most nodes has 4475 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 1, the
-mean node degree is 1.85, and the node degree mode is 1. The top 5 most central nodes
-are 4173 (degree 552), 18 (degree 288), 7 (degree 209), 23 (degree 178) and 3642
-(degree 148).
+The undirected graph EVA has 7253 nodes and 6713 unweighted edges, of which
+2 are self-loops. The graph is quite sparse as it has a density of 0.00026
+and has 723 connected components, where the component with most nodes has
+4475 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 1, the mean node degree is 1.85, and the node degree
+mode is 1. The top 5 most central nodes are 4173 (degree 552), 18 (degree
+288), 7 (degree 209), 23 (degree 178) and 3642 (degree 148).
 
 
 References
@@ -103,13 +103,13 @@ def Eva(
 	
 	Datetime: 2021-02-06 06:38:42.561287
 	
-	The undirected graph EVA has 7253 nodes and 6713 unweighted edges, of which 2 are
-	self-loops. The graph is quite sparse as it has a density of 0.00026 and has 723
-	connected components, where the component with most nodes has 4475 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 1, the
-	mean node degree is 1.85, and the node degree mode is 1. The top 5 most central nodes
-	are 4173 (degree 552), 18 (degree 288), 7 (degree 209), 23 (degree 178) and 3642
-	(degree 148).
+	The undirected graph EVA has 7253 nodes and 6713 unweighted edges, of which
+	2 are self-loops. The graph is quite sparse as it has a density of 0.00026
+	and has 723 connected components, where the component with most nodes has
+	4475 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 1, the mean node degree is 1.85, and the node degree
+	mode is 1. The top 5 most central nodes are 4173 (degree 552), 18 (degree
+	288), 7 (degree 209), 23 (degree 178) and 3642 (degree 148).
 	
 
 

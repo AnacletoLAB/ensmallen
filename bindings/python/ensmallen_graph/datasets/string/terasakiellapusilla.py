@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:41.438763
 
-The undirected graph Terasakiella pusilla has 3736 nodes and 527579 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07562 and
-has 15 connected components, where the component with most nodes has 3697 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 282.43, and the node degree mode is 4. The top 5 most central
-nodes are 1123355.JHYO01000030_gene353 (degree 1629), 1123355.JHYO01000012_gene753
-(degree 1563), 1123355.JHYO01000030_gene358 (degree 1495), 1123355.JHYO01000004_gene2442
-(degree 1359) and 1123355.JHYO01000011_gene1439 (degree 1315).
+The undirected graph Terasakiella pusilla has 3736 nodes and 527579 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07562 and has 15 connected components, where the component with most
+nodes has 3697 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 282.43, and
+the node degree mode is 4. The top 5 most central nodes are 1123355.JHYO01000030_gene353
+(degree 1629), 1123355.JHYO01000012_gene753 (degree 1563), 1123355.JHYO01000030_gene358
+(degree 1495), 1123355.JHYO01000004_gene2442 (degree 1359) and 1123355.JHYO01000011_gene1439
+(degree 1315).
 
 
 References
@@ -107,14 +108,15 @@ def TerasakiellaPusilla(
 	
 	Datetime: 2021-02-02 22:51:41.438763
 	
-	The undirected graph Terasakiella pusilla has 3736 nodes and 527579 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07562 and
-	has 15 connected components, where the component with most nodes has 3697 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 282.43, and the node degree mode is 4. The top 5 most central
-	nodes are 1123355.JHYO01000030_gene353 (degree 1629), 1123355.JHYO01000012_gene753
-	(degree 1563), 1123355.JHYO01000030_gene358 (degree 1495), 1123355.JHYO01000004_gene2442
-	(degree 1359) and 1123355.JHYO01000011_gene1439 (degree 1315).
+	The undirected graph Terasakiella pusilla has 3736 nodes and 527579 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07562 and has 15 connected components, where the component with most
+	nodes has 3697 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 282.43, and
+	the node degree mode is 4. The top 5 most central nodes are 1123355.JHYO01000030_gene353
+	(degree 1629), 1123355.JHYO01000012_gene753 (degree 1563), 1123355.JHYO01000030_gene358
+	(degree 1495), 1123355.JHYO01000004_gene2442 (degree 1359) and 1123355.JHYO01000011_gene1439
+	(degree 1315).
 	
 
 

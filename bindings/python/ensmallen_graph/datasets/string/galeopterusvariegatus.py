@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:11.578110
 
-The undirected graph Galeopterus variegatus has 22283 nodes and 4678500 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01885
-and has 2 connected components, where the component with most nodes has 22281 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 298, the mean node degree is 419.92, and the node degree mode is 95. The top 5
-most central nodes are 482537.XP_008576980.1 (degree 5358), 482537.XP_008588084.1
-(degree 4781), 482537.XP_008582665.1 (degree 4703), 482537.XP_008567619.1 (degree
+The undirected graph Galeopterus variegatus has 22283 nodes and 4678500
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01885 and has 2 connected components, where the component
+with most nodes has 22281 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 298, the mean node degree
+is 419.92, and the node degree mode is 95. The top 5 most central nodes
+are 482537.XP_008576980.1 (degree 5358), 482537.XP_008588084.1 (degree
+4781), 482537.XP_008582665.1 (degree 4703), 482537.XP_008567619.1 (degree
 4562) and 482537.XP_008578211.1 (degree 4256).
 
 
@@ -107,13 +108,14 @@ def GaleopterusVariegatus(
 	
 	Datetime: 2021-02-02 20:58:11.578110
 	
-	The undirected graph Galeopterus variegatus has 22283 nodes and 4678500 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01885
-	and has 2 connected components, where the component with most nodes has 22281 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 298, the mean node degree is 419.92, and the node degree mode is 95. The top 5
-	most central nodes are 482537.XP_008576980.1 (degree 5358), 482537.XP_008588084.1
-	(degree 4781), 482537.XP_008582665.1 (degree 4703), 482537.XP_008567619.1 (degree
+	The undirected graph Galeopterus variegatus has 22283 nodes and 4678500
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01885 and has 2 connected components, where the component
+	with most nodes has 22281 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 298, the mean node degree
+	is 419.92, and the node degree mode is 95. The top 5 most central nodes
+	are 482537.XP_008576980.1 (degree 5358), 482537.XP_008588084.1 (degree
+	4781), 482537.XP_008582665.1 (degree 4703), 482537.XP_008567619.1 (degree
 	4562) and 482537.XP_008578211.1 (degree 4256).
 	
 

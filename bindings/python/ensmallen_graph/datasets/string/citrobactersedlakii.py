@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:29.176018
 
-The undirected graph Citrobacter sedlakii has 4063 nodes and 624731 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07571 and
-has 3 connected components, where the component with most nodes has 4059 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 265,
-the mean node degree is 307.52, and the node degree mode is 226. The top 5 most central
-nodes are 1218086.BBNB01000001_gene3540 (degree 1760), 1218086.BBNB01000003_gene2429
-(degree 1636), 1218086.BBNB01000017_gene1725 (degree 1625), 1218086.BBNB01000014_gene1981
-(degree 1426) and 1218086.BBNB01000015_gene2183 (degree 1425).
+The undirected graph Citrobacter sedlakii has 4063 nodes and 624731 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07571 and has 3 connected components, where the component with most
+nodes has 4059 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 265, the mean node degree is 307.52, and
+the node degree mode is 226. The top 5 most central nodes are 1218086.BBNB01000001_gene3540
+(degree 1760), 1218086.BBNB01000003_gene2429 (degree 1636), 1218086.BBNB01000017_gene1725
+(degree 1625), 1218086.BBNB01000014_gene1981 (degree 1426) and 1218086.BBNB01000015_gene2183
+(degree 1425).
 
 
 References
@@ -107,14 +108,15 @@ def CitrobacterSedlakii(
 	
 	Datetime: 2021-02-02 23:22:29.176018
 	
-	The undirected graph Citrobacter sedlakii has 4063 nodes and 624731 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07571 and
-	has 3 connected components, where the component with most nodes has 4059 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 265,
-	the mean node degree is 307.52, and the node degree mode is 226. The top 5 most central
-	nodes are 1218086.BBNB01000001_gene3540 (degree 1760), 1218086.BBNB01000003_gene2429
-	(degree 1636), 1218086.BBNB01000017_gene1725 (degree 1625), 1218086.BBNB01000014_gene1981
-	(degree 1426) and 1218086.BBNB01000015_gene2183 (degree 1425).
+	The undirected graph Citrobacter sedlakii has 4063 nodes and 624731 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07571 and has 3 connected components, where the component with most
+	nodes has 4059 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 265, the mean node degree is 307.52, and
+	the node degree mode is 226. The top 5 most central nodes are 1218086.BBNB01000001_gene3540
+	(degree 1760), 1218086.BBNB01000003_gene2429 (degree 1636), 1218086.BBNB01000017_gene1725
+	(degree 1625), 1218086.BBNB01000014_gene1981 (degree 1426) and 1218086.BBNB01000015_gene2183
+	(degree 1425).
 	
 
 

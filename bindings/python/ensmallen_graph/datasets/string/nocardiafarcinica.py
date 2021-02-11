@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:29.918646
 
-The undirected graph Nocardia farcinica has 5822 nodes and 795225 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04693 and
-has 10 connected components, where the component with most nodes has 5802 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 221,
-the mean node degree is 273.18, and the node degree mode is 5. The top 5 most central
-nodes are 247156.NFA_8110 (degree 2823), 247156.NFA_12570 (degree 2022), 247156.NFA_20150
-(degree 1955), 247156.NFA_18750 (degree 1950) and 247156.NFA_27070 (degree 1697).
+The undirected graph Nocardia farcinica has 5822 nodes and 795225 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04693 and has 10 connected components, where the component with most
+nodes has 5802 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 221, the mean node degree is 273.18, and
+the node degree mode is 5. The top 5 most central nodes are 247156.NFA_8110
+(degree 2823), 247156.NFA_12570 (degree 2022), 247156.NFA_20150 (degree
+1955), 247156.NFA_18750 (degree 1950) and 247156.NFA_27070 (degree 1697).
 
 
 References
@@ -106,13 +107,14 @@ def NocardiaFarcinica(
 	
 	Datetime: 2021-02-02 20:11:29.918646
 	
-	The undirected graph Nocardia farcinica has 5822 nodes and 795225 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04693 and
-	has 10 connected components, where the component with most nodes has 5802 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 221,
-	the mean node degree is 273.18, and the node degree mode is 5. The top 5 most central
-	nodes are 247156.NFA_8110 (degree 2823), 247156.NFA_12570 (degree 2022), 247156.NFA_20150
-	(degree 1955), 247156.NFA_18750 (degree 1950) and 247156.NFA_27070 (degree 1697).
+	The undirected graph Nocardia farcinica has 5822 nodes and 795225 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04693 and has 10 connected components, where the component with most
+	nodes has 5802 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 221, the mean node degree is 273.18, and
+	the node degree mode is 5. The top 5 most central nodes are 247156.NFA_8110
+	(degree 2823), 247156.NFA_12570 (degree 2022), 247156.NFA_20150 (degree
+	1955), 247156.NFA_18750 (degree 1950) and 247156.NFA_27070 (degree 1697).
 	
 
 

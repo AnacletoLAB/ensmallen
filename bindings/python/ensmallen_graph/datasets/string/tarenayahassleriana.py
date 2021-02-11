@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:56:52.174964
 
-The undirected graph Tarenaya hassleriana has 24643 nodes and 5380446 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01772 and
-has 5 connected components, where the component with most nodes has 24635 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 228,
-the mean node degree is 436.67, and the node degree mode is 8. The top 5 most central
-nodes are 28532.XP_010526448.1 (degree 7641), 28532.XP_010532858.1 (degree 4967),
-28532.XP_010555285.1 (degree 4924), 28532.XP_010530820.1 (degree 4920) and 28532.XP_010548064.1
+The undirected graph Tarenaya hassleriana has 24643 nodes and 5380446 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01772 and has 5 connected components, where the component with most
+nodes has 24635 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 228, the mean node degree is 436.67, and
+the node degree mode is 8. The top 5 most central nodes are 28532.XP_010526448.1
+(degree 7641), 28532.XP_010532858.1 (degree 4967), 28532.XP_010555285.1
+(degree 4924), 28532.XP_010530820.1 (degree 4920) and 28532.XP_010548064.1
 (degree 4920).
 
 
@@ -107,13 +108,14 @@ def TarenayaHassleriana(
 	
 	Datetime: 2021-02-02 17:56:52.174964
 	
-	The undirected graph Tarenaya hassleriana has 24643 nodes and 5380446 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01772 and
-	has 5 connected components, where the component with most nodes has 24635 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 228,
-	the mean node degree is 436.67, and the node degree mode is 8. The top 5 most central
-	nodes are 28532.XP_010526448.1 (degree 7641), 28532.XP_010532858.1 (degree 4967),
-	28532.XP_010555285.1 (degree 4924), 28532.XP_010530820.1 (degree 4920) and 28532.XP_010548064.1
+	The undirected graph Tarenaya hassleriana has 24643 nodes and 5380446 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01772 and has 5 connected components, where the component with most
+	nodes has 24635 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 228, the mean node degree is 436.67, and
+	the node degree mode is 8. The top 5 most central nodes are 28532.XP_010526448.1
+	(degree 7641), 28532.XP_010532858.1 (degree 4967), 28532.XP_010555285.1
+	(degree 4924), 28532.XP_010530820.1 (degree 4920) and 28532.XP_010548064.1
 	(degree 4920).
 	
 

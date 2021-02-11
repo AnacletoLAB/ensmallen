@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:07:48.638667
 
-The undirected graph com-youtube has 140959 nodes and 276042 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 3.92, and the node degree mode is 1. The top 5 most central
-nodes are 382 (degree 28754), 41 (degree 14641), 32 (degree 10461), 375 (degree 7917)
-and 47 (degree 4253).
+The undirected graph com-youtube has 140959 nodes and 276042 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00003 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 3.92, and the
+node degree mode is 1. The top 5 most central nodes are 382 (degree 28754),
+41 (degree 14641), 32 (degree 10461), 375 (degree 7917) and 47 (degree
+4253).
 
 
 References
@@ -102,12 +103,13 @@ def ComYoutube(
 	
 	Datetime: 2021-02-06 11:07:48.638667
 	
-	The undirected graph com-youtube has 140959 nodes and 276042 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00003
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 3.92, and the node degree mode is 1. The top 5 most central
-	nodes are 382 (degree 28754), 41 (degree 14641), 32 (degree 10461), 375 (degree 7917)
-	and 47 (degree 4253).
+	The undirected graph com-youtube has 140959 nodes and 276042 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00003 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 3.92, and the
+	node degree mode is 1. The top 5 most central nodes are 382 (degree 28754),
+	41 (degree 14641), 32 (degree 10461), 375 (degree 7917) and 47 (degree
+	4253).
 	
 
 

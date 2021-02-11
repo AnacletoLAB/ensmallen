@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:27:13.039690
 
-The undirected graph Sporolactobacillus laevolacticus has 3467 nodes and 386529 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06433
-and has 25 connected components, where the component with most nodes has 3393 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 222.98, and the node degree mode is 3. The top 5
-most central nodes are 1395513.P343_01995 (degree 1226), 1395513.P343_04475 (degree
-1214), 1395513.P343_13715 (degree 1040), 1395513.P343_17090 (degree 1034) and 1395513.P343_11695
-(degree 1001).
+The undirected graph Sporolactobacillus laevolacticus has 3467 nodes and
+386529 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06433 and has 25 connected components, where the
+component with most nodes has 3393 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 203, the mean node degree
+is 222.98, and the node degree mode is 3. The top 5 most central nodes
+are 1395513.P343_01995 (degree 1226), 1395513.P343_04475 (degree 1214),
+1395513.P343_13715 (degree 1040), 1395513.P343_17090 (degree 1034) and
+1395513.P343_11695 (degree 1001).
 
 
 References
@@ -107,14 +108,15 @@ def SporolactobacillusLaevolacticus(
 	
 	Datetime: 2021-02-03 22:27:13.039690
 	
-	The undirected graph Sporolactobacillus laevolacticus has 3467 nodes and 386529 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06433
-	and has 25 connected components, where the component with most nodes has 3393 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 222.98, and the node degree mode is 3. The top 5
-	most central nodes are 1395513.P343_01995 (degree 1226), 1395513.P343_04475 (degree
-	1214), 1395513.P343_13715 (degree 1040), 1395513.P343_17090 (degree 1034) and 1395513.P343_11695
-	(degree 1001).
+	The undirected graph Sporolactobacillus laevolacticus has 3467 nodes and
+	386529 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06433 and has 25 connected components, where the
+	component with most nodes has 3393 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 203, the mean node degree
+	is 222.98, and the node degree mode is 3. The top 5 most central nodes
+	are 1395513.P343_01995 (degree 1226), 1395513.P343_04475 (degree 1214),
+	1395513.P343_13715 (degree 1040), 1395513.P343_17090 (degree 1034) and
+	1395513.P343_11695 (degree 1001).
 	
 
 

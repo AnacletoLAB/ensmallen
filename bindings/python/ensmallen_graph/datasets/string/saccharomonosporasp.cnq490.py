@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:18.435557
 
-The undirected graph Saccharomonospora sp. CNQ490 has 4403 nodes and 456601 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04712
-and has 8 connected components, where the component with most nodes has 4389 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 207.40, and the node degree mode is 3. The top 5
-most central nodes are 1137271.AZUM01000006_gene375 (degree 1703), 1137271.AZUM01000002_gene3032
-(degree 1412), 1137271.AZUM01000013_gene4368 (degree 1326), 1137271.AZUM01000011_gene1843
-(degree 1268) and 1137271.AZUM01000002_gene2391 (degree 1224).
+The undirected graph Saccharomonospora sp. CNQ490 has 4403 nodes and 456601
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04712 and has 8 connected components, where the component
+with most nodes has 4389 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 207.40,
+and the node degree mode is 3. The top 5 most central nodes are 1137271.AZUM01000006_gene375
+(degree 1703), 1137271.AZUM01000002_gene3032 (degree 1412), 1137271.AZUM01000013_gene4368
+(degree 1326), 1137271.AZUM01000011_gene1843 (degree 1268) and 1137271.AZUM01000002_gene2391
+(degree 1224).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharomonosporaSp.Cnq490(
 	
 	Datetime: 2021-02-02 22:57:18.435557
 	
-	The undirected graph Saccharomonospora sp. CNQ490 has 4403 nodes and 456601 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04712
-	and has 8 connected components, where the component with most nodes has 4389 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 207.40, and the node degree mode is 3. The top 5
-	most central nodes are 1137271.AZUM01000006_gene375 (degree 1703), 1137271.AZUM01000002_gene3032
-	(degree 1412), 1137271.AZUM01000013_gene4368 (degree 1326), 1137271.AZUM01000011_gene1843
-	(degree 1268) and 1137271.AZUM01000002_gene2391 (degree 1224).
+	The undirected graph Saccharomonospora sp. CNQ490 has 4403 nodes and 456601
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04712 and has 8 connected components, where the component
+	with most nodes has 4389 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 207.40,
+	and the node degree mode is 3. The top 5 most central nodes are 1137271.AZUM01000006_gene375
+	(degree 1703), 1137271.AZUM01000002_gene3032 (degree 1412), 1137271.AZUM01000013_gene4368
+	(degree 1326), 1137271.AZUM01000011_gene1843 (degree 1268) and 1137271.AZUM01000002_gene2391
+	(degree 1224).
 	
 
 

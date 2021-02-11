@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:16.209204
 
-The undirected graph Streptococcus suis 865192 has 2012 nodes and 129435 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06398
-and has 10 connected components, where the component with most nodes has 1985 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 128.66, and the node degree mode is 6. The top 5
-most central nodes are 1214166.ALLG01000019_gene1051 (degree 851), 1214166.ALLG01000021_gene76
-(degree 723), 1214166.ALLG01000010_gene1940 (degree 720), 1214166.ALLG01000018_gene930
-(degree 657) and 1214166.ALLG01000037_gene761 (degree 648).
+The undirected graph Streptococcus suis 865192 has 2012 nodes and 129435
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06398 and has 10 connected components, where the component
+with most nodes has 1985 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 128.66,
+and the node degree mode is 6. The top 5 most central nodes are 1214166.ALLG01000019_gene1051
+(degree 851), 1214166.ALLG01000021_gene76 (degree 723), 1214166.ALLG01000010_gene1940
+(degree 720), 1214166.ALLG01000018_gene930 (degree 657) and 1214166.ALLG01000037_gene761
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSuis865192(
 	
 	Datetime: 2021-02-02 23:20:16.209204
 	
-	The undirected graph Streptococcus suis 865192 has 2012 nodes and 129435 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06398
-	and has 10 connected components, where the component with most nodes has 1985 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 128.66, and the node degree mode is 6. The top 5
-	most central nodes are 1214166.ALLG01000019_gene1051 (degree 851), 1214166.ALLG01000021_gene76
-	(degree 723), 1214166.ALLG01000010_gene1940 (degree 720), 1214166.ALLG01000018_gene930
-	(degree 657) and 1214166.ALLG01000037_gene761 (degree 648).
+	The undirected graph Streptococcus suis 865192 has 2012 nodes and 129435
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06398 and has 10 connected components, where the component
+	with most nodes has 1985 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 128.66,
+	and the node degree mode is 6. The top 5 most central nodes are 1214166.ALLG01000019_gene1051
+	(degree 851), 1214166.ALLG01000021_gene76 (degree 723), 1214166.ALLG01000010_gene1940
+	(degree 720), 1214166.ALLG01000018_gene930 (degree 657) and 1214166.ALLG01000037_gene761
+	(degree 648).
 	
 
 

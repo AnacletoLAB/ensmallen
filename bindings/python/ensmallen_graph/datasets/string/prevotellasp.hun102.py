@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:24:01.144694
 
-The undirected graph Prevotella sp. HUN102 has 2604 nodes and 161689 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04771 and
-has 31 connected components, where the component with most nodes has 2530 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 124.19, and the node degree mode is 1. The top 5 most central
-nodes are 1392486.JIAF01000004_gene1325 (degree 928), 1392486.JIAF01000004_gene1410
-(degree 793), 1392486.JIAF01000004_gene993 (degree 792), 1392486.JIAF01000001_gene163
-(degree 770) and 1392486.JIAF01000004_gene2467 (degree 715).
+The undirected graph Prevotella sp. HUN102 has 2604 nodes and 161689 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04771 and has 31 connected components, where the component with most
+nodes has 2530 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 124.19, and
+the node degree mode is 1. The top 5 most central nodes are 1392486.JIAF01000004_gene1325
+(degree 928), 1392486.JIAF01000004_gene1410 (degree 793), 1392486.JIAF01000004_gene993
+(degree 792), 1392486.JIAF01000001_gene163 (degree 770) and 1392486.JIAF01000004_gene2467
+(degree 715).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaSp.Hun102(
 	
 	Datetime: 2021-02-03 22:24:01.144694
 	
-	The undirected graph Prevotella sp. HUN102 has 2604 nodes and 161689 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04771 and
-	has 31 connected components, where the component with most nodes has 2530 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 124.19, and the node degree mode is 1. The top 5 most central
-	nodes are 1392486.JIAF01000004_gene1325 (degree 928), 1392486.JIAF01000004_gene1410
-	(degree 793), 1392486.JIAF01000004_gene993 (degree 792), 1392486.JIAF01000001_gene163
-	(degree 770) and 1392486.JIAF01000004_gene2467 (degree 715).
+	The undirected graph Prevotella sp. HUN102 has 2604 nodes and 161689 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04771 and has 31 connected components, where the component with most
+	nodes has 2530 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 124.19, and
+	the node degree mode is 1. The top 5 most central nodes are 1392486.JIAF01000004_gene1325
+	(degree 928), 1392486.JIAF01000004_gene1410 (degree 793), 1392486.JIAF01000004_gene993
+	(degree 792), 1392486.JIAF01000001_gene163 (degree 770) and 1392486.JIAF01000004_gene2467
+	(degree 715).
 	
 
 

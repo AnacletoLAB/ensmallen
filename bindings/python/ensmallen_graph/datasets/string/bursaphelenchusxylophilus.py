@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:19:01.109312
 
-The undirected graph Bursaphelenchus xylophilus has 10147 nodes and 1389499 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02699
-and has 9 connected components, where the component with most nodes has 10126 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 166, the mean node degree is 273.87, and the node degree mode is 1. The top 5
-most central nodes are 6326.BUX.s00422.612 (degree 2326), 6326.BUX.s01281.46 (degree
-2156), 6326.BUX.s01147.117 (degree 2107), 6326.BUX.s00579.133 (degree 2071) and 6326.BUX.s01513.82
-(degree 2056).
+The undirected graph Bursaphelenchus xylophilus has 10147 nodes and 1389499
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02699 and has 9 connected components, where the component
+with most nodes has 10126 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 166, the mean node degree
+is 273.87, and the node degree mode is 1. The top 5 most central nodes
+are 6326.BUX.s00422.612 (degree 2326), 6326.BUX.s01281.46 (degree 2156),
+6326.BUX.s01147.117 (degree 2107), 6326.BUX.s00579.133 (degree 2071) and
+6326.BUX.s01513.82 (degree 2056).
 
 
 References
@@ -107,14 +108,15 @@ def BursaphelenchusXylophilus(
 	
 	Datetime: 2021-02-02 17:19:01.109312
 	
-	The undirected graph Bursaphelenchus xylophilus has 10147 nodes and 1389499 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02699
-	and has 9 connected components, where the component with most nodes has 10126 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 166, the mean node degree is 273.87, and the node degree mode is 1. The top 5
-	most central nodes are 6326.BUX.s00422.612 (degree 2326), 6326.BUX.s01281.46 (degree
-	2156), 6326.BUX.s01147.117 (degree 2107), 6326.BUX.s00579.133 (degree 2071) and 6326.BUX.s01513.82
-	(degree 2056).
+	The undirected graph Bursaphelenchus xylophilus has 10147 nodes and 1389499
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02699 and has 9 connected components, where the component
+	with most nodes has 10126 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 166, the mean node degree
+	is 273.87, and the node degree mode is 1. The top 5 most central nodes
+	are 6326.BUX.s00422.612 (degree 2326), 6326.BUX.s01281.46 (degree 2156),
+	6326.BUX.s01147.117 (degree 2107), 6326.BUX.s00579.133 (degree 2071) and
+	6326.BUX.s01513.82 (degree 2056).
 	
 
 

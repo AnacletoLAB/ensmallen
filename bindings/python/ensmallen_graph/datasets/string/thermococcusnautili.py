@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:28.672489
 
-The undirected graph Thermococcus nautili has 2213 nodes and 187895 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07677 and
-has 7 connected components, where the component with most nodes has 2200 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 169.81, and the node degree mode is 5. The top 5 most central
-nodes are 195522.BD01_0756 (degree 716), 195522.BD01_1836 (degree 661), 195522.BD01_0187
-(degree 620), 195522.BD01_1821 (degree 617) and 195522.BD01_0877 (degree 601).
+The undirected graph Thermococcus nautili has 2213 nodes and 187895 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07677 and has 7 connected components, where the component with most
+nodes has 2200 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 169.81, and
+the node degree mode is 5. The top 5 most central nodes are 195522.BD01_0756
+(degree 716), 195522.BD01_1836 (degree 661), 195522.BD01_0187 (degree 620),
+195522.BD01_1821 (degree 617) and 195522.BD01_0877 (degree 601).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusNautili(
 	
 	Datetime: 2021-02-02 19:58:28.672489
 	
-	The undirected graph Thermococcus nautili has 2213 nodes and 187895 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07677 and
-	has 7 connected components, where the component with most nodes has 2200 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 169.81, and the node degree mode is 5. The top 5 most central
-	nodes are 195522.BD01_0756 (degree 716), 195522.BD01_1836 (degree 661), 195522.BD01_0187
-	(degree 620), 195522.BD01_1821 (degree 617) and 195522.BD01_0877 (degree 601).
+	The undirected graph Thermococcus nautili has 2213 nodes and 187895 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07677 and has 7 connected components, where the component with most
+	nodes has 2200 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 169.81, and
+	the node degree mode is 5. The top 5 most central nodes are 195522.BD01_0756
+	(degree 716), 195522.BD01_1836 (degree 661), 195522.BD01_0187 (degree 620),
+	195522.BD01_1821 (degree 617) and 195522.BD01_0877 (degree 601).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:13.507951
 
-The undirected graph Anabaena sp. PCC7108 has 5036 nodes and 628227 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04955 and
-has 19 connected components, where the component with most nodes has 4977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 249.49, and the node degree mode is 2. The top 5 most central
-nodes are 163908.KB235896_gene4450 (degree 2180), 163908.KB235896_gene2085 (degree
-1850), 163908.KB235896_gene2657 (degree 1833), 163908.KB235896_gene3705 (degree 1700)
-and 163908.KB235896_gene2261 (degree 1640).
+The undirected graph Anabaena sp. PCC7108 has 5036 nodes and 628227 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04955 and has 19 connected components, where the component with most
+nodes has 4977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 249.49, and
+the node degree mode is 2. The top 5 most central nodes are 163908.KB235896_gene4450
+(degree 2180), 163908.KB235896_gene2085 (degree 1850), 163908.KB235896_gene2657
+(degree 1833), 163908.KB235896_gene3705 (degree 1700) and 163908.KB235896_gene2261
+(degree 1640).
 
 
 References
@@ -107,14 +108,15 @@ def AnabaenaSp.Pcc7108(
 	
 	Datetime: 2021-02-02 19:54:13.507951
 	
-	The undirected graph Anabaena sp. PCC7108 has 5036 nodes and 628227 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04955 and
-	has 19 connected components, where the component with most nodes has 4977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 249.49, and the node degree mode is 2. The top 5 most central
-	nodes are 163908.KB235896_gene4450 (degree 2180), 163908.KB235896_gene2085 (degree
-	1850), 163908.KB235896_gene2657 (degree 1833), 163908.KB235896_gene3705 (degree 1700)
-	and 163908.KB235896_gene2261 (degree 1640).
+	The undirected graph Anabaena sp. PCC7108 has 5036 nodes and 628227 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04955 and has 19 connected components, where the component with most
+	nodes has 4977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 249.49, and
+	the node degree mode is 2. The top 5 most central nodes are 163908.KB235896_gene4450
+	(degree 2180), 163908.KB235896_gene2085 (degree 1850), 163908.KB235896_gene2657
+	(degree 1833), 163908.KB235896_gene3705 (degree 1700) and 163908.KB235896_gene2261
+	(degree 1640).
 	
 
 

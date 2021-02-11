@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:34.946477
 
-The undirected graph Bacillus cellulosilyticus has 4203 nodes and 299658 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03393
-and has 29 connected components, where the component with most nodes has 4127 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 142.59, and the node degree mode is 2. The top 5
-most central nodes are 649639.Bcell_3214 (degree 1415), 649639.Bcell_1555 (degree
-1148), 649639.Bcell_0985 (degree 1073), 649639.Bcell_3820 (degree 1022) and 649639.Bcell_0038
-(degree 990).
+The undirected graph Bacillus cellulosilyticus has 4203 nodes and 299658
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03393 and has 29 connected components, where the component
+with most nodes has 4127 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 142.59,
+and the node degree mode is 2. The top 5 most central nodes are 649639.Bcell_3214
+(degree 1415), 649639.Bcell_1555 (degree 1148), 649639.Bcell_0985 (degree
+1073), 649639.Bcell_3820 (degree 1022) and 649639.Bcell_0038 (degree 990).
 
 
 References
@@ -107,14 +107,14 @@ def BacillusCellulosilyticus(
 	
 	Datetime: 2021-02-02 21:25:34.946477
 	
-	The undirected graph Bacillus cellulosilyticus has 4203 nodes and 299658 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03393
-	and has 29 connected components, where the component with most nodes has 4127 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 142.59, and the node degree mode is 2. The top 5
-	most central nodes are 649639.Bcell_3214 (degree 1415), 649639.Bcell_1555 (degree
-	1148), 649639.Bcell_0985 (degree 1073), 649639.Bcell_3820 (degree 1022) and 649639.Bcell_0038
-	(degree 990).
+	The undirected graph Bacillus cellulosilyticus has 4203 nodes and 299658
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03393 and has 29 connected components, where the component
+	with most nodes has 4127 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 142.59,
+	and the node degree mode is 2. The top 5 most central nodes are 649639.Bcell_3214
+	(degree 1415), 649639.Bcell_1555 (degree 1148), 649639.Bcell_0985 (degree
+	1073), 649639.Bcell_3820 (degree 1022) and 649639.Bcell_0038 (degree 990).
 	
 
 

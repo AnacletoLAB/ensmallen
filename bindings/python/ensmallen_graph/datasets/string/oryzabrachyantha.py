@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:44:08.829185
 
-The undirected graph Oryza brachyantha has 21000 nodes and 3433756 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01557 and
-has 9 connected components, where the component with most nodes has 20969 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 327.02, and the node degree mode is 5. The top 5 most central
-nodes are 4533.OB02G20940.1 (degree 6064), 4533.OB01G52720.1 (degree 5937), 4533.OB05G25810.1
-(degree 4793), 4533.OB12G19370.1 (degree 4578) and 4533.OB06G26320.1 (degree 4164).
+The undirected graph Oryza brachyantha has 21000 nodes and 3433756 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01557 and has 9 connected components, where the component with most
+nodes has 20969 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 327.02, and
+the node degree mode is 5. The top 5 most central nodes are 4533.OB02G20940.1
+(degree 6064), 4533.OB01G52720.1 (degree 5937), 4533.OB05G25810.1 (degree
+4793), 4533.OB12G19370.1 (degree 4578) and 4533.OB06G26320.1 (degree 4164).
 
 
 References
@@ -106,13 +107,14 @@ def OryzaBrachyantha(
 	
 	Datetime: 2021-02-02 16:44:08.829185
 	
-	The undirected graph Oryza brachyantha has 21000 nodes and 3433756 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01557 and
-	has 9 connected components, where the component with most nodes has 20969 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 327.02, and the node degree mode is 5. The top 5 most central
-	nodes are 4533.OB02G20940.1 (degree 6064), 4533.OB01G52720.1 (degree 5937), 4533.OB05G25810.1
-	(degree 4793), 4533.OB12G19370.1 (degree 4578) and 4533.OB06G26320.1 (degree 4164).
+	The undirected graph Oryza brachyantha has 21000 nodes and 3433756 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01557 and has 9 connected components, where the component with most
+	nodes has 20969 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 327.02, and
+	the node degree mode is 5. The top 5 most central nodes are 4533.OB02G20940.1
+	(degree 6064), 4533.OB01G52720.1 (degree 5937), 4533.OB05G25810.1 (degree
+	4793), 4533.OB12G19370.1 (degree 4578) and 4533.OB06G26320.1 (degree 4164).
 	
 
 

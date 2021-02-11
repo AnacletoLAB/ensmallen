@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:54.899206
 
-The undirected graph Treponema medium has 2319 nodes and 153700 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05719 and
-has 6 connected components, where the component with most nodes has 2304 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 132.56, and the node degree mode is 5. The top 5 most central
-nodes are 1125700.HMPREF9195_00838 (degree 916), 1125700.HMPREF9195_00137 (degree
-763), 1125700.HMPREF9195_00195 (degree 744), 1125700.HMPREF9195_01503 (degree 735)
-and 1125700.HMPREF9195_01843 (degree 707).
+The undirected graph Treponema medium has 2319 nodes and 153700 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05719 and has 6 connected components, where the component with most
+nodes has 2304 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 132.56, and
+the node degree mode is 5. The top 5 most central nodes are 1125700.HMPREF9195_00838
+(degree 916), 1125700.HMPREF9195_00137 (degree 763), 1125700.HMPREF9195_00195
+(degree 744), 1125700.HMPREF9195_01503 (degree 735) and 1125700.HMPREF9195_01843
+(degree 707).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaMedium(
 	
 	Datetime: 2021-02-02 22:53:54.899206
 	
-	The undirected graph Treponema medium has 2319 nodes and 153700 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05719 and
-	has 6 connected components, where the component with most nodes has 2304 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 132.56, and the node degree mode is 5. The top 5 most central
-	nodes are 1125700.HMPREF9195_00838 (degree 916), 1125700.HMPREF9195_00137 (degree
-	763), 1125700.HMPREF9195_00195 (degree 744), 1125700.HMPREF9195_01503 (degree 735)
-	and 1125700.HMPREF9195_01843 (degree 707).
+	The undirected graph Treponema medium has 2319 nodes and 153700 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05719 and has 6 connected components, where the component with most
+	nodes has 2304 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 132.56, and
+	the node degree mode is 5. The top 5 most central nodes are 1125700.HMPREF9195_00838
+	(degree 916), 1125700.HMPREF9195_00137 (degree 763), 1125700.HMPREF9195_00195
+	(degree 744), 1125700.HMPREF9195_01503 (degree 735) and 1125700.HMPREF9195_01843
+	(degree 707).
 	
 
 

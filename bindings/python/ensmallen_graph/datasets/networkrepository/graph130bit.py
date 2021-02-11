@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-05 12:51:14.274103
 
-The undirected graph 130bit has 584 nodes and 6067 unweighted edges, of which 9 are
-self-loops. The graph is dense as it has a density of 0.03561 and is connected, as
-it has a single component. The graph median node degree is 16, the mean node degree
-is 20.76, and the node degree mode is 15. The top 5 most central nodes are 3 (degree
-322), 1 (degree 312), 4 (degree 279), 5 (degree 231) and 6 (degree 192).
+The undirected graph 130bit has 584 nodes and 6067 unweighted edges, of
+which 9 are self-loops. The graph is dense as it has a density of 0.03561
+and is connected, as it has a single component. The graph median node degree
+is 16, the mean node degree is 20.76, and the node degree mode is 15. The
+top 5 most central nodes are 3 (degree 322), 1 (degree 312), 4 (degree
+279), 5 (degree 231) and 6 (degree 192).
 
 
 References
@@ -101,11 +102,12 @@ def Graph130bit(
 	
 	Datetime: 2021-02-05 12:51:14.274103
 	
-	The undirected graph 130bit has 584 nodes and 6067 unweighted edges, of which 9 are
-	self-loops. The graph is dense as it has a density of 0.03561 and is connected, as
-	it has a single component. The graph median node degree is 16, the mean node degree
-	is 20.76, and the node degree mode is 15. The top 5 most central nodes are 3 (degree
-	322), 1 (degree 312), 4 (degree 279), 5 (degree 231) and 6 (degree 192).
+	The undirected graph 130bit has 584 nodes and 6067 unweighted edges, of
+	which 9 are self-loops. The graph is dense as it has a density of 0.03561
+	and is connected, as it has a single component. The graph median node degree
+	is 16, the mean node degree is 20.76, and the node degree mode is 15. The
+	top 5 most central nodes are 3 (degree 322), 1 (degree 312), 4 (degree
+	279), 5 (degree 231) and 6 (degree 192).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:48:32.381999
 
-The undirected graph Pseudomonas corrugata has 5141 nodes and 479736 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03631 and
-has 12 connected components, where the component with most nodes has 5118 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 186.63, and the node degree mode is 1. The top 5 most central
-nodes are 1316927.ATKI01000045_gene3139 (degree 1892), 1316927.ATKI01000065_gene1986
-(degree 1527), 1316927.ATKI01000033_gene4852 (degree 1392), 1316927.ATKI01000066_gene1150
-(degree 1351) and 1316927.ATKI01000058_gene1786 (degree 1330).
+The undirected graph Pseudomonas corrugata has 5141 nodes and 479736 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03631 and has 12 connected components, where the component with most
+nodes has 5118 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 186.63, and
+the node degree mode is 1. The top 5 most central nodes are 1316927.ATKI01000045_gene3139
+(degree 1892), 1316927.ATKI01000065_gene1986 (degree 1527), 1316927.ATKI01000033_gene4852
+(degree 1392), 1316927.ATKI01000066_gene1150 (degree 1351) and 1316927.ATKI01000058_gene1786
+(degree 1330).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasCorrugata(
 	
 	Datetime: 2021-02-03 21:48:32.381999
 	
-	The undirected graph Pseudomonas corrugata has 5141 nodes and 479736 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03631 and
-	has 12 connected components, where the component with most nodes has 5118 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 186.63, and the node degree mode is 1. The top 5 most central
-	nodes are 1316927.ATKI01000045_gene3139 (degree 1892), 1316927.ATKI01000065_gene1986
-	(degree 1527), 1316927.ATKI01000033_gene4852 (degree 1392), 1316927.ATKI01000066_gene1150
-	(degree 1351) and 1316927.ATKI01000058_gene1786 (degree 1330).
+	The undirected graph Pseudomonas corrugata has 5141 nodes and 479736 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03631 and has 12 connected components, where the component with most
+	nodes has 5118 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 186.63, and
+	the node degree mode is 1. The top 5 most central nodes are 1316927.ATKI01000045_gene3139
+	(degree 1892), 1316927.ATKI01000065_gene1986 (degree 1527), 1316927.ATKI01000033_gene4852
+	(degree 1392), 1316927.ATKI01000066_gene1150 (degree 1351) and 1316927.ATKI01000058_gene1786
+	(degree 1330).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:11.482398
 
-The undirected graph Lactobacillus reuteri DSM20016 has 1889 nodes and 142383 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07985
-and has 4 connected components, where the component with most nodes has 1882 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 150.75, and the node degree mode is 29. The top 5
-most central nodes are 557436.Lreu_1247 (degree 858), 557436.Lreu_0706 (degree 636),
-557436.Lreu_0523 (degree 607), 557436.Lreu_0916 (degree 570) and 557436.Lreu_1171
-(degree 554).
+The undirected graph Lactobacillus reuteri DSM20016 has 1889 nodes and
+142383 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07985 and has 4 connected components, where the
+component with most nodes has 1882 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+is 150.75, and the node degree mode is 29. The top 5 most central nodes
+are 557436.Lreu_1247 (degree 858), 557436.Lreu_0706 (degree 636), 557436.Lreu_0523
+(degree 607), 557436.Lreu_0916 (degree 570) and 557436.Lreu_1171 (degree
+554).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusReuteriDsm20016(
 	
 	Datetime: 2021-02-02 21:11:11.482398
 	
-	The undirected graph Lactobacillus reuteri DSM20016 has 1889 nodes and 142383 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07985
-	and has 4 connected components, where the component with most nodes has 1882 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 150.75, and the node degree mode is 29. The top 5
-	most central nodes are 557436.Lreu_1247 (degree 858), 557436.Lreu_0706 (degree 636),
-	557436.Lreu_0523 (degree 607), 557436.Lreu_0916 (degree 570) and 557436.Lreu_1171
-	(degree 554).
+	The undirected graph Lactobacillus reuteri DSM20016 has 1889 nodes and
+	142383 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07985 and has 4 connected components, where the
+	component with most nodes has 1882 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+	is 150.75, and the node degree mode is 29. The top 5 most central nodes
+	are 557436.Lreu_1247 (degree 858), 557436.Lreu_0706 (degree 636), 557436.Lreu_0523
+	(degree 607), 557436.Lreu_0916 (degree 570) and 557436.Lreu_1171 (degree
+	554).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:09.917953
 
-The undirected graph cti has 16840 nodes and 48232 unweighted edges, of which none
-are self-loops. The graph is quite sparse as it has a density of 0.00034 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 5.73 and the node degree mode is 6. The top 5 most central nodes are 16827 (degree
-6), 16826 (degree 6), 16825 (degree 6), 16824 (degree 6) and 16823 (degree 6).
+The undirected graph cti has 16840 nodes and 48232 unweighted edges, of
+which none are self-loops. The graph is quite sparse as it has a density
+of 0.00034 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 5.73 and the node degree mode
+is 6. The top 5 most central nodes are 16827 (degree 6), 16826 (degree
+6), 16825 (degree 6), 16824 (degree 6) and 16823 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def Cti(
 	
 	Datetime: 2021-02-03 23:12:09.917953
 	
-	The undirected graph cti has 16840 nodes and 48232 unweighted edges, of which none
-	are self-loops. The graph is quite sparse as it has a density of 0.00034 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 5.73 and the node degree mode is 6. The top 5 most central nodes are 16827 (degree
-	6), 16826 (degree 6), 16825 (degree 6), 16824 (degree 6) and 16823 (degree 6).
+	The undirected graph cti has 16840 nodes and 48232 unweighted edges, of
+	which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00034 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 5.73 and the node degree mode
+	is 6. The top 5 most central nodes are 16827 (degree 6), 16826 (degree
+	6), 16825 (degree 6), 16824 (degree 6) and 16823 (degree 6).
 	
 
 

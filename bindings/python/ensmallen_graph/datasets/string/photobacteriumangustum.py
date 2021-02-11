@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:31.886451
 
-The undirected graph Photobacterium angustum has 4368 nodes and 752370 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07889 and
-has 20 connected components, where the component with most nodes has 4321 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 324,
-the mean node degree is 344.49, and the node degree mode is 1. The top 5 most central
-nodes are 314292.VAS14_14559 (degree 2687), 314292.VAS14_14554 (degree 2323), 314292.VAS14_22929
-(degree 1844), 314292.VAS14_07814 (degree 1683) and 314292.VAS14_09339 (degree 1666).
+The undirected graph Photobacterium angustum has 4368 nodes and 752370
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07889 and has 20 connected components, where the component
+with most nodes has 4321 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 324, the mean node degree is 344.49,
+and the node degree mode is 1. The top 5 most central nodes are 314292.VAS14_14559
+(degree 2687), 314292.VAS14_14554 (degree 2323), 314292.VAS14_22929 (degree
+1844), 314292.VAS14_07814 (degree 1683) and 314292.VAS14_09339 (degree
+1666).
 
 
 References
@@ -106,13 +108,15 @@ def PhotobacteriumAngustum(
 	
 	Datetime: 2021-02-02 20:25:31.886451
 	
-	The undirected graph Photobacterium angustum has 4368 nodes and 752370 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07889 and
-	has 20 connected components, where the component with most nodes has 4321 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 324,
-	the mean node degree is 344.49, and the node degree mode is 1. The top 5 most central
-	nodes are 314292.VAS14_14559 (degree 2687), 314292.VAS14_14554 (degree 2323), 314292.VAS14_22929
-	(degree 1844), 314292.VAS14_07814 (degree 1683) and 314292.VAS14_09339 (degree 1666).
+	The undirected graph Photobacterium angustum has 4368 nodes and 752370
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07889 and has 20 connected components, where the component
+	with most nodes has 4321 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 324, the mean node degree is 344.49,
+	and the node degree mode is 1. The top 5 most central nodes are 314292.VAS14_14559
+	(degree 2687), 314292.VAS14_14554 (degree 2323), 314292.VAS14_22929 (degree
+	1844), 314292.VAS14_07814 (degree 1683) and 314292.VAS14_09339 (degree
+	1666).
 	
 
 

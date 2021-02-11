@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:45:44.553466
 
-The undirected graph Marinobacter sp. MCTG268 has 3858 nodes and 515389 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-and has 8 connected components, where the component with most nodes has 3843 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 246, the mean node degree is 267.18, and the node degree mode is 3. The top 5
-most central nodes are 1415754.JQMK01000002_gene2455 (degree 1619), 1415754.JQMK01000002_gene3640
-(degree 1380), 1415754.JQMK01000012_gene1246 (degree 1298), 1415754.JQMK01000002_gene3549
-(degree 1242) and 1415754.JQMK01000002_gene2663 (degree 1226).
+The undirected graph Marinobacter sp. MCTG268 has 3858 nodes and 515389
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06927 and has 8 connected components, where the component
+with most nodes has 3843 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 246, the mean node degree is 267.18,
+and the node degree mode is 3. The top 5 most central nodes are 1415754.JQMK01000002_gene2455
+(degree 1619), 1415754.JQMK01000002_gene3640 (degree 1380), 1415754.JQMK01000012_gene1246
+(degree 1298), 1415754.JQMK01000002_gene3549 (degree 1242) and 1415754.JQMK01000002_gene2663
+(degree 1226).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterSp.Mctg268(
 	
 	Datetime: 2021-02-03 22:45:44.553466
 	
-	The undirected graph Marinobacter sp. MCTG268 has 3858 nodes and 515389 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06927
-	and has 8 connected components, where the component with most nodes has 3843 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 246, the mean node degree is 267.18, and the node degree mode is 3. The top 5
-	most central nodes are 1415754.JQMK01000002_gene2455 (degree 1619), 1415754.JQMK01000002_gene3640
-	(degree 1380), 1415754.JQMK01000012_gene1246 (degree 1298), 1415754.JQMK01000002_gene3549
-	(degree 1242) and 1415754.JQMK01000002_gene2663 (degree 1226).
+	The undirected graph Marinobacter sp. MCTG268 has 3858 nodes and 515389
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06927 and has 8 connected components, where the component
+	with most nodes has 3843 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 246, the mean node degree is 267.18,
+	and the node degree mode is 3. The top 5 most central nodes are 1415754.JQMK01000002_gene2455
+	(degree 1619), 1415754.JQMK01000002_gene3640 (degree 1380), 1415754.JQMK01000012_gene1246
+	(degree 1298), 1415754.JQMK01000002_gene3549 (degree 1242) and 1415754.JQMK01000002_gene2663
+	(degree 1226).
 	
 
 

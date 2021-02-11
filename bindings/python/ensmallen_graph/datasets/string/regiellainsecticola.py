@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:43.466616
 
-The undirected graph Regiella insecticola has 1716 nodes and 98242 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06676 and
-has 17 connected components, where the component with most nodes has 1677 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 114.50, and the node degree mode is 2. The top 5 most central
-nodes are 663321.REG_0860 (degree 669), 663321.REG_0411 (degree 573), 663321.REG_0410
-(degree 539), 663321.REG_1623 (degree 531) and 663321.REG_0369 (degree 525).
+The undirected graph Regiella insecticola has 1716 nodes and 98242 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06676 and has 17 connected components, where the component with most
+nodes has 1677 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 114.50, and
+the node degree mode is 2. The top 5 most central nodes are 663321.REG_0860
+(degree 669), 663321.REG_0411 (degree 573), 663321.REG_0410 (degree 539),
+663321.REG_1623 (degree 531) and 663321.REG_0369 (degree 525).
 
 
 References
@@ -106,13 +107,14 @@ def RegiellaInsecticola(
 	
 	Datetime: 2021-02-02 21:27:43.466616
 	
-	The undirected graph Regiella insecticola has 1716 nodes and 98242 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06676 and
-	has 17 connected components, where the component with most nodes has 1677 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 114.50, and the node degree mode is 2. The top 5 most central
-	nodes are 663321.REG_0860 (degree 669), 663321.REG_0411 (degree 573), 663321.REG_0410
-	(degree 539), 663321.REG_1623 (degree 531) and 663321.REG_0369 (degree 525).
+	The undirected graph Regiella insecticola has 1716 nodes and 98242 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06676 and has 17 connected components, where the component with most
+	nodes has 1677 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 114.50, and
+	the node degree mode is 2. The top 5 most central nodes are 663321.REG_0860
+	(degree 669), 663321.REG_0411 (degree 573), 663321.REG_0410 (degree 539),
+	663321.REG_1623 (degree 531) and 663321.REG_0369 (degree 525).
 	
 
 

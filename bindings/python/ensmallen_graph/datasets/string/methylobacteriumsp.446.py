@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:54.803627
 
-The undirected graph Methylobacterium sp. 446 has 6505 nodes and 963292 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04554
-and has 56 connected components, where the component with most nodes has 6376 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 260, the mean node degree is 296.17, and the node degree mode is 1. The top 5
-most central nodes are 426117.M446_0678 (degree 2667), 426117.M446_5171 (degree 2571),
-426117.M446_5328 (degree 2448), 426117.M446_6706 (degree 2335) and 426117.M446_1812
-(degree 2125).
+The undirected graph Methylobacterium sp. 446 has 6505 nodes and 963292
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04554 and has 56 connected components, where the component
+with most nodes has 6376 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 260, the mean node degree is 296.17,
+and the node degree mode is 1. The top 5 most central nodes are 426117.M446_0678
+(degree 2667), 426117.M446_5171 (degree 2571), 426117.M446_5328 (degree
+2448), 426117.M446_6706 (degree 2335) and 426117.M446_1812 (degree 2125).
 
 
 References
@@ -107,14 +107,14 @@ def MethylobacteriumSp.446(
 	
 	Datetime: 2021-02-02 20:47:54.803627
 	
-	The undirected graph Methylobacterium sp. 446 has 6505 nodes and 963292 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04554
-	and has 56 connected components, where the component with most nodes has 6376 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 260, the mean node degree is 296.17, and the node degree mode is 1. The top 5
-	most central nodes are 426117.M446_0678 (degree 2667), 426117.M446_5171 (degree 2571),
-	426117.M446_5328 (degree 2448), 426117.M446_6706 (degree 2335) and 426117.M446_1812
-	(degree 2125).
+	The undirected graph Methylobacterium sp. 446 has 6505 nodes and 963292
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04554 and has 56 connected components, where the component
+	with most nodes has 6376 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 260, the mean node degree is 296.17,
+	and the node degree mode is 1. The top 5 most central nodes are 426117.M446_0678
+	(degree 2667), 426117.M446_5171 (degree 2571), 426117.M446_5328 (degree
+	2448), 426117.M446_6706 (degree 2335) and 426117.M446_1812 (degree 2125).
 	
 
 

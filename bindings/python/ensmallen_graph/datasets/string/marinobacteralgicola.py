@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:17.723541
 
-The undirected graph Marinobacter algicola has 4089 nodes and 539791 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06458 and
-has 8 connected components, where the component with most nodes has 4073 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 227,
-the mean node degree is 264.02, and the node degree mode is 3. The top 5 most central
-nodes are 443152.MDG893_14490 (degree 1547), 443152.MDG893_06339 (degree 1491), 443152.MDG893_01330
-(degree 1363), 443152.MDG893_04332 (degree 1299) and 443152.MDG893_05769 (degree
+The undirected graph Marinobacter algicola has 4089 nodes and 539791 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06458 and has 8 connected components, where the component with most
+nodes has 4073 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 227, the mean node degree is 264.02, and
+the node degree mode is 3. The top 5 most central nodes are 443152.MDG893_14490
+(degree 1547), 443152.MDG893_06339 (degree 1491), 443152.MDG893_01330 (degree
+1363), 443152.MDG893_04332 (degree 1299) and 443152.MDG893_05769 (degree
 1295).
 
 
@@ -107,13 +108,14 @@ def MarinobacterAlgicola(
 	
 	Datetime: 2021-02-02 20:50:17.723541
 	
-	The undirected graph Marinobacter algicola has 4089 nodes and 539791 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06458 and
-	has 8 connected components, where the component with most nodes has 4073 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 227,
-	the mean node degree is 264.02, and the node degree mode is 3. The top 5 most central
-	nodes are 443152.MDG893_14490 (degree 1547), 443152.MDG893_06339 (degree 1491), 443152.MDG893_01330
-	(degree 1363), 443152.MDG893_04332 (degree 1299) and 443152.MDG893_05769 (degree
+	The undirected graph Marinobacter algicola has 4089 nodes and 539791 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06458 and has 8 connected components, where the component with most
+	nodes has 4073 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 227, the mean node degree is 264.02, and
+	the node degree mode is 3. The top 5 most central nodes are 443152.MDG893_14490
+	(degree 1547), 443152.MDG893_06339 (degree 1491), 443152.MDG893_01330 (degree
+	1363), 443152.MDG893_04332 (degree 1299) and 443152.MDG893_05769 (degree
 	1295).
 	
 

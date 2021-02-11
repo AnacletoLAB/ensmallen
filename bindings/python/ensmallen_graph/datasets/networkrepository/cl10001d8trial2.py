@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:27:15.649537
 
-The undirected graph CL-1000-1d8-trial2 has 930 nodes and 4136 unweighted edges,
-of which 16 are self-loops. The graph is sparse as it has a density of 0.00955 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 8.88, and the node degree mode is 2. The top 5 most central nodes
-are 365 (degree 125), 514 (degree 111), 955 (degree 108), 980 (degree 104) and 901
-(degree 102).
+The undirected graph CL-1000-1d8-trial2 has 930 nodes and 4136 unweighted
+edges, of which 16 are self-loops. The graph is sparse as it has a density
+of 0.00955 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 8.88, and the node degree mode
+is 2. The top 5 most central nodes are 365 (degree 125), 514 (degree 111),
+955 (degree 108), 980 (degree 104) and 901 (degree 102).
 
 
 References
@@ -102,12 +102,12 @@ def Cl10001d8Trial2(
 	
 	Datetime: 2021-02-06 09:27:15.649537
 	
-	The undirected graph CL-1000-1d8-trial2 has 930 nodes and 4136 unweighted edges,
-	of which 16 are self-loops. The graph is sparse as it has a density of 0.00955 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 8.88, and the node degree mode is 2. The top 5 most central nodes
-	are 365 (degree 125), 514 (degree 111), 955 (degree 108), 980 (degree 104) and 901
-	(degree 102).
+	The undirected graph CL-1000-1d8-trial2 has 930 nodes and 4136 unweighted
+	edges, of which 16 are self-loops. The graph is sparse as it has a density
+	of 0.00955 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 8.88, and the node degree mode
+	is 2. The top 5 most central nodes are 365 (degree 125), 514 (degree 111),
+	955 (degree 108), 980 (degree 104) and 901 (degree 102).
 	
 
 

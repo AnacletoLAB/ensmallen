@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:50.762575
 
-The undirected graph Microbacterium sp. UNCCL10 has 2826 nodes and 208352 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05220
-and has 5 connected components, where the component with most nodes has 2816 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 147.45, and the node degree mode is 5. The top 5
-most central nodes are 1449058.JQKT01000007_gene1526 (degree 869), 1449058.JQKT01000013_gene310
-(degree 860), 1449058.JQKT01000007_gene1970 (degree 860), 1449058.JQKT01000007_gene1520
-(degree 823) and 1449058.JQKT01000013_gene315 (degree 813).
+The undirected graph Microbacterium sp. UNCCL10 has 2826 nodes and 208352
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05220 and has 5 connected components, where the component
+with most nodes has 2816 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 147.45,
+and the node degree mode is 5. The top 5 most central nodes are 1449058.JQKT01000007_gene1526
+(degree 869), 1449058.JQKT01000013_gene310 (degree 860), 1449058.JQKT01000007_gene1970
+(degree 860), 1449058.JQKT01000007_gene1520 (degree 823) and 1449058.JQKT01000013_gene315
+(degree 813).
 
 
 References
@@ -107,14 +108,15 @@ def MicrobacteriumSp.Unccl10(
 	
 	Datetime: 2021-02-03 23:03:50.762575
 	
-	The undirected graph Microbacterium sp. UNCCL10 has 2826 nodes and 208352 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05220
-	and has 5 connected components, where the component with most nodes has 2816 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 147.45, and the node degree mode is 5. The top 5
-	most central nodes are 1449058.JQKT01000007_gene1526 (degree 869), 1449058.JQKT01000013_gene310
-	(degree 860), 1449058.JQKT01000007_gene1970 (degree 860), 1449058.JQKT01000007_gene1520
-	(degree 823) and 1449058.JQKT01000013_gene315 (degree 813).
+	The undirected graph Microbacterium sp. UNCCL10 has 2826 nodes and 208352
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05220 and has 5 connected components, where the component
+	with most nodes has 2816 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 147.45,
+	and the node degree mode is 5. The top 5 most central nodes are 1449058.JQKT01000007_gene1526
+	(degree 869), 1449058.JQKT01000013_gene310 (degree 860), 1449058.JQKT01000007_gene1970
+	(degree 860), 1449058.JQKT01000007_gene1520 (degree 823) and 1449058.JQKT01000013_gene315
+	(degree 813).
 	
 
 

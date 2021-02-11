@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:44.645525
 
-The undirected graph Haloarcula marismortui has 3412 nodes and 333944 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05739 and
-has 33 connected components, where the component with most nodes has 3325 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 195.75, and the node degree mode is 3. The top 5 most central
-nodes are 272569.rrnAC3339 (degree 1129), 272569.rrnAC0537 (degree 1036), 272569.rrnAC3108
-(degree 1029), 272569.rrnAC2262 (degree 1003) and 272569.rrnAC1532 (degree 1003).
+The undirected graph Haloarcula marismortui has 3412 nodes and 333944 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05739 and has 33 connected components, where the component with most
+nodes has 3325 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 195.75, and
+the node degree mode is 3. The top 5 most central nodes are 272569.rrnAC3339
+(degree 1129), 272569.rrnAC0537 (degree 1036), 272569.rrnAC3108 (degree
+1029), 272569.rrnAC2262 (degree 1003) and 272569.rrnAC1532 (degree 1003).
 
 
 References
@@ -106,13 +107,14 @@ def HaloarculaMarismortui(
 	
 	Datetime: 2021-02-02 20:16:44.645525
 	
-	The undirected graph Haloarcula marismortui has 3412 nodes and 333944 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05739 and
-	has 33 connected components, where the component with most nodes has 3325 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 195.75, and the node degree mode is 3. The top 5 most central
-	nodes are 272569.rrnAC3339 (degree 1129), 272569.rrnAC0537 (degree 1036), 272569.rrnAC3108
-	(degree 1029), 272569.rrnAC2262 (degree 1003) and 272569.rrnAC1532 (degree 1003).
+	The undirected graph Haloarcula marismortui has 3412 nodes and 333944 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05739 and has 33 connected components, where the component with most
+	nodes has 3325 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 195.75, and
+	the node degree mode is 3. The top 5 most central nodes are 272569.rrnAC3339
+	(degree 1129), 272569.rrnAC0537 (degree 1036), 272569.rrnAC3108 (degree
+	1029), 272569.rrnAC2262 (degree 1003) and 272569.rrnAC1532 (degree 1003).
 	
 
 

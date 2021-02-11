@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:02.806274
 
-The undirected graph Actinomyces massiliensis has 3052 nodes and 225014 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04833
-and has 25 connected components, where the component with most nodes has 2999 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 147.45, and the node degree mode is 2. The top 5
-most central nodes are 1125718.HMPREF1318_0879 (degree 1102), 1125718.HMPREF1318_1008
-(degree 1087), 1125718.HMPREF1318_2180 (degree 961), 1125718.HMPREF1318_1057 (degree
-946) and 1125718.HMPREF1318_1449 (degree 945).
+The undirected graph Actinomyces massiliensis has 3052 nodes and 225014
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04833 and has 25 connected components, where the component
+with most nodes has 2999 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 147.45,
+and the node degree mode is 2. The top 5 most central nodes are 1125718.HMPREF1318_0879
+(degree 1102), 1125718.HMPREF1318_1008 (degree 1087), 1125718.HMPREF1318_2180
+(degree 961), 1125718.HMPREF1318_1057 (degree 946) and 1125718.HMPREF1318_1449
+(degree 945).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesMassiliensis(
 	
 	Datetime: 2021-02-02 22:54:02.806274
 	
-	The undirected graph Actinomyces massiliensis has 3052 nodes and 225014 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04833
-	and has 25 connected components, where the component with most nodes has 2999 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 147.45, and the node degree mode is 2. The top 5
-	most central nodes are 1125718.HMPREF1318_0879 (degree 1102), 1125718.HMPREF1318_1008
-	(degree 1087), 1125718.HMPREF1318_2180 (degree 961), 1125718.HMPREF1318_1057 (degree
-	946) and 1125718.HMPREF1318_1449 (degree 945).
+	The undirected graph Actinomyces massiliensis has 3052 nodes and 225014
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04833 and has 25 connected components, where the component
+	with most nodes has 2999 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 147.45,
+	and the node degree mode is 2. The top 5 most central nodes are 1125718.HMPREF1318_0879
+	(degree 1102), 1125718.HMPREF1318_1008 (degree 1087), 1125718.HMPREF1318_2180
+	(degree 961), 1125718.HMPREF1318_1057 (degree 946) and 1125718.HMPREF1318_1449
+	(degree 945).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:59:00.999124
 
-The undirected graph Bacillus sp. UNC438CL73TsuS30 has 5437 nodes and 725499 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-and has 35 connected components, where the component with most nodes has 5351 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 266.87, and the node degree mode is 2. The top 5
-most central nodes are 1340434.AXVA01000005_gene4549 (degree 1984), 1340434.AXVA01000014_gene598
-(degree 1640), 1340434.AXVA01000020_gene1424 (degree 1634), 1340434.AXVA01000005_gene4743
-(degree 1606) and 1340434.AXVA01000044_gene2899 (degree 1587).
+The undirected graph Bacillus sp. UNC438CL73TsuS30 has 5437 nodes and 725499
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04909 and has 35 connected components, where the component
+with most nodes has 5351 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 266.87,
+and the node degree mode is 2. The top 5 most central nodes are 1340434.AXVA01000005_gene4549
+(degree 1984), 1340434.AXVA01000014_gene598 (degree 1640), 1340434.AXVA01000020_gene1424
+(degree 1634), 1340434.AXVA01000005_gene4743 (degree 1606) and 1340434.AXVA01000044_gene2899
+(degree 1587).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.Unc438cl73tsus30(
 	
 	Datetime: 2021-02-03 21:59:00.999124
 	
-	The undirected graph Bacillus sp. UNC438CL73TsuS30 has 5437 nodes and 725499 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04909
-	and has 35 connected components, where the component with most nodes has 5351 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 266.87, and the node degree mode is 2. The top 5
-	most central nodes are 1340434.AXVA01000005_gene4549 (degree 1984), 1340434.AXVA01000014_gene598
-	(degree 1640), 1340434.AXVA01000020_gene1424 (degree 1634), 1340434.AXVA01000005_gene4743
-	(degree 1606) and 1340434.AXVA01000044_gene2899 (degree 1587).
+	The undirected graph Bacillus sp. UNC438CL73TsuS30 has 5437 nodes and 725499
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04909 and has 35 connected components, where the component
+	with most nodes has 5351 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 266.87,
+	and the node degree mode is 2. The top 5 most central nodes are 1340434.AXVA01000005_gene4549
+	(degree 1984), 1340434.AXVA01000014_gene598 (degree 1640), 1340434.AXVA01000020_gene1424
+	(degree 1634), 1340434.AXVA01000005_gene4743 (degree 1606) and 1340434.AXVA01000044_gene2899
+	(degree 1587).
 	
 
 

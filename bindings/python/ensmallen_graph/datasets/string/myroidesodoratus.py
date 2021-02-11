@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:37.301820
 
-The undirected graph Myroides odoratus has 3701 nodes and 400459 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05849 and
-has 31 connected components, where the component with most nodes has 3622 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 216.41, and the node degree mode is 3. The top 5 most central
-nodes are 929704.Myrod_1402 (degree 1192), 929704.Myrod_0500 (degree 1052), 929704.Myrod_0251
-(degree 1051), 929704.Myrod_3017 (degree 1026) and 929704.Myrod_1499 (degree 897).
+The undirected graph Myroides odoratus has 3701 nodes and 400459 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05849 and has 31 connected components, where the component with most
+nodes has 3622 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 216.41, and
+the node degree mode is 3. The top 5 most central nodes are 929704.Myrod_1402
+(degree 1192), 929704.Myrod_0500 (degree 1052), 929704.Myrod_0251 (degree
+1051), 929704.Myrod_3017 (degree 1026) and 929704.Myrod_1499 (degree 897).
 
 
 References
@@ -106,13 +107,14 @@ def MyroidesOdoratus(
 	
 	Datetime: 2021-02-02 21:57:37.301820
 	
-	The undirected graph Myroides odoratus has 3701 nodes and 400459 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05849 and
-	has 31 connected components, where the component with most nodes has 3622 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 216.41, and the node degree mode is 3. The top 5 most central
-	nodes are 929704.Myrod_1402 (degree 1192), 929704.Myrod_0500 (degree 1052), 929704.Myrod_0251
-	(degree 1051), 929704.Myrod_3017 (degree 1026) and 929704.Myrod_1499 (degree 897).
+	The undirected graph Myroides odoratus has 3701 nodes and 400459 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05849 and has 31 connected components, where the component with most
+	nodes has 3622 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 216.41, and
+	the node degree mode is 3. The top 5 most central nodes are 929704.Myrod_1402
+	(degree 1192), 929704.Myrod_0500 (degree 1052), 929704.Myrod_0251 (degree
+	1051), 929704.Myrod_3017 (degree 1026) and 929704.Myrod_1499 (degree 897).
 	
 
 

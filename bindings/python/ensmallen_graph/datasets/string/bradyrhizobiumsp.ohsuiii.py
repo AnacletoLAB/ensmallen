@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:29:49.013114
 
-The undirected graph Bradyrhizobium sp. OHSUIII has 6942 nodes and 929131 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03857
-and has 29 connected components, where the component with most nodes has 6883 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 214, the mean node degree is 267.68, and the node degree mode is 1. The top 5
-most central nodes are 1297865.APJD01000026_gene2493 (degree 3442), 1297865.APJD01000011_gene6837
-(degree 2609), 1297865.APJD01000006_gene4408 (degree 2327), 1297865.APJD01000003_gene6320
-(degree 2205) and 1297865.APJD01000002_gene4043 (degree 1989).
+The undirected graph Bradyrhizobium sp. OHSUIII has 6942 nodes and 929131
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03857 and has 29 connected components, where the component
+with most nodes has 6883 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 267.68,
+and the node degree mode is 1. The top 5 most central nodes are 1297865.APJD01000026_gene2493
+(degree 3442), 1297865.APJD01000011_gene6837 (degree 2609), 1297865.APJD01000006_gene4408
+(degree 2327), 1297865.APJD01000003_gene6320 (degree 2205) and 1297865.APJD01000002_gene4043
+(degree 1989).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumSp.Ohsuiii(
 	
 	Datetime: 2021-02-03 21:29:49.013114
 	
-	The undirected graph Bradyrhizobium sp. OHSUIII has 6942 nodes and 929131 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03857
-	and has 29 connected components, where the component with most nodes has 6883 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 214, the mean node degree is 267.68, and the node degree mode is 1. The top 5
-	most central nodes are 1297865.APJD01000026_gene2493 (degree 3442), 1297865.APJD01000011_gene6837
-	(degree 2609), 1297865.APJD01000006_gene4408 (degree 2327), 1297865.APJD01000003_gene6320
-	(degree 2205) and 1297865.APJD01000002_gene4043 (degree 1989).
+	The undirected graph Bradyrhizobium sp. OHSUIII has 6942 nodes and 929131
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03857 and has 29 connected components, where the component
+	with most nodes has 6883 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 267.68,
+	and the node degree mode is 1. The top 5 most central nodes are 1297865.APJD01000026_gene2493
+	(degree 3442), 1297865.APJD01000011_gene6837 (degree 2609), 1297865.APJD01000006_gene4408
+	(degree 2327), 1297865.APJD01000003_gene6320 (degree 2205) and 1297865.APJD01000002_gene4043
+	(degree 1989).
 	
 
 

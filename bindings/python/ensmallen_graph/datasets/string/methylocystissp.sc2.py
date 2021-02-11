@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:17.211359
 
-The undirected graph Methylocystis sp. SC2 has 3636 nodes and 246354 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03728 and
-has 12 connected components, where the component with most nodes has 3608 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 135.51, and the node degree mode is 3. The top 5 most central
-nodes are 187303.BN69_0731 (degree 1301), 187303.BN69_0105 (degree 1020), 187303.BN69_1426
-(degree 936), 187303.BN69_1687 (degree 909) and 187303.BN69_3582 (degree 908).
+The undirected graph Methylocystis sp. SC2 has 3636 nodes and 246354 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03728 and has 12 connected components, where the component with most
+nodes has 3608 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 108, the mean node degree is 135.51, and
+the node degree mode is 3. The top 5 most central nodes are 187303.BN69_0731
+(degree 1301), 187303.BN69_0105 (degree 1020), 187303.BN69_1426 (degree
+936), 187303.BN69_1687 (degree 909) and 187303.BN69_3582 (degree 908).
 
 
 References
@@ -106,13 +107,14 @@ def MethylocystisSp.Sc2(
 	
 	Datetime: 2021-02-02 19:57:17.211359
 	
-	The undirected graph Methylocystis sp. SC2 has 3636 nodes and 246354 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03728 and
-	has 12 connected components, where the component with most nodes has 3608 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 135.51, and the node degree mode is 3. The top 5 most central
-	nodes are 187303.BN69_0731 (degree 1301), 187303.BN69_0105 (degree 1020), 187303.BN69_1426
-	(degree 936), 187303.BN69_1687 (degree 909) and 187303.BN69_3582 (degree 908).
+	The undirected graph Methylocystis sp. SC2 has 3636 nodes and 246354 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03728 and has 12 connected components, where the component with most
+	nodes has 3608 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 108, the mean node degree is 135.51, and
+	the node degree mode is 3. The top 5 most central nodes are 187303.BN69_0731
+	(degree 1301), 187303.BN69_0105 (degree 1020), 187303.BN69_1426 (degree
+	936), 187303.BN69_1687 (degree 909) and 187303.BN69_3582 (degree 908).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:39.456495
 
-The undirected graph Hyperthermus butylicus has 1576 nodes and 82637 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06658 and
-has 19 connected components, where the component with most nodes has 1536 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 104.87, and the node degree mode is 1. The top 5 most central
-nodes are 415426.Hbut_0939 (degree 508), 415426.Hbut_0946 (degree 489), 415426.Hbut_1638
-(degree 488), 415426.Hbut_1573 (degree 480) and 415426.Hbut_0967 (degree 478).
+The undirected graph Hyperthermus butylicus has 1576 nodes and 82637 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06658 and has 19 connected components, where the component with most
+nodes has 1536 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 104.87, and
+the node degree mode is 1. The top 5 most central nodes are 415426.Hbut_0939
+(degree 508), 415426.Hbut_0946 (degree 489), 415426.Hbut_1638 (degree 488),
+415426.Hbut_1573 (degree 480) and 415426.Hbut_0967 (degree 478).
 
 
 References
@@ -106,13 +107,14 @@ def HyperthermusButylicus(
 	
 	Datetime: 2021-02-02 20:46:39.456495
 	
-	The undirected graph Hyperthermus butylicus has 1576 nodes and 82637 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06658 and
-	has 19 connected components, where the component with most nodes has 1536 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 104.87, and the node degree mode is 1. The top 5 most central
-	nodes are 415426.Hbut_0939 (degree 508), 415426.Hbut_0946 (degree 489), 415426.Hbut_1638
-	(degree 488), 415426.Hbut_1573 (degree 480) and 415426.Hbut_0967 (degree 478).
+	The undirected graph Hyperthermus butylicus has 1576 nodes and 82637 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06658 and has 19 connected components, where the component with most
+	nodes has 1536 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 104.87, and
+	the node degree mode is 1. The top 5 most central nodes are 415426.Hbut_0939
+	(degree 508), 415426.Hbut_0946 (degree 489), 415426.Hbut_1638 (degree 488),
+	415426.Hbut_1573 (degree 480) and 415426.Hbut_0967 (degree 478).
 	
 
 

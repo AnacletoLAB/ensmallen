@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:39.048065
 
-The undirected graph Luminiphilus syltensis has 2902 nodes and 233143 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05539 and
-has 14 connected components, where the component with most nodes has 2874 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 160.68, and the node degree mode is 2. The top 5 most central
-nodes are 565045.NOR51B_420 (degree 1058), 565045.NOR51B_1736 (degree 1051), 565045.NOR51B_1724
-(degree 922), 565045.NOR51B_2098 (degree 879) and 565045.NOR51B_1806 (degree 862).
+The undirected graph Luminiphilus syltensis has 2902 nodes and 233143 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05539 and has 14 connected components, where the component with most
+nodes has 2874 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 160.68, and
+the node degree mode is 2. The top 5 most central nodes are 565045.NOR51B_420
+(degree 1058), 565045.NOR51B_1736 (degree 1051), 565045.NOR51B_1724 (degree
+922), 565045.NOR51B_2098 (degree 879) and 565045.NOR51B_1806 (degree 862).
 
 
 References
@@ -106,13 +107,14 @@ def LuminiphilusSyltensis(
 	
 	Datetime: 2021-02-02 21:12:39.048065
 	
-	The undirected graph Luminiphilus syltensis has 2902 nodes and 233143 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05539 and
-	has 14 connected components, where the component with most nodes has 2874 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 160.68, and the node degree mode is 2. The top 5 most central
-	nodes are 565045.NOR51B_420 (degree 1058), 565045.NOR51B_1736 (degree 1051), 565045.NOR51B_1724
-	(degree 922), 565045.NOR51B_2098 (degree 879) and 565045.NOR51B_1806 (degree 862).
+	The undirected graph Luminiphilus syltensis has 2902 nodes and 233143 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05539 and has 14 connected components, where the component with most
+	nodes has 2874 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 160.68, and
+	the node degree mode is 2. The top 5 most central nodes are 565045.NOR51B_420
+	(degree 1058), 565045.NOR51B_1736 (degree 1051), 565045.NOR51B_1724 (degree
+	922), 565045.NOR51B_2098 (degree 879) and 565045.NOR51B_1806 (degree 862).
 	
 
 

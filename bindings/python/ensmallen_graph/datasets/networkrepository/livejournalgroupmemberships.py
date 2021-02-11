@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:58:05.280693
 
-The undirected graph livejournal-groupmemberships has 7489073 nodes and 112305477
-unweighted edges, of which 70 are self-loops. The graph is extremely sparse as it
-has a density of 0.00000 and is connected, as it has a single component. The graph
-median node degree is 2, the mean node degree is 29.99, and the node degree mode
-is 1. The top 5 most central nodes are 121 (degree 1053720), 27 (degree 703225),
-52 (degree 494871), 49 (degree 466655) and 95 (degree 454999).
+The undirected graph livejournal-groupmemberships has 7489073 nodes and
+112305477 unweighted edges, of which 70 are self-loops. The graph is extremely
+sparse as it has a density of 0.00000 and is connected, as it has a single
+component. The graph median node degree is 2, the mean node degree is 29.99,
+and the node degree mode is 1. The top 5 most central nodes are 121 (degree
+1053720), 27 (degree 703225), 52 (degree 494871), 49 (degree 466655) and
+95 (degree 454999).
 
 
 References
@@ -102,12 +103,13 @@ def LivejournalGroupmemberships(
 	
 	Datetime: 2021-02-06 20:58:05.280693
 	
-	The undirected graph livejournal-groupmemberships has 7489073 nodes and 112305477
-	unweighted edges, of which 70 are self-loops. The graph is extremely sparse as it
-	has a density of 0.00000 and is connected, as it has a single component. The graph
-	median node degree is 2, the mean node degree is 29.99, and the node degree mode
-	is 1. The top 5 most central nodes are 121 (degree 1053720), 27 (degree 703225),
-	52 (degree 494871), 49 (degree 466655) and 95 (degree 454999).
+	The undirected graph livejournal-groupmemberships has 7489073 nodes and
+	112305477 unweighted edges, of which 70 are self-loops. The graph is extremely
+	sparse as it has a density of 0.00000 and is connected, as it has a single
+	component. The graph median node degree is 2, the mean node degree is 29.99,
+	and the node degree mode is 1. The top 5 most central nodes are 121 (degree
+	1053720), 27 (degree 703225), 52 (degree 494871), 49 (degree 466655) and
+	95 (degree 454999).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:48.988433
 
-The undirected graph Anaerolinea thermophila has 3146 nodes and 284688 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05755 and
-has 4 connected components, where the component with most nodes has 3137 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 180.98, and the node degree mode is 5. The top 5 most central
-nodes are 926569.ANT_17530 (degree 1554), 926569.ANT_11250 (degree 1510), 926569.ANT_30340
-(degree 1358), 926569.ANT_16660 (degree 1312) and 926569.ANT_08900 (degree 1288).
+The undirected graph Anaerolinea thermophila has 3146 nodes and 284688
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05755 and has 4 connected components, where the component
+with most nodes has 3137 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 180.98,
+and the node degree mode is 5. The top 5 most central nodes are 926569.ANT_17530
+(degree 1554), 926569.ANT_11250 (degree 1510), 926569.ANT_30340 (degree
+1358), 926569.ANT_16660 (degree 1312) and 926569.ANT_08900 (degree 1288).
 
 
 References
@@ -106,13 +107,14 @@ def AnaerolineaThermophila(
 	
 	Datetime: 2021-02-02 21:56:48.988433
 	
-	The undirected graph Anaerolinea thermophila has 3146 nodes and 284688 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05755 and
-	has 4 connected components, where the component with most nodes has 3137 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 180.98, and the node degree mode is 5. The top 5 most central
-	nodes are 926569.ANT_17530 (degree 1554), 926569.ANT_11250 (degree 1510), 926569.ANT_30340
-	(degree 1358), 926569.ANT_16660 (degree 1312) and 926569.ANT_08900 (degree 1288).
+	The undirected graph Anaerolinea thermophila has 3146 nodes and 284688
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05755 and has 4 connected components, where the component
+	with most nodes has 3137 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 180.98,
+	and the node degree mode is 5. The top 5 most central nodes are 926569.ANT_17530
+	(degree 1554), 926569.ANT_11250 (degree 1510), 926569.ANT_30340 (degree
+	1358), 926569.ANT_16660 (degree 1312) and 926569.ANT_08900 (degree 1288).
 	
 
 

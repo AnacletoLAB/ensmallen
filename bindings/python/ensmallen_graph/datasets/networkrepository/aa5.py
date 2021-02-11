@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:02.815662
 
-The undirected graph aa5 has 8308 nodes and 65924 unweighted edges, of which 7 are
-self-loops. The graph is sparse as it has a density of 0.00191 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 15.87, and the node degree mode is 8. The top 5 most central nodes are 714 (degree
-359), 509 (degree 356), 511 (degree 354), 510 (degree 341) and 427 (degree 340).
+The undirected graph aa5 has 8308 nodes and 65924 unweighted edges, of
+which 7 are self-loops. The graph is sparse as it has a density of 0.00191
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 15.87, and the node degree mode is 8. The
+top 5 most central nodes are 714 (degree 359), 509 (degree 356), 511 (degree
+354), 510 (degree 341) and 427 (degree 340).
 
 
 References
@@ -101,11 +102,12 @@ def Aa5(
 	
 	Datetime: 2021-02-06 10:15:02.815662
 	
-	The undirected graph aa5 has 8308 nodes and 65924 unweighted edges, of which 7 are
-	self-loops. The graph is sparse as it has a density of 0.00191 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 15.87, and the node degree mode is 8. The top 5 most central nodes are 714 (degree
-	359), 509 (degree 356), 511 (degree 354), 510 (degree 341) and 427 (degree 340).
+	The undirected graph aa5 has 8308 nodes and 65924 unweighted edges, of
+	which 7 are self-loops. The graph is sparse as it has a density of 0.00191
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 15.87, and the node degree mode is 8. The
+	top 5 most central nodes are 714 (degree 359), 509 (degree 356), 511 (degree
+	354), 510 (degree 341) and 427 (degree 340).
 	
 
 

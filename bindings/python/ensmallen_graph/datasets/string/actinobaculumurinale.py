@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:19.331548
 
-The undirected graph Actinobaculum urinale has 1593 nodes and 93666 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07387 and
-has 11 connected components, where the component with most nodes has 1567 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 117.60, and the node degree mode is 2. The top 5 most central
-nodes are 1120933.ATUY01000007_gene560 (degree 662), 1120933.ATUY01000008_gene1442
-(degree 648), 1120933.ATUY01000001_gene772 (degree 605), 1120933.ATUY01000002_gene46
-(degree 600) and 1120933.ATUY01000007_gene600 (degree 591).
+The undirected graph Actinobaculum urinale has 1593 nodes and 93666 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07387 and has 11 connected components, where the component with most
+nodes has 1567 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 117.60, and
+the node degree mode is 2. The top 5 most central nodes are 1120933.ATUY01000007_gene560
+(degree 662), 1120933.ATUY01000008_gene1442 (degree 648), 1120933.ATUY01000001_gene772
+(degree 605), 1120933.ATUY01000002_gene46 (degree 600) and 1120933.ATUY01000007_gene600
+(degree 591).
 
 
 References
@@ -107,14 +108,15 @@ def ActinobaculumUrinale(
 	
 	Datetime: 2021-02-02 22:29:19.331548
 	
-	The undirected graph Actinobaculum urinale has 1593 nodes and 93666 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07387 and
-	has 11 connected components, where the component with most nodes has 1567 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 117.60, and the node degree mode is 2. The top 5 most central
-	nodes are 1120933.ATUY01000007_gene560 (degree 662), 1120933.ATUY01000008_gene1442
-	(degree 648), 1120933.ATUY01000001_gene772 (degree 605), 1120933.ATUY01000002_gene46
-	(degree 600) and 1120933.ATUY01000007_gene600 (degree 591).
+	The undirected graph Actinobaculum urinale has 1593 nodes and 93666 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07387 and has 11 connected components, where the component with most
+	nodes has 1567 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 117.60, and
+	the node degree mode is 2. The top 5 most central nodes are 1120933.ATUY01000007_gene560
+	(degree 662), 1120933.ATUY01000008_gene1442 (degree 648), 1120933.ATUY01000001_gene772
+	(degree 605), 1120933.ATUY01000002_gene46 (degree 600) and 1120933.ATUY01000007_gene600
+	(degree 591).
 	
 
 

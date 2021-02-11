@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:55.474474
 
-The undirected graph Exiguobacterium oxidotolerans has 3003 nodes and 267408 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05933
-and has 4 connected components, where the component with most nodes has 2996 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 178.09, and the node degree mode is 4. The top 5
-most central nodes are 1397699.JNIS01000001_gene752 (degree 1171), 1397699.JNIS01000001_gene1991
-(degree 995), 1397699.JNIS01000001_gene473 (degree 974), 1397699.JNIS01000001_gene1557
-(degree 910) and 1397699.JNIS01000001_gene476 (degree 876).
+The undirected graph Exiguobacterium oxidotolerans has 3003 nodes and 267408
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05933 and has 4 connected components, where the component
+with most nodes has 2996 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 178.09,
+and the node degree mode is 4. The top 5 most central nodes are 1397699.JNIS01000001_gene752
+(degree 1171), 1397699.JNIS01000001_gene1991 (degree 995), 1397699.JNIS01000001_gene473
+(degree 974), 1397699.JNIS01000001_gene1557 (degree 910) and 1397699.JNIS01000001_gene476
+(degree 876).
 
 
 References
@@ -107,14 +108,15 @@ def ExiguobacteriumOxidotolerans(
 	
 	Datetime: 2021-02-03 22:30:55.474474
 	
-	The undirected graph Exiguobacterium oxidotolerans has 3003 nodes and 267408 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05933
-	and has 4 connected components, where the component with most nodes has 2996 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 178.09, and the node degree mode is 4. The top 5
-	most central nodes are 1397699.JNIS01000001_gene752 (degree 1171), 1397699.JNIS01000001_gene1991
-	(degree 995), 1397699.JNIS01000001_gene473 (degree 974), 1397699.JNIS01000001_gene1557
-	(degree 910) and 1397699.JNIS01000001_gene476 (degree 876).
+	The undirected graph Exiguobacterium oxidotolerans has 3003 nodes and 267408
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05933 and has 4 connected components, where the component
+	with most nodes has 2996 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 178.09,
+	and the node degree mode is 4. The top 5 most central nodes are 1397699.JNIS01000001_gene752
+	(degree 1171), 1397699.JNIS01000001_gene1991 (degree 995), 1397699.JNIS01000001_gene473
+	(degree 974), 1397699.JNIS01000001_gene1557 (degree 910) and 1397699.JNIS01000001_gene476
+	(degree 876).
 	
 
 

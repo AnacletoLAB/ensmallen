@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:27:24.303322
 
-The undirected graph sc-pwtk has 217891 nodes and 5653221 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00024 and
-has 5 connected components, where the component with most nodes has 217883 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 53, the mean node degree is 51.89, and the node degree mode is 53. The top 5 most
-central nodes are 217891 (degree 179), 217890 (degree 179), 217889 (degree 179),
-217888 (degree 179) and 217887 (degree 179).
+The undirected graph sc-pwtk has 217891 nodes and 5653221 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00024 and has 5 connected components, where the component with most
+nodes has 217883 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 53, the mean node degree is 51.89, and
+the node degree mode is 53. The top 5 most central nodes are 217891 (degree
+179), 217890 (degree 179), 217889 (degree 179), 217888 (degree 179) and
+217887 (degree 179).
 
 
 References
@@ -110,13 +111,14 @@ def ScPwtk(
 	
 	Datetime: 2021-02-06 12:27:24.303322
 	
-	The undirected graph sc-pwtk has 217891 nodes and 5653221 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00024 and
-	has 5 connected components, where the component with most nodes has 217883 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 53, the mean node degree is 51.89, and the node degree mode is 53. The top 5 most
-	central nodes are 217891 (degree 179), 217890 (degree 179), 217889 (degree 179),
-	217888 (degree 179) and 217887 (degree 179).
+	The undirected graph sc-pwtk has 217891 nodes and 5653221 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00024 and has 5 connected components, where the component with most
+	nodes has 217883 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 53, the mean node degree is 51.89, and
+	the node degree mode is 53. The top 5 most central nodes are 217891 (degree
+	179), 217890 (degree 179), 217889 (degree 179), 217888 (degree 179) and
+	217887 (degree 179).
 	
 
 

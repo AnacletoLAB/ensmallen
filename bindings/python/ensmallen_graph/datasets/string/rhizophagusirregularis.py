@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:04.210119
 
-The undirected graph Rhizophagus irregularis has 8790 nodes and 1075434 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02784
-and has 9 connected components, where the component with most nodes has 8765 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 244.69, and the node degree mode is 8. The top 5
-most central nodes are 588596.U9TKQ9 (degree 2632), 588596.U9U971 (degree 2213),
-588596.U9SIR8 (degree 2140), 588596.U9USM8 (degree 2140) and 588596.U9SKB6 (degree
-2030).
+The undirected graph Rhizophagus irregularis has 8790 nodes and 1075434
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02784 and has 9 connected components, where the component
+with most nodes has 8765 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 244.69,
+and the node degree mode is 8. The top 5 most central nodes are 588596.U9TKQ9
+(degree 2632), 588596.U9U971 (degree 2213), 588596.U9SIR8 (degree 2140),
+588596.U9USM8 (degree 2140) and 588596.U9SKB6 (degree 2030).
 
 
 References
@@ -107,14 +107,14 @@ def RhizophagusIrregularis(
 	
 	Datetime: 2021-02-02 21:17:04.210119
 	
-	The undirected graph Rhizophagus irregularis has 8790 nodes and 1075434 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02784
-	and has 9 connected components, where the component with most nodes has 8765 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 244.69, and the node degree mode is 8. The top 5
-	most central nodes are 588596.U9TKQ9 (degree 2632), 588596.U9U971 (degree 2213),
-	588596.U9SIR8 (degree 2140), 588596.U9USM8 (degree 2140) and 588596.U9SKB6 (degree
-	2030).
+	The undirected graph Rhizophagus irregularis has 8790 nodes and 1075434
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02784 and has 9 connected components, where the component
+	with most nodes has 8765 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 244.69,
+	and the node degree mode is 8. The top 5 most central nodes are 588596.U9TKQ9
+	(degree 2632), 588596.U9U971 (degree 2213), 588596.U9SIR8 (degree 2140),
+	588596.U9USM8 (degree 2140) and 588596.U9SKB6 (degree 2030).
 	
 
 

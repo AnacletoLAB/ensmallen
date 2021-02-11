@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:28:04.923233
 
-The undirected graph Paenibacillus sp. MAEPY2 has 6063 nodes and 740504 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04030
-and has 68 connected components, where the component with most nodes has 5879 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 206, the mean node degree is 244.27, and the node degree mode is 1. The top 5
-most central nodes are 1395587.P364_0133065 (degree 2119), 1395587.P364_0109785 (degree
-1816), 1395587.P364_0103600 (degree 1802), 1395587.P364_0105295 (degree 1644) and
-1395587.P364_0101945 (degree 1623).
+The undirected graph Paenibacillus sp. MAEPY2 has 6063 nodes and 740504
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04030 and has 68 connected components, where the component
+with most nodes has 5879 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 206, the mean node degree is 244.27,
+and the node degree mode is 1. The top 5 most central nodes are 1395587.P364_0133065
+(degree 2119), 1395587.P364_0109785 (degree 1816), 1395587.P364_0103600
+(degree 1802), 1395587.P364_0105295 (degree 1644) and 1395587.P364_0101945
+(degree 1623).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusSp.Maepy2(
 	
 	Datetime: 2021-02-03 22:28:04.923233
 	
-	The undirected graph Paenibacillus sp. MAEPY2 has 6063 nodes and 740504 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04030
-	and has 68 connected components, where the component with most nodes has 5879 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 206, the mean node degree is 244.27, and the node degree mode is 1. The top 5
-	most central nodes are 1395587.P364_0133065 (degree 2119), 1395587.P364_0109785 (degree
-	1816), 1395587.P364_0103600 (degree 1802), 1395587.P364_0105295 (degree 1644) and
-	1395587.P364_0101945 (degree 1623).
+	The undirected graph Paenibacillus sp. MAEPY2 has 6063 nodes and 740504
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04030 and has 68 connected components, where the component
+	with most nodes has 5879 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 206, the mean node degree is 244.27,
+	and the node degree mode is 1. The top 5 most central nodes are 1395587.P364_0133065
+	(degree 2119), 1395587.P364_0109785 (degree 1816), 1395587.P364_0103600
+	(degree 1802), 1395587.P364_0105295 (degree 1644) and 1395587.P364_0101945
+	(degree 1623).
 	
 
 

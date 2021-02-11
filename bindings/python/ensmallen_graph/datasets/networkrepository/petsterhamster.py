@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:29:18.257195
 
-The undirected graph petster-hamster has 2426 nodes and 16631 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00565 and
-has 148 connected components, where the component with most nodes has 2000 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 7, the mean node degree is 13.71, and the node degree mode is 1. The top 5 most
-central nodes are 237 (degree 273), 238 (degree 223), 44 (degree 173), 168 (degree
-154) and 169 (degree 151).
+The undirected graph petster-hamster has 2426 nodes and 16631 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00565 and has 148 connected components, where the component with most
+nodes has 2000 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 7, the mean node degree is 13.71, and the
+node degree mode is 1. The top 5 most central nodes are 237 (degree 273),
+238 (degree 223), 44 (degree 173), 168 (degree 154) and 169 (degree 151).
 
 
 References
@@ -103,13 +103,13 @@ def PetsterHamster(
 	
 	Datetime: 2021-02-06 10:29:18.257195
 	
-	The undirected graph petster-hamster has 2426 nodes and 16631 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00565 and
-	has 148 connected components, where the component with most nodes has 2000 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 7, the mean node degree is 13.71, and the node degree mode is 1. The top 5 most
-	central nodes are 237 (degree 273), 238 (degree 223), 44 (degree 173), 168 (degree
-	154) and 169 (degree 151).
+	The undirected graph petster-hamster has 2426 nodes and 16631 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00565 and has 148 connected components, where the component with most
+	nodes has 2000 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 7, the mean node degree is 13.71, and the
+	node degree mode is 1. The top 5 most central nodes are 237 (degree 273),
+	238 (degree 223), 44 (degree 173), 168 (degree 154) and 169 (degree 151).
 	
 
 

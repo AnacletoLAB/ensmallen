@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:28:13.434864
 
-The undirected graph Haloferula sp. BvORR071 has 5951 nodes and 426960 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02412 and
-has 80 connected components, where the component with most nodes has 5719 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 143.49, and the node degree mode is 3. The top 5 most central
-nodes are 1396141.BATP01000060_gene4765 (degree 2262), 1396141.BATP01000022_gene252
-(degree 1552), 1396141.BATP01000057_gene2997 (degree 1474), 1396141.BATP01000039_gene1234
-(degree 1471) and 1396141.BATP01000039_gene1244 (degree 1432).
+The undirected graph Haloferula sp. BvORR071 has 5951 nodes and 426960
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02412 and has 80 connected components, where the component
+with most nodes has 5719 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 143.49,
+and the node degree mode is 3. The top 5 most central nodes are 1396141.BATP01000060_gene4765
+(degree 2262), 1396141.BATP01000022_gene252 (degree 1552), 1396141.BATP01000057_gene2997
+(degree 1474), 1396141.BATP01000039_gene1234 (degree 1471) and 1396141.BATP01000039_gene1244
+(degree 1432).
 
 
 References
@@ -107,14 +108,15 @@ def HaloferulaSp.Bvorr071(
 	
 	Datetime: 2021-02-03 22:28:13.434864
 	
-	The undirected graph Haloferula sp. BvORR071 has 5951 nodes and 426960 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02412 and
-	has 80 connected components, where the component with most nodes has 5719 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 143.49, and the node degree mode is 3. The top 5 most central
-	nodes are 1396141.BATP01000060_gene4765 (degree 2262), 1396141.BATP01000022_gene252
-	(degree 1552), 1396141.BATP01000057_gene2997 (degree 1474), 1396141.BATP01000039_gene1234
-	(degree 1471) and 1396141.BATP01000039_gene1244 (degree 1432).
+	The undirected graph Haloferula sp. BvORR071 has 5951 nodes and 426960
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02412 and has 80 connected components, where the component
+	with most nodes has 5719 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 143.49,
+	and the node degree mode is 3. The top 5 most central nodes are 1396141.BATP01000060_gene4765
+	(degree 2262), 1396141.BATP01000022_gene252 (degree 1552), 1396141.BATP01000057_gene2997
+	(degree 1474), 1396141.BATP01000039_gene1234 (degree 1471) and 1396141.BATP01000039_gene1244
+	(degree 1432).
 	
 
 

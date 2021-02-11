@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:19.861076
 
-The undirected graph Dickeya sp. NCPPB569 has 3510 nodes and 346090 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05620 and
-has 8 connected components, where the component with most nodes has 3493 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 197.20, and the node degree mode is 3. The top 5 most central
-nodes are 568768.CM001975_gene91 (degree 1277), 568768.CM001975_gene17 (degree 1229),
-568768.CM001975_gene2584 (degree 1145), 568768.CM001975_gene653 (degree 1102) and
-568768.CM001975_gene2585 (degree 1063).
+The undirected graph Dickeya sp. NCPPB569 has 3510 nodes and 346090 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05620 and has 8 connected components, where the component with most
+nodes has 3493 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 197.20, and
+the node degree mode is 3. The top 5 most central nodes are 568768.CM001975_gene91
+(degree 1277), 568768.CM001975_gene17 (degree 1229), 568768.CM001975_gene2584
+(degree 1145), 568768.CM001975_gene653 (degree 1102) and 568768.CM001975_gene2585
+(degree 1063).
 
 
 References
@@ -107,14 +108,15 @@ def DickeyaSp.Ncppb569(
 	
 	Datetime: 2021-02-02 21:13:19.861076
 	
-	The undirected graph Dickeya sp. NCPPB569 has 3510 nodes and 346090 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05620 and
-	has 8 connected components, where the component with most nodes has 3493 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 197.20, and the node degree mode is 3. The top 5 most central
-	nodes are 568768.CM001975_gene91 (degree 1277), 568768.CM001975_gene17 (degree 1229),
-	568768.CM001975_gene2584 (degree 1145), 568768.CM001975_gene653 (degree 1102) and
-	568768.CM001975_gene2585 (degree 1063).
+	The undirected graph Dickeya sp. NCPPB569 has 3510 nodes and 346090 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05620 and has 8 connected components, where the component with most
+	nodes has 3493 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 197.20, and
+	the node degree mode is 3. The top 5 most central nodes are 568768.CM001975_gene91
+	(degree 1277), 568768.CM001975_gene17 (degree 1229), 568768.CM001975_gene2584
+	(degree 1145), 568768.CM001975_gene653 (degree 1102) and 568768.CM001975_gene2585
+	(degree 1063).
 	
 
 

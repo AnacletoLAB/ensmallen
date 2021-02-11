@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:30.983445
 
-The undirected graph Salmonella bongori N26808 has 4703 nodes and 362827 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03281
-and has 16 connected components, where the component with most nodes has 4667 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 154.30, and the node degree mode is 2. The top 5
-most central nodes are 1197719.A464_1689 (degree 1409), 1197719.A464_4049 (degree
-1301), 1197719.A464_3418 (degree 1121), 1197719.A464_2623 (degree 1058) and 1197719.A464_3896
-(degree 990).
+The undirected graph Salmonella bongori N26808 has 4703 nodes and 362827
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03281 and has 16 connected components, where the component
+with most nodes has 4667 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 154.30,
+and the node degree mode is 2. The top 5 most central nodes are 1197719.A464_1689
+(degree 1409), 1197719.A464_4049 (degree 1301), 1197719.A464_3418 (degree
+1121), 1197719.A464_2623 (degree 1058) and 1197719.A464_3896 (degree 990).
 
 
 References
@@ -107,14 +107,14 @@ def SalmonellaBongoriN26808(
 	
 	Datetime: 2021-02-02 23:13:30.983445
 	
-	The undirected graph Salmonella bongori N26808 has 4703 nodes and 362827 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03281
-	and has 16 connected components, where the component with most nodes has 4667 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 154.30, and the node degree mode is 2. The top 5
-	most central nodes are 1197719.A464_1689 (degree 1409), 1197719.A464_4049 (degree
-	1301), 1197719.A464_3418 (degree 1121), 1197719.A464_2623 (degree 1058) and 1197719.A464_3896
-	(degree 990).
+	The undirected graph Salmonella bongori N26808 has 4703 nodes and 362827
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03281 and has 16 connected components, where the component
+	with most nodes has 4667 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 154.30,
+	and the node degree mode is 2. The top 5 most central nodes are 1197719.A464_1689
+	(degree 1409), 1197719.A464_4049 (degree 1301), 1197719.A464_3418 (degree
+	1121), 1197719.A464_2623 (degree 1058) and 1197719.A464_3896 (degree 990).
 	
 
 

@@ -10,15 +10,16 @@ had the following characteristics:
 
 Datetime: 2021-02-04 00:46:54.103690
 
-The undirected graph livejournal has 12693249 nodes with 2 different node types:
-2 (nodes number 7489073) and 1 (nodes number 5204176), of which 412 are singletons
-(all have self-loops), and 161481849 unweighted edges, of which 464843 are self-loops.
-The graph is extremely sparse as it has a density of 0.00000 and has 4945 connected
-components, where the component with most nodes has 12678882 nodes and the component
-with the least nodes has a single node. The graph median node degree is 2, the mean
-node degree is 25.41 and the node degree mode is 1. The top 5 most central nodes
-are 5204297 (degree 1053676), 5204203 (degree 703196), 5204228 (degree 494870), 5204225
-(degree 466651) and 5204271 (degree 454981).
+The undirected graph livejournal has 12693249 nodes with 2 different node
+types: 2 (nodes number 7489073) and 1 (nodes number 5204176), of which
+412 are singletons (all have self-loops), and 161481849 unweighted edges,
+of which 464843 are self-loops. The graph is extremely sparse as it has
+a density of 0.00000 and has 4945 connected components, where the component
+with most nodes has 12678882 nodes and the component with the least nodes
+has a single node. The graph median node degree is 2, the mean node degree
+is 25.41 and the node degree mode is 1. The top 5 most central nodes are
+5204297 (degree 1053676), 5204203 (degree 703196), 5204228 (degree 494870),
+5204225 (degree 466651) and 5204271 (degree 454981).
 
 
 References
@@ -105,15 +106,16 @@ def Livejournal(
 	
 	Datetime: 2021-02-04 00:46:54.103690
 	
-	The undirected graph livejournal has 12693249 nodes with 2 different node types:
-	2 (nodes number 7489073) and 1 (nodes number 5204176), of which 412 are singletons
-	(all have self-loops), and 161481849 unweighted edges, of which 464843 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00000 and has 4945 connected
-	components, where the component with most nodes has 12678882 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 2, the mean
-	node degree is 25.41 and the node degree mode is 1. The top 5 most central nodes
-	are 5204297 (degree 1053676), 5204203 (degree 703196), 5204228 (degree 494870), 5204225
-	(degree 466651) and 5204271 (degree 454981).
+	The undirected graph livejournal has 12693249 nodes with 2 different node
+	types: 2 (nodes number 7489073) and 1 (nodes number 5204176), of which
+	412 are singletons (all have self-loops), and 161481849 unweighted edges,
+	of which 464843 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00000 and has 4945 connected components, where the component
+	with most nodes has 12678882 nodes and the component with the least nodes
+	has a single node. The graph median node degree is 2, the mean node degree
+	is 25.41 and the node degree mode is 1. The top 5 most central nodes are
+	5204297 (degree 1053676), 5204203 (degree 703196), 5204228 (degree 494870),
+	5204225 (degree 466651) and 5204271 (degree 454981).
 	
 
 

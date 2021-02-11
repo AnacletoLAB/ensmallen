@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:33:18.064809
 
-The undirected graph Bifidobacterium subtile has 2242 nodes and 158801 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06321 and
-has 14 connected components, where the component with most nodes has 2210 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 141.66, and the node degree mode is 1. The top 5 most central
-nodes are 77635.BISU_0374 (degree 1041), 77635.BISU_0494 (degree 1001), 77635.BISU_0227
-(degree 837), 77635.BISU_1202 (degree 821) and 77635.BISU_1378 (degree 792).
+The undirected graph Bifidobacterium subtile has 2242 nodes and 158801
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06321 and has 14 connected components, where the component
+with most nodes has 2210 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 107, the mean node degree is 141.66,
+and the node degree mode is 1. The top 5 most central nodes are 77635.BISU_0374
+(degree 1041), 77635.BISU_0494 (degree 1001), 77635.BISU_0227 (degree 837),
+77635.BISU_1202 (degree 821) and 77635.BISU_1378 (degree 792).
 
 
 References
@@ -106,13 +107,14 @@ def BifidobacteriumSubtile(
 	
 	Datetime: 2021-02-02 18:33:18.064809
 	
-	The undirected graph Bifidobacterium subtile has 2242 nodes and 158801 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06321 and
-	has 14 connected components, where the component with most nodes has 2210 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 141.66, and the node degree mode is 1. The top 5 most central
-	nodes are 77635.BISU_0374 (degree 1041), 77635.BISU_0494 (degree 1001), 77635.BISU_0227
-	(degree 837), 77635.BISU_1202 (degree 821) and 77635.BISU_1378 (degree 792).
+	The undirected graph Bifidobacterium subtile has 2242 nodes and 158801
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06321 and has 14 connected components, where the component
+	with most nodes has 2210 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 107, the mean node degree is 141.66,
+	and the node degree mode is 1. The top 5 most central nodes are 77635.BISU_0374
+	(degree 1041), 77635.BISU_0494 (degree 1001), 77635.BISU_0227 (degree 837),
+	77635.BISU_1202 (degree 821) and 77635.BISU_1378 (degree 792).
 	
 
 

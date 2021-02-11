@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:57.463423
 
-The undirected graph Polaromonas naphthalenivorans has 4220 nodes and 330083 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-and has 9 connected components, where the component with most nodes has 4195 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 156.44, and the node degree mode is 7. The top 5
-most central nodes are 365044.Pnap_1478 (degree 1412), 365044.Pnap_2000 (degree 1225),
-365044.Pnap_0683 (degree 1203), 365044.Pnap_4054 (degree 1105) and 365044.Pnap_0818
-(degree 994).
+The undirected graph Polaromonas naphthalenivorans has 4220 nodes and 330083
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03708 and has 9 connected components, where the component
+with most nodes has 4195 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 156.44,
+and the node degree mode is 7. The top 5 most central nodes are 365044.Pnap_1478
+(degree 1412), 365044.Pnap_2000 (degree 1225), 365044.Pnap_0683 (degree
+1203), 365044.Pnap_4054 (degree 1105) and 365044.Pnap_0818 (degree 994).
 
 
 References
@@ -107,14 +107,14 @@ def PolaromonasNaphthalenivorans(
 	
 	Datetime: 2021-02-02 20:34:57.463423
 	
-	The undirected graph Polaromonas naphthalenivorans has 4220 nodes and 330083 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03708
-	and has 9 connected components, where the component with most nodes has 4195 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 156.44, and the node degree mode is 7. The top 5
-	most central nodes are 365044.Pnap_1478 (degree 1412), 365044.Pnap_2000 (degree 1225),
-	365044.Pnap_0683 (degree 1203), 365044.Pnap_4054 (degree 1105) and 365044.Pnap_0818
-	(degree 994).
+	The undirected graph Polaromonas naphthalenivorans has 4220 nodes and 330083
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03708 and has 9 connected components, where the component
+	with most nodes has 4195 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 156.44,
+	and the node degree mode is 7. The top 5 most central nodes are 365044.Pnap_1478
+	(degree 1412), 365044.Pnap_2000 (degree 1225), 365044.Pnap_0683 (degree
+	1203), 365044.Pnap_4054 (degree 1105) and 365044.Pnap_0818 (degree 994).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:03:06.090253
 
-The undirected graph Pectobacterium atrosepticum has 4454 nodes and 485694 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04898
-and has 18 connected components, where the component with most nodes has 4412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 218.09, and the node degree mode is 2. The top 5
-most central nodes are 218491.ECA0021 (degree 1426), 218491.ECA0314 (degree 1296),
-218491.ECA0824 (degree 1249), 218491.ECA0312 (degree 1209) and 218491.ECA2957 (degree
-1205).
+The undirected graph Pectobacterium atrosepticum has 4454 nodes and 485694
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04898 and has 18 connected components, where the component
+with most nodes has 4412 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 218.09,
+and the node degree mode is 2. The top 5 most central nodes are 218491.ECA0021
+(degree 1426), 218491.ECA0314 (degree 1296), 218491.ECA0824 (degree 1249),
+218491.ECA0312 (degree 1209) and 218491.ECA2957 (degree 1205).
 
 
 References
@@ -107,14 +107,14 @@ def PectobacteriumAtrosepticum(
 	
 	Datetime: 2021-02-02 20:03:06.090253
 	
-	The undirected graph Pectobacterium atrosepticum has 4454 nodes and 485694 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04898
-	and has 18 connected components, where the component with most nodes has 4412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 218.09, and the node degree mode is 2. The top 5
-	most central nodes are 218491.ECA0021 (degree 1426), 218491.ECA0314 (degree 1296),
-	218491.ECA0824 (degree 1249), 218491.ECA0312 (degree 1209) and 218491.ECA2957 (degree
-	1205).
+	The undirected graph Pectobacterium atrosepticum has 4454 nodes and 485694
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04898 and has 18 connected components, where the component
+	with most nodes has 4412 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 218.09,
+	and the node degree mode is 2. The top 5 most central nodes are 218491.ECA0021
+	(degree 1426), 218491.ECA0314 (degree 1296), 218491.ECA0824 (degree 1249),
+	218491.ECA0312 (degree 1209) and 218491.ECA2957 (degree 1205).
 	
 
 

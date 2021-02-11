@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:43.859873
 
-The undirected graph Bacteroides vulgatus has 4029 nodes and 352156 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04340 and
-has 20 connected components, where the component with most nodes has 3982 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 174.81, and the node degree mode is 2. The top 5 most central
-nodes are 435590.BVU_1207 (degree 1358), 435590.BVU_2889 (degree 1125), 435590.BVU_0428
-(degree 1023), 435590.BVU_1333 (degree 983) and 435590.BVU_0756 (degree 946).
+The undirected graph Bacteroides vulgatus has 4029 nodes and 352156 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04340 and has 20 connected components, where the component with most
+nodes has 3982 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 174.81, and
+the node degree mode is 2. The top 5 most central nodes are 435590.BVU_1207
+(degree 1358), 435590.BVU_2889 (degree 1125), 435590.BVU_0428 (degree 1023),
+435590.BVU_1333 (degree 983) and 435590.BVU_0756 (degree 946).
 
 
 References
@@ -106,13 +107,14 @@ def BacteroidesVulgatus(
 	
 	Datetime: 2021-02-02 20:48:43.859873
 	
-	The undirected graph Bacteroides vulgatus has 4029 nodes and 352156 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04340 and
-	has 20 connected components, where the component with most nodes has 3982 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 174.81, and the node degree mode is 2. The top 5 most central
-	nodes are 435590.BVU_1207 (degree 1358), 435590.BVU_2889 (degree 1125), 435590.BVU_0428
-	(degree 1023), 435590.BVU_1333 (degree 983) and 435590.BVU_0756 (degree 946).
+	The undirected graph Bacteroides vulgatus has 4029 nodes and 352156 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04340 and has 20 connected components, where the component with most
+	nodes has 3982 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 174.81, and
+	the node degree mode is 2. The top 5 most central nodes are 435590.BVU_1207
+	(degree 1358), 435590.BVU_2889 (degree 1125), 435590.BVU_0428 (degree 1023),
+	435590.BVU_1333 (degree 983) and 435590.BVU_0756 (degree 946).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:09.674905
 
-The undirected graph Lachnospiraceae bacterium P6A3 has 2541 nodes and 198485 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06151
-and has 3 connected components, where the component with most nodes has 2537 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 156.23, and the node degree mode is 14. The top 5
-most central nodes are 1410630.JNKP01000003_gene1600 (degree 1089), 1410630.JNKP01000007_gene590
+The undirected graph Lachnospiraceae bacterium P6A3 has 2541 nodes and
+198485 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06151 and has 3 connected components, where the
+component with most nodes has 2537 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+is 156.23, and the node degree mode is 14. The top 5 most central nodes
+are 1410630.JNKP01000003_gene1600 (degree 1089), 1410630.JNKP01000007_gene590
 (degree 1078), 1410630.JNKP01000006_gene116 (degree 818), 1410630.JNKP01000003_gene1544
 (degree 803) and 1410630.JNKP01000004_gene471 (degree 790).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumP6a3(
 	
 	Datetime: 2021-02-03 22:43:09.674905
 	
-	The undirected graph Lachnospiraceae bacterium P6A3 has 2541 nodes and 198485 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06151
-	and has 3 connected components, where the component with most nodes has 2537 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 156.23, and the node degree mode is 14. The top 5
-	most central nodes are 1410630.JNKP01000003_gene1600 (degree 1089), 1410630.JNKP01000007_gene590
+	The undirected graph Lachnospiraceae bacterium P6A3 has 2541 nodes and
+	198485 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06151 and has 3 connected components, where the
+	component with most nodes has 2537 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 130, the mean node degree
+	is 156.23, and the node degree mode is 14. The top 5 most central nodes
+	are 1410630.JNKP01000003_gene1600 (degree 1089), 1410630.JNKP01000007_gene590
 	(degree 1078), 1410630.JNKP01000006_gene116 (degree 818), 1410630.JNKP01000003_gene1544
 	(degree 803) and 1410630.JNKP01000004_gene471 (degree 790).
 	

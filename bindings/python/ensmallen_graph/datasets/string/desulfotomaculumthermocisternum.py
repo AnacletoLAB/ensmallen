@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:25.611633
 
-The undirected graph Desulfotomaculum thermocisternum has 2574 nodes and 216037 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06524
-and has 5 connected components, where the component with most nodes has 2563 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 167.86, and the node degree mode is 2. The top 5
-most central nodes are 1121430.JMLG01000032_gene1665 (degree 1092), 1121430.JMLG01000003_gene496
+The undirected graph Desulfotomaculum thermocisternum has 2574 nodes and
+216037 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06524 and has 5 connected components, where the
+component with most nodes has 2563 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+is 167.86, and the node degree mode is 2. The top 5 most central nodes
+are 1121430.JMLG01000032_gene1665 (degree 1092), 1121430.JMLG01000003_gene496
 (degree 1061), 1121430.JMLG01000036_gene155 (degree 897), 1121430.JMLG01000042_gene2455
 (degree 863) and 1121430.JMLG01000001_gene2280 (degree 843).
 
@@ -107,12 +108,13 @@ def DesulfotomaculumThermocisternum(
 	
 	Datetime: 2021-02-02 22:36:25.611633
 	
-	The undirected graph Desulfotomaculum thermocisternum has 2574 nodes and 216037 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06524
-	and has 5 connected components, where the component with most nodes has 2563 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 167.86, and the node degree mode is 2. The top 5
-	most central nodes are 1121430.JMLG01000032_gene1665 (degree 1092), 1121430.JMLG01000003_gene496
+	The undirected graph Desulfotomaculum thermocisternum has 2574 nodes and
+	216037 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06524 and has 5 connected components, where the
+	component with most nodes has 2563 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 135, the mean node degree
+	is 167.86, and the node degree mode is 2. The top 5 most central nodes
+	are 1121430.JMLG01000032_gene1665 (degree 1092), 1121430.JMLG01000003_gene496
 	(degree 1061), 1121430.JMLG01000036_gene155 (degree 897), 1121430.JMLG01000042_gene2455
 	(degree 863) and 1121430.JMLG01000001_gene2280 (degree 843).
 	

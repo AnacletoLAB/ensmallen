@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:02.292550
 
-The undirected graph Chlamydia gallinacea has 894 nodes and 40910 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10249
-and has 4 connected components, where the component with most nodes has 888 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 76, the mean node degree is 91.52, and the node degree mode is 4. The top 5 most
-central nodes are 1143323.M787_0874 (degree 448), 1143323.M787_0892 (degree 395),
-1143323.M787_0044 (degree 371), 1143323.M787_0579 (degree 354) and 1143323.M787_0925
-(degree 348).
+The undirected graph Chlamydia gallinacea has 894 nodes and 40910 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10249 and has 4 connected components, where the component
+with most nodes has 888 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 76, the mean node degree is 91.52,
+and the node degree mode is 4. The top 5 most central nodes are 1143323.M787_0874
+(degree 448), 1143323.M787_0892 (degree 395), 1143323.M787_0044 (degree
+371), 1143323.M787_0579 (degree 354) and 1143323.M787_0925 (degree 348).
 
 
 References
@@ -107,14 +107,14 @@ def ChlamydiaGallinacea(
 	
 	Datetime: 2021-02-02 22:58:02.292550
 	
-	The undirected graph Chlamydia gallinacea has 894 nodes and 40910 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10249
-	and has 4 connected components, where the component with most nodes has 888 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 76, the mean node degree is 91.52, and the node degree mode is 4. The top 5 most
-	central nodes are 1143323.M787_0874 (degree 448), 1143323.M787_0892 (degree 395),
-	1143323.M787_0044 (degree 371), 1143323.M787_0579 (degree 354) and 1143323.M787_0925
-	(degree 348).
+	The undirected graph Chlamydia gallinacea has 894 nodes and 40910 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10249 and has 4 connected components, where the component
+	with most nodes has 888 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 76, the mean node degree is 91.52,
+	and the node degree mode is 4. The top 5 most central nodes are 1143323.M787_0874
+	(degree 448), 1143323.M787_0892 (degree 395), 1143323.M787_0044 (degree
+	371), 1143323.M787_0579 (degree 354) and 1143323.M787_0925 (degree 348).
 	
 
 

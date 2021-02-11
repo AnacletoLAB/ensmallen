@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:30:20.469274
 
-The undirected graph Chrysemys picta has 19829 nodes and 4100912 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02086 and
-has 2 connected components, where the component with most nodes has 19827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 281,
-the mean node degree is 413.63, and the node degree mode is 156. The top 5 most central
-nodes are 8479.XP_008173838.1 (degree 4828), 8479.XP_005304520.1 (degree 4607), 8479.XP_008164817.1
-(degree 4409), 8479.XP_005301839.1 (degree 3864) and 8479.XP_005291360.1 (degree
+The undirected graph Chrysemys picta has 19829 nodes and 4100912 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02086 and has 2 connected components, where the component with most
+nodes has 19827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 281, the mean node degree is 413.63, and
+the node degree mode is 156. The top 5 most central nodes are 8479.XP_008173838.1
+(degree 4828), 8479.XP_005304520.1 (degree 4607), 8479.XP_008164817.1 (degree
+4409), 8479.XP_005301839.1 (degree 3864) and 8479.XP_005291360.1 (degree
 3800).
 
 
@@ -107,13 +108,14 @@ def ChrysemysPicta(
 	
 	Datetime: 2021-02-02 17:30:20.469274
 	
-	The undirected graph Chrysemys picta has 19829 nodes and 4100912 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02086 and
-	has 2 connected components, where the component with most nodes has 19827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 281,
-	the mean node degree is 413.63, and the node degree mode is 156. The top 5 most central
-	nodes are 8479.XP_008173838.1 (degree 4828), 8479.XP_005304520.1 (degree 4607), 8479.XP_008164817.1
-	(degree 4409), 8479.XP_005301839.1 (degree 3864) and 8479.XP_005291360.1 (degree
+	The undirected graph Chrysemys picta has 19829 nodes and 4100912 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02086 and has 2 connected components, where the component with most
+	nodes has 19827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 281, the mean node degree is 413.63, and
+	the node degree mode is 156. The top 5 most central nodes are 8479.XP_008173838.1
+	(degree 4828), 8479.XP_005304520.1 (degree 4607), 8479.XP_008164817.1 (degree
+	4409), 8479.XP_005301839.1 (degree 3864) and 8479.XP_005291360.1 (degree
 	3800).
 	
 

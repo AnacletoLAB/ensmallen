@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:13:34.986468
 
-The undirected graph Selaginella moellendorffii has 26468 nodes and 6979703 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01993
-and has 5 connected components, where the component with most nodes has 26456 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 277, the mean node degree is 527.41, and the node degree mode is 2. The top 5
-most central nodes are 88036.EFJ36491 (degree 6826), 88036.EFJ18561 (degree 6826),
-88036.EFJ22765 (degree 6736), 88036.EFJ30875 (degree 6736) and 88036.EFJ08760 (degree
+The undirected graph Selaginella moellendorffii has 26468 nodes and 6979703
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01993 and has 5 connected components, where the component
+with most nodes has 26456 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 277, the mean node degree
+is 527.41, and the node degree mode is 2. The top 5 most central nodes
+are 88036.EFJ36491 (degree 6826), 88036.EFJ18561 (degree 6826), 88036.EFJ22765
+(degree 6736), 88036.EFJ30875 (degree 6736) and 88036.EFJ08760 (degree
 5699).
 
 
@@ -107,13 +108,14 @@ def SelaginellaMoellendorffii(
 	
 	Datetime: 2021-02-02 19:13:34.986468
 	
-	The undirected graph Selaginella moellendorffii has 26468 nodes and 6979703 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01993
-	and has 5 connected components, where the component with most nodes has 26456 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 277, the mean node degree is 527.41, and the node degree mode is 2. The top 5
-	most central nodes are 88036.EFJ36491 (degree 6826), 88036.EFJ18561 (degree 6826),
-	88036.EFJ22765 (degree 6736), 88036.EFJ30875 (degree 6736) and 88036.EFJ08760 (degree
+	The undirected graph Selaginella moellendorffii has 26468 nodes and 6979703
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01993 and has 5 connected components, where the component
+	with most nodes has 26456 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 277, the mean node degree
+	is 527.41, and the node degree mode is 2. The top 5 most central nodes
+	are 88036.EFJ36491 (degree 6826), 88036.EFJ18561 (degree 6826), 88036.EFJ22765
+	(degree 6736), 88036.EFJ30875 (degree 6736) and 88036.EFJ08760 (degree
 	5699).
 	
 

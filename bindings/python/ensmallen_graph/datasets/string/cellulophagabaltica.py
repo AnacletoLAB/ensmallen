@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:04:22.809319
 
-The undirected graph Cellulophaga baltica has 3927 nodes and 306171 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03972 and
-has 13 connected components, where the component with most nodes has 3890 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 155.93, and the node degree mode is 2. The top 5 most central
-nodes are 1348583.ATLH01000029_gene1351 (degree 1219), 1348583.ATLH01000006_gene1094
-(degree 1068), 1348583.ATLH01000012_gene480 (degree 1018), 1348583.ATLH01000003_gene3909
-(degree 972) and 1348583.ATLH01000028_gene119 (degree 922).
+The undirected graph Cellulophaga baltica has 3927 nodes and 306171 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03972 and has 13 connected components, where the component with most
+nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 155.93, and
+the node degree mode is 2. The top 5 most central nodes are 1348583.ATLH01000029_gene1351
+(degree 1219), 1348583.ATLH01000006_gene1094 (degree 1068), 1348583.ATLH01000012_gene480
+(degree 1018), 1348583.ATLH01000003_gene3909 (degree 972) and 1348583.ATLH01000028_gene119
+(degree 922).
 
 
 References
@@ -107,14 +108,15 @@ def CellulophagaBaltica(
 	
 	Datetime: 2021-02-03 22:04:22.809319
 	
-	The undirected graph Cellulophaga baltica has 3927 nodes and 306171 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03972 and
-	has 13 connected components, where the component with most nodes has 3890 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 155.93, and the node degree mode is 2. The top 5 most central
-	nodes are 1348583.ATLH01000029_gene1351 (degree 1219), 1348583.ATLH01000006_gene1094
-	(degree 1068), 1348583.ATLH01000012_gene480 (degree 1018), 1348583.ATLH01000003_gene3909
-	(degree 972) and 1348583.ATLH01000028_gene119 (degree 922).
+	The undirected graph Cellulophaga baltica has 3927 nodes and 306171 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03972 and has 13 connected components, where the component with most
+	nodes has 3890 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 155.93, and
+	the node degree mode is 2. The top 5 most central nodes are 1348583.ATLH01000029_gene1351
+	(degree 1219), 1348583.ATLH01000006_gene1094 (degree 1068), 1348583.ATLH01000012_gene480
+	(degree 1018), 1348583.ATLH01000003_gene3909 (degree 972) and 1348583.ATLH01000028_gene119
+	(degree 922).
 	
 
 

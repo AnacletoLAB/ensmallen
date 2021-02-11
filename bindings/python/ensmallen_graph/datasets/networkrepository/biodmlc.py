@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:00.415838
 
-The undirected graph bio-DM-LC has 658 nodes and 1129 weighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00522 and has 55 connected
-components, where the component with most nodes has 483 nodes and the component with
-the least nodes has 2 nodes. The graph median node degree is 2, the mean node degree
-is 3.43 and the node degree mode is 1. The top 5 most central nodes are 20 (degree
-50), 19 (degree 50), 21 (degree 42), 24 (degree 37) and 18 (degree 36).
+The undirected graph bio-DM-LC has 658 nodes and 1129 weighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00522
+and has 55 connected components, where the component with most nodes has
+483 nodes and the component with the least nodes has 2 nodes. The graph
+median node degree is 2, the mean node degree is 3.43 and the node degree
+mode is 1. The top 5 most central nodes are 20 (degree 50), 19 (degree
+50), 21 (degree 42), 24 (degree 37) and 18 (degree 36).
 
 
 References
@@ -113,12 +114,13 @@ def BioDmLc(
 	
 	Datetime: 2021-02-03 22:30:00.415838
 	
-	The undirected graph bio-DM-LC has 658 nodes and 1129 weighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00522 and has 55 connected
-	components, where the component with most nodes has 483 nodes and the component with
-	the least nodes has 2 nodes. The graph median node degree is 2, the mean node degree
-	is 3.43 and the node degree mode is 1. The top 5 most central nodes are 20 (degree
-	50), 19 (degree 50), 21 (degree 42), 24 (degree 37) and 18 (degree 36).
+	The undirected graph bio-DM-LC has 658 nodes and 1129 weighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00522
+	and has 55 connected components, where the component with most nodes has
+	483 nodes and the component with the least nodes has 2 nodes. The graph
+	median node degree is 2, the mean node degree is 3.43 and the node degree
+	mode is 1. The top 5 most central nodes are 20 (degree 50), 19 (degree
+	50), 21 (degree 42), 24 (degree 37) and 18 (degree 36).
 	
 
 

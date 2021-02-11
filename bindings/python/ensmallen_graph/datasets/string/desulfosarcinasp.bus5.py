@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:40.459234
 
-The undirected graph Desulfosarcina sp. BuS5 has 3405 nodes and 292275 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05043 and
-has 31 connected components, where the component with most nodes has 3340 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 171.67, and the node degree mode is 1. The top 5 most central
-nodes are 933262.AXAM01000065_gene1726 (degree 1268), 933262.AXAM01000061_gene1666
-(degree 1256), 933262.AXAM01000017_gene3137 (degree 1188), 933262.AXAM01000003_gene2802
-(degree 1141) and 933262.AXAM01000008_gene1963 (degree 1020).
+The undirected graph Desulfosarcina sp. BuS5 has 3405 nodes and 292275
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05043 and has 31 connected components, where the component
+with most nodes has 3340 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 171.67,
+and the node degree mode is 1. The top 5 most central nodes are 933262.AXAM01000065_gene1726
+(degree 1268), 933262.AXAM01000061_gene1666 (degree 1256), 933262.AXAM01000017_gene3137
+(degree 1188), 933262.AXAM01000003_gene2802 (degree 1141) and 933262.AXAM01000008_gene1963
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfosarcinaSp.Bus5(
 	
 	Datetime: 2021-02-02 21:58:40.459234
 	
-	The undirected graph Desulfosarcina sp. BuS5 has 3405 nodes and 292275 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05043 and
-	has 31 connected components, where the component with most nodes has 3340 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 171.67, and the node degree mode is 1. The top 5 most central
-	nodes are 933262.AXAM01000065_gene1726 (degree 1268), 933262.AXAM01000061_gene1666
-	(degree 1256), 933262.AXAM01000017_gene3137 (degree 1188), 933262.AXAM01000003_gene2802
-	(degree 1141) and 933262.AXAM01000008_gene1963 (degree 1020).
+	The undirected graph Desulfosarcina sp. BuS5 has 3405 nodes and 292275
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05043 and has 31 connected components, where the component
+	with most nodes has 3340 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 171.67,
+	and the node degree mode is 1. The top 5 most central nodes are 933262.AXAM01000065_gene1726
+	(degree 1268), 933262.AXAM01000061_gene1666 (degree 1256), 933262.AXAM01000017_gene3137
+	(degree 1188), 933262.AXAM01000003_gene2802 (degree 1141) and 933262.AXAM01000008_gene1963
+	(degree 1020).
 	
 
 

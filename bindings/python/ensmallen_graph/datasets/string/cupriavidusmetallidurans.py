@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:37.192718
 
-The undirected graph Cupriavidus metallidurans has 6063 nodes and 809678 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04406
-and has 31 connected components, where the component with most nodes has 5982 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 267.09, and the node degree mode is 2. The top 5
-most central nodes are 266264.Rmet_2624 (degree 2473), 266264.Rmet_3263 (degree 1890),
-266264.Rmet_0680 (degree 1743), 266264.Rmet_1463 (degree 1727) and 266264.Rmet_0367
-(degree 1701).
+The undirected graph Cupriavidus metallidurans has 6063 nodes and 809678
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04406 and has 31 connected components, where the component
+with most nodes has 5982 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 267.09,
+and the node degree mode is 2. The top 5 most central nodes are 266264.Rmet_2624
+(degree 2473), 266264.Rmet_3263 (degree 1890), 266264.Rmet_0680 (degree
+1743), 266264.Rmet_1463 (degree 1727) and 266264.Rmet_0367 (degree 1701).
 
 
 References
@@ -107,14 +107,14 @@ def CupriavidusMetallidurans(
 	
 	Datetime: 2021-02-02 20:14:37.192718
 	
-	The undirected graph Cupriavidus metallidurans has 6063 nodes and 809678 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04406
-	and has 31 connected components, where the component with most nodes has 5982 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 267.09, and the node degree mode is 2. The top 5
-	most central nodes are 266264.Rmet_2624 (degree 2473), 266264.Rmet_3263 (degree 1890),
-	266264.Rmet_0680 (degree 1743), 266264.Rmet_1463 (degree 1727) and 266264.Rmet_0367
-	(degree 1701).
+	The undirected graph Cupriavidus metallidurans has 6063 nodes and 809678
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04406 and has 31 connected components, where the component
+	with most nodes has 5982 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 267.09,
+	and the node degree mode is 2. The top 5 most central nodes are 266264.Rmet_2624
+	(degree 2473), 266264.Rmet_3263 (degree 1890), 266264.Rmet_0680 (degree
+	1743), 266264.Rmet_1463 (degree 1727) and 266264.Rmet_0367 (degree 1701).
 	
 
 

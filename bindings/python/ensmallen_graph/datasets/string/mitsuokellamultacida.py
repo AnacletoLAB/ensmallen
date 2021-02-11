@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:24.036575
 
-The undirected graph Mitsuokella multacida has 2529 nodes and 194108 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06072 and
-has 11 connected components, where the component with most nodes has 2502 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 131,
-the mean node degree is 153.51, and the node degree mode is 3. The top 5 most central
-nodes are 500635.MITSMUL_03498 (degree 994), 500635.MITSMUL_05409 (degree 835), 500635.MITSMUL_03569
-(degree 831), 500635.MITSMUL_03798 (degree 825) and 500635.MITSMUL_04722 (degree
+The undirected graph Mitsuokella multacida has 2529 nodes and 194108 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06072 and has 11 connected components, where the component with most
+nodes has 2502 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 131, the mean node degree is 153.51, and
+the node degree mode is 3. The top 5 most central nodes are 500635.MITSMUL_03498
+(degree 994), 500635.MITSMUL_05409 (degree 835), 500635.MITSMUL_03569 (degree
+831), 500635.MITSMUL_03798 (degree 825) and 500635.MITSMUL_04722 (degree
 711).
 
 
@@ -107,13 +108,14 @@ def MitsuokellaMultacida(
 	
 	Datetime: 2021-02-02 21:01:24.036575
 	
-	The undirected graph Mitsuokella multacida has 2529 nodes and 194108 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06072 and
-	has 11 connected components, where the component with most nodes has 2502 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 131,
-	the mean node degree is 153.51, and the node degree mode is 3. The top 5 most central
-	nodes are 500635.MITSMUL_03498 (degree 994), 500635.MITSMUL_05409 (degree 835), 500635.MITSMUL_03569
-	(degree 831), 500635.MITSMUL_03798 (degree 825) and 500635.MITSMUL_04722 (degree
+	The undirected graph Mitsuokella multacida has 2529 nodes and 194108 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06072 and has 11 connected components, where the component with most
+	nodes has 2502 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 131, the mean node degree is 153.51, and
+	the node degree mode is 3. The top 5 most central nodes are 500635.MITSMUL_03498
+	(degree 994), 500635.MITSMUL_05409 (degree 835), 500635.MITSMUL_03569 (degree
+	831), 500635.MITSMUL_03798 (degree 825) and 500635.MITSMUL_04722 (degree
 	711).
 	
 

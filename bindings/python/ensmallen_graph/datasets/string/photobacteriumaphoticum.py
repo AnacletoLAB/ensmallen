@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:38.803144
 
-The undirected graph Photobacterium aphoticum has 6851 nodes and 1194053 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05089
-and has 44 connected components, where the component with most nodes has 6745 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 279, the mean node degree is 348.58, and the node degree mode is 3. The top 5
-most central nodes are 754436.JCM19237_3799 (degree 2761), 754436.JCM19237_1470 (degree
-2471), 754436.JCM19237_3798 (degree 2324), 754436.JCM19237_4249 (degree 2132) and
-754436.JCM19237_3814 (degree 2116).
+The undirected graph Photobacterium aphoticum has 6851 nodes and 1194053
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05089 and has 44 connected components, where the component
+with most nodes has 6745 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 279, the mean node degree is 348.58,
+and the node degree mode is 3. The top 5 most central nodes are 754436.JCM19237_3799
+(degree 2761), 754436.JCM19237_1470 (degree 2471), 754436.JCM19237_3798
+(degree 2324), 754436.JCM19237_4249 (degree 2132) and 754436.JCM19237_3814
+(degree 2116).
 
 
 References
@@ -107,14 +108,15 @@ def PhotobacteriumAphoticum(
 	
 	Datetime: 2021-02-02 21:40:38.803144
 	
-	The undirected graph Photobacterium aphoticum has 6851 nodes and 1194053 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05089
-	and has 44 connected components, where the component with most nodes has 6745 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 279, the mean node degree is 348.58, and the node degree mode is 3. The top 5
-	most central nodes are 754436.JCM19237_3799 (degree 2761), 754436.JCM19237_1470 (degree
-	2471), 754436.JCM19237_3798 (degree 2324), 754436.JCM19237_4249 (degree 2132) and
-	754436.JCM19237_3814 (degree 2116).
+	The undirected graph Photobacterium aphoticum has 6851 nodes and 1194053
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05089 and has 44 connected components, where the component
+	with most nodes has 6745 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 279, the mean node degree is 348.58,
+	and the node degree mode is 3. The top 5 most central nodes are 754436.JCM19237_3799
+	(degree 2761), 754436.JCM19237_1470 (degree 2471), 754436.JCM19237_3798
+	(degree 2324), 754436.JCM19237_4249 (degree 2132) and 754436.JCM19237_3814
+	(degree 2116).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:34.140698
 
-The undirected graph Methyloferula stellata has 3686 nodes and 459723 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06769 and
-has 19 connected components, where the component with most nodes has 3647 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 226,
-the mean node degree is 249.44, and the node degree mode is 1. The top 5 most central
-nodes are 876269.ARWA01000001_gene88 (degree 1400), 876269.ARWA01000001_gene2983
-(degree 1365), 876269.ARWA01000001_gene430 (degree 1336), 876269.ARWA01000001_gene3335
-(degree 1157) and 876269.ARWA01000001_gene2248 (degree 1136).
+The undirected graph Methyloferula stellata has 3686 nodes and 459723 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06769 and has 19 connected components, where the component with most
+nodes has 3647 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 226, the mean node degree is 249.44, and
+the node degree mode is 1. The top 5 most central nodes are 876269.ARWA01000001_gene88
+(degree 1400), 876269.ARWA01000001_gene2983 (degree 1365), 876269.ARWA01000001_gene430
+(degree 1336), 876269.ARWA01000001_gene3335 (degree 1157) and 876269.ARWA01000001_gene2248
+(degree 1136).
 
 
 References
@@ -107,14 +108,15 @@ def MethyloferulaStellata(
 	
 	Datetime: 2021-02-02 21:49:34.140698
 	
-	The undirected graph Methyloferula stellata has 3686 nodes and 459723 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06769 and
-	has 19 connected components, where the component with most nodes has 3647 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 226,
-	the mean node degree is 249.44, and the node degree mode is 1. The top 5 most central
-	nodes are 876269.ARWA01000001_gene88 (degree 1400), 876269.ARWA01000001_gene2983
-	(degree 1365), 876269.ARWA01000001_gene430 (degree 1336), 876269.ARWA01000001_gene3335
-	(degree 1157) and 876269.ARWA01000001_gene2248 (degree 1136).
+	The undirected graph Methyloferula stellata has 3686 nodes and 459723 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06769 and has 19 connected components, where the component with most
+	nodes has 3647 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 226, the mean node degree is 249.44, and
+	the node degree mode is 1. The top 5 most central nodes are 876269.ARWA01000001_gene88
+	(degree 1400), 876269.ARWA01000001_gene2983 (degree 1365), 876269.ARWA01000001_gene430
+	(degree 1336), 876269.ARWA01000001_gene3335 (degree 1157) and 876269.ARWA01000001_gene2248
+	(degree 1136).
 	
 
 

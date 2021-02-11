@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:40.872305
 
-The undirected graph Treponema caldaria has 2777 nodes and 201260 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05221 and
-has 5 connected components, where the component with most nodes has 2768 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 144.95, and the node degree mode is 8. The top 5 most central
-nodes are 744872.Spica_0632 (degree 1016), 744872.Spica_1283 (degree 925), 744872.Spica_2740
-(degree 882), 744872.Spica_2401 (degree 843) and 744872.Spica_1511 (degree 820).
+The undirected graph Treponema caldaria has 2777 nodes and 201260 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05221 and has 5 connected components, where the component with most
+nodes has 2768 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 144.95, and
+the node degree mode is 8. The top 5 most central nodes are 744872.Spica_0632
+(degree 1016), 744872.Spica_1283 (degree 925), 744872.Spica_2740 (degree
+882), 744872.Spica_2401 (degree 843) and 744872.Spica_1511 (degree 820).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaCaldaria(
 	
 	Datetime: 2021-02-02 21:38:40.872305
 	
-	The undirected graph Treponema caldaria has 2777 nodes and 201260 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05221 and
-	has 5 connected components, where the component with most nodes has 2768 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 144.95, and the node degree mode is 8. The top 5 most central
-	nodes are 744872.Spica_0632 (degree 1016), 744872.Spica_1283 (degree 925), 744872.Spica_2740
-	(degree 882), 744872.Spica_2401 (degree 843) and 744872.Spica_1511 (degree 820).
+	The undirected graph Treponema caldaria has 2777 nodes and 201260 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05221 and has 5 connected components, where the component with most
+	nodes has 2768 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 144.95, and
+	the node degree mode is 8. The top 5 most central nodes are 744872.Spica_0632
+	(degree 1016), 744872.Spica_1283 (degree 925), 744872.Spica_2740 (degree
+	882), 744872.Spica_2401 (degree 843) and 744872.Spica_1511 (degree 820).
 	
 
 

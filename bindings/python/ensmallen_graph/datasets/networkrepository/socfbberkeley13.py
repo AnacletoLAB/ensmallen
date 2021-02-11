@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:33.535998
 
-The undirected graph socfb-Berkeley13 has 22900 nodes and 852419 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00325
-and is connected, as it has a single component. The graph median node degree is 54,
-the mean node degree is 74.45, and the node degree mode is 1. The top 5 most central
-nodes are 22682 (degree 3434), 14508 (degree 3428), 22300 (degree 2821), 16217 (degree
-1253) and 16297 (degree 1203).
+The undirected graph socfb-Berkeley13 has 22900 nodes and 852419 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00325 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 74.45, and the node degree mode
+is 1. The top 5 most central nodes are 22682 (degree 3434), 14508 (degree
+3428), 22300 (degree 2821), 16217 (degree 1253) and 16297 (degree 1203).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbBerkeley13(
 	
 	Datetime: 2021-02-06 11:48:33.535998
 	
-	The undirected graph socfb-Berkeley13 has 22900 nodes and 852419 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00325
-	and is connected, as it has a single component. The graph median node degree is 54,
-	the mean node degree is 74.45, and the node degree mode is 1. The top 5 most central
-	nodes are 22682 (degree 3434), 14508 (degree 3428), 22300 (degree 2821), 16217 (degree
-	1253) and 16297 (degree 1203).
+	The undirected graph socfb-Berkeley13 has 22900 nodes and 852419 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00325 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 74.45, and the node degree mode
+	is 1. The top 5 most central nodes are 22682 (degree 3434), 14508 (degree
+	3428), 22300 (degree 2821), 16217 (degree 1253) and 16297 (degree 1203).
 	
 
 

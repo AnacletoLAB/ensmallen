@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:15:14.729261
 
-The undirected graph pkustk07 has 16860 nodes and 1217832 unweighted edges, of which
-16860 are self-loops. The graph is sparse as it has a density of 0.00851 and is connected,
-as it has a single component. The graph median node degree is 165, the mean node
-degree is 143.46, and the node degree mode is 165. The top 5 most central nodes are
-14742 (degree 267), 14741 (degree 267), 14740 (degree 267), 14688 (degree 267) and
-14687 (degree 267).
+The undirected graph pkustk07 has 16860 nodes and 1217832 unweighted edges,
+of which 16860 are self-loops. The graph is sparse as it has a density
+of 0.00851 and is connected, as it has a single component. The graph median
+node degree is 165, the mean node degree is 143.46, and the node degree
+mode is 165. The top 5 most central nodes are 14742 (degree 267), 14741
+(degree 267), 14740 (degree 267), 14688 (degree 267) and 14687 (degree
+267).
 
 
 References
@@ -102,12 +103,13 @@ def Pkustk07(
 	
 	Datetime: 2021-02-06 12:15:14.729261
 	
-	The undirected graph pkustk07 has 16860 nodes and 1217832 unweighted edges, of which
-	16860 are self-loops. The graph is sparse as it has a density of 0.00851 and is connected,
-	as it has a single component. The graph median node degree is 165, the mean node
-	degree is 143.46, and the node degree mode is 165. The top 5 most central nodes are
-	14742 (degree 267), 14741 (degree 267), 14740 (degree 267), 14688 (degree 267) and
-	14687 (degree 267).
+	The undirected graph pkustk07 has 16860 nodes and 1217832 unweighted edges,
+	of which 16860 are self-loops. The graph is sparse as it has a density
+	of 0.00851 and is connected, as it has a single component. The graph median
+	node degree is 165, the mean node degree is 143.46, and the node degree
+	mode is 165. The top 5 most central nodes are 14742 (degree 267), 14741
+	(degree 267), 14740 (degree 267), 14688 (degree 267) and 14687 (degree
+	267).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:26.530551
 
-The undirected graph Spirochaeta smaragdinae has 4201 nodes and 510045 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-has 3 connected components, where the component with most nodes has 4197 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 242.82, and the node degree mode is 9. The top 5 most central
-nodes are 573413.Spirs_3676 (degree 1677), 573413.Spirs_0477 (degree 1425), 573413.Spirs_2414
-(degree 1406), 573413.Spirs_2889 (degree 1334) and 573413.Spirs_0620 (degree 1266).
+The undirected graph Spirochaeta smaragdinae has 4201 nodes and 510045
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05781 and has 3 connected components, where the component
+with most nodes has 4197 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 191, the mean node degree is 242.82,
+and the node degree mode is 9. The top 5 most central nodes are 573413.Spirs_3676
+(degree 1677), 573413.Spirs_0477 (degree 1425), 573413.Spirs_2414 (degree
+1406), 573413.Spirs_2889 (degree 1334) and 573413.Spirs_0620 (degree 1266).
 
 
 References
@@ -106,13 +107,14 @@ def SpirochaetaSmaragdinae(
 	
 	Datetime: 2021-02-02 21:14:26.530551
 	
-	The undirected graph Spirochaeta smaragdinae has 4201 nodes and 510045 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05781 and
-	has 3 connected components, where the component with most nodes has 4197 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 242.82, and the node degree mode is 9. The top 5 most central
-	nodes are 573413.Spirs_3676 (degree 1677), 573413.Spirs_0477 (degree 1425), 573413.Spirs_2414
-	(degree 1406), 573413.Spirs_2889 (degree 1334) and 573413.Spirs_0620 (degree 1266).
+	The undirected graph Spirochaeta smaragdinae has 4201 nodes and 510045
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05781 and has 3 connected components, where the component
+	with most nodes has 4197 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 191, the mean node degree is 242.82,
+	and the node degree mode is 9. The top 5 most central nodes are 573413.Spirs_3676
+	(degree 1677), 573413.Spirs_0477 (degree 1425), 573413.Spirs_2414 (degree
+	1406), 573413.Spirs_2889 (degree 1334) and 573413.Spirs_0620 (degree 1266).
 	
 
 

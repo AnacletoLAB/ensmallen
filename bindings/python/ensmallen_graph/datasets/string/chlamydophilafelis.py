@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:13:34.861653
 
-The undirected graph Chlamydophila felis has 1007 nodes and 41966 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08285 and
-has 6 connected components, where the component with most nodes has 995 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 63,
-the mean node degree is 83.35, and the node degree mode is 5. The top 5 most central
-nodes are 264202.CF0878 (degree 459), 264202.CF0860 (degree 410), 264202.CF0828 (degree
-362), 264202.CF0765 (degree 357) and 264202.CF0153 (degree 347).
+The undirected graph Chlamydophila felis has 1007 nodes and 41966 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08285 and has 6 connected components, where the component with most
+nodes has 995 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 63, the mean node degree is 83.35, and
+the node degree mode is 5. The top 5 most central nodes are 264202.CF0878
+(degree 459), 264202.CF0860 (degree 410), 264202.CF0828 (degree 362), 264202.CF0765
+(degree 357) and 264202.CF0153 (degree 347).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydophilaFelis(
 	
 	Datetime: 2021-02-02 20:13:34.861653
 	
-	The undirected graph Chlamydophila felis has 1007 nodes and 41966 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08285 and
-	has 6 connected components, where the component with most nodes has 995 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 63,
-	the mean node degree is 83.35, and the node degree mode is 5. The top 5 most central
-	nodes are 264202.CF0878 (degree 459), 264202.CF0860 (degree 410), 264202.CF0828 (degree
-	362), 264202.CF0765 (degree 357) and 264202.CF0153 (degree 347).
+	The undirected graph Chlamydophila felis has 1007 nodes and 41966 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08285 and has 6 connected components, where the component with most
+	nodes has 995 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 63, the mean node degree is 83.35, and
+	the node degree mode is 5. The top 5 most central nodes are 264202.CF0878
+	(degree 459), 264202.CF0860 (degree 410), 264202.CF0828 (degree 362), 264202.CF0765
+	(degree 357) and 264202.CF0153 (degree 347).
 	
 
 

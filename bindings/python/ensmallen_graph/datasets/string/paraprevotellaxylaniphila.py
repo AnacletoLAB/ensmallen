@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:47.483688
 
-The undirected graph Paraprevotella xylaniphila has 3396 nodes and 309111 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05362
-and has 22 connected components, where the component with most nodes has 3350 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 182.04, and the node degree mode is 4. The top 5
-most central nodes are 762982.HMPREF9442_02244 (degree 997), 762982.HMPREF9442_00670
-(degree 895), 762982.HMPREF9442_01031 (degree 865), 762982.HMPREF9442_03225 (degree
-794) and 762982.HMPREF9442_00174 (degree 776).
+The undirected graph Paraprevotella xylaniphila has 3396 nodes and 309111
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05362 and has 22 connected components, where the component
+with most nodes has 3350 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 182.04,
+and the node degree mode is 4. The top 5 most central nodes are 762982.HMPREF9442_02244
+(degree 997), 762982.HMPREF9442_00670 (degree 895), 762982.HMPREF9442_01031
+(degree 865), 762982.HMPREF9442_03225 (degree 794) and 762982.HMPREF9442_00174
+(degree 776).
 
 
 References
@@ -107,14 +108,15 @@ def ParaprevotellaXylaniphila(
 	
 	Datetime: 2021-02-02 21:42:47.483688
 	
-	The undirected graph Paraprevotella xylaniphila has 3396 nodes and 309111 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05362
-	and has 22 connected components, where the component with most nodes has 3350 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 182.04, and the node degree mode is 4. The top 5
-	most central nodes are 762982.HMPREF9442_02244 (degree 997), 762982.HMPREF9442_00670
-	(degree 895), 762982.HMPREF9442_01031 (degree 865), 762982.HMPREF9442_03225 (degree
-	794) and 762982.HMPREF9442_00174 (degree 776).
+	The undirected graph Paraprevotella xylaniphila has 3396 nodes and 309111
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05362 and has 22 connected components, where the component
+	with most nodes has 3350 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 182.04,
+	and the node degree mode is 4. The top 5 most central nodes are 762982.HMPREF9442_02244
+	(degree 997), 762982.HMPREF9442_00670 (degree 895), 762982.HMPREF9442_01031
+	(degree 865), 762982.HMPREF9442_03225 (degree 794) and 762982.HMPREF9442_00174
+	(degree 776).
 	
 
 

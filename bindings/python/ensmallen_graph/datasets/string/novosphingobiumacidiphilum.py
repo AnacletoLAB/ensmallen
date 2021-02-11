@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:47.988100
 
-The undirected graph Novosphingobium acidiphilum has 3207 nodes and 329098 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06402
-and has 3 connected components, where the component with most nodes has 3203 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 205.24, and the node degree mode is 4. The top 5
-most central nodes are 1122612.AUBA01000014_gene146 (degree 1306), 1122612.AUBA01000029_gene1964
-(degree 1201), 1122612.AUBA01000013_gene289 (degree 1035), 1122612.AUBA01000015_gene940
-(degree 1013) and 1122612.AUBA01000014_gene139 (degree 1002).
+The undirected graph Novosphingobium acidiphilum has 3207 nodes and 329098
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06402 and has 3 connected components, where the component
+with most nodes has 3203 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 205.24,
+and the node degree mode is 4. The top 5 most central nodes are 1122612.AUBA01000014_gene146
+(degree 1306), 1122612.AUBA01000029_gene1964 (degree 1201), 1122612.AUBA01000013_gene289
+(degree 1035), 1122612.AUBA01000015_gene940 (degree 1013) and 1122612.AUBA01000014_gene139
+(degree 1002).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumAcidiphilum(
 	
 	Datetime: 2021-02-02 22:43:47.988100
 	
-	The undirected graph Novosphingobium acidiphilum has 3207 nodes and 329098 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06402
-	and has 3 connected components, where the component with most nodes has 3203 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 205.24, and the node degree mode is 4. The top 5
-	most central nodes are 1122612.AUBA01000014_gene146 (degree 1306), 1122612.AUBA01000029_gene1964
-	(degree 1201), 1122612.AUBA01000013_gene289 (degree 1035), 1122612.AUBA01000015_gene940
-	(degree 1013) and 1122612.AUBA01000014_gene139 (degree 1002).
+	The undirected graph Novosphingobium acidiphilum has 3207 nodes and 329098
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06402 and has 3 connected components, where the component
+	with most nodes has 3203 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 205.24,
+	and the node degree mode is 4. The top 5 most central nodes are 1122612.AUBA01000014_gene146
+	(degree 1306), 1122612.AUBA01000029_gene1964 (degree 1201), 1122612.AUBA01000013_gene289
+	(degree 1035), 1122612.AUBA01000015_gene940 (degree 1013) and 1122612.AUBA01000014_gene139
+	(degree 1002).
 	
 
 

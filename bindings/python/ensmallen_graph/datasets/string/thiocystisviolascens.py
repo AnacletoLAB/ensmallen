@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:34.694049
 
-The undirected graph Thiocystis violascens has 4289 nodes and 446727 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04858 and
-has 15 connected components, where the component with most nodes has 4258 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 208.31, and the node degree mode is 3. The top 5 most central
-nodes are 765911.Thivi_2150 (degree 1913), 765911.Thivi_3180 (degree 1712), 765911.Thivi_0673
-(degree 1699), 765911.Thivi_1206 (degree 1663) and 765911.Thivi_1799 (degree 1609).
+The undirected graph Thiocystis violascens has 4289 nodes and 446727 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04858 and has 15 connected components, where the component with most
+nodes has 4258 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 208.31, and
+the node degree mode is 3. The top 5 most central nodes are 765911.Thivi_2150
+(degree 1913), 765911.Thivi_3180 (degree 1712), 765911.Thivi_0673 (degree
+1699), 765911.Thivi_1206 (degree 1663) and 765911.Thivi_1799 (degree 1609).
 
 
 References
@@ -106,13 +107,14 @@ def ThiocystisViolascens(
 	
 	Datetime: 2021-02-02 21:43:34.694049
 	
-	The undirected graph Thiocystis violascens has 4289 nodes and 446727 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04858 and
-	has 15 connected components, where the component with most nodes has 4258 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 208.31, and the node degree mode is 3. The top 5 most central
-	nodes are 765911.Thivi_2150 (degree 1913), 765911.Thivi_3180 (degree 1712), 765911.Thivi_0673
-	(degree 1699), 765911.Thivi_1206 (degree 1663) and 765911.Thivi_1799 (degree 1609).
+	The undirected graph Thiocystis violascens has 4289 nodes and 446727 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04858 and has 15 connected components, where the component with most
+	nodes has 4258 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 208.31, and
+	the node degree mode is 3. The top 5 most central nodes are 765911.Thivi_2150
+	(degree 1913), 765911.Thivi_3180 (degree 1712), 765911.Thivi_0673 (degree
+	1699), 765911.Thivi_1206 (degree 1663) and 765911.Thivi_1799 (degree 1609).
 	
 
 

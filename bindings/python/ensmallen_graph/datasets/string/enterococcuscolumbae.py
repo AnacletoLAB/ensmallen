@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:40.012845
 
-The undirected graph Enterococcus columbae has 2314 nodes and 163979 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06127 and
-has 6 connected components, where the component with most nodes has 2304 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 109,
-the mean node degree is 141.73, and the node degree mode is 8. The top 5 most central
-nodes are 1121865.OMW_00450 (degree 1007), 1121865.OMW_00810 (degree 819), 1121865.OMW_02065
-(degree 773), 1121865.OMW_00898 (degree 742) and 1121865.OMW_00829 (degree 726).
+The undirected graph Enterococcus columbae has 2314 nodes and 163979 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06127 and has 6 connected components, where the component with most
+nodes has 2304 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 109, the mean node degree is 141.73, and
+the node degree mode is 8. The top 5 most central nodes are 1121865.OMW_00450
+(degree 1007), 1121865.OMW_00810 (degree 819), 1121865.OMW_02065 (degree
+773), 1121865.OMW_00898 (degree 742) and 1121865.OMW_00829 (degree 726).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusColumbae(
 	
 	Datetime: 2021-02-02 22:37:40.012845
 	
-	The undirected graph Enterococcus columbae has 2314 nodes and 163979 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06127 and
-	has 6 connected components, where the component with most nodes has 2304 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 109,
-	the mean node degree is 141.73, and the node degree mode is 8. The top 5 most central
-	nodes are 1121865.OMW_00450 (degree 1007), 1121865.OMW_00810 (degree 819), 1121865.OMW_02065
-	(degree 773), 1121865.OMW_00898 (degree 742) and 1121865.OMW_00829 (degree 726).
+	The undirected graph Enterococcus columbae has 2314 nodes and 163979 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06127 and has 6 connected components, where the component with most
+	nodes has 2304 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 109, the mean node degree is 141.73, and
+	the node degree mode is 8. The top 5 most central nodes are 1121865.OMW_00450
+	(degree 1007), 1121865.OMW_00810 (degree 819), 1121865.OMW_02065 (degree
+	773), 1121865.OMW_00898 (degree 742) and 1121865.OMW_00829 (degree 726).
 	
 
 

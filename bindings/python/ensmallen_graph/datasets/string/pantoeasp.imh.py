@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:07.165848
 
-The undirected graph Pantoea sp. IMH has 3464 nodes and 411591 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06862 and
-has 7 connected components, where the component with most nodes has 3452 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 206,
-the mean node degree is 237.64, and the node degree mode is 1. The top 5 most central
-nodes are 1267600.JFGT01000004_gene3191 (degree 1576), 1267600.JFGT01000004_gene3379
-(degree 1262), 1267600.JFGT01000005_gene2373 (degree 1180), 1267600.JFGT01000002_gene464
-(degree 1164) and 1267600.JFGT01000005_gene2854 (degree 1118).
+The undirected graph Pantoea sp. IMH has 3464 nodes and 411591 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06862 and has 7 connected components, where the component with most
+nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 206, the mean node degree is 237.64, and
+the node degree mode is 1. The top 5 most central nodes are 1267600.JFGT01000004_gene3191
+(degree 1576), 1267600.JFGT01000004_gene3379 (degree 1262), 1267600.JFGT01000005_gene2373
+(degree 1180), 1267600.JFGT01000002_gene464 (degree 1164) and 1267600.JFGT01000005_gene2854
+(degree 1118).
 
 
 References
@@ -107,14 +108,15 @@ def PantoeaSp.Imh(
 	
 	Datetime: 2021-02-02 23:37:07.165848
 	
-	The undirected graph Pantoea sp. IMH has 3464 nodes and 411591 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06862 and
-	has 7 connected components, where the component with most nodes has 3452 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 206,
-	the mean node degree is 237.64, and the node degree mode is 1. The top 5 most central
-	nodes are 1267600.JFGT01000004_gene3191 (degree 1576), 1267600.JFGT01000004_gene3379
-	(degree 1262), 1267600.JFGT01000005_gene2373 (degree 1180), 1267600.JFGT01000002_gene464
-	(degree 1164) and 1267600.JFGT01000005_gene2854 (degree 1118).
+	The undirected graph Pantoea sp. IMH has 3464 nodes and 411591 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06862 and has 7 connected components, where the component with most
+	nodes has 3452 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 206, the mean node degree is 237.64, and
+	the node degree mode is 1. The top 5 most central nodes are 1267600.JFGT01000004_gene3191
+	(degree 1576), 1267600.JFGT01000004_gene3379 (degree 1262), 1267600.JFGT01000005_gene2373
+	(degree 1180), 1267600.JFGT01000002_gene464 (degree 1164) and 1267600.JFGT01000005_gene2854
+	(degree 1118).
 	
 
 

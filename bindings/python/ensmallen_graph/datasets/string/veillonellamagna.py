@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:46.166507
 
-The undirected graph Veillonella magna has 1929 nodes and 129216 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06949 and
-has 8 connected components, where the component with most nodes has 1912 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 133.97, and the node degree mode is 1. The top 5 most central
-nodes are 1123489.AUAN01000002_gene975 (degree 817), 1123489.AUAN01000002_gene571
-(degree 706), 1123489.AUAN01000019_gene1531 (degree 700), 1123489.AUAN01000002_gene1038
-(degree 691) and 1123489.AUAN01000002_gene586 (degree 650).
+The undirected graph Veillonella magna has 1929 nodes and 129216 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06949 and has 8 connected components, where the component with most
+nodes has 1912 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 133.97, and
+the node degree mode is 1. The top 5 most central nodes are 1123489.AUAN01000002_gene975
+(degree 817), 1123489.AUAN01000002_gene571 (degree 706), 1123489.AUAN01000019_gene1531
+(degree 700), 1123489.AUAN01000002_gene1038 (degree 691) and 1123489.AUAN01000002_gene586
+(degree 650).
 
 
 References
@@ -107,14 +108,15 @@ def VeillonellaMagna(
 	
 	Datetime: 2021-02-02 22:52:46.166507
 	
-	The undirected graph Veillonella magna has 1929 nodes and 129216 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06949 and
-	has 8 connected components, where the component with most nodes has 1912 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 133.97, and the node degree mode is 1. The top 5 most central
-	nodes are 1123489.AUAN01000002_gene975 (degree 817), 1123489.AUAN01000002_gene571
-	(degree 706), 1123489.AUAN01000019_gene1531 (degree 700), 1123489.AUAN01000002_gene1038
-	(degree 691) and 1123489.AUAN01000002_gene586 (degree 650).
+	The undirected graph Veillonella magna has 1929 nodes and 129216 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06949 and has 8 connected components, where the component with most
+	nodes has 1912 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 133.97, and
+	the node degree mode is 1. The top 5 most central nodes are 1123489.AUAN01000002_gene975
+	(degree 817), 1123489.AUAN01000002_gene571 (degree 706), 1123489.AUAN01000019_gene1531
+	(degree 700), 1123489.AUAN01000002_gene1038 (degree 691) and 1123489.AUAN01000002_gene586
+	(degree 650).
 	
 
 

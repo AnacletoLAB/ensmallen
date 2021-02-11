@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:08.265317
 
-The undirected graph Acetobacter malorum has 3047 nodes and 237644 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05121 and
-has 27 connected components, where the component with most nodes has 2976 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 155.99, and the node degree mode is 2. The top 5 most central
-nodes are 178901.AmDm5_1797 (degree 1017), 178901.AmDm5_0361 (degree 1000), 178901.AmDm5_1429
-(degree 943), 178901.AmDm5_0177 (degree 887) and 178901.AmDm5_2784 (degree 846).
+The undirected graph Acetobacter malorum has 3047 nodes and 237644 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05121 and has 27 connected components, where the component with most
+nodes has 2976 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 155.99, and
+the node degree mode is 2. The top 5 most central nodes are 178901.AmDm5_1797
+(degree 1017), 178901.AmDm5_0361 (degree 1000), 178901.AmDm5_1429 (degree
+943), 178901.AmDm5_0177 (degree 887) and 178901.AmDm5_2784 (degree 846).
 
 
 References
@@ -106,13 +107,14 @@ def AcetobacterMalorum(
 	
 	Datetime: 2021-02-02 19:56:08.265317
 	
-	The undirected graph Acetobacter malorum has 3047 nodes and 237644 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05121 and
-	has 27 connected components, where the component with most nodes has 2976 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 155.99, and the node degree mode is 2. The top 5 most central
-	nodes are 178901.AmDm5_1797 (degree 1017), 178901.AmDm5_0361 (degree 1000), 178901.AmDm5_1429
-	(degree 943), 178901.AmDm5_0177 (degree 887) and 178901.AmDm5_2784 (degree 846).
+	The undirected graph Acetobacter malorum has 3047 nodes and 237644 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05121 and has 27 connected components, where the component with most
+	nodes has 2976 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 155.99, and
+	the node degree mode is 2. The top 5 most central nodes are 178901.AmDm5_1797
+	(degree 1017), 178901.AmDm5_0361 (degree 1000), 178901.AmDm5_1429 (degree
+	943), 178901.AmDm5_0177 (degree 887) and 178901.AmDm5_2784 (degree 846).
 	
 
 

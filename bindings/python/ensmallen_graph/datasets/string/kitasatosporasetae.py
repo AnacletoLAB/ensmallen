@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:26.487569
 
-The undirected graph Kitasatospora setae has 7523 nodes and 1359796 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-has 18 connected components, where the component with most nodes has 7481 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 336,
-the mean node degree is 361.50, and the node degree mode is 2. The top 5 most central
-nodes are 452652.KSE_70580 (degree 3454), 452652.KSE_70600 (degree 3290), 452652.KSE_70610
-(degree 3232), 452652.KSE_07040 (degree 2767) and 452652.KSE_08960 (degree 2606).
+The undirected graph Kitasatospora setae has 7523 nodes and 1359796 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04806 and has 18 connected components, where the component with most
+nodes has 7481 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 336, the mean node degree is 361.50, and
+the node degree mode is 2. The top 5 most central nodes are 452652.KSE_70580
+(degree 3454), 452652.KSE_70600 (degree 3290), 452652.KSE_70610 (degree
+3232), 452652.KSE_07040 (degree 2767) and 452652.KSE_08960 (degree 2606).
 
 
 References
@@ -106,13 +107,14 @@ def KitasatosporaSetae(
 	
 	Datetime: 2021-02-02 20:52:26.487569
 	
-	The undirected graph Kitasatospora setae has 7523 nodes and 1359796 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04806 and
-	has 18 connected components, where the component with most nodes has 7481 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 336,
-	the mean node degree is 361.50, and the node degree mode is 2. The top 5 most central
-	nodes are 452652.KSE_70580 (degree 3454), 452652.KSE_70600 (degree 3290), 452652.KSE_70610
-	(degree 3232), 452652.KSE_07040 (degree 2767) and 452652.KSE_08960 (degree 2606).
+	The undirected graph Kitasatospora setae has 7523 nodes and 1359796 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04806 and has 18 connected components, where the component with most
+	nodes has 7481 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 336, the mean node degree is 361.50, and
+	the node degree mode is 2. The top 5 most central nodes are 452652.KSE_70580
+	(degree 3454), 452652.KSE_70600 (degree 3290), 452652.KSE_70610 (degree
+	3232), 452652.KSE_07040 (degree 2767) and 452652.KSE_08960 (degree 2606).
 	
 
 

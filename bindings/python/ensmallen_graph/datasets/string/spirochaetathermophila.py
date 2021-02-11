@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:58.093814
 
-The undirected graph Spirochaeta thermophila has 2196 nodes and 127140 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05275 and
-has 2 connected components, where the component with most nodes has 2194 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 115.79, and the node degree mode is 9. The top 5 most central
-nodes are 665571.STHERM_c12740 (degree 784), 665571.STHERM_c11970 (degree 696), 665571.STHERM_c18690
-(degree 649), 665571.STHERM_c16630 (degree 618) and 665571.STHERM_c15100 (degree
+The undirected graph Spirochaeta thermophila has 2196 nodes and 127140
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05275 and has 2 connected components, where the component
+with most nodes has 2194 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 87, the mean node degree is 115.79,
+and the node degree mode is 9. The top 5 most central nodes are 665571.STHERM_c12740
+(degree 784), 665571.STHERM_c11970 (degree 696), 665571.STHERM_c18690 (degree
+649), 665571.STHERM_c16630 (degree 618) and 665571.STHERM_c15100 (degree
 609).
 
 
@@ -107,13 +108,14 @@ def SpirochaetaThermophila(
 	
 	Datetime: 2021-02-02 21:27:58.093814
 	
-	The undirected graph Spirochaeta thermophila has 2196 nodes and 127140 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05275 and
-	has 2 connected components, where the component with most nodes has 2194 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 115.79, and the node degree mode is 9. The top 5 most central
-	nodes are 665571.STHERM_c12740 (degree 784), 665571.STHERM_c11970 (degree 696), 665571.STHERM_c18690
-	(degree 649), 665571.STHERM_c16630 (degree 618) and 665571.STHERM_c15100 (degree
+	The undirected graph Spirochaeta thermophila has 2196 nodes and 127140
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05275 and has 2 connected components, where the component
+	with most nodes has 2194 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 87, the mean node degree is 115.79,
+	and the node degree mode is 9. The top 5 most central nodes are 665571.STHERM_c12740
+	(degree 784), 665571.STHERM_c11970 (degree 696), 665571.STHERM_c18690 (degree
+	649), 665571.STHERM_c16630 (degree 618) and 665571.STHERM_c15100 (degree
 	609).
 	
 

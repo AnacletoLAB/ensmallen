@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:10.388526
 
-The undirected graph Cladophialophora psammophila has 9233 nodes and 842489 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01977
-and has 16 connected components, where the component with most nodes has 9187 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 96, the mean node degree is 182.50, and the node degree mode is 1. The top 5 most
-central nodes are 1182553.XP_007749857.1 (degree 2155), 1182553.XP_007744076.1 (degree
-1807), 1182553.XP_007740895.1 (degree 1758), 1182553.XP_007744327.1 (degree 1725)
-and 1182553.XP_007745033.1 (degree 1701).
+The undirected graph Cladophialophora psammophila has 9233 nodes and 842489
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01977 and has 16 connected components, where the component
+with most nodes has 9187 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 96, the mean node degree is 182.50,
+and the node degree mode is 1. The top 5 most central nodes are 1182553.XP_007749857.1
+(degree 2155), 1182553.XP_007744076.1 (degree 1807), 1182553.XP_007740895.1
+(degree 1758), 1182553.XP_007744327.1 (degree 1725) and 1182553.XP_007745033.1
+(degree 1701).
 
 
 References
@@ -107,14 +108,15 @@ def CladophialophoraPsammophila(
 	
 	Datetime: 2021-02-02 23:10:10.388526
 	
-	The undirected graph Cladophialophora psammophila has 9233 nodes and 842489 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01977
-	and has 16 connected components, where the component with most nodes has 9187 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 96, the mean node degree is 182.50, and the node degree mode is 1. The top 5 most
-	central nodes are 1182553.XP_007749857.1 (degree 2155), 1182553.XP_007744076.1 (degree
-	1807), 1182553.XP_007740895.1 (degree 1758), 1182553.XP_007744327.1 (degree 1725)
-	and 1182553.XP_007745033.1 (degree 1701).
+	The undirected graph Cladophialophora psammophila has 9233 nodes and 842489
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01977 and has 16 connected components, where the component
+	with most nodes has 9187 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 96, the mean node degree is 182.50,
+	and the node degree mode is 1. The top 5 most central nodes are 1182553.XP_007749857.1
+	(degree 2155), 1182553.XP_007744076.1 (degree 1807), 1182553.XP_007740895.1
+	(degree 1758), 1182553.XP_007744327.1 (degree 1725) and 1182553.XP_007745033.1
+	(degree 1701).
 	
 
 

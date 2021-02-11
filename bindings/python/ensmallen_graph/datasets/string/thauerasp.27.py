@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:30.497882
 
-The undirected graph Thauera sp. 27 has 4274 nodes and 590342 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06465 and
-has 16 connected components, where the component with most nodes has 4229 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 246,
-the mean node degree is 276.25, and the node degree mode is 3. The top 5 most central
-nodes are 305700.B447_15696 (degree 1845), 305700.B447_00175 (degree 1843), 305700.B447_16262
-(degree 1460), 305700.B447_11067 (degree 1434) and 305700.B447_00465 (degree 1399).
+The undirected graph Thauera sp. 27 has 4274 nodes and 590342 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06465 and has 16 connected components, where the component with most
+nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 246, the mean node degree is 276.25, and
+the node degree mode is 3. The top 5 most central nodes are 305700.B447_15696
+(degree 1845), 305700.B447_00175 (degree 1843), 305700.B447_16262 (degree
+1460), 305700.B447_11067 (degree 1434) and 305700.B447_00465 (degree 1399).
 
 
 References
@@ -106,13 +107,14 @@ def ThaueraSp.27(
 	
 	Datetime: 2021-02-02 20:22:30.497882
 	
-	The undirected graph Thauera sp. 27 has 4274 nodes and 590342 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06465 and
-	has 16 connected components, where the component with most nodes has 4229 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 246,
-	the mean node degree is 276.25, and the node degree mode is 3. The top 5 most central
-	nodes are 305700.B447_15696 (degree 1845), 305700.B447_00175 (degree 1843), 305700.B447_16262
-	(degree 1460), 305700.B447_11067 (degree 1434) and 305700.B447_00465 (degree 1399).
+	The undirected graph Thauera sp. 27 has 4274 nodes and 590342 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06465 and has 16 connected components, where the component with most
+	nodes has 4229 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 246, the mean node degree is 276.25, and
+	the node degree mode is 3. The top 5 most central nodes are 305700.B447_15696
+	(degree 1845), 305700.B447_00175 (degree 1843), 305700.B447_16262 (degree
+	1460), 305700.B447_11067 (degree 1434) and 305700.B447_00465 (degree 1399).
 	
 
 

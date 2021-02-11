@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:26:13.625600
 
-The undirected graph Emiliania huxleyi has 16494 nodes and 3529333 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02595 and
-has 18 connected components, where the component with most nodes has 16444 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 427.95, and the node degree mode is 1. The top 5
-most central nodes are 2903.EOD13547 (degree 4934), 2903.EOD41951 (degree 4068),
-2903.EOD33040 (degree 3849), 2903.EOD23989 (degree 3849) and 2903.EOD15966 (degree
-3817).
+The undirected graph Emiliania huxleyi has 16494 nodes and 3529333 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02595 and has 18 connected components, where the component with most
+nodes has 16444 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 427.95, and
+the node degree mode is 1. The top 5 most central nodes are 2903.EOD13547
+(degree 4934), 2903.EOD41951 (degree 4068), 2903.EOD33040 (degree 3849),
+2903.EOD23989 (degree 3849) and 2903.EOD15966 (degree 3817).
 
 
 References
@@ -107,14 +107,14 @@ def EmilianiaHuxleyi(
 	
 	Datetime: 2021-02-02 16:26:13.625600
 	
-	The undirected graph Emiliania huxleyi has 16494 nodes and 3529333 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02595 and
-	has 18 connected components, where the component with most nodes has 16444 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 427.95, and the node degree mode is 1. The top 5
-	most central nodes are 2903.EOD13547 (degree 4934), 2903.EOD41951 (degree 4068),
-	2903.EOD33040 (degree 3849), 2903.EOD23989 (degree 3849) and 2903.EOD15966 (degree
-	3817).
+	The undirected graph Emiliania huxleyi has 16494 nodes and 3529333 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02595 and has 18 connected components, where the component with most
+	nodes has 16444 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 427.95, and
+	the node degree mode is 1. The top 5 most central nodes are 2903.EOD13547
+	(degree 4934), 2903.EOD41951 (degree 4068), 2903.EOD33040 (degree 3849),
+	2903.EOD23989 (degree 3849) and 2903.EOD15966 (degree 3817).
 	
 
 

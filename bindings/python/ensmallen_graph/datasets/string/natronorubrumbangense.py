@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:19.582627
 
-The undirected graph Natronorubrum bangense has 3902 nodes and 293066 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03851 and
-has 37 connected components, where the component with most nodes has 3785 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 150.21, and the node degree mode is 2. The top 5 most central
-nodes are 1227500.C494_07360 (degree 964), 1227500.C494_04885 (degree 959), 1227500.C494_06240
-(degree 850), 1227500.C494_13866 (degree 845) and 1227500.C494_09820 (degree 784).
+The undirected graph Natronorubrum bangense has 3902 nodes and 293066 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03851 and has 37 connected components, where the component with most
+nodes has 3785 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 150.21, and
+the node degree mode is 2. The top 5 most central nodes are 1227500.C494_07360
+(degree 964), 1227500.C494_04885 (degree 959), 1227500.C494_06240 (degree
+850), 1227500.C494_13866 (degree 845) and 1227500.C494_09820 (degree 784).
 
 
 References
@@ -106,13 +107,14 @@ def NatronorubrumBangense(
 	
 	Datetime: 2021-02-02 23:26:19.582627
 	
-	The undirected graph Natronorubrum bangense has 3902 nodes and 293066 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03851 and
-	has 37 connected components, where the component with most nodes has 3785 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 150.21, and the node degree mode is 2. The top 5 most central
-	nodes are 1227500.C494_07360 (degree 964), 1227500.C494_04885 (degree 959), 1227500.C494_06240
-	(degree 850), 1227500.C494_13866 (degree 845) and 1227500.C494_09820 (degree 784).
+	The undirected graph Natronorubrum bangense has 3902 nodes and 293066 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03851 and has 37 connected components, where the component with most
+	nodes has 3785 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 150.21, and
+	the node degree mode is 2. The top 5 most central nodes are 1227500.C494_07360
+	(degree 964), 1227500.C494_04885 (degree 959), 1227500.C494_06240 (degree
+	850), 1227500.C494_13866 (degree 845) and 1227500.C494_09820 (degree 784).
 	
 
 

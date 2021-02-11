@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:48.595389
 
-The undirected graph Polaribacter sp. MED152 has 2630 nodes and 245033 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07088 and
-has 3 connected components, where the component with most nodes has 2619 nodes and
-the component with the least nodes has 4 nodes. The graph median node degree is 173,
-the mean node degree is 186.34, and the node degree mode is 4. The top 5 most central
-nodes are 313598.MED152_10105 (degree 1042), 313598.MED152_12114 (degree 874), 313598.MED152_05535
-(degree 821), 313598.MED152_05425 (degree 739) and 313598.MED152_06205 (degree 733).
+The undirected graph Polaribacter sp. MED152 has 2630 nodes and 245033
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07088 and has 3 connected components, where the component
+with most nodes has 2619 nodes and the component with the least nodes has
+4 nodes. The graph median node degree is 173, the mean node degree is 186.34,
+and the node degree mode is 4. The top 5 most central nodes are 313598.MED152_10105
+(degree 1042), 313598.MED152_12114 (degree 874), 313598.MED152_05535 (degree
+821), 313598.MED152_05425 (degree 739) and 313598.MED152_06205 (degree
+733).
 
 
 References
@@ -106,13 +108,15 @@ def PolaribacterSp.Med152(
 	
 	Datetime: 2021-02-02 20:23:48.595389
 	
-	The undirected graph Polaribacter sp. MED152 has 2630 nodes and 245033 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07088 and
-	has 3 connected components, where the component with most nodes has 2619 nodes and
-	the component with the least nodes has 4 nodes. The graph median node degree is 173,
-	the mean node degree is 186.34, and the node degree mode is 4. The top 5 most central
-	nodes are 313598.MED152_10105 (degree 1042), 313598.MED152_12114 (degree 874), 313598.MED152_05535
-	(degree 821), 313598.MED152_05425 (degree 739) and 313598.MED152_06205 (degree 733).
+	The undirected graph Polaribacter sp. MED152 has 2630 nodes and 245033
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07088 and has 3 connected components, where the component
+	with most nodes has 2619 nodes and the component with the least nodes has
+	4 nodes. The graph median node degree is 173, the mean node degree is 186.34,
+	and the node degree mode is 4. The top 5 most central nodes are 313598.MED152_10105
+	(degree 1042), 313598.MED152_12114 (degree 874), 313598.MED152_05535 (degree
+	821), 313598.MED152_05425 (degree 739) and 313598.MED152_06205 (degree
+	733).
 	
 
 

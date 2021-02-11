@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:27.430142
 
-The undirected graph Catellicoccus marimammalium has 1191 nodes and 80777 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11399 and has 16 connected components, where the component with most nodes has
-1159 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 122, the mean node degree is 135.65, and the node degree mode is 1. The
-top 5 most central nodes are 1234409.C683_0274 (degree 585), 1234409.C683_0141 (degree
-515), 1234409.C683_1017 (degree 477), 1234409.C683_1243 (degree 474) and 1234409.C683_0161
-(degree 450).
+The undirected graph Catellicoccus marimammalium has 1191 nodes and 80777
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11399 and has 16 connected components, where the
+component with most nodes has 1159 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 135.65, and the node degree mode is 1. The top 5 most central nodes
+are 1234409.C683_0274 (degree 585), 1234409.C683_0141 (degree 515), 1234409.C683_1017
+(degree 477), 1234409.C683_1243 (degree 474) and 1234409.C683_0161 (degree
+450).
 
 
 References
@@ -107,14 +108,15 @@ def CatellicoccusMarimammalium(
 	
 	Datetime: 2021-02-02 23:29:27.430142
 	
-	The undirected graph Catellicoccus marimammalium has 1191 nodes and 80777 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11399 and has 16 connected components, where the component with most nodes has
-	1159 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 122, the mean node degree is 135.65, and the node degree mode is 1. The
-	top 5 most central nodes are 1234409.C683_0274 (degree 585), 1234409.C683_0141 (degree
-	515), 1234409.C683_1017 (degree 477), 1234409.C683_1243 (degree 474) and 1234409.C683_0161
-	(degree 450).
+	The undirected graph Catellicoccus marimammalium has 1191 nodes and 80777
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11399 and has 16 connected components, where the
+	component with most nodes has 1159 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 135.65, and the node degree mode is 1. The top 5 most central nodes
+	are 1234409.C683_0274 (degree 585), 1234409.C683_0141 (degree 515), 1234409.C683_1017
+	(degree 477), 1234409.C683_1243 (degree 474) and 1234409.C683_0161 (degree
+	450).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:00.066593
 
-The undirected graph Fischerella thermalis has 4493 nodes and 564853 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05597 and
-has 16 connected components, where the component with most nodes has 4455 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 225,
-the mean node degree is 251.44, and the node degree mode is 1. The top 5 most central
-nodes are 98439.AJLL01000090_gene71 (degree 1792), 98439.AJLL01000097_gene2023 (degree
-1758), 98439.AJLL01000005_gene4411 (degree 1746), 98439.AJLL01000039_gene1848 (degree
-1685) and 98439.AJLL01000045_gene2321 (degree 1540).
+The undirected graph Fischerella thermalis has 4493 nodes and 564853 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05597 and has 16 connected components, where the component with most
+nodes has 4455 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 225, the mean node degree is 251.44, and
+the node degree mode is 1. The top 5 most central nodes are 98439.AJLL01000090_gene71
+(degree 1792), 98439.AJLL01000097_gene2023 (degree 1758), 98439.AJLL01000005_gene4411
+(degree 1746), 98439.AJLL01000039_gene1848 (degree 1685) and 98439.AJLL01000045_gene2321
+(degree 1540).
 
 
 References
@@ -107,14 +108,15 @@ def FischerellaThermalis(
 	
 	Datetime: 2021-02-02 19:42:00.066593
 	
-	The undirected graph Fischerella thermalis has 4493 nodes and 564853 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05597 and
-	has 16 connected components, where the component with most nodes has 4455 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 225,
-	the mean node degree is 251.44, and the node degree mode is 1. The top 5 most central
-	nodes are 98439.AJLL01000090_gene71 (degree 1792), 98439.AJLL01000097_gene2023 (degree
-	1758), 98439.AJLL01000005_gene4411 (degree 1746), 98439.AJLL01000039_gene1848 (degree
-	1685) and 98439.AJLL01000045_gene2321 (degree 1540).
+	The undirected graph Fischerella thermalis has 4493 nodes and 564853 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05597 and has 16 connected components, where the component with most
+	nodes has 4455 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 225, the mean node degree is 251.44, and
+	the node degree mode is 1. The top 5 most central nodes are 98439.AJLL01000090_gene71
+	(degree 1792), 98439.AJLL01000097_gene2023 (degree 1758), 98439.AJLL01000005_gene4411
+	(degree 1746), 98439.AJLL01000039_gene1848 (degree 1685) and 98439.AJLL01000045_gene2321
+	(degree 1540).
 	
 
 

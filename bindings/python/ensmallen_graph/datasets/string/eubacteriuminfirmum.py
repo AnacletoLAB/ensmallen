@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:16.967831
 
-The undirected graph Eubacterium infirmum has 1756 nodes and 118422 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07685 and
-has 4 connected components, where the component with most nodes has 1750 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 134.88, and the node degree mode is 7. The top 5 most central
-nodes are 883109.HMPREF0380_01135 (degree 771), 883109.HMPREF0380_01569 (degree 726),
-883109.HMPREF0380_00977 (degree 648), 883109.HMPREF0380_00566 (degree 563) and 883109.HMPREF0380_00775
+The undirected graph Eubacterium infirmum has 1756 nodes and 118422 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07685 and has 4 connected components, where the component with most
+nodes has 1750 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 134.88, and
+the node degree mode is 7. The top 5 most central nodes are 883109.HMPREF0380_01135
+(degree 771), 883109.HMPREF0380_01569 (degree 726), 883109.HMPREF0380_00977
+(degree 648), 883109.HMPREF0380_00566 (degree 563) and 883109.HMPREF0380_00775
 (degree 550).
 
 
@@ -107,13 +108,14 @@ def EubacteriumInfirmum(
 	
 	Datetime: 2021-02-02 21:51:16.967831
 	
-	The undirected graph Eubacterium infirmum has 1756 nodes and 118422 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07685 and
-	has 4 connected components, where the component with most nodes has 1750 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 134.88, and the node degree mode is 7. The top 5 most central
-	nodes are 883109.HMPREF0380_01135 (degree 771), 883109.HMPREF0380_01569 (degree 726),
-	883109.HMPREF0380_00977 (degree 648), 883109.HMPREF0380_00566 (degree 563) and 883109.HMPREF0380_00775
+	The undirected graph Eubacterium infirmum has 1756 nodes and 118422 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07685 and has 4 connected components, where the component with most
+	nodes has 1750 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 134.88, and
+	the node degree mode is 7. The top 5 most central nodes are 883109.HMPREF0380_01135
+	(degree 771), 883109.HMPREF0380_01569 (degree 726), 883109.HMPREF0380_00977
+	(degree 648), 883109.HMPREF0380_00566 (degree 563) and 883109.HMPREF0380_00775
 	(degree 550).
 	
 

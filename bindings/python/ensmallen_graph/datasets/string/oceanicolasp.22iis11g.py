@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:44.748039
 
-The undirected graph Oceanicola sp. 22IIS11g has 4161 nodes and 572143 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06611 and
-has 11 connected components, where the component with most nodes has 4128 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 243,
-the mean node degree is 275.00, and the node degree mode is 4. The top 5 most central
-nodes are 1461694.ATO9_06730 (degree 1620), 1461694.ATO9_15730 (degree 1440), 1461694.ATO9_06190
-(degree 1330), 1461694.ATO9_10910 (degree 1299) and 1461694.ATO9_03360 (degree 1214).
+The undirected graph Oceanicola sp. 22IIS11g has 4161 nodes and 572143
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06611 and has 11 connected components, where the component
+with most nodes has 4128 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 243, the mean node degree is 275.00,
+and the node degree mode is 4. The top 5 most central nodes are 1461694.ATO9_06730
+(degree 1620), 1461694.ATO9_15730 (degree 1440), 1461694.ATO9_06190 (degree
+1330), 1461694.ATO9_10910 (degree 1299) and 1461694.ATO9_03360 (degree
+1214).
 
 
 References
@@ -106,13 +108,15 @@ def OceanicolaSp.22iis11g(
 	
 	Datetime: 2021-02-03 23:07:44.748039
 	
-	The undirected graph Oceanicola sp. 22IIS11g has 4161 nodes and 572143 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06611 and
-	has 11 connected components, where the component with most nodes has 4128 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 243,
-	the mean node degree is 275.00, and the node degree mode is 4. The top 5 most central
-	nodes are 1461694.ATO9_06730 (degree 1620), 1461694.ATO9_15730 (degree 1440), 1461694.ATO9_06190
-	(degree 1330), 1461694.ATO9_10910 (degree 1299) and 1461694.ATO9_03360 (degree 1214).
+	The undirected graph Oceanicola sp. 22IIS11g has 4161 nodes and 572143
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06611 and has 11 connected components, where the component
+	with most nodes has 4128 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 243, the mean node degree is 275.00,
+	and the node degree mode is 4. The top 5 most central nodes are 1461694.ATO9_06730
+	(degree 1620), 1461694.ATO9_15730 (degree 1440), 1461694.ATO9_06190 (degree
+	1330), 1461694.ATO9_10910 (degree 1299) and 1461694.ATO9_03360 (degree
+	1214).
 	
 
 

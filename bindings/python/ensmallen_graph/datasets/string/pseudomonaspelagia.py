@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:29.757723
 
-The undirected graph Pseudomonas pelagia has 4016 nodes and 487855 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06051 and
-has 9 connected components, where the component with most nodes has 3999 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 194,
-the mean node degree is 242.96, and the node degree mode is 1. The top 5 most central
-nodes are 1323663.AROI01000008_gene2546 (degree 1557), 1323663.AROI01000005_gene3075
-(degree 1510), 1323663.AROI01000008_gene2485 (degree 1362), 1323663.AROI01000031_gene1891
-(degree 1343) and 1323663.AROI01000006_gene2970 (degree 1315).
+The undirected graph Pseudomonas pelagia has 4016 nodes and 487855 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06051 and has 9 connected components, where the component with most
+nodes has 3999 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 194, the mean node degree is 242.96, and
+the node degree mode is 1. The top 5 most central nodes are 1323663.AROI01000008_gene2546
+(degree 1557), 1323663.AROI01000005_gene3075 (degree 1510), 1323663.AROI01000008_gene2485
+(degree 1362), 1323663.AROI01000031_gene1891 (degree 1343) and 1323663.AROI01000006_gene2970
+(degree 1315).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPelagia(
 	
 	Datetime: 2021-02-03 21:54:29.757723
 	
-	The undirected graph Pseudomonas pelagia has 4016 nodes and 487855 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06051 and
-	has 9 connected components, where the component with most nodes has 3999 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 194,
-	the mean node degree is 242.96, and the node degree mode is 1. The top 5 most central
-	nodes are 1323663.AROI01000008_gene2546 (degree 1557), 1323663.AROI01000005_gene3075
-	(degree 1510), 1323663.AROI01000008_gene2485 (degree 1362), 1323663.AROI01000031_gene1891
-	(degree 1343) and 1323663.AROI01000006_gene2970 (degree 1315).
+	The undirected graph Pseudomonas pelagia has 4016 nodes and 487855 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06051 and has 9 connected components, where the component with most
+	nodes has 3999 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 194, the mean node degree is 242.96, and
+	the node degree mode is 1. The top 5 most central nodes are 1323663.AROI01000008_gene2546
+	(degree 1557), 1323663.AROI01000005_gene3075 (degree 1510), 1323663.AROI01000008_gene2485
+	(degree 1362), 1323663.AROI01000031_gene1891 (degree 1343) and 1323663.AROI01000006_gene2970
+	(degree 1315).
 	
 
 

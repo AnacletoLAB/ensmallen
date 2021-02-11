@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:10.101823
 
-The undirected graph Catonella morbi has 3275 nodes and 279033 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05205 and
-has 17 connected components, where the component with most nodes has 3233 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 170.40, and the node degree mode is 7. The top 5 most central
-nodes are 592026.GCWU0000282_000526 (degree 1122), 592026.GCWU0000282_001087 (degree
-924), 592026.GCWU0000282_000311 (degree 918), 592026.GCWU0000282_000941 (degree 859)
-and 592026.GCWU0000282_003208 (degree 855).
+The undirected graph Catonella morbi has 3275 nodes and 279033 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05205 and has 17 connected components, where the component with most
+nodes has 3233 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 170.40, and
+the node degree mode is 7. The top 5 most central nodes are 592026.GCWU0000282_000526
+(degree 1122), 592026.GCWU0000282_001087 (degree 924), 592026.GCWU0000282_000311
+(degree 918), 592026.GCWU0000282_000941 (degree 859) and 592026.GCWU0000282_003208
+(degree 855).
 
 
 References
@@ -107,14 +108,15 @@ def CatonellaMorbi(
 	
 	Datetime: 2021-02-02 21:18:10.101823
 	
-	The undirected graph Catonella morbi has 3275 nodes and 279033 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05205 and
-	has 17 connected components, where the component with most nodes has 3233 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 170.40, and the node degree mode is 7. The top 5 most central
-	nodes are 592026.GCWU0000282_000526 (degree 1122), 592026.GCWU0000282_001087 (degree
-	924), 592026.GCWU0000282_000311 (degree 918), 592026.GCWU0000282_000941 (degree 859)
-	and 592026.GCWU0000282_003208 (degree 855).
+	The undirected graph Catonella morbi has 3275 nodes and 279033 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05205 and has 17 connected components, where the component with most
+	nodes has 3233 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 170.40, and
+	the node degree mode is 7. The top 5 most central nodes are 592026.GCWU0000282_000526
+	(degree 1122), 592026.GCWU0000282_001087 (degree 924), 592026.GCWU0000282_000311
+	(degree 918), 592026.GCWU0000282_000941 (degree 859) and 592026.GCWU0000282_003208
+	(degree 855).
 	
 
 

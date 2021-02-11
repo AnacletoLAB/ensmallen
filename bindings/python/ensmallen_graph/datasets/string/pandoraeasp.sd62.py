@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:15:47.243671
 
-The undirected graph Pandoraea sp. SD62 has 5097 nodes and 811321 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06247 and
-has 16 connected components, where the component with most nodes has 5063 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 264,
-the mean node degree is 318.35, and the node degree mode is 1. The top 5 most central
-nodes are 1286093.C266_19071 (degree 2277), 1286093.C266_12775 (degree 2211), 1286093.C266_21439
-(degree 1991), 1286093.C266_22138 (degree 1827) and 1286093.C266_08415 (degree 1717).
+The undirected graph Pandoraea sp. SD62 has 5097 nodes and 811321 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06247 and has 16 connected components, where the component with most
+nodes has 5063 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 264, the mean node degree is 318.35, and
+the node degree mode is 1. The top 5 most central nodes are 1286093.C266_19071
+(degree 2277), 1286093.C266_12775 (degree 2211), 1286093.C266_21439 (degree
+1991), 1286093.C266_22138 (degree 1827) and 1286093.C266_08415 (degree
+1717).
 
 
 References
@@ -106,13 +108,15 @@ def PandoraeaSp.Sd62(
 	
 	Datetime: 2021-02-03 21:15:47.243671
 	
-	The undirected graph Pandoraea sp. SD62 has 5097 nodes and 811321 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06247 and
-	has 16 connected components, where the component with most nodes has 5063 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 264,
-	the mean node degree is 318.35, and the node degree mode is 1. The top 5 most central
-	nodes are 1286093.C266_19071 (degree 2277), 1286093.C266_12775 (degree 2211), 1286093.C266_21439
-	(degree 1991), 1286093.C266_22138 (degree 1827) and 1286093.C266_08415 (degree 1717).
+	The undirected graph Pandoraea sp. SD62 has 5097 nodes and 811321 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06247 and has 16 connected components, where the component with most
+	nodes has 5063 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 264, the mean node degree is 318.35, and
+	the node degree mode is 1. The top 5 most central nodes are 1286093.C266_19071
+	(degree 2277), 1286093.C266_12775 (degree 2211), 1286093.C266_21439 (degree
+	1991), 1286093.C266_22138 (degree 1827) and 1286093.C266_08415 (degree
+	1717).
 	
 
 

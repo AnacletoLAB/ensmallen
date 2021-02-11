@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:56.370225
 
-The undirected graph Pseudoalteromonas rubra has 4863 nodes and 491279 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04156 and
-has 39 connected components, where the component with most nodes has 4754 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 202.05, and the node degree mode is 4. The top 5 most central
-nodes are 1117318.PRUB_05526 (degree 1290), 1117318.PRUB_21283 (degree 1280), 1117318.PRUB_04266
-(degree 1094), 1117318.PRUB_01969 (degree 1072) and 1117318.PRUB_04271 (degree 1004).
+The undirected graph Pseudoalteromonas rubra has 4863 nodes and 491279
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04156 and has 39 connected components, where the component
+with most nodes has 4754 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 202.05,
+and the node degree mode is 4. The top 5 most central nodes are 1117318.PRUB_05526
+(degree 1290), 1117318.PRUB_21283 (degree 1280), 1117318.PRUB_04266 (degree
+1094), 1117318.PRUB_01969 (degree 1072) and 1117318.PRUB_04271 (degree
+1004).
 
 
 References
@@ -106,13 +108,15 @@ def PseudoalteromonasRubra(
 	
 	Datetime: 2021-02-02 22:27:56.370225
 	
-	The undirected graph Pseudoalteromonas rubra has 4863 nodes and 491279 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04156 and
-	has 39 connected components, where the component with most nodes has 4754 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 202.05, and the node degree mode is 4. The top 5 most central
-	nodes are 1117318.PRUB_05526 (degree 1290), 1117318.PRUB_21283 (degree 1280), 1117318.PRUB_04266
-	(degree 1094), 1117318.PRUB_01969 (degree 1072) and 1117318.PRUB_04271 (degree 1004).
+	The undirected graph Pseudoalteromonas rubra has 4863 nodes and 491279
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04156 and has 39 connected components, where the component
+	with most nodes has 4754 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 202.05,
+	and the node degree mode is 4. The top 5 most central nodes are 1117318.PRUB_05526
+	(degree 1290), 1117318.PRUB_21283 (degree 1280), 1117318.PRUB_04266 (degree
+	1094), 1117318.PRUB_01969 (degree 1072) and 1117318.PRUB_04271 (degree
+	1004).
 	
 
 

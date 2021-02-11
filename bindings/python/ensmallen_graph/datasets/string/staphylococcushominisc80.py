@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:53.761141
 
-The undirected graph Staphylococcus hominis C80 has 2165 nodes and 154686 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06603
-and has 10 connected components, where the component with most nodes has 2141 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 142.90, and the node degree mode is 2. The top 5
-most central nodes are 435837.HMPREF0798_00120 (degree 850), 435837.HMPREF0798_01595
-(degree 790), 435837.HMPREF0798_00212 (degree 708), 435837.HMPREF0798_01594 (degree
-706) and 435837.HMPREF0798_00533 (degree 687).
+The undirected graph Staphylococcus hominis C80 has 2165 nodes and 154686
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06603 and has 10 connected components, where the component
+with most nodes has 2141 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 142.90,
+and the node degree mode is 2. The top 5 most central nodes are 435837.HMPREF0798_00120
+(degree 850), 435837.HMPREF0798_01595 (degree 790), 435837.HMPREF0798_00212
+(degree 708), 435837.HMPREF0798_01594 (degree 706) and 435837.HMPREF0798_00533
+(degree 687).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusHominisC80(
 	
 	Datetime: 2021-02-02 20:48:53.761141
 	
-	The undirected graph Staphylococcus hominis C80 has 2165 nodes and 154686 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06603
-	and has 10 connected components, where the component with most nodes has 2141 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 142.90, and the node degree mode is 2. The top 5
-	most central nodes are 435837.HMPREF0798_00120 (degree 850), 435837.HMPREF0798_01595
-	(degree 790), 435837.HMPREF0798_00212 (degree 708), 435837.HMPREF0798_01594 (degree
-	706) and 435837.HMPREF0798_00533 (degree 687).
+	The undirected graph Staphylococcus hominis C80 has 2165 nodes and 154686
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06603 and has 10 connected components, where the component
+	with most nodes has 2141 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 142.90,
+	and the node degree mode is 2. The top 5 most central nodes are 435837.HMPREF0798_00120
+	(degree 850), 435837.HMPREF0798_01595 (degree 790), 435837.HMPREF0798_00212
+	(degree 708), 435837.HMPREF0798_01594 (degree 706) and 435837.HMPREF0798_00533
+	(degree 687).
 	
 
 

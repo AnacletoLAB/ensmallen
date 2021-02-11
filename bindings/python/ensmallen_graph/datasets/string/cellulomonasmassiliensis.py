@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:37.398686
 
-The undirected graph Cellulomonas massiliensis has 3131 nodes and 260065 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05307
-and has 13 connected components, where the component with most nodes has 3103 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 166.12, and the node degree mode is 2. The top 5
-most central nodes are 1095767.CAHD01000059_gene451 (degree 1233), 1095767.CAHD01000213_gene617
-(degree 1056), 1095767.CAHD01000199_gene2391 (degree 1028), 1095767.CAHD01000133_gene1273
-(degree 1014) and 1095767.CAHD01000040_gene1462 (degree 946).
+The undirected graph Cellulomonas massiliensis has 3131 nodes and 260065
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05307 and has 13 connected components, where the component
+with most nodes has 3103 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 166.12,
+and the node degree mode is 2. The top 5 most central nodes are 1095767.CAHD01000059_gene451
+(degree 1233), 1095767.CAHD01000213_gene617 (degree 1056), 1095767.CAHD01000199_gene2391
+(degree 1028), 1095767.CAHD01000133_gene1273 (degree 1014) and 1095767.CAHD01000040_gene1462
+(degree 946).
 
 
 References
@@ -107,14 +108,15 @@ def CellulomonasMassiliensis(
 	
 	Datetime: 2021-02-02 22:23:37.398686
 	
-	The undirected graph Cellulomonas massiliensis has 3131 nodes and 260065 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05307
-	and has 13 connected components, where the component with most nodes has 3103 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 166.12, and the node degree mode is 2. The top 5
-	most central nodes are 1095767.CAHD01000059_gene451 (degree 1233), 1095767.CAHD01000213_gene617
-	(degree 1056), 1095767.CAHD01000199_gene2391 (degree 1028), 1095767.CAHD01000133_gene1273
-	(degree 1014) and 1095767.CAHD01000040_gene1462 (degree 946).
+	The undirected graph Cellulomonas massiliensis has 3131 nodes and 260065
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05307 and has 13 connected components, where the component
+	with most nodes has 3103 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 166.12,
+	and the node degree mode is 2. The top 5 most central nodes are 1095767.CAHD01000059_gene451
+	(degree 1233), 1095767.CAHD01000213_gene617 (degree 1056), 1095767.CAHD01000199_gene2391
+	(degree 1028), 1095767.CAHD01000133_gene1273 (degree 1014) and 1095767.CAHD01000040_gene1462
+	(degree 946).
 	
 
 

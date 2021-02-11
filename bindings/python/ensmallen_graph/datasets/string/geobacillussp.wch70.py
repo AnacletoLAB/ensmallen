@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:40.238955
 
-The undirected graph Geobacillus sp. WCH70 has 3107 nodes and 303970 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06300 and
-has 10 connected components, where the component with most nodes has 3085 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 195.67, and the node degree mode is 2. The top 5 most central
-nodes are 471223.GWCH70_2673 (degree 1168), 471223.GWCH70_0237 (degree 988), 471223.GWCH70_2437
-(degree 846), 471223.GWCH70_0009 (degree 816) and 471223.GWCH70_2648 (degree 808).
+The undirected graph Geobacillus sp. WCH70 has 3107 nodes and 303970 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06300 and has 10 connected components, where the component with most
+nodes has 3085 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 195.67, and
+the node degree mode is 2. The top 5 most central nodes are 471223.GWCH70_2673
+(degree 1168), 471223.GWCH70_0237 (degree 988), 471223.GWCH70_2437 (degree
+846), 471223.GWCH70_0009 (degree 816) and 471223.GWCH70_2648 (degree 808).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacillusSp.Wch70(
 	
 	Datetime: 2021-02-02 20:55:40.238955
 	
-	The undirected graph Geobacillus sp. WCH70 has 3107 nodes and 303970 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06300 and
-	has 10 connected components, where the component with most nodes has 3085 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 195.67, and the node degree mode is 2. The top 5 most central
-	nodes are 471223.GWCH70_2673 (degree 1168), 471223.GWCH70_0237 (degree 988), 471223.GWCH70_2437
-	(degree 846), 471223.GWCH70_0009 (degree 816) and 471223.GWCH70_2648 (degree 808).
+	The undirected graph Geobacillus sp. WCH70 has 3107 nodes and 303970 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06300 and has 10 connected components, where the component with most
+	nodes has 3085 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 195.67, and
+	the node degree mode is 2. The top 5 most central nodes are 471223.GWCH70_2673
+	(degree 1168), 471223.GWCH70_0237 (degree 988), 471223.GWCH70_2437 (degree
+	846), 471223.GWCH70_0009 (degree 816) and 471223.GWCH70_2648 (degree 808).
 	
 
 

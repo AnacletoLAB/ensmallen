@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:10.168705
 
-The undirected graph Streptococcus peroris has 1637 nodes and 144052 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10758
-and has 2 connected components, where the component with most nodes has 1634 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 161, the mean node degree is 176.00, and the node degree mode is 13. The top 5
-most central nodes are 888746.HMPREF9180_0031 (degree 810), 888746.HMPREF9180_1288
-(degree 721), 888746.HMPREF9180_0098 (degree 705), 888746.HMPREF9180_1018 (degree
-644) and 888746.HMPREF9180_1118 (degree 642).
+The undirected graph Streptococcus peroris has 1637 nodes and 144052 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10758 and has 2 connected components, where the component
+with most nodes has 1634 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 161, the mean node degree is 176.00,
+and the node degree mode is 13. The top 5 most central nodes are 888746.HMPREF9180_0031
+(degree 810), 888746.HMPREF9180_1288 (degree 721), 888746.HMPREF9180_0098
+(degree 705), 888746.HMPREF9180_1018 (degree 644) and 888746.HMPREF9180_1118
+(degree 642).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusPeroris(
 	
 	Datetime: 2021-02-02 21:53:10.168705
 	
-	The undirected graph Streptococcus peroris has 1637 nodes and 144052 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10758
-	and has 2 connected components, where the component with most nodes has 1634 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 161, the mean node degree is 176.00, and the node degree mode is 13. The top 5
-	most central nodes are 888746.HMPREF9180_0031 (degree 810), 888746.HMPREF9180_1288
-	(degree 721), 888746.HMPREF9180_0098 (degree 705), 888746.HMPREF9180_1018 (degree
-	644) and 888746.HMPREF9180_1118 (degree 642).
+	The undirected graph Streptococcus peroris has 1637 nodes and 144052 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10758 and has 2 connected components, where the component
+	with most nodes has 1634 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 161, the mean node degree is 176.00,
+	and the node degree mode is 13. The top 5 most central nodes are 888746.HMPREF9180_0031
+	(degree 810), 888746.HMPREF9180_1288 (degree 721), 888746.HMPREF9180_0098
+	(degree 705), 888746.HMPREF9180_1018 (degree 644) and 888746.HMPREF9180_1118
+	(degree 642).
 	
 
 

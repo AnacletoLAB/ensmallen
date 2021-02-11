@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:11:51.087334
 
-The undirected graph Coccomyxa subellipsoidea has 6606 nodes and 760248 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03485
-and has 7 connected components, where the component with most nodes has 6585 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 230.17, and the node degree mode is 1. The top 5
-most central nodes are 248742.XP_005646891.1 (degree 2169), 248742.XP_005650760.1
-(degree 2096), 248742.XP_005647894.1 (degree 1738), 248742.XP_005650035.1 (degree
-1718) and 248742.XP_005648631.1 (degree 1637).
+The undirected graph Coccomyxa subellipsoidea has 6606 nodes and 760248
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03485 and has 7 connected components, where the component
+with most nodes has 6585 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 230.17,
+and the node degree mode is 1. The top 5 most central nodes are 248742.XP_005646891.1
+(degree 2169), 248742.XP_005650760.1 (degree 2096), 248742.XP_005647894.1
+(degree 1738), 248742.XP_005650035.1 (degree 1718) and 248742.XP_005648631.1
+(degree 1637).
 
 
 References
@@ -107,14 +108,15 @@ def CoccomyxaSubellipsoidea(
 	
 	Datetime: 2021-02-02 20:11:51.087334
 	
-	The undirected graph Coccomyxa subellipsoidea has 6606 nodes and 760248 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03485
-	and has 7 connected components, where the component with most nodes has 6585 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 230.17, and the node degree mode is 1. The top 5
-	most central nodes are 248742.XP_005646891.1 (degree 2169), 248742.XP_005650760.1
-	(degree 2096), 248742.XP_005647894.1 (degree 1738), 248742.XP_005650035.1 (degree
-	1718) and 248742.XP_005648631.1 (degree 1637).
+	The undirected graph Coccomyxa subellipsoidea has 6606 nodes and 760248
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03485 and has 7 connected components, where the component
+	with most nodes has 6585 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 230.17,
+	and the node degree mode is 1. The top 5 most central nodes are 248742.XP_005646891.1
+	(degree 2169), 248742.XP_005650760.1 (degree 2096), 248742.XP_005647894.1
+	(degree 1738), 248742.XP_005650035.1 (degree 1718) and 248742.XP_005648631.1
+	(degree 1637).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:38.333478
 
-The undirected graph Porphyromonas macacae has 1744 nodes and 108124 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07114 and
-has 14 connected components, where the component with most nodes has 1705 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 124.00, and the node degree mode is 4. The top 5 most central
-nodes are 28115.HR11_02735 (degree 729), 28115.HR11_06395 (degree 721), 28115.HR11_07585
-(degree 671), 28115.HR11_03380 (degree 596) and 28115.HR11_05685 (degree 560).
+The undirected graph Porphyromonas macacae has 1744 nodes and 108124 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07114 and has 14 connected components, where the component with most
+nodes has 1705 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 124.00, and
+the node degree mode is 4. The top 5 most central nodes are 28115.HR11_02735
+(degree 729), 28115.HR11_06395 (degree 721), 28115.HR11_07585 (degree 671),
+28115.HR11_03380 (degree 596) and 28115.HR11_05685 (degree 560).
 
 
 References
@@ -106,13 +107,14 @@ def PorphyromonasMacacae(
 	
 	Datetime: 2021-02-02 17:55:38.333478
 	
-	The undirected graph Porphyromonas macacae has 1744 nodes and 108124 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07114 and
-	has 14 connected components, where the component with most nodes has 1705 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 124.00, and the node degree mode is 4. The top 5 most central
-	nodes are 28115.HR11_02735 (degree 729), 28115.HR11_06395 (degree 721), 28115.HR11_07585
-	(degree 671), 28115.HR11_03380 (degree 596) and 28115.HR11_05685 (degree 560).
+	The undirected graph Porphyromonas macacae has 1744 nodes and 108124 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07114 and has 14 connected components, where the component with most
+	nodes has 1705 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 124.00, and
+	the node degree mode is 4. The top 5 most central nodes are 28115.HR11_02735
+	(degree 729), 28115.HR11_06395 (degree 721), 28115.HR11_07585 (degree 671),
+	28115.HR11_03380 (degree 596) and 28115.HR11_05685 (degree 560).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:02.641249
 
-The undirected graph Halobiforma lacisalsi has 4065 nodes and 358762 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04343 and
-has 33 connected components, where the component with most nodes has 3993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 176.51, and the node degree mode is 3. The top 5 most central
-nodes are 358396.C445_10767 (degree 1205), 358396.C445_06468 (degree 1199), 358396.C445_10562
-(degree 1070), 358396.C445_08337 (degree 1017) and 358396.C445_07660 (degree 1008).
+The undirected graph Halobiforma lacisalsi has 4065 nodes and 358762 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04343 and has 33 connected components, where the component with most
+nodes has 3993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 176.51, and
+the node degree mode is 3. The top 5 most central nodes are 358396.C445_10767
+(degree 1205), 358396.C445_06468 (degree 1199), 358396.C445_10562 (degree
+1070), 358396.C445_08337 (degree 1017) and 358396.C445_07660 (degree 1008).
 
 
 References
@@ -106,13 +107,14 @@ def HalobiformaLacisalsi(
 	
 	Datetime: 2021-02-02 20:34:02.641249
 	
-	The undirected graph Halobiforma lacisalsi has 4065 nodes and 358762 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04343 and
-	has 33 connected components, where the component with most nodes has 3993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 176.51, and the node degree mode is 3. The top 5 most central
-	nodes are 358396.C445_10767 (degree 1205), 358396.C445_06468 (degree 1199), 358396.C445_10562
-	(degree 1070), 358396.C445_08337 (degree 1017) and 358396.C445_07660 (degree 1008).
+	The undirected graph Halobiforma lacisalsi has 4065 nodes and 358762 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04343 and has 33 connected components, where the component with most
+	nodes has 3993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 176.51, and
+	the node degree mode is 3. The top 5 most central nodes are 358396.C445_10767
+	(degree 1205), 358396.C445_06468 (degree 1199), 358396.C445_10562 (degree
+	1070), 358396.C445_08337 (degree 1017) and 358396.C445_07660 (degree 1008).
 	
 
 

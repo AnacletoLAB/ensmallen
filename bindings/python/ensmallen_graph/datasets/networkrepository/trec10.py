@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:31.983711
 
-The undirected graph Trec10 has 478 nodes and 8583 weighted edges, of which 21 are
-self-loops. The graph is dense as it has a density of 0.07520 and is connected, as
-it has a single component. The graph median node degree is 18, the mean node degree
-is 35.87, and the node degree mode is 8. The top 5 most central nodes are 56 (degree
-178), 73 (degree 173), 100 (degree 169), 57 (degree 156) and 74 (degree 154).
+The undirected graph Trec10 has 478 nodes and 8583 weighted edges, of which
+21 are self-loops. The graph is dense as it has a density of 0.07520 and
+is connected, as it has a single component. The graph median node degree
+is 18, the mean node degree is 35.87, and the node degree mode is 8. The
+top 5 most central nodes are 56 (degree 178), 73 (degree 173), 100 (degree
+169), 57 (degree 156) and 74 (degree 154).
 
 
 References
@@ -101,11 +102,12 @@ def Trec10(
 	
 	Datetime: 2021-02-06 08:00:31.983711
 	
-	The undirected graph Trec10 has 478 nodes and 8583 weighted edges, of which 21 are
-	self-loops. The graph is dense as it has a density of 0.07520 and is connected, as
-	it has a single component. The graph median node degree is 18, the mean node degree
-	is 35.87, and the node degree mode is 8. The top 5 most central nodes are 56 (degree
-	178), 73 (degree 173), 100 (degree 169), 57 (degree 156) and 74 (degree 154).
+	The undirected graph Trec10 has 478 nodes and 8583 weighted edges, of which
+	21 are self-loops. The graph is dense as it has a density of 0.07520 and
+	is connected, as it has a single component. The graph median node degree
+	is 18, the mean node degree is 35.87, and the node degree mode is 8. The
+	top 5 most central nodes are 56 (degree 178), 73 (degree 173), 100 (degree
+	169), 57 (degree 156) and 74 (degree 154).
 	
 
 

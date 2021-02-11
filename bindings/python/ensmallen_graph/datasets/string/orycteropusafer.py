@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:45:00.346595
 
-The undirected graph Orycteropus afer has 18931 nodes and 3387047 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01890 and
-is connected, as it has a single component. The graph median node degree is 248,
-the mean node degree is 357.83, and the node degree mode is 1. The top 5 most central
-nodes are 9818.XP_007953566.1 (degree 4869), 9818.XP_007945474.1 (degree 4067), 9818.XP_007935844.1
-(degree 4048), 9818.XP_007939056.1 (degree 3823) and 9818.XP_007942972.1 (degree
-3454).
+The undirected graph Orycteropus afer has 18931 nodes and 3387047 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01890 and is connected, as it has a single component. The graph median
+node degree is 248, the mean node degree is 357.83, and the node degree
+mode is 1. The top 5 most central nodes are 9818.XP_007953566.1 (degree
+4869), 9818.XP_007945474.1 (degree 4067), 9818.XP_007935844.1 (degree 4048),
+9818.XP_007939056.1 (degree 3823) and 9818.XP_007942972.1 (degree 3454).
 
 
 References
@@ -106,13 +106,13 @@ def OrycteropusAfer(
 	
 	Datetime: 2021-02-02 17:45:00.346595
 	
-	The undirected graph Orycteropus afer has 18931 nodes and 3387047 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01890 and
-	is connected, as it has a single component. The graph median node degree is 248,
-	the mean node degree is 357.83, and the node degree mode is 1. The top 5 most central
-	nodes are 9818.XP_007953566.1 (degree 4869), 9818.XP_007945474.1 (degree 4067), 9818.XP_007935844.1
-	(degree 4048), 9818.XP_007939056.1 (degree 3823) and 9818.XP_007942972.1 (degree
-	3454).
+	The undirected graph Orycteropus afer has 18931 nodes and 3387047 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01890 and is connected, as it has a single component. The graph median
+	node degree is 248, the mean node degree is 357.83, and the node degree
+	mode is 1. The top 5 most central nodes are 9818.XP_007953566.1 (degree
+	4869), 9818.XP_007945474.1 (degree 4067), 9818.XP_007935844.1 (degree 4048),
+	9818.XP_007939056.1 (degree 3823) and 9818.XP_007942972.1 (degree 3454).
 	
 
 

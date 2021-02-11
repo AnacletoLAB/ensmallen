@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:05.338853
 
-The undirected graph Adhaeribacter aquaticus has 4070 nodes and 529212 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06391 and
-has 27 connected components, where the component with most nodes has 4000 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 233,
-the mean node degree is 260.06, and the node degree mode is 1. The top 5 most central
-nodes are 926549.KI421517_gene2722 (degree 1386), 926549.KI421517_gene2454 (degree
-1326), 926549.KI421517_gene190 (degree 1289), 926549.KI421517_gene910 (degree 1244)
-and 926549.KI421517_gene3487 (degree 1219).
+The undirected graph Adhaeribacter aquaticus has 4070 nodes and 529212
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06391 and has 27 connected components, where the component
+with most nodes has 4000 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 233, the mean node degree is 260.06,
+and the node degree mode is 1. The top 5 most central nodes are 926549.KI421517_gene2722
+(degree 1386), 926549.KI421517_gene2454 (degree 1326), 926549.KI421517_gene190
+(degree 1289), 926549.KI421517_gene910 (degree 1244) and 926549.KI421517_gene3487
+(degree 1219).
 
 
 References
@@ -107,14 +108,15 @@ def AdhaeribacterAquaticus(
 	
 	Datetime: 2021-02-02 21:56:05.338853
 	
-	The undirected graph Adhaeribacter aquaticus has 4070 nodes and 529212 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06391 and
-	has 27 connected components, where the component with most nodes has 4000 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 233,
-	the mean node degree is 260.06, and the node degree mode is 1. The top 5 most central
-	nodes are 926549.KI421517_gene2722 (degree 1386), 926549.KI421517_gene2454 (degree
-	1326), 926549.KI421517_gene190 (degree 1289), 926549.KI421517_gene910 (degree 1244)
-	and 926549.KI421517_gene3487 (degree 1219).
+	The undirected graph Adhaeribacter aquaticus has 4070 nodes and 529212
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06391 and has 27 connected components, where the component
+	with most nodes has 4000 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 233, the mean node degree is 260.06,
+	and the node degree mode is 1. The top 5 most central nodes are 926549.KI421517_gene2722
+	(degree 1386), 926549.KI421517_gene2454 (degree 1326), 926549.KI421517_gene190
+	(degree 1289), 926549.KI421517_gene910 (degree 1244) and 926549.KI421517_gene3487
+	(degree 1219).
 	
 
 

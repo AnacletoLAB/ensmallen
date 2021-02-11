@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:33.744887
 
-The undirected graph actinobacterium LLX17 has 2897 nodes and 305035 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07272 and
-has 5 connected components, where the component with most nodes has 2886 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 191,
-the mean node degree is 210.59, and the node degree mode is 2. The top 5 most central
-nodes are 1229203.KI301992_gene443 (degree 1291), 1229203.KI301992_gene2366 (degree
-1082), 1229203.KI301992_gene1308 (degree 991), 1229203.KI301992_gene2314 (degree
-948) and 1229203.KI301992_gene716 (degree 932).
+The undirected graph actinobacterium LLX17 has 2897 nodes and 305035 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07272 and has 5 connected components, where the component with most
+nodes has 2886 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 191, the mean node degree is 210.59, and
+the node degree mode is 2. The top 5 most central nodes are 1229203.KI301992_gene443
+(degree 1291), 1229203.KI301992_gene2366 (degree 1082), 1229203.KI301992_gene1308
+(degree 991), 1229203.KI301992_gene2314 (degree 948) and 1229203.KI301992_gene716
+(degree 932).
 
 
 References
@@ -107,14 +108,15 @@ def ActinobacteriumLlx17(
 	
 	Datetime: 2021-02-02 23:26:33.744887
 	
-	The undirected graph actinobacterium LLX17 has 2897 nodes and 305035 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07272 and
-	has 5 connected components, where the component with most nodes has 2886 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 191,
-	the mean node degree is 210.59, and the node degree mode is 2. The top 5 most central
-	nodes are 1229203.KI301992_gene443 (degree 1291), 1229203.KI301992_gene2366 (degree
-	1082), 1229203.KI301992_gene1308 (degree 991), 1229203.KI301992_gene2314 (degree
-	948) and 1229203.KI301992_gene716 (degree 932).
+	The undirected graph actinobacterium LLX17 has 2897 nodes and 305035 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07272 and has 5 connected components, where the component with most
+	nodes has 2886 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 191, the mean node degree is 210.59, and
+	the node degree mode is 2. The top 5 most central nodes are 1229203.KI301992_gene443
+	(degree 1291), 1229203.KI301992_gene2366 (degree 1082), 1229203.KI301992_gene1308
+	(degree 991), 1229203.KI301992_gene2314 (degree 948) and 1229203.KI301992_gene716
+	(degree 932).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:17:05.065049
 
-The undirected graph Helicobacter trogontum has 2090 nodes and 109466 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05014 and
-has 70 connected components, where the component with most nodes has 1900 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 69,
-the mean node degree is 104.75, and the node degree mode is 1. The top 5 most central
-nodes are 50960.LS81_04845 (degree 759), 50960.LS81_05845 (degree 754), 50960.LS81_10475
-(degree 633), 50960.LS81_04390 (degree 615) and 50960.LS81_11080 (degree 607).
+The undirected graph Helicobacter trogontum has 2090 nodes and 109466 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05014 and has 70 connected components, where the component with most
+nodes has 1900 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 69, the mean node degree is 104.75, and
+the node degree mode is 1. The top 5 most central nodes are 50960.LS81_04845
+(degree 759), 50960.LS81_05845 (degree 754), 50960.LS81_10475 (degree 633),
+50960.LS81_04390 (degree 615) and 50960.LS81_11080 (degree 607).
 
 
 References
@@ -106,13 +107,14 @@ def HelicobacterTrogontum(
 	
 	Datetime: 2021-02-02 18:17:05.065049
 	
-	The undirected graph Helicobacter trogontum has 2090 nodes and 109466 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05014 and
-	has 70 connected components, where the component with most nodes has 1900 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 69,
-	the mean node degree is 104.75, and the node degree mode is 1. The top 5 most central
-	nodes are 50960.LS81_04845 (degree 759), 50960.LS81_05845 (degree 754), 50960.LS81_10475
-	(degree 633), 50960.LS81_04390 (degree 615) and 50960.LS81_11080 (degree 607).
+	The undirected graph Helicobacter trogontum has 2090 nodes and 109466 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05014 and has 70 connected components, where the component with most
+	nodes has 1900 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 69, the mean node degree is 104.75, and
+	the node degree mode is 1. The top 5 most central nodes are 50960.LS81_04845
+	(degree 759), 50960.LS81_05845 (degree 754), 50960.LS81_10475 (degree 633),
+	50960.LS81_04390 (degree 615) and 50960.LS81_11080 (degree 607).
 	
 
 

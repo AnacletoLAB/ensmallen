@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:54.370531
 
-The undirected graph Flavobacterium enshiense has 2810 nodes and 204092 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05171
-and has 13 connected components, where the component with most nodes has 2774 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 126, the mean node degree is 145.26, and the node degree mode is 3. The top 5
-most central nodes are 1107311.Q767_06845 (degree 1025), 1107311.Q767_03485 (degree
-999), 1107311.Q767_15045 (degree 846), 1107311.Q767_10195 (degree 845) and 1107311.Q767_03535
-(degree 764).
+The undirected graph Flavobacterium enshiense has 2810 nodes and 204092
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05171 and has 13 connected components, where the component
+with most nodes has 2774 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 145.26,
+and the node degree mode is 3. The top 5 most central nodes are 1107311.Q767_06845
+(degree 1025), 1107311.Q767_03485 (degree 999), 1107311.Q767_15045 (degree
+846), 1107311.Q767_10195 (degree 845) and 1107311.Q767_03535 (degree 764).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumEnshiense(
 	
 	Datetime: 2021-02-02 22:24:54.370531
 	
-	The undirected graph Flavobacterium enshiense has 2810 nodes and 204092 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05171
-	and has 13 connected components, where the component with most nodes has 2774 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 126, the mean node degree is 145.26, and the node degree mode is 3. The top 5
-	most central nodes are 1107311.Q767_06845 (degree 1025), 1107311.Q767_03485 (degree
-	999), 1107311.Q767_15045 (degree 846), 1107311.Q767_10195 (degree 845) and 1107311.Q767_03535
-	(degree 764).
+	The undirected graph Flavobacterium enshiense has 2810 nodes and 204092
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05171 and has 13 connected components, where the component
+	with most nodes has 2774 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 145.26,
+	and the node degree mode is 3. The top 5 most central nodes are 1107311.Q767_06845
+	(degree 1025), 1107311.Q767_03485 (degree 999), 1107311.Q767_15045 (degree
+	846), 1107311.Q767_10195 (degree 845) and 1107311.Q767_03535 (degree 764).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:40.791750
 
-The undirected graph bio-dmela has 7393 nodes and 25569 unweighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00094 and
-is connected, as it has a single component. The graph median node degree is 3, the
-mean node degree is 6.92 and the node degree mode is 1. The top 5 most central nodes
-are 215 (degree 190), 663 (degree 149), 708 (degree 122), 209 (degree 115) and 76
-(degree 113).
+The undirected graph bio-dmela has 7393 nodes and 25569 unweighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00094 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 6.92 and the node degree mode
+is 1. The top 5 most central nodes are 215 (degree 190), 663 (degree 149),
+708 (degree 122), 209 (degree 115) and 76 (degree 113).
 
 
 References
@@ -112,12 +112,12 @@ def BioDmela(
 	
 	Datetime: 2021-02-03 22:30:40.791750
 	
-	The undirected graph bio-dmela has 7393 nodes and 25569 unweighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00094 and
-	is connected, as it has a single component. The graph median node degree is 3, the
-	mean node degree is 6.92 and the node degree mode is 1. The top 5 most central nodes
-	are 215 (degree 190), 663 (degree 149), 708 (degree 122), 209 (degree 115) and 76
-	(degree 113).
+	The undirected graph bio-dmela has 7393 nodes and 25569 unweighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00094 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 6.92 and the node degree mode
+	is 1. The top 5 most central nodes are 215 (degree 190), 663 (degree 149),
+	708 (degree 122), 209 (degree 115) and 76 (degree 113).
 	
 
 

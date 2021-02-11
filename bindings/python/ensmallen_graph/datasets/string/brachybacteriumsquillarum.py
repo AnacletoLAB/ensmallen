@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:34.246457
 
-The undirected graph Brachybacterium squillarum has 2752 nodes and 208374 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05505
-and has 5 connected components, where the component with most nodes has 2744 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 151.43, and the node degree mode is 3. The top 5
-most central nodes are 1074488.AGBX01000001_gene541 (degree 998), 1074488.AGBX01000007_gene1428
-(degree 939), 1074488.AGBX01000005_gene2607 (degree 828), 1074488.AGBX01000003_gene140
-(degree 826) and 1074488.AGBX01000003_gene152 (degree 805).
+The undirected graph Brachybacterium squillarum has 2752 nodes and 208374
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05505 and has 5 connected components, where the component
+with most nodes has 2744 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 151.43,
+and the node degree mode is 3. The top 5 most central nodes are 1074488.AGBX01000001_gene541
+(degree 998), 1074488.AGBX01000007_gene1428 (degree 939), 1074488.AGBX01000005_gene2607
+(degree 828), 1074488.AGBX01000003_gene140 (degree 826) and 1074488.AGBX01000003_gene152
+(degree 805).
 
 
 References
@@ -107,14 +108,15 @@ def BrachybacteriumSquillarum(
 	
 	Datetime: 2021-02-02 22:19:34.246457
 	
-	The undirected graph Brachybacterium squillarum has 2752 nodes and 208374 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05505
-	and has 5 connected components, where the component with most nodes has 2744 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 151.43, and the node degree mode is 3. The top 5
-	most central nodes are 1074488.AGBX01000001_gene541 (degree 998), 1074488.AGBX01000007_gene1428
-	(degree 939), 1074488.AGBX01000005_gene2607 (degree 828), 1074488.AGBX01000003_gene140
-	(degree 826) and 1074488.AGBX01000003_gene152 (degree 805).
+	The undirected graph Brachybacterium squillarum has 2752 nodes and 208374
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05505 and has 5 connected components, where the component
+	with most nodes has 2744 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 151.43,
+	and the node degree mode is 3. The top 5 most central nodes are 1074488.AGBX01000001_gene541
+	(degree 998), 1074488.AGBX01000007_gene1428 (degree 939), 1074488.AGBX01000005_gene2607
+	(degree 828), 1074488.AGBX01000003_gene140 (degree 826) and 1074488.AGBX01000003_gene152
+	(degree 805).
 	
 
 

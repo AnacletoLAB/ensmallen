@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:33.445017
 
-The undirected graph Beijerinckia indica has 3566 nodes and 334757 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05266 and
-has 16 connected components, where the component with most nodes has 3533 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 187.75, and the node degree mode is 1. The top 5 most central
-nodes are 395963.Bind_3900 (degree 1852), 395963.Bind_0846 (degree 1580), 395963.Bind_1894
-(degree 1456), 395963.Bind_2744 (degree 1270) and 395963.Bind_1102 (degree 1112).
+The undirected graph Beijerinckia indica has 3566 nodes and 334757 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05266 and has 16 connected components, where the component with most
+nodes has 3533 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 187.75, and
+the node degree mode is 1. The top 5 most central nodes are 395963.Bind_3900
+(degree 1852), 395963.Bind_0846 (degree 1580), 395963.Bind_1894 (degree
+1456), 395963.Bind_2744 (degree 1270) and 395963.Bind_1102 (degree 1112).
 
 
 References
@@ -106,13 +107,14 @@ def BeijerinckiaIndica(
 	
 	Datetime: 2021-02-02 20:41:33.445017
 	
-	The undirected graph Beijerinckia indica has 3566 nodes and 334757 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05266 and
-	has 16 connected components, where the component with most nodes has 3533 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 187.75, and the node degree mode is 1. The top 5 most central
-	nodes are 395963.Bind_3900 (degree 1852), 395963.Bind_0846 (degree 1580), 395963.Bind_1894
-	(degree 1456), 395963.Bind_2744 (degree 1270) and 395963.Bind_1102 (degree 1112).
+	The undirected graph Beijerinckia indica has 3566 nodes and 334757 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05266 and has 16 connected components, where the component with most
+	nodes has 3533 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 187.75, and
+	the node degree mode is 1. The top 5 most central nodes are 395963.Bind_3900
+	(degree 1852), 395963.Bind_0846 (degree 1580), 395963.Bind_1894 (degree
+	1456), 395963.Bind_2744 (degree 1270) and 395963.Bind_1102 (degree 1112).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:06:39.092008
 
-The undirected graph cage10 has 11397 nodes and 81021 weighted edges, of which 11397
-are self-loops. The graph is sparse as it has a density of 0.00116 and is connected,
-as it has a single component. The graph median node degree is 13, the mean node degree
-is 13.22, and the node degree mode is 11. The top 5 most central nodes are 10745
-(degree 25), 10739 (degree 25), 10746 (degree 25), 10740 (degree 25) and 10775 (degree
-25).
+The undirected graph cage10 has 11397 nodes and 81021 weighted edges, of
+which 11397 are self-loops. The graph is sparse as it has a density of
+0.00116 and is connected, as it has a single component. The graph median
+node degree is 13, the mean node degree is 13.22, and the node degree mode
+is 11. The top 5 most central nodes are 10745 (degree 25), 10739 (degree
+25), 10746 (degree 25), 10740 (degree 25) and 10775 (degree 25).
 
 
 References
@@ -102,12 +102,12 @@ def Cage10(
 	
 	Datetime: 2021-02-06 11:06:39.092008
 	
-	The undirected graph cage10 has 11397 nodes and 81021 weighted edges, of which 11397
-	are self-loops. The graph is sparse as it has a density of 0.00116 and is connected,
-	as it has a single component. The graph median node degree is 13, the mean node degree
-	is 13.22, and the node degree mode is 11. The top 5 most central nodes are 10745
-	(degree 25), 10739 (degree 25), 10746 (degree 25), 10740 (degree 25) and 10775 (degree
-	25).
+	The undirected graph cage10 has 11397 nodes and 81021 weighted edges, of
+	which 11397 are self-loops. The graph is sparse as it has a density of
+	0.00116 and is connected, as it has a single component. The graph median
+	node degree is 13, the mean node degree is 13.22, and the node degree mode
+	is 11. The top 5 most central nodes are 10745 (degree 25), 10739 (degree
+	25), 10746 (degree 25), 10740 (degree 25) and 10775 (degree 25).
 	
 
 

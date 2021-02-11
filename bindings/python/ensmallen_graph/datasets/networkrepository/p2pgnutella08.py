@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:28:50.947845
 
-The undirected graph p2p-Gnutella08 has 6301 nodes and 20777 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00105 and
-has 2 connected components, where the component with most nodes has 6299 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 3,
-the mean node degree is 6.59, and the node degree mode is 1. The top 5 most central
-nodes are 124 (degree 97), 128 (degree 95), 368 (degree 94), 425 (degree 92) and
-267 (degree 91).
+The undirected graph p2p-Gnutella08 has 6301 nodes and 20777 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00105 and has 2 connected components, where the component with most
+nodes has 6299 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 3, the mean node degree is 6.59, and the
+node degree mode is 1. The top 5 most central nodes are 124 (degree 97),
+128 (degree 95), 368 (degree 94), 425 (degree 92) and 267 (degree 91).
 
 
 References
@@ -103,13 +103,13 @@ def P2pGnutella08(
 	
 	Datetime: 2021-02-06 10:28:50.947845
 	
-	The undirected graph p2p-Gnutella08 has 6301 nodes and 20777 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00105 and
-	has 2 connected components, where the component with most nodes has 6299 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 3,
-	the mean node degree is 6.59, and the node degree mode is 1. The top 5 most central
-	nodes are 124 (degree 97), 128 (degree 95), 368 (degree 94), 425 (degree 92) and
-	267 (degree 91).
+	The undirected graph p2p-Gnutella08 has 6301 nodes and 20777 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00105 and has 2 connected components, where the component with most
+	nodes has 6299 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 3, the mean node degree is 6.59, and the
+	node degree mode is 1. The top 5 most central nodes are 124 (degree 97),
+	128 (degree 95), 368 (degree 94), 425 (degree 92) and 267 (degree 91).
 	
 
 

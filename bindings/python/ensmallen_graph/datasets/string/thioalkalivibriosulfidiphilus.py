@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:41:48.399778
 
-The undirected graph Thioalkalivibrio sulfidiphilus has 3269 nodes and 194284 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03637
-and has 4 connected components, where the component with most nodes has 3261 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 118.86, and the node degree mode is 4. The top 5 most
-central nodes are 396588.Tgr7_0087 (degree 1068), 396588.Tgr7_1036 (degree 871),
-396588.Tgr7_2622 (degree 866), 396588.Tgr7_1035 (degree 783) and 396588.Tgr7_1559
-(degree 727).
+The undirected graph Thioalkalivibrio sulfidiphilus has 3269 nodes and
+194284 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03637 and has 4 connected components, where the
+component with most nodes has 3261 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 95, the mean node degree
+is 118.86, and the node degree mode is 4. The top 5 most central nodes
+are 396588.Tgr7_0087 (degree 1068), 396588.Tgr7_1036 (degree 871), 396588.Tgr7_2622
+(degree 866), 396588.Tgr7_1035 (degree 783) and 396588.Tgr7_1559 (degree
+727).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSulfidiphilus(
 	
 	Datetime: 2021-02-02 20:41:48.399778
 	
-	The undirected graph Thioalkalivibrio sulfidiphilus has 3269 nodes and 194284 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03637
-	and has 4 connected components, where the component with most nodes has 3261 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 118.86, and the node degree mode is 4. The top 5 most
-	central nodes are 396588.Tgr7_0087 (degree 1068), 396588.Tgr7_1036 (degree 871),
-	396588.Tgr7_2622 (degree 866), 396588.Tgr7_1035 (degree 783) and 396588.Tgr7_1559
-	(degree 727).
+	The undirected graph Thioalkalivibrio sulfidiphilus has 3269 nodes and
+	194284 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03637 and has 4 connected components, where the
+	component with most nodes has 3261 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 95, the mean node degree
+	is 118.86, and the node degree mode is 4. The top 5 most central nodes
+	are 396588.Tgr7_0087 (degree 1068), 396588.Tgr7_1036 (degree 871), 396588.Tgr7_2622
+	(degree 866), 396588.Tgr7_1035 (degree 783) and 396588.Tgr7_1559 (degree
+	727).
 	
 
 

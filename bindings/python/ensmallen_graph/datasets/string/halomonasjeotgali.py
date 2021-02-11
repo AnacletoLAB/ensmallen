@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:17.268794
 
-The undirected graph Halomonas jeotgali has 2443 nodes and 218759 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07334 and
-has 5 connected components, where the component with most nodes has 2434 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 179.09, and the node degree mode is 21. The top 5 most central
-nodes are 1238190.AMQY01000011_gene1945 (degree 1185), 1238190.AMQY01000011_gene1848
-(degree 957), 1238190.AMQY01000011_gene2079 (degree 882), 1238190.AMQY01000014_gene923
-(degree 866) and 1238190.AMQY01000014_gene912 (degree 835).
+The undirected graph Halomonas jeotgali has 2443 nodes and 218759 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07334 and has 5 connected components, where the component with most
+nodes has 2434 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 179.09, and
+the node degree mode is 21. The top 5 most central nodes are 1238190.AMQY01000011_gene1945
+(degree 1185), 1238190.AMQY01000011_gene1848 (degree 957), 1238190.AMQY01000011_gene2079
+(degree 882), 1238190.AMQY01000014_gene923 (degree 866) and 1238190.AMQY01000014_gene912
+(degree 835).
 
 
 References
@@ -107,14 +108,15 @@ def HalomonasJeotgali(
 	
 	Datetime: 2021-02-02 23:32:17.268794
 	
-	The undirected graph Halomonas jeotgali has 2443 nodes and 218759 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07334 and
-	has 5 connected components, where the component with most nodes has 2434 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 179.09, and the node degree mode is 21. The top 5 most central
-	nodes are 1238190.AMQY01000011_gene1945 (degree 1185), 1238190.AMQY01000011_gene1848
-	(degree 957), 1238190.AMQY01000011_gene2079 (degree 882), 1238190.AMQY01000014_gene923
-	(degree 866) and 1238190.AMQY01000014_gene912 (degree 835).
+	The undirected graph Halomonas jeotgali has 2443 nodes and 218759 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07334 and has 5 connected components, where the component with most
+	nodes has 2434 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 179.09, and
+	the node degree mode is 21. The top 5 most central nodes are 1238190.AMQY01000011_gene1945
+	(degree 1185), 1238190.AMQY01000011_gene1848 (degree 957), 1238190.AMQY01000011_gene2079
+	(degree 882), 1238190.AMQY01000014_gene923 (degree 866) and 1238190.AMQY01000014_gene912
+	(degree 835).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:08.819493
 
-The undirected graph Caenispirillum salinarum has 4531 nodes and 622030 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06061
-and has 9 connected components, where the component with most nodes has 4513 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 232, the mean node degree is 274.57, and the node degree mode is 3. The top 5
-most central nodes are 1238182.C882_2106 (degree 1764), 1238182.C882_3046 (degree
-1476), 1238182.C882_0513 (degree 1439), 1238182.C882_3748 (degree 1357) and 1238182.C882_4396
-(degree 1343).
+The undirected graph Caenispirillum salinarum has 4531 nodes and 622030
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06061 and has 9 connected components, where the component
+with most nodes has 4513 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 232, the mean node degree is 274.57,
+and the node degree mode is 3. The top 5 most central nodes are 1238182.C882_2106
+(degree 1764), 1238182.C882_3046 (degree 1476), 1238182.C882_0513 (degree
+1439), 1238182.C882_3748 (degree 1357) and 1238182.C882_4396 (degree 1343).
 
 
 References
@@ -107,14 +107,14 @@ def CaenispirillumSalinarum(
 	
 	Datetime: 2021-02-02 23:32:08.819493
 	
-	The undirected graph Caenispirillum salinarum has 4531 nodes and 622030 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06061
-	and has 9 connected components, where the component with most nodes has 4513 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 232, the mean node degree is 274.57, and the node degree mode is 3. The top 5
-	most central nodes are 1238182.C882_2106 (degree 1764), 1238182.C882_3046 (degree
-	1476), 1238182.C882_0513 (degree 1439), 1238182.C882_3748 (degree 1357) and 1238182.C882_4396
-	(degree 1343).
+	The undirected graph Caenispirillum salinarum has 4531 nodes and 622030
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06061 and has 9 connected components, where the component
+	with most nodes has 4513 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 232, the mean node degree is 274.57,
+	and the node degree mode is 3. The top 5 most central nodes are 1238182.C882_2106
+	(degree 1764), 1238182.C882_3046 (degree 1476), 1238182.C882_0513 (degree
+	1439), 1238182.C882_3748 (degree 1357) and 1238182.C882_4396 (degree 1343).
 	
 
 

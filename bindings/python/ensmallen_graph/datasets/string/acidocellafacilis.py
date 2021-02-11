@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:35:39.848095
 
-The undirected graph Acidocella facilis has 3049 nodes and 317696 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06837 and
-has 5 connected components, where the component with most nodes has 3041 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 208.39, and the node degree mode is 3. The top 5 most central
-nodes are 1408419.JHYG01000004_gene1531 (degree 1351), 1408419.JHYG01000003_gene339
-(degree 1188), 1408419.JHYG01000003_gene336 (degree 1139), 1408419.JHYG01000017_gene762
-(degree 1033) and 1408419.JHYG01000009_gene95 (degree 1011).
+The undirected graph Acidocella facilis has 3049 nodes and 317696 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06837 and has 5 connected components, where the component with most
+nodes has 3041 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 208.39, and
+the node degree mode is 3. The top 5 most central nodes are 1408419.JHYG01000004_gene1531
+(degree 1351), 1408419.JHYG01000003_gene339 (degree 1188), 1408419.JHYG01000003_gene336
+(degree 1139), 1408419.JHYG01000017_gene762 (degree 1033) and 1408419.JHYG01000009_gene95
+(degree 1011).
 
 
 References
@@ -107,14 +108,15 @@ def AcidocellaFacilis(
 	
 	Datetime: 2021-02-03 22:35:39.848095
 	
-	The undirected graph Acidocella facilis has 3049 nodes and 317696 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06837 and
-	has 5 connected components, where the component with most nodes has 3041 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 208.39, and the node degree mode is 3. The top 5 most central
-	nodes are 1408419.JHYG01000004_gene1531 (degree 1351), 1408419.JHYG01000003_gene339
-	(degree 1188), 1408419.JHYG01000003_gene336 (degree 1139), 1408419.JHYG01000017_gene762
-	(degree 1033) and 1408419.JHYG01000009_gene95 (degree 1011).
+	The undirected graph Acidocella facilis has 3049 nodes and 317696 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06837 and has 5 connected components, where the component with most
+	nodes has 3041 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 208.39, and
+	the node degree mode is 3. The top 5 most central nodes are 1408419.JHYG01000004_gene1531
+	(degree 1351), 1408419.JHYG01000003_gene339 (degree 1188), 1408419.JHYG01000003_gene336
+	(degree 1139), 1408419.JHYG01000017_gene762 (degree 1033) and 1408419.JHYG01000009_gene95
+	(degree 1011).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:16.527114
 
-The undirected graph Flavobacterium sasangense has 2928 nodes and 186876 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04361
-and has 11 connected components, where the component with most nodes has 2900 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 127.65, and the node degree mode is 3. The top 5
-most central nodes are 1121896.JMLU01000001_gene1118 (degree 997), 1121896.JMLU01000011_gene1536
-(degree 786), 1121896.JMLU01000004_gene2699 (degree 786), 1121896.JMLU01000041_gene560
-(degree 781) and 1121896.JMLU01000008_gene1766 (degree 672).
+The undirected graph Flavobacterium sasangense has 2928 nodes and 186876
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04361 and has 11 connected components, where the component
+with most nodes has 2900 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 127.65,
+and the node degree mode is 3. The top 5 most central nodes are 1121896.JMLU01000001_gene1118
+(degree 997), 1121896.JMLU01000011_gene1536 (degree 786), 1121896.JMLU01000004_gene2699
+(degree 786), 1121896.JMLU01000041_gene560 (degree 781) and 1121896.JMLU01000008_gene1766
+(degree 672).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSasangense(
 	
 	Datetime: 2021-02-02 22:38:16.527114
 	
-	The undirected graph Flavobacterium sasangense has 2928 nodes and 186876 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04361
-	and has 11 connected components, where the component with most nodes has 2900 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 127.65, and the node degree mode is 3. The top 5
-	most central nodes are 1121896.JMLU01000001_gene1118 (degree 997), 1121896.JMLU01000011_gene1536
-	(degree 786), 1121896.JMLU01000004_gene2699 (degree 786), 1121896.JMLU01000041_gene560
-	(degree 781) and 1121896.JMLU01000008_gene1766 (degree 672).
+	The undirected graph Flavobacterium sasangense has 2928 nodes and 186876
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04361 and has 11 connected components, where the component
+	with most nodes has 2900 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 127.65,
+	and the node degree mode is 3. The top 5 most central nodes are 1121896.JMLU01000001_gene1118
+	(degree 997), 1121896.JMLU01000011_gene1536 (degree 786), 1121896.JMLU01000004_gene2699
+	(degree 786), 1121896.JMLU01000041_gene560 (degree 781) and 1121896.JMLU01000008_gene1766
+	(degree 672).
 	
 
 

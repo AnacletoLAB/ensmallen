@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:23.933494
 
-The undirected graph Desulfobacca acetoxidans has 2826 nodes and 214621 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05377
-and has 6 connected components, where the component with most nodes has 2816 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 151.89, and the node degree mode is 2. The top 5
-most central nodes are 880072.Desac_0282 (degree 1317), 880072.Desac_0096 (degree
-1291), 880072.Desac_0173 (degree 1184), 880072.Desac_0373 (degree 947) and 880072.Desac_1090
-(degree 921).
+The undirected graph Desulfobacca acetoxidans has 2826 nodes and 214621
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05377 and has 6 connected components, where the component
+with most nodes has 2816 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 124, the mean node degree is 151.89,
+and the node degree mode is 2. The top 5 most central nodes are 880072.Desac_0282
+(degree 1317), 880072.Desac_0096 (degree 1291), 880072.Desac_0173 (degree
+1184), 880072.Desac_0373 (degree 947) and 880072.Desac_1090 (degree 921).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfobaccaAcetoxidans(
 	
 	Datetime: 2021-02-02 21:50:23.933494
 	
-	The undirected graph Desulfobacca acetoxidans has 2826 nodes and 214621 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05377
-	and has 6 connected components, where the component with most nodes has 2816 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 151.89, and the node degree mode is 2. The top 5
-	most central nodes are 880072.Desac_0282 (degree 1317), 880072.Desac_0096 (degree
-	1291), 880072.Desac_0173 (degree 1184), 880072.Desac_0373 (degree 947) and 880072.Desac_1090
-	(degree 921).
+	The undirected graph Desulfobacca acetoxidans has 2826 nodes and 214621
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05377 and has 6 connected components, where the component
+	with most nodes has 2816 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 124, the mean node degree is 151.89,
+	and the node degree mode is 2. The top 5 most central nodes are 880072.Desac_0282
+	(degree 1317), 880072.Desac_0096 (degree 1291), 880072.Desac_0173 (degree
+	1184), 880072.Desac_0373 (degree 947) and 880072.Desac_1090 (degree 921).
 	
 
 

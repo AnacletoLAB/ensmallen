@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:20:22.579700
 
-The undirected graph cond-mat has 16264 nodes and 47594 weighted edges, of which
-none are self-loops. The graph is quite sparse as it has a density of 0.00036 and
-has 726 connected components, where the component with most nodes has 13861 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 4, the mean node degree is 5.85, and the node degree mode is 2. The top 5 most
-central nodes are 4474 (degree 107), 7315 (degree 103), 4034 (degree 96), 5489 (degree
-94) and 4673 (degree 84).
+The undirected graph cond-mat has 16264 nodes and 47594 weighted edges,
+of which none are self-loops. The graph is quite sparse as it has a density
+of 0.00036 and has 726 connected components, where the component with most
+nodes has 13861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 4, the mean node degree is 5.85, and the
+node degree mode is 2. The top 5 most central nodes are 4474 (degree 107),
+7315 (degree 103), 4034 (degree 96), 5489 (degree 94) and 4673 (degree
+84).
 
 
 References
@@ -103,13 +104,14 @@ def CondMat(
 	
 	Datetime: 2021-02-06 10:20:22.579700
 	
-	The undirected graph cond-mat has 16264 nodes and 47594 weighted edges, of which
-	none are self-loops. The graph is quite sparse as it has a density of 0.00036 and
-	has 726 connected components, where the component with most nodes has 13861 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 4, the mean node degree is 5.85, and the node degree mode is 2. The top 5 most
-	central nodes are 4474 (degree 107), 7315 (degree 103), 4034 (degree 96), 5489 (degree
-	94) and 4673 (degree 84).
+	The undirected graph cond-mat has 16264 nodes and 47594 weighted edges,
+	of which none are self-loops. The graph is quite sparse as it has a density
+	of 0.00036 and has 726 connected components, where the component with most
+	nodes has 13861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 4, the mean node degree is 5.85, and the
+	node degree mode is 2. The top 5 most central nodes are 4474 (degree 107),
+	7315 (degree 103), 4034 (degree 96), 5489 (degree 94) and 4673 (degree
+	84).
 	
 
 

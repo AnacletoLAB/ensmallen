@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:39.257137
 
-The undirected graph Leptospirillum ferrooxidans has 2395 nodes and 142034 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04954
-and has 15 connected components, where the component with most nodes has 2364 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 118.61, and the node degree mode is 1. The top 5 most
-central nodes are 1162668.LFE_0189 (degree 956), 1162668.LFE_1087 (degree 870), 1162668.LFE_1902
-(degree 743), 1162668.LFE_0995 (degree 698) and 1162668.LFE_1136 (degree 664).
+The undirected graph Leptospirillum ferrooxidans has 2395 nodes and 142034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04954 and has 15 connected components, where the component
+with most nodes has 2364 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 118.61,
+and the node degree mode is 1. The top 5 most central nodes are 1162668.LFE_0189
+(degree 956), 1162668.LFE_1087 (degree 870), 1162668.LFE_1902 (degree 743),
+1162668.LFE_0995 (degree 698) and 1162668.LFE_1136 (degree 664).
 
 
 References
@@ -106,13 +107,14 @@ def LeptospirillumFerrooxidans(
 	
 	Datetime: 2021-02-02 23:04:39.257137
 	
-	The undirected graph Leptospirillum ferrooxidans has 2395 nodes and 142034 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04954
-	and has 15 connected components, where the component with most nodes has 2364 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 118.61, and the node degree mode is 1. The top 5 most
-	central nodes are 1162668.LFE_0189 (degree 956), 1162668.LFE_1087 (degree 870), 1162668.LFE_1902
-	(degree 743), 1162668.LFE_0995 (degree 698) and 1162668.LFE_1136 (degree 664).
+	The undirected graph Leptospirillum ferrooxidans has 2395 nodes and 142034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04954 and has 15 connected components, where the component
+	with most nodes has 2364 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 118.61,
+	and the node degree mode is 1. The top 5 most central nodes are 1162668.LFE_0189
+	(degree 956), 1162668.LFE_1087 (degree 870), 1162668.LFE_1902 (degree 743),
+	1162668.LFE_0995 (degree 698) and 1162668.LFE_1136 (degree 664).
 	
 
 

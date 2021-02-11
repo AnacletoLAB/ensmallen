@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:16.582685
 
-The undirected graph Nocardia sp. BMG51109 has 7260 nodes and 1126135 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04274 and
-has 55 connected components, where the component with most nodes has 7120 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 254,
-the mean node degree is 310.23, and the node degree mode is 2. The top 5 most central
-nodes are 1056816.JAFQ01000004_gene936 (degree 2298), 1056816.JAFQ01000004_gene3173
-(degree 2234), 1056816.JAFQ01000004_gene878 (degree 2186), 1056816.JAFQ01000004_gene5868
-(degree 2114) and 1056816.JAFQ01000004_gene3296 (degree 2112).
+The undirected graph Nocardia sp. BMG51109 has 7260 nodes and 1126135 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04274 and has 55 connected components, where the component with most
+nodes has 7120 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 254, the mean node degree is 310.23, and
+the node degree mode is 2. The top 5 most central nodes are 1056816.JAFQ01000004_gene936
+(degree 2298), 1056816.JAFQ01000004_gene3173 (degree 2234), 1056816.JAFQ01000004_gene878
+(degree 2186), 1056816.JAFQ01000004_gene5868 (degree 2114) and 1056816.JAFQ01000004_gene3296
+(degree 2112).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaSp.Bmg51109(
 	
 	Datetime: 2021-02-02 22:18:16.582685
 	
-	The undirected graph Nocardia sp. BMG51109 has 7260 nodes and 1126135 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04274 and
-	has 55 connected components, where the component with most nodes has 7120 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 254,
-	the mean node degree is 310.23, and the node degree mode is 2. The top 5 most central
-	nodes are 1056816.JAFQ01000004_gene936 (degree 2298), 1056816.JAFQ01000004_gene3173
-	(degree 2234), 1056816.JAFQ01000004_gene878 (degree 2186), 1056816.JAFQ01000004_gene5868
-	(degree 2114) and 1056816.JAFQ01000004_gene3296 (degree 2112).
+	The undirected graph Nocardia sp. BMG51109 has 7260 nodes and 1126135 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04274 and has 55 connected components, where the component with most
+	nodes has 7120 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 254, the mean node degree is 310.23, and
+	the node degree mode is 2. The top 5 most central nodes are 1056816.JAFQ01000004_gene936
+	(degree 2298), 1056816.JAFQ01000004_gene3173 (degree 2234), 1056816.JAFQ01000004_gene878
+	(degree 2186), 1056816.JAFQ01000004_gene5868 (degree 2114) and 1056816.JAFQ01000004_gene3296
+	(degree 2112).
 	
 
 

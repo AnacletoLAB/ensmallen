@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:29.759742
 
-The undirected graph Gammaproteobacteria bacterium IMCC3088 has 2822 nodes and 216892
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05449 and has 14 connected components, where the component with most nodes has
-2793 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 127, the mean node degree is 153.72, and the node degree mode is 2. The
-top 5 most central nodes are 876044.IMCC3088_2526 (degree 1033), 876044.IMCC3088_1351
-(degree 834), 876044.IMCC3088_2381 (degree 822), 876044.IMCC3088_1828 (degree 812)
-and 876044.IMCC3088_1085 (degree 773).
+The undirected graph Gammaproteobacteria bacterium IMCC3088 has 2822 nodes
+and 216892 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05449 and has 14 connected components, where the
+component with most nodes has 2793 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+is 153.72, and the node degree mode is 2. The top 5 most central nodes
+are 876044.IMCC3088_2526 (degree 1033), 876044.IMCC3088_1351 (degree 834),
+876044.IMCC3088_2381 (degree 822), 876044.IMCC3088_1828 (degree 812) and
+876044.IMCC3088_1085 (degree 773).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumImcc3088(
 	
 	Datetime: 2021-02-02 21:49:29.759742
 	
-	The undirected graph Gammaproteobacteria bacterium IMCC3088 has 2822 nodes and 216892
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05449 and has 14 connected components, where the component with most nodes has
-	2793 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 127, the mean node degree is 153.72, and the node degree mode is 2. The
-	top 5 most central nodes are 876044.IMCC3088_2526 (degree 1033), 876044.IMCC3088_1351
-	(degree 834), 876044.IMCC3088_2381 (degree 822), 876044.IMCC3088_1828 (degree 812)
-	and 876044.IMCC3088_1085 (degree 773).
+	The undirected graph Gammaproteobacteria bacterium IMCC3088 has 2822 nodes
+	and 216892 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05449 and has 14 connected components, where the
+	component with most nodes has 2793 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 153.72, and the node degree mode is 2. The top 5 most central nodes
+	are 876044.IMCC3088_2526 (degree 1033), 876044.IMCC3088_1351 (degree 834),
+	876044.IMCC3088_2381 (degree 822), 876044.IMCC3088_1828 (degree 812) and
+	876044.IMCC3088_1085 (degree 773).
 	
 
 

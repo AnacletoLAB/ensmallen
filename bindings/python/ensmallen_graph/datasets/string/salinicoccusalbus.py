@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:03.563222
 
-The undirected graph Salinicoccus albus has 2587 nodes and 174476 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-has 19 connected components, where the component with most nodes has 2549 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 134.89, and the node degree mode is 1. The top 5 most central
-nodes are 1123230.ARQJ01000027_gene1471 (degree 940), 1123230.ARQJ01000025_gene2430
-(degree 756), 1123230.ARQJ01000033_gene1570 (degree 705), 1123230.ARQJ01000024_gene822
-(degree 660) and 1123230.ARQJ01000033_gene1630 (degree 627).
+The undirected graph Salinicoccus albus has 2587 nodes and 174476 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05216 and has 19 connected components, where the component with most
+nodes has 2549 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 134.89, and
+the node degree mode is 1. The top 5 most central nodes are 1123230.ARQJ01000027_gene1471
+(degree 940), 1123230.ARQJ01000025_gene2430 (degree 756), 1123230.ARQJ01000033_gene1570
+(degree 705), 1123230.ARQJ01000024_gene822 (degree 660) and 1123230.ARQJ01000033_gene1630
+(degree 627).
 
 
 References
@@ -107,14 +108,15 @@ def SalinicoccusAlbus(
 	
 	Datetime: 2021-02-02 22:48:03.563222
 	
-	The undirected graph Salinicoccus albus has 2587 nodes and 174476 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-	has 19 connected components, where the component with most nodes has 2549 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 134.89, and the node degree mode is 1. The top 5 most central
-	nodes are 1123230.ARQJ01000027_gene1471 (degree 940), 1123230.ARQJ01000025_gene2430
-	(degree 756), 1123230.ARQJ01000033_gene1570 (degree 705), 1123230.ARQJ01000024_gene822
-	(degree 660) and 1123230.ARQJ01000033_gene1630 (degree 627).
+	The undirected graph Salinicoccus albus has 2587 nodes and 174476 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05216 and has 19 connected components, where the component with most
+	nodes has 2549 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 134.89, and
+	the node degree mode is 1. The top 5 most central nodes are 1123230.ARQJ01000027_gene1471
+	(degree 940), 1123230.ARQJ01000025_gene2430 (degree 756), 1123230.ARQJ01000033_gene1570
+	(degree 705), 1123230.ARQJ01000024_gene822 (degree 660) and 1123230.ARQJ01000033_gene1630
+	(degree 627).
 	
 
 

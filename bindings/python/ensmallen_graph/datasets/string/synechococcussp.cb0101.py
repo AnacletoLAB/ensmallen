@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:26.525579
 
-The undirected graph Synechococcus sp. CB0101 has 2719 nodes and 197568 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05347
-and has 25 connected components, where the component with most nodes has 2666 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 145.32, and the node degree mode is 2. The top 5
-most central nodes are 232348.ADXL01000068_gene284 (degree 1052), 232348.ADXL01000093_gene384
-(degree 886), 232348.ADXL01000051_gene2212 (degree 832), 232348.ADXL01000051_gene2223
-(degree 772) and 232348.ADXL01000057_gene2284 (degree 731).
+The undirected graph Synechococcus sp. CB0101 has 2719 nodes and 197568
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05347 and has 25 connected components, where the component
+with most nodes has 2666 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 145.32,
+and the node degree mode is 2. The top 5 most central nodes are 232348.ADXL01000068_gene284
+(degree 1052), 232348.ADXL01000093_gene384 (degree 886), 232348.ADXL01000051_gene2212
+(degree 832), 232348.ADXL01000051_gene2223 (degree 772) and 232348.ADXL01000057_gene2284
+(degree 731).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Cb0101(
 	
 	Datetime: 2021-02-02 20:07:26.525579
 	
-	The undirected graph Synechococcus sp. CB0101 has 2719 nodes and 197568 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05347
-	and has 25 connected components, where the component with most nodes has 2666 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 145.32, and the node degree mode is 2. The top 5
-	most central nodes are 232348.ADXL01000068_gene284 (degree 1052), 232348.ADXL01000093_gene384
-	(degree 886), 232348.ADXL01000051_gene2212 (degree 832), 232348.ADXL01000051_gene2223
-	(degree 772) and 232348.ADXL01000057_gene2284 (degree 731).
+	The undirected graph Synechococcus sp. CB0101 has 2719 nodes and 197568
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05347 and has 25 connected components, where the component
+	with most nodes has 2666 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 145.32,
+	and the node degree mode is 2. The top 5 most central nodes are 232348.ADXL01000068_gene284
+	(degree 1052), 232348.ADXL01000093_gene384 (degree 886), 232348.ADXL01000051_gene2212
+	(degree 832), 232348.ADXL01000051_gene2223 (degree 772) and 232348.ADXL01000057_gene2284
+	(degree 731).
 	
 
 

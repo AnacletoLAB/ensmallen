@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:12.304133
 
-The undirected graph Desulfovirgula thermocuniculi has 3073 nodes and 334180 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07080
-and has 12 connected components, where the component with most nodes has 3044 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 180, the mean node degree is 217.49, and the node degree mode is 3. The top 5
-most central nodes are 1121468.AUBR01000014_gene2205 (degree 1222), 1121468.AUBR01000033_gene1205
-(degree 1070), 1121468.AUBR01000031_gene1267 (degree 1067), 1121468.AUBR01000019_gene2662
-(degree 1067) and 1121468.AUBR01000082_gene846 (degree 1037).
+The undirected graph Desulfovirgula thermocuniculi has 3073 nodes and 334180
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07080 and has 12 connected components, where the component
+with most nodes has 3044 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 217.49,
+and the node degree mode is 3. The top 5 most central nodes are 1121468.AUBR01000014_gene2205
+(degree 1222), 1121468.AUBR01000033_gene1205 (degree 1070), 1121468.AUBR01000031_gene1267
+(degree 1067), 1121468.AUBR01000019_gene2662 (degree 1067) and 1121468.AUBR01000082_gene846
+(degree 1037).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovirgulaThermocuniculi(
 	
 	Datetime: 2021-02-02 22:37:12.304133
 	
-	The undirected graph Desulfovirgula thermocuniculi has 3073 nodes and 334180 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07080
-	and has 12 connected components, where the component with most nodes has 3044 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 180, the mean node degree is 217.49, and the node degree mode is 3. The top 5
-	most central nodes are 1121468.AUBR01000014_gene2205 (degree 1222), 1121468.AUBR01000033_gene1205
-	(degree 1070), 1121468.AUBR01000031_gene1267 (degree 1067), 1121468.AUBR01000019_gene2662
-	(degree 1067) and 1121468.AUBR01000082_gene846 (degree 1037).
+	The undirected graph Desulfovirgula thermocuniculi has 3073 nodes and 334180
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07080 and has 12 connected components, where the component
+	with most nodes has 3044 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 217.49,
+	and the node degree mode is 3. The top 5 most central nodes are 1121468.AUBR01000014_gene2205
+	(degree 1222), 1121468.AUBR01000033_gene1205 (degree 1070), 1121468.AUBR01000031_gene1267
+	(degree 1067), 1121468.AUBR01000019_gene2662 (degree 1067) and 1121468.AUBR01000082_gene846
+	(degree 1037).
 	
 
 

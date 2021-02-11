@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:15:56.441310
 
-The undirected graph Luteibacter sp. 9135 has 3515 nodes and 401217 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06497 and
-has 11 connected components, where the component with most nodes has 3492 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 228.29, and the node degree mode is 4. The top 5 most central
-nodes are 1500893.JQNB01000001_gene2760 (degree 1251), 1500893.JQNB01000001_gene583
-(degree 1197), 1500893.JQNB01000001_gene2827 (degree 1153), 1500893.JQNB01000001_gene903
-(degree 1148) and 1500893.JQNB01000001_gene172 (degree 1105).
+The undirected graph Luteibacter sp. 9135 has 3515 nodes and 401217 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06497 and has 11 connected components, where the component with most
+nodes has 3492 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 228.29, and
+the node degree mode is 4. The top 5 most central nodes are 1500893.JQNB01000001_gene2760
+(degree 1251), 1500893.JQNB01000001_gene583 (degree 1197), 1500893.JQNB01000001_gene2827
+(degree 1153), 1500893.JQNB01000001_gene903 (degree 1148) and 1500893.JQNB01000001_gene172
+(degree 1105).
 
 
 References
@@ -107,14 +108,15 @@ def LuteibacterSp.9135(
 	
 	Datetime: 2021-02-03 23:15:56.441310
 	
-	The undirected graph Luteibacter sp. 9135 has 3515 nodes and 401217 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06497 and
-	has 11 connected components, where the component with most nodes has 3492 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 228.29, and the node degree mode is 4. The top 5 most central
-	nodes are 1500893.JQNB01000001_gene2760 (degree 1251), 1500893.JQNB01000001_gene583
-	(degree 1197), 1500893.JQNB01000001_gene2827 (degree 1153), 1500893.JQNB01000001_gene903
-	(degree 1148) and 1500893.JQNB01000001_gene172 (degree 1105).
+	The undirected graph Luteibacter sp. 9135 has 3515 nodes and 401217 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06497 and has 11 connected components, where the component with most
+	nodes has 3492 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 228.29, and
+	the node degree mode is 4. The top 5 most central nodes are 1500893.JQNB01000001_gene2760
+	(degree 1251), 1500893.JQNB01000001_gene583 (degree 1197), 1500893.JQNB01000001_gene2827
+	(degree 1153), 1500893.JQNB01000001_gene903 (degree 1148) and 1500893.JQNB01000001_gene172
+	(degree 1105).
 	
 
 

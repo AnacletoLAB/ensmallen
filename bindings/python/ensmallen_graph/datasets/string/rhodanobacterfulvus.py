@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:55.222436
 
-The undirected graph Rhodanobacter fulvus has 3370 nodes and 334840 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05898 and
-has 7 connected components, where the component with most nodes has 3354 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 198.72, and the node degree mode is 2. The top 5 most central
-nodes are 1163408.UU9_09497 (degree 1148), 1163408.UU9_14275 (degree 1081), 1163408.UU9_05029
-(degree 1021), 1163408.UU9_05284 (degree 1011) and 1163408.UU9_04467 (degree 1003).
+The undirected graph Rhodanobacter fulvus has 3370 nodes and 334840 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05898 and has 7 connected components, where the component with most
+nodes has 3354 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 198.72, and
+the node degree mode is 2. The top 5 most central nodes are 1163408.UU9_09497
+(degree 1148), 1163408.UU9_14275 (degree 1081), 1163408.UU9_05029 (degree
+1021), 1163408.UU9_05284 (degree 1011) and 1163408.UU9_04467 (degree 1003).
 
 
 References
@@ -106,13 +107,14 @@ def RhodanobacterFulvus(
 	
 	Datetime: 2021-02-02 23:04:55.222436
 	
-	The undirected graph Rhodanobacter fulvus has 3370 nodes and 334840 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05898 and
-	has 7 connected components, where the component with most nodes has 3354 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 198.72, and the node degree mode is 2. The top 5 most central
-	nodes are 1163408.UU9_09497 (degree 1148), 1163408.UU9_14275 (degree 1081), 1163408.UU9_05029
-	(degree 1021), 1163408.UU9_05284 (degree 1011) and 1163408.UU9_04467 (degree 1003).
+	The undirected graph Rhodanobacter fulvus has 3370 nodes and 334840 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05898 and has 7 connected components, where the component with most
+	nodes has 3354 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 198.72, and
+	the node degree mode is 2. The top 5 most central nodes are 1163408.UU9_09497
+	(degree 1148), 1163408.UU9_14275 (degree 1081), 1163408.UU9_05029 (degree
+	1021), 1163408.UU9_05284 (degree 1011) and 1163408.UU9_04467 (degree 1003).
 	
 
 

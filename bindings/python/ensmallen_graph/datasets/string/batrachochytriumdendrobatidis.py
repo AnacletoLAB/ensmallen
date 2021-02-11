@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:19.072088
 
-The undirected graph Batrachochytrium dendrobatidis has 5091 nodes and 633971 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04893
-and has 7 connected components, where the component with most nodes has 5079 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 193, the mean node degree is 249.06, and the node degree mode is 1. The top 5
-most central nodes are 109871.XP_006680779.1 (degree 1894), 109871.XP_006677186.1
-(degree 1503), 109871.XP_006679540.1 (degree 1486), 109871.XP_006683416.1 (degree
+The undirected graph Batrachochytrium dendrobatidis has 5091 nodes and
+633971 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04893 and has 7 connected components, where the
+component with most nodes has 5079 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+is 249.06, and the node degree mode is 1. The top 5 most central nodes
+are 109871.XP_006680779.1 (degree 1894), 109871.XP_006677186.1 (degree
+1503), 109871.XP_006679540.1 (degree 1486), 109871.XP_006683416.1 (degree
 1408) and 109871.XP_006675784.1 (degree 1325).
 
 
@@ -107,13 +108,14 @@ def BatrachochytriumDendrobatidis(
 	
 	Datetime: 2021-02-02 19:46:19.072088
 	
-	The undirected graph Batrachochytrium dendrobatidis has 5091 nodes and 633971 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04893
-	and has 7 connected components, where the component with most nodes has 5079 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 193, the mean node degree is 249.06, and the node degree mode is 1. The top 5
-	most central nodes are 109871.XP_006680779.1 (degree 1894), 109871.XP_006677186.1
-	(degree 1503), 109871.XP_006679540.1 (degree 1486), 109871.XP_006683416.1 (degree
+	The undirected graph Batrachochytrium dendrobatidis has 5091 nodes and
+	633971 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04893 and has 7 connected components, where the
+	component with most nodes has 5079 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+	is 249.06, and the node degree mode is 1. The top 5 most central nodes
+	are 109871.XP_006680779.1 (degree 1894), 109871.XP_006677186.1 (degree
+	1503), 109871.XP_006679540.1 (degree 1486), 109871.XP_006683416.1 (degree
 	1408) and 109871.XP_006675784.1 (degree 1325).
 	
 

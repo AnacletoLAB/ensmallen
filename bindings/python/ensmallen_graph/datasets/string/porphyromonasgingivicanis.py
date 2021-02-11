@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:14:50.809896
 
-The undirected graph Porphyromonas gingivicanis has 1402 nodes and 78965 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08040
-and has 10 connected components, where the component with most nodes has 1376 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 100, the mean node degree is 112.65, and the node degree mode is 2. The top 5
-most central nodes are 266762.HQ36_01520 (degree 666), 266762.HQ36_03545 (degree
-594), 266762.HQ36_05865 (degree 580), 266762.HQ36_04670 (degree 535) and 266762.HQ36_04300
-(degree 520).
+The undirected graph Porphyromonas gingivicanis has 1402 nodes and 78965
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08040 and has 10 connected components, where the component
+with most nodes has 1376 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 100, the mean node degree is 112.65,
+and the node degree mode is 2. The top 5 most central nodes are 266762.HQ36_01520
+(degree 666), 266762.HQ36_03545 (degree 594), 266762.HQ36_05865 (degree
+580), 266762.HQ36_04670 (degree 535) and 266762.HQ36_04300 (degree 520).
 
 
 References
@@ -107,14 +107,14 @@ def PorphyromonasGingivicanis(
 	
 	Datetime: 2021-02-02 20:14:50.809896
 	
-	The undirected graph Porphyromonas gingivicanis has 1402 nodes and 78965 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08040
-	and has 10 connected components, where the component with most nodes has 1376 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 100, the mean node degree is 112.65, and the node degree mode is 2. The top 5
-	most central nodes are 266762.HQ36_01520 (degree 666), 266762.HQ36_03545 (degree
-	594), 266762.HQ36_05865 (degree 580), 266762.HQ36_04670 (degree 535) and 266762.HQ36_04300
-	(degree 520).
+	The undirected graph Porphyromonas gingivicanis has 1402 nodes and 78965
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08040 and has 10 connected components, where the component
+	with most nodes has 1376 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 100, the mean node degree is 112.65,
+	and the node degree mode is 2. The top 5 most central nodes are 266762.HQ36_01520
+	(degree 666), 266762.HQ36_03545 (degree 594), 266762.HQ36_05865 (degree
+	580), 266762.HQ36_04670 (degree 535) and 266762.HQ36_04300 (degree 520).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:35.802450
 
-The undirected graph Synechococcus sp. PCC7502 has 3278 nodes and 222024 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04134
-and has 10 connected components, where the component with most nodes has 3251 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 135.46, and the node degree mode is 3. The top 5
-most central nodes are 1173263.Syn7502_01819 (degree 1172), 1173263.Syn7502_02411
-(degree 873), 1173263.Syn7502_01207 (degree 797), 1173263.Syn7502_00626 (degree 779)
-and 1173263.Syn7502_00090 (degree 755).
+The undirected graph Synechococcus sp. PCC7502 has 3278 nodes and 222024
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04134 and has 10 connected components, where the component
+with most nodes has 3251 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 135.46,
+and the node degree mode is 3. The top 5 most central nodes are 1173263.Syn7502_01819
+(degree 1172), 1173263.Syn7502_02411 (degree 873), 1173263.Syn7502_01207
+(degree 797), 1173263.Syn7502_00626 (degree 779) and 1173263.Syn7502_00090
+(degree 755).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Pcc7502(
 	
 	Datetime: 2021-02-02 23:08:35.802450
 	
-	The undirected graph Synechococcus sp. PCC7502 has 3278 nodes and 222024 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04134
-	and has 10 connected components, where the component with most nodes has 3251 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 135.46, and the node degree mode is 3. The top 5
-	most central nodes are 1173263.Syn7502_01819 (degree 1172), 1173263.Syn7502_02411
-	(degree 873), 1173263.Syn7502_01207 (degree 797), 1173263.Syn7502_00626 (degree 779)
-	and 1173263.Syn7502_00090 (degree 755).
+	The undirected graph Synechococcus sp. PCC7502 has 3278 nodes and 222024
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04134 and has 10 connected components, where the component
+	with most nodes has 3251 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 135.46,
+	and the node degree mode is 3. The top 5 most central nodes are 1173263.Syn7502_01819
+	(degree 1172), 1173263.Syn7502_02411 (degree 873), 1173263.Syn7502_01207
+	(degree 797), 1173263.Syn7502_00626 (degree 779) and 1173263.Syn7502_00090
+	(degree 755).
 	
 
 

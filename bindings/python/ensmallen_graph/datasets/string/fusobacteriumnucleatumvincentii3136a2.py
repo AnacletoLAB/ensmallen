@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:12.757341
 
-The undirected graph Fusobacterium nucleatum vincentii 3136A2 has 2141 nodes and
-114279 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04988 and has 3 connected components, where the component with most
-nodes has 2136 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 77, the mean node degree is 106.75, and the node degree mode
-is 9. The top 5 most central nodes are 469604.HMPREF0946_00187 (degree 865), 469604.HMPREF0946_00284
-(degree 753), 469604.HMPREF0946_02063 (degree 667), 469604.HMPREF0946_01425 (degree
-664) and 469604.HMPREF0946_00616 (degree 628).
+The undirected graph Fusobacterium nucleatum vincentii 3136A2 has 2141
+nodes and 114279 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04988 and has 3 connected components,
+where the component with most nodes has 2136 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 77, the mean
+node degree is 106.75, and the node degree mode is 9. The top 5 most central
+nodes are 469604.HMPREF0946_00187 (degree 865), 469604.HMPREF0946_00284
+(degree 753), 469604.HMPREF0946_02063 (degree 667), 469604.HMPREF0946_01425
+(degree 664) and 469604.HMPREF0946_00616 (degree 628).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumNucleatumVincentii3136a2(
 	
 	Datetime: 2021-02-02 20:55:12.757341
 	
-	The undirected graph Fusobacterium nucleatum vincentii 3136A2 has 2141 nodes and
-	114279 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04988 and has 3 connected components, where the component with most
-	nodes has 2136 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 77, the mean node degree is 106.75, and the node degree mode
-	is 9. The top 5 most central nodes are 469604.HMPREF0946_00187 (degree 865), 469604.HMPREF0946_00284
-	(degree 753), 469604.HMPREF0946_02063 (degree 667), 469604.HMPREF0946_01425 (degree
-	664) and 469604.HMPREF0946_00616 (degree 628).
+	The undirected graph Fusobacterium nucleatum vincentii 3136A2 has 2141
+	nodes and 114279 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04988 and has 3 connected components,
+	where the component with most nodes has 2136 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 77, the mean
+	node degree is 106.75, and the node degree mode is 9. The top 5 most central
+	nodes are 469604.HMPREF0946_00187 (degree 865), 469604.HMPREF0946_00284
+	(degree 753), 469604.HMPREF0946_02063 (degree 667), 469604.HMPREF0946_01425
+	(degree 664) and 469604.HMPREF0946_00616 (degree 628).
 	
 
 

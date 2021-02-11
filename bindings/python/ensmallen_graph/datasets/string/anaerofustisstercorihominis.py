@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:01.225864
 
-The undirected graph Anaerofustis stercorihominis has 2313 nodes and 157112 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05876
-and has 22 connected components, where the component with most nodes has 2262 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 135.85, and the node degree mode is 1. The top 5
-most central nodes are 445971.ANASTE_01809 (degree 866), 445971.ANASTE_01296 (degree
-799), 445971.ANASTE_00980 (degree 710), 445971.ANASTE_00797 (degree 688) and 445971.ANASTE_01380
-(degree 639).
+The undirected graph Anaerofustis stercorihominis has 2313 nodes and 157112
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05876 and has 22 connected components, where the component
+with most nodes has 2262 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 135.85,
+and the node degree mode is 1. The top 5 most central nodes are 445971.ANASTE_01809
+(degree 866), 445971.ANASTE_01296 (degree 799), 445971.ANASTE_00980 (degree
+710), 445971.ANASTE_00797 (degree 688) and 445971.ANASTE_01380 (degree
+639).
 
 
 References
@@ -107,14 +108,15 @@ def AnaerofustisStercorihominis(
 	
 	Datetime: 2021-02-02 20:51:01.225864
 	
-	The undirected graph Anaerofustis stercorihominis has 2313 nodes and 157112 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05876
-	and has 22 connected components, where the component with most nodes has 2262 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 135.85, and the node degree mode is 1. The top 5
-	most central nodes are 445971.ANASTE_01809 (degree 866), 445971.ANASTE_01296 (degree
-	799), 445971.ANASTE_00980 (degree 710), 445971.ANASTE_00797 (degree 688) and 445971.ANASTE_01380
-	(degree 639).
+	The undirected graph Anaerofustis stercorihominis has 2313 nodes and 157112
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05876 and has 22 connected components, where the component
+	with most nodes has 2262 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 135.85,
+	and the node degree mode is 1. The top 5 most central nodes are 445971.ANASTE_01809
+	(degree 866), 445971.ANASTE_01296 (degree 799), 445971.ANASTE_00980 (degree
+	710), 445971.ANASTE_00797 (degree 688) and 445971.ANASTE_01380 (degree
+	639).
 	
 
 

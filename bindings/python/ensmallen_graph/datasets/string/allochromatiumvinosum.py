@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:50.947297
 
-The undirected graph Allochromatium vinosum has 3088 nodes and 315841 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06627 and
-has 7 connected components, where the component with most nodes has 3072 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 204.56, and the node degree mode is 4. The top 5 most central
-nodes are 572477.Alvin_2605 (degree 1555), 572477.Alvin_2874 (degree 1419), 572477.Alvin_1172
-(degree 1335), 572477.Alvin_1373 (degree 1306) and 572477.Alvin_1488 (degree 1297).
+The undirected graph Allochromatium vinosum has 3088 nodes and 315841 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06627 and has 7 connected components, where the component with most
+nodes has 3072 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 204.56, and
+the node degree mode is 4. The top 5 most central nodes are 572477.Alvin_2605
+(degree 1555), 572477.Alvin_2874 (degree 1419), 572477.Alvin_1172 (degree
+1335), 572477.Alvin_1373 (degree 1306) and 572477.Alvin_1488 (degree 1297).
 
 
 References
@@ -106,13 +107,14 @@ def AllochromatiumVinosum(
 	
 	Datetime: 2021-02-02 21:13:50.947297
 	
-	The undirected graph Allochromatium vinosum has 3088 nodes and 315841 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06627 and
-	has 7 connected components, where the component with most nodes has 3072 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 204.56, and the node degree mode is 4. The top 5 most central
-	nodes are 572477.Alvin_2605 (degree 1555), 572477.Alvin_2874 (degree 1419), 572477.Alvin_1172
-	(degree 1335), 572477.Alvin_1373 (degree 1306) and 572477.Alvin_1488 (degree 1297).
+	The undirected graph Allochromatium vinosum has 3088 nodes and 315841 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06627 and has 7 connected components, where the component with most
+	nodes has 3072 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 204.56, and
+	the node degree mode is 4. The top 5 most central nodes are 572477.Alvin_2605
+	(degree 1555), 572477.Alvin_2874 (degree 1419), 572477.Alvin_1172 (degree
+	1335), 572477.Alvin_1373 (degree 1306) and 572477.Alvin_1488 (degree 1297).
 	
 
 

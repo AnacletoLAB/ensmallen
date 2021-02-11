@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:38.838405
 
-The undirected graph Deinococcus aquatilis has 4274 nodes and 283708 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03107 and
-has 43 connected components, where the component with most nodes has 4154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 132.76, and the node degree mode is 2. The top 5 most central
-nodes are 1121378.KB899719_gene424 (degree 1439), 1121378.KB899708_gene1139 (degree
-1307), 1121378.KB899695_gene3073 (degree 1278), 1121378.KB899695_gene3198 (degree
-1094) and 1121378.KB899709_gene1101 (degree 1050).
+The undirected graph Deinococcus aquatilis has 4274 nodes and 283708 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03107 and has 43 connected components, where the component with most
+nodes has 4154 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 132.76, and
+the node degree mode is 2. The top 5 most central nodes are 1121378.KB899719_gene424
+(degree 1439), 1121378.KB899708_gene1139 (degree 1307), 1121378.KB899695_gene3073
+(degree 1278), 1121378.KB899695_gene3198 (degree 1094) and 1121378.KB899709_gene1101
+(degree 1050).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusAquatilis(
 	
 	Datetime: 2021-02-02 22:35:38.838405
 	
-	The undirected graph Deinococcus aquatilis has 4274 nodes and 283708 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03107 and
-	has 43 connected components, where the component with most nodes has 4154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 132.76, and the node degree mode is 2. The top 5 most central
-	nodes are 1121378.KB899719_gene424 (degree 1439), 1121378.KB899708_gene1139 (degree
-	1307), 1121378.KB899695_gene3073 (degree 1278), 1121378.KB899695_gene3198 (degree
-	1094) and 1121378.KB899709_gene1101 (degree 1050).
+	The undirected graph Deinococcus aquatilis has 4274 nodes and 283708 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03107 and has 43 connected components, where the component with most
+	nodes has 4154 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 132.76, and
+	the node degree mode is 2. The top 5 most central nodes are 1121378.KB899719_gene424
+	(degree 1439), 1121378.KB899708_gene1139 (degree 1307), 1121378.KB899695_gene3073
+	(degree 1278), 1121378.KB899695_gene3198 (degree 1094) and 1121378.KB899709_gene1101
+	(degree 1050).
 	
 
 

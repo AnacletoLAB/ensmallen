@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:02.305353
 
-The undirected graph Streptomyces sviceus has 8119 nodes and 1108382 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03363 and
-has 30 connected components, where the component with most nodes has 8050 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 236,
-the mean node degree is 273.03, and the node degree mode is 2. The top 5 most central
-nodes are 463191.SSEG_11131 (degree 3629), 463191.SSEG_06872 (degree 2739), 463191.SSEG_02941
-(degree 2586), 463191.SSEG_07916 (degree 2180) and 463191.SSEG_08721 (degree 2139).
+The undirected graph Streptomyces sviceus has 8119 nodes and 1108382 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03363 and has 30 connected components, where the component with most
+nodes has 8050 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 236, the mean node degree is 273.03, and
+the node degree mode is 2. The top 5 most central nodes are 463191.SSEG_11131
+(degree 3629), 463191.SSEG_06872 (degree 2739), 463191.SSEG_02941 (degree
+2586), 463191.SSEG_07916 (degree 2180) and 463191.SSEG_08721 (degree 2139).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesSviceus(
 	
 	Datetime: 2021-02-02 20:54:02.305353
 	
-	The undirected graph Streptomyces sviceus has 8119 nodes and 1108382 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03363 and
-	has 30 connected components, where the component with most nodes has 8050 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 236,
-	the mean node degree is 273.03, and the node degree mode is 2. The top 5 most central
-	nodes are 463191.SSEG_11131 (degree 3629), 463191.SSEG_06872 (degree 2739), 463191.SSEG_02941
-	(degree 2586), 463191.SSEG_07916 (degree 2180) and 463191.SSEG_08721 (degree 2139).
+	The undirected graph Streptomyces sviceus has 8119 nodes and 1108382 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03363 and has 30 connected components, where the component with most
+	nodes has 8050 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 236, the mean node degree is 273.03, and
+	the node degree mode is 2. The top 5 most central nodes are 463191.SSEG_11131
+	(degree 3629), 463191.SSEG_06872 (degree 2739), 463191.SSEG_02941 (degree
+	2586), 463191.SSEG_07916 (degree 2180) and 463191.SSEG_08721 (degree 2139).
 	
 
 

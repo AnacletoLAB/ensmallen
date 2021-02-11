@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:17:49.486910
 
-The undirected graph ca-opsahl-collaboration has 22015 nodes and 58586 unweighted
-edges, of which 1 are self-loops. The graph is quite sparse as it has a density of
-0.00024 and is connected, as it has a single component. The graph median node degree
-is 4, the mean node degree is 5.32, and the node degree mode is 3. The top 5 most
-central nodes are 80 (degree 119), 311 (degree 81), 213 (degree 77), 755 (degree
-76) and 2263 (degree 72).
+The undirected graph ca-opsahl-collaboration has 22015 nodes and 58586
+unweighted edges, of which 1 are self-loops. The graph is quite sparse
+as it has a density of 0.00024 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 5.32, and the
+node degree mode is 3. The top 5 most central nodes are 80 (degree 119),
+311 (degree 81), 213 (degree 77), 755 (degree 76) and 2263 (degree 72).
 
 
 References
@@ -102,12 +102,12 @@ def CaOpsahlCollaboration(
 	
 	Datetime: 2021-02-06 10:17:49.486910
 	
-	The undirected graph ca-opsahl-collaboration has 22015 nodes and 58586 unweighted
-	edges, of which 1 are self-loops. The graph is quite sparse as it has a density of
-	0.00024 and is connected, as it has a single component. The graph median node degree
-	is 4, the mean node degree is 5.32, and the node degree mode is 3. The top 5 most
-	central nodes are 80 (degree 119), 311 (degree 81), 213 (degree 77), 755 (degree
-	76) and 2263 (degree 72).
+	The undirected graph ca-opsahl-collaboration has 22015 nodes and 58586
+	unweighted edges, of which 1 are self-loops. The graph is quite sparse
+	as it has a density of 0.00024 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 5.32, and the
+	node degree mode is 3. The top 5 most central nodes are 80 (degree 119),
+	311 (degree 81), 213 (degree 77), 755 (degree 76) and 2263 (degree 72).
 	
 
 

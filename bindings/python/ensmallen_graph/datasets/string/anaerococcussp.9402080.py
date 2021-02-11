@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:56.988866
 
-The undirected graph Anaerococcus sp. 9402080 has 2131 nodes and 233800 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10302 and has 5 connected components, where the component with most nodes has
-2123 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 182, the mean node degree is 219.43, and the node degree mode is 5. The
-top 5 most central nodes are 938293.CAJU020000002_gene89 (degree 1078), 938293.CAJU020000002_gene88
+The undirected graph Anaerococcus sp. 9402080 has 2131 nodes and 233800
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10302 and has 5 connected components, where the
+component with most nodes has 2123 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 182, the mean node degree
+is 219.43, and the node degree mode is 5. The top 5 most central nodes
+are 938293.CAJU020000002_gene89 (degree 1078), 938293.CAJU020000002_gene88
 (degree 1063), 938293.CAJU020000007_gene2029 (degree 1046), 938293.CAJU020000024_gene570
 (degree 1037) and 938293.CAJU020000020_gene296 (degree 950).
 
@@ -107,12 +108,13 @@ def AnaerococcusSp.9402080(
 	
 	Datetime: 2021-02-02 22:00:56.988866
 	
-	The undirected graph Anaerococcus sp. 9402080 has 2131 nodes and 233800 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10302 and has 5 connected components, where the component with most nodes has
-	2123 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 182, the mean node degree is 219.43, and the node degree mode is 5. The
-	top 5 most central nodes are 938293.CAJU020000002_gene89 (degree 1078), 938293.CAJU020000002_gene88
+	The undirected graph Anaerococcus sp. 9402080 has 2131 nodes and 233800
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10302 and has 5 connected components, where the
+	component with most nodes has 2123 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 182, the mean node degree
+	is 219.43, and the node degree mode is 5. The top 5 most central nodes
+	are 938293.CAJU020000002_gene89 (degree 1078), 938293.CAJU020000002_gene88
 	(degree 1063), 938293.CAJU020000007_gene2029 (degree 1046), 938293.CAJU020000024_gene570
 	(degree 1037) and 938293.CAJU020000020_gene296 (degree 950).
 	

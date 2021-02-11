@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:59.753768
 
-The undirected graph Clostridium senegalense has 3707 nodes and 283034 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04120 and
-has 31 connected components, where the component with most nodes has 3634 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 152.70, and the node degree mode is 1. The top 5 most central
-nodes are 1033737.CAEV01000067_gene2809 (degree 1291), 1033737.CAEV01000029_gene318
-(degree 1245), 1033737.CAEV01000099_gene1705 (degree 1230), 1033737.CAEV01000026_gene405
-(degree 986) and 1033737.CAEV01000013_gene906 (degree 943).
+The undirected graph Clostridium senegalense has 3707 nodes and 283034
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04120 and has 31 connected components, where the component
+with most nodes has 3634 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 152.70,
+and the node degree mode is 1. The top 5 most central nodes are 1033737.CAEV01000067_gene2809
+(degree 1291), 1033737.CAEV01000029_gene318 (degree 1245), 1033737.CAEV01000099_gene1705
+(degree 1230), 1033737.CAEV01000026_gene405 (degree 986) and 1033737.CAEV01000013_gene906
+(degree 943).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSenegalense(
 	
 	Datetime: 2021-02-02 22:10:59.753768
 	
-	The undirected graph Clostridium senegalense has 3707 nodes and 283034 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04120 and
-	has 31 connected components, where the component with most nodes has 3634 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 152.70, and the node degree mode is 1. The top 5 most central
-	nodes are 1033737.CAEV01000067_gene2809 (degree 1291), 1033737.CAEV01000029_gene318
-	(degree 1245), 1033737.CAEV01000099_gene1705 (degree 1230), 1033737.CAEV01000026_gene405
-	(degree 986) and 1033737.CAEV01000013_gene906 (degree 943).
+	The undirected graph Clostridium senegalense has 3707 nodes and 283034
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04120 and has 31 connected components, where the component
+	with most nodes has 3634 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 152.70,
+	and the node degree mode is 1. The top 5 most central nodes are 1033737.CAEV01000067_gene2809
+	(degree 1291), 1033737.CAEV01000029_gene318 (degree 1245), 1033737.CAEV01000099_gene1705
+	(degree 1230), 1033737.CAEV01000026_gene405 (degree 986) and 1033737.CAEV01000013_gene906
+	(degree 943).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:49:07.655377
 
-The undirected graph Peromyscus maniculatus has 20640 nodes and 4398213 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02065
-and has 4 connected components, where the component with most nodes has 20632 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 300, the mean node degree is 426.18, and the node degree mode is 4. The top 5
-most central nodes are 10042.XP_006975421.1 (degree 5406), 10042.XP_006979978.1 (degree
-4581), 10042.XP_006996936.1 (degree 4570), 10042.XP_006977178.1 (degree 4301) and
-10042.XP_006983801.1 (degree 4137).
+The undirected graph Peromyscus maniculatus has 20640 nodes and 4398213
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02065 and has 4 connected components, where the component
+with most nodes has 20632 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 300, the mean node degree
+is 426.18, and the node degree mode is 4. The top 5 most central nodes
+are 10042.XP_006975421.1 (degree 5406), 10042.XP_006979978.1 (degree 4581),
+10042.XP_006996936.1 (degree 4570), 10042.XP_006977178.1 (degree 4301)
+and 10042.XP_006983801.1 (degree 4137).
 
 
 References
@@ -107,14 +108,15 @@ def PeromyscusManiculatus(
 	
 	Datetime: 2021-02-02 17:49:07.655377
 	
-	The undirected graph Peromyscus maniculatus has 20640 nodes and 4398213 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02065
-	and has 4 connected components, where the component with most nodes has 20632 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 300, the mean node degree is 426.18, and the node degree mode is 4. The top 5
-	most central nodes are 10042.XP_006975421.1 (degree 5406), 10042.XP_006979978.1 (degree
-	4581), 10042.XP_006996936.1 (degree 4570), 10042.XP_006977178.1 (degree 4301) and
-	10042.XP_006983801.1 (degree 4137).
+	The undirected graph Peromyscus maniculatus has 20640 nodes and 4398213
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02065 and has 4 connected components, where the component
+	with most nodes has 20632 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 300, the mean node degree
+	is 426.18, and the node degree mode is 4. The top 5 most central nodes
+	are 10042.XP_006975421.1 (degree 5406), 10042.XP_006979978.1 (degree 4581),
+	10042.XP_006996936.1 (degree 4570), 10042.XP_006977178.1 (degree 4301)
+	and 10042.XP_006983801.1 (degree 4137).
 	
 
 

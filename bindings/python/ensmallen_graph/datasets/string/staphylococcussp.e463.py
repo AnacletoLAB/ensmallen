@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:29.979592
 
-The undirected graph Staphylococcus sp. E463 has 2409 nodes and 175885 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06064 and
-has 9 connected components, where the component with most nodes has 2390 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 146.02, and the node degree mode is 1. The top 5 most central
-nodes are 1234593.ANBY01000095_gene1801 (degree 884), 1234593.ANBY01000104_gene232
-(degree 825), 1234593.ANBY01000030_gene1187 (degree 817), 1234593.ANBY01000104_gene231
-(degree 753) and 1234593.ANBY01000003_gene2391 (degree 711).
+The undirected graph Staphylococcus sp. E463 has 2409 nodes and 175885
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06064 and has 9 connected components, where the component
+with most nodes has 2390 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 146.02,
+and the node degree mode is 1. The top 5 most central nodes are 1234593.ANBY01000095_gene1801
+(degree 884), 1234593.ANBY01000104_gene232 (degree 825), 1234593.ANBY01000030_gene1187
+(degree 817), 1234593.ANBY01000104_gene231 (degree 753) and 1234593.ANBY01000003_gene2391
+(degree 711).
 
 
 References
@@ -107,14 +108,15 @@ def StaphylococcusSp.E463(
 	
 	Datetime: 2021-02-02 23:29:29.979592
 	
-	The undirected graph Staphylococcus sp. E463 has 2409 nodes and 175885 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06064 and
-	has 9 connected components, where the component with most nodes has 2390 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 146.02, and the node degree mode is 1. The top 5 most central
-	nodes are 1234593.ANBY01000095_gene1801 (degree 884), 1234593.ANBY01000104_gene232
-	(degree 825), 1234593.ANBY01000030_gene1187 (degree 817), 1234593.ANBY01000104_gene231
-	(degree 753) and 1234593.ANBY01000003_gene2391 (degree 711).
+	The undirected graph Staphylococcus sp. E463 has 2409 nodes and 175885
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06064 and has 9 connected components, where the component
+	with most nodes has 2390 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 146.02,
+	and the node degree mode is 1. The top 5 most central nodes are 1234593.ANBY01000095_gene1801
+	(degree 884), 1234593.ANBY01000104_gene232 (degree 825), 1234593.ANBY01000030_gene1187
+	(degree 817), 1234593.ANBY01000104_gene231 (degree 753) and 1234593.ANBY01000003_gene2391
+	(degree 711).
 	
 
 

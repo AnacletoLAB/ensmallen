@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:03.752353
 
-The undirected graph Clostridium saccharolyticum WM1 has 4134 nodes and 486672 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05697
-and has 3 connected components, where the component with most nodes has 4129 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 235.45, and the node degree mode is 11. The top 5
-most central nodes are 610130.Closa_3197 (degree 1472), 610130.Closa_1009 (degree
-1304), 610130.Closa_0157 (degree 1177), 610130.Closa_2627 (degree 1166) and 610130.Closa_2598
-(degree 1152).
+The undirected graph Clostridium saccharolyticum WM1 has 4134 nodes and
+486672 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05697 and has 3 connected components, where the
+component with most nodes has 4129 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+is 235.45, and the node degree mode is 11. The top 5 most central nodes
+are 610130.Closa_3197 (degree 1472), 610130.Closa_1009 (degree 1304), 610130.Closa_0157
+(degree 1177), 610130.Closa_2627 (degree 1166) and 610130.Closa_2598 (degree
+1152).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSaccharolyticumWm1(
 	
 	Datetime: 2021-02-02 21:20:03.752353
 	
-	The undirected graph Clostridium saccharolyticum WM1 has 4134 nodes and 486672 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05697
-	and has 3 connected components, where the component with most nodes has 4129 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 235.45, and the node degree mode is 11. The top 5
-	most central nodes are 610130.Closa_3197 (degree 1472), 610130.Closa_1009 (degree
-	1304), 610130.Closa_0157 (degree 1177), 610130.Closa_2627 (degree 1166) and 610130.Closa_2598
-	(degree 1152).
+	The undirected graph Clostridium saccharolyticum WM1 has 4134 nodes and
+	486672 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05697 and has 3 connected components, where the
+	component with most nodes has 4129 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 197, the mean node degree
+	is 235.45, and the node degree mode is 11. The top 5 most central nodes
+	are 610130.Closa_3197 (degree 1472), 610130.Closa_1009 (degree 1304), 610130.Closa_0157
+	(degree 1177), 610130.Closa_2627 (degree 1166) and 610130.Closa_2598 (degree
+	1152).
 	
 
 

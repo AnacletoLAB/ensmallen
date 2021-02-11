@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:33.104968
 
-The undirected graph Dyadobacter tibetensis has 4127 nodes and 513159 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-has 14 connected components, where the component with most nodes has 4098 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 248.68, and the node degree mode is 1. The top 5 most central
-nodes are 1434325.AZQN01000011_gene3794 (degree 1503), 1434325.AZQN01000001_gene366
-(degree 1480), 1434325.AZQN01000006_gene3342 (degree 1349), 1434325.AZQN01000003_gene2515
-(degree 1345) and 1434325.AZQN01000002_gene869 (degree 1310).
+The undirected graph Dyadobacter tibetensis has 4127 nodes and 513159 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06027 and has 14 connected components, where the component with most
+nodes has 4098 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 248.68, and
+the node degree mode is 1. The top 5 most central nodes are 1434325.AZQN01000011_gene3794
+(degree 1503), 1434325.AZQN01000001_gene366 (degree 1480), 1434325.AZQN01000006_gene3342
+(degree 1349), 1434325.AZQN01000003_gene2515 (degree 1345) and 1434325.AZQN01000002_gene869
+(degree 1310).
 
 
 References
@@ -107,14 +108,15 @@ def DyadobacterTibetensis(
 	
 	Datetime: 2021-02-03 22:54:33.104968
 	
-	The undirected graph Dyadobacter tibetensis has 4127 nodes and 513159 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-	has 14 connected components, where the component with most nodes has 4098 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 248.68, and the node degree mode is 1. The top 5 most central
-	nodes are 1434325.AZQN01000011_gene3794 (degree 1503), 1434325.AZQN01000001_gene366
-	(degree 1480), 1434325.AZQN01000006_gene3342 (degree 1349), 1434325.AZQN01000003_gene2515
-	(degree 1345) and 1434325.AZQN01000002_gene869 (degree 1310).
+	The undirected graph Dyadobacter tibetensis has 4127 nodes and 513159 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06027 and has 14 connected components, where the component with most
+	nodes has 4098 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 248.68, and
+	the node degree mode is 1. The top 5 most central nodes are 1434325.AZQN01000011_gene3794
+	(degree 1503), 1434325.AZQN01000001_gene366 (degree 1480), 1434325.AZQN01000006_gene3342
+	(degree 1349), 1434325.AZQN01000003_gene2515 (degree 1345) and 1434325.AZQN01000002_gene869
+	(degree 1310).
 	
 
 

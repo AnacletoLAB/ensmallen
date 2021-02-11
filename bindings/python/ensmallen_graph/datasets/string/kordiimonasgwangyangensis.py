@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:40:47.409639
 
-The undirected graph Kordiimonas gwangyangensis has 3586 nodes and 450561 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07009
-and has 11 connected components, where the component with most nodes has 3564 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 221, the mean node degree is 251.29, and the node degree mode is 4. The top 5
-most central nodes are 1122137.AQXF01000001_gene3089 (degree 1303), 1122137.AQXF01000002_gene394
-(degree 1237), 1122137.AQXF01000001_gene3255 (degree 1091), 1122137.AQXF01000001_gene3184
-(degree 1088) and 1122137.AQXF01000003_gene2346 (degree 1077).
+The undirected graph Kordiimonas gwangyangensis has 3586 nodes and 450561
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07009 and has 11 connected components, where the component
+with most nodes has 3564 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 221, the mean node degree is 251.29,
+and the node degree mode is 4. The top 5 most central nodes are 1122137.AQXF01000001_gene3089
+(degree 1303), 1122137.AQXF01000002_gene394 (degree 1237), 1122137.AQXF01000001_gene3255
+(degree 1091), 1122137.AQXF01000001_gene3184 (degree 1088) and 1122137.AQXF01000003_gene2346
+(degree 1077).
 
 
 References
@@ -107,14 +108,15 @@ def KordiimonasGwangyangensis(
 	
 	Datetime: 2021-02-02 22:40:47.409639
 	
-	The undirected graph Kordiimonas gwangyangensis has 3586 nodes and 450561 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07009
-	and has 11 connected components, where the component with most nodes has 3564 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 221, the mean node degree is 251.29, and the node degree mode is 4. The top 5
-	most central nodes are 1122137.AQXF01000001_gene3089 (degree 1303), 1122137.AQXF01000002_gene394
-	(degree 1237), 1122137.AQXF01000001_gene3255 (degree 1091), 1122137.AQXF01000001_gene3184
-	(degree 1088) and 1122137.AQXF01000003_gene2346 (degree 1077).
+	The undirected graph Kordiimonas gwangyangensis has 3586 nodes and 450561
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07009 and has 11 connected components, where the component
+	with most nodes has 3564 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 221, the mean node degree is 251.29,
+	and the node degree mode is 4. The top 5 most central nodes are 1122137.AQXF01000001_gene3089
+	(degree 1303), 1122137.AQXF01000002_gene394 (degree 1237), 1122137.AQXF01000001_gene3255
+	(degree 1091), 1122137.AQXF01000001_gene3184 (degree 1088) and 1122137.AQXF01000003_gene2346
+	(degree 1077).
 	
 
 

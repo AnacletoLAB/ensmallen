@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:30.394641
 
-The undirected graph Leptolyngbya sp. KIOST1 has 5105 nodes and 951818 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07306 and
-has 30 connected components, where the component with most nodes has 5025 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 348,
-the mean node degree is 372.90, and the node degree mode is 2. The top 5 most central
-nodes are 1229172.JQFA01000002_gene3655 (degree 1995), 1229172.JQFA01000004_gene1947
-(degree 1975), 1229172.JQFA01000004_gene1318 (degree 1941), 1229172.JQFA01000004_gene1748
-(degree 1842) and 1229172.JQFA01000002_gene2042 (degree 1821).
+The undirected graph Leptolyngbya sp. KIOST1 has 5105 nodes and 951818
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07306 and has 30 connected components, where the component
+with most nodes has 5025 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 348, the mean node degree is 372.90,
+and the node degree mode is 2. The top 5 most central nodes are 1229172.JQFA01000002_gene3655
+(degree 1995), 1229172.JQFA01000004_gene1947 (degree 1975), 1229172.JQFA01000004_gene1318
+(degree 1941), 1229172.JQFA01000004_gene1748 (degree 1842) and 1229172.JQFA01000002_gene2042
+(degree 1821).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaSp.Kiost1(
 	
 	Datetime: 2021-02-02 23:26:30.394641
 	
-	The undirected graph Leptolyngbya sp. KIOST1 has 5105 nodes and 951818 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07306 and
-	has 30 connected components, where the component with most nodes has 5025 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 348,
-	the mean node degree is 372.90, and the node degree mode is 2. The top 5 most central
-	nodes are 1229172.JQFA01000002_gene3655 (degree 1995), 1229172.JQFA01000004_gene1947
-	(degree 1975), 1229172.JQFA01000004_gene1318 (degree 1941), 1229172.JQFA01000004_gene1748
-	(degree 1842) and 1229172.JQFA01000002_gene2042 (degree 1821).
+	The undirected graph Leptolyngbya sp. KIOST1 has 5105 nodes and 951818
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07306 and has 30 connected components, where the component
+	with most nodes has 5025 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 348, the mean node degree is 372.90,
+	and the node degree mode is 2. The top 5 most central nodes are 1229172.JQFA01000002_gene3655
+	(degree 1995), 1229172.JQFA01000004_gene1947 (degree 1975), 1229172.JQFA01000004_gene1318
+	(degree 1941), 1229172.JQFA01000004_gene1748 (degree 1842) and 1229172.JQFA01000002_gene2042
+	(degree 1821).
 	
 
 

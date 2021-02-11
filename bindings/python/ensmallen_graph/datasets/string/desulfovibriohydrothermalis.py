@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:00.440223
 
-The undirected graph Desulfovibrio hydrothermalis has 3494 nodes and 277674 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04550
-and has 16 connected components, where the component with most nodes has 3459 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 158.94, and the node degree mode is 4. The top 5
-most central nodes are 1121451.DESAM_23167 (degree 1451), 1121451.DESAM_22571 (degree
-1087), 1121451.DESAM_20816 (degree 1056), 1121451.DESAM_22475 (degree 1041) and 1121451.DESAM_22670
-(degree 1039).
+The undirected graph Desulfovibrio hydrothermalis has 3494 nodes and 277674
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04550 and has 16 connected components, where the component
+with most nodes has 3459 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 158.94,
+and the node degree mode is 4. The top 5 most central nodes are 1121451.DESAM_23167
+(degree 1451), 1121451.DESAM_22571 (degree 1087), 1121451.DESAM_20816 (degree
+1056), 1121451.DESAM_22475 (degree 1041) and 1121451.DESAM_22670 (degree
+1039).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioHydrothermalis(
 	
 	Datetime: 2021-02-02 22:37:00.440223
 	
-	The undirected graph Desulfovibrio hydrothermalis has 3494 nodes and 277674 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04550
-	and has 16 connected components, where the component with most nodes has 3459 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 158.94, and the node degree mode is 4. The top 5
-	most central nodes are 1121451.DESAM_23167 (degree 1451), 1121451.DESAM_22571 (degree
-	1087), 1121451.DESAM_20816 (degree 1056), 1121451.DESAM_22475 (degree 1041) and 1121451.DESAM_22670
-	(degree 1039).
+	The undirected graph Desulfovibrio hydrothermalis has 3494 nodes and 277674
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04550 and has 16 connected components, where the component
+	with most nodes has 3459 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 158.94,
+	and the node degree mode is 4. The top 5 most central nodes are 1121451.DESAM_23167
+	(degree 1451), 1121451.DESAM_22571 (degree 1087), 1121451.DESAM_20816 (degree
+	1056), 1121451.DESAM_22475 (degree 1041) and 1121451.DESAM_22670 (degree
+	1039).
 	
 
 

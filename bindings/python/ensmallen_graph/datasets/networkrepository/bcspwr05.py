@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:02:54.891498
 
-The undirected graph bcspwr05 has 443 nodes and 1033 unweighted edges, of which 443
-are self-loops. The graph is sparse as it has a density of 0.00829 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 3.66, and the node degree mode is 3. The top 5 most central nodes are 177 (degree
-10), 328 (degree 9), 200 (degree 9), 221 (degree 9) and 306 (degree 9).
+The undirected graph bcspwr05 has 443 nodes and 1033 unweighted edges,
+of which 443 are self-loops. The graph is sparse as it has a density of
+0.00829 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 3.66, and the node degree mode
+is 3. The top 5 most central nodes are 177 (degree 10), 328 (degree 9),
+200 (degree 9), 221 (degree 9) and 306 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Bcspwr05(
 	
 	Datetime: 2021-02-06 08:02:54.891498
 	
-	The undirected graph bcspwr05 has 443 nodes and 1033 unweighted edges, of which 443
-	are self-loops. The graph is sparse as it has a density of 0.00829 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 3.66, and the node degree mode is 3. The top 5 most central nodes are 177 (degree
-	10), 328 (degree 9), 200 (degree 9), 221 (degree 9) and 306 (degree 9).
+	The undirected graph bcspwr05 has 443 nodes and 1033 unweighted edges,
+	of which 443 are self-loops. The graph is sparse as it has a density of
+	0.00829 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 3.66, and the node degree mode
+	is 3. The top 5 most central nodes are 177 (degree 10), 328 (degree 9),
+	200 (degree 9), 221 (degree 9) and 306 (degree 9).
 	
 
 

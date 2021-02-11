@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:31.005400
 
-The undirected graph Microvirga lotononidis has 6854 nodes and 949649 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04044 and
-has 54 connected components, where the component with most nodes has 6718 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 251,
-the mean node degree is 277.11, and the node degree mode is 2. The top 5 most central
-nodes are 864069.MicloDRAFT_00046860 (degree 2411), 864069.MicloDRAFT_00035010 (degree
-2196), 864069.MicloDRAFT_00038800 (degree 1838), 864069.MicloDRAFT_00023610 (degree
-1715) and 864069.MicloDRAFT_00018290 (degree 1634).
+The undirected graph Microvirga lotononidis has 6854 nodes and 949649 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04044 and has 54 connected components, where the component with most
+nodes has 6718 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 251, the mean node degree is 277.11, and
+the node degree mode is 2. The top 5 most central nodes are 864069.MicloDRAFT_00046860
+(degree 2411), 864069.MicloDRAFT_00035010 (degree 2196), 864069.MicloDRAFT_00038800
+(degree 1838), 864069.MicloDRAFT_00023610 (degree 1715) and 864069.MicloDRAFT_00018290
+(degree 1634).
 
 
 References
@@ -107,14 +108,15 @@ def MicrovirgaLotononidis(
 	
 	Datetime: 2021-02-02 21:47:31.005400
 	
-	The undirected graph Microvirga lotononidis has 6854 nodes and 949649 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04044 and
-	has 54 connected components, where the component with most nodes has 6718 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 251,
-	the mean node degree is 277.11, and the node degree mode is 2. The top 5 most central
-	nodes are 864069.MicloDRAFT_00046860 (degree 2411), 864069.MicloDRAFT_00035010 (degree
-	2196), 864069.MicloDRAFT_00038800 (degree 1838), 864069.MicloDRAFT_00023610 (degree
-	1715) and 864069.MicloDRAFT_00018290 (degree 1634).
+	The undirected graph Microvirga lotononidis has 6854 nodes and 949649 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04044 and has 54 connected components, where the component with most
+	nodes has 6718 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 251, the mean node degree is 277.11, and
+	the node degree mode is 2. The top 5 most central nodes are 864069.MicloDRAFT_00046860
+	(degree 2411), 864069.MicloDRAFT_00035010 (degree 2196), 864069.MicloDRAFT_00038800
+	(degree 1838), 864069.MicloDRAFT_00023610 (degree 1715) and 864069.MicloDRAFT_00018290
+	(degree 1634).
 	
 
 

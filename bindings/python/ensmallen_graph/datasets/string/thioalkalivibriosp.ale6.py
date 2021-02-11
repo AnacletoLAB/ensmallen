@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:22.513868
 
-The undirected graph Thioalkalivibrio sp. ALE6 has 2722 nodes and 227489 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06143
-and has 7 connected components, where the component with most nodes has 2709 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 167.15, and the node degree mode is 1. The top 5
-most central nodes are 1266908.AQPB01000061_gene1259 (degree 1013), 1266908.AQPB01000058_gene2395
-(degree 926), 1266908.AQPB01000053_gene582 (degree 895), 1266908.AQPB01000053_gene583
-(degree 881) and 1266908.AQPB01000058_gene2360 (degree 860).
+The undirected graph Thioalkalivibrio sp. ALE6 has 2722 nodes and 227489
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06143 and has 7 connected components, where the component
+with most nodes has 2709 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 167.15,
+and the node degree mode is 1. The top 5 most central nodes are 1266908.AQPB01000061_gene1259
+(degree 1013), 1266908.AQPB01000058_gene2395 (degree 926), 1266908.AQPB01000053_gene582
+(degree 895), 1266908.AQPB01000053_gene583 (degree 881) and 1266908.AQPB01000058_gene2360
+(degree 860).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Ale6(
 	
 	Datetime: 2021-02-02 23:36:22.513868
 	
-	The undirected graph Thioalkalivibrio sp. ALE6 has 2722 nodes and 227489 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06143
-	and has 7 connected components, where the component with most nodes has 2709 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 167.15, and the node degree mode is 1. The top 5
-	most central nodes are 1266908.AQPB01000061_gene1259 (degree 1013), 1266908.AQPB01000058_gene2395
-	(degree 926), 1266908.AQPB01000053_gene582 (degree 895), 1266908.AQPB01000053_gene583
-	(degree 881) and 1266908.AQPB01000058_gene2360 (degree 860).
+	The undirected graph Thioalkalivibrio sp. ALE6 has 2722 nodes and 227489
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06143 and has 7 connected components, where the component
+	with most nodes has 2709 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 167.15,
+	and the node degree mode is 1. The top 5 most central nodes are 1266908.AQPB01000061_gene1259
+	(degree 1013), 1266908.AQPB01000058_gene2395 (degree 926), 1266908.AQPB01000053_gene582
+	(degree 895), 1266908.AQPB01000053_gene583 (degree 881) and 1266908.AQPB01000058_gene2360
+	(degree 860).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:36.292149
 
-The undirected graph Streptomyces sp. CNY243 has 6924 nodes and 1018092 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04248
-and has 23 connected components, where the component with most nodes has 6875 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 243, the mean node degree is 294.08, and the node degree mode is 1. The top 5
-most central nodes are 1169161.KB897730_gene1221 (degree 3448), 1169161.KB897716_gene5789
-(degree 2482), 1169161.KB897721_gene4135 (degree 2043), 1169161.KB897715_gene5503
-(degree 1958) and 1169161.KB897715_gene5497 (degree 1941).
+The undirected graph Streptomyces sp. CNY243 has 6924 nodes and 1018092
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04248 and has 23 connected components, where the component
+with most nodes has 6875 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 243, the mean node degree is 294.08,
+and the node degree mode is 1. The top 5 most central nodes are 1169161.KB897730_gene1221
+(degree 3448), 1169161.KB897716_gene5789 (degree 2482), 1169161.KB897721_gene4135
+(degree 2043), 1169161.KB897715_gene5503 (degree 1958) and 1169161.KB897715_gene5497
+(degree 1941).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Cny243(
 	
 	Datetime: 2021-02-02 23:06:36.292149
 	
-	The undirected graph Streptomyces sp. CNY243 has 6924 nodes and 1018092 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04248
-	and has 23 connected components, where the component with most nodes has 6875 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 243, the mean node degree is 294.08, and the node degree mode is 1. The top 5
-	most central nodes are 1169161.KB897730_gene1221 (degree 3448), 1169161.KB897716_gene5789
-	(degree 2482), 1169161.KB897721_gene4135 (degree 2043), 1169161.KB897715_gene5503
-	(degree 1958) and 1169161.KB897715_gene5497 (degree 1941).
+	The undirected graph Streptomyces sp. CNY243 has 6924 nodes and 1018092
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04248 and has 23 connected components, where the component
+	with most nodes has 6875 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 243, the mean node degree is 294.08,
+	and the node degree mode is 1. The top 5 most central nodes are 1169161.KB897730_gene1221
+	(degree 3448), 1169161.KB897716_gene5789 (degree 2482), 1169161.KB897721_gene4135
+	(degree 2043), 1169161.KB897715_gene5503 (degree 1958) and 1169161.KB897715_gene5497
+	(degree 1941).
 	
 
 

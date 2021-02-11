@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:18:12.862724
 
-The undirected graph Pseudogulbenkiania ferrooxidans has 3903 nodes and 696839 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09151
-and has 3 connected components, where the component with most nodes has 3899 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 325, the mean node degree is 357.08, and the node degree mode is 7. The top 5
-most central nodes are 279714.FuraDRAFT_0364 (degree 2323), 279714.FuraDRAFT_3325
-(degree 2047), 279714.FuraDRAFT_0188 (degree 1934), 279714.FuraDRAFT_0735 (degree
+The undirected graph Pseudogulbenkiania ferrooxidans has 3903 nodes and
+696839 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09151 and has 3 connected components, where the
+component with most nodes has 3899 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 325, the mean node degree
+is 357.08, and the node degree mode is 7. The top 5 most central nodes
+are 279714.FuraDRAFT_0364 (degree 2323), 279714.FuraDRAFT_3325 (degree
+2047), 279714.FuraDRAFT_0188 (degree 1934), 279714.FuraDRAFT_0735 (degree
 1878) and 279714.FuraDRAFT_1538 (degree 1867).
 
 
@@ -107,13 +108,14 @@ def PseudogulbenkianiaFerrooxidans(
 	
 	Datetime: 2021-02-02 20:18:12.862724
 	
-	The undirected graph Pseudogulbenkiania ferrooxidans has 3903 nodes and 696839 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09151
-	and has 3 connected components, where the component with most nodes has 3899 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 325, the mean node degree is 357.08, and the node degree mode is 7. The top 5
-	most central nodes are 279714.FuraDRAFT_0364 (degree 2323), 279714.FuraDRAFT_3325
-	(degree 2047), 279714.FuraDRAFT_0188 (degree 1934), 279714.FuraDRAFT_0735 (degree
+	The undirected graph Pseudogulbenkiania ferrooxidans has 3903 nodes and
+	696839 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09151 and has 3 connected components, where the
+	component with most nodes has 3899 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 325, the mean node degree
+	is 357.08, and the node degree mode is 7. The top 5 most central nodes
+	are 279714.FuraDRAFT_0364 (degree 2323), 279714.FuraDRAFT_3325 (degree
+	2047), 279714.FuraDRAFT_0188 (degree 1934), 279714.FuraDRAFT_0735 (degree
 	1878) and 279714.FuraDRAFT_1538 (degree 1867).
 	
 

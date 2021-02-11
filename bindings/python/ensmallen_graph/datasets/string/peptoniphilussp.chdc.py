@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:42.595690
 
-The undirected graph Peptoniphilus sp. ChDC has 1395 nodes and 108260 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11134
-and is connected, as it has a single component. The graph median node degree is 141,
-the mean node degree is 155.21, and the node degree mode is 5. The top 5 most central
-nodes are 1354300.AUQY01000005_gene494 (degree 701), 1354300.AUQY01000002_gene880
-(degree 692), 1354300.AUQY01000001_gene1392 (degree 620), 1354300.AUQY01000005_gene105
-(degree 578) and 1354300.AUQY01000002_gene690 (degree 549).
+The undirected graph Peptoniphilus sp. ChDC has 1395 nodes and 108260 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11134 and is connected, as it has a single component. The
+graph median node degree is 141, the mean node degree is 155.21, and the
+node degree mode is 5. The top 5 most central nodes are 1354300.AUQY01000005_gene494
+(degree 701), 1354300.AUQY01000002_gene880 (degree 692), 1354300.AUQY01000001_gene1392
+(degree 620), 1354300.AUQY01000005_gene105 (degree 578) and 1354300.AUQY01000002_gene690
+(degree 549).
 
 
 References
@@ -106,13 +107,14 @@ def PeptoniphilusSp.Chdc(
 	
 	Datetime: 2021-02-03 22:07:42.595690
 	
-	The undirected graph Peptoniphilus sp. ChDC has 1395 nodes and 108260 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11134
-	and is connected, as it has a single component. The graph median node degree is 141,
-	the mean node degree is 155.21, and the node degree mode is 5. The top 5 most central
-	nodes are 1354300.AUQY01000005_gene494 (degree 701), 1354300.AUQY01000002_gene880
-	(degree 692), 1354300.AUQY01000001_gene1392 (degree 620), 1354300.AUQY01000005_gene105
-	(degree 578) and 1354300.AUQY01000002_gene690 (degree 549).
+	The undirected graph Peptoniphilus sp. ChDC has 1395 nodes and 108260 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11134 and is connected, as it has a single component. The
+	graph median node degree is 141, the mean node degree is 155.21, and the
+	node degree mode is 5. The top 5 most central nodes are 1354300.AUQY01000005_gene494
+	(degree 701), 1354300.AUQY01000002_gene880 (degree 692), 1354300.AUQY01000001_gene1392
+	(degree 620), 1354300.AUQY01000005_gene105 (degree 578) and 1354300.AUQY01000002_gene690
+	(degree 549).
 	
 
 

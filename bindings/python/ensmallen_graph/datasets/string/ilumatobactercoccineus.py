@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:46:12.926322
 
-The undirected graph Ilumatobacter coccineus has 4289 nodes and 444254 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04831 and
-has 10 connected components, where the component with most nodes has 4269 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 154,
-the mean node degree is 207.16, and the node degree mode is 3. The top 5 most central
-nodes are 1313172.YM304_16030 (degree 2047), 1313172.YM304_13420 (degree 1687), 1313172.YM304_39400
-(degree 1606), 1313172.YM304_13410 (degree 1496) and 1313172.YM304_30670 (degree
+The undirected graph Ilumatobacter coccineus has 4289 nodes and 444254
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04831 and has 10 connected components, where the component
+with most nodes has 4269 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 154, the mean node degree is 207.16,
+and the node degree mode is 3. The top 5 most central nodes are 1313172.YM304_16030
+(degree 2047), 1313172.YM304_13420 (degree 1687), 1313172.YM304_39400 (degree
+1606), 1313172.YM304_13410 (degree 1496) and 1313172.YM304_30670 (degree
 1407).
 
 
@@ -107,13 +108,14 @@ def IlumatobacterCoccineus(
 	
 	Datetime: 2021-02-03 21:46:12.926322
 	
-	The undirected graph Ilumatobacter coccineus has 4289 nodes and 444254 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04831 and
-	has 10 connected components, where the component with most nodes has 4269 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 154,
-	the mean node degree is 207.16, and the node degree mode is 3. The top 5 most central
-	nodes are 1313172.YM304_16030 (degree 2047), 1313172.YM304_13420 (degree 1687), 1313172.YM304_39400
-	(degree 1606), 1313172.YM304_13410 (degree 1496) and 1313172.YM304_30670 (degree
+	The undirected graph Ilumatobacter coccineus has 4289 nodes and 444254
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04831 and has 10 connected components, where the component
+	with most nodes has 4269 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 154, the mean node degree is 207.16,
+	and the node degree mode is 3. The top 5 most central nodes are 1313172.YM304_16030
+	(degree 2047), 1313172.YM304_13420 (degree 1687), 1313172.YM304_39400 (degree
+	1606), 1313172.YM304_13410 (degree 1496) and 1313172.YM304_30670 (degree
 	1407).
 	
 

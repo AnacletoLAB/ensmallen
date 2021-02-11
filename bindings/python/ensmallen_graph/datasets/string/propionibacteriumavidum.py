@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:38.604725
 
-The undirected graph Propionibacterium avidum has 2219 nodes and 166246 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06756
-and has 9 connected components, where the component with most nodes has 2202 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 149.84, and the node degree mode is 1. The top 5
-most central nodes are 1170318.PALO_06945 (degree 942), 1170318.PALO_02140 (degree
-762), 1170318.PALO_09835 (degree 762), 1170318.PALO_10970 (degree 758) and 1170318.PALO_04050
-(degree 753).
+The undirected graph Propionibacterium avidum has 2219 nodes and 166246
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06756 and has 9 connected components, where the component
+with most nodes has 2202 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 149.84,
+and the node degree mode is 1. The top 5 most central nodes are 1170318.PALO_06945
+(degree 942), 1170318.PALO_02140 (degree 762), 1170318.PALO_09835 (degree
+762), 1170318.PALO_10970 (degree 758) and 1170318.PALO_04050 (degree 753).
 
 
 References
@@ -107,14 +107,14 @@ def PropionibacteriumAvidum(
 	
 	Datetime: 2021-02-02 23:06:38.604725
 	
-	The undirected graph Propionibacterium avidum has 2219 nodes and 166246 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06756
-	and has 9 connected components, where the component with most nodes has 2202 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 149.84, and the node degree mode is 1. The top 5
-	most central nodes are 1170318.PALO_06945 (degree 942), 1170318.PALO_02140 (degree
-	762), 1170318.PALO_09835 (degree 762), 1170318.PALO_10970 (degree 758) and 1170318.PALO_04050
-	(degree 753).
+	The undirected graph Propionibacterium avidum has 2219 nodes and 166246
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06756 and has 9 connected components, where the component
+	with most nodes has 2202 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 149.84,
+	and the node degree mode is 1. The top 5 most central nodes are 1170318.PALO_06945
+	(degree 942), 1170318.PALO_02140 (degree 762), 1170318.PALO_09835 (degree
+	762), 1170318.PALO_10970 (degree 758) and 1170318.PALO_04050 (degree 753).
 	
 
 

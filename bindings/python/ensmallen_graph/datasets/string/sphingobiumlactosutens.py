@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:02.910787
 
-The undirected graph Sphingobium lactosutens has 5215 nodes and 538729 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03963 and
-has 26 connected components, where the component with most nodes has 5157 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 206.61, and the node degree mode is 6. The top 5 most central
-nodes are 1331060.RLDS_14330 (degree 1618), 1331060.RLDS_16785 (degree 1269), 1331060.RLDS_14340
-(degree 1229), 1331060.RLDS_13690 (degree 1223) and 1331060.RLDS_13890 (degree 1182).
+The undirected graph Sphingobium lactosutens has 5215 nodes and 538729
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03963 and has 26 connected components, where the component
+with most nodes has 5157 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 206.61,
+and the node degree mode is 6. The top 5 most central nodes are 1331060.RLDS_14330
+(degree 1618), 1331060.RLDS_16785 (degree 1269), 1331060.RLDS_14340 (degree
+1229), 1331060.RLDS_13690 (degree 1223) and 1331060.RLDS_13890 (degree
+1182).
 
 
 References
@@ -106,13 +108,15 @@ def SphingobiumLactosutens(
 	
 	Datetime: 2021-02-03 21:55:02.910787
 	
-	The undirected graph Sphingobium lactosutens has 5215 nodes and 538729 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03963 and
-	has 26 connected components, where the component with most nodes has 5157 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 206.61, and the node degree mode is 6. The top 5 most central
-	nodes are 1331060.RLDS_14330 (degree 1618), 1331060.RLDS_16785 (degree 1269), 1331060.RLDS_14340
-	(degree 1229), 1331060.RLDS_13690 (degree 1223) and 1331060.RLDS_13890 (degree 1182).
+	The undirected graph Sphingobium lactosutens has 5215 nodes and 538729
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03963 and has 26 connected components, where the component
+	with most nodes has 5157 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 206.61,
+	and the node degree mode is 6. The top 5 most central nodes are 1331060.RLDS_14330
+	(degree 1618), 1331060.RLDS_16785 (degree 1269), 1331060.RLDS_14340 (degree
+	1229), 1331060.RLDS_13690 (degree 1223) and 1331060.RLDS_13890 (degree
+	1182).
 	
 
 

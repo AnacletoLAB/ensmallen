@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:36:14.065688
 
-The undirected graph Pelagibacter ubique HTCC9022 has 1411 nodes and 90091 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09057
-and has 2 connected components, where the component with most nodes has 1409 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 127.70, and the node degree mode is 14. The top 5
-most central nodes are 1265756.AWZW01000001_gene35 (degree 655), 1265756.AWZW01000001_gene438
-(degree 510), 1265756.AWZW01000008_gene1092 (degree 507), 1265756.AWZW01000001_gene330
-(degree 505) and 1265756.AWZW01000008_gene1090 (degree 477).
+The undirected graph Pelagibacter ubique HTCC9022 has 1411 nodes and 90091
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09057 and has 2 connected components, where the component
+with most nodes has 1409 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 127.70,
+and the node degree mode is 14. The top 5 most central nodes are 1265756.AWZW01000001_gene35
+(degree 655), 1265756.AWZW01000001_gene438 (degree 510), 1265756.AWZW01000008_gene1092
+(degree 507), 1265756.AWZW01000001_gene330 (degree 505) and 1265756.AWZW01000008_gene1090
+(degree 477).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterUbiqueHtcc9022(
 	
 	Datetime: 2021-02-02 23:36:14.065688
 	
-	The undirected graph Pelagibacter ubique HTCC9022 has 1411 nodes and 90091 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09057
-	and has 2 connected components, where the component with most nodes has 1409 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 127.70, and the node degree mode is 14. The top 5
-	most central nodes are 1265756.AWZW01000001_gene35 (degree 655), 1265756.AWZW01000001_gene438
-	(degree 510), 1265756.AWZW01000008_gene1092 (degree 507), 1265756.AWZW01000001_gene330
-	(degree 505) and 1265756.AWZW01000008_gene1090 (degree 477).
+	The undirected graph Pelagibacter ubique HTCC9022 has 1411 nodes and 90091
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09057 and has 2 connected components, where the component
+	with most nodes has 1409 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 127.70,
+	and the node degree mode is 14. The top 5 most central nodes are 1265756.AWZW01000001_gene35
+	(degree 655), 1265756.AWZW01000001_gene438 (degree 510), 1265756.AWZW01000008_gene1092
+	(degree 507), 1265756.AWZW01000001_gene330 (degree 505) and 1265756.AWZW01000008_gene1090
+	(degree 477).
 	
 
 

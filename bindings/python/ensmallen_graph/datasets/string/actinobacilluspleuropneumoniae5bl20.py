@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:46:41.597145
 
-The undirected graph Actinobacillus pleuropneumoniae 5b L20 has 2009 nodes and 153554
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07613 and is connected, as it has a single component. The graph median node
-degree is 138, the mean node degree is 152.87, and the node degree mode is 85. The
-top 5 most central nodes are 416269.APL_0473 (degree 878), 416269.APL_0935 (degree
-745), 416269.APL_0592 (degree 679), 416269.APL_0352 (degree 673) and 416269.APL_0593
-(degree 596).
+The undirected graph Actinobacillus pleuropneumoniae 5b L20 has 2009 nodes
+and 153554 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07613 and is connected, as it has a single component.
+The graph median node degree is 138, the mean node degree is 152.87, and
+the node degree mode is 85. The top 5 most central nodes are 416269.APL_0473
+(degree 878), 416269.APL_0935 (degree 745), 416269.APL_0592 (degree 679),
+416269.APL_0352 (degree 673) and 416269.APL_0593 (degree 596).
 
 
 References
@@ -106,13 +106,13 @@ def ActinobacillusPleuropneumoniae5bL20(
 	
 	Datetime: 2021-02-02 20:46:41.597145
 	
-	The undirected graph Actinobacillus pleuropneumoniae 5b L20 has 2009 nodes and 153554
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07613 and is connected, as it has a single component. The graph median node
-	degree is 138, the mean node degree is 152.87, and the node degree mode is 85. The
-	top 5 most central nodes are 416269.APL_0473 (degree 878), 416269.APL_0935 (degree
-	745), 416269.APL_0592 (degree 679), 416269.APL_0352 (degree 673) and 416269.APL_0593
-	(degree 596).
+	The undirected graph Actinobacillus pleuropneumoniae 5b L20 has 2009 nodes
+	and 153554 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07613 and is connected, as it has a single component.
+	The graph median node degree is 138, the mean node degree is 152.87, and
+	the node degree mode is 85. The top 5 most central nodes are 416269.APL_0473
+	(degree 878), 416269.APL_0935 (degree 745), 416269.APL_0592 (degree 679),
+	416269.APL_0352 (degree 673) and 416269.APL_0593 (degree 596).
 	
 
 

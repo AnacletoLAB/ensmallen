@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:02.308332
 
-The undirected graph Sinorhizobium arboris has 5903 nodes and 902645 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05182 and
-has 27 connected components, where the component with most nodes has 5843 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 244,
-the mean node degree is 305.83, and the node degree mode is 2. The top 5 most central
-nodes are 935557.ATYB01000014_gene4443 (degree 2310), 935557.ATYB01000014_gene1537
-(degree 2235), 935557.ATYB01000008_gene5360 (degree 1855), 935557.ATYB01000014_gene3794
-(degree 1831) and 935557.ATYB01000014_gene1343 (degree 1793).
+The undirected graph Sinorhizobium arboris has 5903 nodes and 902645 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05182 and has 27 connected components, where the component with most
+nodes has 5843 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 244, the mean node degree is 305.83, and
+the node degree mode is 2. The top 5 most central nodes are 935557.ATYB01000014_gene4443
+(degree 2310), 935557.ATYB01000014_gene1537 (degree 2235), 935557.ATYB01000008_gene5360
+(degree 1855), 935557.ATYB01000014_gene3794 (degree 1831) and 935557.ATYB01000014_gene1343
+(degree 1793).
 
 
 References
@@ -107,14 +108,15 @@ def SinorhizobiumArboris(
 	
 	Datetime: 2021-02-02 21:59:02.308332
 	
-	The undirected graph Sinorhizobium arboris has 5903 nodes and 902645 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05182 and
-	has 27 connected components, where the component with most nodes has 5843 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 244,
-	the mean node degree is 305.83, and the node degree mode is 2. The top 5 most central
-	nodes are 935557.ATYB01000014_gene4443 (degree 2310), 935557.ATYB01000014_gene1537
-	(degree 2235), 935557.ATYB01000008_gene5360 (degree 1855), 935557.ATYB01000014_gene3794
-	(degree 1831) and 935557.ATYB01000014_gene1343 (degree 1793).
+	The undirected graph Sinorhizobium arboris has 5903 nodes and 902645 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05182 and has 27 connected components, where the component with most
+	nodes has 5843 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 244, the mean node degree is 305.83, and
+	the node degree mode is 2. The top 5 most central nodes are 935557.ATYB01000014_gene4443
+	(degree 2310), 935557.ATYB01000014_gene1537 (degree 2235), 935557.ATYB01000008_gene5360
+	(degree 1855), 935557.ATYB01000014_gene3794 (degree 1831) and 935557.ATYB01000014_gene1343
+	(degree 1793).
 	
 
 

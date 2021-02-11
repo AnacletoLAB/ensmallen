@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:37.153937
 
-The undirected graph Thermoproteus uzoniensis has 2170 nodes and 222476 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09454
-and has 11 connected components, where the component with most nodes has 2144 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 205.05, and the node degree mode is 7. The top 5
-most central nodes are 999630.TUZN_2003 (degree 876), 999630.TUZN_1116 (degree 870),
-999630.TUZN_2027 (degree 803), 999630.TUZN_0936 (degree 788) and 999630.TUZN_0650
-(degree 774).
+The undirected graph Thermoproteus uzoniensis has 2170 nodes and 222476
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09454 and has 11 connected components, where the component
+with most nodes has 2144 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 205.05,
+and the node degree mode is 7. The top 5 most central nodes are 999630.TUZN_2003
+(degree 876), 999630.TUZN_1116 (degree 870), 999630.TUZN_2027 (degree 803),
+999630.TUZN_0936 (degree 788) and 999630.TUZN_0650 (degree 774).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoproteusUzoniensis(
 	
 	Datetime: 2021-02-02 22:06:37.153937
 	
-	The undirected graph Thermoproteus uzoniensis has 2170 nodes and 222476 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09454
-	and has 11 connected components, where the component with most nodes has 2144 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 205.05, and the node degree mode is 7. The top 5
-	most central nodes are 999630.TUZN_2003 (degree 876), 999630.TUZN_1116 (degree 870),
-	999630.TUZN_2027 (degree 803), 999630.TUZN_0936 (degree 788) and 999630.TUZN_0650
-	(degree 774).
+	The undirected graph Thermoproteus uzoniensis has 2170 nodes and 222476
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09454 and has 11 connected components, where the component
+	with most nodes has 2144 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 205.05,
+	and the node degree mode is 7. The top 5 most central nodes are 999630.TUZN_2003
+	(degree 876), 999630.TUZN_1116 (degree 870), 999630.TUZN_2027 (degree 803),
+	999630.TUZN_0936 (degree 788) and 999630.TUZN_0650 (degree 774).
 	
 
 

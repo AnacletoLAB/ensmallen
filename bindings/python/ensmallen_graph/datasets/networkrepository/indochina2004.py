@@ -11,13 +11,14 @@ had the following characteristics:
 Datetime: 2021-02-06 20:50:28.561433
 
 The undirected graph indochina-2004 has 349384 nodes, of which 10 are singletons
-(all have self-loops), and 3814544 unweighted edges, of which 88476 are self-loops.
-The graph is extremely sparse as it has a density of 0.00006 and has 534 connected
-components, where the component with most nodes has 232004 nodes and the component
-with the least nodes has a single node. The graph median node degree is 3, the mean
-node degree is 21.58, and the node degree mode is 1. The top 5 most central nodes
-are 7189008 (degree 102027), 7189007 (degree 64455), 7382376 (degree 9993), 7382399
-(degree 9991) and 7382397 (degree 9991).
+(all have self-loops), and 3814544 unweighted edges, of which 88476 are
+self-loops. The graph is extremely sparse as it has a density of 0.00006
+and has 534 connected components, where the component with most nodes has
+232004 nodes and the component with the least nodes has a single node.
+The graph median node degree is 3, the mean node degree is 21.58, and the
+node degree mode is 1. The top 5 most central nodes are 7189008 (degree
+102027), 7189007 (degree 64455), 7382376 (degree 9993), 7382399 (degree
+9991) and 7382397 (degree 9991).
 
 
 References
@@ -105,13 +106,14 @@ def Indochina2004(
 	Datetime: 2021-02-06 20:50:28.561433
 	
 	The undirected graph indochina-2004 has 349384 nodes, of which 10 are singletons
-	(all have self-loops), and 3814544 unweighted edges, of which 88476 are self-loops.
-	The graph is extremely sparse as it has a density of 0.00006 and has 534 connected
-	components, where the component with most nodes has 232004 nodes and the component
-	with the least nodes has a single node. The graph median node degree is 3, the mean
-	node degree is 21.58, and the node degree mode is 1. The top 5 most central nodes
-	are 7189008 (degree 102027), 7189007 (degree 64455), 7382376 (degree 9993), 7382399
-	(degree 9991) and 7382397 (degree 9991).
+	(all have self-loops), and 3814544 unweighted edges, of which 88476 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00006
+	and has 534 connected components, where the component with most nodes has
+	232004 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 3, the mean node degree is 21.58, and the
+	node degree mode is 1. The top 5 most central nodes are 7189008 (degree
+	102027), 7189007 (degree 64455), 7382376 (degree 9993), 7382399 (degree
+	9991) and 7382397 (degree 9991).
 	
 
 

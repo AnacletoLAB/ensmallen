@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:46:31.388534
 
-The undirected graph Synechococcus sp. CC9616 has 2433 nodes and 160823 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05436
-and has 35 connected components, where the component with most nodes has 2339 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 132.20, and the node degree mode is 4. The top 5
-most central nodes are 110663.KI911558_gene248 (degree 864), 110663.KI911558_gene2022
-(degree 750), 110663.KI911558_gene721 (degree 626), 110663.KI911558_gene1530 (degree
-619) and 110663.KI911558_gene2315 (degree 618).
+The undirected graph Synechococcus sp. CC9616 has 2433 nodes and 160823
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05436 and has 35 connected components, where the component
+with most nodes has 2339 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 132.20,
+and the node degree mode is 4. The top 5 most central nodes are 110663.KI911558_gene248
+(degree 864), 110663.KI911558_gene2022 (degree 750), 110663.KI911558_gene721
+(degree 626), 110663.KI911558_gene1530 (degree 619) and 110663.KI911558_gene2315
+(degree 618).
 
 
 References
@@ -107,14 +108,15 @@ def SynechococcusSp.Cc9616(
 	
 	Datetime: 2021-02-02 19:46:31.388534
 	
-	The undirected graph Synechococcus sp. CC9616 has 2433 nodes and 160823 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05436
-	and has 35 connected components, where the component with most nodes has 2339 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 132.20, and the node degree mode is 4. The top 5
-	most central nodes are 110663.KI911558_gene248 (degree 864), 110663.KI911558_gene2022
-	(degree 750), 110663.KI911558_gene721 (degree 626), 110663.KI911558_gene1530 (degree
-	619) and 110663.KI911558_gene2315 (degree 618).
+	The undirected graph Synechococcus sp. CC9616 has 2433 nodes and 160823
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05436 and has 35 connected components, where the component
+	with most nodes has 2339 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 132.20,
+	and the node degree mode is 4. The top 5 most central nodes are 110663.KI911558_gene248
+	(degree 864), 110663.KI911558_gene2022 (degree 750), 110663.KI911558_gene721
+	(degree 626), 110663.KI911558_gene1530 (degree 619) and 110663.KI911558_gene2315
+	(degree 618).
 	
 
 

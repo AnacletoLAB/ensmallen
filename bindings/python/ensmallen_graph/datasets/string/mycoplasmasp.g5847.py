@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:09:56.642496
 
-The undirected graph Mycoplasma sp. G5847 has 858 nodes and 41678 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11336
-and has 7 connected components, where the component with most nodes has 840 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 75, the mean node degree is 97.15, and the node degree mode is 8. The top 5 most
-central nodes are 1179777.D500_0744 (degree 392), 1179777.D500_0276 (degree 353),
-1179777.D500_0218 (degree 351), 1179777.D500_0563 (degree 330) and 1179777.D500_0050
-(degree 313).
+The undirected graph Mycoplasma sp. G5847 has 858 nodes and 41678 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11336 and has 7 connected components, where the component
+with most nodes has 840 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 75, the mean node degree is 97.15,
+and the node degree mode is 8. The top 5 most central nodes are 1179777.D500_0744
+(degree 392), 1179777.D500_0276 (degree 353), 1179777.D500_0218 (degree
+351), 1179777.D500_0563 (degree 330) and 1179777.D500_0050 (degree 313).
 
 
 References
@@ -107,14 +107,14 @@ def MycoplasmaSp.G5847(
 	
 	Datetime: 2021-02-02 23:09:56.642496
 	
-	The undirected graph Mycoplasma sp. G5847 has 858 nodes and 41678 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11336
-	and has 7 connected components, where the component with most nodes has 840 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 75, the mean node degree is 97.15, and the node degree mode is 8. The top 5 most
-	central nodes are 1179777.D500_0744 (degree 392), 1179777.D500_0276 (degree 353),
-	1179777.D500_0218 (degree 351), 1179777.D500_0563 (degree 330) and 1179777.D500_0050
-	(degree 313).
+	The undirected graph Mycoplasma sp. G5847 has 858 nodes and 41678 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11336 and has 7 connected components, where the component
+	with most nodes has 840 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 75, the mean node degree is 97.15,
+	and the node degree mode is 8. The top 5 most central nodes are 1179777.D500_0744
+	(degree 392), 1179777.D500_0276 (degree 353), 1179777.D500_0218 (degree
+	351), 1179777.D500_0563 (degree 330) and 1179777.D500_0050 (degree 313).
 	
 
 

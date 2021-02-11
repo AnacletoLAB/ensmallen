@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:59.026599
 
-The undirected graph Jonesia denitrificans has 2495 nodes and 212328 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06824 and
-has 4 connected components, where the component with most nodes has 2488 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 170.20, and the node degree mode is 3. The top 5 most central
-nodes are 471856.Jden_1226 (degree 962), 471856.Jden_1952 (degree 960), 471856.Jden_1109
-(degree 801), 471856.Jden_0638 (degree 762) and 471856.Jden_0650 (degree 760).
+The undirected graph Jonesia denitrificans has 2495 nodes and 212328 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06824 and has 4 connected components, where the component with most
+nodes has 2488 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 170.20, and
+the node degree mode is 3. The top 5 most central nodes are 471856.Jden_1226
+(degree 962), 471856.Jden_1952 (degree 960), 471856.Jden_1109 (degree 801),
+471856.Jden_0638 (degree 762) and 471856.Jden_0650 (degree 760).
 
 
 References
@@ -106,13 +107,14 @@ def JonesiaDenitrificans(
 	
 	Datetime: 2021-02-02 20:55:59.026599
 	
-	The undirected graph Jonesia denitrificans has 2495 nodes and 212328 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06824 and
-	has 4 connected components, where the component with most nodes has 2488 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 170.20, and the node degree mode is 3. The top 5 most central
-	nodes are 471856.Jden_1226 (degree 962), 471856.Jden_1952 (degree 960), 471856.Jden_1109
-	(degree 801), 471856.Jden_0638 (degree 762) and 471856.Jden_0650 (degree 760).
+	The undirected graph Jonesia denitrificans has 2495 nodes and 212328 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06824 and has 4 connected components, where the component with most
+	nodes has 2488 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 170.20, and
+	the node degree mode is 3. The top 5 most central nodes are 471856.Jden_1226
+	(degree 962), 471856.Jden_1952 (degree 960), 471856.Jden_1109 (degree 801),
+	471856.Jden_0638 (degree 762) and 471856.Jden_0650 (degree 760).
 	
 
 

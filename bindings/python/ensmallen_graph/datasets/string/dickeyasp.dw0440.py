@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:01.546935
 
-The undirected graph Dickeya sp. DW 0440 has 3582 nodes and 364456 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05683 and
-has 3 connected components, where the component with most nodes has 3578 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 168,
-the mean node degree is 203.49, and the node degree mode is 7. The top 5 most central
-nodes are 1225785.CM001983_gene677 (degree 1316), 1225785.CM001983_gene3475 (degree
-1227), 1225785.CM001983_gene3417 (degree 1208), 1225785.CM001983_gene2153 (degree
-1184) and 1225785.CM001983_gene2574 (degree 1156).
+The undirected graph Dickeya sp. DW 0440 has 3582 nodes and 364456 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05683 and has 3 connected components, where the component with most
+nodes has 3578 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 168, the mean node degree is 203.49, and
+the node degree mode is 7. The top 5 most central nodes are 1225785.CM001983_gene677
+(degree 1316), 1225785.CM001983_gene3475 (degree 1227), 1225785.CM001983_gene3417
+(degree 1208), 1225785.CM001983_gene2153 (degree 1184) and 1225785.CM001983_gene2574
+(degree 1156).
 
 
 References
@@ -107,14 +108,15 @@ def DickeyaSp.Dw0440(
 	
 	Datetime: 2021-02-02 23:25:01.546935
 	
-	The undirected graph Dickeya sp. DW 0440 has 3582 nodes and 364456 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05683 and
-	has 3 connected components, where the component with most nodes has 3578 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 168,
-	the mean node degree is 203.49, and the node degree mode is 7. The top 5 most central
-	nodes are 1225785.CM001983_gene677 (degree 1316), 1225785.CM001983_gene3475 (degree
-	1227), 1225785.CM001983_gene3417 (degree 1208), 1225785.CM001983_gene2153 (degree
-	1184) and 1225785.CM001983_gene2574 (degree 1156).
+	The undirected graph Dickeya sp. DW 0440 has 3582 nodes and 364456 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05683 and has 3 connected components, where the component with most
+	nodes has 3578 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 168, the mean node degree is 203.49, and
+	the node degree mode is 7. The top 5 most central nodes are 1225785.CM001983_gene677
+	(degree 1316), 1225785.CM001983_gene3475 (degree 1227), 1225785.CM001983_gene3417
+	(degree 1208), 1225785.CM001983_gene2153 (degree 1184) and 1225785.CM001983_gene2574
+	(degree 1156).
 	
 
 

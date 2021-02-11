@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:52.235614
 
-The undirected graph Shimazuella kribbensis has 4183 nodes and 329626 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03769 and
-has 67 connected components, where the component with most nodes has 4032 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 157.60, and the node degree mode is 2. The top 5 most central
-nodes are 1123252.ATZF01000015_gene1903 (degree 1132), 1123252.ATZF01000015_gene1886
-(degree 984), 1123252.ATZF01000002_gene2375 (degree 964), 1123252.ATZF01000007_gene248
-(degree 959) and 1123252.ATZF01000001_gene1440 (degree 911).
+The undirected graph Shimazuella kribbensis has 4183 nodes and 329626 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03769 and has 67 connected components, where the component with most
+nodes has 4032 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 157.60, and
+the node degree mode is 2. The top 5 most central nodes are 1123252.ATZF01000015_gene1903
+(degree 1132), 1123252.ATZF01000015_gene1886 (degree 984), 1123252.ATZF01000002_gene2375
+(degree 964), 1123252.ATZF01000007_gene248 (degree 959) and 1123252.ATZF01000001_gene1440
+(degree 911).
 
 
 References
@@ -107,14 +108,15 @@ def ShimazuellaKribbensis(
 	
 	Datetime: 2021-02-02 22:48:52.235614
 	
-	The undirected graph Shimazuella kribbensis has 4183 nodes and 329626 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03769 and
-	has 67 connected components, where the component with most nodes has 4032 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 157.60, and the node degree mode is 2. The top 5 most central
-	nodes are 1123252.ATZF01000015_gene1903 (degree 1132), 1123252.ATZF01000015_gene1886
-	(degree 984), 1123252.ATZF01000002_gene2375 (degree 964), 1123252.ATZF01000007_gene248
-	(degree 959) and 1123252.ATZF01000001_gene1440 (degree 911).
+	The undirected graph Shimazuella kribbensis has 4183 nodes and 329626 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03769 and has 67 connected components, where the component with most
+	nodes has 4032 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 157.60, and
+	the node degree mode is 2. The top 5 most central nodes are 1123252.ATZF01000015_gene1903
+	(degree 1132), 1123252.ATZF01000015_gene1886 (degree 984), 1123252.ATZF01000002_gene2375
+	(degree 964), 1123252.ATZF01000007_gene248 (degree 959) and 1123252.ATZF01000001_gene1440
+	(degree 911).
 	
 
 

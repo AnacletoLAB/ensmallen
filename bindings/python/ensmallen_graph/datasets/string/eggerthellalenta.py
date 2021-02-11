@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:36.709501
 
-The undirected graph Eggerthella lenta has 3052 nodes and 182006 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03909 and
-has 5 connected components, where the component with most nodes has 3043 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 119.27, and the node degree mode is 4. The top 5 most central
-nodes are 479437.Elen_2854 (degree 1131), 479437.Elen_2014 (degree 1077), 479437.Elen_0285
-(degree 881), 479437.Elen_1984 (degree 828) and 479437.Elen_2143 (degree 780).
+The undirected graph Eggerthella lenta has 3052 nodes and 182006 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03909 and has 5 connected components, where the component with most
+nodes has 3043 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 119.27, and
+the node degree mode is 4. The top 5 most central nodes are 479437.Elen_2854
+(degree 1131), 479437.Elen_2014 (degree 1077), 479437.Elen_0285 (degree
+881), 479437.Elen_1984 (degree 828) and 479437.Elen_2143 (degree 780).
 
 
 References
@@ -106,13 +107,14 @@ def EggerthellaLenta(
 	
 	Datetime: 2021-02-02 20:57:36.709501
 	
-	The undirected graph Eggerthella lenta has 3052 nodes and 182006 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03909 and
-	has 5 connected components, where the component with most nodes has 3043 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 119.27, and the node degree mode is 4. The top 5 most central
-	nodes are 479437.Elen_2854 (degree 1131), 479437.Elen_2014 (degree 1077), 479437.Elen_0285
-	(degree 881), 479437.Elen_1984 (degree 828) and 479437.Elen_2143 (degree 780).
+	The undirected graph Eggerthella lenta has 3052 nodes and 182006 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03909 and has 5 connected components, where the component with most
+	nodes has 3043 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 119.27, and
+	the node degree mode is 4. The top 5 most central nodes are 479437.Elen_2854
+	(degree 1131), 479437.Elen_2014 (degree 1077), 479437.Elen_0285 (degree
+	881), 479437.Elen_1984 (degree 828) and 479437.Elen_2143 (degree 780).
 	
 
 

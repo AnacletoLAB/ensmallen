@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:45.507682
 
-The undirected graph Zetaproteobacteria bacterium TAG1 has 2127 nodes and 166101
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07346 and has 2 connected components, where the component with most nodes has
-2121 nodes and the component with the least nodes has 6 nodes. The graph median node
-degree is 131, the mean node degree is 156.18, and the node degree mode is 5. The
-top 5 most central nodes are 1485545.JQLW01000006_gene283 (degree 869), 1485545.JQLW01000006_gene256
+The undirected graph Zetaproteobacteria bacterium TAG1 has 2127 nodes and
+166101 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07346 and has 2 connected components, where the
+component with most nodes has 2121 nodes and the component with the least
+nodes has 6 nodes. The graph median node degree is 131, the mean node degree
+is 156.18, and the node degree mode is 5. The top 5 most central nodes
+are 1485545.JQLW01000006_gene283 (degree 869), 1485545.JQLW01000006_gene256
 (degree 755), 1485545.JQLW01000006_gene294 (degree 661), 1485545.JQLW01000006_gene481
 (degree 644) and 1485545.JQLW01000007_gene761 (degree 643).
 
@@ -107,12 +108,13 @@ def ZetaproteobacteriaBacteriumTag1(
 	
 	Datetime: 2021-02-03 23:13:45.507682
 	
-	The undirected graph Zetaproteobacteria bacterium TAG1 has 2127 nodes and 166101
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07346 and has 2 connected components, where the component with most nodes has
-	2121 nodes and the component with the least nodes has 6 nodes. The graph median node
-	degree is 131, the mean node degree is 156.18, and the node degree mode is 5. The
-	top 5 most central nodes are 1485545.JQLW01000006_gene283 (degree 869), 1485545.JQLW01000006_gene256
+	The undirected graph Zetaproteobacteria bacterium TAG1 has 2127 nodes and
+	166101 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07346 and has 2 connected components, where the
+	component with most nodes has 2121 nodes and the component with the least
+	nodes has 6 nodes. The graph median node degree is 131, the mean node degree
+	is 156.18, and the node degree mode is 5. The top 5 most central nodes
+	are 1485545.JQLW01000006_gene283 (degree 869), 1485545.JQLW01000006_gene256
 	(degree 755), 1485545.JQLW01000006_gene294 (degree 661), 1485545.JQLW01000006_gene481
 	(degree 644) and 1485545.JQLW01000007_gene761 (degree 643).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:12:57.491447
 
-The undirected graph Gilliamella apicola has 2740 nodes and 190726 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05083 and
-has 31 connected components, where the component with most nodes has 2642 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 139.22, and the node degree mode is 1. The top 5 most central
-nodes are 1196095.GAPWK_0054 (degree 978), 1196095.GAPWK_1810 (degree 829), 1196095.GAPWK_0257
-(degree 796), 1196095.GAPWK_1834 (degree 772) and 1196095.GAPWK_0384 (degree 745).
+The undirected graph Gilliamella apicola has 2740 nodes and 190726 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05083 and has 31 connected components, where the component with most
+nodes has 2642 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 139.22, and
+the node degree mode is 1. The top 5 most central nodes are 1196095.GAPWK_0054
+(degree 978), 1196095.GAPWK_1810 (degree 829), 1196095.GAPWK_0257 (degree
+796), 1196095.GAPWK_1834 (degree 772) and 1196095.GAPWK_0384 (degree 745).
 
 
 References
@@ -106,13 +107,14 @@ def GilliamellaApicola(
 	
 	Datetime: 2021-02-02 23:12:57.491447
 	
-	The undirected graph Gilliamella apicola has 2740 nodes and 190726 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05083 and
-	has 31 connected components, where the component with most nodes has 2642 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 139.22, and the node degree mode is 1. The top 5 most central
-	nodes are 1196095.GAPWK_0054 (degree 978), 1196095.GAPWK_1810 (degree 829), 1196095.GAPWK_0257
-	(degree 796), 1196095.GAPWK_1834 (degree 772) and 1196095.GAPWK_0384 (degree 745).
+	The undirected graph Gilliamella apicola has 2740 nodes and 190726 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05083 and has 31 connected components, where the component with most
+	nodes has 2642 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 139.22, and
+	the node degree mode is 1. The top 5 most central nodes are 1196095.GAPWK_0054
+	(degree 978), 1196095.GAPWK_1810 (degree 829), 1196095.GAPWK_0257 (degree
+	796), 1196095.GAPWK_1834 (degree 772) and 1196095.GAPWK_0384 (degree 745).
 	
 
 

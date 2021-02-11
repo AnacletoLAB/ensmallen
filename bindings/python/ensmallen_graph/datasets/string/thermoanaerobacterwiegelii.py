@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:57.832668
 
-The undirected graph Thermoanaerobacter wiegelii has 2507 nodes and 181125 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05766
-and has 6 connected components, where the component with most nodes has 2496 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 144.50, and the node degree mode is 1. The top 5
-most central nodes are 697303.Thewi_0578 (degree 1357), 697303.Thewi_0961 (degree
-1047), 697303.Thewi_0667 (degree 835), 697303.Thewi_2535 (degree 822) and 697303.Thewi_0666
-(degree 820).
+The undirected graph Thermoanaerobacter wiegelii has 2507 nodes and 181125
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05766 and has 6 connected components, where the component
+with most nodes has 2496 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 144.50,
+and the node degree mode is 1. The top 5 most central nodes are 697303.Thewi_0578
+(degree 1357), 697303.Thewi_0961 (degree 1047), 697303.Thewi_0667 (degree
+835), 697303.Thewi_2535 (degree 822) and 697303.Thewi_0666 (degree 820).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoanaerobacterWiegelii(
 	
 	Datetime: 2021-02-02 21:32:57.832668
 	
-	The undirected graph Thermoanaerobacter wiegelii has 2507 nodes and 181125 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05766
-	and has 6 connected components, where the component with most nodes has 2496 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 144.50, and the node degree mode is 1. The top 5
-	most central nodes are 697303.Thewi_0578 (degree 1357), 697303.Thewi_0961 (degree
-	1047), 697303.Thewi_0667 (degree 835), 697303.Thewi_2535 (degree 822) and 697303.Thewi_0666
-	(degree 820).
+	The undirected graph Thermoanaerobacter wiegelii has 2507 nodes and 181125
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05766 and has 6 connected components, where the component
+	with most nodes has 2496 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 144.50,
+	and the node degree mode is 1. The top 5 most central nodes are 697303.Thewi_0578
+	(degree 1357), 697303.Thewi_0961 (degree 1047), 697303.Thewi_0667 (degree
+	835), 697303.Thewi_2535 (degree 822) and 697303.Thewi_0666 (degree 820).
 	
 
 

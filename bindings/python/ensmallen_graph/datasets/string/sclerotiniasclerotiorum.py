@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:13.025847
 
-The undirected graph Sclerotinia sclerotiorum has 4830 nodes and 244561 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02097
-and has 42 connected components, where the component with most nodes has 4743 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 101.27, and the node degree mode is 1. The top 5 most
-central nodes are 5180.EDN96141 (degree 1115), 5180.EDN94342 (degree 806), 5180.EDN96957
-(degree 795), 5180.EDN90788 (degree 789) and 5180.EDN99349 (degree 765).
+The undirected graph Sclerotinia sclerotiorum has 4830 nodes and 244561
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02097 and has 42 connected components, where the component
+with most nodes has 4743 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 101.27,
+and the node degree mode is 1. The top 5 most central nodes are 5180.EDN96141
+(degree 1115), 5180.EDN94342 (degree 806), 5180.EDN96957 (degree 795),
+5180.EDN90788 (degree 789) and 5180.EDN99349 (degree 765).
 
 
 References
@@ -106,13 +107,14 @@ def SclerotiniaSclerotiorum(
 	
 	Datetime: 2021-02-02 17:13:13.025847
 	
-	The undirected graph Sclerotinia sclerotiorum has 4830 nodes and 244561 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02097
-	and has 42 connected components, where the component with most nodes has 4743 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 101.27, and the node degree mode is 1. The top 5 most
-	central nodes are 5180.EDN96141 (degree 1115), 5180.EDN94342 (degree 806), 5180.EDN96957
-	(degree 795), 5180.EDN90788 (degree 789) and 5180.EDN99349 (degree 765).
+	The undirected graph Sclerotinia sclerotiorum has 4830 nodes and 244561
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02097 and has 42 connected components, where the component
+	with most nodes has 4743 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 101.27,
+	and the node degree mode is 1. The top 5 most central nodes are 5180.EDN96141
+	(degree 1115), 5180.EDN94342 (degree 806), 5180.EDN96957 (degree 795),
+	5180.EDN90788 (degree 789) and 5180.EDN99349 (degree 765).
 	
 
 

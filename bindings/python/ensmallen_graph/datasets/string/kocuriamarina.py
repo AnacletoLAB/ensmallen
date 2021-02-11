@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:04:32.834258
 
-The undirected graph Kocuria marina has 2297 nodes and 216823 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.08222 and
-has 9 connected components, where the component with most nodes has 2279 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 188.79, and the node degree mode is 1. The top 5 most central
-nodes are 223184.AS25_04730 (degree 876), 223184.AS25_04470 (degree 871), 223184.AS25_05375
-(degree 838), 223184.AS25_09765 (degree 837) and 223184.AS25_13430 (degree 807).
+The undirected graph Kocuria marina has 2297 nodes and 216823 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08222 and has 9 connected components, where the component with most
+nodes has 2279 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 188.79, and
+the node degree mode is 1. The top 5 most central nodes are 223184.AS25_04730
+(degree 876), 223184.AS25_04470 (degree 871), 223184.AS25_05375 (degree
+838), 223184.AS25_09765 (degree 837) and 223184.AS25_13430 (degree 807).
 
 
 References
@@ -106,13 +107,14 @@ def KocuriaMarina(
 	
 	Datetime: 2021-02-02 20:04:32.834258
 	
-	The undirected graph Kocuria marina has 2297 nodes and 216823 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.08222 and
-	has 9 connected components, where the component with most nodes has 2279 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 188.79, and the node degree mode is 1. The top 5 most central
-	nodes are 223184.AS25_04730 (degree 876), 223184.AS25_04470 (degree 871), 223184.AS25_05375
-	(degree 838), 223184.AS25_09765 (degree 837) and 223184.AS25_13430 (degree 807).
+	The undirected graph Kocuria marina has 2297 nodes and 216823 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08222 and has 9 connected components, where the component with most
+	nodes has 2279 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 188.79, and
+	the node degree mode is 1. The top 5 most central nodes are 223184.AS25_04730
+	(degree 876), 223184.AS25_04470 (degree 871), 223184.AS25_05375 (degree
+	838), 223184.AS25_09765 (degree 837) and 223184.AS25_13430 (degree 807).
 	
 
 

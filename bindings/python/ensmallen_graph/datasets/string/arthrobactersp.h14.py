@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:45:43.118134
 
-The undirected graph Arthrobacter sp. H14 has 3907 nodes and 333535 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04371 and
-has 25 connected components, where the component with most nodes has 3844 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 170.74, and the node degree mode is 2. The top 5 most central
-nodes are 1312959.KI914621_gene2422 (degree 1168), 1312959.KI914677_gene2178 (degree
-1149), 1312959.KI914704_gene3113 (degree 1143), 1312959.KI914706_gene3024 (degree
-1047) and 1312959.KI914621_gene2395 (degree 967).
+The undirected graph Arthrobacter sp. H14 has 3907 nodes and 333535 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04371 and has 25 connected components, where the component with most
+nodes has 3844 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 170.74, and
+the node degree mode is 2. The top 5 most central nodes are 1312959.KI914621_gene2422
+(degree 1168), 1312959.KI914677_gene2178 (degree 1149), 1312959.KI914704_gene3113
+(degree 1143), 1312959.KI914706_gene3024 (degree 1047) and 1312959.KI914621_gene2395
+(degree 967).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.H14(
 	
 	Datetime: 2021-02-03 21:45:43.118134
 	
-	The undirected graph Arthrobacter sp. H14 has 3907 nodes and 333535 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04371 and
-	has 25 connected components, where the component with most nodes has 3844 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 170.74, and the node degree mode is 2. The top 5 most central
-	nodes are 1312959.KI914621_gene2422 (degree 1168), 1312959.KI914677_gene2178 (degree
-	1149), 1312959.KI914704_gene3113 (degree 1143), 1312959.KI914706_gene3024 (degree
-	1047) and 1312959.KI914621_gene2395 (degree 967).
+	The undirected graph Arthrobacter sp. H14 has 3907 nodes and 333535 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04371 and has 25 connected components, where the component with most
+	nodes has 3844 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 170.74, and
+	the node degree mode is 2. The top 5 most central nodes are 1312959.KI914621_gene2422
+	(degree 1168), 1312959.KI914677_gene2178 (degree 1149), 1312959.KI914704_gene3113
+	(degree 1143), 1312959.KI914706_gene3024 (degree 1047) and 1312959.KI914621_gene2395
+	(degree 967).
 	
 
 

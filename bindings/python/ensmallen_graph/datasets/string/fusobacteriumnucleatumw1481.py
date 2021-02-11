@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:12.170098
 
-The undirected graph Fusobacterium nucleatum W1481 has 2306 nodes and 134289 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-and has 5 connected components, where the component with most nodes has 2298 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 116.47, and the node degree mode is 11. The top 5
-most central nodes are 1408287.AXUR01000051_gene849 (degree 893), 1408287.AXUR01000001_gene1332
-(degree 776), 1408287.AXUR01000073_gene2130 (degree 751), 1408287.AXUR01000058_gene1891
-(degree 701) and 1408287.AXUR01000081_gene2155 (degree 685).
+The undirected graph Fusobacterium nucleatum W1481 has 2306 nodes and 134289
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05053 and has 5 connected components, where the component
+with most nodes has 2298 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 116.47,
+and the node degree mode is 11. The top 5 most central nodes are 1408287.AXUR01000051_gene849
+(degree 893), 1408287.AXUR01000001_gene1332 (degree 776), 1408287.AXUR01000073_gene2130
+(degree 751), 1408287.AXUR01000058_gene1891 (degree 701) and 1408287.AXUR01000081_gene2155
+(degree 685).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumNucleatumW1481(
 	
 	Datetime: 2021-02-03 22:34:12.170098
 	
-	The undirected graph Fusobacterium nucleatum W1481 has 2306 nodes and 134289 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05053
-	and has 5 connected components, where the component with most nodes has 2298 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 116.47, and the node degree mode is 11. The top 5
-	most central nodes are 1408287.AXUR01000051_gene849 (degree 893), 1408287.AXUR01000001_gene1332
-	(degree 776), 1408287.AXUR01000073_gene2130 (degree 751), 1408287.AXUR01000058_gene1891
-	(degree 701) and 1408287.AXUR01000081_gene2155 (degree 685).
+	The undirected graph Fusobacterium nucleatum W1481 has 2306 nodes and 134289
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05053 and has 5 connected components, where the component
+	with most nodes has 2298 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 116.47,
+	and the node degree mode is 11. The top 5 most central nodes are 1408287.AXUR01000051_gene849
+	(degree 893), 1408287.AXUR01000001_gene1332 (degree 776), 1408287.AXUR01000073_gene2130
+	(degree 751), 1408287.AXUR01000058_gene1891 (degree 701) and 1408287.AXUR01000081_gene2155
+	(degree 685).
 	
 
 

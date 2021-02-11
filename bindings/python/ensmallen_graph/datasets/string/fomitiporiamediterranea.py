@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:06.595109
 
-The undirected graph Fomitiporia mediterranea has 6416 nodes and 593731 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02885
-and has 19 connected components, where the component with most nodes has 6368 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 185.08, and the node degree mode is 1. The top 5
-most central nodes are 208960.XP_007268527.1 (degree 1885), 208960.XP_007261945.1
-(degree 1520), 208960.XP_007268650.1 (degree 1434), 208960.XP_007264972.1 (degree
-1327) and 208960.XP_007267491.1 (degree 1293).
+The undirected graph Fomitiporia mediterranea has 6416 nodes and 593731
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02885 and has 19 connected components, where the component
+with most nodes has 6368 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 185.08,
+and the node degree mode is 1. The top 5 most central nodes are 208960.XP_007268527.1
+(degree 1885), 208960.XP_007261945.1 (degree 1520), 208960.XP_007268650.1
+(degree 1434), 208960.XP_007264972.1 (degree 1327) and 208960.XP_007267491.1
+(degree 1293).
 
 
 References
@@ -107,14 +108,15 @@ def FomitiporiaMediterranea(
 	
 	Datetime: 2021-02-02 20:01:06.595109
 	
-	The undirected graph Fomitiporia mediterranea has 6416 nodes and 593731 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02885
-	and has 19 connected components, where the component with most nodes has 6368 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 185.08, and the node degree mode is 1. The top 5
-	most central nodes are 208960.XP_007268527.1 (degree 1885), 208960.XP_007261945.1
-	(degree 1520), 208960.XP_007268650.1 (degree 1434), 208960.XP_007264972.1 (degree
-	1327) and 208960.XP_007267491.1 (degree 1293).
+	The undirected graph Fomitiporia mediterranea has 6416 nodes and 593731
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02885 and has 19 connected components, where the component
+	with most nodes has 6368 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 185.08,
+	and the node degree mode is 1. The top 5 most central nodes are 208960.XP_007268527.1
+	(degree 1885), 208960.XP_007261945.1 (degree 1520), 208960.XP_007268650.1
+	(degree 1434), 208960.XP_007264972.1 (degree 1327) and 208960.XP_007267491.1
+	(degree 1293).
 	
 
 

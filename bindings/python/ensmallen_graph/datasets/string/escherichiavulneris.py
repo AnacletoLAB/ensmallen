@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:00.065768
 
-The undirected graph Escherichia vulneris has 4186 nodes and 553526 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06319 and
-has 22 connected components, where the component with most nodes has 4134 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 224,
-the mean node degree is 264.47, and the node degree mode is 1. The top 5 most central
-nodes are 1115515.EV102420_09_00230 (degree 1694), 1115515.EV102420_09_00450 (degree
-1639), 1115515.EV102420_25_00070 (degree 1615), 1115515.EV102420_22_00740 (degree
-1461) and 1115515.EV102420_05_00600 (degree 1394).
+The undirected graph Escherichia vulneris has 4186 nodes and 553526 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06319 and has 22 connected components, where the component with most
+nodes has 4134 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 224, the mean node degree is 264.47, and
+the node degree mode is 1. The top 5 most central nodes are 1115515.EV102420_09_00230
+(degree 1694), 1115515.EV102420_09_00450 (degree 1639), 1115515.EV102420_25_00070
+(degree 1615), 1115515.EV102420_22_00740 (degree 1461) and 1115515.EV102420_05_00600
+(degree 1394).
 
 
 References
@@ -107,14 +108,15 @@ def EscherichiaVulneris(
 	
 	Datetime: 2021-02-02 22:27:00.065768
 	
-	The undirected graph Escherichia vulneris has 4186 nodes and 553526 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06319 and
-	has 22 connected components, where the component with most nodes has 4134 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 224,
-	the mean node degree is 264.47, and the node degree mode is 1. The top 5 most central
-	nodes are 1115515.EV102420_09_00230 (degree 1694), 1115515.EV102420_09_00450 (degree
-	1639), 1115515.EV102420_25_00070 (degree 1615), 1115515.EV102420_22_00740 (degree
-	1461) and 1115515.EV102420_05_00600 (degree 1394).
+	The undirected graph Escherichia vulneris has 4186 nodes and 553526 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06319 and has 22 connected components, where the component with most
+	nodes has 4134 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 224, the mean node degree is 264.47, and
+	the node degree mode is 1. The top 5 most central nodes are 1115515.EV102420_09_00230
+	(degree 1694), 1115515.EV102420_09_00450 (degree 1639), 1115515.EV102420_25_00070
+	(degree 1615), 1115515.EV102420_22_00740 (degree 1461) and 1115515.EV102420_05_00600
+	(degree 1394).
 	
 
 

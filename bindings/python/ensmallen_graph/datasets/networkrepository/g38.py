@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:03:28.103737
 
-The undirected graph G38 has 2000 nodes and 11779 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00589 and is connected,
-as it has a single component. The graph median node degree is 8, the mean node degree
-is 11.78, and the node degree mode is 6. The top 5 most central nodes are 4 (degree
-249), 2 (degree 197), 5 (degree 192), 3 (degree 162) and 18 (degree 134).
+The undirected graph G38 has 2000 nodes and 11779 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00589
+and is connected, as it has a single component. The graph median node degree
+is 8, the mean node degree is 11.78, and the node degree mode is 6. The
+top 5 most central nodes are 4 (degree 249), 2 (degree 197), 5 (degree
+192), 3 (degree 162) and 18 (degree 134).
 
 
 References
@@ -101,11 +102,12 @@ def G38(
 	
 	Datetime: 2021-02-06 10:03:28.103737
 	
-	The undirected graph G38 has 2000 nodes and 11779 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00589 and is connected,
-	as it has a single component. The graph median node degree is 8, the mean node degree
-	is 11.78, and the node degree mode is 6. The top 5 most central nodes are 4 (degree
-	249), 2 (degree 197), 5 (degree 192), 3 (degree 162) and 18 (degree 134).
+	The undirected graph G38 has 2000 nodes and 11779 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00589
+	and is connected, as it has a single component. The graph median node degree
+	is 8, the mean node degree is 11.78, and the node degree mode is 6. The
+	top 5 most central nodes are 4 (degree 249), 2 (degree 197), 5 (degree
+	192), 3 (degree 162) and 18 (degree 134).
 	
 
 

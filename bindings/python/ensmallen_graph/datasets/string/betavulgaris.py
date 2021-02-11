@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:54:01.701863
 
-The undirected graph Beta vulgaris has 19481 nodes and 2745993 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01447 and
-has 3 connected components, where the component with most nodes has 19477 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 281.91, and the node degree mode is 1. The top 5 most central
-nodes are 161934.XP_010688278.1 (degree 5300), 161934.XP_010690845.1 (degree 3913),
-161934.XP_010675161.1 (degree 3607), 161934.XP_010684055.1 (degree 3508) and 161934.XP_010672867.1
+The undirected graph Beta vulgaris has 19481 nodes and 2745993 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01447 and has 3 connected components, where the component with most
+nodes has 19477 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 281.91, and
+the node degree mode is 1. The top 5 most central nodes are 161934.XP_010688278.1
+(degree 5300), 161934.XP_010690845.1 (degree 3913), 161934.XP_010675161.1
+(degree 3607), 161934.XP_010684055.1 (degree 3508) and 161934.XP_010672867.1
 (degree 3418).
 
 
@@ -107,13 +108,14 @@ def BetaVulgaris(
 	
 	Datetime: 2021-02-02 19:54:01.701863
 	
-	The undirected graph Beta vulgaris has 19481 nodes and 2745993 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01447 and
-	has 3 connected components, where the component with most nodes has 19477 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 281.91, and the node degree mode is 1. The top 5 most central
-	nodes are 161934.XP_010688278.1 (degree 5300), 161934.XP_010690845.1 (degree 3913),
-	161934.XP_010675161.1 (degree 3607), 161934.XP_010684055.1 (degree 3508) and 161934.XP_010672867.1
+	The undirected graph Beta vulgaris has 19481 nodes and 2745993 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01447 and has 3 connected components, where the component with most
+	nodes has 19477 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 281.91, and
+	the node degree mode is 1. The top 5 most central nodes are 161934.XP_010688278.1
+	(degree 5300), 161934.XP_010690845.1 (degree 3913), 161934.XP_010675161.1
+	(degree 3607), 161934.XP_010684055.1 (degree 3508) and 161934.XP_010672867.1
 	(degree 3418).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:22:27.703620
 
-The undirected graph Mycoplasma putrefaciens Mput9231 has 657 nodes and 34673 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.16090 and has 4 connected components, where the component with most nodes has
-651 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 91, the mean node degree is 105.55, and the node degree mode is 11. The
-top 5 most central nodes are 1292033.MPUT9231_4670 (degree 357), 1292033.MPUT9231_5470
-(degree 339), 1292033.MPUT9231_5340 (degree 321), 1292033.MPUT9231_4430 (degree 317)
-and 1292033.MPUT9231_2570 (degree 286).
+The undirected graph Mycoplasma putrefaciens Mput9231 has 657 nodes and
+34673 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.16090 and has 4 connected components, where
+the component with most nodes has 651 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 91, the mean node
+degree is 105.55, and the node degree mode is 11. The top 5 most central
+nodes are 1292033.MPUT9231_4670 (degree 357), 1292033.MPUT9231_5470 (degree
+339), 1292033.MPUT9231_5340 (degree 321), 1292033.MPUT9231_4430 (degree
+317) and 1292033.MPUT9231_2570 (degree 286).
 
 
 References
@@ -107,14 +108,15 @@ def MycoplasmaPutrefaciensMput9231(
 	
 	Datetime: 2021-02-03 21:22:27.703620
 	
-	The undirected graph Mycoplasma putrefaciens Mput9231 has 657 nodes and 34673 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.16090 and has 4 connected components, where the component with most nodes has
-	651 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 91, the mean node degree is 105.55, and the node degree mode is 11. The
-	top 5 most central nodes are 1292033.MPUT9231_4670 (degree 357), 1292033.MPUT9231_5470
-	(degree 339), 1292033.MPUT9231_5340 (degree 321), 1292033.MPUT9231_4430 (degree 317)
-	and 1292033.MPUT9231_2570 (degree 286).
+	The undirected graph Mycoplasma putrefaciens Mput9231 has 657 nodes and
+	34673 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.16090 and has 4 connected components, where
+	the component with most nodes has 651 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 91, the mean node
+	degree is 105.55, and the node degree mode is 11. The top 5 most central
+	nodes are 1292033.MPUT9231_4670 (degree 357), 1292033.MPUT9231_5470 (degree
+	339), 1292033.MPUT9231_5340 (degree 321), 1292033.MPUT9231_4430 (degree
+	317) and 1292033.MPUT9231_2570 (degree 286).
 	
 
 

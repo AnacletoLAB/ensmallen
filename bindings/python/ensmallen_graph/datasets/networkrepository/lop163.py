@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:13.596727
 
-The undirected graph lop163 has 163 nodes and 761 weighted edges, of which 163 are
-self-loops. The graph is dense as it has a density of 0.05147 and is connected, as
-it has a single component. The graph median node degree is 9, the mean node degree
-is 8.34, and the node degree mode is 9. The top 5 most central nodes are 155 (degree
-9), 154 (degree 9), 153 (degree 9), 151 (degree 9) and 152 (degree 9).
+The undirected graph lop163 has 163 nodes and 761 weighted edges, of which
+163 are self-loops. The graph is dense as it has a density of 0.05147 and
+is connected, as it has a single component. The graph median node degree
+is 9, the mean node degree is 8.34, and the node degree mode is 9. The
+top 5 most central nodes are 155 (degree 9), 154 (degree 9), 153 (degree
+9), 151 (degree 9) and 152 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Lop163(
 	
 	Datetime: 2021-02-06 08:13:13.596727
 	
-	The undirected graph lop163 has 163 nodes and 761 weighted edges, of which 163 are
-	self-loops. The graph is dense as it has a density of 0.05147 and is connected, as
-	it has a single component. The graph median node degree is 9, the mean node degree
-	is 8.34, and the node degree mode is 9. The top 5 most central nodes are 155 (degree
-	9), 154 (degree 9), 153 (degree 9), 151 (degree 9) and 152 (degree 9).
+	The undirected graph lop163 has 163 nodes and 761 weighted edges, of which
+	163 are self-loops. The graph is dense as it has a density of 0.05147 and
+	is connected, as it has a single component. The graph median node degree
+	is 9, the mean node degree is 8.34, and the node degree mode is 9. The
+	top 5 most central nodes are 155 (degree 9), 154 (degree 9), 153 (degree
+	9), 151 (degree 9) and 152 (degree 9).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:01.806306
 
-The undirected graph Clostridium lentocellum has 4156 nodes and 361871 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-has 13 connected components, where the component with most nodes has 4126 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 174.14, and the node degree mode is 3. The top 5 most central
-nodes are 642492.Clole_0717 (degree 1215), 642492.Clole_4236 (degree 1079), 642492.Clole_2496
-(degree 1033), 642492.Clole_3329 (degree 1029) and 642492.Clole_4220 (degree 1015).
+The undirected graph Clostridium lentocellum has 4156 nodes and 361871
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04191 and has 13 connected components, where the component
+with most nodes has 4126 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 174.14,
+and the node degree mode is 3. The top 5 most central nodes are 642492.Clole_0717
+(degree 1215), 642492.Clole_4236 (degree 1079), 642492.Clole_2496 (degree
+1033), 642492.Clole_3329 (degree 1029) and 642492.Clole_4220 (degree 1015).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumLentocellum(
 	
 	Datetime: 2021-02-02 21:24:01.806306
 	
-	The undirected graph Clostridium lentocellum has 4156 nodes and 361871 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04191 and
-	has 13 connected components, where the component with most nodes has 4126 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 174.14, and the node degree mode is 3. The top 5 most central
-	nodes are 642492.Clole_0717 (degree 1215), 642492.Clole_4236 (degree 1079), 642492.Clole_2496
-	(degree 1033), 642492.Clole_3329 (degree 1029) and 642492.Clole_4220 (degree 1015).
+	The undirected graph Clostridium lentocellum has 4156 nodes and 361871
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04191 and has 13 connected components, where the component
+	with most nodes has 4126 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 174.14,
+	and the node degree mode is 3. The top 5 most central nodes are 642492.Clole_0717
+	(degree 1215), 642492.Clole_4236 (degree 1079), 642492.Clole_2496 (degree
+	1033), 642492.Clole_3329 (degree 1029) and 642492.Clole_4220 (degree 1015).
 	
 
 

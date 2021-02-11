@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:34.253809
 
-The undirected graph Acidovorax sp. JHL9 has 3660 nodes and 403564 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-has 3 connected components, where the component with most nodes has 3656 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 220.53, and the node degree mode is 115. The top 5 most central
-nodes are 1276756.AUEX01000009_gene1812 (degree 1493), 1276756.AUEX01000023_gene2277
-(degree 1243), 1276756.AUEX01000024_gene60 (degree 1190), 1276756.AUEX01000001_gene1045
-(degree 1189) and 1276756.AUEX01000018_gene2987 (degree 1173).
+The undirected graph Acidovorax sp. JHL9 has 3660 nodes and 403564 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06027 and has 3 connected components, where the component with most
+nodes has 3656 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 171, the mean node degree is 220.53, and
+the node degree mode is 115. The top 5 most central nodes are 1276756.AUEX01000009_gene1812
+(degree 1493), 1276756.AUEX01000023_gene2277 (degree 1243), 1276756.AUEX01000024_gene60
+(degree 1190), 1276756.AUEX01000001_gene1045 (degree 1189) and 1276756.AUEX01000018_gene2987
+(degree 1173).
 
 
 References
@@ -107,14 +108,15 @@ def AcidovoraxSp.Jhl9(
 	
 	Datetime: 2021-02-02 23:38:34.253809
 	
-	The undirected graph Acidovorax sp. JHL9 has 3660 nodes and 403564 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-	has 3 connected components, where the component with most nodes has 3656 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 220.53, and the node degree mode is 115. The top 5 most central
-	nodes are 1276756.AUEX01000009_gene1812 (degree 1493), 1276756.AUEX01000023_gene2277
-	(degree 1243), 1276756.AUEX01000024_gene60 (degree 1190), 1276756.AUEX01000001_gene1045
-	(degree 1189) and 1276756.AUEX01000018_gene2987 (degree 1173).
+	The undirected graph Acidovorax sp. JHL9 has 3660 nodes and 403564 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06027 and has 3 connected components, where the component with most
+	nodes has 3656 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 171, the mean node degree is 220.53, and
+	the node degree mode is 115. The top 5 most central nodes are 1276756.AUEX01000009_gene1812
+	(degree 1493), 1276756.AUEX01000023_gene2277 (degree 1243), 1276756.AUEX01000024_gene60
+	(degree 1190), 1276756.AUEX01000001_gene1045 (degree 1189) and 1276756.AUEX01000018_gene2987
+	(degree 1173).
 	
 
 

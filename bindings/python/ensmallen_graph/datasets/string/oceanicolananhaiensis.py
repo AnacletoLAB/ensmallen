@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:43:56.063144
 
-The undirected graph Oceanicola nanhaiensis has 4201 nodes and 524535 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05946 and
-has 6 connected components, where the component with most nodes has 4187 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 249.72, and the node degree mode is 3. The top 5 most central
-nodes are 1122614.JHZF01000013_gene3177 (degree 1513), 1122614.JHZF01000013_gene2933
-(degree 1267), 1122614.JHZF01000011_gene1033 (degree 1238), 1122614.JHZF01000011_gene1772
-(degree 1178) and 1122614.JHZF01000013_gene4156 (degree 1133).
+The undirected graph Oceanicola nanhaiensis has 4201 nodes and 524535 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05946 and has 6 connected components, where the component with most
+nodes has 4187 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 249.72, and
+the node degree mode is 3. The top 5 most central nodes are 1122614.JHZF01000013_gene3177
+(degree 1513), 1122614.JHZF01000013_gene2933 (degree 1267), 1122614.JHZF01000011_gene1033
+(degree 1238), 1122614.JHZF01000011_gene1772 (degree 1178) and 1122614.JHZF01000013_gene4156
+(degree 1133).
 
 
 References
@@ -107,14 +108,15 @@ def OceanicolaNanhaiensis(
 	
 	Datetime: 2021-02-02 22:43:56.063144
 	
-	The undirected graph Oceanicola nanhaiensis has 4201 nodes and 524535 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05946 and
-	has 6 connected components, where the component with most nodes has 4187 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 249.72, and the node degree mode is 3. The top 5 most central
-	nodes are 1122614.JHZF01000013_gene3177 (degree 1513), 1122614.JHZF01000013_gene2933
-	(degree 1267), 1122614.JHZF01000011_gene1033 (degree 1238), 1122614.JHZF01000011_gene1772
-	(degree 1178) and 1122614.JHZF01000013_gene4156 (degree 1133).
+	The undirected graph Oceanicola nanhaiensis has 4201 nodes and 524535 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05946 and has 6 connected components, where the component with most
+	nodes has 4187 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 249.72, and
+	the node degree mode is 3. The top 5 most central nodes are 1122614.JHZF01000013_gene3177
+	(degree 1513), 1122614.JHZF01000013_gene2933 (degree 1267), 1122614.JHZF01000011_gene1033
+	(degree 1238), 1122614.JHZF01000011_gene1772 (degree 1178) and 1122614.JHZF01000013_gene4156
+	(degree 1133).
 	
 
 

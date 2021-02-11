@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:11.182665
 
-The undirected graph Desulfurococcus mucosus has 1335 nodes and 99732 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.11200
-and has 4 connected components, where the component with most nodes has 1329 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 149.41, and the node degree mode is 3. The top 5
-most central nodes are 765177.Desmu_0845 (degree 537), 765177.Desmu_0567 (degree
-531), 765177.Desmu_0698 (degree 517), 765177.Desmu_1367 (degree 490) and 765177.Desmu_1252
-(degree 477).
+The undirected graph Desulfurococcus mucosus has 1335 nodes and 99732 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11200 and has 4 connected components, where the component
+with most nodes has 1329 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 152, the mean node degree is 149.41,
+and the node degree mode is 3. The top 5 most central nodes are 765177.Desmu_0845
+(degree 537), 765177.Desmu_0567 (degree 531), 765177.Desmu_0698 (degree
+517), 765177.Desmu_1367 (degree 490) and 765177.Desmu_1252 (degree 477).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfurococcusMucosus(
 	
 	Datetime: 2021-02-02 21:43:11.182665
 	
-	The undirected graph Desulfurococcus mucosus has 1335 nodes and 99732 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.11200
-	and has 4 connected components, where the component with most nodes has 1329 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 149.41, and the node degree mode is 3. The top 5
-	most central nodes are 765177.Desmu_0845 (degree 537), 765177.Desmu_0567 (degree
-	531), 765177.Desmu_0698 (degree 517), 765177.Desmu_1367 (degree 490) and 765177.Desmu_1252
-	(degree 477).
+	The undirected graph Desulfurococcus mucosus has 1335 nodes and 99732 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11200 and has 4 connected components, where the component
+	with most nodes has 1329 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 152, the mean node degree is 149.41,
+	and the node degree mode is 3. The top 5 most central nodes are 765177.Desmu_0845
+	(degree 537), 765177.Desmu_0567 (degree 531), 765177.Desmu_0698 (degree
+	517), 765177.Desmu_1367 (degree 490) and 765177.Desmu_1252 (degree 477).
 	
 
 

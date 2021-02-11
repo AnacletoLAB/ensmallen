@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:40.637699
 
-The undirected graph Clostridium tyrobutyricum has 3012 nodes and 177199 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03908
-and has 18 connected components, where the component with most nodes has 2971 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 84, the mean node degree is 117.66, and the node degree mode is 2. The top 5 most
-central nodes are 1121342.AUCO01000003_gene1440 (degree 1115), 1121342.AUCO01000003_gene1518
-(degree 950), 1121342.AUCO01000010_gene2261 (degree 903), 1121342.AUCO01000008_gene148
-(degree 877) and 1121342.AUCO01000010_gene2289 (degree 871).
+The undirected graph Clostridium tyrobutyricum has 3012 nodes and 177199
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03908 and has 18 connected components, where the component
+with most nodes has 2971 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 84, the mean node degree is 117.66,
+and the node degree mode is 2. The top 5 most central nodes are 1121342.AUCO01000003_gene1440
+(degree 1115), 1121342.AUCO01000003_gene1518 (degree 950), 1121342.AUCO01000010_gene2261
+(degree 903), 1121342.AUCO01000008_gene148 (degree 877) and 1121342.AUCO01000010_gene2289
+(degree 871).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumTyrobutyricum(
 	
 	Datetime: 2021-02-02 22:34:40.637699
 	
-	The undirected graph Clostridium tyrobutyricum has 3012 nodes and 177199 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03908
-	and has 18 connected components, where the component with most nodes has 2971 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 84, the mean node degree is 117.66, and the node degree mode is 2. The top 5 most
-	central nodes are 1121342.AUCO01000003_gene1440 (degree 1115), 1121342.AUCO01000003_gene1518
-	(degree 950), 1121342.AUCO01000010_gene2261 (degree 903), 1121342.AUCO01000008_gene148
-	(degree 877) and 1121342.AUCO01000010_gene2289 (degree 871).
+	The undirected graph Clostridium tyrobutyricum has 3012 nodes and 177199
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03908 and has 18 connected components, where the component
+	with most nodes has 2971 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 84, the mean node degree is 117.66,
+	and the node degree mode is 2. The top 5 most central nodes are 1121342.AUCO01000003_gene1440
+	(degree 1115), 1121342.AUCO01000003_gene1518 (degree 950), 1121342.AUCO01000010_gene2261
+	(degree 903), 1121342.AUCO01000008_gene148 (degree 877) and 1121342.AUCO01000010_gene2289
+	(degree 871).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:54.219936
 
-The undirected graph Sphingobacteriaceae bacterium DW12 has 4245 nodes and 664152
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07373 and has 22 connected components, where the component with most nodes has
-4187 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 292, the mean node degree is 312.91, and the node degree mode is 2. The
-top 5 most central nodes are 1550091.JROE01000004_gene1736 (degree 1592), 1550091.JROE01000020_gene3960
+The undirected graph Sphingobacteriaceae bacterium DW12 has 4245 nodes
+and 664152 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07373 and has 22 connected components, where the
+component with most nodes has 4187 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 292, the mean node degree
+is 312.91, and the node degree mode is 2. The top 5 most central nodes
+are 1550091.JROE01000004_gene1736 (degree 1592), 1550091.JROE01000020_gene3960
 (degree 1472), 1550091.JROE01000010_gene3291 (degree 1453), 1550091.JROE01000004_gene1365
 (degree 1408) and 1550091.JROE01000005_gene2162 (degree 1397).
 
@@ -107,12 +108,13 @@ def SphingobacteriaceaeBacteriumDw12(
 	
 	Datetime: 2021-02-03 23:20:54.219936
 	
-	The undirected graph Sphingobacteriaceae bacterium DW12 has 4245 nodes and 664152
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07373 and has 22 connected components, where the component with most nodes has
-	4187 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 292, the mean node degree is 312.91, and the node degree mode is 2. The
-	top 5 most central nodes are 1550091.JROE01000004_gene1736 (degree 1592), 1550091.JROE01000020_gene3960
+	The undirected graph Sphingobacteriaceae bacterium DW12 has 4245 nodes
+	and 664152 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07373 and has 22 connected components, where the
+	component with most nodes has 4187 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 292, the mean node degree
+	is 312.91, and the node degree mode is 2. The top 5 most central nodes
+	are 1550091.JROE01000004_gene1736 (degree 1592), 1550091.JROE01000020_gene3960
 	(degree 1472), 1550091.JROE01000010_gene3291 (degree 1453), 1550091.JROE01000004_gene1365
 	(degree 1408) and 1550091.JROE01000005_gene2162 (degree 1397).
 	

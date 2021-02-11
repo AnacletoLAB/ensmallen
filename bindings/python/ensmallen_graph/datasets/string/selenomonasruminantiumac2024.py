@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:25:06.165015
 
-The undirected graph Selenomonas ruminantium AC2024 has 2335 nodes and 234360 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08601
-and has 3 connected components, where the component with most nodes has 2331 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 183, the mean node degree is 200.74, and the node degree mode is 3. The top 5
-most central nodes are 1392501.JIAC01000001_gene1948 (degree 990), 1392501.JIAC01000001_gene1708
+The undirected graph Selenomonas ruminantium AC2024 has 2335 nodes and
+234360 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08601 and has 3 connected components, where the
+component with most nodes has 2331 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+is 200.74, and the node degree mode is 3. The top 5 most central nodes
+are 1392501.JIAC01000001_gene1948 (degree 990), 1392501.JIAC01000001_gene1708
 (degree 964), 1392501.JIAC01000001_gene1711 (degree 964), 1392501.JIAC01000001_gene2000
 (degree 910) and 1392501.JIAC01000001_gene790 (degree 903).
 
@@ -107,12 +108,13 @@ def SelenomonasRuminantiumAc2024(
 	
 	Datetime: 2021-02-03 22:25:06.165015
 	
-	The undirected graph Selenomonas ruminantium AC2024 has 2335 nodes and 234360 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08601
-	and has 3 connected components, where the component with most nodes has 2331 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 183, the mean node degree is 200.74, and the node degree mode is 3. The top 5
-	most central nodes are 1392501.JIAC01000001_gene1948 (degree 990), 1392501.JIAC01000001_gene1708
+	The undirected graph Selenomonas ruminantium AC2024 has 2335 nodes and
+	234360 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08601 and has 3 connected components, where the
+	component with most nodes has 2331 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 183, the mean node degree
+	is 200.74, and the node degree mode is 3. The top 5 most central nodes
+	are 1392501.JIAC01000001_gene1948 (degree 990), 1392501.JIAC01000001_gene1708
 	(degree 964), 1392501.JIAC01000001_gene1711 (degree 964), 1392501.JIAC01000001_gene2000
 	(degree 910) and 1392501.JIAC01000001_gene790 (degree 903).
 	

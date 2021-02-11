@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:10.666993
 
-The undirected graph Alloiococcus otitis has 1625 nodes and 113835 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08627 and
-has 3 connected components, where the component with most nodes has 1621 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 140.10, and the node degree mode is 5. The top 5 most central
-nodes are 883081.HMPREF9698_00046 (degree 707), 883081.HMPREF9698_01519 (degree 641),
-883081.HMPREF9698_01163 (degree 571), 883081.HMPREF9698_00240 (degree 560) and 883081.HMPREF9698_00321
+The undirected graph Alloiococcus otitis has 1625 nodes and 113835 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08627 and has 3 connected components, where the component with most
+nodes has 1621 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 140.10, and
+the node degree mode is 5. The top 5 most central nodes are 883081.HMPREF9698_00046
+(degree 707), 883081.HMPREF9698_01519 (degree 641), 883081.HMPREF9698_01163
+(degree 571), 883081.HMPREF9698_00240 (degree 560) and 883081.HMPREF9698_00321
 (degree 554).
 
 
@@ -107,13 +108,14 @@ def AlloiococcusOtitis(
 	
 	Datetime: 2021-02-02 21:51:10.666993
 	
-	The undirected graph Alloiococcus otitis has 1625 nodes and 113835 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08627 and
-	has 3 connected components, where the component with most nodes has 1621 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 140.10, and the node degree mode is 5. The top 5 most central
-	nodes are 883081.HMPREF9698_00046 (degree 707), 883081.HMPREF9698_01519 (degree 641),
-	883081.HMPREF9698_01163 (degree 571), 883081.HMPREF9698_00240 (degree 560) and 883081.HMPREF9698_00321
+	The undirected graph Alloiococcus otitis has 1625 nodes and 113835 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08627 and has 3 connected components, where the component with most
+	nodes has 1621 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 140.10, and
+	the node degree mode is 5. The top 5 most central nodes are 883081.HMPREF9698_00046
+	(degree 707), 883081.HMPREF9698_01519 (degree 641), 883081.HMPREF9698_01163
+	(degree 571), 883081.HMPREF9698_00240 (degree 560) and 883081.HMPREF9698_00321
 	(degree 554).
 	
 

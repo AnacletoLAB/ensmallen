@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:24.395088
 
-The undirected graph Nitrosospira multiformis has 2723 nodes and 274625 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07410
-and has 5 connected components, where the component with most nodes has 2715 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 182, the mean node degree is 201.71, and the node degree mode is 1. The top 5
-most central nodes are 323848.Nmul_A1556 (degree 1376), 323848.Nmul_A0568 (degree
-1229), 323848.Nmul_A2694 (degree 1100), 323848.Nmul_A0327 (degree 1078) and 323848.Nmul_A2207
-(degree 1041).
+The undirected graph Nitrosospira multiformis has 2723 nodes and 274625
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07410 and has 5 connected components, where the component
+with most nodes has 2715 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 182, the mean node degree is 201.71,
+and the node degree mode is 1. The top 5 most central nodes are 323848.Nmul_A1556
+(degree 1376), 323848.Nmul_A0568 (degree 1229), 323848.Nmul_A2694 (degree
+1100), 323848.Nmul_A0327 (degree 1078) and 323848.Nmul_A2207 (degree 1041).
 
 
 References
@@ -107,14 +107,14 @@ def NitrosospiraMultiformis(
 	
 	Datetime: 2021-02-02 20:28:24.395088
 	
-	The undirected graph Nitrosospira multiformis has 2723 nodes and 274625 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07410
-	and has 5 connected components, where the component with most nodes has 2715 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 182, the mean node degree is 201.71, and the node degree mode is 1. The top 5
-	most central nodes are 323848.Nmul_A1556 (degree 1376), 323848.Nmul_A0568 (degree
-	1229), 323848.Nmul_A2694 (degree 1100), 323848.Nmul_A0327 (degree 1078) and 323848.Nmul_A2207
-	(degree 1041).
+	The undirected graph Nitrosospira multiformis has 2723 nodes and 274625
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07410 and has 5 connected components, where the component
+	with most nodes has 2715 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 182, the mean node degree is 201.71,
+	and the node degree mode is 1. The top 5 most central nodes are 323848.Nmul_A1556
+	(degree 1376), 323848.Nmul_A0568 (degree 1229), 323848.Nmul_A2694 (degree
+	1100), 323848.Nmul_A0327 (degree 1078) and 323848.Nmul_A2207 (degree 1041).
 	
 
 

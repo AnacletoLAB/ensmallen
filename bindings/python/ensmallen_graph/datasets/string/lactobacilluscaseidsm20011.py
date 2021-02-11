@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:49:51.135296
 
-The undirected graph Lactobacillus casei DSM20011 has 2860 nodes and 304926 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07458
-and has 24 connected components, where the component with most nodes has 2794 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 213.23, and the node degree mode is 1. The top 5
-most central nodes are 1423732.BALS01000056_gene2852 (degree 1355), 1423732.BALS01000027_gene475
-(degree 1229), 1423732.BALS01000001_gene1341 (degree 1157), 1423732.BALS01000031_gene49
-(degree 1120) and 1423732.BALS01000019_gene1818 (degree 928).
+The undirected graph Lactobacillus casei DSM20011 has 2860 nodes and 304926
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07458 and has 24 connected components, where the component
+with most nodes has 2794 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 213.23,
+and the node degree mode is 1. The top 5 most central nodes are 1423732.BALS01000056_gene2852
+(degree 1355), 1423732.BALS01000027_gene475 (degree 1229), 1423732.BALS01000001_gene1341
+(degree 1157), 1423732.BALS01000031_gene49 (degree 1120) and 1423732.BALS01000019_gene1818
+(degree 928).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusCaseiDsm20011(
 	
 	Datetime: 2021-02-03 22:49:51.135296
 	
-	The undirected graph Lactobacillus casei DSM20011 has 2860 nodes and 304926 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07458
-	and has 24 connected components, where the component with most nodes has 2794 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 213.23, and the node degree mode is 1. The top 5
-	most central nodes are 1423732.BALS01000056_gene2852 (degree 1355), 1423732.BALS01000027_gene475
-	(degree 1229), 1423732.BALS01000001_gene1341 (degree 1157), 1423732.BALS01000031_gene49
-	(degree 1120) and 1423732.BALS01000019_gene1818 (degree 928).
+	The undirected graph Lactobacillus casei DSM20011 has 2860 nodes and 304926
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07458 and has 24 connected components, where the component
+	with most nodes has 2794 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 213.23,
+	and the node degree mode is 1. The top 5 most central nodes are 1423732.BALS01000056_gene2852
+	(degree 1355), 1423732.BALS01000027_gene475 (degree 1229), 1423732.BALS01000001_gene1341
+	(degree 1157), 1423732.BALS01000031_gene49 (degree 1120) and 1423732.BALS01000019_gene1818
+	(degree 928).
 	
 
 

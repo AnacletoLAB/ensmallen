@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:52:06.086397
 
-The undirected graph it-2004 has 4885 nodes and 222813 unweighted edges, of which
-509 are self-loops. The graph is dense as it has a density of 0.01865 and is connected,
-as it has a single component. The graph median node degree is 21, the mean node degree
-is 91.12, and the node degree mode is 1. The top 5 most central nodes are 28473730
-(degree 3242), 28473737 (degree 2714), 28473750 (degree 2714), 28473748 (degree 2714)
-and 28473741 (degree 2714).
+The undirected graph it-2004 has 4885 nodes and 222813 unweighted edges,
+of which 509 are self-loops. The graph is dense as it has a density of
+0.01865 and is connected, as it has a single component. The graph median
+node degree is 21, the mean node degree is 91.12, and the node degree mode
+is 1. The top 5 most central nodes are 28473730 (degree 3242), 28473737
+(degree 2714), 28473750 (degree 2714), 28473748 (degree 2714) and 28473741
+(degree 2714).
 
 
 References
@@ -102,12 +103,13 @@ def It2004(
 	
 	Datetime: 2021-02-06 20:52:06.086397
 	
-	The undirected graph it-2004 has 4885 nodes and 222813 unweighted edges, of which
-	509 are self-loops. The graph is dense as it has a density of 0.01865 and is connected,
-	as it has a single component. The graph median node degree is 21, the mean node degree
-	is 91.12, and the node degree mode is 1. The top 5 most central nodes are 28473730
-	(degree 3242), 28473737 (degree 2714), 28473750 (degree 2714), 28473748 (degree 2714)
-	and 28473741 (degree 2714).
+	The undirected graph it-2004 has 4885 nodes and 222813 unweighted edges,
+	of which 509 are self-loops. The graph is dense as it has a density of
+	0.01865 and is connected, as it has a single component. The graph median
+	node degree is 21, the mean node degree is 91.12, and the node degree mode
+	is 1. The top 5 most central nodes are 28473730 (degree 3242), 28473737
+	(degree 2714), 28473750 (degree 2714), 28473748 (degree 2714) and 28473741
+	(degree 2714).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:00.567510
 
-The undirected graph Chryseobacterium gleum has 5249 nodes and 596826 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-has 10 connected components, where the component with most nodes has 5226 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 227.41, and the node degree mode is 3. The top 5 most central
-nodes are 525257.HMPREF0204_11203 (degree 1388), 525257.HMPREF0204_11906 (degree
-1220), 525257.HMPREF0204_12896 (degree 1125), 525257.HMPREF0204_14069 (degree 1105)
-and 525257.HMPREF0204_13655 (degree 1075).
+The undirected graph Chryseobacterium gleum has 5249 nodes and 596826 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04333 and has 10 connected components, where the component with most
+nodes has 5226 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 214, the mean node degree is 227.41, and
+the node degree mode is 3. The top 5 most central nodes are 525257.HMPREF0204_11203
+(degree 1388), 525257.HMPREF0204_11906 (degree 1220), 525257.HMPREF0204_12896
+(degree 1125), 525257.HMPREF0204_14069 (degree 1105) and 525257.HMPREF0204_13655
+(degree 1075).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumGleum(
 	
 	Datetime: 2021-02-02 21:05:00.567510
 	
-	The undirected graph Chryseobacterium gleum has 5249 nodes and 596826 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-	has 10 connected components, where the component with most nodes has 5226 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 227.41, and the node degree mode is 3. The top 5 most central
-	nodes are 525257.HMPREF0204_11203 (degree 1388), 525257.HMPREF0204_11906 (degree
-	1220), 525257.HMPREF0204_12896 (degree 1125), 525257.HMPREF0204_14069 (degree 1105)
-	and 525257.HMPREF0204_13655 (degree 1075).
+	The undirected graph Chryseobacterium gleum has 5249 nodes and 596826 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04333 and has 10 connected components, where the component with most
+	nodes has 5226 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 214, the mean node degree is 227.41, and
+	the node degree mode is 3. The top 5 most central nodes are 525257.HMPREF0204_11203
+	(degree 1388), 525257.HMPREF0204_11906 (degree 1220), 525257.HMPREF0204_12896
+	(degree 1125), 525257.HMPREF0204_14069 (degree 1105) and 525257.HMPREF0204_13655
+	(degree 1075).
 	
 
 

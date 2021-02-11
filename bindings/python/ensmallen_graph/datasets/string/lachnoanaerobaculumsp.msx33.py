@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:43.680737
 
-The undirected graph Lachnoanaerobaculum sp. MSX33 has 2650 nodes and 170161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04848
-and has 14 connected components, where the component with most nodes has 2607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 128.42, and the node degree mode is 4. The top 5 most
-central nodes are 936596.HMPREF1495_2724 (degree 971), 936596.HMPREF1495_2125 (degree
-969), 936596.HMPREF1495_2565 (degree 766), 936596.HMPREF1495_0686 (degree 663) and
-936596.HMPREF1495_2580 (degree 643).
+The undirected graph Lachnoanaerobaculum sp. MSX33 has 2650 nodes and 170161
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04848 and has 14 connected components, where the component
+with most nodes has 2607 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 128.42,
+and the node degree mode is 4. The top 5 most central nodes are 936596.HMPREF1495_2724
+(degree 971), 936596.HMPREF1495_2125 (degree 969), 936596.HMPREF1495_2565
+(degree 766), 936596.HMPREF1495_0686 (degree 663) and 936596.HMPREF1495_2580
+(degree 643).
 
 
 References
@@ -107,14 +108,15 @@ def LachnoanaerobaculumSp.Msx33(
 	
 	Datetime: 2021-02-02 22:00:43.680737
 	
-	The undirected graph Lachnoanaerobaculum sp. MSX33 has 2650 nodes and 170161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04848
-	and has 14 connected components, where the component with most nodes has 2607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 128.42, and the node degree mode is 4. The top 5 most
-	central nodes are 936596.HMPREF1495_2724 (degree 971), 936596.HMPREF1495_2125 (degree
-	969), 936596.HMPREF1495_2565 (degree 766), 936596.HMPREF1495_0686 (degree 663) and
-	936596.HMPREF1495_2580 (degree 643).
+	The undirected graph Lachnoanaerobaculum sp. MSX33 has 2650 nodes and 170161
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04848 and has 14 connected components, where the component
+	with most nodes has 2607 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 128.42,
+	and the node degree mode is 4. The top 5 most central nodes are 936596.HMPREF1495_2724
+	(degree 971), 936596.HMPREF1495_2125 (degree 969), 936596.HMPREF1495_2565
+	(degree 766), 936596.HMPREF1495_0686 (degree 663) and 936596.HMPREF1495_2580
+	(degree 643).
 	
 
 

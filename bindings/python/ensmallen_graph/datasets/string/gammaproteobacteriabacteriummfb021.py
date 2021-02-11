@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:14:18.499368
 
-The undirected graph Gammaproteobacteria bacterium MFB021 has 3277 nodes and 374962
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06985 and has 19 connected components, where the component with most nodes has
-3237 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 194, the mean node degree is 228.84, and the node degree mode is 1. The
-top 5 most central nodes are 1492922.GY26_15380 (degree 1607), 1492922.GY26_08180
-(degree 1377), 1492922.GY26_00255 (degree 1109), 1492922.GY26_20480 (degree 1085)
-and 1492922.GY26_06970 (degree 1062).
+The undirected graph Gammaproteobacteria bacterium MFB021 has 3277 nodes
+and 374962 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06985 and has 19 connected components, where the
+component with most nodes has 3237 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+is 228.84, and the node degree mode is 1. The top 5 most central nodes
+are 1492922.GY26_15380 (degree 1607), 1492922.GY26_08180 (degree 1377),
+1492922.GY26_00255 (degree 1109), 1492922.GY26_20480 (degree 1085) and
+1492922.GY26_06970 (degree 1062).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumMfb021(
 	
 	Datetime: 2021-02-03 23:14:18.499368
 	
-	The undirected graph Gammaproteobacteria bacterium MFB021 has 3277 nodes and 374962
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06985 and has 19 connected components, where the component with most nodes has
-	3237 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 194, the mean node degree is 228.84, and the node degree mode is 1. The
-	top 5 most central nodes are 1492922.GY26_15380 (degree 1607), 1492922.GY26_08180
-	(degree 1377), 1492922.GY26_00255 (degree 1109), 1492922.GY26_20480 (degree 1085)
-	and 1492922.GY26_06970 (degree 1062).
+	The undirected graph Gammaproteobacteria bacterium MFB021 has 3277 nodes
+	and 374962 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06985 and has 19 connected components, where the
+	component with most nodes has 3237 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 194, the mean node degree
+	is 228.84, and the node degree mode is 1. The top 5 most central nodes
+	are 1492922.GY26_15380 (degree 1607), 1492922.GY26_08180 (degree 1377),
+	1492922.GY26_00255 (degree 1109), 1492922.GY26_20480 (degree 1085) and
+	1492922.GY26_06970 (degree 1062).
 	
 
 

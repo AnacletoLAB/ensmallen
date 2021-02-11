@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:37.658974
 
-The undirected graph Peptostreptococcus anaerobius 653L has 1862 nodes and 133308
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07694 and has 4 connected components, where the component with most nodes has
-1853 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 124, the mean node degree is 143.19, and the node degree mode is 14. The
-top 5 most central nodes are 596329.HMPREF0631_1912 (degree 824), 596329.HMPREF0631_1047
-(degree 750), 596329.HMPREF0631_1260 (degree 667), 596329.HMPREF0631_1866 (degree
+The undirected graph Peptostreptococcus anaerobius 653L has 1862 nodes
+and 133308 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07694 and has 4 connected components, where the
+component with most nodes has 1853 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 143.19, and the node degree mode is 14. The top 5 most central nodes
+are 596329.HMPREF0631_1912 (degree 824), 596329.HMPREF0631_1047 (degree
+750), 596329.HMPREF0631_1260 (degree 667), 596329.HMPREF0631_1866 (degree
 644) and 596329.HMPREF0631_1515 (degree 633).
 
 
@@ -107,13 +108,14 @@ def PeptostreptococcusAnaerobius653l(
 	
 	Datetime: 2021-02-02 21:19:37.658974
 	
-	The undirected graph Peptostreptococcus anaerobius 653L has 1862 nodes and 133308
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07694 and has 4 connected components, where the component with most nodes has
-	1853 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 124, the mean node degree is 143.19, and the node degree mode is 14. The
-	top 5 most central nodes are 596329.HMPREF0631_1912 (degree 824), 596329.HMPREF0631_1047
-	(degree 750), 596329.HMPREF0631_1260 (degree 667), 596329.HMPREF0631_1866 (degree
+	The undirected graph Peptostreptococcus anaerobius 653L has 1862 nodes
+	and 133308 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07694 and has 4 connected components, where the
+	component with most nodes has 1853 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 143.19, and the node degree mode is 14. The top 5 most central nodes
+	are 596329.HMPREF0631_1912 (degree 824), 596329.HMPREF0631_1047 (degree
+	750), 596329.HMPREF0631_1260 (degree 667), 596329.HMPREF0631_1866 (degree
 	644) and 596329.HMPREF0631_1515 (degree 633).
 	
 

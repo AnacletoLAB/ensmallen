@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:02.643872
 
-The undirected graph Phytoplasma aster yellows has 646 nodes and 70929 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.34046
-and has 10 connected components, where the component with most nodes has 625 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 281, the mean node degree is 219.59, and the node degree mode is 1. The top 5
-most central nodes are 322098.AYWB_066 (degree 461), 322098.AYWB_061 (degree 446),
-322098.AYWB_062 (degree 446), 322098.AYWB_600 (degree 433) and 322098.AYWB_134 (degree
+The undirected graph Phytoplasma aster yellows has 646 nodes and 70929
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.34046 and has 10 connected components, where the
+component with most nodes has 625 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 281, the mean node degree
+is 219.59, and the node degree mode is 1. The top 5 most central nodes
+are 322098.AYWB_066 (degree 461), 322098.AYWB_061 (degree 446), 322098.AYWB_062
+(degree 446), 322098.AYWB_600 (degree 433) and 322098.AYWB_134 (degree
 432).
 
 
@@ -107,13 +108,14 @@ def PhytoplasmaAsterYellows(
 	
 	Datetime: 2021-02-02 20:28:02.643872
 	
-	The undirected graph Phytoplasma aster yellows has 646 nodes and 70929 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.34046
-	and has 10 connected components, where the component with most nodes has 625 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 281, the mean node degree is 219.59, and the node degree mode is 1. The top 5
-	most central nodes are 322098.AYWB_066 (degree 461), 322098.AYWB_061 (degree 446),
-	322098.AYWB_062 (degree 446), 322098.AYWB_600 (degree 433) and 322098.AYWB_134 (degree
+	The undirected graph Phytoplasma aster yellows has 646 nodes and 70929
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.34046 and has 10 connected components, where the
+	component with most nodes has 625 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 281, the mean node degree
+	is 219.59, and the node degree mode is 1. The top 5 most central nodes
+	are 322098.AYWB_066 (degree 461), 322098.AYWB_061 (degree 446), 322098.AYWB_062
+	(degree 446), 322098.AYWB_600 (degree 433) and 322098.AYWB_134 (degree
 	432).
 	
 

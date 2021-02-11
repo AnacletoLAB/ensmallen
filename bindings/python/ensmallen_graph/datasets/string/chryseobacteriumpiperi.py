@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:11:24.465112
 
-The undirected graph Chryseobacterium piperi has 3472 nodes and 255193 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04235 and
-has 15 connected components, where the component with most nodes has 3439 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 147.00, and the node degree mode is 2. The top 5 most central
-nodes are 558152.IQ37_13340 (degree 1197), 558152.IQ37_17190 (degree 951), 558152.IQ37_13020
-(degree 814), 558152.IQ37_12825 (degree 785) and 558152.IQ37_16550 (degree 774).
+The undirected graph Chryseobacterium piperi has 3472 nodes and 255193
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04235 and has 15 connected components, where the component
+with most nodes has 3439 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 126, the mean node degree is 147.00,
+and the node degree mode is 2. The top 5 most central nodes are 558152.IQ37_13340
+(degree 1197), 558152.IQ37_17190 (degree 951), 558152.IQ37_13020 (degree
+814), 558152.IQ37_12825 (degree 785) and 558152.IQ37_16550 (degree 774).
 
 
 References
@@ -106,13 +107,14 @@ def ChryseobacteriumPiperi(
 	
 	Datetime: 2021-02-02 21:11:24.465112
 	
-	The undirected graph Chryseobacterium piperi has 3472 nodes and 255193 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04235 and
-	has 15 connected components, where the component with most nodes has 3439 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 147.00, and the node degree mode is 2. The top 5 most central
-	nodes are 558152.IQ37_13340 (degree 1197), 558152.IQ37_17190 (degree 951), 558152.IQ37_13020
-	(degree 814), 558152.IQ37_12825 (degree 785) and 558152.IQ37_16550 (degree 774).
+	The undirected graph Chryseobacterium piperi has 3472 nodes and 255193
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04235 and has 15 connected components, where the component
+	with most nodes has 3439 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 126, the mean node degree is 147.00,
+	and the node degree mode is 2. The top 5 most central nodes are 558152.IQ37_13340
+	(degree 1197), 558152.IQ37_17190 (degree 951), 558152.IQ37_13020 (degree
+	814), 558152.IQ37_12825 (degree 785) and 558152.IQ37_16550 (degree 774).
 	
 
 

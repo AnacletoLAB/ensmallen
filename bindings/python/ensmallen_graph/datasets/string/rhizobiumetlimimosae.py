@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:53:39.160165
 
-The undirected graph Rhizobium etli mimosae has 4518 nodes and 370124 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03627 and
-has 17 connected components, where the component with most nodes has 4482 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 163.84, and the node degree mode is 4. The top 5 most central
-nodes are 1432050.IE4771_CH00171 (degree 1670), 1432050.IE4771_CH00622 (degree 1597),
-1432050.IE4771_CH03464 (degree 1366), 1432050.IE4771_CH03879 (degree 1304) and 1432050.IE4771_CH01074
+The undirected graph Rhizobium etli mimosae has 4518 nodes and 370124 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03627 and has 17 connected components, where the component with most
+nodes has 4482 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 163.84, and
+the node degree mode is 4. The top 5 most central nodes are 1432050.IE4771_CH00171
+(degree 1670), 1432050.IE4771_CH00622 (degree 1597), 1432050.IE4771_CH03464
+(degree 1366), 1432050.IE4771_CH03879 (degree 1304) and 1432050.IE4771_CH01074
 (degree 1285).
 
 
@@ -107,13 +108,14 @@ def RhizobiumEtliMimosae(
 	
 	Datetime: 2021-02-03 22:53:39.160165
 	
-	The undirected graph Rhizobium etli mimosae has 4518 nodes and 370124 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03627 and
-	has 17 connected components, where the component with most nodes has 4482 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 163.84, and the node degree mode is 4. The top 5 most central
-	nodes are 1432050.IE4771_CH00171 (degree 1670), 1432050.IE4771_CH00622 (degree 1597),
-	1432050.IE4771_CH03464 (degree 1366), 1432050.IE4771_CH03879 (degree 1304) and 1432050.IE4771_CH01074
+	The undirected graph Rhizobium etli mimosae has 4518 nodes and 370124 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03627 and has 17 connected components, where the component with most
+	nodes has 4482 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 163.84, and
+	the node degree mode is 4. The top 5 most central nodes are 1432050.IE4771_CH00171
+	(degree 1670), 1432050.IE4771_CH00622 (degree 1597), 1432050.IE4771_CH03464
+	(degree 1366), 1432050.IE4771_CH03879 (degree 1304) and 1432050.IE4771_CH01074
 	(degree 1285).
 	
 

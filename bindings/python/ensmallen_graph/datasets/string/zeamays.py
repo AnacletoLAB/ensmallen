@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:09:36.736084
 
-The undirected graph Zea mays has 29240 nodes and 10277461 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.02404 and has 9
-connected components, where the component with most nodes has 29223 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 379,
-the mean node degree is 702.97, and the node degree mode is 6. The top 5 most central
-nodes are 4577.GRMZM5G877815_P01 (degree 10592), 4577.GRMZM2G701288_P01 (degree 10441),
-4577.GRMZM5G819320_P02 (degree 10299), 4577.GRMZM5G892645_P04 (degree 10245) and
-4577.GRMZM5G803949_P02 (degree 10213).
+The undirected graph Zea mays has 29240 nodes and 10277461 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.02404 and has 9 connected components, where the component with most nodes
+has 29223 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 379, the mean node degree is 702.97, and the
+node degree mode is 6. The top 5 most central nodes are 4577.GRMZM5G877815_P01
+(degree 10592), 4577.GRMZM2G701288_P01 (degree 10441), 4577.GRMZM5G819320_P02
+(degree 10299), 4577.GRMZM5G892645_P04 (degree 10245) and 4577.GRMZM5G803949_P02
+(degree 10213).
 
 
 References
@@ -107,14 +108,15 @@ def ZeaMays(
 	
 	Datetime: 2021-02-02 17:09:36.736084
 	
-	The undirected graph Zea mays has 29240 nodes and 10277461 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.02404 and has 9
-	connected components, where the component with most nodes has 29223 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 379,
-	the mean node degree is 702.97, and the node degree mode is 6. The top 5 most central
-	nodes are 4577.GRMZM5G877815_P01 (degree 10592), 4577.GRMZM2G701288_P01 (degree 10441),
-	4577.GRMZM5G819320_P02 (degree 10299), 4577.GRMZM5G892645_P04 (degree 10245) and
-	4577.GRMZM5G803949_P02 (degree 10213).
+	The undirected graph Zea mays has 29240 nodes and 10277461 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.02404 and has 9 connected components, where the component with most nodes
+	has 29223 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 379, the mean node degree is 702.97, and the
+	node degree mode is 6. The top 5 most central nodes are 4577.GRMZM5G877815_P01
+	(degree 10592), 4577.GRMZM2G701288_P01 (degree 10441), 4577.GRMZM5G819320_P02
+	(degree 10299), 4577.GRMZM5G892645_P04 (degree 10245) and 4577.GRMZM5G803949_P02
+	(degree 10213).
 	
 
 

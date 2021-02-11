@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:23.358333
 
-The undirected graph Thermacetogenium phaeum has 2792 nodes and 177074 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04545 and
-has 10 connected components, where the component with most nodes has 2769 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 126.84, and the node degree mode is 2. The top 5 most central
-nodes are 1089553.Tph_c18090 (degree 1014), 1089553.Tph_c15690 (degree 782), 1089553.Tph_c08410
-(degree 766), 1089553.Tph_c17700 (degree 759) and 1089553.Tph_c28730 (degree 699).
+The undirected graph Thermacetogenium phaeum has 2792 nodes and 177074
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04545 and has 10 connected components, where the component
+with most nodes has 2769 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 126.84,
+and the node degree mode is 2. The top 5 most central nodes are 1089553.Tph_c18090
+(degree 1014), 1089553.Tph_c15690 (degree 782), 1089553.Tph_c08410 (degree
+766), 1089553.Tph_c17700 (degree 759) and 1089553.Tph_c28730 (degree 699).
 
 
 References
@@ -106,13 +107,14 @@ def ThermacetogeniumPhaeum(
 	
 	Datetime: 2021-02-02 22:22:23.358333
 	
-	The undirected graph Thermacetogenium phaeum has 2792 nodes and 177074 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04545 and
-	has 10 connected components, where the component with most nodes has 2769 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 126.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1089553.Tph_c18090 (degree 1014), 1089553.Tph_c15690 (degree 782), 1089553.Tph_c08410
-	(degree 766), 1089553.Tph_c17700 (degree 759) and 1089553.Tph_c28730 (degree 699).
+	The undirected graph Thermacetogenium phaeum has 2792 nodes and 177074
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04545 and has 10 connected components, where the component
+	with most nodes has 2769 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 126.84,
+	and the node degree mode is 2. The top 5 most central nodes are 1089553.Tph_c18090
+	(degree 1014), 1089553.Tph_c15690 (degree 782), 1089553.Tph_c08410 (degree
+	766), 1089553.Tph_c17700 (degree 759) and 1089553.Tph_c28730 (degree 699).
 	
 
 

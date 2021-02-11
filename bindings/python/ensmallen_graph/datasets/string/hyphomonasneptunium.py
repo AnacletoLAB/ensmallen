@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:13.753447
 
-The undirected graph Hyphomonas neptunium has 3479 nodes and 370824 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06129 and
-has 7 connected components, where the component with most nodes has 3466 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 213.18, and the node degree mode is 2. The top 5 most central
-nodes are 228405.HNE_1189 (degree 1326), 228405.HNE_1412 (degree 1255), 228405.HNE_1246
-(degree 1146), 228405.HNE_1820 (degree 1109) and 228405.HNE_0666 (degree 1030).
+The undirected graph Hyphomonas neptunium has 3479 nodes and 370824 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06129 and has 7 connected components, where the component with most
+nodes has 3466 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 195, the mean node degree is 213.18, and
+the node degree mode is 2. The top 5 most central nodes are 228405.HNE_1189
+(degree 1326), 228405.HNE_1412 (degree 1255), 228405.HNE_1246 (degree 1146),
+228405.HNE_1820 (degree 1109) and 228405.HNE_0666 (degree 1030).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasNeptunium(
 	
 	Datetime: 2021-02-02 20:07:13.753447
 	
-	The undirected graph Hyphomonas neptunium has 3479 nodes and 370824 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06129 and
-	has 7 connected components, where the component with most nodes has 3466 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 213.18, and the node degree mode is 2. The top 5 most central
-	nodes are 228405.HNE_1189 (degree 1326), 228405.HNE_1412 (degree 1255), 228405.HNE_1246
-	(degree 1146), 228405.HNE_1820 (degree 1109) and 228405.HNE_0666 (degree 1030).
+	The undirected graph Hyphomonas neptunium has 3479 nodes and 370824 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06129 and has 7 connected components, where the component with most
+	nodes has 3466 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 195, the mean node degree is 213.18, and
+	the node degree mode is 2. The top 5 most central nodes are 228405.HNE_1189
+	(degree 1326), 228405.HNE_1412 (degree 1255), 228405.HNE_1246 (degree 1146),
+	228405.HNE_1820 (degree 1109) and 228405.HNE_0666 (degree 1030).
 	
 
 

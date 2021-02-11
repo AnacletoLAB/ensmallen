@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:50.416911
 
-The undirected graph Prevotella loescheii has 3128 nodes and 157607 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03223 and
-has 93 connected components, where the component with most nodes has 2891 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 75,
-the mean node degree is 100.77, and the node degree mode is 1. The top 5 most central
-nodes are 1122985.HMPREF1991_01461 (degree 1008), 1122985.HMPREF1991_00860 (degree
-850), 1122985.HMPREF1991_01803 (degree 780), 1122985.HMPREF1991_01335 (degree 741)
-and 1122985.HMPREF1991_00289 (degree 672).
+The undirected graph Prevotella loescheii has 3128 nodes and 157607 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03223 and has 93 connected components, where the component with most
+nodes has 2891 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 75, the mean node degree is 100.77, and
+the node degree mode is 1. The top 5 most central nodes are 1122985.HMPREF1991_01461
+(degree 1008), 1122985.HMPREF1991_00860 (degree 850), 1122985.HMPREF1991_01803
+(degree 780), 1122985.HMPREF1991_01335 (degree 741) and 1122985.HMPREF1991_00289
+(degree 672).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaLoescheii(
 	
 	Datetime: 2021-02-02 22:45:50.416911
 	
-	The undirected graph Prevotella loescheii has 3128 nodes and 157607 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03223 and
-	has 93 connected components, where the component with most nodes has 2891 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 75,
-	the mean node degree is 100.77, and the node degree mode is 1. The top 5 most central
-	nodes are 1122985.HMPREF1991_01461 (degree 1008), 1122985.HMPREF1991_00860 (degree
-	850), 1122985.HMPREF1991_01803 (degree 780), 1122985.HMPREF1991_01335 (degree 741)
-	and 1122985.HMPREF1991_00289 (degree 672).
+	The undirected graph Prevotella loescheii has 3128 nodes and 157607 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03223 and has 93 connected components, where the component with most
+	nodes has 2891 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 75, the mean node degree is 100.77, and
+	the node degree mode is 1. The top 5 most central nodes are 1122985.HMPREF1991_01461
+	(degree 1008), 1122985.HMPREF1991_00860 (degree 850), 1122985.HMPREF1991_01803
+	(degree 780), 1122985.HMPREF1991_01335 (degree 741) and 1122985.HMPREF1991_00289
+	(degree 672).
 	
 
 

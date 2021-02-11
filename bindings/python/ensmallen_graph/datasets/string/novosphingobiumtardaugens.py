@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:51.482594
 
-The undirected graph Novosphingobium tardaugens has 3978 nodes and 397368 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-and has 13 connected components, where the component with most nodes has 3947 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 199.78, and the node degree mode is 2. The top 5
-most central nodes are 1219035.NT2_01_02800 (degree 1214), 1219035.NT2_02_01100 (degree
-1132), 1219035.NT2_06_00130 (degree 1039), 1219035.NT2_04_01450 (degree 1036) and
-1219035.NT2_04_04720 (degree 1028).
+The undirected graph Novosphingobium tardaugens has 3978 nodes and 397368
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05023 and has 13 connected components, where the component
+with most nodes has 3947 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 199.78,
+and the node degree mode is 2. The top 5 most central nodes are 1219035.NT2_01_02800
+(degree 1214), 1219035.NT2_02_01100 (degree 1132), 1219035.NT2_06_00130
+(degree 1039), 1219035.NT2_04_01450 (degree 1036) and 1219035.NT2_04_04720
+(degree 1028).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumTardaugens(
 	
 	Datetime: 2021-02-02 23:22:51.482594
 	
-	The undirected graph Novosphingobium tardaugens has 3978 nodes and 397368 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05023
-	and has 13 connected components, where the component with most nodes has 3947 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 199.78, and the node degree mode is 2. The top 5
-	most central nodes are 1219035.NT2_01_02800 (degree 1214), 1219035.NT2_02_01100 (degree
-	1132), 1219035.NT2_06_00130 (degree 1039), 1219035.NT2_04_01450 (degree 1036) and
-	1219035.NT2_04_04720 (degree 1028).
+	The undirected graph Novosphingobium tardaugens has 3978 nodes and 397368
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05023 and has 13 connected components, where the component
+	with most nodes has 3947 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 199.78,
+	and the node degree mode is 2. The top 5 most central nodes are 1219035.NT2_01_02800
+	(degree 1214), 1219035.NT2_02_01100 (degree 1132), 1219035.NT2_06_00130
+	(degree 1039), 1219035.NT2_04_01450 (degree 1036) and 1219035.NT2_04_04720
+	(degree 1028).
 	
 
 

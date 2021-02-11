@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:25:55.029877
 
-The undirected graph qa8fm has 66127 nodes and 863353 weighted edges, of which 66127
-are self-loops. The graph is quite sparse as it has a density of 0.00038 and is connected,
-as it has a single component. The graph median node degree is 27, the mean node degree
-is 25.11, and the node degree mode is 27. The top 5 most central nodes are 65111
-(degree 27), 65105 (degree 27), 65104 (degree 27), 65103 (degree 27) and 65097 (degree
-27).
+The undirected graph qa8fm has 66127 nodes and 863353 weighted edges, of
+which 66127 are self-loops. The graph is quite sparse as it has a density
+of 0.00038 and is connected, as it has a single component. The graph median
+node degree is 27, the mean node degree is 25.11, and the node degree mode
+is 27. The top 5 most central nodes are 65111 (degree 27), 65105 (degree
+27), 65104 (degree 27), 65103 (degree 27) and 65097 (degree 27).
 
 
 References
@@ -102,12 +102,12 @@ def Qa8fm(
 	
 	Datetime: 2021-02-06 11:25:55.029877
 	
-	The undirected graph qa8fm has 66127 nodes and 863353 weighted edges, of which 66127
-	are self-loops. The graph is quite sparse as it has a density of 0.00038 and is connected,
-	as it has a single component. The graph median node degree is 27, the mean node degree
-	is 25.11, and the node degree mode is 27. The top 5 most central nodes are 65111
-	(degree 27), 65105 (degree 27), 65104 (degree 27), 65103 (degree 27) and 65097 (degree
-	27).
+	The undirected graph qa8fm has 66127 nodes and 863353 weighted edges, of
+	which 66127 are self-loops. The graph is quite sparse as it has a density
+	of 0.00038 and is connected, as it has a single component. The graph median
+	node degree is 27, the mean node degree is 25.11, and the node degree mode
+	is 27. The top 5 most central nodes are 65111 (degree 27), 65105 (degree
+	27), 65104 (degree 27), 65103 (degree 27) and 65097 (degree 27).
 	
 
 

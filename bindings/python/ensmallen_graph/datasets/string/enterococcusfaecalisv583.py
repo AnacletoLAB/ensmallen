@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:06:27.499430
 
-The undirected graph Enterococcus faecalis V583 has 3082 nodes and 302511 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06372
-and has 2 connected components, where the component with most nodes has 3078 nodes
-and the component with the least nodes has 4 nodes. The graph median node degree
-is 170, the mean node degree is 196.31, and the node degree mode is 3. The top 5
-most central nodes are 226185.EF_0878 (degree 1204), 226185.EF_2307 (degree 1077),
-226185.EF_0167 (degree 1067), 226185.EF_0053 (degree 994) and 226185.EF_3293 (degree
-953).
+The undirected graph Enterococcus faecalis V583 has 3082 nodes and 302511
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06372 and has 2 connected components, where the component
+with most nodes has 3078 nodes and the component with the least nodes has
+4 nodes. The graph median node degree is 170, the mean node degree is 196.31,
+and the node degree mode is 3. The top 5 most central nodes are 226185.EF_0878
+(degree 1204), 226185.EF_2307 (degree 1077), 226185.EF_0167 (degree 1067),
+226185.EF_0053 (degree 994) and 226185.EF_3293 (degree 953).
 
 
 References
@@ -107,14 +107,14 @@ def EnterococcusFaecalisV583(
 	
 	Datetime: 2021-02-02 20:06:27.499430
 	
-	The undirected graph Enterococcus faecalis V583 has 3082 nodes and 302511 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06372
-	and has 2 connected components, where the component with most nodes has 3078 nodes
-	and the component with the least nodes has 4 nodes. The graph median node degree
-	is 170, the mean node degree is 196.31, and the node degree mode is 3. The top 5
-	most central nodes are 226185.EF_0878 (degree 1204), 226185.EF_2307 (degree 1077),
-	226185.EF_0167 (degree 1067), 226185.EF_0053 (degree 994) and 226185.EF_3293 (degree
-	953).
+	The undirected graph Enterococcus faecalis V583 has 3082 nodes and 302511
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06372 and has 2 connected components, where the component
+	with most nodes has 3078 nodes and the component with the least nodes has
+	4 nodes. The graph median node degree is 170, the mean node degree is 196.31,
+	and the node degree mode is 3. The top 5 most central nodes are 226185.EF_0878
+	(degree 1204), 226185.EF_2307 (degree 1077), 226185.EF_0167 (degree 1067),
+	226185.EF_0053 (degree 994) and 226185.EF_3293 (degree 953).
 	
 
 

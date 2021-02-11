@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:48.430082
 
-The undirected graph Lysinibacillus sp. BF4 has 2384 nodes and 184988 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06512 and
-has 6 connected components, where the component with most nodes has 2374 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 155.19, and the node degree mode is 2. The top 5 most central
-nodes are 1473546.CH76_02310 (degree 941), 1473546.CH76_10835 (degree 824), 1473546.CH76_00315
-(degree 793), 1473546.CH76_09430 (degree 717) and 1473546.CH76_02935 (degree 675).
+The undirected graph Lysinibacillus sp. BF4 has 2384 nodes and 184988 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06512 and has 6 connected components, where the component with most
+nodes has 2374 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 155.19, and
+the node degree mode is 2. The top 5 most central nodes are 1473546.CH76_02310
+(degree 941), 1473546.CH76_10835 (degree 824), 1473546.CH76_00315 (degree
+793), 1473546.CH76_09430 (degree 717) and 1473546.CH76_02935 (degree 675).
 
 
 References
@@ -106,13 +107,14 @@ def LysinibacillusSp.Bf4(
 	
 	Datetime: 2021-02-03 23:12:48.430082
 	
-	The undirected graph Lysinibacillus sp. BF4 has 2384 nodes and 184988 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06512 and
-	has 6 connected components, where the component with most nodes has 2374 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 155.19, and the node degree mode is 2. The top 5 most central
-	nodes are 1473546.CH76_02310 (degree 941), 1473546.CH76_10835 (degree 824), 1473546.CH76_00315
-	(degree 793), 1473546.CH76_09430 (degree 717) and 1473546.CH76_02935 (degree 675).
+	The undirected graph Lysinibacillus sp. BF4 has 2384 nodes and 184988 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06512 and has 6 connected components, where the component with most
+	nodes has 2374 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 155.19, and
+	the node degree mode is 2. The top 5 most central nodes are 1473546.CH76_02310
+	(degree 941), 1473546.CH76_10835 (degree 824), 1473546.CH76_00315 (degree
+	793), 1473546.CH76_09430 (degree 717) and 1473546.CH76_02935 (degree 675).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:46:05.482721
 
-The undirected graph Clostridium botulinum 202F has 3670 nodes and 354781 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05270
-and has 16 connected components, where the component with most nodes has 3629 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 193.34, and the node degree mode is 3. The top 5
-most central nodes are 1415774.U728_1551 (degree 1463), 1415774.U728_2867 (degree
-1284), 1415774.U728_664 (degree 1170), 1415774.U728_1193 (degree 1150) and 1415774.U728_3529
-(degree 1144).
+The undirected graph Clostridium botulinum 202F has 3670 nodes and 354781
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05270 and has 16 connected components, where the component
+with most nodes has 3629 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 193.34,
+and the node degree mode is 3. The top 5 most central nodes are 1415774.U728_1551
+(degree 1463), 1415774.U728_2867 (degree 1284), 1415774.U728_664 (degree
+1170), 1415774.U728_1193 (degree 1150) and 1415774.U728_3529 (degree 1144).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumBotulinum202f(
 	
 	Datetime: 2021-02-03 22:46:05.482721
 	
-	The undirected graph Clostridium botulinum 202F has 3670 nodes and 354781 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05270
-	and has 16 connected components, where the component with most nodes has 3629 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 193.34, and the node degree mode is 3. The top 5
-	most central nodes are 1415774.U728_1551 (degree 1463), 1415774.U728_2867 (degree
-	1284), 1415774.U728_664 (degree 1170), 1415774.U728_1193 (degree 1150) and 1415774.U728_3529
-	(degree 1144).
+	The undirected graph Clostridium botulinum 202F has 3670 nodes and 354781
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05270 and has 16 connected components, where the component
+	with most nodes has 3629 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 193.34,
+	and the node degree mode is 3. The top 5 most central nodes are 1415774.U728_1551
+	(degree 1463), 1415774.U728_2867 (degree 1284), 1415774.U728_664 (degree
+	1170), 1415774.U728_1193 (degree 1150) and 1415774.U728_3529 (degree 1144).
 	
 
 

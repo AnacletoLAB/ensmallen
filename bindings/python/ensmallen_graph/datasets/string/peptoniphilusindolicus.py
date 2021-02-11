@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:18.048606
 
-The undirected graph Peptoniphilus indolicus has 2242 nodes and 148454 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05909 and
-has 15 connected components, where the component with most nodes has 2205 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 132.43, and the node degree mode is 3. The top 5 most central
-nodes are 997350.HMPREF9129_0451 (degree 820), 997350.HMPREF9129_2079 (degree 730),
-997350.HMPREF9129_0619 (degree 673), 997350.HMPREF9129_1307 (degree 635) and 997350.HMPREF9129_0953
+The undirected graph Peptoniphilus indolicus has 2242 nodes and 148454
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05909 and has 15 connected components, where the component
+with most nodes has 2205 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 132.43,
+and the node degree mode is 3. The top 5 most central nodes are 997350.HMPREF9129_0451
+(degree 820), 997350.HMPREF9129_2079 (degree 730), 997350.HMPREF9129_0619
+(degree 673), 997350.HMPREF9129_1307 (degree 635) and 997350.HMPREF9129_0953
 (degree 615).
 
 
@@ -107,13 +108,14 @@ def PeptoniphilusIndolicus(
 	
 	Datetime: 2021-02-02 22:05:18.048606
 	
-	The undirected graph Peptoniphilus indolicus has 2242 nodes and 148454 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05909 and
-	has 15 connected components, where the component with most nodes has 2205 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 132.43, and the node degree mode is 3. The top 5 most central
-	nodes are 997350.HMPREF9129_0451 (degree 820), 997350.HMPREF9129_2079 (degree 730),
-	997350.HMPREF9129_0619 (degree 673), 997350.HMPREF9129_1307 (degree 635) and 997350.HMPREF9129_0953
+	The undirected graph Peptoniphilus indolicus has 2242 nodes and 148454
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05909 and has 15 connected components, where the component
+	with most nodes has 2205 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 132.43,
+	and the node degree mode is 3. The top 5 most central nodes are 997350.HMPREF9129_0451
+	(degree 820), 997350.HMPREF9129_2079 (degree 730), 997350.HMPREF9129_0619
+	(degree 673), 997350.HMPREF9129_1307 (degree 635) and 997350.HMPREF9129_0953
 	(degree 615).
 	
 

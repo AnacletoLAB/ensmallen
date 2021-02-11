@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:03.038665
 
-The undirected graph Marinobacter sp. ELB17 has 4808 nodes and 469578 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04063 and
-has 29 connected components, where the component with most nodes has 4728 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 145,
-the mean node degree is 195.33, and the node degree mode is 3. The top 5 most central
-nodes are 270374.MELB17_20651 (degree 1793), 270374.MELB17_08636 (degree 1228), 270374.MELB17_03515
-(degree 1228), 270374.MELB17_16071 (degree 1223) and 270374.MELB17_15881 (degree
+The undirected graph Marinobacter sp. ELB17 has 4808 nodes and 469578 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04063 and has 29 connected components, where the component with most
+nodes has 4728 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 145, the mean node degree is 195.33, and
+the node degree mode is 3. The top 5 most central nodes are 270374.MELB17_20651
+(degree 1793), 270374.MELB17_08636 (degree 1228), 270374.MELB17_03515 (degree
+1228), 270374.MELB17_16071 (degree 1223) and 270374.MELB17_15881 (degree
 1217).
 
 
@@ -107,13 +108,14 @@ def MarinobacterSp.Elb17(
 	
 	Datetime: 2021-02-02 20:16:03.038665
 	
-	The undirected graph Marinobacter sp. ELB17 has 4808 nodes and 469578 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04063 and
-	has 29 connected components, where the component with most nodes has 4728 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 145,
-	the mean node degree is 195.33, and the node degree mode is 3. The top 5 most central
-	nodes are 270374.MELB17_20651 (degree 1793), 270374.MELB17_08636 (degree 1228), 270374.MELB17_03515
-	(degree 1228), 270374.MELB17_16071 (degree 1223) and 270374.MELB17_15881 (degree
+	The undirected graph Marinobacter sp. ELB17 has 4808 nodes and 469578 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04063 and has 29 connected components, where the component with most
+	nodes has 4728 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 145, the mean node degree is 195.33, and
+	the node degree mode is 3. The top 5 most central nodes are 270374.MELB17_20651
+	(degree 1793), 270374.MELB17_08636 (degree 1228), 270374.MELB17_03515 (degree
+	1228), 270374.MELB17_16071 (degree 1223) and 270374.MELB17_15881 (degree
 	1217).
 	
 

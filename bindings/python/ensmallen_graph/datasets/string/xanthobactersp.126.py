@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:48.773746
 
-The undirected graph Xanthobacter sp. 126 has 4919 nodes and 561112 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04639 and
-has 12 connected components, where the component with most nodes has 4895 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 228.14, and the node degree mode is 3. The top 5 most central
-nodes are 1131814.JAFO01000001_gene4492 (degree 2005), 1131814.JAFO01000001_gene3711
-(degree 1881), 1131814.JAFO01000001_gene519 (degree 1640), 1131814.JAFO01000001_gene3841
-(degree 1435) and 1131814.JAFO01000001_gene294 (degree 1393).
+The undirected graph Xanthobacter sp. 126 has 4919 nodes and 561112 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04639 and has 12 connected components, where the component with most
+nodes has 4895 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 228.14, and
+the node degree mode is 3. The top 5 most central nodes are 1131814.JAFO01000001_gene4492
+(degree 2005), 1131814.JAFO01000001_gene3711 (degree 1881), 1131814.JAFO01000001_gene519
+(degree 1640), 1131814.JAFO01000001_gene3841 (degree 1435) and 1131814.JAFO01000001_gene294
+(degree 1393).
 
 
 References
@@ -107,14 +108,15 @@ def XanthobacterSp.126(
 	
 	Datetime: 2021-02-02 22:55:48.773746
 	
-	The undirected graph Xanthobacter sp. 126 has 4919 nodes and 561112 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04639 and
-	has 12 connected components, where the component with most nodes has 4895 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 228.14, and the node degree mode is 3. The top 5 most central
-	nodes are 1131814.JAFO01000001_gene4492 (degree 2005), 1131814.JAFO01000001_gene3711
-	(degree 1881), 1131814.JAFO01000001_gene519 (degree 1640), 1131814.JAFO01000001_gene3841
-	(degree 1435) and 1131814.JAFO01000001_gene294 (degree 1393).
+	The undirected graph Xanthobacter sp. 126 has 4919 nodes and 561112 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04639 and has 12 connected components, where the component with most
+	nodes has 4895 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 228.14, and
+	the node degree mode is 3. The top 5 most central nodes are 1131814.JAFO01000001_gene4492
+	(degree 2005), 1131814.JAFO01000001_gene3711 (degree 1881), 1131814.JAFO01000001_gene519
+	(degree 1640), 1131814.JAFO01000001_gene3841 (degree 1435) and 1131814.JAFO01000001_gene294
+	(degree 1393).
 	
 
 

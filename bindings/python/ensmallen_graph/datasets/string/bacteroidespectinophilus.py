@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:21.458919
 
-The undirected graph Bacteroides pectinophilus has 3217 nodes and 306296 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05921
-and has 13 connected components, where the component with most nodes has 3174 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 164, the mean node degree is 190.42, and the node degree mode is 7. The top 5
-most central nodes are 483218.BACPEC_00052 (degree 1192), 483218.BACPEC_00527 (degree
-1175), 483218.BACPEC_01969 (degree 1095), 483218.BACPEC_00935 (degree 894) and 483218.BACPEC_00401
-(degree 885).
+The undirected graph Bacteroides pectinophilus has 3217 nodes and 306296
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05921 and has 13 connected components, where the component
+with most nodes has 3174 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 164, the mean node degree is 190.42,
+and the node degree mode is 7. The top 5 most central nodes are 483218.BACPEC_00052
+(degree 1192), 483218.BACPEC_00527 (degree 1175), 483218.BACPEC_01969 (degree
+1095), 483218.BACPEC_00935 (degree 894) and 483218.BACPEC_00401 (degree
+885).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesPectinophilus(
 	
 	Datetime: 2021-02-02 20:58:21.458919
 	
-	The undirected graph Bacteroides pectinophilus has 3217 nodes and 306296 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05921
-	and has 13 connected components, where the component with most nodes has 3174 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 164, the mean node degree is 190.42, and the node degree mode is 7. The top 5
-	most central nodes are 483218.BACPEC_00052 (degree 1192), 483218.BACPEC_00527 (degree
-	1175), 483218.BACPEC_01969 (degree 1095), 483218.BACPEC_00935 (degree 894) and 483218.BACPEC_00401
-	(degree 885).
+	The undirected graph Bacteroides pectinophilus has 3217 nodes and 306296
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05921 and has 13 connected components, where the component
+	with most nodes has 3174 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 164, the mean node degree is 190.42,
+	and the node degree mode is 7. The top 5 most central nodes are 483218.BACPEC_00052
+	(degree 1192), 483218.BACPEC_00527 (degree 1175), 483218.BACPEC_01969 (degree
+	1095), 483218.BACPEC_00935 (degree 894) and 483218.BACPEC_00401 (degree
+	885).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:17:25.712744
 
-The undirected graph Paramecium tetraurelia has 16207 nodes and 6389245 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04865
-and has 25 connected components, where the component with most nodes has 16148 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 513, the mean node degree is 788.45, and the node degree mode is 283. The top
-5 most central nodes are 5888.CAK88808 (degree 6637), 5888.CAK82515 (degree 5907),
-5888.CAK78169 (degree 5907), 5888.CAK86280 (degree 5598) and 5888.CAK66407 (degree
-5481).
+The undirected graph Paramecium tetraurelia has 16207 nodes and 6389245
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04865 and has 25 connected components, where the component
+with most nodes has 16148 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 513, the mean node degree
+is 788.45, and the node degree mode is 283. The top 5 most central nodes
+are 5888.CAK88808 (degree 6637), 5888.CAK82515 (degree 5907), 5888.CAK78169
+(degree 5907), 5888.CAK86280 (degree 5598) and 5888.CAK66407 (degree 5481).
 
 
 References
@@ -107,14 +107,14 @@ def ParameciumTetraurelia(
 	
 	Datetime: 2021-02-02 17:17:25.712744
 	
-	The undirected graph Paramecium tetraurelia has 16207 nodes and 6389245 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04865
-	and has 25 connected components, where the component with most nodes has 16148 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 513, the mean node degree is 788.45, and the node degree mode is 283. The top
-	5 most central nodes are 5888.CAK88808 (degree 6637), 5888.CAK82515 (degree 5907),
-	5888.CAK78169 (degree 5907), 5888.CAK86280 (degree 5598) and 5888.CAK66407 (degree
-	5481).
+	The undirected graph Paramecium tetraurelia has 16207 nodes and 6389245
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04865 and has 25 connected components, where the component
+	with most nodes has 16148 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 513, the mean node degree
+	is 788.45, and the node degree mode is 283. The top 5 most central nodes
+	are 5888.CAK88808 (degree 6637), 5888.CAK82515 (degree 5907), 5888.CAK78169
+	(degree 5907), 5888.CAK86280 (degree 5598) and 5888.CAK66407 (degree 5481).
 	
 
 

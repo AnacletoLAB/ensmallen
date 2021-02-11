@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:30.842882
 
-The undirected graph Pseudomonas sp. RIT357 has 5516 nodes and 801058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05267 and
-has 21 connected components, where the component with most nodes has 5467 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 242,
-the mean node degree is 290.45, and the node degree mode is 4. The top 5 most central
-nodes are 1470593.BW43_01067 (degree 2245), 1470593.BW43_00811 (degree 2243), 1470593.BW43_04539
-(degree 1826), 1470593.BW43_04206 (degree 1744) and 1470593.BW43_04787 (degree 1701).
+The undirected graph Pseudomonas sp. RIT357 has 5516 nodes and 801058 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05267 and has 21 connected components, where the component with most
+nodes has 5467 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 242, the mean node degree is 290.45, and
+the node degree mode is 4. The top 5 most central nodes are 1470593.BW43_01067
+(degree 2245), 1470593.BW43_00811 (degree 2243), 1470593.BW43_04539 (degree
+1826), 1470593.BW43_04206 (degree 1744) and 1470593.BW43_04787 (degree
+1701).
 
 
 References
@@ -106,13 +108,15 @@ def PseudomonasSp.Rit357(
 	
 	Datetime: 2021-02-03 23:12:30.842882
 	
-	The undirected graph Pseudomonas sp. RIT357 has 5516 nodes and 801058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05267 and
-	has 21 connected components, where the component with most nodes has 5467 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 242,
-	the mean node degree is 290.45, and the node degree mode is 4. The top 5 most central
-	nodes are 1470593.BW43_01067 (degree 2245), 1470593.BW43_00811 (degree 2243), 1470593.BW43_04539
-	(degree 1826), 1470593.BW43_04206 (degree 1744) and 1470593.BW43_04787 (degree 1701).
+	The undirected graph Pseudomonas sp. RIT357 has 5516 nodes and 801058 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05267 and has 21 connected components, where the component with most
+	nodes has 5467 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 242, the mean node degree is 290.45, and
+	the node degree mode is 4. The top 5 most central nodes are 1470593.BW43_01067
+	(degree 2245), 1470593.BW43_00811 (degree 2243), 1470593.BW43_04539 (degree
+	1826), 1470593.BW43_04206 (degree 1744) and 1470593.BW43_04787 (degree
+	1701).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:08:10.450469
 
-The undirected graph diag has 2559 nodes and 4092 unweighted edges, of which none
-are self-loops. The graph is sparse as it has a density of 0.00125 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 3.20, and the node degree mode is 3. The top 5 most central nodes are 2547 (degree
-4), 2543 (degree 4), 2539 (degree 4), 2534 (degree 4) and 2529 (degree 4).
+The undirected graph diag has 2559 nodes and 4092 unweighted edges, of
+which none are self-loops. The graph is sparse as it has a density of 0.00125
+and is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 3.20, and the node degree mode is 3. The
+top 5 most central nodes are 2547 (degree 4), 2543 (degree 4), 2539 (degree
+4), 2534 (degree 4) and 2529 (degree 4).
 
 
 References
@@ -101,11 +102,12 @@ def Diag(
 	
 	Datetime: 2021-02-06 08:08:10.450469
 	
-	The undirected graph diag has 2559 nodes and 4092 unweighted edges, of which none
-	are self-loops. The graph is sparse as it has a density of 0.00125 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 3.20, and the node degree mode is 3. The top 5 most central nodes are 2547 (degree
-	4), 2543 (degree 4), 2539 (degree 4), 2534 (degree 4) and 2529 (degree 4).
+	The undirected graph diag has 2559 nodes and 4092 unweighted edges, of
+	which none are self-loops. The graph is sparse as it has a density of 0.00125
+	and is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 3.20, and the node degree mode is 3. The
+	top 5 most central nodes are 2547 (degree 4), 2543 (degree 4), 2539 (degree
+	4), 2534 (degree 4) and 2529 (degree 4).
 	
 
 

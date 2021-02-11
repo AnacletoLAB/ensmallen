@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:10.387187
 
-The undirected graph socfb-nips-ego has 2888 nodes and 2981 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00072
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 2.06, and the node degree mode is 1. The top 5 most central
-nodes are 603 (degree 769), 1525 (degree 710), 288 (degree 481), 1 (degree 287) and
-710 (degree 221).
+The undirected graph socfb-nips-ego has 2888 nodes and 2981 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00072 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 2.06, and the node
+degree mode is 1. The top 5 most central nodes are 603 (degree 769), 1525
+(degree 710), 288 (degree 481), 1 (degree 287) and 710 (degree 221).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbNipsEgo(
 	
 	Datetime: 2021-02-06 09:52:10.387187
 	
-	The undirected graph socfb-nips-ego has 2888 nodes and 2981 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00072
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 2.06, and the node degree mode is 1. The top 5 most central
-	nodes are 603 (degree 769), 1525 (degree 710), 288 (degree 481), 1 (degree 287) and
-	710 (degree 221).
+	The undirected graph socfb-nips-ego has 2888 nodes and 2981 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00072 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 2.06, and the node
+	degree mode is 1. The top 5 most central nodes are 603 (degree 769), 1525
+	(degree 710), 288 (degree 481), 1 (degree 287) and 710 (degree 221).
 	
 
 

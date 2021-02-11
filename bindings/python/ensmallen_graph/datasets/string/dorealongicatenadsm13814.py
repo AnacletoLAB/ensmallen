@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:11.858230
 
-The undirected graph Dorea longicatena DSM13814 has 2921 nodes and 245812 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05764
-and has 4 connected components, where the component with most nodes has 2915 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 168.31, and the node degree mode is 7. The top 5
-most central nodes are 411462.DORLON_00665 (degree 1116), 411462.DORLON_00986 (degree
-1085), 411462.DORLON_01661 (degree 1062), 411462.DORLON_00479 (degree 835) and 411462.DORLON_01884
-(degree 825).
+The undirected graph Dorea longicatena DSM13814 has 2921 nodes and 245812
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05764 and has 4 connected components, where the component
+with most nodes has 2915 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 168.31,
+and the node degree mode is 7. The top 5 most central nodes are 411462.DORLON_00665
+(degree 1116), 411462.DORLON_00986 (degree 1085), 411462.DORLON_01661 (degree
+1062), 411462.DORLON_00479 (degree 835) and 411462.DORLON_01884 (degree
+825).
 
 
 References
@@ -107,14 +108,15 @@ def DoreaLongicatenaDsm13814(
 	
 	Datetime: 2021-02-02 20:45:11.858230
 	
-	The undirected graph Dorea longicatena DSM13814 has 2921 nodes and 245812 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05764
-	and has 4 connected components, where the component with most nodes has 2915 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 168.31, and the node degree mode is 7. The top 5
-	most central nodes are 411462.DORLON_00665 (degree 1116), 411462.DORLON_00986 (degree
-	1085), 411462.DORLON_01661 (degree 1062), 411462.DORLON_00479 (degree 835) and 411462.DORLON_01884
-	(degree 825).
+	The undirected graph Dorea longicatena DSM13814 has 2921 nodes and 245812
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05764 and has 4 connected components, where the component
+	with most nodes has 2915 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 168.31,
+	and the node degree mode is 7. The top 5 most central nodes are 411462.DORLON_00665
+	(degree 1116), 411462.DORLON_00986 (degree 1085), 411462.DORLON_01661 (degree
+	1062), 411462.DORLON_00479 (degree 835) and 411462.DORLON_01884 (degree
+	825).
 	
 
 

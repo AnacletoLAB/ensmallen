@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:47.792283
 
-The undirected graph Halothiobacillus neapolitanus has 2345 nodes and 166822 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-and has 4 connected components, where the component with most nodes has 2337 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 122, the mean node degree is 142.28, and the node degree mode is 3. The top 5
-most central nodes are 555778.Hneap_2272 (degree 940), 555778.Hneap_1688 (degree
-912), 555778.Hneap_0135 (degree 892), 555778.Hneap_0610 (degree 736) and 555778.Hneap_1053
-(degree 691).
+The undirected graph Halothiobacillus neapolitanus has 2345 nodes and 166822
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06070 and has 4 connected components, where the component
+with most nodes has 2337 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 142.28,
+and the node degree mode is 3. The top 5 most central nodes are 555778.Hneap_2272
+(degree 940), 555778.Hneap_1688 (degree 912), 555778.Hneap_0135 (degree
+892), 555778.Hneap_0610 (degree 736) and 555778.Hneap_1053 (degree 691).
 
 
 References
@@ -107,14 +107,14 @@ def HalothiobacillusNeapolitanus(
 	
 	Datetime: 2021-02-02 21:10:47.792283
 	
-	The undirected graph Halothiobacillus neapolitanus has 2345 nodes and 166822 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06070
-	and has 4 connected components, where the component with most nodes has 2337 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 122, the mean node degree is 142.28, and the node degree mode is 3. The top 5
-	most central nodes are 555778.Hneap_2272 (degree 940), 555778.Hneap_1688 (degree
-	912), 555778.Hneap_0135 (degree 892), 555778.Hneap_0610 (degree 736) and 555778.Hneap_1053
-	(degree 691).
+	The undirected graph Halothiobacillus neapolitanus has 2345 nodes and 166822
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06070 and has 4 connected components, where the component
+	with most nodes has 2337 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 142.28,
+	and the node degree mode is 3. The top 5 most central nodes are 555778.Hneap_2272
+	(degree 940), 555778.Hneap_1688 (degree 912), 555778.Hneap_0135 (degree
+	892), 555778.Hneap_0610 (degree 736) and 555778.Hneap_1053 (degree 691).
 	
 
 

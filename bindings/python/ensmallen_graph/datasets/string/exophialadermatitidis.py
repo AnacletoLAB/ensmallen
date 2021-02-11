@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:17:46.528010
 
-The undirected graph Exophiala dermatitidis has 6712 nodes and 666100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02958 and
-has 16 connected components, where the component with most nodes has 6681 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 198.48, and the node degree mode is 1. The top 5 most central
-nodes are 5970.XP_009161733.1 (degree 1782), 5970.XP_009161466.1 (degree 1571), 5970.XP_009160063.1
-(degree 1498), 5970.XP_009157954.1 (degree 1455) and 5970.XP_009153530.1 (degree
+The undirected graph Exophiala dermatitidis has 6712 nodes and 666100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02958 and has 16 connected components, where the component with most
+nodes has 6681 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 198.48, and
+the node degree mode is 1. The top 5 most central nodes are 5970.XP_009161733.1
+(degree 1782), 5970.XP_009161466.1 (degree 1571), 5970.XP_009160063.1 (degree
+1498), 5970.XP_009157954.1 (degree 1455) and 5970.XP_009153530.1 (degree
 1438).
 
 
@@ -107,13 +108,14 @@ def ExophialaDermatitidis(
 	
 	Datetime: 2021-02-02 17:17:46.528010
 	
-	The undirected graph Exophiala dermatitidis has 6712 nodes and 666100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02958 and
-	has 16 connected components, where the component with most nodes has 6681 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 198.48, and the node degree mode is 1. The top 5 most central
-	nodes are 5970.XP_009161733.1 (degree 1782), 5970.XP_009161466.1 (degree 1571), 5970.XP_009160063.1
-	(degree 1498), 5970.XP_009157954.1 (degree 1455) and 5970.XP_009153530.1 (degree
+	The undirected graph Exophiala dermatitidis has 6712 nodes and 666100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02958 and has 16 connected components, where the component with most
+	nodes has 6681 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 198.48, and
+	the node degree mode is 1. The top 5 most central nodes are 5970.XP_009161733.1
+	(degree 1782), 5970.XP_009161466.1 (degree 1571), 5970.XP_009160063.1 (degree
+	1498), 5970.XP_009157954.1 (degree 1455) and 5970.XP_009153530.1 (degree
 	1438).
 	
 

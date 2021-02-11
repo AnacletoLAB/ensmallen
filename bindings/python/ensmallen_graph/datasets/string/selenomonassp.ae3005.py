@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:40.729141
 
-The undirected graph Selenomonas sp. AE3005 has 2416 nodes and 186365 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06388 and
-has 16 connected components, where the component with most nodes has 2377 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 154.28, and the node degree mode is 2. The top 5 most central
-nodes are 1485543.JMME01000002_gene1841 (degree 1048), 1485543.JMME01000001_gene1291
-(degree 933), 1485543.JMME01000001_gene1097 (degree 925), 1485543.JMME01000002_gene1812
-(degree 922) and 1485543.JMME01000014_gene336 (degree 915).
+The undirected graph Selenomonas sp. AE3005 has 2416 nodes and 186365 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06388 and has 16 connected components, where the component with most
+nodes has 2377 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 154.28, and
+the node degree mode is 2. The top 5 most central nodes are 1485543.JMME01000002_gene1841
+(degree 1048), 1485543.JMME01000001_gene1291 (degree 933), 1485543.JMME01000001_gene1097
+(degree 925), 1485543.JMME01000002_gene1812 (degree 922) and 1485543.JMME01000014_gene336
+(degree 915).
 
 
 References
@@ -107,14 +108,15 @@ def SelenomonasSp.Ae3005(
 	
 	Datetime: 2021-02-03 23:13:40.729141
 	
-	The undirected graph Selenomonas sp. AE3005 has 2416 nodes and 186365 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06388 and
-	has 16 connected components, where the component with most nodes has 2377 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 154.28, and the node degree mode is 2. The top 5 most central
-	nodes are 1485543.JMME01000002_gene1841 (degree 1048), 1485543.JMME01000001_gene1291
-	(degree 933), 1485543.JMME01000001_gene1097 (degree 925), 1485543.JMME01000002_gene1812
-	(degree 922) and 1485543.JMME01000014_gene336 (degree 915).
+	The undirected graph Selenomonas sp. AE3005 has 2416 nodes and 186365 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06388 and has 16 connected components, where the component with most
+	nodes has 2377 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 154.28, and
+	the node degree mode is 2. The top 5 most central nodes are 1485543.JMME01000002_gene1841
+	(degree 1048), 1485543.JMME01000001_gene1291 (degree 933), 1485543.JMME01000001_gene1097
+	(degree 925), 1485543.JMME01000002_gene1812 (degree 922) and 1485543.JMME01000014_gene336
+	(degree 915).
 	
 
 

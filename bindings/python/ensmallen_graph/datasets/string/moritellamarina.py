@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:36.134213
 
-The undirected graph Moritella marina has 4072 nodes and 579975 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06997 and
-has 16 connected components, where the component with most nodes has 4034 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 267,
-the mean node degree is 284.86, and the node degree mode is 1. The top 5 most central
-nodes are 1202962.KB907151_gene1062 (degree 1462), 1202962.KB907160_gene3393 (degree
-1420), 1202962.KB907166_gene2087 (degree 1394), 1202962.KB907152_gene1109 (degree
-1314) and 1202962.KB907150_gene1420 (degree 1253).
+The undirected graph Moritella marina has 4072 nodes and 579975 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06997 and has 16 connected components, where the component with most
+nodes has 4034 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 267, the mean node degree is 284.86, and
+the node degree mode is 1. The top 5 most central nodes are 1202962.KB907151_gene1062
+(degree 1462), 1202962.KB907160_gene3393 (degree 1420), 1202962.KB907166_gene2087
+(degree 1394), 1202962.KB907152_gene1109 (degree 1314) and 1202962.KB907150_gene1420
+(degree 1253).
 
 
 References
@@ -107,14 +108,15 @@ def MoritellaMarina(
 	
 	Datetime: 2021-02-02 23:14:36.134213
 	
-	The undirected graph Moritella marina has 4072 nodes and 579975 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06997 and
-	has 16 connected components, where the component with most nodes has 4034 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 267,
-	the mean node degree is 284.86, and the node degree mode is 1. The top 5 most central
-	nodes are 1202962.KB907151_gene1062 (degree 1462), 1202962.KB907160_gene3393 (degree
-	1420), 1202962.KB907166_gene2087 (degree 1394), 1202962.KB907152_gene1109 (degree
-	1314) and 1202962.KB907150_gene1420 (degree 1253).
+	The undirected graph Moritella marina has 4072 nodes and 579975 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06997 and has 16 connected components, where the component with most
+	nodes has 4034 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 267, the mean node degree is 284.86, and
+	the node degree mode is 1. The top 5 most central nodes are 1202962.KB907151_gene1062
+	(degree 1462), 1202962.KB907160_gene3393 (degree 1420), 1202962.KB907166_gene2087
+	(degree 1394), 1202962.KB907152_gene1109 (degree 1314) and 1202962.KB907150_gene1420
+	(degree 1253).
 	
 
 

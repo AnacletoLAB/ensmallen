@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:11.177145
 
-The undirected graph Citricoccus sp. CH26A has 2937 nodes and 239352 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05551 and
-has 5 connected components, where the component with most nodes has 2928 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 162.99, and the node degree mode is 2. The top 5 most central
-nodes are 1045009.AFXQ01000026_gene1703 (degree 1135), 1045009.AFXQ01000001_gene2168
-(degree 1100), 1045009.AFXQ01000011_gene470 (degree 1001), 1045009.AFXQ01000010_gene871
-(degree 986) and 1045009.AFXQ01000038_gene229 (degree 942).
+The undirected graph Citricoccus sp. CH26A has 2937 nodes and 239352 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05551 and has 5 connected components, where the component with most
+nodes has 2928 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 162.99, and
+the node degree mode is 2. The top 5 most central nodes are 1045009.AFXQ01000026_gene1703
+(degree 1135), 1045009.AFXQ01000001_gene2168 (degree 1100), 1045009.AFXQ01000011_gene470
+(degree 1001), 1045009.AFXQ01000010_gene871 (degree 986) and 1045009.AFXQ01000038_gene229
+(degree 942).
 
 
 References
@@ -107,14 +108,15 @@ def CitricoccusSp.Ch26a(
 	
 	Datetime: 2021-02-02 22:16:11.177145
 	
-	The undirected graph Citricoccus sp. CH26A has 2937 nodes and 239352 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05551 and
-	has 5 connected components, where the component with most nodes has 2928 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 162.99, and the node degree mode is 2. The top 5 most central
-	nodes are 1045009.AFXQ01000026_gene1703 (degree 1135), 1045009.AFXQ01000001_gene2168
-	(degree 1100), 1045009.AFXQ01000011_gene470 (degree 1001), 1045009.AFXQ01000010_gene871
-	(degree 986) and 1045009.AFXQ01000038_gene229 (degree 942).
+	The undirected graph Citricoccus sp. CH26A has 2937 nodes and 239352 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05551 and has 5 connected components, where the component with most
+	nodes has 2928 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 162.99, and
+	the node degree mode is 2. The top 5 most central nodes are 1045009.AFXQ01000026_gene1703
+	(degree 1135), 1045009.AFXQ01000001_gene2168 (degree 1100), 1045009.AFXQ01000011_gene470
+	(degree 1001), 1045009.AFXQ01000010_gene871 (degree 986) and 1045009.AFXQ01000038_gene229
+	(degree 942).
 	
 
 

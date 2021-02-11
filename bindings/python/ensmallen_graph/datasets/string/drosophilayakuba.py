@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:35.967499
 
-The undirected graph Drosophila yakuba has 12761 nodes and 1244932 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01529 and
-has 17 connected components, where the component with most nodes has 12729 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 195.12, and the node degree mode is 1. The top 5
-most central nodes are 7245.FBpp0270687 (degree 3051), 7245.FBpp0270405 (degree 2243),
-7245.FBpp0271228 (degree 2076), 7245.FBpp0263392 (degree 1953) and 7245.FBpp0266039
-(degree 1885).
+The undirected graph Drosophila yakuba has 12761 nodes and 1244932 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01529 and has 17 connected components, where the component with most
+nodes has 12729 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 195.12, and
+the node degree mode is 1. The top 5 most central nodes are 7245.FBpp0270687
+(degree 3051), 7245.FBpp0270405 (degree 2243), 7245.FBpp0271228 (degree
+2076), 7245.FBpp0263392 (degree 1953) and 7245.FBpp0266039 (degree 1885).
 
 
 References
@@ -107,14 +107,14 @@ def DrosophilaYakuba(
 	
 	Datetime: 2021-02-02 17:22:35.967499
 	
-	The undirected graph Drosophila yakuba has 12761 nodes and 1244932 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01529 and
-	has 17 connected components, where the component with most nodes has 12729 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 195.12, and the node degree mode is 1. The top 5
-	most central nodes are 7245.FBpp0270687 (degree 3051), 7245.FBpp0270405 (degree 2243),
-	7245.FBpp0271228 (degree 2076), 7245.FBpp0263392 (degree 1953) and 7245.FBpp0266039
-	(degree 1885).
+	The undirected graph Drosophila yakuba has 12761 nodes and 1244932 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01529 and has 17 connected components, where the component with most
+	nodes has 12729 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 195.12, and
+	the node degree mode is 1. The top 5 most central nodes are 7245.FBpp0270687
+	(degree 3051), 7245.FBpp0270405 (degree 2243), 7245.FBpp0271228 (degree
+	2076), 7245.FBpp0263392 (degree 1953) and 7245.FBpp0266039 (degree 1885).
 	
 
 

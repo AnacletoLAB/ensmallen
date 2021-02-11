@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:35.406489
 
-The undirected graph Micromonospora aurantiaca has 6162 nodes and 573108 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03019
-and has 29 connected components, where the component with most nodes has 6097 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 157, the mean node degree is 186.01, and the node degree mode is 2. The top 5
-most central nodes are 644283.Micau_3895 (degree 3792), 644283.Micau_2464 (degree
-1771), 644283.Micau_2456 (degree 1699), 644283.Micau_4382 (degree 1645) and 644283.Micau_3688
-(degree 1515).
+The undirected graph Micromonospora aurantiaca has 6162 nodes and 573108
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03019 and has 29 connected components, where the component
+with most nodes has 6097 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 157, the mean node degree is 186.01,
+and the node degree mode is 2. The top 5 most central nodes are 644283.Micau_3895
+(degree 3792), 644283.Micau_2464 (degree 1771), 644283.Micau_2456 (degree
+1699), 644283.Micau_4382 (degree 1645) and 644283.Micau_3688 (degree 1515).
 
 
 References
@@ -107,14 +107,14 @@ def MicromonosporaAurantiaca(
 	
 	Datetime: 2021-02-02 21:24:35.406489
 	
-	The undirected graph Micromonospora aurantiaca has 6162 nodes and 573108 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03019
-	and has 29 connected components, where the component with most nodes has 6097 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 157, the mean node degree is 186.01, and the node degree mode is 2. The top 5
-	most central nodes are 644283.Micau_3895 (degree 3792), 644283.Micau_2464 (degree
-	1771), 644283.Micau_2456 (degree 1699), 644283.Micau_4382 (degree 1645) and 644283.Micau_3688
-	(degree 1515).
+	The undirected graph Micromonospora aurantiaca has 6162 nodes and 573108
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03019 and has 29 connected components, where the component
+	with most nodes has 6097 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 157, the mean node degree is 186.01,
+	and the node degree mode is 2. The top 5 most central nodes are 644283.Micau_3895
+	(degree 3792), 644283.Micau_2464 (degree 1771), 644283.Micau_2456 (degree
+	1699), 644283.Micau_4382 (degree 1645) and 644283.Micau_3688 (degree 1515).
 	
 
 

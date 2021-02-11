@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:45:03.412139
 
-The undirected graph Gracilibacillus halophilus has 2937 nodes and 236788 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05492
-and has 11 connected components, where the component with most nodes has 2910 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 138, the mean node degree is 161.24, and the node degree mode is 2. The top 5
-most central nodes are 1308866.J416_07717 (degree 1064), 1308866.J416_00384 (degree
-958), 1308866.J416_12102 (degree 919), 1308866.J416_00095 (degree 900) and 1308866.J416_05893
-(degree 867).
+The undirected graph Gracilibacillus halophilus has 2937 nodes and 236788
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05492 and has 11 connected components, where the component
+with most nodes has 2910 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 138, the mean node degree is 161.24,
+and the node degree mode is 2. The top 5 most central nodes are 1308866.J416_07717
+(degree 1064), 1308866.J416_00384 (degree 958), 1308866.J416_12102 (degree
+919), 1308866.J416_00095 (degree 900) and 1308866.J416_05893 (degree 867).
 
 
 References
@@ -107,14 +107,14 @@ def GracilibacillusHalophilus(
 	
 	Datetime: 2021-02-03 21:45:03.412139
 	
-	The undirected graph Gracilibacillus halophilus has 2937 nodes and 236788 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05492
-	and has 11 connected components, where the component with most nodes has 2910 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 138, the mean node degree is 161.24, and the node degree mode is 2. The top 5
-	most central nodes are 1308866.J416_07717 (degree 1064), 1308866.J416_00384 (degree
-	958), 1308866.J416_12102 (degree 919), 1308866.J416_00095 (degree 900) and 1308866.J416_05893
-	(degree 867).
+	The undirected graph Gracilibacillus halophilus has 2937 nodes and 236788
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05492 and has 11 connected components, where the component
+	with most nodes has 2910 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 138, the mean node degree is 161.24,
+	and the node degree mode is 2. The top 5 most central nodes are 1308866.J416_07717
+	(degree 1064), 1308866.J416_00384 (degree 958), 1308866.J416_12102 (degree
+	919), 1308866.J416_00095 (degree 900) and 1308866.J416_05893 (degree 867).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:28.141491
 
-The undirected graph Sulfurospirillum sp. MES has 2473 nodes and 253008 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08277
-and has 5 connected components, where the component with most nodes has 2464 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 175, the mean node degree is 204.62, and the node degree mode is 2. The top 5
-most central nodes are 1565314.OA34_02970 (degree 1107), 1565314.OA34_05880 (degree
-1024), 1565314.OA34_02610 (degree 1011), 1565314.OA34_03140 (degree 981) and 1565314.OA34_03210
-(degree 963).
+The undirected graph Sulfurospirillum sp. MES has 2473 nodes and 253008
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08277 and has 5 connected components, where the component
+with most nodes has 2464 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 175, the mean node degree is 204.62,
+and the node degree mode is 2. The top 5 most central nodes are 1565314.OA34_02970
+(degree 1107), 1565314.OA34_05880 (degree 1024), 1565314.OA34_02610 (degree
+1011), 1565314.OA34_03140 (degree 981) and 1565314.OA34_03210 (degree 963).
 
 
 References
@@ -107,14 +107,14 @@ def SulfurospirillumSp.Mes(
 	
 	Datetime: 2021-02-03 23:21:28.141491
 	
-	The undirected graph Sulfurospirillum sp. MES has 2473 nodes and 253008 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08277
-	and has 5 connected components, where the component with most nodes has 2464 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 175, the mean node degree is 204.62, and the node degree mode is 2. The top 5
-	most central nodes are 1565314.OA34_02970 (degree 1107), 1565314.OA34_05880 (degree
-	1024), 1565314.OA34_02610 (degree 1011), 1565314.OA34_03140 (degree 981) and 1565314.OA34_03210
-	(degree 963).
+	The undirected graph Sulfurospirillum sp. MES has 2473 nodes and 253008
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08277 and has 5 connected components, where the component
+	with most nodes has 2464 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 175, the mean node degree is 204.62,
+	and the node degree mode is 2. The top 5 most central nodes are 1565314.OA34_02970
+	(degree 1107), 1565314.OA34_05880 (degree 1024), 1565314.OA34_02610 (degree
+	1011), 1565314.OA34_03140 (degree 981) and 1565314.OA34_03210 (degree 963).
 	
 
 

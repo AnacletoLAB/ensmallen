@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:39.068244
 
-The undirected graph Rudaea cellulosilytica has 3514 nodes and 367215 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05949 and
-has 9 connected components, where the component with most nodes has 3485 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 209.00, and the node degree mode is 1. The top 5 most central
-nodes are 1123073.KB899243_gene644 (degree 1228), 1123073.KB899243_gene719 (degree
-1220), 1123073.KB899241_gene3300 (degree 1192), 1123073.KB899245_gene96 (degree 1098)
-and 1123073.KB899241_gene2675 (degree 1054).
+The undirected graph Rudaea cellulosilytica has 3514 nodes and 367215 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05949 and has 9 connected components, where the component with most
+nodes has 3485 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 209.00, and
+the node degree mode is 1. The top 5 most central nodes are 1123073.KB899243_gene644
+(degree 1228), 1123073.KB899243_gene719 (degree 1220), 1123073.KB899241_gene3300
+(degree 1192), 1123073.KB899245_gene96 (degree 1098) and 1123073.KB899241_gene2675
+(degree 1054).
 
 
 References
@@ -107,14 +108,15 @@ def RudaeaCellulosilytica(
 	
 	Datetime: 2021-02-02 22:47:39.068244
 	
-	The undirected graph Rudaea cellulosilytica has 3514 nodes and 367215 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05949 and
-	has 9 connected components, where the component with most nodes has 3485 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 209.00, and the node degree mode is 1. The top 5 most central
-	nodes are 1123073.KB899243_gene644 (degree 1228), 1123073.KB899243_gene719 (degree
-	1220), 1123073.KB899241_gene3300 (degree 1192), 1123073.KB899245_gene96 (degree 1098)
-	and 1123073.KB899241_gene2675 (degree 1054).
+	The undirected graph Rudaea cellulosilytica has 3514 nodes and 367215 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05949 and has 9 connected components, where the component with most
+	nodes has 3485 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 209.00, and
+	the node degree mode is 1. The top 5 most central nodes are 1123073.KB899243_gene644
+	(degree 1228), 1123073.KB899243_gene719 (degree 1220), 1123073.KB899241_gene3300
+	(degree 1192), 1123073.KB899245_gene96 (degree 1098) and 1123073.KB899241_gene2675
+	(degree 1054).
 	
 
 

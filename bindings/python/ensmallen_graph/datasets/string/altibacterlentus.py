@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:24:06.264109
 
-The undirected graph Altibacter lentus has 2847 nodes and 264945 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06540 and
-has 7 connected components, where the component with most nodes has 2832 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 186.12, and the node degree mode is 2. The top 5 most central
-nodes are 1223410.KN050846_gene1545 (degree 991), 1223410.KN050846_gene2810 (degree
-810), 1223410.KN050846_gene1117 (degree 809), 1223410.KN050846_gene1064 (degree 798)
-and 1223410.KN050846_gene1509 (degree 687).
+The undirected graph Altibacter lentus has 2847 nodes and 264945 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06540 and has 7 connected components, where the component with most
+nodes has 2832 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 186.12, and
+the node degree mode is 2. The top 5 most central nodes are 1223410.KN050846_gene1545
+(degree 991), 1223410.KN050846_gene2810 (degree 810), 1223410.KN050846_gene1117
+(degree 809), 1223410.KN050846_gene1064 (degree 798) and 1223410.KN050846_gene1509
+(degree 687).
 
 
 References
@@ -107,14 +108,15 @@ def AltibacterLentus(
 	
 	Datetime: 2021-02-02 23:24:06.264109
 	
-	The undirected graph Altibacter lentus has 2847 nodes and 264945 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06540 and
-	has 7 connected components, where the component with most nodes has 2832 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 186.12, and the node degree mode is 2. The top 5 most central
-	nodes are 1223410.KN050846_gene1545 (degree 991), 1223410.KN050846_gene2810 (degree
-	810), 1223410.KN050846_gene1117 (degree 809), 1223410.KN050846_gene1064 (degree 798)
-	and 1223410.KN050846_gene1509 (degree 687).
+	The undirected graph Altibacter lentus has 2847 nodes and 264945 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06540 and has 7 connected components, where the component with most
+	nodes has 2832 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 186.12, and
+	the node degree mode is 2. The top 5 most central nodes are 1223410.KN050846_gene1545
+	(degree 991), 1223410.KN050846_gene2810 (degree 810), 1223410.KN050846_gene1117
+	(degree 809), 1223410.KN050846_gene1064 (degree 798) and 1223410.KN050846_gene1509
+	(degree 687).
 	
 
 

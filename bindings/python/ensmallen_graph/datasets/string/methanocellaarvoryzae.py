@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:08.913920
 
-The undirected graph Methanocella arvoryzae has 3052 nodes and 282929 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06077 and
-has 27 connected components, where the component with most nodes has 2987 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 185.41, and the node degree mode is 4. The top 5 most central
-nodes are 351160.LRC471 (degree 1021), 351160.RCIX551 (degree 950), 351160.RCIX91
-(degree 882), 351160.RCIX750 (degree 863) and 351160.RCIX770 (degree 851).
+The undirected graph Methanocella arvoryzae has 3052 nodes and 282929 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06077 and has 27 connected components, where the component with most
+nodes has 2987 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 185.41, and
+the node degree mode is 4. The top 5 most central nodes are 351160.LRC471
+(degree 1021), 351160.RCIX551 (degree 950), 351160.RCIX91 (degree 882),
+351160.RCIX750 (degree 863) and 351160.RCIX770 (degree 851).
 
 
 References
@@ -106,13 +107,14 @@ def MethanocellaArvoryzae(
 	
 	Datetime: 2021-02-02 20:33:08.913920
 	
-	The undirected graph Methanocella arvoryzae has 3052 nodes and 282929 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06077 and
-	has 27 connected components, where the component with most nodes has 2987 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 185.41, and the node degree mode is 4. The top 5 most central
-	nodes are 351160.LRC471 (degree 1021), 351160.RCIX551 (degree 950), 351160.RCIX91
-	(degree 882), 351160.RCIX750 (degree 863) and 351160.RCIX770 (degree 851).
+	The undirected graph Methanocella arvoryzae has 3052 nodes and 282929 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06077 and has 27 connected components, where the component with most
+	nodes has 2987 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 185.41, and
+	the node degree mode is 4. The top 5 most central nodes are 351160.LRC471
+	(degree 1021), 351160.RCIX551 (degree 950), 351160.RCIX91 (degree 882),
+	351160.RCIX750 (degree 863) and 351160.RCIX770 (degree 851).
 	
 
 

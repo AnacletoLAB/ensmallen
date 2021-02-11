@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:10.020054
 
-The undirected graph Desulfovibrio aespoeensis has 3286 nodes and 300550 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05569
-and has 7 connected components, where the component with most nodes has 3269 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 182.93, and the node degree mode is 7. The top 5
-most central nodes are 643562.Daes_2491 (degree 1475), 643562.Daes_3278 (degree 1176),
-643562.Daes_0782 (degree 1096), 643562.Daes_2212 (degree 1081) and 643562.Daes_2457
-(degree 1048).
+The undirected graph Desulfovibrio aespoeensis has 3286 nodes and 300550
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05569 and has 7 connected components, where the component
+with most nodes has 3269 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 182.93,
+and the node degree mode is 7. The top 5 most central nodes are 643562.Daes_2491
+(degree 1475), 643562.Daes_3278 (degree 1176), 643562.Daes_0782 (degree
+1096), 643562.Daes_2212 (degree 1081) and 643562.Daes_2457 (degree 1048).
 
 
 References
@@ -107,14 +107,14 @@ def DesulfovibrioAespoeensis(
 	
 	Datetime: 2021-02-02 21:24:10.020054
 	
-	The undirected graph Desulfovibrio aespoeensis has 3286 nodes and 300550 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05569
-	and has 7 connected components, where the component with most nodes has 3269 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 182.93, and the node degree mode is 7. The top 5
-	most central nodes are 643562.Daes_2491 (degree 1475), 643562.Daes_3278 (degree 1176),
-	643562.Daes_0782 (degree 1096), 643562.Daes_2212 (degree 1081) and 643562.Daes_2457
-	(degree 1048).
+	The undirected graph Desulfovibrio aespoeensis has 3286 nodes and 300550
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05569 and has 7 connected components, where the component
+	with most nodes has 3269 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 182.93,
+	and the node degree mode is 7. The top 5 most central nodes are 643562.Daes_2491
+	(degree 1475), 643562.Daes_3278 (degree 1176), 643562.Daes_0782 (degree
+	1096), 643562.Daes_2212 (degree 1081) and 643562.Daes_2457 (degree 1048).
 	
 
 

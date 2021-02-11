@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:59.781332
 
-The undirected graph Streptococcus oralis Uo5 has 1897 nodes and 115954 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06448
-and has 3 connected components, where the component with most nodes has 1891 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 98, the mean node degree is 122.25, and the node degree mode is 12. The top 5
-most central nodes are 927666.SOR_1940 (degree 830), 927666.SOR_1131 (degree 667),
-927666.SOR_0805 (degree 601), 927666.SOR_1976 (degree 573) and 927666.SOR_0283 (degree
-559).
+The undirected graph Streptococcus oralis Uo5 has 1897 nodes and 115954
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06448 and has 3 connected components, where the component
+with most nodes has 1891 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 98, the mean node degree is 122.25,
+and the node degree mode is 12. The top 5 most central nodes are 927666.SOR_1940
+(degree 830), 927666.SOR_1131 (degree 667), 927666.SOR_0805 (degree 601),
+927666.SOR_1976 (degree 573) and 927666.SOR_0283 (degree 559).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusOralisUo5(
 	
 	Datetime: 2021-02-02 21:56:59.781332
 	
-	The undirected graph Streptococcus oralis Uo5 has 1897 nodes and 115954 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06448
-	and has 3 connected components, where the component with most nodes has 1891 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 98, the mean node degree is 122.25, and the node degree mode is 12. The top 5
-	most central nodes are 927666.SOR_1940 (degree 830), 927666.SOR_1131 (degree 667),
-	927666.SOR_0805 (degree 601), 927666.SOR_1976 (degree 573) and 927666.SOR_0283 (degree
-	559).
+	The undirected graph Streptococcus oralis Uo5 has 1897 nodes and 115954
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06448 and has 3 connected components, where the component
+	with most nodes has 1891 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 98, the mean node degree is 122.25,
+	and the node degree mode is 12. The top 5 most central nodes are 927666.SOR_1940
+	(degree 830), 927666.SOR_1131 (degree 667), 927666.SOR_0805 (degree 601),
+	927666.SOR_1976 (degree 573) and 927666.SOR_0283 (degree 559).
 	
 
 

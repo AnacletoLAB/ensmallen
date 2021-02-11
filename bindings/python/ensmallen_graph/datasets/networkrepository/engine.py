@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:09:22.656533
 
-The undirected graph engine has 143571 nodes and 2424822 weighted edges, of which
-143571 are self-loops. The graph is quite sparse as it has a density of 0.00023 and
-is connected, as it has a single component. The graph median node degree is 27, the
-mean node degree is 32.78, and the node degree mode is 27. The top 5 most central
-nodes are 138801 (degree 159), 138800 (degree 159), 138799 (degree 159), 135501 (degree
-159) and 135500 (degree 159).
+The undirected graph engine has 143571 nodes and 2424822 weighted edges,
+of which 143571 are self-loops. The graph is quite sparse as it has a density
+of 0.00023 and is connected, as it has a single component. The graph median
+node degree is 27, the mean node degree is 32.78, and the node degree mode
+is 27. The top 5 most central nodes are 138801 (degree 159), 138800 (degree
+159), 138799 (degree 159), 135501 (degree 159) and 135500 (degree 159).
 
 
 References
@@ -102,12 +102,12 @@ def Engine(
 	
 	Datetime: 2021-02-06 12:09:22.656533
 	
-	The undirected graph engine has 143571 nodes and 2424822 weighted edges, of which
-	143571 are self-loops. The graph is quite sparse as it has a density of 0.00023 and
-	is connected, as it has a single component. The graph median node degree is 27, the
-	mean node degree is 32.78, and the node degree mode is 27. The top 5 most central
-	nodes are 138801 (degree 159), 138800 (degree 159), 138799 (degree 159), 135501 (degree
-	159) and 135500 (degree 159).
+	The undirected graph engine has 143571 nodes and 2424822 weighted edges,
+	of which 143571 are self-loops. The graph is quite sparse as it has a density
+	of 0.00023 and is connected, as it has a single component. The graph median
+	node degree is 27, the mean node degree is 32.78, and the node degree mode
+	is 27. The top 5 most central nodes are 138801 (degree 159), 138800 (degree
+	159), 138799 (degree 159), 135501 (degree 159) and 135500 (degree 159).
 	
 
 

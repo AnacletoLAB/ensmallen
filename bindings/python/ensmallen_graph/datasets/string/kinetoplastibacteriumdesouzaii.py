@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:20.084523
 
-The undirected graph Kinetoplastibacterium desouzaii has 742 nodes and 43267 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.15739 and is connected, as it has a single component. The graph median node
-degree is 105, the mean node degree is 116.62, and the node degree mode is 105. The
-top 5 most central nodes are 1208919.CDSE_0674 (degree 438), 1208919.CDSE_0600 (degree
-423), 1208919.CDSE_0298 (degree 415), 1208919.CDSE_0599 (degree 401) and 1208919.CDSE_0542
-(degree 361).
+The undirected graph Kinetoplastibacterium desouzaii has 742 nodes and
+43267 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.15739 and is connected, as it has a single
+component. The graph median node degree is 105, the mean node degree is
+116.62, and the node degree mode is 105. The top 5 most central nodes are
+1208919.CDSE_0674 (degree 438), 1208919.CDSE_0600 (degree 423), 1208919.CDSE_0298
+(degree 415), 1208919.CDSE_0599 (degree 401) and 1208919.CDSE_0542 (degree
+361).
 
 
 References
@@ -106,13 +107,14 @@ def KinetoplastibacteriumDesouzaii(
 	
 	Datetime: 2021-02-02 23:18:20.084523
 	
-	The undirected graph Kinetoplastibacterium desouzaii has 742 nodes and 43267 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.15739 and is connected, as it has a single component. The graph median node
-	degree is 105, the mean node degree is 116.62, and the node degree mode is 105. The
-	top 5 most central nodes are 1208919.CDSE_0674 (degree 438), 1208919.CDSE_0600 (degree
-	423), 1208919.CDSE_0298 (degree 415), 1208919.CDSE_0599 (degree 401) and 1208919.CDSE_0542
-	(degree 361).
+	The undirected graph Kinetoplastibacterium desouzaii has 742 nodes and
+	43267 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.15739 and is connected, as it has a single
+	component. The graph median node degree is 105, the mean node degree is
+	116.62, and the node degree mode is 105. The top 5 most central nodes are
+	1208919.CDSE_0674 (degree 438), 1208919.CDSE_0600 (degree 423), 1208919.CDSE_0298
+	(degree 415), 1208919.CDSE_0599 (degree 401) and 1208919.CDSE_0542 (degree
+	361).
 	
 
 

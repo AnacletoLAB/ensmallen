@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:17:37.814414
 
-The undirected graph Neisseria weaveri has 2193 nodes and 105292 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-has 16 connected components, where the component with most nodes has 2156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 74,
-the mean node degree is 96.03, and the node degree mode is 2. The top 5 most central
-nodes are 1051985.l11_00260 (degree 811), 1051985.l11_16840 (degree 798), 1051985.l11_21810
-(degree 745), 1051985.l11_21560 (degree 690) and 1051985.l11_19600 (degree 657).
+The undirected graph Neisseria weaveri has 2193 nodes and 105292 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04381 and has 16 connected components, where the component with most
+nodes has 2156 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 74, the mean node degree is 96.03, and
+the node degree mode is 2. The top 5 most central nodes are 1051985.l11_00260
+(degree 811), 1051985.l11_16840 (degree 798), 1051985.l11_21810 (degree
+745), 1051985.l11_21560 (degree 690) and 1051985.l11_19600 (degree 657).
 
 
 References
@@ -106,13 +107,14 @@ def NeisseriaWeaveri(
 	
 	Datetime: 2021-02-02 22:17:37.814414
 	
-	The undirected graph Neisseria weaveri has 2193 nodes and 105292 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-	has 16 connected components, where the component with most nodes has 2156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 74,
-	the mean node degree is 96.03, and the node degree mode is 2. The top 5 most central
-	nodes are 1051985.l11_00260 (degree 811), 1051985.l11_16840 (degree 798), 1051985.l11_21810
-	(degree 745), 1051985.l11_21560 (degree 690) and 1051985.l11_19600 (degree 657).
+	The undirected graph Neisseria weaveri has 2193 nodes and 105292 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04381 and has 16 connected components, where the component with most
+	nodes has 2156 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 74, the mean node degree is 96.03, and
+	the node degree mode is 2. The top 5 most central nodes are 1051985.l11_00260
+	(degree 811), 1051985.l11_16840 (degree 798), 1051985.l11_21810 (degree
+	745), 1051985.l11_21560 (degree 690) and 1051985.l11_19600 (degree 657).
 	
 
 

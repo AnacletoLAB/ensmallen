@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:40.210987
 
-The undirected graph Cylindrospermopsis raciborskii has 3414 nodes and 450383 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07731
-and has 14 connected components, where the component with most nodes has 3371 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 248, the mean node degree is 263.84, and the node degree mode is 2. The top 5
-most central nodes are 533240.CRC_01252 (degree 1986), 533240.CRC_01910 (degree 1644),
-533240.CRC_03053 (degree 1601), 533240.CRC_01116 (degree 1449) and 533240.CRC_03440
-(degree 1338).
+The undirected graph Cylindrospermopsis raciborskii has 3414 nodes and
+450383 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07731 and has 14 connected components, where the
+component with most nodes has 3371 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 248, the mean node degree
+is 263.84, and the node degree mode is 2. The top 5 most central nodes
+are 533240.CRC_01252 (degree 1986), 533240.CRC_01910 (degree 1644), 533240.CRC_03053
+(degree 1601), 533240.CRC_01116 (degree 1449) and 533240.CRC_03440 (degree
+1338).
 
 
 References
@@ -107,14 +108,15 @@ def CylindrospermopsisRaciborskii(
 	
 	Datetime: 2021-02-02 21:06:40.210987
 	
-	The undirected graph Cylindrospermopsis raciborskii has 3414 nodes and 450383 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07731
-	and has 14 connected components, where the component with most nodes has 3371 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 248, the mean node degree is 263.84, and the node degree mode is 2. The top 5
-	most central nodes are 533240.CRC_01252 (degree 1986), 533240.CRC_01910 (degree 1644),
-	533240.CRC_03053 (degree 1601), 533240.CRC_01116 (degree 1449) and 533240.CRC_03440
-	(degree 1338).
+	The undirected graph Cylindrospermopsis raciborskii has 3414 nodes and
+	450383 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07731 and has 14 connected components, where the
+	component with most nodes has 3371 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 248, the mean node degree
+	is 263.84, and the node degree mode is 2. The top 5 most central nodes
+	are 533240.CRC_01252 (degree 1986), 533240.CRC_01910 (degree 1644), 533240.CRC_03053
+	(degree 1601), 533240.CRC_01116 (degree 1449) and 533240.CRC_03440 (degree
+	1338).
 	
 
 

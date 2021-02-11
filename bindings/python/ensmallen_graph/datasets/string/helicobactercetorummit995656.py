@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:10.138020
 
-The undirected graph Helicobacter cetorum MIT995656 has 1644 nodes and 73294 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05427
-and has 18 connected components, where the component with most nodes has 1585 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 60, the mean node degree is 89.17, and the node degree mode is 3. The top 5 most
-central nodes are 1163745.HCD_04665 (degree 614), 1163745.HCD_02870 (degree 564),
-1163745.HCD_02605 (degree 517), 1163745.HCD_01600 (degree 503) and 1163745.HCD_02660
-(degree 501).
+The undirected graph Helicobacter cetorum MIT995656 has 1644 nodes and
+73294 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05427 and has 18 connected components, where the
+component with most nodes has 1585 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 60, the mean node degree
+is 89.17, and the node degree mode is 3. The top 5 most central nodes are
+1163745.HCD_04665 (degree 614), 1163745.HCD_02870 (degree 564), 1163745.HCD_02605
+(degree 517), 1163745.HCD_01600 (degree 503) and 1163745.HCD_02660 (degree
+501).
 
 
 References
@@ -107,14 +108,15 @@ def HelicobacterCetorumMit995656(
 	
 	Datetime: 2021-02-02 23:05:10.138020
 	
-	The undirected graph Helicobacter cetorum MIT995656 has 1644 nodes and 73294 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05427
-	and has 18 connected components, where the component with most nodes has 1585 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 60, the mean node degree is 89.17, and the node degree mode is 3. The top 5 most
-	central nodes are 1163745.HCD_04665 (degree 614), 1163745.HCD_02870 (degree 564),
-	1163745.HCD_02605 (degree 517), 1163745.HCD_01600 (degree 503) and 1163745.HCD_02660
-	(degree 501).
+	The undirected graph Helicobacter cetorum MIT995656 has 1644 nodes and
+	73294 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05427 and has 18 connected components, where the
+	component with most nodes has 1585 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 60, the mean node degree
+	is 89.17, and the node degree mode is 3. The top 5 most central nodes are
+	1163745.HCD_04665 (degree 614), 1163745.HCD_02870 (degree 564), 1163745.HCD_02605
+	(degree 517), 1163745.HCD_01600 (degree 503) and 1163745.HCD_02660 (degree
+	501).
 	
 
 

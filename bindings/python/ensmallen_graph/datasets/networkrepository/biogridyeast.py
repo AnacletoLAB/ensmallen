@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:30:55.337599
 
-The undirected graph bio-grid-yeast has 6008 nodes and 156945 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00870 and
-is connected, as it has a single component. The graph median node degree is 26, the
-mean node degree is 52.25 and the node degree mode is 1. The top 5 most central nodes
-are 814 (degree 2557), 1875 (degree 1234), 1388 (degree 1187), 1656 (degree 1132)
-and 35 (degree 818).
+The undirected graph bio-grid-yeast has 6008 nodes and 156945 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00870 and is connected, as it has a single component. The graph median
+node degree is 26, the mean node degree is 52.25 and the node degree mode
+is 1. The top 5 most central nodes are 814 (degree 2557), 1875 (degree
+1234), 1388 (degree 1187), 1656 (degree 1132) and 35 (degree 818).
 
 
 References
@@ -102,12 +102,12 @@ def BioGridYeast(
 	
 	Datetime: 2021-02-03 22:30:55.337599
 	
-	The undirected graph bio-grid-yeast has 6008 nodes and 156945 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00870 and
-	is connected, as it has a single component. The graph median node degree is 26, the
-	mean node degree is 52.25 and the node degree mode is 1. The top 5 most central nodes
-	are 814 (degree 2557), 1875 (degree 1234), 1388 (degree 1187), 1656 (degree 1132)
-	and 35 (degree 818).
+	The undirected graph bio-grid-yeast has 6008 nodes and 156945 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00870 and is connected, as it has a single component. The graph median
+	node degree is 26, the mean node degree is 52.25 and the node degree mode
+	is 1. The top 5 most central nodes are 814 (degree 2557), 1875 (degree
+	1234), 1388 (degree 1187), 1656 (degree 1132) and 35 (degree 818).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:53.514531
 
-The undirected graph Streptococcus mutans GS5 has 1859 nodes and 108615 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06289
-and has 10 connected components, where the component with most nodes has 1836 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 116.85, and the node degree mode is 2. The top 5 most
-central nodes are 1198676.SMUGS5_01195 (degree 819), 1198676.SMUGS5_09705 (degree
-668), 1198676.SMUGS5_07375 (degree 608), 1198676.SMUGS5_00350 (degree 573) and 1198676.SMUGS5_02085
-(degree 567).
+The undirected graph Streptococcus mutans GS5 has 1859 nodes and 108615
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06289 and has 10 connected components, where the component
+with most nodes has 1836 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 88, the mean node degree is 116.85,
+and the node degree mode is 2. The top 5 most central nodes are 1198676.SMUGS5_01195
+(degree 819), 1198676.SMUGS5_09705 (degree 668), 1198676.SMUGS5_07375 (degree
+608), 1198676.SMUGS5_00350 (degree 573) and 1198676.SMUGS5_02085 (degree
+567).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMutansGs5(
 	
 	Datetime: 2021-02-02 23:13:53.514531
 	
-	The undirected graph Streptococcus mutans GS5 has 1859 nodes and 108615 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06289
-	and has 10 connected components, where the component with most nodes has 1836 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 116.85, and the node degree mode is 2. The top 5 most
-	central nodes are 1198676.SMUGS5_01195 (degree 819), 1198676.SMUGS5_09705 (degree
-	668), 1198676.SMUGS5_07375 (degree 608), 1198676.SMUGS5_00350 (degree 573) and 1198676.SMUGS5_02085
-	(degree 567).
+	The undirected graph Streptococcus mutans GS5 has 1859 nodes and 108615
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06289 and has 10 connected components, where the component
+	with most nodes has 1836 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 88, the mean node degree is 116.85,
+	and the node degree mode is 2. The top 5 most central nodes are 1198676.SMUGS5_01195
+	(degree 819), 1198676.SMUGS5_09705 (degree 668), 1198676.SMUGS5_07375 (degree
+	608), 1198676.SMUGS5_00350 (degree 573) and 1198676.SMUGS5_02085 (degree
+	567).
 	
 
 

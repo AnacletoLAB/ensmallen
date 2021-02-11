@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:19.685218
 
-The undirected graph Streptococcus caballi has 2063 nodes and 124240 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05841 and
-has 8 connected components, where the component with most nodes has 2044 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 120.45, and the node degree mode is 2. The top 5 most central
-nodes are 1123298.KB904063_gene691 (degree 856), 1123298.KB904063_gene565 (degree
-827), 1123298.KB904088_gene1414 (degree 705), 1123298.KB904085_gene1539 (degree 660)
-and 1123298.KB904074_gene44 (degree 633).
+The undirected graph Streptococcus caballi has 2063 nodes and 124240 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05841 and has 8 connected components, where the component with most
+nodes has 2044 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 120.45, and
+the node degree mode is 2. The top 5 most central nodes are 1123298.KB904063_gene691
+(degree 856), 1123298.KB904063_gene565 (degree 827), 1123298.KB904088_gene1414
+(degree 705), 1123298.KB904085_gene1539 (degree 660) and 1123298.KB904074_gene44
+(degree 633).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusCaballi(
 	
 	Datetime: 2021-02-02 22:50:19.685218
 	
-	The undirected graph Streptococcus caballi has 2063 nodes and 124240 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05841 and
-	has 8 connected components, where the component with most nodes has 2044 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 120.45, and the node degree mode is 2. The top 5 most central
-	nodes are 1123298.KB904063_gene691 (degree 856), 1123298.KB904063_gene565 (degree
-	827), 1123298.KB904088_gene1414 (degree 705), 1123298.KB904085_gene1539 (degree 660)
-	and 1123298.KB904074_gene44 (degree 633).
+	The undirected graph Streptococcus caballi has 2063 nodes and 124240 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05841 and has 8 connected components, where the component with most
+	nodes has 2044 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 120.45, and
+	the node degree mode is 2. The top 5 most central nodes are 1123298.KB904063_gene691
+	(degree 856), 1123298.KB904063_gene565 (degree 827), 1123298.KB904088_gene1414
+	(degree 705), 1123298.KB904085_gene1539 (degree 660) and 1123298.KB904074_gene44
+	(degree 633).
 	
 
 

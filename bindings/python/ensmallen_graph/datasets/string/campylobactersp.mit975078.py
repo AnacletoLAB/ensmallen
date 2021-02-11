@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:40.652561
 
-The undirected graph Campylobacter sp. MIT975078 has 2239 nodes and 190141 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07589
-and has 18 connected components, where the component with most nodes has 2196 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 169.84, and the node degree mode is 3. The top 5
-most central nodes are 1548153.LR59_00685 (degree 1179), 1548153.LR59_08310 (degree
-1095), 1548153.LR59_00990 (degree 955), 1548153.LR59_05105 (degree 880) and 1548153.LR59_10105
-(degree 879).
+The undirected graph Campylobacter sp. MIT975078 has 2239 nodes and 190141
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07589 and has 18 connected components, where the component
+with most nodes has 2196 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 169.84,
+and the node degree mode is 3. The top 5 most central nodes are 1548153.LR59_00685
+(degree 1179), 1548153.LR59_08310 (degree 1095), 1548153.LR59_00990 (degree
+955), 1548153.LR59_05105 (degree 880) and 1548153.LR59_10105 (degree 879).
 
 
 References
@@ -107,14 +107,14 @@ def CampylobacterSp.Mit975078(
 	
 	Datetime: 2021-02-03 23:20:40.652561
 	
-	The undirected graph Campylobacter sp. MIT975078 has 2239 nodes and 190141 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07589
-	and has 18 connected components, where the component with most nodes has 2196 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 169.84, and the node degree mode is 3. The top 5
-	most central nodes are 1548153.LR59_00685 (degree 1179), 1548153.LR59_08310 (degree
-	1095), 1548153.LR59_00990 (degree 955), 1548153.LR59_05105 (degree 880) and 1548153.LR59_10105
-	(degree 879).
+	The undirected graph Campylobacter sp. MIT975078 has 2239 nodes and 190141
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07589 and has 18 connected components, where the component
+	with most nodes has 2196 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 169.84,
+	and the node degree mode is 3. The top 5 most central nodes are 1548153.LR59_00685
+	(degree 1179), 1548153.LR59_08310 (degree 1095), 1548153.LR59_00990 (degree
+	955), 1548153.LR59_05105 (degree 880) and 1548153.LR59_10105 (degree 879).
 	
 
 

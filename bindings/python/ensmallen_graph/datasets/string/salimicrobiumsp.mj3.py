@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:23.115905
 
-The undirected graph Salimicrobium sp. MJ3 has 2713 nodes and 232195 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06312 and
-has 6 connected components, where the component with most nodes has 2702 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 171.17, and the node degree mode is 5. The top 5 most central
-nodes are 1230341.MJ3_04039 (degree 1043), 1230341.MJ3_10686 (degree 791), 1230341.MJ3_04699
-(degree 780), 1230341.MJ3_07083 (degree 768) and 1230341.MJ3_04454 (degree 764).
+The undirected graph Salimicrobium sp. MJ3 has 2713 nodes and 232195 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06312 and has 6 connected components, where the component with most
+nodes has 2702 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 171.17, and
+the node degree mode is 5. The top 5 most central nodes are 1230341.MJ3_04039
+(degree 1043), 1230341.MJ3_10686 (degree 791), 1230341.MJ3_04699 (degree
+780), 1230341.MJ3_07083 (degree 768) and 1230341.MJ3_04454 (degree 764).
 
 
 References
@@ -106,13 +107,14 @@ def SalimicrobiumSp.Mj3(
 	
 	Datetime: 2021-02-02 23:27:23.115905
 	
-	The undirected graph Salimicrobium sp. MJ3 has 2713 nodes and 232195 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06312 and
-	has 6 connected components, where the component with most nodes has 2702 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 171.17, and the node degree mode is 5. The top 5 most central
-	nodes are 1230341.MJ3_04039 (degree 1043), 1230341.MJ3_10686 (degree 791), 1230341.MJ3_04699
-	(degree 780), 1230341.MJ3_07083 (degree 768) and 1230341.MJ3_04454 (degree 764).
+	The undirected graph Salimicrobium sp. MJ3 has 2713 nodes and 232195 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06312 and has 6 connected components, where the component with most
+	nodes has 2702 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 171.17, and
+	the node degree mode is 5. The top 5 most central nodes are 1230341.MJ3_04039
+	(degree 1043), 1230341.MJ3_10686 (degree 791), 1230341.MJ3_04699 (degree
+	780), 1230341.MJ3_07083 (degree 768) and 1230341.MJ3_04454 (degree 764).
 	
 
 

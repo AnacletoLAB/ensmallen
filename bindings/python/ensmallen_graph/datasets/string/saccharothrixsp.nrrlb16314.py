@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:08:15.699833
 
-The undirected graph Saccharothrix sp. NRRLB16314 has 7809 nodes and 1433089 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04701
-and has 40 connected components, where the component with most nodes has 7718 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 305, the mean node degree is 367.04, and the node degree mode is 2. The top 5
-most central nodes are 1463825.JNXC01000017_gene6960 (degree 2599), 1463825.JNXC01000001_gene5547
-(degree 2458), 1463825.JNXC01000007_gene805 (degree 2277), 1463825.JNXC01000013_gene7764
-(degree 2267) and 1463825.JNXC01000022_gene514 (degree 2251).
+The undirected graph Saccharothrix sp. NRRLB16314 has 7809 nodes and 1433089
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04701 and has 40 connected components, where the component
+with most nodes has 7718 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 305, the mean node degree is 367.04,
+and the node degree mode is 2. The top 5 most central nodes are 1463825.JNXC01000017_gene6960
+(degree 2599), 1463825.JNXC01000001_gene5547 (degree 2458), 1463825.JNXC01000007_gene805
+(degree 2277), 1463825.JNXC01000013_gene7764 (degree 2267) and 1463825.JNXC01000022_gene514
+(degree 2251).
 
 
 References
@@ -107,14 +108,15 @@ def SaccharothrixSp.Nrrlb16314(
 	
 	Datetime: 2021-02-03 23:08:15.699833
 	
-	The undirected graph Saccharothrix sp. NRRLB16314 has 7809 nodes and 1433089 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04701
-	and has 40 connected components, where the component with most nodes has 7718 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 305, the mean node degree is 367.04, and the node degree mode is 2. The top 5
-	most central nodes are 1463825.JNXC01000017_gene6960 (degree 2599), 1463825.JNXC01000001_gene5547
-	(degree 2458), 1463825.JNXC01000007_gene805 (degree 2277), 1463825.JNXC01000013_gene7764
-	(degree 2267) and 1463825.JNXC01000022_gene514 (degree 2251).
+	The undirected graph Saccharothrix sp. NRRLB16314 has 7809 nodes and 1433089
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04701 and has 40 connected components, where the component
+	with most nodes has 7718 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 305, the mean node degree is 367.04,
+	and the node degree mode is 2. The top 5 most central nodes are 1463825.JNXC01000017_gene6960
+	(degree 2599), 1463825.JNXC01000001_gene5547 (degree 2458), 1463825.JNXC01000007_gene805
+	(degree 2277), 1463825.JNXC01000013_gene7764 (degree 2267) and 1463825.JNXC01000022_gene514
+	(degree 2251).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:40.446143
 
-The undirected graph Corynebacterium timonense has 2188 nodes and 147457 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06163
-and has 11 connected components, where the component with most nodes has 2164 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 134.79, and the node degree mode is 2. The top 5
-most central nodes are 1203190.CAJP01000028_gene62 (degree 903), 1203190.CAJP01000040_gene1426
-(degree 887), 1203190.CAJP01000020_gene665 (degree 804), 1203190.CAJP01000020_gene667
-(degree 672) and 1203190.CAJP01000040_gene1403 (degree 651).
+The undirected graph Corynebacterium timonense has 2188 nodes and 147457
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06163 and has 11 connected components, where the component
+with most nodes has 2164 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 134.79,
+and the node degree mode is 2. The top 5 most central nodes are 1203190.CAJP01000028_gene62
+(degree 903), 1203190.CAJP01000040_gene1426 (degree 887), 1203190.CAJP01000020_gene665
+(degree 804), 1203190.CAJP01000020_gene667 (degree 672) and 1203190.CAJP01000040_gene1403
+(degree 651).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumTimonense(
 	
 	Datetime: 2021-02-02 23:14:40.446143
 	
-	The undirected graph Corynebacterium timonense has 2188 nodes and 147457 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06163
-	and has 11 connected components, where the component with most nodes has 2164 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 134.79, and the node degree mode is 2. The top 5
-	most central nodes are 1203190.CAJP01000028_gene62 (degree 903), 1203190.CAJP01000040_gene1426
-	(degree 887), 1203190.CAJP01000020_gene665 (degree 804), 1203190.CAJP01000020_gene667
-	(degree 672) and 1203190.CAJP01000040_gene1403 (degree 651).
+	The undirected graph Corynebacterium timonense has 2188 nodes and 147457
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06163 and has 11 connected components, where the component
+	with most nodes has 2164 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 134.79,
+	and the node degree mode is 2. The top 5 most central nodes are 1203190.CAJP01000028_gene62
+	(degree 903), 1203190.CAJP01000040_gene1426 (degree 887), 1203190.CAJP01000020_gene665
+	(degree 804), 1203190.CAJP01000020_gene667 (degree 672) and 1203190.CAJP01000040_gene1403
+	(degree 651).
 	
 
 

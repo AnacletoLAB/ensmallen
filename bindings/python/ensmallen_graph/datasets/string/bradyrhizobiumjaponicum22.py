@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:37:12.513725
 
-The undirected graph Bradyrhizobium japonicum 22 has 6297 nodes and 816982 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04121
-and has 39 connected components, where the component with most nodes has 6203 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 259.48, and the node degree mode is 2. The top 5
-most central nodes are 1304877.KI519399_gene3785 (degree 2407), 1304877.KI519400_gene978
-(degree 2234), 1304877.KI519400_gene1729 (degree 1985), 1304877.KI519399_gene4645
-(degree 1808) and 1304877.KI519399_gene3022 (degree 1797).
+The undirected graph Bradyrhizobium japonicum 22 has 6297 nodes and 816982
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04121 and has 39 connected components, where the component
+with most nodes has 6203 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 259.48,
+and the node degree mode is 2. The top 5 most central nodes are 1304877.KI519399_gene3785
+(degree 2407), 1304877.KI519400_gene978 (degree 2234), 1304877.KI519400_gene1729
+(degree 1985), 1304877.KI519399_gene4645 (degree 1808) and 1304877.KI519399_gene3022
+(degree 1797).
 
 
 References
@@ -107,14 +108,15 @@ def BradyrhizobiumJaponicum22(
 	
 	Datetime: 2021-02-03 21:37:12.513725
 	
-	The undirected graph Bradyrhizobium japonicum 22 has 6297 nodes and 816982 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04121
-	and has 39 connected components, where the component with most nodes has 6203 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 259.48, and the node degree mode is 2. The top 5
-	most central nodes are 1304877.KI519399_gene3785 (degree 2407), 1304877.KI519400_gene978
-	(degree 2234), 1304877.KI519400_gene1729 (degree 1985), 1304877.KI519399_gene4645
-	(degree 1808) and 1304877.KI519399_gene3022 (degree 1797).
+	The undirected graph Bradyrhizobium japonicum 22 has 6297 nodes and 816982
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04121 and has 39 connected components, where the component
+	with most nodes has 6203 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 259.48,
+	and the node degree mode is 2. The top 5 most central nodes are 1304877.KI519399_gene3785
+	(degree 2407), 1304877.KI519400_gene978 (degree 2234), 1304877.KI519400_gene1729
+	(degree 1985), 1304877.KI519399_gene4645 (degree 1808) and 1304877.KI519399_gene3022
+	(degree 1797).
 	
 
 

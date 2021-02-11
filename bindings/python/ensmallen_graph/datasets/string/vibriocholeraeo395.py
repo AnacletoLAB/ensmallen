@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:31:43.321206
 
-The undirected graph Vibrio cholerae O395 has 3866 nodes and 345061 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04619 and
-has 17 connected components, where the component with most nodes has 3824 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 178.51, and the node degree mode is 5. The top 5 most central
-nodes are 345073.VC395_0072 (degree 1332), 345073.VC395_A0794 (degree 1234), 345073.VC395_0785
-(degree 1184), 345073.VC395_A1009 (degree 1106) and 345073.VC395_0639 (degree 1095).
+The undirected graph Vibrio cholerae O395 has 3866 nodes and 345061 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04619 and has 17 connected components, where the component with most
+nodes has 3824 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 178.51, and
+the node degree mode is 5. The top 5 most central nodes are 345073.VC395_0072
+(degree 1332), 345073.VC395_A0794 (degree 1234), 345073.VC395_0785 (degree
+1184), 345073.VC395_A1009 (degree 1106) and 345073.VC395_0639 (degree 1095).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioCholeraeO395(
 	
 	Datetime: 2021-02-02 20:31:43.321206
 	
-	The undirected graph Vibrio cholerae O395 has 3866 nodes and 345061 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04619 and
-	has 17 connected components, where the component with most nodes has 3824 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 178.51, and the node degree mode is 5. The top 5 most central
-	nodes are 345073.VC395_0072 (degree 1332), 345073.VC395_A0794 (degree 1234), 345073.VC395_0785
-	(degree 1184), 345073.VC395_A1009 (degree 1106) and 345073.VC395_0639 (degree 1095).
+	The undirected graph Vibrio cholerae O395 has 3866 nodes and 345061 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04619 and has 17 connected components, where the component with most
+	nodes has 3824 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 178.51, and
+	the node degree mode is 5. The top 5 most central nodes are 345073.VC395_0072
+	(degree 1332), 345073.VC395_A0794 (degree 1234), 345073.VC395_0785 (degree
+	1184), 345073.VC395_A1009 (degree 1106) and 345073.VC395_0639 (degree 1095).
 	
 
 

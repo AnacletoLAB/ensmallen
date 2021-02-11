@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:41.134013
 
-The undirected graph Nocardia transvalensis has 7472 nodes and 1247996 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04471 and
-has 51 connected components, where the component with most nodes has 7342 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 279,
-the mean node degree is 334.05, and the node degree mode is 1. The top 5 most central
-nodes are 1206744.BAGL01000013_gene6109 (degree 3629), 1206744.BAGL01000028_gene7590
-(degree 2471), 1206744.BAGL01000013_gene6067 (degree 2443), 1206744.BAGL01000054_gene1684
-(degree 2172) and 1206744.BAGL01000002_gene4297 (degree 2049).
+The undirected graph Nocardia transvalensis has 7472 nodes and 1247996
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04471 and has 51 connected components, where the component
+with most nodes has 7342 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 279, the mean node degree is 334.05,
+and the node degree mode is 1. The top 5 most central nodes are 1206744.BAGL01000013_gene6109
+(degree 3629), 1206744.BAGL01000028_gene7590 (degree 2471), 1206744.BAGL01000013_gene6067
+(degree 2443), 1206744.BAGL01000054_gene1684 (degree 2172) and 1206744.BAGL01000002_gene4297
+(degree 2049).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaTransvalensis(
 	
 	Datetime: 2021-02-02 23:17:41.134013
 	
-	The undirected graph Nocardia transvalensis has 7472 nodes and 1247996 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04471 and
-	has 51 connected components, where the component with most nodes has 7342 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 279,
-	the mean node degree is 334.05, and the node degree mode is 1. The top 5 most central
-	nodes are 1206744.BAGL01000013_gene6109 (degree 3629), 1206744.BAGL01000028_gene7590
-	(degree 2471), 1206744.BAGL01000013_gene6067 (degree 2443), 1206744.BAGL01000054_gene1684
-	(degree 2172) and 1206744.BAGL01000002_gene4297 (degree 2049).
+	The undirected graph Nocardia transvalensis has 7472 nodes and 1247996
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04471 and has 51 connected components, where the component
+	with most nodes has 7342 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 279, the mean node degree is 334.05,
+	and the node degree mode is 1. The top 5 most central nodes are 1206744.BAGL01000013_gene6109
+	(degree 3629), 1206744.BAGL01000028_gene7590 (degree 2471), 1206744.BAGL01000013_gene6067
+	(degree 2443), 1206744.BAGL01000054_gene1684 (degree 2172) and 1206744.BAGL01000002_gene4297
+	(degree 2049).
 	
 
 

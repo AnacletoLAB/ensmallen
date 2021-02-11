@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:22:08.443839
 
-The undirected graph Drosophila persimilis has 13236 nodes and 1647012 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01880 and
-has 20 connected components, where the component with most nodes has 13195 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 152, the mean node degree is 248.87, and the node degree mode is 1. The top 5
-most central nodes are 7234.FBpp0191451 (degree 3635), 7234.FBpp0176412 (degree 2863),
-7234.FBpp0183268 (degree 2513), 7234.FBpp0188267 (degree 2436) and 7234.FBpp0189884
-(degree 2332).
+The undirected graph Drosophila persimilis has 13236 nodes and 1647012
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01880 and has 20 connected components, where the component
+with most nodes has 13195 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 152, the mean node degree
+is 248.87, and the node degree mode is 1. The top 5 most central nodes
+are 7234.FBpp0191451 (degree 3635), 7234.FBpp0176412 (degree 2863), 7234.FBpp0183268
+(degree 2513), 7234.FBpp0188267 (degree 2436) and 7234.FBpp0189884 (degree
+2332).
 
 
 References
@@ -107,14 +108,15 @@ def DrosophilaPersimilis(
 	
 	Datetime: 2021-02-02 17:22:08.443839
 	
-	The undirected graph Drosophila persimilis has 13236 nodes and 1647012 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01880 and
-	has 20 connected components, where the component with most nodes has 13195 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 152, the mean node degree is 248.87, and the node degree mode is 1. The top 5
-	most central nodes are 7234.FBpp0191451 (degree 3635), 7234.FBpp0176412 (degree 2863),
-	7234.FBpp0183268 (degree 2513), 7234.FBpp0188267 (degree 2436) and 7234.FBpp0189884
-	(degree 2332).
+	The undirected graph Drosophila persimilis has 13236 nodes and 1647012
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01880 and has 20 connected components, where the component
+	with most nodes has 13195 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 152, the mean node degree
+	is 248.87, and the node degree mode is 1. The top 5 most central nodes
+	are 7234.FBpp0191451 (degree 3635), 7234.FBpp0176412 (degree 2863), 7234.FBpp0183268
+	(degree 2513), 7234.FBpp0188267 (degree 2436) and 7234.FBpp0189884 (degree
+	2332).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:50.912091
 
-The undirected graph Maribacter sp. HelI7 has 4171 nodes and 337677 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03883 and
-has 10 connected components, where the component with most nodes has 4148 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 161.92, and the node degree mode is 4. The top 5 most central
-nodes are 1249997.JHZW01000002_gene502 (degree 1264), 1249997.JHZW01000002_gene403
-(degree 1215), 1249997.JHZW01000001_gene4000 (degree 1142), 1249997.JHZW01000003_gene3704
-(degree 1120) and 1249997.JHZW01000003_gene3570 (degree 1107).
+The undirected graph Maribacter sp. HelI7 has 4171 nodes and 337677 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03883 and has 10 connected components, where the component with most
+nodes has 4148 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 161.92, and
+the node degree mode is 4. The top 5 most central nodes are 1249997.JHZW01000002_gene502
+(degree 1264), 1249997.JHZW01000002_gene403 (degree 1215), 1249997.JHZW01000001_gene4000
+(degree 1142), 1249997.JHZW01000003_gene3704 (degree 1120) and 1249997.JHZW01000003_gene3570
+(degree 1107).
 
 
 References
@@ -107,14 +108,15 @@ def MaribacterSp.Heli7(
 	
 	Datetime: 2021-02-02 23:34:50.912091
 	
-	The undirected graph Maribacter sp. HelI7 has 4171 nodes and 337677 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03883 and
-	has 10 connected components, where the component with most nodes has 4148 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 161.92, and the node degree mode is 4. The top 5 most central
-	nodes are 1249997.JHZW01000002_gene502 (degree 1264), 1249997.JHZW01000002_gene403
-	(degree 1215), 1249997.JHZW01000001_gene4000 (degree 1142), 1249997.JHZW01000003_gene3704
-	(degree 1120) and 1249997.JHZW01000003_gene3570 (degree 1107).
+	The undirected graph Maribacter sp. HelI7 has 4171 nodes and 337677 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03883 and has 10 connected components, where the component with most
+	nodes has 4148 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 161.92, and
+	the node degree mode is 4. The top 5 most central nodes are 1249997.JHZW01000002_gene502
+	(degree 1264), 1249997.JHZW01000002_gene403 (degree 1215), 1249997.JHZW01000001_gene4000
+	(degree 1142), 1249997.JHZW01000003_gene3704 (degree 1120) and 1249997.JHZW01000003_gene3570
+	(degree 1107).
 	
 
 

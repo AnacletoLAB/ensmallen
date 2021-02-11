@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:25.816962
 
-The undirected graph Brachyspira pilosicoli has 2295 nodes and 140163 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05325 and
-has 7 connected components, where the component with most nodes has 2278 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 122.15, and the node degree mode is 5. The top 5 most central
-nodes are 759914.BP951000_2300 (degree 983), 759914.BP951000_2226 (degree 828), 759914.BP951000_1071
-(degree 734), 759914.BP951000_2231 (degree 718) and 759914.BP951000_0592 (degree
+The undirected graph Brachyspira pilosicoli has 2295 nodes and 140163 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05325 and has 7 connected components, where the component with most
+nodes has 2278 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 122.15, and
+the node degree mode is 5. The top 5 most central nodes are 759914.BP951000_2300
+(degree 983), 759914.BP951000_2226 (degree 828), 759914.BP951000_1071 (degree
+734), 759914.BP951000_2231 (degree 718) and 759914.BP951000_0592 (degree
 708).
 
 
@@ -107,13 +108,14 @@ def BrachyspiraPilosicoli(
 	
 	Datetime: 2021-02-02 21:41:25.816962
 	
-	The undirected graph Brachyspira pilosicoli has 2295 nodes and 140163 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05325 and
-	has 7 connected components, where the component with most nodes has 2278 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 122.15, and the node degree mode is 5. The top 5 most central
-	nodes are 759914.BP951000_2300 (degree 983), 759914.BP951000_2226 (degree 828), 759914.BP951000_1071
-	(degree 734), 759914.BP951000_2231 (degree 718) and 759914.BP951000_0592 (degree
+	The undirected graph Brachyspira pilosicoli has 2295 nodes and 140163 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05325 and has 7 connected components, where the component with most
+	nodes has 2278 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 122.15, and
+	the node degree mode is 5. The top 5 most central nodes are 759914.BP951000_2300
+	(degree 983), 759914.BP951000_2226 (degree 828), 759914.BP951000_1071 (degree
+	734), 759914.BP951000_2231 (degree 718) and 759914.BP951000_0592 (degree
 	708).
 	
 

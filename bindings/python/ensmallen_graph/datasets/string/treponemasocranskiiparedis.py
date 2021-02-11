@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:57.218806
 
-The undirected graph Treponema socranskii paredis has 2408 nodes and 155628 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05370
-and has 15 connected components, where the component with most nodes has 2368 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 129.26, and the node degree mode is 5. The top 5 most
-central nodes are 1125701.HMPREF1221_02211 (degree 880), 1125701.HMPREF1221_00583
-(degree 783), 1125701.HMPREF1221_02169 (degree 763), 1125701.HMPREF1221_00141 (degree
-746) and 1125701.HMPREF1221_00643 (degree 727).
+The undirected graph Treponema socranskii paredis has 2408 nodes and 155628
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05370 and has 15 connected components, where the component
+with most nodes has 2368 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 129.26,
+and the node degree mode is 5. The top 5 most central nodes are 1125701.HMPREF1221_02211
+(degree 880), 1125701.HMPREF1221_00583 (degree 783), 1125701.HMPREF1221_02169
+(degree 763), 1125701.HMPREF1221_00141 (degree 746) and 1125701.HMPREF1221_00643
+(degree 727).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaSocranskiiParedis(
 	
 	Datetime: 2021-02-02 22:53:57.218806
 	
-	The undirected graph Treponema socranskii paredis has 2408 nodes and 155628 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05370
-	and has 15 connected components, where the component with most nodes has 2368 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 129.26, and the node degree mode is 5. The top 5 most
-	central nodes are 1125701.HMPREF1221_02211 (degree 880), 1125701.HMPREF1221_00583
-	(degree 783), 1125701.HMPREF1221_02169 (degree 763), 1125701.HMPREF1221_00141 (degree
-	746) and 1125701.HMPREF1221_00643 (degree 727).
+	The undirected graph Treponema socranskii paredis has 2408 nodes and 155628
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05370 and has 15 connected components, where the component
+	with most nodes has 2368 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 129.26,
+	and the node degree mode is 5. The top 5 most central nodes are 1125701.HMPREF1221_02211
+	(degree 880), 1125701.HMPREF1221_00583 (degree 783), 1125701.HMPREF1221_02169
+	(degree 763), 1125701.HMPREF1221_00141 (degree 746) and 1125701.HMPREF1221_00643
+	(degree 727).
 	
 
 

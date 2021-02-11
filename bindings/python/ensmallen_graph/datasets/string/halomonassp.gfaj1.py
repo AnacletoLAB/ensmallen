@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:43.339104
 
-The undirected graph Halomonas sp. GFAJ1 has 3253 nodes and 344700 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06517 and
-has 5 connected components, where the component with most nodes has 3233 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 211.93, and the node degree mode is 1. The top 5 most central
-nodes are 1118153.MOY_01879 (degree 1488), 1118153.MOY_09820 (degree 1415), 1118153.MOY_01399
-(degree 1185), 1118153.MOY_02219 (degree 1101) and 1118153.MOY_00740 (degree 1090).
+The undirected graph Halomonas sp. GFAJ1 has 3253 nodes and 344700 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06517 and has 5 connected components, where the component with most
+nodes has 3233 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 211.93, and
+the node degree mode is 1. The top 5 most central nodes are 1118153.MOY_01879
+(degree 1488), 1118153.MOY_09820 (degree 1415), 1118153.MOY_01399 (degree
+1185), 1118153.MOY_02219 (degree 1101) and 1118153.MOY_00740 (degree 1090).
 
 
 References
@@ -106,13 +107,14 @@ def HalomonasSp.Gfaj1(
 	
 	Datetime: 2021-02-02 22:28:43.339104
 	
-	The undirected graph Halomonas sp. GFAJ1 has 3253 nodes and 344700 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06517 and
-	has 5 connected components, where the component with most nodes has 3233 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 211.93, and the node degree mode is 1. The top 5 most central
-	nodes are 1118153.MOY_01879 (degree 1488), 1118153.MOY_09820 (degree 1415), 1118153.MOY_01399
-	(degree 1185), 1118153.MOY_02219 (degree 1101) and 1118153.MOY_00740 (degree 1090).
+	The undirected graph Halomonas sp. GFAJ1 has 3253 nodes and 344700 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06517 and has 5 connected components, where the component with most
+	nodes has 3233 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 211.93, and
+	the node degree mode is 1. The top 5 most central nodes are 1118153.MOY_01879
+	(degree 1488), 1118153.MOY_09820 (degree 1415), 1118153.MOY_01399 (degree
+	1185), 1118153.MOY_02219 (degree 1101) and 1118153.MOY_00740 (degree 1090).
 	
 
 

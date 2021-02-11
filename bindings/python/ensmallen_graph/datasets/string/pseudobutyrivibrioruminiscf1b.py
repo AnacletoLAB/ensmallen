@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:19.914521
 
-The undirected graph Pseudobutyrivibrio ruminis CF1b has 2886 nodes and 242617 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05828
-and has 13 connected components, where the component with most nodes has 2857 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 168.13, and the node degree mode is 16. The top 5
-most central nodes are 1280688.AUJB01000013_gene2456 (degree 1218), 1280688.AUJB01000014_gene2279
+The undirected graph Pseudobutyrivibrio ruminis CF1b has 2886 nodes and
+242617 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05828 and has 13 connected components, where the
+component with most nodes has 2857 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 168.13, and the node degree mode is 16. The top 5 most central nodes
+are 1280688.AUJB01000013_gene2456 (degree 1218), 1280688.AUJB01000014_gene2279
 (degree 1108), 1280688.AUJB01000014_gene2278 (degree 1034), 1280688.AUJB01000014_gene2314
 (degree 1013) and 1280688.AUJB01000009_gene1593 (degree 948).
 
@@ -107,12 +108,13 @@ def PseudobutyrivibrioRuminisCf1b(
 	
 	Datetime: 2021-02-03 21:07:19.914521
 	
-	The undirected graph Pseudobutyrivibrio ruminis CF1b has 2886 nodes and 242617 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05828
-	and has 13 connected components, where the component with most nodes has 2857 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 168.13, and the node degree mode is 16. The top 5
-	most central nodes are 1280688.AUJB01000013_gene2456 (degree 1218), 1280688.AUJB01000014_gene2279
+	The undirected graph Pseudobutyrivibrio ruminis CF1b has 2886 nodes and
+	242617 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05828 and has 13 connected components, where the
+	component with most nodes has 2857 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 168.13, and the node degree mode is 16. The top 5 most central nodes
+	are 1280688.AUJB01000013_gene2456 (degree 1218), 1280688.AUJB01000014_gene2279
 	(degree 1108), 1280688.AUJB01000014_gene2278 (degree 1034), 1280688.AUJB01000014_gene2314
 	(degree 1013) and 1280688.AUJB01000009_gene1593 (degree 948).
 	

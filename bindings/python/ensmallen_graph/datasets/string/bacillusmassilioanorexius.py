@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:19:34.947975
 
-The undirected graph Bacillus massilioanorexius has 4351 nodes and 454233 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04800
-and has 20 connected components, where the component with most nodes has 4307 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 208.79, and the node degree mode is 1. The top 5
-most central nodes are 1211814.CAPG01000051_gene2675 (degree 1528), 1211814.CAPG01000096_gene4353
-(degree 1250), 1211814.CAPG01000038_gene2150 (degree 1226), 1211814.CAPG01000045_gene2445
-(degree 1181) and 1211814.CAPG01000041_gene2355 (degree 1099).
+The undirected graph Bacillus massilioanorexius has 4351 nodes and 454233
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04800 and has 20 connected components, where the component
+with most nodes has 4307 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 208.79,
+and the node degree mode is 1. The top 5 most central nodes are 1211814.CAPG01000051_gene2675
+(degree 1528), 1211814.CAPG01000096_gene4353 (degree 1250), 1211814.CAPG01000038_gene2150
+(degree 1226), 1211814.CAPG01000045_gene2445 (degree 1181) and 1211814.CAPG01000041_gene2355
+(degree 1099).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusMassilioanorexius(
 	
 	Datetime: 2021-02-02 23:19:34.947975
 	
-	The undirected graph Bacillus massilioanorexius has 4351 nodes and 454233 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04800
-	and has 20 connected components, where the component with most nodes has 4307 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 208.79, and the node degree mode is 1. The top 5
-	most central nodes are 1211814.CAPG01000051_gene2675 (degree 1528), 1211814.CAPG01000096_gene4353
-	(degree 1250), 1211814.CAPG01000038_gene2150 (degree 1226), 1211814.CAPG01000045_gene2445
-	(degree 1181) and 1211814.CAPG01000041_gene2355 (degree 1099).
+	The undirected graph Bacillus massilioanorexius has 4351 nodes and 454233
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04800 and has 20 connected components, where the component
+	with most nodes has 4307 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 208.79,
+	and the node degree mode is 1. The top 5 most central nodes are 1211814.CAPG01000051_gene2675
+	(degree 1528), 1211814.CAPG01000096_gene4353 (degree 1250), 1211814.CAPG01000038_gene2150
+	(degree 1226), 1211814.CAPG01000045_gene2445 (degree 1181) and 1211814.CAPG01000041_gene2355
+	(degree 1099).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:21.297720
 
-The undirected graph Setosphaeria turcica has 7459 nodes and 692624 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02490 and
-has 46 connected components, where the component with most nodes has 7354 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 185.71, and the node degree mode is 1. The top 5 most central
-nodes are 93612.XP_008021790.1 (degree 2066), 93612.XP_008022282.1 (degree 1815),
-93612.XP_008024440.1 (degree 1800), 93612.XP_008029812.1 (degree 1618) and 93612.XP_008023816.1
+The undirected graph Setosphaeria turcica has 7459 nodes and 692624 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02490 and has 46 connected components, where the component with most
+nodes has 7354 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 185.71, and
+the node degree mode is 1. The top 5 most central nodes are 93612.XP_008021790.1
+(degree 2066), 93612.XP_008022282.1 (degree 1815), 93612.XP_008024440.1
+(degree 1800), 93612.XP_008029812.1 (degree 1618) and 93612.XP_008023816.1
 (degree 1497).
 
 
@@ -107,13 +108,14 @@ def SetosphaeriaTurcica(
 	
 	Datetime: 2021-02-02 19:41:21.297720
 	
-	The undirected graph Setosphaeria turcica has 7459 nodes and 692624 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02490 and
-	has 46 connected components, where the component with most nodes has 7354 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 185.71, and the node degree mode is 1. The top 5 most central
-	nodes are 93612.XP_008021790.1 (degree 2066), 93612.XP_008022282.1 (degree 1815),
-	93612.XP_008024440.1 (degree 1800), 93612.XP_008029812.1 (degree 1618) and 93612.XP_008023816.1
+	The undirected graph Setosphaeria turcica has 7459 nodes and 692624 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02490 and has 46 connected components, where the component with most
+	nodes has 7354 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 185.71, and
+	the node degree mode is 1. The top 5 most central nodes are 93612.XP_008021790.1
+	(degree 2066), 93612.XP_008022282.1 (degree 1815), 93612.XP_008024440.1
+	(degree 1800), 93612.XP_008029812.1 (degree 1618) and 93612.XP_008023816.1
 	(degree 1497).
 	
 

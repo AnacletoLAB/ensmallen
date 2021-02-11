@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:48.781187
 
-The undirected graph Simkania negevensis has 2469 nodes and 111099 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03646 and
-has 39 connected components, where the component with most nodes has 2343 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 56,
-the mean node degree is 90.00, and the node degree mode is 4. The top 5 most central
-nodes are 331113.SNE_A17010 (degree 985), 331113.SNE_A22200 (degree 783), 331113.SNE_A17550
-(degree 605), 331113.SNE_A21850 (degree 601) and 331113.SNE_A07670 (degree 588).
+The undirected graph Simkania negevensis has 2469 nodes and 111099 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03646 and has 39 connected components, where the component with most
+nodes has 2343 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 90.00, and
+the node degree mode is 4. The top 5 most central nodes are 331113.SNE_A17010
+(degree 985), 331113.SNE_A22200 (degree 783), 331113.SNE_A17550 (degree
+605), 331113.SNE_A21850 (degree 601) and 331113.SNE_A07670 (degree 588).
 
 
 References
@@ -106,13 +107,14 @@ def SimkaniaNegevensis(
 	
 	Datetime: 2021-02-02 20:29:48.781187
 	
-	The undirected graph Simkania negevensis has 2469 nodes and 111099 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03646 and
-	has 39 connected components, where the component with most nodes has 2343 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 56,
-	the mean node degree is 90.00, and the node degree mode is 4. The top 5 most central
-	nodes are 331113.SNE_A17010 (degree 985), 331113.SNE_A22200 (degree 783), 331113.SNE_A17550
-	(degree 605), 331113.SNE_A21850 (degree 601) and 331113.SNE_A07670 (degree 588).
+	The undirected graph Simkania negevensis has 2469 nodes and 111099 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03646 and has 39 connected components, where the component with most
+	nodes has 2343 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 90.00, and
+	the node degree mode is 4. The top 5 most central nodes are 331113.SNE_A17010
+	(degree 985), 331113.SNE_A22200 (degree 783), 331113.SNE_A17550 (degree
+	605), 331113.SNE_A21850 (degree 601) and 331113.SNE_A07670 (degree 588).
 	
 
 

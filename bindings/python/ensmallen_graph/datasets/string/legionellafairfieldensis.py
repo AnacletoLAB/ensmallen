@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:37:46.497033
 
-The undirected graph Legionella fairfieldensis has 2463 nodes and 197665 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06519
-and has 29 connected components, where the component with most nodes has 2394 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 160.51, and the node degree mode is 2. The top 5
-most central nodes are 1408444.JHYC01000025_gene71 (degree 1024), 1408444.JHYC01000005_gene832
-(degree 908), 1408444.JHYC01000001_gene1126 (degree 879), 1408444.JHYC01000004_gene772
-(degree 859) and 1408444.JHYC01000005_gene833 (degree 847).
+The undirected graph Legionella fairfieldensis has 2463 nodes and 197665
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06519 and has 29 connected components, where the component
+with most nodes has 2394 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 160.51,
+and the node degree mode is 2. The top 5 most central nodes are 1408444.JHYC01000025_gene71
+(degree 1024), 1408444.JHYC01000005_gene832 (degree 908), 1408444.JHYC01000001_gene1126
+(degree 879), 1408444.JHYC01000004_gene772 (degree 859) and 1408444.JHYC01000005_gene833
+(degree 847).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaFairfieldensis(
 	
 	Datetime: 2021-02-03 22:37:46.497033
 	
-	The undirected graph Legionella fairfieldensis has 2463 nodes and 197665 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06519
-	and has 29 connected components, where the component with most nodes has 2394 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 160.51, and the node degree mode is 2. The top 5
-	most central nodes are 1408444.JHYC01000025_gene71 (degree 1024), 1408444.JHYC01000005_gene832
-	(degree 908), 1408444.JHYC01000001_gene1126 (degree 879), 1408444.JHYC01000004_gene772
-	(degree 859) and 1408444.JHYC01000005_gene833 (degree 847).
+	The undirected graph Legionella fairfieldensis has 2463 nodes and 197665
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06519 and has 29 connected components, where the component
+	with most nodes has 2394 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 160.51,
+	and the node degree mode is 2. The top 5 most central nodes are 1408444.JHYC01000025_gene71
+	(degree 1024), 1408444.JHYC01000005_gene832 (degree 908), 1408444.JHYC01000001_gene1126
+	(degree 879), 1408444.JHYC01000004_gene772 (degree 859) and 1408444.JHYC01000005_gene833
+	(degree 847).
 	
 
 

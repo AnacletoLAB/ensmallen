@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:35:11.938639
 
-The undirected graph Sorangium cellulosum So01572 has 9929 nodes and 880524 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01787
-and has 162 connected components, where the component with most nodes has 9538 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 177.36, and the node degree mode is 1. The top 5
-most central nodes are 1254432.SCE1572_03900 (degree 3095), 1254432.SCE1572_21710
-(degree 2532), 1254432.SCE1572_49780 (degree 2399), 1254432.SCE1572_30985 (degree
-2192) and 1254432.SCE1572_30760 (degree 1835).
+The undirected graph Sorangium cellulosum So01572 has 9929 nodes and 880524
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.01787 and has 162 connected components, where the component
+with most nodes has 9538 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 177.36,
+and the node degree mode is 1. The top 5 most central nodes are 1254432.SCE1572_03900
+(degree 3095), 1254432.SCE1572_21710 (degree 2532), 1254432.SCE1572_49780
+(degree 2399), 1254432.SCE1572_30985 (degree 2192) and 1254432.SCE1572_30760
+(degree 1835).
 
 
 References
@@ -107,14 +108,15 @@ def SorangiumCellulosumSo01572(
 	
 	Datetime: 2021-02-02 23:35:11.938639
 	
-	The undirected graph Sorangium cellulosum So01572 has 9929 nodes and 880524 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01787
-	and has 162 connected components, where the component with most nodes has 9538 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 177.36, and the node degree mode is 1. The top 5
-	most central nodes are 1254432.SCE1572_03900 (degree 3095), 1254432.SCE1572_21710
-	(degree 2532), 1254432.SCE1572_49780 (degree 2399), 1254432.SCE1572_30985 (degree
-	2192) and 1254432.SCE1572_30760 (degree 1835).
+	The undirected graph Sorangium cellulosum So01572 has 9929 nodes and 880524
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.01787 and has 162 connected components, where the component
+	with most nodes has 9538 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 177.36,
+	and the node degree mode is 1. The top 5 most central nodes are 1254432.SCE1572_03900
+	(degree 3095), 1254432.SCE1572_21710 (degree 2532), 1254432.SCE1572_49780
+	(degree 2399), 1254432.SCE1572_30985 (degree 2192) and 1254432.SCE1572_30760
+	(degree 1835).
 	
 
 

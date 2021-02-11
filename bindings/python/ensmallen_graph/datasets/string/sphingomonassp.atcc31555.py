@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:13.308535
 
-The undirected graph Sphingomonas sp. ATCC31555 has 3659 nodes and 390983 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05842
-and has 9 connected components, where the component with most nodes has 3637 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 213.71, and the node degree mode is 3. The top 5
-most central nodes are 194867.ALBQ01000014_gene568 (degree 1374), 194867.ALBQ01000035_gene1094
-(degree 1217), 194867.ALBQ01000018_gene2560 (degree 1177), 194867.ALBQ01000011_gene132
-(degree 1173) and 194867.ALBQ01000021_gene1891 (degree 1092).
+The undirected graph Sphingomonas sp. ATCC31555 has 3659 nodes and 390983
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05842 and has 9 connected components, where the component
+with most nodes has 3637 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 177, the mean node degree is 213.71,
+and the node degree mode is 3. The top 5 most central nodes are 194867.ALBQ01000014_gene568
+(degree 1374), 194867.ALBQ01000035_gene1094 (degree 1217), 194867.ALBQ01000018_gene2560
+(degree 1177), 194867.ALBQ01000011_gene132 (degree 1173) and 194867.ALBQ01000021_gene1891
+(degree 1092).
 
 
 References
@@ -107,14 +108,15 @@ def SphingomonasSp.Atcc31555(
 	
 	Datetime: 2021-02-02 19:58:13.308535
 	
-	The undirected graph Sphingomonas sp. ATCC31555 has 3659 nodes and 390983 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05842
-	and has 9 connected components, where the component with most nodes has 3637 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 213.71, and the node degree mode is 3. The top 5
-	most central nodes are 194867.ALBQ01000014_gene568 (degree 1374), 194867.ALBQ01000035_gene1094
-	(degree 1217), 194867.ALBQ01000018_gene2560 (degree 1177), 194867.ALBQ01000011_gene132
-	(degree 1173) and 194867.ALBQ01000021_gene1891 (degree 1092).
+	The undirected graph Sphingomonas sp. ATCC31555 has 3659 nodes and 390983
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05842 and has 9 connected components, where the component
+	with most nodes has 3637 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 177, the mean node degree is 213.71,
+	and the node degree mode is 3. The top 5 most central nodes are 194867.ALBQ01000014_gene568
+	(degree 1374), 194867.ALBQ01000035_gene1094 (degree 1217), 194867.ALBQ01000018_gene2560
+	(degree 1177), 194867.ALBQ01000011_gene132 (degree 1173) and 194867.ALBQ01000021_gene1891
+	(degree 1092).
 	
 
 

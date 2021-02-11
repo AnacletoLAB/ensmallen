@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:07.251462
 
-The undirected graph Corynebacterium pseudogenitalium has 2474 nodes and 169054 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-and has 20 connected components, where the component with most nodes has 2419 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 136.66, and the node degree mode is 2. The top 5
-most central nodes are 525264.HMPREF0305_11276 (degree 913), 525264.HMPREF0305_10931
-(degree 790), 525264.HMPREF0305_10754 (degree 778), 525264.HMPREF0305_10751 (degree
+The undirected graph Corynebacterium pseudogenitalium has 2474 nodes and
+169054 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05526 and has 20 connected components, where the
+component with most nodes has 2419 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+is 136.66, and the node degree mode is 2. The top 5 most central nodes
+are 525264.HMPREF0305_11276 (degree 913), 525264.HMPREF0305_10931 (degree
+790), 525264.HMPREF0305_10754 (degree 778), 525264.HMPREF0305_10751 (degree
 722) and 525264.HMPREF0305_10075 (degree 702).
 
 
@@ -107,13 +108,14 @@ def CorynebacteriumPseudogenitalium(
 	
 	Datetime: 2021-02-02 21:05:07.251462
 	
-	The undirected graph Corynebacterium pseudogenitalium has 2474 nodes and 169054 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05526
-	and has 20 connected components, where the component with most nodes has 2419 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 136.66, and the node degree mode is 2. The top 5
-	most central nodes are 525264.HMPREF0305_11276 (degree 913), 525264.HMPREF0305_10931
-	(degree 790), 525264.HMPREF0305_10754 (degree 778), 525264.HMPREF0305_10751 (degree
+	The undirected graph Corynebacterium pseudogenitalium has 2474 nodes and
+	169054 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05526 and has 20 connected components, where the
+	component with most nodes has 2419 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 118, the mean node degree
+	is 136.66, and the node degree mode is 2. The top 5 most central nodes
+	are 525264.HMPREF0305_11276 (degree 913), 525264.HMPREF0305_10931 (degree
+	790), 525264.HMPREF0305_10754 (degree 778), 525264.HMPREF0305_10751 (degree
 	722) and 525264.HMPREF0305_10075 (degree 702).
 	
 

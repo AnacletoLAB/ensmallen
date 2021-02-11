@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:58.059691
 
-The undirected graph Actinocatenispora sera has 6191 nodes and 735498 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03838 and
-has 10 connected components, where the component with most nodes has 6168 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 197,
-the mean node degree is 237.60, and the node degree mode is 3. The top 5 most central
-nodes are 390989.JOEG01000025_gene26 (degree 1936), 390989.JOEG01000001_gene4941
-(degree 1630), 390989.JOEG01000003_gene4615 (degree 1595), 390989.JOEG01000021_gene2675
-(degree 1574) and 390989.JOEG01000012_gene3509 (degree 1569).
+The undirected graph Actinocatenispora sera has 6191 nodes and 735498 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03838 and has 10 connected components, where the component with most
+nodes has 6168 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 197, the mean node degree is 237.60, and
+the node degree mode is 3. The top 5 most central nodes are 390989.JOEG01000025_gene26
+(degree 1936), 390989.JOEG01000001_gene4941 (degree 1630), 390989.JOEG01000003_gene4615
+(degree 1595), 390989.JOEG01000021_gene2675 (degree 1574) and 390989.JOEG01000012_gene3509
+(degree 1569).
 
 
 References
@@ -107,14 +108,15 @@ def ActinocatenisporaSera(
 	
 	Datetime: 2021-02-02 20:38:58.059691
 	
-	The undirected graph Actinocatenispora sera has 6191 nodes and 735498 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03838 and
-	has 10 connected components, where the component with most nodes has 6168 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 197,
-	the mean node degree is 237.60, and the node degree mode is 3. The top 5 most central
-	nodes are 390989.JOEG01000025_gene26 (degree 1936), 390989.JOEG01000001_gene4941
-	(degree 1630), 390989.JOEG01000003_gene4615 (degree 1595), 390989.JOEG01000021_gene2675
-	(degree 1574) and 390989.JOEG01000012_gene3509 (degree 1569).
+	The undirected graph Actinocatenispora sera has 6191 nodes and 735498 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03838 and has 10 connected components, where the component with most
+	nodes has 6168 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 197, the mean node degree is 237.60, and
+	the node degree mode is 3. The top 5 most central nodes are 390989.JOEG01000025_gene26
+	(degree 1936), 390989.JOEG01000001_gene4941 (degree 1630), 390989.JOEG01000003_gene4615
+	(degree 1595), 390989.JOEG01000021_gene2675 (degree 1574) and 390989.JOEG01000012_gene3509
+	(degree 1569).
 	
 
 

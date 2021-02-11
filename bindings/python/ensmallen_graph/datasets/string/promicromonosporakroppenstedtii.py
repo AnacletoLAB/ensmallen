@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:40.624294
 
-The undirected graph Promicromonospora kroppenstedtii has 6233 nodes and 729939 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03758
-and has 33 connected components, where the component with most nodes has 6135 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 193, the mean node degree is 234.22, and the node degree mode is 3. The top 5
-most central nodes are 926564.KI911643_gene2443 (degree 1915), 926564.KI911693_gene1006
-(degree 1893), 926564.KI911656_gene1548 (degree 1744), 926564.KI911641_gene2220 (degree
-1715) and 926564.KI911693_gene1034 (degree 1619).
+The undirected graph Promicromonospora kroppenstedtii has 6233 nodes and
+729939 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03758 and has 33 connected components, where the
+component with most nodes has 6135 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+is 234.22, and the node degree mode is 3. The top 5 most central nodes
+are 926564.KI911643_gene2443 (degree 1915), 926564.KI911693_gene1006 (degree
+1893), 926564.KI911656_gene1548 (degree 1744), 926564.KI911641_gene2220
+(degree 1715) and 926564.KI911693_gene1034 (degree 1619).
 
 
 References
@@ -107,14 +108,15 @@ def PromicromonosporaKroppenstedtii(
 	
 	Datetime: 2021-02-02 21:56:40.624294
 	
-	The undirected graph Promicromonospora kroppenstedtii has 6233 nodes and 729939 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03758
-	and has 33 connected components, where the component with most nodes has 6135 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 193, the mean node degree is 234.22, and the node degree mode is 3. The top 5
-	most central nodes are 926564.KI911643_gene2443 (degree 1915), 926564.KI911693_gene1006
-	(degree 1893), 926564.KI911656_gene1548 (degree 1744), 926564.KI911641_gene2220 (degree
-	1715) and 926564.KI911693_gene1034 (degree 1619).
+	The undirected graph Promicromonospora kroppenstedtii has 6233 nodes and
+	729939 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03758 and has 33 connected components, where the
+	component with most nodes has 6135 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+	is 234.22, and the node degree mode is 3. The top 5 most central nodes
+	are 926564.KI911643_gene2443 (degree 1915), 926564.KI911693_gene1006 (degree
+	1893), 926564.KI911656_gene1548 (degree 1744), 926564.KI911641_gene2220
+	(degree 1715) and 926564.KI911693_gene1034 (degree 1619).
 	
 
 

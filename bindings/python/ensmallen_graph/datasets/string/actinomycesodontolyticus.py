@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:20.228848
 
-The undirected graph Actinomyces odontolyticus has 2121 nodes and 148218 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06593
-and has 16 connected components, where the component with most nodes has 2067 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 139.76, and the node degree mode is 2. The top 5
-most central nodes are 411466.ACTODO_01737 (degree 873), 411466.ACTODO_01362 (degree
-844), 411466.ACTODO_00279 (degree 823), 411466.ACTODO_00093 (degree 695) and 411466.ACTODO_00254
-(degree 683).
+The undirected graph Actinomyces odontolyticus has 2121 nodes and 148218
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06593 and has 16 connected components, where the component
+with most nodes has 2067 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 139.76,
+and the node degree mode is 2. The top 5 most central nodes are 411466.ACTODO_01737
+(degree 873), 411466.ACTODO_01362 (degree 844), 411466.ACTODO_00279 (degree
+823), 411466.ACTODO_00093 (degree 695) and 411466.ACTODO_00254 (degree
+683).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesOdontolyticus(
 	
 	Datetime: 2021-02-02 20:45:20.228848
 	
-	The undirected graph Actinomyces odontolyticus has 2121 nodes and 148218 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06593
-	and has 16 connected components, where the component with most nodes has 2067 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 139.76, and the node degree mode is 2. The top 5
-	most central nodes are 411466.ACTODO_01737 (degree 873), 411466.ACTODO_01362 (degree
-	844), 411466.ACTODO_00279 (degree 823), 411466.ACTODO_00093 (degree 695) and 411466.ACTODO_00254
-	(degree 683).
+	The undirected graph Actinomyces odontolyticus has 2121 nodes and 148218
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06593 and has 16 connected components, where the component
+	with most nodes has 2067 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 139.76,
+	and the node degree mode is 2. The top 5 most central nodes are 411466.ACTODO_01737
+	(degree 873), 411466.ACTODO_01362 (degree 844), 411466.ACTODO_00279 (degree
+	823), 411466.ACTODO_00093 (degree 695) and 411466.ACTODO_00254 (degree
+	683).
 	
 
 

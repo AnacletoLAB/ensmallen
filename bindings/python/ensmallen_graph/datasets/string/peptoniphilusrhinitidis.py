@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:27.153268
 
-The undirected graph Peptoniphilus rhinitidis has 1836 nodes and 107921 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06407
-and has 8 connected components, where the component with most nodes has 1820 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 117.56, and the node degree mode is 32. The top 5
-most central nodes are 875454.BAEW01000001_gene97 (degree 755), 875454.BAEW01000001_gene137
-(degree 627), 875454.BAEW01000001_gene92 (degree 600), 875454.BAEW01000019_gene1678
-(degree 593) and 875454.BAEW01000004_gene835 (degree 592).
+The undirected graph Peptoniphilus rhinitidis has 1836 nodes and 107921
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06407 and has 8 connected components, where the component
+with most nodes has 1820 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 117.56,
+and the node degree mode is 32. The top 5 most central nodes are 875454.BAEW01000001_gene97
+(degree 755), 875454.BAEW01000001_gene137 (degree 627), 875454.BAEW01000001_gene92
+(degree 600), 875454.BAEW01000019_gene1678 (degree 593) and 875454.BAEW01000004_gene835
+(degree 592).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoniphilusRhinitidis(
 	
 	Datetime: 2021-02-02 21:49:27.153268
 	
-	The undirected graph Peptoniphilus rhinitidis has 1836 nodes and 107921 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06407
-	and has 8 connected components, where the component with most nodes has 1820 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 117.56, and the node degree mode is 32. The top 5
-	most central nodes are 875454.BAEW01000001_gene97 (degree 755), 875454.BAEW01000001_gene137
-	(degree 627), 875454.BAEW01000001_gene92 (degree 600), 875454.BAEW01000019_gene1678
-	(degree 593) and 875454.BAEW01000004_gene835 (degree 592).
+	The undirected graph Peptoniphilus rhinitidis has 1836 nodes and 107921
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06407 and has 8 connected components, where the component
+	with most nodes has 1820 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 117.56,
+	and the node degree mode is 32. The top 5 most central nodes are 875454.BAEW01000001_gene97
+	(degree 755), 875454.BAEW01000001_gene137 (degree 627), 875454.BAEW01000001_gene92
+	(degree 600), 875454.BAEW01000019_gene1678 (degree 593) and 875454.BAEW01000004_gene835
+	(degree 592).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:45.768095
 
-The undirected graph Campylobacter jejuni 414 has 1772 nodes and 109602 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06985
-and has 6 connected components, where the component with most nodes has 1758 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 123.70, and the node degree mode is 11. The top 5
-most central nodes are 683083.C414_000420099 (degree 720), 683083.C414_000220119
-(degree 694), 683083.C414_000390037 (degree 618), 683083.C414_000240028 (degree 616)
-and 683083.C414_000260081 (degree 606).
+The undirected graph Campylobacter jejuni 414 has 1772 nodes and 109602
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06985 and has 6 connected components, where the component
+with most nodes has 1758 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 123.70,
+and the node degree mode is 11. The top 5 most central nodes are 683083.C414_000420099
+(degree 720), 683083.C414_000220119 (degree 694), 683083.C414_000390037
+(degree 618), 683083.C414_000240028 (degree 616) and 683083.C414_000260081
+(degree 606).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterJejuni414(
 	
 	Datetime: 2021-02-02 21:30:45.768095
 	
-	The undirected graph Campylobacter jejuni 414 has 1772 nodes and 109602 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06985
-	and has 6 connected components, where the component with most nodes has 1758 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 123.70, and the node degree mode is 11. The top 5
-	most central nodes are 683083.C414_000420099 (degree 720), 683083.C414_000220119
-	(degree 694), 683083.C414_000390037 (degree 618), 683083.C414_000240028 (degree 616)
-	and 683083.C414_000260081 (degree 606).
+	The undirected graph Campylobacter jejuni 414 has 1772 nodes and 109602
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06985 and has 6 connected components, where the component
+	with most nodes has 1758 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 123.70,
+	and the node degree mode is 11. The top 5 most central nodes are 683083.C414_000420099
+	(degree 720), 683083.C414_000220119 (degree 694), 683083.C414_000390037
+	(degree 618), 683083.C414_000240028 (degree 616) and 683083.C414_000260081
+	(degree 606).
 	
 
 

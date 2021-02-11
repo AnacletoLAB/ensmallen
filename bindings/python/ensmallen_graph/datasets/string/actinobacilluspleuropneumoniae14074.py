@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:10.417713
 
-The undirected graph Actinobacillus pleuropneumoniae 1 4074 has 2150 nodes and 193429
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.08373 and has 2 connected components, where the component with most nodes has
-2148 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 168, the mean node degree is 179.93, and the node degree mode is 10. The
-top 5 most central nodes are 228399.appser1_5170 (degree 902), 228399.appser1_10490
-(degree 835), 228399.appser1_6590 (degree 751), 228399.appser1_6580 (degree 720)
-and 228399.appser1_3860 (degree 714).
+The undirected graph Actinobacillus pleuropneumoniae 1 4074 has 2150 nodes
+and 193429 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.08373 and has 2 connected components, where the
+component with most nodes has 2148 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+is 179.93, and the node degree mode is 10. The top 5 most central nodes
+are 228399.appser1_5170 (degree 902), 228399.appser1_10490 (degree 835),
+228399.appser1_6590 (degree 751), 228399.appser1_6580 (degree 720) and
+228399.appser1_3860 (degree 714).
 
 
 References
@@ -107,14 +108,15 @@ def ActinobacillusPleuropneumoniae14074(
 	
 	Datetime: 2021-02-02 20:07:10.417713
 	
-	The undirected graph Actinobacillus pleuropneumoniae 1 4074 has 2150 nodes and 193429
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.08373 and has 2 connected components, where the component with most nodes has
-	2148 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 168, the mean node degree is 179.93, and the node degree mode is 10. The
-	top 5 most central nodes are 228399.appser1_5170 (degree 902), 228399.appser1_10490
-	(degree 835), 228399.appser1_6590 (degree 751), 228399.appser1_6580 (degree 720)
-	and 228399.appser1_3860 (degree 714).
+	The undirected graph Actinobacillus pleuropneumoniae 1 4074 has 2150 nodes
+	and 193429 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.08373 and has 2 connected components, where the
+	component with most nodes has 2148 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 168, the mean node degree
+	is 179.93, and the node degree mode is 10. The top 5 most central nodes
+	are 228399.appser1_5170 (degree 902), 228399.appser1_10490 (degree 835),
+	228399.appser1_6590 (degree 751), 228399.appser1_6580 (degree 720) and
+	228399.appser1_3860 (degree 714).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:39.865242
 
-The undirected graph Microlunatus phosphovorus has 5310 nodes and 553077 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03924
-and has 12 connected components, where the component with most nodes has 5288 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 199, the mean node degree is 208.32, and the node degree mode is 3. The top 5
-most central nodes are 1032480.MLP_40970 (degree 1631), 1032480.MLP_53180 (degree
-1449), 1032480.MLP_41950 (degree 1440), 1032480.MLP_23440 (degree 1271) and 1032480.MLP_22680
-(degree 1255).
+The undirected graph Microlunatus phosphovorus has 5310 nodes and 553077
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03924 and has 12 connected components, where the component
+with most nodes has 5288 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 199, the mean node degree is 208.32,
+and the node degree mode is 3. The top 5 most central nodes are 1032480.MLP_40970
+(degree 1631), 1032480.MLP_53180 (degree 1449), 1032480.MLP_41950 (degree
+1440), 1032480.MLP_23440 (degree 1271) and 1032480.MLP_22680 (degree 1255).
 
 
 References
@@ -107,14 +107,14 @@ def MicrolunatusPhosphovorus(
 	
 	Datetime: 2021-02-02 22:10:39.865242
 	
-	The undirected graph Microlunatus phosphovorus has 5310 nodes and 553077 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03924
-	and has 12 connected components, where the component with most nodes has 5288 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 199, the mean node degree is 208.32, and the node degree mode is 3. The top 5
-	most central nodes are 1032480.MLP_40970 (degree 1631), 1032480.MLP_53180 (degree
-	1449), 1032480.MLP_41950 (degree 1440), 1032480.MLP_23440 (degree 1271) and 1032480.MLP_22680
-	(degree 1255).
+	The undirected graph Microlunatus phosphovorus has 5310 nodes and 553077
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03924 and has 12 connected components, where the component
+	with most nodes has 5288 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 199, the mean node degree is 208.32,
+	and the node degree mode is 3. The top 5 most central nodes are 1032480.MLP_40970
+	(degree 1631), 1032480.MLP_53180 (degree 1449), 1032480.MLP_41950 (degree
+	1440), 1032480.MLP_23440 (degree 1271) and 1032480.MLP_22680 (degree 1255).
 	
 
 

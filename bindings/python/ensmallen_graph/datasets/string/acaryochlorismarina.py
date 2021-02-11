@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:26.694386
 
-The undirected graph Acaryochloris marina has 6275 nodes and 755276 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03837 and
-has 64 connected components, where the component with most nodes has 6113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 240.73, and the node degree mode is 3. The top 5 most central
-nodes are 329726.AM1_1185 (degree 2573), 329726.AM1_5107 (degree 2146), 329726.AM1_1186
-(degree 1761), 329726.AM1_2151 (degree 1735) and 329726.AM1_5997 (degree 1624).
+The undirected graph Acaryochloris marina has 6275 nodes and 755276 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03837 and has 64 connected components, where the component with most
+nodes has 6113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 240.73, and
+the node degree mode is 3. The top 5 most central nodes are 329726.AM1_1185
+(degree 2573), 329726.AM1_5107 (degree 2146), 329726.AM1_1186 (degree 1761),
+329726.AM1_2151 (degree 1735) and 329726.AM1_5997 (degree 1624).
 
 
 References
@@ -106,13 +107,14 @@ def AcaryochlorisMarina(
 	
 	Datetime: 2021-02-02 20:29:26.694386
 	
-	The undirected graph Acaryochloris marina has 6275 nodes and 755276 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03837 and
-	has 64 connected components, where the component with most nodes has 6113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 240.73, and the node degree mode is 3. The top 5 most central
-	nodes are 329726.AM1_1185 (degree 2573), 329726.AM1_5107 (degree 2146), 329726.AM1_1186
-	(degree 1761), 329726.AM1_2151 (degree 1735) and 329726.AM1_5997 (degree 1624).
+	The undirected graph Acaryochloris marina has 6275 nodes and 755276 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03837 and has 64 connected components, where the component with most
+	nodes has 6113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 240.73, and
+	the node degree mode is 3. The top 5 most central nodes are 329726.AM1_1185
+	(degree 2573), 329726.AM1_5107 (degree 2146), 329726.AM1_1186 (degree 1761),
+	329726.AM1_2151 (degree 1735) and 329726.AM1_5997 (degree 1624).
 	
 
 

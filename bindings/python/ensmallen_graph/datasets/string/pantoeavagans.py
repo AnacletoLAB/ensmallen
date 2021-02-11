@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:34.945439
 
-The undirected graph Pantoea vagans has 3778 nodes and 297946 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04176 and
-has 9 connected components, where the component with most nodes has 3761 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 129,
-the mean node degree is 157.73, and the node degree mode is 2. The top 5 most central
-nodes are 712898.Pvag_3229 (degree 1245), 712898.Pvag_3627 (degree 1074), 712898.Pvag_2268
-(degree 1010), 712898.Pvag_2017 (degree 909) and 712898.Pvag_3628 (degree 886).
+The undirected graph Pantoea vagans has 3778 nodes and 297946 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04176 and has 9 connected components, where the component with most
+nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 129, the mean node degree is 157.73, and
+the node degree mode is 2. The top 5 most central nodes are 712898.Pvag_3229
+(degree 1245), 712898.Pvag_3627 (degree 1074), 712898.Pvag_2268 (degree
+1010), 712898.Pvag_2017 (degree 909) and 712898.Pvag_3628 (degree 886).
 
 
 References
@@ -106,13 +107,14 @@ def PantoeaVagans(
 	
 	Datetime: 2021-02-02 21:35:34.945439
 	
-	The undirected graph Pantoea vagans has 3778 nodes and 297946 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04176 and
-	has 9 connected components, where the component with most nodes has 3761 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 129,
-	the mean node degree is 157.73, and the node degree mode is 2. The top 5 most central
-	nodes are 712898.Pvag_3229 (degree 1245), 712898.Pvag_3627 (degree 1074), 712898.Pvag_2268
-	(degree 1010), 712898.Pvag_2017 (degree 909) and 712898.Pvag_3628 (degree 886).
+	The undirected graph Pantoea vagans has 3778 nodes and 297946 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04176 and has 9 connected components, where the component with most
+	nodes has 3761 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 129, the mean node degree is 157.73, and
+	the node degree mode is 2. The top 5 most central nodes are 712898.Pvag_3229
+	(degree 1245), 712898.Pvag_3627 (degree 1074), 712898.Pvag_2268 (degree
+	1010), 712898.Pvag_2017 (degree 909) and 712898.Pvag_3628 (degree 886).
 	
 
 

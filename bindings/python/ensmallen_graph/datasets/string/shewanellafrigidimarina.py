@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:58.091327
 
-The undirected graph Shewanella frigidimarina has 3987 nodes and 339367 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04271
-and has 9 connected components, where the component with most nodes has 3970 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 139, the mean node degree is 170.24, and the node degree mode is 1. The top 5
-most central nodes are 318167.Sfri_3943 (degree 1400), 318167.Sfri_0548 (degree 1311),
-318167.Sfri_1138 (degree 1156), 318167.Sfri_2246 (degree 1049) and 318167.Sfri_2951
-(degree 1031).
+The undirected graph Shewanella frigidimarina has 3987 nodes and 339367
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04271 and has 9 connected components, where the component
+with most nodes has 3970 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 170.24,
+and the node degree mode is 1. The top 5 most central nodes are 318167.Sfri_3943
+(degree 1400), 318167.Sfri_0548 (degree 1311), 318167.Sfri_1138 (degree
+1156), 318167.Sfri_2246 (degree 1049) and 318167.Sfri_2951 (degree 1031).
 
 
 References
@@ -107,14 +107,14 @@ def ShewanellaFrigidimarina(
 	
 	Datetime: 2021-02-02 20:26:58.091327
 	
-	The undirected graph Shewanella frigidimarina has 3987 nodes and 339367 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04271
-	and has 9 connected components, where the component with most nodes has 3970 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 139, the mean node degree is 170.24, and the node degree mode is 1. The top 5
-	most central nodes are 318167.Sfri_3943 (degree 1400), 318167.Sfri_0548 (degree 1311),
-	318167.Sfri_1138 (degree 1156), 318167.Sfri_2246 (degree 1049) and 318167.Sfri_2951
-	(degree 1031).
+	The undirected graph Shewanella frigidimarina has 3987 nodes and 339367
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04271 and has 9 connected components, where the component
+	with most nodes has 3970 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 170.24,
+	and the node degree mode is 1. The top 5 most central nodes are 318167.Sfri_3943
+	(degree 1400), 318167.Sfri_0548 (degree 1311), 318167.Sfri_1138 (degree
+	1156), 318167.Sfri_2246 (degree 1049) and 318167.Sfri_2951 (degree 1031).
 	
 
 

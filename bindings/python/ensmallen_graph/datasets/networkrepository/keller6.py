@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:37.863093
 
-The undirected graph keller6 has 3361 nodes and 4619898 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.81819
-and is connected, as it has a single component. The graph median node degree is 2724,
-the mean node degree is 2749.12 and the node degree mode is 2722. The top 5 most
-central nodes are 2931 (degree 2952), 2655 (degree 2952), 2595 (degree 2952), 2583
-(degree 2952) and 2581 (degree 2952).
+The undirected graph keller6 has 3361 nodes and 4619898 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.81819 and is connected, as it has a single component. The
+graph median node degree is 2724, the mean node degree is 2749.12 and the
+node degree mode is 2722. The top 5 most central nodes are 2931 (degree
+2952), 2655 (degree 2952), 2595 (degree 2952), 2583 (degree 2952) and 2581
+(degree 2952).
 
 
 References
@@ -115,12 +116,13 @@ def Keller6(
 	
 	Datetime: 2021-02-03 22:55:37.863093
 	
-	The undirected graph keller6 has 3361 nodes and 4619898 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.81819
-	and is connected, as it has a single component. The graph median node degree is 2724,
-	the mean node degree is 2749.12 and the node degree mode is 2722. The top 5 most
-	central nodes are 2931 (degree 2952), 2655 (degree 2952), 2595 (degree 2952), 2583
-	(degree 2952) and 2581 (degree 2952).
+	The undirected graph keller6 has 3361 nodes and 4619898 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.81819 and is connected, as it has a single component. The
+	graph median node degree is 2724, the mean node degree is 2749.12 and the
+	node degree mode is 2722. The top 5 most central nodes are 2931 (degree
+	2952), 2655 (degree 2952), 2595 (degree 2952), 2583 (degree 2952) and 2581
+	(degree 2952).
 	
 
 

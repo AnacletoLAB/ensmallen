@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:37:10.958095
 
-The undirected graph Alistipes indistinctus has 2333 nodes and 143159 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05263 and
-has 11 connected components, where the component with most nodes has 2302 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 122.73, and the node degree mode is 3. The top 5 most central
-nodes are 742725.HMPREF9450_00200 (degree 850), 742725.HMPREF9450_02272 (degree 751),
-742725.HMPREF9450_00743 (degree 738), 742725.HMPREF9450_01569 (degree 717) and 742725.HMPREF9450_01830
+The undirected graph Alistipes indistinctus has 2333 nodes and 143159 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05263 and has 11 connected components, where the component with most
+nodes has 2302 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 122.73, and
+the node degree mode is 3. The top 5 most central nodes are 742725.HMPREF9450_00200
+(degree 850), 742725.HMPREF9450_02272 (degree 751), 742725.HMPREF9450_00743
+(degree 738), 742725.HMPREF9450_01569 (degree 717) and 742725.HMPREF9450_01830
 (degree 643).
 
 
@@ -107,13 +108,14 @@ def AlistipesIndistinctus(
 	
 	Datetime: 2021-02-02 21:37:10.958095
 	
-	The undirected graph Alistipes indistinctus has 2333 nodes and 143159 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05263 and
-	has 11 connected components, where the component with most nodes has 2302 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 122.73, and the node degree mode is 3. The top 5 most central
-	nodes are 742725.HMPREF9450_00200 (degree 850), 742725.HMPREF9450_02272 (degree 751),
-	742725.HMPREF9450_00743 (degree 738), 742725.HMPREF9450_01569 (degree 717) and 742725.HMPREF9450_01830
+	The undirected graph Alistipes indistinctus has 2333 nodes and 143159 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05263 and has 11 connected components, where the component with most
+	nodes has 2302 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 122.73, and
+	the node degree mode is 3. The top 5 most central nodes are 742725.HMPREF9450_00200
+	(degree 850), 742725.HMPREF9450_02272 (degree 751), 742725.HMPREF9450_00743
+	(degree 738), 742725.HMPREF9450_01569 (degree 717) and 742725.HMPREF9450_01830
 	(degree 643).
 	
 

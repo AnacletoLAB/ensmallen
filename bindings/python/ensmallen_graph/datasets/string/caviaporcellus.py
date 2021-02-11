@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:50:58.680918
 
-The undirected graph Cavia porcellus has 18219 nodes and 3714209 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02238 and
-has 2 connected components, where the component with most nodes has 18217 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 289,
-the mean node degree is 407.73, and the node degree mode is 12. The top 5 most central
-nodes are 10141.ENSCPOP00000016465 (degree 4024), 10141.ENSCPOP00000020545 (degree
-3880), 10141.ENSCPOP00000002945 (degree 3771), 10141.ENSCPOP00000000965 (degree 3666)
-and 10141.ENSCPOP00000011740 (degree 3618).
+The undirected graph Cavia porcellus has 18219 nodes and 3714209 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02238 and has 2 connected components, where the component with most
+nodes has 18217 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 289, the mean node degree is 407.73, and
+the node degree mode is 12. The top 5 most central nodes are 10141.ENSCPOP00000016465
+(degree 4024), 10141.ENSCPOP00000020545 (degree 3880), 10141.ENSCPOP00000002945
+(degree 3771), 10141.ENSCPOP00000000965 (degree 3666) and 10141.ENSCPOP00000011740
+(degree 3618).
 
 
 References
@@ -107,14 +108,15 @@ def CaviaPorcellus(
 	
 	Datetime: 2021-02-02 17:50:58.680918
 	
-	The undirected graph Cavia porcellus has 18219 nodes and 3714209 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02238 and
-	has 2 connected components, where the component with most nodes has 18217 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 289,
-	the mean node degree is 407.73, and the node degree mode is 12. The top 5 most central
-	nodes are 10141.ENSCPOP00000016465 (degree 4024), 10141.ENSCPOP00000020545 (degree
-	3880), 10141.ENSCPOP00000002945 (degree 3771), 10141.ENSCPOP00000000965 (degree 3666)
-	and 10141.ENSCPOP00000011740 (degree 3618).
+	The undirected graph Cavia porcellus has 18219 nodes and 3714209 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02238 and has 2 connected components, where the component with most
+	nodes has 18217 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 289, the mean node degree is 407.73, and
+	the node degree mode is 12. The top 5 most central nodes are 10141.ENSCPOP00000016465
+	(degree 4024), 10141.ENSCPOP00000020545 (degree 3880), 10141.ENSCPOP00000002945
+	(degree 3771), 10141.ENSCPOP00000000965 (degree 3666) and 10141.ENSCPOP00000011740
+	(degree 3618).
 	
 
 

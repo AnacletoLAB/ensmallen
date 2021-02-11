@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:50:10.974366
 
-The undirected graph socfb-Santa74 has 3578 nodes and 151747 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02371 and
-is connected, as it has a single component. The graph median node degree is 69, the
-mean node degree is 84.82, and the node degree mode is 1. The top 5 most central
-nodes are 1834 (degree 1129), 427 (degree 444), 3125 (degree 405), 1384 (degree 400)
-and 1115 (degree 394).
+The undirected graph socfb-Santa74 has 3578 nodes and 151747 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02371 and is connected, as it has a single component. The graph median
+node degree is 69, the mean node degree is 84.82, and the node degree mode
+is 1. The top 5 most central nodes are 1834 (degree 1129), 427 (degree
+444), 3125 (degree 405), 1384 (degree 400) and 1115 (degree 394).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbSanta74(
 	
 	Datetime: 2021-02-06 11:50:10.974366
 	
-	The undirected graph socfb-Santa74 has 3578 nodes and 151747 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02371 and
-	is connected, as it has a single component. The graph median node degree is 69, the
-	mean node degree is 84.82, and the node degree mode is 1. The top 5 most central
-	nodes are 1834 (degree 1129), 427 (degree 444), 3125 (degree 405), 1384 (degree 400)
-	and 1115 (degree 394).
+	The undirected graph socfb-Santa74 has 3578 nodes and 151747 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02371 and is connected, as it has a single component. The graph median
+	node degree is 69, the mean node degree is 84.82, and the node degree mode
+	is 1. The top 5 most central nodes are 1834 (degree 1129), 427 (degree
+	444), 3125 (degree 405), 1384 (degree 400) and 1115 (degree 394).
 	
 
 

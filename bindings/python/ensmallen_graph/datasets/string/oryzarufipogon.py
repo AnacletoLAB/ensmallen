@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:43:23.578429
 
-The undirected graph Oryza rufipogon has 22647 nodes and 4699204 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01833 and
-has 11 connected components, where the component with most nodes has 22626 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 415.00, and the node degree mode is 8. The top 5
-most central nodes are 4529.ORUFI02G12480.1 (degree 7465), 4529.ORUFI03G00460.4 (degree
-5568), 4529.ORUFI02G11590.1 (degree 5467), 4529.ORUFI12G12040.1 (degree 5113) and
-4529.ORUFI11G14530.1 (degree 5113).
+The undirected graph Oryza rufipogon has 22647 nodes and 4699204 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01833 and has 11 connected components, where the component with most
+nodes has 22626 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 415.00, and
+the node degree mode is 8. The top 5 most central nodes are 4529.ORUFI02G12480.1
+(degree 7465), 4529.ORUFI03G00460.4 (degree 5568), 4529.ORUFI02G11590.1
+(degree 5467), 4529.ORUFI12G12040.1 (degree 5113) and 4529.ORUFI11G14530.1
+(degree 5113).
 
 
 References
@@ -107,14 +108,15 @@ def OryzaRufipogon(
 	
 	Datetime: 2021-02-02 16:43:23.578429
 	
-	The undirected graph Oryza rufipogon has 22647 nodes and 4699204 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01833 and
-	has 11 connected components, where the component with most nodes has 22626 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 415.00, and the node degree mode is 8. The top 5
-	most central nodes are 4529.ORUFI02G12480.1 (degree 7465), 4529.ORUFI03G00460.4 (degree
-	5568), 4529.ORUFI02G11590.1 (degree 5467), 4529.ORUFI12G12040.1 (degree 5113) and
-	4529.ORUFI11G14530.1 (degree 5113).
+	The undirected graph Oryza rufipogon has 22647 nodes and 4699204 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01833 and has 11 connected components, where the component with most
+	nodes has 22626 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 415.00, and
+	the node degree mode is 8. The top 5 most central nodes are 4529.ORUFI02G12480.1
+	(degree 7465), 4529.ORUFI03G00460.4 (degree 5568), 4529.ORUFI02G11590.1
+	(degree 5467), 4529.ORUFI12G12040.1 (degree 5113) and 4529.ORUFI11G14530.1
+	(degree 5113).
 	
 
 

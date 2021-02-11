@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:11:58.877429
 
-The undirected graph Streptococcus constellatus pharyngis SK1060 has 2435 nodes and
-241282 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.08142 and has 5 connected components, where the component with most
-nodes has 2426 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 146, the mean node degree is 198.18, and the node degree mode
-is 9. The top 5 most central nodes are 1035184.HMPREF1042_2114 (degree 1132), 1035184.HMPREF1042_0948
-(degree 1072), 1035184.HMPREF1042_2450 (degree 1047), 1035184.HMPREF1042_0093 (degree
-1035) and 1035184.HMPREF1042_2159 (degree 908).
+The undirected graph Streptococcus constellatus pharyngis SK1060 has 2435
+nodes and 241282 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.08142 and has 5 connected components,
+where the component with most nodes has 2426 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 146, the mean
+node degree is 198.18, and the node degree mode is 9. The top 5 most central
+nodes are 1035184.HMPREF1042_2114 (degree 1132), 1035184.HMPREF1042_0948
+(degree 1072), 1035184.HMPREF1042_2450 (degree 1047), 1035184.HMPREF1042_0093
+(degree 1035) and 1035184.HMPREF1042_2159 (degree 908).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusConstellatusPharyngisSk1060(
 	
 	Datetime: 2021-02-02 22:11:58.877429
 	
-	The undirected graph Streptococcus constellatus pharyngis SK1060 has 2435 nodes and
-	241282 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.08142 and has 5 connected components, where the component with most
-	nodes has 2426 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 146, the mean node degree is 198.18, and the node degree mode
-	is 9. The top 5 most central nodes are 1035184.HMPREF1042_2114 (degree 1132), 1035184.HMPREF1042_0948
-	(degree 1072), 1035184.HMPREF1042_2450 (degree 1047), 1035184.HMPREF1042_0093 (degree
-	1035) and 1035184.HMPREF1042_2159 (degree 908).
+	The undirected graph Streptococcus constellatus pharyngis SK1060 has 2435
+	nodes and 241282 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.08142 and has 5 connected components,
+	where the component with most nodes has 2426 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 146, the mean
+	node degree is 198.18, and the node degree mode is 9. The top 5 most central
+	nodes are 1035184.HMPREF1042_2114 (degree 1132), 1035184.HMPREF1042_0948
+	(degree 1072), 1035184.HMPREF1042_2450 (degree 1047), 1035184.HMPREF1042_0093
+	(degree 1035) and 1035184.HMPREF1042_2159 (degree 908).
 	
 
 

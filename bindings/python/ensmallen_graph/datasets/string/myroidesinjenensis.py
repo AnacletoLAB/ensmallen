@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:50.178234
 
-The undirected graph Myroides injenensis has 3013 nodes and 235304 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05186 and
-has 16 connected components, where the component with most nodes has 2977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 156.19, and the node degree mode is 2. The top 5 most central
-nodes are 1008457.BAEX01000077_gene46 (degree 1090), 1008457.BAEX01000099_gene2234
-(degree 909), 1008457.BAEX01000099_gene2238 (degree 893), 1008457.BAEX01000049_gene716
-(degree 846) and 1008457.BAEX01000043_gene2683 (degree 777).
+The undirected graph Myroides injenensis has 3013 nodes and 235304 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05186 and has 16 connected components, where the component with most
+nodes has 2977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 156.19, and
+the node degree mode is 2. The top 5 most central nodes are 1008457.BAEX01000077_gene46
+(degree 1090), 1008457.BAEX01000099_gene2234 (degree 909), 1008457.BAEX01000099_gene2238
+(degree 893), 1008457.BAEX01000049_gene716 (degree 846) and 1008457.BAEX01000043_gene2683
+(degree 777).
 
 
 References
@@ -107,14 +108,15 @@ def MyroidesInjenensis(
 	
 	Datetime: 2021-02-02 22:08:50.178234
 	
-	The undirected graph Myroides injenensis has 3013 nodes and 235304 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05186 and
-	has 16 connected components, where the component with most nodes has 2977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 156.19, and the node degree mode is 2. The top 5 most central
-	nodes are 1008457.BAEX01000077_gene46 (degree 1090), 1008457.BAEX01000099_gene2234
-	(degree 909), 1008457.BAEX01000099_gene2238 (degree 893), 1008457.BAEX01000049_gene716
-	(degree 846) and 1008457.BAEX01000043_gene2683 (degree 777).
+	The undirected graph Myroides injenensis has 3013 nodes and 235304 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05186 and has 16 connected components, where the component with most
+	nodes has 2977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 156.19, and
+	the node degree mode is 2. The top 5 most central nodes are 1008457.BAEX01000077_gene46
+	(degree 1090), 1008457.BAEX01000099_gene2234 (degree 909), 1008457.BAEX01000099_gene2238
+	(degree 893), 1008457.BAEX01000049_gene716 (degree 846) and 1008457.BAEX01000043_gene2683
+	(degree 777).
 	
 
 

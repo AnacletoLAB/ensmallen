@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:16:55.856932
 
-The undirected graph lp1 has 534388 nodes and 1088904 unweighted edges, of which
-534388 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 3.08, and the node degree mode is 2. The top 5 most central
-nodes are 1 (degree 249643), 451675 (degree 99), 41420 (degree 99), 436346 (degree
-98) and 154248 (degree 98).
+The undirected graph lp1 has 534388 nodes and 1088904 unweighted edges,
+of which 534388 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 3.08, and the node
+degree mode is 2. The top 5 most central nodes are 1 (degree 249643), 451675
+(degree 99), 41420 (degree 99), 436346 (degree 98) and 154248 (degree 98).
 
 
 References
@@ -102,12 +102,12 @@ def Lp1(
 	
 	Datetime: 2021-02-06 11:16:55.856932
 	
-	The undirected graph lp1 has 534388 nodes and 1088904 unweighted edges, of which
-	534388 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 3.08, and the node degree mode is 2. The top 5 most central
-	nodes are 1 (degree 249643), 451675 (degree 99), 41420 (degree 99), 436346 (degree
-	98) and 154248 (degree 98).
+	The undirected graph lp1 has 534388 nodes and 1088904 unweighted edges,
+	of which 534388 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 3.08, and the node
+	degree mode is 2. The top 5 most central nodes are 1 (degree 249643), 451675
+	(degree 99), 41420 (degree 99), 436346 (degree 98) and 154248 (degree 98).
 	
 
 

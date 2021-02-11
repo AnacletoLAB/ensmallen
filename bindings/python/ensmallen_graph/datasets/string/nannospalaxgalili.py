@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:41.477945
 
-The undirected graph Nannospalax galili has 20329 nodes and 4196433 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02031 and
-is connected, as it has a single component. The graph median node degree is 286,
-the mean node degree is 412.85, and the node degree mode is 10. The top 5 most central
-nodes are 1026970.XP_008836722.1 (degree 4436), 1026970.XP_008825572.1 (degree 4322),
-1026970.XP_008822143.1 (degree 4019), 1026970.XP_008840426.1 (degree 3833) and 1026970.XP_008824451.1
+The undirected graph Nannospalax galili has 20329 nodes and 4196433 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02031 and is connected, as it has a single component. The graph median
+node degree is 286, the mean node degree is 412.85, and the node degree
+mode is 10. The top 5 most central nodes are 1026970.XP_008836722.1 (degree
+4436), 1026970.XP_008825572.1 (degree 4322), 1026970.XP_008822143.1 (degree
+4019), 1026970.XP_008840426.1 (degree 3833) and 1026970.XP_008824451.1
 (degree 3719).
 
 
@@ -106,12 +107,13 @@ def NannospalaxGalili(
 	
 	Datetime: 2021-02-02 22:09:41.477945
 	
-	The undirected graph Nannospalax galili has 20329 nodes and 4196433 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02031 and
-	is connected, as it has a single component. The graph median node degree is 286,
-	the mean node degree is 412.85, and the node degree mode is 10. The top 5 most central
-	nodes are 1026970.XP_008836722.1 (degree 4436), 1026970.XP_008825572.1 (degree 4322),
-	1026970.XP_008822143.1 (degree 4019), 1026970.XP_008840426.1 (degree 3833) and 1026970.XP_008824451.1
+	The undirected graph Nannospalax galili has 20329 nodes and 4196433 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02031 and is connected, as it has a single component. The graph median
+	node degree is 286, the mean node degree is 412.85, and the node degree
+	mode is 10. The top 5 most central nodes are 1026970.XP_008836722.1 (degree
+	4436), 1026970.XP_008825572.1 (degree 4322), 1026970.XP_008822143.1 (degree
+	4019), 1026970.XP_008840426.1 (degree 3833) and 1026970.XP_008824451.1
 	(degree 3719).
 	
 

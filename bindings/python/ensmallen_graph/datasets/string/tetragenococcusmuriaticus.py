@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:51:43.827707
 
-The undirected graph Tetragenococcus muriaticus has 2027 nodes and 160300 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07807
-and has 5 connected components, where the component with most nodes has 2019 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 121, the mean node degree is 158.16, and the node degree mode is 2. The top 5
-most central nodes are 1123359.AUIQ01000001_gene1920 (degree 952), 1123359.AUIQ01000040_gene363
-(degree 870), 1123359.AUIQ01000014_gene729 (degree 816), 1123359.AUIQ01000005_gene1364
-(degree 801) and 1123359.AUIQ01000002_gene1590 (degree 771).
+The undirected graph Tetragenococcus muriaticus has 2027 nodes and 160300
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07807 and has 5 connected components, where the component
+with most nodes has 2019 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 158.16,
+and the node degree mode is 2. The top 5 most central nodes are 1123359.AUIQ01000001_gene1920
+(degree 952), 1123359.AUIQ01000040_gene363 (degree 870), 1123359.AUIQ01000014_gene729
+(degree 816), 1123359.AUIQ01000005_gene1364 (degree 801) and 1123359.AUIQ01000002_gene1590
+(degree 771).
 
 
 References
@@ -107,14 +108,15 @@ def TetragenococcusMuriaticus(
 	
 	Datetime: 2021-02-02 22:51:43.827707
 	
-	The undirected graph Tetragenococcus muriaticus has 2027 nodes and 160300 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07807
-	and has 5 connected components, where the component with most nodes has 2019 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 121, the mean node degree is 158.16, and the node degree mode is 2. The top 5
-	most central nodes are 1123359.AUIQ01000001_gene1920 (degree 952), 1123359.AUIQ01000040_gene363
-	(degree 870), 1123359.AUIQ01000014_gene729 (degree 816), 1123359.AUIQ01000005_gene1364
-	(degree 801) and 1123359.AUIQ01000002_gene1590 (degree 771).
+	The undirected graph Tetragenococcus muriaticus has 2027 nodes and 160300
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07807 and has 5 connected components, where the component
+	with most nodes has 2019 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 158.16,
+	and the node degree mode is 2. The top 5 most central nodes are 1123359.AUIQ01000001_gene1920
+	(degree 952), 1123359.AUIQ01000040_gene363 (degree 870), 1123359.AUIQ01000014_gene729
+	(degree 816), 1123359.AUIQ01000005_gene1364 (degree 801) and 1123359.AUIQ01000002_gene1590
+	(degree 771).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:19:59.813046
 
-The undirected graph netz4504 has 1961 nodes and 2578 unweighted edges, of which
-none are self-loops. The graph is sparse as it has a density of 0.00134 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 2.63, and the node degree mode is 2. The top 5 most central nodes are 720 (degree
-8), 716 (degree 8), 1911 (degree 6), 1654 (degree 6) and 1502 (degree 6).
+The undirected graph netz4504 has 1961 nodes and 2578 unweighted edges,
+of which none are self-loops. The graph is sparse as it has a density of
+0.00134 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 2.63, and the node degree mode
+is 2. The top 5 most central nodes are 720 (degree 8), 716 (degree 8),
+1911 (degree 6), 1654 (degree 6) and 1502 (degree 6).
 
 
 References
@@ -101,11 +102,12 @@ def Netz4504(
 	
 	Datetime: 2021-02-06 08:19:59.813046
 	
-	The undirected graph netz4504 has 1961 nodes and 2578 unweighted edges, of which
-	none are self-loops. The graph is sparse as it has a density of 0.00134 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 2.63, and the node degree mode is 2. The top 5 most central nodes are 720 (degree
-	8), 716 (degree 8), 1911 (degree 6), 1654 (degree 6) and 1502 (degree 6).
+	The undirected graph netz4504 has 1961 nodes and 2578 unweighted edges,
+	of which none are self-loops. The graph is sparse as it has a density of
+	0.00134 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 2.63, and the node degree mode
+	is 2. The top 5 most central nodes are 720 (degree 8), 716 (degree 8),
+	1911 (degree 6), 1654 (degree 6) and 1502 (degree 6).
 	
 
 

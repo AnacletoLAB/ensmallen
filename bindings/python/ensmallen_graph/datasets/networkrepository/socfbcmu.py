@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:44.502487
 
-The undirected graph socfb-CMU has 6621 nodes and 249959 unweighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.01141 and is connected,
-as it has a single component. The graph median node degree is 54, the mean node degree
-is 75.50, and the node degree mode is 1. The top 5 most central nodes are 2104 (degree
-840), 2483 (degree 785), 3068 (degree 777), 2777 (degree 742) and 3096 (degree 711).
+The undirected graph socfb-CMU has 6621 nodes and 249959 unweighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.01141 and is connected, as it has a single component. The graph median
+node degree is 54, the mean node degree is 75.50, and the node degree mode
+is 1. The top 5 most central nodes are 2104 (degree 840), 2483 (degree
+785), 3068 (degree 777), 2777 (degree 742) and 3096 (degree 711).
 
 
 References
@@ -122,11 +123,12 @@ def SocfbCmu(
 	
 	Datetime: 2021-02-06 11:48:44.502487
 	
-	The undirected graph socfb-CMU has 6621 nodes and 249959 unweighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.01141 and is connected,
-	as it has a single component. The graph median node degree is 54, the mean node degree
-	is 75.50, and the node degree mode is 1. The top 5 most central nodes are 2104 (degree
-	840), 2483 (degree 785), 3068 (degree 777), 2777 (degree 742) and 3096 (degree 711).
+	The undirected graph socfb-CMU has 6621 nodes and 249959 unweighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.01141 and is connected, as it has a single component. The graph median
+	node degree is 54, the mean node degree is 75.50, and the node degree mode
+	is 1. The top 5 most central nodes are 2104 (degree 840), 2483 (degree
+	785), 3068 (degree 777), 2777 (degree 742) and 3096 (degree 711).
 	
 
 

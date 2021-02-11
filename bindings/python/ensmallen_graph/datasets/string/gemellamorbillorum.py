@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:13.368278
 
-The undirected graph Gemella morbillorum has 1617 nodes and 123814 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09477 and
-has 4 connected components, where the component with most nodes has 1611 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 153.14, and the node degree mode is 7. The top 5 most central
-nodes are 562982.HMPREF0432_00618 (degree 757), 562982.HMPREF0432_01044 (degree 725),
-562982.HMPREF0432_00921 (degree 572), 562982.HMPREF0432_00187 (degree 570) and 562982.HMPREF0432_00032
+The undirected graph Gemella morbillorum has 1617 nodes and 123814 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09477 and has 4 connected components, where the component with most
+nodes has 1611 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 153.14, and
+the node degree mode is 7. The top 5 most central nodes are 562982.HMPREF0432_00618
+(degree 757), 562982.HMPREF0432_01044 (degree 725), 562982.HMPREF0432_00921
+(degree 572), 562982.HMPREF0432_00187 (degree 570) and 562982.HMPREF0432_00032
 (degree 562).
 
 
@@ -107,13 +108,14 @@ def GemellaMorbillorum(
 	
 	Datetime: 2021-02-02 21:12:13.368278
 	
-	The undirected graph Gemella morbillorum has 1617 nodes and 123814 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09477 and
-	has 4 connected components, where the component with most nodes has 1611 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 153.14, and the node degree mode is 7. The top 5 most central
-	nodes are 562982.HMPREF0432_00618 (degree 757), 562982.HMPREF0432_01044 (degree 725),
-	562982.HMPREF0432_00921 (degree 572), 562982.HMPREF0432_00187 (degree 570) and 562982.HMPREF0432_00032
+	The undirected graph Gemella morbillorum has 1617 nodes and 123814 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09477 and has 4 connected components, where the component with most
+	nodes has 1611 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 153.14, and
+	the node degree mode is 7. The top 5 most central nodes are 562982.HMPREF0432_00618
+	(degree 757), 562982.HMPREF0432_01044 (degree 725), 562982.HMPREF0432_00921
+	(degree 572), 562982.HMPREF0432_00187 (degree 570) and 562982.HMPREF0432_00032
 	(degree 562).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:20.727952
 
-The undirected graph Spiroplasma taiwanense has 992 nodes and 49506 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10072
-and has 16 connected components, where the component with most nodes has 940 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 64, the mean node degree is 99.81, and the node degree mode is 9. The top 5 most
-central nodes are 1276220.STAIW_v1c08930 (degree 418), 1276220.STAIW_v1c09600 (degree
-418), 1276220.STAIW_v1c08010 (degree 414), 1276220.STAIW_v1c03400 (degree 406) and
-1276220.STAIW_v1c03040 (degree 367).
+The undirected graph Spiroplasma taiwanense has 992 nodes and 49506 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10072 and has 16 connected components, where the component
+with most nodes has 940 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 64, the mean node degree is 99.81,
+and the node degree mode is 9. The top 5 most central nodes are 1276220.STAIW_v1c08930
+(degree 418), 1276220.STAIW_v1c09600 (degree 418), 1276220.STAIW_v1c08010
+(degree 414), 1276220.STAIW_v1c03400 (degree 406) and 1276220.STAIW_v1c03040
+(degree 367).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaTaiwanense(
 	
 	Datetime: 2021-02-02 23:38:20.727952
 	
-	The undirected graph Spiroplasma taiwanense has 992 nodes and 49506 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10072
-	and has 16 connected components, where the component with most nodes has 940 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 64, the mean node degree is 99.81, and the node degree mode is 9. The top 5 most
-	central nodes are 1276220.STAIW_v1c08930 (degree 418), 1276220.STAIW_v1c09600 (degree
-	418), 1276220.STAIW_v1c08010 (degree 414), 1276220.STAIW_v1c03400 (degree 406) and
-	1276220.STAIW_v1c03040 (degree 367).
+	The undirected graph Spiroplasma taiwanense has 992 nodes and 49506 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10072 and has 16 connected components, where the component
+	with most nodes has 940 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 64, the mean node degree is 99.81,
+	and the node degree mode is 9. The top 5 most central nodes are 1276220.STAIW_v1c08930
+	(degree 418), 1276220.STAIW_v1c09600 (degree 418), 1276220.STAIW_v1c08010
+	(degree 414), 1276220.STAIW_v1c03400 (degree 406) and 1276220.STAIW_v1c03040
+	(degree 367).
 	
 
 

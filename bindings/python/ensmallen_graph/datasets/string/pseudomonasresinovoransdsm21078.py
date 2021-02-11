@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:30.271444
 
-The undirected graph Pseudomonas resinovorans DSM21078 has 5330 nodes and 842974
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05936 and has 6 connected components, where the component with most nodes has
-5320 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 259, the mean node degree is 316.31, and the node degree mode is 1. The
-top 5 most central nodes are 1123020.AUIE01000002_gene1667 (degree 2163), 1123020.AUIE01000035_gene5257
+The undirected graph Pseudomonas resinovorans DSM21078 has 5330 nodes and
+842974 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05936 and has 6 connected components, where the
+component with most nodes has 5320 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 259, the mean node degree
+is 316.31, and the node degree mode is 1. The top 5 most central nodes
+are 1123020.AUIE01000002_gene1667 (degree 2163), 1123020.AUIE01000035_gene5257
 (degree 2123), 1123020.AUIE01000001_gene2404 (degree 2071), 1123020.AUIE01000034_gene5306
 (degree 2064) and 1123020.AUIE01000044_gene1834 (degree 2038).
 
@@ -107,12 +108,13 @@ def PseudomonasResinovoransDsm21078(
 	
 	Datetime: 2021-02-02 22:46:30.271444
 	
-	The undirected graph Pseudomonas resinovorans DSM21078 has 5330 nodes and 842974
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05936 and has 6 connected components, where the component with most nodes has
-	5320 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 259, the mean node degree is 316.31, and the node degree mode is 1. The
-	top 5 most central nodes are 1123020.AUIE01000002_gene1667 (degree 2163), 1123020.AUIE01000035_gene5257
+	The undirected graph Pseudomonas resinovorans DSM21078 has 5330 nodes and
+	842974 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05936 and has 6 connected components, where the
+	component with most nodes has 5320 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 259, the mean node degree
+	is 316.31, and the node degree mode is 1. The top 5 most central nodes
+	are 1123020.AUIE01000002_gene1667 (degree 2163), 1123020.AUIE01000035_gene5257
 	(degree 2123), 1123020.AUIE01000001_gene2404 (degree 2071), 1123020.AUIE01000034_gene5306
 	(degree 2064) and 1123020.AUIE01000044_gene1834 (degree 2038).
 	

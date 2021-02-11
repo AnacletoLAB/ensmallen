@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:35.231713
 
-The undirected graph Gasterosteus aculeatus has 18886 nodes and 3734758 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02094
-and has 25 connected components, where the component with most nodes has 18832 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 276, the mean node degree is 395.51, and the node degree mode is 1. The top 5
-most central nodes are 69293.ENSGACP00000026689 (degree 4493), 69293.ENSGACP00000018652
-(degree 4168), 69293.ENSGACP00000016951 (degree 4050), 69293.ENSGACP00000015290 (degree
-3915) and 69293.ENSGACP00000010268 (degree 3883).
+The undirected graph Gasterosteus aculeatus has 18886 nodes and 3734758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02094 and has 25 connected components, where the component
+with most nodes has 18832 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 276, the mean node degree
+is 395.51, and the node degree mode is 1. The top 5 most central nodes
+are 69293.ENSGACP00000026689 (degree 4493), 69293.ENSGACP00000018652 (degree
+4168), 69293.ENSGACP00000016951 (degree 4050), 69293.ENSGACP00000015290
+(degree 3915) and 69293.ENSGACP00000010268 (degree 3883).
 
 
 References
@@ -107,14 +108,15 @@ def GasterosteusAculeatus(
 	
 	Datetime: 2021-02-02 18:29:35.231713
 	
-	The undirected graph Gasterosteus aculeatus has 18886 nodes and 3734758 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02094
-	and has 25 connected components, where the component with most nodes has 18832 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 276, the mean node degree is 395.51, and the node degree mode is 1. The top 5
-	most central nodes are 69293.ENSGACP00000026689 (degree 4493), 69293.ENSGACP00000018652
-	(degree 4168), 69293.ENSGACP00000016951 (degree 4050), 69293.ENSGACP00000015290 (degree
-	3915) and 69293.ENSGACP00000010268 (degree 3883).
+	The undirected graph Gasterosteus aculeatus has 18886 nodes and 3734758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02094 and has 25 connected components, where the component
+	with most nodes has 18832 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 276, the mean node degree
+	is 395.51, and the node degree mode is 1. The top 5 most central nodes
+	are 69293.ENSGACP00000026689 (degree 4493), 69293.ENSGACP00000018652 (degree
+	4168), 69293.ENSGACP00000016951 (degree 4050), 69293.ENSGACP00000015290
+	(degree 3915) and 69293.ENSGACP00000010268 (degree 3883).
 	
 
 

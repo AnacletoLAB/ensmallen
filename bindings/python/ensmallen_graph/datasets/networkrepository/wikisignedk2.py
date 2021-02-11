@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:55:08.003031
 
-The undirected multigraph wikisigned-k2 has 138592 nodes, of which 5 are singletons
-(all have self-loops), and 719720 unweighted edges with 2 different edge types: 1
-and -1, of which 291 are self-loops and 7092 are parallel. The graph is extremely
-sparse as it has a density of 0.00007 and has 310 connected components, where the
-component with most nodes has 137740 nodes and the component with the least nodes
-has a single node. The graph median node degree is 2, the mean node degree is 10.38,
-and the node degree mode is 1. The top 5 most central nodes are 112 (degree 10857),
-314 (degree 6645), 97 (degree 3453), 765 (degree 3375) and 414 (degree 2475).
+The undirected multigraph wikisigned-k2 has 138592 nodes, of which 5 are
+singletons (all have self-loops), and 719720 unweighted edges with 2 different
+edge types: 1 and -1, of which 291 are self-loops and 7092 are parallel.
+The graph is extremely sparse as it has a density of 0.00007 and has 310
+connected components, where the component with most nodes has 137740 nodes
+and the component with the least nodes has a single node. The graph median
+node degree is 2, the mean node degree is 10.38, and the node degree mode
+is 1. The top 5 most central nodes are 112 (degree 10857), 314 (degree
+6645), 97 (degree 3453), 765 (degree 3375) and 414 (degree 2475).
 
 
 References
@@ -104,14 +105,15 @@ def WikisignedK2(
 	
 	Datetime: 2021-02-07 15:55:08.003031
 	
-	The undirected multigraph wikisigned-k2 has 138592 nodes, of which 5 are singletons
-	(all have self-loops), and 719720 unweighted edges with 2 different edge types: 1
-	and -1, of which 291 are self-loops and 7092 are parallel. The graph is extremely
-	sparse as it has a density of 0.00007 and has 310 connected components, where the
-	component with most nodes has 137740 nodes and the component with the least nodes
-	has a single node. The graph median node degree is 2, the mean node degree is 10.38,
-	and the node degree mode is 1. The top 5 most central nodes are 112 (degree 10857),
-	314 (degree 6645), 97 (degree 3453), 765 (degree 3375) and 414 (degree 2475).
+	The undirected multigraph wikisigned-k2 has 138592 nodes, of which 5 are
+	singletons (all have self-loops), and 719720 unweighted edges with 2 different
+	edge types: 1 and -1, of which 291 are self-loops and 7092 are parallel.
+	The graph is extremely sparse as it has a density of 0.00007 and has 310
+	connected components, where the component with most nodes has 137740 nodes
+	and the component with the least nodes has a single node. The graph median
+	node degree is 2, the mean node degree is 10.38, and the node degree mode
+	is 1. The top 5 most central nodes are 112 (degree 10857), 314 (degree
+	6645), 97 (degree 3453), 765 (degree 3375) and 414 (degree 2475).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:29.561225
 
-The undirected graph Methylotenera sp. L2L1 has 2401 nodes and 201682 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07000 and
-has 4 connected components, where the component with most nodes has 2395 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 168.00, and the node degree mode is 3. The top 5 most central
-nodes are 1502770.JQMG01000001_gene1228 (degree 1011), 1502770.JQMG01000001_gene2070
-(degree 879), 1502770.JQMG01000001_gene2170 (degree 824), 1502770.JQMG01000001_gene2348
-(degree 794) and 1502770.JQMG01000001_gene2171 (degree 789).
+The undirected graph Methylotenera sp. L2L1 has 2401 nodes and 201682 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07000 and has 4 connected components, where the component with most
+nodes has 2395 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 141, the mean node degree is 168.00, and
+the node degree mode is 3. The top 5 most central nodes are 1502770.JQMG01000001_gene1228
+(degree 1011), 1502770.JQMG01000001_gene2070 (degree 879), 1502770.JQMG01000001_gene2170
+(degree 824), 1502770.JQMG01000001_gene2348 (degree 794) and 1502770.JQMG01000001_gene2171
+(degree 789).
 
 
 References
@@ -107,14 +108,15 @@ def MethyloteneraSp.L2l1(
 	
 	Datetime: 2021-02-03 23:16:29.561225
 	
-	The undirected graph Methylotenera sp. L2L1 has 2401 nodes and 201682 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07000 and
-	has 4 connected components, where the component with most nodes has 2395 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 168.00, and the node degree mode is 3. The top 5 most central
-	nodes are 1502770.JQMG01000001_gene1228 (degree 1011), 1502770.JQMG01000001_gene2070
-	(degree 879), 1502770.JQMG01000001_gene2170 (degree 824), 1502770.JQMG01000001_gene2348
-	(degree 794) and 1502770.JQMG01000001_gene2171 (degree 789).
+	The undirected graph Methylotenera sp. L2L1 has 2401 nodes and 201682 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07000 and has 4 connected components, where the component with most
+	nodes has 2395 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 141, the mean node degree is 168.00, and
+	the node degree mode is 3. The top 5 most central nodes are 1502770.JQMG01000001_gene1228
+	(degree 1011), 1502770.JQMG01000001_gene2070 (degree 879), 1502770.JQMG01000001_gene2170
+	(degree 824), 1502770.JQMG01000001_gene2348 (degree 794) and 1502770.JQMG01000001_gene2171
+	(degree 789).
 	
 
 

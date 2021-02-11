@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:32:34.348108
 
-The undirected graph socfb-konect has 59216211 nodes and 92522017 unweighted edges,
-of which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and has 116284 connected components, where the component with most nodes has 58790782
-nodes and the component with the least nodes has 2 nodes. The graph median node degree
-is 1, the mean node degree is 3.12, and the node degree mode is 1. The top 5 most
-central nodes are 3384266 (degree 4960), 528160 (degree 4928), 9294151 (degree 4857),
-4400397 (degree 4799) and 742007 (degree 4740).
+The undirected graph socfb-konect has 59216211 nodes and 92522017 unweighted
+edges, of which 5 are self-loops. The graph is extremely sparse as it has
+a density of 0.00000 and has 116284 connected components, where the component
+with most nodes has 58790782 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 1, the mean node degree is
+3.12, and the node degree mode is 1. The top 5 most central nodes are 3384266
+(degree 4960), 528160 (degree 4928), 9294151 (degree 4857), 4400397 (degree
+4799) and 742007 (degree 4740).
 
 
 References
@@ -124,13 +125,14 @@ def SocfbKonect(
 	
 	Datetime: 2021-02-07 16:32:34.348108
 	
-	The undirected graph socfb-konect has 59216211 nodes and 92522017 unweighted edges,
-	of which 5 are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and has 116284 connected components, where the component with most nodes has 58790782
-	nodes and the component with the least nodes has 2 nodes. The graph median node degree
-	is 1, the mean node degree is 3.12, and the node degree mode is 1. The top 5 most
-	central nodes are 3384266 (degree 4960), 528160 (degree 4928), 9294151 (degree 4857),
-	4400397 (degree 4799) and 742007 (degree 4740).
+	The undirected graph socfb-konect has 59216211 nodes and 92522017 unweighted
+	edges, of which 5 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00000 and has 116284 connected components, where the component
+	with most nodes has 58790782 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 1, the mean node degree is
+	3.12, and the node degree mode is 1. The top 5 most central nodes are 3384266
+	(degree 4960), 528160 (degree 4928), 9294151 (degree 4857), 4400397 (degree
+	4799) and 742007 (degree 4740).
 	
 
 

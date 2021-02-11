@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:47:53.289582
 
-The undirected graph imdb has 150545 nodes and 295729 unweighted edges with 28 different
-edge types:  the 5 most common are 2005, 2006, 2004, 2002 and 2001, of which none
-are self-loops. The graph is extremely sparse as it has a density of 0.00003 and
-has 2 connected components, where the component with most nodes has 150530 nodes
-and the component with the least nodes has 15 nodes. The graph median node degree
-is 1, the mean node degree is 3.93 and the node degree mode is 1. The top 5 most
-central nodes are 4552 (degree 435), 133835 (degree 402), 133824 (degree 373), 2960
-(degree 353) and 43 (degree 350).
+The undirected graph imdb has 150545 nodes and 295729 unweighted edges
+with 28 different edge types:  the 5 most common are 2005, 2006, 2004,
+2002 and 2001, of which none are self-loops. The graph is extremely sparse
+as it has a density of 0.00003 and has 2 connected components, where the
+component with most nodes has 150530 nodes and the component with the least
+nodes has 15 nodes. The graph median node degree is 1, the mean node degree
+is 3.93 and the node degree mode is 1. The top 5 most central nodes are
+4552 (degree 435), 133835 (degree 402), 133824 (degree 373), 2960 (degree
+353) and 43 (degree 350).
 
 
 References
@@ -104,14 +105,15 @@ def Imdb(
 	
 	Datetime: 2021-02-03 23:47:53.289582
 	
-	The undirected graph imdb has 150545 nodes and 295729 unweighted edges with 28 different
-	edge types:  the 5 most common are 2005, 2006, 2004, 2002 and 2001, of which none
-	are self-loops. The graph is extremely sparse as it has a density of 0.00003 and
-	has 2 connected components, where the component with most nodes has 150530 nodes
-	and the component with the least nodes has 15 nodes. The graph median node degree
-	is 1, the mean node degree is 3.93 and the node degree mode is 1. The top 5 most
-	central nodes are 4552 (degree 435), 133835 (degree 402), 133824 (degree 373), 2960
-	(degree 353) and 43 (degree 350).
+	The undirected graph imdb has 150545 nodes and 295729 unweighted edges
+	with 28 different edge types:  the 5 most common are 2005, 2006, 2004,
+	2002 and 2001, of which none are self-loops. The graph is extremely sparse
+	as it has a density of 0.00003 and has 2 connected components, where the
+	component with most nodes has 150530 nodes and the component with the least
+	nodes has 15 nodes. The graph median node degree is 1, the mean node degree
+	is 3.93 and the node degree mode is 1. The top 5 most central nodes are
+	4552 (degree 435), 133835 (degree 402), 133824 (degree 373), 2960 (degree
+	353) and 43 (degree 350).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:53.050969
 
-The undirected graph Dorea longicatena AGR2136 has 3363 nodes and 247206 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04373
-and has 11 connected components, where the component with most nodes has 3341 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 147.02, and the node degree mode is 1. The top 5
-most central nodes are 1280698.AUJS01000029_gene2082 (degree 1173), 1280698.AUJS01000007_gene1060
-(degree 1165), 1280698.AUJS01000060_gene917 (degree 965), 1280698.AUJS01000023_gene1198
-(degree 938) and 1280698.AUJS01000004_gene2876 (degree 868).
+The undirected graph Dorea longicatena AGR2136 has 3363 nodes and 247206
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04373 and has 11 connected components, where the component
+with most nodes has 3341 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 147.02,
+and the node degree mode is 1. The top 5 most central nodes are 1280698.AUJS01000029_gene2082
+(degree 1173), 1280698.AUJS01000007_gene1060 (degree 1165), 1280698.AUJS01000060_gene917
+(degree 965), 1280698.AUJS01000023_gene1198 (degree 938) and 1280698.AUJS01000004_gene2876
+(degree 868).
 
 
 References
@@ -107,14 +108,15 @@ def DoreaLongicatenaAgr2136(
 	
 	Datetime: 2021-02-03 21:07:53.050969
 	
-	The undirected graph Dorea longicatena AGR2136 has 3363 nodes and 247206 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04373
-	and has 11 connected components, where the component with most nodes has 3341 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 147.02, and the node degree mode is 1. The top 5
-	most central nodes are 1280698.AUJS01000029_gene2082 (degree 1173), 1280698.AUJS01000007_gene1060
-	(degree 1165), 1280698.AUJS01000060_gene917 (degree 965), 1280698.AUJS01000023_gene1198
-	(degree 938) and 1280698.AUJS01000004_gene2876 (degree 868).
+	The undirected graph Dorea longicatena AGR2136 has 3363 nodes and 247206
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04373 and has 11 connected components, where the component
+	with most nodes has 3341 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 147.02,
+	and the node degree mode is 1. The top 5 most central nodes are 1280698.AUJS01000029_gene2082
+	(degree 1173), 1280698.AUJS01000007_gene1060 (degree 1165), 1280698.AUJS01000060_gene917
+	(degree 965), 1280698.AUJS01000023_gene1198 (degree 938) and 1280698.AUJS01000004_gene2876
+	(degree 868).
 	
 
 

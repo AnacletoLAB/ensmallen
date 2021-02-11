@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:03.055831
 
-The undirected graph Mycoplasma auris has 605 nodes and 23713 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.12978
-and has 8 connected components, where the component with most nodes has 590 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 59, the mean node degree is 78.39, and the node degree mode is 9. The top 5 most
-central nodes are 1188233.MAU_0260 (degree 302), 1188233.MAU_0140 (degree 247), 1188233.MAU_0940
-(degree 231), 1188233.MAU_4070 (degree 231) and 1188233.MAU_0250 (degree 222).
+The undirected graph Mycoplasma auris has 605 nodes and 23713 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12978 and has 8 connected components, where the component
+with most nodes has 590 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 59, the mean node degree is 78.39,
+and the node degree mode is 9. The top 5 most central nodes are 1188233.MAU_0260
+(degree 302), 1188233.MAU_0140 (degree 247), 1188233.MAU_0940 (degree 231),
+1188233.MAU_4070 (degree 231) and 1188233.MAU_0250 (degree 222).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaAuris(
 	
 	Datetime: 2021-02-02 23:11:03.055831
 	
-	The undirected graph Mycoplasma auris has 605 nodes and 23713 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.12978
-	and has 8 connected components, where the component with most nodes has 590 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 59, the mean node degree is 78.39, and the node degree mode is 9. The top 5 most
-	central nodes are 1188233.MAU_0260 (degree 302), 1188233.MAU_0140 (degree 247), 1188233.MAU_0940
-	(degree 231), 1188233.MAU_4070 (degree 231) and 1188233.MAU_0250 (degree 222).
+	The undirected graph Mycoplasma auris has 605 nodes and 23713 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12978 and has 8 connected components, where the component
+	with most nodes has 590 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 59, the mean node degree is 78.39,
+	and the node degree mode is 9. The top 5 most central nodes are 1188233.MAU_0260
+	(degree 302), 1188233.MAU_0140 (degree 247), 1188233.MAU_0940 (degree 231),
+	1188233.MAU_4070 (degree 231) and 1188233.MAU_0250 (degree 222).
 	
 
 

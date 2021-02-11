@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:05.617324
 
-The undirected graph soc-youtube has 495957 nodes and 1936748 unweighted edges, of
-which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 7.81, and the node degree mode is 1. The top 5 most central
-nodes are 927 (degree 25409), 90 (degree 7378), 316 (degree 6504), 304982 (degree
-6483) and 803 (degree 6282).
+The undirected graph soc-youtube has 495957 nodes and 1936748 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00002 and is connected, as it has a single component.
+The graph median node degree is 2, the mean node degree is 7.81, and the
+node degree mode is 1. The top 5 most central nodes are 927 (degree 25409),
+90 (degree 7378), 316 (degree 6504), 304982 (degree 6483) and 803 (degree
+6282).
 
 
 References
@@ -110,12 +111,13 @@ def SocYoutube(
 	
 	Datetime: 2021-02-06 12:31:05.617324
 	
-	The undirected graph soc-youtube has 495957 nodes and 1936748 unweighted edges, of
-	which none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 7.81, and the node degree mode is 1. The top 5 most central
-	nodes are 927 (degree 25409), 90 (degree 7378), 316 (degree 6504), 304982 (degree
-	6483) and 803 (degree 6282).
+	The undirected graph soc-youtube has 495957 nodes and 1936748 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00002 and is connected, as it has a single component.
+	The graph median node degree is 2, the mean node degree is 7.81, and the
+	node degree mode is 1. The top 5 most central nodes are 927 (degree 25409),
+	90 (degree 7378), 316 (degree 6504), 304982 (degree 6483) and 803 (degree
+	6282).
 	
 
 

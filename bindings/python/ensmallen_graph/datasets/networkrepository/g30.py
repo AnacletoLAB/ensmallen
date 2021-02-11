@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:01:25.758848
 
-The undirected graph G30 has 2000 nodes and 19990 unweighted edges with 2 different
-edge types: 1 and -1, of which none are self-loops. The graph is dense as it has
-a density of 0.01000 and is connected, as it has a single component. The graph median
-node degree is 20, the mean node degree is 19.99, and the node degree mode is 20.
-The top 5 most central nodes are 1346 (degree 39), 187 (degree 35), 760 (degree 35),
-833 (degree 34) and 1131 (degree 34).
+The undirected graph G30 has 2000 nodes and 19990 unweighted edges with
+2 different edge types: 1 and -1, of which none are self-loops. The graph
+is dense as it has a density of 0.01000 and is connected, as it has a single
+component. The graph median node degree is 20, the mean node degree is
+19.99, and the node degree mode is 20. The top 5 most central nodes are
+1346 (degree 39), 187 (degree 35), 760 (degree 35), 833 (degree 34) and
+1131 (degree 34).
 
 
 References
@@ -102,12 +103,13 @@ def G30(
 	
 	Datetime: 2021-02-06 10:01:25.758848
 	
-	The undirected graph G30 has 2000 nodes and 19990 unweighted edges with 2 different
-	edge types: 1 and -1, of which none are self-loops. The graph is dense as it has
-	a density of 0.01000 and is connected, as it has a single component. The graph median
-	node degree is 20, the mean node degree is 19.99, and the node degree mode is 20.
-	The top 5 most central nodes are 1346 (degree 39), 187 (degree 35), 760 (degree 35),
-	833 (degree 34) and 1131 (degree 34).
+	The undirected graph G30 has 2000 nodes and 19990 unweighted edges with
+	2 different edge types: 1 and -1, of which none are self-loops. The graph
+	is dense as it has a density of 0.01000 and is connected, as it has a single
+	component. The graph median node degree is 20, the mean node degree is
+	19.99, and the node degree mode is 20. The top 5 most central nodes are
+	1346 (degree 39), 187 (degree 35), 760 (degree 35), 833 (degree 34) and
+	1131 (degree 34).
 	
 
 

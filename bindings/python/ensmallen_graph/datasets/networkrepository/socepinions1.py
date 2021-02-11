@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:32:45.738768
 
-The undirected graph soc-Epinions1 has 75879 nodes and 405740 unweighted edges, of
-which none are self-loops. The graph is quite sparse as it has a density of 0.00014
-and has 2 connected components, where the component with most nodes has 75877 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 2, the mean node degree is 10.69 and the node degree mode is 1. The top 5 most
-central nodes are 19 (degree 3044), 646 (degree 1842), 764 (degree 1682), 635 (degree
-1626) and 144 (degree 1599).
+The undirected graph soc-Epinions1 has 75879 nodes and 405740 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00014 and has 2 connected components, where the component
+with most nodes has 75877 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 2, the mean node degree is
+10.69 and the node degree mode is 1. The top 5 most central nodes are 19
+(degree 3044), 646 (degree 1842), 764 (degree 1682), 635 (degree 1626)
+and 144 (degree 1599).
 
 
 References
@@ -103,13 +104,14 @@ def SocEpinions1(
 	
 	Datetime: 2021-02-03 23:32:45.738768
 	
-	The undirected graph soc-Epinions1 has 75879 nodes and 405740 unweighted edges, of
-	which none are self-loops. The graph is quite sparse as it has a density of 0.00014
-	and has 2 connected components, where the component with most nodes has 75877 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 2, the mean node degree is 10.69 and the node degree mode is 1. The top 5 most
-	central nodes are 19 (degree 3044), 646 (degree 1842), 764 (degree 1682), 635 (degree
-	1626) and 144 (degree 1599).
+	The undirected graph soc-Epinions1 has 75879 nodes and 405740 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00014 and has 2 connected components, where the component
+	with most nodes has 75877 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 2, the mean node degree is
+	10.69 and the node degree mode is 1. The top 5 most central nodes are 19
+	(degree 3044), 646 (degree 1842), 764 (degree 1682), 635 (degree 1626)
+	and 144 (degree 1599).
 	
 
 

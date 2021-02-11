@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:23:07.572084
 
-The undirected graph Apis mellifera has 10226 nodes and 987093 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01888 and
-has 43 connected components, where the component with most nodes has 10136 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 193.06, and the node degree mode is 1. The top 5
-most central nodes are 7460.GB47688-PA (degree 2624), 7460.GB47977-PA (degree 1860),
-7460.GB54595-PA (degree 1745), 7460.GB41836-PA (degree 1744) and 7460.GB41233-PA
-(degree 1733).
+The undirected graph Apis mellifera has 10226 nodes and 987093 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01888 and has 43 connected components, where the component with most
+nodes has 10136 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 193.06, and
+the node degree mode is 1. The top 5 most central nodes are 7460.GB47688-PA
+(degree 2624), 7460.GB47977-PA (degree 1860), 7460.GB54595-PA (degree 1745),
+7460.GB41836-PA (degree 1744) and 7460.GB41233-PA (degree 1733).
 
 
 References
@@ -107,14 +107,14 @@ def ApisMellifera(
 	
 	Datetime: 2021-02-02 17:23:07.572084
 	
-	The undirected graph Apis mellifera has 10226 nodes and 987093 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01888 and
-	has 43 connected components, where the component with most nodes has 10136 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 193.06, and the node degree mode is 1. The top 5
-	most central nodes are 7460.GB47688-PA (degree 2624), 7460.GB47977-PA (degree 1860),
-	7460.GB54595-PA (degree 1745), 7460.GB41836-PA (degree 1744) and 7460.GB41233-PA
-	(degree 1733).
+	The undirected graph Apis mellifera has 10226 nodes and 987093 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01888 and has 43 connected components, where the component with most
+	nodes has 10136 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 193.06, and
+	the node degree mode is 1. The top 5 most central nodes are 7460.GB47688-PA
+	(degree 2624), 7460.GB47977-PA (degree 1860), 7460.GB54595-PA (degree 1745),
+	7460.GB41836-PA (degree 1744) and 7460.GB41233-PA (degree 1733).
 	
 
 

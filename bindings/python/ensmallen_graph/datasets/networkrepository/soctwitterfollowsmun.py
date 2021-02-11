@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:48:11.361540
 
-The undirected graph soc-twitter-follows-mun has 465017 nodes and 833541 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00001 and is connected, as it has a single component. The graph median node
-degree is 1, the mean node degree is 3.58, and the node degree mode is 1. The top
-5 most central nodes are 643 (degree 677), 3580 (degree 618), 6389 (degree 593),
-16759 (degree 587) and 170 (degree 560).
+The undirected graph soc-twitter-follows-mun has 465017 nodes and 833541
+unweighted edges, of which none are self-loops. The graph is extremely
+sparse as it has a density of 0.00001 and is connected, as it has a single
+component. The graph median node degree is 1, the mean node degree is 3.58,
+and the node degree mode is 1. The top 5 most central nodes are 643 (degree
+677), 3580 (degree 618), 6389 (degree 593), 16759 (degree 587) and 170
+(degree 560).
 
 
 References
@@ -111,12 +112,13 @@ def SocTwitterFollowsMun(
 	
 	Datetime: 2021-02-06 11:48:11.361540
 	
-	The undirected graph soc-twitter-follows-mun has 465017 nodes and 833541 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00001 and is connected, as it has a single component. The graph median node
-	degree is 1, the mean node degree is 3.58, and the node degree mode is 1. The top
-	5 most central nodes are 643 (degree 677), 3580 (degree 618), 6389 (degree 593),
-	16759 (degree 587) and 170 (degree 560).
+	The undirected graph soc-twitter-follows-mun has 465017 nodes and 833541
+	unweighted edges, of which none are self-loops. The graph is extremely
+	sparse as it has a density of 0.00001 and is connected, as it has a single
+	component. The graph median node degree is 1, the mean node degree is 3.58,
+	and the node degree mode is 1. The top 5 most central nodes are 643 (degree
+	677), 3580 (degree 618), 6389 (degree 593), 16759 (degree 587) and 170
+	(degree 560).
 	
 
 

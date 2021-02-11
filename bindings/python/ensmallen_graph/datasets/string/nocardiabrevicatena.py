@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:15:57.974574
 
-The undirected graph Nocardia brevicatena has 6285 nodes and 976449 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04945 and
-has 44 connected components, where the component with most nodes has 6170 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 252,
-the mean node degree is 310.72, and the node degree mode is 2. The top 5 most central
-nodes are 1206725.BAFU01000248_gene3204 (degree 3030), 1206725.BAFU01000029_gene3018
-(degree 2285), 1206725.BAFU01000044_gene2195 (degree 1989), 1206725.BAFU01000247_gene2505
-(degree 1890) and 1206725.BAFU01000045_gene2002 (degree 1862).
+The undirected graph Nocardia brevicatena has 6285 nodes and 976449 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04945 and has 44 connected components, where the component with most
+nodes has 6170 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 252, the mean node degree is 310.72, and
+the node degree mode is 2. The top 5 most central nodes are 1206725.BAFU01000248_gene3204
+(degree 3030), 1206725.BAFU01000029_gene3018 (degree 2285), 1206725.BAFU01000044_gene2195
+(degree 1989), 1206725.BAFU01000247_gene2505 (degree 1890) and 1206725.BAFU01000045_gene2002
+(degree 1862).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaBrevicatena(
 	
 	Datetime: 2021-02-02 23:15:57.974574
 	
-	The undirected graph Nocardia brevicatena has 6285 nodes and 976449 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04945 and
-	has 44 connected components, where the component with most nodes has 6170 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 252,
-	the mean node degree is 310.72, and the node degree mode is 2. The top 5 most central
-	nodes are 1206725.BAFU01000248_gene3204 (degree 3030), 1206725.BAFU01000029_gene3018
-	(degree 2285), 1206725.BAFU01000044_gene2195 (degree 1989), 1206725.BAFU01000247_gene2505
-	(degree 1890) and 1206725.BAFU01000045_gene2002 (degree 1862).
+	The undirected graph Nocardia brevicatena has 6285 nodes and 976449 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04945 and has 44 connected components, where the component with most
+	nodes has 6170 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 252, the mean node degree is 310.72, and
+	the node degree mode is 2. The top 5 most central nodes are 1206725.BAFU01000248_gene3204
+	(degree 3030), 1206725.BAFU01000029_gene3018 (degree 2285), 1206725.BAFU01000044_gene2195
+	(degree 1989), 1206725.BAFU01000247_gene2505 (degree 1890) and 1206725.BAFU01000045_gene2002
+	(degree 1862).
 	
 
 

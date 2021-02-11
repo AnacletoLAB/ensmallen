@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:29.431501
 
-The undirected graph Aggregatibacter actinomycetemcomitans D7S1 has 2225 nodes and
-107234 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04334 and has 13 connected components, where the component with most
-nodes has 2184 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 71, the mean node degree is 96.39, and the node degree mode
-is 2. The top 5 most central nodes are 694569.D7S_01787 (degree 906), 694569.D7S_01384
-(degree 809), 694569.D7S_00473 (degree 639), 694569.D7S_00711 (degree 632) and 694569.D7S_00070
+The undirected graph Aggregatibacter actinomycetemcomitans D7S1 has 2225
+nodes and 107234 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04334 and has 13 connected components,
+where the component with most nodes has 2184 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 71, the mean
+node degree is 96.39, and the node degree mode is 2. The top 5 most central
+nodes are 694569.D7S_01787 (degree 906), 694569.D7S_01384 (degree 809),
+694569.D7S_00473 (degree 639), 694569.D7S_00711 (degree 632) and 694569.D7S_00070
 (degree 620).
 
 
@@ -107,13 +108,14 @@ def AggregatibacterActinomycetemcomitansD7s1(
 	
 	Datetime: 2021-02-02 21:32:29.431501
 	
-	The undirected graph Aggregatibacter actinomycetemcomitans D7S1 has 2225 nodes and
-	107234 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04334 and has 13 connected components, where the component with most
-	nodes has 2184 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 71, the mean node degree is 96.39, and the node degree mode
-	is 2. The top 5 most central nodes are 694569.D7S_01787 (degree 906), 694569.D7S_01384
-	(degree 809), 694569.D7S_00473 (degree 639), 694569.D7S_00711 (degree 632) and 694569.D7S_00070
+	The undirected graph Aggregatibacter actinomycetemcomitans D7S1 has 2225
+	nodes and 107234 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04334 and has 13 connected components,
+	where the component with most nodes has 2184 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 71, the mean
+	node degree is 96.39, and the node degree mode is 2. The top 5 most central
+	nodes are 694569.D7S_01787 (degree 906), 694569.D7S_01384 (degree 809),
+	694569.D7S_00473 (degree 639), 694569.D7S_00711 (degree 632) and 694569.D7S_00070
 	(degree 620).
 	
 

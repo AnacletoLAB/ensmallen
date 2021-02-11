@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:28.294879
 
-The undirected graph Giardia intestinalis has 2085 nodes and 119315 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05492 and
-is connected, as it has a single component. The graph median node degree is 73, the
-mean node degree is 114.45, and the node degree mode is 13. The top 5 most central
-nodes are 5741.EDO77572 (degree 699), 5741.EDO77059 (degree 690), 5741.EDO78264 (degree
-669), 5741.EDO80296 (degree 630) and 5741.EDO80025 (degree 629).
+The undirected graph Giardia intestinalis has 2085 nodes and 119315 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05492 and is connected, as it has a single component. The graph median
+node degree is 73, the mean node degree is 114.45, and the node degree
+mode is 13. The top 5 most central nodes are 5741.EDO77572 (degree 699),
+5741.EDO77059 (degree 690), 5741.EDO78264 (degree 669), 5741.EDO80296 (degree
+630) and 5741.EDO80025 (degree 629).
 
 
 References
@@ -105,12 +106,13 @@ def GiardiaIntestinalis(
 	
 	Datetime: 2021-02-02 17:15:28.294879
 	
-	The undirected graph Giardia intestinalis has 2085 nodes and 119315 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05492 and
-	is connected, as it has a single component. The graph median node degree is 73, the
-	mean node degree is 114.45, and the node degree mode is 13. The top 5 most central
-	nodes are 5741.EDO77572 (degree 699), 5741.EDO77059 (degree 690), 5741.EDO78264 (degree
-	669), 5741.EDO80296 (degree 630) and 5741.EDO80025 (degree 629).
+	The undirected graph Giardia intestinalis has 2085 nodes and 119315 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05492 and is connected, as it has a single component. The graph median
+	node degree is 73, the mean node degree is 114.45, and the node degree
+	mode is 13. The top 5 most central nodes are 5741.EDO77572 (degree 699),
+	5741.EDO77059 (degree 690), 5741.EDO78264 (degree 669), 5741.EDO80296 (degree
+	630) and 5741.EDO80025 (degree 629).
 	
 
 

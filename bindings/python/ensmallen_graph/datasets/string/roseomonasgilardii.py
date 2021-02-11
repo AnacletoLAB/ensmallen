@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:56:17.660019
 
-The undirected graph Roseomonas gilardii has 4079 nodes and 248926 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02993 and
-has 9 connected components, where the component with most nodes has 4054 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 122.05, and the node degree mode is 1. The top 5 most central
-nodes are 1336208.JADY01000005_gene1954 (degree 1402), 1336208.JADY01000001_gene732
-(degree 1040), 1336208.JADY01000026_gene2302 (degree 859), 1336208.JADY01000017_gene3186
-(degree 777) and 1336208.JADY01000002_gene463 (degree 775).
+The undirected graph Roseomonas gilardii has 4079 nodes and 248926 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02993 and has 9 connected components, where the component with most
+nodes has 4054 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 122.05, and
+the node degree mode is 1. The top 5 most central nodes are 1336208.JADY01000005_gene1954
+(degree 1402), 1336208.JADY01000001_gene732 (degree 1040), 1336208.JADY01000026_gene2302
+(degree 859), 1336208.JADY01000017_gene3186 (degree 777) and 1336208.JADY01000002_gene463
+(degree 775).
 
 
 References
@@ -107,14 +108,15 @@ def RoseomonasGilardii(
 	
 	Datetime: 2021-02-03 21:56:17.660019
 	
-	The undirected graph Roseomonas gilardii has 4079 nodes and 248926 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02993 and
-	has 9 connected components, where the component with most nodes has 4054 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 122.05, and the node degree mode is 1. The top 5 most central
-	nodes are 1336208.JADY01000005_gene1954 (degree 1402), 1336208.JADY01000001_gene732
-	(degree 1040), 1336208.JADY01000026_gene2302 (degree 859), 1336208.JADY01000017_gene3186
-	(degree 777) and 1336208.JADY01000002_gene463 (degree 775).
+	The undirected graph Roseomonas gilardii has 4079 nodes and 248926 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02993 and has 9 connected components, where the component with most
+	nodes has 4054 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 122.05, and
+	the node degree mode is 1. The top 5 most central nodes are 1336208.JADY01000005_gene1954
+	(degree 1402), 1336208.JADY01000001_gene732 (degree 1040), 1336208.JADY01000026_gene2302
+	(degree 859), 1336208.JADY01000017_gene3186 (degree 777) and 1336208.JADY01000002_gene463
+	(degree 775).
 	
 
 

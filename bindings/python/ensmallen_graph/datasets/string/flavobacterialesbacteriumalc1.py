@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:49.445830
 
-The undirected graph Flavobacteriales bacterium ALC1 has 3424 nodes and 390211 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06659
-and has 3 connected components, where the component with most nodes has 3420 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 227.93, and the node degree mode is 7. The top 5
-most central nodes are 391603.FBALC1_15342 (degree 1219), 391603.FBALC1_11252 (degree
-1180), 391603.FBALC1_13627 (degree 1167), 391603.FBALC1_04657 (degree 1157) and 391603.FBALC1_10542
-(degree 1002).
+The undirected graph Flavobacteriales bacterium ALC1 has 3424 nodes and
+390211 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06659 and has 3 connected components, where the
+component with most nodes has 3420 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 215, the mean node degree
+is 227.93, and the node degree mode is 7. The top 5 most central nodes
+are 391603.FBALC1_15342 (degree 1219), 391603.FBALC1_11252 (degree 1180),
+391603.FBALC1_13627 (degree 1167), 391603.FBALC1_04657 (degree 1157) and
+391603.FBALC1_10542 (degree 1002).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacterialesBacteriumAlc1(
 	
 	Datetime: 2021-02-02 20:39:49.445830
 	
-	The undirected graph Flavobacteriales bacterium ALC1 has 3424 nodes and 390211 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06659
-	and has 3 connected components, where the component with most nodes has 3420 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 227.93, and the node degree mode is 7. The top 5
-	most central nodes are 391603.FBALC1_15342 (degree 1219), 391603.FBALC1_11252 (degree
-	1180), 391603.FBALC1_13627 (degree 1167), 391603.FBALC1_04657 (degree 1157) and 391603.FBALC1_10542
-	(degree 1002).
+	The undirected graph Flavobacteriales bacterium ALC1 has 3424 nodes and
+	390211 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06659 and has 3 connected components, where the
+	component with most nodes has 3420 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 215, the mean node degree
+	is 227.93, and the node degree mode is 7. The top 5 most central nodes
+	are 391603.FBALC1_15342 (degree 1219), 391603.FBALC1_11252 (degree 1180),
+	391603.FBALC1_13627 (degree 1167), 391603.FBALC1_04657 (degree 1157) and
+	391603.FBALC1_10542 (degree 1002).
 	
 
 

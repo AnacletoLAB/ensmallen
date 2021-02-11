@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:05:12.623416
 
-The undirected graph Richelia intracellularis has 2136 nodes and 173778 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07621
-and has 18 connected components, where the component with most nodes has 2100 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 162.71, and the node degree mode is 1. The top 5
-most central nodes are 1165094.RINTHH_470 (degree 879), 1165094.RINTHH_21010 (degree
-749), 1165094.RINTHH_19230 (degree 703), 1165094.RINTHH_6920 (degree 684) and 1165094.RINTHH_18730
-(degree 607).
+The undirected graph Richelia intracellularis has 2136 nodes and 173778
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07621 and has 18 connected components, where the component
+with most nodes has 2100 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 162.71,
+and the node degree mode is 1. The top 5 most central nodes are 1165094.RINTHH_470
+(degree 879), 1165094.RINTHH_21010 (degree 749), 1165094.RINTHH_19230 (degree
+703), 1165094.RINTHH_6920 (degree 684) and 1165094.RINTHH_18730 (degree
+607).
 
 
 References
@@ -107,14 +108,15 @@ def RicheliaIntracellularis(
 	
 	Datetime: 2021-02-02 23:05:12.623416
 	
-	The undirected graph Richelia intracellularis has 2136 nodes and 173778 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07621
-	and has 18 connected components, where the component with most nodes has 2100 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 162.71, and the node degree mode is 1. The top 5
-	most central nodes are 1165094.RINTHH_470 (degree 879), 1165094.RINTHH_21010 (degree
-	749), 1165094.RINTHH_19230 (degree 703), 1165094.RINTHH_6920 (degree 684) and 1165094.RINTHH_18730
-	(degree 607).
+	The undirected graph Richelia intracellularis has 2136 nodes and 173778
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07621 and has 18 connected components, where the component
+	with most nodes has 2100 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 162.71,
+	and the node degree mode is 1. The top 5 most central nodes are 1165094.RINTHH_470
+	(degree 879), 1165094.RINTHH_21010 (degree 749), 1165094.RINTHH_19230 (degree
+	703), 1165094.RINTHH_6920 (degree 684) and 1165094.RINTHH_18730 (degree
+	607).
 	
 
 

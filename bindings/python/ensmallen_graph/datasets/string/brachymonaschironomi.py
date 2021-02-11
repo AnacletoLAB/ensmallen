@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:27.709270
 
-The undirected graph Brachymonas chironomi has 2284 nodes and 183030 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07020 and
-has 2 connected components, where the component with most nodes has 2282 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 160.27, and the node degree mode is 3. The top 5 most central
-nodes are 1121116.KB894770_gene1232 (degree 969), 1121116.KB894765_gene612 (degree
-786), 1121116.KB894765_gene613 (degree 765), 1121116.KB894767_gene2266 (degree 756)
-and 1121116.KB894770_gene1157 (degree 723).
+The undirected graph Brachymonas chironomi has 2284 nodes and 183030 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07020 and has 2 connected components, where the component with most
+nodes has 2282 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 160.27, and
+the node degree mode is 3. The top 5 most central nodes are 1121116.KB894770_gene1232
+(degree 969), 1121116.KB894765_gene612 (degree 786), 1121116.KB894765_gene613
+(degree 765), 1121116.KB894767_gene2266 (degree 756) and 1121116.KB894770_gene1157
+(degree 723).
 
 
 References
@@ -107,14 +108,15 @@ def BrachymonasChironomi(
 	
 	Datetime: 2021-02-02 22:33:27.709270
 	
-	The undirected graph Brachymonas chironomi has 2284 nodes and 183030 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07020 and
-	has 2 connected components, where the component with most nodes has 2282 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 160.27, and the node degree mode is 3. The top 5 most central
-	nodes are 1121116.KB894770_gene1232 (degree 969), 1121116.KB894765_gene612 (degree
-	786), 1121116.KB894765_gene613 (degree 765), 1121116.KB894767_gene2266 (degree 756)
-	and 1121116.KB894770_gene1157 (degree 723).
+	The undirected graph Brachymonas chironomi has 2284 nodes and 183030 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07020 and has 2 connected components, where the component with most
+	nodes has 2282 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 160.27, and
+	the node degree mode is 3. The top 5 most central nodes are 1121116.KB894770_gene1232
+	(degree 969), 1121116.KB894765_gene612 (degree 786), 1121116.KB894765_gene613
+	(degree 765), 1121116.KB894767_gene2266 (degree 756) and 1121116.KB894770_gene1157
+	(degree 723).
 	
 
 

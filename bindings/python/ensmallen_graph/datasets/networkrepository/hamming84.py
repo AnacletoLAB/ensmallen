@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:50.253818
 
-The undirected graph hamming8-4 has 256 nodes and 20864 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.63922
-and is connected, as it has a single component. The graph median node degree is 163,
-the mean node degree is 163.00 and the node degree mode is 163. The top 5 most central
-nodes are 256 (degree 163), 255 (degree 163), 254 (degree 163), 253 (degree 163)
-and 252 (degree 163).
+The undirected graph hamming8-4 has 256 nodes and 20864 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.63922 and is connected, as it has a single component. The
+graph median node degree is 163, the mean node degree is 163.00 and the
+node degree mode is 163. The top 5 most central nodes are 256 (degree 163),
+255 (degree 163), 254 (degree 163), 253 (degree 163) and 252 (degree 163).
 
 
 References
@@ -115,12 +115,12 @@ def Hamming84(
 	
 	Datetime: 2021-02-03 22:54:50.253818
 	
-	The undirected graph hamming8-4 has 256 nodes and 20864 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.63922
-	and is connected, as it has a single component. The graph median node degree is 163,
-	the mean node degree is 163.00 and the node degree mode is 163. The top 5 most central
-	nodes are 256 (degree 163), 255 (degree 163), 254 (degree 163), 253 (degree 163)
-	and 252 (degree 163).
+	The undirected graph hamming8-4 has 256 nodes and 20864 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.63922 and is connected, as it has a single component. The
+	graph median node degree is 163, the mean node degree is 163.00 and the
+	node degree mode is 163. The top 5 most central nodes are 256 (degree 163),
+	255 (degree 163), 254 (degree 163), 253 (degree 163) and 252 (degree 163).
 	
 
 

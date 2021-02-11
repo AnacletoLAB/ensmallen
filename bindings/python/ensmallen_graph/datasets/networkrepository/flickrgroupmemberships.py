@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:10:06.527593
 
-The undirected graph flickr-groupmemberships has 395979 nodes and 8537817 unweighted
-edges, of which 114 are self-loops. The graph is quite sparse as it has a density
-of 0.00011 and is connected, as it has a single component. The graph median node
-degree is 4, the mean node degree is 43.12, and the node degree mode is 1. The top
-5 most central nodes are 41 (degree 34990), 13 (degree 30312), 48 (degree 27796),
-23 (degree 22117) and 8 (degree 21884).
+The undirected graph flickr-groupmemberships has 395979 nodes and 8537817
+unweighted edges, of which 114 are self-loops. The graph is quite sparse
+as it has a density of 0.00011 and is connected, as it has a single component.
+The graph median node degree is 4, the mean node degree is 43.12, and the
+node degree mode is 1. The top 5 most central nodes are 41 (degree 34990),
+13 (degree 30312), 48 (degree 27796), 23 (degree 22117) and 8 (degree 21884).
 
 
 References
@@ -102,12 +102,12 @@ def FlickrGroupmemberships(
 	
 	Datetime: 2021-02-06 12:10:06.527593
 	
-	The undirected graph flickr-groupmemberships has 395979 nodes and 8537817 unweighted
-	edges, of which 114 are self-loops. The graph is quite sparse as it has a density
-	of 0.00011 and is connected, as it has a single component. The graph median node
-	degree is 4, the mean node degree is 43.12, and the node degree mode is 1. The top
-	5 most central nodes are 41 (degree 34990), 13 (degree 30312), 48 (degree 27796),
-	23 (degree 22117) and 8 (degree 21884).
+	The undirected graph flickr-groupmemberships has 395979 nodes and 8537817
+	unweighted edges, of which 114 are self-loops. The graph is quite sparse
+	as it has a density of 0.00011 and is connected, as it has a single component.
+	The graph median node degree is 4, the mean node degree is 43.12, and the
+	node degree mode is 1. The top 5 most central nodes are 41 (degree 34990),
+	13 (degree 30312), 48 (degree 27796), 23 (degree 22117) and 8 (degree 21884).
 	
 
 

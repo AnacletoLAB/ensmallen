@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:29.388824
 
-The undirected graph Erythrobacter sp. NAP1 has 3155 nodes and 242564 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04875 and
-has 11 connected components, where the component with most nodes has 3132 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 153.76, and the node degree mode is 4. The top 5 most central
-nodes are 237727.NAP1_11808 (degree 975), 237727.NAP1_14368 (degree 928), 237727.NAP1_02725
-(degree 873), 237727.NAP1_06335 (degree 857) and 237727.NAP1_09562 (degree 836).
+The undirected graph Erythrobacter sp. NAP1 has 3155 nodes and 242564 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04875 and has 11 connected components, where the component with most
+nodes has 3132 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 153.76, and
+the node degree mode is 4. The top 5 most central nodes are 237727.NAP1_11808
+(degree 975), 237727.NAP1_14368 (degree 928), 237727.NAP1_02725 (degree
+873), 237727.NAP1_06335 (degree 857) and 237727.NAP1_09562 (degree 836).
 
 
 References
@@ -106,13 +107,14 @@ def ErythrobacterSp.Nap1(
 	
 	Datetime: 2021-02-02 20:08:29.388824
 	
-	The undirected graph Erythrobacter sp. NAP1 has 3155 nodes and 242564 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04875 and
-	has 11 connected components, where the component with most nodes has 3132 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 153.76, and the node degree mode is 4. The top 5 most central
-	nodes are 237727.NAP1_11808 (degree 975), 237727.NAP1_14368 (degree 928), 237727.NAP1_02725
-	(degree 873), 237727.NAP1_06335 (degree 857) and 237727.NAP1_09562 (degree 836).
+	The undirected graph Erythrobacter sp. NAP1 has 3155 nodes and 242564 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04875 and has 11 connected components, where the component with most
+	nodes has 3132 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 153.76, and
+	the node degree mode is 4. The top 5 most central nodes are 237727.NAP1_11808
+	(degree 975), 237727.NAP1_14368 (degree 928), 237727.NAP1_02725 (degree
+	873), 237727.NAP1_06335 (degree 857) and 237727.NAP1_09562 (degree 836).
 	
 
 

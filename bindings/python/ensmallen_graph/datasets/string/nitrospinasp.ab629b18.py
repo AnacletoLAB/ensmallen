@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:24.447279
 
-The undirected graph Nitrospina sp. AB629B18 has 2545 nodes and 216470 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06687 and
-has 44 connected components, where the component with most nodes has 2440 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 170.11, and the node degree mode is 1. The top 5 most central
-nodes are 1131269.AQVV01000005_gene372 (degree 945), 1131269.AQVV01000004_gene551
-(degree 900), 1131269.AQVV01000041_gene1655 (degree 872), 1131269.AQVV01000008_gene914
-(degree 868) and 1131269.AQVV01000007_gene1025 (degree 843).
+The undirected graph Nitrospina sp. AB629B18 has 2545 nodes and 216470
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06687 and has 44 connected components, where the component
+with most nodes has 2440 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 137, the mean node degree is 170.11,
+and the node degree mode is 1. The top 5 most central nodes are 1131269.AQVV01000005_gene372
+(degree 945), 1131269.AQVV01000004_gene551 (degree 900), 1131269.AQVV01000041_gene1655
+(degree 872), 1131269.AQVV01000008_gene914 (degree 868) and 1131269.AQVV01000007_gene1025
+(degree 843).
 
 
 References
@@ -107,14 +108,15 @@ def NitrospinaSp.Ab629b18(
 	
 	Datetime: 2021-02-02 22:55:24.447279
 	
-	The undirected graph Nitrospina sp. AB629B18 has 2545 nodes and 216470 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06687 and
-	has 44 connected components, where the component with most nodes has 2440 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 170.11, and the node degree mode is 1. The top 5 most central
-	nodes are 1131269.AQVV01000005_gene372 (degree 945), 1131269.AQVV01000004_gene551
-	(degree 900), 1131269.AQVV01000041_gene1655 (degree 872), 1131269.AQVV01000008_gene914
-	(degree 868) and 1131269.AQVV01000007_gene1025 (degree 843).
+	The undirected graph Nitrospina sp. AB629B18 has 2545 nodes and 216470
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06687 and has 44 connected components, where the component
+	with most nodes has 2440 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 137, the mean node degree is 170.11,
+	and the node degree mode is 1. The top 5 most central nodes are 1131269.AQVV01000005_gene372
+	(degree 945), 1131269.AQVV01000004_gene551 (degree 900), 1131269.AQVV01000041_gene1655
+	(degree 872), 1131269.AQVV01000008_gene914 (degree 868) and 1131269.AQVV01000007_gene1025
+	(degree 843).
 	
 
 

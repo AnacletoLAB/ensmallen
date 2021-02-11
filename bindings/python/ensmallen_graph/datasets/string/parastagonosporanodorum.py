@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:53:50.850673
 
-The undirected graph Parastagonospora nodorum has 7553 nodes and 581926 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02040
-and has 38 connected components, where the component with most nodes has 7471 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 77, the mean node degree is 154.09, and the node degree mode is 1. The top 5 most
-central nodes are 13684.SNOT_10564 (degree 1846), 13684.SNOT_01131 (degree 1422),
-13684.SNOT_08367 (degree 1415), 13684.SNOT_11806 (degree 1318) and 13684.SNOT_00877
-(degree 1242).
+The undirected graph Parastagonospora nodorum has 7553 nodes and 581926
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02040 and has 38 connected components, where the component
+with most nodes has 7471 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 77, the mean node degree is 154.09,
+and the node degree mode is 1. The top 5 most central nodes are 13684.SNOT_10564
+(degree 1846), 13684.SNOT_01131 (degree 1422), 13684.SNOT_08367 (degree
+1415), 13684.SNOT_11806 (degree 1318) and 13684.SNOT_00877 (degree 1242).
 
 
 References
@@ -107,14 +107,14 @@ def ParastagonosporaNodorum(
 	
 	Datetime: 2021-02-02 17:53:50.850673
 	
-	The undirected graph Parastagonospora nodorum has 7553 nodes and 581926 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02040
-	and has 38 connected components, where the component with most nodes has 7471 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 77, the mean node degree is 154.09, and the node degree mode is 1. The top 5 most
-	central nodes are 13684.SNOT_10564 (degree 1846), 13684.SNOT_01131 (degree 1422),
-	13684.SNOT_08367 (degree 1415), 13684.SNOT_11806 (degree 1318) and 13684.SNOT_00877
-	(degree 1242).
+	The undirected graph Parastagonospora nodorum has 7553 nodes and 581926
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02040 and has 38 connected components, where the component
+	with most nodes has 7471 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 77, the mean node degree is 154.09,
+	and the node degree mode is 1. The top 5 most central nodes are 13684.SNOT_10564
+	(degree 1846), 13684.SNOT_01131 (degree 1422), 13684.SNOT_08367 (degree
+	1415), 13684.SNOT_11806 (degree 1318) and 13684.SNOT_00877 (degree 1242).
 	
 
 

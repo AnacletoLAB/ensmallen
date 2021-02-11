@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:54:49.534067
 
-The undirected graph Thermoactinomyces daqus has 3308 nodes and 341378 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06241 and
-has 39 connected components, where the component with most nodes has 3202 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 206.40, and the node degree mode is 1. The top 5 most central
-nodes are 1329516.JPST01000021_gene2510 (degree 1102), 1329516.JPST01000014_gene637
-(degree 1078), 1329516.JPST01000014_gene619 (degree 1033), 1329516.JPST01000025_gene2184
-(degree 962) and 1329516.JPST01000015_gene769 (degree 890).
+The undirected graph Thermoactinomyces daqus has 3308 nodes and 341378
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06241 and has 39 connected components, where the component
+with most nodes has 3202 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 185, the mean node degree is 206.40,
+and the node degree mode is 1. The top 5 most central nodes are 1329516.JPST01000021_gene2510
+(degree 1102), 1329516.JPST01000014_gene637 (degree 1078), 1329516.JPST01000014_gene619
+(degree 1033), 1329516.JPST01000025_gene2184 (degree 962) and 1329516.JPST01000015_gene769
+(degree 890).
 
 
 References
@@ -107,14 +108,15 @@ def ThermoactinomycesDaqus(
 	
 	Datetime: 2021-02-03 21:54:49.534067
 	
-	The undirected graph Thermoactinomyces daqus has 3308 nodes and 341378 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06241 and
-	has 39 connected components, where the component with most nodes has 3202 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 206.40, and the node degree mode is 1. The top 5 most central
-	nodes are 1329516.JPST01000021_gene2510 (degree 1102), 1329516.JPST01000014_gene637
-	(degree 1078), 1329516.JPST01000014_gene619 (degree 1033), 1329516.JPST01000025_gene2184
-	(degree 962) and 1329516.JPST01000015_gene769 (degree 890).
+	The undirected graph Thermoactinomyces daqus has 3308 nodes and 341378
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06241 and has 39 connected components, where the component
+	with most nodes has 3202 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 185, the mean node degree is 206.40,
+	and the node degree mode is 1. The top 5 most central nodes are 1329516.JPST01000021_gene2510
+	(degree 1102), 1329516.JPST01000014_gene637 (degree 1078), 1329516.JPST01000014_gene619
+	(degree 1033), 1329516.JPST01000025_gene2184 (degree 962) and 1329516.JPST01000015_gene769
+	(degree 890).
 	
 
 

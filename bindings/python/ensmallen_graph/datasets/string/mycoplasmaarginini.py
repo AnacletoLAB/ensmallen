@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:06.843892
 
-The undirected graph Mycoplasma arginini has 511 nodes and 17863 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.13709
-and has 5 connected components, where the component with most nodes has 503 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 57, the mean node degree is 69.91, and the node degree mode is 6. The top 5 most
-central nodes are 1188236.MARG_3950 (degree 266), 1188236.MARG_3850 (degree 222),
-1188236.MARG_4500 (degree 198), 1188236.MARG_0380 (degree 194) and 1188236.MARG_3940
-(degree 194).
+The undirected graph Mycoplasma arginini has 511 nodes and 17863 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.13709 and has 5 connected components, where the component
+with most nodes has 503 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 57, the mean node degree is 69.91,
+and the node degree mode is 6. The top 5 most central nodes are 1188236.MARG_3950
+(degree 266), 1188236.MARG_3850 (degree 222), 1188236.MARG_4500 (degree
+198), 1188236.MARG_0380 (degree 194) and 1188236.MARG_3940 (degree 194).
 
 
 References
@@ -107,14 +107,14 @@ def MycoplasmaArginini(
 	
 	Datetime: 2021-02-02 23:11:06.843892
 	
-	The undirected graph Mycoplasma arginini has 511 nodes and 17863 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.13709
-	and has 5 connected components, where the component with most nodes has 503 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 57, the mean node degree is 69.91, and the node degree mode is 6. The top 5 most
-	central nodes are 1188236.MARG_3950 (degree 266), 1188236.MARG_3850 (degree 222),
-	1188236.MARG_4500 (degree 198), 1188236.MARG_0380 (degree 194) and 1188236.MARG_3940
-	(degree 194).
+	The undirected graph Mycoplasma arginini has 511 nodes and 17863 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.13709 and has 5 connected components, where the component
+	with most nodes has 503 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 57, the mean node degree is 69.91,
+	and the node degree mode is 6. The top 5 most central nodes are 1188236.MARG_3950
+	(degree 266), 1188236.MARG_3850 (degree 222), 1188236.MARG_4500 (degree
+	198), 1188236.MARG_0380 (degree 194) and 1188236.MARG_3940 (degree 194).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:21:33.354266
 
-The undirected graph Mobilicoccus pelagius has 3089 nodes and 273126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05727 and
-has 11 connected components, where the component with most nodes has 3066 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 176.84, and the node degree mode is 2. The top 5 most central
-nodes are 1089455.MOPEL_096_01330 (degree 1151), 1089455.MOPEL_099_00980 (degree
-993), 1089455.MOPEL_027_00260 (degree 978), 1089455.MOPEL_135_01430 (degree 951)
-and 1089455.MOPEL_099_00710 (degree 838).
+The undirected graph Mobilicoccus pelagius has 3089 nodes and 273126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05727 and has 11 connected components, where the component with most
+nodes has 3066 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 176.84, and
+the node degree mode is 2. The top 5 most central nodes are 1089455.MOPEL_096_01330
+(degree 1151), 1089455.MOPEL_099_00980 (degree 993), 1089455.MOPEL_027_00260
+(degree 978), 1089455.MOPEL_135_01430 (degree 951) and 1089455.MOPEL_099_00710
+(degree 838).
 
 
 References
@@ -107,14 +108,15 @@ def MobilicoccusPelagius(
 	
 	Datetime: 2021-02-02 22:21:33.354266
 	
-	The undirected graph Mobilicoccus pelagius has 3089 nodes and 273126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05727 and
-	has 11 connected components, where the component with most nodes has 3066 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 176.84, and the node degree mode is 2. The top 5 most central
-	nodes are 1089455.MOPEL_096_01330 (degree 1151), 1089455.MOPEL_099_00980 (degree
-	993), 1089455.MOPEL_027_00260 (degree 978), 1089455.MOPEL_135_01430 (degree 951)
-	and 1089455.MOPEL_099_00710 (degree 838).
+	The undirected graph Mobilicoccus pelagius has 3089 nodes and 273126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05727 and has 11 connected components, where the component with most
+	nodes has 3066 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 176.84, and
+	the node degree mode is 2. The top 5 most central nodes are 1089455.MOPEL_096_01330
+	(degree 1151), 1089455.MOPEL_099_00980 (degree 993), 1089455.MOPEL_027_00260
+	(degree 978), 1089455.MOPEL_135_01430 (degree 951) and 1089455.MOPEL_099_00710
+	(degree 838).
 	
 
 

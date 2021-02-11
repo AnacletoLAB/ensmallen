@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:16.025396
 
-The undirected graph Lentisphaera araneosa has 5034 nodes and 414123 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03269 and
-has 45 connected components, where the component with most nodes has 4901 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 149,
-the mean node degree is 164.53, and the node degree mode is 4. The top 5 most central
-nodes are 313628.LNTAR_17258 (degree 1145), 313628.LNTAR_13997 (degree 1109), 313628.LNTAR_01055
-(degree 981), 313628.LNTAR_02759 (degree 971) and 313628.LNTAR_22035 (degree 887).
+The undirected graph Lentisphaera araneosa has 5034 nodes and 414123 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03269 and has 45 connected components, where the component with most
+nodes has 4901 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 149, the mean node degree is 164.53, and
+the node degree mode is 4. The top 5 most central nodes are 313628.LNTAR_17258
+(degree 1145), 313628.LNTAR_13997 (degree 1109), 313628.LNTAR_01055 (degree
+981), 313628.LNTAR_02759 (degree 971) and 313628.LNTAR_22035 (degree 887).
 
 
 References
@@ -106,13 +107,14 @@ def LentisphaeraAraneosa(
 	
 	Datetime: 2021-02-02 20:24:16.025396
 	
-	The undirected graph Lentisphaera araneosa has 5034 nodes and 414123 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03269 and
-	has 45 connected components, where the component with most nodes has 4901 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 149,
-	the mean node degree is 164.53, and the node degree mode is 4. The top 5 most central
-	nodes are 313628.LNTAR_17258 (degree 1145), 313628.LNTAR_13997 (degree 1109), 313628.LNTAR_01055
-	(degree 981), 313628.LNTAR_02759 (degree 971) and 313628.LNTAR_22035 (degree 887).
+	The undirected graph Lentisphaera araneosa has 5034 nodes and 414123 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03269 and has 45 connected components, where the component with most
+	nodes has 4901 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 149, the mean node degree is 164.53, and
+	the node degree mode is 4. The top 5 most central nodes are 313628.LNTAR_17258
+	(degree 1145), 313628.LNTAR_13997 (degree 1109), 313628.LNTAR_01055 (degree
+	981), 313628.LNTAR_02759 (degree 971) and 313628.LNTAR_22035 (degree 887).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:45.015283
 
-The undirected graph Arthrobacter sp. TB23 has 3281 nodes and 257520 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04786 and
-has 8 connected components, where the component with most nodes has 3265 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 128,
-the mean node degree is 156.98, and the node degree mode is 3. The top 5 most central
-nodes are 494419.ALPM01000056_gene2929 (degree 1177), 494419.ALPM01000072_gene1430
-(degree 1073), 494419.ALPM01000018_gene615 (degree 1060), 494419.ALPM01000021_gene127
-(degree 1058) and 494419.ALPM01000054_gene2790 (degree 1015).
+The undirected graph Arthrobacter sp. TB23 has 3281 nodes and 257520 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04786 and has 8 connected components, where the component with most
+nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 128, the mean node degree is 156.98, and
+the node degree mode is 3. The top 5 most central nodes are 494419.ALPM01000056_gene2929
+(degree 1177), 494419.ALPM01000072_gene1430 (degree 1073), 494419.ALPM01000018_gene615
+(degree 1060), 494419.ALPM01000021_gene127 (degree 1058) and 494419.ALPM01000054_gene2790
+(degree 1015).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.Tb23(
 	
 	Datetime: 2021-02-02 21:00:45.015283
 	
-	The undirected graph Arthrobacter sp. TB23 has 3281 nodes and 257520 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04786 and
-	has 8 connected components, where the component with most nodes has 3265 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 128,
-	the mean node degree is 156.98, and the node degree mode is 3. The top 5 most central
-	nodes are 494419.ALPM01000056_gene2929 (degree 1177), 494419.ALPM01000072_gene1430
-	(degree 1073), 494419.ALPM01000018_gene615 (degree 1060), 494419.ALPM01000021_gene127
-	(degree 1058) and 494419.ALPM01000054_gene2790 (degree 1015).
+	The undirected graph Arthrobacter sp. TB23 has 3281 nodes and 257520 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04786 and has 8 connected components, where the component with most
+	nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 128, the mean node degree is 156.98, and
+	the node degree mode is 3. The top 5 most central nodes are 494419.ALPM01000056_gene2929
+	(degree 1177), 494419.ALPM01000072_gene1430 (degree 1073), 494419.ALPM01000018_gene615
+	(degree 1060), 494419.ALPM01000021_gene127 (degree 1058) and 494419.ALPM01000054_gene2790
+	(degree 1015).
 	
 
 

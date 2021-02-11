@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:12:54.595706
 
-The undirected graph Cellulomonas sp. URHE0023 has 3872 nodes and 335534 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04477
-and has 10 connected components, where the component with most nodes has 3852 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 173.31, and the node degree mode is 4. The top 5
-most central nodes are 1380354.JIAN01000006_gene664 (degree 1127), 1380354.JIAN01000005_gene1387
-(degree 1100), 1380354.JIAN01000010_gene3010 (degree 1089), 1380354.JIAN01000011_gene3192
-(degree 1085) and 1380354.JIAN01000005_gene1939 (degree 1031).
+The undirected graph Cellulomonas sp. URHE0023 has 3872 nodes and 335534
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04477 and has 10 connected components, where the component
+with most nodes has 3852 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 173.31,
+and the node degree mode is 4. The top 5 most central nodes are 1380354.JIAN01000006_gene664
+(degree 1127), 1380354.JIAN01000005_gene1387 (degree 1100), 1380354.JIAN01000010_gene3010
+(degree 1089), 1380354.JIAN01000011_gene3192 (degree 1085) and 1380354.JIAN01000005_gene1939
+(degree 1031).
 
 
 References
@@ -107,14 +108,15 @@ def CellulomonasSp.Urhe0023(
 	
 	Datetime: 2021-02-03 22:12:54.595706
 	
-	The undirected graph Cellulomonas sp. URHE0023 has 3872 nodes and 335534 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04477
-	and has 10 connected components, where the component with most nodes has 3852 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 173.31, and the node degree mode is 4. The top 5
-	most central nodes are 1380354.JIAN01000006_gene664 (degree 1127), 1380354.JIAN01000005_gene1387
-	(degree 1100), 1380354.JIAN01000010_gene3010 (degree 1089), 1380354.JIAN01000011_gene3192
-	(degree 1085) and 1380354.JIAN01000005_gene1939 (degree 1031).
+	The undirected graph Cellulomonas sp. URHE0023 has 3872 nodes and 335534
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04477 and has 10 connected components, where the component
+	with most nodes has 3852 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 173.31,
+	and the node degree mode is 4. The top 5 most central nodes are 1380354.JIAN01000006_gene664
+	(degree 1127), 1380354.JIAN01000005_gene1387 (degree 1100), 1380354.JIAN01000010_gene3010
+	(degree 1089), 1380354.JIAN01000011_gene3192 (degree 1085) and 1380354.JIAN01000005_gene1939
+	(degree 1031).
 	
 
 

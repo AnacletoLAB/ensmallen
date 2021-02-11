@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:34.779776
 
-The undirected graph Psychroserpens sp. PAMC27130 has 3229 nodes and 353386 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06781
-and has 12 connected components, where the component with most nodes has 3199 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 208, the mean node degree is 218.88, and the node degree mode is 5. The top 5
-most central nodes are 1484460.JSWG01000015_gene1033 (degree 1223), 1484460.JSWG01000008_gene2023
-(degree 1191), 1484460.JSWG01000004_gene2607 (degree 1123), 1484460.JSWG01000001_gene2226
-(degree 958) and 1484460.JSWG01000001_gene2408 (degree 925).
+The undirected graph Psychroserpens sp. PAMC27130 has 3229 nodes and 353386
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06781 and has 12 connected components, where the component
+with most nodes has 3199 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 218.88,
+and the node degree mode is 5. The top 5 most central nodes are 1484460.JSWG01000015_gene1033
+(degree 1223), 1484460.JSWG01000008_gene2023 (degree 1191), 1484460.JSWG01000004_gene2607
+(degree 1123), 1484460.JSWG01000001_gene2226 (degree 958) and 1484460.JSWG01000001_gene2408
+(degree 925).
 
 
 References
@@ -107,14 +108,15 @@ def PsychroserpensSp.Pamc27130(
 	
 	Datetime: 2021-02-03 23:13:34.779776
 	
-	The undirected graph Psychroserpens sp. PAMC27130 has 3229 nodes and 353386 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06781
-	and has 12 connected components, where the component with most nodes has 3199 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 208, the mean node degree is 218.88, and the node degree mode is 5. The top 5
-	most central nodes are 1484460.JSWG01000015_gene1033 (degree 1223), 1484460.JSWG01000008_gene2023
-	(degree 1191), 1484460.JSWG01000004_gene2607 (degree 1123), 1484460.JSWG01000001_gene2226
-	(degree 958) and 1484460.JSWG01000001_gene2408 (degree 925).
+	The undirected graph Psychroserpens sp. PAMC27130 has 3229 nodes and 353386
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06781 and has 12 connected components, where the component
+	with most nodes has 3199 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 218.88,
+	and the node degree mode is 5. The top 5 most central nodes are 1484460.JSWG01000015_gene1033
+	(degree 1223), 1484460.JSWG01000008_gene2023 (degree 1191), 1484460.JSWG01000004_gene2607
+	(degree 1123), 1484460.JSWG01000001_gene2226 (degree 958) and 1484460.JSWG01000001_gene2408
+	(degree 925).
 	
 
 

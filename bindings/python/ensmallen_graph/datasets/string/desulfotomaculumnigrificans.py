@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:37.499325
 
-The undirected graph Desulfotomaculum nigrificans has 2903 nodes and 266306 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06322
-and has 21 connected components, where the component with most nodes has 2859 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 183.47, and the node degree mode is 1. The top 5
-most central nodes are 696369.KI912183_gene923 (degree 1140), 696369.KI912183_gene1065
-(degree 1095), 696369.KI912183_gene1313 (degree 1075), 696369.KI912183_gene372 (degree
-915) and 696369.KI912183_gene528 (degree 908).
+The undirected graph Desulfotomaculum nigrificans has 2903 nodes and 266306
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06322 and has 21 connected components, where the component
+with most nodes has 2859 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 183.47,
+and the node degree mode is 1. The top 5 most central nodes are 696369.KI912183_gene923
+(degree 1140), 696369.KI912183_gene1065 (degree 1095), 696369.KI912183_gene1313
+(degree 1075), 696369.KI912183_gene372 (degree 915) and 696369.KI912183_gene528
+(degree 908).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfotomaculumNigrificans(
 	
 	Datetime: 2021-02-02 21:32:37.499325
 	
-	The undirected graph Desulfotomaculum nigrificans has 2903 nodes and 266306 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06322
-	and has 21 connected components, where the component with most nodes has 2859 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 183.47, and the node degree mode is 1. The top 5
-	most central nodes are 696369.KI912183_gene923 (degree 1140), 696369.KI912183_gene1065
-	(degree 1095), 696369.KI912183_gene1313 (degree 1075), 696369.KI912183_gene372 (degree
-	915) and 696369.KI912183_gene528 (degree 908).
+	The undirected graph Desulfotomaculum nigrificans has 2903 nodes and 266306
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06322 and has 21 connected components, where the component
+	with most nodes has 2859 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 183.47,
+	and the node degree mode is 1. The top 5 most central nodes are 696369.KI912183_gene923
+	(degree 1140), 696369.KI912183_gene1065 (degree 1095), 696369.KI912183_gene1313
+	(degree 1075), 696369.KI912183_gene372 (degree 915) and 696369.KI912183_gene528
+	(degree 908).
 	
 
 

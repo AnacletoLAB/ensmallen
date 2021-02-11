@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:25:10.236378
 
-The undirected graph Maritimibacter alkaliphilus has 4386 nodes and 469458 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04882
-and has 41 connected components, where the component with most nodes has 4290 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 214.07, and the node degree mode is 1. The top 5
-most central nodes are 314271.RB2654_10393 (degree 1466), 314271.RB2654_19758 (degree
-1192), 314271.RB2654_03919 (degree 1165), 314271.RB2654_18443 (degree 1151) and 314271.RB2654_03554
-(degree 1072).
+The undirected graph Maritimibacter alkaliphilus has 4386 nodes and 469458
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04882 and has 41 connected components, where the component
+with most nodes has 4290 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 214.07,
+and the node degree mode is 1. The top 5 most central nodes are 314271.RB2654_10393
+(degree 1466), 314271.RB2654_19758 (degree 1192), 314271.RB2654_03919 (degree
+1165), 314271.RB2654_18443 (degree 1151) and 314271.RB2654_03554 (degree
+1072).
 
 
 References
@@ -107,14 +108,15 @@ def MaritimibacterAlkaliphilus(
 	
 	Datetime: 2021-02-02 20:25:10.236378
 	
-	The undirected graph Maritimibacter alkaliphilus has 4386 nodes and 469458 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04882
-	and has 41 connected components, where the component with most nodes has 4290 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 214.07, and the node degree mode is 1. The top 5
-	most central nodes are 314271.RB2654_10393 (degree 1466), 314271.RB2654_19758 (degree
-	1192), 314271.RB2654_03919 (degree 1165), 314271.RB2654_18443 (degree 1151) and 314271.RB2654_03554
-	(degree 1072).
+	The undirected graph Maritimibacter alkaliphilus has 4386 nodes and 469458
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04882 and has 41 connected components, where the component
+	with most nodes has 4290 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 214.07,
+	and the node degree mode is 1. The top 5 most central nodes are 314271.RB2654_10393
+	(degree 1466), 314271.RB2654_19758 (degree 1192), 314271.RB2654_03919 (degree
+	1165), 314271.RB2654_18443 (degree 1151) and 314271.RB2654_03554 (degree
+	1072).
 	
 
 

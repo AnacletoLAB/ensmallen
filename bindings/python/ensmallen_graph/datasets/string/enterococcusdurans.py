@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:57:34.845551
 
-The undirected graph Enterococcus durans has 2997 nodes and 177700 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03958 and
-has 16 connected components, where the component with most nodes has 2961 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 85,
-the mean node degree is 118.59, and the node degree mode is 4. The top 5 most central
-nodes are 1140001.I571_02050 (degree 1140), 1140001.I571_01954 (degree 904), 1140001.I571_00252
-(degree 843), 1140001.I571_01941 (degree 806) and 1140001.I571_00007 (degree 765).
+The undirected graph Enterococcus durans has 2997 nodes and 177700 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03958 and has 16 connected components, where the component with most
+nodes has 2961 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 85, the mean node degree is 118.59, and
+the node degree mode is 4. The top 5 most central nodes are 1140001.I571_02050
+(degree 1140), 1140001.I571_01954 (degree 904), 1140001.I571_00252 (degree
+843), 1140001.I571_01941 (degree 806) and 1140001.I571_00007 (degree 765).
 
 
 References
@@ -106,13 +107,14 @@ def EnterococcusDurans(
 	
 	Datetime: 2021-02-02 22:57:34.845551
 	
-	The undirected graph Enterococcus durans has 2997 nodes and 177700 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03958 and
-	has 16 connected components, where the component with most nodes has 2961 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 85,
-	the mean node degree is 118.59, and the node degree mode is 4. The top 5 most central
-	nodes are 1140001.I571_02050 (degree 1140), 1140001.I571_01954 (degree 904), 1140001.I571_00252
-	(degree 843), 1140001.I571_01941 (degree 806) and 1140001.I571_00007 (degree 765).
+	The undirected graph Enterococcus durans has 2997 nodes and 177700 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03958 and has 16 connected components, where the component with most
+	nodes has 2961 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 85, the mean node degree is 118.59, and
+	the node degree mode is 4. The top 5 most central nodes are 1140001.I571_02050
+	(degree 1140), 1140001.I571_01954 (degree 904), 1140001.I571_00252 (degree
+	843), 1140001.I571_01941 (degree 806) and 1140001.I571_00007 (degree 765).
 	
 
 

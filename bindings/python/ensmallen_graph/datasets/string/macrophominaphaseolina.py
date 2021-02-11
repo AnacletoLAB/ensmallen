@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:05:24.739750
 
-The undirected graph Macrophomina phaseolina has 8449 nodes and 724473 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02030 and
-has 26 connected components, where the component with most nodes has 8393 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 171.49, and the node degree mode is 1. The top 5 most central
-nodes are 35725.K2SW39 (degree 2088), 35725.K2SK59 (degree 1792), 35725.K2RV78 (degree
-1683), 35725.K2SSH4 (degree 1567) and 35725.K2SLP9 (degree 1481).
+The undirected graph Macrophomina phaseolina has 8449 nodes and 724473
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02030 and has 26 connected components, where the component
+with most nodes has 8393 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 86, the mean node degree is 171.49,
+and the node degree mode is 1. The top 5 most central nodes are 35725.K2SW39
+(degree 2088), 35725.K2SK59 (degree 1792), 35725.K2RV78 (degree 1683),
+35725.K2SSH4 (degree 1567) and 35725.K2SLP9 (degree 1481).
 
 
 References
@@ -106,13 +107,14 @@ def MacrophominaPhaseolina(
 	
 	Datetime: 2021-02-02 18:05:24.739750
 	
-	The undirected graph Macrophomina phaseolina has 8449 nodes and 724473 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02030 and
-	has 26 connected components, where the component with most nodes has 8393 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 171.49, and the node degree mode is 1. The top 5 most central
-	nodes are 35725.K2SW39 (degree 2088), 35725.K2SK59 (degree 1792), 35725.K2RV78 (degree
-	1683), 35725.K2SSH4 (degree 1567) and 35725.K2SLP9 (degree 1481).
+	The undirected graph Macrophomina phaseolina has 8449 nodes and 724473
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02030 and has 26 connected components, where the component
+	with most nodes has 8393 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 86, the mean node degree is 171.49,
+	and the node degree mode is 1. The top 5 most central nodes are 35725.K2SW39
+	(degree 2088), 35725.K2SK59 (degree 1792), 35725.K2RV78 (degree 1683),
+	35725.K2SSH4 (degree 1567) and 35725.K2SLP9 (degree 1481).
 	
 
 

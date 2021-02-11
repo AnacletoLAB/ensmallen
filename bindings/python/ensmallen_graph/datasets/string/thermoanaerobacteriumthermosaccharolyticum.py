@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:15:30.247862
 
-The undirected graph Thermoanaerobacterium thermosaccharolyticum has 2592 nodes and
-159695 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.04756 and has 10 connected components, where the component with most
-nodes has 2569 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 96, the mean node degree is 123.22, and the node degree mode
-is 4. The top 5 most central nodes are 580327.Tthe_2187 (degree 1120), 580327.Tthe_1101
-(degree 989), 580327.Tthe_2115 (degree 796), 580327.Tthe_2116 (degree 764) and 580327.Tthe_0899
+The undirected graph Thermoanaerobacterium thermosaccharolyticum has 2592
+nodes and 159695 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04756 and has 10 connected components,
+where the component with most nodes has 2569 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 96, the mean
+node degree is 123.22, and the node degree mode is 4. The top 5 most central
+nodes are 580327.Tthe_2187 (degree 1120), 580327.Tthe_1101 (degree 989),
+580327.Tthe_2115 (degree 796), 580327.Tthe_2116 (degree 764) and 580327.Tthe_0899
 (degree 729).
 
 
@@ -107,13 +108,14 @@ def ThermoanaerobacteriumThermosaccharolyticum(
 	
 	Datetime: 2021-02-02 21:15:30.247862
 	
-	The undirected graph Thermoanaerobacterium thermosaccharolyticum has 2592 nodes and
-	159695 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.04756 and has 10 connected components, where the component with most
-	nodes has 2569 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 96, the mean node degree is 123.22, and the node degree mode
-	is 4. The top 5 most central nodes are 580327.Tthe_2187 (degree 1120), 580327.Tthe_1101
-	(degree 989), 580327.Tthe_2115 (degree 796), 580327.Tthe_2116 (degree 764) and 580327.Tthe_0899
+	The undirected graph Thermoanaerobacterium thermosaccharolyticum has 2592
+	nodes and 159695 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04756 and has 10 connected components,
+	where the component with most nodes has 2569 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 96, the mean
+	node degree is 123.22, and the node degree mode is 4. The top 5 most central
+	nodes are 580327.Tthe_2187 (degree 1120), 580327.Tthe_1101 (degree 989),
+	580327.Tthe_2115 (degree 796), 580327.Tthe_2116 (degree 764) and 580327.Tthe_0899
 	(degree 729).
 	
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:58.017198
 
-The undirected graph Blattabacterium sp. BPAA has 582 nodes and 31070 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.18377
-and is connected, as it has a single component. The graph median node degree is 94,
-the mean node degree is 106.77, and the node degree mode is 79. The top 5 most central
-nodes are 1229512.BPAA_165 (degree 348), 1229512.BPAA_333 (degree 347), 1229512.BPAA_125
-(degree 340), 1229512.BPAA_410 (degree 314) and 1229512.BPAA_539 (degree 282).
+The undirected graph Blattabacterium sp. BPAA has 582 nodes and 31070 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.18377 and is connected, as it has a single component. The
+graph median node degree is 94, the mean node degree is 106.77, and the
+node degree mode is 79. The top 5 most central nodes are 1229512.BPAA_165
+(degree 348), 1229512.BPAA_333 (degree 347), 1229512.BPAA_125 (degree 340),
+1229512.BPAA_410 (degree 314) and 1229512.BPAA_539 (degree 282).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Bpaa(
 	
 	Datetime: 2021-02-02 23:26:58.017198
 	
-	The undirected graph Blattabacterium sp. BPAA has 582 nodes and 31070 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.18377
-	and is connected, as it has a single component. The graph median node degree is 94,
-	the mean node degree is 106.77, and the node degree mode is 79. The top 5 most central
-	nodes are 1229512.BPAA_165 (degree 348), 1229512.BPAA_333 (degree 347), 1229512.BPAA_125
-	(degree 340), 1229512.BPAA_410 (degree 314) and 1229512.BPAA_539 (degree 282).
+	The undirected graph Blattabacterium sp. BPAA has 582 nodes and 31070 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.18377 and is connected, as it has a single component. The
+	graph median node degree is 94, the mean node degree is 106.77, and the
+	node degree mode is 79. The top 5 most central nodes are 1229512.BPAA_165
+	(degree 348), 1229512.BPAA_333 (degree 347), 1229512.BPAA_125 (degree 340),
+	1229512.BPAA_410 (degree 314) and 1229512.BPAA_539 (degree 282).
 	
 
 

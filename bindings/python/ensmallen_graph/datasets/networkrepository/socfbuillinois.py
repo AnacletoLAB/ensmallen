@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:31:56.947428
 
-The undirected graph socfb-UIllinois has 30795 nodes and 1264421 unweighted edges,
-of which none are self-loops. The graph is sparse as it has a density of 0.00267
-and is connected, as it has a single component. The graph median node degree is 62,
-the mean node degree is 82.12, and the node degree mode is 1. The top 5 most central
-nodes are 21480 (degree 4632), 4905 (degree 1487), 1090 (degree 1446), 25499 (degree
-1088) and 25072 (degree 1083).
+The undirected graph socfb-UIllinois has 30795 nodes and 1264421 unweighted
+edges, of which none are self-loops. The graph is sparse as it has a density
+of 0.00267 and is connected, as it has a single component. The graph median
+node degree is 62, the mean node degree is 82.12, and the node degree mode
+is 1. The top 5 most central nodes are 21480 (degree 4632), 4905 (degree
+1487), 1090 (degree 1446), 25499 (degree 1088) and 25072 (degree 1083).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbUillinois(
 	
 	Datetime: 2021-02-06 12:31:56.947428
 	
-	The undirected graph socfb-UIllinois has 30795 nodes and 1264421 unweighted edges,
-	of which none are self-loops. The graph is sparse as it has a density of 0.00267
-	and is connected, as it has a single component. The graph median node degree is 62,
-	the mean node degree is 82.12, and the node degree mode is 1. The top 5 most central
-	nodes are 21480 (degree 4632), 4905 (degree 1487), 1090 (degree 1446), 25499 (degree
-	1088) and 25072 (degree 1083).
+	The undirected graph socfb-UIllinois has 30795 nodes and 1264421 unweighted
+	edges, of which none are self-loops. The graph is sparse as it has a density
+	of 0.00267 and is connected, as it has a single component. The graph median
+	node degree is 62, the mean node degree is 82.12, and the node degree mode
+	is 1. The top 5 most central nodes are 21480 (degree 4632), 4905 (degree
+	1487), 1090 (degree 1446), 25499 (degree 1088) and 25072 (degree 1083).
 	
 
 

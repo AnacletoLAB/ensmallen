@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:09.190572
 
-The undirected graph Pyrobaculum oguniense has 2787 nodes and 186506 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-has 49 connected components, where the component with most nodes has 2637 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 77,
-the mean node degree is 133.84, and the node degree mode is 5. The top 5 most central
-nodes are 698757.Pogu_2121 (degree 970), 698757.Pogu_1600 (degree 867), 698757.Pogu_1730
-(degree 842), 698757.Pogu_1175 (degree 785) and 698757.Pogu_2752 (degree 769).
+The undirected graph Pyrobaculum oguniense has 2787 nodes and 186506 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04804 and has 49 connected components, where the component with most
+nodes has 2637 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 77, the mean node degree is 133.84, and
+the node degree mode is 5. The top 5 most central nodes are 698757.Pogu_2121
+(degree 970), 698757.Pogu_1600 (degree 867), 698757.Pogu_1730 (degree 842),
+698757.Pogu_1175 (degree 785) and 698757.Pogu_2752 (degree 769).
 
 
 References
@@ -106,13 +107,14 @@ def PyrobaculumOguniense(
 	
 	Datetime: 2021-02-02 21:33:09.190572
 	
-	The undirected graph Pyrobaculum oguniense has 2787 nodes and 186506 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-	has 49 connected components, where the component with most nodes has 2637 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 77,
-	the mean node degree is 133.84, and the node degree mode is 5. The top 5 most central
-	nodes are 698757.Pogu_2121 (degree 970), 698757.Pogu_1600 (degree 867), 698757.Pogu_1730
-	(degree 842), 698757.Pogu_1175 (degree 785) and 698757.Pogu_2752 (degree 769).
+	The undirected graph Pyrobaculum oguniense has 2787 nodes and 186506 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04804 and has 49 connected components, where the component with most
+	nodes has 2637 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 77, the mean node degree is 133.84, and
+	the node degree mode is 5. The top 5 most central nodes are 698757.Pogu_2121
+	(degree 970), 698757.Pogu_1600 (degree 867), 698757.Pogu_1730 (degree 842),
+	698757.Pogu_1175 (degree 785) and 698757.Pogu_2752 (degree 769).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:15:42.542048
 
-The undirected graph Naegleria gruberi has 7587 nodes and 1054675 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-has 10 connected components, where the component with most nodes has 7566 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 278.02, and the node degree mode is 2. The top 5 most central
-nodes are 5762.XP_002675584.1 (degree 2421), 5762.XP_002668828.1 (degree 2223), 5762.XP_002676998.1
-(degree 2043), 5762.XP_002678191.1 (degree 1765) and 5762.XP_002674588.1 (degree
+The undirected graph Naegleria gruberi has 7587 nodes and 1054675 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03665 and has 10 connected components, where the component with most
+nodes has 7566 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 278.02, and
+the node degree mode is 2. The top 5 most central nodes are 5762.XP_002675584.1
+(degree 2421), 5762.XP_002668828.1 (degree 2223), 5762.XP_002676998.1 (degree
+2043), 5762.XP_002678191.1 (degree 1765) and 5762.XP_002674588.1 (degree
 1752).
 
 
@@ -107,13 +108,14 @@ def NaegleriaGruberi(
 	
 	Datetime: 2021-02-02 17:15:42.542048
 	
-	The undirected graph Naegleria gruberi has 7587 nodes and 1054675 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-	has 10 connected components, where the component with most nodes has 7566 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 278.02, and the node degree mode is 2. The top 5 most central
-	nodes are 5762.XP_002675584.1 (degree 2421), 5762.XP_002668828.1 (degree 2223), 5762.XP_002676998.1
-	(degree 2043), 5762.XP_002678191.1 (degree 1765) and 5762.XP_002674588.1 (degree
+	The undirected graph Naegleria gruberi has 7587 nodes and 1054675 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03665 and has 10 connected components, where the component with most
+	nodes has 7566 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 278.02, and
+	the node degree mode is 2. The top 5 most central nodes are 5762.XP_002675584.1
+	(degree 2421), 5762.XP_002668828.1 (degree 2223), 5762.XP_002676998.1 (degree
+	2043), 5762.XP_002678191.1 (degree 1765) and 5762.XP_002674588.1 (degree
 	1752).
 	
 

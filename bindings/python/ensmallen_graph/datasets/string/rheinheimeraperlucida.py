@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:09.433635
 
-The undirected graph Rheinheimera perlucida has 3509 nodes and 410845 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06675 and
-has 9 connected components, where the component with most nodes has 3493 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 234.17, and the node degree mode is 2. The top 5 most central
-nodes are 1123054.KB907730_gene2540 (degree 1407), 1123054.KB907725_gene3186 (degree
-1397), 1123054.KB907708_gene1977 (degree 1245), 1123054.KB907708_gene1978 (degree
-1212) and 1123054.KB907709_gene814 (degree 1184).
+The undirected graph Rheinheimera perlucida has 3509 nodes and 410845 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06675 and has 9 connected components, where the component with most
+nodes has 3493 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 234.17, and
+the node degree mode is 2. The top 5 most central nodes are 1123054.KB907730_gene2540
+(degree 1407), 1123054.KB907725_gene3186 (degree 1397), 1123054.KB907708_gene1977
+(degree 1245), 1123054.KB907708_gene1978 (degree 1212) and 1123054.KB907709_gene814
+(degree 1184).
 
 
 References
@@ -107,14 +108,15 @@ def RheinheimeraPerlucida(
 	
 	Datetime: 2021-02-02 22:47:09.433635
 	
-	The undirected graph Rheinheimera perlucida has 3509 nodes and 410845 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06675 and
-	has 9 connected components, where the component with most nodes has 3493 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 234.17, and the node degree mode is 2. The top 5 most central
-	nodes are 1123054.KB907730_gene2540 (degree 1407), 1123054.KB907725_gene3186 (degree
-	1397), 1123054.KB907708_gene1977 (degree 1245), 1123054.KB907708_gene1978 (degree
-	1212) and 1123054.KB907709_gene814 (degree 1184).
+	The undirected graph Rheinheimera perlucida has 3509 nodes and 410845 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06675 and has 9 connected components, where the component with most
+	nodes has 3493 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 234.17, and
+	the node degree mode is 2. The top 5 most central nodes are 1123054.KB907730_gene2540
+	(degree 1407), 1123054.KB907725_gene3186 (degree 1397), 1123054.KB907708_gene1977
+	(degree 1245), 1123054.KB907708_gene1978 (degree 1212) and 1123054.KB907709_gene814
+	(degree 1184).
 	
 
 

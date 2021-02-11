@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:08:33.052567
 
-The undirected graph Triticum urartu has 23391 nodes and 7735466 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02828 and
-has 13 connected components, where the component with most nodes has 23358 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 333, the mean node degree is 661.41, and the node degree mode is 7. The top 5
-most central nodes are 4572.TRIUR3_28590-P1 (degree 8461), 4572.TRIUR3_06844-P1 (degree
-7647), 4572.TRIUR3_26084-P1 (degree 6723), 4572.TRIUR3_25582-P1 (degree 6326) and
-4572.TRIUR3_19546-P1 (degree 6218).
+The undirected graph Triticum urartu has 23391 nodes and 7735466 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02828 and has 13 connected components, where the component with most
+nodes has 23358 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 333, the mean node degree is 661.41, and
+the node degree mode is 7. The top 5 most central nodes are 4572.TRIUR3_28590-P1
+(degree 8461), 4572.TRIUR3_06844-P1 (degree 7647), 4572.TRIUR3_26084-P1
+(degree 6723), 4572.TRIUR3_25582-P1 (degree 6326) and 4572.TRIUR3_19546-P1
+(degree 6218).
 
 
 References
@@ -107,14 +108,15 @@ def TriticumUrartu(
 	
 	Datetime: 2021-02-02 17:08:33.052567
 	
-	The undirected graph Triticum urartu has 23391 nodes and 7735466 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02828 and
-	has 13 connected components, where the component with most nodes has 23358 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 333, the mean node degree is 661.41, and the node degree mode is 7. The top 5
-	most central nodes are 4572.TRIUR3_28590-P1 (degree 8461), 4572.TRIUR3_06844-P1 (degree
-	7647), 4572.TRIUR3_26084-P1 (degree 6723), 4572.TRIUR3_25582-P1 (degree 6326) and
-	4572.TRIUR3_19546-P1 (degree 6218).
+	The undirected graph Triticum urartu has 23391 nodes and 7735466 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02828 and has 13 connected components, where the component with most
+	nodes has 23358 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 333, the mean node degree is 661.41, and
+	the node degree mode is 7. The top 5 most central nodes are 4572.TRIUR3_28590-P1
+	(degree 8461), 4572.TRIUR3_06844-P1 (degree 7647), 4572.TRIUR3_26084-P1
+	(degree 6723), 4572.TRIUR3_25582-P1 (degree 6326) and 4572.TRIUR3_19546-P1
+	(degree 6218).
 	
 
 

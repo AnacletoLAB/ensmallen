@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:04:58.605883
 
-The undirected graph Youngiibacter fragilis has 3702 nodes and 412849 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-has 8 connected components, where the component with most nodes has 3687 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 181,
-the mean node degree is 223.04, and the node degree mode is 3. The top 5 most central
-nodes are 994573.T472_0218560 (degree 1335), 994573.T472_0219335 (degree 1327), 994573.T472_0215370
-(degree 1270), 994573.T472_0213180 (degree 1190) and 994573.T472_0216875 (degree
+The undirected graph Youngiibacter fragilis has 3702 nodes and 412849 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06027 and has 8 connected components, where the component with most
+nodes has 3687 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 181, the mean node degree is 223.04, and
+the node degree mode is 3. The top 5 most central nodes are 994573.T472_0218560
+(degree 1335), 994573.T472_0219335 (degree 1327), 994573.T472_0215370 (degree
+1270), 994573.T472_0213180 (degree 1190) and 994573.T472_0216875 (degree
 1164).
 
 
@@ -107,13 +108,14 @@ def YoungiibacterFragilis(
 	
 	Datetime: 2021-02-02 22:04:58.605883
 	
-	The undirected graph Youngiibacter fragilis has 3702 nodes and 412849 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06027 and
-	has 8 connected components, where the component with most nodes has 3687 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 181,
-	the mean node degree is 223.04, and the node degree mode is 3. The top 5 most central
-	nodes are 994573.T472_0218560 (degree 1335), 994573.T472_0219335 (degree 1327), 994573.T472_0215370
-	(degree 1270), 994573.T472_0213180 (degree 1190) and 994573.T472_0216875 (degree
+	The undirected graph Youngiibacter fragilis has 3702 nodes and 412849 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06027 and has 8 connected components, where the component with most
+	nodes has 3687 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 181, the mean node degree is 223.04, and
+	the node degree mode is 3. The top 5 most central nodes are 994573.T472_0218560
+	(degree 1335), 994573.T472_0219335 (degree 1327), 994573.T472_0215370 (degree
+	1270), 994573.T472_0213180 (degree 1190) and 994573.T472_0216875 (degree
 	1164).
 	
 

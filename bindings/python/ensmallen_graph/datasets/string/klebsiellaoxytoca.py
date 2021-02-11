@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:28.563393
 
-The undirected graph Klebsiella oxytoca has 5739 nodes and 573222 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03481 and
-has 10 connected components, where the component with most nodes has 5712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 199.76, and the node degree mode is 3. The top 5 most central
-nodes are 571.MC52_08285 (degree 1804), 571.MC52_21220 (degree 1716), 571.MC52_05330
-(degree 1677), 571.MC52_05340 (degree 1644) and 571.MC52_29000 (degree 1429).
+The undirected graph Klebsiella oxytoca has 5739 nodes and 573222 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03481 and has 10 connected components, where the component with most
+nodes has 5712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 199.76, and
+the node degree mode is 3. The top 5 most central nodes are 571.MC52_08285
+(degree 1804), 571.MC52_21220 (degree 1716), 571.MC52_05330 (degree 1677),
+571.MC52_05340 (degree 1644) and 571.MC52_29000 (degree 1429).
 
 
 References
@@ -106,13 +107,14 @@ def KlebsiellaOxytoca(
 	
 	Datetime: 2021-02-02 16:21:28.563393
 	
-	The undirected graph Klebsiella oxytoca has 5739 nodes and 573222 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03481 and
-	has 10 connected components, where the component with most nodes has 5712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 199.76, and the node degree mode is 3. The top 5 most central
-	nodes are 571.MC52_08285 (degree 1804), 571.MC52_21220 (degree 1716), 571.MC52_05330
-	(degree 1677), 571.MC52_05340 (degree 1644) and 571.MC52_29000 (degree 1429).
+	The undirected graph Klebsiella oxytoca has 5739 nodes and 573222 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03481 and has 10 connected components, where the component with most
+	nodes has 5712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 199.76, and
+	the node degree mode is 3. The top 5 most central nodes are 571.MC52_08285
+	(degree 1804), 571.MC52_21220 (degree 1716), 571.MC52_05330 (degree 1677),
+	571.MC52_05340 (degree 1644) and 571.MC52_29000 (degree 1429).
 	
 
 

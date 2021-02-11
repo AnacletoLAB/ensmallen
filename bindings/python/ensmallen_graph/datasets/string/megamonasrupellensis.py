@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:42:24.612864
 
-The undirected graph Megamonas rupellensis has 2200 nodes and 195107 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08066 and
-has 7 connected components, where the component with most nodes has 2188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 177.37, and the node degree mode is 1. The top 5 most central
-nodes are 1122217.KB899591_gene284 (degree 935), 1122217.KB899573_gene2145 (degree
-909), 1122217.KB899579_gene1691 (degree 788), 1122217.KB899570_gene940 (degree 770)
-and 1122217.KB899573_gene2181 (degree 757).
+The undirected graph Megamonas rupellensis has 2200 nodes and 195107 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08066 and has 7 connected components, where the component with most
+nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 177.37, and
+the node degree mode is 1. The top 5 most central nodes are 1122217.KB899591_gene284
+(degree 935), 1122217.KB899573_gene2145 (degree 909), 1122217.KB899579_gene1691
+(degree 788), 1122217.KB899570_gene940 (degree 770) and 1122217.KB899573_gene2181
+(degree 757).
 
 
 References
@@ -107,14 +108,15 @@ def MegamonasRupellensis(
 	
 	Datetime: 2021-02-02 22:42:24.612864
 	
-	The undirected graph Megamonas rupellensis has 2200 nodes and 195107 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08066 and
-	has 7 connected components, where the component with most nodes has 2188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 177.37, and the node degree mode is 1. The top 5 most central
-	nodes are 1122217.KB899591_gene284 (degree 935), 1122217.KB899573_gene2145 (degree
-	909), 1122217.KB899579_gene1691 (degree 788), 1122217.KB899570_gene940 (degree 770)
-	and 1122217.KB899573_gene2181 (degree 757).
+	The undirected graph Megamonas rupellensis has 2200 nodes and 195107 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08066 and has 7 connected components, where the component with most
+	nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 177.37, and
+	the node degree mode is 1. The top 5 most central nodes are 1122217.KB899591_gene284
+	(degree 935), 1122217.KB899573_gene2145 (degree 909), 1122217.KB899579_gene1691
+	(degree 788), 1122217.KB899570_gene940 (degree 770) and 1122217.KB899573_gene2181
+	(degree 757).
 	
 
 

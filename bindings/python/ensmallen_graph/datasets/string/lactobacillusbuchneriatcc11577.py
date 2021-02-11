@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:15.965112
 
-The undirected graph Lactobacillus buchneri ATCC11577 has 2936 nodes and 170720 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03962
-and has 29 connected components, where the component with most nodes has 2866 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 88, the mean node degree is 116.29, and the node degree mode is 1. The top 5 most
-central nodes are 525318.HMPREF0497_2668 (degree 996), 525318.HMPREF0497_2595 (degree
-830), 525318.HMPREF0497_1796 (degree 696), 525318.HMPREF0497_2313 (degree 689) and
-525318.HMPREF0497_0711 (degree 684).
+The undirected graph Lactobacillus buchneri ATCC11577 has 2936 nodes and
+170720 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03962 and has 29 connected components, where the
+component with most nodes has 2866 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+is 116.29, and the node degree mode is 1. The top 5 most central nodes
+are 525318.HMPREF0497_2668 (degree 996), 525318.HMPREF0497_2595 (degree
+830), 525318.HMPREF0497_1796 (degree 696), 525318.HMPREF0497_2313 (degree
+689) and 525318.HMPREF0497_0711 (degree 684).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusBuchneriAtcc11577(
 	
 	Datetime: 2021-02-02 21:05:15.965112
 	
-	The undirected graph Lactobacillus buchneri ATCC11577 has 2936 nodes and 170720 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03962
-	and has 29 connected components, where the component with most nodes has 2866 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 88, the mean node degree is 116.29, and the node degree mode is 1. The top 5 most
-	central nodes are 525318.HMPREF0497_2668 (degree 996), 525318.HMPREF0497_2595 (degree
-	830), 525318.HMPREF0497_1796 (degree 696), 525318.HMPREF0497_2313 (degree 689) and
-	525318.HMPREF0497_0711 (degree 684).
+	The undirected graph Lactobacillus buchneri ATCC11577 has 2936 nodes and
+	170720 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03962 and has 29 connected components, where the
+	component with most nodes has 2866 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+	is 116.29, and the node degree mode is 1. The top 5 most central nodes
+	are 525318.HMPREF0497_2668 (degree 996), 525318.HMPREF0497_2595 (degree
+	830), 525318.HMPREF0497_1796 (degree 696), 525318.HMPREF0497_2313 (degree
+	689) and 525318.HMPREF0497_0711 (degree 684).
 	
 
 

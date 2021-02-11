@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:57.836429
 
-The undirected graph Opitutaceae bacterium TAV5 has 5970 nodes and 416370 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02337
-and has 48 connected components, where the component with most nodes has 5825 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 139.49, and the node degree mode is 4. The top 5
-most central nodes are 794903.OPIT5_29135 (degree 1393), 794903.OPIT5_11295 (degree
-1179), 794903.OPIT5_17455 (degree 1174), 794903.OPIT5_19990 (degree 1011) and 794903.OPIT5_30770
-(degree 949).
+The undirected graph Opitutaceae bacterium TAV5 has 5970 nodes and 416370
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02337 and has 48 connected components, where the component
+with most nodes has 5825 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 139.49,
+and the node degree mode is 4. The top 5 most central nodes are 794903.OPIT5_29135
+(degree 1393), 794903.OPIT5_11295 (degree 1179), 794903.OPIT5_17455 (degree
+1174), 794903.OPIT5_19990 (degree 1011) and 794903.OPIT5_30770 (degree
+949).
 
 
 References
@@ -107,14 +108,15 @@ def OpitutaceaeBacteriumTav5(
 	
 	Datetime: 2021-02-02 21:44:57.836429
 	
-	The undirected graph Opitutaceae bacterium TAV5 has 5970 nodes and 416370 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02337
-	and has 48 connected components, where the component with most nodes has 5825 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 139.49, and the node degree mode is 4. The top 5
-	most central nodes are 794903.OPIT5_29135 (degree 1393), 794903.OPIT5_11295 (degree
-	1179), 794903.OPIT5_17455 (degree 1174), 794903.OPIT5_19990 (degree 1011) and 794903.OPIT5_30770
-	(degree 949).
+	The undirected graph Opitutaceae bacterium TAV5 has 5970 nodes and 416370
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02337 and has 48 connected components, where the component
+	with most nodes has 5825 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 139.49,
+	and the node degree mode is 4. The top 5 most central nodes are 794903.OPIT5_29135
+	(degree 1393), 794903.OPIT5_11295 (degree 1179), 794903.OPIT5_17455 (degree
+	1174), 794903.OPIT5_19990 (degree 1011) and 794903.OPIT5_30770 (degree
+	949).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:53.220321
 
-The undirected graph Python bivittatus has 18325 nodes and 4025090 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02397 and
-has 2 connected components, where the component with most nodes has 18323 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 309,
-the mean node degree is 439.30, and the node degree mode is 166. The top 5 most central
-nodes are 176946.XP_007431909.1 (degree 4444), 176946.XP_007430294.1 (degree 4397),
-176946.XP_007420605.1 (degree 3785), 176946.XP_007429674.1 (degree 3772) and 176946.XP_007443238.1
+The undirected graph Python bivittatus has 18325 nodes and 4025090 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02397 and has 2 connected components, where the component with most
+nodes has 18323 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 309, the mean node degree is 439.30, and
+the node degree mode is 166. The top 5 most central nodes are 176946.XP_007431909.1
+(degree 4444), 176946.XP_007430294.1 (degree 4397), 176946.XP_007420605.1
+(degree 3785), 176946.XP_007429674.1 (degree 3772) and 176946.XP_007443238.1
 (degree 3719).
 
 
@@ -107,13 +108,14 @@ def PythonBivittatus(
 	
 	Datetime: 2021-02-02 19:55:53.220321
 	
-	The undirected graph Python bivittatus has 18325 nodes and 4025090 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02397 and
-	has 2 connected components, where the component with most nodes has 18323 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 309,
-	the mean node degree is 439.30, and the node degree mode is 166. The top 5 most central
-	nodes are 176946.XP_007431909.1 (degree 4444), 176946.XP_007430294.1 (degree 4397),
-	176946.XP_007420605.1 (degree 3785), 176946.XP_007429674.1 (degree 3772) and 176946.XP_007443238.1
+	The undirected graph Python bivittatus has 18325 nodes and 4025090 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02397 and has 2 connected components, where the component with most
+	nodes has 18323 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 309, the mean node degree is 439.30, and
+	the node degree mode is 166. The top 5 most central nodes are 176946.XP_007431909.1
+	(degree 4444), 176946.XP_007430294.1 (degree 4397), 176946.XP_007420605.1
+	(degree 3785), 176946.XP_007429674.1 (degree 3772) and 176946.XP_007443238.1
 	(degree 3719).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:02.398826
 
-The undirected graph Exiguobacterium sp. MH3 has 3194 nodes and 306210 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06005 and
-has 15 connected components, where the component with most nodes has 3154 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 174,
-the mean node degree is 191.74, and the node degree mode is 4. The top 5 most central
-nodes are 1399115.U719_12210 (degree 1374), 1399115.U719_02255 (degree 1103), 1399115.U719_10860
-(degree 1000), 1399115.U719_09815 (degree 914) and 1399115.U719_04450 (degree 851).
+The undirected graph Exiguobacterium sp. MH3 has 3194 nodes and 306210
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06005 and has 15 connected components, where the component
+with most nodes has 3154 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 174, the mean node degree is 191.74,
+and the node degree mode is 4. The top 5 most central nodes are 1399115.U719_12210
+(degree 1374), 1399115.U719_02255 (degree 1103), 1399115.U719_10860 (degree
+1000), 1399115.U719_09815 (degree 914) and 1399115.U719_04450 (degree 851).
 
 
 References
@@ -106,13 +107,14 @@ def ExiguobacteriumSp.Mh3(
 	
 	Datetime: 2021-02-03 22:31:02.398826
 	
-	The undirected graph Exiguobacterium sp. MH3 has 3194 nodes and 306210 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06005 and
-	has 15 connected components, where the component with most nodes has 3154 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 174,
-	the mean node degree is 191.74, and the node degree mode is 4. The top 5 most central
-	nodes are 1399115.U719_12210 (degree 1374), 1399115.U719_02255 (degree 1103), 1399115.U719_10860
-	(degree 1000), 1399115.U719_09815 (degree 914) and 1399115.U719_04450 (degree 851).
+	The undirected graph Exiguobacterium sp. MH3 has 3194 nodes and 306210
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06005 and has 15 connected components, where the component
+	with most nodes has 3154 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 174, the mean node degree is 191.74,
+	and the node degree mode is 4. The top 5 most central nodes are 1399115.U719_12210
+	(degree 1374), 1399115.U719_02255 (degree 1103), 1399115.U719_10860 (degree
+	1000), 1399115.U719_09815 (degree 914) and 1399115.U719_04450 (degree 851).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:04.990482
 
-The undirected graph Bacillus coahuilensis has 4098 nodes and 596250 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07103 and
-has 15 connected components, where the component with most nodes has 4067 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 279,
-the mean node degree is 291.00, and the node degree mode is 1. The top 5 most central
-nodes are 441769.ABFU01000051_gene3917 (degree 1650), 441769.ABFU01000002_gene2975
-(degree 1376), 441769.ABFU01000003_gene2318 (degree 1322), 441769.ABFU01000050_gene3971
-(degree 1306) and 441769.ABFU01000047_gene3689 (degree 1290).
+The undirected graph Bacillus coahuilensis has 4098 nodes and 596250 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07103 and has 15 connected components, where the component with most
+nodes has 4067 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 279, the mean node degree is 291.00, and
+the node degree mode is 1. The top 5 most central nodes are 441769.ABFU01000051_gene3917
+(degree 1650), 441769.ABFU01000002_gene2975 (degree 1376), 441769.ABFU01000003_gene2318
+(degree 1322), 441769.ABFU01000050_gene3971 (degree 1306) and 441769.ABFU01000047_gene3689
+(degree 1290).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusCoahuilensis(
 	
 	Datetime: 2021-02-02 20:50:04.990482
 	
-	The undirected graph Bacillus coahuilensis has 4098 nodes and 596250 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07103 and
-	has 15 connected components, where the component with most nodes has 4067 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 279,
-	the mean node degree is 291.00, and the node degree mode is 1. The top 5 most central
-	nodes are 441769.ABFU01000051_gene3917 (degree 1650), 441769.ABFU01000002_gene2975
-	(degree 1376), 441769.ABFU01000003_gene2318 (degree 1322), 441769.ABFU01000050_gene3971
-	(degree 1306) and 441769.ABFU01000047_gene3689 (degree 1290).
+	The undirected graph Bacillus coahuilensis has 4098 nodes and 596250 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07103 and has 15 connected components, where the component with most
+	nodes has 4067 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 279, the mean node degree is 291.00, and
+	the node degree mode is 1. The top 5 most central nodes are 441769.ABFU01000051_gene3917
+	(degree 1650), 441769.ABFU01000002_gene2975 (degree 1376), 441769.ABFU01000003_gene2318
+	(degree 1322), 441769.ABFU01000050_gene3971 (degree 1306) and 441769.ABFU01000047_gene3689
+	(degree 1290).
 	
 
 

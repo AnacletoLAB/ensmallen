@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:24.818508
 
-The undirected graph TF10 has 107 nodes and 579 weighted edges, of which 20 are self-loops.
-The graph is quite dense as it has a density of 0.10034 and is connected, as it has
-a single component. The graph median node degree is 11, the mean node degree is 10.64,
-and the node degree mode is 11. The top 5 most central nodes are 79 (degree 19),
-75 (degree 18), 85 (degree 17), 76 (degree 17) and 74 (degree 17).
+The undirected graph TF10 has 107 nodes and 579 weighted edges, of which
+20 are self-loops. The graph is quite dense as it has a density of 0.10034
+and is connected, as it has a single component. The graph median node degree
+is 11, the mean node degree is 10.64, and the node degree mode is 11. The
+top 5 most central nodes are 79 (degree 19), 75 (degree 18), 85 (degree
+17), 76 (degree 17) and 74 (degree 17).
 
 
 References
@@ -101,11 +102,12 @@ def Tf10(
 	
 	Datetime: 2021-02-06 08:00:24.818508
 	
-	The undirected graph TF10 has 107 nodes and 579 weighted edges, of which 20 are self-loops.
-	The graph is quite dense as it has a density of 0.10034 and is connected, as it has
-	a single component. The graph median node degree is 11, the mean node degree is 10.64,
-	and the node degree mode is 11. The top 5 most central nodes are 79 (degree 19),
-	75 (degree 18), 85 (degree 17), 76 (degree 17) and 74 (degree 17).
+	The undirected graph TF10 has 107 nodes and 579 weighted edges, of which
+	20 are self-loops. The graph is quite dense as it has a density of 0.10034
+	and is connected, as it has a single component. The graph median node degree
+	is 11, the mean node degree is 10.64, and the node degree mode is 11. The
+	top 5 most central nodes are 79 (degree 19), 75 (degree 18), 85 (degree
+	17), 76 (degree 17) and 74 (degree 17).
 	
 
 

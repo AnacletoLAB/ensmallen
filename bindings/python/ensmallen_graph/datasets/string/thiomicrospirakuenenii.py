@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:06:00.736260
 
-The undirected graph Thiomicrospira kuenenii has 2225 nodes and 196510 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07942 and
-has 5 connected components, where the component with most nodes has 2217 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 176.64, and the node degree mode is 4. The top 5 most central
-nodes are 1168067.JAGP01000001_gene2185 (degree 1035), 1168067.JAGP01000001_gene559
-(degree 1012), 1168067.JAGP01000001_gene2101 (degree 940), 1168067.JAGP01000001_gene1630
-(degree 926) and 1168067.JAGP01000001_gene1631 (degree 834).
+The undirected graph Thiomicrospira kuenenii has 2225 nodes and 196510
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07942 and has 5 connected components, where the component
+with most nodes has 2217 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 153, the mean node degree is 176.64,
+and the node degree mode is 4. The top 5 most central nodes are 1168067.JAGP01000001_gene2185
+(degree 1035), 1168067.JAGP01000001_gene559 (degree 1012), 1168067.JAGP01000001_gene2101
+(degree 940), 1168067.JAGP01000001_gene1630 (degree 926) and 1168067.JAGP01000001_gene1631
+(degree 834).
 
 
 References
@@ -107,14 +108,15 @@ def ThiomicrospiraKuenenii(
 	
 	Datetime: 2021-02-02 23:06:00.736260
 	
-	The undirected graph Thiomicrospira kuenenii has 2225 nodes and 196510 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07942 and
-	has 5 connected components, where the component with most nodes has 2217 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 176.64, and the node degree mode is 4. The top 5 most central
-	nodes are 1168067.JAGP01000001_gene2185 (degree 1035), 1168067.JAGP01000001_gene559
-	(degree 1012), 1168067.JAGP01000001_gene2101 (degree 940), 1168067.JAGP01000001_gene1630
-	(degree 926) and 1168067.JAGP01000001_gene1631 (degree 834).
+	The undirected graph Thiomicrospira kuenenii has 2225 nodes and 196510
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07942 and has 5 connected components, where the component
+	with most nodes has 2217 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 153, the mean node degree is 176.64,
+	and the node degree mode is 4. The top 5 most central nodes are 1168067.JAGP01000001_gene2185
+	(degree 1035), 1168067.JAGP01000001_gene559 (degree 1012), 1168067.JAGP01000001_gene2101
+	(degree 940), 1168067.JAGP01000001_gene1630 (degree 926) and 1168067.JAGP01000001_gene1631
+	(degree 834).
 	
 
 

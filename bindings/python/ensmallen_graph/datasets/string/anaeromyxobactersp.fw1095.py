@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:24.185098
 
-The undirected graph Anaeromyxobacter sp. Fw1095 has 4432 nodes and 445482 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04537
-and has 8 connected components, where the component with most nodes has 4417 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 156, the mean node degree is 201.03, and the node degree mode is 3. The top 5
-most central nodes are 404589.Anae109_2455 (degree 1809), 404589.Anae109_0540 (degree
-1741), 404589.Anae109_0769 (degree 1639), 404589.Anae109_0854 (degree 1358) and 404589.Anae109_1439
-(degree 1352).
+The undirected graph Anaeromyxobacter sp. Fw1095 has 4432 nodes and 445482
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04537 and has 8 connected components, where the component
+with most nodes has 4417 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 156, the mean node degree is 201.03,
+and the node degree mode is 3. The top 5 most central nodes are 404589.Anae109_2455
+(degree 1809), 404589.Anae109_0540 (degree 1741), 404589.Anae109_0769 (degree
+1639), 404589.Anae109_0854 (degree 1358) and 404589.Anae109_1439 (degree
+1352).
 
 
 References
@@ -107,14 +108,15 @@ def AnaeromyxobacterSp.Fw1095(
 	
 	Datetime: 2021-02-02 20:44:24.185098
 	
-	The undirected graph Anaeromyxobacter sp. Fw1095 has 4432 nodes and 445482 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04537
-	and has 8 connected components, where the component with most nodes has 4417 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 156, the mean node degree is 201.03, and the node degree mode is 3. The top 5
-	most central nodes are 404589.Anae109_2455 (degree 1809), 404589.Anae109_0540 (degree
-	1741), 404589.Anae109_0769 (degree 1639), 404589.Anae109_0854 (degree 1358) and 404589.Anae109_1439
-	(degree 1352).
+	The undirected graph Anaeromyxobacter sp. Fw1095 has 4432 nodes and 445482
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04537 and has 8 connected components, where the component
+	with most nodes has 4417 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 156, the mean node degree is 201.03,
+	and the node degree mode is 3. The top 5 most central nodes are 404589.Anae109_2455
+	(degree 1809), 404589.Anae109_0540 (degree 1741), 404589.Anae109_0769 (degree
+	1639), 404589.Anae109_0854 (degree 1358) and 404589.Anae109_1439 (degree
+	1352).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:22.056263
 
-The undirected graph Hyphomonas sp. T16B2 has 3283 nodes and 266773 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04952 and
-has 2 connected components, where the component with most nodes has 3281 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 162.52, and the node degree mode is 4. The top 5 most central
-nodes are 1280941.HY2_07845 (degree 1115), 1280941.HY2_10030 (degree 1107), 1280941.HY2_01815
-(degree 950), 1280941.HY2_01835 (degree 878) and 1280941.HY2_06415 (degree 856).
+The undirected graph Hyphomonas sp. T16B2 has 3283 nodes and 266773 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04952 and has 2 connected components, where the component with most
+nodes has 3281 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 162.52, and
+the node degree mode is 4. The top 5 most central nodes are 1280941.HY2_07845
+(degree 1115), 1280941.HY2_10030 (degree 1107), 1280941.HY2_01815 (degree
+950), 1280941.HY2_01835 (degree 878) and 1280941.HY2_06415 (degree 856).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasSp.T16b2(
 	
 	Datetime: 2021-02-03 21:08:22.056263
 	
-	The undirected graph Hyphomonas sp. T16B2 has 3283 nodes and 266773 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04952 and
-	has 2 connected components, where the component with most nodes has 3281 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 162.52, and the node degree mode is 4. The top 5 most central
-	nodes are 1280941.HY2_07845 (degree 1115), 1280941.HY2_10030 (degree 1107), 1280941.HY2_01815
-	(degree 950), 1280941.HY2_01835 (degree 878) and 1280941.HY2_06415 (degree 856).
+	The undirected graph Hyphomonas sp. T16B2 has 3283 nodes and 266773 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04952 and has 2 connected components, where the component with most
+	nodes has 3281 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 162.52, and
+	the node degree mode is 4. The top 5 most central nodes are 1280941.HY2_07845
+	(degree 1115), 1280941.HY2_10030 (degree 1107), 1280941.HY2_01815 (degree
+	950), 1280941.HY2_01835 (degree 878) and 1280941.HY2_06415 (degree 856).
 	
 
 

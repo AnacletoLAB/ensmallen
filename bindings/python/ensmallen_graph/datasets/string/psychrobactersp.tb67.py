@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:18:00.719542
 
-The undirected graph Psychrobacter sp. TB67 has 2916 nodes and 200126 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04709 and
-has 12 connected components, where the component with most nodes has 2885 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 137.26, and the node degree mode is 3. The top 5 most central
-nodes are 1055815.AYYA01000014_gene1509 (degree 999), 1055815.AYYA01000006_gene2008
-(degree 883), 1055815.AYYA01000046_gene1941 (degree 839), 1055815.AYYA01000032_gene381
-(degree 764) and 1055815.AYYA01000071_gene2234 (degree 762).
+The undirected graph Psychrobacter sp. TB67 has 2916 nodes and 200126 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04709 and has 12 connected components, where the component with most
+nodes has 2885 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 137.26, and
+the node degree mode is 3. The top 5 most central nodes are 1055815.AYYA01000014_gene1509
+(degree 999), 1055815.AYYA01000006_gene2008 (degree 883), 1055815.AYYA01000046_gene1941
+(degree 839), 1055815.AYYA01000032_gene381 (degree 764) and 1055815.AYYA01000071_gene2234
+(degree 762).
 
 
 References
@@ -107,14 +108,15 @@ def PsychrobacterSp.Tb67(
 	
 	Datetime: 2021-02-02 22:18:00.719542
 	
-	The undirected graph Psychrobacter sp. TB67 has 2916 nodes and 200126 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04709 and
-	has 12 connected components, where the component with most nodes has 2885 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 137.26, and the node degree mode is 3. The top 5 most central
-	nodes are 1055815.AYYA01000014_gene1509 (degree 999), 1055815.AYYA01000006_gene2008
-	(degree 883), 1055815.AYYA01000046_gene1941 (degree 839), 1055815.AYYA01000032_gene381
-	(degree 764) and 1055815.AYYA01000071_gene2234 (degree 762).
+	The undirected graph Psychrobacter sp. TB67 has 2916 nodes and 200126 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04709 and has 12 connected components, where the component with most
+	nodes has 2885 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 137.26, and
+	the node degree mode is 3. The top 5 most central nodes are 1055815.AYYA01000014_gene1509
+	(degree 999), 1055815.AYYA01000006_gene2008 (degree 883), 1055815.AYYA01000046_gene1941
+	(degree 839), 1055815.AYYA01000032_gene381 (degree 764) and 1055815.AYYA01000071_gene2234
+	(degree 762).
 	
 
 

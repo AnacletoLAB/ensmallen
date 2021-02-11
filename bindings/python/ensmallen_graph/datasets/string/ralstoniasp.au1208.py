@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:29:50.109470
 
-The undirected graph Ralstonia sp. AU1208 has 5720 nodes and 894572 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05469 and
-has 29 connected components, where the component with most nodes has 5655 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 253,
-the mean node degree is 312.79, and the node degree mode is 1. The top 5 most central
-nodes are 1235457.C404_13660 (degree 2048), 1235457.C404_11580 (degree 2035), 1235457.C404_03430
-(degree 1811), 1235457.C404_27095 (degree 1722) and 1235457.C404_25110 (degree 1708).
+The undirected graph Ralstonia sp. AU1208 has 5720 nodes and 894572 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05469 and has 29 connected components, where the component with most
+nodes has 5655 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 253, the mean node degree is 312.79, and
+the node degree mode is 1. The top 5 most central nodes are 1235457.C404_13660
+(degree 2048), 1235457.C404_11580 (degree 2035), 1235457.C404_03430 (degree
+1811), 1235457.C404_27095 (degree 1722) and 1235457.C404_25110 (degree
+1708).
 
 
 References
@@ -106,13 +108,15 @@ def RalstoniaSp.Au1208(
 	
 	Datetime: 2021-02-02 23:29:50.109470
 	
-	The undirected graph Ralstonia sp. AU1208 has 5720 nodes and 894572 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05469 and
-	has 29 connected components, where the component with most nodes has 5655 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 253,
-	the mean node degree is 312.79, and the node degree mode is 1. The top 5 most central
-	nodes are 1235457.C404_13660 (degree 2048), 1235457.C404_11580 (degree 2035), 1235457.C404_03430
-	(degree 1811), 1235457.C404_27095 (degree 1722) and 1235457.C404_25110 (degree 1708).
+	The undirected graph Ralstonia sp. AU1208 has 5720 nodes and 894572 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05469 and has 29 connected components, where the component with most
+	nodes has 5655 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 253, the mean node degree is 312.79, and
+	the node degree mode is 1. The top 5 most central nodes are 1235457.C404_13660
+	(degree 2048), 1235457.C404_11580 (degree 2035), 1235457.C404_03430 (degree
+	1811), 1235457.C404_27095 (degree 1722) and 1235457.C404_25110 (degree
+	1708).
 	
 
 

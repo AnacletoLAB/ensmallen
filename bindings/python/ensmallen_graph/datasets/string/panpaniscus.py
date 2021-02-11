@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:37:51.590852
 
-The undirected graph Pan paniscus has 19734 nodes and 4373793 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02246 and
-has 4 connected components, where the component with most nodes has 19727 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 311,
-the mean node degree is 443.27, and the node degree mode is 152. The top 5 most central
-nodes are 9597.XP_003825774.1 (degree 4965), 9597.XP_003824788.1 (degree 4647), 9597.XP_003823945.1
-(degree 4386), 9597.XP_008959823.1 (degree 4156) and 9597.XP_008958128.1 (degree
+The undirected graph Pan paniscus has 19734 nodes and 4373793 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02246 and has 4 connected components, where the component with most
+nodes has 19727 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 311, the mean node degree is 443.27, and
+the node degree mode is 152. The top 5 most central nodes are 9597.XP_003825774.1
+(degree 4965), 9597.XP_003824788.1 (degree 4647), 9597.XP_003823945.1 (degree
+4386), 9597.XP_008959823.1 (degree 4156) and 9597.XP_008958128.1 (degree
 3969).
 
 
@@ -107,13 +108,14 @@ def PanPaniscus(
 	
 	Datetime: 2021-02-02 17:37:51.590852
 	
-	The undirected graph Pan paniscus has 19734 nodes and 4373793 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02246 and
-	has 4 connected components, where the component with most nodes has 19727 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 311,
-	the mean node degree is 443.27, and the node degree mode is 152. The top 5 most central
-	nodes are 9597.XP_003825774.1 (degree 4965), 9597.XP_003824788.1 (degree 4647), 9597.XP_003823945.1
-	(degree 4386), 9597.XP_008959823.1 (degree 4156) and 9597.XP_008958128.1 (degree
+	The undirected graph Pan paniscus has 19734 nodes and 4373793 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02246 and has 4 connected components, where the component with most
+	nodes has 19727 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 311, the mean node degree is 443.27, and
+	the node degree mode is 152. The top 5 most central nodes are 9597.XP_003825774.1
+	(degree 4965), 9597.XP_003824788.1 (degree 4647), 9597.XP_003823945.1 (degree
+	4386), 9597.XP_008959823.1 (degree 4156) and 9597.XP_008958128.1 (degree
 	3969).
 	
 

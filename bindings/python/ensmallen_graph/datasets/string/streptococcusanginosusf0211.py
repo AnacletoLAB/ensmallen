@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:17.772938
 
-The undirected graph Streptococcus anginosus F0211 has 2009 nodes and 145566 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07217
-and has 4 connected components, where the component with most nodes has 2000 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 111, the mean node degree is 144.91, and the node degree mode is 6. The top 5
-most central nodes are 706437.HMPREF0813_01629 (degree 919), 706437.HMPREF0813_00954
-(degree 769), 706437.HMPREF0813_00380 (degree 763), 706437.HMPREF0813_01740 (degree
-739) and 706437.HMPREF0813_00768 (degree 693).
+The undirected graph Streptococcus anginosus F0211 has 2009 nodes and 145566
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07217 and has 4 connected components, where the component
+with most nodes has 2000 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 111, the mean node degree is 144.91,
+and the node degree mode is 6. The top 5 most central nodes are 706437.HMPREF0813_01629
+(degree 919), 706437.HMPREF0813_00954 (degree 769), 706437.HMPREF0813_00380
+(degree 763), 706437.HMPREF0813_01740 (degree 739) and 706437.HMPREF0813_00768
+(degree 693).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusAnginosusF0211(
 	
 	Datetime: 2021-02-02 21:34:17.772938
 	
-	The undirected graph Streptococcus anginosus F0211 has 2009 nodes and 145566 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07217
-	and has 4 connected components, where the component with most nodes has 2000 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 111, the mean node degree is 144.91, and the node degree mode is 6. The top 5
-	most central nodes are 706437.HMPREF0813_01629 (degree 919), 706437.HMPREF0813_00954
-	(degree 769), 706437.HMPREF0813_00380 (degree 763), 706437.HMPREF0813_01740 (degree
-	739) and 706437.HMPREF0813_00768 (degree 693).
+	The undirected graph Streptococcus anginosus F0211 has 2009 nodes and 145566
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07217 and has 4 connected components, where the component
+	with most nodes has 2000 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 111, the mean node degree is 144.91,
+	and the node degree mode is 6. The top 5 most central nodes are 706437.HMPREF0813_01629
+	(degree 919), 706437.HMPREF0813_00954 (degree 769), 706437.HMPREF0813_00380
+	(degree 763), 706437.HMPREF0813_01740 (degree 739) and 706437.HMPREF0813_00768
+	(degree 693).
 	
 
 

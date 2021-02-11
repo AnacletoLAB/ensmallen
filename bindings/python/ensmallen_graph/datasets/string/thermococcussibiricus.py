@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:52.519793
 
-The undirected graph Thermococcus sibiricus has 2024 nodes and 140343 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06855 and
-has 9 connected components, where the component with most nodes has 2000 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 117,
-the mean node degree is 138.68, and the node degree mode is 4. The top 5 most central
-nodes are 604354.TSIB_0949 (degree 675), 604354.TSIB_2019 (degree 643), 604354.TSIB_1685
-(degree 635), 604354.TSIB_1992 (degree 603) and 604354.TSIB_1868 (degree 591).
+The undirected graph Thermococcus sibiricus has 2024 nodes and 140343 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06855 and has 9 connected components, where the component with most
+nodes has 2000 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 117, the mean node degree is 138.68, and
+the node degree mode is 4. The top 5 most central nodes are 604354.TSIB_0949
+(degree 675), 604354.TSIB_2019 (degree 643), 604354.TSIB_1685 (degree 635),
+604354.TSIB_1992 (degree 603) and 604354.TSIB_1868 (degree 591).
 
 
 References
@@ -106,13 +107,14 @@ def ThermococcusSibiricus(
 	
 	Datetime: 2021-02-02 21:19:52.519793
 	
-	The undirected graph Thermococcus sibiricus has 2024 nodes and 140343 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06855 and
-	has 9 connected components, where the component with most nodes has 2000 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 117,
-	the mean node degree is 138.68, and the node degree mode is 4. The top 5 most central
-	nodes are 604354.TSIB_0949 (degree 675), 604354.TSIB_2019 (degree 643), 604354.TSIB_1685
-	(degree 635), 604354.TSIB_1992 (degree 603) and 604354.TSIB_1868 (degree 591).
+	The undirected graph Thermococcus sibiricus has 2024 nodes and 140343 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06855 and has 9 connected components, where the component with most
+	nodes has 2000 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 117, the mean node degree is 138.68, and
+	the node degree mode is 4. The top 5 most central nodes are 604354.TSIB_0949
+	(degree 675), 604354.TSIB_2019 (degree 643), 604354.TSIB_1685 (degree 635),
+	604354.TSIB_1992 (degree 603) and 604354.TSIB_1868 (degree 591).
 	
 
 

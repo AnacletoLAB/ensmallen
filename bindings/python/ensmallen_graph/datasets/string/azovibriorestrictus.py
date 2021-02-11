@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:37.473890
 
-The undirected graph Azovibrio restrictus has 3421 nodes and 511185 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08738 and
-has 8 connected components, where the component with most nodes has 3406 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 255,
-the mean node degree is 298.85, and the node degree mode is 1. The top 5 most central
-nodes are 1121035.AUCH01000006_gene736 (degree 1498), 1121035.AUCH01000001_gene1791
-(degree 1424), 1121035.AUCH01000001_gene1735 (degree 1320), 1121035.AUCH01000012_gene2972
-(degree 1312) and 1121035.AUCH01000002_gene1562 (degree 1308).
+The undirected graph Azovibrio restrictus has 3421 nodes and 511185 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08738 and has 8 connected components, where the component with most
+nodes has 3406 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 255, the mean node degree is 298.85, and
+the node degree mode is 1. The top 5 most central nodes are 1121035.AUCH01000006_gene736
+(degree 1498), 1121035.AUCH01000001_gene1791 (degree 1424), 1121035.AUCH01000001_gene1735
+(degree 1320), 1121035.AUCH01000012_gene2972 (degree 1312) and 1121035.AUCH01000002_gene1562
+(degree 1308).
 
 
 References
@@ -107,14 +108,15 @@ def AzovibrioRestrictus(
 	
 	Datetime: 2021-02-02 22:32:37.473890
 	
-	The undirected graph Azovibrio restrictus has 3421 nodes and 511185 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08738 and
-	has 8 connected components, where the component with most nodes has 3406 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 255,
-	the mean node degree is 298.85, and the node degree mode is 1. The top 5 most central
-	nodes are 1121035.AUCH01000006_gene736 (degree 1498), 1121035.AUCH01000001_gene1791
-	(degree 1424), 1121035.AUCH01000001_gene1735 (degree 1320), 1121035.AUCH01000012_gene2972
-	(degree 1312) and 1121035.AUCH01000002_gene1562 (degree 1308).
+	The undirected graph Azovibrio restrictus has 3421 nodes and 511185 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08738 and has 8 connected components, where the component with most
+	nodes has 3406 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 255, the mean node degree is 298.85, and
+	the node degree mode is 1. The top 5 most central nodes are 1121035.AUCH01000006_gene736
+	(degree 1498), 1121035.AUCH01000001_gene1791 (degree 1424), 1121035.AUCH01000001_gene1735
+	(degree 1320), 1121035.AUCH01000012_gene2972 (degree 1312) and 1121035.AUCH01000002_gene1562
+	(degree 1308).
 	
 
 

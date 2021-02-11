@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:24:35.983377
 
-The undirected graph Methylophilaceae bacterium 11 has 2588 nodes and 244717 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07310
-and has 8 connected components, where the component with most nodes has 2573 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 158, the mean node degree is 189.12, and the node degree mode is 1. The top 5
-most central nodes are 1101195.Meth11DRAFT_1853 (degree 1455), 1101195.Meth11DRAFT_0831
-(degree 1247), 1101195.Meth11DRAFT_0445 (degree 1222), 1101195.Meth11DRAFT_0915 (degree
-995) and 1101195.Meth11DRAFT_0914 (degree 941).
+The undirected graph Methylophilaceae bacterium 11 has 2588 nodes and 244717
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07310 and has 8 connected components, where the component
+with most nodes has 2573 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 158, the mean node degree is 189.12,
+and the node degree mode is 1. The top 5 most central nodes are 1101195.Meth11DRAFT_1853
+(degree 1455), 1101195.Meth11DRAFT_0831 (degree 1247), 1101195.Meth11DRAFT_0445
+(degree 1222), 1101195.Meth11DRAFT_0915 (degree 995) and 1101195.Meth11DRAFT_0914
+(degree 941).
 
 
 References
@@ -107,14 +108,15 @@ def MethylophilaceaeBacterium11(
 	
 	Datetime: 2021-02-02 22:24:35.983377
 	
-	The undirected graph Methylophilaceae bacterium 11 has 2588 nodes and 244717 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07310
-	and has 8 connected components, where the component with most nodes has 2573 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 158, the mean node degree is 189.12, and the node degree mode is 1. The top 5
-	most central nodes are 1101195.Meth11DRAFT_1853 (degree 1455), 1101195.Meth11DRAFT_0831
-	(degree 1247), 1101195.Meth11DRAFT_0445 (degree 1222), 1101195.Meth11DRAFT_0915 (degree
-	995) and 1101195.Meth11DRAFT_0914 (degree 941).
+	The undirected graph Methylophilaceae bacterium 11 has 2588 nodes and 244717
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07310 and has 8 connected components, where the component
+	with most nodes has 2573 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 158, the mean node degree is 189.12,
+	and the node degree mode is 1. The top 5 most central nodes are 1101195.Meth11DRAFT_1853
+	(degree 1455), 1101195.Meth11DRAFT_0831 (degree 1247), 1101195.Meth11DRAFT_0445
+	(degree 1222), 1101195.Meth11DRAFT_0915 (degree 995) and 1101195.Meth11DRAFT_0914
+	(degree 941).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:02:55.495691
 
-The undirected graph Thiomonas sp. FBCd has 3910 nodes and 435452 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05698 and
-has 10 connected components, where the component with most nodes has 3888 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 176,
-the mean node degree is 222.74, and the node degree mode is 3. The top 5 most central
-nodes are 1158292.JPOE01000002_gene1612 (degree 1503), 1158292.JPOE01000002_gene3226
-(degree 1231), 1158292.JPOE01000002_gene2120 (degree 1149), 1158292.JPOE01000002_gene3173
-(degree 1126) and 1158292.JPOE01000002_gene2121 (degree 1109).
+The undirected graph Thiomonas sp. FBCd has 3910 nodes and 435452 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05698 and has 10 connected components, where the component with most
+nodes has 3888 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 176, the mean node degree is 222.74, and
+the node degree mode is 3. The top 5 most central nodes are 1158292.JPOE01000002_gene1612
+(degree 1503), 1158292.JPOE01000002_gene3226 (degree 1231), 1158292.JPOE01000002_gene2120
+(degree 1149), 1158292.JPOE01000002_gene3173 (degree 1126) and 1158292.JPOE01000002_gene2121
+(degree 1109).
 
 
 References
@@ -107,14 +108,15 @@ def ThiomonasSp.Fbcd(
 	
 	Datetime: 2021-02-02 23:02:55.495691
 	
-	The undirected graph Thiomonas sp. FBCd has 3910 nodes and 435452 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05698 and
-	has 10 connected components, where the component with most nodes has 3888 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 176,
-	the mean node degree is 222.74, and the node degree mode is 3. The top 5 most central
-	nodes are 1158292.JPOE01000002_gene1612 (degree 1503), 1158292.JPOE01000002_gene3226
-	(degree 1231), 1158292.JPOE01000002_gene2120 (degree 1149), 1158292.JPOE01000002_gene3173
-	(degree 1126) and 1158292.JPOE01000002_gene2121 (degree 1109).
+	The undirected graph Thiomonas sp. FBCd has 3910 nodes and 435452 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05698 and has 10 connected components, where the component with most
+	nodes has 3888 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 176, the mean node degree is 222.74, and
+	the node degree mode is 3. The top 5 most central nodes are 1158292.JPOE01000002_gene1612
+	(degree 1503), 1158292.JPOE01000002_gene3226 (degree 1231), 1158292.JPOE01000002_gene2120
+	(degree 1149), 1158292.JPOE01000002_gene3173 (degree 1126) and 1158292.JPOE01000002_gene2121
+	(degree 1109).
 	
 
 

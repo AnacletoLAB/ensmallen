@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:38.049545
 
-The undirected graph Sanguibacter keddieii has 3700 nodes and 362934 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05304 and
-has 9 connected components, where the component with most nodes has 3680 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 196.18, and the node degree mode is 3. The top 5 most central
-nodes are 446469.Sked_20220 (degree 1319), 446469.Sked_35510 (degree 1101), 446469.Sked_22370
-(degree 1046), 446469.Sked_20710 (degree 1033) and 446469.Sked_04420 (degree 996).
+The undirected graph Sanguibacter keddieii has 3700 nodes and 362934 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05304 and has 9 connected components, where the component with most
+nodes has 3680 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 196.18, and
+the node degree mode is 3. The top 5 most central nodes are 446469.Sked_20220
+(degree 1319), 446469.Sked_35510 (degree 1101), 446469.Sked_22370 (degree
+1046), 446469.Sked_20710 (degree 1033) and 446469.Sked_04420 (degree 996).
 
 
 References
@@ -106,13 +107,14 @@ def SanguibacterKeddieii(
 	
 	Datetime: 2021-02-02 20:51:38.049545
 	
-	The undirected graph Sanguibacter keddieii has 3700 nodes and 362934 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05304 and
-	has 9 connected components, where the component with most nodes has 3680 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 196.18, and the node degree mode is 3. The top 5 most central
-	nodes are 446469.Sked_20220 (degree 1319), 446469.Sked_35510 (degree 1101), 446469.Sked_22370
-	(degree 1046), 446469.Sked_20710 (degree 1033) and 446469.Sked_04420 (degree 996).
+	The undirected graph Sanguibacter keddieii has 3700 nodes and 362934 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05304 and has 9 connected components, where the component with most
+	nodes has 3680 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 196.18, and
+	the node degree mode is 3. The top 5 most central nodes are 446469.Sked_20220
+	(degree 1319), 446469.Sked_35510 (degree 1101), 446469.Sked_22370 (degree
+	1046), 446469.Sked_20710 (degree 1033) and 446469.Sked_04420 (degree 996).
 	
 
 

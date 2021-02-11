@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:46:02.215199
 
-The undirected graph Methylomonas methanica has 4427 nodes and 340222 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-has 20 connected components, where the component with most nodes has 4365 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 153.70, and the node degree mode is 4. The top 5 most central
-nodes are 857087.Metme_1124 (degree 1731), 857087.Metme_0162 (degree 1592), 857087.Metme_3754
-(degree 1436), 857087.Metme_2776 (degree 1325) and 857087.Metme_2097 (degree 1285).
+The undirected graph Methylomonas methanica has 4427 nodes and 340222 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03473 and has 20 connected components, where the component with most
+nodes has 4365 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 153.70, and
+the node degree mode is 4. The top 5 most central nodes are 857087.Metme_1124
+(degree 1731), 857087.Metme_0162 (degree 1592), 857087.Metme_3754 (degree
+1436), 857087.Metme_2776 (degree 1325) and 857087.Metme_2097 (degree 1285).
 
 
 References
@@ -106,13 +107,14 @@ def MethylomonasMethanica(
 	
 	Datetime: 2021-02-02 21:46:02.215199
 	
-	The undirected graph Methylomonas methanica has 4427 nodes and 340222 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03473 and
-	has 20 connected components, where the component with most nodes has 4365 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 153.70, and the node degree mode is 4. The top 5 most central
-	nodes are 857087.Metme_1124 (degree 1731), 857087.Metme_0162 (degree 1592), 857087.Metme_3754
-	(degree 1436), 857087.Metme_2776 (degree 1325) and 857087.Metme_2097 (degree 1285).
+	The undirected graph Methylomonas methanica has 4427 nodes and 340222 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03473 and has 20 connected components, where the component with most
+	nodes has 4365 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 153.70, and
+	the node degree mode is 4. The top 5 most central nodes are 857087.Metme_1124
+	(degree 1731), 857087.Metme_0162 (degree 1592), 857087.Metme_3754 (degree
+	1436), 857087.Metme_2776 (degree 1325) and 857087.Metme_2097 (degree 1285).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:09.425236
 
-The undirected graph Gallibacterium genomosp. has 2060 nodes and 153929 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-and has 5 connected components, where the component with most nodes has 2051 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 149.45, and the node degree mode is 58. The top 5
-most central nodes are 155515.JP36_01005 (degree 881), 155515.JP36_02050 (degree
-755), 155515.JP36_03670 (degree 716), 155515.JP36_02040 (degree 712) and 155515.JP36_06855
-(degree 711).
+The undirected graph Gallibacterium genomosp. has 2060 nodes and 153929
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07258 and has 5 connected components, where the component
+with most nodes has 2051 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 149.45,
+and the node degree mode is 58. The top 5 most central nodes are 155515.JP36_01005
+(degree 881), 155515.JP36_02050 (degree 755), 155515.JP36_03670 (degree
+716), 155515.JP36_02040 (degree 712) and 155515.JP36_06855 (degree 711).
 
 
 References
@@ -107,14 +107,14 @@ def GallibacteriumGenomosp.(
 	
 	Datetime: 2021-02-02 19:52:09.425236
 	
-	The undirected graph Gallibacterium genomosp. has 2060 nodes and 153929 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07258
-	and has 5 connected components, where the component with most nodes has 2051 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 149.45, and the node degree mode is 58. The top 5
-	most central nodes are 155515.JP36_01005 (degree 881), 155515.JP36_02050 (degree
-	755), 155515.JP36_03670 (degree 716), 155515.JP36_02040 (degree 712) and 155515.JP36_06855
-	(degree 711).
+	The undirected graph Gallibacterium genomosp. has 2060 nodes and 153929
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07258 and has 5 connected components, where the component
+	with most nodes has 2051 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 149.45,
+	and the node degree mode is 58. The top 5 most central nodes are 155515.JP36_01005
+	(degree 881), 155515.JP36_02050 (degree 755), 155515.JP36_03670 (degree
+	716), 155515.JP36_02040 (degree 712) and 155515.JP36_06855 (degree 711).
 	
 
 

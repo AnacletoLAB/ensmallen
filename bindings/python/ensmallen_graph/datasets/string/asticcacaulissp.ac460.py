@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:10:26.940271
 
-The undirected graph Asticcacaulis sp. AC460 has 4675 nodes and 422093 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-has 18 connected components, where the component with most nodes has 4636 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 180.57, and the node degree mode is 2. The top 5 most central
-nodes are 1282360.ABAC460_01180 (degree 1472), 1282360.ABAC460_02825 (degree 1358),
-1282360.ABAC460_02120 (degree 1250), 1282360.ABAC460_00975 (degree 1209) and 1282360.ABAC460_11345
+The undirected graph Asticcacaulis sp. AC460 has 4675 nodes and 422093
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03863 and has 18 connected components, where the component
+with most nodes has 4636 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 180.57,
+and the node degree mode is 2. The top 5 most central nodes are 1282360.ABAC460_01180
+(degree 1472), 1282360.ABAC460_02825 (degree 1358), 1282360.ABAC460_02120
+(degree 1250), 1282360.ABAC460_00975 (degree 1209) and 1282360.ABAC460_11345
 (degree 1196).
 
 
@@ -107,13 +108,14 @@ def AsticcacaulisSp.Ac460(
 	
 	Datetime: 2021-02-03 21:10:26.940271
 	
-	The undirected graph Asticcacaulis sp. AC460 has 4675 nodes and 422093 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03863 and
-	has 18 connected components, where the component with most nodes has 4636 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 180.57, and the node degree mode is 2. The top 5 most central
-	nodes are 1282360.ABAC460_01180 (degree 1472), 1282360.ABAC460_02825 (degree 1358),
-	1282360.ABAC460_02120 (degree 1250), 1282360.ABAC460_00975 (degree 1209) and 1282360.ABAC460_11345
+	The undirected graph Asticcacaulis sp. AC460 has 4675 nodes and 422093
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03863 and has 18 connected components, where the component
+	with most nodes has 4636 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 180.57,
+	and the node degree mode is 2. The top 5 most central nodes are 1282360.ABAC460_01180
+	(degree 1472), 1282360.ABAC460_02825 (degree 1358), 1282360.ABAC460_02120
+	(degree 1250), 1282360.ABAC460_00975 (degree 1209) and 1282360.ABAC460_11345
 	(degree 1196).
 	
 

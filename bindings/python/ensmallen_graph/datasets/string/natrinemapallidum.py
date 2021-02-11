@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:08.890102
 
-The undirected graph Natrinema pallidum has 3745 nodes and 284101 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04052 and
-has 43 connected components, where the component with most nodes has 3642 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 151.72, and the node degree mode is 2. The top 5 most central
-nodes are 1227495.C487_05289 (degree 994), 1227495.C487_02156 (degree 970), 1227495.C487_03458
-(degree 878), 1227495.C487_06945 (degree 860) and 1227495.C487_00705 (degree 852).
+The undirected graph Natrinema pallidum has 3745 nodes and 284101 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04052 and has 43 connected components, where the component with most
+nodes has 3642 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 151.72, and
+the node degree mode is 2. The top 5 most central nodes are 1227495.C487_05289
+(degree 994), 1227495.C487_02156 (degree 970), 1227495.C487_03458 (degree
+878), 1227495.C487_06945 (degree 860) and 1227495.C487_00705 (degree 852).
 
 
 References
@@ -106,13 +107,14 @@ def NatrinemaPallidum(
 	
 	Datetime: 2021-02-02 23:26:08.890102
 	
-	The undirected graph Natrinema pallidum has 3745 nodes and 284101 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04052 and
-	has 43 connected components, where the component with most nodes has 3642 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 151.72, and the node degree mode is 2. The top 5 most central
-	nodes are 1227495.C487_05289 (degree 994), 1227495.C487_02156 (degree 970), 1227495.C487_03458
-	(degree 878), 1227495.C487_06945 (degree 860) and 1227495.C487_00705 (degree 852).
+	The undirected graph Natrinema pallidum has 3745 nodes and 284101 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04052 and has 43 connected components, where the component with most
+	nodes has 3642 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 151.72, and
+	the node degree mode is 2. The top 5 most central nodes are 1227495.C487_05289
+	(degree 994), 1227495.C487_02156 (degree 970), 1227495.C487_03458 (degree
+	878), 1227495.C487_06945 (degree 860) and 1227495.C487_00705 (degree 852).
 	
 
 

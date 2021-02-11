@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:04.025090
 
-The undirected graph Actinomyces neuii BVS029A5 has 1917 nodes and 127193 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06926
-and has 6 connected components, where the component with most nodes has 1904 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 132.70, and the node degree mode is 4. The top 5
-most central nodes are 888439.HMPREF9240_00650 (degree 867), 888439.HMPREF9240_00410
-(degree 856), 888439.HMPREF9240_01532 (degree 804), 888439.HMPREF9240_00514 (degree
-717) and 888439.HMPREF9240_00891 (degree 671).
+The undirected graph Actinomyces neuii BVS029A5 has 1917 nodes and 127193
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06926 and has 6 connected components, where the component
+with most nodes has 1904 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 132.70,
+and the node degree mode is 4. The top 5 most central nodes are 888439.HMPREF9240_00650
+(degree 867), 888439.HMPREF9240_00410 (degree 856), 888439.HMPREF9240_01532
+(degree 804), 888439.HMPREF9240_00514 (degree 717) and 888439.HMPREF9240_00891
+(degree 671).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesNeuiiBvs029a5(
 	
 	Datetime: 2021-02-02 21:53:04.025090
 	
-	The undirected graph Actinomyces neuii BVS029A5 has 1917 nodes and 127193 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06926
-	and has 6 connected components, where the component with most nodes has 1904 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 132.70, and the node degree mode is 4. The top 5
-	most central nodes are 888439.HMPREF9240_00650 (degree 867), 888439.HMPREF9240_00410
-	(degree 856), 888439.HMPREF9240_01532 (degree 804), 888439.HMPREF9240_00514 (degree
-	717) and 888439.HMPREF9240_00891 (degree 671).
+	The undirected graph Actinomyces neuii BVS029A5 has 1917 nodes and 127193
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06926 and has 6 connected components, where the component
+	with most nodes has 1904 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 132.70,
+	and the node degree mode is 4. The top 5 most central nodes are 888439.HMPREF9240_00650
+	(degree 867), 888439.HMPREF9240_00410 (degree 856), 888439.HMPREF9240_01532
+	(degree 804), 888439.HMPREF9240_00514 (degree 717) and 888439.HMPREF9240_00891
+	(degree 671).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:03:17.193403
 
-The undirected graph appu has 14000 nodes and 933552 weighted edges, of which 14000
-are self-loops. The graph is sparse as it has a density of 0.00945 and is connected,
-as it has a single component. The graph median node degree is 132, the mean node
-degree is 132.36, and the node degree mode is 122. The top 5 most central nodes are
-13744 (degree 294), 10094 (degree 294), 5530 (degree 276), 5621 (degree 271) and
-6413 (degree 271).
+The undirected graph appu has 14000 nodes and 933552 weighted edges, of
+which 14000 are self-loops. The graph is sparse as it has a density of
+0.00945 and is connected, as it has a single component. The graph median
+node degree is 132, the mean node degree is 132.36, and the node degree
+mode is 122. The top 5 most central nodes are 13744 (degree 294), 10094
+(degree 294), 5530 (degree 276), 5621 (degree 271) and 6413 (degree 271).
 
 
 References
@@ -102,12 +102,12 @@ def Appu(
 	
 	Datetime: 2021-02-06 12:03:17.193403
 	
-	The undirected graph appu has 14000 nodes and 933552 weighted edges, of which 14000
-	are self-loops. The graph is sparse as it has a density of 0.00945 and is connected,
-	as it has a single component. The graph median node degree is 132, the mean node
-	degree is 132.36, and the node degree mode is 122. The top 5 most central nodes are
-	13744 (degree 294), 10094 (degree 294), 5530 (degree 276), 5621 (degree 271) and
-	6413 (degree 271).
+	The undirected graph appu has 14000 nodes and 933552 weighted edges, of
+	which 14000 are self-loops. The graph is sparse as it has a density of
+	0.00945 and is connected, as it has a single component. The graph median
+	node degree is 132, the mean node degree is 132.36, and the node degree
+	mode is 122. The top 5 most central nodes are 13744 (degree 294), 10094
+	(degree 294), 5530 (degree 276), 5621 (degree 271) and 6413 (degree 271).
 	
 
 

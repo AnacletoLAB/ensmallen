@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:11.340841
 
-The undirected graph Propionibacterium jensenii has 2552 nodes and 197885 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06079
-and has 12 connected components, where the component with most nodes has 2527 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 155.08, and the node degree mode is 2. The top 5
-most central nodes are 1122997.AUDD01000009_gene284 (degree 1127), 1122997.AUDD01000006_gene156
-(degree 947), 1122997.AUDD01000007_gene839 (degree 936), 1122997.AUDD01000020_gene2217
-(degree 911) and 1122997.AUDD01000039_gene1672 (degree 832).
+The undirected graph Propionibacterium jensenii has 2552 nodes and 197885
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06079 and has 12 connected components, where the component
+with most nodes has 2527 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 155.08,
+and the node degree mode is 2. The top 5 most central nodes are 1122997.AUDD01000009_gene284
+(degree 1127), 1122997.AUDD01000006_gene156 (degree 947), 1122997.AUDD01000007_gene839
+(degree 936), 1122997.AUDD01000020_gene2217 (degree 911) and 1122997.AUDD01000039_gene1672
+(degree 832).
 
 
 References
@@ -107,14 +108,15 @@ def PropionibacteriumJensenii(
 	
 	Datetime: 2021-02-02 22:46:11.340841
 	
-	The undirected graph Propionibacterium jensenii has 2552 nodes and 197885 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06079
-	and has 12 connected components, where the component with most nodes has 2527 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 155.08, and the node degree mode is 2. The top 5
-	most central nodes are 1122997.AUDD01000009_gene284 (degree 1127), 1122997.AUDD01000006_gene156
-	(degree 947), 1122997.AUDD01000007_gene839 (degree 936), 1122997.AUDD01000020_gene2217
-	(degree 911) and 1122997.AUDD01000039_gene1672 (degree 832).
+	The undirected graph Propionibacterium jensenii has 2552 nodes and 197885
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06079 and has 12 connected components, where the component
+	with most nodes has 2527 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 155.08,
+	and the node degree mode is 2. The top 5 most central nodes are 1122997.AUDD01000009_gene284
+	(degree 1127), 1122997.AUDD01000006_gene156 (degree 947), 1122997.AUDD01000007_gene839
+	(degree 936), 1122997.AUDD01000020_gene2217 (degree 911) and 1122997.AUDD01000039_gene1672
+	(degree 832).
 	
 
 

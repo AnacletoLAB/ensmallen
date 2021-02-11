@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:47.890991
 
-The undirected graph Clostridium arbusti has 3699 nodes and 326660 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04776 and
-has 17 connected components, where the component with most nodes has 3657 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 176.62, and the node degree mode is 2. The top 5 most central
-nodes are 545243.BAEV01000065_gene2856 (degree 1441), 545243.BAEV01000057_gene174
-(degree 1202), 545243.BAEV01000018_gene2171 (degree 1192), 545243.BAEV01000044_gene3527
-(degree 1163) and 545243.BAEV01000104_gene1852 (degree 1148).
+The undirected graph Clostridium arbusti has 3699 nodes and 326660 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04776 and has 17 connected components, where the component with most
+nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 176.62, and
+the node degree mode is 2. The top 5 most central nodes are 545243.BAEV01000065_gene2856
+(degree 1441), 545243.BAEV01000057_gene174 (degree 1202), 545243.BAEV01000018_gene2171
+(degree 1192), 545243.BAEV01000044_gene3527 (degree 1163) and 545243.BAEV01000104_gene1852
+(degree 1148).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumArbusti(
 	
 	Datetime: 2021-02-02 21:07:47.890991
 	
-	The undirected graph Clostridium arbusti has 3699 nodes and 326660 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04776 and
-	has 17 connected components, where the component with most nodes has 3657 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 176.62, and the node degree mode is 2. The top 5 most central
-	nodes are 545243.BAEV01000065_gene2856 (degree 1441), 545243.BAEV01000057_gene174
-	(degree 1202), 545243.BAEV01000018_gene2171 (degree 1192), 545243.BAEV01000044_gene3527
-	(degree 1163) and 545243.BAEV01000104_gene1852 (degree 1148).
+	The undirected graph Clostridium arbusti has 3699 nodes and 326660 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04776 and has 17 connected components, where the component with most
+	nodes has 3657 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 176.62, and
+	the node degree mode is 2. The top 5 most central nodes are 545243.BAEV01000065_gene2856
+	(degree 1441), 545243.BAEV01000057_gene174 (degree 1202), 545243.BAEV01000018_gene2171
+	(degree 1192), 545243.BAEV01000044_gene3527 (degree 1163) and 545243.BAEV01000104_gene1852
+	(degree 1148).
 	
 
 

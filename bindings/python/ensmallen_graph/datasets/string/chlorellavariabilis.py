@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:33.539402
 
-The undirected graph Chlorella variabilis has 6986 nodes and 786462 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03223 and
-has 12 connected components, where the component with most nodes has 6941 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 225.15, and the node degree mode is 1. The top 5 most central
-nodes are 554065.XP_005848544.1 (degree 2226), 554065.XP_005852115.1 (degree 1761),
-554065.XP_005847054.1 (degree 1649), 554065.XP_005844793.1 (degree 1614) and 554065.XP_005850252.1
+The undirected graph Chlorella variabilis has 6986 nodes and 786462 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03223 and has 12 connected components, where the component with most
+nodes has 6941 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 225.15, and
+the node degree mode is 1. The top 5 most central nodes are 554065.XP_005848544.1
+(degree 2226), 554065.XP_005852115.1 (degree 1761), 554065.XP_005847054.1
+(degree 1649), 554065.XP_005844793.1 (degree 1614) and 554065.XP_005850252.1
 (degree 1525).
 
 
@@ -107,13 +108,14 @@ def ChlorellaVariabilis(
 	
 	Datetime: 2021-02-02 21:10:33.539402
 	
-	The undirected graph Chlorella variabilis has 6986 nodes and 786462 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03223 and
-	has 12 connected components, where the component with most nodes has 6941 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 225.15, and the node degree mode is 1. The top 5 most central
-	nodes are 554065.XP_005848544.1 (degree 2226), 554065.XP_005852115.1 (degree 1761),
-	554065.XP_005847054.1 (degree 1649), 554065.XP_005844793.1 (degree 1614) and 554065.XP_005850252.1
+	The undirected graph Chlorella variabilis has 6986 nodes and 786462 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03223 and has 12 connected components, where the component with most
+	nodes has 6941 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 225.15, and
+	the node degree mode is 1. The top 5 most central nodes are 554065.XP_005848544.1
+	(degree 2226), 554065.XP_005852115.1 (degree 1761), 554065.XP_005847054.1
+	(degree 1649), 554065.XP_005844793.1 (degree 1614) and 554065.XP_005850252.1
 	(degree 1525).
 	
 

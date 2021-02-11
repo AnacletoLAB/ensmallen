@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:06:53.951009
 
-The undirected graph G59 has 5000 nodes and 29570 unweighted edges with 2 different
-edge types: 1 and -1, of which none are self-loops. The graph is sparse as it has
-a density of 0.00237 and is connected, as it has a single component. The graph median
-node degree is 8, the mean node degree is 11.83, and the node degree mode is 6. The
-top 5 most central nodes are 4 (degree 561), 2 (degree 317), 13 (degree 254), 10
-(degree 231) and 5 (degree 219).
+The undirected graph G59 has 5000 nodes and 29570 unweighted edges with
+2 different edge types: 1 and -1, of which none are self-loops. The graph
+is sparse as it has a density of 0.00237 and is connected, as it has a
+single component. The graph median node degree is 8, the mean node degree
+is 11.83, and the node degree mode is 6. The top 5 most central nodes are
+4 (degree 561), 2 (degree 317), 13 (degree 254), 10 (degree 231) and 5
+(degree 219).
 
 
 References
@@ -102,12 +103,13 @@ def G59(
 	
 	Datetime: 2021-02-06 10:06:53.951009
 	
-	The undirected graph G59 has 5000 nodes and 29570 unweighted edges with 2 different
-	edge types: 1 and -1, of which none are self-loops. The graph is sparse as it has
-	a density of 0.00237 and is connected, as it has a single component. The graph median
-	node degree is 8, the mean node degree is 11.83, and the node degree mode is 6. The
-	top 5 most central nodes are 4 (degree 561), 2 (degree 317), 13 (degree 254), 10
-	(degree 231) and 5 (degree 219).
+	The undirected graph G59 has 5000 nodes and 29570 unweighted edges with
+	2 different edge types: 1 and -1, of which none are self-loops. The graph
+	is sparse as it has a density of 0.00237 and is connected, as it has a
+	single component. The graph median node degree is 8, the mean node degree
+	is 11.83, and the node degree mode is 6. The top 5 most central nodes are
+	4 (degree 561), 2 (degree 317), 13 (degree 254), 10 (degree 231) and 5
+	(degree 219).
 	
 
 

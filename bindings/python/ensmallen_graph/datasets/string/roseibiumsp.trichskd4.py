@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:50.062268
 
-The undirected graph Roseibium sp. TrichSKD4 has 5999 nodes and 750610 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04172 and
-has 42 connected components, where the component with most nodes has 5878 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 250.25, and the node degree mode is 2. The top 5 most central
-nodes are 744980.TRICHSKD4_0049 (degree 1578), 744980.TRICHSKD4_5813 (degree 1544),
-744980.TRICHSKD4_1891 (degree 1503), 744980.TRICHSKD4_0065 (degree 1393) and 744980.TRICHSKD4_3123
+The undirected graph Roseibium sp. TrichSKD4 has 5999 nodes and 750610
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04172 and has 42 connected components, where the component
+with most nodes has 5878 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 250.25,
+and the node degree mode is 2. The top 5 most central nodes are 744980.TRICHSKD4_0049
+(degree 1578), 744980.TRICHSKD4_5813 (degree 1544), 744980.TRICHSKD4_1891
+(degree 1503), 744980.TRICHSKD4_0065 (degree 1393) and 744980.TRICHSKD4_3123
 (degree 1360).
 
 
@@ -107,13 +108,14 @@ def RoseibiumSp.Trichskd4(
 	
 	Datetime: 2021-02-02 21:38:50.062268
 	
-	The undirected graph Roseibium sp. TrichSKD4 has 5999 nodes and 750610 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04172 and
-	has 42 connected components, where the component with most nodes has 5878 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 250.25, and the node degree mode is 2. The top 5 most central
-	nodes are 744980.TRICHSKD4_0049 (degree 1578), 744980.TRICHSKD4_5813 (degree 1544),
-	744980.TRICHSKD4_1891 (degree 1503), 744980.TRICHSKD4_0065 (degree 1393) and 744980.TRICHSKD4_3123
+	The undirected graph Roseibium sp. TrichSKD4 has 5999 nodes and 750610
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04172 and has 42 connected components, where the component
+	with most nodes has 5878 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 250.25,
+	and the node degree mode is 2. The top 5 most central nodes are 744980.TRICHSKD4_0049
+	(degree 1578), 744980.TRICHSKD4_5813 (degree 1544), 744980.TRICHSKD4_1891
+	(degree 1503), 744980.TRICHSKD4_0065 (degree 1393) and 744980.TRICHSKD4_3123
 	(degree 1360).
 	
 

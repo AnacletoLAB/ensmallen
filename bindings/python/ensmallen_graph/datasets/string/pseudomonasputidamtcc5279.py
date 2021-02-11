@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:45.074774
 
-The undirected graph Pseudomonas putida MTCC5279 has 4685 nodes and 633337 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05772
-and has 11 connected components, where the component with most nodes has 4661 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 270.37, and the node degree mode is 1. The top 5
-most central nodes are 1240350.AMZE01000007_gene2788 (degree 1988), 1240350.AMZE01000021_gene1530
-(degree 1702), 1240350.AMZE01000031_gene1948 (degree 1577), 1240350.AMZE01000025_gene1654
-(degree 1519) and 1240350.AMZE01000012_gene3587 (degree 1507).
+The undirected graph Pseudomonas putida MTCC5279 has 4685 nodes and 633337
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05772 and has 11 connected components, where the component
+with most nodes has 4661 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 270.37,
+and the node degree mode is 1. The top 5 most central nodes are 1240350.AMZE01000007_gene2788
+(degree 1988), 1240350.AMZE01000021_gene1530 (degree 1702), 1240350.AMZE01000031_gene1948
+(degree 1577), 1240350.AMZE01000025_gene1654 (degree 1519) and 1240350.AMZE01000012_gene3587
+(degree 1507).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPutidaMtcc5279(
 	
 	Datetime: 2021-02-02 23:32:45.074774
 	
-	The undirected graph Pseudomonas putida MTCC5279 has 4685 nodes and 633337 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05772
-	and has 11 connected components, where the component with most nodes has 4661 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 270.37, and the node degree mode is 1. The top 5
-	most central nodes are 1240350.AMZE01000007_gene2788 (degree 1988), 1240350.AMZE01000021_gene1530
-	(degree 1702), 1240350.AMZE01000031_gene1948 (degree 1577), 1240350.AMZE01000025_gene1654
-	(degree 1519) and 1240350.AMZE01000012_gene3587 (degree 1507).
+	The undirected graph Pseudomonas putida MTCC5279 has 4685 nodes and 633337
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05772 and has 11 connected components, where the component
+	with most nodes has 4661 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 270.37,
+	and the node degree mode is 1. The top 5 most central nodes are 1240350.AMZE01000007_gene2788
+	(degree 1988), 1240350.AMZE01000021_gene1530 (degree 1702), 1240350.AMZE01000031_gene1948
+	(degree 1577), 1240350.AMZE01000025_gene1654 (degree 1519) and 1240350.AMZE01000012_gene3587
+	(degree 1507).
 	
 
 

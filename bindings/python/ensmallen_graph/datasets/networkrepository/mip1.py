@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:12:26.380296
 
-The undirected graph mip1 has 66463 nodes and 5209641 unweighted edges, of which
-66463 are self-loops. The graph is sparse as it has a density of 0.00234 and is connected,
-as it has a single component. The graph median node degree is 40, the mean node degree
-is 155.77, and the node degree mode is 713. The top 5 most central nodes are 1 (degree
-66395), 4 (degree 5151), 10 (degree 4774), 19 (degree 4245) and 17 (degree 3799).
+The undirected graph mip1 has 66463 nodes and 5209641 unweighted edges,
+of which 66463 are self-loops. The graph is sparse as it has a density
+of 0.00234 and is connected, as it has a single component. The graph median
+node degree is 40, the mean node degree is 155.77, and the node degree
+mode is 713. The top 5 most central nodes are 1 (degree 66395), 4 (degree
+5151), 10 (degree 4774), 19 (degree 4245) and 17 (degree 3799).
 
 
 References
@@ -101,11 +102,12 @@ def Mip1(
 	
 	Datetime: 2021-02-06 12:12:26.380296
 	
-	The undirected graph mip1 has 66463 nodes and 5209641 unweighted edges, of which
-	66463 are self-loops. The graph is sparse as it has a density of 0.00234 and is connected,
-	as it has a single component. The graph median node degree is 40, the mean node degree
-	is 155.77, and the node degree mode is 713. The top 5 most central nodes are 1 (degree
-	66395), 4 (degree 5151), 10 (degree 4774), 19 (degree 4245) and 17 (degree 3799).
+	The undirected graph mip1 has 66463 nodes and 5209641 unweighted edges,
+	of which 66463 are self-loops. The graph is sparse as it has a density
+	of 0.00234 and is connected, as it has a single component. The graph median
+	node degree is 40, the mean node degree is 155.77, and the node degree
+	mode is 713. The top 5 most central nodes are 1 (degree 66395), 4 (degree
+	5151), 10 (degree 4774), 19 (degree 4245) and 17 (degree 3799).
 	
 
 

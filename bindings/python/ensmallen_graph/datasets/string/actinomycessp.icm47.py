@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:28.741999
 
-The undirected graph Actinomyces sp. ICM47 has 2046 nodes and 134028 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06407 and
-has 10 connected components, where the component with most nodes has 2023 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 131.01, and the node degree mode is 3. The top 5 most central
-nodes are 936548.HMPREF1136_1027 (degree 858), 936548.HMPREF1136_0114 (degree 794),
-936548.HMPREF1136_0687 (degree 746), 936548.HMPREF1136_1118 (degree 709) and 936548.HMPREF1136_0524
+The undirected graph Actinomyces sp. ICM47 has 2046 nodes and 134028 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06407 and has 10 connected components, where the component with most
+nodes has 2023 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 131.01, and
+the node degree mode is 3. The top 5 most central nodes are 936548.HMPREF1136_1027
+(degree 858), 936548.HMPREF1136_0114 (degree 794), 936548.HMPREF1136_0687
+(degree 746), 936548.HMPREF1136_1118 (degree 709) and 936548.HMPREF1136_0524
 (degree 685).
 
 
@@ -107,13 +108,14 @@ def ActinomycesSp.Icm47(
 	
 	Datetime: 2021-02-02 22:00:28.741999
 	
-	The undirected graph Actinomyces sp. ICM47 has 2046 nodes and 134028 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06407 and
-	has 10 connected components, where the component with most nodes has 2023 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 131.01, and the node degree mode is 3. The top 5 most central
-	nodes are 936548.HMPREF1136_1027 (degree 858), 936548.HMPREF1136_0114 (degree 794),
-	936548.HMPREF1136_0687 (degree 746), 936548.HMPREF1136_1118 (degree 709) and 936548.HMPREF1136_0524
+	The undirected graph Actinomyces sp. ICM47 has 2046 nodes and 134028 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06407 and has 10 connected components, where the component with most
+	nodes has 2023 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 131.01, and
+	the node degree mode is 3. The top 5 most central nodes are 936548.HMPREF1136_1027
+	(degree 858), 936548.HMPREF1136_0114 (degree 794), 936548.HMPREF1136_0687
+	(degree 746), 936548.HMPREF1136_1118 (degree 709) and 936548.HMPREF1136_0524
 	(degree 685).
 	
 

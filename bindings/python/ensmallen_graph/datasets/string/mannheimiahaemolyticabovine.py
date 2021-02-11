@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:01.204780
 
-The undirected graph Mannheimia haemolytica BOVINE has 2527 nodes and 138990 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04355
-and has 12 connected components, where the component with most nodes has 2487 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 83, the mean node degree is 110.00, and the node degree mode is 9. The top 5 most
-central nodes are 669262.COK_0707 (degree 905), 669262.COK_2016 (degree 879), 669262.COK_0816
-(degree 744), 669262.COK_0981 (degree 734) and 669262.COK_2083 (degree 712).
+The undirected graph Mannheimia haemolytica BOVINE has 2527 nodes and 138990
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04355 and has 12 connected components, where the component
+with most nodes has 2487 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 83, the mean node degree is 110.00,
+and the node degree mode is 9. The top 5 most central nodes are 669262.COK_0707
+(degree 905), 669262.COK_2016 (degree 879), 669262.COK_0816 (degree 744),
+669262.COK_0981 (degree 734) and 669262.COK_2083 (degree 712).
 
 
 References
@@ -106,13 +107,14 @@ def MannheimiaHaemolyticaBovine(
 	
 	Datetime: 2021-02-02 21:29:01.204780
 	
-	The undirected graph Mannheimia haemolytica BOVINE has 2527 nodes and 138990 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04355
-	and has 12 connected components, where the component with most nodes has 2487 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 83, the mean node degree is 110.00, and the node degree mode is 9. The top 5 most
-	central nodes are 669262.COK_0707 (degree 905), 669262.COK_2016 (degree 879), 669262.COK_0816
-	(degree 744), 669262.COK_0981 (degree 734) and 669262.COK_2083 (degree 712).
+	The undirected graph Mannheimia haemolytica BOVINE has 2527 nodes and 138990
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04355 and has 12 connected components, where the component
+	with most nodes has 2487 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 83, the mean node degree is 110.00,
+	and the node degree mode is 9. The top 5 most central nodes are 669262.COK_0707
+	(degree 905), 669262.COK_2016 (degree 879), 669262.COK_0816 (degree 744),
+	669262.COK_0981 (degree 734) and 669262.COK_2083 (degree 712).
 	
 
 

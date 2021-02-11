@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:52.333406
 
-The undirected graph Conchiformibius steedae has 1891 nodes and 147079 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08231 and
-has 7 connected components, where the component with most nodes has 1879 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 155.56, and the node degree mode is 3. The top 5 most central
-nodes are 1121352.JHZP01000001_gene817 (degree 830), 1121352.JHZP01000007_gene1244
-(degree 782), 1121352.JHZP01000001_gene44 (degree 705), 1121352.JHZP01000013_gene1655
-(degree 692) and 1121352.JHZP01000001_gene364 (degree 676).
+The undirected graph Conchiformibius steedae has 1891 nodes and 147079
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08231 and has 7 connected components, where the component
+with most nodes has 1879 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 155.56,
+and the node degree mode is 3. The top 5 most central nodes are 1121352.JHZP01000001_gene817
+(degree 830), 1121352.JHZP01000007_gene1244 (degree 782), 1121352.JHZP01000001_gene44
+(degree 705), 1121352.JHZP01000013_gene1655 (degree 692) and 1121352.JHZP01000001_gene364
+(degree 676).
 
 
 References
@@ -107,14 +108,15 @@ def ConchiformibiusSteedae(
 	
 	Datetime: 2021-02-02 22:34:52.333406
 	
-	The undirected graph Conchiformibius steedae has 1891 nodes and 147079 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08231 and
-	has 7 connected components, where the component with most nodes has 1879 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 155.56, and the node degree mode is 3. The top 5 most central
-	nodes are 1121352.JHZP01000001_gene817 (degree 830), 1121352.JHZP01000007_gene1244
-	(degree 782), 1121352.JHZP01000001_gene44 (degree 705), 1121352.JHZP01000013_gene1655
-	(degree 692) and 1121352.JHZP01000001_gene364 (degree 676).
+	The undirected graph Conchiformibius steedae has 1891 nodes and 147079
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08231 and has 7 connected components, where the component
+	with most nodes has 1879 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 155.56,
+	and the node degree mode is 3. The top 5 most central nodes are 1121352.JHZP01000001_gene817
+	(degree 830), 1121352.JHZP01000007_gene1244 (degree 782), 1121352.JHZP01000001_gene44
+	(degree 705), 1121352.JHZP01000013_gene1655 (degree 692) and 1121352.JHZP01000001_gene364
+	(degree 676).
 	
 
 

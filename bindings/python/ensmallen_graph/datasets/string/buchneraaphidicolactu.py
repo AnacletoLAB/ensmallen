@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:55.652120
 
-The undirected graph Buchnera aphidicola Ctu has 358 nodes and 18016 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.28193
-and is connected, as it has a single component. The graph median node degree is 98,
-the mean node degree is 100.65, and the node degree mode is 145. The top 5 most central
-nodes are 261317.BCTU_170 (degree 209), 261317.BCTU_011 (degree 208), 261317.BCTU_355
-(degree 201), 261317.BCTU_019 (degree 201) and 261317.BCTU_100 (degree 198).
+The undirected graph Buchnera aphidicola Ctu has 358 nodes and 18016 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.28193 and is connected, as it has a single component. The
+graph median node degree is 98, the mean node degree is 100.65, and the
+node degree mode is 145. The top 5 most central nodes are 261317.BCTU_170
+(degree 209), 261317.BCTU_011 (degree 208), 261317.BCTU_355 (degree 201),
+261317.BCTU_019 (degree 201) and 261317.BCTU_100 (degree 198).
 
 
 References
@@ -105,12 +106,13 @@ def BuchneraAphidicolaCtu(
 	
 	Datetime: 2021-02-02 20:12:55.652120
 	
-	The undirected graph Buchnera aphidicola Ctu has 358 nodes and 18016 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.28193
-	and is connected, as it has a single component. The graph median node degree is 98,
-	the mean node degree is 100.65, and the node degree mode is 145. The top 5 most central
-	nodes are 261317.BCTU_170 (degree 209), 261317.BCTU_011 (degree 208), 261317.BCTU_355
-	(degree 201), 261317.BCTU_019 (degree 201) and 261317.BCTU_100 (degree 198).
+	The undirected graph Buchnera aphidicola Ctu has 358 nodes and 18016 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.28193 and is connected, as it has a single component. The
+	graph median node degree is 98, the mean node degree is 100.65, and the
+	node degree mode is 145. The top 5 most central nodes are 261317.BCTU_170
+	(degree 209), 261317.BCTU_011 (degree 208), 261317.BCTU_355 (degree 201),
+	261317.BCTU_019 (degree 201) and 261317.BCTU_100 (degree 198).
 	
 
 

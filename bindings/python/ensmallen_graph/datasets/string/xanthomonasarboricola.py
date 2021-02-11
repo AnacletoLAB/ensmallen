@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:41.683982
 
-The undirected graph Xanthomonas arboricola has 3857 nodes and 548099 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07371 and
-has 16 connected components, where the component with most nodes has 3823 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 247,
-the mean node degree is 284.21, and the node degree mode is 1. The top 5 most central
-nodes are 454957.IA64_13570 (degree 1698), 454957.IA64_02800 (degree 1578), 454957.IA64_00500
-(degree 1511), 454957.IA64_00210 (degree 1495) and 454957.IA64_07885 (degree 1476).
+The undirected graph Xanthomonas arboricola has 3857 nodes and 548099 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07371 and has 16 connected components, where the component with most
+nodes has 3823 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 247, the mean node degree is 284.21, and
+the node degree mode is 1. The top 5 most central nodes are 454957.IA64_13570
+(degree 1698), 454957.IA64_02800 (degree 1578), 454957.IA64_00500 (degree
+1511), 454957.IA64_00210 (degree 1495) and 454957.IA64_07885 (degree 1476).
 
 
 References
@@ -106,13 +107,14 @@ def XanthomonasArboricola(
 	
 	Datetime: 2021-02-02 20:52:41.683982
 	
-	The undirected graph Xanthomonas arboricola has 3857 nodes and 548099 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07371 and
-	has 16 connected components, where the component with most nodes has 3823 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 247,
-	the mean node degree is 284.21, and the node degree mode is 1. The top 5 most central
-	nodes are 454957.IA64_13570 (degree 1698), 454957.IA64_02800 (degree 1578), 454957.IA64_00500
-	(degree 1511), 454957.IA64_00210 (degree 1495) and 454957.IA64_07885 (degree 1476).
+	The undirected graph Xanthomonas arboricola has 3857 nodes and 548099 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07371 and has 16 connected components, where the component with most
+	nodes has 3823 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 247, the mean node degree is 284.21, and
+	the node degree mode is 1. The top 5 most central nodes are 454957.IA64_13570
+	(degree 1698), 454957.IA64_02800 (degree 1578), 454957.IA64_00500 (degree
+	1511), 454957.IA64_00210 (degree 1495) and 454957.IA64_07885 (degree 1476).
 	
 
 

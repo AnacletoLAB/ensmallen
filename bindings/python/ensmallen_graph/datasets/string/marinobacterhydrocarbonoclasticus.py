@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:12.873931
 
-The undirected graph Marinobacter hydrocarbonoclasticus has 4042 nodes and 432004
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05290 and has 10 connected components, where the component with most nodes has
-4014 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 193, the mean node degree is 213.76, and the node degree mode is 2. The
-top 5 most central nodes are 351348.Maqu_0541 (degree 1586), 351348.Maqu_2687 (degree
-1237), 351348.Maqu_1601 (degree 1197), 351348.Maqu_0898 (degree 1108) and 351348.Maqu_0181
-(degree 1097).
+The undirected graph Marinobacter hydrocarbonoclasticus has 4042 nodes
+and 432004 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05290 and has 10 connected components, where the
+component with most nodes has 4014 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+is 213.76, and the node degree mode is 2. The top 5 most central nodes
+are 351348.Maqu_0541 (degree 1586), 351348.Maqu_2687 (degree 1237), 351348.Maqu_1601
+(degree 1197), 351348.Maqu_0898 (degree 1108) and 351348.Maqu_0181 (degree
+1097).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterHydrocarbonoclasticus(
 	
 	Datetime: 2021-02-02 20:33:12.873931
 	
-	The undirected graph Marinobacter hydrocarbonoclasticus has 4042 nodes and 432004
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05290 and has 10 connected components, where the component with most nodes has
-	4014 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 193, the mean node degree is 213.76, and the node degree mode is 2. The
-	top 5 most central nodes are 351348.Maqu_0541 (degree 1586), 351348.Maqu_2687 (degree
-	1237), 351348.Maqu_1601 (degree 1197), 351348.Maqu_0898 (degree 1108) and 351348.Maqu_0181
-	(degree 1097).
+	The undirected graph Marinobacter hydrocarbonoclasticus has 4042 nodes
+	and 432004 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05290 and has 10 connected components, where the
+	component with most nodes has 4014 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 193, the mean node degree
+	is 213.76, and the node degree mode is 2. The top 5 most central nodes
+	are 351348.Maqu_0541 (degree 1586), 351348.Maqu_2687 (degree 1237), 351348.Maqu_1601
+	(degree 1197), 351348.Maqu_0898 (degree 1108) and 351348.Maqu_0181 (degree
+	1097).
 	
 
 

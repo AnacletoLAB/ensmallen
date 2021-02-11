@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:49.556842
 
-The undirected graph Clostridium sp. ASF356 has 2769 nodes and 168433 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04395 and
-has 19 connected components, where the component with most nodes has 2724 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 86,
-the mean node degree is 121.66, and the node degree mode is 1. The top 5 most central
-nodes are 97138.C820_01025 (degree 1007), 97138.C820_01164 (degree 928), 97138.C820_00164
-(degree 748), 97138.C820_02656 (degree 744) and 97138.C820_01321 (degree 709).
+The undirected graph Clostridium sp. ASF356 has 2769 nodes and 168433 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04395 and has 19 connected components, where the component with most
+nodes has 2724 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 86, the mean node degree is 121.66, and
+the node degree mode is 1. The top 5 most central nodes are 97138.C820_01025
+(degree 1007), 97138.C820_01164 (degree 928), 97138.C820_00164 (degree
+748), 97138.C820_02656 (degree 744) and 97138.C820_01321 (degree 709).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSp.Asf356(
 	
 	Datetime: 2021-02-02 19:41:49.556842
 	
-	The undirected graph Clostridium sp. ASF356 has 2769 nodes and 168433 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04395 and
-	has 19 connected components, where the component with most nodes has 2724 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 86,
-	the mean node degree is 121.66, and the node degree mode is 1. The top 5 most central
-	nodes are 97138.C820_01025 (degree 1007), 97138.C820_01164 (degree 928), 97138.C820_00164
-	(degree 748), 97138.C820_02656 (degree 744) and 97138.C820_01321 (degree 709).
+	The undirected graph Clostridium sp. ASF356 has 2769 nodes and 168433 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04395 and has 19 connected components, where the component with most
+	nodes has 2724 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 86, the mean node degree is 121.66, and
+	the node degree mode is 1. The top 5 most central nodes are 97138.C820_01025
+	(degree 1007), 97138.C820_01164 (degree 928), 97138.C820_00164 (degree
+	748), 97138.C820_02656 (degree 744) and 97138.C820_01321 (degree 709).
 	
 
 

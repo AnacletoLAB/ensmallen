@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:42.982045
 
-The undirected graph Trichophyton rubrum has 5901 nodes and 575504 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03306 and
-has 25 connected components, where the component with most nodes has 5846 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 132,
-the mean node degree is 195.05, and the node degree mode is 1. The top 5 most central
-nodes are 5551.XP_003231526.1 (degree 1428), 5551.XP_003232289.1 (degree 1359), 5551.XP_003238227.1
-(degree 1266), 5551.XP_003235346.1 (degree 1190) and 5551.XP_003231777.1 (degree
+The undirected graph Trichophyton rubrum has 5901 nodes and 575504 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03306 and has 25 connected components, where the component with most
+nodes has 5846 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 132, the mean node degree is 195.05, and
+the node degree mode is 1. The top 5 most central nodes are 5551.XP_003231526.1
+(degree 1428), 5551.XP_003232289.1 (degree 1359), 5551.XP_003238227.1 (degree
+1266), 5551.XP_003235346.1 (degree 1190) and 5551.XP_003231777.1 (degree
 1190).
 
 
@@ -107,13 +108,14 @@ def TrichophytonRubrum(
 	
 	Datetime: 2021-02-02 17:14:42.982045
 	
-	The undirected graph Trichophyton rubrum has 5901 nodes and 575504 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03306 and
-	has 25 connected components, where the component with most nodes has 5846 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 132,
-	the mean node degree is 195.05, and the node degree mode is 1. The top 5 most central
-	nodes are 5551.XP_003231526.1 (degree 1428), 5551.XP_003232289.1 (degree 1359), 5551.XP_003238227.1
-	(degree 1266), 5551.XP_003235346.1 (degree 1190) and 5551.XP_003231777.1 (degree
+	The undirected graph Trichophyton rubrum has 5901 nodes and 575504 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03306 and has 25 connected components, where the component with most
+	nodes has 5846 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 132, the mean node degree is 195.05, and
+	the node degree mode is 1. The top 5 most central nodes are 5551.XP_003231526.1
+	(degree 1428), 5551.XP_003232289.1 (degree 1359), 5551.XP_003238227.1 (degree
+	1266), 5551.XP_003235346.1 (degree 1190) and 5551.XP_003231777.1 (degree
 	1190).
 	
 

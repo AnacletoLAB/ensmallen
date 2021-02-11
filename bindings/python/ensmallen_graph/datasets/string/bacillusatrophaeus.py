@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:46.388825
 
-The undirected graph Bacillus atrophaeus has 4135 nodes and 315314 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03689 and
-has 21 connected components, where the component with most nodes has 4091 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 152.51, and the node degree mode is 1. The top 5 most central
-nodes are 720555.BATR1942_06395 (degree 1648), 720555.BATR1942_06405 (degree 1620),
-720555.BATR1942_06415 (degree 1376), 720555.BATR1942_12330 (degree 1214) and 720555.BATR1942_06410
+The undirected graph Bacillus atrophaeus has 4135 nodes and 315314 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03689 and has 21 connected components, where the component with most
+nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 152.51, and
+the node degree mode is 1. The top 5 most central nodes are 720555.BATR1942_06395
+(degree 1648), 720555.BATR1942_06405 (degree 1620), 720555.BATR1942_06415
+(degree 1376), 720555.BATR1942_12330 (degree 1214) and 720555.BATR1942_06410
 (degree 1173).
 
 
@@ -107,13 +108,14 @@ def BacillusAtrophaeus(
 	
 	Datetime: 2021-02-02 21:36:46.388825
 	
-	The undirected graph Bacillus atrophaeus has 4135 nodes and 315314 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03689 and
-	has 21 connected components, where the component with most nodes has 4091 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 152.51, and the node degree mode is 1. The top 5 most central
-	nodes are 720555.BATR1942_06395 (degree 1648), 720555.BATR1942_06405 (degree 1620),
-	720555.BATR1942_06415 (degree 1376), 720555.BATR1942_12330 (degree 1214) and 720555.BATR1942_06410
+	The undirected graph Bacillus atrophaeus has 4135 nodes and 315314 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03689 and has 21 connected components, where the component with most
+	nodes has 4091 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 152.51, and
+	the node degree mode is 1. The top 5 most central nodes are 720555.BATR1942_06395
+	(degree 1648), 720555.BATR1942_06405 (degree 1620), 720555.BATR1942_06415
+	(degree 1376), 720555.BATR1942_12330 (degree 1214) and 720555.BATR1942_06410
 	(degree 1173).
 	
 

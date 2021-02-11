@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:47:05.121600
 
-The undirected graph Rheinheimera baltica has 3937 nodes and 408568 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05273 and
-has 14 connected components, where the component with most nodes has 3909 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 207.55, and the node degree mode is 2. The top 5 most central
-nodes are 1123053.AUDG01000048_gene1831 (degree 1345), 1123053.AUDG01000001_gene2339
-(degree 1300), 1123053.AUDG01000090_gene2274 (degree 1159), 1123053.AUDG01000003_gene2630
-(degree 1156) and 1123053.AUDG01000090_gene2273 (degree 1132).
+The undirected graph Rheinheimera baltica has 3937 nodes and 408568 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05273 and has 14 connected components, where the component with most
+nodes has 3909 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 207.55, and
+the node degree mode is 2. The top 5 most central nodes are 1123053.AUDG01000048_gene1831
+(degree 1345), 1123053.AUDG01000001_gene2339 (degree 1300), 1123053.AUDG01000090_gene2274
+(degree 1159), 1123053.AUDG01000003_gene2630 (degree 1156) and 1123053.AUDG01000090_gene2273
+(degree 1132).
 
 
 References
@@ -107,14 +108,15 @@ def RheinheimeraBaltica(
 	
 	Datetime: 2021-02-02 22:47:05.121600
 	
-	The undirected graph Rheinheimera baltica has 3937 nodes and 408568 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05273 and
-	has 14 connected components, where the component with most nodes has 3909 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 207.55, and the node degree mode is 2. The top 5 most central
-	nodes are 1123053.AUDG01000048_gene1831 (degree 1345), 1123053.AUDG01000001_gene2339
-	(degree 1300), 1123053.AUDG01000090_gene2274 (degree 1159), 1123053.AUDG01000003_gene2630
-	(degree 1156) and 1123053.AUDG01000090_gene2273 (degree 1132).
+	The undirected graph Rheinheimera baltica has 3937 nodes and 408568 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05273 and has 14 connected components, where the component with most
+	nodes has 3909 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 207.55, and
+	the node degree mode is 2. The top 5 most central nodes are 1123053.AUDG01000048_gene1831
+	(degree 1345), 1123053.AUDG01000001_gene2339 (degree 1300), 1123053.AUDG01000090_gene2274
+	(degree 1159), 1123053.AUDG01000003_gene2630 (degree 1156) and 1123053.AUDG01000090_gene2273
+	(degree 1132).
 	
 
 

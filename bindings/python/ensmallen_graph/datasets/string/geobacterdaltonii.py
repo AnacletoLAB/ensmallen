@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:14.435194
 
-The undirected graph Geobacter daltonii has 3783 nodes and 302969 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04235 and
-has 5 connected components, where the component with most nodes has 3773 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 160.17, and the node degree mode is 7. The top 5 most central
-nodes are 316067.Geob_0651 (degree 2097), 316067.Geob_1844 (degree 1535), 316067.Geob_1408
-(degree 1448), 316067.Geob_0075 (degree 1365) and 316067.Geob_3147 (degree 1280).
+The undirected graph Geobacter daltonii has 3783 nodes and 302969 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04235 and has 5 connected components, where the component with most
+nodes has 3773 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 160.17, and
+the node degree mode is 7. The top 5 most central nodes are 316067.Geob_0651
+(degree 2097), 316067.Geob_1844 (degree 1535), 316067.Geob_1408 (degree
+1448), 316067.Geob_0075 (degree 1365) and 316067.Geob_3147 (degree 1280).
 
 
 References
@@ -106,13 +107,14 @@ def GeobacterDaltonii(
 	
 	Datetime: 2021-02-02 20:26:14.435194
 	
-	The undirected graph Geobacter daltonii has 3783 nodes and 302969 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04235 and
-	has 5 connected components, where the component with most nodes has 3773 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 160.17, and the node degree mode is 7. The top 5 most central
-	nodes are 316067.Geob_0651 (degree 2097), 316067.Geob_1844 (degree 1535), 316067.Geob_1408
-	(degree 1448), 316067.Geob_0075 (degree 1365) and 316067.Geob_3147 (degree 1280).
+	The undirected graph Geobacter daltonii has 3783 nodes and 302969 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04235 and has 5 connected components, where the component with most
+	nodes has 3773 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 160.17, and
+	the node degree mode is 7. The top 5 most central nodes are 316067.Geob_0651
+	(degree 2097), 316067.Geob_1844 (degree 1535), 316067.Geob_1408 (degree
+	1448), 316067.Geob_0075 (degree 1365) and 316067.Geob_3147 (degree 1280).
 	
 
 

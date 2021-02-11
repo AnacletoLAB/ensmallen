@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:21:31.486670
 
-The undirected graph Caldicellulosiruptor hydrothermalis has 2535 nodes and 152914
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04761 and has 9 connected components, where the component with most nodes has
-2509 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 96, the mean node degree is 120.64, and the node degree mode is 3. The
-top 5 most central nodes are 632292.Calhy_1330 (degree 940), 632292.Calhy_1295 (degree
-936), 632292.Calhy_2314 (degree 793), 632292.Calhy_1304 (degree 780) and 632292.Calhy_1113
-(degree 744).
+The undirected graph Caldicellulosiruptor hydrothermalis has 2535 nodes
+and 152914 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04761 and has 9 connected components, where the
+component with most nodes has 2509 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+is 120.64, and the node degree mode is 3. The top 5 most central nodes
+are 632292.Calhy_1330 (degree 940), 632292.Calhy_1295 (degree 936), 632292.Calhy_2314
+(degree 793), 632292.Calhy_1304 (degree 780) and 632292.Calhy_1113 (degree
+744).
 
 
 References
@@ -107,14 +108,15 @@ def CaldicellulosiruptorHydrothermalis(
 	
 	Datetime: 2021-02-02 21:21:31.486670
 	
-	The undirected graph Caldicellulosiruptor hydrothermalis has 2535 nodes and 152914
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04761 and has 9 connected components, where the component with most nodes has
-	2509 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 96, the mean node degree is 120.64, and the node degree mode is 3. The
-	top 5 most central nodes are 632292.Calhy_1330 (degree 940), 632292.Calhy_1295 (degree
-	936), 632292.Calhy_2314 (degree 793), 632292.Calhy_1304 (degree 780) and 632292.Calhy_1113
-	(degree 744).
+	The undirected graph Caldicellulosiruptor hydrothermalis has 2535 nodes
+	and 152914 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04761 and has 9 connected components, where the
+	component with most nodes has 2509 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+	is 120.64, and the node degree mode is 3. The top 5 most central nodes
+	are 632292.Calhy_1330 (degree 940), 632292.Calhy_1295 (degree 936), 632292.Calhy_2314
+	(degree 793), 632292.Calhy_1304 (degree 780) and 632292.Calhy_1113 (degree
+	744).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:33:29.200099
 
-The undirected graph Campylobacter jejuni 81176 has 1702 nodes and 115904 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08007
-and has 2 connected components, where the component with most nodes has 1692 nodes
-and the component with the least nodes has 10 nodes. The graph median node degree
-is 115, the mean node degree is 136.20, and the node degree mode is 9. The top 5
-most central nodes are 354242.CJJ81176_0955 (degree 726), 354242.CJJ81176_0360 (degree
-721), 354242.CJJ81176_1078 (degree 669), 354242.CJJ81176_1469 (degree 656) and 354242.CJJ81176_1264
+The undirected graph Campylobacter jejuni 81176 has 1702 nodes and 115904
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08007 and has 2 connected components, where the component
+with most nodes has 1692 nodes and the component with the least nodes has
+10 nodes. The graph median node degree is 115, the mean node degree is
+136.20, and the node degree mode is 9. The top 5 most central nodes are
+354242.CJJ81176_0955 (degree 726), 354242.CJJ81176_0360 (degree 721), 354242.CJJ81176_1078
+(degree 669), 354242.CJJ81176_1469 (degree 656) and 354242.CJJ81176_1264
 (degree 602).
 
 
@@ -107,13 +108,14 @@ def CampylobacterJejuni81176(
 	
 	Datetime: 2021-02-02 20:33:29.200099
 	
-	The undirected graph Campylobacter jejuni 81176 has 1702 nodes and 115904 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08007
-	and has 2 connected components, where the component with most nodes has 1692 nodes
-	and the component with the least nodes has 10 nodes. The graph median node degree
-	is 115, the mean node degree is 136.20, and the node degree mode is 9. The top 5
-	most central nodes are 354242.CJJ81176_0955 (degree 726), 354242.CJJ81176_0360 (degree
-	721), 354242.CJJ81176_1078 (degree 669), 354242.CJJ81176_1469 (degree 656) and 354242.CJJ81176_1264
+	The undirected graph Campylobacter jejuni 81176 has 1702 nodes and 115904
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08007 and has 2 connected components, where the component
+	with most nodes has 1692 nodes and the component with the least nodes has
+	10 nodes. The graph median node degree is 115, the mean node degree is
+	136.20, and the node degree mode is 9. The top 5 most central nodes are
+	354242.CJJ81176_0955 (degree 726), 354242.CJJ81176_0360 (degree 721), 354242.CJJ81176_1078
+	(degree 669), 354242.CJJ81176_1469 (degree 656) and 354242.CJJ81176_1264
 	(degree 602).
 	
 

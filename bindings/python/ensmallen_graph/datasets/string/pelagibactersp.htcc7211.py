@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:38.220941
 
-The undirected graph Pelagibacter sp. HTCC7211 has 1445 nodes and 104842 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10049 and has 4 connected components, where the component with most nodes has
-1438 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 134, the mean node degree is 145.11, and the node degree mode is 9. The
-top 5 most central nodes are 439493.PB7211_893 (degree 670), 439493.PB7211_249 (degree
-552), 439493.PB7211_144 (degree 536), 439493.PB7211_146 (degree 523) and 439493.PB7211_1193
-(degree 512).
+The undirected graph Pelagibacter sp. HTCC7211 has 1445 nodes and 104842
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10049 and has 4 connected components, where the
+component with most nodes has 1438 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+is 145.11, and the node degree mode is 9. The top 5 most central nodes
+are 439493.PB7211_893 (degree 670), 439493.PB7211_249 (degree 552), 439493.PB7211_144
+(degree 536), 439493.PB7211_146 (degree 523) and 439493.PB7211_1193 (degree
+512).
 
 
 References
@@ -107,14 +108,15 @@ def PelagibacterSp.Htcc7211(
 	
 	Datetime: 2021-02-02 20:49:38.220941
 	
-	The undirected graph Pelagibacter sp. HTCC7211 has 1445 nodes and 104842 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10049 and has 4 connected components, where the component with most nodes has
-	1438 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 134, the mean node degree is 145.11, and the node degree mode is 9. The
-	top 5 most central nodes are 439493.PB7211_893 (degree 670), 439493.PB7211_249 (degree
-	552), 439493.PB7211_144 (degree 536), 439493.PB7211_146 (degree 523) and 439493.PB7211_1193
-	(degree 512).
+	The undirected graph Pelagibacter sp. HTCC7211 has 1445 nodes and 104842
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10049 and has 4 connected components, where the
+	component with most nodes has 1438 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+	is 145.11, and the node degree mode is 9. The top 5 most central nodes
+	are 439493.PB7211_893 (degree 670), 439493.PB7211_249 (degree 552), 439493.PB7211_144
+	(degree 536), 439493.PB7211_146 (degree 523) and 439493.PB7211_1193 (degree
+	512).
 	
 
 

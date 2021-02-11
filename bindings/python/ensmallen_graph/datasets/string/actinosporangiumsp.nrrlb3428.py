@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:08:02.048506
 
-The undirected graph Actinosporangium sp. NRRLB3428 has 7478 nodes and 1056652 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03780
-and has 34 connected components, where the component with most nodes has 7401 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 239, the mean node degree is 282.60, and the node degree mode is 2. The top 5
-most central nodes are 1463820.JOGW01000001_gene5213 (degree 3597), 1463820.JOGW01000011_gene3062
+The undirected graph Actinosporangium sp. NRRLB3428 has 7478 nodes and
+1056652 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03780 and has 34 connected components, where the
+component with most nodes has 7401 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 239, the mean node degree
+is 282.60, and the node degree mode is 2. The top 5 most central nodes
+are 1463820.JOGW01000001_gene5213 (degree 3597), 1463820.JOGW01000011_gene3062
 (degree 2783), 1463820.JOGW01000002_gene5953 (degree 2085), 1463820.JOGW01000015_gene2462
 (degree 2047) and 1463820.JOGW01000013_gene4348 (degree 2032).
 
@@ -107,12 +108,13 @@ def ActinosporangiumSp.Nrrlb3428(
 	
 	Datetime: 2021-02-03 23:08:02.048506
 	
-	The undirected graph Actinosporangium sp. NRRLB3428 has 7478 nodes and 1056652 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03780
-	and has 34 connected components, where the component with most nodes has 7401 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 239, the mean node degree is 282.60, and the node degree mode is 2. The top 5
-	most central nodes are 1463820.JOGW01000001_gene5213 (degree 3597), 1463820.JOGW01000011_gene3062
+	The undirected graph Actinosporangium sp. NRRLB3428 has 7478 nodes and
+	1056652 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03780 and has 34 connected components, where the
+	component with most nodes has 7401 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 239, the mean node degree
+	is 282.60, and the node degree mode is 2. The top 5 most central nodes
+	are 1463820.JOGW01000001_gene5213 (degree 3597), 1463820.JOGW01000011_gene3062
 	(degree 2783), 1463820.JOGW01000002_gene5953 (degree 2085), 1463820.JOGW01000015_gene2462
 	(degree 2047) and 1463820.JOGW01000013_gene4348 (degree 2032).
 	

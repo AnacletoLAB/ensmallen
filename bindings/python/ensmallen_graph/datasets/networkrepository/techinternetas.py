@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:27.406613
 
-The undirected graph tech-internet-as has 40164 nodes and 85123 unweighted edges,
-of which none are self-loops. The graph is quite sparse as it has a density of 0.00011
-and is connected, as it has a single component. The graph median node degree is 2,
-the mean node degree is 4.24, and the node degree mode is 2. The top 5 most central
-nodes are 8440 (degree 3370), 2064 (degree 3171), 31733 (degree 2423), 35973 (degree
-1925) and 21680 (degree 1884).
+The undirected graph tech-internet-as has 40164 nodes and 85123 unweighted
+edges, of which none are self-loops. The graph is quite sparse as it has
+a density of 0.00011 and is connected, as it has a single component. The
+graph median node degree is 2, the mean node degree is 4.24, and the node
+degree mode is 2. The top 5 most central nodes are 8440 (degree 3370),
+2064 (degree 3171), 31733 (degree 2423), 35973 (degree 1925) and 21680
+(degree 1884).
 
 
 References
@@ -110,12 +111,13 @@ def TechInternetAs(
 	
 	Datetime: 2021-02-06 10:55:27.406613
 	
-	The undirected graph tech-internet-as has 40164 nodes and 85123 unweighted edges,
-	of which none are self-loops. The graph is quite sparse as it has a density of 0.00011
-	and is connected, as it has a single component. The graph median node degree is 2,
-	the mean node degree is 4.24, and the node degree mode is 2. The top 5 most central
-	nodes are 8440 (degree 3370), 2064 (degree 3171), 31733 (degree 2423), 35973 (degree
-	1925) and 21680 (degree 1884).
+	The undirected graph tech-internet-as has 40164 nodes and 85123 unweighted
+	edges, of which none are self-loops. The graph is quite sparse as it has
+	a density of 0.00011 and is connected, as it has a single component. The
+	graph median node degree is 2, the mean node degree is 4.24, and the node
+	degree mode is 2. The top 5 most central nodes are 8440 (degree 3370),
+	2064 (degree 3171), 31733 (degree 2423), 35973 (degree 1925) and 21680
+	(degree 1884).
 	
 
 

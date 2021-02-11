@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:13:36.174253
 
-The undirected graph Burkholderia mimosarum has 6773 nodes and 1319148 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05752 and
-has 29 connected components, where the component with most nodes has 6714 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 313,
-the mean node degree is 389.53, and the node degree mode is 1. The top 5 most central
-nodes are 1038869.AXAN01000057_gene6015 (degree 2906), 1038869.AXAN01000001_gene3736
-(degree 2712), 1038869.AXAN01000023_gene1791 (degree 2620), 1038869.AXAN01000018_gene4349
-(degree 2397) and 1038869.AXAN01000002_gene198 (degree 2393).
+The undirected graph Burkholderia mimosarum has 6773 nodes and 1319148
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05752 and has 29 connected components, where the component
+with most nodes has 6714 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 313, the mean node degree is 389.53,
+and the node degree mode is 1. The top 5 most central nodes are 1038869.AXAN01000057_gene6015
+(degree 2906), 1038869.AXAN01000001_gene3736 (degree 2712), 1038869.AXAN01000023_gene1791
+(degree 2620), 1038869.AXAN01000018_gene4349 (degree 2397) and 1038869.AXAN01000002_gene198
+(degree 2393).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaMimosarum(
 	
 	Datetime: 2021-02-02 22:13:36.174253
 	
-	The undirected graph Burkholderia mimosarum has 6773 nodes and 1319148 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05752 and
-	has 29 connected components, where the component with most nodes has 6714 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 313,
-	the mean node degree is 389.53, and the node degree mode is 1. The top 5 most central
-	nodes are 1038869.AXAN01000057_gene6015 (degree 2906), 1038869.AXAN01000001_gene3736
-	(degree 2712), 1038869.AXAN01000023_gene1791 (degree 2620), 1038869.AXAN01000018_gene4349
-	(degree 2397) and 1038869.AXAN01000002_gene198 (degree 2393).
+	The undirected graph Burkholderia mimosarum has 6773 nodes and 1319148
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05752 and has 29 connected components, where the component
+	with most nodes has 6714 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 313, the mean node degree is 389.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1038869.AXAN01000057_gene6015
+	(degree 2906), 1038869.AXAN01000001_gene3736 (degree 2712), 1038869.AXAN01000023_gene1791
+	(degree 2620), 1038869.AXAN01000018_gene4349 (degree 2397) and 1038869.AXAN01000002_gene198
+	(degree 2393).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:07.292901
 
-The undirected graph Microvirga aerilata has 4473 nodes and 516824 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05167 and
-has 55 connected components, where the component with most nodes has 4339 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 178,
-the mean node degree is 231.09, and the node degree mode is 1. The top 5 most central
-nodes are 670292.JH26_12700 (degree 1821), 670292.JH26_18760 (degree 1691), 670292.JH26_17805
-(degree 1458), 670292.JH26_23550 (degree 1448) and 670292.JH26_02885 (degree 1395).
+The undirected graph Microvirga aerilata has 4473 nodes and 516824 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05167 and has 55 connected components, where the component with most
+nodes has 4339 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 178, the mean node degree is 231.09, and
+the node degree mode is 1. The top 5 most central nodes are 670292.JH26_12700
+(degree 1821), 670292.JH26_18760 (degree 1691), 670292.JH26_17805 (degree
+1458), 670292.JH26_23550 (degree 1448) and 670292.JH26_02885 (degree 1395).
 
 
 References
@@ -106,13 +107,14 @@ def MicrovirgaAerilata(
 	
 	Datetime: 2021-02-02 21:29:07.292901
 	
-	The undirected graph Microvirga aerilata has 4473 nodes and 516824 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05167 and
-	has 55 connected components, where the component with most nodes has 4339 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 178,
-	the mean node degree is 231.09, and the node degree mode is 1. The top 5 most central
-	nodes are 670292.JH26_12700 (degree 1821), 670292.JH26_18760 (degree 1691), 670292.JH26_17805
-	(degree 1458), 670292.JH26_23550 (degree 1448) and 670292.JH26_02885 (degree 1395).
+	The undirected graph Microvirga aerilata has 4473 nodes and 516824 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05167 and has 55 connected components, where the component with most
+	nodes has 4339 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 178, the mean node degree is 231.09, and
+	the node degree mode is 1. The top 5 most central nodes are 670292.JH26_12700
+	(degree 1821), 670292.JH26_18760 (degree 1691), 670292.JH26_17805 (degree
+	1458), 670292.JH26_23550 (degree 1448) and 670292.JH26_02885 (degree 1395).
 	
 
 

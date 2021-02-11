@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:13.906296
 
-The undirected graph Flavobacterium rivuli has 3647 nodes and 258100 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03882 and
-has 18 connected components, where the component with most nodes has 3586 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 141.54, and the node degree mode is 5. The top 5 most central
-nodes are 1121895.Q765_11350 (degree 1156), 1121895.Q765_17315 (degree 922), 1121895.Q765_04715
-(degree 891), 1121895.Q765_04780 (degree 837) and 1121895.Q765_20215 (degree 817).
+The undirected graph Flavobacterium rivuli has 3647 nodes and 258100 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03882 and has 18 connected components, where the component with most
+nodes has 3586 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 141.54, and
+the node degree mode is 5. The top 5 most central nodes are 1121895.Q765_11350
+(degree 1156), 1121895.Q765_17315 (degree 922), 1121895.Q765_04715 (degree
+891), 1121895.Q765_04780 (degree 837) and 1121895.Q765_20215 (degree 817).
 
 
 References
@@ -106,13 +107,14 @@ def FlavobacteriumRivuli(
 	
 	Datetime: 2021-02-02 22:38:13.906296
 	
-	The undirected graph Flavobacterium rivuli has 3647 nodes and 258100 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03882 and
-	has 18 connected components, where the component with most nodes has 3586 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 141.54, and the node degree mode is 5. The top 5 most central
-	nodes are 1121895.Q765_11350 (degree 1156), 1121895.Q765_17315 (degree 922), 1121895.Q765_04715
-	(degree 891), 1121895.Q765_04780 (degree 837) and 1121895.Q765_20215 (degree 817).
+	The undirected graph Flavobacterium rivuli has 3647 nodes and 258100 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03882 and has 18 connected components, where the component with most
+	nodes has 3586 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 141.54, and
+	the node degree mode is 5. The top 5 most central nodes are 1121895.Q765_11350
+	(degree 1156), 1121895.Q765_17315 (degree 922), 1121895.Q765_04715 (degree
+	891), 1121895.Q765_04780 (degree 837) and 1121895.Q765_20215 (degree 817).
 	
 
 

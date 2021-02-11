@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:34:36.601790
 
-The undirected graph Butyrivibrio sp. MC2021 has 3408 nodes and 345817 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05957 and
-has 12 connected components, where the component with most nodes has 3385 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 202.94, and the node degree mode is 1. The top 5 most central
-nodes are 1408306.JHXX01000007_gene3206 (degree 1313), 1408306.JHXX01000001_gene1969
-(degree 1228), 1408306.JHXX01000010_gene94 (degree 1148), 1408306.JHXX01000006_gene972
-(degree 1087) and 1408306.JHXX01000004_gene377 (degree 1061).
+The undirected graph Butyrivibrio sp. MC2021 has 3408 nodes and 345817
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05957 and has 12 connected components, where the component
+with most nodes has 3385 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 202.94,
+and the node degree mode is 1. The top 5 most central nodes are 1408306.JHXX01000007_gene3206
+(degree 1313), 1408306.JHXX01000001_gene1969 (degree 1228), 1408306.JHXX01000010_gene94
+(degree 1148), 1408306.JHXX01000006_gene972 (degree 1087) and 1408306.JHXX01000004_gene377
+(degree 1061).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Mc2021(
 	
 	Datetime: 2021-02-03 22:34:36.601790
 	
-	The undirected graph Butyrivibrio sp. MC2021 has 3408 nodes and 345817 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05957 and
-	has 12 connected components, where the component with most nodes has 3385 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 202.94, and the node degree mode is 1. The top 5 most central
-	nodes are 1408306.JHXX01000007_gene3206 (degree 1313), 1408306.JHXX01000001_gene1969
-	(degree 1228), 1408306.JHXX01000010_gene94 (degree 1148), 1408306.JHXX01000006_gene972
-	(degree 1087) and 1408306.JHXX01000004_gene377 (degree 1061).
+	The undirected graph Butyrivibrio sp. MC2021 has 3408 nodes and 345817
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05957 and has 12 connected components, where the component
+	with most nodes has 3385 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 202.94,
+	and the node degree mode is 1. The top 5 most central nodes are 1408306.JHXX01000007_gene3206
+	(degree 1313), 1408306.JHXX01000001_gene1969 (degree 1228), 1408306.JHXX01000010_gene94
+	(degree 1148), 1408306.JHXX01000006_gene972 (degree 1087) and 1408306.JHXX01000004_gene377
+	(degree 1061).
 	
 
 

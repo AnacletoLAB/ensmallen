@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:45.985417
 
-The undirected graph Colletotrichum sublineola has 8364 nodes and 760924 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02176
-and has 22 connected components, where the component with most nodes has 8321 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 99, the mean node degree is 181.95, and the node degree mode is 1. The top 5 most
-central nodes are 1173701.A0A066XC45 (degree 2045), 1173701.A0A066XUS2 (degree 1779),
-1173701.A0A066X5Y0 (degree 1638), 1173701.A0A066XCD9 (degree 1584) and 1173701.A0A066X7Z9
-(degree 1570).
+The undirected graph Colletotrichum sublineola has 8364 nodes and 760924
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02176 and has 22 connected components, where the component
+with most nodes has 8321 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 99, the mean node degree is 181.95,
+and the node degree mode is 1. The top 5 most central nodes are 1173701.A0A066XC45
+(degree 2045), 1173701.A0A066XUS2 (degree 1779), 1173701.A0A066X5Y0 (degree
+1638), 1173701.A0A066XCD9 (degree 1584) and 1173701.A0A066X7Z9 (degree
+1570).
 
 
 References
@@ -107,14 +108,15 @@ def ColletotrichumSublineola(
 	
 	Datetime: 2021-02-02 23:08:45.985417
 	
-	The undirected graph Colletotrichum sublineola has 8364 nodes and 760924 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02176
-	and has 22 connected components, where the component with most nodes has 8321 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 99, the mean node degree is 181.95, and the node degree mode is 1. The top 5 most
-	central nodes are 1173701.A0A066XC45 (degree 2045), 1173701.A0A066XUS2 (degree 1779),
-	1173701.A0A066X5Y0 (degree 1638), 1173701.A0A066XCD9 (degree 1584) and 1173701.A0A066X7Z9
-	(degree 1570).
+	The undirected graph Colletotrichum sublineola has 8364 nodes and 760924
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02176 and has 22 connected components, where the component
+	with most nodes has 8321 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 99, the mean node degree is 181.95,
+	and the node degree mode is 1. The top 5 most central nodes are 1173701.A0A066XC45
+	(degree 2045), 1173701.A0A066XUS2 (degree 1779), 1173701.A0A066X5Y0 (degree
+	1638), 1173701.A0A066XCD9 (degree 1584) and 1173701.A0A066X7Z9 (degree
+	1570).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:37.005435
 
-The undirected graph Burkholderia cenocepacia has 7075 nodes and 1129351 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04513
-and has 20 connected components, where the component with most nodes has 7023 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 287, the mean node degree is 319.25, and the node degree mode is 3. The top 5
-most central nodes are 216591.BCAM0904 (degree 2455), 216591.BCAL0289 (degree 2107),
-216591.BCAL1315 (degree 1885), 216591.BCAL2061 (degree 1772) and 216591.BCAM2218
-(degree 1722).
+The undirected graph Burkholderia cenocepacia has 7075 nodes and 1129351
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04513 and has 20 connected components, where the component
+with most nodes has 7023 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 287, the mean node degree is 319.25,
+and the node degree mode is 3. The top 5 most central nodes are 216591.BCAM0904
+(degree 2455), 216591.BCAL0289 (degree 2107), 216591.BCAL1315 (degree 1885),
+216591.BCAL2061 (degree 1772) and 216591.BCAM2218 (degree 1722).
 
 
 References
@@ -107,14 +107,14 @@ def BurkholderiaCenocepacia(
 	
 	Datetime: 2021-02-02 20:02:37.005435
 	
-	The undirected graph Burkholderia cenocepacia has 7075 nodes and 1129351 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04513
-	and has 20 connected components, where the component with most nodes has 7023 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 287, the mean node degree is 319.25, and the node degree mode is 3. The top 5
-	most central nodes are 216591.BCAM0904 (degree 2455), 216591.BCAL0289 (degree 2107),
-	216591.BCAL1315 (degree 1885), 216591.BCAL2061 (degree 1772) and 216591.BCAM2218
-	(degree 1722).
+	The undirected graph Burkholderia cenocepacia has 7075 nodes and 1129351
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04513 and has 20 connected components, where the component
+	with most nodes has 7023 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 287, the mean node degree is 319.25,
+	and the node degree mode is 3. The top 5 most central nodes are 216591.BCAM0904
+	(degree 2455), 216591.BCAL0289 (degree 2107), 216591.BCAL1315 (degree 1885),
+	216591.BCAL2061 (degree 1772) and 216591.BCAM2218 (degree 1722).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:09.601114
 
-The undirected graph Thermomonas fusca has 2730 nodes and 259440 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06965 and
-has 3 connected components, where the component with most nodes has 2726 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 190.07, and the node degree mode is 4. The top 5 most central
-nodes are 1123377.AUIV01000026_gene535 (degree 1199), 1123377.AUIV01000016_gene306
-(degree 1147), 1123377.AUIV01000002_gene1064 (degree 953), 1123377.AUIV01000030_gene86
-(degree 947) and 1123377.AUIV01000002_gene1134 (degree 908).
+The undirected graph Thermomonas fusca has 2730 nodes and 259440 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06965 and has 3 connected components, where the component with most
+nodes has 2726 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 190.07, and
+the node degree mode is 4. The top 5 most central nodes are 1123377.AUIV01000026_gene535
+(degree 1199), 1123377.AUIV01000016_gene306 (degree 1147), 1123377.AUIV01000002_gene1064
+(degree 953), 1123377.AUIV01000030_gene86 (degree 947) and 1123377.AUIV01000002_gene1134
+(degree 908).
 
 
 References
@@ -107,14 +108,15 @@ def ThermomonasFusca(
 	
 	Datetime: 2021-02-02 22:52:09.601114
 	
-	The undirected graph Thermomonas fusca has 2730 nodes and 259440 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06965 and
-	has 3 connected components, where the component with most nodes has 2726 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 190.07, and the node degree mode is 4. The top 5 most central
-	nodes are 1123377.AUIV01000026_gene535 (degree 1199), 1123377.AUIV01000016_gene306
-	(degree 1147), 1123377.AUIV01000002_gene1064 (degree 953), 1123377.AUIV01000030_gene86
-	(degree 947) and 1123377.AUIV01000002_gene1134 (degree 908).
+	The undirected graph Thermomonas fusca has 2730 nodes and 259440 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06965 and has 3 connected components, where the component with most
+	nodes has 2726 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 190.07, and
+	the node degree mode is 4. The top 5 most central nodes are 1123377.AUIV01000026_gene535
+	(degree 1199), 1123377.AUIV01000016_gene306 (degree 1147), 1123377.AUIV01000002_gene1064
+	(degree 953), 1123377.AUIV01000030_gene86 (degree 947) and 1123377.AUIV01000002_gene1134
+	(degree 908).
 	
 
 

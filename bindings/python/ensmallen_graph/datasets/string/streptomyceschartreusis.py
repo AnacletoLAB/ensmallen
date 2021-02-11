@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:20:30.873093
 
-The undirected graph Streptomyces chartreusis has 7804 nodes and 1250262 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-and has 31 connected components, where the component with most nodes has 7736 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 265, the mean node degree is 320.42, and the node degree mode is 2. The top 5
-most central nodes are 1079986.JH164840_gene4732 (degree 2635), 1079986.JH164848_gene1004
-(degree 2360), 1079986.JH164842_gene6016 (degree 2332), 1079986.JH164837_gene5935
-(degree 2220) and 1079986.JH164871_gene3279 (degree 2180).
+The undirected graph Streptomyces chartreusis has 7804 nodes and 1250262
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04106 and has 31 connected components, where the component
+with most nodes has 7736 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 265, the mean node degree is 320.42,
+and the node degree mode is 2. The top 5 most central nodes are 1079986.JH164840_gene4732
+(degree 2635), 1079986.JH164848_gene1004 (degree 2360), 1079986.JH164842_gene6016
+(degree 2332), 1079986.JH164837_gene5935 (degree 2220) and 1079986.JH164871_gene3279
+(degree 2180).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesChartreusis(
 	
 	Datetime: 2021-02-02 22:20:30.873093
 	
-	The undirected graph Streptomyces chartreusis has 7804 nodes and 1250262 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04106
-	and has 31 connected components, where the component with most nodes has 7736 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 265, the mean node degree is 320.42, and the node degree mode is 2. The top 5
-	most central nodes are 1079986.JH164840_gene4732 (degree 2635), 1079986.JH164848_gene1004
-	(degree 2360), 1079986.JH164842_gene6016 (degree 2332), 1079986.JH164837_gene5935
-	(degree 2220) and 1079986.JH164871_gene3279 (degree 2180).
+	The undirected graph Streptomyces chartreusis has 7804 nodes and 1250262
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04106 and has 31 connected components, where the component
+	with most nodes has 7736 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 265, the mean node degree is 320.42,
+	and the node degree mode is 2. The top 5 most central nodes are 1079986.JH164840_gene4732
+	(degree 2635), 1079986.JH164848_gene1004 (degree 2360), 1079986.JH164842_gene6016
+	(degree 2332), 1079986.JH164837_gene5935 (degree 2220) and 1079986.JH164871_gene3279
+	(degree 2180).
 	
 
 

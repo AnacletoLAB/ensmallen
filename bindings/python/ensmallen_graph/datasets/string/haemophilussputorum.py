@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:21.842822
 
-The undirected graph Haemophilus sputorum has 2005 nodes and 137039 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06821 and
-has 6 connected components, where the component with most nodes has 1993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 136.70, and the node degree mode is 7. The top 5 most central
-nodes are 1035839.AFNK01000035_gene1045 (degree 813), 1035839.AFNK01000007_gene1715
-(degree 714), 1035839.AFNK01000003_gene262 (degree 684), 1035839.AFNK01000004_gene325
-(degree 665) and 1035839.AFNK01000007_gene1717 (degree 652).
+The undirected graph Haemophilus sputorum has 2005 nodes and 137039 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06821 and has 6 connected components, where the component with most
+nodes has 1993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 136.70, and
+the node degree mode is 7. The top 5 most central nodes are 1035839.AFNK01000035_gene1045
+(degree 813), 1035839.AFNK01000007_gene1715 (degree 714), 1035839.AFNK01000003_gene262
+(degree 684), 1035839.AFNK01000004_gene325 (degree 665) and 1035839.AFNK01000007_gene1717
+(degree 652).
 
 
 References
@@ -107,14 +108,15 @@ def HaemophilusSputorum(
 	
 	Datetime: 2021-02-02 22:12:21.842822
 	
-	The undirected graph Haemophilus sputorum has 2005 nodes and 137039 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06821 and
-	has 6 connected components, where the component with most nodes has 1993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 136.70, and the node degree mode is 7. The top 5 most central
-	nodes are 1035839.AFNK01000035_gene1045 (degree 813), 1035839.AFNK01000007_gene1715
-	(degree 714), 1035839.AFNK01000003_gene262 (degree 684), 1035839.AFNK01000004_gene325
-	(degree 665) and 1035839.AFNK01000007_gene1717 (degree 652).
+	The undirected graph Haemophilus sputorum has 2005 nodes and 137039 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06821 and has 6 connected components, where the component with most
+	nodes has 1993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 136.70, and
+	the node degree mode is 7. The top 5 most central nodes are 1035839.AFNK01000035_gene1045
+	(degree 813), 1035839.AFNK01000007_gene1715 (degree 714), 1035839.AFNK01000003_gene262
+	(degree 684), 1035839.AFNK01000004_gene325 (degree 665) and 1035839.AFNK01000007_gene1717
+	(degree 652).
 	
 
 

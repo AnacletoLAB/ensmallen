@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:16.688104
 
-The undirected graph Smaragdicoccus niigatensis has 5042 nodes and 580149 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04565
-and has 17 connected components, where the component with most nodes has 5008 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 190, the mean node degree is 230.13, and the node degree mode is 4. The top 5
-most central nodes are 1123258.AQXZ01000018_gene911 (degree 1614), 1123258.AQXZ01000016_gene2296
-(degree 1316), 1123258.AQXZ01000019_gene2997 (degree 1314), 1123258.AQXZ01000013_gene1837
-(degree 1306) and 1123258.AQXZ01000018_gene274 (degree 1265).
+The undirected graph Smaragdicoccus niigatensis has 5042 nodes and 580149
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04565 and has 17 connected components, where the component
+with most nodes has 5008 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 190, the mean node degree is 230.13,
+and the node degree mode is 4. The top 5 most central nodes are 1123258.AQXZ01000018_gene911
+(degree 1614), 1123258.AQXZ01000016_gene2296 (degree 1316), 1123258.AQXZ01000019_gene2997
+(degree 1314), 1123258.AQXZ01000013_gene1837 (degree 1306) and 1123258.AQXZ01000018_gene274
+(degree 1265).
 
 
 References
@@ -107,14 +108,15 @@ def SmaragdicoccusNiigatensis(
 	
 	Datetime: 2021-02-02 22:49:16.688104
 	
-	The undirected graph Smaragdicoccus niigatensis has 5042 nodes and 580149 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04565
-	and has 17 connected components, where the component with most nodes has 5008 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 190, the mean node degree is 230.13, and the node degree mode is 4. The top 5
-	most central nodes are 1123258.AQXZ01000018_gene911 (degree 1614), 1123258.AQXZ01000016_gene2296
-	(degree 1316), 1123258.AQXZ01000019_gene2997 (degree 1314), 1123258.AQXZ01000013_gene1837
-	(degree 1306) and 1123258.AQXZ01000018_gene274 (degree 1265).
+	The undirected graph Smaragdicoccus niigatensis has 5042 nodes and 580149
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04565 and has 17 connected components, where the component
+	with most nodes has 5008 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 190, the mean node degree is 230.13,
+	and the node degree mode is 4. The top 5 most central nodes are 1123258.AQXZ01000018_gene911
+	(degree 1614), 1123258.AQXZ01000016_gene2296 (degree 1316), 1123258.AQXZ01000019_gene2997
+	(degree 1314), 1123258.AQXZ01000013_gene1837 (degree 1306) and 1123258.AQXZ01000018_gene274
+	(degree 1265).
 	
 
 

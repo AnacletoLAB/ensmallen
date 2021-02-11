@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:07:06.769128
 
-The undirected graph Butyrivibrio sp. MC2013 has 2917 nodes and 251188 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05906 and
-has 5 connected components, where the component with most nodes has 2908 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 172.22, and the node degree mode is 6. The top 5 most central
-nodes are 1280686.AUKE01000006_gene409 (degree 1230), 1280686.AUKE01000030_gene1613
-(degree 1063), 1280686.AUKE01000021_gene2778 (degree 915), 1280686.AUKE01000015_gene537
-(degree 898) and 1280686.AUKE01000026_gene582 (degree 866).
+The undirected graph Butyrivibrio sp. MC2013 has 2917 nodes and 251188
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05906 and has 5 connected components, where the component
+with most nodes has 2908 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 172.22,
+and the node degree mode is 6. The top 5 most central nodes are 1280686.AUKE01000006_gene409
+(degree 1230), 1280686.AUKE01000030_gene1613 (degree 1063), 1280686.AUKE01000021_gene2778
+(degree 915), 1280686.AUKE01000015_gene537 (degree 898) and 1280686.AUKE01000026_gene582
+(degree 866).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Mc2013(
 	
 	Datetime: 2021-02-03 21:07:06.769128
 	
-	The undirected graph Butyrivibrio sp. MC2013 has 2917 nodes and 251188 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05906 and
-	has 5 connected components, where the component with most nodes has 2908 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 172.22, and the node degree mode is 6. The top 5 most central
-	nodes are 1280686.AUKE01000006_gene409 (degree 1230), 1280686.AUKE01000030_gene1613
-	(degree 1063), 1280686.AUKE01000021_gene2778 (degree 915), 1280686.AUKE01000015_gene537
-	(degree 898) and 1280686.AUKE01000026_gene582 (degree 866).
+	The undirected graph Butyrivibrio sp. MC2013 has 2917 nodes and 251188
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05906 and has 5 connected components, where the component
+	with most nodes has 2908 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 172.22,
+	and the node degree mode is 6. The top 5 most central nodes are 1280686.AUKE01000006_gene409
+	(degree 1230), 1280686.AUKE01000030_gene1613 (degree 1063), 1280686.AUKE01000021_gene2778
+	(degree 915), 1280686.AUKE01000015_gene537 (degree 898) and 1280686.AUKE01000026_gene582
+	(degree 866).
 	
 
 

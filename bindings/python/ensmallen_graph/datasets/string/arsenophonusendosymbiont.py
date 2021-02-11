@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:34:07.827960
 
-The undirected graph Arsenophonus endosymbiont has 2706 nodes and 270193 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07383
-and has 16 connected components, where the component with most nodes has 2670 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 199.70, and the node degree mode is 1. The top 5
-most central nodes are 1247024.JRLH01000010_gene1213 (degree 1007), 1247024.JRLH01000003_gene399
-(degree 931), 1247024.JRLH01000007_gene1860 (degree 915), 1247024.JRLH01000003_gene400
-(degree 905) and 1247024.JRLH01000005_gene2442 (degree 876).
+The undirected graph Arsenophonus endosymbiont has 2706 nodes and 270193
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07383 and has 16 connected components, where the component
+with most nodes has 2670 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 199.70,
+and the node degree mode is 1. The top 5 most central nodes are 1247024.JRLH01000010_gene1213
+(degree 1007), 1247024.JRLH01000003_gene399 (degree 931), 1247024.JRLH01000007_gene1860
+(degree 915), 1247024.JRLH01000003_gene400 (degree 905) and 1247024.JRLH01000005_gene2442
+(degree 876).
 
 
 References
@@ -107,14 +108,15 @@ def ArsenophonusEndosymbiont(
 	
 	Datetime: 2021-02-02 23:34:07.827960
 	
-	The undirected graph Arsenophonus endosymbiont has 2706 nodes and 270193 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07383
-	and has 16 connected components, where the component with most nodes has 2670 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 199.70, and the node degree mode is 1. The top 5
-	most central nodes are 1247024.JRLH01000010_gene1213 (degree 1007), 1247024.JRLH01000003_gene399
-	(degree 931), 1247024.JRLH01000007_gene1860 (degree 915), 1247024.JRLH01000003_gene400
-	(degree 905) and 1247024.JRLH01000005_gene2442 (degree 876).
+	The undirected graph Arsenophonus endosymbiont has 2706 nodes and 270193
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07383 and has 16 connected components, where the component
+	with most nodes has 2670 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 199.70,
+	and the node degree mode is 1. The top 5 most central nodes are 1247024.JRLH01000010_gene1213
+	(degree 1007), 1247024.JRLH01000003_gene399 (degree 931), 1247024.JRLH01000007_gene1860
+	(degree 915), 1247024.JRLH01000003_gene400 (degree 905) and 1247024.JRLH01000005_gene2442
+	(degree 876).
 	
 
 

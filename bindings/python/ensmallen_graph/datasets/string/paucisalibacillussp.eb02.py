@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:03:31.392694
 
-The undirected graph Paucisalibacillus sp. EB02 has 3930 nodes and 515639 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06679
-and has 14 connected components, where the component with most nodes has 3901 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 262.41, and the node degree mode is 4. The top 5
-most central nodes are 1347087.CBYO010000014_gene2360 (degree 1433), 1347087.CBYO010000016_gene2704
-(degree 1319), 1347087.CBYO010000018_gene2796 (degree 1167), 1347087.CBYO010000011_gene1661
-(degree 1166) and 1347087.CBYO010000020_gene2886 (degree 1162).
+The undirected graph Paucisalibacillus sp. EB02 has 3930 nodes and 515639
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06679 and has 14 connected components, where the component
+with most nodes has 3901 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 262.41,
+and the node degree mode is 4. The top 5 most central nodes are 1347087.CBYO010000014_gene2360
+(degree 1433), 1347087.CBYO010000016_gene2704 (degree 1319), 1347087.CBYO010000018_gene2796
+(degree 1167), 1347087.CBYO010000011_gene1661 (degree 1166) and 1347087.CBYO010000020_gene2886
+(degree 1162).
 
 
 References
@@ -107,14 +108,15 @@ def PaucisalibacillusSp.Eb02(
 	
 	Datetime: 2021-02-03 22:03:31.392694
 	
-	The undirected graph Paucisalibacillus sp. EB02 has 3930 nodes and 515639 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06679
-	and has 14 connected components, where the component with most nodes has 3901 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 262.41, and the node degree mode is 4. The top 5
-	most central nodes are 1347087.CBYO010000014_gene2360 (degree 1433), 1347087.CBYO010000016_gene2704
-	(degree 1319), 1347087.CBYO010000018_gene2796 (degree 1167), 1347087.CBYO010000011_gene1661
-	(degree 1166) and 1347087.CBYO010000020_gene2886 (degree 1162).
+	The undirected graph Paucisalibacillus sp. EB02 has 3930 nodes and 515639
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06679 and has 14 connected components, where the component
+	with most nodes has 3901 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 262.41,
+	and the node degree mode is 4. The top 5 most central nodes are 1347087.CBYO010000014_gene2360
+	(degree 1433), 1347087.CBYO010000016_gene2704 (degree 1319), 1347087.CBYO010000018_gene2796
+	(degree 1167), 1347087.CBYO010000011_gene1661 (degree 1166) and 1347087.CBYO010000020_gene2886
+	(degree 1162).
 	
 
 

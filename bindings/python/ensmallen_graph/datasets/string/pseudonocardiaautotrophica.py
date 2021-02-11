@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:25:04.179923
 
-The undirected graph Pseudonocardia autotrophica has 7407 nodes and 1199577 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04374
-and has 18 connected components, where the component with most nodes has 7372 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 258, the mean node degree is 323.90, and the node degree mode is 1. The top 5
-most central nodes are 2074.JNYD01000010_gene971 (degree 3216), 2074.JNYD01000055_gene2329
-(degree 3022), 2074.JNYD01000029_gene7217 (degree 2964), 2074.JNYD01000019_gene2584
-(degree 2333) and 2074.JNYD01000003_gene4095 (degree 2262).
+The undirected graph Pseudonocardia autotrophica has 7407 nodes and 1199577
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04374 and has 18 connected components, where the component
+with most nodes has 7372 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 323.90,
+and the node degree mode is 1. The top 5 most central nodes are 2074.JNYD01000010_gene971
+(degree 3216), 2074.JNYD01000055_gene2329 (degree 3022), 2074.JNYD01000029_gene7217
+(degree 2964), 2074.JNYD01000019_gene2584 (degree 2333) and 2074.JNYD01000003_gene4095
+(degree 2262).
 
 
 References
@@ -107,14 +108,15 @@ def PseudonocardiaAutotrophica(
 	
 	Datetime: 2021-02-02 16:25:04.179923
 	
-	The undirected graph Pseudonocardia autotrophica has 7407 nodes and 1199577 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04374
-	and has 18 connected components, where the component with most nodes has 7372 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 258, the mean node degree is 323.90, and the node degree mode is 1. The top 5
-	most central nodes are 2074.JNYD01000010_gene971 (degree 3216), 2074.JNYD01000055_gene2329
-	(degree 3022), 2074.JNYD01000029_gene7217 (degree 2964), 2074.JNYD01000019_gene2584
-	(degree 2333) and 2074.JNYD01000003_gene4095 (degree 2262).
+	The undirected graph Pseudonocardia autotrophica has 7407 nodes and 1199577
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04374 and has 18 connected components, where the component
+	with most nodes has 7372 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 323.90,
+	and the node degree mode is 1. The top 5 most central nodes are 2074.JNYD01000010_gene971
+	(degree 3216), 2074.JNYD01000055_gene2329 (degree 3022), 2074.JNYD01000029_gene7217
+	(degree 2964), 2074.JNYD01000019_gene2584 (degree 2333) and 2074.JNYD01000003_gene4095
+	(degree 2262).
 	
 
 

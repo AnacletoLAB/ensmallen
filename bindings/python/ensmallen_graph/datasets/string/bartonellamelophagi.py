@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:22:57.473946
 
-The undirected graph Bartonella melophagi has 1310 nodes and 82608 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09635 and
-has 9 connected components, where the component with most nodes has 1291 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 126.12, and the node degree mode is 2. The top 5 most central
-nodes are 1094557.ME3_00201 (degree 625), 1094557.ME3_01155 (degree 552), 1094557.ME3_00977
-(degree 514), 1094557.ME3_01160 (degree 503) and 1094557.ME3_00136 (degree 501).
+The undirected graph Bartonella melophagi has 1310 nodes and 82608 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09635 and has 9 connected components, where the component with most
+nodes has 1291 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 126.12, and
+the node degree mode is 2. The top 5 most central nodes are 1094557.ME3_00201
+(degree 625), 1094557.ME3_01155 (degree 552), 1094557.ME3_00977 (degree
+514), 1094557.ME3_01160 (degree 503) and 1094557.ME3_00136 (degree 501).
 
 
 References
@@ -106,13 +107,14 @@ def BartonellaMelophagi(
 	
 	Datetime: 2021-02-02 22:22:57.473946
 	
-	The undirected graph Bartonella melophagi has 1310 nodes and 82608 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09635 and
-	has 9 connected components, where the component with most nodes has 1291 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 126.12, and the node degree mode is 2. The top 5 most central
-	nodes are 1094557.ME3_00201 (degree 625), 1094557.ME3_01155 (degree 552), 1094557.ME3_00977
-	(degree 514), 1094557.ME3_01160 (degree 503) and 1094557.ME3_00136 (degree 501).
+	The undirected graph Bartonella melophagi has 1310 nodes and 82608 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09635 and has 9 connected components, where the component with most
+	nodes has 1291 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 126.12, and
+	the node degree mode is 2. The top 5 most central nodes are 1094557.ME3_00201
+	(degree 625), 1094557.ME3_01155 (degree 552), 1094557.ME3_00977 (degree
+	514), 1094557.ME3_01160 (degree 503) and 1094557.ME3_00136 (degree 501).
 	
 
 

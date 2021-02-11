@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:43:16.473867
 
-The undirected graph Lachnospiraceae bacterium P6B14 has 2274 nodes and 165879 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06418
-and has 9 connected components, where the component with most nodes has 2256 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 145.89, and the node degree mode is 14. The top 5
-most central nodes are 1410631.JHWZ01000030_gene1191 (degree 904), 1410631.JHWZ01000006_gene304
+The undirected graph Lachnospiraceae bacterium P6B14 has 2274 nodes and
+165879 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06418 and has 9 connected components, where the
+component with most nodes has 2256 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+is 145.89, and the node degree mode is 14. The top 5 most central nodes
+are 1410631.JHWZ01000030_gene1191 (degree 904), 1410631.JHWZ01000006_gene304
 (degree 807), 1410631.JHWZ01000016_gene2276 (degree 803), 1410631.JHWZ01000001_gene1098
 (degree 790) and 1410631.JHWZ01000016_gene2279 (degree 725).
 
@@ -107,12 +108,13 @@ def LachnospiraceaeBacteriumP6b14(
 	
 	Datetime: 2021-02-03 22:43:16.473867
 	
-	The undirected graph Lachnospiraceae bacterium P6B14 has 2274 nodes and 165879 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06418
-	and has 9 connected components, where the component with most nodes has 2256 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 145.89, and the node degree mode is 14. The top 5
-	most central nodes are 1410631.JHWZ01000030_gene1191 (degree 904), 1410631.JHWZ01000006_gene304
+	The undirected graph Lachnospiraceae bacterium P6B14 has 2274 nodes and
+	165879 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06418 and has 9 connected components, where the
+	component with most nodes has 2256 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 119, the mean node degree
+	is 145.89, and the node degree mode is 14. The top 5 most central nodes
+	are 1410631.JHWZ01000030_gene1191 (degree 904), 1410631.JHWZ01000006_gene304
 	(degree 807), 1410631.JHWZ01000016_gene2276 (degree 803), 1410631.JHWZ01000001_gene1098
 	(degree 790) and 1410631.JHWZ01000016_gene2279 (degree 725).
 	

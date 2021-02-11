@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:50.317470
 
-The undirected graph Enterobacter lignolyticus has 4377 nodes and 394391 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04118
-and has 4 connected components, where the component with most nodes has 4370 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 147, the mean node degree is 180.21, and the node degree mode is 5. The top 5
-most central nodes are 701347.Entcl_2436 (degree 1586), 701347.Entcl_1061 (degree
-1550), 701347.Entcl_4391 (degree 1490), 701347.Entcl_0485 (degree 1293) and 701347.Entcl_1252
-(degree 1171).
+The undirected graph Enterobacter lignolyticus has 4377 nodes and 394391
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04118 and has 4 connected components, where the component
+with most nodes has 4370 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 147, the mean node degree is 180.21,
+and the node degree mode is 5. The top 5 most central nodes are 701347.Entcl_2436
+(degree 1586), 701347.Entcl_1061 (degree 1550), 701347.Entcl_4391 (degree
+1490), 701347.Entcl_0485 (degree 1293) and 701347.Entcl_1252 (degree 1171).
 
 
 References
@@ -107,14 +107,14 @@ def EnterobacterLignolyticus(
 	
 	Datetime: 2021-02-02 21:33:50.317470
 	
-	The undirected graph Enterobacter lignolyticus has 4377 nodes and 394391 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04118
-	and has 4 connected components, where the component with most nodes has 4370 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 147, the mean node degree is 180.21, and the node degree mode is 5. The top 5
-	most central nodes are 701347.Entcl_2436 (degree 1586), 701347.Entcl_1061 (degree
-	1550), 701347.Entcl_4391 (degree 1490), 701347.Entcl_0485 (degree 1293) and 701347.Entcl_1252
-	(degree 1171).
+	The undirected graph Enterobacter lignolyticus has 4377 nodes and 394391
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04118 and has 4 connected components, where the component
+	with most nodes has 4370 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 147, the mean node degree is 180.21,
+	and the node degree mode is 5. The top 5 most central nodes are 701347.Entcl_2436
+	(degree 1586), 701347.Entcl_1061 (degree 1550), 701347.Entcl_4391 (degree
+	1490), 701347.Entcl_0485 (degree 1293) and 701347.Entcl_1252 (degree 1171).
 	
 
 

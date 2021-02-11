@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:52:41.187685
 
-The undirected graph Dactylococcopsis salina has 3301 nodes and 322687 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05925 and
-has 9 connected components, where the component with most nodes has 3273 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 195.51, and the node degree mode is 2. The top 5 most central
-nodes are 13035.Dacsa_0972 (degree 1177), 13035.Dacsa_2250 (degree 1002), 13035.Dacsa_1913
-(degree 940), 13035.Dacsa_0359 (degree 860) and 13035.Dacsa_3475 (degree 857).
+The undirected graph Dactylococcopsis salina has 3301 nodes and 322687
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05925 and has 9 connected components, where the component
+with most nodes has 3273 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 195.51,
+and the node degree mode is 2. The top 5 most central nodes are 13035.Dacsa_0972
+(degree 1177), 13035.Dacsa_2250 (degree 1002), 13035.Dacsa_1913 (degree
+940), 13035.Dacsa_0359 (degree 860) and 13035.Dacsa_3475 (degree 857).
 
 
 References
@@ -106,13 +107,14 @@ def DactylococcopsisSalina(
 	
 	Datetime: 2021-02-02 17:52:41.187685
 	
-	The undirected graph Dactylococcopsis salina has 3301 nodes and 322687 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05925 and
-	has 9 connected components, where the component with most nodes has 3273 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 195.51, and the node degree mode is 2. The top 5 most central
-	nodes are 13035.Dacsa_0972 (degree 1177), 13035.Dacsa_2250 (degree 1002), 13035.Dacsa_1913
-	(degree 940), 13035.Dacsa_0359 (degree 860) and 13035.Dacsa_3475 (degree 857).
+	The undirected graph Dactylococcopsis salina has 3301 nodes and 322687
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05925 and has 9 connected components, where the component
+	with most nodes has 3273 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 195.51,
+	and the node degree mode is 2. The top 5 most central nodes are 13035.Dacsa_0972
+	(degree 1177), 13035.Dacsa_2250 (degree 1002), 13035.Dacsa_1913 (degree
+	940), 13035.Dacsa_0359 (degree 860) and 13035.Dacsa_3475 (degree 857).
 	
 
 

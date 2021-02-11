@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:38.169578
 
-The undirected graph Fusarium graminearum has 9252 nodes and 719691 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01682 and
-has 95 connected components, where the component with most nodes has 9057 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 75,
-the mean node degree is 155.58, and the node degree mode is 1. The top 5 most central
-nodes are 5518.FGSG_05541P0 (degree 2215), 5518.FGSG_06257P0 (degree 1708), 5518.FGSG_02014P0
-(degree 1455), 5518.FGSG_03992P0 (degree 1380) and 5518.FGSG_00865P0 (degree 1378).
+The undirected graph Fusarium graminearum has 9252 nodes and 719691 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01682 and has 95 connected components, where the component with most
+nodes has 9057 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 75, the mean node degree is 155.58, and
+the node degree mode is 1. The top 5 most central nodes are 5518.FGSG_05541P0
+(degree 2215), 5518.FGSG_06257P0 (degree 1708), 5518.FGSG_02014P0 (degree
+1455), 5518.FGSG_03992P0 (degree 1380) and 5518.FGSG_00865P0 (degree 1378).
 
 
 References
@@ -106,13 +107,14 @@ def FusariumGraminearum(
 	
 	Datetime: 2021-02-02 17:14:38.169578
 	
-	The undirected graph Fusarium graminearum has 9252 nodes and 719691 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01682 and
-	has 95 connected components, where the component with most nodes has 9057 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 75,
-	the mean node degree is 155.58, and the node degree mode is 1. The top 5 most central
-	nodes are 5518.FGSG_05541P0 (degree 2215), 5518.FGSG_06257P0 (degree 1708), 5518.FGSG_02014P0
-	(degree 1455), 5518.FGSG_03992P0 (degree 1380) and 5518.FGSG_00865P0 (degree 1378).
+	The undirected graph Fusarium graminearum has 9252 nodes and 719691 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01682 and has 95 connected components, where the component with most
+	nodes has 9057 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 75, the mean node degree is 155.58, and
+	the node degree mode is 1. The top 5 most central nodes are 5518.FGSG_05541P0
+	(degree 2215), 5518.FGSG_06257P0 (degree 1708), 5518.FGSG_02014P0 (degree
+	1455), 5518.FGSG_03992P0 (degree 1380) and 5518.FGSG_00865P0 (degree 1378).
 	
 
 

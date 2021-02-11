@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:02.537559
 
-The undirected graph Thioalkalivibrio sp. ALJ16 has 2497 nodes and 218025 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06996
-and has 2 connected components, where the component with most nodes has 2495 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 174.63, and the node degree mode is 2. The top 5
-most central nodes are 1158762.KB898039_gene1706 (degree 1289), 1158762.KB898037_gene2335
-(degree 996), 1158762.KB898042_gene946 (degree 944), 1158762.KB898039_gene1702 (degree
-912) and 1158762.KB898039_gene1703 (degree 880).
+The undirected graph Thioalkalivibrio sp. ALJ16 has 2497 nodes and 218025
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06996 and has 2 connected components, where the component
+with most nodes has 2495 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 174.63,
+and the node degree mode is 2. The top 5 most central nodes are 1158762.KB898039_gene1706
+(degree 1289), 1158762.KB898037_gene2335 (degree 996), 1158762.KB898042_gene946
+(degree 944), 1158762.KB898039_gene1702 (degree 912) and 1158762.KB898039_gene1703
+(degree 880).
 
 
 References
@@ -107,14 +108,15 @@ def ThioalkalivibrioSp.Alj16(
 	
 	Datetime: 2021-02-02 23:04:02.537559
 	
-	The undirected graph Thioalkalivibrio sp. ALJ16 has 2497 nodes and 218025 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06996
-	and has 2 connected components, where the component with most nodes has 2495 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 174.63, and the node degree mode is 2. The top 5
-	most central nodes are 1158762.KB898039_gene1706 (degree 1289), 1158762.KB898037_gene2335
-	(degree 996), 1158762.KB898042_gene946 (degree 944), 1158762.KB898039_gene1702 (degree
-	912) and 1158762.KB898039_gene1703 (degree 880).
+	The undirected graph Thioalkalivibrio sp. ALJ16 has 2497 nodes and 218025
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06996 and has 2 connected components, where the component
+	with most nodes has 2495 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 174.63,
+	and the node degree mode is 2. The top 5 most central nodes are 1158762.KB898039_gene1706
+	(degree 1289), 1158762.KB898037_gene2335 (degree 996), 1158762.KB898042_gene946
+	(degree 944), 1158762.KB898039_gene1702 (degree 912) and 1158762.KB898039_gene1703
+	(degree 880).
 	
 
 

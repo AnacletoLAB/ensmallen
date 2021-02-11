@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:15:18.786987
 
-The undirected graph Flavobacterium columnare has 2620 nodes and 172409 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-and has 7 connected components, where the component with most nodes has 2608 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 131.61, and the node degree mode is 2. The top 5
-most central nodes are 1041826.FCOL_03225 (degree 977), 1041826.FCOL_02950 (degree
-781), 1041826.FCOL_07570 (degree 712), 1041826.FCOL_01905 (degree 708) and 1041826.FCOL_07170
-(degree 669).
+The undirected graph Flavobacterium columnare has 2620 nodes and 172409
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05025 and has 7 connected components, where the component
+with most nodes has 2608 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 131.61,
+and the node degree mode is 2. The top 5 most central nodes are 1041826.FCOL_03225
+(degree 977), 1041826.FCOL_02950 (degree 781), 1041826.FCOL_07570 (degree
+712), 1041826.FCOL_01905 (degree 708) and 1041826.FCOL_07170 (degree 669).
 
 
 References
@@ -107,14 +107,14 @@ def FlavobacteriumColumnare(
 	
 	Datetime: 2021-02-02 22:15:18.786987
 	
-	The undirected graph Flavobacterium columnare has 2620 nodes and 172409 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05025
-	and has 7 connected components, where the component with most nodes has 2608 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 131.61, and the node degree mode is 2. The top 5
-	most central nodes are 1041826.FCOL_03225 (degree 977), 1041826.FCOL_02950 (degree
-	781), 1041826.FCOL_07570 (degree 712), 1041826.FCOL_01905 (degree 708) and 1041826.FCOL_07170
-	(degree 669).
+	The undirected graph Flavobacterium columnare has 2620 nodes and 172409
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05025 and has 7 connected components, where the component
+	with most nodes has 2608 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 131.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1041826.FCOL_03225
+	(degree 977), 1041826.FCOL_02950 (degree 781), 1041826.FCOL_07570 (degree
+	712), 1041826.FCOL_01905 (degree 708) and 1041826.FCOL_07170 (degree 669).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:00.226385
 
-The undirected graph connectus has 394707 nodes and 1127498 unweighted edges, of
-which 7 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 5.71 and the node degree mode is 1. The top 5 most central
-nodes are 24 (degree 120070), 368 (degree 53629), 80 (degree 39306), 175 (degree
-38674) and 128 (degree 38039).
+The undirected graph connectus has 394707 nodes and 1127498 unweighted
+edges, of which 7 are self-loops. The graph is extremely sparse as it has
+a density of 0.00001 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 5.71 and the node
+degree mode is 1. The top 5 most central nodes are 24 (degree 120070),
+368 (degree 53629), 80 (degree 39306), 175 (degree 38674) and 128 (degree
+38039).
 
 
 References
@@ -102,12 +103,13 @@ def Connectus(
 	
 	Datetime: 2021-02-03 23:12:00.226385
 	
-	The undirected graph connectus has 394707 nodes and 1127498 unweighted edges, of
-	which 7 are self-loops. The graph is extremely sparse as it has a density of 0.00001
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 5.71 and the node degree mode is 1. The top 5 most central
-	nodes are 24 (degree 120070), 368 (degree 53629), 80 (degree 39306), 175 (degree
-	38674) and 128 (degree 38039).
+	The undirected graph connectus has 394707 nodes and 1127498 unweighted
+	edges, of which 7 are self-loops. The graph is extremely sparse as it has
+	a density of 0.00001 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 5.71 and the node
+	degree mode is 1. The top 5 most central nodes are 24 (degree 120070),
+	368 (degree 53629), 80 (degree 39306), 175 (degree 38674) and 128 (degree
+	38039).
 	
 
 

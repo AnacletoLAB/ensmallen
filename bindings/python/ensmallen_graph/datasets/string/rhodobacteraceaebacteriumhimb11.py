@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:12.567327
 
-The undirected graph Rhodobacteraceae bacterium HIMB11 has 3157 nodes and 381844
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.07665 and has 13 connected components, where the component with most nodes has
-3122 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 208, the mean node degree is 241.90, and the node degree mode is 4. The
-top 5 most central nodes are 1366046.HIMB11_02509 (degree 1315), 1366046.HIMB11_00013
-(degree 1174), 1366046.HIMB11_02728 (degree 1139), 1366046.HIMB11_00089 (degree 1062)
+The undirected graph Rhodobacteraceae bacterium HIMB11 has 3157 nodes and
+381844 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07665 and has 13 connected components, where the
+component with most nodes has 3122 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+is 241.90, and the node degree mode is 4. The top 5 most central nodes
+are 1366046.HIMB11_02509 (degree 1315), 1366046.HIMB11_00013 (degree 1174),
+1366046.HIMB11_02728 (degree 1139), 1366046.HIMB11_00089 (degree 1062)
 and 1366046.HIMB11_00055 (degree 1042).
 
 
@@ -107,13 +108,14 @@ def RhodobacteraceaeBacteriumHimb11(
 	
 	Datetime: 2021-02-03 22:09:12.567327
 	
-	The undirected graph Rhodobacteraceae bacterium HIMB11 has 3157 nodes and 381844
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.07665 and has 13 connected components, where the component with most nodes has
-	3122 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 208, the mean node degree is 241.90, and the node degree mode is 4. The
-	top 5 most central nodes are 1366046.HIMB11_02509 (degree 1315), 1366046.HIMB11_00013
-	(degree 1174), 1366046.HIMB11_02728 (degree 1139), 1366046.HIMB11_00089 (degree 1062)
+	The undirected graph Rhodobacteraceae bacterium HIMB11 has 3157 nodes and
+	381844 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07665 and has 13 connected components, where the
+	component with most nodes has 3122 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 208, the mean node degree
+	is 241.90, and the node degree mode is 4. The top 5 most central nodes
+	are 1366046.HIMB11_02509 (degree 1315), 1366046.HIMB11_00013 (degree 1174),
+	1366046.HIMB11_02728 (degree 1139), 1366046.HIMB11_00089 (degree 1062)
 	and 1366046.HIMB11_00055 (degree 1042).
 	
 

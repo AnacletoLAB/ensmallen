@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:24:30.754226
 
-The undirected graph Loktanella vestfoldensis SKA53 has 3028 nodes and 307161 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06702
-and has 10 connected components, where the component with most nodes has 3008 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 177, the mean node degree is 202.88, and the node degree mode is 2. The top 5
-most central nodes are 314232.SKA53_15116 (degree 1326), 314232.SKA53_04933 (degree
-990), 314232.SKA53_08994 (degree 945), 314232.SKA53_10819 (degree 926) and 314232.SKA53_07077
+The undirected graph Loktanella vestfoldensis SKA53 has 3028 nodes and
+307161 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06702 and has 10 connected components, where the
+component with most nodes has 3008 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 177, the mean node degree
+is 202.88, and the node degree mode is 2. The top 5 most central nodes
+are 314232.SKA53_15116 (degree 1326), 314232.SKA53_04933 (degree 990),
+314232.SKA53_08994 (degree 945), 314232.SKA53_10819 (degree 926) and 314232.SKA53_07077
 (degree 884).
 
 
@@ -107,13 +108,14 @@ def LoktanellaVestfoldensisSka53(
 	
 	Datetime: 2021-02-02 20:24:30.754226
 	
-	The undirected graph Loktanella vestfoldensis SKA53 has 3028 nodes and 307161 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06702
-	and has 10 connected components, where the component with most nodes has 3008 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 177, the mean node degree is 202.88, and the node degree mode is 2. The top 5
-	most central nodes are 314232.SKA53_15116 (degree 1326), 314232.SKA53_04933 (degree
-	990), 314232.SKA53_08994 (degree 945), 314232.SKA53_10819 (degree 926) and 314232.SKA53_07077
+	The undirected graph Loktanella vestfoldensis SKA53 has 3028 nodes and
+	307161 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06702 and has 10 connected components, where the
+	component with most nodes has 3008 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 177, the mean node degree
+	is 202.88, and the node degree mode is 2. The top 5 most central nodes
+	are 314232.SKA53_15116 (degree 1326), 314232.SKA53_04933 (degree 990),
+	314232.SKA53_08994 (degree 945), 314232.SKA53_10819 (degree 926) and 314232.SKA53_07077
 	(degree 884).
 	
 

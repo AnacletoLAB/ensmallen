@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:10:52.870515
 
-The undirected graph Bacillus timonensis has 4537 nodes and 434830 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04226 and
-has 20 connected components, where the component with most nodes has 4485 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 191.68, and the node degree mode is 2. The top 5 most central
-nodes are 1033734.CAET01000070_gene2637 (degree 1512), 1033734.CAET01000084_gene3240
-(degree 1292), 1033734.CAET01000069_gene2348 (degree 1187), 1033734.CAET01000018_gene714
-(degree 1173) and 1033734.CAET01000082_gene3394 (degree 1065).
+The undirected graph Bacillus timonensis has 4537 nodes and 434830 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04226 and has 20 connected components, where the component with most
+nodes has 4485 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 191.68, and
+the node degree mode is 2. The top 5 most central nodes are 1033734.CAET01000070_gene2637
+(degree 1512), 1033734.CAET01000084_gene3240 (degree 1292), 1033734.CAET01000069_gene2348
+(degree 1187), 1033734.CAET01000018_gene714 (degree 1173) and 1033734.CAET01000082_gene3394
+(degree 1065).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusTimonensis(
 	
 	Datetime: 2021-02-02 22:10:52.870515
 	
-	The undirected graph Bacillus timonensis has 4537 nodes and 434830 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04226 and
-	has 20 connected components, where the component with most nodes has 4485 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 191.68, and the node degree mode is 2. The top 5 most central
-	nodes are 1033734.CAET01000070_gene2637 (degree 1512), 1033734.CAET01000084_gene3240
-	(degree 1292), 1033734.CAET01000069_gene2348 (degree 1187), 1033734.CAET01000018_gene714
-	(degree 1173) and 1033734.CAET01000082_gene3394 (degree 1065).
+	The undirected graph Bacillus timonensis has 4537 nodes and 434830 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04226 and has 20 connected components, where the component with most
+	nodes has 4485 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 191.68, and
+	the node degree mode is 2. The top 5 most central nodes are 1033734.CAET01000070_gene2637
+	(degree 1512), 1033734.CAET01000084_gene3240 (degree 1292), 1033734.CAET01000069_gene2348
+	(degree 1187), 1033734.CAET01000018_gene714 (degree 1173) and 1033734.CAET01000082_gene3394
+	(degree 1065).
 	
 
 

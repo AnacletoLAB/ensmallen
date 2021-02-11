@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:46.087432
 
-The undirected graph Streptococcus mitis ATCC6249 has 1784 nodes and 136258 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08567
-and has 2 connected components, where the component with most nodes has 1782 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 152.76, and the node degree mode is 10. The top 5
-most central nodes are 864567.HMPREF8571_0196 (degree 834), 864567.HMPREF8571_0158
-(degree 717), 864567.HMPREF8571_0945 (degree 701), 864567.HMPREF8571_0564 (degree
-657) and 864567.HMPREF8571_1231 (degree 642).
+The undirected graph Streptococcus mitis ATCC6249 has 1784 nodes and 136258
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08567 and has 2 connected components, where the component
+with most nodes has 1782 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 152.76,
+and the node degree mode is 10. The top 5 most central nodes are 864567.HMPREF8571_0196
+(degree 834), 864567.HMPREF8571_0158 (degree 717), 864567.HMPREF8571_0945
+(degree 701), 864567.HMPREF8571_0564 (degree 657) and 864567.HMPREF8571_1231
+(degree 642).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitisAtcc6249(
 	
 	Datetime: 2021-02-02 21:47:46.087432
 	
-	The undirected graph Streptococcus mitis ATCC6249 has 1784 nodes and 136258 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08567
-	and has 2 connected components, where the component with most nodes has 1782 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 152.76, and the node degree mode is 10. The top 5
-	most central nodes are 864567.HMPREF8571_0196 (degree 834), 864567.HMPREF8571_0158
-	(degree 717), 864567.HMPREF8571_0945 (degree 701), 864567.HMPREF8571_0564 (degree
-	657) and 864567.HMPREF8571_1231 (degree 642).
+	The undirected graph Streptococcus mitis ATCC6249 has 1784 nodes and 136258
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08567 and has 2 connected components, where the component
+	with most nodes has 1782 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 152.76,
+	and the node degree mode is 10. The top 5 most central nodes are 864567.HMPREF8571_0196
+	(degree 834), 864567.HMPREF8571_0158 (degree 717), 864567.HMPREF8571_0945
+	(degree 701), 864567.HMPREF8571_0564 (degree 657) and 864567.HMPREF8571_1231
+	(degree 642).
 	
 
 

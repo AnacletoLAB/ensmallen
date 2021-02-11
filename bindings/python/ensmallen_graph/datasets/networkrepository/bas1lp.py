@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:02:55.760042
 
-The undirected graph bas1lp has 9825 nodes and 587775 weighted edges, of which none
-are self-loops. The graph is dense as it has a density of 0.01218 and is connected,
-as it has a single component. The graph median node degree is 104, the mean node
-degree is 119.65, and the node degree mode is 141. The top 5 most central nodes are
-5235 (degree 427), 5234 (degree 427), 5236 (degree 426), 5233 (degree 426) and 5237
-(degree 425).
+The undirected graph bas1lp has 9825 nodes and 587775 weighted edges, of
+which none are self-loops. The graph is dense as it has a density of 0.01218
+and is connected, as it has a single component. The graph median node degree
+is 104, the mean node degree is 119.65, and the node degree mode is 141.
+The top 5 most central nodes are 5235 (degree 427), 5234 (degree 427),
+5236 (degree 426), 5233 (degree 426) and 5237 (degree 425).
 
 
 References
@@ -102,12 +102,12 @@ def Bas1lp(
 	
 	Datetime: 2021-02-06 11:02:55.760042
 	
-	The undirected graph bas1lp has 9825 nodes and 587775 weighted edges, of which none
-	are self-loops. The graph is dense as it has a density of 0.01218 and is connected,
-	as it has a single component. The graph median node degree is 104, the mean node
-	degree is 119.65, and the node degree mode is 141. The top 5 most central nodes are
-	5235 (degree 427), 5234 (degree 427), 5236 (degree 426), 5233 (degree 426) and 5237
-	(degree 425).
+	The undirected graph bas1lp has 9825 nodes and 587775 weighted edges, of
+	which none are self-loops. The graph is dense as it has a density of 0.01218
+	and is connected, as it has a single component. The graph median node degree
+	is 104, the mean node degree is 119.65, and the node degree mode is 141.
+	The top 5 most central nodes are 5235 (degree 427), 5234 (degree 427),
+	5236 (degree 426), 5233 (degree 426) and 5237 (degree 425).
 	
 
 

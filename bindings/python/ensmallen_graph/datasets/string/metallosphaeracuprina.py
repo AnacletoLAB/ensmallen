@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:23.708166
 
-The undirected graph Metallosphaera cuprina has 1996 nodes and 143248 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07195 and
-has 32 connected components, where the component with most nodes has 1918 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 143.54, and the node degree mode is 1. The top 5 most central
-nodes are 1006006.Mcup_0577 (degree 749), 1006006.Mcup_0783 (degree 660), 1006006.Mcup_0009
-(degree 659), 1006006.Mcup_1632 (degree 655) and 1006006.Mcup_0518 (degree 649).
+The undirected graph Metallosphaera cuprina has 1996 nodes and 143248 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07195 and has 32 connected components, where the component with most
+nodes has 1918 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 122, the mean node degree is 143.54, and
+the node degree mode is 1. The top 5 most central nodes are 1006006.Mcup_0577
+(degree 749), 1006006.Mcup_0783 (degree 660), 1006006.Mcup_0009 (degree
+659), 1006006.Mcup_1632 (degree 655) and 1006006.Mcup_0518 (degree 649).
 
 
 References
@@ -106,13 +107,14 @@ def MetallosphaeraCuprina(
 	
 	Datetime: 2021-02-02 22:08:23.708166
 	
-	The undirected graph Metallosphaera cuprina has 1996 nodes and 143248 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07195 and
-	has 32 connected components, where the component with most nodes has 1918 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 143.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1006006.Mcup_0577 (degree 749), 1006006.Mcup_0783 (degree 660), 1006006.Mcup_0009
-	(degree 659), 1006006.Mcup_1632 (degree 655) and 1006006.Mcup_0518 (degree 649).
+	The undirected graph Metallosphaera cuprina has 1996 nodes and 143248 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07195 and has 32 connected components, where the component with most
+	nodes has 1918 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 122, the mean node degree is 143.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1006006.Mcup_0577
+	(degree 749), 1006006.Mcup_0783 (degree 660), 1006006.Mcup_0009 (degree
+	659), 1006006.Mcup_1632 (degree 655) and 1006006.Mcup_0518 (degree 649).
 	
 
 

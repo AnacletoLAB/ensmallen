@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:51.188549
 
-The undirected graph Bifidobacterium scardovii has 2461 nodes and 165807 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05478
-and has 9 connected components, where the component with most nodes has 2443 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 134.75, and the node degree mode is 6. The top 5
-most central nodes are 158787.BSCA_1919 (degree 996), 158787.BSCA_0905 (degree 964),
-158787.BSCA_2193 (degree 825), 158787.BSCA_2035 (degree 777) and 158787.BSCA_1240
-(degree 750).
+The undirected graph Bifidobacterium scardovii has 2461 nodes and 165807
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05478 and has 9 connected components, where the component
+with most nodes has 2443 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 134.75,
+and the node degree mode is 6. The top 5 most central nodes are 158787.BSCA_1919
+(degree 996), 158787.BSCA_0905 (degree 964), 158787.BSCA_2193 (degree 825),
+158787.BSCA_2035 (degree 777) and 158787.BSCA_1240 (degree 750).
 
 
 References
@@ -107,14 +107,14 @@ def BifidobacteriumScardovii(
 	
 	Datetime: 2021-02-02 19:52:51.188549
 	
-	The undirected graph Bifidobacterium scardovii has 2461 nodes and 165807 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05478
-	and has 9 connected components, where the component with most nodes has 2443 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 134.75, and the node degree mode is 6. The top 5
-	most central nodes are 158787.BSCA_1919 (degree 996), 158787.BSCA_0905 (degree 964),
-	158787.BSCA_2193 (degree 825), 158787.BSCA_2035 (degree 777) and 158787.BSCA_1240
-	(degree 750).
+	The undirected graph Bifidobacterium scardovii has 2461 nodes and 165807
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05478 and has 9 connected components, where the component
+	with most nodes has 2443 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 134.75,
+	and the node degree mode is 6. The top 5 most central nodes are 158787.BSCA_1919
+	(degree 996), 158787.BSCA_0905 (degree 964), 158787.BSCA_2193 (degree 825),
+	158787.BSCA_2035 (degree 777) and 158787.BSCA_1240 (degree 750).
 	
 
 

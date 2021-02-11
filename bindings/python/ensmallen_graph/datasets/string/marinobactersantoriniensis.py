@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:21:06.221360
 
-The undirected graph Marinobacter santoriniensis has 3658 nodes and 480484 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-and has 5 connected components, where the component with most nodes has 3650 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 222, the mean node degree is 262.70, and the node degree mode is 3. The top 5
-most central nodes are 1288826.MSNKSG1_13017 (degree 1567), 1288826.MSNKSG1_17336
-(degree 1557), 1288826.MSNKSG1_06728 (degree 1376), 1288826.MSNKSG1_08878 (degree
-1311) and 1288826.MSNKSG1_07238 (degree 1232).
+The undirected graph Marinobacter santoriniensis has 3658 nodes and 480484
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07184 and has 5 connected components, where the component
+with most nodes has 3650 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 222, the mean node degree is 262.70,
+and the node degree mode is 3. The top 5 most central nodes are 1288826.MSNKSG1_13017
+(degree 1567), 1288826.MSNKSG1_17336 (degree 1557), 1288826.MSNKSG1_06728
+(degree 1376), 1288826.MSNKSG1_08878 (degree 1311) and 1288826.MSNKSG1_07238
+(degree 1232).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterSantoriniensis(
 	
 	Datetime: 2021-02-03 21:21:06.221360
 	
-	The undirected graph Marinobacter santoriniensis has 3658 nodes and 480484 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07184
-	and has 5 connected components, where the component with most nodes has 3650 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 222, the mean node degree is 262.70, and the node degree mode is 3. The top 5
-	most central nodes are 1288826.MSNKSG1_13017 (degree 1567), 1288826.MSNKSG1_17336
-	(degree 1557), 1288826.MSNKSG1_06728 (degree 1376), 1288826.MSNKSG1_08878 (degree
-	1311) and 1288826.MSNKSG1_07238 (degree 1232).
+	The undirected graph Marinobacter santoriniensis has 3658 nodes and 480484
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07184 and has 5 connected components, where the component
+	with most nodes has 3650 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 222, the mean node degree is 262.70,
+	and the node degree mode is 3. The top 5 most central nodes are 1288826.MSNKSG1_13017
+	(degree 1567), 1288826.MSNKSG1_17336 (degree 1557), 1288826.MSNKSG1_06728
+	(degree 1376), 1288826.MSNKSG1_08878 (degree 1311) and 1288826.MSNKSG1_07238
+	(degree 1232).
 	
 
 

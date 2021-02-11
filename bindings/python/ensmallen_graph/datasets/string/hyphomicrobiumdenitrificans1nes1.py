@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:10.083489
 
-The undirected graph Hyphomicrobium denitrificans 1NES1 has 3803 nodes and 226364
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03131 and has 45 connected components, where the component with most nodes has
-3692 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 91, the mean node degree is 119.04, and the node degree mode is 2. The
-top 5 most central nodes are 670307.HYPDE_31538 (degree 1314), 670307.HYPDE_29688
-(degree 1267), 670307.HYPDE_24348 (degree 1206), 670307.HYPDE_28508 (degree 820)
-and 670307.HYPDE_27118 (degree 814).
+The undirected graph Hyphomicrobium denitrificans 1NES1 has 3803 nodes
+and 226364 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03131 and has 45 connected components, where the
+component with most nodes has 3692 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+is 119.04, and the node degree mode is 2. The top 5 most central nodes
+are 670307.HYPDE_31538 (degree 1314), 670307.HYPDE_29688 (degree 1267),
+670307.HYPDE_24348 (degree 1206), 670307.HYPDE_28508 (degree 820) and 670307.HYPDE_27118
+(degree 814).
 
 
 References
@@ -107,14 +108,15 @@ def HyphomicrobiumDenitrificans1nes1(
 	
 	Datetime: 2021-02-02 21:29:10.083489
 	
-	The undirected graph Hyphomicrobium denitrificans 1NES1 has 3803 nodes and 226364
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03131 and has 45 connected components, where the component with most nodes has
-	3692 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 91, the mean node degree is 119.04, and the node degree mode is 2. The
-	top 5 most central nodes are 670307.HYPDE_31538 (degree 1314), 670307.HYPDE_29688
-	(degree 1267), 670307.HYPDE_24348 (degree 1206), 670307.HYPDE_28508 (degree 820)
-	and 670307.HYPDE_27118 (degree 814).
+	The undirected graph Hyphomicrobium denitrificans 1NES1 has 3803 nodes
+	and 226364 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03131 and has 45 connected components, where the
+	component with most nodes has 3692 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 91, the mean node degree
+	is 119.04, and the node degree mode is 2. The top 5 most central nodes
+	are 670307.HYPDE_31538 (degree 1314), 670307.HYPDE_29688 (degree 1267),
+	670307.HYPDE_24348 (degree 1206), 670307.HYPDE_28508 (degree 820) and 670307.HYPDE_27118
+	(degree 814).
 	
 
 

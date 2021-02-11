@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:43.861091
 
-The undirected graph Granulicella mallensis has 4771 nodes and 343309 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03017 and
-has 26 connected components, where the component with most nodes has 4706 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 143.91, and the node degree mode is 2. The top 5 most central
-nodes are 682795.AciX8_3386 (degree 1534), 682795.AciX8_1033 (degree 1332), 682795.AciX8_4120
-(degree 1325), 682795.AciX8_2865 (degree 1204) and 682795.AciX8_3272 (degree 985).
+The undirected graph Granulicella mallensis has 4771 nodes and 343309 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03017 and has 26 connected components, where the component with most
+nodes has 4706 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 143.91, and
+the node degree mode is 2. The top 5 most central nodes are 682795.AciX8_3386
+(degree 1534), 682795.AciX8_1033 (degree 1332), 682795.AciX8_4120 (degree
+1325), 682795.AciX8_2865 (degree 1204) and 682795.AciX8_3272 (degree 985).
 
 
 References
@@ -106,13 +107,14 @@ def GranulicellaMallensis(
 	
 	Datetime: 2021-02-02 21:30:43.861091
 	
-	The undirected graph Granulicella mallensis has 4771 nodes and 343309 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03017 and
-	has 26 connected components, where the component with most nodes has 4706 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 143.91, and the node degree mode is 2. The top 5 most central
-	nodes are 682795.AciX8_3386 (degree 1534), 682795.AciX8_1033 (degree 1332), 682795.AciX8_4120
-	(degree 1325), 682795.AciX8_2865 (degree 1204) and 682795.AciX8_3272 (degree 985).
+	The undirected graph Granulicella mallensis has 4771 nodes and 343309 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03017 and has 26 connected components, where the component with most
+	nodes has 4706 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 143.91, and
+	the node degree mode is 2. The top 5 most central nodes are 682795.AciX8_3386
+	(degree 1534), 682795.AciX8_1033 (degree 1332), 682795.AciX8_4120 (degree
+	1325), 682795.AciX8_2865 (degree 1204) and 682795.AciX8_3272 (degree 985).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:40:18.975422
 
-The undirected graph Ailuropoda melanoleuca has 18939 nodes and 4147391 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02313
-and has 2 connected components, where the component with most nodes has 18937 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 307, the mean node degree is 437.97, and the node degree mode is 10. The top 5
-most central nodes are 9646.ENSAMEP00000008178 (degree 4363), 9646.ENSAMEP00000002327
-(degree 4240), 9646.ENSAMEP00000016680 (degree 3817), 9646.ENSAMEP00000015101 (degree
+The undirected graph Ailuropoda melanoleuca has 18939 nodes and 4147391
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02313 and has 2 connected components, where the component
+with most nodes has 18937 nodes and the component with the least nodes
+has 2 nodes. The graph median node degree is 307, the mean node degree
+is 437.97, and the node degree mode is 10. The top 5 most central nodes
+are 9646.ENSAMEP00000008178 (degree 4363), 9646.ENSAMEP00000002327 (degree
+4240), 9646.ENSAMEP00000016680 (degree 3817), 9646.ENSAMEP00000015101 (degree
 3657) and 9646.ENSAMEP00000006146 (degree 3636).
 
 
@@ -107,13 +108,14 @@ def AiluropodaMelanoleuca(
 	
 	Datetime: 2021-02-02 17:40:18.975422
 	
-	The undirected graph Ailuropoda melanoleuca has 18939 nodes and 4147391 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02313
-	and has 2 connected components, where the component with most nodes has 18937 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 307, the mean node degree is 437.97, and the node degree mode is 10. The top 5
-	most central nodes are 9646.ENSAMEP00000008178 (degree 4363), 9646.ENSAMEP00000002327
-	(degree 4240), 9646.ENSAMEP00000016680 (degree 3817), 9646.ENSAMEP00000015101 (degree
+	The undirected graph Ailuropoda melanoleuca has 18939 nodes and 4147391
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02313 and has 2 connected components, where the component
+	with most nodes has 18937 nodes and the component with the least nodes
+	has 2 nodes. The graph median node degree is 307, the mean node degree
+	is 437.97, and the node degree mode is 10. The top 5 most central nodes
+	are 9646.ENSAMEP00000008178 (degree 4363), 9646.ENSAMEP00000002327 (degree
+	4240), 9646.ENSAMEP00000016680 (degree 3817), 9646.ENSAMEP00000015101 (degree
 	3657) and 9646.ENSAMEP00000006146 (degree 3636).
 	
 

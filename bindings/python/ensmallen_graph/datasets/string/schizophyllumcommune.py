@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:13:41.542221
 
-The undirected graph Schizophyllum commune has 6605 nodes and 576113 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02642 and
-has 22 connected components, where the component with most nodes has 6557 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 111,
-the mean node degree is 174.45, and the node degree mode is 1. The top 5 most central
-nodes are 5334.XP_003030594.1 (degree 1569), 5334.XP_003028333.1 (degree 1397), 5334.XP_003037684.1
-(degree 1179), 5334.XP_003035846.1 (degree 1150) and 5334.XP_003033185.1 (degree
+The undirected graph Schizophyllum commune has 6605 nodes and 576113 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02642 and has 22 connected components, where the component with most
+nodes has 6557 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 111, the mean node degree is 174.45, and
+the node degree mode is 1. The top 5 most central nodes are 5334.XP_003030594.1
+(degree 1569), 5334.XP_003028333.1 (degree 1397), 5334.XP_003037684.1 (degree
+1179), 5334.XP_003035846.1 (degree 1150) and 5334.XP_003033185.1 (degree
 1131).
 
 
@@ -107,13 +108,14 @@ def SchizophyllumCommune(
 	
 	Datetime: 2021-02-02 17:13:41.542221
 	
-	The undirected graph Schizophyllum commune has 6605 nodes and 576113 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02642 and
-	has 22 connected components, where the component with most nodes has 6557 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 111,
-	the mean node degree is 174.45, and the node degree mode is 1. The top 5 most central
-	nodes are 5334.XP_003030594.1 (degree 1569), 5334.XP_003028333.1 (degree 1397), 5334.XP_003037684.1
-	(degree 1179), 5334.XP_003035846.1 (degree 1150) and 5334.XP_003033185.1 (degree
+	The undirected graph Schizophyllum commune has 6605 nodes and 576113 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02642 and has 22 connected components, where the component with most
+	nodes has 6557 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 111, the mean node degree is 174.45, and
+	the node degree mode is 1. The top 5 most central nodes are 5334.XP_003030594.1
+	(degree 1569), 5334.XP_003028333.1 (degree 1397), 5334.XP_003037684.1 (degree
+	1179), 5334.XP_003035846.1 (degree 1150) and 5334.XP_003033185.1 (degree
 	1131).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:00:30.686731
 
-The undirected graph Atopobium sp. BS2 has 1399 nodes and 102809 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10513
-and has 7 connected components, where the component with most nodes has 1383 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 146.97, and the node degree mode is 1. The top 5
-most central nodes are 936550.HMPREF1492_0436 (degree 804), 936550.HMPREF1492_0883
-(degree 746), 936550.HMPREF1492_0861 (degree 713), 936550.HMPREF1492_0816 (degree
-652) and 936550.HMPREF1492_0109 (degree 628).
+The undirected graph Atopobium sp. BS2 has 1399 nodes and 102809 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10513 and has 7 connected components, where the component
+with most nodes has 1383 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 120, the mean node degree is 146.97,
+and the node degree mode is 1. The top 5 most central nodes are 936550.HMPREF1492_0436
+(degree 804), 936550.HMPREF1492_0883 (degree 746), 936550.HMPREF1492_0861
+(degree 713), 936550.HMPREF1492_0816 (degree 652) and 936550.HMPREF1492_0109
+(degree 628).
 
 
 References
@@ -107,14 +108,15 @@ def AtopobiumSp.Bs2(
 	
 	Datetime: 2021-02-02 22:00:30.686731
 	
-	The undirected graph Atopobium sp. BS2 has 1399 nodes and 102809 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10513
-	and has 7 connected components, where the component with most nodes has 1383 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 146.97, and the node degree mode is 1. The top 5
-	most central nodes are 936550.HMPREF1492_0436 (degree 804), 936550.HMPREF1492_0883
-	(degree 746), 936550.HMPREF1492_0861 (degree 713), 936550.HMPREF1492_0816 (degree
-	652) and 936550.HMPREF1492_0109 (degree 628).
+	The undirected graph Atopobium sp. BS2 has 1399 nodes and 102809 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10513 and has 7 connected components, where the component
+	with most nodes has 1383 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 120, the mean node degree is 146.97,
+	and the node degree mode is 1. The top 5 most central nodes are 936550.HMPREF1492_0436
+	(degree 804), 936550.HMPREF1492_0883 (degree 746), 936550.HMPREF1492_0861
+	(degree 713), 936550.HMPREF1492_0816 (degree 652) and 936550.HMPREF1492_0109
+	(degree 628).
 	
 
 

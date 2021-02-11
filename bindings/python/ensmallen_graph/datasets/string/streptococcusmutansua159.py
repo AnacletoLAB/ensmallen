@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:12.586203
 
-The undirected graph Streptococcus mutans UA159 has 1951 nodes and 111549 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05864
-and has 9 connected components, where the component with most nodes has 1932 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 114.35, and the node degree mode is 2. The top 5 most
-central nodes are 210007.SMU_297 (degree 804), 210007.SMU_2157 (degree 638), 210007.SMU_1639
-(degree 609), 210007.SMU_82 (degree 601) and 210007.SMU_484 (degree 579).
+The undirected graph Streptococcus mutans UA159 has 1951 nodes and 111549
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05864 and has 9 connected components, where the component
+with most nodes has 1932 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 114.35,
+and the node degree mode is 2. The top 5 most central nodes are 210007.SMU_297
+(degree 804), 210007.SMU_2157 (degree 638), 210007.SMU_1639 (degree 609),
+210007.SMU_82 (degree 601) and 210007.SMU_484 (degree 579).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMutansUa159(
 	
 	Datetime: 2021-02-02 20:01:12.586203
 	
-	The undirected graph Streptococcus mutans UA159 has 1951 nodes and 111549 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05864
-	and has 9 connected components, where the component with most nodes has 1932 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 114.35, and the node degree mode is 2. The top 5 most
-	central nodes are 210007.SMU_297 (degree 804), 210007.SMU_2157 (degree 638), 210007.SMU_1639
-	(degree 609), 210007.SMU_82 (degree 601) and 210007.SMU_484 (degree 579).
+	The undirected graph Streptococcus mutans UA159 has 1951 nodes and 111549
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05864 and has 9 connected components, where the component
+	with most nodes has 1932 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 114.35,
+	and the node degree mode is 2. The top 5 most central nodes are 210007.SMU_297
+	(degree 804), 210007.SMU_2157 (degree 638), 210007.SMU_1639 (degree 609),
+	210007.SMU_82 (degree 601) and 210007.SMU_484 (degree 579).
 	
 
 

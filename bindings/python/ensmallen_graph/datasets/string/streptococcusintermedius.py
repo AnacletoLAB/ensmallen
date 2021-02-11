@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:05.851800
 
-The undirected graph Streptococcus intermedius has 1807 nodes and 119106 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07299
-and has 2 connected components, where the component with most nodes has 1804 nodes
-and the component with the least nodes has 3 nodes. The graph median node degree
-is 100, the mean node degree is 131.83, and the node degree mode is 7. The top 5
-most central nodes are 862967.SIR_1766 (degree 841), 862967.SIR_0086 (degree 698),
-862967.SIR_0775 (degree 669), 862967.SIR_1523 (degree 657) and 862967.SIR_1199 (degree
-616).
+The undirected graph Streptococcus intermedius has 1807 nodes and 119106
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07299 and has 2 connected components, where the component
+with most nodes has 1804 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 100, the mean node degree is 131.83,
+and the node degree mode is 7. The top 5 most central nodes are 862967.SIR_1766
+(degree 841), 862967.SIR_0086 (degree 698), 862967.SIR_0775 (degree 669),
+862967.SIR_1523 (degree 657) and 862967.SIR_1199 (degree 616).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusIntermedius(
 	
 	Datetime: 2021-02-02 21:47:05.851800
 	
-	The undirected graph Streptococcus intermedius has 1807 nodes and 119106 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07299
-	and has 2 connected components, where the component with most nodes has 1804 nodes
-	and the component with the least nodes has 3 nodes. The graph median node degree
-	is 100, the mean node degree is 131.83, and the node degree mode is 7. The top 5
-	most central nodes are 862967.SIR_1766 (degree 841), 862967.SIR_0086 (degree 698),
-	862967.SIR_0775 (degree 669), 862967.SIR_1523 (degree 657) and 862967.SIR_1199 (degree
-	616).
+	The undirected graph Streptococcus intermedius has 1807 nodes and 119106
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07299 and has 2 connected components, where the component
+	with most nodes has 1804 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 100, the mean node degree is 131.83,
+	and the node degree mode is 7. The top 5 most central nodes are 862967.SIR_1766
+	(degree 841), 862967.SIR_0086 (degree 698), 862967.SIR_0775 (degree 669),
+	862967.SIR_1523 (degree 657) and 862967.SIR_1199 (degree 616).
 	
 
 

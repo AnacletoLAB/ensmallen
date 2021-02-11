@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:00:57.513135
 
-The undirected graph Streptomyces sp. LaPpAH108 has 5923 nodes and 912644 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05204
-and has 23 connected components, where the component with most nodes has 5875 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 257, the mean node degree is 308.17, and the node degree mode is 4. The top 5
-most central nodes are 1155714.KB891994_gene5102 (degree 2973), 1155714.KB891995_gene3964
-(degree 2152), 1155714.KB891988_gene1424 (degree 2065), 1155714.KB891988_gene2026
-(degree 1907) and 1155714.KB891996_gene3623 (degree 1779).
+The undirected graph Streptomyces sp. LaPpAH108 has 5923 nodes and 912644
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05204 and has 23 connected components, where the component
+with most nodes has 5875 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 257, the mean node degree is 308.17,
+and the node degree mode is 4. The top 5 most central nodes are 1155714.KB891994_gene5102
+(degree 2973), 1155714.KB891995_gene3964 (degree 2152), 1155714.KB891988_gene1424
+(degree 2065), 1155714.KB891988_gene2026 (degree 1907) and 1155714.KB891996_gene3623
+(degree 1779).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Lappah108(
 	
 	Datetime: 2021-02-02 23:00:57.513135
 	
-	The undirected graph Streptomyces sp. LaPpAH108 has 5923 nodes and 912644 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05204
-	and has 23 connected components, where the component with most nodes has 5875 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 257, the mean node degree is 308.17, and the node degree mode is 4. The top 5
-	most central nodes are 1155714.KB891994_gene5102 (degree 2973), 1155714.KB891995_gene3964
-	(degree 2152), 1155714.KB891988_gene1424 (degree 2065), 1155714.KB891988_gene2026
-	(degree 1907) and 1155714.KB891996_gene3623 (degree 1779).
+	The undirected graph Streptomyces sp. LaPpAH108 has 5923 nodes and 912644
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05204 and has 23 connected components, where the component
+	with most nodes has 5875 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 257, the mean node degree is 308.17,
+	and the node degree mode is 4. The top 5 most central nodes are 1155714.KB891994_gene5102
+	(degree 2973), 1155714.KB891995_gene3964 (degree 2152), 1155714.KB891988_gene1424
+	(degree 2065), 1155714.KB891988_gene2026 (degree 1907) and 1155714.KB891996_gene3623
+	(degree 1779).
 	
 
 

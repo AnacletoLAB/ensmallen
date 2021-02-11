@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:13.968264
 
-The undirected graph Streptomyces davawensis has 8564 nodes and 1029837 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02809
-and has 38 connected components, where the component with most nodes has 8458 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 202, the mean node degree is 240.50, and the node degree mode is 3. The top 5
-most central nodes are 1214101.BN159_2699 (degree 4053), 1214101.BN159_5883 (degree
-2565), 1214101.BN159_6463 (degree 2426), 1214101.BN159_3633 (degree 2222) and 1214101.BN159_6418
-(degree 2184).
+The undirected graph Streptomyces davawensis has 8564 nodes and 1029837
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02809 and has 38 connected components, where the component
+with most nodes has 8458 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 202, the mean node degree is 240.50,
+and the node degree mode is 3. The top 5 most central nodes are 1214101.BN159_2699
+(degree 4053), 1214101.BN159_5883 (degree 2565), 1214101.BN159_6463 (degree
+2426), 1214101.BN159_3633 (degree 2222) and 1214101.BN159_6418 (degree
+2184).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesDavawensis(
 	
 	Datetime: 2021-02-02 23:20:13.968264
 	
-	The undirected graph Streptomyces davawensis has 8564 nodes and 1029837 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02809
-	and has 38 connected components, where the component with most nodes has 8458 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 202, the mean node degree is 240.50, and the node degree mode is 3. The top 5
-	most central nodes are 1214101.BN159_2699 (degree 4053), 1214101.BN159_5883 (degree
-	2565), 1214101.BN159_6463 (degree 2426), 1214101.BN159_3633 (degree 2222) and 1214101.BN159_6418
-	(degree 2184).
+	The undirected graph Streptomyces davawensis has 8564 nodes and 1029837
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02809 and has 38 connected components, where the component
+	with most nodes has 8458 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 202, the mean node degree is 240.50,
+	and the node degree mode is 3. The top 5 most central nodes are 1214101.BN159_2699
+	(degree 4053), 1214101.BN159_5883 (degree 2565), 1214101.BN159_6463 (degree
+	2426), 1214101.BN159_3633 (degree 2222) and 1214101.BN159_6418 (degree
+	2184).
 	
 
 

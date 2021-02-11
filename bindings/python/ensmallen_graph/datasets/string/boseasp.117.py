@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:25.155391
 
-The undirected graph Bosea sp. 117 has 4168 nodes and 461793 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.05318 and has 7
-connected components, where the component with most nodes has 4155 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 221.59, and the node degree mode is 1. The top 5 most central
-nodes are 1125973.JNLC01000011_gene302 (degree 1497), 1125973.JNLC01000010_gene1682
-(degree 1367), 1125973.JNLC01000013_gene4118 (degree 1253), 1125973.JNLC01000012_gene771
-(degree 1129) and 1125973.JNLC01000002_gene2018 (degree 1122).
+The undirected graph Bosea sp. 117 has 4168 nodes and 461793 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.05318 and has 7 connected components, where the component with most nodes
+has 4155 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 170, the mean node degree is 221.59, and the
+node degree mode is 1. The top 5 most central nodes are 1125973.JNLC01000011_gene302
+(degree 1497), 1125973.JNLC01000010_gene1682 (degree 1367), 1125973.JNLC01000013_gene4118
+(degree 1253), 1125973.JNLC01000012_gene771 (degree 1129) and 1125973.JNLC01000002_gene2018
+(degree 1122).
 
 
 References
@@ -107,14 +108,15 @@ def BoseaSp.117(
 	
 	Datetime: 2021-02-02 22:54:25.155391
 	
-	The undirected graph Bosea sp. 117 has 4168 nodes and 461793 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.05318 and has 7
-	connected components, where the component with most nodes has 4155 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 221.59, and the node degree mode is 1. The top 5 most central
-	nodes are 1125973.JNLC01000011_gene302 (degree 1497), 1125973.JNLC01000010_gene1682
-	(degree 1367), 1125973.JNLC01000013_gene4118 (degree 1253), 1125973.JNLC01000012_gene771
-	(degree 1129) and 1125973.JNLC01000002_gene2018 (degree 1122).
+	The undirected graph Bosea sp. 117 has 4168 nodes and 461793 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.05318 and has 7 connected components, where the component with most nodes
+	has 4155 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 170, the mean node degree is 221.59, and the
+	node degree mode is 1. The top 5 most central nodes are 1125973.JNLC01000011_gene302
+	(degree 1497), 1125973.JNLC01000010_gene1682 (degree 1367), 1125973.JNLC01000013_gene4118
+	(degree 1253), 1125973.JNLC01000012_gene771 (degree 1129) and 1125973.JNLC01000002_gene2018
+	(degree 1122).
 	
 
 

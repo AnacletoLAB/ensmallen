@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:42:28.444289
 
-The undirected graph Nelumbo nucifera has 21998 nodes and 3710400 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01534 and
-has 3 connected components, where the component with most nodes has 21993 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 337.34, and the node degree mode is 7. The top 5 most central
-nodes are 4432.XP_010249613.1 (degree 6795), 4432.XP_010253975.1 (degree 4429), 4432.XP_010254749.1
-(degree 4369), 4432.XP_010274069.1 (degree 4366) and 4432.XP_010255192.1 (degree
+The undirected graph Nelumbo nucifera has 21998 nodes and 3710400 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01534 and has 3 connected components, where the component with most
+nodes has 21993 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 337.34, and
+the node degree mode is 7. The top 5 most central nodes are 4432.XP_010249613.1
+(degree 6795), 4432.XP_010253975.1 (degree 4429), 4432.XP_010254749.1 (degree
+4369), 4432.XP_010274069.1 (degree 4366) and 4432.XP_010255192.1 (degree
 4312).
 
 
@@ -107,13 +108,14 @@ def NelumboNucifera(
 	
 	Datetime: 2021-02-02 16:42:28.444289
 	
-	The undirected graph Nelumbo nucifera has 21998 nodes and 3710400 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01534 and
-	has 3 connected components, where the component with most nodes has 21993 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 337.34, and the node degree mode is 7. The top 5 most central
-	nodes are 4432.XP_010249613.1 (degree 6795), 4432.XP_010253975.1 (degree 4429), 4432.XP_010254749.1
-	(degree 4369), 4432.XP_010274069.1 (degree 4366) and 4432.XP_010255192.1 (degree
+	The undirected graph Nelumbo nucifera has 21998 nodes and 3710400 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01534 and has 3 connected components, where the component with most
+	nodes has 21993 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 337.34, and
+	the node degree mode is 7. The top 5 most central nodes are 4432.XP_010249613.1
+	(degree 6795), 4432.XP_010253975.1 (degree 4429), 4432.XP_010254749.1 (degree
+	4369), 4432.XP_010274069.1 (degree 4366) and 4432.XP_010255192.1 (degree
 	4312).
 	
 

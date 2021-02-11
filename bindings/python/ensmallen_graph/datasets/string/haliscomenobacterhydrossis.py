@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:45.990536
 
-The undirected graph Haliscomenobacter hydrossis has 6480 nodes and 846279 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04031
-and has 19 connected components, where the component with most nodes has 6440 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 226, the mean node degree is 261.20, and the node degree mode is 4. The top 5
-most central nodes are 760192.Halhy_3156 (degree 1765), 760192.Halhy_5073 (degree
-1740), 760192.Halhy_4328 (degree 1648), 760192.Halhy_6513 (degree 1596) and 760192.Halhy_4861
-(degree 1487).
+The undirected graph Haliscomenobacter hydrossis has 6480 nodes and 846279
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04031 and has 19 connected components, where the component
+with most nodes has 6440 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 226, the mean node degree is 261.20,
+and the node degree mode is 4. The top 5 most central nodes are 760192.Halhy_3156
+(degree 1765), 760192.Halhy_5073 (degree 1740), 760192.Halhy_4328 (degree
+1648), 760192.Halhy_6513 (degree 1596) and 760192.Halhy_4861 (degree 1487).
 
 
 References
@@ -107,14 +107,14 @@ def HaliscomenobacterHydrossis(
 	
 	Datetime: 2021-02-02 21:41:45.990536
 	
-	The undirected graph Haliscomenobacter hydrossis has 6480 nodes and 846279 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04031
-	and has 19 connected components, where the component with most nodes has 6440 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 226, the mean node degree is 261.20, and the node degree mode is 4. The top 5
-	most central nodes are 760192.Halhy_3156 (degree 1765), 760192.Halhy_5073 (degree
-	1740), 760192.Halhy_4328 (degree 1648), 760192.Halhy_6513 (degree 1596) and 760192.Halhy_4861
-	(degree 1487).
+	The undirected graph Haliscomenobacter hydrossis has 6480 nodes and 846279
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04031 and has 19 connected components, where the component
+	with most nodes has 6440 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 226, the mean node degree is 261.20,
+	and the node degree mode is 4. The top 5 most central nodes are 760192.Halhy_3156
+	(degree 1765), 760192.Halhy_5073 (degree 1740), 760192.Halhy_4328 (degree
+	1648), 760192.Halhy_6513 (degree 1596) and 760192.Halhy_4861 (degree 1487).
 	
 
 

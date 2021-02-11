@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:41.495885
 
-The undirected graph Wolbachia sp. Dsi has 1018 nodes and 60038 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.11598
-and has 5 connected components, where the component with most nodes has 1007 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 117.95, and the node degree mode is 1. The top 5
-most central nodes are 1236908.wNo_07860 (degree 540), 1236908.wNo_02580 (degree
-509), 1236908.wNo_01950 (degree 470), 1236908.wNo_01030 (degree 452) and 1236908.wNo_00760
-(degree 435).
+The undirected graph Wolbachia sp. Dsi has 1018 nodes and 60038 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.11598 and has 5 connected components, where the component
+with most nodes has 1007 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 106, the mean node degree is 117.95,
+and the node degree mode is 1. The top 5 most central nodes are 1236908.wNo_07860
+(degree 540), 1236908.wNo_02580 (degree 509), 1236908.wNo_01950 (degree
+470), 1236908.wNo_01030 (degree 452) and 1236908.wNo_00760 (degree 435).
 
 
 References
@@ -107,14 +107,14 @@ def WolbachiaSp.Dsi(
 	
 	Datetime: 2021-02-02 23:31:41.495885
 	
-	The undirected graph Wolbachia sp. Dsi has 1018 nodes and 60038 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.11598
-	and has 5 connected components, where the component with most nodes has 1007 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 117.95, and the node degree mode is 1. The top 5
-	most central nodes are 1236908.wNo_07860 (degree 540), 1236908.wNo_02580 (degree
-	509), 1236908.wNo_01950 (degree 470), 1236908.wNo_01030 (degree 452) and 1236908.wNo_00760
-	(degree 435).
+	The undirected graph Wolbachia sp. Dsi has 1018 nodes and 60038 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.11598 and has 5 connected components, where the component
+	with most nodes has 1007 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 106, the mean node degree is 117.95,
+	and the node degree mode is 1. The top 5 most central nodes are 1236908.wNo_07860
+	(degree 540), 1236908.wNo_02580 (degree 509), 1236908.wNo_01950 (degree
+	470), 1236908.wNo_01030 (degree 452) and 1236908.wNo_00760 (degree 435).
 	
 
 

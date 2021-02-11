@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:26.914325
 
-The undirected graph Fusobacterium necrophorum funduliforme has 2044 nodes and 132694
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06355 and has 5 connected components, where the component with most nodes has
-2036 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 96, the mean node degree is 129.84, and the node degree mode is 13. The
-top 5 most central nodes are 1095747.HMPREF1049_1449 (degree 841), 1095747.HMPREF1049_1080
-(degree 760), 1095747.HMPREF1049_0105 (degree 749), 1095747.HMPREF1049_1622 (degree
+The undirected graph Fusobacterium necrophorum funduliforme has 2044 nodes
+and 132694 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06355 and has 5 connected components, where the
+component with most nodes has 2036 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+is 129.84, and the node degree mode is 13. The top 5 most central nodes
+are 1095747.HMPREF1049_1449 (degree 841), 1095747.HMPREF1049_1080 (degree
+760), 1095747.HMPREF1049_0105 (degree 749), 1095747.HMPREF1049_1622 (degree
 683) and 1095747.HMPREF1049_1161 (degree 652).
 
 
@@ -107,13 +108,14 @@ def FusobacteriumNecrophorumFunduliforme(
 	
 	Datetime: 2021-02-02 22:23:26.914325
 	
-	The undirected graph Fusobacterium necrophorum funduliforme has 2044 nodes and 132694
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06355 and has 5 connected components, where the component with most nodes has
-	2036 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 96, the mean node degree is 129.84, and the node degree mode is 13. The
-	top 5 most central nodes are 1095747.HMPREF1049_1449 (degree 841), 1095747.HMPREF1049_1080
-	(degree 760), 1095747.HMPREF1049_0105 (degree 749), 1095747.HMPREF1049_1622 (degree
+	The undirected graph Fusobacterium necrophorum funduliforme has 2044 nodes
+	and 132694 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06355 and has 5 connected components, where the
+	component with most nodes has 2036 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 96, the mean node degree
+	is 129.84, and the node degree mode is 13. The top 5 most central nodes
+	are 1095747.HMPREF1049_1449 (degree 841), 1095747.HMPREF1049_1080 (degree
+	760), 1095747.HMPREF1049_0105 (degree 749), 1095747.HMPREF1049_1622 (degree
 	683) and 1095747.HMPREF1049_1161 (degree 652).
 	
 

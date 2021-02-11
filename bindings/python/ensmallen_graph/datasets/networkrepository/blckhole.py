@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:06:58.909468
 
-The undirected graph blckhole has 2132 nodes, of which 11 are singletons (all have
-self-loops), and 8502 unweighted edges, of which 2132 are self-loops. The graph is
-sparse as it has a density of 0.00327 and has 12 connected components, where the
-component with most nodes has 2121 nodes and the component with the least nodes has
-a single node. The graph median node degree is 7, the mean node degree is 6.98, and
-the node degree mode is 7. The top 5 most central nodes are 2084 (degree 20), 2082
-(degree 20), 2073 (degree 20), 2075 (degree 20) and 2130 (degree 19).
+The undirected graph blckhole has 2132 nodes, of which 11 are singletons
+(all have self-loops), and 8502 unweighted edges, of which 2132 are self-loops.
+The graph is sparse as it has a density of 0.00327 and has 12 connected
+components, where the component with most nodes has 2121 nodes and the
+component with the least nodes has a single node. The graph median node
+degree is 7, the mean node degree is 6.98, and the node degree mode is
+7. The top 5 most central nodes are 2084 (degree 20), 2082 (degree 20),
+2073 (degree 20), 2075 (degree 20) and 2130 (degree 19).
 
 
 References
@@ -103,13 +104,14 @@ def Blckhole(
 	
 	Datetime: 2021-02-06 08:06:58.909468
 	
-	The undirected graph blckhole has 2132 nodes, of which 11 are singletons (all have
-	self-loops), and 8502 unweighted edges, of which 2132 are self-loops. The graph is
-	sparse as it has a density of 0.00327 and has 12 connected components, where the
-	component with most nodes has 2121 nodes and the component with the least nodes has
-	a single node. The graph median node degree is 7, the mean node degree is 6.98, and
-	the node degree mode is 7. The top 5 most central nodes are 2084 (degree 20), 2082
-	(degree 20), 2073 (degree 20), 2075 (degree 20) and 2130 (degree 19).
+	The undirected graph blckhole has 2132 nodes, of which 11 are singletons
+	(all have self-loops), and 8502 unweighted edges, of which 2132 are self-loops.
+	The graph is sparse as it has a density of 0.00327 and has 12 connected
+	components, where the component with most nodes has 2121 nodes and the
+	component with the least nodes has a single node. The graph median node
+	degree is 7, the mean node degree is 6.98, and the node degree mode is
+	7. The top 5 most central nodes are 2084 (degree 20), 2082 (degree 20),
+	2073 (degree 20), 2075 (degree 20) and 2130 (degree 19).
 	
 
 

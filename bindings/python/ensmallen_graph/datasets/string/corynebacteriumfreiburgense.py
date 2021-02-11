@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:04.118310
 
-The undirected graph Corynebacterium freiburgense has 2530 nodes and 160507 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05017
-and has 12 connected components, where the component with most nodes has 2507 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 126.88, and the node degree mode is 3. The top 5
-most central nodes are 1121360.AUAQ01000016_gene1186 (degree 968), 1121360.AUAQ01000011_gene323
-(degree 968), 1121360.AUAQ01000012_gene1547 (degree 823), 1121360.AUAQ01000017_gene2486
-(degree 823) and 1121360.AUAQ01000012_gene1763 (degree 768).
+The undirected graph Corynebacterium freiburgense has 2530 nodes and 160507
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05017 and has 12 connected components, where the component
+with most nodes has 2507 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 126.88,
+and the node degree mode is 3. The top 5 most central nodes are 1121360.AUAQ01000016_gene1186
+(degree 968), 1121360.AUAQ01000011_gene323 (degree 968), 1121360.AUAQ01000012_gene1547
+(degree 823), 1121360.AUAQ01000017_gene2486 (degree 823) and 1121360.AUAQ01000012_gene1763
+(degree 768).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumFreiburgense(
 	
 	Datetime: 2021-02-02 22:35:04.118310
 	
-	The undirected graph Corynebacterium freiburgense has 2530 nodes and 160507 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05017
-	and has 12 connected components, where the component with most nodes has 2507 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 126.88, and the node degree mode is 3. The top 5
-	most central nodes are 1121360.AUAQ01000016_gene1186 (degree 968), 1121360.AUAQ01000011_gene323
-	(degree 968), 1121360.AUAQ01000012_gene1547 (degree 823), 1121360.AUAQ01000017_gene2486
-	(degree 823) and 1121360.AUAQ01000012_gene1763 (degree 768).
+	The undirected graph Corynebacterium freiburgense has 2530 nodes and 160507
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05017 and has 12 connected components, where the component
+	with most nodes has 2507 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 126.88,
+	and the node degree mode is 3. The top 5 most central nodes are 1121360.AUAQ01000016_gene1186
+	(degree 968), 1121360.AUAQ01000011_gene323 (degree 968), 1121360.AUAQ01000012_gene1547
+	(degree 823), 1121360.AUAQ01000017_gene2486 (degree 823) and 1121360.AUAQ01000012_gene1763
+	(degree 768).
 	
 
 

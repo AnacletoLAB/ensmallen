@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:09.079463
 
-The undirected graph Corynebacterium aurimucosum has 2529 nodes and 151521 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04740
-and has 7 connected components, where the component with most nodes has 2504 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 95, the mean node degree is 119.83, and the node degree mode is 3. The top 5 most
-central nodes are 548476.cauri_1376 (degree 950), 548476.cauri_2079 (degree 791),
-548476.cauri_0280 (degree 783), 548476.cauri_0485 (degree 772) and 548476.cauri_1354
-(degree 701).
+The undirected graph Corynebacterium aurimucosum has 2529 nodes and 151521
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04740 and has 7 connected components, where the component
+with most nodes has 2504 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 95, the mean node degree is 119.83,
+and the node degree mode is 3. The top 5 most central nodes are 548476.cauri_1376
+(degree 950), 548476.cauri_2079 (degree 791), 548476.cauri_0280 (degree
+783), 548476.cauri_0485 (degree 772) and 548476.cauri_1354 (degree 701).
 
 
 References
@@ -107,14 +107,14 @@ def CorynebacteriumAurimucosum(
 	
 	Datetime: 2021-02-02 21:09:09.079463
 	
-	The undirected graph Corynebacterium aurimucosum has 2529 nodes and 151521 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04740
-	and has 7 connected components, where the component with most nodes has 2504 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 95, the mean node degree is 119.83, and the node degree mode is 3. The top 5 most
-	central nodes are 548476.cauri_1376 (degree 950), 548476.cauri_2079 (degree 791),
-	548476.cauri_0280 (degree 783), 548476.cauri_0485 (degree 772) and 548476.cauri_1354
-	(degree 701).
+	The undirected graph Corynebacterium aurimucosum has 2529 nodes and 151521
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04740 and has 7 connected components, where the component
+	with most nodes has 2504 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 95, the mean node degree is 119.83,
+	and the node degree mode is 3. The top 5 most central nodes are 548476.cauri_1376
+	(degree 950), 548476.cauri_2079 (degree 791), 548476.cauri_0280 (degree
+	783), 548476.cauri_0485 (degree 772) and 548476.cauri_1354 (degree 701).
 	
 
 

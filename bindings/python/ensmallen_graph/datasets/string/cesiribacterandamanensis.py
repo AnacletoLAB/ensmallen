@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:01:49.860716
 
-The undirected graph Cesiribacter andamanensis has 4134 nodes and 404155 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04731
-and has 26 connected components, where the component with most nodes has 4081 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 195.53, and the node degree mode is 1. The top 5
-most central nodes are 1279009.ADICEAN_03706 (degree 1427), 1279009.ADICEAN_00128
-(degree 1254), 1279009.ADICEAN_00734 (degree 1186), 1279009.ADICEAN_02213 (degree
-1177) and 1279009.ADICEAN_02097 (degree 1156).
+The undirected graph Cesiribacter andamanensis has 4134 nodes and 404155
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04731 and has 26 connected components, where the component
+with most nodes has 4081 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 195.53,
+and the node degree mode is 1. The top 5 most central nodes are 1279009.ADICEAN_03706
+(degree 1427), 1279009.ADICEAN_00128 (degree 1254), 1279009.ADICEAN_00734
+(degree 1186), 1279009.ADICEAN_02213 (degree 1177) and 1279009.ADICEAN_02097
+(degree 1156).
 
 
 References
@@ -107,14 +108,15 @@ def CesiribacterAndamanensis(
 	
 	Datetime: 2021-02-03 21:01:49.860716
 	
-	The undirected graph Cesiribacter andamanensis has 4134 nodes and 404155 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04731
-	and has 26 connected components, where the component with most nodes has 4081 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 195.53, and the node degree mode is 1. The top 5
-	most central nodes are 1279009.ADICEAN_03706 (degree 1427), 1279009.ADICEAN_00128
-	(degree 1254), 1279009.ADICEAN_00734 (degree 1186), 1279009.ADICEAN_02213 (degree
-	1177) and 1279009.ADICEAN_02097 (degree 1156).
+	The undirected graph Cesiribacter andamanensis has 4134 nodes and 404155
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04731 and has 26 connected components, where the component
+	with most nodes has 4081 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 195.53,
+	and the node degree mode is 1. The top 5 most central nodes are 1279009.ADICEAN_03706
+	(degree 1427), 1279009.ADICEAN_00128 (degree 1254), 1279009.ADICEAN_00734
+	(degree 1186), 1279009.ADICEAN_02213 (degree 1177) and 1279009.ADICEAN_02097
+	(degree 1156).
 	
 
 

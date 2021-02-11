@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:51:08.755669
 
-The undirected graph Afipia felis has 4010 nodes and 336689 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.04189 and has 18
-connected components, where the component with most nodes has 3965 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 167.92, and the node degree mode is 4. The top 5 most central
-nodes are 883080.HMPREF9697_03236 (degree 1406), 883080.HMPREF9697_03574 (degree
-1341), 883080.HMPREF9697_03440 (degree 1073), 883080.HMPREF9697_02825 (degree 1049)
-and 883080.HMPREF9697_02715 (degree 1043).
+The undirected graph Afipia felis has 4010 nodes and 336689 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.04189 and has 18 connected components, where the component with most
+nodes has 3965 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 167.92, and
+the node degree mode is 4. The top 5 most central nodes are 883080.HMPREF9697_03236
+(degree 1406), 883080.HMPREF9697_03574 (degree 1341), 883080.HMPREF9697_03440
+(degree 1073), 883080.HMPREF9697_02825 (degree 1049) and 883080.HMPREF9697_02715
+(degree 1043).
 
 
 References
@@ -107,14 +108,15 @@ def AfipiaFelis(
 	
 	Datetime: 2021-02-02 21:51:08.755669
 	
-	The undirected graph Afipia felis has 4010 nodes and 336689 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.04189 and has 18
-	connected components, where the component with most nodes has 3965 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 167.92, and the node degree mode is 4. The top 5 most central
-	nodes are 883080.HMPREF9697_03236 (degree 1406), 883080.HMPREF9697_03574 (degree
-	1341), 883080.HMPREF9697_03440 (degree 1073), 883080.HMPREF9697_02825 (degree 1049)
-	and 883080.HMPREF9697_02715 (degree 1043).
+	The undirected graph Afipia felis has 4010 nodes and 336689 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.04189 and has 18 connected components, where the component with most
+	nodes has 3965 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 167.92, and
+	the node degree mode is 4. The top 5 most central nodes are 883080.HMPREF9697_03236
+	(degree 1406), 883080.HMPREF9697_03574 (degree 1341), 883080.HMPREF9697_03440
+	(degree 1073), 883080.HMPREF9697_02825 (degree 1049) and 883080.HMPREF9697_02715
+	(degree 1043).
 	
 
 

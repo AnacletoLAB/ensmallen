@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:16:36.038617
 
-The undirected graph Anoxybacillus flavithermus yunnanensis has 2976 nodes and 290652
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06566 and has 9 connected components, where the component with most nodes has
-2957 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 169, the mean node degree is 195.33, and the node degree mode is 1. The
-top 5 most central nodes are 1380408.AVGH01000021_gene1946 (degree 1197), 1380408.AVGH01000053_gene1290
+The undirected graph Anoxybacillus flavithermus yunnanensis has 2976 nodes
+and 290652 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06566 and has 9 connected components, where the
+component with most nodes has 2957 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+is 195.33, and the node degree mode is 1. The top 5 most central nodes
+are 1380408.AVGH01000021_gene1946 (degree 1197), 1380408.AVGH01000053_gene1290
 (degree 1076), 1380408.AVGH01000042_gene2940 (degree 1048), 1380408.AVGH01000024_gene1541
 (degree 1033) and 1380408.AVGH01000024_gene1535 (degree 935).
 
@@ -107,12 +108,13 @@ def AnoxybacillusFlavithermusYunnanensis(
 	
 	Datetime: 2021-02-03 22:16:36.038617
 	
-	The undirected graph Anoxybacillus flavithermus yunnanensis has 2976 nodes and 290652
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06566 and has 9 connected components, where the component with most nodes has
-	2957 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 169, the mean node degree is 195.33, and the node degree mode is 1. The
-	top 5 most central nodes are 1380408.AVGH01000021_gene1946 (degree 1197), 1380408.AVGH01000053_gene1290
+	The undirected graph Anoxybacillus flavithermus yunnanensis has 2976 nodes
+	and 290652 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06566 and has 9 connected components, where the
+	component with most nodes has 2957 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 169, the mean node degree
+	is 195.33, and the node degree mode is 1. The top 5 most central nodes
+	are 1380408.AVGH01000021_gene1946 (degree 1197), 1380408.AVGH01000053_gene1290
 	(degree 1076), 1380408.AVGH01000042_gene2940 (degree 1048), 1380408.AVGH01000024_gene1541
 	(degree 1033) and 1380408.AVGH01000024_gene1535 (degree 935).
 	

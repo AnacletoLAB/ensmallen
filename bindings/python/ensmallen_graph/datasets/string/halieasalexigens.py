@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:40.973707
 
-The undirected graph Haliea salexigens has 3603 nodes and 390837 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06023 and
-has 4 connected components, where the component with most nodes has 3596 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 216.95, and the node degree mode is 2. The top 5 most central
-nodes are 1121937.AUHJ01000008_gene2028 (degree 1303), 1121937.AUHJ01000020_gene1278
-(degree 1168), 1121937.AUHJ01000002_gene3404 (degree 1092), 1121937.AUHJ01000013_gene919
-(degree 1051) and 1121937.AUHJ01000007_gene1798 (degree 1013).
+The undirected graph Haliea salexigens has 3603 nodes and 390837 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06023 and has 4 connected components, where the component with most
+nodes has 3596 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 216.95, and
+the node degree mode is 2. The top 5 most central nodes are 1121937.AUHJ01000008_gene2028
+(degree 1303), 1121937.AUHJ01000020_gene1278 (degree 1168), 1121937.AUHJ01000002_gene3404
+(degree 1092), 1121937.AUHJ01000013_gene919 (degree 1051) and 1121937.AUHJ01000007_gene1798
+(degree 1013).
 
 
 References
@@ -107,14 +108,15 @@ def HalieaSalexigens(
 	
 	Datetime: 2021-02-02 22:39:40.973707
 	
-	The undirected graph Haliea salexigens has 3603 nodes and 390837 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06023 and
-	has 4 connected components, where the component with most nodes has 3596 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 216.95, and the node degree mode is 2. The top 5 most central
-	nodes are 1121937.AUHJ01000008_gene2028 (degree 1303), 1121937.AUHJ01000020_gene1278
-	(degree 1168), 1121937.AUHJ01000002_gene3404 (degree 1092), 1121937.AUHJ01000013_gene919
-	(degree 1051) and 1121937.AUHJ01000007_gene1798 (degree 1013).
+	The undirected graph Haliea salexigens has 3603 nodes and 390837 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06023 and has 4 connected components, where the component with most
+	nodes has 3596 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 216.95, and
+	the node degree mode is 2. The top 5 most central nodes are 1121937.AUHJ01000008_gene2028
+	(degree 1303), 1121937.AUHJ01000020_gene1278 (degree 1168), 1121937.AUHJ01000002_gene3404
+	(degree 1092), 1121937.AUHJ01000013_gene919 (degree 1051) and 1121937.AUHJ01000007_gene1798
+	(degree 1013).
 	
 
 

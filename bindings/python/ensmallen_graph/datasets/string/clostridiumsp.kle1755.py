@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:25:09.952919
 
-The undirected graph Clostridium sp. KLE1755 has 6851 nodes and 608538 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02593 and
-has 31 connected components, where the component with most nodes has 6771 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 177.65, and the node degree mode is 4. The top 5 most central
-nodes are 1226325.HMPREF1548_01875 (degree 1664), 1226325.HMPREF1548_02530 (degree
-1508), 1226325.HMPREF1548_04953 (degree 1496), 1226325.HMPREF1548_04427 (degree 1405)
-and 1226325.HMPREF1548_05633 (degree 1363).
+The undirected graph Clostridium sp. KLE1755 has 6851 nodes and 608538
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02593 and has 31 connected components, where the component
+with most nodes has 6771 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 140, the mean node degree is 177.65,
+and the node degree mode is 4. The top 5 most central nodes are 1226325.HMPREF1548_01875
+(degree 1664), 1226325.HMPREF1548_02530 (degree 1508), 1226325.HMPREF1548_04953
+(degree 1496), 1226325.HMPREF1548_04427 (degree 1405) and 1226325.HMPREF1548_05633
+(degree 1363).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumSp.Kle1755(
 	
 	Datetime: 2021-02-02 23:25:09.952919
 	
-	The undirected graph Clostridium sp. KLE1755 has 6851 nodes and 608538 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02593 and
-	has 31 connected components, where the component with most nodes has 6771 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 177.65, and the node degree mode is 4. The top 5 most central
-	nodes are 1226325.HMPREF1548_01875 (degree 1664), 1226325.HMPREF1548_02530 (degree
-	1508), 1226325.HMPREF1548_04953 (degree 1496), 1226325.HMPREF1548_04427 (degree 1405)
-	and 1226325.HMPREF1548_05633 (degree 1363).
+	The undirected graph Clostridium sp. KLE1755 has 6851 nodes and 608538
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02593 and has 31 connected components, where the component
+	with most nodes has 6771 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 140, the mean node degree is 177.65,
+	and the node degree mode is 4. The top 5 most central nodes are 1226325.HMPREF1548_01875
+	(degree 1664), 1226325.HMPREF1548_02530 (degree 1508), 1226325.HMPREF1548_04953
+	(degree 1496), 1226325.HMPREF1548_04427 (degree 1405) and 1226325.HMPREF1548_05633
+	(degree 1363).
 	
 
 

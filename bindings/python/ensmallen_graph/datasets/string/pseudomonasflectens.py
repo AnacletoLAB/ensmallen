@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:57:10.382020
 
-The undirected graph Pseudomonas flectens has 2293 nodes and 184800 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07033 and
-has 11 connected components, where the component with most nodes has 2271 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 144,
-the mean node degree is 161.19, and the node degree mode is 1. The top 5 most central
-nodes are 1336237.JAEE01000015_gene2312 (degree 831), 1336237.JAEE01000005_gene545
-(degree 826), 1336237.JAEE01000005_gene546 (degree 791), 1336237.JAEE01000008_gene53
-(degree 783) and 1336237.JAEE01000001_gene1756 (degree 677).
+The undirected graph Pseudomonas flectens has 2293 nodes and 184800 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07033 and has 11 connected components, where the component with most
+nodes has 2271 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 144, the mean node degree is 161.19, and
+the node degree mode is 1. The top 5 most central nodes are 1336237.JAEE01000015_gene2312
+(degree 831), 1336237.JAEE01000005_gene545 (degree 826), 1336237.JAEE01000005_gene546
+(degree 791), 1336237.JAEE01000008_gene53 (degree 783) and 1336237.JAEE01000001_gene1756
+(degree 677).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasFlectens(
 	
 	Datetime: 2021-02-03 21:57:10.382020
 	
-	The undirected graph Pseudomonas flectens has 2293 nodes and 184800 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07033 and
-	has 11 connected components, where the component with most nodes has 2271 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 144,
-	the mean node degree is 161.19, and the node degree mode is 1. The top 5 most central
-	nodes are 1336237.JAEE01000015_gene2312 (degree 831), 1336237.JAEE01000005_gene545
-	(degree 826), 1336237.JAEE01000005_gene546 (degree 791), 1336237.JAEE01000008_gene53
-	(degree 783) and 1336237.JAEE01000001_gene1756 (degree 677).
+	The undirected graph Pseudomonas flectens has 2293 nodes and 184800 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07033 and has 11 connected components, where the component with most
+	nodes has 2271 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 144, the mean node degree is 161.19, and
+	the node degree mode is 1. The top 5 most central nodes are 1336237.JAEE01000015_gene2312
+	(degree 831), 1336237.JAEE01000005_gene545 (degree 826), 1336237.JAEE01000005_gene546
+	(degree 791), 1336237.JAEE01000008_gene53 (degree 783) and 1336237.JAEE01000001_gene1756
+	(degree 677).
 	
 
 

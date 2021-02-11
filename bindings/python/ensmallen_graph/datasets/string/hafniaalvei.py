@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:59.200208
 
-The undirected graph Hafnia alvei has 4030 nodes and 479711 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.05909 and has 9
-connected components, where the component with most nodes has 4008 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 238.07, and the node degree mode is 2. The top 5 most central
-nodes are 1453496.AT03_00415 (degree 1498), 1453496.AT03_10845 (degree 1368), 1453496.AT03_05455
-(degree 1324), 1453496.AT03_18805 (degree 1309) and 1453496.AT03_14000 (degree 1307).
+The undirected graph Hafnia alvei has 4030 nodes and 479711 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.05909 and has 9 connected components, where the component with most nodes
+has 4008 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 210, the mean node degree is 238.07, and the
+node degree mode is 2. The top 5 most central nodes are 1453496.AT03_00415
+(degree 1498), 1453496.AT03_10845 (degree 1368), 1453496.AT03_05455 (degree
+1324), 1453496.AT03_18805 (degree 1309) and 1453496.AT03_14000 (degree
+1307).
 
 
 References
@@ -106,13 +108,15 @@ def HafniaAlvei(
 	
 	Datetime: 2021-02-03 23:05:59.200208
 	
-	The undirected graph Hafnia alvei has 4030 nodes and 479711 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.05909 and has 9
-	connected components, where the component with most nodes has 4008 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 238.07, and the node degree mode is 2. The top 5 most central
-	nodes are 1453496.AT03_00415 (degree 1498), 1453496.AT03_10845 (degree 1368), 1453496.AT03_05455
-	(degree 1324), 1453496.AT03_18805 (degree 1309) and 1453496.AT03_14000 (degree 1307).
+	The undirected graph Hafnia alvei has 4030 nodes and 479711 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.05909 and has 9 connected components, where the component with most nodes
+	has 4008 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 210, the mean node degree is 238.07, and the
+	node degree mode is 2. The top 5 most central nodes are 1453496.AT03_00415
+	(degree 1498), 1453496.AT03_10845 (degree 1368), 1453496.AT03_05455 (degree
+	1324), 1453496.AT03_18805 (degree 1309) and 1453496.AT03_14000 (degree
+	1307).
 	
 
 

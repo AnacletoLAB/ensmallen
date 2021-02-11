@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:00.226258
 
-The undirected graph Kitasatospora mediocidica has 7200 nodes and 1127207 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04349
-and has 58 connected components, where the component with most nodes has 7042 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 268, the mean node degree is 313.11, and the node degree mode is 2. The top 5
-most central nodes are 1449347.JQLN01000005_gene3369 (degree 2471), 1449347.JQLN01000007_gene1588
-(degree 2242), 1449347.JQLN01000003_gene5704 (degree 2149), 1449347.JQLN01000005_gene5459
-(degree 2051) and 1449347.JQLN01000005_gene4043 (degree 1974).
+The undirected graph Kitasatospora mediocidica has 7200 nodes and 1127207
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04349 and has 58 connected components, where the component
+with most nodes has 7042 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 268, the mean node degree is 313.11,
+and the node degree mode is 2. The top 5 most central nodes are 1449347.JQLN01000005_gene3369
+(degree 2471), 1449347.JQLN01000007_gene1588 (degree 2242), 1449347.JQLN01000003_gene5704
+(degree 2149), 1449347.JQLN01000005_gene5459 (degree 2051) and 1449347.JQLN01000005_gene4043
+(degree 1974).
 
 
 References
@@ -107,14 +108,15 @@ def KitasatosporaMediocidica(
 	
 	Datetime: 2021-02-03 23:05:00.226258
 	
-	The undirected graph Kitasatospora mediocidica has 7200 nodes and 1127207 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04349
-	and has 58 connected components, where the component with most nodes has 7042 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 268, the mean node degree is 313.11, and the node degree mode is 2. The top 5
-	most central nodes are 1449347.JQLN01000005_gene3369 (degree 2471), 1449347.JQLN01000007_gene1588
-	(degree 2242), 1449347.JQLN01000003_gene5704 (degree 2149), 1449347.JQLN01000005_gene5459
-	(degree 2051) and 1449347.JQLN01000005_gene4043 (degree 1974).
+	The undirected graph Kitasatospora mediocidica has 7200 nodes and 1127207
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04349 and has 58 connected components, where the component
+	with most nodes has 7042 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 268, the mean node degree is 313.11,
+	and the node degree mode is 2. The top 5 most central nodes are 1449347.JQLN01000005_gene3369
+	(degree 2471), 1449347.JQLN01000007_gene1588 (degree 2242), 1449347.JQLN01000003_gene5704
+	(degree 2149), 1449347.JQLN01000005_gene5459 (degree 2051) and 1449347.JQLN01000005_gene4043
+	(degree 1974).
 	
 
 

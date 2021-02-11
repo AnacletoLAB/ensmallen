@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:14.528113
 
-The undirected graph Atopobium vaginae PB189T14 has 1196 nodes and 80516 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.11267 and has 8 connected components, where the component with most nodes has
-1180 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 115, the mean node degree is 134.64, and the node degree mode is 1. The
-top 5 most central nodes are 866774.HMPREF9248_0080 (degree 646), 866774.HMPREF9248_1033
-(degree 619), 866774.HMPREF9248_0792 (degree 581), 866774.HMPREF9248_0856 (degree
+The undirected graph Atopobium vaginae PB189T14 has 1196 nodes and 80516
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.11267 and has 8 connected components, where the
+component with most nodes has 1180 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+is 134.64, and the node degree mode is 1. The top 5 most central nodes
+are 866774.HMPREF9248_0080 (degree 646), 866774.HMPREF9248_1033 (degree
+619), 866774.HMPREF9248_0792 (degree 581), 866774.HMPREF9248_0856 (degree
 565) and 866774.HMPREF9248_0913 (degree 564).
 
 
@@ -107,13 +108,14 @@ def AtopobiumVaginaePb189t14(
 	
 	Datetime: 2021-02-02 21:48:14.528113
 	
-	The undirected graph Atopobium vaginae PB189T14 has 1196 nodes and 80516 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.11267 and has 8 connected components, where the component with most nodes has
-	1180 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 115, the mean node degree is 134.64, and the node degree mode is 1. The
-	top 5 most central nodes are 866774.HMPREF9248_0080 (degree 646), 866774.HMPREF9248_1033
-	(degree 619), 866774.HMPREF9248_0792 (degree 581), 866774.HMPREF9248_0856 (degree
+	The undirected graph Atopobium vaginae PB189T14 has 1196 nodes and 80516
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.11267 and has 8 connected components, where the
+	component with most nodes has 1180 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 115, the mean node degree
+	is 134.64, and the node degree mode is 1. The top 5 most central nodes
+	are 866774.HMPREF9248_0080 (degree 646), 866774.HMPREF9248_1033 (degree
+	619), 866774.HMPREF9248_0792 (degree 581), 866774.HMPREF9248_0856 (degree
 	565) and 866774.HMPREF9248_0913 (degree 564).
 	
 

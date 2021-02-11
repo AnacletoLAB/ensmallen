@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:20:40.013478
 
-The undirected graph Roseovarius mucosus has 4169 nodes and 423278 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04872 and
-has 6 connected components, where the component with most nodes has 4156 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 203.06, and the node degree mode is 3. The top 5 most central
-nodes are 1288298.rosmuc_00098 (degree 1788), 1288298.rosmuc_03884 (degree 1609),
-1288298.rosmuc_03004 (degree 1292), 1288298.rosmuc_02974 (degree 1279) and 1288298.rosmuc_00647
+The undirected graph Roseovarius mucosus has 4169 nodes and 423278 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04872 and has 6 connected components, where the component with most
+nodes has 4156 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 203.06, and
+the node degree mode is 3. The top 5 most central nodes are 1288298.rosmuc_00098
+(degree 1788), 1288298.rosmuc_03884 (degree 1609), 1288298.rosmuc_03004
+(degree 1292), 1288298.rosmuc_02974 (degree 1279) and 1288298.rosmuc_00647
 (degree 1262).
 
 
@@ -107,13 +108,14 @@ def RoseovariusMucosus(
 	
 	Datetime: 2021-02-03 21:20:40.013478
 	
-	The undirected graph Roseovarius mucosus has 4169 nodes and 423278 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04872 and
-	has 6 connected components, where the component with most nodes has 4156 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 203.06, and the node degree mode is 3. The top 5 most central
-	nodes are 1288298.rosmuc_00098 (degree 1788), 1288298.rosmuc_03884 (degree 1609),
-	1288298.rosmuc_03004 (degree 1292), 1288298.rosmuc_02974 (degree 1279) and 1288298.rosmuc_00647
+	The undirected graph Roseovarius mucosus has 4169 nodes and 423278 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04872 and has 6 connected components, where the component with most
+	nodes has 4156 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 203.06, and
+	the node degree mode is 3. The top 5 most central nodes are 1288298.rosmuc_00098
+	(degree 1788), 1288298.rosmuc_03884 (degree 1609), 1288298.rosmuc_03004
+	(degree 1292), 1288298.rosmuc_02974 (degree 1279) and 1288298.rosmuc_00647
 	(degree 1262).
 	
 

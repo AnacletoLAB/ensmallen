@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:03.796374
 
-The undirected graph Pseudomonas stutzeri NF13 has 4288 nodes and 610933 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06647
-and has 13 connected components, where the component with most nodes has 4258 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 239, the mean node degree is 284.95, and the node degree mode is 4. The top 5
-most central nodes are 1212548.B381_16665 (degree 1745), 1212548.B381_01889 (degree
-1540), 1212548.B381_01894 (degree 1521), 1212548.B381_06491 (degree 1514) and 1212548.B381_11991
-(degree 1469).
+The undirected graph Pseudomonas stutzeri NF13 has 4288 nodes and 610933
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06647 and has 13 connected components, where the component
+with most nodes has 4258 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 239, the mean node degree is 284.95,
+and the node degree mode is 4. The top 5 most central nodes are 1212548.B381_16665
+(degree 1745), 1212548.B381_01889 (degree 1540), 1212548.B381_01894 (degree
+1521), 1212548.B381_06491 (degree 1514) and 1212548.B381_11991 (degree
+1469).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriNf13(
 	
 	Datetime: 2021-02-02 23:20:03.796374
 	
-	The undirected graph Pseudomonas stutzeri NF13 has 4288 nodes and 610933 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06647
-	and has 13 connected components, where the component with most nodes has 4258 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 239, the mean node degree is 284.95, and the node degree mode is 4. The top 5
-	most central nodes are 1212548.B381_16665 (degree 1745), 1212548.B381_01889 (degree
-	1540), 1212548.B381_01894 (degree 1521), 1212548.B381_06491 (degree 1514) and 1212548.B381_11991
-	(degree 1469).
+	The undirected graph Pseudomonas stutzeri NF13 has 4288 nodes and 610933
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06647 and has 13 connected components, where the component
+	with most nodes has 4258 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 239, the mean node degree is 284.95,
+	and the node degree mode is 4. The top 5 most central nodes are 1212548.B381_16665
+	(degree 1745), 1212548.B381_01889 (degree 1540), 1212548.B381_01894 (degree
+	1521), 1212548.B381_06491 (degree 1514) and 1212548.B381_11991 (degree
+	1469).
 	
 
 

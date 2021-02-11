@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:06.473051
 
-The undirected graph Clostridium drakei has 5090 nodes and 784718 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06059 and
-has 23 connected components, where the component with most nodes has 5036 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 239,
-the mean node degree is 308.34, and the node degree mode is 1. The top 5 most central
-nodes are 332101.JIBU02000003_gene4431 (degree 2097), 332101.JIBU02000021_gene1918
-(degree 2042), 332101.JIBU02000045_gene3311 (degree 1967), 332101.JIBU02000004_gene226
-(degree 1789) and 332101.JIBU02000013_gene1351 (degree 1766).
+The undirected graph Clostridium drakei has 5090 nodes and 784718 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06059 and has 23 connected components, where the component with most
+nodes has 5036 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 239, the mean node degree is 308.34, and
+the node degree mode is 1. The top 5 most central nodes are 332101.JIBU02000003_gene4431
+(degree 2097), 332101.JIBU02000021_gene1918 (degree 2042), 332101.JIBU02000045_gene3311
+(degree 1967), 332101.JIBU02000004_gene226 (degree 1789) and 332101.JIBU02000013_gene1351
+(degree 1766).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumDrakei(
 	
 	Datetime: 2021-02-02 20:30:06.473051
 	
-	The undirected graph Clostridium drakei has 5090 nodes and 784718 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06059 and
-	has 23 connected components, where the component with most nodes has 5036 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 239,
-	the mean node degree is 308.34, and the node degree mode is 1. The top 5 most central
-	nodes are 332101.JIBU02000003_gene4431 (degree 2097), 332101.JIBU02000021_gene1918
-	(degree 2042), 332101.JIBU02000045_gene3311 (degree 1967), 332101.JIBU02000004_gene226
-	(degree 1789) and 332101.JIBU02000013_gene1351 (degree 1766).
+	The undirected graph Clostridium drakei has 5090 nodes and 784718 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06059 and has 23 connected components, where the component with most
+	nodes has 5036 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 239, the mean node degree is 308.34, and
+	the node degree mode is 1. The top 5 most central nodes are 332101.JIBU02000003_gene4431
+	(degree 2097), 332101.JIBU02000021_gene1918 (degree 2042), 332101.JIBU02000045_gene3311
+	(degree 1967), 332101.JIBU02000004_gene226 (degree 1789) and 332101.JIBU02000013_gene1351
+	(degree 1766).
 	
 
 

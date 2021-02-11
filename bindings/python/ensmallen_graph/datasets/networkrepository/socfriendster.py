@@ -11,11 +11,12 @@ had the following characteristics:
 Datetime: 2021-02-04 10:35:16.012127
 
 The undirected graph soc-friendster has 65608366 nodes and 1806067135 unweighted
-edges, of which none are self-loops. The graph is extremely sparse as it has a density
-of 0.00000 and is connected, as it has a single component. The graph median node
-degree is 9, the mean node degree is 55.06, and the node degree mode is 1. The top
-5 most central nodes are 40553569 (degree 5214), 30857053 (degree 4667), 30877023
-(degree 4488), 50229128 (degree 4406) and 30857939 (degree 4333).
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 9, the mean node degree is 55.06, and the
+node degree mode is 1. The top 5 most central nodes are 40553569 (degree
+5214), 30857053 (degree 4667), 30877023 (degree 4488), 50229128 (degree
+4406) and 30857939 (degree 4333).
 
 
 References
@@ -108,11 +109,12 @@ def SocFriendster(
 	Datetime: 2021-02-04 10:35:16.012127
 	
 	The undirected graph soc-friendster has 65608366 nodes and 1806067135 unweighted
-	edges, of which none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00000 and is connected, as it has a single component. The graph median node
-	degree is 9, the mean node degree is 55.06, and the node degree mode is 1. The top
-	5 most central nodes are 40553569 (degree 5214), 30857053 (degree 4667), 30877023
-	(degree 4488), 50229128 (degree 4406) and 30857939 (degree 4333).
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 9, the mean node degree is 55.06, and the
+	node degree mode is 1. The top 5 most central nodes are 40553569 (degree
+	5214), 30857053 (degree 4667), 30877023 (degree 4488), 50229128 (degree
+	4406) and 30857939 (degree 4333).
 	
 
 

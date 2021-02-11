@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:57:03.777406
 
-The undirected graph Synechocystis sp. PCC7509 has 4793 nodes and 377249 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03285
-and has 25 connected components, where the component with most nodes has 4731 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 157.42, and the node degree mode is 2. The top 5
-most central nodes are 927677.ALVU02000001_gene669 (degree 1373), 927677.ALVU02000001_gene3971
-(degree 1183), 927677.ALVU02000001_gene1683 (degree 1061), 927677.ALVU02000001_gene4450
-(degree 1054) and 927677.ALVU02000001_gene3042 (degree 1039).
+The undirected graph Synechocystis sp. PCC7509 has 4793 nodes and 377249
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03285 and has 25 connected components, where the component
+with most nodes has 4731 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 157.42,
+and the node degree mode is 2. The top 5 most central nodes are 927677.ALVU02000001_gene669
+(degree 1373), 927677.ALVU02000001_gene3971 (degree 1183), 927677.ALVU02000001_gene1683
+(degree 1061), 927677.ALVU02000001_gene4450 (degree 1054) and 927677.ALVU02000001_gene3042
+(degree 1039).
 
 
 References
@@ -107,14 +108,15 @@ def SynechocystisSp.Pcc7509(
 	
 	Datetime: 2021-02-02 21:57:03.777406
 	
-	The undirected graph Synechocystis sp. PCC7509 has 4793 nodes and 377249 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03285
-	and has 25 connected components, where the component with most nodes has 4731 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 157.42, and the node degree mode is 2. The top 5
-	most central nodes are 927677.ALVU02000001_gene669 (degree 1373), 927677.ALVU02000001_gene3971
-	(degree 1183), 927677.ALVU02000001_gene1683 (degree 1061), 927677.ALVU02000001_gene4450
-	(degree 1054) and 927677.ALVU02000001_gene3042 (degree 1039).
+	The undirected graph Synechocystis sp. PCC7509 has 4793 nodes and 377249
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03285 and has 25 connected components, where the component
+	with most nodes has 4731 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 157.42,
+	and the node degree mode is 2. The top 5 most central nodes are 927677.ALVU02000001_gene669
+	(degree 1373), 927677.ALVU02000001_gene3971 (degree 1183), 927677.ALVU02000001_gene1683
+	(degree 1061), 927677.ALVU02000001_gene4450 (degree 1054) and 927677.ALVU02000001_gene3042
+	(degree 1039).
 	
 
 

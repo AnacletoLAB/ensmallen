@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:46.821968
 
-The undirected graph Sphingopyxis alaskensis has 3186 nodes and 321737 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-has 2 connected components, where the component with most nodes has 3180 nodes and
-the component with the least nodes has 6 nodes. The graph median node degree is 181,
-the mean node degree is 201.97, and the node degree mode is 3. The top 5 most central
-nodes are 317655.Sala_0625 (degree 1154), 317655.Sala_0343 (degree 1089), 317655.Sala_0634
-(degree 962), 317655.Sala_2140 (degree 830) and 317655.Sala_1610 (degree 780).
+The undirected graph Sphingopyxis alaskensis has 3186 nodes and 321737
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06341 and has 2 connected components, where the component
+with most nodes has 3180 nodes and the component with the least nodes has
+6 nodes. The graph median node degree is 181, the mean node degree is 201.97,
+and the node degree mode is 3. The top 5 most central nodes are 317655.Sala_0625
+(degree 1154), 317655.Sala_0343 (degree 1089), 317655.Sala_0634 (degree
+962), 317655.Sala_2140 (degree 830) and 317655.Sala_1610 (degree 780).
 
 
 References
@@ -106,13 +107,14 @@ def SphingopyxisAlaskensis(
 	
 	Datetime: 2021-02-02 20:26:46.821968
 	
-	The undirected graph Sphingopyxis alaskensis has 3186 nodes and 321737 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-	has 2 connected components, where the component with most nodes has 3180 nodes and
-	the component with the least nodes has 6 nodes. The graph median node degree is 181,
-	the mean node degree is 201.97, and the node degree mode is 3. The top 5 most central
-	nodes are 317655.Sala_0625 (degree 1154), 317655.Sala_0343 (degree 1089), 317655.Sala_0634
-	(degree 962), 317655.Sala_2140 (degree 830) and 317655.Sala_1610 (degree 780).
+	The undirected graph Sphingopyxis alaskensis has 3186 nodes and 321737
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06341 and has 2 connected components, where the component
+	with most nodes has 3180 nodes and the component with the least nodes has
+	6 nodes. The graph median node degree is 181, the mean node degree is 201.97,
+	and the node degree mode is 3. The top 5 most central nodes are 317655.Sala_0625
+	(degree 1154), 317655.Sala_0343 (degree 1089), 317655.Sala_0634 (degree
+	962), 317655.Sala_2140 (degree 830) and 317655.Sala_1610 (degree 780).
 	
 
 

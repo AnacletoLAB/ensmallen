@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:19:30.588920
 
-The undirected graph Adlercreutzia equolifaciens has 2260 nodes and 127251 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04985
-and has 7 connected components, where the component with most nodes has 2245 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 82, the mean node degree is 112.61, and the node degree mode is 2. The top 5 most
-central nodes are 1384484.AEQU_1609 (degree 985), 1384484.AEQU_1309 (degree 877),
-1384484.AEQU_1459 (degree 715), 1384484.AEQU_0635 (degree 695) and 1384484.AEQU_1873
-(degree 677).
+The undirected graph Adlercreutzia equolifaciens has 2260 nodes and 127251
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04985 and has 7 connected components, where the component
+with most nodes has 2245 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 82, the mean node degree is 112.61,
+and the node degree mode is 2. The top 5 most central nodes are 1384484.AEQU_1609
+(degree 985), 1384484.AEQU_1309 (degree 877), 1384484.AEQU_1459 (degree
+715), 1384484.AEQU_0635 (degree 695) and 1384484.AEQU_1873 (degree 677).
 
 
 References
@@ -107,14 +107,14 @@ def AdlercreutziaEquolifaciens(
 	
 	Datetime: 2021-02-03 22:19:30.588920
 	
-	The undirected graph Adlercreutzia equolifaciens has 2260 nodes and 127251 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04985
-	and has 7 connected components, where the component with most nodes has 2245 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 82, the mean node degree is 112.61, and the node degree mode is 2. The top 5 most
-	central nodes are 1384484.AEQU_1609 (degree 985), 1384484.AEQU_1309 (degree 877),
-	1384484.AEQU_1459 (degree 715), 1384484.AEQU_0635 (degree 695) and 1384484.AEQU_1873
-	(degree 677).
+	The undirected graph Adlercreutzia equolifaciens has 2260 nodes and 127251
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04985 and has 7 connected components, where the component
+	with most nodes has 2245 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 82, the mean node degree is 112.61,
+	and the node degree mode is 2. The top 5 most central nodes are 1384484.AEQU_1609
+	(degree 985), 1384484.AEQU_1309 (degree 877), 1384484.AEQU_1459 (degree
+	715), 1384484.AEQU_0635 (degree 695) and 1384484.AEQU_1873 (degree 677).
 	
 
 

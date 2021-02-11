@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:03:05.442482
 
-The undirected graph Persephonella sp. KM09Lau8 has 2236 nodes and 147552 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05905
-and has 7 connected components, where the component with most nodes has 2218 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 131.98, and the node degree mode is 11. The top 5
-most central nodes are 1158345.JNLL01000001_gene710 (degree 832), 1158345.JNLL01000001_gene1809
-(degree 738), 1158345.JNLL01000001_gene704 (degree 730), 1158345.JNLL01000001_gene818
-(degree 720) and 1158345.JNLL01000001_gene311 (degree 653).
+The undirected graph Persephonella sp. KM09Lau8 has 2236 nodes and 147552
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05905 and has 7 connected components, where the component
+with most nodes has 2218 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 131.98,
+and the node degree mode is 11. The top 5 most central nodes are 1158345.JNLL01000001_gene710
+(degree 832), 1158345.JNLL01000001_gene1809 (degree 738), 1158345.JNLL01000001_gene704
+(degree 730), 1158345.JNLL01000001_gene818 (degree 720) and 1158345.JNLL01000001_gene311
+(degree 653).
 
 
 References
@@ -107,14 +108,15 @@ def PersephonellaSp.Km09lau8(
 	
 	Datetime: 2021-02-02 23:03:05.442482
 	
-	The undirected graph Persephonella sp. KM09Lau8 has 2236 nodes and 147552 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05905
-	and has 7 connected components, where the component with most nodes has 2218 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 131.98, and the node degree mode is 11. The top 5
-	most central nodes are 1158345.JNLL01000001_gene710 (degree 832), 1158345.JNLL01000001_gene1809
-	(degree 738), 1158345.JNLL01000001_gene704 (degree 730), 1158345.JNLL01000001_gene818
-	(degree 720) and 1158345.JNLL01000001_gene311 (degree 653).
+	The undirected graph Persephonella sp. KM09Lau8 has 2236 nodes and 147552
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05905 and has 7 connected components, where the component
+	with most nodes has 2218 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 131.98,
+	and the node degree mode is 11. The top 5 most central nodes are 1158345.JNLL01000001_gene710
+	(degree 832), 1158345.JNLL01000001_gene1809 (degree 738), 1158345.JNLL01000001_gene704
+	(degree 730), 1158345.JNLL01000001_gene818 (degree 720) and 1158345.JNLL01000001_gene311
+	(degree 653).
 	
 
 

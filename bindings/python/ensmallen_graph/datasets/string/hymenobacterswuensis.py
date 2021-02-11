@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:26:22.813935
 
-The undirected graph Hymenobacter swuensis has 4554 nodes and 329494 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03178 and
-has 32 connected components, where the component with most nodes has 4481 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 115,
-the mean node degree is 144.71, and the node degree mode is 2. The top 5 most central
-nodes are 1227739.Hsw_0228 (degree 1381), 1227739.Hsw_1403 (degree 946), 1227739.Hsw_2808
-(degree 943), 1227739.Hsw_1701 (degree 890) and 1227739.Hsw_0747 (degree 828).
+The undirected graph Hymenobacter swuensis has 4554 nodes and 329494 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03178 and has 32 connected components, where the component with most
+nodes has 4481 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 115, the mean node degree is 144.71, and
+the node degree mode is 2. The top 5 most central nodes are 1227739.Hsw_0228
+(degree 1381), 1227739.Hsw_1403 (degree 946), 1227739.Hsw_2808 (degree
+943), 1227739.Hsw_1701 (degree 890) and 1227739.Hsw_0747 (degree 828).
 
 
 References
@@ -106,13 +107,14 @@ def HymenobacterSwuensis(
 	
 	Datetime: 2021-02-02 23:26:22.813935
 	
-	The undirected graph Hymenobacter swuensis has 4554 nodes and 329494 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03178 and
-	has 32 connected components, where the component with most nodes has 4481 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 115,
-	the mean node degree is 144.71, and the node degree mode is 2. The top 5 most central
-	nodes are 1227739.Hsw_0228 (degree 1381), 1227739.Hsw_1403 (degree 946), 1227739.Hsw_2808
-	(degree 943), 1227739.Hsw_1701 (degree 890) and 1227739.Hsw_0747 (degree 828).
+	The undirected graph Hymenobacter swuensis has 4554 nodes and 329494 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03178 and has 32 connected components, where the component with most
+	nodes has 4481 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 115, the mean node degree is 144.71, and
+	the node degree mode is 2. The top 5 most central nodes are 1227739.Hsw_0228
+	(degree 1381), 1227739.Hsw_1403 (degree 946), 1227739.Hsw_2808 (degree
+	943), 1227739.Hsw_1701 (degree 890) and 1227739.Hsw_0747 (degree 828).
 	
 
 

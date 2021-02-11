@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:22:43.701693
 
-The undirected graph Pseudomonas stutzeri KOS6 has 4431 nodes and 528947 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05389
-and has 18 connected components, where the component with most nodes has 4386 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 196, the mean node degree is 238.75, and the node degree mode is 2. The top 5
-most central nodes are 1218352.B597_008605 (degree 1688), 1218352.B597_013525 (degree
-1478), 1218352.B597_002525 (degree 1387), 1218352.B597_002530 (degree 1384) and 1218352.B597_012500
-(degree 1335).
+The undirected graph Pseudomonas stutzeri KOS6 has 4431 nodes and 528947
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05389 and has 18 connected components, where the component
+with most nodes has 4386 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 196, the mean node degree is 238.75,
+and the node degree mode is 2. The top 5 most central nodes are 1218352.B597_008605
+(degree 1688), 1218352.B597_013525 (degree 1478), 1218352.B597_002525 (degree
+1387), 1218352.B597_002530 (degree 1384) and 1218352.B597_012500 (degree
+1335).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriKos6(
 	
 	Datetime: 2021-02-02 23:22:43.701693
 	
-	The undirected graph Pseudomonas stutzeri KOS6 has 4431 nodes and 528947 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05389
-	and has 18 connected components, where the component with most nodes has 4386 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 196, the mean node degree is 238.75, and the node degree mode is 2. The top 5
-	most central nodes are 1218352.B597_008605 (degree 1688), 1218352.B597_013525 (degree
-	1478), 1218352.B597_002525 (degree 1387), 1218352.B597_002530 (degree 1384) and 1218352.B597_012500
-	(degree 1335).
+	The undirected graph Pseudomonas stutzeri KOS6 has 4431 nodes and 528947
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05389 and has 18 connected components, where the component
+	with most nodes has 4386 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 196, the mean node degree is 238.75,
+	and the node degree mode is 2. The top 5 most central nodes are 1218352.B597_008605
+	(degree 1688), 1218352.B597_013525 (degree 1478), 1218352.B597_002525 (degree
+	1387), 1218352.B597_002530 (degree 1384) and 1218352.B597_012500 (degree
+	1335).
 	
 
 

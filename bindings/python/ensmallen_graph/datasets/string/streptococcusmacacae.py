@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:02.274020
 
-The undirected graph Streptococcus macacae has 1856 nodes and 123941 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07200 and
-has 10 connected components, where the component with most nodes has 1827 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 133.56, and the node degree mode is 10. The top 5 most central
-nodes are 764298.STRMA_1453 (degree 814), 764298.STRMA_1592 (degree 756), 764298.STRMA_1683
-(degree 634), 764298.STRMA_0075 (degree 629) and 764298.STRMA_1782 (degree 614).
+The undirected graph Streptococcus macacae has 1856 nodes and 123941 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07200 and has 10 connected components, where the component with most
+nodes has 1827 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 133.56, and
+the node degree mode is 10. The top 5 most central nodes are 764298.STRMA_1453
+(degree 814), 764298.STRMA_1592 (degree 756), 764298.STRMA_1683 (degree
+634), 764298.STRMA_0075 (degree 629) and 764298.STRMA_1782 (degree 614).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusMacacae(
 	
 	Datetime: 2021-02-02 21:43:02.274020
 	
-	The undirected graph Streptococcus macacae has 1856 nodes and 123941 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07200 and
-	has 10 connected components, where the component with most nodes has 1827 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 133.56, and the node degree mode is 10. The top 5 most central
-	nodes are 764298.STRMA_1453 (degree 814), 764298.STRMA_1592 (degree 756), 764298.STRMA_1683
-	(degree 634), 764298.STRMA_0075 (degree 629) and 764298.STRMA_1782 (degree 614).
+	The undirected graph Streptococcus macacae has 1856 nodes and 123941 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07200 and has 10 connected components, where the component with most
+	nodes has 1827 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 133.56, and
+	the node degree mode is 10. The top 5 most central nodes are 764298.STRMA_1453
+	(degree 814), 764298.STRMA_1592 (degree 756), 764298.STRMA_1683 (degree
+	634), 764298.STRMA_0075 (degree 629) and 764298.STRMA_1782 (degree 614).
 	
 
 

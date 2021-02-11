@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:24.115927
 
-The undirected graph Serratia symbiotica has 671 nodes and 34703 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.15438
-and is connected, as it has a single component. The graph median node degree is 90,
-the mean node degree is 103.44, and the node degree mode is 51. The top 5 most central
-nodes are 568817.SCc_766 (degree 408), 568817.SCc_070 (degree 349), 568817.SCc_555
-(degree 338), 568817.SCc_109 (degree 333) and 568817.SCc_556 (degree 332).
+The undirected graph Serratia symbiotica has 671 nodes and 34703 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.15438 and is connected, as it has a single component. The
+graph median node degree is 90, the mean node degree is 103.44, and the
+node degree mode is 51. The top 5 most central nodes are 568817.SCc_766
+(degree 408), 568817.SCc_070 (degree 349), 568817.SCc_555 (degree 338),
+568817.SCc_109 (degree 333) and 568817.SCc_556 (degree 332).
 
 
 References
@@ -105,12 +106,13 @@ def SerratiaSymbiotica(
 	
 	Datetime: 2021-02-02 21:13:24.115927
 	
-	The undirected graph Serratia symbiotica has 671 nodes and 34703 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.15438
-	and is connected, as it has a single component. The graph median node degree is 90,
-	the mean node degree is 103.44, and the node degree mode is 51. The top 5 most central
-	nodes are 568817.SCc_766 (degree 408), 568817.SCc_070 (degree 349), 568817.SCc_555
-	(degree 338), 568817.SCc_109 (degree 333) and 568817.SCc_556 (degree 332).
+	The undirected graph Serratia symbiotica has 671 nodes and 34703 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.15438 and is connected, as it has a single component. The
+	graph median node degree is 90, the mean node degree is 103.44, and the
+	node degree mode is 51. The top 5 most central nodes are 568817.SCc_766
+	(degree 408), 568817.SCc_070 (degree 349), 568817.SCc_555 (degree 338),
+	568817.SCc_109 (degree 333) and 568817.SCc_556 (degree 332).
 	
 
 

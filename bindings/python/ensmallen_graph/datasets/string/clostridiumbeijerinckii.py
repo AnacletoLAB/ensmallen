@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:20:22.004764
 
-The undirected graph Clostridium beijerinckii has 4947 nodes and 846558 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06920
-and has 20 connected components, where the component with most nodes has 4905 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 297, the mean node degree is 342.25, and the node degree mode is 1. The top 5
-most central nodes are 290402.Cbei_0801 (degree 2217), 290402.Cbei_1943 (degree 1808),
-290402.Cbei_2114 (degree 1800), 290402.Cbei_1458 (degree 1783) and 290402.Cbei_0331
-(degree 1783).
+The undirected graph Clostridium beijerinckii has 4947 nodes and 846558
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06920 and has 20 connected components, where the component
+with most nodes has 4905 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 297, the mean node degree is 342.25,
+and the node degree mode is 1. The top 5 most central nodes are 290402.Cbei_0801
+(degree 2217), 290402.Cbei_1943 (degree 1808), 290402.Cbei_2114 (degree
+1800), 290402.Cbei_1458 (degree 1783) and 290402.Cbei_0331 (degree 1783).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumBeijerinckii(
 	
 	Datetime: 2021-02-02 20:20:22.004764
 	
-	The undirected graph Clostridium beijerinckii has 4947 nodes and 846558 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06920
-	and has 20 connected components, where the component with most nodes has 4905 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 297, the mean node degree is 342.25, and the node degree mode is 1. The top 5
-	most central nodes are 290402.Cbei_0801 (degree 2217), 290402.Cbei_1943 (degree 1808),
-	290402.Cbei_2114 (degree 1800), 290402.Cbei_1458 (degree 1783) and 290402.Cbei_0331
-	(degree 1783).
+	The undirected graph Clostridium beijerinckii has 4947 nodes and 846558
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06920 and has 20 connected components, where the component
+	with most nodes has 4905 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 297, the mean node degree is 342.25,
+	and the node degree mode is 1. The top 5 most central nodes are 290402.Cbei_0801
+	(degree 2217), 290402.Cbei_1943 (degree 1808), 290402.Cbei_2114 (degree
+	1800), 290402.Cbei_1458 (degree 1783) and 290402.Cbei_0331 (degree 1783).
 	
 
 

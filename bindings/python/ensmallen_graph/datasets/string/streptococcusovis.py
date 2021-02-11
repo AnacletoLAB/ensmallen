@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:48.480224
 
-The undirected graph Streptococcus ovis has 2331 nodes and 192192 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07077 and
-has 8 connected components, where the component with most nodes has 2307 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 164.90, and the node degree mode is 9. The top 5 most central
-nodes are 1123312.KB904583_gene1519 (degree 966), 1123312.KB904574_gene188 (degree
-925), 1123312.KB904581_gene1089 (degree 904), 1123312.KB904565_gene2313 (degree 879)
-and 1123312.KB904563_gene1960 (degree 793).
+The undirected graph Streptococcus ovis has 2331 nodes and 192192 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07077 and has 8 connected components, where the component with most
+nodes has 2307 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 164.90, and
+the node degree mode is 9. The top 5 most central nodes are 1123312.KB904583_gene1519
+(degree 966), 1123312.KB904574_gene188 (degree 925), 1123312.KB904581_gene1089
+(degree 904), 1123312.KB904565_gene2313 (degree 879) and 1123312.KB904563_gene1960
+(degree 793).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusOvis(
 	
 	Datetime: 2021-02-02 22:50:48.480224
 	
-	The undirected graph Streptococcus ovis has 2331 nodes and 192192 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07077 and
-	has 8 connected components, where the component with most nodes has 2307 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 164.90, and the node degree mode is 9. The top 5 most central
-	nodes are 1123312.KB904583_gene1519 (degree 966), 1123312.KB904574_gene188 (degree
-	925), 1123312.KB904581_gene1089 (degree 904), 1123312.KB904565_gene2313 (degree 879)
-	and 1123312.KB904563_gene1960 (degree 793).
+	The undirected graph Streptococcus ovis has 2331 nodes and 192192 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07077 and has 8 connected components, where the component with most
+	nodes has 2307 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 164.90, and
+	the node degree mode is 9. The top 5 most central nodes are 1123312.KB904583_gene1519
+	(degree 966), 1123312.KB904574_gene188 (degree 925), 1123312.KB904581_gene1089
+	(degree 904), 1123312.KB904565_gene2313 (degree 879) and 1123312.KB904563_gene1960
+	(degree 793).
 	
 
 

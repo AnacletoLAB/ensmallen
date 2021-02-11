@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:19.020384
 
-The undirected graph Prevotella oralis ATCC33269 has 2461 nodes and 155545 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05139
-and has 17 connected components, where the component with most nodes has 2420 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 126.41, and the node degree mode is 4. The top 5
-most central nodes are 873533.HMPREF0663_10462 (degree 874), 873533.HMPREF0663_10067
-(degree 784), 873533.HMPREF0663_10167 (degree 757), 873533.HMPREF0663_11267 (degree
-692) and 873533.HMPREF0663_12483 (degree 667).
+The undirected graph Prevotella oralis ATCC33269 has 2461 nodes and 155545
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05139 and has 17 connected components, where the component
+with most nodes has 2420 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 126.41,
+and the node degree mode is 4. The top 5 most central nodes are 873533.HMPREF0663_10462
+(degree 874), 873533.HMPREF0663_10067 (degree 784), 873533.HMPREF0663_10167
+(degree 757), 873533.HMPREF0663_11267 (degree 692) and 873533.HMPREF0663_12483
+(degree 667).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaOralisAtcc33269(
 	
 	Datetime: 2021-02-02 21:49:19.020384
 	
-	The undirected graph Prevotella oralis ATCC33269 has 2461 nodes and 155545 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05139
-	and has 17 connected components, where the component with most nodes has 2420 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 126.41, and the node degree mode is 4. The top 5
-	most central nodes are 873533.HMPREF0663_10462 (degree 874), 873533.HMPREF0663_10067
-	(degree 784), 873533.HMPREF0663_10167 (degree 757), 873533.HMPREF0663_11267 (degree
-	692) and 873533.HMPREF0663_12483 (degree 667).
+	The undirected graph Prevotella oralis ATCC33269 has 2461 nodes and 155545
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05139 and has 17 connected components, where the component
+	with most nodes has 2420 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 126.41,
+	and the node degree mode is 4. The top 5 most central nodes are 873533.HMPREF0663_10462
+	(degree 874), 873533.HMPREF0663_10067 (degree 784), 873533.HMPREF0663_10167
+	(degree 757), 873533.HMPREF0663_11267 (degree 692) and 873533.HMPREF0663_12483
+	(degree 667).
 	
 
 

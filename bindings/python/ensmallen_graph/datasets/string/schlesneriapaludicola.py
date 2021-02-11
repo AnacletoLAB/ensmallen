@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:31.998776
 
-The undirected graph Schlesneria paludicola has 5894 nodes and 975357 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05616 and
-has 77 connected components, where the component with most nodes has 5692 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 261,
-the mean node degree is 330.97, and the node degree mode is 1. The top 5 most central
-nodes are 1123242.JH636435_gene2728 (degree 2553), 1123242.JH636435_gene1402 (degree
-1992), 1123242.JH636434_gene4725 (degree 1955), 1123242.JH636437_gene6024 (degree
-1940) and 1123242.JH636435_gene879 (degree 1920).
+The undirected graph Schlesneria paludicola has 5894 nodes and 975357 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05616 and has 77 connected components, where the component with most
+nodes has 5692 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 261, the mean node degree is 330.97, and
+the node degree mode is 1. The top 5 most central nodes are 1123242.JH636435_gene2728
+(degree 2553), 1123242.JH636435_gene1402 (degree 1992), 1123242.JH636434_gene4725
+(degree 1955), 1123242.JH636437_gene6024 (degree 1940) and 1123242.JH636435_gene879
+(degree 1920).
 
 
 References
@@ -107,14 +108,15 @@ def SchlesneriaPaludicola(
 	
 	Datetime: 2021-02-02 22:48:31.998776
 	
-	The undirected graph Schlesneria paludicola has 5894 nodes and 975357 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05616 and
-	has 77 connected components, where the component with most nodes has 5692 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 261,
-	the mean node degree is 330.97, and the node degree mode is 1. The top 5 most central
-	nodes are 1123242.JH636435_gene2728 (degree 2553), 1123242.JH636435_gene1402 (degree
-	1992), 1123242.JH636434_gene4725 (degree 1955), 1123242.JH636437_gene6024 (degree
-	1940) and 1123242.JH636435_gene879 (degree 1920).
+	The undirected graph Schlesneria paludicola has 5894 nodes and 975357 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05616 and has 77 connected components, where the component with most
+	nodes has 5692 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 261, the mean node degree is 330.97, and
+	the node degree mode is 1. The top 5 most central nodes are 1123242.JH636435_gene2728
+	(degree 2553), 1123242.JH636435_gene1402 (degree 1992), 1123242.JH636434_gene4725
+	(degree 1955), 1123242.JH636437_gene6024 (degree 1940) and 1123242.JH636435_gene879
+	(degree 1920).
 	
 
 

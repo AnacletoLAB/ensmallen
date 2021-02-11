@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:23:08.995017
 
-The undirected graph Vibrio halioticoli has 3503 nodes and 319950 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-has 14 connected components, where the component with most nodes has 3473 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 150,
-the mean node degree is 182.67, and the node degree mode is 2. The top 5 most central
-nodes are 1219072.VHA01S_002_00230 (degree 1203), 1219072.VHA01S_060_00190 (degree
-1037), 1219072.VHA01S_037_00120 (degree 977), 1219072.VHA01S_063_00060 (degree 963)
-and 1219072.VHA01S_020_00050 (degree 942).
+The undirected graph Vibrio halioticoli has 3503 nodes and 319950 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05216 and has 14 connected components, where the component with most
+nodes has 3473 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 150, the mean node degree is 182.67, and
+the node degree mode is 2. The top 5 most central nodes are 1219072.VHA01S_002_00230
+(degree 1203), 1219072.VHA01S_060_00190 (degree 1037), 1219072.VHA01S_037_00120
+(degree 977), 1219072.VHA01S_063_00060 (degree 963) and 1219072.VHA01S_020_00050
+(degree 942).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioHalioticoli(
 	
 	Datetime: 2021-02-02 23:23:08.995017
 	
-	The undirected graph Vibrio halioticoli has 3503 nodes and 319950 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05216 and
-	has 14 connected components, where the component with most nodes has 3473 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 150,
-	the mean node degree is 182.67, and the node degree mode is 2. The top 5 most central
-	nodes are 1219072.VHA01S_002_00230 (degree 1203), 1219072.VHA01S_060_00190 (degree
-	1037), 1219072.VHA01S_037_00120 (degree 977), 1219072.VHA01S_063_00060 (degree 963)
-	and 1219072.VHA01S_020_00050 (degree 942).
+	The undirected graph Vibrio halioticoli has 3503 nodes and 319950 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05216 and has 14 connected components, where the component with most
+	nodes has 3473 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 150, the mean node degree is 182.67, and
+	the node degree mode is 2. The top 5 most central nodes are 1219072.VHA01S_002_00230
+	(degree 1203), 1219072.VHA01S_060_00190 (degree 1037), 1219072.VHA01S_037_00120
+	(degree 977), 1219072.VHA01S_063_00060 (degree 963) and 1219072.VHA01S_020_00050
+	(degree 942).
 	
 
 

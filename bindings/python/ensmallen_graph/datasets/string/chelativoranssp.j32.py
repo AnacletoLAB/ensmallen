@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:30.576429
 
-The undirected graph Chelativorans sp. J32 has 4397 nodes and 513124 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05309 and
-has 11 connected components, where the component with most nodes has 4373 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 233.40, and the node degree mode is 2. The top 5 most central
-nodes are 935840.JAEQ01000001_gene2715 (degree 1618), 935840.JAEQ01000008_gene822
-(degree 1323), 935840.JAEQ01000003_gene230 (degree 1323), 935840.JAEQ01000001_gene2993
-(degree 1303) and 935840.JAEQ01000007_gene3931 (degree 1298).
+The undirected graph Chelativorans sp. J32 has 4397 nodes and 513124 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05309 and has 11 connected components, where the component with most
+nodes has 4373 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 233.40, and
+the node degree mode is 2. The top 5 most central nodes are 935840.JAEQ01000001_gene2715
+(degree 1618), 935840.JAEQ01000008_gene822 (degree 1323), 935840.JAEQ01000003_gene230
+(degree 1323), 935840.JAEQ01000001_gene2993 (degree 1303) and 935840.JAEQ01000007_gene3931
+(degree 1298).
 
 
 References
@@ -107,14 +108,15 @@ def ChelativoransSp.J32(
 	
 	Datetime: 2021-02-02 21:59:30.576429
 	
-	The undirected graph Chelativorans sp. J32 has 4397 nodes and 513124 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05309 and
-	has 11 connected components, where the component with most nodes has 4373 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 233.40, and the node degree mode is 2. The top 5 most central
-	nodes are 935840.JAEQ01000001_gene2715 (degree 1618), 935840.JAEQ01000008_gene822
-	(degree 1323), 935840.JAEQ01000003_gene230 (degree 1323), 935840.JAEQ01000001_gene2993
-	(degree 1303) and 935840.JAEQ01000007_gene3931 (degree 1298).
+	The undirected graph Chelativorans sp. J32 has 4397 nodes and 513124 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05309 and has 11 connected components, where the component with most
+	nodes has 4373 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 233.40, and
+	the node degree mode is 2. The top 5 most central nodes are 935840.JAEQ01000001_gene2715
+	(degree 1618), 935840.JAEQ01000008_gene822 (degree 1323), 935840.JAEQ01000003_gene230
+	(degree 1323), 935840.JAEQ01000001_gene2993 (degree 1303) and 935840.JAEQ01000007_gene3931
+	(degree 1298).
 	
 
 

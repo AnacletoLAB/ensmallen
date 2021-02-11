@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:19.808981
 
-The undirected graph Campylobacter sp. CIT045 has 1731 nodes and 90942 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06074 and
-has 9 connected components, where the component with most nodes has 1706 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 79,
-the mean node degree is 105.07, and the node degree mode is 43. The top 5 most central
-nodes are 1448857.JFAP01000002_gene1424 (degree 673), 1448857.JFAP01000003_gene1586
-(degree 672), 1448857.JFAP01000004_gene764 (degree 621), 1448857.JFAP01000003_gene1573
-(degree 594) and 1448857.JFAP01000004_gene714 (degree 558).
+The undirected graph Campylobacter sp. CIT045 has 1731 nodes and 90942
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06074 and has 9 connected components, where the component
+with most nodes has 1706 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 105.07,
+and the node degree mode is 43. The top 5 most central nodes are 1448857.JFAP01000002_gene1424
+(degree 673), 1448857.JFAP01000003_gene1586 (degree 672), 1448857.JFAP01000004_gene764
+(degree 621), 1448857.JFAP01000003_gene1573 (degree 594) and 1448857.JFAP01000004_gene714
+(degree 558).
 
 
 References
@@ -107,14 +108,15 @@ def CampylobacterSp.Cit045(
 	
 	Datetime: 2021-02-03 23:03:19.808981
 	
-	The undirected graph Campylobacter sp. CIT045 has 1731 nodes and 90942 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06074 and
-	has 9 connected components, where the component with most nodes has 1706 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 79,
-	the mean node degree is 105.07, and the node degree mode is 43. The top 5 most central
-	nodes are 1448857.JFAP01000002_gene1424 (degree 673), 1448857.JFAP01000003_gene1586
-	(degree 672), 1448857.JFAP01000004_gene764 (degree 621), 1448857.JFAP01000003_gene1573
-	(degree 594) and 1448857.JFAP01000004_gene714 (degree 558).
+	The undirected graph Campylobacter sp. CIT045 has 1731 nodes and 90942
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06074 and has 9 connected components, where the component
+	with most nodes has 1706 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 105.07,
+	and the node degree mode is 43. The top 5 most central nodes are 1448857.JFAP01000002_gene1424
+	(degree 673), 1448857.JFAP01000003_gene1586 (degree 672), 1448857.JFAP01000004_gene764
+	(degree 621), 1448857.JFAP01000003_gene1573 (degree 594) and 1448857.JFAP01000004_gene714
+	(degree 558).
 	
 
 

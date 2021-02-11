@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:31:05.280347
 
-The undirected graph Brassica rapa has 33516 nodes and 10088511 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01796 and
-has 4 connected components, where the component with most nodes has 33507 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 289,
-the mean node degree is 602.01, and the node degree mode is 5. The top 5 most central
-nodes are 3711.Bra033729.1-P (degree 12323), 3711.Bra036365.1-P (degree 11518), 3711.Bra040822.1-P
-(degree 11477), 3711.Bra040756.1-P (degree 11445) and 3711.Bra034892.1-P (degree
+The undirected graph Brassica rapa has 33516 nodes and 10088511 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01796 and has 4 connected components, where the component with most
+nodes has 33507 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 289, the mean node degree is 602.01, and
+the node degree mode is 5. The top 5 most central nodes are 3711.Bra033729.1-P
+(degree 12323), 3711.Bra036365.1-P (degree 11518), 3711.Bra040822.1-P (degree
+11477), 3711.Bra040756.1-P (degree 11445) and 3711.Bra034892.1-P (degree
 11395).
 
 
@@ -107,13 +108,14 @@ def BrassicaRapa(
 	
 	Datetime: 2021-02-02 16:31:05.280347
 	
-	The undirected graph Brassica rapa has 33516 nodes and 10088511 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01796 and
-	has 4 connected components, where the component with most nodes has 33507 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 289,
-	the mean node degree is 602.01, and the node degree mode is 5. The top 5 most central
-	nodes are 3711.Bra033729.1-P (degree 12323), 3711.Bra036365.1-P (degree 11518), 3711.Bra040822.1-P
-	(degree 11477), 3711.Bra040756.1-P (degree 11445) and 3711.Bra034892.1-P (degree
+	The undirected graph Brassica rapa has 33516 nodes and 10088511 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01796 and has 4 connected components, where the component with most
+	nodes has 33507 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 289, the mean node degree is 602.01, and
+	the node degree mode is 5. The top 5 most central nodes are 3711.Bra033729.1-P
+	(degree 12323), 3711.Bra036365.1-P (degree 11518), 3711.Bra040822.1-P (degree
+	11477), 3711.Bra040756.1-P (degree 11445) and 3711.Bra034892.1-P (degree
 	11395).
 	
 

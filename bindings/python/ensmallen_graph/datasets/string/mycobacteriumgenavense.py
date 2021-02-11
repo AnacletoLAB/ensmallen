@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:38:38.885086
 
-The undirected graph Mycobacterium genavense has 5196 nodes and 749958 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05557 and
-has 17 connected components, where the component with most nodes has 5160 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 288.67, and the node degree mode is 2. The top 5 most central
-nodes are 1408452.JAGZ01000011_gene377 (degree 2192), 1408452.JAGZ01000003_gene4846
-(degree 1881), 1408452.JAGZ01000006_gene658 (degree 1836), 1408452.JAGZ01000006_gene825
-(degree 1828) and 1408452.JAGZ01000010_gene221 (degree 1735).
+The undirected graph Mycobacterium genavense has 5196 nodes and 749958
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05557 and has 17 connected components, where the component
+with most nodes has 5160 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 241, the mean node degree is 288.67,
+and the node degree mode is 2. The top 5 most central nodes are 1408452.JAGZ01000011_gene377
+(degree 2192), 1408452.JAGZ01000003_gene4846 (degree 1881), 1408452.JAGZ01000006_gene658
+(degree 1836), 1408452.JAGZ01000006_gene825 (degree 1828) and 1408452.JAGZ01000010_gene221
+(degree 1735).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumGenavense(
 	
 	Datetime: 2021-02-03 22:38:38.885086
 	
-	The undirected graph Mycobacterium genavense has 5196 nodes and 749958 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05557 and
-	has 17 connected components, where the component with most nodes has 5160 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 288.67, and the node degree mode is 2. The top 5 most central
-	nodes are 1408452.JAGZ01000011_gene377 (degree 2192), 1408452.JAGZ01000003_gene4846
-	(degree 1881), 1408452.JAGZ01000006_gene658 (degree 1836), 1408452.JAGZ01000006_gene825
-	(degree 1828) and 1408452.JAGZ01000010_gene221 (degree 1735).
+	The undirected graph Mycobacterium genavense has 5196 nodes and 749958
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05557 and has 17 connected components, where the component
+	with most nodes has 5160 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 241, the mean node degree is 288.67,
+	and the node degree mode is 2. The top 5 most central nodes are 1408452.JAGZ01000011_gene377
+	(degree 2192), 1408452.JAGZ01000003_gene4846 (degree 1881), 1408452.JAGZ01000006_gene658
+	(degree 1836), 1408452.JAGZ01000006_gene825 (degree 1828) and 1408452.JAGZ01000010_gene221
+	(degree 1735).
 	
 
 

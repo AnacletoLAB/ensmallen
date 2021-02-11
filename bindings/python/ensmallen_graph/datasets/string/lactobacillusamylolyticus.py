@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:26.809676
 
-The undirected graph Lactobacillus amylolyticus has 1676 nodes and 93261 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06644
-and has 10 connected components, where the component with most nodes has 1652 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 111.29, and the node degree mode is 3. The top 5 most
-central nodes are 585524.HMPREF0493_0453 (degree 679), 585524.HMPREF0493_1301 (degree
-547), 585524.HMPREF0493_0583 (degree 518), 585524.HMPREF0493_1580 (degree 518) and
-585524.HMPREF0493_1487 (degree 503).
+The undirected graph Lactobacillus amylolyticus has 1676 nodes and 93261
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06644 and has 10 connected components, where the component
+with most nodes has 1652 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 111.29,
+and the node degree mode is 3. The top 5 most central nodes are 585524.HMPREF0493_0453
+(degree 679), 585524.HMPREF0493_1301 (degree 547), 585524.HMPREF0493_0583
+(degree 518), 585524.HMPREF0493_1580 (degree 518) and 585524.HMPREF0493_1487
+(degree 503).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusAmylolyticus(
 	
 	Datetime: 2021-02-02 21:16:26.809676
 	
-	The undirected graph Lactobacillus amylolyticus has 1676 nodes and 93261 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06644
-	and has 10 connected components, where the component with most nodes has 1652 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 111.29, and the node degree mode is 3. The top 5 most
-	central nodes are 585524.HMPREF0493_0453 (degree 679), 585524.HMPREF0493_1301 (degree
-	547), 585524.HMPREF0493_0583 (degree 518), 585524.HMPREF0493_1580 (degree 518) and
-	585524.HMPREF0493_1487 (degree 503).
+	The undirected graph Lactobacillus amylolyticus has 1676 nodes and 93261
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06644 and has 10 connected components, where the component
+	with most nodes has 1652 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 111.29,
+	and the node degree mode is 3. The top 5 most central nodes are 585524.HMPREF0493_0453
+	(degree 679), 585524.HMPREF0493_1301 (degree 547), 585524.HMPREF0493_0583
+	(degree 518), 585524.HMPREF0493_1580 (degree 518) and 585524.HMPREF0493_1487
+	(degree 503).
 	
 
 

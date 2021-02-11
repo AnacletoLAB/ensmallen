@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:15:46.115106
 
-The undirected graph as20000102 has 6474 nodes and 13895 unweighted edges, of which
-1323 are self-loops. The graph is quite sparse as it has a density of 0.00063 and
-is connected, as it has a single component. The graph median node degree is 2, the
-mean node degree is 4.09, and the node degree mode is 1. The top 5 most central nodes
-are 2 (degree 1459), 10 (degree 751), 7 (degree 692), 8 (degree 401) and 1 (degree
-378).
+The undirected graph as20000102 has 6474 nodes and 13895 unweighted edges,
+of which 1323 are self-loops. The graph is quite sparse as it has a density
+of 0.00063 and is connected, as it has a single component. The graph median
+node degree is 2, the mean node degree is 4.09, and the node degree mode
+is 1. The top 5 most central nodes are 2 (degree 1459), 10 (degree 751),
+7 (degree 692), 8 (degree 401) and 1 (degree 378).
 
 
 References
@@ -102,12 +102,12 @@ def As20000102(
 	
 	Datetime: 2021-02-06 10:15:46.115106
 	
-	The undirected graph as20000102 has 6474 nodes and 13895 unweighted edges, of which
-	1323 are self-loops. The graph is quite sparse as it has a density of 0.00063 and
-	is connected, as it has a single component. The graph median node degree is 2, the
-	mean node degree is 4.09, and the node degree mode is 1. The top 5 most central nodes
-	are 2 (degree 1459), 10 (degree 751), 7 (degree 692), 8 (degree 401) and 1 (degree
-	378).
+	The undirected graph as20000102 has 6474 nodes and 13895 unweighted edges,
+	of which 1323 are self-loops. The graph is quite sparse as it has a density
+	of 0.00063 and is connected, as it has a single component. The graph median
+	node degree is 2, the mean node degree is 4.09, and the node degree mode
+	is 1. The top 5 most central nodes are 2 (degree 1459), 10 (degree 751),
+	7 (degree 692), 8 (degree 401) and 1 (degree 378).
 	
 
 

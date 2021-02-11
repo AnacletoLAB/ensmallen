@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:15.615243
 
-The undirected graph Geobacillus thermoglucosidasius has 3651 nodes and 311080 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04669
-and has 17 connected components, where the component with most nodes has 3615 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 141, the mean node degree is 170.41, and the node degree mode is 2. The top 5
-most central nodes are 634956.Geoth_0907 (degree 1504), 634956.Geoth_3662 (degree
-1191), 634956.Geoth_1172 (degree 1017), 634956.Geoth_0030 (degree 1002) and 634956.Geoth_3654
-(degree 994).
+The undirected graph Geobacillus thermoglucosidasius has 3651 nodes and
+311080 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04669 and has 17 connected components, where the
+component with most nodes has 3615 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+is 170.41, and the node degree mode is 2. The top 5 most central nodes
+are 634956.Geoth_0907 (degree 1504), 634956.Geoth_3662 (degree 1191), 634956.Geoth_1172
+(degree 1017), 634956.Geoth_0030 (degree 1002) and 634956.Geoth_3654 (degree
+994).
 
 
 References
@@ -107,14 +108,15 @@ def GeobacillusThermoglucosidasius(
 	
 	Datetime: 2021-02-02 21:22:15.615243
 	
-	The undirected graph Geobacillus thermoglucosidasius has 3651 nodes and 311080 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04669
-	and has 17 connected components, where the component with most nodes has 3615 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 141, the mean node degree is 170.41, and the node degree mode is 2. The top 5
-	most central nodes are 634956.Geoth_0907 (degree 1504), 634956.Geoth_3662 (degree
-	1191), 634956.Geoth_1172 (degree 1017), 634956.Geoth_0030 (degree 1002) and 634956.Geoth_3654
-	(degree 994).
+	The undirected graph Geobacillus thermoglucosidasius has 3651 nodes and
+	311080 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04669 and has 17 connected components, where the
+	component with most nodes has 3615 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 141, the mean node degree
+	is 170.41, and the node degree mode is 2. The top 5 most central nodes
+	are 634956.Geoth_0907 (degree 1504), 634956.Geoth_3662 (degree 1191), 634956.Geoth_1172
+	(degree 1017), 634956.Geoth_0030 (degree 1002) and 634956.Geoth_3654 (degree
+	994).
 	
 
 

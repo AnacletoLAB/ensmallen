@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:17:23.565380
 
-The undirected graph Bosea sp. UNC402CLCol has 5025 nodes and 580366 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04598 and
-has 16 connected components, where the component with most nodes has 4988 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 230.99, and the node degree mode is 3. The top 5 most central
-nodes are 1510531.JQJJ01000013_gene372 (degree 1842), 1510531.JQJJ01000008_gene4086
-(degree 1591), 1510531.JQJJ01000009_gene869 (degree 1468), 1510531.JQJJ01000012_gene1709
-(degree 1434) and 1510531.JQJJ01000012_gene1592 (degree 1292).
+The undirected graph Bosea sp. UNC402CLCol has 5025 nodes and 580366 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04598 and has 16 connected components, where the component with most
+nodes has 4988 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 230.99, and
+the node degree mode is 3. The top 5 most central nodes are 1510531.JQJJ01000013_gene372
+(degree 1842), 1510531.JQJJ01000008_gene4086 (degree 1591), 1510531.JQJJ01000009_gene869
+(degree 1468), 1510531.JQJJ01000012_gene1709 (degree 1434) and 1510531.JQJJ01000012_gene1592
+(degree 1292).
 
 
 References
@@ -107,14 +108,15 @@ def BoseaSp.Unc402clcol(
 	
 	Datetime: 2021-02-03 23:17:23.565380
 	
-	The undirected graph Bosea sp. UNC402CLCol has 5025 nodes and 580366 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04598 and
-	has 16 connected components, where the component with most nodes has 4988 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 230.99, and the node degree mode is 3. The top 5 most central
-	nodes are 1510531.JQJJ01000013_gene372 (degree 1842), 1510531.JQJJ01000008_gene4086
-	(degree 1591), 1510531.JQJJ01000009_gene869 (degree 1468), 1510531.JQJJ01000012_gene1709
-	(degree 1434) and 1510531.JQJJ01000012_gene1592 (degree 1292).
+	The undirected graph Bosea sp. UNC402CLCol has 5025 nodes and 580366 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04598 and has 16 connected components, where the component with most
+	nodes has 4988 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 230.99, and
+	the node degree mode is 3. The top 5 most central nodes are 1510531.JQJJ01000013_gene372
+	(degree 1842), 1510531.JQJJ01000008_gene4086 (degree 1591), 1510531.JQJJ01000009_gene869
+	(degree 1468), 1510531.JQJJ01000012_gene1709 (degree 1434) and 1510531.JQJJ01000012_gene1592
+	(degree 1292).
 	
 
 

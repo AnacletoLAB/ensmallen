@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:28.741042
 
-The undirected graph Cellulophaga lytica has 3277 nodes and 319452 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05951 and
-has 2 connected components, where the component with most nodes has 3275 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 194.97, and the node degree mode is 7. The top 5 most central
-nodes are 867900.Celly_1844 (degree 1149), 867900.Celly_0516 (degree 1131), 867900.Celly_2241
-(degree 1131), 867900.Celly_2113 (degree 931) and 867900.Celly_2465 (degree 892).
+The undirected graph Cellulophaga lytica has 3277 nodes and 319452 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05951 and has 2 connected components, where the component with most
+nodes has 3275 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 194.97, and
+the node degree mode is 7. The top 5 most central nodes are 867900.Celly_1844
+(degree 1149), 867900.Celly_0516 (degree 1131), 867900.Celly_2241 (degree
+1131), 867900.Celly_2113 (degree 931) and 867900.Celly_2465 (degree 892).
 
 
 References
@@ -106,13 +107,14 @@ def CellulophagaLytica(
 	
 	Datetime: 2021-02-02 21:48:28.741042
 	
-	The undirected graph Cellulophaga lytica has 3277 nodes and 319452 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05951 and
-	has 2 connected components, where the component with most nodes has 3275 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 194.97, and the node degree mode is 7. The top 5 most central
-	nodes are 867900.Celly_1844 (degree 1149), 867900.Celly_0516 (degree 1131), 867900.Celly_2241
-	(degree 1131), 867900.Celly_2113 (degree 931) and 867900.Celly_2465 (degree 892).
+	The undirected graph Cellulophaga lytica has 3277 nodes and 319452 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05951 and has 2 connected components, where the component with most
+	nodes has 3275 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 194.97, and
+	the node degree mode is 7. The top 5 most central nodes are 867900.Celly_1844
+	(degree 1149), 867900.Celly_0516 (degree 1131), 867900.Celly_2241 (degree
+	1131), 867900.Celly_2113 (degree 931) and 867900.Celly_2465 (degree 892).
 	
 
 

@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:16:19.886546
 
-The undirected graph kl02 has 36699 nodes and 212517 unweighted edges, of which 5
-are self-loops. The graph is quite sparse as it has a density of 0.00032 and is connected,
-as it has a single component. The graph median node degree is 6, the mean node degree
-is 11.58, and the node degree mode is 6. The top 5 most central nodes are 42 (degree
-7644), 63 (degree 7007), 64 (degree 6921), 22 (degree 6612) and 53 (degree 6223).
+The undirected graph kl02 has 36699 nodes and 212517 unweighted edges,
+of which 5 are self-loops. The graph is quite sparse as it has a density
+of 0.00032 and is connected, as it has a single component. The graph median
+node degree is 6, the mean node degree is 11.58, and the node degree mode
+is 6. The top 5 most central nodes are 42 (degree 7644), 63 (degree 7007),
+64 (degree 6921), 22 (degree 6612) and 53 (degree 6223).
 
 
 References
@@ -101,11 +102,12 @@ def Kl02(
 	
 	Datetime: 2021-02-06 11:16:19.886546
 	
-	The undirected graph kl02 has 36699 nodes and 212517 unweighted edges, of which 5
-	are self-loops. The graph is quite sparse as it has a density of 0.00032 and is connected,
-	as it has a single component. The graph median node degree is 6, the mean node degree
-	is 11.58, and the node degree mode is 6. The top 5 most central nodes are 42 (degree
-	7644), 63 (degree 7007), 64 (degree 6921), 22 (degree 6612) and 53 (degree 6223).
+	The undirected graph kl02 has 36699 nodes and 212517 unweighted edges,
+	of which 5 are self-loops. The graph is quite sparse as it has a density
+	of 0.00032 and is connected, as it has a single component. The graph median
+	node degree is 6, the mean node degree is 11.58, and the node degree mode
+	is 6. The top 5 most central nodes are 42 (degree 7644), 63 (degree 7007),
+	64 (degree 6921), 22 (degree 6612) and 53 (degree 6223).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:50:59.037813
 
-The undirected graph Alistipes putredinis has 2704 nodes and 118704 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03248 and
-has 33 connected components, where the component with most nodes has 2615 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 61,
-the mean node degree is 87.80, and the node degree mode is 3. The top 5 most central
-nodes are 445970.ALIPUT_02098 (degree 830), 445970.ALIPUT_01698 (degree 713), 445970.ALIPUT_01701
-(degree 655), 445970.ALIPUT_00077 (degree 624) and 445970.ALIPUT_02006 (degree 577).
+The undirected graph Alistipes putredinis has 2704 nodes and 118704 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03248 and has 33 connected components, where the component with most
+nodes has 2615 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 61, the mean node degree is 87.80, and
+the node degree mode is 3. The top 5 most central nodes are 445970.ALIPUT_02098
+(degree 830), 445970.ALIPUT_01698 (degree 713), 445970.ALIPUT_01701 (degree
+655), 445970.ALIPUT_00077 (degree 624) and 445970.ALIPUT_02006 (degree
+577).
 
 
 References
@@ -106,13 +108,15 @@ def AlistipesPutredinis(
 	
 	Datetime: 2021-02-02 20:50:59.037813
 	
-	The undirected graph Alistipes putredinis has 2704 nodes and 118704 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03248 and
-	has 33 connected components, where the component with most nodes has 2615 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 61,
-	the mean node degree is 87.80, and the node degree mode is 3. The top 5 most central
-	nodes are 445970.ALIPUT_02098 (degree 830), 445970.ALIPUT_01698 (degree 713), 445970.ALIPUT_01701
-	(degree 655), 445970.ALIPUT_00077 (degree 624) and 445970.ALIPUT_02006 (degree 577).
+	The undirected graph Alistipes putredinis has 2704 nodes and 118704 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03248 and has 33 connected components, where the component with most
+	nodes has 2615 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 61, the mean node degree is 87.80, and
+	the node degree mode is 3. The top 5 most central nodes are 445970.ALIPUT_02098
+	(degree 830), 445970.ALIPUT_01698 (degree 713), 445970.ALIPUT_01701 (degree
+	655), 445970.ALIPUT_00077 (degree 624) and 445970.ALIPUT_02006 (degree
+	577).
 	
 
 

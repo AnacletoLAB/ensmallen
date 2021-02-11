@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:47:07.442291
 
-The undirected graph Chitinivibrio alkaliphilus has 2285 nodes and 164013 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06285
-and has 8 connected components, where the component with most nodes has 2264 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 143.56, and the node degree mode is 7. The top 5
-most central nodes are 1313304.CALK_2273 (degree 1034), 1313304.CALK_1824 (degree
-1002), 1313304.CALK_1047 (degree 830), 1313304.CALK_1455 (degree 799) and 1313304.CALK_1643
-(degree 781).
+The undirected graph Chitinivibrio alkaliphilus has 2285 nodes and 164013
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06285 and has 8 connected components, where the component
+with most nodes has 2264 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 143.56,
+and the node degree mode is 7. The top 5 most central nodes are 1313304.CALK_2273
+(degree 1034), 1313304.CALK_1824 (degree 1002), 1313304.CALK_1047 (degree
+830), 1313304.CALK_1455 (degree 799) and 1313304.CALK_1643 (degree 781).
 
 
 References
@@ -107,14 +107,14 @@ def ChitinivibrioAlkaliphilus(
 	
 	Datetime: 2021-02-03 21:47:07.442291
 	
-	The undirected graph Chitinivibrio alkaliphilus has 2285 nodes and 164013 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06285
-	and has 8 connected components, where the component with most nodes has 2264 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 143.56, and the node degree mode is 7. The top 5
-	most central nodes are 1313304.CALK_2273 (degree 1034), 1313304.CALK_1824 (degree
-	1002), 1313304.CALK_1047 (degree 830), 1313304.CALK_1455 (degree 799) and 1313304.CALK_1643
-	(degree 781).
+	The undirected graph Chitinivibrio alkaliphilus has 2285 nodes and 164013
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06285 and has 8 connected components, where the component
+	with most nodes has 2264 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 143.56,
+	and the node degree mode is 7. The top 5 most central nodes are 1313304.CALK_2273
+	(degree 1034), 1313304.CALK_1824 (degree 1002), 1313304.CALK_1047 (degree
+	830), 1313304.CALK_1455 (degree 799) and 1313304.CALK_1643 (degree 781).
 	
 
 

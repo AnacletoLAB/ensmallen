@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:31.262081
 
-The undirected graph Pedobacter saltans has 3765 nodes and 310140 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04377 and
-has 9 connected components, where the component with most nodes has 3746 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 164.75, and the node degree mode is 3. The top 5 most central
-nodes are 762903.Pedsa_2830 (degree 1345), 762903.Pedsa_2411 (degree 1222), 762903.Pedsa_1858
-(degree 1063), 762903.Pedsa_1938 (degree 1021) and 762903.Pedsa_1136 (degree 972).
+The undirected graph Pedobacter saltans has 3765 nodes and 310140 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04377 and has 9 connected components, where the component with most
+nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 164.75, and
+the node degree mode is 3. The top 5 most central nodes are 762903.Pedsa_2830
+(degree 1345), 762903.Pedsa_2411 (degree 1222), 762903.Pedsa_1858 (degree
+1063), 762903.Pedsa_1938 (degree 1021) and 762903.Pedsa_1136 (degree 972).
 
 
 References
@@ -106,13 +107,14 @@ def PedobacterSaltans(
 	
 	Datetime: 2021-02-02 21:42:31.262081
 	
-	The undirected graph Pedobacter saltans has 3765 nodes and 310140 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04377 and
-	has 9 connected components, where the component with most nodes has 3746 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 164.75, and the node degree mode is 3. The top 5 most central
-	nodes are 762903.Pedsa_2830 (degree 1345), 762903.Pedsa_2411 (degree 1222), 762903.Pedsa_1858
-	(degree 1063), 762903.Pedsa_1938 (degree 1021) and 762903.Pedsa_1136 (degree 972).
+	The undirected graph Pedobacter saltans has 3765 nodes and 310140 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04377 and has 9 connected components, where the component with most
+	nodes has 3746 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 164.75, and
+	the node degree mode is 3. The top 5 most central nodes are 762903.Pedsa_2830
+	(degree 1345), 762903.Pedsa_2411 (degree 1222), 762903.Pedsa_1858 (degree
+	1063), 762903.Pedsa_1938 (degree 1021) and 762903.Pedsa_1136 (degree 972).
 	
 
 

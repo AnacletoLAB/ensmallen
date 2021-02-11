@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:02.605769
 
-The undirected graph Alkalibacterium sp. AK22 has 2150 nodes and 175410 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07593
-and has 9 connected components, where the component with most nodes has 2131 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 163.17, and the node degree mode is 2. The top 5
-most central nodes are 1229520.ADIAL_1755 (degree 946), 1229520.ADIAL_1169 (degree
-816), 1229520.ADIAL_0357 (degree 784), 1229520.ADIAL_1079 (degree 725) and 1229520.ADIAL_0254
-(degree 709).
+The undirected graph Alkalibacterium sp. AK22 has 2150 nodes and 175410
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07593 and has 9 connected components, where the component
+with most nodes has 2131 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 163.17,
+and the node degree mode is 2. The top 5 most central nodes are 1229520.ADIAL_1755
+(degree 946), 1229520.ADIAL_1169 (degree 816), 1229520.ADIAL_0357 (degree
+784), 1229520.ADIAL_1079 (degree 725) and 1229520.ADIAL_0254 (degree 709).
 
 
 References
@@ -107,14 +107,14 @@ def AlkalibacteriumSp.Ak22(
 	
 	Datetime: 2021-02-02 23:27:02.605769
 	
-	The undirected graph Alkalibacterium sp. AK22 has 2150 nodes and 175410 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07593
-	and has 9 connected components, where the component with most nodes has 2131 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 163.17, and the node degree mode is 2. The top 5
-	most central nodes are 1229520.ADIAL_1755 (degree 946), 1229520.ADIAL_1169 (degree
-	816), 1229520.ADIAL_0357 (degree 784), 1229520.ADIAL_1079 (degree 725) and 1229520.ADIAL_0254
-	(degree 709).
+	The undirected graph Alkalibacterium sp. AK22 has 2150 nodes and 175410
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07593 and has 9 connected components, where the component
+	with most nodes has 2131 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 163.17,
+	and the node degree mode is 2. The top 5 most central nodes are 1229520.ADIAL_1755
+	(degree 946), 1229520.ADIAL_1169 (degree 816), 1229520.ADIAL_0357 (degree
+	784), 1229520.ADIAL_1079 (degree 725) and 1229520.ADIAL_0254 (degree 709).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:14.738759
 
-The undirected graph Sinorhizobium fredii HH103 has 4073 nodes and 334514 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04034
-and has 22 connected components, where the component with most nodes has 4019 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 125, the mean node degree is 164.26, and the node degree mode is 2. The top 5
-most central nodes are 1117943.SFHH103_03694 (degree 1623), 1117943.SFHH103_00191
-(degree 1461), 1117943.SFHH103_02493 (degree 1406), 1117943.SFHH103_02879 (degree
-1204) and 1117943.SFHH103_03885 (degree 1136).
+The undirected graph Sinorhizobium fredii HH103 has 4073 nodes and 334514
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04034 and has 22 connected components, where the component
+with most nodes has 4019 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 125, the mean node degree is 164.26,
+and the node degree mode is 2. The top 5 most central nodes are 1117943.SFHH103_03694
+(degree 1623), 1117943.SFHH103_00191 (degree 1461), 1117943.SFHH103_02493
+(degree 1406), 1117943.SFHH103_02879 (degree 1204) and 1117943.SFHH103_03885
+(degree 1136).
 
 
 References
@@ -107,14 +108,15 @@ def SinorhizobiumFrediiHh103(
 	
 	Datetime: 2021-02-02 22:28:14.738759
 	
-	The undirected graph Sinorhizobium fredii HH103 has 4073 nodes and 334514 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04034
-	and has 22 connected components, where the component with most nodes has 4019 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 125, the mean node degree is 164.26, and the node degree mode is 2. The top 5
-	most central nodes are 1117943.SFHH103_03694 (degree 1623), 1117943.SFHH103_00191
-	(degree 1461), 1117943.SFHH103_02493 (degree 1406), 1117943.SFHH103_02879 (degree
-	1204) and 1117943.SFHH103_03885 (degree 1136).
+	The undirected graph Sinorhizobium fredii HH103 has 4073 nodes and 334514
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04034 and has 22 connected components, where the component
+	with most nodes has 4019 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 125, the mean node degree is 164.26,
+	and the node degree mode is 2. The top 5 most central nodes are 1117943.SFHH103_03694
+	(degree 1623), 1117943.SFHH103_00191 (degree 1461), 1117943.SFHH103_02493
+	(degree 1406), 1117943.SFHH103_02879 (degree 1204) and 1117943.SFHH103_03885
+	(degree 1136).
 	
 
 

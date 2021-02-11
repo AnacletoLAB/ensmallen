@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:17:01.072723
 
-The undirected graph Nocardia takedensis has 6909 nodes and 1006576 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04218 and
-has 57 connected components, where the component with most nodes has 6769 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 291.38, and the node degree mode is 1. The top 5 most central
-nodes are 1206735.BAGG01000061_gene2551 (degree 2802), 1206735.BAGG01000019_gene870
-(degree 2188), 1206735.BAGG01000031_gene1356 (degree 2146), 1206735.BAGG01000225_gene5670
-(degree 2103) and 1206735.BAGG01000046_gene1973 (degree 2002).
+The undirected graph Nocardia takedensis has 6909 nodes and 1006576 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04218 and has 57 connected components, where the component with most
+nodes has 6769 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 241, the mean node degree is 291.38, and
+the node degree mode is 1. The top 5 most central nodes are 1206735.BAGG01000061_gene2551
+(degree 2802), 1206735.BAGG01000019_gene870 (degree 2188), 1206735.BAGG01000031_gene1356
+(degree 2146), 1206735.BAGG01000225_gene5670 (degree 2103) and 1206735.BAGG01000046_gene1973
+(degree 2002).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaTakedensis(
 	
 	Datetime: 2021-02-02 23:17:01.072723
 	
-	The undirected graph Nocardia takedensis has 6909 nodes and 1006576 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04218 and
-	has 57 connected components, where the component with most nodes has 6769 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 291.38, and the node degree mode is 1. The top 5 most central
-	nodes are 1206735.BAGG01000061_gene2551 (degree 2802), 1206735.BAGG01000019_gene870
-	(degree 2188), 1206735.BAGG01000031_gene1356 (degree 2146), 1206735.BAGG01000225_gene5670
-	(degree 2103) and 1206735.BAGG01000046_gene1973 (degree 2002).
+	The undirected graph Nocardia takedensis has 6909 nodes and 1006576 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04218 and has 57 connected components, where the component with most
+	nodes has 6769 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 241, the mean node degree is 291.38, and
+	the node degree mode is 1. The top 5 most central nodes are 1206735.BAGG01000061_gene2551
+	(degree 2802), 1206735.BAGG01000019_gene870 (degree 2188), 1206735.BAGG01000031_gene1356
+	(degree 2146), 1206735.BAGG01000225_gene5670 (degree 2103) and 1206735.BAGG01000046_gene1973
+	(degree 2002).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:42:02.594981
 
-The undirected graph Lachnospiraceae bacterium 31 has 5014 nodes and 437280 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03479
-and has 25 connected components, where the component with most nodes has 4929 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 174.42, and the node degree mode is 2. The top 5
-most central nodes are 397288.C806_03713 (degree 1523), 397288.C806_01684 (degree
-1465), 397288.C806_03839 (degree 1385), 397288.C806_04212 (degree 1367) and 397288.C806_02769
-(degree 1230).
+The undirected graph Lachnospiraceae bacterium 31 has 5014 nodes and 437280
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03479 and has 25 connected components, where the component
+with most nodes has 4929 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 174.42,
+and the node degree mode is 2. The top 5 most central nodes are 397288.C806_03713
+(degree 1523), 397288.C806_01684 (degree 1465), 397288.C806_03839 (degree
+1385), 397288.C806_04212 (degree 1367) and 397288.C806_02769 (degree 1230).
 
 
 References
@@ -107,14 +107,14 @@ def LachnospiraceaeBacterium31(
 	
 	Datetime: 2021-02-02 20:42:02.594981
 	
-	The undirected graph Lachnospiraceae bacterium 31 has 5014 nodes and 437280 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03479
-	and has 25 connected components, where the component with most nodes has 4929 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 174.42, and the node degree mode is 2. The top 5
-	most central nodes are 397288.C806_03713 (degree 1523), 397288.C806_01684 (degree
-	1465), 397288.C806_03839 (degree 1385), 397288.C806_04212 (degree 1367) and 397288.C806_02769
-	(degree 1230).
+	The undirected graph Lachnospiraceae bacterium 31 has 5014 nodes and 437280
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03479 and has 25 connected components, where the component
+	with most nodes has 4929 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 174.42,
+	and the node degree mode is 2. The top 5 most central nodes are 397288.C806_03713
+	(degree 1523), 397288.C806_01684 (degree 1465), 397288.C806_03839 (degree
+	1385), 397288.C806_04212 (degree 1367) and 397288.C806_02769 (degree 1230).
 	
 
 

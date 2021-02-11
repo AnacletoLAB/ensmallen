@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:19.062567
 
-The undirected graph Johnsonella ignava has 2288 nodes and 163659 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06255 and
-has 11 connected components, where the component with most nodes has 2255 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 143.06, and the node degree mode is 1. The top 5 most central
-nodes are 679200.HMPREF9333_00580 (degree 899), 679200.HMPREF9333_00669 (degree 874),
-679200.HMPREF9333_01885 (degree 704), 679200.HMPREF9333_01656 (degree 690) and 679200.HMPREF9333_00989
+The undirected graph Johnsonella ignava has 2288 nodes and 163659 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06255 and has 11 connected components, where the component with most
+nodes has 2255 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 143.06, and
+the node degree mode is 1. The top 5 most central nodes are 679200.HMPREF9333_00580
+(degree 899), 679200.HMPREF9333_00669 (degree 874), 679200.HMPREF9333_01885
+(degree 704), 679200.HMPREF9333_01656 (degree 690) and 679200.HMPREF9333_00989
 (degree 613).
 
 
@@ -107,13 +108,14 @@ def JohnsonellaIgnava(
 	
 	Datetime: 2021-02-02 21:30:19.062567
 	
-	The undirected graph Johnsonella ignava has 2288 nodes and 163659 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06255 and
-	has 11 connected components, where the component with most nodes has 2255 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 143.06, and the node degree mode is 1. The top 5 most central
-	nodes are 679200.HMPREF9333_00580 (degree 899), 679200.HMPREF9333_00669 (degree 874),
-	679200.HMPREF9333_01885 (degree 704), 679200.HMPREF9333_01656 (degree 690) and 679200.HMPREF9333_00989
+	The undirected graph Johnsonella ignava has 2288 nodes and 163659 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06255 and has 11 connected components, where the component with most
+	nodes has 2255 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 143.06, and
+	the node degree mode is 1. The top 5 most central nodes are 679200.HMPREF9333_00580
+	(degree 899), 679200.HMPREF9333_00669 (degree 874), 679200.HMPREF9333_01885
+	(degree 704), 679200.HMPREF9333_01656 (degree 690) and 679200.HMPREF9333_00989
 	(degree 613).
 	
 

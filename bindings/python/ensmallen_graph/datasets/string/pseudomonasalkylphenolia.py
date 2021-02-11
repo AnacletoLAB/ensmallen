@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:08:26.593014
 
-The undirected graph Pseudomonas alkylphenolia has 5138 nodes and 464768 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03522
-and has 23 connected components, where the component with most nodes has 5087 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 180.91, and the node degree mode is 1. The top 5
-most central nodes are 237609.PSAKL28_01060 (degree 2034), 237609.PSAKL28_26310 (degree
-1383), 237609.PSAKL28_49660 (degree 1382), 237609.PSAKL28_42050 (degree 1328) and
-237609.PSAKL28_07050 (degree 1316).
+The undirected graph Pseudomonas alkylphenolia has 5138 nodes and 464768
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03522 and has 23 connected components, where the component
+with most nodes has 5087 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 180.91,
+and the node degree mode is 1. The top 5 most central nodes are 237609.PSAKL28_01060
+(degree 2034), 237609.PSAKL28_26310 (degree 1383), 237609.PSAKL28_49660
+(degree 1382), 237609.PSAKL28_42050 (degree 1328) and 237609.PSAKL28_07050
+(degree 1316).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasAlkylphenolia(
 	
 	Datetime: 2021-02-02 20:08:26.593014
 	
-	The undirected graph Pseudomonas alkylphenolia has 5138 nodes and 464768 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03522
-	and has 23 connected components, where the component with most nodes has 5087 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 180.91, and the node degree mode is 1. The top 5
-	most central nodes are 237609.PSAKL28_01060 (degree 2034), 237609.PSAKL28_26310 (degree
-	1383), 237609.PSAKL28_49660 (degree 1382), 237609.PSAKL28_42050 (degree 1328) and
-	237609.PSAKL28_07050 (degree 1316).
+	The undirected graph Pseudomonas alkylphenolia has 5138 nodes and 464768
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03522 and has 23 connected components, where the component
+	with most nodes has 5087 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 180.91,
+	and the node degree mode is 1. The top 5 most central nodes are 237609.PSAKL28_01060
+	(degree 2034), 237609.PSAKL28_26310 (degree 1383), 237609.PSAKL28_49660
+	(degree 1382), 237609.PSAKL28_42050 (degree 1328) and 237609.PSAKL28_07050
+	(degree 1316).
 	
 
 

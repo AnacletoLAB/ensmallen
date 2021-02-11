@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:44.312995
 
-The undirected graph Peptoniphilus harei has 1713 nodes and 129799 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08852 and
-is connected, as it has a single component. The graph median node degree is 131,
-the mean node degree is 151.55, and the node degree mode is 4. The top 5 most central
-nodes are 908338.HMPREF9286_0040 (degree 759), 908338.HMPREF9286_0774 (degree 730),
-908338.HMPREF9286_1211 (degree 675), 908338.HMPREF9286_1765 (degree 660) and 908338.HMPREF9286_0585
-(degree 626).
+The undirected graph Peptoniphilus harei has 1713 nodes and 129799 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08852 and is connected, as it has a single component. The graph median
+node degree is 131, the mean node degree is 151.55, and the node degree
+mode is 4. The top 5 most central nodes are 908338.HMPREF9286_0040 (degree
+759), 908338.HMPREF9286_0774 (degree 730), 908338.HMPREF9286_1211 (degree
+675), 908338.HMPREF9286_1765 (degree 660) and 908338.HMPREF9286_0585 (degree
+626).
 
 
 References
@@ -106,13 +107,14 @@ def PeptoniphilusHarei(
 	
 	Datetime: 2021-02-02 21:54:44.312995
 	
-	The undirected graph Peptoniphilus harei has 1713 nodes and 129799 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08852 and
-	is connected, as it has a single component. The graph median node degree is 131,
-	the mean node degree is 151.55, and the node degree mode is 4. The top 5 most central
-	nodes are 908338.HMPREF9286_0040 (degree 759), 908338.HMPREF9286_0774 (degree 730),
-	908338.HMPREF9286_1211 (degree 675), 908338.HMPREF9286_1765 (degree 660) and 908338.HMPREF9286_0585
-	(degree 626).
+	The undirected graph Peptoniphilus harei has 1713 nodes and 129799 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08852 and is connected, as it has a single component. The graph median
+	node degree is 131, the mean node degree is 151.55, and the node degree
+	mode is 4. The top 5 most central nodes are 908338.HMPREF9286_0040 (degree
+	759), 908338.HMPREF9286_0774 (degree 730), 908338.HMPREF9286_1211 (degree
+	675), 908338.HMPREF9286_1765 (degree 660) and 908338.HMPREF9286_0585 (degree
+	626).
 	
 
 

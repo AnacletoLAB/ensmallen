@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:40.427937
 
-The undirected graph Frankia sp. Iso899 has 4795 nodes and 469997 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04089 and
-has 31 connected components, where the component with most nodes has 4721 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 160,
-the mean node degree is 196.04, and the node degree mode is 2. The top 5 most central
-nodes are 1283283.ATXA01000004_gene4253 (degree 1304), 1283283.ATXA01000003_gene1361
-(degree 1268), 1283283.ATXA01000052_gene4087 (degree 1221), 1283283.ATXA01000001_gene791
-(degree 1190) and 1283283.ATXA01000007_gene3911 (degree 1168).
+The undirected graph Frankia sp. Iso899 has 4795 nodes and 469997 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04089 and has 31 connected components, where the component with most
+nodes has 4721 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 160, the mean node degree is 196.04, and
+the node degree mode is 2. The top 5 most central nodes are 1283283.ATXA01000004_gene4253
+(degree 1304), 1283283.ATXA01000003_gene1361 (degree 1268), 1283283.ATXA01000052_gene4087
+(degree 1221), 1283283.ATXA01000001_gene791 (degree 1190) and 1283283.ATXA01000007_gene3911
+(degree 1168).
 
 
 References
@@ -107,14 +108,15 @@ def FrankiaSp.Iso899(
 	
 	Datetime: 2021-02-03 21:12:40.427937
 	
-	The undirected graph Frankia sp. Iso899 has 4795 nodes and 469997 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04089 and
-	has 31 connected components, where the component with most nodes has 4721 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 160,
-	the mean node degree is 196.04, and the node degree mode is 2. The top 5 most central
-	nodes are 1283283.ATXA01000004_gene4253 (degree 1304), 1283283.ATXA01000003_gene1361
-	(degree 1268), 1283283.ATXA01000052_gene4087 (degree 1221), 1283283.ATXA01000001_gene791
-	(degree 1190) and 1283283.ATXA01000007_gene3911 (degree 1168).
+	The undirected graph Frankia sp. Iso899 has 4795 nodes and 469997 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04089 and has 31 connected components, where the component with most
+	nodes has 4721 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 160, the mean node degree is 196.04, and
+	the node degree mode is 2. The top 5 most central nodes are 1283283.ATXA01000004_gene4253
+	(degree 1304), 1283283.ATXA01000003_gene1361 (degree 1268), 1283283.ATXA01000052_gene4087
+	(degree 1221), 1283283.ATXA01000001_gene791 (degree 1190) and 1283283.ATXA01000007_gene3911
+	(degree 1168).
 	
 
 

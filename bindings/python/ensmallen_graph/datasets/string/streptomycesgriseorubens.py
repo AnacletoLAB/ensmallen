@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:26:24.588385
 
-The undirected graph Streptomyces griseorubens has 6548 nodes and 959329 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04476
-and has 30 connected components, where the component with most nodes has 6482 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 243, the mean node degree is 293.01, and the node degree mode is 1. The top 5
-most central nodes are 66897.DJ64_13845 (degree 3127), 66897.DJ64_33745 (degree 2177),
-66897.DJ64_29645 (degree 2058), 66897.DJ64_14740 (degree 2038) and 66897.DJ64_31935
-(degree 1900).
+The undirected graph Streptomyces griseorubens has 6548 nodes and 959329
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04476 and has 30 connected components, where the component
+with most nodes has 6482 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 243, the mean node degree is 293.01,
+and the node degree mode is 1. The top 5 most central nodes are 66897.DJ64_13845
+(degree 3127), 66897.DJ64_33745 (degree 2177), 66897.DJ64_29645 (degree
+2058), 66897.DJ64_14740 (degree 2038) and 66897.DJ64_31935 (degree 1900).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesGriseorubens(
 	
 	Datetime: 2021-02-02 18:26:24.588385
 	
-	The undirected graph Streptomyces griseorubens has 6548 nodes and 959329 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04476
-	and has 30 connected components, where the component with most nodes has 6482 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 243, the mean node degree is 293.01, and the node degree mode is 1. The top 5
-	most central nodes are 66897.DJ64_13845 (degree 3127), 66897.DJ64_33745 (degree 2177),
-	66897.DJ64_29645 (degree 2058), 66897.DJ64_14740 (degree 2038) and 66897.DJ64_31935
-	(degree 1900).
+	The undirected graph Streptomyces griseorubens has 6548 nodes and 959329
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04476 and has 30 connected components, where the component
+	with most nodes has 6482 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 243, the mean node degree is 293.01,
+	and the node degree mode is 1. The top 5 most central nodes are 66897.DJ64_13845
+	(degree 3127), 66897.DJ64_33745 (degree 2177), 66897.DJ64_29645 (degree
+	2058), 66897.DJ64_14740 (degree 2038) and 66897.DJ64_31935 (degree 1900).
 	
 
 

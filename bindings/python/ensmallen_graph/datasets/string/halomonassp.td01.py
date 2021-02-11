@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:05:44.423135
 
-The undirected graph Halomonas sp. TD01 has 3798 nodes and 517644 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07179 and
-has 8 connected components, where the component with most nodes has 3780 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 245,
-the mean node degree is 272.59, and the node degree mode is 2. The top 5 most central
-nodes are 999141.GME_00050 (degree 1656), 999141.GME_18363 (degree 1593), 999141.GME_05120
-(degree 1402), 999141.GME_17522 (degree 1296) and 999141.GME_17657 (degree 1248).
+The undirected graph Halomonas sp. TD01 has 3798 nodes and 517644 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07179 and has 8 connected components, where the component with most
+nodes has 3780 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 245, the mean node degree is 272.59, and
+the node degree mode is 2. The top 5 most central nodes are 999141.GME_00050
+(degree 1656), 999141.GME_18363 (degree 1593), 999141.GME_05120 (degree
+1402), 999141.GME_17522 (degree 1296) and 999141.GME_17657 (degree 1248).
 
 
 References
@@ -106,13 +107,14 @@ def HalomonasSp.Td01(
 	
 	Datetime: 2021-02-02 22:05:44.423135
 	
-	The undirected graph Halomonas sp. TD01 has 3798 nodes and 517644 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07179 and
-	has 8 connected components, where the component with most nodes has 3780 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 245,
-	the mean node degree is 272.59, and the node degree mode is 2. The top 5 most central
-	nodes are 999141.GME_00050 (degree 1656), 999141.GME_18363 (degree 1593), 999141.GME_05120
-	(degree 1402), 999141.GME_17522 (degree 1296) and 999141.GME_17657 (degree 1248).
+	The undirected graph Halomonas sp. TD01 has 3798 nodes and 517644 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07179 and has 8 connected components, where the component with most
+	nodes has 3780 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 245, the mean node degree is 272.59, and
+	the node degree mode is 2. The top 5 most central nodes are 999141.GME_00050
+	(degree 1656), 999141.GME_18363 (degree 1593), 999141.GME_05120 (degree
+	1402), 999141.GME_17522 (degree 1296) and 999141.GME_17657 (degree 1248).
 	
 
 

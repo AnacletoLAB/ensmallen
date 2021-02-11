@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:16.796702
 
-The undirected graph Chryseobacterium hispalense has 3901 nodes and 272947 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03588
-and has 27 connected components, where the component with most nodes has 3830 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 139.94, and the node degree mode is 5. The top 5
-most central nodes are 491205.JARQ01000006_gene2884 (degree 1071), 491205.JARQ01000006_gene2914
-(degree 956), 491205.JARQ01000004_gene2610 (degree 925), 491205.JARQ01000007_gene3239
-(degree 834) and 491205.JARQ01000003_gene2023 (degree 790).
+The undirected graph Chryseobacterium hispalense has 3901 nodes and 272947
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03588 and has 27 connected components, where the component
+with most nodes has 3830 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 139.94,
+and the node degree mode is 5. The top 5 most central nodes are 491205.JARQ01000006_gene2884
+(degree 1071), 491205.JARQ01000006_gene2914 (degree 956), 491205.JARQ01000004_gene2610
+(degree 925), 491205.JARQ01000007_gene3239 (degree 834) and 491205.JARQ01000003_gene2023
+(degree 790).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumHispalense(
 	
 	Datetime: 2021-02-02 21:00:16.796702
 	
-	The undirected graph Chryseobacterium hispalense has 3901 nodes and 272947 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03588
-	and has 27 connected components, where the component with most nodes has 3830 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 139.94, and the node degree mode is 5. The top 5
-	most central nodes are 491205.JARQ01000006_gene2884 (degree 1071), 491205.JARQ01000006_gene2914
-	(degree 956), 491205.JARQ01000004_gene2610 (degree 925), 491205.JARQ01000007_gene3239
-	(degree 834) and 491205.JARQ01000003_gene2023 (degree 790).
+	The undirected graph Chryseobacterium hispalense has 3901 nodes and 272947
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03588 and has 27 connected components, where the component
+	with most nodes has 3830 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 139.94,
+	and the node degree mode is 5. The top 5 most central nodes are 491205.JARQ01000006_gene2884
+	(degree 1071), 491205.JARQ01000006_gene2914 (degree 956), 491205.JARQ01000004_gene2610
+	(degree 925), 491205.JARQ01000007_gene3239 (degree 834) and 491205.JARQ01000003_gene2023
+	(degree 790).
 	
 
 

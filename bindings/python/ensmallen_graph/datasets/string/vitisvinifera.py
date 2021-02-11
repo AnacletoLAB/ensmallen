@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:00:45.236747
 
-The undirected graph Vitis vinifera has 23351 nodes and 4169489 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.01529 and
-has 4 connected components, where the component with most nodes has 23344 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 167,
-the mean node degree is 357.11, and the node degree mode is 4. The top 5 most central
-nodes are 29760.VIT_11s0016g03430.t01 (degree 7668), 29760.VIT_08s0007g05910.t01
-(degree 5740), 29760.VIT_18s0089g00590.t01 (degree 5398), 29760.VIT_02s0012g00960.t01
-(degree 4921) and 29760.VIT_08s0040g01440.t01 (degree 4833).
+The undirected graph Vitis vinifera has 23351 nodes and 4169489 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01529 and has 4 connected components, where the component with most
+nodes has 23344 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 167, the mean node degree is 357.11, and
+the node degree mode is 4. The top 5 most central nodes are 29760.VIT_11s0016g03430.t01
+(degree 7668), 29760.VIT_08s0007g05910.t01 (degree 5740), 29760.VIT_18s0089g00590.t01
+(degree 5398), 29760.VIT_02s0012g00960.t01 (degree 4921) and 29760.VIT_08s0040g01440.t01
+(degree 4833).
 
 
 References
@@ -107,14 +108,15 @@ def VitisVinifera(
 	
 	Datetime: 2021-02-02 18:00:45.236747
 	
-	The undirected graph Vitis vinifera has 23351 nodes and 4169489 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.01529 and
-	has 4 connected components, where the component with most nodes has 23344 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 167,
-	the mean node degree is 357.11, and the node degree mode is 4. The top 5 most central
-	nodes are 29760.VIT_11s0016g03430.t01 (degree 7668), 29760.VIT_08s0007g05910.t01
-	(degree 5740), 29760.VIT_18s0089g00590.t01 (degree 5398), 29760.VIT_02s0012g00960.t01
-	(degree 4921) and 29760.VIT_08s0040g01440.t01 (degree 4833).
+	The undirected graph Vitis vinifera has 23351 nodes and 4169489 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01529 and has 4 connected components, where the component with most
+	nodes has 23344 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 167, the mean node degree is 357.11, and
+	the node degree mode is 4. The top 5 most central nodes are 29760.VIT_11s0016g03430.t01
+	(degree 7668), 29760.VIT_08s0007g05910.t01 (degree 5740), 29760.VIT_18s0089g00590.t01
+	(degree 5398), 29760.VIT_02s0012g00960.t01 (degree 4921) and 29760.VIT_08s0040g01440.t01
+	(degree 4833).
 	
 
 

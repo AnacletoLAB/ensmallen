@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:49.538485
 
-The undirected graph lshp2233 has 2233 nodes and 8785 unweighted edges, of which
-2233 are self-loops. The graph is sparse as it has a density of 0.00308 and is connected,
-as it has a single component. The graph median node degree is 7, the mean node degree
-is 6.87, and the node degree mode is 7. The top 5 most central nodes are 2229 (degree
-7), 2226 (degree 7), 2225 (degree 7), 2222 (degree 7) and 2221 (degree 7).
+The undirected graph lshp2233 has 2233 nodes and 8785 unweighted edges,
+of which 2233 are self-loops. The graph is sparse as it has a density of
+0.00308 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 6.87, and the node degree mode
+is 7. The top 5 most central nodes are 2229 (degree 7), 2226 (degree 7),
+2225 (degree 7), 2222 (degree 7) and 2221 (degree 7).
 
 
 References
@@ -101,11 +102,12 @@ def Lshp2233(
 	
 	Datetime: 2021-02-06 08:13:49.538485
 	
-	The undirected graph lshp2233 has 2233 nodes and 8785 unweighted edges, of which
-	2233 are self-loops. The graph is sparse as it has a density of 0.00308 and is connected,
-	as it has a single component. The graph median node degree is 7, the mean node degree
-	is 6.87, and the node degree mode is 7. The top 5 most central nodes are 2229 (degree
-	7), 2226 (degree 7), 2225 (degree 7), 2222 (degree 7) and 2221 (degree 7).
+	The undirected graph lshp2233 has 2233 nodes and 8785 unweighted edges,
+	of which 2233 are self-loops. The graph is sparse as it has a density of
+	0.00308 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 6.87, and the node degree mode
+	is 7. The top 5 most central nodes are 2229 (degree 7), 2226 (degree 7),
+	2225 (degree 7), 2222 (degree 7) and 2221 (degree 7).
 	
 
 

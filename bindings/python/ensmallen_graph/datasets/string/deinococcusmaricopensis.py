@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:34:36.745647
 
-The undirected graph Deinococcus maricopensis has 3245 nodes and 204567 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03887
-and has 11 connected components, where the component with most nodes has 3216 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 93, the mean node degree is 126.08, and the node degree mode is 3. The top 5 most
-central nodes are 709986.Deima_2224 (degree 1314), 709986.Deima_1440 (degree 1286),
-709986.Deima_2345 (degree 1091), 709986.Deima_1639 (degree 971) and 709986.Deima_1277
-(degree 951).
+The undirected graph Deinococcus maricopensis has 3245 nodes and 204567
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03887 and has 11 connected components, where the component
+with most nodes has 3216 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 93, the mean node degree is 126.08,
+and the node degree mode is 3. The top 5 most central nodes are 709986.Deima_2224
+(degree 1314), 709986.Deima_1440 (degree 1286), 709986.Deima_2345 (degree
+1091), 709986.Deima_1639 (degree 971) and 709986.Deima_1277 (degree 951).
 
 
 References
@@ -107,14 +107,14 @@ def DeinococcusMaricopensis(
 	
 	Datetime: 2021-02-02 21:34:36.745647
 	
-	The undirected graph Deinococcus maricopensis has 3245 nodes and 204567 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03887
-	and has 11 connected components, where the component with most nodes has 3216 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 93, the mean node degree is 126.08, and the node degree mode is 3. The top 5 most
-	central nodes are 709986.Deima_2224 (degree 1314), 709986.Deima_1440 (degree 1286),
-	709986.Deima_2345 (degree 1091), 709986.Deima_1639 (degree 971) and 709986.Deima_1277
-	(degree 951).
+	The undirected graph Deinococcus maricopensis has 3245 nodes and 204567
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03887 and has 11 connected components, where the component
+	with most nodes has 3216 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 93, the mean node degree is 126.08,
+	and the node degree mode is 3. The top 5 most central nodes are 709986.Deima_2224
+	(degree 1314), 709986.Deima_1440 (degree 1286), 709986.Deima_2345 (degree
+	1091), 709986.Deima_1639 (degree 971) and 709986.Deima_1277 (degree 951).
 	
 
 

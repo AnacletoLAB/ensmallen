@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:56.966279
 
-The undirected graph Ferrimicrobium acidiphilum has 2564 nodes and 143979 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04382
-and has 34 connected components, where the component with most nodes has 2487 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 89, the mean node degree is 112.31, and the node degree mode is 2. The top 5 most
-central nodes are 1121877.JQKF01000018_gene2561 (degree 730), 1121877.JQKF01000006_gene910
-(degree 660), 1121877.JQKF01000022_gene2267 (degree 659), 1121877.JQKF01000004_gene1101
-(degree 613) and 1121877.JQKF01000011_gene362 (degree 603).
+The undirected graph Ferrimicrobium acidiphilum has 2564 nodes and 143979
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04382 and has 34 connected components, where the component
+with most nodes has 2487 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 89, the mean node degree is 112.31,
+and the node degree mode is 2. The top 5 most central nodes are 1121877.JQKF01000018_gene2561
+(degree 730), 1121877.JQKF01000006_gene910 (degree 660), 1121877.JQKF01000022_gene2267
+(degree 659), 1121877.JQKF01000004_gene1101 (degree 613) and 1121877.JQKF01000011_gene362
+(degree 603).
 
 
 References
@@ -107,14 +108,15 @@ def FerrimicrobiumAcidiphilum(
 	
 	Datetime: 2021-02-02 22:37:56.966279
 	
-	The undirected graph Ferrimicrobium acidiphilum has 2564 nodes and 143979 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04382
-	and has 34 connected components, where the component with most nodes has 2487 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 89, the mean node degree is 112.31, and the node degree mode is 2. The top 5 most
-	central nodes are 1121877.JQKF01000018_gene2561 (degree 730), 1121877.JQKF01000006_gene910
-	(degree 660), 1121877.JQKF01000022_gene2267 (degree 659), 1121877.JQKF01000004_gene1101
-	(degree 613) and 1121877.JQKF01000011_gene362 (degree 603).
+	The undirected graph Ferrimicrobium acidiphilum has 2564 nodes and 143979
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04382 and has 34 connected components, where the component
+	with most nodes has 2487 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 89, the mean node degree is 112.31,
+	and the node degree mode is 2. The top 5 most central nodes are 1121877.JQKF01000018_gene2561
+	(degree 730), 1121877.JQKF01000006_gene910 (degree 660), 1121877.JQKF01000022_gene2267
+	(degree 659), 1121877.JQKF01000004_gene1101 (degree 613) and 1121877.JQKF01000011_gene362
+	(degree 603).
 	
 
 

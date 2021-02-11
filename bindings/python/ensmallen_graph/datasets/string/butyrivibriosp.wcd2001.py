@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:06:47.133861
 
-The undirected graph Butyrivibrio sp. WCD2001 has 3794 nodes and 333597 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-and has 13 connected components, where the component with most nodes has 3766 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 175.86, and the node degree mode is 4. The top 5
-most central nodes are 1280681.AUJZ01000002_gene1374 (degree 1393), 1280681.AUJZ01000001_gene636
-(degree 1354), 1280681.AUJZ01000008_gene317 (degree 1240), 1280681.AUJZ01000007_gene1674
-(degree 1139) and 1280681.AUJZ01000002_gene1220 (degree 1109).
+The undirected graph Butyrivibrio sp. WCD2001 has 3794 nodes and 333597
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04636 and has 13 connected components, where the component
+with most nodes has 3766 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 175.86,
+and the node degree mode is 4. The top 5 most central nodes are 1280681.AUJZ01000002_gene1374
+(degree 1393), 1280681.AUJZ01000001_gene636 (degree 1354), 1280681.AUJZ01000008_gene317
+(degree 1240), 1280681.AUJZ01000007_gene1674 (degree 1139) and 1280681.AUJZ01000002_gene1220
+(degree 1109).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioSp.Wcd2001(
 	
 	Datetime: 2021-02-03 21:06:47.133861
 	
-	The undirected graph Butyrivibrio sp. WCD2001 has 3794 nodes and 333597 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04636
-	and has 13 connected components, where the component with most nodes has 3766 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 175.86, and the node degree mode is 4. The top 5
-	most central nodes are 1280681.AUJZ01000002_gene1374 (degree 1393), 1280681.AUJZ01000001_gene636
-	(degree 1354), 1280681.AUJZ01000008_gene317 (degree 1240), 1280681.AUJZ01000007_gene1674
-	(degree 1139) and 1280681.AUJZ01000002_gene1220 (degree 1109).
+	The undirected graph Butyrivibrio sp. WCD2001 has 3794 nodes and 333597
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04636 and has 13 connected components, where the component
+	with most nodes has 3766 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 175.86,
+	and the node degree mode is 4. The top 5 most central nodes are 1280681.AUJZ01000002_gene1374
+	(degree 1393), 1280681.AUJZ01000001_gene636 (degree 1354), 1280681.AUJZ01000008_gene317
+	(degree 1240), 1280681.AUJZ01000007_gene1674 (degree 1139) and 1280681.AUJZ01000002_gene1220
+	(degree 1109).
 	
 
 

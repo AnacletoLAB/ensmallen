@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:59:44.950675
 
-The undirected graph Pseudomonas cichorii has 5102 nodes and 446170 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03429 and
-has 19 connected components, where the component with most nodes has 5061 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 142,
-the mean node degree is 174.90, and the node degree mode is 3. The top 5 most central
-nodes are 1441629.PCH70_00390 (degree 1742), 1441629.PCH70_24310 (degree 1276), 1441629.PCH70_21680
-(degree 1266), 1441629.PCH70_11590 (degree 1261) and 1441629.PCH70_03910 (degree
+The undirected graph Pseudomonas cichorii has 5102 nodes and 446170 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03429 and has 19 connected components, where the component with most
+nodes has 5061 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 142, the mean node degree is 174.90, and
+the node degree mode is 3. The top 5 most central nodes are 1441629.PCH70_00390
+(degree 1742), 1441629.PCH70_24310 (degree 1276), 1441629.PCH70_21680 (degree
+1266), 1441629.PCH70_11590 (degree 1261) and 1441629.PCH70_03910 (degree
 1244).
 
 
@@ -107,13 +108,14 @@ def PseudomonasCichorii(
 	
 	Datetime: 2021-02-03 22:59:44.950675
 	
-	The undirected graph Pseudomonas cichorii has 5102 nodes and 446170 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03429 and
-	has 19 connected components, where the component with most nodes has 5061 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 142,
-	the mean node degree is 174.90, and the node degree mode is 3. The top 5 most central
-	nodes are 1441629.PCH70_00390 (degree 1742), 1441629.PCH70_24310 (degree 1276), 1441629.PCH70_21680
-	(degree 1266), 1441629.PCH70_11590 (degree 1261) and 1441629.PCH70_03910 (degree
+	The undirected graph Pseudomonas cichorii has 5102 nodes and 446170 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03429 and has 19 connected components, where the component with most
+	nodes has 5061 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 142, the mean node degree is 174.90, and
+	the node degree mode is 3. The top 5 most central nodes are 1441629.PCH70_00390
+	(degree 1742), 1441629.PCH70_24310 (degree 1276), 1441629.PCH70_21680 (degree
+	1266), 1441629.PCH70_11590 (degree 1261) and 1441629.PCH70_03910 (degree
 	1244).
 	
 

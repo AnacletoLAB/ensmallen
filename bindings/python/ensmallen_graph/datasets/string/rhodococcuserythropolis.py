@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:48.207323
 
-The undirected graph Rhodococcus erythropolis has 6111 nodes and 1133055 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06069
-and has 20 connected components, where the component with most nodes has 6062 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 295, the mean node degree is 370.82, and the node degree mode is 3. The top 5
-most central nodes are 234621.RER_38730 (degree 2582), 234621.RER_33220 (degree 2208),
-234621.RER_19380 (degree 2071), 234621.RER_32690 (degree 2037) and 234621.RER_08140
-(degree 1996).
+The undirected graph Rhodococcus erythropolis has 6111 nodes and 1133055
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06069 and has 20 connected components, where the component
+with most nodes has 6062 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 295, the mean node degree is 370.82,
+and the node degree mode is 3. The top 5 most central nodes are 234621.RER_38730
+(degree 2582), 234621.RER_33220 (degree 2208), 234621.RER_19380 (degree
+2071), 234621.RER_32690 (degree 2037) and 234621.RER_08140 (degree 1996).
 
 
 References
@@ -107,14 +107,14 @@ def RhodococcusErythropolis(
 	
 	Datetime: 2021-02-02 20:07:48.207323
 	
-	The undirected graph Rhodococcus erythropolis has 6111 nodes and 1133055 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06069
-	and has 20 connected components, where the component with most nodes has 6062 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 295, the mean node degree is 370.82, and the node degree mode is 3. The top 5
-	most central nodes are 234621.RER_38730 (degree 2582), 234621.RER_33220 (degree 2208),
-	234621.RER_19380 (degree 2071), 234621.RER_32690 (degree 2037) and 234621.RER_08140
-	(degree 1996).
+	The undirected graph Rhodococcus erythropolis has 6111 nodes and 1133055
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06069 and has 20 connected components, where the component
+	with most nodes has 6062 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 295, the mean node degree is 370.82,
+	and the node degree mode is 3. The top 5 most central nodes are 234621.RER_38730
+	(degree 2582), 234621.RER_33220 (degree 2208), 234621.RER_19380 (degree
+	2071), 234621.RER_32690 (degree 2037) and 234621.RER_08140 (degree 1996).
 	
 
 

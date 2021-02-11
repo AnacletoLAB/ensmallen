@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:12:47.920577
 
-The undirected graph Psychrobacter arcticus has 2111 nodes and 162869 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07313 and
-has 7 connected components, where the component with most nodes has 2098 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 154.31, and the node degree mode is 1. The top 5 most central
-nodes are 259536.Psyc_0378 (degree 851), 259536.Psyc_0009 (degree 727), 259536.Psyc_0347
-(degree 724), 259536.Psyc_1432 (degree 681) and 259536.Psyc_2138 (degree 667).
+The undirected graph Psychrobacter arcticus has 2111 nodes and 162869 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07313 and has 7 connected components, where the component with most
+nodes has 2098 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 154.31, and
+the node degree mode is 1. The top 5 most central nodes are 259536.Psyc_0378
+(degree 851), 259536.Psyc_0009 (degree 727), 259536.Psyc_0347 (degree 724),
+259536.Psyc_1432 (degree 681) and 259536.Psyc_2138 (degree 667).
 
 
 References
@@ -106,13 +107,14 @@ def PsychrobacterArcticus(
 	
 	Datetime: 2021-02-02 20:12:47.920577
 	
-	The undirected graph Psychrobacter arcticus has 2111 nodes and 162869 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07313 and
-	has 7 connected components, where the component with most nodes has 2098 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 154.31, and the node degree mode is 1. The top 5 most central
-	nodes are 259536.Psyc_0378 (degree 851), 259536.Psyc_0009 (degree 727), 259536.Psyc_0347
-	(degree 724), 259536.Psyc_1432 (degree 681) and 259536.Psyc_2138 (degree 667).
+	The undirected graph Psychrobacter arcticus has 2111 nodes and 162869 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07313 and has 7 connected components, where the component with most
+	nodes has 2098 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 154.31, and
+	the node degree mode is 1. The top 5 most central nodes are 259536.Psyc_0378
+	(degree 851), 259536.Psyc_0009 (degree 727), 259536.Psyc_0347 (degree 724),
+	259536.Psyc_1432 (degree 681) and 259536.Psyc_2138 (degree 667).
 	
 
 

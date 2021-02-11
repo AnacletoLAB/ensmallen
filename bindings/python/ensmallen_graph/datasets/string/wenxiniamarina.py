@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:55.052325
 
-The undirected graph Wenxinia marina has 3914 nodes and 450671 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05885 and
-has 5 connected components, where the component with most nodes has 3906 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 204,
-the mean node degree is 230.29, and the node degree mode is 1. The top 5 most central
-nodes are 1123501.KB902286_gene2062 (degree 1189), 1123501.KB902281_gene396 (degree
-984), 1123501.KB902288_gene1679 (degree 978), 1123501.KB902277_gene989 (degree 974)
-and 1123501.KB902313_gene2907 (degree 957).
+The undirected graph Wenxinia marina has 3914 nodes and 450671 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05885 and has 5 connected components, where the component with most
+nodes has 3906 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 204, the mean node degree is 230.29, and
+the node degree mode is 1. The top 5 most central nodes are 1123501.KB902286_gene2062
+(degree 1189), 1123501.KB902281_gene396 (degree 984), 1123501.KB902288_gene1679
+(degree 978), 1123501.KB902277_gene989 (degree 974) and 1123501.KB902313_gene2907
+(degree 957).
 
 
 References
@@ -107,14 +108,15 @@ def WenxiniaMarina(
 	
 	Datetime: 2021-02-02 22:52:55.052325
 	
-	The undirected graph Wenxinia marina has 3914 nodes and 450671 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05885 and
-	has 5 connected components, where the component with most nodes has 3906 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 204,
-	the mean node degree is 230.29, and the node degree mode is 1. The top 5 most central
-	nodes are 1123501.KB902286_gene2062 (degree 1189), 1123501.KB902281_gene396 (degree
-	984), 1123501.KB902288_gene1679 (degree 978), 1123501.KB902277_gene989 (degree 974)
-	and 1123501.KB902313_gene2907 (degree 957).
+	The undirected graph Wenxinia marina has 3914 nodes and 450671 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05885 and has 5 connected components, where the component with most
+	nodes has 3906 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 204, the mean node degree is 230.29, and
+	the node degree mode is 1. The top 5 most central nodes are 1123501.KB902286_gene2062
+	(degree 1189), 1123501.KB902281_gene396 (degree 984), 1123501.KB902288_gene1679
+	(degree 978), 1123501.KB902277_gene989 (degree 974) and 1123501.KB902313_gene2907
+	(degree 957).
 	
 
 

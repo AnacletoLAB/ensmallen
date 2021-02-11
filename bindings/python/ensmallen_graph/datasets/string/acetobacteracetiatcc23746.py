@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:50.665922
 
-The undirected graph Acetobacter aceti ATCC23746 has 3149 nodes and 288479 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05820
-and has 10 connected components, where the component with most nodes has 3118 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 149, the mean node degree is 183.22, and the node degree mode is 6. The top 5
-most central nodes are 663932.KB902575_gene260 (degree 1264), 663932.KB902575_gene2314
-(degree 1161), 663932.KB902575_gene1363 (degree 980), 663932.KB902575_gene655 (degree
-974) and 663932.KB902575_gene3129 (degree 963).
+The undirected graph Acetobacter aceti ATCC23746 has 3149 nodes and 288479
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05820 and has 10 connected components, where the component
+with most nodes has 3118 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 149, the mean node degree is 183.22,
+and the node degree mode is 6. The top 5 most central nodes are 663932.KB902575_gene260
+(degree 1264), 663932.KB902575_gene2314 (degree 1161), 663932.KB902575_gene1363
+(degree 980), 663932.KB902575_gene655 (degree 974) and 663932.KB902575_gene3129
+(degree 963).
 
 
 References
@@ -107,14 +108,15 @@ def AcetobacterAcetiAtcc23746(
 	
 	Datetime: 2021-02-02 21:27:50.665922
 	
-	The undirected graph Acetobacter aceti ATCC23746 has 3149 nodes and 288479 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05820
-	and has 10 connected components, where the component with most nodes has 3118 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 149, the mean node degree is 183.22, and the node degree mode is 6. The top 5
-	most central nodes are 663932.KB902575_gene260 (degree 1264), 663932.KB902575_gene2314
-	(degree 1161), 663932.KB902575_gene1363 (degree 980), 663932.KB902575_gene655 (degree
-	974) and 663932.KB902575_gene3129 (degree 963).
+	The undirected graph Acetobacter aceti ATCC23746 has 3149 nodes and 288479
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05820 and has 10 connected components, where the component
+	with most nodes has 3118 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 149, the mean node degree is 183.22,
+	and the node degree mode is 6. The top 5 most central nodes are 663932.KB902575_gene260
+	(degree 1264), 663932.KB902575_gene2314 (degree 1161), 663932.KB902575_gene1363
+	(degree 980), 663932.KB902575_gene655 (degree 974) and 663932.KB902575_gene3129
+	(degree 963).
 	
 
 

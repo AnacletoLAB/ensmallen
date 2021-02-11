@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:21.549681
 
-The undirected graph Neisseria flavescens NRL30031H210 has 2470 nodes and 168196
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05516 and has 14 connected components, where the component with most nodes has
-2438 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 122, the mean node degree is 136.19, and the node degree mode is 3. The
-top 5 most central nodes are 546264.NEIFLAOT_01824 (degree 922), 546264.NEIFLAOT_00940
-(degree 850), 546264.NEIFLAOT_01833 (degree 778), 546264.NEIFLAOT_00147 (degree 772)
+The undirected graph Neisseria flavescens NRL30031H210 has 2470 nodes and
+168196 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05516 and has 14 connected components, where the
+component with most nodes has 2438 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+is 136.19, and the node degree mode is 3. The top 5 most central nodes
+are 546264.NEIFLAOT_01824 (degree 922), 546264.NEIFLAOT_00940 (degree 850),
+546264.NEIFLAOT_01833 (degree 778), 546264.NEIFLAOT_00147 (degree 772)
 and 546264.NEIFLAOT_01204 (degree 724).
 
 
@@ -107,13 +108,14 @@ def NeisseriaFlavescensNrl30031h210(
 	
 	Datetime: 2021-02-02 21:08:21.549681
 	
-	The undirected graph Neisseria flavescens NRL30031H210 has 2470 nodes and 168196
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05516 and has 14 connected components, where the component with most nodes has
-	2438 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 122, the mean node degree is 136.19, and the node degree mode is 3. The
-	top 5 most central nodes are 546264.NEIFLAOT_01824 (degree 922), 546264.NEIFLAOT_00940
-	(degree 850), 546264.NEIFLAOT_01833 (degree 778), 546264.NEIFLAOT_00147 (degree 772)
+	The undirected graph Neisseria flavescens NRL30031H210 has 2470 nodes and
+	168196 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05516 and has 14 connected components, where the
+	component with most nodes has 2438 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 122, the mean node degree
+	is 136.19, and the node degree mode is 3. The top 5 most central nodes
+	are 546264.NEIFLAOT_01824 (degree 922), 546264.NEIFLAOT_00940 (degree 850),
+	546264.NEIFLAOT_01833 (degree 778), 546264.NEIFLAOT_00147 (degree 772)
 	and 546264.NEIFLAOT_01204 (degree 724).
 	
 

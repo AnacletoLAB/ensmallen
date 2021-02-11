@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:20.604255
 
-The undirected graph Amycolatopsis orientalis has 7946 nodes and 1064803 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03373
-and has 37 connected components, where the component with most nodes has 7855 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 231, the mean node degree is 268.01, and the node degree mode is 3. The top 5
-most central nodes are 1125971.ASJB01000069_gene408 (degree 2050), 1125971.ASJB01000077_gene7090
-(degree 1867), 1125971.ASJB01000031_gene1249 (degree 1848), 1125971.ASJB01000043_gene3189
-(degree 1807) and 1125971.ASJB01000042_gene3543 (degree 1807).
+The undirected graph Amycolatopsis orientalis has 7946 nodes and 1064803
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03373 and has 37 connected components, where the component
+with most nodes has 7855 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 231, the mean node degree is 268.01,
+and the node degree mode is 3. The top 5 most central nodes are 1125971.ASJB01000069_gene408
+(degree 2050), 1125971.ASJB01000077_gene7090 (degree 1867), 1125971.ASJB01000031_gene1249
+(degree 1848), 1125971.ASJB01000043_gene3189 (degree 1807) and 1125971.ASJB01000042_gene3543
+(degree 1807).
 
 
 References
@@ -107,14 +108,15 @@ def AmycolatopsisOrientalis(
 	
 	Datetime: 2021-02-02 22:54:20.604255
 	
-	The undirected graph Amycolatopsis orientalis has 7946 nodes and 1064803 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03373
-	and has 37 connected components, where the component with most nodes has 7855 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 231, the mean node degree is 268.01, and the node degree mode is 3. The top 5
-	most central nodes are 1125971.ASJB01000069_gene408 (degree 2050), 1125971.ASJB01000077_gene7090
-	(degree 1867), 1125971.ASJB01000031_gene1249 (degree 1848), 1125971.ASJB01000043_gene3189
-	(degree 1807) and 1125971.ASJB01000042_gene3543 (degree 1807).
+	The undirected graph Amycolatopsis orientalis has 7946 nodes and 1064803
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03373 and has 37 connected components, where the component
+	with most nodes has 7855 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 231, the mean node degree is 268.01,
+	and the node degree mode is 3. The top 5 most central nodes are 1125971.ASJB01000069_gene408
+	(degree 2050), 1125971.ASJB01000077_gene7090 (degree 1867), 1125971.ASJB01000031_gene1249
+	(degree 1848), 1125971.ASJB01000043_gene3189 (degree 1807) and 1125971.ASJB01000042_gene3543
+	(degree 1807).
 	
 
 

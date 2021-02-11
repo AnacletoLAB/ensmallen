@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:15:55.621932
 
-The undirected graph Geobacter metallireducens has 3557 nodes and 432562 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06840
-and has 4 connected components, where the component with most nodes has 3547 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 215, the mean node degree is 243.22, and the node degree mode is 13. The top 5
-most central nodes are 269799.Gmet_2983 (degree 1647), 269799.Gmet_0086 (degree 1564),
-269799.Gmet_1707 (degree 1533), 269799.Gmet_2642 (degree 1439) and 269799.Gmet_3419
-(degree 1328).
+The undirected graph Geobacter metallireducens has 3557 nodes and 432562
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06840 and has 4 connected components, where the component
+with most nodes has 3547 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 215, the mean node degree is 243.22,
+and the node degree mode is 13. The top 5 most central nodes are 269799.Gmet_2983
+(degree 1647), 269799.Gmet_0086 (degree 1564), 269799.Gmet_1707 (degree
+1533), 269799.Gmet_2642 (degree 1439) and 269799.Gmet_3419 (degree 1328).
 
 
 References
@@ -107,14 +107,14 @@ def GeobacterMetallireducens(
 	
 	Datetime: 2021-02-02 20:15:55.621932
 	
-	The undirected graph Geobacter metallireducens has 3557 nodes and 432562 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06840
-	and has 4 connected components, where the component with most nodes has 3547 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 215, the mean node degree is 243.22, and the node degree mode is 13. The top 5
-	most central nodes are 269799.Gmet_2983 (degree 1647), 269799.Gmet_0086 (degree 1564),
-	269799.Gmet_1707 (degree 1533), 269799.Gmet_2642 (degree 1439) and 269799.Gmet_3419
-	(degree 1328).
+	The undirected graph Geobacter metallireducens has 3557 nodes and 432562
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06840 and has 4 connected components, where the component
+	with most nodes has 3547 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 215, the mean node degree is 243.22,
+	and the node degree mode is 13. The top 5 most central nodes are 269799.Gmet_2983
+	(degree 1647), 269799.Gmet_0086 (degree 1564), 269799.Gmet_1707 (degree
+	1533), 269799.Gmet_2642 (degree 1439) and 269799.Gmet_3419 (degree 1328).
 	
 
 

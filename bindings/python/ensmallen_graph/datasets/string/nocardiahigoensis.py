@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:16:21.371730
 
-The undirected graph Nocardia higoensis has 6116 nodes and 1135287 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06071 and
-has 32 connected components, where the component with most nodes has 6036 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 304,
-the mean node degree is 371.25, and the node degree mode is 1. The top 5 most central
-nodes are 1206730.BAGA01000027_gene3956 (degree 2834), 1206730.BAGA01000047_gene3892
-(degree 2485), 1206730.BAGA01000183_gene3120 (degree 2227), 1206730.BAGA01000088_gene172
-(degree 2199) and 1206730.BAGA01000065_gene1417 (degree 1927).
+The undirected graph Nocardia higoensis has 6116 nodes and 1135287 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06071 and has 32 connected components, where the component with most
+nodes has 6036 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 304, the mean node degree is 371.25, and
+the node degree mode is 1. The top 5 most central nodes are 1206730.BAGA01000027_gene3956
+(degree 2834), 1206730.BAGA01000047_gene3892 (degree 2485), 1206730.BAGA01000183_gene3120
+(degree 2227), 1206730.BAGA01000088_gene172 (degree 2199) and 1206730.BAGA01000065_gene1417
+(degree 1927).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiaHigoensis(
 	
 	Datetime: 2021-02-02 23:16:21.371730
 	
-	The undirected graph Nocardia higoensis has 6116 nodes and 1135287 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06071 and
-	has 32 connected components, where the component with most nodes has 6036 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 304,
-	the mean node degree is 371.25, and the node degree mode is 1. The top 5 most central
-	nodes are 1206730.BAGA01000027_gene3956 (degree 2834), 1206730.BAGA01000047_gene3892
-	(degree 2485), 1206730.BAGA01000183_gene3120 (degree 2227), 1206730.BAGA01000088_gene172
-	(degree 2199) and 1206730.BAGA01000065_gene1417 (degree 1927).
+	The undirected graph Nocardia higoensis has 6116 nodes and 1135287 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06071 and has 32 connected components, where the component with most
+	nodes has 6036 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 304, the mean node degree is 371.25, and
+	the node degree mode is 1. The top 5 most central nodes are 1206730.BAGA01000027_gene3956
+	(degree 2834), 1206730.BAGA01000047_gene3892 (degree 2485), 1206730.BAGA01000183_gene3120
+	(degree 2227), 1206730.BAGA01000088_gene172 (degree 2199) and 1206730.BAGA01000065_gene1417
+	(degree 1927).
 	
 
 

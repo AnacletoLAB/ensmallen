@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:23.183159
 
-The undirected graph Pseudomonas extremaustralis has 5804 nodes and 1183509 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07028
-and has 27 connected components, where the component with most nodes has 5737 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 337, the mean node degree is 407.83, and the node degree mode is 1. The top 5
-most central nodes are 1117958.PE143B_0123000 (degree 2737), 1117958.PE143B_0100110
-(degree 2449), 1117958.PE143B_0115380 (degree 2397), 1117958.PE143B_0128930 (degree
-2263) and 1117958.PE143B_0115100 (degree 2220).
+The undirected graph Pseudomonas extremaustralis has 5804 nodes and 1183509
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07028 and has 27 connected components, where the component
+with most nodes has 5737 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 337, the mean node degree is 407.83,
+and the node degree mode is 1. The top 5 most central nodes are 1117958.PE143B_0123000
+(degree 2737), 1117958.PE143B_0100110 (degree 2449), 1117958.PE143B_0115380
+(degree 2397), 1117958.PE143B_0128930 (degree 2263) and 1117958.PE143B_0115100
+(degree 2220).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasExtremaustralis(
 	
 	Datetime: 2021-02-02 22:28:23.183159
 	
-	The undirected graph Pseudomonas extremaustralis has 5804 nodes and 1183509 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07028
-	and has 27 connected components, where the component with most nodes has 5737 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 337, the mean node degree is 407.83, and the node degree mode is 1. The top 5
-	most central nodes are 1117958.PE143B_0123000 (degree 2737), 1117958.PE143B_0100110
-	(degree 2449), 1117958.PE143B_0115380 (degree 2397), 1117958.PE143B_0128930 (degree
-	2263) and 1117958.PE143B_0115100 (degree 2220).
+	The undirected graph Pseudomonas extremaustralis has 5804 nodes and 1183509
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07028 and has 27 connected components, where the component
+	with most nodes has 5737 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 337, the mean node degree is 407.83,
+	and the node degree mode is 1. The top 5 most central nodes are 1117958.PE143B_0123000
+	(degree 2737), 1117958.PE143B_0100110 (degree 2449), 1117958.PE143B_0115380
+	(degree 2397), 1117958.PE143B_0128930 (degree 2263) and 1117958.PE143B_0115100
+	(degree 2220).
 	
 
 

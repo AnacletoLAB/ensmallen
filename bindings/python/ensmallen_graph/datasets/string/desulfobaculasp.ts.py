@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:28:37.726719
 
-The undirected graph Desulfobacula sp. TS has 5415 nodes and 1058390 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07220 and
-has 26 connected components, where the component with most nodes has 5357 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 327,
-the mean node degree is 390.91, and the node degree mode is 3. The top 5 most central
-nodes are 1232437.KL662061_gene4121 (degree 3159), 1232437.KL662015_gene1250 (degree
-2570), 1232437.KL661961_gene2966 (degree 2526), 1232437.KL662020_gene753 (degree
-2488) and 1232437.KL662013_gene1365 (degree 2237).
+The undirected graph Desulfobacula sp. TS has 5415 nodes and 1058390 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07220 and has 26 connected components, where the component with most
+nodes has 5357 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 327, the mean node degree is 390.91, and
+the node degree mode is 3. The top 5 most central nodes are 1232437.KL662061_gene4121
+(degree 3159), 1232437.KL662015_gene1250 (degree 2570), 1232437.KL661961_gene2966
+(degree 2526), 1232437.KL662020_gene753 (degree 2488) and 1232437.KL662013_gene1365
+(degree 2237).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfobaculaSp.Ts(
 	
 	Datetime: 2021-02-02 23:28:37.726719
 	
-	The undirected graph Desulfobacula sp. TS has 5415 nodes and 1058390 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07220 and
-	has 26 connected components, where the component with most nodes has 5357 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 327,
-	the mean node degree is 390.91, and the node degree mode is 3. The top 5 most central
-	nodes are 1232437.KL662061_gene4121 (degree 3159), 1232437.KL662015_gene1250 (degree
-	2570), 1232437.KL661961_gene2966 (degree 2526), 1232437.KL662020_gene753 (degree
-	2488) and 1232437.KL662013_gene1365 (degree 2237).
+	The undirected graph Desulfobacula sp. TS has 5415 nodes and 1058390 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07220 and has 26 connected components, where the component with most
+	nodes has 5357 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 327, the mean node degree is 390.91, and
+	the node degree mode is 3. The top 5 most central nodes are 1232437.KL662061_gene4121
+	(degree 3159), 1232437.KL662015_gene1250 (degree 2570), 1232437.KL661961_gene2966
+	(degree 2526), 1232437.KL662020_gene753 (degree 2488) and 1232437.KL662013_gene1365
+	(degree 2237).
 	
 
 

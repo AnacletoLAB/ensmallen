@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:22:34.779829
 
-The undirected graph Endozoicomonas elysicola has 4000 nodes and 355879 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04450
-and has 43 connected components, where the component with most nodes has 3890 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 177.94, and the node degree mode is 2. The top 5
-most central nodes are 305900.GV64_16590 (degree 1949), 305900.GV64_22855 (degree
-1680), 305900.GV64_02040 (degree 1425), 305900.GV64_23940 (degree 1268) and 305900.GV64_03170
-(degree 1196).
+The undirected graph Endozoicomonas elysicola has 4000 nodes and 355879
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04450 and has 43 connected components, where the component
+with most nodes has 3890 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 177.94,
+and the node degree mode is 2. The top 5 most central nodes are 305900.GV64_16590
+(degree 1949), 305900.GV64_22855 (degree 1680), 305900.GV64_02040 (degree
+1425), 305900.GV64_23940 (degree 1268) and 305900.GV64_03170 (degree 1196).
 
 
 References
@@ -107,14 +107,14 @@ def EndozoicomonasElysicola(
 	
 	Datetime: 2021-02-02 20:22:34.779829
 	
-	The undirected graph Endozoicomonas elysicola has 4000 nodes and 355879 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04450
-	and has 43 connected components, where the component with most nodes has 3890 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 177.94, and the node degree mode is 2. The top 5
-	most central nodes are 305900.GV64_16590 (degree 1949), 305900.GV64_22855 (degree
-	1680), 305900.GV64_02040 (degree 1425), 305900.GV64_23940 (degree 1268) and 305900.GV64_03170
-	(degree 1196).
+	The undirected graph Endozoicomonas elysicola has 4000 nodes and 355879
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04450 and has 43 connected components, where the component
+	with most nodes has 3890 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 177.94,
+	and the node degree mode is 2. The top 5 most central nodes are 305900.GV64_16590
+	(degree 1949), 305900.GV64_22855 (degree 1680), 305900.GV64_02040 (degree
+	1425), 305900.GV64_23940 (degree 1268) and 305900.GV64_03170 (degree 1196).
 	
 
 

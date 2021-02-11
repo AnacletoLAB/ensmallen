@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:45:16.650845
 
-The undirected graph Nocardia nova has 7517 nodes and 1924956 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06814 and
-has 28 connected components, where the component with most nodes has 7451 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 381,
-the mean node degree is 512.16, and the node degree mode is 2. The top 5 most central
-nodes are 1415166.NONO_c09270 (degree 3680), 1415166.NONO_c24790 (degree 3106), 1415166.NONO_c08820
-(degree 3064), 1415166.NONO_c16100 (degree 2888) and 1415166.NONO_c10290 (degree
+The undirected graph Nocardia nova has 7517 nodes and 1924956 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06814 and has 28 connected components, where the component with most
+nodes has 7451 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 381, the mean node degree is 512.16, and
+the node degree mode is 2. The top 5 most central nodes are 1415166.NONO_c09270
+(degree 3680), 1415166.NONO_c24790 (degree 3106), 1415166.NONO_c08820 (degree
+3064), 1415166.NONO_c16100 (degree 2888) and 1415166.NONO_c10290 (degree
 2823).
 
 
@@ -107,13 +108,14 @@ def NocardiaNova(
 	
 	Datetime: 2021-02-03 22:45:16.650845
 	
-	The undirected graph Nocardia nova has 7517 nodes and 1924956 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06814 and
-	has 28 connected components, where the component with most nodes has 7451 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 381,
-	the mean node degree is 512.16, and the node degree mode is 2. The top 5 most central
-	nodes are 1415166.NONO_c09270 (degree 3680), 1415166.NONO_c24790 (degree 3106), 1415166.NONO_c08820
-	(degree 3064), 1415166.NONO_c16100 (degree 2888) and 1415166.NONO_c10290 (degree
+	The undirected graph Nocardia nova has 7517 nodes and 1924956 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06814 and has 28 connected components, where the component with most
+	nodes has 7451 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 381, the mean node degree is 512.16, and
+	the node degree mode is 2. The top 5 most central nodes are 1415166.NONO_c09270
+	(degree 3680), 1415166.NONO_c24790 (degree 3106), 1415166.NONO_c08820 (degree
+	3064), 1415166.NONO_c16100 (degree 2888) and 1415166.NONO_c10290 (degree
 	2823).
 	
 

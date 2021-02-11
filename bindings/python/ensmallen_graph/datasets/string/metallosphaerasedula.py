@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:04.133234
 
-The undirected graph Metallosphaera sedula has 2232 nodes and 187398 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07527 and
-has 20 connected components, where the component with most nodes has 2188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 167.92, and the node degree mode is 3. The top 5 most central
-nodes are 399549.Msed_1652 (degree 855), 399549.Msed_0455 (degree 783), 399549.Msed_1451
-(degree 754), 399549.Msed_1653 (degree 752) and 399549.Msed_1650 (degree 741).
+The undirected graph Metallosphaera sedula has 2232 nodes and 187398 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07527 and has 20 connected components, where the component with most
+nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 167.92, and
+the node degree mode is 3. The top 5 most central nodes are 399549.Msed_1652
+(degree 855), 399549.Msed_0455 (degree 783), 399549.Msed_1451 (degree 754),
+399549.Msed_1653 (degree 752) and 399549.Msed_1650 (degree 741).
 
 
 References
@@ -106,13 +107,14 @@ def MetallosphaeraSedula(
 	
 	Datetime: 2021-02-02 20:43:04.133234
 	
-	The undirected graph Metallosphaera sedula has 2232 nodes and 187398 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07527 and
-	has 20 connected components, where the component with most nodes has 2188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 167.92, and the node degree mode is 3. The top 5 most central
-	nodes are 399549.Msed_1652 (degree 855), 399549.Msed_0455 (degree 783), 399549.Msed_1451
-	(degree 754), 399549.Msed_1653 (degree 752) and 399549.Msed_1650 (degree 741).
+	The undirected graph Metallosphaera sedula has 2232 nodes and 187398 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07527 and has 20 connected components, where the component with most
+	nodes has 2188 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 167.92, and
+	the node degree mode is 3. The top 5 most central nodes are 399549.Msed_1652
+	(degree 855), 399549.Msed_0455 (degree 783), 399549.Msed_1451 (degree 754),
+	399549.Msed_1653 (degree 752) and 399549.Msed_1650 (degree 741).
 	
 
 

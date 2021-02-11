@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:27.219046
 
-The undirected graph Myxococcus fulvus has 7177 nodes and 726265 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02820 and
-has 78 connected components, where the component with most nodes has 6990 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 202.39, and the node degree mode is 2. The top 5 most central
-nodes are 483219.LILAB_05220 (degree 3271), 483219.LILAB_12790 (degree 2785), 483219.LILAB_01590
-(degree 2668), 483219.LILAB_01140 (degree 2290) and 483219.LILAB_30360 (degree 2222).
+The undirected graph Myxococcus fulvus has 7177 nodes and 726265 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02820 and has 78 connected components, where the component with most
+nodes has 6990 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 143, the mean node degree is 202.39, and
+the node degree mode is 2. The top 5 most central nodes are 483219.LILAB_05220
+(degree 3271), 483219.LILAB_12790 (degree 2785), 483219.LILAB_01590 (degree
+2668), 483219.LILAB_01140 (degree 2290) and 483219.LILAB_30360 (degree
+2222).
 
 
 References
@@ -106,13 +108,15 @@ def MyxococcusFulvus(
 	
 	Datetime: 2021-02-02 20:58:27.219046
 	
-	The undirected graph Myxococcus fulvus has 7177 nodes and 726265 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02820 and
-	has 78 connected components, where the component with most nodes has 6990 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 202.39, and the node degree mode is 2. The top 5 most central
-	nodes are 483219.LILAB_05220 (degree 3271), 483219.LILAB_12790 (degree 2785), 483219.LILAB_01590
-	(degree 2668), 483219.LILAB_01140 (degree 2290) and 483219.LILAB_30360 (degree 2222).
+	The undirected graph Myxococcus fulvus has 7177 nodes and 726265 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02820 and has 78 connected components, where the component with most
+	nodes has 6990 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 143, the mean node degree is 202.39, and
+	the node degree mode is 2. The top 5 most central nodes are 483219.LILAB_05220
+	(degree 3271), 483219.LILAB_12790 (degree 2785), 483219.LILAB_01590 (degree
+	2668), 483219.LILAB_01140 (degree 2290) and 483219.LILAB_30360 (degree
+	2222).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:30:01.477343
 
-The undirected graph Thalassolituus oleivorans has 3619 nodes and 295004 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04506
-and has 7 connected components, where the component with most nodes has 3605 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 151, the mean node degree is 163.03, and the node degree mode is 3. The top 5
-most central nodes are 1298593.TOL_1983 (degree 1371), 1298593.TOL_0083 (degree 1144),
-1298593.TOL_1475 (degree 986), 1298593.TOL_2357 (degree 940) and 1298593.TOL_3670
-(degree 932).
+The undirected graph Thalassolituus oleivorans has 3619 nodes and 295004
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04506 and has 7 connected components, where the component
+with most nodes has 3605 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 151, the mean node degree is 163.03,
+and the node degree mode is 3. The top 5 most central nodes are 1298593.TOL_1983
+(degree 1371), 1298593.TOL_0083 (degree 1144), 1298593.TOL_1475 (degree
+986), 1298593.TOL_2357 (degree 940) and 1298593.TOL_3670 (degree 932).
 
 
 References
@@ -107,14 +107,14 @@ def ThalassolituusOleivorans(
 	
 	Datetime: 2021-02-03 21:30:01.477343
 	
-	The undirected graph Thalassolituus oleivorans has 3619 nodes and 295004 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04506
-	and has 7 connected components, where the component with most nodes has 3605 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 151, the mean node degree is 163.03, and the node degree mode is 3. The top 5
-	most central nodes are 1298593.TOL_1983 (degree 1371), 1298593.TOL_0083 (degree 1144),
-	1298593.TOL_1475 (degree 986), 1298593.TOL_2357 (degree 940) and 1298593.TOL_3670
-	(degree 932).
+	The undirected graph Thalassolituus oleivorans has 3619 nodes and 295004
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04506 and has 7 connected components, where the component
+	with most nodes has 3605 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 151, the mean node degree is 163.03,
+	and the node degree mode is 3. The top 5 most central nodes are 1298593.TOL_1983
+	(degree 1371), 1298593.TOL_0083 (degree 1144), 1298593.TOL_1475 (degree
+	986), 1298593.TOL_2357 (degree 940) and 1298593.TOL_3670 (degree 932).
 	
 
 

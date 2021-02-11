@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:14.179694
 
-The undirected graph Arenibacter algicola has 4581 nodes and 534917 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-has 15 connected components, where the component with most nodes has 4547 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 215,
-the mean node degree is 233.54, and the node degree mode is 3. The top 5 most central
-nodes are 616991.JPOO01000001_gene3248 (degree 1476), 616991.JPOO01000001_gene3307
-(degree 1188), 616991.JPOO01000003_gene1548 (degree 1174), 616991.JPOO01000001_gene4079
-(degree 1166) and 616991.JPOO01000003_gene1265 (degree 1060).
+The undirected graph Arenibacter algicola has 4581 nodes and 534917 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05099 and has 15 connected components, where the component with most
+nodes has 4547 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 215, the mean node degree is 233.54, and
+the node degree mode is 3. The top 5 most central nodes are 616991.JPOO01000001_gene3248
+(degree 1476), 616991.JPOO01000001_gene3307 (degree 1188), 616991.JPOO01000003_gene1548
+(degree 1174), 616991.JPOO01000001_gene4079 (degree 1166) and 616991.JPOO01000003_gene1265
+(degree 1060).
 
 
 References
@@ -107,14 +108,15 @@ def ArenibacterAlgicola(
 	
 	Datetime: 2021-02-02 21:20:14.179694
 	
-	The undirected graph Arenibacter algicola has 4581 nodes and 534917 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05099 and
-	has 15 connected components, where the component with most nodes has 4547 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 215,
-	the mean node degree is 233.54, and the node degree mode is 3. The top 5 most central
-	nodes are 616991.JPOO01000001_gene3248 (degree 1476), 616991.JPOO01000001_gene3307
-	(degree 1188), 616991.JPOO01000003_gene1548 (degree 1174), 616991.JPOO01000001_gene4079
-	(degree 1166) and 616991.JPOO01000003_gene1265 (degree 1060).
+	The undirected graph Arenibacter algicola has 4581 nodes and 534917 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05099 and has 15 connected components, where the component with most
+	nodes has 4547 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 215, the mean node degree is 233.54, and
+	the node degree mode is 3. The top 5 most central nodes are 616991.JPOO01000001_gene3248
+	(degree 1476), 616991.JPOO01000001_gene3307 (degree 1188), 616991.JPOO01000003_gene1548
+	(degree 1174), 616991.JPOO01000001_gene4079 (degree 1166) and 616991.JPOO01000003_gene1265
+	(degree 1060).
 	
 
 

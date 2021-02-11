@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:14:01.636680
 
-The undirected graph maayan-faa has 1226 nodes and 2410 unweighted edges, of which
-2 are self-loops. The graph is sparse as it has a density of 0.00321 and is connected,
-as it has a single component. The graph median node degree is 2, the mean node degree
-is 3.93, and the node degree mode is 2. The top 5 most central nodes are 312 (degree
-34), 68 (degree 31), 52 (degree 31), 113 (degree 27) and 89 (degree 26).
+The undirected graph maayan-faa has 1226 nodes and 2410 unweighted edges,
+of which 2 are self-loops. The graph is sparse as it has a density of 0.00321
+and is connected, as it has a single component. The graph median node degree
+is 2, the mean node degree is 3.93, and the node degree mode is 2. The
+top 5 most central nodes are 312 (degree 34), 68 (degree 31), 52 (degree
+31), 113 (degree 27) and 89 (degree 26).
 
 
 References
@@ -101,11 +102,12 @@ def MaayanFaa(
 	
 	Datetime: 2021-02-06 08:14:01.636680
 	
-	The undirected graph maayan-faa has 1226 nodes and 2410 unweighted edges, of which
-	2 are self-loops. The graph is sparse as it has a density of 0.00321 and is connected,
-	as it has a single component. The graph median node degree is 2, the mean node degree
-	is 3.93, and the node degree mode is 2. The top 5 most central nodes are 312 (degree
-	34), 68 (degree 31), 52 (degree 31), 113 (degree 27) and 89 (degree 26).
+	The undirected graph maayan-faa has 1226 nodes and 2410 unweighted edges,
+	of which 2 are self-loops. The graph is sparse as it has a density of 0.00321
+	and is connected, as it has a single component. The graph median node degree
+	is 2, the mean node degree is 3.93, and the node degree mode is 2. The
+	top 5 most central nodes are 312 (degree 34), 68 (degree 31), 52 (degree
+	31), 113 (degree 27) and 89 (degree 26).
 	
 
 

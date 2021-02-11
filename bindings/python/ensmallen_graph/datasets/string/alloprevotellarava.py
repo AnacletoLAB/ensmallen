@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:16.804313
 
-The undirected graph Alloprevotella rava has 1996 nodes and 139316 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06997 and
-has 4 connected components, where the component with most nodes has 1990 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 139.60, and the node degree mode is 3. The top 5 most central
-nodes are 679199.HMPREF9332_00611 (degree 965), 679199.HMPREF9332_00308 (degree 958),
-679199.HMPREF9332_01118 (degree 798), 679199.HMPREF9332_00340 (degree 789) and 679199.HMPREF9332_01779
+The undirected graph Alloprevotella rava has 1996 nodes and 139316 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06997 and has 4 connected components, where the component with most
+nodes has 1990 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 139.60, and
+the node degree mode is 3. The top 5 most central nodes are 679199.HMPREF9332_00611
+(degree 965), 679199.HMPREF9332_00308 (degree 958), 679199.HMPREF9332_01118
+(degree 798), 679199.HMPREF9332_00340 (degree 789) and 679199.HMPREF9332_01779
 (degree 737).
 
 
@@ -107,13 +108,14 @@ def AlloprevotellaRava(
 	
 	Datetime: 2021-02-02 21:30:16.804313
 	
-	The undirected graph Alloprevotella rava has 1996 nodes and 139316 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06997 and
-	has 4 connected components, where the component with most nodes has 1990 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 139.60, and the node degree mode is 3. The top 5 most central
-	nodes are 679199.HMPREF9332_00611 (degree 965), 679199.HMPREF9332_00308 (degree 958),
-	679199.HMPREF9332_01118 (degree 798), 679199.HMPREF9332_00340 (degree 789) and 679199.HMPREF9332_01779
+	The undirected graph Alloprevotella rava has 1996 nodes and 139316 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06997 and has 4 connected components, where the component with most
+	nodes has 1990 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 139.60, and
+	the node degree mode is 3. The top 5 most central nodes are 679199.HMPREF9332_00611
+	(degree 965), 679199.HMPREF9332_00308 (degree 958), 679199.HMPREF9332_01118
+	(degree 798), 679199.HMPREF9332_00340 (degree 789) and 679199.HMPREF9332_01779
 	(degree 737).
 	
 

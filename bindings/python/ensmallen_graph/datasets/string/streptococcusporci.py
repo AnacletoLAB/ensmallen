@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:56.025799
 
-The undirected graph Streptococcus porci has 2243 nodes and 170104 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06765 and
-has 6 connected components, where the component with most nodes has 2226 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 118,
-the mean node degree is 151.68, and the node degree mode is 23. The top 5 most central
-nodes are 1123315.AUIP01000026_gene1217 (degree 934), 1123315.AUIP01000010_gene980
-(degree 873), 1123315.AUIP01000001_gene1604 (degree 838), 1123315.AUIP01000016_gene633
-(degree 777) and 1123315.AUIP01000009_gene854 (degree 777).
+The undirected graph Streptococcus porci has 2243 nodes and 170104 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06765 and has 6 connected components, where the component with most
+nodes has 2226 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 118, the mean node degree is 151.68, and
+the node degree mode is 23. The top 5 most central nodes are 1123315.AUIP01000026_gene1217
+(degree 934), 1123315.AUIP01000010_gene980 (degree 873), 1123315.AUIP01000001_gene1604
+(degree 838), 1123315.AUIP01000016_gene633 (degree 777) and 1123315.AUIP01000009_gene854
+(degree 777).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusPorci(
 	
 	Datetime: 2021-02-02 22:50:56.025799
 	
-	The undirected graph Streptococcus porci has 2243 nodes and 170104 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06765 and
-	has 6 connected components, where the component with most nodes has 2226 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 118,
-	the mean node degree is 151.68, and the node degree mode is 23. The top 5 most central
-	nodes are 1123315.AUIP01000026_gene1217 (degree 934), 1123315.AUIP01000010_gene980
-	(degree 873), 1123315.AUIP01000001_gene1604 (degree 838), 1123315.AUIP01000016_gene633
-	(degree 777) and 1123315.AUIP01000009_gene854 (degree 777).
+	The undirected graph Streptococcus porci has 2243 nodes and 170104 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06765 and has 6 connected components, where the component with most
+	nodes has 2226 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 118, the mean node degree is 151.68, and
+	the node degree mode is 23. The top 5 most central nodes are 1123315.AUIP01000026_gene1217
+	(degree 934), 1123315.AUIP01000010_gene980 (degree 873), 1123315.AUIP01000001_gene1604
+	(degree 838), 1123315.AUIP01000016_gene633 (degree 777) and 1123315.AUIP01000009_gene854
+	(degree 777).
 	
 
 

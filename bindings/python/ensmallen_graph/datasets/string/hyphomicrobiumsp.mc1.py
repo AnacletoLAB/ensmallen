@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:36:37.319439
 
-The undirected graph Hyphomicrobium sp. MC1 has 4808 nodes and 428975 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03712 and
-has 54 connected components, where the component with most nodes has 4653 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 178.44, and the node degree mode is 2. The top 5 most central
-nodes are 717785.HYPMC_2623 (degree 1896), 717785.HYPMC_3301 (degree 1733), 717785.HYPMC_1566
-(degree 1618), 717785.HYPMC_3913 (degree 1516) and 717785.HYPMC_0730 (degree 1503).
+The undirected graph Hyphomicrobium sp. MC1 has 4808 nodes and 428975 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03712 and has 54 connected components, where the component with most
+nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 178.44, and
+the node degree mode is 2. The top 5 most central nodes are 717785.HYPMC_2623
+(degree 1896), 717785.HYPMC_3301 (degree 1733), 717785.HYPMC_1566 (degree
+1618), 717785.HYPMC_3913 (degree 1516) and 717785.HYPMC_0730 (degree 1503).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomicrobiumSp.Mc1(
 	
 	Datetime: 2021-02-02 21:36:37.319439
 	
-	The undirected graph Hyphomicrobium sp. MC1 has 4808 nodes and 428975 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03712 and
-	has 54 connected components, where the component with most nodes has 4653 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 178.44, and the node degree mode is 2. The top 5 most central
-	nodes are 717785.HYPMC_2623 (degree 1896), 717785.HYPMC_3301 (degree 1733), 717785.HYPMC_1566
-	(degree 1618), 717785.HYPMC_3913 (degree 1516) and 717785.HYPMC_0730 (degree 1503).
+	The undirected graph Hyphomicrobium sp. MC1 has 4808 nodes and 428975 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03712 and has 54 connected components, where the component with most
+	nodes has 4653 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 178.44, and
+	the node degree mode is 2. The top 5 most central nodes are 717785.HYPMC_2623
+	(degree 1896), 717785.HYPMC_3301 (degree 1733), 717785.HYPMC_1566 (degree
+	1618), 717785.HYPMC_3913 (degree 1516) and 717785.HYPMC_0730 (degree 1503).
 	
 
 

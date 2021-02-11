@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:48:00.934276
 
-The undirected graph Salinarimonas rosea has 4705 nodes and 601959 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05440 and
-has 24 connected components, where the component with most nodes has 4645 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 200,
-the mean node degree is 255.88, and the node degree mode is 1. The top 5 most central
-nodes are 1123229.AUBC01000035_gene1160 (degree 2161), 1123229.AUBC01000008_gene450
-(degree 2031), 1123229.AUBC01000005_gene807 (degree 1654), 1123229.AUBC01000010_gene3338
-(degree 1562) and 1123229.AUBC01000001_gene1566 (degree 1530).
+The undirected graph Salinarimonas rosea has 4705 nodes and 601959 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05440 and has 24 connected components, where the component with most
+nodes has 4645 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 200, the mean node degree is 255.88, and
+the node degree mode is 1. The top 5 most central nodes are 1123229.AUBC01000035_gene1160
+(degree 2161), 1123229.AUBC01000008_gene450 (degree 2031), 1123229.AUBC01000005_gene807
+(degree 1654), 1123229.AUBC01000010_gene3338 (degree 1562) and 1123229.AUBC01000001_gene1566
+(degree 1530).
 
 
 References
@@ -107,14 +108,15 @@ def SalinarimonasRosea(
 	
 	Datetime: 2021-02-02 22:48:00.934276
 	
-	The undirected graph Salinarimonas rosea has 4705 nodes and 601959 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05440 and
-	has 24 connected components, where the component with most nodes has 4645 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 200,
-	the mean node degree is 255.88, and the node degree mode is 1. The top 5 most central
-	nodes are 1123229.AUBC01000035_gene1160 (degree 2161), 1123229.AUBC01000008_gene450
-	(degree 2031), 1123229.AUBC01000005_gene807 (degree 1654), 1123229.AUBC01000010_gene3338
-	(degree 1562) and 1123229.AUBC01000001_gene1566 (degree 1530).
+	The undirected graph Salinarimonas rosea has 4705 nodes and 601959 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05440 and has 24 connected components, where the component with most
+	nodes has 4645 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 200, the mean node degree is 255.88, and
+	the node degree mode is 1. The top 5 most central nodes are 1123229.AUBC01000035_gene1160
+	(degree 2161), 1123229.AUBC01000008_gene450 (degree 2031), 1123229.AUBC01000005_gene807
+	(degree 1654), 1123229.AUBC01000010_gene3338 (degree 1562) and 1123229.AUBC01000001_gene1566
+	(degree 1530).
 	
 
 

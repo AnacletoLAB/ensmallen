@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:47.946565
 
-The undirected graph Blattabacterium sp. BPLAN has 582 nodes and 31125 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.18409
-and is connected, as it has a single component. The graph median node degree is 95,
-the mean node degree is 106.96, and the node degree mode is 56. The top 5 most central
-nodes are 600809.BPLAN_128 (degree 352), 600809.BPLAN_329 (degree 345), 600809.BPLAN_410
-(degree 317), 600809.BPLAN_138 (degree 287) and 600809.BPLAN_539 (degree 283).
+The undirected graph Blattabacterium sp. BPLAN has 582 nodes and 31125
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.18409 and is connected, as it has a single component.
+The graph median node degree is 95, the mean node degree is 106.96, and
+the node degree mode is 56. The top 5 most central nodes are 600809.BPLAN_128
+(degree 352), 600809.BPLAN_329 (degree 345), 600809.BPLAN_410 (degree 317),
+600809.BPLAN_138 (degree 287) and 600809.BPLAN_539 (degree 283).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Bplan(
 	
 	Datetime: 2021-02-02 21:19:47.946565
 	
-	The undirected graph Blattabacterium sp. BPLAN has 582 nodes and 31125 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.18409
-	and is connected, as it has a single component. The graph median node degree is 95,
-	the mean node degree is 106.96, and the node degree mode is 56. The top 5 most central
-	nodes are 600809.BPLAN_128 (degree 352), 600809.BPLAN_329 (degree 345), 600809.BPLAN_410
-	(degree 317), 600809.BPLAN_138 (degree 287) and 600809.BPLAN_539 (degree 283).
+	The undirected graph Blattabacterium sp. BPLAN has 582 nodes and 31125
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.18409 and is connected, as it has a single component.
+	The graph median node degree is 95, the mean node degree is 106.96, and
+	the node degree mode is 56. The top 5 most central nodes are 600809.BPLAN_128
+	(degree 352), 600809.BPLAN_329 (degree 345), 600809.BPLAN_410 (degree 317),
+	600809.BPLAN_138 (degree 287) and 600809.BPLAN_539 (degree 283).
 	
 
 

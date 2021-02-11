@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:28:33.368401
 
-The undirected graph Peptoniphilus grossensis has 1982 nodes and 125792 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06408
-and has 7 connected components, where the component with most nodes has 1968 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 126.93, and the node degree mode is 7. The top 5 most
-central nodes are 1118057.CAGX01000029_gene1341 (degree 818), 1118057.CAGX01000030_gene1870
-(degree 659), 1118057.CAGX01000026_gene196 (degree 637), 1118057.CAGX01000015_gene1241
-(degree 615) and 1118057.CAGX01000014_gene296 (degree 614).
+The undirected graph Peptoniphilus grossensis has 1982 nodes and 125792
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06408 and has 7 connected components, where the component
+with most nodes has 1968 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 126.93,
+and the node degree mode is 7. The top 5 most central nodes are 1118057.CAGX01000029_gene1341
+(degree 818), 1118057.CAGX01000030_gene1870 (degree 659), 1118057.CAGX01000026_gene196
+(degree 637), 1118057.CAGX01000015_gene1241 (degree 615) and 1118057.CAGX01000014_gene296
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def PeptoniphilusGrossensis(
 	
 	Datetime: 2021-02-02 22:28:33.368401
 	
-	The undirected graph Peptoniphilus grossensis has 1982 nodes and 125792 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06408
-	and has 7 connected components, where the component with most nodes has 1968 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 126.93, and the node degree mode is 7. The top 5 most
-	central nodes are 1118057.CAGX01000029_gene1341 (degree 818), 1118057.CAGX01000030_gene1870
-	(degree 659), 1118057.CAGX01000026_gene196 (degree 637), 1118057.CAGX01000015_gene1241
-	(degree 615) and 1118057.CAGX01000014_gene296 (degree 614).
+	The undirected graph Peptoniphilus grossensis has 1982 nodes and 125792
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06408 and has 7 connected components, where the component
+	with most nodes has 1968 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 126.93,
+	and the node degree mode is 7. The top 5 most central nodes are 1118057.CAGX01000029_gene1341
+	(degree 818), 1118057.CAGX01000030_gene1870 (degree 659), 1118057.CAGX01000026_gene196
+	(degree 637), 1118057.CAGX01000015_gene1241 (degree 615) and 1118057.CAGX01000014_gene296
+	(degree 614).
 	
 
 

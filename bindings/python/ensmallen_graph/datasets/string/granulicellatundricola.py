@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:38.745889
 
-The undirected graph Granulicella tundricola has 3743 nodes and 300240 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04287 and
-has 22 connected components, where the component with most nodes has 3691 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 160.43, and the node degree mode is 3. The top 5 most central
-nodes are 1198114.AciX9_0731 (degree 1245), 1198114.AciX9_1242 (degree 1054), 1198114.AciX9_2114
-(degree 996), 1198114.AciX9_1167 (degree 877) and 1198114.AciX9_1897 (degree 873).
+The undirected graph Granulicella tundricola has 3743 nodes and 300240
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04287 and has 22 connected components, where the component
+with most nodes has 3691 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 160.43,
+and the node degree mode is 3. The top 5 most central nodes are 1198114.AciX9_0731
+(degree 1245), 1198114.AciX9_1242 (degree 1054), 1198114.AciX9_2114 (degree
+996), 1198114.AciX9_1167 (degree 877) and 1198114.AciX9_1897 (degree 873).
 
 
 References
@@ -106,13 +107,14 @@ def GranulicellaTundricola(
 	
 	Datetime: 2021-02-02 23:13:38.745889
 	
-	The undirected graph Granulicella tundricola has 3743 nodes and 300240 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04287 and
-	has 22 connected components, where the component with most nodes has 3691 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 160.43, and the node degree mode is 3. The top 5 most central
-	nodes are 1198114.AciX9_0731 (degree 1245), 1198114.AciX9_1242 (degree 1054), 1198114.AciX9_2114
-	(degree 996), 1198114.AciX9_1167 (degree 877) and 1198114.AciX9_1897 (degree 873).
+	The undirected graph Granulicella tundricola has 3743 nodes and 300240
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04287 and has 22 connected components, where the component
+	with most nodes has 3691 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 160.43,
+	and the node degree mode is 3. The top 5 most central nodes are 1198114.AciX9_0731
+	(degree 1245), 1198114.AciX9_1242 (degree 1054), 1198114.AciX9_2114 (degree
+	996), 1198114.AciX9_1167 (degree 877) and 1198114.AciX9_1897 (degree 873).
 	
 
 

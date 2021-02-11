@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:59.691103
 
-The undirected graph Trypanosoma brucei has 4236 nodes and 474144 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-has 12 connected components, where the component with most nodes has 4211 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 161,
-the mean node degree is 223.86, and the node degree mode is 6. The top 5 most central
-nodes are 5691.EAN79454 (degree 1546), 5691.AAZ12612 (degree 1410), 5691.AAZ10822
-(degree 1240), 5691.AAZ10837 (degree 1229) and 5691.EAN78749 (degree 1138).
+The undirected graph Trypanosoma brucei has 4236 nodes and 474144 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05286 and has 12 connected components, where the component with most
+nodes has 4211 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 161, the mean node degree is 223.86, and
+the node degree mode is 6. The top 5 most central nodes are 5691.EAN79454
+(degree 1546), 5691.AAZ12612 (degree 1410), 5691.AAZ10822 (degree 1240),
+5691.AAZ10837 (degree 1229) and 5691.EAN78749 (degree 1138).
 
 
 References
@@ -106,13 +107,14 @@ def TrypanosomaBrucei(
 	
 	Datetime: 2021-02-02 17:14:59.691103
 	
-	The undirected graph Trypanosoma brucei has 4236 nodes and 474144 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05286 and
-	has 12 connected components, where the component with most nodes has 4211 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 161,
-	the mean node degree is 223.86, and the node degree mode is 6. The top 5 most central
-	nodes are 5691.EAN79454 (degree 1546), 5691.AAZ12612 (degree 1410), 5691.AAZ10822
-	(degree 1240), 5691.AAZ10837 (degree 1229) and 5691.EAN78749 (degree 1138).
+	The undirected graph Trypanosoma brucei has 4236 nodes and 474144 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05286 and has 12 connected components, where the component with most
+	nodes has 4211 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 161, the mean node degree is 223.86, and
+	the node degree mode is 6. The top 5 most central nodes are 5691.EAN79454
+	(degree 1546), 5691.AAZ12612 (degree 1410), 5691.AAZ10822 (degree 1240),
+	5691.AAZ10837 (degree 1229) and 5691.EAN78749 (degree 1138).
 	
 
 

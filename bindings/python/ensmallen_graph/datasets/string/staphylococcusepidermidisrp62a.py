@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:55:19.466485
 
-The undirected graph Staphylococcus epidermidis RP62A has 2456 nodes and 165432 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05487
-and has 20 connected components, where the component with most nodes has 2412 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 106, the mean node degree is 134.72, and the node degree mode is 1. The top 5
-most central nodes are 176279.SERP1254 (degree 935), 176279.SERP0070 (degree 821),
-176279.SERP1148 (degree 751), 176279.SERP0069 (degree 736) and 176279.SERP0128 (degree
+The undirected graph Staphylococcus epidermidis RP62A has 2456 nodes and
+165432 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05487 and has 20 connected components, where the
+component with most nodes has 2412 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+is 134.72, and the node degree mode is 1. The top 5 most central nodes
+are 176279.SERP1254 (degree 935), 176279.SERP0070 (degree 821), 176279.SERP1148
+(degree 751), 176279.SERP0069 (degree 736) and 176279.SERP0128 (degree
 703).
 
 
@@ -107,13 +108,14 @@ def StaphylococcusEpidermidisRp62a(
 	
 	Datetime: 2021-02-02 19:55:19.466485
 	
-	The undirected graph Staphylococcus epidermidis RP62A has 2456 nodes and 165432 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05487
-	and has 20 connected components, where the component with most nodes has 2412 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 106, the mean node degree is 134.72, and the node degree mode is 1. The top 5
-	most central nodes are 176279.SERP1254 (degree 935), 176279.SERP0070 (degree 821),
-	176279.SERP1148 (degree 751), 176279.SERP0069 (degree 736) and 176279.SERP0128 (degree
+	The undirected graph Staphylococcus epidermidis RP62A has 2456 nodes and
+	165432 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05487 and has 20 connected components, where the
+	component with most nodes has 2412 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+	is 134.72, and the node degree mode is 1. The top 5 most central nodes
+	are 176279.SERP1254 (degree 935), 176279.SERP0070 (degree 821), 176279.SERP1148
+	(degree 751), 176279.SERP0069 (degree 736) and 176279.SERP0128 (degree
 	703).
 	
 

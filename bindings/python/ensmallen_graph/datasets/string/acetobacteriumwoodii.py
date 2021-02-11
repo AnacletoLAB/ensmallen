@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:15.475571
 
-The undirected graph Acetobacterium woodii has 3443 nodes and 324384 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05474 and
-has 6 connected components, where the component with most nodes has 3429 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 157,
-the mean node degree is 188.43, and the node degree mode is 2. The top 5 most central
-nodes are 931626.Awo_c21360 (degree 1478), 931626.Awo_c05850 (degree 1462), 931626.Awo_c04290
-(degree 1385), 931626.Awo_c30290 (degree 1361) and 931626.Awo_c24330 (degree 1267).
+The undirected graph Acetobacterium woodii has 3443 nodes and 324384 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05474 and has 6 connected components, where the component with most
+nodes has 3429 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 157, the mean node degree is 188.43, and
+the node degree mode is 2. The top 5 most central nodes are 931626.Awo_c21360
+(degree 1478), 931626.Awo_c05850 (degree 1462), 931626.Awo_c04290 (degree
+1385), 931626.Awo_c30290 (degree 1361) and 931626.Awo_c24330 (degree 1267).
 
 
 References
@@ -106,13 +107,14 @@ def AcetobacteriumWoodii(
 	
 	Datetime: 2021-02-02 21:58:15.475571
 	
-	The undirected graph Acetobacterium woodii has 3443 nodes and 324384 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05474 and
-	has 6 connected components, where the component with most nodes has 3429 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 157,
-	the mean node degree is 188.43, and the node degree mode is 2. The top 5 most central
-	nodes are 931626.Awo_c21360 (degree 1478), 931626.Awo_c05850 (degree 1462), 931626.Awo_c04290
-	(degree 1385), 931626.Awo_c30290 (degree 1361) and 931626.Awo_c24330 (degree 1267).
+	The undirected graph Acetobacterium woodii has 3443 nodes and 324384 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05474 and has 6 connected components, where the component with most
+	nodes has 3429 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 157, the mean node degree is 188.43, and
+	the node degree mode is 2. The top 5 most central nodes are 931626.Awo_c21360
+	(degree 1478), 931626.Awo_c05850 (degree 1462), 931626.Awo_c04290 (degree
+	1385), 931626.Awo_c30290 (degree 1361) and 931626.Awo_c24330 (degree 1267).
 	
 
 

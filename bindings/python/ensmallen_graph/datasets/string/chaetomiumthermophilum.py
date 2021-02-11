@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:01:10.728380
 
-The undirected graph Chaetomium thermophilum has 5548 nodes and 450157 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-has 14 connected components, where the component with most nodes has 5522 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 108,
-the mean node degree is 162.28, and the node degree mode is 1. The top 5 most central
-nodes are 209285.XP_006697359.1 (degree 1376), 209285.XP_006691993.1 (degree 1258),
-209285.XP_006691970.1 (degree 1249), 209285.XP_006693458.1 (degree 1229) and 209285.XP_006696008.1
+The undirected graph Chaetomium thermophilum has 5548 nodes and 450157
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02925 and has 14 connected components, where the component
+with most nodes has 5522 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 162.28,
+and the node degree mode is 1. The top 5 most central nodes are 209285.XP_006697359.1
+(degree 1376), 209285.XP_006691993.1 (degree 1258), 209285.XP_006691970.1
+(degree 1249), 209285.XP_006693458.1 (degree 1229) and 209285.XP_006696008.1
 (degree 1119).
 
 
@@ -107,13 +108,14 @@ def ChaetomiumThermophilum(
 	
 	Datetime: 2021-02-02 20:01:10.728380
 	
-	The undirected graph Chaetomium thermophilum has 5548 nodes and 450157 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02925 and
-	has 14 connected components, where the component with most nodes has 5522 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 108,
-	the mean node degree is 162.28, and the node degree mode is 1. The top 5 most central
-	nodes are 209285.XP_006697359.1 (degree 1376), 209285.XP_006691993.1 (degree 1258),
-	209285.XP_006691970.1 (degree 1249), 209285.XP_006693458.1 (degree 1229) and 209285.XP_006696008.1
+	The undirected graph Chaetomium thermophilum has 5548 nodes and 450157
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02925 and has 14 connected components, where the component
+	with most nodes has 5522 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 162.28,
+	and the node degree mode is 1. The top 5 most central nodes are 209285.XP_006697359.1
+	(degree 1376), 209285.XP_006691993.1 (degree 1258), 209285.XP_006691970.1
+	(degree 1249), 209285.XP_006693458.1 (degree 1229) and 209285.XP_006696008.1
 	(degree 1119).
 	
 

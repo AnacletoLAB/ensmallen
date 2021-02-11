@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:17:56.005543
 
-The undirected graph Streptomyces viridochromogenes has 7526 nodes and 1001620 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-and has 35 connected components, where the component with most nodes has 7446 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 228, the mean node degree is 266.18, and the node degree mode is 1. The top 5
-most central nodes are 591159.ACEZ01000179_gene6115 (degree 3604), 591159.ACEZ01000004_gene6653
+The undirected graph Streptomyces viridochromogenes has 7526 nodes and
+1001620 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03537 and has 35 connected components, where the
+component with most nodes has 7446 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 228, the mean node degree
+is 266.18, and the node degree mode is 1. The top 5 most central nodes
+are 591159.ACEZ01000179_gene6115 (degree 3604), 591159.ACEZ01000004_gene6653
 (degree 2553), 591159.ACEZ01000133_gene7401 (degree 2496), 591159.ACEZ01000120_gene545
 (degree 2341) and 591159.ACEZ01000085_gene6420 (degree 2098).
 
@@ -107,12 +108,13 @@ def StreptomycesViridochromogenes(
 	
 	Datetime: 2021-02-02 21:17:56.005543
 	
-	The undirected graph Streptomyces viridochromogenes has 7526 nodes and 1001620 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03537
-	and has 35 connected components, where the component with most nodes has 7446 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 228, the mean node degree is 266.18, and the node degree mode is 1. The top 5
-	most central nodes are 591159.ACEZ01000179_gene6115 (degree 3604), 591159.ACEZ01000004_gene6653
+	The undirected graph Streptomyces viridochromogenes has 7526 nodes and
+	1001620 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03537 and has 35 connected components, where the
+	component with most nodes has 7446 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 228, the mean node degree
+	is 266.18, and the node degree mode is 1. The top 5 most central nodes
+	are 591159.ACEZ01000179_gene6115 (degree 3604), 591159.ACEZ01000004_gene6653
 	(degree 2553), 591159.ACEZ01000133_gene7401 (degree 2496), 591159.ACEZ01000120_gene545
 	(degree 2341) and 591159.ACEZ01000085_gene6420 (degree 2098).
 	

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:48:45.247384
 
-The undirected graph Marinithermus hydrothermalis has 2189 nodes and 184758 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07715
-and has 3 connected components, where the component with most nodes has 2185 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 168.81, and the node degree mode is 9. The top 5
-most central nodes are 869210.Marky_1136 (degree 1017), 869210.Marky_1238 (degree
-886), 869210.Marky_0911 (degree 842), 869210.Marky_1151 (degree 838) and 869210.Marky_0171
-(degree 795).
+The undirected graph Marinithermus hydrothermalis has 2189 nodes and 184758
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07715 and has 3 connected components, where the component
+with most nodes has 2185 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 168.81,
+and the node degree mode is 9. The top 5 most central nodes are 869210.Marky_1136
+(degree 1017), 869210.Marky_1238 (degree 886), 869210.Marky_0911 (degree
+842), 869210.Marky_1151 (degree 838) and 869210.Marky_0171 (degree 795).
 
 
 References
@@ -107,14 +107,14 @@ def MarinithermusHydrothermalis(
 	
 	Datetime: 2021-02-02 21:48:45.247384
 	
-	The undirected graph Marinithermus hydrothermalis has 2189 nodes and 184758 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07715
-	and has 3 connected components, where the component with most nodes has 2185 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 168.81, and the node degree mode is 9. The top 5
-	most central nodes are 869210.Marky_1136 (degree 1017), 869210.Marky_1238 (degree
-	886), 869210.Marky_0911 (degree 842), 869210.Marky_1151 (degree 838) and 869210.Marky_0171
-	(degree 795).
+	The undirected graph Marinithermus hydrothermalis has 2189 nodes and 184758
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07715 and has 3 connected components, where the component
+	with most nodes has 2185 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 168.81,
+	and the node degree mode is 9. The top 5 most central nodes are 869210.Marky_1136
+	(degree 1017), 869210.Marky_1238 (degree 886), 869210.Marky_0911 (degree
+	842), 869210.Marky_1151 (degree 838) and 869210.Marky_0171 (degree 795).
 	
 
 

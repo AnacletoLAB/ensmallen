@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:31:16.548762
 
-The undirected graph Enterobacter cloacae JD6301 has 4195 nodes and 568424 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06462
-and has 4 connected components, where the component with most nodes has 4189 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 271.00, and the node degree mode is 3. The top 5
-most central nodes are 1399774.JDWH01000002_gene3215 (degree 1570), 1399774.JDWH01000014_gene3563
-(degree 1535), 1399774.JDWH01000022_gene2309 (degree 1493), 1399774.JDWH01000009_gene1790
-(degree 1426) and 1399774.JDWH01000003_gene1022 (degree 1363).
+The undirected graph Enterobacter cloacae JD6301 has 4195 nodes and 568424
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06462 and has 4 connected components, where the component
+with most nodes has 4189 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 234, the mean node degree is 271.00,
+and the node degree mode is 3. The top 5 most central nodes are 1399774.JDWH01000002_gene3215
+(degree 1570), 1399774.JDWH01000014_gene3563 (degree 1535), 1399774.JDWH01000022_gene2309
+(degree 1493), 1399774.JDWH01000009_gene1790 (degree 1426) and 1399774.JDWH01000003_gene1022
+(degree 1363).
 
 
 References
@@ -107,14 +108,15 @@ def EnterobacterCloacaeJd6301(
 	
 	Datetime: 2021-02-03 22:31:16.548762
 	
-	The undirected graph Enterobacter cloacae JD6301 has 4195 nodes and 568424 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06462
-	and has 4 connected components, where the component with most nodes has 4189 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 271.00, and the node degree mode is 3. The top 5
-	most central nodes are 1399774.JDWH01000002_gene3215 (degree 1570), 1399774.JDWH01000014_gene3563
-	(degree 1535), 1399774.JDWH01000022_gene2309 (degree 1493), 1399774.JDWH01000009_gene1790
-	(degree 1426) and 1399774.JDWH01000003_gene1022 (degree 1363).
+	The undirected graph Enterobacter cloacae JD6301 has 4195 nodes and 568424
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06462 and has 4 connected components, where the component
+	with most nodes has 4189 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 234, the mean node degree is 271.00,
+	and the node degree mode is 3. The top 5 most central nodes are 1399774.JDWH01000002_gene3215
+	(degree 1570), 1399774.JDWH01000014_gene3563 (degree 1535), 1399774.JDWH01000022_gene2309
+	(degree 1493), 1399774.JDWH01000009_gene1790 (degree 1426) and 1399774.JDWH01000003_gene1022
+	(degree 1363).
 	
 
 

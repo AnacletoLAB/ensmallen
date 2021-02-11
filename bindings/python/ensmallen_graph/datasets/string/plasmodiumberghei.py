@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:00.486858
 
-The undirected graph Plasmodium berghei has 3913 nodes and 419199 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05477 and
-has 6 connected components, where the component with most nodes has 3903 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 152,
-the mean node degree is 214.26, and the node degree mode is 1. The top 5 most central
-nodes are 5821.PBANKA_071190 (degree 1251), 5821.PBANKA_091030 (degree 1239), 5821.PBANKA_123020
-(degree 1229), 5821.PBANKA_051750 (degree 1193) and 5821.PBANKA_113670 (degree 1167).
+The undirected graph Plasmodium berghei has 3913 nodes and 419199 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05477 and has 6 connected components, where the component with most
+nodes has 3903 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 152, the mean node degree is 214.26, and
+the node degree mode is 1. The top 5 most central nodes are 5821.PBANKA_071190
+(degree 1251), 5821.PBANKA_091030 (degree 1239), 5821.PBANKA_123020 (degree
+1229), 5821.PBANKA_051750 (degree 1193) and 5821.PBANKA_113670 (degree
+1167).
 
 
 References
@@ -106,13 +108,15 @@ def PlasmodiumBerghei(
 	
 	Datetime: 2021-02-02 17:16:00.486858
 	
-	The undirected graph Plasmodium berghei has 3913 nodes and 419199 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05477 and
-	has 6 connected components, where the component with most nodes has 3903 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 152,
-	the mean node degree is 214.26, and the node degree mode is 1. The top 5 most central
-	nodes are 5821.PBANKA_071190 (degree 1251), 5821.PBANKA_091030 (degree 1239), 5821.PBANKA_123020
-	(degree 1229), 5821.PBANKA_051750 (degree 1193) and 5821.PBANKA_113670 (degree 1167).
+	The undirected graph Plasmodium berghei has 3913 nodes and 419199 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05477 and has 6 connected components, where the component with most
+	nodes has 3903 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 152, the mean node degree is 214.26, and
+	the node degree mode is 1. The top 5 most central nodes are 5821.PBANKA_071190
+	(degree 1251), 5821.PBANKA_091030 (degree 1239), 5821.PBANKA_123020 (degree
+	1229), 5821.PBANKA_051750 (degree 1193) and 5821.PBANKA_113670 (degree
+	1167).
 	
 
 

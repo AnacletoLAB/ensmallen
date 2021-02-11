@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:01:15.658200
 
-The undirected graph Streptomyces avicenniae has 5771 nodes and 633581 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03805 and
-has 24 connected components, where the component with most nodes has 5720 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 184,
-the mean node degree is 219.57, and the node degree mode is 3. The top 5 most central
-nodes are 500153.JOEK01000012_gene1589 (degree 2266), 500153.JOEK01000014_gene5676
-(degree 1671), 500153.JOEK01000010_gene4691 (degree 1564), 500153.JOEK01000014_gene5703
-(degree 1546) and 500153.JOEK01000003_gene1053 (degree 1545).
+The undirected graph Streptomyces avicenniae has 5771 nodes and 633581
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03805 and has 24 connected components, where the component
+with most nodes has 5720 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 184, the mean node degree is 219.57,
+and the node degree mode is 3. The top 5 most central nodes are 500153.JOEK01000012_gene1589
+(degree 2266), 500153.JOEK01000014_gene5676 (degree 1671), 500153.JOEK01000010_gene4691
+(degree 1564), 500153.JOEK01000014_gene5703 (degree 1546) and 500153.JOEK01000003_gene1053
+(degree 1545).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAvicenniae(
 	
 	Datetime: 2021-02-02 21:01:15.658200
 	
-	The undirected graph Streptomyces avicenniae has 5771 nodes and 633581 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03805 and
-	has 24 connected components, where the component with most nodes has 5720 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 184,
-	the mean node degree is 219.57, and the node degree mode is 3. The top 5 most central
-	nodes are 500153.JOEK01000012_gene1589 (degree 2266), 500153.JOEK01000014_gene5676
-	(degree 1671), 500153.JOEK01000010_gene4691 (degree 1564), 500153.JOEK01000014_gene5703
-	(degree 1546) and 500153.JOEK01000003_gene1053 (degree 1545).
+	The undirected graph Streptomyces avicenniae has 5771 nodes and 633581
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03805 and has 24 connected components, where the component
+	with most nodes has 5720 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 184, the mean node degree is 219.57,
+	and the node degree mode is 3. The top 5 most central nodes are 500153.JOEK01000012_gene1589
+	(degree 2266), 500153.JOEK01000014_gene5676 (degree 1671), 500153.JOEK01000010_gene4691
+	(degree 1564), 500153.JOEK01000014_gene5703 (degree 1546) and 500153.JOEK01000003_gene1053
+	(degree 1545).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:10.220109
 
-The undirected graph Marinomonas sp. D104 has 3551 nodes and 399337 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06336 and
-has 13 connected components, where the component with most nodes has 3523 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 199,
-the mean node degree is 224.92, and the node degree mode is 1. The top 5 most central
-nodes are 1208321.D104_02395 (degree 1467), 1208321.D104_09005 (degree 1096), 1208321.D104_08800
-(degree 1073), 1208321.D104_15395 (degree 1072) and 1208321.D104_09775 (degree 1058).
+The undirected graph Marinomonas sp. D104 has 3551 nodes and 399337 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06336 and has 13 connected components, where the component with most
+nodes has 3523 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 199, the mean node degree is 224.92, and
+the node degree mode is 1. The top 5 most central nodes are 1208321.D104_02395
+(degree 1467), 1208321.D104_09005 (degree 1096), 1208321.D104_08800 (degree
+1073), 1208321.D104_15395 (degree 1072) and 1208321.D104_09775 (degree
+1058).
 
 
 References
@@ -106,13 +108,15 @@ def MarinomonasSp.D104(
 	
 	Datetime: 2021-02-02 23:18:10.220109
 	
-	The undirected graph Marinomonas sp. D104 has 3551 nodes and 399337 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06336 and
-	has 13 connected components, where the component with most nodes has 3523 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 199,
-	the mean node degree is 224.92, and the node degree mode is 1. The top 5 most central
-	nodes are 1208321.D104_02395 (degree 1467), 1208321.D104_09005 (degree 1096), 1208321.D104_08800
-	(degree 1073), 1208321.D104_15395 (degree 1072) and 1208321.D104_09775 (degree 1058).
+	The undirected graph Marinomonas sp. D104 has 3551 nodes and 399337 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06336 and has 13 connected components, where the component with most
+	nodes has 3523 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 199, the mean node degree is 224.92, and
+	the node degree mode is 1. The top 5 most central nodes are 1208321.D104_02395
+	(degree 1467), 1208321.D104_09005 (degree 1096), 1208321.D104_08800 (degree
+	1073), 1208321.D104_15395 (degree 1072) and 1208321.D104_09775 (degree
+	1058).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:08.621412
 
-The undirected graph Fluoribacter dumoffii has 3333 nodes and 309205 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05568 and
-has 37 connected components, where the component with most nodes has 3248 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 185.54, and the node degree mode is 1. The top 5 most central
-nodes are 1094715.CM001373_gene3354 (degree 1248), 1094715.CM001373_gene1875 (degree
-1192), 1094715.CM001373_gene1488 (degree 1092), 1094715.CM001373_gene2432 (degree
-1045) and 1094715.CM001373_gene1310 (degree 1000).
+The undirected graph Fluoribacter dumoffii has 3333 nodes and 309205 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05568 and has 37 connected components, where the component with most
+nodes has 3248 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 185.54, and
+the node degree mode is 1. The top 5 most central nodes are 1094715.CM001373_gene3354
+(degree 1248), 1094715.CM001373_gene1875 (degree 1192), 1094715.CM001373_gene1488
+(degree 1092), 1094715.CM001373_gene2432 (degree 1045) and 1094715.CM001373_gene1310
+(degree 1000).
 
 
 References
@@ -107,14 +108,15 @@ def FluoribacterDumoffii(
 	
 	Datetime: 2021-02-02 22:23:08.621412
 	
-	The undirected graph Fluoribacter dumoffii has 3333 nodes and 309205 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05568 and
-	has 37 connected components, where the component with most nodes has 3248 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 185.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1094715.CM001373_gene3354 (degree 1248), 1094715.CM001373_gene1875 (degree
-	1192), 1094715.CM001373_gene1488 (degree 1092), 1094715.CM001373_gene2432 (degree
-	1045) and 1094715.CM001373_gene1310 (degree 1000).
+	The undirected graph Fluoribacter dumoffii has 3333 nodes and 309205 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05568 and has 37 connected components, where the component with most
+	nodes has 3248 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 185.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1094715.CM001373_gene3354
+	(degree 1248), 1094715.CM001373_gene1875 (degree 1192), 1094715.CM001373_gene1488
+	(degree 1092), 1094715.CM001373_gene2432 (degree 1045) and 1094715.CM001373_gene1310
+	(degree 1000).
 	
 
 

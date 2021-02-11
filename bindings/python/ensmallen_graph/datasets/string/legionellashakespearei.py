@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:22.161487
 
-The undirected graph Legionella shakespearei has 2847 nodes and 225041 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05555 and
-has 35 connected components, where the component with most nodes has 2768 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 122,
-the mean node degree is 158.09, and the node degree mode is 1. The top 5 most central
-nodes are 1122169.AREN01000009_gene580 (degree 1042), 1122169.AREN01000004_gene524
-(degree 957), 1122169.AREN01000019_gene2035 (degree 888), 1122169.AREN01000042_gene918
-(degree 872) and 1122169.AREN01000049_gene155 (degree 868).
+The undirected graph Legionella shakespearei has 2847 nodes and 225041
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05555 and has 35 connected components, where the component
+with most nodes has 2768 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 122, the mean node degree is 158.09,
+and the node degree mode is 1. The top 5 most central nodes are 1122169.AREN01000009_gene580
+(degree 1042), 1122169.AREN01000004_gene524 (degree 957), 1122169.AREN01000019_gene2035
+(degree 888), 1122169.AREN01000042_gene918 (degree 872) and 1122169.AREN01000049_gene155
+(degree 868).
 
 
 References
@@ -107,14 +108,15 @@ def LegionellaShakespearei(
 	
 	Datetime: 2021-02-02 22:41:22.161487
 	
-	The undirected graph Legionella shakespearei has 2847 nodes and 225041 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05555 and
-	has 35 connected components, where the component with most nodes has 2768 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 122,
-	the mean node degree is 158.09, and the node degree mode is 1. The top 5 most central
-	nodes are 1122169.AREN01000009_gene580 (degree 1042), 1122169.AREN01000004_gene524
-	(degree 957), 1122169.AREN01000019_gene2035 (degree 888), 1122169.AREN01000042_gene918
-	(degree 872) and 1122169.AREN01000049_gene155 (degree 868).
+	The undirected graph Legionella shakespearei has 2847 nodes and 225041
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05555 and has 35 connected components, where the component
+	with most nodes has 2768 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 122, the mean node degree is 158.09,
+	and the node degree mode is 1. The top 5 most central nodes are 1122169.AREN01000009_gene580
+	(degree 1042), 1122169.AREN01000004_gene524 (degree 957), 1122169.AREN01000019_gene2035
+	(degree 888), 1122169.AREN01000042_gene918 (degree 872) and 1122169.AREN01000049_gene155
+	(degree 868).
 	
 
 

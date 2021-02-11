@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:57:38.882478
 
-The undirected graph Carnimonas nigrificans has 2247 nodes and 177659 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07041 and
-has 5 connected components, where the component with most nodes has 2239 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 158.13, and the node degree mode is 1. The top 5 most central
-nodes are 1336245.JAGO01000011_gene373 (degree 1136), 1336245.JAGO01000015_gene2117
-(degree 971), 1336245.JAGO01000010_gene608 (degree 817), 1336245.JAGO01000012_gene1769
-(degree 781) and 1336245.JAGO01000003_gene594 (degree 755).
+The undirected graph Carnimonas nigrificans has 2247 nodes and 177659 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07041 and has 5 connected components, where the component with most
+nodes has 2239 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 158.13, and
+the node degree mode is 1. The top 5 most central nodes are 1336245.JAGO01000011_gene373
+(degree 1136), 1336245.JAGO01000015_gene2117 (degree 971), 1336245.JAGO01000010_gene608
+(degree 817), 1336245.JAGO01000012_gene1769 (degree 781) and 1336245.JAGO01000003_gene594
+(degree 755).
 
 
 References
@@ -107,14 +108,15 @@ def CarnimonasNigrificans(
 	
 	Datetime: 2021-02-03 21:57:38.882478
 	
-	The undirected graph Carnimonas nigrificans has 2247 nodes and 177659 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07041 and
-	has 5 connected components, where the component with most nodes has 2239 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 158.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1336245.JAGO01000011_gene373 (degree 1136), 1336245.JAGO01000015_gene2117
-	(degree 971), 1336245.JAGO01000010_gene608 (degree 817), 1336245.JAGO01000012_gene1769
-	(degree 781) and 1336245.JAGO01000003_gene594 (degree 755).
+	The undirected graph Carnimonas nigrificans has 2247 nodes and 177659 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07041 and has 5 connected components, where the component with most
+	nodes has 2239 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 158.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1336245.JAGO01000011_gene373
+	(degree 1136), 1336245.JAGO01000015_gene2117 (degree 971), 1336245.JAGO01000010_gene608
+	(degree 817), 1336245.JAGO01000012_gene1769 (degree 781) and 1336245.JAGO01000003_gene594
+	(degree 755).
 	
 
 

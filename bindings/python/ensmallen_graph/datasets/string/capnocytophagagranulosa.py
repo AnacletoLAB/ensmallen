@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:23:34.948833
 
-The undirected graph Capnocytophaga granulosa has 2497 nodes and 151727 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04869
-and has 14 connected components, where the component with most nodes has 2458 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 121.53, and the node degree mode is 7. The top 5
-most central nodes are 641143.HMPREF9331_01325 (degree 886), 641143.HMPREF9331_00303
-(degree 782), 641143.HMPREF9331_00971 (degree 734), 641143.HMPREF9331_00047 (degree
-605) and 641143.HMPREF9331_00785 (degree 601).
+The undirected graph Capnocytophaga granulosa has 2497 nodes and 151727
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04869 and has 14 connected components, where the component
+with most nodes has 2458 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 101, the mean node degree is 121.53,
+and the node degree mode is 7. The top 5 most central nodes are 641143.HMPREF9331_01325
+(degree 886), 641143.HMPREF9331_00303 (degree 782), 641143.HMPREF9331_00971
+(degree 734), 641143.HMPREF9331_00047 (degree 605) and 641143.HMPREF9331_00785
+(degree 601).
 
 
 References
@@ -107,14 +108,15 @@ def CapnocytophagaGranulosa(
 	
 	Datetime: 2021-02-02 21:23:34.948833
 	
-	The undirected graph Capnocytophaga granulosa has 2497 nodes and 151727 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04869
-	and has 14 connected components, where the component with most nodes has 2458 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 121.53, and the node degree mode is 7. The top 5
-	most central nodes are 641143.HMPREF9331_01325 (degree 886), 641143.HMPREF9331_00303
-	(degree 782), 641143.HMPREF9331_00971 (degree 734), 641143.HMPREF9331_00047 (degree
-	605) and 641143.HMPREF9331_00785 (degree 601).
+	The undirected graph Capnocytophaga granulosa has 2497 nodes and 151727
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04869 and has 14 connected components, where the component
+	with most nodes has 2458 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 101, the mean node degree is 121.53,
+	and the node degree mode is 7. The top 5 most central nodes are 641143.HMPREF9331_01325
+	(degree 886), 641143.HMPREF9331_00303 (degree 782), 641143.HMPREF9331_00971
+	(degree 734), 641143.HMPREF9331_00047 (degree 605) and 641143.HMPREF9331_00785
+	(degree 601).
 	
 
 

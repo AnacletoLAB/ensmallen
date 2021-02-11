@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:30.359719
 
-The undirected graph Desulfosporosinus meridiei has 4302 nodes and 423453 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04577
-and has 20 connected components, where the component with most nodes has 4262 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 178, the mean node degree is 196.86, and the node degree mode is 1. The top 5
-most central nodes are 768704.Desmer_2848 (degree 1600), 768704.Desmer_3567 (degree
-1528), 768704.Desmer_1070 (degree 1268), 768704.Desmer_0023 (degree 1240) and 768704.Desmer_3574
-(degree 1233).
+The undirected graph Desulfosporosinus meridiei has 4302 nodes and 423453
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04577 and has 20 connected components, where the component
+with most nodes has 4262 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 178, the mean node degree is 196.86,
+and the node degree mode is 1. The top 5 most central nodes are 768704.Desmer_2848
+(degree 1600), 768704.Desmer_3567 (degree 1528), 768704.Desmer_1070 (degree
+1268), 768704.Desmer_0023 (degree 1240) and 768704.Desmer_3574 (degree
+1233).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfosporosinusMeridiei(
 	
 	Datetime: 2021-02-02 21:44:30.359719
 	
-	The undirected graph Desulfosporosinus meridiei has 4302 nodes and 423453 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04577
-	and has 20 connected components, where the component with most nodes has 4262 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 178, the mean node degree is 196.86, and the node degree mode is 1. The top 5
-	most central nodes are 768704.Desmer_2848 (degree 1600), 768704.Desmer_3567 (degree
-	1528), 768704.Desmer_1070 (degree 1268), 768704.Desmer_0023 (degree 1240) and 768704.Desmer_3574
-	(degree 1233).
+	The undirected graph Desulfosporosinus meridiei has 4302 nodes and 423453
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04577 and has 20 connected components, where the component
+	with most nodes has 4262 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 178, the mean node degree is 196.86,
+	and the node degree mode is 1. The top 5 most central nodes are 768704.Desmer_2848
+	(degree 1600), 768704.Desmer_3567 (degree 1528), 768704.Desmer_1070 (degree
+	1268), 768704.Desmer_0023 (degree 1240) and 768704.Desmer_3574 (degree
+	1233).
 	
 
 

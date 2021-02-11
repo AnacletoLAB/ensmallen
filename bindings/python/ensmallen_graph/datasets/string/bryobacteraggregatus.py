@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:59:12.310795
 
-The undirected graph Bryobacter aggregatus has 4768 nodes and 509999 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04488 and
-has 25 connected components, where the component with most nodes has 4712 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 213.93, and the node degree mode is 2. The top 5 most central
-nodes are 1340493.JNIF01000003_gene1992 (degree 1569), 1340493.JNIF01000003_gene3104
-(degree 1531), 1340493.JNIF01000003_gene4765 (degree 1330), 1340493.JNIF01000003_gene4790
-(degree 1250) and 1340493.JNIF01000003_gene2531 (degree 1250).
+The undirected graph Bryobacter aggregatus has 4768 nodes and 509999 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04488 and has 25 connected components, where the component with most
+nodes has 4712 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 213.93, and
+the node degree mode is 2. The top 5 most central nodes are 1340493.JNIF01000003_gene1992
+(degree 1569), 1340493.JNIF01000003_gene3104 (degree 1531), 1340493.JNIF01000003_gene4765
+(degree 1330), 1340493.JNIF01000003_gene4790 (degree 1250) and 1340493.JNIF01000003_gene2531
+(degree 1250).
 
 
 References
@@ -107,14 +108,15 @@ def BryobacterAggregatus(
 	
 	Datetime: 2021-02-03 21:59:12.310795
 	
-	The undirected graph Bryobacter aggregatus has 4768 nodes and 509999 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04488 and
-	has 25 connected components, where the component with most nodes has 4712 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 213.93, and the node degree mode is 2. The top 5 most central
-	nodes are 1340493.JNIF01000003_gene1992 (degree 1569), 1340493.JNIF01000003_gene3104
-	(degree 1531), 1340493.JNIF01000003_gene4765 (degree 1330), 1340493.JNIF01000003_gene4790
-	(degree 1250) and 1340493.JNIF01000003_gene2531 (degree 1250).
+	The undirected graph Bryobacter aggregatus has 4768 nodes and 509999 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04488 and has 25 connected components, where the component with most
+	nodes has 4712 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 213.93, and
+	the node degree mode is 2. The top 5 most central nodes are 1340493.JNIF01000003_gene1992
+	(degree 1569), 1340493.JNIF01000003_gene3104 (degree 1531), 1340493.JNIF01000003_gene4765
+	(degree 1330), 1340493.JNIF01000003_gene4790 (degree 1250) and 1340493.JNIF01000003_gene2531
+	(degree 1250).
 	
 
 

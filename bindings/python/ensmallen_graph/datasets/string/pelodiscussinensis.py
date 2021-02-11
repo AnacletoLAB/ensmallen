@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:16:33.816369
 
-The undirected graph Pelodiscus sinensis has 17389 nodes and 2973509 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01967 and
-has 3 connected components, where the component with most nodes has 17385 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 342.00, and the node degree mode is 2. The top 5 most central
-nodes are 13735.ENSPSIP00000012179 (degree 4185), 13735.ENSPSIP00000006813 (degree
-3723), 13735.ENSPSIP00000008875 (degree 3627), 13735.ENSPSIP00000008559 (degree 3625)
-and 13735.ENSPSIP00000016117 (degree 3311).
+The undirected graph Pelodiscus sinensis has 17389 nodes and 2973509 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01967 and has 3 connected components, where the component with most
+nodes has 17385 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 342.00, and
+the node degree mode is 2. The top 5 most central nodes are 13735.ENSPSIP00000012179
+(degree 4185), 13735.ENSPSIP00000006813 (degree 3723), 13735.ENSPSIP00000008875
+(degree 3627), 13735.ENSPSIP00000008559 (degree 3625) and 13735.ENSPSIP00000016117
+(degree 3311).
 
 
 References
@@ -107,14 +108,15 @@ def PelodiscusSinensis(
 	
 	Datetime: 2021-02-05 17:16:33.816369
 	
-	The undirected graph Pelodiscus sinensis has 17389 nodes and 2973509 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01967 and
-	has 3 connected components, where the component with most nodes has 17385 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 342.00, and the node degree mode is 2. The top 5 most central
-	nodes are 13735.ENSPSIP00000012179 (degree 4185), 13735.ENSPSIP00000006813 (degree
-	3723), 13735.ENSPSIP00000008875 (degree 3627), 13735.ENSPSIP00000008559 (degree 3625)
-	and 13735.ENSPSIP00000016117 (degree 3311).
+	The undirected graph Pelodiscus sinensis has 17389 nodes and 2973509 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01967 and has 3 connected components, where the component with most
+	nodes has 17385 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 342.00, and
+	the node degree mode is 2. The top 5 most central nodes are 13735.ENSPSIP00000012179
+	(degree 4185), 13735.ENSPSIP00000006813 (degree 3723), 13735.ENSPSIP00000008875
+	(degree 3627), 13735.ENSPSIP00000008559 (degree 3625) and 13735.ENSPSIP00000016117
+	(degree 3311).
 	
 
 

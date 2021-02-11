@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:12:24.098495
 
-The undirected graph Aspergillus clavatus has 6927 nodes and 542907 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02263 and
-has 23 connected components, where the component with most nodes has 6883 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 156.75, and the node degree mode is 1. The top 5 most central
-nodes are 5057.CADACLAP00002695 (degree 1761), 5057.CADACLAP00008756 (degree 1232),
-5057.CADACLAP00003019 (degree 1140), 5057.CADACLAP00002652 (degree 1139) and 5057.CADACLAP00003037
+The undirected graph Aspergillus clavatus has 6927 nodes and 542907 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02263 and has 23 connected components, where the component with most
+nodes has 6883 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 94, the mean node degree is 156.75, and
+the node degree mode is 1. The top 5 most central nodes are 5057.CADACLAP00002695
+(degree 1761), 5057.CADACLAP00008756 (degree 1232), 5057.CADACLAP00003019
+(degree 1140), 5057.CADACLAP00002652 (degree 1139) and 5057.CADACLAP00003037
 (degree 1139).
 
 
@@ -107,13 +108,14 @@ def AspergillusClavatus(
 	
 	Datetime: 2021-02-02 17:12:24.098495
 	
-	The undirected graph Aspergillus clavatus has 6927 nodes and 542907 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02263 and
-	has 23 connected components, where the component with most nodes has 6883 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 156.75, and the node degree mode is 1. The top 5 most central
-	nodes are 5057.CADACLAP00002695 (degree 1761), 5057.CADACLAP00008756 (degree 1232),
-	5057.CADACLAP00003019 (degree 1140), 5057.CADACLAP00002652 (degree 1139) and 5057.CADACLAP00003037
+	The undirected graph Aspergillus clavatus has 6927 nodes and 542907 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02263 and has 23 connected components, where the component with most
+	nodes has 6883 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 94, the mean node degree is 156.75, and
+	the node degree mode is 1. The top 5 most central nodes are 5057.CADACLAP00002695
+	(degree 1761), 5057.CADACLAP00008756 (degree 1232), 5057.CADACLAP00003019
+	(degree 1140), 5057.CADACLAP00002652 (degree 1139) and 5057.CADACLAP00003037
 	(degree 1139).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:43.768759
 
-The undirected graph Aneurinibacillus aneurinilyticus has 6079 nodes and 748725 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04053
-and has 89 connected components, where the component with most nodes has 5851 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 219, the mean node degree is 246.33, and the node degree mode is 2. The top 5
-most central nodes are 649747.HMPREF0083_05818 (degree 1834), 649747.HMPREF0083_05220
-(degree 1756), 649747.HMPREF0083_05713 (degree 1682), 649747.HMPREF0083_05240 (degree
+The undirected graph Aneurinibacillus aneurinilyticus has 6079 nodes and
+748725 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04053 and has 89 connected components, where the
+component with most nodes has 5851 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+is 246.33, and the node degree mode is 2. The top 5 most central nodes
+are 649747.HMPREF0083_05818 (degree 1834), 649747.HMPREF0083_05220 (degree
+1756), 649747.HMPREF0083_05713 (degree 1682), 649747.HMPREF0083_05240 (degree
 1547) and 649747.HMPREF0083_05906 (degree 1545).
 
 
@@ -107,13 +108,14 @@ def AneurinibacillusAneurinilyticus(
 	
 	Datetime: 2021-02-02 21:25:43.768759
 	
-	The undirected graph Aneurinibacillus aneurinilyticus has 6079 nodes and 748725 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04053
-	and has 89 connected components, where the component with most nodes has 5851 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 219, the mean node degree is 246.33, and the node degree mode is 2. The top 5
-	most central nodes are 649747.HMPREF0083_05818 (degree 1834), 649747.HMPREF0083_05220
-	(degree 1756), 649747.HMPREF0083_05713 (degree 1682), 649747.HMPREF0083_05240 (degree
+	The undirected graph Aneurinibacillus aneurinilyticus has 6079 nodes and
+	748725 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04053 and has 89 connected components, where the
+	component with most nodes has 5851 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 219, the mean node degree
+	is 246.33, and the node degree mode is 2. The top 5 most central nodes
+	are 649747.HMPREF0083_05818 (degree 1834), 649747.HMPREF0083_05220 (degree
+	1756), 649747.HMPREF0083_05713 (degree 1682), 649747.HMPREF0083_05240 (degree
 	1547) and 649747.HMPREF0083_05906 (degree 1545).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:12:19.258893
 
-The undirected graph Bathycoccus prasinos has 4970 nodes and 507377 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04109 and
-has 9 connected components, where the component with most nodes has 4941 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 146,
-the mean node degree is 204.18, and the node degree mode is 1. The top 5 most central
-nodes are 41875.XP_007514117.1 (degree 1725), 41875.XP_007510481.1 (degree 1574),
-41875.XP_007513487.1 (degree 1552), 41875.XP_007512535.1 (degree 1524) and 41875.XP_007510271.1
+The undirected graph Bathycoccus prasinos has 4970 nodes and 507377 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04109 and has 9 connected components, where the component with most
+nodes has 4941 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 146, the mean node degree is 204.18, and
+the node degree mode is 1. The top 5 most central nodes are 41875.XP_007514117.1
+(degree 1725), 41875.XP_007510481.1 (degree 1574), 41875.XP_007513487.1
+(degree 1552), 41875.XP_007512535.1 (degree 1524) and 41875.XP_007510271.1
 (degree 1326).
 
 
@@ -107,13 +108,14 @@ def BathycoccusPrasinos(
 	
 	Datetime: 2021-02-02 18:12:19.258893
 	
-	The undirected graph Bathycoccus prasinos has 4970 nodes and 507377 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04109 and
-	has 9 connected components, where the component with most nodes has 4941 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 146,
-	the mean node degree is 204.18, and the node degree mode is 1. The top 5 most central
-	nodes are 41875.XP_007514117.1 (degree 1725), 41875.XP_007510481.1 (degree 1574),
-	41875.XP_007513487.1 (degree 1552), 41875.XP_007512535.1 (degree 1524) and 41875.XP_007510271.1
+	The undirected graph Bathycoccus prasinos has 4970 nodes and 507377 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04109 and has 9 connected components, where the component with most
+	nodes has 4941 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 146, the mean node degree is 204.18, and
+	the node degree mode is 1. The top 5 most central nodes are 41875.XP_007514117.1
+	(degree 1725), 41875.XP_007510481.1 (degree 1574), 41875.XP_007513487.1
+	(degree 1552), 41875.XP_007512535.1 (degree 1524) and 41875.XP_007510271.1
 	(degree 1326).
 	
 

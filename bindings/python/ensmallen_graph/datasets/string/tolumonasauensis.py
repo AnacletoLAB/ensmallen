@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:44.411594
 
-The undirected graph Tolumonas auensis has 3116 nodes and 307728 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-has 6 connected components, where the component with most nodes has 3105 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 166,
-the mean node degree is 197.51, and the node degree mode is 1. The top 5 most central
-nodes are 595494.Tola_0336 (degree 1232), 595494.Tola_1996 (degree 1204), 595494.Tola_3171
-(degree 1183), 595494.Tola_0617 (degree 1044) and 595494.Tola_2171 (degree 1041).
+The undirected graph Tolumonas auensis has 3116 nodes and 307728 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06341 and has 6 connected components, where the component with most
+nodes has 3105 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 197.51, and
+the node degree mode is 1. The top 5 most central nodes are 595494.Tola_0336
+(degree 1232), 595494.Tola_1996 (degree 1204), 595494.Tola_3171 (degree
+1183), 595494.Tola_0617 (degree 1044) and 595494.Tola_2171 (degree 1041).
 
 
 References
@@ -106,13 +107,14 @@ def TolumonasAuensis(
 	
 	Datetime: 2021-02-02 21:18:44.411594
 	
-	The undirected graph Tolumonas auensis has 3116 nodes and 307728 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-	has 6 connected components, where the component with most nodes has 3105 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 166,
-	the mean node degree is 197.51, and the node degree mode is 1. The top 5 most central
-	nodes are 595494.Tola_0336 (degree 1232), 595494.Tola_1996 (degree 1204), 595494.Tola_3171
-	(degree 1183), 595494.Tola_0617 (degree 1044) and 595494.Tola_2171 (degree 1041).
+	The undirected graph Tolumonas auensis has 3116 nodes and 307728 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06341 and has 6 connected components, where the component with most
+	nodes has 3105 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 197.51, and
+	the node degree mode is 1. The top 5 most central nodes are 595494.Tola_0336
+	(degree 1232), 595494.Tola_1996 (degree 1204), 595494.Tola_3171 (degree
+	1183), 595494.Tola_0617 (degree 1044) and 595494.Tola_2171 (degree 1041).
 	
 
 

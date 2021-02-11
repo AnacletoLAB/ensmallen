@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:53.843078
 
-The undirected graph Vulcanisaeta distributa has 2457 nodes and 255805 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08478 and
-has 27 connected components, where the component with most nodes has 2388 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 195,
-the mean node degree is 208.23, and the node degree mode is 3. The top 5 most central
-nodes are 572478.Vdis_1977 (degree 997), 572478.Vdis_1254 (degree 879), 572478.Vdis_2389
-(degree 871), 572478.Vdis_1791 (degree 828) and 572478.Vdis_1757 (degree 815).
+The undirected graph Vulcanisaeta distributa has 2457 nodes and 255805
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08478 and has 27 connected components, where the component
+with most nodes has 2388 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 195, the mean node degree is 208.23,
+and the node degree mode is 3. The top 5 most central nodes are 572478.Vdis_1977
+(degree 997), 572478.Vdis_1254 (degree 879), 572478.Vdis_2389 (degree 871),
+572478.Vdis_1791 (degree 828) and 572478.Vdis_1757 (degree 815).
 
 
 References
@@ -106,13 +107,14 @@ def VulcanisaetaDistributa(
 	
 	Datetime: 2021-02-02 21:13:53.843078
 	
-	The undirected graph Vulcanisaeta distributa has 2457 nodes and 255805 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08478 and
-	has 27 connected components, where the component with most nodes has 2388 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 195,
-	the mean node degree is 208.23, and the node degree mode is 3. The top 5 most central
-	nodes are 572478.Vdis_1977 (degree 997), 572478.Vdis_1254 (degree 879), 572478.Vdis_2389
-	(degree 871), 572478.Vdis_1791 (degree 828) and 572478.Vdis_1757 (degree 815).
+	The undirected graph Vulcanisaeta distributa has 2457 nodes and 255805
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08478 and has 27 connected components, where the component
+	with most nodes has 2388 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 195, the mean node degree is 208.23,
+	and the node degree mode is 3. The top 5 most central nodes are 572478.Vdis_1977
+	(degree 997), 572478.Vdis_1254 (degree 879), 572478.Vdis_2389 (degree 871),
+	572478.Vdis_1791 (degree 828) and 572478.Vdis_1757 (degree 815).
 	
 
 

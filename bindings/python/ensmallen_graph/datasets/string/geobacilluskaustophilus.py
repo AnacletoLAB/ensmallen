@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:07:58.625816
 
-The undirected graph Geobacillus kaustophilus has 3523 nodes and 392683 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06330
-and has 7 connected components, where the component with most nodes has 3510 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 211, the mean node degree is 222.93, and the node degree mode is 2. The top 5
-most central nodes are 235909.GK2730 (degree 1416), 235909.GK0254 (degree 1167),
-235909.GK2504 (degree 1032), 235909.GK1431 (degree 997) and 235909.GK0009 (degree
-973).
+The undirected graph Geobacillus kaustophilus has 3523 nodes and 392683
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06330 and has 7 connected components, where the component
+with most nodes has 3510 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 211, the mean node degree is 222.93,
+and the node degree mode is 2. The top 5 most central nodes are 235909.GK2730
+(degree 1416), 235909.GK0254 (degree 1167), 235909.GK2504 (degree 1032),
+235909.GK1431 (degree 997) and 235909.GK0009 (degree 973).
 
 
 References
@@ -107,14 +107,14 @@ def GeobacillusKaustophilus(
 	
 	Datetime: 2021-02-02 20:07:58.625816
 	
-	The undirected graph Geobacillus kaustophilus has 3523 nodes and 392683 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06330
-	and has 7 connected components, where the component with most nodes has 3510 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 211, the mean node degree is 222.93, and the node degree mode is 2. The top 5
-	most central nodes are 235909.GK2730 (degree 1416), 235909.GK0254 (degree 1167),
-	235909.GK2504 (degree 1032), 235909.GK1431 (degree 997) and 235909.GK0009 (degree
-	973).
+	The undirected graph Geobacillus kaustophilus has 3523 nodes and 392683
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06330 and has 7 connected components, where the component
+	with most nodes has 3510 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 211, the mean node degree is 222.93,
+	and the node degree mode is 2. The top 5 most central nodes are 235909.GK2730
+	(degree 1416), 235909.GK0254 (degree 1167), 235909.GK2504 (degree 1032),
+	235909.GK1431 (degree 997) and 235909.GK0009 (degree 973).
 	
 
 

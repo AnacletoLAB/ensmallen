@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:18.123285
 
-The undirected graph Paenibacillus sp. MSt1 has 6346 nodes and 1022657 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05080 and
-has 34 connected components, where the component with most nodes has 6264 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 254,
-the mean node degree is 322.30, and the node degree mode is 2. The top 5 most central
-nodes are 1501230.ET33_12255 (degree 2817), 1501230.ET33_08960 (degree 2371), 1501230.ET33_03720
-(degree 2062), 1501230.ET33_02810 (degree 1951) and 1501230.ET33_00725 (degree 1941).
+The undirected graph Paenibacillus sp. MSt1 has 6346 nodes and 1022657
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05080 and has 34 connected components, where the component
+with most nodes has 6264 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 254, the mean node degree is 322.30,
+and the node degree mode is 2. The top 5 most central nodes are 1501230.ET33_12255
+(degree 2817), 1501230.ET33_08960 (degree 2371), 1501230.ET33_03720 (degree
+2062), 1501230.ET33_02810 (degree 1951) and 1501230.ET33_00725 (degree
+1941).
 
 
 References
@@ -106,13 +108,15 @@ def PaenibacillusSp.Mst1(
 	
 	Datetime: 2021-02-03 23:16:18.123285
 	
-	The undirected graph Paenibacillus sp. MSt1 has 6346 nodes and 1022657 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05080 and
-	has 34 connected components, where the component with most nodes has 6264 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 254,
-	the mean node degree is 322.30, and the node degree mode is 2. The top 5 most central
-	nodes are 1501230.ET33_12255 (degree 2817), 1501230.ET33_08960 (degree 2371), 1501230.ET33_03720
-	(degree 2062), 1501230.ET33_02810 (degree 1951) and 1501230.ET33_00725 (degree 1941).
+	The undirected graph Paenibacillus sp. MSt1 has 6346 nodes and 1022657
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05080 and has 34 connected components, where the component
+	with most nodes has 6264 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 254, the mean node degree is 322.30,
+	and the node degree mode is 2. The top 5 most central nodes are 1501230.ET33_12255
+	(degree 2817), 1501230.ET33_08960 (degree 2371), 1501230.ET33_03720 (degree
+	2062), 1501230.ET33_02810 (degree 1951) and 1501230.ET33_00725 (degree
+	1941).
 	
 
 

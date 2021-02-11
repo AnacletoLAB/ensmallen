@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:29:49.445311
 
-The undirected graph rajat08 has 19362 nodes and 51362 unweighted edges, of which
-19281 are self-loops. The graph is quite sparse as it has a density of 0.00022 and
-is connected, as it has a single component. The graph median node degree is 5, the
-mean node degree is 4.31, and the node degree mode is 5. The top 5 most central nodes
-are 81 (degree 82), 19080 (degree 5), 19079 (degree 5), 19078 (degree 5) and 19077
-(degree 5).
+The undirected graph rajat08 has 19362 nodes and 51362 unweighted edges,
+of which 19281 are self-loops. The graph is quite sparse as it has a density
+of 0.00022 and is connected, as it has a single component. The graph median
+node degree is 5, the mean node degree is 4.31, and the node degree mode
+is 5. The top 5 most central nodes are 81 (degree 82), 19080 (degree 5),
+19079 (degree 5), 19078 (degree 5) and 19077 (degree 5).
 
 
 References
@@ -102,12 +102,12 @@ def Rajat08(
 	
 	Datetime: 2021-02-06 10:29:49.445311
 	
-	The undirected graph rajat08 has 19362 nodes and 51362 unweighted edges, of which
-	19281 are self-loops. The graph is quite sparse as it has a density of 0.00022 and
-	is connected, as it has a single component. The graph median node degree is 5, the
-	mean node degree is 4.31, and the node degree mode is 5. The top 5 most central nodes
-	are 81 (degree 82), 19080 (degree 5), 19079 (degree 5), 19078 (degree 5) and 19077
-	(degree 5).
+	The undirected graph rajat08 has 19362 nodes and 51362 unweighted edges,
+	of which 19281 are self-loops. The graph is quite sparse as it has a density
+	of 0.00022 and is connected, as it has a single component. The graph median
+	node degree is 5, the mean node degree is 4.31, and the node degree mode
+	is 5. The top 5 most central nodes are 81 (degree 82), 19080 (degree 5),
+	19079 (degree 5), 19078 (degree 5) and 19077 (degree 5).
 	
 
 

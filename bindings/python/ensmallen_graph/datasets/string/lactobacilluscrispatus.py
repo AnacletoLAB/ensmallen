@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:39:42.608322
 
-The undirected graph Lactobacillus crispatus has 2003 nodes and 132865 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06627 and
-has 7 connected components, where the component with most nodes has 1991 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 94,
-the mean node degree is 132.67, and the node degree mode is 8. The top 5 most central
-nodes are 748671.LCRIS_01531 (degree 882), 748671.LCRIS_00464 (degree 733), 748671.LCRIS_01737
-(degree 720), 748671.LCRIS_01266 (degree 690) and 748671.LCRIS_01328 (degree 640).
+The undirected graph Lactobacillus crispatus has 2003 nodes and 132865
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06627 and has 7 connected components, where the component
+with most nodes has 1991 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 132.67,
+and the node degree mode is 8. The top 5 most central nodes are 748671.LCRIS_01531
+(degree 882), 748671.LCRIS_00464 (degree 733), 748671.LCRIS_01737 (degree
+720), 748671.LCRIS_01266 (degree 690) and 748671.LCRIS_01328 (degree 640).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusCrispatus(
 	
 	Datetime: 2021-02-02 21:39:42.608322
 	
-	The undirected graph Lactobacillus crispatus has 2003 nodes and 132865 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06627 and
-	has 7 connected components, where the component with most nodes has 1991 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 94,
-	the mean node degree is 132.67, and the node degree mode is 8. The top 5 most central
-	nodes are 748671.LCRIS_01531 (degree 882), 748671.LCRIS_00464 (degree 733), 748671.LCRIS_01737
-	(degree 720), 748671.LCRIS_01266 (degree 690) and 748671.LCRIS_01328 (degree 640).
+	The undirected graph Lactobacillus crispatus has 2003 nodes and 132865
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06627 and has 7 connected components, where the component
+	with most nodes has 1991 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 132.67,
+	and the node degree mode is 8. The top 5 most central nodes are 748671.LCRIS_01531
+	(degree 882), 748671.LCRIS_00464 (degree 733), 748671.LCRIS_01737 (degree
+	720), 748671.LCRIS_01266 (degree 690) and 748671.LCRIS_01328 (degree 640).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:35:03.981918
 
-The undirected multigraph SFHH-conf-sensor has 403 nodes and 70261 unweighted edges
-with 3509 different edge types:  the 5 most common are 41320, 41280, 41240, 60860
-and 41300, of which none are self-loops and 121392 are parallel. The graph is quite
-dense as it has a density of 0.11808 and is connected, as it has a single component.
-The graph median node degree is 220, the mean node degree is 348.69 and the node
-degree mode is 189. The top 5 most central nodes are 1825 (degree 2446), 1525 (degree
-2241), 1549 (degree 2189), 1599 (degree 2112) and 1441 (degree 1994).
+The undirected multigraph SFHH-conf-sensor has 403 nodes and 70261 unweighted
+edges with 3509 different edge types:  the 5 most common are 41320, 41280,
+41240, 60860 and 41300, of which none are self-loops and 121392 are parallel.
+The graph is quite dense as it has a density of 0.11808 and is connected,
+as it has a single component. The graph median node degree is 220, the
+mean node degree is 348.69 and the node degree mode is 189. The top 5 most
+central nodes are 1825 (degree 2446), 1525 (degree 2241), 1549 (degree
+2189), 1599 (degree 2112) and 1441 (degree 1994).
 
 
 References
@@ -108,13 +109,14 @@ def SfhhConfSensor(
 	
 	Datetime: 2021-02-03 23:35:03.981918
 	
-	The undirected multigraph SFHH-conf-sensor has 403 nodes and 70261 unweighted edges
-	with 3509 different edge types:  the 5 most common are 41320, 41280, 41240, 60860
-	and 41300, of which none are self-loops and 121392 are parallel. The graph is quite
-	dense as it has a density of 0.11808 and is connected, as it has a single component.
-	The graph median node degree is 220, the mean node degree is 348.69 and the node
-	degree mode is 189. The top 5 most central nodes are 1825 (degree 2446), 1525 (degree
-	2241), 1549 (degree 2189), 1599 (degree 2112) and 1441 (degree 1994).
+	The undirected multigraph SFHH-conf-sensor has 403 nodes and 70261 unweighted
+	edges with 3509 different edge types:  the 5 most common are 41320, 41280,
+	41240, 60860 and 41300, of which none are self-loops and 121392 are parallel.
+	The graph is quite dense as it has a density of 0.11808 and is connected,
+	as it has a single component. The graph median node degree is 220, the
+	mean node degree is 348.69 and the node degree mode is 189. The top 5 most
+	central nodes are 1825 (degree 2446), 1525 (degree 2241), 1549 (degree
+	2189), 1599 (degree 2112) and 1441 (degree 1994).
 	
 
 

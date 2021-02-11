@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:16:41.217451
 
-The undirected graph Babesia bovis has 2335 nodes and 291631 weighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.10702 and
-has 3 connected components, where the component with most nodes has 2331 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 214,
-the mean node degree is 249.79, and the node degree mode is 1. The top 5 most central
-nodes are 5865.XP_001608994.1 (degree 1287), 5865.XP_001611109.1 (degree 1072), 5865.XP_001610510.1
-(degree 1056), 5865.XP_001608690.1 (degree 1033) and 5865.XP_001610949.1 (degree
+The undirected graph Babesia bovis has 2335 nodes and 291631 weighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.10702 and has 3 connected components, where the component with most
+nodes has 2331 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 214, the mean node degree is 249.79, and
+the node degree mode is 1. The top 5 most central nodes are 5865.XP_001608994.1
+(degree 1287), 5865.XP_001611109.1 (degree 1072), 5865.XP_001610510.1 (degree
+1056), 5865.XP_001608690.1 (degree 1033) and 5865.XP_001610949.1 (degree
 1027).
 
 
@@ -107,13 +108,14 @@ def BabesiaBovis(
 	
 	Datetime: 2021-02-02 17:16:41.217451
 	
-	The undirected graph Babesia bovis has 2335 nodes and 291631 weighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.10702 and
-	has 3 connected components, where the component with most nodes has 2331 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 214,
-	the mean node degree is 249.79, and the node degree mode is 1. The top 5 most central
-	nodes are 5865.XP_001608994.1 (degree 1287), 5865.XP_001611109.1 (degree 1072), 5865.XP_001610510.1
-	(degree 1056), 5865.XP_001608690.1 (degree 1033) and 5865.XP_001610949.1 (degree
+	The undirected graph Babesia bovis has 2335 nodes and 291631 weighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.10702 and has 3 connected components, where the component with most
+	nodes has 2331 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 214, the mean node degree is 249.79, and
+	the node degree mode is 1. The top 5 most central nodes are 5865.XP_001608994.1
+	(degree 1287), 5865.XP_001611109.1 (degree 1072), 5865.XP_001610510.1 (degree
+	1056), 5865.XP_001608690.1 (degree 1033) and 5865.XP_001610949.1 (degree
 	1027).
 	
 

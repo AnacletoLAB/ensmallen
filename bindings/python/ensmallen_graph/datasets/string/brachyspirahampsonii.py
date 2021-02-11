@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:21:31.821649
 
-The undirected graph Brachyspira hampsonii has 2539 nodes and 211071 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06551 and
-has 23 connected components, where the component with most nodes has 2478 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 166.26, and the node degree mode is 2. The top 5 most central
-nodes are 1289135.A966_05603 (degree 1050), 1289135.A966_07949 (degree 1011), 1289135.A966_10867
-(degree 936), 1289135.A966_11706 (degree 857) and 1289135.A966_02366 (degree 825).
+The undirected graph Brachyspira hampsonii has 2539 nodes and 211071 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06551 and has 23 connected components, where the component with most
+nodes has 2478 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 166.26, and
+the node degree mode is 2. The top 5 most central nodes are 1289135.A966_05603
+(degree 1050), 1289135.A966_07949 (degree 1011), 1289135.A966_10867 (degree
+936), 1289135.A966_11706 (degree 857) and 1289135.A966_02366 (degree 825).
 
 
 References
@@ -106,13 +107,14 @@ def BrachyspiraHampsonii(
 	
 	Datetime: 2021-02-03 21:21:31.821649
 	
-	The undirected graph Brachyspira hampsonii has 2539 nodes and 211071 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06551 and
-	has 23 connected components, where the component with most nodes has 2478 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 166.26, and the node degree mode is 2. The top 5 most central
-	nodes are 1289135.A966_05603 (degree 1050), 1289135.A966_07949 (degree 1011), 1289135.A966_10867
-	(degree 936), 1289135.A966_11706 (degree 857) and 1289135.A966_02366 (degree 825).
+	The undirected graph Brachyspira hampsonii has 2539 nodes and 211071 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06551 and has 23 connected components, where the component with most
+	nodes has 2478 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 166.26, and
+	the node degree mode is 2. The top 5 most central nodes are 1289135.A966_05603
+	(degree 1050), 1289135.A966_07949 (degree 1011), 1289135.A966_10867 (degree
+	936), 1289135.A966_11706 (degree 857) and 1289135.A966_02366 (degree 825).
 	
 
 

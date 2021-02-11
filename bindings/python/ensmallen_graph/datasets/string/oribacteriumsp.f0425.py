@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:09.039157
 
-The undirected graph Oribacterium sp. F0425 has 2313 nodes and 142053 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05313 and
-has 3 connected components, where the component with most nodes has 2309 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 122.83, and the node degree mode is 5. The top 5 most central
-nodes are 904296.HMPREF9124_2135 (degree 884), 904296.HMPREF9124_1787 (degree 761),
-904296.HMPREF9124_1339 (degree 739), 904296.HMPREF9124_1096 (degree 654) and 904296.HMPREF9124_0621
+The undirected graph Oribacterium sp. F0425 has 2313 nodes and 142053 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05313 and has 3 connected components, where the component with most
+nodes has 2309 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 122.83, and
+the node degree mode is 5. The top 5 most central nodes are 904296.HMPREF9124_2135
+(degree 884), 904296.HMPREF9124_1787 (degree 761), 904296.HMPREF9124_1339
+(degree 739), 904296.HMPREF9124_1096 (degree 654) and 904296.HMPREF9124_0621
 (degree 608).
 
 
@@ -107,13 +108,14 @@ def OribacteriumSp.F0425(
 	
 	Datetime: 2021-02-02 21:54:09.039157
 	
-	The undirected graph Oribacterium sp. F0425 has 2313 nodes and 142053 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05313 and
-	has 3 connected components, where the component with most nodes has 2309 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 122.83, and the node degree mode is 5. The top 5 most central
-	nodes are 904296.HMPREF9124_2135 (degree 884), 904296.HMPREF9124_1787 (degree 761),
-	904296.HMPREF9124_1339 (degree 739), 904296.HMPREF9124_1096 (degree 654) and 904296.HMPREF9124_0621
+	The undirected graph Oribacterium sp. F0425 has 2313 nodes and 142053 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05313 and has 3 connected components, where the component with most
+	nodes has 2309 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 122.83, and
+	the node degree mode is 5. The top 5 most central nodes are 904296.HMPREF9124_2135
+	(degree 884), 904296.HMPREF9124_1787 (degree 761), 904296.HMPREF9124_1339
+	(degree 739), 904296.HMPREF9124_1096 (degree 654) and 904296.HMPREF9124_0621
 	(degree 608).
 	
 

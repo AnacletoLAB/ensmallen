@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:53:42.219820
 
-The undirected graph Thermodesulfobacterium hydrogeniphilum has 1670 nodes and 129728
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.09309 and has 3 connected components, where the component with most nodes has
-1665 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 134, the mean node degree is 155.36, and the node degree mode is 21. The
-top 5 most central nodes are 161156.JQKW01000007_gene614 (degree 823), 161156.JQKW01000008_gene538
+The undirected graph Thermodesulfobacterium hydrogeniphilum has 1670 nodes
+and 129728 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.09309 and has 3 connected components, where the
+component with most nodes has 1665 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+is 155.36, and the node degree mode is 21. The top 5 most central nodes
+are 161156.JQKW01000007_gene614 (degree 823), 161156.JQKW01000008_gene538
 (degree 682), 161156.JQKW01000007_gene640 (degree 675), 161156.JQKW01000014_gene240
 (degree 623) and 161156.JQKW01000009_gene1576 (degree 600).
 
@@ -107,12 +108,13 @@ def ThermodesulfobacteriumHydrogeniphilum(
 	
 	Datetime: 2021-02-02 19:53:42.219820
 	
-	The undirected graph Thermodesulfobacterium hydrogeniphilum has 1670 nodes and 129728
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.09309 and has 3 connected components, where the component with most nodes has
-	1665 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 134, the mean node degree is 155.36, and the node degree mode is 21. The
-	top 5 most central nodes are 161156.JQKW01000007_gene614 (degree 823), 161156.JQKW01000008_gene538
+	The undirected graph Thermodesulfobacterium hydrogeniphilum has 1670 nodes
+	and 129728 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.09309 and has 3 connected components, where the
+	component with most nodes has 1665 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 134, the mean node degree
+	is 155.36, and the node degree mode is 21. The top 5 most central nodes
+	are 161156.JQKW01000007_gene614 (degree 823), 161156.JQKW01000008_gene538
 	(degree 682), 161156.JQKW01000007_gene640 (degree 675), 161156.JQKW01000014_gene240
 	(degree 623) and 161156.JQKW01000009_gene1576 (degree 600).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:18:01.783259
 
-The undirected graph Streptomyces pratensis has 6410 nodes and 711845 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03466 and
-has 24 connected components, where the component with most nodes has 6361 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 186,
-the mean node degree is 222.10, and the node degree mode is 2. The top 5 most central
-nodes are 591167.Sfla_1602 (degree 3005), 591167.Sfla_4828 (degree 1963), 591167.Sfla_3071
-(degree 1815), 591167.Sfla_2443 (degree 1775) and 591167.Sfla_5105 (degree 1683).
+The undirected graph Streptomyces pratensis has 6410 nodes and 711845 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03466 and has 24 connected components, where the component with most
+nodes has 6361 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 186, the mean node degree is 222.10, and
+the node degree mode is 2. The top 5 most central nodes are 591167.Sfla_1602
+(degree 3005), 591167.Sfla_4828 (degree 1963), 591167.Sfla_3071 (degree
+1815), 591167.Sfla_2443 (degree 1775) and 591167.Sfla_5105 (degree 1683).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesPratensis(
 	
 	Datetime: 2021-02-02 21:18:01.783259
 	
-	The undirected graph Streptomyces pratensis has 6410 nodes and 711845 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03466 and
-	has 24 connected components, where the component with most nodes has 6361 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 186,
-	the mean node degree is 222.10, and the node degree mode is 2. The top 5 most central
-	nodes are 591167.Sfla_1602 (degree 3005), 591167.Sfla_4828 (degree 1963), 591167.Sfla_3071
-	(degree 1815), 591167.Sfla_2443 (degree 1775) and 591167.Sfla_5105 (degree 1683).
+	The undirected graph Streptomyces pratensis has 6410 nodes and 711845 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03466 and has 24 connected components, where the component with most
+	nodes has 6361 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 186, the mean node degree is 222.10, and
+	the node degree mode is 2. The top 5 most central nodes are 591167.Sfla_1602
+	(degree 3005), 591167.Sfla_4828 (degree 1963), 591167.Sfla_3071 (degree
+	1815), 591167.Sfla_2443 (degree 1775) and 591167.Sfla_5105 (degree 1683).
 	
 
 

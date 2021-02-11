@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:40:47.463092
 
-The undirected graph Cyanobacterium aponinum has 3407 nodes and 388948 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06704 and
-has 7 connected components, where the component with most nodes has 3382 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 208,
-the mean node degree is 228.32, and the node degree mode is 3. The top 5 most central
-nodes are 755178.Cyan10605_0665 (degree 1270), 755178.Cyan10605_0438 (degree 1253),
-755178.Cyan10605_3480 (degree 1230), 755178.Cyan10605_1130 (degree 1214) and 755178.Cyan10605_0697
+The undirected graph Cyanobacterium aponinum has 3407 nodes and 388948
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06704 and has 7 connected components, where the component
+with most nodes has 3382 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 208, the mean node degree is 228.32,
+and the node degree mode is 3. The top 5 most central nodes are 755178.Cyan10605_0665
+(degree 1270), 755178.Cyan10605_0438 (degree 1253), 755178.Cyan10605_3480
+(degree 1230), 755178.Cyan10605_1130 (degree 1214) and 755178.Cyan10605_0697
 (degree 1104).
 
 
@@ -107,13 +108,14 @@ def CyanobacteriumAponinum(
 	
 	Datetime: 2021-02-02 21:40:47.463092
 	
-	The undirected graph Cyanobacterium aponinum has 3407 nodes and 388948 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06704 and
-	has 7 connected components, where the component with most nodes has 3382 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 208,
-	the mean node degree is 228.32, and the node degree mode is 3. The top 5 most central
-	nodes are 755178.Cyan10605_0665 (degree 1270), 755178.Cyan10605_0438 (degree 1253),
-	755178.Cyan10605_3480 (degree 1230), 755178.Cyan10605_1130 (degree 1214) and 755178.Cyan10605_0697
+	The undirected graph Cyanobacterium aponinum has 3407 nodes and 388948
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06704 and has 7 connected components, where the component
+	with most nodes has 3382 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 208, the mean node degree is 228.32,
+	and the node degree mode is 3. The top 5 most central nodes are 755178.Cyan10605_0665
+	(degree 1270), 755178.Cyan10605_0438 (degree 1253), 755178.Cyan10605_3480
+	(degree 1230), 755178.Cyan10605_1130 (degree 1214) and 755178.Cyan10605_0697
 	(degree 1104).
 	
 

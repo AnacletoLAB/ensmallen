@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:05.471592
 
-The undirected graph Zobellia uliginosa has 4323 nodes and 551202 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05900 and
-has 10 connected components, where the component with most nodes has 4301 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 239,
-the mean node degree is 255.01, and the node degree mode is 2. The top 5 most central
-nodes are 143224.JQMD01000002_gene2084 (degree 1420), 143224.JQMD01000002_gene3842
-(degree 1419), 143224.JQMD01000002_gene3736 (degree 1380), 143224.JQMD01000002_gene4181
-(degree 1301) and 143224.JQMD01000002_gene2157 (degree 1267).
+The undirected graph Zobellia uliginosa has 4323 nodes and 551202 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05900 and has 10 connected components, where the component with most
+nodes has 4301 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 239, the mean node degree is 255.01, and
+the node degree mode is 2. The top 5 most central nodes are 143224.JQMD01000002_gene2084
+(degree 1420), 143224.JQMD01000002_gene3842 (degree 1419), 143224.JQMD01000002_gene3736
+(degree 1380), 143224.JQMD01000002_gene4181 (degree 1301) and 143224.JQMD01000002_gene2157
+(degree 1267).
 
 
 References
@@ -107,14 +108,15 @@ def ZobelliaUliginosa(
 	
 	Datetime: 2021-02-02 19:51:05.471592
 	
-	The undirected graph Zobellia uliginosa has 4323 nodes and 551202 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05900 and
-	has 10 connected components, where the component with most nodes has 4301 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 239,
-	the mean node degree is 255.01, and the node degree mode is 2. The top 5 most central
-	nodes are 143224.JQMD01000002_gene2084 (degree 1420), 143224.JQMD01000002_gene3842
-	(degree 1419), 143224.JQMD01000002_gene3736 (degree 1380), 143224.JQMD01000002_gene4181
-	(degree 1301) and 143224.JQMD01000002_gene2157 (degree 1267).
+	The undirected graph Zobellia uliginosa has 4323 nodes and 551202 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05900 and has 10 connected components, where the component with most
+	nodes has 4301 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 239, the mean node degree is 255.01, and
+	the node degree mode is 2. The top 5 most central nodes are 143224.JQMD01000002_gene2084
+	(degree 1420), 143224.JQMD01000002_gene3842 (degree 1419), 143224.JQMD01000002_gene3736
+	(degree 1380), 143224.JQMD01000002_gene4181 (degree 1301) and 143224.JQMD01000002_gene2157
+	(degree 1267).
 	
 
 

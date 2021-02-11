@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:46:03.672155
 
-The undirected graph Prevotella timonensis 4401737 has 2427 nodes and 168804 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05734
-and has 18 connected components, where the component with most nodes has 2380 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 118, the mean node degree is 139.11, and the node degree mode is 2. The top 5
-most central nodes are 1122992.CBQQ010000042_gene538 (degree 911), 1122992.CBQQ010000056_gene107
-(degree 885), 1122992.CBQQ010000078_gene2065 (degree 769), 1122992.CBQQ010000007_gene1207
-(degree 762) and 1122992.CBQQ010000049_gene222 (degree 719).
+The undirected graph Prevotella timonensis 4401737 has 2427 nodes and 168804
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05734 and has 18 connected components, where the component
+with most nodes has 2380 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 118, the mean node degree is 139.11,
+and the node degree mode is 2. The top 5 most central nodes are 1122992.CBQQ010000042_gene538
+(degree 911), 1122992.CBQQ010000056_gene107 (degree 885), 1122992.CBQQ010000078_gene2065
+(degree 769), 1122992.CBQQ010000007_gene1207 (degree 762) and 1122992.CBQQ010000049_gene222
+(degree 719).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaTimonensis4401737(
 	
 	Datetime: 2021-02-02 22:46:03.672155
 	
-	The undirected graph Prevotella timonensis 4401737 has 2427 nodes and 168804 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05734
-	and has 18 connected components, where the component with most nodes has 2380 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 118, the mean node degree is 139.11, and the node degree mode is 2. The top 5
-	most central nodes are 1122992.CBQQ010000042_gene538 (degree 911), 1122992.CBQQ010000056_gene107
-	(degree 885), 1122992.CBQQ010000078_gene2065 (degree 769), 1122992.CBQQ010000007_gene1207
-	(degree 762) and 1122992.CBQQ010000049_gene222 (degree 719).
+	The undirected graph Prevotella timonensis 4401737 has 2427 nodes and 168804
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05734 and has 18 connected components, where the component
+	with most nodes has 2380 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 118, the mean node degree is 139.11,
+	and the node degree mode is 2. The top 5 most central nodes are 1122992.CBQQ010000042_gene538
+	(degree 911), 1122992.CBQQ010000056_gene107 (degree 885), 1122992.CBQQ010000078_gene2065
+	(degree 769), 1122992.CBQQ010000007_gene1207 (degree 762) and 1122992.CBQQ010000049_gene222
+	(degree 719).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:34:17.209563
 
-The undirected graph Streptomyces olindensis has 7930 nodes and 1280176 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04072
-and has 33 connected components, where the component with most nodes has 7861 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 265, the mean node degree is 322.87, and the node degree mode is 1. The top 5
-most central nodes are 358823.DF19_11180 (degree 3937), 358823.DF19_01165 (degree
-2468), 358823.DF19_01365 (degree 2384), 358823.DF19_31465 (degree 2379) and 358823.DF19_39605
-(degree 2251).
+The undirected graph Streptomyces olindensis has 7930 nodes and 1280176
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04072 and has 33 connected components, where the component
+with most nodes has 7861 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 265, the mean node degree is 322.87,
+and the node degree mode is 1. The top 5 most central nodes are 358823.DF19_11180
+(degree 3937), 358823.DF19_01165 (degree 2468), 358823.DF19_01365 (degree
+2384), 358823.DF19_31465 (degree 2379) and 358823.DF19_39605 (degree 2251).
 
 
 References
@@ -107,14 +107,14 @@ def StreptomycesOlindensis(
 	
 	Datetime: 2021-02-02 20:34:17.209563
 	
-	The undirected graph Streptomyces olindensis has 7930 nodes and 1280176 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04072
-	and has 33 connected components, where the component with most nodes has 7861 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 265, the mean node degree is 322.87, and the node degree mode is 1. The top 5
-	most central nodes are 358823.DF19_11180 (degree 3937), 358823.DF19_01165 (degree
-	2468), 358823.DF19_01365 (degree 2384), 358823.DF19_31465 (degree 2379) and 358823.DF19_39605
-	(degree 2251).
+	The undirected graph Streptomyces olindensis has 7930 nodes and 1280176
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04072 and has 33 connected components, where the component
+	with most nodes has 7861 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 265, the mean node degree is 322.87,
+	and the node degree mode is 1. The top 5 most central nodes are 358823.DF19_11180
+	(degree 3937), 358823.DF19_01165 (degree 2468), 358823.DF19_01365 (degree
+	2384), 358823.DF19_31465 (degree 2379) and 358823.DF19_39605 (degree 2251).
 	
 
 

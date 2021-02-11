@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:56:31.655931
 
-The undirected graph Colletotrichum gloeosporioides has 10468 nodes and 1082981 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.01977
-and has 26 connected components, where the component with most nodes has 10414 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 101, the mean node degree is 206.91, and the node degree mode is 1. The top 5
-most central nodes are 474922.ELA32094 (degree 2687), 474922.ELA35078 (degree 2293),
-474922.ELA32515 (degree 2179), 474922.ELA23732 (degree 2115) and 474922.ELA25652
-(degree 2096).
+The undirected graph Colletotrichum gloeosporioides has 10468 nodes and
+1082981 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.01977 and has 26 connected components, where the
+component with most nodes has 10414 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+is 206.91, and the node degree mode is 1. The top 5 most central nodes
+are 474922.ELA32094 (degree 2687), 474922.ELA35078 (degree 2293), 474922.ELA32515
+(degree 2179), 474922.ELA23732 (degree 2115) and 474922.ELA25652 (degree
+2096).
 
 
 References
@@ -107,14 +108,15 @@ def ColletotrichumGloeosporioides(
 	
 	Datetime: 2021-02-02 20:56:31.655931
 	
-	The undirected graph Colletotrichum gloeosporioides has 10468 nodes and 1082981 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.01977
-	and has 26 connected components, where the component with most nodes has 10414 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 101, the mean node degree is 206.91, and the node degree mode is 1. The top 5
-	most central nodes are 474922.ELA32094 (degree 2687), 474922.ELA35078 (degree 2293),
-	474922.ELA32515 (degree 2179), 474922.ELA23732 (degree 2115) and 474922.ELA25652
-	(degree 2096).
+	The undirected graph Colletotrichum gloeosporioides has 10468 nodes and
+	1082981 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.01977 and has 26 connected components, where the
+	component with most nodes has 10414 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 101, the mean node degree
+	is 206.91, and the node degree mode is 1. The top 5 most central nodes
+	are 474922.ELA32094 (degree 2687), 474922.ELA35078 (degree 2293), 474922.ELA32515
+	(degree 2179), 474922.ELA23732 (degree 2115) and 474922.ELA25652 (degree
+	2096).
 	
 
 

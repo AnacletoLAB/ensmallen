@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:04.929843
 
-The undirected graph Streptococcus mitis SK321 has 1743 nodes and 124608 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08208
-and has 7 connected components, where the component with most nodes has 1724 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 116, the mean node degree is 142.98, and the node degree mode is 10. The top 5
-most central nodes are 585202.SMSK321_0354 (degree 815), 585202.SMSK321_1628 (degree
-719), 585202.SMSK321_0059 (degree 678), 585202.SMSK321_0768 (degree 663) and 585202.SMSK321_0292
-(degree 626).
+The undirected graph Streptococcus mitis SK321 has 1743 nodes and 124608
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08208 and has 7 connected components, where the component
+with most nodes has 1724 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 116, the mean node degree is 142.98,
+and the node degree mode is 10. The top 5 most central nodes are 585202.SMSK321_0354
+(degree 815), 585202.SMSK321_1628 (degree 719), 585202.SMSK321_0059 (degree
+678), 585202.SMSK321_0768 (degree 663) and 585202.SMSK321_0292 (degree
+626).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitisSk321(
 	
 	Datetime: 2021-02-02 21:16:04.929843
 	
-	The undirected graph Streptococcus mitis SK321 has 1743 nodes and 124608 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08208
-	and has 7 connected components, where the component with most nodes has 1724 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 116, the mean node degree is 142.98, and the node degree mode is 10. The top 5
-	most central nodes are 585202.SMSK321_0354 (degree 815), 585202.SMSK321_1628 (degree
-	719), 585202.SMSK321_0059 (degree 678), 585202.SMSK321_0768 (degree 663) and 585202.SMSK321_0292
-	(degree 626).
+	The undirected graph Streptococcus mitis SK321 has 1743 nodes and 124608
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08208 and has 7 connected components, where the component
+	with most nodes has 1724 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 116, the mean node degree is 142.98,
+	and the node degree mode is 10. The top 5 most central nodes are 585202.SMSK321_0354
+	(degree 815), 585202.SMSK321_1628 (degree 719), 585202.SMSK321_0059 (degree
+	678), 585202.SMSK321_0768 (degree 663) and 585202.SMSK321_0292 (degree
+	626).
 	
 
 

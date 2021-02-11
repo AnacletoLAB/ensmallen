@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:41:24.143066
 
-The undirected graph Leptotrichia shahii has 2011 nodes and 107394 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05314 and
-has 7 connected components, where the component with most nodes has 1995 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 77,
-the mean node degree is 106.81, and the node degree mode is 5. The top 5 most central
-nodes are 1122172.KB890259_gene1241 (degree 1006), 1122172.KB890277_gene1633 (degree
-739), 1122172.KB890260_gene1901 (degree 653), 1122172.KB890259_gene1510 (degree 625)
-and 1122172.KB890260_gene1742 (degree 620).
+The undirected graph Leptotrichia shahii has 2011 nodes and 107394 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05314 and has 7 connected components, where the component with most
+nodes has 1995 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 77, the mean node degree is 106.81, and
+the node degree mode is 5. The top 5 most central nodes are 1122172.KB890259_gene1241
+(degree 1006), 1122172.KB890277_gene1633 (degree 739), 1122172.KB890260_gene1901
+(degree 653), 1122172.KB890259_gene1510 (degree 625) and 1122172.KB890260_gene1742
+(degree 620).
 
 
 References
@@ -107,14 +108,15 @@ def LeptotrichiaShahii(
 	
 	Datetime: 2021-02-02 22:41:24.143066
 	
-	The undirected graph Leptotrichia shahii has 2011 nodes and 107394 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05314 and
-	has 7 connected components, where the component with most nodes has 1995 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 77,
-	the mean node degree is 106.81, and the node degree mode is 5. The top 5 most central
-	nodes are 1122172.KB890259_gene1241 (degree 1006), 1122172.KB890277_gene1633 (degree
-	739), 1122172.KB890260_gene1901 (degree 653), 1122172.KB890259_gene1510 (degree 625)
-	and 1122172.KB890260_gene1742 (degree 620).
+	The undirected graph Leptotrichia shahii has 2011 nodes and 107394 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05314 and has 7 connected components, where the component with most
+	nodes has 1995 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 77, the mean node degree is 106.81, and
+	the node degree mode is 5. The top 5 most central nodes are 1122172.KB890259_gene1241
+	(degree 1006), 1122172.KB890277_gene1633 (degree 739), 1122172.KB890260_gene1901
+	(degree 653), 1122172.KB890259_gene1510 (degree 625) and 1122172.KB890260_gene1742
+	(degree 620).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:48:15.236857
 
-The undirected graph Clostridium spiroforme has 2438 nodes and 195720 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06588 and
-has 13 connected components, where the component with most nodes has 2408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 135,
-the mean node degree is 160.56, and the node degree mode is 5. The top 5 most central
-nodes are 428126.CLOSPI_01403 (degree 1096), 428126.CLOSPI_02111 (degree 889), 428126.CLOSPI_00417
-(degree 825), 428126.CLOSPI_01684 (degree 717) and 428126.CLOSPI_00557 (degree 674).
+The undirected graph Clostridium spiroforme has 2438 nodes and 195720 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06588 and has 13 connected components, where the component with most
+nodes has 2408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 135, the mean node degree is 160.56, and
+the node degree mode is 5. The top 5 most central nodes are 428126.CLOSPI_01403
+(degree 1096), 428126.CLOSPI_02111 (degree 889), 428126.CLOSPI_00417 (degree
+825), 428126.CLOSPI_01684 (degree 717) and 428126.CLOSPI_00557 (degree
+674).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumSpiroforme(
 	
 	Datetime: 2021-02-02 20:48:15.236857
 	
-	The undirected graph Clostridium spiroforme has 2438 nodes and 195720 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06588 and
-	has 13 connected components, where the component with most nodes has 2408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 135,
-	the mean node degree is 160.56, and the node degree mode is 5. The top 5 most central
-	nodes are 428126.CLOSPI_01403 (degree 1096), 428126.CLOSPI_02111 (degree 889), 428126.CLOSPI_00417
-	(degree 825), 428126.CLOSPI_01684 (degree 717) and 428126.CLOSPI_00557 (degree 674).
+	The undirected graph Clostridium spiroforme has 2438 nodes and 195720 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06588 and has 13 connected components, where the component with most
+	nodes has 2408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 135, the mean node degree is 160.56, and
+	the node degree mode is 5. The top 5 most central nodes are 428126.CLOSPI_01403
+	(degree 1096), 428126.CLOSPI_02111 (degree 889), 428126.CLOSPI_00417 (degree
+	825), 428126.CLOSPI_01684 (degree 717) and 428126.CLOSPI_00557 (degree
+	674).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:11.535974
 
-The undirected graph Finegoldia magna ATCC53516 has 1831 nodes and 125677 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07501
-and has 6 connected components, where the component with most nodes has 1815 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 137.28, and the node degree mode is 8. The top 5
-most central nodes are 525282.HMPREF0391_10798 (degree 796), 525282.HMPREF0391_10054
-(degree 790), 525282.HMPREF0391_10758 (degree 752), 525282.HMPREF0391_10712 (degree
-719) and 525282.HMPREF0391_10793 (degree 655).
+The undirected graph Finegoldia magna ATCC53516 has 1831 nodes and 125677
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07501 and has 6 connected components, where the component
+with most nodes has 1815 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 137.28,
+and the node degree mode is 8. The top 5 most central nodes are 525282.HMPREF0391_10798
+(degree 796), 525282.HMPREF0391_10054 (degree 790), 525282.HMPREF0391_10758
+(degree 752), 525282.HMPREF0391_10712 (degree 719) and 525282.HMPREF0391_10793
+(degree 655).
 
 
 References
@@ -107,14 +108,15 @@ def FinegoldiaMagnaAtcc53516(
 	
 	Datetime: 2021-02-02 21:05:11.535974
 	
-	The undirected graph Finegoldia magna ATCC53516 has 1831 nodes and 125677 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07501
-	and has 6 connected components, where the component with most nodes has 1815 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 137.28, and the node degree mode is 8. The top 5
-	most central nodes are 525282.HMPREF0391_10798 (degree 796), 525282.HMPREF0391_10054
-	(degree 790), 525282.HMPREF0391_10758 (degree 752), 525282.HMPREF0391_10712 (degree
-	719) and 525282.HMPREF0391_10793 (degree 655).
+	The undirected graph Finegoldia magna ATCC53516 has 1831 nodes and 125677
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07501 and has 6 connected components, where the component
+	with most nodes has 1815 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 137.28,
+	and the node degree mode is 8. The top 5 most central nodes are 525282.HMPREF0391_10798
+	(degree 796), 525282.HMPREF0391_10054 (degree 790), 525282.HMPREF0391_10758
+	(degree 752), 525282.HMPREF0391_10712 (degree 719) and 525282.HMPREF0391_10793
+	(degree 655).
 	
 
 

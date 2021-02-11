@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:28:55.917813
 
-The undirected graph soc-delicious has 536108 nodes and 1365961 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00001 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 5.10, and the node degree mode is 1. The top 5 most
-central nodes are 723 (degree 3216), 1047 (degree 3070), 5009 (degree 2627), 1919
-(degree 2547) and 6888 (degree 2138).
+The undirected graph soc-delicious has 536108 nodes and 1365961 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00001 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 5.10, and the
+node degree mode is 1. The top 5 most central nodes are 723 (degree 3216),
+1047 (degree 3070), 5009 (degree 2627), 1919 (degree 2547) and 6888 (degree
+2138).
 
 
 References
@@ -109,12 +110,13 @@ def SocDelicious(
 	
 	Datetime: 2021-02-06 12:28:55.917813
 	
-	The undirected graph soc-delicious has 536108 nodes and 1365961 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00001 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 5.10, and the node degree mode is 1. The top 5 most
-	central nodes are 723 (degree 3216), 1047 (degree 3070), 5009 (degree 2627), 1919
-	(degree 2547) and 6888 (degree 2138).
+	The undirected graph soc-delicious has 536108 nodes and 1365961 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00001 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 5.10, and the
+	node degree mode is 1. The top 5 most central nodes are 723 (degree 3216),
+	1047 (degree 3070), 5009 (degree 2627), 1919 (degree 2547) and 6888 (degree
+	2138).
 	
 
 

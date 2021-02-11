@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:21:25.901989
 
-The undirected graph Photobacterium profundum has 5418 nodes and 712292 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04854
-and has 22 connected components, where the component with most nodes has 5366 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 234, the mean node degree is 262.94, and the node degree mode is 2. The top 5
-most central nodes are 298386.PBPRA1988 (degree 1945), 298386.PBPRA3503 (degree 1869),
-298386.PBPRB0014 (degree 1809), 298386.PBPRA1593 (degree 1803) and 298386.PBPRA1460
-(degree 1561).
+The undirected graph Photobacterium profundum has 5418 nodes and 712292
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04854 and has 22 connected components, where the component
+with most nodes has 5366 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 234, the mean node degree is 262.94,
+and the node degree mode is 2. The top 5 most central nodes are 298386.PBPRA1988
+(degree 1945), 298386.PBPRA3503 (degree 1869), 298386.PBPRB0014 (degree
+1809), 298386.PBPRA1593 (degree 1803) and 298386.PBPRA1460 (degree 1561).
 
 
 References
@@ -107,14 +107,14 @@ def PhotobacteriumProfundum(
 	
 	Datetime: 2021-02-02 20:21:25.901989
 	
-	The undirected graph Photobacterium profundum has 5418 nodes and 712292 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04854
-	and has 22 connected components, where the component with most nodes has 5366 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 234, the mean node degree is 262.94, and the node degree mode is 2. The top 5
-	most central nodes are 298386.PBPRA1988 (degree 1945), 298386.PBPRA3503 (degree 1869),
-	298386.PBPRB0014 (degree 1809), 298386.PBPRA1593 (degree 1803) and 298386.PBPRA1460
-	(degree 1561).
+	The undirected graph Photobacterium profundum has 5418 nodes and 712292
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04854 and has 22 connected components, where the component
+	with most nodes has 5366 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 234, the mean node degree is 262.94,
+	and the node degree mode is 2. The top 5 most central nodes are 298386.PBPRA1988
+	(degree 1945), 298386.PBPRA3503 (degree 1869), 298386.PBPRB0014 (degree
+	1809), 298386.PBPRA1593 (degree 1803) and 298386.PBPRA1460 (degree 1561).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:36:19.041462
 
-The undirected graph Bartonella elizabethae has 1568 nodes and 102818 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08369 and
-has 27 connected components, where the component with most nodes has 1505 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 131.15, and the node degree mode is 1. The top 5 most central
-nodes are 1408427.JADB01000002_gene1051 (degree 678), 1408427.JADB01000001_gene226
-(degree 620), 1408427.JADB01000003_gene1386 (degree 575), 1408427.JADB01000001_gene229
-(degree 549) and 1408427.JADB01000002_gene1105 (degree 538).
+The undirected graph Bartonella elizabethae has 1568 nodes and 102818 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08369 and has 27 connected components, where the component with most
+nodes has 1505 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 131.15, and
+the node degree mode is 1. The top 5 most central nodes are 1408427.JADB01000002_gene1051
+(degree 678), 1408427.JADB01000001_gene226 (degree 620), 1408427.JADB01000003_gene1386
+(degree 575), 1408427.JADB01000001_gene229 (degree 549) and 1408427.JADB01000002_gene1105
+(degree 538).
 
 
 References
@@ -107,14 +108,15 @@ def BartonellaElizabethae(
 	
 	Datetime: 2021-02-03 22:36:19.041462
 	
-	The undirected graph Bartonella elizabethae has 1568 nodes and 102818 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08369 and
-	has 27 connected components, where the component with most nodes has 1505 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 131.15, and the node degree mode is 1. The top 5 most central
-	nodes are 1408427.JADB01000002_gene1051 (degree 678), 1408427.JADB01000001_gene226
-	(degree 620), 1408427.JADB01000003_gene1386 (degree 575), 1408427.JADB01000001_gene229
-	(degree 549) and 1408427.JADB01000002_gene1105 (degree 538).
+	The undirected graph Bartonella elizabethae has 1568 nodes and 102818 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08369 and has 27 connected components, where the component with most
+	nodes has 1505 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 131.15, and
+	the node degree mode is 1. The top 5 most central nodes are 1408427.JADB01000002_gene1051
+	(degree 678), 1408427.JADB01000001_gene226 (degree 620), 1408427.JADB01000003_gene1386
+	(degree 575), 1408427.JADB01000001_gene229 (degree 549) and 1408427.JADB01000002_gene1105
+	(degree 538).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:31.706737
 
-The undirected graph Pantoea ananatis AJ13355 has 4014 nodes and 359137 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04459
-and has 7 connected components, where the component with most nodes has 4001 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 178.94, and the node degree mode is 1. The top 5
-most central nodes are 932677.PAJ_3158 (degree 1434), 932677.PAJ_3566 (degree 1316),
-932677.PAJ_2135 (degree 1119), 932677.PAJ_3567 (degree 1093) and 932677.PAJ_0517
-(degree 1043).
+The undirected graph Pantoea ananatis AJ13355 has 4014 nodes and 359137
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04459 and has 7 connected components, where the component
+with most nodes has 4001 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 145, the mean node degree is 178.94,
+and the node degree mode is 1. The top 5 most central nodes are 932677.PAJ_3158
+(degree 1434), 932677.PAJ_3566 (degree 1316), 932677.PAJ_2135 (degree 1119),
+932677.PAJ_3567 (degree 1093) and 932677.PAJ_0517 (degree 1043).
 
 
 References
@@ -107,14 +107,14 @@ def PantoeaAnanatisAj13355(
 	
 	Datetime: 2021-02-02 21:58:31.706737
 	
-	The undirected graph Pantoea ananatis AJ13355 has 4014 nodes and 359137 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04459
-	and has 7 connected components, where the component with most nodes has 4001 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 178.94, and the node degree mode is 1. The top 5
-	most central nodes are 932677.PAJ_3158 (degree 1434), 932677.PAJ_3566 (degree 1316),
-	932677.PAJ_2135 (degree 1119), 932677.PAJ_3567 (degree 1093) and 932677.PAJ_0517
-	(degree 1043).
+	The undirected graph Pantoea ananatis AJ13355 has 4014 nodes and 359137
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04459 and has 7 connected components, where the component
+	with most nodes has 4001 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 145, the mean node degree is 178.94,
+	and the node degree mode is 1. The top 5 most central nodes are 932677.PAJ_3158
+	(degree 1434), 932677.PAJ_3566 (degree 1316), 932677.PAJ_2135 (degree 1119),
+	932677.PAJ_3567 (degree 1093) and 932677.PAJ_0517 (degree 1043).
 	
 
 

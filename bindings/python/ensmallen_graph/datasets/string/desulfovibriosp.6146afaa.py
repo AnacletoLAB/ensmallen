@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:10.265241
 
-The undirected graph Desulfovibrio sp. 6146AFAA has 3249 nodes and 209619 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03973
-and has 19 connected components, where the component with most nodes has 3206 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 94, the mean node degree is 129.04, and the node degree mode is 3. The top 5 most
-central nodes are 665942.HMPREF1022_00313 (degree 997), 665942.HMPREF1022_03059 (degree
-977), 665942.HMPREF1022_01204 (degree 969), 665942.HMPREF1022_00848 (degree 962)
-and 665942.HMPREF1022_02075 (degree 955).
+The undirected graph Desulfovibrio sp. 6146AFAA has 3249 nodes and 209619
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03973 and has 19 connected components, where the component
+with most nodes has 3206 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 94, the mean node degree is 129.04,
+and the node degree mode is 3. The top 5 most central nodes are 665942.HMPREF1022_00313
+(degree 997), 665942.HMPREF1022_03059 (degree 977), 665942.HMPREF1022_01204
+(degree 969), 665942.HMPREF1022_00848 (degree 962) and 665942.HMPREF1022_02075
+(degree 955).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfovibrioSp.6146afaa(
 	
 	Datetime: 2021-02-02 21:28:10.265241
 	
-	The undirected graph Desulfovibrio sp. 6146AFAA has 3249 nodes and 209619 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03973
-	and has 19 connected components, where the component with most nodes has 3206 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 94, the mean node degree is 129.04, and the node degree mode is 3. The top 5 most
-	central nodes are 665942.HMPREF1022_00313 (degree 997), 665942.HMPREF1022_03059 (degree
-	977), 665942.HMPREF1022_01204 (degree 969), 665942.HMPREF1022_00848 (degree 962)
-	and 665942.HMPREF1022_02075 (degree 955).
+	The undirected graph Desulfovibrio sp. 6146AFAA has 3249 nodes and 209619
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03973 and has 19 connected components, where the component
+	with most nodes has 3206 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 94, the mean node degree is 129.04,
+	and the node degree mode is 3. The top 5 most central nodes are 665942.HMPREF1022_00313
+	(degree 997), 665942.HMPREF1022_03059 (degree 977), 665942.HMPREF1022_01204
+	(degree 969), 665942.HMPREF1022_00848 (degree 962) and 665942.HMPREF1022_02075
+	(degree 955).
 	
 
 

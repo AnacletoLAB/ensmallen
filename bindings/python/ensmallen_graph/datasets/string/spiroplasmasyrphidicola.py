@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:25.338589
 
-The undirected graph Spiroplasma syrphidicola has 997 nodes and 49231 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09915 and
-has 10 connected components, where the component with most nodes has 973 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 69,
-the mean node degree is 98.76, and the node degree mode is 16. The top 5 most central
-nodes are 1276229.SSYRP_v1c09670 (degree 468), 1276229.SSYRP_v1c09950 (degree 465),
-1276229.SSYRP_v1c10150 (degree 429), 1276229.SSYRP_v1c06810 (degree 402) and 1276229.SSYRP_v1c02680
+The undirected graph Spiroplasma syrphidicola has 997 nodes and 49231 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09915 and has 10 connected components, where the component with most
+nodes has 973 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 69, the mean node degree is 98.76, and
+the node degree mode is 16. The top 5 most central nodes are 1276229.SSYRP_v1c09670
+(degree 468), 1276229.SSYRP_v1c09950 (degree 465), 1276229.SSYRP_v1c10150
+(degree 429), 1276229.SSYRP_v1c06810 (degree 402) and 1276229.SSYRP_v1c02680
 (degree 386).
 
 
@@ -107,13 +108,14 @@ def SpiroplasmaSyrphidicola(
 	
 	Datetime: 2021-02-02 23:38:25.338589
 	
-	The undirected graph Spiroplasma syrphidicola has 997 nodes and 49231 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09915 and
-	has 10 connected components, where the component with most nodes has 973 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 69,
-	the mean node degree is 98.76, and the node degree mode is 16. The top 5 most central
-	nodes are 1276229.SSYRP_v1c09670 (degree 468), 1276229.SSYRP_v1c09950 (degree 465),
-	1276229.SSYRP_v1c10150 (degree 429), 1276229.SSYRP_v1c06810 (degree 402) and 1276229.SSYRP_v1c02680
+	The undirected graph Spiroplasma syrphidicola has 997 nodes and 49231 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09915 and has 10 connected components, where the component with most
+	nodes has 973 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 69, the mean node degree is 98.76, and
+	the node degree mode is 16. The top 5 most central nodes are 1276229.SSYRP_v1c09670
+	(degree 468), 1276229.SSYRP_v1c09950 (degree 465), 1276229.SSYRP_v1c10150
+	(degree 429), 1276229.SSYRP_v1c06810 (degree 402) and 1276229.SSYRP_v1c02680
 	(degree 386).
 	
 

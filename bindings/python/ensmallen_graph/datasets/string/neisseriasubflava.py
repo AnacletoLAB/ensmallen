@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:27.779662
 
-The undirected graph Neisseria subflava has 2563 nodes and 150614 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04587 and
-has 14 connected components, where the component with most nodes has 2535 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 117.53, and the node degree mode is 1. The top 5 most central
-nodes are 546268.NEISUBOT_03451 (degree 906), 546268.NEISUBOT_03238 (degree 881),
-546268.NEISUBOT_04199 (degree 781), 546268.NEISUBOT_03441 (degree 774) and 546268.NEISUBOT_05506
+The undirected graph Neisseria subflava has 2563 nodes and 150614 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04587 and has 14 connected components, where the component with most
+nodes has 2535 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 117.53, and
+the node degree mode is 1. The top 5 most central nodes are 546268.NEISUBOT_03451
+(degree 906), 546268.NEISUBOT_03238 (degree 881), 546268.NEISUBOT_04199
+(degree 781), 546268.NEISUBOT_03441 (degree 774) and 546268.NEISUBOT_05506
 (degree 772).
 
 
@@ -107,13 +108,14 @@ def NeisseriaSubflava(
 	
 	Datetime: 2021-02-02 21:08:27.779662
 	
-	The undirected graph Neisseria subflava has 2563 nodes and 150614 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04587 and
-	has 14 connected components, where the component with most nodes has 2535 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 117.53, and the node degree mode is 1. The top 5 most central
-	nodes are 546268.NEISUBOT_03451 (degree 906), 546268.NEISUBOT_03238 (degree 881),
-	546268.NEISUBOT_04199 (degree 781), 546268.NEISUBOT_03441 (degree 774) and 546268.NEISUBOT_05506
+	The undirected graph Neisseria subflava has 2563 nodes and 150614 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04587 and has 14 connected components, where the component with most
+	nodes has 2535 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 117.53, and
+	the node degree mode is 1. The top 5 most central nodes are 546268.NEISUBOT_03451
+	(degree 906), 546268.NEISUBOT_03238 (degree 881), 546268.NEISUBOT_04199
+	(degree 781), 546268.NEISUBOT_03441 (degree 774) and 546268.NEISUBOT_05506
 	(degree 772).
 	
 

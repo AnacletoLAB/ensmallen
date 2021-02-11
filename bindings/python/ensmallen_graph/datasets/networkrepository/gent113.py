@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:12:21.671539
 
-The undirected graph gent113 has 113 nodes, of which 9 are singletons (all have self-loops),
-and 639 unweighted edges, of which 90 are self-loops. The graph is dense as it has
-a density of 0.09387 and has 10 connected components, where the component with most
-nodes has 104 nodes and the component with the least nodes has a single node. The
-graph median node degree is 11, the mean node degree is 10.51, and the node degree
-mode is 6. The top 5 most central nodes are 15 (degree 27), 14 (degree 27), 30 (degree
-23), 29 (degree 23) and 23 (degree 21).
+The undirected graph gent113 has 113 nodes, of which 9 are singletons (all
+have self-loops), and 639 unweighted edges, of which 90 are self-loops.
+The graph is dense as it has a density of 0.09387 and has 10 connected
+components, where the component with most nodes has 104 nodes and the component
+with the least nodes has a single node. The graph median node degree is
+11, the mean node degree is 10.51, and the node degree mode is 6. The top
+5 most central nodes are 15 (degree 27), 14 (degree 27), 30 (degree 23),
+29 (degree 23) and 23 (degree 21).
 
 
 References
@@ -103,13 +104,14 @@ def Gent113(
 	
 	Datetime: 2021-02-06 08:12:21.671539
 	
-	The undirected graph gent113 has 113 nodes, of which 9 are singletons (all have self-loops),
-	and 639 unweighted edges, of which 90 are self-loops. The graph is dense as it has
-	a density of 0.09387 and has 10 connected components, where the component with most
-	nodes has 104 nodes and the component with the least nodes has a single node. The
-	graph median node degree is 11, the mean node degree is 10.51, and the node degree
-	mode is 6. The top 5 most central nodes are 15 (degree 27), 14 (degree 27), 30 (degree
-	23), 29 (degree 23) and 23 (degree 21).
+	The undirected graph gent113 has 113 nodes, of which 9 are singletons (all
+	have self-loops), and 639 unweighted edges, of which 90 are self-loops.
+	The graph is dense as it has a density of 0.09387 and has 10 connected
+	components, where the component with most nodes has 104 nodes and the component
+	with the least nodes has a single node. The graph median node degree is
+	11, the mean node degree is 10.51, and the node degree mode is 6. The top
+	5 most central nodes are 15 (degree 27), 14 (degree 27), 30 (degree 23),
+	29 (degree 23) and 23 (degree 21).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:20.476795
 
-The undirected graph Prevotella sp. C561 has 3280 nodes and 184467 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03430 and
-has 73 connected components, where the component with most nodes has 3073 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 112.48, and the node degree mode is 2. The top 5 most central
-nodes are 563031.HMPREF0666_02432 (degree 993), 563031.HMPREF0666_01152 (degree 920),
-563031.HMPREF0666_00798 (degree 920), 563031.HMPREF0666_02586 (degree 811) and 563031.HMPREF0666_02679
+The undirected graph Prevotella sp. C561 has 3280 nodes and 184467 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03430 and has 73 connected components, where the component with most
+nodes has 3073 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 112.48, and
+the node degree mode is 2. The top 5 most central nodes are 563031.HMPREF0666_02432
+(degree 993), 563031.HMPREF0666_01152 (degree 920), 563031.HMPREF0666_00798
+(degree 920), 563031.HMPREF0666_02586 (degree 811) and 563031.HMPREF0666_02679
 (degree 776).
 
 
@@ -107,13 +108,14 @@ def PrevotellaSp.C561(
 	
 	Datetime: 2021-02-02 21:12:20.476795
 	
-	The undirected graph Prevotella sp. C561 has 3280 nodes and 184467 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03430 and
-	has 73 connected components, where the component with most nodes has 3073 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 112.48, and the node degree mode is 2. The top 5 most central
-	nodes are 563031.HMPREF0666_02432 (degree 993), 563031.HMPREF0666_01152 (degree 920),
-	563031.HMPREF0666_00798 (degree 920), 563031.HMPREF0666_02586 (degree 811) and 563031.HMPREF0666_02679
+	The undirected graph Prevotella sp. C561 has 3280 nodes and 184467 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03430 and has 73 connected components, where the component with most
+	nodes has 3073 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 112.48, and
+	the node degree mode is 2. The top 5 most central nodes are 563031.HMPREF0666_02432
+	(degree 993), 563031.HMPREF0666_01152 (degree 920), 563031.HMPREF0666_00798
+	(degree 920), 563031.HMPREF0666_02586 (degree 811) and 563031.HMPREF0666_02679
 	(degree 776).
 	
 

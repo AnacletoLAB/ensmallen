@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:33.925422
 
-The undirected graph Xanthomonas oryzae oryzicola has 4413 nodes and 413604 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04249
-and has 23 connected components, where the component with most nodes has 4359 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 171, the mean node degree is 187.45, and the node degree mode is 2. The top 5
-most central nodes are 383407.XOC_0405 (degree 1250), 383407.XOC_1985 (degree 1249),
-383407.XOC_0359 (degree 1028), 383407.XOC_2648 (degree 1015) and 383407.XOC_2679
-(degree 963).
+The undirected graph Xanthomonas oryzae oryzicola has 4413 nodes and 413604
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04249 and has 23 connected components, where the component
+with most nodes has 4359 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 187.45,
+and the node degree mode is 2. The top 5 most central nodes are 383407.XOC_0405
+(degree 1250), 383407.XOC_1985 (degree 1249), 383407.XOC_0359 (degree 1028),
+383407.XOC_2648 (degree 1015) and 383407.XOC_2679 (degree 963).
 
 
 References
@@ -107,14 +107,14 @@ def XanthomonasOryzaeOryzicola(
 	
 	Datetime: 2021-02-02 20:37:33.925422
 	
-	The undirected graph Xanthomonas oryzae oryzicola has 4413 nodes and 413604 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04249
-	and has 23 connected components, where the component with most nodes has 4359 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 171, the mean node degree is 187.45, and the node degree mode is 2. The top 5
-	most central nodes are 383407.XOC_0405 (degree 1250), 383407.XOC_1985 (degree 1249),
-	383407.XOC_0359 (degree 1028), 383407.XOC_2648 (degree 1015) and 383407.XOC_2679
-	(degree 963).
+	The undirected graph Xanthomonas oryzae oryzicola has 4413 nodes and 413604
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04249 and has 23 connected components, where the component
+	with most nodes has 4359 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 187.45,
+	and the node degree mode is 2. The top 5 most central nodes are 383407.XOC_0405
+	(degree 1250), 383407.XOC_1985 (degree 1249), 383407.XOC_0359 (degree 1028),
+	383407.XOC_2648 (degree 1015) and 383407.XOC_2679 (degree 963).
 	
 
 

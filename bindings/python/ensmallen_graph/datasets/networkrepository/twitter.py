@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:47:48.427965
 
-The undirected graph twitter has 473819 nodes and 473818 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-and is connected, as it has a single component. The graph median node degree is 1,
-the mean node degree is 2.00, and the node degree mode is 1. The top 5 most central
-nodes are 1 (degree 473818), 473819 (degree 1), 473818 (degree 1), 473817 (degree
-1) and 473816 (degree 1).
+The undirected graph twitter has 473819 nodes and 473818 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00000 and is connected, as it has a single component. The
+graph median node degree is 1, the mean node degree is 2.00, and the node
+degree mode is 1. The top 5 most central nodes are 1 (degree 473818), 473819
+(degree 1), 473818 (degree 1), 473817 (degree 1) and 473816 (degree 1).
 
 
 References
@@ -102,12 +102,12 @@ def Twitter(
 	
 	Datetime: 2021-02-07 15:47:48.427965
 	
-	The undirected graph twitter has 473819 nodes and 473818 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00000
-	and is connected, as it has a single component. The graph median node degree is 1,
-	the mean node degree is 2.00, and the node degree mode is 1. The top 5 most central
-	nodes are 1 (degree 473818), 473819 (degree 1), 473818 (degree 1), 473817 (degree
-	1) and 473816 (degree 1).
+	The undirected graph twitter has 473819 nodes and 473818 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00000 and is connected, as it has a single component. The
+	graph median node degree is 1, the mean node degree is 2.00, and the node
+	degree mode is 1. The top 5 most central nodes are 1 (degree 473818), 473819
+	(degree 1), 473818 (degree 1), 473817 (degree 1) and 473816 (degree 1).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:05:32.654775
 
-The undirected graph Kutzneria albida has 8751 nodes and 1202481 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03141 and
-has 22 connected components, where the component with most nodes has 8696 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 234,
-the mean node degree is 274.82, and the node degree mode is 3. The top 5 most central
-nodes are 1449976.KALB_5502 (degree 2886), 1449976.KALB_2611 (degree 2491), 1449976.KALB_71
-(degree 2444), 1449976.KALB_883 (degree 2190) and 1449976.KALB_8148 (degree 2165).
+The undirected graph Kutzneria albida has 8751 nodes and 1202481 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03141 and has 22 connected components, where the component with most
+nodes has 8696 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 234, the mean node degree is 274.82, and
+the node degree mode is 3. The top 5 most central nodes are 1449976.KALB_5502
+(degree 2886), 1449976.KALB_2611 (degree 2491), 1449976.KALB_71 (degree
+2444), 1449976.KALB_883 (degree 2190) and 1449976.KALB_8148 (degree 2165).
 
 
 References
@@ -106,13 +107,14 @@ def KutzneriaAlbida(
 	
 	Datetime: 2021-02-03 23:05:32.654775
 	
-	The undirected graph Kutzneria albida has 8751 nodes and 1202481 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03141 and
-	has 22 connected components, where the component with most nodes has 8696 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 234,
-	the mean node degree is 274.82, and the node degree mode is 3. The top 5 most central
-	nodes are 1449976.KALB_5502 (degree 2886), 1449976.KALB_2611 (degree 2491), 1449976.KALB_71
-	(degree 2444), 1449976.KALB_883 (degree 2190) and 1449976.KALB_8148 (degree 2165).
+	The undirected graph Kutzneria albida has 8751 nodes and 1202481 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03141 and has 22 connected components, where the component with most
+	nodes has 8696 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 234, the mean node degree is 274.82, and
+	the node degree mode is 3. The top 5 most central nodes are 1449976.KALB_5502
+	(degree 2886), 1449976.KALB_2611 (degree 2491), 1449976.KALB_71 (degree
+	2444), 1449976.KALB_883 (degree 2190) and 1449976.KALB_8148 (degree 2165).
 	
 
 

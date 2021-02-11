@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:14.142414
 
-The undirected graph Myxosarcina sp. GI1 has 6419 nodes and 714673 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03470 and
-has 29 connected components, where the component with most nodes has 6336 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 187,
-the mean node degree is 222.67, and the node degree mode is 2. The top 5 most central
-nodes are 1541065.JRFE01000017_gene27 (degree 2259), 1541065.JRFE01000004_gene5261
-(degree 2167), 1541065.JRFE01000019_gene3243 (degree 1991), 1541065.JRFE01000024_gene1012
-(degree 1899) and 1541065.JRFE01000019_gene3162 (degree 1827).
+The undirected graph Myxosarcina sp. GI1 has 6419 nodes and 714673 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03470 and has 29 connected components, where the component with most
+nodes has 6336 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 187, the mean node degree is 222.67, and
+the node degree mode is 2. The top 5 most central nodes are 1541065.JRFE01000017_gene27
+(degree 2259), 1541065.JRFE01000004_gene5261 (degree 2167), 1541065.JRFE01000019_gene3243
+(degree 1991), 1541065.JRFE01000024_gene1012 (degree 1899) and 1541065.JRFE01000019_gene3162
+(degree 1827).
 
 
 References
@@ -107,14 +108,15 @@ def MyxosarcinaSp.Gi1(
 	
 	Datetime: 2021-02-03 23:20:14.142414
 	
-	The undirected graph Myxosarcina sp. GI1 has 6419 nodes and 714673 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03470 and
-	has 29 connected components, where the component with most nodes has 6336 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 187,
-	the mean node degree is 222.67, and the node degree mode is 2. The top 5 most central
-	nodes are 1541065.JRFE01000017_gene27 (degree 2259), 1541065.JRFE01000004_gene5261
-	(degree 2167), 1541065.JRFE01000019_gene3243 (degree 1991), 1541065.JRFE01000024_gene1012
-	(degree 1899) and 1541065.JRFE01000019_gene3162 (degree 1827).
+	The undirected graph Myxosarcina sp. GI1 has 6419 nodes and 714673 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03470 and has 29 connected components, where the component with most
+	nodes has 6336 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 187, the mean node degree is 222.67, and
+	the node degree mode is 2. The top 5 most central nodes are 1541065.JRFE01000017_gene27
+	(degree 2259), 1541065.JRFE01000004_gene5261 (degree 2167), 1541065.JRFE01000019_gene3243
+	(degree 1991), 1541065.JRFE01000024_gene1012 (degree 1899) and 1541065.JRFE01000019_gene3162
+	(degree 1827).
 	
 
 

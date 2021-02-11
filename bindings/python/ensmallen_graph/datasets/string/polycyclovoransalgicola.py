@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:46:28.682421
 
-The undirected graph Polycyclovorans algicola has 3263 nodes and 350238 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06581
-and has 9 connected components, where the component with most nodes has 3244 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 214.67, and the node degree mode is 2. The top 5
-most central nodes are 1415779.JOMH01000001_gene1545 (degree 1174), 1415779.JOMH01000001_gene316
-(degree 1116), 1415779.JOMH01000001_gene1632 (degree 978), 1415779.JOMH01000001_gene17
-(degree 958) and 1415779.JOMH01000001_gene100 (degree 950).
+The undirected graph Polycyclovorans algicola has 3263 nodes and 350238
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06581 and has 9 connected components, where the component
+with most nodes has 3244 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 214.67,
+and the node degree mode is 2. The top 5 most central nodes are 1415779.JOMH01000001_gene1545
+(degree 1174), 1415779.JOMH01000001_gene316 (degree 1116), 1415779.JOMH01000001_gene1632
+(degree 978), 1415779.JOMH01000001_gene17 (degree 958) and 1415779.JOMH01000001_gene100
+(degree 950).
 
 
 References
@@ -107,14 +108,15 @@ def PolycyclovoransAlgicola(
 	
 	Datetime: 2021-02-03 22:46:28.682421
 	
-	The undirected graph Polycyclovorans algicola has 3263 nodes and 350238 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06581
-	and has 9 connected components, where the component with most nodes has 3244 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 214.67, and the node degree mode is 2. The top 5
-	most central nodes are 1415779.JOMH01000001_gene1545 (degree 1174), 1415779.JOMH01000001_gene316
-	(degree 1116), 1415779.JOMH01000001_gene1632 (degree 978), 1415779.JOMH01000001_gene17
-	(degree 958) and 1415779.JOMH01000001_gene100 (degree 950).
+	The undirected graph Polycyclovorans algicola has 3263 nodes and 350238
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06581 and has 9 connected components, where the component
+	with most nodes has 3244 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 214.67,
+	and the node degree mode is 2. The top 5 most central nodes are 1415779.JOMH01000001_gene1545
+	(degree 1174), 1415779.JOMH01000001_gene316 (degree 1116), 1415779.JOMH01000001_gene1632
+	(degree 978), 1415779.JOMH01000001_gene17 (degree 958) and 1415779.JOMH01000001_gene100
+	(degree 950).
 	
 
 

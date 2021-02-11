@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:52:13.681738
 
-The undirected graph Escherichia coli O157H7 has 5702 nodes and 448775 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02761 and
-has 27 connected components, where the component with most nodes has 5638 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 157.41, and the node degree mode is 3. The top 5 most central
-nodes are 155864.EDL933_2255 (degree 1484), 155864.EDL933_3538 (degree 1477), 155864.EDL933_5180
-(degree 1473), 155864.EDL933_3664 (degree 1286) and 155864.EDL933_4440 (degree 1224).
+The undirected graph Escherichia coli O157H7 has 5702 nodes and 448775
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02761 and has 27 connected components, where the component
+with most nodes has 5638 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 157.41,
+and the node degree mode is 3. The top 5 most central nodes are 155864.EDL933_2255
+(degree 1484), 155864.EDL933_3538 (degree 1477), 155864.EDL933_5180 (degree
+1473), 155864.EDL933_3664 (degree 1286) and 155864.EDL933_4440 (degree
+1224).
 
 
 References
@@ -106,13 +108,15 @@ def EscherichiaColiO157h7(
 	
 	Datetime: 2021-02-02 19:52:13.681738
 	
-	The undirected graph Escherichia coli O157H7 has 5702 nodes and 448775 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02761 and
-	has 27 connected components, where the component with most nodes has 5638 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 157.41, and the node degree mode is 3. The top 5 most central
-	nodes are 155864.EDL933_2255 (degree 1484), 155864.EDL933_3538 (degree 1477), 155864.EDL933_5180
-	(degree 1473), 155864.EDL933_3664 (degree 1286) and 155864.EDL933_4440 (degree 1224).
+	The undirected graph Escherichia coli O157H7 has 5702 nodes and 448775
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02761 and has 27 connected components, where the component
+	with most nodes has 5638 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 157.41,
+	and the node degree mode is 3. The top 5 most central nodes are 155864.EDL933_2255
+	(degree 1484), 155864.EDL933_3538 (degree 1477), 155864.EDL933_5180 (degree
+	1473), 155864.EDL933_3664 (degree 1286) and 155864.EDL933_4440 (degree
+	1224).
 	
 
 

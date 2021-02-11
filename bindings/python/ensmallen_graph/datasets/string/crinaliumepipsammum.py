@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:52.885341
 
-The undirected graph Crinalium epipsammum has 4462 nodes and 506686 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05091 and
-has 19 connected components, where the component with most nodes has 4408 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 210,
-the mean node degree is 227.11, and the node degree mode is 3. The top 5 most central
-nodes are 1173022.Cri9333_4593 (degree 1716), 1173022.Cri9333_1963 (degree 1433),
-1173022.Cri9333_3618 (degree 1281), 1173022.Cri9333_1848 (degree 1197) and 1173022.Cri9333_2920
+The undirected graph Crinalium epipsammum has 4462 nodes and 506686 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05091 and has 19 connected components, where the component with most
+nodes has 4408 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 210, the mean node degree is 227.11, and
+the node degree mode is 3. The top 5 most central nodes are 1173022.Cri9333_4593
+(degree 1716), 1173022.Cri9333_1963 (degree 1433), 1173022.Cri9333_3618
+(degree 1281), 1173022.Cri9333_1848 (degree 1197) and 1173022.Cri9333_2920
 (degree 989).
 
 
@@ -107,13 +108,14 @@ def CrinaliumEpipsammum(
 	
 	Datetime: 2021-02-02 23:07:52.885341
 	
-	The undirected graph Crinalium epipsammum has 4462 nodes and 506686 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05091 and
-	has 19 connected components, where the component with most nodes has 4408 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 210,
-	the mean node degree is 227.11, and the node degree mode is 3. The top 5 most central
-	nodes are 1173022.Cri9333_4593 (degree 1716), 1173022.Cri9333_1963 (degree 1433),
-	1173022.Cri9333_3618 (degree 1281), 1173022.Cri9333_1848 (degree 1197) and 1173022.Cri9333_2920
+	The undirected graph Crinalium epipsammum has 4462 nodes and 506686 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05091 and has 19 connected components, where the component with most
+	nodes has 4408 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 210, the mean node degree is 227.11, and
+	the node degree mode is 3. The top 5 most central nodes are 1173022.Cri9333_4593
+	(degree 1716), 1173022.Cri9333_1963 (degree 1433), 1173022.Cri9333_3618
+	(degree 1281), 1173022.Cri9333_1848 (degree 1197) and 1173022.Cri9333_2920
 	(degree 989).
 	
 

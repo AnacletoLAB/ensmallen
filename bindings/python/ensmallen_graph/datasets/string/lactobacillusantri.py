@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:05:13.728142
 
-The undirected graph Lactobacillus antri has 2202 nodes and 154539 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06377 and
-has 10 connected components, where the component with most nodes has 2184 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 140.36, and the node degree mode is 4. The top 5 most central
-nodes are 525309.HMPREF0494_1915 (degree 875), 525309.HMPREF0494_1431 (degree 747),
-525309.HMPREF0494_0982 (degree 737), 525309.HMPREF0494_0460 (degree 688) and 525309.HMPREF0494_1038
+The undirected graph Lactobacillus antri has 2202 nodes and 154539 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06377 and has 10 connected components, where the component with most
+nodes has 2184 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 140.36, and
+the node degree mode is 4. The top 5 most central nodes are 525309.HMPREF0494_1915
+(degree 875), 525309.HMPREF0494_1431 (degree 747), 525309.HMPREF0494_0982
+(degree 737), 525309.HMPREF0494_0460 (degree 688) and 525309.HMPREF0494_1038
 (degree 673).
 
 
@@ -107,13 +108,14 @@ def LactobacillusAntri(
 	
 	Datetime: 2021-02-02 21:05:13.728142
 	
-	The undirected graph Lactobacillus antri has 2202 nodes and 154539 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06377 and
-	has 10 connected components, where the component with most nodes has 2184 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 140.36, and the node degree mode is 4. The top 5 most central
-	nodes are 525309.HMPREF0494_1915 (degree 875), 525309.HMPREF0494_1431 (degree 747),
-	525309.HMPREF0494_0982 (degree 737), 525309.HMPREF0494_0460 (degree 688) and 525309.HMPREF0494_1038
+	The undirected graph Lactobacillus antri has 2202 nodes and 154539 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06377 and has 10 connected components, where the component with most
+	nodes has 2184 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 140.36, and
+	the node degree mode is 4. The top 5 most central nodes are 525309.HMPREF0494_1915
+	(degree 875), 525309.HMPREF0494_1431 (degree 747), 525309.HMPREF0494_0982
+	(degree 737), 525309.HMPREF0494_0460 (degree 688) and 525309.HMPREF0494_1038
 	(degree 673).
 	
 

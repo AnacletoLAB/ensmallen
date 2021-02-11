@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:10.694480
 
-The undirected graph Bacteroides helcogenes has 3225 nodes and 255326 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-has 15 connected components, where the component with most nodes has 3188 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 158.34, and the node degree mode is 8. The top 5 most central
-nodes are 693979.Bache_0663 (degree 1217), 693979.Bache_1893 (degree 1017), 693979.Bache_0193
-(degree 960), 693979.Bache_0399 (degree 929) and 693979.Bache_1451 (degree 883).
+The undirected graph Bacteroides helcogenes has 3225 nodes and 255326 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04911 and has 15 connected components, where the component with most
+nodes has 3188 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 158.34, and
+the node degree mode is 8. The top 5 most central nodes are 693979.Bache_0663
+(degree 1217), 693979.Bache_1893 (degree 1017), 693979.Bache_0193 (degree
+960), 693979.Bache_0399 (degree 929) and 693979.Bache_1451 (degree 883).
 
 
 References
@@ -106,13 +107,14 @@ def BacteroidesHelcogenes(
 	
 	Datetime: 2021-02-02 21:32:10.694480
 	
-	The undirected graph Bacteroides helcogenes has 3225 nodes and 255326 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04911 and
-	has 15 connected components, where the component with most nodes has 3188 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 158.34, and the node degree mode is 8. The top 5 most central
-	nodes are 693979.Bache_0663 (degree 1217), 693979.Bache_1893 (degree 1017), 693979.Bache_0193
-	(degree 960), 693979.Bache_0399 (degree 929) and 693979.Bache_1451 (degree 883).
+	The undirected graph Bacteroides helcogenes has 3225 nodes and 255326 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04911 and has 15 connected components, where the component with most
+	nodes has 3188 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 158.34, and
+	the node degree mode is 8. The top 5 most central nodes are 693979.Bache_0663
+	(degree 1217), 693979.Bache_1893 (degree 1017), 693979.Bache_0193 (degree
+	960), 693979.Bache_0399 (degree 929) and 693979.Bache_1451 (degree 883).
 	
 
 

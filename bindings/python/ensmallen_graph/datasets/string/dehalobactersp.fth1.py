@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:19.546814
 
-The undirected graph Dehalobacter sp. FTH1 has 3502 nodes and 268569 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-has 16 connected components, where the component with most nodes has 3468 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 120,
-the mean node degree is 153.38, and the node degree mode is 4. The top 5 most central
-nodes are 1035308.AQYY01000001_gene2351 (degree 1198), 1035308.AQYY01000002_gene572
-(degree 1103), 1035308.AQYY01000002_gene366 (degree 1033), 1035308.AQYY01000002_gene985
-(degree 982) and 1035308.AQYY01000001_gene3484 (degree 974).
+The undirected graph Dehalobacter sp. FTH1 has 3502 nodes and 268569 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04381 and has 16 connected components, where the component with most
+nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 120, the mean node degree is 153.38, and
+the node degree mode is 4. The top 5 most central nodes are 1035308.AQYY01000001_gene2351
+(degree 1198), 1035308.AQYY01000002_gene572 (degree 1103), 1035308.AQYY01000002_gene366
+(degree 1033), 1035308.AQYY01000002_gene985 (degree 982) and 1035308.AQYY01000001_gene3484
+(degree 974).
 
 
 References
@@ -107,14 +108,15 @@ def DehalobacterSp.Fth1(
 	
 	Datetime: 2021-02-02 22:12:19.546814
 	
-	The undirected graph Dehalobacter sp. FTH1 has 3502 nodes and 268569 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04381 and
-	has 16 connected components, where the component with most nodes has 3468 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 120,
-	the mean node degree is 153.38, and the node degree mode is 4. The top 5 most central
-	nodes are 1035308.AQYY01000001_gene2351 (degree 1198), 1035308.AQYY01000002_gene572
-	(degree 1103), 1035308.AQYY01000002_gene366 (degree 1033), 1035308.AQYY01000002_gene985
-	(degree 982) and 1035308.AQYY01000001_gene3484 (degree 974).
+	The undirected graph Dehalobacter sp. FTH1 has 3502 nodes and 268569 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04381 and has 16 connected components, where the component with most
+	nodes has 3468 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 120, the mean node degree is 153.38, and
+	the node degree mode is 4. The top 5 most central nodes are 1035308.AQYY01000001_gene2351
+	(degree 1198), 1035308.AQYY01000002_gene572 (degree 1103), 1035308.AQYY01000002_gene366
+	(degree 1033), 1035308.AQYY01000002_gene985 (degree 982) and 1035308.AQYY01000001_gene3484
+	(degree 974).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:04.621101
 
-The undirected graph Prevotella timonensis CRIS5CB1 has 2156 nodes and 135744 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05843
-and has 14 connected components, where the component with most nodes has 2125 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 125.92, and the node degree mode is 3. The top 5
-most central nodes are 679189.HMPREF9019_1508 (degree 829), 679189.HMPREF9019_0139
-(degree 730), 679189.HMPREF9019_0234 (degree 678), 679189.HMPREF9019_0210 (degree
+The undirected graph Prevotella timonensis CRIS5CB1 has 2156 nodes and
+135744 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05843 and has 14 connected components, where the
+component with most nodes has 2125 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+is 125.92, and the node degree mode is 3. The top 5 most central nodes
+are 679189.HMPREF9019_1508 (degree 829), 679189.HMPREF9019_0139 (degree
+730), 679189.HMPREF9019_0234 (degree 678), 679189.HMPREF9019_0210 (degree
 647) and 679189.HMPREF9019_0356 (degree 636).
 
 
@@ -107,13 +108,14 @@ def PrevotellaTimonensisCris5cb1(
 	
 	Datetime: 2021-02-02 21:30:04.621101
 	
-	The undirected graph Prevotella timonensis CRIS5CB1 has 2156 nodes and 135744 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05843
-	and has 14 connected components, where the component with most nodes has 2125 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 125.92, and the node degree mode is 3. The top 5
-	most central nodes are 679189.HMPREF9019_1508 (degree 829), 679189.HMPREF9019_0139
-	(degree 730), 679189.HMPREF9019_0234 (degree 678), 679189.HMPREF9019_0210 (degree
+	The undirected graph Prevotella timonensis CRIS5CB1 has 2156 nodes and
+	135744 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05843 and has 14 connected components, where the
+	component with most nodes has 2125 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 108, the mean node degree
+	is 125.92, and the node degree mode is 3. The top 5 most central nodes
+	are 679189.HMPREF9019_1508 (degree 829), 679189.HMPREF9019_0139 (degree
+	730), 679189.HMPREF9019_0234 (degree 678), 679189.HMPREF9019_0210 (degree
 	647) and 679189.HMPREF9019_0356 (degree 636).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:20.097927
 
-The undirected graph Peptostreptococcaceae bacterium CM5 has 2296 nodes and 141580
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05374 and has 6 connected components, where the component with most nodes has
-2282 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 88, the mean node degree is 123.33, and the node degree mode is 5. The
-top 5 most central nodes are 796940.HMPREF9628_01466 (degree 989), 796940.HMPREF9628_00089
-(degree 815), 796940.HMPREF9628_00048 (degree 683), 796940.HMPREF9628_00664 (degree
+The undirected graph Peptostreptococcaceae bacterium CM5 has 2296 nodes
+and 141580 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05374 and has 6 connected components, where the
+component with most nodes has 2282 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+is 123.33, and the node degree mode is 5. The top 5 most central nodes
+are 796940.HMPREF9628_01466 (degree 989), 796940.HMPREF9628_00089 (degree
+815), 796940.HMPREF9628_00048 (degree 683), 796940.HMPREF9628_00664 (degree
 668) and 796940.HMPREF9628_00646 (degree 632).
 
 
@@ -107,13 +108,14 @@ def PeptostreptococcaceaeBacteriumCm5(
 	
 	Datetime: 2021-02-02 21:45:20.097927
 	
-	The undirected graph Peptostreptococcaceae bacterium CM5 has 2296 nodes and 141580
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05374 and has 6 connected components, where the component with most nodes has
-	2282 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 88, the mean node degree is 123.33, and the node degree mode is 5. The
-	top 5 most central nodes are 796940.HMPREF9628_01466 (degree 989), 796940.HMPREF9628_00089
-	(degree 815), 796940.HMPREF9628_00048 (degree 683), 796940.HMPREF9628_00664 (degree
+	The undirected graph Peptostreptococcaceae bacterium CM5 has 2296 nodes
+	and 141580 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05374 and has 6 connected components, where the
+	component with most nodes has 2282 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 88, the mean node degree
+	is 123.33, and the node degree mode is 5. The top 5 most central nodes
+	are 796940.HMPREF9628_01466 (degree 989), 796940.HMPREF9628_00089 (degree
+	815), 796940.HMPREF9628_00048 (degree 683), 796940.HMPREF9628_00664 (degree
 	668) and 796940.HMPREF9628_00646 (degree 632).
 	
 

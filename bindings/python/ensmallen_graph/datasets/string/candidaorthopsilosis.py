@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:44.507590
 
-The undirected graph Candida orthopsilosis has 4824 nodes and 425031 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03654 and
-has 3 connected components, where the component with most nodes has 4820 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 176.22, and the node degree mode is 1. The top 5 most central
-nodes are 273371.XP_003868331.1 (degree 1098), 273371.XP_003870450.1 (degree 1058),
-273371.XP_003866209.1 (degree 1040), 273371.XP_003869147.1 (degree 962) and 273371.XP_003869005.1
+The undirected graph Candida orthopsilosis has 4824 nodes and 425031 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03654 and has 3 connected components, where the component with most
+nodes has 4820 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 176.22, and
+the node degree mode is 1. The top 5 most central nodes are 273371.XP_003868331.1
+(degree 1098), 273371.XP_003870450.1 (degree 1058), 273371.XP_003866209.1
+(degree 1040), 273371.XP_003869147.1 (degree 962) and 273371.XP_003869005.1
 (degree 927).
 
 
@@ -107,13 +108,14 @@ def CandidaOrthopsilosis(
 	
 	Datetime: 2021-02-02 20:17:44.507590
 	
-	The undirected graph Candida orthopsilosis has 4824 nodes and 425031 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03654 and
-	has 3 connected components, where the component with most nodes has 4820 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 176.22, and the node degree mode is 1. The top 5 most central
-	nodes are 273371.XP_003868331.1 (degree 1098), 273371.XP_003870450.1 (degree 1058),
-	273371.XP_003866209.1 (degree 1040), 273371.XP_003869147.1 (degree 962) and 273371.XP_003869005.1
+	The undirected graph Candida orthopsilosis has 4824 nodes and 425031 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03654 and has 3 connected components, where the component with most
+	nodes has 4820 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 176.22, and
+	the node degree mode is 1. The top 5 most central nodes are 273371.XP_003868331.1
+	(degree 1098), 273371.XP_003870450.1 (degree 1058), 273371.XP_003866209.1
+	(degree 1040), 273371.XP_003869147.1 (degree 962) and 273371.XP_003869005.1
 	(degree 927).
 	
 

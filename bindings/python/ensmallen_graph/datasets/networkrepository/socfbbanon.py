@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 16:27:30.481862
 
-The undirected graph socfb-B-anon has 2937612 nodes and 20959854 unweighted edges,
-of which none are self-loops. The graph is extremely sparse as it has a density of
-0.00000 and is connected, as it has a single component. The graph median node degree
-is 1, the mean node degree is 14.27, and the node degree mode is 1. The top 5 most
-central nodes are 1160 (degree 4356), 19226 (degree 3628), 127757 (degree 3097),
-40900 (degree 2948) and 173801 (degree 2905).
+The undirected graph socfb-B-anon has 2937612 nodes and 20959854 unweighted
+edges, of which none are self-loops. The graph is extremely sparse as it
+has a density of 0.00000 and is connected, as it has a single component.
+The graph median node degree is 1, the mean node degree is 14.27, and the
+node degree mode is 1. The top 5 most central nodes are 1160 (degree 4356),
+19226 (degree 3628), 127757 (degree 3097), 40900 (degree 2948) and 173801
+(degree 2905).
 
 
 References
@@ -123,12 +124,13 @@ def SocfbBAnon(
 	
 	Datetime: 2021-02-07 16:27:30.481862
 	
-	The undirected graph socfb-B-anon has 2937612 nodes and 20959854 unweighted edges,
-	of which none are self-loops. The graph is extremely sparse as it has a density of
-	0.00000 and is connected, as it has a single component. The graph median node degree
-	is 1, the mean node degree is 14.27, and the node degree mode is 1. The top 5 most
-	central nodes are 1160 (degree 4356), 19226 (degree 3628), 127757 (degree 3097),
-	40900 (degree 2948) and 173801 (degree 2905).
+	The undirected graph socfb-B-anon has 2937612 nodes and 20959854 unweighted
+	edges, of which none are self-loops. The graph is extremely sparse as it
+	has a density of 0.00000 and is connected, as it has a single component.
+	The graph median node degree is 1, the mean node degree is 14.27, and the
+	node degree mode is 1. The top 5 most central nodes are 1160 (degree 4356),
+	19226 (degree 3628), 127757 (degree 3097), 40900 (degree 2948) and 173801
+	(degree 2905).
 	
 
 

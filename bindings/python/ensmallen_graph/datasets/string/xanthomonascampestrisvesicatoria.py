@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:26:17.792849
 
-The undirected graph Xanthomonas campestris vesicatoria has 4485 nodes and 336471
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03346 and has 22 connected components, where the component with most nodes has
-4442 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 120, the mean node degree is 150.04, and the node degree mode is 6. The
-top 5 most central nodes are 316273.XCV4200 (degree 1391), 316273.XCV2671 (degree
-1242), 316273.XCV1332 (degree 1139), 316273.XCV0037 (degree 1052) and 316273.XCV2485
-(degree 1045).
+The undirected graph Xanthomonas campestris vesicatoria has 4485 nodes
+and 336471 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03346 and has 22 connected components, where the
+component with most nodes has 4442 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+is 150.04, and the node degree mode is 6. The top 5 most central nodes
+are 316273.XCV4200 (degree 1391), 316273.XCV2671 (degree 1242), 316273.XCV1332
+(degree 1139), 316273.XCV0037 (degree 1052) and 316273.XCV2485 (degree
+1045).
 
 
 References
@@ -107,14 +108,15 @@ def XanthomonasCampestrisVesicatoria(
 	
 	Datetime: 2021-02-02 20:26:17.792849
 	
-	The undirected graph Xanthomonas campestris vesicatoria has 4485 nodes and 336471
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03346 and has 22 connected components, where the component with most nodes has
-	4442 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 120, the mean node degree is 150.04, and the node degree mode is 6. The
-	top 5 most central nodes are 316273.XCV4200 (degree 1391), 316273.XCV2671 (degree
-	1242), 316273.XCV1332 (degree 1139), 316273.XCV0037 (degree 1052) and 316273.XCV2485
-	(degree 1045).
+	The undirected graph Xanthomonas campestris vesicatoria has 4485 nodes
+	and 336471 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03346 and has 22 connected components, where the
+	component with most nodes has 4442 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+	is 150.04, and the node degree mode is 6. The top 5 most central nodes
+	are 316273.XCV4200 (degree 1391), 316273.XCV2671 (degree 1242), 316273.XCV1332
+	(degree 1139), 316273.XCV0037 (degree 1052) and 316273.XCV2485 (degree
+	1045).
 	
 
 

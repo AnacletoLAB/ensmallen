@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:21:47.809348
 
-The undirected graph Pasteurella multocida has 2038 nodes and 145759 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07022 and
-has 5 connected components, where the component with most nodes has 2024 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 143.04, and the node degree mode is 123. The top 5 most central
-nodes are 747.DR93_900 (degree 852), 747.DR93_1087 (degree 780), 747.DR93_1079 (degree
-697), 747.DR93_1768 (degree 695) and 747.DR93_1766 (degree 638).
+The undirected graph Pasteurella multocida has 2038 nodes and 145759 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07022 and has 5 connected components, where the component with most
+nodes has 2024 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 143.04, and
+the node degree mode is 123. The top 5 most central nodes are 747.DR93_900
+(degree 852), 747.DR93_1087 (degree 780), 747.DR93_1079 (degree 697), 747.DR93_1768
+(degree 695) and 747.DR93_1766 (degree 638).
 
 
 References
@@ -106,13 +107,14 @@ def PasteurellaMultocida(
 	
 	Datetime: 2021-02-02 16:21:47.809348
 	
-	The undirected graph Pasteurella multocida has 2038 nodes and 145759 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07022 and
-	has 5 connected components, where the component with most nodes has 2024 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 143.04, and the node degree mode is 123. The top 5 most central
-	nodes are 747.DR93_900 (degree 852), 747.DR93_1087 (degree 780), 747.DR93_1079 (degree
-	697), 747.DR93_1768 (degree 695) and 747.DR93_1766 (degree 638).
+	The undirected graph Pasteurella multocida has 2038 nodes and 145759 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07022 and has 5 connected components, where the component with most
+	nodes has 2024 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 143.04, and
+	the node degree mode is 123. The top 5 most central nodes are 747.DR93_900
+	(degree 852), 747.DR93_1087 (degree 780), 747.DR93_1079 (degree 697), 747.DR93_1768
+	(degree 695) and 747.DR93_1766 (degree 638).
 	
 
 

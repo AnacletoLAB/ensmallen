@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:48:42.382963
 
-The undirected graph Mannheimia haemolytica M42548 has 2793 nodes and 195767 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05021
-and has 6 connected components, where the component with most nodes has 2782 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 112, the mean node degree is 140.18, and the node degree mode is 11. The top 5
-most central nodes are 1316932.MHH_c17390 (degree 982), 1316932.MHH_c15590 (degree
-968), 1316932.MHH_c19250 (degree 858), 1316932.MHH_c13830 (degree 795) and 1316932.MHH_c19280
-(degree 783).
+The undirected graph Mannheimia haemolytica M42548 has 2793 nodes and 195767
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05021 and has 6 connected components, where the component
+with most nodes has 2782 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 112, the mean node degree is 140.18,
+and the node degree mode is 11. The top 5 most central nodes are 1316932.MHH_c17390
+(degree 982), 1316932.MHH_c15590 (degree 968), 1316932.MHH_c19250 (degree
+858), 1316932.MHH_c13830 (degree 795) and 1316932.MHH_c19280 (degree 783).
 
 
 References
@@ -107,14 +107,14 @@ def MannheimiaHaemolyticaM42548(
 	
 	Datetime: 2021-02-03 21:48:42.382963
 	
-	The undirected graph Mannheimia haemolytica M42548 has 2793 nodes and 195767 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05021
-	and has 6 connected components, where the component with most nodes has 2782 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 112, the mean node degree is 140.18, and the node degree mode is 11. The top 5
-	most central nodes are 1316932.MHH_c17390 (degree 982), 1316932.MHH_c15590 (degree
-	968), 1316932.MHH_c19250 (degree 858), 1316932.MHH_c13830 (degree 795) and 1316932.MHH_c19280
-	(degree 783).
+	The undirected graph Mannheimia haemolytica M42548 has 2793 nodes and 195767
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05021 and has 6 connected components, where the component
+	with most nodes has 2782 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 112, the mean node degree is 140.18,
+	and the node degree mode is 11. The top 5 most central nodes are 1316932.MHH_c17390
+	(degree 982), 1316932.MHH_c15590 (degree 968), 1316932.MHH_c19250 (degree
+	858), 1316932.MHH_c13830 (degree 795) and 1316932.MHH_c19280 (degree 783).
 	
 
 

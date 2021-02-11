@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:48.285257
 
-The undirected graph Burkholderia pseudomallei ABCPW111 has 5766 nodes and 518753
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03121 and has 51 connected components, where the component with most nodes has
-5632 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 145, the mean node degree is 179.94, and the node degree mode is 1. The
-top 5 most central nodes are 1434929.X946_5776 (degree 1869), 1434929.X946_4105 (degree
-1490), 1434929.X946_3817 (degree 1432), 1434929.X946_604 (degree 1410) and 1434929.X946_550
-(degree 1321).
+The undirected graph Burkholderia pseudomallei ABCPW111 has 5766 nodes
+and 518753 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03121 and has 51 connected components, where the
+component with most nodes has 5632 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 179.94, and the node degree mode is 1. The top 5 most central nodes
+are 1434929.X946_5776 (degree 1869), 1434929.X946_4105 (degree 1490), 1434929.X946_3817
+(degree 1432), 1434929.X946_604 (degree 1410) and 1434929.X946_550 (degree
+1321).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaPseudomalleiAbcpw111(
 	
 	Datetime: 2021-02-03 22:54:48.285257
 	
-	The undirected graph Burkholderia pseudomallei ABCPW111 has 5766 nodes and 518753
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03121 and has 51 connected components, where the component with most nodes has
-	5632 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 145, the mean node degree is 179.94, and the node degree mode is 1. The
-	top 5 most central nodes are 1434929.X946_5776 (degree 1869), 1434929.X946_4105 (degree
-	1490), 1434929.X946_3817 (degree 1432), 1434929.X946_604 (degree 1410) and 1434929.X946_550
-	(degree 1321).
+	The undirected graph Burkholderia pseudomallei ABCPW111 has 5766 nodes
+	and 518753 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03121 and has 51 connected components, where the
+	component with most nodes has 5632 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 179.94, and the node degree mode is 1. The top 5 most central nodes
+	are 1434929.X946_5776 (degree 1869), 1434929.X946_4105 (degree 1490), 1434929.X946_3817
+	(degree 1432), 1434929.X946_604 (degree 1410) and 1434929.X946_550 (degree
+	1321).
 	
 
 

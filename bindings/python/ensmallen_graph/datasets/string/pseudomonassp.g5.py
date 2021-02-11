@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:37:14.097936
 
-The undirected graph Pseudomonas sp. G5 has 6621 nodes and 949539 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-has 55 connected components, where the component with most nodes has 6493 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 231,
-the mean node degree is 286.83, and the node degree mode is 2. The top 5 most central
-nodes are 1268068.PG5_31870 (degree 2341), 1268068.PG5_15360 (degree 2220), 1268068.PG5_35700
-(degree 1989), 1268068.PG5_64640 (degree 1926) and 1268068.PG5_11740 (degree 1903).
+The undirected graph Pseudomonas sp. G5 has 6621 nodes and 949539 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04333 and has 55 connected components, where the component with most
+nodes has 6493 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 231, the mean node degree is 286.83, and
+the node degree mode is 2. The top 5 most central nodes are 1268068.PG5_31870
+(degree 2341), 1268068.PG5_15360 (degree 2220), 1268068.PG5_35700 (degree
+1989), 1268068.PG5_64640 (degree 1926) and 1268068.PG5_11740 (degree 1903).
 
 
 References
@@ -106,13 +107,14 @@ def PseudomonasSp.G5(
 	
 	Datetime: 2021-02-02 23:37:14.097936
 	
-	The undirected graph Pseudomonas sp. G5 has 6621 nodes and 949539 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04333 and
-	has 55 connected components, where the component with most nodes has 6493 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 231,
-	the mean node degree is 286.83, and the node degree mode is 2. The top 5 most central
-	nodes are 1268068.PG5_31870 (degree 2341), 1268068.PG5_15360 (degree 2220), 1268068.PG5_35700
-	(degree 1989), 1268068.PG5_64640 (degree 1926) and 1268068.PG5_11740 (degree 1903).
+	The undirected graph Pseudomonas sp. G5 has 6621 nodes and 949539 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04333 and has 55 connected components, where the component with most
+	nodes has 6493 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 231, the mean node degree is 286.83, and
+	the node degree mode is 2. The top 5 most central nodes are 1268068.PG5_31870
+	(degree 2341), 1268068.PG5_15360 (degree 2220), 1268068.PG5_35700 (degree
+	1989), 1268068.PG5_64640 (degree 1926) and 1268068.PG5_11740 (degree 1903).
 	
 
 

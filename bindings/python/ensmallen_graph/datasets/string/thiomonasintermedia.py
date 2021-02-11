@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:32:38.689140
 
-The undirected graph Thiomonas intermedia has 3133 nodes and 308418 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06286 and
-has 8 connected components, where the component with most nodes has 3116 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 170,
-the mean node degree is 196.88, and the node degree mode is 2. The top 5 most central
-nodes are 75379.Tint_1248 (degree 1267), 75379.Tint_1759 (degree 974), 75379.Tint_0988
-(degree 855), 75379.Tint_1186 (degree 810) and 75379.Tint_2424 (degree 788).
+The undirected graph Thiomonas intermedia has 3133 nodes and 308418 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06286 and has 8 connected components, where the component with most
+nodes has 3116 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 170, the mean node degree is 196.88, and
+the node degree mode is 2. The top 5 most central nodes are 75379.Tint_1248
+(degree 1267), 75379.Tint_1759 (degree 974), 75379.Tint_0988 (degree 855),
+75379.Tint_1186 (degree 810) and 75379.Tint_2424 (degree 788).
 
 
 References
@@ -106,13 +107,14 @@ def ThiomonasIntermedia(
 	
 	Datetime: 2021-02-02 18:32:38.689140
 	
-	The undirected graph Thiomonas intermedia has 3133 nodes and 308418 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06286 and
-	has 8 connected components, where the component with most nodes has 3116 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 170,
-	the mean node degree is 196.88, and the node degree mode is 2. The top 5 most central
-	nodes are 75379.Tint_1248 (degree 1267), 75379.Tint_1759 (degree 974), 75379.Tint_0988
-	(degree 855), 75379.Tint_1186 (degree 810) and 75379.Tint_2424 (degree 788).
+	The undirected graph Thiomonas intermedia has 3133 nodes and 308418 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06286 and has 8 connected components, where the component with most
+	nodes has 3116 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 170, the mean node degree is 196.88, and
+	the node degree mode is 2. The top 5 most central nodes are 75379.Tint_1248
+	(degree 1267), 75379.Tint_1759 (degree 974), 75379.Tint_0988 (degree 855),
+	75379.Tint_1186 (degree 810) and 75379.Tint_2424 (degree 788).
 	
 
 

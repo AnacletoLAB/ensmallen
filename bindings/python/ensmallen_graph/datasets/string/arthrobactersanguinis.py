@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:10.021109
 
-The undirected graph Arthrobacter sanguinis has 2614 nodes and 179385 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05253 and
-has 12 connected components, where the component with most nodes has 2586 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 137.25, and the node degree mode is 2. The top 5 most central
-nodes are 1121020.JIAG01000008_gene529 (degree 921), 1121020.JIAG01000009_gene20
-(degree 909), 1121020.JIAG01000020_gene1507 (degree 890), 1121020.JIAG01000006_gene1812
-(degree 780) and 1121020.JIAG01000012_gene1428 (degree 772).
+The undirected graph Arthrobacter sanguinis has 2614 nodes and 179385 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05253 and has 12 connected components, where the component with most
+nodes has 2586 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 137.25, and
+the node degree mode is 2. The top 5 most central nodes are 1121020.JIAG01000008_gene529
+(degree 921), 1121020.JIAG01000009_gene20 (degree 909), 1121020.JIAG01000020_gene1507
+(degree 890), 1121020.JIAG01000006_gene1812 (degree 780) and 1121020.JIAG01000012_gene1428
+(degree 772).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSanguinis(
 	
 	Datetime: 2021-02-02 22:32:10.021109
 	
-	The undirected graph Arthrobacter sanguinis has 2614 nodes and 179385 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05253 and
-	has 12 connected components, where the component with most nodes has 2586 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 137.25, and the node degree mode is 2. The top 5 most central
-	nodes are 1121020.JIAG01000008_gene529 (degree 921), 1121020.JIAG01000009_gene20
-	(degree 909), 1121020.JIAG01000020_gene1507 (degree 890), 1121020.JIAG01000006_gene1812
-	(degree 780) and 1121020.JIAG01000012_gene1428 (degree 772).
+	The undirected graph Arthrobacter sanguinis has 2614 nodes and 179385 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05253 and has 12 connected components, where the component with most
+	nodes has 2586 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 137.25, and
+	the node degree mode is 2. The top 5 most central nodes are 1121020.JIAG01000008_gene529
+	(degree 921), 1121020.JIAG01000009_gene20 (degree 909), 1121020.JIAG01000020_gene1507
+	(degree 890), 1121020.JIAG01000006_gene1812 (degree 780) and 1121020.JIAG01000012_gene1428
+	(degree 772).
 	
 
 

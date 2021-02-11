@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:52.961026
 
-The undirected graph Blattabacterium sp. Bgi has 576 nodes and 33626 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.20306
-and is connected, as it has a single component. The graph median node degree is 107,
-the mean node degree is 116.76, and the node degree mode is 88. The top 5 most central
-nodes are 1186051.BGIGA_125 (degree 357), 1186051.BGIGA_158 (degree 354), 1186051.BGIGA_322
-(degree 350), 1186051.BGIGA_401 (degree 317) and 1186051.BGIGA_531 (degree 292).
+The undirected graph Blattabacterium sp. Bgi has 576 nodes and 33626 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.20306 and is connected, as it has a single component. The
+graph median node degree is 107, the mean node degree is 116.76, and the
+node degree mode is 88. The top 5 most central nodes are 1186051.BGIGA_125
+(degree 357), 1186051.BGIGA_158 (degree 354), 1186051.BGIGA_322 (degree
+350), 1186051.BGIGA_401 (degree 317) and 1186051.BGIGA_531 (degree 292).
 
 
 References
@@ -105,12 +106,13 @@ def BlattabacteriumSp.Bgi(
 	
 	Datetime: 2021-02-02 23:10:52.961026
 	
-	The undirected graph Blattabacterium sp. Bgi has 576 nodes and 33626 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.20306
-	and is connected, as it has a single component. The graph median node degree is 107,
-	the mean node degree is 116.76, and the node degree mode is 88. The top 5 most central
-	nodes are 1186051.BGIGA_125 (degree 357), 1186051.BGIGA_158 (degree 354), 1186051.BGIGA_322
-	(degree 350), 1186051.BGIGA_401 (degree 317) and 1186051.BGIGA_531 (degree 292).
+	The undirected graph Blattabacterium sp. Bgi has 576 nodes and 33626 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.20306 and is connected, as it has a single component. The
+	graph median node degree is 107, the mean node degree is 116.76, and the
+	node degree mode is 88. The top 5 most central nodes are 1186051.BGIGA_125
+	(degree 357), 1186051.BGIGA_158 (degree 354), 1186051.BGIGA_322 (degree
+	350), 1186051.BGIGA_401 (degree 317) and 1186051.BGIGA_531 (degree 292).
 	
 
 

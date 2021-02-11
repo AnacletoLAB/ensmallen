@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:35:20.667630
 
-The undirected graph Caulobacter sp. K31 has 5202 nodes and 615187 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04548 and
-has 9 connected components, where the component with most nodes has 5179 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 236.52, and the node degree mode is 3. The top 5 most central
-nodes are 366602.Caul_3548 (degree 2315), 366602.Caul_0221 (degree 1772), 366602.Caul_2216
-(degree 1336), 366602.Caul_4950 (degree 1262) and 366602.Caul_4914 (degree 1213).
+The undirected graph Caulobacter sp. K31 has 5202 nodes and 615187 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04548 and has 9 connected components, where the component with most
+nodes has 5179 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 236.52, and
+the node degree mode is 3. The top 5 most central nodes are 366602.Caul_3548
+(degree 2315), 366602.Caul_0221 (degree 1772), 366602.Caul_2216 (degree
+1336), 366602.Caul_4950 (degree 1262) and 366602.Caul_4914 (degree 1213).
 
 
 References
@@ -106,13 +107,14 @@ def CaulobacterSp.K31(
 	
 	Datetime: 2021-02-02 20:35:20.667630
 	
-	The undirected graph Caulobacter sp. K31 has 5202 nodes and 615187 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04548 and
-	has 9 connected components, where the component with most nodes has 5179 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 236.52, and the node degree mode is 3. The top 5 most central
-	nodes are 366602.Caul_3548 (degree 2315), 366602.Caul_0221 (degree 1772), 366602.Caul_2216
-	(degree 1336), 366602.Caul_4950 (degree 1262) and 366602.Caul_4914 (degree 1213).
+	The undirected graph Caulobacter sp. K31 has 5202 nodes and 615187 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04548 and has 9 connected components, where the component with most
+	nodes has 5179 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 236.52, and
+	the node degree mode is 3. The top 5 most central nodes are 366602.Caul_3548
+	(degree 2315), 366602.Caul_0221 (degree 1772), 366602.Caul_2216 (degree
+	1336), 366602.Caul_4950 (degree 1262) and 366602.Caul_4914 (degree 1213).
 	
 
 

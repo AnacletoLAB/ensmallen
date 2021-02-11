@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:30:34.638779
 
-The undirected graph Haemophilus influenzae has 1706 nodes and 128472 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08834 and
-has 2 connected components, where the component with most nodes has 1704 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 140,
-the mean node degree is 150.61, and the node degree mode is 150. The top 5 most central
-nodes are 71421.HI_0856 (degree 773), 71421.HI_1276 (degree 636), 71421.HI_0222 (degree
-611), 71421.HI_0624 (degree 543) and 71421.HI_1312 (degree 534).
+The undirected graph Haemophilus influenzae has 1706 nodes and 128472 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.08834 and has 2 connected components, where the component with most
+nodes has 1704 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 140, the mean node degree is 150.61, and
+the node degree mode is 150. The top 5 most central nodes are 71421.HI_0856
+(degree 773), 71421.HI_1276 (degree 636), 71421.HI_0222 (degree 611), 71421.HI_0624
+(degree 543) and 71421.HI_1312 (degree 534).
 
 
 References
@@ -106,13 +107,14 @@ def HaemophilusInfluenzae(
 	
 	Datetime: 2021-02-02 18:30:34.638779
 	
-	The undirected graph Haemophilus influenzae has 1706 nodes and 128472 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08834 and
-	has 2 connected components, where the component with most nodes has 1704 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 140,
-	the mean node degree is 150.61, and the node degree mode is 150. The top 5 most central
-	nodes are 71421.HI_0856 (degree 773), 71421.HI_1276 (degree 636), 71421.HI_0222 (degree
-	611), 71421.HI_0624 (degree 543) and 71421.HI_1312 (degree 534).
+	The undirected graph Haemophilus influenzae has 1706 nodes and 128472 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.08834 and has 2 connected components, where the component with most
+	nodes has 1704 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 140, the mean node degree is 150.61, and
+	the node degree mode is 150. The top 5 most central nodes are 71421.HI_0856
+	(degree 773), 71421.HI_1276 (degree 636), 71421.HI_0222 (degree 611), 71421.HI_0624
+	(degree 543) and 71421.HI_1312 (degree 534).
 	
 
 

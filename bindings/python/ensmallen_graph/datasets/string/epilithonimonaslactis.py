@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:47:34.994632
 
-The undirected graph Epilithonimonas lactis has 3586 nodes and 346244 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05387 and
-has 10 connected components, where the component with most nodes has 3562 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 193.11, and the node degree mode is 2. The top 5 most central
-nodes are 421072.IO89_18590 (degree 1128), 421072.IO89_08850 (degree 1021), 421072.IO89_16315
-(degree 897), 421072.IO89_00775 (degree 851) and 421072.IO89_07530 (degree 832).
+The undirected graph Epilithonimonas lactis has 3586 nodes and 346244 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05387 and has 10 connected components, where the component with most
+nodes has 3562 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 193.11, and
+the node degree mode is 2. The top 5 most central nodes are 421072.IO89_18590
+(degree 1128), 421072.IO89_08850 (degree 1021), 421072.IO89_16315 (degree
+897), 421072.IO89_00775 (degree 851) and 421072.IO89_07530 (degree 832).
 
 
 References
@@ -106,13 +107,14 @@ def EpilithonimonasLactis(
 	
 	Datetime: 2021-02-02 20:47:34.994632
 	
-	The undirected graph Epilithonimonas lactis has 3586 nodes and 346244 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05387 and
-	has 10 connected components, where the component with most nodes has 3562 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 193.11, and the node degree mode is 2. The top 5 most central
-	nodes are 421072.IO89_18590 (degree 1128), 421072.IO89_08850 (degree 1021), 421072.IO89_16315
-	(degree 897), 421072.IO89_00775 (degree 851) and 421072.IO89_07530 (degree 832).
+	The undirected graph Epilithonimonas lactis has 3586 nodes and 346244 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05387 and has 10 connected components, where the component with most
+	nodes has 3562 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 193.11, and
+	the node degree mode is 2. The top 5 most central nodes are 421072.IO89_18590
+	(degree 1128), 421072.IO89_08850 (degree 1021), 421072.IO89_16315 (degree
+	897), 421072.IO89_00775 (degree 851) and 421072.IO89_07530 (degree 832).
 	
 
 

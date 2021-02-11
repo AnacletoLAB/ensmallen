@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:05.261163
 
-The undirected graph Streptococcus ictaluri has 2455 nodes and 175353 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05821 and
-has 9 connected components, where the component with most nodes has 2439 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 142.85, and the node degree mode is 7. The top 5 most central
-nodes are 764299.STRIC_0145 (degree 918), 764299.STRIC_0689 (degree 897), 764299.STRIC_1283
-(degree 830), 764299.STRIC_1693 (degree 797) and 764299.STRIC_2059 (degree 781).
+The undirected graph Streptococcus ictaluri has 2455 nodes and 175353 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05821 and has 9 connected components, where the component with most
+nodes has 2439 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 142.85, and
+the node degree mode is 7. The top 5 most central nodes are 764299.STRIC_0145
+(degree 918), 764299.STRIC_0689 (degree 897), 764299.STRIC_1283 (degree
+830), 764299.STRIC_1693 (degree 797) and 764299.STRIC_2059 (degree 781).
 
 
 References
@@ -106,13 +107,14 @@ def StreptococcusIctaluri(
 	
 	Datetime: 2021-02-02 21:43:05.261163
 	
-	The undirected graph Streptococcus ictaluri has 2455 nodes and 175353 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05821 and
-	has 9 connected components, where the component with most nodes has 2439 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 142.85, and the node degree mode is 7. The top 5 most central
-	nodes are 764299.STRIC_0145 (degree 918), 764299.STRIC_0689 (degree 897), 764299.STRIC_1283
-	(degree 830), 764299.STRIC_1693 (degree 797) and 764299.STRIC_2059 (degree 781).
+	The undirected graph Streptococcus ictaluri has 2455 nodes and 175353 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05821 and has 9 connected components, where the component with most
+	nodes has 2439 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 142.85, and
+	the node degree mode is 7. The top 5 most central nodes are 764299.STRIC_0145
+	(degree 918), 764299.STRIC_0689 (degree 897), 764299.STRIC_1283 (degree
+	830), 764299.STRIC_1693 (degree 797) and 764299.STRIC_2059 (degree 781).
 	
 
 

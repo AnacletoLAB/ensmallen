@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:16:32.770166
 
-The undirected graph Sphingopyxis sp. LC81 has 4075 nodes and 314851 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03793 and
-has 9 connected components, where the component with most nodes has 4057 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 126,
-the mean node degree is 154.53, and the node degree mode is 9. The top 5 most central
-nodes are 1502850.FG91_01122 (degree 1300), 1502850.FG91_03995 (degree 1093), 1502850.FG91_03797
-(degree 1060), 1502850.FG91_02664 (degree 1054) and 1502850.FG91_01165 (degree 1047).
+The undirected graph Sphingopyxis sp. LC81 has 4075 nodes and 314851 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03793 and has 9 connected components, where the component with most
+nodes has 4057 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 126, the mean node degree is 154.53, and
+the node degree mode is 9. The top 5 most central nodes are 1502850.FG91_01122
+(degree 1300), 1502850.FG91_03995 (degree 1093), 1502850.FG91_03797 (degree
+1060), 1502850.FG91_02664 (degree 1054) and 1502850.FG91_01165 (degree
+1047).
 
 
 References
@@ -106,13 +108,15 @@ def SphingopyxisSp.Lc81(
 	
 	Datetime: 2021-02-03 23:16:32.770166
 	
-	The undirected graph Sphingopyxis sp. LC81 has 4075 nodes and 314851 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03793 and
-	has 9 connected components, where the component with most nodes has 4057 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 126,
-	the mean node degree is 154.53, and the node degree mode is 9. The top 5 most central
-	nodes are 1502850.FG91_01122 (degree 1300), 1502850.FG91_03995 (degree 1093), 1502850.FG91_03797
-	(degree 1060), 1502850.FG91_02664 (degree 1054) and 1502850.FG91_01165 (degree 1047).
+	The undirected graph Sphingopyxis sp. LC81 has 4075 nodes and 314851 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03793 and has 9 connected components, where the component with most
+	nodes has 4057 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 126, the mean node degree is 154.53, and
+	the node degree mode is 9. The top 5 most central nodes are 1502850.FG91_01122
+	(degree 1300), 1502850.FG91_03995 (degree 1093), 1502850.FG91_03797 (degree
+	1060), 1502850.FG91_02664 (degree 1054) and 1502850.FG91_01165 (degree
+	1047).
 	
 
 

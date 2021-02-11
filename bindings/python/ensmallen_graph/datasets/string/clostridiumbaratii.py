@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:46:12.658976
 
-The undirected graph Clostridium baratii has 3158 nodes and 222420 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04462 and
-has 12 connected components, where the component with most nodes has 3121 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 98,
-the mean node degree is 140.86, and the node degree mode is 6. The top 5 most central
-nodes are 1415775.U729_1994 (degree 1285), 1415775.U729_1489 (degree 1025), 1415775.U729_279
-(degree 1006), 1415775.U729_2078 (degree 990) and 1415775.U729_47 (degree 968).
+The undirected graph Clostridium baratii has 3158 nodes and 222420 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04462 and has 12 connected components, where the component with most
+nodes has 3121 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 98, the mean node degree is 140.86, and
+the node degree mode is 6. The top 5 most central nodes are 1415775.U729_1994
+(degree 1285), 1415775.U729_1489 (degree 1025), 1415775.U729_279 (degree
+1006), 1415775.U729_2078 (degree 990) and 1415775.U729_47 (degree 968).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumBaratii(
 	
 	Datetime: 2021-02-03 22:46:12.658976
 	
-	The undirected graph Clostridium baratii has 3158 nodes and 222420 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04462 and
-	has 12 connected components, where the component with most nodes has 3121 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 98,
-	the mean node degree is 140.86, and the node degree mode is 6. The top 5 most central
-	nodes are 1415775.U729_1994 (degree 1285), 1415775.U729_1489 (degree 1025), 1415775.U729_279
-	(degree 1006), 1415775.U729_2078 (degree 990) and 1415775.U729_47 (degree 968).
+	The undirected graph Clostridium baratii has 3158 nodes and 222420 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04462 and has 12 connected components, where the component with most
+	nodes has 3121 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 98, the mean node degree is 140.86, and
+	the node degree mode is 6. The top 5 most central nodes are 1415775.U729_1994
+	(degree 1285), 1415775.U729_1489 (degree 1025), 1415775.U729_279 (degree
+	1006), 1415775.U729_2078 (degree 990) and 1415775.U729_47 (degree 968).
 	
 
 

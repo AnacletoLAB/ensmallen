@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:12:29.425884
 
-The undirected graph Lachnospira multipara ATCC19207 has 2515 nodes and 198207 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06270
-and has 9 connected components, where the component with most nodes has 2495 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 157.62, and the node degree mode is 8. The top 5
-most central nodes are 1282887.AUJG01000002_gene983 (degree 1068), 1282887.AUJG01000014_gene610
+The undirected graph Lachnospira multipara ATCC19207 has 2515 nodes and
+198207 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06270 and has 9 connected components, where the
+component with most nodes has 2495 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+is 157.62, and the node degree mode is 8. The top 5 most central nodes
+are 1282887.AUJG01000002_gene983 (degree 1068), 1282887.AUJG01000014_gene610
 (degree 1022), 1282887.AUJG01000004_gene65 (degree 997), 1282887.AUJG01000006_gene299
 (degree 827) and 1282887.AUJG01000008_gene1401 (degree 809).
 
@@ -107,12 +108,13 @@ def LachnospiraMultiparaAtcc19207(
 	
 	Datetime: 2021-02-03 21:12:29.425884
 	
-	The undirected graph Lachnospira multipara ATCC19207 has 2515 nodes and 198207 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06270
-	and has 9 connected components, where the component with most nodes has 2495 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 157.62, and the node degree mode is 8. The top 5
-	most central nodes are 1282887.AUJG01000002_gene983 (degree 1068), 1282887.AUJG01000014_gene610
+	The undirected graph Lachnospira multipara ATCC19207 has 2515 nodes and
+	198207 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06270 and has 9 connected components, where the
+	component with most nodes has 2495 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 157.62, and the node degree mode is 8. The top 5 most central nodes
+	are 1282887.AUJG01000002_gene983 (degree 1068), 1282887.AUJG01000014_gene610
 	(degree 1022), 1282887.AUJG01000004_gene65 (degree 997), 1282887.AUJG01000006_gene299
 	(degree 827) and 1282887.AUJG01000008_gene1401 (degree 809).
 	

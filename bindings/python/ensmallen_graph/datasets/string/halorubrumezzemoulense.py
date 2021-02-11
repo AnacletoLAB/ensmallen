@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:59.983848
 
-The undirected graph Halorubrum ezzemoulense has 2844 nodes and 198412 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04908 and
-has 8 connected components, where the component with most nodes has 2828 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 139.53, and the node degree mode is 4. The top 5 most central
-nodes are 1121945.ATXS01000004_gene1086 (degree 762), 1121945.ATXS01000004_gene1087
-(degree 703), 1121945.ATXS01000008_gene1864 (degree 664), 1121945.ATXS01000002_gene624
-(degree 654) and 1121945.ATXS01000002_gene778 (degree 617).
+The undirected graph Halorubrum ezzemoulense has 2844 nodes and 198412
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04908 and has 8 connected components, where the component
+with most nodes has 2828 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 139.53,
+and the node degree mode is 4. The top 5 most central nodes are 1121945.ATXS01000004_gene1086
+(degree 762), 1121945.ATXS01000004_gene1087 (degree 703), 1121945.ATXS01000008_gene1864
+(degree 664), 1121945.ATXS01000002_gene624 (degree 654) and 1121945.ATXS01000002_gene778
+(degree 617).
 
 
 References
@@ -107,14 +108,15 @@ def HalorubrumEzzemoulense(
 	
 	Datetime: 2021-02-02 22:39:59.983848
 	
-	The undirected graph Halorubrum ezzemoulense has 2844 nodes and 198412 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04908 and
-	has 8 connected components, where the component with most nodes has 2828 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 139.53, and the node degree mode is 4. The top 5 most central
-	nodes are 1121945.ATXS01000004_gene1086 (degree 762), 1121945.ATXS01000004_gene1087
-	(degree 703), 1121945.ATXS01000008_gene1864 (degree 664), 1121945.ATXS01000002_gene624
-	(degree 654) and 1121945.ATXS01000002_gene778 (degree 617).
+	The undirected graph Halorubrum ezzemoulense has 2844 nodes and 198412
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04908 and has 8 connected components, where the component
+	with most nodes has 2828 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 139.53,
+	and the node degree mode is 4. The top 5 most central nodes are 1121945.ATXS01000004_gene1086
+	(degree 762), 1121945.ATXS01000004_gene1087 (degree 703), 1121945.ATXS01000008_gene1864
+	(degree 664), 1121945.ATXS01000002_gene624 (degree 654) and 1121945.ATXS01000002_gene778
+	(degree 617).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:42.342202
 
-The undirected graph Streptococcus parasanguinis ATCC903 has 2064 nodes and 141136
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06629 and has 7 connected components, where the component with most nodes has
-2049 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 106, the mean node degree is 136.76, and the node degree mode is 12. The
-top 5 most central nodes are 888048.HMPREF8577_1639 (degree 908), 888048.HMPREF8577_1503
-(degree 776), 888048.HMPREF8577_1974 (degree 735), 888048.HMPREF8577_0563 (degree
+The undirected graph Streptococcus parasanguinis ATCC903 has 2064 nodes
+and 141136 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06629 and has 7 connected components, where the
+component with most nodes has 2049 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+is 136.76, and the node degree mode is 12. The top 5 most central nodes
+are 888048.HMPREF8577_1639 (degree 908), 888048.HMPREF8577_1503 (degree
+776), 888048.HMPREF8577_1974 (degree 735), 888048.HMPREF8577_0563 (degree
 687) and 888048.HMPREF8577_0085 (degree 678).
 
 
@@ -107,13 +108,14 @@ def StreptococcusParasanguinisAtcc903(
 	
 	Datetime: 2021-02-02 21:52:42.342202
 	
-	The undirected graph Streptococcus parasanguinis ATCC903 has 2064 nodes and 141136
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06629 and has 7 connected components, where the component with most nodes has
-	2049 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 106, the mean node degree is 136.76, and the node degree mode is 12. The
-	top 5 most central nodes are 888048.HMPREF8577_1639 (degree 908), 888048.HMPREF8577_1503
-	(degree 776), 888048.HMPREF8577_1974 (degree 735), 888048.HMPREF8577_0563 (degree
+	The undirected graph Streptococcus parasanguinis ATCC903 has 2064 nodes
+	and 141136 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06629 and has 7 connected components, where the
+	component with most nodes has 2049 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 106, the mean node degree
+	is 136.76, and the node degree mode is 12. The top 5 most central nodes
+	are 888048.HMPREF8577_1639 (degree 908), 888048.HMPREF8577_1503 (degree
+	776), 888048.HMPREF8577_1974 (degree 735), 888048.HMPREF8577_0563 (degree
 	687) and 888048.HMPREF8577_0085 (degree 678).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:48.211261
 
-The undirected graph Rhodococcus jostii has 7501 nodes and 2785306 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09902 and
-has 34 connected components, where the component with most nodes has 7418 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 567,
-the mean node degree is 742.65, and the node degree mode is 3. The top 5 most central
-nodes are 101510.RHA1_ro01426 (degree 3974), 101510.RHA1_ro06665 (degree 3811), 101510.RHA1_ro02921
-(degree 3807), 101510.RHA1_ro02623 (degree 3776) and 101510.RHA1_ro04231 (degree
+The undirected graph Rhodococcus jostii has 7501 nodes and 2785306 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09902 and has 34 connected components, where the component with most
+nodes has 7418 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 567, the mean node degree is 742.65, and
+the node degree mode is 3. The top 5 most central nodes are 101510.RHA1_ro01426
+(degree 3974), 101510.RHA1_ro06665 (degree 3811), 101510.RHA1_ro02921 (degree
+3807), 101510.RHA1_ro02623 (degree 3776) and 101510.RHA1_ro04231 (degree
 3745).
 
 
@@ -107,13 +108,14 @@ def RhodococcusJostii(
 	
 	Datetime: 2021-02-02 19:42:48.211261
 	
-	The undirected graph Rhodococcus jostii has 7501 nodes and 2785306 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09902 and
-	has 34 connected components, where the component with most nodes has 7418 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 567,
-	the mean node degree is 742.65, and the node degree mode is 3. The top 5 most central
-	nodes are 101510.RHA1_ro01426 (degree 3974), 101510.RHA1_ro06665 (degree 3811), 101510.RHA1_ro02921
-	(degree 3807), 101510.RHA1_ro02623 (degree 3776) and 101510.RHA1_ro04231 (degree
+	The undirected graph Rhodococcus jostii has 7501 nodes and 2785306 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09902 and has 34 connected components, where the component with most
+	nodes has 7418 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 567, the mean node degree is 742.65, and
+	the node degree mode is 3. The top 5 most central nodes are 101510.RHA1_ro01426
+	(degree 3974), 101510.RHA1_ro06665 (degree 3811), 101510.RHA1_ro02921 (degree
+	3807), 101510.RHA1_ro02623 (degree 3776) and 101510.RHA1_ro04231 (degree
 	3745).
 	
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:43:26.001888
 
-The undirected graph Bdellovibrio bacteriovorus W has 2842 nodes and 180286 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04466
-and has 31 connected components, where the component with most nodes has 2751 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 92, the mean node degree is 126.87, and the node degree mode is 3. The top 5 most
-central nodes are 765869.BDW_02740 (degree 1139), 765869.BDW_07280 (degree 970),
-765869.BDW_12930 (degree 930), 765869.BDW_06165 (degree 783) and 765869.BDW_12785
-(degree 748).
+The undirected graph Bdellovibrio bacteriovorus W has 2842 nodes and 180286
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04466 and has 31 connected components, where the component
+with most nodes has 2751 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 92, the mean node degree is 126.87,
+and the node degree mode is 3. The top 5 most central nodes are 765869.BDW_02740
+(degree 1139), 765869.BDW_07280 (degree 970), 765869.BDW_12930 (degree
+930), 765869.BDW_06165 (degree 783) and 765869.BDW_12785 (degree 748).
 
 
 References
@@ -107,14 +107,14 @@ def BdellovibrioBacteriovorusW(
 	
 	Datetime: 2021-02-02 21:43:26.001888
 	
-	The undirected graph Bdellovibrio bacteriovorus W has 2842 nodes and 180286 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04466
-	and has 31 connected components, where the component with most nodes has 2751 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 92, the mean node degree is 126.87, and the node degree mode is 3. The top 5 most
-	central nodes are 765869.BDW_02740 (degree 1139), 765869.BDW_07280 (degree 970),
-	765869.BDW_12930 (degree 930), 765869.BDW_06165 (degree 783) and 765869.BDW_12785
-	(degree 748).
+	The undirected graph Bdellovibrio bacteriovorus W has 2842 nodes and 180286
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04466 and has 31 connected components, where the component
+	with most nodes has 2751 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 92, the mean node degree is 126.87,
+	and the node degree mode is 3. The top 5 most central nodes are 765869.BDW_02740
+	(degree 1139), 765869.BDW_07280 (degree 970), 765869.BDW_12930 (degree
+	930), 765869.BDW_06165 (degree 783) and 765869.BDW_12785 (degree 748).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:45:22.285025
 
-The undirected graph Stomatobaculum longum has 2055 nodes and 147826 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07004 and
-has 5 connected components, where the component with most nodes has 2046 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 124,
-the mean node degree is 143.87, and the node degree mode is 13. The top 5 most central
-nodes are 796942.HMPREF9623_00065 (degree 934), 796942.HMPREF9623_01165 (degree 855),
-796942.HMPREF9623_00159 (degree 777), 796942.HMPREF9623_00340 (degree 664) and 796942.HMPREF9623_00214
+The undirected graph Stomatobaculum longum has 2055 nodes and 147826 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07004 and has 5 connected components, where the component with most
+nodes has 2046 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 124, the mean node degree is 143.87, and
+the node degree mode is 13. The top 5 most central nodes are 796942.HMPREF9623_00065
+(degree 934), 796942.HMPREF9623_01165 (degree 855), 796942.HMPREF9623_00159
+(degree 777), 796942.HMPREF9623_00340 (degree 664) and 796942.HMPREF9623_00214
 (degree 622).
 
 
@@ -107,13 +108,14 @@ def StomatobaculumLongum(
 	
 	Datetime: 2021-02-02 21:45:22.285025
 	
-	The undirected graph Stomatobaculum longum has 2055 nodes and 147826 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07004 and
-	has 5 connected components, where the component with most nodes has 2046 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 124,
-	the mean node degree is 143.87, and the node degree mode is 13. The top 5 most central
-	nodes are 796942.HMPREF9623_00065 (degree 934), 796942.HMPREF9623_01165 (degree 855),
-	796942.HMPREF9623_00159 (degree 777), 796942.HMPREF9623_00340 (degree 664) and 796942.HMPREF9623_00214
+	The undirected graph Stomatobaculum longum has 2055 nodes and 147826 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07004 and has 5 connected components, where the component with most
+	nodes has 2046 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 124, the mean node degree is 143.87, and
+	the node degree mode is 13. The top 5 most central nodes are 796942.HMPREF9623_00065
+	(degree 934), 796942.HMPREF9623_01165 (degree 855), 796942.HMPREF9623_00159
+	(degree 777), 796942.HMPREF9623_00340 (degree 664) and 796942.HMPREF9623_00214
 	(degree 622).
 	
 

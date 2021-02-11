@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:58:54.617992
 
-The undirected graph Mesorhizobium loti R88b has 6386 nodes and 1010277 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04955
-and has 25 connected components, where the component with most nodes has 6330 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 253, the mean node degree is 316.40, and the node degree mode is 2. The top 5
-most central nodes are 935548.KI912159_gene3043 (degree 2336), 935548.KI912159_gene4672
-(degree 2202), 935548.KI912159_gene2817 (degree 2077), 935548.KI912159_gene5545 (degree
-2020) and 935548.KI912159_gene1748 (degree 2001).
+The undirected graph Mesorhizobium loti R88b has 6386 nodes and 1010277
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04955 and has 25 connected components, where the component
+with most nodes has 6330 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 253, the mean node degree is 316.40,
+and the node degree mode is 2. The top 5 most central nodes are 935548.KI912159_gene3043
+(degree 2336), 935548.KI912159_gene4672 (degree 2202), 935548.KI912159_gene2817
+(degree 2077), 935548.KI912159_gene5545 (degree 2020) and 935548.KI912159_gene1748
+(degree 2001).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumLotiR88b(
 	
 	Datetime: 2021-02-02 21:58:54.617992
 	
-	The undirected graph Mesorhizobium loti R88b has 6386 nodes and 1010277 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04955
-	and has 25 connected components, where the component with most nodes has 6330 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 253, the mean node degree is 316.40, and the node degree mode is 2. The top 5
-	most central nodes are 935548.KI912159_gene3043 (degree 2336), 935548.KI912159_gene4672
-	(degree 2202), 935548.KI912159_gene2817 (degree 2077), 935548.KI912159_gene5545 (degree
-	2020) and 935548.KI912159_gene1748 (degree 2001).
+	The undirected graph Mesorhizobium loti R88b has 6386 nodes and 1010277
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04955 and has 25 connected components, where the component
+	with most nodes has 6330 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 253, the mean node degree is 316.40,
+	and the node degree mode is 2. The top 5 most central nodes are 935548.KI912159_gene3043
+	(degree 2336), 935548.KI912159_gene4672 (degree 2202), 935548.KI912159_gene2817
+	(degree 2077), 935548.KI912159_gene5545 (degree 2020) and 935548.KI912159_gene1748
+	(degree 2001).
 	
 
 

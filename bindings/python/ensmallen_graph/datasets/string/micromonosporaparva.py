@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:01.082343
 
-The undirected graph Micromonospora parva has 6253 nodes and 801215 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04099 and
-has 19 connected components, where the component with most nodes has 6214 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 213,
-the mean node degree is 256.27, and the node degree mode is 3. The top 5 most central
-nodes are 1464048.JNZS01000032_gene2868 (degree 1817), 1464048.JNZS01000014_gene2985
-(degree 1706), 1464048.JNZS01000011_gene4918 (degree 1698), 1464048.JNZS01000021_gene2702
-(degree 1676) and 1464048.JNZS01000014_gene3027 (degree 1670).
+The undirected graph Micromonospora parva has 6253 nodes and 801215 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04099 and has 19 connected components, where the component with most
+nodes has 6214 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 213, the mean node degree is 256.27, and
+the node degree mode is 3. The top 5 most central nodes are 1464048.JNZS01000032_gene2868
+(degree 1817), 1464048.JNZS01000014_gene2985 (degree 1706), 1464048.JNZS01000011_gene4918
+(degree 1698), 1464048.JNZS01000021_gene2702 (degree 1676) and 1464048.JNZS01000014_gene3027
+(degree 1670).
 
 
 References
@@ -107,14 +108,15 @@ def MicromonosporaParva(
 	
 	Datetime: 2021-02-03 23:12:01.082343
 	
-	The undirected graph Micromonospora parva has 6253 nodes and 801215 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04099 and
-	has 19 connected components, where the component with most nodes has 6214 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 213,
-	the mean node degree is 256.27, and the node degree mode is 3. The top 5 most central
-	nodes are 1464048.JNZS01000032_gene2868 (degree 1817), 1464048.JNZS01000014_gene2985
-	(degree 1706), 1464048.JNZS01000011_gene4918 (degree 1698), 1464048.JNZS01000021_gene2702
-	(degree 1676) and 1464048.JNZS01000014_gene3027 (degree 1670).
+	The undirected graph Micromonospora parva has 6253 nodes and 801215 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04099 and has 19 connected components, where the component with most
+	nodes has 6214 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 213, the mean node degree is 256.27, and
+	the node degree mode is 3. The top 5 most central nodes are 1464048.JNZS01000032_gene2868
+	(degree 1817), 1464048.JNZS01000014_gene2985 (degree 1706), 1464048.JNZS01000011_gene4918
+	(degree 1698), 1464048.JNZS01000021_gene2702 (degree 1676) and 1464048.JNZS01000014_gene3027
+	(degree 1670).
 	
 
 

@@ -10,15 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:51.639575
 
-The undirected graph Pseudoalteromonas haloplanktis ATCC14393 has 4249 nodes and
-477994 weighted edges, of which none are self-loops. The graph is dense as it has
-a density of 0.05296 and has 15 connected components, where the component with most
-nodes has 4217 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 197, the mean node degree is 224.99, and the node degree mode
-is 2. The top 5 most central nodes are 1117315.AHCA01000009_gene562 (degree 1435),
-1117315.AHCA01000005_gene1313 (degree 1356), 1117315.AHCA01000010_gene976 (degree
-1342), 1117315.AHCA01000001_gene1987 (degree 1325) and 1117315.AHCA01000005_gene1312
-(degree 1312).
+The undirected graph Pseudoalteromonas haloplanktis ATCC14393 has 4249
+nodes and 477994 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.05296 and has 15 connected components,
+where the component with most nodes has 4217 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 197, the mean
+node degree is 224.99, and the node degree mode is 2. The top 5 most central
+nodes are 1117315.AHCA01000009_gene562 (degree 1435), 1117315.AHCA01000005_gene1313
+(degree 1356), 1117315.AHCA01000010_gene976 (degree 1342), 1117315.AHCA01000001_gene1987
+(degree 1325) and 1117315.AHCA01000005_gene1312 (degree 1312).
 
 
 References
@@ -108,15 +108,15 @@ def PseudoalteromonasHaloplanktisAtcc14393(
 	
 	Datetime: 2021-02-02 22:27:51.639575
 	
-	The undirected graph Pseudoalteromonas haloplanktis ATCC14393 has 4249 nodes and
-	477994 weighted edges, of which none are self-loops. The graph is dense as it has
-	a density of 0.05296 and has 15 connected components, where the component with most
-	nodes has 4217 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 197, the mean node degree is 224.99, and the node degree mode
-	is 2. The top 5 most central nodes are 1117315.AHCA01000009_gene562 (degree 1435),
-	1117315.AHCA01000005_gene1313 (degree 1356), 1117315.AHCA01000010_gene976 (degree
-	1342), 1117315.AHCA01000001_gene1987 (degree 1325) and 1117315.AHCA01000005_gene1312
-	(degree 1312).
+	The undirected graph Pseudoalteromonas haloplanktis ATCC14393 has 4249
+	nodes and 477994 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.05296 and has 15 connected components,
+	where the component with most nodes has 4217 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 197, the mean
+	node degree is 224.99, and the node degree mode is 2. The top 5 most central
+	nodes are 1117315.AHCA01000009_gene562 (degree 1435), 1117315.AHCA01000005_gene1313
+	(degree 1356), 1117315.AHCA01000010_gene976 (degree 1342), 1117315.AHCA01000001_gene1987
+	(degree 1325) and 1117315.AHCA01000005_gene1312 (degree 1312).
 	
 
 

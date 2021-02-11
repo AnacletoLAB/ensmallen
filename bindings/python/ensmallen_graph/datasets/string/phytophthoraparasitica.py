@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:10:42.225582
 
-The undirected graph Phytophthora parasitica has 9712 nodes and 1805137 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03828
-and has 155 connected components, where the component with most nodes has 9356 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 235, the mean node degree is 371.73, and the node degree mode is 1. The top 5
-most central nodes are 4792.ETI54416 (degree 3583), 4792.ETI41741 (degree 3396),
-4792.ETI40496 (degree 3319), 4792.ETI34702 (degree 3082) and 4792.ETI55810 (degree
-3023).
+The undirected graph Phytophthora parasitica has 9712 nodes and 1805137
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03828 and has 155 connected components, where the component
+with most nodes has 9356 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 235, the mean node degree is 371.73,
+and the node degree mode is 1. The top 5 most central nodes are 4792.ETI54416
+(degree 3583), 4792.ETI41741 (degree 3396), 4792.ETI40496 (degree 3319),
+4792.ETI34702 (degree 3082) and 4792.ETI55810 (degree 3023).
 
 
 References
@@ -107,14 +107,14 @@ def PhytophthoraParasitica(
 	
 	Datetime: 2021-02-02 17:10:42.225582
 	
-	The undirected graph Phytophthora parasitica has 9712 nodes and 1805137 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03828
-	and has 155 connected components, where the component with most nodes has 9356 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 235, the mean node degree is 371.73, and the node degree mode is 1. The top 5
-	most central nodes are 4792.ETI54416 (degree 3583), 4792.ETI41741 (degree 3396),
-	4792.ETI40496 (degree 3319), 4792.ETI34702 (degree 3082) and 4792.ETI55810 (degree
-	3023).
+	The undirected graph Phytophthora parasitica has 9712 nodes and 1805137
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03828 and has 155 connected components, where the component
+	with most nodes has 9356 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 235, the mean node degree is 371.73,
+	and the node degree mode is 1. The top 5 most central nodes are 4792.ETI54416
+	(degree 3583), 4792.ETI41741 (degree 3396), 4792.ETI40496 (degree 3319),
+	4792.ETI34702 (degree 3082) and 4792.ETI55810 (degree 3023).
 	
 
 

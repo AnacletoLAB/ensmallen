@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:38.616712
 
-The undirected graph Falsirhodobacter sp. alg1 has 3042 nodes and 348012 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07524
-and has 8 connected components, where the component with most nodes has 3027 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 228.80, and the node degree mode is 1. The top 5
-most central nodes are 1472418.BBJC01000004_gene1948 (degree 1384), 1472418.BBJC01000002_gene1019
-(degree 1169), 1472418.BBJC01000002_gene1013 (degree 1020), 1472418.BBJC01000002_gene1012
-(degree 996) and 1472418.BBJC01000002_gene1034 (degree 989).
+The undirected graph Falsirhodobacter sp. alg1 has 3042 nodes and 348012
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07524 and has 8 connected components, where the component
+with most nodes has 3027 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 228.80,
+and the node degree mode is 1. The top 5 most central nodes are 1472418.BBJC01000004_gene1948
+(degree 1384), 1472418.BBJC01000002_gene1019 (degree 1169), 1472418.BBJC01000002_gene1013
+(degree 1020), 1472418.BBJC01000002_gene1012 (degree 996) and 1472418.BBJC01000002_gene1034
+(degree 989).
 
 
 References
@@ -107,14 +108,15 @@ def FalsirhodobacterSp.Alg1(
 	
 	Datetime: 2021-02-03 23:12:38.616712
 	
-	The undirected graph Falsirhodobacter sp. alg1 has 3042 nodes and 348012 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07524
-	and has 8 connected components, where the component with most nodes has 3027 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 228.80, and the node degree mode is 1. The top 5
-	most central nodes are 1472418.BBJC01000004_gene1948 (degree 1384), 1472418.BBJC01000002_gene1019
-	(degree 1169), 1472418.BBJC01000002_gene1013 (degree 1020), 1472418.BBJC01000002_gene1012
-	(degree 996) and 1472418.BBJC01000002_gene1034 (degree 989).
+	The undirected graph Falsirhodobacter sp. alg1 has 3042 nodes and 348012
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07524 and has 8 connected components, where the component
+	with most nodes has 3027 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 228.80,
+	and the node degree mode is 1. The top 5 most central nodes are 1472418.BBJC01000004_gene1948
+	(degree 1384), 1472418.BBJC01000002_gene1019 (degree 1169), 1472418.BBJC01000002_gene1013
+	(degree 1020), 1472418.BBJC01000002_gene1012 (degree 996) and 1472418.BBJC01000002_gene1034
+	(degree 989).
 	
 
 

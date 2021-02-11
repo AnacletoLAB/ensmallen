@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:24:41.301516
 
-The undirected graph Gordonia neofelifaecis has 3956 nodes and 411438 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05259 and
-has 9 connected components, where the component with most nodes has 3936 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 208.01, and the node degree mode is 3. The top 5 most central
-nodes are 644548.SCNU_20152 (degree 1432), 644548.SCNU_06890 (degree 1268), 644548.SCNU_17600
-(degree 1145), 644548.SCNU_14731 (degree 1093) and 644548.SCNU_03142 (degree 1091).
+The undirected graph Gordonia neofelifaecis has 3956 nodes and 411438 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05259 and has 9 connected components, where the component with most
+nodes has 3936 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 208.01, and
+the node degree mode is 3. The top 5 most central nodes are 644548.SCNU_20152
+(degree 1432), 644548.SCNU_06890 (degree 1268), 644548.SCNU_17600 (degree
+1145), 644548.SCNU_14731 (degree 1093) and 644548.SCNU_03142 (degree 1091).
 
 
 References
@@ -106,13 +107,14 @@ def GordoniaNeofelifaecis(
 	
 	Datetime: 2021-02-02 21:24:41.301516
 	
-	The undirected graph Gordonia neofelifaecis has 3956 nodes and 411438 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05259 and
-	has 9 connected components, where the component with most nodes has 3936 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 208.01, and the node degree mode is 3. The top 5 most central
-	nodes are 644548.SCNU_20152 (degree 1432), 644548.SCNU_06890 (degree 1268), 644548.SCNU_17600
-	(degree 1145), 644548.SCNU_14731 (degree 1093) and 644548.SCNU_03142 (degree 1091).
+	The undirected graph Gordonia neofelifaecis has 3956 nodes and 411438 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05259 and has 9 connected components, where the component with most
+	nodes has 3936 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 208.01, and
+	the node degree mode is 3. The top 5 most central nodes are 644548.SCNU_20152
+	(degree 1432), 644548.SCNU_06890 (degree 1268), 644548.SCNU_17600 (degree
+	1145), 644548.SCNU_14731 (degree 1093) and 644548.SCNU_03142 (degree 1091).
 	
 
 

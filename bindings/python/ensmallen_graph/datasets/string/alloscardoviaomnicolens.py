@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:14.398818
 
-The undirected graph Alloscardovia omnicolens has 1481 nodes and 104363 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.09523
-and has 8 connected components, where the component with most nodes has 1465 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 140.94, and the node degree mode is 1. The top 5
-most central nodes are 1120979.ATVB01000006_gene1154 (degree 750), 1120979.ATVB01000021_gene1373
-(degree 650), 1120979.ATVB01000009_gene1238 (degree 636), 1120979.ATVB01000003_gene356
-(degree 589) and 1120979.ATVB01000017_gene754 (degree 585).
+The undirected graph Alloscardovia omnicolens has 1481 nodes and 104363
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09523 and has 8 connected components, where the component
+with most nodes has 1465 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 140.94,
+and the node degree mode is 1. The top 5 most central nodes are 1120979.ATVB01000006_gene1154
+(degree 750), 1120979.ATVB01000021_gene1373 (degree 650), 1120979.ATVB01000009_gene1238
+(degree 636), 1120979.ATVB01000003_gene356 (degree 589) and 1120979.ATVB01000017_gene754
+(degree 585).
 
 
 References
@@ -107,14 +108,15 @@ def AlloscardoviaOmnicolens(
 	
 	Datetime: 2021-02-02 22:31:14.398818
 	
-	The undirected graph Alloscardovia omnicolens has 1481 nodes and 104363 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.09523
-	and has 8 connected components, where the component with most nodes has 1465 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 140.94, and the node degree mode is 1. The top 5
-	most central nodes are 1120979.ATVB01000006_gene1154 (degree 750), 1120979.ATVB01000021_gene1373
-	(degree 650), 1120979.ATVB01000009_gene1238 (degree 636), 1120979.ATVB01000003_gene356
-	(degree 589) and 1120979.ATVB01000017_gene754 (degree 585).
+	The undirected graph Alloscardovia omnicolens has 1481 nodes and 104363
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09523 and has 8 connected components, where the component
+	with most nodes has 1465 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 140.94,
+	and the node degree mode is 1. The top 5 most central nodes are 1120979.ATVB01000006_gene1154
+	(degree 750), 1120979.ATVB01000021_gene1373 (degree 650), 1120979.ATVB01000009_gene1238
+	(degree 636), 1120979.ATVB01000003_gene356 (degree 589) and 1120979.ATVB01000017_gene754
+	(degree 585).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:16:15.118574
 
-The undirected graph Volvox carteri has 7985 nodes and 924687 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02901 and
-has 19 connected components, where the component with most nodes has 7937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 148,
-the mean node degree is 231.61, and the node degree mode is 1. The top 5 most central
-nodes are 3067.XP_002952995.1 (degree 2413), 3067.XP_002958348.1 (degree 2339), 3067.XP_002955893.1
-(degree 2330), 3067.XP_002952742.1 (degree 2092) and 3067.XP_002946641.1 (degree
+The undirected graph Volvox carteri has 7985 nodes and 924687 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02901 and has 19 connected components, where the component with most
+nodes has 7937 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 148, the mean node degree is 231.61, and
+the node degree mode is 1. The top 5 most central nodes are 3067.XP_002952995.1
+(degree 2413), 3067.XP_002958348.1 (degree 2339), 3067.XP_002955893.1 (degree
+2330), 3067.XP_002952742.1 (degree 2092) and 3067.XP_002946641.1 (degree
 1971).
 
 
@@ -107,13 +108,14 @@ def VolvoxCarteri(
 	
 	Datetime: 2021-02-05 17:16:15.118574
 	
-	The undirected graph Volvox carteri has 7985 nodes and 924687 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02901 and
-	has 19 connected components, where the component with most nodes has 7937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 148,
-	the mean node degree is 231.61, and the node degree mode is 1. The top 5 most central
-	nodes are 3067.XP_002952995.1 (degree 2413), 3067.XP_002958348.1 (degree 2339), 3067.XP_002955893.1
-	(degree 2330), 3067.XP_002952742.1 (degree 2092) and 3067.XP_002946641.1 (degree
+	The undirected graph Volvox carteri has 7985 nodes and 924687 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02901 and has 19 connected components, where the component with most
+	nodes has 7937 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 148, the mean node degree is 231.61, and
+	the node degree mode is 1. The top 5 most central nodes are 3067.XP_002952995.1
+	(degree 2413), 3067.XP_002958348.1 (degree 2339), 3067.XP_002955893.1 (degree
+	2330), 3067.XP_002952742.1 (degree 2092) and 3067.XP_002946641.1 (degree
 	1971).
 	
 

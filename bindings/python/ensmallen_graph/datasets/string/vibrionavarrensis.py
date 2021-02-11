@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:59:07.073625
 
-The undirected graph Vibrio navarrensis has 3714 nodes and 399869 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05799 and
-has 12 connected components, where the component with most nodes has 3685 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 182,
-the mean node degree is 215.33, and the node degree mode is 2. The top 5 most central
-nodes are 29495.EA26_01295 (degree 1370), 29495.EA26_10470 (degree 1231), 29495.EA26_03940
-(degree 1215), 29495.EA26_18020 (degree 1193) and 29495.EA26_15335 (degree 1162).
+The undirected graph Vibrio navarrensis has 3714 nodes and 399869 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05799 and has 12 connected components, where the component with most
+nodes has 3685 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 182, the mean node degree is 215.33, and
+the node degree mode is 2. The top 5 most central nodes are 29495.EA26_01295
+(degree 1370), 29495.EA26_10470 (degree 1231), 29495.EA26_03940 (degree
+1215), 29495.EA26_18020 (degree 1193) and 29495.EA26_15335 (degree 1162).
 
 
 References
@@ -106,13 +107,14 @@ def VibrioNavarrensis(
 	
 	Datetime: 2021-02-02 17:59:07.073625
 	
-	The undirected graph Vibrio navarrensis has 3714 nodes and 399869 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05799 and
-	has 12 connected components, where the component with most nodes has 3685 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 182,
-	the mean node degree is 215.33, and the node degree mode is 2. The top 5 most central
-	nodes are 29495.EA26_01295 (degree 1370), 29495.EA26_10470 (degree 1231), 29495.EA26_03940
-	(degree 1215), 29495.EA26_18020 (degree 1193) and 29495.EA26_15335 (degree 1162).
+	The undirected graph Vibrio navarrensis has 3714 nodes and 399869 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05799 and has 12 connected components, where the component with most
+	nodes has 3685 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 182, the mean node degree is 215.33, and
+	the node degree mode is 2. The top 5 most central nodes are 29495.EA26_01295
+	(degree 1370), 29495.EA26_10470 (degree 1231), 29495.EA26_03940 (degree
+	1215), 29495.EA26_18020 (degree 1193) and 29495.EA26_15335 (degree 1162).
 	
 
 

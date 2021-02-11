@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:27:00.334831
 
-The undirected graph Lactococcus garvieae I113 has 2119 nodes and 163160 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07271
-and has 15 connected components, where the component with most nodes has 2085 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 154.00, and the node degree mode is 1. The top 5
-most central nodes are 1229517.AMFD01000019_gene1688 (degree 941), 1229517.AMFD01000009_gene762
-(degree 830), 1229517.AMFD01000003_gene1566 (degree 823), 1229517.AMFD01000010_gene231
-(degree 813) and 1229517.AMFD01000025_gene904 (degree 805).
+The undirected graph Lactococcus garvieae I113 has 2119 nodes and 163160
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07271 and has 15 connected components, where the component
+with most nodes has 2085 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 123, the mean node degree is 154.00,
+and the node degree mode is 1. The top 5 most central nodes are 1229517.AMFD01000019_gene1688
+(degree 941), 1229517.AMFD01000009_gene762 (degree 830), 1229517.AMFD01000003_gene1566
+(degree 823), 1229517.AMFD01000010_gene231 (degree 813) and 1229517.AMFD01000025_gene904
+(degree 805).
 
 
 References
@@ -107,14 +108,15 @@ def LactococcusGarvieaeI113(
 	
 	Datetime: 2021-02-02 23:27:00.334831
 	
-	The undirected graph Lactococcus garvieae I113 has 2119 nodes and 163160 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07271
-	and has 15 connected components, where the component with most nodes has 2085 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 154.00, and the node degree mode is 1. The top 5
-	most central nodes are 1229517.AMFD01000019_gene1688 (degree 941), 1229517.AMFD01000009_gene762
-	(degree 830), 1229517.AMFD01000003_gene1566 (degree 823), 1229517.AMFD01000010_gene231
-	(degree 813) and 1229517.AMFD01000025_gene904 (degree 805).
+	The undirected graph Lactococcus garvieae I113 has 2119 nodes and 163160
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07271 and has 15 connected components, where the component
+	with most nodes has 2085 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 123, the mean node degree is 154.00,
+	and the node degree mode is 1. The top 5 most central nodes are 1229517.AMFD01000019_gene1688
+	(degree 941), 1229517.AMFD01000009_gene762 (degree 830), 1229517.AMFD01000003_gene1566
+	(degree 823), 1229517.AMFD01000010_gene231 (degree 813) and 1229517.AMFD01000025_gene904
+	(degree 805).
 	
 
 

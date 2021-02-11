@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:41:18.831725
 
-The undirected graph Herbaspirillum seropedicae has 4723 nodes and 542073 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04861
-and has 14 connected components, where the component with most nodes has 4687 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 197, the mean node degree is 229.55, and the node degree mode is 2. The top 5
-most central nodes are 757424.Hsero_3735 (degree 1753), 757424.Hsero_0454 (degree
-1619), 757424.Hsero_2382 (degree 1439), 757424.Hsero_1234 (degree 1419) and 757424.Hsero_3924
-(degree 1365).
+The undirected graph Herbaspirillum seropedicae has 4723 nodes and 542073
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04861 and has 14 connected components, where the component
+with most nodes has 4687 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 197, the mean node degree is 229.55,
+and the node degree mode is 2. The top 5 most central nodes are 757424.Hsero_3735
+(degree 1753), 757424.Hsero_0454 (degree 1619), 757424.Hsero_2382 (degree
+1439), 757424.Hsero_1234 (degree 1419) and 757424.Hsero_3924 (degree 1365).
 
 
 References
@@ -107,14 +107,14 @@ def HerbaspirillumSeropedicae(
 	
 	Datetime: 2021-02-02 21:41:18.831725
 	
-	The undirected graph Herbaspirillum seropedicae has 4723 nodes and 542073 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04861
-	and has 14 connected components, where the component with most nodes has 4687 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 197, the mean node degree is 229.55, and the node degree mode is 2. The top 5
-	most central nodes are 757424.Hsero_3735 (degree 1753), 757424.Hsero_0454 (degree
-	1619), 757424.Hsero_2382 (degree 1439), 757424.Hsero_1234 (degree 1419) and 757424.Hsero_3924
-	(degree 1365).
+	The undirected graph Herbaspirillum seropedicae has 4723 nodes and 542073
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04861 and has 14 connected components, where the component
+	with most nodes has 4687 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 197, the mean node degree is 229.55,
+	and the node degree mode is 2. The top 5 most central nodes are 757424.Hsero_3735
+	(degree 1753), 757424.Hsero_0454 (degree 1619), 757424.Hsero_2382 (degree
+	1439), 757424.Hsero_1234 (degree 1419) and 757424.Hsero_3924 (degree 1365).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:09:34.322086
 
-The undirected graph Hyphomonas oceanitis has 4137 nodes and 319705 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03737 and
-has 15 connected components, where the component with most nodes has 4105 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 154.56, and the node degree mode is 2. The top 5 most central
-nodes are 1280953.HOC_11758 (degree 1270), 1280953.HOC_15527 (degree 1179), 1280953.HOC_16216
-(degree 1043), 1280953.HOC_16181 (degree 1012) and 1280953.HOC_12882 (degree 923).
+The undirected graph Hyphomonas oceanitis has 4137 nodes and 319705 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03737 and has 15 connected components, where the component with most
+nodes has 4105 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 154.56, and
+the node degree mode is 2. The top 5 most central nodes are 1280953.HOC_11758
+(degree 1270), 1280953.HOC_15527 (degree 1179), 1280953.HOC_16216 (degree
+1043), 1280953.HOC_16181 (degree 1012) and 1280953.HOC_12882 (degree 923).
 
 
 References
@@ -106,13 +107,14 @@ def HyphomonasOceanitis(
 	
 	Datetime: 2021-02-03 21:09:34.322086
 	
-	The undirected graph Hyphomonas oceanitis has 4137 nodes and 319705 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03737 and
-	has 15 connected components, where the component with most nodes has 4105 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 154.56, and the node degree mode is 2. The top 5 most central
-	nodes are 1280953.HOC_11758 (degree 1270), 1280953.HOC_15527 (degree 1179), 1280953.HOC_16216
-	(degree 1043), 1280953.HOC_16181 (degree 1012) and 1280953.HOC_12882 (degree 923).
+	The undirected graph Hyphomonas oceanitis has 4137 nodes and 319705 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03737 and has 15 connected components, where the component with most
+	nodes has 4105 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 154.56, and
+	the node degree mode is 2. The top 5 most central nodes are 1280953.HOC_11758
+	(degree 1270), 1280953.HOC_15527 (degree 1179), 1280953.HOC_16216 (degree
+	1043), 1280953.HOC_16181 (degree 1012) and 1280953.HOC_12882 (degree 923).
 	
 
 

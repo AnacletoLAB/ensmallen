@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:14:15.976409
 
-The undirected graph Candida parapsilosis has 4900 nodes and 525535 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04379 and
-has 2 connected components, where the component with most nodes has 4898 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 156,
-the mean node degree is 214.50, and the node degree mode is 2. The top 5 most central
-nodes are 5480.G8BCG4 (degree 1272), 5480.G8B6G2 (degree 1266), 5480.G8BBC7 (degree
-1218), 5480.G8BH59 (degree 1190) and 5480.G8BB94 (degree 1168).
+The undirected graph Candida parapsilosis has 4900 nodes and 525535 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04379 and has 2 connected components, where the component with most
+nodes has 4898 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 156, the mean node degree is 214.50, and
+the node degree mode is 2. The top 5 most central nodes are 5480.G8BCG4
+(degree 1272), 5480.G8B6G2 (degree 1266), 5480.G8BBC7 (degree 1218), 5480.G8BH59
+(degree 1190) and 5480.G8BB94 (degree 1168).
 
 
 References
@@ -106,13 +107,14 @@ def CandidaParapsilosis(
 	
 	Datetime: 2021-02-02 17:14:15.976409
 	
-	The undirected graph Candida parapsilosis has 4900 nodes and 525535 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04379 and
-	has 2 connected components, where the component with most nodes has 4898 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 156,
-	the mean node degree is 214.50, and the node degree mode is 2. The top 5 most central
-	nodes are 5480.G8BCG4 (degree 1272), 5480.G8B6G2 (degree 1266), 5480.G8BBC7 (degree
-	1218), 5480.G8BH59 (degree 1190) and 5480.G8BB94 (degree 1168).
+	The undirected graph Candida parapsilosis has 4900 nodes and 525535 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04379 and has 2 connected components, where the component with most
+	nodes has 4898 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 156, the mean node degree is 214.50, and
+	the node degree mode is 2. The top 5 most central nodes are 5480.G8BCG4
+	(degree 1272), 5480.G8B6G2 (degree 1266), 5480.G8BBC7 (degree 1218), 5480.G8BH59
+	(degree 1190) and 5480.G8BB94 (degree 1168).
 	
 
 

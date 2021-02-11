@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:53.974326
 
-The undirected graph Dermabacter sp. HFH0086 has 2114 nodes and 132544 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05935 and
-has 8 connected components, where the component with most nodes has 2082 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 125.40, and the node degree mode is 2. The top 5 most central
-nodes are 1203568.HMPREF1484_01728 (degree 828), 1203568.HMPREF1484_00985 (degree
-803), 1203568.HMPREF1484_02164 (degree 687), 1203568.HMPREF1484_01094 (degree 667)
-and 1203568.HMPREF1484_00993 (degree 649).
+The undirected graph Dermabacter sp. HFH0086 has 2114 nodes and 132544
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05935 and has 8 connected components, where the component
+with most nodes has 2082 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 125.40,
+and the node degree mode is 2. The top 5 most central nodes are 1203568.HMPREF1484_01728
+(degree 828), 1203568.HMPREF1484_00985 (degree 803), 1203568.HMPREF1484_02164
+(degree 687), 1203568.HMPREF1484_01094 (degree 667) and 1203568.HMPREF1484_00993
+(degree 649).
 
 
 References
@@ -107,14 +108,15 @@ def DermabacterSp.Hfh0086(
 	
 	Datetime: 2021-02-02 23:14:53.974326
 	
-	The undirected graph Dermabacter sp. HFH0086 has 2114 nodes and 132544 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05935 and
-	has 8 connected components, where the component with most nodes has 2082 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 125.40, and the node degree mode is 2. The top 5 most central
-	nodes are 1203568.HMPREF1484_01728 (degree 828), 1203568.HMPREF1484_00985 (degree
-	803), 1203568.HMPREF1484_02164 (degree 687), 1203568.HMPREF1484_01094 (degree 667)
-	and 1203568.HMPREF1484_00993 (degree 649).
+	The undirected graph Dermabacter sp. HFH0086 has 2114 nodes and 132544
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05935 and has 8 connected components, where the component
+	with most nodes has 2082 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 125.40,
+	and the node degree mode is 2. The top 5 most central nodes are 1203568.HMPREF1484_01728
+	(degree 828), 1203568.HMPREF1484_00985 (degree 803), 1203568.HMPREF1484_02164
+	(degree 687), 1203568.HMPREF1484_01094 (degree 667) and 1203568.HMPREF1484_00993
+	(degree 649).
 	
 
 

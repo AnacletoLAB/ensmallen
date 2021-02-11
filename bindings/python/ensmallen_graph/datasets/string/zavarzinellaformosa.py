@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:53:17.455997
 
-The undirected graph Zavarzinella formosa has 7839 nodes and 896714 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02919 and
-has 172 connected components, where the component with most nodes has 7377 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 166, the mean node degree is 228.78, and the node degree mode is 1. The top 5
-most central nodes are 1123508.JH636441_gene3511 (degree 2406), 1123508.JH636444_gene5573
-(degree 2025), 1123508.JH636450_gene7221 (degree 1912), 1123508.JH636453_gene5828
-(degree 1888) and 1123508.JH636450_gene7219 (degree 1819).
+The undirected graph Zavarzinella formosa has 7839 nodes and 896714 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02919 and has 172 connected components, where the component with most
+nodes has 7377 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 166, the mean node degree is 228.78, and
+the node degree mode is 1. The top 5 most central nodes are 1123508.JH636441_gene3511
+(degree 2406), 1123508.JH636444_gene5573 (degree 2025), 1123508.JH636450_gene7221
+(degree 1912), 1123508.JH636453_gene5828 (degree 1888) and 1123508.JH636450_gene7219
+(degree 1819).
 
 
 References
@@ -107,14 +108,15 @@ def ZavarzinellaFormosa(
 	
 	Datetime: 2021-02-02 22:53:17.455997
 	
-	The undirected graph Zavarzinella formosa has 7839 nodes and 896714 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02919 and
-	has 172 connected components, where the component with most nodes has 7377 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 166, the mean node degree is 228.78, and the node degree mode is 1. The top 5
-	most central nodes are 1123508.JH636441_gene3511 (degree 2406), 1123508.JH636444_gene5573
-	(degree 2025), 1123508.JH636450_gene7221 (degree 1912), 1123508.JH636453_gene5828
-	(degree 1888) and 1123508.JH636450_gene7219 (degree 1819).
+	The undirected graph Zavarzinella formosa has 7839 nodes and 896714 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02919 and has 172 connected components, where the component with most
+	nodes has 7377 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 166, the mean node degree is 228.78, and
+	the node degree mode is 1. The top 5 most central nodes are 1123508.JH636441_gene3511
+	(degree 2406), 1123508.JH636444_gene5573 (degree 2025), 1123508.JH636450_gene7221
+	(degree 1912), 1123508.JH636453_gene5828 (degree 1888) and 1123508.JH636450_gene7219
+	(degree 1819).
 	
 
 

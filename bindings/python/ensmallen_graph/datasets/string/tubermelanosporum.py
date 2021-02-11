@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:10:34.581901
 
-The undirected graph Tuber melanosporum has 5180 nodes and 491597 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-has 9 connected components, where the component with most nodes has 5157 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 189.81, and the node degree mode is 1. The top 5 most central
-nodes are 39416.CAZ83991 (degree 1421), 39416.CAZ86593 (degree 1027), 39416.CAZ79614
-(degree 1007), 39416.CAZ81124 (degree 992) and 39416.CAZ83121 (degree 961).
+The undirected graph Tuber melanosporum has 5180 nodes and 491597 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03665 and has 9 connected components, where the component with most
+nodes has 5157 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 133, the mean node degree is 189.81, and
+the node degree mode is 1. The top 5 most central nodes are 39416.CAZ83991
+(degree 1421), 39416.CAZ86593 (degree 1027), 39416.CAZ79614 (degree 1007),
+39416.CAZ81124 (degree 992) and 39416.CAZ83121 (degree 961).
 
 
 References
@@ -106,13 +107,14 @@ def TuberMelanosporum(
 	
 	Datetime: 2021-02-02 18:10:34.581901
 	
-	The undirected graph Tuber melanosporum has 5180 nodes and 491597 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03665 and
-	has 9 connected components, where the component with most nodes has 5157 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 189.81, and the node degree mode is 1. The top 5 most central
-	nodes are 39416.CAZ83991 (degree 1421), 39416.CAZ86593 (degree 1027), 39416.CAZ79614
-	(degree 1007), 39416.CAZ81124 (degree 992) and 39416.CAZ83121 (degree 961).
+	The undirected graph Tuber melanosporum has 5180 nodes and 491597 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03665 and has 9 connected components, where the component with most
+	nodes has 5157 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 133, the mean node degree is 189.81, and
+	the node degree mode is 1. The top 5 most central nodes are 39416.CAZ83991
+	(degree 1421), 39416.CAZ86593 (degree 1027), 39416.CAZ79614 (degree 1007),
+	39416.CAZ81124 (degree 992) and 39416.CAZ83121 (degree 961).
 	
 
 

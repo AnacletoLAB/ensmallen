@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:08:00.186223
 
-The undirected graph Fischerella sp. PCC9431 has 5560 nodes and 929094 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06012 and
-has 26 connected components, where the component with most nodes has 5494 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 319,
-the mean node degree is 334.21, and the node degree mode is 2. The top 5 most central
-nodes are 1173023.KE650771_gene4635 (degree 2220), 1173023.KE650771_gene776 (degree
-2100), 1173023.KE650771_gene2886 (degree 1998), 1173023.KE650771_gene3697 (degree
-1828) and 1173023.KE650771_gene509 (degree 1746).
+The undirected graph Fischerella sp. PCC9431 has 5560 nodes and 929094
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06012 and has 26 connected components, where the component
+with most nodes has 5494 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 319, the mean node degree is 334.21,
+and the node degree mode is 2. The top 5 most central nodes are 1173023.KE650771_gene4635
+(degree 2220), 1173023.KE650771_gene776 (degree 2100), 1173023.KE650771_gene2886
+(degree 1998), 1173023.KE650771_gene3697 (degree 1828) and 1173023.KE650771_gene509
+(degree 1746).
 
 
 References
@@ -107,14 +108,15 @@ def FischerellaSp.Pcc9431(
 	
 	Datetime: 2021-02-02 23:08:00.186223
 	
-	The undirected graph Fischerella sp. PCC9431 has 5560 nodes and 929094 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06012 and
-	has 26 connected components, where the component with most nodes has 5494 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 319,
-	the mean node degree is 334.21, and the node degree mode is 2. The top 5 most central
-	nodes are 1173023.KE650771_gene4635 (degree 2220), 1173023.KE650771_gene776 (degree
-	2100), 1173023.KE650771_gene2886 (degree 1998), 1173023.KE650771_gene3697 (degree
-	1828) and 1173023.KE650771_gene509 (degree 1746).
+	The undirected graph Fischerella sp. PCC9431 has 5560 nodes and 929094
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06012 and has 26 connected components, where the component
+	with most nodes has 5494 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 319, the mean node degree is 334.21,
+	and the node degree mode is 2. The top 5 most central nodes are 1173023.KE650771_gene4635
+	(degree 2220), 1173023.KE650771_gene776 (degree 2100), 1173023.KE650771_gene2886
+	(degree 1998), 1173023.KE650771_gene3697 (degree 1828) and 1173023.KE650771_gene509
+	(degree 1746).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:12.402485
 
-The undirected graph Planctomyces limnophilus has 4168 nodes and 255552 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02943
-and has 46 connected components, where the component with most nodes has 4030 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 85, the mean node degree is 122.63, and the node degree mode is 3. The top 5 most
-central nodes are 521674.Plim_2188 (degree 1540), 521674.Plim_1055 (degree 1337),
-521674.Plim_3011 (degree 1208), 521674.Plim_0602 (degree 854) and 521674.Plim_3740
-(degree 819).
+The undirected graph Planctomyces limnophilus has 4168 nodes and 255552
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02943 and has 46 connected components, where the component
+with most nodes has 4030 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 85, the mean node degree is 122.63,
+and the node degree mode is 3. The top 5 most central nodes are 521674.Plim_2188
+(degree 1540), 521674.Plim_1055 (degree 1337), 521674.Plim_3011 (degree
+1208), 521674.Plim_0602 (degree 854) and 521674.Plim_3740 (degree 819).
 
 
 References
@@ -107,14 +107,14 @@ def PlanctomycesLimnophilus(
 	
 	Datetime: 2021-02-02 21:04:12.402485
 	
-	The undirected graph Planctomyces limnophilus has 4168 nodes and 255552 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02943
-	and has 46 connected components, where the component with most nodes has 4030 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 85, the mean node degree is 122.63, and the node degree mode is 3. The top 5 most
-	central nodes are 521674.Plim_2188 (degree 1540), 521674.Plim_1055 (degree 1337),
-	521674.Plim_3011 (degree 1208), 521674.Plim_0602 (degree 854) and 521674.Plim_3740
-	(degree 819).
+	The undirected graph Planctomyces limnophilus has 4168 nodes and 255552
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02943 and has 46 connected components, where the component
+	with most nodes has 4030 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 85, the mean node degree is 122.63,
+	and the node degree mode is 3. The top 5 most central nodes are 521674.Plim_2188
+	(degree 1540), 521674.Plim_1055 (degree 1337), 521674.Plim_3011 (degree
+	1208), 521674.Plim_0602 (degree 854) and 521674.Plim_3740 (degree 819).
 	
 
 

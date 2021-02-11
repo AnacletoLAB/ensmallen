@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:17:00.098849
 
-The undirected graph Streptomyces seoulensis has 5653 nodes and 859833 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05382 and
-has 23 connected components, where the component with most nodes has 5582 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 258,
-the mean node degree is 304.20, and the node degree mode is 2. The top 5 most central
-nodes are 73044.JNXP01000022_gene2338 (degree 2860), 73044.JNXP01000016_gene533 (degree
-1949), 73044.JNXP01000020_gene3654 (degree 1914), 73044.JNXP01000001_gene4618 (degree
-1792) and 73044.JNXP01000001_gene4396 (degree 1710).
+The undirected graph Streptomyces seoulensis has 5653 nodes and 859833
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05382 and has 23 connected components, where the component
+with most nodes has 5582 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 258, the mean node degree is 304.20,
+and the node degree mode is 2. The top 5 most central nodes are 73044.JNXP01000022_gene2338
+(degree 2860), 73044.JNXP01000016_gene533 (degree 1949), 73044.JNXP01000020_gene3654
+(degree 1914), 73044.JNXP01000001_gene4618 (degree 1792) and 73044.JNXP01000001_gene4396
+(degree 1710).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSeoulensis(
 	
 	Datetime: 2021-02-05 17:17:00.098849
 	
-	The undirected graph Streptomyces seoulensis has 5653 nodes and 859833 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05382 and
-	has 23 connected components, where the component with most nodes has 5582 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 258,
-	the mean node degree is 304.20, and the node degree mode is 2. The top 5 most central
-	nodes are 73044.JNXP01000022_gene2338 (degree 2860), 73044.JNXP01000016_gene533 (degree
-	1949), 73044.JNXP01000020_gene3654 (degree 1914), 73044.JNXP01000001_gene4618 (degree
-	1792) and 73044.JNXP01000001_gene4396 (degree 1710).
+	The undirected graph Streptomyces seoulensis has 5653 nodes and 859833
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05382 and has 23 connected components, where the component
+	with most nodes has 5582 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 258, the mean node degree is 304.20,
+	and the node degree mode is 2. The top 5 most central nodes are 73044.JNXP01000022_gene2338
+	(degree 2860), 73044.JNXP01000016_gene533 (degree 1949), 73044.JNXP01000020_gene3654
+	(degree 1914), 73044.JNXP01000001_gene4618 (degree 1792) and 73044.JNXP01000001_gene4396
+	(degree 1710).
 	
 
 

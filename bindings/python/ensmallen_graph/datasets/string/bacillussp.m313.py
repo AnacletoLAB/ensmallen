@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:44:37.689284
 
-The undirected graph Bacillus sp. m313 has 4258 nodes and 415928 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04589 and
-has 21 connected components, where the component with most nodes has 4212 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 195.36, and the node degree mode is 2. The top 5 most central
-nodes are 406124.ACPC01000019_gene3069 (degree 1493), 406124.ACPC01000001_gene1845
-(degree 1216), 406124.ACPC01000012_gene1098 (degree 1201), 406124.ACPC01000040_gene2309
-(degree 1173) and 406124.ACPC01000019_gene3308 (degree 1160).
+The undirected graph Bacillus sp. m313 has 4258 nodes and 415928 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04589 and has 21 connected components, where the component with most
+nodes has 4212 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 195.36, and
+the node degree mode is 2. The top 5 most central nodes are 406124.ACPC01000019_gene3069
+(degree 1493), 406124.ACPC01000001_gene1845 (degree 1216), 406124.ACPC01000012_gene1098
+(degree 1201), 406124.ACPC01000040_gene2309 (degree 1173) and 406124.ACPC01000019_gene3308
+(degree 1160).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.M313(
 	
 	Datetime: 2021-02-02 20:44:37.689284
 	
-	The undirected graph Bacillus sp. m313 has 4258 nodes and 415928 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04589 and
-	has 21 connected components, where the component with most nodes has 4212 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 195.36, and the node degree mode is 2. The top 5 most central
-	nodes are 406124.ACPC01000019_gene3069 (degree 1493), 406124.ACPC01000001_gene1845
-	(degree 1216), 406124.ACPC01000012_gene1098 (degree 1201), 406124.ACPC01000040_gene2309
-	(degree 1173) and 406124.ACPC01000019_gene3308 (degree 1160).
+	The undirected graph Bacillus sp. m313 has 4258 nodes and 415928 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04589 and has 21 connected components, where the component with most
+	nodes has 4212 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 195.36, and
+	the node degree mode is 2. The top 5 most central nodes are 406124.ACPC01000019_gene3069
+	(degree 1493), 406124.ACPC01000001_gene1845 (degree 1216), 406124.ACPC01000012_gene1098
+	(degree 1201), 406124.ACPC01000040_gene2309 (degree 1173) and 406124.ACPC01000019_gene3308
+	(degree 1160).
 	
 
 

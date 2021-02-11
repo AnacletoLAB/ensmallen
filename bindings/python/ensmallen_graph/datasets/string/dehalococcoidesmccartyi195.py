@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:10.613711
 
-The undirected graph Dehalococcoides mccartyi 195 has 1559 nodes and 85813 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07066
-and has 9 connected components, where the component with most nodes has 1542 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 110.09, and the node degree mode is 12. The top 5
-most central nodes are 243164.DET1391 (degree 636), 243164.DET0836 (degree 586),
-243164.DET0395 (degree 575), 243164.DET0366 (degree 538) and 243164.DET0554 (degree
-534).
+The undirected graph Dehalococcoides mccartyi 195 has 1559 nodes and 85813
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07066 and has 9 connected components, where the component
+with most nodes has 1542 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 86, the mean node degree is 110.09,
+and the node degree mode is 12. The top 5 most central nodes are 243164.DET1391
+(degree 636), 243164.DET0836 (degree 586), 243164.DET0395 (degree 575),
+243164.DET0366 (degree 538) and 243164.DET0554 (degree 534).
 
 
 References
@@ -107,14 +107,14 @@ def DehalococcoidesMccartyi195(
 	
 	Datetime: 2021-02-02 20:09:10.613711
 	
-	The undirected graph Dehalococcoides mccartyi 195 has 1559 nodes and 85813 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07066
-	and has 9 connected components, where the component with most nodes has 1542 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 110.09, and the node degree mode is 12. The top 5
-	most central nodes are 243164.DET1391 (degree 636), 243164.DET0836 (degree 586),
-	243164.DET0395 (degree 575), 243164.DET0366 (degree 538) and 243164.DET0554 (degree
-	534).
+	The undirected graph Dehalococcoides mccartyi 195 has 1559 nodes and 85813
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07066 and has 9 connected components, where the component
+	with most nodes has 1542 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 86, the mean node degree is 110.09,
+	and the node degree mode is 12. The top 5 most central nodes are 243164.DET1391
+	(degree 636), 243164.DET0836 (degree 586), 243164.DET0395 (degree 575),
+	243164.DET0366 (degree 538) and 243164.DET0554 (degree 534).
 	
 
 

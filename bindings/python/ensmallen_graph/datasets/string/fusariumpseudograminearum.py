@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:42:27.110936
 
-The undirected graph Fusarium pseudograminearum has 8338 nodes and 699373 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02012
-and has 38 connected components, where the component with most nodes has 8242 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 167.76, and the node degree mode is 1. The top 5 most
-central nodes are 101028.EKJ73514 (degree 2152), 101028.EKJ68108 (degree 1765), 101028.EKJ78827
-(degree 1664), 101028.EKJ69834 (degree 1436) and 101028.EKJ79131 (degree 1434).
+The undirected graph Fusarium pseudograminearum has 8338 nodes and 699373
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.02012 and has 38 connected components, where the component
+with most nodes has 8242 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 167.76,
+and the node degree mode is 1. The top 5 most central nodes are 101028.EKJ73514
+(degree 2152), 101028.EKJ68108 (degree 1765), 101028.EKJ78827 (degree 1664),
+101028.EKJ69834 (degree 1436) and 101028.EKJ79131 (degree 1434).
 
 
 References
@@ -106,13 +107,14 @@ def FusariumPseudograminearum(
 	
 	Datetime: 2021-02-02 19:42:27.110936
 	
-	The undirected graph Fusarium pseudograminearum has 8338 nodes and 699373 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02012
-	and has 38 connected components, where the component with most nodes has 8242 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 167.76, and the node degree mode is 1. The top 5 most
-	central nodes are 101028.EKJ73514 (degree 2152), 101028.EKJ68108 (degree 1765), 101028.EKJ78827
-	(degree 1664), 101028.EKJ69834 (degree 1436) and 101028.EKJ79131 (degree 1434).
+	The undirected graph Fusarium pseudograminearum has 8338 nodes and 699373
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.02012 and has 38 connected components, where the component
+	with most nodes has 8242 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 167.76,
+	and the node degree mode is 1. The top 5 most central nodes are 101028.EKJ73514
+	(degree 2152), 101028.EKJ68108 (degree 1765), 101028.EKJ78827 (degree 1664),
+	101028.EKJ69834 (degree 1436) and 101028.EKJ79131 (degree 1434).
 	
 
 

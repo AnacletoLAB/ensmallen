@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:54:43.512229
 
-The undirected graph hamming10-4 has 1024 nodes and 434176 unweighted edges, of which
-none are self-loops. The graph is extremely dense as it has a density of 0.82893
-and is connected, as it has a single component. The graph median node degree is 848,
-the mean node degree is 848.00 and the node degree mode is 848. The top 5 most central
-nodes are 1024 (degree 848), 1023 (degree 848), 1022 (degree 848), 1021 (degree 848)
-and 1020 (degree 848).
+The undirected graph hamming10-4 has 1024 nodes and 434176 unweighted edges,
+of which none are self-loops. The graph is extremely dense as it has a
+density of 0.82893 and is connected, as it has a single component. The
+graph median node degree is 848, the mean node degree is 848.00 and the
+node degree mode is 848. The top 5 most central nodes are 1024 (degree
+848), 1023 (degree 848), 1022 (degree 848), 1021 (degree 848) and 1020
+(degree 848).
 
 
 References
@@ -115,12 +116,13 @@ def Hamming104(
 	
 	Datetime: 2021-02-03 22:54:43.512229
 	
-	The undirected graph hamming10-4 has 1024 nodes and 434176 unweighted edges, of which
-	none are self-loops. The graph is extremely dense as it has a density of 0.82893
-	and is connected, as it has a single component. The graph median node degree is 848,
-	the mean node degree is 848.00 and the node degree mode is 848. The top 5 most central
-	nodes are 1024 (degree 848), 1023 (degree 848), 1022 (degree 848), 1021 (degree 848)
-	and 1020 (degree 848).
+	The undirected graph hamming10-4 has 1024 nodes and 434176 unweighted edges,
+	of which none are self-loops. The graph is extremely dense as it has a
+	density of 0.82893 and is connected, as it has a single component. The
+	graph median node degree is 848, the mean node degree is 848.00 and the
+	node degree mode is 848. The top 5 most central nodes are 1024 (degree
+	848), 1023 (degree 848), 1022 (degree 848), 1021 (degree 848) and 1020
+	(degree 848).
 	
 
 

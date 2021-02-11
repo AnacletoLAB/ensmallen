@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:27:03.882512
 
-The undirected graph Mycobacterium rufum has 5385 nodes and 745814 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05145 and
-has 19 connected components, where the component with most nodes has 5337 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 230,
-the mean node degree is 277.00, and the node degree mode is 2. The top 5 most central
-nodes are 318424.EU78_18600 (degree 2040), 318424.EU78_08880 (degree 1996), 318424.EU78_25835
-(degree 1822), 318424.EU78_14175 (degree 1668) and 318424.EU78_02090 (degree 1658).
+The undirected graph Mycobacterium rufum has 5385 nodes and 745814 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05145 and has 19 connected components, where the component with most
+nodes has 5337 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 230, the mean node degree is 277.00, and
+the node degree mode is 2. The top 5 most central nodes are 318424.EU78_18600
+(degree 2040), 318424.EU78_08880 (degree 1996), 318424.EU78_25835 (degree
+1822), 318424.EU78_14175 (degree 1668) and 318424.EU78_02090 (degree 1658).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumRufum(
 	
 	Datetime: 2021-02-02 20:27:03.882512
 	
-	The undirected graph Mycobacterium rufum has 5385 nodes and 745814 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05145 and
-	has 19 connected components, where the component with most nodes has 5337 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 230,
-	the mean node degree is 277.00, and the node degree mode is 2. The top 5 most central
-	nodes are 318424.EU78_18600 (degree 2040), 318424.EU78_08880 (degree 1996), 318424.EU78_25835
-	(degree 1822), 318424.EU78_14175 (degree 1668) and 318424.EU78_02090 (degree 1658).
+	The undirected graph Mycobacterium rufum has 5385 nodes and 745814 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05145 and has 19 connected components, where the component with most
+	nodes has 5337 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 230, the mean node degree is 277.00, and
+	the node degree mode is 2. The top 5 most central nodes are 318424.EU78_18600
+	(degree 2040), 318424.EU78_08880 (degree 1996), 318424.EU78_25835 (degree
+	1822), 318424.EU78_14175 (degree 1668) and 318424.EU78_02090 (degree 1658).
 	
 
 

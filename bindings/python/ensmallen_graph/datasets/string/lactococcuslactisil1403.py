@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:49.073306
 
-The undirected graph Lactococcus lactis Il1403 has 2250 nodes and 172168 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06805
-and has 6 connected components, where the component with most nodes has 2234 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 135, the mean node degree is 153.04, and the node degree mode is 7. The top 5
-most central nodes are 272623.L0270 (degree 950), 272623.L29321 (degree 792), 272623.L13145
-(degree 774), 272623.L115968 (degree 749) and 272623.L0353 (degree 693).
+The undirected graph Lactococcus lactis Il1403 has 2250 nodes and 172168
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06805 and has 6 connected components, where the component
+with most nodes has 2234 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 135, the mean node degree is 153.04,
+and the node degree mode is 7. The top 5 most central nodes are 272623.L0270
+(degree 950), 272623.L29321 (degree 792), 272623.L13145 (degree 774), 272623.L115968
+(degree 749) and 272623.L0353 (degree 693).
 
 
 References
@@ -106,13 +107,14 @@ def LactococcusLactisIl1403(
 	
 	Datetime: 2021-02-02 20:16:49.073306
 	
-	The undirected graph Lactococcus lactis Il1403 has 2250 nodes and 172168 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06805
-	and has 6 connected components, where the component with most nodes has 2234 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 135, the mean node degree is 153.04, and the node degree mode is 7. The top 5
-	most central nodes are 272623.L0270 (degree 950), 272623.L29321 (degree 792), 272623.L13145
-	(degree 774), 272623.L115968 (degree 749) and 272623.L0353 (degree 693).
+	The undirected graph Lactococcus lactis Il1403 has 2250 nodes and 172168
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06805 and has 6 connected components, where the component
+	with most nodes has 2234 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 135, the mean node degree is 153.04,
+	and the node degree mode is 7. The top 5 most central nodes are 272623.L0270
+	(degree 950), 272623.L29321 (degree 792), 272623.L13145 (degree 774), 272623.L115968
+	(degree 749) and 272623.L0353 (degree 693).
 	
 
 

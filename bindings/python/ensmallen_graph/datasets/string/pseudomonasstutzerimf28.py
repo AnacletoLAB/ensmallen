@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:55:32.421156
 
-The undirected graph Pseudomonas stutzeri MF28 has 4507 nodes and 784952 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07730
-and has 15 connected components, where the component with most nodes has 4476 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 289, the mean node degree is 348.33, and the node degree mode is 1. The top 5
-most central nodes are 1333856.L686_12335 (degree 2312), 1333856.L686_19450 (degree
-2136), 1333856.L686_19675 (degree 2087), 1333856.L686_03900 (degree 1965) and 1333856.L686_03905
-(degree 1906).
+The undirected graph Pseudomonas stutzeri MF28 has 4507 nodes and 784952
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07730 and has 15 connected components, where the component
+with most nodes has 4476 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 289, the mean node degree is 348.33,
+and the node degree mode is 1. The top 5 most central nodes are 1333856.L686_12335
+(degree 2312), 1333856.L686_19450 (degree 2136), 1333856.L686_19675 (degree
+2087), 1333856.L686_03900 (degree 1965) and 1333856.L686_03905 (degree
+1906).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasStutzeriMf28(
 	
 	Datetime: 2021-02-03 21:55:32.421156
 	
-	The undirected graph Pseudomonas stutzeri MF28 has 4507 nodes and 784952 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07730
-	and has 15 connected components, where the component with most nodes has 4476 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 289, the mean node degree is 348.33, and the node degree mode is 1. The top 5
-	most central nodes are 1333856.L686_12335 (degree 2312), 1333856.L686_19450 (degree
-	2136), 1333856.L686_19675 (degree 2087), 1333856.L686_03900 (degree 1965) and 1333856.L686_03905
-	(degree 1906).
+	The undirected graph Pseudomonas stutzeri MF28 has 4507 nodes and 784952
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07730 and has 15 connected components, where the component
+	with most nodes has 4476 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 289, the mean node degree is 348.33,
+	and the node degree mode is 1. The top 5 most central nodes are 1333856.L686_12335
+	(degree 2312), 1333856.L686_19450 (degree 2136), 1333856.L686_19675 (degree
+	2087), 1333856.L686_03900 (degree 1965) and 1333856.L686_03905 (degree
+	1906).
 	
 
 

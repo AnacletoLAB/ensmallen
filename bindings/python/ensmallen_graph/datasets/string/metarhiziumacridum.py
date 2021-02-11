@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:41:05.763736
 
-The undirected graph Metarhizium acridum has 7201 nodes and 562292 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02169 and
-has 12 connected components, where the component with most nodes has 7178 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 156.17, and the node degree mode is 1. The top 5 most central
-nodes are 92637.XP_007811332.1 (degree 1844), 92637.XP_007815924.1 (degree 1424),
-92637.XP_007809015.1 (degree 1295), 92637.XP_007815106.1 (degree 1255) and 92637.XP_007814778.1
+The undirected graph Metarhizium acridum has 7201 nodes and 562292 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02169 and has 12 connected components, where the component with most
+nodes has 7178 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 156.17, and
+the node degree mode is 1. The top 5 most central nodes are 92637.XP_007811332.1
+(degree 1844), 92637.XP_007815924.1 (degree 1424), 92637.XP_007809015.1
+(degree 1295), 92637.XP_007815106.1 (degree 1255) and 92637.XP_007814778.1
 (degree 1247).
 
 
@@ -107,13 +108,14 @@ def MetarhiziumAcridum(
 	
 	Datetime: 2021-02-02 19:41:05.763736
 	
-	The undirected graph Metarhizium acridum has 7201 nodes and 562292 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02169 and
-	has 12 connected components, where the component with most nodes has 7178 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 156.17, and the node degree mode is 1. The top 5 most central
-	nodes are 92637.XP_007811332.1 (degree 1844), 92637.XP_007815924.1 (degree 1424),
-	92637.XP_007809015.1 (degree 1295), 92637.XP_007815106.1 (degree 1255) and 92637.XP_007814778.1
+	The undirected graph Metarhizium acridum has 7201 nodes and 562292 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02169 and has 12 connected components, where the component with most
+	nodes has 7178 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 156.17, and
+	the node degree mode is 1. The top 5 most central nodes are 92637.XP_007811332.1
+	(degree 1844), 92637.XP_007815924.1 (degree 1424), 92637.XP_007809015.1
+	(degree 1295), 92637.XP_007815106.1 (degree 1255) and 92637.XP_007814778.1
 	(degree 1247).
 	
 

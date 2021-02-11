@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:23:05.350136
 
-The undirected graph Clostridium sordellii has 3511 nodes and 234047 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03798 and
-has 34 connected components, where the component with most nodes has 3430 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 96,
-the mean node degree is 133.32, and the node degree mode is 2. The top 5 most central
-nodes are 1292035.H476_1919 (degree 1186), 1292035.H476_0112 (degree 1048), 1292035.H476_0152
-(degree 973), 1292035.H476_0070 (degree 959) and 1292035.H476_3229 (degree 950).
+The undirected graph Clostridium sordellii has 3511 nodes and 234047 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03798 and has 34 connected components, where the component with most
+nodes has 3430 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 96, the mean node degree is 133.32, and
+the node degree mode is 2. The top 5 most central nodes are 1292035.H476_1919
+(degree 1186), 1292035.H476_0112 (degree 1048), 1292035.H476_0152 (degree
+973), 1292035.H476_0070 (degree 959) and 1292035.H476_3229 (degree 950).
 
 
 References
@@ -106,13 +107,14 @@ def ClostridiumSordellii(
 	
 	Datetime: 2021-02-03 21:23:05.350136
 	
-	The undirected graph Clostridium sordellii has 3511 nodes and 234047 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03798 and
-	has 34 connected components, where the component with most nodes has 3430 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 96,
-	the mean node degree is 133.32, and the node degree mode is 2. The top 5 most central
-	nodes are 1292035.H476_1919 (degree 1186), 1292035.H476_0112 (degree 1048), 1292035.H476_0152
-	(degree 973), 1292035.H476_0070 (degree 959) and 1292035.H476_3229 (degree 950).
+	The undirected graph Clostridium sordellii has 3511 nodes and 234047 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03798 and has 34 connected components, where the component with most
+	nodes has 3430 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 96, the mean node degree is 133.32, and
+	the node degree mode is 2. The top 5 most central nodes are 1292035.H476_1919
+	(degree 1186), 1292035.H476_0112 (degree 1048), 1292035.H476_0152 (degree
+	973), 1292035.H476_0070 (degree 959) and 1292035.H476_3229 (degree 950).
 	
 
 

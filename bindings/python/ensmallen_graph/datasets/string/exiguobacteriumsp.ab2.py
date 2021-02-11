@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:38.007781
 
-The undirected graph Exiguobacterium sp. AB2 has 2821 nodes and 296156 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07446 and
-has 11 connected components, where the component with most nodes has 2796 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 209.97, and the node degree mode is 2. The top 5 most central
-nodes are 1484479.DI14_01570 (degree 975), 1484479.DI14_06535 (degree 961), 1484479.DI14_15055
-(degree 917), 1484479.DI14_03655 (degree 901) and 1484479.DI14_05055 (degree 895).
+The undirected graph Exiguobacterium sp. AB2 has 2821 nodes and 296156
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07446 and has 11 connected components, where the component
+with most nodes has 2796 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 209.97,
+and the node degree mode is 2. The top 5 most central nodes are 1484479.DI14_01570
+(degree 975), 1484479.DI14_06535 (degree 961), 1484479.DI14_15055 (degree
+917), 1484479.DI14_03655 (degree 901) and 1484479.DI14_05055 (degree 895).
 
 
 References
@@ -106,13 +107,14 @@ def ExiguobacteriumSp.Ab2(
 	
 	Datetime: 2021-02-03 23:13:38.007781
 	
-	The undirected graph Exiguobacterium sp. AB2 has 2821 nodes and 296156 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07446 and
-	has 11 connected components, where the component with most nodes has 2796 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 209.97, and the node degree mode is 2. The top 5 most central
-	nodes are 1484479.DI14_01570 (degree 975), 1484479.DI14_06535 (degree 961), 1484479.DI14_15055
-	(degree 917), 1484479.DI14_03655 (degree 901) and 1484479.DI14_05055 (degree 895).
+	The undirected graph Exiguobacterium sp. AB2 has 2821 nodes and 296156
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07446 and has 11 connected components, where the component
+	with most nodes has 2796 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 209.97,
+	and the node degree mode is 2. The top 5 most central nodes are 1484479.DI14_01570
+	(degree 975), 1484479.DI14_06535 (degree 961), 1484479.DI14_15055 (degree
+	917), 1484479.DI14_03655 (degree 901) and 1484479.DI14_05055 (degree 895).
 	
 
 

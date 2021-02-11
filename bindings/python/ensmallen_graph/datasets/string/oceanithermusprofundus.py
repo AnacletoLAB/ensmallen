@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:29:12.559505
 
-The undirected graph Oceanithermus profundus has 2367 nodes and 191319 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06832 and
-has 9 connected components, where the component with most nodes has 2345 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 133,
-the mean node degree is 161.66, and the node degree mode is 6. The top 5 most central
-nodes are 670487.Ocepr_1055 (degree 1025), 670487.Ocepr_1150 (degree 912), 670487.Ocepr_0850
-(degree 799), 670487.Ocepr_1181 (degree 797) and 670487.Ocepr_0685 (degree 792).
+The undirected graph Oceanithermus profundus has 2367 nodes and 191319
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06832 and has 9 connected components, where the component
+with most nodes has 2345 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 133, the mean node degree is 161.66,
+and the node degree mode is 6. The top 5 most central nodes are 670487.Ocepr_1055
+(degree 1025), 670487.Ocepr_1150 (degree 912), 670487.Ocepr_0850 (degree
+799), 670487.Ocepr_1181 (degree 797) and 670487.Ocepr_0685 (degree 792).
 
 
 References
@@ -106,13 +107,14 @@ def OceanithermusProfundus(
 	
 	Datetime: 2021-02-02 21:29:12.559505
 	
-	The undirected graph Oceanithermus profundus has 2367 nodes and 191319 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06832 and
-	has 9 connected components, where the component with most nodes has 2345 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 133,
-	the mean node degree is 161.66, and the node degree mode is 6. The top 5 most central
-	nodes are 670487.Ocepr_1055 (degree 1025), 670487.Ocepr_1150 (degree 912), 670487.Ocepr_0850
-	(degree 799), 670487.Ocepr_1181 (degree 797) and 670487.Ocepr_0685 (degree 792).
+	The undirected graph Oceanithermus profundus has 2367 nodes and 191319
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06832 and has 9 connected components, where the component
+	with most nodes has 2345 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 133, the mean node degree is 161.66,
+	and the node degree mode is 6. The top 5 most central nodes are 670487.Ocepr_1055
+	(degree 1025), 670487.Ocepr_1150 (degree 912), 670487.Ocepr_0850 (degree
+	799), 670487.Ocepr_1181 (degree 797) and 670487.Ocepr_0685 (degree 792).
 	
 
 

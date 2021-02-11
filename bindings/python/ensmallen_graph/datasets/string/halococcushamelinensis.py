@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:59.229524
 
-The undirected graph Halococcus hamelinensis has 3336 nodes and 267258 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-has 37 connected components, where the component with most nodes has 3237 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 160.23, and the node degree mode is 2. The top 5 most central
-nodes are 1132509.C447_04987 (degree 993), 1132509.C447_01955 (degree 880), 1132509.C447_06913
-(degree 865), 1132509.C447_16524 (degree 856) and 1132509.C447_09532 (degree 814).
+The undirected graph Halococcus hamelinensis has 3336 nodes and 267258
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04804 and has 37 connected components, where the component
+with most nodes has 3237 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 160.23,
+and the node degree mode is 2. The top 5 most central nodes are 1132509.C447_04987
+(degree 993), 1132509.C447_01955 (degree 880), 1132509.C447_06913 (degree
+865), 1132509.C447_16524 (degree 856) and 1132509.C447_09532 (degree 814).
 
 
 References
@@ -106,13 +107,14 @@ def HalococcusHamelinensis(
 	
 	Datetime: 2021-02-02 22:55:59.229524
 	
-	The undirected graph Halococcus hamelinensis has 3336 nodes and 267258 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04804 and
-	has 37 connected components, where the component with most nodes has 3237 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 160.23, and the node degree mode is 2. The top 5 most central
-	nodes are 1132509.C447_04987 (degree 993), 1132509.C447_01955 (degree 880), 1132509.C447_06913
-	(degree 865), 1132509.C447_16524 (degree 856) and 1132509.C447_09532 (degree 814).
+	The undirected graph Halococcus hamelinensis has 3336 nodes and 267258
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04804 and has 37 connected components, where the component
+	with most nodes has 3237 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 160.23,
+	and the node degree mode is 2. The top 5 most central nodes are 1132509.C447_04987
+	(degree 993), 1132509.C447_01955 (degree 880), 1132509.C447_06913 (degree
+	865), 1132509.C447_16524 (degree 856) and 1132509.C447_09532 (degree 814).
 	
 
 

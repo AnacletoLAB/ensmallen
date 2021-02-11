@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:58:18.443243
 
-The undirected graph Bacteroides eggerthii has 3677 nodes and 344167 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05092 and
-has 22 connected components, where the component with most nodes has 3626 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 187.20, and the node degree mode is 2. The top 5 most central
-nodes are 483216.BACEGG_03353 (degree 1121), 483216.BACEGG_00018 (degree 1037), 483216.BACEGG_01690
-(degree 978), 483216.BACEGG_01266 (degree 945) and 483216.BACEGG_01855 (degree 940).
+The undirected graph Bacteroides eggerthii has 3677 nodes and 344167 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05092 and has 22 connected components, where the component with most
+nodes has 3626 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 187.20, and
+the node degree mode is 2. The top 5 most central nodes are 483216.BACEGG_03353
+(degree 1121), 483216.BACEGG_00018 (degree 1037), 483216.BACEGG_01690 (degree
+978), 483216.BACEGG_01266 (degree 945) and 483216.BACEGG_01855 (degree
+940).
 
 
 References
@@ -106,13 +108,15 @@ def BacteroidesEggerthii(
 	
 	Datetime: 2021-02-02 20:58:18.443243
 	
-	The undirected graph Bacteroides eggerthii has 3677 nodes and 344167 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05092 and
-	has 22 connected components, where the component with most nodes has 3626 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 187.20, and the node degree mode is 2. The top 5 most central
-	nodes are 483216.BACEGG_03353 (degree 1121), 483216.BACEGG_00018 (degree 1037), 483216.BACEGG_01690
-	(degree 978), 483216.BACEGG_01266 (degree 945) and 483216.BACEGG_01855 (degree 940).
+	The undirected graph Bacteroides eggerthii has 3677 nodes and 344167 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05092 and has 22 connected components, where the component with most
+	nodes has 3626 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 187.20, and
+	the node degree mode is 2. The top 5 most central nodes are 483216.BACEGG_03353
+	(degree 1121), 483216.BACEGG_00018 (degree 1037), 483216.BACEGG_01690 (degree
+	978), 483216.BACEGG_01266 (degree 945) and 483216.BACEGG_01855 (degree
+	940).
 	
 
 

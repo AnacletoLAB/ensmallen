@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:54:30.631138
 
-The undirected graph Treponema brennaborense has 2523 nodes and 173212 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05444 and
-has 8 connected components, where the component with most nodes has 2509 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 137.31, and the node degree mode is 4. The top 5 most central
-nodes are 906968.Trebr_0020 (degree 998), 906968.Trebr_1074 (degree 897), 906968.Trebr_1826
-(degree 895), 906968.Trebr_0850 (degree 837) and 906968.Trebr_1497 (degree 829).
+The undirected graph Treponema brennaborense has 2523 nodes and 173212
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05444 and has 8 connected components, where the component
+with most nodes has 2509 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 97, the mean node degree is 137.31,
+and the node degree mode is 4. The top 5 most central nodes are 906968.Trebr_0020
+(degree 998), 906968.Trebr_1074 (degree 897), 906968.Trebr_1826 (degree
+895), 906968.Trebr_0850 (degree 837) and 906968.Trebr_1497 (degree 829).
 
 
 References
@@ -106,13 +107,14 @@ def TreponemaBrennaborense(
 	
 	Datetime: 2021-02-02 21:54:30.631138
 	
-	The undirected graph Treponema brennaborense has 2523 nodes and 173212 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05444 and
-	has 8 connected components, where the component with most nodes has 2509 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 137.31, and the node degree mode is 4. The top 5 most central
-	nodes are 906968.Trebr_0020 (degree 998), 906968.Trebr_1074 (degree 897), 906968.Trebr_1826
-	(degree 895), 906968.Trebr_0850 (degree 837) and 906968.Trebr_1497 (degree 829).
+	The undirected graph Treponema brennaborense has 2523 nodes and 173212
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05444 and has 8 connected components, where the component
+	with most nodes has 2509 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 97, the mean node degree is 137.31,
+	and the node degree mode is 4. The top 5 most central nodes are 906968.Trebr_0020
+	(degree 998), 906968.Trebr_1074 (degree 897), 906968.Trebr_1826 (degree
+	895), 906968.Trebr_0850 (degree 837) and 906968.Trebr_1497 (degree 829).
 	
 
 

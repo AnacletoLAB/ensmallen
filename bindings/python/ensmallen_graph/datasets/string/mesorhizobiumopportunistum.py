@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:06:52.417981
 
-The undirected graph Mesorhizobium opportunistum has 6433 nodes and 629672 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03044
-and has 42 connected components, where the component with most nodes has 6317 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 195.76, and the node degree mode is 1. The top 5
-most central nodes are 536019.Mesop_1753 (degree 2283), 536019.Mesop_0089 (degree
-1894), 536019.Mesop_3229 (degree 1892), 536019.Mesop_1924 (degree 1690) and 536019.Mesop_1786
-(degree 1669).
+The undirected graph Mesorhizobium opportunistum has 6433 nodes and 629672
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03044 and has 42 connected components, where the component
+with most nodes has 6317 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 195.76,
+and the node degree mode is 1. The top 5 most central nodes are 536019.Mesop_1753
+(degree 2283), 536019.Mesop_0089 (degree 1894), 536019.Mesop_3229 (degree
+1892), 536019.Mesop_1924 (degree 1690) and 536019.Mesop_1786 (degree 1669).
 
 
 References
@@ -107,14 +107,14 @@ def MesorhizobiumOpportunistum(
 	
 	Datetime: 2021-02-02 21:06:52.417981
 	
-	The undirected graph Mesorhizobium opportunistum has 6433 nodes and 629672 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03044
-	and has 42 connected components, where the component with most nodes has 6317 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 195.76, and the node degree mode is 1. The top 5
-	most central nodes are 536019.Mesop_1753 (degree 2283), 536019.Mesop_0089 (degree
-	1894), 536019.Mesop_3229 (degree 1892), 536019.Mesop_1924 (degree 1690) and 536019.Mesop_1786
-	(degree 1669).
+	The undirected graph Mesorhizobium opportunistum has 6433 nodes and 629672
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03044 and has 42 connected components, where the component
+	with most nodes has 6317 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 195.76,
+	and the node degree mode is 1. The top 5 most central nodes are 536019.Mesop_1753
+	(degree 2283), 536019.Mesop_0089 (degree 1894), 536019.Mesop_3229 (degree
+	1892), 536019.Mesop_1924 (degree 1690) and 536019.Mesop_1786 (degree 1669).
 	
 
 

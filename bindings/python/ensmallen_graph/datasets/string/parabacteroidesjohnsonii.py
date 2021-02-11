@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:06:04.740443
 
-The undirected graph Parabacteroides johnsonii has 3718 nodes and 312009 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04515
-and has 16 connected components, where the component with most nodes has 3676 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 146, the mean node degree is 167.84, and the node degree mode is 2. The top 5
-most central nodes are 999419.HMPREF1077_01644 (degree 1119), 999419.HMPREF1077_01124
-(degree 1049), 999419.HMPREF1077_02701 (degree 1046), 999419.HMPREF1077_03711 (degree
-999) and 999419.HMPREF1077_00097 (degree 973).
+The undirected graph Parabacteroides johnsonii has 3718 nodes and 312009
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04515 and has 16 connected components, where the component
+with most nodes has 3676 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 146, the mean node degree is 167.84,
+and the node degree mode is 2. The top 5 most central nodes are 999419.HMPREF1077_01644
+(degree 1119), 999419.HMPREF1077_01124 (degree 1049), 999419.HMPREF1077_02701
+(degree 1046), 999419.HMPREF1077_03711 (degree 999) and 999419.HMPREF1077_00097
+(degree 973).
 
 
 References
@@ -107,14 +108,15 @@ def ParabacteroidesJohnsonii(
 	
 	Datetime: 2021-02-02 22:06:04.740443
 	
-	The undirected graph Parabacteroides johnsonii has 3718 nodes and 312009 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04515
-	and has 16 connected components, where the component with most nodes has 3676 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 146, the mean node degree is 167.84, and the node degree mode is 2. The top 5
-	most central nodes are 999419.HMPREF1077_01644 (degree 1119), 999419.HMPREF1077_01124
-	(degree 1049), 999419.HMPREF1077_02701 (degree 1046), 999419.HMPREF1077_03711 (degree
-	999) and 999419.HMPREF1077_00097 (degree 973).
+	The undirected graph Parabacteroides johnsonii has 3718 nodes and 312009
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04515 and has 16 connected components, where the component
+	with most nodes has 3676 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 146, the mean node degree is 167.84,
+	and the node degree mode is 2. The top 5 most central nodes are 999419.HMPREF1077_01644
+	(degree 1119), 999419.HMPREF1077_01124 (degree 1049), 999419.HMPREF1077_02701
+	(degree 1046), 999419.HMPREF1077_03711 (degree 999) and 999419.HMPREF1077_00097
+	(degree 973).
 	
 
 

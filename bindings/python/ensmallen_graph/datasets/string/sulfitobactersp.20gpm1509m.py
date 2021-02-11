@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:13:38.971541
 
-The undirected graph Sulfitobacter sp. 20GPM1509m has 4298 nodes and 661330 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07162
-and has 13 connected components, where the component with most nodes has 4265 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 276, the mean node degree is 307.74, and the node degree mode is 6. The top 5
-most central nodes are 1380367.JIBC01000006_gene398 (degree 1703), 1380367.JIBC01000005_gene3131
-(degree 1600), 1380367.JIBC01000005_gene3120 (degree 1371), 1380367.JIBC01000007_gene968
-(degree 1346) and 1380367.JIBC01000007_gene1073 (degree 1325).
+The undirected graph Sulfitobacter sp. 20GPM1509m has 4298 nodes and 661330
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07162 and has 13 connected components, where the component
+with most nodes has 4265 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 276, the mean node degree is 307.74,
+and the node degree mode is 6. The top 5 most central nodes are 1380367.JIBC01000006_gene398
+(degree 1703), 1380367.JIBC01000005_gene3131 (degree 1600), 1380367.JIBC01000005_gene3120
+(degree 1371), 1380367.JIBC01000007_gene968 (degree 1346) and 1380367.JIBC01000007_gene1073
+(degree 1325).
 
 
 References
@@ -107,14 +108,15 @@ def SulfitobacterSp.20gpm1509m(
 	
 	Datetime: 2021-02-03 22:13:38.971541
 	
-	The undirected graph Sulfitobacter sp. 20GPM1509m has 4298 nodes and 661330 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07162
-	and has 13 connected components, where the component with most nodes has 4265 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 276, the mean node degree is 307.74, and the node degree mode is 6. The top 5
-	most central nodes are 1380367.JIBC01000006_gene398 (degree 1703), 1380367.JIBC01000005_gene3131
-	(degree 1600), 1380367.JIBC01000005_gene3120 (degree 1371), 1380367.JIBC01000007_gene968
-	(degree 1346) and 1380367.JIBC01000007_gene1073 (degree 1325).
+	The undirected graph Sulfitobacter sp. 20GPM1509m has 4298 nodes and 661330
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07162 and has 13 connected components, where the component
+	with most nodes has 4265 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 276, the mean node degree is 307.74,
+	and the node degree mode is 6. The top 5 most central nodes are 1380367.JIBC01000006_gene398
+	(degree 1703), 1380367.JIBC01000005_gene3131 (degree 1600), 1380367.JIBC01000005_gene3120
+	(degree 1371), 1380367.JIBC01000007_gene968 (degree 1346) and 1380367.JIBC01000007_gene1073
+	(degree 1325).
 	
 
 

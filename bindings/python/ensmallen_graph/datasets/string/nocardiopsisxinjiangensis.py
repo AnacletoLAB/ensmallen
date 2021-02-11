@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:33:49.713191
 
-The undirected graph Nocardiopsis xinjiangensis has 4517 nodes and 449730 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04409
-and has 14 connected components, where the component with most nodes has 4491 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 168, the mean node degree is 199.13, and the node degree mode is 3. The top 5
-most central nodes are 1246474.ANBE01000033_gene2644 (degree 1637), 1246474.ANBE01000007_gene118
-(degree 1489), 1246474.ANBE01000003_gene2059 (degree 1352), 1246474.ANBE01000043_gene751
-(degree 1272) and 1246474.ANBE01000048_gene1454 (degree 1265).
+The undirected graph Nocardiopsis xinjiangensis has 4517 nodes and 449730
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04409 and has 14 connected components, where the component
+with most nodes has 4491 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 168, the mean node degree is 199.13,
+and the node degree mode is 3. The top 5 most central nodes are 1246474.ANBE01000033_gene2644
+(degree 1637), 1246474.ANBE01000007_gene118 (degree 1489), 1246474.ANBE01000003_gene2059
+(degree 1352), 1246474.ANBE01000043_gene751 (degree 1272) and 1246474.ANBE01000048_gene1454
+(degree 1265).
 
 
 References
@@ -107,14 +108,15 @@ def NocardiopsisXinjiangensis(
 	
 	Datetime: 2021-02-02 23:33:49.713191
 	
-	The undirected graph Nocardiopsis xinjiangensis has 4517 nodes and 449730 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04409
-	and has 14 connected components, where the component with most nodes has 4491 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 168, the mean node degree is 199.13, and the node degree mode is 3. The top 5
-	most central nodes are 1246474.ANBE01000033_gene2644 (degree 1637), 1246474.ANBE01000007_gene118
-	(degree 1489), 1246474.ANBE01000003_gene2059 (degree 1352), 1246474.ANBE01000043_gene751
-	(degree 1272) and 1246474.ANBE01000048_gene1454 (degree 1265).
+	The undirected graph Nocardiopsis xinjiangensis has 4517 nodes and 449730
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04409 and has 14 connected components, where the component
+	with most nodes has 4491 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 168, the mean node degree is 199.13,
+	and the node degree mode is 3. The top 5 most central nodes are 1246474.ANBE01000033_gene2644
+	(degree 1637), 1246474.ANBE01000007_gene118 (degree 1489), 1246474.ANBE01000003_gene2059
+	(degree 1352), 1246474.ANBE01000043_gene751 (degree 1272) and 1246474.ANBE01000048_gene1454
+	(degree 1265).
 	
 
 

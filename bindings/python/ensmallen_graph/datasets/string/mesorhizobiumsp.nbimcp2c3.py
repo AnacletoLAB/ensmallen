@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:52:01.206017
 
-The undirected graph Mesorhizobium sp. NBIMCP2C3 has 5022 nodes and 593377 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04706
-and has 11 connected components, where the component with most nodes has 4999 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 188, the mean node degree is 236.31, and the node degree mode is 1. The top 5
-most central nodes are 1320556.AVBP01000026_gene1861 (degree 1824), 1320556.AVBP01000022_gene2104
-(degree 1551), 1320556.AVBP01000001_gene5071 (degree 1436), 1320556.AVBP01000001_gene4886
-(degree 1426) and 1320556.AVBP01000021_gene413 (degree 1410).
+The undirected graph Mesorhizobium sp. NBIMCP2C3 has 5022 nodes and 593377
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04706 and has 11 connected components, where the component
+with most nodes has 4999 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 188, the mean node degree is 236.31,
+and the node degree mode is 1. The top 5 most central nodes are 1320556.AVBP01000026_gene1861
+(degree 1824), 1320556.AVBP01000022_gene2104 (degree 1551), 1320556.AVBP01000001_gene5071
+(degree 1436), 1320556.AVBP01000001_gene4886 (degree 1426) and 1320556.AVBP01000021_gene413
+(degree 1410).
 
 
 References
@@ -107,14 +108,15 @@ def MesorhizobiumSp.Nbimcp2c3(
 	
 	Datetime: 2021-02-03 21:52:01.206017
 	
-	The undirected graph Mesorhizobium sp. NBIMCP2C3 has 5022 nodes and 593377 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04706
-	and has 11 connected components, where the component with most nodes has 4999 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 188, the mean node degree is 236.31, and the node degree mode is 1. The top 5
-	most central nodes are 1320556.AVBP01000026_gene1861 (degree 1824), 1320556.AVBP01000022_gene2104
-	(degree 1551), 1320556.AVBP01000001_gene5071 (degree 1436), 1320556.AVBP01000001_gene4886
-	(degree 1426) and 1320556.AVBP01000021_gene413 (degree 1410).
+	The undirected graph Mesorhizobium sp. NBIMCP2C3 has 5022 nodes and 593377
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04706 and has 11 connected components, where the component
+	with most nodes has 4999 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 188, the mean node degree is 236.31,
+	and the node degree mode is 1. The top 5 most central nodes are 1320556.AVBP01000026_gene1861
+	(degree 1824), 1320556.AVBP01000022_gene2104 (degree 1551), 1320556.AVBP01000001_gene5071
+	(degree 1436), 1320556.AVBP01000001_gene4886 (degree 1426) and 1320556.AVBP01000021_gene413
+	(degree 1410).
 	
 
 

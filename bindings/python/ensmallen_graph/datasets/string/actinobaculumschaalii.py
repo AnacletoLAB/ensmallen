@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:56.577608
 
-The undirected graph Actinobaculum schaalii has 1709 nodes and 86249 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05910 and
-has 9 connected components, where the component with most nodes has 1692 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 100.94, and the node degree mode is 4. The top 5 most central
-nodes are 883067.HMPREF9237_01129 (degree 748), 883067.HMPREF9237_01398 (degree 703),
-883067.HMPREF9237_01229 (degree 576), 883067.HMPREF9237_00875 (degree 538) and 883067.HMPREF9237_01439
+The undirected graph Actinobaculum schaalii has 1709 nodes and 86249 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05910 and has 9 connected components, where the component with most
+nodes has 1692 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 78, the mean node degree is 100.94, and
+the node degree mode is 4. The top 5 most central nodes are 883067.HMPREF9237_01129
+(degree 748), 883067.HMPREF9237_01398 (degree 703), 883067.HMPREF9237_01229
+(degree 576), 883067.HMPREF9237_00875 (degree 538) and 883067.HMPREF9237_01439
 (degree 536).
 
 
@@ -107,13 +108,14 @@ def ActinobaculumSchaalii(
 	
 	Datetime: 2021-02-02 21:50:56.577608
 	
-	The undirected graph Actinobaculum schaalii has 1709 nodes and 86249 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05910 and
-	has 9 connected components, where the component with most nodes has 1692 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 100.94, and the node degree mode is 4. The top 5 most central
-	nodes are 883067.HMPREF9237_01129 (degree 748), 883067.HMPREF9237_01398 (degree 703),
-	883067.HMPREF9237_01229 (degree 576), 883067.HMPREF9237_00875 (degree 538) and 883067.HMPREF9237_01439
+	The undirected graph Actinobaculum schaalii has 1709 nodes and 86249 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05910 and has 9 connected components, where the component with most
+	nodes has 1692 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 78, the mean node degree is 100.94, and
+	the node degree mode is 4. The top 5 most central nodes are 883067.HMPREF9237_01129
+	(degree 748), 883067.HMPREF9237_01398 (degree 703), 883067.HMPREF9237_01229
+	(degree 576), 883067.HMPREF9237_00875 (degree 538) and 883067.HMPREF9237_01439
 	(degree 536).
 	
 

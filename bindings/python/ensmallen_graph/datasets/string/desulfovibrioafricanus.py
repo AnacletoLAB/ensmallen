@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:31:50.475377
 
-The undirected graph Desulfovibrio africanus has 3684 nodes and 355935 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05247 and
-has 17 connected components, where the component with most nodes has 3639 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 143,
-the mean node degree is 193.23, and the node degree mode is 2. The top 5 most central
-nodes are 690850.Desaf_3704 (degree 1663), 690850.Desaf_0384 (degree 1569), 690850.Desaf_3035
-(degree 1314), 690850.Desaf_2186 (degree 1276) and 690850.Desaf_2128 (degree 1165).
+The undirected graph Desulfovibrio africanus has 3684 nodes and 355935
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05247 and has 17 connected components, where the component
+with most nodes has 3639 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 143, the mean node degree is 193.23,
+and the node degree mode is 2. The top 5 most central nodes are 690850.Desaf_3704
+(degree 1663), 690850.Desaf_0384 (degree 1569), 690850.Desaf_3035 (degree
+1314), 690850.Desaf_2186 (degree 1276) and 690850.Desaf_2128 (degree 1165).
 
 
 References
@@ -106,13 +107,14 @@ def DesulfovibrioAfricanus(
 	
 	Datetime: 2021-02-02 21:31:50.475377
 	
-	The undirected graph Desulfovibrio africanus has 3684 nodes and 355935 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05247 and
-	has 17 connected components, where the component with most nodes has 3639 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 143,
-	the mean node degree is 193.23, and the node degree mode is 2. The top 5 most central
-	nodes are 690850.Desaf_3704 (degree 1663), 690850.Desaf_0384 (degree 1569), 690850.Desaf_3035
-	(degree 1314), 690850.Desaf_2186 (degree 1276) and 690850.Desaf_2128 (degree 1165).
+	The undirected graph Desulfovibrio africanus has 3684 nodes and 355935
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05247 and has 17 connected components, where the component
+	with most nodes has 3639 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 143, the mean node degree is 193.23,
+	and the node degree mode is 2. The top 5 most central nodes are 690850.Desaf_3704
+	(degree 1663), 690850.Desaf_0384 (degree 1569), 690850.Desaf_3035 (degree
+	1314), 690850.Desaf_2186 (degree 1276) and 690850.Desaf_2128 (degree 1165).
 	
 
 

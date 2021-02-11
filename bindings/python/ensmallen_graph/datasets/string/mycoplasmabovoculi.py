@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:36.565856
 
-The undirected graph Mycoplasma bovoculi has 575 nodes and 28560 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.17306
-and has 7 connected components, where the component with most nodes has 562 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 79, the mean node degree is 99.34, and the node degree mode is 9. The top 5 most
-central nodes are 743966.MYB_00315 (degree 322), 743966.MYB_02065 (degree 309), 743966.MYB_02780
-(degree 259), 743966.MYB_00345 (degree 258) and 743966.MYB_02520 (degree 252).
+The undirected graph Mycoplasma bovoculi has 575 nodes and 28560 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.17306 and has 7 connected components, where the component
+with most nodes has 562 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 79, the mean node degree is 99.34,
+and the node degree mode is 9. The top 5 most central nodes are 743966.MYB_00315
+(degree 322), 743966.MYB_02065 (degree 309), 743966.MYB_02780 (degree 259),
+743966.MYB_00345 (degree 258) and 743966.MYB_02520 (degree 252).
 
 
 References
@@ -106,13 +107,14 @@ def MycoplasmaBovoculi(
 	
 	Datetime: 2021-02-02 21:38:36.565856
 	
-	The undirected graph Mycoplasma bovoculi has 575 nodes and 28560 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.17306
-	and has 7 connected components, where the component with most nodes has 562 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 79, the mean node degree is 99.34, and the node degree mode is 9. The top 5 most
-	central nodes are 743966.MYB_00315 (degree 322), 743966.MYB_02065 (degree 309), 743966.MYB_02780
-	(degree 259), 743966.MYB_00345 (degree 258) and 743966.MYB_02520 (degree 252).
+	The undirected graph Mycoplasma bovoculi has 575 nodes and 28560 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.17306 and has 7 connected components, where the component
+	with most nodes has 562 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 79, the mean node degree is 99.34,
+	and the node degree mode is 9. The top 5 most central nodes are 743966.MYB_00315
+	(degree 322), 743966.MYB_02065 (degree 309), 743966.MYB_02780 (degree 259),
+	743966.MYB_00345 (degree 258) and 743966.MYB_02520 (degree 252).
 	
 
 

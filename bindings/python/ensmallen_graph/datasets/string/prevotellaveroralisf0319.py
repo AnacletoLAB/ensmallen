@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:25:48.585977
 
-The undirected graph Prevotella veroralis F0319 has 2998 nodes and 189164 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04211
-and has 45 connected components, where the component with most nodes has 2879 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 105, the mean node degree is 126.19, and the node degree mode is 4. The top 5
-most central nodes are 649761.HMPREF0973_01259 (degree 859), 649761.HMPREF0973_01385
-(degree 846), 649761.HMPREF0973_00688 (degree 741), 649761.HMPREF0973_01788 (degree
-738) and 649761.HMPREF0973_00478 (degree 685).
+The undirected graph Prevotella veroralis F0319 has 2998 nodes and 189164
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04211 and has 45 connected components, where the component
+with most nodes has 2879 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 105, the mean node degree is 126.19,
+and the node degree mode is 4. The top 5 most central nodes are 649761.HMPREF0973_01259
+(degree 859), 649761.HMPREF0973_01385 (degree 846), 649761.HMPREF0973_00688
+(degree 741), 649761.HMPREF0973_01788 (degree 738) and 649761.HMPREF0973_00478
+(degree 685).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaVeroralisF0319(
 	
 	Datetime: 2021-02-02 21:25:48.585977
 	
-	The undirected graph Prevotella veroralis F0319 has 2998 nodes and 189164 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04211
-	and has 45 connected components, where the component with most nodes has 2879 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 105, the mean node degree is 126.19, and the node degree mode is 4. The top 5
-	most central nodes are 649761.HMPREF0973_01259 (degree 859), 649761.HMPREF0973_01385
-	(degree 846), 649761.HMPREF0973_00688 (degree 741), 649761.HMPREF0973_01788 (degree
-	738) and 649761.HMPREF0973_00478 (degree 685).
+	The undirected graph Prevotella veroralis F0319 has 2998 nodes and 189164
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04211 and has 45 connected components, where the component
+	with most nodes has 2879 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 105, the mean node degree is 126.19,
+	and the node degree mode is 4. The top 5 most central nodes are 649761.HMPREF0973_01259
+	(degree 859), 649761.HMPREF0973_01385 (degree 846), 649761.HMPREF0973_00688
+	(degree 741), 649761.HMPREF0973_01788 (degree 738) and 649761.HMPREF0973_00478
+	(degree 685).
 	
 
 

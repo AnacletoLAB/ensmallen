@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:13:02.100211
 
-The undirected graph karate has 34 nodes and 78 unweighted edges, of which none are
-self-loops. The graph is quite dense as it has a density of 0.13904 and is connected,
-as it has a single component. The graph median node degree is 3, the mean node degree
-is 4.59, and the node degree mode is 2. The top 5 most central nodes are 34 (degree
-17), 1 (degree 16), 33 (degree 12), 3 (degree 10) and 2 (degree 9).
+The undirected graph karate has 34 nodes and 78 unweighted edges, of which
+none are self-loops. The graph is quite dense as it has a density of 0.13904
+and is connected, as it has a single component. The graph median node degree
+is 3, the mean node degree is 4.59, and the node degree mode is 2. The
+top 5 most central nodes are 34 (degree 17), 1 (degree 16), 33 (degree
+12), 3 (degree 10) and 2 (degree 9).
 
 
 References
@@ -101,11 +102,12 @@ def Karate(
 	
 	Datetime: 2021-02-06 08:13:02.100211
 	
-	The undirected graph karate has 34 nodes and 78 unweighted edges, of which none are
-	self-loops. The graph is quite dense as it has a density of 0.13904 and is connected,
-	as it has a single component. The graph median node degree is 3, the mean node degree
-	is 4.59, and the node degree mode is 2. The top 5 most central nodes are 34 (degree
-	17), 1 (degree 16), 33 (degree 12), 3 (degree 10) and 2 (degree 9).
+	The undirected graph karate has 34 nodes and 78 unweighted edges, of which
+	none are self-loops. The graph is quite dense as it has a density of 0.13904
+	and is connected, as it has a single component. The graph median node degree
+	is 3, the mean node degree is 4.59, and the node degree mode is 2. The
+	top 5 most central nodes are 34 (degree 17), 1 (degree 16), 33 (degree
+	12), 3 (degree 10) and 2 (degree 9).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:50:08.194461
 
-The undirected graph Peptoniphilus sp. F0436 has 2137 nodes and 163090 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07146 and
-has 3 connected components, where the component with most nodes has 2130 nodes and
-the component with the least nodes has 3 nodes. The graph median node degree is 109,
-the mean node degree is 152.63, and the node degree mode is 11. The top 5 most central
-nodes are 879308.HMPREF9130_1621 (degree 928), 879308.HMPREF9130_1261 (degree 917),
-879308.HMPREF9130_1839 (degree 818), 879308.HMPREF9130_0060 (degree 807) and 879308.HMPREF9130_1187
+The undirected graph Peptoniphilus sp. F0436 has 2137 nodes and 163090
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07146 and has 3 connected components, where the component
+with most nodes has 2130 nodes and the component with the least nodes has
+3 nodes. The graph median node degree is 109, the mean node degree is 152.63,
+and the node degree mode is 11. The top 5 most central nodes are 879308.HMPREF9130_1621
+(degree 928), 879308.HMPREF9130_1261 (degree 917), 879308.HMPREF9130_1839
+(degree 818), 879308.HMPREF9130_0060 (degree 807) and 879308.HMPREF9130_1187
 (degree 781).
 
 
@@ -107,13 +108,14 @@ def PeptoniphilusSp.F0436(
 	
 	Datetime: 2021-02-02 21:50:08.194461
 	
-	The undirected graph Peptoniphilus sp. F0436 has 2137 nodes and 163090 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07146 and
-	has 3 connected components, where the component with most nodes has 2130 nodes and
-	the component with the least nodes has 3 nodes. The graph median node degree is 109,
-	the mean node degree is 152.63, and the node degree mode is 11. The top 5 most central
-	nodes are 879308.HMPREF9130_1621 (degree 928), 879308.HMPREF9130_1261 (degree 917),
-	879308.HMPREF9130_1839 (degree 818), 879308.HMPREF9130_0060 (degree 807) and 879308.HMPREF9130_1187
+	The undirected graph Peptoniphilus sp. F0436 has 2137 nodes and 163090
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07146 and has 3 connected components, where the component
+	with most nodes has 2130 nodes and the component with the least nodes has
+	3 nodes. The graph median node degree is 109, the mean node degree is 152.63,
+	and the node degree mode is 11. The top 5 most central nodes are 879308.HMPREF9130_1621
+	(degree 928), 879308.HMPREF9130_1261 (degree 917), 879308.HMPREF9130_1839
+	(degree 818), 879308.HMPREF9130_0060 (degree 807) and 879308.HMPREF9130_1187
 	(degree 781).
 	
 

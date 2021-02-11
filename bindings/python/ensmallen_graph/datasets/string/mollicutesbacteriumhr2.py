@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:20:18.605153
 
-The undirected graph Mollicutes bacterium HR2 has 2206 nodes and 170078 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06993
-and has 20 connected components, where the component with most nodes has 2123 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 114, the mean node degree is 154.20, and the node degree mode is 12. The top 5
-most central nodes are 1541960.KQ78_00288 (degree 796), 1541960.KQ78_01382 (degree
-738), 1541960.KQ78_00600 (degree 716), 1541960.KQ78_00276 (degree 681) and 1541960.KQ78_01410
-(degree 656).
+The undirected graph Mollicutes bacterium HR2 has 2206 nodes and 170078
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06993 and has 20 connected components, where the component
+with most nodes has 2123 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 114, the mean node degree is 154.20,
+and the node degree mode is 12. The top 5 most central nodes are 1541960.KQ78_00288
+(degree 796), 1541960.KQ78_01382 (degree 738), 1541960.KQ78_00600 (degree
+716), 1541960.KQ78_00276 (degree 681) and 1541960.KQ78_01410 (degree 656).
 
 
 References
@@ -107,14 +107,14 @@ def MollicutesBacteriumHr2(
 	
 	Datetime: 2021-02-03 23:20:18.605153
 	
-	The undirected graph Mollicutes bacterium HR2 has 2206 nodes and 170078 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06993
-	and has 20 connected components, where the component with most nodes has 2123 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 114, the mean node degree is 154.20, and the node degree mode is 12. The top 5
-	most central nodes are 1541960.KQ78_00288 (degree 796), 1541960.KQ78_01382 (degree
-	738), 1541960.KQ78_00600 (degree 716), 1541960.KQ78_00276 (degree 681) and 1541960.KQ78_01410
-	(degree 656).
+	The undirected graph Mollicutes bacterium HR2 has 2206 nodes and 170078
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06993 and has 20 connected components, where the component
+	with most nodes has 2123 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 114, the mean node degree is 154.20,
+	and the node degree mode is 12. The top 5 most central nodes are 1541960.KQ78_00288
+	(degree 796), 1541960.KQ78_01382 (degree 738), 1541960.KQ78_00600 (degree
+	716), 1541960.KQ78_00276 (degree 681) and 1541960.KQ78_01410 (degree 656).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:52:19.077504
 
-The undirected graph Muricauda ruestringensis has 3419 nodes and 365923 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06263
-and has 3 connected components, where the component with most nodes has 3415 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 214.05, and the node degree mode is 4. The top 5
-most central nodes are 886377.Murru_2896 (degree 1377), 886377.Murru_1470 (degree
-1251), 886377.Murru_1837 (degree 1214), 886377.Murru_2094 (degree 1124) and 886377.Murru_0708
-(degree 1011).
+The undirected graph Muricauda ruestringensis has 3419 nodes and 365923
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06263 and has 3 connected components, where the component
+with most nodes has 3415 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 214.05,
+and the node degree mode is 4. The top 5 most central nodes are 886377.Murru_2896
+(degree 1377), 886377.Murru_1470 (degree 1251), 886377.Murru_1837 (degree
+1214), 886377.Murru_2094 (degree 1124) and 886377.Murru_0708 (degree 1011).
 
 
 References
@@ -107,14 +107,14 @@ def MuricaudaRuestringensis(
 	
 	Datetime: 2021-02-02 21:52:19.077504
 	
-	The undirected graph Muricauda ruestringensis has 3419 nodes and 365923 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06263
-	and has 3 connected components, where the component with most nodes has 3415 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 214.05, and the node degree mode is 4. The top 5
-	most central nodes are 886377.Murru_2896 (degree 1377), 886377.Murru_1470 (degree
-	1251), 886377.Murru_1837 (degree 1214), 886377.Murru_2094 (degree 1124) and 886377.Murru_0708
-	(degree 1011).
+	The undirected graph Muricauda ruestringensis has 3419 nodes and 365923
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06263 and has 3 connected components, where the component
+	with most nodes has 3415 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 214.05,
+	and the node degree mode is 4. The top 5 most central nodes are 886377.Murru_2896
+	(degree 1377), 886377.Murru_1470 (degree 1251), 886377.Murru_1837 (degree
+	1214), 886377.Murru_2094 (degree 1124) and 886377.Murru_0708 (degree 1011).
 	
 
 

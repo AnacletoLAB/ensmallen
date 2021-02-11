@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:49:01.421381
 
-The undirected graph Bordetella trematum has 3720 nodes and 380374 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05499 and
-has 3 connected components, where the component with most nodes has 3716 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 204.50, and the node degree mode is 2. The top 5 most central
-nodes are 123899.JPQP01000004_gene548 (degree 1608), 123899.JPQP01000004_gene431
-(degree 1202), 123899.JPQP01000003_gene1403 (degree 1192), 123899.JPQP01000017_gene2217
-(degree 1147) and 123899.JPQP01000001_gene1693 (degree 1100).
+The undirected graph Bordetella trematum has 3720 nodes and 380374 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05499 and has 3 connected components, where the component with most
+nodes has 3716 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 204.50, and
+the node degree mode is 2. The top 5 most central nodes are 123899.JPQP01000004_gene548
+(degree 1608), 123899.JPQP01000004_gene431 (degree 1202), 123899.JPQP01000003_gene1403
+(degree 1192), 123899.JPQP01000017_gene2217 (degree 1147) and 123899.JPQP01000001_gene1693
+(degree 1100).
 
 
 References
@@ -107,14 +108,15 @@ def BordetellaTrematum(
 	
 	Datetime: 2021-02-02 19:49:01.421381
 	
-	The undirected graph Bordetella trematum has 3720 nodes and 380374 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05499 and
-	has 3 connected components, where the component with most nodes has 3716 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 204.50, and the node degree mode is 2. The top 5 most central
-	nodes are 123899.JPQP01000004_gene548 (degree 1608), 123899.JPQP01000004_gene431
-	(degree 1202), 123899.JPQP01000003_gene1403 (degree 1192), 123899.JPQP01000017_gene2217
-	(degree 1147) and 123899.JPQP01000001_gene1693 (degree 1100).
+	The undirected graph Bordetella trematum has 3720 nodes and 380374 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05499 and has 3 connected components, where the component with most
+	nodes has 3716 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 204.50, and
+	the node degree mode is 2. The top 5 most central nodes are 123899.JPQP01000004_gene548
+	(degree 1608), 123899.JPQP01000004_gene431 (degree 1202), 123899.JPQP01000003_gene1403
+	(degree 1192), 123899.JPQP01000017_gene2217 (degree 1147) and 123899.JPQP01000001_gene1693
+	(degree 1100).
 	
 
 

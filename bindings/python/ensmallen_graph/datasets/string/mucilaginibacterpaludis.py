@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:52.923571
 
-The undirected graph Mucilaginibacter paludis has 6912 nodes and 900712 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03771
-and has 44 connected components, where the component with most nodes has 6814 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 237, the mean node degree is 260.62, and the node degree mode is 3. The top 5
-most central nodes are 714943.Mucpa_3907 (degree 1864), 714943.Mucpa_7138 (degree
-1711), 714943.Mucpa_4732 (degree 1507), 714943.Mucpa_0373 (degree 1453) and 714943.Mucpa_1543
-(degree 1349).
+The undirected graph Mucilaginibacter paludis has 6912 nodes and 900712
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03771 and has 44 connected components, where the component
+with most nodes has 6814 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 237, the mean node degree is 260.62,
+and the node degree mode is 3. The top 5 most central nodes are 714943.Mucpa_3907
+(degree 1864), 714943.Mucpa_7138 (degree 1711), 714943.Mucpa_4732 (degree
+1507), 714943.Mucpa_0373 (degree 1453) and 714943.Mucpa_1543 (degree 1349).
 
 
 References
@@ -107,14 +107,14 @@ def MucilaginibacterPaludis(
 	
 	Datetime: 2021-02-02 21:35:52.923571
 	
-	The undirected graph Mucilaginibacter paludis has 6912 nodes and 900712 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03771
-	and has 44 connected components, where the component with most nodes has 6814 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 237, the mean node degree is 260.62, and the node degree mode is 3. The top 5
-	most central nodes are 714943.Mucpa_3907 (degree 1864), 714943.Mucpa_7138 (degree
-	1711), 714943.Mucpa_4732 (degree 1507), 714943.Mucpa_0373 (degree 1453) and 714943.Mucpa_1543
-	(degree 1349).
+	The undirected graph Mucilaginibacter paludis has 6912 nodes and 900712
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03771 and has 44 connected components, where the component
+	with most nodes has 6814 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 237, the mean node degree is 260.62,
+	and the node degree mode is 3. The top 5 most central nodes are 714943.Mucpa_3907
+	(degree 1864), 714943.Mucpa_7138 (degree 1711), 714943.Mucpa_4732 (degree
+	1507), 714943.Mucpa_0373 (degree 1453) and 714943.Mucpa_1543 (degree 1349).
 	
 
 

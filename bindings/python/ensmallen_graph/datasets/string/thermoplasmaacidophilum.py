@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:35.033206
 
-The undirected graph Thermoplasma acidophilum has 1472 nodes and 111026 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.10255 and has 5 connected components, where the component with most nodes has
-1463 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 136, the mean node degree is 150.85, and the node degree mode is 2. The
-top 5 most central nodes are 273075.Ta1103 (degree 659), 273075.Ta1087 (degree 647),
-273075.Ta0313 (degree 598), 273075.Ta1075 (degree 550) and 273075.Ta0310 (degree
-540).
+The undirected graph Thermoplasma acidophilum has 1472 nodes and 111026
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.10255 and has 5 connected components, where the
+component with most nodes has 1463 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+is 150.85, and the node degree mode is 2. The top 5 most central nodes
+are 273075.Ta1103 (degree 659), 273075.Ta1087 (degree 647), 273075.Ta0313
+(degree 598), 273075.Ta1075 (degree 550) and 273075.Ta0310 (degree 540).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoplasmaAcidophilum(
 	
 	Datetime: 2021-02-02 20:17:35.033206
 	
-	The undirected graph Thermoplasma acidophilum has 1472 nodes and 111026 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.10255 and has 5 connected components, where the component with most nodes has
-	1463 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 136, the mean node degree is 150.85, and the node degree mode is 2. The
-	top 5 most central nodes are 273075.Ta1103 (degree 659), 273075.Ta1087 (degree 647),
-	273075.Ta0313 (degree 598), 273075.Ta1075 (degree 550) and 273075.Ta0310 (degree
-	540).
+	The undirected graph Thermoplasma acidophilum has 1472 nodes and 111026
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.10255 and has 5 connected components, where the
+	component with most nodes has 1463 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 136, the mean node degree
+	is 150.85, and the node degree mode is 2. The top 5 most central nodes
+	are 273075.Ta1103 (degree 659), 273075.Ta1087 (degree 647), 273075.Ta0313
+	(degree 598), 273075.Ta1075 (degree 550) and 273075.Ta0310 (degree 540).
 	
 
 

@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:28:52.907323
 
-The undirected graph Intestinimonas butyriciproducens has 3173 nodes and 242042 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04810
-and has 20 connected components, where the component with most nodes has 3130 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 123, the mean node degree is 152.56, and the node degree mode is 1. The top 5
-most central nodes are 1297617.JPJD01000023_gene1595 (degree 1207), 1297617.JPJD01000046_gene2107
+The undirected graph Intestinimonas butyriciproducens has 3173 nodes and
+242042 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04810 and has 20 connected components, where the
+component with most nodes has 3130 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 123, the mean node degree
+is 152.56, and the node degree mode is 1. The top 5 most central nodes
+are 1297617.JPJD01000023_gene1595 (degree 1207), 1297617.JPJD01000046_gene2107
 (degree 1019), 1297617.JPJD01000007_gene46 (degree 916), 1297617.JPJD01000007_gene88
 (degree 866) and 1297617.JPJD01000072_gene1804 (degree 837).
 
@@ -107,12 +108,13 @@ def IntestinimonasButyriciproducens(
 	
 	Datetime: 2021-02-03 21:28:52.907323
 	
-	The undirected graph Intestinimonas butyriciproducens has 3173 nodes and 242042 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04810
-	and has 20 connected components, where the component with most nodes has 3130 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 123, the mean node degree is 152.56, and the node degree mode is 1. The top 5
-	most central nodes are 1297617.JPJD01000023_gene1595 (degree 1207), 1297617.JPJD01000046_gene2107
+	The undirected graph Intestinimonas butyriciproducens has 3173 nodes and
+	242042 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04810 and has 20 connected components, where the
+	component with most nodes has 3130 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 123, the mean node degree
+	is 152.56, and the node degree mode is 1. The top 5 most central nodes
+	are 1297617.JPJD01000023_gene1595 (degree 1207), 1297617.JPJD01000046_gene2107
 	(degree 1019), 1297617.JPJD01000007_gene46 (degree 916), 1297617.JPJD01000007_gene88
 	(degree 866) and 1297617.JPJD01000072_gene1804 (degree 837).
 	

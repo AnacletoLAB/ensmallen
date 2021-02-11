@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:25:07.851747
 
-The undirected graph pfinan512 has 74752 nodes and 335872 unweighted edges, of which
-74752 are self-loops. The graph is quite sparse as it has a density of 0.00011 and
-is connected, as it has a single component. The graph median node degree is 7, the
-mean node degree is 7.99, and the node degree mode is 7. The top 5 most central nodes
-are 49112 (degree 55), 49016 (degree 55), 48920 (degree 55), 48824 (degree 55) and
-48728 (degree 55).
+The undirected graph pfinan512 has 74752 nodes and 335872 unweighted edges,
+of which 74752 are self-loops. The graph is quite sparse as it has a density
+of 0.00011 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 7.99, and the node degree mode
+is 7. The top 5 most central nodes are 49112 (degree 55), 49016 (degree
+55), 48920 (degree 55), 48824 (degree 55) and 48728 (degree 55).
 
 
 References
@@ -102,12 +102,12 @@ def Pfinan512(
 	
 	Datetime: 2021-02-06 11:25:07.851747
 	
-	The undirected graph pfinan512 has 74752 nodes and 335872 unweighted edges, of which
-	74752 are self-loops. The graph is quite sparse as it has a density of 0.00011 and
-	is connected, as it has a single component. The graph median node degree is 7, the
-	mean node degree is 7.99, and the node degree mode is 7. The top 5 most central nodes
-	are 49112 (degree 55), 49016 (degree 55), 48920 (degree 55), 48824 (degree 55) and
-	48728 (degree 55).
+	The undirected graph pfinan512 has 74752 nodes and 335872 unweighted edges,
+	of which 74752 are self-loops. The graph is quite sparse as it has a density
+	of 0.00011 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 7.99, and the node degree mode
+	is 7. The top 5 most central nodes are 49112 (degree 55), 49016 (degree
+	55), 48920 (degree 55), 48824 (degree 55) and 48728 (degree 55).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:10.916199
 
-The undirected graph Chryseobacterium caeni has 3666 nodes and 263244 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03919 and
-has 18 connected components, where the component with most nodes has 3623 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 143.61, and the node degree mode is 2. The top 5 most central
-nodes are 1121285.AUFK01000009_gene1011 (degree 1113), 1121285.AUFK01000016_gene3540
-(degree 913), 1121285.AUFK01000010_gene1658 (degree 871), 1121285.AUFK01000017_gene3195
-(degree 821) and 1121285.AUFK01000020_gene3269 (degree 806).
+The undirected graph Chryseobacterium caeni has 3666 nodes and 263244 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03919 and has 18 connected components, where the component with most
+nodes has 3623 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 143.61, and
+the node degree mode is 2. The top 5 most central nodes are 1121285.AUFK01000009_gene1011
+(degree 1113), 1121285.AUFK01000016_gene3540 (degree 913), 1121285.AUFK01000010_gene1658
+(degree 871), 1121285.AUFK01000017_gene3195 (degree 821) and 1121285.AUFK01000020_gene3269
+(degree 806).
 
 
 References
@@ -107,14 +108,15 @@ def ChryseobacteriumCaeni(
 	
 	Datetime: 2021-02-02 22:34:10.916199
 	
-	The undirected graph Chryseobacterium caeni has 3666 nodes and 263244 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03919 and
-	has 18 connected components, where the component with most nodes has 3623 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 143.61, and the node degree mode is 2. The top 5 most central
-	nodes are 1121285.AUFK01000009_gene1011 (degree 1113), 1121285.AUFK01000016_gene3540
-	(degree 913), 1121285.AUFK01000010_gene1658 (degree 871), 1121285.AUFK01000017_gene3195
-	(degree 821) and 1121285.AUFK01000020_gene3269 (degree 806).
+	The undirected graph Chryseobacterium caeni has 3666 nodes and 263244 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03919 and has 18 connected components, where the component with most
+	nodes has 3623 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 143.61, and
+	the node degree mode is 2. The top 5 most central nodes are 1121285.AUFK01000009_gene1011
+	(degree 1113), 1121285.AUFK01000016_gene3540 (degree 913), 1121285.AUFK01000010_gene1658
+	(degree 871), 1121285.AUFK01000017_gene3195 (degree 821) and 1121285.AUFK01000020_gene3269
+	(degree 806).
 	
 
 

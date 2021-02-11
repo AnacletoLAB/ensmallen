@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:59:37.630794
 
-The undirected graph Acinetobacter gerneri has 4006 nodes and 374460 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04668 and
-has 32 connected components, where the component with most nodes has 3931 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 153,
-the mean node degree is 186.95, and the node degree mode is 1. The top 5 most central
-nodes are 202952.BBLI01000009_gene911 (degree 1235), 202952.BBLI01000031_gene2223
-(degree 1207), 202952.BBLI01000009_gene846 (degree 1156), 202952.BBLI01000031_gene2241
-(degree 1042) and 202952.BBLI01000036_gene2442 (degree 1020).
+The undirected graph Acinetobacter gerneri has 4006 nodes and 374460 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04668 and has 32 connected components, where the component with most
+nodes has 3931 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 153, the mean node degree is 186.95, and
+the node degree mode is 1. The top 5 most central nodes are 202952.BBLI01000009_gene911
+(degree 1235), 202952.BBLI01000031_gene2223 (degree 1207), 202952.BBLI01000009_gene846
+(degree 1156), 202952.BBLI01000031_gene2241 (degree 1042) and 202952.BBLI01000036_gene2442
+(degree 1020).
 
 
 References
@@ -107,14 +108,15 @@ def AcinetobacterGerneri(
 	
 	Datetime: 2021-02-02 19:59:37.630794
 	
-	The undirected graph Acinetobacter gerneri has 4006 nodes and 374460 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04668 and
-	has 32 connected components, where the component with most nodes has 3931 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 153,
-	the mean node degree is 186.95, and the node degree mode is 1. The top 5 most central
-	nodes are 202952.BBLI01000009_gene911 (degree 1235), 202952.BBLI01000031_gene2223
-	(degree 1207), 202952.BBLI01000009_gene846 (degree 1156), 202952.BBLI01000031_gene2241
-	(degree 1042) and 202952.BBLI01000036_gene2442 (degree 1020).
+	The undirected graph Acinetobacter gerneri has 4006 nodes and 374460 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04668 and has 32 connected components, where the component with most
+	nodes has 3931 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 153, the mean node degree is 186.95, and
+	the node degree mode is 1. The top 5 most central nodes are 202952.BBLI01000009_gene911
+	(degree 1235), 202952.BBLI01000031_gene2223 (degree 1207), 202952.BBLI01000009_gene846
+	(degree 1156), 202952.BBLI01000031_gene2241 (degree 1042) and 202952.BBLI01000036_gene2442
+	(degree 1020).
 	
 
 

@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:14.138746
 
-The undirected graph Finegoldia magna ATCC29328 has 1810 nodes and 126136 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07705
-and has 2 connected components, where the component with most nodes has 1808 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 139.38, and the node degree mode is 13. The top 5
-most central nodes are 334413.FMG_1359 (degree 778), 334413.FMG_0343 (degree 778),
-334413.FMG_0309 (degree 682), 334413.FMG_0826 (degree 644) and 334413.FMG_0314 (degree
-606).
+The undirected graph Finegoldia magna ATCC29328 has 1810 nodes and 126136
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07705 and has 2 connected components, where the component
+with most nodes has 1808 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 139.38,
+and the node degree mode is 13. The top 5 most central nodes are 334413.FMG_1359
+(degree 778), 334413.FMG_0343 (degree 778), 334413.FMG_0309 (degree 682),
+334413.FMG_0826 (degree 644) and 334413.FMG_0314 (degree 606).
 
 
 References
@@ -107,14 +107,14 @@ def FinegoldiaMagnaAtcc29328(
 	
 	Datetime: 2021-02-02 20:30:14.138746
 	
-	The undirected graph Finegoldia magna ATCC29328 has 1810 nodes and 126136 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07705
-	and has 2 connected components, where the component with most nodes has 1808 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 139.38, and the node degree mode is 13. The top 5
-	most central nodes are 334413.FMG_1359 (degree 778), 334413.FMG_0343 (degree 778),
-	334413.FMG_0309 (degree 682), 334413.FMG_0826 (degree 644) and 334413.FMG_0314 (degree
-	606).
+	The undirected graph Finegoldia magna ATCC29328 has 1810 nodes and 126136
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07705 and has 2 connected components, where the component
+	with most nodes has 1808 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 139.38,
+	and the node degree mode is 13. The top 5 most central nodes are 334413.FMG_1359
+	(degree 778), 334413.FMG_0343 (degree 778), 334413.FMG_0309 (degree 682),
+	334413.FMG_0826 (degree 644) and 334413.FMG_0314 (degree 606).
 	
 
 

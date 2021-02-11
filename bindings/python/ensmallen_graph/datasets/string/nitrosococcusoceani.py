@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:21.436820
 
-The undirected graph Nitrosococcus oceani has 2979 nodes and 297416 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06705 and
-has 6 connected components, where the component with most nodes has 2969 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 199.68, and the node degree mode is 3. The top 5 most central
-nodes are 323261.Noc_0554 (degree 1251), 323261.Noc_1232 (degree 1242), 323261.Noc_2178
-(degree 1095), 323261.Noc_1459 (degree 1095) and 323261.Noc_1968 (degree 963).
+The undirected graph Nitrosococcus oceani has 2979 nodes and 297416 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06705 and has 6 connected components, where the component with most
+nodes has 2969 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 199.68, and
+the node degree mode is 3. The top 5 most central nodes are 323261.Noc_0554
+(degree 1251), 323261.Noc_1232 (degree 1242), 323261.Noc_2178 (degree 1095),
+323261.Noc_1459 (degree 1095) and 323261.Noc_1968 (degree 963).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosococcusOceani(
 	
 	Datetime: 2021-02-02 20:28:21.436820
 	
-	The undirected graph Nitrosococcus oceani has 2979 nodes and 297416 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06705 and
-	has 6 connected components, where the component with most nodes has 2969 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 199.68, and the node degree mode is 3. The top 5 most central
-	nodes are 323261.Noc_0554 (degree 1251), 323261.Noc_1232 (degree 1242), 323261.Noc_2178
-	(degree 1095), 323261.Noc_1459 (degree 1095) and 323261.Noc_1968 (degree 963).
+	The undirected graph Nitrosococcus oceani has 2979 nodes and 297416 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06705 and has 6 connected components, where the component with most
+	nodes has 2969 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 199.68, and
+	the node degree mode is 3. The top 5 most central nodes are 323261.Noc_0554
+	(degree 1251), 323261.Noc_1232 (degree 1242), 323261.Noc_2178 (degree 1095),
+	323261.Noc_1459 (degree 1095) and 323261.Noc_1968 (degree 963).
 	
 
 

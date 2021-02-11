@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:29:43.923128
 
-The undirected graph Microplitis demolitor has 9894 nodes and 1350236 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02759 and
-has 9 connected components, where the component with most nodes has 9873 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 272.94, and the node degree mode is 7. The top 5 most central
-nodes are 69319.XP_008544373.1 (degree 3596), 69319.XP_008544233.1 (degree 2452),
-69319.XP_008555690.1 (degree 2437), 69319.XP_008551878.1 (degree 2437) and 69319.XP_008549661.1
+The undirected graph Microplitis demolitor has 9894 nodes and 1350236 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02759 and has 9 connected components, where the component with most
+nodes has 9873 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 272.94, and
+the node degree mode is 7. The top 5 most central nodes are 69319.XP_008544373.1
+(degree 3596), 69319.XP_008544233.1 (degree 2452), 69319.XP_008555690.1
+(degree 2437), 69319.XP_008551878.1 (degree 2437) and 69319.XP_008549661.1
 (degree 2374).
 
 
@@ -107,13 +108,14 @@ def MicroplitisDemolitor(
 	
 	Datetime: 2021-02-02 18:29:43.923128
 	
-	The undirected graph Microplitis demolitor has 9894 nodes and 1350236 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02759 and
-	has 9 connected components, where the component with most nodes has 9873 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 272.94, and the node degree mode is 7. The top 5 most central
-	nodes are 69319.XP_008544373.1 (degree 3596), 69319.XP_008544233.1 (degree 2452),
-	69319.XP_008555690.1 (degree 2437), 69319.XP_008551878.1 (degree 2437) and 69319.XP_008549661.1
+	The undirected graph Microplitis demolitor has 9894 nodes and 1350236 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02759 and has 9 connected components, where the component with most
+	nodes has 9873 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 272.94, and
+	the node degree mode is 7. The top 5 most central nodes are 69319.XP_008544373.1
+	(degree 3596), 69319.XP_008544233.1 (degree 2452), 69319.XP_008555690.1
+	(degree 2437), 69319.XP_008551878.1 (degree 2437) and 69319.XP_008549661.1
 	(degree 2374).
 	
 

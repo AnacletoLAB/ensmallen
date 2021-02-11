@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:15.195135
 
-The undirected graph Gemella sanguinis has 1664 nodes and 102550 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07412 and
-has 5 connected components, where the component with most nodes has 1652 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 103,
-the mean node degree is 123.26, and the node degree mode is 8. The top 5 most central
-nodes are 562983.HMPREF0433_00301 (degree 731), 562983.HMPREF0433_00718 (degree 724),
-562983.HMPREF0433_00207 (degree 549), 562983.HMPREF0433_01631 (degree 548) and 562983.HMPREF0433_00935
+The undirected graph Gemella sanguinis has 1664 nodes and 102550 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07412 and has 5 connected components, where the component with most
+nodes has 1652 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 103, the mean node degree is 123.26, and
+the node degree mode is 8. The top 5 most central nodes are 562983.HMPREF0433_00301
+(degree 731), 562983.HMPREF0433_00718 (degree 724), 562983.HMPREF0433_00207
+(degree 549), 562983.HMPREF0433_01631 (degree 548) and 562983.HMPREF0433_00935
 (degree 517).
 
 
@@ -107,13 +108,14 @@ def GemellaSanguinis(
 	
 	Datetime: 2021-02-02 21:12:15.195135
 	
-	The undirected graph Gemella sanguinis has 1664 nodes and 102550 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07412 and
-	has 5 connected components, where the component with most nodes has 1652 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 103,
-	the mean node degree is 123.26, and the node degree mode is 8. The top 5 most central
-	nodes are 562983.HMPREF0433_00301 (degree 731), 562983.HMPREF0433_00718 (degree 724),
-	562983.HMPREF0433_00207 (degree 549), 562983.HMPREF0433_01631 (degree 548) and 562983.HMPREF0433_00935
+	The undirected graph Gemella sanguinis has 1664 nodes and 102550 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07412 and has 5 connected components, where the component with most
+	nodes has 1652 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 103, the mean node degree is 123.26, and
+	the node degree mode is 8. The top 5 most central nodes are 562983.HMPREF0433_00301
+	(degree 731), 562983.HMPREF0433_00718 (degree 724), 562983.HMPREF0433_00207
+	(degree 549), 562983.HMPREF0433_01631 (degree 548) and 562983.HMPREF0433_00935
 	(degree 517).
 	
 

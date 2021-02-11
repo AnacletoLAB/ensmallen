@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:54.093767
 
-The undirected graph Fusobacterium russii has 1754 nodes and 118174 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07687 and
-has 4 connected components, where the component with most nodes has 1745 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 114,
-the mean node degree is 134.75, and the node degree mode is 7. The top 5 most central
-nodes are 1278306.KB906909_gene553 (degree 772), 1278306.KB906918_gene1257 (degree
-699), 1278306.KB906907_gene26 (degree 653), 1278306.KB906906_gene341 (degree 638)
-and 1278306.KB906906_gene257 (degree 621).
+The undirected graph Fusobacterium russii has 1754 nodes and 118174 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07687 and has 4 connected components, where the component with most
+nodes has 1745 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 114, the mean node degree is 134.75, and
+the node degree mode is 7. The top 5 most central nodes are 1278306.KB906909_gene553
+(degree 772), 1278306.KB906918_gene1257 (degree 699), 1278306.KB906907_gene26
+(degree 653), 1278306.KB906906_gene341 (degree 638) and 1278306.KB906906_gene257
+(degree 621).
 
 
 References
@@ -107,14 +108,15 @@ def FusobacteriumRussii(
 	
 	Datetime: 2021-02-02 23:38:54.093767
 	
-	The undirected graph Fusobacterium russii has 1754 nodes and 118174 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07687 and
-	has 4 connected components, where the component with most nodes has 1745 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 114,
-	the mean node degree is 134.75, and the node degree mode is 7. The top 5 most central
-	nodes are 1278306.KB906909_gene553 (degree 772), 1278306.KB906918_gene1257 (degree
-	699), 1278306.KB906907_gene26 (degree 653), 1278306.KB906906_gene341 (degree 638)
-	and 1278306.KB906906_gene257 (degree 621).
+	The undirected graph Fusobacterium russii has 1754 nodes and 118174 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07687 and has 4 connected components, where the component with most
+	nodes has 1745 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 114, the mean node degree is 134.75, and
+	the node degree mode is 7. The top 5 most central nodes are 1278306.KB906909_gene553
+	(degree 772), 1278306.KB906918_gene1257 (degree 699), 1278306.KB906907_gene26
+	(degree 653), 1278306.KB906906_gene341 (degree 638) and 1278306.KB906906_gene257
+	(degree 621).
 	
 
 

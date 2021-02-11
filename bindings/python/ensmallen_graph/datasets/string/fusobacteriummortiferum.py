@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:55:23.496426
 
-The undirected graph Fusobacterium mortiferum has 2527 nodes and 211019 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06612
-and has 7 connected components, where the component with most nodes has 2512 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 136, the mean node degree is 167.01, and the node degree mode is 12. The top 5
-most central nodes are 469616.FMAG_02303 (degree 1095), 469616.FMAG_00833 (degree
-1048), 469616.FMAG_01436 (degree 925), 469616.FMAG_02110 (degree 882) and 469616.FMAG_00338
-(degree 863).
+The undirected graph Fusobacterium mortiferum has 2527 nodes and 211019
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06612 and has 7 connected components, where the component
+with most nodes has 2512 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 136, the mean node degree is 167.01,
+and the node degree mode is 12. The top 5 most central nodes are 469616.FMAG_02303
+(degree 1095), 469616.FMAG_00833 (degree 1048), 469616.FMAG_01436 (degree
+925), 469616.FMAG_02110 (degree 882) and 469616.FMAG_00338 (degree 863).
 
 
 References
@@ -107,14 +107,14 @@ def FusobacteriumMortiferum(
 	
 	Datetime: 2021-02-02 20:55:23.496426
 	
-	The undirected graph Fusobacterium mortiferum has 2527 nodes and 211019 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06612
-	and has 7 connected components, where the component with most nodes has 2512 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 136, the mean node degree is 167.01, and the node degree mode is 12. The top 5
-	most central nodes are 469616.FMAG_02303 (degree 1095), 469616.FMAG_00833 (degree
-	1048), 469616.FMAG_01436 (degree 925), 469616.FMAG_02110 (degree 882) and 469616.FMAG_00338
-	(degree 863).
+	The undirected graph Fusobacterium mortiferum has 2527 nodes and 211019
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06612 and has 7 connected components, where the component
+	with most nodes has 2512 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 136, the mean node degree is 167.01,
+	and the node degree mode is 12. The top 5 most central nodes are 469616.FMAG_02303
+	(degree 1095), 469616.FMAG_00833 (degree 1048), 469616.FMAG_01436 (degree
+	925), 469616.FMAG_02110 (degree 882) and 469616.FMAG_00338 (degree 863).
 	
 
 

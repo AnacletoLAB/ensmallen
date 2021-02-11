@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:13:16.289116
 
-The undirected graph Bordetella pertussis 18323 has 3370 nodes and 349584 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06158
-and has 3 connected components, where the component with most nodes has 3365 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 181, the mean node degree is 207.47, and the node degree mode is 13. The top 5
-most central nodes are 568706.BN118_1219 (degree 1290), 568706.BN118_2298 (degree
-1195), 568706.BN118_2349 (degree 988), 568706.BN118_3721 (degree 948) and 568706.BN118_1828
-(degree 937).
+The undirected graph Bordetella pertussis 18323 has 3370 nodes and 349584
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06158 and has 3 connected components, where the component
+with most nodes has 3365 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 181, the mean node degree is 207.47,
+and the node degree mode is 13. The top 5 most central nodes are 568706.BN118_1219
+(degree 1290), 568706.BN118_2298 (degree 1195), 568706.BN118_2349 (degree
+988), 568706.BN118_3721 (degree 948) and 568706.BN118_1828 (degree 937).
 
 
 References
@@ -107,14 +107,14 @@ def BordetellaPertussis18323(
 	
 	Datetime: 2021-02-02 21:13:16.289116
 	
-	The undirected graph Bordetella pertussis 18323 has 3370 nodes and 349584 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06158
-	and has 3 connected components, where the component with most nodes has 3365 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 181, the mean node degree is 207.47, and the node degree mode is 13. The top 5
-	most central nodes are 568706.BN118_1219 (degree 1290), 568706.BN118_2298 (degree
-	1195), 568706.BN118_2349 (degree 988), 568706.BN118_3721 (degree 948) and 568706.BN118_1828
-	(degree 937).
+	The undirected graph Bordetella pertussis 18323 has 3370 nodes and 349584
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06158 and has 3 connected components, where the component
+	with most nodes has 3365 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 181, the mean node degree is 207.47,
+	and the node degree mode is 13. The top 5 most central nodes are 568706.BN118_1219
+	(degree 1290), 568706.BN118_2298 (degree 1195), 568706.BN118_2349 (degree
+	988), 568706.BN118_3721 (degree 948) and 568706.BN118_1828 (degree 937).
 	
 
 

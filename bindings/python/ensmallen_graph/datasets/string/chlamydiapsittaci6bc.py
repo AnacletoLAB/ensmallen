@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:29:51.529427
 
-The undirected graph Chlamydia psittaci 6BC has 986 nodes and 45322 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09333 and
-has 14 connected components, where the component with most nodes has 955 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 78,
-the mean node degree is 91.93, and the node degree mode is 4. The top 5 most central
-nodes are 331636.G5O_0148 (degree 445), 331636.G5O_0170 (degree 414), 331636.G5O_0204
-(degree 376), 331636.G5O_0901 (degree 367) and 331636.G5O_0273 (degree 367).
+The undirected graph Chlamydia psittaci 6BC has 986 nodes and 45322 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09333 and has 14 connected components, where the component with most
+nodes has 955 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 78, the mean node degree is 91.93, and
+the node degree mode is 4. The top 5 most central nodes are 331636.G5O_0148
+(degree 445), 331636.G5O_0170 (degree 414), 331636.G5O_0204 (degree 376),
+331636.G5O_0901 (degree 367) and 331636.G5O_0273 (degree 367).
 
 
 References
@@ -106,13 +107,14 @@ def ChlamydiaPsittaci6bc(
 	
 	Datetime: 2021-02-02 20:29:51.529427
 	
-	The undirected graph Chlamydia psittaci 6BC has 986 nodes and 45322 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09333 and
-	has 14 connected components, where the component with most nodes has 955 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 78,
-	the mean node degree is 91.93, and the node degree mode is 4. The top 5 most central
-	nodes are 331636.G5O_0148 (degree 445), 331636.G5O_0170 (degree 414), 331636.G5O_0204
-	(degree 376), 331636.G5O_0901 (degree 367) and 331636.G5O_0273 (degree 367).
+	The undirected graph Chlamydia psittaci 6BC has 986 nodes and 45322 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09333 and has 14 connected components, where the component with most
+	nodes has 955 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 78, the mean node degree is 91.93, and
+	the node degree mode is 4. The top 5 most central nodes are 331636.G5O_0148
+	(degree 445), 331636.G5O_0170 (degree 414), 331636.G5O_0204 (degree 376),
+	331636.G5O_0901 (degree 367) and 331636.G5O_0273 (degree 367).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:04:39.103005
 
-The undirected graph Carnobacterium mobile has 2445 nodes and 200877 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06723 and
-has 12 connected components, where the component with most nodes has 2417 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 123,
-the mean node degree is 164.32, and the node degree mode is 2. The top 5 most central
-nodes are 1449342.JQMR01000001_gene897 (degree 1092), 1449342.JQMR01000001_gene925
-(degree 952), 1449342.JQMR01000001_gene1711 (degree 940), 1449342.JQMR01000001_gene670
-(degree 879) and 1449342.JQMR01000001_gene420 (degree 833).
+The undirected graph Carnobacterium mobile has 2445 nodes and 200877 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06723 and has 12 connected components, where the component with most
+nodes has 2417 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 123, the mean node degree is 164.32, and
+the node degree mode is 2. The top 5 most central nodes are 1449342.JQMR01000001_gene897
+(degree 1092), 1449342.JQMR01000001_gene925 (degree 952), 1449342.JQMR01000001_gene1711
+(degree 940), 1449342.JQMR01000001_gene670 (degree 879) and 1449342.JQMR01000001_gene420
+(degree 833).
 
 
 References
@@ -107,14 +108,15 @@ def CarnobacteriumMobile(
 	
 	Datetime: 2021-02-03 23:04:39.103005
 	
-	The undirected graph Carnobacterium mobile has 2445 nodes and 200877 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06723 and
-	has 12 connected components, where the component with most nodes has 2417 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 123,
-	the mean node degree is 164.32, and the node degree mode is 2. The top 5 most central
-	nodes are 1449342.JQMR01000001_gene897 (degree 1092), 1449342.JQMR01000001_gene925
-	(degree 952), 1449342.JQMR01000001_gene1711 (degree 940), 1449342.JQMR01000001_gene670
-	(degree 879) and 1449342.JQMR01000001_gene420 (degree 833).
+	The undirected graph Carnobacterium mobile has 2445 nodes and 200877 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06723 and has 12 connected components, where the component with most
+	nodes has 2417 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 123, the mean node degree is 164.32, and
+	the node degree mode is 2. The top 5 most central nodes are 1449342.JQMR01000001_gene897
+	(degree 1092), 1449342.JQMR01000001_gene925 (degree 952), 1449342.JQMR01000001_gene1711
+	(degree 940), 1449342.JQMR01000001_gene670 (degree 879) and 1449342.JQMR01000001_gene420
+	(degree 833).
 	
 
 

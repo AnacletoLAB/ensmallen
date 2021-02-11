@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:27.586214
 
-The undirected graph Spirochaeta africana has 2770 nodes and 218619 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05701 and
-has 7 connected components, where the component with most nodes has 2755 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 157.85, and the node degree mode is 5. The top 5 most central
-nodes are 889378.Spiaf_2567 (degree 993), 889378.Spiaf_1746 (degree 960), 889378.Spiaf_0731
-(degree 925), 889378.Spiaf_2184 (degree 897) and 889378.Spiaf_2805 (degree 874).
+The undirected graph Spirochaeta africana has 2770 nodes and 218619 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05701 and has 7 connected components, where the component with most
+nodes has 2755 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 121, the mean node degree is 157.85, and
+the node degree mode is 5. The top 5 most central nodes are 889378.Spiaf_2567
+(degree 993), 889378.Spiaf_1746 (degree 960), 889378.Spiaf_0731 (degree
+925), 889378.Spiaf_2184 (degree 897) and 889378.Spiaf_2805 (degree 874).
 
 
 References
@@ -106,13 +107,14 @@ def SpirochaetaAfricana(
 	
 	Datetime: 2021-02-02 21:53:27.586214
 	
-	The undirected graph Spirochaeta africana has 2770 nodes and 218619 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05701 and
-	has 7 connected components, where the component with most nodes has 2755 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 157.85, and the node degree mode is 5. The top 5 most central
-	nodes are 889378.Spiaf_2567 (degree 993), 889378.Spiaf_1746 (degree 960), 889378.Spiaf_0731
-	(degree 925), 889378.Spiaf_2184 (degree 897) and 889378.Spiaf_2805 (degree 874).
+	The undirected graph Spirochaeta africana has 2770 nodes and 218619 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05701 and has 7 connected components, where the component with most
+	nodes has 2755 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 121, the mean node degree is 157.85, and
+	the node degree mode is 5. The top 5 most central nodes are 889378.Spiaf_2567
+	(degree 993), 889378.Spiaf_1746 (degree 960), 889378.Spiaf_0731 (degree
+	925), 889378.Spiaf_2184 (degree 897) and 889378.Spiaf_2805 (degree 874).
 	
 
 

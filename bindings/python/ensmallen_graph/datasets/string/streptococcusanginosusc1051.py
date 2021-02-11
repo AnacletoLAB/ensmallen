@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:47:09.521369
 
-The undirected graph Streptococcus anginosus C1051 has 1718 nodes and 113239 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07678
-and has 3 connected components, where the component with most nodes has 1714 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 104, the mean node degree is 131.83, and the node degree mode is 11. The top 5
-most central nodes are 862970.SAIN_1707 (degree 830), 862970.SAIN_0941 (degree 660),
-862970.SAIN_0081 (degree 647), 862970.SAIN_1468 (degree 613) and 862970.SAIN_0491
-(degree 606).
+The undirected graph Streptococcus anginosus C1051 has 1718 nodes and 113239
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07678 and has 3 connected components, where the component
+with most nodes has 1714 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 104, the mean node degree is 131.83,
+and the node degree mode is 11. The top 5 most central nodes are 862970.SAIN_1707
+(degree 830), 862970.SAIN_0941 (degree 660), 862970.SAIN_0081 (degree 647),
+862970.SAIN_1468 (degree 613) and 862970.SAIN_0491 (degree 606).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusAnginosusC1051(
 	
 	Datetime: 2021-02-02 21:47:09.521369
 	
-	The undirected graph Streptococcus anginosus C1051 has 1718 nodes and 113239 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07678
-	and has 3 connected components, where the component with most nodes has 1714 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 104, the mean node degree is 131.83, and the node degree mode is 11. The top 5
-	most central nodes are 862970.SAIN_1707 (degree 830), 862970.SAIN_0941 (degree 660),
-	862970.SAIN_0081 (degree 647), 862970.SAIN_1468 (degree 613) and 862970.SAIN_0491
-	(degree 606).
+	The undirected graph Streptococcus anginosus C1051 has 1718 nodes and 113239
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07678 and has 3 connected components, where the component
+	with most nodes has 1714 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 104, the mean node degree is 131.83,
+	and the node degree mode is 11. The top 5 most central nodes are 862970.SAIN_1707
+	(degree 830), 862970.SAIN_0941 (degree 660), 862970.SAIN_0081 (degree 647),
+	862970.SAIN_1468 (degree 613) and 862970.SAIN_0491 (degree 606).
 	
 
 

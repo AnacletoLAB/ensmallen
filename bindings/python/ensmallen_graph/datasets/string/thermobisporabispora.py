@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:54:48.775976
 
-The undirected graph Thermobispora bispora has 3498 nodes and 285214 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04663 and
-has 9 connected components, where the component with most nodes has 3481 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 163.07, and the node degree mode is 3. The top 5 most central
-nodes are 469371.Tbis_0185 (degree 1524), 469371.Tbis_1480 (degree 1168), 469371.Tbis_1475
-(degree 1165), 469371.Tbis_1458 (degree 989) and 469371.Tbis_0629 (degree 969).
+The undirected graph Thermobispora bispora has 3498 nodes and 285214 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04663 and has 9 connected components, where the component with most
+nodes has 3481 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 163.07, and
+the node degree mode is 3. The top 5 most central nodes are 469371.Tbis_0185
+(degree 1524), 469371.Tbis_1480 (degree 1168), 469371.Tbis_1475 (degree
+1165), 469371.Tbis_1458 (degree 989) and 469371.Tbis_0629 (degree 969).
 
 
 References
@@ -106,13 +107,14 @@ def ThermobisporaBispora(
 	
 	Datetime: 2021-02-02 20:54:48.775976
 	
-	The undirected graph Thermobispora bispora has 3498 nodes and 285214 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04663 and
-	has 9 connected components, where the component with most nodes has 3481 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 163.07, and the node degree mode is 3. The top 5 most central
-	nodes are 469371.Tbis_0185 (degree 1524), 469371.Tbis_1480 (degree 1168), 469371.Tbis_1475
-	(degree 1165), 469371.Tbis_1458 (degree 989) and 469371.Tbis_0629 (degree 969).
+	The undirected graph Thermobispora bispora has 3498 nodes and 285214 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04663 and has 9 connected components, where the component with most
+	nodes has 3481 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 163.07, and
+	the node degree mode is 3. The top 5 most central nodes are 469371.Tbis_0185
+	(degree 1524), 469371.Tbis_1480 (degree 1168), 469371.Tbis_1475 (degree
+	1165), 469371.Tbis_1458 (degree 989) and 469371.Tbis_0629 (degree 969).
 	
 
 

@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:55:10.994814
 
-The undirected graph socfb-Oberlin44 has 2920 nodes and 89912 unweighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02110 and
-is connected, as it has a single component. The graph median node degree is 50, the
-mean node degree is 61.58, and the node degree mode is 1. The top 5 most central
-nodes are 77 (degree 478), 2529 (degree 476), 276 (degree 467), 1032 (degree 436)
-and 107 (degree 425).
+The undirected graph socfb-Oberlin44 has 2920 nodes and 89912 unweighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02110 and is connected, as it has a single component. The graph median
+node degree is 50, the mean node degree is 61.58, and the node degree mode
+is 1. The top 5 most central nodes are 77 (degree 478), 2529 (degree 476),
+276 (degree 467), 1032 (degree 436) and 107 (degree 425).
 
 
 References
@@ -123,12 +123,12 @@ def SocfbOberlin44(
 	
 	Datetime: 2021-02-06 10:55:10.994814
 	
-	The undirected graph socfb-Oberlin44 has 2920 nodes and 89912 unweighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02110 and
-	is connected, as it has a single component. The graph median node degree is 50, the
-	mean node degree is 61.58, and the node degree mode is 1. The top 5 most central
-	nodes are 77 (degree 478), 2529 (degree 476), 276 (degree 467), 1032 (degree 436)
-	and 107 (degree 425).
+	The undirected graph socfb-Oberlin44 has 2920 nodes and 89912 unweighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02110 and is connected, as it has a single component. The graph median
+	node degree is 50, the mean node degree is 61.58, and the node degree mode
+	is 1. The top 5 most central nodes are 77 (degree 478), 2529 (degree 476),
+	276 (degree 467), 1032 (degree 436) and 107 (degree 425).
 	
 
 

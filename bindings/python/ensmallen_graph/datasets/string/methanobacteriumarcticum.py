@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:37:59.302269
 
-The undirected graph Methanobacterium arcticum has 3275 nodes and 346969 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06472
-and has 58 connected components, where the component with most nodes has 3132 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 180, the mean node degree is 211.89, and the node degree mode is 1. The top 5
-most central nodes are 386456.JQKN01000014_gene3150 (degree 1284), 386456.JQKN01000009_gene1213
-(degree 1145), 386456.JQKN01000012_gene1035 (degree 1139), 386456.JQKN01000001_gene2170
-(degree 1129) and 386456.JQKN01000007_gene3326 (degree 1127).
+The undirected graph Methanobacterium arcticum has 3275 nodes and 346969
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06472 and has 58 connected components, where the component
+with most nodes has 3132 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 180, the mean node degree is 211.89,
+and the node degree mode is 1. The top 5 most central nodes are 386456.JQKN01000014_gene3150
+(degree 1284), 386456.JQKN01000009_gene1213 (degree 1145), 386456.JQKN01000012_gene1035
+(degree 1139), 386456.JQKN01000001_gene2170 (degree 1129) and 386456.JQKN01000007_gene3326
+(degree 1127).
 
 
 References
@@ -107,14 +108,15 @@ def MethanobacteriumArcticum(
 	
 	Datetime: 2021-02-02 20:37:59.302269
 	
-	The undirected graph Methanobacterium arcticum has 3275 nodes and 346969 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06472
-	and has 58 connected components, where the component with most nodes has 3132 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 180, the mean node degree is 211.89, and the node degree mode is 1. The top 5
-	most central nodes are 386456.JQKN01000014_gene3150 (degree 1284), 386456.JQKN01000009_gene1213
-	(degree 1145), 386456.JQKN01000012_gene1035 (degree 1139), 386456.JQKN01000001_gene2170
-	(degree 1129) and 386456.JQKN01000007_gene3326 (degree 1127).
+	The undirected graph Methanobacterium arcticum has 3275 nodes and 346969
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06472 and has 58 connected components, where the component
+	with most nodes has 3132 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 180, the mean node degree is 211.89,
+	and the node degree mode is 1. The top 5 most central nodes are 386456.JQKN01000014_gene3150
+	(degree 1284), 386456.JQKN01000009_gene1213 (degree 1145), 386456.JQKN01000012_gene1035
+	(degree 1139), 386456.JQKN01000001_gene2170 (degree 1129) and 386456.JQKN01000007_gene3326
+	(degree 1127).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:53.563383
 
-The undirected graph Elizabethkingia meningoseptica has 3338 nodes and 234582 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04212
-and has 24 connected components, where the component with most nodes has 3278 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 120, the mean node degree is 140.55, and the node degree mode is 1. The top 5
-most central nodes are 1216967.L100_03732 (degree 1154), 1216967.L100_09204 (degree
-913), 1216967.L100_16690 (degree 802), 1216967.L100_04976 (degree 773) and 1216967.L100_13018
+The undirected graph Elizabethkingia meningoseptica has 3338 nodes and
+234582 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04212 and has 24 connected components, where the
+component with most nodes has 3278 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+is 140.55, and the node degree mode is 1. The top 5 most central nodes
+are 1216967.L100_03732 (degree 1154), 1216967.L100_09204 (degree 913),
+1216967.L100_16690 (degree 802), 1216967.L100_04976 (degree 773) and 1216967.L100_13018
 (degree 747).
 
 
@@ -107,13 +108,14 @@ def ElizabethkingiaMeningoseptica(
 	
 	Datetime: 2021-02-02 23:20:53.563383
 	
-	The undirected graph Elizabethkingia meningoseptica has 3338 nodes and 234582 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04212
-	and has 24 connected components, where the component with most nodes has 3278 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 120, the mean node degree is 140.55, and the node degree mode is 1. The top 5
-	most central nodes are 1216967.L100_03732 (degree 1154), 1216967.L100_09204 (degree
-	913), 1216967.L100_16690 (degree 802), 1216967.L100_04976 (degree 773) and 1216967.L100_13018
+	The undirected graph Elizabethkingia meningoseptica has 3338 nodes and
+	234582 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04212 and has 24 connected components, where the
+	component with most nodes has 3278 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 120, the mean node degree
+	is 140.55, and the node degree mode is 1. The top 5 most central nodes
+	are 1216967.L100_03732 (degree 1154), 1216967.L100_09204 (degree 913),
+	1216967.L100_16690 (degree 802), 1216967.L100_04976 (degree 773) and 1216967.L100_13018
 	(degree 747).
 	
 

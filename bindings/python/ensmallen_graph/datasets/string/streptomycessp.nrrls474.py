@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:10:58.277524
 
-The undirected graph Streptomyces sp. NRRLS474 has 6973 nodes and 1093603 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04499
-and has 27 connected components, where the component with most nodes has 6920 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 259, the mean node degree is 313.67, and the node degree mode is 1. The top 5
-most central nodes are 1463909.KL585966_gene475 (degree 2266), 1463909.KL585961_gene5995
-(degree 2074), 1463909.KL585947_gene5329 (degree 2039), 1463909.KL585951_gene2241
-(degree 2038) and 1463909.KL585961_gene6023 (degree 2021).
+The undirected graph Streptomyces sp. NRRLS474 has 6973 nodes and 1093603
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04499 and has 27 connected components, where the component
+with most nodes has 6920 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 259, the mean node degree is 313.67,
+and the node degree mode is 1. The top 5 most central nodes are 1463909.KL585966_gene475
+(degree 2266), 1463909.KL585961_gene5995 (degree 2074), 1463909.KL585947_gene5329
+(degree 2039), 1463909.KL585951_gene2241 (degree 2038) and 1463909.KL585961_gene6023
+(degree 2021).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesSp.Nrrls474(
 	
 	Datetime: 2021-02-03 23:10:58.277524
 	
-	The undirected graph Streptomyces sp. NRRLS474 has 6973 nodes and 1093603 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04499
-	and has 27 connected components, where the component with most nodes has 6920 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 259, the mean node degree is 313.67, and the node degree mode is 1. The top 5
-	most central nodes are 1463909.KL585966_gene475 (degree 2266), 1463909.KL585961_gene5995
-	(degree 2074), 1463909.KL585947_gene5329 (degree 2039), 1463909.KL585951_gene2241
-	(degree 2038) and 1463909.KL585961_gene6023 (degree 2021).
+	The undirected graph Streptomyces sp. NRRLS474 has 6973 nodes and 1093603
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04499 and has 27 connected components, where the component
+	with most nodes has 6920 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 259, the mean node degree is 313.67,
+	and the node degree mode is 1. The top 5 most central nodes are 1463909.KL585966_gene475
+	(degree 2266), 1463909.KL585961_gene5995 (degree 2074), 1463909.KL585947_gene5329
+	(degree 2039), 1463909.KL585951_gene2241 (degree 2038) and 1463909.KL585961_gene6023
+	(degree 2021).
 	
 
 

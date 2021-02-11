@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:42:42.972078
 
-The undirected graph Gammaproteobacteria bacterium HdN1 has 3747 nodes and 296487
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04225 and has 11 connected components, where the component with most nodes has
-3724 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 129, the mean node degree is 158.25, and the node degree mode is 2. The
-top 5 most central nodes are 83406.HDN1F_02040 (degree 1420), 83406.HDN1F_32420 (degree
-1082), 83406.HDN1F_22110 (degree 894), 83406.HDN1F_25280 (degree 892) and 83406.HDN1F_23380
-(degree 886).
+The undirected graph Gammaproteobacteria bacterium HdN1 has 3747 nodes
+and 296487 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.04225 and has 11 connected components, where the
+component with most nodes has 3724 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+is 158.25, and the node degree mode is 2. The top 5 most central nodes
+are 83406.HDN1F_02040 (degree 1420), 83406.HDN1F_32420 (degree 1082), 83406.HDN1F_22110
+(degree 894), 83406.HDN1F_25280 (degree 892) and 83406.HDN1F_23380 (degree
+886).
 
 
 References
@@ -107,14 +108,15 @@ def GammaproteobacteriaBacteriumHdn1(
 	
 	Datetime: 2021-02-02 18:42:42.972078
 	
-	The undirected graph Gammaproteobacteria bacterium HdN1 has 3747 nodes and 296487
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04225 and has 11 connected components, where the component with most nodes has
-	3724 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 129, the mean node degree is 158.25, and the node degree mode is 2. The
-	top 5 most central nodes are 83406.HDN1F_02040 (degree 1420), 83406.HDN1F_32420 (degree
-	1082), 83406.HDN1F_22110 (degree 894), 83406.HDN1F_25280 (degree 892) and 83406.HDN1F_23380
-	(degree 886).
+	The undirected graph Gammaproteobacteria bacterium HdN1 has 3747 nodes
+	and 296487 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.04225 and has 11 connected components, where the
+	component with most nodes has 3724 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+	is 158.25, and the node degree mode is 2. The top 5 most central nodes
+	are 83406.HDN1F_02040 (degree 1420), 83406.HDN1F_32420 (degree 1082), 83406.HDN1F_22110
+	(degree 894), 83406.HDN1F_25280 (degree 892) and 83406.HDN1F_23380 (degree
+	886).
 	
 
 

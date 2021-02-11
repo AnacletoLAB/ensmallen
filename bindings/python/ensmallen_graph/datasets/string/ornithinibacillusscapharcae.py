@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:31.070402
 
-The undirected graph Ornithinibacillus scapharcae has 3942 nodes and 512700 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06600
-and has 22 connected components, where the component with most nodes has 3882 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 242, the mean node degree is 260.12, and the node degree mode is 2. The top 5
-most central nodes are 981383.AEWH01000068_gene379 (degree 1432), 981383.AEWH01000018_gene3206
-(degree 1207), 981383.AEWH01000044_gene3135 (degree 1189), 981383.AEWH01000041_gene3621
-(degree 1157) and 981383.AEWH01000020_gene2438 (degree 1140).
+The undirected graph Ornithinibacillus scapharcae has 3942 nodes and 512700
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06600 and has 22 connected components, where the component
+with most nodes has 3882 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 242, the mean node degree is 260.12,
+and the node degree mode is 2. The top 5 most central nodes are 981383.AEWH01000068_gene379
+(degree 1432), 981383.AEWH01000018_gene3206 (degree 1207), 981383.AEWH01000044_gene3135
+(degree 1189), 981383.AEWH01000041_gene3621 (degree 1157) and 981383.AEWH01000020_gene2438
+(degree 1140).
 
 
 References
@@ -107,14 +108,15 @@ def OrnithinibacillusScapharcae(
 	
 	Datetime: 2021-02-02 22:03:31.070402
 	
-	The undirected graph Ornithinibacillus scapharcae has 3942 nodes and 512700 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06600
-	and has 22 connected components, where the component with most nodes has 3882 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 242, the mean node degree is 260.12, and the node degree mode is 2. The top 5
-	most central nodes are 981383.AEWH01000068_gene379 (degree 1432), 981383.AEWH01000018_gene3206
-	(degree 1207), 981383.AEWH01000044_gene3135 (degree 1189), 981383.AEWH01000041_gene3621
-	(degree 1157) and 981383.AEWH01000020_gene2438 (degree 1140).
+	The undirected graph Ornithinibacillus scapharcae has 3942 nodes and 512700
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06600 and has 22 connected components, where the component
+	with most nodes has 3882 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 242, the mean node degree is 260.12,
+	and the node degree mode is 2. The top 5 most central nodes are 981383.AEWH01000068_gene379
+	(degree 1432), 981383.AEWH01000018_gene3206 (degree 1207), 981383.AEWH01000044_gene3135
+	(degree 1189), 981383.AEWH01000041_gene3621 (degree 1157) and 981383.AEWH01000020_gene2438
+	(degree 1140).
 	
 
 

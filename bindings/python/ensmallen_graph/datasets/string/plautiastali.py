@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:53:36.384036
 
-The undirected graph Plautia stali has 5120 nodes and 509968 weighted edges, of which
-none are self-loops. The graph is dense as it has a density of 0.03892 and has 10
-connected components, where the component with most nodes has 5100 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 164,
-the mean node degree is 199.21, and the node degree mode is 1. The top 5 most central
-nodes are 891974.E05_01160 (degree 1789), 891974.E05_19720 (degree 1642), 891974.E05_26560
-(degree 1608), 891974.E05_19710 (degree 1536) and 891974.E05_23560 (degree 1519).
+The undirected graph Plautia stali has 5120 nodes and 509968 weighted edges,
+of which none are self-loops. The graph is dense as it has a density of
+0.03892 and has 10 connected components, where the component with most
+nodes has 5100 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 164, the mean node degree is 199.21, and
+the node degree mode is 1. The top 5 most central nodes are 891974.E05_01160
+(degree 1789), 891974.E05_19720 (degree 1642), 891974.E05_26560 (degree
+1608), 891974.E05_19710 (degree 1536) and 891974.E05_23560 (degree 1519).
 
 
 References
@@ -106,13 +107,14 @@ def PlautiaStali(
 	
 	Datetime: 2021-02-02 21:53:36.384036
 	
-	The undirected graph Plautia stali has 5120 nodes and 509968 weighted edges, of which
-	none are self-loops. The graph is dense as it has a density of 0.03892 and has 10
-	connected components, where the component with most nodes has 5100 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 164,
-	the mean node degree is 199.21, and the node degree mode is 1. The top 5 most central
-	nodes are 891974.E05_01160 (degree 1789), 891974.E05_19720 (degree 1642), 891974.E05_26560
-	(degree 1608), 891974.E05_19710 (degree 1536) and 891974.E05_23560 (degree 1519).
+	The undirected graph Plautia stali has 5120 nodes and 509968 weighted edges,
+	of which none are self-loops. The graph is dense as it has a density of
+	0.03892 and has 10 connected components, where the component with most
+	nodes has 5100 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 164, the mean node degree is 199.21, and
+	the node degree mode is 1. The top 5 most central nodes are 891974.E05_01160
+	(degree 1789), 891974.E05_19720 (degree 1642), 891974.E05_26560 (degree
+	1608), 891974.E05_19710 (degree 1536) and 891974.E05_23560 (degree 1519).
 	
 
 

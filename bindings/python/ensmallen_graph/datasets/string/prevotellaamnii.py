@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:30:09.172722
 
-The undirected graph Prevotella amnii has 2005 nodes and 147649 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.07349 and
-has 15 connected components, where the component with most nodes has 1974 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 127,
-the mean node degree is 147.28, and the node degree mode is 1. The top 5 most central
-nodes are 679191.HMPREF9018_1051 (degree 788), 679191.HMPREF9018_0489 (degree 680),
-679191.HMPREF9018_1199 (degree 670), 679191.HMPREF9018_0953 (degree 605) and 679191.HMPREF9018_1816
+The undirected graph Prevotella amnii has 2005 nodes and 147649 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07349 and has 15 connected components, where the component with most
+nodes has 1974 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 127, the mean node degree is 147.28, and
+the node degree mode is 1. The top 5 most central nodes are 679191.HMPREF9018_1051
+(degree 788), 679191.HMPREF9018_0489 (degree 680), 679191.HMPREF9018_1199
+(degree 670), 679191.HMPREF9018_0953 (degree 605) and 679191.HMPREF9018_1816
 (degree 580).
 
 
@@ -107,13 +108,14 @@ def PrevotellaAmnii(
 	
 	Datetime: 2021-02-02 21:30:09.172722
 	
-	The undirected graph Prevotella amnii has 2005 nodes and 147649 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.07349 and
-	has 15 connected components, where the component with most nodes has 1974 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 127,
-	the mean node degree is 147.28, and the node degree mode is 1. The top 5 most central
-	nodes are 679191.HMPREF9018_1051 (degree 788), 679191.HMPREF9018_0489 (degree 680),
-	679191.HMPREF9018_1199 (degree 670), 679191.HMPREF9018_0953 (degree 605) and 679191.HMPREF9018_1816
+	The undirected graph Prevotella amnii has 2005 nodes and 147649 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07349 and has 15 connected components, where the component with most
+	nodes has 1974 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 127, the mean node degree is 147.28, and
+	the node degree mode is 1. The top 5 most central nodes are 679191.HMPREF9018_1051
+	(degree 788), 679191.HMPREF9018_0489 (degree 680), 679191.HMPREF9018_1199
+	(degree 670), 679191.HMPREF9018_0953 (degree 605) and 679191.HMPREF9018_1816
 	(degree 580).
 	
 

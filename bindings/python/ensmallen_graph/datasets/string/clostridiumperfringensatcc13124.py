@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:58:15.962497
 
-The undirected graph Clostridium perfringens ATCC13124 has 2855 nodes and 230254
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05652 and has 18 connected components, where the component with most nodes has
-2813 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 138, the mean node degree is 161.30, and the node degree mode is 2. The
-top 5 most central nodes are 195103.CPF_2250 (degree 1211), 195103.CPF_2558 (degree
-902), 195103.CPF_1314 (degree 892), 195103.CPF_1073 (degree 869) and 195103.CPF_1655
-(degree 861).
+The undirected graph Clostridium perfringens ATCC13124 has 2855 nodes and
+230254 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05652 and has 18 connected components, where the
+component with most nodes has 2813 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+is 161.30, and the node degree mode is 2. The top 5 most central nodes
+are 195103.CPF_2250 (degree 1211), 195103.CPF_2558 (degree 902), 195103.CPF_1314
+(degree 892), 195103.CPF_1073 (degree 869) and 195103.CPF_1655 (degree
+861).
 
 
 References
@@ -107,14 +108,15 @@ def ClostridiumPerfringensAtcc13124(
 	
 	Datetime: 2021-02-02 19:58:15.962497
 	
-	The undirected graph Clostridium perfringens ATCC13124 has 2855 nodes and 230254
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05652 and has 18 connected components, where the component with most nodes has
-	2813 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 138, the mean node degree is 161.30, and the node degree mode is 2. The
-	top 5 most central nodes are 195103.CPF_2250 (degree 1211), 195103.CPF_2558 (degree
-	902), 195103.CPF_1314 (degree 892), 195103.CPF_1073 (degree 869) and 195103.CPF_1655
-	(degree 861).
+	The undirected graph Clostridium perfringens ATCC13124 has 2855 nodes and
+	230254 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05652 and has 18 connected components, where the
+	component with most nodes has 2813 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 138, the mean node degree
+	is 161.30, and the node degree mode is 2. The top 5 most central nodes
+	are 195103.CPF_2250 (degree 1211), 195103.CPF_2558 (degree 902), 195103.CPF_1314
+	(degree 892), 195103.CPF_1073 (degree 869) and 195103.CPF_1655 (degree
+	861).
 	
 
 

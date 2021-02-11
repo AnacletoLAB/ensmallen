@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:42:13.195135
 
-The undirected graph Bifidobacterium stellenboschense has 2185 nodes and 173321 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07264
-and has 12 connected components, where the component with most nodes has 2156 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 145, the mean node degree is 158.65, and the node degree mode is 4. The top 5
-most central nodes are 762211.BSTEL_0429 (degree 874), 762211.BSTEL_1345 (degree
-854), 762211.BSTEL_0010 (degree 846), 762211.BSTEL_1107 (degree 823) and 762211.BSTEL_0447
-(degree 717).
+The undirected graph Bifidobacterium stellenboschense has 2185 nodes and
+173321 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.07264 and has 12 connected components, where the
+component with most nodes has 2156 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+is 158.65, and the node degree mode is 4. The top 5 most central nodes
+are 762211.BSTEL_0429 (degree 874), 762211.BSTEL_1345 (degree 854), 762211.BSTEL_0010
+(degree 846), 762211.BSTEL_1107 (degree 823) and 762211.BSTEL_0447 (degree
+717).
 
 
 References
@@ -107,14 +108,15 @@ def BifidobacteriumStellenboschense(
 	
 	Datetime: 2021-02-02 21:42:13.195135
 	
-	The undirected graph Bifidobacterium stellenboschense has 2185 nodes and 173321 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07264
-	and has 12 connected components, where the component with most nodes has 2156 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 145, the mean node degree is 158.65, and the node degree mode is 4. The top 5
-	most central nodes are 762211.BSTEL_0429 (degree 874), 762211.BSTEL_1345 (degree
-	854), 762211.BSTEL_0010 (degree 846), 762211.BSTEL_1107 (degree 823) and 762211.BSTEL_0447
-	(degree 717).
+	The undirected graph Bifidobacterium stellenboschense has 2185 nodes and
+	173321 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.07264 and has 12 connected components, where the
+	component with most nodes has 2156 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 145, the mean node degree
+	is 158.65, and the node degree mode is 4. The top 5 most central nodes
+	are 762211.BSTEL_0429 (degree 874), 762211.BSTEL_1345 (degree 854), 762211.BSTEL_0010
+	(degree 846), 762211.BSTEL_1107 (degree 823) and 762211.BSTEL_0447 (degree
+	717).
 	
 
 

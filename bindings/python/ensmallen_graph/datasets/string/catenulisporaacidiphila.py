@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:57:22.869970
 
-The undirected graph Catenulispora acidiphila has 8845 nodes and 1432285 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03662
-and has 33 connected components, where the component with most nodes has 8765 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 312, the mean node degree is 323.86, and the node degree mode is 2. The top 5
-most central nodes are 479433.Caci_2598 (degree 5018), 479433.Caci_2597 (degree 2670),
-479433.Caci_3328 (degree 2456), 479433.Caci_4117 (degree 2455) and 479433.Caci_5677
-(degree 2247).
+The undirected graph Catenulispora acidiphila has 8845 nodes and 1432285
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03662 and has 33 connected components, where the component
+with most nodes has 8765 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 312, the mean node degree is 323.86,
+and the node degree mode is 2. The top 5 most central nodes are 479433.Caci_2598
+(degree 5018), 479433.Caci_2597 (degree 2670), 479433.Caci_3328 (degree
+2456), 479433.Caci_4117 (degree 2455) and 479433.Caci_5677 (degree 2247).
 
 
 References
@@ -107,14 +107,14 @@ def CatenulisporaAcidiphila(
 	
 	Datetime: 2021-02-02 20:57:22.869970
 	
-	The undirected graph Catenulispora acidiphila has 8845 nodes and 1432285 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03662
-	and has 33 connected components, where the component with most nodes has 8765 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 312, the mean node degree is 323.86, and the node degree mode is 2. The top 5
-	most central nodes are 479433.Caci_2598 (degree 5018), 479433.Caci_2597 (degree 2670),
-	479433.Caci_3328 (degree 2456), 479433.Caci_4117 (degree 2455) and 479433.Caci_5677
-	(degree 2247).
+	The undirected graph Catenulispora acidiphila has 8845 nodes and 1432285
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03662 and has 33 connected components, where the component
+	with most nodes has 8765 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 312, the mean node degree is 323.86,
+	and the node degree mode is 2. The top 5 most central nodes are 479433.Caci_2598
+	(degree 5018), 479433.Caci_2597 (degree 2670), 479433.Caci_3328 (degree
+	2456), 479433.Caci_4117 (degree 2455) and 479433.Caci_5677 (degree 2247).
 	
 
 

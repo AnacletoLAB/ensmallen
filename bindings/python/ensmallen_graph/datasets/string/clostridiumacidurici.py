@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:54:56.084245
 
-The undirected graph Clostridium acidurici has 2794 nodes and 156677 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04015 and
-has 14 connected components, where the component with most nodes has 2762 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 92,
-the mean node degree is 112.15, and the node degree mode is 2. The top 5 most central
-nodes are 1128398.Curi_c20330 (degree 896), 1128398.Curi_c14360 (degree 763), 1128398.Curi_c06920
-(degree 689), 1128398.Curi_c18030 (degree 659) and 1128398.Curi_c25950 (degree 640).
+The undirected graph Clostridium acidurici has 2794 nodes and 156677 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04015 and has 14 connected components, where the component with most
+nodes has 2762 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 92, the mean node degree is 112.15, and
+the node degree mode is 2. The top 5 most central nodes are 1128398.Curi_c20330
+(degree 896), 1128398.Curi_c14360 (degree 763), 1128398.Curi_c06920 (degree
+689), 1128398.Curi_c18030 (degree 659) and 1128398.Curi_c25950 (degree
+640).
 
 
 References
@@ -106,13 +108,15 @@ def ClostridiumAcidurici(
 	
 	Datetime: 2021-02-02 22:54:56.084245
 	
-	The undirected graph Clostridium acidurici has 2794 nodes and 156677 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04015 and
-	has 14 connected components, where the component with most nodes has 2762 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 92,
-	the mean node degree is 112.15, and the node degree mode is 2. The top 5 most central
-	nodes are 1128398.Curi_c20330 (degree 896), 1128398.Curi_c14360 (degree 763), 1128398.Curi_c06920
-	(degree 689), 1128398.Curi_c18030 (degree 659) and 1128398.Curi_c25950 (degree 640).
+	The undirected graph Clostridium acidurici has 2794 nodes and 156677 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04015 and has 14 connected components, where the component with most
+	nodes has 2762 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 92, the mean node degree is 112.15, and
+	the node degree mode is 2. The top 5 most central nodes are 1128398.Curi_c20330
+	(degree 896), 1128398.Curi_c14360 (degree 763), 1128398.Curi_c06920 (degree
+	689), 1128398.Curi_c18030 (degree 659) and 1128398.Curi_c25950 (degree
+	640).
 	
 
 

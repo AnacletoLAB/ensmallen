@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:48.703117
 
-The undirected graph Sporosarcina newyorkensis has 3797 nodes and 419524 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05821
-and has 11 connected components, where the component with most nodes has 3771 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 220.98, and the node degree mode is 4. The top 5
-most central nodes are 1027292.HMPREF9372_2985 (degree 1206), 1027292.HMPREF9372_0448
-(degree 1130), 1027292.HMPREF9372_3522 (degree 1121), 1027292.HMPREF9372_0687 (degree
-1100) and 1027292.HMPREF9372_0325 (degree 1050).
+The undirected graph Sporosarcina newyorkensis has 3797 nodes and 419524
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05821 and has 11 connected components, where the component
+with most nodes has 3771 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 220.98,
+and the node degree mode is 4. The top 5 most central nodes are 1027292.HMPREF9372_2985
+(degree 1206), 1027292.HMPREF9372_0448 (degree 1130), 1027292.HMPREF9372_3522
+(degree 1121), 1027292.HMPREF9372_0687 (degree 1100) and 1027292.HMPREF9372_0325
+(degree 1050).
 
 
 References
@@ -107,14 +108,15 @@ def SporosarcinaNewyorkensis(
 	
 	Datetime: 2021-02-02 22:09:48.703117
 	
-	The undirected graph Sporosarcina newyorkensis has 3797 nodes and 419524 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05821
-	and has 11 connected components, where the component with most nodes has 3771 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 220.98, and the node degree mode is 4. The top 5
-	most central nodes are 1027292.HMPREF9372_2985 (degree 1206), 1027292.HMPREF9372_0448
-	(degree 1130), 1027292.HMPREF9372_3522 (degree 1121), 1027292.HMPREF9372_0687 (degree
-	1100) and 1027292.HMPREF9372_0325 (degree 1050).
+	The undirected graph Sporosarcina newyorkensis has 3797 nodes and 419524
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05821 and has 11 connected components, where the component
+	with most nodes has 3771 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 220.98,
+	and the node degree mode is 4. The top 5 most central nodes are 1027292.HMPREF9372_2985
+	(degree 1206), 1027292.HMPREF9372_0448 (degree 1130), 1027292.HMPREF9372_3522
+	(degree 1121), 1027292.HMPREF9372_0687 (degree 1100) and 1027292.HMPREF9372_0325
+	(degree 1050).
 	
 
 

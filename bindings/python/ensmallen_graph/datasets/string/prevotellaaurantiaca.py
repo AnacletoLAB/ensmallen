@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:31:09.564999
 
-The undirected graph Prevotella aurantiaca has 2690 nodes and 175579 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04855 and
-has 45 connected components, where the component with most nodes has 2578 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 130.54, and the node degree mode is 1. The top 5 most central
-nodes are 1236508.BAKF01000007_gene822 (degree 1020), 1236508.BAKF01000023_gene1750
-(degree 956), 1236508.BAKF01000021_gene1664 (degree 879), 1236508.BAKF01000006_gene716
-(degree 775) and 1236508.BAKF01000001_gene17 (degree 773).
+The undirected graph Prevotella aurantiaca has 2690 nodes and 175579 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04855 and has 45 connected components, where the component with most
+nodes has 2578 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 130.54, and
+the node degree mode is 1. The top 5 most central nodes are 1236508.BAKF01000007_gene822
+(degree 1020), 1236508.BAKF01000023_gene1750 (degree 956), 1236508.BAKF01000021_gene1664
+(degree 879), 1236508.BAKF01000006_gene716 (degree 775) and 1236508.BAKF01000001_gene17
+(degree 773).
 
 
 References
@@ -107,14 +108,15 @@ def PrevotellaAurantiaca(
 	
 	Datetime: 2021-02-02 23:31:09.564999
 	
-	The undirected graph Prevotella aurantiaca has 2690 nodes and 175579 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04855 and
-	has 45 connected components, where the component with most nodes has 2578 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 130.54, and the node degree mode is 1. The top 5 most central
-	nodes are 1236508.BAKF01000007_gene822 (degree 1020), 1236508.BAKF01000023_gene1750
-	(degree 956), 1236508.BAKF01000021_gene1664 (degree 879), 1236508.BAKF01000006_gene716
-	(degree 775) and 1236508.BAKF01000001_gene17 (degree 773).
+	The undirected graph Prevotella aurantiaca has 2690 nodes and 175579 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04855 and has 45 connected components, where the component with most
+	nodes has 2578 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 130.54, and
+	the node degree mode is 1. The top 5 most central nodes are 1236508.BAKF01000007_gene822
+	(degree 1020), 1236508.BAKF01000023_gene1750 (degree 956), 1236508.BAKF01000021_gene1664
+	(degree 879), 1236508.BAKF01000006_gene716 (degree 775) and 1236508.BAKF01000001_gene17
+	(degree 773).
 	
 
 

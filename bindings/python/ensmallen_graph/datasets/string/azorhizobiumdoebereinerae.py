@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:12:38.048193
 
-The undirected graph Azorhizobium doebereinerae has 5068 nodes and 543014 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-and has 18 connected components, where the component with most nodes has 5029 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 170, the mean node degree is 214.29, and the node degree mode is 1. The top 5
-most central nodes are 1038858.AXBA01000006_gene961 (degree 1555), 1038858.AXBA01000023_gene412
-(degree 1374), 1038858.AXBA01000005_gene4407 (degree 1358), 1038858.AXBA01000028_gene1036
-(degree 1331) and 1038858.AXBA01000060_gene3664 (degree 1266).
+The undirected graph Azorhizobium doebereinerae has 5068 nodes and 543014
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04229 and has 18 connected components, where the component
+with most nodes has 5029 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 170, the mean node degree is 214.29,
+and the node degree mode is 1. The top 5 most central nodes are 1038858.AXBA01000006_gene961
+(degree 1555), 1038858.AXBA01000023_gene412 (degree 1374), 1038858.AXBA01000005_gene4407
+(degree 1358), 1038858.AXBA01000028_gene1036 (degree 1331) and 1038858.AXBA01000060_gene3664
+(degree 1266).
 
 
 References
@@ -107,14 +108,15 @@ def AzorhizobiumDoebereinerae(
 	
 	Datetime: 2021-02-02 22:12:38.048193
 	
-	The undirected graph Azorhizobium doebereinerae has 5068 nodes and 543014 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04229
-	and has 18 connected components, where the component with most nodes has 5029 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 170, the mean node degree is 214.29, and the node degree mode is 1. The top 5
-	most central nodes are 1038858.AXBA01000006_gene961 (degree 1555), 1038858.AXBA01000023_gene412
-	(degree 1374), 1038858.AXBA01000005_gene4407 (degree 1358), 1038858.AXBA01000028_gene1036
-	(degree 1331) and 1038858.AXBA01000060_gene3664 (degree 1266).
+	The undirected graph Azorhizobium doebereinerae has 5068 nodes and 543014
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04229 and has 18 connected components, where the component
+	with most nodes has 5029 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 170, the mean node degree is 214.29,
+	and the node degree mode is 1. The top 5 most central nodes are 1038858.AXBA01000006_gene961
+	(degree 1555), 1038858.AXBA01000023_gene412 (degree 1374), 1038858.AXBA01000005_gene4407
+	(degree 1358), 1038858.AXBA01000028_gene1036 (degree 1331) and 1038858.AXBA01000060_gene3664
+	(degree 1266).
 	
 
 

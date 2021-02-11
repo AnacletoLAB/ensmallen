@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:43:05.966434
 
-The undirected graph Staphylothermus marinus has 1554 nodes and 113656 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09419 and
-has 11 connected components, where the component with most nodes has 1532 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 141,
-the mean node degree is 146.28, and the node degree mode is 5. The top 5 most central
-nodes are 399550.Smar_0618 (degree 582), 399550.Smar_0241 (degree 553), 399550.Smar_0802
-(degree 513), 399550.Smar_0238 (degree 501) and 399550.Smar_0719 (degree 486).
+The undirected graph Staphylothermus marinus has 1554 nodes and 113656
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09419 and has 11 connected components, where the component
+with most nodes has 1532 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 141, the mean node degree is 146.28,
+and the node degree mode is 5. The top 5 most central nodes are 399550.Smar_0618
+(degree 582), 399550.Smar_0241 (degree 553), 399550.Smar_0802 (degree 513),
+399550.Smar_0238 (degree 501) and 399550.Smar_0719 (degree 486).
 
 
 References
@@ -106,13 +107,14 @@ def StaphylothermusMarinus(
 	
 	Datetime: 2021-02-02 20:43:05.966434
 	
-	The undirected graph Staphylothermus marinus has 1554 nodes and 113656 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09419 and
-	has 11 connected components, where the component with most nodes has 1532 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 141,
-	the mean node degree is 146.28, and the node degree mode is 5. The top 5 most central
-	nodes are 399550.Smar_0618 (degree 582), 399550.Smar_0241 (degree 553), 399550.Smar_0802
-	(degree 513), 399550.Smar_0238 (degree 501) and 399550.Smar_0719 (degree 486).
+	The undirected graph Staphylothermus marinus has 1554 nodes and 113656
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09419 and has 11 connected components, where the component
+	with most nodes has 1532 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 141, the mean node degree is 146.28,
+	and the node degree mode is 5. The top 5 most central nodes are 399550.Smar_0618
+	(degree 582), 399550.Smar_0241 (degree 553), 399550.Smar_0802 (degree 513),
+	399550.Smar_0238 (degree 501) and 399550.Smar_0719 (degree 486).
 	
 
 

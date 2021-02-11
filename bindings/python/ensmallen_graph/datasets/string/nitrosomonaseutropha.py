@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:30:18.374434
 
-The undirected graph Nitrosomonas eutropha has 2479 nodes and 186998 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06088 and
-has 3 connected components, where the component with most nodes has 2475 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 136,
-the mean node degree is 150.87, and the node degree mode is 5. The top 5 most central
-nodes are 335283.Neut_0778 (degree 1011), 335283.Neut_0419 (degree 995), 335283.Neut_1379
-(degree 823), 335283.Neut_1921 (degree 799) and 335283.Neut_0464 (degree 782).
+The undirected graph Nitrosomonas eutropha has 2479 nodes and 186998 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06088 and has 3 connected components, where the component with most
+nodes has 2475 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 136, the mean node degree is 150.87, and
+the node degree mode is 5. The top 5 most central nodes are 335283.Neut_0778
+(degree 1011), 335283.Neut_0419 (degree 995), 335283.Neut_1379 (degree
+823), 335283.Neut_1921 (degree 799) and 335283.Neut_0464 (degree 782).
 
 
 References
@@ -106,13 +107,14 @@ def NitrosomonasEutropha(
 	
 	Datetime: 2021-02-02 20:30:18.374434
 	
-	The undirected graph Nitrosomonas eutropha has 2479 nodes and 186998 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06088 and
-	has 3 connected components, where the component with most nodes has 2475 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 136,
-	the mean node degree is 150.87, and the node degree mode is 5. The top 5 most central
-	nodes are 335283.Neut_0778 (degree 1011), 335283.Neut_0419 (degree 995), 335283.Neut_1379
-	(degree 823), 335283.Neut_1921 (degree 799) and 335283.Neut_0464 (degree 782).
+	The undirected graph Nitrosomonas eutropha has 2479 nodes and 186998 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06088 and has 3 connected components, where the component with most
+	nodes has 2475 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 136, the mean node degree is 150.87, and
+	the node degree mode is 5. The top 5 most central nodes are 335283.Neut_0778
+	(degree 1011), 335283.Neut_0419 (degree 995), 335283.Neut_1379 (degree
+	823), 335283.Neut_1921 (degree 799) and 335283.Neut_0464 (degree 782).
 	
 
 

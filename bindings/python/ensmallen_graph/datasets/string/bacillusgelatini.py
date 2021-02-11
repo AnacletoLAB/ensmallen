@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:32:53.287791
 
-The undirected graph Bacillus gelatini has 4200 nodes and 461349 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05232 and
-has 23 connected components, where the component with most nodes has 4153 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 205,
-the mean node degree is 219.69, and the node degree mode is 3. The top 5 most central
-nodes are 1121091.AUMP01000002_gene2081 (degree 1512), 1121091.AUMP01000058_gene944
-(degree 1086), 1121091.AUMP01000002_gene1875 (degree 1074), 1121091.AUMP01000007_gene1032
-(degree 1053) and 1121091.AUMP01000004_gene2381 (degree 1039).
+The undirected graph Bacillus gelatini has 4200 nodes and 461349 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05232 and has 23 connected components, where the component with most
+nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 205, the mean node degree is 219.69, and
+the node degree mode is 3. The top 5 most central nodes are 1121091.AUMP01000002_gene2081
+(degree 1512), 1121091.AUMP01000058_gene944 (degree 1086), 1121091.AUMP01000002_gene1875
+(degree 1074), 1121091.AUMP01000007_gene1032 (degree 1053) and 1121091.AUMP01000004_gene2381
+(degree 1039).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusGelatini(
 	
 	Datetime: 2021-02-02 22:32:53.287791
 	
-	The undirected graph Bacillus gelatini has 4200 nodes and 461349 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05232 and
-	has 23 connected components, where the component with most nodes has 4153 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 205,
-	the mean node degree is 219.69, and the node degree mode is 3. The top 5 most central
-	nodes are 1121091.AUMP01000002_gene2081 (degree 1512), 1121091.AUMP01000058_gene944
-	(degree 1086), 1121091.AUMP01000002_gene1875 (degree 1074), 1121091.AUMP01000007_gene1032
-	(degree 1053) and 1121091.AUMP01000004_gene2381 (degree 1039).
+	The undirected graph Bacillus gelatini has 4200 nodes and 461349 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05232 and has 23 connected components, where the component with most
+	nodes has 4153 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 205, the mean node degree is 219.69, and
+	the node degree mode is 3. The top 5 most central nodes are 1121091.AUMP01000002_gene2081
+	(degree 1512), 1121091.AUMP01000058_gene944 (degree 1086), 1121091.AUMP01000002_gene1875
+	(degree 1074), 1121091.AUMP01000007_gene1032 (degree 1053) and 1121091.AUMP01000004_gene2381
+	(degree 1039).
 	
 
 

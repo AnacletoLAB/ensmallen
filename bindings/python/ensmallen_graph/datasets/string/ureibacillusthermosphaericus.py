@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:21.021732
 
-The undirected graph Ureibacillus thermosphaericus has 2732 nodes and 269040 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07212
-and has 14 connected components, where the component with most nodes has 2701 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 187, the mean node degree is 196.95, and the node degree mode is 1. The top 5
-most central nodes are 1160707.AJIK01000002_gene547 (degree 1010), 1160707.AJIK01000041_gene2298
-(degree 916), 1160707.AJIK01000001_gene381 (degree 869), 1160707.AJIK01000015_gene2187
-(degree 832) and 1160707.AJIK01000013_gene2359 (degree 792).
+The undirected graph Ureibacillus thermosphaericus has 2732 nodes and 269040
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07212 and has 14 connected components, where the component
+with most nodes has 2701 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 187, the mean node degree is 196.95,
+and the node degree mode is 1. The top 5 most central nodes are 1160707.AJIK01000002_gene547
+(degree 1010), 1160707.AJIK01000041_gene2298 (degree 916), 1160707.AJIK01000001_gene381
+(degree 869), 1160707.AJIK01000015_gene2187 (degree 832) and 1160707.AJIK01000013_gene2359
+(degree 792).
 
 
 References
@@ -107,14 +108,15 @@ def UreibacillusThermosphaericus(
 	
 	Datetime: 2021-02-02 23:04:21.021732
 	
-	The undirected graph Ureibacillus thermosphaericus has 2732 nodes and 269040 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07212
-	and has 14 connected components, where the component with most nodes has 2701 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 187, the mean node degree is 196.95, and the node degree mode is 1. The top 5
-	most central nodes are 1160707.AJIK01000002_gene547 (degree 1010), 1160707.AJIK01000041_gene2298
-	(degree 916), 1160707.AJIK01000001_gene381 (degree 869), 1160707.AJIK01000015_gene2187
-	(degree 832) and 1160707.AJIK01000013_gene2359 (degree 792).
+	The undirected graph Ureibacillus thermosphaericus has 2732 nodes and 269040
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07212 and has 14 connected components, where the component
+	with most nodes has 2701 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 187, the mean node degree is 196.95,
+	and the node degree mode is 1. The top 5 most central nodes are 1160707.AJIK01000002_gene547
+	(degree 1010), 1160707.AJIK01000041_gene2298 (degree 916), 1160707.AJIK01000001_gene381
+	(degree 869), 1160707.AJIK01000015_gene2187 (degree 832) and 1160707.AJIK01000013_gene2359
+	(degree 792).
 	
 
 

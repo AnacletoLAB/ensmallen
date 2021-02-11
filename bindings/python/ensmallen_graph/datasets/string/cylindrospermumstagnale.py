@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:18:37.238656
 
-The undirected graph Cylindrospermum stagnale has 5814 nodes and 533876 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03159
-and has 44 connected components, where the component with most nodes has 5700 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 162, the mean node degree is 183.65, and the node degree mode is 1. The top 5
-most central nodes are 56107.Cylst_1369 (degree 2416), 56107.Cylst_1842 (degree 2330),
-56107.Cylst_3793 (degree 2140), 56107.Cylst_1828 (degree 1848) and 56107.Cylst_3751
-(degree 1804).
+The undirected graph Cylindrospermum stagnale has 5814 nodes and 533876
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03159 and has 44 connected components, where the component
+with most nodes has 5700 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 162, the mean node degree is 183.65,
+and the node degree mode is 1. The top 5 most central nodes are 56107.Cylst_1369
+(degree 2416), 56107.Cylst_1842 (degree 2330), 56107.Cylst_3793 (degree
+2140), 56107.Cylst_1828 (degree 1848) and 56107.Cylst_3751 (degree 1804).
 
 
 References
@@ -107,14 +107,14 @@ def CylindrospermumStagnale(
 	
 	Datetime: 2021-02-02 18:18:37.238656
 	
-	The undirected graph Cylindrospermum stagnale has 5814 nodes and 533876 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03159
-	and has 44 connected components, where the component with most nodes has 5700 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 162, the mean node degree is 183.65, and the node degree mode is 1. The top 5
-	most central nodes are 56107.Cylst_1369 (degree 2416), 56107.Cylst_1842 (degree 2330),
-	56107.Cylst_3793 (degree 2140), 56107.Cylst_1828 (degree 1848) and 56107.Cylst_3751
-	(degree 1804).
+	The undirected graph Cylindrospermum stagnale has 5814 nodes and 533876
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03159 and has 44 connected components, where the component
+	with most nodes has 5700 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 162, the mean node degree is 183.65,
+	and the node degree mode is 1. The top 5 most central nodes are 56107.Cylst_1369
+	(degree 2416), 56107.Cylst_1842 (degree 2330), 56107.Cylst_3793 (degree
+	2140), 56107.Cylst_1828 (degree 1848) and 56107.Cylst_3751 (degree 1804).
 	
 
 

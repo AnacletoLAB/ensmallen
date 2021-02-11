@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 10:19:52.989907
 
-The undirected graph cca has 49152 nodes and 69632 unweighted edges, of which none
-are self-loops. The graph is extremely sparse as it has a density of 0.00006 and
-is connected, as it has a single component. The graph median node degree is 3, the
-mean node degree is 2.83, and the node degree mode is 3. The top 5 most central nodes
-are 49142 (degree 3), 49118 (degree 3), 49130 (degree 3), 49106 (degree 3) and 49143
-(degree 3).
+The undirected graph cca has 49152 nodes and 69632 unweighted edges, of
+which none are self-loops. The graph is extremely sparse as it has a density
+of 0.00006 and is connected, as it has a single component. The graph median
+node degree is 3, the mean node degree is 2.83, and the node degree mode
+is 3. The top 5 most central nodes are 49142 (degree 3), 49118 (degree
+3), 49130 (degree 3), 49106 (degree 3) and 49143 (degree 3).
 
 
 References
@@ -102,12 +102,12 @@ def Cca(
 	
 	Datetime: 2021-02-06 10:19:52.989907
 	
-	The undirected graph cca has 49152 nodes and 69632 unweighted edges, of which none
-	are self-loops. The graph is extremely sparse as it has a density of 0.00006 and
-	is connected, as it has a single component. The graph median node degree is 3, the
-	mean node degree is 2.83, and the node degree mode is 3. The top 5 most central nodes
-	are 49142 (degree 3), 49118 (degree 3), 49130 (degree 3), 49106 (degree 3) and 49143
-	(degree 3).
+	The undirected graph cca has 49152 nodes and 69632 unweighted edges, of
+	which none are self-loops. The graph is extremely sparse as it has a density
+	of 0.00006 and is connected, as it has a single component. The graph median
+	node degree is 3, the mean node degree is 2.83, and the node degree mode
+	is 3. The top 5 most central nodes are 49142 (degree 3), 49118 (degree
+	3), 49130 (degree 3), 49106 (degree 3) and 49143 (degree 3).
 	
 
 

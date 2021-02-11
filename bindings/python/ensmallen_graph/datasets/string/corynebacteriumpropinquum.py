@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:18.747149
 
-The undirected graph Corynebacterium propinquum has 2067 nodes and 137749 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06451
-and has 9 connected components, where the component with most nodes has 2050 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 117, the mean node degree is 133.28, and the node degree mode is 1. The top 5
-most central nodes are 1121367.AQXC01000002_gene2071 (degree 826), 1121367.AQXC01000009_gene305
-(degree 818), 1121367.AQXC01000013_gene338 (degree 760), 1121367.AQXC01000001_gene1372
-(degree 694) and 1121367.AQXC01000006_gene538 (degree 641).
+The undirected graph Corynebacterium propinquum has 2067 nodes and 137749
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06451 and has 9 connected components, where the component
+with most nodes has 2050 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 117, the mean node degree is 133.28,
+and the node degree mode is 1. The top 5 most central nodes are 1121367.AQXC01000002_gene2071
+(degree 826), 1121367.AQXC01000009_gene305 (degree 818), 1121367.AQXC01000013_gene338
+(degree 760), 1121367.AQXC01000001_gene1372 (degree 694) and 1121367.AQXC01000006_gene538
+(degree 641).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumPropinquum(
 	
 	Datetime: 2021-02-02 22:35:18.747149
 	
-	The undirected graph Corynebacterium propinquum has 2067 nodes and 137749 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06451
-	and has 9 connected components, where the component with most nodes has 2050 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 117, the mean node degree is 133.28, and the node degree mode is 1. The top 5
-	most central nodes are 1121367.AQXC01000002_gene2071 (degree 826), 1121367.AQXC01000009_gene305
-	(degree 818), 1121367.AQXC01000013_gene338 (degree 760), 1121367.AQXC01000001_gene1372
-	(degree 694) and 1121367.AQXC01000006_gene538 (degree 641).
+	The undirected graph Corynebacterium propinquum has 2067 nodes and 137749
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06451 and has 9 connected components, where the component
+	with most nodes has 2050 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 117, the mean node degree is 133.28,
+	and the node degree mode is 1. The top 5 most central nodes are 1121367.AQXC01000002_gene2071
+	(degree 826), 1121367.AQXC01000009_gene305 (degree 818), 1121367.AQXC01000013_gene338
+	(degree 760), 1121367.AQXC01000001_gene1372 (degree 694) and 1121367.AQXC01000006_gene538
+	(degree 641).
 	
 
 

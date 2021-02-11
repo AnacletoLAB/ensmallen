@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:08:06.286034
 
-The undirected graph Tatumella ptyseos has 3296 nodes and 314058 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05784 and
-has 15 connected components, where the component with most nodes has 3265 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 165,
-the mean node degree is 190.57, and the node degree mode is 1. The top 5 most central
-nodes are 1005995.GTPT_0590 (degree 1101), 1005995.GTPT_0254 (degree 1085), 1005995.GTPT_1472
-(degree 993), 1005995.GTPT_1776 (degree 961) and 1005995.GTPT_1742 (degree 934).
+The undirected graph Tatumella ptyseos has 3296 nodes and 314058 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05784 and has 15 connected components, where the component with most
+nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 165, the mean node degree is 190.57, and
+the node degree mode is 1. The top 5 most central nodes are 1005995.GTPT_0590
+(degree 1101), 1005995.GTPT_0254 (degree 1085), 1005995.GTPT_1472 (degree
+993), 1005995.GTPT_1776 (degree 961) and 1005995.GTPT_1742 (degree 934).
 
 
 References
@@ -106,13 +107,14 @@ def TatumellaPtyseos(
 	
 	Datetime: 2021-02-02 22:08:06.286034
 	
-	The undirected graph Tatumella ptyseos has 3296 nodes and 314058 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05784 and
-	has 15 connected components, where the component with most nodes has 3265 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 165,
-	the mean node degree is 190.57, and the node degree mode is 1. The top 5 most central
-	nodes are 1005995.GTPT_0590 (degree 1101), 1005995.GTPT_0254 (degree 1085), 1005995.GTPT_1472
-	(degree 993), 1005995.GTPT_1776 (degree 961) and 1005995.GTPT_1742 (degree 934).
+	The undirected graph Tatumella ptyseos has 3296 nodes and 314058 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05784 and has 15 connected components, where the component with most
+	nodes has 3265 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 165, the mean node degree is 190.57, and
+	the node degree mode is 1. The top 5 most central nodes are 1005995.GTPT_0590
+	(degree 1101), 1005995.GTPT_0254 (degree 1085), 1005995.GTPT_1472 (degree
+	993), 1005995.GTPT_1776 (degree 961) and 1005995.GTPT_1742 (degree 934).
 	
 
 

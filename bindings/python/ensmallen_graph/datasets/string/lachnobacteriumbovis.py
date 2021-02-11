@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:00.619514
 
-The undirected graph Lachnobacterium bovis has 2717 nodes and 257981 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06992 and
-has 23 connected components, where the component with most nodes has 2631 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 163,
-the mean node degree is 189.90, and the node degree mode is 8. The top 5 most central
-nodes are 140626.JHWB01000013_gene537 (degree 1145), 140626.JHWB01000019_gene960
-(degree 1118), 140626.JHWB01000009_gene1319 (degree 1020), 140626.JHWB01000011_gene81
-(degree 979) and 140626.JHWB01000022_gene2049 (degree 963).
+The undirected graph Lachnobacterium bovis has 2717 nodes and 257981 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06992 and has 23 connected components, where the component with most
+nodes has 2631 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 163, the mean node degree is 189.90, and
+the node degree mode is 8. The top 5 most central nodes are 140626.JHWB01000013_gene537
+(degree 1145), 140626.JHWB01000019_gene960 (degree 1118), 140626.JHWB01000009_gene1319
+(degree 1020), 140626.JHWB01000011_gene81 (degree 979) and 140626.JHWB01000022_gene2049
+(degree 963).
 
 
 References
@@ -107,14 +108,15 @@ def LachnobacteriumBovis(
 	
 	Datetime: 2021-02-02 19:51:00.619514
 	
-	The undirected graph Lachnobacterium bovis has 2717 nodes and 257981 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06992 and
-	has 23 connected components, where the component with most nodes has 2631 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 163,
-	the mean node degree is 189.90, and the node degree mode is 8. The top 5 most central
-	nodes are 140626.JHWB01000013_gene537 (degree 1145), 140626.JHWB01000019_gene960
-	(degree 1118), 140626.JHWB01000009_gene1319 (degree 1020), 140626.JHWB01000011_gene81
-	(degree 979) and 140626.JHWB01000022_gene2049 (degree 963).
+	The undirected graph Lachnobacterium bovis has 2717 nodes and 257981 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06992 and has 23 connected components, where the component with most
+	nodes has 2631 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 163, the mean node degree is 189.90, and
+	the node degree mode is 8. The top 5 most central nodes are 140626.JHWB01000013_gene537
+	(degree 1145), 140626.JHWB01000019_gene960 (degree 1118), 140626.JHWB01000009_gene1319
+	(degree 1020), 140626.JHWB01000011_gene81 (degree 979) and 140626.JHWB01000022_gene2049
+	(degree 963).
 	
 
 

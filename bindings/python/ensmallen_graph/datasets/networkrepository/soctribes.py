@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:52:07.848614
 
-The undirected graph soc-tribes has 16 nodes and 58 unweighted edges with 2 different
-edge types: 1 and -1, of which none are self-loops. The graph is quite dense as it
-has a density of 0.48333 and is connected, as it has a single component. The graph
-median node degree is 8, the mean node degree is 7.25, and the node degree mode is
-8. The top 5 most central nodes are 6 (degree 10), 16 (degree 9), 15 (degree 9),
-11 (degree 9) and 13 (degree 8).
+The undirected graph soc-tribes has 16 nodes and 58 unweighted edges with
+2 different edge types: 1 and -1, of which none are self-loops. The graph
+is quite dense as it has a density of 0.48333 and is connected, as it has
+a single component. The graph median node degree is 8, the mean node degree
+is 7.25, and the node degree mode is 8. The top 5 most central nodes are
+6 (degree 10), 16 (degree 9), 15 (degree 9), 11 (degree 9) and 13 (degree
+8).
 
 
 References
@@ -111,12 +112,13 @@ def SocTribes(
 	
 	Datetime: 2021-02-06 09:52:07.848614
 	
-	The undirected graph soc-tribes has 16 nodes and 58 unweighted edges with 2 different
-	edge types: 1 and -1, of which none are self-loops. The graph is quite dense as it
-	has a density of 0.48333 and is connected, as it has a single component. The graph
-	median node degree is 8, the mean node degree is 7.25, and the node degree mode is
-	8. The top 5 most central nodes are 6 (degree 10), 16 (degree 9), 15 (degree 9),
-	11 (degree 9) and 13 (degree 8).
+	The undirected graph soc-tribes has 16 nodes and 58 unweighted edges with
+	2 different edge types: 1 and -1, of which none are self-loops. The graph
+	is quite dense as it has a density of 0.48333 and is connected, as it has
+	a single component. The graph median node degree is 8, the mean node degree
+	is 7.25, and the node degree mode is 8. The top 5 most central nodes are
+	6 (degree 10), 16 (degree 9), 15 (degree 9), 11 (degree 9) and 13 (degree
+	8).
 	
 
 

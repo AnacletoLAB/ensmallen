@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:56:00.233625
 
-The undirected graph Desulfobacterium autotrophicum has 4914 nodes and 621639 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05150
-and has 16 connected components, where the component with most nodes has 4876 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 213, the mean node degree is 253.01, and the node degree mode is 2. The top 5
-most central nodes are 177437.HRM2_31930 (degree 2706), 177437.HRM2_33240 (degree
-2286), 177437.HRM2_43250 (degree 2214), 177437.HRM2_12370 (degree 2067) and 177437.HRM2_22900
-(degree 1597).
+The undirected graph Desulfobacterium autotrophicum has 4914 nodes and
+621639 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05150 and has 16 connected components, where the
+component with most nodes has 4876 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 213, the mean node degree
+is 253.01, and the node degree mode is 2. The top 5 most central nodes
+are 177437.HRM2_31930 (degree 2706), 177437.HRM2_33240 (degree 2286), 177437.HRM2_43250
+(degree 2214), 177437.HRM2_12370 (degree 2067) and 177437.HRM2_22900 (degree
+1597).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfobacteriumAutotrophicum(
 	
 	Datetime: 2021-02-02 19:56:00.233625
 	
-	The undirected graph Desulfobacterium autotrophicum has 4914 nodes and 621639 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05150
-	and has 16 connected components, where the component with most nodes has 4876 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 213, the mean node degree is 253.01, and the node degree mode is 2. The top 5
-	most central nodes are 177437.HRM2_31930 (degree 2706), 177437.HRM2_33240 (degree
-	2286), 177437.HRM2_43250 (degree 2214), 177437.HRM2_12370 (degree 2067) and 177437.HRM2_22900
-	(degree 1597).
+	The undirected graph Desulfobacterium autotrophicum has 4914 nodes and
+	621639 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05150 and has 16 connected components, where the
+	component with most nodes has 4876 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 213, the mean node degree
+	is 253.01, and the node degree mode is 2. The top 5 most central nodes
+	are 177437.HRM2_31930 (degree 2706), 177437.HRM2_33240 (degree 2286), 177437.HRM2_43250
+	(degree 2214), 177437.HRM2_12370 (degree 2067) and 177437.HRM2_22900 (degree
+	1597).
 	
 
 

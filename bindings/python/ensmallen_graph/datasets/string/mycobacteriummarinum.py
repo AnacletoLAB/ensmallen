@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:02:42.746301
 
-The undirected graph Mycobacterium marinum has 5427 nodes and 814361 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05531 and
-has 18 connected components, where the component with most nodes has 5383 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 248,
-the mean node degree is 300.11, and the node degree mode is 2. The top 5 most central
-nodes are 216594.MMAR_3962 (degree 2131), 216594.MMAR_2865 (degree 2058), 216594.MMAR_0738
-(degree 2014), 216594.MMAR_2680 (degree 1958) and 216594.MMAR_2432 (degree 1749).
+The undirected graph Mycobacterium marinum has 5427 nodes and 814361 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05531 and has 18 connected components, where the component with most
+nodes has 5383 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 248, the mean node degree is 300.11, and
+the node degree mode is 2. The top 5 most central nodes are 216594.MMAR_3962
+(degree 2131), 216594.MMAR_2865 (degree 2058), 216594.MMAR_0738 (degree
+2014), 216594.MMAR_2680 (degree 1958) and 216594.MMAR_2432 (degree 1749).
 
 
 References
@@ -106,13 +107,14 @@ def MycobacteriumMarinum(
 	
 	Datetime: 2021-02-02 20:02:42.746301
 	
-	The undirected graph Mycobacterium marinum has 5427 nodes and 814361 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05531 and
-	has 18 connected components, where the component with most nodes has 5383 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 248,
-	the mean node degree is 300.11, and the node degree mode is 2. The top 5 most central
-	nodes are 216594.MMAR_3962 (degree 2131), 216594.MMAR_2865 (degree 2058), 216594.MMAR_0738
-	(degree 2014), 216594.MMAR_2680 (degree 1958) and 216594.MMAR_2432 (degree 1749).
+	The undirected graph Mycobacterium marinum has 5427 nodes and 814361 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05531 and has 18 connected components, where the component with most
+	nodes has 5383 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 248, the mean node degree is 300.11, and
+	the node degree mode is 2. The top 5 most central nodes are 216594.MMAR_3962
+	(degree 2131), 216594.MMAR_2865 (degree 2058), 216594.MMAR_0738 (degree
+	2014), 216594.MMAR_2680 (degree 1958) and 216594.MMAR_2432 (degree 1749).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:08:37.585438
 
-The undirected graph Eikenella corrodens ATCC23834 has 2574 nodes and 129269 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03904
-and has 21 connected components, where the component with most nodes has 2522 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 80, the mean node degree is 100.44, and the node degree mode is 2. The top 5 most
-central nodes are 546274.EIKCOROL_00020 (degree 847), 546274.EIKCOROL_00762 (degree
-826), 546274.EIKCOROL_02633 (degree 677), 546274.EIKCOROL_01647 (degree 668) and
-546274.EIKCOROL_01711 (degree 659).
+The undirected graph Eikenella corrodens ATCC23834 has 2574 nodes and 129269
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03904 and has 21 connected components, where the component
+with most nodes has 2522 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 80, the mean node degree is 100.44,
+and the node degree mode is 2. The top 5 most central nodes are 546274.EIKCOROL_00020
+(degree 847), 546274.EIKCOROL_00762 (degree 826), 546274.EIKCOROL_02633
+(degree 677), 546274.EIKCOROL_01647 (degree 668) and 546274.EIKCOROL_01711
+(degree 659).
 
 
 References
@@ -107,14 +108,15 @@ def EikenellaCorrodensAtcc23834(
 	
 	Datetime: 2021-02-02 21:08:37.585438
 	
-	The undirected graph Eikenella corrodens ATCC23834 has 2574 nodes and 129269 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03904
-	and has 21 connected components, where the component with most nodes has 2522 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 80, the mean node degree is 100.44, and the node degree mode is 2. The top 5 most
-	central nodes are 546274.EIKCOROL_00020 (degree 847), 546274.EIKCOROL_00762 (degree
-	826), 546274.EIKCOROL_02633 (degree 677), 546274.EIKCOROL_01647 (degree 668) and
-	546274.EIKCOROL_01711 (degree 659).
+	The undirected graph Eikenella corrodens ATCC23834 has 2574 nodes and 129269
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03904 and has 21 connected components, where the component
+	with most nodes has 2522 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 80, the mean node degree is 100.44,
+	and the node degree mode is 2. The top 5 most central nodes are 546274.EIKCOROL_00020
+	(degree 847), 546274.EIKCOROL_00762 (degree 826), 546274.EIKCOROL_02633
+	(degree 677), 546274.EIKCOROL_01647 (degree 668) and 546274.EIKCOROL_01711
+	(degree 659).
 	
 
 

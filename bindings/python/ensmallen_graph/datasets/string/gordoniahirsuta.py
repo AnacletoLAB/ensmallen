@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:39:04.450219
 
-The undirected graph Gordonia hirsuta has 3200 nodes and 310797 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.06072 and
-has 4 connected components, where the component with most nodes has 3194 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 173,
-the mean node degree is 194.25, and the node degree mode is 5. The top 5 most central
-nodes are 1121927.GOHSU_22_01050 (degree 1296), 1121927.GOHSU_02_01400 (degree 1078),
-1121927.GOHSU_02_00900 (degree 1012), 1121927.GOHSU_02_02030 (degree 998) and 1121927.GOHSU_52_00020
+The undirected graph Gordonia hirsuta has 3200 nodes and 310797 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06072 and has 4 connected components, where the component with most
+nodes has 3194 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 173, the mean node degree is 194.25, and
+the node degree mode is 5. The top 5 most central nodes are 1121927.GOHSU_22_01050
+(degree 1296), 1121927.GOHSU_02_01400 (degree 1078), 1121927.GOHSU_02_00900
+(degree 1012), 1121927.GOHSU_02_02030 (degree 998) and 1121927.GOHSU_52_00020
 (degree 983).
 
 
@@ -107,13 +108,14 @@ def GordoniaHirsuta(
 	
 	Datetime: 2021-02-02 22:39:04.450219
 	
-	The undirected graph Gordonia hirsuta has 3200 nodes and 310797 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.06072 and
-	has 4 connected components, where the component with most nodes has 3194 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 173,
-	the mean node degree is 194.25, and the node degree mode is 5. The top 5 most central
-	nodes are 1121927.GOHSU_22_01050 (degree 1296), 1121927.GOHSU_02_01400 (degree 1078),
-	1121927.GOHSU_02_00900 (degree 1012), 1121927.GOHSU_02_02030 (degree 998) and 1121927.GOHSU_52_00020
+	The undirected graph Gordonia hirsuta has 3200 nodes and 310797 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06072 and has 4 connected components, where the component with most
+	nodes has 3194 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 173, the mean node degree is 194.25, and
+	the node degree mode is 5. The top 5 most central nodes are 1121927.GOHSU_22_01050
+	(degree 1296), 1121927.GOHSU_02_01400 (degree 1078), 1121927.GOHSU_02_00900
+	(degree 1012), 1121927.GOHSU_02_02030 (degree 998) and 1121927.GOHSU_52_00020
 	(degree 983).
 	
 

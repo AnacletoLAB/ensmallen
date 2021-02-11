@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:01:48.253272
 
-The undirected graph Vibrio brasiliensis has 4306 nodes and 665131 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07176 and
-has 15 connected components, where the component with most nodes has 4272 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 258,
-the mean node degree is 308.93, and the node degree mode is 1. The top 5 most central
-nodes are 945543.VIBR0546_10509 (degree 1917), 945543.VIBR0546_21430 (degree 1817),
-945543.VIBR0546_05927 (degree 1768), 945543.VIBR0546_20930 (degree 1764) and 945543.VIBR0546_06042
+The undirected graph Vibrio brasiliensis has 4306 nodes and 665131 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07176 and has 15 connected components, where the component with most
+nodes has 4272 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 258, the mean node degree is 308.93, and
+the node degree mode is 1. The top 5 most central nodes are 945543.VIBR0546_10509
+(degree 1917), 945543.VIBR0546_21430 (degree 1817), 945543.VIBR0546_05927
+(degree 1768), 945543.VIBR0546_20930 (degree 1764) and 945543.VIBR0546_06042
 (degree 1677).
 
 
@@ -107,13 +108,14 @@ def VibrioBrasiliensis(
 	
 	Datetime: 2021-02-02 22:01:48.253272
 	
-	The undirected graph Vibrio brasiliensis has 4306 nodes and 665131 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07176 and
-	has 15 connected components, where the component with most nodes has 4272 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 258,
-	the mean node degree is 308.93, and the node degree mode is 1. The top 5 most central
-	nodes are 945543.VIBR0546_10509 (degree 1917), 945543.VIBR0546_21430 (degree 1817),
-	945543.VIBR0546_05927 (degree 1768), 945543.VIBR0546_20930 (degree 1764) and 945543.VIBR0546_06042
+	The undirected graph Vibrio brasiliensis has 4306 nodes and 665131 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07176 and has 15 connected components, where the component with most
+	nodes has 4272 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 258, the mean node degree is 308.93, and
+	the node degree mode is 1. The top 5 most central nodes are 945543.VIBR0546_10509
+	(degree 1917), 945543.VIBR0546_21430 (degree 1817), 945543.VIBR0546_05927
+	(degree 1768), 945543.VIBR0546_20930 (degree 1764) and 945543.VIBR0546_06042
 	(degree 1677).
 	
 

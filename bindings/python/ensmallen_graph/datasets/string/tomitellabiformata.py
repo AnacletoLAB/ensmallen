@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:03:17.724702
 
-The undirected graph Tomitella biformata has 4260 nodes and 462839 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05102 and
-has 10 connected components, where the component with most nodes has 4238 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 217.30, and the node degree mode is 3. The top 5 most central
-nodes are 1448389.BAVQ01000043_gene1774 (degree 1786), 1448389.BAVQ01000003_gene3369
-(degree 1293), 1448389.BAVQ01000073_gene2125 (degree 1187), 1448389.BAVQ01000007_gene4291
-(degree 1179) and 1448389.BAVQ01000079_gene540 (degree 1178).
+The undirected graph Tomitella biformata has 4260 nodes and 462839 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05102 and has 10 connected components, where the component with most
+nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 217.30, and
+the node degree mode is 3. The top 5 most central nodes are 1448389.BAVQ01000043_gene1774
+(degree 1786), 1448389.BAVQ01000003_gene3369 (degree 1293), 1448389.BAVQ01000073_gene2125
+(degree 1187), 1448389.BAVQ01000007_gene4291 (degree 1179) and 1448389.BAVQ01000079_gene540
+(degree 1178).
 
 
 References
@@ -107,14 +108,15 @@ def TomitellaBiformata(
 	
 	Datetime: 2021-02-03 23:03:17.724702
 	
-	The undirected graph Tomitella biformata has 4260 nodes and 462839 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05102 and
-	has 10 connected components, where the component with most nodes has 4238 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 217.30, and the node degree mode is 3. The top 5 most central
-	nodes are 1448389.BAVQ01000043_gene1774 (degree 1786), 1448389.BAVQ01000003_gene3369
-	(degree 1293), 1448389.BAVQ01000073_gene2125 (degree 1187), 1448389.BAVQ01000007_gene4291
-	(degree 1179) and 1448389.BAVQ01000079_gene540 (degree 1178).
+	The undirected graph Tomitella biformata has 4260 nodes and 462839 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05102 and has 10 connected components, where the component with most
+	nodes has 4238 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 217.30, and
+	the node degree mode is 3. The top 5 most central nodes are 1448389.BAVQ01000043_gene1774
+	(degree 1786), 1448389.BAVQ01000003_gene3369 (degree 1293), 1448389.BAVQ01000073_gene2125
+	(degree 1187), 1448389.BAVQ01000007_gene4291 (degree 1179) and 1448389.BAVQ01000079_gene540
+	(degree 1178).
 	
 
 

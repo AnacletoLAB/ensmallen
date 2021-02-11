@@ -10,12 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:09:27.455159
 
-The undirected graph Campylobacter coli 76339 has 1554 nodes and 98555 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.08167 and
-is connected, as it has a single component. The graph median node degree is 106,
-the mean node degree is 126.84, and the node degree mode is 148. The top 5 most central
-nodes are 1367491.BN865_00850 (degree 724), 1367491.BN865_13250 (degree 670), 1367491.BN865_06660
-(degree 606), 1367491.BN865_08850c (degree 563) and 1367491.BN865_10730 (degree 560).
+The undirected graph Campylobacter coli 76339 has 1554 nodes and 98555
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08167 and is connected, as it has a single component.
+The graph median node degree is 106, the mean node degree is 126.84, and
+the node degree mode is 148. The top 5 most central nodes are 1367491.BN865_00850
+(degree 724), 1367491.BN865_13250 (degree 670), 1367491.BN865_06660 (degree
+606), 1367491.BN865_08850c (degree 563) and 1367491.BN865_10730 (degree
+560).
 
 
 References
@@ -105,12 +107,14 @@ def CampylobacterColi76339(
 	
 	Datetime: 2021-02-03 22:09:27.455159
 	
-	The undirected graph Campylobacter coli 76339 has 1554 nodes and 98555 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.08167 and
-	is connected, as it has a single component. The graph median node degree is 106,
-	the mean node degree is 126.84, and the node degree mode is 148. The top 5 most central
-	nodes are 1367491.BN865_00850 (degree 724), 1367491.BN865_13250 (degree 670), 1367491.BN865_06660
-	(degree 606), 1367491.BN865_08850c (degree 563) and 1367491.BN865_10730 (degree 560).
+	The undirected graph Campylobacter coli 76339 has 1554 nodes and 98555
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08167 and is connected, as it has a single component.
+	The graph median node degree is 106, the mean node degree is 126.84, and
+	the node degree mode is 148. The top 5 most central nodes are 1367491.BN865_00850
+	(degree 724), 1367491.BN865_13250 (degree 670), 1367491.BN865_06660 (degree
+	606), 1367491.BN865_08850c (degree 563) and 1367491.BN865_10730 (degree
+	560).
 	
 
 

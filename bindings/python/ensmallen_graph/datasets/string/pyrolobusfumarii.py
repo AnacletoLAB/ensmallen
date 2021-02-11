@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:20.098922
 
-The undirected graph Pyrolobus fumarii has 1936 nodes and 118612 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06332 and
-has 27 connected components, where the component with most nodes has 1861 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 104,
-the mean node degree is 122.53, and the node degree mode is 4. The top 5 most central
-nodes are 694429.Pyrfu_1285 (degree 549), 694429.Pyrfu_1444 (degree 538), 694429.Pyrfu_0889
-(degree 497), 694429.Pyrfu_0220 (degree 489) and 694429.Pyrfu_1499 (degree 471).
+The undirected graph Pyrolobus fumarii has 1936 nodes and 118612 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06332 and has 27 connected components, where the component with most
+nodes has 1861 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 104, the mean node degree is 122.53, and
+the node degree mode is 4. The top 5 most central nodes are 694429.Pyrfu_1285
+(degree 549), 694429.Pyrfu_1444 (degree 538), 694429.Pyrfu_0889 (degree
+497), 694429.Pyrfu_0220 (degree 489) and 694429.Pyrfu_1499 (degree 471).
 
 
 References
@@ -106,13 +107,14 @@ def PyrolobusFumarii(
 	
 	Datetime: 2021-02-02 21:32:20.098922
 	
-	The undirected graph Pyrolobus fumarii has 1936 nodes and 118612 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06332 and
-	has 27 connected components, where the component with most nodes has 1861 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 104,
-	the mean node degree is 122.53, and the node degree mode is 4. The top 5 most central
-	nodes are 694429.Pyrfu_1285 (degree 549), 694429.Pyrfu_1444 (degree 538), 694429.Pyrfu_0889
-	(degree 497), 694429.Pyrfu_0220 (degree 489) and 694429.Pyrfu_1499 (degree 471).
+	The undirected graph Pyrolobus fumarii has 1936 nodes and 118612 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06332 and has 27 connected components, where the component with most
+	nodes has 1861 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 104, the mean node degree is 122.53, and
+	the node degree mode is 4. The top 5 most central nodes are 694429.Pyrfu_1285
+	(degree 549), 694429.Pyrfu_1444 (degree 538), 694429.Pyrfu_0889 (degree
+	497), 694429.Pyrfu_0220 (degree 489) and 694429.Pyrfu_1499 (degree 471).
 	
 
 

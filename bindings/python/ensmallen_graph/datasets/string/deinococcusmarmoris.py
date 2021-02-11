@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:35:45.590819
 
-The undirected graph Deinococcus marmoris has 4251 nodes and 264941 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02933 and
-has 58 connected components, where the component with most nodes has 4114 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 93,
-the mean node degree is 124.65, and the node degree mode is 2. The top 5 most central
-nodes are 1121381.JNIV01000029_gene1898 (degree 1460), 1121381.JNIV01000009_gene2342
-(degree 1145), 1121381.JNIV01000044_gene1809 (degree 1145), 1121381.JNIV01000037_gene3402
-(degree 1061) and 1121381.JNIV01000126_gene3467 (degree 913).
+The undirected graph Deinococcus marmoris has 4251 nodes and 264941 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02933 and has 58 connected components, where the component with most
+nodes has 4114 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 93, the mean node degree is 124.65, and
+the node degree mode is 2. The top 5 most central nodes are 1121381.JNIV01000029_gene1898
+(degree 1460), 1121381.JNIV01000009_gene2342 (degree 1145), 1121381.JNIV01000044_gene1809
+(degree 1145), 1121381.JNIV01000037_gene3402 (degree 1061) and 1121381.JNIV01000126_gene3467
+(degree 913).
 
 
 References
@@ -107,14 +108,15 @@ def DeinococcusMarmoris(
 	
 	Datetime: 2021-02-02 22:35:45.590819
 	
-	The undirected graph Deinococcus marmoris has 4251 nodes and 264941 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02933 and
-	has 58 connected components, where the component with most nodes has 4114 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 93,
-	the mean node degree is 124.65, and the node degree mode is 2. The top 5 most central
-	nodes are 1121381.JNIV01000029_gene1898 (degree 1460), 1121381.JNIV01000009_gene2342
-	(degree 1145), 1121381.JNIV01000044_gene1809 (degree 1145), 1121381.JNIV01000037_gene3402
-	(degree 1061) and 1121381.JNIV01000126_gene3467 (degree 913).
+	The undirected graph Deinococcus marmoris has 4251 nodes and 264941 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02933 and has 58 connected components, where the component with most
+	nodes has 4114 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 93, the mean node degree is 124.65, and
+	the node degree mode is 2. The top 5 most central nodes are 1121381.JNIV01000029_gene1898
+	(degree 1460), 1121381.JNIV01000009_gene2342 (degree 1145), 1121381.JNIV01000044_gene1809
+	(degree 1145), 1121381.JNIV01000037_gene3402 (degree 1061) and 1121381.JNIV01000126_gene3467
+	(degree 913).
 	
 
 

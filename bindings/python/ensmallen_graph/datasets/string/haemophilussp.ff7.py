@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:29.068211
 
-The undirected graph Haemophilus sp. FF7 has 2262 nodes and 175876 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06878 and
-is connected, as it has a single component. The graph median node degree is 130,
-the mean node degree is 155.50, and the node degree mode is 96. The top 5 most central
-nodes are 1461579.CCNK01000035_gene1422 (degree 992), 1461579.CCNK01000045_gene2275
-(degree 835), 1461579.CCNK01000039_gene1841 (degree 813), 1461579.CCNK01000045_gene2273
-(degree 728) and 1461579.CCNK01000042_gene2103 (degree 663).
+The undirected graph Haemophilus sp. FF7 has 2262 nodes and 175876 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06878 and is connected, as it has a single component. The graph median
+node degree is 130, the mean node degree is 155.50, and the node degree
+mode is 96. The top 5 most central nodes are 1461579.CCNK01000035_gene1422
+(degree 992), 1461579.CCNK01000045_gene2275 (degree 835), 1461579.CCNK01000039_gene1841
+(degree 813), 1461579.CCNK01000045_gene2273 (degree 728) and 1461579.CCNK01000042_gene2103
+(degree 663).
 
 
 References
@@ -106,13 +107,14 @@ def HaemophilusSp.Ff7(
 	
 	Datetime: 2021-02-03 23:07:29.068211
 	
-	The undirected graph Haemophilus sp. FF7 has 2262 nodes and 175876 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06878 and
-	is connected, as it has a single component. The graph median node degree is 130,
-	the mean node degree is 155.50, and the node degree mode is 96. The top 5 most central
-	nodes are 1461579.CCNK01000035_gene1422 (degree 992), 1461579.CCNK01000045_gene2275
-	(degree 835), 1461579.CCNK01000039_gene1841 (degree 813), 1461579.CCNK01000045_gene2273
-	(degree 728) and 1461579.CCNK01000042_gene2103 (degree 663).
+	The undirected graph Haemophilus sp. FF7 has 2262 nodes and 175876 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06878 and is connected, as it has a single component. The graph median
+	node degree is 130, the mean node degree is 155.50, and the node degree
+	mode is 96. The top 5 most central nodes are 1461579.CCNK01000035_gene1422
+	(degree 992), 1461579.CCNK01000045_gene2275 (degree 835), 1461579.CCNK01000039_gene1841
+	(degree 813), 1461579.CCNK01000045_gene2273 (degree 728) and 1461579.CCNK01000042_gene2103
+	(degree 663).
 	
 
 

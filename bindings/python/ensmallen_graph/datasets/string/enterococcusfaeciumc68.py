@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:51.746449
 
-The undirected graph Enterococcus faecium C68 has 2827 nodes and 270476 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06771
-and has 8 connected components, where the component with most nodes has 2812 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 191.35, and the node degree mode is 3. The top 5
-most central nodes are 565664.EFXG_01606 (degree 1201), 565664.EFXG_00220 (degree
-1103), 565664.EFXG_00004 (degree 1100), 565664.EFXG_01666 (degree 1004) and 565664.EFXG_01350
-(degree 993).
+The undirected graph Enterococcus faecium C68 has 2827 nodes and 270476
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06771 and has 8 connected components, where the component
+with most nodes has 2812 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 191.35,
+and the node degree mode is 3. The top 5 most central nodes are 565664.EFXG_01606
+(degree 1201), 565664.EFXG_00220 (degree 1103), 565664.EFXG_00004 (degree
+1100), 565664.EFXG_01666 (degree 1004) and 565664.EFXG_01350 (degree 993).
 
 
 References
@@ -107,14 +107,14 @@ def EnterococcusFaeciumC68(
 	
 	Datetime: 2021-02-02 21:12:51.746449
 	
-	The undirected graph Enterococcus faecium C68 has 2827 nodes and 270476 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06771
-	and has 8 connected components, where the component with most nodes has 2812 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 191.35, and the node degree mode is 3. The top 5
-	most central nodes are 565664.EFXG_01606 (degree 1201), 565664.EFXG_00220 (degree
-	1103), 565664.EFXG_00004 (degree 1100), 565664.EFXG_01666 (degree 1004) and 565664.EFXG_01350
-	(degree 993).
+	The undirected graph Enterococcus faecium C68 has 2827 nodes and 270476
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06771 and has 8 connected components, where the component
+	with most nodes has 2812 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 191.35,
+	and the node degree mode is 3. The top 5 most central nodes are 565664.EFXG_01606
+	(degree 1201), 565664.EFXG_00220 (degree 1103), 565664.EFXG_00004 (degree
+	1100), 565664.EFXG_01666 (degree 1004) and 565664.EFXG_01350 (degree 993).
 	
 
 

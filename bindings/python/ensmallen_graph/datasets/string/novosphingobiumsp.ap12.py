@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:58:13.420615
 
-The undirected graph Novosphingobium sp. AP12 has 5150 nodes and 544736 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04109
-and has 32 connected components, where the component with most nodes has 5067 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 173, the mean node degree is 211.55, and the node degree mode is 2. The top 5
-most central nodes are 1144305.PMI02_02268 (degree 2047), 1144305.PMI02_02907 (degree
-1808), 1144305.PMI02_04454 (degree 1550), 1144305.PMI02_03989 (degree 1453) and 1144305.PMI02_05221
-(degree 1416).
+The undirected graph Novosphingobium sp. AP12 has 5150 nodes and 544736
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04109 and has 32 connected components, where the component
+with most nodes has 5067 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 173, the mean node degree is 211.55,
+and the node degree mode is 2. The top 5 most central nodes are 1144305.PMI02_02268
+(degree 2047), 1144305.PMI02_02907 (degree 1808), 1144305.PMI02_04454 (degree
+1550), 1144305.PMI02_03989 (degree 1453) and 1144305.PMI02_05221 (degree
+1416).
 
 
 References
@@ -107,14 +108,15 @@ def NovosphingobiumSp.Ap12(
 	
 	Datetime: 2021-02-02 22:58:13.420615
 	
-	The undirected graph Novosphingobium sp. AP12 has 5150 nodes and 544736 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04109
-	and has 32 connected components, where the component with most nodes has 5067 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 173, the mean node degree is 211.55, and the node degree mode is 2. The top 5
-	most central nodes are 1144305.PMI02_02268 (degree 2047), 1144305.PMI02_02907 (degree
-	1808), 1144305.PMI02_04454 (degree 1550), 1144305.PMI02_03989 (degree 1453) and 1144305.PMI02_05221
-	(degree 1416).
+	The undirected graph Novosphingobium sp. AP12 has 5150 nodes and 544736
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04109 and has 32 connected components, where the component
+	with most nodes has 5067 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 173, the mean node degree is 211.55,
+	and the node degree mode is 2. The top 5 most central nodes are 1144305.PMI02_02268
+	(degree 2047), 1144305.PMI02_02907 (degree 1808), 1144305.PMI02_04454 (degree
+	1550), 1144305.PMI02_03989 (degree 1453) and 1144305.PMI02_05221 (degree
+	1416).
 	
 
 

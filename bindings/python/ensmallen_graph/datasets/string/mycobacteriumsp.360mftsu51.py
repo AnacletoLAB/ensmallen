@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:07:28.101325
 
-The undirected graph Mycobacterium sp. 360MFTsu51 has 5607 nodes and 812584 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05170
-and has 20 connected components, where the component with most nodes has 5565 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 240, the mean node degree is 289.85, and the node degree mode is 4. The top 5
-most central nodes are 1172186.KB911468_gene1070 (degree 2109), 1172186.KB911464_gene4702
-(degree 1707), 1172186.KB911471_gene2851 (degree 1657), 1172186.KB911464_gene4767
-(degree 1573) and 1172186.KB911469_gene2396 (degree 1549).
+The undirected graph Mycobacterium sp. 360MFTsu51 has 5607 nodes and 812584
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05170 and has 20 connected components, where the component
+with most nodes has 5565 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 240, the mean node degree is 289.85,
+and the node degree mode is 4. The top 5 most central nodes are 1172186.KB911468_gene1070
+(degree 2109), 1172186.KB911464_gene4702 (degree 1707), 1172186.KB911471_gene2851
+(degree 1657), 1172186.KB911464_gene4767 (degree 1573) and 1172186.KB911469_gene2396
+(degree 1549).
 
 
 References
@@ -107,14 +108,15 @@ def MycobacteriumSp.360mftsu51(
 	
 	Datetime: 2021-02-02 23:07:28.101325
 	
-	The undirected graph Mycobacterium sp. 360MFTsu51 has 5607 nodes and 812584 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05170
-	and has 20 connected components, where the component with most nodes has 5565 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 240, the mean node degree is 289.85, and the node degree mode is 4. The top 5
-	most central nodes are 1172186.KB911468_gene1070 (degree 2109), 1172186.KB911464_gene4702
-	(degree 1707), 1172186.KB911471_gene2851 (degree 1657), 1172186.KB911464_gene4767
-	(degree 1573) and 1172186.KB911469_gene2396 (degree 1549).
+	The undirected graph Mycobacterium sp. 360MFTsu51 has 5607 nodes and 812584
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05170 and has 20 connected components, where the component
+	with most nodes has 5565 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 240, the mean node degree is 289.85,
+	and the node degree mode is 4. The top 5 most central nodes are 1172186.KB911468_gene1070
+	(degree 2109), 1172186.KB911464_gene4702 (degree 1707), 1172186.KB911471_gene2851
+	(degree 1657), 1172186.KB911464_gene4767 (degree 1573) and 1172186.KB911469_gene2396
+	(degree 1549).
 	
 
 

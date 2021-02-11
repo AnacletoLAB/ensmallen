@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:49:17.388833
 
-The undirected graph Acinetobacter oleivorans has 3844 nodes and 434400 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05881
-and has 7 connected components, where the component with most nodes has 3831 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 226.01, and the node degree mode is 4. The top 5
-most central nodes are 436717.AOLE_00875 (degree 1269), 436717.AOLE_16400 (degree
-1243), 436717.AOLE_16585 (degree 1183), 436717.AOLE_03905 (degree 1056) and 436717.AOLE_07870
-(degree 1010).
+The undirected graph Acinetobacter oleivorans has 3844 nodes and 434400
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05881 and has 7 connected components, where the component
+with most nodes has 3831 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 226.01,
+and the node degree mode is 4. The top 5 most central nodes are 436717.AOLE_00875
+(degree 1269), 436717.AOLE_16400 (degree 1243), 436717.AOLE_16585 (degree
+1183), 436717.AOLE_03905 (degree 1056) and 436717.AOLE_07870 (degree 1010).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterOleivorans(
 	
 	Datetime: 2021-02-02 20:49:17.388833
 	
-	The undirected graph Acinetobacter oleivorans has 3844 nodes and 434400 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05881
-	and has 7 connected components, where the component with most nodes has 3831 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 226.01, and the node degree mode is 4. The top 5
-	most central nodes are 436717.AOLE_00875 (degree 1269), 436717.AOLE_16400 (degree
-	1243), 436717.AOLE_16585 (degree 1183), 436717.AOLE_03905 (degree 1056) and 436717.AOLE_07870
-	(degree 1010).
+	The undirected graph Acinetobacter oleivorans has 3844 nodes and 434400
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05881 and has 7 connected components, where the component
+	with most nodes has 3831 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 226.01,
+	and the node degree mode is 4. The top 5 most central nodes are 436717.AOLE_00875
+	(degree 1269), 436717.AOLE_16400 (degree 1243), 436717.AOLE_16585 (degree
+	1183), 436717.AOLE_03905 (degree 1056) and 436717.AOLE_07870 (degree 1010).
 	
 
 

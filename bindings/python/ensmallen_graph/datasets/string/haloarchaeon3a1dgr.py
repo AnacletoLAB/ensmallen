@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:09.708558
 
-The undirected graph haloarchaeon 3A1DGR has 2636 nodes and 212121 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06108 and
-has 14 connected components, where the component with most nodes has 2605 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 138,
-the mean node degree is 160.94, and the node degree mode is 5. The top 5 most central
-nodes are 1071085.KK033114_gene160 (degree 833), 1071085.KK033114_gene852 (degree
-825), 1071085.KK033114_gene1363 (degree 730), 1071085.KK033114_gene158 (degree 726)
-and 1071085.KK033114_gene1568 (degree 669).
+The undirected graph haloarchaeon 3A1DGR has 2636 nodes and 212121 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06108 and has 14 connected components, where the component with most
+nodes has 2605 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 138, the mean node degree is 160.94, and
+the node degree mode is 5. The top 5 most central nodes are 1071085.KK033114_gene160
+(degree 833), 1071085.KK033114_gene852 (degree 825), 1071085.KK033114_gene1363
+(degree 730), 1071085.KK033114_gene158 (degree 726) and 1071085.KK033114_gene1568
+(degree 669).
 
 
 References
@@ -107,14 +108,15 @@ def Haloarchaeon3a1dgr(
 	
 	Datetime: 2021-02-02 22:19:09.708558
 	
-	The undirected graph haloarchaeon 3A1DGR has 2636 nodes and 212121 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06108 and
-	has 14 connected components, where the component with most nodes has 2605 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 138,
-	the mean node degree is 160.94, and the node degree mode is 5. The top 5 most central
-	nodes are 1071085.KK033114_gene160 (degree 833), 1071085.KK033114_gene852 (degree
-	825), 1071085.KK033114_gene1363 (degree 730), 1071085.KK033114_gene158 (degree 726)
-	and 1071085.KK033114_gene1568 (degree 669).
+	The undirected graph haloarchaeon 3A1DGR has 2636 nodes and 212121 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06108 and has 14 connected components, where the component with most
+	nodes has 2605 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 138, the mean node degree is 160.94, and
+	the node degree mode is 5. The top 5 most central nodes are 1071085.KK033114_gene160
+	(degree 833), 1071085.KK033114_gene852 (degree 825), 1071085.KK033114_gene1363
+	(degree 730), 1071085.KK033114_gene158 (degree 726) and 1071085.KK033114_gene1568
+	(degree 669).
 	
 
 

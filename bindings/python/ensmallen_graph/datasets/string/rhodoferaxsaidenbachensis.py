@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:09.082909
 
-The undirected graph Rhodoferax saidenbachensis has 3761 nodes and 292125 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04131
-and has 8 connected components, where the component with most nodes has 3747 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 155.34, and the node degree mode is 66. The top 5
-most central nodes are 614083.AWQR01000010_gene1522 (degree 1424), 614083.AWQR01000009_gene569
-(degree 1272), 614083.AWQR01000017_gene2249 (degree 1094), 614083.AWQR01000029_gene2151
-(degree 1048) and 614083.AWQR01000004_gene851 (degree 1042).
+The undirected graph Rhodoferax saidenbachensis has 3761 nodes and 292125
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04131 and has 8 connected components, where the component
+with most nodes has 3747 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 155.34,
+and the node degree mode is 66. The top 5 most central nodes are 614083.AWQR01000010_gene1522
+(degree 1424), 614083.AWQR01000009_gene569 (degree 1272), 614083.AWQR01000017_gene2249
+(degree 1094), 614083.AWQR01000029_gene2151 (degree 1048) and 614083.AWQR01000004_gene851
+(degree 1042).
 
 
 References
@@ -107,14 +108,15 @@ def RhodoferaxSaidenbachensis(
 	
 	Datetime: 2021-02-02 21:20:09.082909
 	
-	The undirected graph Rhodoferax saidenbachensis has 3761 nodes and 292125 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04131
-	and has 8 connected components, where the component with most nodes has 3747 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 155.34, and the node degree mode is 66. The top 5
-	most central nodes are 614083.AWQR01000010_gene1522 (degree 1424), 614083.AWQR01000009_gene569
-	(degree 1272), 614083.AWQR01000017_gene2249 (degree 1094), 614083.AWQR01000029_gene2151
-	(degree 1048) and 614083.AWQR01000004_gene851 (degree 1042).
+	The undirected graph Rhodoferax saidenbachensis has 3761 nodes and 292125
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04131 and has 8 connected components, where the component
+	with most nodes has 3747 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 155.34,
+	and the node degree mode is 66. The top 5 most central nodes are 614083.AWQR01000010_gene1522
+	(degree 1424), 614083.AWQR01000009_gene569 (degree 1272), 614083.AWQR01000017_gene2249
+	(degree 1094), 614083.AWQR01000029_gene2151 (degree 1048) and 614083.AWQR01000004_gene851
+	(degree 1042).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:14:55.926689
 
-The undirected graph Streptococcus sp. HPH0090 has 1657 nodes and 115308 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08404
-and has 5 connected components, where the component with most nodes has 1647 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 115, the mean node degree is 139.18, and the node degree mode is 10. The top 5
-most central nodes are 1203590.HMPREF1481_01623 (degree 772), 1203590.HMPREF1481_01539
-(degree 696), 1203590.HMPREF1481_01648 (degree 689), 1203590.HMPREF1481_00152 (degree
-634) and 1203590.HMPREF1481_00251 (degree 596).
+The undirected graph Streptococcus sp. HPH0090 has 1657 nodes and 115308
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08404 and has 5 connected components, where the component
+with most nodes has 1647 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 115, the mean node degree is 139.18,
+and the node degree mode is 10. The top 5 most central nodes are 1203590.HMPREF1481_01623
+(degree 772), 1203590.HMPREF1481_01539 (degree 696), 1203590.HMPREF1481_01648
+(degree 689), 1203590.HMPREF1481_00152 (degree 634) and 1203590.HMPREF1481_00251
+(degree 596).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusSp.Hph0090(
 	
 	Datetime: 2021-02-02 23:14:55.926689
 	
-	The undirected graph Streptococcus sp. HPH0090 has 1657 nodes and 115308 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08404
-	and has 5 connected components, where the component with most nodes has 1647 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 115, the mean node degree is 139.18, and the node degree mode is 10. The top 5
-	most central nodes are 1203590.HMPREF1481_01623 (degree 772), 1203590.HMPREF1481_01539
-	(degree 696), 1203590.HMPREF1481_01648 (degree 689), 1203590.HMPREF1481_00152 (degree
-	634) and 1203590.HMPREF1481_00251 (degree 596).
+	The undirected graph Streptococcus sp. HPH0090 has 1657 nodes and 115308
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08404 and has 5 connected components, where the component
+	with most nodes has 1647 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 115, the mean node degree is 139.18,
+	and the node degree mode is 10. The top 5 most central nodes are 1203590.HMPREF1481_01623
+	(degree 772), 1203590.HMPREF1481_01539 (degree 696), 1203590.HMPREF1481_01648
+	(degree 689), 1203590.HMPREF1481_00152 (degree 634) and 1203590.HMPREF1481_00251
+	(degree 596).
 	
 
 

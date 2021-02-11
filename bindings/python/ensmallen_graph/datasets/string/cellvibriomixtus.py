@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:29.879105
 
-The undirected graph Cellvibrio mixtus has 4114 nodes and 642317 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07592 and
-has 13 connected components, where the component with most nodes has 4089 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 268,
-the mean node degree is 312.26, and the node degree mode is 1. The top 5 most central
-nodes are 1209072.ALBT01000067_gene97 (degree 1838), 1209072.ALBT01000029_gene2203
-(degree 1800), 1209072.ALBT01000013_gene3614 (degree 1631), 1209072.ALBT01000033_gene1611
-(degree 1592) and 1209072.ALBT01000026_gene3711 (degree 1581).
+The undirected graph Cellvibrio mixtus has 4114 nodes and 642317 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07592 and has 13 connected components, where the component with most
+nodes has 4089 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 268, the mean node degree is 312.26, and
+the node degree mode is 1. The top 5 most central nodes are 1209072.ALBT01000067_gene97
+(degree 1838), 1209072.ALBT01000029_gene2203 (degree 1800), 1209072.ALBT01000013_gene3614
+(degree 1631), 1209072.ALBT01000033_gene1611 (degree 1592) and 1209072.ALBT01000026_gene3711
+(degree 1581).
 
 
 References
@@ -107,14 +108,15 @@ def CellvibrioMixtus(
 	
 	Datetime: 2021-02-02 23:18:29.879105
 	
-	The undirected graph Cellvibrio mixtus has 4114 nodes and 642317 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07592 and
-	has 13 connected components, where the component with most nodes has 4089 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 268,
-	the mean node degree is 312.26, and the node degree mode is 1. The top 5 most central
-	nodes are 1209072.ALBT01000067_gene97 (degree 1838), 1209072.ALBT01000029_gene2203
-	(degree 1800), 1209072.ALBT01000013_gene3614 (degree 1631), 1209072.ALBT01000033_gene1611
-	(degree 1592) and 1209072.ALBT01000026_gene3711 (degree 1581).
+	The undirected graph Cellvibrio mixtus has 4114 nodes and 642317 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07592 and has 13 connected components, where the component with most
+	nodes has 4089 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 268, the mean node degree is 312.26, and
+	the node degree mode is 1. The top 5 most central nodes are 1209072.ALBT01000067_gene97
+	(degree 1838), 1209072.ALBT01000029_gene2203 (degree 1800), 1209072.ALBT01000013_gene3614
+	(degree 1631), 1209072.ALBT01000033_gene1611 (degree 1592) and 1209072.ALBT01000026_gene3711
+	(degree 1581).
 	
 
 

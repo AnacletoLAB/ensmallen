@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-04 08:39:18.267478
 
-The undirected graph ENZYMES297 has 122 nodes with 2 different node types: 2 (nodes
-number 102) and 1 (nodes number 20), of which 1 are singletons, and 149 unweighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.02019
-and has 2 connected components, where the component with most nodes has 121 nodes
-and the component with the least nodes has a single node. The graph median node degree
-is 2, the mean node degree is 2.44 and the node degree mode is 2. The top 5 most
-central nodes are 20 (degree 7), 12 (degree 6), 122 (degree 5), 97 (degree 5) and
-18 (degree 5).
+The undirected graph ENZYMES297 has 122 nodes with 2 different node types:
+2 (nodes number 102) and 1 (nodes number 20), of which 1 are singletons,
+and 149 unweighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.02019 and has 2 connected components, where the
+component with most nodes has 121 nodes and the component with the least
+nodes has a single node. The graph median node degree is 2, the mean node
+degree is 2.44 and the node degree mode is 2. The top 5 most central nodes
+are 20 (degree 7), 12 (degree 6), 122 (degree 5), 97 (degree 5) and 18
+(degree 5).
 
 
 References
@@ -104,14 +105,15 @@ def Enzymes297(
 	
 	Datetime: 2021-02-04 08:39:18.267478
 	
-	The undirected graph ENZYMES297 has 122 nodes with 2 different node types: 2 (nodes
-	number 102) and 1 (nodes number 20), of which 1 are singletons, and 149 unweighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.02019
-	and has 2 connected components, where the component with most nodes has 121 nodes
-	and the component with the least nodes has a single node. The graph median node degree
-	is 2, the mean node degree is 2.44 and the node degree mode is 2. The top 5 most
-	central nodes are 20 (degree 7), 12 (degree 6), 122 (degree 5), 97 (degree 5) and
-	18 (degree 5).
+	The undirected graph ENZYMES297 has 122 nodes with 2 different node types:
+	2 (nodes number 102) and 1 (nodes number 20), of which 1 are singletons,
+	and 149 unweighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.02019 and has 2 connected components, where the
+	component with most nodes has 121 nodes and the component with the least
+	nodes has a single node. The graph median node degree is 2, the mean node
+	degree is 2.44 and the node degree mode is 2. The top 5 most central nodes
+	are 20 (degree 7), 12 (degree 6), 122 (degree 5), 97 (degree 5) and 18
+	(degree 5).
 	
 
 

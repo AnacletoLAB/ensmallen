@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:19:31.445448
 
-The undirected graph Lactobacillus curvatus has 1843 nodes and 110699 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06522 and
-has 4 connected components, where the component with most nodes has 1835 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 91,
-the mean node degree is 120.13, and the node degree mode is 4. The top 5 most central
-nodes are 1074451.CRL705_117 (degree 834), 1074451.CRL705_390 (degree 662), 1074451.CRL705_102
-(degree 636), 1074451.CRL705_922 (degree 634) and 1074451.CRL705_27 (degree 627).
+The undirected graph Lactobacillus curvatus has 1843 nodes and 110699 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06522 and has 4 connected components, where the component with most
+nodes has 1835 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 91, the mean node degree is 120.13, and
+the node degree mode is 4. The top 5 most central nodes are 1074451.CRL705_117
+(degree 834), 1074451.CRL705_390 (degree 662), 1074451.CRL705_102 (degree
+636), 1074451.CRL705_922 (degree 634) and 1074451.CRL705_27 (degree 627).
 
 
 References
@@ -106,13 +107,14 @@ def LactobacillusCurvatus(
 	
 	Datetime: 2021-02-02 22:19:31.445448
 	
-	The undirected graph Lactobacillus curvatus has 1843 nodes and 110699 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06522 and
-	has 4 connected components, where the component with most nodes has 1835 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 91,
-	the mean node degree is 120.13, and the node degree mode is 4. The top 5 most central
-	nodes are 1074451.CRL705_117 (degree 834), 1074451.CRL705_390 (degree 662), 1074451.CRL705_102
-	(degree 636), 1074451.CRL705_922 (degree 634) and 1074451.CRL705_27 (degree 627).
+	The undirected graph Lactobacillus curvatus has 1843 nodes and 110699 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06522 and has 4 connected components, where the component with most
+	nodes has 1835 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 91, the mean node degree is 120.13, and
+	the node degree mode is 4. The top 5 most central nodes are 1074451.CRL705_117
+	(degree 834), 1074451.CRL705_390 (degree 662), 1074451.CRL705_102 (degree
+	636), 1074451.CRL705_922 (degree 634) and 1074451.CRL705_27 (degree 627).
 	
 
 

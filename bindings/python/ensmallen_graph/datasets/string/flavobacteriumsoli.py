@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:38:19.844912
 
-The undirected graph Flavobacterium soli has 3471 nodes and 261119 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04336 and
-has 18 connected components, where the component with most nodes has 3430 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 150.46, and the node degree mode is 2. The top 5 most central
-nodes are 1121897.AUGO01000002_gene2303 (degree 1523), 1121897.AUGO01000001_gene1219
-(degree 1207), 1121897.AUGO01000009_gene2918 (degree 981), 1121897.AUGO01000007_gene343
-(degree 866) and 1121897.AUGO01000006_gene864 (degree 846).
+The undirected graph Flavobacterium soli has 3471 nodes and 261119 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04336 and has 18 connected components, where the component with most
+nodes has 3430 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 150.46, and
+the node degree mode is 2. The top 5 most central nodes are 1121897.AUGO01000002_gene2303
+(degree 1523), 1121897.AUGO01000001_gene1219 (degree 1207), 1121897.AUGO01000009_gene2918
+(degree 981), 1121897.AUGO01000007_gene343 (degree 866) and 1121897.AUGO01000006_gene864
+(degree 846).
 
 
 References
@@ -107,14 +108,15 @@ def FlavobacteriumSoli(
 	
 	Datetime: 2021-02-02 22:38:19.844912
 	
-	The undirected graph Flavobacterium soli has 3471 nodes and 261119 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04336 and
-	has 18 connected components, where the component with most nodes has 3430 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 150.46, and the node degree mode is 2. The top 5 most central
-	nodes are 1121897.AUGO01000002_gene2303 (degree 1523), 1121897.AUGO01000001_gene1219
-	(degree 1207), 1121897.AUGO01000009_gene2918 (degree 981), 1121897.AUGO01000007_gene343
-	(degree 866) and 1121897.AUGO01000006_gene864 (degree 846).
+	The undirected graph Flavobacterium soli has 3471 nodes and 261119 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04336 and has 18 connected components, where the component with most
+	nodes has 3430 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 150.46, and
+	the node degree mode is 2. The top 5 most central nodes are 1121897.AUGO01000002_gene2303
+	(degree 1523), 1121897.AUGO01000001_gene1219 (degree 1207), 1121897.AUGO01000009_gene2918
+	(degree 981), 1121897.AUGO01000007_gene343 (degree 866) and 1121897.AUGO01000006_gene864
+	(degree 846).
 	
 
 

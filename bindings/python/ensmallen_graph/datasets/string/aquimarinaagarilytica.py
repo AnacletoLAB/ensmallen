@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:20:25.630684
 
-The undirected graph Aquimarina agarilytica has 3523 nodes and 258982 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04174 and
-has 16 connected components, where the component with most nodes has 3481 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 147.02, and the node degree mode is 3. The top 5 most central
-nodes are 620914.JH621246_gene2691 (degree 1102), 620914.JH621257_gene1256 (degree
-826), 620914.JH621247_gene2970 (degree 821), 620914.JH621288_gene1388 (degree 817)
-and 620914.JH621248_gene3098 (degree 764).
+The undirected graph Aquimarina agarilytica has 3523 nodes and 258982 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04174 and has 16 connected components, where the component with most
+nodes has 3481 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 147.02, and
+the node degree mode is 3. The top 5 most central nodes are 620914.JH621246_gene2691
+(degree 1102), 620914.JH621257_gene1256 (degree 826), 620914.JH621247_gene2970
+(degree 821), 620914.JH621288_gene1388 (degree 817) and 620914.JH621248_gene3098
+(degree 764).
 
 
 References
@@ -107,14 +108,15 @@ def AquimarinaAgarilytica(
 	
 	Datetime: 2021-02-02 21:20:25.630684
 	
-	The undirected graph Aquimarina agarilytica has 3523 nodes and 258982 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04174 and
-	has 16 connected components, where the component with most nodes has 3481 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 147.02, and the node degree mode is 3. The top 5 most central
-	nodes are 620914.JH621246_gene2691 (degree 1102), 620914.JH621257_gene1256 (degree
-	826), 620914.JH621247_gene2970 (degree 821), 620914.JH621288_gene1388 (degree 817)
-	and 620914.JH621248_gene3098 (degree 764).
+	The undirected graph Aquimarina agarilytica has 3523 nodes and 258982 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04174 and has 16 connected components, where the component with most
+	nodes has 3481 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 147.02, and
+	the node degree mode is 3. The top 5 most central nodes are 620914.JH621246_gene2691
+	(degree 1102), 620914.JH621257_gene1256 (degree 826), 620914.JH621247_gene2970
+	(degree 821), 620914.JH621288_gene1388 (degree 817) and 620914.JH621248_gene3098
+	(degree 764).
 	
 
 

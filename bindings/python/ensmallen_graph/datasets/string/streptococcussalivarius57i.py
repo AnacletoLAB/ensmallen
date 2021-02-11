@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:16:32.446157
 
-The undirected graph Streptococcus salivarius 57I has 1929 nodes and 109475 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-and has 5 connected components, where the component with most nodes has 1919 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 90, the mean node degree is 113.50, and the node degree mode is 6. The top 5 most
-central nodes are 1046629.Ssal_00262 (degree 786), 1046629.Ssal_00010 (degree 624),
-1046629.Ssal_01003 (degree 607), 1046629.Ssal_01745 (degree 597) and 1046629.Ssal_00643
-(degree 594).
+The undirected graph Streptococcus salivarius 57I has 1929 nodes and 109475
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05887 and has 5 connected components, where the component
+with most nodes has 1919 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 113.50,
+and the node degree mode is 6. The top 5 most central nodes are 1046629.Ssal_00262
+(degree 786), 1046629.Ssal_00010 (degree 624), 1046629.Ssal_01003 (degree
+607), 1046629.Ssal_01745 (degree 597) and 1046629.Ssal_00643 (degree 594).
 
 
 References
@@ -107,14 +107,14 @@ def StreptococcusSalivarius57i(
 	
 	Datetime: 2021-02-02 22:16:32.446157
 	
-	The undirected graph Streptococcus salivarius 57I has 1929 nodes and 109475 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05887
-	and has 5 connected components, where the component with most nodes has 1919 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 90, the mean node degree is 113.50, and the node degree mode is 6. The top 5 most
-	central nodes are 1046629.Ssal_00262 (degree 786), 1046629.Ssal_00010 (degree 624),
-	1046629.Ssal_01003 (degree 607), 1046629.Ssal_01745 (degree 597) and 1046629.Ssal_00643
-	(degree 594).
+	The undirected graph Streptococcus salivarius 57I has 1929 nodes and 109475
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05887 and has 5 connected components, where the component
+	with most nodes has 1919 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 113.50,
+	and the node degree mode is 6. The top 5 most central nodes are 1046629.Ssal_00262
+	(degree 786), 1046629.Ssal_00010 (degree 624), 1046629.Ssal_01003 (degree
+	607), 1046629.Ssal_01745 (degree 597) and 1046629.Ssal_00643 (degree 594).
 	
 
 

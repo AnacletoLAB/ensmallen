@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:36:40.272667
 
-The undirected graph Gemmatimonas aurantiaca has 3919 nodes and 396099 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05159 and
-has 8 connected components, where the component with most nodes has 3902 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 171,
-the mean node degree is 202.14, and the node degree mode is 3. The top 5 most central
-nodes are 379066.GAU_0010 (degree 1551), 379066.GAU_2866 (degree 1377), 379066.GAU_1750
-(degree 1178), 379066.GAU_2785 (degree 1167) and 379066.GAU_2451 (degree 1115).
+The undirected graph Gemmatimonas aurantiaca has 3919 nodes and 396099
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05159 and has 8 connected components, where the component
+with most nodes has 3902 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 171, the mean node degree is 202.14,
+and the node degree mode is 3. The top 5 most central nodes are 379066.GAU_0010
+(degree 1551), 379066.GAU_2866 (degree 1377), 379066.GAU_1750 (degree 1178),
+379066.GAU_2785 (degree 1167) and 379066.GAU_2451 (degree 1115).
 
 
 References
@@ -106,13 +107,14 @@ def GemmatimonasAurantiaca(
 	
 	Datetime: 2021-02-02 20:36:40.272667
 	
-	The undirected graph Gemmatimonas aurantiaca has 3919 nodes and 396099 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05159 and
-	has 8 connected components, where the component with most nodes has 3902 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 171,
-	the mean node degree is 202.14, and the node degree mode is 3. The top 5 most central
-	nodes are 379066.GAU_0010 (degree 1551), 379066.GAU_2866 (degree 1377), 379066.GAU_1750
-	(degree 1178), 379066.GAU_2785 (degree 1167) and 379066.GAU_2451 (degree 1115).
+	The undirected graph Gemmatimonas aurantiaca has 3919 nodes and 396099
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05159 and has 8 connected components, where the component
+	with most nodes has 3902 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 171, the mean node degree is 202.14,
+	and the node degree mode is 3. The top 5 most central nodes are 379066.GAU_0010
+	(degree 1551), 379066.GAU_2866 (degree 1377), 379066.GAU_1750 (degree 1178),
+	379066.GAU_2785 (degree 1167) and 379066.GAU_2451 (degree 1115).
 	
 
 

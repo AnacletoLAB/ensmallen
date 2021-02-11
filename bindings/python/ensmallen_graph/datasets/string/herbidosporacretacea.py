@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:56:19.173455
 
-The undirected graph Herbidospora cretacea has 7213 nodes and 914313 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03515 and
-has 22 connected components, where the component with most nodes has 7169 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 253.52, and the node degree mode is 3. The top 5 most central
-nodes are 28444.JODQ01000009_gene3660 (degree 2325), 28444.JODQ01000014_gene6859
-(degree 2001), 28444.JODQ01000001_gene2079 (degree 1957), 28444.JODQ01000001_gene2063
-(degree 1910) and 28444.JODQ01000007_gene5948 (degree 1751).
+The undirected graph Herbidospora cretacea has 7213 nodes and 914313 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03515 and has 22 connected components, where the component with most
+nodes has 7169 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 253.52, and
+the node degree mode is 3. The top 5 most central nodes are 28444.JODQ01000009_gene3660
+(degree 2325), 28444.JODQ01000014_gene6859 (degree 2001), 28444.JODQ01000001_gene2079
+(degree 1957), 28444.JODQ01000001_gene2063 (degree 1910) and 28444.JODQ01000007_gene5948
+(degree 1751).
 
 
 References
@@ -107,14 +108,15 @@ def HerbidosporaCretacea(
 	
 	Datetime: 2021-02-02 17:56:19.173455
 	
-	The undirected graph Herbidospora cretacea has 7213 nodes and 914313 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03515 and
-	has 22 connected components, where the component with most nodes has 7169 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 253.52, and the node degree mode is 3. The top 5 most central
-	nodes are 28444.JODQ01000009_gene3660 (degree 2325), 28444.JODQ01000014_gene6859
-	(degree 2001), 28444.JODQ01000001_gene2079 (degree 1957), 28444.JODQ01000001_gene2063
-	(degree 1910) and 28444.JODQ01000007_gene5948 (degree 1751).
+	The undirected graph Herbidospora cretacea has 7213 nodes and 914313 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03515 and has 22 connected components, where the component with most
+	nodes has 7169 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 253.52, and
+	the node degree mode is 3. The top 5 most central nodes are 28444.JODQ01000009_gene3660
+	(degree 2325), 28444.JODQ01000014_gene6859 (degree 2001), 28444.JODQ01000001_gene2079
+	(degree 1957), 28444.JODQ01000001_gene2063 (degree 1910) and 28444.JODQ01000007_gene5948
+	(degree 1751).
 	
 
 

@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:07:04.679140
 
-The undirected graph Burkholderia sp. MP1 has 7491 nodes and 1459251 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05202 and
-has 45 connected components, where the component with most nodes has 7378 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 307,
-the mean node degree is 389.60, and the node degree mode is 1. The top 5 most central
-nodes are 1458357.BG58_24075 (degree 2741), 1458357.BG58_12565 (degree 2570), 1458357.BG58_18605
-(degree 2448), 1458357.BG58_00970 (degree 2429) and 1458357.BG58_01185 (degree 2126).
+The undirected graph Burkholderia sp. MP1 has 7491 nodes and 1459251 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05202 and has 45 connected components, where the component with most
+nodes has 7378 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 307, the mean node degree is 389.60, and
+the node degree mode is 1. The top 5 most central nodes are 1458357.BG58_24075
+(degree 2741), 1458357.BG58_12565 (degree 2570), 1458357.BG58_18605 (degree
+2448), 1458357.BG58_00970 (degree 2429) and 1458357.BG58_01185 (degree
+2126).
 
 
 References
@@ -106,13 +108,15 @@ def BurkholderiaSp.Mp1(
 	
 	Datetime: 2021-02-03 23:07:04.679140
 	
-	The undirected graph Burkholderia sp. MP1 has 7491 nodes and 1459251 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05202 and
-	has 45 connected components, where the component with most nodes has 7378 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 307,
-	the mean node degree is 389.60, and the node degree mode is 1. The top 5 most central
-	nodes are 1458357.BG58_24075 (degree 2741), 1458357.BG58_12565 (degree 2570), 1458357.BG58_18605
-	(degree 2448), 1458357.BG58_00970 (degree 2429) and 1458357.BG58_01185 (degree 2126).
+	The undirected graph Burkholderia sp. MP1 has 7491 nodes and 1459251 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05202 and has 45 connected components, where the component with most
+	nodes has 7378 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 307, the mean node degree is 389.60, and
+	the node degree mode is 1. The top 5 most central nodes are 1458357.BG58_24075
+	(degree 2741), 1458357.BG58_12565 (degree 2570), 1458357.BG58_18605 (degree
+	2448), 1458357.BG58_00970 (degree 2429) and 1458357.BG58_01185 (degree
+	2126).
 	
 
 

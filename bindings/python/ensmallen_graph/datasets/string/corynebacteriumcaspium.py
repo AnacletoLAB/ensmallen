@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:34:59.078957
 
-The undirected graph Corynebacterium caspium has 1610 nodes and 120438 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09298 and
-has 5 connected components, where the component with most nodes has 1601 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 139,
-the mean node degree is 149.61, and the node degree mode is 3. The top 5 most central
-nodes are 1121355.KB903378_gene397 (degree 702), 1121355.KB903376_gene1047 (degree
-685), 1121355.KB903376_gene910 (degree 653), 1121355.KB903379_gene773 (degree 644)
-and 1121355.KB903378_gene380 (degree 614).
+The undirected graph Corynebacterium caspium has 1610 nodes and 120438
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.09298 and has 5 connected components, where the component
+with most nodes has 1601 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 139, the mean node degree is 149.61,
+and the node degree mode is 3. The top 5 most central nodes are 1121355.KB903378_gene397
+(degree 702), 1121355.KB903376_gene1047 (degree 685), 1121355.KB903376_gene910
+(degree 653), 1121355.KB903379_gene773 (degree 644) and 1121355.KB903378_gene380
+(degree 614).
 
 
 References
@@ -107,14 +108,15 @@ def CorynebacteriumCaspium(
 	
 	Datetime: 2021-02-02 22:34:59.078957
 	
-	The undirected graph Corynebacterium caspium has 1610 nodes and 120438 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09298 and
-	has 5 connected components, where the component with most nodes has 1601 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 139,
-	the mean node degree is 149.61, and the node degree mode is 3. The top 5 most central
-	nodes are 1121355.KB903378_gene397 (degree 702), 1121355.KB903376_gene1047 (degree
-	685), 1121355.KB903376_gene910 (degree 653), 1121355.KB903379_gene773 (degree 644)
-	and 1121355.KB903378_gene380 (degree 614).
+	The undirected graph Corynebacterium caspium has 1610 nodes and 120438
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.09298 and has 5 connected components, where the component
+	with most nodes has 1601 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 139, the mean node degree is 149.61,
+	and the node degree mode is 3. The top 5 most central nodes are 1121355.KB903378_gene397
+	(degree 702), 1121355.KB903376_gene1047 (degree 685), 1121355.KB903376_gene910
+	(degree 653), 1121355.KB903379_gene773 (degree 644) and 1121355.KB903378_gene380
+	(degree 614).
 	
 
 

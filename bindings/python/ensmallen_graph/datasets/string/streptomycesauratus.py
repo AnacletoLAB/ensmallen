@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:04:27.879013
 
-The undirected graph Streptomyces auratus has 6614 nodes and 954340 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04364 and
-has 24 connected components, where the component with most nodes has 6559 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 241,
-the mean node degree is 288.58, and the node degree mode is 2. The top 5 most central
-nodes are 1160718.SU9_05766 (degree 3179), 1160718.SU9_33643 (degree 2069), 1160718.SU9_20319
-(degree 1966), 1160718.SU9_28516 (degree 1896) and 1160718.SU9_23680 (degree 1876).
+The undirected graph Streptomyces auratus has 6614 nodes and 954340 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04364 and has 24 connected components, where the component with most
+nodes has 6559 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 241, the mean node degree is 288.58, and
+the node degree mode is 2. The top 5 most central nodes are 1160718.SU9_05766
+(degree 3179), 1160718.SU9_33643 (degree 2069), 1160718.SU9_20319 (degree
+1966), 1160718.SU9_28516 (degree 1896) and 1160718.SU9_23680 (degree 1876).
 
 
 References
@@ -106,13 +107,14 @@ def StreptomycesAuratus(
 	
 	Datetime: 2021-02-02 23:04:27.879013
 	
-	The undirected graph Streptomyces auratus has 6614 nodes and 954340 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04364 and
-	has 24 connected components, where the component with most nodes has 6559 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 241,
-	the mean node degree is 288.58, and the node degree mode is 2. The top 5 most central
-	nodes are 1160718.SU9_05766 (degree 3179), 1160718.SU9_33643 (degree 2069), 1160718.SU9_20319
-	(degree 1966), 1160718.SU9_28516 (degree 1896) and 1160718.SU9_23680 (degree 1876).
+	The undirected graph Streptomyces auratus has 6614 nodes and 954340 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04364 and has 24 connected components, where the component with most
+	nodes has 6559 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 241, the mean node degree is 288.58, and
+	the node degree mode is 2. The top 5 most central nodes are 1160718.SU9_05766
+	(degree 3179), 1160718.SU9_33643 (degree 2069), 1160718.SU9_20319 (degree
+	1966), 1160718.SU9_28516 (degree 1896) and 1160718.SU9_23680 (degree 1876).
 	
 
 

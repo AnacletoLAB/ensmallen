@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:07.743986
 
-The undirected graph Planomicrobium glaciei has 3855 nodes and 445005 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05990 and
-has 11 connected components, where the component with most nodes has 3832 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 212,
-the mean node degree is 230.87, and the node degree mode is 2. The top 5 most central
-nodes are 1273538.G159_07570 (degree 1292), 1273538.G159_11055 (degree 1166), 1273538.G159_00600
-(degree 1084), 1273538.G159_15435 (degree 1082) and 1273538.G159_05240 (degree 1073).
+The undirected graph Planomicrobium glaciei has 3855 nodes and 445005 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05990 and has 11 connected components, where the component with most
+nodes has 3832 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 212, the mean node degree is 230.87, and
+the node degree mode is 2. The top 5 most central nodes are 1273538.G159_07570
+(degree 1292), 1273538.G159_11055 (degree 1166), 1273538.G159_00600 (degree
+1084), 1273538.G159_15435 (degree 1082) and 1273538.G159_05240 (degree
+1073).
 
 
 References
@@ -106,13 +108,15 @@ def PlanomicrobiumGlaciei(
 	
 	Datetime: 2021-02-02 23:38:07.743986
 	
-	The undirected graph Planomicrobium glaciei has 3855 nodes and 445005 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05990 and
-	has 11 connected components, where the component with most nodes has 3832 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 212,
-	the mean node degree is 230.87, and the node degree mode is 2. The top 5 most central
-	nodes are 1273538.G159_07570 (degree 1292), 1273538.G159_11055 (degree 1166), 1273538.G159_00600
-	(degree 1084), 1273538.G159_15435 (degree 1082) and 1273538.G159_05240 (degree 1073).
+	The undirected graph Planomicrobium glaciei has 3855 nodes and 445005 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05990 and has 11 connected components, where the component with most
+	nodes has 3832 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 212, the mean node degree is 230.87, and
+	the node degree mode is 2. The top 5 most central nodes are 1273538.G159_07570
+	(degree 1292), 1273538.G159_11055 (degree 1166), 1273538.G159_00600 (degree
+	1084), 1273538.G159_15435 (degree 1082) and 1273538.G159_05240 (degree
+	1073).
 	
 
 

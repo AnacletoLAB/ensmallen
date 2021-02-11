@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:11:42.428980
 
-The undirected graph eris1176 has 1176 nodes and 9864 unweighted edges, of which
-1176 are self-loops. The graph is dense as it has a density of 0.01343 and has 2
-connected components, where the component with most nodes has 1174 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 4, the
-mean node degree is 15.78, and the node degree mode is 3. The top 5 most central
-nodes are 946 (degree 99), 943 (degree 99), 936 (degree 99), 931 (degree 91) and
-928 (degree 91).
+The undirected graph eris1176 has 1176 nodes and 9864 unweighted edges,
+of which 1176 are self-loops. The graph is dense as it has a density of
+0.01343 and has 2 connected components, where the component with most nodes
+has 1174 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 4, the mean node degree is 15.78, and the node
+degree mode is 3. The top 5 most central nodes are 946 (degree 99), 943
+(degree 99), 936 (degree 99), 931 (degree 91) and 928 (degree 91).
 
 
 References
@@ -103,13 +103,13 @@ def Eris1176(
 	
 	Datetime: 2021-02-06 08:11:42.428980
 	
-	The undirected graph eris1176 has 1176 nodes and 9864 unweighted edges, of which
-	1176 are self-loops. The graph is dense as it has a density of 0.01343 and has 2
-	connected components, where the component with most nodes has 1174 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 4, the
-	mean node degree is 15.78, and the node degree mode is 3. The top 5 most central
-	nodes are 946 (degree 99), 943 (degree 99), 936 (degree 99), 931 (degree 91) and
-	928 (degree 91).
+	The undirected graph eris1176 has 1176 nodes and 9864 unweighted edges,
+	of which 1176 are self-loops. The graph is dense as it has a density of
+	0.01343 and has 2 connected components, where the component with most nodes
+	has 1174 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 4, the mean node degree is 15.78, and the node
+	degree mode is 3. The top 5 most central nodes are 946 (degree 99), 943
+	(degree 99), 936 (degree 99), 931 (degree 91) and 928 (degree 91).
 	
 
 

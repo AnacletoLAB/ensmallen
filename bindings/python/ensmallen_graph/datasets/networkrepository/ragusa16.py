@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 08:00:10.054807
 
-The undirected graph Ragusa16 has 24 nodes and 68 weighted edges, of which 10 are
-self-loops. The graph is quite dense as it has a density of 0.22826 and is connected,
-as it has a single component. The graph median node degree is 5, the mean node degree
-is 5.25, and the node degree mode is 1. The top 5 most central nodes are 11 (degree
-15), 5 (degree 14), 22 (degree 12), 12 (degree 9) and 9 (degree 8).
+The undirected graph Ragusa16 has 24 nodes and 68 weighted edges, of which
+10 are self-loops. The graph is quite dense as it has a density of 0.22826
+and is connected, as it has a single component. The graph median node degree
+is 5, the mean node degree is 5.25, and the node degree mode is 1. The
+top 5 most central nodes are 11 (degree 15), 5 (degree 14), 22 (degree
+12), 12 (degree 9) and 9 (degree 8).
 
 
 References
@@ -101,11 +102,12 @@ def Ragusa16(
 	
 	Datetime: 2021-02-06 08:00:10.054807
 	
-	The undirected graph Ragusa16 has 24 nodes and 68 weighted edges, of which 10 are
-	self-loops. The graph is quite dense as it has a density of 0.22826 and is connected,
-	as it has a single component. The graph median node degree is 5, the mean node degree
-	is 5.25, and the node degree mode is 1. The top 5 most central nodes are 11 (degree
-	15), 5 (degree 14), 22 (degree 12), 12 (degree 9) and 9 (degree 8).
+	The undirected graph Ragusa16 has 24 nodes and 68 weighted edges, of which
+	10 are self-loops. The graph is quite dense as it has a density of 0.22826
+	and is connected, as it has a single component. The graph median node degree
+	is 5, the mean node degree is 5.25, and the node degree mode is 1. The
+	top 5 most central nodes are 11 (degree 15), 5 (degree 14), 22 (degree
+	12), 12 (degree 9) and 9 (degree 8).
 	
 
 

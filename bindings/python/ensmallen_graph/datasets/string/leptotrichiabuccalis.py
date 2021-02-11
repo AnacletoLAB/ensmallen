@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:04:32.190148
 
-The undirected graph Leptotrichia buccalis has 2206 nodes and 138243 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05684 and
-has 6 connected components, where the component with most nodes has 2193 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 105,
-the mean node degree is 125.33, and the node degree mode is 4. The top 5 most central
-nodes are 523794.Lebu_0805 (degree 1065), 523794.Lebu_1687 (degree 708), 523794.Lebu_0381
-(degree 669), 523794.Lebu_0685 (degree 663) and 523794.Lebu_0369 (degree 640).
+The undirected graph Leptotrichia buccalis has 2206 nodes and 138243 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05684 and has 6 connected components, where the component with most
+nodes has 2193 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 105, the mean node degree is 125.33, and
+the node degree mode is 4. The top 5 most central nodes are 523794.Lebu_0805
+(degree 1065), 523794.Lebu_1687 (degree 708), 523794.Lebu_0381 (degree
+669), 523794.Lebu_0685 (degree 663) and 523794.Lebu_0369 (degree 640).
 
 
 References
@@ -106,13 +107,14 @@ def LeptotrichiaBuccalis(
 	
 	Datetime: 2021-02-02 21:04:32.190148
 	
-	The undirected graph Leptotrichia buccalis has 2206 nodes and 138243 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05684 and
-	has 6 connected components, where the component with most nodes has 2193 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 105,
-	the mean node degree is 125.33, and the node degree mode is 4. The top 5 most central
-	nodes are 523794.Lebu_0805 (degree 1065), 523794.Lebu_1687 (degree 708), 523794.Lebu_0381
-	(degree 669), 523794.Lebu_0685 (degree 663) and 523794.Lebu_0369 (degree 640).
+	The undirected graph Leptotrichia buccalis has 2206 nodes and 138243 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05684 and has 6 connected components, where the component with most
+	nodes has 2193 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 105, the mean node degree is 125.33, and
+	the node degree mode is 4. The top 5 most central nodes are 523794.Lebu_0805
+	(degree 1065), 523794.Lebu_1687 (degree 708), 523794.Lebu_0381 (degree
+	669), 523794.Lebu_0685 (degree 663) and 523794.Lebu_0369 (degree 640).
 	
 
 

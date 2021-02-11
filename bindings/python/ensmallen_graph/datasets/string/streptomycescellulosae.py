@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 16:24:22.970975
 
-The undirected graph Streptomyces cellulosae has 8736 nodes and 1411658 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03700
-and has 43 connected components, where the component with most nodes has 8629 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 270, the mean node degree is 323.18, and the node degree mode is 1. The top 5
-most central nodes are 1968.JOEV01000081_gene5817 (degree 3872), 1968.JOEV01000006_gene4543
-(degree 2776), 1968.JOEV01000013_gene848 (degree 2761), 1968.JOEV01000018_gene2618
-(degree 2320) and 1968.JOEV01000016_gene3957 (degree 2312).
+The undirected graph Streptomyces cellulosae has 8736 nodes and 1411658
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03700 and has 43 connected components, where the component
+with most nodes has 8629 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 270, the mean node degree is 323.18,
+and the node degree mode is 1. The top 5 most central nodes are 1968.JOEV01000081_gene5817
+(degree 3872), 1968.JOEV01000006_gene4543 (degree 2776), 1968.JOEV01000013_gene848
+(degree 2761), 1968.JOEV01000018_gene2618 (degree 2320) and 1968.JOEV01000016_gene3957
+(degree 2312).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesCellulosae(
 	
 	Datetime: 2021-02-02 16:24:22.970975
 	
-	The undirected graph Streptomyces cellulosae has 8736 nodes and 1411658 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03700
-	and has 43 connected components, where the component with most nodes has 8629 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 270, the mean node degree is 323.18, and the node degree mode is 1. The top 5
-	most central nodes are 1968.JOEV01000081_gene5817 (degree 3872), 1968.JOEV01000006_gene4543
-	(degree 2776), 1968.JOEV01000013_gene848 (degree 2761), 1968.JOEV01000018_gene2618
-	(degree 2320) and 1968.JOEV01000016_gene3957 (degree 2312).
+	The undirected graph Streptomyces cellulosae has 8736 nodes and 1411658
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03700 and has 43 connected components, where the component
+	with most nodes has 8629 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 270, the mean node degree is 323.18,
+	and the node degree mode is 1. The top 5 most central nodes are 1968.JOEV01000081_gene5817
+	(degree 3872), 1968.JOEV01000006_gene4543 (degree 2776), 1968.JOEV01000013_gene848
+	(degree 2761), 1968.JOEV01000018_gene2618 (degree 2320) and 1968.JOEV01000016_gene3957
+	(degree 2312).
 	
 
 

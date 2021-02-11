@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:55:52.677970
 
-The undirected graph Arthrobacter sp. 35W has 3924 nodes and 387313 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05032 and
-has 5 connected components, where the component with most nodes has 3912 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 159,
-the mean node degree is 197.41, and the node degree mode is 2. The top 5 most central
-nodes are 1132441.KI519455_gene2442 (degree 1453), 1132441.KI519454_gene548 (degree
-1426), 1132441.KI519454_gene1428 (degree 1329), 1132441.KI519454_gene782 (degree
-1197) and 1132441.KI519455_gene2433 (degree 1166).
+The undirected graph Arthrobacter sp. 35W has 3924 nodes and 387313 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05032 and has 5 connected components, where the component with most
+nodes has 3912 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 159, the mean node degree is 197.41, and
+the node degree mode is 2. The top 5 most central nodes are 1132441.KI519455_gene2442
+(degree 1453), 1132441.KI519454_gene548 (degree 1426), 1132441.KI519454_gene1428
+(degree 1329), 1132441.KI519454_gene782 (degree 1197) and 1132441.KI519455_gene2433
+(degree 1166).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.35w(
 	
 	Datetime: 2021-02-02 22:55:52.677970
 	
-	The undirected graph Arthrobacter sp. 35W has 3924 nodes and 387313 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05032 and
-	has 5 connected components, where the component with most nodes has 3912 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 159,
-	the mean node degree is 197.41, and the node degree mode is 2. The top 5 most central
-	nodes are 1132441.KI519455_gene2442 (degree 1453), 1132441.KI519454_gene548 (degree
-	1426), 1132441.KI519454_gene1428 (degree 1329), 1132441.KI519454_gene782 (degree
-	1197) and 1132441.KI519455_gene2433 (degree 1166).
+	The undirected graph Arthrobacter sp. 35W has 3924 nodes and 387313 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05032 and has 5 connected components, where the component with most
+	nodes has 3912 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 159, the mean node degree is 197.41, and
+	the node degree mode is 2. The top 5 most central nodes are 1132441.KI519455_gene2442
+	(degree 1453), 1132441.KI519454_gene548 (degree 1426), 1132441.KI519454_gene1428
+	(degree 1329), 1132441.KI519454_gene782 (degree 1197) and 1132441.KI519455_gene2433
+	(degree 1166).
 	
 
 

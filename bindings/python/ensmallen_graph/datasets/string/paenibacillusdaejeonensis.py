@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:44:22.796018
 
-The undirected graph Paenibacillus daejeonensis has 6007 nodes and 745879 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04135
-and has 17 connected components, where the component with most nodes has 5961 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 214, the mean node degree is 248.34, and the node degree mode is 1. The top 5
-most central nodes are 1122917.KB899664_gene3059 (degree 1982), 1122917.KB899676_gene165
-(degree 1687), 1122917.KB899659_gene5595 (degree 1551), 1122917.KB899659_gene5130
-(degree 1540) and 1122917.KB899664_gene2820 (degree 1523).
+The undirected graph Paenibacillus daejeonensis has 6007 nodes and 745879
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04135 and has 17 connected components, where the component
+with most nodes has 5961 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 214, the mean node degree is 248.34,
+and the node degree mode is 1. The top 5 most central nodes are 1122917.KB899664_gene3059
+(degree 1982), 1122917.KB899676_gene165 (degree 1687), 1122917.KB899659_gene5595
+(degree 1551), 1122917.KB899659_gene5130 (degree 1540) and 1122917.KB899664_gene2820
+(degree 1523).
 
 
 References
@@ -107,14 +108,15 @@ def PaenibacillusDaejeonensis(
 	
 	Datetime: 2021-02-02 22:44:22.796018
 	
-	The undirected graph Paenibacillus daejeonensis has 6007 nodes and 745879 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04135
-	and has 17 connected components, where the component with most nodes has 5961 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 214, the mean node degree is 248.34, and the node degree mode is 1. The top 5
-	most central nodes are 1122917.KB899664_gene3059 (degree 1982), 1122917.KB899676_gene165
-	(degree 1687), 1122917.KB899659_gene5595 (degree 1551), 1122917.KB899659_gene5130
-	(degree 1540) and 1122917.KB899664_gene2820 (degree 1523).
+	The undirected graph Paenibacillus daejeonensis has 6007 nodes and 745879
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04135 and has 17 connected components, where the component
+	with most nodes has 5961 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 214, the mean node degree is 248.34,
+	and the node degree mode is 1. The top 5 most central nodes are 1122917.KB899664_gene3059
+	(degree 1982), 1122917.KB899676_gene165 (degree 1687), 1122917.KB899659_gene5595
+	(degree 1551), 1122917.KB899659_gene5130 (degree 1540) and 1122917.KB899664_gene2820
+	(degree 1523).
 	
 
 

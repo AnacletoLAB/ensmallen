@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:03:59.800269
 
-The undirected graph Saprospira grandis has 4172 nodes and 206085 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02369 and
-has 69 connected components, where the component with most nodes has 3977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 56,
-the mean node degree is 98.79, and the node degree mode is 3. The top 5 most central
-nodes are 984262.SGRA_3534 (degree 1025), 984262.SGRA_p0058 (degree 843), 984262.SGRA_p0004
-(degree 795), 984262.SGRA_0441 (degree 757) and 984262.SGRA_0992 (degree 749).
+The undirected graph Saprospira grandis has 4172 nodes and 206085 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02369 and has 69 connected components, where the component with most
+nodes has 3977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 56, the mean node degree is 98.79, and
+the node degree mode is 3. The top 5 most central nodes are 984262.SGRA_3534
+(degree 1025), 984262.SGRA_p0058 (degree 843), 984262.SGRA_p0004 (degree
+795), 984262.SGRA_0441 (degree 757) and 984262.SGRA_0992 (degree 749).
 
 
 References
@@ -106,13 +107,14 @@ def SaprospiraGrandis(
 	
 	Datetime: 2021-02-02 22:03:59.800269
 	
-	The undirected graph Saprospira grandis has 4172 nodes and 206085 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02369 and
-	has 69 connected components, where the component with most nodes has 3977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 56,
-	the mean node degree is 98.79, and the node degree mode is 3. The top 5 most central
-	nodes are 984262.SGRA_3534 (degree 1025), 984262.SGRA_p0058 (degree 843), 984262.SGRA_p0004
-	(degree 795), 984262.SGRA_0441 (degree 757) and 984262.SGRA_0992 (degree 749).
+	The undirected graph Saprospira grandis has 4172 nodes and 206085 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02369 and has 69 connected components, where the component with most
+	nodes has 3977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 56, the mean node degree is 98.79, and
+	the node degree mode is 3. The top 5 most central nodes are 984262.SGRA_3534
+	(degree 1025), 984262.SGRA_p0058 (degree 843), 984262.SGRA_p0004 (degree
+	795), 984262.SGRA_0441 (degree 757) and 984262.SGRA_0992 (degree 749).
 	
 
 

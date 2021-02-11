@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:05.048441
 
-The undirected graph Salinibacter ruber has 2790 nodes and 206999 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05320 and
-has 13 connected components, where the component with most nodes has 2754 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 119,
-the mean node degree is 148.39, and the node degree mode is 5. The top 5 most central
-nodes are 309807.SRU_1635 (degree 1186), 309807.SRU_0088 (degree 1093), 309807.SRU_2008
-(degree 1071), 309807.SRU_0075 (degree 988) and 309807.SRU_0861 (degree 966).
+The undirected graph Salinibacter ruber has 2790 nodes and 206999 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05320 and has 13 connected components, where the component with most
+nodes has 2754 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 119, the mean node degree is 148.39, and
+the node degree mode is 5. The top 5 most central nodes are 309807.SRU_1635
+(degree 1186), 309807.SRU_0088 (degree 1093), 309807.SRU_2008 (degree 1071),
+309807.SRU_0075 (degree 988) and 309807.SRU_0861 (degree 966).
 
 
 References
@@ -106,13 +107,14 @@ def SalinibacterRuber(
 	
 	Datetime: 2021-02-02 20:23:05.048441
 	
-	The undirected graph Salinibacter ruber has 2790 nodes and 206999 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05320 and
-	has 13 connected components, where the component with most nodes has 2754 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 119,
-	the mean node degree is 148.39, and the node degree mode is 5. The top 5 most central
-	nodes are 309807.SRU_1635 (degree 1186), 309807.SRU_0088 (degree 1093), 309807.SRU_2008
-	(degree 1071), 309807.SRU_0075 (degree 988) and 309807.SRU_0861 (degree 966).
+	The undirected graph Salinibacter ruber has 2790 nodes and 206999 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05320 and has 13 connected components, where the component with most
+	nodes has 2754 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 119, the mean node degree is 148.39, and
+	the node degree mode is 5. The top 5 most central nodes are 309807.SRU_1635
+	(degree 1186), 309807.SRU_0088 (degree 1093), 309807.SRU_2008 (degree 1071),
+	309807.SRU_0075 (degree 988) and 309807.SRU_0861 (degree 966).
 	
 
 

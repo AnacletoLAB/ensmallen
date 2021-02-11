@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:51:07.006324
 
-The undirected graph Intestinibacter bartlettii has 2775 nodes and 214929 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05584
-and has 13 connected components, where the component with most nodes has 2739 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 132, the mean node degree is 154.90, and the node degree mode is 7. The top 5
-most central nodes are 445973.CLOBAR_01516 (degree 1127), 445973.CLOBAR_00656 (degree
-955), 445973.CLOBAR_02505 (degree 870), 445973.CLOBAR_00502 (degree 784) and 445973.CLOBAR_01376
-(degree 763).
+The undirected graph Intestinibacter bartlettii has 2775 nodes and 214929
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05584 and has 13 connected components, where the component
+with most nodes has 2739 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 132, the mean node degree is 154.90,
+and the node degree mode is 7. The top 5 most central nodes are 445973.CLOBAR_01516
+(degree 1127), 445973.CLOBAR_00656 (degree 955), 445973.CLOBAR_02505 (degree
+870), 445973.CLOBAR_00502 (degree 784) and 445973.CLOBAR_01376 (degree
+763).
 
 
 References
@@ -107,14 +108,15 @@ def IntestinibacterBartlettii(
 	
 	Datetime: 2021-02-02 20:51:07.006324
 	
-	The undirected graph Intestinibacter bartlettii has 2775 nodes and 214929 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05584
-	and has 13 connected components, where the component with most nodes has 2739 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 132, the mean node degree is 154.90, and the node degree mode is 7. The top 5
-	most central nodes are 445973.CLOBAR_01516 (degree 1127), 445973.CLOBAR_00656 (degree
-	955), 445973.CLOBAR_02505 (degree 870), 445973.CLOBAR_00502 (degree 784) and 445973.CLOBAR_01376
-	(degree 763).
+	The undirected graph Intestinibacter bartlettii has 2775 nodes and 214929
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05584 and has 13 connected components, where the component
+	with most nodes has 2739 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 132, the mean node degree is 154.90,
+	and the node degree mode is 7. The top 5 most central nodes are 445973.CLOBAR_01516
+	(degree 1127), 445973.CLOBAR_00656 (degree 955), 445973.CLOBAR_02505 (degree
+	870), 445973.CLOBAR_00502 (degree 784) and 445973.CLOBAR_01376 (degree
+	763).
 	
 
 

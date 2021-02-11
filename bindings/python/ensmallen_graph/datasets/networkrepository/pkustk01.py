@@ -10,11 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 11:25:13.866214
 
-The undirected graph pkustk01 has 22044 nodes and 500712 unweighted edges, of which
-22044 are self-loops. The graph is sparse as it has a density of 0.00202 and is connected,
-as it has a single component. The graph median node degree is 42, the mean node degree
-is 44.43, and the node degree mode is 30. The top 5 most central nodes are 5406 (degree
-126), 5405 (degree 126), 5404 (degree 126), 5403 (degree 126) and 5402 (degree 126).
+The undirected graph pkustk01 has 22044 nodes and 500712 unweighted edges,
+of which 22044 are self-loops. The graph is sparse as it has a density
+of 0.00202 and is connected, as it has a single component. The graph median
+node degree is 42, the mean node degree is 44.43, and the node degree mode
+is 30. The top 5 most central nodes are 5406 (degree 126), 5405 (degree
+126), 5404 (degree 126), 5403 (degree 126) and 5402 (degree 126).
 
 
 References
@@ -101,11 +102,12 @@ def Pkustk01(
 	
 	Datetime: 2021-02-06 11:25:13.866214
 	
-	The undirected graph pkustk01 has 22044 nodes and 500712 unweighted edges, of which
-	22044 are self-loops. The graph is sparse as it has a density of 0.00202 and is connected,
-	as it has a single component. The graph median node degree is 42, the mean node degree
-	is 44.43, and the node degree mode is 30. The top 5 most central nodes are 5406 (degree
-	126), 5405 (degree 126), 5404 (degree 126), 5403 (degree 126) and 5402 (degree 126).
+	The undirected graph pkustk01 has 22044 nodes and 500712 unweighted edges,
+	of which 22044 are self-loops. The graph is sparse as it has a density
+	of 0.00202 and is connected, as it has a single component. The graph median
+	node degree is 42, the mean node degree is 44.43, and the node degree mode
+	is 30. The top 5 most central nodes are 5406 (degree 126), 5405 (degree
+	126), 5404 (degree 126), 5403 (degree 126) and 5402 (degree 126).
 	
 
 

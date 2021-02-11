@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:22:50.678397
 
-The undirected graph Deferribacter desulfuricans has 2368 nodes and 201224 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07180
-and has 10 connected components, where the component with most nodes has 2335 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 169.95, and the node degree mode is 2. The top 5
-most central nodes are 639282.DEFDS_1967 (degree 1018), 639282.DEFDS_1077 (degree
-974), 639282.DEFDS_1294 (degree 859), 639282.DEFDS_0470 (degree 842) and 639282.DEFDS_0066
-(degree 832).
+The undirected graph Deferribacter desulfuricans has 2368 nodes and 201224
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07180 and has 10 connected components, where the component
+with most nodes has 2335 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 148, the mean node degree is 169.95,
+and the node degree mode is 2. The top 5 most central nodes are 639282.DEFDS_1967
+(degree 1018), 639282.DEFDS_1077 (degree 974), 639282.DEFDS_1294 (degree
+859), 639282.DEFDS_0470 (degree 842) and 639282.DEFDS_0066 (degree 832).
 
 
 References
@@ -107,14 +107,14 @@ def DeferribacterDesulfuricans(
 	
 	Datetime: 2021-02-02 21:22:50.678397
 	
-	The undirected graph Deferribacter desulfuricans has 2368 nodes and 201224 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07180
-	and has 10 connected components, where the component with most nodes has 2335 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 169.95, and the node degree mode is 2. The top 5
-	most central nodes are 639282.DEFDS_1967 (degree 1018), 639282.DEFDS_1077 (degree
-	974), 639282.DEFDS_1294 (degree 859), 639282.DEFDS_0470 (degree 842) and 639282.DEFDS_0066
-	(degree 832).
+	The undirected graph Deferribacter desulfuricans has 2368 nodes and 201224
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07180 and has 10 connected components, where the component
+	with most nodes has 2335 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 148, the mean node degree is 169.95,
+	and the node degree mode is 2. The top 5 most central nodes are 639282.DEFDS_1967
+	(degree 1018), 639282.DEFDS_1077 (degree 974), 639282.DEFDS_1294 (degree
+	859), 639282.DEFDS_0470 (degree 842) and 639282.DEFDS_0066 (degree 832).
 	
 
 

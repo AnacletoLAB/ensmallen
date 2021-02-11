@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:52:08.010810
 
-The undirected graph Lactobacillus suebicus has 2510 nodes and 171206 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05437 and
-has 18 connected components, where the component with most nodes has 2469 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 107,
-the mean node degree is 136.42, and the node degree mode is 2. The top 5 most central
-nodes are 1423807.BACO01000038_gene1220 (degree 864), 1423807.BACO01000082_gene2388
-(degree 733), 1423807.BACO01000031_gene922 (degree 731), 1423807.BACO01000015_gene514
-(degree 653) and 1423807.BACO01000061_gene1830 (degree 644).
+The undirected graph Lactobacillus suebicus has 2510 nodes and 171206 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05437 and has 18 connected components, where the component with most
+nodes has 2469 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 107, the mean node degree is 136.42, and
+the node degree mode is 2. The top 5 most central nodes are 1423807.BACO01000038_gene1220
+(degree 864), 1423807.BACO01000082_gene2388 (degree 733), 1423807.BACO01000031_gene922
+(degree 731), 1423807.BACO01000015_gene514 (degree 653) and 1423807.BACO01000061_gene1830
+(degree 644).
 
 
 References
@@ -107,14 +108,15 @@ def LactobacillusSuebicus(
 	
 	Datetime: 2021-02-03 22:52:08.010810
 	
-	The undirected graph Lactobacillus suebicus has 2510 nodes and 171206 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05437 and
-	has 18 connected components, where the component with most nodes has 2469 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 107,
-	the mean node degree is 136.42, and the node degree mode is 2. The top 5 most central
-	nodes are 1423807.BACO01000038_gene1220 (degree 864), 1423807.BACO01000082_gene2388
-	(degree 733), 1423807.BACO01000031_gene922 (degree 731), 1423807.BACO01000015_gene514
-	(degree 653) and 1423807.BACO01000061_gene1830 (degree 644).
+	The undirected graph Lactobacillus suebicus has 2510 nodes and 171206 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05437 and has 18 connected components, where the component with most
+	nodes has 2469 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 107, the mean node degree is 136.42, and
+	the node degree mode is 2. The top 5 most central nodes are 1423807.BACO01000038_gene1220
+	(degree 864), 1423807.BACO01000082_gene2388 (degree 733), 1423807.BACO01000031_gene922
+	(degree 731), 1423807.BACO01000015_gene514 (degree 653) and 1423807.BACO01000061_gene1830
+	(degree 644).
 	
 
 

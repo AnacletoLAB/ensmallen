@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:10:14.019794
 
-The undirected graph Pseudomonas pseudoalcaligenes CECT5344 has 4300 nodes and 346891
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.03753 and has 6 connected components, where the component with most nodes has
-4290 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 128, the mean node degree is 161.34, and the node degree mode is 2. The
-top 5 most central nodes are 1182590.BN5_00102 (degree 1679), 1182590.BN5_00440 (degree
-1128), 1182590.BN5_02972 (degree 1087), 1182590.BN5_02475 (degree 1038) and 1182590.BN5_02973
-(degree 1037).
+The undirected graph Pseudomonas pseudoalcaligenes CECT5344 has 4300 nodes
+and 346891 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03753 and has 6 connected components, where the
+component with most nodes has 4290 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+is 161.34, and the node degree mode is 2. The top 5 most central nodes
+are 1182590.BN5_00102 (degree 1679), 1182590.BN5_00440 (degree 1128), 1182590.BN5_02972
+(degree 1087), 1182590.BN5_02475 (degree 1038) and 1182590.BN5_02973 (degree
+1037).
 
 
 References
@@ -107,14 +108,15 @@ def PseudomonasPseudoalcaligenesCect5344(
 	
 	Datetime: 2021-02-02 23:10:14.019794
 	
-	The undirected graph Pseudomonas pseudoalcaligenes CECT5344 has 4300 nodes and 346891
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.03753 and has 6 connected components, where the component with most nodes has
-	4290 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 128, the mean node degree is 161.34, and the node degree mode is 2. The
-	top 5 most central nodes are 1182590.BN5_00102 (degree 1679), 1182590.BN5_00440 (degree
-	1128), 1182590.BN5_02972 (degree 1087), 1182590.BN5_02475 (degree 1038) and 1182590.BN5_02973
-	(degree 1037).
+	The undirected graph Pseudomonas pseudoalcaligenes CECT5344 has 4300 nodes
+	and 346891 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03753 and has 6 connected components, where the
+	component with most nodes has 4290 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 128, the mean node degree
+	is 161.34, and the node degree mode is 2. The top 5 most central nodes
+	are 1182590.BN5_00102 (degree 1679), 1182590.BN5_00440 (degree 1128), 1182590.BN5_02972
+	(degree 1087), 1182590.BN5_02475 (degree 1038) and 1182590.BN5_02973 (degree
+	1037).
 	
 
 

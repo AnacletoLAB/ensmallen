@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:36:17.363080
 
-The undirected graph Desulfotomaculum alcoholivorax has 3391 nodes and 292310 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05086
-and has 15 connected components, where the component with most nodes has 3350 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 124, the mean node degree is 172.40, and the node degree mode is 2. The top 5
-most central nodes are 1121422.AUMW01000002_gene2122 (degree 1368), 1121422.AUMW01000024_gene286
+The undirected graph Desulfotomaculum alcoholivorax has 3391 nodes and
+292310 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05086 and has 15 connected components, where the
+component with most nodes has 3350 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+is 172.40, and the node degree mode is 2. The top 5 most central nodes
+are 1121422.AUMW01000002_gene2122 (degree 1368), 1121422.AUMW01000024_gene286
 (degree 1335), 1121422.AUMW01000030_gene59 (degree 1324), 1121422.AUMW01000001_gene2481
 (degree 1254) and 1121422.AUMW01000003_gene890 (degree 1105).
 
@@ -107,12 +108,13 @@ def DesulfotomaculumAlcoholivorax(
 	
 	Datetime: 2021-02-02 22:36:17.363080
 	
-	The undirected graph Desulfotomaculum alcoholivorax has 3391 nodes and 292310 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05086
-	and has 15 connected components, where the component with most nodes has 3350 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 124, the mean node degree is 172.40, and the node degree mode is 2. The top 5
-	most central nodes are 1121422.AUMW01000002_gene2122 (degree 1368), 1121422.AUMW01000024_gene286
+	The undirected graph Desulfotomaculum alcoholivorax has 3391 nodes and
+	292310 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05086 and has 15 connected components, where the
+	component with most nodes has 3350 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 124, the mean node degree
+	is 172.40, and the node degree mode is 2. The top 5 most central nodes
+	are 1121422.AUMW01000002_gene2122 (degree 1368), 1121422.AUMW01000024_gene286
 	(degree 1335), 1121422.AUMW01000030_gene59 (degree 1324), 1121422.AUMW01000001_gene2481
 	(degree 1254) and 1121422.AUMW01000003_gene890 (degree 1105).
 	

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:30:32.772620
 
-The undirected graph Eucalyptus grandis has 30125 nodes and 5188906 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.01144 and
-has 4 connected components, where the component with most nodes has 30119 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 151,
-the mean node degree is 344.49, and the node degree mode is 4. The top 5 most central
-nodes are 71139.XP_010069786.1 (degree 10782), 71139.XP_010068391.1 (degree 10589),
-71139.XP_010068585.1 (degree 10547), 71139.XP_010068049.1 (degree 10514) and 71139.XP_010069217.1
+The undirected graph Eucalyptus grandis has 30125 nodes and 5188906 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.01144 and has 4 connected components, where the component with most
+nodes has 30119 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 151, the mean node degree is 344.49, and
+the node degree mode is 4. The top 5 most central nodes are 71139.XP_010069786.1
+(degree 10782), 71139.XP_010068391.1 (degree 10589), 71139.XP_010068585.1
+(degree 10547), 71139.XP_010068049.1 (degree 10514) and 71139.XP_010069217.1
 (degree 10497).
 
 
@@ -107,13 +108,14 @@ def EucalyptusGrandis(
 	
 	Datetime: 2021-02-02 18:30:32.772620
 	
-	The undirected graph Eucalyptus grandis has 30125 nodes and 5188906 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.01144 and
-	has 4 connected components, where the component with most nodes has 30119 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 151,
-	the mean node degree is 344.49, and the node degree mode is 4. The top 5 most central
-	nodes are 71139.XP_010069786.1 (degree 10782), 71139.XP_010068391.1 (degree 10589),
-	71139.XP_010068585.1 (degree 10547), 71139.XP_010068049.1 (degree 10514) and 71139.XP_010069217.1
+	The undirected graph Eucalyptus grandis has 30125 nodes and 5188906 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.01144 and has 4 connected components, where the component with most
+	nodes has 30119 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 151, the mean node degree is 344.49, and
+	the node degree mode is 4. The top 5 most central nodes are 71139.XP_010069786.1
+	(degree 10782), 71139.XP_010068391.1 (degree 10589), 71139.XP_010068585.1
+	(degree 10547), 71139.XP_010068049.1 (degree 10514) and 71139.XP_010069217.1
 	(degree 10497).
 	
 

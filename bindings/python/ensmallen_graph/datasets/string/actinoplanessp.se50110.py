@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:50:10.683662
 
-The undirected graph Actinoplanes sp. SE50110 has 8159 nodes and 1250929 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03759
-and has 41 connected components, where the component with most nodes has 8069 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 291, the mean node degree is 306.64, and the node degree mode is 1. The top 5
-most central nodes are 134676.ACPL_4605 (degree 2126), 134676.ACPL_1827 (degree 2089),
-134676.ACPL_3560 (degree 1956), 134676.ACPL_1813 (degree 1943) and 134676.ACPL_3091
-(degree 1919).
+The undirected graph Actinoplanes sp. SE50110 has 8159 nodes and 1250929
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03759 and has 41 connected components, where the component
+with most nodes has 8069 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 291, the mean node degree is 306.64,
+and the node degree mode is 1. The top 5 most central nodes are 134676.ACPL_4605
+(degree 2126), 134676.ACPL_1827 (degree 2089), 134676.ACPL_3560 (degree
+1956), 134676.ACPL_1813 (degree 1943) and 134676.ACPL_3091 (degree 1919).
 
 
 References
@@ -107,14 +107,14 @@ def ActinoplanesSp.Se50110(
 	
 	Datetime: 2021-02-02 19:50:10.683662
 	
-	The undirected graph Actinoplanes sp. SE50110 has 8159 nodes and 1250929 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03759
-	and has 41 connected components, where the component with most nodes has 8069 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 291, the mean node degree is 306.64, and the node degree mode is 1. The top 5
-	most central nodes are 134676.ACPL_4605 (degree 2126), 134676.ACPL_1827 (degree 2089),
-	134676.ACPL_3560 (degree 1956), 134676.ACPL_1813 (degree 1943) and 134676.ACPL_3091
-	(degree 1919).
+	The undirected graph Actinoplanes sp. SE50110 has 8159 nodes and 1250929
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03759 and has 41 connected components, where the component
+	with most nodes has 8069 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 291, the mean node degree is 306.64,
+	and the node degree mode is 1. The top 5 most central nodes are 134676.ACPL_4605
+	(degree 2126), 134676.ACPL_1827 (degree 2089), 134676.ACPL_3560 (degree
+	1956), 134676.ACPL_1813 (degree 1943) and 134676.ACPL_3091 (degree 1919).
 	
 
 

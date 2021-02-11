@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:52:02.771051
 
-The undirected graph Bacteroides stercoris has 3700 nodes and 241646 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03531 and
-has 28 connected components, where the component with most nodes has 3633 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 110,
-the mean node degree is 130.62, and the node degree mode is 3. The top 5 most central
-nodes are 449673.BACSTE_02412 (degree 1073), 449673.BACSTE_03825 (degree 993), 449673.BACSTE_03568
-(degree 894), 449673.BACSTE_03466 (degree 884) and 449673.BACSTE_03105 (degree 848).
+The undirected graph Bacteroides stercoris has 3700 nodes and 241646 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03531 and has 28 connected components, where the component with most
+nodes has 3633 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 110, the mean node degree is 130.62, and
+the node degree mode is 3. The top 5 most central nodes are 449673.BACSTE_02412
+(degree 1073), 449673.BACSTE_03825 (degree 993), 449673.BACSTE_03568 (degree
+894), 449673.BACSTE_03466 (degree 884) and 449673.BACSTE_03105 (degree
+848).
 
 
 References
@@ -106,13 +108,15 @@ def BacteroidesStercoris(
 	
 	Datetime: 2021-02-02 20:52:02.771051
 	
-	The undirected graph Bacteroides stercoris has 3700 nodes and 241646 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03531 and
-	has 28 connected components, where the component with most nodes has 3633 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 110,
-	the mean node degree is 130.62, and the node degree mode is 3. The top 5 most central
-	nodes are 449673.BACSTE_02412 (degree 1073), 449673.BACSTE_03825 (degree 993), 449673.BACSTE_03568
-	(degree 894), 449673.BACSTE_03466 (degree 884) and 449673.BACSTE_03105 (degree 848).
+	The undirected graph Bacteroides stercoris has 3700 nodes and 241646 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03531 and has 28 connected components, where the component with most
+	nodes has 3633 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 110, the mean node degree is 130.62, and
+	the node degree mode is 3. The top 5 most central nodes are 449673.BACSTE_02412
+	(degree 1073), 449673.BACSTE_03825 (degree 993), 449673.BACSTE_03568 (degree
+	894), 449673.BACSTE_03466 (degree 884) and 449673.BACSTE_03105 (degree
+	848).
 	
 
 

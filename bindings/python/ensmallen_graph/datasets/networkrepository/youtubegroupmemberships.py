@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-07 15:55:12.339272
 
-The undirected graph youtube-groupmemberships has 37981 nodes and 156951 unweighted
-edges, of which 11 are self-loops. The graph is quite sparse as it has a density
-of 0.00022 and is connected, as it has a single component. The graph median node
-degree is 3, the mean node degree is 8.26, and the node degree mode is 1. The top
-5 most central nodes are 54 (degree 4252), 35 (degree 1788), 189 (degree 1394), 9119
-(degree 1044) and 25 (degree 957).
+The undirected graph youtube-groupmemberships has 37981 nodes and 156951
+unweighted edges, of which 11 are self-loops. The graph is quite sparse
+as it has a density of 0.00022 and is connected, as it has a single component.
+The graph median node degree is 3, the mean node degree is 8.26, and the
+node degree mode is 1. The top 5 most central nodes are 54 (degree 4252),
+35 (degree 1788), 189 (degree 1394), 9119 (degree 1044) and 25 (degree
+957).
 
 
 References
@@ -102,12 +103,13 @@ def YoutubeGroupmemberships(
 	
 	Datetime: 2021-02-07 15:55:12.339272
 	
-	The undirected graph youtube-groupmemberships has 37981 nodes and 156951 unweighted
-	edges, of which 11 are self-loops. The graph is quite sparse as it has a density
-	of 0.00022 and is connected, as it has a single component. The graph median node
-	degree is 3, the mean node degree is 8.26, and the node degree mode is 1. The top
-	5 most central nodes are 54 (degree 4252), 35 (degree 1788), 189 (degree 1394), 9119
-	(degree 1044) and 25 (degree 957).
+	The undirected graph youtube-groupmemberships has 37981 nodes and 156951
+	unweighted edges, of which 11 are self-loops. The graph is quite sparse
+	as it has a density of 0.00022 and is connected, as it has a single component.
+	The graph median node degree is 3, the mean node degree is 8.26, and the
+	node degree mode is 1. The top 5 most central nodes are 54 (degree 4252),
+	35 (degree 1788), 189 (degree 1394), 9119 (degree 1044) and 25 (degree
+	957).
 	
 
 

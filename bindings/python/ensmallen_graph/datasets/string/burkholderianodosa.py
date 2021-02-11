@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:33:50.415789
 
-The undirected graph Burkholderia nodosa has 7911 nodes and 1591748 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05087 and
-has 30 connected components, where the component with most nodes has 7845 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 319,
-the mean node degree is 402.41, and the node degree mode is 1. The top 5 most central
-nodes are 1121127.JAFA01000007_gene5201 (degree 3137), 1121127.JAFA01000002_gene1600
-(degree 2912), 1121127.JAFA01000004_gene1295 (degree 2904), 1121127.JAFA01000070_gene6101
-(degree 2755) and 1121127.JAFA01000027_gene76 (degree 2718).
+The undirected graph Burkholderia nodosa has 7911 nodes and 1591748 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05087 and has 30 connected components, where the component with most
+nodes has 7845 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 319, the mean node degree is 402.41, and
+the node degree mode is 1. The top 5 most central nodes are 1121127.JAFA01000007_gene5201
+(degree 3137), 1121127.JAFA01000002_gene1600 (degree 2912), 1121127.JAFA01000004_gene1295
+(degree 2904), 1121127.JAFA01000070_gene6101 (degree 2755) and 1121127.JAFA01000027_gene76
+(degree 2718).
 
 
 References
@@ -107,14 +108,15 @@ def BurkholderiaNodosa(
 	
 	Datetime: 2021-02-02 22:33:50.415789
 	
-	The undirected graph Burkholderia nodosa has 7911 nodes and 1591748 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05087 and
-	has 30 connected components, where the component with most nodes has 7845 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 319,
-	the mean node degree is 402.41, and the node degree mode is 1. The top 5 most central
-	nodes are 1121127.JAFA01000007_gene5201 (degree 3137), 1121127.JAFA01000002_gene1600
-	(degree 2912), 1121127.JAFA01000004_gene1295 (degree 2904), 1121127.JAFA01000070_gene6101
-	(degree 2755) and 1121127.JAFA01000027_gene76 (degree 2718).
+	The undirected graph Burkholderia nodosa has 7911 nodes and 1591748 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05087 and has 30 connected components, where the component with most
+	nodes has 7845 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 319, the mean node degree is 402.41, and
+	the node degree mode is 1. The top 5 most central nodes are 1121127.JAFA01000007_gene5201
+	(degree 3137), 1121127.JAFA01000002_gene1600 (degree 2912), 1121127.JAFA01000004_gene1295
+	(degree 2904), 1121127.JAFA01000070_gene6101 (degree 2755) and 1121127.JAFA01000027_gene76
+	(degree 2718).
 	
 
 

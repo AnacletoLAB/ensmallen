@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:46:49.531930
 
-The undirected graph fb-messages has 1899 nodes and 15737 weighted edges, of which
-1899 are self-loops. The graph is sparse as it has a density of 0.00821 and has 4
-connected components, where the component with most nodes has 1893 nodes and the
-component with the least nodes has 2 nodes. The graph median node degree is 6, the
-mean node degree is 15.57 and the node degree mode is 2. The top 5 most central nodes
-are 37 (degree 256), 1270 (degree 242), 155 (degree 228), 43 (degree 228) and 1483
-(degree 208).
+The undirected graph fb-messages has 1899 nodes and 15737 weighted edges,
+of which 1899 are self-loops. The graph is sparse as it has a density of
+0.00821 and has 4 connected components, where the component with most nodes
+has 1893 nodes and the component with the least nodes has 2 nodes. The
+graph median node degree is 6, the mean node degree is 15.57 and the node
+degree mode is 2. The top 5 most central nodes are 37 (degree 256), 1270
+(degree 242), 155 (degree 228), 43 (degree 228) and 1483 (degree 208).
 
 
 References
@@ -114,13 +114,13 @@ def FbMessages(
 	
 	Datetime: 2021-02-03 23:46:49.531930
 	
-	The undirected graph fb-messages has 1899 nodes and 15737 weighted edges, of which
-	1899 are self-loops. The graph is sparse as it has a density of 0.00821 and has 4
-	connected components, where the component with most nodes has 1893 nodes and the
-	component with the least nodes has 2 nodes. The graph median node degree is 6, the
-	mean node degree is 15.57 and the node degree mode is 2. The top 5 most central nodes
-	are 37 (degree 256), 1270 (degree 242), 155 (degree 228), 43 (degree 228) and 1483
-	(degree 208).
+	The undirected graph fb-messages has 1899 nodes and 15737 weighted edges,
+	of which 1899 are self-loops. The graph is sparse as it has a density of
+	0.00821 and has 4 connected components, where the component with most nodes
+	has 1893 nodes and the component with the least nodes has 2 nodes. The
+	graph median node degree is 6, the mean node degree is 15.57 and the node
+	degree mode is 2. The top 5 most central nodes are 37 (degree 256), 1270
+	(degree 242), 155 (degree 228), 43 (degree 228) and 1483 (degree 208).
 	
 
 

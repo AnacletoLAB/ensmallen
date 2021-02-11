@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:21:33.113748
 
-The undirected graph Paracoccus sp. PAMC22219 has 3939 nodes and 481599 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06209
-and has 12 connected components, where the component with most nodes has 3914 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 198, the mean node degree is 244.53, and the node degree mode is 2. The top 5
-most central nodes are 1569209.BBPH01000178_gene3809 (degree 1808), 1569209.BBPH01000227_gene2545
-(degree 1504), 1569209.BBPH01000174_gene3846 (degree 1390), 1569209.BBPH01000124_gene1872
-(degree 1321) and 1569209.BBPH01000052_gene2361 (degree 1276).
+The undirected graph Paracoccus sp. PAMC22219 has 3939 nodes and 481599
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06209 and has 12 connected components, where the component
+with most nodes has 3914 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 198, the mean node degree is 244.53,
+and the node degree mode is 2. The top 5 most central nodes are 1569209.BBPH01000178_gene3809
+(degree 1808), 1569209.BBPH01000227_gene2545 (degree 1504), 1569209.BBPH01000174_gene3846
+(degree 1390), 1569209.BBPH01000124_gene1872 (degree 1321) and 1569209.BBPH01000052_gene2361
+(degree 1276).
 
 
 References
@@ -107,14 +108,15 @@ def ParacoccusSp.Pamc22219(
 	
 	Datetime: 2021-02-03 23:21:33.113748
 	
-	The undirected graph Paracoccus sp. PAMC22219 has 3939 nodes and 481599 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06209
-	and has 12 connected components, where the component with most nodes has 3914 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 198, the mean node degree is 244.53, and the node degree mode is 2. The top 5
-	most central nodes are 1569209.BBPH01000178_gene3809 (degree 1808), 1569209.BBPH01000227_gene2545
-	(degree 1504), 1569209.BBPH01000174_gene3846 (degree 1390), 1569209.BBPH01000124_gene1872
-	(degree 1321) and 1569209.BBPH01000052_gene2361 (degree 1276).
+	The undirected graph Paracoccus sp. PAMC22219 has 3939 nodes and 481599
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06209 and has 12 connected components, where the component
+	with most nodes has 3914 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 198, the mean node degree is 244.53,
+	and the node degree mode is 2. The top 5 most central nodes are 1569209.BBPH01000178_gene3809
+	(degree 1808), 1569209.BBPH01000227_gene2545 (degree 1504), 1569209.BBPH01000174_gene3846
+	(degree 1390), 1569209.BBPH01000124_gene1872 (degree 1321) and 1569209.BBPH01000052_gene2361
+	(degree 1276).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:21:23.417811
 
-The undirected graph Cyclobacteriaceae bacterium AK24 has 4730 nodes and 355435 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03178
-and has 51 connected components, where the component with most nodes has 4607 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 150.29, and the node degree mode is 1. The top 5
-most central nodes are 1288963.ADIS_4786 (degree 1209), 1288963.ADIS_0206 (degree
-1120), 1288963.ADIS_3843 (degree 1060), 1288963.ADIS_4399 (degree 1059) and 1288963.ADIS_4495
-(degree 1052).
+The undirected graph Cyclobacteriaceae bacterium AK24 has 4730 nodes and
+355435 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03178 and has 51 connected components, where the
+component with most nodes has 4607 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+is 150.29, and the node degree mode is 1. The top 5 most central nodes
+are 1288963.ADIS_4786 (degree 1209), 1288963.ADIS_0206 (degree 1120), 1288963.ADIS_3843
+(degree 1060), 1288963.ADIS_4399 (degree 1059) and 1288963.ADIS_4495 (degree
+1052).
 
 
 References
@@ -107,14 +108,15 @@ def CyclobacteriaceaeBacteriumAk24(
 	
 	Datetime: 2021-02-03 21:21:23.417811
 	
-	The undirected graph Cyclobacteriaceae bacterium AK24 has 4730 nodes and 355435 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03178
-	and has 51 connected components, where the component with most nodes has 4607 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 150.29, and the node degree mode is 1. The top 5
-	most central nodes are 1288963.ADIS_4786 (degree 1209), 1288963.ADIS_0206 (degree
-	1120), 1288963.ADIS_3843 (degree 1060), 1288963.ADIS_4399 (degree 1059) and 1288963.ADIS_4495
-	(degree 1052).
+	The undirected graph Cyclobacteriaceae bacterium AK24 has 4730 nodes and
+	355435 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03178 and has 51 connected components, where the
+	component with most nodes has 4607 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 129, the mean node degree
+	is 150.29, and the node degree mode is 1. The top 5 most central nodes
+	are 1288963.ADIS_4786 (degree 1209), 1288963.ADIS_0206 (degree 1120), 1288963.ADIS_3843
+	(degree 1060), 1288963.ADIS_4399 (degree 1059) and 1288963.ADIS_4495 (degree
+	1052).
 	
 
 

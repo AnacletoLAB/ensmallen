@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:09:26.644143
 
-The undirected graph Hirschia maritima has 3052 nodes and 260200 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-has 7 connected components, where the component with most nodes has 3038 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 147,
-the mean node degree is 170.51, and the node degree mode is 3. The top 5 most central
-nodes are 551275.KB899546_gene1971 (degree 1143), 551275.KB899544_gene1734 (degree
-977), 551275.KB899546_gene2208 (degree 883), 551275.KB899544_gene1742 (degree 847)
-and 551275.KB899546_gene1948 (degree 840).
+The undirected graph Hirschia maritima has 3052 nodes and 260200 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05589 and has 7 connected components, where the component with most
+nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 147, the mean node degree is 170.51, and
+the node degree mode is 3. The top 5 most central nodes are 551275.KB899546_gene1971
+(degree 1143), 551275.KB899544_gene1734 (degree 977), 551275.KB899546_gene2208
+(degree 883), 551275.KB899544_gene1742 (degree 847) and 551275.KB899546_gene1948
+(degree 840).
 
 
 References
@@ -107,14 +108,15 @@ def HirschiaMaritima(
 	
 	Datetime: 2021-02-02 21:09:26.644143
 	
-	The undirected graph Hirschia maritima has 3052 nodes and 260200 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05589 and
-	has 7 connected components, where the component with most nodes has 3038 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 147,
-	the mean node degree is 170.51, and the node degree mode is 3. The top 5 most central
-	nodes are 551275.KB899546_gene1971 (degree 1143), 551275.KB899544_gene1734 (degree
-	977), 551275.KB899546_gene2208 (degree 883), 551275.KB899544_gene1742 (degree 847)
-	and 551275.KB899546_gene1948 (degree 840).
+	The undirected graph Hirschia maritima has 3052 nodes and 260200 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05589 and has 7 connected components, where the component with most
+	nodes has 3038 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 147, the mean node degree is 170.51, and
+	the node degree mode is 3. The top 5 most central nodes are 551275.KB899546_gene1971
+	(degree 1143), 551275.KB899544_gene1734 (degree 977), 551275.KB899546_gene2208
+	(degree 883), 551275.KB899544_gene1742 (degree 847) and 551275.KB899546_gene1948
+	(degree 840).
 	
 
 

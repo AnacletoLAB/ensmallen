@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:03.395866
 
-The undirected graph Spongiibacter tropicus has 3518 nodes and 482623 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07801 and
-has 10 connected components, where the component with most nodes has 3490 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 245,
-the mean node degree is 274.37, and the node degree mode is 3. The top 5 most central
-nodes are 1123279.ATUS01000001_gene1992 (degree 1144), 1123279.ATUS01000006_gene3379
-(degree 1137), 1123279.ATUS01000005_gene3178 (degree 1117), 1123279.ATUS01000002_gene102
-(degree 1102) and 1123279.ATUS01000001_gene1845 (degree 1098).
+The undirected graph Spongiibacter tropicus has 3518 nodes and 482623 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07801 and has 10 connected components, where the component with most
+nodes has 3490 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 245, the mean node degree is 274.37, and
+the node degree mode is 3. The top 5 most central nodes are 1123279.ATUS01000001_gene1992
+(degree 1144), 1123279.ATUS01000006_gene3379 (degree 1137), 1123279.ATUS01000005_gene3178
+(degree 1117), 1123279.ATUS01000002_gene102 (degree 1102) and 1123279.ATUS01000001_gene1845
+(degree 1098).
 
 
 References
@@ -107,14 +108,15 @@ def SpongiibacterTropicus(
 	
 	Datetime: 2021-02-02 22:50:03.395866
 	
-	The undirected graph Spongiibacter tropicus has 3518 nodes and 482623 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07801 and
-	has 10 connected components, where the component with most nodes has 3490 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 245,
-	the mean node degree is 274.37, and the node degree mode is 3. The top 5 most central
-	nodes are 1123279.ATUS01000001_gene1992 (degree 1144), 1123279.ATUS01000006_gene3379
-	(degree 1137), 1123279.ATUS01000005_gene3178 (degree 1117), 1123279.ATUS01000002_gene102
-	(degree 1102) and 1123279.ATUS01000001_gene1845 (degree 1098).
+	The undirected graph Spongiibacter tropicus has 3518 nodes and 482623 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07801 and has 10 connected components, where the component with most
+	nodes has 3490 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 245, the mean node degree is 274.37, and
+	the node degree mode is 3. The top 5 most central nodes are 1123279.ATUS01000001_gene1992
+	(degree 1144), 1123279.ATUS01000006_gene3379 (degree 1137), 1123279.ATUS01000005_gene3178
+	(degree 1117), 1123279.ATUS01000002_gene102 (degree 1102) and 1123279.ATUS01000001_gene1845
+	(degree 1098).
 	
 
 

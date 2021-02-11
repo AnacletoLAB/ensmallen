@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:31.294656
 
-The undirected graph Orenia marismortui has 3197 nodes and 326696 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06395 and
-has 20 connected components, where the component with most nodes has 3152 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 175,
-the mean node degree is 204.38, and the node degree mode is 2. The top 5 most central
-nodes are 926561.KB900623_gene984 (degree 1354), 926561.KB900620_gene2934 (degree
-1258), 926561.KB900617_gene2301 (degree 1067), 926561.KB900617_gene1713 (degree 1060)
-and 926561.KB900619_gene2537 (degree 1045).
+The undirected graph Orenia marismortui has 3197 nodes and 326696 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06395 and has 20 connected components, where the component with most
+nodes has 3152 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 175, the mean node degree is 204.38, and
+the node degree mode is 2. The top 5 most central nodes are 926561.KB900623_gene984
+(degree 1354), 926561.KB900620_gene2934 (degree 1258), 926561.KB900617_gene2301
+(degree 1067), 926561.KB900617_gene1713 (degree 1060) and 926561.KB900619_gene2537
+(degree 1045).
 
 
 References
@@ -107,14 +108,15 @@ def OreniaMarismortui(
 	
 	Datetime: 2021-02-02 21:56:31.294656
 	
-	The undirected graph Orenia marismortui has 3197 nodes and 326696 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06395 and
-	has 20 connected components, where the component with most nodes has 3152 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 175,
-	the mean node degree is 204.38, and the node degree mode is 2. The top 5 most central
-	nodes are 926561.KB900623_gene984 (degree 1354), 926561.KB900620_gene2934 (degree
-	1258), 926561.KB900617_gene2301 (degree 1067), 926561.KB900617_gene1713 (degree 1060)
-	and 926561.KB900619_gene2537 (degree 1045).
+	The undirected graph Orenia marismortui has 3197 nodes and 326696 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06395 and has 20 connected components, where the component with most
+	nodes has 3152 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 175, the mean node degree is 204.38, and
+	the node degree mode is 2. The top 5 most central nodes are 926561.KB900623_gene984
+	(degree 1354), 926561.KB900620_gene2934 (degree 1258), 926561.KB900617_gene2301
+	(degree 1067), 926561.KB900617_gene1713 (degree 1060) and 926561.KB900619_gene2537
+	(degree 1045).
 	
 
 

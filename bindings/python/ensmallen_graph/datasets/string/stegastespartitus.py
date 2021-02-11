@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:51:34.798836
 
-The undirected graph Stegastes partitus has 21387 nodes and 4636495 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02027 and
-has 4 connected components, where the component with most nodes has 21381 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 305,
-the mean node degree is 433.58, and the node degree mode is 167. The top 5 most central
-nodes are 144197.XP_008285505.1 (degree 4935), 144197.XP_008289561.1 (degree 4684),
-144197.XP_008283677.1 (degree 4464), 144197.XP_008286554.1 (degree 4405) and 144197.XP_008277989.1
+The undirected graph Stegastes partitus has 21387 nodes and 4636495 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02027 and has 4 connected components, where the component with most
+nodes has 21381 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 305, the mean node degree is 433.58, and
+the node degree mode is 167. The top 5 most central nodes are 144197.XP_008285505.1
+(degree 4935), 144197.XP_008289561.1 (degree 4684), 144197.XP_008283677.1
+(degree 4464), 144197.XP_008286554.1 (degree 4405) and 144197.XP_008277989.1
 (degree 4300).
 
 
@@ -107,13 +108,14 @@ def StegastesPartitus(
 	
 	Datetime: 2021-02-02 19:51:34.798836
 	
-	The undirected graph Stegastes partitus has 21387 nodes and 4636495 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02027 and
-	has 4 connected components, where the component with most nodes has 21381 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 305,
-	the mean node degree is 433.58, and the node degree mode is 167. The top 5 most central
-	nodes are 144197.XP_008285505.1 (degree 4935), 144197.XP_008289561.1 (degree 4684),
-	144197.XP_008283677.1 (degree 4464), 144197.XP_008286554.1 (degree 4405) and 144197.XP_008277989.1
+	The undirected graph Stegastes partitus has 21387 nodes and 4636495 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02027 and has 4 connected components, where the component with most
+	nodes has 21381 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 305, the mean node degree is 433.58, and
+	the node degree mode is 167. The top 5 most central nodes are 144197.XP_008285505.1
+	(degree 4935), 144197.XP_008289561.1 (degree 4684), 144197.XP_008283677.1
+	(degree 4464), 144197.XP_008286554.1 (degree 4405) and 144197.XP_008277989.1
 	(degree 4300).
 	
 

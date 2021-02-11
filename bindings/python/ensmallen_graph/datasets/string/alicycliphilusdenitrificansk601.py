@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:19.313469
 
-The undirected graph Alicycliphilus denitrificans K601 has 4677 nodes and 718417
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06570 and has 6 connected components, where the component with most nodes has
-4665 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 265, the mean node degree is 307.21, and the node degree mode is 4. The
-top 5 most central nodes are 596154.Alide2_3637 (degree 2004), 596154.Alide2_4443
-(degree 1622), 596154.Alide2_3139 (degree 1492), 596154.Alide2_0810 (degree 1424)
-and 596154.Alide2_0512 (degree 1416).
+The undirected graph Alicycliphilus denitrificans K601 has 4677 nodes and
+718417 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06570 and has 6 connected components, where the
+component with most nodes has 4665 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 265, the mean node degree
+is 307.21, and the node degree mode is 4. The top 5 most central nodes
+are 596154.Alide2_3637 (degree 2004), 596154.Alide2_4443 (degree 1622),
+596154.Alide2_3139 (degree 1492), 596154.Alide2_0810 (degree 1424) and
+596154.Alide2_0512 (degree 1416).
 
 
 References
@@ -107,14 +108,15 @@ def AlicycliphilusDenitrificansK601(
 	
 	Datetime: 2021-02-02 21:19:19.313469
 	
-	The undirected graph Alicycliphilus denitrificans K601 has 4677 nodes and 718417
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06570 and has 6 connected components, where the component with most nodes has
-	4665 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 265, the mean node degree is 307.21, and the node degree mode is 4. The
-	top 5 most central nodes are 596154.Alide2_3637 (degree 2004), 596154.Alide2_4443
-	(degree 1622), 596154.Alide2_3139 (degree 1492), 596154.Alide2_0810 (degree 1424)
-	and 596154.Alide2_0512 (degree 1416).
+	The undirected graph Alicycliphilus denitrificans K601 has 4677 nodes and
+	718417 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06570 and has 6 connected components, where the
+	component with most nodes has 4665 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 265, the mean node degree
+	is 307.21, and the node degree mode is 4. The top 5 most central nodes
+	are 596154.Alide2_3637 (degree 2004), 596154.Alide2_4443 (degree 1622),
+	596154.Alide2_3139 (degree 1492), 596154.Alide2_0810 (degree 1424) and
+	596154.Alide2_0512 (degree 1416).
 	
 
 

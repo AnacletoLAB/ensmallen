@@ -10,13 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:18:22.777064
 
-The undirected graph Kinetoplastibacterium galatii has 727 nodes and 39329 weighted
-edges, of which none are self-loops. The graph is quite dense as it has a density
-of 0.14903 and is connected, as it has a single component. The graph median node
-degree is 96, the mean node degree is 108.20, and the node degree mode is 57. The
-top 5 most central nodes are 1208921.ST1E_0334 (degree 433), 1208921.ST1E_0746 (degree
-430), 1208921.ST1E_0666 (degree 363), 1208921.ST1E_0611 (degree 341) and 1208921.ST1E_0028
-(degree 326).
+The undirected graph Kinetoplastibacterium galatii has 727 nodes and 39329
+weighted edges, of which none are self-loops. The graph is quite dense
+as it has a density of 0.14903 and is connected, as it has a single component.
+The graph median node degree is 96, the mean node degree is 108.20, and
+the node degree mode is 57. The top 5 most central nodes are 1208921.ST1E_0334
+(degree 433), 1208921.ST1E_0746 (degree 430), 1208921.ST1E_0666 (degree
+363), 1208921.ST1E_0611 (degree 341) and 1208921.ST1E_0028 (degree 326).
 
 
 References
@@ -106,13 +106,13 @@ def KinetoplastibacteriumGalatii(
 	
 	Datetime: 2021-02-02 23:18:22.777064
 	
-	The undirected graph Kinetoplastibacterium galatii has 727 nodes and 39329 weighted
-	edges, of which none are self-loops. The graph is quite dense as it has a density
-	of 0.14903 and is connected, as it has a single component. The graph median node
-	degree is 96, the mean node degree is 108.20, and the node degree mode is 57. The
-	top 5 most central nodes are 1208921.ST1E_0334 (degree 433), 1208921.ST1E_0746 (degree
-	430), 1208921.ST1E_0666 (degree 363), 1208921.ST1E_0611 (degree 341) and 1208921.ST1E_0028
-	(degree 326).
+	The undirected graph Kinetoplastibacterium galatii has 727 nodes and 39329
+	weighted edges, of which none are self-loops. The graph is quite dense
+	as it has a density of 0.14903 and is connected, as it has a single component.
+	The graph median node degree is 96, the mean node degree is 108.20, and
+	the node degree mode is 57. The top 5 most central nodes are 1208921.ST1E_0334
+	(degree 433), 1208921.ST1E_0746 (degree 430), 1208921.ST1E_0666 (degree
+	363), 1208921.ST1E_0611 (degree 341) and 1208921.ST1E_0028 (degree 326).
 	
 
 

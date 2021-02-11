@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:55:51.137956
 
-The undirected graph Cobetia marina has 2686 nodes and 213526 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05921 and
-has 15 connected components, where the component with most nodes has 2652 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 158.99, and the node degree mode is 1. The top 5 most central
-nodes are 28258.KP05_06565 (degree 1087), 28258.KP05_09740 (degree 903), 28258.KP05_07750
-(degree 828), 28258.KP05_03065 (degree 796) and 28258.KP05_00280 (degree 776).
+The undirected graph Cobetia marina has 2686 nodes and 213526 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05921 and has 15 connected components, where the component with most
+nodes has 2652 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 158.99, and
+the node degree mode is 1. The top 5 most central nodes are 28258.KP05_06565
+(degree 1087), 28258.KP05_09740 (degree 903), 28258.KP05_07750 (degree
+828), 28258.KP05_03065 (degree 796) and 28258.KP05_00280 (degree 776).
 
 
 References
@@ -106,13 +107,14 @@ def CobetiaMarina(
 	
 	Datetime: 2021-02-02 17:55:51.137956
 	
-	The undirected graph Cobetia marina has 2686 nodes and 213526 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05921 and
-	has 15 connected components, where the component with most nodes has 2652 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 158.99, and the node degree mode is 1. The top 5 most central
-	nodes are 28258.KP05_06565 (degree 1087), 28258.KP05_09740 (degree 903), 28258.KP05_07750
-	(degree 828), 28258.KP05_03065 (degree 796) and 28258.KP05_00280 (degree 776).
+	The undirected graph Cobetia marina has 2686 nodes and 213526 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05921 and has 15 connected components, where the component with most
+	nodes has 2652 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 158.99, and
+	the node degree mode is 1. The top 5 most central nodes are 28258.KP05_06565
+	(degree 1087), 28258.KP05_09740 (degree 903), 28258.KP05_07750 (degree
+	828), 28258.KP05_03065 (degree 796) and 28258.KP05_00280 (degree 776).
 	
 
 

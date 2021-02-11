@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:44:44.947774
 
-The undirected graph Streptococcus mitis 2 F0392 has 1856 nodes and 123432 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07170
-and has 2 connected components, where the component with most nodes has 1851 nodes
-and the component with the least nodes has 5 nodes. The graph median node degree
-is 110, the mean node degree is 133.01, and the node degree mode is 8. The top 5
-most central nodes are 768726.HMPREF9178_1318 (degree 821), 768726.HMPREF9178_1292
-(degree 714), 768726.HMPREF9178_0107 (degree 661), 768726.HMPREF9178_0848 (degree
-645) and 768726.HMPREF9178_0462 (degree 620).
+The undirected graph Streptococcus mitis 2 F0392 has 1856 nodes and 123432
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07170 and has 2 connected components, where the component
+with most nodes has 1851 nodes and the component with the least nodes has
+5 nodes. The graph median node degree is 110, the mean node degree is 133.01,
+and the node degree mode is 8. The top 5 most central nodes are 768726.HMPREF9178_1318
+(degree 821), 768726.HMPREF9178_1292 (degree 714), 768726.HMPREF9178_0107
+(degree 661), 768726.HMPREF9178_0848 (degree 645) and 768726.HMPREF9178_0462
+(degree 620).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusMitis2F0392(
 	
 	Datetime: 2021-02-02 21:44:44.947774
 	
-	The undirected graph Streptococcus mitis 2 F0392 has 1856 nodes and 123432 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07170
-	and has 2 connected components, where the component with most nodes has 1851 nodes
-	and the component with the least nodes has 5 nodes. The graph median node degree
-	is 110, the mean node degree is 133.01, and the node degree mode is 8. The top 5
-	most central nodes are 768726.HMPREF9178_1318 (degree 821), 768726.HMPREF9178_1292
-	(degree 714), 768726.HMPREF9178_0107 (degree 661), 768726.HMPREF9178_0848 (degree
-	645) and 768726.HMPREF9178_0462 (degree 620).
+	The undirected graph Streptococcus mitis 2 F0392 has 1856 nodes and 123432
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07170 and has 2 connected components, where the component
+	with most nodes has 1851 nodes and the component with the least nodes has
+	5 nodes. The graph median node degree is 110, the mean node degree is 133.01,
+	and the node degree mode is 8. The top 5 most central nodes are 768726.HMPREF9178_1318
+	(degree 821), 768726.HMPREF9178_1292 (degree 714), 768726.HMPREF9178_0107
+	(degree 661), 768726.HMPREF9178_0848 (degree 645) and 768726.HMPREF9178_0462
+	(degree 620).
 	
 
 

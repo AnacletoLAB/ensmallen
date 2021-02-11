@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:40:26.209842
 
-The undirected graph Treponema sp. C6A8 has 2398 nodes and 156422 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05443 and
-has 11 connected components, where the component with most nodes has 2373 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 97,
-the mean node degree is 130.46, and the node degree mode is 3. The top 5 most central
-nodes are 1410609.JHVB01000001_gene2236 (degree 928), 1410609.JHVB01000003_gene300
-(degree 844), 1410609.JHVB01000009_gene519 (degree 836), 1410609.JHVB01000006_gene799
-(degree 729) and 1410609.JHVB01000003_gene418 (degree 677).
+The undirected graph Treponema sp. C6A8 has 2398 nodes and 156422 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05443 and has 11 connected components, where the component with most
+nodes has 2373 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 97, the mean node degree is 130.46, and
+the node degree mode is 3. The top 5 most central nodes are 1410609.JHVB01000001_gene2236
+(degree 928), 1410609.JHVB01000003_gene300 (degree 844), 1410609.JHVB01000009_gene519
+(degree 836), 1410609.JHVB01000006_gene799 (degree 729) and 1410609.JHVB01000003_gene418
+(degree 677).
 
 
 References
@@ -107,14 +108,15 @@ def TreponemaSp.C6a8(
 	
 	Datetime: 2021-02-03 22:40:26.209842
 	
-	The undirected graph Treponema sp. C6A8 has 2398 nodes and 156422 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05443 and
-	has 11 connected components, where the component with most nodes has 2373 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 97,
-	the mean node degree is 130.46, and the node degree mode is 3. The top 5 most central
-	nodes are 1410609.JHVB01000001_gene2236 (degree 928), 1410609.JHVB01000003_gene300
-	(degree 844), 1410609.JHVB01000009_gene519 (degree 836), 1410609.JHVB01000006_gene799
-	(degree 729) and 1410609.JHVB01000003_gene418 (degree 677).
+	The undirected graph Treponema sp. C6A8 has 2398 nodes and 156422 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05443 and has 11 connected components, where the component with most
+	nodes has 2373 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 97, the mean node degree is 130.46, and
+	the node degree mode is 3. The top 5 most central nodes are 1410609.JHVB01000001_gene2236
+	(degree 928), 1410609.JHVB01000003_gene300 (degree 844), 1410609.JHVB01000009_gene519
+	(degree 836), 1410609.JHVB01000006_gene799 (degree 729) and 1410609.JHVB01000003_gene418
+	(degree 677).
 	
 
 

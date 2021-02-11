@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:51:30.356232
 
-The undirected graph Marinobacter lipolyticus SM19 has 3616 nodes and 436925 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06685
-and has 10 connected components, where the component with most nodes has 3587 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 207, the mean node degree is 241.66, and the node degree mode is 3. The top 5
-most central nodes are 1318628.MARLIPOL_15402 (degree 1497), 1318628.MARLIPOL_08154
-(degree 1301), 1318628.MARLIPOL_01360 (degree 1243), 1318628.MARLIPOL_04445 (degree
-1199) and 1318628.MARLIPOL_08639 (degree 1137).
+The undirected graph Marinobacter lipolyticus SM19 has 3616 nodes and 436925
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06685 and has 10 connected components, where the component
+with most nodes has 3587 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 241.66,
+and the node degree mode is 3. The top 5 most central nodes are 1318628.MARLIPOL_15402
+(degree 1497), 1318628.MARLIPOL_08154 (degree 1301), 1318628.MARLIPOL_01360
+(degree 1243), 1318628.MARLIPOL_04445 (degree 1199) and 1318628.MARLIPOL_08639
+(degree 1137).
 
 
 References
@@ -107,14 +108,15 @@ def MarinobacterLipolyticusSm19(
 	
 	Datetime: 2021-02-03 21:51:30.356232
 	
-	The undirected graph Marinobacter lipolyticus SM19 has 3616 nodes and 436925 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06685
-	and has 10 connected components, where the component with most nodes has 3587 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 207, the mean node degree is 241.66, and the node degree mode is 3. The top 5
-	most central nodes are 1318628.MARLIPOL_15402 (degree 1497), 1318628.MARLIPOL_08154
-	(degree 1301), 1318628.MARLIPOL_01360 (degree 1243), 1318628.MARLIPOL_04445 (degree
-	1199) and 1318628.MARLIPOL_08639 (degree 1137).
+	The undirected graph Marinobacter lipolyticus SM19 has 3616 nodes and 436925
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06685 and has 10 connected components, where the component
+	with most nodes has 3587 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 241.66,
+	and the node degree mode is 3. The top 5 most central nodes are 1318628.MARLIPOL_15402
+	(degree 1497), 1318628.MARLIPOL_08154 (degree 1301), 1318628.MARLIPOL_01360
+	(degree 1243), 1318628.MARLIPOL_04445 (degree 1199) and 1318628.MARLIPOL_08639
+	(degree 1137).
 	
 
 

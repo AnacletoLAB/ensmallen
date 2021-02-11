@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:07:39.536391
 
-The undirected graph com-dblp has 317080 nodes and 1049866 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-and is connected, as it has a single component. The graph median node degree is 4,
-the mean node degree is 6.62, and the node degree mode is 2. The top 5 most central
-nodes are 3336 (degree 343), 3345 (degree 296), 167 (degree 290), 14690 (degree 269)
-and 13941 (degree 264).
+The undirected graph com-dblp has 317080 nodes and 1049866 unweighted edges,
+of which none are self-loops. The graph is extremely sparse as it has a
+density of 0.00002 and is connected, as it has a single component. The
+graph median node degree is 4, the mean node degree is 6.62, and the node
+degree mode is 2. The top 5 most central nodes are 3336 (degree 343), 3345
+(degree 296), 167 (degree 290), 14690 (degree 269) and 13941 (degree 264).
 
 
 References
@@ -102,12 +102,12 @@ def ComDblp(
 	
 	Datetime: 2021-02-06 12:07:39.536391
 	
-	The undirected graph com-dblp has 317080 nodes and 1049866 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density of 0.00002
-	and is connected, as it has a single component. The graph median node degree is 4,
-	the mean node degree is 6.62, and the node degree mode is 2. The top 5 most central
-	nodes are 3336 (degree 343), 3345 (degree 296), 167 (degree 290), 14690 (degree 269)
-	and 13941 (degree 264).
+	The undirected graph com-dblp has 317080 nodes and 1049866 unweighted edges,
+	of which none are self-loops. The graph is extremely sparse as it has a
+	density of 0.00002 and is connected, as it has a single component. The
+	graph median node degree is 4, the mean node degree is 6.62, and the node
+	degree mode is 2. The top 5 most central nodes are 3336 (degree 343), 3345
+	(degree 296), 167 (degree 290), 14690 (degree 269) and 13941 (degree 264).
 	
 
 

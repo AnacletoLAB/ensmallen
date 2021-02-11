@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:29:50.058430
 
-The undirected graph Actinomyces vaccimaxillae has 1992 nodes and 157007 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07918
-and has 10 connected components, where the component with most nodes has 1965 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 131, the mean node degree is 157.64, and the node degree mode is 6. The top 5
-most central nodes are 1120947.ATUX01000007_gene1013 (degree 961), 1120947.ATUX01000006_gene446
-(degree 934), 1120947.ATUX01000005_gene1321 (degree 821), 1120947.ATUX01000005_gene1577
-(degree 808) and 1120947.ATUX01000005_gene1587 (degree 798).
+The undirected graph Actinomyces vaccimaxillae has 1992 nodes and 157007
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07918 and has 10 connected components, where the component
+with most nodes has 1965 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 131, the mean node degree is 157.64,
+and the node degree mode is 6. The top 5 most central nodes are 1120947.ATUX01000007_gene1013
+(degree 961), 1120947.ATUX01000006_gene446 (degree 934), 1120947.ATUX01000005_gene1321
+(degree 821), 1120947.ATUX01000005_gene1577 (degree 808) and 1120947.ATUX01000005_gene1587
+(degree 798).
 
 
 References
@@ -107,14 +108,15 @@ def ActinomycesVaccimaxillae(
 	
 	Datetime: 2021-02-02 22:29:50.058430
 	
-	The undirected graph Actinomyces vaccimaxillae has 1992 nodes and 157007 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07918
-	and has 10 connected components, where the component with most nodes has 1965 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 131, the mean node degree is 157.64, and the node degree mode is 6. The top 5
-	most central nodes are 1120947.ATUX01000007_gene1013 (degree 961), 1120947.ATUX01000006_gene446
-	(degree 934), 1120947.ATUX01000005_gene1321 (degree 821), 1120947.ATUX01000005_gene1577
-	(degree 808) and 1120947.ATUX01000005_gene1587 (degree 798).
+	The undirected graph Actinomyces vaccimaxillae has 1992 nodes and 157007
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07918 and has 10 connected components, where the component
+	with most nodes has 1965 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 131, the mean node degree is 157.64,
+	and the node degree mode is 6. The top 5 most central nodes are 1120947.ATUX01000007_gene1013
+	(degree 961), 1120947.ATUX01000006_gene446 (degree 934), 1120947.ATUX01000005_gene1321
+	(degree 821), 1120947.ATUX01000005_gene1577 (degree 808) and 1120947.ATUX01000005_gene1587
+	(degree 798).
 	
 
 

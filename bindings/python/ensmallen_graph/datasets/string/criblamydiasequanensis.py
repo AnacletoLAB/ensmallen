@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:55:23.166352
 
-The undirected graph Criblamydia sequanensis has 2385 nodes and 171722 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06040 and
-has 20 connected components, where the component with most nodes has 2326 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 121,
-the mean node degree is 144.00, and the node degree mode is 2. The top 5 most central
-nodes are 1437425.CSEC_0576 (degree 1166), 1437425.CSEC_1979 (degree 903), 1437425.CSEC_0346
-(degree 851), 1437425.CSEC_1054 (degree 781) and 1437425.CSEC_1578 (degree 705).
+The undirected graph Criblamydia sequanensis has 2385 nodes and 171722
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06040 and has 20 connected components, where the component
+with most nodes has 2326 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 121, the mean node degree is 144.00,
+and the node degree mode is 2. The top 5 most central nodes are 1437425.CSEC_0576
+(degree 1166), 1437425.CSEC_1979 (degree 903), 1437425.CSEC_0346 (degree
+851), 1437425.CSEC_1054 (degree 781) and 1437425.CSEC_1578 (degree 705).
 
 
 References
@@ -106,13 +107,14 @@ def CriblamydiaSequanensis(
 	
 	Datetime: 2021-02-03 22:55:23.166352
 	
-	The undirected graph Criblamydia sequanensis has 2385 nodes and 171722 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06040 and
-	has 20 connected components, where the component with most nodes has 2326 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 121,
-	the mean node degree is 144.00, and the node degree mode is 2. The top 5 most central
-	nodes are 1437425.CSEC_0576 (degree 1166), 1437425.CSEC_1979 (degree 903), 1437425.CSEC_0346
-	(degree 851), 1437425.CSEC_1054 (degree 781) and 1437425.CSEC_1578 (degree 705).
+	The undirected graph Criblamydia sequanensis has 2385 nodes and 171722
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06040 and has 20 connected components, where the component
+	with most nodes has 2326 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 121, the mean node degree is 144.00,
+	and the node degree mode is 2. The top 5 most central nodes are 1437425.CSEC_0576
+	(degree 1166), 1437425.CSEC_1979 (degree 903), 1437425.CSEC_0346 (degree
+	851), 1437425.CSEC_1054 (degree 781) and 1437425.CSEC_1578 (degree 705).
 	
 
 

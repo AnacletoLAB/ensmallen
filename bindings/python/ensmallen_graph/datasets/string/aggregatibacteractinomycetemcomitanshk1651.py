@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:15.398876
 
-The undirected graph Aggregatibacter actinomycetemcomitans HK1651 has 2241 nodes
-and 111553 weighted edges, of which none are self-loops. The graph is dense as it
-has a density of 0.04444 and has 9 connected components, where the component with
-most nodes has 2222 nodes and the component with the least nodes has 2 nodes. The
-graph median node degree is 75, the mean node degree is 99.56, and the node degree
-mode is 3. The top 5 most central nodes are 272556.CF65_00531 (degree 838), 272556.CF65_01913
-(degree 658), 272556.CF65_00717 (degree 631), 272556.CF65_00629 (degree 610) and
-272556.CF65_02108 (degree 602).
+The undirected graph Aggregatibacter actinomycetemcomitans HK1651 has 2241
+nodes and 111553 weighted edges, of which none are self-loops. The graph
+is dense as it has a density of 0.04444 and has 9 connected components,
+where the component with most nodes has 2222 nodes and the component with
+the least nodes has 2 nodes. The graph median node degree is 75, the mean
+node degree is 99.56, and the node degree mode is 3. The top 5 most central
+nodes are 272556.CF65_00531 (degree 838), 272556.CF65_01913 (degree 658),
+272556.CF65_00717 (degree 631), 272556.CF65_00629 (degree 610) and 272556.CF65_02108
+(degree 602).
 
 
 References
@@ -107,14 +108,15 @@ def AggregatibacterActinomycetemcomitansHk1651(
 	
 	Datetime: 2021-02-02 20:16:15.398876
 	
-	The undirected graph Aggregatibacter actinomycetemcomitans HK1651 has 2241 nodes
-	and 111553 weighted edges, of which none are self-loops. The graph is dense as it
-	has a density of 0.04444 and has 9 connected components, where the component with
-	most nodes has 2222 nodes and the component with the least nodes has 2 nodes. The
-	graph median node degree is 75, the mean node degree is 99.56, and the node degree
-	mode is 3. The top 5 most central nodes are 272556.CF65_00531 (degree 838), 272556.CF65_01913
-	(degree 658), 272556.CF65_00717 (degree 631), 272556.CF65_00629 (degree 610) and
-	272556.CF65_02108 (degree 602).
+	The undirected graph Aggregatibacter actinomycetemcomitans HK1651 has 2241
+	nodes and 111553 weighted edges, of which none are self-loops. The graph
+	is dense as it has a density of 0.04444 and has 9 connected components,
+	where the component with most nodes has 2222 nodes and the component with
+	the least nodes has 2 nodes. The graph median node degree is 75, the mean
+	node degree is 99.56, and the node degree mode is 3. The top 5 most central
+	nodes are 272556.CF65_00531 (degree 838), 272556.CF65_01913 (degree 658),
+	272556.CF65_00717 (degree 631), 272556.CF65_00629 (degree 610) and 272556.CF65_02108
+	(degree 602).
 	
 
 

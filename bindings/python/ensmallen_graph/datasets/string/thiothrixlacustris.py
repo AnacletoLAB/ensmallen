@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:52:33.618850
 
-The undirected graph Thiothrix lacustris has 3458 nodes and 272424 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04558 and
-has 14 connected components, where the component with most nodes has 3420 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 157.56, and the node degree mode is 4. The top 5 most central
-nodes are 1123401.JHYQ01000018_gene2386 (degree 1426), 1123401.JHYQ01000007_gene496
-(degree 1281), 1123401.JHYQ01000009_gene2217 (degree 1076), 1123401.JHYQ01000025_gene3324
-(degree 1044) and 1123401.JHYQ01000003_gene2105 (degree 983).
+The undirected graph Thiothrix lacustris has 3458 nodes and 272424 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04558 and has 14 connected components, where the component with most
+nodes has 3420 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 157.56, and
+the node degree mode is 4. The top 5 most central nodes are 1123401.JHYQ01000018_gene2386
+(degree 1426), 1123401.JHYQ01000007_gene496 (degree 1281), 1123401.JHYQ01000009_gene2217
+(degree 1076), 1123401.JHYQ01000025_gene3324 (degree 1044) and 1123401.JHYQ01000003_gene2105
+(degree 983).
 
 
 References
@@ -107,14 +108,15 @@ def ThiothrixLacustris(
 	
 	Datetime: 2021-02-02 22:52:33.618850
 	
-	The undirected graph Thiothrix lacustris has 3458 nodes and 272424 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04558 and
-	has 14 connected components, where the component with most nodes has 3420 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 157.56, and the node degree mode is 4. The top 5 most central
-	nodes are 1123401.JHYQ01000018_gene2386 (degree 1426), 1123401.JHYQ01000007_gene496
-	(degree 1281), 1123401.JHYQ01000009_gene2217 (degree 1076), 1123401.JHYQ01000025_gene3324
-	(degree 1044) and 1123401.JHYQ01000003_gene2105 (degree 983).
+	The undirected graph Thiothrix lacustris has 3458 nodes and 272424 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04558 and has 14 connected components, where the component with most
+	nodes has 3420 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 157.56, and
+	the node degree mode is 4. The top 5 most central nodes are 1123401.JHYQ01000018_gene2386
+	(degree 1426), 1123401.JHYQ01000007_gene496 (degree 1281), 1123401.JHYQ01000009_gene2217
+	(degree 1076), 1123401.JHYQ01000025_gene3324 (degree 1044) and 1123401.JHYQ01000003_gene2105
+	(degree 983).
 	
 
 

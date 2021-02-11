@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:43:46.954678
 
-The undirected graph soc-firm-hi-tech has 33 nodes and 91 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.17235 and
-is connected, as it has a single component. The graph median node degree is 4, the
-mean node degree is 5.52, and the node degree mode is 4. The top 5 most central nodes
-are 29 (degree 16), 24 (degree 13), 20 (degree 11), 19 (degree 9) and 33 (degree
-9).
+The undirected graph soc-firm-hi-tech has 33 nodes and 91 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.17235 and is connected, as it has a single component. The graph median
+node degree is 4, the mean node degree is 5.52, and the node degree mode
+is 4. The top 5 most central nodes are 29 (degree 16), 24 (degree 13),
+20 (degree 11), 19 (degree 9) and 33 (degree 9).
 
 
 References
@@ -102,12 +102,12 @@ def SocFirmHiTech(
 	
 	Datetime: 2021-02-06 09:43:46.954678
 	
-	The undirected graph soc-firm-hi-tech has 33 nodes and 91 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.17235 and
-	is connected, as it has a single component. The graph median node degree is 4, the
-	mean node degree is 5.52, and the node degree mode is 4. The top 5 most central nodes
-	are 29 (degree 16), 24 (degree 13), 20 (degree 11), 19 (degree 9) and 33 (degree
-	9).
+	The undirected graph soc-firm-hi-tech has 33 nodes and 91 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.17235 and is connected, as it has a single component. The graph median
+	node degree is 4, the mean node degree is 5.52, and the node degree mode
+	is 4. The top 5 most central nodes are 29 (degree 16), 24 (degree 13),
+	20 (degree 11), 19 (degree 9) and 33 (degree 9).
 	
 
 

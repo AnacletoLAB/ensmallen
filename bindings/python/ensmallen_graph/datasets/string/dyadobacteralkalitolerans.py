@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:37:27.362641
 
-The undirected graph Dyadobacter alkalitolerans has 5291 nodes and 594136 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04245
-and has 16 connected components, where the component with most nodes has 5253 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 194, the mean node degree is 224.58, and the node degree mode is 5. The top 5
-most central nodes are 1121481.AUAS01000002_gene3471 (degree 1802), 1121481.AUAS01000012_gene302
-(degree 1757), 1121481.AUAS01000002_gene3208 (degree 1607), 1121481.AUAS01000004_gene1252
-(degree 1582) and 1121481.AUAS01000008_gene3115 (degree 1552).
+The undirected graph Dyadobacter alkalitolerans has 5291 nodes and 594136
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04245 and has 16 connected components, where the component
+with most nodes has 5253 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 194, the mean node degree is 224.58,
+and the node degree mode is 5. The top 5 most central nodes are 1121481.AUAS01000002_gene3471
+(degree 1802), 1121481.AUAS01000012_gene302 (degree 1757), 1121481.AUAS01000002_gene3208
+(degree 1607), 1121481.AUAS01000004_gene1252 (degree 1582) and 1121481.AUAS01000008_gene3115
+(degree 1552).
 
 
 References
@@ -107,14 +108,15 @@ def DyadobacterAlkalitolerans(
 	
 	Datetime: 2021-02-02 22:37:27.362641
 	
-	The undirected graph Dyadobacter alkalitolerans has 5291 nodes and 594136 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04245
-	and has 16 connected components, where the component with most nodes has 5253 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 194, the mean node degree is 224.58, and the node degree mode is 5. The top 5
-	most central nodes are 1121481.AUAS01000002_gene3471 (degree 1802), 1121481.AUAS01000012_gene302
-	(degree 1757), 1121481.AUAS01000002_gene3208 (degree 1607), 1121481.AUAS01000004_gene1252
-	(degree 1582) and 1121481.AUAS01000008_gene3115 (degree 1552).
+	The undirected graph Dyadobacter alkalitolerans has 5291 nodes and 594136
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04245 and has 16 connected components, where the component
+	with most nodes has 5253 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 194, the mean node degree is 224.58,
+	and the node degree mode is 5. The top 5 most central nodes are 1121481.AUAS01000002_gene3471
+	(degree 1802), 1121481.AUAS01000012_gene302 (degree 1757), 1121481.AUAS01000002_gene3208
+	(degree 1607), 1121481.AUAS01000004_gene1252 (degree 1582) and 1121481.AUAS01000008_gene3115
+	(degree 1552).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:56:43.769619
 
-The undirected graph Terriglobus roseus has 4207 nodes and 294526 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03329 and
-has 23 connected components, where the component with most nodes has 4159 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 106,
-the mean node degree is 140.02, and the node degree mode is 4. The top 5 most central
-nodes are 926566.Terro_1480 (degree 1239), 926566.Terro_0170 (degree 1233), 926566.Terro_2723
-(degree 1064), 926566.Terro_1714 (degree 1053) and 926566.Terro_3528 (degree 1031).
+The undirected graph Terriglobus roseus has 4207 nodes and 294526 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03329 and has 23 connected components, where the component with most
+nodes has 4159 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 106, the mean node degree is 140.02, and
+the node degree mode is 4. The top 5 most central nodes are 926566.Terro_1480
+(degree 1239), 926566.Terro_0170 (degree 1233), 926566.Terro_2723 (degree
+1064), 926566.Terro_1714 (degree 1053) and 926566.Terro_3528 (degree 1031).
 
 
 References
@@ -106,13 +107,14 @@ def TerriglobusRoseus(
 	
 	Datetime: 2021-02-02 21:56:43.769619
 	
-	The undirected graph Terriglobus roseus has 4207 nodes and 294526 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03329 and
-	has 23 connected components, where the component with most nodes has 4159 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 106,
-	the mean node degree is 140.02, and the node degree mode is 4. The top 5 most central
-	nodes are 926566.Terro_1480 (degree 1239), 926566.Terro_0170 (degree 1233), 926566.Terro_2723
-	(degree 1064), 926566.Terro_1714 (degree 1053) and 926566.Terro_3528 (degree 1031).
+	The undirected graph Terriglobus roseus has 4207 nodes and 294526 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03329 and has 23 connected components, where the component with most
+	nodes has 4159 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 106, the mean node degree is 140.02, and
+	the node degree mode is 4. The top 5 most central nodes are 926566.Terro_1480
+	(degree 1239), 926566.Terro_0170 (degree 1233), 926566.Terro_2723 (degree
+	1064), 926566.Terro_1714 (degree 1053) and 926566.Terro_3528 (degree 1031).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:40:25.911716
 
-The undirected graph Octadecabacter antarcticus has 4421 nodes and 332786 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03406
-and has 27 connected components, where the component with most nodes has 4363 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 110, the mean node degree is 150.55, and the node degree mode is 1. The top 5
-most central nodes are 391626.OAN307_c06630 (degree 1582), 391626.OAN307_c13380 (degree
-1260), 391626.OAN307_c40860 (degree 1260), 391626.OAN307_c19380 (degree 1127) and
-391626.OAN307_c45640 (degree 1100).
+The undirected graph Octadecabacter antarcticus has 4421 nodes and 332786
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03406 and has 27 connected components, where the component
+with most nodes has 4363 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 110, the mean node degree is 150.55,
+and the node degree mode is 1. The top 5 most central nodes are 391626.OAN307_c06630
+(degree 1582), 391626.OAN307_c13380 (degree 1260), 391626.OAN307_c40860
+(degree 1260), 391626.OAN307_c19380 (degree 1127) and 391626.OAN307_c45640
+(degree 1100).
 
 
 References
@@ -107,14 +108,15 @@ def OctadecabacterAntarcticus(
 	
 	Datetime: 2021-02-02 20:40:25.911716
 	
-	The undirected graph Octadecabacter antarcticus has 4421 nodes and 332786 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03406
-	and has 27 connected components, where the component with most nodes has 4363 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 110, the mean node degree is 150.55, and the node degree mode is 1. The top 5
-	most central nodes are 391626.OAN307_c06630 (degree 1582), 391626.OAN307_c13380 (degree
-	1260), 391626.OAN307_c40860 (degree 1260), 391626.OAN307_c19380 (degree 1127) and
-	391626.OAN307_c45640 (degree 1100).
+	The undirected graph Octadecabacter antarcticus has 4421 nodes and 332786
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03406 and has 27 connected components, where the component
+	with most nodes has 4363 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 110, the mean node degree is 150.55,
+	and the node degree mode is 1. The top 5 most central nodes are 391626.OAN307_c06630
+	(degree 1582), 391626.OAN307_c13380 (degree 1260), 391626.OAN307_c40860
+	(degree 1260), 391626.OAN307_c19380 (degree 1127) and 391626.OAN307_c45640
+	(degree 1100).
 	
 
 

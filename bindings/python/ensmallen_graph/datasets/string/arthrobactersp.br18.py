@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:45:18.040074
 
-The undirected graph Arthrobacter sp. Br18 has 2935 nodes and 223389 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05188 and
-has 8 connected components, where the component with most nodes has 2917 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 125,
-the mean node degree is 152.22, and the node degree mode is 3. The top 5 most central
-nodes are 1312954.KI914896_gene376 (degree 955), 1312954.KI914885_gene2570 (degree
-944), 1312954.KI914900_gene274 (degree 895), 1312954.KI914885_gene2560 (degree 875)
-and 1312954.KI914867_gene2933 (degree 869).
+The undirected graph Arthrobacter sp. Br18 has 2935 nodes and 223389 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05188 and has 8 connected components, where the component with most
+nodes has 2917 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 125, the mean node degree is 152.22, and
+the node degree mode is 3. The top 5 most central nodes are 1312954.KI914896_gene376
+(degree 955), 1312954.KI914885_gene2570 (degree 944), 1312954.KI914900_gene274
+(degree 895), 1312954.KI914885_gene2560 (degree 875) and 1312954.KI914867_gene2933
+(degree 869).
 
 
 References
@@ -107,14 +108,15 @@ def ArthrobacterSp.Br18(
 	
 	Datetime: 2021-02-03 21:45:18.040074
 	
-	The undirected graph Arthrobacter sp. Br18 has 2935 nodes and 223389 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05188 and
-	has 8 connected components, where the component with most nodes has 2917 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 125,
-	the mean node degree is 152.22, and the node degree mode is 3. The top 5 most central
-	nodes are 1312954.KI914896_gene376 (degree 955), 1312954.KI914885_gene2570 (degree
-	944), 1312954.KI914900_gene274 (degree 895), 1312954.KI914885_gene2560 (degree 875)
-	and 1312954.KI914867_gene2933 (degree 869).
+	The undirected graph Arthrobacter sp. Br18 has 2935 nodes and 223389 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05188 and has 8 connected components, where the component with most
+	nodes has 2917 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 125, the mean node degree is 152.22, and
+	the node degree mode is 3. The top 5 most central nodes are 1312954.KI914896_gene376
+	(degree 955), 1312954.KI914885_gene2570 (degree 944), 1312954.KI914900_gene274
+	(degree 895), 1312954.KI914885_gene2560 (degree 875) and 1312954.KI914867_gene2933
+	(degree 869).
 	
 
 

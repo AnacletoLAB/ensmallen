@@ -10,15 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:31:29.765651
 
-The undirected graph Anaerobiospirillum succiniciproducens has 1975 nodes and 328339
-weighted edges, of which none are self-loops. The graph is quite dense as it has
-a density of 0.16844 and has 20 connected components, where the component with most
-nodes has 1931 nodes and the component with the least nodes has 2 nodes. The graph
-median node degree is 312, the mean node degree is 332.50, and the node degree mode
-is 1. The top 5 most central nodes are 1120988.AXWV01000053_gene1397 (degree 1127),
-1120988.AXWV01000071_gene1987 (degree 1124), 1120988.AXWV01000007_gene879 (degree
-1124), 1120988.AXWV01000084_gene516 (degree 1120) and 1120988.AXWV01000075_gene965
-(degree 1098).
+The undirected graph Anaerobiospirillum succiniciproducens has 1975 nodes
+and 328339 weighted edges, of which none are self-loops. The graph is quite
+dense as it has a density of 0.16844 and has 20 connected components, where
+the component with most nodes has 1931 nodes and the component with the
+least nodes has 2 nodes. The graph median node degree is 312, the mean
+node degree is 332.50, and the node degree mode is 1. The top 5 most central
+nodes are 1120988.AXWV01000053_gene1397 (degree 1127), 1120988.AXWV01000071_gene1987
+(degree 1124), 1120988.AXWV01000007_gene879 (degree 1124), 1120988.AXWV01000084_gene516
+(degree 1120) and 1120988.AXWV01000075_gene965 (degree 1098).
 
 
 References
@@ -108,15 +108,15 @@ def AnaerobiospirillumSucciniciproducens(
 	
 	Datetime: 2021-02-02 22:31:29.765651
 	
-	The undirected graph Anaerobiospirillum succiniciproducens has 1975 nodes and 328339
-	weighted edges, of which none are self-loops. The graph is quite dense as it has
-	a density of 0.16844 and has 20 connected components, where the component with most
-	nodes has 1931 nodes and the component with the least nodes has 2 nodes. The graph
-	median node degree is 312, the mean node degree is 332.50, and the node degree mode
-	is 1. The top 5 most central nodes are 1120988.AXWV01000053_gene1397 (degree 1127),
-	1120988.AXWV01000071_gene1987 (degree 1124), 1120988.AXWV01000007_gene879 (degree
-	1124), 1120988.AXWV01000084_gene516 (degree 1120) and 1120988.AXWV01000075_gene965
-	(degree 1098).
+	The undirected graph Anaerobiospirillum succiniciproducens has 1975 nodes
+	and 328339 weighted edges, of which none are self-loops. The graph is quite
+	dense as it has a density of 0.16844 and has 20 connected components, where
+	the component with most nodes has 1931 nodes and the component with the
+	least nodes has 2 nodes. The graph median node degree is 312, the mean
+	node degree is 332.50, and the node degree mode is 1. The top 5 most central
+	nodes are 1120988.AXWV01000053_gene1397 (degree 1127), 1120988.AXWV01000071_gene1987
+	(degree 1124), 1120988.AXWV01000007_gene879 (degree 1124), 1120988.AXWV01000084_gene516
+	(degree 1120) and 1120988.AXWV01000075_gene965 (degree 1098).
 	
 
 

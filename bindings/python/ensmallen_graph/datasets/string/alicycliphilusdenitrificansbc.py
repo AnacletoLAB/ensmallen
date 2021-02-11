@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:19:13.641367
 
-The undirected graph Alicycliphilus denitrificans BC has 4439 nodes and 547500 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05558
-and has 10 connected components, where the component with most nodes has 4403 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 195, the mean node degree is 246.68, and the node degree mode is 19. The top 5
-most central nodes are 596153.Alide_1294 (degree 1843), 596153.Alide_2091 (degree
-1789), 596153.Alide_4090 (degree 1438), 596153.Alide_1691 (degree 1418) and 596153.Alide_1753
-(degree 1401).
+The undirected graph Alicycliphilus denitrificans BC has 4439 nodes and
+547500 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05558 and has 10 connected components, where the
+component with most nodes has 4403 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 195, the mean node degree
+is 246.68, and the node degree mode is 19. The top 5 most central nodes
+are 596153.Alide_1294 (degree 1843), 596153.Alide_2091 (degree 1789), 596153.Alide_4090
+(degree 1438), 596153.Alide_1691 (degree 1418) and 596153.Alide_1753 (degree
+1401).
 
 
 References
@@ -107,14 +108,15 @@ def AlicycliphilusDenitrificansBc(
 	
 	Datetime: 2021-02-02 21:19:13.641367
 	
-	The undirected graph Alicycliphilus denitrificans BC has 4439 nodes and 547500 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05558
-	and has 10 connected components, where the component with most nodes has 4403 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 195, the mean node degree is 246.68, and the node degree mode is 19. The top 5
-	most central nodes are 596153.Alide_1294 (degree 1843), 596153.Alide_2091 (degree
-	1789), 596153.Alide_4090 (degree 1438), 596153.Alide_1691 (degree 1418) and 596153.Alide_1753
-	(degree 1401).
+	The undirected graph Alicycliphilus denitrificans BC has 4439 nodes and
+	547500 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05558 and has 10 connected components, where the
+	component with most nodes has 4403 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 195, the mean node degree
+	is 246.68, and the node degree mode is 19. The top 5 most central nodes
+	are 596153.Alide_1294 (degree 1843), 596153.Alide_2091 (degree 1789), 596153.Alide_4090
+	(degree 1438), 596153.Alide_1691 (degree 1418) and 596153.Alide_1753 (degree
+	1401).
 	
 
 

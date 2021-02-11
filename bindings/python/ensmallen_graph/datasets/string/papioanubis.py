@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:36:59.325085
 
-The undirected graph Papio anubis has 18810 nodes and 5144876 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.02908 and
-has 2 connected components, where the component with most nodes has 18808 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 391,
-the mean node degree is 547.04, and the node degree mode is 212. The top 5 most central
-nodes are 9555.ENSPANP00000010115 (degree 5351), 9555.ENSPANP00000008457 (degree
-5155), 9555.ENSPANP00000012509 (degree 4753), 9555.ENSPANP00000015923 (degree 4593)
-and 9555.ENSPANP00000002581 (degree 4565).
+The undirected graph Papio anubis has 18810 nodes and 5144876 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02908 and has 2 connected components, where the component with most
+nodes has 18808 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 391, the mean node degree is 547.04, and
+the node degree mode is 212. The top 5 most central nodes are 9555.ENSPANP00000010115
+(degree 5351), 9555.ENSPANP00000008457 (degree 5155), 9555.ENSPANP00000012509
+(degree 4753), 9555.ENSPANP00000015923 (degree 4593) and 9555.ENSPANP00000002581
+(degree 4565).
 
 
 References
@@ -107,14 +108,15 @@ def PapioAnubis(
 	
 	Datetime: 2021-02-02 17:36:59.325085
 	
-	The undirected graph Papio anubis has 18810 nodes and 5144876 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.02908 and
-	has 2 connected components, where the component with most nodes has 18808 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 391,
-	the mean node degree is 547.04, and the node degree mode is 212. The top 5 most central
-	nodes are 9555.ENSPANP00000010115 (degree 5351), 9555.ENSPANP00000008457 (degree
-	5155), 9555.ENSPANP00000012509 (degree 4753), 9555.ENSPANP00000015923 (degree 4593)
-	and 9555.ENSPANP00000002581 (degree 4565).
+	The undirected graph Papio anubis has 18810 nodes and 5144876 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02908 and has 2 connected components, where the component with most
+	nodes has 18808 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 391, the mean node degree is 547.04, and
+	the node degree mode is 212. The top 5 most central nodes are 9555.ENSPANP00000010115
+	(degree 5351), 9555.ENSPANP00000008457 (degree 5155), 9555.ENSPANP00000012509
+	(degree 4753), 9555.ENSPANP00000015923 (degree 4593) and 9555.ENSPANP00000002581
+	(degree 4565).
 	
 
 

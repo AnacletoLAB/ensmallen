@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:36:26.365715
 
-The undirected graph Pseudanabaena sp. PCC7367 has 3768 nodes and 284173 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04004
-and has 23 connected components, where the component with most nodes has 3717 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 150.83, and the node degree mode is 1. The top 5
-most central nodes are 82654.Pse7367_0481 (degree 1260), 82654.Pse7367_1859 (degree
-1258), 82654.Pse7367_1712 (degree 1121), 82654.Pse7367_0526 (degree 1051) and 82654.Pse7367_2190
-(degree 1033).
+The undirected graph Pseudanabaena sp. PCC7367 has 3768 nodes and 284173
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04004 and has 23 connected components, where the component
+with most nodes has 3717 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 150.83,
+and the node degree mode is 1. The top 5 most central nodes are 82654.Pse7367_0481
+(degree 1260), 82654.Pse7367_1859 (degree 1258), 82654.Pse7367_1712 (degree
+1121), 82654.Pse7367_0526 (degree 1051) and 82654.Pse7367_2190 (degree
+1033).
 
 
 References
@@ -107,14 +108,15 @@ def PseudanabaenaSp.Pcc7367(
 	
 	Datetime: 2021-02-02 18:36:26.365715
 	
-	The undirected graph Pseudanabaena sp. PCC7367 has 3768 nodes and 284173 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04004
-	and has 23 connected components, where the component with most nodes has 3717 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 150.83, and the node degree mode is 1. The top 5
-	most central nodes are 82654.Pse7367_0481 (degree 1260), 82654.Pse7367_1859 (degree
-	1258), 82654.Pse7367_1712 (degree 1121), 82654.Pse7367_0526 (degree 1051) and 82654.Pse7367_2190
-	(degree 1033).
+	The undirected graph Pseudanabaena sp. PCC7367 has 3768 nodes and 284173
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04004 and has 23 connected components, where the component
+	with most nodes has 3717 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 150.83,
+	and the node degree mode is 1. The top 5 most central nodes are 82654.Pse7367_0481
+	(degree 1260), 82654.Pse7367_1859 (degree 1258), 82654.Pse7367_1712 (degree
+	1121), 82654.Pse7367_0526 (degree 1051) and 82654.Pse7367_2190 (degree
+	1033).
 	
 
 

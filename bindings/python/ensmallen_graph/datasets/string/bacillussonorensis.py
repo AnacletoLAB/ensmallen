@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:19.222791
 
-The undirected graph Bacillus sonorensis has 4611 nodes and 524810 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04938 and
-has 26 connected components, where the component with most nodes has 4543 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 188,
-the mean node degree is 227.63, and the node degree mode is 1. The top 5 most central
-nodes are 1274524.BSONL12_06528 (degree 1461), 1274524.BSONL12_21499 (degree 1431),
-1274524.BSONL12_09872 (degree 1370), 1274524.BSONL12_11136 (degree 1334) and 1274524.BSONL12_22583
+The undirected graph Bacillus sonorensis has 4611 nodes and 524810 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04938 and has 26 connected components, where the component with most
+nodes has 4543 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 188, the mean node degree is 227.63, and
+the node degree mode is 1. The top 5 most central nodes are 1274524.BSONL12_06528
+(degree 1461), 1274524.BSONL12_21499 (degree 1431), 1274524.BSONL12_09872
+(degree 1370), 1274524.BSONL12_11136 (degree 1334) and 1274524.BSONL12_22583
 (degree 1318).
 
 
@@ -107,13 +108,14 @@ def BacillusSonorensis(
 	
 	Datetime: 2021-02-02 23:38:19.222791
 	
-	The undirected graph Bacillus sonorensis has 4611 nodes and 524810 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04938 and
-	has 26 connected components, where the component with most nodes has 4543 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 188,
-	the mean node degree is 227.63, and the node degree mode is 1. The top 5 most central
-	nodes are 1274524.BSONL12_06528 (degree 1461), 1274524.BSONL12_21499 (degree 1431),
-	1274524.BSONL12_09872 (degree 1370), 1274524.BSONL12_11136 (degree 1334) and 1274524.BSONL12_22583
+	The undirected graph Bacillus sonorensis has 4611 nodes and 524810 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04938 and has 26 connected components, where the component with most
+	nodes has 4543 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 188, the mean node degree is 227.63, and
+	the node degree mode is 1. The top 5 most central nodes are 1274524.BSONL12_06528
+	(degree 1461), 1274524.BSONL12_21499 (degree 1431), 1274524.BSONL12_09872
+	(degree 1370), 1274524.BSONL12_11136 (degree 1334) and 1274524.BSONL12_22583
 	(degree 1318).
 	
 

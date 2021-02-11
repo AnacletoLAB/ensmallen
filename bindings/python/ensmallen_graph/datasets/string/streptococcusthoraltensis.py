@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:50:58.700058
 
-The undirected graph Streptococcus thoraltensis has 2168 nodes and 194445 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08278
-and has 12 connected components, where the component with most nodes has 2137 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 142, the mean node degree is 179.38, and the node degree mode is 2. The top 5
-most central nodes are 1123318.KB904609_gene212 (degree 982), 1123318.KB904633_gene1295
-(degree 932), 1123318.KB904596_gene1358 (degree 873), 1123318.KB904586_gene435 (degree
-869) and 1123318.KB904632_gene1242 (degree 763).
+The undirected graph Streptococcus thoraltensis has 2168 nodes and 194445
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08278 and has 12 connected components, where the component
+with most nodes has 2137 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 142, the mean node degree is 179.38,
+and the node degree mode is 2. The top 5 most central nodes are 1123318.KB904609_gene212
+(degree 982), 1123318.KB904633_gene1295 (degree 932), 1123318.KB904596_gene1358
+(degree 873), 1123318.KB904586_gene435 (degree 869) and 1123318.KB904632_gene1242
+(degree 763).
 
 
 References
@@ -107,14 +108,15 @@ def StreptococcusThoraltensis(
 	
 	Datetime: 2021-02-02 22:50:58.700058
 	
-	The undirected graph Streptococcus thoraltensis has 2168 nodes and 194445 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08278
-	and has 12 connected components, where the component with most nodes has 2137 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 142, the mean node degree is 179.38, and the node degree mode is 2. The top 5
-	most central nodes are 1123318.KB904609_gene212 (degree 982), 1123318.KB904633_gene1295
-	(degree 932), 1123318.KB904596_gene1358 (degree 873), 1123318.KB904586_gene435 (degree
-	869) and 1123318.KB904632_gene1242 (degree 763).
+	The undirected graph Streptococcus thoraltensis has 2168 nodes and 194445
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08278 and has 12 connected components, where the component
+	with most nodes has 2137 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 142, the mean node degree is 179.38,
+	and the node degree mode is 2. The top 5 most central nodes are 1123318.KB904609_gene212
+	(degree 982), 1123318.KB904633_gene1295 (degree 932), 1123318.KB904596_gene1358
+	(degree 873), 1123318.KB904586_gene435 (degree 869) and 1123318.KB904632_gene1242
+	(degree 763).
 	
 
 

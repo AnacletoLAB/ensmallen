@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:53:34.595943
 
-The undirected graph Streptomyces pristinaespiralis has 7000 nodes and 872959 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03564
-and has 44 connected components, where the component with most nodes has 6907 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 210, the mean node degree is 249.42, and the node degree mode is 1. The top 5
-most central nodes are 457429.ABJI02000197_gene5644 (degree 3509), 457429.ABJI02000623_gene4134
+The undirected graph Streptomyces pristinaespiralis has 7000 nodes and
+872959 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.03564 and has 44 connected components, where the
+component with most nodes has 6907 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+is 249.42, and the node degree mode is 1. The top 5 most central nodes
+are 457429.ABJI02000197_gene5644 (degree 3509), 457429.ABJI02000623_gene4134
 (degree 2188), 457429.ABJI02000619_gene4145 (degree 1965), 457429.ABJI02000802_gene4386
 (degree 1811) and 457429.ABJI02000336_gene5209 (degree 1744).
 
@@ -107,12 +108,13 @@ def StreptomycesPristinaespiralis(
 	
 	Datetime: 2021-02-02 20:53:34.595943
 	
-	The undirected graph Streptomyces pristinaespiralis has 7000 nodes and 872959 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03564
-	and has 44 connected components, where the component with most nodes has 6907 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 210, the mean node degree is 249.42, and the node degree mode is 1. The top 5
-	most central nodes are 457429.ABJI02000197_gene5644 (degree 3509), 457429.ABJI02000623_gene4134
+	The undirected graph Streptomyces pristinaespiralis has 7000 nodes and
+	872959 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.03564 and has 44 connected components, where the
+	component with most nodes has 6907 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 210, the mean node degree
+	is 249.42, and the node degree mode is 1. The top 5 most central nodes
+	are 457429.ABJI02000197_gene5644 (degree 3509), 457429.ABJI02000623_gene4134
 	(degree 2188), 457429.ABJI02000619_gene4145 (degree 1965), 457429.ABJI02000802_gene4386
 	(degree 1811) and 457429.ABJI02000336_gene5209 (degree 1744).
 	

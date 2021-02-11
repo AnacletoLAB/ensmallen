@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:27:28.863664
 
-The undirected graph Olsenella sp. F0356 has 1889 nodes and 127699 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07161 and
-has 3 connected components, where the component with most nodes has 1884 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 100,
-the mean node degree is 135.20, and the node degree mode is 2. The top 5 most central
-nodes are 661087.HMPREF1008_00327 (degree 938), 661087.HMPREF1008_01603 (degree 880),
-661087.HMPREF1008_00105 (degree 874), 661087.HMPREF1008_00301 (degree 746) and 661087.HMPREF1008_01836
+The undirected graph Olsenella sp. F0356 has 1889 nodes and 127699 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07161 and has 3 connected components, where the component with most
+nodes has 1884 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 100, the mean node degree is 135.20, and
+the node degree mode is 2. The top 5 most central nodes are 661087.HMPREF1008_00327
+(degree 938), 661087.HMPREF1008_01603 (degree 880), 661087.HMPREF1008_00105
+(degree 874), 661087.HMPREF1008_00301 (degree 746) and 661087.HMPREF1008_01836
 (degree 730).
 
 
@@ -107,13 +108,14 @@ def OlsenellaSp.F0356(
 	
 	Datetime: 2021-02-02 21:27:28.863664
 	
-	The undirected graph Olsenella sp. F0356 has 1889 nodes and 127699 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07161 and
-	has 3 connected components, where the component with most nodes has 1884 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 100,
-	the mean node degree is 135.20, and the node degree mode is 2. The top 5 most central
-	nodes are 661087.HMPREF1008_00327 (degree 938), 661087.HMPREF1008_01603 (degree 880),
-	661087.HMPREF1008_00105 (degree 874), 661087.HMPREF1008_00301 (degree 746) and 661087.HMPREF1008_01836
+	The undirected graph Olsenella sp. F0356 has 1889 nodes and 127699 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07161 and has 3 connected components, where the component with most
+	nodes has 1884 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 100, the mean node degree is 135.20, and
+	the node degree mode is 2. The top 5 most central nodes are 661087.HMPREF1008_00327
+	(degree 938), 661087.HMPREF1008_01603 (degree 880), 661087.HMPREF1008_00105
+	(degree 874), 661087.HMPREF1008_00301 (degree 746) and 661087.HMPREF1008_01836
 	(degree 730).
 	
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 18:10:41.400460
 
-The undirected graph Neurospora tetrasperma has 6704 nodes and 536375 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02387 and
-has 35 connected components, where the component with most nodes has 6620 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 102,
-the mean node degree is 160.02, and the node degree mode is 1. The top 5 most central
-nodes are 40127.XP_009850975.1 (degree 1432), 40127.XP_009851952.1 (degree 1204),
-40127.XP_009856068.1 (degree 1130), 40127.XP_009847246.1 (degree 1021) and 40127.XP_009856451.1
+The undirected graph Neurospora tetrasperma has 6704 nodes and 536375 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02387 and has 35 connected components, where the component with most
+nodes has 6620 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 102, the mean node degree is 160.02, and
+the node degree mode is 1. The top 5 most central nodes are 40127.XP_009850975.1
+(degree 1432), 40127.XP_009851952.1 (degree 1204), 40127.XP_009856068.1
+(degree 1130), 40127.XP_009847246.1 (degree 1021) and 40127.XP_009856451.1
 (degree 994).
 
 
@@ -107,13 +108,14 @@ def NeurosporaTetrasperma(
 	
 	Datetime: 2021-02-02 18:10:41.400460
 	
-	The undirected graph Neurospora tetrasperma has 6704 nodes and 536375 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02387 and
-	has 35 connected components, where the component with most nodes has 6620 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 102,
-	the mean node degree is 160.02, and the node degree mode is 1. The top 5 most central
-	nodes are 40127.XP_009850975.1 (degree 1432), 40127.XP_009851952.1 (degree 1204),
-	40127.XP_009856068.1 (degree 1130), 40127.XP_009847246.1 (degree 1021) and 40127.XP_009856451.1
+	The undirected graph Neurospora tetrasperma has 6704 nodes and 536375 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02387 and has 35 connected components, where the component with most
+	nodes has 6620 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 102, the mean node degree is 160.02, and
+	the node degree mode is 1. The top 5 most central nodes are 40127.XP_009850975.1
+	(degree 1432), 40127.XP_009851952.1 (degree 1204), 40127.XP_009856068.1
+	(degree 1130), 40127.XP_009847246.1 (degree 1021) and 40127.XP_009856451.1
 	(degree 994).
 	
 

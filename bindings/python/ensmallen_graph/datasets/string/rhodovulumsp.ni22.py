@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:12:16.538034
 
-The undirected graph Rhodovulum sp. NI22 has 3420 nodes and 365773 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06256 and
-has 4 connected components, where the component with most nodes has 3409 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 183,
-the mean node degree is 213.90, and the node degree mode is 5. The top 5 most central
-nodes are 1469613.JT55_13930 (degree 1423), 1469613.JT55_01425 (degree 1164), 1469613.JT55_06875
-(degree 1092), 1469613.JT55_17565 (degree 1084) and 1469613.JT55_05760 (degree 1067).
+The undirected graph Rhodovulum sp. NI22 has 3420 nodes and 365773 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06256 and has 4 connected components, where the component with most
+nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 183, the mean node degree is 213.90, and
+the node degree mode is 5. The top 5 most central nodes are 1469613.JT55_13930
+(degree 1423), 1469613.JT55_01425 (degree 1164), 1469613.JT55_06875 (degree
+1092), 1469613.JT55_17565 (degree 1084) and 1469613.JT55_05760 (degree
+1067).
 
 
 References
@@ -106,13 +108,15 @@ def RhodovulumSp.Ni22(
 	
 	Datetime: 2021-02-03 23:12:16.538034
 	
-	The undirected graph Rhodovulum sp. NI22 has 3420 nodes and 365773 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06256 and
-	has 4 connected components, where the component with most nodes has 3409 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 183,
-	the mean node degree is 213.90, and the node degree mode is 5. The top 5 most central
-	nodes are 1469613.JT55_13930 (degree 1423), 1469613.JT55_01425 (degree 1164), 1469613.JT55_06875
-	(degree 1092), 1469613.JT55_17565 (degree 1084) and 1469613.JT55_05760 (degree 1067).
+	The undirected graph Rhodovulum sp. NI22 has 3420 nodes and 365773 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06256 and has 4 connected components, where the component with most
+	nodes has 3409 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 183, the mean node degree is 213.90, and
+	the node degree mode is 5. The top 5 most central nodes are 1469613.JT55_13930
+	(degree 1423), 1469613.JT55_01425 (degree 1164), 1469613.JT55_06875 (degree
+	1092), 1469613.JT55_17565 (degree 1084) and 1469613.JT55_05760 (degree
+	1067).
 	
 
 

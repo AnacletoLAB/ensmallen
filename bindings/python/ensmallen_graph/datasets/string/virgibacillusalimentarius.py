@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:33:17.488296
 
-The undirected graph Virgibacillus alimentarius has 3105 nodes and 234980 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04876
-and has 14 connected components, where the component with most nodes has 3076 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 128, the mean node degree is 151.36, and the node degree mode is 1. The top 5
-most central nodes are 698769.JFBD01000021_gene1924 (degree 1129), 698769.JFBD01000057_gene1127
-(degree 971), 698769.JFBD01000053_gene502 (degree 885), 698769.JFBD01000072_gene1844
-(degree 764) and 698769.JFBD01000043_gene625 (degree 738).
+The undirected graph Virgibacillus alimentarius has 3105 nodes and 234980
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04876 and has 14 connected components, where the component
+with most nodes has 3076 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 128, the mean node degree is 151.36,
+and the node degree mode is 1. The top 5 most central nodes are 698769.JFBD01000021_gene1924
+(degree 1129), 698769.JFBD01000057_gene1127 (degree 971), 698769.JFBD01000053_gene502
+(degree 885), 698769.JFBD01000072_gene1844 (degree 764) and 698769.JFBD01000043_gene625
+(degree 738).
 
 
 References
@@ -107,14 +108,15 @@ def VirgibacillusAlimentarius(
 	
 	Datetime: 2021-02-02 21:33:17.488296
 	
-	The undirected graph Virgibacillus alimentarius has 3105 nodes and 234980 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04876
-	and has 14 connected components, where the component with most nodes has 3076 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 128, the mean node degree is 151.36, and the node degree mode is 1. The top 5
-	most central nodes are 698769.JFBD01000021_gene1924 (degree 1129), 698769.JFBD01000057_gene1127
-	(degree 971), 698769.JFBD01000053_gene502 (degree 885), 698769.JFBD01000072_gene1844
-	(degree 764) and 698769.JFBD01000043_gene625 (degree 738).
+	The undirected graph Virgibacillus alimentarius has 3105 nodes and 234980
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04876 and has 14 connected components, where the component
+	with most nodes has 3076 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 128, the mean node degree is 151.36,
+	and the node degree mode is 1. The top 5 most central nodes are 698769.JFBD01000021_gene1924
+	(degree 1129), 698769.JFBD01000057_gene1127 (degree 971), 698769.JFBD01000053_gene502
+	(degree 885), 698769.JFBD01000072_gene1844 (degree 764) and 698769.JFBD01000043_gene625
+	(degree 738).
 	
 
 

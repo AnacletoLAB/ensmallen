@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:27:46.885812
 
-The undirected graph Pseudoalteromonas citrea has 4360 nodes and 704931 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.07418
-and has 18 connected components, where the component with most nodes has 4325 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 296, the mean node degree is 323.36, and the node degree mode is 1. The top 5
-most central nodes are 1117314.PCIT_10894 (degree 1614), 1117314.PCIT_13411 (degree
-1511), 1117314.PCIT_07407 (degree 1498), 1117314.PCIT_07234 (degree 1465) and 1117314.PCIT_06345
-(degree 1378).
+The undirected graph Pseudoalteromonas citrea has 4360 nodes and 704931
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.07418 and has 18 connected components, where the component
+with most nodes has 4325 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 296, the mean node degree is 323.36,
+and the node degree mode is 1. The top 5 most central nodes are 1117314.PCIT_10894
+(degree 1614), 1117314.PCIT_13411 (degree 1511), 1117314.PCIT_07407 (degree
+1498), 1117314.PCIT_07234 (degree 1465) and 1117314.PCIT_06345 (degree
+1378).
 
 
 References
@@ -107,14 +108,15 @@ def PseudoalteromonasCitrea(
 	
 	Datetime: 2021-02-02 22:27:46.885812
 	
-	The undirected graph Pseudoalteromonas citrea has 4360 nodes and 704931 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.07418
-	and has 18 connected components, where the component with most nodes has 4325 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 296, the mean node degree is 323.36, and the node degree mode is 1. The top 5
-	most central nodes are 1117314.PCIT_10894 (degree 1614), 1117314.PCIT_13411 (degree
-	1511), 1117314.PCIT_07407 (degree 1498), 1117314.PCIT_07234 (degree 1465) and 1117314.PCIT_06345
-	(degree 1378).
+	The undirected graph Pseudoalteromonas citrea has 4360 nodes and 704931
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.07418 and has 18 connected components, where the component
+	with most nodes has 4325 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 296, the mean node degree is 323.36,
+	and the node degree mode is 1. The top 5 most central nodes are 1117314.PCIT_10894
+	(degree 1614), 1117314.PCIT_13411 (degree 1511), 1117314.PCIT_07407 (degree
+	1498), 1117314.PCIT_07234 (degree 1465) and 1117314.PCIT_06345 (degree
+	1378).
 	
 
 

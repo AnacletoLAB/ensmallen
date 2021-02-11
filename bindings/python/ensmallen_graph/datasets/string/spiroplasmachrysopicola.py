@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:38:23.843900
 
-The undirected graph Spiroplasma chrysopicola has 999 nodes and 51777 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.10387
-and has 11 connected components, where the component with most nodes has 973 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 71, the mean node degree is 103.66, and the node degree mode is 6. The top 5 most
-central nodes are 1276227.SCHRY_v1c09710 (degree 510), 1276227.SCHRY_v1c10040 (degree
-476), 1276227.SCHRY_v1c10240 (degree 442), 1276227.SCHRY_v1c06590 (degree 416) and
-1276227.SCHRY_v1c02560 (degree 402).
+The undirected graph Spiroplasma chrysopicola has 999 nodes and 51777 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10387 and has 11 connected components, where the component
+with most nodes has 973 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 71, the mean node degree is 103.66,
+and the node degree mode is 6. The top 5 most central nodes are 1276227.SCHRY_v1c09710
+(degree 510), 1276227.SCHRY_v1c10040 (degree 476), 1276227.SCHRY_v1c10240
+(degree 442), 1276227.SCHRY_v1c06590 (degree 416) and 1276227.SCHRY_v1c02560
+(degree 402).
 
 
 References
@@ -107,14 +108,15 @@ def SpiroplasmaChrysopicola(
 	
 	Datetime: 2021-02-02 23:38:23.843900
 	
-	The undirected graph Spiroplasma chrysopicola has 999 nodes and 51777 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.10387
-	and has 11 connected components, where the component with most nodes has 973 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 71, the mean node degree is 103.66, and the node degree mode is 6. The top 5 most
-	central nodes are 1276227.SCHRY_v1c09710 (degree 510), 1276227.SCHRY_v1c10040 (degree
-	476), 1276227.SCHRY_v1c10240 (degree 442), 1276227.SCHRY_v1c06590 (degree 416) and
-	1276227.SCHRY_v1c02560 (degree 402).
+	The undirected graph Spiroplasma chrysopicola has 999 nodes and 51777 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10387 and has 11 connected components, where the component
+	with most nodes has 973 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 71, the mean node degree is 103.66,
+	and the node degree mode is 6. The top 5 most central nodes are 1276227.SCHRY_v1c09710
+	(degree 510), 1276227.SCHRY_v1c10040 (degree 476), 1276227.SCHRY_v1c10240
+	(degree 442), 1276227.SCHRY_v1c06590 (degree 416) and 1276227.SCHRY_v1c02560
+	(degree 402).
 	
 
 

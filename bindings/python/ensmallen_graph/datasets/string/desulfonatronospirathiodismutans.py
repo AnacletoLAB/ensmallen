@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:10:51.676030
 
-The undirected graph Desulfonatronospira thiodismutans has 3597 nodes and 350898
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.05426 and has 35 connected components, where the component with most nodes has
-3505 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 161, the mean node degree is 195.11, and the node degree mode is 2. The
-top 5 most central nodes are 555779.Dthio_PD2323 (degree 1253), 555779.Dthio_PD2752
-(degree 1140), 555779.Dthio_PD2453 (degree 1110), 555779.Dthio_PD3104 (degree 1107)
-and 555779.Dthio_PD2132 (degree 1057).
+The undirected graph Desulfonatronospira thiodismutans has 3597 nodes and
+350898 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05426 and has 35 connected components, where the
+component with most nodes has 3505 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+is 195.11, and the node degree mode is 2. The top 5 most central nodes
+are 555779.Dthio_PD2323 (degree 1253), 555779.Dthio_PD2752 (degree 1140),
+555779.Dthio_PD2453 (degree 1110), 555779.Dthio_PD3104 (degree 1107) and
+555779.Dthio_PD2132 (degree 1057).
 
 
 References
@@ -107,14 +108,15 @@ def DesulfonatronospiraThiodismutans(
 	
 	Datetime: 2021-02-02 21:10:51.676030
 	
-	The undirected graph Desulfonatronospira thiodismutans has 3597 nodes and 350898
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.05426 and has 35 connected components, where the component with most nodes has
-	3505 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 161, the mean node degree is 195.11, and the node degree mode is 2. The
-	top 5 most central nodes are 555779.Dthio_PD2323 (degree 1253), 555779.Dthio_PD2752
-	(degree 1140), 555779.Dthio_PD2453 (degree 1110), 555779.Dthio_PD3104 (degree 1107)
-	and 555779.Dthio_PD2132 (degree 1057).
+	The undirected graph Desulfonatronospira thiodismutans has 3597 nodes and
+	350898 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05426 and has 35 connected components, where the
+	component with most nodes has 3505 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 161, the mean node degree
+	is 195.11, and the node degree mode is 2. The top 5 most central nodes
+	are 555779.Dthio_PD2323 (degree 1253), 555779.Dthio_PD2752 (degree 1140),
+	555779.Dthio_PD2453 (degree 1110), 555779.Dthio_PD3104 (degree 1107) and
+	555779.Dthio_PD2132 (degree 1057).
 	
 
 

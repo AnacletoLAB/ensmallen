@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:15.262410
 
-The undirected graph Pantoea sp. aB has 4441 nodes and 477489 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04843 and
-has 21 connected components, where the component with most nodes has 4388 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 179,
-the mean node degree is 215.04, and the node degree mode is 1. The top 5 most central
-nodes are 517433.PanABDRAFT_0326 (degree 1821), 517433.PanABDRAFT_4185 (degree 1438),
-517433.PanABDRAFT_1453 (degree 1318), 517433.PanABDRAFT_0870 (degree 1298) and 517433.PanABDRAFT_1452
+The undirected graph Pantoea sp. aB has 4441 nodes and 477489 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04843 and has 21 connected components, where the component with most
+nodes has 4388 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 179, the mean node degree is 215.04, and
+the node degree mode is 1. The top 5 most central nodes are 517433.PanABDRAFT_0326
+(degree 1821), 517433.PanABDRAFT_4185 (degree 1438), 517433.PanABDRAFT_1453
+(degree 1318), 517433.PanABDRAFT_0870 (degree 1298) and 517433.PanABDRAFT_1452
 (degree 1298).
 
 
@@ -107,13 +108,14 @@ def PantoeaSp.Ab(
 	
 	Datetime: 2021-02-02 21:03:15.262410
 	
-	The undirected graph Pantoea sp. aB has 4441 nodes and 477489 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04843 and
-	has 21 connected components, where the component with most nodes has 4388 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 179,
-	the mean node degree is 215.04, and the node degree mode is 1. The top 5 most central
-	nodes are 517433.PanABDRAFT_0326 (degree 1821), 517433.PanABDRAFT_4185 (degree 1438),
-	517433.PanABDRAFT_1453 (degree 1318), 517433.PanABDRAFT_0870 (degree 1298) and 517433.PanABDRAFT_1452
+	The undirected graph Pantoea sp. aB has 4441 nodes and 477489 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04843 and has 21 connected components, where the component with most
+	nodes has 4388 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 179, the mean node degree is 215.04, and
+	the node degree mode is 1. The top 5 most central nodes are 517433.PanABDRAFT_0326
+	(degree 1821), 517433.PanABDRAFT_4185 (degree 1438), 517433.PanABDRAFT_1453
+	(degree 1318), 517433.PanABDRAFT_0870 (degree 1298) and 517433.PanABDRAFT_1452
 	(degree 1298).
 	
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 23:13:21.691493
 
-The undirected graph Curtobacterium sp. S6 has 2333 nodes and 155187 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05705 and
-has 6 connected components, where the component with most nodes has 2322 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 113,
-the mean node degree is 133.04, and the node degree mode is 1. The top 5 most central
-nodes are 1479623.JHEL01000015_gene408 (degree 865), 1479623.JHEL01000015_gene1007
-(degree 834), 1479623.JHEL01000015_gene859 (degree 720), 1479623.JHEL01000015_gene1011
-(degree 715) and 1479623.JHEL01000012_gene2058 (degree 706).
+The undirected graph Curtobacterium sp. S6 has 2333 nodes and 155187 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05705 and has 6 connected components, where the component with most
+nodes has 2322 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 113, the mean node degree is 133.04, and
+the node degree mode is 1. The top 5 most central nodes are 1479623.JHEL01000015_gene408
+(degree 865), 1479623.JHEL01000015_gene1007 (degree 834), 1479623.JHEL01000015_gene859
+(degree 720), 1479623.JHEL01000015_gene1011 (degree 715) and 1479623.JHEL01000012_gene2058
+(degree 706).
 
 
 References
@@ -107,14 +108,15 @@ def CurtobacteriumSp.S6(
 	
 	Datetime: 2021-02-03 23:13:21.691493
 	
-	The undirected graph Curtobacterium sp. S6 has 2333 nodes and 155187 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05705 and
-	has 6 connected components, where the component with most nodes has 2322 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 113,
-	the mean node degree is 133.04, and the node degree mode is 1. The top 5 most central
-	nodes are 1479623.JHEL01000015_gene408 (degree 865), 1479623.JHEL01000015_gene1007
-	(degree 834), 1479623.JHEL01000015_gene859 (degree 720), 1479623.JHEL01000015_gene1011
-	(degree 715) and 1479623.JHEL01000012_gene2058 (degree 706).
+	The undirected graph Curtobacterium sp. S6 has 2333 nodes and 155187 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05705 and has 6 connected components, where the component with most
+	nodes has 2322 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 113, the mean node degree is 133.04, and
+	the node degree mode is 1. The top 5 most central nodes are 1479623.JHEL01000015_gene408
+	(degree 865), 1479623.JHEL01000015_gene1007 (degree 834), 1479623.JHEL01000015_gene859
+	(degree 720), 1479623.JHEL01000015_gene1011 (degree 715) and 1479623.JHEL01000012_gene2058
+	(degree 706).
 	
 
 

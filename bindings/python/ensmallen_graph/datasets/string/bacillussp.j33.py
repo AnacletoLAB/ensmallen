@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:15.920688
 
-The undirected graph Bacillus sp. J33 has 5362 nodes and 618839 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04306 and
-has 26 connected components, where the component with most nodes has 5307 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 230.82, and the node degree mode is 1. The top 5 most central
-nodes are 935836.JAEL01000105_gene2395 (degree 1972), 935836.JAEL01000014_gene2022
-(degree 1581), 935836.JAEL01000064_gene4560 (degree 1578), 935836.JAEL01000114_gene1946
-(degree 1539) and 935836.JAEL01000002_gene618 (degree 1474).
+The undirected graph Bacillus sp. J33 has 5362 nodes and 618839 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04306 and has 26 connected components, where the component with most
+nodes has 5307 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 230.82, and
+the node degree mode is 1. The top 5 most central nodes are 935836.JAEL01000105_gene2395
+(degree 1972), 935836.JAEL01000014_gene2022 (degree 1581), 935836.JAEL01000064_gene4560
+(degree 1578), 935836.JAEL01000114_gene1946 (degree 1539) and 935836.JAEL01000002_gene618
+(degree 1474).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSp.J33(
 	
 	Datetime: 2021-02-02 21:59:15.920688
 	
-	The undirected graph Bacillus sp. J33 has 5362 nodes and 618839 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04306 and
-	has 26 connected components, where the component with most nodes has 5307 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 230.82, and the node degree mode is 1. The top 5 most central
-	nodes are 935836.JAEL01000105_gene2395 (degree 1972), 935836.JAEL01000014_gene2022
-	(degree 1581), 935836.JAEL01000064_gene4560 (degree 1578), 935836.JAEL01000114_gene1946
-	(degree 1539) and 935836.JAEL01000002_gene618 (degree 1474).
+	The undirected graph Bacillus sp. J33 has 5362 nodes and 618839 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04306 and has 26 connected components, where the component with most
+	nodes has 5307 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 230.82, and
+	the node degree mode is 1. The top 5 most central nodes are 935836.JAEL01000105_gene2395
+	(degree 1972), 935836.JAEL01000014_gene2022 (degree 1581), 935836.JAEL01000064_gene4560
+	(degree 1578), 935836.JAEL01000114_gene1946 (degree 1539) and 935836.JAEL01000002_gene618
+	(degree 1474).
 	
 
 

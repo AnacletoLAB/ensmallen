@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:45:11.592299
 
-The undirected graph Pelosinus fermentans has 4541 nodes and 567914 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05509 and
-has 16 connected components, where the component with most nodes has 4508 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 198,
-the mean node degree is 250.13, and the node degree mode is 1. The top 5 most central
-nodes are 1122947.FR7_4547 (degree 1645), 1122947.FR7_1777 (degree 1588), 1122947.FR7_1393
-(degree 1572), 1122947.FR7_1848 (degree 1551) and 1122947.FR7_3402 (degree 1542).
+The undirected graph Pelosinus fermentans has 4541 nodes and 567914 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05509 and has 16 connected components, where the component with most
+nodes has 4508 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 198, the mean node degree is 250.13, and
+the node degree mode is 1. The top 5 most central nodes are 1122947.FR7_4547
+(degree 1645), 1122947.FR7_1777 (degree 1588), 1122947.FR7_1393 (degree
+1572), 1122947.FR7_1848 (degree 1551) and 1122947.FR7_3402 (degree 1542).
 
 
 References
@@ -106,13 +107,14 @@ def PelosinusFermentans(
 	
 	Datetime: 2021-02-02 22:45:11.592299
 	
-	The undirected graph Pelosinus fermentans has 4541 nodes and 567914 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05509 and
-	has 16 connected components, where the component with most nodes has 4508 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 198,
-	the mean node degree is 250.13, and the node degree mode is 1. The top 5 most central
-	nodes are 1122947.FR7_4547 (degree 1645), 1122947.FR7_1777 (degree 1588), 1122947.FR7_1393
-	(degree 1572), 1122947.FR7_1848 (degree 1551) and 1122947.FR7_3402 (degree 1542).
+	The undirected graph Pelosinus fermentans has 4541 nodes and 567914 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05509 and has 16 connected components, where the component with most
+	nodes has 4508 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 198, the mean node degree is 250.13, and
+	the node degree mode is 1. The top 5 most central nodes are 1122947.FR7_4547
+	(degree 1645), 1122947.FR7_1777 (degree 1588), 1122947.FR7_1393 (degree
+	1572), 1122947.FR7_1848 (degree 1551) and 1122947.FR7_3402 (degree 1542).
 	
 
 

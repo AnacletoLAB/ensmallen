@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:39:05.689270
 
-The undirected graph Ehrlichia sp. HF has 903 nodes and 43535 weighted edges, of
-which none are self-loops. The graph is quite dense as it has a density of 0.10690
-and has 12 connected components, where the component with most nodes has 868 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 78, the mean node degree is 96.42, and the node degree mode is 3. The top 5 most
-central nodes are 391036.EHF_0680 (degree 477), 391036.EHF_0199 (degree 400), 391036.EHF_0381
-(degree 390), 391036.EHF_0940 (degree 379) and 391036.EHF_0316 (degree 346).
+The undirected graph Ehrlichia sp. HF has 903 nodes and 43535 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.10690 and has 12 connected components, where the component
+with most nodes has 868 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 78, the mean node degree is 96.42,
+and the node degree mode is 3. The top 5 most central nodes are 391036.EHF_0680
+(degree 477), 391036.EHF_0199 (degree 400), 391036.EHF_0381 (degree 390),
+391036.EHF_0940 (degree 379) and 391036.EHF_0316 (degree 346).
 
 
 References
@@ -106,13 +107,14 @@ def EhrlichiaSp.Hf(
 	
 	Datetime: 2021-02-02 20:39:05.689270
 	
-	The undirected graph Ehrlichia sp. HF has 903 nodes and 43535 weighted edges, of
-	which none are self-loops. The graph is quite dense as it has a density of 0.10690
-	and has 12 connected components, where the component with most nodes has 868 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 78, the mean node degree is 96.42, and the node degree mode is 3. The top 5 most
-	central nodes are 391036.EHF_0680 (degree 477), 391036.EHF_0199 (degree 400), 391036.EHF_0381
-	(degree 390), 391036.EHF_0940 (degree 379) and 391036.EHF_0316 (degree 346).
+	The undirected graph Ehrlichia sp. HF has 903 nodes and 43535 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.10690 and has 12 connected components, where the component
+	with most nodes has 868 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 78, the mean node degree is 96.42,
+	and the node degree mode is 3. The top 5 most central nodes are 391036.EHF_0680
+	(degree 477), 391036.EHF_0199 (degree 400), 391036.EHF_0381 (degree 390),
+	391036.EHF_0940 (degree 379) and 391036.EHF_0316 (degree 346).
 	
 
 

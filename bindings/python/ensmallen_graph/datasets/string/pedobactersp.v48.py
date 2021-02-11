@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:31.967898
 
-The undirected graph Pedobacter sp. V48 has 5800 nodes and 585295 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03480 and
-has 26 connected components, where the component with most nodes has 5720 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 177,
-the mean node degree is 201.83, and the node degree mode is 3. The top 5 most central
-nodes are 509635.N824_11845 (degree 1564), 509635.N824_19480 (degree 1446), 509635.N824_27320
-(degree 1292), 509635.N824_22550 (degree 1280) and 509635.N824_06090 (degree 1228).
+The undirected graph Pedobacter sp. V48 has 5800 nodes and 585295 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03480 and has 26 connected components, where the component with most
+nodes has 5720 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 177, the mean node degree is 201.83, and
+the node degree mode is 3. The top 5 most central nodes are 509635.N824_11845
+(degree 1564), 509635.N824_19480 (degree 1446), 509635.N824_27320 (degree
+1292), 509635.N824_22550 (degree 1280) and 509635.N824_06090 (degree 1228).
 
 
 References
@@ -106,13 +107,14 @@ def PedobacterSp.V48(
 	
 	Datetime: 2021-02-02 21:02:31.967898
 	
-	The undirected graph Pedobacter sp. V48 has 5800 nodes and 585295 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03480 and
-	has 26 connected components, where the component with most nodes has 5720 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 177,
-	the mean node degree is 201.83, and the node degree mode is 3. The top 5 most central
-	nodes are 509635.N824_11845 (degree 1564), 509635.N824_19480 (degree 1446), 509635.N824_27320
-	(degree 1292), 509635.N824_22550 (degree 1280) and 509635.N824_06090 (degree 1228).
+	The undirected graph Pedobacter sp. V48 has 5800 nodes and 585295 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03480 and has 26 connected components, where the component with most
+	nodes has 5720 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 177, the mean node degree is 201.83, and
+	the node degree mode is 3. The top 5 most central nodes are 509635.N824_11845
+	(degree 1564), 509635.N824_19480 (degree 1446), 509635.N824_27320 (degree
+	1292), 509635.N824_22550 (degree 1280) and 509635.N824_06090 (degree 1228).
 	
 
 

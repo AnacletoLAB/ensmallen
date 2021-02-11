@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:35:57.685599
 
-The undirected graph Lysinibacillus fusiformis has 4660 nodes and 564230 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05198
-and has 51 connected components, where the component with most nodes has 4543 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 227, the mean node degree is 242.16, and the node degree mode is 1. The top 5
-most central nodes are 714961.BFZC1_05618 (degree 1609), 714961.BFZC1_17394 (degree
-1460), 714961.BFZC1_15495 (degree 1323), 714961.BFZC1_23489 (degree 1308) and 714961.BFZC1_09875
-(degree 1301).
+The undirected graph Lysinibacillus fusiformis has 4660 nodes and 564230
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05198 and has 51 connected components, where the component
+with most nodes has 4543 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 227, the mean node degree is 242.16,
+and the node degree mode is 1. The top 5 most central nodes are 714961.BFZC1_05618
+(degree 1609), 714961.BFZC1_17394 (degree 1460), 714961.BFZC1_15495 (degree
+1323), 714961.BFZC1_23489 (degree 1308) and 714961.BFZC1_09875 (degree
+1301).
 
 
 References
@@ -107,14 +108,15 @@ def LysinibacillusFusiformis(
 	
 	Datetime: 2021-02-02 21:35:57.685599
 	
-	The undirected graph Lysinibacillus fusiformis has 4660 nodes and 564230 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05198
-	and has 51 connected components, where the component with most nodes has 4543 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 227, the mean node degree is 242.16, and the node degree mode is 1. The top 5
-	most central nodes are 714961.BFZC1_05618 (degree 1609), 714961.BFZC1_17394 (degree
-	1460), 714961.BFZC1_15495 (degree 1323), 714961.BFZC1_23489 (degree 1308) and 714961.BFZC1_09875
-	(degree 1301).
+	The undirected graph Lysinibacillus fusiformis has 4660 nodes and 564230
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05198 and has 51 connected components, where the component
+	with most nodes has 4543 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 227, the mean node degree is 242.16,
+	and the node degree mode is 1. The top 5 most central nodes are 714961.BFZC1_05618
+	(degree 1609), 714961.BFZC1_17394 (degree 1460), 714961.BFZC1_15495 (degree
+	1323), 714961.BFZC1_23489 (degree 1308) and 714961.BFZC1_09875 (degree
+	1301).
 	
 
 

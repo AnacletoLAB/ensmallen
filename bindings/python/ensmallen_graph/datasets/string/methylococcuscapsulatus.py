@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:09:22.143110
 
-The undirected graph Methylococcus capsulatus has 2937 nodes and 212373 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04926
-and has 9 connected components, where the component with most nodes has 2920 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 144.62, and the node degree mode is 1. The top 5
-most central nodes are 243233.MCA1238 (degree 1245), 243233.MCA2573 (degree 1109),
-243233.MCA1204 (degree 1036), 243233.MCA0769 (degree 938) and 243233.MCA0290 (degree
-890).
+The undirected graph Methylococcus capsulatus has 2937 nodes and 212373
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04926 and has 9 connected components, where the component
+with most nodes has 2920 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 127, the mean node degree is 144.62,
+and the node degree mode is 1. The top 5 most central nodes are 243233.MCA1238
+(degree 1245), 243233.MCA2573 (degree 1109), 243233.MCA1204 (degree 1036),
+243233.MCA0769 (degree 938) and 243233.MCA0290 (degree 890).
 
 
 References
@@ -107,14 +107,14 @@ def MethylococcusCapsulatus(
 	
 	Datetime: 2021-02-02 20:09:22.143110
 	
-	The undirected graph Methylococcus capsulatus has 2937 nodes and 212373 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04926
-	and has 9 connected components, where the component with most nodes has 2920 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 144.62, and the node degree mode is 1. The top 5
-	most central nodes are 243233.MCA1238 (degree 1245), 243233.MCA2573 (degree 1109),
-	243233.MCA1204 (degree 1036), 243233.MCA0769 (degree 938) and 243233.MCA0290 (degree
-	890).
+	The undirected graph Methylococcus capsulatus has 2937 nodes and 212373
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04926 and has 9 connected components, where the component
+	with most nodes has 2920 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 127, the mean node degree is 144.62,
+	and the node degree mode is 1. The top 5 most central nodes are 243233.MCA1238
+	(degree 1245), 243233.MCA2573 (degree 1109), 243233.MCA1204 (degree 1036),
+	243233.MCA0769 (degree 938) and 243233.MCA0290 (degree 890).
 	
 
 

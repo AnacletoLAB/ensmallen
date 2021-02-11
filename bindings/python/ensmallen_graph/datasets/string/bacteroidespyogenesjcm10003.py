@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:30:49.541789
 
-The undirected graph Bacteroides pyogenes JCM10003 has 3393 nodes and 319660 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05555
-and has 26 connected components, where the component with most nodes has 3332 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 161, the mean node degree is 188.42, and the node degree mode is 1. The top 5
-most central nodes are 1235813.JCM10003_1035 (degree 1500), 1235813.JCM10003_2390
-(degree 1279), 1235813.JCM10003_1677 (degree 1219), 1235813.JCM10003_82 (degree 1206)
-and 1235813.JCM10003_2942 (degree 1176).
+The undirected graph Bacteroides pyogenes JCM10003 has 3393 nodes and 319660
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05555 and has 26 connected components, where the component
+with most nodes has 3332 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 161, the mean node degree is 188.42,
+and the node degree mode is 1. The top 5 most central nodes are 1235813.JCM10003_1035
+(degree 1500), 1235813.JCM10003_2390 (degree 1279), 1235813.JCM10003_1677
+(degree 1219), 1235813.JCM10003_82 (degree 1206) and 1235813.JCM10003_2942
+(degree 1176).
 
 
 References
@@ -107,14 +108,15 @@ def BacteroidesPyogenesJcm10003(
 	
 	Datetime: 2021-02-02 23:30:49.541789
 	
-	The undirected graph Bacteroides pyogenes JCM10003 has 3393 nodes and 319660 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05555
-	and has 26 connected components, where the component with most nodes has 3332 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 161, the mean node degree is 188.42, and the node degree mode is 1. The top 5
-	most central nodes are 1235813.JCM10003_1035 (degree 1500), 1235813.JCM10003_2390
-	(degree 1279), 1235813.JCM10003_1677 (degree 1219), 1235813.JCM10003_82 (degree 1206)
-	and 1235813.JCM10003_2942 (degree 1176).
+	The undirected graph Bacteroides pyogenes JCM10003 has 3393 nodes and 319660
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05555 and has 26 connected components, where the component
+	with most nodes has 3332 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 161, the mean node degree is 188.42,
+	and the node degree mode is 1. The top 5 most central nodes are 1235813.JCM10003_1035
+	(degree 1500), 1235813.JCM10003_2390 (degree 1279), 1235813.JCM10003_1677
+	(degree 1219), 1235813.JCM10003_82 (degree 1206) and 1235813.JCM10003_2942
+	(degree 1176).
 	
 
 

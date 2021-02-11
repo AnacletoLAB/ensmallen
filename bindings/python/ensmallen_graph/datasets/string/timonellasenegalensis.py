@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:23:46.252276
 
-The undirected graph Timonella senegalensis has 2606 nodes and 256303 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07551 and
-has 9 connected components, where the component with most nodes has 2579 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 180,
-the mean node degree is 196.70, and the node degree mode is 2. The top 5 most central
-nodes are 1095772.CAHH01000040_gene2465 (degree 998), 1095772.CAHH01000032_gene2349
-(degree 931), 1095772.CAHH01000005_gene2312 (degree 918), 1095772.CAHH01000073_gene590
-(degree 841) and 1095772.CAHH01000060_gene1478 (degree 828).
+The undirected graph Timonella senegalensis has 2606 nodes and 256303 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07551 and has 9 connected components, where the component with most
+nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 180, the mean node degree is 196.70, and
+the node degree mode is 2. The top 5 most central nodes are 1095772.CAHH01000040_gene2465
+(degree 998), 1095772.CAHH01000032_gene2349 (degree 931), 1095772.CAHH01000005_gene2312
+(degree 918), 1095772.CAHH01000073_gene590 (degree 841) and 1095772.CAHH01000060_gene1478
+(degree 828).
 
 
 References
@@ -107,14 +108,15 @@ def TimonellaSenegalensis(
 	
 	Datetime: 2021-02-02 22:23:46.252276
 	
-	The undirected graph Timonella senegalensis has 2606 nodes and 256303 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07551 and
-	has 9 connected components, where the component with most nodes has 2579 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 180,
-	the mean node degree is 196.70, and the node degree mode is 2. The top 5 most central
-	nodes are 1095772.CAHH01000040_gene2465 (degree 998), 1095772.CAHH01000032_gene2349
-	(degree 931), 1095772.CAHH01000005_gene2312 (degree 918), 1095772.CAHH01000073_gene590
-	(degree 841) and 1095772.CAHH01000060_gene1478 (degree 828).
+	The undirected graph Timonella senegalensis has 2606 nodes and 256303 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07551 and has 9 connected components, where the component with most
+	nodes has 2579 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 180, the mean node degree is 196.70, and
+	the node degree mode is 2. The top 5 most central nodes are 1095772.CAHH01000040_gene2465
+	(degree 998), 1095772.CAHH01000032_gene2349 (degree 931), 1095772.CAHH01000005_gene2312
+	(degree 918), 1095772.CAHH01000073_gene590 (degree 841) and 1095772.CAHH01000060_gene1478
+	(degree 828).
 	
 
 

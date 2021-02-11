@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:40.898117
 
-The undirected graph Providencia alcalifaciens has 3954 nodes and 256879 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03287
-and has 21 connected components, where the component with most nodes has 3911 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 108, the mean node degree is 129.93, and the node degree mode is 2. The top 5
-most central nodes are 520999.PROVALCAL_02622 (degree 983), 520999.PROVALCAL_01919
-(degree 930), 520999.PROVALCAL_01920 (degree 850), 520999.PROVALCAL_02174 (degree
-830) and 520999.PROVALCAL_03212 (degree 829).
+The undirected graph Providencia alcalifaciens has 3954 nodes and 256879
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03287 and has 21 connected components, where the component
+with most nodes has 3911 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 108, the mean node degree is 129.93,
+and the node degree mode is 2. The top 5 most central nodes are 520999.PROVALCAL_02622
+(degree 983), 520999.PROVALCAL_01919 (degree 930), 520999.PROVALCAL_01920
+(degree 850), 520999.PROVALCAL_02174 (degree 830) and 520999.PROVALCAL_03212
+(degree 829).
 
 
 References
@@ -107,14 +108,15 @@ def ProvidenciaAlcalifaciens(
 	
 	Datetime: 2021-02-02 21:03:40.898117
 	
-	The undirected graph Providencia alcalifaciens has 3954 nodes and 256879 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03287
-	and has 21 connected components, where the component with most nodes has 3911 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 108, the mean node degree is 129.93, and the node degree mode is 2. The top 5
-	most central nodes are 520999.PROVALCAL_02622 (degree 983), 520999.PROVALCAL_01919
-	(degree 930), 520999.PROVALCAL_01920 (degree 850), 520999.PROVALCAL_02174 (degree
-	830) and 520999.PROVALCAL_03212 (degree 829).
+	The undirected graph Providencia alcalifaciens has 3954 nodes and 256879
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03287 and has 21 connected components, where the component
+	with most nodes has 3911 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 108, the mean node degree is 129.93,
+	and the node degree mode is 2. The top 5 most central nodes are 520999.PROVALCAL_02622
+	(degree 983), 520999.PROVALCAL_01919 (degree 930), 520999.PROVALCAL_01920
+	(degree 850), 520999.PROVALCAL_02174 (degree 830) and 520999.PROVALCAL_03212
+	(degree 829).
 	
 
 

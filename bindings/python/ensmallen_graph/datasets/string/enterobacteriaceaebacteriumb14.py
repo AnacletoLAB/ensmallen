@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:20:07.060192
 
-The undirected graph Enterobacteriaceae bacterium B14 has 3310 nodes and 295415 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05394
-and has 16 connected components, where the component with most nodes has 3273 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 148, the mean node degree is 178.50, and the node degree mode is 1. The top 5
-most central nodes are 1214065.BAGV01000094_gene41 (degree 1154), 1214065.BAGV01000062_gene1002
+The undirected graph Enterobacteriaceae bacterium B14 has 3310 nodes and
+295415 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05394 and has 16 connected components, where the
+component with most nodes has 3273 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+is 178.50, and the node degree mode is 1. The top 5 most central nodes
+are 1214065.BAGV01000094_gene41 (degree 1154), 1214065.BAGV01000062_gene1002
 (degree 1064), 1214065.BAGV01000061_gene976 (degree 1023), 1214065.BAGV01000014_gene3071
 (degree 1013) and 1214065.BAGV01000002_gene419 (degree 1011).
 
@@ -107,12 +108,13 @@ def EnterobacteriaceaeBacteriumB14(
 	
 	Datetime: 2021-02-02 23:20:07.060192
 	
-	The undirected graph Enterobacteriaceae bacterium B14 has 3310 nodes and 295415 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05394
-	and has 16 connected components, where the component with most nodes has 3273 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 148, the mean node degree is 178.50, and the node degree mode is 1. The top 5
-	most central nodes are 1214065.BAGV01000094_gene41 (degree 1154), 1214065.BAGV01000062_gene1002
+	The undirected graph Enterobacteriaceae bacterium B14 has 3310 nodes and
+	295415 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05394 and has 16 connected components, where the
+	component with most nodes has 3273 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 148, the mean node degree
+	is 178.50, and the node degree mode is 1. The top 5 most central nodes
+	are 1214065.BAGV01000094_gene41 (degree 1154), 1214065.BAGV01000062_gene1002
 	(degree 1064), 1214065.BAGV01000061_gene976 (degree 1023), 1214065.BAGV01000014_gene3071
 	(degree 1013) and 1214065.BAGV01000002_gene419 (degree 1011).
 	

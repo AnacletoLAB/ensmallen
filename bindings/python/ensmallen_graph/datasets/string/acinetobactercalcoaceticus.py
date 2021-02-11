@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:49:00.351324
 
-The undirected graph Acinetobacter calcoaceticus has 3571 nodes and 277563 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04354
-and has 14 connected components, where the component with most nodes has 3543 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 130, the mean node degree is 155.45, and the node degree mode is 1. The top 5
-most central nodes are 871585.BDGL_003519 (degree 1243), 871585.BDGL_002768 (degree
-1063), 871585.BDGL_002653 (degree 947), 871585.BDGL_003482 (degree 939) and 871585.BDGL_002107
-(degree 909).
+The undirected graph Acinetobacter calcoaceticus has 3571 nodes and 277563
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04354 and has 14 connected components, where the component
+with most nodes has 3543 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 130, the mean node degree is 155.45,
+and the node degree mode is 1. The top 5 most central nodes are 871585.BDGL_003519
+(degree 1243), 871585.BDGL_002768 (degree 1063), 871585.BDGL_002653 (degree
+947), 871585.BDGL_003482 (degree 939) and 871585.BDGL_002107 (degree 909).
 
 
 References
@@ -107,14 +107,14 @@ def AcinetobacterCalcoaceticus(
 	
 	Datetime: 2021-02-02 21:49:00.351324
 	
-	The undirected graph Acinetobacter calcoaceticus has 3571 nodes and 277563 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04354
-	and has 14 connected components, where the component with most nodes has 3543 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 130, the mean node degree is 155.45, and the node degree mode is 1. The top 5
-	most central nodes are 871585.BDGL_003519 (degree 1243), 871585.BDGL_002768 (degree
-	1063), 871585.BDGL_002653 (degree 947), 871585.BDGL_003482 (degree 939) and 871585.BDGL_002107
-	(degree 909).
+	The undirected graph Acinetobacter calcoaceticus has 3571 nodes and 277563
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04354 and has 14 connected components, where the component
+	with most nodes has 3543 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 130, the mean node degree is 155.45,
+	and the node degree mode is 1. The top 5 most central nodes are 871585.BDGL_003519
+	(degree 1243), 871585.BDGL_002768 (degree 1063), 871585.BDGL_002653 (degree
+	947), 871585.BDGL_003482 (degree 939) and 871585.BDGL_002107 (degree 909).
 	
 
 

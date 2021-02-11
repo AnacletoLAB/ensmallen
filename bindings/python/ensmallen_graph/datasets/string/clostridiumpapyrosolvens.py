@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:16:56.089463
 
-The undirected graph Clostridium papyrosolvens has 4153 nodes and 350124 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04061
-and has 19 connected components, where the component with most nodes has 4090 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 134, the mean node degree is 168.61, and the node degree mode is 2. The top 5
-most central nodes are 588581.Cpap_2481 (degree 1480), 588581.Cpap_4188 (degree 1432),
-588581.Cpap_2063 (degree 1411), 588581.Cpap_3966 (degree 1110) and 588581.Cpap_3172
-(degree 1060).
+The undirected graph Clostridium papyrosolvens has 4153 nodes and 350124
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04061 and has 19 connected components, where the component
+with most nodes has 4090 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 134, the mean node degree is 168.61,
+and the node degree mode is 2. The top 5 most central nodes are 588581.Cpap_2481
+(degree 1480), 588581.Cpap_4188 (degree 1432), 588581.Cpap_2063 (degree
+1411), 588581.Cpap_3966 (degree 1110) and 588581.Cpap_3172 (degree 1060).
 
 
 References
@@ -107,14 +107,14 @@ def ClostridiumPapyrosolvens(
 	
 	Datetime: 2021-02-02 21:16:56.089463
 	
-	The undirected graph Clostridium papyrosolvens has 4153 nodes and 350124 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04061
-	and has 19 connected components, where the component with most nodes has 4090 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 134, the mean node degree is 168.61, and the node degree mode is 2. The top 5
-	most central nodes are 588581.Cpap_2481 (degree 1480), 588581.Cpap_4188 (degree 1432),
-	588581.Cpap_2063 (degree 1411), 588581.Cpap_3966 (degree 1110) and 588581.Cpap_3172
-	(degree 1060).
+	The undirected graph Clostridium papyrosolvens has 4153 nodes and 350124
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04061 and has 19 connected components, where the component
+	with most nodes has 4090 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 134, the mean node degree is 168.61,
+	and the node degree mode is 2. The top 5 most central nodes are 588581.Cpap_2481
+	(degree 1480), 588581.Cpap_4188 (degree 1432), 588581.Cpap_2063 (degree
+	1411), 588581.Cpap_3966 (degree 1110) and 588581.Cpap_3172 (degree 1060).
 	
 
 

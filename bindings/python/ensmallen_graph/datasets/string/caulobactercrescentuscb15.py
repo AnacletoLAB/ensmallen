@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 19:57:52.013588
 
-The undirected graph Caulobacter crescentus CB15 has 3721 nodes and 387245 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05595
-and has 9 connected components, where the component with most nodes has 3702 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 192, the mean node degree is 208.14, and the node degree mode is 3. The top 5
-most central nodes are 190650.CC_3464 (degree 1393), 190650.CC_1620 (degree 1048),
-190650.CC_3607 (degree 964), 190650.CC_1043 (degree 942) and 190650.CC_1617 (degree
-935).
+The undirected graph Caulobacter crescentus CB15 has 3721 nodes and 387245
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05595 and has 9 connected components, where the component
+with most nodes has 3702 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 192, the mean node degree is 208.14,
+and the node degree mode is 3. The top 5 most central nodes are 190650.CC_3464
+(degree 1393), 190650.CC_1620 (degree 1048), 190650.CC_3607 (degree 964),
+190650.CC_1043 (degree 942) and 190650.CC_1617 (degree 935).
 
 
 References
@@ -107,14 +107,14 @@ def CaulobacterCrescentusCb15(
 	
 	Datetime: 2021-02-02 19:57:52.013588
 	
-	The undirected graph Caulobacter crescentus CB15 has 3721 nodes and 387245 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05595
-	and has 9 connected components, where the component with most nodes has 3702 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 192, the mean node degree is 208.14, and the node degree mode is 3. The top 5
-	most central nodes are 190650.CC_3464 (degree 1393), 190650.CC_1620 (degree 1048),
-	190650.CC_3607 (degree 964), 190650.CC_1043 (degree 942) and 190650.CC_1617 (degree
-	935).
+	The undirected graph Caulobacter crescentus CB15 has 3721 nodes and 387245
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05595 and has 9 connected components, where the component
+	with most nodes has 3702 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 192, the mean node degree is 208.14,
+	and the node degree mode is 3. The top 5 most central nodes are 190650.CC_3464
+	(degree 1393), 190650.CC_1620 (degree 1048), 190650.CC_3607 (degree 964),
+	190650.CC_1043 (degree 942) and 190650.CC_1617 (degree 935).
 	
 
 

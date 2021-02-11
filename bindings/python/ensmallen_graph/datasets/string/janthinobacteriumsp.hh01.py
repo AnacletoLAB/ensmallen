@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:13:51.585495
 
-The undirected graph Janthinobacterium sp. HH01 has 5938 nodes and 1232969 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06995
-and has 14 connected components, where the component with most nodes has 5911 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 336, the mean node degree is 415.28, and the node degree mode is 3. The top 5
-most central nodes are 1198452.Jab_2c13230 (degree 2660), 1198452.Jab_1c12370 (degree
-2436), 1198452.Jab_1c22880 (degree 2357), 1198452.Jab_2c11300 (degree 2356) and 1198452.Jab_2c20090
-(degree 2347).
+The undirected graph Janthinobacterium sp. HH01 has 5938 nodes and 1232969
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06995 and has 14 connected components, where the component
+with most nodes has 5911 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 336, the mean node degree is 415.28,
+and the node degree mode is 3. The top 5 most central nodes are 1198452.Jab_2c13230
+(degree 2660), 1198452.Jab_1c12370 (degree 2436), 1198452.Jab_1c22880 (degree
+2357), 1198452.Jab_2c11300 (degree 2356) and 1198452.Jab_2c20090 (degree
+2347).
 
 
 References
@@ -107,14 +108,15 @@ def JanthinobacteriumSp.Hh01(
 	
 	Datetime: 2021-02-02 23:13:51.585495
 	
-	The undirected graph Janthinobacterium sp. HH01 has 5938 nodes and 1232969 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06995
-	and has 14 connected components, where the component with most nodes has 5911 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 336, the mean node degree is 415.28, and the node degree mode is 3. The top 5
-	most central nodes are 1198452.Jab_2c13230 (degree 2660), 1198452.Jab_1c12370 (degree
-	2436), 1198452.Jab_1c22880 (degree 2357), 1198452.Jab_2c11300 (degree 2356) and 1198452.Jab_2c20090
-	(degree 2347).
+	The undirected graph Janthinobacterium sp. HH01 has 5938 nodes and 1232969
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06995 and has 14 connected components, where the component
+	with most nodes has 5911 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 336, the mean node degree is 415.28,
+	and the node degree mode is 3. The top 5 most central nodes are 1198452.Jab_2c13230
+	(degree 2660), 1198452.Jab_1c12370 (degree 2436), 1198452.Jab_1c22880 (degree
+	2357), 1198452.Jab_2c11300 (degree 2356) and 1198452.Jab_2c20090 (degree
+	2347).
 	
 
 

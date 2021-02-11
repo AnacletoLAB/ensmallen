@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:32:05.700880
 
-The undirected graph Oscillibacter valericigenes has 4676 nodes and 372302 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03406
-and has 25 connected components, where the component with most nodes has 4617 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 129, the mean node degree is 159.24, and the node degree mode is 4. The top 5
-most central nodes are 693746.OBV_05440 (degree 1874), 693746.OBV_28450 (degree 1226),
-693746.OBV_04490 (degree 1206), 693746.OBV_34190 (degree 1115) and 693746.OBV_41240
-(degree 1103).
+The undirected graph Oscillibacter valericigenes has 4676 nodes and 372302
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03406 and has 25 connected components, where the component
+with most nodes has 4617 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 129, the mean node degree is 159.24,
+and the node degree mode is 4. The top 5 most central nodes are 693746.OBV_05440
+(degree 1874), 693746.OBV_28450 (degree 1226), 693746.OBV_04490 (degree
+1206), 693746.OBV_34190 (degree 1115) and 693746.OBV_41240 (degree 1103).
 
 
 References
@@ -107,14 +107,14 @@ def OscillibacterValericigenes(
 	
 	Datetime: 2021-02-02 21:32:05.700880
 	
-	The undirected graph Oscillibacter valericigenes has 4676 nodes and 372302 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03406
-	and has 25 connected components, where the component with most nodes has 4617 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 129, the mean node degree is 159.24, and the node degree mode is 4. The top 5
-	most central nodes are 693746.OBV_05440 (degree 1874), 693746.OBV_28450 (degree 1226),
-	693746.OBV_04490 (degree 1206), 693746.OBV_34190 (degree 1115) and 693746.OBV_41240
-	(degree 1103).
+	The undirected graph Oscillibacter valericigenes has 4676 nodes and 372302
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03406 and has 25 connected components, where the component
+	with most nodes has 4617 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 129, the mean node degree is 159.24,
+	and the node degree mode is 4. The top 5 most central nodes are 693746.OBV_05440
+	(degree 1874), 693746.OBV_28450 (degree 1226), 693746.OBV_04490 (degree
+	1206), 693746.OBV_34190 (degree 1115) and 693746.OBV_41240 (degree 1103).
 	
 
 

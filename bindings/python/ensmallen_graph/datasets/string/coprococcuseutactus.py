@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:45:41.075937
 
-The undirected graph Coprococcus eutactus has 2920 nodes and 223861 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05253 and
-has 15 connected components, where the component with most nodes has 2888 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 134,
-the mean node degree is 153.33, and the node degree mode is 9. The top 5 most central
-nodes are 411474.COPEUT_01719 (degree 981), 411474.COPEUT_00189 (degree 933), 411474.COPEUT_02963
-(degree 781), 411474.COPEUT_00296 (degree 767) and 411474.COPEUT_00260 (degree 765).
+The undirected graph Coprococcus eutactus has 2920 nodes and 223861 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05253 and has 15 connected components, where the component with most
+nodes has 2888 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 134, the mean node degree is 153.33, and
+the node degree mode is 9. The top 5 most central nodes are 411474.COPEUT_01719
+(degree 981), 411474.COPEUT_00189 (degree 933), 411474.COPEUT_02963 (degree
+781), 411474.COPEUT_00296 (degree 767) and 411474.COPEUT_00260 (degree
+765).
 
 
 References
@@ -106,13 +108,15 @@ def CoprococcusEutactus(
 	
 	Datetime: 2021-02-02 20:45:41.075937
 	
-	The undirected graph Coprococcus eutactus has 2920 nodes and 223861 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05253 and
-	has 15 connected components, where the component with most nodes has 2888 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 134,
-	the mean node degree is 153.33, and the node degree mode is 9. The top 5 most central
-	nodes are 411474.COPEUT_01719 (degree 981), 411474.COPEUT_00189 (degree 933), 411474.COPEUT_02963
-	(degree 781), 411474.COPEUT_00296 (degree 767) and 411474.COPEUT_00260 (degree 765).
+	The undirected graph Coprococcus eutactus has 2920 nodes and 223861 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05253 and has 15 connected components, where the component with most
+	nodes has 2888 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 134, the mean node degree is 153.33, and
+	the node degree mode is 9. The top 5 most central nodes are 411474.COPEUT_01719
+	(degree 981), 411474.COPEUT_00189 (degree 933), 411474.COPEUT_02963 (degree
+	781), 411474.COPEUT_00296 (degree 767) and 411474.COPEUT_00260 (degree
+	765).
 	
 
 

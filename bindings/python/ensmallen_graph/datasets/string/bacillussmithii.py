@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:28:15.570413
 
-The undirected graph Bacillus smithii has 3212 nodes and 197151 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03823 and
-has 16 connected components, where the component with most nodes has 3180 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 99,
-the mean node degree is 122.76, and the node degree mode is 1. The top 5 most central
-nodes are 665952.HMPREF1015_00509 (degree 1015), 665952.HMPREF1015_03265 (degree
-773), 665952.HMPREF1015_00330 (degree 731), 665952.HMPREF1015_03058 (degree 726)
-and 665952.HMPREF1015_00393 (degree 694).
+The undirected graph Bacillus smithii has 3212 nodes and 197151 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03823 and has 16 connected components, where the component with most
+nodes has 3180 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 99, the mean node degree is 122.76, and
+the node degree mode is 1. The top 5 most central nodes are 665952.HMPREF1015_00509
+(degree 1015), 665952.HMPREF1015_03265 (degree 773), 665952.HMPREF1015_00330
+(degree 731), 665952.HMPREF1015_03058 (degree 726) and 665952.HMPREF1015_00393
+(degree 694).
 
 
 References
@@ -107,14 +108,15 @@ def BacillusSmithii(
 	
 	Datetime: 2021-02-02 21:28:15.570413
 	
-	The undirected graph Bacillus smithii has 3212 nodes and 197151 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03823 and
-	has 16 connected components, where the component with most nodes has 3180 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 99,
-	the mean node degree is 122.76, and the node degree mode is 1. The top 5 most central
-	nodes are 665952.HMPREF1015_00509 (degree 1015), 665952.HMPREF1015_03265 (degree
-	773), 665952.HMPREF1015_00330 (degree 731), 665952.HMPREF1015_03058 (degree 726)
-	and 665952.HMPREF1015_00393 (degree 694).
+	The undirected graph Bacillus smithii has 3212 nodes and 197151 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03823 and has 16 connected components, where the component with most
+	nodes has 3180 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 99, the mean node degree is 122.76, and
+	the node degree mode is 1. The top 5 most central nodes are 665952.HMPREF1015_00509
+	(degree 1015), 665952.HMPREF1015_03265 (degree 773), 665952.HMPREF1015_00330
+	(degree 731), 665952.HMPREF1015_03058 (degree 726) and 665952.HMPREF1015_00393
+	(degree 694).
 	
 
 

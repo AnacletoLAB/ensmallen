@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:16:13.553987
 
-The undirected graph Leptolyngbya boryana has 6588 nodes and 786252 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03624 and
-has 48 connected components, where the component with most nodes has 6425 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 201,
-the mean node degree is 238.69, and the node degree mode is 4. The top 5 most central
-nodes are 272134.KB731324_gene1516 (degree 2151), 272134.KB731324_gene5934 (degree
-1979), 272134.KB731324_gene5666 (degree 1924), 272134.KB731324_gene6095 (degree 1884)
-and 272134.KB731324_gene3745 (degree 1870).
+The undirected graph Leptolyngbya boryana has 6588 nodes and 786252 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03624 and has 48 connected components, where the component with most
+nodes has 6425 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 201, the mean node degree is 238.69, and
+the node degree mode is 4. The top 5 most central nodes are 272134.KB731324_gene1516
+(degree 2151), 272134.KB731324_gene5934 (degree 1979), 272134.KB731324_gene5666
+(degree 1924), 272134.KB731324_gene6095 (degree 1884) and 272134.KB731324_gene3745
+(degree 1870).
 
 
 References
@@ -107,14 +108,15 @@ def LeptolyngbyaBoryana(
 	
 	Datetime: 2021-02-02 20:16:13.553987
 	
-	The undirected graph Leptolyngbya boryana has 6588 nodes and 786252 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03624 and
-	has 48 connected components, where the component with most nodes has 6425 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 201,
-	the mean node degree is 238.69, and the node degree mode is 4. The top 5 most central
-	nodes are 272134.KB731324_gene1516 (degree 2151), 272134.KB731324_gene5934 (degree
-	1979), 272134.KB731324_gene5666 (degree 1924), 272134.KB731324_gene6095 (degree 1884)
-	and 272134.KB731324_gene3745 (degree 1870).
+	The undirected graph Leptolyngbya boryana has 6588 nodes and 786252 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03624 and has 48 connected components, where the component with most
+	nodes has 6425 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 201, the mean node degree is 238.69, and
+	the node degree mode is 4. The top 5 most central nodes are 272134.KB731324_gene1516
+	(degree 2151), 272134.KB731324_gene5934 (degree 1979), 272134.KB731324_gene5666
+	(degree 1924), 272134.KB731324_gene6095 (degree 1884) and 272134.KB731324_gene3745
+	(degree 1870).
 	
 
 

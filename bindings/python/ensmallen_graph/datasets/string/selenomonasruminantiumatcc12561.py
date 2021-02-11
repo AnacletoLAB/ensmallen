@@ -10,12 +10,13 @@ had the following characteristics:
 
 Datetime: 2021-02-03 21:08:12.750372
 
-The undirected graph Selenomonas ruminantium ATCC12561 has 2924 nodes and 262044
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06132 and has 11 connected components, where the component with most nodes has
-2897 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 143, the mean node degree is 179.24, and the node degree mode is 2. The
-top 5 most central nodes are 1280706.AUJE01000002_gene2104 (degree 1180), 1280706.AUJE01000020_gene1370
+The undirected graph Selenomonas ruminantium ATCC12561 has 2924 nodes and
+262044 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06132 and has 11 connected components, where the
+component with most nodes has 2897 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+is 179.24, and the node degree mode is 2. The top 5 most central nodes
+are 1280706.AUJE01000002_gene2104 (degree 1180), 1280706.AUJE01000020_gene1370
 (degree 1175), 1280706.AUJE01000005_gene2581 (degree 1174), 1280706.AUJE01000026_gene1265
 (degree 1082) and 1280706.AUJE01000012_gene568 (degree 1045).
 
@@ -107,12 +108,13 @@ def SelenomonasRuminantiumAtcc12561(
 	
 	Datetime: 2021-02-03 21:08:12.750372
 	
-	The undirected graph Selenomonas ruminantium ATCC12561 has 2924 nodes and 262044
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06132 and has 11 connected components, where the component with most nodes has
-	2897 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 143, the mean node degree is 179.24, and the node degree mode is 2. The
-	top 5 most central nodes are 1280706.AUJE01000002_gene2104 (degree 1180), 1280706.AUJE01000020_gene1370
+	The undirected graph Selenomonas ruminantium ATCC12561 has 2924 nodes and
+	262044 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06132 and has 11 connected components, where the
+	component with most nodes has 2897 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 143, the mean node degree
+	is 179.24, and the node degree mode is 2. The top 5 most central nodes
+	are 1280706.AUJE01000002_gene2104 (degree 1180), 1280706.AUJE01000020_gene1370
 	(degree 1175), 1280706.AUJE01000005_gene2581 (degree 1174), 1280706.AUJE01000026_gene1265
 	(degree 1082) and 1280706.AUJE01000012_gene568 (degree 1045).
 	

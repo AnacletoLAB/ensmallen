@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:49:44.115710
 
-The undirected graph Spirosoma luteum has 5287 nodes and 642404 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.04597 and
-has 20 connected components, where the component with most nodes has 5236 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 203,
-the mean node degree is 243.01, and the node degree mode is 2. The top 5 most central
-nodes are 1123276.KB893252_gene3670 (degree 2644), 1123276.KB893281_gene4331 (degree
-1852), 1123276.KB893256_gene1909 (degree 1739), 1123276.KB893255_gene1870 (degree
-1552) and 1123276.KB893290_gene5278 (degree 1528).
+The undirected graph Spirosoma luteum has 5287 nodes and 642404 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.04597 and has 20 connected components, where the component with most
+nodes has 5236 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 203, the mean node degree is 243.01, and
+the node degree mode is 2. The top 5 most central nodes are 1123276.KB893252_gene3670
+(degree 2644), 1123276.KB893281_gene4331 (degree 1852), 1123276.KB893256_gene1909
+(degree 1739), 1123276.KB893255_gene1870 (degree 1552) and 1123276.KB893290_gene5278
+(degree 1528).
 
 
 References
@@ -107,14 +108,15 @@ def SpirosomaLuteum(
 	
 	Datetime: 2021-02-02 22:49:44.115710
 	
-	The undirected graph Spirosoma luteum has 5287 nodes and 642404 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.04597 and
-	has 20 connected components, where the component with most nodes has 5236 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 203,
-	the mean node degree is 243.01, and the node degree mode is 2. The top 5 most central
-	nodes are 1123276.KB893252_gene3670 (degree 2644), 1123276.KB893281_gene4331 (degree
-	1852), 1123276.KB893256_gene1909 (degree 1739), 1123276.KB893255_gene1870 (degree
-	1552) and 1123276.KB893290_gene5278 (degree 1528).
+	The undirected graph Spirosoma luteum has 5287 nodes and 642404 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.04597 and has 20 connected components, where the component with most
+	nodes has 5236 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 203, the mean node degree is 243.01, and
+	the node degree mode is 2. The top 5 most central nodes are 1123276.KB893252_gene3670
+	(degree 2644), 1123276.KB893281_gene4331 (degree 1852), 1123276.KB893256_gene1909
+	(degree 1739), 1123276.KB893255_gene1870 (degree 1552) and 1123276.KB893290_gene5278
+	(degree 1528).
 	
 
 

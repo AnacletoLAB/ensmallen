@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:30:56.670723
 
-The undirected graph Aliagarivorans taiwanensis has 3830 nodes and 477378 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06510
-and has 19 connected components, where the component with most nodes has 3786 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 225, the mean node degree is 249.28, and the node degree mode is 1. The top 5
-most central nodes are 1120970.AUBZ01000006_gene1209 (degree 1390), 1120970.AUBZ01000028_gene1614
-(degree 1318), 1120970.AUBZ01000027_gene1505 (degree 1165), 1120970.AUBZ01000020_gene1402
-(degree 1132) and 1120970.AUBZ01000018_gene3321 (degree 1090).
+The undirected graph Aliagarivorans taiwanensis has 3830 nodes and 477378
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06510 and has 19 connected components, where the component
+with most nodes has 3786 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 225, the mean node degree is 249.28,
+and the node degree mode is 1. The top 5 most central nodes are 1120970.AUBZ01000006_gene1209
+(degree 1390), 1120970.AUBZ01000028_gene1614 (degree 1318), 1120970.AUBZ01000027_gene1505
+(degree 1165), 1120970.AUBZ01000020_gene1402 (degree 1132) and 1120970.AUBZ01000018_gene3321
+(degree 1090).
 
 
 References
@@ -107,14 +108,15 @@ def AliagarivoransTaiwanensis(
 	
 	Datetime: 2021-02-02 22:30:56.670723
 	
-	The undirected graph Aliagarivorans taiwanensis has 3830 nodes and 477378 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06510
-	and has 19 connected components, where the component with most nodes has 3786 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 225, the mean node degree is 249.28, and the node degree mode is 1. The top 5
-	most central nodes are 1120970.AUBZ01000006_gene1209 (degree 1390), 1120970.AUBZ01000028_gene1614
-	(degree 1318), 1120970.AUBZ01000027_gene1505 (degree 1165), 1120970.AUBZ01000020_gene1402
-	(degree 1132) and 1120970.AUBZ01000018_gene3321 (degree 1090).
+	The undirected graph Aliagarivorans taiwanensis has 3830 nodes and 477378
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06510 and has 19 connected components, where the component
+	with most nodes has 3786 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 225, the mean node degree is 249.28,
+	and the node degree mode is 1. The top 5 most central nodes are 1120970.AUBZ01000006_gene1209
+	(degree 1390), 1120970.AUBZ01000028_gene1614 (degree 1318), 1120970.AUBZ01000027_gene1505
+	(degree 1165), 1120970.AUBZ01000020_gene1402 (degree 1132) and 1120970.AUBZ01000018_gene3321
+	(degree 1090).
 	
 
 

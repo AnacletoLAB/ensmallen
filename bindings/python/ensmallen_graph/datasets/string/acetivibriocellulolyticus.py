@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:02:26.954991
 
-The undirected graph Acetivibrio cellulolyticus has 5110 nodes and 633095 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04850
-and has 38 connected components, where the component with most nodes has 5003 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 218, the mean node degree is 247.79, and the node degree mode is 2. The top 5
-most central nodes are 509191.AEDB02000084_gene5170 (degree 2014), 509191.AEDB02000003_gene1092
-(degree 1903), 509191.AEDB02000062_gene417 (degree 1782), 509191.AEDB02000054_gene3661
-(degree 1656) and 509191.AEDB02000065_gene616 (degree 1603).
+The undirected graph Acetivibrio cellulolyticus has 5110 nodes and 633095
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04850 and has 38 connected components, where the component
+with most nodes has 5003 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 218, the mean node degree is 247.79,
+and the node degree mode is 2. The top 5 most central nodes are 509191.AEDB02000084_gene5170
+(degree 2014), 509191.AEDB02000003_gene1092 (degree 1903), 509191.AEDB02000062_gene417
+(degree 1782), 509191.AEDB02000054_gene3661 (degree 1656) and 509191.AEDB02000065_gene616
+(degree 1603).
 
 
 References
@@ -107,14 +108,15 @@ def AcetivibrioCellulolyticus(
 	
 	Datetime: 2021-02-02 21:02:26.954991
 	
-	The undirected graph Acetivibrio cellulolyticus has 5110 nodes and 633095 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04850
-	and has 38 connected components, where the component with most nodes has 5003 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 218, the mean node degree is 247.79, and the node degree mode is 2. The top 5
-	most central nodes are 509191.AEDB02000084_gene5170 (degree 2014), 509191.AEDB02000003_gene1092
-	(degree 1903), 509191.AEDB02000062_gene417 (degree 1782), 509191.AEDB02000054_gene3661
-	(degree 1656) and 509191.AEDB02000065_gene616 (degree 1603).
+	The undirected graph Acetivibrio cellulolyticus has 5110 nodes and 633095
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04850 and has 38 connected components, where the component
+	with most nodes has 5003 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 218, the mean node degree is 247.79,
+	and the node degree mode is 2. The top 5 most central nodes are 509191.AEDB02000084_gene5170
+	(degree 2014), 509191.AEDB02000003_gene1092 (degree 1903), 509191.AEDB02000062_gene417
+	(degree 1782), 509191.AEDB02000054_gene3661 (degree 1656) and 509191.AEDB02000065_gene616
+	(degree 1603).
 	
 
 

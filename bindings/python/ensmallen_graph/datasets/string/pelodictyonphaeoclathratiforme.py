@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:28:40.118454
 
-The undirected graph Pelodictyon phaeoclathratiforme has 2689 nodes and 197550 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05466
-and has 6 connected components, where the component with most nodes has 2679 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 127, the mean node degree is 146.93, and the node degree mode is 3. The top 5
-most central nodes are 324925.Ppha_0655 (degree 1031), 324925.Ppha_1685 (degree 1011),
-324925.Ppha_2145 (degree 895), 324925.Ppha_1668 (degree 776) and 324925.Ppha_0695
-(degree 746).
+The undirected graph Pelodictyon phaeoclathratiforme has 2689 nodes and
+197550 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.05466 and has 6 connected components, where the
+component with most nodes has 2679 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+is 146.93, and the node degree mode is 3. The top 5 most central nodes
+are 324925.Ppha_0655 (degree 1031), 324925.Ppha_1685 (degree 1011), 324925.Ppha_2145
+(degree 895), 324925.Ppha_1668 (degree 776) and 324925.Ppha_0695 (degree
+746).
 
 
 References
@@ -107,14 +108,15 @@ def PelodictyonPhaeoclathratiforme(
 	
 	Datetime: 2021-02-02 20:28:40.118454
 	
-	The undirected graph Pelodictyon phaeoclathratiforme has 2689 nodes and 197550 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05466
-	and has 6 connected components, where the component with most nodes has 2679 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 127, the mean node degree is 146.93, and the node degree mode is 3. The top 5
-	most central nodes are 324925.Ppha_0655 (degree 1031), 324925.Ppha_1685 (degree 1011),
-	324925.Ppha_2145 (degree 895), 324925.Ppha_1668 (degree 776) and 324925.Ppha_0695
-	(degree 746).
+	The undirected graph Pelodictyon phaeoclathratiforme has 2689 nodes and
+	197550 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.05466 and has 6 connected components, where the
+	component with most nodes has 2679 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 127, the mean node degree
+	is 146.93, and the node degree mode is 3. The top 5 most central nodes
+	are 324925.Ppha_0655 (degree 1031), 324925.Ppha_1685 (degree 1011), 324925.Ppha_2145
+	(degree 895), 324925.Ppha_1668 (degree 776) and 324925.Ppha_0695 (degree
+	746).
 	
 
 

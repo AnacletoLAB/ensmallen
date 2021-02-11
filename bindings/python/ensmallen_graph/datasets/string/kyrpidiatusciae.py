@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:12:06.584890
 
-The undirected graph Kyrpidia tusciae has 3132 nodes and 288061 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.05875 and
-has 6 connected components, where the component with most nodes has 3120 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 158,
-the mean node degree is 183.95, and the node degree mode is 1. The top 5 most central
-nodes are 562970.Btus_2426 (degree 1293), 562970.Btus_0263 (degree 1061), 562970.Btus_1136
-(degree 988), 562970.Btus_0781 (degree 961) and 562970.Btus_1227 (degree 956).
+The undirected graph Kyrpidia tusciae has 3132 nodes and 288061 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05875 and has 6 connected components, where the component with most
+nodes has 3120 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 158, the mean node degree is 183.95, and
+the node degree mode is 1. The top 5 most central nodes are 562970.Btus_2426
+(degree 1293), 562970.Btus_0263 (degree 1061), 562970.Btus_1136 (degree
+988), 562970.Btus_0781 (degree 961) and 562970.Btus_1227 (degree 956).
 
 
 References
@@ -106,13 +107,14 @@ def KyrpidiaTusciae(
 	
 	Datetime: 2021-02-02 21:12:06.584890
 	
-	The undirected graph Kyrpidia tusciae has 3132 nodes and 288061 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.05875 and
-	has 6 connected components, where the component with most nodes has 3120 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 158,
-	the mean node degree is 183.95, and the node degree mode is 1. The top 5 most central
-	nodes are 562970.Btus_2426 (degree 1293), 562970.Btus_0263 (degree 1061), 562970.Btus_1136
-	(degree 988), 562970.Btus_0781 (degree 961) and 562970.Btus_1227 (degree 956).
+	The undirected graph Kyrpidia tusciae has 3132 nodes and 288061 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05875 and has 6 connected components, where the component with most
+	nodes has 3120 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 158, the mean node degree is 183.95, and
+	the node degree mode is 1. The top 5 most central nodes are 562970.Btus_2426
+	(degree 1293), 562970.Btus_0263 (degree 1061), 562970.Btus_1136 (degree
+	988), 562970.Btus_0781 (degree 961) and 562970.Btus_1227 (degree 956).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:32:39.167238
 
-The undirected graph Akkermansia muciniphila has 2113 nodes and 118275 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-has 12 connected components, where the component with most nodes has 2088 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 90,
-the mean node degree is 111.95, and the node degree mode is 2. The top 5 most central
-nodes are 349741.Amuc_1938 (degree 842), 349741.Amuc_0799 (degree 742), 349741.Amuc_1998
-(degree 624), 349741.Amuc_0738 (degree 609) and 349741.Amuc_0737 (degree 598).
+The undirected graph Akkermansia muciniphila has 2113 nodes and 118275
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05301 and has 12 connected components, where the component
+with most nodes has 2088 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 90, the mean node degree is 111.95,
+and the node degree mode is 2. The top 5 most central nodes are 349741.Amuc_1938
+(degree 842), 349741.Amuc_0799 (degree 742), 349741.Amuc_1998 (degree 624),
+349741.Amuc_0738 (degree 609) and 349741.Amuc_0737 (degree 598).
 
 
 References
@@ -106,13 +107,14 @@ def AkkermansiaMuciniphila(
 	
 	Datetime: 2021-02-02 20:32:39.167238
 	
-	The undirected graph Akkermansia muciniphila has 2113 nodes and 118275 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05301 and
-	has 12 connected components, where the component with most nodes has 2088 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 90,
-	the mean node degree is 111.95, and the node degree mode is 2. The top 5 most central
-	nodes are 349741.Amuc_1938 (degree 842), 349741.Amuc_0799 (degree 742), 349741.Amuc_1998
-	(degree 624), 349741.Amuc_0738 (degree 609) and 349741.Amuc_0737 (degree 598).
+	The undirected graph Akkermansia muciniphila has 2113 nodes and 118275
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05301 and has 12 connected components, where the component
+	with most nodes has 2088 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 90, the mean node degree is 111.95,
+	and the node degree mode is 2. The top 5 most central nodes are 349741.Amuc_1938
+	(degree 842), 349741.Amuc_0799 (degree 742), 349741.Amuc_1998 (degree 624),
+	349741.Amuc_0738 (degree 609) and 349741.Amuc_0737 (degree 598).
 	
 
 

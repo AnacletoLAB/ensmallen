@@ -10,12 +10,12 @@ had the following characteristics:
 
 Datetime: 2021-02-06 09:32:29.952156
 
-The undirected graph road-chesapeake has 39 nodes and 170 unweighted edges, of which
-none are self-loops. The graph is quite dense as it has a density of 0.22942 and
-is connected, as it has a single component. The graph median node degree is 7, the
-mean node degree is 8.72, and the node degree mode is 7. The top 5 most central nodes
-are 39 (degree 33), 36 (degree 29), 38 (degree 18), 35 (degree 15) and 22 (degree
-13).
+The undirected graph road-chesapeake has 39 nodes and 170 unweighted edges,
+of which none are self-loops. The graph is quite dense as it has a density
+of 0.22942 and is connected, as it has a single component. The graph median
+node degree is 7, the mean node degree is 8.72, and the node degree mode
+is 7. The top 5 most central nodes are 39 (degree 33), 36 (degree 29),
+38 (degree 18), 35 (degree 15) and 22 (degree 13).
 
 
 References
@@ -102,12 +102,12 @@ def RoadChesapeake(
 	
 	Datetime: 2021-02-06 09:32:29.952156
 	
-	The undirected graph road-chesapeake has 39 nodes and 170 unweighted edges, of which
-	none are self-loops. The graph is quite dense as it has a density of 0.22942 and
-	is connected, as it has a single component. The graph median node degree is 7, the
-	mean node degree is 8.72, and the node degree mode is 7. The top 5 most central nodes
-	are 39 (degree 33), 36 (degree 29), 38 (degree 18), 35 (degree 15) and 22 (degree
-	13).
+	The undirected graph road-chesapeake has 39 nodes and 170 unweighted edges,
+	of which none are self-loops. The graph is quite dense as it has a density
+	of 0.22942 and is connected, as it has a single component. The graph median
+	node degree is 7, the mean node degree is 8.72, and the node degree mode
+	is 7. The top 5 most central nodes are 39 (degree 33), 36 (degree 29),
+	38 (degree 18), 35 (degree 15) and 22 (degree 13).
 	
 
 

@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:00:05.230044
 
-The undirected graph Neisseria lactamica has 1952 nodes and 101237 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05317 and
-has 7 connected components, where the component with most nodes has 1937 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 84,
-the mean node degree is 103.73, and the node degree mode is 7. The top 5 most central
-nodes are 489653.NLA_0170 (degree 761), 489653.NLA_19210 (degree 757), 489653.NLA_18660
-(degree 628), 489653.NLA_9990 (degree 605) and 489653.NLA_0040 (degree 595).
+The undirected graph Neisseria lactamica has 1952 nodes and 101237 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05317 and has 7 connected components, where the component with most
+nodes has 1937 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 84, the mean node degree is 103.73, and
+the node degree mode is 7. The top 5 most central nodes are 489653.NLA_0170
+(degree 761), 489653.NLA_19210 (degree 757), 489653.NLA_18660 (degree 628),
+489653.NLA_9990 (degree 605) and 489653.NLA_0040 (degree 595).
 
 
 References
@@ -106,13 +107,14 @@ def NeisseriaLactamica(
 	
 	Datetime: 2021-02-02 21:00:05.230044
 	
-	The undirected graph Neisseria lactamica has 1952 nodes and 101237 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05317 and
-	has 7 connected components, where the component with most nodes has 1937 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 84,
-	the mean node degree is 103.73, and the node degree mode is 7. The top 5 most central
-	nodes are 489653.NLA_0170 (degree 761), 489653.NLA_19210 (degree 757), 489653.NLA_18660
-	(degree 628), 489653.NLA_9990 (degree 605) and 489653.NLA_0040 (degree 595).
+	The undirected graph Neisseria lactamica has 1952 nodes and 101237 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05317 and has 7 connected components, where the component with most
+	nodes has 1937 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 84, the mean node degree is 103.73, and
+	the node degree mode is 7. The top 5 most central nodes are 489653.NLA_0170
+	(degree 761), 489653.NLA_19210 (degree 757), 489653.NLA_18660 (degree 628),
+	489653.NLA_9990 (degree 605) and 489653.NLA_0040 (degree 595).
 	
 
 

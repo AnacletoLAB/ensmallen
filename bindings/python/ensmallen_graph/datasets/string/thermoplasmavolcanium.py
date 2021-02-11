@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:36.979499
 
-The undirected graph Thermoplasma volcanium has 1505 nodes and 139655 weighted edges,
-of which none are self-loops. The graph is quite dense as it has a density of 0.12340
-and has 10 connected components, where the component with most nodes has 1482 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 189, the mean node degree is 185.59, and the node degree mode is 3. The top 5
-most central nodes are 273116.14324672 (degree 718), 273116.14324702 (degree 649),
-273116.14325549 (degree 644), 273116.14324773 (degree 639) and 273116.14324671 (degree
-584).
+The undirected graph Thermoplasma volcanium has 1505 nodes and 139655 weighted
+edges, of which none are self-loops. The graph is quite dense as it has
+a density of 0.12340 and has 10 connected components, where the component
+with most nodes has 1482 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 189, the mean node degree is 185.59,
+and the node degree mode is 3. The top 5 most central nodes are 273116.14324672
+(degree 718), 273116.14324702 (degree 649), 273116.14325549 (degree 644),
+273116.14324773 (degree 639) and 273116.14324671 (degree 584).
 
 
 References
@@ -107,14 +107,14 @@ def ThermoplasmaVolcanium(
 	
 	Datetime: 2021-02-02 20:17:36.979499
 	
-	The undirected graph Thermoplasma volcanium has 1505 nodes and 139655 weighted edges,
-	of which none are self-loops. The graph is quite dense as it has a density of 0.12340
-	and has 10 connected components, where the component with most nodes has 1482 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 189, the mean node degree is 185.59, and the node degree mode is 3. The top 5
-	most central nodes are 273116.14324672 (degree 718), 273116.14324702 (degree 649),
-	273116.14325549 (degree 644), 273116.14324773 (degree 639) and 273116.14324671 (degree
-	584).
+	The undirected graph Thermoplasma volcanium has 1505 nodes and 139655 weighted
+	edges, of which none are self-loops. The graph is quite dense as it has
+	a density of 0.12340 and has 10 connected components, where the component
+	with most nodes has 1482 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 189, the mean node degree is 185.59,
+	and the node degree mode is 3. The top 5 most central nodes are 273116.14324672
+	(degree 718), 273116.14324702 (degree 649), 273116.14325549 (degree 644),
+	273116.14324773 (degree 639) and 273116.14324671 (degree 584).
 	
 
 

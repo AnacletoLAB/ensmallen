@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:07:05.572083
 
-The undirected graph Blautia hansenii has 3145 nodes and 191964 weighted edges, of
-which none are self-loops. The graph is dense as it has a density of 0.03883 and
-has 10 connected components, where the component with most nodes has 3113 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 87,
-the mean node degree is 122.08, and the node degree mode is 9. The top 5 most central
-nodes are 537007.BLAHAN_05694 (degree 1235), 537007.BLAHAN_06152 (degree 958), 537007.BLAHAN_06033
-(degree 888), 537007.BLAHAN_06420 (degree 828) and 537007.BLAHAN_06176 (degree 785).
+The undirected graph Blautia hansenii has 3145 nodes and 191964 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03883 and has 10 connected components, where the component with most
+nodes has 3113 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 87, the mean node degree is 122.08, and
+the node degree mode is 9. The top 5 most central nodes are 537007.BLAHAN_05694
+(degree 1235), 537007.BLAHAN_06152 (degree 958), 537007.BLAHAN_06033 (degree
+888), 537007.BLAHAN_06420 (degree 828) and 537007.BLAHAN_06176 (degree
+785).
 
 
 References
@@ -106,13 +108,15 @@ def BlautiaHansenii(
 	
 	Datetime: 2021-02-02 21:07:05.572083
 	
-	The undirected graph Blautia hansenii has 3145 nodes and 191964 weighted edges, of
-	which none are self-loops. The graph is dense as it has a density of 0.03883 and
-	has 10 connected components, where the component with most nodes has 3113 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 87,
-	the mean node degree is 122.08, and the node degree mode is 9. The top 5 most central
-	nodes are 537007.BLAHAN_05694 (degree 1235), 537007.BLAHAN_06152 (degree 958), 537007.BLAHAN_06033
-	(degree 888), 537007.BLAHAN_06420 (degree 828) and 537007.BLAHAN_06176 (degree 785).
+	The undirected graph Blautia hansenii has 3145 nodes and 191964 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03883 and has 10 connected components, where the component with most
+	nodes has 3113 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 87, the mean node degree is 122.08, and
+	the node degree mode is 9. The top 5 most central nodes are 537007.BLAHAN_05694
+	(degree 1235), 537007.BLAHAN_06152 (degree 958), 537007.BLAHAN_06033 (degree
+	888), 537007.BLAHAN_06420 (degree 828) and 537007.BLAHAN_06176 (degree
+	785).
 	
 
 

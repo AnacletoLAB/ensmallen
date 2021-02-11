@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:59:39.489903
 
-The undirected graph Mesoaciditoga lauensis has 2001 nodes and 142145 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.07104 and
-has 7 connected components, where the component with most nodes has 1988 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 112,
-the mean node degree is 142.07, and the node degree mode is 2. The top 5 most central
-nodes are 1150474.JQJI01000010_gene1019 (degree 681), 1150474.JQJI01000032_gene1964
-(degree 680), 1150474.JQJI01000021_gene2013 (degree 672), 1150474.JQJI01000007_gene233
-(degree 666) and 1150474.JQJI01000007_gene263 (degree 648).
+The undirected graph Mesoaciditoga lauensis has 2001 nodes and 142145 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.07104 and has 7 connected components, where the component with most
+nodes has 1988 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 112, the mean node degree is 142.07, and
+the node degree mode is 2. The top 5 most central nodes are 1150474.JQJI01000010_gene1019
+(degree 681), 1150474.JQJI01000032_gene1964 (degree 680), 1150474.JQJI01000021_gene2013
+(degree 672), 1150474.JQJI01000007_gene233 (degree 666) and 1150474.JQJI01000007_gene263
+(degree 648).
 
 
 References
@@ -107,14 +108,15 @@ def MesoaciditogaLauensis(
 	
 	Datetime: 2021-02-02 22:59:39.489903
 	
-	The undirected graph Mesoaciditoga lauensis has 2001 nodes and 142145 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.07104 and
-	has 7 connected components, where the component with most nodes has 1988 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 112,
-	the mean node degree is 142.07, and the node degree mode is 2. The top 5 most central
-	nodes are 1150474.JQJI01000010_gene1019 (degree 681), 1150474.JQJI01000032_gene1964
-	(degree 680), 1150474.JQJI01000021_gene2013 (degree 672), 1150474.JQJI01000007_gene233
-	(degree 666) and 1150474.JQJI01000007_gene263 (degree 648).
+	The undirected graph Mesoaciditoga lauensis has 2001 nodes and 142145 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.07104 and has 7 connected components, where the component with most
+	nodes has 1988 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 112, the mean node degree is 142.07, and
+	the node degree mode is 2. The top 5 most central nodes are 1150474.JQJI01000010_gene1019
+	(degree 681), 1150474.JQJI01000032_gene1964 (degree 680), 1150474.JQJI01000021_gene2013
+	(degree 672), 1150474.JQJI01000007_gene233 (degree 666) and 1150474.JQJI01000007_gene263
+	(degree 648).
 	
 
 

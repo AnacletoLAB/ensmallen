@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:29.916337
 
-The undirected graph Sphingobacterium sp. 21 has 5110 nodes and 595474 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.04562 and
-has 14 connected components, where the component with most nodes has 5082 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 207,
-the mean node degree is 233.06, and the node degree mode is 4. The top 5 most central
-nodes are 743722.Sph21_1518 (degree 1540), 743722.Sph21_2156 (degree 1147), 743722.Sph21_2239
-(degree 1077), 743722.Sph21_3684 (degree 1037) and 743722.Sph21_3183 (degree 1026).
+The undirected graph Sphingobacterium sp. 21 has 5110 nodes and 595474
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04562 and has 14 connected components, where the component
+with most nodes has 5082 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 207, the mean node degree is 233.06,
+and the node degree mode is 4. The top 5 most central nodes are 743722.Sph21_1518
+(degree 1540), 743722.Sph21_2156 (degree 1147), 743722.Sph21_2239 (degree
+1077), 743722.Sph21_3684 (degree 1037) and 743722.Sph21_3183 (degree 1026).
 
 
 References
@@ -106,13 +107,14 @@ def SphingobacteriumSp.21(
 	
 	Datetime: 2021-02-02 21:38:29.916337
 	
-	The undirected graph Sphingobacterium sp. 21 has 5110 nodes and 595474 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.04562 and
-	has 14 connected components, where the component with most nodes has 5082 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 207,
-	the mean node degree is 233.06, and the node degree mode is 4. The top 5 most central
-	nodes are 743722.Sph21_1518 (degree 1540), 743722.Sph21_2156 (degree 1147), 743722.Sph21_2239
-	(degree 1077), 743722.Sph21_3684 (degree 1037) and 743722.Sph21_3183 (degree 1026).
+	The undirected graph Sphingobacterium sp. 21 has 5110 nodes and 595474
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04562 and has 14 connected components, where the component
+	with most nodes has 5082 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 207, the mean node degree is 233.06,
+	and the node degree mode is 4. The top 5 most central nodes are 743722.Sph21_1518
+	(degree 1540), 743722.Sph21_2156 (degree 1147), 743722.Sph21_2239 (degree
+	1077), 743722.Sph21_3684 (degree 1037) and 743722.Sph21_3183 (degree 1026).
 	
 
 

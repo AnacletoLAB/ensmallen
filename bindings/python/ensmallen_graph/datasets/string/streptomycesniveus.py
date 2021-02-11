@@ -10,13 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:07:04.966281
 
-The undirected graph Streptomyces niveus has 7542 nodes and 856326 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.03011 and
-has 33 connected components, where the component with most nodes has 7471 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 192,
-the mean node degree is 227.08, and the node degree mode is 2. The top 5 most central
-nodes are 1352941.M877_09885 (degree 3435), 1352941.M877_32010 (degree 2183), 1352941.M877_08375
-(degree 2016), 1352941.M877_15005 (degree 1921) and 1352941.M877_31850 (degree 1803).
+The undirected graph Streptomyces niveus has 7542 nodes and 856326 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.03011 and has 33 connected components, where the component with most
+nodes has 7471 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 192, the mean node degree is 227.08, and
+the node degree mode is 2. The top 5 most central nodes are 1352941.M877_09885
+(degree 3435), 1352941.M877_32010 (degree 2183), 1352941.M877_08375 (degree
+2016), 1352941.M877_15005 (degree 1921) and 1352941.M877_31850 (degree
+1803).
 
 
 References
@@ -106,13 +108,15 @@ def StreptomycesNiveus(
 	
 	Datetime: 2021-02-03 22:07:04.966281
 	
-	The undirected graph Streptomyces niveus has 7542 nodes and 856326 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.03011 and
-	has 33 connected components, where the component with most nodes has 7471 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 192,
-	the mean node degree is 227.08, and the node degree mode is 2. The top 5 most central
-	nodes are 1352941.M877_09885 (degree 3435), 1352941.M877_32010 (degree 2183), 1352941.M877_08375
-	(degree 2016), 1352941.M877_15005 (degree 1921) and 1352941.M877_31850 (degree 1803).
+	The undirected graph Streptomyces niveus has 7542 nodes and 856326 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.03011 and has 33 connected components, where the component with most
+	nodes has 7471 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 192, the mean node degree is 227.08, and
+	the node degree mode is 2. The top 5 most central nodes are 1352941.M877_09885
+	(degree 3435), 1352941.M877_32010 (degree 2183), 1352941.M877_08375 (degree
+	2016), 1352941.M877_15005 (degree 1921) and 1352941.M877_31850 (degree
+	1803).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 22:09:56.833024
 
-The undirected graph Listeria monocytogenes Scott has 2945 nodes and 287339 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.06628
-and has 11 connected components, where the component with most nodes has 2906 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 159, the mean node degree is 195.14, and the node degree mode is 5. The top 5
-most central nodes are 1027396.LMOSA_24870 (degree 1189), 1027396.LMOSA_17180 (degree
-1152), 1027396.LMOSA_10310 (degree 1059), 1027396.LMOSA_7260 (degree 1043) and 1027396.LMOSA_11120
-(degree 1034).
+The undirected graph Listeria monocytogenes Scott has 2945 nodes and 287339
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.06628 and has 11 connected components, where the component
+with most nodes has 2906 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 159, the mean node degree is 195.14,
+and the node degree mode is 5. The top 5 most central nodes are 1027396.LMOSA_24870
+(degree 1189), 1027396.LMOSA_17180 (degree 1152), 1027396.LMOSA_10310 (degree
+1059), 1027396.LMOSA_7260 (degree 1043) and 1027396.LMOSA_11120 (degree
+1034).
 
 
 References
@@ -107,14 +108,15 @@ def ListeriaMonocytogenesScott(
 	
 	Datetime: 2021-02-02 22:09:56.833024
 	
-	The undirected graph Listeria monocytogenes Scott has 2945 nodes and 287339 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.06628
-	and has 11 connected components, where the component with most nodes has 2906 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 159, the mean node degree is 195.14, and the node degree mode is 5. The top 5
-	most central nodes are 1027396.LMOSA_24870 (degree 1189), 1027396.LMOSA_17180 (degree
-	1152), 1027396.LMOSA_10310 (degree 1059), 1027396.LMOSA_7260 (degree 1043) and 1027396.LMOSA_11120
-	(degree 1034).
+	The undirected graph Listeria monocytogenes Scott has 2945 nodes and 287339
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.06628 and has 11 connected components, where the component
+	with most nodes has 2906 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 159, the mean node degree is 195.14,
+	and the node degree mode is 5. The top 5 most central nodes are 1027396.LMOSA_24870
+	(degree 1189), 1027396.LMOSA_17180 (degree 1152), 1027396.LMOSA_10310 (degree
+	1059), 1027396.LMOSA_7260 (degree 1043) and 1027396.LMOSA_11120 (degree
+	1034).
 	
 
 

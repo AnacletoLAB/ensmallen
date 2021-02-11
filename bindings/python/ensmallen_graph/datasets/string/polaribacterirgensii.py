@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:23:38.836505
 
-The undirected graph Polaribacter irgensii has 2518 nodes and 171834 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05423 and
-has 15 connected components, where the component with most nodes has 2483 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 116,
-the mean node degree is 136.48, and the node degree mode is 2. The top 5 most central
-nodes are 313594.PI23P_05412 (degree 944), 313594.PI23P_01025 (degree 889), 313594.PI23P_10705
-(degree 788), 313594.PI23P_06720 (degree 774) and 313594.PI23P_08480 (degree 748).
+The undirected graph Polaribacter irgensii has 2518 nodes and 171834 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05423 and has 15 connected components, where the component with most
+nodes has 2483 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 116, the mean node degree is 136.48, and
+the node degree mode is 2. The top 5 most central nodes are 313594.PI23P_05412
+(degree 944), 313594.PI23P_01025 (degree 889), 313594.PI23P_10705 (degree
+788), 313594.PI23P_06720 (degree 774) and 313594.PI23P_08480 (degree 748).
 
 
 References
@@ -106,13 +107,14 @@ def PolaribacterIrgensii(
 	
 	Datetime: 2021-02-02 20:23:38.836505
 	
-	The undirected graph Polaribacter irgensii has 2518 nodes and 171834 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05423 and
-	has 15 connected components, where the component with most nodes has 2483 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 116,
-	the mean node degree is 136.48, and the node degree mode is 2. The top 5 most central
-	nodes are 313594.PI23P_05412 (degree 944), 313594.PI23P_01025 (degree 889), 313594.PI23P_10705
-	(degree 788), 313594.PI23P_06720 (degree 774) and 313594.PI23P_08480 (degree 748).
+	The undirected graph Polaribacter irgensii has 2518 nodes and 171834 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05423 and has 15 connected components, where the component with most
+	nodes has 2483 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 116, the mean node degree is 136.48, and
+	the node degree mode is 2. The top 5 most central nodes are 313594.PI23P_05412
+	(degree 944), 313594.PI23P_01025 (degree 889), 313594.PI23P_10705 (degree
+	788), 313594.PI23P_06720 (degree 774) and 313594.PI23P_08480 (degree 748).
 	
 
 

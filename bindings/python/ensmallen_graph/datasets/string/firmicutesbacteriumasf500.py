@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:10:50.441150
 
-The undirected graph Firmicutes bacterium ASF500 has 3522 nodes and 210347 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.03392
-and has 18 connected components, where the component with most nodes has 3481 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 86, the mean node degree is 119.45, and the node degree mode is 2. The top 5 most
-central nodes are 1378168.N510_01397 (degree 1131), 1378168.N510_02367 (degree 973),
-1378168.N510_02334 (degree 899), 1378168.N510_00074 (degree 822) and 1378168.N510_00467
-(degree 808).
+The undirected graph Firmicutes bacterium ASF500 has 3522 nodes and 210347
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.03392 and has 18 connected components, where the component
+with most nodes has 3481 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 86, the mean node degree is 119.45,
+and the node degree mode is 2. The top 5 most central nodes are 1378168.N510_01397
+(degree 1131), 1378168.N510_02367 (degree 973), 1378168.N510_02334 (degree
+899), 1378168.N510_00074 (degree 822) and 1378168.N510_00467 (degree 808).
 
 
 References
@@ -107,14 +107,14 @@ def FirmicutesBacteriumAsf500(
 	
 	Datetime: 2021-02-03 22:10:50.441150
 	
-	The undirected graph Firmicutes bacterium ASF500 has 3522 nodes and 210347 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.03392
-	and has 18 connected components, where the component with most nodes has 3481 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 86, the mean node degree is 119.45, and the node degree mode is 2. The top 5 most
-	central nodes are 1378168.N510_01397 (degree 1131), 1378168.N510_02367 (degree 973),
-	1378168.N510_02334 (degree 899), 1378168.N510_00074 (degree 822) and 1378168.N510_00467
-	(degree 808).
+	The undirected graph Firmicutes bacterium ASF500 has 3522 nodes and 210347
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.03392 and has 18 connected components, where the component
+	with most nodes has 3481 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 86, the mean node degree is 119.45,
+	and the node degree mode is 2. The top 5 most central nodes are 1378168.N510_01397
+	(degree 1131), 1378168.N510_02367 (degree 973), 1378168.N510_02334 (degree
+	899), 1378168.N510_00074 (degree 822) and 1378168.N510_00467 (degree 808).
 	
 
 

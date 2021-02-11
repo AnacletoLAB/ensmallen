@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:14:04.659348
 
-The undirected graph Aminobacterium colombiense has 1867 nodes and 142455 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.08178
-and has 2 connected components, where the component with most nodes has 1865 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 119, the mean node degree is 152.60, and the node degree mode is 51. The top 5
-most central nodes are 572547.Amico_1177 (degree 879), 572547.Amico_1259 (degree
-861), 572547.Amico_0615 (degree 731), 572547.Amico_0583 (degree 728) and 572547.Amico_0977
-(degree 723).
+The undirected graph Aminobacterium colombiense has 1867 nodes and 142455
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.08178 and has 2 connected components, where the component
+with most nodes has 1865 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 119, the mean node degree is 152.60,
+and the node degree mode is 51. The top 5 most central nodes are 572547.Amico_1177
+(degree 879), 572547.Amico_1259 (degree 861), 572547.Amico_0615 (degree
+731), 572547.Amico_0583 (degree 728) and 572547.Amico_0977 (degree 723).
 
 
 References
@@ -107,14 +107,14 @@ def AminobacteriumColombiense(
 	
 	Datetime: 2021-02-02 21:14:04.659348
 	
-	The undirected graph Aminobacterium colombiense has 1867 nodes and 142455 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.08178
-	and has 2 connected components, where the component with most nodes has 1865 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 119, the mean node degree is 152.60, and the node degree mode is 51. The top 5
-	most central nodes are 572547.Amico_1177 (degree 879), 572547.Amico_1259 (degree
-	861), 572547.Amico_0615 (degree 731), 572547.Amico_0583 (degree 728) and 572547.Amico_0977
-	(degree 723).
+	The undirected graph Aminobacterium colombiense has 1867 nodes and 142455
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.08178 and has 2 connected components, where the component
+	with most nodes has 1865 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 119, the mean node degree is 152.60,
+	and the node degree mode is 51. The top 5 most central nodes are 572547.Amico_1177
+	(degree 879), 572547.Amico_1259 (degree 861), 572547.Amico_0615 (degree
+	731), 572547.Amico_0583 (degree 728) and 572547.Amico_0977 (degree 723).
 	
 
 

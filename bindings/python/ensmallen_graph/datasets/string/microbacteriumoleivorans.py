@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:17:51.007140
 
-The undirected graph Microbacterium oleivorans has 2777 nodes and 179341 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04653
-and has 8 connected components, where the component with most nodes has 2761 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 103, the mean node degree is 129.16, and the node degree mode is 3. The top 5
-most central nodes are 273677.BW34_02336 (degree 816), 273677.BW34_00932 (degree
-813), 273677.BW34_00404 (degree 801), 273677.BW34_02596 (degree 775) and 273677.BW34_00397
-(degree 756).
+The undirected graph Microbacterium oleivorans has 2777 nodes and 179341
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04653 and has 8 connected components, where the component
+with most nodes has 2761 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 103, the mean node degree is 129.16,
+and the node degree mode is 3. The top 5 most central nodes are 273677.BW34_02336
+(degree 816), 273677.BW34_00932 (degree 813), 273677.BW34_00404 (degree
+801), 273677.BW34_02596 (degree 775) and 273677.BW34_00397 (degree 756).
 
 
 References
@@ -107,14 +107,14 @@ def MicrobacteriumOleivorans(
 	
 	Datetime: 2021-02-02 20:17:51.007140
 	
-	The undirected graph Microbacterium oleivorans has 2777 nodes and 179341 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04653
-	and has 8 connected components, where the component with most nodes has 2761 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 103, the mean node degree is 129.16, and the node degree mode is 3. The top 5
-	most central nodes are 273677.BW34_02336 (degree 816), 273677.BW34_00932 (degree
-	813), 273677.BW34_00404 (degree 801), 273677.BW34_02596 (degree 775) and 273677.BW34_00397
-	(degree 756).
+	The undirected graph Microbacterium oleivorans has 2777 nodes and 179341
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04653 and has 8 connected components, where the component
+	with most nodes has 2761 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 103, the mean node degree is 129.16,
+	and the node degree mode is 3. The top 5 most central nodes are 273677.BW34_02336
+	(degree 816), 273677.BW34_00932 (degree 813), 273677.BW34_00404 (degree
+	801), 273677.BW34_02596 (degree 775) and 273677.BW34_00397 (degree 756).
 	
 
 

@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 20:38:30.645990
 
-The undirected graph Algoriphagus machipongonensis has 3910 nodes and 439508 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.05751
-and has 5 connected components, where the component with most nodes has 3902 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 205, the mean node degree is 224.81, and the node degree mode is 3. The top 5
-most central nodes are 388413.ALPR1_10680 (degree 1517), 388413.ALPR1_17768 (degree
-1234), 388413.ALPR1_00655 (degree 1138), 388413.ALPR1_20408 (degree 1049) and 388413.ALPR1_09815
-(degree 1040).
+The undirected graph Algoriphagus machipongonensis has 3910 nodes and 439508
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.05751 and has 5 connected components, where the component
+with most nodes has 3902 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 205, the mean node degree is 224.81,
+and the node degree mode is 3. The top 5 most central nodes are 388413.ALPR1_10680
+(degree 1517), 388413.ALPR1_17768 (degree 1234), 388413.ALPR1_00655 (degree
+1138), 388413.ALPR1_20408 (degree 1049) and 388413.ALPR1_09815 (degree
+1040).
 
 
 References
@@ -107,14 +108,15 @@ def AlgoriphagusMachipongonensis(
 	
 	Datetime: 2021-02-02 20:38:30.645990
 	
-	The undirected graph Algoriphagus machipongonensis has 3910 nodes and 439508 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.05751
-	and has 5 connected components, where the component with most nodes has 3902 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 205, the mean node degree is 224.81, and the node degree mode is 3. The top 5
-	most central nodes are 388413.ALPR1_10680 (degree 1517), 388413.ALPR1_17768 (degree
-	1234), 388413.ALPR1_00655 (degree 1138), 388413.ALPR1_20408 (degree 1049) and 388413.ALPR1_09815
-	(degree 1040).
+	The undirected graph Algoriphagus machipongonensis has 3910 nodes and 439508
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.05751 and has 5 connected components, where the component
+	with most nodes has 3902 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 205, the mean node degree is 224.81,
+	and the node degree mode is 3. The top 5 most central nodes are 388413.ALPR1_10680
+	(degree 1517), 388413.ALPR1_17768 (degree 1234), 388413.ALPR1_00655 (degree
+	1138), 388413.ALPR1_20408 (degree 1049) and 388413.ALPR1_09815 (degree
+	1040).
 	
 
 

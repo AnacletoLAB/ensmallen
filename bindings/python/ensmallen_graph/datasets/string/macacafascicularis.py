@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 17:35:53.580812
 
-The undirected graph Macaca fascicularis has 19866 nodes and 5125021 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.02597 and
-has 2 connected components, where the component with most nodes has 19864 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 377,
-the mean node degree is 515.96, and the node degree mode is 155. The top 5 most central
-nodes are 9541.XP_005570639.1 (degree 5287), 9541.XP_005569968.1 (degree 4750), 9541.XP_005540230.1
-(degree 4711), 9541.XP_005582843.1 (degree 4581) and 9541.XP_005548698.1 (degree
+The undirected graph Macaca fascicularis has 19866 nodes and 5125021 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.02597 and has 2 connected components, where the component with most
+nodes has 19864 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 377, the mean node degree is 515.96, and
+the node degree mode is 155. The top 5 most central nodes are 9541.XP_005570639.1
+(degree 5287), 9541.XP_005569968.1 (degree 4750), 9541.XP_005540230.1 (degree
+4711), 9541.XP_005582843.1 (degree 4581) and 9541.XP_005548698.1 (degree
 4404).
 
 
@@ -107,13 +108,14 @@ def MacacaFascicularis(
 	
 	Datetime: 2021-02-02 17:35:53.580812
 	
-	The undirected graph Macaca fascicularis has 19866 nodes and 5125021 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.02597 and
-	has 2 connected components, where the component with most nodes has 19864 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 377,
-	the mean node degree is 515.96, and the node degree mode is 155. The top 5 most central
-	nodes are 9541.XP_005570639.1 (degree 5287), 9541.XP_005569968.1 (degree 4750), 9541.XP_005540230.1
-	(degree 4711), 9541.XP_005582843.1 (degree 4581) and 9541.XP_005548698.1 (degree
+	The undirected graph Macaca fascicularis has 19866 nodes and 5125021 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.02597 and has 2 connected components, where the component with most
+	nodes has 19864 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 377, the mean node degree is 515.96, and
+	the node degree mode is 155. The top 5 most central nodes are 9541.XP_005570639.1
+	(degree 5287), 9541.XP_005569968.1 (degree 4750), 9541.XP_005540230.1 (degree
+	4711), 9541.XP_005582843.1 (degree 4581) and 9541.XP_005548698.1 (degree
 	4404).
 	
 

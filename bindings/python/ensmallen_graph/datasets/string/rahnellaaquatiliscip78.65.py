@@ -10,14 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:38:58.924610
 
-The undirected graph Rahnella aquatilis CIP78.65 has 4886 nodes and 568530 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04764
-and has 7 connected components, where the component with most nodes has 4871 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 203, the mean node degree is 232.72, and the node degree mode is 2. The top 5
-most central nodes are 745277.GRAQ_04219 (degree 1567), 745277.GRAQ_03052 (degree
-1357), 745277.GRAQ_03054 (degree 1354), 745277.GRAQ_01273 (degree 1333) and 745277.GRAQ_01833
-(degree 1238).
+The undirected graph Rahnella aquatilis CIP78.65 has 4886 nodes and 568530
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04764 and has 7 connected components, where the component
+with most nodes has 4871 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 203, the mean node degree is 232.72,
+and the node degree mode is 2. The top 5 most central nodes are 745277.GRAQ_04219
+(degree 1567), 745277.GRAQ_03052 (degree 1357), 745277.GRAQ_03054 (degree
+1354), 745277.GRAQ_01273 (degree 1333) and 745277.GRAQ_01833 (degree 1238).
 
 
 References
@@ -107,14 +107,14 @@ def RahnellaAquatilisCip78.65(
 	
 	Datetime: 2021-02-02 21:38:58.924610
 	
-	The undirected graph Rahnella aquatilis CIP78.65 has 4886 nodes and 568530 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04764
-	and has 7 connected components, where the component with most nodes has 4871 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 203, the mean node degree is 232.72, and the node degree mode is 2. The top 5
-	most central nodes are 745277.GRAQ_04219 (degree 1567), 745277.GRAQ_03052 (degree
-	1357), 745277.GRAQ_03054 (degree 1354), 745277.GRAQ_01273 (degree 1333) and 745277.GRAQ_01833
-	(degree 1238).
+	The undirected graph Rahnella aquatilis CIP78.65 has 4886 nodes and 568530
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04764 and has 7 connected components, where the component
+	with most nodes has 4871 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 203, the mean node degree is 232.72,
+	and the node degree mode is 2. The top 5 most central nodes are 745277.GRAQ_04219
+	(degree 1567), 745277.GRAQ_03052 (degree 1357), 745277.GRAQ_03054 (degree
+	1354), 745277.GRAQ_01273 (degree 1333) and 745277.GRAQ_01833 (degree 1238).
 	
 
 

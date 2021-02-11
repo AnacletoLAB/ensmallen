@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:11:14.293398
 
-The undirected graph Vibrio rumoiensis has 3032 nodes and 291383 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-has 4 connected components, where the component with most nodes has 3026 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 162,
-the mean node degree is 192.21, and the node degree mode is 1. The top 5 most central
-nodes are 1188252.AJYK01000120_gene944 (degree 1168), 1188252.AJYK01000005_gene3000
-(degree 1126), 1188252.AJYK01000027_gene526 (degree 1008), 1188252.AJYK01000062_gene1902
-(degree 996) and 1188252.AJYK01000089_gene632 (degree 992).
+The undirected graph Vibrio rumoiensis has 3032 nodes and 291383 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.06341 and has 4 connected components, where the component with most
+nodes has 3026 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 162, the mean node degree is 192.21, and
+the node degree mode is 1. The top 5 most central nodes are 1188252.AJYK01000120_gene944
+(degree 1168), 1188252.AJYK01000005_gene3000 (degree 1126), 1188252.AJYK01000027_gene526
+(degree 1008), 1188252.AJYK01000062_gene1902 (degree 996) and 1188252.AJYK01000089_gene632
+(degree 992).
 
 
 References
@@ -107,14 +108,15 @@ def VibrioRumoiensis(
 	
 	Datetime: 2021-02-02 23:11:14.293398
 	
-	The undirected graph Vibrio rumoiensis has 3032 nodes and 291383 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.06341 and
-	has 4 connected components, where the component with most nodes has 3026 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 162,
-	the mean node degree is 192.21, and the node degree mode is 1. The top 5 most central
-	nodes are 1188252.AJYK01000120_gene944 (degree 1168), 1188252.AJYK01000005_gene3000
-	(degree 1126), 1188252.AJYK01000027_gene526 (degree 1008), 1188252.AJYK01000062_gene1902
-	(degree 996) and 1188252.AJYK01000089_gene632 (degree 992).
+	The undirected graph Vibrio rumoiensis has 3032 nodes and 291383 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.06341 and has 4 connected components, where the component with most
+	nodes has 3026 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 162, the mean node degree is 192.21, and
+	the node degree mode is 1. The top 5 most central nodes are 1188252.AJYK01000120_gene944
+	(degree 1168), 1188252.AJYK01000005_gene3000 (degree 1126), 1188252.AJYK01000027_gene526
+	(degree 1008), 1188252.AJYK01000062_gene1902 (degree 996) and 1188252.AJYK01000089_gene632
+	(degree 992).
 	
 
 

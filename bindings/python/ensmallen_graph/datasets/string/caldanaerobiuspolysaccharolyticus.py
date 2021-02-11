@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:59:51.981605
 
-The undirected graph Caldanaerobius polysaccharolyticus has 2489 nodes and 209444
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06764 and has 7 connected components, where the component with most nodes has
-2471 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 152, the mean node degree is 168.30, and the node degree mode is 2. The
-top 5 most central nodes are 935948.KE386494_gene726 (degree 1014), 935948.KE386494_gene652
-(degree 1010), 935948.KE386495_gene1258 (degree 754), 935948.KE386495_gene1938 (degree
-749) and 935948.KE386493_gene2405 (degree 708).
+The undirected graph Caldanaerobius polysaccharolyticus has 2489 nodes
+and 209444 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06764 and has 7 connected components, where the
+component with most nodes has 2471 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+is 168.30, and the node degree mode is 2. The top 5 most central nodes
+are 935948.KE386494_gene726 (degree 1014), 935948.KE386494_gene652 (degree
+1010), 935948.KE386495_gene1258 (degree 754), 935948.KE386495_gene1938
+(degree 749) and 935948.KE386493_gene2405 (degree 708).
 
 
 References
@@ -107,14 +108,15 @@ def CaldanaerobiusPolysaccharolyticus(
 	
 	Datetime: 2021-02-02 21:59:51.981605
 	
-	The undirected graph Caldanaerobius polysaccharolyticus has 2489 nodes and 209444
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06764 and has 7 connected components, where the component with most nodes has
-	2471 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 152, the mean node degree is 168.30, and the node degree mode is 2. The
-	top 5 most central nodes are 935948.KE386494_gene726 (degree 1014), 935948.KE386494_gene652
-	(degree 1010), 935948.KE386495_gene1258 (degree 754), 935948.KE386495_gene1938 (degree
-	749) and 935948.KE386493_gene2405 (degree 708).
+	The undirected graph Caldanaerobius polysaccharolyticus has 2489 nodes
+	and 209444 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06764 and has 7 connected components, where the
+	component with most nodes has 2471 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 152, the mean node degree
+	is 168.30, and the node degree mode is 2. The top 5 most central nodes
+	are 935948.KE386494_gene726 (degree 1014), 935948.KE386494_gene652 (degree
+	1010), 935948.KE386495_gene1258 (degree 754), 935948.KE386495_gene1938
+	(degree 749) and 935948.KE386493_gene2405 (degree 708).
 	
 
 

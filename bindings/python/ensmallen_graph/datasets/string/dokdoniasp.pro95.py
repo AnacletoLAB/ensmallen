@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 23:32:28.990847
 
-The undirected graph Dokdonia sp. PRO95 has 2956 nodes and 234846 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.05377 and
-has 3 connected components, where the component with most nodes has 2952 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 137,
-the mean node degree is 158.89, and the node degree mode is 3. The top 5 most central
-nodes are 1239415.CM001837_gene585 (degree 1066), 1239415.CM001837_gene455 (degree
-964), 1239415.CM001837_gene2897 (degree 878), 1239415.CM001837_gene2966 (degree 782)
-and 1239415.CM001837_gene1637 (degree 754).
+The undirected graph Dokdonia sp. PRO95 has 2956 nodes and 234846 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.05377 and has 3 connected components, where the component with most
+nodes has 2952 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 137, the mean node degree is 158.89, and
+the node degree mode is 3. The top 5 most central nodes are 1239415.CM001837_gene585
+(degree 1066), 1239415.CM001837_gene455 (degree 964), 1239415.CM001837_gene2897
+(degree 878), 1239415.CM001837_gene2966 (degree 782) and 1239415.CM001837_gene1637
+(degree 754).
 
 
 References
@@ -107,14 +108,15 @@ def DokdoniaSp.Pro95(
 	
 	Datetime: 2021-02-02 23:32:28.990847
 	
-	The undirected graph Dokdonia sp. PRO95 has 2956 nodes and 234846 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.05377 and
-	has 3 connected components, where the component with most nodes has 2952 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 137,
-	the mean node degree is 158.89, and the node degree mode is 3. The top 5 most central
-	nodes are 1239415.CM001837_gene585 (degree 1066), 1239415.CM001837_gene455 (degree
-	964), 1239415.CM001837_gene2897 (degree 878), 1239415.CM001837_gene2966 (degree 782)
-	and 1239415.CM001837_gene1637 (degree 754).
+	The undirected graph Dokdonia sp. PRO95 has 2956 nodes and 234846 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.05377 and has 3 connected components, where the component with most
+	nodes has 2952 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 137, the mean node degree is 158.89, and
+	the node degree mode is 3. The top 5 most central nodes are 1239415.CM001837_gene585
+	(degree 1066), 1239415.CM001837_gene455 (degree 964), 1239415.CM001837_gene2897
+	(degree 878), 1239415.CM001837_gene2966 (degree 782) and 1239415.CM001837_gene1637
+	(degree 754).
 	
 
 

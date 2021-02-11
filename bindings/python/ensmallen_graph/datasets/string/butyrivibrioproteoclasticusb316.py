@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-02 21:03:04.270720
 
-The undirected graph Butyrivibrio proteoclasticus B316 has 3377 nodes and 397816
-weighted edges, of which none are self-loops. The graph is dense as it has a density
-of 0.06979 and has 10 connected components, where the component with most nodes has
-3352 nodes and the component with the least nodes has 2 nodes. The graph median node
-degree is 212, the mean node degree is 235.60, and the node degree mode is 4. The
-top 5 most central nodes are 515622.bpr_I1048 (degree 1912), 515622.bpr_I1097 (degree
-1244), 515622.bpr_I2437 (degree 1203), 515622.bpr_I2899 (degree 1168) and 515622.bpr_I0171
-(degree 1128).
+The undirected graph Butyrivibrio proteoclasticus B316 has 3377 nodes and
+397816 weighted edges, of which none are self-loops. The graph is dense
+as it has a density of 0.06979 and has 10 connected components, where the
+component with most nodes has 3352 nodes and the component with the least
+nodes has 2 nodes. The graph median node degree is 212, the mean node degree
+is 235.60, and the node degree mode is 4. The top 5 most central nodes
+are 515622.bpr_I1048 (degree 1912), 515622.bpr_I1097 (degree 1244), 515622.bpr_I2437
+(degree 1203), 515622.bpr_I2899 (degree 1168) and 515622.bpr_I0171 (degree
+1128).
 
 
 References
@@ -107,14 +108,15 @@ def ButyrivibrioProteoclasticusB316(
 	
 	Datetime: 2021-02-02 21:03:04.270720
 	
-	The undirected graph Butyrivibrio proteoclasticus B316 has 3377 nodes and 397816
-	weighted edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.06979 and has 10 connected components, where the component with most nodes has
-	3352 nodes and the component with the least nodes has 2 nodes. The graph median node
-	degree is 212, the mean node degree is 235.60, and the node degree mode is 4. The
-	top 5 most central nodes are 515622.bpr_I1048 (degree 1912), 515622.bpr_I1097 (degree
-	1244), 515622.bpr_I2437 (degree 1203), 515622.bpr_I2899 (degree 1168) and 515622.bpr_I0171
-	(degree 1128).
+	The undirected graph Butyrivibrio proteoclasticus B316 has 3377 nodes and
+	397816 weighted edges, of which none are self-loops. The graph is dense
+	as it has a density of 0.06979 and has 10 connected components, where the
+	component with most nodes has 3352 nodes and the component with the least
+	nodes has 2 nodes. The graph median node degree is 212, the mean node degree
+	is 235.60, and the node degree mode is 4. The top 5 most central nodes
+	are 515622.bpr_I1048 (degree 1912), 515622.bpr_I1097 (degree 1244), 515622.bpr_I2437
+	(degree 1203), 515622.bpr_I2899 (degree 1168) and 515622.bpr_I0171 (degree
+	1128).
 	
 
 

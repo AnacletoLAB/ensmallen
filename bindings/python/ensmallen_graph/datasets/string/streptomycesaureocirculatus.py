@@ -10,14 +10,15 @@ had the following characteristics:
 
 Datetime: 2021-02-05 17:16:52.687342
 
-The undirected graph Streptomyces aureocirculatus has 7756 nodes and 1295565 weighted
-edges, of which none are self-loops. The graph is dense as it has a density of 0.04308
-and has 84 connected components, where the component with most nodes has 7526 nodes
-and the component with the least nodes has 2 nodes. The graph median node degree
-is 278, the mean node degree is 334.08, and the node degree mode is 1. The top 5
-most central nodes are 67275.JOAP01000014_gene4498 (degree 3483), 67275.JOAP01000044_gene7606
-(degree 2973), 67275.JOAP01000015_gene4784 (degree 2548), 67275.JOAP01000001_gene2705
-(degree 2533) and 67275.JOAP01000003_gene2433 (degree 2394).
+The undirected graph Streptomyces aureocirculatus has 7756 nodes and 1295565
+weighted edges, of which none are self-loops. The graph is dense as it
+has a density of 0.04308 and has 84 connected components, where the component
+with most nodes has 7526 nodes and the component with the least nodes has
+2 nodes. The graph median node degree is 278, the mean node degree is 334.08,
+and the node degree mode is 1. The top 5 most central nodes are 67275.JOAP01000014_gene4498
+(degree 3483), 67275.JOAP01000044_gene7606 (degree 2973), 67275.JOAP01000015_gene4784
+(degree 2548), 67275.JOAP01000001_gene2705 (degree 2533) and 67275.JOAP01000003_gene2433
+(degree 2394).
 
 
 References
@@ -107,14 +108,15 @@ def StreptomycesAureocirculatus(
 	
 	Datetime: 2021-02-05 17:16:52.687342
 	
-	The undirected graph Streptomyces aureocirculatus has 7756 nodes and 1295565 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density of 0.04308
-	and has 84 connected components, where the component with most nodes has 7526 nodes
-	and the component with the least nodes has 2 nodes. The graph median node degree
-	is 278, the mean node degree is 334.08, and the node degree mode is 1. The top 5
-	most central nodes are 67275.JOAP01000014_gene4498 (degree 3483), 67275.JOAP01000044_gene7606
-	(degree 2973), 67275.JOAP01000015_gene4784 (degree 2548), 67275.JOAP01000001_gene2705
-	(degree 2533) and 67275.JOAP01000003_gene2433 (degree 2394).
+	The undirected graph Streptomyces aureocirculatus has 7756 nodes and 1295565
+	weighted edges, of which none are self-loops. The graph is dense as it
+	has a density of 0.04308 and has 84 connected components, where the component
+	with most nodes has 7526 nodes and the component with the least nodes has
+	2 nodes. The graph median node degree is 278, the mean node degree is 334.08,
+	and the node degree mode is 1. The top 5 most central nodes are 67275.JOAP01000014_gene4498
+	(degree 3483), 67275.JOAP01000044_gene7606 (degree 2973), 67275.JOAP01000015_gene4784
+	(degree 2548), 67275.JOAP01000001_gene2705 (degree 2533) and 67275.JOAP01000003_gene2433
+	(degree 2394).
 	
 
 

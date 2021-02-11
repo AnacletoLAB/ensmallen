@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-03 22:01:25.443034
 
-The undirected graph Palaeococcus pacificus has 1984 nodes and 185558 weighted edges,
-of which none are self-loops. The graph is dense as it has a density of 0.09433 and
-has 3 connected components, where the component with most nodes has 1977 nodes and
-the component with the least nodes has 2 nodes. The graph median node degree is 185,
-the mean node degree is 187.05, and the node degree mode is 4. The top 5 most central
-nodes are 1343739.PAP_02855 (degree 721), 1343739.PAP_09970 (degree 641), 1343739.PAP_06210
-(degree 577), 1343739.PAP_01520 (degree 571) and 1343739.PAP_03270 (degree 570).
+The undirected graph Palaeococcus pacificus has 1984 nodes and 185558 weighted
+edges, of which none are self-loops. The graph is dense as it has a density
+of 0.09433 and has 3 connected components, where the component with most
+nodes has 1977 nodes and the component with the least nodes has 2 nodes.
+The graph median node degree is 185, the mean node degree is 187.05, and
+the node degree mode is 4. The top 5 most central nodes are 1343739.PAP_02855
+(degree 721), 1343739.PAP_09970 (degree 641), 1343739.PAP_06210 (degree
+577), 1343739.PAP_01520 (degree 571) and 1343739.PAP_03270 (degree 570).
 
 
 References
@@ -106,13 +107,14 @@ def PalaeococcusPacificus(
 	
 	Datetime: 2021-02-03 22:01:25.443034
 	
-	The undirected graph Palaeococcus pacificus has 1984 nodes and 185558 weighted edges,
-	of which none are self-loops. The graph is dense as it has a density of 0.09433 and
-	has 3 connected components, where the component with most nodes has 1977 nodes and
-	the component with the least nodes has 2 nodes. The graph median node degree is 185,
-	the mean node degree is 187.05, and the node degree mode is 4. The top 5 most central
-	nodes are 1343739.PAP_02855 (degree 721), 1343739.PAP_09970 (degree 641), 1343739.PAP_06210
-	(degree 577), 1343739.PAP_01520 (degree 571) and 1343739.PAP_03270 (degree 570).
+	The undirected graph Palaeococcus pacificus has 1984 nodes and 185558 weighted
+	edges, of which none are self-loops. The graph is dense as it has a density
+	of 0.09433 and has 3 connected components, where the component with most
+	nodes has 1977 nodes and the component with the least nodes has 2 nodes.
+	The graph median node degree is 185, the mean node degree is 187.05, and
+	the node degree mode is 4. The top 5 most central nodes are 1343739.PAP_02855
+	(degree 721), 1343739.PAP_09970 (degree 641), 1343739.PAP_06210 (degree
+	577), 1343739.PAP_01520 (degree 571) and 1343739.PAP_03270 (degree 570).
 	
 
 

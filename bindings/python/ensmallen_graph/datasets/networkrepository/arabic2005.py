@@ -10,13 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 20:36:08.802388
 
-The undirected graph arabic-2005 has 327287 nodes, of which 11 are singletons (all
-have self-loops), and 4472234 unweighted edges, of which 49106 are self-loops. The
-graph is extremely sparse as it has a density of 0.00008 and has 428 connected components,
-where the component with most nodes has 215122 nodes and the component with the least
-nodes has a single node. The graph median node degree is 5, the mean node degree
-is 27.18, and the node degree mode is 1. The top 5 most central nodes are 22564579
-(degree 72936), 22609033 (degree 25619), 22593479 (degree 22061), 22593478 (degree
+The undirected graph arabic-2005 has 327287 nodes, of which 11 are singletons
+(all have self-loops), and 4472234 unweighted edges, of which 49106 are
+self-loops. The graph is extremely sparse as it has a density of 0.00008
+and has 428 connected components, where the component with most nodes has
+215122 nodes and the component with the least nodes has a single node.
+The graph median node degree is 5, the mean node degree is 27.18, and the
+node degree mode is 1. The top 5 most central nodes are 22564579 (degree
+72936), 22609033 (degree 25619), 22593479 (degree 22061), 22593478 (degree
 16692) and 22608853 (degree 16438).
 
 
@@ -104,13 +105,14 @@ def Arabic2005(
 	
 	Datetime: 2021-02-06 20:36:08.802388
 	
-	The undirected graph arabic-2005 has 327287 nodes, of which 11 are singletons (all
-	have self-loops), and 4472234 unweighted edges, of which 49106 are self-loops. The
-	graph is extremely sparse as it has a density of 0.00008 and has 428 connected components,
-	where the component with most nodes has 215122 nodes and the component with the least
-	nodes has a single node. The graph median node degree is 5, the mean node degree
-	is 27.18, and the node degree mode is 1. The top 5 most central nodes are 22564579
-	(degree 72936), 22609033 (degree 25619), 22593479 (degree 22061), 22593478 (degree
+	The undirected graph arabic-2005 has 327287 nodes, of which 11 are singletons
+	(all have self-loops), and 4472234 unweighted edges, of which 49106 are
+	self-loops. The graph is extremely sparse as it has a density of 0.00008
+	and has 428 connected components, where the component with most nodes has
+	215122 nodes and the component with the least nodes has a single node.
+	The graph median node degree is 5, the mean node degree is 27.18, and the
+	node degree mode is 1. The top 5 most central nodes are 22564579 (degree
+	72936), 22609033 (degree 25619), 22593479 (degree 22061), 22593478 (degree
 	16692) and 22608853 (degree 16438).
 	
 
